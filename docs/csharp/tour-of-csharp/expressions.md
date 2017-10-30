@@ -45,7 +45,7 @@ ms.lasthandoff: 07/28/2017
     - `new T(...){...}`: 初期化子を使用したオブジェクトの作成
     - `new {...}`:  匿名オブジェクト初期化子
     - `new T[...]`: 配列の作成
-    - `typeof(T)`: 取得@System.Typeのオブジェクト`T`
+    - `typeof(T)`: 取得 @System.Type のオブジェクト`T`
     - `checked(x)`: チェック済みコンテキストで式を評価する
     - `unchecked(x)`: 未チェックのコンテキストで式を評価する
     - `default(T)`: `T` 型の既定値の取得
