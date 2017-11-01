@@ -69,7 +69,7 @@ using static <fully-qualified-type-name>
 
 [!code-cs[using-static#3](../../../../samples/snippets/csharp/language-reference/keywords/using/using-static3.cs)]
 
-上の例では、`using static` ディレクティブを @System.Double 型に適用することもできます。 それにより、型名を指定せずに、@System.Double.TryParse 型 (System.String,System.Double@) メソッドを呼び出せるようになります。 ただし、どの数値型の `TryParse` メソッドが呼び出されたかを判断するために `using static` ステートメントを確認する必要が出てくるため、コードが読みにくくなります。
+上の例では、`using static` ディレクティブを @System.Double 型に適用することもできます。 それにより、型名を指定せずに、@System.Double.TryParse(System.String,System.Double@) メソッドを呼び出せるようになります。 ただし、どの数値型の `TryParse` メソッドが呼び出されたかを判断するために `using static` ステートメントを確認する必要が出てくるため、コードが読みにくくなります。
 
 ## <a name="see-also"></a>関連項目
 
