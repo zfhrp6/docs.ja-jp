@@ -1,47 +1,28 @@
 ---
 title: "switch キーワード (C# リファレンス)"
-ms.date: 2017-03-07
+ms.date: 03/07/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - switch_CSharpKeyword
 - switch
 - case
 - case_CSharpKeyword
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - switch statement [C#]
 - switch keyword [C#]
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-caps.latest.revision: 47
+caps.latest.revision: "47"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 66528c9804b74b0bba088627b3116be804c65eb0
+ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
 ms.translationtype: HT
-ms.sourcegitcommit: 387c8c7e44ab818ca97e686330746f50df091bb9
-ms.openlocfilehash: 5c151e3bbd46212f1234d46ff05d389f2384ca0e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/02/2017
 ---
 # <a name="switch-c-reference"></a>switch (C# リファレンス)
 `switch` ステートメントは選択ステートメントです。このステートメントは、実行する 1 つの "*switch セクション*" を候補のリストから "*match 式*" によるパターン マッチに基づいて選択します。 
@@ -155,7 +136,7 @@ switch (caseSwitch)
 
 - それ以外の場合、式の値は静的 [Object.Equals(expr, constant)](xref:System.Object.Equals(System.Object,System.Object)) メソッドの呼び出しによって判定されます。  
 
-次の例では、定数パターンを使用して、特定の日付が、週末か、週の開始日または最終日か、週の途中かを判断します。 つまり、現在の日付の [DateTime.DayOfWeek](xref:System.DateTime.DayOfWeek) プロパティを、@System.DayOfWeek 列挙のメンバーと照合します。 
+次の例では、定数パターンを使用して、特定の日付が、週末か、週の開始日または最終日か、週の途中かを判断します。 つまり、現在の日付の <xref:System.DateTime.DayOfWeek?displayProperty=nameWithType> プロパティを、<xref:System.DayOfWeek> 列挙のメンバーと照合します。 
 
 [!code-cs[switch#7](../../../../samples/snippets/csharp/language-reference/keywords/switch/const-pattern.cs#1)]
 
@@ -209,7 +190,7 @@ C# 7 以降では、case ステートメントは相互に排他的である必�
 この例で、`Shape`オブジェクトが `null` かどうかをテストしようとする `when` 句は実行されません。 `null` をテストするための正しい型パターンは `case null:` です。
 
 ## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
+ [!INCLUDE[CSharplangspec](../../../../includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
 
@@ -221,4 +202,3 @@ C# 7 以降では、case ステートメントは相互に排他的である必�
  
 
  
-
