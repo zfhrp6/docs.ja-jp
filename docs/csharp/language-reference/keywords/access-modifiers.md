@@ -51,9 +51,9 @@ ms.lasthandoff: 07/28/2017
   
  `protected`: コンテナーであるクラス、またはコンテナーであるクラスから派生した型にアクセスが制限されます。  
   
- `Internal`: 現在のアセンブリにアクセスが制限されます。  
+ `internal`: 現在のアセンブリにアクセスが制限されます。  
   
- [保護された内部](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md): 現在のアセンブリ、またはコンテナーであるクラスから派生した型にアクセスが制限されます。  
+ [`protected internal`](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md): 現在のアセンブリ、またはコンテナーであるクラスから派生した型にアクセスが制限されます。  
   
  `private`: コンテナーである型にアクセスが制限されます。  
   
