@@ -1,26 +1,29 @@
 ---
-title: "KnownAssemblyAttribute | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: KnownAssemblyAttribute
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b3bc7f31-95ff-46e1-8308-d206ec426f6e
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e2ffa42fabed3fe32f557cee9c4cb14a331d7350
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# KnownAssemblyAttribute
-このサンプルでは、<xref:System.Runtime.Serialization.DataContractResolver> クラスを使用して、シリアル化プロセスおよび逆シリアル化プロセスをカスタマイズする方法を示します。  このサンプルで示すのは、シリアル化および逆シリアル化時に既知の型を動的に追加する方法です。  
+# <a name="knownassemblyattribute"></a>KnownAssemblyAttribute
+このサンプルでは、<xref:System.Runtime.Serialization.DataContractResolver> クラスを使用して、シリアル化プロセスおよび逆シリアル化プロセスをカスタマイズする方法を示します。 このサンプルで示すのは、シリアル化および逆シリアル化時に既知の型を動的に追加する方法です。  
   
-## サンプルの詳細  
- このサンプルは、4 つのプロジェクトで構成されます。  そのうちの 1 つは、IIS でホストされ、次のサービス コントラクトを定義するサービスに対応します。  
+## <a name="sample-details"></a>サンプルの詳細  
+ このサンプルは、4 つのプロジェクトで構成されます。 そのうちの 1 つは、IIS でホストされ、次のサービス コントラクトを定義するサービスに対応します。  
   
 ```  
 // Definition of a service contract.  
@@ -43,7 +46,6 @@ public interface IDataContractCalculator
     [OperationContract]  
     List<ComplexNumber> CombineLists(List<ComplexNumber> list1, List<ComplexNumber> list2);  
 }  
-  
 ```  
   
  サービス コントラクトの実装を次の例に示します。  
@@ -90,10 +92,9 @@ public interface IDataContractCalculator
         return result;  
     }  
 }  
-  
 ```  
   
- もう 1 つのプロジェクトは、サーバーと通信し、サーバーが公開しているメソッドを呼び出すクライアントに対応します。  クライアントの定義を次の例に示します。  
+ もう 1 つのプロジェクトは、サーバーと通信し、サーバーが公開しているメソッドを呼び出すクライアントに対応します。 クライアントの定義を次の例に示します。  
   
 ```  
  // Client implementation code.  
@@ -194,12 +195,11 @@ public interface IDataContractCalculator
         Console.ReadLine();  
     }  
 }  
-  
 ```  
   
- サービス コントラクトの定義は、`KnownAssembly` 属性でマークされます。  この属性には型のライブラリの名前が含まれています。これらの型はすべて、実行時にサービスとクライアントの両方で既知となります。  
+ サービス コントラクトの定義は、`KnownAssembly` 属性でマークされます。 この属性には型のライブラリの名前が含まれています。これらの型はすべて、実行時にサービスとクライアントの両方で既知となります。  
   
- `KnownAssembly` 属性は、操作の各動作に対して定義される `DataContractResolver` を使用して `DataContractSerializer` を定義するために `IContractBehavior` を実装します。  `DataContractResolver` は、作成時にアセンブリを十分に調べて、型と名前のマッピングを含むディクショナリを作成します。このディクショナリは、さまざまな型をシリアル化および逆シリアル化するときに使用されます。  このように、`ResolveType` 型および `ResolveName` 型は、必要なデータをディクショナリから検索する必要があります。  
+ `KnownAssembly` 属性は、操作の各動作に対して定義される `IContractBehavior` を使用して `DataContractSerializer` を定義するために `DataContractResolver` を実装します。 `DataContractResolver` は、作成時にアセンブリを十分に調べて、型と名前のマッピングを含むディクショナリを作成します。このディクショナリは、さまざまな型をシリアル化および逆シリアル化するときに使用されます。 このように、`ResolveType` 型および `ResolveName` 型は、必要なデータをディクショナリから検索する必要があります。  
   
  このサンプルでの `DataContractResolver` の定義を次の例に示します。  
   
@@ -283,7 +283,6 @@ public class MyDataContractResolver : DataContractResolver
            }  
        }  
    }  
-  
 ```  
   
  このサンプルで使用する型のライブラリを次の例に示します。  
@@ -329,7 +328,6 @@ public class ComplexNumberWithMagnitude : ComplexNumber
         set { }  
     }  
 }  
-  
 ```  
   
  `ComplexNumber` は、`ComplexNumberWithMagnitude` 型を静的に知る必要はありません。この型は実行時に既知となるためです。  
@@ -354,34 +352,33 @@ Lists combined:
 2 + 2i  
 3 + 3i  
 4 + 4i  
-  
 ```  
   
-#### サンプルを設定、実行、およびビルドするには  
+#### <a name="to-set-up-run-and-build-the-sample"></a>サンプルを設定、実行、およびビルドするには  
   
-1.  ソリューションの **KnownAssemblyAttribute** を右クリックし、**\[プロパティ\]** をクリックします。  
+1.  ソリューションを右クリックして**KnownAssemblyAttribute**選択**プロパティ**です。  
   
-2.  **\[共通プロパティ\]** で、**\[スタートアップ プロジェクト\]** をクリックし、**\[マルチ スタートアップ プロジェクト\]** をクリックします。  
+2.  **共通プロパティ****スタートアップ プロジェクト**、順にクリック**マルチ スタートアップ プロジェクト**です。  
   
-3.  **サービス** プロジェクトと **クライアント** プロジェクトに **\[開始\]** アクションを追加します。  
+3.  追加、**開始**アクションを**サービス**と**クライアント**プロジェクト。  
   
-4.  **\[OK\]** をクリックし、**F5** キーを押してサンプルを実行します。  
+4.  をクリックして**OK**とキーを押します**f5 キーを押して**サンプルを実行します。  
   
 5.  アプリケーションが正しく動作しない場合は、次の手順に従って環境設定が適切であることを確認してください。  
   
-6.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](http://go.microsoft.com/fwlink/?LinkId=150774)」が実行済みであることを確認します。  
+6.  実行したことを確認してください、 [1 回限りのセットアップの手順の Windows Communication Foundation サンプル](http://go.microsoft.com/fwlink/?LinkId=150774)です。  
   
-7.  ソリューションをビルドするには、「[Windows Communication Foundation サンプルのビルド](http://go.microsoft.com/fwlink/?LinkId=150775)」の手順に従います。  
+7.  指示に従って、ソリューションをビルドする[Windows Communication Foundation サンプルのビルド](http://go.microsoft.com/fwlink/?LinkId=150775)です。  
   
-8.  単一のコンピュータの構成または複数のコンピュータの構成でサンプルを実行するには、「[Windows Communication Foundation サンプルの実行](http://go.microsoft.com/fwlink/?LinkId=150776)」の手順に従います。  
+8.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](http://go.microsoft.com/fwlink/?LinkId=150776)です。  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。  続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。  このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\KnownAssemblyAttribute`  
   
-## 参照
+## <a name="see-also"></a>関連項目

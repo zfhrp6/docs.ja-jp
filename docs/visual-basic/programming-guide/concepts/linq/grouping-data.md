@@ -1,49 +1,41 @@
 ---
-title: "データ (Visual Basic) をグループ化 |Microsoft ドキュメント"
+title: "データのグループ化 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 8f3a0871-6958-4aef-8f6f-493e189fd57d
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d89ae6d155ab901b03cf92a7508261fb147b97b7
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 5f2e5c4c4713f1056f1eb2243f27e5acf0494542
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="grouping-data-visual-basic"></a>データのグループ化 (Visual Basic)
-グループ化は、各グループ内の要素は、共通の属性を共有できるようにこのデータをグループに追加の操作を参照します。  
+グループ化とは、各グループの要素が共通の属性を持つようにデータをグループに分ける操作を指します。  
   
- 次の図は、文字のシーケンスをグループ化の結果を示します。 各グループのキーは、文字です。  
+ 次の図は、文字のシーケンスをグループ化した結果を示しています。 各グループのキーは文字です。  
   
  ![LINQ グループ化操作](../../../../csharp/programming-guide/concepts/linq/media/linq_group.png "LINQ_Group")  
   
- データ要素をグループ化する標準クエリ演算子メソッドは、次のように記載されています。  
+ 次のセクションでは、データ要素をグループ化する標準クエリ演算子メソッドの一覧を示します。  
   
 ## <a name="methods"></a>メソッド  
   
 |メソッド名|説明|Visual Basic のクエリ式の構文|説明|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
-|GroupBy|一般的な属性を共有する要素をグループ化します。 各グループがによって表される、<xref:System.Linq.IGrouping%602>オブジェクト</xref:System.Linq.IGrouping%602>。|`Group … By … Into …`|<xref:System.Linq.Enumerable.GroupBy%2A?displayProperty=fullName></xref:System.Linq.Enumerable.GroupBy%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.GroupBy%2A?displayProperty=fullName></xref:System.Linq.Queryable.GroupBy%2A?displayProperty=fullName>|  
-|ToLookup|要素を挿入、<xref:System.Linq.Lookup%602>されたキー セレクター関数に基づいて、(一対多辞書).</xref:System.Linq.Lookup%602>|該当なし。|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=fullName></xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=fullName>|  
+|GroupBy|共通の属性を共有する要素をグループ化します。 各グループは <xref:System.Linq.IGrouping%602> オブジェクトによって表されます。|`Group … By … Into …`|<xref:System.Linq.Enumerable.GroupBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.GroupBy%2A?displayProperty=nameWithType>|  
+|ToLookup|キー セレクター関数に基づいて、<xref:System.Linq.Lookup%602> (一対多の辞書) に要素を挿入します。|該当なし。|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>クエリ式の構文例  
- 次のコード例では、`Group By`句は偶数か奇数かどうかを基に、一覧内のグループの整数をします。  
+ 次のコード例では、`Group By` 句を使用して、偶数か奇数かによってリスト内の整数をグループ化します。  
   
 ```vb  
 Dim numbers As New System.Collections.Generic.List(Of Integer)(  
@@ -81,8 +73,8 @@ MsgBox(sb.ToString())
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Linq></xref:System.Linq>   
- [標準クエリ演算子の概要 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)   
- [Group By 句](../../../../visual-basic/language-reference/queries/group-by-clause.md)   
- [方法: 拡張機能 (LINQ) (Visual Basic) でファイルをグループ化](../../../../visual-basic/programming-guide/concepts/linq/how-to-group-files-by-extension-linq.md)   
- [方法: 多くのファイルのファイル グループ (LINQ) (Visual Basic) を使用して分割](../../../../visual-basic/programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md)
+ <xref:System.Linq>  
+ [標準クエリ演算子の概要 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ [Group By 句](../../../../visual-basic/language-reference/queries/group-by-clause.md)  
+ [方法: 拡張機能 (LINQ) (Visual Basic) でファイルをグループ化](../../../../visual-basic/programming-guide/concepts/linq/how-to-group-files-by-extension-linq.md)  
+ [方法: 複数のファイルのファイル グループ (LINQ) (Visual Basic) を使用して分割](../../../../visual-basic/programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md)

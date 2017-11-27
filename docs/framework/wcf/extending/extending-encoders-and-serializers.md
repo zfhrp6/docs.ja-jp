@@ -1,25 +1,28 @@
 ---
-title: "エンコーダーとシリアライザーの拡張 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "エンコーダーとシリアライザーの拡張"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 97aec970-d73c-469c-9b93-8b86be701c44
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7ebc113ac5695c82c2fbedb0655dd5bbe9223186
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# エンコーダーとシリアライザーの拡張
+# <a name="extending-encoders-and-serializers"></a>エンコーダーとシリアライザーの拡張
 このセクションの各トピックでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] シリアル化システムの拡張方法について説明します。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [データ コントラクト サロゲート](../../../../docs/framework/wcf/extending/data-contract-surrogates.md)  
  データ コントラクト サロゲート クラスを使用して、シリアル化、逆シリアル化、スキーマのエクスポート、およびスキーマのインポートをカスタマイズする方法について説明します。  
   

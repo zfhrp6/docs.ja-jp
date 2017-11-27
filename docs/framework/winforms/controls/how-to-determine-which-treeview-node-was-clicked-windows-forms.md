@@ -1,37 +1,41 @@
 ---
-title: "方法 : クリックされた TreeView ノード (Windows フォーム) を判別する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "TreeNode"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "例 [Windows フォーム], TreeView コントロール"
-  - "ツリー ノード (TreeView コントロールの), 判断 (ノードのクリックを)"
-  - "TreeView コントロール [Windows フォーム], 判断 (ノードのクリックを)"
+title: "方法 : クリックされた TreeView ノード (Windows フォーム) を判別する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+f1_keywords: TreeNode
+helpviewer_keywords:
+- examples [Windows Forms], TreeView control
+- tree nodes in TreeView control [Windows Forms], determining node clicked
+- TreeView control [Windows Forms], determining node clicked
 ms.assetid: 06a4a191-d918-42af-9f49-956c93eff261
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4c59b09f6df7fdc6a7bb237ff6eafcad99329256
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : クリックされた TreeView ノード (Windows フォーム) を判別する
-Windows フォームの <xref:System.Windows.Forms.TreeView> コントロールを使用する場合に共通する作業は、クリックされたノードを判別し、適切に応答することです。  
+# <a name="how-to-determine-which-treeview-node-was-clicked-windows-forms"></a>方法 : クリックされた TreeView ノード (Windows フォーム) を判別する
+Windows フォームを使用するときに<xref:System.Windows.Forms.TreeView>一般的なタスクは制御を決定するノードがクリックされたして適切に応答します。  
   
-### クリックされた TreeView ノードを判別するには  
+### <a name="to-determine-which-treeview-node-was-clicked"></a>クリックしてされた TreeView ノードを決定するには  
   
-1.  <xref:System.EventArgs> オブジェクトを使用して、クリックされたノード オブジェクトへの参照を返します。  
+1.  使用して、<xref:System.EventArgs>クリックされたノードのオブジェクトへの参照を取得するオブジェクト。  
   
-2.  イベントに関連するデータを格納している <xref:System.Windows.Forms.TreeViewEventArgs> クラスを調べて、どのノードがクリックされたかを確認します。  
+2.  チェックしてのどのノードがクリックされたのか、<xref:System.Windows.Forms.TreeViewEventArgs>クラスは、イベントに関連するデータが含まれています。  
   
     ```vb  
     Private Sub TreeView1_AfterSelect(ByVal sender As System.Object, _  
@@ -39,7 +43,6 @@ Windows フォームの <xref:System.Windows.Forms.TreeView> コントロール�
        ' Determine by checking the Node property of the TreeViewEventArgs.  
        MessageBox.Show(e.Node.Text)  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -49,7 +52,6 @@ Windows フォームの <xref:System.Windows.Forms.TreeView> コントロール�
        // Determine by checking the Text property.  
        MessageBox.Show(e.Node.Text);  
     }  
-  
     ```  
   
     ```cpp  
@@ -63,7 +65,7 @@ Windows フォームの <xref:System.Windows.Forms.TreeView> コントロール�
     ```  
   
     > [!NOTE]
-    >  <xref:System.Windows.Forms.Control.MouseDown> または<xref:System.Windows.Forms.Control.MouseUp> イベントの <xref:System.Windows.Forms.MouseEventArgs> を使用して、クリックされた <xref:System.Drawing.Point> の <xref:System.Drawing.Point.X%2A> 座標値と <xref:System.Drawing.Point.Y%2A> 座標値を取得することもできます。  その後で、<xref:System.Windows.Forms.TreeView> コントロールの <xref:System.Windows.Forms.TreeView.GetNodeAt%2A> メソッドを使用して、どのノードがクリックされたかを確認します。  
+    >  代わりに、使用することができます、<xref:System.Windows.Forms.MouseEventArgs>の<xref:System.Windows.Forms.Control.MouseDown>または<xref:System.Windows.Forms.Control.MouseUp>取得するイベント、<xref:System.Drawing.Point.X%2A>と<xref:System.Drawing.Point.Y%2A>座標の値、<xref:System.Drawing.Point>クリックが発生します。 次に、使用、<xref:System.Windows.Forms.TreeView>コントロールの<xref:System.Windows.Forms.TreeView.GetNodeAt%2A>クリックしてされたノードを調べます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [TreeView コントロール](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)

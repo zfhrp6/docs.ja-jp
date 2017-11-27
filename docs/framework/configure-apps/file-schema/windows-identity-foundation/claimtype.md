@@ -1,51 +1,60 @@
 ---
-title: "&lt;claimType&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;claimType&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d17b5831-9a2c-45c4-b0d1-68f48e72e861
-caps.latest.revision: 4
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: c4ee8833578b082f25c427b13d77072d1954197f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;claimType&gt;
-1 つのオプションまたは必須の請求の入力方向のセキュリティ トークンを指定します。  
+# <a name="ltclaimtypegt"></a>&lt;claimType&gt;
+受信セキュリティ トークンの 1 つの省略可能または必須のクレームを指定します。  
   
-## 構文  
+ \<system.identityModel >  
+\<identityConfiguration >  
+\<claimTypeRequired >  
+\<claimType >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <claimTypeRequired>  
-      <claimType type=URI optional=xs:boolean >  
-      </claimType>  
-    </claimTypeRequired>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <claimTypeRequired>  
+      <claimType type=URI optional=xs:boolean >  
+      </claimType>  
+    </claimTypeRequired>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|属性|Description|  
-|--------|-----------------|  
-|type|クレームの種類。  通常、URI。  必ず指定します。|  
-|optional|要求の種類が省略可能かどうかを指定するブール値。  省略可能です。|  
+|属性|説明|  
+|---------------|-----------------|  
+|型|クレームの種類。 通常は URI です。 必須です。|  
+|optional|要求の種類は省略可能かどうかを指定するブール値。 省略可能です。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
-|要素|Description|  
-|--------|-----------------|  
-|[\<claimTypeRequired\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtyperequired.md)|入力方向のセキュリティ トークンに必要なクレームのセットを指定します。|
+|要素|説明|  
+|-------------|-----------------|  
+|[\<claimTypeRequired >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtyperequired.md)|必要な受信セキュリティ トークンのクレームのセットを指定します。|

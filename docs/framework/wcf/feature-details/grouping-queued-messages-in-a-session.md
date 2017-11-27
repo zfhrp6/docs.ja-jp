@@ -1,65 +1,67 @@
 ---
-title: "セッションでキューに置かれたメッセージのグループ化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "キュー [WCF]。 メッセージをグループ化"
+title: "セッションでキューに置かれたメッセージのグループ化"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: queues [WCF]. grouping messages
 ms.assetid: 63b23b36-261f-4c37-99a2-cc323cd72a1a
-caps.latest.revision: 30
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 30
+caps.latest.revision: "30"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 0dbd9d28d56d8d473b9e92d977da409b74290224
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# セッションでキューに置かれたメッセージのグループ化
+# <a name="grouping-queued-messages-in-a-session"></a>セッションでキューに置かれたメッセージのグループ化
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、単一の受信側アプリケーションで処理できるよう、一連の関連メッセージをグループ化するセッションが用意されています。 セッションに含まれるメッセージは、同じトランザクションに含まれる必要があります。 すべてのメッセージが同じトランザクションに含まれるため、1 つのメッセージの処理が失敗すると、セッション全体がロールバックされます。 各セッションは、配信不能キューや有害キューに関してよく似た動作をします。 キューに置かれたバインディングに設定される有効期間 (TTL: Time To Live) プロパティがセッションに構成されている場合は、セッション全体に適用されます。 したがって、TTL が切れる前にセッション内の一部のメッセージが送信された場合は、セッション全体が配信不能キューに配置されます。 同様に、アプリケーション キューからアプリケーションにセッション内のメッセージを送信できなかった場合は、セッション全体が有害キューに配置されます (有害キューを使用できる場合)。  
   
 ## <a name="message-grouping-example"></a>メッセージのグループ化の例  
- メッセージのグループ化が役立つ&1; つの例は、注文処理アプリケーションを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスとして実装する場合です。 たとえば、クライアントがこのアプリケーションに多数の項目を含む注文を送信するとします。 このクライアントは、項目ごとにサービスを呼び出すため、個別のメッセージが送信されることになります。 このため、最初の項目はサーバー A で受信され、2 番目の項目はサーバー B で受信される可能性があります。 項目が追加されるたびに、この項目を処理するサーバーは適切な注文を見つけて項目を追加する必要があるため、効率が非常に悪くなります。 すべての要求を&1; 台のサーバーのみで処理する場合でも、現在処理中のすべての注文をこのサーバーによって常に把握し、新しい項目がどの注文に属するものなのかを判別する必要があるため、同様の非効率が生じます。 単一の注文に属するすべての要求をグループ化すると、このようなアプリケーションの実装は大幅に簡素化されます。 1 つの注文に属するすべての項目が&1; セッションとしてクライアント アプリケーションから送信されるため、サービスは注文を処理するときにセッション全体を&1; 回で処理できます。 \  
+ メッセージのグループ化が役立つ 1 つの例は、注文処理アプリケーションを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスとして実装する場合です。 たとえば、クライアントがこのアプリケーションに多数の項目を含む注文を送信するとします。 このクライアントは、項目ごとにサービスを呼び出すため、個別のメッセージが送信されることになります。 このため、最初の項目はサーバー A で受信され、2 番目の項目はサーバー B で受信される可能性があります。 項目が追加されるたびに、この項目を処理するサーバーは適切な注文を見つけて項目を追加する必要があるため、効率が非常に悪くなります。 すべての要求を 1 台のサーバーのみで処理する場合でも、現在処理中のすべての注文をこのサーバーによって常に把握し、新しい項目がどの注文に属するものなのかを判別する必要があるため、同様の非効率が生じます。 単一の注文に属するすべての要求をグループ化すると、このようなアプリケーションの実装は大幅に簡素化されます。 1 つの注文に属するすべての項目が 1 セッションとしてクライアント アプリケーションから送信されるため、サービスは注文を処理するときにセッション全体を 1 回で処理できます。 \  
   
 ## <a name="procedures"></a>手順  
   
 #### <a name="to-set-up-a-service-contract-to-use-sessions"></a>セッションを使用するようにサービス コントラクトを設定するには  
   
-1.  セッションを必要とするサービス コントラクトを定義します。 そのためには、 <xref:System.ServiceModel.OperationContractAttribute>属性し、値を指定します。  
+1.  セッションを必要とするサービス コントラクトを定義します。 これを実行するには、<xref:System.ServiceModel.OperationContractAttribute> 属性に次の値を指定します。  
   
     ```  
     SessionMode=SessionMode.Required  
     ```  
   
-2.  これらのメソッドは何も返さないため、コントラクト内の操作を一方向としてマークします。 これは、 <xref:System.ServiceModel.OperationContractAttribute>属性し、値を指定します。  
+2.  これらのメソッドは何も返さないため、コントラクト内の操作を一方向としてマークします。 これを実行するには、<xref:System.ServiceModel.OperationContractAttribute> 属性に次の値を指定します。  
   
     ```  
     [OperationContract(IsOneWay = true)]  
     ```  
   
-3.  サービス コントラクトを実装し、`InstanceContextMode` に `PerSession` を指定します。 これにより、セッションごとに&1; 回だけサービスがインスタンス化されます。  
+3.  サービス コントラクトを実装し、`InstanceContextMode` に `PerSession` を指定します。 これにより、セッションごとに 1 回だけサービスがインスタンス化されます。  
   
     ```  
     [ServiceBehavior(InstanceContextMode=InstanceContextMode.PerSession)]  
     ```  
   
-4.  各サービス操作には、トランザクションが必要になります。 これを指定する、 <xref:System.ServiceModel.OperationBehaviorAttribute>属性です。 トランザクションを完了する操作では、`TransactionAutoComplete` を `true` に設定する必要があります。  
+4.  各サービス操作には、トランザクションが必要になります。 これを指定するには <xref:System.ServiceModel.OperationBehaviorAttribute> 属性を使用します。 トランザクションを完了する操作では、`TransactionAutoComplete` を `true` に設定する必要があります。  
   
     ```  
     [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]   
     ```  
   
-5.  システム指定の `NetProfileMsmqBinding` バインディングを使用するエンドポイントを構成します。  
+5.  システム指定の `NetMsmqBinding` バインディングを使用するエンドポイントを構成します。  
   
-6.  トランザクション キューを使用して作成<xref:System.Messaging>します。 代わりに、MSMQ (メッセージ キュー) または MMC を使用してキューを作成することもできます。 この場合、トランザクション キューを作成します。  
+6.  <xref:System.Messaging> を使用してトランザクション キューを作成します。 代わりに、MSMQ (メッセージ キュー) または MMC を使用してキューを作成することもできます。 この場合、トランザクション キューを作成します。  
   
-7.  使用して、サービスのサービス ホストを作成<xref:System.ServiceModel.ServiceHost>します。  
+7.  <xref:System.ServiceModel.ServiceHost> を使用して、サービスのサービス ホストを作成します。  
   
 8.  サービス ホストを開いてサービスを使用できるようにします。  
   
@@ -93,5 +95,5 @@ caps.handback.revision: 30
   
   
 ## <a name="see-also"></a>関連項目  
- [セッションとキュー](../../../../docs/framework/wcf/samples/sessions-and-queues.md)   
+ [セッションおよびキュー](../../../../docs/framework/wcf/samples/sessions-and-queues.md)  
  [キューの概要](../../../../docs/framework/wcf/feature-details/queues-overview.md)

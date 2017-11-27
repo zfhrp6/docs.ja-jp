@@ -1,64 +1,65 @@
 ---
-title: "BackgroundWorker コンポーネント | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "非同期パターン"
-  - "バックグラウンド操作"
-  - "バックグラウンド タスク"
-  - "BackgroundWorker コンポーネント"
-  - "コンポーネント [Windows フォーム], 非同期"
-  - "フォーム, バックグラウンド操作"
-  - "フォーム, マルチスレッド"
-  - "スレッド処理 [Windows フォーム], バックグラウンド操作"
+title: "BackgroundWorker コンポーネント"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- BackgroundWorker component
+- background tasks
+- Asynchronous Pattern
+- forms [Windows Forms], multithreading
+- components [Windows Forms], asynchronous
+- forms [Windows Forms], background operations
+- threading [Windows Forms], background operations
+- background operations
 ms.assetid: bef7b0ab-ce57-475a-a2d6-fb8a702a9417
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: cbcbc786c19ad1af74114915b0fd0689d466fcbe
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# BackgroundWorker コンポーネント
-`BackgroundWorker` コンポーネントを使用すると、フォームまたはコントロールで非同期の操作を実行できます。  
+# <a name="backgroundworker-component"></a>BackgroundWorker コンポーネント
+`BackgroundWorker`コンポーネントにより、フォームまたはコントロールを非同期的に操作を実行します。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [BackgroundWorker コンポーネントの概要](../../../../docs/framework/winforms/controls/backgroundworker-component-overview.md)  
- `BackgroundWorker` コンポーネントについて説明します。このコンポーネントを使用すると、時間のかかる操作を、アプリケーションのメイン UI スレッドとは別のスレッドで非同期的に \("バックグラウンドで"\) 実行できます。  
+ について説明します、`BackgroundWorker`コンポーネントで、アプリケーションのメイン UI スレッドから別のスレッドで非同期的に ("バック グラウンドで")、時間のかかる操作を実行する機能を提供します。  
   
- [チュートリアル : 操作をバックグラウンドで実行する](../../../../docs/framework/winforms/controls/walkthrough-running-an-operation-in-the-background.md)  
- デザイナーで `BackgroundWorker` コンポーネントを使用して、時間のかかる操作を別スレッドで実行する方法を説明します。  
+ [チュートリアル: 操作をバックグラウンドで実行する](../../../../docs/framework/winforms/controls/walkthrough-running-an-operation-in-the-background.md)  
+ 使用する方法を示します、`BackgroundWorker`コンポーネント デザイナーで、別のスレッドで時間のかかる操作を実行します。  
   
- [方法 : バックグラウンドで操作を実行する](../../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
- `BackgroundWorker` コンポーネントを使用して、時間のかかる操作を別スレッドで実行する方法を説明します。  
+ [方法: バックグラウンドで操作を実行する](../../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
+ 使用する方法を示します、`BackgroundWorker`コンポーネントを別のスレッドで時間のかかる操作を実行します。  
   
- [チュートリアル : バックグラウンド操作を使用するフォームの実装](../../../../docs/framework/winforms/controls/walkthrough-implementing-a-form-that-uses-a-background-operation.md)  
- デザイナーを使用して、数値演算処理を非同期で実行するアプリケーションを作成します。  
+ [チュートリアル: バックグラウンド操作を使用するフォームの実装](../../../../docs/framework/winforms/controls/walkthrough-implementing-a-form-that-uses-a-background-operation.md)  
+ 算術計算を非同期には、デザイナーを使用してアプリケーションを作成します。  
   
- [方法 : バックグラウンド操作を使用するフォームを実装する](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)  
- 数値演算処理を非同期で実行するアプリケーションを作成します。  
+ [方法: バックグラウンド操作を使用するフォームを実装する](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)  
+ 算術計算を非同期的に実行するアプリケーションを作成します。  
   
- [方法 : バックグラウンドでファイルをダウンロードする](../../../../docs/framework/winforms/controls/how-to-download-a-file-in-the-background.md)  
- `BackgroundWorker` コンポーネントを使用して、別スレッドでファイルをダウンロードする方法を説明します。  
+ [方法: バックグラウンドでファイルをダウンロードする](../../../../docs/framework/winforms/controls/how-to-download-a-file-in-the-background.md)  
+ 使用する方法を示します、`BackgroundWorker`を別のスレッド上のファイルをダウンロードするコンポーネントです。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.ComponentModel.BackgroundWorker>  
  このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
   
  <xref:System.ComponentModel.RunWorkerCompletedEventArgs>  
- <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> イベントのデータを保持する型について説明します。  
+ データを保持する型を記述、<xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted>イベント。  
   
  <xref:System.ComponentModel.ProgressChangedEventArgs>  
- <xref:System.ComponentModel.BackgroundWorker.ProgressChanged> イベントのデータを保持する型について説明します。  
+ データを保持する型を記述、<xref:System.ComponentModel.BackgroundWorker.ProgressChanged>イベント。  
   
-## 関連項目  
- [Event\-based Asynchronous Pattern Overview](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)  
- 非同期パターンを使用することで、マルチスレッド デザイン固有の多くの複雑な問題を気にせずに、マルチスレッド アプリケーションの利点を活用する方法について説明します。
+## <a name="related-sections"></a>関連項目  
+ [イベントベースの非同期パターンの概要](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)  
+ 方法の非同期パターンによって利用可能な利点を活用マルチ スレッド アプリケーションの多くのマルチ スレッド デザイン固有の複雑な問題について説明します。

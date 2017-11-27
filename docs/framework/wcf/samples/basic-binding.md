@@ -1,25 +1,28 @@
 ---
-title: "基本的なバインディング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "基本的なバインディング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 2a0e8ac4-23e7-45ef-98dc-40691aac530a
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 0d971cb50ad52b9a9fd913d4c10714eee1eed444
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 基本的なバインディング
+# <a name="basic-binding"></a>基本的なバインディング
 このセクションには、エンドポイント要素のバインディング属性の使用方法を示す基本的なサンプルが含まれています。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [メッセージ セキュリティ サンプル](../../../../docs/framework/wcf/samples/message-security-sample.md)  
  `basicHttpBinding` およびメッセージ セキュリティを使用するアプリケーションを実装する方法を示します。  
   

@@ -1,126 +1,128 @@
 ---
-title: "Defining Custom Types for Use with .NET Framework XAML Services | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "defining custom types [XAML Services]"
+title: ".NET Framework XAML サービスで使用するためのカスタム型の定義"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: defining custom types [XAML Services]
 ms.assetid: c2667cbd-2f46-4a7f-9dfc-53696e35e8e4
-caps.latest.revision: 11
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 0b35c35be7351fdf45157153ce6ca55fc763c3ed
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Defining Custom Types for Use with .NET Framework XAML Services
-ビジネス オブジェクトに相当するカスタム型を定義する場合や、特定のフレームワークに依存しない型を定義する場合にも、XAML のベスト プラクティスに従って確実に対応できます。  このベスト プラクティスに従った場合、.NET Framework XAML サービスとその XAML リーダーおよび XAML ライターでは、型の XAML 特性を検出し、XAML 型システムに基づいて XAML ノード ストリームで適切に表現できます。  ここでは、型定義のベスト プラクティスと、型またはメンバーの CLR 属性の設定について説明します。  
+# <a name="defining-custom-types-for-use-with-net-framework-xaml-services"></a>.NET Framework XAML サービスで使用するためのカスタム型の定義
+ビジネス オブジェクトは、カスタム型の定義または特定のフレームワークに依存関係がない型は、するときに行うことができる XAML の運用方法があります。 これらのプラクティスに従うと場合、.NET Framework XAML サービスおよびその XAML リーダーと XAML ライターを型の XAML の特性を検出し、XAML 型システムを使用して XAML ノード ストリームで適切な形式。 このトピックでは、型定義、メンバーの定義、および CLR 型またはメンバーの属性の設定のベスト プラクティスについて説明します。  
   
-## XAML のコンストラクター パターンと型定義  
- XAML でカスタム クラスをオブジェクト要素としてインスタンス化できるようにするには、次の要件が満たされている必要があります。  
+## <a name="constructor-patterns-and-type-definitions-for-xaml"></a>コンス トラクター パターンと XAML の種類の定義  
+ Xaml オブジェクト要素としてインスタンス化されるカスタム クラスは、次の要件を満たす必要があります。  
   
--   カスタム クラスがパブリックであり、既定の \(パラメーターなしの\) パブリック コンストラクターが公開されている必要がある。  \(構造体に関する説明は次のセクションを参照してください\)。  
+-   カスタムのクラスは、パブリックである必要があり、既定 (パラメーターなし) のコンス トラクターを公開する必要があります。 (次の構造に関する注意事項のセクションを参照してください)。  
   
--   カスタム クラスが入れ子になっていない。  完全パス名に "ドット" を追加すると、クラスと名前空間の区分があいまいになり、添付プロパティなど、他の XAML 機能に干渉します。  
+-   カスタム クラスでは、入れ子になったクラスをすることはできません。 余分な氏名パスで「ドット」名前空間のクラス除算、あいまいになりアタッチされるプロパティなどの他の XAML 機能に干渉します。  
   
- オブジェクトをオブジェクト要素としてインスタンス化できる場合、作成したオブジェクトで、そのオブジェクトを基になる型として受け取る任意のプロパティのプロパティ要素形式を読み込むことができます。  
+ オブジェクトは、オブジェクト要素としてインスタンス化することができます、作成したオブジェクトは、その基になる型としてオブジェクトを使用する任意のプロパティのプロパティ要素の形式を入力できます。  
   
- 値コンバーターを有効にした場合、これらの条件を満たしていない型のオブジェクト値を指定できます。  詳細については、「[Type Converters and Markup Extensions for XAML](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)」を参照してください。  
+ 引き続き、値コンバーターを有効にした場合、オブジェクトの値をこれらの条件を満たしていない種類の指定できます。 詳細については、次を参照してください。[型コンバーターと XAML のマークアップ拡張機能](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)します。  
   
-### 構造体  
- 構造体は常に CLR 定義に基づいて XAML で構築できます。  これは、CLR コンパイラによって構造体の既定のコンストラクターが暗黙的に作成されることに起因します。  このコンストラクターは、すべてのプロパティ値を既定値に初期化します。  
+### <a name="structures"></a>構造体  
+ CLR の定義によって、XAML で構築する構造体は、常にできます。 CLR コンパイラが暗黙的に構造体の既定のコンス トラクターを作成するためです。 このコンス トラクターでは、すべてのプロパティ値が既定値に初期化します。  
   
- 構造体の既定のコンストラクターの動作が望ましくない場合もあります。  これは、構造体が値の入力を目的として、概念上は共用体として機能することに起因すると考えられます。  共用体では、格納されている値は同時には解釈されず、結果として、そのプロパティを設定できなくなる可能性があります。  WPF の語彙では、このような構造体の例に該当するのは <xref:System.Windows.GridLength> です。  このような構造体には、型コンバーターを実装して、構造体の値の異なる解釈やモードを設定する文字列の規則に基づき、値を属性形式で表示できるようにする必要があります。  この構造体では、コード構築が既定以外のコンストラクターによって行われる場合にも、同じ動作が見られると考えられます。  
+ 場合によっては、構造体の既定の構築の動作は望ましくありません。 構造体は値と関数を共用体として概念的に入力するためのものがあります。 共用体型として値を含んで、排他的な解釈し、したがって、そのプロパティは設定可能なします。 WPF ボキャブラリで、このような構造の例は<xref:System.Windows.GridLength>します。 このような構造は、値は、さまざまな解釈や構造体の値のモードを作成する文字列の規則を使用して、属性の形式で表すことができるように、型コンバーターを実装する必要があります。 構造体には、既定以外のコンス トラクターを使用してコード構築の同様の動作も公開する必要があります。  
   
-### インターフェイス  
- インターフェイスは、メンバーの基になる型として使用できます。  XAML 型システムでは、割り当て可能なリストがチェックされ、値として提供されたオブジェクトをインターフェイスに割り当てできると想定しています。  関連する割り当て可能な型で XAML の作成要件がサポートされている限り、インターフェイスを XAML 型として表現する方法を考慮する必要はありません。  
+### <a name="interfaces"></a>インターフェイス  
+ インターフェイスは、基になる型のメンバーとして使用できます。 XAML 型システムでは、割り当て可能な一覧を確認し、値として指定されているオブジェクトをインターフェイスに割り当てできることが必要です。 方法インターフェイスの存在が必要、XAML の型として関連割り当て可能な型は、XAML の作成要件をサポートしている限りの概念はありません。  
   
-### ファクトリ メソッド  
- ファクトリ メソッドは XAML 2009 の機能であり、  オブジェクトには既定のコンストラクターを設定する必要があるという XAML の原則に修正を加えます。  ここでは、ファクトリ メソッドの詳細については説明しません。  「[x:FactoryMethod Directive](../../../docs/framework/xaml-services/x-factorymethod-directive.md)」を参照してください。  
+### <a name="factory-methods"></a>ファクトリ メソッド  
+ ファクトリ メソッドは、XAML 2009 の機能です。 これらは、オブジェクトが必要となる既定のコンス トラクター XAML 原則を変更します。 ファクトリ メソッドは、このトピックに記載されていません。 参照してください[X:factorymethod ディレクティブ](../../../docs/framework/xaml-services/x-factorymethod-directive.md)です。  
   
-## 列挙型  
- 列挙型には、XAML のネイティブ型変換の動作が設定されています。  XAML で指定した列挙定数の名前は、基になる列挙型に対して解決され、列挙値が XAML オブジェクト ライターに返されます。  
+## <a name="enumerations"></a>列挙  
+ 列挙体では、XAML のネイティブな型変換動作があります。 XAML で指定された列挙定数の名前は、基になる列挙型に対して解決され、XAML オブジェクト ライターに、列挙値を返します。  
   
- XAML では、<xref:System.FlagsAttribute> を適用した列挙型のフラグ スタイルの使用方法をサポートしています。  詳細については、「[XAML 構文の詳細](../../../ocs/framework/wpf/advanced/xaml-syntax-in-detail.md)」を参照してください   \(「[XAML 構文の詳細](../../../ocs/framework/wpf/advanced/xaml-syntax-in-detail.md)」は WPF のユーザー向けに記述されていますが、このトピックの情報のほとんどは XAML に関連しており、特定の実装フレームワークには依存していません\)。  
+ XAML の列挙にスタイル フラグの使用状況をサポートしている<xref:System.FlagsAttribute>適用します。 詳細については、次を参照してください。 [XAML 構文の詳細](../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)です。 ([XAML 構文の詳細](../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)WPF ユーザーを対象に書き込まれますが、そのトピックの情報の大部分は、特定の実装のフレームワークに固有ではない xaml 関連します)。  
   
-## メンバー定義  
- 型では、XAML の使用方法のメンバーを定義できます。  特定の型が XAML 対応でない場合でも、型で XAML 対応のメンバーを定義できます。  これは、CLR の継承によって可能になります。  メンバーを継承する一部の型で型としての XAML の使用方法をサポートし、基になる型の XAML の使用方法をそのメンバーがサポートしているか、そのメンバーでネイティブな XAML 構文を使用できる限り、そのメンバーは XAML 対応のメンバーです。  
+## <a name="member-definitions"></a>メンバーの定義  
+ 型は、XAML の使用方法のメンバーを定義できます。 その特定の種類が XAML で使用できない場合でも、XAML の使用可能なメンバーを定義する型のことができます。 これは、CLR の継承によって実現します。 メンバーを継承するいくつかの型の型としての XAML の使用方法をサポートしていると、メンバーの基になる型の XAML の使用方法をサポートまたはネイティブ XAML 構文の使用可能な限り、そのメンバーが XAML で使用します。  
   
-### プロパティ  
- 一般的な CLR `get` アクセサー パターンと `set` アクセサー パターン、および言語に応じたキーワードを使用してプロパティをパブリックな CLR プロパティとして定義する場合、XAML 型システムでは、<xref:System.Xaml.XamlMember.IsReadPublic%2A> や <xref:System.Xaml.XamlMember.IsWritePublic%2A> など、<xref:System.Xaml.XamlMember> プロパティに提供された適切な情報により、プロパティをメンバーとして報告できます。  
+### <a name="properties"></a>プロパティ  
+ 一般的な CLR を使用して、パブリックの CLR プロパティとしてプロパティを定義するかどうかは`get`と`set`アクセサー パターンと言語に応じた keywording、XAML 型システムが指定されたプロパティを適切な情報を持つメンバーとしてをレポートすることができます<xref:System.Xaml.XamlMember>プロパティなど<xref:System.Xaml.XamlMember.IsReadPublic%2A>と<xref:System.Xaml.XamlMember.IsWritePublic%2A>です。  
   
- 特定のプロパティでは、<xref:System.ComponentModel.TypeConverterAttribute> を適用することで、テキスト構文を有効にできます。  詳細については、「[Type Converters and Markup Extensions for XAML](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)」を参照してください。  
+ 特定のプロパティは、適用することで、テキスト構文を有効にできます<xref:System.ComponentModel.TypeConverterAttribute>です。 詳細については、次を参照してください。[型コンバーターと XAML のマークアップ拡張機能](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)します。  
   
- テキスト構文やネイティブな XAML 変換が存在せず、マークアップ拡張機能の使用などの間接指定も存在しない場合、プロパティの型 \(XAML 型システムでは <xref:System.Xaml.XamlMember.TargetType%2A>\) でターゲット型を CLR 型として扱うことで、XAML オブジェクト ライターにインスタンスを返すことができる必要があります。  
+ テキストの構文またはネイティブの XAML の変換がない場合、さらに、間接参照、マークアップ拡張機能の使用状況など、プロパティの型がない場合 (<xref:System.Xaml.XamlMember.TargetType%2A> xaml 型システム) を t を扱うことにより、XAML オブジェクト ライターにインスタンスを返すことがありますCLR 型とターゲット型です。  
   
- XAML 2009 を使用する場合、前述の項目が考慮されていない状況でも、型定義よりも使用方法に問題があるときは、値を提供する目的で [x:Reference Markup Extension](../../../docs/framework/xaml-services/x-reference-markup-extension.md) を使用できます。  
+ XAML 2009 を使用して場合[X:reference マークアップ拡張機能](../../../docs/framework/xaml-services/x-reference-markup-extension.md)値を指定する、前の考慮事項が満たされない場合も使用できます。 ただし、型定義の問題よりも使用状況に関する問題の詳細はします。  
   
-### イベント  
- パブリックな CLR イベントとしてイベントを定義する場合、XAML 型システムでは、<xref:System.Xaml.XamlMember.IsEvent%2A> を `true` に設定して、イベントをメンバーとして報告できます。  イベント ハンドラーの記述は .NET Framework XAML サービスの機能の範囲外であり、特定のフレームワークや実装で行われます。  
+### <a name="events"></a>イベント  
+ XAML 型システムできますを持つメンバーとして、イベントを報告する場合は、パブリックの CLR イベントとイベントを定義する<xref:System.Xaml.XamlMember.IsEvent%2A>として`true`です。 .NET Framework XAML サービス機能のスコープ内にないため、イベント ハンドラーを配線これは、特定のフレームワークと実装に任されてです。  
   
-### メソッド  
- メソッドのインライン コードは、既定の XAML 機能ではありません。  ほとんどの場合、XAML からメンバーを直接参照することはなく、XAML でのメソッドの役割は特定の XAML パターンに対するサポートを提供することに限定されます。  [x:FactoryMethod Directive](../../../docs/framework/xaml-services/x-factorymethod-directive.md) は例外です。  
+### <a name="methods"></a>メソッド  
+ メソッドのインライン コードは、既定の XAML 機能ではありません。 ほとんどの場合で直接参照しないメソッドのメンバー、XAML からして、XAML でのメソッドの役割は、特定の XAML パターンのサポートを提供するだけです。 [X:factorymethod ディレクティブ](../../../docs/framework/xaml-services/x-factorymethod-directive.md)は例外です。  
   
-### フィールド  
- CLR の設計ガイドラインでは、非静的フィールドは推奨されていません。  静的フィールドでは、[x:Static Markup Extension](../../../docs/framework/xaml-services/x-static-markup-extension.md) を介した場合にのみ、静的フィールド値にアクセスできます。この場合、[x:Static](../../../docs/framework/xaml-services/x-static-markup-extension.md) の使用に対してフィールドを公開するために、CLR の定義で特別な対応を行う必要はありません。  
+### <a name="fields"></a>フィールド  
+ CLR のデザイン ガイドラインは、非静的フィールドを防止します。 静的フィールドは、静的フィールドの値にアクセスできますを通してのみ[X:static マークアップ拡張機能](../../../docs/framework/xaml-services/x-static-markup-extension.md); ここでは、何もありません用のフィールドを公開する CLR の定義の特別な[X:static](../../../docs/framework/xaml-services/x-static-markup-extension.md)の使用法。  
   
-## アタッチ可能なメンバー  
- アタッチ可能なメンバーは、定義元の型のアクセサー メソッド パターンを介して XAML に公開されます。  定義元の型自体は、XAML 対応のオブジェクトである必要はありません。  実際には、アタッチ可能なメンバーを所有し、関連の動作を実装するが、UI 表現などのその他の機能を提供しないサービス クラスを宣言するというのが一般的なパターンです。  以降では、プレースホルダー *PropertyName* は、アタッチ可能なメンバーの名前を表します。  この名前は、[XamlName の文法](../../../docs/framework/xaml-services/xamlname-grammar.md) で有効である必要があります。  
+## <a name="attachable-members"></a>アタッチ可能なメンバー  
+ アタッチ可能なメンバーは、XAML を定義する型のアクセサー メソッド パターンを通じて公開されます。 定義の型自体は、オブジェクトとして、XAML で使用する必要はありません。 実際には、一般的なパターンでは、ロールがあるサービス クラスを宣言する添付可能なメンバーを所有して、関連する動作を実装するだけ UI 表現などの他の関数は使用されません。 次のセクションでは、プレース ホルダーの*PropertyName*アタッチ可能なメンバーの名前を表します。 その名前を無効にする必要があります、 [XamlName の文法](../../../docs/framework/xaml-services/xamlname-grammar.md)です。  
   
- 型の各パターンおよびその他のメソッドの間では、名前の衝突に注意してください。  いずれかのパターンに一致するメンバーが存在する場合、開発者の意図に関係なく、XAML プロセッサによってアタッチ可能なメンバーの使用経路として解釈される場合があります。  
+ これらのパターンと型の他のメソッド間で名前の衝突の注意する必要があります。 いずれのパターンに一致するメンバーが存在する場合、として解釈できるアタッチ可能なメンバーの使用の経路、XAML プロセッサによって場合でもに設定することはありませんでした。  
   
-#### GetPropertyName アクセサー  
- `Get` *PropertyName* アクセサーのシグネチャの形式は次のとおりです。  
+#### <a name="the-getpropertyname-accessor"></a>GetPropertyName アクセサー  
+ `Get`*PropertyName* アクセサーのシグネチャは次の形式にする必要があります。  
   
  `public static object Get` *PropertyName* `(object`  `target` `)`  
   
--   `target` オブジェクトは、実装内で具体的な型として指定できます。  これにより、アタッチ可能なメンバーの使用方法にスコープを設定できます。意図したスコープ外の使用方法では無効なキャスト例外がスローされ、XAML 解析エラーとして通知されます。  パラメーター名 `target` は必須ではありませんが、ほとんどの実装で慣例により、`target` という名前が付けられます。  
+-   `target` オブジェクトは、実装のより具体的な型として指定することができます。 これを使用するには、アタッチ可能なメンバーの使用状況のスコープを指定する意図したスコープ外の使用方法、XAML の解析エラーによって、表示された無効なキャスト例外がスローされます。 パラメーター名`target`、必須ではありませんが、名前は`target`ほとんどの実装では規約によってです。  
   
--   戻り値は、実装内で具体的な型として指定できます。  
+-   戻り値は、実装のより具体的な型として指定することができます。  
   
- アタッチ可能なメンバーの属性の使用方法で <xref:System.ComponentModel.TypeConverter> 対応のテキスト構文をサポートするには、<xref:System.ComponentModel.TypeConverterAttribute> を `Get`*PropertyName* アクセサーに適用します。  `set` ではなく `get` に適用する方法では、複雑になる場合があります。ただし、この規則では、シリアル化に対応する読み取り専用のアタッチ可能なメンバーをサポートできるので、デザイナーのシナリオによっては役立つ場合があります。  
+ サポートするために、<xref:System.ComponentModel.TypeConverter>添付可能なメンバーの属性の使用方法を有効になっているテキストの構文を適用<xref:System.ComponentModel.TypeConverterAttribute>を`Get` *PropertyName*アクセサー。 適用する、`get`の代わりに、`set`かもしれませんが直感; ただし、この規則は、概念をサポートできます読み取り専用添付可能なメンバーのシリアル化可能なこれはデザイナーのシナリオで役立ちます。  
   
-#### SetPropertyName アクセサー  
- Set*PropertyName* アクセサーのシグネチャの形式は次のとおりです。  
+#### <a name="the-setpropertyname-accessor"></a>SetPropertyName アクセサー  
+ セットの署名*PropertyName*アクセサーを指定する必要があります。  
   
  `public static void Set` *PropertyName* `(object`  `target` `, object`  `value` `)`  
   
--   `target` オブジェクトは、前のセクションで説明した同じロジックと結果に基づいて、実際の実装ではさらに詳細な型として指定できます。  
+-   `target`オブジェクトは、前のセクションで説明したのと同じロジックの結果、実装でより具体的な種類として指定できます。  
   
--   `value` オブジェクトは、実装の中で具体的な型として指定できます。  
+-   `value` オブジェクトは、実装のより具体的な型として指定することができます。  
   
- このメソッドの値は、XAML の使用方法から派生した、通常は属性形式の入力であることに注意してください。  属性形式では、テキスト構文に対する値コンバーターのサポートが必要であり、`Get`*PropertyName* アクセサーに属性を追加します。  
+ このメソッドの値は、XAML の使用方法、属性の形式で通常からの入力であることに注意してください。 属性の形式から必要があります、テキスト構文の値コンバーターのサポートと属性を`Get` *PropertyName*アクセサー。  
   
-### アタッチ可能なメンバー ストア  
- アクセサー メソッドは、一般に、アタッチ可能なメンバー値をオブジェクト グラフに配置したり、オブジェクト グラフから値を取得して適切にシリアル化したりする手段としては、十分ではありません。  この機能を提供するには、前のアクセサー シグネチャの `target` オブジェクトが値を格納できる必要があります。  ストレージ機構は、アタッチ可能なメンバーの原則 \(アタッチ可能なメンバーがメンバー リストに含まれていないターゲットに、メンバーをアタッチできる\) に準拠している必要があります。  .NET Framework XAML サービスでは、API の <xref:System.Xaml.IAttachedPropertyStore> と <xref:System.Xaml.AttachablePropertyServices> を使用して、アタッチ可能なメンバー ストアの実装手法を利用できます。  <xref:System.Xaml.IAttachedPropertyStore> は、XAML ライターがストアの実装を検出するために使用します。これは、アクセサーの `target` に相当する型で実装する必要があります。  静的 <xref:System.Xaml.AttachablePropertyServices> API は、アクセサーの本体で使用され、アタッチ可能なメンバーをその <xref:System.Xaml.AttachableMemberIdentifier> で参照します。  
+### <a name="attachable-member-stores"></a>アタッチ可能メンバー ストア  
+ アクセサー メソッドは通常ありませんアタッチ可能なメンバーの値をオブジェクト グラフに配置するか、オブジェクト グラフの外部に値を取得し、シリアル化して、正しくする手段を提供するのに十分なです。 この機能を提供する、`target`上のアクセサーのシグネチャ内のオブジェクトの値を格納できる必要があります。 記憶域メカニズムは、メンバーは、アタッチ可能なメンバーがないメンバー リスト内のターゲットにアタッチ可能なアタッチ可能なメンバーの原則と一致する必要があります。 .NET framework XAML サービスは、実装手法で、アタッチ可能なメンバーを格納、Api を介して<xref:System.Xaml.IAttachedPropertyStore>と<xref:System.Xaml.AttachablePropertyServices>です。 <xref:System.Xaml.IAttachedPropertyStore>ストアの実装を検出する XAML ライターによって使用され、ある型に実装する必要があります、`target`アクセサー。 静的な<xref:System.Xaml.AttachablePropertyServices>Api は、アクセサーの本文内で使用され、アタッチ可能なメンバーを参照してください、<xref:System.Xaml.AttachableMemberIdentifier>です。  
   
-## XAML 関連の CLR 属性  
- XAML 型システム情報を .NET Framework XAML サービスに報告するために、型、メンバー、およびアセンブリに属性を適切に設定することが重要です。  これは、.NET Framework XAML サービスの XAML リーダーおよび XAML ライターにより直接 XAML システムで型を使用する場合と、同じく XAML リーダーおよび XAML ライターにより XAML でフレームワークを定義または使用する場合のどちらにも関連します。  
+## <a name="xaml-related-clr-attributes"></a>XAML 関連の CLR 属性  
+ 型、メンバー、およびアセンブリを正しく属性は、レポートには、.NET Framework XAML サービスの XAML 型システム情報を順に重要です。 これは、型に直接基づく .NET Framework XAML サービスの XAML リーダーと XAML ライターでは、XAML システムを使用する場合、または定義またはそれらの XAML リーダーと XAML ライターに基づいている XAML を使用してフレームワークを使用する場合。  
   
- カスタム型の XAML サポートに関連する XAML 関連の各属性のリストについては、「[XAML\-Related CLR Attributes for Custom Types and Libraries](../../../docs/framework/xaml-services/xaml-related-clr-attributes-for-custom-types-and-libraries.md)」を参照してください。  
+ カスタムの型の XAML サポート対象の各 XAML 関連の属性の一覧については、次を参照してください。[カスタム型およびライブラリの CLR 属性を XAML-Related](../../../docs/framework/xaml-services/xaml-related-clr-attributes-for-custom-types-and-libraries.md)です。  
   
-## 使用方法  
- カスタム型を使用する場合、マークアップ作成者がアセンブリのプレフィックスと、カスタム型を含む CLR 名前空間をマッピングする必要があります。  ここでは、その具体的な手順については説明しません。  
+## <a name="usage"></a>使用方法  
+ カスタム型の使用方法は、マークアップの作成者がカスタム型を含むアセンブリと CLR 名前空間のプレフィックスをマップする必要がある必要があります。 このトピックでは、この手順が記載されていません。  
   
-## アクセス レベル  
- XAML では、アクセス レベルが `internal` である型を読み込んでインスタンス化できます。  この機能は、ユーザー コードで独自の型を定義し、同じユーザー コード スコープの一部でもあるマークアップからこれらのクラスをインスタンス化できるようにするためのものです。  
+## <a name="access-level"></a>アクセス レベル  
+ XAML をロードおよびを持つ型をインスタンス化する手段を提供する、`internal`アクセス レベル。 この機能を提供するは、ユーザー コードが独自の型を定義しても、同じユーザー コードのスコープの一部であるマークアップからこれらのクラスのインスタンスを作成できるようにします。  
   
- WPF では、アクセス レベルが `public` であるサポート クラスの宣言によって暗示される可能性のある拡張機構の一部としてではなく、UI 動作をリファクタリングするための <xref:System.Windows.Controls.UserControl> をユーザー コードで定義します。  こうした <xref:System.Windows.Controls.UserControl> は、バッキング コードが同じアセンブリ \(ここから XAML 型として参照\) にコンパイルされる場合は `internal` アクセスを使用して宣言できます。  
+ WPF の例は、ユーザー コードを定義するたびに、<xref:System.Windows.Controls.UserControl>はものでは、UI の動作をリファクターする方法としてをサポートするクラスを宣言することで暗黙的な可能性がある任意の拡張メカニズムの一部としてではなく`public`アクセス レベル。 このような<xref:System.Windows.Controls.UserControl>で宣言できる`internal`バッキング コードは、XAML の型として参照されている元の同じアセンブリにコンパイルされる場合にアクセスします。  
   
- 完全な信頼で XAML を読み込み、<xref:System.Xaml.XamlObjectWriter> を使用するアプリケーションの場合、アクセス レベルが `internal` であるクラスの読み込みは常に有効です。  
+ 完全な信頼で XAML をロードを使用してアプリケーションの<xref:System.Xaml.XamlObjectWriter>を持つクラスを読み込む`internal`アクセス レベルが常に有効にします。  
   
- 部分信頼で XAML を読み込むアプリケーションの場合は、<xref:System.Xaml.Permissions.XamlAccessLevel> API を使用してアクセス レベルの特性を制御できます。  また、遅延機構 \(WPF テンプレート システムなど\) は、アクセス レベルのアクセス許可を反映し、それを最終的な実行時の評価のために保持できる必要があります。これは、<xref:System.Xaml.Permissions.XamlAccessLevel> 情報を渡すことによって内部で処理されます。  
+ アプリケーションで部分信頼で XAML をロードする場合を使用してアクセスのレベルの特性を制御できます、 <xref:System.Xaml.Permissions.XamlAccessLevel> API です。 また、(、WPF テンプレート システムなど) の遅延メカニズムできる必要がありますを任意のアクセス レベルのアクセス許可を反映してそれらを保持する最終的な実行時の評価です。これは処理内部的に渡すことによって、<xref:System.Xaml.Permissions.XamlAccessLevel>情報。  
   
-### WPF 実装  
- BAML が部分信頼で読み込まれ、BAML ソースに相当するアセンブリに対してアクセスが <xref:System.Xaml.Permissions.XamlAccessLevel.AssemblyAccessTo%2A> に制限されている場合、WPF XAML では、部分信頼のアクセス モデルが使用されます。  遅延のために、WPF ではアクセス レベル情報を渡す機構として <xref:System.Xaml.IXamlObjectWriterFactory.GetParentSettings%2A?displayProperty=fullName> を使用します。  
+### <a name="wpf-implementation"></a>WPF の実装  
+ XAML の WPF モデルを使用して、部分信頼のアクセス、BAML が部分信頼で読み込まれると、アクセスに制限されます<xref:System.Xaml.Permissions.XamlAccessLevel.AssemblyAccessTo%2A>BAML ソースであるアセンブリ。 WPF を使用して遅延、<xref:System.Xaml.IXamlObjectWriterFactory.GetParentSettings%2A?displayProperty=nameWithType>アクセス レベルの情報を渡すためのメカニズムとして。  
   
- WPF XAML の用語では、*内部型*とは参照元の XAML も含む同じアセンブリによって定義される型のことを表します。  こうした型は、マッピングの assembly\= の部分を意図的に省略した XAML 名前空間を通じてマッピングできます \(例: `xmlns:local="clr-namespace:WPFApplication1"`\)。  BAML が内部型を参照し、その型のアクセス レベルが `internal` である場合は、アセンブリに対して `GeneratedInternalTypeHelper` クラスが生成されます。  `GeneratedInternalTypeHelper` を避けるには、`public` アクセス レベルを使用するか、該当するクラスを別個のアセンブリにファクタリングして、そのアセンブリを依存させる必要があります。  
+ WPF XAML 用語では、*内部型*は、同じアセンブリも含まれており、参照元の XAML で定義されている型です。 アセンブリを意図的に省略された XAML 名前空間を介してこのような型をマップすることができます、マッピングの一部を =`xmlns:local="clr-namespace:WPFApplication1"`です。  BAML が内部の型を参照するかどうか、型がある`internal`アクセス レベル、これが生成されます、`GeneratedInternalTypeHelper`アセンブリのクラスです。 避けたい場合`GeneratedInternalTypeHelper`、いずれかを使用する必要がある`public`アクセス レベル、または必要があります別のアセンブリに関連するクラスを要素し、そのアセンブリが依存するようにします。  
   
-## 参照  
- [XAML\-Related CLR Attributes for Custom Types and Libraries](../../../docs/framework/xaml-services/xaml-related-clr-attributes-for-custom-types-and-libraries.md)   
- [XAML Services](../../../docs/framework/xaml-services/index.md)
+## <a name="see-also"></a>関連項目  
+ [カスタム型およびライブラリの XAML 関連の CLR 属性](../../../docs/framework/xaml-services/xaml-related-clr-attributes-for-custom-types-and-libraries.md)  
+ [XAML サービス](../../../docs/framework/xaml-services/index.md)

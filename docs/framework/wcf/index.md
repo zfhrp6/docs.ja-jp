@@ -1,28 +1,27 @@
 ---
-title: "Windows Communication Foundation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "WCF [WCF]"
-  - "Windows Communication Foundation [WCF]"
-ms.assetid: 96aad289-58bc-4389-89d0-b09dfc4d5c58
-caps.latest.revision: 2
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 10
+title: Windows Communication Foundation
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.technology: dotnet-clr
+ms.topic: article
+helpviewer_keywords:
+- Windows Communication Foundation [WCF]
+- WCF [WCF]
+ms.assetid: 149348a6-bf82-4ccc-9604-fa7cc88c0749
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7d0e4a33f83cc8bbd0b67a7f21d786ac9f646bd5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Windows Communication Foundation
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] は、サービス指向のアプリケーションを構築するための Microsoft の統一プログラミング モデルです。  これを使用して開発者は、プラットフォーム間を統合し、既存のコンポーネントと相互運用する、セキュリティで保護された信頼性の高いトランザクション型のソリューションを構築できます。  
-  
-## このセクションの内容  
+# <a name="developing-service-oriented-applications-with-wcf"></a>WCF でのサービス指向アプリケーションの開発
+このセクションでは、サービス指向アプリケーションを構築するための統一プログラミング モデルを提供する Windows Communication Foundation (WCF) について説明します。 これを使用して開発者は、プラットフォーム間を統合し、既存のコンポーネントと相互運用する、セキュリティで保護された信頼性の高いトランザクション型のソリューションを構築できます。
+ 
+## <a name="in-this-section"></a>このセクションの内容  
  [Windows Communication Foundation 4.5 の新機能](../../../docs/framework/wcf/whats-new.md)  
  Windows Communication Foundation の新機能について説明します。  
   
@@ -33,7 +32,7 @@ caps.handback.revision: 10
  WCF ドキュメントの説明があります。  
   
  [概念](../../../docs/framework/wcf/conceptual-overview.md)  
- Windows Communication Foundation \(WCF\) メッセージング システムおよびその使用をサポートしているクラスの概要について説明します。  
+ Windows Communication Foundation (WCF) メッセージング システムおよびその使用をサポートしているクラスの概要について説明します。  
   
  [チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)  
  WCF サービスとクライアントを作成する手順のチュートリアルです。  
@@ -48,7 +47,7 @@ caps.handback.revision: 10
  WCF ランタイム コンポーネントを変更および拡張する方法について説明します。  
   
  [ガイドラインとベスト プラクティス](../../../docs/framework/wcf/guidelines-and-best-practices.md)  
- Windows Communication Foundation \(WCF\) アプリケーションの作成のガイドラインを提供します。  
+ Windows Communication Foundation (WCF) アプリケーションの作成のガイドラインを提供します。  
   
  [管理と診断](../../../docs/framework/wcf/diagnostics/index.md)  
  WCF の診断機能について説明します。  
@@ -85,7 +84,3 @@ caps.handback.revision: 10
   
  [プライバシー情報](../../../docs/framework/wcf/privacy-information.md)  
  WCF とプライバシーに関する情報があります。  
-  
-## 関連項目  
-  
-## 関連項目

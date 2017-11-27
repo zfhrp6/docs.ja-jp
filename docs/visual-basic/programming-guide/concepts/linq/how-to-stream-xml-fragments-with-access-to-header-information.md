@@ -1,40 +1,31 @@
 ---
-title: "方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム出力 |Microsoft ドキュメント"
+title: "方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム出力"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: effd10df-87c4-4d7a-8a9a-1434d829dca5
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 299a938cd4b10dbca308685e389fab76656ac20b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: f745d0725b9b05620b4b967e51b452e54fe5e6d9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-stream-xml-fragments-with-access-to-header-information-visual-basic"></a>方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム出力
 大きな XML ファイルを任意に読み取り、アプリケーションのメモリ使用量を予想できるようにアプリケーションを作成しなければならない場合があります。 大きな XML ファイルを XML ツリーに設定しようとすると、ファイルのサイズに比例してメモリが過剰に使用されます。 したがって、代わりにストリーミングの手法を使用する必要があります。  
   
- 1 つのオプションが<xref:System.Xml.XmlReader>。</xref:System.Xml.XmlReader>を使用してアプリケーションを作成するには ただし、使用する場合があります[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]XML ツリーに対してクエリします。 このような場合は、カスタムの軸メソッドを独自に記述します。 詳細については、次を参照してください。[方法:、LINQ to XML 軸メソッド (Visual Basic) を記述](../../../../visual-basic/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md)します。  
+ これを実現する 1 つの選択肢として、<xref:System.Xml.XmlReader> を使用してアプリケーションを作成する方法があります。 ただし、場合によっては、XML ツリーに対してクエリを実行するとき、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] の使用が必要になることがあります。 このような場合は、カスタムの軸メソッドを独自に記述します。 詳細については、次を参照してください。[する方法: LINQ を XML 軸メソッド (Visual Basic) に書き込む](../../../../visual-basic/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md)です。  
   
- 使用する小さなメソッドを記述する、独自の軸メソッドを記述する、<xref:System.Xml.XmlReader>対象のノードのいずれかに達するまで、ノードを読み取れません</xref:System.Xml.XmlReader>。 メソッドを呼び出して、<xref:System.Xml.Linq.XNode.ReadFrom%2A>からを読み取ります、<xref:System.Xml.XmlReader>し、XML フラグメントをインスタンス化します</xref:System.Xml.XmlReader></xref:System.Xml.Linq.XNode.ReadFrom%2A>。 これで、カスタムの軸メソッド上に LINQ クエリを記述できます。  
+ 独自の軸メソッドを記述するには、<xref:System.Xml.XmlReader> を使用して、対象となるノードの 1 つに到達するまでノードを読み取る小さなメソッドを記述します。 このメソッドから <xref:System.Xml.Linq.XNode.ReadFrom%2A> が呼び出され、これにより <xref:System.Xml.XmlReader> からデータが読み取られ、XML フラグメントがインスタンス化されます。 これで、カスタムの軸メソッド上に LINQ クエリを記述できます。  
   
- ストリーミングの手法は、ソース ドキュメントを&1; 回だけ処理する必要がある場合に適しており、ドキュメントの順序で要素を処理できます。 一部の標準クエリ演算子でなど<xref:System.Linq.Enumerable.OrderBy%2A>、そのソースを反復処理する、すべてのデータを収集、並べ替えられて、および最終的に、シーケンスの最初の項目が生成されます</xref:System.Linq.Enumerable.OrderBy%2A>。 最初の項目を生成する前にソースを具体化するクエリ演算子を使用すると、メモリ使用量を低く維持することができないので注意してください。  
+ ストリーミングの手法は、ソース ドキュメントを 1 回だけ処理する必要がある場合に適しており、ドキュメントの順序で要素を処理できます。 <xref:System.Linq.Enumerable.OrderBy%2A> などの一部の標準クエリ演算子では、ソースが反復処理され、すべてのデータが収集され並べ替えられて、最終的にはシーケンス内の最初の項目が生成されます。 最初の項目を生成する前にソースを具体化するクエリ演算子を使用すると、メモリ使用量を低く維持することができないので注意してください。  
   
 ## <a name="example"></a>例  
  ストリーム出力は関心の高い問題となる場合があるため、例を使って説明します。 次の XML ドキュメントでは、カスタムの軸メソッドのコンシューマーが、各項目が属している顧客の名前も認識している必要があります。  
@@ -249,5 +240,4 @@ End Class
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [高度な LINQ to XML のプログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
-
+ [高度な LINQ to XML プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

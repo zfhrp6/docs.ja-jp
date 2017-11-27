@@ -1,40 +1,42 @@
 ---
-title: "方法 : 双方向コントラクトを使用してサービスにアクセスする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "双方向コントラクト [WCF]"
+title: "方法 : 双方向コントラクトを使用してサービスにアクセスする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: duplex contracts [WCF]
 ms.assetid: 746a9d64-f21c-426c-b85d-972e916ec6c5
-caps.latest.revision: 18
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e4c273e674fb7cb0f2801d9858d598baab5973a6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 双方向コントラクトを使用してサービスにアクセスする
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の機能の 1 つに、双方向のメッセージング パターンを使用するサービスを作成する機能があります。双方向のメッセージング パターンを使用するサービスは、コールバックを通じてクライアントと通信できます。ここでは、コールバック インターフェイスを実装するクライアント クラス内に [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを作成する手順を示します。  
+# <a name="how-to-access-services-with-a-duplex-contract"></a>方法 : 双方向コントラクトを使用してサービスにアクセスする
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の機能の 1 つに、双方向のメッセージング パターンを使用するサービスを作成する機能があります。 双方向のメッセージング パターンを使用するサービスは、コールバックを通じてクライアントと通信できます。 ここでは、コールバック インターフェイスを実装するクライアント クラス内に [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを作成する手順を示します。  
   
- 二重バインディングでは、クライアントの IP アドレスをサービスに公開します。クライアントは、セキュリティを使用して信頼するサービスだけに接続できるようにする必要があります。  
+ 二重バインディングでは、クライアントの IP アドレスをサービスに公開します。 クライアントは、セキュリティを使用して信頼するサービスだけに接続できるようにする必要があります。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の基本的なサービスとクライアントの作成方法に関するチュートリアルについては、「[チュートリアル入門](../../../../docs/framework/wcf/getting-started-tutorial.md)」を参照してください。  
+ 基本的な作成に関するチュートリアルについては[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスとクライアントを参照してください[チュートリアル入門](../../../../docs/framework/wcf/getting-started-tutorial.md)です。  
   
-### 双方向サービスにアクセスするには  
+### <a name="to-access-a-duplex-service"></a>双方向サービスにアクセスするには  
   
-1.  2 つのインターフェイスを含むサービスを作成します。1 つ目のインターフェイスはサービスに使用し、2 つ目のインターフェイスはコールバックに使用します。双方向サービスを作成する方法[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[方法 : 双方向コントラクトを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)」を参照してください。  
+1.  2 つのインターフェイスを含むサービスを作成します。 1 つ目のインターフェイスはサービスに使用し、2 つ目のインターフェイスはコールバックに使用します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]双方向サービスを作成するを参照してください[する方法: 双方向コントラクトを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)です。  
   
 2.  サービスを実行します。  
   
-3.  [ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) を使用して、クライアントのコントラクト \(インターフェイス\) を生成します。これを実行する方法については、「[方法 : クライアントを作成する](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md)」を参照してください。  
+3.  使用して、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)クライアントのコントラクト (インターフェイス) を生成します。 これを行う方法については、次を参照してください。[する方法: クライアントを作成する](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。  
   
 4.  次の例に示すように、クライアント クラスにコールバック インターフェイスを実装します。  
   
@@ -62,10 +64,9 @@ caps.handback.revision: 18
             Console.Writeline("Equation({0})", equation)  
         End Sub  
     End Class  
-  
     ```  
   
-5.  <xref:System.ServiceModel.InstanceContext> クラスのインスタンスを作成します。コンストラクターには、クライアント クラスのインスタンスが必要です。  
+5.  <xref:System.ServiceModel.InstanceContext> クラスのインスタンスを作成します。 コンストラクターには、クライアント クラスのインスタンスが必要です。  
   
     ```csharp  
     InstanceContext site = new InstanceContext(new CallbackHandler());  
@@ -75,7 +76,7 @@ caps.handback.revision: 18
     Dim site As InstanceContext = New InstanceContext(new CallbackHandler())  
     ```  
   
-6.  <xref:System.ServiceModel.InstanceContext> オブジェクトを必要とするコンストラクターを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントのインスタンスを作成します。コンストラクターの 2 番目のパラメーターは、構成ファイルに含まれるエンドポイントの名前です。  
+6.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] オブジェクトを必要とするコンストラクターを使用して、<xref:System.ServiceModel.InstanceContext> クライアントのインスタンスを作成します。 コンストラクターの 2 番目のパラメーターは、構成ファイルに含まれるエンドポイントの名前です。  
   
     ```csharp  
     CalculatorDuplexClient wcfClient =   
@@ -88,17 +89,17 @@ caps.handback.revision: 18
   
 7.  必要に応じて、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントのメソッドを呼び出します。  
   
-## 使用例  
+## <a name="example"></a>例  
  双方向コントラクトにアクセスするクライアント クラスを作成する方法を次のコード例に示します。  
   
  [!code-csharp[S_DuplexClients#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_duplexclients/cs/client.cs#1)]
  [!code-vb[S_DuplexClients#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_duplexclients/vb/client.vb#1)]  
   
-## .NET Framework セキュリティ  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
   
-## 参照  
- [チュートリアル入門](../../../../docs/framework/wcf/getting-started-tutorial.md)   
- [方法 : 双方向コントラクトを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)   
- [ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)   
- [方法 : クライアントを作成する](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md)   
- [方法 : ChannelFactory を使用する](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)
+## <a name="see-also"></a>関連項目  
+ [チュートリアル入門](../../../../docs/framework/wcf/getting-started-tutorial.md)  
+ [方法: 双方向コントラクトを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)  
+ [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)  
+ [方法: クライアントを作成する](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  
+ [方法: ChannelFactory を使用](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)

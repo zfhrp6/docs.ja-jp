@@ -1,28 +1,24 @@
 ---
-title: "別の図形 (Visual Basic) 内の XML を射影 |Microsoft ドキュメント"
+title: "別の図形 (Visual Basic) で XML を射影すること"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 2da7ec97-34f7-443d-9a48-b162ac58236b
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 0b05fbff86bcac06a3ce375c162c70dc308f4913
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 2cf5f963b8675f22c9cab0297d8f48eb68f5aefb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="projecting-xml-in-a-different-shape-visual-basic"></a>異なる形式 (Visual Basic) に XML を射影すること
+# <a name="projecting-xml-in-a-different-shape-visual-basic"></a>別の図形 (Visual Basic) で XML を射影すること
 このトピックでは、ソース XML とは異なる構造の XML を射影する例について説明します。  
   
  一般的な XML 変換の多くは、この例のように連結されたクエリで構成されます。 通常、ある形式の XML から開始して、中間結果を匿名型または名前付き型のコレクションとして射影し、最終的にその結果をソース XML とはまったく異なる構造の XML に射影します。  
@@ -32,7 +28,7 @@ ms.lasthandoff: 03/13/2017
   
  この例のソース ドキュメントを作成する方法の詳細については、次を参照してください。[ソース Office Open XML ドキュメント (Visual Basic) を作成する](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)です。  
   
- この例では、WindowsBase アセンブリのクラスを使用します。 内の型を使用して、<xref:System.IO.Packaging?displayProperty=fullName>名前空間</xref:System.IO.Packaging?displayProperty=fullName>。  
+ この例では、WindowsBase アセンブリのクラスを使用します。 また、<xref:System.IO.Packaging?displayProperty=nameWithType> 名前空間内の型を使用します。  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -241,9 +237,9 @@ End Module
 ```  
   
 ## <a name="next-steps"></a>次の手順  
- 次の例では、Word 文書内のすべてのテキストを検索するクエリを実行します。  
+ 次の例では、クエリを実行して Word 文書内のテキストをすべて検索します。  
   
--   [(Visual Basic) の Word 文書でテキストの検索](../../../../visual-basic/programming-guide/concepts/linq/finding-text-in-word-documents.md)  
+-   [Word 文書 (Visual Basic) でのテキストの検索](../../../../visual-basic/programming-guide/concepts/linq/finding-text-in-word-documents.md)  
   
 ## <a name="see-also"></a>関連項目  
  [チュートリアル: WordprocessingML ドキュメント (Visual Basic) 内のコンテンツの操作](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

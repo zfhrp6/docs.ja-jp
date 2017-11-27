@@ -1,25 +1,28 @@
 ---
-title: "AppDomainInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: AppDomainInfo
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6610b7d8-81eb-4bec-a543-9b72ad7b6f73
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 97818cf1fc6fa1c59b8b0eeaab69a73b21360151
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# AppDomainInfo
+# <a name="appdomaininfo"></a>AppDomainInfo
 アプリケーション ドメイン情報  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class AppDomainInfo  
@@ -39,98 +42,98 @@ class AppDomainInfo
 };  
 ```  
   
-## メソッド  
+## <a name="methods"></a>メソッド  
  AppDomainInfo クラスは、メソッドを一切定義しません。  
   
-## プロパティ  
+## <a name="properties"></a>プロパティ  
  AppDomainInfo クラスには、次のプロパティがあります。  
   
-### AppDomainId  
+### <a name="appdomainid"></a>AppDomainId  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  AppDomain の ID です。  
   
-### IsDefault  
+### <a name="isdefault"></a>IsDefault  
  データ型 : boolean  
   
  アクセスの種類 : 読み取り専用  
   
  AppDomain が既定の AppDomain かどうかを示します。  
   
-### LogMalformedMessages  
+### <a name="logmalformedmessages"></a>LogMalformedMessages  
  データ型 : boolean  
   
- アクセスの種類 : 読み取り\/書き込み  
+ アクセスの種類 : 読み取り/書き込み  
   
  非整形式メッセージをログに記録するかどうかを指定する値です。  
   
-### LogMessagesAtServiceLevel  
+### <a name="logmessagesatservicelevel"></a>LogMessagesAtServiceLevel  
  データ型 : boolean  
   
- アクセスの種類 : 読み取り\/書き込み  
+ アクセスの種類 : 読み取り/書き込み  
   
- メッセージをサービス レベルでトレースするかどうかを指定する値です \(暗号化およびトランスポート関連の変換前\)。  
+ メッセージをサービス レベルでトレースするかどうかを指定する値です (暗号化およびトランスポート関連の変換前)。  
   
-### LogMessagesAtTransportLevel  
+### <a name="logmessagesattransportlevel"></a>LogMessagesAtTransportLevel  
  データ型 : boolean  
   
- アクセスの種類 : 読み取り\/書き込み  
+ アクセスの種類 : 読み取り/書き込み  
   
  メッセージをトランスポート レベルでトレースするかどうかを指定する値です。  
   
-### MessageLoggingTraceListeners  
+### <a name="messageloggingtracelisteners"></a>MessageLoggingTraceListeners  
  データ型 : TraceListener 配列  
   
  アクセスの種類 : 読み取り専用  
   
  System.Wmi.MessageLogging トレース ソースをリッスンするコレクション トレース リスナーです。  
   
-### Name  
- データ型 : string  
+### <a name="name"></a>名前  
+ データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  AppDomain の名前です。  
   
-### PerformanceCounters  
- データ型 : string  
+### <a name="performancecounters"></a>PerformanceCounters  
+ データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  AppDomain におけるアクティブなパフォーマンス カウンターのスコープです。  
   
-### ProcessId  
+### <a name="processid"></a>ProcessId  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  プロセス ID です。  
   
-### ServiceConfigPath  
- データ型 : string  
+### <a name="serviceconfigpath"></a>ServiceConfigPath  
+ データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  サービスの構成へのパスです。  
   
-### TraceLevel  
- データ型 : string  
+### <a name="tracelevel"></a>TraceLevel  
+ データ型: string  
   
- アクセスの種類 : 読み取り\/書き込み  
+ アクセスの種類 : 読み取り/書き込み  
   
  System.Wmi トレース ソースのトレース レベル。  
   
-### ServiceModelTraceListeners  
+### <a name="servicemodeltracelisteners"></a>ServiceModelTraceListeners  
  データ型 : TraceListener 配列  
   
  アクセスの種類 : 読み取り専用  
   
  System.ServiceModel トレース ソースのリスナーのコレクション。  
   
-## 要件  
+## <a name="requirements"></a>要件  
   
 |MOF|Servicemodel.mof にて宣言済み。|  
-|---------|------------------------------|  
-|名前空間|root\\ServiceModel で定義|
+|---------|-----------------------------------|  
+|Namespace|root\ServiceModel で定義|

@@ -1,32 +1,35 @@
 ---
-title: "WCF Web HTTP サービスのヘルプ ページ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WCF Web HTTP サービスのヘルプ ページ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 63c7c695-44b6-4f31-bb9c-00f2763f525e
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 96c54320c77de766f00bde1e560eb5b0f0df2671
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# WCF Web HTTP サービスのヘルプ ページ
-[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] には、WCF WEB HTTP サービスの自動的なヘルプ ページが用意されています。このヘルプ ページには、各操作の説明、要求と応答の形式、およびスキーマが一覧表示されます。この機能は、既定では無効になっています。ユーザーが WCF WEB HTTP サービスを参照し、URL の最後に "\/Help" を追加する \(http:\/\/localhost:8000\/Customers\/Help など\) と、次のようなページが表示されます。  
+# <a name="wcf-web-http-service-help-page"></a>WCF Web HTTP サービスのヘルプ ページ
+[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] には、WCF WEB HTTP サービスの自動的なヘルプ ページが用意されています。 このヘルプ ページには、各操作の説明、要求と応答の形式、およびスキーマが一覧表示されます。 この機能は、既定では無効になっています。 ユーザーが WCF WEB HTTP サービスを参照し、URL の最後に "/Help" を追加する (http://localhost:8000/Customers/Help など) と、次のようなページが表示されます。  
   
- ![WCF REST ヘルプ ページ](../../../../docs/framework/wcf/feature-details/media/wcfresthelppagemain.png "WCFRESTHELPPAGEMAIN")  
+ ![WCF REST ヘルプ ページ](../../../../docs/framework/wcf/feature-details/media/wcfresthelppagemain.gif "WCFRESTHELPPAGEMAIN")  
   
- ヘルプ ページに一覧表示されているメソッドをユーザーがクリックすると、その操作の詳細を示すページが表示され、メッセージの形式や応答例など、そのメソッドの詳細が示されます。次の図は、メソッドのヘルプ ページの例です。  
+ ヘルプ ページに一覧表示されているメソッドをユーザーがクリックすると、その操作の詳細を示すページが表示され、メッセージの形式や応答例など、そのメソッドの詳細が示されます。 次の図は、メソッドのヘルプ ページの例です。  
   
- ![WCF REST ヘルプ ページの詳細](../../../../docs/framework/wcf/feature-details/media/wcfresthelppagedetail2.png "WCFRESTHELPPAGEDETAIL2")  
+ ![WCF REST ヘルプ ページの詳細](../../../../docs/framework/wcf/feature-details/media/wcfresthelppagedetail2.gif "WCFRESTHELPPAGEDETAIL2")  
   
-## WCF Web HTTP ヘルプ ページの使用  
- <xref:System.ComponentModel.DescriptionAttribute> を使用して指定した場合は、WCF WEB HTTP ヘルプ ページに各操作の短い説明が表示されます。この属性は、適用される操作の短い説明を含む文字列を取得します。たとえば、次のコードでは、<xref:System.ComponentModel.DescriptionAttribute> を使用して短い説明を提供する方法を示しています。  
+## <a name="using-the-wcf-web-http-help-page"></a>WCF Web HTTP ヘルプ ページの使用  
+ <xref:System.ComponentModel.DescriptionAttribute> を使用して指定した場合は、WCF WEB HTTP ヘルプ ページに各操作の短い説明が表示されます。 この属性は、適用される操作の短い説明を含む文字列を取得します。 たとえば、次のコードでは、<xref:System.ComponentModel.DescriptionAttribute> を使用して短い説明を提供する方法を示しています。  
   
 ```  
 [OperationContract]  
@@ -35,9 +38,9 @@ caps.handback.revision: 11
 SyndicationFeedFormatter GetTemplate1();  
 ```  
   
- WCF WEB HTTP ヘルプ ページを有効にするには、サービスのエンドポイントにエンドポイント動作を追加する必要があります。これは、構成で追加することも、コードで追加することもできます。WCF WEB HTTP ヘルプ ページを構成で有効化するには、`<webHttp>` 要素を持つエンドポイント動作を追加し、`enableHelp` を `true` に設定し、エンドポイントを追加して、エンドポイント動作を使用するようにそれを構成します。次の構成コードは、この実行方法を示しています。  
+ WCF WEB HTTP ヘルプ ページを有効にするには、サービスのエンドポイントにエンドポイント動作を追加する必要があります。 これは、構成で追加することも、コードで追加することもできます。 WCF WEB HTTP ヘルプ ページを構成で有効化するには、`<webHttp>` 要素を持つエンドポイント動作を追加し、`enableHelp` を `true` に設定し、エンドポイントを追加して、エンドポイント動作を使用するようにそれを構成します。 次の構成コードは、この実行方法を示しています。  
   
-```  
+```xml  
 <endpointBehaviors>  
    <behavior name="RESTEndpointBehavior">  
       <webHttp enableHelp="true"/>  
@@ -52,7 +55,7 @@ SyndicationFeedFormatter GetTemplate1();
 </services>  
 ```  
   
- WCF Web HTTP ヘルプ ページをコードで有効化するには、サービス エンドポイントを追加し、<xref:System.ServiceModel.Description.WebHttpBehavior> をエンドポイントに追加し、<xref:System.ServiceModel.Description.WebHttpBehavior.EnableHelp%2A> を `true` に設定します。この方法を次のコードに示します。  
+ コード内で WCF Web HTTP ヘルプ ページを有効にするには、サービス エンドポイントを追加し、追加、<xref:System.ServiceModel.Description.WebHttpBehavior>エンドポイントの設定に<!--zz <xref:System.ServiceModel.Description.WebHttpBehavior.EnableHelp%2A>-->`EnableHelp`に`true`です。 この方法を次のコードに示します。  
   
 ```  
 using (WebServiceHost host = new WebServiceHost(typeof(Service), new Uri("http://localhost:8000/Customers")))  
@@ -63,12 +66,12 @@ using (WebServiceHost host = new WebServiceHost(typeof(Service), new Uri("http:/
 }  
 ```  
   
- ヘルプ ページは XHTML ベースで、ページの各部分を識別するマークアップがあります。これにより、クライアントは、<xref:System.Xml.Linq.XElement> またはその他の XLinq API を使用して、ページにプログラムでアクセスできます。  
+ ヘルプ ページは XHTML ベースで、ページの各部分を識別するマークアップがあります。 これにより、クライアントは、<xref:System.Xml.Linq.XElement> またはその他の XLinq API を使用して、ページにプログラムでアクセスできます。  
   
-## WCF Web HTTP サービスのヘルプ ページで使用されるスキーマ  
+## <a name="schemas-used-in-the-wcf-web-http-service-help-page"></a>WCF Web HTTP サービスのヘルプ ページで使用されるスキーマ  
  WCF Web HTTP サービスのヘルプ ページでは、次のスキーマが使用されます。  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-16"?>  
 <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">  
   <xs:element name="anyType" nillable="true" type="xs:anyType" />  
@@ -245,7 +248,6 @@ using (WebServiceHost host = new WebServiceHost(typeof(Service), new Uri("http:/
   </xs:complexType>  
   <xs:element name="ArrayOfQName" nillable="true" type="tns:ArrayOfQName" />  
 </xs:schema>  
-  
 ```  
   
- データ コントラクトのシリアル化スキーマ[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[データ コントラクト スキーマの参照](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)」を参照してください。
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]データ コントラクトのシリアル化スキーマを参照してください[データ コントラクト スキーマの参照](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)です。

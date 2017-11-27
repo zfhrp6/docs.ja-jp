@@ -1,95 +1,92 @@
 ---
-title: "^ Operator (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.^"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "raising numbers to powers"
-  - "^ operator [Visual Basic], exponention"
-  - "square operator"
-  - "^ operator [Visual Basic]"
-  - "exponentiation operator [Visual Basic]"
-  - "exponent"
-  - "numbers, rasing"
-  - "powers"
-  - "arithmetic operators, exponentiation"
+title: "^ 演算子 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.^
+helpviewer_keywords:
+- raising numbers to powers
+- ^ operator [Visual Basic], exponention
+- square operator [Visual Basic]
+- ^ operator [Visual Basic]
+- exponentiation operator [Visual Basic]
+- exponent
+- numbers [Visual Basic], rasing
+- powers
+- arithmetic operators [Visual Basic], exponentiation
 ms.assetid: d89a1ca8-83da-4784-a87b-a9d7dceb3f62
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 9e7159f289b687055c7d75cc8da58d6f76607a83
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ^ Operator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-数値のべき乗を求めます。  
+# <a name="-operator-visual-basic"></a>^ 演算子 (Visual Basic)
+別の数値の累乗する数値を生成します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
 number ^ exponent  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
  `number`  
- 必ず指定します。  任意の数式を指定します。  
+ 必須です。 任意の数式。  
   
  `exponent`  
- 必ず指定します。  任意の数式を指定します。  
+ 必須です。 任意の数式。  
   
-## 結果  
- 結果は、`number` を `exponent` で累乗したもので、常に `Double` 値です。  
+## <a name="result"></a>結果  
+ 結果は`number`の累乗`exponent`、として常に、`Double`値。  
   
-## サポートされている型  
- `Double`.  他の型のオペランドはすべて `Double` に変換されます。  
+## <a name="supported-types"></a>サポートされている型  
+ `Double`。 任意の異なる型のオペランドに変換`Double`です。  
   
-## 解説  
- Visual Basic は、すべての指数演算を [Double Data Type](../../../visual-basic/language-reference/data-types/double-data-type.md) で行います。  
+## <a name="remarks"></a>コメント  
+ Visual Basic での累乗を常に実行する、 [Double データ型](../../../visual-basic/language-reference/data-types/double-data-type.md)です。  
   
- `exponent` の値は、小数、負の値、またはその両方です。  
+ 値`exponent`、小数部は、負の値、またはその両方です。  
   
- 1 つの式の中で複数の指数演算が行われるとき、`^` 演算子は左から右の順に評価されます。  
+ 1 つの式で複数の指数演算を実行すると、`^`としては、左から右に演算子が評価されます。  
   
 > [!NOTE]
->  `^` 演算子は *オーバーロード* できます。つまり、オペランドがそのクラスまたは構造体の型であれば、クラスまたは構造体がこの動作を再定義できます。  このようなクラスまたは構造体でこの演算子を使用している場合、再定義された動作を確認してください。  詳細については、「[Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+>  `^`演算子を指定できます*オーバー ロードされた*、つまり、あるクラスまたは構造体を再定義できますその動作オペランドは、そのクラスまたは構造体の型を持つときにします。 コードは、このようなクラスまたは構造体で、この演算子を使用する場合は、再定義された動作を理解することを確認します。 詳細については、次を参照してください。[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)です。  
   
-## 使用例  
- `^` 演算子を使って数値のべき乗を求める例を次に示します。  結果は、最初のオペランドを第 2 のオペランドで累乗した数値です。  
+## <a name="example"></a>例  
+ 次の例では、`^`べき乗の指数部の累乗にする演算子です。 最初のオペランドが 2 番目の累乗になります。  
   
  [!code-vb[VbVbalrOperators#20](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/exponentiation-operator_1.vb)]  
   
- この例の結果は、次のようになります。  
+ 前の例では、次の結果が生成されます。  
   
- `exp1` が 4 \(2 の 2 乗\) に設定されます。  
+ `exp1`4 (2 乗) に設定されます。  
   
- `exp2` が 19683 \(3 の 3 乗を 3 乗\) に設定されます。  
+ `exp2`19683 (3 乗、次にその値が 2 乗) に設定されます。  
   
- `exp3` が \-125 \(\-5 の 2 乗\) に設定されます。  
+ `exp3`-125 (-5 乗) に設定されます。  
   
- `exp4` が 625 \(\-5 の 4 乗\) に設定されます。  
+ `exp4`625 (4 乗-5) に設定されます。  
   
- `exp5` が 2 \(8 の平方根\) に設定されます。  
+ `exp5`2 (8 の立方根) に設定されます。  
   
- `exp6` が 0.5 \(1.0 を 8 の平方根で除算した商\) に設定されます。  
+ `exp6`0.5 (1.0 8 の立方根で割った値) に設定されます。  
   
- この例ではかっこが重要な役割を果たしていることに注目してください。  *演算子の優先順位*のために、Visual Basic では通常 `^` 演算子を、単項 `–` 演算子よりも先に \(つまり最初に\) 実行します。  `exp4` および `exp6` をかっこなしで計算すると、次のような結果になります。  
+ 上記の例の式のかっこの中の重要性に注意してください。 ため*演算子の優先順位*、Visual Basic は通常は、 `^` 、それ以外の前に、の演算子も、単項`–`演算子。 場合`exp4`と`exp6`が計算されたかっこがない場合、次の結果が生成されるとします。  
   
- \-625 になります`exp4 = -5 ^ 4` は として – （第 4 の 5 乗）計算されます。  
+ `exp4 = -5 ^ 4`– (4 乗 5) として計算される-625 になります。  
   
- `exp6 = 8 ^ -1.0 / 3.0` は \(8 の –1 乗、0.125\) を 3.0 で除算した商となり、0.041666666666666666666666666666667 になります。  
+ `exp6 = 8 ^ -1.0 / 3.0`(– 1 power または 0.125 8) として計算が 3.0 では 0.041666666666666666666666666666667 ことになりますで割った値します。  
   
-## 参照  
- [^\= Operator](../../../visual-basic/language-reference/operators/exponentiation-assignment-operator.md)   
- [Arithmetic Operators](../../../visual-basic/language-reference/operators/arithmetic-operators.md)   
- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)   
- [Operators Listed by Functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)   
- [Arithmetic Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+## <a name="see-also"></a>関連項目  
+ [^= 演算子](../../../visual-basic/language-reference/operators/exponentiation-assignment-operator.md)  
+ [算術演算子](../../../visual-basic/language-reference/operators/arithmetic-operators.md)  
+ [Visual Basic における演算子の優先順位](../../../visual-basic/language-reference/operators/operator-precedence.md)  
+ [機能別の演算子一覧](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
+ [Visual Basic における算術演算子](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

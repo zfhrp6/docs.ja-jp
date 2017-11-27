@@ -1,79 +1,82 @@
 ---
-title: "&lt;providerOption&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "provideroption"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<provideroption> 要素"
-  - "provideroption 要素"
-  - "providerOptions"
+title: "&lt;providerOption&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: provideroption
+helpviewer_keywords:
+- <provideroption> element
+- providerOptions
+- provideroption element
 ms.assetid: 014f2e0b-c0b5-4fc4-92d3-73f02978b2a1
-caps.latest.revision: 22
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 3a01a64ab8828104e8404f7d4efdd7b37eea373e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;providerOption&gt; 要素
+# <a name="ltprovideroptiongt-element"></a>&lt;providerOption&gt;要素
 言語プロバイダーのコンパイラ バージョン属性を指定します。  
   
-## 構文  
+ \<構成要素 >  
+\<system.codedom 要素 >  
+\<コンパイラ要素 >  
+\<コンパイラ > 要素  
+\<providerOption > 要素  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <providerOption  
   name="option-name"  
   value="option-value"  
 />  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|Attribute|説明|  
-|---------------|--------|  
-|`name`|必須の属性です。<br /><br /> オプションの名前を指定します \(たとえば "CompilerVersion"\)。|  
-|`value`|必須の属性です。<br /><br /> オプションの値を指定します \(たとえば "v3.5"\)。|  
+|属性|説明|  
+|---------------|-----------------|  
+|`name`|必須の属性です。<br /><br /> オプションの名前を指定しますたとえば、"CompilerVersion"です。|  
+|`value`|必須の属性です。<br /><br /> オプションの値を指定しますたとえば、"v3.5"とします。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<configuration\> 要素](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
-|[\<system.codedom\> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|利用可能な言語プロバイダー用のコンパイラ構成設定を指定します。|  
-|[\<compilers\> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|コンパイラの設定要素用のコンテナーです。0 個以上の `<compiler>` 要素が含まれます。|  
-|[\<compiler\> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)|言語プロバイダーのコンパイラ設定属性を指定します。|  
+|-------------|-----------------|  
+|[\<configuration> 要素](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
+|[\<system.codedom > 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|使用可能な言語プロバイダーのコンパイラ構成設定を指定します。|  
+|[\<コンパイラ > 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|コンパイラ構成要素のコンテナー0 個以上含む`<compiler>`要素。|  
+|[\<compiler> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)|言語プロバイダーのコンパイラ構成属性を指定します。|  
   
-## 解説  
- .NET Framework Version 3.5 では、CodeDOM \(Code Document Object Model\) コード プロバイダーは、`<providerOption>` 要素を使用してプロバイダー固有のオプションをサポートできます。  
+## <a name="remarks"></a>コメント  
+ .NET Framework version 3.5 では、Code Document Object Model (CodeDOM) のコード プロバイダーをサポートしますプロバイダー固有のオプションを使用して、`<providerOption>`要素。  
   
- .NET Framework 3.5 には、更新された .NET Framework 2.0 アセンブリと、新しい型を含む新しい Version 3.5 アセンブリが用意されています。  Microsoft C\# および Visual Basic のコード プロバイダーは .NET Framework 2.0 アセンブリに含まれますが、Version 3.5 のコンパイラをサポートするように更新されています。  既定では、更新されたコード プロバイダーは Version 2.0 のコンパイラ用のコードを生成します。  `<providerOption>` 要素を使用して、対象のコンパイラのバージョンを 3.5 に変更できます。  これを行うには、`name` 属性に "CompilerVersion" を指定し、`value` 属性に "v3.5" を指定します。  バージョン番号の前に小文字の "v" を指定する必要があります。  
+ .NET Framework 3.5 では、更新された .NET Framework 2.0 アセンブリに含まれてし、新しい型を含む新しいバージョン 3.5 のアセンブリを提供します。 Microsoft c# および Visual Basic コード プロバイダーは、.NET Framework 2.0 アセンブリに含まれるが、version 3.5 のコンパイラをサポートするために更新されました。 既定では、更新されたコード プロバイダーは、バージョン 2.0 コンパイラ用のコードを生成します。 使用することができます、 `<providerOption>` 3.5 をターゲット コンパイラのバージョンを変更する要素。 これを行うには、"CompilerVersion"を指定、`name`属性との"v3.5"、`value`属性。 小文字の"v"のバージョン番号の前にする必要があります。  
   
- `<providerOption>` 要素を .NET Framework 2.0 の Machine.config ファイルまたはルートの Web.config ファイルに追加することで、バージョンの指定をグローバルにすることができます。  Machine.config ファイルで既定のコンパイラのバージョンを 3.5 に更新した場合は、アプリケーション構成ファイルで `<providerOption>` 要素を使用することにより、アプリケーションごとに 2.0 に戻すことができます。  
+ ことができます、バージョン指定グローバル追加することによって、`<providerOption>`を .NET Framework 2.0 Machine.config またはルートの Web.config ファイルの要素。 場合は、Machine.config ファイルに 3.5 に既定のコンパイラのバージョンを更新することができますに変更する戻る、アプリケーションごとに 2.0 を使用して、`<providerOption>`アプリケーション構成ファイル内の要素。  
   
- CodeDOM コード プロバイダーの実装では、<xref:System.Collections.Generic.IDictionary%602> 型の `providerOptions` パラメーターを受け取るコンストラクターを用意することで、カスタム オプションを処理できます。  
+ CodeDOM コード プロバイダーの実装側を受け取るコンス トラクターを提供することによってカスタム オプションを処理できる、`providerOptions`型のパラメーター<xref:System.Collections.Generic.IDictionary%602>です。  
   
-## 使用例  
- C\# コード プロバイダーの Version 3.5 が使用されるように指定する方法の例を次に示します。  
+## <a name="example"></a>例  
+ 次の例では、そのバージョン 3.5 の c# コード プロバイダーを使用する必要がありますを指定する方法を示します。  
   
-```  
+```xml  
 <configuration>  
   <system.codedom>  
     <compilers>  
@@ -95,10 +98,10 @@ caps.handback.revision: 22
 </configuration>  
 ```  
   
-## 参照  
- <xref:System.CodeDom.Compiler.CompilerInfo>   
- <xref:System.CodeDom.Compiler.CodeDomProvider>   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [\<compilers\> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)   
- [完全修飾型名の指定](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)   
- [compilation の compilers の compiler 要素 \(ASP.NET 設定スキーマ\)](http://msdn.microsoft.com/ja-jp/f7d6b078-5d42-4134-b3f7-62e1aba1df1e)
+## <a name="see-also"></a>関連項目  
+ <xref:System.CodeDom.Compiler.CompilerInfo>  
+ <xref:System.CodeDom.Compiler.CodeDomProvider>  
+ [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [\<コンパイラ > 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
+ [完全修飾型名の指定](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)  
+ [コンパイル (ASP.NET 設定スキーマ) のコンパイラのコンパイラ要素](http://msdn.microsoft.com/en-us/f7d6b078-5d42-4134-b3f7-62e1aba1df1e)

@@ -1,63 +1,62 @@
 ---
-title: "Iterator (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Iterator"
-helpviewer_keywords: 
-  - "Iterator keyword [Visual Basic]"
+title: "反復子 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Iterator
+helpviewer_keywords: Iterator keyword [Visual Basic]
 ms.assetid: 69cb0b04-ac87-49d0-bcfe-810c0d60daff
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 503d586c0515b4cb53f8ec5656e5fe765cc094a7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Iterator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-`Get` 関数またはアクセサーが反復子であることを指定します。  
+# <a name="iterator-visual-basic"></a>反復子 (Visual Basic)
+指定する関数または`Get`アクセサーが反復子。  
   
-## 解説  
- *反復子は* コレクション上のカスタム反復処理します。  反復子はコレクションの各要素を一つずつ返すために [Yield,yield](../../../visual-basic/language-reference/statements/yield-statement.md) ステートメントを使用します。  `Yield` ステートメントに到達すると、コードの現在の位置は保持されます。  実装はその場所から反復子関数の呼び出しを再起動します。  
+## <a name="remarks"></a>コメント  
+ *反復子*コレクションに対するカスタム イテレーションを実行します。 反復子を使用して、 [Yield](../../../visual-basic/language-reference/statements/yield-statement.md)を一度に 1 つ、コレクション内の各要素を返すステートメントです。 ときに、`Yield`ステートメントに達すると、コードの現在の位置が保持されます。 次回、Iterator 関数が呼び出されると、この位置から実行が再開されます。  
   
- 反復子は、関数またはプロパティ定義の `Get` のアクセサーとして実行できます。  `Iterator` の修飾子は `Get` の反復子関数またはアクセサーの宣言に表示されます。  
+ 関数、またはとして、反復子を実装することができます、`Get`プロパティ定義のアクセサー。 `Iterator`反復子関数の宣言に修飾子が表示されますか`Get`アクセサー。  
   
- [For Each...Next ステートメント](../../../visual-basic/language-reference/statements/for-each-next-statement.md)を使用してクライアント コードからの反復子をダイヤルします。  
+ 使用して、クライアント コードから反復子を呼び出す、[ごとにしています.次のステートメントの](../../../visual-basic/language-reference/statements/for-each-next-statement.md)します。  
   
- `Get` の反復子関数またはアクセサーの戻り値の型は <xref:System.Collections.IEnumerable>、 <xref:System.Collections.Generic.IEnumerable%601>、 <xref:System.Collections.IEnumerator>、または <xref:System.Collections.Generic.IEnumerator%601>を使用できます。  
+ 反復子関数の戻り値の型または`Get`アクセサーを指定することができます<xref:System.Collections.IEnumerable>、 <xref:System.Collections.Generic.IEnumerable%601>、 <xref:System.Collections.IEnumerator>、または<xref:System.Collections.Generic.IEnumerator%601>です。  
   
- 反復子は `ByRef` パラメーターを持つことができません。  
+ 反復子には指定できません`ByRef`パラメーター。  
   
- 反復子は、イベント インスタンス コンストラクター、静的コンストラクター、または静的デストラクターには発生しません。  
+ 反復子を、イベント、インスタンス コンストラクター、静的コンストラクター、静的デストラクターで指定することはできません。  
   
- 反復子は、匿名関数です。  詳細については、「[反復子](../Topic/Iterators%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
+ 反復子は、匿名の関数を指定できます。 詳細については、「[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)」をご覧ください。  
   
- 反復子の詳細については、「[反復子](../Topic/Iterators%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
+ 反復子について詳しくは、「[Iterators](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)」をご覧ください。  
   
-## 使用方法  
- 修飾子 `Iterator` は、次の構文で使用します。  
+## <a name="usage"></a>使用方法  
+ `Iterator` 修飾子は、次のコンテキストで使用できます。  
   
--   [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)  
+-   [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)  
   
--   [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)  
+-   [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)  
   
-## 使用例  
- 次の例は、反復子の関数を示します。  反復子の関数に [For… Next には](../../../visual-basic/language-reference/statements/for-next-statement.md) のループ内にある `Yield` ステートメントがあります。  `Main` の [各には](../../../visual-basic/language-reference/statements/for-each-next-statement.md) のステートメント本体の各反復で `Power` の反復子関数に呼び出しを作成します。  反復子の関数に対する各呼び出しは `For…Next` のループの次の反復処理中に発生する `Yield` ステートメントの次の実行に進みます。  
+## <a name="example"></a>例  
+ 次の例では、iterator 関数を示します。 Iterator 関数が、`Yield`内にあるステートメント、[をしています.[次へ]](../../../visual-basic/language-reference/statements/for-next-statement.md)ループします。 各反復処理、[各](../../../visual-basic/language-reference/statements/for-each-next-statement.md)ステートメント本体で`Main`への呼び出しを作成、 `Power` iterator 関数。 Iterator 関数を呼び出すごとに、`Yield` ステートメントの次の実行に進みます。これは、`For…Next` ループの次の反復処理で行われます。  
   
  [!code-vb[VbVbalrStatements#98](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/iterator_1.vb)]  
   
-## 使用例  
- 次の例は、反復子である `Get` のアクセサーを示します。  `Iterator` の修飾子は、プロパティ宣言にあります。  
+## <a name="example"></a>例  
+ 次の例は、反復子である `Get` アクセサーを示しています。 `Iterator`プロパティ宣言では、修飾子です。  
   
  [!code-vb[VbVbalrStatements#99](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/iterator_2.vb)]  
   
- その他の例については、「[反復子](../Topic/Iterators%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
+ その他の例では、次を参照してください。[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)です。  
   
-## 参照  
- <xref:System.Runtime.CompilerServices.IteratorStateMachineAttribute>   
- [反復子](../Topic/Iterators%20\(C%23%20and%20Visual%20Basic\).md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Runtime.CompilerServices.IteratorStateMachineAttribute>  
+ [反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)  
  [Yield ステートメント](../../../visual-basic/language-reference/statements/yield-statement.md)

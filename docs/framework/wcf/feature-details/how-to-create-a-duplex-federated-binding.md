@@ -1,78 +1,80 @@
 ---
-title: "方法 : 双方向フェデレーション バインディングを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : 双方向フェデレーション バインディングを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4331d2bc-5455-492a-9189-634a82597726
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 0a682b84a90e64e0242a3490986cb526c7f028b8
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : 双方向フェデレーション バインディングを作成する
-<xref:System.ServiceModel.WSFederationHttpBinding> はデータグラムと要求\/応答メッセージの交換コントラクトのみをサポートします。双方向メッセージ交換コントラクトを使用するには、カスタム バインディングを作成する必要があります。次の手順は、構成の中でそれを行う方法を説明します。HTTP と TCP トランスポートにはメッセージ モード セキュリティを、TCP トランスポートには混合モード セキュリティを使用します。このトピックの最後に 3 つのバインディングすべてのサンプル コードがあります。  
+# <a name="how-to-create-a-duplex-federated-binding"></a>方法 : 双方向フェデレーション バインディングを作成する
+<xref:System.ServiceModel.WSFederationHttpBinding> はデータグラムと要求/応答メッセージの交換コントラクトのみをサポートします。 双方向メッセージ交換コントラクトを使用するには、カスタム バインディングを作成する必要があります。 次の手順は、構成の中でそれを行う方法を説明します。HTTP と TCP トランスポートにはメッセージ モード セキュリティを、TCP トランスポートには混合モード セキュリティを使用します。 このトピックの最後に 3 つのバインディングすべてのサンプル コードがあります。  
   
- バインディングはコード内でも作成できます。作成するバインド要素スタックの詳細については、「[方法 : SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)」を参照してください。  
+ バインディングはコード内でも作成できます。 詳細については、バインド要素スタックを作成する、次を参照してください。[する方法: SecurityBindingElement を使用してカスタム バインディングを作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)です。  
   
-### HTTP で双方向カスタム フェデレーション バインディングを作成するには  
+### <a name="to-create-a-duplex-federated-custom-binding-with-http"></a>HTTP で双方向カスタム フェデレーション バインディングを作成するには  
   
-1.  構成ファイルの [\<bindings\>](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)[\<customBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) 要素を作成します。  
+1.  [\<バインド >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)構成ファイルのノードを作成、 [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)要素。  
   
-2.  [\<customBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) 要素内で、`name` 属性が `FederationDuplexHttpMessageSecurityBinding` に設定された [\<binding\>](../../../../docs/framework/misc/binding.md) 要素を作成します。  
+2.  内部、 [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)要素を作成、 [\<バインディング >](../../../../docs/framework/misc/binding.md)を持つ要素、`name`属性に設定`FederationDuplexHttpMessageSecurityBinding`です。  
   
-3.  [\<binding\>](../../../../docs/framework/misc/binding.md) 要素内で、`authenticationMode` 属性が `SecureConversation` に設定された [\<security\>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) 要素を作成します。  
+3.  内部、 [\<バインディング >](../../../../docs/framework/misc/binding.md)要素を作成、 [\<セキュリティ >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)を持つ要素、`authenticationMode`属性に設定`SecureConversation`です。  
   
-4.  [\<security\>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) 要素内で、`authenticationMode` 属性が `IssuedTokenForCertificate` または `IssuedTokenForSslNegotiated` に設定された [\<secureConversationBootstrap\>](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) 要素を作成します。  
+4.  内部、 [\<セキュリティ >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)要素を作成、 [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)を持つ要素、`authenticationMode`属性に設定`IssuedTokenForCertificate`または`IssuedTokenForSslNegotiated`.  
   
-5.  [\<security\>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) 要素に続いて、空の [\<compositeDuplex\>](../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md) 要素を作成します。  
+5.  次の[\<セキュリティ >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)要素を空、作成[ \<compositeDuplex >](../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md)要素。  
   
-6.  [\<compositeDuplex\>](../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md) 要素に続いて、空の [\<oneWay\>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) 要素を作成します。  
+6.  次の[ \<compositeDuplex >](../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md)要素を空、作成[ \<oneWay >](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md)要素。  
   
-7.  [\<oneWay\>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) 要素に続いて、空の [\<httpTransport\>](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md) 要素を作成します。  
+7.  次の[ \<oneWay >](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md)要素を空、作成[ \<httpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md)要素。  
   
-### TCP メッセージ セキュリティ モードで双方向カスタム フェデレーション バインディングを作成するには  
+### <a name="to-create-a-duplex-federated-custom-binding-with-tcp-message-security-mode"></a>TCP メッセージ セキュリティ モードで双方向カスタム フェデレーション バインディングを作成するには  
   
-1.  構成ファイルの [\<oneWay\>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md)[\<oneWay\>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) 要素を作成します。  
+1.  [\<バインド >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)構成ファイルのノードを作成、 [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)要素。   
   
-2.  [\<oneWay\>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) 要素内で、`name` 属性が `FederationDuplexTcpMessageSecurityBinding` に設定された [\<oneWay\>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) 要素を作成します。  
+2.  内部、 [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)要素を作成、 [\<バインディング >](../../../../docs/framework/misc/binding.md)を持つ要素、`name`属性に設定`FederationDuplexTcpMessageSecurityBinding`です。  
   
-3.  [\<oneWay\>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) 要素内で、`authenticationMode` 属性が `SecureConversation` に設定された [\<security\>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) 要素を作成します。  
+3.  内部、 [\<バインディング >](../../../../docs/framework/misc/binding.md)要素を作成、 [\<セキュリティ >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)を持つ要素、`authenticationMode`属性に設定`SecureConversation`です。  
   
-4.  [\<security\>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) 要素内で、`authenticationMode` 属性が `IssuedTokenForCertificate` または `IssuedTokenForSslNegotiated` に設定された [\<secureConversationBootstrap\>](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) 要素を作成します。  
+4.  内部、 [\<セキュリティ >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)要素を作成、 [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)を持つ要素、`authenticationMode`属性に設定`IssuedTokenForCertificate`または`IssuedTokenForSslNegotiated`.  
   
-5.  [\<security\>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) 要素に続いて、空の [\<tcpTransport\>](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md) 要素を作成します。  
+5.  次の[\<セキュリティ >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)要素を空、作成[ \<tcpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md)要素。  
   
-### TCP 混合セキュリティ モードで双方向カスタム フェデレーション バインディングを作成するには  
+### <a name="to-create-a-duplex-federated-custom-binding-with-tcp-mixed-security-mode"></a>TCP 混合セキュリティ モードで双方向カスタム フェデレーション バインディングを作成するには  
   
-1.  構成ファイルの [\<oneWay\>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md)[\<oneWay\>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) 要素を作成します。  
+1.  [\<バインド >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)構成ファイルのノードを作成、 [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)要素。   
   
-2.  [\<oneWay\>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) 要素内で、`name` 属性が `FederationDuplexTcpTransportSecurityWithMessageCredentialBinding` に設定された [\<oneWay\>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) 要素を作成します。  
+2.  内部、 [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)要素を作成、 [\<バインディング >](../../../../docs/framework/misc/binding.md)を持つ要素、`name`属性に設定`FederationDuplexTcpTransportSecurityWithMessageCredentialBinding`です。  
   
-3.  [\<oneWay\>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) 要素内で、`authenticationMode` 属性が `SecureConversation` に設定された [\<security\>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) 要素を作成します。  
+3.  内部、 [\<バインディング >](../../../../docs/framework/misc/binding.md)要素を作成、 [\<セキュリティ >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)を持つ要素、`authenticationMode`属性に設定`SecureConversation`です。  
   
-4.  [\<security\>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) 要素内で、`authenticationMode` 属性が `IssuedTokenForCertificate` または `IssuedTokenForSslNegotiated` に設定された [\<secureConversationBootstrap\>](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) 要素を作成します。  
+4.  内部、 [\<セキュリティ >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)要素を作成、 [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)を持つ要素、`authenticationMode`属性に設定`IssuedTokenForCertificate`または`IssuedTokenForSslNegotiated`.  
   
-5.  [\<security\>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) 要素に続いて、空の [\<sslStreamSecurity\>](../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md) 要素を作成します。  
+5.  次の[\<セキュリティ >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)要素を空、作成[ \<sslStreamSecurity >](../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md)要素。  
   
-6.  [\<sslStreamSecurity\>](../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md) 要素に続いて、空の [\<tcpTransport\>](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md) 要素を作成します。  
+6.  次の[ \<sslStreamSecurity >](../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md)要素を空、作成[ \<tcpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md)要素。  
   
-## サンプル コード  
+## <a name="code-sample"></a>コード サンプル  
   
-#### 3 つのバインディングの例  
+#### <a name="sample-with-3-bindings"></a>3 つのバインディングの例  
   
 1.  次のコードを構成ファイルに挿入します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
-  
+```xml  
 <bindings>  
    <customBinding>  
       <binding name="FederationDuplexHttpMessageSecurityBinding">  
@@ -103,5 +105,4 @@ caps.handback.revision: 7
        </binding>              
     </customBinding>  
 </bindings>  
-  
 ```

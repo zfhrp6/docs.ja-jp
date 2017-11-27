@@ -1,28 +1,31 @@
 ---
-title: "方法 : チャネルのセキュリティ資格情報を指定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : チャネルのセキュリティ資格情報を指定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f8e03f47-9c4f-4dd5-8f85-429e6d876119
-caps.latest.revision: 18
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 2a1b2ba0ab49ebf470c0245f0827f82e1fe20ce8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : チャネルのセキュリティ資格情報を指定する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービス モニカーを使用すると、COM アプリケーションで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを呼び出すことができます。 ほとんどの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスで、クライアントは認証と承認のための資格情報の指定が要求されます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントから呼び出す場合、この資格情報をマネージ コードまたはアプリケーション構成ファイルに指定できます。 呼び出すときに、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービス、COM アプリケーションから使用して、 <xref:System.ServiceModel.ComIntegration.IChannelCredentials>インターフェイス資格情報を指定します。 このトピックを使用して資格情報を指定するさまざまな方法を示しますが、 <xref:System.ServiceModel.ComIntegration.IChannelCredentials>インターフェイスです。  
+# <a name="how-to-specify-channel-security-credentials"></a>方法 : チャネルのセキュリティ資格情報を指定する
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービス モニカーを使用すると、COM アプリケーションで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを呼び出すことができます。 ほとんどの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスで、クライアントは認証と承認のための資格情報の指定が要求されます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントから呼び出す場合、この資格情報をマネージ コードまたはアプリケーション構成ファイルに指定できます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを COM アプリケーションから呼び出す場合、<xref:System.ServiceModel.ComIntegration.IChannelCredentials> インターフェイスを使用して資格情報を指定できます。 ここでは、<xref:System.ServiceModel.ComIntegration.IChannelCredentials> インターフェイスを使用して資格情報を指定するさまざまな方法を説明します。  
   
 > [!NOTE]
->  <xref:System.ServiceModel.ComIntegration.IChannelCredentials> IDispatch ベースのインターフェイスは、Visual Studio 環境で IntelliSense 機能は得られません。  
+>  <xref:System.ServiceModel.ComIntegration.IChannelCredentials> は IDispatch ベースのインターフェイスです。Visual Studio 環境で IntelliSense 機能を取得することはできません。  
   
- この記事を使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]で定義されたサービス、[メッセージ セキュリティ サンプル](../../../../docs/framework/wcf/samples/message-security-sample.md)します。  
+ この記事の内容を使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]で定義されたサービス、[メッセージ セキュリティ サンプル](../../../../docs/framework/wcf/samples/message-security-sample.md)です。  
   
 ### <a name="to-specify-a-client-certificate"></a>クライアント証明書を指定するには  
   
@@ -30,9 +33,9 @@ caps.handback.revision: 18
   
 2.  メッセージ セキュリティのプロジェクトを開きます。  
   
-3.  追加`[ServiceBehavior(Namespace=``http://Microsoft.ServiceModel.Samples``)]`に、`ICalculator`インターフェイス定義です。  
+3.  追加`[ServiceBehavior(Namespace=``http://Microsoft.ServiceModel.Samples``)]`を`ICalculator`インターフェイス定義です。  
   
-4.  追加`bindingNamespace=``http://Microsoft.ServiceModel.Samples`サービスの App.config 内のエンドポイント タグにします。  
+4.  追加`bindingNamespace=``http://Microsoft.ServiceModel.Samples`サービス用の App.config 内のエンドポイント タグにします。  
   
 5.  メッセージ セキュリティ サンプルをビルドし、Service.exe を実行します。 Internet Explorer を使用してサービスの URI (http://localhost:8000/ServiceModelSamples/Service) を参照し、サービスが動作していることを確認します。  
   
@@ -57,7 +60,7 @@ caps.handback.revision: 18
   
 7.  Visual Basic アプリケーションを実行し、結果を確認します。  
   
-     Visual Basic アプリケーションに Add(3,4) の結果を示すメッセージ ボックスが表示されます。 <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromFile%28System.String%2CSystem.String%2CSystem.String%29>または<xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromStoreByName%28System.String%2CSystem.String%2CSystem.String%29>の代わりに使用することもできます<xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromStore%28System.String%2CSystem.String%2CSystem.String%2CSystem.Object%29>クライアント資格情報を設定します。  
+     Visual Basic アプリケーションに Add(3,4) の結果を示すメッセージ ボックスが表示されます。 <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromFile%28System.String%2CSystem.String%2CSystem.String%29> または <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromStoreByName%28System.String%2CSystem.String%2CSystem.String%29> を <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromStore%28System.String%2CSystem.String%2CSystem.String%2CSystem.Object%29> の代わりに使用して、クライアント証明書を設定することもできます。  
   
     ```  
     monikerProxy.ChannelCredentials.SetClientCertificateFromFile "C:\MyClientCert.pfx", "password", "DefaultKeySet"  
@@ -75,8 +78,7 @@ caps.handback.revision: 18
   
   
   
-2.  
-          `clientCredentialType` を UserName に設定します。  
+2.  `clientCredentialType` を UserName に設定します。  
   
   
   
@@ -99,7 +101,7 @@ caps.handback.revision: 18
 4.  Visual Basic アプリケーションを実行し、結果を確認します。 Visual Basic アプリケーションに Add(3,4) の結果を示すメッセージ ボックスが表示されます。  
   
     > [!NOTE]
-    >  この例のサービス モニカーに指定されたバインディングは、WSHttpBinding_ICalculator に変更されました。 なお、有効なユーザー名とパスワードへの呼び出しで指定する必要があります<xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetUserNameCredential%28System.String%2CSystem.String%29>します。  
+    >  この例のサービス モニカーに指定されたバインディングは、WSHttpBinding_ICalculator に変更されました。 また、<xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetUserNameCredential%28System.String%2CSystem.String%29> の呼び出しにも有効なユーザー名とパスワードを指定する必要があります。  
   
 ### <a name="to-specify-windows-credentials"></a>Windows 資格情報を指定するには  
   
@@ -129,9 +131,9 @@ caps.handback.revision: 18
   
 ### <a name="to-specify-an-issue-token"></a>発行トークンを指定するには  
   
-1.  発行トークンは、フェデレーション セキュリティを使用するアプリケーションのみが使用します。 フェデレーション セキュリティの詳細については、次を参照してください。[フェデレーションと発行されたトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)と[フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)します。  
+1.  発行トークンは、フェデレーション セキュリティを使用するアプリケーションのみが使用します。 フェデレーション セキュリティの詳細については、次を参照してください。[フェデレーションと発行されたトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)と[フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)です。  
   
-     次の Visual Basic のコード例を呼び出す方法を示しています、 <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetIssuedToken%28System.String%2CSystem.String%2CSystem.String%29>メソッド。  
+     <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetIssuedToken%28System.String%2CSystem.String%2CSystem.String%29> メソッドを呼び出す方法を次の Visual Basic コード例に示します。  
   
     ```  
         monString = "service:mexAddress=http://localhost:8000/ServiceModelSamples/Service?wsdl"  
@@ -143,11 +145,11 @@ caps.handback.revision: 18
     monikerProxy.SetIssuedToken("http://somemachine/sts", "bindingType", "binding")  
     ```  
   
-     このメソッドのパラメーターの詳細については、次を参照してください。 <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetIssuedToken%28System.String%2CSystem.String%2CSystem.String%29>します。  
+     このメソッドのパラメーターの詳細については、<xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetIssuedToken%28System.String%2CSystem.String%2CSystem.String%29> を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)   
- [方法: フェデレーション サービスで資格情報を構成します。](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)   
- [方法: フェデレーション クライアントを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)   
- [メッセージ セキュリティ](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)   
+ [フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)  
+ [方法: フェデレーション サービスの資格情報を構成します。](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)  
+ [方法: フェデレーション クライアントを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
+ [メッセージ セキュリティ](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)  
  [バインディングとセキュリティ](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)

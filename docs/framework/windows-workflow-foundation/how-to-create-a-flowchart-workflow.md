@@ -1,77 +1,84 @@
 ---
-title: "フローチャート ワークフローを作成する方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "フローチャート ワークフローを作成する方法"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 185d7aea-68a6-4bd8-adde-45050f33170a
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 570e51c3b9c8ee227a9c5688fc7caa1b4a0d9c6d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# フローチャート ワークフローを作成する方法
-ワークフローは、ビルトイン アクティビティおよびカスタム アクティビティから構築できます。このトピックでは、<xref:System.Activities.Statements.Flowchart> アクティビティなどのビルトイン アクティビティ、および前の「[アクティビティを作成する方法](../../../docs/framework/windows-workflow-foundation//how-to-create-an-activity.md)」トピックのカスタム アクティビティの両方を使用するワークフローを作成します。このワークフローは、数値推測ゲームをモデル化しています。  
+# <a name="how-to-create-a-flowchart-workflow"></a>フローチャート ワークフローを作成する方法
+ワークフローは、ビルトイン アクティビティおよびカスタム アクティビティから構築できます。 など、両方の組み込みのアクティビティを使用するワークフローを作成する手順をこのトピックの内容、<xref:System.Activities.Statements.Flowchart>アクティビティ、およびカスタム アクティビティを以前から[する方法: アクティビティを作成](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md)トピックです。 このワークフローは、数値推測ゲームをモデル化しています。  
   
 > [!NOTE]
->  チュートリアル入門の各トピックは、前のトピックに応じて異なります。このトピックを完了する前に、「[アクティビティを作成する方法](../../../docs/framework/windows-workflow-foundation//how-to-create-an-activity.md)」を完了する必要があります。  
+>  チュートリアル入門の各トピックは、前のトピックに応じて異なります。 このトピックの内容を完了する必要があります最初に完了する[する方法: アクティビティを作成する](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md)です。  
   
 > [!NOTE]
->  チュートリアルの完成版をダウンロードするには、「[Windows Workflow Foundation \(WF45\) \- チュートリアル入門](http://go.microsoft.com/fwlink/?LinkID=248976)」を参照してください。  
+>  チュートリアルの完成版をダウンロードするには、「 [Windows Workflow Foundation (WF45) - Getting Started Tutorial (Windows Workflow Foundation (WF45) - チュートリアル入門)](http://go.microsoft.com/fwlink/?LinkID=248976)」を参照してください。  
   
-### ワークフローを作成するには  
+### <a name="to-create-the-workflow"></a>ワークフローを作成するには  
   
-1.  **ソリューション エクスプローラー**で **NumberGuessWorkflowActivities** を右クリックし、**\[追加\]** をポイントして、**\[新しい項目\]** をクリックします。  
+1.  右クリック**NumberGuessWorkflowActivities**で**ソリューション エクスプ ローラー**選択**追加**、**新しい項目の**します。  
   
-2.  **\[インストール済み\]** の **\[共通項目\]** ノードで、**\[ワークフロー\]** を選択します。**\[ワークフロー\]** リストで **\[アクティビティ\]** を選択します。  
+2.  **インストール**、**共通項目**ノードで、選択**ワークフロー**です。 選択**アクティビティ**から、**ワークフロー**  ボックスの一覧です。  
   
-3.  **\[名前\]** ボックスに「`FlowchartNumberGuessWorkflow`」と入力し、**\[追加\]** をクリックします。  
+3.  型`FlowchartNumberGuessWorkflow`に、**名前**ボックスし、をクリックして**追加**です。  
   
-4.  **ツールボックス**の **\[フローチャート\]** セクションから **Flowchart** アクティビティをドラッグし、ワークフロー デザイン サーフェイスの **\[ここにアクティビティをドロップ\]** ラベルの上にドロップします。  
+4.  ドラッグ、**フローチャート**からアクティビティを**フローチャート**のセクションで、**ツールボックス**上にドロップし、**ここにアクティビティをドロップ**のラベルをワークフロー デザイン サーフェイスです。  
   
-### ワークフロー変数および引数を作成するには  
+### <a name="to-create-the-workflow-variables-and-arguments"></a>ワークフロー変数および引数を作成するには  
   
-1.  **FlowchartNumberGuessWorkflow.xaml** がまだ表示されていない場合は、**ソリューション エクスプローラー**でダブルクリックして、デザイナーにワークフローを表示します。  
+1.  ダブルクリックして**FlowchartNumberGuessWorkflow.xaml**で**ソリューション エクスプ ローラー**をまだ表示されていない場合、デザイナーでワークフローを表示します。  
   
-2.  ワークフロー デザイナーの左下にある **\[引数\]** をクリックし、**\[引数\]** ペインを表示します。  
+2.  をクリックして**引数**を表示するワークフロー デザイナーの左下横で、**引数**ウィンドウです。  
   
-3.  **\[引数の作成\]** をクリックします。  
+3.  をクリックして**引数の作成**です。  
   
-4.  **\[名前\]** ボックスに「`MaxNumber`」と入力し、**\[方向\]** ボックスで **\[IN\]** を選択して、**\[引数の型\]** ボックスで **\[Int32\]** を選択し、Enter キーを押して引数を保存します。  
+4.  型`MaxNumber`に、**名前**ボックスで、**で**から、**方向**ドロップダウン リストで、 **Int32** から**引数の型**ドロップダウン リストと、引数を保存するには ENTER キーを押します。  
   
-5.  **\[引数の作成\]** をクリックします。  
+5.  をクリックして**引数の作成**です。  
   
-6.  新しく追加した `MaxNumber` 引数の下にある **\[名前\]** ボックスに「`Turns`」と入力し、**\[方向\]** ボックスで **\[OUT\]** を選択して、**\[引数の型\]** ドロップダウン リストで **\[Int32\]** を選択し、Enter キーを押します。  
+6.  型`Turns`に、**名前**、新しく追加した下にあるボックス`MaxNumber`引数で、**アウト**から、**方向**selectドロップダウンリスト**Int32**から、**引数の型**ドロップダウン リストとし、ENTER キーを押します。  
   
-7.  アクティビティ デザイナーの左下にある **\[引数\]** をクリックし、**\[引数\]** ペインを閉じます。  
+7.  をクリックして**引数**を閉じる、アクティビティ デザイナーの左下横で、**引数**ウィンドウです。  
   
-8.  ワークフロー デザイナーの左下にある **\[変数\]** をクリックし、**\[変数\]** ペインを表示します。  
+8.  をクリックして**変数**を表示するワークフロー デザイナーの左下横で、**変数**ウィンドウです。  
   
-9. **\[変数の作成\]** をクリックします。  
+9. をクリックして**変数を作成**です。  
   
     > [!TIP]
-    >  **\[変数の作成\]** ボックスが表示されていない場合は、ワークフロー デザイナー画面の <xref:System.Activities.Statements.Flowchart> アクティビティをクリックして選択します。  
+    >  ない場合は**変数の作成**ボックスが表示されたら、をクリックして、<xref:System.Activities.Statements.Flowchart>それを選択するには、ワークフロー デザイナー画面上のアクティビティ。  
   
-10. **\[名前\]** ボックスに「`Guess`」と入力し、**\[変数の型\]** ボックスで **\[Int32\]** を選択し、Enter キーを押して変数を保存します。  
+10. 型`Guess`に、**名前**ボックスで、 **Int32**から、**変数型**ドロップダウン リスト、および、変数を保存するには ENTER キーを押します。  
   
-11. **\[変数の作成\]** をクリックします。  
+11. をクリックして**変数を作成**です。  
   
-12. **\[名前\]** ボックスに「`Target`」と入力し、**\[変数の型\]** ボックスで **\[Int32\]** を選択し、Enter キーを押して変数を保存します。  
+12. 型`Target`に、**名前**ボックスで、 **Int32**から、**変数型**ドロップダウン リスト、および、変数を保存するには ENTER キーを押します。  
   
-13. アクティビティ デザイナーの左下にある **\[変数\]** をクリックし、**\[変数\]** ペインを閉じます。  
+13. をクリックして**変数**を閉じる、アクティビティ デザイナーの左下横で、**変数**ウィンドウです。  
   
-### ワークフロー アクティビティを追加するには  
+### <a name="to-add-the-workflow-activities"></a>ワークフロー アクティビティを追加するには  
   
-1.  **ツールボックス**の **\[プリミティブ\]** セクションから **Assign** アクティビティをドラッグし、フローチャートの上部にある **Start** ノード上に置きます。**Assign** アクティビティが **Start** ノード上にあるときに、3 個の三角形が **Start** ノードの周囲に表示されます。**Assign** アクティビティを **Start** ノードのすぐ下にある三角形の上にドロップします。これにより 2 つのアイテムがリンクされ、**Assign** アクティビティがフローチャート内の最初のアクティビティとして指定されます。  
+1.  ドラッグ、**割り当てる**からアクティビティを**プリミティブ**のセクションで、**ツールボックス**上に置きます、**開始**の上部にあるノード、フローチャート。 ときに、**割り当てる**アクティビティが、**開始**ノード、囲む 3 つの三角形が表示されます、**開始**ノード。 削除、**割り当てる**すぐ下にある三角形でのアクティビティ、**開始**ノード。 これは、2 つの項目を一緒にリンクし、指定、**割り当てる**アクティビティがフローチャート内の最初のアクティビティとして。  
   
     > [!NOTE]
-    >  アクティビティは、開始ノードに手動でリンクすることにより、ワークフローの開始アクティビティとして指定することもできます。これを行うには、**Start** ノードをポイントし、**Start** ノードをポイントすると表示される四角形の 1 つをクリックして、目的のアクティビティに線を接続するようにマウスをドラッグし、表示される四角形の 1 つにドロップします。また、アクティビティを右クリックして **\[StartNode として設定\]** を選択して、アクティビティを開始アクティビティとして指定することもできます。  
+    >  アクティビティは、開始ノードに手動でリンクすることにより、ワークフローの開始アクティビティとして指定することもできます。 これを行うには、マウス ポインター、**開始**ノード上にマウスがときに表示される四角形の 1 つをクリックして、**開始**ノード、およびドラッグして、接続して、目的のアクティビティに線の 1 つにドロップ表示される四角形。 指定することも、アクティビティを it を右クリックし、選択の開始アクティビティとして**開始ノードとして設定**です。  
   
-2.  **\[終端側\]** ボックスに「`Target`」と入力し、**\[C\# の式を入力してください\]** ボックスまたは **\[VB の式を入力してください\]** ボックスに次の式を入力します。  
+2.  型`Target`に、**に**ボックスおよびに次の式、 **c# 式を入力**または**VB の式を入力**ボックス。  
   
     ```vb  
     New System.Random().Next(1, MaxNumber + 1)  
@@ -82,11 +89,11 @@ caps.handback.revision: 7
     ```  
   
     > [!TIP]
-    >  **\[ツールボックス\]** ウィンドウが表示されていない場合は、**\[表示\]** メニューの **\[ツールボックス\]** をクリックします。  
+    >  場合、**ツールボックス**ウィンドウが表示されない場合、選択**ツールボックス**から、**ビュー**メニュー。  
   
-3.  **ツールボックス**の **\[NumberGuessWorkflowActivities\]** セクションから **Prompt** アクティビティをドラッグし、前の手順でドロップした **Assign** アクティビティの下にドロップして、**Prompt** アクティビティを **Assign** アクティビティに接続します。2 つのアクティビティを接続する方法は 3 種類あります。1 つ目の方法では、**Prompt** アクティビティをワークフロー上にドロップするときにアクティビティを接続します。ワークフローに **Prompt** アクティビティをドラッグするときに、**Assign** アクティビティ上にマウス ポインターを置き、**Prompt** アクティビティが **Assign** のアクティビティ上にあるときに表示される 4 つの三角形の 1 つにドロップします。2 つ目の方法では、ワークフローの希望する位置に **Prompt** アクティビティをドロップします。その後、**Assign** アクティビティにマウス ポインターを置き、表示される四角形の 1 つを **Prompt** アクティビティにドラッグします。**Assign** アクティビティから **Prompt** アクティビティの四角形の 1 つに線を接続するようにマウスをドラッグし、マウスのボタンを離します。3 つ目の方法は 1 つ目の方法とよく似ていますが、**Prompt** アクティビティを**ツールボックス**からドラッグする代わりに、ワークフロー デザイン サーフェイス上のその位置からドラッグし、マウス ポインターを **Assign** アクティビティ上に移動して、表示される三角形の 1 つにドロップします。  
+3.  ドラッグ、**プロンプト**からアクティビティを**NumberGuessWorkflowActivities**のセクションで、**ツールボックス**、下にドロップして、**割り当てる**アクティビティ前のステップ、および接続、**プロンプト**アクティビティを**割り当てる**アクティビティ。 2 つのアクティビティを接続する方法は 3 種類あります。 最初の方法がドロップするときに接続するには、**プロンプト**ワークフローのアクティビティをします。 ドラッグする、**プロンプト**アクティビティをワークフロー上にマウス ポインター、**割り当てる**アクティビティのときに表示される 4 つの三角形の 1 つにドロップし、**プロンプト**アクティビティが、**割り当てる**アクティビティ。 2 番目の方法は、削除する、**プロンプト**アクティビティ、ワークフローの希望する位置。 次に、マウス ポインター、**割り当てる**アクティビティと下に表示される四角形の 1 つドラッグ、**プロンプト**アクティビティ。 線を接続するように、マウスをドラッグ、**割り当てる**アクティビティの四角形のいずれかに接続する、**プロンプト**アクティビティ、およびマウス ボタンを離します。 3 番目の方法にドラッグすることではなく点を除いて、最初の方法とよく似ています、**プロンプト**からアクティビティを**ツールボックス**、ワークフロー デザイン サーフェイス上の場所からドラッグして、上にマウスポインター**割り当てる**アクティビティ、および表示される三角形の 1 つにドロップします。  
   
-4.  **Prompt** アクティビティの **\[プロパティ\] ウィンドウ**で、**\[BookmarkName\]** プロパティ値ボックスに「`"EnterGuess"`」\(引用符を含む\) と入力します。**\[Result\]** プロパティ値ボックスに「`Guess`」と入力し、**\[Text\]** プロパティ ボックスに次の式を入力します。  
+4.  **プロパティ ウィンドウ**の**プロンプト**アクティビティで、「`"EnterGuess"`に引用符を含む、 **BookmarkName**プロパティ値ボックスです。 型`Guess`に、**結果**プロパティの値のボックスとに次の式を入力、**テキスト**プロパティ ボックス。  
   
     ```vb  
     "Please enter a number between 1 and " & MaxNumber  
@@ -97,13 +104,13 @@ caps.handback.revision: 7
     ```  
   
     > [!TIP]
-    >  **\[プロパティ\]** ウィンドウが表示されていない場合は、**\[表示\]** メニューの **\[プロパティ ウィンドウ\]** を選択します。  
+    >  場合、**プロパティ ウィンドウ**が表示されていない select**プロパティ ウィンドウ**から、**ビュー**メニュー。  
   
-5.  **ツールボックス**の **\[プリミティブ\]** セクションから **Assign** アクティビティをドラッグし、前の手順で説明した方法のいずれかを使用して、このアクティビティが **Prompt** アクティビティの下になるように接続します。  
+5.  ドラッグ、**割り当てる**からアクティビティを**プリミティブ**のセクションで、**ツールボックス**下に、前の手順で説明する方法のいずれかを使用し接続**プロンプト**アクティビティ。  
   
-6.  **\[終端側\]** ボックスに「`Turns`」と入力し、**\[C\# の式を入力してください\]** ボックスまたは **\[VB の式を入力してください\]** ボックスに「`Turns + 1`」と入力します。  
+6.  型`Turns`に、**に**ボックスおよび`Turns + 1`に、 **c# 式を入力**または**VB の式を入力**ボックス。  
   
-7.  **ツールボックス**の **\[フローチャート\]** セクションから **FlowDecision** をドラッグし、**Assign** アクティビティの下に接続します。**\[プロパティ\]** ウィンドウで、**\[Condition\]** プロパティ値ボックスに次の式を入力します。  
+7.  ドラッグ、 **FlowDecision**から、**フローチャート**のセクションで、**ツールボックス**下に接続し、**割り当てる**アクティビティ。 **プロパティ ウィンドウ**、次の式を入力、**条件**プロパティ値ボックスです。  
   
     ```vb  
     Guess = Target  
@@ -113,50 +120,50 @@ caps.handback.revision: 7
     Guess == Target  
     ```  
   
-8.  **\[ツールボックス\]** から別の **FlowDecision** アクティビティをドラッグし、最初のアクティビティの下にドロップします。2 つのアクティビティを接続するには、上部の **FlowDecision** アクティビティにある **\[False\]** という四角形から、2 番目の **FlowDecision** アクティビティの上部にある四角形までドラッグします。  
+8.  別のドラッグ**FlowDecision**からアクティビティを**ツールボックス**つ目の下にドロップします。 というラベルが付いた四角形からドラッグして 2 つのアクティビティを接続**False**上**FlowDecision** 、2 つ目の上部にある四角形をアクティビティ**FlowDecision**アクティビティ。  
   
     > [!TIP]
-    >  **FlowDecision** 上に **\[True\]** および **\[False\]** というラベルが表示されない場合は、**FlowDecision** にマウス ポインターを置きます。  
+    >  表示されない場合、 **True**と**False**ラベル、 **FlowDecision**、マウス ポインター、 **FlowDecision**です。  
   
-9. 2 番目の **FlowDecision** アクティビティをクリックして選択します。**\[プロパティ\]** ウィンドウで、**\[Condition\]** プロパティ値ボックスに次の式を入力します。  
+9. 2 つ目のクリックして**FlowDecision**アクティビティを選択します。 **プロパティ ウィンドウ**、次の式を入力、**条件**プロパティ値ボックスです。  
   
-    ```vb-c#  
+    ```
     Guess < Target  
     ```  
   
-10. **\[ツールボックス\]** の **\[プリミティブ\]** セクションから 2 つの **WriteLine** アクティビティをドラッグし、2 つの **FlowDecision** アクティビティの下に並べるようにドロップします。下部の **FlowDecision** アクティビティの **True** アクションを最も左の **WriteLine** に接続し、**False** アクションを最も右の **WriteLine** に接続します。  
+10. 2 つをドラッグして**WriteLine**からアクティビティを**プリミティブ**のセクションで、**ツールボックス**ようにサイド バイ サイドで 2 つの下にドロップして**FlowDecision**アクティビティ。 接続、 **True**下部のアクション**FlowDecision**を最も左アクティビティ**WriteLine**アクティビティ、および**False**アクションを右端**WriteLine**アクティビティ。  
   
-11. 最も左の **WriteLine** アクティビティをクリックし、**\[プロパティ\]** ウィンドウの **\[Text\]** プロパティ値ボックスに次の式を入力します。  
+11. 最も左クリックして**WriteLine**アクティビティを選択し、次の式を入力、**テキスト**プロパティ値ボックスに、**プロパティ ウィンドウ**します。  
   
-    ```vb-c#  
+    ```
     "Your guess is too low."  
     ```  
   
-12. その上にある **Prompt** アクティビティの左側に **WriteLine** を接続します。  
+12. 接続、 **WriteLine**の左側に、**プロンプト**上にあるアクティビティ。  
   
-13. 最も右の **WriteLine** アクティビティをクリックし、**\[プロパティ\]** ウィンドウの **\[Text\]** プロパティ値ボックスに次の式を入力します。  
+13. 最も右クリックして**WriteLine**アクティビティを選択し、次の式を入力、**テキスト**プロパティ値ボックスに、**プロパティ ウィンドウ**します。  
   
-    ```vb-c#  
+    ```
     "Your guess is too high."  
     ```  
   
-14. その上にある **Prompt** アクティビティの右側に **WriteLine** アクティビティを接続します。  
+14. 接続、 **WriteLine**の右側にあるアクティビティ、**プロンプト**その上アクティビティ。  
   
      次の例は完成したワークフローを示しています。  
   
-     ![完成した Windows Workflow Foundation](../../../docs/framework/windows-workflow-foundation//media/gettingstartedtutorialcompletedflowchart.PNG "GettingStartedTutorialCompletedFlowchart")  
+     ![Windows Workflow Foundation の完了](../../../docs/framework/windows-workflow-foundation/media/gettingstartedtutorialcompletedflowchart.PNG "GettingStartedTutorialCompletedFlowchart")  
   
-### ワークフローをビルドするには  
+### <a name="to-build-the-workflow"></a>ワークフローをビルドするには  
   
 1.  Ctrl キーと Shift キーを押しながら B キーを押して、ソリューションをビルドします。  
   
-     ワークフローを実行する手順については、次のトピック「[ワークフローを実行する方法](../../../docs/framework/windows-workflow-foundation//how-to-run-a-workflow.md)」を参照してください。「[ワークフローを実行する方法](../../../docs/framework/windows-workflow-foundation//how-to-run-a-workflow.md)」の手順を別のスタイルのワークフローを使用して既に完了している場合に、この手順のフローチャート ワークフローを使用して実行するには、「[ワークフローを実行する方法](../../../docs/framework/windows-workflow-foundation//how-to-run-a-workflow.md)」の「[アプリケーションをビルドして実行するには](../../../docs/framework/windows-workflow-foundation//how-to-run-a-workflow.md#BKMK_ToRunTheApplication)」に進んでください。  
+     ワークフローを実行する方法については、次のトピックをご覧ください。[する方法: ワークフローを実行する](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md)です。 既に完了している場合、[する方法: ワークフローを実行する](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md)ステップのワークフローとは異なるスタイルと共に、この手順でフローチャート ワークフローを使用して実行してに進んで、[アプリケーションをビルドして実行](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md#BKMK_ToRunTheApplication)のセクション[する方法: ワークフローを実行する](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md)です。  
   
-## 参照  
- <xref:System.Activities.Statements.Flowchart>   
- <xref:System.Activities.Statements.FlowDecision>   
- [Windows Workflow Foundation プログラミングの新機能](../../../docs/framework/windows-workflow-foundation//programming.md)   
- [ワークフローの設計](../../../docs/framework/windows-workflow-foundation//designing-workflows.md)   
- [チュートリアル入門](../../../docs/framework/windows-workflow-foundation//getting-started-tutorial.md)   
- [アクティビティを作成する方法](../../../docs/framework/windows-workflow-foundation//how-to-create-an-activity.md)   
- [ワークフローを実行する方法](../../../docs/framework/windows-workflow-foundation//how-to-run-a-workflow.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Activities.Statements.Flowchart>  
+ <xref:System.Activities.Statements.FlowDecision>  
+ [Windows Workflow Foundation プログラミング](../../../docs/framework/windows-workflow-foundation/programming.md)  
+ [ワークフローの設計](../../../docs/framework/windows-workflow-foundation/designing-workflows.md)  
+ [チュートリアル入門](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md)  
+ [アクティビティを作成する方法](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md)  
+ [ワークフローを実行する方法](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md)

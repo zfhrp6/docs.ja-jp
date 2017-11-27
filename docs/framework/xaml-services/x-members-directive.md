@@ -1,28 +1,30 @@
 ---
-title: "x:Members Directive | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "x:Members ディレクティブ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 155b393d-3b49-4c5a-8c9e-b3d9893af4e4
-caps.latest.revision: 5
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 230c6359c59b9f00738de9ce7ceeccd69899135f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# x:Members Directive
-マークアップで定義された一連の \(親要素の x:Class に適用される\) メンバーを保持します。  
+# <a name="xmembers-directive"></a>x:Members ディレクティブ
+親要素の x: クラスに適用されるマークアップで定義されているメンバーのセットを保持します。  
   
-## XAML 属性の使用方法  
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
   
 ```  
-  
 <object x:Class="className">  
   <x:Members>  
     oneOrMoreMembers  
@@ -30,17 +32,17 @@ caps.handback.revision: 5
 </object>  
 ```  
   
-## XAML 値  
+## <a name="xaml-values"></a>XAML 値  
   
 |||  
 |-|-|  
-|`className`|XAML 稼動環境のバッキング クラスまたは部分クラスの名前。  「解説」を参照してください。|  
-|`oneOrMoreMembers`|メンバーの定義を表す 1 つ以上のオブジェクト要素。  通常、これらは `x:Property` オブジェクト要素です。  「解説」を参照してください。|  
+|`className`|XAML 運用環境のバッキング クラスまたは部分クラスの名前。 「解説」を参照してください。|  
+|`oneOrMoreMembers`|メンバーの定義を表す 1 つまたは複数のオブジェクト要素。 通常、これらは、 `x:Property` object 要素。 「解説」を参照してください。|  
   
-## 解説  
- .NET Framework XAML サービス実装では、`x:Members` に対するバッキング クラスや基になるメンバー実装は存在しません。  `x:Members` は、あらゆる型のメンバーとして存在できる特殊な XAML メンバーです。  XAML ノード ストリームにおいて、`x:Members` は、XAML 言語の XAML 名前空間の `Members` という名前のメンバーとして表されます。  メンバー `Members` には、`Member` オブジェクトの読み取り専用のジェネリック リストが格納されます。  通常のマークアップでは、個々のメンバーが `x:Property` プロパティの要素として指定されます。  `x:Property` は、型のプロパティ専用の明確な型であり、`x:Member` に割り当てることができます。  詳細については、「[x:Property Directive](../../../docs/framework/xaml-services/x-property-directive.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ .NET Framework XAML サービス実装ではありませんバッキング クラスまたはのメンバーの実装を基になる`x:Members`です。 `x:Members`任意の型のメンバーとして存在できる特別な XAML メンバーです。 XAML ノード ストリームで`x:Members`という名前のメンバーとして表される`Members`、XAML 言語の XAML 名前空間からです。 メンバー`Members`の読み取り専用のジェネリック リストを含む`Member`オブジェクト。 一般的なマークアップで、個々 のメンバーとして指定`x:Property`プロパティ要素。 `x:Property`正確な型のプロパティの型を具体的し、に割り当てることが`x:Member`です。 詳細については、次を参照してください。 [X:property ディレクティブ](../../../docs/framework/xaml-services/x-property-directive.md)です。  
   
- マークアップでメンバー定義を指定する手段として `x:Members` を実際に使用できるようにするためには、変更可能なクラスにメンバーが関連付けられている必要があります。  想定されているモデルは、`x:Class` を指定する型のメンバーとして `x:Members` が存在することです。  ただし、型とメンバーを関連付けたり動的なメンバー定義を生成したりするためのメカニズムは、.NET Framework XAML サービス レベルではサポートされていません。  この点は、XAML に基づくメンバー定義に対応したアプリケーション モデルを持つ個々のフレームワークに委ねられています。  通常、そのような機能をサポートするためには、XAML をマークアップ コンパイルし、分離コードと統合するか、純粋な XAML 由来のアセンブリを生成する MSBUILD ビルド アクションが必要です。  
+ マークアップでメンバーの定義を指定する手段として `x:Members` の実用的な使用法をサポートするため、メンバーを変更可能なクラスに関連付ける必要があります。 目的とするモデルは、`x:Members` が `x:Class` を指定する型のメンバーとして存在することです。 ただし、型とメンバーを関連付けたり、動的メンバーの定義を作成したりするメカニズムは、.NET Framework XAML サービス レベルではサポートされません。 これは、XAML のメンバーの定義をサポートするアプリケーション モデルがある個々のフレームワークに残されています。 一般に、XAML をマークアップ コンパイルするとともに、XAML と分離コードの統合または純粋な XAML からのアセンブリの生成を行う MSBUILD のビルド操作が、この機能をサポートするために必要です。  
   
-## Windows Workflow Foundation の x:Members  
- Windows Workflow Foundation の場合、`x:Members` に格納されるのは、完全に XAML で構成されたカスタム アクティビティのメンバーか、またはアクティビティ デザイナー用に分離コードと共に XAML で定義された動的メンバーです。  また、XAML 稼動環境のルート要素には、`x:Class` が指定されている必要があります。  これは、.NET Framework XAML サービス レベルの要件ではありませんが、カスタム アクティビティおよび Windows Workflow Foundation XAML 全般をサポートする MSBUILD ビルド アクションによって XAML 稼動環境が読み込まれた場合には、これが要件となります。  `x:Class` を宣言するオブジェクト要素のマークアップにおいて、`x:Members` は最初の子要素である必要があります。
+## <a name="xmembers-for-windows-workflow-foundation"></a>Windows Workflow Foundation の x: メンバー  
+ Windows Workflow Foundation の`x:Members`、XAML または XAML で構成されるカスタム アクティビティのメンバーを含む – 分離コードを含むアクティビティ デザイナーの動的メンバーを定義します。 `x:Class` は、XAML の運用環境のルート要素にも指定する必要があります。 これは、.NET Framework XAML サービス レベルの要件ではありませんが、全般にカスタム アクティビティと Windows Workflow Foundation の XAML をサポートする MSBUILD のビルド アクションによって XAML の運用環境が読み込まれるときの要件になります。 `x:Members`宣言するオブジェクトの要素のマークアップ内の最初の子要素にする必要があります、`x:Class`です。

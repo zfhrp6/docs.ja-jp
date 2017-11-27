@@ -1,46 +1,47 @@
 ---
-title: "方法 : MDI アプリケーションでメニューの自動マージを設定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "MenuStrip, マージ"
-  - "マージ, 自動メニュー"
+title: "方法 : MDI アプリケーションでメニューの自動マージを設定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- MenuStrip [Windows Forms], merging
+- Merging [Windows Forms], automatic menu
 ms.assetid: 55e32cad-1141-4a56-aa33-d9543ca3d393
-caps.latest.revision: 5
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1e99aed38ed6c3af3424c264631f0eaf27e46af7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : MDI アプリケーションでメニューの自動マージを設定する
-ここでは、<xref:System.Windows.Forms.MenuStrip> を使用して、マルチ ドキュメント インターフェイス \(MDI\) アプリケーションで自動マージを設定する基本的な手順を説明します。  
+# <a name="how-to-set-up-automatic-menu-merging-for-mdi-applications"></a>方法 : MDI アプリケーションでメニューの自動マージを設定する
+次の手順でマルチ ドキュメント インターフェイス (MDI) アプリケーション内の自動マージを設定するための基本的な手順は、<xref:System.Windows.Forms.MenuStrip>です。  
   
-### メニューの自動マージを設定するには  
+### <a name="to-set-up-automatic-menu-merging"></a>メニューの自動マージを設定するには  
   
-1.  <xref:System.Windows.Forms.Form.IsMdiContainer%2A> プロパティを `true` に設定して、MDI 親フォームを作成します。  
+1.  設定して、MDI 親フォームを作成、<xref:System.Windows.Forms.Form.IsMdiContainer%2A>プロパティを`true`です。  
   
-2.  MDI 親フォームに <xref:System.Windows.Forms.MenuStrip> を追加し、<xref:System.Windows.Forms.Form.MainMenuStrip%2A> プロパティをその <xref:System.Windows.Forms.MenuStrip> に設定します。  
+2.  追加、 <xref:System.Windows.Forms.MenuStrip> MDI 親の設定をその<xref:System.Windows.Forms.Form.MainMenuStrip%2A>にプロパティ<xref:System.Windows.Forms.MenuStrip>です。  
   
-3.  MDI 子フォームを作成し、その <xref:System.Windows.Forms.Form.MdiParent%2A> プロパティを親フォームの名前に設定します。  
+3.  MDI 子フォームを作成し、設定、<xref:System.Windows.Forms.Form.MdiParent%2A>プロパティを親フォームの名前にします。  
   
-4.  MDI 子フォームに <xref:System.Windows.Forms.MenuStrip> を追加します。  
+4.  追加、 <xref:System.Windows.Forms.MenuStrip> MDI 子フォームにします。  
   
-5.  子フォームで、<xref:System.Windows.Forms.MenuStrip> の <xref:System.Windows.Forms.ToolStripItem.Visible%2A> プロパティを `false` に設定します。  
+5.  子フォームで、設定、<xref:System.Windows.Forms.ToolStripItem.Visible%2A>のプロパティ、<xref:System.Windows.Forms.MenuStrip>に`false`です。  
   
-6.  子フォームがアクティブ化されたときに親フォームの <xref:System.Windows.Forms.MenuStrip> にマージするメニュー項目を子フォームの <xref:System.Windows.Forms.MenuStrip> に追加します。  
+6.  メニュー項目に子フォームの追加<xref:System.Windows.Forms.MenuStrip>親フォームのマージする<xref:System.Windows.Forms.MenuStrip>子フォームがアクティブになったとき。  
   
-7.  子フォームの <xref:System.Windows.Forms.MenuStrip> のメニュー項目で <xref:System.Windows.Forms.ToolStripItem.MergeAction%2A> プロパティを使用して、各項目を親フォームにマージする方法を制御します。  
+7.  使用して、<xref:System.Windows.Forms.ToolStripItem.MergeAction%2A>子フォームの 項目をメニューのプロパティ<xref:System.Windows.Forms.MenuStrip>を親フォームにマージする方法を制御します。  
   
-## 参照  
- <xref:System.Windows.Forms.MenuStrip>   
- <xref:System.Windows.Forms.ToolStripMenuItem>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.MenuStrip>  
+ <xref:System.Windows.Forms.ToolStripMenuItem>  
  [MenuStrip コントロールの概要](../../../../docs/framework/winforms/controls/menustrip-control-overview-windows-forms.md)

@@ -4,8 +4,8 @@ ms.date: 03/30/2017
 ms.prod: .net
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
+- csharp
+- vb
 helpviewer_keywords:
 - binary serialization, custom serialization
 - custom serialization
@@ -19,16 +19,15 @@ helpviewer_keywords:
 - OnDeserializedAttribute class, custom serialization
 - OnSerializingAttribute class, custom serialization
 ms.assetid: 12ed422d-5280-49b8-9b71-a2ed129c0384
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: dceb97f877a456cae5f0c01fda12a6402affed48
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 85ca84865305b588a9214db6e6f4e28b47937827
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="custom-serialization"></a>カスタムのシリアル化
 カスタムのシリアル化は、型のシリアル化と逆シリアル化を制御するプロセスです。 シリアル化を制御することで、シリアル化の互換性を保証できます。つまり、型のコア機能を損なうことなく、1 つの型の複数のバージョン間でシリアル化および逆シリアル化を行うことができます。 たとえば、最初のバージョンの型では、フィールドが 2 つだけあるとします。 新しいバージョンでは、これにいくつかのフィールドが追加されています。 この場合、2 番目のバージョンのアプリケーションでは、両方の型をシリアル化および逆シリアル化できる必要があります。 以下のセクションでは、シリアル化の制御方法について説明します。
@@ -191,7 +190,6 @@ End Class
  オブジェクトは内側から外側に向かって再構築されるため、逆シリアル化時にメソッドを呼び出すと、望ましくない副作用を引き起こす可能性があります。これは、呼び出されるメソッドが、呼び出しの時点では逆シリアル化されていないオブジェクト参照を参照することがあるためです。 逆シリアル化対象のクラスで <xref:System.Runtime.Serialization.IDeserializationCallback> を実装する場合、オブジェクト グラフ全体が逆シリアル化された時点で <xref:System.Runtime.Serialization.IDeserializationCallback.OnDeserialization*> メソッドが自動的に呼び出されます。 この時点で、参照されているすべての子オブジェクトが完全に復元されます。 ハッシュ テーブルは、イベント リスナーを使用せずに逆シリアル化することが困難なクラスの典型的な例です。 逆シリアル化時にキーと値のペアを取得することは簡単ですが、これらのオブジェクトをハッシュ テーブルに戻すと、このハッシュ テーブルから派生したクラスが逆シリアル化されているかどうかわからないため、問題が発生する可能性があります。 したがって、この段階でハッシュ テーブルのメソッドを呼び出すことはお勧めできません。  
   
 ## <a name="see-also"></a>関連項目  
- [バイナリ シリアル化](binary-serialization.md)   
- [XML シリアル化および SOAP シリアル化](xml-and-soap-serialization.md)   
+ [バイナリ シリアル化](binary-serialization.md)  
+ [XML シリアル化および SOAP シリアル化](xml-and-soap-serialization.md)  
  [セキュリティとシリアル化](../../../docs/framework/misc/security-and-serialization.md)
-

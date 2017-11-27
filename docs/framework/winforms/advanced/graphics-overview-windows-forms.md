@@ -1,57 +1,58 @@
 ---
-title: "グラフィックスの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "GDI+, Windows フォーム"
-  - "グラフィックス"
-  - "グラフィックス, Windows フォーム"
-  - "Windows フォーム, GDI+"
-  - "Windows フォーム, グラフィックス"
+title: "グラフィックスの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Forms, graphics
+- Windows Forms, GDI+
+- graphics [Windows Forms], Windows Forms
+- GDI+, Windows Forms
+- graphics
 ms.assetid: 94084509-2c6f-477d-923b-d25d37a36b1c
-caps.latest.revision: 19
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 08ded27d60bdfcd9b9b1de4ba719c2f5b6018df1
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# グラフィックスの概要 (Windows フォーム)
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] は 、デバイスに依存しないアプリケーションを作成することをプログラムが使用するグラフィック デバイス インターフェイスです。  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] のサービスは、一連のマネージ クラスを使用して公開されます。  
+# <a name="graphics-overview-windows-forms"></a>グラフィックスの概要 (Windows フォーム)
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]グラフィックス デバイス インターフェイスにより、プログラマがデバイスに依存しないアプリケーションを作成するためです。 サービス[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]一連のマネージ クラスを介して公開されます。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [グラフィックスについて](../../../../docs/framework/winforms/advanced/overview-of-graphics.md)  
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] の概要について説明します。  
+ 概要については、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]です。  
   
  [グラフィックス サービスの 3 つのカテゴリ](../../../../docs/framework/winforms/advanced/three-categories-of-graphics-services.md)  
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] によるプログラミングに含まれる 3 つのカテゴリについて説明します。  
+ 使用したプログラミングを構成する 3 つのカテゴリについて説明します[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]です。  
   
  [グラフィックス インターフェイスの構造体](../../../../docs/framework/winforms/advanced/structure-of-the-graphics-interface.md)  
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] のマネージ クラス インターフェイスについて説明します。  
+ マネージ クラスのインターフェイスについて説明します[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]です。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.Drawing>  
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 基本グラフィックス機能へのアクセスを提供します。  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] の基本的なグラフィックス機能を使用できるようにします。  
   
  <xref:System.Drawing.Drawing2D>  
- 高度な 2 次元グラフィックスおよびベクター グラフィックス機能を提供します。  
+ 2 次元グラフィックスおよびベクター グラフィックス機能の詳細を提供します。  
   
  <xref:System.Drawing.Imaging>  
- 高度な[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] イメージング機能を提供します。  
+ 高度な [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] イメージング機能を提供します。  
   
  <xref:System.Drawing.Text>  
  高度な [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] タイポグラフィ機能を提供します。  
   
  <xref:System.Drawing.Printing>  
- 印刷に関連するサービスを提供します。  
+ 印刷関連のサービスを提供します。  
   
  <xref:System.Windows.Forms.TextRenderer>  
- [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] のテキスト描画機能、およびテキスト寸法計測機能を提供します。
+ 提供[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]テキストを描画し、機能を測定します。

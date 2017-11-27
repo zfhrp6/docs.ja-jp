@@ -7,24 +7,18 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: 11940511-c124-4d91-ae31-d4ed6e81ee58
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0deccc8be5616c76f4c447c50f22544fe0fabe47
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 805f6f6ed7990b42065dfe7985a5d81844961897
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Peer Name Resolution Protocol
+# <a name="peer-name-resolution-protocol"></a>Peer Name Resolution Protocol
 ピアツーピア環境において、ピアは特定の名前解決システムを使用して、互いのネットワーク上の場所 (アドレス、プロトコル、およびポート) をその名前や他の識別子から解決します。 これまで、ドメイン ネーム システム (DNS) でのピア名の解決は、本質的に一時的な接続やその他の不具合によって複雑化していました。  
   
  Microsoft® Windows® ピアツーピア ネットワーク プラットフォームは、ピア名解決プロトコル (PNRP) を使用してこの問題を解決します。PNRP は、セキュリティで保護されたスケーラブルかつ動的な名前登録および名前解決プロトコルで、当初 Windows XP 用に開発され、Windows Vista™ でアップグレードされました。 PNRP は、従来の名前解決システムとは機能が大きく異なり、アプリケーション開発者にとってエキサイティングかつ新しい可能性を開拓します。  
@@ -45,7 +39,7 @@ ms.lasthandoff: 08/21/2017
   
 -  
   
-## System.Net.PeerToPeer 名前空間  
+## <a name="the-systemnetpeertopeer-namespace"></a>System.Net.PeerToPeer 名前空間  
   
 -   PNRP の機能は、.NET Framework Version 3.5 内で <xref:System.Net.PeerToPeer> 名前空間によって定義されます。 この機能は、使用可能な PNRP サービスにピア名を登録して解決するために使用できる型のセットを提供します。  
   
@@ -73,9 +67,8 @@ ms.lasthandoff: 08/21/2017
   
 -  
   
-## 関連項目  
- <xref:System.ServiceModel.PeerResolvers>   
- <xref:System.Net.PeerToPeer>   
- [ネットワーク プログラミングのサンプル](../../../docs/framework/network-programming/network-programming-samples.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.ServiceModel.PeerResolvers>  
+ <xref:System.Net.PeerToPeer>  
+ [ネットワーク プログラミングのサンプル](../../../docs/framework/network-programming/network-programming-samples.md)  
  [PeerToPeer テクノロジのサンプル](http://go.microsoft.com/fwlink/?LinkID=179571)
-

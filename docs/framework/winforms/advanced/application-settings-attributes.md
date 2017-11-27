@@ -1,53 +1,54 @@
 ---
-title: "アプリケーション設定の属性 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "アプリケーション設定 [Windows フォーム], 属性"
-  - "属性 [Windows フォーム], アプリケーション設定"
-  - "ラッパー クラス, アプリケーション設定"
+title: "アプリケーション設定の属性"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- application settings [Windows Forms], attributes
+- attributes [Windows Forms], application settings
+- wrapper classes [Windows Forms], application settings
 ms.assetid: 53caa66c-a9fb-43a5-953c-ad092590098d
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1879ac6704619092c4c0d9cd6fab0356ea07a13d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# アプリケーション設定の属性
-アプリケーション設定アーキテクチャには、アプリケーション設定ラッパー クラスまたはその個々のプロパティに適用できるさまざまな属性が用意されています。  これらの属性は、カスタム ラッパーの指定要件に合わせて機能を調節できるように、アプリケーション設定インフラストラクチャ \(多くの場合、具体的には設定プロバイダー\) によって実行時にチェックされます。  
+# <a name="application-settings-attributes"></a>アプリケーション設定の属性
+アプリケーション設定アーキテクチャでは、アプリケーション設定のラッパー クラスまたはその個々 のプロパティに適用できる多くの属性を提供します。 これらの属性は、実行時に示されたカスタム ラッパーのニーズにその動作を調整するためにアプリケーション設定のインフラストラクチャ、具体的には多くの場合、設定プロバイダーをでチェックします。  
   
- アプリケーション設定ラッパー クラス、このクラスの個々のプロパティ、またはその両方に適用できる属性を次の表に示します。  定義上、各設定プロパティに 1 つのスコープ属性 \(**UserScopedSettingAttribute** または **ApplicationScopedSettingAttribute**\) だけを適用する必要があります。  
+ 次の表は、アプリケーション設定のラッパー クラス、このクラスの個々 のプロパティ、またはその両方に適用できる属性を一覧表示します。 定義上、スコープを 1 つの属性のみ —**UserScopedSettingAttribute**または**ApplicationScopedSettingAttribute**— 各設定のプロパティに適用する必要があります。  
   
 > [!NOTE]
->  <xref:System.Configuration.SettingsProvider> クラスから派生するカスタム設定プロバイダーは、**ApplicationScopedSettingAttribute**、**UserScopedSettingAttribute**、**DefaultSettingValueAttribute** の 3 つの属性だけを認識する必要があります。  
+>  派生したカスタム設定プロバイダー、<xref:System.Configuration.SettingsProvider>クラス、次の 3 つの属性を認識するために必要なだけ: **ApplicationScopedSettingAttribute**、 **UserScopedSettingAttribute**、および**DefaultSettingValueAttribute**です。  
   
-|属性|Target|Description|  
-|--------|------------|-----------------|  
-|<xref:System.Configuration.SettingsProviderAttribute>|Both|永続化に使用される設定プロバイダーの短い名前を指定します。<br /><br /> この属性を指定しないときは、既定のプロバイダー <xref:System.Configuration.LocalFileSettingsProvider> を指定したものと見なされます。|  
-|<xref:System.Configuration.UserScopedSettingAttribute>|Both|ユーザー スコープのアプリケーション設定としてプロパティを定義します。|  
-|<xref:System.Configuration.ApplicationScopedSettingAttribute>|Both|アプリケーション スコープのアプリケーション設定としてプロパティを定義します。|  
-|<xref:System.Configuration.DefaultSettingValueAttribute>|プロパティ|プロバイダーによって、このプロパティのハードコーディングされた既定値に逆シリアル化できる文字列を指定します。<br /><br /> <xref:System.Configuration.LocalFileSettingsProvider> はこの属性を必要としません。既に永続化されている値がある場合は、この属性で指定された値をオーバーライドします。|  
-|<xref:System.Configuration.SettingsDescriptionAttribute>|プロパティ|主に実行時ツールとデザイン時ツールによって使用される、個々の設定の記述テストを指定します。|  
-|<xref:System.Configuration.SettingsGroupNameAttribute>|Class|設定グループの名前を明示的に指定します。  この属性を指定しない場合、<xref:System.Configuration.ApplicationSettingsBase> はラッパー クラス名を使用します。|  
-|<xref:System.Configuration.SettingsGroupDescriptionAttribute>|Class|主に実行時ツールとデザイン時ツールによって使用される、設定グループの記述テストを指定します。|  
-|<xref:System.Configuration.SettingsManageabilityAttribute>|Both|設定グループまたはプロパティに提供する必要がある 0 個以上の管理機能サービスを指定します。  使用できるサービスは、<xref:System.Configuration.SettingsManageability> 列挙型によって記述されます。|  
-|<xref:System.Configuration.SpecialSettingAttribute>|プロパティ|設定プロバイダーによる特別な処理を意味する特別な定義済みカテゴリ \(接続文字列など\) に設定が属することを示します。  この属性の定義済みカテゴリは、<xref:System.Configuration.SpecialSetting> 列挙型によって定義されます。|  
-|<xref:System.Configuration.SettingsSerializeAsAttribute>|Both|設定グループまたはプロパティに推奨されるシリアル化機構を指定します。  使用できるシリアル化機構は、<xref:System.Configuration.SettingsSerializeAs> 列挙型によって定義されます。|  
-|<xref:System.Configuration.NoSettingsVersionUpgradeAttribute>|プロパティ|マークしたプロパティのアプリケーション アップグレード機能を設定プロバイダーがすべて無効にすることを指定します。|  
+|属性|ターゲット|説明|  
+|---------------|------------|-----------------|  
+|<xref:System.Configuration.SettingsProviderAttribute>|両方|永続化に使用する設定プロバイダーの短い名前を指定します。<br /><br /> この属性が指定されていない場合、既定のプロバイダー<xref:System.Configuration.LocalFileSettingsProvider>と見なされます。|  
+|<xref:System.Configuration.UserScopedSettingAttribute>|両方|アプリケーションのユーザー スコープ設定とプロパティを定義します。|  
+|<xref:System.Configuration.ApplicationScopedSettingAttribute>|両方|アプリケーションのアプリケーション スコープ設定として、プロパティを定義します。|  
+|<xref:System.Configuration.DefaultSettingValueAttribute>|プロパティ|このプロパティの既定のハードコード値に、プロバイダーによって逆シリアル化できる文字列を指定します。<br /><br /> <xref:System.Configuration.LocalFileSettingsProvider>この属性は必要ありません、この属性である場合、値既に永続化の指定には、任意の値をよりも優先されます。|  
+|<xref:System.Configuration.SettingsDescriptionAttribute>|プロパティ|実行時およびデザイン時ツールで、主に使用される、個々 の設定のテストの説明を提供します。|  
+|<xref:System.Configuration.SettingsGroupNameAttribute>|クラス|設定グループの明示的な名前を提供します。 この属性が見つからない場合<xref:System.Configuration.ApplicationSettingsBase>ラッパー クラス名を使用します。|  
+|<xref:System.Configuration.SettingsGroupDescriptionAttribute>|クラス|設定グループで、実行時およびデザイン時ツールで、主に使用されるテストの説明を提供します。|  
+|<xref:System.Configuration.SettingsManageabilityAttribute>|両方|設定グループまたはプロパティに指定する必要がある、0 個以上の管理の容易性サービスを指定します。 使用可能なサービスが記載されている、<xref:System.Configuration.SettingsManageability>列挙します。|  
+|<xref:System.Configuration.SpecialSettingAttribute>|プロパティ|設定が設定プロバイダーによる特別な処理を提案する接続文字列など、特別な定義済みのカテゴリに属することを示します。 この属性の定義済みのカテゴリがによって定義されている、<xref:System.Configuration.SpecialSetting>列挙します。|  
+|<xref:System.Configuration.SettingsSerializeAsAttribute>|両方|設定グループまたはプロパティの推奨されるシリアル化機構を指定します。 使用可能なシリアル化メカニズムが定義されている、<xref:System.Configuration.SettingsSerializeAs>列挙します。|  
+|<xref:System.Configuration.NoSettingsVersionUpgradeAttribute>|プロパティ|設定プロバイダーにマークされたプロパティのすべてのアプリケーションのアップグレードの機能が無効にする必要がありますを指定します。|  
   
- *クラス*は、その属性をアプリケーション設定ラッパー クラスだけに適用できることを示します。  *プロパティ*は、その属性を設定プロパティだけに適用できることを示します。  *両方*は、その属性をどちらのレベルでも適用できることを示します。  
+ *クラス*アプリケーション設定のラッパー クラスにのみ、属性を適用できることを示します。 *プロパティ*属性が設定プロパティだけに適用できることを示します。 *両方*いずれかのレベルで属性を適用できることを示します。  
   
-## 参照  
- <xref:System.Configuration.ApplicationSettingsBase>   
- <xref:System.Configuration.SettingsProvider>   
- [アプリケーション設定アーキテクチャ](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)   
- [How to: Create Application Settings](http://msdn.microsoft.com/ja-jp/53b3af80-1c02-4e35-99c6-787663148945)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Configuration.ApplicationSettingsBase>  
+ <xref:System.Configuration.SettingsProvider>  
+ [アプリケーション設定アーキテクチャ](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)  
+ [方法: アプリケーション設定を作成する](http://msdn.microsoft.com/en-us/53b3af80-1c02-4e35-99c6-787663148945)

@@ -8,28 +8,25 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - sockets, code examples
 - synchronous client sockets
 - sockets, synchronous client sockets
 ms.assetid: 2c7d5be7-2221-467c-a839-5744ec4d576d
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 759585d1029742f6f45e9f7253282af05accc82e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: f7cf48f98b60d287cea1615cc8aefef6151c805c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="synchronous-client-socket-example"></a>同期クライアント ソケットの例
-次のサンプル プログラムでは、サーバーに接続するクライアントが作成されます。 このクライアントは同期ソケットで構築されます。そのため、クライアント アプリケーションの実行は、サーバーが応答を返すまで一時停止となります。 このアプリケーションは文字列をサーバーに送信し、サーバーが返した文字列をコンソールに表示します。  
+次のプログラム例では、サーバーに接続するクライアントを作成します。 このクライアントは同期ソケットで構築されます。そのため、クライアント アプリケーションの実行は、サーバーが応答を返すまで一時停止となります。 このアプリケーションは文字列をサーバーに送信し、サーバーが返した文字列をコンソールに表示します。  
   
 ```vb  
 Imports System  
@@ -47,12 +44,12 @@ Public Class SynchronousSocketClient
   
         ' Establish the remote endpoint for the socket.  
         ' This example uses port 11000 on the local computer.  
-        Dim ipHostInfo As IPHostEntry = Dns.Resolve(Dns.GetHostName())  
+        Dim ipHostInfo As IPHostEntry = Dns.GetHostEntry(Dns.GetHostName())  
         Dim ipAddress As IPAddress = ipHostInfo.AddressList(0)  
         Dim remoteEP As New IPEndPoint(ipAddress, 11000)  
   
         ' Create a TCP/IP socket.  
-        Dim sender As New Socket(AddressFamily.InterNetwork, _  
+        Dim sender As New Socket(ipAddress.AddressFamily, _  
             SocketType.Stream, ProtocolType.Tcp)  
   
         ' Connect the socket to the remote endpoint.  
@@ -97,12 +94,12 @@ public class SynchronousSocketClient {
         try {  
             // Establish the remote endpoint for the socket.  
             // This example uses port 11000 on the local computer.  
-            IPHostEntry ipHostInfo = Dns.Resolve(Dns.GetHostName());  
+            IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());  
             IPAddress ipAddress = ipHostInfo.AddressList[0];  
             IPEndPoint remoteEP = new IPEndPoint(ipAddress,11000);  
   
             // Create a TCP/IP  socket.  
-            Socket sender = new Socket(AddressFamily.InterNetwork,   
+            Socket sender = new Socket(ipAddress.AddressFamily,   
                 SocketType.Stream, ProtocolType.Tcp );  
   
             // Connect the socket to the remote endpoint. Catch any errors.  
@@ -148,7 +145,6 @@ public class SynchronousSocketClient {
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [同期サーバー ソケットの例](../../../docs/framework/network-programming/synchronous-server-socket-example.md)   
- [同期クライアント ソケットの使用](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)   
+ [同期サーバー ソケットの例](../../../docs/framework/network-programming/synchronous-server-socket-example.md)  
+ [同期クライアント ソケットの使用](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)  
  [ソケットのコード例](../../../docs/framework/network-programming/socket-code-examples.md)
-

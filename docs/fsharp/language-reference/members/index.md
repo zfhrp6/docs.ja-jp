@@ -1,6 +1,6 @@
 ---
 title: "メンバー (F#)"
-description: "メンバー (F#)"
+description: "F# のプログラミング言語でオブジェクトのメンバーについて説明します。"
 keywords: "visual f#, f#, 関数型プログラミング"
 author: cartermp
 ms.author: phcart
@@ -10,13 +10,12 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: e472f50a-4939-4e62-abbc-471f8f265790
-translationtype: Human Translation
-ms.sourcegitcommit: 0a01ec92a90d99fafaacbd3f71f5177e5cf94a68
-ms.openlocfilehash: fe14657b25d122296a6826daba37ea99b6ee64b4
-ms.lasthandoff: 04/05/2017
-
+ms.openlocfilehash: ca34c8d073594791ec268a85ad56f50cc6d9e435
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="members"></a>メンバー
 
 このセクションでは、F# オブジェクト型のメンバーについて説明します。
@@ -44,4 +43,3 @@ ms.lasthandoff: 04/05/2017
 |[演算子のオーバーロード](../operator-overloading.md)|型のカスタマイズした演算子の定義について説明します。|
 |[イベント](events.md)|F# のイベントおよびイベント処理のサポートの定義について説明します。|
 |[明示的なフィールド: `val` キーワード](explicit-fields-the-val-keyword.md)|型の初期化されていないフィールドの定義について説明します。|
-

@@ -1,53 +1,59 @@
 ---
-title: "方法 : セキュリティ コンテキストを調べる | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Claimset クラス"
-  - "ServiceSecurityContext クラス"
-  - "WCF, セキュリティ"
+title: "方法 : セキュリティ コンテキストを調べる"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ServiceSecurityContext class
+- WCF, security
+- Claimset class
 ms.assetid: 389b5a57-4175-4bc0-ada0-fc750d51149f
-caps.latest.revision: 13
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 72bc3dfcc91cb0fe5b393c9735c83b6331d5e0dd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : セキュリティ コンテキストを調べる
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスのプログラミングを行う場合、サービス セキュリティ コンテキストを使用すると、サービスの認証で使用されるクライアントの資格情報とクレームの詳細を確認できます。これは、<xref:System.ServiceModel.ServiceSecurityContext> クラスのプロパティを使用することで可能になります。  
+# <a name="how-to-examine-the-security-context"></a>方法 : セキュリティ コンテキストを調べる
+[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスのプログラミングを行う場合、サービス セキュリティ コンテキストを使用すると、サービスの認証で使用されるクライアントの資格情報とクレームの詳細を確認できます。 これは、<xref:System.ServiceModel.ServiceSecurityContext> クラスのプロパティを使用することで可能になります。  
   
- たとえば、<xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> プロパティまたは <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> プロパティを使用すると、現在のクライアントの ID を取得できます。クライアントが匿名であるかどうかを確認するには、<xref:System.ServiceModel.ServiceSecurityContext.IsAnonymous%2A> プロパティを使用します。  
+ たとえば、<xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> プロパティまたは <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> プロパティを使用すると、現在のクライアントの ID を取得できます。 クライアントが匿名であるかどうかを確認するには、<xref:System.ServiceModel.ServiceSecurityContext.IsAnonymous%2A> プロパティを使用します。  
   
  また、<xref:System.ServiceModel.ServiceSecurityContext.AuthorizationContext%2A> プロパティにあるクレームのコレクションを反復処理することによって、クライアントのためにどのようなクレームが作成されているのかを確認することもできます。  
   
-### 現在のセキュリティ コンテキストを取得するには  
+### <a name="to-get-the-current-security-context"></a>現在のセキュリティ コンテキストを取得するには  
   
--   現在のセキュリティ コンテキストを取得するためには、静的プロパティ <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> にアクセスします。参照から現在のコンテキストの任意のプロパティを調べます。  
+-   現在のセキュリティ コンテキストを取得するためには、静的プロパティ <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> にアクセスします。 参照から現在のコンテキストの任意のプロパティを調べます。  
   
-### 呼び出し元の ID を確認するには  
+### <a name="to-determine-the-identity-of-the-caller"></a>呼び出し元の ID を確認するには  
   
 1.  <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> プロパティおよび <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> プロパティの値を表示します。  
   
-### 呼び出し元のクレームを解析するには  
+### <a name="to-parse-the-claims-of-a-caller"></a>呼び出し元のクレームを解析するには  
   
-1.  現在の <xref:System.IdentityModel.Policy.AuthorizationContext> クラスを返します。<xref:System.ServiceModel.ServiceSecurityContext.Current%2A> プロパティを使用して、現在のサービス セキュリティ コンテキストを返し、次に <xref:System.ServiceModel.ServiceSecurityContext.AuthorizationContext%2A> プロパティを使用して `AuthorizationContext` を返します。  
+1.  現在の <xref:System.IdentityModel.Policy.AuthorizationContext> クラスを返します。 <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> プロパティを使用して、現在のサービス セキュリティ コンテキストを返し、次に `AuthorizationContext` プロパティを使用して <xref:System.ServiceModel.ServiceSecurityContext.AuthorizationContext%2A> を返します。  
   
-2.  <xref:System.IdentityModel.Policy.AuthorizationContext> クラスの <xref:System.IdentityModel.Policy.AuthorizationContext.ClaimSets%2A> プロパティによって返された <xref:System.IdentityModel.Claims.ClaimSet> オブジェクトのコレクションを解析します。  
+2.  <xref:System.IdentityModel.Claims.ClaimSet> クラスの <xref:System.IdentityModel.Policy.AuthorizationContext.ClaimSets%2A> プロパティによって返された <xref:System.IdentityModel.Policy.AuthorizationContext> オブジェクトのコレクションを解析します。  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では、現在のセキュリティ コンテキストの <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> プロパティおよび <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> プロパティの値、<xref:System.IdentityModel.Claims.Claim.ClaimType%2A> プロパティの値、クレームのリソース値、および現在のセキュリティ コンテキストのすべてのクレームの <xref:System.IdentityModel.Claims.Claim.Right%2A> プロパティを表示します。  
   
  [!code-csharp[c_PrincipalPermissionAttribute#4](../../../samples/snippets/csharp/VS_Snippets_CFX/c_principalpermissionattribute/cs/source.cs#4)]
  [!code-vb[c_PrincipalPermissionAttribute#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_principalpermissionattribute/vb/source.vb#4)]  
   
-## コードのコンパイル  
+## <a name="compiling-the-code"></a>コードのコンパイル  
  コードでは、次の名前空間を使用します。  
   
 -   <xref:System>  
@@ -58,6 +64,6 @@ caps.handback.revision: 13
   
 -   <xref:System.IdentityModel.Claims>  
   
-## 参照  
- [サービスのセキュリティ保護](../../../docs/framework/wcf/securing-services.md)   
- [サービス ID と認証](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+## <a name="see-also"></a>関連項目  
+ [サービスのセキュリティ保護](../../../docs/framework/wcf/securing-services.md)  
+ [サービス Id と認証](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)

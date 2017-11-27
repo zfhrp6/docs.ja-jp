@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 5f723345-7270-49e2-b638-b3a34bd40517
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1e23b0261625efb1e6da070e4b5f8334b1ef7488
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 312324553333427c08acf7ef3eb11059f2224d06
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="windows-identity-foundation-45-overview"></a>Windows Identity Foundation 4.5 の概要
 Windows Identity Foundation 4.5 は、アプリケーション内でクレーム ベース ID を実装するための一連の .NET Framework クラスです。 このクラスを使用することで、クレーム対応アプリケーションおよびサービスのメリットを簡単に得られるようになります。 WIF 4.5 は、.NET Framework Version 4.5 以降が使用されているすべての Web アプリケーションまたは Web サービスで使用できます。 WIF は、オープン スタンダードに基づく業界共通の構想を取り入れた Microsoft のフェデレーション ID ソフトウェア ファミリの 1 つにすぎません。 フェデレーション ID は、[Active Directory® フェデレーション サービス](http://go.microsoft.com/fwlink/?LinkID=247516) (AD FS) 2.0、[Microsoft Azure のアクセス制御サービス](http://go.microsoft.com/fwlink/?LinkID=247517) (ACS)、および WIF の 3 つのコンポーネントで構成されます。 この 3 つのコンポーネントが一体となって、Microsoft の新しいクレーム ベースのクラウド ID およびアクセス プラットフォームのコアを形成しています。  
@@ -49,5 +47,4 @@ Windows Identity Foundation 4.5 は、アプリケーション内でクレーム
   
 -   ステップアップ認証。 同じアプリケーション内でも、リソースによって認証の要件が異なる場合があります。 WIF では、認証要件を段階的に厳しくする必要がある (たとえば、最初はユーザー名とパスワード認証でログインし、その後、スマート カード認証にステップアップする) アプリケーションを、開発者がビルドできます。  
   
- WIF を使用すると、クレーム ベースの ID モデルのメリットを簡単に利用できます。 詳細については、[開発者向けの Windows Identity Foundation のホワイト ペーパー](http://go.microsoft.com/fwlink/?LinkId=122266)を参照してください。
-
+ WIF を使用すると、クレーム ベースの ID モデルのメリットを簡単に利用できます。 詳細については、[開発者向けの Windows Identity Foundation のホワイト ペーパー](http://download.microsoft.com/download/7/d/0/7d0b5166-6a8a-418a-addd-95ee9b046994/windowsidentityfoundationwhitepaperfordevelopers-rtw.pdf)を参照してください。

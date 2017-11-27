@@ -1,57 +1,61 @@
 ---
-title: "GDI+ でのイメージのトリミングおよびスケーリング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "圧縮 (データを), イメージ"
-  - "GDI+, トリミング (イメージを)"
-  - "GDI+, スケーリング (イメージの)"
-  - "イメージ [Windows フォーム], 圧縮"
-  - "イメージ [Windows フォーム], トリミング"
-  - "イメージ [Windows フォーム], 展開"
-  - "イメージ [Windows フォーム], スケーリング"
-  - "四角形, 描画先"
-  - "四角形, source"
+title: "GDI+ でのイメージのトリミングおよびスケーリング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- GDI+, scaling images
+- GDI+, cropping images
+- images [Windows Forms], cropping
+- compressing data [Windows Forms], images
+- images [Windows Forms], expansion
+- images [Windows Forms], scaling
+- rectangles [Windows Forms], source
+- rectangles [Windows Forms], destination
+- images [Windows Forms], compression
 ms.assetid: ad5daf26-005f-45bc-a2af-e0e97777a21a
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 63e1e55e57d586cbbca87361b95c18f0f53b8c75
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# GDI+ でのイメージのトリミングおよびスケーリング
-<xref:System.Drawing.Graphics> クラスの <xref:System.Drawing.Graphics.DrawImage%2A> メソッドを使用して、ベクター イメージとラスター イメージを描画および配置できます。  <xref:System.Drawing.Graphics.DrawImage%2A> はオーバーロードされたメソッドであるため、いくつかの方法でこのメソッドの引数を指定できます。  
+# <a name="cropping-and-scaling-images-in-gdi"></a>GDI+ でのイメージのトリミングおよびスケーリング
+使用することができます、<xref:System.Drawing.Graphics.DrawImage%2A>のメソッド、<xref:System.Drawing.Graphics>を描画して、ベクター イメージとラスター イメージを配置するクラス。 <xref:System.Drawing.Graphics.DrawImage%2A>引数を指定することがいくつかの方法があるため、オーバー ロードされたメソッドは、します。  
   
-## DrawImage のバリエーション  
- ある <xref:System.Drawing.Graphics.DrawImage%2A> メソッドは、<xref:System.Drawing.Bitmap> と <xref:System.Drawing.Rectangle> を受け取ります。  四角形は、描画操作の範囲を指定します。つまり、イメージが描画される先の四角形を指定します。  描画先の四角形のサイズと元のイメージのサイズが異なる場合、イメージは、描画先の四角形と一致するようにスケーリングされます。  スケーリングなし、拡大、および縮小の操作をそれぞれ適用して、同じイメージを 3 回描画するコード例を次に示します。  
+## <a name="drawimage-variations"></a>DrawImage のバリエーション  
+ 1 つのバリエーション、<xref:System.Drawing.Graphics.DrawImage%2A>メソッドは受信、<xref:System.Drawing.Bitmap>と<xref:System.Drawing.Rectangle>です。 四角形を描画操作のシリアル化先を指定しますつまり、イメージを描画する四角形を指定します。 移行先の四角形のサイズが元のイメージのサイズと異なる場合は、イメージは移行先の四角形に合わせてスケーリングされます。 次のコード例は、3 回、同じイメージを描画する方法を示しています: スケーリングなしで、拡大、および、圧縮を使用します。  
   
  [!code-csharp[System.Drawing.ImagesBitmapsMetafiles#31](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImagesBitmapsMetafiles/CS/Class1.cs#31)]
  [!code-vb[System.Drawing.ImagesBitmapsMetafiles#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImagesBitmapsMetafiles/VB/Class1.vb#31)]  
   
- 3 つのピクチャを次の図に示します。  
+ 次の図は、3 つの画像を示します。  
   
- ![スケーリング](../../../../docs/framework/winforms/advanced/media/aboutgdip03-art06.png "AboutGdip03\_Art06")  
+ ![スケーリング](../../../../docs/framework/winforms/advanced/media/aboutgdip03-art06.gif "AboutGdip03_Art06")  
   
- 描画元の四角形パラメーターと描画先の四角形パラメーターを使用する <xref:System.Drawing.Graphics.DrawImage%2A> メソッドもあります。  描画元の四角形パラメーターは、描画する元のイメージの部分を指定します。  描画先の四角形は、イメージのその部分が描画される先の四角形を指定します。  描画先の四角形のサイズと描画元の四角形のサイズが異なる場合、ピクチャは、描画先の四角形と一致するようにスケーリングされます。  
+ いくつかのバリエーション、<xref:System.Drawing.Graphics.DrawImage%2A>メソッドは、元の四角形のパラメーターだけでなく、移行先の四角形のパラメーターがあります。 元の四角形のパラメーターは、描画する元のイメージの一部を指定します。 先の四角形は、イメージの部分を描画する四角形を指定します。 先の四角形のサイズが元の四角形のサイズと異なる場合は、画像は移行先の四角形に合わせてスケーリングされます。  
   
- Runner.jpg ファイルから <xref:System.Drawing.Bitmap> オブジェクトを構築するコード例を次に示します。  イメージ全体が \(0, 0\) の位置にスケーリングなしで描画されます。  次に、縮小と拡大の操作をそれぞれ適用して、イメージの小さい部分が 2 回描画されます。  
+ 次のコード例を作成する方法を示しています、 <xref:System.Drawing.Bitmap> Runner.jpg ファイルからです。 位置にスケーリングなしで画像全体が描画された (0, 0) です。 イメージの一部が 2 回描画し、: 圧縮が 1 回 1 回、および拡大します。  
   
  [!code-csharp[System.Drawing.ImagesBitmapsMetafiles#32](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImagesBitmapsMetafiles/CS/Class1.cs#32)]
  [!code-vb[System.Drawing.ImagesBitmapsMetafiles#32](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImagesBitmapsMetafiles/VB/Class1.vb#32)]  
   
- スケーリングなしのイメージ、縮小されたイメージ部分、および拡大されたイメージ部分を次の図に示します。  
+ 次の図は、スケールなしのイメージとイメージの圧縮および展開されている部分を示します。  
   
- ![トリミングとスケーリング](../../../../docs/framework/winforms/advanced/media/aboutgdip03-art07.png "AboutGdip03\_Art07")  
+ ![トリミングとスケーリング](../../../../docs/framework/winforms/advanced/media/aboutgdip03-art07.gif "AboutGdip03_Art07")  
   
-## 参照  
- [イメージ、ビットマップ、およびメタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)   
+## <a name="see-also"></a>関連項目  
+ [イメージ、ビットマップ、メタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
  [イメージ、ビットマップ、アイコン、およびメタファイルの操作](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)

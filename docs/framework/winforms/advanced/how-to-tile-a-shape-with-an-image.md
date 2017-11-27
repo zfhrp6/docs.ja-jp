@@ -1,70 +1,74 @@
 ---
-title: "方法 : イメージを並べたパターンによって図形を塗りつぶす | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ビットマップ [Windows フォーム], 塗りつぶし (図形を)"
-  - "イメージ [Windows フォーム], 塗りつぶし (図形を)"
-  - "形状, 並べて表示 (イメージを)"
-  - "テクスチャ ブラシ, 並べて表示 (イメージを)"
+title: "方法 : イメージを並べたパターンによって図形を塗りつぶす"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- texture brushes [Windows Forms], tiling images with
+- images [Windows Forms], filling shapes with
+- shapes [Windows Forms], tiling with images
+- bitmaps [Windows Forms], filling shapes with
 ms.assetid: 6d407891-6e5c-4495-a546-3da5604e9fb8
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8f825371d3849e96ace627e660fd7c59bd290185
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : イメージを並べたパターンによって図形を塗りつぶす
-床の上にタイルを並べて配置するように、四角形のイメージを隣り合わせに配置して、図形を塗りつぶすことができます。  イメージを並べたパターンで図形の内側を塗りつぶすには、テクスチャ ブラシを使用します。  <xref:System.Drawing.TextureBrush> オブジェクトを構築するときは、<xref:System.Drawing.Image> オブジェクトが引数の 1 つとしてコンストラクターに渡されます。  テクスチャ ブラシを使用して図形の内側を塗りつぶす場合、対象の図形は、このイメージのコピーを繰り返したパターンによって塗りつぶされます。  
+# <a name="how-to-tile-a-shape-with-an-image"></a>方法 : イメージを並べたパターンによって図形を塗りつぶす
+並べてフロアをカバーするタイルを配置すると同様、塗りつぶし (タイル) 図形を四角形のイメージを互いの横にある配置できます。 図形の内部を並べて表示するには、テクスチャ ブラシを使用します。 構築する場合、<xref:System.Drawing.TextureBrush>オブジェクトのコンス トラクターに渡す引数の 1 つは、<xref:System.Drawing.Image>オブジェクト。 図形の内部を描画するテクスチャ ブラシを使用する場合は、このイメージの繰り返しコピーで、図形が塗りつぶされます。  
   
- <xref:System.Drawing.TextureBrush> オブジェクトのラップ モード プロパティは、四角形のグリッド内でイメージをどのように繰り返すかを決定します。  グリッド内のすべてのイメージを同じ向きで配置することも、イメージをグリッド位置から次のグリッド位置に移動するにつれて反転させていくこともできます。  反転は、水平方向、垂直方向、その両方向で行うことができます。  各種の方法でイメージを反転させて並べたパターンによって図形を塗りつぶす例を次に示します。  
+ ラップ モード プロパティ、<xref:System.Drawing.TextureBrush>オブジェクトはどのように、画像には、四角形グリッドでそれが繰り返されるを決定します。 ことができます、グリッド内のタイルがすべて同じ印刷の向き、または、次に反転させる 1 つのグリッド位置からイメージを行うことができます。 反転は、水平、垂直、またはその両方です。 次の例は、さまざまな種類の反転を並べて表示します。  
   
-### イメージを並べて表示するには  
+### <a name="to-tile-an-image"></a>イメージを並べて表示  
   
--   次の例では、75 × 75 のイメージを並べたパターンを使用して、200 × 200 の四角形を塗りつぶします。  
+-   この例では、次の 75 × 75 イメージを使用して、200 × 200 四角形を並べて表示します。  
   
- ![並べて表示 1](../../../../docs/framework/winforms/advanced/media/tile1.png "tile1")  
+ ![タイル 1](../../../../docs/framework/winforms/advanced/media/tile1.gif "tile1")  
   
--   次の図は、イメージを並べたパターンによって、四角形がどのように塗りつぶされるかを示しています。  すべてのイメージの向きは同じで、いずれも反転されていません。  
+-   次の図は、四角形がイメージを並べて表示する方法を示します。 すべてのタイルが同じ方向; にあることに注意してください。切り替えることはありません。  
   
- ![並べて表示 2](../../../../docs/framework/winforms/advanced/media/tile2.png "tile2")  
+ ![タイル 2](../../../../docs/framework/winforms/advanced/media/tile2.gif "tile2")  
   
  [!code-csharp[System.Drawing.UsingABrush#31](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingABrush/CS/Class1.cs#31)]
  [!code-vb[System.Drawing.UsingABrush#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#31)]  
   
-### 並べて表示するときにイメージを水平方向に反転させるには  
+### <a name="to-flip-an-image-horizontally-while-tiling"></a>水平方向に並べて表示するときにイメージを反転するには  
   
--   次の例では、同じ 75 × 75 のイメージを並べたパターンを使用して、200 × 200 の四角形を塗りつぶします。  ただし、ラップ モードが、イメージを水平方向に反転するように設定されています。  次の図は、イメージを並べたパターンによって、四角形がどのように塗りつぶされるかを示しています。  あるイメージから横方向の次の位置にあるイメージに移るときに、イメージが水平方向に反転されます。  
+-   この例では、同じ 75 × 75 イメージを使用して、200 × 200 四角形の塗りつぶし。 ラップ モードは、イメージを水平方向に反転に設定されます。 次の図は、四角形がイメージを並べて表示する方法を示します。 特定の行ごとに 1 つのタイルから移動すると、イメージは水平方向に反転注意してください。  
   
- ![並べて表示 3](../../../../docs/framework/winforms/advanced/media/tile3.png "tile3")  
+ ![タイル 3 の](../../../../docs/framework/winforms/advanced/media/tile3.gif "tile3")  
   
  [!code-csharp[System.Drawing.UsingABrush#32](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingABrush/CS/Class1.cs#32)]
  [!code-vb[System.Drawing.UsingABrush#32](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#32)]  
   
-### 並べて表示するときにイメージを垂直方向に反転させるには  
+### <a name="to-flip-an-image-vertically-while-tiling"></a>垂直方向に並べて表示するときにイメージを反転するには  
   
--   次の例では、同じ 75 × 75 のイメージを並べたパターンを使用して、200 × 200 の四角形を塗りつぶします。  ただし、ラップ モードが、イメージを垂直方向に反転するように設定されています。  
+-   この例では、同じ 75 × 75 イメージを使用して、200 × 200 四角形の塗りつぶし。 ラップ モードは、イメージを垂直方向に反転に設定されます。  
   
      [!code-csharp[System.Drawing.UsingABrush#33](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingABrush/CS/Class1.cs#33)]
      [!code-vb[System.Drawing.UsingABrush#33](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#33)]  
   
-### 並べて表示するときにイメージを水平方向と垂直方向に反転させるには  
+### <a name="to-flip-an-image-horizontally-and-vertically-while-tiling"></a>並べて表示するとき、イメージを水平方向および垂直方向に反転するには  
   
--   次の例では、同じ 75 × 75 のイメージを並べたパターンを使用して、200 × 200 の四角形を塗りつぶします。  ラップ モードは、イメージを水平方向と垂直方向の両方向に反転させるように設定されています。  次の図は、イメージを並べたパターンによって、四角形がどのように塗りつぶされるかを示しています。  あるイメージから横方向の次の位置にあるイメージに移るときに、イメージが水平方向に反転され、あるイメージから縦方向の次の位置にあるイメージに移るときに、イメージが垂直方向に反転されます。  
+-   この例では、同じ 75 × 75 イメージを使用して、200 × 200 四角形を並べて表示します。 ラップ モードは、上下左右反転イメージ両方に設定されます。 次の図は、四角形がイメージを並べて表示する方法を示します。 1 つのタイルから次の特定の行に移動する、イメージは水平方向に反転しすると、イメージが垂直方向に反転させるように 1 つのタイルから特定の列で次に移動することに注意してください。  
   
- ![並べて表示 5](../../../../docs/framework/winforms/advanced/media/tile5.png "tile5")  
+ ![5 をタイル](../../../../docs/framework/winforms/advanced/media/tile5.gif "tile5")  
   
  [!code-csharp[System.Drawing.UsingABrush#34](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingABrush/CS/Class1.cs#34)]
  [!code-vb[System.Drawing.UsingABrush#34](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#34)]  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ブラシを使用した図形の塗りつぶし](../../../../docs/framework/winforms/advanced/using-a-brush-to-fill-shapes.md)

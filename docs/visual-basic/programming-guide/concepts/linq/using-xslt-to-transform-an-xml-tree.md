@@ -1,33 +1,25 @@
 ---
-title: "XSLT を使用して XML ツリー (Visual Basic) を変換する |Microsoft ドキュメント"
+title: "(Visual Basic) XML ツリーを変換する XSLT を使用します。"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 3390ca68-c270-4e1d-b64b-6a063a77017c
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 226a802cd640f2f251e1849486dab4a5c4af3497
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 18637ecf786c3e44e7a07b5a1ca48cf3c8a4ae35
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="using-xslt-to-transform-an-xml-tree-visual-basic"></a>XSLT を使用して XML ツリー (Visual Basic) を変換するには
-XML ツリーを作成したり、作成できます、 <xref:System.Xml.XmlReader>XML ツリーから、新しいドキュメントを作成し、作成、<xref:System.Xml.XmlWriter>ですが、新しいドキュメントに書き込む</xref:System.Xml.XmlWriter></xref:System.Xml.XmlReader>。 次に、渡す、XSLT 変換を呼び出すことができます、<xref:System.Xml.XmlReader>と<xref:System.Xml.XmlWriter>に変換します</xref:System.Xml.XmlWriter></xref:System.Xml.XmlReader>。 変換が正常に完了すると、新しい XML ツリーに変換結果が挿入されます。  
+# <a name="using-xslt-to-transform-an-xml-tree-visual-basic"></a>(Visual Basic) XML ツリーを変換する XSLT を使用します。
+この例では、XML ツリーを作成し、この XML ツリーから <xref:System.Xml.XmlReader> を作成して、新しいドキュメントを作成します。次に、この新しいドキュメントに書き込むために <xref:System.Xml.XmlWriter> を作成します。 次に、XSLT 変換を呼び出し、変換処理に <xref:System.Xml.XmlReader> および <xref:System.Xml.XmlWriter> を渡すことができます。 変換が正常に完了すると、新しい XML ツリーに変換結果が挿入されます。  
   
 ## <a name="example"></a>例  
   
@@ -78,6 +70,6 @@ Console.WriteLine(newTree)
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Xml.Linq.XContainer.CreateWriter%2A?displayProperty=fullName></xref:System.Xml.Linq.XContainer.CreateWriter%2A?displayProperty=fullName>   
- <xref:System.Xml.Linq.XNode.CreateReader%2A?displayProperty=fullName></xref:System.Xml.Linq.XNode.CreateReader%2A?displayProperty=fullName>   
- [高度な LINQ to XML のプログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+ <xref:System.Xml.Linq.XContainer.CreateWriter%2A?displayProperty=nameWithType>  
+ <xref:System.Xml.Linq.XNode.CreateReader%2A?displayProperty=nameWithType>  
+ [高度な LINQ to XML プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

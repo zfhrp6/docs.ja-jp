@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -46,16 +45,15 @@ helpviewer_keywords:
 - STA-dependent features
 - fibers
 ms.assetid: cf624c1f-c160-46a1-bb2b-213587688da7
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2c3f93e90c330881ec5002b820569b27416e049a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 5ed637cd5d173e12114f436b739ce3c114bb420f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="reliability-best-practices"></a>信頼性に関するベスト プラクティス
 以下の信頼性ルールは SQL Server を対象としたものですが、他のホスト ベースのサーバー アプリケーションにも当てはまります。 SQL Server などのサーバーがリソースをリークせず、停止しないことが非常に重要です。  ただし、オブジェクトの状態を変更するすべてのメソッドに対してバックアウト コードを記述することでは、それを実現できません。  目標は、バックアウト コードによりすべての場所ですべてのエラーから復旧する 100% 信頼できるマネージ コードを記述することではありません。  それは、成功する可能性がほとんどない面倒な作業です。  共通言語ランタイム (CLR) では、完全なマネージ コードを作成できるという十分に強力な保証は簡単には得られません。  ASP.NET とは異なり、SQL Server で使用されているプロセスは 1 つだけであり、受け入れられないほど長い時間データベースを停止させない限りリサイクルできません。  
@@ -96,7 +94,7 @@ ms.lasthandoff: 08/21/2017
   
  現在、ファイナライザーを使ってオペレーティング システム ハンドルを単にクリーンアップしているほとんどのクラスは、ファイナライザーを使う必要がなくなります。 代わりに、ファイナライザーは <xref:System.Runtime.InteropServices.SafeHandle> の派生クラスで呼び出されるようになります。  
   
- <xref:System.Runtime.InteropServices.SafeHandle> は <xref:System.IDisposable.Dispose%2A?displayProperty=fullName> の代わりに使う機能ではないことに注意してください。  依然としてリソース競合の可能性はあり、オペレーティング システムのリソースを明示的に破棄するとパフォーマンス上の利点があります。  リソースの明示的な破棄を行っている `finally` ブロックが最後まで実行されない可能性があることだけは理解しておいてください。  
+ <xref:System.Runtime.InteropServices.SafeHandle> は <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> の代わりに使う機能ではないことに注意してください。  依然としてリソース競合の可能性はあり、オペレーティング システムのリソースを明示的に破棄するとパフォーマンス上の利点があります。  リソースの明示的な破棄を行っている `finally` ブロックが最後まで実行されない可能性があることだけは理解しておいてください。  
   
  <xref:System.Runtime.InteropServices.SafeHandle> を使うと、ハンドルを解放する処理 (オペレーティング システム ハンドル解放ルーチンに状態を渡す、ハンドルのセットをループで解放する、など) を実行する独自の <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> メソッドを実装できます。  CLR はこのメソッドが実行されることを保証します。  <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> の実装の作成者には、あらゆる状況においてハンドルが解放されることを保証する責任があります。 解放できないとハンドルがリークされ、多くの場合、ハンドルに関連付けられているネイティブ リソースがリークすることになります。 したがって、<xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> の実装が呼び出し時に使用できない可能性があるリソースの割り当てを必要としないように、<xref:System.Runtime.InteropServices.SafeHandle> 派生クラスを構成することが不可欠です。 <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> の実装内で失敗する可能性があるメソッドの呼び出しは、コードがそのようなエラーを処理し、コントラクトを完了してネイティブ ハンドルを解放できる場合に限り、許容されることに注意してください。 デバッグのため、<xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> には、致命的なエラーが発生してリソースを解放できない場合に `false` に設定できる戻り値 <xref:System.Boolean> があります。 このようにすると、[releaseHandleFailed](../../../docs/framework/debug-trace-profile/releasehandlefailed-mda.md) MDA がアクティブ化されて (有効になっている場合)、問題を特定するのに役立ちます。 他にはどのような影響もランタイムに与えません。<xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> は同じリソースに対して再び呼び出されることはなく、結果としてハンドルはリークされます。  
   
@@ -289,6 +287,5 @@ public static MyClass SingletonProperty
  このようにすると、`try` ブロックを実行する前に finally ブロック内のすべてのコードを準備するよう、Just-In-Time コンパイラに指示されます。 これにより、finally ブロック内のコードがすべてのケースでビルドされて実行されることが保証されます。 CER では空の `try` ブロックを使うことが珍しくありません。 CER を使うと、非同期スレッドの中止およびメモリ不足例外に対して保護されます。 非常に深いコードに対するスタック オーバーフローを追加で処理する CER の形式については、「<xref:System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup%2A>」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.ConstrainedExecution>   
+ <xref:System.Runtime.ConstrainedExecution>  
  [SQL Server プログラミングとホスト保護属性](../../../docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)
-

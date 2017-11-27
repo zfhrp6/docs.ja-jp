@@ -1,6 +1,6 @@
 ---
 title: "ジェネリック (F#)"
-description: "ジェネリック (F#)"
+description: "F# の汎用的な機能とコードを繰り返すことがなく、さまざまな種類で動作するコードを記述する型を使用する方法を説明します。"
 keywords: "visual f#, f#, 関数型プログラミング"
 author: cartermp
 ms.author: phcart
@@ -10,13 +10,12 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: a9f2e2ee-bcb1-4ce3-8531-850aa183040f
-translationtype: Human Translation
-ms.sourcegitcommit: 0a01ec92a90d99fafaacbd3f71f5177e5cf94a68
-ms.openlocfilehash: 98f65de4f3434aea9ee0b78848b85ba398543974
-ms.lasthandoff: 04/05/2017
-
+ms.openlocfilehash: e7a5712fddf4d372d1ada86927f50e394a59a410
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="generics"></a>ジェネリック
 
 F# の関数値、メソッド、プロパティ、および集約型 (クラス、レコード、判別共用体など) は、*ジェネリック*にすることができます。 ジェネリック コンストラクトには、少なくとも 1 つの型パラメーターが含まれます。この型は、通常、ジェネリック コンストラクトのユーザーによって指定されます。 ジェネリック関数とジェネリック型を使用すると、型ごとにコードを繰り返し記述しなくても、さまざまな型で動作するコードを記述できます。 多くの場合、F# のコードは、コンパイラの型推論と自動ジェネリック化メカニズムによって、暗黙的にジェネリックとして推論されるため、F# では、コードを簡単にジェネリックにできる可能性があります。
@@ -103,7 +102,7 @@ F# プログラムで使用できる型パラメーターには、2 つの種類
 
 [静的に解決される型パラメーター](statically-resolved-type-parameters.md)
 
-[.NET Framework におけるジェネリック](https://msdn.microsoft.com/library/ms172192.aspx)
+[.NET Framework におけるジェネリック](~/docs/standard/generics/index.md)
 
 [自動ジェネリック化](automatic-generalization.md)
 

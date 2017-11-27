@@ -1,40 +1,46 @@
 ---
-title: "方法 : BorderThickness 値をアニメーション化する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アニメーション, 変更 (境界線の太さの)"
-  - "境界線の太さ, アニメーション化 (変更を)"
+title: "方法 : BorderThickness 値をアニメーション化する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- border thickness [WPF], animating changes to
+- animation [WPF], changes to border thickness
 ms.assetid: fd021978-f74b-4e7b-a7f7-3987dcad9e0f
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b9b0d91d4044f8c91c5e69ab146dee820b6b8519
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : BorderThickness 値をアニメーション化する
-この例は、<xref:System.Windows.Media.Animation.ThicknessAnimation> クラスを使用して境界線の太さ変更をアニメーション化する方法を示します。  
+# <a name="how-to-animate-a-borderthickness-value"></a>方法 : BorderThickness 値をアニメーション化する
+この例を使用して、境界線の太さへの変更をアニメーション化する方法を示しています、<xref:System.Windows.Media.Animation.ThicknessAnimation>クラスです。  
   
-## 使用例  
- <xref:System.Windows.Media.Animation.ThicknessAnimation> を使用して境界線の太さをアニメーション化する例を次に示します。  この例では、<xref:System.Windows.Controls.Border> の <xref:System.Windows.Controls.Border.BorderThickness%2A> プロパティを使用します。  
+## <a name="example"></a>例  
+ 次の例を使用して、境界線の太さをアニメーション化<xref:System.Windows.Media.Animation.ThicknessAnimation>です。 この例では、<xref:System.Windows.Controls.Border.BorderThickness%2A>プロパティ<xref:System.Windows.Controls.Border>です。  
   
  [!code-csharp[BasicAnimations_snip#ThicknessAnimationWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BasicAnimations_snip/CSharp/ThicknessAnimationExample.cs#thicknessanimationwholepage)]
  [!code-vb[BasicAnimations_snip#ThicknessAnimationWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BasicAnimations_snip/VisualBasic/ThicknessAnimationExample.vb#thicknessanimationwholepage)]  
   
- サンプル全体については、[アニメーション サンプル ギャラリー](http://go.microsoft.com/fwlink/?LinkID=159969)を参照してください。  
+ サンプル全体については、次を参照してください。[アニメーション サンプル ギャラリー](http://go.microsoft.com/fwlink/?LinkID=159969)です。  
   
-## 参照  
- <xref:System.Windows.Media.Animation.ThicknessAnimation>   
- <xref:System.Windows.Controls.Border.BorderThickness%2A>   
- <xref:System.Windows.Controls.Border>   
- [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)   
- [Animation and Timing](http://msdn.microsoft.com/ja-jp/7d83765b-d5ae-41b1-b423-80206e1124aa)   
- [方法のトピック](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-how-to-topics.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Media.Animation.ThicknessAnimation>  
+ <xref:System.Windows.Controls.Border.BorderThickness%2A>  
+ <xref:System.Windows.Controls.Border>  
+ [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [アニメーションおよびタイミング](http://msdn.microsoft.com/en-us/7d83765b-d5ae-41b1-b423-80206e1124aa)  
+ [方法トピック](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-how-to-topics.md)  
  [キー フレームを使用して境界線の太さをアニメーション化する](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-thickness-of-a-border-by-using-key-frames.md)

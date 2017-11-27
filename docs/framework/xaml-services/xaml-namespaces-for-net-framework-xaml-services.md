@@ -1,74 +1,77 @@
 ---
-title: "XAML Namespaces for .NET Framework XAML Services | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: ".NET Framework XAML サービス用の XAML 名前空間"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e4f15f13-c420-4c1e-aeab-9b6f50212047
-caps.latest.revision: 3
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: e09279209bf3d6925b61d55d6988b5af658f5aab
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# XAML Namespaces for .NET Framework XAML Services
-XAML 名前空間は、XML 名前空間の定義を拡張する概念です。  XML 名前空間と同様に、マークアップ内で `xmlns` 属性を使用することで XAML 名前空間を定義できます。  XAML 名前空間は XAML ノード ストリームなどの XAML サービス API でも表されます。  このトピックでは、XAML 名前空間の概念について説明し、XAML 名前空間の定義の方法と、XAML スキーマ コンテキストなどの .NET Framework XAML サービスの各要素で XAML 名前空間を使用する方法について説明します。  
+# <a name="xaml-namespaces-for-net-framework-xaml-services"></a>.NET Framework XAML サービス用の XAML 名前空間
+XAML 名前空間は、XML 名前空間の定義を拡張する概念です。 XML 名前空間と同様に、定義することを使用して XAML 名前空間、`xmlns`マークアップ内の属性です。 XAML 名前空間も、XAML ノード ストリームとその他の XAML サービス Api で表記します。 このトピックでは、XAML 名前空間の概念を定義し、XAML 名前空間を定義できますおよび XAML スキーマ コンテキストおよびその他の .NET Framework XAML サービスで使用する方法について説明します。  
   
-## XML 名前空間と XAML 名前空間  
- XAML が特殊な形式の XML であるように、XAML 名前空間は特殊な XML 名前空間です。マークアップには XML の基本形式が使用されます。  マークアップ内で、要素に適用される `xmlns` 属性を利用して、XAML 名前空間とそのマッピングを宣言します。  内部で XAML 名前空間が宣言されている同じ要素に対して、`xmlns` 宣言を実行することができます。  要素に対して XAML 名前空間を宣言すると、その要素、その要素のすべての属性、およびその要素のすべての子要素に対してその宣言が有効になります。  属性が含まれている要素と異なる XAML 名前空間をその属性で使用できます。ただし、マークアップ内で、属性名自体からプレフィックスがその属性名の一部として参照されていることが必要です。  
+## <a name="xml-namespace-and-xaml-namespace"></a>XML Namespace と XAML Namespace  
+ XAML 名前空間は、XAML は、マークアップの基本的な XML 形式を使用して、XML の特殊な形式と同様に特殊化された XML 名前空間です。 マークアップで XAML 名前空間とそのマッピングを宣言する、`xmlns`要素に適用される属性です。 `xmlns`で XAML 名前空間が宣言されている同じ要素宣言を行んだことができます。 要素に対する XAML 名前空間の宣言は、その要素をその要素のすべての属性とその要素の子をすべて有効です。 属性は、属性を格納する要素と同じ属性名自体マークアップでは、その属性名の一部として、プレフィックスを参照する限り、XAML 名前空間を使用できます。  
   
- XAML 名前空間と XML 名前空間の違いについて説明します。XML 名前空間は、スキーマの参照やエンティティの単純な判別に使用されます。  XAML の場合、XAML で使用される型とメンバーは最終的にバッキング型として解決される必要がありますが、XML スキーマの概念はこの機能に該当しません。  XAML 名前空間には、XAML スキーマ コンテキストでこのような型の対応付けを実行するために必要となる情報が含まれています。  
+ XML 名前空間と XAML 名前空間の違いは、XML 名前空間は、スキーマの参照に使用される可能性がありますか、単にエンティティを区別するために使用される可能性がありますです。 Xaml をバッキング型、型とメンバーが XAML で使用されているを解決する必要があります最終的にこの機能にも XML スキーマの概念は適用されません。 XAML 名前空間には、XAML スキーマ コンテキストをこの型のマッピングを実行するために使用できる必要がある情報が含まれています。  
   
-## XAML 名前空間の構成要素  
- XAML 名前空間の定義には、プレフィックスと識別子という 2 つの構成要素が含まれます。  マークアップ内で XAML 名前空間を宣言するとき、または XAML 型システムで XAML 名前空間を定義するときに、このような構成要素がそれぞれ表示されます。  
+## <a name="xaml-namespace-components"></a>XAML Namespace コンポーネント  
+ XAML 名前空間の定義が 2 つのコンポーネント: プレフィックス、および識別子。 これらの各コンポーネントは、XAML 名前空間が、マークアップで宣言または XAML 型システムで定義されている場合に存在します。  
   
- プレフィックスには、[W3C による XML 1.0 名前空間の仕様](http://go.microsoft.com/fwlink/?LinkID=161735)で定められている任意の文字列を使用できます。  一般的なマークアップ ファイルではプレフィックスが頻繁に記述されるため、慣習として非常に短い文字列が使用されます。  複数の XAML 実装で使用するための XAML 名前空間では、慣習的に特定のプレフィックスが使用されます。  たとえば、XAML 言語の XAML 名前空間は一般的にプレフィックス `x` を使用して対応付けされます。  既定の XAML 名前空間を定義することもできます。既定の XAML 名前空間ではプレフィックスが定義で指定されませんが、.NET Framework XAML サービス API から定義または照会された場合は、空の文字列として表されます。  一般的に、XAML を実装するテクノロジとそのシナリオおよびボキャブラリによって、プレフィックスを省略したマークアップを最大限増やすために、意図的に既定の XAML 名前空間が選択されます。  
+ プレフィックス、任意の文字列で許可されるよう、 [XML 1.0 仕様の W3C 名前空間](http://go.microsoft.com/fwlink/?LinkID=161735)です。 規則では、プレフィックスは通常、非常に短い文字列のため、プレフィックスが標準的なマークアップ ファイルで何度も繰り返します。 複数の XAML 実装では使用を目的とした、特定の XAML 名前空間は、特定の従来のプレフィックスを使用します。 たとえば、XAML 言語の XAML 名前空間は、通常、マップ、プレフィックスを使用して`x`です。 既定の XAML 名前空間プレフィックスが定義には付与しませんが、定義されているか、脅かさ Framework XAML サービス API のクエリを実行する場合、空の文字列として表されるを定義することができます。 通常、既定の XAML 名前空間は、プレフィックス省略量の最大化を促進するために選択が意図的に、XAML 実装テクノロジおよびシナリオとボキャブラリをマークアップします。  
   
- 識別子には、[W3C による XML 1.0 名前空間の仕様](http://go.microsoft.com/fwlink/?LinkID=161735)で定められている任意の文字列を使用できます。  慣習として、XML 名前空間または XAML 名前空間の識別子は URI の形で \(通常はプロトコルで修飾された絶対 URI として\) 指定されるのが一般的です。  多くの場合、特定の XAML ボキャブラリを定義するバージョン情報がパス文字列の中に含まれます。  XAML 名前空間によって、XML URI の規則に加えて新しい識別子規則が追加されます。  XAML 名前空間では、XAML 名前空間で指定された型を解決したり、属性をメンバーとして解決したりするために XAML スキーマ コンテキストで必要となる情報が、識別子によって伝達されます。  
+ 識別子、任意の文字列で許可されるよう、 [XML 1.0 仕様の W3C 名前空間](http://go.microsoft.com/fwlink/?LinkID=161735)です。 規則では、XML 名前空間または XAML 名前空間のいずれかの識別子は多くの場合、通常与えられる URI 形式でプロトコルで修飾された絶対 URI として。 多くの場合、特定の XAML ボキャブラリを定義するバージョン情報はパス文字列の一部として暗黙的に指定します。 XAML 名前空間は、XML URI 表記を超える、追加の識別子の規則を追加します。 XAML 名前空間には、識別子は、その XAML 名前空間の下の要素として指定されている型を解決するために、またはメンバーに属性を解決するのには、XAML スキーマ コンテキストが必要な情報を通信します。  
   
- XAML スキーマ コンテキストに情報を伝達するために、XAML 名前空間の識別子が URI の形のままになる場合があります。  ただし、この場合、この URI も特定のアセンブリまたは一連のアセンブリ内の一致する識別子として宣言されます。  アセンブリでこれを行うには、<xref:System.Windows.Markup.XmlnsDefinitionAttribute> を使用してアセンブリに属性を設定します。  属性付きのアセンブリ内で、XAML 名前空間を識別し、CLR ベースの型解決処理をサポートするこの方法は、.NET Framework XAML サービスにおける既定の XAML スキーマ コンテキストでサポートされます。  さらに一般的には、XAML スキーマ コンテキストが CLR を含んでいるか、既定の XAML スキーマ コンテキストに基づいている場合 \(CLR アセンブリから CLR 属性を読み取るために必要です\)、この規則を使用できます。  
+ XAML スキーマ コンテキストに情報を通信用に、XAML 名前空間の識別子があります URI 形式でします。 ただし、ここでは、URI は宣言も特定のアセンブリまたはアセンブリのリストに一致する識別子として。 これは、アセンブリ内で属性を持つアセンブリ<xref:System.Windows.Markup.XmlnsDefinitionAttribute>です。 XAML 名前空間を特定し、属性付きアセンブリの CLR ベースの型の解決の動作をサポートするには、このメソッドは .NET Framework XAML サービスで既定の XAML スキーマ コンテキストをサポートします。 一般的には、この規則は、場合、XAML スキーマ コンテキストが CLR が組み込まれていますか、既定の XAML スキーマ コンテキスト、CLR アセンブリからの CLR 属性を読み取るために必要なに基づいて使用できます。  
   
- XAML 名前空間も、CLR 名前空間を伝達する規則と、型を定義するアセンブリによって識別できます。  この規則は、型が含まれるアセンブリに <xref:System.Windows.Markup.XmlnsDefinitionAttribute> 属性が存在しない場合に使用されます。  この規則は URI 規則よりも複雑化する可能性があります。また、アセンブリの参照方法が複数あるため、あいまいさや重複が発生する可能性があります。  
+ XAML 名前空間は、CLR 名前空間と型を定義するアセンブリを通信する規則によっても識別できます。 この規則でない場合に使用されます<xref:System.Windows.Markup.XmlnsDefinitionAttribute>属性が型を含むアセンブリに存在します。 この規則は、可能性のある URI 規則よりも複雑と、複数のアセンブリを参照する方法があるため重複除去、およびあいまいさが発生する可能性があります。  
   
- CLR 名前空間とアセンブリ規則を使用する識別子の、最も基本的な形は、次のようになります。  
+ CLR 名前空間とアセンブリの規約を使用する識別子の最も基本的な形式は次のとおりです。  
   
- `clr-namespace:` *clrnsName* `; assembly=` *assemblyShortName*  
+ `clr-namespace:`*clrnsName* `; assembly=` *assemblyShortName*  
   
- `clr-namespace:` および `; assembly=` は、この構文のリテラル要素です。  
+ `clr-namespace:`および`; assembly=`構文のリテラルのコンポーネントはインストールされています。  
   
- *clrnsName* は、CLR 名前空間を識別する文字列名です。  この文字列名の中に含まれるドット \(.\) は、CLR 名前空間に関するヒントを示し、他の CLR 名前空間との関係を表します。  
+ *clrnsName* CLR 名前空間を識別する文字列名を指定します。 この文字列の名前には、CLR 名前空間とその他の CLR 名前空間への関係についてのヒントを提供する内部ドット文字 (.) が含まれています。  
   
- *assemblyShortName* は、XAML で有用な型を定義するアセンブリの文字列名です。  宣言される XAML 名前空間を利用してアクセスされる型は、アセンブリによって定義され、*clrnsName* で指定された CLR 名前空間内で特別に宣言されることになります。  この文字列名は、通常、<xref:System.Reflection.AssemblyName.Name%2A?displayProperty=fullName> によって報告される情報と一致します。  
+ *assemblyShortName* XAML 内で使用される型を定義するアセンブリの名前の文字列を指定します。 アセンブリによって定義されると宣言するのには具体的には指定された CLR 名前空間内で宣言されている XAML 名前空間を介してアクセスするために、型が許可される*clrnsName*です。 通常、この文字列の名前にはによって報告された情報は対応して<xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType>です。  
   
- CLR 名前空間とアセンブリ規則の詳細な定義は、次のようになります。  
+ CLR 名前空間とアセンブリの規約のより完全な定義は次のとおりです。  
   
- `clr-namespace:` *clrnsName* `; assembly=` *assemblyName*  
+ `clr-namespace:`*clrnsName* `; assembly=` *assemblyName*  
   
- *assemblyName* は、<xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=fullName> 入力として有効な任意の文字列を表します。  この文字列には、カルチャ、公開キー、またはバージョン情報を含めることができます \(このような概念の定義については <xref:System.Reflection.Assembly> のリファレンス トピックを参照してください\)。  COFF の形式および証拠 \(<xref:System.Reflection.Assembly.Load%2A> の他のオーバーロードで使用する場合\) は、XAML アセンブリの読み込み目的には対応しません。すべての読み込み情報は文字列として表される必要があります。  
+ *assemblyName*として有効な任意の文字列を表す、<xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>入力します。 この文字列は、カルチャ、公開キー、またはバージョン情報を含めることができます (これらの概念の定義のリファレンス トピックの「 <xref:System.Reflection.Assembly>). COFF 形式と証拠 (の他のオーバー ロードで使用される<xref:System.Reflection.Assembly.Load%2A>) 上の目的を読み込み XAML アセンブリでは無関係を文字列としてすべての読み込み情報が表示される必要があります。  
   
- アセンブリに公開キーを指定することは、XAML のセキュリティを確保するために有効な手法です。また、アセンブリが簡易名によって読み込まれる場合に生じるあいまいさや、キャッシュまたはアプリケーション ドメインの既存のあいまいさを解消するためにも役立ちます。  詳細については、「[XAML Security Considerations](../../../docs/framework/xaml-services/xaml-security-considerations.md)」を参照してください。  
+ XAML セキュリティのまたはアセンブリの簡易名は、によって読み込まれるまたはキャッシュまたはアプリケーション ドメインにあらかじめ存在場合に存在できるであいまいさを削除するための便利な手法は、アセンブリの公開キーを指定します。 詳細については、次を参照してください。 [XAML セキュリティの考慮事項](../../../docs/framework/xaml-services/xaml-security-considerations.md)です。  
   
-## XAML サービス API における XAML 名前空間宣言  
- XAML サービス API では、XAML 名前空間宣言は <xref:System.Xaml.NamespaceDeclaration> オブジェクトによって表されます。  コード内で XAML 名前空間を宣言する場合、<xref:System.Xaml.NamespaceDeclaration.%23ctor%28System.String%2CSystem.String%29> コンストラクターを呼び出します。  `ns` パラメーターと `prefix` パラメーターは文字列として指定します。この 2 つのパラメーターの入力内容は、このトピックで既に説明した、XAML 名前空間識別子および XAML 名前空間プレフィックスの定義と対応しています。  
+## <a name="xaml-namespace-declarations-in-the-xaml-services-api"></a>XAML サービス API で XAML Namespace 宣言  
+ XAML サービス API で XAML 名前空間の宣言がによって表される、<xref:System.Xaml.NamespaceDeclaration>オブジェクト。 呼び出したコード内の XAML 名前空間を宣言する場合、<xref:System.Xaml.NamespaceDeclaration.%23ctor%28System.String%2CSystem.String%29>コンス トラクターです。 `ns`と`prefix`パラメーターは、文字列として指定し、これらのパラメーターを提供する入力は、ようにこのトピックで前述 XAML 名前空間の識別子と XAML 名前空間プレフィックスの定義に対応します。  
   
- XAML ノード ストリームの中で、または XAML 型システムへの他のアクセスを利用して、XAML 名前空間の情報を調べる場合、<xref:System.Xaml.NamespaceDeclaration.Namespace%2A?displayProperty=fullName> を使用すると XAML 名前空間識別子が返され、<xref:System.Xaml.NamespaceDeclaration.Prefix%2A?displayProperty=fullName> を使用すると XAML 名前空間プレフィックスが返されます。  
+ または、XAML 型システムへの他のアクセスにより、XAML ノード ストリームの一部としての XAML 名前空間情報が見つかった場合<xref:System.Xaml.NamespaceDeclaration.Namespace%2A?displayProperty=nameWithType>XAML 名前空間の識別子をレポートおよび<xref:System.Xaml.NamespaceDeclaration.Prefix%2A?displayProperty=nameWithType>XAML 名前空間プレフィックスを報告します。  
   
- XAML ノード ストリームで、XAML 名前空間の情報は、適用対象のエンティティの前にある XAML ノードとして表示される場合があります。  これは、XAML 名前空間の情報が XAML ルート要素の `StartObject` の前にある場合にも同じです。  詳細については、「[Understanding XAML Node Stream Structures and Concepts](../../../docs/framework/xaml-services/understanding-xaml-node-stream-structures-and-concepts.md)」を参照してください。  
+ XAML ノード ストリームで XAML 名前空間の情報は、それを適用するエンティティの前にある XAML ノードとして表示できます。 XAML 名前空間の情報がよりも前のケースが含まれます、`StartObject`の XAML ルート要素です。 詳細については、「 [Understanding XAML Node Stream Structures and Concepts](../../../docs/framework/xaml-services/understanding-xaml-node-stream-structures-and-concepts.md)」を参照してください。  
   
- .NET Framework XAML サービス API が使用されるシナリオでは、多くの場合、1 つ以上の XAML 名前空間宣言が存在すると考えられます。その宣言に、XAML スキーマ コンテキストで必要な情報が含まれている、または参照されていることが必要です。  XAML 名前空間には、読み込まれるアセンブリを指定するか、読み込み済みまたは XAML スキーマ コンテキストで認識済みの名前空間とアセンブリの中で特定の型を解決するために役立つアセンブリを指定する必要があります。  
+ シナリオの多くを .NET Framework XAML サービス API を使用して、少なくとも 1 つの XAML 名前空間宣言が存在すると、する必要がおよび、宣言は必要がありますが含まれているか、XAML スキーマ コンテキストが必要な情報を参照してください。 XAML 名前空間では、読み込む、または名前空間と既に読み込まれるか、XAML スキーマ コンテキストによって把握されているアセンブリ内の特定の型を解決するためにアセンブリを指定する必要がありますか。  
   
- XAML ノード ストリームを生成するためには、XAML スキーマ コンテキストによって XAML 型情報が得られることが必要です。  XAML 型情報を決定するには、作成する各ノードに対応する XAML 名前空間を先に決定する必要があります。  この時点ではまだ型のインスタンスは作成されていませんが、XAML スキーマ コンテキストでは、アセンブリの定義とバッキング型の定義から情報を参照する必要がある場合があります。  たとえば、マークアップ `<Party><PartyFavor/></Party>` を処理するには、XAML スキーマ コンテキストで `Party` の `ContentProperty` の名前と型を決定できる必要があるため、`Party` および `PartyFavor` の XAML 名前空間情報も認識されている必要があります。  既定の XAML スキーマ コンテキストの場合、ノード ストリームに XAML 型ノードを生成するために必要な XAML 型システム情報の多くが、静的リフレクションによって取得されます。  
+ XAML ノード ストリームを生成するために、XAML の種類の情報は、XAML スキーマ コンテキストを通じて、利用可能なでなければなりません。 最初に作成するには、各ノードに関連する XAML 名前空間を決定することがなく、XAML の型情報を特定できません。 この時点では、型のインスタンスは作成されません、まだですが、XAML スキーマ コンテキストが、アセンブリを定義してバックアップの種類からの情報を検索する必要があります。 例については、マークアップを処理するために`<Party><PartyFavor/></Party>`、XAML スキーマ コンテキストの種類と名前を決定できる必要があります、`ContentProperty`の`Party`、したがってもがわかっていなければなりませんの XAML 名前空間情報`Party`と`PartyFavor`です。 既定の XAML スキーマ コンテキストの場合は、静的リフレクションは、多くのノード ストリームで XAML の種類のノードを生成するために必要な XAML 型システム情報を報告します。  
   
- XAML ノード ストリームのオブジェクト グラフを生成するには、元のマークアップで使用され、XAML ノード ストリームで記録された、それぞれの XAML プレフィックスに対応する XAML 名前空間宣言が存在していることが必要です。  この時点でインスタンスが作成され、実際の型の対応付けが行われます。  
+ XAML ノード ストリームからオブジェクト グラフを生成するために、元のマークアップで使用され、XAML ノード ストリームに記録される各 XAML プレフィックスの XAML 名前空間宣言があります。 この時点では、インスタンスが作成されている、および実際の型マッピングの動作が発生します。  
   
- XAML 名前空間の情報を事前に入力する必要がある場合 \(たとえば、XAML スキーマ コンテキストで使用する予定の XAML 名前空間がマークアップで定義されていない場合など\)、<xref:System.Xml.XmlReader> の <xref:System.Xml.XmlParserContext> で XML 名前空間宣言を宣言する手法を使用できます。  次に、その <xref:System.Xml.XmlReader> を XAML リーダー コンストラクター \(<xref:System.Xaml.XamlServices.Load%28System.Xml.XmlReader%29?displayProperty=fullName>\) の入力として使用します。  
+ 内の XML 名前空間宣言を宣言することができますを使用する方法の 1 つは、XAML 名前空間については、ここで、XAML スキーマ コンテキストを使用する予定の XAML 名前空間は、マークアップで定義されていない場合に事前に設定する必要がある場合、 <xref:System.Xml.XmlParserContext> の<xref:System.Xml.XmlReader>. 使用して<xref:System.Xml.XmlReader>XAML リーダーのコンス トラクターの入力としてまたは<xref:System.Xaml.XamlServices.Load%28System.Xml.XmlReader%29?displayProperty=nameWithType>です。  
   
- .NET Framework XAML サービスで XAML 名前空間の処理に対応する、他の 2 つの API は、<xref:System.Windows.Markup.XmlnsDefinitionAttribute> 属性および <xref:System.Windows.Markup.XmlnsPrefixAttribute> 属性です。  これらの属性はアセンブリに適用されます。  <xref:System.Windows.Markup.XmlnsDefinitionAttribute> は、XAML スキーマ コンテキストで、URI を含む XAML 名前空間宣言を解釈するために使用されます。  <xref:System.Windows.Markup.XmlnsPrefixAttribute> は、XAML を出力するツールで使用されます。これによって、特定の XAML 名前空間を予測可能なプレフィックスでシリアル化することができます。  詳細については、「[XAML\-Related CLR Attributes for Custom Types and Libraries](../../../docs/framework/xaml-services/xaml-related-clr-attributes-for-custom-types-and-libraries.md)」を参照してください。  
+ XAML 名前空間の .NET Framework XAML サービスの処理に関連するその他の 2 つの API は、属性<xref:System.Windows.Markup.XmlnsDefinitionAttribute>と<xref:System.Windows.Markup.XmlnsPrefixAttribute>です。 これらの属性は、アセンブリに適用されます。 <xref:System.Windows.Markup.XmlnsDefinitionAttribute>URI を含む XAML 名前空間の宣言を解釈する XAML スキーマ コンテキストによって使用されます。 <xref:System.Windows.Markup.XmlnsPrefixAttribute>特定の XAML 名前空間は、予測可能なプレフィックスでシリアル化できるように、XAML を生成するツールによって使用されます。 詳細については、次を参照してください。[カスタム型およびライブラリの CLR 属性を XAML-Related](../../../docs/framework/xaml-services/xaml-related-clr-attributes-for-custom-types-and-libraries.md)です。  
   
-## 参照  
- [Understanding XAML Node Stream Structures and Concepts](../../../docs/framework/xaml-services/understanding-xaml-node-stream-structures-and-concepts.md)
+## <a name="see-also"></a>関連項目  
+ [XAML ノード ストリームの構造と概念について](../../../docs/framework/xaml-services/understanding-xaml-node-stream-structures-and-concepts.md)

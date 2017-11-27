@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - elements [.NET Framework], network configuration elements
 - sending data, network configuration elements
@@ -25,16 +19,15 @@ helpviewer_keywords:
 - connections [.NET Framework], network configuration elements
 - network resources, network configuration elements
 ms.assetid: f1de5a0f-76c5-4833-819f-5222b8146340
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a101b3d6ebf1c884bce08077a1138a4ab6376d1f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.openlocfilehash: ca4a0000d85c8fbac9a723beeda51f9c7886ed8c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="network-settings-schema"></a>ネットワーク設定スキーマ
 ネットワーク設定は、.NET Framework がインターネットに接続する方法を指定します。 次の表では、[\<system.Net > 要素 (ネットワーク設定)](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) の下にある各子構成要素の関数について説明します。  
@@ -46,7 +39,7 @@ ms.lasthandoff: 09/05/2017
 |[\<defaultProxy> 要素 (ネットワーク設定)](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|インターネットへの HTTP 要求のために使用するプロキシ サーバーを指定します。|  
 |[\<mailSettings> 要素 (ネットワーク設定)](../../../../../docs/framework/configure-apps/file-schema/network/mailsettings-element-network-settings.md)|電子メールの送信オプションの設定が含まれています。|  
 |[\<requestCaching> 要素 (ネットワーク設定)](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|インターネット ホストから情報を要求するために使用するモジュールを指定します。|  
-|[\<requestCaching> 要素 (ネットワーク設定)](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|<xref:System.Net?displayProperty=fullName> 名前空間の基本的なネットワーク オプションを構成します。|  
+|[\<requestCaching> 要素 (ネットワーク設定)](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|<xref:System.Net?displayProperty=nameWithType> 名前空間の基本的なネットワーク オプションを構成します。|  
 |[\<webRequestModules> 要素 (ネットワーク設定)](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|インターネット ホストから情報を要求するために使用するモジュールを指定します。|  
   
  Uri の設定は、.NET Framework での Uniform Resource Identifier (URI) を使用して表現された Web アドレスの処理方法を指定します。 次の表では、[\<Uri> 要素 (Uri 設定)](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md) の下にある各子構成要素の関数について説明します。  
@@ -58,6 +51,5 @@ ms.lasthandoff: 09/05/2017
 |[\<schemeSettings> 要素 (Uri 設定)](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|<xref:System.Uri> が特定のスキームに解析される方法を指定します。|  
   
 ## <a name="see-also"></a>関連項目  
- [インターネット アプリケーションの構成](../../../../../docs/framework/network-programming/configuring-internet-applications.md)   
+ [インターネット アプリケーションの構成](../../../../../docs/framework/network-programming/configuring-internet-applications.md)  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)
-

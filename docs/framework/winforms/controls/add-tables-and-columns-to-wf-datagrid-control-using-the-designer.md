@@ -1,70 +1,71 @@
 ---
-title: "方法 : デザイナーを使って Windows フォーム DataGrid コントロールにテーブルと列を追加する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "列 [Windows フォーム], 追加 (DataGrid コントロールに)"
-  - "DataGrid コントロール [Windows フォーム], 追加 (テーブルと列を)"
-  - "テーブル [Windows フォーム], 追加 (DataGrid コントロールに)"
+title: "方法 : デザイナーを使って Windows フォーム DataGrid コントロールにテーブルと列を追加する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- columns [Windows Forms], adding to DataGrid control
+- tables [Windows Forms], adding to DataGrid control
+- DataGrid control [Windows Forms], adding tables and columns
 ms.assetid: 4a6d1b34-b696-476b-bf8a-57c6230aa9e1
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4c80bd12db83284c30f637f48dfc09e7de22280b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : デザイナーを使って Windows フォーム DataGrid コントロールにテーブルと列を追加する
+# <a name="how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control-using-the-designer"></a>方法 : デザイナーを使って Windows フォーム DataGrid コントロールにテーブルと列を追加する
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGrid> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.DataGrid> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。  
+>  <xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGrid> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.DataGrid> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。 詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。  
   
- Windows フォームの <xref:System.Windows.Forms.DataGrid> コントロールのデータをテーブルおよび列に表示するには、<xref:System.Windows.Forms.DataGridTableStyle> オブジェクトを作成して <xref:System.Windows.Forms.GridTableStylesCollection> オブジェクトに追加します。GridTableStylesCollection オブジェクトには、<xref:System.Windows.Forms.DataGrid> コントロールの <xref:System.Windows.Forms.DataGrid.TableStyles%2A> プロパティを使用してアクセスできます。  各テーブル スタイルは、<xref:System.Windows.Forms.DataGridTableStyle> の <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> プロパティで指定されたデータ テーブルの内容を表示します。  既定では、列スタイルが指定されていないテーブル スタイルには、そのデータ テーブル内のすべての列が表示されます。  テーブルから表示される列を制限するには、<xref:System.Windows.Forms.DataGridColumnStyle> オブジェクトを <xref:System.Windows.Forms.GridColumnStylesCollection> に追加します。<xref:System.Windows.Forms.GridColumnStylesCollection> にアクセスするには、各 <xref:System.Windows.Forms.DataGridTableStyle> の <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> プロパティを使用します。  
+ Windows フォームでデータを表示することができます<xref:System.Windows.Forms.DataGrid>テーブルおよび列を作成してコントロール<xref:System.Windows.Forms.DataGridTableStyle>オブジェクトとに追加すること、<xref:System.Windows.Forms.GridTableStylesCollection>からアクセスできるオブジェクト、<xref:System.Windows.Forms.DataGrid>コントロールの<xref:System.Windows.Forms.DataGrid.TableStyles%2A>プロパティです。 各テーブルのスタイルで指定されたは、どのようなデータ テーブルの内容を表示する、<xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A>のプロパティ、<xref:System.Windows.Forms.DataGridTableStyle>です。 列スタイルを指定せず、テーブルのスタイルでは既定では、そのデータ テーブル内のすべての列が表示されます。 追加することによって表示される、テーブルから列を制限することができます<xref:System.Windows.Forms.DataGridColumnStyle>オブジェクトを<xref:System.Windows.Forms.GridColumnStylesCollection>、を通じてアクセスされますが、<xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A>の各プロパティ<xref:System.Windows.Forms.DataGridTableStyle>です。  
   
- 次の手順では、<xref:System.Windows.Forms.DataGrid> コントロールが含まれているフォームを持つ **Windows アプリケーション** プロジェクトが必要です。  このプロジェクトの設定の詳細については、「[How to: Create a Windows Application Project](http://msdn.microsoft.com/ja-jp/b2f93fed-c635-4705-8d0e-cf079a264efa)」および「[方法 : Windows フォームにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)」を参照してください。  [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)] では、既定で <xref:System.Windows.Forms.DataGrid> コントロールは**ツールボックス**に含まれていません。  コントロールの追加の詳細については、「[How to: Add Items to the Toolbox](http://msdn.microsoft.com/ja-jp/458e119e-17fe-450b-b889-e31c128bd7e0)」を参照してください。  
+ 次の手順が必要な**Windows アプリケーション**を含むフォームを使用してプロジェクト、<xref:System.Windows.Forms.DataGrid>コントロール。 このようなプロジェクトを設定する方法については、次を参照してください。[する方法: Windows アプリケーション プロジェクトを作成](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)と[する方法: Windows フォームにコントロールを追加](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)です。 既定で[!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)]、<xref:System.Windows.Forms.DataGrid>コントロールに含まれていない、**ツールボックス**です。 追加の詳細については、次を参照してください。[する方法: ツールボックス アイテムの追加](http://msdn.microsoft.com/en-us/458e119e-17fe-450b-b889-e31c128bd7e0)です。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-### デザイナーで DataGrid コントロールにテーブルを追加するには  
+### <a name="to-add-a-table-to-the-datagrid-control-in-the-designer"></a>デザイナーで、DataGrid コントロールにテーブルを追加するには  
   
-1.  データをテーブルに表示するには、まず <xref:System.Windows.Forms.DataGrid> コントロールをデータセットにバインドする必要があります。  詳細については、「[方法 : デザイナーを使ってデータ ソースに Windows フォーム DataGrid コントロールをバインドする](../../../../docs/framework/winforms/controls/bind-wf-datagrid-control-to-a-data-source-using-the-designer.md)」を参照してください。  
+1.  テーブルにデータを表示するためにする必要がありますまずバインド、<xref:System.Windows.Forms.DataGrid>データセットを制御します。 詳細については、次を参照してください。[する方法: Windows フォーム DataGrid コントロールをバインドするデータ ソース デザイナーを使用して、](../../../../docs/framework/winforms/controls/bind-wf-datagrid-control-to-a-data-source-using-the-designer.md)です。  
   
-2.  \[プロパティ\] ウィンドウで <xref:System.Windows.Forms.DataGrid> コントロールの <xref:System.Windows.Forms.DataGrid.TableStyles%2A> プロパティを選択し、プロパティの横にある省略記号ボタン \(![VisualStudioEllipsesButton スクリーンショット](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")\) をクリックして **DataGridTableStyle コレクション エディター**を表示します。  
+2.  選択、<xref:System.Windows.Forms.DataGrid>コントロールの<xref:System.Windows.Forms.DataGrid.TableStyles%2A>プロパティ ウィンドウでプロパティの省略記号ボタンをクリックして (![VisualStudioEllipsesButton スクリーン ショット](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) の横にこのプロパティを表示、 **DataGridTableStyle コレクション エディター**です。  
   
-3.  コレクション エディターで、**\[追加\]** をクリックしてテーブル スタイルを挿入します。  
+3.  コレクション エディターで、**追加**テーブル スタイルを挿入します。  
   
-4.  **\[OK\]** をクリックしてコレクション エディターを閉じ、<xref:System.Windows.Forms.DataGrid.TableStyles%2A> プロパティの省略記号ボタンをクリックして再び開きます。  
+4.  をクリックして**OK**コレクション エディターを閉じてから開き、次に省略記号ボタンをクリックする、<xref:System.Windows.Forms.DataGrid.TableStyles%2A>プロパティです。  
   
-     コレクション エディターを再び開くと、コントロールに連結されているデータ テーブルが、テーブル スタイルの <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> プロパティのドロップダウン リストに表示されます。  
+     コレクション エディターを開くと、コントロールにバインドされているすべてのデータ テーブルは、のドロップダウン リストに表示されます、<xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A>テーブル スタイルのプロパティです。  
   
-5.  コレクション エディターの **\[メンバー\]** ボックスで、テーブル スタイルをクリックします。  
+5.  **メンバー**ボックス コレクション エディターのテーブルのスタイルをクリックします。  
   
-6.  コレクション エディターの **\[プロパティ\]** ボックスで、表示するテーブルの <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> 値を選択します。  
+6.  **プロパティ**コレクション エディターでは、select のボックス、<xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A>を表示するテーブルの値。  
   
-### デザイナーで DataGrid コントロールに列を追加するには  
+### <a name="to-add-a-column-to-the-datagrid-control-in-the-designer"></a>デザイナーで、DataGrid コントロールに列を追加するには  
   
-1.  **DataGridTableStyle** コレクション エディターの **\[メンバー\]** ボックスで、適切なテーブル スタイルを選択します。  コレクション エディターの **\[プロパティ\]** ボックスで <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> コレクションを選択し、プロパティの横にある省略記号ボタン \(![VisualStudioEllipsesButton スクリーンショット](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")\) をクリックして **DataGridColumnStyle コレクション エディター**を開きます。  
+1.  **メンバー**のボックス、 **DataGridTableStyle コレクション エディター**、適切なテーブルのスタイルを選択します。 **プロパティ**コレクション エディターでは、select のボックス、<xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A>コレクション、省略記号ボタンをクリックして (![VisualStudioEllipsesButton スクリーン ショット](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) を表示するプロパティの横に、 **DataGridColumnStyle コレクション エディター**です。  
   
-2.  コレクション エディターで、**\[追加\]** をクリックして列スタイルを挿入するか、**\[追加\]** の横にある下向きの矢印をクリックして列の種類を指定します。  
+2.  コレクション エディターで、**追加**を列のスタイルを挿入または横に、下矢印をクリックする**追加**列の種類を指定します。  
   
-     ドロップダウン リストからは、<xref:System.Windows.Forms.DataGridTextBoxColumn> または <xref:System.Windows.Forms.DataGridBoolColumn> を選択できます。  
+     ドロップダウン ボックスで、いずれかを選択できます、<xref:System.Windows.Forms.DataGridTextBoxColumn>または<xref:System.Windows.Forms.DataGridBoolColumn>型です。  
   
-3.  \[OK\] をクリックして **DataGridColumnStyle コレクション エディター**を閉じ、<xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> プロパティの省略記号ボタンをクリックして再び開きます。  
+3.  閉じるには、[ok] をクリックして、 **DataGridColumnStyle コレクション エディター**、横にある省略記号ボタンをクリックすると、再度開くと、<xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A>プロパティです。  
   
-     コレクション エディターを再び開くと、連結されているテーブル内のデータ列が、列スタイルの <xref:System.Windows.Forms.DataGridColumnStyle.MappingName%2A> プロパティのドロップダウン リストに表示されます。  
+     コレクション エディターを開くと、バインドされたデータ テーブル内のデータ列は、のドロップダウン リストに表示されます、<xref:System.Windows.Forms.DataGridColumnStyle.MappingName%2A>列スタイルのプロパティです。  
   
-4.  コレクション エディターの **\[メンバー\]** ボックスで、列スタイルをクリックします。  
+4.  **メンバー**ボックス コレクション エディターの列のスタイルをクリックします。  
   
-5.  コレクション エディターの **\[プロパティ\]** ボックスで、表示する列の <xref:System.Windows.Forms.DataGridColumnStyle.MappingName%2A> 値を選択します。  
+5.  **プロパティ**コレクション エディターでは、select のボックス、<xref:System.Windows.Forms.DataGridColumnStyle.MappingName%2A>を表示する列の値。  
   
-## 参照  
- [DataGrid コントロール](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)   
- [方法 : Windows フォーム DataGrid コントロールの列を削除するまたは非表示にする](../../../../docs/framework/winforms/controls/how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)
+## <a name="see-also"></a>関連項目  
+ [DataGrid コントロール](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)  
+ [方法: Windows フォーム DataGrid コントロールの列を削除するまたは非表示にする](../../../../docs/framework/winforms/controls/how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)

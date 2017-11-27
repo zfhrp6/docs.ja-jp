@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 9af4ec79-cdef-457e-9dca-09d5eb821594
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cc01267fa8c5bc2f052ffe2c5851794888e48b34
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: f463b5263ac91dd61db2208581f291c170bf2b33
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ltws2007federationhttpbindinggt"></a>&lt;ws2007FederationHttpBinding&gt;
 派生したセキュリティで保護された相互操作可能なバインディング[ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)フェデレーション セキュリティをサポートします。  
@@ -102,7 +100,7 @@ ms.lasthandoff: 09/25/2017
 |[\<バインド >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|この要素には、標準バインディングおよびカスタム バインディングのコレクションが保持されます。|  
   
 ## <a name="remarks"></a>コメント  
- フェデレーションは、複数の企業または信頼するドメインで認証と承認用の ID を共有する機能です。 フェデレーションは、WS-Trust プロトコルを使用して、ID 形式を、ある信頼するドメインから別の信頼するドメインにマップします。 フェデレーション HTTP バインドは、SOAP セキュリティと混合モード セキュリティをサポートしますが、トランスポート セキュリティの単独使用はサポートしません。 このバインディングで構成されたサービスは、HTTP トランスポートを使用する必要があります。 [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][\<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)です。  
+ フェデレーションは、複数の企業または信頼するドメインで認証と承認用の ID を共有する機能です。 フェデレーションは、WS-Trust プロトコルを使用して、ID 形式を、ある信頼するドメインから別の信頼するドメインにマップします。 フェデレーション HTTP バインドは、SOAP セキュリティと混合モード セキュリティをサポートしますが、トランスポート セキュリティの単独使用はサポートしません。 このバインディングで構成されたサービスは、HTTP トランスポートを使用する必要があります。 [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)です。  
   
 ## <a name="example"></a>例  
   
@@ -138,11 +136,10 @@ ms.lasthandoff: 09/25/2017
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.ServiceModel.WS2007FederationHttpBinding>   
- <xref:System.ServiceModel.Configuration.WS2007FederationHttpBindingElement>   
- [\<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)   
- [バインド](../../../../../docs/framework/wcf/bindings.md)   
- [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
+ <xref:System.ServiceModel.WS2007FederationHttpBinding>  
+ <xref:System.ServiceModel.Configuration.WS2007FederationHttpBindingElement>  
+ [\<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)  
+ [バインディング](../../../../../docs/framework/wcf/bindings.md)  
+ [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<バインド >](../../../../../docs/framework/misc/binding.md)
-

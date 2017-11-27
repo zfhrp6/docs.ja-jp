@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - XML Web services, XML serialization
 - XML serialization, XML Web services
@@ -25,16 +23,15 @@ helpviewer_keywords:
 - literal XML serialization
 - serialization, attributes
 ms.assetid: a416192f-8102-458e-bc0a-0b8f3f784da9
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: 6e84c0f0a1022ff4c4fe5a82d1f40f74b51c0f7c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: c8ec820d631532b782b738f0fefcffce3e4b93d6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="xml-serialization-with-xml-web-services"></a>XML Web サービスを使用した XML シリアル化
 XML シリアル化は、XML Web サービス アーキテクチャで使用される基礎的なトランスポート機構であり、<xref:System.Xml.Serialization.XmlSerializer> クラスによって実行されます。 XML Web サービスによって生成される XML を制御するには、「[XML シリアル化を制御する属性](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)」および「[エンコード済み SOAP シリアル化を制御する属性](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)」の一覧に示されている属性を、XML Web サービスの作成に使用するファイル (.asmx) のクラス、戻り値、パラメーター、およびフィールドに適用します。 XML Web サービスの作成の詳細については、「[ASP.NET を使用した XML Web サービスの構築](http://msdn.microsoft.com/en-us/01dfc27c-c68e-4910-a0aa-5e4c2a766b0c)」を参照してください。  
@@ -270,11 +267,10 @@ public class Order{
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [XML シリアル化および SOAP シリアル化](../../../docs/standard/serialization/xml-and-soap-serialization.md)   
- [エンコード済み SOAP シリアル化を制御する属性](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)   
- [方法 : オブジェクトを SOAP エンコード済み XML ストリームとしてシリアル化する](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)   
- [方法 : SOAP エンコード済み XML シリアル化をオーバーライドする](../../../docs/standard/serialization/how-to-override-encoded-soap-xml-serialization.md)   
- [XML シリアル化の概要](../../../docs/standard/serialization/introducing-xml-serialization.md)   
- [方法 : オブジェクトをシリアル化する](../../../docs/standard/serialization/how-to-serialize-an-object.md)   
+ [XML シリアル化および SOAP シリアル化](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
+ [エンコード済み SOAP シリアル化を制御する属性](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)  
+ [方法 : オブジェクトを SOAP エンコード済み XML ストリームとしてシリアル化する](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)  
+ [方法 : SOAP エンコード済み XML シリアル化をオーバーライドする](../../../docs/standard/serialization/how-to-override-encoded-soap-xml-serialization.md)  
+ [XML シリアル化の概要](../../../docs/standard/serialization/introducing-xml-serialization.md)  
+ [方法 : オブジェクトをシリアル化する](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
  [方法 : オブジェクトを逆シリアル化する](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
-

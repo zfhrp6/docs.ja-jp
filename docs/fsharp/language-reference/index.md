@@ -1,6 +1,6 @@
 ---
 title: "F# 言語リファレンス"
-description: "F# 言語リファレンス"
+description: "言語トークン、概念、種類、式、およびコンストラクトのコンパイラでサポートされているトピックへの参照をこの f# 言語機能情報を検索します。"
 keywords: "visual f#, f#, 関数型プログラミング"
 author: cartermp
 ms.author: phcart
@@ -10,16 +10,15 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: b1707be1-7b7c-4fdd-a717-d9c190bc5fb5
-translationtype: Human Translation
-ms.sourcegitcommit: 0a01ec92a90d99fafaacbd3f71f5177e5cf94a68
-ms.openlocfilehash: e0b7058513b0487902b2a57b889e77df1abfef98
-ms.lasthandoff: 04/05/2017
-
+ms.openlocfilehash: 0d26d5a6f47ce8a92aefe338ea8c39295d042794
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="f-language-reference"></a>F# 言語リファレンス
 
-このセクションでは、.NET プラットフォーム向けのマルチパラダイム プログラミング言語である F# 言語のリファレンスを示します。 F# 言語は、関数型プログラミング、オブジェクト指向プログラミング、および命令型プログラミングのモデルをサポートします。
+このセクションでは、参照、f#、言語にターゲットを .NET マルチ パラダイムのプログラミング言語です。 F# 言語は、関数型プログラミング、オブジェクト指向プログラミング、および命令型プログラミングのモデルをサポートします。
 
 
 ## <a name="f-tokens"></a>F# トークン

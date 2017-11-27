@@ -1,61 +1,60 @@
 ---
-title: "Typographic and Code Conventions (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "coding conventions, Visual Basic"
-  - "best practices, coding conventions"
-  - "conventions, Visual Basic coding"
-  - "typographic conventions"
-  - "document conventions"
-  - "conventions, documentation"
-  - "Visual Basic code, conventions"
+title: "表記規則とコード規則 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- coding conventions [Visual Basic], Visual Basic
+- best practices [Visual Basic], coding conventions
+- conventions [Visual Basic], Visual Basic coding
+- typographic conventions [Visual Basic]
+- document conventions [Visual Basic]
+- conventions [Visual Basic], documentation
+- Visual Basic code, conventions
 ms.assetid: 1916cd81-ea9d-4faa-81f7-4a0d864b60f4
-caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 7b6db5c223b0548e308b49a686cff72eaaf8da36
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Typographic and Code Conventions (Visual Basic)
-[!INCLUDE[vs2017banner](../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-Visual Basic のヘルプは、次の表記規則とコード規則に従って記述されています。  
+# <a name="typographic-and-code-conventions-visual-basic"></a>表記規則とコード規則 (Visual Basic)
+Visual Basic のドキュメントでは、次の文字体裁とコード規則を使用します。  
   
-## 表記規則  
+## <a name="typographic-conventions"></a>表記規則  
   
-|例|Description|  
-|-------|-----------------|  
-|`Sub`, `If`, `ChDir`, `Print`, `True`, `Debug`|言語特有のキーワードやランタイム メンバーは、先頭が大文字になっており、この例に示す書式が使用されています。|  
-|SmallProject、ButtonCollection|ユーザーが入力する語および句には、この例に示す書式が使用されています。|  
-|[Module Statement](../../visual-basic/language-reference/statements/module-statement.md)|クリックすると他のヘルプ ページに移動するリンクには、この例に示す書式が使用されています。|  
-|*object*、*variableName*、`argumentList`|ユーザーが入力する情報のプレースホルダーには、この例に示す書式が使用されています。|  
-|\[ Shadows \]、\[ *expressionList* \]|構文内の省略可能な項目は、角かっこで囲まれています。|  
-|{ `Public` &#124; `Friend` &#124; `Private` }|構文内で、複数の項目から 1 つを選択する必要がある場合は、項目が中かっこで囲まれ、縦棒で区切られています。<br /><br /> 1 つの項目だけを選択する必要があります。|  
-|\[ `Protected` &#124; `Friend` \]|構文内で、複数の項目から選択可能な場合は、項目が角かっこで囲まれ、縦棒で区切られています。<br /><br /> これらの項目を任意に組み合わせて選択するか、または何も選択しないこともできます。|  
-|\[{ `ByVal` &#124; `ByRef` }\]|構文内で、項目を 1 つだけ選択するか、何も選択しないこともできる場合は、項目が中かっこを囲む角かっこで囲まれ、縦棒で区切られています。|  
-|*memberName* 1、*memberName*2、*memberName*3|同じプレースホルダーの複数のインスタンスは、この例に示すように添字によって区別されます。|  
-|*memberName1*<br /><br /> ...<br /><br /> *memberNameN*|構文内の省略記号 \(...\) は、省略記号の直前の種類の項目が無限に続くことを示します。<br /><br /> コードでは、わかりやすくするために省略されたコードを示します。|  
-|ESC、ENTER|キーボードのキー名やキー シーケンスは、すべて大文字で表記されます。|  
-|Alt \+ F1|キー名の間にプラス記号 \(\+\) がある場合、一方のキーを押したままでもう一方のキーを押す必要があります。  たとえば、Alt \+ F1 は Alt キーを押しながら、F1 キーを押すことを表します。|  
+|例|説明|  
+|-------------|-----------------|  
+|`Sub`, `If`, `ChDir`, `Print`, `True`, `Debug`|言語固有のキーワードとランタイムのメンバーは、先頭の大文字があるし、は、この例で示すように書式設定します。|  
+|**SmallProject**、 **ButtonCollection**|この例で示すように、単語や語句を入力するように指示されますが書式設定します。|  
+|[Module ステートメント](../../visual-basic/language-reference/statements/module-statement.md)|リンクをクリックすると別のヘルプ ページに移動することができますは、この例で示すように書式設定です。|  
+|*オブジェクト*、 *variableName*、`argumentList`|指定した情報のプレース ホルダーは、この例で示すようにフォーマットされます。|  
+|[影]、[*から抜け出します*]|構文では、省略可能な項目は角かっこで囲まれます。|  
+|{ `Public` &#124; `Friend` &#124; `Private` }|構文では、2 つ以上の項目間の選択を行う必要があります項目中かっこで囲むし、が縦棒で区切られてです。<br /><br /> 1 つ、および 1 つだけ、項目を選択する必要があります。|  
+|[ `Protected` &#124; `Friend` ]|構文では、2 つ以上の項目間を選択するオプションがある場合は、アイテムが角かっこで囲むし、縦棒で区切られてです。<br /><br /> アイテムの任意の組み合わせまたは項目を選択できません。|  
+|[{ `ByVal` &#124; `ByRef` }]|構文では、2 つ以上の項目を選択できますが、項目を完全に省略することも、アイテムが角かっこ、中かっこで囲まれ、縦棒で区切られてで囲まれました。|  
+|*memberName*1、 *memberName*2、 *memberName*3|同じプレース ホルダーの複数のインスタンスは、例のように、添字によって区別されます。|  
+|*memberName1*<br /><br /> ...<br /><br /> *memberNameN*|省略記号 (...) の構文では、省略記号の直前の種類のアイテムの不特定数を示すために使用します。<br /><br /> コードでは、わかりやすく説明を省略するとコードを示します。|  
+|ESC キーを入力してください|キー名とキーボードのキー シーケンスがすべて大文字で表示されます。|  
+|ALT + F1|キー名の間に正符号 (+) が表示されたらは、他のキーを押しているときに 1 つのキーを押しながら必要があります。 たとえば、F1 キーを押しながら ALT キーを押しながら alt キーを押しながら f1 キーを意味します。|  
   
-## コード規則  
+## <a name="code-conventions"></a>コード規則  
   
-|例|Description|  
-|-------|-----------------|  
-|`sampleString = "Hello, world!"`|コード サンプルは、固定ピッチ フォントで表記され、この例に示す書式になっています。|  
-|このステートメントは、`sampleString` の値を "Hello, world\!" に設定します。|解説文に含まれるコード要素は、この例に示すように固定ピッチ フォントで表記されます。|  
-|`' This is a comment.`<br /><br /> `REM This is also a comment.`|コードのコメントは、アポストロフィ \('\) や REM キーワードで始まります。|  
-|`sampleVar = "This is an " _`<br /><br /> `& "example" _`<br /><br /> `& " of how to continue code."`|行末の空白とアンダースコア \( \_\) は、ステートメントが次の行に継続することを示します。|  
+|例|説明|  
+|-------------|-----------------|  
+|`sampleString = "Hello, world!"`|コード サンプルでは、固定ピッチ フォントで表示され、は、この例で示すように書式設定します。|  
+|前のステートメントの値を設定する`sampleString`に「こんにちは, world!」|説明テキストでコード要素は、この例で示すようを固定ピッチ フォントで表示されます。|  
+|`' This is a comment.`<br /><br /> `REM This is also a comment.`|コードのコメントはアポストロフィ (') または REM キーワードによって導入されました。|  
+|`sampleVar = "This is an " _`<br /><br /> `& "example" _`<br /><br /> `& " of how to continue code."`|アンダー スコア (_)、行の末尾にスペースは、次の行に、ステートメントを続行することを示します。|  
   
-## 参照  
- [Visual Basic Language Reference](../../visual-basic/language-reference/index.md)   
- [キーワード](../../visual-basic/language-reference/keywords/index.md)   
- [Visual Basic Runtime Library Members](../../visual-basic/language-reference/runtime-library-members.md)   
- [Visual Basic Naming Conventions](../../visual-basic/programming-guide/program-structure/naming-conventions.md)   
- [方法 : コード内でステートメントを分割および連結する](../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)   
- [Comments in Code](../../visual-basic/programming-guide/program-structure/comments-in-code.md)
+## <a name="see-also"></a>関連項目  
+ [Visual Basic の言語リファレンス](../../visual-basic/language-reference/index.md)  
+ [キーワード](../../visual-basic/language-reference/keywords/index.md)  
+ [Visual Basic ランタイム ライブラリのメンバー](../../visual-basic/language-reference/runtime-library-members.md)  
+ [Visual Basic の名前付け規則](../../visual-basic/programming-guide/program-structure/naming-conventions.md)  
+ [方法 : コード内でステートメントを分割および連結する](../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)  
+ [コード内のコメント](../../visual-basic/programming-guide/program-structure/comments-in-code.md)

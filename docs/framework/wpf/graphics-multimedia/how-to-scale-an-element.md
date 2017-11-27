@@ -1,53 +1,54 @@
 ---
-title: "方法 : 要素をスケーリングする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "クラス, ScaleTransform"
-  - "グラフィックス, スケーリング (要素を)"
-  - "ScaleTransform クラス"
-  - "スケーリング, 要素"
+title: "方法 : 要素をスケーリングする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- scaling [WPF], elements
+- graphics [WPF], scaling elements
 ms.assetid: 18158d94-bbe7-4f6a-814e-84d27fa748bf
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 23b3086452526e804bfdbe50bb0c134f33158f5d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 要素をスケーリングする
-<xref:System.Windows.Media.ScaleTransform> を使用して要素をスケーリングする方法を次の例に示します。  
+# <a name="how-to-scale-an-element"></a>方法 : 要素をスケーリングする
+この例を使用する方法を示しています、<xref:System.Windows.Media.ScaleTransform>要素のスケールを設定します。  
   
- <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> および <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> プロパティを使用して、指定するファクターごとに要素のサイズを変更します。  たとえば、<xref:System.Windows.Media.ScaleTransform.ScaleX%2A> の値が 1.5 である場合、要素は元の幅の 150% に引き伸ばされます。  <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> の値が 0.5 である場合、要素の高さは 50% 縮められます。  
+ 使用して、<xref:System.Windows.Media.ScaleTransform.ScaleX%2A>と<xref:System.Windows.Media.ScaleTransform.ScaleY%2A>プロパティを指定する場合の係数して要素のサイズを変更します。 たとえば、 <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> 1.5 の値が元の幅の 150% に要素を拡大します。 A<xref:System.Windows.Media.ScaleTransform.ScaleY%2A>値 0.5 は 50%、要素の高さを縮小します。  
   
- <xref:System.Windows.Media.ScaleTransform.CenterX%2A> および <xref:System.Windows.Media.ScaleTransform.CenterY%2A> プロパティを使用して、スケール操作の中心となる点を指定します。  既定では、<xref:System.Windows.Media.ScaleTransform> は中心点 \(0,0\) に配置されます。これは四角形の左上隅に相当します。  <xref:System.Windows.Media.Transform> を適用すると、オブジェクトが存在する座標空間が変更されるため、これには要素を移動する効果、および要素を大きく表示する効果もあります。  
+ 使用して、<xref:System.Windows.Media.ScaleTransform.CenterX%2A>と<xref:System.Windows.Media.ScaleTransform.CenterY%2A>プロパティをスケール操作の中心であるポイントを指定します。 既定では、<xref:System.Windows.Media.ScaleTransform>四角形の左上隅に対応するポイント (0, 0) で中央揃えされます。 これは、要素の移動とも適用すると、サイズが大きくなるように見えるので、<xref:System.Windows.Media.Transform>オブジェクトが存在する座標空間を変更します。  
   
- 次のコード例では、<xref:System.Windows.Media.ScaleTransform> を使用して、縦横 50 サイズの <xref:System.Windows.Shapes.Rectangle> を 2 倍にします。  <xref:System.Windows.Media.ScaleTransform> には、<xref:System.Windows.Media.ScaleTransform.CenterX%2A> と <xref:System.Windows.Media.ScaleTransform.CenterY%2A> の両方に対して値 0 \(既定値\) があります。  
+ 次の例では、 <xref:System.Windows.Media.ScaleTransform> 50 での 50 のサイズを 2 倍に<xref:System.Windows.Shapes.Rectangle>です。 <xref:System.Windows.Media.ScaleTransform>両方の値を 0 (既定値) を持つ<xref:System.Windows.Media.ScaleTransform.CenterX%2A>と<xref:System.Windows.Media.ScaleTransform.CenterY%2A>です。  
   
-## 使用例  
- [!code-xml[transformsSample#21](../../../../samples/snippets/csharp/VS_Snippets_Wpf/transformsSample/CS/ScaleTransformExample.xaml#21)]  
+## <a name="example"></a>例  
+ [!code-xaml[transformsSample#21](../../../../samples/snippets/csharp/VS_Snippets_Wpf/transformsSample/CS/ScaleTransformExample.xaml#21)]  
   
- 通常、<xref:System.Windows.Media.ScaleTransform.CenterX%2A> および <xref:System.Windows.Media.ScaleTransform.CenterY%2A> をスケーリングされるオブジェクトの中心に設定します \(<xref:System.Windows.FrameworkElement.Width%2A>\/2、<xref:System.Windows.FrameworkElement.Height%2A>\/2\)。  
+ 通常、設定<xref:System.Windows.Media.ScaleTransform.CenterX%2A>と<xref:System.Windows.Media.ScaleTransform.CenterY%2A>のスケールが設定されるオブジェクトの中心に: (<xref:System.Windows.FrameworkElement.Width%2A>/2、  <xref:System.Windows.FrameworkElement.Height%2A> /2)。  
   
- サイズが 2 倍にされている別の <xref:System.Windows.Shapes.Rectangle> の例を次に示します。ただし、この <xref:System.Windows.Media.ScaleTransform> には、<xref:System.Windows.Media.ScaleTransform.CenterX%2A> と <xref:System.Windows.Media.ScaleTransform.CenterY%2A> の両方に対して、四角形の中心に対応する値 25 があります。  
+ 次の例に示します別<xref:System.Windows.Shapes.Rectangle>が 2 倍の大きさです。 ただし、この<xref:System.Windows.Media.ScaleTransform>両方に対して 25 の値を持つ<xref:System.Windows.Media.ScaleTransform.CenterX%2A>と<xref:System.Windows.Media.ScaleTransform.CenterY%2A>、四角形の中心に対応します。  
   
- [!code-xml[transformsSample#22](../../../../samples/snippets/csharp/VS_Snippets_Wpf/transformsSample/CS/ScaleTransformExample.xaml#22)]  
+ [!code-xaml[transformsSample#22](../../../../samples/snippets/csharp/VS_Snippets_Wpf/transformsSample/CS/ScaleTransformExample.xaml#22)]  
   
- 2 つの <xref:System.Windows.Media.ScaleTransform> の操作の違いを次の図に示します。  点線は、スケーリング前の四角形のサイズと位置を示します。  
+ 次の図は、2 つの差<xref:System.Windows.Media.ScaleTransform>操作します。 点線は、拡大/縮小する前の四角形のサイズと位置を示しています。  
   
- ![中心点が異なる 2 倍のスケール](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-scalecenter.png "wcpsdk\_graphicsmm\_scalecenter")  
-ScaleX 値と ScaleY 値が同じであっても中心が異なる 2 つの ScaleTransform 操作  
+ ![中心点が異なる 2 倍のスケール](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-scalecenter.gif "wcpsdk_graphicsmm_scalecenter")  
+2 つの ScaleTransform 操作では、ScaleX と ScaleY の値は同じですが、中心点が異なっています。  
   
- サンプル全体については、[2\-D 変換のサンプル](http://go.microsoft.com/fwlink/?LinkID=158252)を参照してください。  
+ 完全なサンプルについては、「[2-D 変換のサンプル](http://go.microsoft.com/fwlink/?LinkID=158252)」をご覧ください。  
   
-## 参照  
- <xref:System.Windows.Media.Transform>   
- <xref:System.Windows.Media.ScaleTransform>   
- [変換の概要](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Media.Transform>  
+ <xref:System.Windows.Media.ScaleTransform>  
+ [変換の概要](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)  
+ [方法トピック](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)

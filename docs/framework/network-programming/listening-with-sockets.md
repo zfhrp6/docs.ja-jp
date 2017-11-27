@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - application protocols, sockets
 - sending data, sockets
@@ -23,16 +21,15 @@ helpviewer_keywords:
 - listening with sockets
 - Internet, sockets
 ms.assetid: 40e426cc-13db-4371-95eb-f7388bd23ebf
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 66c3a64a12e791cedbd4e978de2c1b6e06eabb98
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 6f96463b4f9cb7e61c403cfd77f747c8aefd99a1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="listening-with-sockets"></a>リッスン (ソケットで)
 リスナーまたはサーバー ソケットは、ネットワーク上のポートを開き、クライアントがそのポートに接続するまで待機します。 他のネットワーク アドレス ファミリとプロトコルもありますが、この例では、TCP/IP ネットワーク用のリモート サービスを作成する方法を説明します。  
@@ -56,11 +53,15 @@ IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
  ローカル エンドポイントを決定した後、<xref:System.Net.Sockets.Socket.Bind%2A> メソッドを使用して <xref:System.Net.Sockets.Socket> をそのエンドポイントと関連付け、<xref:System.Net.Sockets.Socket.Listen%2A> メソッドを使用してエンドポイントをリッスンするように設定する必要があります。 特定のアドレスとポートの組み合わせが既に使用されている場合、**Bind** は例外をスローします。 **Socket** と **IPEndPoint** を関連付ける例を次に示します。  
   
 ```vb  
+Dim listener As New Socket(ipAddress.AddressFamily, _  
+    SocketType.Stream, ProtocolType.Tcp) 
 listener.Bind(localEndPoint)  
 listener.Listen(100)  
 ```  
   
 ```csharp  
+Socket listener = new Socket(ipAddress.AddressFamily,
+    SocketType.Stream, ProtocolType.Tcp);
 listener.Bind(localEndPoint);  
 listener.Listen(100);  
 ```  
@@ -68,9 +69,8 @@ listener.Listen(100);
  **Listen** メソッドには、**Socket** に対する保留中の接続数の上限を指定する 1 つのパラメーターがあります。この上限を超えると、サーバー ビジー エラーが接続クライアントに返されます。 この例では、接続キューに格納できるクライアント数の上限は 100 個で、クライアント番号 101 にはサーバー ビジー応答が返されます。  
   
 ## <a name="see-also"></a>関連項目  
- [同期サーバー ソケットの使用](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)   
- [非同期サーバー ソケットの使用](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)   
- [クライアント ソケットの使用](../../../docs/framework/network-programming/using-client-sockets.md)   
- [方法: ソケットを作成する](../../../docs/framework/network-programming/how-to-create-a-socket.md)   
+ [同期サーバー ソケットの使用](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
+ [非同期サーバー ソケットの使用](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
+ [クライアント ソケットの使用](../../../docs/framework/network-programming/using-client-sockets.md)  
+ [方法: ソケットを作成する](../../../docs/framework/network-programming/how-to-create-a-socket.md)  
  [ソケット](../../../docs/framework/network-programming/sockets.md)
-

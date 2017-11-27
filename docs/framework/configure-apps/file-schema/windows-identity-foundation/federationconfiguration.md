@@ -1,84 +1,91 @@
 ---
-title: "&lt;federationConfiguration&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;federationConfiguration&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8b14054c-6d07-46ab-ab58-03f14beac0f2
-caps.latest.revision: 9
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 9abe07c065dbea67c5ebc4a4490d9f88258130c8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;federationConfiguration&gt;
-構成、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> \(WSFAM\) と、 <xref:System.IdentityModel.Services.SessionAuthenticationModule> \(SAM\) を使用する場合の連合、Ws\-federation プロトコルを使って認証します。  構成、 <xref:System.Security.Claims.ClaimsAuthorizationManager>を使用すると、 <xref:System.IdentityModel.Services.ClaimsPrincipalPermission>や、 <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>クレーム ベースのアクセス制御を提供するクラス。  
+# <a name="ltfederationconfigurationgt"></a>&lt;federationConfiguration&gt;
+構成、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) および<xref:System.IdentityModel.Services.SessionAuthenticationModule>(SAM) を使用する場合は、Ws-federation プロトコルを使用した認証をフェデレーションします。 構成、<xref:System.Security.Claims.ClaimsAuthorizationManager>を使用する場合、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>または<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>クレームに基づくアクセス制御を提供するクラス。  
   
-## 構文  
+ \<system.identityModel.services >  
+\<federationConfiguration >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <system.identityModel.services>  
-  <federationConfiguration name=xs:string identityConfigurationName=xs:string>  
-  </federationConfiguration>  
+  <federationConfiguration name=xs:string identityConfigurationName=xs:string>  
+  </federationConfiguration>  
 </system.identityModel.services>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|属性|Description|  
-|--------|-----------------|  
-|name|このフェデレーションの構成要素の名前。  この属性は、主に将来のプロトコルの機能拡張ポイントを提供します。  省略可能です。|  
-|identityConfigurationName|Id の構成セクションで指定した名前は、 [\<identityConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)要素を使用します。  この属性が指定されていない場合は、既定の id の構成セクションが使用されます。  省略可能です。|  
+|属性|説明|  
+|---------------|-----------------|  
+|name|このフェデレーションの構成要素の名前。 この属性は、主の将来のプロトコル機能拡張ポイントを提供します。 省略可能です。|  
+|identityConfigurationName|指定された id の構成セクションの名前、 [ \<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)要素を使用します。 この属性が指定されていない場合、既定の id 構成セクションが表示されます。 省略可能です。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
   
-|要素|Description|  
-|--------|-----------------|  
-|[\<cookieHandler\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)|SAM によって使用される cookie のハンドラーを構成します。  省略可能です。|  
-|[\<serviceCertificate\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicecertificate.md)|暗号化し、トークンを復号化するために使用する証明書を構成します。  省略可能です。|  
-|[\<wsFederation\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation.md)|WS フェデレーション認証モジュール \(WSFAM\) を構成します。  省略可能です。|  
+|要素|説明|  
+|-------------|-----------------|  
+|[\<cookieHandler >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)|SAM によって使用されるクッキー ハンドラーを構成します。 省略可能です。|  
+|[\<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicecertificate.md)|暗号化し、トークン暗号化解除に使用される証明書を構成します。 省略可能です。|  
+|[\<wsFederation >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation.md)|Ws-federation 認証モジュール (WSFAM) を構成します。 省略可能です。|  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
-|要素|Description|  
-|--------|-----------------|  
-|[\<system.identityModel.services\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md)|Ws\-federation プロトコルを使用して、認証用の構成セクション。|  
+|要素|説明|  
+|-------------|-----------------|  
+|[\<system.identityModel.services>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md)|Ws-federation プロトコルを使用して認証用の構成セクション。|  
   
-## 解説  
- \<federationConfiguration\> 要素に 2 つの異なるシナリオでの設定が用意されています。  
+## <a name="remarks"></a>コメント  
+ \<FederationConfiguration > 要素が 2 つの異なるシナリオでの設定を提供します。  
   
--   Ws\-federation のパッシブ Web アプリケーションで使用すると、要素には構成設定が含まれています、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> \(WSFAM\) と、 <xref:System.IdentityModel.Services.SessionAuthenticationModule> \(SAM\)。  また、セキュリティ トークン ハンドラー、証明書、および要求の承認マネージャーやクレームの認証マネージャーのコンポーネントを構成するために使用する識別情報の構成を参照します。  
+-   要素に構成設定が含まれる WS フェデレーション パッシブ Web アプリケーションを使用する場合、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) および<xref:System.IdentityModel.Services.SessionAuthenticationModule>(SAM)。 セキュリティ トークン ハンドラーと証明書、および要求の承認マネージャーと要求認証マネージャーなどのコンポーネントを構成するために使用される id の構成も参照します。  
   
--   使用すると、 <xref:System.IdentityModel.Services.ClaimsPrincipalPermission>や、 <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>クラスのコード内でのクレーム ベースのアクセス コントロールを提供するために、要求承認マネージャー、承認決定を行うために使用するポリシーを構成、アイデンティティの構成要素を参照します。  これは、パッシブ Web シナリオでないシナリオにも当てはまります。 たとえば、Windows 通信基盤 \(WCF\) アプリケーションまたは Web ベースでないアプリケーション。  アプリケーションがパッシブの Web アプリケーションでない場合、 [\<claimsAuthorizationManager\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md)要素とその子ポリシー要素が存在する場合\) によって参照されている識別情報の構成の`<federationConfiguration>`要素が適用されるだけの設定します。  その他のメンバーはすべて無視されます。  
+-   使用する場合、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>または<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>コード内のクレーム ベースのアクセス制御を提供するクラス、要素参照 id の構成要求承認マネージャーおよび承認に使用されるポリシーを構成します。決定します。 これが true の場合は受動的な Web シナリオ以外ではないシナリオであってもたとえば、Windows Communication Foundation (WCF) アプリケーションまたは Web ベースではないアプリケーションです。 アプリケーションが、パッシブ Web アプリケーションではない場合、 [ \<claimsAuthorizationManager >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md)要素 (とその子ポリシー要素、存在する場合) によって参照される id の構成の`<federationConfiguration>`要素唯一の設定が適用されます。 他の属性はすべて無視されます。  
   
- シナリオに関係なく、ランタイムは既定のフェデレーション構成を読み込みます。  動作は、次のように定義されています。  
+ シナリオに関係なく、ランタイムは既定のフェデレーションの構成を読み込みます。 動作の定義は次のとおりです。  
   
-1.  ある場合ない`<federationConfiguration>`要素が、ランタイムはフェデレーションの構成を作成し、既定値が設定されます。  この既定のフェデレーションの構成は、既定のユーザー構成を参照します。  
+1.  ある場合ありません`<federationConfiguration>`要素が存在、ランタイムは、フェデレーションの構成を作成し、既定値を設定します。 この既定のフェデレーションの構成では、既定の id 構成を参照します。  
   
-2.  場合は 1 つの`<federationConfiguration>`要素が存在しない場合、という名前のないかにかかわらず、既定のフェデレーション構成です。  場合は、 `identityConfiguration`属性を指定すると、名前付きのアイデンティティ構成が参照されています。 それ以外の場合は、ユーザーの既定の構成を参照します。  
+2.  場合、1 つ`<federationConfiguration>`要素が存在、という名前または名前のないに関係なく、既定のフェデレーション構成します。 場合、`identityConfiguration`属性を指定すると、名前付きの id の構成が参照されている以外の場合は、既定の id 構成が参照されています。  
   
-3.  場合は、名前のない`<federationConfiguration>`要素が存在しない場合、既定のフェデレーションの構成です。  場合は、 `identityConfiguration`属性を指定すると、名前付きのアイデンティティ構成が参照されています。 それ以外の場合は、ユーザーの既定の構成を参照します。  
+3.  場合は、名前のない`<federationConfiguration>`要素が、これは既定のフェデレーション構成します。 場合、`identityConfiguration`属性を指定すると、名前付きの id の構成が参照されている以外の場合は、既定の id 構成が参照されています。  
   
-4.  場合は、複数の名前付き`<federationConfiguration>`要素が存在しない無名`<federationConfiguration>`要素が存在しない場合、例外がスローされます。  
+4.  複数の名前を付けて場合`<federationConfiguration>`要素が存在しない名前のない`<federationConfiguration>`要素が、例外がスローされます。  
   
- 通常、ひとつ`<federationConfiguration>`セクションを定義します。  このセクションでは、既定のフェデレーションの構成です。  複数を一意に名前を指定する可能性があります`<federationConfiguration>`の要素。 無名以外のフェデレーション構成をロードする場合は、ただし、この例では、ハンドラーを用意する必要があるがします。  <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated>イベントとセット、 <xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=fullName>プロパティ内のハンドラーに、 <xref:System.IdentityModel.Services.Configuration.FederationConfiguration>オブジェクトから適切な値に初期化`<federationConfiguration>`構成ファイル内の要素。  
+ 通常、1 つだけ`<federationConfiguration>`セクションを定義します。 このセクションでは、既定のフェデレーション構成です。 複数の一意な名前を指定することがあります`<federationConfiguration>`要素です。 ただし、この場合、名前のない別のフェデレーションの構成を読み込む場合は、する必要がありますハンドラーを提供します。 <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated>イベントとセット、<xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=nameWithType>にハンドラー内のプロパティ、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>オブジェクトから、適切な値で初期化`<federationConfiguration>`構成ファイル内の要素。  
   
- `<federationConfiguration>`要素で表される、 <xref:System.IdentityModel.Services.Configuration.FederationConfigurationElement>クラス。  構成オブジェクトによって表される、 <xref:System.IdentityModel.Services.Configuration.FederationConfiguration>クラス。  1 つの<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>インスタンスの設定には、 <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=fullName>プロパティとフェデレーションの構成のアプリケーションが用意されています。  
+ `<federationConfiguration>`要素として表されます、<xref:System.IdentityModel.Services.Configuration.FederationConfigurationElement>クラスです。 構成オブジェクト自体がによって表される、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>クラスです。 1 つ<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>インスタンスに設定されて、<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>プロパティし、フェデレーション アプリケーションの構成を提供します。  
   
-## 使用例  
- 次の XML に示す、 `<federationConfiguration>` 、WSFAM の設定が指定され、要素 cookie の既定のハンドラー \(インスタンスの<xref:System.IdentityModel.Services.ChunkedCookieHandler>クラス\) によって SAM を使用します。  
+## <a name="example"></a>例  
+ 次の XML に示します、 `<federationConfiguration>` 、WSFAM の設定を指定し、ことを指定する要素既定のクッキー ハンドラー (のインスタンス、<xref:System.IdentityModel.Services.ChunkedCookieHandler>クラス)、SAM で使用します。  
   
 > [!WARNING]
->  この例では、cookie のハンドラーと WSFAM のどちらも必要な HTTPS を使用します。  これは、ためには、 `requireHttps`の属性、 `<wsFederation>`要素と、 `requireSsl`の属性、 `<cookieHandlerElement>`は`false`。  これらの設定は、セキュリティ上のリスクがあるとほとんどの運用環境では推奨されません。  
+>  この例では、HTTPS を使用するクッキー ハンドラーも WSFAM が必要です。 これは、ため、`requireHttps`属性を`<wsFederation>`要素および`requireSsl`属性を`<cookieHandlerElement>`は`false`します。 これらの設定は、セキュリティ上のリスクを伴うことがありますが、ほとんどの実稼働環境には推奨されません。  
   
-```  
+```xml  
 <system.identityModel.services>  
   <federationConfiguration>  
     <wsFederation passiveRedirectEnabled="true"   
@@ -93,8 +100,8 @@ caps.handback.revision: 9
 </system.identityModel.services>  
 ```  
   
-## 参照  
- <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>   
- <xref:System.IdentityModel.Services.SessionAuthenticationModule>   
- <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=fullName>   
- [\<identityConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>  
+ <xref:System.IdentityModel.Services.SessionAuthenticationModule>  
+ <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>  
+ [\<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)

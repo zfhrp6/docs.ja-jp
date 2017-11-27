@@ -1,42 +1,40 @@
 ---
-title: "My.Application Object | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "My.Application object"
+title: "My.Application オブジェクト"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords: My.Application object
 ms.assetid: a0ecfccf-acf7-49ec-a08b-72e6458c5c8d
-caps.latest.revision: 26
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 26
+caps.latest.revision: "26"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 856b1f8fea560264a287260e35bbcec65b49cfa8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# My.Application Object
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-現在のアプリケーションに関するプロパティ、メソッド、およびイベントを提供します。  
+# <a name="myapplication-object"></a>My.Application オブジェクト
+プロパティ、メソッド、および現在のアプリケーションに関連するイベントを提供します。  
   
-## 解説  
- `My.Application` のメソッドとプロパティについては、次のリソースに作成し、参照:  
+## <a name="remarks"></a>コメント  
+ メソッドとプロパティについては、`My.Application`オブジェクトを次のリソースを参照してください。  
   
--   すべてのプロジェクトで使用できるメンバーの<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> 。  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>すべてのプロジェクトで使用可能なメンバーにします。  
   
--   Windows フォーム アプリケーションで使用できるメンバーの<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> 。  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>Windows フォーム アプリケーションで使用可能なメンバーにします。  
   
--   コンソール アプリケーションで使用できるメンバーの<xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> 。  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase>コンソール アプリケーションで使用可能なメンバーにします。  
   
-## 要件  
- **名前空間**: <xref:Microsoft.VisualBasic.ApplicationServices>  
+## <a name="requirements"></a>要件  
+ **Namespace:**<xref:Microsoft.VisualBasic.ApplicationServices>  
   
- **クラス:** <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> （基本クラス <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> は、コンソール アプリケーションで使用できるメンバーを提供する基本クラス <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> は、すべてのプロジェクトで使用できるメンバーを提供します）  
+ **クラス:** <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> (基本クラス<xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase>コンソール アプリケーション、およびその基本クラスで使用できるメンバーを提供<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>のすべてのプロジェクトで使用できるメンバーを提供)  
   
- **アセンブリ**: Visual Basic ランタイム ライブラリ \(Microsoft.VisualBasic.dll 内\)  
+ **アセンブリ:** Visual Basic Runtime Library (Microsoft.VisualBasic.dll)  
   
-## 参照  
- [My.Application.Info Object](../../../visual-basic/language-reference/objects/my-application-info-object.md)   
+## <a name="see-also"></a>関連項目  
+ [My.Application.Info オブジェクト](../../../visual-basic/language-reference/objects/my-application-info-object.md)  
  [My.Application.Log オブジェクト](../../../visual-basic/language-reference/objects/my-application-log-object.md)

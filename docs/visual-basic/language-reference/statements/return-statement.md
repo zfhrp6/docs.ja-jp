@@ -1,33 +1,31 @@
 ---
-title: "Return Statement (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Return"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Return statement, syntax"
-  - "control flow, returning control to expressions"
-  - "Return statement"
-  - "expressions [Visual Basic], returning control to"
+title: "Return ステートメント (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Return
+helpviewer_keywords:
+- Return statement [Visual Basic], syntax
+- control flow [Visual Basic], returning control to expressions
+- Return statement [Visual Basic]
+- expressions [Visual Basic], returning control to
 ms.assetid: ac86e7f0-5a67-42c3-9834-0e0381efa3ec
-caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: b66d16a249164b8989f05f10c785b97055bfde9e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Return Statement (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-`Function`、`Sub`、`Get`、`Set`、または `Operator` の各プロシージャを呼び出したコードに制御を戻します。  
+# <a name="return-statement-visual-basic"></a>Return ステートメント (Visual Basic)
+呼び出したコードに制御を返す、 `Function`、 `Sub`、 `Get`、 `Set`、または`Operator`プロシージャです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 Return  
@@ -35,31 +33,31 @@ Return
 Return expression  
 ```  
   
-## 指定項目  
+## <a name="part"></a>パーツ  
  `expression`  
- `Function`、`Get`、または `Operator` の各プロシージャでは、必ず指定します。  呼び出し元のコードに返す値を表す式を指定します。  
+ 必要な`Function`、 `Get`、または`Operator`プロシージャです。 呼び出し元のコードに返される値を表す式です。  
   
-## 解説  
- `Sub` プロシージャまたは `Set` プロシージャでは、`Exit Sub` ステートメントまたは `Exit Property` ステートメントが `Return` ステートメントに相当します。`expression` を指定することはできません。  
+## <a name="remarks"></a>コメント  
+ `Sub`または`Set`プロシージャ、`Return`ステートメントは等価、`Exit Sub`または`Exit Property`ステートメント、および`expression`を指定しないでください。  
   
- `Function`、`Get`、または `Operator` の各プロシージャでは、`Return` ステートメント内に `expression` を指定する必要があり、`expression` はプロシージャの戻り値の型に変換できるデータ型に評価される必要があります。  `Function` プロシージャまたは `Get` プロシージャでは、式を割り当てる代わりにプロシージャ名を戻り値として使うこともできます。その場合、`Exit Function` ステートメントまたは `Exit Property` ステートメントを実行します。  `Operator` プロシージャでは、`Return` `expression` を使用する必要があります。  
+ `Function`、 `Get`、または`Operator`プロシージャ、`Return`ステートメントを含める必要があります`expression`、および`expression`プロシージャの戻り値の型に変換できるデータ型に評価される必要があります。 `Function`または`Get`プロシージャもがある場合、戻り値として機能するように、プロシージャ名に式を割り当てると、実行しても、`Exit Function`または`Exit Property`ステートメントです。 `Operator`使用する必要がありますプロシージャ、`Return``expression`です。  
   
- 適切な数の `Return` ステートメントを同じプロシージャ内に指定できます。  
+ 多くとして含めることができます`Return`同じプロシージャ内に適切なステートメントです。  
   
 > [!NOTE]
->  `Finally` ブロックのコードは、`Try` または `Catch` ブロックの `Return` ステートメントが見つかった後、その `Return` ステートメントが実行される前に実行されます。  `Return` のステートメントは `Finally` ブロックに含めることはできません。  
+>  内のコード、`Finally`ブロックが実行した後、`Return`内のステートメント、`Try`または`Catch`ブロックが発生した場合は、その前に`Return`ステートメントを実行します。 A`Return`にステートメントを含めることはできません、`Finally`ブロックします。  
   
-## 使用例  
- 次のコード例では、`Return` ステートメントを何回も使って、プロシージャで何も行う必要がなくなった時点で呼び出し元のコードに制御を戻しています。  
+## <a name="example"></a>例  
+ 次の例では、`Return`ステートメント、プロシージャが何を持っていない場合に、呼び出し元のコードに戻るに複数回です。  
   
  [!code-vb[VbVbalrStatements#53](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/return-statement_1.vb)]  
   
-## 参照  
- [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)   
- [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)   
- [Get Statement](../../../visual-basic/language-reference/statements/get-statement.md)   
- [Set Statement](../../../visual-basic/language-reference/statements/set-statement.md)   
- [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)   
- [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)   
- [Exit Statement](../../../visual-basic/language-reference/statements/exit-statement.md)   
- [Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+## <a name="see-also"></a>関連項目  
+ [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Get ステートメント](../../../visual-basic/language-reference/statements/get-statement.md)  
+ [Set ステートメント](../../../visual-basic/language-reference/statements/set-statement.md)  
+ [Operator ステートメント](../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Exit ステートメント](../../../visual-basic/language-reference/statements/exit-statement.md)  
+ [Try...Catch...Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)

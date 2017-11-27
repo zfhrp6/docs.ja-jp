@@ -1,38 +1,34 @@
 ---
-title: "既定の段落スタイル (Visual Basic) の検索 |Microsoft ドキュメント"
+title: "既定の段落スタイル (Visual Basic) を検索します。"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 9d094a4a-ec8c-41b0-b7ab-a3deb2a01d45
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 041e99f4fd70008208a8f661f6763159ac7f4479
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: cd22a545f8162352050ba698717fb0ceb3a72cfc
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="finding-the-default-paragraph-style-visual-basic"></a>既定の段落スタイル (Visual Basic) の検索
-WordprocessingML ドキュメントのチュートリアルでの情報の操作の最初のタスクでは、ドキュメント内の段落の既定のスタイルを検索します。  
+# <a name="finding-the-default-paragraph-style-visual-basic"></a>既定の段落スタイル (Visual Basic) を検索します。
+「WordprocessingML ドキュメント内の情報の操作」チュートリアルでの最初のタスクは、ドキュメント内にある段落の既定のスタイルを検索することです。  
   
 ## <a name="example"></a>例  
   
 ### <a name="description"></a>説明  
- 次の例では、Office Open XML WordprocessingML ドキュメントを開き、パッケージのドキュメント パーツとスタイル パーツを検索した後、既定のスタイル名を検索するクエリを実行します。 Office Open XML ドキュメントのパッケージと構成のパーツについては、次を参照してください。[詳細の Office Open XML WordprocessingML ドキュメント (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)します。  
+ 次の例では、Office Open XML WordprocessingML ドキュメントを開き、パッケージのドキュメント パーツとスタイル パーツを検索した後、既定のスタイル名を検索するクエリを実行します。 Office Open XML ドキュメントのパッケージとので構成されている部分については、次を参照してください。[詳細 Office Open XML WordprocessingML ドキュメントの (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)です。  
   
- このクエリは、値が "paragraph" である `w:style` という名前の属性と、値が "1" である `w:type` という名前の属性を持つ `w:default` という名前のノードを検索します。 クエリを使用してこれらの属性を持つ XML ノードを&1; つがありますので、<xref:System.Linq.Enumerable.First%2A?displayProperty=fullName>コレクションをシングルトンに変換する演算子</xref:System.Linq.Enumerable.First%2A?displayProperty=fullName>。 次に、`w:styleId` という名前の属性の値を取得します。  
+ このクエリは、値が "paragraph" である `w:style` という名前の属性と、値が "1" である `w:type` という名前の属性を持つ `w:default` という名前のノードを検索します。 これらの属性を持つ XML ノードは 1 つしかないため、このクエリは、<xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType> 演算子を使用してコレクションをシングルトンに変換します。 次に、`w:styleId` という名前の属性の値を取得します。  
   
- この例では、WindowsBase アセンブリのクラスを使用します。 内の型を使用して、<xref:System.IO.Packaging?displayProperty=fullName>名前空間</xref:System.IO.Packaging?displayProperty=fullName>。  
+ この例では、WindowsBase アセンブリのクラスを使用します。 また、<xref:System.IO.Packaging?displayProperty=nameWithType> 名前空間内の型を使用します。  
   
 ### <a name="code"></a>コード  
   
@@ -100,9 +96,9 @@ The default style is: Normal
 ```  
   
 ## <a name="next-steps"></a>次の手順  
- 次の例では、ドキュメントとそのスタイル内のすべての段落を検索する同様のクエリを作成します。  
+ 次の例では、ドキュメント内のすべての段落およびそのスタイルを検索する同様のクエリを記述します。  
   
--   [段落とそのスタイル (Visual Basic) の取得](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)  
+-   [段落とそのスタイル (Visual Basic) を取得します。](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)  
   
 ## <a name="see-also"></a>関連項目  
  [チュートリアル: WordprocessingML ドキュメント (Visual Basic) 内のコンテンツの操作](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

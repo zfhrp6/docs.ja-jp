@@ -1,23 +1,26 @@
 ---
-title: "SqlClient ストリーミング サポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "SqlClient ストリーミング サポート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
-caps.latest.revision: 14
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 85999a6aa15b04ffa2751d7312f71aaab1582ea3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# SqlClient ストリーミング サポート
-[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] とアプリケーション間のストリーミング サポート \([!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] の新機能\) では、サーバー上の非構造化データ \(ドキュメント、画像、およびメディア ファイル\) がサポートされます。  [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] データベースはバイナリ ラージ オブジェクト \(BLOB\) を格納できますが、BLOB の取得には大量のメモリが使用される可能性があります。  
+# <a name="sqlclient-streaming-support"></a>SqlClient ストリーミング サポート
+[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] とアプリケーション間のストリーミング サポート ([!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] の新機能) では、サーバー上の非構造化データ (ドキュメント、画像、およびメディア ファイル) がサポートされます。 [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] データベースはバイナリ ラージ オブジェクト (BLOB) を格納できますが、BLOB の取得には大量のメモリが使用される可能性があります。  
   
  [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] との間のストリーミング サポートにより、データをストリーミングするアプリケーションの作成が簡略化され、データをメモリに完全に読み込む必要がなくなるため、メモリのオーバーフロー例外は減少します。  
   
@@ -26,16 +29,16 @@ caps.handback.revision: 14
 > [!WARNING]
 >  非同期呼び出しは、アプリケーションで `Context Connection` 接続文字列キーワードも使用されている場合はサポートされません。  
 >   
->  ストリーミング サポートに追加されたメンバーは、クエリからデータを取得し、クエリおよびストアド プロシージャにパラメーターを渡すために使用されます。  ストリーミング機能は、基本的な OLTP およびデータ移行のシナリオに対処し、社内および社外のデータ移行環境に適用できます。  
+>  ストリーミング サポートに追加されたメンバーは、クエリからデータを取得し、クエリおよびストアド プロシージャにパラメーターを渡すために使用されます。 ストリーミング機能は、基本的な OLTP およびデータ移行のシナリオに対処し、社内および社外のデータ移行環境に適用できます。  
   
-## [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からのストリーミング サポート  
- [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からのストリーミング サポートでは、<xref:System.Data.Common.DbDataReader>、<xref:System.Data.SqlClient.SqlDataReader>、および <xref:System.IO.Stream> の各オブジェクトを取得して対応するために、<xref:System.Xml.XmlReader> クラスと <xref:System.IO.TextReader> クラスに新機能が導入されました。  これらのクラスはクエリからデータを取得するために使用されます。  その結果、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からのストリーミング サポートは、OLTP シナリオに対処し、社内および社外環境に適用されます。  
+## <a name="streaming-support-from-includessnoversionincludesssnoversion-mdmd"></a>[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からのストリーミング サポート  
+ [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からのストリーミング サポートでは、<xref:System.Data.Common.DbDataReader>、<xref:System.Data.SqlClient.SqlDataReader>、および <xref:System.IO.Stream> の各オブジェクトを取得して対応するために、<xref:System.Xml.XmlReader> クラスと <xref:System.IO.TextReader> クラスに新機能が導入されました。  これらのクラスはクエリからデータを取得するために使用されます。 その結果、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からのストリーミング サポートは、OLTP シナリオに対処し、社内および社外環境に適用されます。  
   
  <xref:System.Data.SqlClient.SqlDataReader> からのストリーミング サポートを有効にするために、次のメンバーが [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] に追加されました。  
   
 1.  <xref:System.Data.SqlClient.SqlDataReader.IsDBNullAsync%2A>  
   
-2.  <xref:System.Data.SqlClient.SqlDataReader.GetFieldValue%2A?displayProperty=fullName>  
+2.  <xref:System.Data.SqlClient.SqlDataReader.GetFieldValue%2A?displayProperty=nameWithType>  
   
 3.  <xref:System.Data.SqlClient.SqlDataReader.GetFieldValueAsync%2A>  
   
@@ -53,10 +56,10 @@ caps.handback.revision: 14
   
 3.  <xref:System.Data.Common.DbDataReader.GetTextReader%2A>  
   
-## [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] へのストリーミング サポート  
- [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] へのストリーミング サポートでは、<xref:System.Data.SqlClient.SqlParameter>、<xref:System.Xml.XmlReader>、および <xref:System.IO.Stream> の各オブジェクトを受け取って対応するために、<xref:System.IO.TextReader> クラスに新機能が導入されました。  <xref:System.Data.SqlClient.SqlParameter> はクエリおよびストアド プロシージャにパラメーターを渡すために使用されます。  
+## <a name="streaming-support-to-includessnoversionincludesssnoversion-mdmd"></a>[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] へのストリーミング サポート  
+ [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] へのストリーミング サポートでは、<xref:System.Data.SqlClient.SqlParameter>、<xref:System.Xml.XmlReader>、および <xref:System.IO.Stream> の各オブジェクトを受け取って対応するために、<xref:System.IO.TextReader> クラスに新機能が導入されました。 <xref:System.Data.SqlClient.SqlParameter> はクエリおよびストアド プロシージャにパラメーターを渡すために使用されます。  
   
- <xref:System.Data.SqlClient.SqlCommand> オブジェクトの破棄または <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> の呼び出しでは、ストリーミング操作を取り消す必要があります。  アプリケーションが <xref:System.Threading.CancellationToken> を送信すると、取り消しは保証されません。  
+ <xref:System.Data.SqlClient.SqlCommand> オブジェクトの破棄または <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> の呼び出しでは、ストリーミング操作を取り消す必要があります。 アプリケーションが <xref:System.Threading.CancellationToken> を送信すると、取り消しは保証されません。  
   
  次の <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> 型は、<xref:System.Data.SqlClient.SqlParameter.Value%2A> の <xref:System.IO.Stream> を受け取ります。  
   
@@ -74,13 +77,13 @@ caps.handback.revision: 14
   
 -   **Xml**  
   
- **Xml** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> 型は、<xref:System.Data.SqlClient.SqlParameter.Value%2A> の <xref:System.Xml.XmlReader> を受け取ります。  
+ **Xml** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A>型を受け入れる、<xref:System.Data.SqlClient.SqlParameter.Value%2A>の<xref:System.Xml.XmlReader>します。  
   
  <xref:System.Data.SqlClient.SqlParameter.SqlValue%2A> は、<xref:System.Xml.XmlReader>、<xref:System.IO.TextReader>、および <xref:System.IO.Stream> 型の値を受け取ることができます。  
   
  <xref:System.Xml.XmlReader>、<xref:System.IO.TextReader>、および <xref:System.IO.Stream> の各オブジェクトは、<xref:System.Data.SqlClient.SqlParameter.Size%2A> によって定義された値まで転送されます。  
   
-## サンプル \-\- [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からのストリーミング  
+## <a name="sample----streaming-from-includessnoversionincludesssnoversion-mdmd"></a>サンプル -- [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からのストリーミング  
  次の [!INCLUDE[tsql](../../../../includes/tsql-md.md)] を使用して、サンプル データベースを作成します。  
   
 ```  
@@ -110,7 +113,7 @@ GO
   
 -   [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からデータを取得する。  
   
--   メモリ不足にならないように、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] データベースから別のデータベースに大きなファイル \(BLOB\) を転送する。  
+-   メモリ不足にならないように、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] データベースから別のデータベースに大きなファイル (BLOB) を転送する。  
   
 ```  
 using System;  
@@ -299,10 +302,9 @@ namespace StreamingFromServer {
       }  
    }  
 }  
-  
 ```  
   
-## サンプル \-\- [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] へのストリーミング  
+## <a name="sample----streaming-to-includessnoversionincludesssnoversion-mdmd"></a>サンプル -- [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] へのストリーミング  
  次の [!INCLUDE[tsql](../../../../includes/tsql-md.md)] を使用して、サンプル データベースを作成します。  
   
 ```  
@@ -456,10 +458,9 @@ namespace StreamingToServer {
       }  
    }  
 }  
-  
 ```  
   
-## サンプル \-\- ある [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] から別の [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] へのストリーミング  
+## <a name="sample----streaming-from-one-includessnoversionincludesssnoversion-mdmd-to-another-includessnoversionincludesssnoversion-mdmd"></a>サンプル -- ある [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] から別の [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] へのストリーミング  
  このサンプルでは、取り消し処理がサポートされている、大きな BLOB を [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] 間で非同期にストリーミングする方法を示します。  
   
 ```  
@@ -523,8 +524,7 @@ namespace StreamingFromServerToAnother {
       }  
    }  
 }  
-  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)

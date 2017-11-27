@@ -1,30 +1,27 @@
 ---
-title: "Windows フォーム | Microsoft ドキュメント"
+title: "Windows フォーム"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-winforms
+ms.technology: dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- jsharp
 helpviewer_keywords:
 - Windows Forms
 - user interface
-- user interface, forms
+- user interface [Windows Forms], forms
 ms.assetid: 627df1e9-b254-41af-bbac-9a4f02810c54
-caps.latest.revision: 25
+caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: 224597edb87943e4572a44a9d59f3b61cd6c198f
-ms.lasthandoff: 04/08/2017
-
+ms.openlocfilehash: 2799bd6652c9f575be8758f47c9770d3fde93580
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
 # <a name="windows-forms"></a>Windows フォーム
 フォームはアプリケーションの基本単位であるため、機能とデザインにある程度の配慮を与えることが重要です。 フォームは、最終的には開発者がユーザー インターフェイスを作成するコントロールとデータを操作するコードを拡張する白紙状態です。 そのために、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] はコード作成を支援する統合開発環境 (IDE) や、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] を使用して作成された豊富なコントロール セットを提供します。 これらのコントロールの機能をコードに補完することにより、必要なソリューションを簡単に素早く開発できます。  
@@ -46,16 +43,16 @@ ms.lasthandoff: 04/08/2017
  [グラフィックスの概要](../../../docs/framework/winforms/advanced/graphics-overview-windows-forms.md)  
  Windows のグラフィック デザイン インターフェイスの高度な実装を使用して、オブジェクトとして、グラフィックスを作成、テキストを描画、および、画像を操作する方法について説明します。  
   
- [ClickOnce のセキュリティと配置](http://msdn.microsoft.com/library/abab6d34-c3c2-45c1-a8b6-43c7d3131e7a)  
+ [ClickOnce のセキュリティと配置](/visualstudio/deployment/clickonce-security-and-deployment)  
  ClickOnce 配置の基本原則について説明します。  
   
- [Windows フォームと MFC のプログラミング上の違い](http://msdn.microsoft.com/library/f3bfcf45-cfd4-45a4-8cde-5f4dbb18ee51)  
+ [Windows フォームと MFC のプログラミング上の違い](/cpp/dotnet/windows-forms-mfc-programming-differences)  
  MFC アプリケーションと Windows フォームの違いについて説明します。  
   
- [Visual Studio でのデータへのアクセス](http://msdn.microsoft.com/library/9812a6d5-23d2-4427-8b98-70a2abfec3bc)  
+ [Visual Studio でのデータへのアクセス](/visualstudio/data-tools/accessing-data-in-visual-studio)  
  アプリケーションにデータ アクセス機能を取り込む方法について説明します。  
   
- [Windows フォーム アプリケーション](http://msdn.microsoft.com/library/7092ee7f-8378-4def-aef8-1695bd97cf14)  
+ [Windows フォーム アプリケーション](/visualstudio/debugger/debugging-preparation-windows-forms-applications)  
  Windows アプリケーション プロジェクト テンプレートを使用して作成されたアプリケーションのデバッグのプロセス、およびデバッグ構成とリリース構成を変更する方法について説明します。  
   
  [アプリケーション、サービス、およびコンポーネントの配置](https://msdn.microsoft.com/library/wtzawcsz)  

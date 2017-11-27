@@ -1,29 +1,32 @@
 ---
-title: "方法 : 一方向コントラクトと要求/応答コントラクトを使用して WCF サービスにアクセスする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : 一方向コントラクトと要求/応答コントラクトを使用して WCF サービスにアクセスする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 7e10d3a5-fcf4-4a4b-a8d6-92ee2c988b3b
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 20d9cad52c0f528b521b031173b5dce1cb4f2a50
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : 一方向コントラクトと要求/応答コントラクトを使用して WCF サービスにアクセスする
+# <a name="how-to-access-wcf-services-with-one-way-and-request-reply-contracts"></a>方法 : 一方向コントラクトと要求/応答コントラクトを使用して WCF サービスにアクセスする
 次の手順では、一方向コントラクトと要求/応答コントラクトを定義し、双方向通信パターンを使用しない [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスにアクセスする方法を説明します。  
   
 ### <a name="to-define-the-service"></a>サービスを定義するには  
   
-1.  サービス コントラクトを宣言します。 一方向では、操作が必要`IsOneWay`設定`true`内で、 <xref:System.ServiceModel.OperationContractAttribute>します。 次のコードは、`IOneWayCalculator`、`Add`、`Subtract`、および `Multiply` に対して一方向の操作を行う `Divide` コントラクトを宣言します。 また、`SayHello` という要求応答操作も定義します。  
+1.  サービス コントラクトを宣言します。 一方向の操作の場合は `IsOneWay` 内で `true` が <xref:System.ServiceModel.OperationContractAttribute> に設定されている必要があります。 次のコードは、`IOneWayCalculator`、`Add`、`Subtract`、および `Multiply` に対して一方向の操作を行う `Divide` コントラクトを宣言します。 また、`SayHello` という要求応答操作も定義します。  
   
-    ```  
+    ```csharp  
     [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
     public interface IOneWayCalculator  
     {  
@@ -42,7 +45,7 @@ caps.handback.revision: 8
   
 2.  サービス コントラクトを実装します。 次のコードは `IOnewayCalculator` インターフェイスを実装します。  
   
-    ```  
+    ```csharp  
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.PerCall)]  
     public class CalculatorService : IOneWayCalculator  
     {  
@@ -80,7 +83,7 @@ caps.handback.revision: 8
   
 3.  コンソール アプリケーションでサービスをホストします。 次のコードはサービスをホストする方法を示しています。  
   
-    ```  
+    ```csharp  
     // Host the service within this EXE console application.  
     public static void Main()  
     {  
@@ -116,9 +119,9 @@ caps.handback.revision: 8
   
 ### <a name="to-access-the-service"></a>サービスにアクセスするには  
   
-1.  実行、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)メタデータ交換エンドポイント アドレスを使用して、次のコマンドラインを使用して、サービスのクライアント クラスを作成する: `Svcutil http://localhost:8000/Service` 、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)の次のサンプル コードに示すように、インターフェイスとクラスのセットを生成します。  
+1.  実行、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)メタデータ交換エンドポイントのアドレスを使用して、次のコマンドラインを使用して、サービスのクライアント クラスを作成する: `Svcutil http://localhost:8000/Service` 、 [ServiceModelメタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)の次のサンプル コードに示すように、インターフェイスとクラスのセットを生成します。  
   
-    ```  
+    ```csharp  
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]  
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://Microsoft.ServiceModel.Samples", ConfigurationName="IOneWayCalculator")]  
     public interface IOneWayCalculator  
@@ -199,24 +202,22 @@ caps.handback.revision: 8
             return base.Channel.SayHello(name);  
         }  
     }  
-  
     ```  
   
-     `IOneWayCalculator`一方向サービス操作があるインターフェイス、 <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A>属性に設定`true`要求/応答サービス操作には、既定値に設定された属性が必要があると`false`です。 また、`OneWayCalculatorClient` クラスにも注目してください。 これはサービスを呼び出すために使用するクラスです。  
+     `IOneWayCalculator` インターフェイスでは、一方向サービス操作の <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> 属性が `true` に設定されており、要求応答サービス操作の属性は既定値である `false` に設定されていることに注目してください。 また、`OneWayCalculatorClient` クラスにも注目してください。 これはサービスを呼び出すために使用するクラスです。  
   
 2.  クライアント オブジェクトを作成します。  
   
-    ```  
+    ```csharp  
     // Create a client  
     WSHttpBinding binding = new WSHttpBinding();  
     EndpointAddress epAddress = new EndpointAddress("http://localhost:8000/servicemodelsamples/service");  
     OneWayCalculatorClient client = new OneWayCalculatorClient(binding, epAddress);  
-  
     ```  
   
 3.  サービス操作を呼び出します。  
   
-    ```  
+    ```csharp  
     // Call the Add service operation.  
     double value1 = 100.00D;  
     double value2 = 15.99D;  
@@ -246,21 +247,19 @@ caps.handback.revision: 8
     string response = client.SayHello(name);  
     Console.WriteLine("SayHello([0])", name);  
     Console.WriteLine("SayHello() returned: " + response);  
-  
     ```  
   
 4.  クライアントを閉じて接続を終了し、リソースをクリーンアップします。  
   
-    ```  
+    ```csharp  
     //Closing the client gracefully closes the connection and cleans up resources  
     client.Close();  
-  
     ```  
   
 ## <a name="example"></a>例  
  このトピックで使用されているコードの完全な一覧を次に示します。  
   
-```  
+```csharp  
 // Service.cs  
 using System;  
 using System.Configuration;  
@@ -352,8 +351,10 @@ namespace Microsoft.ServiceModel.Samples
             }  
         }  
     }  
-}  
-  
+} 
+```
+
+```csharp
 // client.cs  
 using System;  
 using System.ServiceModel;  
@@ -407,10 +408,7 @@ namespace Microsoft.ServiceModel.Samples
         }  
     }  
 }  
-  
 ```  
-  
-<!-- TODO: review snippet reference  [!CODE [Microsoft.Win32.RegistryKey#4](Microsoft.Win32.RegistryKey#4)]  -->  
   
 ## <a name="see-also"></a>関連項目  
  [一方向サービス](../../../../docs/framework/wcf/feature-details/one-way-services.md)

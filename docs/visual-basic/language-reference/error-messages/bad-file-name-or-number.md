@@ -1,41 +1,39 @@
 ---
-title: "Bad file name or number | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID52"
-dev_langs: 
-  - "VB"
+title: "ファイル名または番号が正しくありません。"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID52
 ms.assetid: d0e96aea-7621-48f6-a78b-5d37d18aaa4e
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 3d7c8bae3df0e75a1c4f9afacdff681a553503d2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Bad file name or number
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-指定されたファイルにアクセスしようとしたときにエラーが発生しました。  このエラーでは以下の原因が考えられます。  
+# <a name="bad-file-name-or-number"></a>ファイル名または番号が正しくありません。
+指定したファイルにアクセスしようとしているときにエラーが発生しました。 このエラーの考えられる原因には。  
   
--   `FileOpen` ステートメントで指定されていない名前または番号を持つファイルを参照しているか、`FileOpen`ステートメントで指定されたファイルが後で閉じられました。  
+-   ステートメントで指定されていないファイルの名前または番号のファイルを参照して、`FileOpen`で指定されたステートメントまたはを`FileOpen`ステートメントが、後で終了します。  
   
--   ステートメントが、範囲外の番号を持つファイルを参照しています。  
+-   ステートメントは、ファイル番号の範囲外にある数値を持つファイルを参照します。  
   
--   ステートメントが、無効な名前または番号を持つファイルを参照しています。  
+-   ステートメントは、ファイル名または無効な数を表します。  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  ファイル名が `FileOpen` ステートメントで指定されていることを確認します。  `FileClose` ステートメントを引数なしで呼び出した場合は、すべての開いているファイルを誤って閉じてしまった可能性があります。  
+1.  ファイル名がで指定されたことを確認してください、`FileOpen`ステートメントです。 呼び出した場合、`FileClose`ステートメント引数を指定せず可能性がありますが誤って閉じた開いているすべてのファイルです。  
   
-2.  コードがファイル番号をアルゴリズムによって生成している場合は、番号が有効であることを確認します。  
+2.  コードの生成は、ファイルの番号にアルゴリズムによっては場合、は、数値は有効なを確認します。  
   
-3.  ファイル名がオペレーティング システムの規約に準拠していることを確認します。  
+3.  オペレーティング システムの規約に準拠しているかどうかを確認するファイルの名前を確認します。  
   
-## 参照  
- <xref:Microsoft.VisualBasic.FileSystem.FileOpen%2A>   
- [Visual Basic Naming Conventions](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.FileSystem.FileOpen%2A>  
+ [Visual Basic の名前付け規則](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)

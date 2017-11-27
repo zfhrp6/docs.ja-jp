@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,16 +13,15 @@ helpviewer_keywords:
 - ETW, common language runtime
 - ETW, CLR events
 ms.assetid: ef2b31c3-7426-43e7-9924-92339b96556d
-caps.latest.revision: 45
+caps.latest.revision: "45"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 57253982ec28b022cea102867f7b49788e10d422
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 1d0619388b429bd1824a62bc29ccb222eea1ffde
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="clr-etw-events"></a>CLR ETW イベント
 このセクションのトピックでは、Windows イベント トレーシング (ETW) イベントについて説明します。 各イベントは、キーワードとレベルに関連付けられています。詳細については、「[CLR ETW のキーワードとレベル](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)」トピックを参照してください。 CLR には、イベントのプロバイダーが 2 つあります。  
@@ -72,10 +70,9 @@ ms.lasthandoff: 08/21/2017
  イベントが発生した後に、他のイベントでスタック トレースの生成に使用された情報をキャプチャします。  
   
 ## <a name="see-also"></a>関連項目  
- [ETW によりデバッグおよびパフォーマンス調整を改善する](http://go.microsoft.com/fwlink/?LinkId=179696)   
- [Windows のパフォーマンスに関するブログ](http://go.microsoft.com/fwlink/?LinkId=179509)   
- [.NET Framework のログ記録の制御](../../../docs/framework/performance/controlling-logging.md)   
- [CLR ETW プロバイダー](../../../docs/framework/performance/clr-etw-providers.md)   
- [CLR ETW キーワードおよびレベル](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)   
+ [デバッグの向上と ETW でのパフォーマンス チューニング](http://go.microsoft.com/fwlink/?LinkId=179696)  
+ [Windows パフォーマンス ブログ](http://go.microsoft.com/fwlink/?LinkId=179509)  
+ [.NET Framework のログ記録の制御](../../../docs/framework/performance/controlling-logging.md)  
+ [CLR ETW プロバイダー](../../../docs/framework/performance/clr-etw-providers.md)  
+ [CLR ETW キーワードおよびレベル](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)  
  [共通言語ランタイムの ETW イベント](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)
-

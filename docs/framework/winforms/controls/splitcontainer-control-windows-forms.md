@@ -1,54 +1,55 @@
 ---
-title: "SplitContainer コントロール (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "SplitContainer コントロール [Windows フォーム]"
-  - "分割ウィンドウ"
+title: "SplitContainer コントロール (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- splitter windows
+- SplitContainer control [Windows Forms]
 ms.assetid: 2e36f17f-5c39-4fb4-bb09-7ce3ef823402
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 336243cc4db7039225ba272cac1ba7a3f173f361
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# SplitContainer コントロール (Windows フォーム)
-Windows フォームの `SplitContainer` コントロールは複合と考えることができ、移動可能なバーで区切られた 2 つのパネルです。  マウス ポインターがバーの上に移動すると、ポインターの形が変わり、バーが移動可能であることを示します。  
+# <a name="splitcontainer-control-windows-forms"></a>SplitContainer コントロール (Windows フォーム)
+Windows フォームの `SplitContainer` コントロールは複合と考えることができ、移動可能なバーで区切られた 2 つのパネルです。 マウス ポインターがバーの上に移動すると、ポインターの形が変わり、バーが移動可能であることを示します。  
   
 > [!NOTE]
->  **ツールボックス** では、このコントロールが以前のバージョンの Visual Studio に存在した <xref:System.Windows.Forms.Splitter> コントロールを置き換えます。  `SplitContainer` コントロールは <xref:System.Windows.Forms.Splitter> コントロールより優先されます。  <xref:System.Windows.Forms.Splitter> クラスは、既存のアプリケーションの互換性のために .NET Framework に含まれていますが、新しいプロジェクトでは `SplitContainer` コントロールを使用することを強くお勧めします。  
+>  **ツールボックス**、この置換を制御、 <xref:System.Windows.Forms.Splitter> Visual Studio の以前のバージョンに存在していたコントロール。 `SplitContainer` コントロールは <xref:System.Windows.Forms.Splitter> コントロールより優先されます。 <xref:System.Windows.Forms.Splitter> クラスは、既存のアプリケーションの互換性のために .NET Framework に含まれていますが、新しいプロジェクトでは `SplitContainer` コントロールを使用することを強くお勧めします。  
   
- `SplitContainer` コントロールでは複雑なユーザー インターフェイスを作成できます。多くの場合、1 つのパネルの選択項目が、もう一方のパネルに表示されるオブジェクトを決定します。  この配置は、情報の表示と参照に対して非常に効果的です。  2 つのパネルを使用することで、情報を領域に集約でき、バーまたは「分割」により、ユーザーがパネルを簡単にサイズ変更できます。  
+ `SplitContainer` コントロールでは複雑なユーザー インターフェイスを作成できます。多くの場合、1 つのパネルの選択項目が、もう一方のパネルに表示されるオブジェクトを決定します。 この配置は、情報の表示と参照に対して非常に効果的です。 2 つのパネルを使用することで、情報を領域に集約でき、バーまたは「分割」により、ユーザーがパネルを簡単にサイズ変更できます。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [SplitContainer コントロールの概要](../../../../docs/framework/winforms/controls/splitcontainer-control-overview-windows-forms.md)  
  `SplitContainer` コントロールを導入し、一般的に使用されるプロパティ、メソッド、およびイベントについて説明します。  
   
- [方法 : 分割ウィンドウでのサイズ変更および位置指定動作を定義する](../../../../docs/framework/winforms/controls/how-to-define-resize-and-positioning-behavior-in-a-split-window.md)  
+ [方法: 分割ウィンドウでのサイズ変更および位置指定動作を定義する](../../../../docs/framework/winforms/controls/how-to-define-resize-and-positioning-behavior-in-a-split-window.md)  
  `SplitContainer` コントロール内のスプリッターを制御する方法について説明します。  
   
- [方法 : ウィンドウを水平方向に分割する](../../../../docs/framework/winforms/controls/how-to-split-a-window-horizontally.md)  
+ [方法: ウィンドウを水平方向に分割する](../../../../docs/framework/winforms/controls/how-to-split-a-window-horizontally.md)  
  `SplitContainer` コントロール内のスプリッターの方向を制御する方法について説明します。  
   
- [方法 : Windows フォームでマルチペイン ユーザー インターフェイスを作成する](../../../../docs/framework/winforms/controls/how-to-create-a-multipane-user-interface-with-windows-forms.md)  
+ [方法: Windows フォームでマルチペイン ユーザー インターフェイスを作成する](../../../../docs/framework/winforms/controls/how-to-create-a-multipane-user-interface-with-windows-forms.md)  
  Microsoft Outlook で使用されるような複数ペインのユーザー インターフェイスを作成します。  
   
- 「[方法 : デザイナーを使用してウィンドウを水平方向に分割する](http://msdn.microsoft.com/library/ms233667\(v=vs.110\))」、「[方法 : Windows フォームで Windows エクスプローラー スタイルのインターフェイスを作成する](http://msdn.microsoft.com/library/zh2fe5a5\(v=vs.110\))」、「[方法 : デザイナーを使用して Windows フォームでマルチペイン ユーザー インターフェイスを作成する](http://msdn.microsoft.com/library/ms233661\(v=vs.110\))」も参照してください。  
+ 参照してください[する方法: 分割ウィンドウ幅を使用して、デザイナー](http://msdn.microsoft.com/library/ms233667\(v=vs.110\))、[する方法: Windows フォームで Windows エクスプ ローラー スタイルのインターフェイスを作成する](http://msdn.microsoft.com/library/zh2fe5a5\(v=vs.110\))、[する方法: Multipane ユーザー インターフェイスを作成します。Windows フォーム デザイナーを使用して](http://msdn.microsoft.com/library/ms233661\(v=vs.110\))です。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.Windows.Forms.SplitContainer> クラス  
  このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)  
  Windows フォームでの操作専用に設計されているコントロールについてのトピックへのリンクを提供します。  
   

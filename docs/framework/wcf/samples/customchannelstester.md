@@ -1,31 +1,34 @@
 ---
-title: "CustomChannelTester | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: CustomChannelTester
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ee1fa307-98b1-4647-8860-2e9217ba6082
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 2d915d567a5918060ab5e7592d4cd49384249ab9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# CustomChannelTester
-`CustomChannelsTester` は、カスタム チャネルの実装を、定義済みのサービス コントラクト セットに対してテストする際に使用できるツールです。  サービス コントラクト セットを選択し、XML ファイルを使用してこのツールに渡すことができます。  これを受け取ったツールは、メッセージ交換中にカスタム チャネル実装をテストするサービスとクライアントを生成します。  
+# <a name="customchannelstester"></a>CustomChannelTester
+`CustomChannelsTester` は、カスタム チャネルの実装を、定義済みのサービス コントラクト セットに対してテストする際に使用できるツールです。 サービス コントラクト セットを選択し、XML ファイルを使用してこのツールに渡すことができます。 これを受け取ったツールは、メッセージ交換中にカスタム チャネル実装をテストするサービスとクライアントを生成します。  
   
-### ツールをビルドするには  
+### <a name="to-build-the-tool"></a>ツールをビルドするには  
   
-1.  ソリューションをビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+1.  指示に従って、ソリューションをビルドする[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。  
   
-2.  ソリューションをビルドすると、CustomChannelsTester.exe、TestSpec.xml、および SampleRun.cmd の 3 つのファイルが生成されます。  SampleRun.cmd ファイルにはサンプルのコマンド ラインが含まれています。このコマンド ラインでは、このツールを使用して「[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)」のサンプルをテストする方法を示します。  
+2.  ソリューションをビルドすると、CustomChannelsTester.exe、TestSpec.xml、および SampleRun.cmd の 3 つのファイルが生成されます。 SampleRun.cmd ファイルがテストにこのツールを使用する方法を示すサンプルのコマンドライン、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプルです。  
   
-### ツールを実行するには  
+### <a name="to-run-the-tool"></a>ツールを実行するには  
   
 -   コマンド プロンプトに次のコマンドを入力します。  
   
@@ -35,7 +38,7 @@ caps.handback.revision: 12
   
      `/binding` オプションを使用する必要があります。  
   
-     "binding" が [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] で用意されているシステム指定のバインディングでない場合は、`/dll` が必要です。  
+     "binding" が `/dll` で用意されているシステム指定のバインディングでない場合は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が必要です。  
   
      `/testspec` は省略可能です。  
   
@@ -43,9 +46,9 @@ caps.handback.revision: 12
   
      クライアントとサーバーを実行し、結果が返されます。  
   
-     テストの仕様を説明する XML のサンプルを次に示します \(testspec.xml\)。  
+     テストの仕様を説明する XML のサンプルを次に示します (testspec.xml)。  
   
-    ```  
+    ```xml  
     <TestSpec xmlns="http://WCF/TestSpec" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"   
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >  
     <ServiceContract>  
@@ -76,4 +79,4 @@ caps.handback.revision: 12
     </TestSpec>  
     ```  
   
-## 参照
+## <a name="see-also"></a>関連項目

@@ -1,47 +1,46 @@
 ---
-title: "Return Values for the CStr Function (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "times, CStr Function return values"
-  - "type conversion"
-  - "dates [Visual Basic], CStr Function return values"
-  - "CStr function"
-  - "strings [Visual Basic], return value"
-  - "Date data type, converting"
-  - "dates [Visual Basic]"
-  - "String data type, converting"
+title: "CStr 関数の戻り値 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- times [Visual Basic], CStr Function return values
+- type conversion [Visual Basic]
+- dates [Visual Basic], CStr Function return values
+- CStr function
+- strings [Visual Basic], return value
+- Date data type [Visual Basic], converting
+- dates [Visual Basic]
+- String data type [Visual Basic], converting
 ms.assetid: 3aa744e7-1419-45d5-85e3-e5abc2953673
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: b498c9b1b7916467c96ed2c645c7131192a5e8b3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Return Values for the CStr Function (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-異なる型の `expression` に対する `CStr` の戻り値を次の表に示します。  
+# <a name="return-values-for-the-cstr-function-visual-basic"></a>CStr 関数の戻り値 (Visual Basic)
+次の表に、値を返します`CStr`の各データ型に対して`expression`です。  
   
-|`expression` の型|`CStr` の戻り値|  
-|---------------------|-----------------|  
-|[Boolean Data Type](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|"True" または "False" を表す文字列|  
-|[Date Data Type](../../../visual-basic/language-reference/data-types/date-data-type.md)|システムで設定されている短い形式の日付で `Date` 型の値 \(日付と時刻\) を表す文字列|  
-|[Numeric Data Types](../../../visual-basic/programming-guide/language-features/data-types/numeric-data-types.md)|数値を表す文字列|  
+|場合`expression`型|`CStr`返します。|  
+|-----------------------------|--------------------|  
+|[Boolean データ型](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|"True"を含む文字列または"False"です。|  
+|[Date データ型](../../../visual-basic/language-reference/data-types/date-data-type.md)|含む文字列、`Date`システムの短い日付形式での値 (日付と時刻)。|  
+|[数値のデータ型](../../../visual-basic/programming-guide/language-features/data-types/numeric-data-types.md)|数を表す文字列。|  
   
-## CStr と日付データ型  
- 日付データ型 \(`Date`\) には、常に日付と時刻の両方の情報が含まれます。  型変換のために、Visual Basic は 1\/1\/0001 \(西暦 1 年 1 月 1 日\) を日付の基準値と見なし、00:00:00 \(午前 0 時\) を時刻の*基準値*と見なします。  `CStr` は、結果の文字列に基準値を含めません。  たとえば、`#January 1, 0001 9:30:00#` を文字列に変換すると、結果は "9:30:00 AM" となり、日付情報が省略されます。  ただし、元の日付型 \(`Date`\) の値には日付情報が残っており、<xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A> などの関数を使って復元できます。  
+## <a name="cstr-and-date"></a>CStr と日付  
+ `Date`型には常に日付と時刻の両方の情報が含まれています。 型変換のため、Visual Basic 1/1/0001 (1 年 1 月、1) であると見なす、*ニュートラル値*日付、および 00時 00分: 00 (午前 0 時) に依存しない値であることにします。 `CStr`結果の文字列に中立的な値は含まれません。 変換する場合など、`#January 1, 0001 9:30:00#`文字列に、結果は"9時 30分: 00 AM"以外の場合は、日付情報は表示されません。 ただし、日付情報は、元にまだ存在している`Date`値し、などの関数で回復できる<xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A>です。  
   
 > [!NOTE]
->  `CStr` 関数は、アプリケーションにおける現在のカルチャ設定に基づいて変換処理を実行します。  特定のカルチャにおける数の文字表現を調べるには、その数の `ToString(IFormatProvider)` メソッドを使用します。  たとえば、倍精度浮動小数点型 \(`Double`\) の値を文字列型 \(`String`\) に変換するときには、<xref:System.Double.ToString%2A?displayProperty=fullName> を使用します。  
+>  `CStr`関数は、アプリケーションの現在のカルチャ設定に基づいて、変換を実行します。 特定のカルチャの数値の文字列形式を取得するには、数値を使用`ToString(IFormatProvider)`メソッドです。 たとえば、使用して<xref:System.Double.ToString%2A?displayProperty=nameWithType>型の値を変換するときに`Double`を`String`です。  
   
-## 参照  
- <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A>   
- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [Boolean Data Type](../../../visual-basic/language-reference/data-types/boolean-data-type.md)   
- [Date Data Type](../../../visual-basic/language-reference/data-types/date-data-type.md)
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A>  
+ [データ型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [Boolean データ型](../../../visual-basic/language-reference/data-types/boolean-data-type.md)  
+ [Date データ型](../../../visual-basic/language-reference/data-types/date-data-type.md)

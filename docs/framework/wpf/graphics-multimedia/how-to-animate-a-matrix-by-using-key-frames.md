@@ -1,48 +1,51 @@
 ---
-title: "方法 : キー フレームを使用して行列をアニメーション化する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アニメーション, 行列プロパティをキー フレームで"
-  - "キー フレーム, アニメーション化 (行列プロパティを)"
-  - "行列プロパティ, アニメーション化 (キー フレームを使用して)"
+title: "方法 : キー フレームを使用して行列をアニメーション化する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- animation [WPF], Matrix properties with key frames
+- Matrix properties [WPF], animating with key frames
+- key frames [WPF], animating Matrix properties with
 ms.assetid: b851a4c7-ecb1-420e-9203-83e7afd037fd
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c8c67b5c8e179485083a40aa8a196fbee3e0fc24
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : キー フレームを使用して行列をアニメーション化する
-次の例は、キー フレームを使用して <xref:System.Windows.Media.MatrixTransform> の <xref:System.Windows.Media.MatrixTransform.Matrix%2A> プロパティにアニメーションを適用する方法を示しています。  
+# <a name="how-to-animate-a-matrix-by-using-key-frames"></a>方法 : キー フレームを使用して行列をアニメーション化する
+この例は、アニメーション化する方法を示しています。、<xref:System.Windows.Media.MatrixTransform.Matrix%2A>のプロパティ、<xref:System.Windows.Media.MatrixTransform>キー フレームを使用しています。  
   
-## 使用例  
- 次のコード例では、<xref:System.Windows.Media.Animation.MatrixAnimationUsingKeyFrames> クラスを使用して <xref:System.Windows.Media.MatrixTransform> の <xref:System.Windows.Media.MatrixTransform.Matrix%2A> プロパティにアニメーションを適用しています。  この例では、<xref:System.Windows.Media.MatrixTransform> オブジェクトを使用して <xref:System.Windows.Controls.Button> の外観と位置を変換します。  
+## <a name="example"></a>例  
+ 次の例では、<xref:System.Windows.Media.Animation.MatrixAnimationUsingKeyFrames>アニメーション化するクラス、<xref:System.Windows.Media.MatrixTransform.Matrix%2A>のプロパティ、<xref:System.Windows.Media.MatrixTransform>です。 この例では、<xref:System.Windows.Media.MatrixTransform>の位置と外観を変換するオブジェクト、<xref:System.Windows.Controls.Button>です。  
   
- このアニメーションでは、<xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame> クラスを使用して 2 つのキー フレームを作成し、そのキー フレームで次の処理を行います。  
+ このアニメーションで使用される、<xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame>クラスの 2 つのキー フレームを作成して、次の処理に。  
   
-1.  最初の 0.2 秒の間に、1 番目の <xref:System.Windows.Media.Matrix> をアニメーション化します。  この例では、<xref:System.Windows.Media.Matrix> の <xref:System.Windows.Media.Matrix.M11%2A> プロパティおよび <xref:System.Windows.Media.Matrix.M12%2A> プロパティを変更します。  この変更によって、ボタンは引き伸ばされ、傾斜します。  また、ここでは、<xref:System.Windows.Media.Matrix.OffsetX%2A> プロパティと <xref:System.Windows.Media.Matrix.OffsetY%2A> プロパティを変更することによって、ボタンの位置を変えます。  
+1.  1 つ目をアニメーション化<xref:System.Windows.Media.Matrix>最初 0.2 秒間にします。 例の変更、<xref:System.Windows.Media.Matrix.M11%2A>と<xref:System.Windows.Media.Matrix.M12%2A>のプロパティ、<xref:System.Windows.Media.Matrix>です。 この変更により、引き伸ばされ、傾斜するボタンをクリックします。 例でも変更、<xref:System.Windows.Media.Matrix.OffsetX%2A>と<xref:System.Windows.Media.Matrix.OffsetY%2A>プロパティ、ボタンの位置を変更できるようにします。  
   
-2.  1.0 秒の時点で、2 番目の <xref:System.Windows.Media.Matrix> をアニメーション化します。  ボタンは、傾斜と引き伸ばしがなくなると同時に、別の位置に移動します。  
+2.  2 番目をアニメーション化<xref:System.Windows.Media.Matrix>1.0 秒です。 ボタンは、ボタンが不要になった傾斜または拡張されていて、別の位置に移動します。  
   
-3.  このアニメーションを無制限に繰り返します。  
+3.  アニメーションを無限に繰り返されます。  
   
 > [!NOTE]
->  <xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame> オブジェクトから派生するキー フレームは、値間で突然のジャンプを作成します。つまり、アニメーションの動きはぎくしゃくしています。  
+>  派生するフレームのキー、<xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame>オブジェクト作成の値の間の急激なジャンプであり、アニメーションの動きがスムーズでないです。  
   
- [!code-xml[keyframes_snip#MatrixAnimationUsingKeyFramesWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/MatrixAnimationUsingKeyFramesExample.xaml#matrixanimationusingkeyframeswholepage)]  
+ [!code-xaml[keyframes_snip#MatrixAnimationUsingKeyFramesWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/MatrixAnimationUsingKeyFramesExample.xaml#matrixanimationusingkeyframeswholepage)]  
   
- サンプル全体については、[キー フレーム アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=160012)を参照してください。  
+ サンプル全体については、「[キーフレーム アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=160012)」を参照してください。  
   
-## 参照  
- <xref:System.Windows.Media.MatrixTransform.Matrix%2A>   
- <xref:System.Windows.Media.MatrixTransform>   
- [キー フレーム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Media.MatrixTransform.Matrix%2A>  
+ <xref:System.Windows.Media.MatrixTransform>  
+ [キー フレーム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)  
  [キー フレームに関する「方法」トピック](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)

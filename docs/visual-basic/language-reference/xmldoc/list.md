@@ -1,39 +1,38 @@
 ---
-title: "&lt;list&gt; (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "listheader XML tag"
-  - "<item> XML tag"
-  - "<list> XML tag"
-  - "<listheader> XML tag"
-  - "term XML tag"
-  - "list XML tag"
-  - "<description> XML tag"
-  - "description XML tag"
-  - "item XML tag"
-  - "<term> XML tag"
+title: "&lt;リスト&gt;(Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- listheader XML tag
+- <item> XML tag
+- <list> XML tag
+- <listheader> XML tag
+- term XML tag
+- list XML tag
+- <description> XML tag
+- description XML tag
+- item XML tag
+- <term> XML tag
 ms.assetid: ec35fced-d58e-4520-a764-0691256e014b
-caps.latest.revision: 12
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 34347df88f1bc3097db0020526ec99943c8f7bd4
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;list&gt; (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-リストまたは表を定義します。  
+# <a name="ltlistgt-visual-basic"></a>&lt;リスト&gt;(Visual Basic)
+リストまたはテーブルを定義します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
+```xml  
 <list type="type">  
    <listheader>  
       <term>term</term>  
@@ -46,29 +45,29 @@ caps.handback.revision: 12
 </list>  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `type`  
- リストの型を指定します。  箇条書きリストの場合は "bullet"、番号付きリストの場合は "number"、2 列の表の場合は "table" です。  
+ リストの型。 箇条書きリスト、番号付きリストは、または 2 つの列のテーブルには、"table"の"number"の「行頭文字」をする必要があります。  
   
  `term`  
- `type` が "table" の場合のみ使用されます。説明タグで定義された、定義する用語です。  
+ 場合のみ使用`type`"table"には 説明タグで定義されている用語を定義します。  
   
  `description`  
- `type` が "bullet" または "number" の場合、`description` はリスト内の項目です。`type` が "table" の場合、`description` は `term` の定義です。  
+ ときに`type`「の行頭文字」または「番号」 `description` 、リスト内の項目は、ときに`type`"table"は`description`の定義は、`term`です。  
   
-## 解説  
- `<listheader>` ブロックは、表または定義リストの見出しを定義します。  表を定義するとき、見出しで指定する必要があるのは、`term` のエントリだけです。  
+## <a name="remarks"></a>コメント  
+ `<listheader>`ブロックは、テーブルまたは定義の一覧の見出しを定義します。 のみのエントリを指定する必要があるテーブルを定義するときに`term`見出しにします。  
   
- リストの各項目は、`<item>` ブロックで指定します。  定義リストを作成するときは、`term` と `description` の両方を指定する必要があります。  ただし、表、箇条書きリスト、または番号付きリストに指定する必要があるのは、`description` のエントリだけです。  
+ リスト内の各項目を指定した、`<item>`ブロックします。 定義リストを作成するときに、両方を指定する必要があります`term`と`description`です。 ただし、テーブル、箇条書きリスト、または番号付きリストにのみ指定する必要のエントリ`description`です。  
   
- リストや表には、必要な数だけ `<item>` ブロックを指定できます。  
+ リストまたはテーブルに指定できるは多く`<item>`に応じてをブロックします。  
   
- コンパイル時に [\/doc](../../../visual-basic/reference/command-line-compiler/doc.md) を指定してドキュメント コメントをファイルに出力します。  
+ コンパイル時に [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) を指定して、ドキュメント コメントをファイルに出力します。  
   
-## 使用例  
- この例では、`<list>` タグを使って、解説セクションに箇条書きリストを定義します。  
+## <a name="example"></a>例  
+ この例では、 `<list>` 「解説」セクションで、箇条書きリストを定義するタグです。  
   
  [!code-vb[VbVbcnXmlDocComments#5](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/list_1.vb)]  
   
-## 参照  
- [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)
+## <a name="see-also"></a>関連項目  
+ [XML のコメント用タグ](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

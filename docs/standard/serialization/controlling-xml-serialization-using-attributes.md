@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - classes, serializing
 - XML serialization, examples
@@ -23,16 +21,15 @@ helpviewer_keywords:
 - serialization, examples
 - serialization, attributes
 ms.assetid: 47d4c39d-30e1-4c7b-8a2e-301325390647
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: c00ceea5e9700b0e964b799684eea743c540992d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: e921402980b1382761dd25d9cbbabda6b2c6a038
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="controlling-xml-serialization-using-attributes"></a>属性を使用した XML シリアル化の制御
 属性を使用すると、オブジェクトの XML シリアル化を制御したり、同じ一連のクラスから代替 XML ストリームを作成したりできます。 代替 XML ストリームの作成の詳細については、「[方法 : XML ストリームの代替要素名を指定する](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)」を参照してください。  
@@ -320,11 +317,10 @@ public class Group{
  パブリック プロパティやパブリック フィールドをシリアル化する必要がない場合があります。 たとえば、メタデータの格納に使用しているフィールドまたはプロパティの場合、 <xref:System.Xml.Serialization.XmlIgnoreAttribute> を適用すると、<xref:System.Xml.Serialization.XmlSerializer> がそのフィールドまたはプロパティをスキップします。  
   
 ## <a name="see-also"></a>関連項目  
- [XML シリアル化を制御する属性](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)   
- [エンコード済み SOAP シリアル化を制御する属性](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)   
- [XML シリアル化の概要](../../../docs/standard/serialization/introducing-xml-serialization.md)   
- [XML シリアル化の例](../../../docs/standard/serialization/examples-of-xml-serialization.md)   
- [方法 : XML ストリームの代替要素名を指定する](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)   
- [方法 : オブジェクトをシリアル化する](../../../docs/standard/serialization/how-to-serialize-an-object.md)   
+ [XML シリアル化を制御する属性](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)  
+ [エンコード済み SOAP シリアル化を制御する属性](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)  
+ [XML シリアル化の概要](../../../docs/standard/serialization/introducing-xml-serialization.md)  
+ [XML シリアル化の例](../../../docs/standard/serialization/examples-of-xml-serialization.md)  
+ [方法 : XML ストリームの代替要素名を指定する](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)  
+ [方法 : オブジェクトをシリアル化する](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
  [方法 : オブジェクトを逆シリアル化する](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
-

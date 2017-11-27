@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - application protocols, sockets
 - sending data, sockets
@@ -25,16 +23,15 @@ helpviewer_keywords:
 - protocols, sockets
 - Internet, sockets
 ms.assetid: 813489a9-3efd-41b6-a33f-371d55397676
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 79a95a4a8aaeb46d218836f9ad2fb74897ae3803
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: c5c696e04b940923d53eb79c055330a91734e1a0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="using-an-asynchronous-server-socket"></a>非同期サーバー ソケットの使用
 非同期サーバー ソケットは、.NET Framework の非同期プログラミング モデルを使用してネットワーク サービス要求を処理します。 <xref:System.Net.Sockets.Socket> クラスは、標準の .NET Framework の非同期名前付けパターンに従います。たとえば、同期の <xref:System.Net.Sockets.Socket.Accept%2A> メソッドは非同期の <xref:System.Net.Sockets.Socket.BeginAccept%2A> メソッドと <xref:System.Net.Sockets.Socket.EndAccept%2A> メソッドに対応します。  
@@ -69,7 +66,7 @@ listener.BeginAccept(
     listener);  
 ```  
   
- 非同期ソケットは、システム スレッド プールの複数のスレッドを使用して、受信接続を処理します。 接続の受け入れに使用されるスレッド、各受信接続の処理に使用されるスレッド、接続からデータを受け取るために使用されるスレッドがあります。 スレッド プールが割り当てるスレッドによっては、これらのスレッドが同じスレッドになる可能性があります。 次の例では、<xref:System.Threading.ManualResetEvent?displayProperty=fullName> クラスがメイン スレッドの実行を停止し、実行を続行できるようになったらシグナルを送ります。  
+ 非同期ソケットは、システム スレッド プールの複数のスレッドを使用して、受信接続を処理します。 接続の受け入れに使用されるスレッド、各受信接続の処理に使用されるスレッド、接続からデータを受け取るために使用されるスレッドがあります。 スレッド プールが割り当てるスレッドによっては、これらのスレッドが同じスレッドになる可能性があります。 次の例では、<xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> クラスがメイン スレッドの実行を停止し、実行を続行できるようになったらシグナルを送ります。  
   
  ローカル コンピューター上に非同期 TCP/IP Socket を作成し、接続の受け入れを開始する非同期メソッドの例を次に示します。 `allDone` というグローバル **ManualResetEvent** があり、メソッドが `SocketListener` というクラスのメンバーであり、`acceptCallback` というコールバック メソッドが定義されているとします。  
   
@@ -274,8 +271,7 @@ public static void readCallback(IAsyncResult ar) {
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [同期サーバー ソケットの使用](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)   
- [非同期サーバー ソケットの例](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)   
- [スレッド処理](../../../docs/standard/threading/index.md)   
+ [同期サーバー ソケットの使用](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
+ [非同期サーバー ソケットの例](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)  
+ [スレッド化](../../../docs/standard/threading/index.md)  
  [リッスン (ソケットで)](../../../docs/framework/network-programming/listening-with-sockets.md)
-

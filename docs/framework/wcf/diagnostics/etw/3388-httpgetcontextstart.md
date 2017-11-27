@@ -1,35 +1,38 @@
 ---
-title: "3388 - HttpGetContextStart | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 3388 - HttpGetContextStart
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: def9b441-9bb2-4bc0-a4b3-4db07b80b557
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 0deb6eb058553051aab5d95164fa3f714ba8e68c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 3388 - HttpGetContextStart
-## プロパティ  
+# <a name="3388---httpgetcontextstart"></a>3388 - HttpGetContextStart
+## <a name="properties"></a>プロパティ  
   
 |||  
 |-|-|  
 |ID|3388|  
 |キーワード|HTTP|  
 |レベル|詳細|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Analytic|  
+|チャネル|Microsoft-Windows-Application Server-Applications/Analytic|  
   
-## 説明  
+## <a name="description"></a>説明  
  このイベントは、HttpGetContext の開始時に生成されます。  
   
-## メッセージ  
+## <a name="message"></a>メッセージ  
  HttpGetContext を開始します。  
   
-## 詳細
+## <a name="details"></a>詳細

@@ -8,16 +8,15 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 975abd20-2a1d-42db-aed3-e898025ccce7
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: fe68a521b8a27f4dd6e5ca9a190a0d37c0ff6410
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 16032a7df2df374d6201f8da18d563deceeeb5bd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="custom-serialization-order-with-xmlserializer"></a>XmlSerializer によるカスタム シリアル化順序
 [サンプルのダウンロード](http://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/CustomOrder.zip.exe)  
@@ -38,15 +37,14 @@ ms.lasthandoff: 08/21/2017
   
 2.  CustomOrder.sln のアイコンをダブルクリックして、このファイルを Visual Studio で開きます。  
   
-3.  **[ビルド]** メニューの **[ソリューションのビルド]** を選択します。  
+3.  **[ビルド]** メニューで、**[ソリューションのビルド]** を選択します。  
   
 4.  サンプル アプリケーションは、既定の \bin ディレクトリまたは \bin\Debug ディレクトリにビルドされます。  
   
 ## <a name="see-also"></a>関連項目  
- [基本的なシリアル化](../../../docs/standard/serialization/basic-serialization.md)   
- [バイナリ シリアル化](../../../docs/standard/serialization/binary-serialization.md)   
- [属性を使用した XML シリアル化の制御](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)   
- [XML シリアル化の概要](../../../docs/standard/serialization/introducing-xml-serialization.md)   
- [シリアル化](../../../docs/standard/serialization/index.md)   
+ [基本的なシリアル化](../../../docs/standard/serialization/basic-serialization.md)  
+ [バイナリ シリアル化](../../../docs/standard/serialization/binary-serialization.md)  
+ [属性を使用した XML シリアル化の制御](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)  
+ [XML シリアル化の概要](../../../docs/standard/serialization/introducing-xml-serialization.md)  
+ [シリアル化](../../../docs/standard/serialization/index.md)  
  [XML シリアル化および SOAP シリアル化](../../../docs/standard/serialization/xml-and-soap-serialization.md)
-

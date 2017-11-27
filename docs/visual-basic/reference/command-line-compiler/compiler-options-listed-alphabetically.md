@@ -1,42 +1,24 @@
 ---
-title: "Visual Basic コンパイラ オプションがアルファベット順に表示 |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "Visual Basic コンパイラ オプション一覧 (アルファベット順)"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
-helpviewer_keywords:
-- Visual Basic compiler, options
+helpviewer_keywords: Visual Basic compiler, options
 ms.assetid: e67febba-bacf-4e1f-a143-c141e063f90e
-caps.latest.revision: 27
+caps.latest.revision: "27"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 93246b3a38002955234a7a93529d05b71ab4e580
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 0bcb3b182ee224457165be2177dd90ad48b00e56
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="visual-basic-compiler-options-listed-alphabetically"></a>Visual Basic Compiler Options Listed Alphabetically
-[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] コマンド ライン コンパイラは、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)] 統合開発環境 (IDE) からプログラムをコンパイルする方法の代替手段として提供されています。 アルファベット順に並べ替えた [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] コマンド ライン コンパイラ オプションの一覧を次に示します。  
+# <a name="visual-basic-compiler-options-listed-alphabetically"></a>Visual Basic コンパイラ オプション一覧 (アルファベット順)
+[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コマンド ライン コンパイラは、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 統合開発環境 (IDE) からプログラムをコンパイルする方法の代替手段として提供されています。 アルファベット順に並べ替えた [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コマンド ライン コンパイラ オプションの一覧を次に示します。  
   
 |オプション|目的|  
 |------------|-------------|  
@@ -53,20 +35,20 @@ ms.lasthandoff: 03/13/2017
 |[/define](../../../visual-basic/reference/command-line-compiler/define.md)|条件付きコンパイルのシンボルを定義します。|  
 |[/delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md)|アセンブリに完全に署名するか、部分的に署名するかを指定します。|  
 |[/doc](../../../visual-basic/reference/command-line-compiler/doc.md)|ドキュメント コメントを XML ファイルに出力します。|  
-|[/errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] コンパイラで内部コンパイル エラーを報告するかどうかを指定します。|  
+|[/errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コンパイラで内部コンパイル エラーを報告するかどうかを指定します。|  
 |[/filealign](../../../visual-basic/reference/command-line-compiler/filealign.md)|出力ファイルでセクションをアラインするサイズを指定します。|  
 |[/help](../../../visual-basic/reference/command-line-compiler/help.md)|コンパイラ オプションを出力します。 このコマンドは、`/?` オプションの指定と同じです。 コンパイルは発生しません。|  
 |[/highentropyva](../../../visual-basic/reference/command-line-compiler/highentropyva.md)|特定の実行可能ファイルで高エントロピ ASLR (Address Space Layout Randomization) をサポートするかどうかを示します。|  
 |[/imports](../../../visual-basic/reference/command-line-compiler/imports.md)|指定したアセンブリから名前空間をインポートします。|  
 |[/keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)|アセンブリに厳密な名前を付けるキー ペアのキー コンテナー名を指定します。|  
 |[/keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)|アセンブリに厳密な名前を付けるキーまたはキー ペアを含むファイルを指定します。|  
-|[/langversion](../../../visual-basic/reference/command-line-compiler/langversion.md)|言語バージョンを指定します。 9 | 9.0 | 10 | 10.0 | 11 | 11.0 です。|  
-|[/libpath](../../../visual-basic/reference/command-line-compiler/libpath.md)|によって参照されるアセンブリの場所を指定、 [/reference](../../../visual-basic/reference/command-line-compiler/reference.md)オプション。|  
+|[/langversion](../../../visual-basic/reference/command-line-compiler/langversion.md)|言語バージョンを指定します: 9 &#124; 9.0 &#124; 10 &#124; 10.0 &#124; 11 &#124; 11.0。|  
+|[/libpath](../../../visual-basic/reference/command-line-compiler/libpath.md)|によって参照されるアセンブリの場所を指定します、 [/reference](../../../visual-basic/reference/command-line-compiler/reference.md)オプション。|  
 |[/linkresource](../../../visual-basic/reference/command-line-compiler/linkresource.md)|マネージ リソースへのリンクを作成します。|  
-|[/main](../../../visual-basic/reference/command-line-compiler/main.md)|含むクラスの指定、`Sub``Main`起動時に使用するプロシージャです。|  
+|[/main](../../../visual-basic/reference/command-line-compiler/main.md)|含むクラスを指定します、`Sub Main`起動時に使用するプロシージャ。|  
 |[/moduleassemblyname](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)|モジュールが一部となるアセンブリの名前を指定します。|  
 |`/modulename:<string>`|ソース モジュールの名前を指定します。|  
-|[/netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|[!INCLUDE[Compact](../../../visual-basic/reference/command-line-compiler/includes/compact_md.md)] が対象になるようにコンパイラを設定します。|  
+|[/netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|[!INCLUDE[Compact](~/includes/compact-md.md)] が対象になるようにコンパイラを設定します。|  
 |[/noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)|Vbc.rsp でコンパイルしないでください。|  
 |[/nologo](../../../visual-basic/reference/command-line-compiler/nologo.md)|コンパイラの著作権情報が表示されないようにします。|  
 |[/nostdlib](../../../visual-basic/reference/command-line-compiler/nostdlib.md)|コンパイラが標準ライブラリを参照しないようにします。|  
@@ -100,7 +82,7 @@ ms.lasthandoff: 03/13/2017
 |[/win32resource](../../../visual-basic/reference/command-line-compiler/win32resource.md)|Win32 リソースを出力ファイルに挿入します。|  
   
 ## <a name="see-also"></a>関連項目  
- [Visual Basic コンパイラ オプションのカテゴリ別一覧](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)   
- [プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)   
- [C# コンパイラ オプションの一覧 (アルファベット順)](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)   
+ [Visual Basic コンパイラ オプション一覧 (カテゴリ別)](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)  
+ [プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)  
+ [アルファベット順の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)  
  [カテゴリ別の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-by-category.md)

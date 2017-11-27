@@ -1,69 +1,72 @@
 ---
-title: "WCF Web HTTP プログラミング モデルの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WCF Web HTTP プログラミング モデルの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 381fdc3a-6e6c-4890-87fe-91cca6f4b476
-caps.latest.revision: 45
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 45
+caps.latest.revision: "45"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 4ebc3c349e0eedcbe20f126f5252dadf8a6b8096
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WCF Web HTTP プログラミング モデルの概要
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] WEB HTTP プログラミング モデルは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] での WEB HTTP サービスの構築に必要な基本的な要素を提供します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP サービスは、Web ブラウザーも含めて、最大限の幅広いクライアントからアクセスできるように設計されており、次の固有の要件があります。  
+# <a name="wcf-web-http-programming-model-overview"></a>WCF Web HTTP プログラミング モデルの概要
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] WEB HTTP プログラミング モデルは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] での WEB HTTP サービスの構築に必要な基本的な要素を提供します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP サービスは、Web ブラウザーも含めて、最大限の幅広いクライアントからアクセスできるように設計されており、次の固有の要件があります。  
   
--   **URI および URI 処理** URI は、WEB HTTP サービスのデザインで中心的な役割を果たします。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルでは、<xref:System.UriTemplate> クラスおよび <xref:System.UriTemplateTable> クラスを使用して、URI 処理機能を提供します。  
+-   **Uri および URI 処理**Uri は、WEB HTTP サービスの設計の中心的な役割を再生します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルでは、<xref:System.UriTemplate> クラスおよび <xref:System.UriTemplateTable> クラスを使用して、URI 処理機能を提供します。  
   
--   **GET 操作と POST 操作のサポート** WEB HTTP サービスは、データ変更やリモート呼び出しに必要なさまざまな起動用の動詞に加えて、データ取得用に GET 動詞を使用します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルは、<xref:System.ServiceModel.Web.WebGetAttribute> および <xref:System.ServiceModel.Web.WebInvokeAttribute> を使用して、サービス操作を GET 動詞や PUT、POST、DELETE などの他の HTTP 動詞に関連付けます。  
+-   **GET と POST 操作に対するサポート**WEB HTTP サービスにより起動データ変更やリモート呼び出し用の動詞の GET 動詞のさまざまなだけでなく、データの取得に使用します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルは、<xref:System.ServiceModel.Web.WebGetAttribute> および <xref:System.ServiceModel.Web.WebInvokeAttribute> を使用して、サービス操作を GET 動詞や PUT、POST、DELETE などの他の HTTP 動詞に関連付けます。  
   
--   **複数のデータ形式** Web スタイル サービスは SOAP メッセージ以外にもさまざまな種類のデータを処理します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルは、<xref:System.ServiceModel.WebHttpBinding> および <xref:System.ServiceModel.Description.WebHttpBehavior> を使用して、XML ドキュメント、JSON データ オブジェクト、バイナリ コンテンツのストリーム \(イメージ、ビデオ ファイル、プレーンテキスト\) など、さまざまなデータ形式をサポートします。  
+-   **複数のデータ形式**Web スタイルのサービスがさまざまな種類のデータだけでなく、SOAP メッセージを処理します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルは、<xref:System.ServiceModel.WebHttpBinding> および <xref:System.ServiceModel.Description.WebHttpBehavior> を使用して、XML ドキュメント、JSON データ オブジェクト、バイナリ コンテンツのストリーム (イメージ、ビデオ ファイル、プレーンテキスト) など、さまざまなデータ形式をサポートします。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の扱う範囲を拡大し、WEB HTTP サービス、AJAX および JSON サービス、配信 \(ATOM および RSS\) フィードを使用する Web スタイルのシナリオも対象とします。AJAX および JSON サービス[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[AJAX の統合と JSON のサポート](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)」を参照してください。配信[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[WCF 配信の概要](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)」を参照してください。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の扱う範囲を拡大し、WEB HTTP サービス、AJAX および JSON サービス、配信 (ATOM および RSS) フィードを使用する Web スタイルのシナリオも対象とします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]AJAX および JSON サービスを参照してください[AJAX の統合と JSON サポート](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]配信を参照してください[WCF 配信の概要](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)です。  
   
- WEB HTTP サービスから返されるデータの種類に追加の制限はありません。WEB HTTP サービス操作からは任意のシリアル化可能な型を返すことができます。WEB HTTP サービス操作は Web ブラウザーによって呼び出すことができるため、URL に指定できるデータ型に制限があります。既定でサポートされる型の詳細については、以下の「**UriTemplate クエリ文字列パラメーターと URL**」を参照してください。既定の動作は、URL で指定されたパラメーターから実際のパラメーター型への変換方法を指定する独自の T:System.ServiceModel.Dispatcher.QueryStringConverter 実装を提供することで変更できます。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<xref:System.ServiceModel.Dispatcher.QueryStringConverter>  
+ WEB HTTP サービスから返されるデータの種類に追加の制限はありません。 WEB HTTP サービス操作からは任意のシリアル化可能な型を返すことができます。 WEB HTTP サービス操作は Web ブラウザーによって呼び出すことができるため、URL に指定できるデータ型に制限があります。 既定でサポートされる種類の詳細については、次を参照してください。、 **UriTemplate クエリ文字列パラメーターと Url**以下のセクションです。 既定の動作は、URL で指定されたパラメーターから実際のパラメーター型への変換方法を指定する独自の T:System.ServiceModel.Dispatcher.QueryStringConverter 実装を提供することで変更できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<xref:System.ServiceModel.Dispatcher.QueryStringConverter>  
   
 > [!CAUTION]
->  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルで記述されたサービスでは、SOAP メッセージは使用されません。SOAP が使用されないため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって提供されるセキュリティ機能を使用することはできません。ただし、HTTPS でサービスをホストすることによってトランスポート ベースのセキュリティを使用できます。[!INCLUDE[crabout](../../../../includes/crabout-md.md)][!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティ[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
+>  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルで記述されたサービスでは、SOAP メッセージは使用されません。 SOAP が使用されないため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって提供されるセキュリティ機能を使用することはできません。 ただし、HTTPS でサービスをホストすることによってトランスポート ベースのセキュリティを使用できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)][!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]セキュリティを参照してください[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
   
 > [!WARNING]
->  IIS の WebDAV 拡張をインストールすると、WebDAV 拡張がすべての PUT 要求を処理しようとしたときに Web HTTP サービスが HTTP 405 エラーを返すことがあります。この問題を解決するには、WebDAV 拡張をアンインストールするか、Web サイトの WebDAV 拡張を無効にします。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][IIS および WebDav](http://learn.iis.net/page.aspx/357/webdav-for-iis-70/)  
+>  IIS の WebDAV 拡張をインストールすると、WebDAV 拡張がすべての PUT 要求を処理しようとしたときに Web HTTP サービスが HTTP 405 エラーを返すことがあります。 この問題を解決するには、WebDAV 拡張をアンインストールするか、Web サイトの WebDAV 拡張を無効にします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][IIS および WebDav](http://learn.iis.net/page.aspx/357/webdav-for-iis-70/)  
   
-## UriTemplate および UriTemplateTable を使用した URI 処理  
- URI テンプレートには、構造的に類似する URI の大規模なセットを効率的に表現するための構文が備わっています。たとえば、テンプレート a\/{segment}\/c は、中間のセグメントの値を問わず、"a" で始まり "c" で終了する 3 つのセグメントから成る URI のセットを表しています。  
+## <a name="uri-processing-with-uritemplate-and-uritemplatetable"></a>UriTemplate および UriTemplateTable を使用した URI 処理  
+ URI テンプレートには、構造的に類似する URI の大規模なセットを効率的に表現するための構文が備わっています。 たとえば、テンプレート a/{segment}/c は、中間のセグメントの値を問わず、"a" で始まり "c" で終了する 3 つのセグメントから成る URI のセットを表しています。  
   
  このテンプレートによって、次のような URI が記述されます。  
   
--   a\/x\/c  
+-   a/x/c  
   
--   a\/y\/c  
+-   a/y/c  
   
--   a\/z\/c  
+-   a/z/c  
   
 -   など。  
   
- このテンプレートでは、中かっこによる表記 \("{segment}"\) で、リテラル値ではなく、変数のセグメントを示しています。  
+ このテンプレートでは、中かっこによる表記 ("{segment}") で、リテラル値ではなく、変数のセグメントを示しています。  
   
- .NET Framework は <xref:System.UriTemplate> という URI テンプレートでの作業に使用できる新しい API を提供します。`UriTemplates` を使用すると、次のことができます。  
+ .NET Framework は <xref:System.UriTemplate> という URI テンプレートでの作業に使用できる新しい API を提供します。 `UriTemplates` を使用すると、次のことができます。  
   
--   一連のパラメーターで `Bind` メソッドの 1 つを呼び出し、テンプレートに適合する*完全にクローズである URI* を生成できます。つまり、URI テンプレート内の変数がすべて、実際の値に置き換えられます。  
+-   いずれかを呼び出すことができます、`Bind`を生成するパラメーターのセットを持つメソッド、*完全なクローズ URI*テンプレートに一致します。 つまり、URI テンプレート内の変数がすべて、実際の値に置き換えられます。  
   
--   候補の URI を使用して `Match`\(\) を呼び出すことができます。このメソッドは、テンプレートを使用して候補の URI を構成要素に分解し、テンプレート内の変数に従って分類される URI のさまざまな要素を収めたディクショナリを返します。  
+-   候補の URI を使用して `Match`() を呼び出すことができます。このメソッドは、テンプレートを使用して候補の URI を構成要素に分解し、テンプレート内の変数に従って分類される URI のさまざまな要素を収めたディクショナリを返します。  
   
--   `Bind`\(\) と `Match`\(\) は逆のもので、`Match`\( `Bind`\( x \) \) を呼び出し、最初と同じ環境に戻ることができます。  
+-   `Bind`() と `Match`() は逆のもので、`Match`( `Bind`( x ) ) を呼び出し、最初と同じ環境に戻ることができます。  
   
- 包含されたテンプレートを個別に扱うことができるデータ構造内の一連の <xref:System.UriTemplate> オブジェクトを追跡することが必要になる場合がよくあります \(特に、URI に基づいて要求をサービス操作にディスパッチすることが必要なサーバー上\)。<xref:System.UriTemplateTable> は、URI テンプレートのセットを表し、テンプレート セットと候補の URI が与えられると、最適の組み合わせを選択します。これは、特定のネットワーク スタックと結び付いていないので \([!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を含む\)、必要な場合はいつでも使用できます。  
+ 包含されたテンプレートを個別に扱うことができるデータ構造内の一連の <xref:System.UriTemplate> オブジェクトを追跡することが必要になる場合がよくあります (特に、URI に基づいて要求をサービス操作にディスパッチすることが必要なサーバー上)。 <xref:System.UriTemplateTable> は、URI テンプレートのセットを表し、テンプレート セットと候補の URI が与えられると、最適の組み合わせを選択します。 これは、特定のネットワーク スタックと結び付いていないので ([!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を含む)、必要な場合はいつでも使用できます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス モデルは、<xref:System.UriTemplate> および <xref:System.UriTemplateTable> を使用して、<xref:System.UriTemplate> によって記述された URI セットにサービス操作を関連付けます。サービス操作は、<xref:System.ServiceModel.Web.WebGetAttribute> または <xref:System.ServiceModel.Web.WebInvokeAttribute> によって <xref:System.UriTemplate> に関連付けられます。<xref:System.UriTemplate> および <xref:System.UriTemplateTable>[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[UriTemplate と UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)」を参照してください。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス モデルは、<xref:System.UriTemplate> および <xref:System.UriTemplateTable> を使用して、<xref:System.UriTemplate> によって記述された URI セットにサービス操作を関連付けます。 サービス操作は、<xref:System.UriTemplate> または <xref:System.ServiceModel.Web.WebGetAttribute> によって <xref:System.ServiceModel.Web.WebInvokeAttribute> に関連付けられます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<xref:System.UriTemplate>と<xref:System.UriTemplateTable>を参照してください[UriTemplate と UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)  
   
-## WebGet および WebInvoke 属性  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP サービスは、さまざまな呼び出し用の動詞 \(HTTP POST、PUT、DELETE など\) に加えて、データ取得のための動詞 \(HTTP GET など\) を使用します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルでは、サービスの開発者は <xref:System.ServiceModel.Web.WebGetAttribute> と <xref:System.ServiceModel.Web.WebInvokeAttribute> を使用して、URI テンプレートと、各自のサービス操作に関連付けられた動詞を共に制御できます。<xref:System.ServiceModel.Web.WebGetAttribute> および <xref:System.ServiceModel.Web.WebInvokeAttribute> を使用すると、個々の操作を URI と、それらの URI に関連付けられている HTTP メソッドにバインドする方法を制御できます。たとえば、次のコードでは、<xref:System.ServiceModel.Web.WebGetAttribute> および <xref:System.ServiceModel.Web.WebInvokeAttribute> を追加します。  
+## <a name="webget-and-webinvoke-attributes"></a>WebGet および WebInvoke 属性  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP サービスは、さまざまな呼び出し用の動詞 (HTTP POST、PUT、DELETE など) に加えて、データ取得のための動詞 (HTTP GET など) を使用します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルでは、サービスの開発者は <xref:System.ServiceModel.Web.WebGetAttribute> と <xref:System.ServiceModel.Web.WebInvokeAttribute> を使用して、URI テンプレートと、各自のサービス操作に関連付けられた動詞を共に制御できます。 <xref:System.ServiceModel.Web.WebGetAttribute> および <xref:System.ServiceModel.Web.WebInvokeAttribute> を使用すると、個々の操作を URI と、それらの URI に関連付けられている HTTP メソッドにバインドする方法を制御できます。 たとえば、次のコードでは、<xref:System.ServiceModel.Web.WebGetAttribute> および <xref:System.ServiceModel.Web.WebInvokeAttribute> を追加します。  
   
 ```  
 [ServiceContract]  
@@ -97,42 +100,42 @@ interface ICustomer
     [WebGet( UriTemplate="customers/{id}" )]  
   Customer GetCustomer( string id ):  
   
-  //"Do It“ -> HTTP PUT  
+  //"Do It" -> HTTP PUT  
   [WebInvoke( UriTemplate="customers/{id}", Method="PUT" )]  
   Customer UpdateCustomer( string id, Customer newCustomer );  
 }  
 ```  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルを使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのサンプル全体を確認するには、「[方法 : 基本的な WCF Web HTTP サービスを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)」を参照してください。  
+ 完全なサンプルを表示する、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を使用するサービス、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルを参照してください[する方法: 基本的な WCF Web HTTP サービスを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)  
   
-## UriTemplate クエリ文字列パラメーターと URL  
- サービス操作に関連付けられた URL を入力することによって、Web ブラウザーから Web スタイルのサービスを呼び出すことができます。このようなサービス操作は、文字列形式で指定する必要があるクエリ文字列パラメーターを URL 内で受け取ることができます。次の表に、URL 内で渡すことができる型と、使用される形式を示します。  
+## <a name="uritemplate-query-string-parameters-and-urls"></a>UriTemplate クエリ文字列パラメーターと URL  
+ サービス操作に関連付けられた URL を入力することによって、Web ブラウザーから Web スタイルのサービスを呼び出すことができます。 このようなサービス操作は、文字列形式で指定する必要があるクエリ文字列パラメーターを URL 内で受け取ることができます。 次の表に、URL 内で渡すことができる型と、使用される形式を示します。  
   
-|型|Format|  
-|-------|------------|  
-|<xref:System.Byte>|0 \- 255|  
-|<xref:System.SByte>|\-128 \- 127|  
-|<xref:System.Int16>|\-32768 \- 32767|  
-|<xref:System.Int32>|\-2,147,483,648 \- 2,147,483,647|  
-|<xref:System.Int64>|\-9,223,372,036,854,775,808 \- 9,223,372,036,854,775,807|  
-|<xref:System.UInt16>|0 \- 65535|  
-|<xref:System.UInt32>|0 \- 4,294,967,295|  
-|<xref:System.UInt64>|0 \- 18,446,744,073,709,551,615|  
-|<xref:System.Single>|\-3.402823e38 \- 3.402823e38 \(指数表記は要求されない\)|  
-|<xref:System.Double>|\-1.79769313486232e308 \- 1.79769313486232e308 \(指数表記は要求されない\)|  
+|型|形式|  
+|----------|------------|  
+|<xref:System.Byte>|0 - 255|  
+|<xref:System.SByte>|-128 - 127|  
+|<xref:System.Int16>|-32768 - 32767|  
+|<xref:System.Int32>|-2,147,483,648 - 2,147,483,647|  
+|<xref:System.Int64>|-9,223,372,036,854,775,808 - 9,223,372,036,854,775,807|  
+|<xref:System.UInt16>|0 - 65535|  
+|<xref:System.UInt32>|0 - 4,294,967,295|  
+|<xref:System.UInt64>|0 - 18,446,744,073,709,551,615|  
+|<xref:System.Single>|-3.402823e38 - 3.402823e38 (指数表記は要求されない)|  
+|<xref:System.Double>|-1.79769313486232e308 - 1.79769313486232e308 (指数表記は要求されない)|  
 |<xref:System.Char>|任意の 1 文字|  
-|<xref:System.Decimal>|標準表記による任意の小数 \(指数なし\)|  
-|<xref:System.Boolean>|True または False \(大文字と小文字は区別されません\)|  
-|<xref:System.String>|任意の文字列 \(null 文字列はサポートされず、エスケープは行われない\)|  
-|<xref:System.DateTime>|MM\/DD\/YYYY<br /><br /> MM\/DD\/YYYY HH:MM:SS \[AM&#124;PM\]<br /><br /> 月 日 年<br /><br /> 月 日 年 HH:MM:SS \[AM&#124;PM\]|  
-|<xref:System.TimeSpan>|DD.HH:MM:SS<br /><br /> DD \= 日、HH \= 時、MM \= 分、SS \= 秒|  
-|<xref:System.Guid>|GUID。たとえば、次のようになります。<br /><br /> 936DA01F\-9ABD\-4d9d\-80C7\-02AF85C822A8|  
-|<xref:System.DateTimeOffset>|MM\/DD\/YYYY HH:MM:SS MM:SS<br /><br /> DD \= 日、HH \= 時、MM \= 分、SS \= 秒|  
-|列挙体|列挙値。たとえば、次のコードのように列挙体を定義します。<br /><br /> `public enum Days{ Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday };`<br /><br /> クエリ文字列に、任意の列挙値 \(またはそれぞれに対応する integer 値\) を指定できます。|  
+|<xref:System.Decimal>|標準表記による任意の小数 (指数なし)|  
+|<xref:System.Boolean>|True または False (大文字と小文字は区別されません)|  
+|<xref:System.String>|任意の文字列 (null 文字列はサポートされず、エスケープは行われない)|  
+|<xref:System.DateTime>|MM/DD/YYYY<br /><br /> /MM/DD/YYYY HH:MM:SS [AM &#124;です。PM]<br /><br /> 月 日 年<br /><br /> 月日年 HH:MM:SS [AM &#124;です。PM]|  
+|<xref:System.TimeSpan>|DD.HH:MM:SS<br /><br /> DD = 日、HH = 時、MM = 分、SS = 秒|  
+|<xref:System.Guid>|GUID。たとえば、次のようになります。<br /><br /> 936DA01F-9ABD-4d9d-80C7-02AF85C822A8|  
+|<xref:System.DateTimeOffset>|MM/DD/YYYY HH:MM:SS MM:SS<br /><br /> DD = 日、HH = 時、MM = 分、SS = 秒|  
+|列挙|列挙値。たとえば、次のコードのように列挙体を定義します。<br /><br /> `public enum Days{ Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday };`<br /><br /> クエリ文字列に、任意の列挙値 (またはそれぞれに対応する integer 値) を指定できます。|  
 |型と文字列表現を双方向に変換できる `TypeConverterAttribute` を持つ型。|型コンバーターによって異なります。|  
   
-## 形式と WCF WEB HTTP プログラミング モデル  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルには、さまざまなデータ形式を扱うための新機能が備わっています。<xref:System.ServiceModel.WebHttpBinding> は、バインディング層で次のさまざまな種類のデータを読み書きできます。  
+## <a name="formats-and-the-wcf-web-http-programming-model"></a>形式と WCF WEB HTTP プログラミング モデル  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルには、さまざまなデータ形式を扱うための新機能が備わっています。 <xref:System.ServiceModel.WebHttpBinding> は、バインディング層で次のさまざまな種類のデータを読み書きできます。  
   
 -   XML  
   
@@ -142,15 +145,15 @@ interface ICustomer
   
  つまり、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルではあらゆる種類のデータを処理できますが、<xref:System.IO.Stream> に対してプログラミングすることもできます。  
   
- [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] は、配信フィード \(ATOM および RSS\) だけでなく、JSON データ \(AJAX\) にも対応しています。このような機能[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[WCF Web HTTP 形式](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)」、「[WCF 配信の概要](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)」、および「[AJAX の統合と JSON のサポート](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)」を参照してください。  
+ [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] は、配信フィード (ATOM および RSS) だけでなく、JSON データ (AJAX) にも対応しています。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]これらの機能を参照してください[WCF Web HTTP 書式](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)[WCF 配信の概要](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)と[AJAX の統合と JSON サポート](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)です。  
   
-## WCF WEB HTTP プログラミング モデルとセキュリティ  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルでは WS\-\* プロトコルがサポートされないため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP サービスを保護するには、SSL を使用して HTTPS 全体でサービスを公開するしかありません。[!INCLUDE[iisver](../../../../includes/iisver-md.md)] を使用した SSL の設定[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[IIS での SSL の実装方法](http://go.microsoft.com/fwlink/?LinkId=131613)」を参照してください。  
+## <a name="wcf-web-http-programming-model-and-security"></a>WCF WEB HTTP プログラミング モデルとセキュリティ  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルでは WS-* プロトコルがサポートされないため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP サービスを保護するには、SSL を使用して HTTPS 全体でサービスを公開するしかありません。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]SSL を設定する[!INCLUDE[iisver](../../../../includes/iisver-md.md)]を参照してください[を IIS で SSL を実装する方法](http://go.microsoft.com/fwlink/?LinkId=131613)  
   
-## WCF WEB HTTP プログラミング モデルのトラブルシューティング  
- <xref:System.ServiceModel.Channels.ChannelFactory%601> を使用してチャネルを作成するために WCF WEB HTTP サービスを呼び出すと、異なる <xref:System.ServiceModel.EndpointAddress> が <xref:System.ServiceModel.Channels.ChannelFactory%601> に渡されるとしても、<xref:System.ServiceModel.Description.WebHttpBehavior> は構成ファイルに設定されている <xref:System.ServiceModel.EndpointAddress> を使用します。  
+## <a name="troubleshooting-the-wcf-web-http-programming-model"></a>WCF WEB HTTP プログラミング モデルのトラブルシューティング  
+ <xref:System.ServiceModel.Channels.ChannelFactoryBase%601> を使用してチャネルを作成するために WCF WEB HTTP サービスを呼び出すと、異なる <xref:System.ServiceModel.Description.WebHttpBehavior> が <xref:System.ServiceModel.EndpointAddress> に渡されるとしても、<xref:System.ServiceModel.EndpointAddress> は構成ファイルに設定されている <xref:System.ServiceModel.Channels.ChannelFactoryBase%601> を使用します。  
   
-## 参照  
- [WCF 配信](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)   
- [WCF Web HTTP プログラミング オブジェクト モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)   
+## <a name="see-also"></a>関連項目  
+ [WCF 配信](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)  
+ [WCF Web HTTP プログラミング オブジェクト モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)  
  [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

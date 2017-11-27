@@ -1,39 +1,42 @@
 ---
-title: "TCP アクティベーション | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "TCP アクティベーション"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: bf8c215c-0228-4f4f-85c2-e33794ec09a7
-caps.latest.revision: 34
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 34
+caps.latest.revision: "34"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f02528828c3751b2f8e34bd7ebb8a1a789feeb2c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# TCP アクティベーション
-このサンプルでは、net.tcp プロトコルで通信するサービスをアクティブ化するために、Windows プロセス アクティブ化サービス \(WAS\) を使用してサービスをホストする方法について示します。  このサンプルは、「[概要](../../../../docs/framework/wcf/samples/getting-started-sample.md)」に基づいています。  
+# <a name="tcp-activation"></a>TCP アクティベーション
+このサンプルでは、net.tcp プロトコルで通信するサービスをアクティブ化するために、Windows プロセス アクティブ化サービス (WAS) を使用してサービスをホストする方法について示します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。  
   
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。  続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。  このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WASHost\TCPActivation`  
   
- このサンプルは、クライアント コンソール プログラム \(.exe\) と、WAS によってアクティブ化されるワーカー プロセス内でホストされるサービス ライブラリ \(.dll\) で構成されています。  クライアント アクティビティは、コンソール ウィンドウに表示されます。  
+ このサンプルは、クライアント コンソール プログラム (.exe) と、WAS によってアクティブ化されるワーカー プロセス内でホストされるサービス ライブラリ (.dll) で構成されています。 クライアント アクティビティは、コンソール ウィンドウに表示されます。  
   
- サービスは、要求\/応答通信パターンを定義するコントラクトを実装します。  コントラクトは `ICalculator` インターフェイスによって定義されており、算術演算 \(Add、Subtract、Multiply、および Divide\) を公開しています。次のサンプル コードを参照してください。  
+ サービスは、要求/応答通信パターンを定義するコントラクトを実装します。 コントラクトは `ICalculator` インターフェイスによって定義されており、算術演算 (Add、Subtract、Multiply、および Divide) を公開しています。次のサンプル コードを参照してください。  
   
 ```  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -75,11 +78,11 @@ public class CalculatorService : ICalculator
 }  
 ```  
   
- このサンプルでは、TCP ポート共有が有効でセキュリティが無効になっている net.tcp バインディングの変化形を使用します。  セキュリティ保護された TCP バインディングを使用する場合は、サーバーのセキュリティ モードを必要な設定に変更し、クライアントで Svcutil.exe を再実行して更新クライアントの構成ファイルを生成します。  
+ このサンプルでは、TCP ポート共有が有効でセキュリティが無効になっている net.tcp バインディングの変化形を使用します。 セキュリティ保護された TCP バインディングを使用する場合は、サーバーのセキュリティ モードを必要な設定に変更し、クライアントで Svcutil.exe を再実行して更新クライアントの構成ファイルを生成します。  
   
  サービスの構成を次のサンプルに示します。  
   
-```  
+```xml  
 <system.serviceModel>  
   
     <services>  
@@ -117,7 +120,7 @@ public class CalculatorService : ICalculator
   
  クライアントのエンドポイントが構成されます。次のサンプル コードを参照してください。  
   
-```  
+```xml  
 <system.serviceModel>  
     <bindings>  
         <netTcpBinding>  
@@ -134,7 +137,7 @@ public class CalculatorService : ICalculator
 </system.serviceModel>  
 ```  
   
- このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。  クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
+ このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。 クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -145,36 +148,36 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-### サンプルをセットアップ、ビルド、および実行するには  
+### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
-1.  [!INCLUDE[iisver](../../../../includes/iisver-md.md)] がインストールされていることを確認します。  [!INCLUDE[iisver](../../../../includes/iisver-md.md)] は WAS のアクティブ化に必要です。  
+1.  [!INCLUDE[iisver](../../../../includes/iisver-md.md)] がインストールされていることを確認します。 [!INCLUDE[iisver](../../../../includes/iisver-md.md)] は WAS のアクティブ化に必要です。  
   
-2.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+2.  実行することを確認、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。  
   
      さらに、HTTP 以外の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アクティベーション コンポーネントをインストールする必要があります。  
   
-    1.  **\[スタート\]** メニューの **\[コントロール パネル\]** をクリックします。  
+    1.  **開始** メニューの 選択**コントロール パネルの **です。  
   
-    2.  **\[プログラムと機能\]** をクリックします。  
+    2.  選択**プログラムと機能**します。  
   
-    3.  **\[Turn Windows Components on or Off\]** をクリックします。  
+    3.  をクリックして**Windows コンポーネントをオンまたはオフ**です。  
   
-    4.  **\[Microsoft .NET Framework 3.0\]** ノードを展開し、**\[Windows Communication Foundation Non\-HTTP Activation\]** 機能をオンにします。  
+    4.  展開して、 **Microsoft .NET Framework 3.0**ノードとチェック、 **Windows Communication Foundation NON-HTTP Activation**機能します。  
   
 3.  TCP アクティベーションをサポートするよう WAS を構成します。  
   
      便宜上次の 2 つの手順が、サンプル ディレクトリにある AddNetTcpSiteBinding.cmd というバッチ ファイルに実装されています。  
   
-    1.  net.tcp アクティベーションをサポートするには、既定の Web サイトをあらかじめ net.tcp ポートにバインドしておく必要があります。  これは、インターネット インフォメーション サービス 7.0 \(IIS\) 管理ツール セットと共にインストールされる Appcmd.exe を使用して行います。  管理者レベルのコマンド プロンプトから、次のコマンドを実行します。  
+    1.  net.tcp アクティベーションをサポートするには、既定の Web サイトをあらかじめ net.tcp ポートにバインドしておく必要があります。 これは、インターネット インフォメーション サービス 7.0 (IIS) 管理ツール セットと共にインストールされる Appcmd.exe を使用して行います。 管理者レベルのコマンド プロンプトから、次のコマンドを実行します。  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInformation='808:*']  
         ```  
   
         > [!TIP]
-        >  このコマンドはテキスト 1 行です。  このコマンドは、net.tcp サイト バインディングを、TCP ポート 808 で任意のホスト名をリッスンする既定の Web サイトに追加します。  
+        >  このコマンドはテキスト 1 行です。 このコマンドは、net.tcp サイト バインディングを、TCP ポート 808 で任意のホスト名をリッスンする既定の Web サイトに追加します。  
   
-    2.  サイト内のすべてのアプリケーションが同じ net.tcp バインディングを共有しますが、net.tcp サポートの有効化はアプリケーションごとに指定できます。  \/servicemodelsamples アプリケーションで net.tcp を有効にするには、管理者レベルのコマンド プロンプトから、次のコマンドを実行します。  
+    2.  サイト内のすべてのアプリケーションが同じ net.tcp バインディングを共有しますが、net.tcp サポートの有効化はアプリケーションごとに指定できます。 /servicemodelsamples アプリケーションで net.tcp を有効にするには、管理者レベルのコマンド プロンプトから、次のコマンドを実行します。  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set app   
@@ -182,11 +185,11 @@ Press <ENTER> to terminate client.
         ```  
   
         > [!NOTE]
-        >  このコマンドはテキスト 1 行です。  このコマンドにより、\/servicemodelsamples アプリケーションに http:\/\/localhost\/servicemodelsamples と net.tcp:\/\/localhost\/servicemodelsamples のどちらを使用してもアクセスできるようになります。  
+        >  このコマンドはテキスト 1 行です。 このコマンドにより、/servicemodelsamples アプリケーションに http://localhost/servicemodelsamples と net.tcp://localhost/servicemodelsamples のどちらを使用してもアクセスできるようになります。  
   
-4.  ソリューションの C\# 版または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+4.  ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
   
-5.  サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+5.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
      このサンプル用に追加した net.tcp サイト バインディングを削除します。  
   
@@ -212,5 +215,5 @@ Press <ENTER> to terminate client.
         > [!NOTE]
         >  このコマンドは、全体で 1 行のテキストになるように入力する必要があります。  
   
-## 参照  
- [AppFabric のホストおよび永続化のサンプル](http://go.microsoft.com/fwlink/?LinkId=193961)
+## <a name="see-also"></a>関連項目  
+ [AppFabric ホスティングと永続性のサンプル](http://go.microsoft.com/fwlink/?LinkId=193961)

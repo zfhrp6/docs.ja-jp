@@ -1,52 +1,55 @@
 ---
-title: "UI オートメーション Table コントロール パターンの実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "UI オートメーション Table コントロール パターン"
-  - "テーブルのコントロール パターン"
-  - "TableControl パターン"
+title: "UI オートメーション Table コントロール パターンの実装"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- UI Automation, Table control pattern
+- control patterns, Table
+- TableControl pattern
 ms.assetid: 880cd85c-aa8c-4fb5-9369-45491d34bb78
-caps.latest.revision: 19
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 18
+caps.latest.revision: "19"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: 4a1fbe175abf07eaccfd177c6e32f5515e88c4ae
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# UI オートメーション Table コントロール パターンの実装
+# <a name="implementing-the-ui-automation-table-control-pattern"></a>UI オートメーション Table コントロール パターンの実装
 > [!NOTE]
->  このドキュメントが目的とする、管理を使用する .NET Framework 開発者[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]で定義されたクラス、 <xref:System.Windows.Automation>名前空間。 最新情報について[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]を参照してください[Windows Automation API: UI 自動化](http://go.microsoft.com/fwlink/?LinkID=156746)します。  
+>  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」をご覧ください。  
   
- このトピックでは、実装するため<xref:System.Windows.Automation.Provider.ITableProvider>プロパティ、メソッド、およびイベントに関する情報などです。 その他のリファレンスへのリンクは、概要の最後に記載します。  
+ このトピックでは、プロパティ、メソッド、イベントに関する情報など、<xref:System.Windows.Automation.Provider.ITableProvider> の実装のためのガイドラインと規則について説明します。 その他のリファレンスへのリンクは、概要の最後に記載します。  
   
- <xref:System.Windows.Automation.TablePattern>子要素のコレクションのコンテナーとして機能するコントロールをサポートするコントロール パターンを使用します。 この要素の子を実装する必要があります<xref:System.Windows.Automation.Provider.ITableItemProvider>や、2 次元論理座標系行と列で走査できるで整理されます。 このコントロール パターンと似ています<xref:System.Windows.Automation.Provider.IgridProvider>、任意の制御を実装する区別を<xref:System.Windows.Automation.Provider.ITableProvider>も、各子要素の列や行ヘッダー リレーションシップを公開する必要があります。 このコントロール パターンを実装するコントロールの例については、次を参照してください。 [UI オートメーション クライアントのコントロール パターン マッピング](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)します。  
+ <xref:System.Windows.Automation.TablePattern>コントロール パターンは、子要素のコレクションのコンテナーとして機能するコントロールをサポートするために使用します。 この要素の子を実装する必要があります<xref:System.Windows.Automation.Provider.ITableItemProvider>行と列で走査可能な 2 次元の論理座標システムで編成するとします。 このコントロール パターンはに似て<xref:System.Windows.Automation.Provider.IGridProvider>を実装するコントロールを除いて、<xref:System.Windows.Automation.Provider.ITableProvider>も、列または行ヘッダーのリレーションシップを各子要素を公開する必要があります。 このコントロール パターンを実装するコントロールの例については、「 [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)」をご覧ください。  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>実装のガイドラインと規則  
  Table コントロール パターンを実装する場合は、次のガイドラインと規則に留意してください。  
   
--   個別のセルのコンテンツへのアクセスは&2; 次元の論理座標系または配列の必要な同時実行の実装によって提供される、 <xref:System.Windows.Automation.Provider.IGridProvider>します。  
+-   個々 のセルのコンテンツへのアクセスは 2 次元論理座標系または配列の必要な同時実装によって提供されるを通じて<xref:System.Windows.Automation.Provider.IGridProvider>です。  
   
 -   列ヘッダーまたは行ヘッダーは、テーブル オブジェクト内に含めることも、テーブル オブジェクトに関連付けられた別のヘッダー オブジェクトにすることもできます。  
   
 -   列ヘッダーと行ヘッダーには、プライマリ ヘッダーだけでなく、任意の補助ヘッダーも含めることができます。  
   
 > [!NOTE]
->  この概念がで明らかになります、[!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)]スプレッドシート ユーザーが「姓」列が定義されています。 これで、この列のヘッダーは、ユーザーが定義した [ファースト ネーム] ヘッダーとアプリケーションによって割り当てられたその列の英数字指定の&2; つになります。  
+>  この概念がで明らかになります、[!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)]スプレッドシート ユーザーが [ファースト ネーム] 列が定義されています。 これで、この列のヘッダーは、ユーザーが定義した [ファースト ネーム] ヘッダーとアプリケーションによって割り当てられたその列の英数字指定の 2 つになります。  
   
 -   参照してください[UI オートメーション Grid コントロール パターンを実装する](../../../docs/framework/ui-automation/implementing-the-ui-automation-grid-control-pattern.md)の関連するグリッド機能します。  
   
- ![複雑なヘッダー項目を含むテーブルです。](../../../docs/framework/ui-automation/media/uia-tablepattern-complex-column-headers.PNG "UIA_TablePattern_Complex_Column_Headers")  
+ ![複雑なヘッダー項目を含むテーブルです。] (../../../docs/framework/ui-automation/media/uia-tablepattern-complex-column-headers.PNG "UIA_TablePattern_Complex_Column_Headers")  
 列ヘッダーが複雑なテーブルの例  
   
- ![あいまいな RowOrColumnMajor プロパティを含むテーブル。](../../../docs/framework/ui-automation/media/uia-tablepattern-roworcolumnmajorproperty.PNG "UIA_TablePattern_RowOrColumnMajorProperty")  
+ ![あいまいな RowOrColumnMajor プロパティを含むテーブル。] (../../../docs/framework/ui-automation/media/uia-tablepattern-roworcolumnmajorproperty.PNG "UIA_TablePattern_RowOrColumnMajorProperty")  
 RowOrColumnMajor プロパティがあいまいなテーブルの例  
   
 <a name="Required_Members_for_ITableProvider"></a>   
@@ -59,17 +62,17 @@ RowOrColumnMajor プロパティがあいまいなテーブルの例
 |<xref:System.Windows.Automation.Provider.ITableProvider.GetColumnHeaders%2A>|メソッド|なし|  
 |<xref:System.Windows.Automation.Provider.ITableProvider.GetRowHeaders%2A>|メソッド|なし|  
   
- このコントロール パターンに関連付けられたイベントはありません。  
+ このコントロール パターンには、関連するイベントがありません。  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>例外  
- このコントロール パターンに関連付けられる例外はありません。  
+ このコントロール パターンに関連付けられた例外はありません。  
   
 ## <a name="see-also"></a>関連項目  
- [UI オートメーション コントロール パターンの概要](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)   
- [UI オートメーション プロバイダーでコントロール パターンをサポートします。](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)   
- [クライアントの UI オートメーション コントロール パターン](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)   
- [UI オートメーション TableItem コントロール パターンの実装](../../../docs/framework/ui-automation/implementing-the-ui-automation-tableitem-control-pattern.md)   
- [UI オートメーション Grid コントロール パターンの実装](../../../docs/framework/ui-automation/implementing-the-ui-automation-grid-control-pattern.md)   
- [UI オートメーション ツリーの概要](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)   
+ [UI オートメーション コントロール パターンの概要](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [UI オートメーション プロバイダーでコントロール パターンをサポートします。](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
+ [クライアントの UI オートメーション コントロール パターン](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
+ [UI オートメーション TableItem コントロール パターンの実装](../../../docs/framework/ui-automation/implementing-the-ui-automation-tableitem-control-pattern.md)  
+ [UI オートメーション Grid コントロール パターンを実装します。](../../../docs/framework/ui-automation/implementing-the-ui-automation-grid-control-pattern.md)  
+ [UI オートメーション ツリーの概要](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
  [UI オートメーションにおけるキャッシュを使用します。](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)

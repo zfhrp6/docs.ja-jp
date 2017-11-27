@@ -1,49 +1,48 @@
 ---
-title: "My.Computer.FileSystem Object | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "FileSystem module"
-  - "FileClose function"
-  - "FileGet function"
-  - "My.Computer.FileSystem object"
-  - "FilePutObject function"
-  - "FilePut function"
-  - "FileGetObject function"
-  - "Seek function"
-  - "FileOpen function"
+title: "My.Computer.FileSystem オブジェクト"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- FileSystem module
+- FileClose function
+- FileGet function
+- My.Computer.FileSystem object
+- FilePutObject function
+- FilePut function
+- FileGetObject function
+- Seek function
+- FileOpen function
 ms.assetid: 4c145456-5453-4bda-aab5-578dc8bee59a
-caps.latest.revision: 24
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 24
+caps.latest.revision: "24"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: aa6b61333152e6cb52fac969551e93d6b3697e53
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# My.Computer.FileSystem Object
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-ドライブ、ファイル、およびディレクトリを操作するためのプロパティとメソッドを提供します。  
+# <a name="mycomputerfilesystem-object"></a>My.Computer.FileSystem オブジェクト
+ドライブ、ファイル、ディレクトリを操作するためのプロパティとメソッドを提供します。  
   
-## 解説  
- `My.Computer.FileSystem` のメソッドとプロパティについては、 <xref:Microsoft.VisualBasic.FileIO.FileSystem>にオブジェクト。、 " " を参照してください。  
+## <a name="remarks"></a>コメント  
+ メソッドとプロパティについては、`My.Computer.FileSystem`オブジェクトを参照してください<xref:Microsoft.VisualBasic.FileIO.FileSystem>です。  
   
- 詳細については、「[File Access with Visual Basic](../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md)」を参照してください。  
+ 詳細については、次を参照してください。 [Visual Basic によるファイル アクセス](../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md)です。  
   
 > [!NOTE]
->  また <xref:System.IO?displayProperty=fullName> の名前空間でドライブ、ファイル、およびディレクトリを使用するには、クラスを使用します。  
+>  内のクラスを使用することも、<xref:System.IO?displayProperty=nameWithType>ドライブ、ファイル、およびディレクトリを使用する名前空間。  
   
-## 要件  
- **名前空間**: <xref:Microsoft.VisualBasic.MyServices>  
+## <a name="requirements"></a>要件  
+ **Namespace:**<xref:Microsoft.VisualBasic.MyServices>  
   
- **クラス:** <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> （ <xref:Microsoft.VisualBasic.FileIO.FileSystem>へのアクセスを提供します）  
+ **クラス:** <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> (へのアクセスを提供<xref:Microsoft.VisualBasic.FileIO.FileSystem>)  
   
- **アセンブリ**: Visual Basic ランタイム ライブラリ \(Microsoft.VisualBasic.dll 内\)  
+ **アセンブリ:** Visual Basic Runtime Library (Microsoft.VisualBasic.dll)  
   
-## 参照  
- [My.Computer.FileSystem.SpecialDirectories Object](../../../visual-basic/language-reference/objects/my-computer-filesystem-specialdirectories-object.md)   
- [My.Computer Object](../../../visual-basic/language-reference/objects/my-computer-object.md)
+## <a name="see-also"></a>関連項目  
+ [My.Computer.FileSystem.SpecialDirectories オブジェクト](../../../visual-basic/language-reference/objects/my-computer-filesystem-specialdirectories-object.md)  
+ [My.Computer オブジェクト](../../../visual-basic/language-reference/objects/my-computer-object.md)

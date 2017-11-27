@@ -1,73 +1,75 @@
 ---
-title: "方法 : WPF アプリケーションを配置するように IIS 5.0 および IIS 6.0 を構成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "調整 (コンテンツの有効期限の設定を)"
-  - "アプリケーション, 配置"
-  - "構成 (WPF アプリケーションを配置するために Web サーバーを)"
-  - "コンテンツの有効期限の設定, 調整"
-  - "配置 (アプリケーションを)"
-  - "ファイルの拡張子, 登録"
-  - "MIME タイプ, 登録"
-  - "登録 (ファイル拡張子を)"
-  - "登録 (MIME タイプを)"
-  - "Web サーバー, 構成 (WPF アプリケーションを配置するために)"
+title: "方法 : WPF アプリケーションを配置するように IIS 5.0 および IIS 6.0 を構成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- MIME types [WPF], registering
+- adjusting content expiration setting [WPF]
+- registering file extensions [WPF]
+- deploying applications [WPF]
+- applications [WPF], deploying
+- Web servers [WPF], configuring to deploy WPF applications
+- configuring Web servers to deploy WPF applications [WPF]
+- content expiration setting [WPF], adjusting
+- file extensions [WPF], registering
+- registering MIME types [WPF]
 ms.assetid: c6e8c2cb-9ba2-4e75-a0d5-180ec9639433
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: faff58f146aed7b309674157a5990cbce43dfb1f
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : WPF アプリケーションを配置するように IIS 5.0 および IIS 6.0 を構成する
-適切な [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] タイプを使用して構成されていれば、ほとんどの Web サーバーから [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションを配置することができます。  既定では、[!INCLUDE[TLA#tla_iis70](../../../../includes/tlasharptla-iis70-md.md)] はこれらの [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] タイプを使用して構成されますが、[!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] や [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] は使用しません。  
+# <a name="how-to-configure-iis-50-and-iis-60-to-deploy-wpf-applications"></a>方法 : WPF アプリケーションを配置するように IIS 5.0 および IIS 6.0 を構成する
+適切な [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] タイプを使用して構成されている限り、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションは、ほとんどの Web サーバーから配置することができます。 既定では、[!INCLUDE[TLA#tla_iis70](../../../../includes/tlasharptla-iis70-md.md)] は、これらの [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] タイプを使用して構成されますが、[!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] および [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] は違います。  
   
- ここでは、[!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] および [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] を構成して [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションを配置する方法について説明します。  
+ このトピックでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションを配置するように、[!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] および [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] を構成する方法について説明します。  
   
-   
   
 > [!NOTE]
->  レジストリ内の *UserAgent* 文字列をチェックして、システムに [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がインストールされているかどうかを確認します。  詳細情報と *UserAgent* 文字列を調べてシステムに [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がインストールされているかどうかを確認するスクリプトについては、「[.NET Framework 3.0 がインストールされているかどうかの確認](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md)」を参照してください。  
+>  レジストリ内の *UserAgent* 文字列を確認して、システムに [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がインストールされているかどうかを確認できます。 *UserAgent* 文字列を調べて、[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がシステムにインストールされているかどうかを確認するスクリプトについては、「[.NET Framework 3.0 がインストールされているかどうかを確認する](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md)」を参照してください。  
   
 <a name="content_expiration"></a>   
-## コンテンツの有効期限の設定を調整する  
- コンテンツの有効期限の設定を 1 分に調整する必要があります。  次の手順では、[!INCLUDE[TLA2#tla_iis5](../../../../includes/tla2sharptla-iis5-md.md)] を使用して調整する方法について説明します。  
+## <a name="adjust-the-content-expiration-setting"></a>コンテンツの有効期限の設定を調整する  
+ コンテンツの有効期限の設定を 1 分に調整する必要があります。 次の手順は、[!INCLUDE[TLA2#tla_iis5](../../../../includes/tla2sharptla-iis5-md.md)] でこれを行う方法を説明します。  
   
-1.  \[Start\] ボタンをクリックし、\[Administrative Tools\] をポイントして、\[Internet Information Services \(IIS\) Manager\] をクリックします。  このアプリケーションは、コマンド ラインで、「%SystemRoot%\\system32\\inetsrv\\iis.msc」と入力して起動することもできます。  
+1.  **[スタート]** メニューをクリックして、**[管理ツール]** をポイントして、**[インターネット インフォメーション サービス (IIS) マネージャー]** をクリックします。 コマンド ラインで「SystemRoot%\system32\inetsrv\iis.msc %」と入力して、このアプリケーションを起動することもできます。  
   
-2.  \[Default Web site\] ノードが見つかるまで [!INCLUDE[TLA2#tla_iis5](../../../../includes/tla2sharptla-iis5-md.md)] ツリーを展開します。  
+2.  **[Default Web Site]** ノードが見つかるまで、[!INCLUDE[TLA2#tla_iis5](../../../../includes/tla2sharptla-iis5-md.md)] ツリーを展開します。  
   
-3.  \[Default Web site\] を右クリックし、コンテキスト メニューの \[Properties\] をクリックします。  
+3.  **[Default Web Site]** を右クリックし、コンテキスト メニューの **[プロパティ]** を選択します。  
   
-4.  \[HTTP Headers\] タブをクリックし、\[Enable Content Expiration\] チェック ボックスをオンにします。  
+4.  **HTTP ヘッダー** タブを選択し、コンテンツの有効期限を有効にする をクリックします。  
   
-5.  コンテンツが 1 分後に期限切れになるように設定します。  
+5.  1 分後に期限切れになるようにコンテンツを設定します。  
   
 <a name="register_mime_types"></a>   
-## MIME タイプとファイル拡張子を登録する  
- クライアント システムのブラウザーで適切なハンドラーを読み込めるように、いくつかの [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] タイプとファイル拡張子を登録する必要があります。  次のタイプを追加する必要があります。  
+## <a name="register-mime-types-and-file-extensions"></a>MIME タイプとファイル拡張子を登録する  
+ クライアント システムのブラウザーで適切なハンドラーを読み込めるように、いくつかの [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] タイプとファイル拡張子を登録する必要があります。 次のタイプを追加する必要があります。  
   
-|拡張子|MIME タイプ|  
-|---------|--------------|  
-|.manifest|application\/manifest|  
-|xaml|application\/xaml\+xml|  
-|.application|application\/x\-ms\-application|  
-|xbap|application\/x\-ms\-xbap|  
-|.deploy|application\/octet\-stream|  
-|xps|application\/vnd.ms\-xpsdocument|  
+|拡張子|[MIME の種類]|  
+|---------------|---------------|  
+|.manifest|application/manifest|  
+|.xaml|application/xaml+xml|  
+|.application|application/x-ms-application|  
+|.xbap|application/x-ms-xbap|  
+|.deploy|application/octet-stream|  
+|.xps|application/vnd.ms-xpsdocument|  
   
 > [!NOTE]
->  クライアント システムに、[!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] タイプとファイル拡張子を登録する必要はありません。  これらは、[!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] のインストール時に自動的に登録されます。  
+>  クライアント システムに [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] タイプとファイル拡張子を登録する必要はありません。 これらは、[!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] のインストール時に自動的に登録されます。  
   
- 次の [!INCLUDE[TLA#tla_visualbscrpt](../../../../includes/tlasharptla-visualbscrpt-md.md)] のサンプルでは、必要な [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] タイプが [!INCLUDE[TLA2#tla_iis5](../../../../includes/tla2sharptla-iis5-md.md)] に自動的に追加されます。  スクリプトを使用するには、サーバー上の .vbs ファイルにこのコードをコピーします。  コピーしたら、コマンド ラインから、または [!INCLUDE[TLA#tla_winexpl](../../../../includes/tlasharptla-winexpl-md.md)]でこのファイルをダブルクリックしてスクリプトを実行します。  
+ 次の [!INCLUDE[TLA#tla_visualbscrpt](../../../../includes/tlasharptla-visualbscrpt-md.md)] のサンプルは、必要な [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] タイプを [!INCLUDE[TLA2#tla_iis5](../../../../includes/tla2sharptla-iis5-md.md)] に自動的に追加します。 スクリプトを使用するには、サーバー上の .vbs ファイルにこのコードをコピーします。 その後、コマンド ラインからファイルを実行するか、[!INCLUDE[TLA#tla_winexpl](../../../../includes/tlasharptla-winexpl-md.md)] でファイルをダブルクリックして、スクリプトを実行します。  
   
 ```  
 ' This script adds the necessary Windows Presentation Foundation MIME types   
@@ -130,9 +132,9 @@ End Sub
 ```  
   
 > [!NOTE]
->  このスクリプトを複数回実行すると、複数の [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] マップ エントリが [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] または [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] メタベースに作成されます。  
+>  このスクリプトを複数回実行すると、[!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] または [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] メタベースに複数の [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] マップ エントリが作成されます。  
   
- このスクリプトを実行しても、[!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] または [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] [!INCLUDE[TLA#tla_mmc](../../../../includes/tlasharptla-mmc-md.md)] から追加の [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] タイプを参照できない場合があります。  しかし、これらの [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] タイプは、[!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] または [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] メタベースに追加されています。  次のスクリプトは、[!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] または [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] メタベース内のすべての [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] タイプを表示します。  
+ このスクリプトを実行しても、[!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] または [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] [!INCLUDE[TLA#tla_mmc](../../../../includes/tlasharptla-mmc-md.md)] から追加の [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] タイプを参照できない場合があります。 しかし、これらの [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] タイプは、[!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] または [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] メタベースに追加されています。 次のスクリプトは、[!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] または [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] メタベース内のすべての [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] タイプを表示します。  
   
 ```  
 ' This script lists the MIME types for an IIS Server.  
@@ -151,6 +153,6 @@ For Each mimeMap In allMimeMaps
 Next  
 ```  
   
- スクリプトを `.vbs` ファイルとして保存し \(たとえば、`DiscoverIISMimeTypes.vbs`\)、次のコマンドを使用して、コマンド ラインからこれを実行します。  
+ スクリプトを `.vbs` ファイルとして保存し (たとえば、`DiscoverIISMimeTypes.vbs`)、次のコマンドを使用して、コマンド プロンプトから実行します。  
   
  `cscript DiscoverIISMimeTypes.vbs`

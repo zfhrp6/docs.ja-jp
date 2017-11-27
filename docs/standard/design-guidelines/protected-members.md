@@ -1,48 +1,46 @@
 ---
-title: "プロテクト メンバー | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "保護されているメンバー [.NET Framework]"
-  - "プロテクト メンバー"
-  - "クラス [.NET Framework] の封印されていません。"
-  - "メンバーの保護されているクラス [.NET Framework]"
-  - "封印されていないクラス"
-  - "クラスの動作をカスタマイズします。"
+title: "プロテクト メンバー"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- members [.NET Framework], protected
+- protected members
+- classes [.NET Framework], unsealed
+- classes [.NET Framework], protected members
+- unsealed classes
+- customizing class behavior
 ms.assetid: aa0b58ee-3956-494d-ab48-471ae5db8740
-caps.latest.revision: 9
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 7c3aacd0f08641c01200f0b1791a78413a306590
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# プロテクト メンバー
-単独でプロテクト メンバーは、すべての機能拡張を指定しないが、高い拡張性により、サブクラス化をより強力なことができます。 メインのパブリック インターフェイスを不必要に複雑にせず、高度なカスタマイズ オプションを公開する、使用できます。  
+# <a name="protected-members"></a>プロテクト メンバー
+単独で保護されたメンバーはすべての機能拡張を指定しないがサブクラス化によって拡張機能をより強力な行うことができます。 メインのパブリック インターフェイスを不必要に複雑化せず、高度なカスタマイズ オプションを公開に使用できます。  
   
- フレームワークの設計者は、「保護」の名前は、セキュリティに関する誤った認識を移すことができるため、保護されたメンバーには注意する必要があります。 サブクラス封印されていないクラスとメンバーへのアクセスが保護することがすべてのユーザーと、防御的なコーディング手法がパブリック メンバーを使用をプロテクト メンバーに適用するため、同じ。  
+ フレームワークの設計者は、「保護された」名前が false 安心感を与えることができますので、プロテクト メンバーには注意する必要があります。 すべてのユーザーはサブクラス封印されていないクラスとメンバーへのアクセスが保護されているをできるパブリック メンバーに使用された守勢のコーディング方法が保護されたメンバーに適用するためすべて同じです。  
   
- **✓ を検討してください** プロテクト メンバーは高度なカスタマイズを使用します。  
+ **✓ を検討してください**高度なカスタマイズのメンバーを使用して保護されています。  
   
- **✓ は** セキュリティ、ドキュメント、および互換性の分析を行うための public と封印されていないクラスでプロテクト メンバーを処理します。  
+ **✓ しないで**セキュリティ、ドキュメント、および互換性分析するためにパブリックと封印されていないクラスにプロテクト メンバーを処理します。  
   
- クラスから継承するすべてのユーザーと、プロテクト メンバーにアクセスします。  
+ クラスから継承するすべてのユーザーし、プロテクト メンバーにアクセスできます。  
   
- *部分 © 2005年、2009 Microsoft Corporation します。 All rights reserved.*  
+ *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
   
- *翔泳社からのアクセス許可によって検出 [Framework デザイン ガイドライン: 規則が、表現方法と再利用可能な .NET ライブラリを 2 nd Edition パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) は Cwalina Brad エイブラムスによる、Microsoft Windows の開発シリーズの一部として Addison\-wesley Professional、2008 年 10 月 22 日を公開します。*  
+ *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## 参照  
- [Framework デザイン ガイドライン](../../../docs/standard/design-guidelines/index.md)   
- [機能拡張のデザイン](../../../docs/standard/design-guidelines/designing-for-extensibility.md)
+## <a name="see-also"></a>関連項目  
+ [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)  
+ [機能拡張のための設計](../../../docs/standard/design-guidelines/designing-for-extensibility.md)

@@ -1,48 +1,52 @@
 ---
-title: "ベクター グラフィックスの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "座標系"
-  - "グラフィックス, ベクター グラフィックス"
-  - "包括 (描画時に両側の端点を)"
+title: "ベクター グラフィックスの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- inclusive-inclusive endpoints
+- coordinate systems
+- graphics [Windows Forms], vector graphics
 ms.assetid: 0195df81-66be-452d-bb53-5a582ebfdc09
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7bb3247f531a0dac83657e118fb53ebaf708ec9a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ベクター グラフィックスの概要
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] は、直線や四角形などの図形を座標系内で描画します。  さまざまな座標系を選択できますが、既定の座標系は原点が左上隅、x 軸が右向き、y 軸が下向きの座標系です。  既定の座標系での単位はピクセルです。  
+# <a name="vector-graphics-overview"></a>ベクター グラフィックスの概要
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]座標系上線、四角形、およびその他の図形を描画します。 さまざまな座標システムから選択できますが、既定座標系では、左上隅の原点は、x 軸が右と下向き y 軸 をポイントします。 既定の座標システムでメジャーの単位は、ピクセルです。  
   
-## GDI\+ のビルド ブロック  
- ![ベクター グラフィックス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art01.png "AboutGdip02\_Art01")  
+## <a name="the-building-blocks-of-gdi"></a>GDI + の構成要素  
+ ![ベクター グラフィックス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art01.gif "AboutGdip02_Art01")  
   
- コンピューターのモニターでは、画素 \(ピクセル\) と呼ばれるドットから構成される四角形の配列上に表示が生成されます。  画面上に表示されるピクセルの数はモニターごとに異なります。通常、それぞれのモニターに表示されるピクセルの数は、一定の範囲内でユーザーが設定できます。  
+ コンピューター モニターでは、ドット ピクチャ要素 (ピクセル) と呼ばれる四角形の配列をその表示を作成します。 1 つのモニターから、画面に表示されるピクセルの数が異なり、ユーザーが個々 のモニターに表示されるピクセルの数がある程度を構成する通常ことができます。  
   
- ![ベクター グラフィックス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art02.png "AboutGdip02\_Art02")  
+ ![ベクター グラフィックス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art02.gif "AboutGdip02_Art02")  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] を使用して直線、四角形、または曲線を描画する場合は、項目を描画するために基本的な情報を指定します。  たとえば、2 点を定義すると直線を指定でき、1 点、高さ、および幅を定義すると四角形を指定できます。  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] とディスプレイ ドライバー ソフトウェアによって、直線、四角形、または曲線を表示するためにどのピクセルをオンにするかが決定されます。  点 \(4, 2\) から点 \(12, 8\) まで直線を表示するためにオンにされているピクセルを次の図に示します。  
+ 使用すると[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]線、四角形、または曲線を描画するには、描画される項目に関する特定のキー情報を提供します。 たとえば、2 つの点を提供することにより、行を指定でき、ポイント、高さ、幅を提供し、四角形を指定することができます。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]ディスプレイ ドライバー ソフトウェアは、線、四角形、または曲線の表示にするピクセルをオンにするかを決定すると連携して動作します。 次の図は、(4, 2) のポイントからポイント (12, 8) に線を表示するのになっている (ピクセル) を示します。  
   
- ![ベクター グラフィックス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art03.png "AboutGdip02\_Art03")  
+ ![ベクター グラフィックス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art03.gif "AboutGdip02_Art03")  
   
- 2 次元ピクチャの作成に最も適した基本的なビルド ブロックとして、いくつかの図形を使用できることが実証されています。  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] によってすべてサポートされる、これらのビルド ブロックを次に示します。  
+ 時間の経過と共に特定基本的なビルディング ブロックが証明された、最も有用である 2 次元の画像を作成するためです。 これらのビルド ブロックでサポートされている[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]は、次の一覧で指定します。  
   
 -   線  
   
 -   四角形  
   
--   楕円  
+-   省略記号ボタン  
   
 -   円弧  
   
@@ -52,18 +56,18 @@ caps.handback.revision: 16
   
 -   ベジエ スプライン  
   
-## グラフィックス オブジェクトを使用した描画方法  
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] の <xref:System.Drawing.Graphics> クラスは、上記の項目を描画するためのメソッドとして、<xref:System.Drawing.Graphics.DrawLine%2A>、<xref:System.Drawing.Graphics.DrawRectangle%2A>、<xref:System.Drawing.Graphics.DrawEllipse%2A>、<xref:System.Drawing.Graphics.DrawPolygon%2A>、<xref:System.Drawing.Graphics.DrawArc%2A>、<xref:System.Drawing.Graphics.DrawCurve%2A> \(カーディナル スプライン用\)、および <xref:System.Drawing.Graphics.DrawBezier%2A> を提供します。  これらの各メソッドはオーバーロードされています。つまり、各メソッドが複数の異なるパラメーター リストをサポートします。  たとえば、ある <xref:System.Drawing.Graphics.DrawLine%2A> メソッドは <xref:System.Drawing.Pen> オブジェクトと 4 個の整数を受け取り、別の <xref:System.Drawing.Graphics.DrawLine%2A> メソッドは <xref:System.Drawing.Pen> オブジェクトと 2 個の <xref:System.Drawing.Point> オブジェクトを受け取ります。  
+## <a name="methods-for-drawing-with-a-graphics-object"></a>グラフィックス オブジェクトを使用した描画メソッド  
+ <xref:System.Drawing.Graphics>クラス[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]、前の一覧の項目を描画するための次のメソッドを提供: <xref:System.Drawing.Graphics.DrawLine%2A>、 <xref:System.Drawing.Graphics.DrawRectangle%2A>、 <xref:System.Drawing.Graphics.DrawEllipse%2A>、 <xref:System.Drawing.Graphics.DrawPolygon%2A>、 <xref:System.Drawing.Graphics.DrawArc%2A>、 <xref:System.Drawing.Graphics.DrawCurve%2A> (用カーディナル スプライン)、および<xref:System.Drawing.Graphics.DrawBezier%2A>. これらの各メソッドはオーバー ロードです。つまり、各メソッドは、いくつかの異なるパラメーター リストをサポートします。 たとえば、1 つバリエーションの 1 つの<xref:System.Drawing.Graphics.DrawLine%2A>メソッドは受信、<xref:System.Drawing.Pen>オブジェクトと別のバリエーションの中に、4 つの整数、<xref:System.Drawing.Graphics.DrawLine%2A>メソッドは受信、<xref:System.Drawing.Pen>オブジェクトと 2 つ<xref:System.Drawing.Point>オブジェクト。  
   
- 直線、四角形、およびベジエ スプラインを描画するためのメソッドには、1 回の呼び出しで複数の項目を描画するコンパニオン メソッドである <xref:System.Drawing.Graphics.DrawLines%2A>、<xref:System.Drawing.Graphics.DrawRectangles%2A>、および <xref:System.Drawing.Graphics.DrawBeziers%2A> があります。  また、<xref:System.Drawing.Graphics.DrawCurve%2A> メソッドにも、曲線の終了点と開始点を連結することによって曲線を閉じるコンパニオン メソッド <xref:System.Drawing.Graphics.DrawClosedCurve%2A> があります。  
+ 線、四角形、およびベジエ スプラインを描画するためのメソッドが 1 回の呼び出しで複数の項目を描画する複数形のコンパニオン メソッドがある: <xref:System.Drawing.Graphics.DrawLines%2A>、 <xref:System.Drawing.Graphics.DrawRectangles%2A>、および<xref:System.Drawing.Graphics.DrawBeziers%2A>です。 また、<xref:System.Drawing.Graphics.DrawCurve%2A>メソッドには、コンパニオン メソッド<xref:System.Drawing.Graphics.DrawClosedCurve%2A>終了、開始する曲線の終点を接続することで、曲線ポイントします。  
   
- <xref:System.Drawing.Graphics> クラスのすべての描画メソッドは、<xref:System.Drawing.Pen> オブジェクトと共に機能します。  図形を描画するためには、少なくとも <xref:System.Drawing.Graphics> オブジェクトと <xref:System.Drawing.Pen> オブジェクトの 2 つのオブジェクトを作成する必要があります。  <xref:System.Drawing.Pen> オブジェクトには、描画される項目の属性として、線の幅や色などが格納されます。  <xref:System.Drawing.Pen> オブジェクトは、引数の 1 つとして描画メソッドに渡されます。  たとえば、ある <xref:System.Drawing.Graphics.DrawLine%2A> メソッドは、次の例に示すように <xref:System.Drawing.Pen> オブジェクトと 4 個の整数を受け取ります。このメソッドは、幅 100、高さ 50、左上隅 \(20, 10\) の四角形を描画します。  
+ すべての描画メソッドの<xref:System.Drawing.Graphics>クラスと連携して動作する<xref:System.Drawing.Pen>オブジェクト。 何を描画するには、少なくとも 2 つのオブジェクトを作成する必要があります。<xref:System.Drawing.Graphics>オブジェクトおよび<xref:System.Drawing.Pen>オブジェクト。 <xref:System.Drawing.Pen>オブジェクトは線の幅と描画される項目の色などの属性を格納します。 <xref:System.Drawing.Pen>オブジェクトが描画メソッドに引数の 1 つとして渡されます。 たとえば、1 つバリエーションの 1 つの<xref:System.Drawing.Graphics.DrawLine%2A>メソッドは受信、<xref:System.Drawing.Pen>オブジェクトと幅が 100 で 50 の高さの左上隅の四角形を描画する次の例に示すように 4 つの整数 (20, 10)。  
   
  [!code-csharp[LinesCurvesAndShapes#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#11)]
  [!code-vb[LinesCurvesAndShapes#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#11)]  
   
-## 参照  
- <xref:System.Drawing.Graphics?displayProperty=fullName>   
- <xref:System.Drawing.Pen?displayProperty=fullName>   
- [直線、曲線、および図形](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)   
- [方法 : 描画する Graphics オブジェクトを作成する](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Drawing.Graphics?displayProperty=nameWithType>  
+ <xref:System.Drawing.Pen?displayProperty=nameWithType>  
+ [直線、曲線、および図形](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
+ [方法: 描画する Graphics オブジェクトを作成する](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)

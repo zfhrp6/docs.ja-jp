@@ -1,63 +1,62 @@
 ---
-title: "New Operator (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.new"
-  - "vb.NewConstraint"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "constraints, Visual Basic generic types"
-  - "generics [Visual Basic], constraints"
-  - "constraints, New keyword"
-  - "New constraint"
-  - "New keyword"
+title: "New 演算子 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.new
+- vb.NewConstraint
+helpviewer_keywords:
+- constraints, Visual Basic generic types
+- generics [Visual Basic], constraints
+- constraints, New keyword [Visual Basic]
+- New constraint
+- New keyword [Visual Basic]
 ms.assetid: d7d566d7-fe0e-4336-91f7-641a542de4d0
-caps.latest.revision: 23
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 74f0352379e861ad135ea23d31ea07d638f9e6c1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# New Operator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-`New` 句を開始して新しいオブジェクト インスタンスを作成するか、型パラメーターにコンストラクター制約を指定するか、または `Sub` プロシージャをクラス コンストラクターとして識別します。  
+# <a name="new-operator-visual-basic"></a>New 演算子 (Visual Basic)
+導入されています、`New`句を新しいオブジェクト インスタンスを作成する型パラメーターにコンス トラクター制約を指定または識別、`Sub`クラス コンス トラクターと手順。  
   
-## 解説  
- 代入ステートメントの宣言で、`New` 句は、インスタンスを作成する定義済みのクラスを指定する必要があります。  つまり、クラスは呼び出し元のコードがアクセスできる 1 つ以上のコンストラクターを公開する必要があります。  
+## <a name="remarks"></a>コメント  
+ 代入ステートメントの宣言で、`New`句は、定義済みのインスタンスの作成元となるクラスを指定する必要があります。 つまり、クラスが呼び出し元のコードがアクセスできる 1 つまたは複数のコンス トラクターを公開する必要があります。  
   
- `New` 句は、宣言ステートメントまたは代入ステートメントの中で使用できます。  ステートメントが実行されると、指定したクラスの適切なコンストラクターが呼び出されて、指定した引数が渡されます。  次に例を示します。この例では、2 つのコントラクターを持つ `Customer` クラスのインスタンスを作成します。一方はパラメーターを受け取らず、もう一方は文字列パラメーターを受け取ります。  
+ 使用することができます、`New`宣言ステートメントまたは代入ステートメントの句。 ステートメントを実行すると、指定した任意の引数を渡して、指定したクラスの適切なコンス トラクターを呼び出します。 次の例では、これを示しますのインスタンスを作成することで、`Customer`いずれかのパラメーターをとらない使用し、文字列パラメーターを受け取るいずれかを使用する、2 つのコンス トラクターを持つクラス。  
   
  [!code-vb[VbVbalrKeywords#11](../../../visual-basic/language-reference/codesnippet/VisualBasic/new-operator_1.vb)]  
   
- 配列はクラスであることから、`New` は次のとおり、新しい配列のインスタンスを作成できます。  
+ 配列はクラス、`New`次の例に示すように、配列の新しいインスタンスを作成することができます。  
   
  [!code-vb[VbVbalrKeywords#12](../../../visual-basic/language-reference/codesnippet/VisualBasic/new-operator_2.vb)]  
   
- 新しいインスタンスを作成するためのメモリが不足している場合、共通言語ランタイム \(CLR\) は <xref:System.OutOfMemoryException> エラーをスローします。  
+ 共通言語ランタイム (CLR) スロー、<xref:System.OutOfMemoryException>メモリ不足の新しいインスタンスを作成する場合はエラーです。  
   
 > [!NOTE]
->  `New` キーワードは、アクセス可能なパラメーターなしのコンストラクターを渡された型が公開する必要があることを示すために、型パラメーター リストでも使用されます。  型パラメーターと制約の詳細については、「[Type List](../../../visual-basic/language-reference/statements/type-list.md)」を参照してください。  
+>  `New`キーワードにも使用型パラメーター リストで指定された型がアクセスできるパラメーターなしコンス トラクターを公開する必要がありますを指定します。 型パラメーターや制約の詳細については、次を参照してください。[型リスト](../../../visual-basic/language-reference/statements/type-list.md)です。  
   
- クラスのコンストラクターのプロシージャを作成するには、`Sub` プロシージャの名前を `New` キーワードにします。  詳細については、「[Object Lifetime: How Objects Are Created and Destroyed](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)」を参照してください。  
+ クラスのコンス トラクターのプロシージャを作成するには、名前を設定、`Sub`する手順、`New`キーワード。 詳細については、次を参照してください。[オブジェクトの有効期間: オブジェクトが作成と破棄にはどのように](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)です。  
   
- キーワード `New` は、次の構文で使用します。  
+ キーワード `New` は次のコンテキストで使用できます。  
   
- [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
  [Of](../../../visual-basic/language-reference/statements/of-clause.md)  
   
- [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## 参照  
- <xref:System.OutOfMemoryException>   
- [キーワード](../../../visual-basic/language-reference/keywords/index.md)   
- [Type List](../../../visual-basic/language-reference/statements/type-list.md)   
- [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)   
- [Object Lifetime: How Objects Are Created and Destroyed](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.OutOfMemoryException>  
+ [キーワード](../../../visual-basic/language-reference/keywords/index.md)  
+ [型リスト](../../../visual-basic/language-reference/statements/type-list.md)  
+ [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
+ [オブジェクトの有効期間 : オブジェクトの作成と破棄](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)

@@ -1,35 +1,38 @@
 ---
-title: "OracleType | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: OracleTypes
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 18143304-d5c7-4c95-9995-678088d0c142
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: e0fa5a76c304246d1518ad7491cfc5b8b741f913
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# OracleType
-.NET Framework Data Provider for Oracle には、Oracle データ型で使用されるいくつかの構造体が含まれています。  その中には、<xref:System.Data.OracleClient.OracleNumber> や <xref:System.Data.OracleClient.OracleString> があります。  
+# <a name="oracletypes"></a>OracleTypes
+.NET Framework Data Provider for Oracle には、Oracle データ型で使用されるいくつかの構造体が含まれています。 その中には、<xref:System.Data.OracleClient.OracleNumber> や <xref:System.Data.OracleClient.OracleString> があります。  
   
 > [!NOTE]
 >  これらの構造体に関する詳細な一覧については、「<xref:System.Data.OracleClient>」を参照してください。  
   
- C\# の例を以下に示します。  
+ C# の例を以下に示します。  
   
 -   Oracle テーブルを作成し、データを読み込みます。  
   
 -   <xref:System.Data.OracleClient.OracleDataReader> を使用してデータにアクセスし、いくつかの <xref:System.Data.OracleClient.OracleType> 構造体を使用してデータを表示します。  
   
-## Oracle テーブルの作成  
- この例では、Oracle テーブルを作成し、データを読み込みます。  次の例を実行する前に、この例を実行する必要があります。  
+## <a name="creating-an-oracle-table"></a>Oracle テーブルの作成  
+ この例では、Oracle テーブルを作成し、データを読み込みます。 次の例を実行する前に、この例を実行する必要があります。  
   
 ```csharp  
 public void Setup(string connectionString)  
@@ -58,8 +61,8 @@ public void Setup(string connectionString)
 }  
 ```  
   
-## Oracle テーブルからのデータの取得  
- この例では、**OracleDataReader** を使用してデータにアクセスし、いくつかの **OracleType** 構造体を使用してデータを表示します。  
+## <a name="retrieving-data-from-the-oracle-table"></a>Oracle テーブルからのデータの取得  
+ この例では、 **OracleDataReader** 、データにアクセスするいくつかを使用して**OracleType**構造データを表示します。  
   
 ```csharp  
 public void ReadOracleTypesExample(string connectionString)  
@@ -122,6 +125,6 @@ public void ReadOracleTypesExample(string connectionString)
 }  
 ```  
   
-## 参照  
- [Oracle および ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [Oracle および ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,27 +1,33 @@
 ---
-title: "DataViews の管理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DataViews の管理"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 0b67fab5-1722-4d2b-bfc1-247a75f0f1ee
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 3cf89cd378d19b5de64a733e80ec757c7e3bdb89
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataViews の管理
-<xref:System.Data.DataView> のすべてのテーブルのビュー設定を管理するには、<xref:System.Data.DataViewManager> を使用します。  リレーションシップを移動するグリッドなどのように、1 つのコントロールを複数のテーブルに連結する場合は、**DataViewManager** が適しています。  
+# <a name="managing-dataviews"></a>DataViews の管理
+<xref:System.Data.DataViewManager> のすべてのテーブルのビュー設定を管理するには、<xref:System.Data.DataView> を使用します。 グリッドなど、リレーションシップをナビゲートする複数のテーブルにバインドするコントロールがある場合、 **DataViewManager**最適です。  
   
- **DataViewManager** には、<xref:System.Data.DataSet> のテーブルのビュー設定に使用される <xref:System.Data.DataViewSetting> オブジェクトのコレクションが含まれています。  <xref:System.Data.DataViewSettingCollection> には、**DataSet** の各テーブルに対応する <xref:System.Data.DataViewSetting> オブジェクトが 1 つずつ含まれています。  参照テーブルの既定の **ApplyDefaultSort**、**Sort**、**RowFilter**、**RowStateFilter** の各プロパティを設定するには、**DataViewSetting** を使用します。  名前または序数参照によって、または参照をその特定のテーブル オブジェクトに渡すことによって、特定のテーブルの **DataViewSetting** を参照できます。  **DataViewManager** の **DataViewSetting** オブジェクトのコレクションにアクセスするには、**DataViewSettings** プロパティを使用します。  
+ **DataViewManager**のコレクションを格納<xref:System.Data.DataViewSetting>内のテーブルのビュー設定に使用されるオブジェクト、<xref:System.Data.DataSet>です。 <xref:System.Data.DataViewSettingCollection> 1 つ含む<xref:System.Data.DataViewSetting>内の各テーブルのオブジェクト、**データセット**です。 既定値を設定することができます**ApplyDefaultSort**、**並べ替え**、 **RowFilter**、および**RowStateFilter**によって参照されているテーブルのプロパティ使用してその**DataViewSetting**です。 参照することができます、 **DataViewSetting**名前または序数参照は、その特定のテーブル オブジェクトへの参照を渡すことによって、特定のテーブルにします。 コレクションにアクセスすることができます**DataViewSetting**内のオブジェクト、 **DataViewManager**を使用して、 **DataViewSettings**プロパティです。  
   
- **DataSet** に、SQL Server **Northwind** データベースの **Customers**、**Orders**、**Order Details** の各テーブルを格納し、テーブル間のリレーションシップを作成し、**DataViewManager** を使用して既定の **DataView** 設定を指定し、**DataGrid** を **DataViewManager** に連結するコード サンプルを次に示します。  この例では **DataSet** のすべてのテーブルを対象とした既定の **DataView** 設定が設定されます。この設定では、テーブルの主キーによってテーブルの内容が並べ替えられ \(**ApplyDefaultSort** \= **true**\)、次に **Customers** テーブルの並べ替え順序が、**CompanyName** による並べ替え順序に変更されます。  
+ 次のコード例がいっぱいになった、**データセット**SQL Server と**Northwind**データベース テーブル**顧客**、 **Orders**、および**Order Details**、テーブル間のリレーションシップを作成、使用して、 **DataViewManager**を既定値を設定する**DataView**設定、およびバインド、 **DataGrid**を**DataViewManager**です。 例では、既定値を設定する**DataView**のすべてのテーブルの設定、**データセット**テーブルの主キーを並べ替える (**ApplyDefaultSort**  =  **true**)、後の並べ替え順序を変更し、**顧客**で並べ替えを行うテーブル**CompanyName**です。  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection to Northwind.  
@@ -72,7 +78,6 @@ viewManager.DataViewSettings("Customers").Sort = "CompanyName"
 ' Bind to a DataGrid.  
 Dim grid As System.Windows.Forms.DataGrid = New System.Windows.Forms.DataGrid()  
 grid.SetDataBinding(viewManager, "Customers")  
-  
 ```  
   
 ```csharp  
@@ -124,10 +129,10 @@ System.Windows.Forms.DataGrid grid = new System.Windows.Forms.DataGrid();
 grid.SetDataBinding(viewManager, "Customers");  
 ```  
   
-## 参照  
- <xref:System.Data.DataSet>   
- <xref:System.Data.DataViewManager>   
- <xref:System.Data.DataViewSetting>   
- <xref:System.Data.DataViewSettingCollection>   
- [DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Data.DataSet>  
+ <xref:System.Data.DataViewManager>  
+ <xref:System.Data.DataViewSetting>  
+ <xref:System.Data.DataViewSettingCollection>  
+ [DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,42 +1,43 @@
 ---
-title: "DataGridView コントロール (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "データ [Windows フォーム], 表示 (表形式で)"
-  - "データ グリッド"
-  - "データの表示形式"
-  - "DataGridView コントロール [Windows フォーム]"
-  - "データセット [Windows フォーム], 表示 (DataGridView コントロール内に)"
-  - "データセット [Windows フォーム], ユーザー インターフェイス"
-  - "グリッド コントロール [Windows フォーム]"
-  - "テーブル [Windows フォーム]"
-  - "表データ, 表示 (Windows フォームに)"
-  - "Windows フォーム, 表示 (データを)"
+title: "DataGridView コントロール (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- tables [Windows Forms]
+- data grids [Windows Forms
+- data [Windows Forms], displaying in tabular format
+- grid controls [Windows Forms]
+- datasets [Windows Forms], user interface
+- Windows Forms, displaying data
+- data presentation
+- tabular data [Windows Forms], displaying on Windows Forms
+- datasets [Windows Forms], displaying in DataGridView control
+- DataGridView control [Windows Forms]
 ms.assetid: dbee73f2-bba6-4874-9389-cd21d44309be
-caps.latest.revision: 21
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 08a0cc15cff39bb936a78db95c73568aa643d0b6
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# DataGridView コントロール (Windows フォーム)
-`DataGridView` コントロールには、データを表形式で表示するための強力で柔軟な機能が用意されています。  `DataGridView` コントロールを使用すると、読み取り専用のビューに少量のデータを表示したり、拡大して非常に大量のデータのセットの編集可能なビューを表示したりできます。  
+# <a name="datagridview-control-windows-forms"></a>DataGridView コントロール (Windows フォーム)
+`DataGridView` コントロールには、データを表形式で表示するための強力で柔軟な機能が用意されています。 `DataGridView` コントロールを使用すると、読み取り専用のビューに少量のデータを表示したり、拡大して非常に大量のデータのセットの編集可能なビューを表示したりできます。  
   
- `DataGridView` コントロールはいくつかの方法で拡張でき、アプリケーションにカスタムの動作を組み込むことができます。  たとえば、プログラムで独自の並べ替えアルゴリズムを指定したり、独自の種類のセルを作成したりできます。  `DataGridView` コントロールの外観は、いくつかのプロパティを選択することで簡単にカスタマイズできます。  `DataGridView` コントロールでは、多くの種類のデータ ストアをデータ ソースとして使用できますが、データ ソースをバインドせずに動作させることもできます。  
+ `DataGridView` コントロールはいくつかの方法で拡張でき、アプリケーションにカスタムの動作を組み込むことができます。 たとえば、プログラムで独自の並べ替えアルゴリズムを指定したり、独自の種類のセルを作成したりできます。 `DataGridView` コントロールの外観は、いくつかのプロパティを選択することで簡単にカスタマイズできます。 `DataGridView` コントロールでは、多くの種類のデータ ストアをデータ ソースとして使用できますが、データ ソースをバインドせずに動作させることもできます。  
   
  このセクションのトピックでは、`DataGridView` の機能をアプリケーションに組み込むときに使用できる概念および手法について説明します。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [DataGridView コントロールの概要](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md)  
  Windows フォームの `DataGridView` コントロールのアーキテクチャおよび中心となる概念を説明するトピックを示します。  
   
@@ -82,14 +83,14 @@ caps.handback.revision: 21
  [Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)  
  `DataGridView` コントロールが <xref:System.Windows.Forms.DataGrid> コントロールより改良され、これに代わるものである点について説明します。  
   
- 「[Windows フォーム DataGridView コントロールでのデザイナーの使用](http://msdn.microsoft.com/library/ms171593\(v=vs.110\))」も参照してください。  
+ 参照してください[デザイナーを使用して Windows フォーム DataGridView コントロールで](http://msdn.microsoft.com/library/ms171593\(v=vs.110\))です。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView> コントロールのリファレンス ドキュメントを提供します。  
   
  <xref:System.Windows.Forms.BindingSource>  
- <xref:System.Windows.Forms.BindingSource> コンポーネントのリファレンス ドキュメントを提供します。  <xref:System.Windows.Forms.DataGridView> コントロールと <xref:System.Windows.Forms.BindingSource> コンポーネントは、密接に連携して機能するようにデザインされています。  
+ <xref:System.Windows.Forms.BindingSource> コンポーネントのリファレンス ドキュメントを提供します。 <xref:System.Windows.Forms.DataGridView> コントロールと <xref:System.Windows.Forms.BindingSource> コンポーネントは、密接に連携して機能するようにデザインされています。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

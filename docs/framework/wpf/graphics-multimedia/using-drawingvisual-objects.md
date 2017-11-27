@@ -1,95 +1,86 @@
 ---
-title: "DrawingVisual オブジェクトの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "DrawingVisual オブジェクト (ビジュアル層の)"
-  - "ビジュアル層, DrawingVisual オブジェクト"
+title: "DrawingVisual オブジェクトの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- visual layer [WPF], DrawingVisual objects
+- DrawingVisual objects in visual layer [WPF]
 ms.assetid: 0b4e711d-e640-40cb-81c3-8f5c59909b7d
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ee46c41d6f0f42bbb9f50bd5862f6eb076b34bb1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DrawingVisual オブジェクトの使用
-ここでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ビジュアル層で <xref:System.Windows.Media.DrawingVisual> オブジェクトを使用する方法の概要を説明します。  
-  
- このトピックは、次のセクションで構成されています。  
-  
-<a name="autoTopLevelSectionsOUTLINE0"></a>   
--   [DrawingVisual オブジェクト](#drawing_visual_object)  
-  
--   [DrawingVisual ホスト コンテナー](#drawingvisual_host_container)  
-  
--   [DrawingVisual オブジェクトの作成](#creating_drawingvisual_objects)  
-  
--   [FrameworkElement メンバーのオーバーライドの作成](#creating_overrides)  
-  
--   [ヒット テストのサポート](#providing_hit_testing_support)  
-  
--   [関連トピック](#seeAlsoToggle)  
+# <a name="using-drawingvisual-objects"></a>DrawingVisual オブジェクトの使用
+このトピックの使用方法の概要を説明する<xref:System.Windows.Media.DrawingVisual>内のオブジェクト、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ビジュアル層です。  
   
 <a name="drawingvisual_object"></a>   
-## DrawingVisual オブジェクト  
- <xref:System.Windows.Media.DrawingVisual> は、図形、イメージ、またはテキストの描画に使用する軽量の描画クラスです。  このクラスが軽量と見なされる理由は、レイアウトやイベントの処理を行わないため、パフォーマンスが向上するからです。  このため、背景やクリップ アートの描画に適しています。  
+## <a name="drawingvisual-object"></a>DrawingVisual オブジェクト  
+ <xref:System.Windows.Media.DrawingVisual>は、軽量な図形、画像、またはテキストを表示するために使用されるクラスを描画します。 このクラスが軽量と見なされる理由は、レイアウトやイベントの処理を行わないことで、パフォーマンスが向上するからです。 このため、背景やクリップ アートの描画に適しています。  
   
 <a name="drawingvisual_host_container"></a>   
-## DrawingVisual ホスト コンテナー  
- <xref:System.Windows.Media.DrawingVisual> オブジェクトを使用するには、オブジェクトのホスト コンテナーを作成する必要があります。  ホスト コンテナー オブジェクトは、<xref:System.Windows.FrameworkElement> クラスから継承する必要があります。このクラスは、<xref:System.Windows.Media.DrawingVisual> クラスがサポートしていないレイアウトやイベント処理をサポートします。  ホスト コンテナー オブジェクトの主な目的は子オブジェクトを格納することなので、ホスト コンテナー オブジェクトには表示プロパティは表示されません。  ただし、ホスト コンテナーの <xref:System.Windows.UIElement.Visibility%2A> プロパティは、<xref:System.Windows.Visibility> に設定する必要があります。この値に設定しない場合、その子要素のいずれも表示されなくなります。  
+## <a name="drawingvisual-host-container"></a>DrawingVisual ホスト コンテナー  
+ 使用するために<xref:System.Windows.Media.DrawingVisual>オブジェクト、オブジェクトのホストのコンテナーを作成する必要があります。 ホストのコンテナー オブジェクトがから派生する必要があります、<xref:System.Windows.FrameworkElement>レイアウトやイベント処理のサポートを提供するクラス、<xref:System.Windows.Media.DrawingVisual>クラスがありません。 ホスト コンテナー オブジェクトの主な目的は子オブジェクトを格納することなので、ホスト コンテナー オブジェクトでは可視プロパティは表示されません。 ただし、<xref:System.Windows.UIElement.Visibility%2A>にコンテナー ホストのプロパティを設定する必要があります<xref:System.Windows.Visibility.Visible>以外の場合、その子要素の [なし] が表示されます。  
   
- ビジュアル オブジェクトのホスト コンテナー オブジェクトを作成する場合は、<xref:System.Windows.Media.VisualCollection> にビジュアル オブジェクト参照を格納する必要があります。  <xref:System.Windows.Media.VisualCollection.Add%2A> メソッドを使用して、ビジュアル オブジェクトをホスト コンテナーに追加します。  次の例では、ホスト コンテナー オブジェクトを作成し、3 つのビジュアル オブジェクトをその <xref:System.Windows.Media.VisualCollection> に追加します。  
+ ビジュアル オブジェクトのホストのコンテナー オブジェクトを作成するときのビジュアル オブジェクトの参照を保存する必要があります、<xref:System.Windows.Media.VisualCollection>です。 使用して、<xref:System.Windows.Media.VisualCollection.Add%2A>ホスト コンテナーにビジュアル オブジェクトを追加します。 次の例では、ホストのコンテナー オブジェクトが作成、および 3 つのビジュアル オブジェクトに追加されます、<xref:System.Windows.Media.VisualCollection>です。  
   
  [!code-csharp[DrawingVisualSample#100](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#100)]
  [!code-vb[DrawingVisualSample#100](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#100)]  
   
 > [!NOTE]
->  前のコード例を含むコード サンプル全体については、[DrawingVisual を使用したヒット テストのサンプル](http://go.microsoft.com/fwlink/?LinkID=159994)を参照してください。  
+>  上記のコードの抽出元となった完全なコード サンプルについては、「[DrawingVisual を使用したヒット テストのサンプル](http://go.microsoft.com/fwlink/?LinkID=159994)」を参照してください。  
   
 <a name="creating_drawingvisual_objects"></a>   
-## DrawingVisual オブジェクトの作成  
- <xref:System.Windows.Media.DrawingVisual> オブジェクトの作成時には、オブジェクトに描画内容は含まれていません。  テキスト、グラフィックス、またはイメージ コンテンツを追加するには、オブジェクトの <xref:System.Windows.Media.DrawingContext> を取得し、そのコンテキストに描画します。  <xref:System.Windows.Media.DrawingContext> は、<xref:System.Windows.Media.DrawingVisual> オブジェクトの <xref:System.Windows.Media.DrawingVisual.RenderOpen%2A> メソッドを呼び出すことによって返されます。  
+## <a name="creating-drawingvisual-objects"></a>Creating DrawingVisual オブジェクトの作成  
+ 作成するときに、<xref:System.Windows.Media.DrawingVisual>オブジェクトの描画コンテンツがありません。 テキスト、グラフィック、またはイメージのコンテンツを追加するには、オブジェクトを取得することによって<xref:System.Windows.Media.DrawingContext>とそこに描画します。 A<xref:System.Windows.Media.DrawingContext>呼び出しによって返される、<xref:System.Windows.Media.DrawingVisual.RenderOpen%2A>のメソッド、<xref:System.Windows.Media.DrawingVisual>オブジェクト。  
   
- <xref:System.Windows.Media.DrawingContext> に四角形を描画するには、<xref:System.Windows.Media.DrawingContext> オブジェクトの <xref:System.Windows.Media.DrawingContext.DrawRectangle%2A> メソッドを使用します。  他の種類のコンテンツを描画するための同様のメソッドがあります。  <xref:System.Windows.Media.DrawingContext> へのコンテンツの描画が完了したら、<xref:System.Windows.Media.DrawingContext.Close%2A> メソッドを呼び出して <xref:System.Windows.Media.DrawingContext> を閉じ、コンテンツを保持します。  
+ 四角形を描く、<xref:System.Windows.Media.DrawingContext>を使用して、<xref:System.Windows.Media.DrawingContext.DrawRectangle%2A>のメソッド、<xref:System.Windows.Media.DrawingContext>オブジェクト。 他の種類のコンテンツを描画するための同様のメソッドもあります。 描画の内容を完了すると、 <xref:System.Windows.Media.DrawingContext>、呼び出し、<xref:System.Windows.Media.DrawingContext.Close%2A>を終了するメソッド、<xref:System.Windows.Media.DrawingContext>内容を保持するとします。  
   
- 次の例では、<xref:System.Windows.Media.DrawingVisual> オブジェクトを作成し、その <xref:System.Windows.Media.DrawingContext> に四角形を描画します。  
+ 次の例で、<xref:System.Windows.Media.DrawingVisual>オブジェクトが作成され、四角形の描画にその<xref:System.Windows.Media.DrawingContext>です。  
   
  [!code-csharp[DrawingVisualSample#101](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#101)]
  [!code-vb[DrawingVisualSample#101](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#101)]  
   
 <a name="creating_overrides"></a>   
-## FrameworkElement メンバーのオーバーライドの作成  
- ホスト コンテナー オブジェクトは、ビジュアル オブジェクトのコレクションを管理します。  このため、ホスト コンテナーは派生 <xref:System.Windows.FrameworkElement> クラスのメンバー オーバーライドを実装する必要があります。  
+## <a name="creating-overrides-for-frameworkelement-members"></a>FrameworkElement メンバーのオーバーライドの作成  
+ ホスト コンテナー オブジェクトは、ビジュアル オブジェクトのコレクションを管理します。 これは、ホスト コンテナーが派生クラスのメンバーのオーバーライドを実装する必要があります<xref:System.Windows.FrameworkElement>クラスです。  
   
  オーバーライドする必要がある 2 つのメンバーを次に示します。  
   
--   <xref:System.Windows.FrameworkElement.GetVisualChild%2A> : 子要素のコレクションから指定したインデックス位置にある子を返します。  
+-   <xref:System.Windows.FrameworkElement.GetVisualChild%2A>: 子要素のコレクションから指定したインデックス位置の子を返します。  
   
--   <xref:System.Windows.FrameworkElement.VisualChildrenCount%2A> : この要素内の子ビジュアル要素の数を取得します。  
+-   <xref:System.Windows.FrameworkElement.VisualChildrenCount%2A>: この要素内でビジュアル子要素の数を取得します。  
   
- 次の例では、2 つの <xref:System.Windows.FrameworkElement> メンバーのオーバーライドを実装します。  
+ 次の例では、2 つのオーバーライド<xref:System.Windows.FrameworkElement>メンバーが実装されます。  
   
  [!code-csharp[DrawingVisualSample#102](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#102)]
  [!code-vb[DrawingVisualSample#102](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#102)]  
   
 <a name="providing_hit_testing_support"></a>   
-## ヒット テストのサポート  
- ホスト コンテナー オブジェクトは、表示プロパティが表示されない場合でもイベント処理を提供できますが、その <xref:System.Windows.UIElement.Visibility%2A> プロパティは必ず <xref:System.Windows.Visibility> に設定する必要があります。  これにより、マウスの左ボタンが離されるなどのマウス イベントをトラップできる、ホスト コンテナーのイベント処理ルーチンを作成できます。  作成されたイベント処理ルーチンは、<xref:System.Windows.Media.VisualTreeHelper.HitTest%2A> メソッドを呼び出してヒット テストを実装できます。  このメソッドの <xref:System.Windows.Media.HitTestResultCallback> パラメーターは、ヒット テストの結果アクションを決定するために使用できるユーザー定義のプロシージャを参照します。  
+## <a name="providing-hit-testing-support"></a>ヒット テストのサポート  
+ イベント処理の表示プロパティが表示されない場合でも、そのホストのコンテナー オブジェクトを提供できます: ただし、その<xref:System.Windows.UIElement.Visibility%2A>プロパティに設定する必要があります<xref:System.Windows.Visibility.Visible>です。 これにより、マウス イベント (マウスの左ボタンのリリースなど) をトラップできる、ホスト コンテナーのイベント処理ルーチンを作成できます。 イベントの処理ルーチンを呼び出すことによって、ヒット テスト実装できます、<xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>メソッドです。 メソッドの<xref:System.Windows.Media.HitTestResultCallback>パラメーターは、ヒット テストの結果として得られるアクションを決定するのに使用できるユーザー定義のプロシージャを表します。  
   
- 次の例では、ホスト コンテナー オブジェクトとその子に対してヒット テストのサポートを実装します。  
+ 次の例では、ホスト コンテナー オブジェクトとその子に対してヒット テストのサポートを実装しています。  
   
  [!code-csharp[DrawingVisualSample#103](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#103)]
  [!code-vb[DrawingVisualSample#103](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#103)]  
   
-## 参照  
- <xref:System.Windows.Media.DrawingVisual>   
- <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>   
- [WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Media.DrawingVisual>  
+ <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>  
+ [WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
  [ビジュアル層でのヒット テスト](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)

@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 0429c049-22a3-4ba1-9cc8-f6ee91e31d9c
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 695c6626c997fd8d1f034b700f4a4918eddf7db6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 6c12c583d6c2040a093fb769803b79a6d88459ae
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="net-native-reflection-api-reference"></a>.NET ネイティブ リフレクション API リファレンス
 [!INCLUDE[net_native](../../../includes/net-native-md.md)] には次の 3 つの新しい例外型が含まれています。 [System.Runtime.CompilerServices.MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)、 [System.Reflection.MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)、および [System.Reflection.MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)です。 3 つの例外型すべてについて、次の点に注意してください。  
@@ -57,8 +55,7 @@ ms.lasthandoff: 08/21/2017
  この名前空間の他の型に関するドキュメントについては、.NET Framework ドキュメント セットで <xref:System.Runtime.CompilerServices> リファレンス ページを参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [MissingInteropDataException クラス](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)   
- [MissingMetadataException クラス](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)   
- [MissingRuntimeArtifactException クラス](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)   
+ [MissingInteropDataException クラス](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)  
+ [MissingMetadataException クラス](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)  
+ [MissingRuntimeArtifactException クラス](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)  
  [はじめに](../../../docs/framework/net-native/getting-started-with-net-native.md)
-

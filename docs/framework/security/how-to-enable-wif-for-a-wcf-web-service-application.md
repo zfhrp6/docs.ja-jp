@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: bfc64b3d-64e9-4093-a6a4-72e933917af7
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 7db69de994770e122dd4a4233b9a44d572c32344
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-enable-wif-for-a-wcf-web-service-application"></a>操作方法: WCF Web サービス アプリケーションの WIF を有効にする
 ## <a name="applies-to"></a>対象  
@@ -267,4 +265,3 @@ ms.lasthandoff: 08/21/2017
     >  **Enter** キーを押す前に **TestService** と **LocalSTS** の両方が実行されている必要があります。 Web ページが開き、サービスが表示されます。通知領域 (システム トレイ) を見ると、**LocalSTS** が実行中であることが確認できます。  
   
 3.  これらのクレームがコンソールに表示されている場合、WCF サービスのクレームを表示するための STS での認証が正常に完了しています。
-

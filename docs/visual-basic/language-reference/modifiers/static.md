@@ -1,63 +1,61 @@
 ---
-title: "Static (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Static"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "static modifier"
-  - "Static keyword"
+title: Static (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Static
+helpviewer_keywords:
+- static modifier
+- Static keyword [Visual Basic]
 ms.assetid: 19013910-4658-47b6-a22e-1744b527979e
-caps.latest.revision: 22
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: e08f46076281e766a5bc0b99cd61fee9cd41ece5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Static (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-1 つ以上のローカル変数が、それらが宣言されたプロシージャの終了後も存在し続け、最後に設定された値を保持することを指定します。  
+# <a name="static-visual-basic"></a>Static (Visual Basic)
+1 つまたは複数の宣言されたローカル変数を引き続き存在し、宣言されているプロシージャの終了後、最新の値を保持するように指定します。  
   
-## 解説  
- 通常、プロシージャ内のローカル変数は、プロシージャが停止した直後に削除されます。  静的変数はプロシージャの終了後も存在し続け、最後に設定された値を保持します。  次回、コードからそのプロシージャを呼び出したとき、変数は初期化し直されることなく、最後に割り当てられた値をそのまま保持します。  静的変数は、自らが定義されたクラスやモジュールの有効期間中存在し続けます。  
+## <a name="remarks"></a>コメント  
+ 通常、プロシージャ内のローカル変数は、プロシージャは停止すると、すぐに存在しなくなります。 静的変数存在し、続け、最新の値を保持します。 コード、プロシージャを呼び出します。 次には、変数が再初期化されていないに割り当てられている最新の値をそのまま保持します。 静的変数で定義されているクラスまたはモジュールの有効期間中に存在し続けます。  
   
-## 規則  
+## <a name="rules"></a>ルール  
   
--   **宣言コンテキスト。** `Static` はローカル変数にのみ使用できます。  つまり、`Static` 変数は、プロシージャまたはプロシージャ内のブロックのコンテキストで宣言される必要があり、ソース ファイル、名前空間、クラス、構造体、またはモジュールのコンテキストでは宣言できません。  
+-   **宣言コンテキスト。** 使用することができます`Static`ローカル変数に対してのみです。 つまりの宣言コンテキスト、`Static`変数は、プロシージャまたはプロシージャでは、ブロックに指定する必要があり、ソース ファイル、名前空間、クラス、構造体、またはモジュールにすることはできません。  
   
-     `Static` は、構造体のプロシージャの内部では使用できません。  
+     使用することはできません`Static`プロシージャの内部で構造体。  
   
--   `Static` ローカル変数のデータ型は推論できません。  詳細については、「[Local Type Inference](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)」を参照してください。  
+-   データ型`Static`ローカル変数を推論することはできません。 詳細については、次を参照してください。[ローカル型推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)です。  
   
--   **結合された修飾子。**同じ変数宣言で `Static` を、`ReadOnly`、`Shadows` または `Shared` と同時に指定することはできません。  
+-   **結合された修飾子。** 指定することはできません`Static`と共に`ReadOnly`、 `Shadows`、または`Shared`同じ宣言内で。  
   
-## \[動作\]  
- `Shared` プロシージャの静的変数を宣言する場合、静的変数に 1 回だけがアプリケーション全体に使用できます。  クラス名クラスのインスタンスをポイントする変数ではなくを使用して `Shared` プロシージャをダイヤルします。  
+## <a name="behavior"></a>動作  
+ 静的変数を宣言する場合、`Shared`プロシージャ、静的変数の 1 つだけのコピーは、アプリケーション全体の使用。 呼び出す、`Shared`クラスを使用してプロシージャ名、変数、クラスのインスタンスを指すではなくです。  
   
- `Shared`ではないプロシージャの静的変数を宣言する場合、変数に 1 回だけがクラスの各インスタンスで使用できます。  クラスの特定のインスタンスをポイントする変数を使用して、非共有されたプロシージャをダイヤルします。  
+ ないプロシージャ内で静的変数を宣言する場合`Shared`変数の 1 つのコピーはクラスの各インスタンスの使用のみ。 クラスの特定のインスタンスが指す変数を使用して、非共有プロシージャを呼び出します。  
   
-## 使用例  
- 次の例は `Static` の使い方を示しています。  
+## <a name="example"></a>例  
+ 次の例は、`Static` の使い方を示しています。  
   
  [!code-vb[VbVbalrKeywords#5](../../../visual-basic/language-reference/codesnippet/VisualBasic/static_1.vb)]  
   
- `Static` 変数 `totalSales` は、一度だけ 0 に初期化されます。  `updateSales` を何度入力しても、`totalSales` は最後に計算された値をそのまま保持します。  
+ `Static`変数`totalSales`1 つだけの時間は 0 に初期化します。 入力するたびに`updateSales`、`totalSales`まだを計算した最新の値。  
   
- `Static` 修飾子は次の構文で使用します。  
+ `Static`修飾子は、このコンテキストで使用できます。  
   
- [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
-## 参照  
- [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)   
- [Shared](../../../visual-basic/language-reference/modifiers/shared.md)   
- [Lifetime in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)   
- [変数宣言](../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)   
- [Structures](../../../visual-basic/programming-guide/language-features/data-types/structures.md)   
- [Local Type Inference](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)   
- [Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+## <a name="see-also"></a>関連項目  
+ [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)  
+ [Shared](../../../visual-basic/language-reference/modifiers/shared.md)  
+ [Visual Basic における有効期間](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)  
+ [変数宣言](../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)  
+ [構造体](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
+ [ローカル型の推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
+ [クラスとオブジェクト](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

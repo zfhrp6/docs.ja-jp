@@ -1,44 +1,42 @@
 ---
-title: "&#39;&lt;typename&gt;&#39; cannot inherit from &lt;type&gt; &#39;&lt;basetypename&gt;&#39; because it expands the access of the base &lt;type&gt; outside the assembly | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc30910"
-  - "bc30910"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30910"
+title: "&#39;です。&lt;typename&gt;&#39; から継承できません&lt;型&gt;&#39;&lt; 。basetypename&gt;&#39;ベースのアクセスを展開しているためです&lt;型&gt;、アセンブリ外。"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc30910
+- bc30910
+helpviewer_keywords: BC30910
 ms.assetid: 68fc05c5-5d55-4742-9a3b-ea04312594f4
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: d01981d3136968ae2534539b8eccab4c5c535fbc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &#39;&lt;typename&gt;&#39; cannot inherit from &lt;type&gt; &#39;&lt;basetypename&gt;&#39; because it expands the access of the base &lt;type&gt; outside the assembly
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-基本クラスまたはインターフェイスを継承したクラスまたはインターフェイスの、アクセス レベルの制限が低くなっています。  
+# <a name="39lttypenamegt39-cannot-inherit-from-lttypegt-39ltbasetypenamegt39-because-it-expands-the-access-of-the-base-lttypegt-outside-the-assembly"></a>&#39;です。&lt;typename&gt;&#39; から継承できません&lt;型&gt;&#39;&lt; 。basetypename&gt;&#39;ベースのアクセスを展開しているためです&lt;型&gt;、アセンブリ外。
+基本クラスからクラスまたはインターフェイスを継承またはインターフェイスが、制限の緩いアクセス レベル。  
   
- たとえば、`Public` インターフェイスが `Friend` インターフェイスを継承する、または `Protected` クラスが `Private` クラスを継承するなどの例が挙げられます。  この場合、基本クラスまたはインターフェイスへのアクセスが、指定したレベルで制限されません。  
+ たとえば、`Public`インターフェイスから継承、`Friend`インターフェイス、または`Protected`クラスから継承、`Private`クラスです。 これは、基底クラスまたは目的のレベル以外にアクセスするインターフェイスを公開します。  
   
- **Error ID:** BC30910  
+ **エラー ID:** BC30910  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   派生クラスまたはインターフェイスのアクセス レベルを、基本クラスまたはインターフェイスと少なくとも同じレベルで制限するように変更します。  
+-   派生クラスまたはインターフェイスには、少なくとも基底クラスまたはインターフェイスと同程度に制限を指定のアクセス レベルを変更します。  
   
      または  
   
--   制限の低いアクセス レベルを使用する必要がある場合は、`Inherits` ステートメントを削除します。  より制限の高い基本クラスまたはインターフェイスは継承できません。  
+-   制限の緩いアクセス レベルを必要とする場合は、削除、`Inherits`ステートメントです。 さらに制限された基底クラスまたはインターフェイスから継承することはできません。  
   
-## 参照  
- [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md)   
- [Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md)   
- [Inherits Statement](../../../visual-basic/language-reference/statements/inherits-statement.md)   
- [Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+## <a name="see-also"></a>関連項目  
+ [Class ステートメント](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [Interface ステートメント](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)  
+ [Visual Basic でのアクセス レベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)

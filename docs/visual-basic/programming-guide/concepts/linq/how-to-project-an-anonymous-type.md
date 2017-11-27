@@ -1,32 +1,27 @@
 ---
-title: "方法: プロジェクトの匿名型 (Visual Basic) |Microsoft ドキュメント"
+title: "方法: プロジェクトの匿名型 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 30b42987-0e0e-4b2b-adb1-5255ddfbcd7b
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a9edd260e9bc36449445ee835648573c7bc9c229
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: b383b0a7e0fc0aa22bdcc8ed87628947858986da
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-project-an-anonymous-type-visual-basic"></a>方法: プロジェクトの匿名型 (Visual Basic)
 短期間しか使用しないことがわかっている新しい型にクエリを射影することが必要になる場合があります。 単に射影で使用するために新しい型を作成するのは大きな負担です。 この場合は、匿名型に射影する方法が効率的です。 匿名型を使用すると、クラス名を指定することなくクラスを定義し、そのクラスのオブジェクトを宣言して初期化できます。  
   
- 匿名型は、c# での数学的概念の実装、*組*します。 タプルという数学用語は、1 タプル、2 タプル、3 タプル、4 タプル、5 タプル、n タプルという数列に基づいています。 組とは、それぞれが特定の型を持つオブジェクトの有限のシーケンスを意味します。 名前と値のペアの一覧と呼ばれることもあります。 内のアドレスの内容など、[サンプル XML ファイル: 一般的な購買発注書 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md) XML ドキュメントに次のように表現できます。  
+ 匿名型とは、*タプル*の数学的概念を C# で実装したものです。 タプルという数学用語は、1 タプル、2 タプル、3 タプル、4 タプル、5 タプル、n タプルという数列に基づいています。 組とは、それぞれが特定の型を持つオブジェクトの有限のシーケンスを意味します。 名前と値のペアの一覧と呼ばれることもあります。 たとえば、「[サンプル XML ファイル: 一般的な購買発注書 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md)」という XML ドキュメントでは、住所の内容が次のように表現されます。  
   
 ```  
 Name: Ellen Adams  
@@ -42,7 +37,7 @@ Country: USA
 ## <a name="example"></a>例  
  この例では、`Select` 句で匿名型を射影しています。 さらに、`Dim` を使用して `IEnumerable` オブジェクトを作成しています。 `For Each` ループ内では、繰り返し変数が、クエリ式で作成された匿名型のインスタンスになります。  
   
- この例は、次の XML ドキュメントを使用して:[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)します。  
+ この例では、「[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)」の XML ドキュメントを使用します。  
   
 ```vb  
 Dim custOrd As XElement = XElement.Load("CustomersOrders.xml")  
@@ -69,4 +64,3 @@ LETSS:Let's Stop N Shop:Jaime Yorres
   
 ## <a name="see-also"></a>関連項目  
  [射影と変換 (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
-

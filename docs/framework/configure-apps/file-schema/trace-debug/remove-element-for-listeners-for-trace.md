@@ -1,71 +1,73 @@
 ---
-title: "&lt;trace&gt; の &lt;listeners&gt; の &lt;remove&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/remove"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<remove> 要素"
-  - "remove 要素"
+title: "&lt;削除&gt;要素&lt;リスナー&gt;の&lt;トレース&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/remove
+helpviewer_keywords:
+- remove element
+- <remove> element
 ms.assetid: 9a5cd1b5-be1a-485f-8f0c-2890ad3ef3e0
-caps.latest.revision: 12
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: ff1eb93a6d81f83b60e2621296e0c9d995699898
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;trace&gt; の &lt;listeners&gt; の &lt;remove&gt; 要素
-**Listeners** コレクションからリスナーを削除します。  
+# <a name="ltremovegt-element-for-ltlistenersgt-for-lttracegt"></a>&lt;削除&gt;要素&lt;リスナー&gt;の&lt;トレース&gt;
+リスナーを削除、**リスナー**コレクション。  
   
-## 構文  
+ \<configuration>  
+\<system.diagnostics >  
+\<トレース >  
+\<リスナー >  
+\<削除 >  
   
-```  
+## <a name="syntax"></a>構文  
   
+```xml  
 <remove name="listener name" />  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|Attribute|説明|  
-|---------------|--------|  
-|**name**|必須の属性です。<br /><br /> **Listeners** コレクションから削除するリスナーの名前。|  
+|属性|説明|  
+|---------------|-----------------|  
+|**name**|必須の属性です。<br /><br /> 削除するリスナーの名前、**リスナー**コレクション。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
+|-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
-|`listeners`|メッセージを収集、格納、およびルーティングするリスナーを指定します。  リスナーは、トレース出力を適切なターゲットに転送します。|  
+|`listeners`|リスナーを収集すると、ストアを指定し、メッセージをルーティングします。 リスナーでは、適切なターゲットのトレースを出力します。|  
 |`system.diagnostics`|メッセージを収集、格納、およびルーティングするトレース リスナーとトレース スイッチを設定するレベルを指定します。|  
-|`trace`|ASP.NET トレース サービスを設定します。|  
+|`trace`|ASP.NET トレース サービスを構成します。|  
   
-## 解説  
+## <a name="remarks"></a>コメント  
   
 > [!NOTE]
->  `Listeners` コレクションから <xref:System.Diagnostics.DefaultTraceListener> を削除すると、<xref:System.Diagnostics.Debug.Assert%2A?displayProperty=fullName>、<xref:System.Diagnostics.Trace.Assert%2A?displayProperty=fullName>、<xref:System.Diagnostics.Debug.Fail%2A?displayProperty=fullName>、および <xref:System.Diagnostics.Trace.Fail%2A?displayProperty=fullName> の各メソッドの動作が変わります。  `Assert` メソッドまたは `Fail` メソッドを呼び出すと、通常はメッセージ ボックスが表示されますが、`Listeners` コレクションに <xref:System.Diagnostics.DefaultTraceListener> がない場合はメッセージ ボックスが表示されません。  
+>  削除、<xref:System.Diagnostics.DefaultTraceListener>から、`Listeners`コレクションの動作を変更する、 <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>、 <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType>、 <xref:System.Diagnostics.Debug.Fail%2A?displayProperty=nameWithType>、および<xref:System.Diagnostics.Trace.Fail%2A?displayProperty=nameWithType>メソッドです。 呼び出す、`Assert`または`Fail`メソッドの結果、通常、メッセージ ボックスの表示の場合、メッセージ ボックスは表示されませんが、<xref:System.Diagnostics.DefaultTraceListener>に含まれていない、`Listeners`コレクション。  
   
-## 使用例  
- トレース **Listeners** コレクションから既定のトレース リスナーを削除する方法を次の例に示します。  
+## <a name="example"></a>例  
+ 次の例は、既定のトレース リスナーをトレースから削除する方法を示しています。**リスナー**コレクション。  
   
-```  
+```xml  
 <configuration>  
    <system.diagnostics>  
       <trace autoflush="true" indentsize="0">  
@@ -77,9 +79,9 @@ caps.handback.revision: 12
 </configuration>  
 ```  
   
-## 参照  
- <xref:System.Diagnostics.TraceListener>   
- <xref:System.Diagnostics.DefaultTraceListener>   
- <xref:System.Diagnostics.TextWriterTraceListener>   
- <xref:System.Diagnostics.EventLogTraceListener>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Diagnostics.TraceListener>  
+ <xref:System.Diagnostics.DefaultTraceListener>  
+ <xref:System.Diagnostics.TextWriterTraceListener>  
+ <xref:System.Diagnostics.EventLogTraceListener>  
  [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

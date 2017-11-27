@@ -1,57 +1,61 @@
 ---
-title: "方法 : 補間モードを使用してスケーリング時の画質を制御する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "イメージ [Windows フォーム], 制御 (質を)"
-  - "イメージ [Windows フォーム], スケーリング"
-  - "補間モード, 制御 (画質を)"
+title: "方法 : 補間モードを使用してスケーリング時の画質を制御する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- interpolation mode [Windows Forms], controlling image quality
+- images [Windows Forms], scaling
+- images [Windows Forms], controlling quality
 ms.assetid: fde9bccf-8aa5-4b0d-ba4b-788740627b02
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 10a0ef4e7fd8514245a7659dd515d8f363a716ff
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 補間モードを使用してスケーリング時の画質を制御する
-<xref:System.Drawing.Graphics> オブジェクトの補間モードは、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] がイメージをスケーリングする方法 \(拡大および縮小\) に影響します。  <xref:System.Drawing.Drawing2D.InterpolationMode> 列挙体により、いくつかの補間モードが定義されています。そのうちの一部を次の一覧に示します。  
+# <a name="how-to-use-interpolation-mode-to-control-image-quality-during-scaling"></a>方法 : 補間モードを使用してスケーリング時の画質を制御する
+補間モード、<xref:System.Drawing.Graphics>オブジェクト方法に影響を与えます[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]スケール (拡大および縮小) イメージ。 <xref:System.Drawing.Drawing2D.InterpolationMode>列挙体は、以下のうち一部を示しています、いくつかの補間モードを定義します。  
   
--   <xref:System.Drawing.Drawing2D.InterpolationMode>  
+-   <xref:System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor>  
   
--   <xref:System.Drawing.Drawing2D.InterpolationMode>  
+-   <xref:System.Drawing.Drawing2D.InterpolationMode.Bilinear>  
   
--   <xref:System.Drawing.Drawing2D.InterpolationMode>  
+-   <xref:System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear>  
   
--   <xref:System.Drawing.Drawing2D.InterpolationMode>  
+-   <xref:System.Drawing.Drawing2D.InterpolationMode.Bicubic>  
   
--   <xref:System.Drawing.Drawing2D.InterpolationMode>  
+-   <xref:System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic>  
   
- イメージを拡大するには、元のイメージの各ピクセルを、より大きなイメージに含まれる複数のピクセルのグループに割り当てる必要があります。  イメージを縮小する場合は、元のイメージに含まれる複数のピクセルのグループを、より小さなイメージの単一のピクセルに割り当てる必要があります。  このような割り当てを行うアルゴリズムの性能に応じて、スケーリング後のイメージの画質が決まります。  高画質のイメージを生成するアルゴリズムほど、処理に時間がかかる傾向にあります。  上の一覧では、<xref:System.Drawing.Drawing2D.InterpolationMode> が最も低画質のモードで、<xref:System.Drawing.Drawing2D.InterpolationMode> が最も高画質のモードです。  
+ イメージを拡大するには、大きいイメージのピクセルのグループに、元のイメージ内の各ピクセルをマップする必要があります。 イメージを縮小するより小さなイメージの単一のピクセルに元のイメージのピクセルのグループをマップする必要があります。 これらのマッピングを実行するアルゴリズムの有効性は、スケーリングされたイメージの品質を決定します。 高品質のスケーリングされたイメージを生成するアルゴリズムは、処理時間を必要とする傾向があります。 上記の一覧で<xref:System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor>が最も低い品質モードと<xref:System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic>最高品質のモードします。  
   
- 補間モードを設定するには、<xref:System.Drawing.Drawing2D.InterpolationMode> 列挙体のいずれかのメンバーを <xref:System.Drawing.Graphics> オブジェクトの <xref:System.Drawing.Graphics.InterpolationMode%2A> プロパティに割り当てます。  
+ 補間モードを設定するには、メンバーのいずれかを割り当てる、<xref:System.Drawing.Drawing2D.InterpolationMode>列挙型を<xref:System.Drawing.Graphics.InterpolationMode%2A>のプロパティ、<xref:System.Drawing.Graphics>オブジェクト。  
   
-## 使用例  
- イメージを描画し、そのイメージを 3 つの異なる補間モードで縮小する例を次に示します。  
+## <a name="example"></a>例  
+ 次の例では、イメージを描画し、次の 3 つの異なる補間モードとイメージが圧縮されます。  
   
- 元のイメージと縮小後の 3 つのイメージを次の図に示します。  
+ 次の図は、元のイメージと 3 つの小さいイメージを示します。  
   
- ![さまざまな補間設定を含むイメージ](../../../../docs/framework/winforms/advanced/media/csgrapes1.png "csgrapes1")  
+ ![さまざまな補間設定でイメージ](../../../../docs/framework/winforms/advanced/media/csgrapes1.png "csgrapes1")  
   
  [!code-csharp[System.Drawing.WorkingWithImages#81](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#81)]
  [!code-vb[System.Drawing.WorkingWithImages#81](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#81)]  
   
-## コードのコンパイル  
- 前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ 前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。  
   
-## 参照  
- [イメージ、ビットマップ、およびメタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)   
+## <a name="see-also"></a>関連項目  
+ [イメージ、ビットマップ、メタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
  [イメージ、ビットマップ、アイコン、およびメタファイルの操作](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)

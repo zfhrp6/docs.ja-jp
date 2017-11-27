@@ -1,81 +1,80 @@
 ---
-title: "Procedure Parameters and Arguments (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "procedures, arguments"
-  - "procedures, argument lists"
-  - "values, passing to procedures"
-  - "arguments [Visual Basic], passing"
-  - "procedures, parameters"
-  - "Visual Basic code, argument lists"
-  - "Visual Basic code, procedures"
-  - "parameters, Visual Basic procedures"
-  - "parameters, lists"
-  - "arguments [Visual Basic], Visual Basic procedures"
-  - "arguments [Visual Basic], procedures"
-  - "parameter lists"
-  - "Visual Basic code, parameter lists"
-  - "argument lists"
-  - "procedures, parameter lists"
+title: "プロシージャのパラメーターと引数 (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- procedures [Visual Basic], arguments
+- procedures [Visual Basic], argument lists
+- values [Visual Basic], passing to procedures
+- arguments [Visual Basic], passing
+- procedures [Visual Basic], parameters
+- Visual Basic code, argument lists
+- Visual Basic code, procedures
+- parameters [Visual Basic], Visual Basic procedures
+- parameters [Visual Basic], lists
+- arguments [Visual Basic], Visual Basic procedures
+- arguments [Visual Basic], procedures
+- parameter lists [Visual Basic]
+- Visual Basic code, parameter lists
+- argument lists [Visual Basic]
+- procedures [Visual Basic], parameter lists
 ms.assetid: ff275aff-aa13-40df-bd4c-63486db8c1e9
-caps.latest.revision: 21
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 726667950cfb227a0359bd6238c202883561749c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Procedure Parameters and Arguments (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-プロシージャは、ほとんどの場合、呼び出されたときの状況に関する情報を必要とします。  繰り返し実行されるタスクや共有されているタスクを実行するプロシージャは、呼び出されるたびに異なる情報を使用します。  この情報は、プロシージャを呼び出すときに渡される変数、定数、および式から構成されています。  
+# <a name="procedure-parameters-and-arguments-visual-basic"></a>プロシージャのパラメーターと引数 (Visual Basic)
+ほとんどの場合、プロシージャが呼び出されたときの状況に関する情報を必要とします。 繰り返しまたは共有のタスクを実行する手順は、呼び出しごとに異なる情報を使用します。 この情報は、変数、定数、およびメソッドを呼び出すときに、プロシージャに渡す式で構成されます。  
   
- *パラメーター*は、プロシージャが呼び出されるときに期待する値を表します。  パラメーターは、プロシージャの宣言で定義されます。  
+ A*パラメーター*プロシージャには、このメソッドを呼び出すときに指定することが期待される値を表します。 プロシージャの宣言では、そのパラメーターを定義します。  
   
- プロシージャは、パラメーターなしでも、1 つのパラメーターでも、複数のパラメーターでも定義できます。  プロシージャの定義のうち、パラメーターを指定する部分を*パラメーター リスト*と呼びます。  
+ パラメーターを指定せず、1 つのパラメーター、または 1 つ以上を持つプロシージャを定義することができます。 パラメーターを指定するプロシージャの定義の一部と呼ばれる、*パラメーター リスト*です。  
   
- *引数*は、プロシージャを呼び出すときに、プロシージャのパラメーターに渡す値を表します。  呼び出し元のコードは、プロシージャを呼び出すときに引数を渡します。  プロシージャ呼び出しのうち、引数を指定する部分を*引数リスト*と呼びます。  
+ *引数*プロシージャを呼び出す場合、プロシージャのパラメーターに指定した値を表します。 呼び出し元のコードは、プロシージャを呼び出すときに、引数を指定します。 引数を指定するプロシージャ呼び出しの一部と呼ばれる、*引数リスト*です。  
   
- 次の図は、プロシージャ `safeSquareRoot` を 2 つの場所から呼び出すコードを示したものです。  最初の呼び出しでは、変数 `x` の値 \(4.0\) をパラメーター `number` に渡し、`root` の戻り値 \(2.0\) が変数 `y` に代入されます。  2 番目の呼び出しでは、リテラル値 9.0 を `number` に渡し、戻り値 \(3.0\) を変数 `z` に代入します。  
+ 次の図は、プロシージャを呼び出すコード`safeSquareRoot`2 つの異なる場所からします。 最初の呼び出しは、変数の値を渡します`x`(4.0) パラメーターに`number`、され、戻り値で`root`(2.0)、変数に割り当てられた`y`です。 2 番目の呼び出しにリテラル値 9.0 に渡します`number`、戻り値 (3.0) を変数に代入し、`z`です。  
   
- ![パラメーターに引数を渡すグラフィック ダイアグラム](../../../../visual-basic/programming-guide/language-features/procedures/media/parametersargue.gif "ParametersArgue")  
+ ![パラメーターに引数を渡すグラフィック ダイアグラム](./media/parametersargue.gif "ParametersArgue")  
 パラメーターに引数を渡す  
   
- 詳細については、「[Differences Between Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/differences-between-parameters-and-arguments.md)」を参照してください。  
+ 詳細については、次を参照してください。[の相違点の間でパラメーターと引数](./differences-between-parameters-and-arguments.md)です。  
   
-## パラメーターのデータ型  
- パラメーターのデータ型を宣言するには、パラメーターの宣言の中で `As` 句を使用します。  たとえば、次の関数は、文字列型と整数型の引数を受け取ります。  
+## <a name="parameter-data-type"></a>パラメーターのデータ型  
+ 使用して、パラメーターのデータ型を定義する、`As`宣言内の句。 たとえば、次の関数は、文字列と整数を受け取ります。  
   
  [!code-vb[VbVbcnProcedures#32](./codesnippet/VisualBasic/procedure-parameters-and-arguments_1.vb)]  
   
- 型チェック スイッチ \([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)\) が `Off,` の場合、`As` 句は省略可能です。ただし、いずれかのパラメーターがこれを使用している場合は、すべてのパラメーターで使用する必要があります。  型チェックが `On` になっている場合は、プロシージャのすべての引数に `As` 句が必要です。  
+ 型チェック スイッチの場合 ([Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) は`Off,`、`As`ことを除き、すべてのパラメーターがそれを使用する必要があります任意の 1 つのパラメーターが使用している場合は、句は省略可能です。 型チェックが場合`On`、`As`句はすべてのプロシージャのパラメーターは必須です。  
   
- `String` パラメーターに `Byte` を渡すなど、呼び出し元のコードが、対応するパラメーターとは異なるデータ型の引数を渡す場合、次のいずれかの作業が必要です。  
+ 呼び出し元のコードがなど、対応するパラメーターの異なるデータ型の引数を指定するかどうかは`Byte`を`String`パラメーターを次のいずれかの操作にする必要があります。  
   
--   パラメーターのデータ型に拡大変換されるデータ型の引数だけを渡す  
+-   パラメーターのデータ型に拡大変換するデータ型の引数だけを渡す  
   
--   暗黙の縮小変換を許可する `Option Strict Off` を設定する  
+-   設定`Option Strict Off`暗黙的な縮小変換です使用できるように、または。  
   
--   変換キーワードを使用してデータ型を明示的に変換する  
+-   変換キーワードを使用して、データ型を明示的に変換します。  
   
-### 型パラメーター。  
- *ジェネリック プロシージャ* も、通常のパラメーターの他に 1 つ以上の*型パラメーター*を定義します。  ジェネリック プロシージャを使うと、呼び出し元のコードは、プロシージャを呼び出すたびに異なるデータ型を渡すことができるため、個々の呼び出しの要件に合わせてデータ型を変更できます。  [Generic Procedures in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md) を参照してください。  
+### <a name="type-parameters"></a>型パラメーター  
+ A*ジェネリック プロシージャ*も 1 つまたは複数定義されて*パラメーター入力*だけでなく、通常のパラメーターです。 ジェネリック プロシージャでは、個々 の呼び出しの要件をデータ型を調整できるように、プロシージャを呼び出すたびに異なるデータ型を渡すには、呼び出し元のコードを許可します。 「 [Generic Procedures in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)」を参照してください。  
   
-## 参照  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Sub Procedures](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md)   
- [Function プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)   
- [Property プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)   
- [Operator Procedures](../../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)   
- [How to: Define a Parameter for a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-parameter-for-a-procedure.md)   
- [How to: Pass Arguments to a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-pass-arguments-to-a-procedure.md)   
- [Passing Arguments by Value and by Reference](../../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)   
- [Procedure Overloading](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)   
- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+## <a name="see-also"></a>関連項目  
+ [手順](./index.md)  
+ [Sub プロシージャ](./sub-procedures.md)  
+ [Function プロシージャ](./function-procedures.md)  
+ [Property プロシージャ](./property-procedures.md)  
+ [演算子プロシージャ](./operator-procedures.md)  
+ [方法 : プロシージャにパラメーターを定義する](./how-to-define-a-parameter-for-a-procedure.md)  
+ [方法: プロシージャに引数を渡す](./how-to-pass-arguments-to-a-procedure.md)  
+ [引数の値渡しと参照渡し](./passing-arguments-by-value-and-by-reference.md)  
+ [プロシージャのオーバーロード](./procedure-overloading.md)  
+ [Visual Basic での型変換](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)

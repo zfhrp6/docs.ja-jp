@@ -1,58 +1,56 @@
 ---
-title: "Call Statement (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Call"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "procedures, Call statement"
-  - "Call statement"
-  - "procedures, calling"
+title: "Call ステートメント (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Call
+helpviewer_keywords:
+- procedures [Visual Basic], Call statement
+- Call statement [Visual Basic]
+- procedures [Visual Basic], calling
 ms.assetid: e5b31571-6867-406f-b8e7-a3f9aae4723a
-caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: c72450fd6f931f36f640d3e384a6fd38d57a7a23
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Call Statement (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-`Function` 、`Sub`、またはダイナミック リンク ライブラリ \(DLL\) プロシージャに制御を渡すフロー制御ステートメントです。  
+# <a name="call-statement-visual-basic"></a>Call ステートメント (Visual Basic)
+転送コントロールを`Function`、 `Sub`、またはダイナミック リンク ライブラリ (DLL) プロシージャです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-[ Call ] procedureName [ (argumentList) ]  
+[ Call ] procedureName [ (argumentList) ]  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
  `procedureName`  
- 必ず指定します。  呼び出すプロシージャの名前を指定します。  
+ 必須です。 呼び出すプロシージャの名前。  
   
  `argumentList`  
- 省略可能です。  プロシージャを呼び出すときにプロシージャに渡す引数を表す、変数または式のリストを指定します。  複数の引数を指定するときは、コンマ \(,\) で区切ります。  `argumentList` を指定する場合は、かっこで囲む必要があります。  
+ 省略可能です。 変数または呼び出された場合、プロシージャに渡される引数を表す式の一覧です。 複数の引数は、コンマで区切られます。 含める場合`argumentList`かっこで囲む必要があります。  
   
-## 解説  
- プロシージャをダイヤルすると `Call` のキーワードを使用できます。  ほとんどのプロシージャ呼び出しでは、このキーワードを使用する必要はありません。  
+## <a name="remarks"></a>コメント  
+ 使用することができます、`Call`キーワード、プロシージャを呼び出すときにします。 ほとんどのプロシージャ呼び出しのためには、このキーワードを使用する必要はありません。  
   
- 呼び出された式が ID で始まっていない場合に `Call` のキーワードを使用します。  他の `Call` のキーワードの使用は推奨されていません。  
+ 通常使用する、`Call`キーワードと呼ばれる式は、識別子で開始しない場合。 使用、`Call`キーワードの他の使用はお勧めしません。  
   
- プロシージャが値を返す場合は、`Call` ステートメントを使用すると戻り値が破棄されます。  
+ プロシージャは、値を返す場合、`Call`ステートメントにそれを廃棄します。  
   
-## 使用例  
- 次のコードは `Call` のキーワードがプロシージャをダイヤルする必要とする 2 例に示します。  どちらの例では、という式は ID から開始されません。  
+## <a name="example"></a>例  
+ 次のコードは、2 つの例を示しています。 ここで、`Call`キーワードは、プロシージャを呼び出す必要です。 どちらの例では、呼び出された式は識別子で開始しません。  
   
  [!code-vb[VbVbalrStatements#97](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/call-statement_1.vb)]  
   
-## 参照  
- [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)   
- [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)   
- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)   
- [Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
+## <a name="see-also"></a>関連項目  
+ [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [ラムダ式](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)

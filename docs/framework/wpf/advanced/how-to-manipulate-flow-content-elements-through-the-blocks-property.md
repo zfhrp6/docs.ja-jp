@@ -1,28 +1,34 @@
 ---
-title: "方法 : Blocks プロパティを介してフロー コンテンツ要素を操作する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Blocks プロパティ, 操作 (フロー コンテンツ要素を)"
-  - "ドキュメント, 操作 (Blocks プロパティを介してフロー コンテンツ要素を)"
-  - "フロー コンテンツ要素, 操作 (Blocks プロパティを介して)"
-  - "プロパティ, ブロック, 操作 (フロー コンテンツ要素を)"
+title: "方法 : Blocks プロパティを介してフロー コンテンツ要素を操作する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- documents [WPF], manipulating flow content elements through Blocks property
+- flow content elements [WPF], manipulating through Blocks property
+- properties [WPF], Blocks [WPF], manipulating flow content elements
+- Blocks property [WPF], manipulating flow content elements
 ms.assetid: aeda4ece-b979-4818-a093-ef938e908751
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f246b7ab5eae52b745849daf2bedadb7431d7d34
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Blocks プロパティを介してフロー コンテンツ要素を操作する
-ここでは、**Blocks** プロパティを使用してフロー コンテンツ要素に対して実行できるいくつかの一般的な操作を示します。  このプロパティは、<xref:System.Windows.Documents.BlockCollection> の項目を追加および削除するために使用します。  **Blocks** プロパティを備えたフロー コンテンツ要素には、以下のものがあります。  
+# <a name="how-to-manipulate-flow-content-elements-through-the-blocks-property"></a>方法 : Blocks プロパティを介してフロー コンテンツ要素を操作する
+これらの例では、を介してフロー コンテンツ要素に対して実行できる一般的な操作の点を示しています、**ブロック**プロパティです。 このプロパティを使用してアイテムの追加し、削除を<xref:System.Windows.Documents.BlockCollection>です。 フロー コンテンツ要素で、その機能、**ブロック**プロパティが含まれます。  
   
 -   <xref:System.Windows.Documents.Figure>  
   
@@ -34,43 +40,43 @@ caps.handback.revision: 6
   
 -   <xref:System.Windows.Documents.TableCell>  
   
- このトピックの例では、フロー コンテンツ要素として <xref:System.Windows.Documents.Section> を使用していますが、フロー コンテンツ要素コレクションをホストするすべての要素に同じ手法を適用できます。  
+ 使用する例<xref:System.Windows.Documents.Section>フローとコンテンツの要素が、これらの手法がフロー コンテンツ要素のコレクションをホストするすべての要素に適用します。  
   
-## 使用例  
- 次の例では、新しい <xref:System.Windows.Documents.Section> を作成し、**Add** メソッドを使用して **Section** コンテンツに新しい Paragraph を追加します。  
+## <a name="example"></a>例  
+ 次の例は、新しい作成<xref:System.Windows.Documents.Section>しを使用して、**追加**に新しい段落を追加する方法、**セクション**内容。  
   
  [!code-csharp[FlowDocumentSnippets#_SectionBlocksAdd](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_sectionblocksadd)]
  [!code-vb[FlowDocumentSnippets#_SectionBlocksAdd](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_sectionblocksadd)]  
   
-## 使用例  
- 次の例では、新しい <xref:System.Windows.Documents.Paragraph> 要素を作成して <xref:System.Windows.Documents.Section> の先頭に挿入します。  
+## <a name="example"></a>例  
+ 次の例は、新しい作成<xref:System.Windows.Documents.Paragraph>要素の先頭に挿入し、<xref:System.Windows.Documents.Section>です。  
   
  [!code-csharp[FlowDocumentSnippets#_SectionBlocksInsert](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_sectionblocksinsert)]
  [!code-vb[FlowDocumentSnippets#_SectionBlocksInsert](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_sectionblocksinsert)]  
   
-## 使用例  
- 次の例では、<xref:System.Windows.Documents.Section> に含まれているトップレベルの <xref:System.Windows.Documents.Block> 要素の数を取得します。  
+## <a name="example"></a>例  
+ 次の例は、最上位レベルの数を取得<xref:System.Windows.Documents.Block>に含まれる要素の<xref:System.Windows.Documents.Section>します。  
   
  [!code-csharp[FlowDocumentSnippets#_SectionBlocksCount](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_sectionblockscount)]
  [!code-vb[FlowDocumentSnippets#_SectionBlocksCount](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_sectionblockscount)]  
   
-## 使用例  
- 次の例では、<xref:System.Windows.Documents.Section> 内の最後の <xref:System.Windows.Documents.Block> 要素を削除します。  
+## <a name="example"></a>例  
+ 次の例の最後の削除<xref:System.Windows.Documents.Block>内の要素、<xref:System.Windows.Documents.Section>です。  
   
  [!code-csharp[FlowDocumentSnippets#_SectionBlocksRemoveLast](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_sectionblocksremovelast)]
  [!code-vb[FlowDocumentSnippets#_SectionBlocksRemoveLast](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_sectionblocksremovelast)]  
   
-## 使用例  
- 次の例では、<xref:System.Windows.Documents.Section> からすべての内容 \(<xref:System.Windows.Documents.Block> 要素\) を消去します。  
+## <a name="example"></a>例  
+ 次の例では、すべての内容を消去 (<xref:System.Windows.Documents.Block>要素) から、<xref:System.Windows.Documents.Section>です。  
   
  [!code-csharp[FlowDocumentSnippets#_SectionBlocksClear](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_sectionblocksclear)]
  [!code-vb[FlowDocumentSnippets#_SectionBlocksClear](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_sectionblocksclear)]  
   
-## 参照  
- <xref:System.Windows.Documents.BlockCollection>   
- <xref:System.Windows.Documents.InlineCollection>   
- <xref:System.Windows.Documents.ListItemCollection>   
- [フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)   
- [RowGroups プロパティを介してテーブルの行グループを操作する](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)   
- [Columns プロパティによってテーブルの列を操作する](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-columns-through-the-columns-property.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Documents.BlockCollection>  
+ <xref:System.Windows.Documents.InlineCollection>  
+ <xref:System.Windows.Documents.ListItemCollection>  
+ [フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
+ [RowGroups プロパティを介してテーブルの行グループを操作する](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)  
+ [Columns プロパティによってテーブルの列を操作する](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-columns-through-the-columns-property.md)  
  [RowGroups プロパティを介してテーブルの行グループを操作する](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)

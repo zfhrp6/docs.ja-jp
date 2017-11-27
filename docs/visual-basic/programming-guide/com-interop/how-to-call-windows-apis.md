@@ -1,52 +1,51 @@
 ---
-title: "How to: Call Windows APIs (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "API calls"
-  - "Windows API, calling"
-  - "API calls, platform invoke"
-  - "calls, stored procedures"
+title: "方法: Windows API を呼び出す (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- API calls [Visual Basic]
+- Windows API, calling
+- API calls [Visual Basic], platform invoke
+- calls [Visual Basic], stored procedures
 ms.assetid: 27d75f0a-54ab-4ee1-b91d-43513a19b12d
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: a219e031cdd36c713db8dcee6cc1da3849c9cf93
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Call Windows APIs (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-次に示すのは、user32.dll の `MessageBox` 関数を定義および呼び出して、その関数に文字列を渡す例です。  
+# <a name="how-to-call-windows-apis-visual-basic"></a>方法: Windows API を呼び出す (Visual Basic)
+この例は、定義し、呼び出し、 `MessageBox` user32.dll 内の関数に文字列を渡します。  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-vb[VbVbalrInterop#1](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/how-to-call-windows-apis_1.vb)]  
   
-## コードのコンパイル  
- この例には、次の項目が必要です。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ この例で必要な要素は次のとおりです。  
   
 -   <xref:System> 名前空間への参照  
   
-## 信頼性の高いプログラミング  
+## <a name="robust-programming"></a>信頼性の高いプログラミング  
  次の条件を満たす場合は、例外が発生する可能性があります。  
   
--   メソッドが静的でないか、抽象であるか、定義済みである場合。  親の型がインターフェイスであるか、*name* または *dllName* の長さがゼロである場合  \(<xref:System.ArgumentException>\)  
+-   メソッドは静的でないは抽象である、または以前に定義されてです。 親の型が、インターフェイス、またはの長さ*名前*または*dllName*は 0 です。 (<xref:System.ArgumentException>)  
   
--   *name* または *dllName* が `Nothing` である場合  \(<xref:System.ArgumentNullException>\)  
+-   *名前*または*dllName*は`Nothing`します。 (<xref:System.ArgumentNullException>)  
   
--   コンテナーの型が `CreateType` を使用して作成済みの型である場合  \(<xref:System.InvalidOperationException>\)  
+-   含んでいる型が `CreateType` を使用して以前に作成されています。 (<xref:System.InvalidOperationException>)  
   
-## 参照  
- [A Closer Look at Platform Invoke](http://msdn.microsoft.com/ja-jp/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)   
- [プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)   
- [アンマネージ DLL 関数の処理](../Topic/Consuming%20Unmanaged%20DLL%20Functions.md)   
- [Defining a Method with Reflection Emit](http://msdn.microsoft.com/ja-jp/84fd3bf6-628f-41aa-83d9-b990cf926e81)   
- [Walkthrough: Calling Windows APIs](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)   
- [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)
+## <a name="see-also"></a>関連項目  
+ [詳しく見てプラットフォーム呼び出し](http://msdn.microsoft.com/en-us/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)  
+ [プラットフォーム呼び出しの例](../../../framework/interop/platform-invoke-examples.md)  
+ [アンマネージ DLL 関数の処理](../../../framework/interop/consuming-unmanaged-dll-functions.md)  
+ [出力リフレクションを使用してメソッドを定義します。](http://msdn.microsoft.com/en-us/84fd3bf6-628f-41aa-83d9-b990cf926e81)  
+ [チュートリアル : Windows API の呼び出し](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)  
+ [COM 相互運用](../../../visual-basic/programming-guide/com-interop/index.md)

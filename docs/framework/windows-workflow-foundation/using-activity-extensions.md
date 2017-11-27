@@ -1,34 +1,37 @@
 ---
-title: "アクティビティ拡張機能の使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "アクティビティ拡張機能の使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 500eb96a-c009-4247-b6b5-b36faffdf715
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7ff4f441df437dc5785b6df77c16923a1a1c9906
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# アクティビティ拡張機能の使用
-アクティビティは、ワークフローで明示的にモデル化されていない追加機能の提供をホストに許可するワークフロー アプリケーション拡張機能と相互作用することができます。ここでは、アクティビティの実行回数をカウントする拡張機能を作成および使用する方法について説明します。  
+# <a name="using-activity-extensions"></a>アクティビティ拡張機能の使用
+アクティビティは、ワークフローで明示的にモデル化されていない追加機能の提供をホストに許可するワークフロー アプリケーション拡張機能と相互作用することができます。  ここでは、アクティビティの実行回数をカウントする拡張機能を作成および使用する方法について説明します。  
   
-### 実行回数をカウントするアクティビティ拡張機能を使用するには  
+### <a name="to-use-an-activity-extension-to-count-executions"></a>実行回数をカウントするアクティビティ拡張機能を使用するには  
   
-1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を起動します。**\[新規作成\]**、**\[プロジェクト\]** の順に選択します。**\[Visual C\#\]** ノードから **\[ワークフロー\]** を選択します。テンプレートの一覧から **\[ワークフロー コンソール アプリケーション\]** を選択します。プロジェクトに「`Extensions`」という名前を付けます。**\[OK\]** をクリックして、プロジェクトを作成します。  
+1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を開きます。 選択**新しい**、**プロジェクト**です。 下にある、 **Visual c#**ノード、**ワークフロー**です。  選択**ワークフロー コンソール アプリケーション**テンプレートの一覧からです。 プロジェクトに `Extensions` という名前を付けます。 をクリックして**OK**プロジェクトを作成します。  
   
-2.  Program.cs ファイルに、**System.Collections.Generic** 名前空間の `using` ステートメントを追加します。  
+2.  追加、 `using` Program.cs ファイル内のステートメント、 **System.Collections.Generic**名前空間。  
   
     ```  
     using System.Collections.Generic;  
-  
     ```  
   
-3.  Program.cs ファイルで、**ExecutionCountExtension** という名前の新しいクラスを作成します。次のコードは、**Register** メソッドを呼び出したときにインスタンス ID を追跡するワークフロー拡張機能を作成します。  
+3.  Program.cs ファイルでは、という名前の新しいクラスを作成**ExecutionCountExtension**です。 次のコードでは、インスタンス Id を追跡するワークフロー拡張機能とその**登録**メソッドが呼び出されます。  
   
     ```  
     // This extension collects a list of workflow Ids  
@@ -60,10 +63,9 @@ caps.handback.revision: 5
             }  
         }  
     }  
-  
     ```  
   
-4.  **ExecutionCountExtension** を使用するアクティビティを作成します。次のコードは、ランタイムから **ExecutionCountExtension** オブジェクトを取得して、アクティビティが実行されるとその **Register** メソッドを呼び出すアクティビティを定義します。  
+4.  使用するアクティビティを作成、 **ExecutionCountExtension**です。 次のコードを取得するアクティビティを定義する、 **ExecutionCountExtension**オブジェクト呼び出しとランタイムからその**登録**アクティビティの実行時のメソッドです。  
   
     ```  
     // Activity that consumes an extension provided by the host. If the extension is available  
@@ -80,10 +82,9 @@ caps.handback.revision: 5
   
         }  
     }  
-  
     ```  
   
-5.  program.cs ファイルの **Main** メソッドにアクティビティを実装します。次のコードには、2 つの異なるワークフローを生成し、各ワークフローを数回実行して、拡張機能に含まれる結果のデータを表示するメソッドが含まれています。  
+5.  アクティビティの実装、 **Main** program.cs ファイルのメソッドです。 次のコードには、2 つの異なるワークフローを生成し、各ワークフローを数回実行して、拡張機能に含まれる結果のデータを表示するメソッドが含まれています。  
   
     ```  
     class Program  

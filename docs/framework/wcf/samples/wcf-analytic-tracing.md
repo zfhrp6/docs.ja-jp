@@ -1,54 +1,57 @@
 ---
-title: "WCF 分析トレース | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WCF 分析トレース"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6029c7c7-3515-4d36-9d43-13e8f4971790
-caps.latest.revision: 21
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: b752ea7fa4d4eda1afefca69778c68feb898177d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# WCF 分析トレース
-このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] の ETW に書き込む分析トレースのストリームに独自のトレース イベントを追加する方法を示します。分析トレースは、パフォーマンスを低下させずに簡単にサービスを確認できるようにするためのものです。このサンプルでは、<xref:System.Diagnostics.Eventing?displayProperty=fullName> API を使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと統合されるイベントを記述する方法を示します。  
+# <a name="wcf-analytic-tracing"></a>WCF 分析トレース
+このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] の ETW に書き込む分析トレースのストリームに独自のトレース イベントを追加する方法を示します。 分析トレースは、パフォーマンスを低下させずに簡単にサービスを確認できるようにするためのものです。 このサンプルでは、<xref:System.Diagnostics.Eventing?displayProperty=nameWithType> API を使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと統合されるイベントを記述する方法を示します。  
   
- <xref:System.Diagnostics.Eventing?displayProperty=fullName> API [!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「<xref:System.Diagnostics.Eventing?displayProperty=fullName>」を参照してください。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] API <xref:System.Diagnostics.Eventing?displayProperty=nameWithType>、「<xref:System.Diagnostics.Eventing?displayProperty=nameWithType>」を参照してください。  
   
- Windows でのイベントのトレースの詳細については、「[ETW によりデバッグおよびパフォーマンス調整を改善する](http://go.microsoft.com/fwlink/?LinkId=166488)」を参照してください。  
+ Windows イベント トレーシングの詳細については、次を参照してください。[デバッグを向上させると、パフォーマンスのチューニングを ETW](http://go.microsoft.com/fwlink/?LinkId=166488)です。  
   
-## EventProvider の破棄  
- このサンプルでは、<xref:System.IDisposable?displayProperty=fullName> を実装した <xref:System.Diagnostics.Eventing.EventProvider?displayProperty=fullName> クラスを使用します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのトレースを実装する場合、サービスの有効期間に <xref:System.Diagnostics.Eventing.EventProvider> のリソースを使用することがあります。そのため、読みやすくするためにも、このサンプルでは、ラップされた <xref:System.Diagnostics.Eventing.EventProvider> を破棄しません。何かの理由で、サービスに対して別のトレースの要件を設定し、このリソースを破棄しなければならない場合は、アンマネージ リソースの破棄に関するベスト プラクティスに従ってこのサンプルを変更してください。アンマネージ リソースの破棄[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[Dispose メソッドの実装](http://go.microsoft.com/fwlink/?LinkId=166436)」を参照してください。  
+## <a name="disposing-eventprovider"></a>EventProvider の破棄  
+ このサンプルでは、<xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType> を実装した <xref:System.IDisposable?displayProperty=nameWithType> クラスを使用します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのトレースを実装する場合、サービスの有効期間に <xref:System.Diagnostics.Eventing.EventProvider> のリソースを使用することがあります。 そのため、読みやすくするためにも、このサンプルでは、ラップされた <xref:System.Diagnostics.Eventing.EventProvider> を破棄しません。 何かの理由で、サービスに対して別のトレースの要件を設定し、このリソースを破棄しなければならない場合は、アンマネージ リソースの破棄に関するベスト プラクティスに従ってこのサンプルを変更してください。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]アンマネージ リソースを破棄するを参照してください[Dispose メソッドの実装](http://go.microsoft.com/fwlink/?LinkId=166436)です。  
   
-## 自己ホスト型と Web ホスト型  
- Web ホスト型サービスの場合は、WCF の分析トレースで "HostReference" というフィールドが設定され、そのフィールドを使用してトレースの生成元のサービスを識別します。拡張可能なユーザー トレースをこのモデルに加えることができます。このサンプルで、そのためのベスト プラクティスを示します。結果の文字列にパイプ文字 '&#124;' が実際に表示さるときには、Web ホストの参照の形式は次のいずれかになります。  
+## <a name="self-hosting-vs-web-hosting"></a>自己ホスト型と Web ホスト  
+ Web ホスト サービスの場合は、WCF の分析トレースは、"hostreference"をトレースの出力は、サービスの識別に使用される、フィールドを提供します。 拡張可能なユーザー トレースをこのモデルに加えることができます。このサンプルで、そのためのベスト プラクティスを示します。 Web ホストの形式の参照時にパイプ ' &#124;' 文字が実際には、その結果の表示文字列を次のいずれかにすることができます。  
   
 -   アプリケーションがルート以外にある場合  
   
-     \<サイト名\>\<アプリケーション仮想パス\>&#124;\<サービス仮想パス\>&#124;\<サービス名\>  
+     \<SiteName >\<ApplicationVirtualPath > &#124;\<ServiceVirtualPath > &#124;です。\<ServiceName >  
   
 -   アプリケーションがルートにある場合  
   
-     \<サイト名\>&#124;\<サービス仮想パス\>&#124;\<サービス名\>  
+     \<SiteName > &#124;です。\<ServiceVirtualPath > &#124;です。\<ServiceName >  
   
- 自己ホスト型サービスの場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の分析トレースで "HostReference" フィールドが設定されません。このサンプルの `WCFUserEventProvider` クラスは、自己ホスト型サービスで使用した場合も同じように動作します。  
+ 自己ホスト型サービスは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の分析トレースで"HostReference"フィールドは設定されません。 このサンプルの `WCFUserEventProvider` クラスは、自己ホスト型サービスで使用した場合も同じように動作します。  
   
-## カスタム イベントの詳細  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の ETW イベント プロバイダー マニフェストには、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの作成者がサービス コード内から生成できるように設計された 3 つのイベントが定義されています。次の表に、その 3 つのイベントの概要を示します。  
+## <a name="custom-event-details"></a>カスタム イベントの詳細  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の ETW イベント プロバイダー マニフェストには、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの作成者がサービス コード内から生成できるように設計された 3 つのイベントが定義されています。 次の表に、その 3 つのイベントの概要を示します。  
   
 |イベント|説明|イベント ID|  
-|----------|--------|-------------|  
-|UserDefinedInformationEventOccurred|このイベントは、問題以外の通知すべき処理がサービスで発生した場合に生成します。たとえば、データベースの呼び出しに成功した後にイベントを生成します。|301|  
-|UserDefinedWarningOccurred|このイベントは、後続の処理でエラーになる可能性がある問題が発生した場合に生成します。たとえば、データベースの呼び出しが失敗したものの、冗長なデータ ストアを使用して回復できた場合に警告イベントを生成します。|302|  
-|UserDefinedErrorOccurred|このイベントは、サービスが想定どおりに動作しなかった場合に生成します。たとえば、データベースの呼び出しが失敗し、別の場所からもデータを取得できなかった場合にイベントを生成します。|303|  
+|-----------|-----------------|--------------|  
+|UserDefinedInformationEventOccurred|このイベントは、問題以外の通知すべき処理がサービスで発生した場合に生成します。 たとえば、データベースの呼び出しに成功した後にイベントを生成します。|301|  
+|UserDefinedWarningOccurred|このイベントは、後続の処理でエラーになる可能性がある問題が発生した場合に生成します。 たとえば、データベースの呼び出しが失敗したものの、冗長なデータ ストアを使用して回復できた場合に警告イベントを生成します。|302|  
+|UserDefinedErrorOccurred|このイベントは、サービスが想定どおりに動作しなかった場合に生成します。 たとえば、データベースの呼び出しが失敗し、別の場所からもデータを取得できなかった場合にイベントを生成します。|303|  
   
-#### このサンプルを使用するには  
+#### <a name="to-use-this-sample"></a>このサンプルを使用するには  
   
 1.  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を使用して、WCFAnalyticTracingExtensibility.sln ソリューション ファイルを開きます。  
   
@@ -56,73 +59,73 @@ caps.handback.revision: 21
   
 3.  ソリューションを実行するには、Ctrl キーを押しながら F5 キーを押します。  
   
-     Web ブラウザーで、**\[Calculator.svc\]** をクリックします。サービスの WSDL ドキュメントの URI がブラウザーに表示されます。その URI をコピーします。  
+     Web ブラウザーで、をクリックして**[calculator.svc]**です。 サービスの WSDL ドキュメントの URI がブラウザーに表示されます。 その URI をコピーします。  
   
-4.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] テスト クライアント \(WcfTestClient.exe\) を実行します。  
+4.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] テスト クライアント (WcfTestClient.exe) を実行します。  
   
-     [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] テスト クライアント \(WcfTestClient.exe\) は \<[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] のインストール ディレクトリ\>\\Common7\\IDE\\WcfTestClient.exe にあります \([!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] の既定のインストール ディレクトリは C:\\Program Files\\Microsoft Visual Studio 10.0 です\)。  
+     [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]にテスト用クライアント (WcfTestClient.exe) がある、 \< [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] Install Dir > \Common7\IDE\ WcfTestClient.exe (既定[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]インストール ディレクトリは C:\Program files \microsoft Visual Studio 10.0)。  
   
-5.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] テスト クライアントで、**\[ファイル\]** メニューの **\[サービスの追加\]** をクリックしてサービスを追加します。  
+5.  内で、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]テスト クライアントを選択して、サービスを追加**ファイル**、し**サービスの追加**です。  
   
      入力ボックスにエンドポイントのアドレスを追加します。  
   
-6.  **\[OK\]** をクリックしてダイアログ ボックスを閉じます。  
+6.  をクリックして**OK**ダイアログ ボックスを閉じます。  
   
-     ICalculator サービスが、左ペインの **\[マイ サービス プロジェクト\]** の下に追加されます。  
+     下の左ペインで、ICalculator サービスが追加された**マイ サービス プロジェクト**です。  
   
 7.  イベント ビューアー アプリケーションを開きます。  
   
      サービスを呼び出す前に、イベント ビューアーを起動し、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスから生成された追跡イベントをイベント ログでリッスンしていることを確認します。  
   
-8.  **\[スタート\]** メニューから、**\[管理ツール\]**、**\[イベント ビューアー\]** の順に選択します。**\[分析\]** ログと **\[デバッグ\]** ログを有効にします。  
+8.  **開始**メニューの **管理ツール**、し**イベント ビューアー**です。 有効にする、**分析**と**デバッグ**ログ。  
   
-9. イベント ビューアーのツリー ビューで、**\[イベント ビューアー\]**、**\[アプリケーションとサービス ログ\]**、**\[Microsoft\]**、**\[Windows\]** の順に選択して **\[アプリケーション サーバー \- アプリケーション\]** に移動します。**\[アプリケーション サーバー \- アプリケーション\]** を右クリックし、**\[表示\]**、**\[分析およびデバッグ ログの表示\]** の順にクリックします。  
+9. イベント ビューアーのツリー ビューに移動**イベント ビューアー**、 **Applications and Services Logs**、 **Microsoft**、 **Windows**、し、**アプリケーション サーバー-アプリケーション**です。 右クリック**アプリケーション サーバー-アプリケーション****ビュー**、し**分析およびデバッグ ログ**です。  
   
-     **\[分析およびデバッグ ログの表示\]** オプションがオンになっていることを確認します。**\[分析\]** ログを有効にします。  
+     いることを確認、 **分析およびデバッグ ログ**オプションはオンにします。 有効にする、**分析**ログ。  
   
-     イベント ビューアーのツリー ビューで、**\[イベント ビューアー\]**、**\[アプリケーションとサービス ログ\]**、**\[Microsoft\]**、**\[Windows\]**、**\[アプリケーション サーバー \- アプリケーション\]** の順に選択して **\[分析\]** に移動します。**\[分析\]** を右クリックし、**\[ログを有効にする\]** を選択します。  
+     イベント ビューアーのツリー ビューに移動**イベント ビューアー**、 **Applications and Services Logs**、 **Microsoft**、 **Windows**、 **アプリケーション サーバー-アプリケーション**、し**分析**です。 右クリック**分析**選択**ログの有効化**です。  
   
 10. WCF テスト クライアントを使用してサービスをテストします。  
   
-    1.  WCF テスト クライアントで、ICalculator サービス ノードの下の **\[Add\(\)\]** をダブルクリックします。  
+    1.  WCF テスト クライアントでダブルクリック**Add()** ICalculator サービス ノードの下。  
   
-         **Add\(\)** メソッドが、2 つのパラメーターと共に右ペインに表示されます。  
+         **Add()**メソッドが 2 つのパラメーターと共に右ペインに表示されます。  
   
     2.  最初のパラメーターに「2」と入力し、2 番目のパラメーターに「3」と入力します。  
   
-    3.  **\[呼び出し\]** をクリックしてメソッドを呼び出します。  
+    3.  をクリックして**Invoke**メソッドを呼び出します。  
   
-11. 既に開いている **\[イベント ビューアー\]** ウィンドウに移動します。**\[イベント ビューアー\]**、**\[アプリケーションとサービス ログ\]**、**\[Microsoft\]**、**\[Windows\]** の順に選択して **\[アプリケーション サーバー \- アプリケーション\]** に移動します。  
+11. 移動して、**イベント ビューアー**既に開いているウィンドウ。 移動**イベント ビューアー**、 **Applications and Services Logs**、 **Microsoft**、 **Windows**、**アプリケーションサーバー アプリケーション**です。  
   
-12. **\[分析\]** ノードを右クリックし、**\[最新の情報に更新\]** をクリックします。  
+12. 右クリックし、**分析**ノード**更新**です。  
   
      右ペインにイベントが表示されます。  
   
 13. ID が 303 のイベントを探してダブルクリックして開き、内容を確認します。  
   
-     このイベントは、ICalculator サービスの `Add()` メソッドによって生成されたもので、ペイロードは "2\+3\=5" になります。  
+     このイベントは、によって生成されますが、 `Add()` ICalculator サービスのメソッドと等しい、ペイロードは"2 + 3 = 5"です。  
   
-#### クリーンアップするには \(省略可能\)  
+#### <a name="to-clean-up-optional"></a>クリーンアップするには (省略可能)  
   
-1.  **イベント ビューアー**を開きます。  
+1.  開いている**イベント ビューアー**です。  
   
-2.  **\[イベント ビューアー\]**、**\[アプリケーションとサービス ログ\]**、**\[Microsoft\]**、**\[Windows\]** の順に選択して **\[アプリケーション サーバー \- アプリケーション\]** に移動します。**\[分析\]** を右クリックし、**\[ログの無効化\]** を選択します。  
+2.  移動**イベント ビューアー**、 **Applications and Services Logs**、 **Microsoft**、 **Windows**、し**アプリケーション サーバー-アプリケーション**です。 右クリック**分析**選択**ログの無効化**です。  
   
-3.  **\[イベント ビューアー\]**、**\[アプリケーションとサービス ログ\]**、**\[Microsoft\]**、**\[Windows\]**、**\[アプリケーション サーバー \- アプリケーション\]** の順に選択して **\[分析\]** に移動します。**\[分析\]** を右クリックし、**\[ログのクリア\]** を選択します。  
+3.  移動**イベント ビューアー**、 **Applications and Services Logs**、 **Microsoft**、 **Windows**、 **アプリケーション サーバー-アプリケーション**、し**分析**です。 右クリック**分析**選択**ログの消去**です。  
   
-4.  **\[クリア\]** をクリックしてログをクリアします。  
+4.  をクリックして**オフ**イベントをクリアします。  
   
-## 既知の問題  
- **イベント ビューアー**の既知の問題により、ETW イベントをデコードできない場合があります。その場合、"ソース "Microsoft\-Windows\-Application Server\-Applications" からのイベント ID \<id\> の説明が見つかりません。このイベントを発生させるコンポーネントがローカル コンピューターにインストールされていないか、インストールが壊れています。ローカル コンピューターにコンポーネントをインストールするか、コンポーネントを修復してください。" というエラー メッセージが表示されます。このエラーが発生した場合は、**\[操作\]** メニューの **\[最新の情報に更新\]** をクリックしてください。これにより、イベントが正常にデコードされます。  
+## <a name="known-issue"></a>既知の問題  
+ 既知の問題がある、**イベント ビューアー** ETW イベントのデコードに失敗する可能性があります。 表示されているエラー メッセージが表示することがあります:"イベント ID の説明\<id > ソースから Microsoft Windows アプリケーション サーバー-アプリケーションが見つかりません。 このイベントを発生させるコンポーネントがローカル コンピューターにインストールされていないか、インストールが破損しています。 インストールするか、ローカル コンピューター上のコンポーネントを修復します。" このエラーが発生した場合は、選択**更新**から、**アクション**メニュー。 これにより、イベントが正常にデコードされます。  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ETWTrace`  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [AppFabric の監視のサンプル](http://go.microsoft.com/fwlink/?LinkId=193959)

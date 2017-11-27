@@ -1,51 +1,54 @@
 ---
-title: "How to: Generate Customized Code by Modifying a DBML File | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : DBML ファイルを変更してカスタマイズ コードを生成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 50ad597a-8598-42d3-82dd-fc7d702ebc37
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 743e938df0b9c7f12a9c3a11a4b5558137add529
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Generate Customized Code by Modifying a DBML File
-データベース マークアップ言語 \(.dbml\) メタデータ ファイルから、[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] または C\# のソース コードを生成できます。  この方法を使用すると、アプリケーション マッピング コードを生成する前に、既定の .dbml ファイルをカスタマイズできます。  これは高度な機能です。  
+# <a name="how-to-generate-customized-code-by-modifying-a-dbml-file"></a>方法 : DBML ファイルを変更してカスタマイズ コードを生成する
+生成することができます[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)]または c# ソース コード データベース マークアップ言語 (.dbml) メタデータ ファイルからです。 この方法を使用すると、アプリケーション マッピング コードを生成する前に、既定の .dbml ファイルをカスタマイズできます。 これは高度な機能です。  
   
  実行手順は次のとおりです。  
   
 1.  .dbml ファイルを生成します。  
   
-2.  エディターを使用して .dbml ファイルを変更します。  .dbml ファイルは、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] .dbml ファイルのスキーマ定義 \(.xsd\) ファイルに照らして検証する必要があることに注意してください。  詳細については、「[Code Generation in LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)」を参照してください。  
+2.  エディターを使用して .dbml ファイルを変更します。 .Dbml ファイルがのスキーマ定義 (.xsd) ファイルに対して検証する必要があります注[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].dbml ファイル。 詳細については、次を参照してください。 [LINQ to SQL でのコード生成](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)です。  
   
-3.  [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] または C\# のソース コードを生成します。  
+3.  [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] または C# のソース コードを生成します。  
   
- 次の例では、SQLMetal コマンド ライン ツールを使用します。  詳細については、「[SqlMetal.exe \(コード生成ツール\)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」を参照してください。  
+ 次の例では、SQLMetal コマンド ライン ツールを使用します。 詳しくは、「[SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」をご覧ください。  
   
-## 使用例  
- 次のコードでは、Northwind サンプル データベースから .dbml ファイルを生成します。  データベース メタデータのソースとして、データベースの名前または .mdf ファイルの名前を使用します。  
+## <a name="example"></a>例  
+ 次のコードでは、Northwind サンプル データベースから .dbml ファイルを生成します。 データベース メタデータのソースとして、データベースの名前または .mdf ファイルの名前を使用します。  
   
 ```  
 sqlmetal /server:myserver /database:northwind /dbml:mymeta.dbml  
 sqlmetal /dbml:mymeta.dbml mydbfile.mdf  
 ```  
   
-## 使用例  
- 次のコードでは、.dbml ファイルから [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] または C\# のソース コードを生成します。  
+## <a name="example"></a>例  
+ 次のコードでは、.dbml ファイルから [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] または C# のソース コードを生成します。  
   
 ```  
 sqlmetal /namespace:nwind /code:nwind.vb /language:vb DBMLFile.dbml  
 sqlmetal /namespace:nwind /code:nwind.cs /language:csharp DBMLFile.dbml  
 ```  
   
-## 参照  
- [Code Generation in LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)   
- [SqlMetal.exe \(コード生成ツール\)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)   
- [Creating the Object Model](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)
+## <a name="see-also"></a>関連項目  
+ [LINQ to SQL でのコード生成](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
+ [SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)  
+ [オブジェクト モデルの作成](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)

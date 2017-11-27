@@ -1,67 +1,70 @@
 ---
-title: "CheckBox のスタイルとテンプレート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "CheckBox [WPF], スタイルおよびテンプレート"
-  - "ControlTemplate [WPF], CheckBox"
-  - "パーツ [WPF], CheckBox"
-  - "状態 [WPF], CheckBox"
-  - "スタイル [WPF], CheckBox"
-  - "テンプレート [WPF], CheckBox"
+title: "CheckBox のスタイルとテンプレート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- states [WPF], CheckBox
+- templates [WPF], CheckBox
+- parts [WPF], CheckBox
+- ControlTemplate [WPF], CheckBox
+- CheckBox [WPF], styles and templates
+- styles [WPF], CheckBox
 ms.assetid: bfdaec96-d101-4d3d-864d-c27e6b621d03
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9c901d710e96cd111104b9fef2219b157377adc3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# CheckBox のスタイルとテンプレート
-このトピックでは、<xref:System.Windows.Controls.CheckBox> コントロールのスタイルおよびテンプレートについて説明します。  既定の <xref:System.Windows.Controls.ControlTemplate> に変更を加えることで、コントロールに独自の外観を設定できます。  詳細については、「[ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
+# <a name="checkbox-styles-and-templates"></a>CheckBox のスタイルとテンプレート
+このトピックは、のスタイルとテンプレートについて説明します、<xref:System.Windows.Controls.CheckBox>コントロール。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 詳細については、「[Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
   
-## CheckBox のパーツ  
- <xref:System.Windows.Controls.CheckBox> コントロールには、名前付きのパーツは存在しません。  
+## <a name="checkbox-parts"></a>チェック ボックスの部分  
+ <xref:System.Windows.Controls.CheckBox>コントロールには、その名前付きの部分はありません。  
   
-## CheckBox の状態  
- 次の表は、<xref:System.Windows.Controls.CheckBox> コントロールの表示状態の一覧です。  
+## <a name="checkbox-states"></a>チェック ボックスの状態  
+ 次の表に、用ビジュアル状態、<xref:System.Windows.Controls.CheckBox>コントロール。  
   
-|VisualState 名|VisualStateGroup 名|Description|  
-|-------------------|------------------------|-----------------|  
-|Normal|CommonStates|既定の状態です。|  
+|VisualState 名|VisualStateGroup 名|説明|  
+|----------------------|---------------------------|-----------------|  
+|標準|CommonStates|既定の状態です。|  
 |MouseOver|CommonStates|マウス ポインターがコントロール上に配置されています。|  
-|Pressed|CommonStates|コントロールが押されています。|  
-|Disabled|CommonStates|コントロールが無効になっています。|  
-|Focused|FocusStates|コントロールにフォーカスがあります。|  
-|Unfocused|FocusStates|コントロールにフォーカスがありません。|  
-|オン|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> は `true` なので、|  
-|Unchecked|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> は `false` なので、|  
-|Indeterminate|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsThreeState%2A> が `true` で、<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> が `null` です。|  
-|Valid|ValidationStates|このコントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `false` です。|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがあります。|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがありません。|  
+|押されている|CommonStates|コントロールが押されています。|  
+|無効|CommonStates|コントロールが無効になっています。|  
+|フォーカスされている|FocusStates|コントロールにフォーカスがあります。|  
+|フォーカスされていない|FocusStates|コントロールにフォーカスがありません。|  
+|チェック済み|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> は `true` です。|  
+|オンになっていません。|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> は `false` です。|  
+|不確定です|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsThreeState%2A>is `true`, and <xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> is `null`.|  
+|有効|ValidationStates|コントロールを使用して、<xref:System.Windows.Controls.Validation>クラスおよび<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`false`します。|  
+|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスします。|  
+|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスがないです。|  
   
-## CheckBox ControlTemplate の例  
- 次の例は、<xref:System.Windows.Controls.CheckBox> コントロールの <xref:System.Windows.Controls.ControlTemplate> を定義する方法を示しています。  
+## <a name="checkbox-controltemplate-example"></a>チェック ボックスをオン ControlTemplate の例  
+ 次の例は、定義する方法を示します、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.CheckBox>コントロール。  
   
- [!code-xml[ControlTemplateExamples#CheckBox](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/checkbox.xaml#checkbox)]  
+ [!code-xaml[ControlTemplateExamples#CheckBox](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/checkbox.xaml#checkbox)]  
   
- 前の例では、次の 1 つ以上のリソースを使用しています。  
+ 前の例では、次のリソースの 1 つ以上を使用します。  
   
- [!code-xml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
+ [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- サンプル全体については、「[ControlTemplate を使用したスタイル設定のサンプル](http://go.microsoft.com/fwlink/?LinkID=160041)」を参照してください。.  
+ 完全なサンプルについては、[Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041)を参照してください。  
   
-## 参照  
- <xref:System.Windows.FrameworkElement.Style%2A>   
- <xref:System.Windows.Controls.ControlTemplate>   
- [コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)   
- [コントロールのカスタマイズ](../../../../docs/framework/wpf/controls/control-customization.md)   
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.FrameworkElement.Style%2A>  
+ <xref:System.Windows.Controls.ControlTemplate>  
+ [コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [コントロールのカスタマイズ](../../../../docs/framework/wpf/controls/control-customization.md)  
+ [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
  [ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

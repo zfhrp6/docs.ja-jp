@@ -1,89 +1,92 @@
 ---
-title: "タイミング イベントの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Clock クラス"
-  - "クロックのクラス"
-  - "タイムライン"
-  - "タイミング イベント"
+title: "タイミング イベントの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- timelines [WPF]
+- timing events [WPF]
 ms.assetid: 597e3280-0867-4359-a97b-5b2f4149e350
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8f50923d9e314d2f677e26416cef59fdf380213e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# タイミング イベントの概要
-このトピックで使用できる&5; つのタイミング イベントを使用する方法について説明<xref:System.Windows.Media.Animation.Timeline>と<xref:System.Windows.Media.Animation.Clock>のオブジェクト。  
+# <a name="timing-events-overview"></a>タイミング イベントの概要
+このトピックで使用できる 5 つのタイミング イベントを使用する方法について説明<xref:System.Windows.Media.Animation.Timeline>と<xref:System.Windows.Media.Animation.Clock>オブジェクト。  
   
-<a name="autoTopLevelSectionsOUTLINE0"></a>   
 ## <a name="prerequisites"></a>必須コンポーネント  
- このトピックを理解するには、作成し、アニメーションを使用する方法を理解する必要があります。 最初にアニメーションを使用してを参照してください、[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)します。  
+ このトピックを理解するには、アニメーションの作成方法と使用方法について理解している必要があります。 アニメーションを開始するを参照してください。、[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)です。  
   
- 複数の方法でプロパティをアニメーション化する[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]:  
+ いくつかの方法でプロパティをアニメーション化する[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]:  
   
--   **Storyboard オブジェクトを使用して**(マークアップとコード): 使用する<xref:System.Windows.Media.Animation.Storyboard>を配置して、1 つまたは複数のオブジェクトにアニメーションを配布するオブジェクト。 例については、次を参照してください。[ストーリー ボードを使用して、プロパティをアニメーション化](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)します。  
+-   **ストーリー ボードのオブジェクトを使用して**(マークアップおよびコード): 使用することができます<xref:System.Windows.Media.Animation.Storyboard>を配置し、1 つまたは複数のオブジェクトへのアニメーションを配布するオブジェクト。 例については、次を参照してください。[ストーリー ボードを使用してプロパティをアニメーション化](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)です。  
   
--   **ローカル アニメーションを使用して**(コードのみ): 適用できる<xref:System.Windows.Media.Animation.AnimationTimeline>アニメーション化するプロパティに直接オブジェクトです。 例については、次を参照してください。[プロパティなしを使用して、ストーリー ボード アニメーション化する](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)です。  
+-   **ローカルのアニメーションを使用して**(コードのみ): 適用できる<xref:System.Windows.Media.Animation.AnimationTimeline>アニメーション化するプロパティに直接オブジェクト。 例については、「[ストーリーボードを使用せずにプロパティをアニメーション化する](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)」を参照してください。  
   
--   **クロックを使用して**(コードのみ): 明示的にクロックを作成し、自分でアニメーション クロックを配布できます。  例については、次を参照してください。 [AnimationClock を使用して、プロパティをアニメーション化する](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-an-animationclock.md)です。  
+-   **クロックを使用する**(コードのみ): クロックを明示的に作成し、アニメーション クロックを自分で均等配置することができます。  例については、次を参照してください。 [、AnimationClock を使用してプロパティをアニメーション化](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-an-animationclock.md)です。  
   
- この概要の例を使用してマークアップおよびコードで使用することができます、ため<xref:System.Windows.Media.Animation.Storyboard>オブジェクトです。 ただし、プロパティをアニメーション化する他の方法を説明する概念を適用できます。  
+ この概要の例を使用してマークアップおよびコードで使用することができます、ため<xref:System.Windows.Media.Animation.Storyboard>オブジェクト。 ただし、説明されている概念は、プロパティをアニメーション化するためのその他の方法にも適用できます。  
   
-### <a name="what-is-a-clock"></a>クロックは何ですか。  
- タイムラインには、単独で実際に何もしない以外の時間のセグメントについて説明します。 タイムラインの<xref:System.Windows.Media.Animation.Clock>実際の処理を行うオブジェクト: タイムラインのスペースを実行時のタイミングに関連する状態を維持します。 使用してストーリー ボードなど、ほとんどの場合は、タイムラインで、クロックが自動的に作成します。 作成することも、<xref:System.Windows.Media.Animation.Clock>を使用して明示的に、 <xref:System.Windows.Media.Animation.Timeline.CreateClock%2A>メソッドです。 詳細については<xref:System.Windows.Media.Animation.Clock>、オブジェクトを参照してください、[アニメーションおよびタイミング システムの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)します。  
+### <a name="what-is-a-clock"></a>クロックとは  
+ タイムラインは、時間のセグメントについて説明する以外は、それ自身が実際に何かを行うものではありません。 タイムラインの<xref:System.Windows.Media.Animation.Clock>実際の処理を行うオブジェクト: タイムラインの実行時のタイミングに関連する状態を保持します。 多くの場合(ストーリー ボードを使用する場合など)には、タイムラインに対してクロックが自動的に作成されます。 作成することも、<xref:System.Windows.Media.Animation.Clock>を使用して明示的に、<xref:System.Windows.Media.Animation.Timeline.CreateClock%2A>メソッドです。 詳細については<xref:System.Windows.Media.Animation.Clock>、オブジェクトを参照してください、[アニメーションおよびタイミング システムの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)です。  
   
 ## <a name="why-use-events"></a>イベントを使用する理由  
- 1 つを除く (最後のタイマー刻みに沿ったシーク)、すべての対話型タイミング操作は非同期です。 正確に実行するときを知る方法はありません。 タイミング動作に依存するその他のコードがある場合、問題が存在することができます。 四角形をアニメーション化したタイムラインを停止するようにしたいとします。 タイムラインが停止した後は、四角形の色を変更します。  
+ 1 つの例外 (最後のティックに配置されたシーク) を除いて、すべての対話型タイミング操作は非同期です。 これらがいつ実行されるかを正確に知る方法はありません。 これは、タイミング操作に依存する他のコードが存在する場合に、問題となることがあります。 たとえば、四角形をアニメーション化するタイムラインを停止する必要があるとします。 そしてタイムラインを停止した後に、四角形の色を変更するとします。  
   
  [!code-csharp[events_procedural#NeedForEventsFragment](../../../../samples/snippets/csharp/VS_Snippets_Wpf/events_procedural/CSharp/EventExample.cs#needforeventsfragment)]
  [!code-vb[events_procedural#NeedForEventsFragment](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/events_procedural/VisualBasic/EventExample.vb#needforeventsfragment)]  
   
- 前の例で、2 つ目のコード行は、ストーリー ボードが停止する前に実行可能性があります。 停止は非同期操作であるためにです。 タイムラインまたは停止する時刻を示すには、「停止要求」のある種のタイミング エンジンの次の目盛りまで処理されていないを作成します。  
+ 上記の例では、ストーリー ボードが停止する前に、2 行目のコードが実行される可能性があります。 これは、停止が非同期の操作であるためです。 タイムラインやクロックに停止を指示すると、タイミング エンジンの次のティックまで処理されない「停止要求」が作成されます。  
   
- タイムラインの完了後にコマンドを実行するには、イベントのタイミングを使用します。 次の例では、ストーリー ボードの再生が停止した後に、四角形の色を変更するイベント ハンドラーを使用します。  
+ タイムラインの完了後にコマンドを実行するには、タイミング イベントを使用します。 次の例では、ストーリー ボードが停止した後に四角形の色が変更されるよう、イベント ハンドラーが使用されています。  
   
  [!code-csharp[events_procedural#RegisterForStoryboardCurrentStateInvalidatedEvent](../../../../samples/snippets/csharp/VS_Snippets_Wpf/events_procedural/CSharp/EventExample.cs#registerforstoryboardcurrentstateinvalidatedevent)]
  [!code-vb[events_procedural#RegisterForStoryboardCurrentStateInvalidatedEvent](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/events_procedural/VisualBasic/EventExample.vb#registerforstoryboardcurrentstateinvalidatedevent)]  
 [!code-csharp[events_procedural#StoryboardCurrentStateInvalidatedEvent2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/events_procedural/CSharp/EventExample.cs#storyboardcurrentstateinvalidatedevent2)]
 [!code-vb[events_procedural#StoryboardCurrentStateInvalidatedEvent2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/events_procedural/VisualBasic/EventExample.vb#storyboardcurrentstateinvalidatedevent2)]  
   
- 完全な例では、次を参照してください。[受信通知と、クロックの状態の変化](../../../../docs/framework/wpf/graphics-multimedia/how-to-receive-notification-when-clock-state-changes.md)します。  
+ 完全な例では、次を参照してください。[受信通知時に、クロックの状態の変化](../../../../docs/framework/wpf/graphics-multimedia/how-to-receive-notification-when-clock-state-changes.md)です。  
   
 ## <a name="public-events"></a>パブリック イベント  
- <xref:System.Windows.Media.Animation.Timeline>と<xref:System.Windows.Media.Animation.Clock>両方のクラスは、5 つのイベントのタイミングを提供します。 次の表は、これらのイベントとそれらをトリガーする条件を示します。  
+ <xref:System.Windows.Media.Animation.Timeline>と<xref:System.Windows.Media.Animation.Clock>両方のクラスには、5 つのタイミング イベントが用意されています。 次の表は、これらのイベントと、それらをトリガーする条件を示したものです。  
   
-|イベント|対話型操作をトリガーします。|その他のトリガー|  
+|Event|対話型操作のトリガー|その他のトリガー|  
 |-----------|--------------------------------------|--------------------|  
-|**完了**|保留へスキップ|時計を完了します。|  
-|**CurrentGlobalSpeedInvalidated**|一時停止、再開、シーク、速度比の設定を入力して、停止に進んでください。|クロックでを反転させます、高速化が開始または停止します。|  
-|**CurrentStateInvalidated**|開始、停止を入力してへスキップ|クロックは、開始、停止、または入力します。|  
-|**CurrentTimeInvalidated**|開始、シーク、停止を入力してへスキップ|クロック進行します。|  
+|**Completed**|塗りつぶしまでスキップ|時計が完了する。|  
+|**CurrentGlobalSpeedInvalidated**|一時停止、再開、シーク、速度比を設定、塗りつぶしまでスキップ、停止|クロックが反転、加速、開始、または停止する。|  
+|**CurrentStateInvalidated**|開始、塗りつぶしまでスキップ、停止|クロックが開始、停止、または塗りつぶされる。|  
+|**CurrentTimeInvalidated**|開始、シーク、塗りつぶしまでスキップ、停止|クロックが進行する。|  
 |**RemoveRequested**|削除||  
   
-## <a name="ticking-and-event-consolidation"></a>タイマー刻みとイベントの統合  
- 内のオブジェクトをアニメーション化するときに[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アニメーションを管理するタイミング エンジンです。 タイミング エンジンは、時間の進行状況を追跡し、それぞれのアニメーションの状態を計算します。 1 秒間でこのような多くの評価パスがあったときです。 これらの評価パスは「ティック」と呼ばれます。  
+## <a name="ticking-and-event-consolidation"></a>ティッキングとイベントの統合  
+ 内のオブジェクトをアニメーション化するときに[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]は、アニメーションを管理するタイミング エンジンです。 タイミング エンジンは、時間の進行状況を追跡し、それぞれのアニメーションの状態を計算します。 これにより、多数の評価パスが瞬時に作成されます。 これらの評価パスは「ティック」と呼ばれます。  
   
- タイマー刻みで頻繁に発生しますは、いろいろな目盛りの間で発生する可能性があります。 たとえば、タイムライン可能性があります停止、開始されると、およびここでも、停止している場合、現在の状態変更が完了したら&3; 回です。 理論上は、イベント発生複数回、単一のティックのただし、ティックあたり最大で&1; つは各イベントを発生する可能性があるために、タイミング エンジンはイベントを統合します。  
+ ティックは頻繁に発生しますが、各ティックの間には多くのことが起こる可能性があります。 たとえば、タイムラインが停止され、開始され、再度停止された場合、その現行状態は 3 回変更されることになります。 理論上、イベントは 1 つのティックで複数回発生することができますが、タイミング エンジンではイベントが統合されるため、各イベントの発生回数はティックあたり最大で 1回となります。  
   
 ## <a name="registering-for-events"></a>イベントの登録  
- タイミング イベントを登録する&2; つの方法があります。 タイムラインまたはタイムラインから作成された時刻を登録することができます。 コードからのみ実行できますが、クロックを使用して直接、イベントの登録は、かなり簡単です。 マークアップまたはコードからタイムラインを使用してイベントを登録することができます。 次のセクションでは、タイムラインでのクロック イベントに登録する方法について説明します。  
+ タイミング イベントを登録する方法は 2 つあります。 タイムラインに登録する方法と、タイムラインから作成されたクロックに登録する方法です。 クロックに直接登録する方法は非常に分かりやすいですが、これはコードからのみ実行できます。 タイムラインに登録する場合は、マークアップまたはコードからイベントを登録できます。 次のセクションでは、クロック イベントをタイムラインに登録する方法について説明します。  
   
 <a name="registeringforclockeventswithatimeline"></a>   
-## <a name="registering-for-clock-events-with-a-timeline"></a>タイムラインでのクロック イベントの登録  
- タイムラインの<xref:System.Windows.Media.Animation.Timeline.Completed>、 <xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>、 <xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>、 <xref:System.Windows.Media.Animation.Timeline.CurrentTimeInvalidated>、および<xref:System.Windows.Media.Animation.Timeline.RemoveRequested>タイムライン、対応するこれらのイベントが実際にイベント ハンドラーを関連付けますの登録に関連するイベントが表示されます、<xref:System.Windows.Media.Animation.Clock>タイムラインのスペースを作成します。  
+## <a name="registering-for-clock-events-with-a-timeline"></a>クロック イベントをタイムラインに登録する  
+ タイムラインの<xref:System.Windows.Media.Animation.Timeline.Completed>、 <xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>、 <xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>、 <xref:System.Windows.Media.Animation.Timeline.CurrentTimeInvalidated>、および<xref:System.Windows.Media.Animation.Timeline.RemoveRequested>タイムラインは、これらのイベントが実際を持つイベント ハンドラーを関連付けるためにの登録に関連するイベントが表示されます、 <xref:System.Windows.Media.Animation.Clock>タイムラインのスペースを作成します。  
   
- 登録する場合、<xref:System.Windows.Media.Animation.Timeline.Completed>タイムラインでイベントをたとえば、実際にすることをシステムに登録する、<xref:System.Windows.Media.Animation.Clock.Completed>タイムラインのスペースを作成する各クロックのイベントです。 コードでは、このイベントの前に登録する必要があります、<xref:System.Windows.Media.Animation.Clock>; このタイムラインの作成は、それ以外の場合、通知を受信しません。 自動的にこの問題は発生[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]; パーサーが自動的に登録する前に、イベントの<xref:System.Windows.Media.Animation.Clock>が作成されます。  
+ 登録すると、<xref:System.Windows.Media.Animation.Timeline.Completed>タイムラインでイベントをたとえばを実際にということですね、システムに登録する、<xref:System.Windows.Media.Animation.Clock.Completed>タイムラインに作成される各クロックのイベントです。 コードでは、前にこのイベントを登録する必要があります、 <xref:System.Windows.Media.Animation.Clock> ; このタイムラインの作成は、それ以外の場合、通知を受信しません。 自動的にこのような[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]; パーサーが自動的に登録する前に、イベントの<xref:System.Windows.Media.Animation.Clock>を作成します。  
   
 ## <a name="see-also"></a>関連項目  
- [アニメーションおよびタイミング システムの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)   
- [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)   
+ [アニメーションとタイミング システムの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)  
+ [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
  [タイミング動作の概要](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)

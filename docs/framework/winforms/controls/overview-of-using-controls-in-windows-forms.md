@@ -1,38 +1,42 @@
 ---
-title: "Windows フォームでのコントロールの使用方法の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "コントロール [Windows フォーム]"
-  - "カスタム コントロール [Windows フォーム]"
-  - "Windows フォーム, コントロール"
+title: "Windows フォームでのコントロールの使用方法の概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Windows Forms, controls
+- controls [Windows Forms]
+- custom controls [Windows Forms]
 ms.assetid: fddbe951-4485-459d-a5fd-665ea346dbc1
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 74bd36d422619d2ea537acdb855edb8285360a8a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォームでのコントロールの使用方法の概要
-このトピックでは、Windows フォーム アプリケーションの必須要素についての説明と Windows フォーム アプリケーションでコントロールを使用してイベントを処理する例を示します。  
+# <a name="overview-of-using-controls-in-windows-forms"></a>Windows フォームでのコントロールの使用方法の概要
+このトピックでは、Windows フォーム アプリケーションの重要な要素について説明し、コントロールを使用して Windows フォーム アプリケーションでイベントを処理する簡単な例を示します。  
   
-## シンプルな Windows フォーム アプリケーション  
- Windows フォーム アプリケーションには、次の要素が必ず含まれています。  
+## <a name="simple-windows-forms-applications"></a>単純な Windows フォーム アプリケーション  
+ 少なくとも、Windows フォーム アプリケーションは、次の要素で構成されます。  
   
--   <xref:System.Windows.Forms.Form?displayProperty=fullName> から派生した 1 つ以上のクラス。  
+-   1 つまたは複数のクラスから派生する<xref:System.Windows.Forms.Form?displayProperty=nameWithType>です。  
   
--   `static` \(Visual Studio では `shared`\) の <xref:System.Windows.Forms.Application.Run%2A> メソッドを呼び出し、<xref:System.Windows.Forms.Form> インスタンスをそのメソッドに渡す、`Main` メソッド。  オペレーティング システムからアプリケーションへのメッセージを処理する <xref:System.Windows.Forms.Application.Run%2A> メソッド。  
+-   A`Main`メソッドを呼び出す、 `static` (`shared` Visual Basic で)<xref:System.Windows.Forms.Application.Run%2A>メソッドおよびパス、<xref:System.Windows.Forms.Form>インスタンスにします。 <xref:System.Windows.Forms.Application.Run%2A>メソッドが、オペレーティング システムからアプリケーションへのメッセージを処理します。  
   
- Windows フォーム アプリケーションの必須要素を記述したコード例を次に示します。  
+ 次のコード例は、Windows フォーム アプリケーションの重要な要素を示しています。  
   
 ```vb  
 Option Explicit  
@@ -80,8 +84,8 @@ public class MyForm : Form {
 }  
 ```  
   
-## Windows フォーム アプリケーションでのコントロールの使用  
- シンプルな Windows フォーム アプリケーションでコントロールを使用し、イベントを処理する過程を示すコード例を次に示します。  このコード例では、フォームに 3 つのボタンがあります。それぞれのボタンをクリックすると、背景色が変更されます。  
+## <a name="using-controls-in-a-windows-forms-application"></a>Windows フォーム アプリケーションでコントロールの使用  
+ 次のコード例では、Windows フォーム アプリケーションのコントロールを使用し、イベントの処理を説明する簡単なアプリケーションを示します。 フォーム上の 3 つのボタンの例で構成されます。各ボタンがクリックされたときの背景色を変更します。  
   
 ```vb  
 Option Explicit  
@@ -229,6 +233,6 @@ public class MyForm : Form {
 }  
 ```  
   
-## 参照  
- [.NET Framework を使用したカスタム Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)   
+## <a name="see-also"></a>関連項目  
+ [.NET Framework を使用したカスタム Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
  [Windows フォーム コントロール開発の基本概念](../../../../docs/framework/winforms/controls/windows-forms-control-development-basics.md)

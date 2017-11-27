@@ -1,30 +1,29 @@
 ---
-title: "Cannot refer to an instance member of a class from within a shared method or shared member initializer without an explicit instance of the class | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc30369"
-  - "bc30369"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Shared"
-  - "BC30369"
+title: "クラスの明示的なインスタンスを指定しないで、共有メソッドまたは共有メンバー初期化子内からクラスのインスタンス メンバーへ参照することはできません。"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc30369
+- bc30369
+helpviewer_keywords:
+- Shared
+- BC30369
 ms.assetid: 39d9466b-c1f3-4406-91a5-3d6c52d23a3d
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 6a15d36c0b3a4d6b1657d583de0dc61621da960d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Cannot refer to an instance member of a class from within a shared method or shared member initializer without an explicit instance of the class
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-共有プロシージャの内部から、クラスの非共有メンバーを参照しようとしています。  次のコードは、この状態を示す例です。  
+# <a name="cannot-refer-to-an-instance-member-of-a-class-from-within-a-shared-method-or-shared-member-initializer-without-an-explicit-instance-of-the-class"></a>クラスの明示的なインスタンスを指定しないで、共有メソッドまたは共有メンバー初期化子内からクラスのインスタンス メンバーへ参照することはできません。
+クラスを共有プロシージャ内での非共有メンバーを参照しようとしました。 次の例では、このような状況を示します。  
   
 ```  
 Class sample  
@@ -35,21 +34,21 @@ Class sample
 End Class  
 ```  
   
- この例では、`x = 10` の代入ステートメントにより、このエラー メッセージが表示されます。  これは、共有プロシージャがインスタンス変数にアクセスしようとしているからです。  
+ 前の例では、代入ステートメントで`x = 10`でこのエラー メッセージが生成されます。 これは、ため、インスタンス変数にアクセスしようとして、共有プロシージャです。  
   
- 変数 `x` は、[Shared](../../../visual-basic/language-reference/modifiers/shared.md) として宣言されていないためインスタンス メンバーです。  `sample` クラスの各インスタンスに、独自の変数 `x` が個別に含まれています。  1 つのインスタンスで `x` に値を設定したり、この値を変更したりしても、他の各インスタンスにある `x` の値は変わりません。  
+ 変数`x`として宣言されていないため、インスタンス メンバーは、 [Shared](../../../visual-basic/language-reference/modifiers/shared.md)です。 クラスの各インスタンス`sample`独自の個別の変数が含まれる`x`です。 1 つのインスタンスを設定またはの値を変更するときに`x`の値は影響を与えない`x`他のインスタンス。  
   
- 一方、`setX` プロシージャは、`sample` クラスの全インスタンスで `Shared` されています。  これは、クラスの特定のインスタンスに関連付けられているわけではなく、操作がインスタンスごとに独立して行われることを意味します。  特定のインスタンスとの関係がないため、`setX` はインスタンス変数にアクセスできません。  `Shared` 変数のみを操作できます。  `setX` で共有変数に値を設定するか、この値を変更した場合、このクラスのすべてのインスタンスで変更後の値が利用できます。  
+ ただし、プロシージャ`setX`は`Shared`クラスのすべてのインスタンス間で`sample`です。 つまり、クラスのインスタンスのいずれかに関連付けられていないことが、個々 のインスタンスから独立して動作ではなくです。 特定のインスタンスとの接続があるないため`setX`インスタンス変数にアクセスできません。 のみ動作する必要があります、`Shared`変数。 ときに`setX`その新しい値が、クラスのすべてのインスタンスで使用できる、共有変数の値を変更または設定します。  
   
- **Error ID:** BC30369  
+ **エラー ID:** BC30369  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  このメンバーを、クラスのすべてのインスタンスで共有するのか、インスタンスごとに保持するのかを決定します。  
+1.  クラスのすべてのインスタンス間で共有またはインスタンスごとに保持するメンバーにするかどうかを決定します。  
   
-2.  メンバーの実体を 1 つだけ作成して、すべてのインスタンスで共有する場合は、メンバー宣言に `Shared` キーワードを追加します。  プロシージャ宣言に `Shared` キーワードを含めます。  
+2.  すべてのインスタンス間で共有できるメンバーの 1 つのコピーを実行する場合に、追加、`Shared`メンバーの宣言するキーワードです。 保持、`Shared`プロシージャ宣言でキーワード。  
   
-3.  インスタンスごとにメンバーの実体を独自に作成する場合は、メンバー宣言に `Shared` を指定しないでください。  プロシージャ宣言から `Shared` キーワードを削除します。  
+3.  各インスタンスに、メンバーの個別コピーする場合を指定しない`Shared`メンバー宣言にします。 削除、`Shared`プロシージャ宣言からキーワード。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [Shared](../../../visual-basic/language-reference/modifiers/shared.md)

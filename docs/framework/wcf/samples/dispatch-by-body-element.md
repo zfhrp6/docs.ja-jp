@@ -1,31 +1,34 @@
 ---
-title: "本文要素別のディスパッチ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "本文要素別のディスパッチ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f64a3c04-62b4-47b2-91d9-747a3af1659f
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1f727b5d4a1e2689b4a90971f5b5c93efb55c475
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 本文要素別のディスパッチ
+# <a name="dispatch-by-body-element"></a>本文要素別のディスパッチ
 このサンプルでは、入力メッセージを操作に割り当てるための代替アルゴリズムを実装する方法を示します。  
   
- 既定では、サービス モデル ディスパッチャは、メッセージの WS\-Addressing の "Action" ヘッダーまたは HTTP SOAP 要求でのこれと同等の情報に基づいて、入力メッセージの適切な処理メソッドを選択します。  
+ 既定では、サービス モデル ディスパッチャは、メッセージの WS-Addressing の "Action" ヘッダーまたは HTTP SOAP 要求でのこれと同等の情報に基づいて、入力メッセージの適切な処理メソッドを選択します。  
   
- WS\-I Basic Profile 1.1 のガイドラインに従っていない SOAP 1.1 Web サービス スタックの一部では、Action URI に基づくのではなく、SOAP 本文内にある最初の要素の XML 修飾名に基づいてメッセージをディスパッチします。  同様に、クライアント側のこうしたスタックでは、空または任意の HTTP SoapAction ヘッダーが含まれるメッセージを送信する場合があります。これは SOAP 1.1 の仕様で許可されていました。  
+ WS-I Basic Profile 1.1 のガイドラインに従っていない SOAP 1.1 Web サービス スタックの一部では、Action URI に基づくのではなく、SOAP 本文内にある最初の要素の XML 修飾名に基づいてメッセージをディスパッチします。 同様に、クライアント側のこうしたスタックでは、空または任意の HTTP SoapAction ヘッダーが含まれるメッセージを送信する場合があります。これは SOAP 1.1 の仕様で許可されていました。  
   
- メッセージをメソッドにディスパッチする方法を変更するために、このサンプルでは <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> 拡張インターフェイスを `DispatchByBodyElementOperationSelector` に実装します。  このクラスは、メッセージ本文の最初の要素に基づいて操作を選択します。  
+ メッセージをメソッドにディスパッチする方法を変更するために、このサンプルでは <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> 拡張インターフェイスを `DispatchByBodyElementOperationSelector` に実装します。 このクラスは、メッセージ本文の最初の要素に基づいて操作を選択します。  
   
- クラス コンストラクタには、`XmlQualifiedName` と文字列のペアが記録されたディクショナリが必要です。この修飾名は SOAP 本文の最初の子の名前を示し、文字列は該当する操作名を示します。  `defaultOperationName` は、このディクショナリで照合できないすべてのメッセージを受信する操作の名前です。  
+ クラス コンストラクタには、`XmlQualifiedName` と文字列のペアが記録されたディクショナリが必要です。この修飾名は SOAP 本文の最初の子の名前を示し、文字列は該当する操作名を示します。 `defaultOperationName` は、このディクショナリで照合できないすべてのメッセージを受信する操作の名前です。  
   
 ```  
 class DispatchByBodyElementOperationSelector : IDispatchOperationSelector  
@@ -40,9 +43,9 @@ class DispatchByBodyElementOperationSelector : IDispatchOperationSelector
     }  
 ```  
   
- <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A> インターフェイスにはメソッドが 1 つしかないので、<xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> を実装すると、ビルドが非常に簡単です。  このメソッドでの処理は、入力メッセージを検査し、現在のエンドポイントのサービス コントラクトでのメソッド名と同じ文字列を返すことです。  
+ <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> インターフェイスにはメソッドが 1 つしかないので、<xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A> を実装すると、ビルドが非常に簡単です。 このメソッドでの処理は、入力メッセージを検査し、現在のエンドポイントのサービス コントラクトでのメソッド名と同じ文字列を返すことです。  
   
- このサンプルでは、操作セレクタは <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A> を通じて、入力メッセージの本文の <xref:System.Xml.XmlDictionaryReader> を取得します。  このメソッドは既にリーダーをメッセージ本文の最初の子に配置しています。そのため、現在の要素の名前と名前空間の URI を取得して、それらを `XmlQualifiedName` に結合することは簡単です。その後、これは操作セレクタによって保持されているディクショナリから対応する操作を検索する際に使用されます。  
+ このサンプルでは、操作セレクタは <xref:System.Xml.XmlDictionaryReader> を通じて、入力メッセージの本文の <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A> を取得します。 このメソッドは既にリーダーをメッセージ本文の最初の子に配置しています。そのため、現在の要素の名前と名前空間の URI を取得して、それらを `XmlQualifiedName` に結合することは簡単です。その後、これは操作セレクタによって保持されているディクショナリから対応する操作を検索する際に使用されます。  
   
 ```  
 public string SelectOperation(ref System.ServiceModel.Channels.Message message)  
@@ -62,10 +65,9 @@ public string SelectOperation(ref System.ServiceModel.Channels.Message message)
 }  
 ```  
   
- <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A>、またはメッセージ本文のコンテンツへのアクセスを提供する他のメソッドを使用してメッセージ本文にアクセスすると、そのメッセージは "read" とマークされます。つまり、メッセージは以降の処理に対して無効になります。  したがって、操作セレクタは次のコードに示すメソッドを使用して入力メッセージのコピーを作成します。  リーダーの位置は検査中には変更されていないので、新しく作成されたメッセージはこれを参照できます。入力メッセージのプロパティとヘッダーもこの新しいメッセージにコピーされるので、その結果、元のメッセージの完全な複製ができあがります。  
+ <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A>、またはメッセージ本文のコンテンツへのアクセスを提供する他のメソッドを使用してメッセージ本文にアクセスすると、そのメッセージは "read" とマークされます。つまり、メッセージは以降の処理に対して無効になります。 したがって、操作セレクタは次のコードに示すメソッドを使用して入力メッセージのコピーを作成します。 リーダーの位置は検査中には変更されていないので、新しく作成されたメッセージはこれを参照できます。入力メッセージのプロパティとヘッダーもこの新しいメッセージにコピーされるので、その結果、元のメッセージの完全な複製ができあがります。  
   
 ```  
-  
 private Message CreateMessageCopy(Message message,   
                                      XmlDictionaryReader body)  
 {  
@@ -74,17 +76,16 @@ private Message CreateMessageCopy(Message message,
     copy.Properties.CopyProperties(message.Properties);  
     return copy;  
 }  
-  
 ```  
   
-## サービスへの操作セレクタの追加  
- サービス ディスパッチ操作セレクタは [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ディスパッチャに対する拡張機能です。  二重のコントラクトのコールバック チャネルでメソッドを選択する場合、クライアントの操作セレクタも存在します。この操作セレクタはここで説明するディスパッチ操作セレクタと非常によく似ていますが、このサンプルでは明示的には説明しません。  
+## <a name="adding-an-operation-selector-to-a-service"></a>サービスへの操作セレクタの追加  
+ サービス ディスパッチ操作セレクタは [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ディスパッチャに対する拡張機能です。 二重のコントラクトのコールバック チャネルでメソッドを選択する場合、クライアントの操作セレクタも存在します。この操作セレクタはここで説明するディスパッチ操作セレクタと非常によく似ていますが、このサンプルでは明示的には説明しません。  
   
- ディスパッチ操作セレクタはほとんどのサービス モデル拡張と同様、動作を使用してディスパッチャに追加されます。  *動作*とは構成オブジェクトのことで、1 つまたは複数の拡張機能をディスパッチ ランタイム \(またはクライアント ランタイム\) に追加します。追加しない場合は、そのランタイムの設定を変更します。  
+ ディスパッチ操作セレクタはほとんどのサービス モデル拡張と同様、動作を使用してディスパッチャに追加されます。 A*動作*は、構成オブジェクトをディスパッチ ランタイム (またはクライアント ランタイムに)、1 つまたは複数の拡張機能を追加するか、それ以外の場合、設定を変更します。  
   
- 操作セレクタにはコントラクトのスコープがあるので、ここで実装する適切な動作は <xref:System.ServiceModel.Description.IContractBehavior> です。  このインターフェイスは、次のコードに示すように <xref:System.Attribute> 派生クラスに実装されているため、この動作は任意のサービス コントラクトに宣言として追加できます。  <xref:System.ServiceModel.ServiceHost> が開いてディスパッチ ランタイムがビルドされるたびに、コントラクト、操作、およびサービス実装の属性の形をとるか、またはサービス構成内の要素の形をとるすべての動作が自動的に追加され、その後拡張機能の支援または既定の構成の変更を求められます。  
+ 操作セレクタにはコントラクトのスコープがあるので、ここで実装する適切な動作は <xref:System.ServiceModel.Description.IContractBehavior> です。 このインターフェイスは、次のコードに示すように <xref:System.Attribute> 派生クラスに実装されているため、この動作は任意のサービス コントラクトに宣言として追加できます。 <xref:System.ServiceModel.ServiceHost> が開いてディスパッチ ランタイムがビルドされるたびに、コントラクト、操作、およびサービス実装の属性の形をとるか、またはサービス構成内の要素の形をとるすべての動作が自動的に追加され、その後拡張機能の支援または既定の構成の変更を求められます。  
   
- 次のコードの抜粋では、簡略化のため、メソッド <xref:System.ServiceModel.Description.IContractBehavior.ApplyDispatchBehavior%2A> の実装のみを示します。これは、このサンプルのディスパッチャの構成変更に影響します。  他のメソッドが表示されていないのは、何の処理も行わずに呼び出し元に返されるためです。  
+ 次のコードの抜粋では、簡略化のため、メソッド <xref:System.ServiceModel.Description.IContractBehavior.ApplyDispatchBehavior%2A> の実装のみを示します。これは、このサンプルのディスパッチャの構成変更に影響します。 他のメソッドが表示されていないのは、何の処理も行わずに呼び出し元に返されるためです。  
   
 ```  
 [AttributeUsage(AttributeTargets.Class|AttributeTargets.Interface)]  
@@ -95,9 +96,9 @@ class DispatchByBodyElementBehaviorAttribute : Attribute, IContractBehavior
     // public void Validate(...)  
 ```  
   
- 最初に、<xref:System.ServiceModel.Description.IContractBehavior.ApplyDispatchBehavior%2A> を実装し、サービス エンドポイントの <xref:System.ServiceModel.Description.ContractDescription> の <xref:System.ServiceModel.Description.OperationDescription> 要素を反復処理することによって、操作セレクタの検索ディクショナリを設定します。  次に、各操作の記述に `DispatchBodyElementAttribute` 動作が存在するかどうかが検査されます。この動作は、このサンプルでも定義されている <xref:System.ServiceModel.Description.IOperationBehavior> の実装です。  このクラスも動作の 1 つですが、パッシブな動作です。ディスパッチ ランタイムに対して構成変更をアクティブに支援することはありません。  このすべてのメソッドは、アクションを起こすことなく呼び出し元に返されます。  この操作の動作は、新しいディスパッチ機構に必要なメタデータ、つまり見つかった場合に操作で選択される本文要素の修飾名を、該当する操作に関連付ける目的でのみ存在します。  
+ 最初に、<xref:System.ServiceModel.Description.IContractBehavior.ApplyDispatchBehavior%2A> を実装し、サービス エンドポイントの <xref:System.ServiceModel.Description.OperationDescription> の <xref:System.ServiceModel.Description.ContractDescription> 要素を反復処理することによって、操作セレクタの検索ディクショナリを設定します。 次に、各操作の記述に `DispatchBodyElementAttribute` 動作が存在するかどうかが検査されます。この動作は、このサンプルでも定義されている <xref:System.ServiceModel.Description.IOperationBehavior> の実装です。 このクラスも動作の 1 つですが、パッシブな動作です。ディスパッチ ランタイムに対して構成変更をアクティブに支援することはありません。 このすべてのメソッドは、アクションを起こすことなく呼び出し元に返されます。 この操作の動作は、新しいディスパッチ機構に必要なメタデータ、つまり見つかった場合に操作で選択される本文要素の修飾名を、該当する操作に関連付ける目的でのみ存在します。  
   
- このような動作が見つかると、XML 修飾名 \(`QName` プロパティ\) と操作名 \(`Name` プロパティ\) から作成された値のペアがディクショナリに追加されます。  
+ このような動作が見つかると、XML 修飾名 (`QName` プロパティ) と操作名 (`Name` プロパティ) から作成された値のペアがディクショナリに追加されます。  
   
  ディクショナリが設定されると、新しい `DispatchByBodyElementOperationSelector` がこの情報で構築され、ディスパッチ ランタイムの操作セレクタとして設定されます。  
   
@@ -125,12 +126,12 @@ public void ApplyDispatchBehavior(ContractDescription contractDescription, Servi
 }  
 ```  
   
-## サービスの実装  
- このサンプルに実装されている動作は、通信回線からのメッセージの解釈方法とディスパッチ方法に直接影響します。これはサービス コントラクトの機能です。  そのため、この動作を使用することを選択したサービス実装では、この動作をサービス コントラクト レベルで宣言する必要があります。  
+## <a name="implementing-the-service"></a>サービスの実装  
+ このサンプルに実装されている動作は、通信回線からのメッセージの解釈方法とディスパッチ方法に直接影響します。これはサービス コントラクトの機能です。 そのため、この動作を使用することを選択したサービス実装では、この動作をサービス コントラクト レベルで宣言する必要があります。  
   
- サンプル プロジェクト service は `DispatchByBodyElementBehaviorAttribute` コントラクトの動作を `IDispatchedByBody` サービス コントラクトに適用し、2 つの操作 `OperationForBodyA()` と `OperationForBodyB()` のそれぞれに `DispatchBodyElementAttribute` 操作の動作のラベルを付けます。  このコントラクトを実装しているサービスのサービス ホストが開かれると、このメタデータは前で説明したようにディスパッチャ ビルダによって取得されます。  
+ サンプル プロジェクト service が適用されます、`DispatchByBodyElementBehaviorAttribute`コントラクトの動作を`IDispatchedByBody`サービス コントラクトと 2 つの操作のラベル各`OperationForBodyA()`と`OperationForBodyB()`で、`DispatchBodyElementAttribute`操作の動作です。 このコントラクトを実装しているサービスのサービス ホストが開かれると、このメタデータは前で説明したようにディスパッチャ ビルダによって取得されます。  
   
- 操作セレクタはメッセージ本文の要素のみに基づいてディスパッチし、"Action" を無視するので、返された応答の "Action" ヘッダーをチェックしないようランタイムに通知する必要があります。これを行うには、ワイルドカード "\*" を <xref:System.ServiceModel.OperationContractAttribute> の `ReplyAction` プロパティに割り当てます。  さらに、"Action" プロパティを持つ既定の操作をワイルドカード "\*" に設定する必要があります。  既定の操作は、ディスパッチできず、`DispatchBodyElementAttribute` を持たないすべてのメッセージを受信します。  
+ 操作セレクタはメッセージ本文の要素のみに基づいてディスパッチし、"Action" を無視するので、返された応答の "Action" ヘッダーをチェックしないようランタイムに通知する必要があります。これを行うには、ワイルドカード "*" を `ReplyAction` の <xref:System.ServiceModel.OperationContractAttribute> プロパティに割り当てます。 さらに、ワイルドカードに設定した"Action"プロパティを持つ既定の操作を必要とは"\*"です。 既定の操作は、ディスパッチできず、`DispatchBodyElementAttribute` を持たないすべてのメッセージを受信します。  
   
 ```  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples"),  
@@ -148,14 +149,14 @@ public interface IDispatchedByBody
 }  
 ```  
   
- このサンプルのサービス実装は簡単です。  どのメソッドも受信メッセージを応答メッセージにラップし、クライアントに再度エコーします。  
+ このサンプルのサービス実装は簡単です。 どのメソッドも受信メッセージを応答メッセージにラップし、クライアントに再度エコーします。  
   
-## サンプルの実行とビルド  
- このサンプルを実行すると、次に示す \(書式設定された\) 出力と同様の、操作応答の内容がクライアントのコンソール ウィンドウに表示されます。  
+## <a name="running-and-building-the-sample"></a>サンプルの実行とビルド  
+ このサンプルを実行すると、次に示す (書式設定された) 出力と同様の、操作応答の内容がクライアントのコンソール ウィンドウに表示されます。  
   
- クライアントは 3 つのメッセージをサービスに送信します。このメッセージ本文のコンテンツ要素の名前は、それぞれ `bodyA`、`bodyB`、および `bodyX` です。  以上の説明とサービス コントラクトからわかるように、`bodyA` 要素が含まれる受信メッセージは、`OperationForBodyA()` メソッドにディスパッチされます。  `bodyX` 本文要素が含まれるメッセージについては、明示的なディスパッチ対象がないので、このメッセージは `DefaultOperation()` にディスパッチされます。  各サービス操作は、受信されたメッセージ本文をメソッド固有の要素にラップして返します。このサンプルでは、入力メッセージと出力メッセージを明確に関連付けるためにこの操作を行います。  
+ クライアントは 3 つのメッセージをサービスに送信します。このメッセージ本文のコンテンツ要素の名前は、それぞれ `bodyA`、`bodyB`、および `bodyX` です。 以上の説明とサービス コントラクトからわかるように、`bodyA` 要素が含まれる受信メッセージは、`OperationForBodyA()` メソッドにディスパッチされます。 `bodyX` 本文要素が含まれるメッセージについては、明示的なディスパッチ対象がないので、このメッセージは `DefaultOperation()` にディスパッチされます。 各サービス操作は、受信されたメッセージ本文をメソッド固有の要素にラップして返します。このサンプルでは、入力メッセージと出力メッセージを明確に関連付けるためにこの操作を行います。  
   
-```  
+```xml  
 <?xml version="1.0" encoding="IBM437"?>  
 <replyBodyA xmlns="http://tempuri.org">  
    <q:bodyA xmlns:q="http://tempuri.org">test</q:bodyA>  
@@ -168,24 +169,23 @@ public interface IDispatchedByBody
 <replyDefault xmlns="http://tempuri.org">  
    <q:bodyX xmlns:q="http://tempuri.org">test</q:bodyX>  
 </replyDefault>  
-  
 ```  
   
-#### サンプルをセットアップ、ビルド、および実行するには  
+#### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。  
   
-2.  ソリューションをビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  指示に従って、ソリューションをビルドする[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。  
   
-3.  単一コンピューター構成か複数コンピューター構成かに応じて、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+3.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。  続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。  このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Interop\AdvancedDispatchByBody`  
   
-## 参照
+## <a name="see-also"></a>関連項目

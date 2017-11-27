@@ -1,90 +1,92 @@
 ---
-title: "&lt;announcementEndpoint&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;announcementEndpoint&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 034b7c69-a770-4502-8cef-38007bbcd025
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d49ea0b2dbabd5e747d912b76e493559b2a96ee7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;announcementEndpoint&gt;
-この構成要素は、固定アナウンス コントラクトが設定されている標準エンドポイントを定義します。  サービスは、サービスが開いたとき、または閉じたときにオンラインおよびオフラインのアナウンス メッセージを送信することによって、その可用性をアナウンスすることもできます。  [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスは、[\<serviceDiscovery\>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicediscovery.md) 要素でアナウンス エンドポイントを指定し、AnnouncementClient を使用してアナウンスを実行します。  他のサービスからのアナウンスをリッスンしようとするクライアントは、実際に、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスとして動作します。このため、[\<services\>](../../../../../docs/framework/configure-apps/file-schema/wcf/services.md) セクションに、このクライアントのアナウンス エンドポイントを構成する必要があります。  
+# <a name="ltannouncementendpointgt"></a>&lt;announcementEndpoint&gt;
+この構成要素は、固定アナウンス コントラクトが設定されている標準エンドポイントを定義します。 サービスは、サービスが開いたとき、または閉じたときにオンラインおよびオフラインのアナウンス メッセージを送信することによって、その可用性をアナウンスすることもできます。 A[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]サービスでアナウンス エンドポイントの指定、 [ \<serviceDiscovery >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicediscovery.md)要素と使用をお知らせを実行する AnnouncementClient です。 他のサービスからのアナウンスが実際として動作しているをリッスンするように元のクライアントは、 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] ; のサービスでそのクライアントのアナウンス エンドポイントを構成する必要があるため、 [ \<services >](../../../../../docs/framework/configure-apps/file-schema/wcf/services.md)セクションです。  
   
-## 構文  
+\<システムです。ServiceModel >  
+\<standardEndpoints >  
   
-```  
+## <a name="syntax"></a>構文  
   
+```xml  
 <system.serviceModel>  
-    <standardEndpoints>  
-       <announcementEndpoint>   
-          <standardEndpoint  
-                  discoveryVersion=”WSDiscovery11/WSDiscoveryApril2005”  
-                  maxAnnouncementDelay=”Timespan”   
-                  name="String" />   
-       </announcementEndpoint>          
-    </standardEndpoints>  
+  <standardEndpoints>
+    <announcementEndpoint>
+      <standardEndpoint discoveryVersion="WSDiscovery11/WSDiscoveryApril2005" 
+                        maxAnnouncementDelay="Timespan" 
+                        name="String" />
+    </announcementEndpoint>
+  </standardEndpoints>  
 </system.serviceModel>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
 |属性|説明|  
-|--------|--------|  
-|discoveryVersion|WS\-Discovery プロトコルの 2 つのバージョンのうち、1 つを指定する文字列。  有効値は WSDiscovery11 と WSDiscoveryApril2005 です。  この値は、<xref:System.ServiceModel.Discovery.Configuration.DiscoveryVersion> 型です。|  
-|maxAnnouncementDelay|Discovery プロトコルが Hello メッセージを送信するまでの待機時間の最大値を指定する Timespan 値。  メッセージは送信前に 0 からこの属性値の間のランダムな時間だけ待機します。  この属性はランダムな短い待機時間を設定するために使用されるもので、ネットワークが機能しなくなり、すべてのサービスが同時にオンラインに戻ったときにネットワーク ストームが発生することを防ぎます。|  
-|name|標準エンドポイントの構成名を指定する文字列。  この名前は、サービス エンドポイントの `endpointConfiguration` 属性で使用され、標準エンドポイントと構成を関連付けます。|  
+|---------------|-----------------|  
+|discoveryVersion|WS-Discovery プロトコルの 2 つのバージョンのうち、1 つを指定する文字列。 有効値は WSDiscovery11 と WSDiscoveryApril2005 です。 この値は、<xref:System.ServiceModel.Discovery.Configuration.AnnouncementEndpointElement.DiscoveryVersion> 型です。|  
+|maxAnnouncementDelay|Discovery プロトコルが Hello メッセージを送信するまでの待機時間の最大値を指定する Timespan 値。 メッセージは送信前に 0 からこの属性値の間のランダムな時間だけ待機します。 この属性はランダムな短い待機時間を設定するために使用されるもので、ネットワークが機能しなくなり、すべてのサービスが同時にオンラインに戻ったときにネットワーク ストームが発生することを防ぎます。|  
+|name|標準エンドポイントの構成名を指定する文字列。 この名前は、サービス エンドポイントの `endpointConfiguration` 属性で使用され、標準エンドポイントと構成を関連付けます。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<standardEndpoints\>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|1 つ以上のプロパティ \(アドレス、バインディング、コントラクト\) が固定されている、あらかじめ定義されたエンドポイントである標準エンドポイントのコレクション。|  
+|-------------|-----------------|  
+|[\<standardEndpoints >](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|1 つ以上のプロパティ (アドレス、バインディング、コントラクト) が固定されている、あらかじめ定義されたエンドポイントである標準エンドポイントのコレクション。|  
   
-## 使用例  
+## <a name="example"></a>例  
  http およびピア ネットワーク経由でアナウンス メッセージをリッスンするクライアントの例を次に示します。  
   
-```  
-  
+```xml  
 <services>  
   <service name="ServiceAnnouncementListener">  
-              <endpoint name="httpAnnouncementEndpoint"  
-                        kind="announcementEndpoint"  
-                        binding="basicHttpBinding"  
-                        address="announcements" />  
-              <endpoint name="peerNetAnnouncementEndpoint"  
-                        kind="announcementEndpoint"  
-                        binding="peerTcpBinding"  
-                        address="net.p2p://discoveryMesh/multicast"  
-                        bindingConfiguration="discoveryPeerTcpBindingConfig" />  
+    <endpoint name="httpAnnouncementEndpoint"  
+              kind="announcementEndpoint"  
+              binding="basicHttpBinding"  
+              address="announcements" />  
+    <endpoint name="peerNetAnnouncementEndpoint"  
+              kind="announcementEndpoint"  
+              binding="peerTcpBinding"  
+              address="net.p2p://discoveryMesh/multicast"  
+              bindingConfiguration="discoveryPeerTcpBindingConfig" />  
   ...  
   </service>  
 </services>  
   
 <standardEndpoints>  
   <announcementEndpoint>  
-     <standardEndpoint name="httpAnnouncementEndpoint"                         
-                       version="WSDiscoveryApril2005" />  
-     <standardEndpoint name="peerNetAnnouncementEndpoint"                         
-                       version="WSDiscoveryApril2005" />  
+    <standardEndpoint name="httpAnnouncementEndpoint"                         
+                      version="WSDiscoveryApril2005" />  
+    <standardEndpoint name="peerNetAnnouncementEndpoint"                         
+                      version="WSDiscoveryApril2005" />  
    </announcementEndpoint>  
 </standardEndpoints>  
-  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Discovery.AnnouncementEndpoint>

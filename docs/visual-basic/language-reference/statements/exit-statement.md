@@ -1,100 +1,98 @@
 ---
-title: "Exit Statement (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Exit"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "execution, ending"
-  - "files, closing"
-  - "programs, quitting"
-  - "code, exiting"
-  - "Exit statement"
-  - "program termination"
-  - "execution, stopping"
+title: "Exit ステートメント (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Exit
+helpviewer_keywords:
+- execution [Visual Basic], ending
+- files [Visual Basic], closing
+- programs [Visual Basic], quitting
+- code, exiting
+- Exit statement [Visual Basic]
+- program termination
+- execution [Visual Basic], stopping
 ms.assetid: 760bfb32-5c3f-4bdb-a432-9a6001c92db7
-caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 2df63ecbf0605d07296e1692f18b1b015e27cd03
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Exit Statement (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-プロシージャまたはブロックを終了し、そのプロシージャ呼び出しまたはブロック定義の次のステートメントに即座に制御を移します。  
+# <a name="exit-statement-visual-basic"></a>Exit ステートメント (Visual Basic)
+プロシージャまたはブロックを終了し、プロシージャ呼び出しまたはブロックの定義を次のステートメントに制御を直ちに転送します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-Exit { Do | For | Function | Property | Select | Sub | Try | While }  
+Exit { Do | For | Function | Property | Select | Sub | Try | While }  
 ```  
   
-## ステートメント  
+## <a name="statements"></a>ステートメント  
  `Exit Do`  
- このステートメントのある `Do` ループを直ちに抜けます。  `Loop` ステートメントの後ろのステートメントから実行が継続されます。  `Exit Do` が使用できるのは `Do` ループの中だけです。  入れ子構造になっている `Do` ループの中で使用すると、`Exit Do` は内側のループを抜け、入れ子構造の 1 つ外側のレベルに制御を移します。  
+ すぐに終了させる、`Do`ループが表示されます。 ステートメントに次の実行が続行、`Loop`ステートメントです。 `Exit Do`内でのみ使用できます、`Do`ループします。 使用すると内で入れ子になった`Do`ループ、`Exit Do`最も内側のループを終了し、入れ子の上位のレベルに制御を移します。  
   
  `Exit For`  
- このステートメントのある `For` ループを直ちに抜けます。  `Next` ステートメントの後ろのステートメントから実行が継続されます。  `Exit For` が使用できるのは `For`...`Next` ループまたは `For Each`...`Next` ループの中だけです。  入れ子構造になっている `For` ループの中で使用すると、`Exit For` は内側のループを抜け、入れ子構造の 1 つ外側のレベルに制御を移します。  
+ すぐに終了させる、`For`ループが表示されます。 ステートメントに次の実行が続行、`Next`ステートメントです。 `Exit For`内でのみ使用できます、`For`しています.`Next`または`For Each`しています.`Next`ループします。 使用すると内で入れ子になった`For`ループ、`Exit For`最も内側のループを終了し、入れ子の上位のレベルに制御を移します。  
   
  `Exit Function`  
- このステートメントのある `Function` プロシージャを直ちに抜けます。  `Function` プロシージャを呼び出したステートメントの後ろのステートメントから実行が継続されます。  `Exit Function` が使用できるのは `Function` プロシージャの中だけです。  
+ すぐに終了させる、`Function`が表示される手順です。 呼び出したステートメントの次のステートメントと実行が継続、`Function`プロシージャです。 `Exit Function`内でのみ使用できます、`Function`プロシージャです。  
   
- 戻り値を指定するには、`Exit Function` ステートメントより前の行で関数名に値を割り当てます。  1 つのステートメントで戻り値を割り当てて関数を抜けるには、[Return Statement](../../../visual-basic/language-reference/statements/return-statement.md) を使用します。  
+ 戻り値を指定するには前に、の行に関数名に値を割り当てることができます、`Exit Function`ステートメントです。 戻り値を代入し、1 つのステートメント内で、関数の終了、代わりに使用できます、 [Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)です。  
   
  `Exit Property`  
- このステートメントのある `Property` プロシージャを直ちに抜けます。  `Property` プロシージャを呼び出したステートメント、つまりプロパティの値を要求または設定しているステートメントから実行が継続されます。  `Exit Property` が使用できるのは、プロパティの `Get` プロシージャまたは `Set` プロシージャの中だけです。  
+ すぐに終了させる、`Property`が表示される手順です。 呼び出したステートメントと実行が継続、`Property`手順、つまり、要求またはプロパティの値を設定するステートメントを使用します。 `Exit Property`プロパティの内部でのみ使用できます`Get`または`Set`プロシージャです。  
   
- `Get` プロシージャで戻り値を指定するには、`Exit Property` ステートメントより前の行で関数名に値を割り当てます。  1 つのステートメントで戻り値を割り当てて `Get` プロシージャを抜けるには、`Return` ステートメントを使用します。  
+ 戻り値を指定する、`Get`プロシージャ前に、の行に関数名に値を割り当てることができます、`Exit Property`ステートメントです。 戻り値および終了に割り当てる、 `Get` 1 つのステートメントでプロシージャを使用する、`Return`ステートメントです。  
   
- `Set` プロシージャでは、`Exit Property` ステートメントと `Return` ステートメントは同等です。  
+ `Set`プロシージャ、`Exit Property`ステートメントは等価、`Return`ステートメントです。  
   
  `Exit Select`  
- このステートメントのある `Select Case` を直ちに抜けます。  `End Select` ステートメントの後ろのステートメントから実行が継続されます。  `Exit Select` が使用できるのは `Select Case` ステートメントの中だけです。  
+ すぐに終了させる、`Select Case`ブロックが表示されます。 ステートメントに次の実行が続行、`End Select`ステートメントです。 `Exit Select`内でのみ使用できます、`Select Case`ステートメントです。  
   
  `Exit Sub`  
- このステートメントのある `Sub` プロシージャを直ちに抜けます。  `Sub` プロシージャを呼び出したステートメントの後ろのステートメントから実行が継続されます。  `Exit Sub` が使用できるのは `Sub` プロシージャの中だけです。  
+ すぐに終了させる、`Sub`が表示される手順です。 呼び出したステートメントの次のステートメントと実行が継続、`Sub`プロシージャです。 `Exit Sub`内でのみ使用できます、`Sub`プロシージャです。  
   
- `Sub` プロシージャでは、`Exit Sub` ステートメントと `Return` ステートメントは同等です。  
+ `Sub`プロシージャ、`Exit Sub`ステートメントは等価、`Return`ステートメントです。  
   
  `Exit Try`  
- このステートメントのある `Try` ブロックまたは `Catch` ブロックを直ちに抜けます。  `Finally` ブロックが 1 つ存在する場合はそこから、そうでない場合は `End Try` ステートメントの後ろのステートメントから実行を継続します。  `Exit Try` が使用できるのは `Try` ブロックまたは `Catch` ブロックの中だけです。`Finally` ブロックの中では使用できません。  
+ すぐに終了させる、`Try`または`Catch`ブロックが表示されます。 実行が継続、 `Finally` 、1 つを使用する必要がある場合、またはステートメントに次のブロック、`End Try`ステートメントがそれ以外の場合。 `Exit Try`内でのみ使用できます、`Try`または`Catch`ブロックといない内側、`Finally`ブロックします。  
   
  `Exit While`  
- このステートメントのある `While` ループを直ちに抜けます。  `End While` ステートメントの後ろのステートメントから実行が継続されます。  `Exit While` が使用できるのは `While` ループの中だけです。  `While` ループが入れ子構造になっている場合、`Exit While` のあるループの 1 つ外側のループに制御が移ります。  
+ すぐに終了させる、`While`ループが表示されます。 ステートメントに次の実行が続行、`End While`ステートメントです。 `Exit While`内でのみ使用できます、`While`ループします。 使用すると内で入れ子になった`While`ループ、`Exit While`ループ ループの 1 つの入れ子になったレベルに制御を移します場所`Exit While`が発生します。  
   
-## 解説  
- この `Exit` ステートメントと `End` ステートメントを混同しないでください。  `Exit` はステートメントの終了を定義するステートメントではありません。  
+## <a name="remarks"></a>コメント  
+ 混同しないでください`Exit`ステートメントと`End`ステートメントです。 `Exit`ステートメントの末尾を一切定義しません。  
   
-## 使用例  
- 次の例では、`index` 変数が 100 を上回ったときに、ループ条件によってループが停止されます。  ただし、ループ内の `If` ステートメントにより、index 変数が 10 を上回ったときに、`Exit Do` ステートメントによってループが停止されます。  
+## <a name="example"></a>例  
+ 次の例では、ループの条件は、ループを停止するときに、`index`変数が 100 より大きい。 `If` 、ループ内のステートメントがただし、により、`Exit Do`インデックス変数が 10 よりも大きい場合に、ループを停止するステートメント。  
   
  [!code-vb[VbVbalrStatements#133](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/exit-statement_1.vb)]  
   
-## 使用例  
- 戻り値を `myFunction` という名前の関数に割り当てて、`Exit Function` を使って関数から戻すコード例を次に示します。  
+## <a name="example"></a>例  
+ 次の例では、戻り値を割り当てて、関数名に`myFunction`、しを使用して`Exit Function`関数から返される。  
   
  [!code-vb[VbVbalrStatements#23](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/exit-statement_2.vb)]  
   
-## 使用例  
- [Return Statement](../../../visual-basic/language-reference/statements/return-statement.md) を使用して戻り値を割り当てて、関数を抜けるコード例を次に示します。  
+## <a name="example"></a>例  
+ 次の例では、 [Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)を戻り値を代入し、関数を終了します。  
   
  [!code-vb[VbVbalrStatements#24](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/exit-statement_3.vb)]  
   
-## 参照  
- [Continue Statement](../../../visual-basic/language-reference/statements/continue-statement.md)   
- [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md)   
- [End Statement](../../../visual-basic/language-reference/statements/end-statement.md)   
- [For Each...Next ステートメント](../../../visual-basic/language-reference/statements/for-each-next-statement.md)   
- [For...Next ステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md)   
- [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)   
- [Return Statement](../../../visual-basic/language-reference/statements/return-statement.md)   
- [Stop Statement](../../../visual-basic/language-reference/statements/stop-statement.md)   
- [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)   
- [Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+## <a name="see-also"></a>関連項目  
+ [Continue ステートメント](../../../visual-basic/language-reference/statements/continue-statement.md)  
+ [Do...Loop ステートメント](../../../visual-basic/language-reference/statements/do-loop-statement.md)  
+ [End ステートメント](../../../visual-basic/language-reference/statements/end-statement.md)  
+ [For Each...Next ステートメント](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
+ [For...Next ステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md)  
+ [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)  
+ [Stop ステートメント](../../../visual-basic/language-reference/statements/stop-statement.md)  
+ [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Try...Catch...Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)

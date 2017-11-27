@@ -1,195 +1,188 @@
 ---
-title: "DataGrid のスタイルとテンプレート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ControlTemplate [WPF], DataGrid"
-  - "DataGrid [WPF], スタイルおよびテンプレート"
-  - "パーツ [WPF], DataGrid"
-  - "状態 [WPF], DataGrid"
-  - "スタイル [WPF], DataGrid"
-  - "テンプレート [WPF], DataGrid"
+title: "DataGrid のスタイルとテンプレート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- states [WPF], DataGrid
+- ControlTemplate [WPF], DataGrid
+- DataGrid [WPF], styles and templates
+- templates [WPF], DataGrid
+- styles [WPF], DataGrid
+- parts [WPF], DataGrid
 ms.assetid: 9cb31d63-f148-4d25-b079-816e73f988c7
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b2dd7e47454cdfa806ce025d905073468f70f7cb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataGrid のスタイルとテンプレート
-このトピックでは、<xref:System.Windows.Controls.DataGrid> コントロールのスタイルおよびテンプレートについて説明します。  既定の <xref:System.Windows.Controls.ControlTemplate> に変更を加えることで、コントロールに独自の外観を設定できます。  詳細については、「[ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
+# <a name="datagrid-styles-and-templates"></a>DataGrid のスタイルとテンプレート
+このトピックは、のスタイルとテンプレートについて説明します、<xref:System.Windows.Controls.DataGrid>コントロール。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 詳細については、「[Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
   
-## DataGrid のパーツ  
- 次の表は、<xref:System.Windows.Controls.DataGrid> コントロールの名前付きパーツの一覧です。  
+## <a name="datagrid-parts"></a>DataGrid のパーツ  
+ 次の表に、名前付きのパーツの<xref:System.Windows.Controls.DataGrid>コントロール。  
   
-||||  
+|パーツ|型|説明|  
 |-|-|-|  
-|指定項目|種類|Description|  
-|PART\_ColumnHeadersPresenter|<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>|列ヘッダーが含まれる行。|  
+|PART_ColumnHeadersPresenter|<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>|列ヘッダーを含んでいる行。|  
   
- <xref:System.Windows.Controls.DataGrid> の <xref:System.Windows.Controls.ControlTemplate> を作成するときに、テンプレートの <xref:System.Windows.Controls.ScrollViewer> 内に <xref:System.Windows.Controls.ItemsPresenter> が含まれる場合があります。  <xref:System.Windows.Controls.ItemsPresenter> により、<xref:System.Windows.Controls.DataGrid> の各項目が表示されます。また、<xref:System.Windows.Controls.ScrollViewer> により、コントロール内でスクロールできるようになります。  <xref:System.Windows.Controls.ItemsPresenter> が <xref:System.Windows.Controls.ScrollViewer> の直接の子でない場合は、<xref:System.Windows.Controls.ItemsPresenter> に `ItemsPresenter` という名前を付ける必要があります。  
+ 作成するときに、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.DataGrid>、テンプレートを含めることがあります、<xref:System.Windows.Controls.ItemsPresenter>内で、<xref:System.Windows.Controls.ScrollViewer>です。 (、<xref:System.Windows.Controls.ItemsPresenter>内の各項目を表示、 <xref:System.Windows.Controls.DataGrid>;<xref:System.Windows.Controls.ScrollViewer>コントロール内でスクロールできるように) します。  場合、<xref:System.Windows.Controls.ItemsPresenter>の直接の子ではない、<xref:System.Windows.Controls.ScrollViewer>を付ける必要があります、<xref:System.Windows.Controls.ItemsPresenter>名、`ItemsPresenter`です。  
   
- <xref:System.Windows.Controls.DataGrid> の既定のテンプレートには、<xref:System.Windows.Controls.ScrollViewer> コントロールが含まれています。  <xref:System.Windows.Controls.ScrollViewer> で定義されたパーツの詳細については、「[ScrollViewer のスタイルとテンプレート](../../../../docs/framework/wpf/controls/scrollviewer-styles-and-templates.md)」を参照してください。  
+ 既定のテンプレート、<xref:System.Windows.Controls.DataGrid>が含まれています、<xref:System.Windows.Controls.ScrollViewer>コントロール。 によって定義されたパートの詳細については、<xref:System.Windows.Controls.ScrollViewer>を参照してください[ScrollViewer スタイルとテンプレート](../../../../docs/framework/wpf/controls/scrollviewer-styles-and-templates.md)です。  
   
-## DataGrid の状態  
- 次の表は、<xref:System.Windows.Controls.DataGrid> コントロールの表示状態の一覧です。  
+## <a name="datagrid-states"></a>DataGrid の状態  
+ 次の表に、用ビジュアル状態、<xref:System.Windows.Controls.DataGrid>コントロール。  
   
-||||  
+|VisualState 名|VisualStateGroup 名|説明|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|Normal|CommonStates|既定の状態です。|  
-|Disabled|CommonStates|コントロールが無効になっています。|  
-|InvalidFocused|ValidationStates|コントロールは有効ではありませんが、フォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|コントロールは有効ではなく、フォーカスはありません。|  
-|Valid|ValidationStates|コントロールが有効です。|  
+|標準|CommonStates|既定の状態です。|  
+|無効|CommonStates|コントロールが無効になっています。|  
+|InvalidFocused|ValidationStates|コントロールが無効で、フォーカスがあります。|  
+|InvalidUnfocused|ValidationStates|コントロールが無効で、フォーカスがありません。|  
+|有効|ValidationStates|コントロールは有効です。|  
   
-## DataGridCell のパーツ  
- <xref:System.Windows.Controls.DataGridCell> 要素には、名前付きのパーツは存在しません。  
+## <a name="datagridcell-parts"></a>DataGridCell 部分  
+ <xref:System.Windows.Controls.DataGridCell>要素には、すべて名前付きのパートはありません。  
   
-## DataGridCell の状態  
- 次の表は、<xref:System.Windows.Controls.DataGridCell> 要素の表示状態の一覧です。  
+## <a name="datagridcell-states"></a>DataGridCell 状態  
+ 次の表に、用ビジュアル状態、<xref:System.Windows.Controls.DataGridCell>要素。  
   
-||||  
+|VisualState 名|VisualStateGroup 名|説明|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|Normal|CommonStates|既定の状態です。|  
-|MouseOver|CommonStates|マウス ポインターは、セルの上に置かれています。|  
-|Focused|FocusStates|セルにフォーカスがあります。|  
-|Unfocused|FocusStates|セルにフォーカスがありません。|  
-|Current|CurrentStates|セルは現在のセルです。|  
-|Regular|CurrentStates|セルは現在のセルではありません。|  
-|表示|InteractionStates|セルは表示モードです。|  
-|編集|InteractionStates|セルは編集モードです。|  
-|Selected|SelectionStates|セルが選択されています。|  
-|Unselected|SelectionStates|セルは選択されていません。|  
-|InvalidFocused|ValidationStates|セルは有効ではありませんが、フォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|セルは有効ではなく、フォーカスはありません。|  
-|Valid|ValidationStates|セルは有効です。|  
+|標準|CommonStates|既定の状態です。|  
+|MouseOver|CommonStates|マウス ポインターがセル上で配置されます。|  
+|フォーカスされている|FocusStates|セルには、フォーカスがあります。|  
+|フォーカスされていない|FocusStates|セルにフォーカスがないです。|  
+|現在|CurrentStates|セルは、現在のセルです。|  
+|Regular|CurrentStates|セルは、現在のセルではありません。|  
+|表示|InteractionStates|セルが表示モードです。|  
+|編集|InteractionStates|セルが編集モードです。|  
+|選択済み|SelectionStates|セルが選択されます。|  
+|未選択|SelectionStates|セルが選択されていません。|  
+|InvalidFocused|ValidationStates|セルが正しくないと、フォーカスがあります。|  
+|InvalidUnfocused|ValidationStates|セルが正しくないと、フォーカスされていません。|  
+|有効|ValidationStates|セルは有効です。|  
   
-## DataGridRow のパーツ  
- <xref:System.Windows.Controls.DataGridRow> 要素には、名前付きのパーツは存在しません。  
+## <a name="datagridrow-parts"></a>DataGridRow 部分  
+ <xref:System.Windows.Controls.DataGridRow>要素には、すべて名前付きのパートはありません。  
   
-## DataGridRow の状態  
- 次の表は、<xref:System.Windows.Controls.DataGridRow> 要素の表示状態の一覧です。  
+## <a name="datagridrow-states"></a>DataGridRow 状態  
+ 次の表に、用ビジュアル状態、<xref:System.Windows.Controls.DataGridRow>要素。  
   
-||||  
+|VisualState 名|VisualStateGroup 名|説明|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|Normal|CommonStates|既定の状態です。|  
-|MouseOver|CommonStates|マウス ポインターは、行の上に置かれています。|  
-|MouseOver\_Editing|CommonStates|マウス ポインターは行の上に置かれ、行は編集モードです。|  
-|MouseOver\_Selected|CommonStates|マウス ポインターは行の上に置かれ、行が選択されています。|  
-|MouseOver\_Unfocused\_Editing|CommonStates|マウス ポインターは行の上に置かれ、行は編集モードで、フォーカスはありません。|  
-|MouseOver\_Unfocused\_Selected|CommonStates|マウス ポインターは行の上に置かれ、行が選択され、フォーカスはありません。|  
-|Normal\_AlternatingRow|CommonStates|行は交互の行です。|  
-|Normal\_Editing|CommonStates|行は編集モードです。|  
-|Normal\_Selected|CommonStates|行が選択されています。|  
-|Unfocused\_Editing|CommonStates|行は編集モードで、フォーカスはありません。|  
-|Unfocused\_Selected|CommonStates|行が選択され、フォーカスはありません。|  
-|InvalidFocused|ValidationStates|コントロールは有効ではありませんが、フォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|コントロールは有効ではなく、フォーカスはありません。|  
-|Valid|ValidationStates|コントロールが有効です。|  
+|標準|CommonStates|既定の状態です。|  
+|MouseOver|CommonStates|マウス ポインターが行位置します。|  
+|MouseOver_Editing|CommonStates|行の上にマウス ポインターが配置されているし、行が編集モードにします。|  
+|MouseOver_Selected|CommonStates|行の上にマウス ポインターが配置されているし、行を選択します。|  
+|MouseOver_Unfocused_Editing|CommonStates|行の上にマウス ポインターが配置されているは、行モードを編集し、フォーカスを持っていません。|  
+|MouseOver_Unfocused_Selected|CommonStates|行の上にマウス ポインターが配置されている、行が選択され、フォーカスを持っていません。|  
+|Normal_AlternatingRow|CommonStates|その行は、交互の行です。|  
+|Normal_Editing|CommonStates|行は編集モードです。|  
+|Normal_Selected|CommonStates|行が選択されます。|  
+|Unfocused_Editing|CommonStates|この行は、編集モードでは、れ、フォーカスされていません。|  
+|Unfocused_Selected|CommonStates|行が選択され、フォーカスを持っていません。|  
+|InvalidFocused|ValidationStates|コントロールが無効で、フォーカスがあります。|  
+|InvalidUnfocused|ValidationStates|コントロールが無効で、フォーカスがありません。|  
+|有効|ValidationStates|コントロールは有効です。|  
   
-## DataGridRowHeader のパーツ  
- 次の表は、<xref:System.Windows.Controls.Primitives.DataGridRowHeader> 要素の名前付きパーツの一覧です。  
+## <a name="datagridrowheader-parts"></a>DataGridRowHeader 部分  
+ 次の表に、名前付きのパーツの<xref:System.Windows.Controls.Primitives.DataGridRowHeader>要素。  
   
-||||  
+|パーツ|型|説明|  
 |-|-|-|  
-|指定項目|種類|Description|  
-|PART\_TopHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|行ヘッダーのサイズを上端から変更する場合に使用する要素です。|  
-|PART\_BottomHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|行ヘッダーのサイズを下端から変更する場合に使用する要素です。|  
+|PART_TopHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|上部の行ヘッダーのサイズを変更するために使用する要素。|  
+|PART_BottomHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|下部から、行ヘッダーのサイズを変更するために使用する要素。|  
   
-## DataGridRowHeader の状態  
- 次の表は、<xref:System.Windows.Controls.Primitives.DataGridRowHeader> 要素の表示状態の一覧です。  
+## <a name="datagridrowheader-states"></a>DataGridRowHeader 状態  
+ 次の表に、用ビジュアル状態、<xref:System.Windows.Controls.Primitives.DataGridRowHeader>要素。  
   
-||||  
+|VisualState 名|VisualStateGroup 名|説明|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|Normal|CommonStates|既定の状態です。|  
-|MouseOver|CommonStates|マウス ポインターは、行の上に置かれています。|  
-|MouseOver\_CurrentRow|CommonStates|マウス ポインターは行の上に置かれ、行は現在の行です。|  
-|MouseOver\_CurrentRow\_Selected|CommonStates|マウス ポインターは行の上に置かれ、行は現在の行で、選択されています。|  
-|MouseOver\_EditingRow|CommonStates|マウス ポインターは行の上に置かれ、行は編集モードです。|  
-|MouseOver\_Selected|CommonStates|マウス ポインターは行の上に置かれ、行が選択されています。|  
-|MouseOver\_Unfocused\_CurrentRow\_Selected|CommonStates|マウス ポインターは行の上に置かれ、行は現在の行で、選択され、フォーカスはありません。|  
-|MouseOver\_Unfocused\_EditingRow|CommonStates|マウス ポインターは行の上に置かれ、行は編集モードで、フォーカスはありません。|  
-|MouseOver\_Unfocused\_Selected|CommonStates|マウス ポインターは行の上に置かれ、行が選択され、フォーカスはありません。|  
-|Normal\_CurrentRow|CommonStates|行は現在の行です。|  
-|Normal\_CurrentRow\_Selected|CommonStates|行は現在の行で、選択されています。|  
-|Normal\_EditingRow|CommonStates|行は編集モードです。|  
-|Normal\_Selected|CommonStates|行が選択されています。|  
-|Unfocused\_CurrentRow\_Selected|CommonStates|行は現在の行で、選択され、フォーカスはありません。|  
-|Unfocused\_EditingRow|CommonStates|行は編集モードで、フォーカスはありません。|  
-|Unfocused\_Selected|CommonStates|行が選択され、フォーカスはありません。|  
-|InvalidFocused|ValidationStates|コントロールは有効ではありませんが、フォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|コントロールは有効ではなく、フォーカスはありません。|  
-|Valid|ValidationStates|コントロールが有効です。|  
+|標準|CommonStates|既定の状態です。|  
+|MouseOver|CommonStates|マウス ポインターが行位置します。|  
+|MouseOver_CurrentRow|CommonStates|行の上にマウス ポインターが配置されているし、行は、現在の行。|  
+|MouseOver_CurrentRow_Selected|CommonStates|、行の上にマウス ポインターが配置されているし、は、行の現在および選択します。|  
+|MouseOver_EditingRow|CommonStates|行の上にマウス ポインターが配置されているし、行が編集モードにします。|  
+|MouseOver_Selected|CommonStates|行の上にマウス ポインターが配置されているし、行を選択します。|  
+|MouseOver_Unfocused_CurrentRow_Selected|CommonStates|マウス ポインターが配置されている、行、行は、現在選択されているとにフォーカスがないです。|  
+|MouseOver_Unfocused_EditingRow|CommonStates|行の上にマウス ポインターが配置されているは、行モードを編集し、フォーカスを持っていません。|  
+|MouseOver_Unfocused_Selected|CommonStates|行の上にマウス ポインターが配置されている、行が選択され、フォーカスを持っていません。|  
+|Normal_CurrentRow|CommonStates|行は、現在の行です。|  
+|Normal_CurrentRow_Selected|CommonStates|行は、現在の行は、され、選択されます。|  
+|Normal_EditingRow|CommonStates|行は編集モードです。|  
+|Normal_Selected|CommonStates|行が選択されます。|  
+|Unfocused_CurrentRow_Selected|CommonStates|行を現在の行が選択されている、フォーカスを持っていません。|  
+|Unfocused_EditingRow|CommonStates|この行は、編集モードでは、れ、フォーカスされていません。|  
+|Unfocused_Selected|CommonStates|行が選択され、フォーカスを持っていません。|  
+|InvalidFocused|ValidationStates|コントロールが無効で、フォーカスがあります。|  
+|InvalidUnfocused|ValidationStates|コントロールが無効で、フォーカスがありません。|  
+|有効|ValidationStates|コントロールは有効です。|  
   
-## DataGridColumnHeadersPresenter のパーツ  
- 次の表は、<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter> 要素の名前付きパーツの一覧です。  
+## <a name="datagridcolumnheaderspresenter-parts"></a>DataGridColumnHeadersPresenter 部分  
+ 次の表に、名前付きのパーツの<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>要素。  
   
-||||  
+|パーツ|型|説明|  
 |-|-|-|  
-|指定項目|種類|Description|  
-|PART\_FillerColumnHeader|<xref:System.Windows.Controls.Primitives.DataGridColumnHeader>|列ヘッダーのプレースホルダーです。|  
+|PART_FillerColumnHeader|<xref:System.Windows.Controls.Primitives.DataGridColumnHeader>|列ヘッダーのプレース ホルダーです。|  
   
-## DataGridColumnHeadersPresenter の状態  
- 次の表は、<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter> 要素の表示状態の一覧です。  
+## <a name="datagridcolumnheaderspresenter-states"></a>DataGridColumnHeadersPresenter 状態  
+ 次の表に、用ビジュアル状態、<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>要素。  
   
-||||  
+|VisualState 名|VisualStateGroup 名|説明|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|InvalidFocused|ValidationStates|セルは有効ではありませんが、フォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|セルは有効ではなく、フォーカスはありません。|  
-|Valid|ValidationStates|セルは有効です。|  
+|InvalidFocused|ValidationStates|セルが正しくないと、フォーカスがあります。|  
+|InvalidUnfocused|ValidationStates|セルが正しくないと、フォーカスされていません。|  
+|有効|ValidationStates|セルは有効です。|  
   
-## DataGridColumnHeader のパーツ  
- 次の表は、<xref:System.Windows.Controls.Primitives.DataGridColumnHeader> 要素の名前付きパーツの一覧です。  
+## <a name="datagridcolumnheader-parts"></a>DataGridColumnHeader 部分  
+ 次の表に、名前付きのパーツの<xref:System.Windows.Controls.Primitives.DataGridColumnHeader>要素。  
   
-||||  
+|パーツ|型|説明|  
 |-|-|-|  
-|指定項目|種類|Description|  
-|PART\_LeftHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|列ヘッダーのサイズを左端から変更する場合に使用する要素です。|  
-|PART\_RightHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|列ヘッダーのサイズを右端から変更する場合に使用する要素です。|  
+|PART_LeftHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|左側の列ヘッダーのサイズを変更するために使用する要素。|  
+|PART_RightHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|右側の列ヘッダーのサイズを変更するために使用する要素。|  
   
-## DataGridColumnHeader の状態  
- 次の表は、<xref:System.Windows.Controls.Primitives.DataGridColumnHeader> 要素の表示状態の一覧です。  
+## <a name="datagridcolumnheader-states"></a>DataGridColumnHeader 状態  
+ 次の表に、用ビジュアル状態、<xref:System.Windows.Controls.Primitives.DataGridColumnHeader>要素。  
   
-||||  
+|VisualState 名|VisualStateGroup 名|説明|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|Normal|CommonStates|既定の状態です。|  
+|標準|CommonStates|既定の状態です。|  
 |MouseOver|CommonStates|マウス ポインターがコントロール上に配置されています。|  
-|Pressed|CommonStates|コントロールが押されています。|  
-|SortAscending|SortStates|列は昇順に並べ替えられます。|  
-|SortDescending|SortStates|列は降順に並べ替えられます。|  
-|Unsorted|SortStates|列は並べ替えられません。|  
-|InvalidFocused|ValidationStates|コントロールは有効ではありませんが、フォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|コントロールは有効ではなく、フォーカスはありません。|  
-|Valid|ValidationStates|コントロールが有効です。|  
+|押されている|CommonStates|コントロールが押されています。|  
+|SortAscending|SortStates|列は、昇順で並べ替えられます。|  
+|SortDescending|SortStates|列は、降順で並べ替えられます。|  
+|並べ替えられていません。|SortStates|列が並べ替えられていません。|  
+|InvalidFocused|ValidationStates|コントロールが無効で、フォーカスがあります。|  
+|InvalidUnfocused|ValidationStates|コントロールが無効で、フォーカスがありません。|  
+|有効|ValidationStates|コントロールは有効です。|  
   
-## DataGrid ControlTemplate の例  
- <xref:System.Windows.Controls.DataGrid> コントロールの <xref:System.Windows.Controls.ControlTemplate> およびその関連付けられた型を定義する方法を次の例に示します。  
+## <a name="datagrid-controltemplate-example"></a>DataGrid ControlTemplate の例  
+ 次の例は、定義する方法を示します、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.DataGrid>コントロールとその関連する型。  
   
- [!code-xml[ControlTemplateExamples#DataGrid](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/datagrid.xaml#datagrid)]  
+ [!code-xaml[ControlTemplateExamples#DataGrid](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/datagrid.xaml#datagrid)]  
   
- 前の例では、次の 1 つ以上のリソースを使用しています。  
+ 前の例では、次のリソースの 1 つ以上を使用します。  
   
- [!code-xml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
+ [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- サンプル全体については、「[ControlTemplate を使用したスタイル設定のサンプル](http://go.microsoft.com/fwlink/?LinkID=160041)」を参照してください。.  
+ 完全なサンプルについては、[Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041)を参照してください。  
   
-## 参照  
- <xref:System.Windows.FrameworkElement.Style%2A>   
- <xref:System.Windows.Controls.ControlTemplate>   
- [コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)   
- [コントロールのカスタマイズ](../../../../docs/framework/wpf/controls/control-customization.md)   
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.FrameworkElement.Style%2A>  
+ <xref:System.Windows.Controls.ControlTemplate>  
+ [コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [コントロールのカスタマイズ](../../../../docs/framework/wpf/controls/control-customization.md)  
+ [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
  [ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

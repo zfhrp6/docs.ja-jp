@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - MDAs (managed debugging assistants), invalid apartment state
 - managed debugging assistants (MDAs), invalid apartment state
@@ -24,16 +18,15 @@ helpviewer_keywords:
 - threading [.NET Framework], managed debugging assistants
 - COM apartment states
 ms.assetid: e56fb9df-5286-4be7-b313-540c4d876cd7
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: f42a2b840a0cf678cfc2a06be0e9ed252c355a2a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 71634018e42ad66fdd2d03d0b0d496394cde801e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="invalidapartmentstatechange-mda"></a>invalidApartmentStateChange MDA
 `invalidApartmentStateChange` マネージ デバッグ アシスタント (MDS) は、次の 2 つのどちらかの問題によってアクティブ化されます。  
@@ -50,11 +43,11 @@ ms.lasthandoff: 08/21/2017
   
 ## <a name="cause"></a>原因  
   
--   スレッドは以前に異なる COM アパートメント状態に初期化されました。 スレッドのアパートメント状態を明示的または暗黙的に設定できることに注意してください。 明示的な操作には、<xref:System.Threading.Thread.ApartmentState%2A?displayProperty=fullName> プロパティ、<xref:System.Threading.Thread.SetApartmentState%2A> メソッド、<xref:System.Threading.Thread.TrySetApartmentState%2A> メソッドが含まれます。 <xref:System.Threading.Thread.Start%2A> メソッドを使用して作成されたスレッドは、スレッドが開始される前に <xref:System.Threading.Thread.SetApartmentState%2A> が呼び出されない限り、暗黙的に <xref:System.Threading.ApartmentState.MTA> に設定されます。 アプリケーションのメイン スレッドも、メイン メソッドで <xref:System.STAThreadAttribute> 属性が指定されない限り、暗黙的に <xref:System.Threading.ApartmentState.MTA> に初期化されます。  
+-   スレッドは以前に異なる COM アパートメント状態に初期化されました。 スレッドのアパートメント状態を明示的または暗黙的に設定できることに注意してください。 明示的な操作には、<xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType> プロパティ、<xref:System.Threading.Thread.SetApartmentState%2A> メソッド、<xref:System.Threading.Thread.TrySetApartmentState%2A> メソッドが含まれます。 <xref:System.Threading.Thread.Start%2A> メソッドを使用して作成されたスレッドは、スレッドが開始される前に <xref:System.Threading.Thread.SetApartmentState%2A> が呼び出されない限り、暗黙的に <xref:System.Threading.ApartmentState.MTA> に設定されます。 アプリケーションのメイン スレッドも、メイン メソッドで <xref:System.STAThreadAttribute> 属性が指定されない限り、暗黙的に <xref:System.Threading.ApartmentState.MTA> に初期化されます。  
   
 -   異なる同時実行モデルを持つ `CoUninitialize` メソッド (または `CoInitializeEx` メソッド) がスレッドで呼び出されます。  
   
-## <a name="resolution"></a>解決策  
+## <a name="resolution"></a>解像度  
  スレッドの実行開始前に、スレッドのアパートメント状態を設定するか、<xref:System.STAThreadAttribute> 属性または <xref:System.MTAThreadAttribute> 属性をアプリケーションのメイン メソッドに適用します。  
   
  2 番目の原因の場合、理想的には、`CoUninitialize` メソッドを呼び出すコードを変更し、スレッドの終了間近になり、RCW がなく、基になる COM コンポーネントがまだスレッドによって使用されている状態まで、呼び出しを遅延する必要があります。 ただし、`CoUninitialize` を呼び出すコードを変更できない場合は、この方法で初期化解除されるスレッドから RCW を使用しないようにする必要があります。  
@@ -93,7 +86,6 @@ namespace ApartmentStateMDA
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)   
+ <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
+ [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
  [相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)
-

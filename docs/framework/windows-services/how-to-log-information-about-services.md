@@ -1,76 +1,82 @@
 ---
-title: "方法 : サービスに関する情報のログを記録する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アプリケーション イベント ログ, サービス アプリケーション"
-  - "AutoLog プロパティ"
-  - "イベント ログ, サービス アプリケーション"
-  - "ログ, サービス アプリケーション"
-  - "サービス, ログ情報"
-  - "Windows サービス アプリケーション, ログ情報"
+title: "方法 : サービスに関する情報のログを記録する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- AutoLog property
+- services, logging information
+- Windows Service applications, logging information about
+- event logs, service applications
+- application event logs, service applications
+- logs, service applications
 ms.assetid: c0d8140f-c055-4d8e-a2e0-37358a550116
-caps.latest.revision: 17
-author: "ghogen"
-ms.author: "ghogen"
-manager: "douge"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: ghogen
+ms.author: ghogen
+manager: douge
+ms.openlocfilehash: 612b983f53f147102ddf7bab03d4ec6783dc4026
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : サービスに関する情報のログを記録する
-既定では、すべての Windows サービス プロジェクトはアプリケーション イベント ログとやり取りして、そこに情報および例外を書き込むことができます。 アプリケーションにこの機能が必要かどうかを指定するには、<xref:System.ServiceProcess.ServiceBase.AutoLog%2A> プロパティを使用します。 既定では、Windows サービス プロジェクト テンプレートで作成したサービスには、ログが有効にされます。<xref:System.Diagnostics.EventLog> クラスの静的フォームを使用すると、<xref:System.Diagnostics.EventLog> コンポーネントのインスタンスを作成したり、手動でソースを登録したりすることなく、ログにサービス情報を書き込むことができます。  
+# <a name="how-to-log-information-about-services"></a>方法 : サービスに関する情報のログを記録する
+既定では、すべての Windows サービス プロジェクトはアプリケーション イベント ログとやり取りして、そこに情報および例外を書き込むことができます。 アプリケーションにこの機能が必要かどうかを指定するには、 <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> プロパティを使用します。 既定では、Windows サービス プロジェクト テンプレートで作成したサービスには、ログが有効にされます。 <xref:System.Diagnostics.EventLog> クラスの静的フォームを使用すると、 <xref:System.Diagnostics.EventLog> コンポーネントのインスタンスを作成したり、手動でソースを登録したりすることなく、ログにサービス情報を書き込むことができます。  
   
  ログが有効にされていると、サービスのインストーラーは自動的に、プロジェクトの各サービスを有効なイベント ソースとして、サービスのインストール先コンピューター上のアプリケーション ログに登録します。 サービスの起動時、停止時、一時停止時、再開時、インストール時、アンインストール時には常に、サービスが情報をログに記録します。 また、発生したすべてのエラーもログに記録します。 既定の動作を使用している場合、ログにエントリを書き込むためのコードを作成する必要はありません。これは、サービスが自動的に処理します。  
   
- アプリケーション ログ以外のイベント ログに書き込む必要がある場合は、<xref:System.ServiceProcess.ServiceBase.AutoLog%2A> プロパティを `false` に設定し、サービス コード内に独自のカスタム イベント ログを作成して、そのログに有効なエントリのソースとしてサービスを登録します。 その後、対象の操作が行われるたびにログにエントリを記録するコードを作成する必要があります。  
+ アプリケーション ログ以外のイベント ログに書き込む必要がある場合は、 <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> プロパティを `false`に設定し、サービス コード内に独自のカスタム イベント ログを作成して、そのログに有効なエントリのソースとしてサービスを登録します。 その後、対象の操作が行われるたびにログにエントリを記録するコードを作成する必要があります。  
   
 > [!NOTE]
 >  カスタム イベント ログを使用して、そのログに書き込むようにサービス アプリケーションを構成する場合、コードでサービスの <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> プロパティを設定する前に、そのイベント ログにアクセスしようとしないでください。 サービスを有効なイベントのソースとして登録するには、イベント ログにこのプロパティの値が必要です。  
   
-### サービスの既定のイベント ログを有効にするには  
+### <a name="to-enable-default-event-logging-for-your-service"></a>サービスの既定のイベント ログを有効にするには  
   
--   コンポーネントの <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> プロパティを `true` に設定します。  
+-   コンポーネントの <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> プロパティを `true`に設定します。  
   
     > [!NOTE]
-    >  既定では、このプロパティは `true` に設定されています。 条件を評価してから、その条件の結果に基づいて <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> プロパティを設定するなどの複雑な処理を作成するのでない限り、このプロパティを明示的に設定する必要はありません。  
+    >  既定では、このプロパティは `true`に設定されています。 条件を評価してから、その条件の結果に基づいて <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> プロパティを設定するなどの複雑な処理を作成するのでない限り、このプロパティを明示的に設定する必要はありません。  
   
-### サービスの既定のイベント ログを無効にするには  
+### <a name="to-disable-event-logging-for-your-service"></a>サービスの既定のイベント ログを無効にするには  
   
--   コンポーネントの <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> プロパティを `false` に設定します。  
+-   コンポーネントの <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> プロパティを `false`に設定します。  
   
      [!code-csharp[VbRadconService#17](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#17)]
      [!code-vb[VbRadconService#17](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#17)]  
   
-### カスタム ログへのログ記録を設定するには  
+### <a name="to-set-up-logging-to-a-custom-log"></a>カスタム ログへのログ記録を設定するには  
   
-1.  <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> プロパティを `false` に設定します。  
+1.  <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> プロパティを `false`に設定します。  
   
     > [!NOTE]
-    >  カスタム ログを使用するには、<xref:System.ServiceProcess.ServiceBase.AutoLog%2A> を false に設定する必要があります。  
+    >  カスタム ログを使用するには、 <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> を false に設定する必要があります。  
   
 2.  Windows サービス アプリケーションに <xref:System.Diagnostics.EventLog> コンポーネントのインスタンスを設定します。  
   
 3.  <xref:System.Diagnostics.EventLog.CreateEventSource%2A> メソッドを呼び出し、作成するログ ファイルのソース文字列と名前を指定して、カスタム ログを作成します。  
   
-4.  <xref:System.Diagnostics.EventLog> コンポーネント インスタンスの <xref:System.Diagnostics.EventLog.Source%2A> プロパティを、手順 3 で作成したソース文字列に設定します。  
+4.  <xref:System.Diagnostics.EventLog.Source%2A> コンポーネント インスタンスの <xref:System.Diagnostics.EventLog> プロパティを、手順 3 で作成したソース文字列に設定します。  
   
-5.  <xref:System.Diagnostics.EventLog> コンポーネント インスタンスで <xref:System.Diagnostics.EventLog.WriteEntry%2A> メソッドにアクセスして、エントリを作成します。  
+5.  <xref:System.Diagnostics.EventLog.WriteEntry%2A> コンポーネント インスタンスで <xref:System.Diagnostics.EventLog> メソッドにアクセスして、エントリを作成します。  
   
      次のコードに、カスタム ログへのログ記録を設定する方法を示します。  
   
     > [!NOTE]
-    >  このコード例では、<xref:System.Diagnostics.EventLog> コンポーネントのインスタンスに `eventLog1` という名前を付けています \(Visual Basic では `EventLog1`\)。 手順 2 で別の名前を持つインスタンスを作成した場合は、それに応じてコードを変更してください。  
+    >  このコード例では、 <xref:System.Diagnostics.EventLog> コンポーネントのインスタンスに `eventLog1` という名前を付けています (Visual Basic では`EventLog1` )。 手順 2 で別の名前を持つインスタンスを作成した場合は、それに応じてコードを変更してください。  
   
      [!code-csharp[VbRadconService#14](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#14)]
      [!code-vb[VbRadconService#14](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#14)]  
     [!code-csharp[VbRadconService#15](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#15)]
     [!code-vb[VbRadconService#15](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#15)]  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)

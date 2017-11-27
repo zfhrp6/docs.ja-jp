@@ -1,65 +1,66 @@
 ---
-title: "ブラシを使用した図形の塗りつぶし | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ブラシ"
-  - "例 [Windows フォーム], ブラシ"
-  - "形状, 塗りつぶし"
+title: "ブラシを使用した図形の塗りつぶし"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- examples [Windows Forms], brushes
+- shapes [Windows Forms], filling
+- brushes
 ms.assetid: bf8f7fff-5a90-41e8-9051-494449fb2844
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 057bc7bbfb9c1653fd4857ccc43fb6fc324e4c92
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# ブラシを使用した図形の塗りつぶし
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Brush> オブジェクトは、閉じた形状の内側を塗りつぶすために使用します。  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] では、純色、ハッチ パターン、イメージ テクスチャ、および色のグラデーションなど、いくつかの塗りつぶしスタイルが定義されています。  
+# <a name="using-a-brush-to-fill-shapes"></a>ブラシを使用した図形の塗りつぶし
+A [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Brush>オブジェクトは閉じた図形の内部の塗りつぶしに使用します。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]塗りつぶしスタイルがいくつかの定義: 純色、ハッチ パターン、イメージ テクスチャ、および色のグラデーションします。  
   
-## このセクションの内容  
- [方法 : 純色で図形を塗りつぶす](../../../../docs/framework/winforms/advanced/how-to-fill-a-shape-with-a-solid-color.md)  
- 純色のブラシを使用して形状を塗りつぶす方法を説明します。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [方法: 純色で図形を塗りつぶす](../../../../docs/framework/winforms/advanced/how-to-fill-a-shape-with-a-solid-color.md)  
+ 図形の塗りつぶしの純色のブラシを使用する方法について説明します。  
   
- [方法 : ハッチ パターンで図形を塗りつぶす](../../../../docs/framework/winforms/advanced/how-to-fill-a-shape-with-a-hatch-pattern.md)  
- ハッチ ブラシを使用して形状を塗りつぶす方法を示します。  
+ [方法: ハッチ パターンで図形を塗りつぶす](../../../../docs/framework/winforms/advanced/how-to-fill-a-shape-with-a-hatch-pattern.md)  
+ ハッチ ブラシを使用して図形を塗りつぶす方法を示します。  
   
- [方法 : イメージ テクスチャによって図形を塗りつぶす](../../../../docs/framework/winforms/advanced/how-to-fill-a-shape-with-an-image-texture.md)  
- テクスチャ ブラシを使用して形状を塗りつぶす方法について説明します。  
+ [方法: イメージ テクスチャによって図形を塗りつぶす](../../../../docs/framework/winforms/advanced/how-to-fill-a-shape-with-an-image-texture.md)  
+ テクスチャ ブラシを使用して図形を塗りつぶす方法について説明します。  
   
- [方法 : イメージを並べたパターンによって図形を塗りつぶす](../../../../docs/framework/winforms/advanced/how-to-tile-a-shape-with-an-image.md)  
- 形状内にイメージを並べて表示する方法について説明します。  
+ [方法: イメージを並べたパターンによって図形を塗りつぶす](../../../../docs/framework/winforms/advanced/how-to-tile-a-shape-with-an-image.md)  
+ 図形内のイメージを並べて表示する方法について説明します。  
   
-## 関連項目  
- <xref:System.Drawing.Brush?displayProperty=fullName>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
+## <a name="reference"></a>参照  
+ <xref:System.Drawing.Brush?displayProperty=nameWithType>  
+ このクラスについて説明し、そのすべてのメンバーへのリンクが含まれています  
   
- <xref:System.Drawing.SolidBrush?displayProperty=fullName>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
+ <xref:System.Drawing.SolidBrush?displayProperty=nameWithType>  
+ このクラスについて説明し、そのすべてのメンバーへのリンクが含まれています  
   
- <xref:System.Drawing.TextureBrush?displayProperty=fullName>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
+ <xref:System.Drawing.TextureBrush?displayProperty=nameWithType>  
+ このクラスについて説明し、そのすべてのメンバーへのリンクが含まれています。  
   
- <xref:System.Drawing.Drawing2D.HatchBrush?displayProperty=fullName>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
+ <xref:System.Drawing.Drawing2D.HatchBrush?displayProperty=nameWithType>  
+ このクラスについて説明し、そのすべてのメンバーへのリンクが含まれています。  
   
- <xref:System.Drawing.Drawing2D.PathGradientBrush?displayProperty=fullName>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
+ <xref:System.Drawing.Drawing2D.PathGradientBrush?displayProperty=nameWithType>  
+ このクラスについて説明し、そのすべてのメンバーへのリンクが含まれています。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [グラデーション ブラシを使用した図形の塗りつぶし](../../../../docs/framework/winforms/advanced/using-a-gradient-brush-to-fill-shapes.md)  
- グラデーション ブラシを使用する方法を説明したトピックの一覧を示します。  
+ グラデーション ブラシを使用する方法を説明するトピックの一覧が含まれています。  
   
  [ペンを使用した直線と図形の描画](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)  
- アウトライン表示の形状を描画する方法を説明したトピックの一覧を示します。  
+ 形状のアウトラインを描画する方法を説明するトピックの一覧を示します。  
   
  [マネージ グラフィックス クラスの使用](../../../../docs/framework/winforms/advanced/using-managed-graphics-classes.md)  
- マネージ グラフィックス クラスの使用方法を説明したトピックの一覧を示します。
+ マネージ グラフィックス クラスの使用方法を説明するトピックの一覧が含まれています。
