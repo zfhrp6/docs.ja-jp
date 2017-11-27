@@ -1,82 +1,84 @@
 ---
-title: "webRequestModules の &lt;add&gt; 要素 (ネットワーク設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/webRequestModules/add"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#add"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<add> 要素, webRequestModules"
-  - "<webRequestModules>, add 要素"
-  - "add 要素, webRequestModules"
-  - "webRequestModules, add 要素"
+title: "&lt;追加&gt;webRequestModules (ネットワーク設定) の要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/webRequestModules/add
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#add
+helpviewer_keywords:
+- <webRequestModules>, add element
+- webRequestModules, add element
+- add element, webRequestModules
+- <add> element, webRequestModules
 ms.assetid: 47ec4adc-f39f-4bcd-8680-1ec21fd26890
-caps.latest.revision: 16
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: fd407f77e75bce4bdbc37acd5f28bbe39f92d564
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# webRequestModules の &lt;add&gt; 要素 (ネットワーク設定)
-カスタム Web 要求モジュールをアプリケーションに追加します。  
+# <a name="ltaddgt-element-for-webrequestmodules-network-settings"></a>&lt;追加&gt;webRequestModules (ネットワーク設定) の要素
+アプリケーションにカスタム Web 要求のモジュールを追加します。  
   
-## 構文  
+ \<configuration>  
+\<system.net >  
+\<webRequestModules >  
+\<add>  
   
-```  
+## <a name="syntax"></a>構文  
   
-      <add   
-  prefix = "URI prefix"   
-  type = "module name, Version, Culture, PublicKeyToken"   
+```xml  
+<add   
+  prefix="URI prefix"   
+  type="type_fullname, assembly_fullname"   
 />  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|**Attribute**|**説明**|  
-|-------------------|------------|  
-|`prefix`|この Web 要求モジュールで処理される要求の URI プレフィックス。|  
-|`type`|この Web 要求モジュールを実装するモジュールのアセンブリ名およびクラス名。|  
+|**属性**|**説明**|  
+|-------------------|---------------------|  
+|`prefix`|この Web 要求モジュールによって処理される要求の URI プレフィックス。|  
+|`type`|完全修飾型名 (によって示される、<xref:System.Type.FullName%2A>プロパティ) とアセンブリ名 (によって示される、<xref:System.Reflection.Assembly.FullName%2A>プロパティ)、この Web 要求のモジュールを実装する、コンマで区切って指定します。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |**要素**|**説明**|  
-|------------|------------|  
-|[webRequestModules](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|ネットワーク ホストからの情報を要求するために使用するモジュールを指定します。|  
+|-----------------|---------------------|  
+|[webRequestModules](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|使用してネットワークのホストから情報を要求するモジュールを指定します。|  
   
-## 解説  
- `prefix` 属性は、指定した Web 要求モジュールを使用する URI プレフィックスを定義します。  通常、Web 要求モジュールは、HTTP や FTP などの特定のプロトコルを処理するために登録します。ただし、特定のサーバーまたはサーバー上の特定のパスへの要求を処理するために登録することもできます。  
+## <a name="remarks"></a>コメント  
+ `prefix`属性は、指定された Web 要求モジュールを使用する URI プレフィックスを定義します。 Web 要求のモジュールは、通常、HTTP、FTP などの特定のプロトコルを処理する登録しますが、特定のサーバーまたはサーバー上のパスに要求を処理する登録されていることができます。  
   
- Web 要求モジュールは、プレフィックスと一致する URI が <xref:System.Net.WebRequest.Create%2A?displayProperty=fullName> メソッドに渡されると作成されます。  
+ URI の一致のプレフィックスに渡される Web 要求のモジュールが作成された、<xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType>メソッドです。  
   
- `prefix` 属性の値は、"http" や "http:\/\/www.contoso.com" のように、有効な UR の先行文字である必要があります。  
+ 値、`prefix`属性が有効な URI: たとえば、"http"または"http://www.contoso.com"の先頭の文字にする必要があります。  
   
- `type` 属性の値は、有効な DLL 名および対応するクラスの名前をコンマで区切って指定する必要があります。  
+ 値、`type`属性が有効な型名と対応するアセンブリ名、コンマで区切られたにする必要があります。  
   
-## 構成ファイル  
- この要素は、アプリケーション構成ファイルまたはマシン構成ファイル \(Machine.config\) で使用できます。  
+## <a name="configuration-files"></a>構成ファイル  
+ この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
   
-## 使用例  
- HTTP 用のカスタム Web 要求モジュールを登録するコード例を次に示します。  Version の値および PublicKeyToken の値は、指定したモジュールに対応する正しい値に置き換える必要があります。  
+## <a name="example"></a>例  
+ 次の例では、HTTP のカスタム Web 要求のモジュールを登録します。 指定したモジュールの正しい値を持つバージョンおよび PublicKeyToken の値を置き換える必要があります。  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <webRequestModules>  
@@ -89,6 +91,6 @@ caps.handback.revision: 16
 </configuration>  
 ```  
   
-## 参照  
- <xref:System.Net.WebRequest>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Net.WebRequest>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

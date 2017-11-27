@@ -1,54 +1,53 @@
 ---
-title: "FROM (Entity SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: FROM (Entity SQL)
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ff3e3048-0d5d-4502-ae5c-9187fcbd0514
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 51f65896cb54a65756558d846e1fc940de5b9470
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# FROM (Entity SQL)
-[SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) ステートメントで使用するコレクションを指定します。  
+# <a name="from-entity-sql"></a>FROM (Entity SQL)
+使用するコレクションを指定[選択](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)ステートメントです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 FROM expression [ ,...n ] as C  
 ```  
   
-## 引数  
+## <a name="arguments"></a>引数  
  `expression`  
  `SELECT` ステートメントのソースとして使用するコレクションを生成する任意の有効なクエリ式。  
   
-## 解説  
- `FROM` 句は、1 つ以上の `FROM` 句の項目をコンマで区切ったリストです。  `FROM` 句を使用して、`SELECT` ステートメントのソースを 1 つ以上指定できます。  `FROM` 句の最も単純な形式は、次の例に示すように、`SELECT` ステートメントのソースとして使用する 1 つのコレクションと 1 つの別名を識別する単一のクエリ式です。  
+## <a name="remarks"></a>コメント  
+ `FROM` 句は、1 つ以上の `FROM` 句の項目をコンマで区切ったリストです。 `FROM` 句を使用して、`SELECT` ステートメントのソースを 1 つ以上指定できます。 `FROM` 句の最も単純な形式は、次の例に示すように、`SELECT` ステートメントのソースとして使用する 1 つのコレクションと 1 つの別名を識別する単一のクエリ式です。  
   
  `FROM C as c`  
   
-## FROM 句の項目  
- 各 `FROM` 句項目は、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] クエリ内のソース コレクションを参照します。  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] は、`FROM` 句項目のクラスとして、単純 `FROM` 句項目、`JOIN FROM` 句項目、および `APPLY FROM` 句項目をサポートしています。  これらの `FROM` 句の各項目については、以下のセクションで詳しく説明します。  
+## <a name="from-clause-items"></a>FROM 句の項目  
+ 各 `FROM` 句項目は、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] クエリ内のソース コレクションを参照します。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] は、`FROM` 句項目のクラスとして、単純 `FROM` 句項目、`JOIN FROM` 句項目、および `APPLY FROM` 句項目をサポートしています。 これらの `FROM` 句の各項目については、以下のセクションで詳しく説明します。  
   
-### 単純な FROM 句の項目  
- 最も単純な `FROM` 句の項目は、1 つのコレクションと 1 つの別名を識別する単一の式です。  式には、エンティティ セット、サブクエリ、またはコレクション型のその他の任意の式を使用できます。  次に例を示します。  
+### <a name="simple-from-clause-item"></a>単純な FROM 句の項目  
+ 最も単純な `FROM` 句の項目は、1 つのコレクションと 1 つの別名を識別する単一の式です。 式には、エンティティ セット、サブクエリ、またはコレクション型のその他の任意の式を使用できます。 次に例を示します。  
   
 ```  
 LOB.Customers as c  
 ```  
   
- 別名の指定は省略可能です。  上記のように FROM 句の項目を指定する代わりに、次のように指定することもできます。  
+ 別名の指定は省略可能です。 上記のように FROM 句の項目を指定する代わりに、次のように指定することもできます。  
   
 ```  
 LOB.Customers  
@@ -56,50 +55,50 @@ LOB.Customers
   
  別名を指定しない場合、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] はコレクション式に基づいて別名の生成を試みます。  
   
-### JOIN FROM 句の項目  
- `JOIN FROM` 句項目は、2 つの `FROM` 句項目の間の結合を表します。  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では、クロス結合、内部結合、左外部結合、右外部結合、および完全外部結合をサポートしています。  これらすべての結合は、[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] でのサポートと同様にサポートされます。  [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] の場合と同様に、`JOIN` に含まれる 2 つの `FROM` 句の項目は独立している必要があります。  つまり、相互に関連付けられた項目は使用できません。  このような場合には、`CROSS APPLY` または `OUTER APPLY` を使用できます。  
+### <a name="join-from-clause-item"></a>JOIN FROM 句の項目  
+ `JOIN FROM` 句項目は、2 つの `FROM` 句項目の間の結合を表します。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では、クロス結合、内部結合、左外部結合、右外部結合、および完全外部結合をサポートしています。 これらすべての結合は、[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] でのサポートと同様にサポートされます。 [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] の場合と同様に、`FROM` に含まれる 2 つの `JOIN` 句の項目は独立している必要があります。 つまり、相互に関連付けられた項目は使用できません。 このような場合には、`CROSS APPLY` または `OUTER APPLY` を使用できます。  
   
-#### クロス結合  
+#### <a name="cross-joins"></a>クロス結合  
  次の例に示すように、`CROSS JOIN` クエリ式は 2 つのコレクションのデカルト積を生成します。  
   
  `FROM C AS c CROSS JOIN D as d`  
   
-#### 内部結合  
+#### <a name="inner-joins"></a>内部結合  
  次の例に示すように、`INNER JOIN` は 2 つのコレクションの制約付きデカルト積を生成します。  
   
  `FROM C AS c [INNER] JOIN D AS d ON e`  
   
- 上記のクエリ式では、`ON` 条件が指定されており、右のコレクションの各要素と対になっている左のコレクションの各要素を結合して処理します。  `ON` 条件を指定しない場合、`INNER JOIN` の動作は `CROSS JOIN` と同じになります。  
+ 上記のクエリ式では、`ON` 条件が指定されており、右のコレクションの各要素と対になっている左のコレクションの各要素を結合して処理します。 `ON` 条件を指定しない場合、`INNER JOIN` の動作は `CROSS JOIN` と同じになります。  
   
-#### 左外部結合と右外部結合  
+#### <a name="left-outer-joins-and-right-outer-joins"></a>左外部結合と右外部結合  
  次の例に示すように、`OUTER JOIN` クエリ式は 2 つのコレクションの制約付きデカルト積を生成します。  
   
  `FROM C AS c LEFT OUTER JOIN D AS d ON e`  
   
- 上記のクエリ式では、`ON` 条件が指定されており、右のコレクションの各要素と対になっている左のコレクションの各要素を結合して処理します。  `ON` 条件が指定されていない場合、式は、NULL 値を使用して、右の要素と対になっている左の要素の単一のインスタンスを処理します。  
+ 上記のクエリ式では、`ON` 条件が指定されており、右のコレクションの各要素と対になっている左のコレクションの各要素を結合して処理します。 `ON` 条件が指定されていない場合、式は、NULL 値を使用して、右の要素と対になっている左の要素の単一のインスタンスを処理します。  
   
  `RIGHT OUTER JOIN` についても同様です。  
   
-#### 完全外部結合  
+#### <a name="full-outer-joins"></a>完全外部結合  
  次の例に示すように、明示的な `FULL OUTER JOIN` は 2 つのコレクションの制約付きデカルト積を生成します。  
   
  `FROM C AS c FULL OUTER JOIN D AS d ON e`  
   
- 上記のクエリ式では、`ON` 条件が指定されており、右のコレクションの各要素と対になっている左のコレクションの各要素を結合して処理します。  `ON` 条件が指定されていない場合、式は、NULL 値を使用して、右の要素と対になっている左の要素のインスタンスを 1 つ処理します。  また、NULL 値を使用して、左の要素と対になっている右の要素のインスタンスも 1 つ処理します。  
+ 上記のクエリ式では、`ON` 条件が指定されており、右のコレクションの各要素と対になっている左のコレクションの各要素を結合して処理します。 `ON` 条件が指定されていない場合、式は、NULL 値を使用して、右の要素と対になっている左の要素のインスタンスを 1 つ処理します。 また、NULL 値を使用して、左の要素と対になっている右の要素のインスタンスも 1 つ処理します。  
   
 > [!NOTE]
->  SQL\-92 との互換性を保つため、[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] では、OUTER キーワードは省略可能です。  したがって、`LEFT JOIN`、`RIGHT JOIN`、および `FULL JOIN` は、`LEFT OUTER JOIN`、`RIGHT OUTER JOIN`、および `FULL OUTER JOIN` のシノニムです。  
+>  SQL-92 との互換性を保つため、[!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] では、OUTER キーワードは省略可能です。 したがって、`LEFT JOIN`、`RIGHT JOIN`、および `FULL JOIN` は、`LEFT OUTER JOIN`、`RIGHT OUTER JOIN`、および `FULL OUTER JOIN` のシノニムです。  
   
-### APPLY 句の項目  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] は、`CROSS APPLY` と `OUTER APPLY` という 2 種類の `APPLY` をサポートしています。  
+### <a name="apply-clause-item"></a>APPLY 句の項目  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] は、`APPLY` と `CROSS APPLY` という 2 種類の `OUTER APPLY` をサポートしています。  
   
- `CROSS APPLY` は、左のコレクションの各要素と右の式の評価によって生成されたコレクションの要素との一意の組み合わせを生成します。  `CROSS APPLY` では、右の式は左の要素に機能的に依存します。このような関連付けられたコレクションの例を次に示します。  
+ `CROSS APPLY` は、左のコレクションの各要素と右の式の評価によって生成されたコレクションの要素との一意の組み合わせを生成します。 `CROSS APPLY` では、右の式は左の要素に機能的に依存します。このような関連付けられたコレクションの例を次に示します。  
   
  `SELECT c, f FROM C AS c CROSS APPLY c.Assoc AS f`  
   
- `CROSS APPLY` の動作は結合リストに似ています。  右の式が空のコレクションとして評価される場合、`CROSS APPLY` は、左の要素のそのインスタンスの組み合わせを生成しません。  
+ `CROSS APPLY` の動作は結合リストに似ています。 右の式が空のコレクションとして評価される場合、`CROSS APPLY` は、左の要素のそのインスタンスの組み合わせを生成しません。  
   
- `OUTER APPLY` は、右の式が空のコレクションとして評価される場合でも組み合わせを生成する以外は、`CROSS APPLY` と同様です。  `OUTER APPLY` の使用例を次に示します。  
+ `OUTER APPLY` は、右の式が空のコレクションとして評価される場合でも組み合わせを生成する以外は、`CROSS APPLY` と同様です。 `OUTER APPLY` の使用例を次に示します。  
   
  `SELECT c, f FROM C AS c OUTER APPLY c.Assoc AS f`  
   
@@ -107,14 +106,14 @@ LOB.Customers
 >  [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] とは異なり、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] では、明示的なネスト解除の手順は不要です。  
   
 > [!NOTE]
->  `CROSS` 演算子および `OUTER APPLY` 演算子は [!INCLUDE[ssVersion2005](../../../../../../includes/ssversion2005-md.md)] で導入されました。  場合によっては、クエリ パイプラインにより、`CROSS APPLY` 演算子または `OUTER APPLY` 演算子を含む Transact\-SQL が生成されることがあります。  一部のバックエンド プロバイダー \([!INCLUDE[ssVersion2005](../../../../../../includes/ssversion2005-md.md)] より古いバージョンの [!INCLUDE[ssNoVersion](../../../../../../includes/ssnoversion-md.md)] など\) では、これらの演算子がサポートされていません。したがって、このようなクエリをこれらのバックエンド プロバイダーで実行することはできません。  
+>  `CROSS` 演算子および `OUTER APPLY` 演算子は [!INCLUDE[ssVersion2005](../../../../../../includes/ssversion2005-md.md)] で導入されました。 場合によっては、クエリ パイプラインにより、`CROSS APPLY` 演算子または `OUTER APPLY` 演算子を含む Transact-SQL が生成されることがあります。 一部のバックエンド プロバイダー ([!INCLUDE[ssNoVersion](../../../../../../includes/ssnoversion-md.md)] より古いバージョンの [!INCLUDE[ssVersion2005](../../../../../../includes/ssversion2005-md.md)] など) では、これらの演算子がサポートされていません。したがって、このようなクエリをこれらのバックエンド プロバイダーで実行することはできません。  
 >   
->  `CROSS APPLY` 演算子または `OUTER APPLY` 演算子を含むクエリの生成につながる可能性がある一般的なシナリオとしては、ページングを使用した相関サブクエリ、相関サブクエリ全体またはナビゲーションによって生成されたコレクション全体を対象とした AnyElement、要素セレクターを受け取るグループ化メソッドを使用した LINQ クエリ、`CROSS APPLY` 演算子または `OUTER APPLY` 演算子が明示的に指定されたクエリ、`REF` コンストラクターを引数に取る `DEREF` コンストラクターを含むクエリなどがあります。  
+>  `CROSS APPLY` 演算子または `OUTER APPLY` 演算子を含むクエリの生成につながる可能性がある一般的なシナリオとしては、ページングを使用した相関サブクエリ、相関サブクエリ全体またはナビゲーションによって生成されたコレクション全体を対象とした AnyElement、要素セレクターを受け取るグループ化メソッドを使用した LINQ クエリ、`CROSS APPLY` 演算子または `OUTER APPLY` 演算子が明示的に指定されたクエリ、`DEREF` コンストラクターを引数に取る `REF` コンストラクターを含むクエリなどがあります。  
   
-## FROM 句での複数のコレクション  
- `FROM` 句には、複数のコレクションをコンマで区切って含めることができます。  この場合、これらのコレクションは 1 つに結合されるものと見なされます。  これは、n 方向の CROSS JOIN と考えることができます。  
+## <a name="multiple-collections-in-the-from-clause"></a>FROM 句での複数のコレクション  
+ `FROM` 句には、複数のコレクションをコンマで区切って含めることができます。 この場合、これらのコレクションは 1 つに結合されるものと見なされます。 これは、n 方向の CROSS JOIN と考えることができます。  
   
- 次の例で、`C` と `D` は独立したコレクションですが、`c.Names` は `C` に依存しています。  
+ 次の例では、`C`と`D`は独立したコレクションが`c.Names`が依存`C`です。  
   
 ```  
 FROM C AS c, D AS d, c.Names AS e  
@@ -124,8 +123,8 @@ FROM C AS c, D AS d, c.Names AS e
   
  `FROM (C AS c JOIN D AS d) CROSS APPLY c.Names AS e`  
   
-## 左の相関関係  
- `FROM` 句の項目は、前の句で指定された項目を参照できます。  次の例で、`C` と `D` は独立したコレクションですが、`c.Names` は `C` に依存しています。  
+## <a name="left-correlation"></a>左の相関関係  
+ `FROM` 句の項目は、前の句で指定された項目を参照できます。 次の例で、`C` と `D` は独立したコレクションですが、`c.Names` は `C` に依存しています。  
   
 ```  
 from C as c, D as d, c.Names as e  
@@ -137,21 +136,21 @@ from C as c, D as d, c.Names as e
 from (C as c join D as d) cross apply c.Names as e  
 ```  
   
-## Semantics  
- 論理上、`FROM` 句のコレクションは `n` 方向のクロス結合の一部になると見なされます \(1 方向のクロス結合の場合を除く\)。  `FROM` 句内の別名は、左から右へと処理され、後で参照できるように現在のスコープに追加されます。  `FROM` 句は、行のマルチセットを生成すると見なされます。  `FROM` 句の項目ごとに 1 つのフィールドが生成され、そのコレクションの項目の 1 つの要素を表します。  
+## <a name="semantics"></a>Semantics  
+ 論理上、`FROM` 句のコレクションは `n` 方向のクロス結合の一部になると見なされます (1 方向のクロス結合の場合を除く)。 `FROM` 句内の別名は、左から右へと処理され、後で参照できるように現在のスコープに追加されます。 `FROM` 句は、行のマルチセットを生成すると見なされます。 `FROM` 句の項目ごとに 1 つのフィールドが生成され、そのコレクションの項目の 1 つの要素を表します。  
   
- `FROM` 句は、c、d、e の各フィールドが `C`、`D`、`c.Names` の要素型になると見なされる Row\(c, d, e\) 型の行のマルチセットを論理的に生成します。  
+ `FROM` 句は、c、d、e の各フィールドが `C`、`D`、`c.Names` の要素型になると見なされる Row(c, d, e) 型の行のマルチセットを論理的に生成します。  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では、単純な `FROM` 句の項目ごとの別名がスコープに導入されます。  たとえば、次の FROM 句の例では、スコープに導入される名前は c、d、e です。  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では、単純な `FROM` 句の項目ごとの別名がスコープに導入されます。 たとえば、次の FROM 句の例では、スコープに導入される名前は c、d、e です。  
   
 ```  
 from (C as c join D as d) cross apply c.Names as e  
 ```  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] と異なり、`FROM` 句では別名のみがスコープに導入されます。  これらのコレクションの列 \(プロパティ\) への参照は、別名を使用して修飾する必要があります。  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] と異なり、`FROM` 句では別名のみがスコープに導入されます。 これらのコレクションの列 (プロパティ) への参照は、別名を使用して修飾する必要があります。  
   
-## 入れ子になったクエリからのキーの抽出  
- 入れ子になったクエリからのキーの抽出を必要とする特定の種類のクエリはサポートされていません。  たとえば、次のクエリは有効です。  
+## <a name="pulling-up-keys-from-nested-queries"></a>入れ子になったクエリからのキーの抽出  
+ 入れ子になったクエリからのキーの抽出を必要とする特定の種類のクエリはサポートされていません。 たとえば、次のクエリは有効です。  
   
 ```  
 select c.Orders from Customers as c   
@@ -163,7 +162,7 @@ select c.Orders from Customers as c
 select {1} from {2, 3}  
 ```  
   
-## 参照  
- [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)   
- [クエリ式](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expressions-entity-sql.md)   
- [NULL 値が許容される構造化型](../../../../../../docs/framework/data/adonet/ef/language-reference/nullable-structured-types-entity-sql.md)
+## <a name="see-also"></a>関連項目  
+ [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
+ [クエリ式](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expressions-entity-sql.md)  
+ [Null 許容の構造化型](../../../../../../docs/framework/data/adonet/ef/language-reference/nullable-structured-types-entity-sql.md)

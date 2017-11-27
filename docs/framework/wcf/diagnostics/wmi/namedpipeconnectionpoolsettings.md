@@ -1,25 +1,28 @@
 ---
-title: "NamedPipeConnectionPoolSettings | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: NamedPipeConnectionPoolSettings
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 079bccb8-54b5-4436-a43d-5567763f72ce
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: cf9c39334289cb30d1a01917c0be37da02fcdc5b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# NamedPipeConnectionPoolSettings
+# <a name="namedpipeconnectionpoolsettings"></a>NamedPipeConnectionPoolSettings
 NamedPipeConnectionPoolSettings  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class NamedPipeConnectionPoolSettings  
@@ -30,38 +33,38 @@ class NamedPipeConnectionPoolSettings
 };  
 ```  
   
-## メソッド  
+## <a name="methods"></a>メソッド  
  NamedPipeConnectionPoolSettings クラスは、メソッドを一切定義しません。  
   
-## プロパティ  
+## <a name="properties"></a>プロパティ  
  NamedPipeConnectionPoolSettings クラスには、次のプロパティがあります。  
   
-### GroupName  
- データ型 : string  
+### <a name="groupname"></a>GroupName  
+ データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  バインド要素により使用される接続プールのグループ名。  
   
-### IdleTimeout  
+### <a name="idletimeout"></a>IdleTimeout  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  接続が切断されるまでの最大アイドル時間。  
   
-### MaxOutboundConnectionsPerEndpoint  
+### <a name="maxoutboundconnectionsperendpoint"></a>MaxOutboundConnectionsPerEndpoint  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  クライアント上の各エンドポイントでの発信接続の最大数。  
   
-## 要件  
+## <a name="requirements"></a>要件  
   
-|MOF|Servicemodel.mof にて宣言済み|  
-|---------|-----------------------------|  
-|名前空間|root\\ServiceModel で定義|  
+|MOF|Servicemodel.mof にて宣言済み。|  
+|---------|-----------------------------------|  
+|Namespace|root\ServiceModel で定義|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels.NamedPipeConnectionPoolSettings>

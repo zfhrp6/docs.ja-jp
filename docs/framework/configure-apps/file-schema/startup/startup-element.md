@@ -1,87 +1,88 @@
 ---
-title: "&lt;startup&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/startup"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#startup"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<startup> 要素"
-  - "コンテナー タグ, <startup> 要素"
-  - "startup 要素"
+title: "&lt;スタートアップ&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/startup
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#startup
+helpviewer_keywords:
+- container tags, <startup> element
+- <startup> element
+- startup element
 ms.assetid: 536acfd8-f827-452f-838a-e14fa3b87621
-caps.latest.revision: 19
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: bd2356845c76e81ce2efe87bdf247de293d6115d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;startup&gt; 要素
-共通言語ランタイムのスタートアップ情報を指定します。  
+# <a name="ltstartupgt-element"></a>&lt;スタートアップ&gt;要素
+共通言語ランタイム スタートアップ情報を指定します。  
   
-## 構文  
+ \<configuration>  
+\<スタートアップ >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <startup useLegacyV2RuntimeActivationPolicy="true|false" >   
 </startup>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|Attribute|説明|  
-|---------------|--------|  
-|`useLegacyV2RuntimeActivationPolicy`|省略可能な属性。<br /><br /> [!INCLUDE[dnprdnext](../../../../../includes/dnprdnext-md.md)] のランタイムのアクティブ化ポリシーを有効にするか、[!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] のアクティブ化ポリシーを使用するかを指定します。|  
+|属性|説明|  
+|---------------|-----------------|  
+|`useLegacyV2RuntimeActivationPolicy`|省略可能な属性です。<br /><br /> 有効にするかどうかを指定します、[!INCLUDE[dnprdnext](../../../../../includes/dnprdnext-md.md)]ランタイムのアクティブ化ポリシーを使用して、[!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)]アクティブ化ポリシー。|  
   
-## useLegacyV2RuntimeActivationPolicy 属性  
+## <a name="uselegacyv2runtimeactivationpolicy-attribute"></a>useLegacyV2RuntimeActivationPolicy 属性  
   
 |値|説明|  
-|-------|--------|  
-|`true`|選択されたランタイムで [!INCLUDE[dnprdnext](../../../../../includes/dnprdnext-md.md)] のランタイムのアクティブ化ポリシーを有効にし、ランタイムの上限を CLR バージョン 2.0 とするのではなく、レガシのランタイムのアクティブ化手法 \([CorBindToRuntimeEx 関数](../../../../../ocs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)など\) を、構成ファイルから選択されたランタイムにバインドするようにします。  これにより、構成ファイルから CLR バージョン 4 またはそれ以降が選択された場合、それ以前のバージョンの .NET Framework で作成された混合モード アセンブリは、選択された CLR バージョンで読み込まれます。  この値を設定すると、CLR バージョン 1.1 または CLR バージョン 2.0 が同じプロセスに読み込まれなくなり、インプロセスの side\-by\-side 機能は事実上無効になります。|  
-|`false`|[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] およびそれ以降の既定のアクティブ化ポリシーを使用し、レガシのランタイムのアクティブ化手法で CLR バージョン 1.1 または 2.0 をプロセスに読み込むことができるようにします。  この値を設定すると、.NET Framework 4 以降に読み込まれなく .NET Framework 4 以降でビルドされていない限り、混合モード アセンブリは行われません。  この値が既定値です。|  
+|-----------|-----------------|  
+|`true`|有効にする[!INCLUDE[dnprdnext](../../../../../includes/dnprdnext-md.md)]ランタイムのアクティブ化ポリシーは、レガシ ランタイムのアクティブ化の手法をバインドする、選択したランタイムの (など、 [CorBindToRuntimeEx 関数](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)) の代わりに、構成ファイルから選択した実行時にCLR バージョン 2.0 では、それらを上限です。 したがって、CLR version 4 以降を構成ファイルから選択した場合、.NET Framework の以前のバージョンで作成された混合モード アセンブリは、選択した CLR バージョンを読み込まれます。 CLR バージョン 1.1 または CLR バージョン 2.0 の実質的にインプロセスでサイド バイ サイド機能を無効にする、同じプロセスに読み込みを禁止この値を設定します。|  
+|`false`|既定のアクティブ化ポリシーを使用して、[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]は後で、レガシ ランタイムに CLR version 1.1 または 2.0 を読み込むプロセス ライセンス認証の手法を許可するとします。 この値を設定すると、以降、.NET Framework 4 でビルドされた場合を除き、.NET Framework 4 に、またはそれ以降の読み込みから混合モードのアセンブリができなくなります。 この値が既定値です。|  
   
-### 子要素  
-  
-|要素|説明|  
-|--------|--------|  
-|[\<requiredRuntime\>](../../../../../docs/framework/configure-apps/file-schema/startup/requiredruntime-element.md)|共通言語ランタイムのバージョン 1.0 だけがアプリケーションでサポートされることを指定します。  ランタイムのバージョン 1.1 以降でビルドされたアプリケーションは **\<supportedRuntime\>** 要素を使用する必要があります。|  
-|[\<supportedRuntime\>](../../../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)|アプリケーションでサポートされる共通言語ランタイムのバージョンを指定します。|  
-  
-### 親要素  
+### <a name="child-elements"></a>子要素  
   
 |要素|説明|  
-|--------|--------|  
+|-------------|-----------------|  
+|[\<requiredRuntime>](../../../../../docs/framework/configure-apps/file-schema/startup/requiredruntime-element.md)|バージョン 1.0 の共通言語ランタイムのみがアプリケーションでサポートされることを指定します。 ランタイム バージョン 1.1 以降でビルドされたアプリケーションを使用する必要があります、  **\<supportedRuntime >**要素。|  
+|[\<supportedRuntime>](../../../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)|アプリケーションでサポートされる共通言語ランタイムのバージョンを指定します。|  
+  
+### <a name="parent-elements"></a>親要素  
+  
+|要素|説明|  
+|-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
   
-## 解説  
- ランタイムのバージョン 1.1 以降を使用して構築されたすべてのアプリケーションでは、**\<supportedRuntime\>** 要素を使用する必要があります。  ランタイムのバージョン 1.0 をサポートするアプリケーションでは、**\<requiredRuntime\>** 要素を使用する必要があります。  
+## <a name="remarks"></a>コメント  
+ **\<SupportedRuntime >** 1.1 以降、ランタイムのバージョンを使用して構築されたすべてのアプリケーションで要素を使用する必要があります。 ランタイムのバージョン 1.0 をサポートするために構築されたアプリケーションを使用する必要があります、  **\<requiredRuntime >**要素。  
   
- Microsoft Internet Explorer でホストされるアプリケーションのスタートアップ コードは **\<startup\>** 要素およびその子要素は無視されます。  
+ Microsoft Internet Explorer でホストされているアプリケーションのスタートアップ コードは無視されます、 **\<スタートアップ >**要素とその子要素です。  
   
-## useLegacyV2RuntimeActivationPolicy 属性  
- アプリケーションで [CorBindToRuntimeEx 関数](../../../../../ocs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)などのレガシ アクティブ化パスが使用されていて、これらのパスで CLR の以前のバージョンではなくバージョン 4 をアクティブ化する場合、または、アプリケーションは [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] でビルドされているが、以前のバージョンの .NET Framework でビルドされた混合モードのアセンブリに対する依存関係がある場合、この属性は便利です。  このようなシナリオでは、属性を `true` に設定します。  
+## <a name="the-uselegacyv2runtimeactivationpolicy-attribute"></a>UseLegacyV2RuntimeActivationPolicy 属性  
+ この属性は、アプリケーションなどに、レガシ アクティブ化のパスを使用する場合に便利です、 [CorBindToRuntimeEx 関数](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)、それらのパスを以前のバージョンではなく CLR の version 4 をアクティブ化して、アプリケーションがある場合、またはビルドされた、[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]が .NET Framework の以前のバージョンでビルドされた混合モード アセンブリに依存しています。 そのようなシナリオで属性を設定`true`です。  
   
 > [!NOTE]
->  属性を `true` に設定すると、CLR バージョン 1.1 または CLR バージョン 2.0 が同じプロセスに読み込まれなくなり、インプロセスの side\-by\-side 機能は事実上無効になります \(「[Side\-by\-Side Execution for COM Interop](http://msdn.microsoft.com/ja-jp/4302318c-3586-49bf-8620-b9a39cdf4a32)」を参照\)。  
+>  属性を設定`true`CLR バージョン 1.1 または CLR バージョン 2.0 のプロセスでサイド バイ サイド機能を効果的に無効化が同じプロセスに読み込みを禁止 (を参照してください[COM 相互運用機能のサイド バイ サイド実行](http://msdn.microsoft.com/en-us/4302318c-3586-49bf-8620-b9a39cdf4a32))。  
   
-## 使用例  
- 構成ファイルでランタイムのバージョンを指定する例を示します。  
+## <a name="example"></a>例  
+ 次の例では、構成ファイルでランタイムのバージョンを指定する方法を示します。  
   
-```  
+```xml  
 <!-- When used with version 1.0 of the .NET Framework runtime -->  
 <configuration>  
    <startup>  
@@ -97,9 +98,9 @@ caps.handback.revision: 19
 </configuration>  
 ```  
   
-## 参照  
- [スタートアップ設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/startup/index.md)   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [\<PaveOver\> Specifying Which Runtime Version to Use](http://msdn.microsoft.com/ja-jp/c376208d-980d-42b4-865b-fbe0d9cc97c2)   
- [Side\-by\-Side Execution for COM Interop](http://msdn.microsoft.com/ja-jp/4302318c-3586-49bf-8620-b9a39cdf4a32)   
- [インプロセスの side\-by\-side 実行](../../../../../docs/framework/deployment/in-process-side-by-side-execution.md)
+## <a name="see-also"></a>関連項目  
+ [スタートアップ設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/startup/index.md)  
+ [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [\<PaveOver> 使用するランタイム バージョンの指定](http://msdn.microsoft.com/en-us/c376208d-980d-42b4-865b-fbe0d9cc97c2)  
+ [COM 相互運用機能のサイド バイ サイド実行](http://msdn.microsoft.com/en-us/4302318c-3586-49bf-8620-b9a39cdf4a32)  
+ [インプロセスの side-by-side 実行](../../../../../docs/framework/deployment/in-process-side-by-side-execution.md)

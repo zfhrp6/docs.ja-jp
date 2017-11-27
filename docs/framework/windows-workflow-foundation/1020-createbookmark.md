@@ -1,39 +1,43 @@
 ---
-title: "1020 - CreateBookmark | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 1020 - CreateBookmark
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4bee948d-816f-4803-85cc-3883b5e23d10
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d0584c6eeaf0e08e92ad94e01e1fca765616440f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 1020 - CreateBookmark
-## プロパティ  
+# <a name="1020---createbookmark"></a>1020 - CreateBookmark
+## <a name="properties"></a>プロパティ  
   
 |||  
 |-|-|  
 |ID|1020|  
 |キーワード|WFRuntime|  
 |レベル|詳細|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Debug|  
+|チャネル|Microsoft-Windows-Application Server-Applications/Debug|  
   
-## 説明  
+## <a name="description"></a>説明  
  あるアクティビティ用のブックマークが作成されたことを示します。  
   
-## メッセージ  
- Activity '%1'、DisplayName: '%2'、InstanceId: '%3' のブックマークが作成されました。BookmarkName: %4、BookmarkScope: %5。  
+## <a name="message"></a>メッセージ  
+ Activity '%1'、DisplayName のブックマークが作成されました: '%2'、InstanceId: '%3' です。  BookmarkName: %4、BookmarkScope: %5。  
   
-## 詳細  
+## <a name="details"></a>詳細  
   
 |データ項目名|データ項目の型|説明|  
-|------------|-------------|--------|  
+|--------------------|--------------------|-----------------|  
 |アクティビティ|xs:string|アクティビティの型名。|  
 |DisplayName|xs:string|アクティビティの表示名。|  
 |InstanceId|xs:string|アクティビティのインスタンス ID。|  

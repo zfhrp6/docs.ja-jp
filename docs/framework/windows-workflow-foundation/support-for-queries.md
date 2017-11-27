@@ -1,50 +1,54 @@
 ---
-title: "クエリのサポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "クエリのサポート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 093c22f5-3294-4642-857a-5252233d6796
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d4f338f9ae5cc6967885d0518eb573d9f9535fc2
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# クエリのサポート
-SQL Workflow Instance Store は、一連の既知のプロパティをストアに記録します。ユーザーは、これらのプロパティに基づいてインスタンスのクエリを実行できます。これらの既知のプロパティの一部を次の一覧に示します。  
+# <a name="support-for-queries"></a>クエリのサポート
+SQL Workflow Instance Store は、一連の既知のプロパティをストアに記録します。 ユーザーは、これらのプロパティに基づいてインスタンスのクエリを実行できます。 これらの既知のプロパティの一部を次の一覧に示します。  
   
--   **サイト名:** サービスが存在する Web サイトの名前。  
+-   **サイトの名前。** サービスが存在する Web サイトの名前。  
   
--   **相対アプリケーション パス:** Web サイトを基準としたアプリケーションの相対パス。  
+-   **アプリケーションの相対パス。** Web サイトを基準としたアプリケーションの相対パス。  
   
--   **相対サービス パス:** アプリケーションを基準としたサービスの相対パス。  
+-   **サービスの相対パスです。** アプリケーションを基準としたサービスの相対パス。  
   
--   **サービス名:** サービスの名前。  
+-   **サービスの名前です。** サービスの名前。  
   
--   **サービスの名前空間:** サービスが使用する名前空間の名称。  
+-   **Service Namespace です。** サービスが使用する名前空間の名称。  
   
--   **現在のコンピューター:**  
+-   **現在のコンピューター。**  
   
--   **最後のコンピューター:** ワークフロー サービスのインスタンスが最後に実行されたコンピューター。  
+-   **最後のコンピューター**です。 ワークフロー サービスのインスタンスが最後に実行されたコンピューター。  
   
 > [!NOTE]
->  ワークフロー サービス ホストを使用する自己ホスト型のシナリオでは、最後の 4 つのプロパティにのみ値が指定されます。ワークフロー アプリケーション シナリオでは、最後のプロパティにのみ値が指定されます。  
+>  ワークフロー サービス ホストを使用する自己ホスト型のシナリオでは、最後の 4 つのプロパティにのみ値が指定されます。 ワークフロー アプリケーション シナリオでは、最後のプロパティにのみ値が指定されます。  
   
- ワークフロー ランタイムは、最初の 3 つのプロパティの値を指定します。ワークフロー サービス ホストは、**中断の理由**プロパティの値を指定します。SQL Workflow Instance Store 自体は、**最後に更新されたコンピューター** プロパティの値を指定します。  
+ ワークフロー ランタイムは、最初の 3 つのプロパティの値を指定します。 ワークフロー サービス ホストの値を提供する、**中断の理由**プロパティです。 SQL Workflow Instance Store 自体の値を提供する、**最後に更新されたコンピューター**プロパティです。  
   
- また、SQL Workflow Instance Store の機能により、永続性データベースで値を格納したり、クエリで使用したりするカスタム プロパティを指定することができます。カスタムの昇格の詳細については、「[ストア拡張](../../../docs/framework/windows-workflow-foundation//store-extensibility.md)」を参照してください。  
+ また、SQL Workflow Instance Store の機能により、永続性データベースで値を格納したり、クエリで使用したりするカスタム プロパティを指定することができます。 カスタムの上位変換の詳細については、次を参照してください。[ストア拡張](../../../docs/framework/windows-workflow-foundation/store-extensibility.md)です。  
   
-## ビュー  
- インスタンス ストアには、次のビューがあります。詳細については、「[永続性データベース スキーマ](../../../docs/framework/windows-workflow-foundation//persistence-database-schema.md)」を参照してください。  
+## <a name="views"></a>ビュー  
+ インスタンス ストアには、次のビューがあります。 参照してください[永続性データベース スキーマ](../../../docs/framework/windows-workflow-foundation/persistence-database-schema.md)詳細についてはします。  
   
-### Instances ビュー  
+### <a name="the-instances-view"></a>Instances ビュー  
  Instances ビューには、次のフィールドがあります。  
   
-1.  **Id**  
+1.  **ID**  
   
 2.  **PendingTimer**  
   
@@ -82,7 +86,7 @@ SQL Workflow Instance Store は、一連の既知のプロパティをストア�
   
 19. **WriteOnlyComplexDataProperties**  
   
-### ServiceDeployments ビュー  
+### <a name="the-servicedeployments-view"></a>ServiceDeployments ビュー  
  ServiceDeployments ビューには、次のフィールドがあります。  
   
 1.  **SiteName**  
@@ -91,12 +95,12 @@ SQL Workflow Instance Store は、一連の既知のプロパティをストア�
   
 3.  **RelativeApplicationPath**  
   
-4.  **ServiceName**  
+4.  **サービス名**  
   
 5.  **ServiceNamespace**  
   
-### InstancePromotedProperties ビュー  
- InstancePromotedProperties ビューには、次のフィールドがあります。昇格されたプロパティの詳細については、「[ストア拡張](../../../docs/framework/windows-workflow-foundation//store-extensibility.md)」を参照してください。  
+### <a name="the-instancepromotedproperties-view"></a>InstancePromotedProperties ビュー  
+ InstancePromotedProperties ビューには、次のフィールドがあります。 昇格させたプロパティの詳細については、「、[ストア拡張](../../../docs/framework/windows-workflow-foundation/store-extensibility.md)トピックです。  
   
 1.  **InstanceId**  
   
@@ -104,4 +108,4 @@ SQL Workflow Instance Store は、一連の既知のプロパティをストア�
   
 3.  **PromotionName**  
   
-4.  **Value\#** \(**Value1** から **Value64** までのフィールド範囲\)
+4.  **Value #** (からのフィールドの範囲**Value1**に**Value64**)。

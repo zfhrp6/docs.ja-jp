@@ -1,35 +1,33 @@
 ---
-title: "&#39;&lt;typename&gt;&#39; is a type and cannot be used as an expression | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc30108"
-  - "vbc30108"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30108"
+title: "&#39;です。&lt;typename&gt;&#39;は型であり、式として使用することはできません。"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc30108
+- vbc30108
+helpviewer_keywords: BC30108
 ms.assetid: 7931361d-78e2-40ca-ac69-e3374273b248
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 2cffc528055b78fccb9953ee781dbec0af416002
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &#39;&lt;typename&gt;&#39; is a type and cannot be used as an expression
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-式が必要な場所に型名があります。  式は、変数、定数、リテラル、プロパティ、および `Function` プロシージャ呼び出しを適宜組み合わせて構成する必要があります。  
+# <a name="39lttypenamegt39-is-a-type-and-cannot-be-used-as-an-expression"></a>&#39;です。&lt;typename&gt;&#39;は型であり、式として使用することはできません。
+式が必要な個所で、型名が出現しています。 式は、変数、定数、リテラル、プロパティ、および `Function` プロシージャ呼び出しを適宜組み合わせて構成する必要があります。  
   
- **Error ID:** BC30108  
+ **エラー ID:** BC30108  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
 -   型名を削除し、有効な要素を使用して式を作成します。  
   
-## 参照  
- [Operators and Expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
+## <a name="see-also"></a>関連項目  
+ [演算子および式](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

@@ -1,28 +1,31 @@
 ---
-title: "SQL Server でのアプリケーション ロールの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "SQL Server でのアプリケーション ロールの作成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 27442435-dfb2-4062-8c59-e2960833a638
-caps.latest.revision: 9
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 632b25408db8556dd9604f653f975bccbea75e2b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# SQL Server でのアプリケーション ロールの作成
-アプリケーション ロールは、データベース ロールやユーザーに対してではなく、アプリケーションに権限を割り当てる手段です。  ユーザーはデータベースに接続し、アプリケーション ロールをアクティブ化して、そのアプリケーションに付与された権限を使用することになります。  アプリケーション ロールに付与された権限は、接続している間のみ有効です。  
+# <a name="creating-application-roles-in-sql-server"></a>SQL Server でのアプリケーション ロールの作成
+アプリケーション ロールは、データベース ロールやユーザーに対してではなく、アプリケーションに権限を割り当てる手段です。 ユーザーはデータベースに接続し、アプリケーション ロールをアクティブ化して、そのアプリケーションに付与された権限を使用することになります。 アプリケーション ロールに付与された権限は、接続している間のみ有効です。  
   
 > [!IMPORTANT]
->  アプリケーション ロールは、クライアント アプリケーションが接続文字列でアプリケーション ロール名とパスワードを渡すことによってアクティブ化されます。  2 層アプリケーションでは、パスワードをクライアント コンピューターに保存する必要があるため、セキュリティ上の脆弱性を伴います。  3 層アプリケーションでは、アプリケーションのユーザーがアクセスできないような形でパスワードを保存できます。  
+>  アプリケーション ロールは、クライアント アプリケーションが接続文字列でアプリケーション ロール名とパスワードを渡すことによってアクティブ化されます。 2 層アプリケーションでは、パスワードをクライアント コンピューターに保存する必要があるため、セキュリティ上の脆弱性を伴います。 3 層アプリケーションでは、アプリケーションのユーザーがアクセスできないような形でパスワードを保存できます。  
   
-## アプリケーション ロールの特徴  
+## <a name="application-role-features"></a>アプリケーション ロールの特徴  
  アプリケーション ロールには次の特徴があります。  
   
 -   データベース ロールとは異なり、アプリケーション ロールはメンバーを持ちません。  
@@ -31,7 +34,7 @@ caps.handback.revision: 9
   
 -   パスワードはクライアント コンピューターに保存しておき、実行時に渡す必要があります。アプリケーション ロールを SQL Server 内からアクティブ化することはできません。  
   
--   パスワードは暗号化されません。  パラメーターのパスワードが一方向のハッシュとして保存されます。  
+-   パスワードは暗号化されません。 パラメーターのパスワードが一方向のハッシュとして保存されます。  
   
 -   アクティブ化後、アプリケーション ロールを使用して取得した権限は、接続している間のみ有効です。  
   
@@ -39,34 +42,34 @@ caps.handback.revision: 9
   
 -   アプリケーション ロールが `sysadmin` 固定サーバー ロールのメンバーによってアクティブ化された場合、セキュリティ コンテキストは、接続している間、アプリケーション ロールのセキュリティ コンテキストに切り替わります。  
   
--   アプリケーション ロールを持ったデータベースに `guest` アカウントを作成した場合、そのアプリケーション ロールまたはそれを呼び出すログインに対するデータベース ユーザー アカウントを作成する必要はありません。  別のデータベースに `guest` アカウントが存在する場合は、アプリケーション ロールでそのデータベースに直接アクセスできます。  
+-   アプリケーション ロールを持ったデータベースに `guest` アカウントを作成した場合、そのアプリケーション ロールまたはそれを呼び出すログインに対するデータベース ユーザー アカウントを作成する必要はありません。 別のデータベースに `guest` アカウントが存在する場合は、アプリケーション ロールでそのデータベースに直接アクセスできます。  
   
--   SYSTEM\_USER など、ログイン名を返す組み込み関数を実行した場合、アプリケーション ロールを呼び出したログイン名が返されます。  データベース ユーザー名を返す組み込み関数を実行した場合、アプリケーション ロールの名前が返されます。  
+-   SYSTEM_USER など、ログイン名を返す組み込み関数を実行した場合、アプリケーション ロールを呼び出したログイン名が返されます。 データベース ユーザー名を返す組み込み関数を実行した場合、アプリケーション ロールの名前が返されます。  
   
-### 最小特権の原則  
- パスワードが漏洩した場合に備えて、アプリケーション ロールには必要な権限だけを付与してください。  アプリケーション ロールを使ったデータベースでは、`public` ロールに対する権限は取り消す必要があります。  アプリケーション ロールの呼び出し元が特定のデータベースにアクセスできないようにするには、そのデータベースの `guest` アカウントを無効にします。  
+### <a name="the-principle-of-least-privilege"></a>最小特権の原則  
+ パスワードが漏洩した場合に備えて、アプリケーション ロールには必要な権限だけを付与してください。 アプリケーション ロールを使ったデータベースでは、`public` ロールに対する権限は取り消す必要があります。 アプリケーション ロールの呼び出し元が特定のデータベースにアクセスできないようにするには、そのデータベースの `guest` アカウントを無効にします。  
   
-### アプリケーション ロールの機能強化  
- アプリケーション ロールをアクティブ化した後で実行コンテキストを元の呼び出し元に戻すことができるため、接続プールを無効にする必要はありません。  呼び出し元のコンテキスト情報を格納するクッキーを作成するための新しいオプションが `sp_setapprole` プロシージャに追加されています。  `sp_unsetapprole` プロシージャにそのクッキーを渡して呼び出すことによって、元のセッションに切り替えることができます。  
+### <a name="application-role-enhancements"></a>アプリケーション ロールの機能強化  
+ アプリケーション ロールをアクティブ化した後で実行コンテキストを元の呼び出し元に戻すことができるため、接続プールを無効にする必要はありません。 呼び出し元のコンテキスト情報を格納するクッキーを作成するための新しいオプションが `sp_setapprole` プロシージャに追加されています。 `sp_unsetapprole` プロシージャにそのクッキーを渡して呼び出すことによって、元のセッションに切り替えることができます。  
   
-## アプリケーション ロールに代わる方法  
- アプリケーション ロールはパスワードのセキュリティに依存する関係上、セキュリティ上の脆弱性を伴います。  パスワードをアプリケーション コードに組み込んだり、ディスクに保存したりすると、パスワードが漏洩する可能性があります。  
+## <a name="application-role-alternatives"></a>アプリケーション ロールに代わる方法  
+ アプリケーション ロールはパスワードのセキュリティに依存する関係上、セキュリティ上の脆弱性を伴います。 パスワードをアプリケーション コードに組み込んだり、ディスクに保存したりすると、パスワードが漏洩する可能性があります。  
   
  以下の代替策を検討する必要があります。  
   
--   EXECUTE AS ステートメントに NO REVERT 句と WITH COOKIE 句を指定してコンテキスト切り替えを行う。  ログインにマップされていないユーザー アカウントをデータベースに作成し、  このアカウントに権限を割り当てるようにします。  EXECUTE AS はパスワード ベースではなく、権限ベースであるため、非ログイン ユーザーで使用した方が高いセキュリティを確保できます。  詳細については、「[SQL Server での借用を使用した権限のカスタマイズ](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)」を参照してください。  
+-   EXECUTE AS ステートメントに NO REVERT 句と WITH COOKIE 句を指定してコンテキスト切り替えを行う。 ログインにマップされていないユーザー アカウントをデータベースに作成し、 このアカウントに権限を割り当てるようにします。 EXECUTE AS はパスワード ベースではなく、権限ベースであるため、非ログイン ユーザーで使用した方が高いセキュリティを確保できます。 詳細については、次を参照してください。 [SQL Server での偽装でのアクセス許可をカスタマイズする](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)です。  
   
--   証明書を使ってストアド プロシージャに署名し、そのプロシージャを実行するのに必要な権限だけを付与する。  詳細については、「[SQL Server でのストアド プロシージャの署名](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)」を参照してください。  
+-   証明書を使ってストアド プロシージャに署名し、そのプロシージャを実行するのに必要な権限だけを付与する。 詳細については、次を参照してください。 [SQL Server でストアド プロシージャの署名](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)です。  
   
-## 外部リソース  
+## <a name="external-resources"></a>外部リソース  
  詳細については、次のリソースを参照してください。  
   
 |リソース|説明|  
-|----------|--------|  
-|SQL Server オンライン ブックの「[アプリケーション ロール](http://msdn.microsoft.com/library/ms190998.aspx)」|SQL Server 2008 でアプリケーション ロールを作成および使用する方法について説明します。|  
+|--------------|-----------------|  
+|[アプリケーション ロール](http://msdn.microsoft.com/library/ms190998.aspx)SQL Server オンライン ブック|SQL Server 2008 でアプリケーション ロールを作成および使用する方法について説明します。|  
   
-## 参照  
- [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)   
- [SQL Server セキュリティの概要](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)   
- [SQL Server におけるアプリケーション セキュリティのシナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
+ [SQL Server のセキュリティの概要](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
+ [SQL Server におけるアプリケーション セキュリティ シナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

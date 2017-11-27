@@ -1,29 +1,32 @@
 ---
-title: "動作 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ビヘイビアー"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b0885b65-4e74-4bc9-bbf0-eb7ebe566da1
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: b69e061820cc2a45e4b42490a4e2724beef2c2b1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 動作
+# <a name="behaviors"></a>ビヘイビアー
 このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスの動作を示すサンプルが含まれています。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [同時実行](../../../../docs/framework/wcf/samples/concurrency.md)  
  <xref:System.ServiceModel.ServiceBehaviorAttribute> を <xref:System.ServiceModel.ConcurrencyMode> 列挙体と共に使用する方法を示します。この列挙体は、サービスのインスタンスがメッセージを順番に処理するか、または同時に処理するかを制御します。  
   
- [既定のサービスの動作](../../../../docs/framework/wcf/samples/default-service-behavior.md)  
+ [既定のサービス動作](../../../../docs/framework/wcf/samples/default-service-behavior.md)  
  サービスの動作設定を構成する方法を示します。  
   
  [インスタンス化](../../../../docs/framework/wcf/samples/instancing.md)  

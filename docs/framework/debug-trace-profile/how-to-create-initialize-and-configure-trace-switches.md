@@ -5,15 +5,12 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - trace switches, configuring
 - tracing [.NET Framework], trace switches
@@ -21,29 +18,28 @@ helpviewer_keywords:
 - tracing [.NET Framework], enabling or disabling
 - Web.config configuration file, trace switches
 ms.assetid: 5a0e41bf-f99c-4692-8799-f89617f5bcf9
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6b5ba232e3c84f7bfa089822d4a4f792b179bf32
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: f5fa8a0fbe6dc08811162ba9b1d4198af9256fc4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-create-initialize-and-configure-trace-switches"></a>方法 : トレース スイッチを作成、初期化、および構成する
 トレース スイッチを使用すると、トレース出力を有効/無効にしたり、トレースの出力をフィルター処理したりできます。  
   
 <a name="create"></a>   
 ## <a name="creating-and-initializing-a-trace-switch"></a>トレース スイッチの作成と初期化  
- トレース スイッチを使用するには、まずトレース スイッチを作成し、コード内に配置する必要があります。 事前定義されている 2 つのクラスからスイッチ オブジェクトを作成することができます。それは、<xref:System.Diagnostics.BooleanSwitch?displayProperty=fullName> クラスと <xref:System.Diagnostics.TraceSwitch?displayProperty=fullName> クラスです。 トレース メッセージを表示させるかどうかのみ処理すればよい場合は <xref:System.Diagnostics.BooleanSwitch> を使用し、トレースのレベルを区別する必要がある場合は <xref:System.Diagnostics.TraceSwitch> を使用します。 <xref:System.Diagnostics.TraceSwitch> を使用する場合は、独自のデバッグ メッセージを定義して、それらのメッセージを異なるトレース レベルに関連付けることができます。 どちらの種類のスイッチも、トレースまたはデバッグの両方で使用できます。 既定では、<xref:System.Diagnostics.BooleanSwitch> は無効に設定され、<xref:System.Diagnostics.TraceSwitch> はレベル <xref:System.Diagnostics.TraceLevel.Off?displayProperty=fullName> に設定されています。 トレース スイッチは、それらを使用する可能性のあるコードの任意の部分に作成して配置することができます。  
+ トレース スイッチを使用するには、まずトレース スイッチを作成し、コード内に配置する必要があります。 事前定義されている 2 つのクラスからスイッチ オブジェクトを作成することができます。それは、<xref:System.Diagnostics.BooleanSwitch?displayProperty=nameWithType> クラスと <xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType> クラスです。 トレース メッセージを表示させるかどうかのみ処理すればよい場合は <xref:System.Diagnostics.BooleanSwitch> を使用し、トレースのレベルを区別する必要がある場合は <xref:System.Diagnostics.TraceSwitch> を使用します。 <xref:System.Diagnostics.TraceSwitch> を使用する場合は、独自のデバッグ メッセージを定義して、それらのメッセージを異なるトレース レベルに関連付けることができます。 どちらの種類のスイッチも、トレースまたはデバッグの両方で使用できます。 既定では、<xref:System.Diagnostics.BooleanSwitch> は無効に設定され、<xref:System.Diagnostics.TraceSwitch> はレベル <xref:System.Diagnostics.TraceLevel.Off?displayProperty=nameWithType> に設定されています。 トレース スイッチは、それらを使用する可能性のあるコードの任意の部分に作成して配置することができます。  
   
  トレース レベルやその他の構成オプションをコード内に設定することもできますが、構成ファイルを使用してスイッチの状態を管理することをお勧めします。 これは、構成システムでスイッチの構成を管理したほうが柔軟性が高く、アプリケーションを再コンパイルしないでもさまざまなスイッチのオン/オフを切り替えたりレベルを変更したりできるからです。  
   
 #### <a name="to-create-and-initialize-a-trace-switch"></a>トレース スイッチを作成し、初期化するには  
   
-1.  スイッチを型 <xref:System.Diagnostics.BooleanSwitch?displayProperty=fullName> または型 <xref:System.Diagnostics.TraceSwitch?displayProperty=fullName> のいずれかに定義し、スイッチの名前と説明を設定します。  
+1.  スイッチを型 <xref:System.Diagnostics.BooleanSwitch?displayProperty=nameWithType> または型 <xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType> のいずれかに定義し、スイッチの名前と説明を設定します。  
   
 2.  トレース スイッチを構成します。 詳細については、「[トレース スイッチの構成](#configure)」を参照してください。  
   
@@ -72,7 +68,7 @@ ms.lasthandoff: 08/21/2017
   
  配置されたアプリケーションでは、アプリケーションが実行されていないときにスイッチ オブジェクトを再構成することによりトレース コードを有効にできます。 この手順は、通常、スイッチ オブジェクトのオン/オフの切り替えやトレース レベルの変更を行った後、アプリケーションを再起動します。  
   
- スイッチのインスタンスを作成するときに、*displayName* 引数と *description* 引数の 2 つを指定することで、インスタンスを初期化することもできます。 コンストラクターの *displayName* 引数は、<xref:System.Diagnostics.Switch> クラス インスタンスの <xref:System.Diagnostics.Switch.DisplayName%2A?displayProperty=fullName> プロパティを設定します。 *displayName* は .config ファイルでスイッチを構成するために使用されている名前です。*description* 引数は、スイッチとそれがコントロールするメッセージについて簡単な説明を返します。  
+ スイッチのインスタンスを作成するときに、*displayName* 引数と *description* 引数の 2 つを指定することで、インスタンスを初期化することもできます。 コンストラクターの *displayName* 引数は、<xref:System.Diagnostics.Switch> クラス インスタンスの <xref:System.Diagnostics.Switch.DisplayName%2A?displayProperty=nameWithType> プロパティを設定します。 *displayName* は .config ファイルでスイッチを構成するために使用されている名前です。*description* 引数は、スイッチとそれがコントロールするメッセージについて簡単な説明を返します。  
   
  構成するスイッチの名前を指定するだけでなく、スイッチの値も指定する必要があります。 この値は整数です。 <xref:System.Diagnostics.BooleanSwitch> では、値 0 が**オフ**に相当し、0 以外の値が**オン**に相当します。 <xref:System.Diagnostics.TraceSwitch> では、0、1、2、3、および 4 が、それぞれ**オフ**、**エラー**、**警告**、**情報**、および**詳細**に相当します。 4 より大きい数値は**詳細**として扱われ、0 より小さい数値は**オフ**として扱われます。  
   
@@ -138,8 +134,7 @@ ms.lasthandoff: 08/21/2017
     ```  
   
 ## <a name="see-also"></a>関連項目  
- [アプリケーションのトレースとインストルメント](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)   
- [方法 : アプリケーション コードにトレース ステートメントを追加する](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)   
- [トレース スイッチ](../../../docs/framework/debug-trace-profile/trace-switches.md)   
+ [アプリケーションのトレースとインストルメント](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)  
+ [方法: アプリケーション コードにトレース ステートメントを追加](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
+ [トレース スイッチ](../../../docs/framework/debug-trace-profile/trace-switches.md)  
  [トレースおよびデバッグ設定のスキーマ](../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
-

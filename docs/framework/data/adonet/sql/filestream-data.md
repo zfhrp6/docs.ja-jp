@@ -1,34 +1,37 @@
 ---
-title: "FILESTREAM データ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "FILESTREAM データ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: bd8b845c-0f09-4295-b466-97ef106eefa8
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 2fde543187d1904da93be255878d6c7a99de6bbf
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# FILESTREAM データ
-FILESTREAM ストレージ属性は、varbinary\(max\) 列に格納されるバイナリ \(BLOB\) データに対応しています。  FILESTREAM の導入前は、バイナリ データの格納するために特別な処理が必要でした。  テキスト ドキュメント、イメージ、ビデオなどの非構造化データはデータベース外に保存されることが多く、そのために管理が困難でした。  
+# <a name="filestream-data"></a>FILESTREAM データ
+FILESTREAM ストレージ属性は、varbinary(max) 列に格納されるバイナリ (BLOB) データに対応しています。 FILESTREAM の導入前は、バイナリ データの格納するために特別な処理が必要でした。 テキスト ドキュメント、イメージ、ビデオなどの非構造化データはデータベース外に保存されることが多く、そのために管理が困難でした。  
   
 > [!NOTE]
 >  SqlClient を使用して FILESTREAM データを操作するには、.NET Framework 3.5 SP1 以降をインストールする必要があります。  
   
- varbinary\(max\) 列に FILESTREAM 属性を指定すると、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] では、データがデータベース ファイルではなくローカルの NTFS ファイル システムに保存されます。  データは個別に保存されますが、データベースに保存されている varbinary\(max\) データの操作のためにサポートされているのと同じ [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] ステートメントを使用できます。  
+ varbinary(max) 列に FILESTREAM 属性を指定すると、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] では、データがデータベース ファイルではなくローカルの NTFS ファイル システムに保存されます。 データは個別に保存されますが、データベースに保存されている varbinary(max) データの操作のためにサポートされているのと同じ [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] ステートメントを使用できます。  
   
-## FILESTREAM の SqlClient サポート  
- [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] Data Provider for [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] \(<xref:System.Data.SqlClient>\) は、<xref:System.Data.SqlTypes> 名前空間で定義された <xref:System.Data.SqlTypes.SqlFileStream> クラスを使用して、FILESTREAM データの読み取りと書き込みをサポートします。  `SqlFileStream` は <xref:System.IO.Stream> クラスを継承します。このクラスは、データのストリームへの読み込みと書き込みを行うためのメソッドを提供します。  ストリームからデータを読み取ると、データはストリームからバイトの配列などのデータ構造に転送されます。  書き込みを行うと、データはデータ構造からストリームに転送されます。  
+## <a name="sqlclient-support-for-filestream"></a>FILESTREAM の SqlClient サポート  
+ [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] Data Provider for [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] (<xref:System.Data.SqlClient>) は、<xref:System.Data.SqlTypes.SqlFileStream> 名前空間で定義された <xref:System.Data.SqlTypes> クラスを使用して、FILESTREAM データの読み取りと書き込みをサポートします。 `SqlFileStream` は <xref:System.IO.Stream> クラスを継承します。このクラスは、データのストリームへの読み込みと書き込みを行うためのメソッドを提供します。 ストリームからデータを読み取ると、データはストリームからバイトの配列などのデータ構造に転送されます。 書き込みを行うと、データはデータ構造からストリームに転送されます。  
   
-### [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] テーブルの作成  
- 次の [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] ステートメントでは、従業員の名前の付いたテーブルを作成し、データ行を挿入します。  FILESTREAM ストレージを有効にすると、このテーブルを次のようなコード例と共に使用できます。  [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] オンライン ブックの関連トピックへのリンクは、このトピックの最後にあります。  
+### <a name="creating-the-includessnoversionincludesssnoversion-mdmd-table"></a>[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] テーブルの作成  
+ 次の [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] ステートメントでは、従業員の名前の付いたテーブルを作成し、データ行を挿入します。 FILESTREAM ストレージを有効にすると、このテーブルを次のようなコード例と共に使用できます。 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] オンライン ブックの関連トピックへのリンクは、このトピックの最後にあります。  
   
 ```  
 CREATE TABLE employees  
@@ -42,15 +45,14 @@ GO
 Insert into employees  
 Values(1, 0x00, default)  
 GO  
-  
 ```  
   
-### 例: FILESTREAM データの読み取り、上書き、および挿入  
- 次のサンプルでは、FILESTREAM からデータを読み取る方法を示します。  コードはファイルへの論理パスを取得し、`FileAccess` を `Read` に、`FileOptions` を `SequentialScan` に設定します。  次に、コードは SqlFileStream からバイトをバッファーに読み取ります。  バイトはコンソール ウィンドウに書き込まれます。  
+### <a name="example-reading-overwriting-and-inserting-filestream-data"></a>例: FILESTREAM データの読み取り、上書き、および挿入  
+ 次のサンプルでは、FILESTREAM からデータを読み取る方法を示します。 コードはファイルへの論理パスを取得し、`FileAccess` を `Read` に、`FileOptions` を `SequentialScan` に設定します。 次に、コードは SqlFileStream からバイトをバッファーに読み取ります。 バイトはコンソール ウィンドウに書き込まれます。  
   
- また、このサンプルでは、すべての既存のデータを上書きする FILESTREAM にデータを書き込む方法も示します。  コードはファイルへの論理パスを取得し、`SqlFileStream` を作成し、`FileAccess` を `Write` に、`FileOptions` を `SequentialScan` に設定します。  1 バイトが `SqlFileStream` に書き込まれ、ファイルのデータは置換されます。  
+ また、このサンプルでは、すべての既存のデータを上書きする FILESTREAM にデータを書き込む方法も示します。 コードはファイルへの論理パスを取得し、`SqlFileStream` を作成し、`FileAccess` を `Write` に、`FileOptions` を `SequentialScan` に設定します。 1 バイトが `SqlFileStream` に書き込まれ、ファイルのデータは置換されます。  
   
- このサンプルでは、Seek メソッドを使用してファイルの末尾にデータを追加することによって、データを FILESTREAM に書き込む方法も示します。  コードはファイルへの論理パスを取得し、`SqlFileStream` を作成し、`FileAccess` を `ReadWrite` に、`FileOptions` を `SequentialScan` に設定します。  コードは Seek メソッドを使用してファイルの末尾をシークし、1 バイトを既存のファイルに追加します。  
+ このサンプルでは、Seek メソッドを使用してファイルの末尾にデータを追加することによって、データを FILESTREAM に書き込む方法も示します。 コードはファイルへの論理パスを取得し、`SqlFileStream` を作成し、`FileAccess` を `ReadWrite` に、`FileOptions` を `SequentialScan` に設定します。 コードは Seek メソッドを使用してファイルの末尾をシークし、1 バイトを既存のファイルに追加します。  
   
 ```csharp  
 using System;  
@@ -210,22 +212,22 @@ namespace FileStreamTest
 }  
 ```  
   
- 別のサンプルについては、「[ファイル ストリーム列へのバイナリ データの格納および取得方法](http://www.codeproject.com/Articles/32216/How-to-store-and-fetch-binary-data-into-a-file-str)」を参照してください。  
+ 別のサンプルでは、次を参照してください。[保存し、ファイル ストリーム列にバイナリ データをフェッチする方法](http://www.codeproject.com/Articles/32216/How-to-store-and-fetch-binary-data-into-a-file-str)です。  
   
-## [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] オンライン ブックの関連トピック  
+## <a name="resources-in-includessnoversionincludesssnoversion-mdmd-books-online"></a>[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] オンライン ブックの関連トピック  
  FILESTREAM の詳細なドキュメントは、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] オンライン ブックの次のセクションにあります。  
   
 |トピック|説明|  
-|----------|--------|  
-|[FILESTREAM ストレージの設計と実装](http://msdn2.microsoft.com/library/bb895234\(SQL.105\).aspx)|FILESTREAM ドキュメントと関連項目へのリンクを示します。|  
+|-----------|-----------------|  
+|[設計と実装の FILESTREAM ストレージ](http://msdn2.microsoft.com/library/bb895234\(SQL.105\).aspx)|FILESTREAM ドキュメントと関連項目へのリンクを示します。|  
 |[FILESTREAM の概要](http://msdn2.microsoft.com/library/bb933993\(SQL.105\).aspx)|FILESTREAM ストレージを使用するタイミング、および SQL Server データベース エンジンと NTFS ファイル システムを統合する方法について説明します。|  
 |[FILESTREAM ストレージの概要](http://msdn.microsoft.com/library/bb933995\(SQL.105\).aspx)|FILESTREAM を SQL Server のインスタンス上で有効にする方法、データベースと FILESTREAM データを格納するテーブルの作成方法、および FILESTREAM データを含んでいる行の操作方法について説明します。|  
-|[クライアント アプリケーションでの FILESTREAM ストレージの使用](http://msdn.microsoft.com/library/bb933877\(SQL.105\).aspx)|FILESTREAM データを操作するための Win32 API 関数について説明します。|  
-|[FILESTREAM と SQL Server のその他の機能の使用](http://msdn.microsoft.com/library/bb895334\(SQL.105\).aspx)|FILESTREAM データを SQL Server の他の機能と共に使用する際の注意事項、ガイドライン、および制限事項について説明します。|  
+|[クライアント アプリケーションで FILESTREAM ストレージを使用します。](http://msdn.microsoft.com/library/bb933877\(SQL.105\).aspx)|FILESTREAM データを操作するための Win32 API 関数について説明します。|  
+|[FILESTREAM およびその他の SQL Server の機能](http://msdn.microsoft.com/library/bb895334\(SQL.105\).aspx)|FILESTREAM データを SQL Server の他の機能と共に使用する際の注意事項、ガイドライン、および制限事項について説明します。|  
   
-## 参照  
- [SQL Server データ型と ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)   
- [ADO.NET でのデータの取得および変更](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)   
- [コード アクセス セキュリティと ADO.NET](../../../../../docs/framework/data/adonet/code-access-security.md)   
- [SQL Server のバイナリ データと大きな値のデータ](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [SQL Server データ型と ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)  
+ [ADO.NET でのデータの取得および変更](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ [コード アクセス セキュリティと ADO.NET](../../../../../docs/framework/data/adonet/code-access-security.md)  
+ [SQL Server のバイナリ データと大きな値のデータ](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,44 +1,47 @@
 ---
-title: "Oracle BFILE | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Oracle BFILE
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 341bbf84-4734-4d44-8723-ccedee954e21
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: f48bd85559d55d9a1190310bcf13cd4a68625011
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Oracle BFILE
-.NET Framework Data Provider for Oracle には、<xref:System.Data.OracleClient.OracleBFile> クラスが含まれています。このクラスは、Oracle <xref:System.Data.OracleClient.OracleType> データ型で使用されます。  
+# <a name="oracle-bfiles"></a>Oracle BFILE
+.NET Framework Data Provider for Oracle には、<xref:System.Data.OracleClient.OracleBFile> クラスが含まれています。このクラスは、Oracle <xref:System.Data.OracleClient.OracleType.BFile> データ型で使用されます。  
   
- Oracle **BFILE** データ型は、最大 4 GB までのバイナリ データへの参照を含む Oracle **LOB** データ型です。  Oracle **BFILE** は、データがサーバー上にではなくオペレーティング システムの物理ファイルに保存されるという点で、他の Oracle **LOB** データ型と異なります。  **BFILE** データ型のデータ アクセスは読み取り専用であることに注意してください。  
+ Oracle **BFILE**データ型は、Oracle **LOB**を 4 ギガバイト単位の最大サイズのバイナリ データへの参照を含むデータ型。 Oracle **BFILE**他の Oracle とは異なります**LOB**データ型の代わりに、オペレーティング システムで、サーバー上の物理ファイルにそのデータを格納します。 なお、 **BFILE**データ型は、データへの読み取り専用のアクセスを提供します。  
   
- **LOB** データ型と異なる **BFILE** データ型のその他の特徴としては、次のものがあります。  
+ 他の特性、 **BFILE**から区別するためのデータ型、 **LOB**データ型はできることです。  
   
 -   非構造化データの保持。  
   
 -   サーバー側チャンキングのサポート。  
   
--   参照コピーのセマンティクスの使用。  たとえば、**BFILE** 上でコピー操作を行う場合、ファイルへの参照である **BFILE** ロケーターだけがコピーされます。  ファイル内のデータはコピーされません。  
+-   参照コピーのセマンティクスの使用。 コピー操作を実行する場合など、 **BFILE**、のみ、 **BFILE**ロケーター (ファイルへの参照は、) をコピーします。 ファイル内のデータはコピーされません。  
   
- **BFILE** データ型は、大きいサイズの LOB の参照用として使用してください。データベースへの保存には適しません。  **BFILE** データ型を使用すると、クライアント、サーバー、および通信において、**LOB** データ型よりも、いっそう多くのオーバーヘッドを必要とします。  少量のデータを取得するだけの場合は、**BFILE** へのアクセスがいっそう効果的です。  オブジェクト全体を取得したい場合は、データベースに常駐する LOB へのアクセスがいっそう効果的です。  
+ **BFILE**サイズが大きい Lob を参照するために使用するデータの種類とそのため、データベースに格納するには実用的ではないです。 複数クライアント、サーバー、および通信のオーバーヘッドを使用する場合、 **BFILE**データ型と比較して、 **LOB**データ型。 アクセスする方が効率的である、 **BFILE**のみ少量のデータを取得する必要がある場合。 オブジェクト全体を取得したい場合は、データベースに常駐する LOB へのアクセスがいっそう効果的です。  
   
- NULL 以外の **OracleBFile** オブジェクトは、基になる物理ファイルの場所を定義する次の 2 つのエンティティに関連付けられます。  
+ 各 NULL **OracleBFile**オブジェクトが、基になる物理ファイルの場所を定義する 2 つのエンティティと関連付けられています。  
   
 1.  Oracle DIRECTORY オブジェクト。ファイル システムのディレクトリに対するデータベースのエイリアスです。  
   
 2.  基になる物理ファイルのファイル名。このファイルは、DIRECTORY オブジェクトに関連付けられたディレクトリに配置されています。  
   
-## 例  
- 次の C\# の例では、Oracle テーブルに **BFILE** を作成し、**OracleBFile** オブジェクトの形式で取得する方法について説明します。  この例では、<xref:System.Data.OracleClient.OracleDataReader> オブジェクトと **OracleBFile** の **Seek** および **Read** メソッドを使用する方法について説明します。  このサンプルを使用するには、はじめに "c:\\\\bfiles" というディレクトリと "MyFile.jpg" というファイルを Oracle サーバーに作成する必要があります。  
+## <a name="example"></a>例  
+ 次の c# の例では、作成する方法を示しています、 **BFILE** 、Oracle テーブルにし、それの形式で取得、 **OracleBFile**オブジェクト。 この例では、使用方法を示します、<xref:System.Data.OracleClient.OracleDataReader>オブジェクトおよび**OracleBFile** **シーク**と**読み取り**メソッドです。 このサンプルを使用するためにする必要がありますまずを作成するという名前のディレクトリ"c:\\\bfiles"Oracle サーバーで"MyFile.jpg"という名前のファイルとします。  
   
 ```csharp  
 using System;  
@@ -93,6 +96,6 @@ public class Sample
 }  
 ```  
   
-## 参照  
- [Oracle および ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [Oracle および ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

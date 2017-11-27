@@ -1,39 +1,42 @@
 ---
-title: "Samples | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "サンプル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3fcc0c4a-b952-4cfe-9e09-0c0cf874ba2c
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 95bf64ce56b9e70317b2a51e3abf77ea6dbd7bc1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Samples
-ここでは、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] サンプル コードが用意されている [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] および C\# のソリューションへのリンクを示します。  
+# <a name="samples"></a>サンプル
+ここでは、[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] サンプル コードが用意されている [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] および C# のソリューションへのリンクを示します。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  SampleQueries ソリューションの [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] バージョン  
- [Sample Queries \(Visual Basic\)](http://msdn.microsoft.com/ja-jp/c9de4619-45fb-4655-be8f-763ee4ed8abe)  
+ [サンプル クエリ (Visual Basic)](~/docs/visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
   
- SampleQueries ソリューションの C\# バージョン  
- [LINQ C\# Samples Solution](http://msdn.microsoft.com/ja-jp/23852e6b-b9a9-4a06-aedb-b27a5930ed74)  
+ SampleQueries ソリューションの C# バージョン  
+ [C# での LINQ サンプル ソリューション](http://msdn.microsoft.com/en-us/23852e6b-b9a9-4a06-aedb-b27a5930ed74)  
   
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] コードおよびアプリケーションの他の例を参照するには、次の手順に従います。  
   
--   特定の問題について MSDN ライブラリを検索します。  
+-   Microsoft のドキュメントの特定の問題を検索します。  
   
--   [LINQ フォーラム](http://go.microsoft.com/fwlink/?LinkId=76488)に参加して、複雑なトピックについて専門家と検討したりすることもできます。  
+-   含める、 [LINQ フォーラム](http://go.microsoft.com/fwlink/?LinkId=76488)、専門家の複雑なトピックについての詳細を説明することができます。  
   
--   [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] および C\# のコード例を含む、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] テクノロジについて記載されているホワイト ペーパーを参照します。  詳細については、「[LINQ to SQL: リレーショナル データのための .NET 統合言語クエリ](http://go.microsoft.com/fwlink/?LinkId=93205)」を参照してください。  
+-   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] および C# のコード例を含む、[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] テクノロジについて記載されているホワイト ペーパーを参照します。 詳細については、次を参照してください。 [LINQ to SQL: リレーショナル データ用 .net 統合言語クエリ](http://go.microsoft.com/fwlink/?LinkId=93205)です。  
   
-## 参照  
- [LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/index.md)   
- [LINQ to SQL Walkthroughs](http://msdn.microsoft.com/ja-jp/308e66ac-f704-4e00-9b4e-7af0045a2374)
+## <a name="see-also"></a>関連項目  
+ [LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/index.md)  
+ [LINQ to SQL チュートリアル](http://msdn.microsoft.com/en-us/308e66ac-f704-4e00-9b4e-7af0045a2374)

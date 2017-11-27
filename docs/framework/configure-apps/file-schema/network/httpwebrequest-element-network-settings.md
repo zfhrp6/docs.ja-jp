@@ -1,40 +1,42 @@
 ---
-title: "&lt;httpWebRequest&gt; 要素 (ネットワーク設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/httpWebRequest"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#httpWebRequest"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<httpWebRequest> 要素"
-  - "httpWebRequest 要素"
+title: "&lt;httpWebRequest&gt;要素 (ネットワーク設定)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/httpWebRequest
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#httpWebRequest
+helpviewer_keywords:
+- <httpWebRequest> element
+- httpWebRequest element
 ms.assetid: 52acd9d2-5bdc-4dc4-9c2a-f0a476ccbb31
-caps.latest.revision: 18
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 0a4490870cb12ff221f75b043f01baad9b5c7c96
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;httpWebRequest&gt; 要素 (ネットワーク設定)
-Web 要求パラメーターをカスタマイズします。  
+# <a name="lthttpwebrequestgt-element-network-settings"></a>&lt;httpWebRequest&gt;要素 (ネットワーク設定)
+Web 要求のパラメーターをカスタマイズします。  
   
-## 構文  
+ \<configuration>  
+\<system.net >  
+\<設定 >  
+\<httpWebRequest >  
   
-```  
+## <a name="syntax"></a>構文  
   
-      <httpWebRequest  
+```xml  
+<httpWebRequest  
   maximumResponseHeadersLength="size"  
   maximumErrorResponseLength="size"  
   maximumUnauthorizedUploadLength="size"  
@@ -42,37 +44,37 @@ Web 要求パラメーターをカスタマイズします。
 />  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|**Attribute**|**説明**|  
-|-------------------|------------|  
-|`maximumResponseHeadersLength`|応答ヘッダーの最大長を KB で指定します。  既定値は 64 です。  \-1 の値は、応答ヘッダーにサイズ制限が設定されていないことを示しています。|  
-|`maximumErrorResponseLength`|エラー応答の最大長を KB で指定します。  既定値は 64 です。  \-1 の値は、エラー応答にサイズ制限が設定されていないことを示しています。|  
-|`maximumUnauthorizedUploadLength`|未承認エラー コードに応答してアップロードする最大長をバイトで指定します。  既定値は \-1 です。  値 \-1 は、アップロード情報にサイズ制限が適用されないことを示します。|  
-|`useUnsafeHeaderParsing`|安全でないヘッダー解析が有効であるかどうかを指定します。  既定値は `false` です。|  
+|**属性**|**説明**|  
+|-------------------|---------------------|  
+|`maximumResponseHeadersLength`|応答ヘッダーの最大長を指定します (キロバイト単位)。 既定値は 64 です。 値-1 は、応答ヘッダーにサイズの制限が設定されていないことを示します。|  
+|`maximumErrorResponseLength`|エラー応答の最大長を指定します (キロバイト単位)。 既定値は 64 です。 値-1 は、エラー応答のサイズの制限が設定されていないことを示します。|  
+|`maximumUnauthorizedUploadLength`|アップロードの最大長 (バイト単位)、承認されていないエラー コードへの応答を指定します。 既定値は -1 です。 値-1 は、アップロード時にサイズの制限が設定されていないことを示します。|  
+|`useUnsafeHeaderParsing`|安全でないヘッダーの解析が有効になっているかどうかを指定します。 既定値は `false` です。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |**要素**|**説明**|  
-|------------|------------|  
+|-----------------|---------------------|  
 |[設定](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。|  
   
-## 解説  
- 既定では、.NET Framework は URI 解析に対して RFC 2616 を厳密に適用します。  一部のサーバーの応答では、禁止されたフィールドに制御文字が含まれる場合があり、<xref:System.Net.HttpWebRequest.GetResponse?displayProperty=fullName> メソッドが <xref:System.Net.WebException> をスローする原因となります。  **useUnsafeHeaderParsing** が **true** に設定されている場合、<xref:System.Net.HttpWebRequest.GetResponse?displayProperty=fullName> はスローしませんが、アプリケーションはいくつかのフォームの URI 解析攻撃を受けやすくなります。  最良のソリューションは、応答に制御文字が含まれないように、サーバーを変更することです。  
+## <a name="remarks"></a>コメント  
+ 既定では、.NET Framework は URI の解析の RFC 2616 を厳密には適用します。 サーバー応答の一部が原因となる、禁止されているフィールドにコントロール文字を含めることがあります、<xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType>をスローするメソッド、<xref:System.Net.WebException>です。 場合**useUnsafeHeaderParsing**に設定されている**true**、<xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType>ただしです。 この場合はスローされません、アプリケーションがいくつかの形式の URI の解析攻撃を受けやすくなります。 応答に制御文字が含まれないように、サーバーを変更することをお勧めします。  
   
-## 構成ファイル  
- この要素は、アプリケーション構成ファイルまたはマシン構成ファイル \(Machine.config\) で使用できます。  
+## <a name="configuration-files"></a>構成ファイル  
+ この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
   
-## 使用例  
- 次のコード例は、通常の最大ヘッダー長より大きい値を指定する方法を示しています。  
+## <a name="example"></a>例  
+ 次の例は、大きい値を指定する方法を示しています。 標準ヘッダーの最大長よりもします。  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <settings>  
@@ -84,6 +86,6 @@ Web 要求パラメーターをカスタマイズします。
 </configuration>  
 ```  
   
-## 参照  
- <xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

@@ -1,87 +1,89 @@
 ---
-title: "&lt;bypassTrustedAppStrongNames&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<bypassTrustedAppStrongNames> 要素"
-  - "bypassTrustedAppStrongNames 要素"
-  - "厳密な名前のバイパス機能"
-  - "厳密な名前を付けたアセンブリ, 読み込み (信頼されたアプリケーション ドメインへの)"
+title: "&lt;bypassTrustedAppStrongNames&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- strong-name bypass feature
+- bypassTrustedAppStrongNames element
+- strong-named assemblies, loading into trusted application domains
+- <bypassTrustedAppStrongNames> element
 ms.assetid: 71b2ebf6-3843-41e2-ad52-ffa5cd083a40
-caps.latest.revision: 18
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 2b3e1cb839e9e7fd81a5452c0e034c3552b230cb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;bypassTrustedAppStrongNames&gt; 要素
-完全に信頼されている <xref:System.AppDomain> に読み込まれた、完全信頼アセンブリの厳密な名前の検証をバイパスするかどうかを指定します。  
+# <a name="ltbypasstrustedappstrongnamesgt-element"></a>&lt;bypassTrustedAppStrongNames&gt;要素
+完全信頼に読み込まれる完全に信頼されたアセンブリに厳密な名前の検証をバイパスするかどうかを示す<xref:System.AppDomain>です。  
   
-## 構文  
+ \<configuration>  
+\<ランタイム >  
+\<bypassTrustedAppStrongNames >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <bypassTrustedAppStrongNames    
    enabled="true|false"/>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|Attribute|説明|  
-|---------------|--------|  
-|`enabled`|必須の属性です。<br /><br /> 完全信頼アセンブリの厳密な名前の検証を回避するバイパス機能を有効にするかどうかを指定します。  この機能を有効にすると、アセンブリを読み込むときに、厳密な名前が正しいかどうかの検証は行われません。  既定値は、`true` です。|  
+|属性|説明|  
+|---------------|-----------------|  
+|`enabled`|必須の属性です。<br /><br /> 完全信頼アセンブリの厳密名の検証を回避するバイパス機能が有効になっているかどうかを指定します。 この機能を有効にすると、アセンブリが読み込まれるときに正しいかどうかの厳密な名前は検証されません。 既定値は、`true` です。|  
   
-## enabled 属性  
+## <a name="enabled-attribute"></a>enabled 属性  
   
 |値|説明|  
-|-------|--------|  
-|`true`|完全に信頼されている <xref:System.AppDomain> にアセンブリを読み込むとき、完全信頼アセンブリの厳密な名前の署名は検証されません。  これは、既定の設定です。|  
-|`false`|完全に信頼されている <xref:System.AppDomain> にアセンブリを読み込むとき、完全信頼アセンブリの厳密な名前の署名が検証されます。  厳密な名前の署名は、署名が正しいかどうかだけが検証されます。別の厳密な名前と一致するかどうかの比較は行われません。|  
+|-----------|-----------------|  
+|`true`|アセンブリは完全信頼に読み込まれるときに、完全信頼アセンブリの厳密な名前の署名が検証されません<xref:System.AppDomain>です。 既定値です。|  
+|`false`|アセンブリは完全信頼に読み込まれるときに完全信頼アセンブリの厳密な名前の署名は検証<xref:System.AppDomain>です。 厳密な名前の署名がチェックのみ署名の正確性です。一致するものを別の厳密な名前には比較されません。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
+|-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
   
-## 解説  
- 厳密な名前のバイパス機能により、完全信頼アセンブリの厳密な名前の署名の検証によるオーバーヘッドを回避することができます。  
+## <a name="remarks"></a>コメント  
+ 厳密な名前のバイパス機能は、完全に信頼されたアセンブリの厳密名署名検証のオーバーヘッドを回避できます。  
   
- バイパス機能は、厳密な名前を使用して署名されたすべてのアセンブリと、次のような特性を持つすべてのアセンブリに適用されます。  
+ バイ パス機能は、厳密な名前で署名されていて、次の特性を持つアセンブリに適用されます。  
   
--   <xref:System.Security.Policy.StrongName> 証拠のない \(たとえば、`MyComputer` ゾーンの証拠が付与されている\)、完全に信頼されているアセンブリ  
+-   なく完全に信頼された、<xref:System.Security.Policy.StrongName>証拠 (たとえば、`MyComputer`ゾーン証拠)。  
   
--   完全に信頼されている <xref:System.AppDomain> に読み込まれたアセンブリ  
+-   完全に信頼された <xref:System.AppDomain> に読み込まれる。  
   
--   <xref:System.AppDomain> の <xref:System.AppDomainSetup.ApplicationBase%2A> プロパティで指定された場所から読み込まれたアセンブリ  
+-   その <xref:System.AppDomain> の <xref:System.AppDomainSetup.ApplicationBase%2A> プロパティに基づいた場所から読み込まれる。  
   
--   遅延署名されていないアセンブリ  
+-   遅延署名されていない。  
   
 > [!NOTE]
->  レジストリ キーを使用して、コンピューター上のすべてのアプリケーションに対してバイパス機能が無効になっている場合、この構成ファイルの設定は無効です。  詳細については、「[方法 : 厳密な名前のバイパス機能を無効にする](../../../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)」を参照してください。  
+>  場合のバイパス機能がオフになっているコンピューター上のすべてのアプリケーションのレジストリ キーを使用してこの構成ファイルの設定は無効です。 詳細については、次を参照してください。[する方法: 厳密な名前のバイパス機能を無効にする](../../../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)です。  
   
-## 使用例  
- 次の例は、完全信頼アセンブリの厳密な名前の署名の検証動作を指定する方法を示しています。  
+## <a name="example"></a>例  
+ 次の例では、完全信頼アセンブリの厳密な名前の署名を検証する動作を指定する方法を示します。  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <bypassTrustedAppStrongNames enabled="false"/>  
@@ -89,7 +91,7 @@ caps.handback.revision: 18
 </configuration>  
 ```  
   
-## 参照  
- [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [方法 : 厳密な名前のバイパス機能を無効にする](../../../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)
+## <a name="see-also"></a>関連項目  
+ [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [方法: 厳密な名前のバイパス機能を無効にする](../../../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)

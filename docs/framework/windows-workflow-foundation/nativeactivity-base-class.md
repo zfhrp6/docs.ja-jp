@@ -1,24 +1,28 @@
 ---
-title: "NativeActivity の基本クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "NativeActivity の基本クラス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 254a4c50-425b-426d-a32f-0f7234925bac
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 22c9557c53c15fef3ca8dee4a0f665d333c5ffe4
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# NativeActivity の基本クラス
-<xref:System.Activities.NativeActivity> はプロテクト コンストラクターを持つ抽象クラスです。<xref:System.Activities.CodeActivity> と同様に、<xref:System.Activities.NativeActivity> は、<xref:System.Activities.NativeActivity.Execute%2A> メソッドを実装して、強制的な動作を記述するときに使用します。<xref:System.Activities.CodeActivity> とは異なり、<xref:System.Activities.NativeActivity> からは、<xref:System.Activities.NativeActivity.Execute%2A> メソッドに渡される <xref:System.Activities.NativeActivityContext> オブジェクトを介して、ワークフロー ランタイムの公開されているすべての機能にアクセスできます。  
+# <a name="nativeactivity-base-class"></a>NativeActivity の基本クラス
+<xref:System.Activities.NativeActivity> はプロテクト コンストラクターを持つ抽象クラスです。 <xref:System.Activities.CodeActivity> と同様に、<xref:System.Activities.NativeActivity> は、<xref:System.Activities.NativeActivity.Execute%2A> メソッドを実装して、強制的な動作を記述するときに使用します。 <xref:System.Activities.CodeActivity> とは異なり、<xref:System.Activities.NativeActivity> からは、<xref:System.Activities.NativeActivityContext> メソッドに渡される <xref:System.Activities.NativeActivity.Execute%2A> オブジェクトを介して、ワークフロー ランタイムの公開されているすべての機能にアクセスできます。  
   
-## NativeActivityContext の使用  
- ワークフロー ランタイムの機能には、<xref:System.Activities.NativeActivityContext> 型の `context` パラメーターを使用して、<xref:System.Activities.NativeActivity.Execute%2A> メソッド内からアクセスできます。<xref:System.Activities.NativeActivityContext> を介して、以下の機能を使用できます。  
+## <a name="using-nativeactivitycontext"></a>NativeActivityContext の使用  
+ ワークフロー ランタイムの機能は、<xref:System.Activities.NativeActivity.Execute%2A> 型の `context` パラメーターを使用して、<xref:System.Activities.NativeActivityContext> メソッド内からアクセスできます。 <xref:System.Activities.NativeActivityContext> を介して、以下のような機能を使用できます。  
   
 -   引数と変数を取得および設定する。  
   
@@ -36,15 +40,15 @@ caps.handback.revision: 8
   
 -   <xref:System.Activities.NativeActivityContext.ScheduleAction%2A> および <xref:System.Activities.NativeActivityContext.ScheduleFunc%2A> を使用してアクティビティのアクションと機能のスケジュールを設定する。  
   
-#### NativeActivity から継承するカスタム アクティビティを作成するには  
+#### <a name="to-create-a-custom-activity-that-inherits-from-nativeactivity"></a>NativeActivity から継承するカスタム アクティビティを作成するには  
   
 1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を開きます。  
   
-2.  **\[ファイル\]** メニューの **\[新規作成\]** をポイントし、**\[プロジェクト\]** をクリックします。**\[プロジェクトの種類\]** ウィンドウの **\[Visual C\#\]** の下にある **\[ワークフロー 4.0\]** を選択し、v2010 ノードを選択します。**\[テンプレート\]** ウィンドウで **\[アクティビティ ライブラリ\]** をクリックします。新しいプロジェクトに HelloActivity という名前を付けます。  
+2.  選択**ファイル**、**新しい**、し**プロジェクト**です。 選択**Workflow 4.0**  **Visual c#**で、**プロジェクトの種類**ウィンドウ、および選択、 **v2010**ノード。 選択**アクティビティ ライブラリ**で、**テンプレート**ウィンドウです。 新しいプロジェクトに HelloActivity という名前を付けます。  
   
-3.  HelloActivity プロジェクトの Activity1.xaml を右クリックし、**\[削除\]** をクリックします。  
+3.  HelloActivity プロジェクトの Activity1.xaml を右クリックし **削除**です。  
   
-4.  HelloActivity プロジェクトを右クリックして、**\[追加\]** の **\[クラス\]** をクリックします。新しいクラスに HelloActivity.cs という名前を付けます。  
+4.  HelloActivity プロジェクトを右クリックし **追加**、し**クラス**です。 新しいクラスに HelloActivity.cs という名前を付けます。  
   
 5.  HelloActivity.cs ファイルで、次の `using` ディレクティブを追加します。  
   
@@ -68,9 +72,9 @@ caps.handback.revision: 8
     }  
     ```  
   
-8.  <xref:System.Activities.NativeActivity.CacheMetadata%2A> メソッドをオーバーライドして適切な Add メソッドを呼び出し、カスタム アクティビティの変数、引数、子およびデリゲートについてワークフロー ランタイムに通知します。詳細については、<xref:System.Activities.NativeActivityMetadata> クラスのトピックを参照してください。  
+8.  <xref:System.Activities.NativeActivity.CacheMetadata%2A> メソッドをオーバーライドして適切な Add メソッドを呼び出し、カスタム アクティビティの変数、引数、子およびデリゲートについてワークフロー ランタイムに通知します。 詳細については、<xref:System.Activities.NativeActivityMetadata> クラスを参照してください。  
   
-9. <xref:System.Activities.NativeActivityContext> オブジェクトを使用してブックマークをスケジュールします。ブックマークを作成、スケジュール、および再開する方法の詳細については、「<xref:System.Activities.WorkflowApplicationIdleEventArgs.Bookmarks%2A>」を参照してください。  
+9. <xref:System.Activities.NativeActivityContext> オブジェクトを使用してブックマークをスケジュールします。 ブックマークを作成、スケジュール、および再開する方法の詳細については、「<xref:System.Activities.WorkflowApplicationIdleEventArgs.Bookmarks%2A>」を参照してください。  
   
     ```  
     protected override void Execute(NativeActivityContext context)  
@@ -79,5 +83,4 @@ caps.handback.revision: 8
             context.CreateBookmark(BookmarkName.Get(context),   
                 new BookmarkCallback(OnResumeBookmark));  
         }  
-  
     ```

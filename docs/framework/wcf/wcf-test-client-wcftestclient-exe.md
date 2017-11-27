@@ -1,41 +1,44 @@
 ---
-title: "WCF のテスト用クライアント (WcfTestClient.exe) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WCF のテスト用クライアント (WcfTestClient.exe)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d4302855-677f-4640-aa90-c5d785d72fb7
-caps.latest.revision: 45
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 45
+caps.latest.revision: "45"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: dc189ab1c68edfc41267e493a6ca6bccf9fe519a
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# WCF のテスト用クライアント (WcfTestClient.exe)
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] テスト クライアント \(WcfTestClient.exe\) は、テスト パラメーターを入力し、その入力をサービスに送信して、サービスから返される応答を確認できる GUI ツールです。  このツールを [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストと組み合わせて使用すると、シームレスにサービスをテストできるようになります。  
+# <a name="wcf-test-client-wcftestclientexe"></a>WCF のテスト用クライアント (WcfTestClient.exe)
+[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] テスト クライアント (WcfTestClient.exe) は、テスト パラメーターを入力し、その入力をサービスに送信して、サービスから返される応答を確認できる GUI ツールです。 このツールを [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストと組み合わせて使用すると、シームレスにサービスをテストできるようになります。  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Test Client \(WcfTestClient.exe\) は、C:\\Program Files\\Microsoft Visual Studio 9.0\\Common7\\IDE\\ にあります。  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Test Client (WcfTestClient.exe) は、C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\ にあります。  
   
-## テスト用クライアントを使用するシナリオ  
+## <a name="scenarios-for-using-test-client"></a>テスト用クライアントを使用するシナリオ  
  以下のセクションで、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントを使用して開発プロセスを効率化できる最も一般的なシナリオについて説明します。  
   
-### Visual Studio 内  
+### <a name="inside-visual-studio"></a>Visual Studio 内  
   
-#### WCF サービス ホストが、1 つのサービスを使用する WCF のテスト用クライアントを開始する  
- 新しい [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス プロジェクトを作成し、F5 キーを押してデバッガーを起動すると、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストがプロジェクトのサービスのホストを開始します。  その後、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントが開き、構成ファイルに定義されているサービス エンドポイントの一覧が表示されます。  ユーザーは、パラメーターをテストしてサービスを呼び出すことができ、このプロセスを繰り返して、サービスのテストおよび検証を継続的に行うことができます。  
+#### <a name="wcf-service-host-starts-wcf-test-client-with-a-single-service"></a>WCF サービス ホストが、1 つのサービスを使用する WCF のテスト用クライアントを開始する  
+ 新しい [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス プロジェクトを作成し、F5 キーを押してデバッガーを起動すると、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストがプロジェクトのサービスのホストを開始します。 その後、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントが開き、構成ファイルに定義されているサービス エンドポイントの一覧が表示されます。 ユーザーは、パラメーターをテストしてサービスを呼び出すことができ、このプロセスを繰り返して、サービスのテストおよび検証を継続的に行うことができます。  
   
-#### WCF サービス ホストが、複数のサービスを使用する WCF のテスト用クライアントを開始する  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントは、複数のサービスを含むサービス プロジェクトをデバッグするためにも使用できます。  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントは、開始されると、自動的にプロジェクトのサービスのリストを反復処理し、テストするためにそれらを開きます。  
+#### <a name="wcf-service-host-starts-wcf-test-client-with-multiple-services"></a>WCF サービス ホストが、複数のサービスを使用する WCF のテスト用クライアントを開始する  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントは、複数のサービスを含むサービス プロジェクトをデバッグするためにも使用できます。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントは、開始されると、自動的にプロジェクトのサービスのリストを反復処理し、テストするためにそれらを開きます。  
   
-### Visual Studio の外部  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアント \(WcfTestClient.exe\) を Visual Studio の外部で呼び出して、インターネット上の任意のサービスをテストすることもできます。  このツールを見つけるには、次の場所に移動します。  
+### <a name="outside-visual-studio"></a>Visual Studio の外部  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアント (WcfTestClient.exe) を Visual Studio の外部で呼び出して、インターネット上の任意のサービスをテストすることもできます。 このツールを見つけるには、次の場所に移動します。  
   
- C:\\Program Files\\Microsoft Visual Studio 9.0\\Common7\\IDE\\  
+ C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\  
   
  ツールを使用するには、ファイル名をダブルクリックしてこの場所からツールを開くか、コマンド ラインからツールを起動します。  
   
@@ -43,107 +46,107 @@ caps.handback.revision: 45
   
  `wcfTestClient.exe URI1 URI2 …`  
   
- \[[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアント\] ウィンドウが開いたら、**\[ファイル\]** メニューの **\[サービスの追加\]** をクリックし、開くサービスのエンドポイント アドレスを入力します。  
+ 後に、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト用クライアント ウィンドウを開くと、をクリックして**ファイル**->**サービスの追加**、開きたいサービスのエンドポイント アドレスを入力します。  
   
-## WCF のテスト用クライアントのユーザー インターフェイス  
+## <a name="wcf-test-client-user-interface"></a>WCF のテスト用クライアントのユーザー インターフェイス  
  1 つのサービスまたは複数のサービスを使用する [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントを使用できます。  
   
-### サービス操作  
+### <a name="service-operations"></a>サービス操作  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントのメイン ウィンドウの左ペインには、使用できるすべてのサービスが、それぞれのエンドポイントおよび操作と共に表示されます。  
   
  操作をダブルクリックすると、その操作の名前が付いた新しいタブ内の右ペインで、操作の内容を表示できます。  
   
- 左ペインには、クライアントの構成ファイルも表示されます。  いずれかの項目をダブルクリックすると、右ペインの新しいタブ付きウィンドウにファイルの内容が表示されます。  
+ 左ペインには、クライアントの構成ファイルも表示されます。 いずれかの項目をダブルクリックすると、右ペインの新しいタブ付きウィンドウにファイルの内容が表示されます。  
   
-### テスト パラメーターの入力  
- テスト パラメーターを表示するには、右ペインで操作をダブルクリックして開きます。  既定では、パラメーターは **\[書式付き\]** ビューで表示されます。サービスをテストするためのパラメーターに任意の値を入力できます。  
+### <a name="entering-test-parameters"></a>テスト パラメーターの入力  
+ テスト パラメーターを表示するには、右ペインで操作をダブルクリックして開きます。 パラメーターを示す**表示書式**既定では、表示され、サービスをテスト パラメーターに任意の値を入力できます。  
   
- メッセージの XML を表示するには、**\[XML\]** をクリックします。  入力した値をサービスに送信するには、**\[起動\]** をクリックします。  
+ 表示するには、メッセージの XML をクリックして**XML**です。 それらをサービスに送信する をクリックして**Invoke**です。  
   
- DataSet パラメーターの場合、**\[編集…\]** の横にある **\[…\]** ボタンをクリックして、DataGrid が表示されている新しいウィンドウで編集します。  **\[DataSet のコピー\]** ボタンおよび **\[DataSet の貼り付け\]** ボタンが表示されます。  最初の編集時に DataSet オブジェクトのスキーマが不明の場合、DataGrid は空になります。  スキーマが同じ DataSet オブジェクトを DataGrid の現在のオブジェクトに貼り付ける必要があります   \(スキーマは、貼り付け操作の前に別の場所からコピーする必要があります\)。**\[DataSet のコピー\]** ボタンをクリックしても、将来使用するデータセット オブジェクトをコピーできます。  
+ データセット パラメーターをクリックして、**しています.** ボタンの横に**を編集しています.** データ グリッドを表示する新しいウィンドウで編集します。 外観に注意してください、 **DataSet のコピー**と**貼り付けデータセット**ボタン。 最初の編集時に DataSet オブジェクトのスキーマが不明の場合、DataGrid は空になります。 スキーマが同じ DataSet オブジェクトを DataGrid の現在のオブジェクトに貼り付ける必要があります  (スキーマは、貼り付け操作の前に別の場所からコピーする必要があります)。クリックして、将来の使用量のデータセット オブジェクトをコピーすることも、 **DataSet のコピー**ボタンをクリックします。  
   
  サービスの応答がテスト パラメーターの下に表示されます。  
   
 > [!NOTE]
 >  想定される戻り値が文字列の場合、入力が引用符で囲まれていなくても、結果は引用符で囲まれた文字列として表示されます。  
   
- サービスのコントラクトの作成時に特定の操作を一方向として指定した場合は、サービスの応答は表示されません。  メッセージが配信のキューに置かれると、メッセージが正常に送信されたことを通知するダイアログ ボックスがすぐに表示されます。  
+ サービスのコントラクトの作成時に特定の操作を一方向として指定した場合は、サービスの応答は表示されません。 メッセージが配信のキューに置かれると、メッセージが正常に送信されたことを通知するダイアログ ボックスがすぐに表示されます。  
   
-### セッション サポート  
- サービス操作のタブにある **\[新しいプロキシを開始する\]** チェック ボックスを使用すると、セッション サポートを切り替えることができます。  既定では、このチェック ボックスはオフになります。  
+### <a name="session-support"></a>セッション サポート  
+ **新しいプロキシを開始**サービス操作のタブでチェック ボックスでは、セッション サポートを切り替えることができます。 既定では、このチェック ボックスはオフになります。  
   
- 特定の操作 \(または同じサービス エンドポイントの別の操作\) に対するテスト パラメーターを入力し、チェック ボックスがオフの状態で **\[起動\]** を 2 回以上クリックした場合、これらの操作は単一のプロキシを共有し、サービスの状態は複数の操作にわたって保持されます。  
+ 特定の操作 (または同じサービス エンドポイントの別の操作) のテスト パラメーターを入力し、をクリックして**Invoke**複数回チェック ボックスをオフになって、これらの操作が 1 つのプロキシを共有し、サービスの状態が複数の操作には、永続化されます。  
   
- **\[新しいプロキシを開始する\]** チェック ボックスをオンにした場合は、**\[起動\]** をクリックするたびに新しいプロキシが開始され、前のセッション シナリオが終了し、サービスの状態がリセットされます。  
+ 場合、**新しいプロキシを開始** チェック ボックスをオンになって、新しいプロキシが開始された各**Invoke**、前のセッション シナリオが終了すると、およびサービスの状態をリセットします。  
   
-### クライアント構成の編集  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントのメイン ウィンドウの左ペインには、クライアントの構成ファイルが表示されます。  いずれかの項目をダブルクリックすると、右ペインにファイルの内容が表示されます。  
+### <a name="editing-client-configuration"></a>クライアント構成の編集  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントのメイン ウィンドウの左ペインには、クライアントの構成ファイルが表示されます。 いずれかの項目をダブルクリックすると、右ペインにファイルの内容が表示されます。  
   
-#### サービス構成エディターを使用した編集  
- 左ペインで **\[構成ファイル\]** を右クリックし、コンテキスト メニューの **\[SvcConfigEditor での編集\]** をクリックします。  サービス構成エディターが起動し、クライアント構成の内容が表示されます。  このツール内で構成を編集して保存できます。  
+#### <a name="edit-with-service-configuration-editor"></a>サービス構成エディターを使用した編集  
+ 右クリック**Config ファイル**、左側のウィンドウ クリックし、コンテキスト メニューで**SvcConfigEditor で編集**です。 サービス構成エディターが起動し、クライアント構成の内容が表示されます。 このツール内で構成を編集して保存できます。  
   
  サービス構成エディターでファイルを保存すると、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントでは、ファイルが外部で変更されたことを通知する警告メッセージが表示され、ファイルを再度読み込むかどうかをたずねられます。  
   
- **\[はい\]** を選択すると、\[Client.dll.config\] タブの構成の内容に、エディターで行った変更が反映されます。  
+ 選択した場合**はい**、[Client.dll.config] タブで設定内容がエディターで行った変更を反映します。  
   
- **\[いいえ\]** を選択すると、\[Client.dll.config\] タブの構成の内容は変更されず、変更内容は自動的にソース ファイルに保存されます。  
+ 選択した場合**いいえ**の構成 [Client.dll.config] タブの内容が変更されない、および変更されたコンテンツは自動的にソース ファイルに保存します。  
   
-#### 既定の構成への復元  
- すべての変更をキャンセルし、既定のクライアント構成に戻すには、左ペインで **\[構成ファイル\]** を右クリックし、コンテキスト メニューの **\[既定の構成に復元\]** をクリックします。  既定の構成値が読み込まれ、\[Client.dll.config\] タブの内容が復元されます。  
+#### <a name="restore-to-default-configuration"></a>既定の構成への復元  
+ すべての変更をキャンセルし、既定のクライアント構成に復元を右クリックしたい場合**Config ファイル**、左側のウィンドウ クリックし、コンテキスト メニューで**既定の構成に復元**です。既定の構成値が読み込まれ、[Client.dll.config] タブの内容を復元します。  
   
-#### 変更の検証  
- 保存した変更が [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントに読み込まれると、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] スキーマに対して構成の有効性のチェックが行われます。  エラーが見つかった場合は、エラーの詳細を示すダイアログ ボックスが表示されます。  
+#### <a name="validate-changes"></a>変更の検証  
+ 保存した変更が [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントに読み込まれると、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] スキーマに対して構成の有効性のチェックが行われます。 エラーが見つかった場合は、エラーの詳細を示すダイアログ ボックスが表示されます。  
   
- プロキシの生成中、バイナリのコンパイル中、またはサービスの呼び出し中は、編集をサポートするメニュー項目 \(\[...の編集\]、\[...の復元\] など\) が無効になります。  更新された構成が [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントに読み込まれるときは、サービスの呼び出しも無効になります。  
+ プロキシの生成は、バイナリのコンパイル中、またはサービスの呼び出し、中に (つまり、および「... の編集」、「復元...」) の編集をサポートするメニュー項目が無効になります。 更新された構成が [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントに読み込まれるときは、サービスの呼び出しも無効になります。  
   
-#### クライアント構成の保持  
- **\[ツール\]** メニューの **\[オプション\]** で表示される **\[クライアント構成\]** タブには、**\[サービスの起動時に常に構成を再生成する\]** チェック ボックスがあり、既定でオンになっています。  このチェック ボックスがオンの場合は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントによってサービスが読み込まれるたびに、最新のサービス コントラクトとサービスの App.config ファイルに基づいて構成ファイルが再生成されます。  
+#### <a name="persist-client-configuration"></a>クライアント構成の保持  
+ **ツール**->**オプション**->**クライアント構成** タブには、**常に再生成の構成時に起動します。サービス**オプションは、既定で有効にします。 このチェック ボックスがオンの場合は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントによってサービスが読み込まれるたびに、最新のサービス コントラクトとサービスの App.config ファイルに基づいて構成ファイルが再生成されます。  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスのクライアント構成を編集した場合、その更新されたファイルを常に使用してサービスをデバッグするには、**\[サービスの起動時に常に構成を再生成する\]** チェック ボックスをオフにします。  このようにすると、サービスを更新して [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントを再び開いた場合でも、Client.dll.config ファイルとして使用されるのは、更新されたサービスに基づいて再生成されたファイルではなく、以前に更新したファイルになります。  
+ クライアントの構成を編集している場合、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスとサービスのデバッグを常に、この更新ファイルを使用する場合は、ボックスをオフに、**を再生成**オプション。 このようにすると、サービスを更新して [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントを再び開いた場合でも、Client.dll.config ファイルとして使用されるのは、更新されたサービスに基づいて再生成されたファイルではなく、以前に更新したファイルになります。  
   
- ただし、再生成されたプロキシとの一貫性を保つために、構成ファイルの編集が必要になる場合があります。  サービスを更新したことが原因で、再生成されたプロキシと構成ファイルが一致しなくなると、サービスを呼び出したときにエラーが発生します。  
+ ただし、再生成されたプロキシとの一貫性を保つために、構成ファイルの編集が必要になる場合があります。 サービスを更新したことが原因で、再生成されたプロキシと構成ファイルが一致しなくなると、サービスを呼び出したときにエラーが発生します。  
   
 > [!CAUTION]
 >  変更したクライアント構成ファイルを後で再利用することにした場合、該当するファイルは次の場所で見つけることができます。  
 >   
->  \\Documents and Settings\\\[ユーザー アカウント\]\\My Documents\\Test Client Projects  
+>  \Documents and 設定\\\My Documents\Test クライアント プロジェクトの [ユーザー アカウント]。  
 >   
->  クライアント構成ファイルに格納されている更新された資格情報は、このフォルダーのアクセス制御リスト \(ACL\) によって保護されています。  
+>  クライアント構成ファイルに格納されている更新された資格情報は、このフォルダーのアクセス制御リスト (ACL) によって保護されています。  
   
-### サービスの追加、削除、および更新  
+### <a name="adding-removing-and-refreshing-services"></a>サービスの追加、削除、および更新  
   
-#### サービスの追加  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントにサービスを追加するには、**\[ファイル\]** メニューの **\[サービスの追加\]** をクリックします。  次に、追加するサービスの URI \(エンドポイント アドレス\) を入力する必要があります。  サービスのアドレスには、MEX アドレスまたは WSDL アドレスを指定できます。  
+#### <a name="add-service"></a>サービスの追加  
+ をクリックして**ファイル**->**サービスの追加**にサービスを追加する[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト クライアントです。 次に、追加するサービスの URI (エンドポイント アドレス) を入力する必要があります。 サービスのアドレスには、MEX アドレスまたは WSDL アドレスを指定できます。  
   
- **\[最近のサービス\]** サブメニューには、最近追加されたサービスのエンドポイントが 10 個まで一覧表示されます。  いずれかをクリックすると、選択したサービスが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントに追加されます。  
+ 10 の最近追加されたサービスのエンドポイントの一覧を見つけることもできます、**最近サービス**サブメニュー。 いずれかをクリックすると、選択したサービスが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントに追加されます。  
   
- サービスのツリーで、ルートの **\[マイ サービス プロジェクト\]** を右クリックし、**\[サービスの追加\]** をクリックする方法でも、同じ結果を得ることができます。  
+ また、サービスのツリーのルートを右クリックすることもできます。**マイ サービス プロジェクト**、を選択し**サービスの追加**に同じ結果を実現します。  
   
- プロキシの生成中、バイナリのコンパイル中、またはサービスの呼び出し中は、サービスの追加をサポートするメニュー項目が無効になります。  また、サービスの呼び出しも無効になります。  
+ プロキシの生成中、バイナリのコンパイル中、またはサービスの呼び出し中は、サービスの追加をサポートするメニュー項目が無効になります。 また、サービスの呼び出しも無効になります。  
   
-#### サービスの削除  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントからサービスを削除するには、削除するサービスのサービス ルートを右クリックし、**\[サービスの削除\]** をクリックします。  
+#### <a name="remove-service"></a>サービスの削除  
+ 削除して、選択するサービスのサービス ルートを右クリックして**サービスの削除**からサービスを削除する[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト クライアントです。  
   
- プロキシの生成中、バイナリのコンパイル中、またはサービスの呼び出し中は、サービスの削除をサポートするメニュー項目が無効になります。  また、サービスの呼び出しも無効になります。  
+ プロキシの生成中、バイナリのコンパイル中、またはサービスの呼び出し中は、サービスの削除をサポートするメニュー項目が無効になります。 また、サービスの呼び出しも無効になります。  
   
-#### サービスの更新  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントの実行中にサービスに変更を加えた場合、そのサービスに対する [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントの実装を最新の状態に保つには、サービスのサービス ルートを右クリックし、**\[サービスを最新の情報に更新\]** をクリックします。  更新後、サービスの状態はリセットされます。  
+#### <a name="refresh-service"></a>サービスの更新  
+ 中にサービスへの変更が行われた場合[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト クライアントが実行されていていることを確認する、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]そのサービスの実装をテスト用クライアントが最新では、サービスのサービス ルートを右クリックし **更新サービス**です。 更新後、サービスの状態はリセットされます。  
   
- プロキシの生成中、バイナリのコンパイル中、またはサービスの呼び出し中は、サービスの更新をサポートするメニュー項目が無効になります。  また、サービスの呼び出しも無効になります。  
+ プロキシの生成中、バイナリのコンパイル中、またはサービスの呼び出し中は、サービスの更新をサポートするメニュー項目が無効になります。 また、サービスの呼び出しも無効になります。  
   
-## テスト クライアントが生成するファイルの場所  
- 既定では、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントによって生成されたクライアント コードと構成ファイルは "%appdata%\\Local\\temp\\Test Client Projects" フォルダーに格納されます。  このフォルダーは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントの終了後に削除されます。  構成ファイルが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントで変更された場合、**\[サービスの起動時に常に構成を再生成する\]** チェック ボックスがオフになっていると、変更されたファイルは、マッピング \(メタデータ アドレスとファイル名のマッピング\) XML ファイルをインデックスとして、"My Documents\\Test Client Projects Documents\\Test Client Projects" の "Cached Config" フォルダーにコピーされます。  
+## <a name="location-of-files-generated-by-the-test-client"></a>テスト クライアントが生成するファイルの場所  
+ 既定では、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト クライアントによって生成されたクライアント コードと構成ファイルは"%appdata%\Local\temp\Test Client Projects"フォルダーです。 このフォルダーは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントの終了後に削除されます。 構成ファイルが変更された場合[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト クライアント、および**常に再生成 Config サービスの起動時**オプションが無効になっている、変更されたファイルは"My Documents\Test"キャッシュ Config"フォルダーにコピークライアント プロジェクト Documents\Test Client Projects"のマッピング (メタデータのアドレスの名前へのファイルの) XML ファイルをインデックスとして使用します。  
   
- コマンド ラインから [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントを起動し、`/ProjectPath` スイッチを使用して、生成されたファイルを格納する新しいパスを指定することもできます。また、`/RestoreProjectPath` スイッチを使用して、既定の場所を復元することもできます。  構文は次のとおりです。  
+ コマンド ラインから [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントを起動し、`/ProjectPath` スイッチを使用して、生成されたファイルを格納する新しいパスを指定することもできます。また、`/RestoreProjectPath` スイッチを使用して、既定の場所を復元することもできます。 構文は次のとおりです。  
   
  `wcfTestClient.exe /ProjectPath [desired location]`  
   
- このコマンドを実行しても、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントは開きません。  フォルダーの場所が変更されるだけです。  このコマンドは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントが実行されているかどうかにかかわらず実行できます。  新しい場所は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントが再起動したときに適用されます。  場所に関する情報は、レジストリか、"%appdata%\\Local\\temp\\Test Client Projects" フォルダーの WcfTestClient.exe.option ファイルに保存できます。  
+ このコマンドを実行しても、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントは開きません。 フォルダーの場所が変更されるだけです。 このコマンドは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントが実行されているかどうかにかかわらず実行できます。 新しい場所は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントが再起動したときに適用されます。 場所の情報は、レジストリか、"%appdata%\Local\temp\Test Client Projects"フォルダーの WcfTestClient.exe.option ファイルに保存できます。  
   
-## WCF のテスト用クライアントでサポートされる機能  
+## <a name="features-supported-by-wcf-test-client"></a>WCF のテスト用クライアントでサポートされる機能  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントがサポートする機能を次に示します。  
   
--   サービスの呼び出し : 要求\/応答メッセージおよび一方向メッセージ  
+-   サービスの呼び出し : 要求/応答メッセージおよび一方向メッセージ  
   
 -   バインディング : Svcutil.exe でサポートされるすべてのバインディング  
   
@@ -155,22 +158,22 @@ caps.handback.revision: 45
   
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントでサポートされない機能を次に示します。  
   
--   型: <xref:System.IO.Stream>、<xref:System.ServiceModel.Channels.Message>、<xref:System.Xml.XmlElement>、<xref:System.Xml.XmlAttribute>、<xref:System.Xml.XmlNode>、<xref:System.Xml.Serialization.IXmlSerializable> インターフェイスを実装する型 \(関連する <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> 属性を含む\)、<xref:System.Xml.Linq.XDocument> 型と <xref:System.Xml.Linq.XElement> 型、および ADO.NET <xref:System.Data.DataTable> 型。  
+-   型: <xref:System.IO.Stream>、<xref:System.ServiceModel.Channels.Message>、<xref:System.Xml.XmlElement>、<xref:System.Xml.XmlAttribute>、<xref:System.Xml.XmlNode>、<xref:System.Xml.Serialization.IXmlSerializable> インターフェイスを実装する型 (関連する <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> 属性を含む)、<xref:System.Xml.Linq.XDocument> 型と <xref:System.Xml.Linq.XElement> 型、および ADO.NET <xref:System.Data.DataTable> 型。  
   
 -   双方向コントラクト  
   
 -   トランザクション  
   
--   セキュリティ : [!INCLUDE[infocard](../../../includes/infocard-md.md)]、証明書、およびユーザー名\/パスワード  
+-   セキュリティ : [!INCLUDE[infocard](../../../includes/infocard-md.md)]、証明書、およびユーザー名/パスワード  
   
--   バインディング : WSFederationBinding、任意のコンテキスト バインディングおよび HTTPS バインディング、WebHttpBinding \(JSON 応答メッセージ サポート\)  
+-   バインディング : WSFederationBinding、任意のコンテキスト バインディングおよび HTTPS バインディング、WebHttpBinding (JSON 応答メッセージ サポート)  
   
-## WCF のテスト用クライアントの終了  
+## <a name="closing-wcf-test-client"></a>WCF のテスト用クライアントの終了  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントは、次の方法で閉じることができます。  
   
--   **\[ファイル\]** メニューの **\[レジストリ エディターの終了\]** をクリックします。  または、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントのメイン ウィンドウで、**\[閉じる\]** をクリックします。  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントが [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] によって起動された場合は、どちらの手順でも [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの自動ホストがシャットダウンし、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] のデバッグ処理が停止します。  
+-   **ファイル** メニューのをクリックして**終了**です。 代わりに、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト クライアントのメイン ウィンドウ、をクリックして**閉じる**です。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントが [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] によって起動された場合は、どちらの手順でも [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの自動ホストがシャットダウンし、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] のデバッグ処理が停止します。  
   
--   通知領域の **\[WCF サービス ホスト\]** アイコンを右クリックし、**\[終了\]** をクリックします。これにより、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの自動ホストと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントの両方がシャットダウンし、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] のデバッグ処理が停止します。  
+-   右クリックし、 **WCF サービス ホスト**をクリックして通知領域アイコン**終了します。** これにより、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの自動ホストと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントの両方がシャットダウンし、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] のデバッグ処理が停止します。  
   
-## 参照  
- [WCF サービス ホスト \(WcfSvcHost.exe\)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)
+## <a name="see-also"></a>関連項目  
+ [WCF サービス ホスト (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)

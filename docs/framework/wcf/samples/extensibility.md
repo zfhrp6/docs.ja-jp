@@ -1,44 +1,47 @@
 ---
-title: "機能拡張 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "機能拡張"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: cd7ddffc-a261-44aa-bd50-33c1c74f0df0
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ff52165ca4ff79d652eb1cd509bcd6898005650b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 機能拡張
+# <a name="extensibility"></a>機能拡張
 このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のカスタムの機能拡張およびその他の機能に関するサンプルが含まれています。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [チャネル拡張](../../../../docs/framework/wcf/samples/channels-extensibility.md)  
  カスタム チャネルの例を示します。  
   
  [探索の機能拡張](../../../../docs/framework/wcf/samples/discovery-extensibility.md)  
  カスタム探索の例を示します。  
   
- [インスタンス化拡張](../../../../docs/framework/wcf/samples/instancing-extensibility.md)  
+ [機能拡張をインスタンス化](../../../../docs/framework/wcf/samples/instancing-extensibility.md)  
  カスタムの機能拡張の例を示します。  
   
- [相互運用性の拡張](../../../../docs/framework/wcf/samples/interop-extensibility.md)  
+ [相互運用機能拡張](../../../../docs/framework/wcf/samples/interop-extensibility.md)  
  カスタムの相互運用性の例を示します。  
   
  [メッセージ エンコーダー拡張](../../../../docs/framework/wcf/samples/message-encoder-extensibility.md)  
  カスタムのメッセージ エンコーディングの例を示します。  
   
- [メタデータ拡張](../../../../docs/framework/wcf/samples/metadata-extensibility.md)  
+ [メタデータの拡張](../../../../docs/framework/wcf/samples/metadata-extensibility.md)  
  カスタム メタデータの例を示します。  
   
- [セキュリティ拡張](../../../../docs/framework/wcf/samples/security-extensibility.md)  
+ [セキュリティ拡張機能](../../../../docs/framework/wcf/samples/security-extensibility.md)  
  カスタム セキュリティの例を示します。  
   
  [配信の拡張のサンプル](../../../../docs/framework/wcf/samples/syndication-extensibility-samples.md)  
@@ -63,9 +66,9 @@ caps.handback.revision: 6
  シリアル化、逆シリアル化、スキーマのエクスポート、スキーマのインポートなどのプロセスを、データ コントラクト サロゲート クラスを使用してカスタマイズする方法を示します。  
   
  [エラー処理およびレポートに対する制御の拡張](../../../../docs/framework/wcf/samples/extending-control-over-error-handling-and-reporting.md)  
- <xref:System.ServiceModel.Dispatcher.IErrorHandler> インターフェイスを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのエラー処理およびエラー報告に対する制御を拡張する方法を示します。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インターフェイスを使用して、<xref:System.ServiceModel.Dispatcher.IErrorHandler> サービスのエラー処理およびエラー報告に対する制御を拡張する方法を示します。  
   
- [メッセージ インスペクター](../../../../docs/framework/wcf/samples/message-inspectors.md)  
+ [メッセージ インスペクタ](../../../../docs/framework/wcf/samples/message-inspectors.md)  
  クライアントとサービスのメッセージ インスペクターを実装して構成する方法を示します。  
   
  [WebContentTypeMapper](../../../../docs/framework/wcf/samples/webcontenttypemapper-sample.md)  

@@ -1,35 +1,41 @@
 ---
-title: "Implementing Business Logic (LINQ to SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ビジネス ロジックの実装 (LINQ to SQL)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: c4577590-7b12-42e1-84a6-95aa2562727e
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 9cba4c71d895d9398e2444885f4f26bf04433251
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Implementing Business Logic (LINQ to SQL)
-このトピックの「ビジネス ロジック」とは、データベースでデータを挿入、更新、または削除される前にデータに適用されるカスタム規則または検証テストのことです。  ビジネス ロジックは、「ビジネス ルール」または「ドメイン ロジック」とも呼ばれます。 n 層アプリケーションでは、通常、論理層として設計されるため、プレゼンテーション層やデータ アクセス層から独立して変更できます。  データベースのデータを更新、挿入、または削除する前または後に、データ アクセス層によってビジネス ロジックを呼び出すことができます。  
+# <a name="implementing-business-logic-linq-to-sql"></a>ビジネス ロジックの実装 (LINQ to SQL)
+このトピックの「ビジネス ロジック」とは、データベースでデータを挿入、更新、または削除される前にデータに適用されるカスタム規則または検証テストのことです。 ビジネス ロジックは、「ビジネス ルール」または「ドメイン ロジック」とも呼ばれます。 n 層アプリケーションでは、通常、論理層として設計されるため、プレゼンテーション層やデータ アクセス層から独立して変更できます。 データベースのデータを更新、挿入、または削除する前または後に、データ アクセス層によってビジネス ロジックを呼び出すことができます。  
   
- ビジネス ロジックは、フィールドの型がテーブル列の型と互換性を持つかどうか確認するスキーマ検証のような簡単なものにすることもできます。  または、任意の複雑な方法で相互に影響するオブジェクトのセットから成るビジネス ロジックも可能です。  規則は、データベース上のストアド プロシージャとして、またはメモリ内のオブジェクトとして実装可能です。  ビジネス ロジックの実装方法とは無関係に、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] では、部分クラスと部分メソッドを使ってビジネス ロジックをデータ アクセス コードから分離することができます。  
+ ビジネス ロジックは、フィールドの型がテーブル列の型と互換性を持つかどうか確認するスキーマ検証のような簡単なものにすることもできます。 または、任意の複雑な方法で相互に影響するオブジェクトのセットから成るビジネス ロジックも可能です。 規則は、データベース上のストアド プロシージャとして、またはメモリ内のオブジェクトとして実装可能です。 ただし、ビジネス ロジックを実装した場合[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]データ アクセス コードからビジネス ロジックを分離する部分クラスと部分メソッドを使用して有効にします。  
   
-## LINQ to SQL でビジネス ロジックを呼び出す方法  
- 手動で、または[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]か SQLMetal を使用してデザイン時にエンティティ クラスを生成すると、部分クラスとして定義されます。  つまり、別個のコード ファイル内で、カスタム ビジネス ロジックを格納するエンティティ クラスの別の部分を定義できます。  コンパイル時に 2 つの部分が 1 つのクラスに結合されます。 ただし、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]または SQLMetal を使ってエンティティ クラスを再生成する必要がある場合には、そうしてもかまいません。その場合、開発者が作成したクラスの部分は変更されません。  
+## <a name="how-linq-to-sql-invokes-your-business-logic"></a>LINQ to SQL でビジネス ロジックを呼び出す方法  
+ 手動で、または[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]か SQLMetal を使用してデザイン時にエンティティ クラスを生成すると、部分クラスとして定義されます。 つまり、別個のコード ファイル内で、カスタム ビジネス ロジックを格納するエンティティ クラスの別の部分を定義できます。 コンパイル時に 2 つの部分が 1 つのクラスに結合されます。 ただし、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]または SQLMetal を使ってエンティティ クラスを再生成する必要がある場合には、そうしてもかまいません。その場合、開発者が作成したクラスの部分は変更されません。  
   
- エンティティと <xref:System.Data.Linq.DataContext> を定義する部分クラスには、部分メソッドが含まれます。  これらは機能拡張ポイントであり、これらを使用して、エンティティまたはエンティティ プロパティを更新、挿入、削除する前および後にビジネス ロジックを適用できます。  部分メソッドはコンパイル時のイベントのようなものです。  コード ジェネレーターはメソッド シグネチャを定義して、get および set プロパティ アクセサー内、`DataContext` コンストラクター内、および、場合によっては <xref:System.Data.Linq.DataContext.SubmitChanges%2A> 呼び出し時に背後でメソッドを呼び出します。  ただし、特定の部分メソッドを実装しない場合には、そのメソッドのすべての参照と定義はコンパイル時に削除されます。  
+ エンティティと <xref:System.Data.Linq.DataContext> を定義する部分クラスには、部分メソッドが含まれます。 これらは機能拡張ポイントであり、これらを使用して、エンティティまたはエンティティ プロパティを更新、挿入、削除する前および後にビジネス ロジックを適用できます。 部分メソッドはコンパイル時のイベントのようなものです。 コード ジェネレーターはメソッド シグネチャを定義して、get および set プロパティ アクセサー内、`DataContext` コンストラクター内、および、場合によっては <xref:System.Data.Linq.DataContext.SubmitChanges%2A> 呼び出し時に背後でメソッドを呼び出します。 ただし、特定の部分メソッドを実装しない場合には、そのメソッドのすべての参照と定義はコンパイル時に削除されます。  
   
- 別個のコード ファイル内に作成する実装定義では、必要な任意のカスタム ロジックを実行できます。  部分クラス自体をドメイン層として使用できます。または、部分メソッドの実装定義から別個の 1 つ以上のオブジェクトに呼び出すこともできます。  どちらの場合も、ビジネス ロジックはデータ アクセス コードとプレゼンテーション層コードから明確に分離されています。  
+ 別個のコード ファイル内に作成する実装定義では、必要な任意のカスタム ロジックを実行できます。 部分クラス自体をドメイン層として使用できます。または、部分メソッドの実装定義から別個の 1 つ以上のオブジェクトに呼び出すこともできます。 どちらの場合も、ビジネス ロジックはデータ アクセス コードとプレゼンテーション層コードから明確に分離されています。  
   
-## 機能拡張ポイントの詳細  
- 次の例は、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] と `DataContext` の 2 つのテーブルを持つ `Customers` クラス用に`Orders`によって生成されるコードの一部分です。  このクラスで Insert、Update、および Delete メソッドがテーブルごとに定義されていることに注意してください。  
+## <a name="a-closer-look-at-the-extensibility-points"></a>機能拡張ポイントの詳細  
+ 次の例で生成されたコードの一部を示しています、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]の`DataContext`を 2 つのテーブルを持つクラス:`Customers`と`Orders`です。 このクラスで Insert、Update、および Delete メソッドがテーブルごとに定義されていることに注意してください。  
   
 ```vb  
 Partial Public Class Northwnd  
@@ -73,7 +79,7 @@ public partial class MyNorthWindDataContext : System.Data.Linq.DataContext
         #endregion  
 ```  
   
- 部分クラス内で Insert、Update、および Delete メソッドを実装すると、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ランタイムは <xref:System.Data.Linq.DataContext.SubmitChanges%2A> の呼び出し時に、既定のメソッドの代わりにこれらのメソッドを呼び出します。  こうすることで、作成、読み取り、更新、削除操作の既定の動作をオーバーライドできます。  詳細については、「[Walkthrough: Customizing the Insert, Update, and Delete Behavior of Entity Classes](../Topic/Walkthrough:%20Customizing%20the%20insert,%20update,%20and%20delete%20behavior%20of%20entity%20classes.md)」を参照してください。  
+ 部分クラス内で Insert、Update、および Delete メソッドを実装すると、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ランタイムは <xref:System.Data.Linq.DataContext.SubmitChanges%2A> の呼び出し時に、既定のメソッドの代わりにこれらのメソッドを呼び出します。 こうすることで、作成、読み取り、更新、削除操作の既定の動作をオーバーライドできます。 詳細については、次を参照してください。[チュートリアル: 更新、およびエンティティ クラスの動作を削除、挿入をカスタマイズするには、](/visualstudio/data-tools/walkthrough-customizing-the-insert-update-and-delete-behavior-of-entity-classes)です。  
   
  `OnCreated` メソッドはクラス コンストラクター内で呼び出されます。  
   
@@ -92,7 +98,7 @@ public MyNorthWindDataContext(string connection) :
         }  
 ```  
   
- エンティティの作成時、読み込み時、および検証時 \([!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] の呼び出し時\) に `SubmitChanges` ランタイムによって呼び出される 3 つのメソッドが、エンティティ クラスに含まれています。  さらに、エンティティ クラスには、各プロパティごとの 2 つの部分メソッドも含まれています。このうち 1 つはプロパティの設定前に、もう 1 つは設定後に呼び出されます。  次のコード例は、`Customer` クラス用に生成されるいくつかのメソッドを示しています。  
+ エンティティの作成時、読み込み時、および検証時 ([!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] の呼び出し時) に `SubmitChanges` ランタイムによって呼び出される 3 つのメソッドが、エンティティ クラスに含まれています。 さらに、エンティティ クラスには、各プロパティごとの 2 つの部分メソッドも含まれています。このうち 1 つはプロパティの設定前に、もう 1 つは設定後に呼び出されます。 次のコード例は、`Customer` クラス用に生成されるいくつかのメソッドを示しています。  
   
 ```vb  
 #Region "Extensibility Method Definitions"  
@@ -159,7 +165,7 @@ public string CustomerID
 }  
 ```  
   
- クラスの開発者が作成する部分で、メソッドの実装定義を記述します。  [!INCLUDE[vsprvs](../../../../../../includes/vsprvs-md.md)] では、`partial` と入力した後、クラスの別の部分にメソッド定義用の IntelliSense が表示されます。  
+ クラスの開発者が作成する部分で、メソッドの実装定義を記述します。 [!INCLUDE[vsprvs](../../../../../../includes/vsprvs-md.md)]を入力した後、`partial`クラスの他の部分にメソッド定義の IntelliSense が表示されます。  
   
 ```vb  
 Partial Public Class Customer  
@@ -181,14 +187,14 @@ partial class Customer
   
  部分メソッドを使ってビジネス ロジックをアプリケーションに追加する方法の詳細については、以下のトピックを参照してください。  
   
- [How to: Add Validation to Entity Classes](../Topic/How%20to:%20Add%20validation%20to%20entity%20classes.md)  
+ [方法 : エンティティ クラスに検証を追加する](/visualstudio/data-tools/how-to-add-validation-to-entity-classes)  
   
- [Walkthrough: Customizing the Insert, Update, and Delete Behavior of Entity Classes](../Topic/Walkthrough:%20Customizing%20the%20insert,%20update,%20and%20delete%20behavior%20of%20entity%20classes.md)  
+ [チュートリアル : エンティティ クラスの挿入、更新、および削除の動作のカスタマイズ](/visualstudio/data-tools/walkthrough-customizing-the-insert-update-and-delete-behavior-of-entity-classes)  
   
- [Walkthrough: Adding Validation to Entity Classes](../Topic/Walkthrough:%20Adding%20Validation%20to%20Entity%20Classes.md)  
+ [チュートリアル: エンティティ クラスへの検証の追加](http://msdn.microsoft.com/library/85b06a02-b2e3-4534-95b8-d077c8d4c1d7)  
   
-## 参照  
- [部分クラスと部分メソッド](../Topic/Partial%20Classes%20and%20Methods%20\(C%23%20Programming%20Guide\).md)   
- [Partial Methods](../Topic/Partial%20Methods%20\(Visual%20Basic\).md)   
- [LINQ to Visual Studio での SQL ツール](../Topic/LINQ%20to%20SQL%20Tools%20in%20Visual%20Studio2.md)   
- [SqlMetal.exe \(コード生成ツール\)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)
+## <a name="see-also"></a>関連項目  
+ [部分クラスと部分メソッド](~/docs/csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md)  
+ [部分メソッド](~/docs/visual-basic/programming-guide/language-features/procedures/partial-methods.md)  
+ [Visual Studio の LINQ to SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)  
+ [SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)

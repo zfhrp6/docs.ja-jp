@@ -1,69 +1,73 @@
 ---
-title: "&lt;source&gt; の &lt;listeners&gt; の &lt;clear&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/clear"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<source> の <listeners> の <clear> 要素"
-  - "<source> の <listeners> の clear 要素"
+title: "&lt;オフ&gt;要素&lt;リスナー&gt;の&lt;ソース&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/clear
+helpviewer_keywords:
+- <clear> element for <listeners> for <source>
+- clear element for <listeners> for <source>
 ms.assetid: 76796bb2-9c0b-4526-8135-8bf18b16d8d9
-caps.latest.revision: 7
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: d5e8518f2ca8a04d91f5bfdd9f6389c741d0278e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;source&gt; の &lt;listeners&gt; の &lt;clear&gt; 要素
-トレース ソースの `Listeners` コレクションを削除します。  
+# <a name="ltcleargt-element-for-ltlistenersgt-for-ltsourcegt"></a>&lt;オフ&gt;要素&lt;リスナー&gt;の&lt;ソース&gt;
+トレース ソースの `Listeners` コレクションを消去します。  
   
-## 構文  
+ \<configuration>  
+\<system.diagnostics >  
+\<ソース >  
+\<ソース >  
+\<リスナー >  
+\<オフ >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <clear/>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
  なし。  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
+|-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`system.diagnostics`|メッセージを収集、格納、およびルーティングするトレース リスナーとトレース スイッチを設定するレベルを指定します。|  
 |`sources`|トレース メッセージを開始するトレース ソースを保持します。|  
 |`source`|トレース メッセージを開始するトレース ソースを指定します。|  
-|`listeners`|メッセージを収集、格納、およびルーティングするリスナーを指定します。|  
+|`listeners`|収集、保管、およびメッセージをルーティングするリスナーを指定します。|  
   
-## 解説  
- `<clear>` 要素は、<xref:System.Diagnostics.DefaultTraceListener> を含め、トレース ソースの `Listeners` コレクションからすべてのリスナーを削除します。  `<add>` 要素を使用する前に、`<clear>` 要素を使用すると、コレクション内に他にアクティブなリスナーがないことを確認できます。  
+## <a name="remarks"></a>コメント  
+ `<clear>`要素からすべてのリスナーを削除して、`Listeners`トレース ソースのコレクションを含む、<xref:System.Diagnostics.DefaultTraceListener>です。 使用することができます、`<clear>`要素を使用する前に、`<add>`要素をコレクション内の他のアクティブなリスナーが存在しないことを特定します。  
   
-## 構成ファイル  
- この要素は、マシン構成ファイル \(Machine.config\) およびアプリケーション構成ファイルで使用できます。  
+## <a name="configuration-file"></a>構成ファイル  
+ この要素は、マシン構成ファイル (Machine.config) と、アプリケーション構成ファイルで使用できます。  
   
-## 使用例  
- `<add>` 要素を使用してリスナー `console` と `textListener` をトレース ソース `TraceSourceApp` の `Listeners` コレクションに追加する前に、`<clear>` 要素を使用する方法を次の例に示します。  
+## <a name="example"></a>例  
+ 次の例を使用する方法を示しています、`<clear>`要素を使用する前に、`<add>`リスナーを追加する要素`console`と`textListener`を`Listeners`トレース ソースのコレクション`TraceSourceApp`です。  
   
-```  
+```xml  
 <configuration>  
   <system.diagnostics>  
     <sources>  
@@ -89,8 +93,8 @@ caps.handback.revision: 7
 </configuration>   
 ```  
   
-## 参照  
- <xref:System.Diagnostics.TraceSource>   
- <xref:System.Diagnostics.TraceListener>   
- [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)   
- [Trace Listeners](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Diagnostics.TraceSource>  
+ <xref:System.Diagnostics.TraceListener>  
+ [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
+ [トレース リスナー](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: fc9e04e8-2d05-4870-8cd6-5bd276814afc
-caps.latest.revision: 29
+caps.latest.revision: "29"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c9618213569766a6ae355a936a4b1f71a5046ef6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: eeda0c58e9b5e9f8b48e335849ce12f7e8d94a1b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="getting-started-with-net-native"></a>.NET ネイティブの概要
 Windows 10 用に新しい Windows アプリを作成する場合も、既存の Windows ストア アプリを移行する場合も、次に示す同じ手順を実行することになります。 [!INCLUDE[net_native](../../../includes/net-native-md.md)] アプリを作成するには、次の手順を実行します。  
@@ -69,11 +67,11 @@ Windows 10 用に新しい Windows アプリを作成する場合も、既存の
  **リフレクションに依存するメソッド**  
  コードでのリフレクションの使用は明確ではない場合があります。 一般的な API やプログラミング パターンの中には、リフレクション API の一部とは見なされないが、正常な実行にリフレクションを必要とするものがあります。 これには、次のような型インスタンス化およびメソッド作成方法があります。  
   
--   <xref:System.Type.MakeGenericType%2A?displayProperty=fullName> メソッド  
+-   <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> メソッド  
   
--   <xref:System.Array.CreateInstance%2A?displayProperty=fullName> メソッドと <xref:System.Type.MakeArrayType%2A?displayProperty=fullName> メソッド  
+-   <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> メソッドと <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType> メソッド  
   
--   <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=fullName> メソッド。  
+-   <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> メソッド。  
   
  詳細については、「 [APIs That Rely on Reflection](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)」を参照してください。  
   
@@ -123,11 +121,10 @@ Windows 10 用に新しい Windows アプリを作成する場合も、既存の
 -   [.NET ネイティブ アプリでのランタイム例外](../../../docs/framework/net-native/runtime-exceptions-in-net-native-apps.md)  
   
 ## <a name="see-also"></a>関連項目  
- [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
- [NIB: .NET ネイティブのセットアップおよび構成](http://msdn.microsoft.com/en-us/7c9bc375-8b87-4c33-bede-72d513e362ec)   
- [.NET ネイティブとコンパイル](../../../docs/framework/net-native/net-native-and-compilation.md)   
- [リフレクションおよび .NET ネイティブ](../../../docs/framework/net-native/reflection-and-net-native.md)   
- [リフレクションに依存する API](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)   
- [シリアル化とメタデータ](../../../docs/framework/net-native/serialization-and-metadata.md)   
+ [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [NIB: .NET ネイティブのセットアップと構成](http://msdn.microsoft.com/en-us/7c9bc375-8b87-4c33-bede-72d513e362ec)  
+ [.NET ネイティブとコンパイル](../../../docs/framework/net-native/net-native-and-compilation.md)  
+ [リフレクションおよび .NET ネイティブ](../../../docs/framework/net-native/reflection-and-net-native.md)  
+ [リフレクションに依存する API](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)  
+ [シリアル化とメタデータ](../../../docs/framework/net-native/serialization-and-metadata.md)  
  [Windows ストア アプリの .NET ネイティブへの移行](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md)
-

@@ -1,25 +1,28 @@
 ---
-title: "バインド | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Binding2
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 09511c6c-5749-4bb0-874e-0f0be36bfe04
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6505fa08ca43e64df224b75500aacbc903783398
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# バインド
+# <a name="binding"></a>バインド
 wmi バインディング  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class Binding  
@@ -35,73 +38,73 @@ class Binding
 };  
 ```  
   
-## メソッド  
+## <a name="methods"></a>メソッド  
  Binding クラスは、メソッドを一切定義しません。  
   
-## プロパティ  
+## <a name="properties"></a>プロパティ  
  Binding クラスには、次のプロパティがあります。  
   
-### BindingElements  
+### <a name="bindingelements"></a>BindingElements  
  データ型 : BindingElement 配列  
   
  アクセスの種類 : 読み取り専用  
   
  バインディングによって実装されるバインド要素のコレクションです。  
   
-### CloseTimeout  
+### <a name="closetimeout"></a>CloseTimeout  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  クローズ操作が完了するまで待機する時間です。  
   
-### Name  
- データ型 : string  
+### <a name="name"></a>名前  
+ データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  バインディングの名前。  
   
-### 名前空間  
- データ型 : string  
+### <a name="namespace"></a>名前空間  
+ データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  バインディングの XML 名前空間。  
   
-### OpenTimeout  
+### <a name="opentimeout"></a>OpenTimeout  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  オープン操作が完了するまで待機する時間です。  
   
-### ReceiveTimeout  
+### <a name="receivetimeout"></a>ReceiveTimeout  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  受信操作が完了するまで待機する時間です。  
   
-### Scheme  
- データ型 : string  
+### <a name="scheme"></a>Scheme  
+ データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  このバインディングに組み込まれているチャネルおよびリスナー ファクトリによって使用される URI トランスポート スキームです。  
   
-### SendTimeout  
+### <a name="sendtimeout"></a>SendTimeout  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  送信操作が完了するまで待機する時間です。  
   
-## 要件  
+## <a name="requirements"></a>要件  
   
-|MOF|Servicemodel.mof にて宣言済み|  
-|---------|-----------------------------|  
-|名前空間|root\\ServiceModel で定義|  
+|MOF|Servicemodel.mof にて宣言済み。|  
+|---------|-----------------------------------|  
+|Namespace|root\ServiceModel で定義|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels.Binding>

@@ -1,56 +1,64 @@
 ---
-title: "&lt;workflowIdle&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: '&lt;workflowIdle&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 ms.assetid: b2ef703c-3e01-4213-9d2e-c14c7dba94d2
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 5f9b4989de57204d9ec97d69475121c30ae82644
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;workflowIdle&gt;
+# <a name="ltworkflowidlegt"></a>&lt;workflowIdle&gt;
 アイドル状態のワークフロー インスタンスのアンロードおよび永続化のタイミングを制御するサービス動作。  
   
-## 構文  
+\<システムです。ServiceModel >  
+\<ビヘイビアー >  
+\<serviceBehaviors >  
+\<動作 >  
+\<workflowIdle >  
   
-```  
+## <a name="syntax"></a>構文  
   
-<behaviors>  
-  <serviceBehaviors>  
-    <behavior name=String">  
-      <workflowIdle timeToPersist=”TimeSpan”  
-          timeToUnload=”TimeSpan” />  
-    </behavior>  
-  </serviceBehaviors>  
+```xml  
+<behaviors>
+  <serviceBehaviors>
+    <behavior name="String">
+      <workflowIdle timeToPersist="TimeSpan" 
+                    timeToUnload="TimeSpan" />
+    </behavior>
+  </serviceBehaviors>
 </behaviors>  
-  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
 |属性|説明|  
-|--------|--------|  
-|timeToPersist|ワークフローがアイドル状態から永続化されるまでの継続時間を指定する Timespan 値。  既定値は TimeSpan.MaxValue です。<br /><br /> 継続時間は、ワークフロー インスタンスがアイドル状態になった時点から開始します。  この属性は、ワークフロー インスタンスを、可能な限り長くメモリに保持しながら、積極的に永続化しようとする場合に役立ちます。  この属性は、値が **timeToUnload** 属性の値未満の場合にのみ有効です。  それより大きい場合は無視されます。  この属性が、**timeToUnload** 属性によって指定された値より先に経過する場合は、ワークフローをアンロードする前に永続化を終了する必要があります。  これは、ワークフローを永続化するまでアンロード操作に遅延が生じる場合があることを意味します。  永続化レイヤーは一時的なエラーの再試行処理は行いますが、回復不可能なエラーに対しては例外をスローするだけです。  したがって、永続化中にスローされる例外は致命的な例外として処理され、ワークフロー インスタンスが中止されます。|  
-|timeToUnload|ワークフローがアイドル状態からアンロードされるまでの継続時間を指定する Timespan 値。  既定値は 1 分です。<br /><br /> ワークフローをアンロードすることは、同時に、永続化することも意味します。  この属性をゼロに設定した場合は、ワークフローがアイドル状態になった直後に、ワークフロー インスタンスが永続化され、アンロードされます。  この属性を TimeSpan.MaxValue に設定すると、アンロード操作を事実上、無効にします。  アイドル状態になったワークフロー インスタンスはアンロードされません。|  
+|---------------|-----------------|  
+|timeToPersist|ワークフローがアイドル状態になりが永続化されるまでの間の期間を指定する Timespan 値です。 既定値は、TimeSpan.MaxValue です。<br /><br /> 継続時間は、ワークフロー インスタンスがアイドル状態になった時点から開始します。 この属性はできるだけ長く用のメモリ内インスタンスも保持しながら、ワークフロー インスタンスをより積極的に永続化する場合に便利です。 この属性は有効なは、その値がある場合のみより小さい**timeToUnload**属性。 それより大きい場合は無視されます。 この属性が値を指定する前に経過すると、 **timeToUnload**属性に、ワークフローが読み込まれる前に、永続化を完了する必要があります。 これは、ワークフローを永続化するまでアンロード操作に遅延が生じる場合があることを意味します。 永続化レイヤーは一時的なエラーの再試行処理は行いますが、回復不可能なエラーに対しては例外をスローするだけです。 したがって、永続化中にスローされる例外は致命的な例外として処理され、ワークフロー インスタンスが中止されます。|  
+|timeToUnload|ワークフローがアイドル状態からアンロードされるまでの継続時間を指定する Timespan 値。 既定値は 1 分です。<br /><br /> ワークフローをアンロードすることは、同時に、永続化することも意味します。 この属性は、ワークフロー インスタンスが永続化し、アンロードした直後にゼロに設定されている場合、ワークフローはアイドル状態になります。 この属性を TimeSpan.MaxValue を効果的に設定すると、アンロード操作が無効にします。 アイドル状態になったワークフロー インスタンスはアンロードされません。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<serviceBehaviors\> の \<behavior\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|動作の要素を指定します。|  
+|-------------|-----------------|  
+|[\<動作 > の\<serviceBehaviors >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|動作の要素を指定します。|  
   
-## 参照  
- <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior>  
  <xref:System.ServiceModel.Activities.Configuration.WorkflowIdleElement>

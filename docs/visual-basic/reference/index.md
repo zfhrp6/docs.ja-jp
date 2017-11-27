@@ -1,39 +1,21 @@
 ---
 title: "リファレンス (Visual Basic)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - language reference
 - Visual Basic code, language reference
 ms.assetid: df6e7c50-5f3e-4381-98ed-ba5c3e9fe228
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 4c341ec68a12019814d0185cab9b89ad5928d171
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: 1bef4da309f5e281b4016912d4b0da8237db6ec0
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="reference-visual-basic"></a>リファレンス (Visual Basic)
 このセクションでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] プログラミングに関するさまざまなリファレンス情報へのリンクを示します。  
@@ -67,4 +49,3 @@ ms.lasthandoff: 07/28/2017
   
  [オートメーションと機能拡張のリファレンス](http://msdn.microsoft.com/library/93112562-db21-4188-9383-ed19ad79bddf)  
  共有コンポーネントと言語固有コンポーネントの両方について、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] でのオートメーションと機能拡張に関するトピックへのリンクを示します。
-

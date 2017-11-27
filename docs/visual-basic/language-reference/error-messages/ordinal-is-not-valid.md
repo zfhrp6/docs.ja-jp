@@ -1,40 +1,38 @@
 ---
-title: "Ordinal is not valid | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID452"
-dev_langs: 
-  - "VB"
+title: "序数が有効ではありません。"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID452
 ms.assetid: 7459562b-cd4f-4590-95e0-6126ae3589a5
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: d31d0fba19cc16004c0b56786af30603d0c509ea
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Ordinal is not valid
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-ダイナミック リンク ライブラリ \(DLL: dynamic\-link library\) の呼び出しで、`#num` 構文を使用して、プロシージャ名の代わりに数値を使用するように指定されています。  このエラーでは以下の原因が考えられます。  
+# <a name="ordinal-is-not-valid"></a>序数が有効ではありません。
+プロシージャ名の代わりに、番号を使用してに示されているダイナミック リンク ライブラリ (DLL) への呼び出しを使用して、`#num`構文です。 このエラーには、次の考えられる原因があります。  
   
--   `#num` 式の序数への変換に失敗しました。  
+-   変換する、`#num`失敗序数する式。  
   
--   指定した `#num` は、DLL 内の関数を指定しません。  
+-   `#num`指定された DLL で任意の関数が指定されていません。  
   
--   タイプ ライブラリに無効な宣言があるため、無効な除数が内部で使用されています。  
+-   タイプ ライブラリには、無効な序数の内部で使用されて結果として無効な宣言があります。  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  式が有効な数値を表していることを確認するか、プロシージャを名前で呼び出します。  
+1.  名前でプロシージャを呼び出すまたは式が有効な数値を表すかどうかを確認します。  
   
-2.  `#num` が DLL 内の有効な関数を指定していることを確認します。  
+2.  確認`#num`DLL 内の有効な関数を識別します。  
   
-3.  コードをコメント アウトすることによって、問題を起こしているプロシージャ呼び出しを特定します。  プロシージャの `Declare` ステートメントを作成し、問題をタイプ ライブラリ販売元に報告します。  
+3.  問題の原因で、コードをコメント アウト、プロシージャ呼び出しを分離します。 書き込み、`Declare`プロシージャ、およびレポート、タイプ ライブラリのベンダーに、問題ステートメントです。  
   
-## 参照  
- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)
+## <a name="see-also"></a>関連項目  
+ [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)

@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - data requests, pluggable protocols
 - WebRequest class, pluggable protocols
@@ -33,33 +28,32 @@ helpviewer_keywords:
 - server identifiers
 - scheme identifiers
 ms.assetid: 4b48e22d-e4e5-48f0-be80-d549bda97415
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 69a6b5a45317d3dc25522cc44ad8d710a5fc5cd9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 372f681fbdd4808b5f6a0012cf6ad01e278e05c9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# プラグ可能なプロトコルの概要
+# <a name="introducing-pluggable-protocols"></a>プラグ可能なプロトコルの概要
 Microsoft .NET Framework は、アプリケーションにすばやく簡単に統合できる、複数層の拡張可能なインターネット サービスのマネージ実装を提供します。 <xref:System.Net> および <xref:System.Net.Sockets> の名前空間内のインターネット アクセス クラスは、Web ベース アプリケーションとインターネット ベース アプリケーションの両方を実装するために使用できます。  
   
-## インターネット アプリケーション  
+## <a name="internet-applications"></a>インターネット アプリケーション  
  インターネット アプリケーションは、情報を要求するクライアント アプリケーションと、クライアントからの情報の要求に応答するサーバー アプリケーションの 2 種類に大別することができます。 従来のインターネット クライアント/サーバー アプリケーションは、ユーザーがブラウザーを使用して世界中の Web サーバーに格納されているドキュメントやその他のデータにアクセスする World Wide Web です。  
   
  アプリケーションはこれらの役割の 1 つに限定されません。たとえば、使い慣れた中間層アプリケーション サーバーは、別のサーバーからデータを要求することでクライアントからの要求に応答します。この場合、サーバーとクライアントの両方として機能します。  
   
  クライアント アプリケーションは、要求されたインターネット リソースと、要求と応答に使用するための通信プロトコルを識別することによって、要求を実行します。 必要に応じて、クライアントは要求を完了するために必要な、プロキシの場所や認証情報 (ユーザー名、パスワードなど) などの追加データも提供します。 要求が作成されると、要求をサーバーに送信できます。  
   
-## リソースの識別  
+## <a name="identifying-resources"></a>リソースの識別  
  .NET Framework は、Uniform Resource Identifier (URI) を使用して、要求されたインターネット リソースと通信プロトコルを識別します。 URI は、少なくとも 3 つ、または 4 つのフラグメントで構成されています。要求と応答の通信プロトコルを識別するスキーム識別子、ドメイン ネーム システム (DNS) ホスト名またはインターネット上のサーバーを一意に識別する TCP アドレスのいずれかで構成されるサーバー識別子、要求された情報をサーバー上で検索するパス識別子、クライアントからの情報をサーバーに渡すクエリ文字列 (省略可能) です。 たとえば、URI "http://www.contoso.com/whatsnew.aspx?date=today" は、スキーム識別子 "http"、サーバー識別子 "www.contoso.com"、パス "/whatsnew.aspx"、およびクエリ文字列 "?date=today" で構成されています。  
   
  サーバーは要求を受信し、応答を処理すると、クライアント アプリケーションに応答を返します。 応答には、コンテンツの種類 (たとえば、生のテキストや XML データ) などの補足情報が含まれています。  
   
-## .NET Framework での要求と応答  
+## <a name="requests-and-responses-in-the-net-framework"></a>.NET Framework での要求と応答  
  .NET Framework では、特定のクラスを使用して、要求/応答モデルを通じてインターネット リソースにアクセスするために必要な 3 つの情報を提供します。求めているインターネット リソースの URI が含まれている <xref:System.Uri> クラス、リソースの要求が含まれている <xref:System.Net.WebRequest> クラス、および受信した応答のコンテナーを提供する <xref:System.Net.WebResponse> クラスです。  
   
  クライアント アプリケーションは、ネットワーク リソースの URI を <xref:System.Net.WebRequest.Create%2A> メソッドに渡すことによって、`WebRequest` インスタンスを作成します。 この静的メソッドは、HTTP などの特定のプロトコルの `WebRequest` を作成します。 返される `WebRequest` は、サーバーへの要求と、要求が行われたときに送信されるデータ ストリームへのアクセスの両方を制御するプロパティへのアクセスを提供します。 `WebRequest` の <xref:System.Net.WebRequest.GetResponse%2A> メソッドは、クライアント アプリケーションから URI で識別されたサーバーに要求を送信します。 応答遅延が発生する場合、**WebRequest** で <xref:System.Net.WebRequest.BeginGetResponse%2A> メソッドを使用して、要求を非同期的に実行し、<xref:System.Net.WebRequest.EndGetResponse%2A> メソッドを使用して後で応答を返すことができます。  
@@ -70,20 +64,19 @@ Microsoft .NET Framework は、アプリケーションにすばやく簡単に�
   
  例として、<xref:System.Net.HttpWebRequest> クラスは、HTTP を使用してインターネット リソースへの接続の詳細を管理します。 既定では、**WebRequest.Create** メソッドが "http:" または "https:" (HTTP およびセキュリティで保護された HTTP のプロトコル識別子) で始まる URI を検出すると、返された **WebRequest** をそのまま使用することができます。または、**HttpWebRequest** に型キャストしてプロトコル固有のプロパティにアクセスすることもできます。 ほとんどの場合、**WebRequest** は要求の実行に必要なすべての情報を提供します。  
   
- 要求/応答のトランザクションとして表すことができるプロトコルはすべて、**WebRequest** で使用できます。 **WebRequest** および **WebResponse** からプロトコル固有のクラスを派生して、アプリケーションで使用するためにそれらを静的 <xref:System.Net.WebRequest.RegisterPrefix%2A?displayProperty=fullName> メソッドに登録できます。  
+ 要求/応答のトランザクションとして表すことができるプロトコルはすべて、**WebRequest** で使用できます。 **WebRequest** および **WebResponse** からプロトコル固有のクラスを派生して、アプリケーションで使用するためにそれらを静的 <xref:System.Net.WebRequest.RegisterPrefix%2A?displayProperty=nameWithType> メソッドに登録できます。  
   
  インターネット要求のためにクライアントの承認が必要な場合は、**WebRequest** の <xref:System.Net.WebRequest.Credentials%2A> プロパティが必要な資格情報を提供します。 これらの資格情報は、基本的な HTTP 認証またはダイジェスト認証の名前/パスワードの単純な組み合わせにすることも、NTLM 認証または Kerberos 認証の名前/パスワード/ドメインのセットにすることもできます。 1 つの資格情報のセットは、<xref:System.Net.NetworkCredential> インスタンスに格納できます。複数のセットは、<xref:System.Net.CredentialCache> インスタンスに同時に格納できます。 **CredentialCache** は、要求の URI と、サーバーでサポートされている認証スキームを使用して、サーバーに送信する資格情報を決定します。  
   
-## WebClient による単純な要求  
+## <a name="simple-requests-with-webclient"></a>WebClient による単純な要求  
  インターネット リソースに対して単純な要求を行う必要があるアプリケーションの場合、<xref:System.Net.WebClient> クラスがインターネット サーバーにデータをアップロードする、またはインターネット サーバーからデータをダウンロードするための共通のメソッドを提供します。 **WebClient** は **WebRequest** クラスに依存して、インターネット リソースへのアクセスを提供しています。そのため、**WebClient** クラスは登録されている任意のプラグ可能なプロトコルを使用できます。  
   
  要求/応答モデルを使用できないアプリケーションの場合、またはネットワーク上でリッスンするだけでなく、要求を送信する必要があるアプリケーションの場合、**System.Net.Sockets** 名前空間が <xref:System.Net.Sockets.TcpClient>、<xref:System.Net.Sockets.TcpListener>、および <xref:System.Net.Sockets.UdpClient> クラスを提供します。 これらのクラスは、さまざまなトランスポート プロトコルを使用して接続のための詳細を処理し、ネットワーク接続をストリームとしてアプリケーションに公開します。  
   
  Windows ソケット インターフェイスに精通している開発者、またはソケット レベルでのプログラミングにより提供されるコントロールが必要な開発者は、**System.Net.Sockets** クラスにより自身のニーズを満たすことができます。 **System.Net.Sockets** クラスは、**System.Net** クラス内でのマネージ コードからネイティブ コードへの遷移ポイントです。 ほとんどの場合、**System.Net.Sockets** クラスは、Windows の 32 ビットに相当するものにデータをマーシャリングするだけでなく、必要なセキュリティ チェックをすべて処理します。  
   
-## 関連項目  
- [プラグ可能なプロトコルのプログラミング](../../../docs/framework/network-programming/programming-pluggable-protocols.md)   
- [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)   
- [ネットワーク プログラミングのサンプル](../../../docs/framework/network-programming/network-programming-samples.md)   
+## <a name="see-also"></a>関連項目  
+ [プラグ可能なプロトコルのプログラミング](../../../docs/framework/network-programming/programming-pluggable-protocols.md)  
+ [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)  
+ [ネットワーク プログラミングのサンプル](../../../docs/framework/network-programming/network-programming-samples.md)  
  [MSDN Code Gallery 上の .NET 用のネットワークのサンプル](http://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)
-

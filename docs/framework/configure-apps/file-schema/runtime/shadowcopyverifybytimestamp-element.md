@@ -1,71 +1,73 @@
 ---
-title: "&lt;shadowCopyVerifyByTimestamp&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<shadowCopyTimeStampVerification> 要素"
-  - "shadowCopyTimeStampVerification 要素"
+title: "&lt;shadowCopyVerifyByTimestamp&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- <shadowCopyTimeStampVerification> element
+- shadowCopyTimeStampVerification element
 ms.assetid: 2f1648e5-997b-435e-a4f9-d236c574c66c
-caps.latest.revision: 7
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 261962819e9b2b37682a13bffb53d2912a660566
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;shadowCopyVerifyByTimestamp&gt; 要素
-シャドウ コピーの動作を、[!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] で導入された既定の起動動作にするか、旧バージョンの .NET Framework の起動動作に戻すかを指定します。  
+# <a name="ltshadowcopyverifybytimestampgt-element"></a>&lt;shadowCopyVerifyByTimestamp&gt;要素
+シャドウ コピーが [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] で導入された既定の起動の動作を使用するか、.NET Framework の以前のバージョンの起動の動作に戻すかどうかを指定します。  
   
-## 構文  
+ \<configuration > 要素  
+\<ランタイム > 要素  
+\<shadowCopyVerifyByTimestamp > 要素  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <shadowCopyVerifyByTimestamp enabled="true|false" />  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|Attribute|説明|  
-|---------------|--------|  
-|enabled|必須の属性です。<br /><br /> アセンブリをシャドウ コピーする前にそのアセンブリが更新されているかどうかを確認するため、起動時に、シャドウ コピーを使用するアプリケーション ドメインでアセンブリのタイム スタンプを比較するかどうかを指定します。|  
+|属性|説明|  
+|---------------|-----------------|  
+|enabled|必須の属性です。<br /><br /> 起動時、アセンブリをシャドウ コピーする前に、アセンブリが更新されているかどうかを確認するシャドウ コピーを使用するアプリケーション ドメインがアセンブリのタイムスタンプを比較するかどうかを指定します。|  
   
-## enabled 属性  
+## <a name="enabled-attribute"></a>enabled 属性  
   
 |値|説明|  
-|-------|--------|  
-|true|起動時、シャドウ コピー ディレクトリに前回コピーされたときから更新されているアセンブリのみをコピーします。  これは [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] の既定値です。|  
-|false|以前のバージョンの .NET Framework の起動動作に戻します。この場合、起動時にすべてのファイルがコピーされます。|  
+|-----------|-----------------|  
+|TRUE|起動時に、前回シャドウ コピーのディレクトリにコピーされたとき以降に更新されたアセンブリだけをコピーします。 これは、既定値を[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]です。|  
+|false|起動時にすべてのファイルをコピーしましたが、.NET Framework の以前のバージョンの起動時の動作に戻ります。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
+|-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
   
-## 解説  
- [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] 以降では、アセンブリがシャドウ コピーされるのは、アセンブリがシャドウ コピー ディレクトリに前回コピーされたときから変更されていることがタイム スタンプからわかる場合だけです。  この方法では、シャドウ コピーを使用するアプリケーションの多くで起動時間が速くなります。詳細については、「[アセンブリのシャドウ コピー](../../../../../docs/framework/app-domains/shadow-copy-assemblies.md)」を参照してください。  アセンブリが更新される割合や頻度が高いアプリケーションでは、この動作の変更による利点がないこともあります。  この場合、.NET Framework の以前のバージョンの動作を復元するには、この要素を使用します。  
+## <a name="remarks"></a>コメント  
+ 以降で、[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]アセンブリのシャドウ コピーのタイムスタンプでは、シャドウ コピーのディレクトリに前回コピーされたとき以降に変更されたことを示している場合のみです。 」の説明に従って、シャドウ コピーを使用する多くのアプリケーションの起動時間が短縮この[アセンブリのシャドウ コピー](../../../../../docs/framework/app-domains/shadow-copy-assemblies.md)です。 割合が高いと、アセンブリの更新の頻度を持つアプリケーションは、この動作の変更による利点がないです。 その場合は、この要素を使用して、.NET Framework の以前のバージョンの動作を復元することができます。  
   
-## 使用例  
- [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] のシャドウ コピーの既定の起動動作を無効にし、以前のバージョンの .NET Framework の起動動作に戻す方法を、次の例に示します。  
+## <a name="example"></a>例  
+ 次の例のシャドウ コピーの既定のスタートアップ動作を無効にする方法を示しています、 [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]、し、.NET Framework の以前のバージョンの起動時の動作に戻します。  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <shadowCopyVerifyByTimestamp enabled="false" />  
@@ -73,7 +75,7 @@ caps.handback.revision: 7
 </configuration>  
 ```  
   
-## 参照  
- [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+## <a name="see-also"></a>関連項目  
+ [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [アセンブリのシャドウ コピー](../../../../../docs/framework/app-domains/shadow-copy-assemblies.md)

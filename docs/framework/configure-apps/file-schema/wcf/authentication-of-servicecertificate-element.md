@@ -1,87 +1,97 @@
 ---
-title: "&lt;serviceCertificate&gt; 要素の &lt;authentication&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;serviceCertificate&gt; 要素の &lt;authentication&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 733b67b4-08a1-4d25-9741-10046f9357ef
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 163a035c667c25be4f780daf85c50d96816bd0f3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;serviceCertificate&gt; 要素の &lt;authentication&gt;
-SSL\/TLS ネゴシエーションを使用して取得されたサービス証明書を認証するためにクライアント プロキシが使用する設定を指定します。  
+# <a name="ltauthenticationgt-of-ltservicecertificategt-element"></a>&lt;serviceCertificate&gt; 要素の &lt;authentication&gt;
+SSL/TLS ネゴシエーションを使用して取得されたサービス証明書を認証するためにクライアント プロキシが使用する設定を指定します。  
   
-## 構文  
+ \<システムです。ServiceModel >  
+\<ビヘイビアー >  
+endpointBehaviors セクション  
+\<動作 >  
+\<clientCredentials >  
+\<serviceCertificate >  
+\<認証 >  
   
-```  
+## <a name="syntax"></a>構文  
   
+```xml  
 <authentication customCertificateValidatorType="String" certificateValidationMode="None/PeerTrust/ChainTrust/PeerOrChainTrust/Custom"  
 revocationMode="NoCheck/Online/Offline"   
 trustedStoreLocation="LocalMachine/CurrentUser" />  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
 |属性|説明|  
-|--------|--------|  
-|customCertificateValidatorType|文字列。  カスタム型の検証に使用される型およびアセンブリです。|  
-|certificateValidationMode|資格情報の検証に使用される 3 つのモードのいずれかを指定します。  `Custom` に設定されている場合、customCertificateValidator も指定する必要があります。  既定値は、`ChainTrust` です。|  
-|revocationMode|証明書失効リスト \(CRL\) のチェックに使用されるモードのいずれかです。  既定値は、`Online` です。|  
-|trustedStoreLocation|2 つのシステム格納場所 \(`LocalMachine` または `CurrentUser`\) のいずれかです。  この値は、サービス証明書がクライアントにネゴシエートされるときに使用されます。  指定された格納場所の **\[信頼されたユーザー\]** ストアに対して検証が実行されます。  既定値は、`CurrentUser` です。|  
+|---------------|-----------------|  
+|customCertificateValidatorType|文字列。 カスタム型の検証に使用される型およびアセンブリです。|  
+|certificateValidationMode|資格情報の検証に使用される 3 つのモードのいずれかを指定します。 `Custom` に設定されている場合、customCertificateValidator も指定する必要があります。 既定値は、`ChainTrust` です。|  
+|revocationMode|証明書失効リスト (CRL) のチェックに使用されるモードのいずれかです。 既定値は、`Online` です。|  
+|trustedStoreLocation|2 つのシステム格納場所 (`LocalMachine` または `CurrentUser`) のいずれかです。 この値は、サービス証明書がクライアントにネゴシエートされるときに使用されます。 に対して検証が実行、**信頼されたユーザー**指定されたストアの場所に格納します。 既定値は、`CurrentUser` です。|  
   
-## customCertificateValidator 属性  
+## <a name="customcertificatevalidator-attribute"></a>customCertificateValidator 属性  
   
 |値|説明|  
-|-------|--------|  
+|-----------|-----------------|  
 |String|タイプ名およびアセンブリと、タイプの検索に使用される他のデータを指定します。|  
   
-## certificateValidationMode 属性  
+## <a name="certificatevalidationmode-attribute"></a>certificateValidationMode 属性  
   
 |値|説明|  
-|-------|--------|  
-|列挙型|None、PeerTrust、ChainTrust、PeerOrChainTrust、Custom のいずれかの値にします。<br /><br /> 詳細については、「[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)」を参照してください。|  
+|-----------|-----------------|  
+|列挙型|None、PeerTrust、ChainTrust、PeerOrChainTrust、Custom のいずれかの値にします。<br /><br /> 詳細については、次を参照してください。[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。|  
   
-## revocationMode 属性  
-  
-|値|説明|  
-|-------|--------|  
-|列挙型|NoCheck、Online、Offline のいずれかの値にします。<br /><br /> 詳細については、「[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)」を参照してください。|  
-  
-## trustedStoreLocation 属性  
+## <a name="revocationmode-attribute"></a>revocationMode 属性  
   
 |値|説明|  
-|-------|--------|  
-|列挙型|LocalMachine または CurrentUser のいずれかの値。  既定値は CurrentUser です。  クライアント アプリケーションがシステム アカウントで実行されている場合、証明書は通常 LocalMachine の下にあります。  クライアント アプリケーションがユーザー アカウントで実行されている場合、証明書は通常 CurrentUser の下にあります。|  
+|-----------|-----------------|  
+|列挙型|NoCheck、Online、Offline のいずれかの値にします。<br /><br /> 詳細については、次を参照してください。[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。|  
   
-### 子要素  
+## <a name="trustedstorelocation-attribute"></a>trustedStoreLocation 属性  
+  
+|値|説明|  
+|-----------|-----------------|  
+|列挙型|LocalMachine または CurrentUser のいずれかの値。 既定値は CurrentUser です。 クライアント アプリケーションがシステム アカウントで実行されている場合、証明書は通常 LocalMachine の下にあります。 クライアント アプリケーションがユーザー アカウントで実行されている場合、証明書は通常 CurrentUser の下にあります。|  
+  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<serviceCertificate\>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)|クライアントに対してサービスを認証する際に使用される証明書を指定します。|  
+|-------------|-----------------|  
+|[\<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)|クライアントに対してサービスを認証する際に使用される証明書を指定します。|  
   
-## 解説  
- この構成要素の `certificateValidationMode` 属性は、証明書の認証に使用される信頼レベルを指定します。  既定のレベルは `ChainTrust` に設定され、チェーンの最上位の信頼された証明機関で終了する証明書の階層構造で各証明書を検索するよう指定します。  これは最もセキュリティで保護されているモードです。  また、値を `PeerOrChainTrust` に設定することもできます。これは、信頼されたチェーン内の証明書と共に、自己発行された証明書 \(ピア信頼\) も受け入れるよう指定します。  自己発行の資格情報は信頼された証明機関から購入したものである必要はないため、この値はクライアントとサービスの開発およびデバッグに使用されます。  クライアントを展開するときは、代わりに `ChainTrust` 値を使用します。  値を `Custom` または `None` に設定することもできます。  `Custom` 値を使用するには、`customCertificateValidator` 属性を証明書の検証に使用するアセンブリと型に設定することも必要です。  独自のカスタム検証を作成するには、抽象 X509CertificateValidator クラスを継承する必要があります。  詳細については、「[方法 : カスタム証明書検証を使用するサービスを作成する](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この構成要素の `certificateValidationMode` 属性は、証明書の認証に使用される信頼レベルを指定します。 既定のレベルは `ChainTrust` に設定され、チェーンの最上位の信頼された証明機関で終了する証明書の階層構造で各証明書を検索するよう指定します。 これは最もセキュリティで保護されているモードです。 また、値を `PeerOrChainTrust` に設定することもできます。これは、信頼されたチェーン内の証明書と共に、自己発行された証明書 (ピア信頼) も受け入れるよう指定します。 自己発行の資格情報は信頼された証明機関から購入したものである必要はないため、この値はクライアントとサービスの開発およびデバッグに使用されます。 クライアントを展開するときは、代わりに `ChainTrust` 値を使用します。 値を `Custom` または `None` に設定することもできます。 `Custom` 値を使用するには、`customCertificateValidator` 属性を証明書の検証に使用するアセンブリと型に設定することも必要です。 独自のカスタム検証を作成するには、抽象 X509CertificateValidator クラスを継承する必要があります。 詳細については、次を参照してください。[する方法: カスタム証明書検証を使用するサービスを作成する](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)です。  
   
- `revocationMode` 属性は、証明書が失効していないかどうかをチェックする方法を指定します。  既定値は `online` です。この場合、証明書が失効していないかどうかを自動的にチェックします。  詳細については、「[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)」を参照してください。  
+ `revocationMode` 属性は、証明書が失効していないかどうかをチェックする方法を指定します。 既定値は `online` です。この場合、証明書が失効していないかどうかを自動的にチェックします。 詳細については、次を参照してください。[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。  
   
-## 使用例  
- 次の例は、2 つのタスクを実行します。  最初は、ドメイン名が www.contoso.com であるエンドポイントと HTTPプロトコルを経由して通信するときに使用するクライアントのサービス証明書を指定します。  次に、認証中に使用される失効モードとストアの場所を指定します。  
+## <a name="example"></a>例  
+ 次の例は、2 つのタスクを実行します。 最初は、ドメイン名が www.contoso.com であるエンドポイントと HTTPプロトコルを経由して通信するときに使用するクライアントのサービス証明書を指定します。 次に、認証中に使用される失効モードとストアの場所を指定します。  
   
-```  
+```xml  
 <serviceCertificate>  
   <defaultCertificate findValue="www.contoso.com"   
                       storeLocation="LocalMachine"  
@@ -97,14 +107,14 @@ trustedStoreLocation="LocalMachine/CurrentUser" />
 </serviceCertificate>  
 ```  
   
-## 参照  
- <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement>   
- <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>   
- <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.Authentication%2A>   
- <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication>   
- [セキュリティ動作](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)   
- [証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)   
- [方法 : カスタム証明書検証を使用するサービスを作成する](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)   
- [\<authentication\>](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)   
- [クライアントのセキュリティ保護](../../../../../docs/framework/wcf/securing-clients.md)   
- [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement>  
+ <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>  
+ <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.Authentication%2A>  
+ <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication>  
+ [セキュリティ動作](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
+ [証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
+ [方法: カスタム証明書検証を使用するサービスを作成します。](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)  
+ [\<認証 >](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)  
+ [クライアントのセキュリティ保護](../../../../../docs/framework/wcf/securing-clients.md)  
+ [サービスとクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

@@ -7,22 +7,16 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: 81731998-d5e7-49e4-ad38-c8e6d01689d0
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d5e4c5984054ab54e0a6f33c2e1e17b89ca366f6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: a32019a99421cdb2b581f1196a0e477c8e5d30a4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="integrated-windows-authentication-with-extended-protection"></a>統合 Windows 認証と拡張保護
 <xref:System.Net> 名前空間および関連名前空間の <xref:System.Net.HttpWebRequest>、<xref:System.Net.HttpListener>、<xref:System.Net.Mail.SmtpClient>、<xref:System.Net.Security.SslStream>、<xref:System.Net.Security.NegotiateStream>、および関連クラスによる統合 Windows 認証の処理方法に影響を与える、機能強化が行われました。 セキュリティ強化のため、拡張保護のサポートが追加されました。  
@@ -124,7 +118,7 @@ ms.lasthandoff: 08/21/2017
 ## <a name="extended-protection-for-client-applications"></a>クライアント アプリケーションの拡張保護  
  ほとんどのクライアント アプリケーションの拡張保護のサポートは自動的に行われます。 <xref:System.Net.HttpWebRequest> クラスと <xref:System.Net.Mail.SmtpClient> クラスは、基本の Windows のバージョンが拡張保護をサポートしている場合は常に、拡張保護をサポートします。 <xref:System.Net.HttpWebRequest> インスタンスは <xref:System.Uri> から構築された SPN を送信します。 既定では、<xref:System.Net.Mail.SmtpClient> インスタンスは SMTP メール サーバーのホスト名から構築された SPN を送信します。  
   
- カスタム認証の場合、クライアント アプリケーションは、<xref:System.Net.TransportContext.GetChannelBinding%2A> メソッドを使用して <xref:System.Net.TransportContext> および CBT の取得を許可する <xref:System.Net.HttpWebRequest> クラス内で <xref:System.Net.HttpWebRequest.EndGetRequestStream%28System.IAsyncResult%2CSystem.Net.TransportContext%40%29?displayProperty=fullName> メソッドまたは <xref:System.Net.HttpWebRequest.GetRequestStream%28System.Net.TransportContext%40%29?displayProperty=fullName> メソッドを使用できます。  
+ カスタム認証の場合、クライアント アプリケーションは、<xref:System.Net.TransportContext.GetChannelBinding%2A> メソッドを使用して <xref:System.Net.TransportContext> および CBT の取得を許可する <xref:System.Net.HttpWebRequest> クラス内で <xref:System.Net.HttpWebRequest.EndGetRequestStream%28System.IAsyncResult%2CSystem.Net.TransportContext%40%29?displayProperty=nameWithType> メソッドまたは <xref:System.Net.HttpWebRequest.GetRequestStream%28System.Net.TransportContext%40%29?displayProperty=nameWithType> メソッドを使用できます。  
   
  <xref:System.Net.HttpWebRequest> インスタンスによって指定されたサービスに送信された統合 Windows 認証に使用する SPN は、<xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A> プロパティを設定することで上書きすることができます。  
   
@@ -133,7 +127,7 @@ ms.lasthandoff: 08/21/2017
 ## <a name="extended-protection-for-server-applications"></a>サーバー アプリケーションの拡張保護  
  <xref:System.Net.HttpListener> は、HTTP 認証を実行するときに、サービス バインディングを検証するためのメカニズムを提供します。  
   
- 最も安全なシナリオは、HTTPS:// プレフィックスの拡張保護を有効にすることです。 この場合、<xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> または <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> に設定された <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> を使用して <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A?displayProperty=fullName> を <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> に設定し、<xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> を <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected> に設定します。<xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> の値は、<xref:System.Net.HttpListener> を部分的にセキュリティを強化したモードにし、同時に <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> は完全にセキュリティを強化したモードに対応します。  
+ 最も安全なシナリオは、HTTPS:// プレフィックスの拡張保護を有効にすることです。 この場合、<xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> または <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> に設定された <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> を使用して <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A?displayProperty=nameWithType> を <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> に設定し、<xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> を <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected> に設定します。<xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> の値は、<xref:System.Net.HttpListener> を部分的にセキュリティを強化したモードにし、同時に <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> は完全にセキュリティを強化したモードに対応します。  
   
  この構成では、セキュリティで保護された外部チャネル経由でサーバーに要求が作成されると、その外部チャネルがチャネル バインディングに対して照会されます。 このチャネル バインディングは、認証 BLOB でチャネル バインディングが一致することを検証する認証の SSPI 呼び出しに渡されます。 考えられる結果は 3 つあります。  
   
@@ -145,7 +139,7 @@ ms.lasthandoff: 08/21/2017
   
  アプリケーションが独自の SSPI 呼び出しを作成して、HTTP 要求の本体内でやり取りされた BLOB に基づいて認証を実行し、チャネル バインディングをサポートする場合は、チャネル バインディングをネイティブ Win32 [AcceptSecurityContext](http://go.microsoft.com/fwlink/?LinkId=147021) 関数に渡すため、<xref:System.Net.HttpListener> を使用して、セキュリティで保護された外部チャネルから、期待されるチャネル バインディングを取得する必要があります。 これを行うには、<xref:System.Net.HttpListenerRequest.TransportContext%2A> プロパティを使用して <xref:System.Net.TransportContext.GetChannelBinding%2A> メソッドを呼び出して CBT を取得します。 エンドポイント バインディングのみがサポートされます。 <xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind.Endpoint> 以外のものが指定されると、<xref:System.NotSupportedException> がスローされます。 基本のオペレーティング システムがチャネル バインディングをサポートしている場合、<xref:System.Net.TransportContext.GetChannelBinding%2A> メソッドがポインターをラップする <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding><xref:System.Runtime.InteropServices.SafeHandle> を、[AcceptSecurityContext](http://go.microsoft.com/fwlink/?LinkId=147021) 関数に `pInput` パラメーターで渡される SecBuffer 構造体の pvBuffer メンバーとして渡すのに適したチャネル バインディングに返します。 <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding.Size%2A> プロパティには、チャネル バインディングの長さ (バイト単位) が含まれます。 基本のオペレーティング システムがチャネル バインディングをサポートしていない場合、関数は `null` を返します。  
   
- もう 1 つの考えられるシナリオは、プロキシが使用されていないときに、HTTP:// プレフィックスの拡張保護を有効にすることです。 この場合、<xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> または <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> に設定された <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> を使用して <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A?displayProperty=fullName> を <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> に設定し、<xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> を <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected> に設定します。<xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> の値は、<xref:System.Net.HttpListener> を部分的にセキュリティを強化したモードにし、同時に <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> は完全にセキュリティを強化したモードに対応します。  
+ もう 1 つの考えられるシナリオは、プロキシが使用されていないときに、HTTP:// プレフィックスの拡張保護を有効にすることです。 この場合、<xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> または <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> に設定された <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> を使用して <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A?displayProperty=nameWithType> を <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> に設定し、<xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> を <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected> に設定します。<xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> の値は、<xref:System.Net.HttpListener> を部分的にセキュリティを強化したモードにし、同時に <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> は完全にセキュリティを強化したモードに対応します。  
   
  許可されているサービス名の既定のリストが、<xref:System.Net.HttpListener> に登録されているプレフィックスに基づいて作成されます。 この既定のリストは、<xref:System.Net.HttpListener.DefaultServiceNames%2A> プロパティを通じて調べることができます。 このリストが包括的なものでない場合、アプリケーションは、既定のサービス名のリストの代わりに使用される <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> クラスのコンストラクターでカスタム サービス名のコレクションを指定できます。  
   
@@ -164,6 +158,5 @@ ms.lasthandoff: 08/21/2017
  これらの拡張保護機能は、サーバー アプリケーションによって、他の種類の要求での認証に使用したり、信頼されたプロキシが使用されている場合に使用することもできます。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Security.Authentication.ExtendedProtection>   
+ <xref:System.Security.Authentication.ExtendedProtection>  
  <xref:System.Security.Authentication.ExtendedProtection.Configuration>
-

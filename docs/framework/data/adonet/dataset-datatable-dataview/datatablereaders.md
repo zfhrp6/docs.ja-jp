@@ -1,35 +1,38 @@
 ---
-title: "DataTableReaders | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: DataTableReader
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 97546ae2-0e42-4d26-961d-e0b244d81ded
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: ed9094a036262bac2e101e7b4268aac2e66a0d10
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataTableReaders
+# <a name="datatablereaders"></a>DataTableReader
 <xref:System.Data.DataTableReader> は、<xref:System.Data.DataTable> または <xref:System.Data.DataSet> の内容を、読み取り専用かつ前方参照専用の 1 つ以上の結果セットとして表します。  
   
- **DataTable** から **DataTableReader** を作成すると、**DataTableReader** オブジェクトには、その作成元である **DataTable** と同一データ \(ただし、Deleted とマークされた行は除く\) を持つ結果セットが 1 つ設定されます。  各列は、元の **DataTable** と同じ順序で格納されます。  
+ 作成するときに、 **DataTableReader**から、 **DataTable**、結果の**DataTableReader**オブジェクトには、1 つを含む結果セットと同じデータが含まれています、 **DataTable**作成元であることが、削除済みとしてマークされている行は除く。 元と同じ順序で列が表示される**DataTable**です。  
   
- <xref:System.Data.DataSet.CreateDataReader%2A> の呼び出しにより **DataTableReader** を作成した場合、**DataTableReader** に複数の結果セットが含まれる場合があります。  結果は、**DataSet** オブジェクトの <xref:System.Data.DataSet.Tables%2A> コレクション内の **DataTables** と同じ順序になります。  
+ A **DataTableReader**呼び出すことによって作成された場合、複数の結果セットを含めることは<xref:System.Data.DataSet.CreateDataReader%2A>します。 結果と同じ順序では、 **Datatable**で、**データセット**オブジェクトの<xref:System.Data.DataSet.Tables%2A>コレクション。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [DataReader の作成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-a-datareader.md)  
- **DataTableReader** オブジェクトの作成方法について説明します。  
+ 作成する方法について説明します、 **DataTableReader**オブジェクト。  
   
- [DataTable の移動](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/navigating-datatables.md)  
- **Read** メソッドを使用して、**DataTableReader** の内容を取得する方法について説明します。  
+ [Datatable の移動](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/navigating-datatables.md)  
+ 使用方法について説明、**読み取り**の内容を移動する方法、 **DataTableReader**です。  
   
-## 参照  
- [ADO.NET でのデータの取得および変更](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [ADO.NET でのデータの取得および変更](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

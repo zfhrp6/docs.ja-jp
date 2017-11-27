@@ -1,0 +1,91 @@
+---
+title: "AssemblyOptions 列挙体"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: reference
+api_name: AssemblyOptions
+api_location: alink.dll
+api_type: COM
+f1_keywords: AssemblyOptions
+helpviewer_keywords:
+- Alink API, AssemblyOptions enumeration
+- AssemblyOptions enumeration
+ms.assetid: 84f83921-64cb-49e3-ac8b-22a0b77b18a8
+topic_type: apiref
+caps.latest.revision: "5"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: ccbbcabd3fbb372322ca6334f6ab6db4fdafc2f1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
+---
+# <a name="assemblyoptions-enumeration"></a>AssemblyOptions 列挙体
+アセンブリ オプションを列挙します。  
+  
+## <a name="syntax"></a>構文  
+  
+```  
+typedef enum _AssemblyOptions {  
+    optAssemTitle = 0,  
+    optAssemDescription,  
+    optAssemConfig,  
+    optAssemOS,  
+    optAssemProcessor,  
+    optAssemLocale,  
+    optAssemVersion,  
+    optAssemCompany,  
+    optAssemProduct,  
+    optAssemProductVersion,  
+    optAssemCopyright,  
+    optAssemTrademark,  
+    optAssemKeyFile,  
+    optAssemKeyName,  
+    optAssemAlgID,  
+    optAssemFlags,  
+    optAssemHalfSign,  
+    optAssemFileVersion,  
+    optAssemSatelliteVer,  
+    optLastAssemOption  
+}   AssemblyOptions;  
+```  
+  
+## <a name="fields"></a>フィールド  
+  
+|フィールド|説明|  
+|-----------|-----------------|  
+|optAssemTitle|文字列 - アセンブリのタイトルを表します。|  
+|optAssemDescription|文字列 - アセンブリの説明が含まれています。|  
+|optAssemConfig|文字列 - アセンブリの構成が含まれています。|  
+|optAssemOS|エンコードされた - 文字列:"dwOSPlatformId.dwOSMajorVersion.dwOSMinorVersion"です。|  
+|optAssemProcessor|ULONG|  
+|optAssemLocale|文字列 - アセンブリのロケールが含まれています。|  
+|optAssemVersion|エンコードされた - 文字列:"Major.Minor.Build.Revision"です。|  
+|optAssemCompany|文字列 - 会社が含まれています。|  
+|optAssemProduct|文字列 - 製品名を格納します。|  
+|optAssemProductVersion|文字列 (InformationalVersion とも呼ばれます)。|  
+|optAssemCopyright|文字列 - 著作権情報が含まれています。|  
+|optAssemTrademark|文字列 - 商標情報を格納します。|  
+|optAssemKeyFile|String (ファイル名)。|  
+|optAssemKeyName|文字列 (キー名)。|  
+|optAssemAlgID|ULONG|  
+|optAssemFlags|ULONG|  
+|optAssemHalfSign|Bool (DelaySign とも呼ばれます)。|  
+|optAssemFileVersion|文字列である"Major.Minor.Build.Revision"--ProductVersion と同じようにエンコードします。|  
+|optAssemSatelliteVer|文字列である"Major.Minor.Build.Revision"としてエンコードします。|  
+|optLastAssemOption|要素の数のカウンターです。|  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** alink.h  
+  
+ **ライブラリ**: alink.dll  
+  
+## <a name="see-also"></a>関連項目  
+ [Al.exe (アセンブリ リンカー)](../../../../docs/framework/tools/al-exe-assembly-linker.md)

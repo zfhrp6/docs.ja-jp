@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 2831d514-d9d8-4200-9192-954bb6da1126
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: bcf0e640e6b6b45ddb87070c7d6df2fa6dadc834
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-transform-incoming-claims"></a>方法: 入力方向の要求の変換
 ## <a name="applies-to"></a>対象  
@@ -51,7 +49,7 @@ ms.lasthandoff: 08/21/2017
   
 -   管理者ロールのクレームを追加することによって、受信したクレームを変換します。  
   
--   ASP.NET Web フォーム アプリケーションをテストして正しく機能することを確認します。  
+-   ASP.NET Web フォーム アプリケーションをテストして正しく機能することを確認する  
   
 ## <a name="overview"></a>概要  
  WIF が <xref:System.Security.Claims.ClaimsAuthenticationManager> という名前のクラスを公開し、これを使用してユーザーは、クレームが利用者 (RP) アプリケーションに表示される前に、クレームを変更できます。 <xref:System.Security.Claims.ClaimsAuthenticationManager> は、認証と基になるアプリケーション コードの間での問題の分離に役立ちます。 次の例は、RP で必要になる場合がある着信 <xref:System.Security.Claims.ClaimsPrincipal> 内のクレームにロールを追加する方法を示しています。  
@@ -71,13 +69,13 @@ ms.lasthandoff: 08/21/2017
   
 1.  システム特権のあるモードで管理者として Visual Studio を起動します。  
   
-2.  Visual Studio で、**[ファイル]**、**[新規作成]** の順にポイントし、**[プロジェクト]** をクリックします。  
+2.  Visual Studio で、**[ファイル]**、**[新規作成]**、**[プロジェクト]** の順にクリックします。  
   
 3.  **[新しいプロジェクト]** ウィンドウで、**[ASP.NET Web フォーム アプリケーション]** をクリックします。  
   
-4.  **[名前]** で、「`TestApp`」と入力し、**[OK]** をクリックします。  
+4.  **[名前]** で、「`TestApp`」と入力し、**[OK]** を押します。  
   
-5.  **ソリューション エクスプローラー**で **[TestApp]** プロジェクトを右クリックし、**[Identity and Access]** をクリックします。  
+5.  **ソリューション エクスプローラー**で **[TestApp]** プロジェクトを右クリックし、**[Identity and Access]** を選択します。  
   
 6.  **[Identity and Access]** ウィンドウが表示されます。 **[Providers]** で **[Test your application with the Local Development STS]** を選択し、**[Apply]** をクリックします。  
   
@@ -185,4 +183,3 @@ ms.lasthandoff: 08/21/2017
     ||||||  
     |-|-|-|-|-|  
     |LOCAL AUTHORITY|LOCAL AUTHORITY|http://schemas.microsoft.com/ws/2008/06/identity/claims/role|管理|http://www.w3.org/2001/XMLSchema#string|
-

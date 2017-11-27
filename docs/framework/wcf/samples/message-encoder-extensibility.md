@@ -1,27 +1,30 @@
 ---
-title: "メッセージ エンコーダー拡張 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "メッセージ エンコーダー拡張"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 842cccc5-4e6b-4c69-a28b-a827c6918df5
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a2374bd298a662b71331d9a62c319b8eb313b305
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# メッセージ エンコーダー拡張
+# <a name="message-encoder-extensibility"></a>メッセージ エンコーダー拡張
 このセクションには、カスタム メッセージ エンコーディングを示すサンプルが含まれています。  
   
-## このセクションの内容  
- [カスタム メッセージ エンコーダー : カスタム テキスト エンコーダー](../../../../docs/framework/wcf/samples/custom-message-encoder-custom-text-encoder.md)  
+## <a name="in-this-section"></a>このセクションの内容  
+ [カスタム メッセージ エンコーダー: カスタム テキスト エンコーダー](../../../../docs/framework/wcf/samples/custom-message-encoder-custom-text-encoder.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用してカスタム テキスト メッセージ エンコーダーを実装する方法を示します。  
   
- [カスタム メッセージ エンコーダー : 圧縮エンコーダー](../../../../docs/framework/wcf/samples/custom-message-encoder-compression-encoder.md)  
+ [カスタム メッセージ エンコーダー: 圧縮エンコーダー](../../../../docs/framework/wcf/samples/custom-message-encoder-compression-encoder.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] プラットフォームを使用するカスタム エンコーダを実装する方法を示します。

@@ -1,65 +1,73 @@
 ---
-title: "&lt;claimsAuthorizationManager&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;claimsAuthorizationManager&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9354eee3-f692-4ad6-8427-3169686b8bcc
-caps.latest.revision: 8
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 7
+caps.latest.revision: "8"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 4b4d86204d5f7225f167be125ce017488c851e98
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;claimsAuthorizationManager&gt;
-要求の承認マネージャーは、入力方向の要求を登録します。  
+# <a name="ltclaimsauthorizationmanagergt"></a>&lt;claimsAuthorizationManager&gt;
+入力方向の要求の要求の承認マネージャーを登録します。  
   
-## 構文  
+ \<system.identityModel >  
+\<identityConfiguration >  
+\<claimsAuthorizationManager >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <claimsAuthorizationManager type = xs:string>  
-      <optionalConfigurationElements />  
-    </claimsAuthorizationManager>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <claimsAuthorizationManager type = xs:string>  
+      <optionalConfigurationElements />  
+    </claimsAuthorizationManager>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|属性|Description|  
-|--------|-----------------|  
-|type|派生するカスタム型は<xref:System.Security.Claims.ClaimsAuthorizationManager>クラス。  指定する方法の詳細については、 `type`属性は、 [Custom Type References](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md#BKMK_CustomTypeReferences)。|  
+|属性|説明|  
+|---------------|-----------------|  
+|型|派生するカスタム型、<xref:System.Security.Claims.ClaimsAuthorizationManager>クラスです。 指定する方法について、`type`属性は、「[カスタム型の参照](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md)です。|  
   
-### 子要素  
- ある場合は、ない`type`属性、または、 `type`属性への参照、 <xref:System.Security.Claims.ClaimsAuthenticationManager>クラスは、 `<claimsAuthorizationManager>`要素に子要素。 ただし、クラスを派生してから<xref:System.Security.Claims.ClaimsAuthorizationManager>子の構成要素を定義することができます。  
+### <a name="child-elements"></a>子要素  
+ ある場合ありません`type`属性、または、`type`属性参照、<xref:System.Security.Claims.ClaimsAuthenticationManager>クラス、`<claimsAuthorizationManager>`要素が子要素を受け取らないです。 ただし、から派生したクラス<xref:System.Security.Claims.ClaimsAuthorizationManager>子の構成要素を定義できます。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
-|要素|Description|  
-|--------|-----------------|  
-|[\<identityConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|サービス ・ レベルの id の設定を指定します。|  
+|要素|説明|  
+|-------------|-----------------|  
+|[\<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|サービス レベルの id 設定を指定します。|  
   
-## 解説  
- によって提供される既定の動作は<xref:System.Security.Claims.ClaimsAuthorizationManager>クラスは、常に入力方向の要求を承認します。  ない場合`type`属性が指定されて場合、 `type`属性を指定します、 <xref:System.Security.Claims.ClaimsAuthorizationManager>クラス、 `<claimsAuthorizationManager>`要素には子要素があります。  指定することができます、 `type`から派生する属性は、タイプを登録するのには、 <xref:System.Security.Claims.ClaimsAuthorizationManager>カスタム動作を実装するクラス。  派生クラスは、構成要素の子要素をサポートできる、 `<claimsAuthorizationManager>`要素をオーバーライドすることで、 <xref:System.Security.Claims.ClaimsAuthorizationManager.LoadCustomConfiguration%2A>これらの要素を処理するメソッド。  子要素を定義するスキーマ クラスのデザイナーです。  
+## <a name="remarks"></a>コメント  
+ によって提供される既定の動作、<xref:System.Security.Claims.ClaimsAuthorizationManager>クラスは常に入力方向の要求を承認します。 ない場合は`type`属性が指定されて場合、または、`type`属性を指定、<xref:System.Security.Claims.ClaimsAuthorizationManager>クラス、`<claimsAuthorizationManager>`要素は子要素を取りません。 指定することができます、`type`から派生した型を登録する属性、<xref:System.Security.Claims.ClaimsAuthorizationManager>カスタム動作を実装するクラス。 派生クラスの子要素から構成をサポートできる、`<claimsAuthorizationManager>`要素をオーバーライドすることで、<xref:System.Security.Claims.ClaimsAuthorizationManager.LoadCustomConfiguration%2A>これらの要素を処理するメソッド。 子要素に定義されたスキーマは、クラスの設計者の責任です。  
   
 > [!IMPORTANT]
->  使用すると、 <xref:System.IdentityModel.Services.ClaimsPrincipalPermission>や、 <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>クラスをコードで参照されている識別情報構成でクレーム ベースのアクセス制御を提供するために、 `<federationConfiguration>`要素は、要求承認マネージャー、承認決定を行うために使用するポリシーを構成します。  パッシブ Web シナリオ、たとえば、Windows 通信基盤 \(WCF\) アプリケーションまたは Web ベースでないアプリケーションではない場合も同様です。  アプリケーションがパッシブの Web アプリケーションでない場合、 `<claimsAuthorizationManager>`要素とその子ポリシー要素が存在する場合\) 参照の id の構成をされるだけの設定を適用します。  これ以外の設定は、すべて無視されます。  詳細については、[\<federationConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md) 要素を参照してください。  
+>  使用する場合、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>または<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>コードによって参照される id の構成でクレーム ベースのアクセス制御を提供するクラス、`<federationConfiguration>`要素は、要求承認マネージャーとを使用して、ポリシーを構成します。承認を決定します。 これは、true の場合、パッシブの Web シナリオ、たとえば、Windows Communication Foundation (WCF) アプリケーションや Web ベースではないアプリケーションではないシナリオであってもです。 アプリケーションが、パッシブ Web アプリケーションではない場合、`<claimsAuthorizationManager>`要素 (とその子ポリシー要素、存在する場合) のみに適用される設定は、参照される id の構成のです。 その他のすべての設定は無視されます。 詳細については、次を参照してください。、 [ \<federationConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)要素。  
   
- この要素を設定する、 <xref:System.IdentityModel.Configuration.IdentityConfiguration.ClaimsAuthorizationManager%2A?displayProperty=fullName>プロパティ。  
+ この要素の設定、<xref:System.IdentityModel.Configuration.IdentityConfiguration.ClaimsAuthorizationManager%2A?displayProperty=nameWithType>プロパティです。  
   
-## 使用例  
- 次の XML 要求の承認の構成マネージャー リソースとアクションのペアの構成のポリシーの各リソースに対してアクションを実行するのには、リクエスターを持つ必要があります要求の論理的な組み合わせを指定しますを実装を示しています。  このポリシーを使用できるクレームの承認マネージャーを実装するコードにあります、 `ClaimsBasedAuthorization`サンプル。  
+## <a name="example"></a>例  
+ 次の XML では、それぞれ指定するブール型の組み合わせ申請元がリソースに対してアクションを実行する処理する必要をクレームのリソース操作のペアから成るポリシーを実装するマネージャー要求承認の構成を示します。 このポリシーを使用できる要求の承認マネージャーを実装するコードは含まれて、`ClaimsBasedAuthorization`サンプルです。  
   
-```  
+```xml  
 <system.identityModel>  
     <identityConfiguration>  
       <claimsAuthorizationManager type="ClaimsAuthorizationLibrary.MyClaimsAuthorizationManager, ClaimsAuthorizationLibrary">  

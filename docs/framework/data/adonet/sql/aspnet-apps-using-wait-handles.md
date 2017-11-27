@@ -1,40 +1,44 @@
 ---
-title: "待機ハンドルを使用した ASP.NET アプリケーション | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "待機ハンドルを使用した ASP.NET アプリケーション"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: f588597a-49de-4206-8463-4ef377e112ff
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 01244b06085614ea5e36bdde3e3b2fe196c0c0f9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 待機ハンドルを使用した ASP.NET アプリケーション
-アプリケーションが一度に 1 つの非同期操作しか処理しない場合は、コールバック モデルとポーリング モデルが非同期操作の処理に役立ちます。  Wait モデルを使用することで、複数の非同期操作をより柔軟に処理できます。  Wait モデルには Wait \(Any\) モデルと Wait \(All\) モデルの 2 つがあり、モデルの実装に使用される <xref:System.Threading.WaitHandle> メソッドに指定されます。  
+# <a name="aspnet-applications-using-wait-handles"></a>待機ハンドルを使用した ASP.NET アプリケーション
+アプリケーションが一度に 1 つの非同期操作しか処理しない場合は、コールバック モデルとポーリング モデルが非同期操作の処理に役立ちます。 Wait モデルを使用することで、複数の非同期操作をより柔軟に処理できます。 Wait モデルには Wait (Any) モデルと Wait (All) モデルの 2 つがあり、モデルの実装に使用される <xref:System.Threading.WaitHandle> メソッドに指定されます。  
   
- これらの Wait モデルを使用するには、<xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> メソッド、<xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A> メソッド、または <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> メソッドから返される <xref:System.IAsyncResult> オブジェクトの <xref:System.IAsyncResult.AsyncWaitHandle%2A> プロパティを使用する必要があります。  <xref:System.Threading.WaitHandle.WaitAny%2A> メソッドの場合も <xref:System.Threading.WaitHandle.WaitAll%2A> メソッドの場合も、1 つの配列を構成する複数の <xref:System.Threading.WaitHandle> オブジェクトを引数として送信する必要があります。  
+ これらの Wait モデルを使用するには、<xref:System.IAsyncResult.AsyncWaitHandle%2A> メソッド、<xref:System.IAsyncResult> メソッド、または <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> メソッドから返される <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A> オブジェクトの <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> プロパティを使用する必要があります。 <xref:System.Threading.WaitHandle.WaitAny%2A> メソッドの場合も <xref:System.Threading.WaitHandle.WaitAll%2A> メソッドの場合も、1 つの配列を構成する複数の <xref:System.Threading.WaitHandle> オブジェクトを引数として送信する必要があります。  
   
- いずれの Wait メソッドも非同期操作を監視し、操作の完了を待機します。  <xref:System.Threading.WaitHandle.WaitAny%2A> メソッドは、いずれか 1 つの操作の完了またはタイムアウトを待機します。  特定の操作が完了したことがわかれば、その結果を処理し、引き続き次の操作の完了またはタイムアウトを待機できます。  <xref:System.Threading.WaitHandle.WaitAll%2A> メソッドは、<xref:System.Threading.WaitHandle> インスタンスの配列に含まれているすべてのプロセスが完了するかタイムアウトするまで次の操作の監視を開始しません。  
+ いずれの Wait メソッドも非同期操作を監視し、操作の完了を待機します。 <xref:System.Threading.WaitHandle.WaitAny%2A> メソッドは、いずれか 1 つの操作の完了またはタイムアウトを待機します。特定の操作が完了したことがわかれば、その結果を処理し、引き続き次の操作の完了またはタイムアウトを待機できます。<xref:System.Threading.WaitHandle.WaitAll%2A> メソッドは、<xref:System.Threading.WaitHandle> インスタンスの配列に含まれているすべてのプロセスが完了するかタイムアウトするまで次の操作の監視を開始しません。  
   
- Wait モデルの利点が活かされるのは、ある程度の長さの複数の操作を別々のサーバーで実行する必要があるときや、サーバーがすべてのクエリを同時に処理できるほど強力であるときです。  次に示す例では、3 つのクエリが、さまざまな長さの WAITFOR コマンドを小規模な SELECT クエリに追加することで、長いプロセスをエミュレートします。  
+ Wait モデルの利点が活かされるのは、ある程度の長さの複数の操作を別々のサーバーで実行する必要があるときや、サーバーがすべてのクエリを同時に処理できるほど強力であるときです。 次に示す例では、3 つのクエリが、さまざまな長さの WAITFOR コマンドを小規模な SELECT クエリに追加することで、長いプロセスをエミュレートします。  
   
-## 例 : Wait \(Any\) モデル  
- 次の例は Wait \(Any\) モデルを示しています。  3 つの非同期プロセスが開始されると、<xref:System.Threading.WaitHandle.WaitAny%2A> メソッドが呼び出され、3 つのプロセスのいずれかの完了を待機します。  プロセスが 1 つ完了するたびに <xref:System.Data.SqlClient.SqlCommand.EndExecuteReader%2A> メソッドが呼び出され、その結果生成される <xref:System.Data.SqlClient.SqlDataReader> オブジェクトが読み込まれます。  実際のアプリケーションでは、この時点で、<xref:System.Data.SqlClient.SqlDataReader> を使用してページの一部にデータを挿入することが多いでしょう。  この単純な例では、プロセスに対応するテキスト ボックスにプロセスが完了した時刻が追加されます。  テキスト ボックスに表示される時刻を見ると、1 つのプロセスが完了するたびにコードが実行されることがわかります。  
+## <a name="example-wait-any-model"></a>例 : Wait (Any) モデル  
+ 次の例は Wait (Any) モデルを示しています。 3 つの非同期プロセスが開始されると、<xref:System.Threading.WaitHandle.WaitAny%2A> メソッドが呼び出され、3 つのプロセスのいずれかの完了を待機します。 プロセスが 1 つ完了するたびに <xref:System.Data.SqlClient.SqlCommand.EndExecuteReader%2A> メソッドが呼び出され、その結果生成される <xref:System.Data.SqlClient.SqlDataReader> オブジェクトが読み込まれます。 実際のアプリケーションでは、この時点で、<xref:System.Data.SqlClient.SqlDataReader> を使用してページの一部にデータを挿入することが多いでしょう。 この単純な例では、プロセスに対応するテキスト ボックスにプロセスが完了した時刻が追加されます。 テキスト ボックスに表示される時刻を見ると、1 つのプロセスが完了するたびにコードが実行されることがわかります。  
   
- この例を設定するには、新しい ASP.NET Web Site プロジェクトを作成します。  1 つの <xref:System.Web.UI.WebControls.Button> コントロールと 4 つの <xref:System.Web.UI.WebControls.TextBox> コントロールをページに配置します \(コントロールの名前は既定の名前のままにします\)。  
+ この例を設定するには、新しい ASP.NET Web Site プロジェクトを作成します。 1 つの <xref:System.Web.UI.WebControls.Button> コントロールと 4 つの <xref:System.Web.UI.WebControls.TextBox> コントロールをページに配置します (コントロールの名前は既定の名前のままにします)。  
   
  お使いの環境に応じて接続文字列を変更し、次のコードをフォームのクラスに追加します。  
   
- \[Visual Basic\]  
-  
-```  
+```vb  
 ' Add these to the top of the class  
 Imports System  
 Imports System.Data  
@@ -165,9 +169,7 @@ Imports System.Threading
     End Sub  
 ```  
   
- \[C\#\]  
-  
-```  
+```csharp  
 // Add the following using statements, if they are not already there.  
 using System;  
 using System.Data;  
@@ -320,18 +322,16 @@ void Button1_Click(object sender, System.EventArgs e)
 }  
 ```  
   
-## 例 : Wait \(All\) モデル  
- 次の例は Wait \(All\) モデルを示しています。  3 つの非同期プロセスが開始されると、<xref:System.Threading.WaitHandle.WaitAll%2A> メソッドが呼び出され、プロセスの完了を待機します。  
+## <a name="example-wait-all-model"></a>例 : Wait (All) モデル  
+ 次の例は Wait (All) モデルを示しています。 3 つの非同期プロセスが開始されると、<xref:System.Threading.WaitHandle.WaitAll%2A> メソッドが呼び出され、プロセスの完了を待機します。  
   
- Wait \(Any\) モデルの例と同様に、プロセスに対応するテキスト ボックスにプロセスが完了した時刻が追加されます。  テキスト ボックスに表示される時刻を見ると、すべてのプロセスが完了した後で <xref:System.Threading.WaitHandle.WaitAny%2A> メソッドに続くコードが実行されることがわかります。  
+ Wait (Any) モデルの例と同様に、プロセスに対応するテキスト ボックスにプロセスが完了した時刻が追加されます。 テキスト ボックスに表示される時刻を見ると、すべてのプロセスが完了した後で <xref:System.Threading.WaitHandle.WaitAny%2A> メソッドに続くコードが実行されることがわかります。  
   
- この例を設定するには、新しい ASP.NET Web Site プロジェクトを作成します。  1 つの <xref:System.Web.UI.WebControls.Button> コントロールと 4 つの <xref:System.Web.UI.WebControls.TextBox> コントロールをページに配置します \(コントロールの名前は既定の名前のままにします\)。  
+ この例を設定するには、新しい ASP.NET Web Site プロジェクトを作成します。 1 つの <xref:System.Web.UI.WebControls.Button> コントロールと 4 つの <xref:System.Web.UI.WebControls.TextBox> コントロールをページに配置します (コントロールの名前は既定の名前のままにします)。  
   
  お使いの環境に応じて接続文字列を変更し、次のコードをフォームのクラスに追加します。  
   
- \[Visual Basic\]  
-  
-```  
+```vb  
 ' Add these to the top of the class  
 Imports System  
 Imports System.Data  
@@ -452,9 +452,7 @@ Imports System.Threading
     End Sub  
 ```  
   
- \[C\#\]  
-  
-```  
+```csharp  
 // Add the following using statements, if they are not already there.  
 using System;  
 using System.Data;  
@@ -591,6 +589,6 @@ void Button1_Click(object sender, System.EventArgs e)
 }  
 ```  
   
-## 参照  
- [非同期操作](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [非同期操作](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

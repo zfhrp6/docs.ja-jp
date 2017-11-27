@@ -1,29 +1,35 @@
 ---
-title: "DataSet と XmlDataDocument の同期 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DataSet と XmlDataDocument の同期"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 0ce3793d-54b2-47e4-8cf7-b0591cc4dd21
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 923a6b6cf1523c8a11cb509679443b9658e07ce5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# DataSet と XmlDataDocument の同期
-ADO.NET の <xref:System.Data.DataSet> には、データのリレーショナル表現があります。  階層データにアクセスするには、.NET Framework で使用できる XML クラスを使用できます。  従来、この 2 つのデータ表現は個別に使用されていました。  .NET Framework では、データのリレーショナル表現と階層表現の両方へリアルタイムに同期的な方法でアクセスできます。リレーショナル表現にアクセスするには **DataSet** オブジェクトを使用します。階層表現にアクセスするには <xref:System.Xml.XmlDataDocument> オブジェクトを使用します。  
+# <a name="dataset-and-xmldatadocument-synchronization"></a>DataSet と XmlDataDocument の同期
+ADO.NET の <xref:System.Data.DataSet> には、データのリレーショナル表現があります。 階層データにアクセスするには、.NET Framework で使用できる XML クラスを使用できます。 従来、この 2 つのデータ表現は個別に使用されていました。 ただし、.NET Framework によりを使用してデータのリレーショナルおよび階層表現の両方へリアルタイムに同期のアクセス、**データセット**オブジェクトおよび<xref:System.Xml.XmlDataDocument>オブジェクト、それぞれします。  
   
- **DataSet** を **XmlDataDocument** と同期するときには、**DataSet** と **XmlDataDocument** で 1 つのデータ セットが使用されます。  つまり **DataSet** が変更されると、その変更内容が **XmlDataDocument** に反映されます。この逆の反映も行われます。  **DataSet** と **XmlDataDocument** の間のリレーションシップにより、1 つのアプリケーションから 1 つのデータ セットを使用して、**DataSet** の周囲に構築されたサービス スイート全体 \(Web フォーム、Windows フォーム コントロール、Visual Studio、.NET デザイナーなど\) にアクセスしたり、XML サービス スイート \(XSL \(Extensible Stylesheet Language\)、XSLT \(XSL Transformations\)、XPath \(XML Path Language\) など\) にアクセスしたりできる優れた柔軟性を実現します。  アプリケーションでアクセス対象とするサービス セットを選択する必要はありません。どちらのサービス セットにもアクセスできます。  
+ ときに、**データセット**と同期されて、 **XmlDataDocument**、両方のオブジェクトは単一のデータのセットを使用します。 つまり、変更する場合、**データセット**で、変更が反映されます、 **XmlDataDocument**、およびその逆です。 間のリレーションシップ、**データセット**と**XmlDataDocument**の構築されたサービス スイート全体にアクセスする、データの 1 つのセットを使用して、1 つのアプリケーションを許可することで優れた柔軟性を作成囲む、**データセット**(Web フォームや Windows フォーム コントロールの Visual Studio .NET デザイナーなど)、Extensible Stylesheet Language (XSL)、XSL Transformations (XSLT)、および XML パスを含む XML サービス スイートのだけでなく言語 (XPath)。 アプリケーションでアクセス対象とするサービス セットを選択する必要はありません。どちらのサービス セットにもアクセスできます。  
   
- **DataSet** を **XmlDataDocument** と同期する方法は数種類あります。  次の操作を行うことができます。  
+ 同期するいくつかの方法、**データセット**で、 **XmlDataDocument**です。 次の操作を行うことができます。  
   
--   **DataSet** にスキーマ \(リレーショナル構造\) とデータを読み込み、この **DataSet** を新しい **XmlDataDocument** と同期します。  この方法では、既存のリレーショナル データの階層ビューが作成されます。  次に例を示します。  
+-   追加、**データセット**スキーマ (つまり、リレーショナル構造) とデータを使用し、それを新しい同期**XmlDataDocument**です。 この方法では、既存のリレーショナル データの階層ビューが作成されます。 例:  
   
     ```vb  
     Dim dataSet As DataSet = New DataSet  
@@ -41,11 +47,11 @@ ADO.NET の <xref:System.Data.DataSet> には、データのリレーショナ�
     XmlDataDocument xmlDoc = new XmlDataDocument(dataSet);  
     ```  
   
--   **DataSet** にスキーマだけを読み込み、この **DataSet** \(厳密に型指定された **DataSet** など\) を **XmlDataDocument** と同期します。次に、XML ドキュメントから **XmlDataDocument** を読み込みます。  この方法では、既存の階層データのリレーショナル ビューが作成されます。  **DataSet** スキーマのテーブル名と列名が、同期をとる XML 要素の名前と一致している必要があります。  この名前の一致では、大文字と小文字が区別されます。  
+-   追加、**データセット**スキーマのみを使用 (厳密に型指定されたなど**データセット**)、同期で、 **XmlDataDocument**、し、ロード、 **XmlDataDocument** XML ドキュメントからです。 この方法では、既存の階層データのリレーショナル ビューが作成されます。 テーブル名と列名、**データセット**スキーマは、同期をとる XML 要素の名前と一致する必要があります。 この名前の一致では、大文字と小文字が区別されます。  
   
-     **DataSet** のスキーマが一致する必要があるのは、リレーショナル ビューで公開する XML 要素だけです。  つまり、このドキュメント上に非常に大きい XML ドキュメントと非常に小さなリレーショナル ウィンドウを作成できます。  **DataSet** が XML ドキュメントの一部だけを公開する場合でも、**XmlDataDocument** は XML ドキュメント全体を保持します。  この説明に関する詳しい例については、「[Dataset と XmlDataDocument の同期](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/synchronizing-a-dataset-with-an-xmldatadocument.md)」を参照してください。  
+     なおのスキーマ、**データセット**のみ、リレーショナル ビューで公開する、XML 要素と一致する必要があります。 つまり、このドキュメント上に非常に大きい XML ドキュメントと非常に小さなリレーショナル ウィンドウを作成できます。 **XmlDataDocument**いなくても、XML ドキュメント全体を保持、**データセット**ことの一部を公開するだけです。 (これの詳細な例についてを参照してください[DataSet と XmlDataDocument の同期](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/synchronizing-a-dataset-with-an-xmldatadocument.md)。)。  
   
-     **DataSet** を作成してそのスキーマを読み込み、**XmlDataDocument** と同期する手順を示すコード サンプルを次に示します。  **DataSet** スキーマが一致する必要があるのは、**XmlDataDocument** の中で **DataSet** を使用して公開する要素だけです。  
+     次のコード例を作成するための手順を示しています、**データセット**してそのスキーマを読み込みと同期して、 **XmlDataDocument**です。 なお、**データセット**スキーマだけの要素を照合する必要があります、 **XmlDataDocument**を使用して公開する、**データセット**です。  
   
     ```vb  
     Dim dataSet As DataSet = New DataSet  
@@ -65,11 +71,11 @@ ADO.NET の <xref:System.Data.DataSet> には、データのリレーショナ�
     xmlDoc.Load("XMLDocument.xml");  
     ```  
   
-     データが含まれている **DataSet** を **XmlDataDocument** と同期する場合には、**XmlDataDocument** を読み込むことはできません。  読み込もうとすると例外がスローされます。  
+     読み込むことはできません、 **XmlDataDocument**と同期されている場合、**データセット**データが含まれます。 読み込もうとすると例外がスローされます。  
   
--   新しい **XmlDataDocument** を作成して、XML ドキュメントからこの **XmlDataDocument** を読み込みます。次に、**XmlDataDocument** の **DataSet** プロパティを使用してデータのリレーショナル ビューにアクセスします。  **DataSet** を使用して **XmlDataDocument** のデータを表示するには、**DataSet** スキーマを設定する必要があります。  この場合も、**DataSet** スキーマのテーブル名と列名が、同期をとる XML 要素の名前と一致している必要があります。  この名前の一致では、大文字と小文字が区別されます。  
+-   新規作成**XmlDataDocument** 、XML ドキュメントからそれを読み込むしを使用して、データのリレーショナル ビューにアクセスし、**データセット**のプロパティ、 **XmlDataDocument**です。 スキーマを設定する必要があります、**データセット**内のデータのいずれかを表示する前に、 **XmlDataDocument**を使用して、**データセット**です。 ここでも、テーブル名と列名が、**データセット**スキーマは、同期をとる XML 要素の名前と一致する必要があります。 この名前の一致では、大文字と小文字が区別されます。  
   
-     **XmlDataDocument** のデータのリレーショナル ビューにアクセスする方法を次のコード サンプルに示します。  
+     次のコード例は、内のデータのリレーショナル ビューにアクセスする方法を示しています、 **XmlDataDocument**です。  
   
     ```vb  
     Dim xmlDoc As XmlDataDocument = New XmlDataDocument  
@@ -78,7 +84,6 @@ ADO.NET の <xref:System.Data.DataSet> には、データのリレーショナ�
     ' Add code here to create the schema of the DataSet to view the data.  
   
     xmlDoc.Load("XMLDocument.xml")  
-  
     ```  
   
     ```csharp  
@@ -90,32 +95,32 @@ ADO.NET の <xref:System.Data.DataSet> には、データのリレーショナ�
     xmlDoc.Load("XMLDocument.xml");  
     ```  
   
- **DataSet** を **XmlDataDocument** と同期するもう 1 つの利点は、XML ドキュメントが完全に保持されることです。  **ReadXml** を使用して XML ドキュメントのデータを **DataSet** に格納すると、**WriteXml** を使用してデータが XML ドキュメントとして書き込まれるときに、この XML ドキュメントと元の XML ドキュメントが大幅に異なる場合があります。  これは、**DataSet** では XML ドキュメントから読み込んだ空白などの書式設定や、要素順序などの階層情報が維持されないためです。  **DataSet** には、XML ドキュメントで無視された要素も含まれていません。これは、これらの要素が **Dataset** のスキーマに一致しないためです。  **XmlDataDocument** を **DataSet** と同期することで、元の XML ドキュメントの書式設定要素や階層要素の構造が **XmlDataDocument** で維持され、**DataSet** には **DataSet** に適切なデータおよびスキーマ情報だけが含まれます。  
+ 同期するもう 1 つの利点、 **XmlDataDocument**で、**データセット**XML ドキュメントの忠実性が維持されることができます。 場合、**データセット**による XML ドキュメントから読み込んだ**ReadXml**として XML ドキュメントを使用して、バックアップ データが書き込まれるときに、 **WriteXml**から大幅に異なる場合があります、元の XML ドキュメントです。 これは、ため、**データセット**空白、または XML ドキュメントからの要素の順序などの階層情報などの書式設定を保持しません。 **データセット**もこれらのスキーマが一致しないために無視された XML ドキュメントから要素を含んでいない、**データセット**です。 同期中、 **XmlDataDocument**で、**データセット**で保持するのには、元の XML ドキュメントの書式設定や階層要素の構造、 **XmlDataDocument**中、**データセット**データとスキーマの適切な情報だけを含む、**データセット**です。  
   
- **DataSet** を **XmlDataDocument** と同期する場合、<xref:System.Data.DataRelation> オブジェクトが入れ子かどうかによって同期結果が異なります。  詳細については、「[DataRelation の入れ子化](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md)」を参照してください。  
+ 同期するときに、**データセット**で、 **XmlDataDocument**、かどうかによって結果が異なる場合があります、<xref:System.Data.DataRelation>オブジェクトが入れ子になった。 詳細については、次を参照してください。 [Datarelation の入れ子](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md)です。  
   
-## このセクションの内容  
- [Dataset と XmlDataDocument の同期](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/synchronizing-a-dataset-with-an-xmldatadocument.md)  
- 最小限のスキーマが含まれており、厳密に型指定された **DataSet** を **XmlDataDocument** と同期させるサンプルを示します。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [DataSet と XmlDataDocument の同期](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/synchronizing-a-dataset-with-an-xmldatadocument.md)  
+ 厳密に型指定の同期を示しています**データセット**、最小限のスキーマで、 **XmlDataDocument**です。  
   
  [DataSet に対する XPath クエリの実行](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/performing-an-xpath-query-on-a-dataset.md)  
- **DataSet** の内容に対する XPath クエリの実行のサンプルを示します。  
+ 内容に対する XPath クエリの実行を示しています、**データセット**です。  
   
- [DataSet への XSLT 変換の適用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/applying-an-xslt-transform-to-a-dataset.md)  
- **DataSet** の内容に対する XSLT 変換の適用サンプルを示します。  
+ [XSLT 変換をデータセットに適用します。](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/applying-an-xslt-transform-to-a-dataset.md)  
+ 内容に対する XSLT 変換の適用を示しています、**データセット**です。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [DataSet での XML の使用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
- **DataSet** がデータ ソースとして XML と対話する方法を、**DataSet** の内容を XML データとして読み込んで永続化する方法と共に説明します。  
+ について説明しますが、どのように**データセット**読み込みの内容を保持するなど、データ ソースとして XML と対話、**データセット**XML データとして。  
   
- [DataRelation の入れ子化](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md)  
- **DataSet** の内容を XML データとして表現する場合における、入れ子になった **DataRelation** オブジェクトの重要性について説明します。また、このようなリレーションを作成する方法について説明します。  
+ [Datarelation の入れ子化](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md)  
+ 重要性について説明入れ子になった**DataRelation**オブジェクトの内容を表す時に、**データセット**XML データとしてこれらのリレーションを作成する方法について説明します。  
   
- [DataSets、DataTables、および DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- **DataSet** について説明し、**DataSet** を使用したアプリケーション データの管理方法と、**DataSet** を使用したデータ ソース \(リレーショナル データベースや XML など\) との対話方法について説明します。  
+ [DataSet、DataTable、および DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ について説明します、**データセット**およびアプリケーション データを管理し、リレーショナル データベースや XML などのデータ ソースと対話する方法です。  
   
- [XmlDataDocument クラス](frlrfSystemXmlXmlDataDocumentClassTopic)  
- **XmlDataDocument** クラスに関するリファレンス情報が収録されています。  
+ <xref:System.Xml.XmlDataDocument>  
+ に関するリファレンス情報を含む、 **XmlDataDocument**クラスです。  
   
-## 参照  
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

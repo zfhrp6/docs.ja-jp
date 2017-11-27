@@ -1,34 +1,34 @@
 ---
-title: "基本的な WCF プログラミング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "基本的なプログラミング [WCF]"
-  - "WCF [WCF], 基本的なプログラミング"
-  - "WCF [WCF], プログラミング"
-  - "Windows Communication Foundation [WCF], 基本的なプログラミング"
-  - "Windows Communication Foundation [WCF], プログラミング"
+title: "基本的な WCF プログラミング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- basic programming [WCF]
+- WCF [WCF], basic programming
+- WCF [WCF], programming
+- Windows Communication Foundation [WCF], basic programming
+- Windows Communication Foundation [WCF], programming
 ms.assetid: 3ae3d498-f43c-4ecc-8cc0-6cbe36b62593
-caps.latest.revision: 31
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 31
+caps.latest.revision: "31"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: fa43705fd20a60512ca4c460bb3048220aa1e193
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 基本的な WCF プログラミング
+# <a name="basic-wcf-programming"></a>基本的な WCF プログラミング
 ここでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションを作成するときの基本を示します。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [基本的なプログラミング ライフサイクル](../../../docs/framework/wcf/basic-programming-lifecycle.md)  
  設計、ビルド、展開から成る [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスおよびクライアント アプリケーションのライフサイクルについて説明します。  
   
@@ -53,14 +53,14 @@ caps.handback.revision: 31
  [WCF と ASP.NET Web API](../../../docs/framework/wcf/wcf-and-aspnet-web-api.md)  
  2 つのテクノロジ、そのテクノロジの相互関係、およびそのテクノロジを使用するタイミングについて説明します。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.ServiceModel>  
   
  <xref:System.ServiceModel.Channels>  
   
  <xref:System.ServiceModel.Description>  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [システム要件](../../../docs/framework/wcf/wcf-system-requirements.md)  
   
  [概念](../../../docs/framework/wcf/conceptual-overview.md)  
@@ -71,10 +71,10 @@ caps.handback.revision: 31
   
  [Windows Communication Foundation ツール](../../../docs/framework/wcf/tools.md)  
   
- [Windows Communication Foundation Samples](http://msdn.microsoft.com/ja-jp/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)  
+ [Windows Communication Foundation サンプル](http://msdn.microsoft.com/en-us/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)  
   
- [概要](../../../docs/framework/wcf/samples/getting-started-sample.md)  
+ [はじめに](../../../docs/framework/wcf/samples/getting-started-sample.md)  
   
- [インライン コードを使用した IIS ホスティング](../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md)  
+ [IIS ホストのインライン コードを使用します。](../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md)  
   
- [自己ホスト](../../../docs/framework/wcf/samples/self-host.md)
+ [自己ホストします。](../../../docs/framework/wcf/samples/self-host.md)

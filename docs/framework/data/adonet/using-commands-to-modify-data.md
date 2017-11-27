@@ -1,36 +1,39 @@
 ---
-title: "コマンドを使用したデータ変更 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "コマンドを使用したデータ変更"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f4160389-b9ff-4b74-b655-437c76dcd586
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 853f8e4e75df3fffad4a2d5ecd4f7ae21b5d674f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# コマンドを使用したデータ変更
-.NET Framework データ プロバイダーを使用すると、ストアド プロシージャまたはデータ定義言語のステートメント \(たとえば、CREATE TABLE、ALTER COLUMN など\) を実行して、データベースやカタログに対するスキーマ操作を実行できます。  これらのコマンドはクエリとは異なり、行を返さないため、**Command** オブジェクトでは **ExecuteNonQuery** が提供されています。  
+# <a name="using-commands-to-modify-data"></a>コマンドを使用したデータ変更
+.NET Framework データ プロバイダーを使用すると、ストアド プロシージャまたはデータ定義言語のステートメント (たとえば、CREATE TABLE、ALTER COLUMN など) を実行して、データベースやカタログに対するスキーマ操作を実行できます。 クエリとは、これらのコマンドは行を返さないため、**コマンド**オブジェクトを提供、 **ExecuteNonQuery**それらを処理します。  
   
- **ExecuteNonQuery** メソッドを使用すると、スキーマを変更できるだけでなく、データを変更するが行を返さない INSERT、UPDATE、DELETE などの SQL ステートメントも処理できます。  
+ 使用するだけでなく**ExecuteNonQuery**スキーマを変更するには、データを変更するが、INSERT、UPDATE などの行を返すなく、削除のプロセスの SQL ステートメントには、このメソッドも使用できます。  
   
- **ExecuteNonQuery** メソッドでは行は返されませんが、**Command** オブジェクトの **Parameters** コレクションを通じて入力パラメーター、出力パラメーター、および戻り値を受け渡しできます。  
+ 行は返されませんが、 **ExecuteNonQuery**メソッド、入力と出力パラメーターと戻り値を渡すし、を介して返されます、**パラメーター**のコレクション、**コマンド**オブジェクト。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [データ ソースのデータの更新](../../../../docs/framework/data/adonet/updating-data-in-a-data-source.md)  
  データベース内のデータを変更するコマンドまたはストアド プロシージャを実行する方法について説明します。  
   
- [カタログ操作の実行](../../../../docs/framework/data/adonet/performing-catalog-operations.md)  
+ [カタログ操作を実行します。](../../../../docs/framework/data/adonet/performing-catalog-operations.md)  
  データベース スキーマを変更するコマンドを実行する方法について説明します。  
   
-## 参照  
- [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)   
- [コマンドとパラメーター](../../../../docs/framework/data/adonet/commands-and-parameters.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ [コマンドおよびパラメーター](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

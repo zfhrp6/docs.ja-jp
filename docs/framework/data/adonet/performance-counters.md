@@ -1,52 +1,58 @@
 ---
-title: "ADO.NET でのパフォーマンス カウンター | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ADO.NET でのパフォーマンス カウンター"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 0b121b71-78f8-4ae2-9aa1-0b2e15778e57
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 18403ac8237b1e129ec07e0271ff75194d944855
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ADO.NET でのパフォーマンス カウンター
-ADO.NET 2.0 では、<xref:System.Data.SqlClient> と <xref:System.Data.OracleClient> の両方をサポートする新しいパフォーマンス カウンターが導入されました。  以前のバージョンの ADO.NET で利用されていた <xref:System.Data.SqlClient> のパフォーマンス カウンターは廃止され、このトピックで説明する新しいパフォーマンス カウンターに置き換えられました。  ADO.NET のパフォーマンス カウンターを使用することで、アプリケーションやそれによって使用される接続リソースのステータスを監視できます。  パフォーマンス カウンターは、Windows パフォーマンス モニターを使って監視できるほか、<xref:System.Diagnostics> 名前空間の <xref:System.Diagnostics.PerformanceCounter> クラスを使用することでプログラムから監視することもできます。  
+# <a name="performance-counters-in-adonet"></a>ADO.NET でのパフォーマンス カウンター
+ADO.NET 2.0 では、<xref:System.Data.SqlClient> と <xref:System.Data.OracleClient> の両方をサポートする新しいパフォーマンス カウンターが導入されました。 以前のバージョンの ADO.NET で利用されていた <xref:System.Data.SqlClient> のパフォーマンス カウンターは廃止され、このトピックで説明する新しいパフォーマンス カウンターに置き換えられました。 ADO.NET のパフォーマンス カウンターを使用することで、アプリケーションやそれによって使用される接続リソースのステータスを監視できます。 パフォーマンス カウンターは、Windows パフォーマンス モニターを使って監視できるほか、<xref:System.Diagnostics.PerformanceCounter> 名前空間の <xref:System.Diagnostics> クラスを使用することでプログラムから監視することもできます。  
   
-## 利用可能なパフォーマンス カウンター  
- 次の表に示したように、<xref:System.Data.SqlClient> および <xref:System.Data.OracleClient> には現在、14 種類のパフォーマンス カウンターが存在します。  個々のカウンターの名前は、Microsoft .NET Framework の地域別バージョン全体でローカライズされているわけではないことに注意してください。  
+## <a name="available-performance-counters"></a>利用可能なパフォーマンス カウンター  
+ 次の表に示したように、<xref:System.Data.SqlClient> および <xref:System.Data.OracleClient> には現在、14 種類のパフォーマンス カウンターが存在します。 個々のカウンターの名前は、Microsoft .NET Framework の地域別バージョン全体でローカライズされているわけではないことに注意してください。  
   
 |パフォーマンス カウンター|説明|  
-|-------------------|--------|  
+|-------------------------|-----------------|  
 |`HardConnectsPerSecond`|データベース サーバーに対する 1 秒あたりの接続数。|  
 |`HardDisconnectsPerSecond`|データベース サーバーに対する 1 秒あたりの切断数。|  
-|`NumberOfActiveConnectionPoolGroups`|アクティブな一意の接続プール グループの数。  このカウンターは、AppDomain に見つかった一意の接続文字列数によって制御されます。|  
+|`NumberOfActiveConnectionPoolGroups`|アクティブな一意の接続プール グループの数。 このカウンターは、AppDomain に見つかった一意の接続文字列数によって制御されます。|  
 |`NumberOfActiveConnectionPools`|接続プールの合計数。|  
-|`NumberOfActiveConnections`|現在使用中のアクティブな接続の数。 **Note:**  既定では、このパフォーマンス カウンターが無効にされています。  このパフォーマンス カウンターを有効にするには、「[既定ではオフになっているカウンターのアクティブ化](#ActivatingOffByDefault)」を参照してください。|  
-|`NumberOfFreeConnections`|接続プール内の利用可能な接続数。 **Note:**  既定では、このパフォーマンス カウンターが無効にされています。  このパフォーマンス カウンターを有効にするには、「[既定ではオフになっているカウンターのアクティブ化](#ActivatingOffByDefault)」を参照してください。|  
-|`NumberOfInactiveConnectionPoolGroups`|排除対象としてマークされた一意の接続プール グループの数。  このカウンターは、AppDomain に見つかった一意の接続文字列数によって制御されます。|  
+|`NumberOfActiveConnections`|現在使用中のアクティブな接続の数。 **注:**既定でこのパフォーマンス カウンターが有効にできません。 このパフォーマンス カウンターを有効にするを参照してください。[既定ではオフになってカウンターのアクティブ化](#ActivatingOffByDefault)です。|  
+|`NumberOfFreeConnections`|接続プール内の利用可能な接続数。 **注:**既定でこのパフォーマンス カウンターが有効にできません。 このパフォーマンス カウンターを有効にするを参照してください。[既定ではオフになってカウンターのアクティブ化](#ActivatingOffByDefault)です。|  
+|`NumberOfInactiveConnectionPoolGroups`|排除対象としてマークされた一意の接続プール グループの数。 このカウンターは、AppDomain に見つかった一意の接続文字列数によって制御されます。|  
 |`NumberOfInactiveConnectionPools`|最近のアクティビティが存在せず、破棄待ち状態となっている、アクティブでない接続プールの数。|  
 |`NumberOfNonPooledConnections`|プールされていないアクティブな接続の数。|  
 |`NumberOfPooledConnections`|接続プール インフラストラクチャによって管理されているアクティブな接続の数。|  
-|`NumberOfReclaimedConnections`|アプリケーションによって `Close` も `Dispose` も呼び出されなかった場合に、ガベージ コレクションによって回収された接続の数。  接続を明示的に閉じるか破棄しないと、パフォーマンスが低下します。|  
-|`NumberOfStasisConnections`|現在アクションの完了を待っている \(そのためにアプリケーションからは使用できない\) 接続の数。|  
-|`SoftConnectsPerSecond`|接続プールからプルされているアクティブな接続の数。 **Note:**  既定では、このパフォーマンス カウンターが無効にされています。  このパフォーマンス カウンターを有効にするには、「[既定ではオフになっているカウンターのアクティブ化](#ActivatingOffByDefault)」を参照してください。|  
-|`SoftDisconnectsPerSecond`|接続プールに戻されているアクティブな接続の数。 **Note:**  既定では、このパフォーマンス カウンターが無効にされています。  このパフォーマンス カウンターを有効にするには、「[既定ではオフになっているカウンターのアクティブ化](#ActivatingOffByDefault)」を参照してください。|  
+|`NumberOfReclaimedConnections`|アプリケーションによって `Close` も `Dispose` も呼び出されなかった場合に、ガベージ コレクションによって回収された接続の数。 接続を明示的に閉じるか破棄しないと、パフォーマンスが低下します。|  
+|`NumberOfStasisConnections`|現在アクションの完了を待っている (そのためにアプリケーションからは使用できない) 接続の数。|  
+|`SoftConnectsPerSecond`|接続プールからプルされているアクティブな接続の数。 **注:**既定でこのパフォーマンス カウンターが有効にできません。 このパフォーマンス カウンターを有効にするを参照してください。[既定ではオフになってカウンターのアクティブ化](#ActivatingOffByDefault)です。|  
+|`SoftDisconnectsPerSecond`|接続プールに戻されているアクティブな接続の数。 **注:**既定でこのパフォーマンス カウンターが有効にできません。 このパフォーマンス カウンターを有効にするを参照してください。[既定ではオフになってカウンターのアクティブ化](#ActivatingOffByDefault)です。|  
   
-### 接続プール グループと接続プール  
- Windows 認証 \(統合セキュリティ\) を使用している場合、`NumberOfActiveConnectionPoolGroups` と `NumberOfActiveConnectionPools` の両方のパフォーマンス カウンターを監視する必要があります。  なぜなら、接続プール グループは接続文字列単位でマップされるためです。  統合セキュリティを使用した場合、接続文字列にマップされた接続プールの他に、個々の Windows ID 用に別々のプールが作成されます。  たとえば、同じ AppDomain に属する Fred と Julie が、どちらも `"Data Source=MySqlServer;Integrated Security=true"` という接続文字列を使用した場合、その接続文字列に対応した接続プール グループが作成され、それに加えて、2 つのプール \(Fred 用と Julie 用\) が作成されます。  John と Martha がまったく同じ SQL Server ログインを持った接続文字列 `"Data Source=MySqlServer;User Id=lowPrivUser;Password=Strong?Password"` を使用した場合は、**lowPrivUser** の ID に対して単一のプールが作成されます。  
+### <a name="connection-pool-groups-and-connection-pools"></a>接続プール グループと接続プール  
+ Windows 認証 (統合セキュリティ) を使用している場合、`NumberOfActiveConnectionPoolGroups` と `NumberOfActiveConnectionPools` の両方のパフォーマンス カウンターを監視する必要があります。 なぜなら、接続プール グループは接続文字列単位でマップされるためです。 統合セキュリティを使用した場合、接続文字列にマップされた接続プールの他に、個々の Windows ID 用に別々のプールが作成されます。 たとえば、同じ AppDomain に属する Fred と Julie が、どちらも `"Data Source=MySqlServer;Integrated Security=true"` という接続文字列を使用した場合、その接続文字列に対応した接続プール グループが作成され、それに加えて、2 つのプール (Fred 用と Julie 用) が作成されます。 John と Martha が同一の SQL Server ログインで接続文字列を使用する場合`"Data Source=MySqlServer;User Id=lowPrivUser;Password=Strong?Password"`の 1 つのプールのみが作成され、 **lowPrivUser**の id。  
   
 <a name="ActivatingOffByDefault"></a>   
-### 既定ではオフになっているカウンターのアクティブ化  
- `NumberOfFreeConnections`、`NumberOfActiveConnections`、`SoftDisconnectsPerSecond`、`SoftConnectsPerSecond` の各パフォーマンス カウンターは、既定ではオフになっています。  有効にするには、アプリケーションの構成ファイルに次の情報を追加します。  
+### <a name="activating-off-by-default-counters"></a>既定ではオフになっているカウンターのアクティブ化  
+ `NumberOfFreeConnections`、`NumberOfActiveConnections`、`SoftDisconnectsPerSecond`、`SoftConnectsPerSecond` の各パフォーマンス カウンターは、既定ではオフになっています。 有効にするには、アプリケーションの構成ファイルに次の情報を追加します。  
   
-```  
+```xml  
 <system.diagnostics>  
   <switches>  
     <add name="ConnectionPoolPerformanceCounterDetail"  
@@ -55,13 +61,13 @@ ADO.NET 2.0 では、<xref:System.Data.SqlClient> と <xref:System.Data.OracleCl
 </system.diagnostics>  
 ```  
   
-## パフォーマンス カウンターの値の取得  
- 次のコンソール アプリケーションは、アプリケーションでパフォーマンス カウンターの値を取得する方法を示しています。  すべての ADO.NET パフォーマンス カウンターの情報を取得できるように、接続を開いてアクティブにする必要があります。  
+## <a name="retrieving-performance-counter-values"></a>パフォーマンス カウンターの値の取得  
+ 次のコンソール アプリケーションは、アプリケーションでパフォーマンス カウンターの値を取得する方法を示しています。 すべての ADO.NET パフォーマンス カウンターの情報を取得できるように、接続を開いてアクティブにする必要があります。  
   
 > [!NOTE]
->  この例では、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] に含まれるサンプルの **AdventureWorks** データベースを使用します。  サンプル コードの接続文字列は、データベースがローカル コンピューターにインストールされていること、SqlExpress というインスタンス名で実行されていること、接続文字列に指定された情報と一致する SQL Server ログインが作成済みであることを想定しています。  既定のセキュリティ設定を使用するようにサーバーが構成されている場合、そのままでは Windows 認証しか許可されないため、SQL Server ログインを有効にする必要があります。  接続文字列は環境に合わせて変更してください。  
+>  この例は、サンプルを使用して**AdventureWorks**データベースに含まれている[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]です。 サンプル コードの接続文字列は、データベースがローカル コンピューターにインストールされていること、SqlExpress というインスタンス名で実行されていること、接続文字列に指定された情報と一致する SQL Server ログインが作成済みであることを想定しています。 既定のセキュリティ設定を使用するようにサーバーが構成されている場合、そのままでは Windows 認証しか許可されないため、SQL Server ログインを有効にする必要があります。 接続文字列は環境に合わせて変更してください。  
   
-### 例  
+### <a name="example"></a>例  
   
 ```vb  
 Option Explicit On  
@@ -398,10 +404,10 @@ class Program
 }  
 ```  
   
-## 参照  
- [データ ソースへの接続](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)   
- [OLE DB、ODBC、および Oracle 接続プール](../../../../docs/framework/data/adonet/ole-db-odbc-and-oracle-connection-pooling.md)   
- [Performance Counters for ASP.NET](../Topic/Performance%20Counters%20for%20ASP.NET.md)   
- [ランタイム プロファイリング](../../../../docs/framework/debug-trace-profile/runtime-profiling.md)   
- [Introduction to Monitoring Performance Thresholds](http://msdn.microsoft.com/ja-jp/d40f10b9-e2b7-4ec8-a9b3-706929e5bf35)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [データ ソースへの接続](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)  
+ [OLE DB、ODBC、および Oracle 接続プール](../../../../docs/framework/data/adonet/ole-db-odbc-and-oracle-connection-pooling.md)  
+ [ASP.NET 用のパフォーマンス カウンター](http://msdn.microsoft.com/library/1e122fcb-05c0-4f9f-bef1-f47023fa1ac6)  
+ [ランタイム プロファイリング](../../../../docs/framework/debug-trace-profile/runtime-profiling.md)  
+ [パフォーマンスしきい値の監視の概要](http://msdn.microsoft.com/en-us/d40f10b9-e2b7-4ec8-a9b3-706929e5bf35)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

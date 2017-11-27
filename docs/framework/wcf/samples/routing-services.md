@@ -1,26 +1,29 @@
 ---
-title: "ルーティング サービス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ルーティング サービス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9a430b4c-46eb-4d15-afbc-8834f0e985ab
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 25a3aab2e9470b9d9e96e882b90ed154c4e89558
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ルーティング サービス
+# <a name="routing-services"></a>ルーティング サービス
 このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ルーターを使用する方法を示すサンプルが含まれています。  
   
-## このセクションの内容  
- [ルーティング サービスを使用した Hello World](../../../../docs/framework/wcf/samples/hello-world-with-the-routing-service.md)  
+## <a name="in-this-section"></a>このセクションの内容  
+ [ルーティング サービスでの hello World](../../../../docs/framework/wcf/samples/hello-world-with-the-routing-service.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ルーターを使用する方法を示します。  
   
  [ブリッジとエラー処理](../../../../docs/framework/wcf/samples/bridging-and-error-handling.md)  
@@ -33,4 +36,4 @@ caps.handback.revision: 4
  実行時にルーティング サービスを動的に再構成する方法を示します。  
   
  [高度なエラー処理](../../../../docs/framework/wcf/samples/advanced-error-handling.md)  
- トランザクションやその他のより複雑なメッセージ概念 \(マルチキャストなど\) を使用して、ルーティング サービスをエラーから自動的に回復する方法を示します。
+ トランザクションやその他のより複雑なメッセージ概念 (マルチキャストなど) を使用して、ルーティング サービスをエラーから自動的に回復する方法を示します。

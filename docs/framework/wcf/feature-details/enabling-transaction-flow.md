@@ -1,85 +1,87 @@
 ---
-title: "トランザクション フローの有効化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "トランザクション [WCF], フローの有効化"
+title: "トランザクション フローの有効化"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: transactions [WCF], enabling flow
 ms.assetid: a03f5041-5049-43f4-897c-e0292d4718f7
-caps.latest.revision: 17
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 4ef6880502a4d25f74d3c1cd72664c1ab818424b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# トランザクション フローの有効化
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、高い柔軟性を備えた、トランザクション フローの制御用オプションが用意されています。サービスのトランザクション フローの設定は、属性と構成の組み合わせを使用して表すことができます。  
+# <a name="enabling-transaction-flow"></a>トランザクション フローの有効化
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、高い柔軟性を備えた、トランザクション フローの制御用オプションが用意されています。 サービスのトランザクション フローの設定は、属性と構成の組み合わせを使用して表すことができます。  
   
-## トランザクション フローの設定  
+## <a name="transaction-flow-settings"></a>トランザクション フローの設定  
  トランザクション フローの設定は、次の 3 つの値の積集合の結果として、サービス エンドポイントに対して生成されます。  
   
 -   サービス コントラクトの各メソッドに指定された <xref:System.ServiceModel.TransactionFlowAttribute> 属性。  
   
 -   特定のバインディングの `TransactionFlow` バインディング プロパティ。  
   
--   特定のバインディングの `TransactionFlowProtocol` バインディング プロパティ。`TransactionFlowProtocol` バインディング プロパティでは、トランザクションをフローさせるために使用できる 2 つのトランザクション プロトコルのいずれかを選択できます。次のセクションでは、これらのプロパティについてそれぞれ簡単に説明します。  
+-   特定のバインディングの `TransactionFlowProtocol` バインディング プロパティ。 `TransactionFlowProtocol` バインディング プロパティでは、トランザクションをフローさせるために使用できる 2 つのトランザクション プロトコルのいずれかを選択できます。 次のセクションでは、これらのプロパティについてそれぞれ簡単に説明します。  
   
-### WS\-AtomicTransaction プロトコル  
- サード パーティのプロトコル スタックとの相互運用性が必要なシナリオでは、WS\-AT \(WS\-AtomicTransaction\) プロトコルが有用です。  
+### <a name="ws-atomictransaction-protocol"></a>WS-AtomicTransaction プロトコル  
+ サード パーティのプロトコル スタックとの相互運用性が必要なシナリオでは、WS-AT (WS-AtomicTransaction) プロトコルが有用です。  
   
-### OleTransactions プロトコル  
- OleTransactions プロトコルは、サードパーティのプロトコル スタックとの相互運用性が必要ではなく、WS\-AT プロトコル サービスがローカルで無効になっていること、または既存のネットワーク トポロジが WS\-AT の使用に向いていないことがサービスを配置する前に既にわかっている場合に有効です。  
+### <a name="oletransactions-protocol"></a>OleTransactions プロトコル  
+ OleTransactions プロトコルは、サードパーティのプロトコル スタックとの相互運用性が必要ではなく、WS-AT プロトコル サービスがローカルで無効になっていること、または既存のネットワーク トポロジが WS-AT の使用に向いていないことがサービスを配置する前に既にわかっている場合に有効です。  
   
  これらのさまざまな組み合わせを使用して生成できるトランザクション フローの種類を次の表に示します。  
   
-|TransactionFlow<br /><br /> バインディング|TransactionFlow バインディング プロパティ|TransactionFlowProtocol バインディング プロパティ|トランザクション フローの種類|  
-|---------------------------------|-----------------------------------|-------------------------------------------|---------------------|  
-|必須|true|WS\-AT|トランザクションは、相互運用可能な WS\-AT 形式でフローさせる必要があります。|  
-|Mandatory|true|OleTransactions|トランザクションは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の OleTransactions 形式でフローさせる必要があります。|  
-|Mandatory|false|適用なし|この構成は無効なため、適用できません。|  
-|Allowed|true|WS\-AT|トランザクションは、相互運用可能な WS\-AT 形式でフローさせることができます。|  
-|Allowed|true|OleTransactions|トランザクションは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の OleTransactions 形式でフローさせることができます。|  
+|TransactionFlow<br /><br /> バインド|TransactionFlow バインディング プロパティ|TransactionFlowProtocol バインディング プロパティ|トランザクション フローの種類|  
+|---------------------------------|--------------------------------------|----------------------------------------------|------------------------------|  
+|必須|TRUE|WS-AT|トランザクションは、相互運用可能な WS-AT 形式でフローさせる必要があります。|  
+|必須|TRUE|OleTransactions|トランザクションは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の OleTransactions 形式でフローさせる必要があります。|  
+|必須|false|該当なし|この構成は無効なため、適用できません。|  
+|Allowed|TRUE|WS-AT|トランザクションは、相互運用可能な WS-AT 形式でフローさせることができます。|  
+|Allowed|TRUE|OleTransactions|トランザクションは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の OleTransactions 形式でフローさせることができます。|  
 |Allowed|false|任意の値|トランザクションは送信されません。|  
 |NotAllowed|任意の値|任意の値|トランザクションは送信されません。|  
   
  メッセージ処理の結果を次の表にまとめます。  
   
 |受信メッセージ|トランザクション フローの設定|トランザクション ヘッダー|メッセージ処理の結果|  
-|-------------|---------------------|-------------------|----------------|  
-|トランザクションは予期されたプロトコル形式に一致します|Allowed または Mandatory|`MustUnderstand`  と `true` は等しい。|処理|  
-|トランザクションは予期されたプロトコル形式に一致しません|Mandatory|`MustUnderstand`  と `false` は等しい。|トランザクションが必須のため拒否|  
-|トランザクションは予期されたプロトコル形式に一致しません|Allowed|`MustUnderstand`  と `false` は等しい。|ヘッダーが認識されないため拒否|  
-|任意のプロトコル形式を使用しているトランザクション|NotAllowed|`MustUnderstand`  と `false` は等しい。|ヘッダーが認識されないため拒否|  
-|トランザクションなし|Mandatory|N\/A|トランザクションが必須のため拒否|  
-|トランザクションなし|Allowed|N\/A|処理|  
-|トランザクションなし|NotAllowed|N\/A|プロセス|  
+|----------------------|-----------------------------|------------------------|-------------------------------|  
+|トランザクションは予期されたプロトコル形式に一致します|Allowed または Mandatory|`MustUnderstand` と `true` は等しい。|プロセス|  
+|トランザクションは予期されたプロトコル形式に一致しません|必須|`MustUnderstand` と `false` は等しい。|トランザクションが必須のため拒否|  
+|トランザクションは予期されたプロトコル形式に一致しません|Allowed|`MustUnderstand` と `false` は等しい。|ヘッダーが認識されないため拒否|  
+|任意のプロトコル形式を使用しているトランザクション|NotAllowed|`MustUnderstand` と `false` は等しい。|ヘッダーが認識されないため拒否|  
+|トランザクションなし|必須|N/A|トランザクションが必須のため拒否|  
+|トランザクションなし|Allowed|N/A|プロセス|  
+|トランザクションなし|NotAllowed|N/A|プロセス|  
   
- コントラクトの各メソッドには、トランザクション フローに関するさまざまな要件を割り当てることができますが、トランザクション フローのプロトコル設定のスコープは、バインディングのレベルになります。このため、同じエンドポイント \(ひいては同じバインディング\) を共有するすべてのメソッドは、トランザクション フローを許可または必要とする同じポリシー、および同じトランザクション プロトコル \(該当する場合\) を共有します。  
+ コントラクトの各メソッドには、トランザクション フローに関するさまざまな要件を割り当てることができますが、トランザクション フローのプロトコル設定のスコープは、バインディングのレベルになります。 このため、同じエンドポイント (ひいては同じバインディング) を共有するすべてのメソッドは、トランザクション フローを許可または必要とする同じポリシー、および同じトランザクション プロトコル (該当する場合) を共有します。  
   
-## メソッド レベルでのトランザクション フローの有効化  
- トランザクション フローの要件は、サービス コントラクトのすべてのメソッドで常に同じであるとは限りません。そのため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、各メソッドのトランザクション フロー設定を指定することができる属性ベースの機構も用意されています。これは、サービス操作がトランザクション ヘッダーを受け入れるレベルを指定する <xref:System.ServiceModel.TransactionFlowAttribute> によって実現されます。トランザクション フローを有効にする場合は、この属性を使用してサービス コントラクト メソッドをマークする必要があります。この属性は、<xref:System.ServiceModel.TransactionFlowOption> 列挙値のいずれかを取り、既定値は <xref:System.ServiceModel.TransactionFlowOption> です。<xref:System.ServiceModel.TransactionFlowOption> 以外の値を指定する場合、メソッドは一方向ではない必要があります。開発者は、この属性を使用して、メソッド レベルのトランザクション フローに関する要件や制約をデザイン時に指定できます。  
+## <a name="enabling-transaction-flow-at-the-method-level"></a>メソッド レベルでのトランザクション フローの有効化  
+ トランザクション フローの要件は、サービス コントラクトのすべてのメソッドで常に同じであるとは限りません。 そのため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、各メソッドのトランザクション フロー設定を指定することができる属性ベースの機構も用意されています。 これは、サービス操作がトランザクション ヘッダーを受け入れるレベルを指定する <xref:System.ServiceModel.TransactionFlowAttribute> によって実現されます。 トランザクション フローを有効にする場合は、この属性を使用してサービス コントラクト メソッドをマークする必要があります。 この属性は、<xref:System.ServiceModel.TransactionFlowOption> 列挙値のいずれかを取り、既定値は <xref:System.ServiceModel.TransactionFlowOption.NotAllowed> です。 <xref:System.ServiceModel.TransactionFlowOption.NotAllowed> 以外の値を指定する場合、メソッドは一方向ではない必要があります。 開発者は、この属性を使用して、メソッド レベルのトランザクション フローに関する要件や制約をデザイン時に指定できます。  
   
-## エンドポイント レベルでのトランザクション フローの有効化  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、<xref:System.ServiceModel.TransactionFlowAttribute> によって提供されるメソッド レベルのトランザクション フロー設定に加えて、トランザクション フローに対するエンドポイント全体の設定が提供されています。これにより、管理者はトランザクション フローをより高いレベルで制御できるようになります。  
+## <a name="enabling-transaction-flow-at-the-endpoint-level"></a>エンドポイント レベルでのトランザクション フローの有効化  
+ <xref:System.ServiceModel.TransactionFlowAttribute> では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって提供されるメソッド レベルのトランザクション フロー設定に加えて、トランザクション フローに対するエンドポイント全体の設定が提供されています。これにより、管理者はトランザクション フローをより高いレベルで制御できるようになります。  
   
  これは、<xref:System.ServiceModel.Channels.TransactionFlowBindingElement> によって実現され、エンドポイントのバインディング設定で受信トランザクション フローを有効化または無効化する他に、受信トランザクションに必要なトランザクション プロトコル形式を指定できるようになります。  
   
  バインディングによりトランザクション フローが無効にされているとき、サービス コントラクトのいずれかの操作が受信トランザクションを必要とした場合は、サービスの起動時に検証例外がスローされます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に用意されているほとんどの標準バインディングには、`transactionFlow` 属性と `transactionProtocol` 属性が含まれています。これらの属性を使用すると、受信トランザクションを受け入れるように特定のバインディングを構成できます。構成要素の設定[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[\<binding\>](../../../../docs/framework/misc/binding.md)」を参照してください。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に用意されているほとんどの標準バインディングには、`transactionFlow` 属性と `transactionProtocol` 属性があります。これらの属性を使用すると、受信トランザクションを受け入れるように特定のバインディングを構成できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]構成要素を設定するには、表示[\<バインディング >](../../../../docs/framework/misc/binding.md)です。  
   
  管理者や展開担当者は、エンドポイント レベルのトランザクション フローを使用することで、展開時に構成ファイルを使用してトランザクション フローの要件や制約を構成できます。  
   
-## セキュリティ  
- システムのセキュリティと整合性を確保するために、アプリケーション間でトランザクションをフローさせるときは、メッセージ交換をセキュリティで保護する必要があります。同じトランザクションに参加する資格のないアプリケーションには、トランザクションの詳細をフローさせたり、公開したりしないでください。  
+## <a name="security"></a>セキュリティ  
+ システムのセキュリティと整合性を確保するために、アプリケーション間でトランザクションをフローさせるときは、メッセージ交換をセキュリティで保護する必要があります。 同じトランザクションに参加する資格のないアプリケーションには、トランザクションの詳細をフローさせたり、公開したりしないでください。  
   
- メタデータ交換を使用して、未知または信頼できない Web サービスに対して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを生成するときは、可能であれば、これらの Web サービスでの操作の呼び出しでは現在のトランザクションを使用しないようにする必要があります。この方法を次の例に示します。  
+ メタデータ交換を使用して、未知または信頼できない Web サービスに対して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを生成するときは、可能であれば、これらの Web サービスでの操作の呼び出しでは現在のトランザクションを使用しないようにする必要があります。 この方法を次の例に示します。  
   
 ```  
 //client code which has an ambient transaction  
@@ -92,11 +94,11 @@ using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Supp
 //remainder of client code  
 ```  
   
- さらに、サービスは、認証および承認済みのクライアントからの受信トランザクションのみを受け入れるように構成する必要があります。受信トランザクションは、高信頼クライアントから送られてきた場合にのみ受け入れるようにする必要があります。  
+ さらに、サービスは、認証および承認済みのクライアントからの受信トランザクションのみを受け入れるように構成する必要があります。 受信トランザクションは、高信頼クライアントから送られてきた場合にのみ受け入れるようにする必要があります。  
   
-## ポリシー アサーション  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、ポリシー アサーションを使用してトランザクション フローを制御します。ポリシー アサーションは、コントラクト、構成、および属性を集約して生成される、サービスのポリシー ドキュメントに含まれています。クライアントは、HTTP GET または WS\-MetadataExchange 要求\/応答を使用して、サービスのポリシー ドキュメントを取得できます。クライアントは、取得したポリシー ドキュメントを処理して、トランザクション フローをサポートまたは必要とする可能性があるサービス コントラクトの操作を判別できます。  
+## <a name="policy-assertions"></a>ポリシー アサーション  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、ポリシー アサーションを使用してトランザクション フローを制御します。 ポリシー アサーションは、コントラクト、構成、および属性を集約して生成される、サービスのポリシー ドキュメントに含まれています。 クライアントは、HTTP GET または WS-MetadataExchange 要求/応答を使用して、サービスのポリシー ドキュメントを取得できます。 クライアントは、取得したポリシー ドキュメントを処理して、トランザクション フローをサポートまたは必要とする可能性があるサービス コントラクトの操作を判別できます。  
   
- トランザクション フローのポリシー アサーションは、クライアントがサービスに送信する必要がある、トランザクションを表す SOAP ヘッダーを指定することで、トランザクション フローに影響します。すべてのトランザクション ヘッダーの `MustUnderstand` は、`true` に設定する必要があります。これ以外の値に設定されたメッセージは、SOAP エラーによりすべて拒否されます。  
+ トランザクション フローのポリシー アサーションは、クライアントがサービスに送信する必要がある、トランザクションを表す SOAP ヘッダーを指定することで、トランザクション フローに影響します。 すべてのトランザクション ヘッダーの `MustUnderstand` は、`true` に設定する必要があります。 これ以外の値に設定されたメッセージは、SOAP エラーによりすべて拒否されます。  
   
- トランザクション関連のポリシー アサーションは、1 つの操作に 1 つしか存在できません。1 つの操作に複数のトランザクション アサーションが存在するポリシー ドキュメントは無効と見なされ、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] により拒否されます。さらに、トランザクション プロトコルも各ポートの種類の内部に 1 つしか存在できません。単一のポートの種類の内部の複数のトランザクション プロトコルを参照する操作がポリシー ドキュメントに含まれている場合、そのポリシー ドキュメントは無効と見なされ、[ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)により拒否されます。また、出力メッセージや一方向の入力メッセージに関するトランザクション アサーションが存在するポリシー ドキュメントも無効と見なされます。
+ トランザクション関連のポリシー アサーションは、1 つの操作に 1 つしか存在できません。 1 つの操作に複数のトランザクション アサーションが存在するポリシー ドキュメントは無効と見なされ、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] により拒否されます。 さらに、トランザクション プロトコルも各ポートの種類の内部に 1 つしか存在できません。 1 つのポートの種類の内部の 2 つ以上のトランザクション プロトコルを参照する操作のポリシー ドキュメント、無効と見なされ、によって拒否された、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 また、出力メッセージや一方向の入力メッセージに関するトランザクション アサーションが存在するポリシー ドキュメントも無効と見なされます。

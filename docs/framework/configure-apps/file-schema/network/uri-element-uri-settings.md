@@ -1,72 +1,70 @@
 ---
-title: "&lt;Uri&gt; 要素 (Uri 設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "&lt;Uri&gt;要素 (Uri 設定)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c22bab8b-477c-4ae4-8498-65ad409e0847
-caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 44ef28ca2188973ccd353f4e8615c7c95f5674a2
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;Uri&gt; 要素 (Uri 設定)
-URI \(Uniform Resource Identifier\) で表現された Web アドレスが .NET Framework によってどのように処理されるかの設定を格納します。  
+# <a name="lturigt-element-uri-settings"></a>&lt;Uri&gt;要素 (Uri 設定)
+.NET Framework での web アドレスの uniform resource identifier (Uri) を使用して表現の処理方法を指定する設定が含まれています。  
   
-## スキーマの階層  
- [\<configuration\> 要素](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
+## <a name="schema-hierarchy"></a>スキーマの階層  
+ [\<configuration> 要素](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
   
- [\<uri\>](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)  
+ [\<uri >](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
+```xml  
 <uri>  
 </uri>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
  なし。  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
   
 |**要素**|**説明**|  
-|------------|------------|  
-|[idn](../../../../../docs/framework/configure-apps/file-schema/network/idn-element-uri-settings.md)|国際化ドメイン名 \(IDN: Internationalized Domain Name\) による解析をドメイン名に適用するかどうかを指定します。|  
-|[iriParsing](../../../../../docs/framework/configure-apps/file-schema/network/iriparsing-element-uri-settings.md)|IRI \(International Resource Identifier\) 解析を <xref:System.Uri> に適用するかどうか、および IRI の解析規則を適用するかどうかを指定します。|  
-|[schemeSettings](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|<xref:System.Uri> が特定のスキーマに対して解析される方法を指定します。|  
+|-----------------|---------------------|  
+|[idn](../../../../../docs/framework/configure-apps/file-schema/network/idn-element-uri-settings.md)|国際化ドメイン名 (IDN) の解析がドメイン名に適用されるかどうかを指定します。|  
+|[iriParsing](../../../../../docs/framework/configure-apps/file-schema/network/iriparsing-element-uri-settings.md)|International Resource Identifier (IRI) 解析に適用されますを指定します<xref:System.Uri>IRI 解析規則を適用するかどうかとします。|  
+|[schemeSettings](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|<xref:System.Uri> が特定のスキームに解析される方法を指定します。|  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |**要素**|**説明**|  
-|------------|------------|  
-|[適用](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|すべての名前空間の設定が含まれています。|  
+|-----------------|---------------------|  
+|[構成](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|すべての名前空間の設定が含まれています。|  
   
-## 解説  
- `uri` 要素には、<xref:System.Net> 名前空間のクラスによって使用される <xref:System.Uri> クラスのメンバーの設定が格納されます。  これらの設定によって、IRI および IDN のサポートが構成されます。  
+## <a name="remarks"></a>コメント  
+ `uri`要素にはメンバーの設定が含まれています、<xref:System.Uri>内のクラスによって使用されるクラス、<xref:System.Net>名前空間。 設定は、IRI と IDN のサポートを構成します。  
   
-## 例  
+## <a name="example"></a>例  
   
-### 説明  
- 次のコード例は、<xref:System.Uri> クラスで IRI の解析および IDN 名をサポートするための構成を示しています。  また、この例では、すべてのスキーム設定を消去してから、http スキームのパーセント記号をエンコードしたパス区切り記号をエスケープしないように設定します。  
+### <a name="description"></a>説明  
+ 次の例で使用する構成を示しています、 <xref:System.Uri> IRI 解析と IDN 名をサポートするクラス。 この例もすべての設定の設定をクリアし、http スキームのパーセントでエンコードされたパスの区切り記号をエスケープしないサポートが追加されます。  
   
-### コード  
+### <a name="code"></a>コード  
   
-```  
+```xml  
 <configuration>  
   <uri>  
     <idn enabled="All" />  
@@ -79,5 +77,5 @@ URI \(Uniform Resource Identifier\) で表現された Web アドレスが .NET 
 </configuration>  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

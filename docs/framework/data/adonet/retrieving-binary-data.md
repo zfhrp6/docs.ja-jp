@@ -1,30 +1,36 @@
 ---
-title: "バイナリ データの取得 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "バイナリ データの取得"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 56c5a9e3-31f1-482f-bce0-ff1c41a658d0
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: bd524ed605f1fe125480bae0949745f4f045f03a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# バイナリ データの取得
-既定では、**DataReader** は、行全体のデータが使用可能になると受信するデータを行として読み込みます。  バイナリ ラージ オブジェクト \(BLOB\) には、1 行に収まらない数ギガバイトのデータが含まれる場合があるため、別の処理が必要です。  **Command.ExecuteReader** メソッドは、<xref:System.Data.CommandBehavior> 引数を受け取って **DataReader** の既定の動作を変更するようにオーバーロードされています。  **ExecuteReader** メソッドに <xref:System.Data.CommandBehavior> を渡すと、数行のデータを読み込む代わりに、データを受け取った時点で順次読み込むように **DataReader** の既定の動作を変更できます。  これは BLOB やその他の大きなデータ構造を読み込む場合に理想的な処理です。  この動作は、データ ソースによって異なる場合があります。  たとえば、Microsoft Access から BLOB を返すと、受け取ったデータから順に読み込むのではなく、BLOB 全体をメモリに読み込みます。  
+# <a name="retrieving-binary-data"></a>バイナリ データの取得
+既定では、 **DataReader**行全体のデータは使用するとすぐに行として受信したデータを読み込みます。 バイナリ ラージ オブジェクト (BLOB) には、1 行に収まらない数ギガバイトのデータが含まれる場合があるため、別の処理が必要です。 **Command.ExecuteReader**メソッド オーバー ロードを実行するには、<xref:System.Data.CommandBehavior>引数の既定の動作を変更する、 **DataReader**です。 渡すことができます<xref:System.Data.CommandBehavior.SequentialAccess>を**ExecuteReader**の既定の動作を変更する方法、 **DataReader**行のデータを読み込み中には、代わりにそれがデータを読み込む順番が受信できるようにします。 これは BLOB やその他の大きなデータ構造を読み込む場合に理想的な処理です。 この動作は、データ ソースによって異なる場合があります。 たとえば、Microsoft Access から BLOB を返すと、受け取ったデータから順に読み込むのではなく、BLOB 全体をメモリに読み込みます。  
   
- **SequentialAccess** を使用するように **DataReader** を設定するときは、返されたフィールドにアクセスする順序に注意してください。  使用可能になるとすぐに行全体を読み込む **DataReader** の既定の動作では、次の行を読み取るまでは返されたフィールドに任意の順序でアクセスできます。  しかし、**SequentialAccess** を使用しているときは、**DataReader** によって返された各フィールドに順番にアクセスする必要があります。  たとえば、クエリが 3 つの列 \(3 番目の列は BLOB\) を返す場合、最初のフィールドおよび 2 番目のフィールドの値は、3 番目のフィールドの BLOB データにアクセスする前に返す必要があります。  最初のフィールドまたは 2 番目のフィールドの前に 3 番目のフィールドにアクセスした場合は、最初のフィールドと 2 番目のフィールドの値は使用できなくなります。  これは、**SequentialAccess** が **DataReader** をデータを順番に返すように変更し、**DataReader** がデータを飛ばして読み込んだ後はそのデータを使用できなくなるためです。  
+ 設定するときに、 **DataReader**を使用する**SequentialAccess**、返されるフィールドにアクセスするシーケンスを確認することが重要です。 既定の動作、 **DataReader**、次の行を読み取るまでは、任意の順序で返されるフィールドにアクセスすることができますが、使用可能になるとすぐに行全体が読み込まれます。 使用する場合**SequentialAccess**ただし、によって返されるフィールドにアクセスする必要があります、 **DataReader**の順序で。 たとえば、クエリが 3 つの列 (3 番目の列は BLOB) を返す場合、最初のフィールドおよび 2 番目のフィールドの値は、3 番目のフィールドの BLOB データにアクセスする前に返す必要があります。 最初のフィールドまたは 2 番目のフィールドの前に 3 番目のフィールドにアクセスした場合は、最初のフィールドと 2 番目のフィールドの値は使用できなくなります。 これは、ため**SequentialAccess**が変更、 **DataReader**シーケンスと、データにデータを返すことはできませんの後に、 **DataReader**を越えて読み取りができます。  
   
- BLOB フィールドのデータにアクセスするときは、**DataReader** の **GetBytes** 型または **GetChars** 型のアクセサーを使用します。このアクセサーはデータを配列に読み込みます。  文字データ用の **GetString** を使用することもできますが、  システム リソースを節約するためには、BLOB 値全体を 1 つの文字列変数に読み込むことは望ましくありません。  特定のバッファー サイズのデータを返すように指定する代わりに、返されたデータから読み込む先頭バイトまたは先頭文字の開始位置を指定できます。  **GetBytes** と **GetChars** は、返されたバイト数または文字数を表す `long` 値を返します。  **GetBytes** または **GetChars** に null 配列を渡した場合、返される long 値は BLOB の総バイト数または総文字数になります。  オプションで、データ読み込みの開始位置を示す、配列内のインデックスを指定できます。  
+ BLOB フィールドのデータにアクセスするときに使用して、 **GetBytes**または**GetChars**型指定されたアクセサーの**DataReader**配列のデータを読み込みます。 使用することも**GetString**文字データです。 ただしです。 システム リソースを節約するためには、BLOB 値全体を 1 つの文字列変数に読み込むことは望ましくありません。 特定のバッファー サイズのデータを返すように指定する代わりに、返されたデータから読み込む先頭バイトまたは先頭文字の開始位置を指定できます。 **GetBytes**と**GetChars**が返されます、`long`をバイト数または返される文字数を表す値です。 Null 配列を渡す場合**GetBytes**または**GetChars**、返される long 型の値はバイトまたはキャラクター、BLOB 内の合計数になります。 オプションで、データ読み込みの開始位置を示す、配列内のインデックスを指定できます。  
   
-## 例  
- 次の例は、Microsoft SQL Server の **pubs** サンプル データベースから発行者 ID およびロゴを取得します。  発行者 ID \(`pub_id`\) は文字フィールドであり、ロゴはイメージ、つまり、BLOB です。  **logo** フィールドはビットマップなので、この例は、**GetBytes** を使用してバイナリ データを返します。  フィールドには順番にアクセスする必要があるため、現在の行のデータに対して発行者 ID はロゴの前にアクセスされることに注意してください。  
+## <a name="example"></a>例  
+ 次の例は、パブリッシャーから ID およびロゴを返します、 **pubs** Microsoft SQL Server のサンプル データベース。 発行者 ID (`pub_id`) は文字フィールドであり、ロゴはイメージ、つまり、BLOB です。 **ロゴ**フィールドはビットマップで、この例では、バイナリ データを使用して返されます**GetBytes**です。 フィールドには順番にアクセスする必要があるため、現在の行のデータに対して発行者 ID はロゴの前にアクセスされることに注意してください。  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection object.  
@@ -88,7 +94,6 @@ Loop
 ' Close the reader and the connection.  
 reader.Close()  
 connection.Close()  
-  
 ```  
   
 ```csharp  
@@ -145,7 +150,7 @@ while (reader.Read())
   }  
   
   // Write the remaining buffer.  
-  writer.Write(outByte, 0, (int)retval - 1);  
+  writer.Write(outByte, 0, (int)retval);  
   writer.Flush();  
   
   // Close the output file.  
@@ -158,7 +163,7 @@ reader.Close();
 connection.Close();  
 ```  
   
-## 参照  
- [Working with DataReaders](http://msdn.microsoft.com/ja-jp/126a966a-d08d-4d22-a19f-f432908b2b54)   
- [SQL Server のバイナリ データと大きな値のデータ](../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [Datareader の操作](http://msdn.microsoft.com/en-us/126a966a-d08d-4d22-a19f-f432908b2b54)  
+ [SQL Server のバイナリ データと大きな値のデータ](../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

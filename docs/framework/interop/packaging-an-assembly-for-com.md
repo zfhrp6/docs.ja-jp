@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - exposing .NET Framework components to COM
 - COM interop, packaging assemblies
@@ -29,16 +23,15 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - Reqasm.exe
 ms.assetid: 39dc55aa-f2a1-4093-87bb-f1c0edb6e761
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 73866ddc1e8199dfad188179dc668bc31ab3c93d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 149d0c2595844c5b71767e2ea3ee5b0c6002c080
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="packaging-an-assembly-for-com"></a>COM 用のアセンブリのパッケージ化
 COM 開発者がアプリケーションに組み込むときに役立つ、マネージ型に関する情報を次に示します。  
@@ -96,13 +89,12 @@ COM 開発者がアプリケーションに組み込むときに役立つ、マ�
  [.NET サービス インストール ツール (Regsvcs.exe)](../../../docs/framework/tools/regsvcs-exe-net-services-installation-tool.md) は、Windows 2000 コンポーネント サービスにマネージ クラスを追加したり、1 つのツール内の複数のタスクを統合したりします。 Regsvcs.exe は、アセンブリの読み込みおよび登録だけでなく、タイプ ライブラリの生成、登録、および既存の COM+ 1.0 アプリケーションへのインストールができます。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.InteropServices.TypeLibConverter>   
- <xref:System.Runtime.InteropServices.ITypeLibConverter>   
- [COM への .NET Framework コンポーネントの公開](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)   
- [相互運用のための .NET 型の要件](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md)   
- [クラス インターフェイスの概要](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024)   
- [アセンブリのセキュリティに関する考慮事項](../../../docs/framework/app-domains/assembly-security-considerations.md)   
- [Tlbexp.exe (タイプ ライブラリ エクスポーター)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)   
- [COM へのアセンブリの登録](../../../docs/framework/interop/registering-assemblies-with-com.md)   
+ <xref:System.Runtime.InteropServices.TypeLibConverter>  
+ <xref:System.Runtime.InteropServices.ITypeLibConverter>  
+ [COM への .NET Framework コンポーネントの公開](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
+ [要件 (相互運用のための .NET 型の)](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md)  
+ [クラス インターフェイスの概要](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024)  
+ [アセンブリのセキュリティに関する考慮事項](../../../docs/framework/app-domains/assembly-security-considerations.md)  
+ [Tlbexp.exe (タイプ ライブラリ エクスポーター)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)  
+ [COM へのアセンブリの登録](../../../docs/framework/interop/registering-assemblies-with-com.md)  
  [方法: タイプ ライブラリを Win32 リソースとしてアプリケーションに埋め込む](http://msdn.microsoft.com/en-us/c97b4b8c-2ab7-4ac7-8fc8-0ba5c5d59c44)
-

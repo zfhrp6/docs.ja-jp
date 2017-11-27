@@ -1,27 +1,33 @@
 ---
-title: "型指定された DataSet の注釈 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "型指定された DataSet の注釈"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: f82aaa62-321e-4c8a-b51b-9d1114700170
-caps.latest.revision: 6
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: d3965ced44bae21feef3d01d49149387fce4fa46
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 型指定された DataSet の注釈
-注釈を使用すると、基になるスキーマを変更せずに型指定された <xref:System.Data.DataSet> の要素の名前を変更できます。  基になるスキーマの要素の名前を変更すると、データ ソースにあるオブジェクトへの参照が失われるだけでなく、型指定された **DataSet** がデータ ソースにないオブジェクトを参照することになります。  
+# <a name="annotating-typed-datasets"></a>型指定された DataSet の注釈
+注釈を使用すると、基になるスキーマを変更せずに型指定された <xref:System.Data.DataSet> の要素の名前を変更できます。 基になるスキーマの要素の名前を修正するは、型指定された**データセット**にはないデータ ソースに存在だけでなく、データ ソース内に存在しているオブジェクトへの参照が失われるオブジェクトを参照してください。  
   
- 注釈を使用すると、基になるスキーマを変更せずに、型指定された **DataSet** のオブジェクトをわかりやすい名前にカスタマイズできるため、コードが読みやすくなり、型指定された **DataSet** がクライアントで使用しやすくなります。  たとえば、次の **Northwind** データベースの **Customers** テーブルのスキーマ要素は、**CustomersRow** という名前の **DataRow** オブジェクト名および **Customers** という名前の <xref:System.Data.DataRowCollection> となります。  
+ 注釈を使用して、カスタマイズできますオブジェクトの名前、型指定された**データセット**、わかりやすい名前を持つを行うコードが読みやすく、型指定された**データセット**を維持したまま、使用するクライアントを簡単に基になるスキーマがそのままです。 次の schema 要素など、**顧客**のテーブル、 **Northwind**データベースになります、 **DataRow**のオブジェクト名**CustomersRow**と<xref:System.Data.DataRowCollection>という**顧客**です。  
   
-```  
+```xml  
 <xs:element name="Customers">  
   <xs:complexType>  
     <xs:sequence>  
@@ -31,9 +37,9 @@ caps.handback.revision: 6
 </xs:element>  
 ```  
   
- **Customers** という **DataRowCollection** 名は、クライアント コードでは意味がありますが、**CustomersRow** という **DataRow** 名は単一のオブジェクトであるため、誤解が生じます。  また、一般的なシナリオでは、CustomersRow オブジェクトは **Row** ID を指定せずに参照されるため、単に **Customer** オブジェクトとして参照されます。  この問題を解決するには、スキーマに注釈を付け、**DataRow** オブジェクトと **DataRowCollection** オブジェクトに新しい名前を指定します。  上記のスキーマに注釈を付けたスキーマを次に示します。  
+ A **DataRowCollection**の名前**顧客**クライアント コードで意味を持つが、 **DataRow**名前**CustomersRow**誤解を招き1 つのオブジェクトであるため また、共通のシナリオでは、オブジェクトがせずに参照、**行**識別子代わりに、単に呼ばれることと、**顧客**オブジェクト。 解決、スキーマに注釈を付けるし、新しい名前を指定するには、 **DataRow**と**DataRowCollection**オブジェクト。 上記のスキーマに注釈を付けたスキーマを次に示します。  
   
-```  
+```xml  
 <xs:element name="Customers" codegen:typedName="Customer" codegen:typedPlural="Customers">  
   <xs:complexType>  
     <xs:sequence>  
@@ -43,50 +49,50 @@ caps.handback.revision: 6
 </xs:element>  
 ```  
   
- **Customer** という **typedName** 値を指定すると、**Customer** という **DataRow** オブジェクト名になります。  **Customers** という **typedPlural** 値を指定すると、**Customers** という **DataRowCollection** 名が保存されます。  
+ 指定する、 **typedName**の値**顧客**になります、 **DataRow**のオブジェクト名**顧客**です。 指定する、 **typedPlural**の値**顧客**が保持されます、 **DataRowCollection**名前**顧客**です。  
   
  使用できる注釈を次の表に示します。  
   
 |注釈|説明|  
-|--------|--------|  
+|----------------|-----------------|  
 |**typedName**|オブジェクト名。|  
 |**typedPlural**|オブジェクトのコレクション名。|  
 |**typedParent**|親のリレーションシップで参照される場合のオブジェクト名。|  
 |**typedChildren**|子のリレーションシップからオブジェクトを返すメソッド名。|  
-|**nullValue**|基になる値が **DBNull** の場合の値。  **nullValue** の注釈については、次の表を参照してください。  既定値は **\_throw** です。|  
+|**nullValue**|値の場合は、基になる値は**DBNull**です。 次の表を参照してください**nullValue**注釈。 既定値は**_throw**です。|  
   
- **nullValue** 注釈に指定できる値を次の表に示します。  
+ 次の表は、値を指定できる、 **nullValue**注釈。  
   
 |nullValue の値|説明|  
-|------------------|--------|  
-|*Replacement Value*|返される値を指定します。  返された値は要素の型と一致する必要があります。  たとえば、整数型フィールドが null の場合に 0 を返すために `nullValue="0"` を使用します。|  
-|**\_throw**|例外をスローします。  既定値です。|  
-|**\_null**|プリミティブ型が見つかった場合は、null 参照を返すか、例外をスローします。|  
-|**\_empty**|文字列の場合は **String.Empty** を、それ以外の場合は空のコンストラクターから作成されたオブジェクトを返します。  プリミティブ型が見つかった場合、例外をスローします。|  
+|---------------------|-----------------|  
+|*置換値*|返される値を指定します。 返された値は要素の型と一致する必要があります。 たとえば、整数型フィールドが null の場合に 0 を返すために `nullValue="0"` を使用します。|  
+|**_throw**|例外をスローします。 既定値です。|  
+|**_null**|プリミティブ型が見つかった場合は、null 参照を返すか、例外をスローします。|  
+|**_empty**|文字列を返す**String.Empty**、それ以外の場合、空のコンス トラクターから作成されたオブジェクトを返します。 プリミティブ型が見つかった場合、例外をスローします。|  
   
- 型指定された **DataSet** のオブジェクトの既定値と使用できる注釈を次の表に示します。  
+ 次の表は、型指定されたオブジェクトの既定値を示します**データセット**と使用可能な注釈です。  
   
-|オブジェクト\/メソッド\/イベント|既定値|注釈|  
-|------------------------|---------|--------|  
+|オブジェクト/メソッド/イベント|既定値|注釈|  
+|---------------------------|-------------|----------------|  
 |**DataTable**|TableNameDataTable|typedPlural|  
-|**DataTable** のメソッド|NewTableNameRow<br /><br /> AddTableNameRow<br /><br /> DeleteTableNameRow|typedName|  
+|**DataTable**メソッド|NewTableNameRow<br /><br /> AddTableNameRow<br /><br /> DeleteTableNameRow|typedName|  
 |**DataRowCollection**|TableName|typedPlural|  
 |**DataRow**|TableNameRow|typedName|  
 |**DataColumn**|DataTable.ColumnNameColumn<br /><br /> DataRow.ColumnName|typedName|  
-|**プロパティ**|PropertyName|typedName|  
-|**Child** Accessor|GetChildTableNameRows|typedChildren|  
-|**Parent** Accessor|TableNameRow|typedParent|  
-|**DataSet** イベント|TableNameRowChangeEvent<br /><br /> TableNameRowChangeEventHandler|typedName|  
+|**Property**|PropertyName|typedName|  
+|**子**アクセサー|GetChildTableNameRows|typedChildren|  
+|**親**アクセサー|TableNameRow|typedParent|  
+|**データセット**イベント|TableNameRowChangeEvent<br /><br /> TableNameRowChangeEventHandler|typedName|  
   
- 型指定された **DataSet** の注釈を使用するには、XML スキーマ定義言語 \(XSD\) スキーマに次の **xmlns** 参照をインクルードする必要があります。  \(データベース テーブルから xsd を作成するには、「<xref:System.Data.DataSet.WriteXmlSchema%2A>」または「[Visual Studio でのデータセットの操作](http://msdn.microsoft.com/library/8bw9ksd6.aspx)」 を参照してください。\)  
+ 使用する入力**データセット**注釈、次を含める必要があります**xmlns** XML スキーマ定義言語 (XSD) スキーマで参照します。 (データベース テーブルから xsd を作成するを参照してください。<xref:System.Data.DataSet.WriteXmlSchema%2A>または[Visual Studio でのデータセットの操作](http://msdn.microsoft.com/library/8bw9ksd6.aspx))。  
   
 ```  
 xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"  
 ```  
   
- **Orders** テーブルとのリレーションを持つ **Northwind** データベースの **Customers** テーブルを公開する、注釈の付いたスキーマのサンプルを次に示します。  
+ 公開する注釈付きスキーマのサンプルを次に示します、**顧客**のテーブル、 **Northwind**リレーションを持つデータベース、 **Orders**含まれているテーブル。  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <xs:schema id="CustomerDataSet"   
       xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"  
@@ -96,34 +102,29 @@ xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"
   <xs:element name="CustomerDataSet" msdata:IsDataSet="true">  
     <xs:complexType>  
       <xs:choice maxOccurs="unbounded">  
-        <xs:element name="Customers" codegen:typedName="Customer"  
-codegen:typedPlural="Customers">  
+        <xs:element name="Customers" codegen:typedName="Customer" codegen:typedPlural="Customers">  
           <xs:complexType>  
             <xs:sequence>  
               <xs:element name="CustomerID"  
 codegen:typedName="CustomerID" type="xs:string" minOccurs="0" />  
               <xs:element name="CompanyName"  
 codegen:typedName="CompanyName" type="xs:string" minOccurs="0" />  
-              <xs:element name="Phone" codegen:typedName="Phone"  
-codegen:nullValue="" type="xs:string" minOccurs="0" />  
+              <xs:element name="Phone" codegen:typedName="Phone" codegen:nullValue="" type="xs:string" minOccurs="0" />  
             </xs:sequence>  
           </xs:complexType>  
         </xs:element>  
-        <xs:element name="Orders" codegen:typedName="Order"  
-codegen:typedPlural="Orders">  
+        <xs:element name="Orders" codegen:typedName="Order" codegen:typedPlural="Orders">  
           <xs:complexType>  
             <xs:sequence>  
               <xs:element name="OrderID" codegen:typedName="OrderID"  
 type="xs:int" minOccurs="0" />  
               <xs:element name="CustomerID"  
-codegen:typedName="CustomerID"  
-                 codegen:nullValue="" type="xs:string" minOccurs="0" />  
+codegen:typedName="CustomerID"                  codegen:nullValue="" type="xs:string" minOccurs="0" />  
               <xs:element name="EmployeeID"  
 codegen:typedName="EmployeeID" codegen:nullValue="0"   
 type="xs:int" minOccurs="0" />  
               <xs:element name="OrderAdapter"  
-codegen:typedName="OrderAdapter"  
-codegen:nullValue="1980-01-01T00:00:00"   
+codegen:typedName="OrderAdapter" codegen:nullValue="1980-01-01T00:00:00"   
 type="xs:dateTime" minOccurs="0" />  
             </xs:sequence>  
           </xs:complexType>  
@@ -143,7 +144,7 @@ codegen:typedParent="Customer" codegen:typedChildren="GetOrders">
 </xs:schema>  
 ```  
   
- サンプル スキーマから作成された厳密に型指定された **DataSet** を次のコード サンプルで使用します。  また、一方の <xref:System.Data.SqlClient.SqlDataAdapter> を使用して **Customers** テーブルを、他方の <xref:System.Data.SqlClient.SqlDataAdapter> を使用して **Orders** テーブルを作成します。  厳密に型指定された **DataSet** により、**DataRelations** が定義されます。  
+ 次のコード例は、厳密に型指定された**データセット**サンプル スキーマから作成します。 1 つを使用して<xref:System.Data.SqlClient.SqlDataAdapter>を設定する、**顧客**テーブルと別<xref:System.Data.SqlClient.SqlDataAdapter>を設定する、 **Orders**テーブル。 厳密に型指定**データセット**定義、 **Datarelation**です。  
   
 ```vb  
 ' Assumes a valid SqlConnection object named connection.  
@@ -188,7 +189,6 @@ Private Shared Sub OnCustomerChanged( _
     sender As Object, e As CustomerDataSet.CustomerChangeEvent)  
   
 End Sub  
-  
 ```  
   
 ```csharp  
@@ -232,9 +232,9 @@ protected static void OnCustomerChanged(object sender, CustomerDataSet.CustomerC
     }  
 ```  
   
-## 参照  
- <xref:System.Data.DataColumnCollection>   
- <xref:System.Data.DataSet>   
- [型指定された DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)   
- [DataSets、DataTables、および DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Data.DataColumnCollection>  
+ <xref:System.Data.DataSet>  
+ [型指定されたデータセット](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)  
+ [DataSet、DataTable、および DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

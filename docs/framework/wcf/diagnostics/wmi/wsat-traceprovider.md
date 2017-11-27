@@ -1,25 +1,28 @@
 ---
-title: "WSAT_TraceProvider | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: WSAT_TraceProvider
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8eb89b45-78b8-407d-8858-f8a9d43d55cb
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 8556b2911f36e3eb1ab6d12f8bdeb9448e1e0e75
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# WSAT_TraceProvider
-WSAT\_TraceProvider  
+# <a name="wsattraceprovider"></a>WSAT_TraceProvider
+WSAT_TraceProvider  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class WSAT_TraceProvider : EventTrace  
@@ -27,11 +30,11 @@ class WSAT_TraceProvider : EventTrace
 };  
 ```  
   
-## メソッド  
- WSAT\_TraceProvider クラスは EventTrace を継承しますが、追加のメソッドやプロパティを定義しません。  
+## <a name="methods"></a>メソッド  
+ WSAT_TraceProvider クラスは EventTrace を継承しますが、追加のメソッドやプロパティを定義しません。  
   
-## 要件  
+## <a name="requirements"></a>要件  
   
-|MOF|Servicemodel.mof で定義|  
-|---------|--------------------------|  
-|Namespace|root\\ServiceModel で定義|
+|MOF|Servicemodel.mof にて宣言済み。|  
+|---------|-----------------------------------|  
+|Namespace|root\ServiceModel で定義|

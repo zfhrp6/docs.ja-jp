@@ -1,73 +1,75 @@
 ---
-title: "&lt;namedCaches&gt; の &lt;add&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<namedCaches> の <add> 要素"
-  - "<namedCaches> の add 要素"
+title: "&lt;追加&gt;要素&lt;namedCaches&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- add element for <namedCaches>
+- <add> element for <namedCaches>
 ms.assetid: ce2a63a8-c829-4742-a6ea-72ee5d89f169
-caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 0baafcb53bf79a25618dad56c2dcf1412e48624b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;namedCaches&gt; の &lt;add&gt; 要素
-メモリ キャッシュの `namedCaches` コレクションに `namedCache` エントリを追加します。  
+# <a name="ltaddgt-element-for-ltnamedcachesgt"></a>&lt;追加&gt;要素&lt;namedCaches&gt;
+追加、`namedCache`エントリを`namedCaches`メモリ キャッシュのコレクション。  
   
-## 構文  
+ \<system.runtime.caching >  
+\<memoryCache >  
+\<namedCaches >  
+\<add>  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <namedCaches>  
     <add name="default" />  
       <!-- child elements -->  
  </namedCaches>  
 ```  
   
-## 型  
+## <a name="type"></a>型  
  `None`  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|||  
+|属性|説明|  
 |-|-|  
-|Attribute|説明|  
-|`CacheMemoryLimitMegabytes`|<xref:System.Runtime.Caching.MemoryCache> のインスタンスについて許可される最大サイズ \(MB 単位\) を指定する整数値。  既定値は 0 です。これは、<xref:System.Runtime.Caching.MemoryCache> クラスの自動サイズ変更ヒューリスティックが既定で使用されることを意味します。|  
+|`CacheMemoryLimitMegabytes`|許容最大サイズ (メガバイト) 単位を指定する整数値のインスタンス、<xref:System.Runtime.Caching.MemoryCache>まで拡大できます。 既定値は 0、つまり、<xref:System.Runtime.Caching.MemoryCache>クラスのサイズの自動変更ヒューリスティックが既定で使用されます。|  
 |`Name`|キャッシュの名前。|  
-|`PhysicalMemoryLimitPercentage`|キャッシュで使用できる物理的にインストールされたコンピューター メモリの最大パーセンテージを指定する 0 ～ 100 の整数値。  既定値は 0 です。これは、<xref:System.Runtime.Caching.MemoryCache> クラスの自動サイズ変更ヒューリスティックが既定で使用されることを意味します。|  
-|`PollingInterval`|キャッシュの実装が、現在のメモリ負荷を、キャッシュ インスタンスに設定されているメモリ制限の絶対値および割合と比較する時間間隔を示す値。  この値は "HH:MM:SS" の形式で入力されます。|  
+|`PhysicalMemoryLimitPercentage`|キャッシュで利用できる物理的にインストールされているコンピューターのメモリの最大パーセンテージを指定する整数 0 ~ 100 の値。 既定値は 0、つまり、<xref:System.Runtime.Caching.MemoryCache>クラスのサイズの自動変更ヒューリスティックが既定で使用されます。|  
+|`PollingInterval`|時間間隔を示す値。この値を超えると、キャッシュの実装によりキャッシュ インスタンスに設定されている絶対およびパーセントのメモリ制限と現在のメモリ負荷が比較されます。 この値は"HH:MM:SS"形式で入力します。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  `None`  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<namedCaches\>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|名前付き <xref:System.Runtime.Caching.MemoryCache> インスタンスの構成設定のコレクションが含まれます。|  
+|-------------|-----------------|  
+|[\<namedCaches>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|名前付きの構成設定のコレクションを含んでいます<xref:System.Runtime.Caching.MemoryCache>インスタンス。|  
   
-## 解説  
- `add` 要素は、メモリ キャッシュの `namedCaches` コレクションにエントリを追加します。  `add` 要素を使用する前に [clear](../../../../../docs/framework/configure-apps/file-schema/runtime/clear-element-for-namedcaches.md) 要素を使用すると、コレクション内に他の名前付きキャッシュがないことを確認できます。  この要素は、machine.config ファイルと Web.config ファイルで使用できます。  
+## <a name="remarks"></a>コメント  
+ `add`要素へのエントリは追加、`namedCaches`メモリ キャッシュのコレクション。 使用することができます、[オフ](../../../../../docs/framework/configure-apps/file-schema/runtime/clear-element-for-namedcaches.md)要素を使用する前に、`add`というコレクション内のキャッシュのあるものがあることの他の要素。 この要素は、machine.config ファイルでは、Web.config ファイルで使用できます。  
   
-## 使用例  
- メモリ キャッシュの `namedCaches`  コレクションに既定の `namedCache` エントリの設定を定義する方法を次の例に示します。  
+## <a name="example"></a>例  
+ 次の例は、既定値の設定を定義する方法を示しています。`namedCache`エントリを、`namedCaches`メモリ キャッシュのコレクション。  
   
-```  
+```xml  
 <configuration>  
   
   <system.runtime.caching>  
@@ -84,5 +86,5 @@ caps.handback.revision: 11
 </configuration>  
 ```  
   
-## 参照  
- [\<namedCaches\> 要素 \(キャッシュ設定\)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)
+## <a name="see-also"></a>関連項目  
+ [\<namedCaches > 要素 (キャッシュの設定)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)

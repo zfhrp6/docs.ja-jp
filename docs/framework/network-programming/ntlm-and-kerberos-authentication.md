@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - authentication [.NET Framework], NTLM
 - authentication [.NET Framework], Kerberos
@@ -27,16 +25,15 @@ helpviewer_keywords:
 - classes [.NET Framework], authentication
 - client authentication, NTLM
 ms.assetid: 9ef65560-f596-4469-bcce-f4d5407b55cd
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8cb52a70aa34e1011f12a77ea32ec5077f92c127
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 36e88b163ab857180a02278828dba7dcec457736
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ntlm-and-kerberos-authentication"></a>NTLM 認証および Kerberos 認証
 既定の NTLM 認証と Kerberos 認証は、呼び出し元のアプリケーションに関連付けられている Microsoft Windows NT ユーザー資格情報を使用して、サーバーで認証を試みます。 既定以外の NTLM 認証を使用する場合、アプリケーションは認証の種類を NTLM に設定し、次の例に示すように <xref:System.Net.NetworkCredential> オブジェクトを使用して、ユーザー名、パスワード、およびドメインをホストに渡します。  
@@ -75,6 +72,5 @@ WReq.Credentials = CredentialCache.DefaultCredentials;
 >  NTLM 認証は、プロキシ サーバー経由では機能しません。  
   
 ## <a name="see-also"></a>関連項目  
- [基本認証とダイジェスト認証](../../../docs/framework/network-programming/basic-and-digest-authentication.md)   
+ [基本認証とダイジェスト認証](../../../docs/framework/network-programming/basic-and-digest-authentication.md)  
  [インターネット認証](../../../docs/framework/network-programming/internet-authentication.md)
-

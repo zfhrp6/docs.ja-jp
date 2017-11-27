@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 5a9f5771-f5f6-4100-8501-406aa20d731a
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: cde32407f072f3d29af4a8d1aae559e46057ae3a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-enable-token-replay-detection"></a>方法: トークン再生検出を有効にする
 ## <a name="applies-to"></a>対象  
@@ -93,4 +91,3 @@ ms.lasthandoff: 08/21/2017
 2.  ブラウザーの **[戻る]** ボタンを押します。 "**'/' アプリケーションでのサーバー エラー**" ページが表示され、"*ID1062: 再生が検出されました: トークン: 'System.IdentityModel.Tokens.SamlSecurityToken'*" という説明の後に *AssertionId* と*発行者*が続きます。  
   
      このエラー ページが表示されるのは、トークン再生が検出されたときに <xref:System.IdentityModel.Tokens.SecurityTokenReplayDetectedException> 型の例外がスローされたためです。 このエラーが発生するのは、トークンが最初に表示されたときに初期 POST 要求を再送信しようとしたためです。 **[戻る]** ボタンを押しても、サーバーへの後続の要求でこのような動作にはなりません。
-

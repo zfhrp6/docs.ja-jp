@@ -1,34 +1,37 @@
 ---
-title: "Windows Communication Foundation (WCF) サンプル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Windows Communication Foundation (WCF) サンプル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 89d4efce-7832-4dd5-82a8-0e574b3302f9
-caps.latest.revision: 17
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d90b133819df2997ed4d3a880d891d97b06a22c0
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Windows Communication Foundation (WCF) サンプル
+# <a name="windows-communication-foundation-wcf-samples"></a>Windows Communication Foundation (WCF) サンプル
 これらのサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のさまざまな特性について説明します。  
   
--   C# バージョンのサンプルについてを参照してください[Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)します。  
+-   C# バージョンのサンプルを参照してください[Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)です。  
   
--   Visual Basic バージョンのサンプルを参照してください[Visual Basic 2010 サンプル](http://go.microsoft.com/fwlink/?LinkID=193373) をクリック**WF HYPERLINK"javascript:__doPostBack('ctl00$ctl00$Content$TabContentPanel$Content$ReleaseFiles$FileList$ctl02$FileNameLink','')"_WCF_Samples.zip**します。  
+-   サンプルの Visual Basic バージョンを参照してください[Visual Basic 2010 サンプル](http://go.microsoft.com/fwlink/?LinkID=193373) をクリック**WF ハイパーリンク"javascript:__doPostBack('ctl00$ctl00$Content$TabContentPanel$Content$ReleaseFiles$FileList$ctl02$FileNameLink'、')"_WCF_Samples.zip**です。  
   
- [!INCLUDE[wf](../../../../includes/wf-md.md)] [アプリケーション](../../../../docs/framework/windows-workflow-foundation/samples/application.md)もサンプルではいくつか[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]機能します。  
+ [!INCLUDE[wf](../../../../includes/wf-md.md)] [アプリケーション](../../../../docs/framework/windows-workflow-foundation/samples/application.md)サンプルも紹介[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]機能します。  
   
- ドキュメントとヘルプ ビューアーのスタンドアロン バージョンをインストールするには、ダウンロード、 [Microsoft Windows SDK v 7.1](http://go.microsoft.com/fwlink/?LinkID=194146)します。  
+ マニュアルとヘルプ ビューアーのスタンドアロン バージョンをインストールするには、ダウンロード、 [Microsoft Windows SDK v 7.1](http://go.microsoft.com/fwlink/?LinkID=194146)です。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [基本的な](../../../../docs/framework/wcf/samples/basic.md)  
+ [基本](../../../../docs/framework/wcf/samples/basic.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の基本的な機能を示すサンプルを紹介します。  
   
  機能拡張  

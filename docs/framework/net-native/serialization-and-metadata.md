@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 619ecf1c-1ca5-4d66-8934-62fe7aad78c6
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8da57c130f8b22a1e2de57678e86f84d00d11aaf
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: e7216f14fb0b8da27b870fc8e66b24f6d87fcaad
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="serialization-and-metadata"></a>シリアル化とメタデータ
 アプリでオブジェクトをシリアル化および逆シリアル化する場合、ランタイム ディレクティブ (.rd.xml) ファイルにエントリを追加して、必要なメタデータが実行時に確実に存在するようにする必要があることがあります。 シリアライザーには次の 2 つのカテゴリがあり、それぞれランタイム ディレクティブ ファイルで異なる処理が必要です。  
@@ -62,7 +60,7 @@ ms.lasthandoff: 08/21/2017
 <Type Name="DataSet" Browse="Required Public" />  
 ```  
   
- 同様に、次のコードのように <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Type%5B%5D%29?displayProperty=fullName> などのコンストラクターを呼び出し、シリアル化する追加の <xref:System.Type> オブジェクトの配列を指定した場合も、[!INCLUDE[net_native](../../../includes/net-native-md.md)] コンパイラはこれらの型を解決できません。  
+ 同様に、次のコードのように <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Type%5B%5D%29?displayProperty=nameWithType> などのコンストラクターを呼び出し、シリアル化する追加の <xref:System.Type> オブジェクトの配列を指定した場合も、[!INCLUDE[net_native](../../../includes/net-native-md.md)] コンパイラはこれらの型を解決できません。  
   
  [!code-csharp[ProjectN#7](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#7)]  
   
@@ -75,8 +73,7 @@ ms.lasthandoff: 08/21/2017
  この例で使用されている構文の詳細については、「[\<Type> 要素](../../../docs/framework/net-native/type-element-net-native.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
- [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)   
- [\<Type> 要素](../../../docs/framework/net-native/type-element-net-native.md)   
+ [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)  
+ [\<型 > 要素](../../../docs/framework/net-native/type-element-net-native.md)  
  [\<Namespace > 要素](../../../docs/framework/net-native/namespace-element-net-native.md)
-
