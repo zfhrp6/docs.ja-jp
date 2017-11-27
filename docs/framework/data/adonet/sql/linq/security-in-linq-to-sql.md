@@ -1,45 +1,48 @@
 ---
-title: "Security in LINQ to SQL | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "LINQ to SQL におけるセキュリティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d49787f7-414e-4c71-aa33-80a5895536b1
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 27e40221c22a91bb2a8c40ec4bcfd663eb05aaef
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Security in LINQ to SQL
-データベースに接続するときは、常にセキュリティのリスクがあります。  LINQ to SQL には SQL Server のデータを操作する新しい方法が含まれていますが、セキュリティ メカニズムは追加されていません。  
+# <a name="security-in-linq-to-sql"></a><span data-ttu-id="0854c-102">LINQ to SQL におけるセキュリティ</span><span class="sxs-lookup"><span data-stu-id="0854c-102">Security in LINQ to SQL</span></span>
+<span data-ttu-id="0854c-103">データベースに接続するときは、常にセキュリティのリスクがあります。</span><span class="sxs-lookup"><span data-stu-id="0854c-103">Security risks are always present when you connect to a database.</span></span> <span data-ttu-id="0854c-104">LINQ to SQL には SQL Server のデータを操作する新しい方法が含まれていますが、セキュリティ メカニズムは追加されていません。</span><span class="sxs-lookup"><span data-stu-id="0854c-104">Although LINQ to SQL may include some new ways to work with data in SQL Server, it does not provide any additional security mechanisms.</span></span>  
   
-## アクセス制御と認証  
- LINQ to SQL には独自のユーザー モデルや認証メカニズムがありません。  オブジェクト モデルにマッピングされるデータベース、データベースのテーブル、ビュー、ストアド プロシージャなどへのアクセス制御には SQL Server のセキュリティを使用します。  ユーザーには必要最小限のアクセス権を与え、ユーザー認証には強力なパスワードを要求してください。  
+## <a name="access-control-and-authentication"></a><span data-ttu-id="0854c-105">アクセス制御と認証</span><span class="sxs-lookup"><span data-stu-id="0854c-105">Access Control and Authentication</span></span>  
+ <span data-ttu-id="0854c-106">LINQ to SQL には独自のユーザー モデルや認証メカニズムがありません。</span><span class="sxs-lookup"><span data-stu-id="0854c-106">LINQ to SQL does not have its own user model or authentication mechanisms.</span></span> <span data-ttu-id="0854c-107">オブジェクト モデルにマッピングされるデータベース、データベースのテーブル、ビュー、ストアド プロシージャなどへのアクセス制御には SQL Server のセキュリティを使用します。</span><span class="sxs-lookup"><span data-stu-id="0854c-107">Use SQL Server Security to control access to the database, database tables, views, and stored procedures that are mapped to your object model.</span></span> <span data-ttu-id="0854c-108">ユーザーには必要最小限のアクセス権を与え、ユーザー認証には強力なパスワードを要求してください。</span><span class="sxs-lookup"><span data-stu-id="0854c-108">Grant the minimally required access to users and require strong passwords for user authentication.</span></span>  
   
-## マッピングとスキーマ情報  
- オブジェクト モデルまたは外部マッピング ファイルにある、SQL\-CLR 型マッピングとデータベース スキーマ情報は、ファイル システムでこれらのファイルに対してアクセス権を持つ全ユーザーに公開されます。  オブジェクト モデルや外部マッピング ファイルにアクセスできるユーザーはすべてスキーマ情報を使用できると想定してください。スキーマ情報へのアクセスを制限するには、ファイルのセキュリティ メカニズムを使用してソース ファイルとマッピング ファイルのセキュリティを確保します。  
+## <a name="mapping-and-schema-information"></a><span data-ttu-id="0854c-109">マッピングとスキーマ情報</span><span class="sxs-lookup"><span data-stu-id="0854c-109">Mapping and Schema Information</span></span>  
+ <span data-ttu-id="0854c-110">オブジェクト モデルまたは外部マッピング ファイルにある、SQL-CLR 型マッピングとデータベース スキーマ情報は、ファイル システムでこれらのファイルに対してアクセス権を持つ全ユーザーに公開されます。</span><span class="sxs-lookup"><span data-stu-id="0854c-110">SQL-CLR type mapping and database schema information in your object model or external mapping file is available for all with access to those files in the file system.</span></span> <span data-ttu-id="0854c-111">オブジェクト モデルや外部マッピング ファイルにアクセスできるユーザーはすべてスキーマ情報を使用できると想定してください。スキーマ情報へのアクセスを制限するには、ファイルのセキュリティ メカニズムを使用してソース ファイルとマッピング ファイルのセキュリティを確保します。</span><span class="sxs-lookup"><span data-stu-id="0854c-111">Assume that schema information will be available to all who can access the object model or external mapping file.To prevent more widespread access to schema information, use file security mechanisms to secure source files and mapping files.</span></span>  
   
-## 接続文字列  
- 接続文字列にパスワードを使用することは、できるだけ避けてください。  接続文字列自体がセキュリティのリスクであるうえに、接続文字列はオブジェクト リレーショナル デザイナーまたは SQLMetal コマンド ライン ツールの使用時にオブジェクト モデルや外部マッピング ファイルにクリア テキストで追加できます。  ファイル システムでオブジェクト モデルまたは外部マッピング ファイルに対してアクセス権があれば、どのユーザーでも接続パスワードを見ることができます \(パスワードが接続文字列に含まれている場合\)。  
+## <a name="connection-strings"></a><span data-ttu-id="0854c-112">接続文字列</span><span class="sxs-lookup"><span data-stu-id="0854c-112">Connection Strings</span></span>  
+ <span data-ttu-id="0854c-113">接続文字列にパスワードを使用することは、できるだけ避けてください。</span><span class="sxs-lookup"><span data-stu-id="0854c-113">Using passwords in connection strings should be avoided whenever possible.</span></span> <span data-ttu-id="0854c-114">接続文字列自体がセキュリティのリスクであるうえに、接続文字列はオブジェクト リレーショナル デザイナーまたは SQLMetal コマンド ライン ツールの使用時にオブジェクト モデルや外部マッピング ファイルにクリア テキストで追加できます。</span><span class="sxs-lookup"><span data-stu-id="0854c-114">Not only is a connection string a security risk in its own right, but the connection string may also be added in clear text to the object model or external mapping file when using the Object Relational Designer or SQLMetal command-line tool.</span></span> <span data-ttu-id="0854c-115">ファイル システムでオブジェクト モデルまたは外部マッピング ファイルに対してアクセス権があれば、どのユーザーでも接続パスワードを見ることができます (パスワードが接続文字列に含まれている場合)。</span><span class="sxs-lookup"><span data-stu-id="0854c-115">Anyone with access to the object model or external mapping file via the file system could see the connection password (if it is included in the connection string).</span></span>  
   
- このようなリスクを最小限に抑えるには、統合セキュリティを使用して [!INCLUDE[ssNoVersion](../../../../../../includes/ssnoversion-md.md)] との信頼関係接続を作成します。  この方法を使用すると、接続文字列にパスワードを含める必要がなくなります。  詳細については、「[SQL Server のセキュリティ](../../../../../../docs/framework/data/adonet/sql/sql-server-security.md)」を参照してください。  
+ <span data-ttu-id="0854c-116">このようなリスクを最小限に抑えるには、統合セキュリティを使用して [!INCLUDE[ssNoVersion](../../../../../../includes/ssnoversion-md.md)] との信頼関係接続を作成します。</span><span class="sxs-lookup"><span data-stu-id="0854c-116">To minimize such risks, use integrated security to make a trusted connection with [!INCLUDE[ssNoVersion](../../../../../../includes/ssnoversion-md.md)].</span></span> <span data-ttu-id="0854c-117">この方法を使用すると、接続文字列にパスワードを含める必要がなくなります。</span><span class="sxs-lookup"><span data-stu-id="0854c-117">By using this approach, you do not have to store a password in the connection string.</span></span> <span data-ttu-id="0854c-118">詳細については、次を参照してください。 [SQL Server のセキュリティ](../../../../../../docs/framework/data/adonet/sql/sql-server-security.md)です。</span><span class="sxs-lookup"><span data-stu-id="0854c-118">For more information, see [SQL Server Security](../../../../../../docs/framework/data/adonet/sql/sql-server-security.md).</span></span>  
   
- 統合セキュリティがない場合は、接続文字列にクリア テキストのパスワードが必要になります。  以下は、接続文字列のセキュリティ保護に最も有効な手段です。  
+ <span data-ttu-id="0854c-119">統合セキュリティがない場合は、接続文字列にクリア テキストのパスワードが必要になります。</span><span class="sxs-lookup"><span data-stu-id="0854c-119">In the absence of integrated security, a clear-text password will be needed in the connection string.</span></span> <span data-ttu-id="0854c-120">以下は、接続文字列のセキュリティ保護に最も有効な手段です。</span><span class="sxs-lookup"><span data-stu-id="0854c-120">The best way to help secure your connection string, in increasing order of risk, is as follows:</span></span>  
   
--   統合セキュリティを使用します。  
+-   <span data-ttu-id="0854c-121">統合セキュリティを使用します。</span><span class="sxs-lookup"><span data-stu-id="0854c-121">Use integrated security.</span></span>  
   
--   接続文字列をパスワードで保護し、接続文字列の配布を最小限にします。  
+-   <span data-ttu-id="0854c-122">接続文字列をパスワードで保護し、接続文字列の配布を最小限にします。</span><span class="sxs-lookup"><span data-stu-id="0854c-122">Secure connection strings with passwords and minimize passing around connection strings.</span></span>  
   
--   接続文字列の代わりに、表示時間に制限のある <xref:System.Data.SqlClient.SqlConnection?displayProperty=fullName> クラスを使用します。  LINQ to SQL の <xref:System.Data.Linq.DataContext?displayProperty=fullName> クラスは <xref:System.Data.SqlClient.SqlConnection> を使用してインスタンス化できます。  
+-   <span data-ttu-id="0854c-123">接続文字列の代わりに、表示時間に制限のある <xref:System.Data.SqlClient.SqlConnection?displayProperty=nameWithType> クラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="0854c-123">Use a <xref:System.Data.SqlClient.SqlConnection?displayProperty=nameWithType> class instead of a connection string since it limits the duration of exposure.</span></span> <span data-ttu-id="0854c-124">LINQ to SQL の <xref:System.Data.Linq.DataContext?displayProperty=nameWithType> クラスは <xref:System.Data.SqlClient.SqlConnection> を使用してインスタンス化できます。</span><span class="sxs-lookup"><span data-stu-id="0854c-124">The LINQ to SQL <xref:System.Data.Linq.DataContext?displayProperty=nameWithType> class can be instantiated using a <xref:System.Data.SqlClient.SqlConnection>.</span></span>  
   
--   すべての接続文字列の期限と接触点を最小限にします。  
+-   <span data-ttu-id="0854c-125">すべての接続文字列の期限と接触点を最小限にします。</span><span class="sxs-lookup"><span data-stu-id="0854c-125">Minimize lifetimes and touch points for all connection strings.</span></span>  
   
-## 参照  
- [Background Information](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)   
- [Frequently Asked Questions](../../../../../../docs/framework/data/adonet/sql/linq/frequently-asked-questions.md)
+## <a name="see-also"></a><span data-ttu-id="0854c-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="0854c-126">See Also</span></span>  
+ [<span data-ttu-id="0854c-127">背景情報</span><span class="sxs-lookup"><span data-stu-id="0854c-127">Background Information</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
+ [<span data-ttu-id="0854c-128">よく寄せられる質問</span><span class="sxs-lookup"><span data-stu-id="0854c-128">Frequently Asked Questions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/frequently-asked-questions.md)

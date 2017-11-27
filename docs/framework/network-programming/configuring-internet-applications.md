@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - downloading Internet resources, default proxy
 - sending data, default proxy
@@ -32,25 +27,24 @@ helpviewer_keywords:
 - network resources, configuring Internet applications
 - Internet, default proxy
 ms.assetid: bb707c72-eed2-4a82-8800-c9e68df2fd4f
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a4a013b8a4ff60222bb88c6e9c4f14badd689b5d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 05f849810d28ebe69a773bd4bd9d536146df6357
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="configuring-internet-applications"></a>構成 (インターネット アプリケーションを)
-[\<system.Net> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) 構成要素には、アプリケーションのネットワーク構成情報が含まれています。 [\<system.Net> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) 要素を使用すると、プロキシ サーバーを設定し、接続管理パラメーターを設定し、カスタム認証および要求モジュールをアプリケーションに組み込むことができます。  
+# <a name="configuring-internet-applications"></a><span data-ttu-id="2d0ee-102">構成 (インターネット アプリケーションを)</span><span class="sxs-lookup"><span data-stu-id="2d0ee-102">Configuring Internet Applications</span></span>
+<span data-ttu-id="2d0ee-103">[\<system.Net> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) 構成要素には、アプリケーションのネットワーク構成情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="2d0ee-103">The [\<system.Net> Element (Network Settings)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) configuration element contains network configuration information for applications.</span></span> <span data-ttu-id="2d0ee-104">[\<system.Net> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) 要素を使用すると、プロキシ サーバーを設定し、接続管理パラメーターを設定し、カスタム認証および要求モジュールをアプリケーションに組み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="2d0ee-104">Using the [\<system.Net> Element (Network Settings)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) element, you can set proxy servers, set connection management parameters, and include custom authentication and request modules in your application.</span></span>  
   
- [\<defaultProxy> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md) 要素は、`GlobalProxySelection` クラスによって返されるプロキシ サーバーを定義します。 独自の <xref:System.Net.HttpWebRequest.Proxy%2A> プロパティが特定の値に設定されていない <xref:System.Net.HttpWebRequest> はすべて、既定のプロキシを使用します。 プロキシ アドレスを設定するだけでなく、プロキシを使用しないサーバー アドレスの一覧を作成し、ローカル アドレスにプロキシを使用しないように指定できます。  
+ <span data-ttu-id="2d0ee-105">[\<defaultProxy> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md) 要素は、`GlobalProxySelection` クラスによって返されるプロキシ サーバーを定義します。</span><span class="sxs-lookup"><span data-stu-id="2d0ee-105">The [\<defaultProxy> Element (Network Settings)](../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md) element defines the proxy server returned by the `GlobalProxySelection` class.</span></span> <span data-ttu-id="2d0ee-106">独自の <xref:System.Net.HttpWebRequest.Proxy%2A> プロパティが特定の値に設定されていない <xref:System.Net.HttpWebRequest> はすべて、既定のプロキシを使用します。</span><span class="sxs-lookup"><span data-stu-id="2d0ee-106">Any <xref:System.Net.HttpWebRequest> that does not have its own <xref:System.Net.HttpWebRequest.Proxy%2A> property set to a specific value uses the default proxy.</span></span> <span data-ttu-id="2d0ee-107">プロキシ アドレスを設定するだけでなく、プロキシを使用しないサーバー アドレスの一覧を作成し、ローカル アドレスにプロキシを使用しないように指定できます。</span><span class="sxs-lookup"><span data-stu-id="2d0ee-107">In addition to setting the proxy address, you can create a list of server addresses that will not use the proxy, and you can indicate that the proxy should not be used for local addresses.</span></span>  
   
- Microsoft Internet Explorer の設定は構成の設定と組み合わせて使用され、構成の設定が優先されることに注意してください。  
+ <span data-ttu-id="2d0ee-108">Microsoft Internet Explorer の設定は構成の設定と組み合わせて使用され、構成の設定が優先されることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="2d0ee-108">It is important to note that the Microsoft Internet Explorer settings are combined with the configuration settings, with the latter taking precedence.</span></span>  
   
- 次の例では、既定のプロキシ サーバー アドレスを http://proxyserver に設定し、ローカル アドレスにプロキシを使用しないようにし、contoso.com ドメインにあるサーバーへのすべての要求でプロキシをバイパスするように指定しています。  
+ <span data-ttu-id="2d0ee-109">次の例では、既定のプロキシ サーバー アドレスを http://proxyserver に設定し、ローカル アドレスにプロキシを使用しないようにし、contoso.com ドメインにあるサーバーへのすべての要求でプロキシをバイパスするように指定しています。</span><span class="sxs-lookup"><span data-stu-id="2d0ee-109">The following example sets the default proxy server address to http://proxyserver, indicates that the proxy should not be used for local addresses, and specifies that all requests to servers located in the contoso.com domain should bypass the proxy.</span></span>  
   
 ```xml  
 <configuration>  
@@ -69,7 +63,7 @@ ms.lasthandoff: 08/21/2017
 </configuration>  
 ```  
   
- 特定のサーバーまたは他のすべてのサーバーに対して行うことができる持続接続の数を構成する場合は、[\<connectionManagement> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md) 要素を使用します。 次の例では、サーバー www.contoso.com への 2 つの持続接続、IP アドレス 192.168.1.2 を持つサーバーへの 4 つの持続接続、および他のすべてのサーバーへの 1 つの持続接続を使用するようにアプリケーションを構成します。  
+ <span data-ttu-id="2d0ee-110">特定のサーバーまたは他のすべてのサーバーに対して行うことができる持続接続の数を構成する場合は、[\<connectionManagement> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md) 要素を使用します。</span><span class="sxs-lookup"><span data-stu-id="2d0ee-110">Use the [\<connectionManagement> Element (Network Settings)](../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md) element to configure the number of persistent connections that can be made to a specific server or to all other servers.</span></span> <span data-ttu-id="2d0ee-111">次の例では、サーバー www.contoso.com への 2 つの持続接続、IP アドレス 192.168.1.2 を持つサーバーへの 4 つの持続接続、および他のすべてのサーバーへの 1 つの持続接続を使用するようにアプリケーションを構成します。</span><span class="sxs-lookup"><span data-stu-id="2d0ee-111">The following example configures the application to use two persistent connections to the server www.contoso.com, four persistent connections to the server with the IP address 192.168.1.2, and one persistent connection to all other servers.</span></span>  
   
 ```xml  
 <configuration>  
@@ -83,9 +77,9 @@ ms.lasthandoff: 08/21/2017
 </configuration>  
 ```  
   
- カスタム認証モジュールは、[\<authenticationModules> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md) 要素で構成されます。 カスタム認証モジュールは <xref:System.Net.IAuthenticationModule> インターフェイスを実装する必要があります。  
+ <span data-ttu-id="2d0ee-112">カスタム認証モジュールは、[\<authenticationModules> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md) 要素で構成されます。</span><span class="sxs-lookup"><span data-stu-id="2d0ee-112">Custom authentication modules are configured with the [\<authenticationModules> Element (Network Settings)](../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md) element.</span></span> <span data-ttu-id="2d0ee-113">カスタム認証モジュールは <xref:System.Net.IAuthenticationModule> インターフェイスを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2d0ee-113">Custom authentication modules must implement the <xref:System.Net.IAuthenticationModule> interface.</span></span>  
   
- 次の例では、カスタム認証モジュールを構成します。  
+ <span data-ttu-id="2d0ee-114">次の例では、カスタム認証モジュールを構成します。</span><span class="sxs-lookup"><span data-stu-id="2d0ee-114">The following example configures a custom authentication module.</span></span>  
   
 ```xml  
 <configuration>  
@@ -97,7 +91,7 @@ ms.lasthandoff: 08/21/2017
 </configuration>  
 ```  
   
- [\<webRequestModules> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md) 要素を使用し、カスタム プロトコル固有のモジュールを使用してインターネット リソースから情報を要求するようにアプリケーションを構成することができます。 指定されたモジュールは <xref:System.Net.IWebRequestCreate> インターフェイスを実装する必要があります。 既定の HTTP、HTTPS、およびファイル要求モジュールは、次の例のように、構成ファイルでカスタム モジュールを指定してオーバーライドすることができます。  
+ <span data-ttu-id="2d0ee-115">[\<webRequestModules> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md) 要素を使用し、カスタム プロトコル固有のモジュールを使用してインターネット リソースから情報を要求するようにアプリケーションを構成することができます。</span><span class="sxs-lookup"><span data-stu-id="2d0ee-115">You can use the [\<webRequestModules> Element (Network Settings)](../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md) element to configure your application to use custom protocol-specific modules to request information from Internet resources.</span></span> <span data-ttu-id="2d0ee-116">指定されたモジュールは <xref:System.Net.IWebRequestCreate> インターフェイスを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2d0ee-116">The specified modules must implement the <xref:System.Net.IWebRequestCreate> interface.</span></span> <span data-ttu-id="2d0ee-117">既定の HTTP、HTTPS、およびファイル要求モジュールは、次の例のように、構成ファイルでカスタム モジュールを指定してオーバーライドすることができます。</span><span class="sxs-lookup"><span data-stu-id="2d0ee-117">You can override the default HTTP, HTTPS, and file request modules by specifying your custom module in the configuration file, as in the following example.</span></span>  
   
 ```xml  
 <configuration>  
@@ -112,8 +106,7 @@ ms.lasthandoff: 08/21/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)   
- [ネットワーク設定スキーマ](../../../docs/framework/configure-apps/file-schema/network/index.md)   
- [\<system.Net> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)
-
+## <a name="see-also"></a><span data-ttu-id="2d0ee-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="2d0ee-118">See Also</span></span>  
+ [<span data-ttu-id="2d0ee-119">.NET Framework のネットワーク プログラミング</span><span class="sxs-lookup"><span data-stu-id="2d0ee-119">Network Programming in the .NET Framework</span></span>](../../../docs/framework/network-programming/index.md)  
+ [<span data-ttu-id="2d0ee-120">ネットワーク設定スキーマ</span><span class="sxs-lookup"><span data-stu-id="2d0ee-120">Network Settings Schema</span></span>](../../../docs/framework/configure-apps/file-schema/network/index.md)  
+ [<span data-ttu-id="2d0ee-121">\<system.Net> 要素 (ネットワーク設定)</span><span class="sxs-lookup"><span data-stu-id="2d0ee-121">\<system.Net> Element (Network Settings)</span></span>](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)

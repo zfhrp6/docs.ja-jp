@@ -1,33 +1,39 @@
 ---
-title: "DataView の変更 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DataView の変更"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 697a3991-b660-4a5a-8a54-1a2304ff158e
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 0a8478e9b21c6c2abdc02677305e468109e7b9fe
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataView の変更
-<xref:System.Data.DataView> を使用して、データ行を基になるテーブルに追加、削除、または変更できます。  基になるテーブルのデータを **DataView** で変更できるかどうかは、**DataView** の 3 つのブール値プロパティで制御されます。  この 3 つのプロパティとは、<xref:System.Data.DataView.AllowNew%2A>、<xref:System.Data.DataView.AllowEdit%2A> および <xref:System.Data.DataView.AllowDelete%2A> です。  これらのプロパティの既定値は **true** です。  
+# <a name="modifying-dataviews"></a><span data-ttu-id="b02e8-102">DataView の変更</span><span class="sxs-lookup"><span data-stu-id="b02e8-102">Modifying DataViews</span></span>
+<span data-ttu-id="b02e8-103"><xref:System.Data.DataView> を使用して、データ行を基になるテーブルに追加、削除、または変更できます。</span><span class="sxs-lookup"><span data-stu-id="b02e8-103">You can use the <xref:System.Data.DataView> to add, delete, or modify rows of data in the underlying table.</span></span> <span data-ttu-id="b02e8-104">使用する機能、 **DataView**基になるテーブル内のデータを変更するのには 3 つのブール型プロパティのいずれかの設定によって制御されます、 **DataView**です。</span><span class="sxs-lookup"><span data-stu-id="b02e8-104">The ability to use the **DataView** to modify data in the underlying table is controlled by setting one of three Boolean properties of the **DataView**.</span></span> <span data-ttu-id="b02e8-105">この 3 つのプロパティとは、<xref:System.Data.DataView.AllowNew%2A>、<xref:System.Data.DataView.AllowEdit%2A> および <xref:System.Data.DataView.AllowDelete%2A> です。</span><span class="sxs-lookup"><span data-stu-id="b02e8-105">These properties are <xref:System.Data.DataView.AllowNew%2A>, <xref:System.Data.DataView.AllowEdit%2A>, and <xref:System.Data.DataView.AllowDelete%2A>.</span></span> <span data-ttu-id="b02e8-106">設定されている**true**既定です。</span><span class="sxs-lookup"><span data-stu-id="b02e8-106">They are set to **true** by default.</span></span>  
   
- **AllowNew** が **true** の場合は、**DataView** の <xref:System.Data.DataView.AddNew%2A> メソッドを使用して <xref:System.Data.DataRowView> を新規に作成できます。  **DataRowView** の <xref:System.Data.DataRowView.EndEdit%2A> メソッドが呼び出されるまでは、新規に作成された行は基になる <xref:System.Data.DataTable> に追加されません。  **DataRowView** の <xref:System.Data.DataRowView.CancelEdit%2A> メソッドが呼び出されると、新規に作成された行は破棄されます。  一度に編集できるのは、1 つの **DataRowView** だけです。  保留中の行がある場合は、**DataRowView** の **AddNew** メソッドまたは **BeginEdit** メソッドを呼び出すと、保留中の行に対して **EndEdit** が暗黙的に呼び出されます。  **EndEdit** が呼び出されると、基になる **DataTable** に対して変更が適用されます。適用された変更をコミットするには **DataTable**、**DataSet**、または **DataRow** の各オブジェクトの **AcceptChanges** メソッドを使用し、拒否するにはこれらのオブジェクトの **RejectChanges** メソッドを使用します。  **AllowNew** が **false** の場合は、**DataRowView** の **AddNew** メソッドを呼び出すと例外がスローされます。  
+ <span data-ttu-id="b02e8-107">場合**AllowNew**は**true**、使用することができます、<xref:System.Data.DataView.AddNew%2A>のメソッド、 **DataView**を新規作成する<xref:System.Data.DataRowView>です。</span><span class="sxs-lookup"><span data-stu-id="b02e8-107">If **AllowNew** is **true**, you can use the <xref:System.Data.DataView.AddNew%2A> method of the **DataView** to create a new <xref:System.Data.DataRowView>.</span></span> <span data-ttu-id="b02e8-108">新しい行がないことが実際には、基になる追加<xref:System.Data.DataTable>まで、<xref:System.Data.DataRowView.EndEdit%2A>のメソッド、 **DataRowView**と呼びます。</span><span class="sxs-lookup"><span data-stu-id="b02e8-108">Note that a new row is not actually added to the underlying <xref:System.Data.DataTable> until the <xref:System.Data.DataRowView.EndEdit%2A> method of the **DataRowView** is called.</span></span> <span data-ttu-id="b02e8-109">場合、<xref:System.Data.DataRowView.CancelEdit%2A>のメソッド、 **DataRowView**が呼び出されると、新しい行が破棄されます。</span><span class="sxs-lookup"><span data-stu-id="b02e8-109">If the <xref:System.Data.DataRowView.CancelEdit%2A> method of the **DataRowView** is called, the new row is discarded.</span></span> <span data-ttu-id="b02e8-110">1 つだけを編集できることにも注意してください**DataRowView**一度にです。</span><span class="sxs-lookup"><span data-stu-id="b02e8-110">Note also that you can edit only one **DataRowView** at a time.</span></span> <span data-ttu-id="b02e8-111">呼び出す場合は、 **AddNew**または**BeginEdit**のメソッド、 **DataRowView**保留中の行が存在する間**EndEdit**で暗黙的に呼び出されると、保留中の行。</span><span class="sxs-lookup"><span data-stu-id="b02e8-111">If you call the **AddNew** or **BeginEdit** method of the **DataRowView** while a pending row exists, **EndEdit** is implicitly called on the pending row.</span></span> <span data-ttu-id="b02e8-112">ときに**EndEdit**が呼び出されると、変更は適用、基になる**DataTable**でき、後でコミットされたかを使用して拒否された、 **AcceptChanges**または**RejectChanges**のメソッド、 **DataTable**、**データセット**、または**DataRow**オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="b02e8-112">When **EndEdit** is called, the changes are applied to the underlying **DataTable** and can later be committed or rejected using the **AcceptChanges** or **RejectChanges** methods of the **DataTable**, **DataSet**, or **DataRow** object.</span></span> <span data-ttu-id="b02e8-113">場合**AllowNew**は**false**、呼び出した場合、例外がスローされます、 **AddNew**のメソッド、 **DataRowView**です。</span><span class="sxs-lookup"><span data-stu-id="b02e8-113">If **AllowNew** is **false**, an exception is thrown if you call the **AddNew** method of the **DataRowView**.</span></span>  
   
- **AllowEdit** が **true** の場合は、**DataRowView** を使用すると **DataRow** の内容を変更できます。  基になる行の変更内容を確定するには **DataRowView.EndEdit** を使用し、変更内容を取り消すには **DataRowView.CancelEdit** を使用します。  一度に編集できるのは 1 行だけです。  保留中の行がある場合は、**DataRowView** の **AddNew** メソッドまたは **BeginEdit** メソッドを呼び出すと、保留中の行に対して **EndEdit** が暗黙的に呼び出されます。  **EndEdit** が呼び出されると、基になる **DataRow** の **Current** 行バージョンに対して変更が適用されます。適用された変更をコミットするには **DataTable**、**DataSet**、または **DataRow** の各オブジェクトの **AcceptChanges** メソッドを使用し、拒否するにはこれらのオブジェクトの **RejectChanges** メソッドを使用します。  **AllowEdit** が **false** の場合は、**DataView** の値を変更しようとすると例外がスローされます。  
+ <span data-ttu-id="b02e8-114">場合**AllowEdit**は**true**の内容を変更することができます、 **DataRow**を介して、 **DataRowView**です。</span><span class="sxs-lookup"><span data-stu-id="b02e8-114">If **AllowEdit** is **true**, you can modify the contents of a **DataRow** via the **DataRowView**.</span></span> <span data-ttu-id="b02e8-115">使用して基になる行への変更を確認する**DataRowView.EndEdit**を使用して変更を拒否または**DataRowView.CancelEdit**です。</span><span class="sxs-lookup"><span data-stu-id="b02e8-115">You can confirm changes to the underlying row using **DataRowView.EndEdit** or reject the changes using **DataRowView.CancelEdit**.</span></span> <span data-ttu-id="b02e8-116">一度に編集できるのは 1 行だけです。</span><span class="sxs-lookup"><span data-stu-id="b02e8-116">Note that only one row can be edited at a time.</span></span> <span data-ttu-id="b02e8-117">呼び出す場合は、 **AddNew**または**BeginEdit**のメソッド、 **DataRowView**保留中の行が存在する間**EndEdit**で暗黙的に呼び出される保留中の行。</span><span class="sxs-lookup"><span data-stu-id="b02e8-117">If you call the **AddNew** or **BeginEdit** methods of the **DataRowView** while a pending row exists, **EndEdit** is implicitly called on the pending row.</span></span> <span data-ttu-id="b02e8-118">ときに**EndEdit**が呼び出されるで提案された変更を配置している、**現在**行バージョンの基になる**DataRow**でき、後でコミットされたか、を使用して拒否されました。**AcceptChanges**または**RejectChanges**のメソッド、 **DataTable**、**データセット**、または**DataRow**オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="b02e8-118">When **EndEdit** is called, proposed changes are placed in the **Current** row version of the underlying **DataRow** and can later be committed or rejected using the **AcceptChanges** or **RejectChanges** methods of the **DataTable**, **DataSet**, or **DataRow** object.</span></span> <span data-ttu-id="b02e8-119">場合**AllowEdit**は**false**、内の値を変更しようとする場合、例外がスローされます、 **DataView**です。</span><span class="sxs-lookup"><span data-stu-id="b02e8-119">If **AllowEdit** is **false**, an exception is thrown if you attempt to modify a value in the **DataView**.</span></span>  
   
- 既存の **DataRowView** の編集中でも、まだ確定されていない変更に関して、基になる **DataTable** のイベントが発生する場合があります。  **DataRowView** に対して **EndEdit** と **CancelEdit** のどちらが呼び出されているかに関係なく、基になる **DataRow** に対して **EndEdit** を呼び出すと、確定されていない変更が適用され、**CancelEdit** を呼び出すと、確定されていない変更が取り消されます。  
+ <span data-ttu-id="b02e8-120">既存**DataRowView**が編集中、基になるイベント**DataTable**提案された変更をまだ生成されます。</span><span class="sxs-lookup"><span data-stu-id="b02e8-120">When an existing **DataRowView** is being edited, events of the underlying **DataTable** will still be raised with the proposed changes.</span></span> <span data-ttu-id="b02e8-121">呼び出す場合**EndEdit**または**CancelEdit**で、基になる**DataRow**、保留中の変更を適用またはかどうかに関係なくキャンセルは**EndEdit**または**CancelEdit**で呼び出されると、 **DataRowView**です。</span><span class="sxs-lookup"><span data-stu-id="b02e8-121">Note that if you call **EndEdit** or **CancelEdit** on the underlying **DataRow**, pending changes will be applied or canceled regardless of whether **EndEdit** or **CancelEdit** is called on the **DataRowView**.</span></span>  
   
- **AllowDelete** が **true** の場合は、**DataView** オブジェクトまたは **DataRowView** オブジェクトの **Delete** メソッドを使用して **DataView** の行を削除できます。DataView の行を削除すると、基になる **DataTable** から行が削除されます。  後でこの削除操作をコミットするには **AcceptChanges** を使用し、拒否するには **RejectChanges** を使用します。  **AllowDelete** が **false** の場合は、**DataView** または **DataRowView** の **Delete** メソッドを呼び出すと例外がスローされます。  
+ <span data-ttu-id="b02e8-122">場合**AllowDelete**は**true**から行を削除することができます、 **DataView**を使用して、**削除**のメソッド、 **DataView**または**DataRowView**オブジェクト、および行が削除されている場合、基になるから**DataTable**です。</span><span class="sxs-lookup"><span data-stu-id="b02e8-122">If **AllowDelete** is **true**, you can delete rows from the **DataView** by using the **Delete** method of the **DataView** or **DataRowView** object, and the rows are deleted from the underlying **DataTable**.</span></span> <span data-ttu-id="b02e8-123">後でコミットまたはを使用して削除を拒否する**AcceptChanges**または**RejectChanges**それぞれします。</span><span class="sxs-lookup"><span data-stu-id="b02e8-123">You can later commit or reject the deletes using **AcceptChanges** or **RejectChanges** respectively.</span></span> <span data-ttu-id="b02e8-124">場合**AllowDelete**は**false**、呼び出した場合、例外がスローされます、**削除**のメソッド、 **DataView**または**DataRowView**です。</span><span class="sxs-lookup"><span data-stu-id="b02e8-124">If **AllowDelete** is **false**, an exception is thrown if you call the **Delete** method of the **DataView** or **DataRowView**.</span></span>  
   
- 次のコード サンプルは、**DataView** を使用して行を削除する機能を無効にし、**DataView** を使用して基になるテーブルに新しい行を追加します。  
+ <span data-ttu-id="b02e8-125">次のコード例を使用して無効になります、 **DataView**に削除の行の行を新しい行を使用して基になるテーブルを追加、 **DataView**です。</span><span class="sxs-lookup"><span data-stu-id="b02e8-125">The following code example disables using the **DataView** to delete rows  and adds a new row to the underlying table using the **DataView**.</span></span>  
   
 ```vb  
 Dim custTable As DataTable = custDS.Tables("Customers")  
@@ -40,7 +46,6 @@ Dim newDRV As DataRowView = custView.AddNew()
 newDRV("CustomerID") = "ABCDE"  
 newDRV("CompanyName") = "ABC Products"  
 newDRV.EndEdit()  
-  
 ```  
   
 ```csharp  
@@ -56,9 +61,9 @@ newDRV["CompanyName"] = "ABC Products";
 newDRV.EndEdit();  
 ```  
   
-## 参照  
- <xref:System.Data.DataTable>   
- <xref:System.Data.DataView>   
- <xref:System.Data.DataRowView>   
- [DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="b02e8-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="b02e8-126">See Also</span></span>  
+ <xref:System.Data.DataTable>  
+ <xref:System.Data.DataView>  
+ <xref:System.Data.DataRowView>  
+ [<span data-ttu-id="b02e8-127">DataViews</span><span class="sxs-lookup"><span data-stu-id="b02e8-127">DataViews</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)  
+ [<span data-ttu-id="b02e8-128">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="b02e8-128">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

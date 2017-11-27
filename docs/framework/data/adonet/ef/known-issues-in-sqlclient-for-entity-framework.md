@@ -1,75 +1,74 @@
 ---
-title: "Entity Framework 用の SqlClient の既知の問題 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: "Entity Framework 用の .NET Framework Data Provider for SQL Server (SqlClient) の既知の問題"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 48fe4912-4d0f-46b6-be96-3a42c54780f6
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 67d4c4f08661bbf2febefead64e62c8a84045f47
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Entity Framework 用の SqlClient の既知の問題
-ここでは、.NET Framework Data Provider for SQL Server \(SqlClient\) に関連する既知の問題について説明します。  
+# <a name="known-issues-in-sqlclient-for-entity-framework"></a><span data-ttu-id="fa028-102">Entity Framework 用の .NET Framework Data Provider for SQL Server (SqlClient) の既知の問題</span><span class="sxs-lookup"><span data-stu-id="fa028-102">Known Issues in SqlClient for Entity Framework</span></span>
+<span data-ttu-id="fa028-103">ここでは、.NET Framework Data Provider for SQL Server (SqlClient) に関連する既知の問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="fa028-103">This section describes known issues related to the .NET Framework Data Provider for SQL Server (SqlClient).</span></span>  
   
-## 文字列関数の末尾のスペース  
- [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] では、文字列値の末尾のスペースは無視されます。  そのため、文字列の末尾にスペースを挿入すると、予期できない結果が生じたり、場合によってはエラーが発生することもあります。  
+## <a name="trailing-spaces-in-string-functions"></a><span data-ttu-id="fa028-104">文字列関数の末尾のスペース</span><span class="sxs-lookup"><span data-stu-id="fa028-104">Trailing Spaces in String Functions</span></span>  
+ [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]<span data-ttu-id="fa028-105"> では、文字列値の末尾のスペースは無視されます。</span><span class="sxs-lookup"><span data-stu-id="fa028-105"> ignores trailing spaces in string values.</span></span> <span data-ttu-id="fa028-106">そのため、文字列の末尾にスペースを挿入すると、予期できない結果が生じたり、場合によってはエラーが発生することもあります。</span><span class="sxs-lookup"><span data-stu-id="fa028-106">Therefore, passing trailing spaces in the string can lead to unpredictable results, even failures.</span></span>  
   
- 文字列の末尾にスペースを挿入する必要がある場合は、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] が文字列を切り捨てることがないように、空白文字を挿入することを検討してください。  末尾のスペースが不要である場合は、クエリ パイプラインに渡す前にスペースを削除してください。  
+ <span data-ttu-id="fa028-107">文字列の末尾にスペースを挿入する必要がある場合は、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] が文字列を切り捨てることがないように、空白文字を挿入することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="fa028-107">If you have to have trailing spaces in your string, you should consider appending a white space character at the end, so that [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] does not trim the string.</span></span> <span data-ttu-id="fa028-108">末尾のスペースが不要である場合は、クエリ パイプラインに渡す前にスペースを削除してください。</span><span class="sxs-lookup"><span data-stu-id="fa028-108">If the trailing spaces are not required, they should be trimmed before they are passed down the query pipeline.</span></span>  
   
-## RIGHT 関数  
- `RIGHT(nvarchar(max)`, 0`)` または `RIGHT(varchar(max)`, 0`)` に、最初の引数として `null` 以外の値を、2 番目の引数として 0 を渡すと、`empty` 文字列の代わりに `NULL` 値が返されます。  
+## <a name="right-function"></a><span data-ttu-id="fa028-109">RIGHT 関数</span><span class="sxs-lookup"><span data-stu-id="fa028-109">RIGHT Function</span></span>  
+ <span data-ttu-id="fa028-110">`null`, 0`RIGHT(nvarchar(max)` または `)`, 0`RIGHT(varchar(max)` に、最初の引数として `)` 以外の値を、2 番目の引数として 0 を渡すと、`NULL` 文字列の代わりに `empty` 値が返されます。</span><span class="sxs-lookup"><span data-stu-id="fa028-110">If a non-`null` value is passed as a first argument and 0 is passed as a second argument to `RIGHT(nvarchar(max)`, 0`)` or `RIGHT(varchar(max)`, 0`)`, a `NULL` value will be returned instead of an `empty` string.</span></span>  
   
-## CROSS APPLY 演算子および OUTER APPLY 演算子  
- CROSS APPLY 演算子および OUTER APPLY 演算子は [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)] で導入されました。  場合によっては、クエリ パイプラインにより、CROSS APPLY 演算子または OUTER APPLY 演算子を含む Transact\-SQL ステートメントが生成されることがあります。  一部のバックエンド プロバイダー \([!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)] より古いバージョンの [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] など\) では、これらの演算子がサポートされていません。したがって、このようなクエリをこれらのバックエンド プロバイダーで実行することはできません。  
+## <a name="cross-and-outer-apply-operators"></a><span data-ttu-id="fa028-111">CROSS APPLY 演算子および OUTER APPLY 演算子</span><span class="sxs-lookup"><span data-stu-id="fa028-111">CROSS and OUTER APPLY Operators</span></span>  
+ <span data-ttu-id="fa028-112">CROSS APPLY 演算子および OUTER APPLY 演算子は [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)] で導入されました。</span><span class="sxs-lookup"><span data-stu-id="fa028-112">CROSS and OUTER APPLY operators were introduced in [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)].</span></span> <span data-ttu-id="fa028-113">場合によっては、クエリ パイプラインにより、CROSS APPLY 演算子または OUTER APPLY 演算子を含む Transact-SQL ステートメントが生成されることがあります。</span><span class="sxs-lookup"><span data-stu-id="fa028-113">In some cases the query pipeline might produce a Transact-SQL statement that contains CROSS APPLY and/or OUTER APPLY operators.</span></span> <span data-ttu-id="fa028-114">一部のバックエンド プロバイダー ([!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] より古いバージョンの [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)] など) では、これらの演算子がサポートされていません。したがって、このようなクエリをこれらのバックエンド プロバイダーで実行することはできません。</span><span class="sxs-lookup"><span data-stu-id="fa028-114">Because some backend providers, including versions of [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] earlier than [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)], do not support these operators, such queries cannot be executed on these backend providers.</span></span>  
   
- CROSS APPLY 演算子または OUTER APPLY 演算子を含むクエリの生成につながる可能性がある一般的なシナリオを次に示します。  
+ <span data-ttu-id="fa028-115">CROSS APPLY 演算子または OUTER APPLY 演算子を含むクエリの生成につながる可能性がある一般的なシナリオを次に示します。</span><span class="sxs-lookup"><span data-stu-id="fa028-115">The following are some typical scenarios that might lead to the presence of CROSS APPLY and/or OUTER APPLY operators in the output query:</span></span>  
   
--   ページングを使用した相関サブクエリ  
+-   <span data-ttu-id="fa028-116">ページングを使用した相関サブクエリ</span><span class="sxs-lookup"><span data-stu-id="fa028-116">A correlated subquery with paging.</span></span>  
   
--   相関サブクエリ全体、またはナビゲーションによって生成されたコレクション全体を対象とした `AnyElement`  
+-   <span data-ttu-id="fa028-117">相関サブクエリ全体、またはナビゲーションによって生成されたコレクション全体を対象とした `AnyElement`</span><span class="sxs-lookup"><span data-stu-id="fa028-117">An `AnyElement` over a correlated sub-query, or over a collection produced by navigation.</span></span>  
   
--   要素セレクターを受け取るグループ化メソッドを使用する LINQ クエリ  
+-   <span data-ttu-id="fa028-118">要素セレクターを受け取るグループ化メソッドを使用する LINQ クエリ</span><span class="sxs-lookup"><span data-stu-id="fa028-118">LINQ queries that use grouping methods that accept an element selector.</span></span>  
   
--   CROSS APPLY 演算子または OUTER APPLY 演算子が明示的に指定されたクエリ  
+-   <span data-ttu-id="fa028-119">CROSS APPLY 演算子または OUTER APPLY 演算子が明示的に指定されたクエリ</span><span class="sxs-lookup"><span data-stu-id="fa028-119">A query in which a CROSS APPLY or an OUTER APPLY is explicitly specified</span></span>  
   
--   REF コンストラクターを引数に取る DEREF コンストラクターを含むクエリ。  
+-   <span data-ttu-id="fa028-120">REF コンストラクターを引数に取る DEREF コンストラクターを含むクエリ。</span><span class="sxs-lookup"><span data-stu-id="fa028-120">A query that has a DEREF construct over a REF construct.</span></span>  
   
-## SKIP 演算子  
- [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)] を使用している場合、キー以外の列で ORDER BY と共に SKIP を使用すると、不適切な結果が返されることがあります。  キー以外の列に重複するデータが存在する場合、指定された数を超える行はスキップされます。  これは、[!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)] 用に SKIP が変換される方法によるものです。  たとえば、次のクエリでは、`E.NonKeyColumn` に重複値が存在する場合、5 行を超える行はスキップされます。  
+## <a name="skip-operator"></a><span data-ttu-id="fa028-121">SKIP 演算子</span><span class="sxs-lookup"><span data-stu-id="fa028-121">SKIP Operator</span></span>  
+ <span data-ttu-id="fa028-122">使用している場合[!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)]、非キー列で ORDER BY と共に SKIP を使用すると、誤った結果が返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="fa028-122">If you are using [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)], using SKIP with ORDER BY on non-key columns might return incorrect results.</span></span> <span data-ttu-id="fa028-123">キー以外の列に重複するデータが存在する場合、指定された数を超える行はスキップされます。</span><span class="sxs-lookup"><span data-stu-id="fa028-123">More than the specified number of rows might be skipped if the non-key column has duplicate data in it.</span></span> <span data-ttu-id="fa028-124">これは、[!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)] 用に SKIP が変換される方法によるものです。</span><span class="sxs-lookup"><span data-stu-id="fa028-124">This is due to how SKIP is translated for [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)].</span></span> <span data-ttu-id="fa028-125">たとえば、次のクエリでは、5 つを超える行はスキップされる場合`E.NonKeyColumn`は重複する値があります。</span><span class="sxs-lookup"><span data-stu-id="fa028-125">For example, in the following query, more than five rows might be skipped if `E.NonKeyColumn` has duplicate values:</span></span>  
   
 ```  
 SELECT [E] FROM Container.EntitySet AS [E] ORDER BY [E].[NonKeyColumn] DESC SKIP 5L  
 ```  
   
-## 適切なバージョンの SQL Server を対象としたクエリの実行  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] は、SQL Server のバージョンに基づいて実行対象の [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] クエリを決定します。このバージョンは、ストレージ モデル \(.ssdl\) ファイルの Schema 要素の `ProviderManifestToken` 属性で指定されたものです。  このバージョンは、実際に接続する SQL Server のバージョンとは異なる場合があります。  たとえば、使用している SQL Server のバージョンが 2005 であるのに、`ProviderManifestToken` 属性が 2008 に設定されている場合、生成された [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] クエリがサーバーで実行されないことがあります。たとえば、SQL Server 2008 で導入された新しい日時型を使用するクエリは、以前のバージョンの SQL Server では実行されません。  使用している SQL Server のバージョンが 2005 で、`ProviderManifestToken` 属性が 2000 に設定されている場合、生成された [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] クエリが十分に最適化されなかったり、クエリがサポートされていないことを示す例外が発生することがあります。  詳細については、このトピックの「CROSS APPLY 演算子および OUTER APPLY 演算子」を参照してください。  
+## <a name="targeting-the-correct-sql-server-version"></a><span data-ttu-id="fa028-126">適切なバージョンの SQL Server を対象としたクエリの実行</span><span class="sxs-lookup"><span data-stu-id="fa028-126">Targeting the Correct SQL Server Version</span></span>  
+ <span data-ttu-id="fa028-127">[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]ターゲット、[!INCLUDE[tsql](../../../../../includes/tsql-md.md)]で指定されている SQL Server のバージョンに基づくクエリ、`ProviderManifestToken`ストレージ モデル (.ssdl) ファイル内のスキーマ要素の属性です。</span><span class="sxs-lookup"><span data-stu-id="fa028-127">The [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] targets the [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] query based on the SQL Server version that is specified in the `ProviderManifestToken` attribute of the Schema element in the storage model (.ssdl) file.</span></span> <span data-ttu-id="fa028-128">このバージョンは、実際に接続する SQL Server のバージョンとは異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="fa028-128">This version might differ from the version of the actual SQL Server you are connected to.</span></span> <span data-ttu-id="fa028-129">たとえば、使用している SQL Server のバージョンが 2005 で、`ProviderManifestToken` 属性が 2008 に設定されている場合、生成された [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] クエリがサーバーで実行されないことがあります。</span><span class="sxs-lookup"><span data-stu-id="fa028-129">For example, if you are using SQL Server 2005, but your `ProviderManifestToken` attribute is set to 2008, the generated [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] query might not execute on the server.</span></span> <span data-ttu-id="fa028-130">たとえば、SQL Server 2008 で導入された新しい日付時刻型を使用するクエリは、SQL Server の以前のバージョンでは実行されません。</span><span class="sxs-lookup"><span data-stu-id="fa028-130">For example, a query that uses the new date time types that were introduced in SQL Server 2008 will not execute on earlier versions of the SQL Server.</span></span> <span data-ttu-id="fa028-131">SQL Server 2005 を使用している場合は、`ProviderManifestToken`属性が 2000年に設定されて、生成される[!INCLUDE[tsql](../../../../../includes/tsql-md.md)]クエリがあります、十分に最適化するクエリがサポートされていないことを示す例外が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="fa028-131">If you are using SQL Server 2005, but your `ProviderManifestToken` attribute is set to 2000, the generated [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] query might be less optimized, or you might get an exception that says that the query is not supported.</span></span> <span data-ttu-id="fa028-132">詳細については、このトピックの「CROSS APPLY 演算子および OUTER APPLY 演算子」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="fa028-132">For more information, see the CROSS and OUTER APPLY Operators section, earlier in this topic.</span></span>  
   
- データベースの一部の動作は、データベースの互換性レベルの設定に依存します。  使用している SQL Server のバージョンが 2005 で、`ProviderManifestToken` 属性が 2005 に、データベースの互換性レベルが "80" \(SQL Server 2000\) に設定されている場合、生成された [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] の実行対象は SQL Server 2005 になりますが、互換性レベルの設定が原因で予期したとおりに実行されないことがあります。  たとえば、ORDER BY リストの列名とセレクターの列名が一致する場合、順序付けが失われることがあります。  
+ <span data-ttu-id="fa028-133">データベースの一部の動作は、データベースの互換性レベルの設定に依存します。</span><span class="sxs-lookup"><span data-stu-id="fa028-133">Certain database behaviors depend on the compatibility level set to the database.</span></span> <span data-ttu-id="fa028-134">使用している SQL Server のバージョンが 2005 で、`ProviderManifestToken` 属性が 2005 に、データベースの互換性レベルが "80" (SQL Server 2000) に設定されている場合、生成された [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] の実行対象は SQL Server 2005 になりますが、互換性レベルの設定が原因で予期したとおりに実行されないことがあります。</span><span class="sxs-lookup"><span data-stu-id="fa028-134">If your `ProviderManifestToken` attribute is set to 2005 and your SQL Server version is 2005, but the compatibility level of a database is set to "80" (SQL Server 2000), the generated [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] will be targeting SQL Server 2005, but might not execute as expected due to the compatibility level setting.</span></span> <span data-ttu-id="fa028-135">たとえば、ORDER BY リストの列名とセレクターの列名が一致する場合、順序付けが失われることがあります。</span><span class="sxs-lookup"><span data-stu-id="fa028-135">For example, you might lose ordering information if a column name in the ORDER BY list matches a column name in the selector.</span></span>  
   
-## 投影内の入れ子になったクエリ  
- projection 句内の入れ子になったクエリは、サーバーでデカルト積に変換されないことがあります。  SLQ Server などの一部のバックエンド サーバーでは、これによって TempDB テーブルのサイズが非常に大きくなり、  サーバーのパフォーマンスが低下する可能性があります。  
+## <a name="nested-queries-in-projection"></a><span data-ttu-id="fa028-136">投影内の入れ子になったクエリ</span><span class="sxs-lookup"><span data-stu-id="fa028-136">Nested Queries in Projection</span></span>  
+ <span data-ttu-id="fa028-137">projection 句内の入れ子になったクエリは、サーバーでデカルト積に変換されないことがあります。</span><span class="sxs-lookup"><span data-stu-id="fa028-137">Nested queries in a projection clause might get translated into Cartesian product queries on the server.</span></span> <span data-ttu-id="fa028-138">SLQ Server などの一部のバックエンド サーバーでは、これによって TempDB テーブルのサイズが非常に大きくなり、</span><span class="sxs-lookup"><span data-stu-id="fa028-138">On some back-end servers, including SLQ Server, this can cause the TempDB table to to get quite large.</span></span> <span data-ttu-id="fa028-139">サーバーのパフォーマンスが低下する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="fa028-139">This can decrease server performance.</span></span>  
   
- projection 句内の入れ子になったクエリの例を次に示します。  
+ <span data-ttu-id="fa028-140">projection 句内の入れ子になったクエリの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="fa028-140">The following is an example of  a nested query in a projection clause:</span></span>  
   
 ```  
 SELECT c, (SELECT c, (SELECT c FROM AdventureWorksModel.Vendor AS c  ) As Inner2 FROM AdventureWorksModel.JobCandidate AS c  ) As Inner1 FROM AdventureWorksModel.EmployeeDepartmentHistory AS c  
 ```  
   
-## サーバー生成の GUID ID 値  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] では、サーバー生成の GUID 型 ID 値がサポートされますが、プロバイダーは、サーバー生成の ID 値を行の挿入後に返す動作をサポートする必要があります。  [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2005 以降、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] データベース内のサーバー生成 GUID 型を [OUTPUT 句](http://go.microsoft.com/fwlink/?LinkId=169400) で返すことができるようになりました。  
+## <a name="server-generated-guid-identity-values"></a><span data-ttu-id="fa028-141">サーバー生成の GUID ID 値</span><span class="sxs-lookup"><span data-stu-id="fa028-141">Server Generated GUID Identity Values</span></span>  
+ <span data-ttu-id="fa028-142">[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] では、サーバー生成の GUID 型 ID 値がサポートされますが、プロバイダーは、サーバー生成の ID 値を行の挿入後に返す動作をサポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="fa028-142">The [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] supports server-generated GUID type identity values, but the provider must support returning the server-generated identity value after a row was inserted.</span></span> <span data-ttu-id="fa028-143">以降で[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]2005 でサーバー生成 GUID 型を返すことができます、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]を通じてデータベース、 [OUTPUT 句](http://go.microsoft.com/fwlink/?LinkId=169400)です。</span><span class="sxs-lookup"><span data-stu-id="fa028-143">Starting with [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2005, you can return the server-generated GUID type in a [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] database through the [OUTPUT clause](http://go.microsoft.com/fwlink/?LinkId=169400) .</span></span>  
   
-## 参照  
- [Entity Framework 用 SqlClient](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)   
- [LINQ to Entities の既知の問題および注意点](../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)
+## <a name="see-also"></a><span data-ttu-id="fa028-144">関連項目</span><span class="sxs-lookup"><span data-stu-id="fa028-144">See Also</span></span>  
+ [<span data-ttu-id="fa028-145">Entity Framework 用 SqlClient</span><span class="sxs-lookup"><span data-stu-id="fa028-145">SqlClient for the Entity Framework</span></span>](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)  
+ [<span data-ttu-id="fa028-146">既知の問題とエンティティを LINQ での考慮事項</span><span class="sxs-lookup"><span data-stu-id="fa028-146">Known Issues and Considerations in LINQ to Entities</span></span>](../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)

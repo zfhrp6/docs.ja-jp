@@ -1,36 +1,39 @@
 ---
-title: "SQL Server の CLR 統合セキュリティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "SQL Server の CLR 統合セキュリティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 489fe096-fd1d-42de-8438-bf7aed46aea2
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: de4f4b1ae5ba252778d9463cba43a9ccb419600a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# SQL Server の CLR 統合セキュリティ
-Microsoft SQL Server で新たに導入された機能の 1 つに、.NET Framework の共通言語ランタイム \(CLR\) コンポーネントの統合があります。  CLR の統合により、Microsoft Visual Basic .NET や Microsoft Visual C\# を含む任意の .NET Framework 言語を使用して、ストアド プロシージャ、トリガー、ユーザー定義型、ユーザー定義関数、ユーザー定義集計、およびストリーミング テーブル値関数を作成できるようになりました。  
+# <a name="clr-integration-security-in-sql-server"></a><span data-ttu-id="a4cd6-102">SQL Server の CLR 統合セキュリティ</span><span class="sxs-lookup"><span data-stu-id="a4cd6-102">CLR Integration Security in SQL Server</span></span>
+<span data-ttu-id="a4cd6-103">Microsoft SQL Server で新たに導入された機能の 1 つに、.NET Framework の共通言語ランタイム (CLR) コンポーネントの統合があります。</span><span class="sxs-lookup"><span data-stu-id="a4cd6-103">Microsoft SQL Server provides the integration of the common language runtime (CLR) component of the .NET Framework.</span></span> <span data-ttu-id="a4cd6-104">CLR の統合により、Microsoft Visual Basic .NET や Microsoft Visual C# を含む任意の .NET Framework 言語を使用して、ストアド プロシージャ、トリガー、ユーザー定義型、ユーザー定義関数、ユーザー定義集計、およびストリーミング テーブル値関数を作成できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="a4cd6-104">CLR integration allows you to write stored procedures, triggers, user-defined types, user-defined functions, user-defined aggregates, and streaming table-valued functions, using any .NET Framework language, such as Microsoft Visual Basic .NET or Microsoft Visual C#.</span></span>  
   
- CLR は、コード アクセス セキュリティ \(CAS\) と呼ばれるマネージ コード用のセキュリティ モデルをサポートしています。  このモデルでは、コードのメタデータに指定された証拠に基づいてアセンブリに権限が付与されます。  SQL Server のユーザーベースのセキュリティ モデルは、SQL Server により CLR のコード アクセスベースのセキュリティ モデルと統合されます。  
+ <span data-ttu-id="a4cd6-105">CLR は、コード アクセス セキュリティ (CAS) と呼ばれるマネージ コード用のセキュリティ モデルをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="a4cd6-105">The CLR supports a security model called code access security (CAS) for managed code.</span></span> <span data-ttu-id="a4cd6-106">このモデルでは、コードのメタデータに指定された証拠に基づいてアセンブリに権限が付与されます。</span><span class="sxs-lookup"><span data-stu-id="a4cd6-106">In this model, permissions are granted to assemblies based on evidence supplied by the code in metadata.</span></span> <span data-ttu-id="a4cd6-107">SQL Server のユーザーベースのセキュリティ モデルは、SQL Server により CLR のコード アクセスベースのセキュリティ モデルと統合されます。</span><span class="sxs-lookup"><span data-stu-id="a4cd6-107">SQL Server integrates the user-based security model of SQL Server with the code access-based security model of the CLR.</span></span>  
   
-## 外部リソース  
- SQL Server と CLR の統合の詳細については、次のリソースを参照してください。  
+## <a name="external-resources"></a><span data-ttu-id="a4cd6-108">外部リソース</span><span class="sxs-lookup"><span data-stu-id="a4cd6-108">External Resources</span></span>  
+ <span data-ttu-id="a4cd6-109">SQL Server と CLR の統合の詳細については、次のリソースを参照してください。</span><span class="sxs-lookup"><span data-stu-id="a4cd6-109">For more information on CLR integration with SQL Server, see the following resources.</span></span>  
   
-|リソース|説明|  
-|----------|--------|  
-|[Code Access Security](http://msdn.microsoft.com/ja-jp/23a20143-241d-4fe5-9d9f-3933fd594c03)|.NET Framework の CAS について説明します。|  
-|[CLR 統合のセキュリティ](http://go.microsoft.com/fwlink/?LinkId=59998)|SQL Server の内部で実行されるマネージ コードのセキュリティ モデルについて説明します。|  
+|<span data-ttu-id="a4cd6-110">リソース</span><span class="sxs-lookup"><span data-stu-id="a4cd6-110">Resource</span></span>|<span data-ttu-id="a4cd6-111">説明</span><span class="sxs-lookup"><span data-stu-id="a4cd6-111">Description</span></span>|  
+|--------------|-----------------|  
+|[<span data-ttu-id="a4cd6-112">コード アクセス セキュリティ</span><span class="sxs-lookup"><span data-stu-id="a4cd6-112">Code Access Security</span></span>](http://msdn.microsoft.com/en-us/23a20143-241d-4fe5-9d9f-3933fd594c03)|<span data-ttu-id="a4cd6-113">.NET Framework の CAS について説明します。</span><span class="sxs-lookup"><span data-stu-id="a4cd6-113">Contains topics describing CAS in the .NET Framework.</span></span>|  
+|[<span data-ttu-id="a4cd6-114">CLR 統合のセキュリティ</span><span class="sxs-lookup"><span data-stu-id="a4cd6-114">CLR Integration Security</span></span>](http://go.microsoft.com/fwlink/?LinkId=59998)|<span data-ttu-id="a4cd6-115">SQL Server の内部で実行されるマネージ コードのセキュリティ モデルについて説明します。</span><span class="sxs-lookup"><span data-stu-id="a4cd6-115">Discusses the security model for managed code executing inside of SQL Server.</span></span>|  
   
-## 参照  
- [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)   
- [SQL Server におけるアプリケーション セキュリティのシナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)   
- [SQL Server の共通言語ランタイム統合](../../../../../docs/framework/data/adonet/sql/sql-server-common-language-runtime-integration.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="a4cd6-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="a4cd6-116">See Also</span></span>  
+ [<span data-ttu-id="a4cd6-117">ADO.NET アプリケーションのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="a4cd6-117">Securing ADO.NET Applications</span></span>](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
+ [<span data-ttu-id="a4cd6-118">SQL Server におけるアプリケーション セキュリティ シナリオ</span><span class="sxs-lookup"><span data-stu-id="a4cd6-118">Application Security Scenarios in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
+ [<span data-ttu-id="a4cd6-119">SQL Server の共通言語ランタイム統合</span><span class="sxs-lookup"><span data-stu-id="a4cd6-119">SQL Server Common Language Runtime Integration</span></span>](../../../../../docs/framework/data/adonet/sql/sql-server-common-language-runtime-integration.md)  
+ [<span data-ttu-id="a4cd6-120">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="a4cd6-120">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,58 +1,62 @@
 ---
-title: "DataRow の削除 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DataRow の削除"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: c34f531d-4b9b-4071-b2d7-342c402aa586
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: f9eb89d711cbf66f3b6816e597c14359be1f3639
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataRow の削除
-<xref:System.Data.DataTable> オブジェクトから <xref:System.Data.DataRow> オブジェクトを削除するには、<xref:System.Data.DataRowCollection> オブジェクトの **Remove** メソッドと **DataRow** オブジェクトの <xref:System.Data.DataRow.Delete%2A> メソッドの 2 つのメソッドを使用できます。  <xref:System.Data.DataRowCollection.Remove%2A> メソッドが **DataRowCollection** から **DataRow** を削除するのに対し、<xref:System.Data.DataRow.Delete%2A> メソッドは削除対象の行をマークするだけです。  実際の削除は、アプリケーションが **AcceptChanges** メソッドを呼び出すと実行されます。  <xref:System.Data.DataRow.Delete%2A> を使用すると、行を実際に削除する前に、削除対象としてどの行がマークされているかをプログラムによってチェックできます。  削除対象としてマークされている行の <xref:System.Data.DataRow.RowState%2A> プロパティは、<xref:System.Data.DataRow.Delete%2A> に設定されています。  
+# <a name="datarow-deletion"></a><span data-ttu-id="b2178-102">DataRow の削除</span><span class="sxs-lookup"><span data-stu-id="b2178-102">DataRow Deletion</span></span>
+<span data-ttu-id="b2178-103">削除に使用できる 2 つの方法がある、<xref:System.Data.DataRow>オブジェクトから、<xref:System.Data.DataTable>オブジェクト:**削除**のメソッド、<xref:System.Data.DataRowCollection>オブジェクト、および<xref:System.Data.DataRow.Delete%2A>のメソッド、 **DataRow**オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="b2178-103">There are two methods you can use to delete a <xref:System.Data.DataRow> object from a <xref:System.Data.DataTable> object: the **Remove** method of the <xref:System.Data.DataRowCollection> object, and the <xref:System.Data.DataRow.Delete%2A> method of the **DataRow** object.</span></span> <span data-ttu-id="b2178-104">一方、<xref:System.Data.DataRowCollection.Remove%2A>メソッドの削除、 **DataRow**から、 **DataRowCollection**、<xref:System.Data.DataRow.Delete%2A>メソッドは削除対象の行をマークするだけです。</span><span class="sxs-lookup"><span data-stu-id="b2178-104">Whereas the <xref:System.Data.DataRowCollection.Remove%2A> method deletes a **DataRow** from the **DataRowCollection**, the <xref:System.Data.DataRow.Delete%2A> method only marks the row for deletion.</span></span> <span data-ttu-id="b2178-105">アプリケーションを呼び出すときに実際の削除が発生した、 **AcceptChanges**メソッドです。</span><span class="sxs-lookup"><span data-stu-id="b2178-105">The actual removal occurs when the application calls the **AcceptChanges** method.</span></span> <span data-ttu-id="b2178-106"><xref:System.Data.DataRow.Delete%2A> を使用すると、行を実際に削除する前に、削除対象としてどの行がマークされているかをプログラムによってチェックできます。</span><span class="sxs-lookup"><span data-stu-id="b2178-106">By using <xref:System.Data.DataRow.Delete%2A>, you can programmatically check which rows are marked for deletion before actually removing them.</span></span> <span data-ttu-id="b2178-107">削除対象としてマークされている行の <xref:System.Data.DataRow.RowState%2A> プロパティは、<xref:System.Data.DataRow.Delete%2A> に設定されています。</span><span class="sxs-lookup"><span data-stu-id="b2178-107">When a row is marked for deletion, its <xref:System.Data.DataRow.RowState%2A> property is set to <xref:System.Data.DataRow.Delete%2A>.</span></span>  
   
- <xref:System.Data.DataRowCollection> オブジェクトを反復処理している間は、foreach ループで <xref:System.Data.DataRow.Delete%2A> も <xref:System.Data.DataRowCollection.Remove%2A> も呼び出すことはできません。  <xref:System.Data.DataRow.Delete%2A> または <xref:System.Data.DataRowCollection.Remove%2A> はコレクションの状態を変更します。  
+ <span data-ttu-id="b2178-108"><xref:System.Data.DataRow.Delete%2A> オブジェクトを反復処理している間は、foreach ループで <xref:System.Data.DataRowCollection.Remove%2A> も <xref:System.Data.DataRowCollection> も呼び出すことはできません。</span><span class="sxs-lookup"><span data-stu-id="b2178-108">Neither <xref:System.Data.DataRow.Delete%2A> nor <xref:System.Data.DataRowCollection.Remove%2A> should be called in a foreach loop while iterating through a <xref:System.Data.DataRowCollection> object.</span></span> <span data-ttu-id="b2178-109"><xref:System.Data.DataRow.Delete%2A> または <xref:System.Data.DataRowCollection.Remove%2A> はコレクションの状態を変更します。</span><span class="sxs-lookup"><span data-stu-id="b2178-109"><xref:System.Data.DataRow.Delete%2A> nor <xref:System.Data.DataRowCollection.Remove%2A> modify the state of the collection.</span></span>  
   
- **DataAdapter** およびリレーショナル データ ソースに関連して <xref:System.Data.DataSet> または **DataTable** を使用するときは、**DataRow** の **Delete** メソッドを使用して行を削除します。  **Delete** メソッドは、**DataSet** または **DataTable** の行を **Deleted** としてマークしますが、その行を削除しません。  代わりに、**DataAdapter** が **Deleted** としてマークされた行を検出したときに **DeleteCommand** メソッドを実行して、データ ソースの該当する行を削除します。  その後、**AcceptChanges** メソッドを使用して、その行を永続的に削除できます。  **Remove** を使用して行を削除すると、行はテーブルから完全に削除されますが、**DataAdapter** はデータ ソースの該当する行を削除しません。  
+ <span data-ttu-id="b2178-110">使用する場合、<xref:System.Data.DataSet>または**DataTable**と組み合わせて、 **DataAdapter**とを使用して、リレーショナル データ ソース、**削除**のメソッド、 **DataRow**行を削除します。</span><span class="sxs-lookup"><span data-stu-id="b2178-110">When using a <xref:System.Data.DataSet> or **DataTable** in conjunction with a **DataAdapter** and a relational data source, use the **Delete** method of the **DataRow** to remove the row.</span></span> <span data-ttu-id="b2178-111">**削除**メソッドとして行をマーク**Deleted**で、**データセット**または**DataTable**は削除されません。</span><span class="sxs-lookup"><span data-stu-id="b2178-111">The **Delete** method marks the row as **Deleted** in the **DataSet** or **DataTable** but does not remove it.</span></span> <span data-ttu-id="b2178-112">代わりに、 **DataAdapter**としてマークされている行を検出する**Deleted**を実行してその**DeleteCommand**データ ソースの行を削除するメソッドをします。</span><span class="sxs-lookup"><span data-stu-id="b2178-112">Instead, when the **DataAdapter** encounters a row marked as **Deleted**, it executes its **DeleteCommand** method to delete the row at the data source.</span></span> <span data-ttu-id="b2178-113">行、完全に削除できますを使用して、 **AcceptChanges**メソッドです。</span><span class="sxs-lookup"><span data-stu-id="b2178-113">The row can then be permanently removed using the **AcceptChanges** method.</span></span> <span data-ttu-id="b2178-114">使用する場合**削除**行を削除する、行は、テーブルから完全に削除されるが、 **DataAdapter**データ ソースの行は削除されません。</span><span class="sxs-lookup"><span data-stu-id="b2178-114">If you use **Remove** to delete the row, the row is removed entirely from the table, but the **DataAdapter** will not delete the row at the data source.</span></span>  
   
- **DataRowCollection** の **Remove** メソッドが **DataRow** を引数として受け取り、その行をコレクションから削除する例を次に示します。  
+ <span data-ttu-id="b2178-115">**削除**のメソッド、 **DataRowCollection**は、 **DataRow**を引数として、次の例に示すように、コレクションから削除します。</span><span class="sxs-lookup"><span data-stu-id="b2178-115">The **Remove** method of the **DataRowCollection** takes a **DataRow** as an argument and removes it from the collection, as shown in the following example.</span></span>  
   
 ```vb  
 workTable.Rows.Remove(workRow)  
-  
 ```  
   
 ```csharp  
 workTable.Rows.Remove(workRow);  
 ```  
   
- これに対して、**DataRow** の **Delete** メソッドを呼び出して、該当する行の **RowState** を **Deleted** に変更する例を次に示します。  
+ <span data-ttu-id="b2178-116">これに対し、次の例を呼び出す方法、**削除**メソッドを**DataRow**を変更するその**RowState**に**Deleted**.</span><span class="sxs-lookup"><span data-stu-id="b2178-116">In contrast, the following example demonstrates how to call the **Delete** method on a **DataRow** to change its **RowState** to **Deleted**.</span></span>  
   
 ```vb  
 workRow.Delete  
-  
 ```  
   
 ```csharp  
 workRow.Delete();  
 ```  
   
- 行を削除対象としてマークしてから **DataTable** オブジェクトの **AcceptChanges** メソッドを呼び出すと、その行が **DataTable** から削除されます。  これに対して、**RejectChanges** を呼び出すと、行の **RowState** はその行が **Deleted** としてマークされる前の状態に戻ります。  
+ <span data-ttu-id="b2178-117">行が削除対象としてマークしを呼び出す場合、 **AcceptChanges**のメソッド、 **DataTable**から、行が削除されるオブジェクト、 **DataTable**です。</span><span class="sxs-lookup"><span data-stu-id="b2178-117">If a row is marked for deletion and you call the **AcceptChanges** method of the **DataTable** object, the row is removed from the **DataTable**.</span></span> <span data-ttu-id="b2178-118">呼び出す場合とは異なり、 **RejectChanges**、 **RowState**としてマークされる前に元に戻します、行の**Deleted**です。</span><span class="sxs-lookup"><span data-stu-id="b2178-118">In contrast, if you call **RejectChanges**, the **RowState** of the row reverts to what it was before being marked as **Deleted**.</span></span>  
   
 > [!NOTE]
->  **DataRow** の **RowState** が **Added** である場合、つまりテーブルに行が追加された直後の状態の場合に、その行を **Deleted** としてマークすると、その行はテーブルから削除されます。  
+>  <span data-ttu-id="b2178-119">場合、 **RowState**の**DataRow**は**Added**、つまり直前が追加されたテーブル、およびとしてマークされます**Deleted**はテーブルから削除します。</span><span class="sxs-lookup"><span data-stu-id="b2178-119">If the **RowState** of a **DataRow** is **Added**, meaning it has just been added to the table, and it is then marked as **Deleted**, it is removed from the table.</span></span>  
   
-## 参照  
- <xref:System.Data.DataRow>   
- <xref:System.Data.DataRowCollection>   
- <xref:System.Data.DataTable>   
- [DataTable 内のデータの操作](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="b2178-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="b2178-120">See Also</span></span>  
+ <xref:System.Data.DataRow>  
+ <xref:System.Data.DataRowCollection>  
+ <xref:System.Data.DataTable>  
+ [<span data-ttu-id="b2178-121">DataTable 内のデータを操作します。</span><span class="sxs-lookup"><span data-stu-id="b2178-121">Manipulating Data in a DataTable</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)  
+ [<span data-ttu-id="b2178-122">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="b2178-122">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - application protocols, sockets
 - synchronous server sockets
@@ -25,23 +23,22 @@ helpviewer_keywords:
 - sockets, synchronous server sockets
 - Internet, sockets
 ms.assetid: d1ce882e-653e-41f5-9289-844ec855b804
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c4ecba2d6c5026a3b2f7d65540fcf40dd71ba3d7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: ce50fa5cf8664f93753312ee5f1db2b3058c3fd9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="using-a-synchronous-server-socket"></a>同期サーバー ソケットの使用
-同期サーバー ソケットは、ソケットで接続要求が受け取られるまでアプリケーションの実行を一時停止させます。 同期ソケットは動作のためにネットワークを多用するアプリケーションには適しませんが、単純なネットワーク アプリケーションには適しています。  
+# <a name="using-a-synchronous-server-socket"></a><span data-ttu-id="d04e8-102">同期サーバー ソケットの使用</span><span class="sxs-lookup"><span data-stu-id="d04e8-102">Using a Synchronous Server Socket</span></span>
+<span data-ttu-id="d04e8-103">同期サーバー ソケットは、ソケットで接続要求が受け取られるまでアプリケーションの実行を一時停止させます。</span><span class="sxs-lookup"><span data-stu-id="d04e8-103">Synchronous server sockets suspend the execution of the application until a connection request is received on the socket.</span></span> <span data-ttu-id="d04e8-104">同期ソケットは動作のためにネットワークを多用するアプリケーションには適しませんが、単純なネットワーク アプリケーションには適しています。</span><span class="sxs-lookup"><span data-stu-id="d04e8-104">Synchronous server sockets are not suitable for applications that make heavy use of the network in their operation, but they can be suitable for simple network applications.</span></span>  
   
- <xref:System.Net.Sockets.Socket.Bind%2A> メソッドと <xref:System.Net.Sockets.Socket.Listen%2A> メソッドを利用してエンドポイントで待ち受けるように <xref:System.Net.Sockets.Socket> を設定したら、<xref:System.Net.Sockets.Socket.Accept%2A> メソッドを利用し、入ってくる接続要求を受け取る準備が完了となります。 **Accept** メソッドが呼び出されると、接続要求が受け取られるまで、アプリケーションは一時停止となります。  
+ <span data-ttu-id="d04e8-105"><xref:System.Net.Sockets.Socket.Bind%2A> メソッドと <xref:System.Net.Sockets.Socket.Listen%2A> メソッドを利用してエンドポイントで待ち受けるように <xref:System.Net.Sockets.Socket> を設定したら、<xref:System.Net.Sockets.Socket.Accept%2A> メソッドを利用し、入ってくる接続要求を受け取る準備が完了となります。</span><span class="sxs-lookup"><span data-stu-id="d04e8-105">After a <xref:System.Net.Sockets.Socket> is set to listen on an endpoint using the <xref:System.Net.Sockets.Socket.Bind%2A> and <xref:System.Net.Sockets.Socket.Listen%2A> methods, it is ready to accept incoming connection requests using the <xref:System.Net.Sockets.Socket.Accept%2A> method.</span></span> <span data-ttu-id="d04e8-106">**Accept** メソッドが呼び出されると、接続要求が受け取られるまで、アプリケーションは一時停止となります。</span><span class="sxs-lookup"><span data-stu-id="d04e8-106">The application is suspended until a connection request is received when the **Accept** method is called.</span></span>  
   
- 接続要求が受け取られると、**Accept** は、接続元のクライアントに関連付けられている新しい **Socket** インスタンスを返します。 次の例では、クライアントからデータを読み込み、コンソールに表示し、クライアントにデータをエコー バックしています。 **Socket** からは、いかなるメッセージング プロトコルも指定されません。そのため、文字列 "\<EOF>" はメッセージ データの終わりに印を付けます。 `listener` という名前の **Socket** が初期化され、エンドポイントにバインドされていると想定しています。  
+ <span data-ttu-id="d04e8-107">接続要求が受け取られると、**Accept** は、接続元のクライアントに関連付けられている新しい **Socket** インスタンスを返します。</span><span class="sxs-lookup"><span data-stu-id="d04e8-107">When a connection request is received, **Accept** returns a new **Socket** instance that is associated with the connecting client.</span></span> <span data-ttu-id="d04e8-108">次の例では、クライアントからデータを読み込み、コンソールに表示し、クライアントにデータをエコー バックしています。</span><span class="sxs-lookup"><span data-stu-id="d04e8-108">The following example reads data from the client, displays it on the console, and echoes the data back to the client.</span></span> <span data-ttu-id="d04e8-109">**Socket** からは、いかなるメッセージング プロトコルも指定されません。そのため、文字列 "\<EOF>" はメッセージ データの終わりに印を付けます。</span><span class="sxs-lookup"><span data-stu-id="d04e8-109">The **Socket** does not specify any messaging protocol, so the string "\<EOF>" marks the end of the message data.</span></span> <span data-ttu-id="d04e8-110">`listener` という名前の **Socket** が初期化され、エンドポイントにバインドされていると想定しています。</span><span class="sxs-lookup"><span data-stu-id="d04e8-110">It assumes that a **Socket** named `listener` has been initialized and bound to an endpoint.</span></span>  
   
 ```vb  
 Console.WriteLine("Waiting for a connection...")  
@@ -87,8 +84,7 @@ handler.Shutdown(SocketShutdown.Both);
 handler.Close();  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [非同期サーバー ソケットの使用](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)   
- [同期サーバー ソケットの例](../../../docs/framework/network-programming/synchronous-server-socket-example.md)   
- [リッスン (ソケットで)](../../../docs/framework/network-programming/listening-with-sockets.md)
-
+## <a name="see-also"></a><span data-ttu-id="d04e8-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="d04e8-111">See Also</span></span>  
+ [<span data-ttu-id="d04e8-112">非同期サーバー ソケットの使用</span><span class="sxs-lookup"><span data-stu-id="d04e8-112">Using an Asynchronous Server Socket</span></span>](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
+ [<span data-ttu-id="d04e8-113">同期サーバー ソケットの例</span><span class="sxs-lookup"><span data-stu-id="d04e8-113">Synchronous Server Socket Example</span></span>](../../../docs/framework/network-programming/synchronous-server-socket-example.md)  
+ [<span data-ttu-id="d04e8-114">リッスン (ソケットで)</span><span class="sxs-lookup"><span data-stu-id="d04e8-114">Listening with Sockets</span></span>](../../../docs/framework/network-programming/listening-with-sockets.md)

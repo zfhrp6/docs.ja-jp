@@ -1,30 +1,33 @@
 ---
-title: "データ バインドのシナリオ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "データ バインディングのシナリオ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a2c10dc4-84af-4dab-baee-e9c84ca26ebf
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e7e8f10a2b8426fbcd811989d6c783db7b5a54c6
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# データ バインドのシナリオ
-このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のデータ バインドのシナリオを示すサンプルが含まれています。  
+# <a name="data-binding-scenarios"></a><span data-ttu-id="7e749-102">データ バインディングのシナリオ</span><span class="sxs-lookup"><span data-stu-id="7e749-102">Data Binding Scenarios</span></span>
+<span data-ttu-id="7e749-103">このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のデータ バインドのシナリオを示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="7e749-103">This section contains samples that demonstrate [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] data binding scenarios.</span></span>  
   
-## このセクションの内容  
- [Windows フォーム クライアントのデータ バインディング](../../../../docs/framework/wcf/samples/data-binding-in-a-windows-forms-client.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスによって返されたデータを Windows フォーム アプリケーションでバインドする方法を示します。  
+## <a name="in-this-section"></a><span data-ttu-id="7e749-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="7e749-104">In This Section</span></span>  
+ [<span data-ttu-id="7e749-105">Windows でのデータ バインド フォームのクライアント</span><span class="sxs-lookup"><span data-stu-id="7e749-105">Data Binding in a Windows Forms Client</span></span>](../../../../docs/framework/wcf/samples/data-binding-in-a-windows-forms-client.md)  
+ <span data-ttu-id="7e749-106">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスによって返されたデータを Windows フォーム アプリケーションでバインドする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="7e749-106">Demonstrates how to bind to data returned by a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service in a Windows Forms application.</span></span>  
   
- [ASP.NET クライアントでのデータ バインディング](../../../../docs/framework/wcf/samples/data-binding-in-an-aspnet-client.md)  
- 一般的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスによって返されたデータを Web フォーム アプリケーションでバインドする方法を示します。  
+ [<span data-ttu-id="7e749-107">ASP.NET クライアントでのデータ バインディング</span><span class="sxs-lookup"><span data-stu-id="7e749-107">Data Binding in an ASP.NET Client</span></span>](../../../../docs/framework/wcf/samples/data-binding-in-an-aspnet-client.md)  
+ <span data-ttu-id="7e749-108">一般的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスによって返されたデータを Web フォーム アプリケーションでバインドする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="7e749-108">Demonstrates how to bind data returned by a typical [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service in a Web Forms application.</span></span>  
   
- [Windows Presentation Foundation クライアントでのデータ バインディング](../../../../docs/framework/wcf/samples/data-binding-in-a-wpf-client.md)  
- [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] クライアントでのデータ バインディングの使用方法を示します。
+ [<span data-ttu-id="7e749-109">Windows Presentation Foundation クライアントでのデータ バインディング</span><span class="sxs-lookup"><span data-stu-id="7e749-109">Data Binding in a Windows Presentation Foundation Client</span></span>](../../../../docs/framework/wcf/samples/data-binding-in-a-wpf-client.md)  
+ <span data-ttu-id="7e749-110">[!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] クライアントでのデータ バインディングの使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="7e749-110">Demonstrates the use of data binding in a [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] client.</span></span>

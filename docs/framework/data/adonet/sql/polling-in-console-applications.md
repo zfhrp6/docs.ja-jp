@@ -1,32 +1,36 @@
 ---
-title: "コンソール アプリケーションでのポーリング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "コンソール アプリケーションでのポーリング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 4ff084d5-5956-4db1-8e18-c5a66b000882
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 781fcd73dc56841eb7eadbf0bd6a0093643e608a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# コンソール アプリケーションでのポーリング
-ADO.NET での非同期操作は、1 つのスレッドで他のタスクを実行している間に、別のスレッドで時間のかかるデータベース操作を開始できます。  ただし、ほとんどの場合、データベース操作が完了するまでは、アプリケーションを続行できない状態に最終的に達することになります。  このような場合は、操作が完了したかどうかを確認するために、非同期操作をポーリングすると便利です。  
+# <a name="polling-in-console-applications"></a><span data-ttu-id="f336c-102">コンソール アプリケーションでのポーリング</span><span class="sxs-lookup"><span data-stu-id="f336c-102">Polling in Console Applications</span></span>
+<span data-ttu-id="f336c-103">ADO.NET での非同期操作は、1 つのスレッドで他のタスクを実行している間に、別のスレッドで時間のかかるデータベース操作を開始できます。</span><span class="sxs-lookup"><span data-stu-id="f336c-103">Asynchronous operations in ADO.NET allow you to initiate time-consuming database operations on one thread while performing other tasks on another thread.</span></span> <span data-ttu-id="f336c-104">ただし、ほとんどの場合、データベース操作が完了するまでは、アプリケーションを続行できない状態に最終的に達することになります。</span><span class="sxs-lookup"><span data-stu-id="f336c-104">In most scenarios, however, you will eventually reach a point where your application should not continue until the database operation is complete.</span></span> <span data-ttu-id="f336c-105">このような場合は、操作が完了したかどうかを確認するために、非同期操作をポーリングすると便利です。</span><span class="sxs-lookup"><span data-stu-id="f336c-105">For such cases, it is useful to poll the asynchronous operation to determine whether the operation has completed or not.</span></span>  
   
- <xref:System.IAsyncResult.IsCompleted%2A> プロパティを使用して、操作が完了したかどうかを確認できます。  
+ <span data-ttu-id="f336c-106"><xref:System.IAsyncResult.IsCompleted%2A> プロパティを使用して、操作が完了したかどうかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="f336c-106">You can use the <xref:System.IAsyncResult.IsCompleted%2A> property to find out whether or not the operation has completed.</span></span>  
   
-## 例  
- 次のコンソール アプリケーションは、操作を非同期に実行して、**AdventureWorks** サンプル データベース内のデータを更新します。  長時間にわたるプロセスをエミュレートするために、この例では、コマンド テキスト内に WAITFOR ステートメントを挿入します。  通常は、コマンドの実行を遅くする必要はありませんが、非同期動作の例をわかりやすく示すために、この場合はあえて遅くしています。  
+## <a name="example"></a><span data-ttu-id="f336c-107">例</span><span class="sxs-lookup"><span data-stu-id="f336c-107">Example</span></span>  
+ <span data-ttu-id="f336c-108">次のコンソール アプリケーション内のデータの更新、 **AdventureWorks**サンプル データベース、その作業を非同期的に実行します。</span><span class="sxs-lookup"><span data-stu-id="f336c-108">The following console application updates data within the **AdventureWorks** sample database, doing its work asynchronously.</span></span> <span data-ttu-id="f336c-109">長時間にわたるプロセスをエミュレートするために、この例では、コマンド テキスト内に WAITFOR ステートメントを挿入します。</span><span class="sxs-lookup"><span data-stu-id="f336c-109">In order to emulate a long-running process, this example inserts a WAITFOR statement in the command text.</span></span> <span data-ttu-id="f336c-110">通常は、コマンドの実行を遅くする必要はありませんが、非同期動作の例をわかりやすく示すために、この場合はあえて遅くしています。</span><span class="sxs-lookup"><span data-stu-id="f336c-110">Normally, you would not try to make your commands run slower, but doing so in this case makes it easier to demonstrate asynchronous behavior.</span></span>  
   
- \[Visual Basic\]  
-  
-```  
+```vb  
 Imports System  
 Imports System.Data.SqlClient  
   
@@ -102,9 +106,7 @@ Module Module1
 End Module   
 ```  
   
- \[C\#\]  
-  
-```  
+```csharp  
 using System;  
 using System.Data;  
 using System.Data.SqlClient;  
@@ -198,6 +200,6 @@ class Class1
 }  
 ```  
   
-## 参照  
- [非同期操作](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="f336c-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="f336c-111">See Also</span></span>  
+ [<span data-ttu-id="f336c-112">非同期操作</span><span class="sxs-lookup"><span data-stu-id="f336c-112">Asynchronous Operations</span></span>](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)  
+ [<span data-ttu-id="f336c-113">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="f336c-113">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

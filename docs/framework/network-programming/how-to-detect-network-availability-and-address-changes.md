@@ -7,29 +7,22 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
-helpviewer_keywords:
-- Network
+helpviewer_keywords: Network
 ms.assetid: d4377115-4a76-4848-ab23-4898d65c771c
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 52c3bffb204c35d7741d7e4fb35b05a357f3811f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 68d21502b9033b4102c22fb4e0ea10a031e2e7cb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-detect-network-availability-and-address-changes"></a>方法: ネットワークの可用性とアドレスの変更を検出する
-このサンプルでは、インターフェイスのネットワーク アドレスの変更を検出する方法を示します。  
+# <a name="how-to-detect-network-availability-and-address-changes"></a><span data-ttu-id="54013-102">方法: ネットワークの可用性とアドレスの変更を検出する</span><span class="sxs-lookup"><span data-stu-id="54013-102">How to: Detect Network Availability and Address Changes</span></span>
+<span data-ttu-id="54013-103">このサンプルでは、インターフェイスのネットワーク アドレスの変更を検出する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="54013-103">This sample shows how to detect changes in the network address of an interface.</span></span>  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="54013-104">例</span><span class="sxs-lookup"><span data-stu-id="54013-104">Example</span></span>  
   
 ```  
 using System;  
@@ -60,8 +53,7 @@ namespace Examples.Net.AddressChanges
 }  
 ```  
   
-## <a name="compiling-the-code"></a>コードのコンパイル  
- この例で必要な要素は次のとおりです。  
+## <a name="compiling-the-code"></a><span data-ttu-id="54013-105">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="54013-105">Compiling the Code</span></span>  
+ <span data-ttu-id="54013-106">この例で必要な要素は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="54013-106">This example requires:</span></span>  
   
--   **System.Net** 名前空間への参照。
-
+-   <span data-ttu-id="54013-107">**System.Net** 名前空間の参照。</span><span class="sxs-lookup"><span data-stu-id="54013-107">References to the **System.Net** namespace.</span></span>

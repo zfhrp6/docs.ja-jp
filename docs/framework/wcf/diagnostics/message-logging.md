@@ -1,40 +1,43 @@
 ---
-title: "メッセージ ログ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "メッセージ ログ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6bce0682-75ef-4d65-a659-b328fba4a8b5
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 04e1b881d9aab1c35195794394cddf5172288cc1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# メッセージ ログ
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、オフラインで使用できるように送受信メッセージをログに記録できます。メッセージ ログを使用すると、メッセージとメッセージ本文を確認できます。この種のログは、どの引数が渡され、XML で表現された引数が受信エンドポイントでどのように表示されるかを知る上で特に役立ちます。また、受信時にメッセージをログに記録すると、無効なメッセージを診断できるだけでなく、メッセージがどのような経路で到着したかを確認できます。また、使用されたセキュリティ トークン、暗号化および署名された部分、および元のままの部分を調べることもできます。  
+# <a name="message-logging"></a><span data-ttu-id="15812-102">メッセージ ログ</span><span class="sxs-lookup"><span data-stu-id="15812-102">Message Logging</span></span>
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="15812-103"> では、オフラインで使用できるように送受信メッセージをログに記録できます。</span><span class="sxs-lookup"><span data-stu-id="15812-103"> provides the capability to log incoming and outgoing messages for offline consumption.</span></span> <span data-ttu-id="15812-104">メッセージ ログを使用すると、メッセージとメッセージ本文を確認できます。</span><span class="sxs-lookup"><span data-stu-id="15812-104">Message logging enables you to see what the message and message body looks like.</span></span> <span data-ttu-id="15812-105">この種のログは、どの引数が渡され、XML で表現された引数が受信エンドポイントでどのように表示されるかを知る上で特に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="15812-105">This type of logging is particularly helpful in letting you know what arguments were passed in and how the receiving endpoint saw the arguments expressed as XML.</span></span> <span data-ttu-id="15812-106">また、受信時にメッセージをログに記録すると、無効なメッセージを診断できるだけでなく、メッセージがどのような経路で到着したかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="15812-106">In addition, logging the message as it was received allows you to diagnose malformed messages as well as to see how the message arrived.</span></span> <span data-ttu-id="15812-107">また、使用されたセキュリティ トークン、暗号化および署名された部分、および元のままの部分を調べることもできます。</span><span class="sxs-lookup"><span data-stu-id="15812-107">You can also examine the security tokens used, parts encrypted and signed, and parts left intact.</span></span>  
   
-## このセクションの内容  
- [メッセージ フローの概要](../../../../docs/framework/wcf/diagnostics/message-flow-overview.md)  
+## <a name="in-this-section"></a><span data-ttu-id="15812-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="15812-108">In This Section</span></span>  
+ [<span data-ttu-id="15812-109">メッセージ フローの概要</span><span class="sxs-lookup"><span data-stu-id="15812-109">Message Flow Overview</span></span>](../../../../docs/framework/wcf/diagnostics/message-flow-overview.md)  
   
- ここでは、イベント ログ メッセージがクライアント イベントとサービス イベントにどのように対応するかについて説明します。  
+ <span data-ttu-id="15812-110">ここでは、イベント ログ メッセージがクライアント イベントとサービス イベントにどのように対応するかについて説明します。</span><span class="sxs-lookup"><span data-stu-id="15812-110">This topic describes how event log messages correspond to client and service events.</span></span>  
   
- [メッセージ ログの構成](../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)  
+ [<span data-ttu-id="15812-111">メッセージ ログの構成</span><span class="sxs-lookup"><span data-stu-id="15812-111">Configuring Message Logging</span></span>](../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)  
   
- ここでは、さまざまなシナリオでのメッセージ ログの構成方法を示します。  
+ <span data-ttu-id="15812-112">ここでは、さまざまなシナリオでのメッセージ ログの構成方法を示します。</span><span class="sxs-lookup"><span data-stu-id="15812-112">This topic describes how you can configure message logging for different scenarios.</span></span>  
   
- [メッセージ ログを参照する](../../../../docs/framework/wcf/diagnostics/viewing-message-logs.md)  
+ [<span data-ttu-id="15812-113">メッセージ ログを表示します。</span><span class="sxs-lookup"><span data-stu-id="15812-113">Viewing Message Logs</span></span>](../../../../docs/framework/wcf/diagnostics/viewing-message-logs.md)  
   
- ここでは、メッセージ ログの表示方法について説明します。  
+ <span data-ttu-id="15812-114">ここでは、メッセージ ログの表示方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="15812-114">This topic describes how you can view message logs.</span></span>  
   
- [メッセージ ログ記録のセキュリティの考慮事項](../../../../docs/framework/wcf/diagnostics/security-concerns-for-message-logging.md)  
+ [<span data-ttu-id="15812-115">メッセージ ログのセキュリティに関する注意事項</span><span class="sxs-lookup"><span data-stu-id="15812-115">Security Concerns for Message Logging</span></span>](../../../../docs/framework/wcf/diagnostics/security-concerns-for-message-logging.md)  
   
- ここでは、メッセージ ログに表示される機密データだけでなく、メッセージ ログによって生成されるイベントを保護する方法についても説明します。  
+ <span data-ttu-id="15812-116">ここでは、メッセージ ログに表示される機密データだけでなく、メッセージ ログによって生成されるイベントを保護する方法についても説明します。</span><span class="sxs-lookup"><span data-stu-id="15812-116">This topic describes how you can protect sensitive data from being exposed in message logs, as well as events generated by message logging.</span></span>  
   
-## 参照  
- [管理と診断](../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="15812-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="15812-117">See Also</span></span>  
+ [<span data-ttu-id="15812-118">管理と診断</span><span class="sxs-lookup"><span data-stu-id="15812-118">Administration and Diagnostics</span></span>](../../../../docs/framework/wcf/diagnostics/index.md)

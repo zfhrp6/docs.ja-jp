@@ -1,35 +1,38 @@
 ---
-title: "方法 : ChannelFactory を使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
+title: "方法 : ChannelFactory を使用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: d48f01b5-582b-4c8b-b547-8adddae7e371
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: cd9c7c69ba65fe676e9ea0eba250fc3200e90c51
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : ChannelFactory を使用する
-<xref:System.ServiceModel.ChannelFactory%601> ジェネリック クラスは、複数チャネルの作成に使用できるチャネル ファクトリの作成を必要とする高度なシナリオで使用します。  
+# <a name="how-to-use-the-channelfactory"></a><span data-ttu-id="b2e11-102">方法 : ChannelFactory を使用する</span><span class="sxs-lookup"><span data-stu-id="b2e11-102">How to: Use the ChannelFactory</span></span>
+<span data-ttu-id="b2e11-103"><xref:System.ServiceModel.ChannelFactory%601> ジェネリック クラスは、複数チャネルの作成に使用できるチャネル ファクトリの作成を必要とする高度なシナリオで使用します。</span><span class="sxs-lookup"><span data-stu-id="b2e11-103">The generic <xref:System.ServiceModel.ChannelFactory%601> class is used in advanced scenarios that require the creation of a channel factory that can be used to create more than one channel.</span></span>  
   
-### ChannelFactory クラスの作成方法と使用方法  
+### <a name="to-create-and-use-the-channelfactory-class"></a><span data-ttu-id="b2e11-104">ChannelFactory クラスの作成方法と使用方法</span><span class="sxs-lookup"><span data-stu-id="b2e11-104">To create and use the ChannelFactory class</span></span>  
   
-1.  [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスをビルドして実行します。  [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [サービスの設計と実装](../../../../docs/framework/wcf/designing-and-implementing-services.md)、[サービスの構成](../../../../docs/framework/wcf/configuring-services.md)、および [ホスティング サービス](../../../../docs/framework/wcf/hosting-services.md)。  
+1.  <span data-ttu-id="b2e11-105">[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスをビルドして実行します。</span><span class="sxs-lookup"><span data-stu-id="b2e11-105">Build and run an [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="b2e11-106">[設計と実装のサービス](../../../../docs/framework/wcf/designing-and-implementing-services.md)、[サービスを構成する](../../../../docs/framework/wcf/configuring-services.md)、および[Services をホストしている](../../../../docs/framework/wcf/hosting-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="b2e11-106"> [Designing and Implementing Services](../../../../docs/framework/wcf/designing-and-implementing-services.md), [Configuring Services](../../../../docs/framework/wcf/configuring-services.md), and [Hosting Services](../../../../docs/framework/wcf/hosting-services.md).</span></span>  
   
-2.  クライアントのコントラクト \(インターフェイス\) を生成するには、[ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) を使用します。  
+2.  <span data-ttu-id="b2e11-107">使用して、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)をクライアントのコントラクト (インターフェイス) を生成します。</span><span class="sxs-lookup"><span data-stu-id="b2e11-107">Use the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) to generate the contract (interface) for the client.</span></span>  
   
-3.  クライアント コード内で、<xref:System.ServiceModel.ChannelFactory%601> クラスを使用して複数のエンドポイント リスナーを作成します。  
+3.  <span data-ttu-id="b2e11-108">クライアント コード内で、<xref:System.ServiceModel.ChannelFactory%601> クラスを使用して複数のエンドポイント リスナーを作成します。</span><span class="sxs-lookup"><span data-stu-id="b2e11-108">In the client code, use the <xref:System.ServiceModel.ChannelFactory%601> class to create multiple endpoint listeners.</span></span>  
   
-## 使用例  
+## <a name="example"></a><span data-ttu-id="b2e11-109">例</span><span class="sxs-lookup"><span data-stu-id="b2e11-109">Example</span></span>  
  [!code-csharp[c_HowToUseChannelFactory#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howtousechannelfactory/cs/source.cs#1)]
  [!code-vb[c_HowToUseChannelFactory#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howtousechannelfactory/vb/source.vb#1)]

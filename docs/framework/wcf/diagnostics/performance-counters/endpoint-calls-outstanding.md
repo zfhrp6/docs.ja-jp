@@ -1,23 +1,26 @@
 ---
-title: "エンドポイント : 実行中の呼び出し数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "エンドポイント : 実行中の呼び出し数"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: cf1e854a-92bc-4850-81a2-a8134c9fd7d2
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 91c775552cc0cc5369e3173066b79bdc695d355f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# エンドポイント : 実行中の呼び出し数
-カウンター名 : 保留状態の呼び出し  
+# <a name="endpoint-calls-outstanding"></a><span data-ttu-id="57bed-102">エンドポイント : 実行中の呼び出し数</span><span class="sxs-lookup"><span data-stu-id="57bed-102">Endpoint: Calls Outstanding</span></span>
+<span data-ttu-id="57bed-103">カウンター名 : 保留状態の呼び出し</span><span class="sxs-lookup"><span data-stu-id="57bed-103">Counter Name: Calls Outstanding</span></span>  
   
-## 説明  
- このエンドポイントに対する進行中の呼び出しの数です。
+## <a name="description"></a><span data-ttu-id="57bed-104">説明</span><span class="sxs-lookup"><span data-stu-id="57bed-104">Description</span></span>  
+ <span data-ttu-id="57bed-105">このエンドポイントに対する進行中の呼び出しの数です。</span><span class="sxs-lookup"><span data-stu-id="57bed-105">Number of in-progress calls to this endpoint.</span></span>

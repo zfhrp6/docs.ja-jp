@@ -5,53 +5,49 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
-helpviewer_keywords:
-- callback function, implementing
+- csharp
+- vb
+- cpp
+helpviewer_keywords: callback function, implementing
 ms.assetid: e55b3712-b9ea-4453-bd9a-ad5cfa2f6bfa
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d4382c956bf3d56426be485897cdda75453b4910
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 5be0dbb6666da88897ceedf0757e2af720705a07
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-implement-callback-functions"></a>方法: コールバック関数を実装する
-次の手順と例は、マネージ アプリケーションがプラットフォーム呼び出しを使用して、ローカル コンピューター上の各ウィンドウのハンドル値を出力する方法を示しています。 具体的には、この手順と例では **EnumWindows** 関数を使用してウィンドウのリストをステップスルーし、(CallBack という名前の) マネージ コールバック関数を使用してウィンドウ ハンドルの値を出力します。  
+# <a name="how-to-implement-callback-functions"></a><span data-ttu-id="e4812-102">方法: コールバック関数を実装する</span><span class="sxs-lookup"><span data-stu-id="e4812-102">How to: Implement Callback Functions</span></span>
+<span data-ttu-id="e4812-103">次の手順と例は、マネージ アプリケーションがプラットフォーム呼び出しを使用して、ローカル コンピューター上の各ウィンドウのハンドル値を出力する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="e4812-103">The following procedure and example demonstrate how a managed application, using platform invoke, can print the handle value for each window on the local computer.</span></span> <span data-ttu-id="e4812-104">具体的には、この手順と例では **EnumWindows** 関数を使用してウィンドウのリストをステップスルーし、(CallBack という名前の) マネージ コールバック関数を使用してウィンドウ ハンドルの値を出力します。</span><span class="sxs-lookup"><span data-stu-id="e4812-104">Specifically, the procedure and example use the **EnumWindows** function to step through the list of windows and a managed callback function (named CallBack) to print the value of the window handle.</span></span>  
   
-### <a name="to-implement-a-callback-function"></a>コールバック関数を実装するには  
+### <a name="to-implement-a-callback-function"></a><span data-ttu-id="e4812-105">コールバック関数を実装するには</span><span class="sxs-lookup"><span data-stu-id="e4812-105">To implement a callback function</span></span>  
   
-1.  実装を進める前に、**EnumWindows** 関数のシグネチャを見てみます。 **EnumWindows** のシグネチャは次のとおりです。  
+1.  <span data-ttu-id="e4812-106">実装を進める前に、**EnumWindows** 関数のシグネチャを見てみます。</span><span class="sxs-lookup"><span data-stu-id="e4812-106">Look at the signature for the **EnumWindows** function before going further with the implementation.</span></span> <span data-ttu-id="e4812-107">**EnumWindows** のシグネチャは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="e4812-107">**EnumWindows** has the following signature:</span></span>  
   
     ```  
     BOOL EnumWindows(WNDENUMPROC lpEnumFunc, LPARAM lParam)  
     ```  
   
-     この関数がコールバックを必要とする 1 つの手掛かりは、**lpEnumFunc** 引数が存在することです。 コールバック関数へのポインターを使用する引数の名前では、**lp** (long pointer) プレフィックスが **Func** サフィックスと組み合わされているのが一般的です。 Win32 の関数に関するドキュメントについては、Microsoft プラットフォーム SDK を参照してください。  
+     <span data-ttu-id="e4812-108">この関数がコールバックを必要とする 1 つの手掛かりは、**lpEnumFunc** 引数が存在することです。</span><span class="sxs-lookup"><span data-stu-id="e4812-108">One clue that this function requires a callback is the presence of the **lpEnumFunc** argument.</span></span> <span data-ttu-id="e4812-109">コールバック関数へのポインターを使用する引数の名前では、**lp** (long pointer) プレフィックスが **Func** サフィックスと組み合わされているのが一般的です。</span><span class="sxs-lookup"><span data-stu-id="e4812-109">It is common to see the **lp** (long pointer) prefix combined with the **Func** suffix in the name of arguments that take a pointer to a callback function.</span></span> <span data-ttu-id="e4812-110">Win32 の関数に関するドキュメントについては、Microsoft プラットフォーム SDK を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e4812-110">For documentation about Win32 functions, see the Microsoft Platform SDK.</span></span>  
   
-2.  マネージ コールバック関数を作成します。 この例では、`CallBack` というデリゲート型を宣言しています。この型は 2 つの引数 (**hwnd** と **lparam**) を受け取ります。 最初の引数はウィンドウのハンドル、2 番目の引数はアプリケーションで定義します。 このリリースでは、両方の引数が整数でなければなりません。  
+2.  <span data-ttu-id="e4812-111">マネージ コールバック関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="e4812-111">Create the managed callback function.</span></span> <span data-ttu-id="e4812-112">この例では、`CallBack` というデリゲート型を宣言しています。この型は 2 つの引数 (**hwnd** と **lparam**) を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="e4812-112">The example declares a delegate type, called `CallBack`, which takes two arguments (**hwnd** and **lparam**).</span></span> <span data-ttu-id="e4812-113">最初の引数はウィンドウのハンドル、2 番目の引数はアプリケーションで定義します。</span><span class="sxs-lookup"><span data-stu-id="e4812-113">The first argument is a handle to the window; the second argument is application-defined.</span></span> <span data-ttu-id="e4812-114">このリリースでは、両方の引数が整数でなければなりません。</span><span class="sxs-lookup"><span data-stu-id="e4812-114">In this release, both arguments must be integers.</span></span>  
   
-     コールバック関数は通常、成功を示す場合は 0 以外の値を返し、失敗を示す場合は 0 を返します。 この例では、列挙を続けるために戻り値を明示的に **true** に設定します。  
+     <span data-ttu-id="e4812-115">コールバック関数は通常、成功を示す場合は 0 以外の値を返し、失敗を示す場合は 0 を返します。</span><span class="sxs-lookup"><span data-stu-id="e4812-115">Callback functions generally return nonzero values to indicate success and zero to indicate failure.</span></span> <span data-ttu-id="e4812-116">この例では、列挙を続けるために戻り値を明示的に **true** に設定します。</span><span class="sxs-lookup"><span data-stu-id="e4812-116">This example explicitly sets the return value to **true** to continue the enumeration.</span></span>  
   
-3.  デリゲートを作成し、**EnumWindows** 関数に引数として渡します。 プラットフォーム呼び出しにより、デリゲートは既知のコールバック形式に自動的に変換されます。  
+3.  <span data-ttu-id="e4812-117">デリゲートを作成し、**EnumWindows** 関数に引数として渡します。</span><span class="sxs-lookup"><span data-stu-id="e4812-117">Create a delegate and pass it as an argument to the **EnumWindows** function.</span></span> <span data-ttu-id="e4812-118">プラットフォーム呼び出しにより、デリゲートは既知のコールバック形式に自動的に変換されます。</span><span class="sxs-lookup"><span data-stu-id="e4812-118">Platform invoke converts the delegate to a familiar callback format automatically.</span></span>  
   
-4.  コールバック関数がその作業を完了する前にガベージ コレクターがデリゲートをクリアしないようにしてください。 デリゲートをパラメーターとして渡した場合、または構造内のフィールドとして含まれるデリゲートを渡した場合、デリゲートは呼び出しの間収集されないままです。 したがって、次の列挙例と同様に、コールバック関数はその作業を呼び出しが戻る前に完了するので、マネージ呼び出し元による追加操作を必要としません。  
+4.  <span data-ttu-id="e4812-119">コールバック関数がその作業を完了する前にガベージ コレクターがデリゲートをクリアしないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="e4812-119">Ensure that the garbage collector does not reclaim the delegate before the callback function completes its work.</span></span> <span data-ttu-id="e4812-120">デリゲートをパラメーターとして渡した場合、または構造内のフィールドとして含まれるデリゲートを渡した場合、デリゲートは呼び出しの間収集されないままです。</span><span class="sxs-lookup"><span data-stu-id="e4812-120">When you pass a delegate as a parameter, or pass a delegate contained as a field in a structure, it remains uncollected for the duration of the call.</span></span> <span data-ttu-id="e4812-121">したがって、次の列挙例と同様に、コールバック関数はその作業を呼び出しが戻る前に完了するので、マネージ呼び出し元による追加操作を必要としません。</span><span class="sxs-lookup"><span data-stu-id="e4812-121">So, as is the case in the following enumeration example, the callback function completes its work before the call returns and requires no additional action by the managed caller.</span></span>  
   
-     ただし、呼び出しが戻った後にコールバック関数を呼び出せる場合、マネージ呼び出し元は、コールバック関数が終了するまでデリゲートが収集されないようにしておくための対策を講じる必要があります。 ガベージ コレクションを回避する方法の詳細については、プラットフォーム呼び出しによる「[相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)」を参照してください。  
+     <span data-ttu-id="e4812-122">ただし、呼び出しが戻った後にコールバック関数を呼び出せる場合、マネージ呼び出し元は、コールバック関数が終了するまでデリゲートが収集されないようにしておくための対策を講じる必要があります。</span><span class="sxs-lookup"><span data-stu-id="e4812-122">If, however, the callback function can be invoked after the call returns, the managed caller must take steps to ensure that the delegate remains uncollected until the callback function finishes.</span></span> <span data-ttu-id="e4812-123">ガベージ コレクションを回避する方法の詳細については、プラットフォーム呼び出しによる「[相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e4812-123">For detailed information about preventing garbage collection, see [Interop Marshaling](../../../docs/framework/interop/interop-marshaling.md) with Platform Invoke.</span></span>  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="e4812-124">例</span><span class="sxs-lookup"><span data-stu-id="e4812-124">Example</span></span>  
   
 ```vb  
 Imports System  
@@ -140,7 +136,6 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [コールバック関数](../../../docs/framework/interop/callback-functions.md)   
- [DLL 関数の呼び出し](../../../docs/framework/interop/calling-a-dll-function.md)
-
+## <a name="see-also"></a><span data-ttu-id="e4812-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="e4812-125">See Also</span></span>  
+ [<span data-ttu-id="e4812-126">コールバック関数</span><span class="sxs-lookup"><span data-stu-id="e4812-126">Callback Functions</span></span>](../../../docs/framework/interop/callback-functions.md)  
+ [<span data-ttu-id="e4812-127">DLL 関数の呼び出し</span><span class="sxs-lookup"><span data-stu-id="e4812-127">Calling a DLL Function</span></span>](../../../docs/framework/interop/calling-a-dll-function.md)

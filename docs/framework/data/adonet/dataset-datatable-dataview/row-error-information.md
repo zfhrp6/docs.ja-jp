@@ -1,23 +1,29 @@
 ---
-title: "行エラー情報 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "行エラー情報"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 8b1f9070-d032-48c7-b030-bd8fbb2ca59a
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 95cbac7f5bf2c28a3db206faca443edacc5b7be1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 行エラー情報
-<xref:System.Data.DataTable> の値を編集しているときに、行エラーに対処する必要をなくすために、エラー情報を行に追加して後で使用することができます。  <xref:System.Data.DataRow> オブジェクトは、この目的のために各行に <xref:System.Data.DataRow.RowError%2A> プロパティを提供します。  **DataRow** の **RowError** プロパティにデータを追加すると、その **DataRow** の <xref:System.Data.DataRow.HasErrors%2A> プロパティが **true** に設定されます。  **DataRow** が **DataTable** の一部であり、**DataRow.HasErrors** が **true** である場合は、**DataTable.HasErrors** プロパティも **true** になります。  この原則は、**DataTable** が属している **DataSet** に対しても適用されます。  エラーの有無を確認する場合は、**HasErrors** プロパティをチェックして、エラー情報が追加された行があるかどうかを判断できます。  **HasErrors** が **true** の場合に **DataTable** の <xref:System.Data.DataTable.GetErrors%2A> メソッドを使用して、エラーのある行だけを返してチェックする例を次に示します。  
+# <a name="row-error-information"></a><span data-ttu-id="b10f8-102">行エラー情報</span><span class="sxs-lookup"><span data-stu-id="b10f8-102">Row Error Information</span></span>
+<span data-ttu-id="b10f8-103"><xref:System.Data.DataTable> の値を編集しているときに、行エラーに対処する必要をなくすために、エラー情報を行に追加して後で使用することができます。</span><span class="sxs-lookup"><span data-stu-id="b10f8-103">To avoid having to respond to row errors while editing values in a <xref:System.Data.DataTable>, you can add the error information to the row for later use.</span></span> <span data-ttu-id="b10f8-104"><xref:System.Data.DataRow> オブジェクトは、この目的のために各行に <xref:System.Data.DataRow.RowError%2A> プロパティを提供します。</span><span class="sxs-lookup"><span data-stu-id="b10f8-104">The <xref:System.Data.DataRow> object provides a <xref:System.Data.DataRow.RowError%2A> property on each row for this purpose.</span></span> <span data-ttu-id="b10f8-105">データを追加する、 **RowError**のプロパティ、 **DataRow**設定、<xref:System.Data.DataRow.HasErrors%2A>のプロパティ、 **DataRow**に**true**です。</span><span class="sxs-lookup"><span data-stu-id="b10f8-105">Adding data to the **RowError** property of a **DataRow** sets the <xref:System.Data.DataRow.HasErrors%2A> property of the **DataRow** to **true**.</span></span> <span data-ttu-id="b10f8-106">場合、 **DataRow**の一部である、 **DataTable**、および**DataRow.HasErrors**は**true**、 **DataTable.HasErrors**プロパティも**true**です。</span><span class="sxs-lookup"><span data-stu-id="b10f8-106">If the **DataRow** is part of a **DataTable**, and **DataRow.HasErrors** is **true**, the **DataTable.HasErrors** property is also **true**.</span></span> <span data-ttu-id="b10f8-107">これに対しても適用されます、**データセット**先、 **DataTable**が属しています。</span><span class="sxs-lookup"><span data-stu-id="b10f8-107">This applies as well to the **DataSet** to which the **DataTable** belongs.</span></span> <span data-ttu-id="b10f8-108">チェックすることができますのエラーをテストするとき、 **HasErrors**の行にエラー情報が追加されたかどうかを決定するプロパティです。</span><span class="sxs-lookup"><span data-stu-id="b10f8-108">When testing for errors, you can check the **HasErrors** property to determine if error information has been added to any rows.</span></span> <span data-ttu-id="b10f8-109">場合**HasErrors**は**true**、使用することができます、<xref:System.Data.DataTable.GetErrors%2A>のメソッド、 **DataTable**を返して、次の例で示すように、エラーがある行のみを確認します。</span><span class="sxs-lookup"><span data-stu-id="b10f8-109">If **HasErrors** is **true**, you can use the <xref:System.Data.DataTable.GetErrors%2A> method of the **DataTable** to return and examine only the rows with errors, as shown in the following example.</span></span>  
   
 ```vb  
 Dim workTable As DataTable = New DataTable("Customers")  
@@ -49,7 +55,6 @@ Private Shared Sub OnRowChanged( _
   If CDbl(args.Row("Total")) = 0 Then args.Row.RowError = _  
       "Total cannot be 0."  
 End Sub  
-  
 ```  
   
 ```csharp  
@@ -82,9 +87,9 @@ protected static void OnRowChanged(
 }  
 ```  
   
-## 参照  
- <xref:System.Data.DataColumnCollection>   
- <xref:System.Data.DataRow>   
- <xref:System.Data.DataTable>   
- [DataTable 内のデータの操作](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="b10f8-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="b10f8-110">See Also</span></span>  
+ <xref:System.Data.DataColumnCollection>  
+ <xref:System.Data.DataRow>  
+ <xref:System.Data.DataTable>  
+ [<span data-ttu-id="b10f8-111">DataTable 内のデータを操作します。</span><span class="sxs-lookup"><span data-stu-id="b10f8-111">Manipulating Data in a DataTable</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)  
+ [<span data-ttu-id="b10f8-112">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="b10f8-112">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

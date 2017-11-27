@@ -1,81 +1,84 @@
 ---
-title: "Troubleshooting | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "トラブルシューティング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8cd4401c-b12c-4116-a421-f3dcffa65670
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: c4674acd6d097eb1cb03d5dd07b0c686404d1145
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Troubleshooting
-ここでは、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] アプリケーションで発生する可能性のある問題をいくつか示し、そうした問題を回避または影響を軽減するための提案を示します。  
+# <a name="troubleshooting"></a><span data-ttu-id="ed1d6-102">トラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="ed1d6-102">Troubleshooting</span></span>
+<span data-ttu-id="ed1d6-103">ここでは、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] アプリケーションで発生する可能性のある問題をいくつか示し、そうした問題を回避または影響を軽減するための提案を示します。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-103">The following information exposes some issues you might encounter in your [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] applications, and provides suggestions to avoid or otherwise reduce the effect of these issues.</span></span>  
   
- その他の問題については、「[Frequently Asked Questions](../../../../../../docs/framework/data/adonet/sql/linq/frequently-asked-questions.md)」を参照してください。  
+ <span data-ttu-id="ed1d6-104">その他の問題はで対処する[に関してよく寄せられる質問](../../../../../../docs/framework/data/adonet/sql/linq/frequently-asked-questions.md)です。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-104">Additional issues are addressed in [Frequently Asked Questions](../../../../../../docs/framework/data/adonet/sql/linq/frequently-asked-questions.md).</span></span>  
   
-## サポートされない標準クエリ演算子  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、すべての標準クエリ演算子メソッド \(たとえば <xref:System.Linq.Enumerable.ElementAt%2A>\) をサポートするわけではありません。  このため、コンパイルできたプロジェクトでも、ランタイム エラーが発生する可能性があります。  詳細については、「[Standard Query Operator Translation](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)」を参照してください。  
+## <a name="unsupported-standard-query-operators"></a><span data-ttu-id="ed1d6-105">サポートされない標準クエリ演算子</span><span class="sxs-lookup"><span data-stu-id="ed1d6-105">Unsupported Standard Query Operators</span></span>  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="ed1d6-106"> は、すべての標準クエリ演算子メソッド (たとえば <xref:System.Linq.Enumerable.ElementAt%2A>) をサポートするわけではありません。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-106"> does not support all standard query operator methods (for example, <xref:System.Linq.Enumerable.ElementAt%2A>).</span></span> <span data-ttu-id="ed1d6-107">このため、コンパイルできたプロジェクトでも、ランタイム エラーが発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-107">As a result, projects that compile can still produce run-time errors.</span></span> <span data-ttu-id="ed1d6-108">詳細については、次を参照してください。[標準クエリ演算子変換](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)です。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-108">For more information, see [Standard Query Operator Translation](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md).</span></span>  
   
-## メモリの問題  
- クエリにメモリ内コレクションと [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] の <xref:System.Data.Linq.Table%601> が含まれる場合、2 つのコレクションの指定順序に応じて、メモリ内でクエリが実行される可能性があります。  クエリをメモリ内で実行する必要がある場合、データベース テーブルのデータを取得する必要があります。  
+## <a name="memory-issues"></a><span data-ttu-id="ed1d6-109">メモリの問題</span><span class="sxs-lookup"><span data-stu-id="ed1d6-109">Memory Issues</span></span>  
+ <span data-ttu-id="ed1d6-110">クエリには、メモリ内コレクションが含まれている場合と[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Data.Linq.Table%601>、2 つのコレクションが指定された順序に応じて、メモリ内のクエリを実行する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-110">If a query involves an in-memory collection and [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Data.Linq.Table%601>, the query might be executed in memory, depending on the order in which the two collections are specified.</span></span> <span data-ttu-id="ed1d6-111">クエリをメモリ内で実行する必要がある場合、データベース テーブルのデータを取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-111">If the query must be executed in memory, then the data from the database table will need to be retrieved.</span></span>  
   
- この手法は非効率的で、メモリとプロセッサの消費量が非常に大きくなる可能性があります。  このような複数ドメインのクエリはできる限り使用しないでください。  
+ <span data-ttu-id="ed1d6-112">この手法は非効率的で、メモリとプロセッサの消費量が非常に大きくなる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-112">This approach is inefficient and could result in significant memory and processor usage.</span></span> <span data-ttu-id="ed1d6-113">このような複数ドメインのクエリはできる限り使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-113">Try to avoid such multi-domain queries.</span></span>  
   
-## ファイル名と SQLMetal  
- 入力ファイル名を指定するには、その名前をコマンド ラインに入力ファイルとして追加します。  **\/conn** オプションを使用して接続文字列にファイル名を含める方法はサポートされていません。  詳細については、「[SqlMetal.exe \(コード生成ツール\)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」を参照してください。  
+## <a name="file-names-and-sqlmetal"></a><span data-ttu-id="ed1d6-114">ファイル名と SQLMetal</span><span class="sxs-lookup"><span data-stu-id="ed1d6-114">File Names and SQLMetal</span></span>  
+ <span data-ttu-id="ed1d6-115">入力ファイル名を指定するには、その名前をコマンド ラインに入力ファイルとして追加します。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-115">To specify an input file name, add the name to the command line as the input file.</span></span> <span data-ttu-id="ed1d6-116">( **/conn** オプションを使用して) 接続文字列にファイル名を含める操作は、サポートされていません。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-116">Including the file name in the connection string (using the **/conn** option) is not supported.</span></span> <span data-ttu-id="ed1d6-117">詳しくは、「[SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-117">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span></span>  
   
-## クラス ライブラリ プロジェクト  
- [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]は、プロジェクトの `app.config` ファイルの中に接続文字列を作成します。  クラス ライブラリ プロジェクトでは `app.config` ファイルが使用されません。  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、デザイン時のファイルで提供される接続文字列を使用します。  `app.config` 内の値を変更しても、アプリケーションの接続先データベースは変更されません。  
+## <a name="class-library-projects"></a><span data-ttu-id="ed1d6-118">クラス ライブラリ プロジェクト</span><span class="sxs-lookup"><span data-stu-id="ed1d6-118">Class Library Projects</span></span>  
+ <span data-ttu-id="ed1d6-119">[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]は、プロジェクトの `app.config` ファイルの中に接続文字列を作成します。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-119">The [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] creates a connection string in the `app.config` file of the project.</span></span> <span data-ttu-id="ed1d6-120">クラス ライブラリ プロジェクトでは `app.config` ファイルが使用されません。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-120">In class library projects, the `app.config` file is not used.</span></span> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="ed1d6-121"> は、デザイン時のファイルで提供される接続文字列を使用します。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-121"> uses the Connection String provided in the design-time files.</span></span> <span data-ttu-id="ed1d6-122">`app.config` 内の値を変更しても、アプリケーションの接続先データベースは変更されません。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-122">Changing the value in `app.config` does not change the database to which your application connects.</span></span>  
   
-## 連鎖削除  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は連鎖削除操作をサポートせず、認識もしません。  制約を持つテーブルの行を削除するには、次のいずれかを行う必要があります。  
+## <a name="cascade-delete"></a><span data-ttu-id="ed1d6-123">連鎖削除</span><span class="sxs-lookup"><span data-stu-id="ed1d6-123">Cascade Delete</span></span>  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="ed1d6-124"> は連鎖削除操作をサポートせず、認識もしません。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-124"> does not support or recognize cascade-delete operations.</span></span> <span data-ttu-id="ed1d6-125">制約を持つテーブルの行を削除するには、次のいずれかを行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-125">If you want to delete a row in a table that has constraints against it, you must do either of the following:</span></span>  
   
--   データベース内の外部キー制約で `ON DELETE CASCADE` 規則を設定する。  
+-   <span data-ttu-id="ed1d6-126">データベース内の外部キー制約で `ON DELETE CASCADE` 規則を設定する。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-126">Set the `ON DELETE CASCADE` rule in the foreign-key constraint in the database.</span></span>  
   
--   独自のコードを使用して、親オブジェクトの削除を妨げる子オブジェクトを最初に削除する。  
+-   <span data-ttu-id="ed1d6-127">独自のコードを使用して、親オブジェクトの削除を妨げる子オブジェクトを最初に削除する。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-127">Use your own code to first delete the child objects that prevent the parent object from being deleted.</span></span>  
   
- このような操作を行わない場合、<xref:System.Data.SqlClient.SqlException> 例外がスローされます。  
+ <span data-ttu-id="ed1d6-128">このような操作を行わない場合、<xref:System.Data.SqlClient.SqlException> 例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-128">Otherwise, a <xref:System.Data.SqlClient.SqlException> exception is thrown.</span></span>  
   
- 詳細については、「[How to: Delete Rows From the Database](../../../../../../docs/framework/data/adonet/sql/linq/how-to-delete-rows-from-the-database.md)」を参照してください。  
+ <span data-ttu-id="ed1d6-129">詳細については、次を参照してください。[する方法: 行をデータベースから削除](../../../../../../docs/framework/data/adonet/sql/linq/how-to-delete-rows-from-the-database.md)です。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-129">For more information, see [How to: Delete Rows From the Database](../../../../../../docs/framework/data/adonet/sql/linq/how-to-delete-rows-from-the-database.md).</span></span>  
   
-## クエリ可能でない式  
- 「'型' の式はクエリ不可能です。LINQ プロバイダーに対してアセンブリ参照や名前空間インポートが不足していないことを確認してください」というエラーが発生した場合、次の点を確認してください。  
+## <a name="expression-not-queryable"></a><span data-ttu-id="ed1d6-130">クエリ可能でない式</span><span class="sxs-lookup"><span data-stu-id="ed1d6-130">Expression Not Queryable</span></span>  
+ <span data-ttu-id="ed1d6-131">場合、"式 [式] はクエリ不可能です。参照が存在するアセンブリですか?"</span><span class="sxs-lookup"><span data-stu-id="ed1d6-131">If you get the "Expression [expression] is not queryable; are you missing an assembly reference?"</span></span> <span data-ttu-id="ed1d6-132">エラー、次のことを確認します。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-132">error, make sure of the following:</span></span>  
   
--   アプリケーションが [!INCLUDE[compact_v35_short](../../../../../../includes/compact-v35-short-md.md)] を対象としている。  
+-   <span data-ttu-id="ed1d6-133">アプリケーションが [!INCLUDE[compact_v35_short](../../../../../../includes/compact-v35-short-md.md)] を対象としている。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-133">Your application is targeting [!INCLUDE[compact_v35_short](../../../../../../includes/compact-v35-short-md.md)].</span></span>  
   
--   `System.Core.dll` および `System.Data.Linq.dll` への参照が存在する。  
+-   <span data-ttu-id="ed1d6-134">`System.Core.dll` および `System.Data.Linq.dll` への参照が存在する。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-134">You have a reference to `System.Core.dll` and `System.Data.Linq.dll`.</span></span>  
   
--   <xref:System.Linq> および <xref:System.Data.Linq> のための `Imports` \([!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)]\) または `using` \(C\#\) ディレクティブが存在する。  
+-   <span data-ttu-id="ed1d6-135">`Imports` および [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] のための `using` (<xref:System.Linq>) または <xref:System.Data.Linq> (C#) ディレクティブが存在する。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-135">You have an `Imports` ([!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)]) or `using` (C#) directive for <xref:System.Linq> and <xref:System.Data.Linq>.</span></span>  
   
-## DuplicateKeyException  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] プロジェクトのデバッグ時に、エンティティのリレーションシップを走査する場合があります。  その際、これらの項目はキャッシュに入り、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] はこれらの存在を認識します。  その後、同じキーの複数の行を生成する <xref:System.Data.Linq.Table%601.Attach%2A> や <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A> などのメソッドを実行しようとした場合、<xref:System.Data.Linq.DuplicateKeyException> がスローされます。  
+## <a name="duplicatekeyexception"></a><span data-ttu-id="ed1d6-136">DuplicateKeyException</span><span class="sxs-lookup"><span data-stu-id="ed1d6-136">DuplicateKeyException</span></span>  
+ <span data-ttu-id="ed1d6-137">デバッグ中、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]プロジェクト、エンティティのリレーションシップを走査する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-137">In the course of debugging a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] project, you might traverse an entity's relations.</span></span> <span data-ttu-id="ed1d6-138">キャッシュ内にこれらの項目は、これにより、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]プレゼンスの対応になります。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-138">Doing so brings these items into the cache, and [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] becomes aware of their presence.</span></span> <span data-ttu-id="ed1d6-139">その後、同じキーの複数の行を生成する <xref:System.Data.Linq.Table%601.Attach%2A> や <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A> などのメソッドを実行しようとした場合、<xref:System.Data.Linq.DuplicateKeyException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-139">If you then try to execute <xref:System.Data.Linq.Table%601.Attach%2A> or <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A> or a similar method that produces multiple rows that have the same key, a <xref:System.Data.Linq.DuplicateKeyException> is thrown.</span></span>  
   
-## 文字列連結の例外  
- `[n]text` と他の `[n][var]char` にマップされる複数のオペランドを連結する操作はサポートされません。  異なる 2 つの型のセットにマップされる文字列を連結しようとすると、例外がスローされます。  詳細については、「[System.String Methods](../../../../../../docs/framework/data/adonet/sql/linq/system-string-methods.md)」を参照してください。  
+## <a name="string-concatenation-exceptions"></a><span data-ttu-id="ed1d6-140">文字列連結の例外</span><span class="sxs-lookup"><span data-stu-id="ed1d6-140">String Concatenation Exceptions</span></span>  
+ <span data-ttu-id="ed1d6-141">`[n]text` と他の `[n][var]char` にマップされる複数のオペランドを連結する操作はサポートされません。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-141">Concatenation on operands mapped to `[n]text` and other `[n][var]char` is not supported.</span></span> <span data-ttu-id="ed1d6-142">異なる 2 つの型のセットにマップされる文字列を連結しようとすると、例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-142">An exception is thrown for concatenation of strings mapped to the two different sets of types.</span></span> <span data-ttu-id="ed1d6-143">詳細については、次を参照してください。 [System.String メソッド](../../../../../../docs/framework/data/adonet/sql/linq/system-string-methods.md)です。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-143">For more information, see [System.String Methods](../../../../../../docs/framework/data/adonet/sql/linq/system-string-methods.md).</span></span>  
   
-## SQL Server 2000 の Skip 例外と Take 例外  
- SQL Server 2000 データベースに対して <xref:System.Linq.Queryable.Take%2A> または <xref:System.Linq.Queryable.Skip%2A> を使用する際には、ID メンバー \(<xref:System.Data.Linq.Mapping.ColumnAttribute.IsPrimaryKey%2A>\) を使用する必要があります。  クエリは、\(結合ではなく\) 1 つのテーブルに対して実行されるか、<xref:System.Linq.Queryable.Distinct%2A>、<xref:System.Linq.Queryable.Except%2A>、<xref:System.Linq.Queryable.Intersect%2A>、または <xref:System.Linq.Queryable.Union%2A> 操作である必要があります。さらに、クエリに <xref:System.Linq.Queryable.Concat%2A> 操作を含めることはできません。  詳細については、「[Standard Query Operator Translation](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)」の「SQL Server 2000 のサポート」を参照してください。  
+## <a name="skip-and-take-exceptions-in-sql-server-2000"></a><span data-ttu-id="ed1d6-144">SQL Server 2000 の Skip 例外と Take 例外</span><span class="sxs-lookup"><span data-stu-id="ed1d6-144">Skip and Take Exceptions in SQL Server 2000</span></span>  
+ <span data-ttu-id="ed1d6-145">SQL Server 2000 データベースに対して <xref:System.Data.Linq.Mapping.ColumnAttribute.IsPrimaryKey%2A> または <xref:System.Linq.Queryable.Take%2A> を使用する際には、ID メンバー (<xref:System.Linq.Queryable.Skip%2A>) を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-145">You must use identity members (<xref:System.Data.Linq.Mapping.ColumnAttribute.IsPrimaryKey%2A>) when you use <xref:System.Linq.Queryable.Take%2A> or <xref:System.Linq.Queryable.Skip%2A> against a SQL Server 2000 database.</span></span> <span data-ttu-id="ed1d6-146">クエリは、(結合ではなく) 1 つのテーブルに対して実行されるか、<xref:System.Linq.Queryable.Distinct%2A>、<xref:System.Linq.Queryable.Except%2A>、<xref:System.Linq.Queryable.Intersect%2A>、または <xref:System.Linq.Queryable.Union%2A> 操作である必要があります。さらに、クエリに <xref:System.Linq.Queryable.Concat%2A> 操作を含めることはできません。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-146">The query must be against a single table (that is, not a join), or be a <xref:System.Linq.Queryable.Distinct%2A>, <xref:System.Linq.Queryable.Except%2A>, <xref:System.Linq.Queryable.Intersect%2A>, or <xref:System.Linq.Queryable.Union%2A> operation, and must not include a <xref:System.Linq.Queryable.Concat%2A> operation.</span></span> <span data-ttu-id="ed1d6-147">詳細については、「SQL Server 2000 のサポート」セクションを参照してください。[標準クエリ演算子変換](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)です。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-147">For more information, see the "SQL Server 2000 Support" section in [Standard Query Operator Translation](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md).</span></span>  
   
- この要件は [!INCLUDE[sqprsqlong](../../../../../../includes/sqprsqlong-md.md)] には適用されません。  
+ <span data-ttu-id="ed1d6-148">この要件は [!INCLUDE[sqprsqlong](../../../../../../includes/sqprsqlong-md.md)] には適用されません。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-148">This requirement does not apply to [!INCLUDE[sqprsqlong](../../../../../../includes/sqprsqlong-md.md)].</span></span>  
   
-## GroupBy InvalidOperationException  
- この例外は、たとえば `group x by (Phone==@phone)` のように、`boolean` 式でグループ分けする <xref:System.Linq.Enumerable.GroupBy%2A> クエリ内の列値が null である場合にスローされます。  式が `boolean` であるため、キーは `nullable` `boolean` ではなく、`boolean` と推論されます。  変換された比較で null が生成される場合、`nullable` `boolean` を `boolean` に割り当てようとして、例外がスローされます。  
+## <a name="groupby-invalidoperationexception"></a><span data-ttu-id="ed1d6-149">GroupBy InvalidOperationException</span><span class="sxs-lookup"><span data-stu-id="ed1d6-149">GroupBy InvalidOperationException</span></span>  
+ <span data-ttu-id="ed1d6-150">この例外は、たとえば <xref:System.Linq.Enumerable.GroupBy%2A> のように、`boolean` 式でグループ分けする `group x by (Phone==@phone)` クエリ内の列値が null である場合にスローされます。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-150">This exception is thrown when a column value is null in a <xref:System.Linq.Enumerable.GroupBy%2A> query that groups by a `boolean` expression, such as `group x by (Phone==@phone)`.</span></span> <span data-ttu-id="ed1d6-151">式があるため、 `boolean`、キーがある推論`boolean`ではなく、`nullable``boolean`です。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-151">Because the expression is a `boolean`, the key is inferred to be `boolean`, not `nullable``boolean`.</span></span> <span data-ttu-id="ed1d6-152">変換された比較では、null 値が生成される、しようとしましたが割り当てる、`nullable``boolean`を`boolean`例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-152">When the translated comparison produces a null, an attempt is made to assign a `nullable``boolean` to a `boolean`, and the exception is thrown.</span></span>  
   
- この状態を回避する \(null を false と扱う\) には、次のような手法を使用してください。  
+ <span data-ttu-id="ed1d6-153">この状態を回避する (null を false と扱う) には、次のような手法を使用してください。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-153">To avoid this situation (assuming you want to treat nulls as false), use an approach such as the following:</span></span>  
   
  `GroupBy="(Phone != null) && (Phone=@Phone)"`  
   
-## OnCreated\(\) 部分メソッド  
- オブジェクト コンストラクターが呼び出されるたびに、生成されたメソッド `OnCreated()` が呼び出されます。これは、元の値をコピーするために [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] がコンストラクターを呼び出す場合にも当てはまります。  独自の部分クラスに `OnCreated()` メソッドを実装する場合には、この動作を考慮に入れてください。  
+## <a name="oncreated-partial-method"></a><span data-ttu-id="ed1d6-154">OnCreated() 部分メソッド</span><span class="sxs-lookup"><span data-stu-id="ed1d6-154">OnCreated() Partial Method</span></span>  
+ <span data-ttu-id="ed1d6-155">オブジェクト コンストラクターが呼び出されるたびに、生成されたメソッド `OnCreated()` が呼び出されます。これは、元の値をコピーするために [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] がコンストラクターを呼び出す場合にも当てはまります。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-155">The generated method `OnCreated()` is called each time the object constructor is called, including the scenario in which [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] calls the constructor to make a copy for original values.</span></span> <span data-ttu-id="ed1d6-156">独自の部分クラスに `OnCreated()` メソッドを実装する場合には、この動作を考慮に入れてください。</span><span class="sxs-lookup"><span data-stu-id="ed1d6-156">Take this behavior into account if you implement the `OnCreated()` method in your own partial class.</span></span>  
   
-## 参照  
- [Debugging Support](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)   
- [Frequently Asked Questions](../../../../../../docs/framework/data/adonet/sql/linq/frequently-asked-questions.md)
+## <a name="see-also"></a><span data-ttu-id="ed1d6-157">関連項目</span><span class="sxs-lookup"><span data-stu-id="ed1d6-157">See Also</span></span>  
+ [<span data-ttu-id="ed1d6-158">デバッグのサポート</span><span class="sxs-lookup"><span data-stu-id="ed1d6-158">Debugging Support</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)  
+ [<span data-ttu-id="ed1d6-159">よく寄せられる質問</span><span class="sxs-lookup"><span data-stu-id="ed1d6-159">Frequently Asked Questions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/frequently-asked-questions.md)

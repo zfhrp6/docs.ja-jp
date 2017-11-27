@@ -1,143 +1,104 @@
 ---
-title: "&lt;runtime&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#runtime"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<runtime> 要素"
-  - "コンテナー タグ, <runtime> 要素"
-  - "runtime 要素"
+title: "&lt;ランタイム&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#runtime
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime
+helpviewer_keywords:
+- <runtime> element
+- runtime element
+- container tags, <runtime> element
 ms.assetid: 1eb2fae3-de4b-45b6-852f-517c39b751bd
-caps.latest.revision: 70
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 62
+caps.latest.revision: "70"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: c4c64de42f82590e1e8dc24afa46f66c3efb35b2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;runtime&gt; 要素
-アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。  
+# <a name="ltruntimegt-element"></a><span data-ttu-id="51bba-102">&lt;ランタイム&gt;要素</span><span class="sxs-lookup"><span data-stu-id="51bba-102">&lt;runtime&gt; Element</span></span>
+<span data-ttu-id="51bba-103">アプリケーションを構成する共通言語ランタイムで使用される情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="51bba-103">Provides information used by the common language runtime to configure applications.</span></span>  
   
-## 構文  
+ <span data-ttu-id="51bba-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="51bba-104">\<configuration></span></span>  
+<span data-ttu-id="51bba-105">\<ランタイム ></span><span class="sxs-lookup"><span data-stu-id="51bba-105">\<runtime></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="51bba-106">構文</span><span class="sxs-lookup"><span data-stu-id="51bba-106">Syntax</span></span>  
+  
+```xml  
 <runtime>  
 </runtime>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="51bba-107">属性および要素</span><span class="sxs-lookup"><span data-stu-id="51bba-107">Attributes and Elements</span></span>  
+ <span data-ttu-id="51bba-108">次のセクションでは、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="51bba-108">The following sections describe child elements and parent elements.</span></span>  
   
-### 属性  
- なし。  
+### <a name="attributes"></a><span data-ttu-id="51bba-109">属性</span><span class="sxs-lookup"><span data-stu-id="51bba-109">Attributes</span></span>  
+ <span data-ttu-id="51bba-110">なし。</span><span class="sxs-lookup"><span data-stu-id="51bba-110">None.</span></span>  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="51bba-111">子要素</span><span class="sxs-lookup"><span data-stu-id="51bba-111">Child Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<alwaysFlowImpersonationPolicy\>](../../../../../docs/framework/configure-apps/file-schema/runtime/alwaysflowimpersonationpolicy-element.md)|偽装の実行方法に関係なく、Windows ID が常に非同期ポイント間をフローするように指定します。|  
-|[\<appDomainManagerAssembly\>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md)|プロセスの既定のアプリケーション ドメインにアプリケーション ドメイン マネージャーを提供するアセンブリを指定します。|  
-|[\<appDomainManagerType\>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagertype-element.md)|既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーとして機能する型を指定します。|  
-|[\<appDomainResourceMonitoring\>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)|プロセスの有効期間中、プロセス内のすべてのアプリケーション ドメインに関する統計情報を収集するようにランタイムに指示します。|  
-|[\<assemblyBinding\>](../../../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md)|アセンブリ バージョンのリダイレクトおよびアセンブリの位置に関する情報が含まれます。|  
-|[\<bypassTrustedAppStrongNames\>](../../../../../docs/framework/configure-apps/file-schema/runtime/bypasstrustedappstrongnames-element.md)|完全に信頼されているアセンブリの厳密な名前の検証をバイパスするかどうかを指定します。|  
-|[\<CompatSortNLSVersion\>](../../../../../docs/framework/configure-apps/file-schema/runtime/compatsortnlsversion-element.md)|文字列比較の実行時に、ランタイムがレガシ並べ替え動作を使用するように指定します。|  
-|[\<developmentMode\>](../../../../../docs/framework/configure-apps/file-schema/runtime/developmentmode-element.md)|DEVPATH 環境変数で指定されたディレクトリでランタイムがアセンブリを検索するかどうかを指定します。|  
-|[\<disableCachingBindingFailures\>](../../../../../docs/framework/configure-apps/file-schema/runtime/disablecachingbindingfailures-element.md)|.NET Framework Version 2.0 の既定の動作であるバインディング エラーのキャッシュを無効にするかどうかを指定します。|  
-|[\<disableCommitThreadStack\>](../../../../../docs/framework/configure-apps/file-schema/runtime/disablecommitthreadstack-element.md)|スレッドの起動時にスレッド スタック全体をコミットするかどうかを指定します。|  
-|[\<disableFusionUpdatesFromADManager\>](../../../../../docs/framework/configure-apps/file-schema/runtime/disablefusionupdatesfromadmanager-element.md)|アプリケーション ドメインの構成設定をランタイム ホストがオーバーライドできるという既定の動作を、無効にするかどうかを指定します。|  
-|[\<enforceFIPSPolicy\>](../../../../../docs/framework/configure-apps/file-schema/runtime/enforcefipspolicy-element.md)|暗号アルゴリズムが連邦情報処理規格 \(FIPS: Federal Information Processing Standard\) に準拠することを必要とするコンピューターの構成要件を適用するかどうかを指定します。|  
-|[\<etwEnable\>](../../../../../docs/framework/configure-apps/file-schema/runtime/etwenable-element.md)|共通言語ランタイム イベントで Windows イベント トレーシング \(ETW\) を有効にするかどうかを指定します。|  
-|[\<forcePerformanceCounterUniqueSharedMemoryReads\>](../../../../../docs/framework/configure-apps/file-schema/runtime/forceperformancecounteruniquesharedmemoryreads-element.md)|PerfCounter.dll がカテゴリ固有の共有メモリとグローバル メモリのどちらからパフォーマンス カウンター データを読み込むかを判断するために .NET Framework Version 1.1 アプリケーションの CategoryOptions レジストリ設定を使用するかどうかを指定します。|  
-|[\<gcAllowVeryLargeObjects\>](../../../../../docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md)|64 ビット プラットフォームで、合計サイズが 2 GB \(ギガバイト\) を超える配列を有効にします。|  
-|[\<gcConcurrent\>](../../../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)|共通言語ランタイムがガベージ コレクションを並列に実行するかどうかを指定します。|  
-|[\<GCCpuGroup\>](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md)|ガベージ コレクションが複数の CPU グループをサポートするかどうかを指定します。|  
-|[\<gcServer\>](../../../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)|共通言語ランタイムがサーバーのガベージ コレクションを実行するかどうかを指定します。|  
-|[\<generatePublisherEvidence\>](../../../../../docs/framework/configure-apps/file-schema/runtime/generatepublisherevidence-element.md)|ランタイムがコード アクセス セキュリティ \(CAS: Code Access Security\) 発行者ポリシーを使用するかどうかを指定します。|  
-|[\<legacyCorruptedStateExceptionsPolicy\>](../../../../../docs/framework/configure-apps/file-schema/runtime/legacycorruptedstateexceptionspolicy-element.md)|ランタイムでアクセス違反やその他の破損状態の例外をマネージ コードがキャッチできるかどうかを指定します。|  
-|[\<legacyImpersonationPolicy\>](../../../../../docs/framework/configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md)|現在のスレッドの実行コンテキストのフロー設定に関係なく、Windows ID が非同期ポイント間をフローしないように指定します。|  
-|[\<loadfromRemoteSources\>](../../../../../docs/framework/configure-apps/file-schema/runtime/loadfromremotesources-element.md)|リモート ソースからのアセンブリを完全信頼アセンブリとして読み込むかどうかを指定します。|  
-|[\<NetFx40\_LegacySecurityPolicy\>](../../../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)|ランタイムがレガシ コード アクセス セキュリティ \(CAS: Code Access Security\) ポリシーを使用するかどうかを指定します。|  
-|[\<NetFx40\_PInvokeStackResilience\>](../../../../../docs/framework/configure-apps/file-schema/runtime/netfx40-pinvokestackresilience-element.md)|ランタイムが、マネージ コードとアンマネージ コードの間の切り替えを低速にしてでも、実行時に不適切なプラットフォーム呼び出し宣言を自動的に修正するかどうかを指定します。|  
-|[\<NetFx45\_CultureAwareComparerGetHashCode\_LongStrings\>](../../../../../docs/framework/configure-apps/file-schema/runtime/netfx45-cultureawarecomparergethashcode-longstrings-element.md)|<xref:System.StringComparer.GetHashCode%2A?displayProperty=fullName> のメソッドのハッシュ コードを計算するためにランタイムが固定メモリを使用するかどうかを指定します。|  
-|[\<PreferComInsteadOfRemoting\>](../../../../../docs/framework/configure-apps/file-schema/runtime/prefercominsteadofmanagedremoting-element.md)|ランタイムでアプリケーション ドメインの境界を越えたリモート処理ではなく COM 相互運用機能が使用されることを指定します。|  
-|[\<relativeBindForResources\>](../../../../../docs/framework/configure-apps/file-schema/runtime/relativebindforresources-element.md)|サテライト アセンブリのプローブを最適化します。|  
-|[\<shadowCopyVerifyByTimeStamp\>](../../../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)|シャドウ コピーの動作を、[!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] で導入された既定の起動動作にするか、旧バージョンの .NET Framework の起動動作に戻すかを指定します。|  
-|[\<supportPortability\>](../../../../../docs/framework/configure-apps/file-schema/runtime/supportportability-element.md)|.NET Framework の 2 つの異なる実装にある同じアセンブリを 1 つのアプリケーションから参照できるように、既定の動作を無効にすることができます。既定の動作では、アプリケーションの移植性を高めるために、このようなアセンブリは同等のものとして扱われます。|  
-|[\<system.runtime.caching\>](../../../../../docs/framework/configure-apps/file-schema/runtime/system-runtime-caching-element-cache-settings.md)|既定のメモリ内オブジェクト キャッシュの構成情報を提供します。|  
-|[\<Thread\_UseAllCpuGroups\>](../../../../../docs/framework/configure-apps/file-schema/runtime/thread-useallcpugroups-element.md)|ランタイムによって、すべての CPU グループにマネージ スレッドを分散するかどうかを指定します。|  
-|[\<ThrowUnobservedTaskExceptions\>](../../../../../docs/framework/configure-apps/file-schema/runtime/throwunobservedtaskexceptions-element.md)|未処理の例外を実行中のプロセスを停止する必要があるかどうかを指定します。|  
-|[\<TimeSpan\_LegacyFormatMode\>](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)|ランタイムで <xref:System.TimeSpan> 値に書式設定のレガシ動作を使用するかどうかを指定します。|  
-|[\<UseRandomizedStringHashAlgorithm\>](../../../../../docs/framework/configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md)|ランタイムがアプリケーション ドメインごとに文字列のハッシュ コードを計算するかどうかを指定します。|  
-|[\<UseSmallInternalThreadStacks\>](../../../../../docs/framework/configure-apps/file-schema/runtime/usesmallinternalthreadstacks-element.md)|ランタイムで内部的に使用する特定のスレッドを作成するときに、既定のスタック サイズではなく明示的なスタック サイズを使用することを要求します。|  
+|<span data-ttu-id="51bba-112">要素</span><span class="sxs-lookup"><span data-stu-id="51bba-112">Element</span></span>|<span data-ttu-id="51bba-113">説明</span><span class="sxs-lookup"><span data-stu-id="51bba-113">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="51bba-114">\<alwaysFlowImpersonationPolicy></span><span class="sxs-lookup"><span data-stu-id="51bba-114">\<alwaysFlowImpersonationPolicy></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/alwaysflowimpersonationpolicy-element.md)|<span data-ttu-id="51bba-115">偽装の実行方法に関係なく、Windows ID が常に非同期ポイント間でフローすることを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-115">Specifies that the Windows identity always flows across asynchronous points, regardless of how impersonation was performed.</span></span>|  
+|[<span data-ttu-id="51bba-116">\<AppContextSwitchOverrides></span><span class="sxs-lookup"><span data-stu-id="51bba-116">\<AppContextSwitchOverrides></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md)|<span data-ttu-id="51bba-117"><xref:System.AppContext> クラスで使用される、新機能に対するオプトアウト メカニズムを指定するスイッチを 1 つまたは複数定義します。</span><span class="sxs-lookup"><span data-stu-id="51bba-117">Defines one or more switches used by the <xref:System.AppContext> class to provide an opt-out mechanism for new functionality.</span></span>|  
+|[<span data-ttu-id="51bba-118">\<appDomainManagerAssembly></span><span class="sxs-lookup"><span data-stu-id="51bba-118">\<appDomainManagerAssembly></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md)|<span data-ttu-id="51bba-119">プロセスにおける既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーを提供するアセンブリを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-119">Specifies the assembly that provides the application domain manager for the default application domain in the process.</span></span>|  
+|[<span data-ttu-id="51bba-120">\<appDomainManagerType></span><span class="sxs-lookup"><span data-stu-id="51bba-120">\<appDomainManagerType></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagertype-element.md)|<span data-ttu-id="51bba-121">既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーの役割を果たす種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-121">Specifies the type that serves as the application domain manager for the default application domain.</span></span>|  
+|[<span data-ttu-id="51bba-122">\<appDomainResourceMonitoring></span><span class="sxs-lookup"><span data-stu-id="51bba-122">\<appDomainResourceMonitoring></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)|<span data-ttu-id="51bba-123">プロセスのライフサイクルにおいて、プロセスのすべてのアプリケーション ドメインの統計を収集するようにランタイムに指示します。</span><span class="sxs-lookup"><span data-stu-id="51bba-123">Instructs the runtime to collect statistics on all application domains in the process for the life of the process.</span></span>|  
+|[<span data-ttu-id="51bba-124">\<assemblyBinding></span><span class="sxs-lookup"><span data-stu-id="51bba-124">\<assemblyBinding></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md)|<span data-ttu-id="51bba-125">アセンブリ バージョンのリダイレクトおよびアセンブリの位置に関する情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="51bba-125">Contains information about assembly version redirection and the locations of assemblies.</span></span>|  
+|[<span data-ttu-id="51bba-126">\<bypassTrustedAppStrongNames></span><span class="sxs-lookup"><span data-stu-id="51bba-126">\<bypassTrustedAppStrongNames></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/bypasstrustedappstrongnames-element.md)|<span data-ttu-id="51bba-127">信頼されたアセンブリに対する厳密な名前の検証をバイパスするかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-127">Specifies whether strong name verification for trusted assemblies should be bypassed.</span></span>|  
+|[<span data-ttu-id="51bba-128">\<CompatSortNLSVersion></span><span class="sxs-lookup"><span data-stu-id="51bba-128">\<CompatSortNLSVersion></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/compatsortnlsversion-element.md)|<span data-ttu-id="51bba-129">文字列比較を実行するときに、ランタイムが従来の並べ替え動作を使用する必要がありますを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-129">Specifies that the runtime should use legacy sorting behavior when performing string comparisons.</span></span>|  
+|[<span data-ttu-id="51bba-130">\<developmentMode></span><span class="sxs-lookup"><span data-stu-id="51bba-130">\<developmentMode></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/developmentmode-element.md)|<span data-ttu-id="51bba-131">DEVPATH 環境変数によって指定されたディレクトリで、ランタイムがアセンブリの検索を行うかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-131">Specifies whether the runtime searches for assemblies in directories specified by the DEVPATH environment variable.</span></span>|  
+|[<span data-ttu-id="51bba-132">\<disableCachingBindingFailures></span><span class="sxs-lookup"><span data-stu-id="51bba-132">\<disableCachingBindingFailures></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/disablecachingbindingfailures-element.md)|<span data-ttu-id="51bba-133">キャッシュ バインディング エラーのある .NET Framework version 2.0 の既定の動作が無効になっているかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-133">Specifies whether the caching of binding failures, which is the default behavior in the .NET Framework version 2.0, is disabled.</span></span>|  
+|[<span data-ttu-id="51bba-134">\<disableCommitThreadStack></span><span class="sxs-lookup"><span data-stu-id="51bba-134">\<disableCommitThreadStack></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/disablecommitthreadstack-element.md)|<span data-ttu-id="51bba-135">スレッドの起動時にスレッド スタック全体をコミットするかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-135">Specifies whether the full thread stack is committed when a thread is started.</span></span>|  
+|[<span data-ttu-id="51bba-136">\<disableFusionUpdatesFromADManager></span><span class="sxs-lookup"><span data-stu-id="51bba-136">\<disableFusionUpdatesFromADManager></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/disablefusionupdatesfromadmanager-element.md)|<span data-ttu-id="51bba-137">アプリケーション ドメインの構成設定をランタイム ホストが上書きする既定の動作を無効化するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-137">Specifies whether the default behavior, which is to allow the runtime host to override configuration settings for an application domain, is disabled.</span></span>|  
+|[<span data-ttu-id="51bba-138">\<EnableAmPmParseAdjustment></span><span class="sxs-lookup"><span data-stu-id="51bba-138">\<EnableAmPmParseAdjustment></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/enableampmparseadjustment-element.md)|<span data-ttu-id="51bba-139">日付と時刻の解析メソッドが、日、月、時間、および午前/午後のみを含む日付の文字列を解析するように調整されたルールのセットを使用するかどうかを決定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-139">Determines whether date and time parsing methods use an adjusted set of rules to parse date strings that contain only a day, month, hour, and AM/PM designator.</span></span>|  
+|[<span data-ttu-id="51bba-140">\<enforceFIPSPolicy></span><span class="sxs-lookup"><span data-stu-id="51bba-140">\<enforceFIPSPolicy></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/enforcefipspolicy-element.md)|<span data-ttu-id="51bba-141">暗号化アルゴリズムが連邦情報処理規格 (FIPS: Federal Information Processing Standard) に準拠する必要があるコンピューターの構成要件を強制するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-141">Specifies whether to enforce a computer configuration requirement that cryptographic algorithms must comply with the Federal Information Processing Standards (FIPS).</span></span>|  
+|[<span data-ttu-id="51bba-142">\<etwEnable></span><span class="sxs-lookup"><span data-stu-id="51bba-142">\<etwEnable></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/etwenable-element.md)|<span data-ttu-id="51bba-143">共通言語ランタイム イベントで Windows イベント トレーシング (ETW) を有効にするかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-143">Specifies whether to enable event tracing for Windows (ETW) for common language runtime events.</span></span>|  
+|[<span data-ttu-id="51bba-144">\<forcePerformanceCounterUniqueSharedMemoryReads></span><span class="sxs-lookup"><span data-stu-id="51bba-144">\<forcePerformanceCounterUniqueSharedMemoryReads></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/forceperformancecounteruniquesharedmemoryreads-element.md)|<span data-ttu-id="51bba-145">PerfCounter.dll が、.NET Framework バージョン 1.1 のアプリケーションの CategoryOptions レジストリ設定を使用してするかどうかを指定して、カテゴリ別の共有メモリとグローバル メモリのどちらからパフォーマンス カウンター データを読み込むかを決定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-145">Specifies whether PerfCounter.dll uses the CategoryOptions registry setting in a .NET Framework version 1.1 application to determine whether to load performance counter data from category-specific shared memory or global memory.</span></span>|  
+|[<span data-ttu-id="51bba-146">\<gcAllowVeryLargeObjects></span><span class="sxs-lookup"><span data-stu-id="51bba-146">\<gcAllowVeryLargeObjects></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md)|<span data-ttu-id="51bba-147">64 ビット プラットフォームで、合計サイズが 2 GB (ギガバイト) を超える配列を有効にします。</span><span class="sxs-lookup"><span data-stu-id="51bba-147">On 64-bit platforms, enables arrays that are greater than 2 gigabytes (GB) in total size.</span></span>|  
+|[<span data-ttu-id="51bba-148">\<gcConcurrent></span><span class="sxs-lookup"><span data-stu-id="51bba-148">\<gcConcurrent></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)|<span data-ttu-id="51bba-149">共通言語ランタイムがガベージ コレクションを並列に実行するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-149">Specifies whether the common language runtime runs garbage collection concurrently.</span></span>|  
+|[<span data-ttu-id="51bba-150">\<GCCpuGroup></span><span class="sxs-lookup"><span data-stu-id="51bba-150">\<GCCpuGroup></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md)|<span data-ttu-id="51bba-151">ガベージ コレクションが複数の CPU グループをサポートするかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-151">Specifies whether garbage collection supports multiple CPU groups.</span></span>|  
+|[<span data-ttu-id="51bba-152">\<gcServer></span><span class="sxs-lookup"><span data-stu-id="51bba-152">\<gcServer></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)|<span data-ttu-id="51bba-153">共通言語ランタイムがサーバーのガベージ コレクションを実行するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-153">Specifies whether the common language runtime runs server garbage collection.</span></span>|  
+|[<span data-ttu-id="51bba-154">\<generatePublisherEvidence></span><span class="sxs-lookup"><span data-stu-id="51bba-154">\<generatePublisherEvidence></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/generatepublisherevidence-element.md)|<span data-ttu-id="51bba-155">ランタイムがコード アクセス セキュリティ (CAS) の発行元ポリシーを使用するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-155">Specifies whether the runtime uses code access security (CAS) publisher policy.</span></span>|  
+|[<span data-ttu-id="51bba-156">\<legacyCorruptedStateExceptionsPolicy></span><span class="sxs-lookup"><span data-stu-id="51bba-156">\<legacyCorruptedStateExceptionsPolicy></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/legacycorruptedstateexceptionspolicy-element.md)|<span data-ttu-id="51bba-157">ランタイムがアクセス違反およびその他の破損状態例外をキャッチするマネージ コードを許可するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-157">Specifies whether the runtime allows managed code to catch access violations and other corrupted state exceptions.</span></span>|  
+|[<span data-ttu-id="51bba-158">\<legacyImpersonationPolicy></span><span class="sxs-lookup"><span data-stu-id="51bba-158">\<legacyImpersonationPolicy></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md)|<span data-ttu-id="51bba-159">Windows ID が、現在のスレッドの実行コンテキストのフロー設定に関係なく、非同期ポイント間でフローしないことを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-159">Specifies that the Windows identity does not flow across asynchronous points, regardless of the flow settings for the execution context on the current thread.</span></span>|  
+|[<span data-ttu-id="51bba-160">\<loadfromRemoteSources></span><span class="sxs-lookup"><span data-stu-id="51bba-160">\<loadfromRemoteSources></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/loadfromremotesources-element.md)|<span data-ttu-id="51bba-161">リモート ソースからのアセンブリを完全な信頼として読み込むかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-161">Specifies whether assemblies from remote sources are loaded as full trust.</span></span>|  
+|[<span data-ttu-id="51bba-162"><NetFx40_LegacySecurityPolicy></span><span class="sxs-lookup"><span data-stu-id="51bba-162"><NetFx40_LegacySecurityPolicy></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)|<span data-ttu-id="51bba-163">ランタイムがレガシ コード アクセス セキュリティ (CAS) ポリシーを使用するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-163">Specifies whether the runtime uses legacy code access security (CAS) policy.</span></span>|  
+|[<span data-ttu-id="51bba-164"><NetFx40_PInvokeStackResilience></span><span class="sxs-lookup"><span data-stu-id="51bba-164"><NetFx40_PInvokeStackResilience></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/netfx40-pinvokestackresilience-element.md)|<span data-ttu-id="51bba-165">ランタイムが実行時の不適切なプラットフォーム呼び出し宣言を自動的に修正するかどうかを指定します。これにより、マネージ コードとアンマネージ コード間の遷移が遅くなります。</span><span class="sxs-lookup"><span data-stu-id="51bba-165">Specifies whether the runtime automatically fixes incorrect platform invoke declarations at run time, at the cost of slower transitions between managed and unmanaged code.</span></span>|  
+|[<span data-ttu-id="51bba-166"><NetFx45_CultureAwareComparerGetHashCode_LongStrings></span><span class="sxs-lookup"><span data-stu-id="51bba-166"><NetFx45_CultureAwareComparerGetHashCode_LongStrings></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/netfx45-cultureawarecomparergethashcode-longstrings-element.md)|<span data-ttu-id="51bba-167">ランタイムが <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> メソッドで固定量のメモリを使用してハッシュ コードを計算するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-167">Specifies whether the runtime uses a fixed amount of memory to calculate hash codes for the <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> method.</span></span>|  
+|[<span data-ttu-id="51bba-168">\<PreferComInsteadOfRemoting ></span><span class="sxs-lookup"><span data-stu-id="51bba-168">\<PreferComInsteadOfRemoting></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/prefercominsteadofmanagedremoting-element.md)|<span data-ttu-id="51bba-169">ランタイムが、アプリケーション ドメインの境界間のリモート処理ではなく COM 相互運用を使用することを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-169">Specifies that the runtime will use COM interop instead of remoting across application domain boundaries.</span></span>|  
+|[<span data-ttu-id="51bba-170">\<relativeBindForResources></span><span class="sxs-lookup"><span data-stu-id="51bba-170">\<relativeBindForResources></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/relativebindforresources-element.md)|<span data-ttu-id="51bba-171">サテライト アセンブリのプローブを最適化します。</span><span class="sxs-lookup"><span data-stu-id="51bba-171">Optimizes the probe for satellite assemblies.</span></span>|  
+|[<span data-ttu-id="51bba-172">\<shadowCopyVerifyByTimeStamp></span><span class="sxs-lookup"><span data-stu-id="51bba-172">\<shadowCopyVerifyByTimeStamp></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)|<span data-ttu-id="51bba-173">シャドウ コピーが [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] で導入された既定の起動の動作を使用するか、.NET Framework の以前のバージョンの起動の動作に戻すかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-173">Specifies whether shadow copying uses the default startup behavior introduced in the [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], or reverts to the startup behavior of earlier versions of the .NET Framework.</span></span>|  
+|[<span data-ttu-id="51bba-174">\<supportPortability></span><span class="sxs-lookup"><span data-stu-id="51bba-174">\<supportPortability></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/supportportability-element.md)|<span data-ttu-id="51bba-175">.NET Framework の 2 つの異なる実装にある同じアセンブリを 1 つのアプリケーションから参照できるように、既定の動作を無効にすることができます。既定の動作では、アプリケーションの移植性を高めるために、このようなアセンブリは同等のものとして扱われます。</span><span class="sxs-lookup"><span data-stu-id="51bba-175">Specifies that an application can reference the same assembly in two different implementations of the .NET Framework, by disabling the default behavior that treats the assemblies as equivalent for application portability purposes.</span></span>|  
+|[<span data-ttu-id="51bba-176">\<system.runtime.caching></span><span class="sxs-lookup"><span data-stu-id="51bba-176">\<system.runtime.caching></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/system-runtime-caching-element-cache-settings.md)|<span data-ttu-id="51bba-177">既定のメモリ内オブジェクト キャッシュの構成情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="51bba-177">Provides configuration information for the default in-memory object cache.</span></span>|  
+|[<span data-ttu-id="51bba-178"><Thread_UseAllCpuGroups></span><span class="sxs-lookup"><span data-stu-id="51bba-178"><Thread_UseAllCpuGroups></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/thread-useallcpugroups-element.md)|<span data-ttu-id="51bba-179">ランタイムによって、すべての CPU グループにマネージ スレッドを分散するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-179">Specifies whether the runtime distributes managed threads across all CPU groups.</span></span>|  
+|[<span data-ttu-id="51bba-180">\<ThrowUnobservedTaskExceptions></span><span class="sxs-lookup"><span data-stu-id="51bba-180">\<ThrowUnobservedTaskExceptions></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/throwunobservedtaskexceptions-element.md)|<span data-ttu-id="51bba-181">タスクがハンドルされない例外によって実行中のプロセスを終了するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-181">Specifies whether unhandled task exceptions should terminate a running process.</span></span>|  
+|[<span data-ttu-id="51bba-182"><TimeSpan_LegacyFormatMode></span><span class="sxs-lookup"><span data-stu-id="51bba-182"><TimeSpan_LegacyFormatMode></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/timespan-legacyformatmode-element.md)|<span data-ttu-id="51bba-183">ランタイムで <xref:System.TimeSpan> の値に従来の書式を使用するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-183">Specifies whether the runtime uses legacy formatting for <xref:System.TimeSpan> values.</span></span>|  
+|[<span data-ttu-id="51bba-184">\<useLegacyJit></span><span class="sxs-lookup"><span data-stu-id="51bba-184">\<useLegacyJit></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/uselegacyjit-element.md)|<span data-ttu-id="51bba-185">共通言語ランタイムが Just-In-Time コンパイルの従来の 64 ビット JIT コンパイラを使用するかどうかを決定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-185">Determines whether the common language runtime uses the legacy 64-bit JIT compiler for just-in-time compilation.</span></span>|  
+|[<span data-ttu-id="51bba-186">\<UseRandomizedStringHashAlgorithm></span><span class="sxs-lookup"><span data-stu-id="51bba-186">\<UseRandomizedStringHashAlgorithm></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md)|<span data-ttu-id="51bba-187">ランタイムがアプリケーション ドメインごとに文字列のハッシュ コードを計算するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="51bba-187">Specifies whether the runtime calculates hash codes for strings on a per application domain basis.</span></span>|  
+|[<span data-ttu-id="51bba-188">\<UseSmallInternalThreadStacks></span><span class="sxs-lookup"><span data-stu-id="51bba-188">\<UseSmallInternalThreadStacks></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/usesmallinternalthreadstacks-element.md)|<span data-ttu-id="51bba-189">ランタイムが内部的に使用する特定のスレッド作成時に、既定のスタック サイズではなく明示的なスタック サイズを使用することを要求します。</span><span class="sxs-lookup"><span data-stu-id="51bba-189">Requests that the runtime use explicit stack sizes when it creates certain threads that it uses internally, instead of the default stack size.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="51bba-190">親要素</span><span class="sxs-lookup"><span data-stu-id="51bba-190">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
+|<span data-ttu-id="51bba-191">要素</span><span class="sxs-lookup"><span data-stu-id="51bba-191">Element</span></span>|<span data-ttu-id="51bba-192">説明</span><span class="sxs-lookup"><span data-stu-id="51bba-192">Description</span></span>|  
+|-------------|-----------------|  
+|`configuration`|<span data-ttu-id="51bba-193">共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。</span><span class="sxs-lookup"><span data-stu-id="51bba-193">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
   
-## 解説  
- .NET Framework Version 2.0 では、アプリケーション ドメイン内の非同期ポイント間で偽装 ID がフローします。  .NET Framework Version 2.0 では、machine.config ファイルまたはアプリケーションの構成ファイルでランタイム要素を適切に構成することで、非同期ポイント間の偽装のフローを有効または無効にできます。  ASP.NET の場合、偽装のフローは Windows \<\>Folder\\Microsoft.NET\\Framework\\vx.x.xxxx のディレクトリにある aspnet.config ファイルで構成できます。  
+## <a name="remarks"></a><span data-ttu-id="51bba-194">コメント</span><span class="sxs-lookup"><span data-stu-id="51bba-194">Remarks</span></span>  
+ <span data-ttu-id="51bba-195">内の子要素、 [\<ランタイム >](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)構成ファイルのセクションは、アプリケーションの実行方法を構成する共通言語ランタイムによって使用されます。</span><span class="sxs-lookup"><span data-stu-id="51bba-195">The child elements in the [\<runtime>](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section of a configuration file are used by the common language runtime to configure how an application executes.</span></span> <span data-ttu-id="51bba-196">たとえば、 [ \<gcServer >](../../../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)要素は、ガベージ コレクターがワークステーションのガベージ コレクションまたはサーバーのガベージ コレクションを使用するかどうかを判断、 [ \<UseRandomizedStringHashAlgorithm >](../../../../../docs/framework/configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md)要素は、共通言語ランタイムがアプリケーションごとに、アプリケーションごとのドメインに文字列のハッシュ コードを計算するかどうかを決定し、`AppContextSwitchOverrides`要素により、ユーザーのライブラリ有効または無効化、ライブラリによって提供される変更された機能です。</span><span class="sxs-lookup"><span data-stu-id="51bba-196">For example, the [\<gcServer>](../../../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) element determines whether the garbage collector uses workstation garbage collection or server garbage collection, the [\<UseRandomizedStringHashAlgorithm>](../../../../../docs/framework/configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md) element determines whether the common language runtime calculates hash codes for string on a per-application or a per-application domain basis, and the `AppContextSwitchOverrides` element allows library users to opt in or opt out of changed  functionality provided by a library.</span></span>  
   
- 既定では、ASP.NET は、aspnet.config ファイルに次の構成設定が使用されて偽装フローが無効になります。  
+ <span data-ttu-id="51bba-197">内の要素、 [\<ランタイム >](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)セクションは、アプリケーションの起動時に、共通言語ランタイムによって自動的に読み取られます。</span><span class="sxs-lookup"><span data-stu-id="51bba-197">The elements in the [\<runtime>](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section are read automatically by the common language runtime at application startup.</span></span> <span data-ttu-id="51bba-198">その名前を指定することによって、既定以外のアプリケーション ドメインの構成ファイルを定義することも、<xref:System.AppDomainSetup.ConfigurationFile%2A?displayProperty=nameWithType>プロパティの設定も自動的に読み込まれるアプリケーション ドメインが読み込まれるときにします。</span><span class="sxs-lookup"><span data-stu-id="51bba-198">You can also define the configuration file for a non-default application domain by supplying its name to the <xref:System.AppDomainSetup.ConfigurationFile%2A?displayProperty=nameWithType> property; its settings are read automatically when the application domain is loaded.</span></span> <span data-ttu-id="51bba-199">まれに場合、これまでが必要で設定を直接読み取ることが必要、 [\<ランタイム >](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)アプリケーションの構成ファイルでセクションです。</span><span class="sxs-lookup"><span data-stu-id="51bba-199">You should rarely, if ever, have a need to directly read the settings in the [\<runtime>](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section in your application's configuration file.</span></span>  
   
-```  
-configuration>  
-   <runtime>  
-      <legacyImpersonationPolicy enabled="true"/>  
-      <alwaysFlowImpersonationPolicy enabled="false"/>  
-   </runtime>  
-</configuration>  
-```  
-  
- ASP.NET で偽装のフローを可能にする場合は、次の構成設定を明示的に使用する必要があります。  
-  
-```  
-<configuration>  
-   <runtime>  
-      <legacyImpersonationPolicy enabled="false"/>  
-      <alwaysFlowImpersonationPolicy enabled="true"/>  
-   </runtime>  
-</configuration>  
-```  
-  
- 詳細については、「[\<legacyImpersonationPolicy\> 要素](../../../../../docs/framework/configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md)」および「[\<alwaysFlowImpersonationPolicy\> 要素](../../../../../docs/framework/configure-apps/file-schema/runtime/alwaysflowimpersonationpolicy-element.md)」を参照してください。  
-  
-## 使用例  
- あるアセンブリ バージョンを別のバージョンにリダイレクトする例を示します。  
-  
-```  
-<configuration>  
-   <runtime>  
-      <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">  
-         <dependentAssembly>  
-            <assemblyIdentity name="myAssembly"  
-                              publicKeyToken="32ab4ba45e0a69a1"  
-                              culture="neutral" />  
-             <bindingRedirect oldVersion="1.0.0.0"  
-                              newVersion="2.0.0.0"/>  
-         </dependentAssembly>  
-      </assemblyBinding>  
-   </runtime>  
-</configuration>  
-```  
-  
-## 参照  
- [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [アセンブリ バージョンのリダイレクト](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)   
- [How to: Disable Concurrent Garbage Collection](http://msdn.microsoft.com/ja-jp/ba2c6c67-5778-497c-9fac-5f793b5500c7)
+## <a name="see-also"></a><span data-ttu-id="51bba-200">関連項目</span><span class="sxs-lookup"><span data-stu-id="51bba-200">See Also</span></span>  
+ [<span data-ttu-id="51bba-201">ランタイム設定スキーマ</span><span class="sxs-lookup"><span data-stu-id="51bba-201">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [<span data-ttu-id="51bba-202">構成ファイル スキーマ</span><span class="sxs-lookup"><span data-stu-id="51bba-202">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)

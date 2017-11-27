@@ -5,129 +5,126 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: fc9e04e8-2d05-4870-8cd6-5bd276814afc
-caps.latest.revision: 29
+caps.latest.revision: "29"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c9618213569766a6ae355a936a4b1f71a5046ef6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: eeda0c58e9b5e9f8b48e335849ce12f7e8d94a1b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="getting-started-with-net-native"></a>.NET ネイティブの概要
-Windows 10 用に新しい Windows アプリを作成する場合も、既存の Windows ストア アプリを移行する場合も、次に示す同じ手順を実行することになります。 [!INCLUDE[net_native](../../../includes/net-native-md.md)] アプリを作成するには、次の手順を実行します。  
+# <a name="getting-started-with-net-native"></a><span data-ttu-id="21d8d-102">.NET ネイティブの概要</span><span class="sxs-lookup"><span data-stu-id="21d8d-102">Getting Started with .NET Native</span></span>
+<span data-ttu-id="21d8d-103">Windows 10 用に新しい Windows アプリを作成する場合も、既存の Windows ストア アプリを移行する場合も、次に示す同じ手順を実行することになります。</span><span class="sxs-lookup"><span data-stu-id="21d8d-103">Whether you are writing a new Windows app for Windows 10 or you are migrating an existing Windows Store app, you can follow the same set of procedures.</span></span> <span data-ttu-id="21d8d-104">[!INCLUDE[net_native](../../../includes/net-native-md.md)] アプリを作成するには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="21d8d-104">To create a [!INCLUDE[net_native](../../../includes/net-native-md.md)] app, follow these steps:</span></span>  
   
-1.  [Windows 10 を対象とするユニバーサル Windows プラットフォーム (UWP) ストア アプリを開発](#Step1)し、アプリのデバッグ ビルドをテストして、そのアプリが適切に動作することを確認します。  
+1.  <span data-ttu-id="21d8d-105">[Windows 10 を対象とするユニバーサル Windows プラットフォーム (UWP) ストア アプリを開発](#Step1)し、アプリのデバッグ ビルドをテストして、そのアプリが適切に動作することを確認します。</span><span class="sxs-lookup"><span data-stu-id="21d8d-105">[Develop a Universal Windows Platform (UWP) app that targets Windows 10](#Step1), and test the debug builds of your app to ensure that it works properly.</span></span>  
   
-2.  [追加のリフレクションおよびシリアル化の使用を処理します](#Step2)。  
+2.  <span data-ttu-id="21d8d-106">[追加のリフレクションおよびシリアル化の使用を処理します](#Step2)。</span><span class="sxs-lookup"><span data-stu-id="21d8d-106">[Handle additional reflection and serialization usage](#Step2).</span></span>  
   
-3.  [リリース ビルドのアプリを展開して、テストします](#Step3)。  
+3.  <span data-ttu-id="21d8d-107">[リリース ビルドのアプリを展開して、テストします](#Step3)。</span><span class="sxs-lookup"><span data-stu-id="21d8d-107">[Deploy and test the release builds of your app](#Step3).</span></span>  
   
-4.  [メタデータの欠落を手動で解決し](#Step4)、すべての問題が解決されるまで [手順 3](#Step3) を繰り返します。  
+4.  <span data-ttu-id="21d8d-108">[メタデータの欠落を手動で解決し](#Step4)、すべての問題が解決されるまで [手順 3](#Step3) を繰り返します。</span><span class="sxs-lookup"><span data-stu-id="21d8d-108">[Manually resolve missing metadata](#Step4), and repeat [step 3](#Step3) until all issues are resolved.</span></span>  
   
 > [!NOTE]
->  既存の Windows ストア アプリを [!INCLUDE[net_native](../../../includes/net-native-md.md)]に移行する場合は、「 [Migrating Your Windows Store App to .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md)します。  
+>  <span data-ttu-id="21d8d-109">既存の Windows ストア アプリを [!INCLUDE[net_native](../../../includes/net-native-md.md)]に移行する場合は、「 [Migrating Your Windows Store App to .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md)します。</span><span class="sxs-lookup"><span data-stu-id="21d8d-109">If you are migrating an existing Windows Store app to [!INCLUDE[net_native](../../../includes/net-native-md.md)], be sure to review [Migrating Your Windows Store App to .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md).</span></span>  
   
 <a name="Step1"></a>   
-## <a name="step-1-develop-and-test-debug-builds-of-your-uwp-app"></a>手順 1: UWP アプリのデバッグ ビルドを開発してテストする  
- 新しいアプリを開発するか既存のアプリを移行するかに関係なく、Windows アプリについては同じ手順を実行します。  
+## <a name="step-1-develop-and-test-debug-builds-of-your-uwp-app"></a><span data-ttu-id="21d8d-110">手順 1: UWP アプリのデバッグ ビルドを開発してテストする</span><span class="sxs-lookup"><span data-stu-id="21d8d-110">Step 1: Develop and test debug builds of your UWP app</span></span>  
+ <span data-ttu-id="21d8d-111">新しいアプリを開発するか既存のアプリを移行するかに関係なく、Windows アプリについては同じ手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="21d8d-111">Whether you are developing a new app or migrating an existing one, you follow the same process as for any Windows app.</span></span>  
   
-1.  Visual C# または Visual Basic のユニバーサル Windows アプリ テンプレートを使用して、Visual Studio で新しい UWP プロジェクトを作成します。 既定では、すべての UWP アプリケーションは CoreCLR を対象としていて、.NET ネイティブ ツール チェーンを使用してリリース ビルドがコンパイルされます。  
+1.  <span data-ttu-id="21d8d-112">Visual C# または Visual Basic のユニバーサル Windows アプリ テンプレートを使用して、Visual Studio で新しい UWP プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="21d8d-112">Create a new UWP project in Visual Studio by using the Universal Windows app template for Visual C# or Visual Basic.</span></span> <span data-ttu-id="21d8d-113">既定では、すべての UWP アプリケーションは CoreCLR を対象としていて、.NET ネイティブ ツール チェーンを使用してリリース ビルドがコンパイルされます。</span><span class="sxs-lookup"><span data-stu-id="21d8d-113">By default, all UWP applications target the CoreCLR and their release builds are compiled by using the .NET Native tool chain.</span></span>  
   
-2.  UWP アプリ プロジェクトのコンパイルに .NET ネイティブ ツール チェーンを使用する場合と使用しない場合では、両者の間に既知の互換性問題がある点にご注意ください。 詳細については、 [移行ガイド](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md) を参照してください。  
+2.  <span data-ttu-id="21d8d-114">UWP アプリ プロジェクトのコンパイルに .NET ネイティブ ツール チェーンを使用する場合と使用しない場合では、両者の間に既知の互換性問題がある点にご注意ください。</span><span class="sxs-lookup"><span data-stu-id="21d8d-114">Note that there are some known compatibility issues between compiling UWP app projects with the .NET Native tool chain and without it.</span></span> <span data-ttu-id="21d8d-115">詳細については、 [移行ガイド](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="21d8d-115">Refer to the [migration guide](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md) for more information.</span></span>  
   
- これで、 [!INCLUDE[net_native](../../../includes/net-native-md.md)] サーフェス領域に対してローカル システム (またはシミュレーター) で実行される C# または Visual Basic コードを作成できるようになりました。  
+ <span data-ttu-id="21d8d-116">これで、 [!INCLUDE[net_native](../../../includes/net-native-md.md)] サーフェス領域に対してローカル システム (またはシミュレーター) で実行される C# または Visual Basic コードを作成できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="21d8d-116">You can now write C# or Visual Basic code against the [!INCLUDE[net_native](../../../includes/net-native-md.md)] surface area that runs on the local system (or in the simulator).</span></span>  
   
 > [!IMPORTANT]
->  アプリを開発するときに、コードでのシリアル化またはリフレクションを使用する場合は注意してください。  
+>  <span data-ttu-id="21d8d-117">アプリを開発するときに、コードでのシリアル化またはリフレクションを使用する場合は注意してください。</span><span class="sxs-lookup"><span data-stu-id="21d8d-117">As you develop your app, note any use of serialization or reflection in your code.</span></span>  
   
- 既定では、デバッグ ビルドは F5 キーを押した時に迅速な配置を有効にするために JIT でコンパイルされますが、リリース ビルドは [!INCLUDE[net_native](../../../includes/net-native-md.md)] プリコンパイル テクノロジを使用してコンパイルされます。 つまり、アプリのデバッグ ビルドが正常に動作するようにするには、.NET ネイティブ ツール チェーンでコンパイルする前に、これをビルドしてテストする必要があるということです。  
+ <span data-ttu-id="21d8d-118">既定では、デバッグ ビルドは F5 キーを押した時に迅速な配置を有効にするために JIT でコンパイルされますが、リリース ビルドは [!INCLUDE[net_native](../../../includes/net-native-md.md)] プリコンパイル テクノロジを使用してコンパイルされます。</span><span class="sxs-lookup"><span data-stu-id="21d8d-118">By default, debug builds are JIT-compiled to enable rapid F5 deployment, while release builds are compiled by using the [!INCLUDE[net_native](../../../includes/net-native-md.md)] pre-compilation technology.</span></span> <span data-ttu-id="21d8d-119">つまり、アプリのデバッグ ビルドが正常に動作するようにするには、.NET ネイティブ ツール チェーンでコンパイルする前に、これをビルドしてテストする必要があるということです。</span><span class="sxs-lookup"><span data-stu-id="21d8d-119">This means you should build and test the debug builds of your app to ensure that they work normally before compiling them with the .NET Native tool chain.</span></span>  
   
 <a name="Step2"></a>   
-## <a name="step-2-handle-additional-reflection-and-serialization-usage"></a>手順 2: 追加のリフレクションおよびシリアル化の使用を処理する  
- プロジェクト作成時に Default.rd.xml という名前のランタイム ディレクティブ ファイルがプロジェクトに自動的に追加されます。 C# で開発する場合、このファイルはプロジェクトの **Properties** フォルダーにあります。 Visual Basic で開発する場合、このファイルはプロジェクトの **My Project** フォルダーにあります。  
+## <a name="step-2-handle-additional-reflection-and-serialization-usage"></a><span data-ttu-id="21d8d-120">手順 2: 追加のリフレクションおよびシリアル化の使用を処理する</span><span class="sxs-lookup"><span data-stu-id="21d8d-120">Step 2: Handle additional reflection and serialization usage</span></span>  
+ <span data-ttu-id="21d8d-121">プロジェクト作成時に Default.rd.xml という名前のランタイム ディレクティブ ファイルがプロジェクトに自動的に追加されます。</span><span class="sxs-lookup"><span data-stu-id="21d8d-121">A runtime directives file, Default.rd.xml, is automatically added to your project when you create it.</span></span> <span data-ttu-id="21d8d-122">C# で開発する場合、このファイルはプロジェクトの **Properties** フォルダーにあります。</span><span class="sxs-lookup"><span data-stu-id="21d8d-122">If you develop in C#, it is found in your project's **Properties** folder.</span></span> <span data-ttu-id="21d8d-123">Visual Basic で開発する場合、このファイルはプロジェクトの **My Project** フォルダーにあります。</span><span class="sxs-lookup"><span data-stu-id="21d8d-123">If you develop in Visual Basic, it is found in your project's **My Project** folder.</span></span>  
   
 > [!NOTE]
->  ランタイム ディレクティブ ファイルが必要となる理由の背景を含む .NET ネイティブのコンパイルの概要については、「 [.NET ネイティブとコンパイル](../../../docs/framework/net-native/net-native-and-compilation.md)」をご覧ください。  
+>  <span data-ttu-id="21d8d-124">ランタイム ディレクティブ ファイルが必要となる理由の背景を含む .NET ネイティブのコンパイルの概要については、「 [.NET ネイティブとコンパイル](../../../docs/framework/net-native/net-native-and-compilation.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="21d8d-124">For an overview of the .NET Native compilation process that provides background on why a runtime directives file is needed, see [.NET Native and Compilation](../../../docs/framework/net-native/net-native-and-compilation.md).</span></span>  
   
- ランタイム ディレクティブ ファイルは、アプリの実行時に必要なメタデータを定義するために使用されます。 この既定バージョンのファイルで十分な場合もあります。 ただし、シリアル化やリフレクションに依存するコードには、ランタイム ディレクティブ ファイルに追加のエントリが必要になるものがあります。  
+ <span data-ttu-id="21d8d-125">ランタイム ディレクティブ ファイルは、アプリの実行時に必要なメタデータを定義するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="21d8d-125">The runtime directives file is used to define the metadata that your app needs at run time.</span></span> <span data-ttu-id="21d8d-126">この既定バージョンのファイルで十分な場合もあります。</span><span class="sxs-lookup"><span data-stu-id="21d8d-126">In some cases, the default version of the file may be adequate.</span></span> <span data-ttu-id="21d8d-127">ただし、シリアル化やリフレクションに依存するコードには、ランタイム ディレクティブ ファイルに追加のエントリが必要になるものがあります。</span><span class="sxs-lookup"><span data-stu-id="21d8d-127">However, some code that relies on serialization or reflection may require additional entries in the runtime directives file.</span></span>  
   
- **シリアル化**  
- シリアライザーには 2 つのカテゴリがあり、これらはいずれもランタイム ディレクティブ ファイルに追加エントリを必要とする場合があります。  
+ <span data-ttu-id="21d8d-128">**シリアル化**</span><span class="sxs-lookup"><span data-stu-id="21d8d-128">**Serialization**</span></span>  
+ <span data-ttu-id="21d8d-129">シリアライザーには 2 つのカテゴリがあり、これらはいずれもランタイム ディレクティブ ファイルに追加エントリを必要とする場合があります。</span><span class="sxs-lookup"><span data-stu-id="21d8d-129">There are two categories of serializers, and both may require additional entries in the runtime directives file:</span></span>  
   
--   非リフレクション ベースのシリアライザー。 <xref:System.Runtime.Serialization.DataContractSerializer>、 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>、および <xref:System.Xml.Serialization.XmlSerializer> クラスなど、.NET Framework クラス ライブラリ内にあるシリアライザーは、リフレクションに依存しません。 ただし、これらのシリアライザーでは、シリアル化または逆シリアル化されるオブジェクトに基づいてコードが生成される必要があります。  詳しくは、「 [Serialization and Metadata](../../../docs/framework/net-native/serialization-and-metadata.md)」の「Microsoft のシリアライザー」セクションをご覧ください。  
+-   <span data-ttu-id="21d8d-130">非リフレクション ベースのシリアライザー。</span><span class="sxs-lookup"><span data-stu-id="21d8d-130">Non-reflection based serializers.</span></span> <span data-ttu-id="21d8d-131"><xref:System.Runtime.Serialization.DataContractSerializer>、 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>、および <xref:System.Xml.Serialization.XmlSerializer> クラスなど、.NET Framework クラス ライブラリ内にあるシリアライザーは、リフレクションに依存しません。</span><span class="sxs-lookup"><span data-stu-id="21d8d-131">The serializers found in the .NET Framework class library, such as the <xref:System.Runtime.Serialization.DataContractSerializer>, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>, and <xref:System.Xml.Serialization.XmlSerializer> classes, do not rely on reflection.</span></span> <span data-ttu-id="21d8d-132">ただし、これらのシリアライザーでは、シリアル化または逆シリアル化されるオブジェクトに基づいてコードが生成される必要があります。</span><span class="sxs-lookup"><span data-stu-id="21d8d-132">However, they do require that code be generated based on the object to be serialized or deserialized.</span></span>  <span data-ttu-id="21d8d-133">詳しくは、「 [Serialization and Metadata](../../../docs/framework/net-native/serialization-and-metadata.md)」の「Microsoft のシリアライザー」セクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="21d8d-133">For more information, see the "Microsoft Serializers" section in [Serialization and Metadata](../../../docs/framework/net-native/serialization-and-metadata.md).</span></span>  
   
--   サードパーティ シリアライザー。 サードパーティのシリアライズ化ライブラリ (Newtonsoft の JSON シリアライザーが最も一般的) は、通常はリフレクション ベースであり、オブジェクトのシリアル化と逆シリアル化をサポートするために *.rd.xml ファイル内のエントリを必要とします。 詳しくは、「 [Serialization and Metadata](../../../docs/framework/net-native/serialization-and-metadata.md)」の「サードパーティ シリアライザー」セクションをご覧ください。  
+-   <span data-ttu-id="21d8d-134">サードパーティ シリアライザー。</span><span class="sxs-lookup"><span data-stu-id="21d8d-134">Third-party serializers.</span></span> <span data-ttu-id="21d8d-135">サードパーティのシリアライズ化ライブラリ (Newtonsoft の JSON シリアライザーが最も一般的) は、通常はリフレクション ベースであり、オブジェクトのシリアル化と逆シリアル化をサポートするために *.rd.xml ファイル内のエントリを必要とします。</span><span class="sxs-lookup"><span data-stu-id="21d8d-135">Third-party serialization libraries, the most common of which is the Newtonsoft JSON serializer, are generally reflection-based and require entries in the *.rd.xml file to support object serialization and deserialization.</span></span> <span data-ttu-id="21d8d-136">詳しくは、「 [Serialization and Metadata](../../../docs/framework/net-native/serialization-and-metadata.md)」の「サードパーティ シリアライザー」セクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="21d8d-136">For more information, see the "Third-Party Serializers" section in [Serialization and Metadata](../../../docs/framework/net-native/serialization-and-metadata.md).</span></span>  
   
- **リフレクションに依存するメソッド**  
- コードでのリフレクションの使用は明確ではない場合があります。 一般的な API やプログラミング パターンの中には、リフレクション API の一部とは見なされないが、正常な実行にリフレクションを必要とするものがあります。 これには、次のような型インスタンス化およびメソッド作成方法があります。  
+ <span data-ttu-id="21d8d-137">**リフレクションに依存するメソッド**</span><span class="sxs-lookup"><span data-stu-id="21d8d-137">**Methods that rely on reflection**</span></span>  
+ <span data-ttu-id="21d8d-138">コードでのリフレクションの使用は明確ではない場合があります。</span><span class="sxs-lookup"><span data-stu-id="21d8d-138">In some cases, the use of reflection in code is not obvious.</span></span> <span data-ttu-id="21d8d-139">一般的な API やプログラミング パターンの中には、リフレクション API の一部とは見なされないが、正常な実行にリフレクションを必要とするものがあります。</span><span class="sxs-lookup"><span data-stu-id="21d8d-139">Some common APIs or programming patterns aren't considered part of the reflection API but rely on reflection to execute successfully.</span></span> <span data-ttu-id="21d8d-140">これには、次のような型インスタンス化およびメソッド作成方法があります。</span><span class="sxs-lookup"><span data-stu-id="21d8d-140">This includes the following type instantiation and method construction methods:</span></span>  
   
--   <xref:System.Type.MakeGenericType%2A?displayProperty=fullName> メソッド  
+-   <span data-ttu-id="21d8d-141"><xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> メソッド</span><span class="sxs-lookup"><span data-stu-id="21d8d-141">The <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> method</span></span>  
   
--   <xref:System.Array.CreateInstance%2A?displayProperty=fullName> メソッドと <xref:System.Type.MakeArrayType%2A?displayProperty=fullName> メソッド  
+-   <span data-ttu-id="21d8d-142"><xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> メソッドと <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType> メソッド</span><span class="sxs-lookup"><span data-stu-id="21d8d-142">The <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> and <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType> methods</span></span>  
   
--   <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=fullName> メソッド。  
+-   <span data-ttu-id="21d8d-143"><xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> メソッド。</span><span class="sxs-lookup"><span data-stu-id="21d8d-143">The <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> method.</span></span>  
   
- 詳細については、「 [APIs That Rely on Reflection](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)」を参照してください。  
+ <span data-ttu-id="21d8d-144">詳細については、「 [APIs That Rely on Reflection](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="21d8d-144">For more information, see [APIs That Rely on Reflection](../../../docs/framework/net-native/apis-that-rely-on-reflection.md).</span></span>  
   
 > [!NOTE]
->  ランタイム ディレクティブ ファイルで使用される型名は完全修飾である必要があります。 たとえば、ファイルでは "String" ではなく "System.String" を指定する必要があります。  
+>  <span data-ttu-id="21d8d-145">ランタイム ディレクティブ ファイルで使用される型名は完全修飾である必要があります。</span><span class="sxs-lookup"><span data-stu-id="21d8d-145">Type names used in runtime directives files must be fully qualified.</span></span> <span data-ttu-id="21d8d-146">たとえば、ファイルでは "String" ではなく "System.String" を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="21d8d-146">For example, the file must specify "System.String" instead of "String".</span></span>  
   
 <a name="Step3"></a>   
-## <a name="step-3-deploy-and-test-the-release-builds-of-your-app"></a>手順 3: リリース ビルドのアプリを展開してテストする  
- ランタイム ディレクティブ ファイルを更新したら、アプリのリリース ビルドを再ビルドして配置できます。 .NET ネイティブ バイナリは、プロジェクトの **[プロパティ]** ダイアログ ボックスの **[コンパイル]** タブにある **[ビルド出力パス]** テキスト ボックスに指定されているディレクトリの ILC.out サブディレクトリに配置されています。このフォルダーにないバイナリは、.NET ネイティブでコンパイルされていません。 ターゲット プラットフォームごとに、アプリを十分にテストし、失敗シナリオを含むすべてのシナリオをテストします。  
+## <a name="step-3-deploy-and-test-the-release-builds-of-your-app"></a><span data-ttu-id="21d8d-147">手順 3: リリース ビルドのアプリを展開してテストする</span><span class="sxs-lookup"><span data-stu-id="21d8d-147">Step 3: Deploy and test the release builds of your app</span></span>  
+ <span data-ttu-id="21d8d-148">ランタイム ディレクティブ ファイルを更新したら、アプリのリリース ビルドを再ビルドして配置できます。</span><span class="sxs-lookup"><span data-stu-id="21d8d-148">After you’ve updated the runtime directives file, you can rebuild and deploy release builds of your app.</span></span> <span data-ttu-id="21d8d-149">.NET ネイティブ バイナリは、プロジェクトの **[プロパティ]** ダイアログ ボックスの **[コンパイル]** タブにある **[ビルド出力パス]** テキスト ボックスに指定されているディレクトリの ILC.out サブディレクトリに配置されています。このフォルダーにないバイナリは、.NET ネイティブでコンパイルされていません。</span><span class="sxs-lookup"><span data-stu-id="21d8d-149">.NET Native binaries are placed in the ILC.out subdirectory of the directory specified in the **Build output path** text box of  the project's **Properties** dialog box, **Compile** tab. Binaries that aren't in this folder haven't been compiled with .NET Native.</span></span> <span data-ttu-id="21d8d-150">ターゲット プラットフォームごとに、アプリを十分にテストし、失敗シナリオを含むすべてのシナリオをテストします。</span><span class="sxs-lookup"><span data-stu-id="21d8d-150">Test your app thoroughly, and test all scenarios, including failure scenarios, on each of its target platforms.</span></span>  
   
- アプリが正常に動作しない場合 (特に実行時に [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外または [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) 例外をスローする場合)、次のセクション「[手順 4: メタデータの欠落を手動で解決する](#Step4)」の手順を実行してください。 初回例外を有効にすると、このようなバグの検出に役立ちます。  
+ <span data-ttu-id="21d8d-151">アプリが正常に動作しない場合 (特に実行時に [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外または [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) 例外をスローする場合)、次のセクション「[手順 4: メタデータの欠落を手動で解決する](#Step4)」の手順を実行してください。</span><span class="sxs-lookup"><span data-stu-id="21d8d-151">If your app doesn’t work properly (particularly in cases where it throws [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) or [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) exceptions at run time), follow the instructions in the next section, [Step 4: Manually resolve missing metadata](#Step4).</span></span> <span data-ttu-id="21d8d-152">初回例外を有効にすると、このようなバグの検出に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="21d8d-152">Enabling first-chance exceptions may help you find these bugs.</span></span>  
   
- アプリのデバッグ ビルドをテストしてデバッグし、 [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外と [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) 例外を確実に排除したら、アプリを最適化された [!INCLUDE[net_native](../../../includes/net-native-md.md)] アプリとしてテストする必要があります。 これを行うには、アクティブ プロジェクトの構成を **[デバッグ]** から **[リリース]**に変更します。  
+ <span data-ttu-id="21d8d-153">アプリのデバッグ ビルドをテストしてデバッグし、 [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外と [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) 例外を確実に排除したら、アプリを最適化された [!INCLUDE[net_native](../../../includes/net-native-md.md)] アプリとしてテストする必要があります。</span><span class="sxs-lookup"><span data-stu-id="21d8d-153">When you’ve tested and debugged the debug builds of your app and you’re confident that you’ve eliminated the [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) and [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) exceptions, you should test your app as an optimized [!INCLUDE[net_native](../../../includes/net-native-md.md)] app.</span></span> <span data-ttu-id="21d8d-154">これを行うには、アクティブ プロジェクトの構成を **[デバッグ]** から **[リリース]**に変更します。</span><span class="sxs-lookup"><span data-stu-id="21d8d-154">To do this, change your active project configuration from **Debug** to **Release**.</span></span>  
   
 <a name="Step4"></a>   
-## <a name="step-4-manually-resolve-missing-metadata"></a>手順 4: メタデータの欠落を手動で解決する  
- デスクトップでは発生せず、 [!INCLUDE[net_native](../../../includes/net-native-md.md)] で発生する最も一般的な失敗は、 [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)、 [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)、または [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) のランタイム例外です。 メタデータの欠落は、予期しない動作やアプリの失敗によって判明することもあります。 このセクションでは、ランタイム ディレクティブ ファイルにディレクティブを追加することによって、これらの例外をデバッグして解決する方法を説明します。 ランタイム ディレクティブの形式については、「[ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)」を参照してださい。 ランタイム ディレクティブを追加したら、もう一度 [アプリを展開およびテスト](#Step3) して、例外が発生しなくなるまで新しい [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)、 [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)、および  [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) 例外を解決する必要があります。  
+## <a name="step-4-manually-resolve-missing-metadata"></a><span data-ttu-id="21d8d-155">手順 4: メタデータの欠落を手動で解決する</span><span class="sxs-lookup"><span data-stu-id="21d8d-155">Step 4: Manually resolve missing metadata</span></span>  
+ <span data-ttu-id="21d8d-156">デスクトップでは発生せず、 [!INCLUDE[net_native](../../../includes/net-native-md.md)] で発生する最も一般的な失敗は、 [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)、 [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)、または [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) のランタイム例外です。</span><span class="sxs-lookup"><span data-stu-id="21d8d-156">The most common failure you'll encounter with [!INCLUDE[net_native](../../../includes/net-native-md.md)] that you don't encounter on the desktop is a runtime [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), or [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) exception.</span></span> <span data-ttu-id="21d8d-157">メタデータの欠落は、予期しない動作やアプリの失敗によって判明することもあります。</span><span class="sxs-lookup"><span data-stu-id="21d8d-157">In some cases, the absence of metadata can manifest itself in unpredictable behavior or even in app failures.</span></span> <span data-ttu-id="21d8d-158">このセクションでは、ランタイム ディレクティブ ファイルにディレクティブを追加することによって、これらの例外をデバッグして解決する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="21d8d-158">This section discusses how you can debug and resolve these exceptions by adding directives to the runtime directives file.</span></span> <span data-ttu-id="21d8d-159">ランタイム ディレクティブの形式については、「[ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)」を参照してださい。</span><span class="sxs-lookup"><span data-stu-id="21d8d-159">For information about the format of runtime directives, see [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).</span></span> <span data-ttu-id="21d8d-160">ランタイム ディレクティブを追加したら、もう一度 [アプリを展開およびテスト](#Step3) して、例外が発生しなくなるまで新しい [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)、 [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)、および  [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) 例外を解決する必要があります。</span><span class="sxs-lookup"><span data-stu-id="21d8d-160">After you’ve added runtime directives, you should [deploy and test your app](#Step3) again and resolve any new [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), and  [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) exceptions until you encounter no more exceptions.</span></span>  
   
 > [!TIP]
->  高いレベルでランタイム ディレクティブを指定して、アプリがコードの変更に対応できるようにします。  メンバー レベルではなく、名前空間レベルおよび型レベルでランタイム ディレクティブを追加することをお勧めします。 回復性と、バイナリを大きくすることに伴うコンパイル時間の延長の間にはトレードオフがある場合があることに注意してください。  
+>  <span data-ttu-id="21d8d-161">高いレベルでランタイム ディレクティブを指定して、アプリがコードの変更に対応できるようにします。</span><span class="sxs-lookup"><span data-stu-id="21d8d-161">Specify the runtime directives at a high level to enable your app to be resilient to code changes.</span></span>  <span data-ttu-id="21d8d-162">メンバー レベルではなく、名前空間レベルおよび型レベルでランタイム ディレクティブを追加することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="21d8d-162">We recommend adding runtime directives at the namespace and type levels rather than the member level.</span></span> <span data-ttu-id="21d8d-163">回復性と、バイナリを大きくすることに伴うコンパイル時間の延長の間にはトレードオフがある場合があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="21d8d-163">Note that there may be a tradeoff between resiliency and larger binaries with longer compile times.</span></span>  
   
- メタデータの欠落例外に対応する場合は、次のことを確認してください。  
+ <span data-ttu-id="21d8d-164">メタデータの欠落例外に対応する場合は、次のことを確認してください。</span><span class="sxs-lookup"><span data-stu-id="21d8d-164">When addressing a missing metadata exception, consider these issues:</span></span>  
   
--   例外が発生する前にアプリが何を実行しようとしていたか。  
+-   <span data-ttu-id="21d8d-165">例外が発生する前にアプリが何を実行しようとしていたか。</span><span class="sxs-lookup"><span data-stu-id="21d8d-165">What was the app trying to do before the exception?</span></span>  
   
-    -   たとえば、データ バインド、シリアル化または逆シリアル化を行っていたか、またはリフレクション API を直接使用していましたか。  
+    -   <span data-ttu-id="21d8d-166">たとえば、データ バインド、シリアル化または逆シリアル化を行っていたか、またはリフレクション API を直接使用していましたか。</span><span class="sxs-lookup"><span data-stu-id="21d8d-166">For example, was it data binding, serializing or deserializing data, or directly using the reflection API?</span></span>  
   
--   これは特殊なケースか、または他の型でも同じ問題が発生すると考えられるか。  
+-   <span data-ttu-id="21d8d-167">これは特殊なケースか、または他の型でも同じ問題が発生すると考えられるか。</span><span class="sxs-lookup"><span data-stu-id="21d8d-167">Is this an isolated case, or do you believe you'll encounter the same issue for other types?</span></span>  
   
-    -   たとえば、 [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外は、アプリのオブジェクト モデル内の型をシリアル化するときにスローされます。  シリアル化されるその他の型がわかっている場合は、それらの型 (または、コードがどの程度構造的に作成されているかによって、それを含む名前空間) に同時にランタイム ディレクティブを追加できます。  
+    -   <span data-ttu-id="21d8d-168">たとえば、 [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外は、アプリのオブジェクト モデル内の型をシリアル化するときにスローされます。</span><span class="sxs-lookup"><span data-stu-id="21d8d-168">For example, a [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) exception is thrown when serializing a type in the app’s object model.</span></span>  <span data-ttu-id="21d8d-169">シリアル化されるその他の型がわかっている場合は、それらの型 (または、コードがどの程度構造的に作成されているかによって、それを含む名前空間) に同時にランタイム ディレクティブを追加できます。</span><span class="sxs-lookup"><span data-stu-id="21d8d-169">If you know other types that will be serialized, you can add runtime directives for those types (or for their containing namespaces, depending on how well the code is organized) at the same time.</span></span>  
   
--   リフレクションを使用しないようにコードを書き換えることができるか。  
+-   <span data-ttu-id="21d8d-170">リフレクションを使用しないようにコードを書き換えることができるか。</span><span class="sxs-lookup"><span data-stu-id="21d8d-170">Can you rewrite the code so it doesn’t use reflection?</span></span>  
   
-    -   たとえば、予期される型がわかっている場合に、コードで `dynamic` キーワードが使用されていますか。  
+    -   <span data-ttu-id="21d8d-171">たとえば、予期される型がわかっている場合に、コードで `dynamic` キーワードが使用されていますか。</span><span class="sxs-lookup"><span data-stu-id="21d8d-171">For example, does the code use the `dynamic` keyword when you know what type to expect?</span></span>  
   
-    -   より適切な他の方法を使用できる場合に、リフレクションに依存するメソッドをコードで呼び出していますか。  
+    -   <span data-ttu-id="21d8d-172">より適切な他の方法を使用できる場合に、リフレクションに依存するメソッドをコードで呼び出していますか。</span><span class="sxs-lookup"><span data-stu-id="21d8d-172">Does the code call a method that depends on reflection when some better alternative is available?</span></span>  
   
 > [!NOTE]
->  デスクトップ アプリと [!INCLUDE[net_native](../../../includes/net-native-md.md)]でのリフレクションとメタデータの可用性の違いから発生する問題の処理について詳しくは、「 [APIs That Rely on Reflection](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)します。  
+>  <span data-ttu-id="21d8d-173">デスクトップ アプリと [!INCLUDE[net_native](../../../includes/net-native-md.md)]でのリフレクションとメタデータの可用性の違いから発生する問題の処理について詳しくは、「 [APIs That Rely on Reflection](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)します。</span><span class="sxs-lookup"><span data-stu-id="21d8d-173">For additional information about handling problems that stem from differences in reflection and the availability of metadata in desktop apps and [!INCLUDE[net_native](../../../includes/net-native-md.md)], see [APIs That Rely on Reflection](../../../docs/framework/net-native/apis-that-rely-on-reflection.md).</span></span>  
   
- アプリのテスト時に発生する例外およびその他の問題の処理に関する具体的な例については、次のページを参照してください。  
+ <span data-ttu-id="21d8d-174">アプリのテスト時に発生する例外およびその他の問題の処理に関する具体的な例については、次のページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="21d8d-174">For some specific examples of handling exceptions and other issues that occur when testing your app, see:</span></span>  
   
--   [例: データ バインディング時の例外の処理](../../../docs/framework/net-native/example-handling-exceptions-when-binding-data.md)  
+-   [<span data-ttu-id="21d8d-175">例: データ バインディング時の例外の処理</span><span class="sxs-lookup"><span data-stu-id="21d8d-175">Example: Handling Exceptions When Binding Data</span></span>](../../../docs/framework/net-native/example-handling-exceptions-when-binding-data.md)  
   
--   [例: 動的プログラミングのトラブルシューティング](../../../docs/framework/net-native/example-troubleshooting-dynamic-programming.md)  
+-   [<span data-ttu-id="21d8d-176">例: 動的プログラミングのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="21d8d-176">Example: Troubleshooting Dynamic Programming</span></span>](../../../docs/framework/net-native/example-troubleshooting-dynamic-programming.md)  
   
--   [.NET ネイティブ アプリでのランタイム例外](../../../docs/framework/net-native/runtime-exceptions-in-net-native-apps.md)  
+-   [<span data-ttu-id="21d8d-177">.NET ネイティブ アプリでのランタイム例外</span><span class="sxs-lookup"><span data-stu-id="21d8d-177">Runtime Exceptions in .NET Native Apps</span></span>](../../../docs/framework/net-native/runtime-exceptions-in-net-native-apps.md)  
   
-## <a name="see-also"></a>関連項目  
- [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
- [NIB: .NET ネイティブのセットアップおよび構成](http://msdn.microsoft.com/en-us/7c9bc375-8b87-4c33-bede-72d513e362ec)   
- [.NET ネイティブとコンパイル](../../../docs/framework/net-native/net-native-and-compilation.md)   
- [リフレクションおよび .NET ネイティブ](../../../docs/framework/net-native/reflection-and-net-native.md)   
- [リフレクションに依存する API](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)   
- [シリアル化とメタデータ](../../../docs/framework/net-native/serialization-and-metadata.md)   
- [Windows ストア アプリの .NET ネイティブへの移行](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md)
-
+## <a name="see-also"></a><span data-ttu-id="21d8d-178">関連項目</span><span class="sxs-lookup"><span data-stu-id="21d8d-178">See Also</span></span>  
+ [<span data-ttu-id="21d8d-179">ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス</span><span class="sxs-lookup"><span data-stu-id="21d8d-179">Runtime Directives (rd.xml) Configuration File Reference</span></span>](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [<span data-ttu-id="21d8d-180">NIB: .NET ネイティブのセットアップと構成</span><span class="sxs-lookup"><span data-stu-id="21d8d-180">NIB: .NET Native Setup and Configuration</span></span>](http://msdn.microsoft.com/en-us/7c9bc375-8b87-4c33-bede-72d513e362ec)  
+ [<span data-ttu-id="21d8d-181">.NET ネイティブとコンパイル</span><span class="sxs-lookup"><span data-stu-id="21d8d-181">.NET Native and Compilation</span></span>](../../../docs/framework/net-native/net-native-and-compilation.md)  
+ [<span data-ttu-id="21d8d-182">リフレクションおよび .NET ネイティブ</span><span class="sxs-lookup"><span data-stu-id="21d8d-182">Reflection and .NET Native</span></span>](../../../docs/framework/net-native/reflection-and-net-native.md)  
+ [<span data-ttu-id="21d8d-183">リフレクションに依存する API</span><span class="sxs-lookup"><span data-stu-id="21d8d-183">APIs That Rely on Reflection</span></span>](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)  
+ [<span data-ttu-id="21d8d-184">シリアル化とメタデータ</span><span class="sxs-lookup"><span data-stu-id="21d8d-184">Serialization and Metadata</span></span>](../../../docs/framework/net-native/serialization-and-metadata.md)  
+ [<span data-ttu-id="21d8d-185">Windows ストア アプリの .NET ネイティブへの移行</span><span class="sxs-lookup"><span data-stu-id="21d8d-185">Migrating Your Windows Store App to .NET Native</span></span>](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md)

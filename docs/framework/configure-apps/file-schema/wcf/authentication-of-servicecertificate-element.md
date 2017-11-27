@@ -1,87 +1,97 @@
 ---
-title: "&lt;serviceCertificate&gt; 要素の &lt;authentication&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;serviceCertificate&gt; 要素の &lt;authentication&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 733b67b4-08a1-4d25-9741-10046f9357ef
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 163a035c667c25be4f780daf85c50d96816bd0f3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;serviceCertificate&gt; 要素の &lt;authentication&gt;
-SSL\/TLS ネゴシエーションを使用して取得されたサービス証明書を認証するためにクライアント プロキシが使用する設定を指定します。  
+# <a name="ltauthenticationgt-of-ltservicecertificategt-element"></a><span data-ttu-id="c4994-102">&lt;serviceCertificate&gt; 要素の &lt;authentication&gt;</span><span class="sxs-lookup"><span data-stu-id="c4994-102">&lt;authentication&gt; of &lt;serviceCertificate&gt; Element</span></span>
+<span data-ttu-id="c4994-103">SSL/TLS ネゴシエーションを使用して取得されたサービス証明書を認証するためにクライアント プロキシが使用する設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="c4994-103">Specifies the settings used by the client proxy to authenticate service certificates that are obtained using SSL/TLS negotiation.</span></span>  
   
-## 構文  
+ <span data-ttu-id="c4994-104">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="c4994-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="c4994-105">\<ビヘイビアー ></span><span class="sxs-lookup"><span data-stu-id="c4994-105">\<behaviors></span></span>  
+<span data-ttu-id="c4994-106">endpointBehaviors セクション</span><span class="sxs-lookup"><span data-stu-id="c4994-106">endpointBehaviors section</span></span>  
+<span data-ttu-id="c4994-107">\<動作 ></span><span class="sxs-lookup"><span data-stu-id="c4994-107">\<behavior></span></span>  
+<span data-ttu-id="c4994-108">\<clientCredentials ></span><span class="sxs-lookup"><span data-stu-id="c4994-108">\<clientCredentials></span></span>  
+<span data-ttu-id="c4994-109">\<serviceCertificate ></span><span class="sxs-lookup"><span data-stu-id="c4994-109">\<serviceCertificate></span></span>  
+<span data-ttu-id="c4994-110">\<認証 ></span><span class="sxs-lookup"><span data-stu-id="c4994-110">\<authentication></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="c4994-111">構文</span><span class="sxs-lookup"><span data-stu-id="c4994-111">Syntax</span></span>  
   
+```xml  
 <authentication customCertificateValidatorType="String" certificateValidationMode="None/PeerTrust/ChainTrust/PeerOrChainTrust/Custom"  
 revocationMode="NoCheck/Online/Offline"   
 trustedStoreLocation="LocalMachine/CurrentUser" />  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="c4994-112">属性および要素</span><span class="sxs-lookup"><span data-stu-id="c4994-112">Attributes and Elements</span></span>  
+ <span data-ttu-id="c4994-113">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="c4994-113">The following sections describe attributes, child elements, and parent elements</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="c4994-114">属性</span><span class="sxs-lookup"><span data-stu-id="c4994-114">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|customCertificateValidatorType|文字列。  カスタム型の検証に使用される型およびアセンブリです。|  
-|certificateValidationMode|資格情報の検証に使用される 3 つのモードのいずれかを指定します。  `Custom` に設定されている場合、customCertificateValidator も指定する必要があります。  既定値は、`ChainTrust` です。|  
-|revocationMode|証明書失効リスト \(CRL\) のチェックに使用されるモードのいずれかです。  既定値は、`Online` です。|  
-|trustedStoreLocation|2 つのシステム格納場所 \(`LocalMachine` または `CurrentUser`\) のいずれかです。  この値は、サービス証明書がクライアントにネゴシエートされるときに使用されます。  指定された格納場所の **\[信頼されたユーザー\]** ストアに対して検証が実行されます。  既定値は、`CurrentUser` です。|  
+|<span data-ttu-id="c4994-115">属性</span><span class="sxs-lookup"><span data-stu-id="c4994-115">Attribute</span></span>|<span data-ttu-id="c4994-116">説明</span><span class="sxs-lookup"><span data-stu-id="c4994-116">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="c4994-117">customCertificateValidatorType</span><span class="sxs-lookup"><span data-stu-id="c4994-117">customCertificateValidatorType</span></span>|<span data-ttu-id="c4994-118">文字列。</span><span class="sxs-lookup"><span data-stu-id="c4994-118">String.</span></span> <span data-ttu-id="c4994-119">カスタム型の検証に使用される型およびアセンブリです。</span><span class="sxs-lookup"><span data-stu-id="c4994-119">A type and assembly used to validate a custom type.</span></span>|  
+|<span data-ttu-id="c4994-120">certificateValidationMode</span><span class="sxs-lookup"><span data-stu-id="c4994-120">certificateValidationMode</span></span>|<span data-ttu-id="c4994-121">資格情報の検証に使用される 3 つのモードのいずれかを指定します。</span><span class="sxs-lookup"><span data-stu-id="c4994-121">Specifies one of three modes used to validate credentials.</span></span> <span data-ttu-id="c4994-122">`Custom` に設定されている場合、customCertificateValidator も指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c4994-122">If set to `Custom`, then a customCertificateValidator must also be supplied.</span></span> <span data-ttu-id="c4994-123">既定値は、`ChainTrust` です。</span><span class="sxs-lookup"><span data-stu-id="c4994-123">The default is `ChainTrust`.</span></span>|  
+|<span data-ttu-id="c4994-124">revocationMode</span><span class="sxs-lookup"><span data-stu-id="c4994-124">revocationMode</span></span>|<span data-ttu-id="c4994-125">証明書失効リスト (CRL) のチェックに使用されるモードのいずれかです。</span><span class="sxs-lookup"><span data-stu-id="c4994-125">One of the modes used to check for a revoked certificate lists (CRL).</span></span> <span data-ttu-id="c4994-126">既定値は、`Online` です。</span><span class="sxs-lookup"><span data-stu-id="c4994-126">The default is `Online`.</span></span>|  
+|<span data-ttu-id="c4994-127">trustedStoreLocation</span><span class="sxs-lookup"><span data-stu-id="c4994-127">trustedStoreLocation</span></span>|<span data-ttu-id="c4994-128">2 つのシステム格納場所 (`LocalMachine` または `CurrentUser`) のいずれかです。</span><span class="sxs-lookup"><span data-stu-id="c4994-128">One of the two system store locations: `LocalMachine` or `CurrentUser`.</span></span> <span data-ttu-id="c4994-129">この値は、サービス証明書がクライアントにネゴシエートされるときに使用されます。</span><span class="sxs-lookup"><span data-stu-id="c4994-129">This value is used when a service certificate is negotiated to the client.</span></span> <span data-ttu-id="c4994-130">に対して検証が実行、**信頼されたユーザー**指定されたストアの場所に格納します。</span><span class="sxs-lookup"><span data-stu-id="c4994-130">Validation is performed against the **Trusted People** store in the specified store location.</span></span> <span data-ttu-id="c4994-131">既定値は、`CurrentUser` です。</span><span class="sxs-lookup"><span data-stu-id="c4994-131">The default is `CurrentUser`.</span></span>|  
   
-## customCertificateValidator 属性  
+## <a name="customcertificatevalidator-attribute"></a><span data-ttu-id="c4994-132">customCertificateValidator 属性</span><span class="sxs-lookup"><span data-stu-id="c4994-132">customCertificateValidator Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|String|タイプ名およびアセンブリと、タイプの検索に使用される他のデータを指定します。|  
+|<span data-ttu-id="c4994-133">値</span><span class="sxs-lookup"><span data-stu-id="c4994-133">Value</span></span>|<span data-ttu-id="c4994-134">説明</span><span class="sxs-lookup"><span data-stu-id="c4994-134">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="c4994-135">String</span><span class="sxs-lookup"><span data-stu-id="c4994-135">String</span></span>|<span data-ttu-id="c4994-136">タイプ名およびアセンブリと、タイプの検索に使用される他のデータを指定します。</span><span class="sxs-lookup"><span data-stu-id="c4994-136">Specifies the type name and assembly and other data used to find the type.</span></span>|  
   
-## certificateValidationMode 属性  
+## <a name="certificatevalidationmode-attribute"></a><span data-ttu-id="c4994-137">certificateValidationMode 属性</span><span class="sxs-lookup"><span data-stu-id="c4994-137">certificateValidationMode Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|列挙型|None、PeerTrust、ChainTrust、PeerOrChainTrust、Custom のいずれかの値にします。<br /><br /> 詳細については、「[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)」を参照してください。|  
+|<span data-ttu-id="c4994-138">値</span><span class="sxs-lookup"><span data-stu-id="c4994-138">Value</span></span>|<span data-ttu-id="c4994-139">説明</span><span class="sxs-lookup"><span data-stu-id="c4994-139">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="c4994-140">列挙型</span><span class="sxs-lookup"><span data-stu-id="c4994-140">Enumeration</span></span>|<span data-ttu-id="c4994-141">None、PeerTrust、ChainTrust、PeerOrChainTrust、Custom のいずれかの値にします。</span><span class="sxs-lookup"><span data-stu-id="c4994-141">One of the following values: None, PeerTrust, ChainTrust, PeerOrChainTrust, Custom.</span></span><br /><br /> <span data-ttu-id="c4994-142">詳細については、次を参照してください。[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。</span><span class="sxs-lookup"><span data-stu-id="c4994-142">For more information, see [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span></span>|  
   
-## revocationMode 属性  
+## <a name="revocationmode-attribute"></a><span data-ttu-id="c4994-143">revocationMode 属性</span><span class="sxs-lookup"><span data-stu-id="c4994-143">revocationMode Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|列挙型|NoCheck、Online、Offline のいずれかの値にします。<br /><br /> 詳細については、「[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)」を参照してください。|  
+|<span data-ttu-id="c4994-144">値</span><span class="sxs-lookup"><span data-stu-id="c4994-144">Value</span></span>|<span data-ttu-id="c4994-145">説明</span><span class="sxs-lookup"><span data-stu-id="c4994-145">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="c4994-146">列挙型</span><span class="sxs-lookup"><span data-stu-id="c4994-146">Enumeration</span></span>|<span data-ttu-id="c4994-147">NoCheck、Online、Offline のいずれかの値にします。</span><span class="sxs-lookup"><span data-stu-id="c4994-147">One of the following values: NoCheck, Online, Offline.</span></span><br /><br /> <span data-ttu-id="c4994-148">詳細については、次を参照してください。[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。</span><span class="sxs-lookup"><span data-stu-id="c4994-148">For more information, see [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span></span>|  
   
-## trustedStoreLocation 属性  
+## <a name="trustedstorelocation-attribute"></a><span data-ttu-id="c4994-149">trustedStoreLocation 属性</span><span class="sxs-lookup"><span data-stu-id="c4994-149">trustedStoreLocation Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|列挙型|LocalMachine または CurrentUser のいずれかの値。  既定値は CurrentUser です。  クライアント アプリケーションがシステム アカウントで実行されている場合、証明書は通常 LocalMachine の下にあります。  クライアント アプリケーションがユーザー アカウントで実行されている場合、証明書は通常 CurrentUser の下にあります。|  
+|<span data-ttu-id="c4994-150">値</span><span class="sxs-lookup"><span data-stu-id="c4994-150">Value</span></span>|<span data-ttu-id="c4994-151">説明</span><span class="sxs-lookup"><span data-stu-id="c4994-151">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="c4994-152">列挙型</span><span class="sxs-lookup"><span data-stu-id="c4994-152">Enumeration</span></span>|<span data-ttu-id="c4994-153">LocalMachine または CurrentUser のいずれかの値。</span><span class="sxs-lookup"><span data-stu-id="c4994-153">One of the following values: LocalMachine or CurrentUser.</span></span> <span data-ttu-id="c4994-154">既定値は CurrentUser です。</span><span class="sxs-lookup"><span data-stu-id="c4994-154">The default is CurrentUser.</span></span> <span data-ttu-id="c4994-155">クライアント アプリケーションがシステム アカウントで実行されている場合、証明書は通常 LocalMachine の下にあります。</span><span class="sxs-lookup"><span data-stu-id="c4994-155">If the client application is running under a system account, then the certificate is typically under LocalMachine.</span></span> <span data-ttu-id="c4994-156">クライアント アプリケーションがユーザー アカウントで実行されている場合、証明書は通常 CurrentUser の下にあります。</span><span class="sxs-lookup"><span data-stu-id="c4994-156">If the client application is running under a user account, then the certificate is typically in CurrentUser.</span></span>|  
   
-### 子要素  
- なし。  
+### <a name="child-elements"></a><span data-ttu-id="c4994-157">子要素</span><span class="sxs-lookup"><span data-stu-id="c4994-157">Child Elements</span></span>  
+ <span data-ttu-id="c4994-158">なし。</span><span class="sxs-lookup"><span data-stu-id="c4994-158">None.</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="c4994-159">親要素</span><span class="sxs-lookup"><span data-stu-id="c4994-159">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<serviceCertificate\>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)|クライアントに対してサービスを認証する際に使用される証明書を指定します。|  
+|<span data-ttu-id="c4994-160">要素</span><span class="sxs-lookup"><span data-stu-id="c4994-160">Element</span></span>|<span data-ttu-id="c4994-161">説明</span><span class="sxs-lookup"><span data-stu-id="c4994-161">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="c4994-162">\<serviceCertificate ></span><span class="sxs-lookup"><span data-stu-id="c4994-162">\<serviceCertificate></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)|<span data-ttu-id="c4994-163">クライアントに対してサービスを認証する際に使用される証明書を指定します。</span><span class="sxs-lookup"><span data-stu-id="c4994-163">Specifies a certificate to use when authenticating a service to the client.</span></span>|  
   
-## 解説  
- この構成要素の `certificateValidationMode` 属性は、証明書の認証に使用される信頼レベルを指定します。  既定のレベルは `ChainTrust` に設定され、チェーンの最上位の信頼された証明機関で終了する証明書の階層構造で各証明書を検索するよう指定します。  これは最もセキュリティで保護されているモードです。  また、値を `PeerOrChainTrust` に設定することもできます。これは、信頼されたチェーン内の証明書と共に、自己発行された証明書 \(ピア信頼\) も受け入れるよう指定します。  自己発行の資格情報は信頼された証明機関から購入したものである必要はないため、この値はクライアントとサービスの開発およびデバッグに使用されます。  クライアントを展開するときは、代わりに `ChainTrust` 値を使用します。  値を `Custom` または `None` に設定することもできます。  `Custom` 値を使用するには、`customCertificateValidator` 属性を証明書の検証に使用するアセンブリと型に設定することも必要です。  独自のカスタム検証を作成するには、抽象 X509CertificateValidator クラスを継承する必要があります。  詳細については、「[方法 : カスタム証明書検証を使用するサービスを作成する](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)」を参照してください。  
+## <a name="remarks"></a><span data-ttu-id="c4994-164">コメント</span><span class="sxs-lookup"><span data-stu-id="c4994-164">Remarks</span></span>  
+ <span data-ttu-id="c4994-165">この構成要素の `certificateValidationMode` 属性は、証明書の認証に使用される信頼レベルを指定します。</span><span class="sxs-lookup"><span data-stu-id="c4994-165">The `certificateValidationMode` attribute of this configuration element specifies the level of trust used to authenticate certificates.</span></span> <span data-ttu-id="c4994-166">既定のレベルは `ChainTrust` に設定され、チェーンの最上位の信頼された証明機関で終了する証明書の階層構造で各証明書を検索するよう指定します。</span><span class="sxs-lookup"><span data-stu-id="c4994-166">By default, the level is set to `ChainTrust`, which specifies that each certificate must be found in a hierarchy of certificates ending in a trusted certification authority at the top of the chain.</span></span> <span data-ttu-id="c4994-167">これは最もセキュリティで保護されているモードです。</span><span class="sxs-lookup"><span data-stu-id="c4994-167">This is the most secure mode.</span></span> <span data-ttu-id="c4994-168">また、値を `PeerOrChainTrust` に設定することもできます。これは、信頼されたチェーン内の証明書と共に、自己発行された証明書 (ピア信頼) も受け入れるよう指定します。</span><span class="sxs-lookup"><span data-stu-id="c4994-168">You can also set the value to `PeerOrChainTrust`, which specifies that self-issued certificates (peer trust) are accepted as well as certificates that are in a trusted chain.</span></span> <span data-ttu-id="c4994-169">自己発行の資格情報は信頼された証明機関から購入したものである必要はないため、この値はクライアントとサービスの開発およびデバッグに使用されます。</span><span class="sxs-lookup"><span data-stu-id="c4994-169">This value is used when developing and debugging clients and services because self-issued certificates need not be purchased from a trusted authority.</span></span> <span data-ttu-id="c4994-170">クライアントを展開するときは、代わりに `ChainTrust` 値を使用します。</span><span class="sxs-lookup"><span data-stu-id="c4994-170">When deploying a client, use the `ChainTrust` value instead.</span></span> <span data-ttu-id="c4994-171">値を `Custom` または `None` に設定することもできます。</span><span class="sxs-lookup"><span data-stu-id="c4994-171">You can also set the value to `Custom` or `None`.</span></span> <span data-ttu-id="c4994-172">`Custom` 値を使用するには、`customCertificateValidator` 属性を証明書の検証に使用するアセンブリと型に設定することも必要です。</span><span class="sxs-lookup"><span data-stu-id="c4994-172">To use the `Custom` value, you must also set the `customCertificateValidator` attribute to an assembly and type used to validate the certificate.</span></span> <span data-ttu-id="c4994-173">独自のカスタム検証を作成するには、抽象 X509CertificateValidator クラスを継承する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c4994-173">To create your own custom validator, you must inherit from the abstract X509CertificateValidator class.</span></span> <span data-ttu-id="c4994-174">詳細については、次を参照してください。[する方法: カスタム証明書検証を使用するサービスを作成する](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)です。</span><span class="sxs-lookup"><span data-stu-id="c4994-174">For more information, see [How to: Create a Service that Employs a Custom Certificate Validator](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md).</span></span>  
   
- `revocationMode` 属性は、証明書が失効していないかどうかをチェックする方法を指定します。  既定値は `online` です。この場合、証明書が失効していないかどうかを自動的にチェックします。  詳細については、「[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)」を参照してください。  
+ <span data-ttu-id="c4994-175">`revocationMode` 属性は、証明書が失効していないかどうかをチェックする方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="c4994-175">The `revocationMode` attribute specifies how certificates are checked for revocation.</span></span> <span data-ttu-id="c4994-176">既定値は `online` です。この場合、証明書が失効していないかどうかを自動的にチェックします。</span><span class="sxs-lookup"><span data-stu-id="c4994-176">The default is `online` which indicates that certificates will be checked automatically for revocation.</span></span> <span data-ttu-id="c4994-177">詳細については、次を参照してください。[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。</span><span class="sxs-lookup"><span data-stu-id="c4994-177">For more information, see [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span></span>  
   
-## 使用例  
- 次の例は、2 つのタスクを実行します。  最初は、ドメイン名が www.contoso.com であるエンドポイントと HTTPプロトコルを経由して通信するときに使用するクライアントのサービス証明書を指定します。  次に、認証中に使用される失効モードとストアの場所を指定します。  
+## <a name="example"></a><span data-ttu-id="c4994-178">例</span><span class="sxs-lookup"><span data-stu-id="c4994-178">Example</span></span>  
+ <span data-ttu-id="c4994-179">次の例は、2 つのタスクを実行します。</span><span class="sxs-lookup"><span data-stu-id="c4994-179">The following example does two tasks.</span></span> <span data-ttu-id="c4994-180">最初は、ドメイン名が www.contoso.com であるエンドポイントと HTTPプロトコルを経由して通信するときに使用するクライアントのサービス証明書を指定します。</span><span class="sxs-lookup"><span data-stu-id="c4994-180">It first specifies a service certificate for the client to use when communicating with endpoints whose domain name is www.contoso.com over the HTTP protocol.</span></span> <span data-ttu-id="c4994-181">次に、認証中に使用される失効モードとストアの場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="c4994-181">Second, it specifies the revocation mode and store location used during authentication.</span></span>  
   
-```  
+```xml  
 <serviceCertificate>  
   <defaultCertificate findValue="www.contoso.com"   
                       storeLocation="LocalMachine"  
@@ -97,14 +107,14 @@ trustedStoreLocation="LocalMachine/CurrentUser" />
 </serviceCertificate>  
 ```  
   
-## 参照  
- <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement>   
- <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>   
- <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.Authentication%2A>   
- <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication>   
- [セキュリティ動作](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)   
- [証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)   
- [方法 : カスタム証明書検証を使用するサービスを作成する](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)   
- [\<authentication\>](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)   
- [クライアントのセキュリティ保護](../../../../../docs/framework/wcf/securing-clients.md)   
- [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+## <a name="see-also"></a><span data-ttu-id="c4994-182">関連項目</span><span class="sxs-lookup"><span data-stu-id="c4994-182">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement>  
+ <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>  
+ <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.Authentication%2A>  
+ <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication>  
+ [<span data-ttu-id="c4994-183">セキュリティ動作</span><span class="sxs-lookup"><span data-stu-id="c4994-183">Security Behaviors</span></span>](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
+ [<span data-ttu-id="c4994-184">証明書の使用</span><span class="sxs-lookup"><span data-stu-id="c4994-184">Working with Certificates</span></span>](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
+ [<span data-ttu-id="c4994-185">方法: カスタム証明書検証を使用するサービスを作成します。</span><span class="sxs-lookup"><span data-stu-id="c4994-185">How to: Create a Service that Employs a Custom Certificate Validator</span></span>](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)  
+ [<span data-ttu-id="c4994-186">\<認証 ></span><span class="sxs-lookup"><span data-stu-id="c4994-186">\<authentication></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)  
+ [<span data-ttu-id="c4994-187">クライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="c4994-187">Securing Clients</span></span>](../../../../../docs/framework/wcf/securing-clients.md)  
+ [<span data-ttu-id="c4994-188">サービスとクライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="c4994-188">Securing Services and Clients</span></span>](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

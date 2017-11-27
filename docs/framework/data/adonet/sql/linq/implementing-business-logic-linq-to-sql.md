@@ -1,35 +1,41 @@
 ---
-title: "Implementing Business Logic (LINQ to SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ビジネス ロジックの実装 (LINQ to SQL)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: c4577590-7b12-42e1-84a6-95aa2562727e
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 9cba4c71d895d9398e2444885f4f26bf04433251
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Implementing Business Logic (LINQ to SQL)
-このトピックの「ビジネス ロジック」とは、データベースでデータを挿入、更新、または削除される前にデータに適用されるカスタム規則または検証テストのことです。  ビジネス ロジックは、「ビジネス ルール」または「ドメイン ロジック」とも呼ばれます。 n 層アプリケーションでは、通常、論理層として設計されるため、プレゼンテーション層やデータ アクセス層から独立して変更できます。  データベースのデータを更新、挿入、または削除する前または後に、データ アクセス層によってビジネス ロジックを呼び出すことができます。  
+# <a name="implementing-business-logic-linq-to-sql"></a><span data-ttu-id="256be-102">ビジネス ロジックの実装 (LINQ to SQL)</span><span class="sxs-lookup"><span data-stu-id="256be-102">Implementing Business Logic (LINQ to SQL)</span></span>
+<span data-ttu-id="256be-103">このトピックの「ビジネス ロジック」とは、データベースでデータを挿入、更新、または削除される前にデータに適用されるカスタム規則または検証テストのことです。</span><span class="sxs-lookup"><span data-stu-id="256be-103">The term "business logic" in this topic refers to any custom rules or validation tests that you apply to data before it is inserted, updated or deleted from the database.</span></span> <span data-ttu-id="256be-104">ビジネス ロジックは、「ビジネス ルール」または「ドメイン ロジック」とも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="256be-104">Business logic is also sometimes referred to as "business rules" or "domain logic."</span></span> <span data-ttu-id="256be-105">n 層アプリケーションでは、通常、論理層として設計されるため、プレゼンテーション層やデータ アクセス層から独立して変更できます。</span><span class="sxs-lookup"><span data-stu-id="256be-105">In n-tier applications it is typically designed as a logical layer so that it can be modified independently of the presentation layer or data access layer.</span></span> <span data-ttu-id="256be-106">データベースのデータを更新、挿入、または削除する前または後に、データ アクセス層によってビジネス ロジックを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="256be-106">The business logic can be invoked by the data access layer before or after any update, insertion, or deletion of data in the database.</span></span>  
   
- ビジネス ロジックは、フィールドの型がテーブル列の型と互換性を持つかどうか確認するスキーマ検証のような簡単なものにすることもできます。  または、任意の複雑な方法で相互に影響するオブジェクトのセットから成るビジネス ロジックも可能です。  規則は、データベース上のストアド プロシージャとして、またはメモリ内のオブジェクトとして実装可能です。  ビジネス ロジックの実装方法とは無関係に、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] では、部分クラスと部分メソッドを使ってビジネス ロジックをデータ アクセス コードから分離することができます。  
+ <span data-ttu-id="256be-107">ビジネス ロジックは、フィールドの型がテーブル列の型と互換性を持つかどうか確認するスキーマ検証のような簡単なものにすることもできます。</span><span class="sxs-lookup"><span data-stu-id="256be-107">The business logic can be as simple as a schema validation to make sure that the type of the field is compatible with the type of the table column.</span></span> <span data-ttu-id="256be-108">または、任意の複雑な方法で相互に影響するオブジェクトのセットから成るビジネス ロジックも可能です。</span><span class="sxs-lookup"><span data-stu-id="256be-108">Or it can consist of a set of objects that interact in arbitrarily complex ways.</span></span> <span data-ttu-id="256be-109">規則は、データベース上のストアド プロシージャとして、またはメモリ内のオブジェクトとして実装可能です。</span><span class="sxs-lookup"><span data-stu-id="256be-109">The rules may be implemented as stored procedures on the database or as in-memory objects.</span></span> <span data-ttu-id="256be-110">ただし、ビジネス ロジックを実装した場合[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]データ アクセス コードからビジネス ロジックを分離する部分クラスと部分メソッドを使用して有効にします。</span><span class="sxs-lookup"><span data-stu-id="256be-110">However the business logic is implemented, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] enables you use partial classes and partial methods to separate the business logic from the data access code.</span></span>  
   
-## LINQ to SQL でビジネス ロジックを呼び出す方法  
- 手動で、または[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]か SQLMetal を使用してデザイン時にエンティティ クラスを生成すると、部分クラスとして定義されます。  つまり、別個のコード ファイル内で、カスタム ビジネス ロジックを格納するエンティティ クラスの別の部分を定義できます。  コンパイル時に 2 つの部分が 1 つのクラスに結合されます。 ただし、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]または SQLMetal を使ってエンティティ クラスを再生成する必要がある場合には、そうしてもかまいません。その場合、開発者が作成したクラスの部分は変更されません。  
+## <a name="how-linq-to-sql-invokes-your-business-logic"></a><span data-ttu-id="256be-111">LINQ to SQL でビジネス ロジックを呼び出す方法</span><span class="sxs-lookup"><span data-stu-id="256be-111">How LINQ to SQL Invokes Your Business Logic</span></span>  
+ <span data-ttu-id="256be-112">手動で、または[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]か SQLMetal を使用してデザイン時にエンティティ クラスを生成すると、部分クラスとして定義されます。</span><span class="sxs-lookup"><span data-stu-id="256be-112">When you generate an entity class at design time, either manually or by using the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] or SQLMetal, it is defined as a partial class.</span></span> <span data-ttu-id="256be-113">つまり、別個のコード ファイル内で、カスタム ビジネス ロジックを格納するエンティティ クラスの別の部分を定義できます。</span><span class="sxs-lookup"><span data-stu-id="256be-113">This means that, in a separate code file, you can define another part of the entity class that contains your custom business logic.</span></span> <span data-ttu-id="256be-114">コンパイル時に 2 つの部分が 1 つのクラスに結合されます。</span><span class="sxs-lookup"><span data-stu-id="256be-114">At compile time, the two parts are merged into a single class.</span></span> <span data-ttu-id="256be-115">ただし、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]または SQLMetal を使ってエンティティ クラスを再生成する必要がある場合には、そうしてもかまいません。その場合、開発者が作成したクラスの部分は変更されません。</span><span class="sxs-lookup"><span data-stu-id="256be-115">But if you have to regenerate your entity classes by using the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] or SQLMetal, you can do so and your part of the class will not be modified.</span></span>  
   
- エンティティと <xref:System.Data.Linq.DataContext> を定義する部分クラスには、部分メソッドが含まれます。  これらは機能拡張ポイントであり、これらを使用して、エンティティまたはエンティティ プロパティを更新、挿入、削除する前および後にビジネス ロジックを適用できます。  部分メソッドはコンパイル時のイベントのようなものです。  コード ジェネレーターはメソッド シグネチャを定義して、get および set プロパティ アクセサー内、`DataContext` コンストラクター内、および、場合によっては <xref:System.Data.Linq.DataContext.SubmitChanges%2A> 呼び出し時に背後でメソッドを呼び出します。  ただし、特定の部分メソッドを実装しない場合には、そのメソッドのすべての参照と定義はコンパイル時に削除されます。  
+ <span data-ttu-id="256be-116">エンティティと <xref:System.Data.Linq.DataContext> を定義する部分クラスには、部分メソッドが含まれます。</span><span class="sxs-lookup"><span data-stu-id="256be-116">The partial classes that define entities and the <xref:System.Data.Linq.DataContext> contain partial methods.</span></span> <span data-ttu-id="256be-117">これらは機能拡張ポイントであり、これらを使用して、エンティティまたはエンティティ プロパティを更新、挿入、削除する前および後にビジネス ロジックを適用できます。</span><span class="sxs-lookup"><span data-stu-id="256be-117">These are the extensibility points that you can use to apply your business logic before and after any update, insert, or delete for an entity or entity property.</span></span> <span data-ttu-id="256be-118">部分メソッドはコンパイル時のイベントのようなものです。</span><span class="sxs-lookup"><span data-stu-id="256be-118">Partial methods can be thought of as compile-time events.</span></span> <span data-ttu-id="256be-119">コード ジェネレーターはメソッド シグネチャを定義して、get および set プロパティ アクセサー内、`DataContext` コンストラクター内、および、場合によっては <xref:System.Data.Linq.DataContext.SubmitChanges%2A> 呼び出し時に背後でメソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="256be-119">The code-generator defines a method signature and calls the methods in the get and set property accessors, the `DataContext` constructor, and in some cases behind the scenes when <xref:System.Data.Linq.DataContext.SubmitChanges%2A> is called.</span></span> <span data-ttu-id="256be-120">ただし、特定の部分メソッドを実装しない場合には、そのメソッドのすべての参照と定義はコンパイル時に削除されます。</span><span class="sxs-lookup"><span data-stu-id="256be-120">However, if you do not implement a particular partial method, then all the references to it and the definition are removed at compile time.</span></span>  
   
- 別個のコード ファイル内に作成する実装定義では、必要な任意のカスタム ロジックを実行できます。  部分クラス自体をドメイン層として使用できます。または、部分メソッドの実装定義から別個の 1 つ以上のオブジェクトに呼び出すこともできます。  どちらの場合も、ビジネス ロジックはデータ アクセス コードとプレゼンテーション層コードから明確に分離されています。  
+ <span data-ttu-id="256be-121">別個のコード ファイル内に作成する実装定義では、必要な任意のカスタム ロジックを実行できます。</span><span class="sxs-lookup"><span data-stu-id="256be-121">In the implementing definition that you write in your separate code file, you can perform whatever custom logic is required.</span></span> <span data-ttu-id="256be-122">部分クラス自体をドメイン層として使用できます。または、部分メソッドの実装定義から別個の 1 つ以上のオブジェクトに呼び出すこともできます。</span><span class="sxs-lookup"><span data-stu-id="256be-122">You can use your partial class itself as your domain layer, or you can call from your implementing definition of the partial method into a separate object or objects.</span></span> <span data-ttu-id="256be-123">どちらの場合も、ビジネス ロジックはデータ アクセス コードとプレゼンテーション層コードから明確に分離されています。</span><span class="sxs-lookup"><span data-stu-id="256be-123">Either way, your business logic is cleanly separated from both your data access code and your presentation layer code.</span></span>  
   
-## 機能拡張ポイントの詳細  
- 次の例は、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] と `DataContext` の 2 つのテーブルを持つ `Customers` クラス用に`Orders`によって生成されるコードの一部分です。  このクラスで Insert、Update、および Delete メソッドがテーブルごとに定義されていることに注意してください。  
+## <a name="a-closer-look-at-the-extensibility-points"></a><span data-ttu-id="256be-124">機能拡張ポイントの詳細</span><span class="sxs-lookup"><span data-stu-id="256be-124">A Closer Look at the Extensibility Points</span></span>  
+ <span data-ttu-id="256be-125">次の例で生成されたコードの一部を示しています、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]の`DataContext`を 2 つのテーブルを持つクラス:`Customers`と`Orders`です。</span><span class="sxs-lookup"><span data-stu-id="256be-125">The following example shows part of the code generated by the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] for the `DataContext` class that has two tables: `Customers` and `Orders`.</span></span> <span data-ttu-id="256be-126">このクラスで Insert、Update、および Delete メソッドがテーブルごとに定義されていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="256be-126">Note that Insert, Update, and Delete methods are defined for each table in the class.</span></span>  
   
 ```vb  
 Partial Public Class Northwnd  
@@ -73,9 +79,9 @@ public partial class MyNorthWindDataContext : System.Data.Linq.DataContext
         #endregion  
 ```  
   
- 部分クラス内で Insert、Update、および Delete メソッドを実装すると、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ランタイムは <xref:System.Data.Linq.DataContext.SubmitChanges%2A> の呼び出し時に、既定のメソッドの代わりにこれらのメソッドを呼び出します。  こうすることで、作成、読み取り、更新、削除操作の既定の動作をオーバーライドできます。  詳細については、「[Walkthrough: Customizing the Insert, Update, and Delete Behavior of Entity Classes](../Topic/Walkthrough:%20Customizing%20the%20insert,%20update,%20and%20delete%20behavior%20of%20entity%20classes.md)」を参照してください。  
+ <span data-ttu-id="256be-127">部分クラス内で Insert、Update、および Delete メソッドを実装すると、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ランタイムは <xref:System.Data.Linq.DataContext.SubmitChanges%2A> の呼び出し時に、既定のメソッドの代わりにこれらのメソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="256be-127">If you implement the Insert, Update and Delete methods in your partial class, the [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] runtime will call them instead of its own default methods when <xref:System.Data.Linq.DataContext.SubmitChanges%2A> is called.</span></span> <span data-ttu-id="256be-128">こうすることで、作成、読み取り、更新、削除操作の既定の動作をオーバーライドできます。</span><span class="sxs-lookup"><span data-stu-id="256be-128">This enables you to override the default behavior for create / read / update / delete operations.</span></span> <span data-ttu-id="256be-129">詳細については、次を参照してください。[チュートリアル: 更新、およびエンティティ クラスの動作を削除、挿入をカスタマイズするには、](/visualstudio/data-tools/walkthrough-customizing-the-insert-update-and-delete-behavior-of-entity-classes)です。</span><span class="sxs-lookup"><span data-stu-id="256be-129">For more information, see [Walkthrough: Customizing the insert, update, and delete behavior of entity classes](/visualstudio/data-tools/walkthrough-customizing-the-insert-update-and-delete-behavior-of-entity-classes).</span></span>  
   
- `OnCreated` メソッドはクラス コンストラクター内で呼び出されます。  
+ <span data-ttu-id="256be-130">`OnCreated` メソッドはクラス コンストラクター内で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="256be-130">The `OnCreated` method is called in the class constructor.</span></span>  
   
 ```vb  
 Public Sub New(ByVal connection As String)  
@@ -92,7 +98,7 @@ public MyNorthWindDataContext(string connection) :
         }  
 ```  
   
- エンティティの作成時、読み込み時、および検証時 \([!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] の呼び出し時\) に `SubmitChanges` ランタイムによって呼び出される 3 つのメソッドが、エンティティ クラスに含まれています。  さらに、エンティティ クラスには、各プロパティごとの 2 つの部分メソッドも含まれています。このうち 1 つはプロパティの設定前に、もう 1 つは設定後に呼び出されます。  次のコード例は、`Customer` クラス用に生成されるいくつかのメソッドを示しています。  
+ <span data-ttu-id="256be-131">エンティティの作成時、読み込み時、および検証時 ([!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] の呼び出し時) に `SubmitChanges` ランタイムによって呼び出される 3 つのメソッドが、エンティティ クラスに含まれています。</span><span class="sxs-lookup"><span data-stu-id="256be-131">The entity classes have three methods that are called by the [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] runtime when the entity is created, loaded, and validated (when `SubmitChanges` is called).</span></span> <span data-ttu-id="256be-132">さらに、エンティティ クラスには、各プロパティごとの 2 つの部分メソッドも含まれています。このうち 1 つはプロパティの設定前に、もう 1 つは設定後に呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="256be-132">The entity classes also have two partial methods for each property, one that is called before the property is set, and one that is called after.</span></span> <span data-ttu-id="256be-133">次のコード例は、`Customer` クラス用に生成されるいくつかのメソッドを示しています。</span><span class="sxs-lookup"><span data-stu-id="256be-133">The following code example shows some of the methods generated for the `Customer` class:</span></span>  
   
 ```vb  
 #Region "Extensibility Method Definitions"  
@@ -126,7 +132,7 @@ public MyNorthWindDataContext(string connection) :
 // ...additional Changing/Changed methods for each property  
 ```  
   
- 以下の `CustomerID` プロパティの例に示されるように、メソッドはプロパティの set アクセサー内で呼び出されます。  
+ <span data-ttu-id="256be-134">以下の `CustomerID` プロパティの例に示されるように、メソッドはプロパティの set アクセサー内で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="256be-134">The methods are called in the property set accessor as shown in the following example for the `CustomerID` property:</span></span>  
   
 ```vb  
 Public Property CustomerID() As String  
@@ -159,7 +165,7 @@ public string CustomerID
 }  
 ```  
   
- クラスの開発者が作成する部分で、メソッドの実装定義を記述します。  [!INCLUDE[vsprvs](../../../../../../includes/vsprvs-md.md)] では、`partial` と入力した後、クラスの別の部分にメソッド定義用の IntelliSense が表示されます。  
+ <span data-ttu-id="256be-135">クラスの開発者が作成する部分で、メソッドの実装定義を記述します。</span><span class="sxs-lookup"><span data-stu-id="256be-135">In your part of the class, you write an implementing definition of the method.</span></span> <span data-ttu-id="256be-136">[!INCLUDE[vsprvs](../../../../../../includes/vsprvs-md.md)]を入力した後、`partial`クラスの他の部分にメソッド定義の IntelliSense が表示されます。</span><span class="sxs-lookup"><span data-stu-id="256be-136">In [!INCLUDE[vsprvs](../../../../../../includes/vsprvs-md.md)], after you type `partial` you will see IntelliSense for the method definitions in the other part of the class.</span></span>  
   
 ```vb  
 Partial Public Class Customer  
@@ -179,16 +185,16 @@ partial class Customer
     }  
 ```  
   
- 部分メソッドを使ってビジネス ロジックをアプリケーションに追加する方法の詳細については、以下のトピックを参照してください。  
+ <span data-ttu-id="256be-137">部分メソッドを使ってビジネス ロジックをアプリケーションに追加する方法の詳細については、以下のトピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="256be-137">For more information about how to add business logic to your application by using partial methods, see the following topics:</span></span>  
   
- [How to: Add Validation to Entity Classes](../Topic/How%20to:%20Add%20validation%20to%20entity%20classes.md)  
+ [<span data-ttu-id="256be-138">方法 : エンティティ クラスに検証を追加する</span><span class="sxs-lookup"><span data-stu-id="256be-138">How to: Add validation to entity classes</span></span>](/visualstudio/data-tools/how-to-add-validation-to-entity-classes)  
   
- [Walkthrough: Customizing the Insert, Update, and Delete Behavior of Entity Classes](../Topic/Walkthrough:%20Customizing%20the%20insert,%20update,%20and%20delete%20behavior%20of%20entity%20classes.md)  
+ [<span data-ttu-id="256be-139">チュートリアル : エンティティ クラスの挿入、更新、および削除の動作のカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="256be-139">Walkthrough: Customizing the insert, update, and delete behavior of entity classes</span></span>](/visualstudio/data-tools/walkthrough-customizing-the-insert-update-and-delete-behavior-of-entity-classes)  
   
- [Walkthrough: Adding Validation to Entity Classes](../Topic/Walkthrough:%20Adding%20Validation%20to%20Entity%20Classes.md)  
+ [<span data-ttu-id="256be-140">チュートリアル: エンティティ クラスへの検証の追加</span><span class="sxs-lookup"><span data-stu-id="256be-140">Walkthrough: Adding Validation to Entity Classes</span></span>](http://msdn.microsoft.com/library/85b06a02-b2e3-4534-95b8-d077c8d4c1d7)  
   
-## 参照  
- [部分クラスと部分メソッド](../Topic/Partial%20Classes%20and%20Methods%20\(C%23%20Programming%20Guide\).md)   
- [Partial Methods](../Topic/Partial%20Methods%20\(Visual%20Basic\).md)   
- [LINQ to Visual Studio での SQL ツール](../Topic/LINQ%20to%20SQL%20Tools%20in%20Visual%20Studio2.md)   
- [SqlMetal.exe \(コード生成ツール\)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)
+## <a name="see-also"></a><span data-ttu-id="256be-141">関連項目</span><span class="sxs-lookup"><span data-stu-id="256be-141">See Also</span></span>  
+ [<span data-ttu-id="256be-142">部分クラスと部分メソッド</span><span class="sxs-lookup"><span data-stu-id="256be-142">Partial Classes and Methods</span></span>](~/docs/csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md)  
+ [<span data-ttu-id="256be-143">部分メソッド</span><span class="sxs-lookup"><span data-stu-id="256be-143">Partial Methods</span></span>](~/docs/visual-basic/programming-guide/language-features/procedures/partial-methods.md)  
+ [<span data-ttu-id="256be-144">Visual Studio の LINQ to SQL ツール</span><span class="sxs-lookup"><span data-stu-id="256be-144">LINQ to SQL Tools in Visual Studio</span></span>](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)  
+ [<span data-ttu-id="256be-145">SqlMetal.exe (コード生成ツール)</span><span class="sxs-lookup"><span data-stu-id="256be-145">SqlMetal.exe (Code Generation Tool)</span></span>](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)

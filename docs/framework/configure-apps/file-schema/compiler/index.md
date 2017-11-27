@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - configuration settings [.NET Framework], compilers
 - compiler configuration elements, schema
@@ -24,38 +18,37 @@ helpviewer_keywords:
 - language providers, settings schema
 - compiler configuration settings
 ms.assetid: c020b139-8699-4f0d-9ac9-70d0c5b2a8c8
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cb1eb3078714e0de5416fc4c7f9695f52bab3a96
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.openlocfilehash: 3e020fcc63c0eff38dc602aacae31a6e0d2d2fe5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="compiler-and-language-provider-settings-schema"></a>コンパイラおよび言語プロバイダー設定のスキーマ
-コンパイラおよび言語プロバイダー設定は、使用可能な言語プロバイダーのコンパイラ構成要素を指定します。 各コンパイラ構成要素は、コード プロバイダーの型名、コンパイラ パラメーター、サポートされる言語名、およびサポートされるファイル拡張子を指定します。  
+# <a name="compiler-and-language-provider-settings-schema"></a><span data-ttu-id="196e9-102">コンパイラおよび言語プロバイダー設定のスキーマ</span><span class="sxs-lookup"><span data-stu-id="196e9-102">Compiler and Language Provider Settings Schema</span></span>
+<span data-ttu-id="196e9-103">コンパイラおよび言語プロバイダー設定は、使用可能な言語プロバイダーのコンパイラ構成要素を指定します。</span><span class="sxs-lookup"><span data-stu-id="196e9-103">Compiler and language provider settings specify compiler configuration elements for available language providers.</span></span> <span data-ttu-id="196e9-104">各コンパイラ構成要素は、コード プロバイダーの型名、コンパイラ パラメーター、サポートされる言語名、およびサポートされるファイル拡張子を指定します。</span><span class="sxs-lookup"><span data-stu-id="196e9-104">Each compiler configuration element specifies the code provider type name, compiler parameters, supported language names, and supported file extensions.</span></span>  
   
- .NET Framework は、マシン構成ファイル (Machine.config) 内でコンパイラの初期設定を定義します。 開発者やコンパイラ ベンダーは、新しい <xref:System.CodeDom.Compiler.CodeDomProvider> の実装のために構成設定を追加することができます。 <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=fullName> メソッドを使用して、プログラムによってコンピューターの言語プロバイダーとコンパイラ構成の設定を列挙します。  
+ <span data-ttu-id="196e9-105">.NET Framework は、マシン構成ファイル (Machine.config) 内でコンパイラの初期設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="196e9-105">The .NET Framework defines the initial compiler settings in the machine configuration file (Machine.config).</span></span> <span data-ttu-id="196e9-106">開発者やコンパイラ ベンダーは、新しい <xref:System.CodeDom.Compiler.CodeDomProvider> の実装のために構成設定を追加することができます。</span><span class="sxs-lookup"><span data-stu-id="196e9-106">Developers and compiler vendors can add configuration settings for a new <xref:System.CodeDom.Compiler.CodeDomProvider> implementation.</span></span> <span data-ttu-id="196e9-107"><xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> メソッドを使用して、プログラムによってコンピューターの言語プロバイダーとコンパイラ構成の設定を列挙します。</span><span class="sxs-lookup"><span data-stu-id="196e9-107">Use the <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> method to programmatically enumerate language provider and compiler configuration settings on a computer.</span></span>  
   
- [\<configuration> 要素](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
+ [<span data-ttu-id="196e9-108">\<configuration> 要素</span><span class="sxs-lookup"><span data-stu-id="196e9-108">\<configuration> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
   
- [\<system.codedom>](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)  
+ [<span data-ttu-id="196e9-109">\<system.codedom></span><span class="sxs-lookup"><span data-stu-id="196e9-109">\<system.codedom></span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)  
   
- [\<compilers>](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
+ [<span data-ttu-id="196e9-110">\<compilers></span><span class="sxs-lookup"><span data-stu-id="196e9-110">\<compilers></span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
   
- [\<compiler>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)  
+ [<span data-ttu-id="196e9-111">\<compiler></span><span class="sxs-lookup"><span data-stu-id="196e9-111">\<compiler></span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)  
   
-|要素|説明|  
+|<span data-ttu-id="196e9-112">要素</span><span class="sxs-lookup"><span data-stu-id="196e9-112">Element</span></span>|<span data-ttu-id="196e9-113">説明</span><span class="sxs-lookup"><span data-stu-id="196e9-113">Description</span></span>|  
 |-------------|-----------------|  
-|[\<system.codedom>](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|使用可能な言語プロバイダーのコンパイラ構成設定を指定します。|  
-|[\<compilers>](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|0 個以上の [\<compiler>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) 要素を含むコンパイラ構成要素のコンテナー。|  
-|[\<compiler>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)|言語プロバイダーのコンパイラ構成属性を指定します。|  
+|[<span data-ttu-id="196e9-114">\<system.codedom></span><span class="sxs-lookup"><span data-stu-id="196e9-114">\<system.codedom></span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|<span data-ttu-id="196e9-115">使用可能な言語プロバイダーのコンパイラ構成設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="196e9-115">Specifies compiler configuration settings for available language providers.</span></span>|  
+|[<span data-ttu-id="196e9-116">\<compilers></span><span class="sxs-lookup"><span data-stu-id="196e9-116">\<compilers></span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|<span data-ttu-id="196e9-117">0 個以上の [\<compiler>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) 要素を含むコンパイラ構成要素のコンテナー。</span><span class="sxs-lookup"><span data-stu-id="196e9-117">Container for compiler configuration elements; contains zero or more [\<compiler>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) elements.</span></span>|  
+|[<span data-ttu-id="196e9-118">\<compiler></span><span class="sxs-lookup"><span data-stu-id="196e9-118">\<compiler></span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)|<span data-ttu-id="196e9-119">言語プロバイダーのコンパイラ構成属性を指定します。</span><span class="sxs-lookup"><span data-stu-id="196e9-119">Specifies the compiler configuration attributes for a language provider.</span></span>|  
   
-## <a name="example"></a>例  
- 次の例は、一般的なコンパイラ構成要素を示しています。  
+## <a name="example"></a><span data-ttu-id="196e9-120">例</span><span class="sxs-lookup"><span data-stu-id="196e9-120">Example</span></span>  
+ <span data-ttu-id="196e9-121">次の例は、一般的なコンパイラ構成要素を示しています。</span><span class="sxs-lookup"><span data-stu-id="196e9-121">The following example illustrates a typical compiler configuration element.</span></span>  
   
 ```xml  
 <configuration>  
@@ -73,9 +66,8 @@ ms.lasthandoff: 09/05/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.CodeDom.Compiler.CompilerInfo>   
- <xref:System.CodeDom.Compiler.CodeDomProvider>   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [\<compiler> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)
-
+## <a name="see-also"></a><span data-ttu-id="196e9-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="196e9-122">See Also</span></span>  
+ <xref:System.CodeDom.Compiler.CompilerInfo>  
+ <xref:System.CodeDom.Compiler.CodeDomProvider>  
+ [<span data-ttu-id="196e9-123">構成ファイル スキーマ</span><span class="sxs-lookup"><span data-stu-id="196e9-123">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [<span data-ttu-id="196e9-124">\<compiler> 要素</span><span class="sxs-lookup"><span data-stu-id="196e9-124">\<compiler> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)

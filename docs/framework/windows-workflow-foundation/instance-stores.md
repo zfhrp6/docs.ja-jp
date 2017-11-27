@@ -1,36 +1,40 @@
 ---
-title: "インスタンス ストア | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "インスタンス ストア"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f2629668-0923-4987-b943-67477131c1e0
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c78e5ff1310951defdfaa38a9b63aacb9c27872b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# インスタンス ストア
-インスタンス ストアは、インスタンスの論理コンテナーです。この場所には、インスタンス データとメタデータが格納されます。インスタンス ストアは、専用の物理的なストレージを意味しているわけではありません。インスタンス ストアには SQL Server データベースの永続的な情報と、メモリ内の非永続的な状態の情報が含まれます。[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には SQL Workflow Instance Store が付属しています。これはインスタンス ストアの具象実装で、ワークフローが SQL Server 2005 または SQL Server 2008 データベースにインスタンス データとメタデータを永続化できるようにします。また、Windows Server App Fabric は、インスタンス ストアの具象実装を提供します。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Windows Server App Fabric のインスタンス ストア、クエリ、および管理プロバイダー](http://go.microsoft.com/fwlink/?LinkID=201201&clcid=0x409)。  
+# <a name="instance-stores"></a><span data-ttu-id="67539-102">インスタンス ストア</span><span class="sxs-lookup"><span data-stu-id="67539-102">Instance Stores</span></span>
+<span data-ttu-id="67539-103">インスタンス ストアは、インスタンスの論理コンテナーです。</span><span class="sxs-lookup"><span data-stu-id="67539-103">An instance store is a logical container of instances.</span></span> <span data-ttu-id="67539-104">この場所には、インスタンス データとメタデータが格納されます。</span><span class="sxs-lookup"><span data-stu-id="67539-104">It is the place where the instance data and metadata is stored.</span></span> <span data-ttu-id="67539-105">インスタンス ストアは、専用の物理的なストレージを意味しているわけではありません。</span><span class="sxs-lookup"><span data-stu-id="67539-105">An instance store does not imply dedicated physical storage.</span></span> <span data-ttu-id="67539-106">インスタンス ストアには SQL Server データベースの永続的な情報と、メモリ内の非永続的な状態の情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="67539-106">An instance store could contain durable information in a SQL Server database or non-durable state information in a memory.</span></span> <span data-ttu-id="67539-107">[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には SQL Workflow Instance Store が付属しています。これはインスタンス ストアの具象実装で、ワークフローが SQL Server 2005 または SQL Server 2008 データベースにインスタンス データとメタデータを永続化できるようにします。</span><span class="sxs-lookup"><span data-stu-id="67539-107">The [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] ships with the SQL Workflow Instance Store, which is a concrete implementation of an instance store that allows workflows to persist instance data and metadata into a SQL Server 2005 or SQL Server 2008 database.</span></span> <span data-ttu-id="67539-108">また、Windows Server App Fabric には、インスタンス ストアの具象実装も用意されています。</span><span class="sxs-lookup"><span data-stu-id="67539-108">In addition Windows Server App Fabric also provides a concrete implementation of an instance store.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="67539-109">[Windows Server App Fabric のインスタンス ストア、クエリ、およびコントロール プロバイダー](http://go.microsoft.com/fwlink/?LinkID=201201&clcid=0x409)です。</span><span class="sxs-lookup"><span data-stu-id="67539-109"> [Windows Server App Fabric Instance Store, Query, and Control Providers](http://go.microsoft.com/fwlink/?LinkID=201201&clcid=0x409).</span></span>  
   
- 永続化 API は、ホストがコマンド要求 \(<xref:System.Activities.DurableInstancing.LoadWorkflowCommand> や <xref:System.Activities.DurableInstancing.SaveWorkflowCommand> など\) をインスタンス ストアに送信できるようにするための、ホストとインスタンス ストア間のインターフェイスです。この API の具象実装は、永続化プロバイダーと呼ばれます。永続化プロバイダーはホストからの要求を受け取り、インスタンス ストアを変更します。  
+ <span data-ttu-id="67539-110">永続化 API は、ホストがコマンド要求 (<xref:System.Activities.DurableInstancing.LoadWorkflowCommand> や <xref:System.Activities.DurableInstancing.SaveWorkflowCommand> など) をインスタンス ストアに送信できるようにするための、ホストとインスタンス ストア間のインターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="67539-110">The persistence API is the interface between a host and an instance store that allows the host to send command requests (for example, <xref:System.Activities.DurableInstancing.LoadWorkflowCommand> and <xref:System.Activities.DurableInstancing.SaveWorkflowCommand>) to the instance store.</span></span> <span data-ttu-id="67539-111">この API の具象実装は、永続化プロバイダーと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="67539-111">The concrete implementation of this API is called a persistence provider.</span></span> <span data-ttu-id="67539-112">永続化プロバイダーはホストからの要求を受け取り、インスタンス ストアを変更します。</span><span class="sxs-lookup"><span data-stu-id="67539-112">The persistence provider receives requests from a host and modifies the instance store.</span></span>  
   
- ホストで多くのインスタンス ストアを使用し、インスタンス ストアを多くのホストで使用できるように、ホストとインスタンス ストアはプラグ可能です。通常、インスタンス ストアは特定のホストの使用パターンに合わせて最適化されますが、インスタンス ストアとホストはそれぞれのライフ サイクルで進化する場合があります。たとえば、**WorkflowServiceHost** と **SqlWorkflowInstanceStore** は、併せて効果的に使用できるように設計されています。独自のインスタンス ストアを作成して、ワークフロー サービス インスタンスのデータとメタデータを永続化したり、そのインスタンス ストアを **WorkflowServiceHost** と一緒に使用したりすることができます。たとえば、SQL Server データベースに保存するのではなく、OracleWorkflowInstanceStore を作成して、ワークフローに Oracle データベースに情報を永続化させることができます。  
+ <span data-ttu-id="67539-113">ホストで多くのインスタンス ストアを使用し、インスタンス ストアを多くのホストで使用できるように、ホストとインスタンス ストアはプラグ可能です。</span><span class="sxs-lookup"><span data-stu-id="67539-113">Hosts and instance stores are pluggable so that a host can be used with many instance stores, and an instance store can be used with many hosts.</span></span> <span data-ttu-id="67539-114">通常、インスタンス ストアは特定のホストの使用パターンに合わせて最適化されますが、インスタンス ストアとホストはそれぞれのライフ サイクルで進化する場合があります。</span><span class="sxs-lookup"><span data-stu-id="67539-114">An instance store is typically optimized for the usage patterns of a particular host, although the instance store and host may evolve on independent life cycles.</span></span> <span data-ttu-id="67539-115">たとえば、 **WorkflowServiceHost**と**SqlWorkflowInstanceStore**連携して動作するよう設計されています。</span><span class="sxs-lookup"><span data-stu-id="67539-115">For example, the **WorkflowServiceHost** and the **SqlWorkflowInstanceStore** are designed to work well together.</span></span> <span data-ttu-id="67539-116">ワークフロー サービス インスタンスのデータおよびメタデータを永続化を使用してそのインスタンス ストアを使用して、独自のインスタンス ストアを作成することができます、 **WorkflowServiceHost**です。</span><span class="sxs-lookup"><span data-stu-id="67539-116">You can create your own instance store to persist data and metadata of workflow service instances and use that instance store with the **WorkflowServiceHost**.</span></span> <span data-ttu-id="67539-117">たとえば、SQL Server データベースに保存するのではなく、OracleWorkflowInstanceStore を作成して、ワークフローに Oracle データベースに情報を永続化させることができます。</span><span class="sxs-lookup"><span data-stu-id="67539-117">For example, you can create an OracleWorkflowInstanceStore that lets workflows persist information into an Oracle database instead of saving them into a SQL Server database.</span></span>  
   
- 通常、ホストは保存されたオブジェクトを変更する機能を追加して拡張されます。たとえば、インスタンス永続化システムに、ワークフロー ホスト、「中断」操作をサポートする拡張機能、および SQL インスタンス ストアがあるとします。ワークフロー ホストは保存または読み込みなどの標準的なコマンドを送信して、インスタンス ストアに対してワークフローの保存または読み込みを行ったり、インスタンス ストアにワークフローを保存したりします。中断されたワークフロー インスタンスが読み込まれないように、中断の拡張機能によって、ワークフロー インスタンスの保存および読み込みを行うコマンドに追加のセマンティクスが追加されます。SQL インスタンス ストアの永続化プロバイダーは、ワークフロー インスタンスの保存と読み込み用のコマンドを理解し、SQL Server データベースの永続オブジェクトのテーブルを変更する適切なストアド プロシージャを呼び出して、コマンドを実装します。  
+ <span data-ttu-id="67539-118">通常、ホストは保存されたオブジェクトを変更する機能を追加して拡張されます。</span><span class="sxs-lookup"><span data-stu-id="67539-118">It is common for hosts to be extended with additional functionality that modifies the persisted objects.</span></span> <span data-ttu-id="67539-119">たとえば、インスタンス永続化システムには、ワークフローのホストでは、「中断」操作、および SQL インスタンス ストアをサポートする拡張機能があります。</span><span class="sxs-lookup"><span data-stu-id="67539-119">For example, an instance persistence system may have a workflow host, an extension that supports the "Suspend" operation, and an SQL instance store.</span></span>  <span data-ttu-id="67539-120">ワークフロー ホストは保存または読み込みなどの標準的なコマンドを送信して、インスタンス ストアに対してワークフローの保存または読み込みを行ったり、インスタンス ストアにワークフローを保存したりします。</span><span class="sxs-lookup"><span data-stu-id="67539-120">The workflow host might send a standard command such as Save or Load to save or load a workflow from an instance store or to save a workflow into an instance store.</span></span> <span data-ttu-id="67539-121">中断されたワークフロー インスタンスが読み込まれないように、中断の拡張機能によって、ワークフロー インスタンスの保存および読み込みを行うコマンドに追加のセマンティクスが追加されます。</span><span class="sxs-lookup"><span data-stu-id="67539-121">The suspend extension might add additional semantics to the commands for saving and loading workflow instances so that a suspended workflow instance cannot be loaded.</span></span> <span data-ttu-id="67539-122">SQL インスタンス ストアの永続化プロバイダーは、ワークフロー インスタンスの保存と読み込み用のコマンドを理解し、SQL Server データベースの永続オブジェクトのテーブルを変更する適切なストアド プロシージャを呼び出して、コマンドを実装します。</span><span class="sxs-lookup"><span data-stu-id="67539-122">The persistence provider for the SQL instance store understands the commands for saving and loading workflow instances, and implements the commands by calling appropriate stored procedures that change the tables of persistent objects in an SQL Server database.</span></span>  
   
- インスタンス ストア内では、ホストはインスタンスの所有者として動作します。ホストは、同時に複数のインスタンス ストアを持つ複数のインスタンスの所有者として動作します。ホストはインスタンスに関連付けられているインスタンス キーの GUID を提供します。インスタンス キーは、インスタンスを識別する一意の別名です。永続化システムは、ホストが要求したコマンドを実行するときに、インスタンスの所有者情報を作成、更新、および削除します。  
+ <span data-ttu-id="67539-123">インスタンス ストア内では、ホストはインスタンスの所有者として動作します。</span><span class="sxs-lookup"><span data-stu-id="67539-123">A host acts as an instance owner within an instance store.</span></span> <span data-ttu-id="67539-124">ホストは、同時に複数のインスタンス ストアを持つ複数のインスタンスの所有者として動作します。</span><span class="sxs-lookup"><span data-stu-id="67539-124">A host may act as more than one instance owner with more than one instance store at the same time.</span></span> <span data-ttu-id="67539-125">ホストはインスタンスに関連付けられているインスタンス キーの GUID を提供します。</span><span class="sxs-lookup"><span data-stu-id="67539-125">The host provides GUIDs for instance keys associated with the instances.</span></span> <span data-ttu-id="67539-126">インスタンス キーは、インスタンスを識別する一意の別名です。</span><span class="sxs-lookup"><span data-stu-id="67539-126">An instance key is a unique alias that identifies an instance.</span></span> <span data-ttu-id="67539-127">永続化システムは、ホストが要求したコマンドを実行するときに、インスタンスの所有者情報を作成、更新、および削除します。</span><span class="sxs-lookup"><span data-stu-id="67539-127">The persistence system creates, updates, and deletes instance owner information as it executes commands requested by hosts.</span></span>  
   
- ホストとインスタンス ストアとの対話に関連する重要な手順を次に示します。  
+ <span data-ttu-id="67539-128">ホストとインスタンス ストアとの対話に関連する重要な手順を次に示します。</span><span class="sxs-lookup"><span data-stu-id="67539-128">The following list contains the important steps involved in the host’s interaction with the instance store:</span></span>  
   
-1.  永続化プロバイダーから **InstanceStore** を取得します。  
+1.  <span data-ttu-id="67539-129">取得、 **InstanceStore**永続化プロバイダーからです。</span><span class="sxs-lookup"><span data-stu-id="67539-129">Obtain an **InstanceStore** from a persistence provider.</span></span>  
+
+2.  <span data-ttu-id="67539-130">呼び出してインスタンスへのハンドルを取得、<xref:System.Runtime.DurableInstancing.InstanceStore.CreateInstanceHandle%2A>メソッドを**InstanceStore**です。</span><span class="sxs-lookup"><span data-stu-id="67539-130">Obtain the handle to an instance by calling the <xref:System.Runtime.DurableInstancing.InstanceStore.CreateInstanceHandle%2A> method on the **InstanceStore**.</span></span>  
   
-2.  **InstanceStore** の<xref:System.Runtime.Persistence.InstanceStore.CreateInstanceHandle%2A> メソッドを呼び出して、インスタンスへのハンドルを取得します。  
+3.  <span data-ttu-id="67539-131">呼び出して、インスタンス ハンドルに対してコマンドを呼び出し、<xref:System.Runtime.DurableInstancing.InstanceStore.Execute%2A>メソッドを**InstanceStore**です。</span><span class="sxs-lookup"><span data-stu-id="67539-131">Invoke commands against the instance handle by calling the <xref:System.Runtime.DurableInstancing.InstanceStore.Execute%2A> method on the **InstanceStore**.</span></span>  
   
-3.  **InstanceStore** の<xref:System.Runtime.Persistence.InstanceStore.Execute%2A> メソッドを呼び出して、インスタンスのハンドルに対してコマンドを呼び出します。  
-  
-4.  **InstanceStore.Execute** から返された <xref:System.Runtime.Persistence.InstanceView> を確認して、コマンドの結果を判断します。
+4.  <span data-ttu-id="67539-132">確認、<xref:System.Runtime.DurableInstancing.InstanceView>によって返される**InstanceStore.Execute**コマンドの結果を確認します。</span><span class="sxs-lookup"><span data-stu-id="67539-132">Examine the <xref:System.Runtime.DurableInstancing.InstanceView> returned by **InstanceStore.Execute** to determine the results of the commands.</span></span>

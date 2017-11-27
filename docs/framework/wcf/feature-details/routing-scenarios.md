@@ -1,87 +1,89 @@
 ---
-title: "ルーティング シナリオ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ルーティング [WCF], シナリオ"
+title: "ルーティング シナリオ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: rounting [WCF], scenarios
 ms.assetid: ec22f308-665a-413e-9f94-7267cb665dab
-caps.latest.revision: 7
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 7ae79ad13b360a61e1d9b10f94dff5a37aae1d89
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ルーティング シナリオ
-ルーティング サービスは自由にカスタマイズできますが、まったく新しい構成を作成するときは、効率的なルーティング ロジックを設計するのが困難である場合があります。  しかし、ほとんどのルーティング サービスの構成で想定されている一般的なシナリオがいくつかあります。  これらのシナリオは、特定の構成に直接、適用できない場合もありますが、これらのシナリオに対応するルーティング サービスの構成方法を理解しておくことは、ルーティング サービスを理解する助けとなります。  
+# <a name="routing-scenarios"></a><span data-ttu-id="65195-102">ルーティング シナリオ</span><span class="sxs-lookup"><span data-stu-id="65195-102">Routing Scenarios</span></span>
+<span data-ttu-id="65195-103">ルーティング サービスは自由にカスタマイズできますが、まったく新しい構成を作成するときは、効率的なルーティング ロジックを設計するのが困難である場合があります。</span><span class="sxs-lookup"><span data-stu-id="65195-103">While the Routing Service is highly customizable, it can be a challenge to design efficient routing logic when creating a new configuration from scratch.</span></span>  <span data-ttu-id="65195-104">しかし、ほとんどのルーティング サービスの構成で想定されている一般的なシナリオがいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="65195-104">However, there are several common scenarios that most Routing Service configurations follow.</span></span> <span data-ttu-id="65195-105">これらのシナリオは、特定の構成に直接、適用できない場合もありますが、これらのシナリオに対応するルーティング サービスの構成方法を理解しておくことは、ルーティング サービスを理解する助けとなります。</span><span class="sxs-lookup"><span data-stu-id="65195-105">While these scenarios may not apply directly to your specific configuration, understanding how the Routing Service can be configured to handle these scenarios will aid you in understanding the Routing Service.</span></span>  
   
-## 一般的なシナリオ  
- ルーティング サービスの最も基本的な用法は、複数の送信先エンドポイントを集約してクライアント アプリケーションに公開するエンドポイントの数を減らし、その後にメッセージ フィルターを使用して、各メッセージを適切な送信先にルーティングすることです。  メッセージは、論理的または物理的な処理要件 \(特定のサービスで処理する必要がある種類のメッセージなど\)、または任意のビジネス ニーズ \(特定の送信元からのメッセージを優先的に処理するなど\) に基づいてルーティングされます。  次の表に、いくつかの一般的なシナリオと、それらが発生する場面の一覧を示します。  
+## <a name="common-scenarios"></a><span data-ttu-id="65195-106">一般的なシナリオ</span><span class="sxs-lookup"><span data-stu-id="65195-106">Common Scenarios</span></span>  
+ <span data-ttu-id="65195-107">ルーティング サービスの最も基本的な用法は、複数の送信先エンドポイントを集約してクライアント アプリケーションに公開するエンドポイントの数を減らし、その後にメッセージ フィルターを使用して、各メッセージを適切な送信先にルーティングすることです。</span><span class="sxs-lookup"><span data-stu-id="65195-107">The most basic use of the Routing Service is to aggregate multiple destination endpoints to reduce the number of endpoints exposed to the client applications, and then use message filters to route each message to the correct destination.</span></span> <span data-ttu-id="65195-108">メッセージは、論理的または物理的な処理要件 (特定のサービスで処理する必要がある種類のメッセージなど)、または任意のビジネス ニーズ (特定の送信元からのメッセージを優先的に処理するなど) に基づいてルーティングされます。</span><span class="sxs-lookup"><span data-stu-id="65195-108">Messages may be routed based on logical or physical processing requirements, such as a message type that must be processed by a specific service, or based on arbitrary business needs such as providing priority processing of messages from a specific source.</span></span> <span data-ttu-id="65195-109">次の表に、いくつかの一般的なシナリオと、それらが発生する場面の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="65195-109">The following table lists some of the common scenarios and when they are encountered:</span></span>  
   
-|シナリオ|使用する状況|  
-|----------|------------|  
-|サービスのバージョン管理|サービスの複数のバージョンをサポートする必要がある、または更新されたサービスを将来配置する可能性がある場合|  
-|サービス データのパーティション分割|複数のホストにわたってサービスをパーティション分割する必要がある場合|  
-|動的な更新|変化するサービス展開に対処するために、実行時のルーティング ロジックを動的に再構成する必要がある場合|  
-|マルチキャスト|1 つのメッセージを複数のエンドポイントに送信する必要がある場合|  
-|プロトコル ブリッジ|1 つのトランスポート プロトコルでメッセージを受信し、その送信先エンドポイントで別のプロトコルが使用されている場合|  
-|エラー処理|ネットワーク障害と通信障害に対する回復力を提供する必要がある場合|  
+|<span data-ttu-id="65195-110">シナリオ</span><span class="sxs-lookup"><span data-stu-id="65195-110">Scenario</span></span>|<span data-ttu-id="65195-111">使用する状況</span><span class="sxs-lookup"><span data-stu-id="65195-111">Use when</span></span>|  
+|--------------|--------------|  
+|<span data-ttu-id="65195-112">サービスのバージョン管理</span><span class="sxs-lookup"><span data-stu-id="65195-112">Service versioning</span></span>|<span data-ttu-id="65195-113">サービスの複数のバージョンをサポートする必要がある、または更新されたサービスを将来配置する可能性がある場合</span><span class="sxs-lookup"><span data-stu-id="65195-113">You need to support multiple versions of a service or may deploy an updated service in the future</span></span>|  
+|<span data-ttu-id="65195-114">サービス データのパーティション分割</span><span class="sxs-lookup"><span data-stu-id="65195-114">Service data partitioning</span></span>|<span data-ttu-id="65195-115">複数のホストにわたってサービスをパーティション分割する必要がある場合</span><span class="sxs-lookup"><span data-stu-id="65195-115">You must partition a service across multiple hosts</span></span>|  
+|<span data-ttu-id="65195-116">動的な更新</span><span class="sxs-lookup"><span data-stu-id="65195-116">Dynamic update</span></span>|<span data-ttu-id="65195-117">変化するサービス展開に対処するために、実行時のルーティング ロジックを動的に再構成する必要がある場合</span><span class="sxs-lookup"><span data-stu-id="65195-117">You must dynamically reconfigure routing logic at runtime to handle changing service deployments</span></span>|  
+|<span data-ttu-id="65195-118">マルチキャスト</span><span class="sxs-lookup"><span data-stu-id="65195-118">Multicast</span></span>|<span data-ttu-id="65195-119">1 つのメッセージを複数のエンドポイントに送信する必要がある場合</span><span class="sxs-lookup"><span data-stu-id="65195-119">You must send one message to multiple endpoints</span></span>|  
+|<span data-ttu-id="65195-120">プロトコル ブリッジ</span><span class="sxs-lookup"><span data-stu-id="65195-120">Protocol bridging</span></span>|<span data-ttu-id="65195-121">1 つのトランスポート プロトコルでメッセージを受信し、その送信先エンドポイントで別のプロトコルが使用されている場合</span><span class="sxs-lookup"><span data-stu-id="65195-121">You receive messages over one transport protocol, and the destination endpoint uses a different protocol</span></span>|  
+|<span data-ttu-id="65195-122">エラー処理</span><span class="sxs-lookup"><span data-stu-id="65195-122">Error Handling</span></span>|<span data-ttu-id="65195-123">ネットワーク障害と通信障害に対する回復力を提供する必要がある場合</span><span class="sxs-lookup"><span data-stu-id="65195-123">You need to provide resilience to network outages and communication failures</span></span>|  
   
 > [!NOTE]
->  ここに示したシナリオの多くは、特定のビジネス ニーズや処理要件に特化したものですが、実行時のルーティング ロジックの変更や、一時的なネットワーク障害および通信障害からの回復を可能にする、動的な更新のサポートの計画およびエラー処理の利用は、多くの場合、ベスト プラクティスと見なされます。  
+>  <span data-ttu-id="65195-124">ここに示したシナリオの多くは、特定のビジネス ニーズや処理要件に特化したものですが、実行時のルーティング ロジックの変更や、一時的なネットワーク障害および通信障害からの回復を可能にする、動的な更新のサポートの計画およびエラー処理の利用は、多くの場合、ベスト プラクティスと見なされます。</span><span class="sxs-lookup"><span data-stu-id="65195-124">While many of the scenarios presented are specific to certain business needs or processing requirements, planning to support dynamic updates and utilizing error handling can often be considered as best practices as they allow you to modify routing logic at runtime and recover from transient network and communication failures.</span></span>  
   
-### サービスのバージョン管理  
- 新しいバージョンのサービスを導入するときは、多くの場合、すべてのクライアントが新しいサービスに移行するまで、以前のバージョンを保持することが必要になります。  これは、サービスが完了までに数日、数週間、または数か月にさえ及ぶ長期の処理になる場合に特に重要です。  この場合、通常は、以前のバージョンのサービスに対して元のエンドポイントを維持したままで、新しいサービスに対して新しいエンドポイント アドレスを実装する必要があります。  
+### <a name="service-versioning"></a><span data-ttu-id="65195-125">サービスのバージョン管理</span><span class="sxs-lookup"><span data-stu-id="65195-125">Service Versioning</span></span>  
+ <span data-ttu-id="65195-126">新しいバージョンのサービスを導入するときは、多くの場合、すべてのクライアントが新しいサービスに移行するまで、以前のバージョンを保持することが必要になります。</span><span class="sxs-lookup"><span data-stu-id="65195-126">When introducing a new version of a service, you must often maintain the previous version until all clients have transitioned to the new service.</span></span> <span data-ttu-id="65195-127">これは、サービスが完了までに数日、数週間、または数か月にさえ及ぶ長期の処理になる場合に特に重要です。</span><span class="sxs-lookup"><span data-stu-id="65195-127">This is especially critical if the service is a long-running process that takes days, weeks, or even months to complete.</span></span> <span data-ttu-id="65195-128">この場合、通常は、以前のバージョンのサービスに対して元のエンドポイントを維持したままで、新しいサービスに対して新しいエンドポイント アドレスを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="65195-128">Usually this requires implementing a new endpoint address for the new service while maintaining the original endpoint for the previous version.</span></span>  
   
- ルーティング サービスを使用することで、クライアント アプリケーションからメッセージを受信するための 1 つのエンドポイントを公開し、メッセージの内容に基づいて、各メッセージを適切なバージョンのサービスにルーティングできます。  最も基本的な実装には、メッセージを処理するサービスのバージョンを示すカスタム ヘッダーをメッセージに追加することが含まれます。  ルーティング サービスでは、各メッセージにカスタム ヘッダーがあるかどうかを確認し、メッセージを適切な送信先エンドポイントにルーティングするために XPathMessageFilter を使用できます。  
+ <span data-ttu-id="65195-129">ルーティング サービスを使用することで、クライアント アプリケーションからメッセージを受信するための 1 つのエンドポイントを公開し、メッセージの内容に基づいて、各メッセージを適切なバージョンのサービスにルーティングできます。</span><span class="sxs-lookup"><span data-stu-id="65195-129">By using the Routing Service, you can expose one endpoint to receive messages from client applications and then route each message to the correct service version based on the message content.</span></span> <span data-ttu-id="65195-130">最も基本的な実装には、メッセージを処理するサービスのバージョンを示すカスタム ヘッダーをメッセージに追加することが含まれます。</span><span class="sxs-lookup"><span data-stu-id="65195-130">The most basic implementation involves adding a custom header to the message that indicates the version of the service that the message is to be processed by.</span></span> <span data-ttu-id="65195-131">ルーティング サービスでは、各メッセージにカスタム ヘッダーがあるかどうかを確認し、メッセージを適切な送信先エンドポイントにルーティングするために XPathMessageFilter を使用できます。</span><span class="sxs-lookup"><span data-stu-id="65195-131">The Routing Service can use the XPathMessageFilter to inspect each message for the presence of the custom header and route the message to the appropriate destination endpoint.</span></span>  
   
- サービスのバージョン管理構成を作成するために使用する手順については、「[サービスのバージョンを管理する方法](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)」を参照してください。  XPathMessageFilter を使用し、カスタム ヘッダーに基づいてメッセージをルーティングする方法の例については、「[高度なフィルター](../../../../docs/framework/wcf/samples/advanced-filters.md)」のサンプルを参照してください。  
+ <span data-ttu-id="65195-132">サービスのバージョン管理の構成を作成するために使用手順については、次を参照してください。[操作方法: サービスのバージョン管理](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)です。</span><span class="sxs-lookup"><span data-stu-id="65195-132">For the steps used to create a service versioning configuration, see [How To: Service Versioning](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md).</span></span> <span data-ttu-id="65195-133">カスタム ヘッダーに基づいてメッセージをルーティングする XPathMessageFilter を使用しての例は、次を参照してください。、[高度なフィルター](../../../../docs/framework/wcf/samples/advanced-filters.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="65195-133">For an example of using the XPathMessageFilter to route messages based on a custom header, see the [Advanced Filters](../../../../docs/framework/wcf/samples/advanced-filters.md) sample.</span></span>  
   
-### サービス データのパーティション分割  
- 分散環境を設計するときは、多くの場合、複数のコンピューターに処理負荷を分散することが望ましいとされています。これは、可用性を高め、個々のコンピューターの処理負荷を軽減し、メッセージの特定のサブセットに対して専用のリソースを提供するためです。  ルーティング サービスは負荷分散専用のソリューションに代わるものではありませんが、このサービスが内容に基づくルーティングを実施する機能は、特定の送信先に類似のメッセージをルーティングする方法として使用できます。  この例として、その他のクライアントから受信するメッセージとは別に、特定のクライアントからのメッセージを処理する必要がある場合が挙げられます。  
+### <a name="service-data-partitioning"></a><span data-ttu-id="65195-134">サービス データのパーティション分割</span><span class="sxs-lookup"><span data-stu-id="65195-134">Service Data Partitioning</span></span>  
+ <span data-ttu-id="65195-135">分散環境を設計するときは、多くの場合、複数のコンピューターに処理負荷を分散することが望ましいとされています。これは、可用性を高め、個々のコンピューターの処理負荷を軽減し、メッセージの特定のサブセットに対して専用のリソースを提供するためです。</span><span class="sxs-lookup"><span data-stu-id="65195-135">When designing a distributed environment, it is often desirable to spread processing load across multiple computers in order to provide high availability, decrease processing load on individual computers, or to provide dedicated resources for a specific subset of messages.</span></span> <span data-ttu-id="65195-136">ルーティング サービスは負荷分散専用のソリューションに代わるものではありませんが、このサービスが内容に基づくルーティングを実施する機能は、特定の送信先に類似のメッセージをルーティングする方法として使用できます。</span><span class="sxs-lookup"><span data-stu-id="65195-136">While the Routing Service does not replace a dedicated load balancing solution, its ability to perform content based routing can be used to route otherwise similar messages to specific destinations.</span></span> <span data-ttu-id="65195-137">この例として、その他のクライアントから受信するメッセージとは別に、特定のクライアントからのメッセージを処理する必要がある場合が挙げられます。</span><span class="sxs-lookup"><span data-stu-id="65195-137">For example, you may have a requirement to process messages from a specific client separately from messages received from other clients.</span></span>  
   
- サービス データのパーティション分割構成を作成するために使用する手順については、「[サービス データのパーティションを分割する方法](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)」を参照してください。  フィルターを使用し、URL およびカスタム ヘッダーに基づいてデータをパーティション分割する方法の例については、「[高度なフィルター](../../../../docs/framework/wcf/samples/advanced-filters.md)」のサンプルを参照してください。  
+ <span data-ttu-id="65195-138">手順については、サービスのデータをパーティション分割構成の作成に使用される、次を参照してください。[操作方法: サービス データのパーティション分割](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)です。</span><span class="sxs-lookup"><span data-stu-id="65195-138">For the steps used to create a service data partitioning configuration, see [How To: Service Data Partitioning](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md).</span></span> <span data-ttu-id="65195-139">フィルターを使用する URL とカスタム ヘッダーに基づいてデータのパーティション分割の例は、次を参照してください。、[高度なフィルター](../../../../docs/framework/wcf/samples/advanced-filters.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="65195-139">For an example of using filters to partition data based on URL and custom headers, see the [Advanced Filters](../../../../docs/framework/wcf/samples/advanced-filters.md) sample.</span></span>  
   
-### 動的ルーティング  
- 変化するビジネス ニーズを満たすために、ルーティング構成を変更した方がよい場合がよくあります。たとえば、新しいバージョンのサービスに対してルートを追加する、ルーティング条件を変更する、または、特定のメッセージに対してフィルターがルーティング先とする送信先エンドポイントを変更することが考えられます。  ルーティング サービスでは、<xref:System.ServiceModel.Routing.RoutingExtension> を使用して、新しい RoutingConfiguration を実行時に提供できるため、これが実現されます。  新しい構成は直ちに有効になりますが、ルーティング サービスで処理される任意の新しいセッションのみに適用されます。  
+### <a name="dynamic-routing"></a><span data-ttu-id="65195-140">動的ルーティング</span><span class="sxs-lookup"><span data-stu-id="65195-140">Dynamic Routing</span></span>  
+ <span data-ttu-id="65195-141">変化するビジネス ニーズを満たすために、ルーティング構成を変更した方がよい場合がよくあります。たとえば、新しいバージョンのサービスに対してルートを追加する、ルーティング条件を変更する、または、特定のメッセージに対してフィルターがルーティング先とする送信先エンドポイントを変更することが考えられます。</span><span class="sxs-lookup"><span data-stu-id="65195-141">Often it is desirable to modify the routing configuration to satisfy changing business needs, such as adding a route to a newer version of a service, changing routing criteria, or changing the destination endpoint a specific message that the filter routes to.</span></span> <span data-ttu-id="65195-142">ルーティング サービスでは、<xref:System.ServiceModel.Routing.RoutingExtension> を使用して、新しい RoutingConfiguration を実行時に提供できるため、これが実現されます。</span><span class="sxs-lookup"><span data-stu-id="65195-142">The Routing Service allows you to do this through the <xref:System.ServiceModel.Routing.RoutingExtension>, which allows you to provide a new RoutingConfiguration during run time.</span></span> <span data-ttu-id="65195-143">新しい構成は直ちに有効になりますが、ルーティング サービスで処理される任意の新しいセッションのみに適用されます。</span><span class="sxs-lookup"><span data-stu-id="65195-143">The new configuration takes effect immediately, but only affects any new sessions processed by the Routing Service.</span></span>  
   
- 動的ルーティングの実装に使用する手順については、「[動的な更新を行う方法](../../../../docs/framework/wcf/feature-details/how-to-dynamic-update.md)」を参照してください。  動的ルーティングの使用方法の例については、「[動的再構成](../../../../docs/framework/wcf/samples/dynamic-reconfiguration.md)」のサンプルを参照してください。  
+ <span data-ttu-id="65195-144">動的ルーティングを実装するために使用手順については、次を参照してください。[操作方法: 動的更新](../../../../docs/framework/wcf/feature-details/how-to-dynamic-update.md)です。</span><span class="sxs-lookup"><span data-stu-id="65195-144">For the steps used to implement dynamic routing, see [How To: Dynamic Update](../../../../docs/framework/wcf/feature-details/how-to-dynamic-update.md).</span></span> <span data-ttu-id="65195-145">動的ルーティングを使用しての例は、次を参照してください。、[動的再構成](../../../../docs/framework/wcf/samples/dynamic-reconfiguration.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="65195-145">For an example of using dynamic routing, see the [Dynamic Reconfiguration](../../../../docs/framework/wcf/samples/dynamic-reconfiguration.md) sample.</span></span>  
   
-### マルチキャスト  
- メッセージをルーティングするときに、通常は、各メッセージを 1 つの特定の送信先エンドポイントにルーティングします。  しかし、メッセージのコピーを複数の送信先エンドポイントにルーティングする必要がある場合もあります。  マルチキャスト ルーティングを実行するには、次の条件を満たしている必要があります。  
+### <a name="multicast"></a><span data-ttu-id="65195-146">マルチキャスト</span><span class="sxs-lookup"><span data-stu-id="65195-146">Multicast</span></span>  
+ <span data-ttu-id="65195-147">メッセージをルーティングするときに、通常は、各メッセージを 1 つの特定の送信先エンドポイントにルーティングします。</span><span class="sxs-lookup"><span data-stu-id="65195-147">When routing messages, usually you routing each message to one specific destination endpoint.</span></span>  <span data-ttu-id="65195-148">しかし、メッセージのコピーを複数の送信先エンドポイントにルーティングする必要がある場合もあります。</span><span class="sxs-lookup"><span data-stu-id="65195-148">However, you may occasionally need to route a copy of the message to multiple destination endpoints.</span></span> <span data-ttu-id="65195-149">マルチキャスト ルーティングを実行するには、次の条件を満たしている必要があります。</span><span class="sxs-lookup"><span data-stu-id="65195-149">To perform multicast routing, the following conditions must be true:</span></span>  
   
--   要求\/応答では、要求への応答時にクライアント アプリケーションが受信できるのが 1 つの応答のみであることが要求されるため、チャネル形状が要求\/応答でない \(一方向または二重のどちらでもよい\) ことが必要である。  
+-   <span data-ttu-id="65195-150">要求/応答では、要求への応答時にクライアント アプリケーションが受信できるのが 1 つの応答のみであることが要求されるため、チャネル形状が要求/応答でない (一方向または二重のどちらでもよい) ことが必要である。</span><span class="sxs-lookup"><span data-stu-id="65195-150">The channel shape must not be request-reply (though it may be one-way or duplex,) because request-reply mandates that only one reply can be received by the client application in response to the request.</span></span>  
   
--   複数のフィルターは、メッセージの評価時に **true** を返す必要がある。  
+-   <span data-ttu-id="65195-151">複数のフィルターを返す必要があります**true**メッセージを評価するときにします。</span><span class="sxs-lookup"><span data-stu-id="65195-151">Multiple filters must return **true** when evaluating the message.</span></span>  
   
- これらの条件を満たす場合、true を返すフィルターと関連付けられた各送信先エンドポイントは、メッセージのコピーを受信します。  
+ <span data-ttu-id="65195-152">これらの条件を満たす場合、true を返すフィルターと関連付けられた各送信先エンドポイントは、メッセージのコピーを受信します。</span><span class="sxs-lookup"><span data-stu-id="65195-152">If these conditions are met, each destination endpoint that is associated with a filter that returns true will receive a copy of the message.</span></span>  
   
-### プロトコル ブリッジ  
- メッセージを異種の SOAP プロトコル間でルーティングするときに、ルーティング サービスは、WCF API を使用して、1 つのプロトコルから他のプロトコルにメッセージを変換します。  この処理は、ルーティング サービスが公開するサービス エンドポイントで、メッセージのルーティング先のクライアント エンドポイントとは異なるプロトコルが使用されると自動的に実行されます。  使用されているプロトコルが標準ではない場合は、この動作を無効にすることができますが、ブリッジのための独自のコードを提供する必要があります。  
+### <a name="protocol-bridging"></a><span data-ttu-id="65195-153">プロトコル ブリッジ</span><span class="sxs-lookup"><span data-stu-id="65195-153">Protocol Bridging</span></span>  
+ <span data-ttu-id="65195-154">メッセージを異種の SOAP プロトコル間でルーティングするときに、ルーティング サービスは、WCF API を使用して、1 つのプロトコルから他のプロトコルにメッセージを変換します。</span><span class="sxs-lookup"><span data-stu-id="65195-154">When routing messages between dissimilar SOAP protocols, the Routing Service uses WCF APIs to convert the message from one protocol to the other.</span></span> <span data-ttu-id="65195-155">この処理は、ルーティング サービスが公開するサービス エンドポイントで、メッセージのルーティング先のクライアント エンドポイントとは異なるプロトコルが使用されると自動的に実行されます。</span><span class="sxs-lookup"><span data-stu-id="65195-155">This occurs automatically when the service endpoint(s) exposed by the Routing Service use a different protocol than the client endpoint(s) that messages are routed to.</span></span> <span data-ttu-id="65195-156">使用されているプロトコルが標準ではない場合は、この動作を無効にすることができますが、ブリッジのための独自のコードを提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="65195-156">It is possible to disable this behavior if the protocols in use are not standard; however, you must then provide your own bridging code.</span></span>  
   
- .  ルーティング サービスを使用してプロトコル間でメッセージを変換する方法の例については、「[ブリッジとエラー処理](../../../../docs/framework/wcf/samples/bridging-and-error-handling.md)」のサンプルを参照してください。  
+ <span data-ttu-id="65195-157">。</span><span class="sxs-lookup"><span data-stu-id="65195-157">.</span></span> <span data-ttu-id="65195-158">サービスを使用して、ルーティング プロトコル間でメッセージを変換する例は、次を参照してください。、[ブリッジおよびエラー処理](../../../../docs/framework/wcf/samples/bridging-and-error-handling.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="65195-158">For an example of using the Routing Service to translate messages between protocols, see the [Bridging and Error Handling](../../../../docs/framework/wcf/samples/bridging-and-error-handling.md) sample.</span></span>  
   
-### エラー処理  
- 分散環境では、一時的なネットワークまたは通信の障害が発生することは少なくありません。  ルーティング サービスなどの中継局サービスがない場合は、このような障害処理の負担がクライアント アプリケーションにかかることになります。  ネットワークまたは通信の障害発生時に再試行するための特定のロジックと、代替の場所に関する情報がクライアント アプリケーションに含まれていない場合は、メッセージが送信先サービスで正常に処理されるまでに、ユーザーがメッセージを複数回送信することが必要になる可能性があります。  これは、信頼性が低いと見なされる可能性があるため、アプリケーションの顧客満足度の低下につながります。  
+### <a name="error-handling"></a><span data-ttu-id="65195-159">エラー処理</span><span class="sxs-lookup"><span data-stu-id="65195-159">Error Handling</span></span>  
+ <span data-ttu-id="65195-160">分散環境では、一時的なネットワークまたは通信の障害が発生することは少なくありません。</span><span class="sxs-lookup"><span data-stu-id="65195-160">In a distributed environment, it is not uncommon to encounter transient network or communication failures.</span></span> <span data-ttu-id="65195-161">ルーティング サービスなどの中継局サービスがない場合は、このような障害処理の負担がクライアント アプリケーションにかかることになります。</span><span class="sxs-lookup"><span data-stu-id="65195-161">Without an intermediary service such as the Routing Service, the burden of handling such failures falls on the client application.</span></span> <span data-ttu-id="65195-162">ネットワークまたは通信の障害発生時に再試行するための特定のロジックと、代替の場所に関する情報がクライアント アプリケーションに含まれていない場合は、メッセージが送信先サービスで正常に処理されるまでに、ユーザーがメッセージを複数回送信することが必要になる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="65195-162">If the client application does not include specific logic to retry in the event of network or communication failures and knowledge of alternate locations, the user may encounter scenarios where a message must be submitted multiple times before it is successfully processed by the destination service.</span></span> <span data-ttu-id="65195-163">これは、信頼性が低いと見なされる可能性があるため、アプリケーションの顧客満足度の低下につながります。</span><span class="sxs-lookup"><span data-stu-id="65195-163">This can lead to customer dissatisfaction with the application, as it may be perceived as unreliable.</span></span>  
   
- ルーティング サービスは、ネットワークまたは通信関連の障害発生時のメッセージに対して堅牢なエラー処理機能を提供することで、このシナリオを対処しようとします。  可能な送信先エンドポイントのリストを作成し、このリストを各メッセージ フィルターと関連付けることで、設定可能な送信先が 1 つのみであるために発生する単一障害点を排除します。  障害が発生した場合、ルーティング サービスは、メッセージが配信されるか、通信以外の障害が発生するか、またはすべてのエンドポイントに対する試行が終わるまで、次のエンドポイントにメッセージを配信しようとします。  
+ <span data-ttu-id="65195-164">ルーティング サービスは、ネットワークまたは通信関連の障害発生時のメッセージに対して堅牢なエラー処理機能を提供することで、このシナリオを対処しようとします。</span><span class="sxs-lookup"><span data-stu-id="65195-164">The Routing Service attempts to remedy this scenario by providing robust error handling capabilities for messages that encounter network or communication-related failures.</span></span> <span data-ttu-id="65195-165">可能な送信先エンドポイントのリストを作成し、このリストを各メッセージ フィルターと関連付けることで、設定可能な送信先が 1 つのみであるために発生する単一障害点を排除します。</span><span class="sxs-lookup"><span data-stu-id="65195-165">By creating a list of possible destination endpoints and associating this list with each message filter, you remove the single point of failure incurred by having only one possible destination.</span></span> <span data-ttu-id="65195-166">障害が発生した場合、ルーティング サービスは、メッセージが配信されるか、通信以外の障害が発生するか、またはすべてのエンドポイントに対する試行が終わるまで、次のエンドポイントにメッセージを配信しようとします。</span><span class="sxs-lookup"><span data-stu-id="65195-166">In the event of a failure, the Routing Service will attempt to deliver the message to the next endpoint in the list until the message has been delivered, a non-communication failure occurs, or all endpoints have been exhausted.</span></span>  
   
- エラー処理の構成に使用する手順については、「[エラーを処理する方法](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)」を参照してください。  エラー処理の実装例については、「[ブリッジとエラー処理](../../../../docs/framework/wcf/samples/bridging-and-error-handling.md) および [高度なエラー処理](../../../../docs/framework/wcf/samples/advanced-error-handling.md)」のサンプルを参照してください。  
+ <span data-ttu-id="65195-167">エラー処理の構成に使用する手順については、次を参照してください。 [How To: Error Handling](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)です。</span><span class="sxs-lookup"><span data-stu-id="65195-167">For the steps used to configure error handling, see [How To: Error Handling](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md).</span></span> <span data-ttu-id="65195-168">エラー処理の実装の例は、次を参照してください。、[ブリッジおよびエラー処理](../../../../docs/framework/wcf/samples/bridging-and-error-handling.md)と[エラー処理の高度な](../../../../docs/framework/wcf/samples/advanced-error-handling.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="65195-168">For an example of implementing error handling, see the [Bridging and Error Handling](../../../../docs/framework/wcf/samples/bridging-and-error-handling.md) and [Advanced Error Handling](../../../../docs/framework/wcf/samples/advanced-error-handling.md) samples.</span></span>  
   
-### このセクションの内容  
- [サービスのバージョンを管理する方法](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)  
+### <a name="in-this-section"></a><span data-ttu-id="65195-169">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="65195-169">In This Section</span></span>  
+ [<span data-ttu-id="65195-170">方法: サービスのバージョン管理</span><span class="sxs-lookup"><span data-stu-id="65195-170">How To: Service Versioning</span></span>](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)  
   
- [サービス データのパーティションを分割する方法](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)  
+ [<span data-ttu-id="65195-171">サービス データのパーティション分割する方法</span><span class="sxs-lookup"><span data-stu-id="65195-171">How To: Service Data Partitioning</span></span>](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)  
   
- [動的な更新を行う方法](../../../../docs/framework/wcf/feature-details/how-to-dynamic-update.md)  
+ [<span data-ttu-id="65195-172">方法: 動的更新</span><span class="sxs-lookup"><span data-stu-id="65195-172">How To: Dynamic Update</span></span>](../../../../docs/framework/wcf/feature-details/how-to-dynamic-update.md)  
   
- [エラーを処理する方法](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)  
+ [<span data-ttu-id="65195-173">方法: エラー処理</span><span class="sxs-lookup"><span data-stu-id="65195-173">How To: Error Handling</span></span>](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)  
   
-## 参照  
- [ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)
+## <a name="see-also"></a><span data-ttu-id="65195-174">関連項目</span><span class="sxs-lookup"><span data-stu-id="65195-174">See Also</span></span>  
+ [<span data-ttu-id="65195-175">ルーティングの概要</span><span class="sxs-lookup"><span data-stu-id="65195-175">Routing Introduction</span></span>](../../../../docs/framework/wcf/feature-details/routing-introduction.md)

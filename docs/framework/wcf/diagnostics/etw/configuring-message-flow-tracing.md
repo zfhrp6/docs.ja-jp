@@ -1,64 +1,62 @@
 ---
-title: "メッセージ フローのトレースの構成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "メッセージ フローのトレースの構成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 15571ca2-bee2-47fb-ba10-fcbc09152ad0
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 77a7148a0fc96c4a043a06fbfac7b139c7720d4f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# メッセージ フローのトレースの構成
-[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] のアクティビティ トレースが有効な場合は、エンド ツー エンド アクティビティ ID が、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] スタック全体で論理アクティビティに割り当てられます。  [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] では、この機能の高パフォーマンス バージョンが導入されており、"メッセージ フローのトレース" と呼ばれる Event Tracing for Windows \(ETW\) と連携します。  この機能が有効な場合は、エンド ツー エンド アクティビティ ID が受信メッセージから取得され \(空の場合は割り当てられ\)、チャネルによってメッセージがデコードされた後に生成されたすべてのトレース イベントに伝達されます。  ユーザーはこの機能を使用して、デコード後に、異なるサービスから取得したトレース ログでメッセージ フローを再構築できます。  
+# <a name="configuring-message-flow-tracing"></a><span data-ttu-id="a8c1e-102">メッセージ フローのトレースの構成</span><span class="sxs-lookup"><span data-stu-id="a8c1e-102">Configuring Message Flow Tracing</span></span>
+<span data-ttu-id="a8c1e-103">[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] のアクティビティ トレースが有効な場合は、エンド ツー エンド アクティビティ ID が、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] スタック全体で論理アクティビティに割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-103">When [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] activity tracing is enabled, End-To-End Activity IDs are assigned to logical activities throughout the [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] stack.</span></span> <span data-ttu-id="a8c1e-104">[!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] では、この機能の高パフォーマンス バージョンが導入されており、"メッセージ フローのトレース" と呼ばれる Event Tracing for Windows (ETW) と連携します。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-104">In [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)], there is now a higher performance version of this feature that works with Event Tracing for Windows (ETW) called message flow tracing.</span></span> <span data-ttu-id="a8c1e-105">この機能が有効な場合は、エンド ツー エンド アクティビティ ID が受信メッセージから取得され (空の場合は割り当てられ)、チャネルによってメッセージがデコードされた後に生成されたすべてのトレース イベントに伝達されます。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-105">When enabled, End-To-End activity IDs are taken from (or assigned to if empty) incoming messages and are propagated to all tracing events that are emitted after the message has been decoded by the channel.</span></span> <span data-ttu-id="a8c1e-106">ユーザーはこの機能を使用して、デコード後に、異なるサービスから取得したトレース ログでメッセージ フローを再構築できます。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-106">Customers can use this feature to reconstruct message flows with trace logs from different services after decoding.</span></span>  
   
- トレースは、アプリケーションで問題が検出された後に有効にし、その問題が解決された後は無効にすることができます。  
+ <span data-ttu-id="a8c1e-107">トレースは、アプリケーションで問題が検出された後に有効にし、その問題が解決された後は無効にすることができます。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-107">Tracing can be enabled after a problem is detected with the application and then disabled once the problem is resolved.</span></span>  
   
-## トレースの有効化  
- メッセージ フローのトレースを有効にするには、次の例に示すように、.NET Framework 4 の `messageFlowTracing` 構成要素を `true` に設定します。  
+## <a name="enabling-tracing"></a><span data-ttu-id="a8c1e-108">トレースの有効化</span><span class="sxs-lookup"><span data-stu-id="a8c1e-108">Enabling Tracing</span></span>  
+ <span data-ttu-id="a8c1e-109">メッセージ フローのトレースを有効にするには、次の例に示すように、.NET Framework 4 の `messageFlowTracing` 構成要素を `true` に設定します。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-109">You can enable message flow tracing by setting the .NET Framework 4 `messageFlowTracing` configuration element to `true`, as shown in the following example.</span></span>  
   
-```  
+```xml  
 <system.servicemodel>  
   <diagnostics>  
     <endToEndTracing propagateActivity="true" messageFlowTracing="true" />  
   </diagnostics>  
 </system.servicemodel>  
-  
 ```  
   
 > [!NOTE]
->  `endToEndTracing` 構成要素は Web.config ファイル内にあるため、ETW と同じ方法で動的に構成することはできません。  `endToEndTracing` 構成要素を有効にするには、アプリケーションをリサイクルする必要があります。  
+>  <span data-ttu-id="a8c1e-110">`endToEndTracing` 構成要素は Web.config ファイル内にあるため、ETW と同じ方法で動的に構成することはできません。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-110">Because the `endToEndTracing` configuration element resides in a Web.config file, it cannot be dynamically configured in the same way as ETW.</span></span> <span data-ttu-id="a8c1e-111">`endToEndTracing` 構成要素を有効にするには、アプリケーションをリサイクルする必要があります。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-111">For the `endToEndTracing` configuration element to take effect, the application must be recycled.</span></span>  
   
- アクティビティはアクティビティ ID と呼ばれる識別子の交換によって関連付けられます。  この識別子は GUID で、System.Diagnostics.CorrelationManager クラスによって生成されます。  System.Diagnostics.Trace.CorrelationManager.ActivityID を操作する場合は、実行の制御が WCF コードに転送を返すときに値を元の値に設定するようにしてください。  また、非同期 WCF プログラミング モデルを使用する場合は、System.Diagnostics.Trace.CorrelationManager.ActivityID がスレッド間で転送されるようにしてください。  
+ <span data-ttu-id="a8c1e-112">アクティビティはアクティビティ ID と呼ばれる識別子の交換によって関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-112">Activities are correlated by the interchange of an identifier called the activity ID.</span></span> <span data-ttu-id="a8c1e-113">この識別子は GUID で、System.Diagnostics.CorrelationManager クラスによって生成されます。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-113">This identifier is a GUID, and is generated by the System.Diagnostics.CorrelationManager class.</span></span> <span data-ttu-id="a8c1e-114">System.Diagnostics.Trace.CorrelationManager.ActivityID を操作する場合は、実行の制御が WCF コードに転送を返すときに値を元の値に設定するようにしてください。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-114">If you manipulate System.Diagnostics.Trace.CorrelationManager.ActivityID, ensure that the value is set to original when execution control transfers back to WCF code.</span></span>  <span data-ttu-id="a8c1e-115">また、非同期 WCF プログラミング モデルを使用する場合は、System.Diagnostics.Trace.CorrelationManager.ActivityID がスレッド間で転送されるようにしてください。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-115">Also, if you use an asynchronous WCF programming model ensure that System.Diagnostics.Trace.CorrelationManager.ActivityID is transferred between the threads.</span></span>  
   
-## メッセージ フローのトレース REST サービス  
- メッセージ フローのトレースでは、要求をエンドツーエンドでトレースできます。  SOAP ベースのサービスでは、アクティビティ ID は、SOAP メッセージのヘッダー内で送信されます。  REST 要求にはこのヘッダーは含まれないため、代わりに、特殊な HTTP イベント ヘッダーが使用されます。  次のコード スニペットには、アクティビティ ID をプログラムで取得する方法が示されています。  
+## <a name="message-flow-tracing-and-rest-services"></a><span data-ttu-id="a8c1e-116">メッセージ フローのトレース REST サービス</span><span class="sxs-lookup"><span data-stu-id="a8c1e-116">Message Flow Tracing and REST Services</span></span>  
+ <span data-ttu-id="a8c1e-117">メッセージ フローのトレースでは、要求をエンドツーエンドでトレースできます。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-117">Message flow tracing allows you to trace a request end to end.</span></span>  <span data-ttu-id="a8c1e-118">SOAP ベースのサービスでは、アクティビティ ID は、SOAP メッセージのヘッダー内で送信されます。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-118">With SOAP-based services an Activity ID is sent in a SOAP message header.</span></span> <span data-ttu-id="a8c1e-119">REST 要求にはこのヘッダーは含まれないため、代わりに、特殊な HTTP イベント ヘッダーが使用されます。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-119">REST requests do not contain this header so a special HTTP event header is used instead.</span></span> <span data-ttu-id="a8c1e-120">次のコード スニペットには、アクティビティ ID をプログラムで取得する方法が示されています。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-120">The following code snippet shows how you can programmatically retrieve the Activity ID value:</span></span>  
   
-```vb  
-  
-Object output = null;                    
-if (OperationContext.Current.IncomingMessageProperties.TryGetValue(HttpRequestMessageProperty.Name, out output))  
-{  
-   HttpRequestMessageProperty httpHeaders = output as HttpRequestMessageProperty;       
-   // Retrieve the Activity Id from the HTTP header    string e2eId = httpHeaders.Headers["E2EActivity"];  
-   // ...  
-}  
-  
-```  
-  
- 次のコードを使用するとプログラムでヘッダーを追加できます。  
+```csharp
+Object output = null;
+if (OperationContext.Current.IncomingMessageProperties.TryGetValue(HttpRequestMessageProperty.Name, out output))
+{
+   HttpRequestMessageProperty httpHeaders = output as HttpRequestMessageProperty;
+   // Retrieve the Activity Id from the HTTP header    string e2eId = httpHeaders.Headers["E2EActivity"];
+   // ...
+}
+```
+
+ <span data-ttu-id="a8c1e-121">次のコードを使用するとプログラムでヘッダーを追加できます。</span><span class="sxs-lookup"><span data-stu-id="a8c1e-121">You can programmatically add the header using the following code:</span></span>  
   
 ```csharp  
-  
 HttpContent content = new StreamContent(contentStream);  
 Guid correlation = Guid.NewGuid();  
 content.Headers.Add("E2EActivity", Convert.ToBase64String(correlation.ToByteArray()));  
-  
 ```

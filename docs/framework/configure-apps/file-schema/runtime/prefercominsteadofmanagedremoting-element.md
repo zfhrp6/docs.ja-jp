@@ -1,77 +1,79 @@
 ---
-title: "&lt;PreferComInsteadOfManagedRemoting&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<PreferComInsteadOfManagedRemoting> 要素"
-  - "PreferComInsteadOfManagedRemoting 要素"
+title: "&lt;PreferComInsteadOfManagedRemoting&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- <PreferComInsteadOfManagedRemoting> element
+- PreferComInsteadOfManagedRemoting element
 ms.assetid: a279a42a-c415-4e79-88cf-64244ebda613
-caps.latest.revision: 17
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 7aed6baa227b2bdf90c26f02d38ee67c1ffbbda1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;PreferComInsteadOfManagedRemoting&gt; 要素
-アプリケーション ドメインの境界を越えるすべての呼び出しについて、リモート処理ではなく COM 相互運用機能をランタイムで使用するかどうかを指定します。  
+# <a name="ltprefercominsteadofmanagedremotinggt-element"></a><span data-ttu-id="d711f-102">&lt;PreferComInsteadOfManagedRemoting&gt;要素</span><span class="sxs-lookup"><span data-stu-id="d711f-102">&lt;PreferComInsteadOfManagedRemoting&gt; Element</span></span>
+<span data-ttu-id="d711f-103">かどうか、ランタイムを使用して COM 相互運用機能リモート処理ではなく呼び出しは、すべてのアプリケーション ドメインの境界を越えてを指定します。</span><span class="sxs-lookup"><span data-stu-id="d711f-103">Specifies whether the runtime will use COM interop instead of remoting for all calls across application domain boundaries.</span></span>  
   
-## 構文  
+ <span data-ttu-id="d711f-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="d711f-104">\<configuration></span></span>  
+<span data-ttu-id="d711f-105">\<ランタイム ></span><span class="sxs-lookup"><span data-stu-id="d711f-105">\<runtime></span></span>  
+<span data-ttu-id="d711f-106">\<PreferComInsteadOfManagedRemoting ></span><span class="sxs-lookup"><span data-stu-id="d711f-106">\<PreferComInsteadOfManagedRemoting></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="d711f-107">構文</span><span class="sxs-lookup"><span data-stu-id="d711f-107">Syntax</span></span>  
+  
+```xml  
 <PreferComInsteadOfManagedRemoting enabled="true|false"/>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="d711f-108">属性および要素</span><span class="sxs-lookup"><span data-stu-id="d711f-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="d711f-109">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="d711f-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="d711f-110">属性</span><span class="sxs-lookup"><span data-stu-id="d711f-110">Attributes</span></span>  
   
-|Attribute|説明|  
-|---------------|--------|  
-|`enabled`|必須の属性です。<br /><br /> アプリケーション ドメインの境界を越える場合に、リモート処理ではなく COM 相互運用機能をランタイムで使用するかどうかを示します。|  
+|<span data-ttu-id="d711f-111">属性</span><span class="sxs-lookup"><span data-stu-id="d711f-111">Attribute</span></span>|<span data-ttu-id="d711f-112">説明</span><span class="sxs-lookup"><span data-stu-id="d711f-112">Description</span></span>|  
+|---------------|-----------------|  
+|`enabled`|<span data-ttu-id="d711f-113">必須の属性です。</span><span class="sxs-lookup"><span data-stu-id="d711f-113">Required attribute.</span></span><br /><br /> <span data-ttu-id="d711f-114">ランタイムは COM 相互運用機能のリモート処理ではなくアプリケーション ドメインの境界を越えて使用するかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="d711f-114">Indicates whether the runtime will use COM interop instead of remoting across application domain boundaries.</span></span>|  
   
-## enabled 属性  
+## <a name="enabled-attribute"></a><span data-ttu-id="d711f-115">enabled 属性</span><span class="sxs-lookup"><span data-stu-id="d711f-115">enabled Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|`false`|ランタイムは、アプリケーション ドメインの境界を越える場合にリモート処理を使用します。  これは、既定の設定です。|  
-|`true`|ランタイムは、アプリケーション ドメインの境界を越える場合に COM 相互運用機能を使用します。|  
+|<span data-ttu-id="d711f-116">値</span><span class="sxs-lookup"><span data-stu-id="d711f-116">Value</span></span>|<span data-ttu-id="d711f-117">説明</span><span class="sxs-lookup"><span data-stu-id="d711f-117">Description</span></span>|  
+|-----------|-----------------|  
+|`false`|<span data-ttu-id="d711f-118">ランタイムは、アプリケーション ドメインの境界を越えて、リモート処理を使用します。</span><span class="sxs-lookup"><span data-stu-id="d711f-118">The runtime will use remoting across application domain boundaries.</span></span> <span data-ttu-id="d711f-119">既定値です。</span><span class="sxs-lookup"><span data-stu-id="d711f-119">This is the default.</span></span>|  
+|`true`|<span data-ttu-id="d711f-120">ランタイムは、アプリケーション ドメインの境界を越えて COM 相互運用機能を使用します。</span><span class="sxs-lookup"><span data-stu-id="d711f-120">The runtime will use COM interop across application domain boundaries.</span></span>|  
   
-### 子要素  
- なし。  
+### <a name="child-elements"></a><span data-ttu-id="d711f-121">子要素</span><span class="sxs-lookup"><span data-stu-id="d711f-121">Child Elements</span></span>  
+ <span data-ttu-id="d711f-122">なし。</span><span class="sxs-lookup"><span data-stu-id="d711f-122">None.</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="d711f-123">親要素</span><span class="sxs-lookup"><span data-stu-id="d711f-123">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
-|`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
+|<span data-ttu-id="d711f-124">要素</span><span class="sxs-lookup"><span data-stu-id="d711f-124">Element</span></span>|<span data-ttu-id="d711f-125">説明</span><span class="sxs-lookup"><span data-stu-id="d711f-125">Description</span></span>|  
+|-------------|-----------------|  
+|`configuration`|<span data-ttu-id="d711f-126">共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。</span><span class="sxs-lookup"><span data-stu-id="d711f-126">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`runtime`|<span data-ttu-id="d711f-127">アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="d711f-127">Contains information about assembly binding and garbage collection.</span></span>|  
   
-## 解説  
- `enabled` 属性を `true` に設定した場合、ランタイムの動作は次のようになります。  
+## <a name="remarks"></a><span data-ttu-id="d711f-128">コメント</span><span class="sxs-lookup"><span data-stu-id="d711f-128">Remarks</span></span>  
+ <span data-ttu-id="d711f-129">設定すると、`enabled`属性を`true`ランタイムが次のように動作します。</span><span class="sxs-lookup"><span data-stu-id="d711f-129">When you set the `enabled` attribute to `true`, the runtime behaves as follows:</span></span>  
   
--   ランタイムは [IManagedObject](../../../../../ocs/framework/unmanaged-api/hosting/imanagedobject-interface.md) インターフェイスをインターフェイスが [IUnknown](http://go.microsoft.com/fwlink/?LinkId=148003) COM インターフェイスを通じてドメインに入ったとき求めません [IUnknown::QueryInterface](http://go.microsoft.com/fwlink/?LinkID=144867)。  代わりに、オブジェクトを囲む[ランタイム呼び出し可能ラッパー](../../../../../docs/framework/interop/runtime-callable-wrapper.md) \(RCW: Runtime Callable Wrapper\) を構築します。  
+-   <span data-ttu-id="d711f-130">ランタイムは呼び出しません[iunknown::queryinterface](http://go.microsoft.com/fwlink/?LinkID=144867)の[IManagedObject](../../../../../docs/framework/unmanaged-api/hosting/imanagedobject-interface.md)インターフェイスの場合、 [IUnknown](http://go.microsoft.com/fwlink/?LinkId=148003)インターフェイスが COM インターフェイスを使用してドメインを入力します。</span><span class="sxs-lookup"><span data-stu-id="d711f-130">The runtime does not call [IUnknown::QueryInterface](http://go.microsoft.com/fwlink/?LinkID=144867) for an [IManagedObject](../../../../../docs/framework/unmanaged-api/hosting/imanagedobject-interface.md) interface when an [IUnknown](http://go.microsoft.com/fwlink/?LinkId=148003) interface enters the domain through a COM interface.</span></span> <span data-ttu-id="d711f-131">代わりに、構築、[ランタイム呼び出し可能ラッパー](../../../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW) オブジェクトの周りです。</span><span class="sxs-lookup"><span data-stu-id="d711f-131">Instead, it constructs a [Runtime Callable Wrapper](../../../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW) around the object.</span></span>  
   
--   このドメインで生成された [COM 呼び出し可能ラッパー](../../../../../docs/framework/interop/com-callable-wrapper.md) \(CCW: COM Callable Wrapper\) の [IManagedObject](../../../../../ocs/framework/unmanaged-api/hosting/imanagedobject-interface.md) インターフェイスの `QueryInterface` 呼び出しを受け取った場合、ランタイムは E\_NOINTERFACE を返します。  
+-   <span data-ttu-id="d711f-132">受信すると、ランタイムは E_NOINTERFACE を返します、`QueryInterface`を呼び出して、 [IManagedObject](../../../../../docs/framework/unmanaged-api/hosting/imanagedobject-interface.md)のいずれかのインターフェイス[COM 呼び出し可能ラッパー](../../../../../docs/framework/interop/com-callable-wrapper.md) (CCW) このドメインで作成されました。</span><span class="sxs-lookup"><span data-stu-id="d711f-132">The runtime returns E_NOINTERFACE when it receives a `QueryInterface` call for an [IManagedObject](../../../../../docs/framework/unmanaged-api/hosting/imanagedobject-interface.md) interface for any [COM Callable Wrapper](../../../../../docs/framework/interop/com-callable-wrapper.md) (CCW) that has been created in this domain.</span></span>  
   
- この 2 つの動作によって、アプリケーション ドメインの境界を越えるマネージ オブジェクト間での COM インターフェイスを介する呼び出しは、すべてリモート処理ではなく COM と COM 相互運用機能を使用するようになります。  
+ <span data-ttu-id="d711f-133">これら 2 つの動作では、COM 経由でのすべての呼び出しがアプリケーション ドメインの境界を使用して COM を越えてマネージ オブジェクトとリモート処理ではなく COM 相互運用機能間でやり取りすることを確認します。</span><span class="sxs-lookup"><span data-stu-id="d711f-133">These two behaviors ensure that all calls over COM interfaces between managed objects across application domain boundaries use COM and COM interop instead of remoting.</span></span>  
   
-## 使用例  
- 次の例は、分離の境界を越える場合に、ランタイムで COM 相互運用機能が使用されるように指定する方法を示しています。  
+## <a name="example"></a><span data-ttu-id="d711f-134">例</span><span class="sxs-lookup"><span data-stu-id="d711f-134">Example</span></span>  
+ <span data-ttu-id="d711f-135">次の例では、分離の境界を越えて相互運用、ランタイムで COM を使用するように指定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d711f-135">The following example shows how to specify that the runtime should use COM interop across isolation boundaries:</span></span>  
   
-```  
+```xml  
 <configuration>  
   <runtime>  
     <PreferComInsteadOfManagedRemoting enabled="true"/>  
@@ -79,6 +81,6 @@ caps.handback.revision: 17
 </configuration>  
 ```  
   
-## 参照  
- [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)
+## <a name="see-also"></a><span data-ttu-id="d711f-136">関連項目</span><span class="sxs-lookup"><span data-stu-id="d711f-136">See Also</span></span>  
+ [<span data-ttu-id="d711f-137">ランタイム設定スキーマ</span><span class="sxs-lookup"><span data-stu-id="d711f-137">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [<span data-ttu-id="d711f-138">構成ファイル スキーマ</span><span class="sxs-lookup"><span data-stu-id="d711f-138">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)

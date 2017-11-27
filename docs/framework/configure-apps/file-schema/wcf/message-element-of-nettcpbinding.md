@@ -1,93 +1,102 @@
 ---
-title: "&lt;netTcpBinding&gt; の &lt;message&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;netTcpBinding&gt; の &lt;message&gt; 要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1d71edd9-c085-4c2e-b6d3-980c313366f9
-caps.latest.revision: 20
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6907db64b4e9de4c60ac2a97f09f294a0ee81e86
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;netTcpBinding&gt; の &lt;message&gt; 要素
-[\<netTcpBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)を使用して構成されたエンドポイントの、メッセージ レベルのセキュリティ要件の種類を定義します。  
+# <a name="ltmessagegt-element-of-ltnettcpbindinggt"></a><span data-ttu-id="791bc-102">&lt;netTcpBinding&gt; の &lt;message&gt; 要素</span><span class="sxs-lookup"><span data-stu-id="791bc-102">&lt;message&gt; element of &lt;netTcpBinding&gt;</span></span>
+<span data-ttu-id="791bc-103">構成されているエンドポイントのメッセージ レベルのセキュリティ要件の種類を定義、 [ \<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="791bc-103">Defines the type of message-level security requirements for an endpoint configured with the [\<netTcpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).</span></span>  
   
-## 構文  
+ <span data-ttu-id="791bc-104">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="791bc-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="791bc-105">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="791bc-105">\<bindings></span></span>  
+<span data-ttu-id="791bc-106">\<netTcpBinding ></span><span class="sxs-lookup"><span data-stu-id="791bc-106">\<netTcpBinding></span></span>  
+<span data-ttu-id="791bc-107">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="791bc-107">\<binding></span></span>  
+<span data-ttu-id="791bc-108">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="791bc-108">\<security></span></span>  
+<span data-ttu-id="791bc-109">\<メッセージ ></span><span class="sxs-lookup"><span data-stu-id="791bc-109">\<message></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="791bc-110">構文</span><span class="sxs-lookup"><span data-stu-id="791bc-110">Syntax</span></span>  
   
+```xml  
 <message   
       algorithmSuite=System.Servicemodel.Security.SecurityAlgorithmsuite  
     clientCredentialType="None/Windows/UserName/Certificate/IssuedToken"/>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="791bc-111">属性および要素</span><span class="sxs-lookup"><span data-stu-id="791bc-111">Attributes and Elements</span></span>  
+ <span data-ttu-id="791bc-112">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="791bc-112">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="791bc-113">属性</span><span class="sxs-lookup"><span data-stu-id="791bc-113">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|`algorithmSuite`|メッセージの暗号化とキー ラップ アルゴリズムを設定します。  アルゴリズムとキー サイズは、<xref:System.ServiceModel.Security.SecurityAlgorithmSuite> クラスにより決まります。  これらのアルゴリズムは、Security Policy Language \(WS\-SecurityPolicy\) の仕様で指定されているアルゴリズムに対応付けられています。<br /><br /> 指定できる値を次の表に示します。  既定値は `Basic256` です。<br /><br /> サービス バインディングで指定されている `algorithmSuite` 値が既定値と異なると、Svcutil.exe を使用して構成ファイルを生成したときにファイルが正しく生成されません。この場合は、構成ファイルを手動で編集して、この属性を適切な値に設定する必要があります。|  
-|`clientCredentialType`|メッセージ ベースのセキュリティを使用してクライアント認証を実行するときに使用される資格情報の種類を指定します。  指定できる値を次の表に示します。  既定値は `UserName` です。  この属性は <xref:System.ServiceModel.MessageCredentialType> 型です。|  
+|<span data-ttu-id="791bc-114">属性</span><span class="sxs-lookup"><span data-stu-id="791bc-114">Attribute</span></span>|<span data-ttu-id="791bc-115">説明</span><span class="sxs-lookup"><span data-stu-id="791bc-115">Description</span></span>|  
+|---------------|-----------------|  
+|`algorithmSuite`|<span data-ttu-id="791bc-116">メッセージの暗号化とキー ラップ アルゴリズムを設定します。</span><span class="sxs-lookup"><span data-stu-id="791bc-116">Sets the message encryption and key-wrap algorithms.</span></span> <span data-ttu-id="791bc-117">アルゴリズムとキー サイズは、<xref:System.ServiceModel.Security.SecurityAlgorithmSuite> クラスにより決まります。</span><span class="sxs-lookup"><span data-stu-id="791bc-117">The algorithms and the key sizes are determined by the <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> class.</span></span> <span data-ttu-id="791bc-118">これらのアルゴリズムは、Security Policy Language (WS-SecurityPolicy) の仕様で指定されているアルゴリズムに対応付けられています。</span><span class="sxs-lookup"><span data-stu-id="791bc-118">These algorithms map to those specified in the Security Policy Language (WS-SecurityPolicy) specification.</span></span><br /><br /> <span data-ttu-id="791bc-119">指定できる値を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="791bc-119">Possible values are shown in the following table.</span></span> <span data-ttu-id="791bc-120">既定値は `Basic256` です。</span><span class="sxs-lookup"><span data-stu-id="791bc-120">The default value is `Basic256`.</span></span><br /><br /> <span data-ttu-id="791bc-121">サービス バインディングで指定されている `algorithmSuite` 値が既定値と異なると、Svcutil.exe を使用して構成ファイルを生成したときにファイルが正しく生成されません。この場合は、構成ファイルを手動で編集して、この属性を適切な値に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="791bc-121">If the service binding specifies an `algorithmSuite` value that is not equal to the default, and you generate the configuration file using Svcutil.exe, then it is not generated correctly, and you must manually edit the configuration file to set this attribute to the desired value.</span></span>|  
+|`clientCredentialType`|<span data-ttu-id="791bc-122">メッセージ ベースのセキュリティを使用してクライアント認証を実行するときに使用される資格情報の種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="791bc-122">Specifies the type of credential to be used when performing client authentication using Message-based security.</span></span> <span data-ttu-id="791bc-123">指定できる値を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="791bc-123">Possible values are shown in the following table.</span></span> <span data-ttu-id="791bc-124">既定値は `UserName` です。</span><span class="sxs-lookup"><span data-stu-id="791bc-124">The default value is `UserName`.</span></span> <span data-ttu-id="791bc-125">この属性は <xref:System.ServiceModel.MessageCredentialType> 型です。</span><span class="sxs-lookup"><span data-stu-id="791bc-125">This attribute is of type <xref:System.ServiceModel.MessageCredentialType>.</span></span>|  
   
-## algorithmSuite 属性  
+## <a name="algorithmsuite-attribute"></a><span data-ttu-id="791bc-126">algorithmSuite 属性</span><span class="sxs-lookup"><span data-stu-id="791bc-126">algorithmSuite Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|Basic128|Aes128 暗号化を使用し、メッセージ ダイジェストには Sha1 を、キー ラップには Rsa\-oaep\-mgf1p を使用します。|  
-|Basic192|Aes192 暗号化を使用し、メッセージ ダイジェストには Sha1 を、キー ラップには Rsa\-oaep\-mgf1p を使用します。|  
-|Basic256|Aes256 暗号化を使用し、メッセージ ダイジェストには Sha1 を、キー ラップには Rsa\-oaep\-mgf1p を使用します。|  
-|Basic256Rsa15|メッセージの暗号化には Aes256 を使用し、メッセージ ダイジェストには Sha1 を、キー ラップには Rsa15 を使用します。|  
-|Basic192Rsa15|メッセージの暗号化には Aes192 を使用し、メッセージ ダイジェストには Sha1 を、キー ラップには Rsa15 を使用します。|  
-|TripleDes|TripleDes 暗号化を使用し、メッセージ ダイジェストには Sha1 を、キー ラップには Rsa\-oaep\-mgf1p を使用します。|  
-|Basic128Rsa15|メッセージの暗号化には Aes128 を使用し、メッセージ ダイジェストには Sha1 を、キー ラップには Rsa15 を使用します。|  
-|TripleDesRsa15|TripleDes 暗号化を使用し、メッセージ ダイジェストには Sha1 を、キー ラップには Rsa15 を使用します。|  
-|Basic128Sha256|メッセージの暗号化には Aes256 を使用し、メッセージ ダイジェストには Sha256 を、キー ラップには Rsa\-oaep\-mgf1p を使用します。|  
-|Basic192Sha256|メッセージの暗号化には Aes192 を使用し、メッセージ ダイジェストには Sha256 を、キー ラップには Rsa\-oaep\-mgf1p を使用します。|  
-|Basic256Sha256|メッセージの暗号化には Aes256 を使用し、メッセージ ダイジェストには Sha256 を、キー ラップには Rsa\-oaep\-mgf1p を使用します。|  
-|TripleDesSha256|メッセージの暗号化には TripleDes を使用し、メッセージ ダイジェストには Sha256 を、キー ラップには Rsa\-oaep\-mgf1p を使用します。|  
-|Basic128Sha256Rsa15|メッセージの暗号化には Aes128 を使用し、メッセージ ダイジェストには Sha256 を、キー ラップには Rsa15 を使用します。|  
-|Basic192Sha256Rsa15|メッセージの暗号化には Aes192 を使用し、メッセージ ダイジェストには Sha256 を、キー ラップには Rsa15 を使用します。|  
-|Basic256Sha256Rsa15|メッセージの暗号化には Aes256 を使用し、メッセージ ダイジェストには Sha256 を、キー ラップには Rsa15 を使用します。|  
-|TripleDesSha256Rsa15|メッセージの暗号化には TripleDes を使用し、メッセージ ダイジェストには Sha256 を、キー ラップには Rsa15 を使用します。|  
+|<span data-ttu-id="791bc-127">値</span><span class="sxs-lookup"><span data-stu-id="791bc-127">Value</span></span>|<span data-ttu-id="791bc-128">説明</span><span class="sxs-lookup"><span data-stu-id="791bc-128">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="791bc-129">Basic128</span><span class="sxs-lookup"><span data-stu-id="791bc-129">Basic128</span></span>|<span data-ttu-id="791bc-130">Aes128 暗号化を使用し、メッセージ ダイジェストには Sha1 を、キー ラップには Rsa-oaep-mgf1p を使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-130">Use Aes128 encryption, Sha1 for message digest, and Rsa-oaep-mgf1p for key wrap.</span></span>|  
+|<span data-ttu-id="791bc-131">Basic192</span><span class="sxs-lookup"><span data-stu-id="791bc-131">Basic192</span></span>|<span data-ttu-id="791bc-132">Aes192 暗号化を使用し、メッセージ ダイジェストには Sha1 を、キー ラップには Rsa-oaep-mgf1p を使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-132">Use Aes192 encryption, Sha1 for message digest, Rsa-oaep-mgf1p for key wrap.</span></span>|  
+|<span data-ttu-id="791bc-133">Basic256</span><span class="sxs-lookup"><span data-stu-id="791bc-133">Basic256</span></span>|<span data-ttu-id="791bc-134">Aes256 暗号化を使用し、メッセージ ダイジェストには Sha1 を、キー ラップには Rsa-oaep-mgf1p を使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-134">Use Aes256 encryption, Sha1 for message digest, Rsa-oaep-mgf1p for key wrap.</span></span>|  
+|<span data-ttu-id="791bc-135">Basic256Rsa15</span><span class="sxs-lookup"><span data-stu-id="791bc-135">Basic256Rsa15</span></span>|<span data-ttu-id="791bc-136">メッセージの暗号化には Aes256 を使用し、メッセージ ダイジェストには Sha1 を、キー ラップには Rsa15 を使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-136">Use Aes256 for message encryption, Sha1 for message digest and Rsa15 for key wrap.</span></span>|  
+|<span data-ttu-id="791bc-137">Basic192Rsa15</span><span class="sxs-lookup"><span data-stu-id="791bc-137">Basic192Rsa15</span></span>|<span data-ttu-id="791bc-138">メッセージの暗号化には Aes192 を使用し、メッセージ ダイジェストには Sha1 を、キー ラップには Rsa15 を使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-138">Use Aes192 for message encryption, Sha1 for message digest and Rsa15 for key wrap.</span></span>|  
+|<span data-ttu-id="791bc-139">TripleDes</span><span class="sxs-lookup"><span data-stu-id="791bc-139">TripleDes</span></span>|<span data-ttu-id="791bc-140">TripleDes 暗号化を使用し、メッセージ ダイジェストには Sha1 を、キー ラップには Rsa-oaep-mgf1p を使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-140">Use TripleDes encryption, Sha1 for message digest, Rsa-oaep-mgf1p for key wrap.</span></span>|  
+|<span data-ttu-id="791bc-141">Basic128Rsa15</span><span class="sxs-lookup"><span data-stu-id="791bc-141">Basic128Rsa15</span></span>|<span data-ttu-id="791bc-142">メッセージの暗号化には Aes128 を使用し、メッセージ ダイジェストには Sha1 を、キー ラップには Rsa15 を使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-142">Use Aes128 for message encryption, Sha1 for message digest and Rsa15 for key wrap.</span></span>|  
+|<span data-ttu-id="791bc-143">TripleDesRsa15</span><span class="sxs-lookup"><span data-stu-id="791bc-143">TripleDesRsa15</span></span>|<span data-ttu-id="791bc-144">TripleDes 暗号化を使用し、メッセージ ダイジェストには Sha1 を、キー ラップには Rsa15 を使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-144">Use TripleDes encryption, Sha1 for message digest and Rsa15 for key wrap.</span></span>|  
+|<span data-ttu-id="791bc-145">Basic128Sha256</span><span class="sxs-lookup"><span data-stu-id="791bc-145">Basic128Sha256</span></span>|<span data-ttu-id="791bc-146">メッセージの暗号化には Aes256 を使用し、メッセージ ダイジェストには Sha256 を、キー ラップには Rsa-oaep-mgf1p を使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-146">Use Aes256 for message encryption, Sha256 for message digest and Rsa-oaep-mgf1p for key wrap.</span></span>|  
+|<span data-ttu-id="791bc-147">Basic192Sha256</span><span class="sxs-lookup"><span data-stu-id="791bc-147">Basic192Sha256</span></span>|<span data-ttu-id="791bc-148">メッセージの暗号化には Aes192 を使用し、メッセージ ダイジェストには Sha256 を、キー ラップには Rsa-oaep-mgf1p を使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-148">Use Aes192 for message encryption, Sha256 for message digest and Rsa-oaep-mgf1p for key wrap.</span></span>|  
+|<span data-ttu-id="791bc-149">Basic256Sha256</span><span class="sxs-lookup"><span data-stu-id="791bc-149">Basic256Sha256</span></span>|<span data-ttu-id="791bc-150">メッセージの暗号化には Aes256 を使用し、メッセージ ダイジェストには Sha256 を、キー ラップには Rsa-oaep-mgf1p を使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-150">Use Aes256 for message encryption, Sha256 for message digest and Rsa-oaep-mgf1p for key wrap.</span></span>|  
+|<span data-ttu-id="791bc-151">TripleDesSha256</span><span class="sxs-lookup"><span data-stu-id="791bc-151">TripleDesSha256</span></span>|<span data-ttu-id="791bc-152">メッセージの暗号化には TripleDes を使用し、メッセージ ダイジェストには Sha256 を、キー ラップには Rsa-oaep-mgf1p を使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-152">Use TripleDes for message encryption, Sha256 for message digest and Rsa-oaep-mgf1p for key wrap.</span></span>|  
+|<span data-ttu-id="791bc-153">Basic128Sha256Rsa15</span><span class="sxs-lookup"><span data-stu-id="791bc-153">Basic128Sha256Rsa15</span></span>|<span data-ttu-id="791bc-154">メッセージの暗号化には Aes128 を使用し、メッセージ ダイジェストには Sha256 を、キー ラップには Rsa15 を使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-154">Use Aes128 for message encryption, Sha256 for message digest and Rsa15 for key wrap.</span></span>|  
+|<span data-ttu-id="791bc-155">Basic192Sha256Rsa15</span><span class="sxs-lookup"><span data-stu-id="791bc-155">Basic192Sha256Rsa15</span></span>|<span data-ttu-id="791bc-156">メッセージの暗号化には Aes192 を使用し、メッセージ ダイジェストには Sha256 を、キー ラップには Rsa15 を使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-156">Use Aes192 for message encryption, Sha256 for message digest and Rsa15 for key wrap.</span></span>|  
+|<span data-ttu-id="791bc-157">Basic256Sha256Rsa15</span><span class="sxs-lookup"><span data-stu-id="791bc-157">Basic256Sha256Rsa15</span></span>|<span data-ttu-id="791bc-158">メッセージの暗号化には Aes256 を使用し、メッセージ ダイジェストには Sha256 を、キー ラップには Rsa15 を使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-158">Use Aes256 for message encryption, Sha256 for message digest and Rsa15 for key wrap.</span></span>|  
+|<span data-ttu-id="791bc-159">TripleDesSha256Rsa15</span><span class="sxs-lookup"><span data-stu-id="791bc-159">TripleDesSha256Rsa15</span></span>|<span data-ttu-id="791bc-160">メッセージの暗号化には TripleDes を使用し、メッセージ ダイジェストには Sha256 を、キー ラップには Rsa15 を使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-160">Use TripleDes for message encryption, Sha256 for message digest and Rsa15 for key wrap.</span></span>|  
   
-## clientCredentialType 属性  
+## <a name="clientcredentialtype-attribute"></a><span data-ttu-id="791bc-161">clientCredentialType 属性</span><span class="sxs-lookup"><span data-stu-id="791bc-161">clientCredentialType Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|なし|サービスが匿名クライアントと対話できるようになります。  サービス側では、サービスがクライアントの資格情報を必要としないことを示しています。  クライアント側では、クライアントがクライアントの資格情報を提示しないことを示しています。|  
-|Windows|SOAP 交換を、Windows 資格情報の認証されたコンテキストで行うことが可能になります。|  
-|UserName|サービスが、UserName 資格情報を使用したクライアントの認証を要求できるようにします。  [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は、パスワード ダイジェストの送信、またはパスワードを使用したキーの派生、およびメッセージ セキュリティでのそのようなキーの使用をサポートしません。  そのため、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] では UserName 資格情報を使用する場合は、トランスポートが強制的にセキュリティで保護されます。  この資格情報モードは、`negotiateServiceCredential` 属性に基づいて、同時実行可能な交換か、同時実行できないネゴシエーションのいずれかになります。|  
-|証明書|証明書を使用したクライアントの認証を、サービスで要求することが可能になります。  メッセージ セキュリティ モードが使用され、`negotiateServiceCredential` 属性が `false` に設定されている場合、クライアントにサービス証明書を準備する必要があります。|  
-|IssuedToken|通常はセキュリティ トークン サービス \(STS\) により発行されるカスタム トークンを指定します。|  
+|<span data-ttu-id="791bc-162">値</span><span class="sxs-lookup"><span data-stu-id="791bc-162">Value</span></span>|<span data-ttu-id="791bc-163">説明</span><span class="sxs-lookup"><span data-stu-id="791bc-163">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="791bc-164">なし</span><span class="sxs-lookup"><span data-stu-id="791bc-164">None</span></span>|<span data-ttu-id="791bc-165">サービスが匿名クライアントと対話できるようになります。</span><span class="sxs-lookup"><span data-stu-id="791bc-165">This allows the service to interact with anonymous clients.</span></span> <span data-ttu-id="791bc-166">サービス側では、サービスがクライアントの資格情報を必要としないことを示しています。</span><span class="sxs-lookup"><span data-stu-id="791bc-166">On the service, this indicates that the service does not require any client credential.</span></span> <span data-ttu-id="791bc-167">クライアント側では、クライアントがクライアントの資格情報を提示しないことを示しています。</span><span class="sxs-lookup"><span data-stu-id="791bc-167">On the client, this indicates that the client does not provide any client credential.</span></span>|  
+|<span data-ttu-id="791bc-168">Windows</span><span class="sxs-lookup"><span data-stu-id="791bc-168">Windows</span></span>|<span data-ttu-id="791bc-169">SOAP 交換を、Windows 資格情報の認証されたコンテキストで行うことが可能になります。</span><span class="sxs-lookup"><span data-stu-id="791bc-169">Allows the SOAP exchanges to be under the authenticated context of a Windows credential.</span></span>|  
+|<span data-ttu-id="791bc-170">UserName</span><span class="sxs-lookup"><span data-stu-id="791bc-170">UserName</span></span>|<span data-ttu-id="791bc-171">サービスが、UserName 資格情報を使用したクライアントの認証を要求できるようにします。</span><span class="sxs-lookup"><span data-stu-id="791bc-171">Allows the service to require that the client be authenticated using a UserName credential.</span></span> [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]<span data-ttu-id="791bc-172"> は、パスワード ダイジェストの送信、またはパスワードを使用したキーの派生、およびメッセージ セキュリティでのそのようなキーの使用をサポートしません。</span><span class="sxs-lookup"><span data-stu-id="791bc-172"> does not support sending a password digest or deriving keys using password and using such keys for message security.</span></span> <span data-ttu-id="791bc-173">そのため、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] では UserName 資格情報を使用する場合は、トランスポートが強制的にセキュリティで保護されます。</span><span class="sxs-lookup"><span data-stu-id="791bc-173">As such, [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] enforces that the transport is secured when using UserName credentials.</span></span> <span data-ttu-id="791bc-174">この資格情報モードは、`negotiateServiceCredential` 属性に基づいて、同時実行可能な交換か、同時実行できないネゴシエーションのいずれかになります。</span><span class="sxs-lookup"><span data-stu-id="791bc-174">This credential mode results in either an interoperable exchange or a non-interoperable negotiation based on the `negotiateServiceCredential` attribute.</span></span>|  
+|<span data-ttu-id="791bc-175">証明書</span><span class="sxs-lookup"><span data-stu-id="791bc-175">Certificate</span></span>|<span data-ttu-id="791bc-176">証明書を使用したクライアントの認証を、サービスで要求することが可能になります。</span><span class="sxs-lookup"><span data-stu-id="791bc-176">Allows the service to require that the client be authenticated using a certificate.</span></span> <span data-ttu-id="791bc-177">メッセージ セキュリティ モードが使用され、`negotiateServiceCredential` 属性が `false` に設定されている場合、クライアントにサービス証明書を準備する必要があります。</span><span class="sxs-lookup"><span data-stu-id="791bc-177">If message security mode is used and the `negotiateServiceCredential` attribute is set to `false`, the client must be provisioned with the service certificate.</span></span>|  
+|<span data-ttu-id="791bc-178">IssuedToken</span><span class="sxs-lookup"><span data-stu-id="791bc-178">IssuedToken</span></span>|<span data-ttu-id="791bc-179">通常はセキュリティ トークン サービス (STS) により発行されるカスタム トークンを指定します。</span><span class="sxs-lookup"><span data-stu-id="791bc-179">Specifies a custom token, usually issued by a Security Token Service (STS).</span></span>|  
   
-### 子要素  
- なし  
+### <a name="child-elements"></a><span data-ttu-id="791bc-180">子要素</span><span class="sxs-lookup"><span data-stu-id="791bc-180">Child Elements</span></span>  
+ <span data-ttu-id="791bc-181">なし</span><span class="sxs-lookup"><span data-stu-id="791bc-181">None</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="791bc-182">親要素</span><span class="sxs-lookup"><span data-stu-id="791bc-182">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<security\>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)|<xref:System.ServiceModel.Configuration.NetTcpBindingElement>のセキュリティ機能を定義します。|  
+|<span data-ttu-id="791bc-183">要素</span><span class="sxs-lookup"><span data-stu-id="791bc-183">Element</span></span>|<span data-ttu-id="791bc-184">説明</span><span class="sxs-lookup"><span data-stu-id="791bc-184">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="791bc-185">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="791bc-185">\<security></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)|<span data-ttu-id="791bc-186"><xref:System.ServiceModel.Configuration.NetTcpBindingElement>のセキュリティ機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="791bc-186">Defines the security capabilities for the <xref:System.ServiceModel.Configuration.NetTcpBindingElement>.</span></span>|  
   
-## 解説  
- メッセージは、SOAP メッセージの整合性と機密性を確保し、通信ピアの相互認証を行うために、メッセージ レベルのセキュリティを使用します。  バインディング上でこのセキュリティ モードが選択された場合、チャネル スタックは、メッセージ セキュリティ バインディング要素を使用して構成され、SOAP メッセージは WS\-Security\* 標準に従って保護されます。  
+## <a name="remarks"></a><span data-ttu-id="791bc-187">コメント</span><span class="sxs-lookup"><span data-stu-id="791bc-187">Remarks</span></span>  
+ <span data-ttu-id="791bc-188">メッセージは、SOAP メッセージの整合性と機密性を確保し、通信ピアの相互認証を行うために、メッセージ レベルのセキュリティを使用します。</span><span class="sxs-lookup"><span data-stu-id="791bc-188">Message uses message-level security for the integrity and confidentiality of the SOAP message, and for mutual authentication of the communication peers.</span></span> <span data-ttu-id="791bc-189">バインディング上でこのセキュリティ モードが選択された場合、チャネル スタックは、メッセージ セキュリティ バインド要素を使用して構成され、SOAP メッセージは WS-Security* 標準に従って保護されます。</span><span class="sxs-lookup"><span data-stu-id="791bc-189">If this security mode is selected on a binding, the channel stack is configured with message security binding elements and the SOAP messages are secured in compliance with WS-Security* standards.</span></span>  
   
-## 参照  
- <xref:System.ServiceModel.MessageSecurityOverTcp>   
- <xref:System.ServiceModel.Configuration.NetTcpSecurityElement.Message%2A>   
- <xref:System.ServiceModel.NetTcpSecurity.Message%2A>   
- <xref:System.ServiceModel.Configuration.NetTcpSecurityElement>   
- [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [バインディング](../../../../../docs/framework/wcf/bindings.md)   
- [システムが提供するバインディングの構成](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/ja-jp/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
- [\<binding\>](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a><span data-ttu-id="791bc-190">関連項目</span><span class="sxs-lookup"><span data-stu-id="791bc-190">See Also</span></span>  
+ <xref:System.ServiceModel.MessageSecurityOverTcp>  
+ <xref:System.ServiceModel.Configuration.NetTcpSecurityElement.Message%2A>  
+ <xref:System.ServiceModel.NetTcpSecurity.Message%2A>  
+ <xref:System.ServiceModel.Configuration.NetTcpSecurityElement>  
+ [<span data-ttu-id="791bc-191">サービスとクライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="791bc-191">Securing Services and Clients</span></span>](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [<span data-ttu-id="791bc-192">バインディング</span><span class="sxs-lookup"><span data-stu-id="791bc-192">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="791bc-193">システム指定のバインディングを構成します。</span><span class="sxs-lookup"><span data-stu-id="791bc-193">Configuring System-Provided Bindings</span></span>](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [<span data-ttu-id="791bc-194">バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには</span><span class="sxs-lookup"><span data-stu-id="791bc-194">Using Bindings to Configure Windows Communication Foundation Services and Clients</span></span>](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [<span data-ttu-id="791bc-195">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="791bc-195">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)

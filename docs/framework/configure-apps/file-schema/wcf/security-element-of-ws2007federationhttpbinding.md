@@ -1,28 +1,36 @@
 ---
-title: "&lt;ws2007FederationHttpBinding&gt; の &lt;security&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;ws2007FederationHttpBinding&gt; の &lt;security&gt; 要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 826219b4-3a16-45fc-832d-0cd7cbbd3b84
-caps.latest.revision: 10
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 79976b015f35bdd71a5f95a018d85c0ba41ce0b2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;ws2007FederationHttpBinding&gt; の &lt;security&gt; 要素
-[\<ws2007FederationHttpBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) 要素のセキュリティ設定を定義します。  
+# <a name="ltsecuritygt-element-of-ltws2007federationhttpbindinggt"></a><span data-ttu-id="a1625-102">&lt;ws2007FederationHttpBinding&gt; の &lt;security&gt; 要素</span><span class="sxs-lookup"><span data-stu-id="a1625-102">&lt;security&gt; element of &lt;ws2007FederationHttpBinding&gt;</span></span>
+<span data-ttu-id="a1625-103">セキュリティ設定を定義、 [ \<ws2007FederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md)要素。</span><span class="sxs-lookup"><span data-stu-id="a1625-103">Defines the security settings of the [\<ws2007FederationHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) element.</span></span>  
   
-## 構文  
+ <span data-ttu-id="a1625-104">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="a1625-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="a1625-105">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="a1625-105">\<bindings></span></span>  
+<span data-ttu-id="a1625-106">\<ws2007FederationHttpBinding ></span><span class="sxs-lookup"><span data-stu-id="a1625-106">\<ws2007FederationHttpBinding></span></span>  
+<span data-ttu-id="a1625-107">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="a1625-107">\<binding></span></span>  
+<span data-ttu-id="a1625-108">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="a1625-108">\<security></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="a1625-109">構文</span><span class="sxs-lookup"><span data-stu-id="a1625-109">Syntax</span></span>  
   
+```xml  
 <ws2007FederationBinding>  
     <binding >  
         <security mode="None/Message/TransportWithMessageCredential">  
@@ -37,44 +45,44 @@ caps.handback.revision: 10
 </ws2007FederationBinding>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="a1625-110">属性および要素</span><span class="sxs-lookup"><span data-stu-id="a1625-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="a1625-111">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="a1625-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="a1625-112">属性</span><span class="sxs-lookup"><span data-stu-id="a1625-112">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|`mode`|省略可能です。  適用するセキュリティの種類を指定します。  既定値は `Message` です。  この属性は <xref:System.ServiceModel.WSFederationHttpSecurityMode> 型です。|  
+|<span data-ttu-id="a1625-113">属性</span><span class="sxs-lookup"><span data-stu-id="a1625-113">Attribute</span></span>|<span data-ttu-id="a1625-114">説明</span><span class="sxs-lookup"><span data-stu-id="a1625-114">Description</span></span>|  
+|---------------|-----------------|  
+|`mode`|<span data-ttu-id="a1625-115">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="a1625-115">Optional.</span></span> <span data-ttu-id="a1625-116">適用するセキュリティの種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="a1625-116">Specifies the type of security that is applied.</span></span> <span data-ttu-id="a1625-117">既定値は `Message` です。</span><span class="sxs-lookup"><span data-stu-id="a1625-117">The default value is `Message`.</span></span> <span data-ttu-id="a1625-118">この属性は <xref:System.ServiceModel.WSFederationHttpSecurityMode> 型です。</span><span class="sxs-lookup"><span data-stu-id="a1625-118">This attribute is of type <xref:System.ServiceModel.WSFederationHttpSecurityMode>.</span></span>|  
   
-## mode 属性  
+## <a name="mode-attribute"></a><span data-ttu-id="a1625-119">mode 属性</span><span class="sxs-lookup"><span data-stu-id="a1625-119">mode Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|なし|SOAP メッセージは、転送中はセキュリティで保護されません。|  
-|メッセージ|SOAP メッセージ セキュリティを使用して、整合性、機密性、サーバー認証、およびクライアント認証を提供します。  既定では、本文は暗号化および署名されます。  サービスは、証明書を使用して構成する必要があります。  クライアント認証は、セキュリティ トークン サービスによってクライアントに発行されるトークンに基づいています。|  
-|TransportWithMessageCredential|整合性、機密性、およびサーバー認証は、HTTPS によって提供されます。  サービスは、証明書を使用して構成する必要があります。  クライアント認証は、SOAP メッセージ セキュリティによって提供され、セキュリティ トークン サービスによってクライアントに発行されるトークンに基づいています。|  
+|<span data-ttu-id="a1625-120">値</span><span class="sxs-lookup"><span data-stu-id="a1625-120">Value</span></span>|<span data-ttu-id="a1625-121">説明</span><span class="sxs-lookup"><span data-stu-id="a1625-121">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="a1625-122">なし</span><span class="sxs-lookup"><span data-stu-id="a1625-122">None</span></span>|<span data-ttu-id="a1625-123">SOAP メッセージは、転送中はセキュリティで保護されません。</span><span class="sxs-lookup"><span data-stu-id="a1625-123">The SOAP message is not secure during transfer.</span></span>|  
+|<span data-ttu-id="a1625-124">メッセージ</span><span class="sxs-lookup"><span data-stu-id="a1625-124">Message</span></span>|<span data-ttu-id="a1625-125">SOAP メッセージ セキュリティを使用して、整合性、機密性、サーバー認証、およびクライアント認証を提供します。</span><span class="sxs-lookup"><span data-stu-id="a1625-125">Integrity, confidentiality, server authentication and client authentication are provided using SOAP message security.</span></span> <span data-ttu-id="a1625-126">既定では、本文は暗号化および署名されます。</span><span class="sxs-lookup"><span data-stu-id="a1625-126">By default, the body is encrypted and signed.</span></span> <span data-ttu-id="a1625-127">サービスは、証明書を使用して構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a1625-127">The service must be configured with a certificate.</span></span> <span data-ttu-id="a1625-128">クライアント認証は、セキュリティ トークン サービスによってクライアントに発行されるトークンに基づいています。</span><span class="sxs-lookup"><span data-stu-id="a1625-128">Client authentication is based on the token issued to the client by a security token service.</span></span>|  
+|<span data-ttu-id="a1625-129">TransportWithMessageCredential</span><span class="sxs-lookup"><span data-stu-id="a1625-129">TransportWithMessageCredential</span></span>|<span data-ttu-id="a1625-130">整合性、機密性、およびサーバー認証は、HTTPS によって提供されます。</span><span class="sxs-lookup"><span data-stu-id="a1625-130">Integrity, confidentiality and server authentication are provided by HTTPS.</span></span> <span data-ttu-id="a1625-131">サービスは、証明書を使用して構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a1625-131">The service must be configured with a certificate.</span></span> <span data-ttu-id="a1625-132">クライアント認証は、SOAP メッセージ セキュリティによって提供され、セキュリティ トークン サービスによってクライアントに発行されるトークンに基づいています。</span><span class="sxs-lookup"><span data-stu-id="a1625-132">Client authentication is provided by means of SOAP message security and is based on the token issued to the client by a security token service.</span></span>|  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="a1625-133">子要素</span><span class="sxs-lookup"><span data-stu-id="a1625-133">Child Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<message\>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-ws2007httpbinding.md)|メッセージ レベル セキュリティの設定を定義します。  この要素は <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement> 型です。|  
+|<span data-ttu-id="a1625-134">要素</span><span class="sxs-lookup"><span data-stu-id="a1625-134">Element</span></span>|<span data-ttu-id="a1625-135">説明</span><span class="sxs-lookup"><span data-stu-id="a1625-135">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="a1625-136">\<メッセージ ></span><span class="sxs-lookup"><span data-stu-id="a1625-136">\<message></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-ws2007httpbinding.md)|<span data-ttu-id="a1625-137">メッセージ レベル セキュリティの設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="a1625-137">Defines the settings for the message-level security.</span></span> <span data-ttu-id="a1625-138">この要素は <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement> 型です。</span><span class="sxs-lookup"><span data-stu-id="a1625-138">This element is of type <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="a1625-139">親要素</span><span class="sxs-lookup"><span data-stu-id="a1625-139">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<binding\>](../../../../../docs/framework/misc/binding.md)|[\<wsDualHttpBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)のすべてのバインディング機能を定義します。|  
+|<span data-ttu-id="a1625-140">要素</span><span class="sxs-lookup"><span data-stu-id="a1625-140">Element</span></span>|<span data-ttu-id="a1625-141">説明</span><span class="sxs-lookup"><span data-stu-id="a1625-141">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="a1625-142">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="a1625-142">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)|<span data-ttu-id="a1625-143">すべてのバインド機能を定義、 [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="a1625-143">Defines all binding capabilities of the [\<wsDualHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).</span></span>|  
   
-## 参照  
- <xref:System.ServiceModel.WSFederationHttpSecurity>   
- <xref:System.ServiceModel.WSFederationHttpBinding.Security%2A>   
- <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement.Security%2A>   
- <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>   
- [方法 : WSFederationHttpBinding を作成する](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)   
- [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [資格情報の種類の選択](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)   
- [バインディング](../../../../../docs/framework/wcf/bindings.md)   
- [システムが提供するバインディングの構成](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/ja-jp/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
- [\<binding\>](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a><span data-ttu-id="a1625-144">関連項目</span><span class="sxs-lookup"><span data-stu-id="a1625-144">See Also</span></span>  
+ <xref:System.ServiceModel.WSFederationHttpSecurity>  
+ <xref:System.ServiceModel.WSFederationHttpBinding.Security%2A>  
+ <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement.Security%2A>  
+ <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>  
+ [<span data-ttu-id="a1625-145">方法: WSFederationHttpBinding を作成します。</span><span class="sxs-lookup"><span data-stu-id="a1625-145">How to: Create a WSFederationHttpBinding</span></span>](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
+ [<span data-ttu-id="a1625-146">サービスとクライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="a1625-146">Securing Services and Clients</span></span>](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [<span data-ttu-id="a1625-147">資格情報の種類を選択します。</span><span class="sxs-lookup"><span data-stu-id="a1625-147">Selecting a Credential Type</span></span>](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
+ [<span data-ttu-id="a1625-148">バインディング</span><span class="sxs-lookup"><span data-stu-id="a1625-148">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="a1625-149">システム指定のバインディングを構成します。</span><span class="sxs-lookup"><span data-stu-id="a1625-149">Configuring System-Provided Bindings</span></span>](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [<span data-ttu-id="a1625-150">バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには</span><span class="sxs-lookup"><span data-stu-id="a1625-150">Using Bindings to Configure Windows Communication Foundation Services and Clients</span></span>](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [<span data-ttu-id="a1625-151">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="a1625-151">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)

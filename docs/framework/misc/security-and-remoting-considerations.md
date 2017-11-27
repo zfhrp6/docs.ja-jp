@@ -1,51 +1,49 @@
 ---
-title: "セキュリティとリモート処理の考慮事項 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "コード セキュリティ, リモート処理"
-  - "リモート処理, セキュリティ"
-  - "安全なコーディング, リモート処理"
-  - "セキュリティ [.NET Framework], リモート処理"
+title: "セキュリティとリモート処理の考慮事項"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- code security, remoting
+- remoting, security
+- security [.NET Framework], remoting
+- secure coding, remoting
 ms.assetid: 125d2ab8-55a4-4e5f-af36-a7d401a37ab0
-caps.latest.revision: 10
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 94942360aaa91a39c8f46414807490bcb6e0b093
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# セキュリティとリモート処理の考慮事項
-リモート処理を使用すると、アプリケーション ドメイン、プロセス、コンピューターの間で透過的な呼び出しを設定できます。  ただし、コード アクセス セキュリティのスタック ウォークがプロセスやコンピューターの境界を超えることはできません \(これは、同一プロセスのアプリケーション ドメイン間に当てはまります\)。  
+# <a name="security-and-remoting-considerations"></a><span data-ttu-id="04aa0-102">セキュリティとリモート処理の考慮事項</span><span class="sxs-lookup"><span data-stu-id="04aa0-102">Security and Remoting Considerations</span></span>
+<span data-ttu-id="04aa0-103">リモート処理を使用すると、アプリケーション ドメイン、プロセス、コンピューターの間で透過的な呼び出しを設定できます。</span><span class="sxs-lookup"><span data-stu-id="04aa0-103">Remoting allows you to set up transparent calling between application domains, processes, or computers.</span></span> <span data-ttu-id="04aa0-104">ただし、コード アクセス セキュリティのスタック ウォークがプロセスやコンピューターの境界を超えることはできません (これは、同一プロセスのアプリケーション ドメイン間に当てはまります)。</span><span class="sxs-lookup"><span data-stu-id="04aa0-104">However, the code access security stack walk cannot cross process or machine boundaries (it does apply between application domains of the same process).</span></span>  
   
- リモート処理可能な \(<xref:System.MarshalByRefObject> クラスから派生した\) クラスの場合、セキュリティに関する責任を負う必要があります。  呼び出し元のコードを暗黙的に信頼できる閉じた環境でのみコードを使用するか、あるいは、保護対象コードが悪意を持って使用される可能性のある外部エントリの影響を受けないようにリモート呼び出しを設計する必要があります。  
+ <span data-ttu-id="04aa0-105">リモート処理可能な (<xref:System.MarshalByRefObject> クラスから派生した) クラスの場合、セキュリティに関する責任を負う必要があります。</span><span class="sxs-lookup"><span data-stu-id="04aa0-105">Any class that is remotable (derived from a <xref:System.MarshalByRefObject> class) needs to take responsibility for security.</span></span> <span data-ttu-id="04aa0-106">呼び出し元のコードを暗黙的に信頼できる閉じた環境でのみコードを使用するか、あるいは、保護対象コードが悪意を持って使用される可能性のある外部エントリの影響を受けないようにリモート呼び出しを設計する必要があります。</span><span class="sxs-lookup"><span data-stu-id="04aa0-106">Either the code should be used only in closed environments where the calling code can be implicitly trusted, or remoting calls should be designed so that they do not subject protected code to outside entry that could be used maliciously.</span></span>  
   
- 一般に、宣言型の [LinkDemand](../../../docs/framework/misc/link-demands.md) と <xref:System.Security.Permissions.SecurityAction> セキュリティ チェックによって保護されるメソッド、プロパティ、イベントは公開すべきではありません。  リモート処理では、こうしたチェックは実施されません。  <xref:System.Security.Permissions.SecurityAction> や [Assert](../../../docs/framework/misc/using-the-assert-method.md) など他のセキュリティ チェックはプロセス内のアプリケーション ドメインでは機能しますが、プロセス間またはコンピューター間のシナリオでは機能しません。  
+ <span data-ttu-id="04aa0-107">一般に、必要がありますしないを公開するメソッド、プロパティ、またはイベント宣言によって保護されている[LinkDemand](../../../docs/framework/misc/link-demands.md)と<xref:System.Security.Permissions.SecurityAction.InheritanceDemand>セキュリティ チェックします。</span><span class="sxs-lookup"><span data-stu-id="04aa0-107">Generally, you should never expose methods, properties, or events that are protected by declarative [LinkDemand](../../../docs/framework/misc/link-demands.md) and <xref:System.Security.Permissions.SecurityAction.InheritanceDemand> security checks.</span></span> <span data-ttu-id="04aa0-108">リモート処理では、こうしたチェックは実施されません。</span><span class="sxs-lookup"><span data-stu-id="04aa0-108">With remoting, these checks are not enforced.</span></span> <span data-ttu-id="04aa0-109">などの他のセキュリティ チェック<xref:System.Security.Permissions.SecurityAction.Demand>、 [Assert](../../../docs/framework/misc/using-the-assert-method.md)など、プロセス内でのアプリケーション ドメイン間で動作しますが、プロセス間またはコンピューター間のシナリオでは機能しません。</span><span class="sxs-lookup"><span data-stu-id="04aa0-109">Other security checks, such as <xref:System.Security.Permissions.SecurityAction.Demand>, [Assert](../../../docs/framework/misc/using-the-assert-method.md), and so on, work between application domains within a process but do not work in cross-process or cross-machine scenarios.</span></span>  
   
-## 保護されているオブジェクト  
- 一部のオブジェクトはそれ自体でセキュリティ状態を保持します。  これらのオブジェクトを信頼されていないコードに渡してはなりません。こうしたコードに渡すと、独自の権限を超えるセキュリティ承認が取得されかねません。  
+## <a name="protected-objects"></a><span data-ttu-id="04aa0-110">保護されているオブジェクト</span><span class="sxs-lookup"><span data-stu-id="04aa0-110">Protected objects</span></span>  
+ <span data-ttu-id="04aa0-111">一部のオブジェクトはそれ自体でセキュリティ状態を保持します。</span><span class="sxs-lookup"><span data-stu-id="04aa0-111">Some objects hold security state in themselves.</span></span> <span data-ttu-id="04aa0-112">これらのオブジェクトを信頼されていないコードに渡してはなりません。こうしたコードに渡すと、独自の権限を超えるセキュリティ承認が取得されかねません。</span><span class="sxs-lookup"><span data-stu-id="04aa0-112">These objects should not be passed to untrusted code, which would then acquire security authorization beyond its own permissions.</span></span>  
   
- <xref:System.IO.FileStream> オブジェクトの作成がその例です。  <xref:System.Security.Permissions.FileIOPermission> は作成時に要求され、成功すると、ファイル オブジェクトが返されます。  ただし、このオブジェクト参照がファイルのアクセス許可を持たないコードに渡されると、オブジェクトでこの特定のファイルに対する読み書きが行えるようになります。  
+ <span data-ttu-id="04aa0-113"><xref:System.IO.FileStream> オブジェクトの作成がその例です。</span><span class="sxs-lookup"><span data-stu-id="04aa0-113">One example is creating a <xref:System.IO.FileStream> object.</span></span> <span data-ttu-id="04aa0-114"><xref:System.Security.Permissions.FileIOPermission> は作成時に要求され、成功すると、ファイル オブジェクトが返されます。</span><span class="sxs-lookup"><span data-stu-id="04aa0-114">The <xref:System.Security.Permissions.FileIOPermission> is demanded at the time of creation and, if it succeeds, the file object is returned.</span></span> <span data-ttu-id="04aa0-115">ただし、このオブジェクト参照がファイルのアクセス許可を持たないコードに渡されると、オブジェクトでこの特定のファイルに対する読み書きが行えるようになります。</span><span class="sxs-lookup"><span data-stu-id="04aa0-115">However, if this object reference is passed to code without file permissions, the object will be able to read and write to this particular file.</span></span>  
   
- このようなオブジェクトに対する最も簡単な防御方法は、パブリック API 要素を介してオブジェクト参照を取得しようとするコードに、同じ **FileIOPermission** を要求することです。  
+ <span data-ttu-id="04aa0-116">このようなオブジェクトの最も簡単な防御方法は、同じ要求、 **FileIOPermission**任意のコードのパブリック API 要素を介してオブジェクト参照を取得しようとしています。</span><span class="sxs-lookup"><span data-stu-id="04aa0-116">The simplest defense for such an object is to demand the same **FileIOPermission** of any code that seeks to get the object reference through a public API element.</span></span>  
   
-## アプリケーション ドメインを越える問題  
- 管理対象ホスト環境にコードを隔離する場合、各種アセンブリのアクセス許可レベルを減らす明示的なポリシーを使用して、複数の子アプリケーション ドメインを生成するというのが一般的です。  ただし、既定のアプリケーション ドメインでそれらのアセンブリのポリシーは変更されません。  いずれかの子アプリケーション ドメインによって既定のアプリケーション ドメインがアセンブリを読み込むように強制されると、コードの隔離の効果が失われ、強制的に読み込まれたアセンブリにある型がより高いレベルの信頼でコードを実行できることになります。  
+## <a name="application-domain-crossing-issues"></a><span data-ttu-id="04aa0-117">アプリケーション ドメインを越える問題</span><span class="sxs-lookup"><span data-stu-id="04aa0-117">Application domain crossing issues</span></span>  
+ <span data-ttu-id="04aa0-118">管理対象ホスト環境にコードを隔離する場合、各種アセンブリのアクセス許可レベルを減らす明示的なポリシーを使用して、複数の子アプリケーション ドメインを生成するというのが一般的です。</span><span class="sxs-lookup"><span data-stu-id="04aa0-118">To isolate code in managed hosting environments, it is common to generate multiple child application domains with explicit policy reducing the permission levels for various assemblies.</span></span> <span data-ttu-id="04aa0-119">ただし、既定のアプリケーション ドメインでそれらのアセンブリのポリシーは変更されません。</span><span class="sxs-lookup"><span data-stu-id="04aa0-119">However, the policy for those assemblies remains unchanged in the default application domain.</span></span> <span data-ttu-id="04aa0-120">いずれかの子アプリケーション ドメインによって既定のアプリケーション ドメインがアセンブリを読み込むように強制されると、コードの隔離の効果が失われ、強制的に読み込まれたアセンブリにある型がより高いレベルの信頼でコードを実行できることになります。</span><span class="sxs-lookup"><span data-stu-id="04aa0-120">If one of the child application domains can force the default application domain to load an assembly, the effect of code isolation is lost and types in the forcibly loaded assembly will be able to run code at a higher level of trust.</span></span>  
   
- アプリケーション ドメインは、強制的に他のアプリケーション ドメインがアセンブリを読み込み、そのアプリケーション ドメインでホストされているオブジェクトに対してプロキシを呼び出すことによって、そこに含まれているコードを実行させることができます。  アプリケーション ドメイン間のプロキシを取得するには、オブジェクトをホストしているアプリケーション ドメインが、メソッド呼び出しパラメーターまたは戻り値を使用してプロキシを配布する必要があります。  または、アプリケーション ドメインが作成されたばかりの場合、既定では作成者が <xref:System.AppDomain> オブジェクトに対するプロキシを有しています。  したがって、コードの隔離状態を損なわないためには、高いレベルの信頼を持つアプリケーション ドメインがドメイン内の参照を、低いレベルの信頼を持つアプリケーション ドメインに対して、参照によってマーシャリングされたオブジェクト \(<xref:System.MarshalByRefObject> から派生したクラスのインスタンス\) を配布しないようにする必要があります。  
+ <span data-ttu-id="04aa0-121">アプリケーション ドメインは、強制的に他のアプリケーション ドメインがアセンブリを読み込み、そのアプリケーション ドメインでホストされているオブジェクトに対してプロキシを呼び出すことによって、そこに含まれているコードを実行させることができます。</span><span class="sxs-lookup"><span data-stu-id="04aa0-121">An application domain can force another application domain to load an assembly and run code contained therein by calling a proxy to an object hosted in the other application domain.</span></span> <span data-ttu-id="04aa0-122">アプリケーション ドメイン間のプロキシを取得するには、オブジェクトをホストしているアプリケーション ドメインが、メソッド呼び出しパラメーターまたは戻り値を使用してプロキシを配布する必要があります。</span><span class="sxs-lookup"><span data-stu-id="04aa0-122">To obtain a cross-application-domain proxy, the application domain hosting the object must distribute one through a method call parameter or return value.</span></span> <span data-ttu-id="04aa0-123">または、アプリケーション ドメインが作成されたばかりの場合、既定では作成者が <xref:System.AppDomain> オブジェクトに対するプロキシを有しています。</span><span class="sxs-lookup"><span data-stu-id="04aa0-123">Or, if the application domain was just created, the creator has a proxy to the <xref:System.AppDomain> object by default.</span></span> <span data-ttu-id="04aa0-124">したがって、コードの隔離状態を損なわないためには、高いレベルの信頼を持つアプリケーション ドメインがドメイン内の参照を、低いレベルの信頼を持つアプリケーション ドメインに対して、参照によってマーシャリングされたオブジェクト (<xref:System.MarshalByRefObject> から派生したクラスのインスタンス) を配布しないようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="04aa0-124">Thus, to avoid breaking code isolation, an application domain with a higher level of trust should not distribute references to marshaled-by-reference objects (instances of classes derived from <xref:System.MarshalByRefObject>) in its domain to application domains with lower levels of trust.</span></span>  
   
- 通常、既定のアプリケーション ドメインによって、それぞれのコントロール オブジェクトが含まれる子アプリケーション ドメインが作成されます。  コントロール オブジェクトが、新しいアプリケーション ドメインを管理し、既定のアプリケーション ドメインからオーダーを受ける場合もありますが、実際にドメインと直接やり取りすることはできません。  場合によっては、既定のアプリケーション ドメインが、コントロール オブジェクトに対してプロキシを呼び出します。  ただし、コントロール オブジェクトが既定のアプリケーション ドメインにコールバックすることが必要になる場合もあります。  このような場合、既定のアプリケーション ドメインは、コントロール オブジェクトのコンストラクターに対して、参照によってマーシャリングされたコールバック オブジェクトを渡します。  このプロキシを保護する責任は、コントロール オブジェクトにあります。  コントロール オブジェクトがパブリック クラスのパブリック静的フィールドにプロキシを配置した場合、またはプロキシを公開している場合には、他のコードが既定のアプリケーション ドメインにコールバックされるという危険なメカニズムが生じることになります。  このため、コントロール オブジェクトはプロキシを非公開に保つことが常に暗黙的に期待されています。  
+ <span data-ttu-id="04aa0-125">通常、既定のアプリケーション ドメインによって、それぞれのコントロール オブジェクトが含まれる子アプリケーション ドメインが作成されます。</span><span class="sxs-lookup"><span data-stu-id="04aa0-125">Usually, the default application domain creates the child application domains with a control object in each one.</span></span> <span data-ttu-id="04aa0-126">コントロール オブジェクトが、新しいアプリケーション ドメインを管理し、既定のアプリケーション ドメインからオーダーを受ける場合もありますが、実際にドメインと直接やり取りすることはできません。</span><span class="sxs-lookup"><span data-stu-id="04aa0-126">The control object manages the new application domain and occasionally takes orders from the default application domain, but it cannot actually contact the domain directly.</span></span> <span data-ttu-id="04aa0-127">場合によっては、既定のアプリケーション ドメインが、コントロール オブジェクトに対してプロキシを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="04aa0-127">Occasionally, the default application domain calls its proxy to the control object.</span></span> <span data-ttu-id="04aa0-128">ただし、コントロール オブジェクトが既定のアプリケーション ドメインにコールバックすることが必要になる場合もあります。</span><span class="sxs-lookup"><span data-stu-id="04aa0-128">However, there might be cases in which it is necessary for the control object to call back to the default application domain.</span></span> <span data-ttu-id="04aa0-129">このような場合、既定のアプリケーション ドメインは、コントロール オブジェクトのコンストラクターに対して、参照によってマーシャリングされたコールバック オブジェクトを渡します。</span><span class="sxs-lookup"><span data-stu-id="04aa0-129">In these cases, the default application domain passes a marshal-by-reference callback object to the constructor of the control object.</span></span> <span data-ttu-id="04aa0-130">このプロキシを保護する責任は、コントロール オブジェクトにあります。</span><span class="sxs-lookup"><span data-stu-id="04aa0-130">It is the responsibility of the control object to protect this proxy.</span></span> <span data-ttu-id="04aa0-131">コントロール オブジェクトがパブリック クラスのパブリック静的フィールドにプロキシを配置した場合、またはプロキシを公開している場合には、他のコードが既定のアプリケーション ドメインにコールバックされるという危険なメカニズムが生じることになります。</span><span class="sxs-lookup"><span data-stu-id="04aa0-131">If the control object were to place the proxy on a public static field of a public class, or otherwise publicly expose the proxy, this would open up a dangerous mechanism for other code to call back into the default application domain.</span></span> <span data-ttu-id="04aa0-132">このため、コントロール オブジェクトはプロキシを非公開に保つことが常に暗黙的に期待されています。</span><span class="sxs-lookup"><span data-stu-id="04aa0-132">For this reason, control objects are always implicitly trusted to keep the proxy private.</span></span>  
   
-## 参照  
- [安全なコーディングのガイドライン](../../../docs/standard/security/secure-coding-guidelines.md)
+## <a name="see-also"></a><span data-ttu-id="04aa0-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="04aa0-133">See Also</span></span>  
+ [<span data-ttu-id="04aa0-134">安全なコーディングのガイドライン</span><span class="sxs-lookup"><span data-stu-id="04aa0-134">Secure Coding Guidelines</span></span>](../../../docs/standard/security/secure-coding-guidelines.md)

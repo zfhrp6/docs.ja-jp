@@ -1,54 +1,62 @@
 ---
-title: "&lt;useManagedPresentation&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;useManagedPresentation&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 17a0dd77-af54-41db-a9d0-4b17ff42878f
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f99879ab80acddf1d50f5e5c734b8d6c975cb348
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;useManagedPresentation&gt;
-WS\-Trust の CardSpace プロファイルをサポートする CardSpace セキュリティ トークン サービスとの通信に使用するバインディング要素。  この要素には属性がなく、空のスイッチとして表されます。  
+# <a name="ltusemanagedpresentationgt"></a><span data-ttu-id="1f3bb-102">&lt;useManagedPresentation&gt;</span><span class="sxs-lookup"><span data-stu-id="1f3bb-102">&lt;useManagedPresentation&gt;</span></span>
+<span data-ttu-id="1f3bb-103">WS-Trust の CardSpace プロファイルをサポートする CardSpace セキュリティ トークン サービスとの通信に使用するバインド要素。</span><span class="sxs-lookup"><span data-stu-id="1f3bb-103">A binding element used to communicate with a CardSpace Security Token Service that supports the CardSpace profile of WS-Trust.</span></span> <span data-ttu-id="1f3bb-104">この要素には属性がなく、空のスイッチとして表されます。</span><span class="sxs-lookup"><span data-stu-id="1f3bb-104">This element has no attribute and is present as an empty switch.</span></span>  
   
-## 構文  
+ <span data-ttu-id="1f3bb-105">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="1f3bb-105">\<system.serviceModel></span></span>  
+<span data-ttu-id="1f3bb-106">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="1f3bb-106">\<bindings></span></span>  
+<span data-ttu-id="1f3bb-107">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="1f3bb-107">\<customBinding></span></span>  
+<span data-ttu-id="1f3bb-108">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="1f3bb-108">\<binding></span></span>  
+<span data-ttu-id="1f3bb-109">\<useManagedPresentation ></span><span class="sxs-lookup"><span data-stu-id="1f3bb-109">\<useManagedPresentation></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="1f3bb-110">構文</span><span class="sxs-lookup"><span data-stu-id="1f3bb-110">Syntax</span></span>  
   
+```xml  
 <useManagedPresentation/>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="1f3bb-111">属性および要素</span><span class="sxs-lookup"><span data-stu-id="1f3bb-111">Attributes and Elements</span></span>  
+ <span data-ttu-id="1f3bb-112">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="1f3bb-112">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
- なし。  
+### <a name="attributes"></a><span data-ttu-id="1f3bb-113">属性</span><span class="sxs-lookup"><span data-stu-id="1f3bb-113">Attributes</span></span>  
+ <span data-ttu-id="1f3bb-114">なし。</span><span class="sxs-lookup"><span data-stu-id="1f3bb-114">None.</span></span>  
   
-### 子要素  
- なし  
+### <a name="child-elements"></a><span data-ttu-id="1f3bb-115">子要素</span><span class="sxs-lookup"><span data-stu-id="1f3bb-115">Child Elements</span></span>  
+ <span data-ttu-id="1f3bb-116">なし</span><span class="sxs-lookup"><span data-stu-id="1f3bb-116">None</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="1f3bb-117">親要素</span><span class="sxs-lookup"><span data-stu-id="1f3bb-117">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<binding\>](../../../../../docs/framework/misc/binding.md)|カスタム バインドのすべてのバインド機能を定義します。|  
+|<span data-ttu-id="1f3bb-118">要素</span><span class="sxs-lookup"><span data-stu-id="1f3bb-118">Element</span></span>|<span data-ttu-id="1f3bb-119">説明</span><span class="sxs-lookup"><span data-stu-id="1f3bb-119">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="1f3bb-120">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="1f3bb-120">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)|<span data-ttu-id="1f3bb-121">カスタム バインドのすべてのバインド機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="1f3bb-121">Defines all binding capabilities of the custom binding.</span></span>|  
   
-## 解説  
- この要素は、WS\-Trust の CardSpace プロファイルをサポートするという事実をポリシーで明示するために、ID プロバイダーによって使用されます。  このようなポリシー アサーションを公開する ID プロバイダーは、その CardSpace プロファイルに基づくトークンを発行できる必要があります。  
+## <a name="remarks"></a><span data-ttu-id="1f3bb-122">コメント</span><span class="sxs-lookup"><span data-stu-id="1f3bb-122">Remarks</span></span>  
+ <span data-ttu-id="1f3bb-123">この要素は、WS-Trust の CardSpace プロファイルをサポートするという事実をポリシーで明示するために、ID プロバイダーによって使用されます。</span><span class="sxs-lookup"><span data-stu-id="1f3bb-123">This element is used by an identity provider to express in its policy the fact that it supports the CardSpace profile of WS-Trust.</span></span> <span data-ttu-id="1f3bb-124">このようなポリシー アサーションを公開する ID プロバイダーは、その CardSpace プロファイルに基づくトークンを発行できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="1f3bb-124">Identity providers that publish such a policy assertion should be able to issue tokens based on that CardSpace profile.</span></span>  
   
-## 参照  
- <xref:System.ServiceModel.Configuration.UseManagedPresentationElement>   
- <xref:System.ServiceModel.Channels.UseManagedPresentationBindingElement>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- [バインディング](../../../../../docs/framework/wcf/bindings.md)   
- [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
- [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
- [\<customBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+## <a name="see-also"></a><span data-ttu-id="1f3bb-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="1f3bb-125">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.UseManagedPresentationElement>  
+ <xref:System.ServiceModel.Channels.UseManagedPresentationBindingElement>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ [<span data-ttu-id="1f3bb-126">バインディング</span><span class="sxs-lookup"><span data-stu-id="1f3bb-126">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="1f3bb-127">バインディングの拡張</span><span class="sxs-lookup"><span data-stu-id="1f3bb-127">Extending Bindings</span></span>](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [<span data-ttu-id="1f3bb-128">カスタム バインド</span><span class="sxs-lookup"><span data-stu-id="1f3bb-128">Custom Bindings</span></span>](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [<span data-ttu-id="1f3bb-129">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="1f3bb-129">\<customBinding></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

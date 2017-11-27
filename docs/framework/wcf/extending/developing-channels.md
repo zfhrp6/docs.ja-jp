@@ -1,44 +1,47 @@
 ---
-title: "チャネルの開発 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "チャネルの開発"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0513af9f-a0c2-457b-9a50-5b6bfee48513
-caps.latest.revision: 17
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: dd33f987ab28b42c16aa4798c59675225dcaf520
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# チャネルの開発
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーション レイヤーで使用できるプロトコル チャネルやトランスポート チャネルを開発するには、いくつかの手順が必要です。このトピックでは、これらの手順について説明し、詳細情報の参照先となる特定のトピックを示します。チャネル モデルと、このトピックで説明するそのさまざまな種類について理解するには、「[チャネル モデルの概要](../../../../docs/framework/wcf/extending/channel-model-overview.md)」を参照してください。トランスポート チャネルの完全なサンプルについては、「[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)」を参照してください。  
+# <a name="developing-channels"></a><span data-ttu-id="d0abb-102">チャネルの開発</span><span class="sxs-lookup"><span data-stu-id="d0abb-102">Developing Channels</span></span>
+<span data-ttu-id="d0abb-103">[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーション レイヤーで使用できるプロトコル チャネルやトランスポート チャネルを開発するには、いくつかの手順が必要です。</span><span class="sxs-lookup"><span data-stu-id="d0abb-103">To develop a protocol or transport channel that can be used with the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] application layer requires several steps.</span></span> <span data-ttu-id="d0abb-104">このトピックでは、これらの手順について説明し、詳細情報の参照先となる特定のトピックを示します。</span><span class="sxs-lookup"><span data-stu-id="d0abb-104">This topic describes those steps and points you to specific topics for more information.</span></span> <span data-ttu-id="d0abb-105">チャネル モデルと、このトピックに記載されているさまざまな種類を理解するのを参照してください。[チャネル モデルの概要](../../../../docs/framework/wcf/extending/channel-model-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="d0abb-105">To understand the channel model and the various types that are mentioned in this topic, see [Channel Model Overview](../../../../docs/framework/wcf/extending/channel-model-overview.md).</span></span> <span data-ttu-id="d0abb-106">完全なトランスポート チャネルのサンプルでは、次を参照してください。[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)です。</span><span class="sxs-lookup"><span data-stu-id="d0abb-106">For a complete transport channel sample, see [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md).</span></span>  
   
-## チャネル開発タスクの一覧  
- ユーザー定義チャネルを作成する手順は、次のとおりです。すべてのチャネルで、次の手順が必要です。  
+## <a name="the-channel-development-task-list"></a><span data-ttu-id="d0abb-107">チャネル開発タスクの一覧</span><span class="sxs-lookup"><span data-stu-id="d0abb-107">The Channel Development Task List</span></span>  
+ <span data-ttu-id="d0abb-108">ユーザー定義チャネルを作成する手順は、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="d0abb-108">The steps to create a user-defined channel are as follows.</span></span> <span data-ttu-id="d0abb-109">すべてのチャネルで、次の手順が必要です。</span><span class="sxs-lookup"><span data-stu-id="d0abb-109">All channels must:</span></span>  
   
-1.  <xref:System.ServiceModel.Channels.IChannelFactory> と <xref:System.ServiceModel.Channels.IChannelListener> で、チャネルのメッセージ交換パターン \(<xref:System.ServiceModel.Channels.IOutputChannel>、<xref:System.ServiceModel.Channels.IInputChannel>、<xref:System.ServiceModel.Channels.IDuplexChannel>、<xref:System.ServiceModel.Channels.IRequestChannel>、または <xref:System.ServiceModel.Channels.IReplyChannel>\) のうちのどれをサポートするか、また、選択したパターンでこれらのインターフェイスのセッションの多いバリエーションをサポートするかどうかを決定します。詳細については、「[メッセージ交換パターンの選択](../../../../docs/framework/wcf/extending/choosing-a-message-exchange-pattern.md)」を参照してください。  
+1.  <span data-ttu-id="d0abb-110"><xref:System.ServiceModel.Channels.IOutputChannel> と <xref:System.ServiceModel.Channels.IInputChannel> で、チャネルのメッセージ交換パターン (<xref:System.ServiceModel.Channels.IDuplexChannel>、<xref:System.ServiceModel.Channels.IRequestChannel>、<xref:System.ServiceModel.Channels.IReplyChannel>、<xref:System.ServiceModel.Channels.IChannelFactory>、または <xref:System.ServiceModel.Channels.IChannelListener>) のうちのどれをサポートするか、また、選択したパターンでこれらのインターフェイスのセッションの多いバリエーションをサポートするかどうかを決定します。</span><span class="sxs-lookup"><span data-stu-id="d0abb-110">Decide which of the channel Message Exchange Patterns (<xref:System.ServiceModel.Channels.IOutputChannel>, <xref:System.ServiceModel.Channels.IInputChannel>, <xref:System.ServiceModel.Channels.IDuplexChannel>, <xref:System.ServiceModel.Channels.IRequestChannel>, or <xref:System.ServiceModel.Channels.IReplyChannel>) your <xref:System.ServiceModel.Channels.IChannelFactory> and <xref:System.ServiceModel.Channels.IChannelListener> will support, as well as whether it will support the sessionful variations of these interfaces.</span></span> <span data-ttu-id="d0abb-111">詳細については、「[メッセージ交換パターンの選択](../../../../docs/framework/wcf/extending/choosing-a-message-exchange-pattern.md)です。</span><span class="sxs-lookup"><span data-stu-id="d0abb-111">For details, see [Choosing a Message Exchange Pattern](../../../../docs/framework/wcf/extending/choosing-a-message-exchange-pattern.md).</span></span>  
   
-2.  選択したメッセージ交換パターンをサポートするチャネル ファクトリおよびリスナー \(<xref:System.ServiceModel.Channels.IChannelFactory> および <xref:System.ServiceModel.Channels.IChannelListener>\) を作成します。ファクトリの開発の詳細については、「[クライアント : チャネル ファクトリとチャネル](../../../../docs/framework/wcf/extending/client-channel-factories-and-channels.md)」を参照してください。リスナーの開発の詳細については、「[サービス : チャネル リスナーとチャネル](../../../../docs/framework/wcf/extending/service-channel-listeners-and-channels.md)」を参照してください。  
+2.  <span data-ttu-id="d0abb-112">選択したメッセージ交換パターンをサポートするチャネル ファクトリおよびリスナー (<xref:System.ServiceModel.Channels.IChannelFactory> および <xref:System.ServiceModel.Channels.IChannelListener>) を作成します。</span><span class="sxs-lookup"><span data-stu-id="d0abb-112">Create a channel factory and listener (<xref:System.ServiceModel.Channels.IChannelFactory> and <xref:System.ServiceModel.Channels.IChannelListener>) that support your message exchange pattern.</span></span> <span data-ttu-id="d0abb-113">ファクトリの開発に関する詳細については、「[クライアント: チャネル ファクトリとチャネル](../../../../docs/framework/wcf/extending/client-channel-factories-and-channels.md)です。</span><span class="sxs-lookup"><span data-stu-id="d0abb-113">For details about developing factories, see [Client: Channel Factories and Channels](../../../../docs/framework/wcf/extending/client-channel-factories-and-channels.md).</span></span> <span data-ttu-id="d0abb-114">リスナーの開発に関する詳細については、「[サービス: チャネル リスナーとチャネル](../../../../docs/framework/wcf/extending/service-channel-listeners-and-channels.md)です。</span><span class="sxs-lookup"><span data-stu-id="d0abb-114">For details about developing listeners, see [Service: Channel Listeners and Channels](../../../../docs/framework/wcf/extending/service-channel-listeners-and-channels.md).</span></span>  
   
-3.  ネットワーク固有の例外が、<xref:System.ServiceModel.CommunicationException> の適切な派生クラスまたは <xref:System.TimeoutException?displayProperty=fullName> に標準化されていることを確認します。詳細については、「[例外とエラーの処理](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)」を参照してください。  
+3.  <span data-ttu-id="d0abb-115">ネットワーク固有の例外が、<xref:System.TimeoutException?displayProperty=nameWithType> の適切な派生クラスまたは <xref:System.ServiceModel.CommunicationException> に標準化されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="d0abb-115">Ensure that any network-specific exceptions are normalized to either <xref:System.TimeoutException?displayProperty=nameWithType> or the appropriate derived class of <xref:System.ServiceModel.CommunicationException>.</span></span> <span data-ttu-id="d0abb-116">詳細については、「[例外の処理とエラー](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)です。</span><span class="sxs-lookup"><span data-stu-id="d0abb-116">For details, see [Handling Exceptions and Faults](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md).</span></span>  
   
-4.  アプリケーション レイヤーから使用できるようにするには、カスタム チャネルを追加する <xref:System.ServiceModel.Channels.BindingElement> をチャネル スタックに追加します。詳細については、「[BindingElement の作成](../../../../docs/framework/wcf/extending/creating-a-bindingelement.md)」を参照してください。  
+4.  <span data-ttu-id="d0abb-117">アプリケーション レイヤーから使用できるようにするには、カスタム チャネルを追加する <xref:System.ServiceModel.Channels.BindingElement> をチャネル スタックに追加します。</span><span class="sxs-lookup"><span data-stu-id="d0abb-117">To enable use from the application layer, add a <xref:System.ServiceModel.Channels.BindingElement> that adds the custom channel to a channel stack.</span></span> <span data-ttu-id="d0abb-118">詳細については、次を参照してください。 [BindingElement の作成](../../../../docs/framework/wcf/extending/creating-a-bindingelement.md)です。</span><span class="sxs-lookup"><span data-stu-id="d0abb-118">For more information, see [Creating a BindingElement](../../../../docs/framework/wcf/extending/creating-a-bindingelement.md).</span></span>  
   
- アプリケーション レイヤーでより完全なサポートを実現するには、次の追加手順が必要です。  
+ <span data-ttu-id="d0abb-119">アプリケーション レイヤーでより完全なサポートを実現するには、次の追加手順が必要です。</span><span class="sxs-lookup"><span data-stu-id="d0abb-119">The following additional steps are required to enable more complete support at the application layer:</span></span>  
   
-1.  バインド要素拡張セクションを追加して、新しいバインド要素を構成システムに公開します。詳細については、「[構成とメタデータのサポート](../../../../docs/framework/wcf/extending/configuration-and-metadata-support.md)」を参照してください。  
+1.  <span data-ttu-id="d0abb-120">バインド要素拡張セクションを追加して、新しいバインド要素を構成システムに公開します。</span><span class="sxs-lookup"><span data-stu-id="d0abb-120">Add a binding element extension section to expose the new binding element to the configuration system.</span></span> <span data-ttu-id="d0abb-121">詳細については、次を参照してください。[構成とメタデータのサポート](../../../../docs/framework/wcf/extending/configuration-and-metadata-support.md)です。</span><span class="sxs-lookup"><span data-stu-id="d0abb-121">For more information, see [Configuration and Metadata Support](../../../../docs/framework/wcf/extending/configuration-and-metadata-support.md).</span></span>  
   
-2.  他のエンドポイントに機能を伝達するメタデータ拡張を追加します。詳細については、「[構成とメタデータのサポート](../../../../docs/framework/wcf/extending/configuration-and-metadata-support.md)」を参照してください。  
+2.  <span data-ttu-id="d0abb-122">他のエンドポイントに機能を伝達するメタデータ拡張を追加します。</span><span class="sxs-lookup"><span data-stu-id="d0abb-122">Add metadata extensions to communicate capabilities to other endpoints.</span></span> <span data-ttu-id="d0abb-123">詳細については、次を参照してください。[構成とメタデータのサポート](../../../../docs/framework/wcf/extending/configuration-and-metadata-support.md)です。</span><span class="sxs-lookup"><span data-stu-id="d0abb-123">For more information, see [Configuration and Metadata Support](../../../../docs/framework/wcf/extending/configuration-and-metadata-support.md).</span></span>  
   
-3.  適切に定義されたプロファイルに従って、バインド要素のスタックを事前構成するバインディングを追加します。詳細については、「[ユーザー定義バインディングの作成](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)」を参照してください。  
+3.  <span data-ttu-id="d0abb-124">適切に定義されたプロファイルに従って、バインド要素のスタックを事前構成するバインディングを追加します。</span><span class="sxs-lookup"><span data-stu-id="d0abb-124">Add a binding that pre-configures a stack of binding elements according to a well-defined profile.</span></span> <span data-ttu-id="d0abb-125">詳細については、次を参照してください。[ユーザー定義バインディング](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)です。</span><span class="sxs-lookup"><span data-stu-id="d0abb-125">For more information, see [Creating User-Defined Bindings](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md).</span></span>  
   
-4.  構成システムにバインディングを開示する、バインディング セクションおよびバインディング構成要素を追加します。詳細については、「[構成とメタデータのサポート](../../../../docs/framework/wcf/extending/configuration-and-metadata-support.md)」を参照してください。  
+4.  <span data-ttu-id="d0abb-126">構成システムにバインディングを開示する、バインディング セクションおよびバインド構成要素を追加します。</span><span class="sxs-lookup"><span data-stu-id="d0abb-126">Add a binding section and binding configuration element to expose the binding to the configuration system.</span></span> <span data-ttu-id="d0abb-127">詳細については、次を参照してください。[構成とメタデータのサポート](../../../../docs/framework/wcf/extending/configuration-and-metadata-support.md)です。</span><span class="sxs-lookup"><span data-stu-id="d0abb-127">For more information, see [Configuration and Metadata Support](../../../../docs/framework/wcf/extending/configuration-and-metadata-support.md).</span></span>  
   
-## 参照  
- [バインディングの拡張](../../../../docs/framework/wcf/extending/extending-bindings.md)
+## <a name="see-also"></a><span data-ttu-id="d0abb-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="d0abb-128">See Also</span></span>  
+ [<span data-ttu-id="d0abb-129">バインディングの拡張</span><span class="sxs-lookup"><span data-stu-id="d0abb-129">Extending Bindings</span></span>](../../../../docs/framework/wcf/extending/extending-bindings.md)

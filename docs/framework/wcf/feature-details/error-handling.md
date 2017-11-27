@@ -1,78 +1,81 @@
 ---
-title: "Error handling | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "エラー処理"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c948841a-7db9-40ae-9b78-587d216cbcaf
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 308712ed4c8f44740622c57525f152152f7d6c73
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Error handling
-## Windows Communication Foundation でのエラー処理  
- サービスで予期しない例外やエラーが発生した場合、例外処理ソリューションを設計する方法は複数あります。  "正しい" または "最善" のエラー処理ソリューションが 1 つもない場合でも、検討する必要のある有効な手段が複数あります。  通常は、WCF 実装の複雑さ、例外の種類と頻度、例外の性質上処理対象かどうか、および関連付けられたトレース、ログ、またはポリシー要件に応じて、  以下に記載されている手法を複数組み合わせたハイブリッド ソリューションを実装することをお勧めします。  
+# <a name="error-handling"></a><span data-ttu-id="20811-102">エラー処理</span><span class="sxs-lookup"><span data-stu-id="20811-102">Error handling</span></span>
+## <a name="error-handling-in-windows-communication-foundation"></a><span data-ttu-id="20811-103">Windows Communication Foundation でのエラー処理</span><span class="sxs-lookup"><span data-stu-id="20811-103">Error Handling in Windows Communication Foundation</span></span>  
+ <span data-ttu-id="20811-104">サービスで予期しない例外やエラーが発生した場合、例外処理ソリューションを設計する方法は複数あります。</span><span class="sxs-lookup"><span data-stu-id="20811-104">When a service encounters an unexpected exception or error, there are multiple ways to design an exception-handling solution.</span></span> <span data-ttu-id="20811-105">ありませんが 1 つの「適切」または「最善」エラー処理ソリューションでは、考慮すべき 1 つの複数の有効なパスがあります。</span><span class="sxs-lookup"><span data-stu-id="20811-105">While there is no single "correct" or "best practice" error-handling solution, there are multiple valid paths for one to consider.</span></span> <span data-ttu-id="20811-106">未処理の性質と複雑さによっては、WCF 実装ではの種類と頻度、例外を処理されるは、下の一覧から複数の方法を組み合わせたハイブリッド ソリューションを実装するいずれかのことを通常お勧めします例外、および任意のトレース、ログ記録、またはポリシー要件に関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="20811-106">It is normally recommended that one implement a hybrid solution that combines multiple approaches from the list below, depending on the complexity of the WCF implementation, the type and frequency of the exceptions, the handled vs. unhandled nature of the exceptions, and any associated tracing, logging, or policy requirements.</span></span>  
   
- これらのソリューションについては、このセクションの残りの部分で詳しく説明します。  
+ <span data-ttu-id="20811-107">これらのソリューションについては、このセクションの残りの部分で詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="20811-107">These solutions are explained more deeply in the rest of this section.</span></span>  
   
-### Microsoft Enterprise Library  
- Microsoft Enterprise Library Exception Handling Application Block は、共通の設計パターンを実装し、エンタープライズ アプリケーションのすべてのアーキテクチャ レイヤーで発生する例外を処理するための一貫した戦略を策定するのに役立ちます。  これは、アプリケーション コンポーネントの catch ステートメントに含まれる一般的なコードをサポートするように設計されています。  開発者は、アプリケーション全体で同一の catch ブロックにこのコード \(例外情報をログに記録するコードなど\) を繰り返し使用する代わりに、Exception Handling Application Block を使用すると、このロジックを再利用可能な例外ハンドラーとしてカプセル化できます。  
+### <a name="the-microsoft-enterprise-library"></a><span data-ttu-id="20811-108">Microsoft Enterprise Library</span><span class="sxs-lookup"><span data-stu-id="20811-108">The Microsoft Enterprise Library</span></span>  
+ <span data-ttu-id="20811-109">Microsoft Enterprise Library Exception Handling Application Block は、共通の設計パターンを実装し、エンタープライズ アプリケーションのすべてのアーキテクチャ レイヤーで発生する例外を処理するための一貫した戦略を策定するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="20811-109">The Microsoft Enterprise Library Exception Handling Application Block helps implement common design patterns and create a consistent strategy for processing exceptions that occur in all architectural layers of an enterprise application.</span></span> <span data-ttu-id="20811-110">これは、アプリケーション コンポーネントの catch ステートメントに含まれる一般的なコードをサポートするように設計されています。</span><span class="sxs-lookup"><span data-stu-id="20811-110">It is designed to support the typical code contained in catch statements in application components.</span></span> <span data-ttu-id="20811-111">開発者は、アプリケーション全体で同一の catch ブロックにこのコード (例外情報をログに記録するコードなど) を繰り返し使用する代わりに、Exception Handling Application Block を使用すると、このロジックを再利用可能な例外ハンドラーとしてカプセル化できます。</span><span class="sxs-lookup"><span data-stu-id="20811-111">Instead of repeating this code (such as code that logs exception information) in identical catch blocks throughout an application, the Exception Handling Application Block allows developers to encapsulate this logic as reusable exception handlers.</span></span>  
   
- このライブラリには、すぐに使用できる Fault Contract Exception Handler が含まれています。  この例外ハンドラーは、Windows® Communication Foundation \(WCF\) のサービス境界で使用することを目的に設計されており、例外から新しいエラー コントラクトを生成します。  
+ <span data-ttu-id="20811-112">このライブラリには、すぐに使用できる Fault Contract Exception Handler が含まれています。</span><span class="sxs-lookup"><span data-stu-id="20811-112">This Library includes out-of-the-box a Fault Contract Exception Handler.</span></span> <span data-ttu-id="20811-113">この例外ハンドラーは、Windows® Communication Foundation (WCF) のサービス境界で使用することを目的に設計されており、例外から新しいエラー コントラクトを生成します。</span><span class="sxs-lookup"><span data-stu-id="20811-113">This exception handler is designed for use at Windows® Communication Foundation (WCF) service boundaries, and generates a new Fault Contract from the exception.</span></span>  
   
- アプリケーション ブロックは、よく使用されるベスト プラクティスを組み込み、アプリケーション全体の例外処理に共通の方法を提供することを目的としています。  その一方で、独自に開発されたカスタム エラー ハンドラーやエラー コントラクトが非常に便利な場合もあります。  たとえば、カスタム エラー ハンドラーを使用すると、すべての例外を自動的に FaultExceptions に昇格し、さらにアプリケーションにログ機能を追加できるようになります。  
+ <span data-ttu-id="20811-114">アプリケーション ブロックは、よく使用されるベスト プラクティスを組み込み、アプリケーション全体の例外処理に共通の方法を提供することを目的としています。</span><span class="sxs-lookup"><span data-stu-id="20811-114">Application blocks aim to incorporate commonly used best practices and provide a common approach for exception handling throughout your application.</span></span> <span data-ttu-id="20811-115">その一方で、独自に開発されたカスタム エラー ハンドラーやエラー コントラクトが非常に便利な場合もあります。</span><span class="sxs-lookup"><span data-stu-id="20811-115">On the other hand, custom error handlers and fault contracts developed on one’s own can also be very useful.</span></span> <span data-ttu-id="20811-116">たとえば、カスタム エラー ハンドラーは、絶好のチャンスに自動的に FaultExceptions にすべての例外を昇格し、ログ記録機能をアプリケーションに追加を提供します。</span><span class="sxs-lookup"><span data-stu-id="20811-116">For instance, custom error handlers provide an excellent opportunity to automatically promote all exceptions to FaultExceptions and also to add logging capabilities to your application.</span></span>  
   
- 詳細については、「[Microsoft Enterprise Library](http://msdn.microsoft.com/library/ff632023.aspx)」を参照してください。  
+ <span data-ttu-id="20811-117">詳細についてを参照してください[Microsoft Enterprise Library](http://msdn.microsoft.com/library/ff632023.aspx)です。</span><span class="sxs-lookup"><span data-stu-id="20811-117">For more information, please see [Microsoft Enterprise Library](http://msdn.microsoft.com/library/ff632023.aspx).</span></span>  
   
-### 予期される例外の処理  
- 適切な行動方針として、各操作または関連する機能拡張ポイントにおいて予期される例外をキャッチし、キャッチした例外を回復できるかどうかを判断して、FaultException\<T\> で適切なカスタム エラーを返します。  
+### <a name="dealing-with-expected-exceptions"></a><span data-ttu-id="20811-118">予期される例外の処理</span><span class="sxs-lookup"><span data-stu-id="20811-118">Dealing with Expected Exceptions</span></span>  
+ <span data-ttu-id="20811-119">一連の適切な措置は操作または関連する機能拡張ポイントに予期される例外をキャッチから、回復することができ、FaultException で適切なカスタム エラーを返すかどうかを決定する\<T ></span><span class="sxs-lookup"><span data-stu-id="20811-119">The proper course of action is to catch expected exceptions in every operation or relevant extensibility point, decide whether they can be recovered from, and return the proper custom fault in a FaultException\<T></span></span>  
   
-### IErrorHandler を使用した予期しない例外の処理  
- 予期しない例外を処理するには、行動方針として IErrorHandler を "フックする" ことをお勧めします。  エラー ハンドラーは、チャネル層ではなく WCF ランタイム レベル \("サービス モデル" 層\) でのみ例外をキャッチします。  チャネル レベルで IErrorHandler をフックする唯一の方法は、カスタム チャネルを作成することです。ただし、これはほとんどのシナリオで推奨されていません。  
+### <a name="dealing-with-unexpected-exceptions-using-an-ierrorhandler"></a><span data-ttu-id="20811-120">IErrorHandler を使用した予期しない例外の処理</span><span class="sxs-lookup"><span data-stu-id="20811-120">Dealing with Unexpected Exceptions using an IErrorHandler</span></span>  
+ <span data-ttu-id="20811-121">予期しない例外の処理をするには、推奨される一連の措置は、IErrorHandler を「フック」です。</span><span class="sxs-lookup"><span data-stu-id="20811-121">To deal with unexpected exceptions, the recommended course of action is to "hook" an IErrorHandler.</span></span> <span data-ttu-id="20811-122">エラー ハンドラーは、チャネル レイヤーではなく、WCF ランタイム レベル (「サービス モデル」層) でのみ例外をキャッチします。</span><span class="sxs-lookup"><span data-stu-id="20811-122">Error handlers only catch exceptions at the WCF runtime level (the "service model" layer), not at the channel layer.</span></span> <span data-ttu-id="20811-123">チャネル レベルで IErrorHandler をフックする唯一の方法は、カスタム チャネルを作成することです。ただし、これはほとんどのシナリオで推奨されていません。</span><span class="sxs-lookup"><span data-stu-id="20811-123">The only way to hook an IErrorHandler at the channel level is to create a custom channel, which is not recommended in most scenarios.</span></span>  
   
- 一般的に、"予期しない例外" とは、回復不可能な例外でも処理例外でもなく、予期しないユーザー例外のことです。  回復不可能な例外 \(メモリ不足の例外など\) は、一般的に[ExceptionHandler クラス](http://msdn.microsoft.com/library/system.servicemodel.dispatcher.exceptionhandler.aspx)によって自動的に処理される例外で、通常は正常に処理できません。このような例外の処理は、単に追加のログ記録を行うため、または標準の例外をクライアントに返すためにのみ行われます。  処理例外は、シリアル化、エンコーダー、フォーマッタ レベルなどのメッセージの処理中に発生します。通常、この例外は IErrorHandler では処理できません。これは、一般的に、このような例外が発生するまでにエラー ハンドラーの介入が早すぎるか、遅すぎることが原因です。  同様に、トランスポート例外も IErrorHandler では処理できません。  
+ <span data-ttu-id="20811-124">回復不可能な例外も処理例外は、「予期しない例外」は、通常、これは、代わりに、予期しないユーザー例外です。</span><span class="sxs-lookup"><span data-stu-id="20811-124">An "unexpected exception" is generally neither an irrecoverable exception nor a processing exception; it is, instead, an unexpected user exception.</span></span> <span data-ttu-id="20811-125">回復不可能な例外 (メモリ不足の例外) – などいずれかの通常によって処理される、[サービス モデルの例外ハンドラー](http://msdn.microsoft.com/library/system.servicemodel.dispatcher.exceptionhandler.aspx)自動的に – 一般的に処理できない、およびそのような例外を処理する唯一の理由追加のログ記録がすべての可能性がありますまたは標準の例外をクライアントに返します。</span><span class="sxs-lookup"><span data-stu-id="20811-125">An irrecoverable exception (such as an out-of-memory exception) – one generally handled by the [Service Model Exception Handler](http://msdn.microsoft.com/library/system.servicemodel.dispatcher.exceptionhandler.aspx) automatically – cannot generally be handled gracefully, and the only reason to handle such an exception at all may be do additional logging or to return a standard exception to the client.</span></span> <span data-ttu-id="20811-126">処理例外は、シリアル化、エンコーダー、フォーマッタ レベルなどのメッセージの処理中に発生します。通常、この例外は IErrorHandler では処理できません。これは、一般的に、このような例外が発生するまでにエラー ハンドラーの介入が早すぎるか、遅すぎることが原因です。</span><span class="sxs-lookup"><span data-stu-id="20811-126">A processing exception occurs in the processing of the message – for example, at the serialization, encoder, or formatter level – generally cannot be handled at an IErrorHandler, because it is generally either too early or too late for the error handler to intervene by the time these exceptions occur.</span></span> <span data-ttu-id="20811-127">同様に、トランスポート例外も IErrorHandler では処理できません。</span><span class="sxs-lookup"><span data-stu-id="20811-127">Similarly, transport exceptions cannot be handled at an IErrorHandler.</span></span>  
   
- IErrorHandler を使用すると、例外がスローされたときのアプリケーションの動作を明示的に制御できます。  次のような操作が可能です。  
+ <span data-ttu-id="20811-128">IErrorHandler を使用すると、例外がスローされたときのアプリケーションの動作を明示的に制御できます。</span><span class="sxs-lookup"><span data-stu-id="20811-128">With an IErrorHandler, you can explicitly control the behavior of your application when an exception is thrown.</span></span> <span data-ttu-id="20811-129">次のような操作が可能です。</span><span class="sxs-lookup"><span data-stu-id="20811-129">You may:</span></span>  
   
-1.  クライアントにエラーを送信するかどうかを決定する  
+1.  <span data-ttu-id="20811-130">クライアントにエラーを送信するかどうかを決定する</span><span class="sxs-lookup"><span data-stu-id="20811-130">Decide whether or not to send a fault to the client</span></span>  
   
-2.  例外をエラーに置き換える  
+2.  <span data-ttu-id="20811-131">例外をエラーに置き換える</span><span class="sxs-lookup"><span data-stu-id="20811-131">Replace an exception with a fault</span></span>  
   
-3.  エラーを別のエラーに置き換える  
+3.  <span data-ttu-id="20811-132">エラーを別のエラーに置き換える</span><span class="sxs-lookup"><span data-stu-id="20811-132">Replace a fault with another fault</span></span>  
   
-4.  ログまたはトレースを実行する  
+4.  <span data-ttu-id="20811-133">ログまたはトレースを実行する</span><span class="sxs-lookup"><span data-stu-id="20811-133">Perform logging or tracing</span></span>  
   
-5.  他のカスタム アクティビティを実行する  
+5.  <span data-ttu-id="20811-134">他のカスタム アクティビティを実行する</span><span class="sxs-lookup"><span data-stu-id="20811-134">Perform other custom activities</span></span>  
   
- カスタム エラー ハンドラーは、サービスのチャネル ディスパッチャーの ErrorHandlers プロパティに追加することでインストールできます。  複数のエラー ハンドラーを設定することができ、これらはこのコレクションに追加された順序で呼び出されます。  
+ <span data-ttu-id="20811-135">カスタム エラー ハンドラーは、サービスのチャネル ディスパッチャーの ErrorHandlers プロパティに追加することでインストールできます。</span><span class="sxs-lookup"><span data-stu-id="20811-135">One can install a custom error handler by adding it to the ErrorHandlers property of the channel dispatchers for your service.</span></span>  <span data-ttu-id="20811-136">複数のエラー ハンドラーを設定することができ、これらはこのコレクションに追加された順序で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="20811-136">It is possible to have more than one error handler and they are called in the order they are added to this collection.</span></span>  
   
- IErrorHandler.ProvideFault は、クライアントに送信されるエラー メッセージを制御します。  このメソッドは、サービスの操作によってスローされた例外の種類に関係なく呼び出されます。  ここで操作が実行されない場合、WCF は、その既定の動作を想定し、カスタム エラー ハンドラーが存在しないかのように続行します。  
+ <span data-ttu-id="20811-137">IErrorHandler.ProvideFault は、クライアントに送信されるエラー メッセージを制御します。</span><span class="sxs-lookup"><span data-stu-id="20811-137">IErrorHandler.ProvideFault controls the fault message that is sent to the client.</span></span> <span data-ttu-id="20811-138">このメソッドは、サービスの操作によってスローされた例外の種類に関係なく呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="20811-138">This method is called regardless of the type of the exception thrown by an operation in your service.</span></span> <span data-ttu-id="20811-139">ここで操作が実行されない場合、WCF は、その既定の動作を想定し、カスタム エラー ハンドラーが存在しないかのように続行します。</span><span class="sxs-lookup"><span data-stu-id="20811-139">If no operation is performed here, WCF assumes its default behaviour and continues as if there were no custom error handlers in place.</span></span>  
   
- この方法を使用する可能性がある場合として、クライアントに送信される前の例外をエラーに変換するための一元的な場所を作成する場合があります \(インスタンスが破棄されておらず、チャネルが Faulted 状態に移行していないことを確認します\)。  
+ <span data-ttu-id="20811-140">この方法を使用する可能性がある場合として、クライアントに送信される前の例外をエラーに変換するための一元的な場所を作成する場合があります (インスタンスが破棄されておらず、チャネルが Faulted 状態に移行していないことを確認します)。</span><span class="sxs-lookup"><span data-stu-id="20811-140">One area that you could perhaps use this approach is when you want to create a central place for converting exceptions to faults before they are sent to the client (ensuring that the instance is not disposed and the channel is not moved to the Faulted state).</span></span>  
   
- 通常、IErrorHandler.HandleError メソッドは、エラー ログ記録、システム通知、アプリケーションのシャットダウンなど、エラー関連の動作を実装するために使用されます。  IErrorHandler.HandleError は、サービス内の複数の場所で呼び出すことができます。エラーがスローされた場所に応じて、HandleError メソッドは操作と同じスレッドから呼び出される場合と呼び出されない場合があります \(この点について保証はありません\)。  
+ <span data-ttu-id="20811-141">通常、IErrorHandler.HandleError メソッドは、エラー ログ記録、システム通知、アプリケーションのシャットダウンなど、エラー関連の動作を実装するために使用されます。IErrorHandler.HandleError は、サービス内の複数の場所で呼び出すことができます。エラーがスローされた場所に応じて、HandleError メソッドは操作と同じスレッドから呼び出される場合と呼び出されない場合があります (この点について保証はありません)。</span><span class="sxs-lookup"><span data-stu-id="20811-141">The IErrorHandler.HandleError method is usually used to implement error-related behaviors such as error logging, system notifications, shutting down the application, etc. IErrorHandler.HandleError can be called at multiple places inside the service, and depending on where the error is thrown, the HandleError method may or may not be called by the same thread as the operation; no guarantees are made in this regard.</span></span>  
   
-### WCF 外部での例外の処理  
- 多くの場合、構成の例外、データベース接続文字列の例外、およびその他の同様の例外は、WCF アプリケーションのコンテキスト内で発生する可能性がありますが、これらの例外自体は、サービス モデルまたは Web サービス自体が原因で発生する例外ではありません。  これらの例外は、Web サービス外部の "標準" の例外で、環境の中で他の外部例外が処理されるのと同様に処理される必要があります。  
+### <a name="dealing-with-exceptions-outside-wcf"></a><span data-ttu-id="20811-142">WCF 外部での例外の処理</span><span class="sxs-lookup"><span data-stu-id="20811-142">Dealing with Exceptions outside WCF</span></span>  
+ <span data-ttu-id="20811-143">多くの場合、構成の例外、データベース接続文字列の例外、およびその他の同様の例外は、WCF アプリケーションのコンテキスト内で発生する可能性がありますが、これらの例外自体は、サービス モデルまたは Web サービス自体が原因で発生する例外ではありません。</span><span class="sxs-lookup"><span data-stu-id="20811-143">Often, configuration exceptions, database connection string exceptions, and other similar exceptions may occur within the context of a WCF application, but are themselves are not exceptions caused by the service model or the web service itself.</span></span> <span data-ttu-id="20811-144">これらの例外は、web サービス外部の「標準」の例外し、環境内の他の外部例外が処理されると同様に扱う必要があります。</span><span class="sxs-lookup"><span data-stu-id="20811-144">These exceptions are "regular" exceptions external to the web service, and should be handled just as other external exceptions in the environment are to be handled.</span></span>  
   
-### 例外のトレース  
- トレースとは、すべての例外を確認できる可能性のある唯一の "汎用的な" 場所です。  例外のトレースとログの詳細については、「トレースとログ」を参照してください。  
+### <a name="tracing-exceptions"></a><span data-ttu-id="20811-145">例外のトレース</span><span class="sxs-lookup"><span data-stu-id="20811-145">Tracing exceptions</span></span>  
+ <span data-ttu-id="20811-146">トレースは、いずれかの参照先を可能性のあるすべての例外のみ「キャッチ オール」場所です。</span><span class="sxs-lookup"><span data-stu-id="20811-146">Tracing is the only "catch-all" place where one can potentially see all exceptions.</span></span> <span data-ttu-id="20811-147">例外のトレースとログの詳細については、「トレースとログ」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="20811-147">For more information on tracing and logging exceptions, see Tracing and Logging.</span></span>  
   
-### WebGetAttribute と WebInvokeAttribute を使用した場合の URI テンプレート エラー  
- WebGet 属性と WebInvoke 属性を使用すると、要求アドレスのコンポーネントを操作パラメーターにマップする URI テンプレートを指定できます。  たとえば、URI テンプレートが "weather\/{state}\/{city}" の場合は、要求アドレスがリテラル トークン、state という名前のパラメーター、および city という名前にマップされます。  その後、これらのパラメーターは、名前によって、操作の仮パラメーターの一部にバインドされる場合があります。  
+### <a name="uri-template-errors-when-using-webgetattribute-and-webinvokeattribute"></a><span data-ttu-id="20811-148">WebGetAttribute と WebInvokeAttribute を使用した場合の URI テンプレート エラー</span><span class="sxs-lookup"><span data-stu-id="20811-148">URI template errors when using WebGetAttribute and WebInvokeAttribute</span></span>  
+ <span data-ttu-id="20811-149">WebGet 属性と WebInvoke 属性を使用すると、要求アドレスのコンポーネントを操作パラメーターにマップする URI テンプレートを指定できます。</span><span class="sxs-lookup"><span data-stu-id="20811-149">The WebGet and WebInvoke attributes allow you to specify a URI template that maps components of the request address to operation parameters.</span></span> <span data-ttu-id="20811-150">たとえば、URI テンプレートが "weather/{state}/{city}" の場合は、要求アドレスがリテラル トークン、state という名前のパラメーター、および city という名前にマップされます。</span><span class="sxs-lookup"><span data-stu-id="20811-150">For example, the URI template "weather/{state}/{city}" maps the request address into literal tokens, a parameter named state, and a parameter named city.</span></span> <span data-ttu-id="20811-151">その後、これらのパラメーターは、名前によって、操作の仮パラメーターの一部にバインドされる場合があります。</span><span class="sxs-lookup"><span data-stu-id="20811-151">These parameters might then be bound by name to some of the formal parameters of the operation.</span></span>  
   
- テンプレート パラメーターが URI 内の文字列の形式で表されるのに対し、型指定されたコントラクトの仮パラメーターは文字列以外の型である可能性があります。  そのため、操作が呼び出される前に変換を行う必要があります。  [変換形式の表](http://msdn.microsoft.com/library/bb412172.aspx)をご利用いただけます。  
+ <span data-ttu-id="20811-152">テンプレート パラメーターが URI 内の文字列の形式で表されるのに対し、型指定されたコントラクトの仮パラメーターは文字列以外の型である可能性があります。</span><span class="sxs-lookup"><span data-stu-id="20811-152">The template parameters appear in the form of strings within the URI while the formal parameters of a typed contract might be of non-string types.</span></span> <span data-ttu-id="20811-153">そのため、操作が呼び出される前に変換を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="20811-153">Therefore, a conversion needs to take place before the operation can be invoked.</span></span> <span data-ttu-id="20811-154">A[変換形式のテーブル](http://msdn.microsoft.com/library/bb412172.aspx)は使用できます。</span><span class="sxs-lookup"><span data-stu-id="20811-154">A [table of conversion formats](http://msdn.microsoft.com/library/bb412172.aspx) is available.</span></span>  
   
- ただし、変換に失敗した場合は、失敗したことを操作に認識させる方法はありません。  代わりに、型変換は、ディスパッチ エラーの形式で表示されます。  
+ <span data-ttu-id="20811-155">ただし、変換に失敗した場合は、失敗したことを操作に認識させる方法はありません。</span><span class="sxs-lookup"><span data-stu-id="20811-155">However, if the conversion fails, then there's no way to let the operation know that something has gone wrong.</span></span> <span data-ttu-id="20811-156">代わりに、型変換は、ディスパッチ エラーの形式で表示されます。</span><span class="sxs-lookup"><span data-stu-id="20811-156">The type conversion instead surfaces in the form of a dispatch failure.</span></span>  
   
- 型変換のディスパッチ エラーは、エラー ハンドラーをインストールすることで、その他多くの種類のディスパッチ エラーと同様に調査できます。  IErrorHandler 機能拡張ポイントは、サービス レベルの例外を処理するために呼び出されます。  そこから、呼び出し元に返される応答を選択できます \(カスタム タスクとレポートを実行することもできます\)。  
+ <span data-ttu-id="20811-157">型変換のディスパッチ エラーは、エラー ハンドラーをインストールすることで、その他多くの種類のディスパッチ エラーと同様に調査できます。</span><span class="sxs-lookup"><span data-stu-id="20811-157">A type conversion dispatch failure can be inspected the same as with many other types of dispatch failures by installing an error handler.</span></span> <span data-ttu-id="20811-158">IErrorHandler 機能拡張ポイントは、サービス レベルの例外を処理するために呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="20811-158">The IErrorHandler extensibility point is called to handle service-level exceptions.</span></span> <span data-ttu-id="20811-159">そこから、呼び出し元に返される応答を選択できます (カスタム タスクとレポートを実行することもできます)。</span><span class="sxs-lookup"><span data-stu-id="20811-159">From there, the response to be sent back to the caller – as well as perform any custom tasks and reporting – may be chosen.</span></span>  
   
-## 参照  
- [WCF エラー処理](http://msdn.microsoft.com/library/gg281715.aspx)
+## <a name="see-also"></a><span data-ttu-id="20811-160">関連項目</span><span class="sxs-lookup"><span data-stu-id="20811-160">See Also</span></span>  
+ [<span data-ttu-id="20811-161">基本的な WCF エラー処理</span><span class="sxs-lookup"><span data-stu-id="20811-161">Basic WCF Error Handling</span></span>](http://msdn.microsoft.com/library/gg281715.aspx)

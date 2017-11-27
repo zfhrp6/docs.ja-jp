@@ -1,106 +1,109 @@
 ---
-title: "安全なデータ アクセス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "安全なデータ アクセス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 473ebd69-21a3-4627-b95e-4e04d035c56f
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: c713cc8e5f3d7e81b196820e0a25fde0018b6c80
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 安全なデータ アクセス
-セキュリティで保護された ADO.NET コードを作成するには、基になるデータ ストア、つまりデータベースで利用可能なセキュリティ機構を理解しておく必要があります。  さらに、アプリケーションに含まれる他の機能またはコンポーネントのセキュリティへの影響も考慮する必要があります。  
+# <a name="secure-data-access"></a><span data-ttu-id="babfb-102">安全なデータ アクセス</span><span class="sxs-lookup"><span data-stu-id="babfb-102">Secure Data Access</span></span>
+<span data-ttu-id="babfb-103">セキュリティで保護された ADO.NET コードを作成するには、基になるデータ ストア、つまりデータベースで利用可能なセキュリティ機構を理解しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="babfb-103">To write secure ADO.NET code, you have to understand the security mechanisms available in the underlying data store, or database.</span></span> <span data-ttu-id="babfb-104">さらに、アプリケーションに含まれる他の機能またはコンポーネントのセキュリティへの影響も考慮する必要があります。</span><span class="sxs-lookup"><span data-stu-id="babfb-104">You also need to consider the security implications of other features or components that your application may contain.</span></span>  
   
-## 認証、承認、および権限  
- Microsoft SQL Server に接続する場合は、Windows 認証 \(統合セキュリティ\) を使用できます。Windows 認証では、ユーザー ID とパスワードを渡さずに、現在のアクティブな Windows ユーザーの ID を使用します。  ユーザー資格情報が接続文字列内で公開されないため、Windows 認証を使用することを強くお勧めします。  SQL Server への接続に Windows 認証を使用できない場合は、<xref:System.Data.SqlClient.SqlConnectionStringBuilder> を使用して、接続文字列を実行時に作成することを検討してください。  
+## <a name="authentication-authorization-and-permissions"></a><span data-ttu-id="babfb-105">認証、承認、および権限</span><span class="sxs-lookup"><span data-stu-id="babfb-105">Authentication, Authorization and Permissions</span></span>  
+ <span data-ttu-id="babfb-106">Microsoft SQL Server に接続する場合は、Windows 認証 (統合セキュリティ) を使用できます。Windows 認証では、ユーザー ID とパスワードを渡さずに、現在のアクティブな Windows ユーザーの ID を使用します。</span><span class="sxs-lookup"><span data-stu-id="babfb-106">When connecting to Microsoft SQL Server, you can use Windows Authentication, also known as Integrated Security, which uses the identity of the current active Windows user rather than passing a user ID and password.</span></span> <span data-ttu-id="babfb-107">ユーザー資格情報が接続文字列内で公開されないため、Windows 認証を使用することを強くお勧めします。</span><span class="sxs-lookup"><span data-stu-id="babfb-107">Using Windows Authentication is highly recommended because user credentials are not exposed in the connection string.</span></span> <span data-ttu-id="babfb-108">SQL Server への接続に Windows 認証を使用できない場合は、<xref:System.Data.SqlClient.SqlConnectionStringBuilder> を使用して、接続文字列を実行時に作成することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="babfb-108">If you cannot use Windows Authentication to connect to SQL Server, then consider creating connection strings at run time using the <xref:System.Data.SqlClient.SqlConnectionStringBuilder>.</span></span>  
   
- 認証に使用する資格情報は、アプリケーションのタイプに基づいて、それぞれ個別に処理する必要があります。  たとえば、Windows フォーム アプリケーションでは、ユーザーに認証情報の入力を求めたり、ユーザーの Windows 資格情報を使用できます。  Web アプリケーションでは、ユーザーではなくアプリケーションより提供された資格情報を使用してデータにアクセスする場合がよくあります。  
+ <span data-ttu-id="babfb-109">認証に使用する資格情報は、アプリケーションのタイプに基づいて、それぞれ個別に処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="babfb-109">The credentials used for authentication need to be handled differently based on the type of application.</span></span> <span data-ttu-id="babfb-110">たとえば、Windows フォーム アプリケーションでは、ユーザーに認証情報の入力を求めたり、ユーザーの Windows 資格情報を使用できます。</span><span class="sxs-lookup"><span data-stu-id="babfb-110">For example, in a Windows Forms application, the user can be prompted to supply authentication information, or the user's Windows credentials can be used.</span></span> <span data-ttu-id="babfb-111">Web アプリケーションでは、ユーザーではなくアプリケーションより提供された資格情報を使用してデータにアクセスする場合がよくあります。</span><span class="sxs-lookup"><span data-stu-id="babfb-111">However, a Web application often accesses data using credentials supplied by the application itself rather than by the user.</span></span>  
   
- いったん認証されたユーザーは、与えられた権限に基づく範囲で操作を実行できます。  常に最小特権の原則に従い、どうしても必要な権限以外は付与しないようにしてください。  
+ <span data-ttu-id="babfb-112">いったん認証されたユーザーは、与えられた権限に基づく範囲で操作を実行できます。</span><span class="sxs-lookup"><span data-stu-id="babfb-112">Once users have been authenticated, the scope of their actions depends on the permissions that have been granted to them.</span></span> <span data-ttu-id="babfb-113">常に最小特権の原則に従い、どうしても必要な権限以外は付与しないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="babfb-113">Always follow the principle of least privilege and grant only permissions that are absolutely necessary.</span></span>  
   
- 詳細については、次のリソースを参照してください。  
+ <span data-ttu-id="babfb-114">詳細については、次のリソースを参照してください。</span><span class="sxs-lookup"><span data-stu-id="babfb-114">For more information, see the following resources.</span></span>  
   
-|リソース|説明|  
-|----------|--------|  
-|[接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)|保護構成を使用して接続文字列を暗号化する方法など、セキュリティのベスト プラクティスと接続情報を保護する手法について説明します。|  
-|[Recommendations for Data Access Strategies](http://msdn.microsoft.com/ja-jp/72411f32-d12a-4de8-b961-e54fca7faaf5)|データへのアクセスおよびデータベース操作の実行に関連した推奨事項について説明します。|  
-|[接続文字列ビルダー](../../../../docs/framework/data/adonet/connection-string-builders.md)|実行時にユーザー入力から接続文字列を構築する方法について説明します。|  
-|[SQL Server セキュリティの概要](../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)|SQL Server のセキュリティ アーキテクチャについて説明します。|  
+|<span data-ttu-id="babfb-115">リソース</span><span class="sxs-lookup"><span data-stu-id="babfb-115">Resource</span></span>|<span data-ttu-id="babfb-116">説明</span><span class="sxs-lookup"><span data-stu-id="babfb-116">Description</span></span>|  
+|--------------|-----------------|  
+|[<span data-ttu-id="babfb-117">接続情報の保護</span><span class="sxs-lookup"><span data-stu-id="babfb-117">Protecting Connection Information</span></span>](../../../../docs/framework/data/adonet/protecting-connection-information.md)|<span data-ttu-id="babfb-118">保護構成を使用して接続文字列を暗号化する方法など、セキュリティのベスト プラクティスと接続情報を保護する手法について説明します。</span><span class="sxs-lookup"><span data-stu-id="babfb-118">Describes security best practices and techniques for protecting connection information, such as using protected configuration to encrypt connection strings.</span></span>|  
+|[<span data-ttu-id="babfb-119">データ アクセスに関する推奨事項</span><span class="sxs-lookup"><span data-stu-id="babfb-119">Recommendations for Data Access Strategies</span></span>](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)|<span data-ttu-id="babfb-120">データへのアクセスおよびデータベース操作の実行に関連した推奨事項について説明します。</span><span class="sxs-lookup"><span data-stu-id="babfb-120">Provides recommendations for accessing data and performing database operations.</span></span>|  
+|[<span data-ttu-id="babfb-121">接続文字列ビルダー</span><span class="sxs-lookup"><span data-stu-id="babfb-121">Connection String Builders</span></span>](../../../../docs/framework/data/adonet/connection-string-builders.md)|<span data-ttu-id="babfb-122">実行時にユーザー入力から接続文字列を構築する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="babfb-122">Describes how to build connection strings from user input at run time.</span></span>|  
+|[<span data-ttu-id="babfb-123">SQL Server のセキュリティの概要</span><span class="sxs-lookup"><span data-stu-id="babfb-123">Overview of SQL Server Security</span></span>](../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)|<span data-ttu-id="babfb-124">SQL Server のセキュリティ アーキテクチャについて説明します。</span><span class="sxs-lookup"><span data-stu-id="babfb-124">Describes the SQL Server security architecture.</span></span>|  
   
-## パラメーター化コマンドと SQL インジェクション  
- パラメーター化コマンドは SQL インジェクション攻撃への対策として利用できます。SQL インジェクション攻撃は、SQL ステートメントに、サーバーのセキュリティを侵害するコマンドを "注入" することによって行われます。  パラメーター化コマンドを使用した場合、外部ソースから受け取る値が必ず値として渡され、Transact\-SQL ステートメントの一部になることはないため、SQL インジェクション攻撃を防ぐことができます。  Transact\-SQL コマンドが値に挿入されたとしても、データ ソースに対して実行されることはありません。  これらのコマンドは、単なるパラメーター値として処理されます。  セキュリティ面の利点に加え、パラメーター化コマンドには、Transact\-SQL ステートメントで渡される値やストアド プロシージャに渡される値を簡単に扱うことができるという利点もあります。  
+## <a name="parameterized-commands-and-sql-injection"></a><span data-ttu-id="babfb-125">パラメーター化コマンドと SQL インジェクション</span><span class="sxs-lookup"><span data-stu-id="babfb-125">Parameterized Commands and SQL Injection</span></span>  
+ <span data-ttu-id="babfb-126">パラメーター化コマンドは SQL インジェクション攻撃への対策として利用できます。SQL インジェクション攻撃は、SQL ステートメントに、サーバーのセキュリティを侵害するコマンドを "注入" することによって行われます。</span><span class="sxs-lookup"><span data-stu-id="babfb-126">Using parameterized commands helps guard against SQL injection attacks, in which an attacker "injects" a command into a SQL statement that compromises security on the server.</span></span> <span data-ttu-id="babfb-127">パラメーター化コマンドを使用した場合、外部ソースから受け取る値が必ず値として渡され、Transact-SQL ステートメントの一部になることはないため、SQL インジェクション攻撃を防ぐことができます。</span><span class="sxs-lookup"><span data-stu-id="babfb-127">Parameterized commands guard against a SQL injection attack by ensuring that values received from an external source are passed as values only, and not part of the Transact-SQL statement.</span></span> <span data-ttu-id="babfb-128">Transact-SQL コマンドが値に挿入されたとしても、データ ソースに対して実行されることはありません。</span><span class="sxs-lookup"><span data-stu-id="babfb-128">As a result, Transact-SQL commands inserted into a value are not executed at the data source.</span></span> <span data-ttu-id="babfb-129">これらのコマンドは、単なるパラメーター値として処理されます。</span><span class="sxs-lookup"><span data-stu-id="babfb-129">Rather, they are evaluated solely as a parameter value.</span></span> <span data-ttu-id="babfb-130">セキュリティ面の利点に加え、パラメーター化コマンドには、Transact-SQL ステートメントで渡される値やストアド プロシージャに渡される値を簡単に扱うことができるという利点もあります。</span><span class="sxs-lookup"><span data-stu-id="babfb-130">In addition to the security benefits, parameterized commands provide a convenient method for organizing values passed with a Transact-SQL statement or to a stored procedure.</span></span>  
   
- パラメーター化コマンドの使い方の詳細については、次のリソースを参照してください。  
+ <span data-ttu-id="babfb-131">パラメーター化コマンドの使い方の詳細については、次のリソースを参照してください。</span><span class="sxs-lookup"><span data-stu-id="babfb-131">For more information on using parameterized commands, see the following resources.</span></span>  
   
-|リソース|説明|  
-|----------|--------|  
-|[DataAdapter パラメーター](../../../../docs/framework/data/adonet/dataadapter-parameters.md)|`DataAdapter` でパラメーターを使用する方法について説明します。|  
-|[ストアド プロシージャでのデータの変更](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)|パラメーターの指定方法および戻り値の取得方法について説明します。|  
-|[SQL Server でのストアド プロシージャを使用したアクセス許可の管理](../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)|SQL Server のストアド プロシージャを使用してデータ アクセスをカプセル化する方法を説明します。|  
+|<span data-ttu-id="babfb-132">リソース</span><span class="sxs-lookup"><span data-stu-id="babfb-132">Resource</span></span>|<span data-ttu-id="babfb-133">説明</span><span class="sxs-lookup"><span data-stu-id="babfb-133">Description</span></span>|  
+|--------------|-----------------|  
+|[<span data-ttu-id="babfb-134">DataAdapter パラメーター</span><span class="sxs-lookup"><span data-stu-id="babfb-134">DataAdapter Parameters</span></span>](../../../../docs/framework/data/adonet/dataadapter-parameters.md)|<span data-ttu-id="babfb-135">`DataAdapter` でパラメーターを使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="babfb-135">Describes how to use parameters with a `DataAdapter`.</span></span>|  
+|[<span data-ttu-id="babfb-136">ストアド プロシージャによるデータの変更</span><span class="sxs-lookup"><span data-stu-id="babfb-136">Modifying Data with Stored Procedures</span></span>](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)|<span data-ttu-id="babfb-137">パラメーターの指定方法および戻り値の取得方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="babfb-137">Describes how to specify parameters and obtain a return value.</span></span>|  
+|[<span data-ttu-id="babfb-138">SQL Server でストアド プロシージャを使用した権限の管理</span><span class="sxs-lookup"><span data-stu-id="babfb-138">Managing Permissions with Stored Procedures in SQL Server</span></span>](../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)|<span data-ttu-id="babfb-139">SQL Server のストアド プロシージャを使用してデータ アクセスをカプセル化する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="babfb-139">Describes how to use SQL Server stored procedures to encapsulate data access.</span></span>|  
   
-## スクリプト攻略  
- Web ページに悪意のある文字を挿入することによって行われるスクリプト攻略もインジェクション型の攻撃に属します。  挿入された文字はブラウザーによって検証されることなく、ページの一部として処理されます。  
+## <a name="script-exploits"></a><span data-ttu-id="babfb-140">スクリプト攻略</span><span class="sxs-lookup"><span data-stu-id="babfb-140">Script Exploits</span></span>  
+ <span data-ttu-id="babfb-141">Web ページに悪意のある文字を挿入することによって行われるスクリプト攻略もインジェクション型の攻撃に属します。</span><span class="sxs-lookup"><span data-stu-id="babfb-141">A script exploit is another form of injection that uses malicious characters inserted into a Web page.</span></span> <span data-ttu-id="babfb-142">挿入された文字はブラウザーによって検証されることなく、ページの一部として処理されます。</span><span class="sxs-lookup"><span data-stu-id="babfb-142">The browser does not validate the inserted characters and will process them as part of the page.</span></span>  
   
- 詳細については、次のリソースを参照してください。  
+ <span data-ttu-id="babfb-143">詳細については、次のリソースを参照してください。</span><span class="sxs-lookup"><span data-stu-id="babfb-143">For more information, see the following resources.</span></span>  
   
-|リソース|説明|  
-|----------|--------|  
-|[Script Exploits Overview](../Topic/Script%20Exploits%20Overview.md)|スクリプトによる攻略および SQL ステートメントによる攻略から保護する方法について説明します。|  
+|<span data-ttu-id="babfb-144">リソース</span><span class="sxs-lookup"><span data-stu-id="babfb-144">Resource</span></span>|<span data-ttu-id="babfb-145">説明</span><span class="sxs-lookup"><span data-stu-id="babfb-145">Description</span></span>|  
+|--------------|-----------------|  
+|[<span data-ttu-id="babfb-146">スクリプトによる攻略の概要</span><span class="sxs-lookup"><span data-stu-id="babfb-146">Script Exploits Overview</span></span>](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)|<span data-ttu-id="babfb-147">スクリプトによる攻略および SQL ステートメントによる攻略から保護する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="babfb-147">Describes how to guard against scripting and SQL statement exploits.</span></span>|  
   
-## プローブ攻撃  
- 攻撃者は、システムを攻撃するときに、サーバー、データベース、テーブルなどの名前を例外情報から取得して使用することがよくあります。  例外には、アプリケーションやデータ ソースに関する具体的な情報が含まれている場合があるので、アプリケーションとデータ ソースの保護を強化するには、クライアント側に不可欠な情報だけを公開するようにします。  
+## <a name="probing-attacks"></a><span data-ttu-id="babfb-148">プローブ攻撃</span><span class="sxs-lookup"><span data-stu-id="babfb-148">Probing Attacks</span></span>  
+ <span data-ttu-id="babfb-149">攻撃者は、システムを攻撃するときに、サーバー、データベース、テーブルなどの名前を例外情報から取得して使用することがよくあります。</span><span class="sxs-lookup"><span data-stu-id="babfb-149">Attackers often use information from an exception, such as the name of your server, database, or table, to mount an attack on your system.</span></span> <span data-ttu-id="babfb-150">例外には、アプリケーションやデータ ソースに関する具体的な情報が含まれている場合があるので、アプリケーションとデータ ソースの保護を強化するには、クライアント側に不可欠な情報だけを公開するようにします。</span><span class="sxs-lookup"><span data-stu-id="babfb-150">Because exceptions can contain specific information about your application or data source, you can help keep your application and data source better protected by only exposing essential information to the client.</span></span>  
   
- 詳細については、次のリソースを参照してください。  
+ <span data-ttu-id="babfb-151">詳細については、次のリソースを参照してください。</span><span class="sxs-lookup"><span data-stu-id="babfb-151">For more information, see the following resources.</span></span>  
   
-|リソース|説明|  
-|----------|--------|  
-|[例外処理の基本事項](../../../../docs/standard/exceptions/exception-handling-fundamentals.md)|try\/catch\/finally 構造化例外処理の基本的な形式について説明します。|  
-|[例外の推奨事項](../../../../docs/standard/exceptions/best-practices-for-exceptions.md)|例外処理のベスト プラクティスについて説明します。|  
+|<span data-ttu-id="babfb-152">リソース</span><span class="sxs-lookup"><span data-stu-id="babfb-152">Resource</span></span>|<span data-ttu-id="babfb-153">説明</span><span class="sxs-lookup"><span data-stu-id="babfb-153">Description</span></span>|  
+|--------------|-----------------|  
+|[<span data-ttu-id="babfb-154">例外処理の基本事項</span><span class="sxs-lookup"><span data-stu-id="babfb-154">Exception Handling Fundamentals</span></span>](../../../../docs/standard/exceptions/exception-handling-fundamentals.md)|<span data-ttu-id="babfb-155">try/catch/finally 構造化例外処理の基本的な形式について説明します。</span><span class="sxs-lookup"><span data-stu-id="babfb-155">Describes the basic forms of try/catch/finally structured exception handling.</span></span>|  
+|[<span data-ttu-id="babfb-156">例外の推奨事項</span><span class="sxs-lookup"><span data-stu-id="babfb-156">Best Practices for Exceptions</span></span>](../../../../docs/standard/exceptions/best-practices-for-exceptions.md)|<span data-ttu-id="babfb-157">例外処理のベスト プラクティスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="babfb-157">Describes best practices for handling exceptions.</span></span>|  
   
-## Microsoft Access および Excel データ ソースの保護  
- セキュリティ要件が最小限の場合、またはセキュリティ要件がまったく存在しない場合は、Microsoft Access や Microsoft Excel を ADO.NET アプリケーションのデータ ストアとして利用できます。  セキュリティ面では、"関係者以外には触らせないようにする" とった程度であれば十分な抑止効果がありますが、それ以上のセキュリティを求めることはできません。  Access および Excel の物理データ ファイルはファイル システム上に存在するため、原則的にすべてのユーザーがアクセスできます。  ファイルは容易にコピーしたり改変したりできるため、データの盗難や損失といった攻撃には決して強くありません。  堅牢なセキュリティが必要な場合は、SQL Server など、物理データ ファイルをファイル システムから読み取ることのできないサーバー ベースのデータベースを使用してください。  
+## <a name="protecting-microsoft-access-and-excel-data-sources"></a><span data-ttu-id="babfb-158">Microsoft Access および Excel データ ソースの保護</span><span class="sxs-lookup"><span data-stu-id="babfb-158">Protecting Microsoft Access and Excel Data Sources</span></span>  
+ <span data-ttu-id="babfb-159">セキュリティ要件が最小限の場合、またはセキュリティ要件がまったく存在しない場合は、Microsoft Access や Microsoft Excel を ADO.NET アプリケーションのデータ ストアとして利用できます。</span><span class="sxs-lookup"><span data-stu-id="babfb-159">Microsoft Access and Microsoft Excel can act as a data store for an ADO.NET application when security requirements are minimal or nonexistent.</span></span> <span data-ttu-id="babfb-160">セキュリティ面では、"関係者以外には触らせないようにする" とった程度であれば十分な抑止効果がありますが、それ以上のセキュリティを求めることはできません。</span><span class="sxs-lookup"><span data-stu-id="babfb-160">Their security features are effective for deterrence, but should not be relied upon to do more than discourage meddling by uninformed users.</span></span> <span data-ttu-id="babfb-161">Access および Excel の物理データ ファイルはファイル システム上に存在するため、原則的にすべてのユーザーがアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="babfb-161">The physical data files for Access and Excel exist on the file system, and must be accessible to all users.</span></span> <span data-ttu-id="babfb-162">ファイルは容易にコピーしたり改変したりできるため、データの盗難や損失といった攻撃には決して強くありません。</span><span class="sxs-lookup"><span data-stu-id="babfb-162">This makes them vulnerable to attacks that could result in theft or data loss since the files can be easily copied or altered.</span></span> <span data-ttu-id="babfb-163">堅牢なセキュリティが必要な場合は、SQL Server など、物理データ ファイルをファイル システムから読み取ることのできないサーバー ベースのデータベースを使用してください。</span><span class="sxs-lookup"><span data-stu-id="babfb-163">When robust security is required, use SQL Server or another server-based database where the physical data files are not readable from the file system.</span></span>  
   
- Access データおよび Excel データの保護の詳細については、次のリソースを参照してください。  
+ <span data-ttu-id="babfb-164">Access データおよび Excel データの保護の詳細については、次のリソースを参照してください。</span><span class="sxs-lookup"><span data-stu-id="babfb-164">For more information on protecting Access and Excel data, see the following resources.</span></span>  
   
-|リソース|説明|  
-|----------|--------|  
-|[Access 2007 のセキュリティに関する考慮事項とガイダンス](http://go.microsoft.com/fwlink/?LinkId=98354)|Access 2007 のセキュリティ手法 \(ファイルの暗号化、パスワードの管理、新しい ACCDB 形式および ACCDE 形式へのデータベースの変換、他のセキュリティ オプションの使用など\) について説明します。|  
-|[ユーザーレベルのセキュリティによる Access データベースの保護 \(MDB\)](http://go.microsoft.com/fwlink/?LinkId=47697)|Access 2003 を対象としたトピックです。  Access 2003 でユーザー レベルのセキュリティ機能を実装し、データを保護する方法について説明します。|  
-|[Access セキュリティにおけるワークグループ情報ファイルの役割について](http://support.microsoft.com/kb/305542)|Access 2003 のセキュリティの作業グループ情報ファイルのロールおよびリレーションシップについて説明します。|  
-|[Microsoft Access バージョン 2.0 から 2000 までの Microsoft Access セキュリティに関するよくある質問](http://go.microsoft.com/fwlink/?LinkId=47698)|ダウンロード可能なバージョンの Microsoft Access セキュリティ FAQ です。|  
-|[セキュリティと保護のトラブルシューティング](http://go.microsoft.com/fwlink/?LinkId=47703)|Excel 2003 のセキュリティに関する一般的な問題の解決方法が掲載されています。|  
+|<span data-ttu-id="babfb-165">リソース</span><span class="sxs-lookup"><span data-stu-id="babfb-165">Resource</span></span>|<span data-ttu-id="babfb-166">説明</span><span class="sxs-lookup"><span data-stu-id="babfb-166">Description</span></span>|  
+|--------------|-----------------|  
+|[<span data-ttu-id="babfb-167">セキュリティに関する考慮事項と Access 2007 に関するガイダンス</span><span class="sxs-lookup"><span data-stu-id="babfb-167">Security Considerations and Guidance for Access 2007</span></span>](http://go.microsoft.com/fwlink/?LinkId=98354)|<span data-ttu-id="babfb-168">Access 2007 のセキュリティ手法 (ファイルの暗号化、パスワードの管理、新しい ACCDB 形式および ACCDE 形式へのデータベースの変換、他のセキュリティ オプションの使用など) について説明します。</span><span class="sxs-lookup"><span data-stu-id="babfb-168">Describes security techniques for Access 2007 such encrypting files, administering passwords, converting databases to the new ACCDB and ACCDE formats, and using other security options.</span></span>|  
+|[<span data-ttu-id="babfb-169">Access データベースとユーザー レベルのセキュリティ (MDB) を保護します。</span><span class="sxs-lookup"><span data-stu-id="babfb-169">Help Protect an Access database with User-Level Security (MDB)</span></span>](http://go.microsoft.com/fwlink/?LinkId=47697)|<span data-ttu-id="babfb-170">Access 2003 を対象としたトピックです。</span><span class="sxs-lookup"><span data-stu-id="babfb-170">Applies to Access 2003.</span></span> <span data-ttu-id="babfb-171">Access 2003 でユーザー レベルのセキュリティ機能を実装し、データを保護する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="babfb-171">Provides instructions for implementing user-level security to protect data in Access 2003.</span></span>|  
+|[<span data-ttu-id="babfb-172">Access セキュリティにおけるワークグループ情報ファイルのロールを理解します。</span><span class="sxs-lookup"><span data-stu-id="babfb-172">Understanding the Role of Workgroup Information Files in Access Security</span></span>](http://support.microsoft.com/kb/305542)|<span data-ttu-id="babfb-173">Access 2003 のセキュリティの作業グループ情報ファイルのロールおよびリレーションシップについて説明します。</span><span class="sxs-lookup"><span data-stu-id="babfb-173">Explains the role and relationship of the workgroup information file in Access 2003 security.</span></span>|  
+|[<span data-ttu-id="babfb-174">よく寄せられる質問に関する Microsoft Access セキュリティ Microsoft Access バージョン 2.0 2000 から</span><span class="sxs-lookup"><span data-stu-id="babfb-174">Frequently Asked Questions About Microsoft Access Security for Microsoft Access versions 2.0 through 2000</span></span>](http://go.microsoft.com/fwlink/?LinkId=47698)|<span data-ttu-id="babfb-175">ダウンロード可能なバージョンの Microsoft Access セキュリティ FAQ です。</span><span class="sxs-lookup"><span data-stu-id="babfb-175">Downloadable version of the Microsoft Access Security FAQ.</span></span>|  
+|[<span data-ttu-id="babfb-176">セキュリティと保護をトラブルシューティングします。</span><span class="sxs-lookup"><span data-stu-id="babfb-176">Troubleshoot Security and Protection</span></span>](http://go.microsoft.com/fwlink/?LinkId=47703)|<span data-ttu-id="babfb-177">Excel 2003 のセキュリティに関する一般的な問題の解決方法が掲載されています。</span><span class="sxs-lookup"><span data-stu-id="babfb-177">Presents solutions to common problems with security in Excel 2003.</span></span>|  
   
-## Enterprise Services  
- COM\+ は、Windows NT アカウントおよびプロセスやスレッドの偽装に基づく独自のセキュリティ モデルを備えています。  <xref:System.EnterpriseServices> 名前空間は、.NET アプリケーションが、<xref:System.EnterpriseServices.ServicedComponent> クラスを使用して、マネージ コードと COM\+ セキュリティ サービスを統合できるようにするラッパーを提供します。  
+## <a name="enterprise-services"></a><span data-ttu-id="babfb-178">Enterprise Services</span><span class="sxs-lookup"><span data-stu-id="babfb-178">Enterprise Services</span></span>  
+ <span data-ttu-id="babfb-179">COM+ は、Windows NT アカウントおよびプロセスやスレッドの偽装に基づく独自のセキュリティ モデルを備えています。</span><span class="sxs-lookup"><span data-stu-id="babfb-179">COM+ contains its own security model that relies on Windows NT accounts and process/thread impersonation.</span></span> <span data-ttu-id="babfb-180"><xref:System.EnterpriseServices> 名前空間は、.NET アプリケーションが、<xref:System.EnterpriseServices.ServicedComponent> クラスを使用して、マネージ コードと COM+ セキュリティ サービスを統合できるようにするラッパーを提供します。</span><span class="sxs-lookup"><span data-stu-id="babfb-180">The <xref:System.EnterpriseServices> namespace provides wrappers that allow .NET applications to integrate managed code with COM+ security services through the <xref:System.EnterpriseServices.ServicedComponent> class.</span></span>  
   
- 詳細については、次のリソースを参照してください。  
+ <span data-ttu-id="babfb-181">詳細については、次のリソースを参照してください。</span><span class="sxs-lookup"><span data-stu-id="babfb-181">For more information, see the following resource.</span></span>  
   
-|リソース|説明|  
-|----------|--------|  
-|[COM\+ Role\-Based Security and the .NET Framework](http://msdn.microsoft.com/ja-jp/02ab22ef-e5e2-4d29-b33a-6e03d94c4981)|マネージ コードを COM\+ セキュリティ サービスに統合する方法について説明します。|  
+|<span data-ttu-id="babfb-182">リソース</span><span class="sxs-lookup"><span data-stu-id="babfb-182">Resource</span></span>|<span data-ttu-id="babfb-183">説明</span><span class="sxs-lookup"><span data-stu-id="babfb-183">Description</span></span>|  
+|--------------|-----------------|  
+|[<span data-ttu-id="babfb-184">COM + ロール ベース セキュリティと .NET Framework</span><span class="sxs-lookup"><span data-stu-id="babfb-184">COM+ Role-Based Security and the .NET Framework</span></span>](http://msdn.microsoft.com/en-us/02ab22ef-e5e2-4d29-b33a-6e03d94c4981)|<span data-ttu-id="babfb-185">マネージ コードを COM+ セキュリティ サービスに統合する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="babfb-185">Discusses how to integrate managed code with COM+ security services.</span></span>|  
   
-## アンマネージ コードとの相互運用  
- .NET Framework は、COM コンポーネント、COM\+ サービス、外部のタイプ ライブラリ、各種のオペレーティング システム サービスなど、アンマネージ コードとの相互運用性をサポートします。  アンマネージ コードを使用することは、マネージ コードのセキュリティ境界の外に出ることを意味します。  作成するコード、およびそれを呼び出すコードのどちらにも、アンマネージ コード権限 \(<xref:System.Security.Permissions.SecurityPermissionFlag> フラグが指定された <xref:System.Security.Permissions.SecurityPermission>\) が必要です。  アンマネージ コードは、意図しないセキュリティ上の脆弱性をアプリケーションにもたらす可能性があります。  どうしても必要な場合を除き、アンマネージ コードとの相互運用は避けてください。  
+## <a name="interoperating-with-unmanaged-code"></a><span data-ttu-id="babfb-186">アンマネージ コードとの相互運用</span><span class="sxs-lookup"><span data-stu-id="babfb-186">Interoperating with Unmanaged Code</span></span>  
+ <span data-ttu-id="babfb-187">.NET Framework は、COM コンポーネント、COM+ サービス、外部のタイプ ライブラリ、各種のオペレーティング システム サービスなど、アンマネージ コードとの相互運用性をサポートします。</span><span class="sxs-lookup"><span data-stu-id="babfb-187">The .NET Framework provides for interaction with unmanaged code, including COM components, COM+ services, external type libraries, and many operating system services.</span></span> <span data-ttu-id="babfb-188">アンマネージ コードを使用することは、マネージ コードのセキュリティ境界の外に出ることを意味します。</span><span class="sxs-lookup"><span data-stu-id="babfb-188">Working with unmanaged code involves going outside the security perimeter for managed code.</span></span> <span data-ttu-id="babfb-189">作成するコード、およびそれを呼び出すコードのどちらにも、アンマネージ コード権限 (<xref:System.Security.Permissions.SecurityPermission> フラグが指定された <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode>) が必要です。</span><span class="sxs-lookup"><span data-stu-id="babfb-189">Both your code and any code that calls it must have unmanaged code permission (<xref:System.Security.Permissions.SecurityPermission> with the <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> flag specified).</span></span> <span data-ttu-id="babfb-190">アンマネージ コードは、意図しないセキュリティ上の脆弱性をアプリケーションにもたらす可能性があります。</span><span class="sxs-lookup"><span data-stu-id="babfb-190">Unmanaged code can introduce unintended security vulnerabilities into your application.</span></span> <span data-ttu-id="babfb-191">どうしても必要な場合を除き、アンマネージ コードとの相互運用は避けてください。</span><span class="sxs-lookup"><span data-stu-id="babfb-191">Therefore, you should avoid interoperating with unmanaged code unless it is absolutely necessary.</span></span>  
   
- 詳細については、次のリソースを参照してください。  
+ <span data-ttu-id="babfb-192">詳細については、次のリソースを参照してください。</span><span class="sxs-lookup"><span data-stu-id="babfb-192">For more information, see the following resources.</span></span>  
   
-|リソース|説明|  
-|----------|--------|  
-|[アンマネージ コードとの相互運用](../../../../docs/framework/interop/index.md)|COM コンポーネントを .NET Framework に公開する方法、および .NET Framework コンポーネントを COM に公開する方法について説明します。|  
-|[Advanced COM Interoperability](http://msdn.microsoft.com/ja-jp/3ada36e5-2390-4d70-b490-6ad8de92f2fb)|プライマリ相互運用機能アセンブリ、スレッド処理、カスタム マーシャリングなど高度なトピックが含まれています。|  
+|<span data-ttu-id="babfb-193">リソース</span><span class="sxs-lookup"><span data-stu-id="babfb-193">Resource</span></span>|<span data-ttu-id="babfb-194">説明</span><span class="sxs-lookup"><span data-stu-id="babfb-194">Description</span></span>|  
+|--------------|-----------------|  
+|[<span data-ttu-id="babfb-195">アンマネージ コードとの相互運用</span><span class="sxs-lookup"><span data-stu-id="babfb-195">Interoperating with Unmanaged Code</span></span>](../../../../docs/framework/interop/index.md)|<span data-ttu-id="babfb-196">COM コンポーネントを .NET Framework に公開する方法、および .NET Framework コンポーネントを COM に公開する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="babfb-196">Contains topics describing how to expose COM components to the .NET Framework and how to expose .NET Framework components to COM.</span></span>|  
+|[<span data-ttu-id="babfb-197">高度な COM 相互運用性</span><span class="sxs-lookup"><span data-stu-id="babfb-197">Advanced COM Interoperability</span></span>](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)|<span data-ttu-id="babfb-198">プライマリ相互運用機能アセンブリ、スレッド処理、カスタム マーシャリングなど高度なトピックが含まれています。</span><span class="sxs-lookup"><span data-stu-id="babfb-198">Contains advanced topics such as primary interop assemblies, threading and custom marshaling.</span></span>|  
   
-## 参照  
- [ADO.NET アプリケーションのセキュリティ保護](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)   
- [SQL Server のセキュリティ](../../../../docs/framework/data/adonet/sql/sql-server-security.md)   
- [Recommendations for Data Access Strategies](http://msdn.microsoft.com/ja-jp/72411f32-d12a-4de8-b961-e54fca7faaf5)   
- [接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)   
- [接続文字列ビルダー](../../../../docs/framework/data/adonet/connection-string-builders.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="babfb-199">関連項目</span><span class="sxs-lookup"><span data-stu-id="babfb-199">See Also</span></span>  
+ [<span data-ttu-id="babfb-200">ADO.NET アプリケーションのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="babfb-200">Securing ADO.NET Applications</span></span>](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
+ [<span data-ttu-id="babfb-201">SQL Server のセキュリティ</span><span class="sxs-lookup"><span data-stu-id="babfb-201">SQL Server Security</span></span>](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
+ [<span data-ttu-id="babfb-202">データ アクセスに関する推奨事項</span><span class="sxs-lookup"><span data-stu-id="babfb-202">Recommendations for Data Access Strategies</span></span>](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)  
+ [<span data-ttu-id="babfb-203">接続情報の保護</span><span class="sxs-lookup"><span data-stu-id="babfb-203">Protecting Connection Information</span></span>](../../../../docs/framework/data/adonet/protecting-connection-information.md)  
+ [<span data-ttu-id="babfb-204">接続文字列ビルダー</span><span class="sxs-lookup"><span data-stu-id="babfb-204">Connection String Builders</span></span>](../../../../docs/framework/data/adonet/connection-string-builders.md)  
+ [<span data-ttu-id="babfb-205">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="babfb-205">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

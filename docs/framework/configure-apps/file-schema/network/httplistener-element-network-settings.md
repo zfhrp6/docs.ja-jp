@@ -1,130 +1,132 @@
 ---
-title: "&lt;httpListener&gt; 要素 (ネットワーク設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "&lt;httpListener&gt;要素 (ネットワーク設定)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 62f121fd-3f2e-4033-bb39-48ae996bfbd9
-caps.latest.revision: 7
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 14a758f1d69da4db8ed58809de20d3522ea7e4e9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;httpListener&gt; 要素 (ネットワーク設定)
-<xref:System.Net.HttpListener> クラスで使用されるパラメーターをカスタマイズします。  
+# <a name="lthttplistenergt-element-network-settings"></a><span data-ttu-id="fc092-102">&lt;httpListener&gt;要素 (ネットワーク設定)</span><span class="sxs-lookup"><span data-stu-id="fc092-102">&lt;httpListener&gt; Element (Network Settings)</span></span>
+<span data-ttu-id="fc092-103">によって使用されるパラメーターをカスタマイズ、<xref:System.Net.HttpListener>クラスです。</span><span class="sxs-lookup"><span data-stu-id="fc092-103">Customizes parameters used by the <xref:System.Net.HttpListener> class.</span></span>  
   
-## 構文  
+ <span data-ttu-id="fc092-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="fc092-104">\<configuration></span></span>  
+<span data-ttu-id="fc092-105">\<system.net ></span><span class="sxs-lookup"><span data-stu-id="fc092-105">\<system.net></span></span>  
+<span data-ttu-id="fc092-106">\<設定 ></span><span class="sxs-lookup"><span data-stu-id="fc092-106">\<settings></span></span>  
+<span data-ttu-id="fc092-107">\<httpListener ></span><span class="sxs-lookup"><span data-stu-id="fc092-107">\<httpListener></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="fc092-108">構文</span><span class="sxs-lookup"><span data-stu-id="fc092-108">Syntax</span></span>  
   
-      <httpListener  
-  unescapeRequestUrl ="true|false"  
+```xml  
+<httpListener  
+  unescapeRequestUrl="true|false"  
 />  
 ```  
   
-## 型  
+## <a name="type"></a><span data-ttu-id="fc092-109">型</span><span class="sxs-lookup"><span data-stu-id="fc092-109">Type</span></span>  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="fc092-110">属性および要素</span><span class="sxs-lookup"><span data-stu-id="fc092-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="fc092-111">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="fc092-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="fc092-112">属性</span><span class="sxs-lookup"><span data-stu-id="fc092-112">Attributes</span></span>  
   
-|Attribute|説明|  
-|---------------|--------|  
-|unescapeRequestUrl|<xref:System.Net.HttpListener> インスタンスが変換された URI ではなくエスケープされていない生の URI を使用するかどうかを示すブール値。|  
+|<span data-ttu-id="fc092-113">属性</span><span class="sxs-lookup"><span data-stu-id="fc092-113">Attribute</span></span>|<span data-ttu-id="fc092-114">説明</span><span class="sxs-lookup"><span data-stu-id="fc092-114">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="fc092-115">unescapeRequestUrl</span><span class="sxs-lookup"><span data-stu-id="fc092-115">unescapeRequestUrl</span></span>|<span data-ttu-id="fc092-116">どうかを示すブール値、<xref:System.Net.HttpListener>インスタンスは、変換された URI ではなく生のエスケープ解除された URI を使用します。</span><span class="sxs-lookup"><span data-stu-id="fc092-116">A Boolean value that indicates if a <xref:System.Net.HttpListener> instance uses the raw unescaped URI instead of the converted URI.</span></span>|  
   
-### 子要素  
- なし。  
+### <a name="child-elements"></a><span data-ttu-id="fc092-117">子要素</span><span class="sxs-lookup"><span data-stu-id="fc092-117">Child Elements</span></span>  
+ <span data-ttu-id="fc092-118">なし。</span><span class="sxs-lookup"><span data-stu-id="fc092-118">None.</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="fc092-119">親要素</span><span class="sxs-lookup"><span data-stu-id="fc092-119">Parent Elements</span></span>  
   
-|**要素**|**説明**|  
-|------------|------------|  
-|[設定](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。|  
+|<span data-ttu-id="fc092-120">**要素**</span><span class="sxs-lookup"><span data-stu-id="fc092-120">**Element**</span></span>|<span data-ttu-id="fc092-121">**説明**</span><span class="sxs-lookup"><span data-stu-id="fc092-121">**Description**</span></span>|  
+|-----------------|---------------------|  
+|[<span data-ttu-id="fc092-122">設定</span><span class="sxs-lookup"><span data-stu-id="fc092-122">settings</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<span data-ttu-id="fc092-123"><xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。</span><span class="sxs-lookup"><span data-stu-id="fc092-123">Configures basic network options for the <xref:System.Net> namespace.</span></span>|  
   
-## 解説  
- **unescapeRequestUrl** 属性は、変換された URI ではなくエスケープされていない生の URI を <xref:System.Net.HttpListener> で使用するかどうかを示します。変換された URI では、パーセント記号をエンコードした値はすべて変換され、その他の正規化手順が実行されます。  
+## <a name="remarks"></a><span data-ttu-id="fc092-124">コメント</span><span class="sxs-lookup"><span data-stu-id="fc092-124">Remarks</span></span>  
+ <span data-ttu-id="fc092-125">**UnescapeRequestUrl**場合に属性が示す<xref:System.Net.HttpListener>変換された URI でパーセント エンコード値を変換し、その他の正規化手順は実行ではなく生のエスケープ解除された URI を使用します。</span><span class="sxs-lookup"><span data-stu-id="fc092-125">The **unescapeRequestUrl** attribute indicates if <xref:System.Net.HttpListener> uses the raw unescaped URI instead of the converted URI where any percent-encoded values are converted and other normalization steps are taken.</span></span>  
   
- <xref:System.Net.HttpListener> インスタンスは `http.sys` サービスを通じて要求を受け取ると、`http.sys` から渡された URI 文字列のインスタンスを作成し、そのインスタンスを <xref:System.Net.HttpListenerRequest.Url%2A?displayProperty=fullName> プロパティとして公開します。  
+ <span data-ttu-id="fc092-126">ときに、<xref:System.Net.HttpListener>インスタンスを介して要求を受け取ると、`http.sys`サービスによって提供される URI 文字列のインスタンス作成`http.sys`、として公開して、<xref:System.Net.HttpListenerRequest.Url%2A?displayProperty=nameWithType>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="fc092-126">When a <xref:System.Net.HttpListener> instance receives a request through the `http.sys` service, it creates an instance of the URI string provided by `http.sys`, and exposes it as the <xref:System.Net.HttpListenerRequest.Url%2A?displayProperty=nameWithType> property.</span></span>  
   
- `http.sys` サービスでは、次の 2 つの要求 URI 文字列を公開します。  
+ <span data-ttu-id="fc092-127">`http.sys`サービスは 2 つの要求の URI 文字列を公開します。</span><span class="sxs-lookup"><span data-stu-id="fc092-127">The `http.sys` service exposes two request URI strings:</span></span>  
   
--   生の URI  
+-   <span data-ttu-id="fc092-128">生の URI</span><span class="sxs-lookup"><span data-stu-id="fc092-128">Raw URI</span></span>  
   
--   変換された URI  
+-   <span data-ttu-id="fc092-129">変換された URI</span><span class="sxs-lookup"><span data-stu-id="fc092-129">Converted URI</span></span>  
   
- 生の URI は、HTTP 要求の要求行に指定されている <xref:System.Uri?displayProperty=fullName> です。  
+ <span data-ttu-id="fc092-130">生の URI は、<xref:System.Uri?displayProperty=nameWithType>の HTTP 要求の要求行で提供されます。</span><span class="sxs-lookup"><span data-stu-id="fc092-130">The raw URI is the <xref:System.Uri?displayProperty=nameWithType> provided in the request line of a HTTP request:</span></span>  
   
  `GET /path/`  
   
  `Host: www.contoso.com`  
   
- 前の要求の `http.sys` から渡される生の URI は、"\/path\/" です。  これは、ネットワーク上で送信された HTTP 動詞の後に続く文字列を表します。  
+ <span data-ttu-id="fc092-131">によって提供される生の URI `http.sys` 、上記で説明した要求は「/path/」です。</span><span class="sxs-lookup"><span data-stu-id="fc092-131">The raw URI provided by `http.sys` for the request mentioned above, is "/path/".</span></span> <span data-ttu-id="fc092-132">これは、ネットワーク経由で送信された HTTP 動詞の後に、文字列を表します。</span><span class="sxs-lookup"><span data-stu-id="fc092-132">This represents the string following the HTTP verb as it was sent over the network.</span></span>  
   
- `http.sys` サービスでは、HTTP 要求行および Host ヘッダーに指定されている URI を使用して要求の転送先となる元のサーバーを特定することによって、要求に指定されている情報から、変換された URI を作成します。  この処理は、要求の情報と一連の登録済み URI プレフィックスとを比較することで行われます。  HTTP Server SDK のドキュメントでは、この変換された URI を HTTP\_COOKED\_URL 構造体と呼びます。  
+ <span data-ttu-id="fc092-133">`http.sys`サービスが HTTP 要求の行で指定された URI を使用して、要求で提供される情報から変換された URI を作成しに、元のサーバー要求を決定するホスト ヘッダーを転送する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fc092-133">The `http.sys` service creates a converted URI from the information provided in the request by using the URI provided in the HTTP request line and the Host header to determine the origin server the request should be forwarded to.</span></span> <span data-ttu-id="fc092-134">これは、一連の登録済み URI プレフィックスの要求からの情報を比較することによって行います。</span><span class="sxs-lookup"><span data-stu-id="fc092-134">This is done by comparing the information from the request with a set of registered URI prefixes.</span></span> <span data-ttu-id="fc092-135">HTTP サーバー SDK のドキュメントでは、この変換された URI を HTTP_COOKED_URL 構造と呼びます。</span><span class="sxs-lookup"><span data-stu-id="fc092-135">The HTTP Server SDK documentation refers to this converted URI as the HTTP_COOKED_URL structure.</span></span>  
   
- 要求と登録済み URI プレフィックスとを比較できるようにするためには、要求の正規化をいくつか行う必要があります。  上のサンプルでは、変換された URI は次のようになります。  
+ <span data-ttu-id="fc092-136">登録されている URI プレフィックスを持つ要求を比較できるようにするには、するために、要求に正規化をいくつか行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="fc092-136">In order to be able to compare the request with registered URI prefixes, some normalization to the request needs to be done.</span></span> <span data-ttu-id="fc092-137">変換された URI 上のサンプルではようになります。</span><span class="sxs-lookup"><span data-stu-id="fc092-137">For the sample above the converted URI would be as follows:</span></span>  
   
  `http://www.contoso.com/path/`  
   
- `http.sys` サービスでは、<xref:System.Uri.Host%2A?displayProperty=fullName> プロパティ値と要求行の文字列を結合して、変換された URI を作成します。  また、`http.sys` と <xref:System.Uri?displayProperty=fullName> クラスでは、次の処理も行います。  
+ <span data-ttu-id="fc092-138">`http.sys`を組み合わせたものをサービス、<xref:System.Uri.Host%2A?displayProperty=nameWithType>変換された URI を作成する要求行の文字列とプロパティの値。</span><span class="sxs-lookup"><span data-stu-id="fc092-138">The `http.sys` service combines the <xref:System.Uri.Host%2A?displayProperty=nameWithType> property value and the string in the request line to create a converted URI.</span></span> <span data-ttu-id="fc092-139">さらに、`http.sys`と<xref:System.Uri?displayProperty=nameWithType>クラスは次も実行します。</span><span class="sxs-lookup"><span data-stu-id="fc092-139">In addition, `http.sys` and the <xref:System.Uri?displayProperty=nameWithType> class also does the following:</span></span>  
   
--   パーセント記号をエンコードしたすべての値のエスケープを解除します。  
+-   <span data-ttu-id="fc092-140">エスケープを解除すべてパーセント エンコードされた値。</span><span class="sxs-lookup"><span data-stu-id="fc092-140">Un-escapes all percent encoded values.</span></span>  
   
--   パーセント記号をエンコードした非 ASCII 文字を UTF\-16 文字表現に変換します。  UTF\-8 文字および ANSI\/DBCS 文字も Unicode 文字 \(%uXXXX 形式を使用した Unicode エンコーディング\) と同様にサポートされることに注意してください。  
+-   <span data-ttu-id="fc092-141">Utf-16 文字表記に非 ASCII 文字をパーセント エンコードに変換します。</span><span class="sxs-lookup"><span data-stu-id="fc092-141">Converts percent-encoded non-ASCII characters into a UTF-16 character representation.</span></span> <span data-ttu-id="fc092-142">Unicode 文字 (Unicode エンコーディング %uxxxx 形式を使用して) だけでなく utf-8 と ANSI や DBCS 文字はサポートされていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="fc092-142">Note that UTF-8 and ANSI/DBCS characters are supported as well as Unicode characters (Unicode encoding using the %uXXXX format).</span></span>  
   
--   パスの圧縮など、その他の正規化手順を実行します。  
+-   <span data-ttu-id="fc092-143">パスの圧縮など、他の正規化の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="fc092-143">Executes other normalization steps, like path compression.</span></span>  
   
- パーセント記号をエンコードした値に使用されているエンコーディングに関する情報は要求に含まれていないため、パーセント記号をエンコードした値を解析するだけでは、正しいエンコーディングを判断できない場合があります。  
+ <span data-ttu-id="fc092-144">要求には、パーセントでエンコードされた値に使用されるエンコーディングに関する情報が含まれていない、ためには、パーセント エンコード値を解析するだけ、正しいエンコーディングを決定することはできません。</span><span class="sxs-lookup"><span data-stu-id="fc092-144">Since the request doesn't contain any information about the encoding used for percent-encoded values, it may not be possible to determine the correct encoding just by parsing the percent-encoded values.</span></span>  
   
- そのため、`http.sys` には、次に示すように、この処理を変更するためのレジストリ キーが 2 つ用意されています。  
+ <span data-ttu-id="fc092-145">したがって`http.sys`プロセスを変更するための 2 つのレジストリ キーを提供します。</span><span class="sxs-lookup"><span data-stu-id="fc092-145">Therefore `http.sys` provides two registry keys for modifying the process:</span></span>  
   
-|レジストリ キー|既定値|説明|  
-|--------------|---------|--------|  
-|EnableNonUTF8|1|ゼロの場合、`http.sys` は UTF\-8 エンコードの URL のみ受け入れます。<br /><br /> ゼロ以外の場合、`http.sys` は要求で ANSI エンコードの URL または DBCS エンコードの URL も受け入れます。|  
-|FavorUTF8|1|ゼロ以外の場合、`http.sys` は常に最初に URL を UTF\-8 としてデコードしようとします。その変換が失敗した場合、EnableNonUTF8 がゼロ以外のときは、ANSI または DBCS としてデコードしようとします。<br /><br /> ゼロ \(かつ EnableNonUTF8 がゼロ以外\) の場合、`http.sys` は URL を ANSI または DBCS としてデコードしようとします。失敗した場合は、UTF\-8 変換を試行します。|  
+|<span data-ttu-id="fc092-146">レジストリ キー</span><span class="sxs-lookup"><span data-stu-id="fc092-146">Registry Key</span></span>|<span data-ttu-id="fc092-147">既定値</span><span class="sxs-lookup"><span data-stu-id="fc092-147">Default Value</span></span>|<span data-ttu-id="fc092-148">説明</span><span class="sxs-lookup"><span data-stu-id="fc092-148">Description</span></span>|  
+|------------------|-------------------|-----------------|  
+|<span data-ttu-id="fc092-149">EnableNonUTF8</span><span class="sxs-lookup"><span data-stu-id="fc092-149">EnableNonUTF8</span></span>|<span data-ttu-id="fc092-150">1</span><span class="sxs-lookup"><span data-stu-id="fc092-150">1</span></span>|<span data-ttu-id="fc092-151">0 の場合、 `http.sys` UTF で 8 でエンコードされた Url のみを受け入れます。</span><span class="sxs-lookup"><span data-stu-id="fc092-151">If zero, `http.sys` accepts only UTF-8-encoded URLs.</span></span><br /><br /> <span data-ttu-id="fc092-152">0 以外の場合`http.sys`も要求で ANSI でエンコードされたまたは DBCS でエンコードされた Url を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="fc092-152">If non-zero, `http.sys` also accepts ANSI-encoded or DBCS-encoded URLs in requests.</span></span>|  
+|<span data-ttu-id="fc092-153">FavorUTF8</span><span class="sxs-lookup"><span data-stu-id="fc092-153">FavorUTF8</span></span>|<span data-ttu-id="fc092-154">1</span><span class="sxs-lookup"><span data-stu-id="fc092-154">1</span></span>|<span data-ttu-id="fc092-155">0 以外の場合`http.sys`し、変換に失敗したし、EnableNonUTF8 が 0 でない場合に utf-8 として URL を先にデコードすると常に、Http.sys を ANSI または DBCS としてデコードしようとします。</span><span class="sxs-lookup"><span data-stu-id="fc092-155">If non-zero, `http.sys` always tries to decode a URL as UTF-8 first; if that conversion fails and EnableNonUTF8 is non-zero, Http.sys then tries to decode it as ANSI or DBCS.</span></span><br /><br /> <span data-ttu-id="fc092-156">0 の場合 (そして EnableNonUTF8 0 ではない)、`http.sys`場合は、その ANSI または DBCS; としてデコードする試行が成功しない、utf-8 の変換を試みます。</span><span class="sxs-lookup"><span data-stu-id="fc092-156">If zero (and EnableNonUTF8 is non-zero), `http.sys` tries to decode it as ANSI or DBCS; if that is not successful, it tries a UTF-8 conversion.</span></span>|  
   
- <xref:System.Net.HttpListener> は要求を受け取ると、`http.sys` からの変換された URI を <xref:System.Net.HttpListenerRequest.Url%2A> プロパティへの入力として使用します。  
+ <span data-ttu-id="fc092-157">ときに<xref:System.Net.HttpListener>要求を受信して変換された URI を使用して`http.sys`への入力として、<xref:System.Net.HttpListenerRequest.Url%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="fc092-157">When <xref:System.Net.HttpListener> receives a request, it uses the converted URI from `http.sys` as input to the <xref:System.Net.HttpListenerRequest.Url%2A> property.</span></span>  
   
- URI では文字と数字以外の文字 \(記号など\) をサポートする必要があります。  例を次に示します。この URI は、顧客番号 "1\/3812" の顧客情報を取得するために使用するものです。  
+ <span data-ttu-id="fc092-158">Uri の文字と数字以外の文字をサポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="fc092-158">There is a need for supporting characters besides characters and numbers in URIs.</span></span> <span data-ttu-id="fc092-159">例としては次の URI は、顧客の顧客情報の取得に使用される「1/3812」番号します。</span><span class="sxs-lookup"><span data-stu-id="fc092-159">An example is the following URI, which is used to retrieve customer information for customer number "1/3812":</span></span>  
   
  `http://www.contoso.com/Customer('1%2F3812')/`  
   
- Uri のパーセント記号をエンコードしたスラッシュに注目してください \(%2F\)。  この場合、スラッシュ文字はデータを表し、パス区切り記号ではないため、この処理は必要です。  
+ <span data-ttu-id="fc092-160">Uri (%2f) で、パーセント エンコードのスラッシュを注意してください。</span><span class="sxs-lookup"><span data-stu-id="fc092-160">Note the percent-encoded slash in the Uri (%2F).</span></span> <span data-ttu-id="fc092-161">これは、ここでは、スラッシュ文字を表し、データはパス区切り記号ではないため、必要に応じて。</span><span class="sxs-lookup"><span data-stu-id="fc092-161">This is necessary, since in this case the slash character represents data and not a path delimiter.</span></span>  
   
- この文字列をそのまま Uri コンストラクターに渡すと、次の URI になります。  
+ <span data-ttu-id="fc092-162">Uri のコンス トラクターに文字列を渡すことは、次の URI になります。</span><span class="sxs-lookup"><span data-stu-id="fc092-162">Passing the string to Uri constructor will lead to the following URI:</span></span>  
   
  `http://www.contoso.com/Customer('1/3812')/`  
   
- パスはセグメントに分割され、次の要素になります。  
+ <span data-ttu-id="fc092-163">分割して、パスのセグメントに、次の要素の結果になります。</span><span class="sxs-lookup"><span data-stu-id="fc092-163">Splitting the path into its segments would result in the following elements:</span></span>  
   
  `Customer('1`  
   
  `3812')`  
   
- これでは、要求の送信元の意図とは異なります。  
+ <span data-ttu-id="fc092-164">これは、要求の送信元の目的ではありません。</span><span class="sxs-lookup"><span data-stu-id="fc092-164">This is not the intent of the sender of the request.</span></span>  
   
- **unescapeRequestUrl** 属性が **false** に設定されている場合、<xref:System.Net.HttpListener> は要求を受け取ると、`http.sys` からの変換された URI ではなく生の URI を <xref:System.Net.HttpListenerRequest.Url%2A> プロパティへの入力として使用します。  
+ <span data-ttu-id="fc092-165">場合、 **unescapeRequestUrl**属性に設定されている**false**、<xref:System.Net.HttpListener>要求を受信から変換された URI ではなく生の URI を使用して、 `http.sys` への入力として<xref:System.Net.HttpListenerRequest.Url%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="fc092-165">If the **unescapeRequestUrl** attribute is set to **false**, then when the <xref:System.Net.HttpListener> receives a request, it uses the raw URI instead of the converted URI from `http.sys` as input to the <xref:System.Net.HttpListenerRequest.Url%2A> property.</span></span>  
   
- **unescapeRequestUrl** 属性の既定値は **true** です。  
+ <span data-ttu-id="fc092-166">既定値、 **unescapeRequestUrl**属性は**true**です。</span><span class="sxs-lookup"><span data-stu-id="fc092-166">The default value for the **unescapeRequestUrl** attribute is **true**.</span></span>  
   
- <xref:System.Net.Configuration.HttpListenerElement.UnescapeRequestUrl%2A> プロパティを使用すると、適用可能な構成ファイルから **unescapeRequestUrl** 属性の現在の値を取得できます。  
+ <span data-ttu-id="fc092-167"><xref:System.Net.Configuration.HttpListenerElement.UnescapeRequestUrl%2A>プロパティを使用しての現在の値を取得すること、 **unescapeRequestUrl**該当する構成ファイルからの属性です。</span><span class="sxs-lookup"><span data-stu-id="fc092-167">The <xref:System.Net.Configuration.HttpListenerElement.UnescapeRequestUrl%2A> property can be used to get the current value of the **unescapeRequestUrl** attribute from applicable configuration files.</span></span>  
   
-## 使用例  
- 要求を受け取ったときに、`http.sys` からの変換された URI ではなく生の URI を <xref:System.Net.HttpListenerRequest.Url%2A> プロパティへの入力として使用するように、<xref:System.Net.HttpListener> クラスを構成する方法を次のコード例に示します。  
+## <a name="example"></a><span data-ttu-id="fc092-168">例</span><span class="sxs-lookup"><span data-stu-id="fc092-168">Example</span></span>  
+ <span data-ttu-id="fc092-169">次の例は、構成する方法を示します、<xref:System.Net.HttpListener>から変換された URI ではなく生の URI を使用する要求を受信時`http.sys`への入力として、<xref:System.Net.HttpListenerRequest.Url%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="fc092-169">The following example shows how to configure the <xref:System.Net.HttpListener> class when it receives a request to use the raw URI instead of the converted URI from `http.sys` as input to the <xref:System.Net.HttpListenerRequest.Url%2A> property.</span></span>  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <settings>  
@@ -136,17 +138,17 @@ caps.handback.revision: 7
 </configuration>  
 ```  
   
-## 要素情報  
+## <a name="element-information"></a><span data-ttu-id="fc092-170">要素情報</span><span class="sxs-lookup"><span data-stu-id="fc092-170">Element Information</span></span>  
   
-|||  
+|||
 |-|-|  
-|名前空間|System.Net|  
-|スキーマ名||  
-|検証ファイル||  
-|空も使用できる||  
+|<span data-ttu-id="fc092-171">名前空間</span><span class="sxs-lookup"><span data-stu-id="fc092-171">Namespace</span></span>|<span data-ttu-id="fc092-172">System.Net</span><span class="sxs-lookup"><span data-stu-id="fc092-172">System.Net</span></span>|  
+|<span data-ttu-id="fc092-173">スキーマ名</span><span class="sxs-lookup"><span data-stu-id="fc092-173">Schema Name</span></span>||  
+|<span data-ttu-id="fc092-174">検証ファイル</span><span class="sxs-lookup"><span data-stu-id="fc092-174">Validation File</span></span>||  
+|<span data-ttu-id="fc092-175">空にすることができます。</span><span class="sxs-lookup"><span data-stu-id="fc092-175">Can be Empty</span></span>||  
   
-## 参照  
- <xref:System.Net.Configuration.HttpListenerElement>   
- <xref:System.Net.HttpListener>   
- <xref:System.Net.HttpListenerRequest.Url%2A>   
- [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+## <a name="see-also"></a><span data-ttu-id="fc092-176">関連項目</span><span class="sxs-lookup"><span data-stu-id="fc092-176">See Also</span></span>  
+ <xref:System.Net.Configuration.HttpListenerElement>  
+ <xref:System.Net.HttpListener>  
+ <xref:System.Net.HttpListenerRequest.Url%2A>  
+ [<span data-ttu-id="fc092-177">ネットワーク設定スキーマ</span><span class="sxs-lookup"><span data-stu-id="fc092-177">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

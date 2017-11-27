@@ -1,37 +1,35 @@
 ---
-title: "&lt;msmqIntegrationBinding&gt;&lt;/msmqIntegrationBinding&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "msmqIntegrationBinding 要素"
+title: '&lt;msmqIntegrationBinding&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: msmqIntegrationBinding Element
 ms.assetid: edf277f3-e3bf-4ed8-9f55-83b5788430a7
-caps.latest.revision: 34
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 34
+caps.latest.revision: "34"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 5f11fffbc30ed1f3bf98ca78243bf4d52f438347
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;msmqIntegrationBinding&gt;&lt;/msmqIntegrationBinding&gt;
-MSMQ を介してメッセージをルーティングすることでキューのサポートを提供するバインディングを定義します。  
+# <a name="ltmsmqintegrationbindinggt"></a><span data-ttu-id="d6590-102">&lt;msmqIntegrationBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="d6590-102">&lt;msmqIntegrationBinding&gt;</span></span>
+<span data-ttu-id="d6590-103">MSMQ を介してメッセージをルーティングすることでキューのサポートを提供するバインディングを定義します。</span><span class="sxs-lookup"><span data-stu-id="d6590-103">Defines a binding that provides queuing support by routing messages through MSMQ.</span></span>  
   
- \<system.ServiceModel>  
-<>\>  
-msmqIntegrationBinding  
+ <span data-ttu-id="d6590-104">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="d6590-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="d6590-105">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="d6590-105">\<bindings></span></span>  
+<span data-ttu-id="d6590-106">msmqIntegrationBinding</span><span class="sxs-lookup"><span data-stu-id="d6590-106">msmqIntegrationBinding</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="d6590-107">構文</span><span class="sxs-lookup"><span data-stu-id="d6590-107">Syntax</span></span>  
   
-```  
-  
+```xml  
 <msmqIntegrationBinding>  
    <binding   
        closeTimeout="TimeSpan"   
@@ -42,7 +40,7 @@ msmqIntegrationBinding
        maxReceivedMessageSize"Integer"  
        maxRetryCycles="Integer"   
        name="string"   
-       openTimeout="TimeSpan"        receiveContextEnabled=”Boolean”  
+       openTimeout="TimeSpan"        receiveContextEnabled="Boolean"  
        receiveErrorHandling="Drop/Fault/Move/Reject"  
        receiveTimeout="TimeSpan"   
        receiveRetryCount="Integer"  
@@ -56,61 +54,61 @@ msmqIntegrationBinding
 </msmqIntegrationBinding>   
 ```  
   
-## <a name="attributes-and-elements"></a>属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="d6590-108">属性および要素</span><span class="sxs-lookup"><span data-stu-id="d6590-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="d6590-109">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="d6590-109">The following sections describe attributes, child elements, and parent elements</span></span>  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a><span data-ttu-id="d6590-110">属性</span><span class="sxs-lookup"><span data-stu-id="d6590-110">Attributes</span></span>  
   
-|属性|説明|  
+|<span data-ttu-id="d6590-111">属性</span><span class="sxs-lookup"><span data-stu-id="d6590-111">Attribute</span></span>|<span data-ttu-id="d6590-112">説明</span><span class="sxs-lookup"><span data-stu-id="d6590-112">Description</span></span>|  
 |---------------|-----------------|  
-|closeTimeout|A <xref:System.TimeSpan>クローズ操作が完了するまで待機する時間の間隔を指定する値。 この値は以上にする必要があります<xref:System.TimeSpan.Zero>です。 既定値は 00:01:00 です。|  
-|customDeadLetterQueue|アプリケーションごとの配信不能キューの場所が含まれている URI です。ここには、期限切れのメッセージや、転送または配信に失敗したメッセージが配置されます。<br /><br /> 配信不能キューは、送信元アプリケーションのキュー マネージャーにある、配信に失敗した期限切れメッセージのキューです。<br /><br /> によって指定される URI <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> net.msmq スキームを使用する必要があります。|  
-|deadLetterQueue|A <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue%2A>.value がある場合に使用するには配信不能キューの種類を指定します。<br /><br /> 配信不能キューは、アプリケーションへの配信に失敗したメッセージが転送される場所です。<br /><br /> exactlyOnce 保証が必要なメッセージ (つまり、`exactlyOnce` 属性が `true` に設定される) の場合、この属性は、既定で MSMQ のトランザクション システム全体の配信不能キューになります。<br /><br /> 保証が必要ないメッセージの場合、この属性の既定値は `null` です。|  
-|durable|メッセージがキューで非揮発性か揮発性かを示すブール値です。 非揮発性メッセージは、キュー マネージャーがクラッシュしても残り、揮発性メッセージは失われます。 アプリケーションで待ち時間の短縮が要求され、場合によってはメッセージが失われてもかまわない場合は、揮発性メッセージが適しています。 `exactlyOnce` 属性が `true` に設定されている場合、メッセージは永続的にする必要があります。 既定値は、`true` です。|  
-|exactlyOnce|各メッセージが&1; 回だけ受信されるかどうかを示すブール値です。 その後、送信側に配信エラーが通知されます。 `durable` が `false` の場合、この属性は無視されて、配信が保証されずにメッセージが転送されます。 既定値は、`true` です。 詳細については、次を参照してください。 <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>します。|  
-|maxReceivedMessageSize|このバインディングにより処理される最大メッセージ サイズ (ヘッダーを含む) をバイト単位で定義する正の整数です。 この制限を超えるメッセージの送信者が、SOAP エラーを受信します。 メッセージは受信者によって破棄され、トレース ログにこのイベントのエントリが作成されます。 既定値は 65536 です。 このメッセージ サイズの制限は、サービス拒否 (DoS) 攻撃への露出を制限するためのものです。|  
-|maxRetryCycles|有害メッセージ検出機能により使用される再試行サイクルの回数を示す整数です。 すべてのサイクルの配信試行にすべて失敗すると、メッセージは有害メッセージになります。 既定値は 2 です。 詳細については、次を参照してください。 <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A>します。|  
-|name|バインディングの構成名を格納する文字列です。 この値は、バインディングの ID として使用されるため、一意にする必要があります。 [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。 既定の構成と名前のないバインディングおよび動作に関する詳細については、次を参照してください。[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)します。|  
-|openTimeout|A <xref:System.TimeSpan>オープン操作が完了するまで待機する時間の間隔を指定する値。 この値は以上にする必要があります<xref:System.TimeSpan.Zero>です。 既定値は 00:01:00 です。|  
-|receiveErrorHandling|A <xref:System.ServiceModel.ReceiveErrorHandling>有害メッセージおよびディスパッチ不能メッセージの処理方法を指定する値。|  
-|receiveRetryCount|アプリケーション キューからアプリケーションへのメッセージの転送が失敗した場合に、キュー マネージャーが即時再試行を行う最大回数を指定する整数。<br /><br /> 配信試行を最大回数実行してもアプリケーションがメッセージにアクセスできない場合、メッセージは、後で再配信するために再試行キューに送信されます。 メッセージが送信キューに戻されるまでの時間は、`retryCycleDelay` で制御されます。 再試行サイクルが `maxRetryCycles` 値に達した場合は、メッセージが有害メッセージ キューに送信されるか、送信者に否定応答が返されます。|  
-|receiveTimeout|A <xref:System.TimeSpan>受信操作を完了するまで待機する時間の間隔を指定する値。 この値は以上にする必要があります<xref:System.TimeSpan.Zero>です。 既定値は 00:10:00 です。|  
-|receiveContextEnabled|キュー内のメッセージを処理するための受信コンテキストが有効になっているかどうかを指定するブール値。 これが `true` に設定されている場合、サービスではキューのメッセージを "ピーク" してメッセージの処理を開始できます。問題が発生して例外がスローされた場合、メッセージはキューに残ります。 サービスではメッセージを "ロック" して、後で処理を再試行することもできます。 ReceiveContext は、メッセージを「完了」キューから削除できるように処理されたメカニズムを提供します。メッセージは読み込みやに再書き込みキューされなく、ネットワーク経由でし、個々 のメッセージは処理中にさまざまなサービス インスタンスの間でバウンスします。|  
-|retryCycleDelay|すぐに配信できなかったメッセージを配信しようとするときの、再試行サイクルの時間遅延を指定する TimeSpan 値です。 実際の待機時間はさらに長くなる場合があるため、この値で定義されるのは最小待機時間だけです。 既定値は、00:30:00 です。 詳細については、次を参照してください。 <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A>します。|  
-|sendTimeout|A <xref:System.TimeSpan>送信操作が完了するまで待機する時間の間隔を指定する値。 この値は以上にする必要があります<xref:System.TimeSpan.Zero>です。 既定値は 00:01:00 です。|  
-|serializationFormat|メッセージ本文のシリアル化に使用される形式を定義します。 この属性の型が<xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat>します。|  
-|timeToLive|メッセージの期限が切れて、配信不能キューに入れられるまでのメッセージの有効期間を指定する TimeSpan 値です。 既定値は 1.00:00:00 です。<br /><br /> この属性を設定すると、タイムリーなメッセージが受信側アプリケーションで処理される前に古くなることがなくなります。 キュー内のメッセージのうち、指定された期間内に受信アプリケーションで処理されなかったメッセージは、期限切れと呼ばれます。 期限切れのメッセージは、配信不能キューと呼ばれる特別なキューに送信されます。 配信不能キューの場所は、保証の内容に基づいて、`DeadLetterQueue` 属性を使用して設定されるか、適切な既定値に設定されます。|  
-|useMsmqTracing|このバインディングにより処理されるメッセージをトレースするかどうかを指定するブール値です。 既定値は、`false` です。 トレースが有効な場合、メッセージ キュー コンピューターでメッセージが送受信されるたびに、レポート メッセージが作成され、レポート キューに送信されます。|  
-|useSourceJournal|このバインディングにより処理されるメッセージのコピーをソース ジャーナルに保存するかどうかを指定するブール値です。 既定値は、`false` です。<br /><br /> キューに置かれたアプリケーションでは、コンピューターの発信キューから送信されたメッセージの記録を残す場合は、メッセージをジャーナル キューにコピーできます。 メッセージが発信キューから送信され、送信先のコンピューターで受信されたという応答を受け取ると、メッセージのコピーが送信元のコンピューターのシステム ジャーナル キューに保持されます。|  
+|<span data-ttu-id="d6590-113">closeTimeout</span><span class="sxs-lookup"><span data-stu-id="d6590-113">closeTimeout</span></span>|<span data-ttu-id="d6590-114">クローズ操作が完了するまでの期間を指定する <xref:System.TimeSpan> 値。</span><span class="sxs-lookup"><span data-stu-id="d6590-114">A <xref:System.TimeSpan> value that specifies the interval of time provided for a close operation to complete.</span></span> <span data-ttu-id="d6590-115">この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="d6590-115">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="d6590-116">既定値は 00:01:00 です。</span><span class="sxs-lookup"><span data-stu-id="d6590-116">The default is 00:01:00.</span></span>|  
+|<span data-ttu-id="d6590-117">customDeadLetterQueue</span><span class="sxs-lookup"><span data-stu-id="d6590-117">customDeadLetterQueue</span></span>|<span data-ttu-id="d6590-118">アプリケーションごとの配信不能キューの場所が含まれている URI です。ここには、期限切れのメッセージや、転送または配信に失敗したメッセージが配置されます。</span><span class="sxs-lookup"><span data-stu-id="d6590-118">A URI that contains the location of the per-application dead letter queue, where messages that have expired or that have failed transfer or delivery are placed.</span></span><br /><br /> <span data-ttu-id="d6590-119">配信不能キューは、送信元アプリケーションのキュー マネージャーにある、配信に失敗した期限切れメッセージのキューです。</span><span class="sxs-lookup"><span data-stu-id="d6590-119">The dead letter queue is a queue on the queue manager of the sending application for expired messages that have failed to be delivered.</span></span><br /><br /> <span data-ttu-id="d6590-120"><xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> によって指定される URI は、net.msmq スキームを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d6590-120">The URI that is specified by <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> must use the net.msmq scheme.</span></span>|  
+|<span data-ttu-id="d6590-121">deadLetterQueue</span><span class="sxs-lookup"><span data-stu-id="d6590-121">deadLetterQueue</span></span>|<span data-ttu-id="d6590-122">使用する配信不能キューがある場合にその種類を指定する <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue%2A> 値。</span><span class="sxs-lookup"><span data-stu-id="d6590-122">A <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue%2A>.value specifying which type of dead-letter queue to use, if any</span></span><br /><br /> <span data-ttu-id="d6590-123">配信不能キューは、アプリケーションへの配信に失敗したメッセージが転送される場所です。</span><span class="sxs-lookup"><span data-stu-id="d6590-123">A dead-letter queue is the location that messages that have failed to be delivered to the application will be transferred.</span></span><br /><br /> <span data-ttu-id="d6590-124">exactlyOnce 保証が必要なメッセージ (つまり、`exactlyOnce` 属性が `true` に設定される) の場合、この属性は、既定で MSMQ のトランザクション システム全体の配信不能キューになります。</span><span class="sxs-lookup"><span data-stu-id="d6590-124">For messages that require exactlyOnce assurance (i.e., the `exactlyOnce` attribute is set to `true`), this attribute defaults to the system-wide transactional dead-letter queue in MSMQ.</span></span><br /><br /> <span data-ttu-id="d6590-125">保証が必要ないメッセージの場合、この属性の既定値は `null` です。</span><span class="sxs-lookup"><span data-stu-id="d6590-125">For messages that require no assurances, this attribute defaults to `null`.</span></span>|  
+|<span data-ttu-id="d6590-126">durable</span><span class="sxs-lookup"><span data-stu-id="d6590-126">durable</span></span>|<span data-ttu-id="d6590-127">メッセージがキューで非揮発性か揮発性かを示すブール値です。</span><span class="sxs-lookup"><span data-stu-id="d6590-127">A Boolean value that indicates whether the message is durable or volatile in the queue.</span></span> <span data-ttu-id="d6590-128">非揮発性メッセージは、キュー マネージャーがクラッシュしても残り、揮発性メッセージは失われます。</span><span class="sxs-lookup"><span data-stu-id="d6590-128">A durable message survives a queue manager crash, while a volatile message does not.</span></span> <span data-ttu-id="d6590-129">アプリケーションで待ち時間の短縮が要求され、場合によってはメッセージが失われてもかまわない場合は、揮発性メッセージが適しています。</span><span class="sxs-lookup"><span data-stu-id="d6590-129">Volatile messages are useful when applications require lower latency and can tolerate occasional lost messages.</span></span> <span data-ttu-id="d6590-130">`exactlyOnce` 属性が `true` に設定されている場合、メッセージは永続的にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="d6590-130">If the `exactlyOnce` attribute is set to `true`, the messages must be durable.</span></span> <span data-ttu-id="d6590-131">既定値は、`true` です。</span><span class="sxs-lookup"><span data-stu-id="d6590-131">The default is `true`.</span></span>|  
+|<span data-ttu-id="d6590-132">exactlyOnce</span><span class="sxs-lookup"><span data-stu-id="d6590-132">exactlyOnce</span></span>|<span data-ttu-id="d6590-133">各メッセージが 1 回だけ受信されるかどうかを示すブール値です。</span><span class="sxs-lookup"><span data-stu-id="d6590-133">A Boolean value that indicates whether each message is delivered only once.</span></span> <span data-ttu-id="d6590-134">その後、送信側に配信エラーが通知されます。</span><span class="sxs-lookup"><span data-stu-id="d6590-134">The sender will then be notified of delivery failures.</span></span> <span data-ttu-id="d6590-135">`durable` が `false` の場合、この属性は無視されて、配信が保証されずにメッセージが転送されます。</span><span class="sxs-lookup"><span data-stu-id="d6590-135">When `durable` is `false`, this attribute is ignored and messages are transferred without delivery assurance.</span></span> <span data-ttu-id="d6590-136">既定値は、`true` です。</span><span class="sxs-lookup"><span data-stu-id="d6590-136">The default is `true`.</span></span> <span data-ttu-id="d6590-137">詳細については、「<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d6590-137">For more information, see <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>.</span></span>|  
+|<span data-ttu-id="d6590-138">maxReceivedMessageSize</span><span class="sxs-lookup"><span data-stu-id="d6590-138">maxReceivedMessageSize</span></span>|<span data-ttu-id="d6590-139">このバインディングにより処理される最大メッセージ サイズ (ヘッダーを含む) をバイト単位で定義する正の整数です。</span><span class="sxs-lookup"><span data-stu-id="d6590-139">A positive integer that defines the maximum message size, in bytes, including headers, that is processed by this binding.</span></span> <span data-ttu-id="d6590-140">この制限を超えるメッセージの送信者が、SOAP エラーを受信します。</span><span class="sxs-lookup"><span data-stu-id="d6590-140">The sender of a message exceeding this limit will receive a SOAP fault.</span></span> <span data-ttu-id="d6590-141">メッセージは受信者によって破棄され、トレース ログにこのイベントのエントリが作成されます。</span><span class="sxs-lookup"><span data-stu-id="d6590-141">The receiver drops the message and creates an entry of the event in the trace log.</span></span> <span data-ttu-id="d6590-142">既定値は 65536 です。</span><span class="sxs-lookup"><span data-stu-id="d6590-142">The default is 65536.</span></span> <span data-ttu-id="d6590-143">このメッセージ サイズの制限は、サービス拒否 (DoS) 攻撃への露出を制限するためのものです。</span><span class="sxs-lookup"><span data-stu-id="d6590-143">This bound on message size is intended to limit exposure to Denial of Service (DoS) attacks.</span></span>|  
+|<span data-ttu-id="d6590-144">maxRetryCycles</span><span class="sxs-lookup"><span data-stu-id="d6590-144">maxRetryCycles</span></span>|<span data-ttu-id="d6590-145">有害メッセージ検出機能により使用される再試行サイクルの回数を示す整数です。</span><span class="sxs-lookup"><span data-stu-id="d6590-145">An integer that indicates the number of retry cycles used by the poison-message detection feature.</span></span> <span data-ttu-id="d6590-146">すべてのサイクルの配信試行にすべて失敗すると、メッセージは有害メッセージになります。</span><span class="sxs-lookup"><span data-stu-id="d6590-146">A message becomes a poison message when it fails all delivery attempts of all cycles.</span></span> <span data-ttu-id="d6590-147">既定値は 2 です。</span><span class="sxs-lookup"><span data-stu-id="d6590-147">The default is 2.</span></span> <span data-ttu-id="d6590-148">詳細については、「<xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d6590-148">For more information, see <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A>.</span></span>|  
+|<span data-ttu-id="d6590-149">name</span><span class="sxs-lookup"><span data-stu-id="d6590-149">name</span></span>|<span data-ttu-id="d6590-150">バインディングの構成名を格納する文字列です。</span><span class="sxs-lookup"><span data-stu-id="d6590-150">A string that contains the configuration name of the binding.</span></span> <span data-ttu-id="d6590-151">この値は、バインディングの ID として使用されるため、一意にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="d6590-151">This value should be unique because it is used as an identification for the binding.</span></span> <span data-ttu-id="d6590-152">[!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。</span><span class="sxs-lookup"><span data-stu-id="d6590-152">Starting with [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], bindings and behaviors are not required to have a name.</span></span> <span data-ttu-id="d6590-153">既定の構成と無名のバインディングおよび動作の詳細については、次を参照してください。[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="d6590-153">For more information about default configuration and nameless bindings and behaviors, see [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>|  
+|<span data-ttu-id="d6590-154">openTimeout</span><span class="sxs-lookup"><span data-stu-id="d6590-154">openTimeout</span></span>|<span data-ttu-id="d6590-155">実行中の操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。</span><span class="sxs-lookup"><span data-stu-id="d6590-155">A <xref:System.TimeSpan> value that specifies the interval of time provided for an open operation to complete.</span></span> <span data-ttu-id="d6590-156">この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="d6590-156">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="d6590-157">既定値は 00:01:00 です。</span><span class="sxs-lookup"><span data-stu-id="d6590-157">The default is 00:01:00.</span></span>|  
+|<span data-ttu-id="d6590-158">receiveErrorHandling</span><span class="sxs-lookup"><span data-stu-id="d6590-158">receiveErrorHandling</span></span>|<span data-ttu-id="d6590-159">有害メッセージおよびディスパッチ不能メッセージの処理方法を指定する <xref:System.ServiceModel.ReceiveErrorHandling> 値。</span><span class="sxs-lookup"><span data-stu-id="d6590-159">A <xref:System.ServiceModel.ReceiveErrorHandling> value that specifies how poison and nondispatchable messages are handled.</span></span>|  
+|<span data-ttu-id="d6590-160">receiveRetryCount</span><span class="sxs-lookup"><span data-stu-id="d6590-160">receiveRetryCount</span></span>|<span data-ttu-id="d6590-161">アプリケーション キューからアプリケーションへのメッセージの転送が失敗した場合に、キュー マネージャーが即時再試行を行う最大回数を指定する整数。</span><span class="sxs-lookup"><span data-stu-id="d6590-161">An integer that specifies the maximum number of immediate retries the queue manager should attempt if transmission of a message from the application queue to the application fails.</span></span><br /><br /> <span data-ttu-id="d6590-162">配信試行を最大回数実行してもアプリケーションがメッセージにアクセスできない場合、メッセージは、後で再配信するために再試行キューに送信されます。</span><span class="sxs-lookup"><span data-stu-id="d6590-162">If the maximum number of delivery attempts is reached and the message is not accessed by the application, then the message is sent to a retry queue for redelivery at a later time.</span></span> <span data-ttu-id="d6590-163">メッセージが送信キューに戻されるまでの時間は、`retryCycleDelay` で制御されます。</span><span class="sxs-lookup"><span data-stu-id="d6590-163">The amount of time before the message is transferred back to the sending queue is controlled by `retryCycleDelay`.</span></span> <span data-ttu-id="d6590-164">再試行サイクルが `maxRetryCycles` 値に達した場合は、メッセージが有害メッセージ キューに送信されるか、送信者に否定応答が返されます。</span><span class="sxs-lookup"><span data-stu-id="d6590-164">If retry cycles reach the `maxRetryCycles` value, then the message is either sent to the poison-message queue, or a negative acknowledgement is sent back to the sender.</span></span>|  
+|<span data-ttu-id="d6590-165">receiveTimeout</span><span class="sxs-lookup"><span data-stu-id="d6590-165">receiveTimeout</span></span>|<span data-ttu-id="d6590-166">受信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。</span><span class="sxs-lookup"><span data-stu-id="d6590-166">A <xref:System.TimeSpan> value that specifies the interval of time provided for a receive operation to complete.</span></span> <span data-ttu-id="d6590-167">この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="d6590-167">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="d6590-168">既定値は 00:10:00 です。</span><span class="sxs-lookup"><span data-stu-id="d6590-168">The default is 00:10:00.</span></span>|  
+|<span data-ttu-id="d6590-169">receiveContextEnabled</span><span class="sxs-lookup"><span data-stu-id="d6590-169">receiveContextEnabled</span></span>|<span data-ttu-id="d6590-170">キュー内のメッセージを処理するための受信コンテキストが有効になっているかどうかを指定するブール値。</span><span class="sxs-lookup"><span data-stu-id="d6590-170">A Boolean that specifies if receive context for processing messages in queues is enabled.</span></span> <span data-ttu-id="d6590-171">この設定されている場合`true`サービスを「ピーク」処理を開始するには、キューにメッセージ、および問題が、例外がスローされると場合、に、キューに残ります。</span><span class="sxs-lookup"><span data-stu-id="d6590-171">When this is set to `true`, a service can "peek" a message on the queue to begin processing it, and, if anything goes wrong and an exception is thrown, it remains on the queue.</span></span> <span data-ttu-id="d6590-172">サービスできますもメッセージを「ロック」再試行時に、後で処理するためにします。</span><span class="sxs-lookup"><span data-stu-id="d6590-172">Services can also "lock" messages in order to retry processing at a later point in time.</span></span> <span data-ttu-id="d6590-173">ReceiveContext は、"完了"して、メッセージ 1 回の処理がキューから削除するためのメカニズムを提供します。メッセージが不要になった読み取りとに再書き込みキュー、ネットワーク経由でされ、個々 のメッセージは処理中にさまざまなサービス インスタンス間でバウンスです。</span><span class="sxs-lookup"><span data-stu-id="d6590-173">ReceiveContext provides a mechanism for "completing" the message once processed so it can be removed from the queue.Messages are no longer being read and re-written to queues over the network, and individual messages aren’t bouncing across different service instances during processing.</span></span>|  
+|<span data-ttu-id="d6590-174">retryCycleDelay</span><span class="sxs-lookup"><span data-stu-id="d6590-174">retryCycleDelay</span></span>|<span data-ttu-id="d6590-175">すぐに配信できなかったメッセージを配信しようとするときの、再試行サイクルの時間遅延を指定する TimeSpan 値です。</span><span class="sxs-lookup"><span data-stu-id="d6590-175">A TimeSpan value that specifies the time delay between retry cycles when attempting to deliver a message that could not be delivered immediately.</span></span> <span data-ttu-id="d6590-176">実際の待機時間はさらに長くなる場合があるため、この値で定義されるのは最小待機時間だけです。</span><span class="sxs-lookup"><span data-stu-id="d6590-176">The value defines only the minimum wait time because actual wait time can be longer.</span></span> <span data-ttu-id="d6590-177">既定値は、00:30:00 です。</span><span class="sxs-lookup"><span data-stu-id="d6590-177">The default value is 00:30:00.</span></span> <span data-ttu-id="d6590-178">詳細については、「<xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d6590-178">For more information, see <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A>.</span></span>|  
+|<span data-ttu-id="d6590-179">sendTimeout</span><span class="sxs-lookup"><span data-stu-id="d6590-179">sendTimeout</span></span>|<span data-ttu-id="d6590-180">送信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。</span><span class="sxs-lookup"><span data-stu-id="d6590-180">A <xref:System.TimeSpan> value that specifies the interval of time provided for a send operation to complete.</span></span> <span data-ttu-id="d6590-181">この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="d6590-181">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="d6590-182">既定値は 00:01:00 です。</span><span class="sxs-lookup"><span data-stu-id="d6590-182">The default is 00:01:00.</span></span>|  
+|<span data-ttu-id="d6590-183">serializationFormat</span><span class="sxs-lookup"><span data-stu-id="d6590-183">serializationFormat</span></span>|<span data-ttu-id="d6590-184">メッセージ本文のシリアル化に使用される形式を定義します。</span><span class="sxs-lookup"><span data-stu-id="d6590-184">Defines the format used for serialization of the message body.</span></span> <span data-ttu-id="d6590-185">この属性は <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat> 型です。</span><span class="sxs-lookup"><span data-stu-id="d6590-185">This attribute is of type <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat>.</span></span>|  
+|<span data-ttu-id="d6590-186">timeToLive</span><span class="sxs-lookup"><span data-stu-id="d6590-186">timeToLive</span></span>|<span data-ttu-id="d6590-187">メッセージの期限が切れて、配信不能キューに入れられるまでのメッセージの有効期間を指定する TimeSpan 値です。</span><span class="sxs-lookup"><span data-stu-id="d6590-187">A TimeSpan value that specifies how long the messages are valid before they are expired and put into the dead-letter queue.</span></span> <span data-ttu-id="d6590-188">既定値は 1.00:00:00 です。</span><span class="sxs-lookup"><span data-stu-id="d6590-188">The default is 1.00:00:00.</span></span><br /><br /> <span data-ttu-id="d6590-189">この属性を設定すると、タイムリーなメッセージが受信側アプリケーションで処理される前に古くなることがなくなります。</span><span class="sxs-lookup"><span data-stu-id="d6590-189">This attribute is set to ensure that time-sensitive messages do not become stale before they are processed by the receiving applications.</span></span> <span data-ttu-id="d6590-190">キュー内のメッセージのうち、指定された期間内に受信アプリケーションで処理されなかったメッセージは、期限切れと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="d6590-190">A message in a queue that is not consumed by the receiving application within the time interval specified is said to be expired.</span></span> <span data-ttu-id="d6590-191">期限切れのメッセージは、配信不能キューと呼ばれる特別なキューに送信されます。</span><span class="sxs-lookup"><span data-stu-id="d6590-191">Expired messages are sent to special queue called the dead letter queue.</span></span> <span data-ttu-id="d6590-192">配信不能キューの場所は、保証の内容に基づいて、`DeadLetterQueue` 属性を使用して設定されるか、適切な既定値に設定されます。</span><span class="sxs-lookup"><span data-stu-id="d6590-192">The location of the dead letter queue is set with the `DeadLetterQueue` attribute or to the appropriate default, based on assurances.</span></span>|  
+|<span data-ttu-id="d6590-193">useMsmqTracing</span><span class="sxs-lookup"><span data-stu-id="d6590-193">useMsmqTracing</span></span>|<span data-ttu-id="d6590-194">このバインディングにより処理されるメッセージをトレースするかどうかを指定するブール値です。</span><span class="sxs-lookup"><span data-stu-id="d6590-194">A Boolean value that specifies whether messages processed by this binding should be traced.</span></span> <span data-ttu-id="d6590-195">既定値は、`false` です。</span><span class="sxs-lookup"><span data-stu-id="d6590-195">The default is `false`.</span></span> <span data-ttu-id="d6590-196">トレースが有効な場合、メッセージ キュー コンピューターでメッセージが送受信されるたびに、レポート メッセージが作成され、レポート キューに送信されます。</span><span class="sxs-lookup"><span data-stu-id="d6590-196">When tracing is enabled, report messages are created and sent to the report queue each time the message leaves or arrives at a Message Queuing computer.</span></span>|  
+|<span data-ttu-id="d6590-197">useSourceJournal</span><span class="sxs-lookup"><span data-stu-id="d6590-197">useSourceJournal</span></span>|<span data-ttu-id="d6590-198">このバインディングにより処理されるメッセージのコピーをソース ジャーナルに保存するかどうかを指定するブール値です。</span><span class="sxs-lookup"><span data-stu-id="d6590-198">A Boolean value that specifies copies of messages processed by this binding should be stored in the source journal.</span></span> <span data-ttu-id="d6590-199">既定値は、`false` です。</span><span class="sxs-lookup"><span data-stu-id="d6590-199">The default is `false`.</span></span><br /><br /> <span data-ttu-id="d6590-200">キューに置かれたアプリケーションでは、コンピューターの発信キューから送信されたメッセージの記録を残す場合は、メッセージをジャーナル キューにコピーできます。</span><span class="sxs-lookup"><span data-stu-id="d6590-200">Queued applications that want to keep a record of messages that have left the computer's outgoing queue can copy the messages to a journal queue.</span></span> <span data-ttu-id="d6590-201">メッセージが発信キューから送信され、送信先のコンピューターで受信されたという応答を受け取ると、メッセージのコピーが送信元のコンピューターのシステム ジャーナル キューに保持されます。</span><span class="sxs-lookup"><span data-stu-id="d6590-201">Once a message leaves the outgoing queue and an acknowledgment is received that the message was received on the destination computer, a copy of the message is kept in the sending computer's system journal queue.</span></span>|  
   
-## <a name="serializationformat-attribute"></a>{SerializationFormat} 属性  
+## <a name="serializationformat-attribute"></a><span data-ttu-id="d6590-202">{SerializationFormat} 属性</span><span class="sxs-lookup"><span data-stu-id="d6590-202">{serializationFormat} Attribute</span></span>  
   
-|値|説明|  
+|<span data-ttu-id="d6590-203">値</span><span class="sxs-lookup"><span data-stu-id="d6590-203">Value</span></span>|<span data-ttu-id="d6590-204">説明</span><span class="sxs-lookup"><span data-stu-id="d6590-204">Description</span></span>|  
 |-----------|-----------------|  
-|Xml|XML 形式|  
-|2 項|バイナリ形式|  
-|ActiveX|ActiveX 形式|  
-|ByteArray|オブジェクトをバイト配列にシリアル化します。|  
-|ストリーム|ストリームとして書式設定された本文。|  
+|<span data-ttu-id="d6590-205">Xml</span><span class="sxs-lookup"><span data-stu-id="d6590-205">Xml</span></span>|<span data-ttu-id="d6590-206">XML 形式</span><span class="sxs-lookup"><span data-stu-id="d6590-206">XML format</span></span>|  
+|<span data-ttu-id="d6590-207">2 項</span><span class="sxs-lookup"><span data-stu-id="d6590-207">Binary</span></span>|<span data-ttu-id="d6590-208">バイナリ形式</span><span class="sxs-lookup"><span data-stu-id="d6590-208">Binary format</span></span>|  
+|<span data-ttu-id="d6590-209">ActiveX</span><span class="sxs-lookup"><span data-stu-id="d6590-209">ActiveX</span></span>|<span data-ttu-id="d6590-210">ActiveX 形式</span><span class="sxs-lookup"><span data-stu-id="d6590-210">ActiveX format</span></span>|  
+|<span data-ttu-id="d6590-211">ByteArray</span><span class="sxs-lookup"><span data-stu-id="d6590-211">ByteArray</span></span>|<span data-ttu-id="d6590-212">オブジェクトをバイト配列にシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="d6590-212">Serializes the object to an array of bytes.</span></span>|  
+|<span data-ttu-id="d6590-213">ストリーム</span><span class="sxs-lookup"><span data-stu-id="d6590-213">Stream</span></span>|<span data-ttu-id="d6590-214">ストリームとして書式設定された本文。</span><span class="sxs-lookup"><span data-stu-id="d6590-214">The body formatted as a stream</span></span>|  
   
-### <a name="child-elements"></a>子要素  
+### <a name="child-elements"></a><span data-ttu-id="d6590-215">子要素</span><span class="sxs-lookup"><span data-stu-id="d6590-215">Child Elements</span></span>  
   
-|要素|説明|  
+|<span data-ttu-id="d6590-216">要素</span><span class="sxs-lookup"><span data-stu-id="d6590-216">Element</span></span>|<span data-ttu-id="d6590-217">説明</span><span class="sxs-lookup"><span data-stu-id="d6590-217">Description</span></span>|  
 |-------------|-----------------|  
-|[<>\>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-msmqintegrationbinding.md)|バインディングのセキュリティ設定を定義します。 この要素が型の<xref:System.ServiceModel.Configuration.MsmqIntegrationSecurityElement>します。|  
+|[<span data-ttu-id="d6590-218">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="d6590-218">\<security></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-msmqintegrationbinding.md)|<span data-ttu-id="d6590-219">バインディングのセキュリティ設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="d6590-219">Defines the security settings for the binding.</span></span> <span data-ttu-id="d6590-220">この要素は <xref:System.ServiceModel.Configuration.MsmqIntegrationSecurityElement> 型です。</span><span class="sxs-lookup"><span data-stu-id="d6590-220">This element is of type <xref:System.ServiceModel.Configuration.MsmqIntegrationSecurityElement>.</span></span>|  
   
-### <a name="parent-elements"></a>親要素  
+### <a name="parent-elements"></a><span data-ttu-id="d6590-221">親要素</span><span class="sxs-lookup"><span data-stu-id="d6590-221">Parent Elements</span></span>  
   
-|要素|説明|  
+|<span data-ttu-id="d6590-222">要素</span><span class="sxs-lookup"><span data-stu-id="d6590-222">Element</span></span>|<span data-ttu-id="d6590-223">説明</span><span class="sxs-lookup"><span data-stu-id="d6590-223">Description</span></span>|  
 |-------------|-----------------|  
-|[<>\>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|この要素には、標準バインディングおよびカスタム バインディングのコレクションが保持されます。|  
+|[<span data-ttu-id="d6590-224">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="d6590-224">\<bindings></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|<span data-ttu-id="d6590-225">この要素には、標準バインディングおよびカスタム バインディングのコレクションが保持されます。</span><span class="sxs-lookup"><span data-stu-id="d6590-225">This element holds a collection of standard and custom bindings.</span></span>|  
   
-## <a name="remarks"></a>コメント  
- このバインディング要素は、Windows Communication Foundation (WCF) アプリケーションにメッセージを送信し、COM、MSMQ ネイティブ Api、またはで定義された型のいずれかを使用する既存の MSMQ アプリケーションからメッセージを受信できるようにするために使用できます、 <xref:System.Messaging?displayProperty=fullName>名前空間、キューをアドレスする方法は、転送保証、かどうかのメッセージを永続的に格納する必要があります、およびメッセージを保護および認証する方法を指定するこの構成要素を使用することができます。 詳細については、次を参照してください。[方法: WCF エンドポイントとメッセージ キュー アプリケーションとメッセージの交換](../../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)します。  
+## <a name="remarks"></a><span data-ttu-id="d6590-226">コメント</span><span class="sxs-lookup"><span data-stu-id="d6590-226">Remarks</span></span>  
+ <span data-ttu-id="d6590-227">このバインド要素は、Windows Communication Foundation (WCF) アプリケーションにメッセージを送信し、COM、MSMQ ネイティブ Api、またはで定義された型のいずれかを使用する既存の MSMQ アプリケーションからメッセージを受信できるようにするために使用できる、<xref:System.Messaging?displayProperty=nameWithType>名前空間をメッセージを永続的に格納する必要があるかどうか、キュー、転送保証に対処する方法を指定するには、この構成要素とメッセージを保護および認証する方法を使用できます。</span><span class="sxs-lookup"><span data-stu-id="d6590-227">This binding element can be used to enable Windows Communication Foundation (WCF) applications to send messages to and receive messages from existing MSMQ applications that use either COM, MSMQ native APIs, or the types defined in the <xref:System.Messaging?displayProperty=nameWithType> namespace You can use this configuration element to specify ways to address the queue, transfer assurances, whether messages must be durably stored, and how messages should be protected and authenticated.</span></span> <span data-ttu-id="d6590-228">詳細については、次を参照してください。[する方法: WCF エンドポイントとメッセージ キュー アプリケーションとメッセージを交換](../../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)です。</span><span class="sxs-lookup"><span data-stu-id="d6590-228">For more information, see [How to: Exchange Messages with WCF Endpoints and Message Queuing Applications](../../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md).</span></span>  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="d6590-229">例</span><span class="sxs-lookup"><span data-stu-id="d6590-229">Example</span></span>  
   
-```  
+```xml  
 <configuration>  
 <system.ServiceModel>  
     <bindings>  
@@ -141,12 +139,12 @@ msmqIntegrationBinding
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.ServiceModel.Configuration.MsmqIntegrationBindingElement>   
- <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>   
- <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement>   
- [<>\>](../../../../../docs/framework/misc/binding.md)   
- [バインド](../../../../../docs/framework/wcf/bindings.md)   
- [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [バインドを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/ja-jp/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
- [WCF のキュー](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)
+## <a name="see-also"></a><span data-ttu-id="d6590-230">関連項目</span><span class="sxs-lookup"><span data-stu-id="d6590-230">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.MsmqIntegrationBindingElement>  
+ <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>  
+ <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement>  
+ [<span data-ttu-id="d6590-231">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="d6590-231">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)  
+ [<span data-ttu-id="d6590-232">バインディング</span><span class="sxs-lookup"><span data-stu-id="d6590-232">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="d6590-233">システム指定のバインディングを構成します。</span><span class="sxs-lookup"><span data-stu-id="d6590-233">Configuring System-Provided Bindings</span></span>](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [<span data-ttu-id="d6590-234">バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには</span><span class="sxs-lookup"><span data-stu-id="d6590-234">Using Bindings to Configure Windows Communication Foundation Services and Clients</span></span>](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [<span data-ttu-id="d6590-235">WCF のキュー</span><span class="sxs-lookup"><span data-stu-id="d6590-235">Queues in WCF</span></span>](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)

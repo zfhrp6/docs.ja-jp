@@ -1,107 +1,110 @@
 ---
-title: "データ サービス リソースへのアクセス (WCF Data Services) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "概要, WCF Data Services"
-  - "データ サービスのクエリ [WCF Data Services]"
-  - "WCF Data Services, データへのアクセス"
-  - "WCF Data Services, 概要"
-  - "WCF Data Services, 照会"
+title: "データ サービス リソースへのアクセス (WCF Data Services)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WCF Data Services, querying
+- getting started, WCF Data Services
+- querying the data service [WCF Data Service]
+- WCF Data Services, getting started
+- WCF Data Services, accessing data
 ms.assetid: 9665ff5b-3e3a-495d-bf83-d531d5d060ed
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 569830c5fbb9ecb837482202a4eb5a096ce21962
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# データ サービス リソースへのアクセス (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] は、URI でアドレス指定できるリソースを使用し、データをフィードとして公開する [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] をサポートしています。  これらのリソースは、[Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md) のエンティティとリレーションシップの規則に従って表現されます。  このモデルでは、エンティティはアプリケーション ドメイン内のデータの操作単位 \(データ型\) を表します \(顧客、注文、項目、製品など\)。  エンティティ データは、Representational State Transfer \(REST\) のセマンティクス \(特に、標準的な HTTP 動詞である GET、PUT、POST、および DELETE\) を使用してアクセスおよび変更できます。  
+# <a name="accessing-data-service-resources-wcf-data-services"></a><span data-ttu-id="430c5-102">データ サービス リソースへのアクセス (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="430c5-102">Accessing Data Service Resources (WCF Data Services)</span></span>
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="430c5-103">サポートしている、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]は Uri によってアドレス指定できるリソースを含むフィードとしてデータを公開します。</span><span class="sxs-lookup"><span data-stu-id="430c5-103"> supports the [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] to expose your data as a feed with resources that are addressable by URIs.</span></span> <span data-ttu-id="430c5-104">これらのリソースがのエンティティとリレーションシップの規則に従って表現は、 [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)です。</span><span class="sxs-lookup"><span data-stu-id="430c5-104">These resources are represented according to the entity-relationship conventions of the [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md).</span></span> <span data-ttu-id="430c5-105">このモデルでは、エンティティはアプリケーション ドメイン内のデータの操作単位 (データ型) を表します (顧客、注文、項目、製品など)。</span><span class="sxs-lookup"><span data-stu-id="430c5-105">In this model, entities represent operational units of data that are data types in an application domain, such as customers, orders, items, and products.</span></span> <span data-ttu-id="430c5-106">エンティティ データは、Representational State Transfer (REST) のセマンティクス (特に、標準的な HTTP 動詞である GET、PUT、POST、および DELETE) を使用してアクセスおよび変更できます。</span><span class="sxs-lookup"><span data-stu-id="430c5-106">Entity data is accessed and changed by using the semantics of representational state transfer (REST), specifically the standard HTTP verbs of GET, PUT, POST, and DELETE.</span></span>  
   
-## リソースへの対処  
- [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] では、データ モデルによって公開されたデータを、URI を使用してアドレス指定します。  たとえば、次の URI は Customers エンティティ セットであるフィードを返します。このフィードには、Customer エンティティ型のすべてのインスタンスのエントリが含まれています。  
+## <a name="addressing-resources"></a><span data-ttu-id="430c5-107">リソースへの対処</span><span class="sxs-lookup"><span data-stu-id="430c5-107">Addressing Resources</span></span>  
+ <span data-ttu-id="430c5-108">[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] では、データ モデルによって公開されたデータを、URI を使用してアドレス指定します。</span><span class="sxs-lookup"><span data-stu-id="430c5-108">In [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)], you address any data exposed by the data model by using a URI.</span></span> <span data-ttu-id="430c5-109">たとえば、次の URI には、Customer エンティティ型のすべてのインスタンスのエントリが含まれています、顧客エンティティ セットであるフィードが返されます。</span><span class="sxs-lookup"><span data-stu-id="430c5-109">For example, the following URI returns a feed that is the Customers entity set, which contains entries for all instances of the Customer entity type:</span></span>  
   
 ```  
 http://services.odata.org/Northwind/Northwind.svc/Customers  
 ```  
   
- エンティティには、エンティティ キーという特別なプロパティがあります。  エンティティ キーは、エンティティ セット内の 1 つのエンティティを一意に識別するために使用されます。  そのため、エンティティ セット内のエンティティ型の特定のインスタンスのアドレスを指定できます。  たとえば、次の URI は、`ALFKI` のキー値のある Customer エンティティ型の特定のインスタンスのエントリを返します。  
+ <span data-ttu-id="430c5-110">エンティティには、エンティティ キーという特別なプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="430c5-110">Entities have special properties called entity keys.</span></span> <span data-ttu-id="430c5-111">エンティティ キーは、エンティティ セット内の 1 つのエンティティを一意に識別するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="430c5-111">An entity key is used to uniquely identify a single entity in an entity set.</span></span> <span data-ttu-id="430c5-112">そのため、エンティティ セット内のエンティティ型の特定のインスタンスのアドレスを指定できます。</span><span class="sxs-lookup"><span data-stu-id="430c5-112">This enables you to address a specific instance of an entity type in the entity set.</span></span> <span data-ttu-id="430c5-113">たとえば、次の URI は、`ALFKI` のキー値のある Customer エンティティ型の特定のインスタンスのエントリを返します。</span><span class="sxs-lookup"><span data-stu-id="430c5-113">For example, the following URI returns an entry for a specific instance of the Customer entity type that has a key value of `ALFKI`:</span></span>  
   
 ```  
 http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')  
 ```  
   
- エンティティ インスタンスのプリミティブ プロパティおよび複合プロパティは、個別にアドレス指定することもできます。  たとえば、次の URI は特定の Customer の `ContactName` プロパティ値が含まれた XML 要素を返します。  
+ <span data-ttu-id="430c5-114">エンティティ インスタンスのプリミティブ プロパティおよび複合プロパティは、個別にアドレス指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="430c5-114">Primitive and complex properties of an entity instance can also be individually addressed.</span></span> <span data-ttu-id="430c5-115">たとえば、次の URI は特定の Customer の `ContactName` プロパティ値が含まれた XML 要素を返します。</span><span class="sxs-lookup"><span data-stu-id="430c5-115">For example, the following URI returns an XML element that contains the `ContactName` property value for a specific Customer:</span></span>  
   
 ```  
 http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/ContactName  
 ```  
   
- 前の URI に `$value` エンドポイントを含めた場合、応答メッセージにはプリミティブ プロパティの値のみが返されます。  次の例では、XML 要素のない "Maria Anders" という文字列のみが返されます。  
+ <span data-ttu-id="430c5-116">前の URI に `$value` エンドポイントを含めた場合、応答メッセージにはプリミティブ プロパティの値のみが返されます。</span><span class="sxs-lookup"><span data-stu-id="430c5-116">When you include the `$value` endpoint in the previous URI, only the value of the primitive property is returned in the response message.</span></span> <span data-ttu-id="430c5-117">次の例では、XML 要素のない "Maria Anders" という文字列のみが返されます。</span><span class="sxs-lookup"><span data-stu-id="430c5-117">The following example returns only the string "Maria Anders" without the XML element:</span></span>  
   
 ```  
 http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/ContactName/$value  
 ```  
   
- エンティティ間のリレーションシップは、アソシエーションによってデータ モデル内で定義されます。  これらのアソシエーションによって、エンティティ インスタンスのナビゲーション プロパティを使用して関連エンティティをアドレス指定することが可能になります。  ナビゲーション プロパティは、単一の関連エンティティ \(多対一のリレーションシップの場合\) または関連エンティティのセット \(一対多のリレーションシップの場合\) のいずれかを返します。  たとえば、次の URI は、特定の Customer に関連付けられたすべての Orders のセットであるフィードを返します。  
+ <span data-ttu-id="430c5-118">エンティティ間のリレーションシップは、アソシエーションによってデータ モデル内で定義されます。</span><span class="sxs-lookup"><span data-stu-id="430c5-118">Relationships between entities are defined in the data model by associations.</span></span> <span data-ttu-id="430c5-119">これらのアソシエーションによって、エンティティ インスタンスのナビゲーション プロパティを使用して関連エンティティをアドレス指定することが可能になります。</span><span class="sxs-lookup"><span data-stu-id="430c5-119">These associations enable you to address related entities by using navigation properties of an entity instance.</span></span> <span data-ttu-id="430c5-120">ナビゲーション プロパティは、単一の関連エンティティ (多対一のリレーションシップの場合) または関連エンティティのセット (一対多のリレーションシップの場合) のいずれかを返します。</span><span class="sxs-lookup"><span data-stu-id="430c5-120">A navigation property can return either a single related entity, in the case of a many-to-one relationship, or a set of related entities, in the case of a one-to-many relationship.</span></span> <span data-ttu-id="430c5-121">たとえば、次の URI は、特定の Customer に関連付けられたすべての Orders のセットであるフィードを返します。</span><span class="sxs-lookup"><span data-stu-id="430c5-121">For example, the following URI returns a feed that is the set of all the Orders that are related to a specific Customer:</span></span>  
   
 ```  
 http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders  
 ```  
   
- リレーションシップは通常は双方向であり、ナビゲーション プロパティのペアで表されます。  前の例で示したリレーションシップとは逆に、次の URI は特定の Order エンティティが属する Customer エンティティへの参照を返します。  
+ <span data-ttu-id="430c5-122">リレーションシップは通常は双方向であり、ナビゲーション プロパティのペアで表されます。</span><span class="sxs-lookup"><span data-stu-id="430c5-122">Relationships, which are usually bi-directional, are represented by a pair of navigation properties.</span></span> <span data-ttu-id="430c5-123">前の例で示したリレーションシップとは逆に、次の URI は特定の Order エンティティが属する Customer エンティティへの参照を返します。</span><span class="sxs-lookup"><span data-stu-id="430c5-123">As the reverse of the relationship shown in the previous example, the following URI returns a reference to the Customer entity to which a specific Order entity belongs:</span></span>  
   
 ```  
 http://services.odata.org/Northwind/Northwind.svc/Orders(10643)/Customer  
 ```  
   
- [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] では、クエリ式の結果に基づいてリソースのアドレスを指定できます。  その結果、評価された式に基づいてリソースのセットをフィルターすることが可能になります。  たとえば、次の URI は、リソースをフィルターして特定の Customer に 1997 年 9 月 22 日以降に出荷された Orders だけを返します。  
+ [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]<span data-ttu-id="430c5-124">できますクエリ式の結果に基づいてリソースのアドレス。</span><span class="sxs-lookup"><span data-stu-id="430c5-124"> also enables you to address resources based on the results of query expressions.</span></span> <span data-ttu-id="430c5-125">これにより、式の評価結果に基づいて、リソースのセットをフィルター処理します。</span><span class="sxs-lookup"><span data-stu-id="430c5-125">This makes it possible to filter sets of resources based on an evaluated expression.</span></span> <span data-ttu-id="430c5-126">たとえば、次の URI は、リソースをフィルターして特定の Customer に 1997 年 9 月 22 日以降に出荷された Orders だけを返します。</span><span class="sxs-lookup"><span data-stu-id="430c5-126">For example, the following URI filters the resources to return only the Orders for the specified Customer that have shipped since September 22, 1997:</span></span>  
   
 ```  
 http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders?$filter=ShippedDate gt datetime'1997-09-22T00:00:00'  
 ```  
   
- 詳細については、「[OData: URI 規則](http://go.microsoft.com/fwlink/?LinkId=185564)」を参照してください。  
+ <span data-ttu-id="430c5-127">詳細については、次を参照してください。 [OData: URI 規則](http://go.microsoft.com/fwlink/?LinkId=185564)です。</span><span class="sxs-lookup"><span data-stu-id="430c5-127">For more information, see [OData: URI Conventions](http://go.microsoft.com/fwlink/?LinkId=185564).</span></span>  
   
-## System Query Options \(システム クエリ オプション\)  
- [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] では一連のシステム クエリ オプションが定義されており、フィルター処理、並べ替え、ページングなど、リソースに対する従来のクエリ操作の実行に使用できます。  たとえば、次の URI は、郵便番号 \(postal code\) の末尾が `100` ではないすべての `Order` エンティティのセットを、関連する `Order_Detail` エンティティと共に返します。  
+## <a name="system-query-options"></a><span data-ttu-id="430c5-128">System Query Options (システム クエリ オプション)</span><span class="sxs-lookup"><span data-stu-id="430c5-128">System Query Options</span></span>  
+ [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]<span data-ttu-id="430c5-129">フィルター処理、並べ替え、ページングなどのリソースに対して従来のクエリ操作の実行に使用できるシステム クエリ オプションのセットを定義します。</span><span class="sxs-lookup"><span data-stu-id="430c5-129"> defines a set of system query options that you can use to perform traditional query operations against resources, such as filtering, sorting, and paging.</span></span> <span data-ttu-id="430c5-130">たとえば、次の URI はすべてのセットを返します、`Order`関連と共に`Order_Detail`で終わらないの郵便番号コードをエンティティ`100`:</span><span class="sxs-lookup"><span data-stu-id="430c5-130">For example, the following URI returns the set of all the `Order` entities, along with related `Order_Detail` entities, the postal codes of which do not end in `100`:</span></span>  
   
 ```  
 http://services.odata.org/Northwind/Northwind.svc/Orders?$filter=not endswith(ShipPostalCode,'100')&$expand=Order_Details&$orderby=ShipCity  
 ```  
   
- 返されたフィードのエントリは、注文の ShipCity プロパティの値でも並べ替えられています。  
+ <span data-ttu-id="430c5-131">返されたフィードのエントリは、注文の ShipCity プロパティの値でも並べ替えられています。</span><span class="sxs-lookup"><span data-stu-id="430c5-131">The entries in the returned feed are also ordered by the value of the ShipCity property of the orders.</span></span>  
   
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] は、次の [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] システム クエリ オプションをサポートしています。  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="430c5-132">次のサポート[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]システム クエリ オプション。</span><span class="sxs-lookup"><span data-stu-id="430c5-132"> supports the following [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] system query options:</span></span>  
   
-|クエリ オプション|説明|  
-|---------------|--------|  
-|`$orderby`|返されるフィードのエンティティについて、既定の並べ替え順序を定義します。  次のクエリで返される Customers フィードは、国 \(County\) と都市 \(City\) で並べ替えられています。<br /><br /> `http://services.odata.org/Northwind/Northwind.svc/Customers?$orderby=Country,City`<br /><br /> 詳細については、「[OData: OrderBy システム クエリ オプション \($orderby\)](http://go.microsoft.com/fwlink/?LinkId=186968)」を参照してください。|  
-|`$top`|返されるフィードに含まれるエンティティの数を指定します。  次の例では、最初の 10 件の顧客をスキップし、その次の 10 件を返します。<br /><br /> `http://services.odata.org/Northwind/Northwind.svc/Customers?$skip=10&$top=10`<br /><br /> 詳細については、「[OData: Top システム クエリ オプション \($top\)](http://go.microsoft.com/fwlink/?LinkId=186969)」を参照してください。|  
-|`$skip`|フィードにエンティティを返し始めるまでにスキップするエンティティの数を指定します。  次の例では、最初の 10 件の顧客をスキップし、その次の 10 件を返します。<br /><br /> `http://services.odata.org/Northwind/Northwind.svc/Customers?$skip=10&$top=10`<br /><br /> 詳細については、「[OData: Skip システム クエリ オプション \($skip\)](http://go.microsoft.com/fwlink/?LinkId=186971)」を参照してください。|  
-|`$filter`|フィードに返されるエンティティを特定の条件に基づいてフィルターする式を定義します。  このクエリ オプションは、フィルター式の評価に使用される一連の論理比較演算子、算術演算子、および定義済みクエリ関数をサポートします。  次の例は、郵便番号の末尾が 100 でないすべての注文を返します。<br /><br /> `http://services.odata.org/Northwind/Northwind.svc/Orders?$filter=not endswith(ShipPostalCode,'100')`<br /><br /> 詳細については、「[OData: Filter システム クエリ オプション \($filter\)](http://go.microsoft.com/fwlink/?LinkId=186972)」を参照してください。|  
-|`$expand`|クエリで返される関連エンティティを指定します。  関連エンティティは、クエリで返されるエンティティにフィードまたはエントリとしてインラインで含まれています。  次の例では、顧客 'ALFKI' の注文を各注文の品目の詳細と共に返します。<br /><br /> `http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders?$expand=Order_Details`<br /><br /> 詳細については、「[OData: Expand システム クエリ オプション \($expand\)](http://go.microsoft.com/fwlink/?LinkId=186973)」を参照してください。|  
-|`$select`|フィードとして返されるエンティティのプロパティを指定します。  既定では、エンティティのすべてのプロパティがフィードとして返されます。  次のクエリでは、`Customer` エンティティの 3 つのプロパティが返されます。<br /><br /> `http://services.odata.org/Northwind/Northwind.svc/Customers?$select=CustomerID,CompanyName,City`<br /><br /> 詳細については、「[OData: Select システム クエリ オプション \($select\)](http://go.microsoft.com/fwlink/?LinkID=186076)」を参照してください。|  
-|`$inlinecount`|フィードで返されるエンティティの数のカウントがフィードに含まれるように要求します。  詳細については、「[OData: Inlinecount システム クエリ オプション \($inlinecount\)](http://go.microsoft.com/fwlink/?LinkId=186975)」を参照してください。|  
+|<span data-ttu-id="430c5-133">クエリ オプション</span><span class="sxs-lookup"><span data-stu-id="430c5-133">Query Option</span></span>|<span data-ttu-id="430c5-134">説明</span><span class="sxs-lookup"><span data-stu-id="430c5-134">Description</span></span>|  
+|------------------|-----------------|  
+|`$orderby`|<span data-ttu-id="430c5-135">返されるフィードのエンティティについて、既定の並べ替え順序を定義します。</span><span class="sxs-lookup"><span data-stu-id="430c5-135">Defines a default sort order for entities in the returned feed.</span></span> <span data-ttu-id="430c5-136">次のクエリで返される Customers フィードは、国 (County) と都市 (City) で並べ替えられています。</span><span class="sxs-lookup"><span data-stu-id="430c5-136">The following query orders the returned customers feed by county and city:</span></span><br /><br /> `http://services.odata.org/Northwind/Northwind.svc/Customers?$orderby=Country,City`<br /><br /> <span data-ttu-id="430c5-137">詳細については、次を参照してください。 [OData: OrderBy システム クエリ オプション ($orderby)](http://go.microsoft.com/fwlink/?LinkId=186968)です。</span><span class="sxs-lookup"><span data-stu-id="430c5-137">For more information, see [OData: OrderBy System Query Option ($orderby)](http://go.microsoft.com/fwlink/?LinkId=186968).</span></span>|  
+|`$top`|<span data-ttu-id="430c5-138">返されるフィードに含まれるエンティティの数を指定します。</span><span class="sxs-lookup"><span data-stu-id="430c5-138">Specifies the number of entities to include in the returned feed.</span></span> <span data-ttu-id="430c5-139">次の例では、最初の 10 件の顧客をスキップし、その次の 10 件を返します。</span><span class="sxs-lookup"><span data-stu-id="430c5-139">The following example skips the first 10 customers and then returns the next 10:</span></span><br /><br /> `http://services.odata.org/Northwind/Northwind.svc/Customers?$skip=10&$top=10`<br /><br /> <span data-ttu-id="430c5-140">詳細については、次を参照してください。 [OData: Top システム クエリ オプション ($top)](http://go.microsoft.com/fwlink/?LinkId=186969)です。</span><span class="sxs-lookup"><span data-stu-id="430c5-140">For more information, see [OData: Top System Query Option ($top)](http://go.microsoft.com/fwlink/?LinkId=186969).</span></span>|  
+|`$skip`|<span data-ttu-id="430c5-141">フィードにエンティティを返し始めるまでにスキップするエンティティの数を指定します。</span><span class="sxs-lookup"><span data-stu-id="430c5-141">Specifies the number of entities to skip before starting to return entities in the feed.</span></span> <span data-ttu-id="430c5-142">次の例では、最初の 10 件の顧客をスキップし、その次の 10 件を返します。</span><span class="sxs-lookup"><span data-stu-id="430c5-142">The following example skips the first 10 customers and then returns the next 10:</span></span><br /><br /> `http://services.odata.org/Northwind/Northwind.svc/Customers?$skip=10&$top=10`<br /><br /> <span data-ttu-id="430c5-143">詳細については、次を参照してください。 [OData: Skip システム クエリ オプション ($skip)](http://go.microsoft.com/fwlink/?LinkId=186971)です。</span><span class="sxs-lookup"><span data-stu-id="430c5-143">For more information, see [OData: Skip System Query Option ($skip)](http://go.microsoft.com/fwlink/?LinkId=186971).</span></span>|  
+|`$filter`|<span data-ttu-id="430c5-144">フィードに返されるエンティティを特定の条件に基づいてフィルターする式を定義します。</span><span class="sxs-lookup"><span data-stu-id="430c5-144">Defines an expression that filters the entities returned in the feed based on specific criteria.</span></span> <span data-ttu-id="430c5-145">このクエリ オプションは、フィルター式の評価に使用される一連の論理比較演算子、算術演算子、および定義済みクエリ関数をサポートします。</span><span class="sxs-lookup"><span data-stu-id="430c5-145">This query option supports a set of logical comparison operators, arithmetic operators, and predefined query functions that are used to evaluate the filter expression.</span></span> <span data-ttu-id="430c5-146">次の例は、郵便番号の末尾が 100 でないすべての注文を返します。</span><span class="sxs-lookup"><span data-stu-id="430c5-146">The following example returns all orders the postal codes of which do not end in 100:</span></span><br /><br /> `http://services.odata.org/Northwind/Northwind.svc/Orders?$filter=not endswith(ShipPostalCode,'100')`<br /><br /> <span data-ttu-id="430c5-147">詳細については、次を参照してください。 [OData: Filter システム クエリ オプション ($filter)](http://go.microsoft.com/fwlink/?LinkId=186972)です。</span><span class="sxs-lookup"><span data-stu-id="430c5-147">For more information, see [OData: Filter System Query Option ($filter)](http://go.microsoft.com/fwlink/?LinkId=186972).</span></span>|  
+|`$expand`|<span data-ttu-id="430c5-148">クエリで返される関連エンティティを指定します。</span><span class="sxs-lookup"><span data-stu-id="430c5-148">Specifies which related entities are returned by the query.</span></span> <span data-ttu-id="430c5-149">関連エンティティは、クエリで返されるエンティティにフィードまたはエントリとしてインラインで含まれています。</span><span class="sxs-lookup"><span data-stu-id="430c5-149">Related entities are included as either a feed or an entry inline with the entity returned by the query.</span></span> <span data-ttu-id="430c5-150">次の例では、顧客 'ALFKI' の注文を各注文の品目の詳細と共に返します。</span><span class="sxs-lookup"><span data-stu-id="430c5-150">The following example returns the order for the customer 'ALFKI' along with the item details for each order:</span></span><br /><br /> `http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders?$expand=Order_Details`<br /><br /> <span data-ttu-id="430c5-151">詳細については、次を参照してください。 [OData: Expand システム クエリ オプション ($展開)](http://go.microsoft.com/fwlink/?LinkId=186973)です。</span><span class="sxs-lookup"><span data-stu-id="430c5-151">For more information, see [OData: Expand System Query Option ($expand)](http://go.microsoft.com/fwlink/?LinkId=186973).</span></span>|  
+|`$select`|<span data-ttu-id="430c5-152">フィードとして返されるエンティティのプロパティを指定します。</span><span class="sxs-lookup"><span data-stu-id="430c5-152">Specifies a projection that defines the properties of the entity are returned in the projection.</span></span> <span data-ttu-id="430c5-153">既定では、エンティティのすべてのプロパティがフィードとして返されます。</span><span class="sxs-lookup"><span data-stu-id="430c5-153">By default, all properties of an entity are returned in a feed.</span></span> <span data-ttu-id="430c5-154">次のクエリでは、`Customer` エンティティの 3 つのプロパティが返されます。</span><span class="sxs-lookup"><span data-stu-id="430c5-154">The following query returns only three properties of the `Customer` entity:</span></span><br /><br /> `http://services.odata.org/Northwind/Northwind.svc/Customers?$select=CustomerID,CompanyName,City`<br /><br /> <span data-ttu-id="430c5-155">詳細については、次を参照してください。 [OData: Select システム クエリ オプション ($select)](http://go.microsoft.com/fwlink/?LinkID=186076)です。</span><span class="sxs-lookup"><span data-stu-id="430c5-155">For more information, see [OData: Select System Query Option ($select)](http://go.microsoft.com/fwlink/?LinkID=186076).</span></span>|  
+|`$inlinecount`|<span data-ttu-id="430c5-156">フィードで返されるエンティティの数のカウントがフィードに含まれるように要求します。</span><span class="sxs-lookup"><span data-stu-id="430c5-156">Requests that a count of the number of entities returned in the feed be included with the feed.</span></span> <span data-ttu-id="430c5-157">詳細については、次を参照してください。 [OData: Inlinecount システム クエリ オプション ($inlinecount)](http://go.microsoft.com/fwlink/?LinkId=186975)です。</span><span class="sxs-lookup"><span data-stu-id="430c5-157">For more information, see [OData: Inlinecount System Query Option ($inlinecount)](http://go.microsoft.com/fwlink/?LinkId=186975).</span></span>|  
   
-## リレーションシップのアドレス指定  
- エンティティ セットとエンティティ インスタンスのアドレス指定に加えて、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] では、2 つのエンティティ間のリレーションシップを表すアソシエーションのアドレスを指定することもできます。  この機能は、2 つのエンティティ インスタンス \(Northwind サンプル データベースの注文に関連付けられた配送会社など\) の間のリレーションシップを作成または変更するために必要です。  [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] は、エンティティ間のアソシエーションをアドレス指定する `$link` 演算子をサポートします。  たとえば、次の URI を HTTP PUT 要求メッセージで指定した場合、指定した注文の配送会社を新しい配送会社に変更します。  
+## <a name="addressing-relationships"></a><span data-ttu-id="430c5-158">リレーションシップのアドレス指定</span><span class="sxs-lookup"><span data-stu-id="430c5-158">Addressing Relationships</span></span>  
+ <span data-ttu-id="430c5-159">エンティティ セットとエンティティ インスタンスのアドレス指定だけでなく[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]エンティティ間のリレーションシップを表すアソシエーションに対処することもできます。</span><span class="sxs-lookup"><span data-stu-id="430c5-159">In addition to addressing entity sets and entity instances, [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] also enables you to address the associations that represent relationships between entities.</span></span> <span data-ttu-id="430c5-160">この機能は、2 つのエンティティ インスタンス (Northwind サンプル データベースの注文に関連付けられた配送会社など) の間のリレーションシップを作成または変更するために必要です。</span><span class="sxs-lookup"><span data-stu-id="430c5-160">This functionality is required to be able to create or change a relationship between two entity instances, such as the shipper that is related to a given order in the Northwind sample database.</span></span> [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]<span data-ttu-id="430c5-161">サポートしている、`$link`エンティティ間のアソシエーションを具体的には対応する演算子です。</span><span class="sxs-lookup"><span data-stu-id="430c5-161"> supports a `$link` operator to specifically address the associations between entities.</span></span> <span data-ttu-id="430c5-162">たとえば、次の URI を HTTP PUT 要求メッセージで指定した場合、指定した注文の配送会社を新しい配送会社に変更します。</span><span class="sxs-lookup"><span data-stu-id="430c5-162">For example, the following URI is specified in an HTTP PUT request message to change the shipper for the specified order to a new shipper.</span></span>  
   
 ```  
 http://services.odata.org/Northwind/Northwind.svc/Orders(10643)/$links/Shipper  
 ```  
   
- 詳細については、「[OData: エントリ間のリンクのアドレス指定](http://go.microsoft.com/fwlink/?LinkId=187351)」を参照してください。  
+ <span data-ttu-id="430c5-163">詳細については、次を参照してください。 [OData: エントリ間のリンクのアドレス指定](http://go.microsoft.com/fwlink/?LinkId=187351)です。</span><span class="sxs-lookup"><span data-stu-id="430c5-163">For more information, see [OData: Addressing Links between Entries](http://go.microsoft.com/fwlink/?LinkId=187351).</span></span>  
   
-## 返されたフィードの使用  
- [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] リソースの URI を使用すると、サービスによって公開されるエンティティ データのアドレスを指定できます。  Web ブラウザーの \[アドレス\] フィールドに URI を入力すると、要求されたリソースの [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィード表現が返されます。  詳細については、「[WCF Data Services クイックスタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)」を参照してください。  Web ブラウザーはデータ サービス リソースが予期されたデータを返すかどうかをテストするために便利ですが、データの作成、更新、および削除も行うことができる運用データ サービスには、一般的にアプリケーション コードや Web ページのスクリプト言語を使用してアクセスします。  詳細については、「[クライアント アプリケーションでのデータ サービスの使用](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)」を参照してください。  
+## <a name="consuming-the-returned-feed"></a><span data-ttu-id="430c5-164">返されたフィードの使用</span><span class="sxs-lookup"><span data-stu-id="430c5-164">Consuming the Returned Feed</span></span>  
+ <span data-ttu-id="430c5-165">URI、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]リソースを使用すると、サービスによって公開されるエンティティ データのアドレスにします。</span><span class="sxs-lookup"><span data-stu-id="430c5-165">The URI of an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] resource enables you to address entity data exposed by the service.</span></span> <span data-ttu-id="430c5-166">Web ブラウザーのアドレス フィールドに URI を入力すると、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]要求されたリソースのフィードの表現が返されます。</span><span class="sxs-lookup"><span data-stu-id="430c5-166">When you enter a URI into the address field of a Web browser, a [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed representation of the requested resource is returned.</span></span> <span data-ttu-id="430c5-167">詳細については、次を参照してください。、 [WCF Data Services クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="430c5-167">For more information, see the [WCF Data Services Quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span> <span data-ttu-id="430c5-168">Web ブラウザーは、データ サービス リソースが予期されたデータを返します、アプリケーション コードによってアクセスできますも作成、更新、およびデータを削除する運用データ サービスのことをテストまたは Web ページのスクリプト言語に便利です。</span><span class="sxs-lookup"><span data-stu-id="430c5-168">Although a Web browser may be useful for testing that a data service resource returns the expected data, production data services that can also create, update, and delete data are generally accessed by application code or scripting languages in a Web page.</span></span> <span data-ttu-id="430c5-169">詳細については、次を参照してください。[クライアント アプリケーションでデータ サービスを使用して](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="430c5-169">For more information, see [Using a Data Service in a Client Application](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md).</span></span>  
   
-## 参照  
- [Open Data Protocol Web サイト](http://go.microsoft.com/fwlink/?LinkID=182204)
+## <a name="see-also"></a><span data-ttu-id="430c5-170">関連項目</span><span class="sxs-lookup"><span data-stu-id="430c5-170">See Also</span></span>  
+ [<span data-ttu-id="430c5-171">Open Data Protocol Web サイト</span><span class="sxs-lookup"><span data-stu-id="430c5-171">Open Data Protocol Web site</span></span>](http://go.microsoft.com/fwlink/?LinkID=182204)

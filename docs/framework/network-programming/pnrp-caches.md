@@ -7,49 +7,42 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: 270068d9-1b6b-4eb9-9e14-e02326bb88df
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b468a8cfd050943513cbe858c3ba985ee922b23f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 919a789b1ae3e5900fe8bd79f5c8b127d81bb2e0
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="pnrp-caches"></a>PNRP キャッシュ
-ピア名解決プロトコル (PNRP) キャッシュは、アルゴリズムによって選択され、ピアで保持されているピア エンドポイントのローカル コレクションです。  
+# <a name="pnrp-caches"></a><span data-ttu-id="9eb00-102">PNRP キャッシュ</span><span class="sxs-lookup"><span data-stu-id="9eb00-102">PNRP Caches</span></span>
+<span data-ttu-id="9eb00-103">ピア名解決プロトコル (PNRP) キャッシュは、アルゴリズムによって選択され、ピアで保持されているピア エンドポイントのローカル コレクションです。</span><span class="sxs-lookup"><span data-stu-id="9eb00-103">Peer Name Resolution Protocol (PNRP) caches are local collections of algorithmically selected peer endpoints maintained on the peer.</span></span>  
   
-## <a name="pnrp-cache-initialization"></a>PNRP キャッシュ初期化  
- ピア ノードの起動時に PNRP キャッシュまたはピア名レコード コレクションを初期化するには、次の方法をノードで利用できます。  
+## <a name="pnrp-cache-initialization"></a><span data-ttu-id="9eb00-104">PNRP キャッシュ初期化</span><span class="sxs-lookup"><span data-stu-id="9eb00-104">PNRP Cache Initialization</span></span>  
+ <span data-ttu-id="9eb00-105">ピア ノードの起動時に PNRP キャッシュまたはピア名レコード コレクションを初期化するには、次の方法をノードで利用できます。</span><span class="sxs-lookup"><span data-stu-id="9eb00-105">To initialize the PNRP cache, or Peer Name Record Collection, when a peer node starts up, a node can use the following methods:</span></span>  
   
--   ノードのシャットダウン時に存在していた永続キャッシュ エントリがハード ディスク ストレージから読み込まれます。  
+-   <span data-ttu-id="9eb00-106">ノードのシャットダウン時に存在していた永続キャッシュ エントリがハード ディスク ストレージから読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="9eb00-106">Persistent cache entries that were present when the node was shut down are loaded from hard disk storage.</span></span>  
   
--   アプリケーションで P2P コラボレーション インフラストラクチャを使用している場合、連絡先マネージャーでそのノードに関するコラボレーション情報を利用できます。  
+-   <span data-ttu-id="9eb00-107">アプリケーションで P2P コラボレーション インフラストラクチャを使用している場合、連絡先マネージャーでそのノードに関するコラボレーション情報を利用できます。</span><span class="sxs-lookup"><span data-stu-id="9eb00-107">If an application uses the P2P collaboration infrastructure, collaboration information is available in the Contact Manager for that node.</span></span>  
   
-## <a name="scaling-peer-name-resolution-with-a-multi-level-cache"></a>マルチレベル キャッシュを使用してピア名解決の規模を調整する  
- PNRP キャッシュ サイズを小さくするために、ピア ノードはマルチレベル キャッシュを使用します。このマルチレベル キャッシュの各レベルには最大数のエントリが格納されます。 キャッシュ内の各レベルは、PNRP ID の数値スペース (2<sup>256</sup>) の 10 分の 1 の大きさを表しています。 キャッシュ内の最下位レベルには、ローカルに登録されている PNRP ID とこれに近い番号の他の PNRP ID が含まれています。 キャッシュの 1 つのレベルに最大数 (20 個) のエントリが格納されると、これよりも下位の新しいレベルが生成されます。 キャッシュ内のレベルの最大数は、log10(クラウド内の PNRP ID の合計数) の桁で計算されます。 たとえば、名前解決の際に 1 億個の PNRP ID があるグローバル クラウドで PNRP ID を解決する場合、キャッシュ内のレベルは 8 (=log10(100,000,000)) を下回り、ホップ数も同様の数しか存在しません。 このメカニズムでは、対応する CPA を持つピアが見つかるまで 2 番目に近いピアに PNRP 要求メッセージを転送することによって任意の PNRP ID を解決できるよう、分散ハッシュ テーブルを作成します。  
+## <a name="scaling-peer-name-resolution-with-a-multi-level-cache"></a><span data-ttu-id="9eb00-108">マルチレベル キャッシュを使用してピア名解決の規模を調整する</span><span class="sxs-lookup"><span data-stu-id="9eb00-108">Scaling Peer Name Resolution with a Multi-Level Cache</span></span>  
+ <span data-ttu-id="9eb00-109">PNRP キャッシュ サイズを小さくするために、ピア ノードはマルチレベル キャッシュを使用します。このマルチレベル キャッシュの各レベルには最大数のエントリが格納されます。</span><span class="sxs-lookup"><span data-stu-id="9eb00-109">To keep the sizes of the PNRP caches small, peer nodes use a multi-level cache, in which each level contains a maximum number of entries.</span></span> <span data-ttu-id="9eb00-110">キャッシュ内の各レベルは、PNRP ID の数値スペース (2<sup>256</sup>) の 10 分の 1 の大きさを表しています。</span><span class="sxs-lookup"><span data-stu-id="9eb00-110">Each level in the cache represents a one tenth smaller portion of the PNRP ID number space (2<sup>256</sup>).</span></span> <span data-ttu-id="9eb00-111">キャッシュ内の最下位レベルには、ローカルに登録されている PNRP ID とこれに近い番号の他の PNRP ID が含まれています。</span><span class="sxs-lookup"><span data-stu-id="9eb00-111">The lowest level in the cache contains a locally registered PNRP ID and other PNRP IDs that are numerically close to it.</span></span> <span data-ttu-id="9eb00-112">キャッシュの 1 つのレベルに最大数 (20 個) のエントリが格納されると、これよりも下位の新しいレベルが生成されます。</span><span class="sxs-lookup"><span data-stu-id="9eb00-112">As a level of the cache is filled with a maximum of 20 entries, a new lower level is created.</span></span> <span data-ttu-id="9eb00-113">キャッシュ内のレベルの最大数は、log10(クラウド内の PNRP ID の合計数) の桁で計算されます。</span><span class="sxs-lookup"><span data-stu-id="9eb00-113">The maximum number of levels in the cache is on the order of log10(Total number of PNRP IDs in the cloud).</span></span> <span data-ttu-id="9eb00-114">たとえば、名前解決の際に 1 億個の PNRP ID があるグローバル クラウドで PNRP ID を解決する場合、キャッシュ内のレベルは 8 (=log10(100,000,000)) を下回り、ホップ数も同様の数しか存在しません。</span><span class="sxs-lookup"><span data-stu-id="9eb00-114">For example, for a global cloud with 100 million PNRP IDs, there are no more than 8 (=log10(100,000,000)) levels in the cache and a similar number of hops to resolve a PNRP ID during name resolution.</span></span> <span data-ttu-id="9eb00-115">このメカニズムでは、対応する CPA を持つピアが見つかるまで 2 番目に近いピアに PNRP 要求メッセージを転送することによって任意の PNRP ID を解決できるよう、分散ハッシュ テーブルを作成します。</span><span class="sxs-lookup"><span data-stu-id="9eb00-115">This mechanism allows for a distributed hash table for which an arbitrary PNRP ID can be resolved by forwarding PNRP Request messages to the next-closest peer until the peer with the corresponding CPA is found.</span></span>  
   
- 名前解決が完了し、ノードのキャッシュの最下位レベルにエントリが追加されるたびに、エントリのコピーが、キャッシュの最終レベル内部のすべてのノードに追加されます。  
+ <span data-ttu-id="9eb00-116">名前解決が完了し、ノードのキャッシュの最下位レベルにエントリが追加されるたびに、エントリのコピーが、キャッシュの最終レベル内部のすべてのノードに追加されます。</span><span class="sxs-lookup"><span data-stu-id="9eb00-116">To ensure that resolution can complete, each time a node adds an entry to the lowest level of its cache, it floods a copy of the entry to all the nodes within the last level of the cache.</span></span>  
   
- キャッシュ エントリは時間が経つと更新されます。 古くなったキャッシュ エントリはキャッシュから削除されます。 その結果として、PNRP ID の分散ハッシュ テーブルはアクティブなエンドポイントに基づいて作成されています。これは、アドレス レコードと DNS プロトコルによって、アドレスに関連付けられているノードが必ずネットワーク上でアクティブになるとは限らない DNS とは異なる点です。  
+ <span data-ttu-id="9eb00-117">キャッシュ エントリは時間が経つと更新されます。</span><span class="sxs-lookup"><span data-stu-id="9eb00-117">The cache entries are refreshed over time.</span></span> <span data-ttu-id="9eb00-118">古くなったキャッシュ エントリはキャッシュから削除されます。</span><span class="sxs-lookup"><span data-stu-id="9eb00-118">Cache entries that are stale are removed from the cache.</span></span> <span data-ttu-id="9eb00-119">その結果として、PNRP ID の分散ハッシュ テーブルはアクティブなエンドポイントに基づいて作成されています。これは、アドレス レコードと DNS プロトコルによって、アドレスに関連付けられているノードが必ずネットワーク上でアクティブになるとは限らない DNS とは異なる点です。</span><span class="sxs-lookup"><span data-stu-id="9eb00-119">The result is that the distributed hash table of PNRP IDs is based on active endpoints, unlike DNS in which address records and the DNS protocol provide no guarantee that the node associated with the address is actively on the network.</span></span>  
   
-## <a name="other-pnrp-caches"></a>その他の PNRP キャッシュ  
- もう 1 つの永続データ ストアはローカル キャッシュです。  PNRP アクティビティに必要な他のオブジェクトに加え、安全に公開され、クラウドの全メンバー間で同期されている、PNRP クラウドまたはコラボレーション セッションに関連付けられたレポートが含まれる場合があります。 このレプリケートされたストアは、グループ データのビューを表しており、すべてのグループ メンバーで同じである必要があります。 正確に言うと、これらのオブジェクトはレコードというよりも、ローカル キャッシュに送信されるアプリケーション、プレゼンス、およびオブジェクト データです。 PNRP クラウドを使用することで、オブジェクトはコラボレーション セッションまたは PNRP クラウド内のすべてのノードに反映されます。  クラウド メンバー間のレコード レプリケーションでは、SSL を使用して暗号化とデータの整合性を提供しています。  
+## <a name="other-pnrp-caches"></a><span data-ttu-id="9eb00-120">その他の PNRP キャッシュ</span><span class="sxs-lookup"><span data-stu-id="9eb00-120">Other PNRP Caches</span></span>  
+ <span data-ttu-id="9eb00-121">もう 1 つの永続データ ストアはローカル キャッシュです。</span><span class="sxs-lookup"><span data-stu-id="9eb00-121">Another persistent data store is the local cache.</span></span>  <span data-ttu-id="9eb00-122">PNRP アクティビティに必要な他のオブジェクトに加え、安全に公開され、クラウドの全メンバー間で同期されている、PNRP クラウドまたはコラボレーション セッションに関連付けられたレポートが含まれる場合があります。</span><span class="sxs-lookup"><span data-stu-id="9eb00-122">In addition to the other objects needed for PNRP activity, it may include the records associated with a PNRP cloud or collaboration session that is securely published and synchronized between all the members of the cloud.</span></span> <span data-ttu-id="9eb00-123">このレプリケートされたストアは、グループ データのビューを表しており、すべてのグループ メンバーで同じである必要があります。</span><span class="sxs-lookup"><span data-stu-id="9eb00-123">This replicated store represents the view of the group data, which should be the same for all group members.</span></span> <span data-ttu-id="9eb00-124">正確に言うと、これらのオブジェクトはレコードというよりも、ローカル キャッシュに送信されるアプリケーション、プレゼンス、およびオブジェクト データです。</span><span class="sxs-lookup"><span data-stu-id="9eb00-124">Technically, these objects are not records per se, but rather application, presence, and object data destined for a local cache.</span></span> <span data-ttu-id="9eb00-125">PNRP クラウドを使用することで、オブジェクトはコラボレーション セッションまたは PNRP クラウド内のすべてのノードに反映されます。</span><span class="sxs-lookup"><span data-stu-id="9eb00-125">Use of the PNRP cloud ensures that objects are propagated to all nodes in the collaboration session or PNRP cloud.</span></span>  <span data-ttu-id="9eb00-126">クラウド メンバー間のレコード レプリケーションでは、SSL を使用して暗号化とデータの整合性を提供しています。</span><span class="sxs-lookup"><span data-stu-id="9eb00-126">Record replication between cloud members uses SSL to provide encryption and data integrity.</span></span>  
   
- ピアがクラウドに参加しても、アタッチしているホスト ピアからはローカル キャッシュ データを自動的に受信しません。アプリケーション、プレゼンス、およびオブジェクト データの更新を受信するには、ホスト ピアにサブスクライブする必要があります。 ピアは、初回の同期後、レプリケートされたストアを定期的に再同期することで、すべてのグループ メンバーで一貫して同じビューを維持します。  コラボレーション セッションまたはコラボレーション セッション内のアプリケーションは、同じ関数を実行することもあります。  
+ <span data-ttu-id="9eb00-127">ピアがクラウドに参加しても、アタッチしているホスト ピアからはローカル キャッシュ データを自動的に受信しません。アプリケーション、プレゼンス、およびオブジェクト データの更新を受信するには、ホスト ピアにサブスクライブする必要があります。</span><span class="sxs-lookup"><span data-stu-id="9eb00-127">When a peer joins a cloud, they do not automatically receive local cache data from the host peer to which they attach; they have to subscribe to the host peer to receive updates in application, presence, and object data.</span></span> <span data-ttu-id="9eb00-128">ピアは、初回の同期後、レプリケートされたストアを定期的に再同期することで、すべてのグループ メンバーで一貫して同じビューを維持します。</span><span class="sxs-lookup"><span data-stu-id="9eb00-128">After the initial synchronization, peers periodically resynchronize their replicated stores to ensure that all group members consistently have the same view.</span></span>  <span data-ttu-id="9eb00-129">コラボレーション セッションまたはコラボレーション セッション内のアプリケーションは、同じ関数を実行することもあります。</span><span class="sxs-lookup"><span data-stu-id="9eb00-129">The collaboration session or applications within the collaboration session may also perform the same function.</span></span>  
   
- クラウドのコラボレーション セッションが開始された後、アプリケーションはピアを登録し、クラウド スコープに定義されているセキュリティを使用して情報を公開できるようになります。 ピアがクラウドに参加すると、クラウドのセキュリティ機構がピアに適用され、参加するスコープが指定されます。  そのレコードは、クラウドのスコープ内で安全に公開できるようになります。 クラウドのスコープは、コラボレーション アプリケーションのスコープと同じではない可能性があります。  
+ <span data-ttu-id="9eb00-130">クラウドのコラボレーション セッションが開始された後、アプリケーションはピアを登録し、クラウド スコープに定義されているセキュリティを使用して情報を公開できるようになります。</span><span class="sxs-lookup"><span data-stu-id="9eb00-130">After a collaboration session has begun for a cloud, applications can register peers and begin publishing their information using the security defined by the cloud scope.</span></span> <span data-ttu-id="9eb00-131">ピアがクラウドに参加すると、クラウドのセキュリティ機構がピアに適用され、参加するスコープが指定されます。</span><span class="sxs-lookup"><span data-stu-id="9eb00-131">When a peer joins a cloud, the security mechanisms for the cloud are applied to the peer, giving it a scope in which to participate.</span></span>  <span data-ttu-id="9eb00-132">そのレコードは、クラウドのスコープ内で安全に公開できるようになります。</span><span class="sxs-lookup"><span data-stu-id="9eb00-132">Its records can then be published securely within the scope of the cloud.</span></span> <span data-ttu-id="9eb00-133">クラウドのスコープは、コラボレーション アプリケーションのスコープと同じではない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="9eb00-133">Note that cloud scope may not be the same as collaboration application scope.</span></span>  
   
- ピアは、他のピアからオブジェクトを受信する希望を登録できます。 オブジェクトが更新されると、コラボレーション アプリケーションに通知され、新しいオブジェクトはアプリケーションのすべてのサブスクライバーに渡されます。 たとえば、グループ チャット アプリケーションのピアは、アプリケーション情報を受信する希望を登録できます。そのアプリケーションからは、すべてのチャット レコードがアプリケーション データとして送信されます。  これによって、クラウド内のチャット アクティビティを監視できます。  
+ <span data-ttu-id="9eb00-134">ピアは、他のピアからオブジェクトを受信する希望を登録できます。</span><span class="sxs-lookup"><span data-stu-id="9eb00-134">Peers can register interest in receiving objects from other peers.</span></span> <span data-ttu-id="9eb00-135">オブジェクトが更新されると、コラボレーション アプリケーションに通知され、新しいオブジェクトはアプリケーションのすべてのサブスクライバーに渡されます。</span><span class="sxs-lookup"><span data-stu-id="9eb00-135">When an object is updated, the collaboration application is notified and the new object is passed to all subscribers of the application.</span></span> <span data-ttu-id="9eb00-136">たとえば、グループ チャット アプリケーションのピアは、アプリケーション情報を受信する希望を登録できます。そのアプリケーションからは、すべてのチャット レコードがアプリケーション データとして送信されます。</span><span class="sxs-lookup"><span data-stu-id="9eb00-136">For example, a peer in a group chat application can register interest in receiving application information, which will send it all chat records as application data.</span></span>  <span data-ttu-id="9eb00-137">これによって、クラウド内のチャット アクティビティを監視できます。</span><span class="sxs-lookup"><span data-stu-id="9eb00-137">This allows it to monitor chat activity within the cloud.</span></span>  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a><span data-ttu-id="9eb00-138">関連項目</span><span class="sxs-lookup"><span data-stu-id="9eb00-138">See Also</span></span>  
  <xref:System.Net.PeerToPeer>
-

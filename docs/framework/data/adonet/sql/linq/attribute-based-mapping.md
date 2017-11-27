@@ -1,153 +1,156 @@
 ---
-title: "Attribute-Based Mapping | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "属性ベースの対応付け"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6dd89999-f415-4d61-b8c8-237d23d7924e
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: a8397c106ec45d9e6e1e9ec513536142d3048bd7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Attribute-Based Mapping
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] では、属性を適用するか、または外部のマッピング ファイルを使用して、SQL Server データベースを [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] オブジェクト モデルに対応付けます。  このトピックでは、属性ベースの方法について説明します。  
+# <a name="attribute-based-mapping"></a><span data-ttu-id="a6eec-102">属性ベースの対応付け</span><span class="sxs-lookup"><span data-stu-id="a6eec-102">Attribute-Based Mapping</span></span>
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="a6eec-103">マップを SQL Server データベース、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]属性を適用するか、または外部マッピング ファイルを使用してオブジェクト モデルです。</span><span class="sxs-lookup"><span data-stu-id="a6eec-103"> maps a SQL Server database to a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] object model by either applying attributes or by using an external mapping file.</span></span> <span data-ttu-id="a6eec-104">このトピックでは、属性ベースの方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-104">This topic outlines the attribute-based approach.</span></span>  
   
- 大部分の基本フォームでは、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、データベースと <xref:System.Data.Linq.DataContext>、テーブルとクラス、列およびリレーションシップとそのクラスのプロパティを、それぞれ対応付けています。  属性を使用して、オブジェクト モデル内の継承階層を対応付けることもできます。  詳細については、「[How to: Generate the Object Model in Visual Basic or C\#](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)」を参照してください。  
+ <span data-ttu-id="a6eec-105">大部分の基本フォームでは、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、データベースと <xref:System.Data.Linq.DataContext>、テーブルとクラス、列およびリレーションシップとそのクラスのプロパティを、それぞれ対応付けています。</span><span class="sxs-lookup"><span data-stu-id="a6eec-105">In its most elementary form, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] maps a database to a <xref:System.Data.Linq.DataContext>, a table to a class, and columns and relationships to properties on those classes.</span></span> <span data-ttu-id="a6eec-106">属性を使用して、オブジェクト モデル内の継承階層を対応付けることもできます。</span><span class="sxs-lookup"><span data-stu-id="a6eec-106">You can also use attributes to map an inheritance hierarchy in your object model.</span></span> <span data-ttu-id="a6eec-107">詳細については、次を参照してください。[する方法: Visual Basic または c# でのオブジェクト モデルの生成](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)です。</span><span class="sxs-lookup"><span data-stu-id="a6eec-107">For more information, see [How to: Generate the Object Model in Visual Basic or C#](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md).</span></span>  
   
- [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] を使用する開発者は、一般に [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] を使用して属性ベースの対応付けを実行します。また、SQLMetal コマンド ライン ツールを使用したり、自分で属性をハンド コードしたりすることもできます。  詳細については、「[How to: Generate the Object Model in Visual Basic or C\#](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)」を参照してください。  
-  
-> [!NOTE]
->  外部 XML ファイルを使用して対応付けることもできます。  詳細については、「[External Mapping](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)」を参照してください。  
-  
- 以下のセクションでは、属性ベースの対応付けについて詳しく説明します。  詳細については、「<xref:System.Data.Linq.Mapping>」を参照してください。  
-  
-## DatabaseAttribute 属性  
- この属性は、接続によってデータベースの名前が提供されない場合に、データベースの既定の名前を指定するために使用します。  この属性は省略可能ですが、この属性を使用する場合は、次の表に示されているように、<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> プロパティを適用する必要があります。  
-  
-|プロパティ|種類|既定値|説明|  
-|-----------|--------|---------|--------|  
-|<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|文字列|「<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>」を参照してください。|<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> プロパティを使用して、データベースの名前を指定します。|  
-  
- 詳細については、「<xref:System.Data.Linq.Mapping.DatabaseAttribute>」を参照してください。  
-  
-## TableAttribute 属性  
- この属性は、クラスを、データベース テーブルまたはビューに関連付けられたエンティティ クラスとして指定するために使用します。  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、この属性を持つクラスを、永続的なクラスとして扱います。  次の表は、<xref:System.Data.Linq.Mapping.TableAttribute.Name%2A> プロパティについての説明です。  
-  
-|プロパティ|種類|既定値|説明|  
-|-----------|--------|---------|--------|  
-|<xref:System.Data.Linq.Mapping.TableAttribute.Name%2A>|文字列|クラス名と同じ文字列|クラスを、データベース テーブルに関連付けられたエンティティ クラスとして指定します。|  
-  
- 詳細については、「<xref:System.Data.Linq.Mapping.TableAttribute>」を参照してください。  
-  
-## ColumnAttribute 属性  
- この属性は、データベース テーブルの列を表すエンティティ クラスのメンバーを指定するために使用します。  この属性は、フィールドまたはプロパティに適用できます。  
-  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] がデータベースへの変更を保存すると、列として指定したメンバーのみが取得および保持されます。  この属性を持たないメンバーは非永続的であると見なされ、挿入や更新の場合に送信されません。  
-  
- この属性のプロパティを次の表に示します。  
-  
-|プロパティ|種類|既定値|説明|  
-|-----------|--------|---------|--------|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.AutoSync%2A>|AutoSync|Never|共通言語ランタイム \(CLR\) に対して、挿入または更新操作の後に値を取得することを指示します。<br /><br /> オプション : Always、Never、OnUpdate、OnInsert|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.CanBeNull%2A>|ブール型|`true`|列に null 値を含めることができることを示します。|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>|文字列|推論によるデータベース列型|データベースの型と修飾子を使用して、データベース列の型を指定します。|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.Expression%2A>|文字列|Empty|データベースの計算列を定義します。|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.IsDbGenerated%2A>|ブール型|`false`|データベースが自動生成する値が、列に含まれることを示します。|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.IsDiscriminator%2A>|ブール型|`false`|[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 継承階層の識別子の値が列に含まれることを示します。|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.IsPrimaryKey%2A>|ブール型|`false`|このクラス メンバーが、テーブルの主キーの列、または主キーの一部である列を表すことを指定します。|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A>|ブール型|`false`|メンバーの列の型を、データベースのタイムスタンプまたはバージョン番号として指定します。|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A>|UpdateCheck|`Always` \(メンバーの <xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A> が `true` の場合は除く\)|[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] がオプティミスティック同時実行競合を検出する方法を指定します。|  
-  
- 詳細については、「<xref:System.Data.Linq.Mapping.ColumnAttribute>」を参照してください。  
+ <span data-ttu-id="a6eec-108">使用する開発者[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)]通常を使用して属性ベースのマッピングを実行、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="a6eec-108">Developers using [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] typically perform attribute-based mapping by using the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)].</span></span> <span data-ttu-id="a6eec-109">また、SQLMetal コマンド ライン ツールを使用したり、自分で属性をハンド コードしたりすることもできます。</span><span class="sxs-lookup"><span data-stu-id="a6eec-109">You can also use the SQLMetal command-line tool, or you can hand-code the attributes yourself.</span></span> <span data-ttu-id="a6eec-110">詳細については、次を参照してください。[する方法: Visual Basic または c# でのオブジェクト モデルの生成](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)です。</span><span class="sxs-lookup"><span data-stu-id="a6eec-110">For more information, see [How to: Generate the Object Model in Visual Basic or C#](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md).</span></span>  
   
 > [!NOTE]
->  AssociationAttribute プロパティ値と ColumnAttribute Storage プロパティ値では大文字と小文字が区別されます。  たとえば、AssociationAttribute.Storage  プロパティの属性に使用されている値は、コード内の別の場所で使用されている対応するプロパティ名と、大文字と小文字が一致するようにしてください。  これは、[!INCLUDE[vb_current_short](../../../../../../includes/vb-current-short-md.md)] など、通常は大文字と小文字が区別されない言語を含むすべての .NET プログラミング言語に適用されます。  Storage プロパティの詳細については、「<xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=fullName>」を参照してください。  
+>  <span data-ttu-id="a6eec-111">外部 XML ファイルを使用して対応付けることもできます。</span><span class="sxs-lookup"><span data-stu-id="a6eec-111">You can also map by using an external XML file.</span></span> <span data-ttu-id="a6eec-112">詳細については、次を参照してください。[外部マッピング](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)です。</span><span class="sxs-lookup"><span data-stu-id="a6eec-112">For more information, see [External Mapping](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).</span></span>  
   
-## AssociationAttribute 属性  
- この属性は、外部キーと主キーのリレーションシップなど、データベース内の関連付けを表すプロパティを指定するために使用します。  リレーションシップの詳細については、「[How to: Map Database Relationships](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-database-relationships.md)」を参照してください。  
+ <span data-ttu-id="a6eec-113">以下のセクションでは、属性ベースの対応付けについて詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-113">The following sections describe attribute-based mapping in more detail.</span></span> <span data-ttu-id="a6eec-114">詳細については、「<xref:System.Data.Linq.Mapping>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6eec-114">For more information, see the <xref:System.Data.Linq.Mapping> namespace.</span></span>  
   
- この属性のプロパティを次の表に示します。  
+## <a name="databaseattribute-attribute"></a><span data-ttu-id="a6eec-115">DatabaseAttribute 属性</span><span class="sxs-lookup"><span data-stu-id="a6eec-115">DatabaseAttribute Attribute</span></span>  
+ <span data-ttu-id="a6eec-116">この属性は、接続によってデータベースの名前が提供されない場合に、データベースの既定の名前を指定するために使用します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-116">Use this attribute to specify the default name of the database when a name is not supplied by the connection.</span></span> <span data-ttu-id="a6eec-117">この属性は省略可能ですが、この属性を使用する場合は、次の表に示されているように、<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> プロパティを適用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6eec-117">This attribute is optional, but if you use it, you must apply the <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> property, as described in the following table.</span></span>  
   
-|プロパティ|種類|既定値|説明|  
-|-----------|--------|---------|--------|  
-|<xref:System.Data.Linq.Mapping.AssociationAttribute.DeleteOnNull%2A>|ブール型|`false`|外部キー メンバーがすべて null 非許容の関連付けの場合、関連付けが null に設定されるとオブジェクトを削除します。|  
-|<xref:System.Data.Linq.Mapping.AssociationAttribute.DeleteRule%2A>|文字列|なし|関連付けに削除の動作を追加します。|  
-|<xref:System.Data.Linq.Mapping.AssociationAttribute.IsForeignKey%2A>|ブール型|`false`|true の場合、データベースのリレーションシップを表す関連付けの中で、メンバーを外部キーとして指定します。|  
-|<xref:System.Data.Linq.Mapping.AssociationAttribute.IsUnique%2A>|ブール型|`false`|true の場合、外部キーの一意性の制約を示します。|  
-|<xref:System.Data.Linq.Mapping.AssociationAttribute.OtherKey%2A>|文字列|関連クラスの ID|ターゲット エンティティ クラスの 1 つ以上のメンバーを、関連付けの他方の側のキー値として指定します。|  
-|<xref:System.Data.Linq.Mapping.AssociationAttribute.ThisKey%2A>|文字列|包含クラスの ID|関連付けのこちら側のキー値を表す、このエンティティ クラスのメンバーを指定します。|  
+|<span data-ttu-id="a6eec-118">プロパティ</span><span class="sxs-lookup"><span data-stu-id="a6eec-118">Property</span></span>|<span data-ttu-id="a6eec-119">種類</span><span class="sxs-lookup"><span data-stu-id="a6eec-119">Type</span></span>|<span data-ttu-id="a6eec-120">既定値</span><span class="sxs-lookup"><span data-stu-id="a6eec-120">Default</span></span>|<span data-ttu-id="a6eec-121">説明</span><span class="sxs-lookup"><span data-stu-id="a6eec-121">Description</span></span>|  
+|--------------|----------|-------------|-----------------|  
+|<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|<span data-ttu-id="a6eec-122">String</span><span class="sxs-lookup"><span data-stu-id="a6eec-122">String</span></span>|<span data-ttu-id="a6eec-123">「<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6eec-123">See <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A></span></span>|<span data-ttu-id="a6eec-124"><xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> プロパティを使用して、データベースの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-124">Used with its <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> property, specifies the name of the database.</span></span>|  
   
- 詳細については、「<xref:System.Data.Linq.Mapping.AssociationAttribute>」を参照してください。  
+ <span data-ttu-id="a6eec-125">詳細については、「<xref:System.Data.Linq.Mapping.DatabaseAttribute>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6eec-125">For more information, see <xref:System.Data.Linq.Mapping.DatabaseAttribute>.</span></span>  
+  
+## <a name="tableattribute-attribute"></a><span data-ttu-id="a6eec-126">TableAttribute 属性</span><span class="sxs-lookup"><span data-stu-id="a6eec-126">TableAttribute Attribute</span></span>  
+ <span data-ttu-id="a6eec-127">この属性は、クラスを、データベース テーブルまたはビューに関連付けられたエンティティ クラスとして指定するために使用します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-127">Use this attribute to designate a class as an entity class that is associated with a database table or view.</span></span> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="a6eec-128"> は、この属性を持つクラスを、永続的なクラスとして扱います。</span><span class="sxs-lookup"><span data-stu-id="a6eec-128"> treats classes that have this attribute as persistent classes.</span></span> <span data-ttu-id="a6eec-129">次の表は、<xref:System.Data.Linq.Mapping.TableAttribute.Name%2A> プロパティについての説明です。</span><span class="sxs-lookup"><span data-stu-id="a6eec-129">The following table describes the <xref:System.Data.Linq.Mapping.TableAttribute.Name%2A> property.</span></span>  
+  
+|<span data-ttu-id="a6eec-130">プロパティ</span><span class="sxs-lookup"><span data-stu-id="a6eec-130">Property</span></span>|<span data-ttu-id="a6eec-131">種類</span><span class="sxs-lookup"><span data-stu-id="a6eec-131">Type</span></span>|<span data-ttu-id="a6eec-132">既定値</span><span class="sxs-lookup"><span data-stu-id="a6eec-132">Default</span></span>|<span data-ttu-id="a6eec-133">説明</span><span class="sxs-lookup"><span data-stu-id="a6eec-133">Description</span></span>|  
+|--------------|----------|-------------|-----------------|  
+|<xref:System.Data.Linq.Mapping.TableAttribute.Name%2A>|<span data-ttu-id="a6eec-134">String</span><span class="sxs-lookup"><span data-stu-id="a6eec-134">String</span></span>|<span data-ttu-id="a6eec-135">クラス名と同じ文字列</span><span class="sxs-lookup"><span data-stu-id="a6eec-135">Same string as class name</span></span>|<span data-ttu-id="a6eec-136">クラスを、データベース テーブルに関連付けられたエンティティ クラスとして指定します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-136">Designates a class as an entity class associated with a database table.</span></span>|  
+  
+ <span data-ttu-id="a6eec-137">詳細については、「<xref:System.Data.Linq.Mapping.TableAttribute>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6eec-137">For more information, see <xref:System.Data.Linq.Mapping.TableAttribute>.</span></span>  
+  
+## <a name="columnattribute-attribute"></a><span data-ttu-id="a6eec-138">ColumnAttribute 属性</span><span class="sxs-lookup"><span data-stu-id="a6eec-138">ColumnAttribute Attribute</span></span>  
+ <span data-ttu-id="a6eec-139">この属性は、データベース テーブルの列を表すエンティティ クラスのメンバーを指定するために使用します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-139">Use this attribute to designate a member of an entity class to represent a column in a database table.</span></span> <span data-ttu-id="a6eec-140">この属性は、フィールドまたはプロパティに適用できます。</span><span class="sxs-lookup"><span data-stu-id="a6eec-140">You can apply this attribute to any field or property.</span></span>  
+  
+ <span data-ttu-id="a6eec-141">[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] がデータベースへの変更を保存すると、列として指定したメンバーのみが取得および保持されます。</span><span class="sxs-lookup"><span data-stu-id="a6eec-141">Only those members you identify as columns are retrieved and persisted when [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] saves changes to the database.</span></span> <span data-ttu-id="a6eec-142">この属性を持たないメンバーは非永続的であると見なされ、挿入や更新の場合に送信されません。</span><span class="sxs-lookup"><span data-stu-id="a6eec-142">Members without this attribute are assumed to be non-persistent and are not submitted for inserts or updates.</span></span>  
+  
+ <span data-ttu-id="a6eec-143">この属性のプロパティを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-143">The following table describes properties of this attribute.</span></span>  
+  
+|<span data-ttu-id="a6eec-144">プロパティ</span><span class="sxs-lookup"><span data-stu-id="a6eec-144">Property</span></span>|<span data-ttu-id="a6eec-145">種類</span><span class="sxs-lookup"><span data-stu-id="a6eec-145">Type</span></span>|<span data-ttu-id="a6eec-146">既定値</span><span class="sxs-lookup"><span data-stu-id="a6eec-146">Default</span></span>|<span data-ttu-id="a6eec-147">説明</span><span class="sxs-lookup"><span data-stu-id="a6eec-147">Description</span></span>|  
+|--------------|----------|-------------|-----------------|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.AutoSync%2A>|<span data-ttu-id="a6eec-148">AutoSync</span><span class="sxs-lookup"><span data-stu-id="a6eec-148">AutoSync</span></span>|<span data-ttu-id="a6eec-149">Never</span><span class="sxs-lookup"><span data-stu-id="a6eec-149">Never</span></span>|<span data-ttu-id="a6eec-150">共通言語ランタイム (CLR) に対して、挿入または更新操作の後に値を取得することを指示します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-150">Instructs the common language runtime (CLR) to retrieve the value after an insert or update operation.</span></span><br /><br /> <span data-ttu-id="a6eec-151">オプション : Always、Never、OnUpdate、OnInsert</span><span class="sxs-lookup"><span data-stu-id="a6eec-151">Options: Always, Never, OnUpdate, OnInsert.</span></span>|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.CanBeNull%2A>|<span data-ttu-id="a6eec-152">Boolean</span><span class="sxs-lookup"><span data-stu-id="a6eec-152">Boolean</span></span>|`true`|<span data-ttu-id="a6eec-153">列に null 値を含めることができることを示します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-153">Indicates that a column can contain null values.</span></span>|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>|<span data-ttu-id="a6eec-154">String</span><span class="sxs-lookup"><span data-stu-id="a6eec-154">String</span></span>|<span data-ttu-id="a6eec-155">推論によるデータベース列型</span><span class="sxs-lookup"><span data-stu-id="a6eec-155">Inferred database column type</span></span>|<span data-ttu-id="a6eec-156">データベースの型と修飾子を使用して、データベース列の型を指定します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-156">Uses database types and modifiers to specify the type of the database column.</span></span>|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.Expression%2A>|<span data-ttu-id="a6eec-157">String</span><span class="sxs-lookup"><span data-stu-id="a6eec-157">String</span></span>|<span data-ttu-id="a6eec-158">Empty</span><span class="sxs-lookup"><span data-stu-id="a6eec-158">Empty</span></span>|<span data-ttu-id="a6eec-159">データベースの計算列を定義します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-159">Defines a computed column in a database.</span></span>|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.IsDbGenerated%2A>|<span data-ttu-id="a6eec-160">Boolean</span><span class="sxs-lookup"><span data-stu-id="a6eec-160">Boolean</span></span>|`false`|<span data-ttu-id="a6eec-161">データベースが自動生成する値が、列に含まれることを示します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-161">Indicates that a column contains values that the database auto-generates.</span></span>|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.IsDiscriminator%2A>|<span data-ttu-id="a6eec-162">Boolean</span><span class="sxs-lookup"><span data-stu-id="a6eec-162">Boolean</span></span>|`false`|<span data-ttu-id="a6eec-163">[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 継承階層の識別子の値が列に含まれることを示します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-163">Indicates that the column contains a discriminator value for a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] inheritance hierarchy.</span></span>|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.IsPrimaryKey%2A>|<span data-ttu-id="a6eec-164">Boolean</span><span class="sxs-lookup"><span data-stu-id="a6eec-164">Boolean</span></span>|`false`|<span data-ttu-id="a6eec-165">このクラス メンバーが、テーブルの主キーの列、または主キーの一部である列を表すことを指定します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-165">Specifies that this class member represents a column that is or is part of the primary keys of the table.</span></span>|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A>|<span data-ttu-id="a6eec-166">Boolean</span><span class="sxs-lookup"><span data-stu-id="a6eec-166">Boolean</span></span>|`false`|<span data-ttu-id="a6eec-167">メンバーの列の型を、データベースのタイムスタンプまたはバージョン番号として指定します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-167">Identifies the column type of the member as a database timestamp or version number.</span></span>|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A>|<span data-ttu-id="a6eec-168">UpdateCheck</span><span class="sxs-lookup"><span data-stu-id="a6eec-168">UpdateCheck</span></span>|<span data-ttu-id="a6eec-169">`Always` (メンバーの <xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A> が `true` の場合は除く)</span><span class="sxs-lookup"><span data-stu-id="a6eec-169">`Always`, unless <xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A> is `true` for a member</span></span>|<span data-ttu-id="a6eec-170">[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] がオプティミスティック同時実行競合を検出する方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-170">Specifies how [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] approaches the detection of optimistic concurrency conflicts.</span></span>|  
+  
+ <span data-ttu-id="a6eec-171">詳細については、「<xref:System.Data.Linq.Mapping.ColumnAttribute>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6eec-171">For more information, see <xref:System.Data.Linq.Mapping.ColumnAttribute>.</span></span>  
   
 > [!NOTE]
->  AssociationAttribute プロパティ値と ColumnAttribute Storage プロパティ値では大文字と小文字が区別されます。  たとえば、AssociationAttribute.Storage  プロパティの属性に使用されている値は、コード内の別の場所で使用されている対応するプロパティ名と、大文字と小文字が一致するようにしてください。  これは、[!INCLUDE[vb_current_short](../../../../../../includes/vb-current-short-md.md)] など、通常は大文字と小文字が区別されない言語を含むすべての .NET プログラミング言語に適用されます。  Storage プロパティの詳細については、「<xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=fullName>」を参照してください。  
+>  <span data-ttu-id="a6eec-172">AssociationAttribute プロパティ値と ColumnAttribute Storage プロパティ値では大文字と小文字が区別されます。</span><span class="sxs-lookup"><span data-stu-id="a6eec-172">AssociationAttribute and ColumnAttribute Storage property values are case sensitive.</span></span> <span data-ttu-id="a6eec-173">たとえば、AssociationAttribute.Storage  プロパティの属性に使用されている値は、コード内の別の場所で使用されている対応するプロパティ名と、大文字と小文字が一致するようにしてください。</span><span class="sxs-lookup"><span data-stu-id="a6eec-173">For example, ensure that values used in the attribute for the AssociationAttribute.Storage property match the case for the corresponding property names used elsewhere in the code.</span></span> <span data-ttu-id="a6eec-174">これは、[!INCLUDE[vb_current_short](../../../../../../includes/vb-current-short-md.md)] など、通常は大文字と小文字が区別されない言語を含むすべての .NET プログラミング言語に適用されます。</span><span class="sxs-lookup"><span data-stu-id="a6eec-174">This applies to all .NET programming languages, even those which are not typically case sensitive, including [!INCLUDE[vb_current_short](../../../../../../includes/vb-current-short-md.md)].</span></span> <span data-ttu-id="a6eec-175">Storage プロパティの詳細については、「<xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6eec-175">For more information about the Storage property, see <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>.</span></span>  
   
-## InheritanceMappingAttribute 属性  
- この属性は、継承階層を対応付けるために使用します。  
+## <a name="associationattribute-attribute"></a><span data-ttu-id="a6eec-176">AssociationAttribute 属性</span><span class="sxs-lookup"><span data-stu-id="a6eec-176">AssociationAttribute Attribute</span></span>  
+ <span data-ttu-id="a6eec-177">この属性は、外部キーと主キーのリレーションシップなど、データベース内の関連付けを表すプロパティを指定するために使用します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-177">Use this attribute to designate a property to represent an association in the database, such as a foreign key to primary key relationship.</span></span> <span data-ttu-id="a6eec-178">リレーションシップの詳細については、次を参照してください。[する方法: マップ データベース リレーションシップ](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-database-relationships.md)です。</span><span class="sxs-lookup"><span data-stu-id="a6eec-178">For more information about relationships, see [How to: Map Database Relationships](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-database-relationships.md).</span></span>  
   
- この属性のプロパティを次の表に示します。  
+ <span data-ttu-id="a6eec-179">この属性のプロパティを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-179">The following table describes properties of this attribute.</span></span>  
   
-|プロパティ|種類|既定値|説明|  
-|-----------|--------|---------|--------|  
-|<xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Code%2A>|文字列|なし。  値を指定する必要があります。|識別子のコード値を指定します。|  
-|<xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.IsDefault%2A>|ブール型|`false`|true の場合、ストア内の識別子の値が、指定された値に一致しないときは、この型のオブジェクトをインスタンス化します。|  
-|<xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Type%2A>|種類|なし。  値を指定する必要があります。|階層内のクラスの型を指定します。|  
+|<span data-ttu-id="a6eec-180">プロパティ</span><span class="sxs-lookup"><span data-stu-id="a6eec-180">Property</span></span>|<span data-ttu-id="a6eec-181">種類</span><span class="sxs-lookup"><span data-stu-id="a6eec-181">Type</span></span>|<span data-ttu-id="a6eec-182">既定値</span><span class="sxs-lookup"><span data-stu-id="a6eec-182">Default</span></span>|<span data-ttu-id="a6eec-183">説明</span><span class="sxs-lookup"><span data-stu-id="a6eec-183">Description</span></span>|  
+|--------------|----------|-------------|-----------------|  
+|<xref:System.Data.Linq.Mapping.AssociationAttribute.DeleteOnNull%2A>|<span data-ttu-id="a6eec-184">Boolean</span><span class="sxs-lookup"><span data-stu-id="a6eec-184">Boolean</span></span>|`false`|<span data-ttu-id="a6eec-185">外部キー メンバーがすべて null 非許容の関連付けの場合、関連付けが null に設定されるとオブジェクトを削除します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-185">When placed on an association whose foreign key members are all non-nullable, deletes the object when the association is set to null.</span></span>|  
+|<xref:System.Data.Linq.Mapping.AssociationAttribute.DeleteRule%2A>|<span data-ttu-id="a6eec-186">String</span><span class="sxs-lookup"><span data-stu-id="a6eec-186">String</span></span>|<span data-ttu-id="a6eec-187">なし</span><span class="sxs-lookup"><span data-stu-id="a6eec-187">None</span></span>|<span data-ttu-id="a6eec-188">関連付けに削除の動作を追加します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-188">Adds delete behavior to an association.</span></span>|  
+|<xref:System.Data.Linq.Mapping.AssociationAttribute.IsForeignKey%2A>|<span data-ttu-id="a6eec-189">Boolean</span><span class="sxs-lookup"><span data-stu-id="a6eec-189">Boolean</span></span>|`false`|<span data-ttu-id="a6eec-190">true の場合、データベースのリレーションシップを表す関連付けの中で、メンバーを外部キーとして指定します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-190">If true, designates the member as the foreign key in an association representing a database relationship.</span></span>|  
+|<xref:System.Data.Linq.Mapping.AssociationAttribute.IsUnique%2A>|<span data-ttu-id="a6eec-191">Boolean</span><span class="sxs-lookup"><span data-stu-id="a6eec-191">Boolean</span></span>|`false`|<span data-ttu-id="a6eec-192">true の場合、外部キーの一意性の制約を示します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-192">If true, indicates a uniqueness constraint on the foreign key.</span></span>|  
+|<xref:System.Data.Linq.Mapping.AssociationAttribute.OtherKey%2A>|<span data-ttu-id="a6eec-193">String</span><span class="sxs-lookup"><span data-stu-id="a6eec-193">String</span></span>|<span data-ttu-id="a6eec-194">関連クラスの ID</span><span class="sxs-lookup"><span data-stu-id="a6eec-194">ID of the related class</span></span>|<span data-ttu-id="a6eec-195">ターゲット エンティティ クラスの 1 つ以上のメンバーを、関連付けの他方の側のキー値として指定します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-195">Designates one or more members of the target entity class as key values on the other side of the association.</span></span>|  
+|<xref:System.Data.Linq.Mapping.AssociationAttribute.ThisKey%2A>|<span data-ttu-id="a6eec-196">String</span><span class="sxs-lookup"><span data-stu-id="a6eec-196">String</span></span>|<span data-ttu-id="a6eec-197">包含クラスの ID</span><span class="sxs-lookup"><span data-stu-id="a6eec-197">ID of the containing class</span></span>|<span data-ttu-id="a6eec-198">関連付けのこちら側のキー値を表す、このエンティティ クラスのメンバーを指定します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-198">Designates members of this entity class to represent the key values on this side of the association.</span></span>|  
   
- 詳細については、「<xref:System.Data.Linq.Mapping.InheritanceMappingAttribute>」を参照してください。  
+ <span data-ttu-id="a6eec-199">詳細については、「<xref:System.Data.Linq.Mapping.AssociationAttribute>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6eec-199">For more information, see <xref:System.Data.Linq.Mapping.AssociationAttribute>.</span></span>  
   
-## FunctionAttribute 属性  
- この属性は、データベース内のストアド プロシージャまたはユーザー定義関数として表すメソッドを指定するために使用します。  
+> [!NOTE]
+>  <span data-ttu-id="a6eec-200">AssociationAttribute プロパティ値と ColumnAttribute Storage プロパティ値では大文字と小文字が区別されます。</span><span class="sxs-lookup"><span data-stu-id="a6eec-200">AssociationAttribute and ColumnAttribute Storage property values are case sensitive.</span></span> <span data-ttu-id="a6eec-201">たとえば、AssociationAttribute.Storage  プロパティの属性に使用されている値は、コード内の別の場所で使用されている対応するプロパティ名と、大文字と小文字が一致するようにしてください。</span><span class="sxs-lookup"><span data-stu-id="a6eec-201">For example, ensure that values used in the attribute for the AssociationAttribute.Storage property match the case for the corresponding property names used elsewhere in the code.</span></span> <span data-ttu-id="a6eec-202">これは、[!INCLUDE[vb_current_short](../../../../../../includes/vb-current-short-md.md)] など、通常は大文字と小文字が区別されない言語を含むすべての .NET プログラミング言語に適用されます。</span><span class="sxs-lookup"><span data-stu-id="a6eec-202">This applies to all .NET programming languages, even those which are not typically case sensitive, including [!INCLUDE[vb_current_short](../../../../../../includes/vb-current-short-md.md)].</span></span> <span data-ttu-id="a6eec-203">Storage プロパティの詳細については、「<xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6eec-203">For more information about the Storage property, see <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>.</span></span>  
   
- この属性のプロパティを次の表に示します。  
+## <a name="inheritancemappingattribute-attribute"></a><span data-ttu-id="a6eec-204">InheritanceMappingAttribute 属性</span><span class="sxs-lookup"><span data-stu-id="a6eec-204">InheritanceMappingAttribute Attribute</span></span>  
+ <span data-ttu-id="a6eec-205">この属性は、継承階層を対応付けるために使用します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-205">Use this attribute to map an inheritance hierarchy.</span></span>  
   
-|プロパティ|種類|既定値|説明|  
-|-----------|--------|---------|--------|  
-|<xref:System.Data.Linq.Mapping.FunctionAttribute.IsComposable%2A>|ブール型|`false`|false の場合、ストアド プロシージャへの対応付けを表します。  true の場合、ユーザー定義関数への対応付けを表します。|  
-|<xref:System.Data.Linq.Mapping.FunctionAttribute.Name%2A>|文字列|データベース内の名前と同じ文字列|ストアド プロシージャまたはユーザー定義関数の名前を指定します。|  
+ <span data-ttu-id="a6eec-206">この属性のプロパティを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-206">The following table describes properties of this attribute.</span></span>  
   
- 詳細については、「<xref:System.Data.Linq.Mapping.FunctionAttribute>」を参照してください。  
+|<span data-ttu-id="a6eec-207">プロパティ</span><span class="sxs-lookup"><span data-stu-id="a6eec-207">Property</span></span>|<span data-ttu-id="a6eec-208">種類</span><span class="sxs-lookup"><span data-stu-id="a6eec-208">Type</span></span>|<span data-ttu-id="a6eec-209">既定値</span><span class="sxs-lookup"><span data-stu-id="a6eec-209">Default</span></span>|<span data-ttu-id="a6eec-210">説明</span><span class="sxs-lookup"><span data-stu-id="a6eec-210">Description</span></span>|  
+|--------------|----------|-------------|-----------------|  
+|<xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Code%2A>|<span data-ttu-id="a6eec-211">String</span><span class="sxs-lookup"><span data-stu-id="a6eec-211">String</span></span>|<span data-ttu-id="a6eec-212">なし。</span><span class="sxs-lookup"><span data-stu-id="a6eec-212">None.</span></span> <span data-ttu-id="a6eec-213">値を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6eec-213">Value must be supplied.</span></span>|<span data-ttu-id="a6eec-214">識別子のコード値を指定します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-214">Specifies the code value of the discriminator.</span></span>|  
+|<xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.IsDefault%2A>|<span data-ttu-id="a6eec-215">Boolean</span><span class="sxs-lookup"><span data-stu-id="a6eec-215">Boolean</span></span>|`false`|<span data-ttu-id="a6eec-216">true の場合、ストア内の識別子の値が、指定された値に一致しないときは、この型のオブジェクトをインスタンス化します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-216">If true, instantiates an object of this type when no discriminator value in the store matches any one of the specified values.</span></span>|  
+|<xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Type%2A>|<span data-ttu-id="a6eec-217">種類</span><span class="sxs-lookup"><span data-stu-id="a6eec-217">Type</span></span>|<span data-ttu-id="a6eec-218">なし。</span><span class="sxs-lookup"><span data-stu-id="a6eec-218">None.</span></span> <span data-ttu-id="a6eec-219">値を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6eec-219">Value must be supplied.</span></span>|<span data-ttu-id="a6eec-220">階層内のクラスの型を指定します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-220">Specifies the type of the class in the hierarchy.</span></span>|  
   
-## ParameterAttribute 属性  
- この属性は、ストアド プロシージャ メソッドの入力パラメーターを対応付けるために使用します。  
+ <span data-ttu-id="a6eec-221">詳細については、「<xref:System.Data.Linq.Mapping.InheritanceMappingAttribute>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6eec-221">For more information, see <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute>.</span></span>  
   
- この属性のプロパティを次の表に示します。  
+## <a name="functionattribute-attribute"></a><span data-ttu-id="a6eec-222">FunctionAttribute 属性</span><span class="sxs-lookup"><span data-stu-id="a6eec-222">FunctionAttribute Attribute</span></span>  
+ <span data-ttu-id="a6eec-223">この属性は、データベース内のストアド プロシージャまたはユーザー定義関数として表すメソッドを指定するために使用します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-223">Use this attribute to designate a method as representing a stored procedure or user-defined function in the database.</span></span>  
   
-|プロパティ|種類|既定値|説明|  
-|-----------|--------|---------|--------|  
-|<xref:System.Data.Linq.Mapping.ParameterAttribute.DbType%2A>|文字列|なし|データベースの型を指定します。|  
-|<xref:System.Data.Linq.Mapping.ParameterAttribute.Name%2A>|文字列|データベース内のパラメーター名と同じ文字列|パラメーターの名前を指定します。|  
+ <span data-ttu-id="a6eec-224">この属性のプロパティを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-224">The following table describes the properties of this attribute.</span></span>  
   
- 詳細については、「<xref:System.Data.Linq.Mapping.ParameterAttribute>」を参照してください。  
+|<span data-ttu-id="a6eec-225">プロパティ</span><span class="sxs-lookup"><span data-stu-id="a6eec-225">Property</span></span>|<span data-ttu-id="a6eec-226">種類</span><span class="sxs-lookup"><span data-stu-id="a6eec-226">Type</span></span>|<span data-ttu-id="a6eec-227">既定値</span><span class="sxs-lookup"><span data-stu-id="a6eec-227">Default</span></span>|<span data-ttu-id="a6eec-228">説明</span><span class="sxs-lookup"><span data-stu-id="a6eec-228">Description</span></span>|  
+|--------------|----------|-------------|-----------------|  
+|<xref:System.Data.Linq.Mapping.FunctionAttribute.IsComposable%2A>|<span data-ttu-id="a6eec-229">Boolean</span><span class="sxs-lookup"><span data-stu-id="a6eec-229">Boolean</span></span>|`false`|<span data-ttu-id="a6eec-230">false の場合、ストアド プロシージャへの対応付けを表します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-230">If false, indicates mapping to a stored procedure.</span></span> <span data-ttu-id="a6eec-231">true の場合、ユーザー定義関数への対応付けを表します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-231">If true, indicates mapping to a user-defined function.</span></span>|  
+|<xref:System.Data.Linq.Mapping.FunctionAttribute.Name%2A>|<span data-ttu-id="a6eec-232">String</span><span class="sxs-lookup"><span data-stu-id="a6eec-232">String</span></span>|<span data-ttu-id="a6eec-233">データベース内の名前と同じ文字列</span><span class="sxs-lookup"><span data-stu-id="a6eec-233">Same string as name in the database</span></span>|<span data-ttu-id="a6eec-234">ストアド プロシージャまたはユーザー定義関数の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-234">Specifies the name of the stored procedure or user-defined function.</span></span>|  
   
-## ResultTypeAttribute 属性  
- この属性は、結果の型を指定するために使用します。  
+ <span data-ttu-id="a6eec-235">詳細については、「<xref:System.Data.Linq.Mapping.FunctionAttribute>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6eec-235">For more information, see <xref:System.Data.Linq.Mapping.FunctionAttribute>.</span></span>  
   
- この属性のプロパティを次の表に示します。  
+## <a name="parameterattribute-attribute"></a><span data-ttu-id="a6eec-236">ParameterAttribute 属性</span><span class="sxs-lookup"><span data-stu-id="a6eec-236">ParameterAttribute Attribute</span></span>  
+ <span data-ttu-id="a6eec-237">この属性は、ストアド プロシージャ メソッドの入力パラメーターを対応付けるために使用します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-237">Use this attribute to map input parameters on stored procedure methods.</span></span>  
   
-|プロパティ|種類|既定値|説明|  
-|-----------|--------|---------|--------|  
-|<xref:System.Data.Linq.Mapping.ResultTypeAttribute.Type%2A>|型|\(なし\)|<xref:System.Data.Linq.IMultipleResults> を返すストアド プロシージャに対応付けられているメソッドで使用します。  ストアド プロシージャの有効な型マッピングまたは期待される型マッピングを宣言します。|  
+ <span data-ttu-id="a6eec-238">この属性のプロパティを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-238">The following table describes properties of this attribute.</span></span>  
   
- 詳細については、「<xref:System.Data.Linq.Mapping.ResultTypeAttribute>」を参照してください。  
+|<span data-ttu-id="a6eec-239">プロパティ</span><span class="sxs-lookup"><span data-stu-id="a6eec-239">Property</span></span>|<span data-ttu-id="a6eec-240">種類</span><span class="sxs-lookup"><span data-stu-id="a6eec-240">Type</span></span>|<span data-ttu-id="a6eec-241">既定値</span><span class="sxs-lookup"><span data-stu-id="a6eec-241">Default</span></span>|<span data-ttu-id="a6eec-242">説明</span><span class="sxs-lookup"><span data-stu-id="a6eec-242">Description</span></span>|  
+|--------------|----------|-------------|-----------------|  
+|<xref:System.Data.Linq.Mapping.ParameterAttribute.DbType%2A>|<span data-ttu-id="a6eec-243">String</span><span class="sxs-lookup"><span data-stu-id="a6eec-243">String</span></span>|<span data-ttu-id="a6eec-244">なし</span><span class="sxs-lookup"><span data-stu-id="a6eec-244">None</span></span>|<span data-ttu-id="a6eec-245">データベースの型を指定します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-245">Specifies database type.</span></span>|  
+|<xref:System.Data.Linq.Mapping.ParameterAttribute.Name%2A>|<span data-ttu-id="a6eec-246">String</span><span class="sxs-lookup"><span data-stu-id="a6eec-246">String</span></span>|<span data-ttu-id="a6eec-247">データベース内のパラメーター名と同じ文字列</span><span class="sxs-lookup"><span data-stu-id="a6eec-247">Same string as parameter name in database</span></span>|<span data-ttu-id="a6eec-248">パラメーターの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-248">Specifies a name for the parameter.</span></span>|  
   
-## DataAttribute 属性  
- この属性は、名前およびプライベート ストレージ フィールドを指定するために使用します。  
+ <span data-ttu-id="a6eec-249">詳細については、「<xref:System.Data.Linq.Mapping.ParameterAttribute>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6eec-249">For more information, see <xref:System.Data.Linq.Mapping.ParameterAttribute>.</span></span>  
   
- この属性のプロパティを次の表に示します。  
+## <a name="resulttypeattribute-attribute"></a><span data-ttu-id="a6eec-250">ResultTypeAttribute 属性</span><span class="sxs-lookup"><span data-stu-id="a6eec-250">ResultTypeAttribute Attribute</span></span>  
+ <span data-ttu-id="a6eec-251">この属性は、結果の型を指定するために使用します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-251">Use this attribute to specify a result type.</span></span>  
   
-|プロパティ|種類|既定値|説明|  
-|-----------|--------|---------|--------|  
-|<xref:System.Data.Linq.Mapping.DataAttribute.Name%2A>|文字列|データベース内の名前と同じ|テーブル、列などの名前を指定します。|  
-|<xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A>|文字列|パブリック アクセサー|基になるストレージ フィールドの名前を指定します。|  
+ <span data-ttu-id="a6eec-252">この属性のプロパティを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-252">The following table describes properties of this attribute.</span></span>  
   
- 詳細については、「<xref:System.Data.Linq.Mapping.DataAttribute>」を参照してください。  
+|<span data-ttu-id="a6eec-253">プロパティ</span><span class="sxs-lookup"><span data-stu-id="a6eec-253">Property</span></span>|<span data-ttu-id="a6eec-254">種類</span><span class="sxs-lookup"><span data-stu-id="a6eec-254">Type</span></span>|<span data-ttu-id="a6eec-255">既定値</span><span class="sxs-lookup"><span data-stu-id="a6eec-255">Default</span></span>|<span data-ttu-id="a6eec-256">説明</span><span class="sxs-lookup"><span data-stu-id="a6eec-256">Description</span></span>|  
+|--------------|----------|-------------|-----------------|  
+|<xref:System.Data.Linq.Mapping.ResultTypeAttribute.Type%2A>|<span data-ttu-id="a6eec-257">種類</span><span class="sxs-lookup"><span data-stu-id="a6eec-257">Type</span></span>|<span data-ttu-id="a6eec-258">(なし)</span><span class="sxs-lookup"><span data-stu-id="a6eec-258">(None)</span></span>|<span data-ttu-id="a6eec-259"><xref:System.Data.Linq.IMultipleResults> を返すストアド プロシージャに対応付けられているメソッドで使用します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-259">Used on methods mapped to stored procedures that return <xref:System.Data.Linq.IMultipleResults>.</span></span> <span data-ttu-id="a6eec-260">ストアド プロシージャの有効な型マッピングまたは期待される型マッピングを宣言します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-260">Declares the valid or expected type mappings for the stored procedure.</span></span>|  
   
-## 参照  
- [Reference](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+ <span data-ttu-id="a6eec-261">詳細については、「<xref:System.Data.Linq.Mapping.ResultTypeAttribute>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6eec-261">For more information, see <xref:System.Data.Linq.Mapping.ResultTypeAttribute>.</span></span>  
+  
+## <a name="dataattribute-attribute"></a><span data-ttu-id="a6eec-262">DataAttribute 属性</span><span class="sxs-lookup"><span data-stu-id="a6eec-262">DataAttribute Attribute</span></span>  
+ <span data-ttu-id="a6eec-263">この属性は、名前およびプライベート ストレージ フィールドを指定するために使用します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-263">Use this attribute to specify names and private storage fields.</span></span>  
+  
+ <span data-ttu-id="a6eec-264">この属性のプロパティを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-264">The following table describes properties of this attribute.</span></span>  
+  
+|<span data-ttu-id="a6eec-265">プロパティ</span><span class="sxs-lookup"><span data-stu-id="a6eec-265">Property</span></span>|<span data-ttu-id="a6eec-266">種類</span><span class="sxs-lookup"><span data-stu-id="a6eec-266">Type</span></span>|<span data-ttu-id="a6eec-267">既定値</span><span class="sxs-lookup"><span data-stu-id="a6eec-267">Default</span></span>|<span data-ttu-id="a6eec-268">説明</span><span class="sxs-lookup"><span data-stu-id="a6eec-268">Description</span></span>|  
+|--------------|----------|-------------|-----------------|  
+|<xref:System.Data.Linq.Mapping.DataAttribute.Name%2A>|<span data-ttu-id="a6eec-269">String</span><span class="sxs-lookup"><span data-stu-id="a6eec-269">String</span></span>|<span data-ttu-id="a6eec-270">データベース内の名前と同じ</span><span class="sxs-lookup"><span data-stu-id="a6eec-270">Same as name in database</span></span>|<span data-ttu-id="a6eec-271">テーブル、列などの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-271">Specifies the name of the table, column, and so on.</span></span>|  
+|<xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A>|<span data-ttu-id="a6eec-272">String</span><span class="sxs-lookup"><span data-stu-id="a6eec-272">String</span></span>|<span data-ttu-id="a6eec-273">パブリック アクセサー</span><span class="sxs-lookup"><span data-stu-id="a6eec-273">Public accessors</span></span>|<span data-ttu-id="a6eec-274">基になるストレージ フィールドの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="a6eec-274">Specifies the name of the underlying storage field.</span></span>|  
+  
+ <span data-ttu-id="a6eec-275">詳細については、「<xref:System.Data.Linq.Mapping.DataAttribute>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6eec-275">For more information, see <xref:System.Data.Linq.Mapping.DataAttribute>.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="a6eec-276">関連項目</span><span class="sxs-lookup"><span data-stu-id="a6eec-276">See Also</span></span>  
+ [<span data-ttu-id="a6eec-277">参照</span><span class="sxs-lookup"><span data-stu-id="a6eec-277">Reference</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)

@@ -1,27 +1,33 @@
 ---
-title: "DataSet への XSLT 変換の適用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DataSet への XSLT 変換の適用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 09f2e4ee-1d08-4ba8-8936-83394fee319d
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 17f5c8ede620a061bb80f98652497de0a165b06c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataSet への XSLT 変換の適用
-<xref:System.Data.DataSet> の **WriteXml** メソッドを使用すると、**DataSet** の内容を XML データとして書き込むことができます。  一般的な作業は、XSLT \(XSL Transformation\) を使用してこの XML を別の形式へ変換する操作です。  ただし **DataSet** を <xref:System.Xml.XmlDataDocument> と同期することで、最初に **WriteXml** を使用して **DataSet** の内容を XML データとして書き込む操作を実行せずに、**DataSet** の内容に XSLT スタイルシートを適用できます。  
+# <a name="applying-an-xslt-transform-to-a-dataset"></a><span data-ttu-id="fe6a1-102">DataSet への XSLT 変換の適用</span><span class="sxs-lookup"><span data-stu-id="fe6a1-102">Applying an XSLT Transform to a DataSet</span></span>
+<span data-ttu-id="fe6a1-103">**WriteXml**のメソッド、<xref:System.Data.DataSet>の内容を記述することができます、**データセット**XML データとして。</span><span class="sxs-lookup"><span data-stu-id="fe6a1-103">The **WriteXml** method of the <xref:System.Data.DataSet> enables you to write the contents of a **DataSet** as XML data.</span></span> <span data-ttu-id="fe6a1-104">一般的なタスクは、XSLT (XSL Transformation) を使用してこの XML を別の形式へ変換する操作です。</span><span class="sxs-lookup"><span data-stu-id="fe6a1-104">A common task is to then transform that XML to another format using XSL transformations (XSLT).</span></span> <span data-ttu-id="fe6a1-105">ただし、同期、**データセット**で、<xref:System.Xml.XmlDataDocument>の内容に XSLT スタイル シートを適用することができます、**データセット**を最初の内容を記述しなくても、 **データセット**を使用して XML データとして**WriteXml**です。</span><span class="sxs-lookup"><span data-stu-id="fe6a1-105">However, synchronizing a **DataSet** with an <xref:System.Xml.XmlDataDocument> enables you to apply an XSLT stylesheet to the contents of a **DataSet** without having to first write the contents of the **DataSet** as XML data using **WriteXml**.</span></span>  
   
- **DataSet** にテーブルとリレーションシップを格納し、**DataSet** を **XmlDataDocument** と同期し、XSLT スタイルシートを使用して **DataSet** の一部を HTML ファイルとして書き込む例を次に示します。  次のコードは、XSLT スタイルシートの内容です。  
+ <span data-ttu-id="fe6a1-106">次の例では、設定、**データセット**によるテーブルおよびリレーションシップでは、同期、**データセット**で、 **XmlDataDocument**、し、の一部を書き込みます**データセット**HTML ファイルとして、XSLT スタイル シートを使用します。</span><span class="sxs-lookup"><span data-stu-id="fe6a1-106">The following example populates a **DataSet** with tables and relationships, synchronizes the **DataSet** with an **XmlDataDocument**, and writes a portion of the **DataSet** as an HTML file using an XSLT stylesheet.</span></span> <span data-ttu-id="fe6a1-107">次のコードは、XSLT スタイルシートの内容です。</span><span class="sxs-lookup"><span data-stu-id="fe6a1-107">Following are the contents of the XSLT stylesheet.</span></span>  
   
-```  
+```xml  
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">  
   
 <xsl:template match="CustomerOrders">  
@@ -60,10 +66,10 @@ caps.handback.revision: 4
 </xsl:stylesheet>  
 ```  
   
- 次のコードは、**DataSet** にデータを格納し、XSLT スタイル シートを適用します。  
+ <span data-ttu-id="fe6a1-108">次のコードがいっぱいになった、**データセット**し、XSLT スタイル シートを適用します。</span><span class="sxs-lookup"><span data-stu-id="fe6a1-108">The following code fills the **DataSet** and applies the XSLT style sheet.</span></span>  
   
 > [!NOTE]
->  リレーションシップが含まれている **DataSet** にスタイル シートを適用する場合は、入れ子になっているリレーションシップごとに <xref:System.Data.DataRelation> の **Nested** プロパティを **true** に設定すると、パフォーマンスが最大になります。  これにより、階層を自然な順番で上から下へと進みながらデータを変換する XSLT スタイル シートを利用できるようになります。パフォーマンスに大きく影響する XPath ロケーション軸 \(たとえば、スタイル シートのノード テスト式での preceding\-sibling や following\-sibling\) を使用して階層をたどる必要はなくなります。  入れ子になったリレーションの詳細については、「[DataRelation の入れ子化](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md)」を参照してください。  
+>  <span data-ttu-id="fe6a1-109">XSLT スタイル シートを適用する場合、**データセット**関係が含まれる、設定した場合に最適なパフォーマンスを実現する、**入れ子になった**のプロパティ、<xref:System.Data.DataRelation>に**true**列ごとの関係を入れ子にします。</span><span class="sxs-lookup"><span data-stu-id="fe6a1-109">If you are applying an XSLT style sheet to a **DataSet** that contains relations, you achieve best performance if you set the **Nested** property of the <xref:System.Data.DataRelation> to **true** for each nested relation.</span></span> <span data-ttu-id="fe6a1-110">これにより、階層を自然な順番で上から下へと進みながらデータを変換する XSLT スタイル シートを利用できるようになります。パフォーマンスに大きく影響する XPath ロケーション軸 (たとえば、スタイル シートのノード テスト式での preceding-sibling や following-sibling) を使用して階層をたどる必要はなくなります。</span><span class="sxs-lookup"><span data-stu-id="fe6a1-110">This allows you to use XSLT style sheets that implement natural top-down processing to navigate the hierarchy and transform the data, as opposed to using performance-intensive XPath location axes (for example, preceding-sibling and following-sibling in style sheet node test expressions) to navigate it.</span></span> <span data-ttu-id="fe6a1-111">入れ子になったリレーションシップの詳細については、次を参照してください。 [Datarelation の入れ子](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md)です。</span><span class="sxs-lookup"><span data-stu-id="fe6a1-111">For more information on nested relations, see [Nesting DataRelations](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md).</span></span>  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -127,6 +133,6 @@ xslTran.Transform(xmlDoc, null, writer);
 writer.Close();  
 ```  
   
-## 参照  
- [DataSet と XmlDataDocument の同期](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="fe6a1-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="fe6a1-112">See Also</span></span>  
+ [<span data-ttu-id="fe6a1-113">DataSet と XmlDataDocument の同期</span><span class="sxs-lookup"><span data-stu-id="fe6a1-113">DataSet and XmlDataDocument Synchronization</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)  
+ [<span data-ttu-id="fe6a1-114">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="fe6a1-114">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

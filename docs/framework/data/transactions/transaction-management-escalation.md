@@ -1,43 +1,47 @@
 ---
-title: "トランザクション管理エスカレーション  | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "トランザクション管理のエスカレーション"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1e96331e-31b6-4272-bbbd-29ed1e110460
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 0ac45390d78f4fbce15c8910fcdcc95713c5898a
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# トランザクション管理エスカレーション 
-Windows は、トランザクション マネージャーを構成する一連のサービスとモジュールをホストします。トランザクション管理のエスカレーションとは、トランザクション マネージャーのいずれかのコンポーネントから別のコンポーネントにトランザクションを移行するプロセスを表します。  
+# <a name="transaction-management-escalation"></a><span data-ttu-id="79a7f-102">トランザクション管理のエスカレーション</span><span class="sxs-lookup"><span data-stu-id="79a7f-102">Transaction Management Escalation</span></span>
+<span data-ttu-id="79a7f-103">Windows は、トランザクション マネージャーを構成する一連のサービスとモジュールをホストします。</span><span class="sxs-lookup"><span data-stu-id="79a7f-103">Windows hosts a set of services and modules that together constitute a transaction manager.</span></span> <span data-ttu-id="79a7f-104">トランザクション管理のエスカレーションとは、トランザクション マネージャーのいずれかのコンポーネントから別のコンポーネントにトランザクションを移行するプロセスを表します。</span><span class="sxs-lookup"><span data-stu-id="79a7f-104">Transaction management escalation describes the process of migrating a transaction from one of the transaction manager's components to another.</span></span>  
   
- <xref:System.Transactions> には、最大で 1 つの永続的なリソースまたは複数の揮発性リソースが関与するトランザクションを調整する、トランザクション マネージャー コンポーネントが含まれています。トランザクション マネージャーは、アプリケーション内ドメインの呼び出しのみを使用するため、最良のパフォーマンスを得られます。開発者は、トランザクション マネージャーを直接操作する必要はありません。その代わり、インターフェイス、共通する動作、およびヘルパー クラスを定義する共通インフラストラクチャが、<xref:System.Transactions> 名前空間によって用意されています。  
+ <span data-ttu-id="79a7f-105"><xref:System.Transactions> には、最大で 1 つの永続的なリソースまたは複数の揮発性リソースが関与するトランザクションを調整する、トランザクション マネージャー コンポーネントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="79a7f-105"><xref:System.Transactions> includes a transaction manager component that coordinates a transaction involving at most, a single durable resource or multiple volatile resources.</span></span> <span data-ttu-id="79a7f-106">トランザクション マネージャーは、アプリケーション内ドメインの呼び出しのみを使用するため、最良のパフォーマンスを得られます。</span><span class="sxs-lookup"><span data-stu-id="79a7f-106">Because the transaction manager uses only intra-application domain calls, it yields the best performance.</span></span> <span data-ttu-id="79a7f-107">開発者は、トランザクション マネージャーを直接操作する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="79a7f-107">Developers need not interact with the transaction manager directly.</span></span> <span data-ttu-id="79a7f-108">その代わり、インターフェイス、共通する動作、およびヘルパー クラスを定義する共通インフラストラクチャが、<xref:System.Transactions> 名前空間によって用意されています。</span><span class="sxs-lookup"><span data-stu-id="79a7f-108">Instead, a common infrastructure that defines interfaces, common behavior, and helper classes is provided by the <xref:System.Transactions> namespace.</span></span>  
   
- 同じコンピューターにある別のアプリケーション ドメイン \(プロセスやマシンの境界をまたぐドメインを含む\) の別のオブジェクトにトランザクションを提供する場合は、<xref:System.Transactions> インフラストラクチャは、トランザクションを自動的にエスカレートして、Microsoft 分散トランザクション コーディネーター \(MSDTC\) によって管理されるようにします。エスカレーションは、別の永続的なリソース マネージャーに参加する際にも発生します。エスカレートされると、トランザクションは完了するまで昇格した状態で管理され続けます。  
+ <span data-ttu-id="79a7f-109">同じコンピューター上などプロセスやコンピューターの境界を越えて他のアプリケーション ドメイン内のオブジェクトへのトランザクションを提供する場合に、<xref:System.Transactions>インフラストラクチャは、Microsoft によって管理されるトランザクションを自動的にエスカレート分散トランザクション コーディネーター (MSDTC)。</span><span class="sxs-lookup"><span data-stu-id="79a7f-109">When you want to provide the transaction to an object in another application domain (including across process and machine boundaries) on the same computer, the <xref:System.Transactions> infrastructure automatically escalates the transaction to be managed by the Microsoft Distributed Transaction Coordinator (MSDTC).</span></span> <span data-ttu-id="79a7f-110">エスカレーションは、別の永続的なリソース マネージャーに参加する際にも発生します。</span><span class="sxs-lookup"><span data-stu-id="79a7f-110">The escalation also occurs if you enlist another durable resource manager.</span></span> <span data-ttu-id="79a7f-111">エスカレートされると、トランザクションは完了するまで昇格した状態で管理され続けます。</span><span class="sxs-lookup"><span data-stu-id="79a7f-111">When escalated, the transaction remains managed in its elevated state until its completion.</span></span>  
   
- <xref:System.Transactions> トランザクションと MSDTC トランザクションの間には、PSPE \(Promotable Single Phase Enlistment\) を介して利用できる中間タイプのトランザクションがあります。PSPE は、<xref:System.Transactions> でパフォーマンスを最適化するための重要なメカニズムです。PSPE を使用すると、異なるアプリケーション ドメイン、プロセス、コンピューターにあるリモート永続リソースが、MSDTC トランザクションにエスカレートされることなく、<xref:System.Transactions> トランザクションに参加できるようになります。PSPE の詳細については、「[参加要素としてのリソースのトランザクションへの参加 ](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)」を参照してください。  
+ <span data-ttu-id="79a7f-112"><xref:System.Transactions> トランザクションと MSDTC トランザクションの間には、PSPE (Promotable Single Phase Enlistment) を介して利用できる中間タイプのトランザクションがあります。</span><span class="sxs-lookup"><span data-stu-id="79a7f-112">Between the <xref:System.Transactions> transaction and MSDTC transaction, there is an intermediary type of transaction that is made available through the Promotable Single Phase Enlistment (PSPE).</span></span> <span data-ttu-id="79a7f-113">PSPE は、<xref:System.Transactions> でパフォーマンスを最適化するための重要なメカニズムです。</span><span class="sxs-lookup"><span data-stu-id="79a7f-113">PSPE is another important mechanism in <xref:System.Transactions> for performance optimization.</span></span> <span data-ttu-id="79a7f-114">PSPE を使用すると、異なるアプリケーション ドメイン、プロセス、コンピューターにあるリモート永続リソースが、MSDTC トランザクションにエスカレートされることなく、<xref:System.Transactions> トランザクションに参加できるようになります。</span><span class="sxs-lookup"><span data-stu-id="79a7f-114">It allows a remote durable resource, located in a different application domain, process or computer, to participate in a <xref:System.Transactions> transaction without causing it to be escalated to an MSDTC transaction.</span></span> <span data-ttu-id="79a7f-115">PSPE の詳細については、次を参照してください。[リソースをトランザクションの参加者として参加](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)です。</span><span class="sxs-lookup"><span data-stu-id="79a7f-115">For more information about PSPE, see [Enlisting Resources as Participants in a Transaction](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md).</span></span>  
   
-## エスカレーションの開始方法  
- トランザクションのエスカレーションが行われると、パフォーマンスが低下します。MSDTC は別のプロセスにあるため、トランザクションを MSDTC にエスカレートすると、プロセス間でメッセージが送信されることになるからです。パフォーマンスを向上させるには、MSDTC へのエスカレーションを遅延または回避します。このため、エスカレーションが開始される方法とその条件を知る必要があります。  
+## <a name="how-escalation-is-initiated"></a><span data-ttu-id="79a7f-116">エスカレーションの開始方法</span><span class="sxs-lookup"><span data-stu-id="79a7f-116">How Escalation is Initiated</span></span>  
+ <span data-ttu-id="79a7f-117">トランザクションのエスカレーションが行われると、パフォーマンスが低下します。MSDTC は別のプロセスにあるため、トランザクションを MSDTC にエスカレートすると、プロセス間でメッセージが送信されることになるからです。</span><span class="sxs-lookup"><span data-stu-id="79a7f-117">Transaction escalation reduces performance because the MSDTC resides in a separate process, and escalating a transaction to the MSDTC results in messages being sent across process.</span></span> <span data-ttu-id="79a7f-118">パフォーマンスを向上させるには、遅延または MSDTC; へのエスカレーションを回避する必要があります。このため、エスカレーションが開始される方法とタイミングを把握する必要があります。</span><span class="sxs-lookup"><span data-stu-id="79a7f-118">To improve performance, you should delay or avoid escalation to MSDTC; thus, you need to know how and when the escalation is initiated.</span></span>  
   
- <xref:System.Transactions> インフラストラクチャが揮発性リソースと、単一フェーズの通知をサポートする最大 1 つの永続リソースを処理している限り、トランザクションは、<xref:System.Transactions> インフラストラクチャが所有し続けます。トランザクション マネージャーが有効であるのは、同じアプリケーション ドメインに存在し、ログ \(トランザクション結果のディスクへの書き込み\) が必要ないリソースに対してのみです。次の場合には、<xref:System.Transactions> インフラストラクチャにより、トランザクションの所有権が MSDTC に移されます。  
+ <span data-ttu-id="79a7f-119"><xref:System.Transactions> インフラストラクチャが揮発性リソースと、単一フェーズの通知をサポートする最大 1 つの永続リソースを処理している限り、トランザクションは、<xref:System.Transactions> インフラストラクチャが所有し続けます。</span><span class="sxs-lookup"><span data-stu-id="79a7f-119">As long as the <xref:System.Transactions> infrastructure handles volatile resources and at most one durable resource that supports single-phase notifications, the transaction remains in the ownership of the <xref:System.Transactions> infrastructure.</span></span> <span data-ttu-id="79a7f-120">トランザクション マネージャーが有効であるのは、同じアプリケーション ドメインに存在し、ログ (トランザクション結果のディスクへの書き込み) が必要ないリソースに対してのみです。</span><span class="sxs-lookup"><span data-stu-id="79a7f-120">The transaction manager avails itself only to those resources that live in the same application domain and for which logging (writing the transaction outcome to disk) is not required.</span></span> <span data-ttu-id="79a7f-121">次の場合には、<xref:System.Transactions> インフラストラクチャにより、トランザクションの所有権が MSDTC に移されます。</span><span class="sxs-lookup"><span data-stu-id="79a7f-121">An escalation that results in the <xref:System.Transactions> infrastructure transferring the ownership of the transaction to MSDTC happens when:</span></span>  
   
--   単一フェーズ通知をサポートしない永続リソースが少なくとも 1 つトランザクションに参加している場合。  
+-   <span data-ttu-id="79a7f-122">単一フェーズ通知をサポートしない永続リソースが少なくとも 1 つトランザクションに参加している場合。</span><span class="sxs-lookup"><span data-stu-id="79a7f-122">At least one durable resource that does not support single-phase notifications is enlisted in the transaction.</span></span>  
   
--   単一フェーズ通知をサポートする永続リソースが少なくとも 2 つトランザクションに参加している場合。たとえば、[!INCLUDE[sqprsqlong](../../../../includes/sqprsqlong-md.md)] との単一の接続の参加では、トランザクションの昇格は発生しません。ただし、[!INCLUDE[sqprsqlong](../../../../includes/sqprsqlong-md.md)] データベースへの別の接続を開き、それによってデータベースが参加したときは常に、<xref:System.Transactions> インフラストラクチャが、このトランザクションの 2 つ目の永続リソースであることを検出し、MSDTC トランザクションにエスカレートします。  
+-   <span data-ttu-id="79a7f-123">単一フェーズ通知をサポートする永続リソースが少なくとも 2 つトランザクションに参加している場合。</span><span class="sxs-lookup"><span data-stu-id="79a7f-123">At least two durable resources that support single-phase notifications are enlisted in the transaction.</span></span> <span data-ttu-id="79a7f-124">たとえば、[!INCLUDE[sqprsqlong](../../../../includes/sqprsqlong-md.md)] との単一の接続の参加では、トランザクションの昇格は発生しません。</span><span class="sxs-lookup"><span data-stu-id="79a7f-124">For example, enlisting a single connection with [!INCLUDE[sqprsqlong](../../../../includes/sqprsqlong-md.md)] does not cause a transaction to be promoted.</span></span> <span data-ttu-id="79a7f-125">一方、[!INCLUDE[sqprsqlong](../../../../includes/sqprsqlong-md.md)] データベースへの別の接続を開いてデータベースが参加したときには、<xref:System.Transactions> インフラストラクチャは、このトランザクションの 2 つ目の永続リソースであることを検出し、MSDTC トランザクションにエスカレートします。</span><span class="sxs-lookup"><span data-stu-id="79a7f-125">However, whenever you open a second connection to a [!INCLUDE[sqprsqlong](../../../../includes/sqprsqlong-md.md)] database causing the database to enlist, the <xref:System.Transactions> infrastructure detects that it is the second durable resource in the transaction, and escalates it to an MSDTC transaction.</span></span>  
   
--   別のアプリケーション ドメインまたはプロセスにトランザクションを "マーシャリング" する要求が呼び出された場合。たとえば、アプリケーション ドメイン境界をまたぐトランザクション オブジェクトのシリアル化などです。トランザクション オブジェクトは、値によってマーシャリングされます。つまり、アプリケーション ドメイン境界を越えてトランザクション オブジェクトを渡そうとすると \(同じプロセス内でも\)、トランザクション オブジェクトのシリアル化が発生します。<xref:System.Transactions.Transaction> をパラメーターとして受け取るリモート メソッドを呼び出すことで、トランザクション オブジェクトを渡すことができます。または、リモートのトランザクション サービス コンポーネントにアクセスすることもできます。この場合、トランザクション オブジェクトがシリアル化され、エスカレーションが発生します。アプリケーション ドメインをまたいでトランザクションがシリアル化される場合と同様です。トランザクションが分散されるので、ローカルのトランザクション マネージャーでは不十分になります。  
+-   <span data-ttu-id="79a7f-126">別のアプリケーション ドメインまたはプロセスにトランザクションを "マーシャリング" する要求が呼び出された場合。</span><span class="sxs-lookup"><span data-stu-id="79a7f-126">A request to "marshal" the transaction to a different application domain or different process is invoked.</span></span> <span data-ttu-id="79a7f-127">たとえば、アプリケーション ドメイン境界をまたぐトランザクション オブジェクトのシリアル化などです。</span><span class="sxs-lookup"><span data-stu-id="79a7f-127">For example, the serialization of the transaction object across an application domain boundary.</span></span> <span data-ttu-id="79a7f-128">トランザクション オブジェクトは、値によってマーシャリングされます。つまり、アプリケーション ドメイン境界を越えてトランザクション オブジェクトを渡そうとすると (同じプロセス内でも)、トランザクション オブジェクトのシリアル化が発生します。</span><span class="sxs-lookup"><span data-stu-id="79a7f-128">The transaction object is marshaled-by-value, meaning that any attempt to pass it across an application domain boundary (even in the same process) results in serialization of the transaction object.</span></span> <span data-ttu-id="79a7f-129"><xref:System.Transactions.Transaction> をパラメーターとして受け取るリモート メソッドを呼び出すことで、トランザクション オブジェクトを渡すことができます。または、リモートのトランザクション サービス コンポーネントにアクセスすることもできます。</span><span class="sxs-lookup"><span data-stu-id="79a7f-129">You can pass the transaction objects by making a call on a remote method that takes a <xref:System.Transactions.Transaction> as a parameter or you can try to access a remote transactional-serviced component.</span></span> <span data-ttu-id="79a7f-130">この場合、トランザクション オブジェクトがシリアル化され、エスカレーションが発生します。アプリケーション ドメインをまたいでトランザクションがシリアル化される場合と同様です。</span><span class="sxs-lookup"><span data-stu-id="79a7f-130">This serializes the transaction object and results in an escalation, as when a transaction is serialized across an application domain.</span></span> <span data-ttu-id="79a7f-131">トランザクションが分散されるので、ローカルのトランザクション マネージャーでは不十分になります。</span><span class="sxs-lookup"><span data-stu-id="79a7f-131">It is being distributed and the local transaction manager is no longer adequate.</span></span>  
   
- エスカレーション中にスローされる可能性のある例外をすべて次の表に示します。  
+ <span data-ttu-id="79a7f-132">エスカレーション中にスローされる可能性のある例外をすべて次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="79a7f-132">The following table lists all the possible exceptions that can be thrown during escalation.</span></span>  
   
-|例外の種類|条件|  
-|-----------|--------|  
-|<xref:System.InvalidOperationException>|分離レベルが <xref:System.Transactions.IsolationLevel> のトランザクションをエスカレートしようとしました。|  
-|<xref:System.Transactions.TransactionAbortedException>|トランザクション マネージャーがダウンしています。|  
-|<xref:System.Transactions.TransactionException>|エスカレーションが失敗し、アプリケーションが中止されます。|
+|<span data-ttu-id="79a7f-133">例外の種類</span><span class="sxs-lookup"><span data-stu-id="79a7f-133">Exception type</span></span>|<span data-ttu-id="79a7f-134">状態</span><span class="sxs-lookup"><span data-stu-id="79a7f-134">Condition</span></span>|  
+|--------------------|---------------|  
+|<xref:System.InvalidOperationException>|<span data-ttu-id="79a7f-135">分離レベルが <xref:System.Transactions.IsolationLevel.Snapshot> のトランザクションをエスカレートしようとしました。</span><span class="sxs-lookup"><span data-stu-id="79a7f-135">An attempt to escalate a transaction with isolation level equal to <xref:System.Transactions.IsolationLevel.Snapshot>.</span></span>|  
+|<xref:System.Transactions.TransactionAbortedException>|<span data-ttu-id="79a7f-136">トランザクション マネージャーがダウンしています。</span><span class="sxs-lookup"><span data-stu-id="79a7f-136">The transaction manager is down.</span></span>|  
+|<xref:System.Transactions.TransactionException>|<span data-ttu-id="79a7f-137">エスカレーションが失敗し、アプリケーションが中止されます。</span><span class="sxs-lookup"><span data-stu-id="79a7f-137">The escalation fails and the application is aborted.</span></span>|

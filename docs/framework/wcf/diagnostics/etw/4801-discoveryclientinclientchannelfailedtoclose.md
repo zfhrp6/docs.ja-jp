@@ -1,35 +1,38 @@
 ---
-title: "4801 - DiscoveryClientInClientChannelFailedToClose | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 4801 - DiscoveryClientInClientChannelFailedToClose
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9d85113b-73b9-4599-b776-30b40aaf1e7a
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 60e590c6261643031922a9f9c6f85420d8bb3d90
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 4801 - DiscoveryClientInClientChannelFailedToClose
-## プロパティ  
+# <a name="4801---discoveryclientinclientchannelfailedtoclose"></a><span data-ttu-id="64cde-102">4801 - DiscoveryClientInClientChannelFailedToClose</span><span class="sxs-lookup"><span data-stu-id="64cde-102">4801 - DiscoveryClientInClientChannelFailedToClose</span></span>
+## <a name="properties"></a><span data-ttu-id="64cde-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="64cde-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|ID|4801|  
-|キーワード|探索|  
-|レベル|警告|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Debug|  
+|<span data-ttu-id="64cde-104">ID</span><span class="sxs-lookup"><span data-stu-id="64cde-104">ID</span></span>|<span data-ttu-id="64cde-105">4801</span><span class="sxs-lookup"><span data-stu-id="64cde-105">4801</span></span>|  
+|<span data-ttu-id="64cde-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="64cde-106">Keywords</span></span>|<span data-ttu-id="64cde-107">探索</span><span class="sxs-lookup"><span data-stu-id="64cde-107">Discovery</span></span>|  
+|<span data-ttu-id="64cde-108">レベル</span><span class="sxs-lookup"><span data-stu-id="64cde-108">Level</span></span>|<span data-ttu-id="64cde-109">警告</span><span class="sxs-lookup"><span data-stu-id="64cde-109">Warning</span></span>|  
+|<span data-ttu-id="64cde-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="64cde-110">Channel</span></span>|<span data-ttu-id="64cde-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="64cde-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## 説明  
- このイベントは、DiscoveryClientChannel 内で作成された DiscoveryClient を閉じることができず、異常終了したときに生成されます。  
+## <a name="description"></a><span data-ttu-id="64cde-112">説明</span><span class="sxs-lookup"><span data-stu-id="64cde-112">Description</span></span>  
+ <span data-ttu-id="64cde-113">このイベントは、DiscoveryClientChannel 内で作成された DiscoveryClient を閉じることができず、異常終了したときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="64cde-113">This event is emitted when the DiscoveryClient created inside DiscoveryClientChannel failed to close and hence has been aborted.</span></span>  
   
-## メッセージ  
- DiscoveryClientChannel 内で作成された DiscoveryClient を閉じることができず、異常終了しました。  
+## <a name="message"></a><span data-ttu-id="64cde-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="64cde-114">Message</span></span>  
+ <span data-ttu-id="64cde-115">DiscoveryClientChannel 内で作成された DiscoveryClient を閉じることができず、異常終了しました。</span><span class="sxs-lookup"><span data-stu-id="64cde-115">The DiscoveryClient created inside DiscoveryClientChannel failed to close and hence has been aborted.</span></span>  
   
-## 詳細
+## <a name="details"></a><span data-ttu-id="64cde-116">詳細</span><span class="sxs-lookup"><span data-stu-id="64cde-116">Details</span></span>

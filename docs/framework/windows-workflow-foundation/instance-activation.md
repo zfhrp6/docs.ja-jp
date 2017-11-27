@@ -1,48 +1,52 @@
 ---
-title: "インスタンスのアクティブ化処理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "インスタンスのアクティブ化処理"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 134c3f70-5d4e-46d0-9d49-469a6643edd8
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: de2152e557ccfe19c47247e2501f2e2d62253e81
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# インスタンスのアクティブ化処理
-SQL Workflow Instance Store が実行する内部タスクは、定期的にアクティブになり、実行可能またはアクティブ化可能なワークフロー インスタンスを永続性データベースで検出します。このタスクは、実行可能なワークフロー インスタンスを検出すると、このインスタンスをアクティブ化することができるワークフロー ホストに通知します。Instance Store がアクティブ化可能なワークフロー インスタンスを検出した場合、ワークフロー ホストをアクティブ化する汎用ホストに Instance Store が通知を行い、ワークフロー ホストがワークフロー インスタンスを実行します。このトピックの以降のセクションでは、インスタンスのアクティブ化処理を詳細に説明します。  
+# <a name="instance-activation"></a><span data-ttu-id="befd2-102">インスタンスのアクティブ化処理</span><span class="sxs-lookup"><span data-stu-id="befd2-102">Instance Activation</span></span>
+<span data-ttu-id="befd2-103">SQL Workflow Instance Store が実行する内部タスクは、定期的にアクティブになり、実行可能またはアクティブ化可能なワークフロー インスタンスを永続性データベースで検出します。</span><span class="sxs-lookup"><span data-stu-id="befd2-103">The SQL Workflow Instance Store runs an internal task that periodically wakes up and detects runnable or activatable workflow instances in the persistence database.</span></span> <span data-ttu-id="befd2-104">このタスクは、実行可能なワークフロー インスタンスを検出すると、このインスタンスをアクティブ化することができるワークフロー ホストに通知します。</span><span class="sxs-lookup"><span data-stu-id="befd2-104">If it finds a runnable workflow instance, it notifies the workflow host that is capable of activating the instance.</span></span> <span data-ttu-id="befd2-105">Instance Store がアクティブ化可能なワークフロー インスタンスを検出した場合、ワークフロー ホストをアクティブ化する汎用ホストに Instance Store が通知を行い、ワークフロー ホストがワークフロー インスタンスを実行します。</span><span class="sxs-lookup"><span data-stu-id="befd2-105">If the instance store finds an activatable workflow instance, it notifies a generic host that activates a workflow host, which in turn runs the workflow instance.</span></span> <span data-ttu-id="befd2-106">このトピックの以降のセクションでは、インスタンスのアクティブ化処理を詳細に説明します。</span><span class="sxs-lookup"><span data-stu-id="befd2-106">The following sections in this topic explain the instance activation process in detail.</span></span>  
   
-##  <a name="RunnableSection"></a> 実行可能なワークフロー インスタンスの検出とアクティブ化  
- SQL Workflow Instance Store がワークフロー インスタンスを*実行可能*と見なすのは、インスタンスが非中断状態または完了状態であり、次の条件を満たす場合です。  
+##  <span data-ttu-id="befd2-107"><a name="RunnableSection"></a>検出と実行可能ワークフロー インスタンスをアクティブ化</span><span class="sxs-lookup"><span data-stu-id="befd2-107"><a name="RunnableSection"></a> Detecting and Activating Runnable Workflow Instances</span></span>  
+ <span data-ttu-id="befd2-108">SQL Workflow Instance Store がワークフロー インスタンスを考慮*runnable*インスタンスが中断状態または完了状態ではなくを次の条件を満たしている場合。</span><span class="sxs-lookup"><span data-stu-id="befd2-108">The SQL Workflow Instance Store considers a workflow instance *runnable* if the instance is not in the suspended state or the completed state and satisfies the following conditions:</span></span>  
   
--   インスタンスがロック解除されていて、保留タイマーの期限が切れている。  
+-   <span data-ttu-id="befd2-109">インスタンスがロック解除されていて、保留タイマーの期限が切れている。</span><span class="sxs-lookup"><span data-stu-id="befd2-109">The instance is unlocked and has a pending timer that has expired.</span></span>  
   
--   インスタンスに期限切れのロックがある。  
+-   <span data-ttu-id="befd2-110">インスタンスに期限切れのロックがある。</span><span class="sxs-lookup"><span data-stu-id="befd2-110">The instance has an expired lock on it.</span></span>  
   
--   インスタンスがロック解除されていて、ステータスが **Executing** である。  
+-   <span data-ttu-id="befd2-111">インスタンスのロックが解除されていると、その状態が**Executing**です。</span><span class="sxs-lookup"><span data-stu-id="befd2-111">The instance is unlocked and its status is **Executing**.</span></span>  
   
- SQL Workflow Instance Store は、実行可能なインスタンスを見つけると <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> を生成します。その後、SqlWorkflowInstanceStore は <xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand> がストアで一度呼び出されるまで監視を停止します。  
+ <span data-ttu-id="befd2-112">SQL Workflow Instance Store は、実行可能なインスタンスを見つけると <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> を生成します。</span><span class="sxs-lookup"><span data-stu-id="befd2-112">The SQL Workflow Instance Store raises the <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> when it finds a runnable instance.</span></span> <span data-ttu-id="befd2-113">その後、SqlWorkflowInstanceStore は <xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand> がストアで一度呼び出されるまで監視を停止します。</span><span class="sxs-lookup"><span data-stu-id="befd2-113">After this, the SqlWorkflowInstanceStore stops monitoring until the <xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand> is called once on the store.</span></span>  
   
- <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> に定期受信し、インスタンスの読み込みが可能なワークフロー ホストは、インスタンス ストアに対して <xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand> を実行してインスタンスをメモリに読み込みます。ワークフロー ホストがワークフロー インスタンスを読み込みできると見なされるのは、ホストとインスタンスのメタデータ プロパティ **WorkflowServiceType** が同じ値に設定されている場合です。  
+ <span data-ttu-id="befd2-114"><xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> に定期受信し、インスタンスの読み込みが可能なワークフロー ホストは、インスタンス ストアに対して <xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand> を実行してインスタンスをメモリに読み込みます。</span><span class="sxs-lookup"><span data-stu-id="befd2-114">A workflow host that has subscribed for the <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> and capable of loading the instance executes the <xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand> against the instance store to load the instance into memory.</span></span> <span data-ttu-id="befd2-115">ワークフロー ホストはホストとインスタンスは、メタデータのプロパティを持っている場合は、ワークフロー インスタンスを読み込むことができると見なされます**WorkflowServiceType**同じ値に設定します。</span><span class="sxs-lookup"><span data-stu-id="befd2-115">A workflow host is considered capable of loading a workflow instance if the host and the instance have metadata property **WorkflowServiceType** set to the same value.</span></span>  
   
-## アクティブ化可能なワークフロー インスタンスの検出とアクティブ化  
- ワークフロー インスタンスが*アクティブ化可能*と見なされるのは、そのインスタンスが実行可能であり、そのインスタンスを読み込むことが可能なワークフロー ホストがコンピューターで実行されていない場合です。実行可能なワークフロー インスタンスの定義については、前の「実行可能なワークフロー インスタンスの検出とアクティブ化」を参照してください。  
+## <a name="detecting-and-activating-activatable-workflow-instances"></a><span data-ttu-id="befd2-116">アクティブ化可能なワークフロー インスタンスの検出とアクティブ化</span><span class="sxs-lookup"><span data-stu-id="befd2-116">Detecting and Activating Activatable Workflow Instances</span></span>  
+ <span data-ttu-id="befd2-117">ワークフロー インスタンスと見なされます*アクティブ化可能な*インスタンスが実行可能な場合は、インスタンスを読み込むことができるワークフロー ホストが実行されていないコンピューターにします。</span><span class="sxs-lookup"><span data-stu-id="befd2-117">A workflow instance is considered *activatable* if the instance is runnable and there is no workflow host that is capable of loading the instance is running on the computer.</span></span> <span data-ttu-id="befd2-118">実行可能なワークフロー インスタンスの定義については、前の「実行可能なワークフロー インスタンスの検出とアクティブ化」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="befd2-118">See Detecting and Activating Runnable Workflow Instances above for the definition of a runnable workflow instance.</span></span>  
   
- SQL Workflow Instance Store は、データベースでアクティブ化可能なワークフロー インスタンスを見つけると <xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> を生成します。その後、SqlWorkflowInstanceStore は <xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand> がストアで一度呼び出されるまで監視を停止します。  
+ <span data-ttu-id="befd2-119">SQL Workflow Instance Store は、データベースでアクティブ化可能なワークフロー インスタンスを見つけると <xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> を生成します。</span><span class="sxs-lookup"><span data-stu-id="befd2-119">The SQL Workflow Instance Store raises the <xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> when it finds an activatable workflow instance in the database.</span></span> <span data-ttu-id="befd2-120">その後、SqlWorkflowInstanceStore は <xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand> がストアで一度呼び出されるまで監視を停止します。</span><span class="sxs-lookup"><span data-stu-id="befd2-120">After this, the SqlWorkflowInstanceStore stops monitoring until the <xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand> is called once on the store.</span></span>  
   
- <xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> に定期受信している汎用ホストは、イベントを受け取ると、インスタンス ストアに対して <xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand> を実行して、ワークフロー ホストの作成に必要なアクティブ化のパラメーターを取得します。汎用ホストは、このアクティブ化パラメーターを使用してワークフロー ホストを作成します。作成されたワークフロー ホストは、実行可能なサービス インスタンスを読み込んで実行します。  
+ <span data-ttu-id="befd2-121"><xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> に定期受信している汎用ホストは、イベントを受け取ると、インスタンス ストアに対して <xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand> を実行して、ワークフロー ホストの作成に必要なアクティブ化のパラメーターを取得します。</span><span class="sxs-lookup"><span data-stu-id="befd2-121">When a generic host that has subscribed for the <xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> receives the event, it executes the <xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand> against the instance store to obtain activation parameters required to create a workflow host.</span></span> <span data-ttu-id="befd2-122">汎用ホストは、このアクティブ化パラメーターを使用してワークフロー ホストを作成します。作成されたワークフロー ホストは、実行可能なサービス インスタンスを読み込んで実行します。</span><span class="sxs-lookup"><span data-stu-id="befd2-122">The generic host uses these activation parameters to create a workflow host, which in turn loads and runs the runnable service instance.</span></span>  
   
-## 汎用ホスト  
- 汎用ホストとは、汎用ホストのメタデータ プロパティ **WorkflowServiceType** が、任意のワークフロー型を処理できることを示す **WorkflowServiceType.Any** に設定されているホストです。汎用ホストには、**ActivationType** という XName パラメーターがあります。  
+## <a name="generic-hosts"></a><span data-ttu-id="befd2-123">汎用ホスト</span><span class="sxs-lookup"><span data-stu-id="befd2-123">Generic Hosts</span></span>  
+ <span data-ttu-id="befd2-124">汎用ホストは、メタデータ プロパティの値を持つホスト**WorkflowServiceType**汎用ホスト用に設定されている**WorkflowServiceType.Any**ワークフロー型を処理できることを示すためにします。</span><span class="sxs-lookup"><span data-stu-id="befd2-124">A generic host is a host with the value of the metadata property **WorkflowServiceType** for generic hosts is set to **WorkflowServiceType.Any** to indicate that it can handle any workflow type.</span></span> <span data-ttu-id="befd2-125">汎用ホストは、という XName パラメーターを持つ**ActivationType**です。</span><span class="sxs-lookup"><span data-stu-id="befd2-125">A generic host has an XName parameter named **ActivationType**.</span></span>  
   
- 現時点では、SQL Workflow Instance Store は、ActivationType パラメーターが **WAS** に設定された汎用ホストをサポートしています。ActivationType が WAS に設定されていない場合、SQL Workflow Instance Store は <xref:System.Runtime.DurableInstancing.InstancePersistenceException> をスローします。[!INCLUDE[dublin](../../../includes/dublin-md.md)] に付属するワークフロー管理サービスは、アクティブ化のタイプが **WAS** に設定された汎用ホストです。  
+ <span data-ttu-id="befd2-126">現在、SQL Workflow Instance Store には、汎用ホストに設定、ActivationType パラメーターの値をサポートしています。 **WAS**です。</span><span class="sxs-lookup"><span data-stu-id="befd2-126">Currently, the SQL Workflow Instance Store supports generic hosts with value of the ActivationType parameter set to **WAS**.</span></span> <span data-ttu-id="befd2-127">ActivationType が WAS に設定されていない場合、SQL Workflow Instance Store は <xref:System.Runtime.DurableInstancing.InstancePersistenceException> をスローします。</span><span class="sxs-lookup"><span data-stu-id="befd2-127">If the ActivationType is not set to WAS, the SQL Workflow Instance Store throws an <xref:System.Runtime.DurableInstancing.InstancePersistenceException>.</span></span> <span data-ttu-id="befd2-128">付属するワークフロー管理サービス、[!INCLUDE[dublin](../../../includes/dublin-md.md)]がライセンス認証の種類に設定された汎用ホストは、 **WAS**です。</span><span class="sxs-lookup"><span data-stu-id="befd2-128">The Workflow Management Service that ships with the [!INCLUDE[dublin](../../../includes/dublin-md.md)] is a generic host that has the activation type set to **WAS**.</span></span>  
   
- WAS アクティブ化の場合、汎用ホストは、新しいホストをアクティブ化できるエンドポイント アドレスを派生する一連のアクティブ化パラメーターを要求します。WAS アクティブ化のアクティブ化パラメーターは、サイトの名前、サイトを基準としたアプリケーションの相対パス、アプリケーションを基準としたサービスの相対パスです。SQL Workflow Instance Store は、<xref:System.Activities.DurableInstancing.SaveWorkflowCommand> の実行中にこれらのアクティブ化パラメーターを格納します。  
+ <span data-ttu-id="befd2-129">WAS アクティブ化の場合、汎用ホストは、新しいホストをアクティブ化できるエンドポイント アドレスを派生する一連のアクティブ化パラメーターを要求します。</span><span class="sxs-lookup"><span data-stu-id="befd2-129">For WAS activation, a generic host requires a set of activation parameters to derive the endpoint address at which new hosts can be activated.</span></span> <span data-ttu-id="befd2-130">WAS アクティブ化のアクティブ化パラメーターは、サイトの名前、サイトを基準としたアプリケーションの相対パス、アプリケーションを基準としたサービスの相対パスです。</span><span class="sxs-lookup"><span data-stu-id="befd2-130">The activation parameters for WAS activation are name of the site, path to the application relative to the site, and path to the service relative to the application.</span></span> <span data-ttu-id="befd2-131">SQL Workflow Instance Store は、<xref:System.Activities.DurableInstancing.SaveWorkflowCommand> の実行中にこれらのアクティブ化パラメーターを格納します。</span><span class="sxs-lookup"><span data-stu-id="befd2-131">The SQL Workflow Instance Store stores these activation parameters during the execution of the <xref:System.Activities.DurableInstancing.SaveWorkflowCommand>.</span></span>  
   
-## 実行可能インスタンス検出期間  
- SQL Workflow Instance Store の**実行可能インスタンス検出期間**プロパティは、前の検出サイクルの後、SQL Workflow Instance Store が実行可能またはアクティブ化可能なワークフロー インスタンスを永続性データベースで検出するために検出タスクを実行するまでの期間を指定します。このプロパティの詳細については、「[実行可能インスタンス検出期間](../../../docs/framework/windows-workflow-foundation//runnable-instances-detection-period.md)」を参照してください。
+## <a name="runnable-instances-detection-period"></a><span data-ttu-id="befd2-132">実行可能インスタンス検出期間</span><span class="sxs-lookup"><span data-stu-id="befd2-132">Runnable Instances Detection Period</span></span>  
+ <span data-ttu-id="befd2-133">**実行可能インスタンス検出期間**SQL Workflow Instance Store のプロパティを SQL Workflow Instance Store が実行可能またはアクティブ化可能なワークフローを検出する検出タスクを実行するまでの期間を指定します前回の検出サイクルの後に、永続性データベースでのインスタンス。</span><span class="sxs-lookup"><span data-stu-id="befd2-133">The **Runnable Instances Detection Period** property of the SQL Workflow Instance Store specifies the time period after which the SQL Workflow Instance Store runs a detection task to detect any runnable or activatable workflow instances in the persistence database after the previous detection cycle.</span></span> <span data-ttu-id="befd2-134">参照してください[実行可能インスタンス検出期間](../../../docs/framework/windows-workflow-foundation/runnable-instances-detection-period.md)このプロパティの詳細についてはします。</span><span class="sxs-lookup"><span data-stu-id="befd2-134">See [Runnable Instances Detection Period](../../../docs/framework/windows-workflow-foundation/runnable-instances-detection-period.md) for more details on this property.</span></span>

@@ -1,105 +1,112 @@
 ---
-title: "&lt;wsFederation&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;wsFederation&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c537f770-68bd-4f82-96ad-6424ad91369f
-caps.latest.revision: 8
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: e4779baa24e172affad2ed5e04451ad791d7cdf5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;wsFederation&gt;
-構成を提供、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> \(WSFAM\)。  
+# <a name="ltwsfederationgt"></a><span data-ttu-id="0e23c-102">&lt;wsFederation&gt;</span><span class="sxs-lookup"><span data-stu-id="0e23c-102">&lt;wsFederation&gt;</span></span>
+<span data-ttu-id="0e23c-103">構成を提供、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM)。</span><span class="sxs-lookup"><span data-stu-id="0e23c-103">Provides configuration for the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM).</span></span>  
   
-## 構文  
+<span data-ttu-id="0e23c-104">\<system.identityModel.services ></span><span class="sxs-lookup"><span data-stu-id="0e23c-104">\<system.identityModel.services></span></span>  
+<span data-ttu-id="0e23c-105">\<federationConfiguration ></span><span class="sxs-lookup"><span data-stu-id="0e23c-105">\<federationConfiguration></span></span>  
+<span data-ttu-id="0e23c-106">\<wsFederation ></span><span class="sxs-lookup"><span data-stu-id="0e23c-106">\<wsFederation></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="0e23c-107">構文</span><span class="sxs-lookup"><span data-stu-id="0e23c-107">Syntax</span></span>  
+  
+```xml
 <system.identityModel.services>  
-  <federationConfiguration>  
-    <wsFederation authenticationType=xs:string (URI)  
-        freshness=xs:decimal  
-        homerealm=xs:string (URI)  
-        issuer=xs:string (URI)  
-        persistentCookiesOnPassiveRedirects=xs:boolean  
-        passiveRedirectEnabled=xs:boolean  
-        policy=xs:string (URI)  
-        realm=xs:string (URI)  
-        reply=xs:string (URI)  
-        request=xs:string (URI)  
-        requestPtr=xs:string (URI)  
-        requireHttps=xs:boolean  
-        resource=xs:string (URI)  
-        signInQueryString=xs:string  
-        signOutQueryString=xs:string  
-        signOutReply=xs:string (URL)  
-    </wsFederation>  
-  </federationConfiguration>  
+  <federationConfiguration>  
+    <wsFederation authenticationType=xs:string (URI)  
+                  freshness=xs:decimal  
+                  homerealm=xs:string (URI)  
+                  issuer=xs:string (URI)  
+                  persistentCookiesOnPassiveRedirects=xs:boolean  
+                  passiveRedirectEnabled=xs:boolean  
+                  policy=xs:string (URI)  
+                  realm=xs:string (URI)  
+                  reply=xs:string (URI)  
+                  request=xs:string (URI)  
+                  requestPtr=xs:string (URI)  
+                  requireHttps=xs:boolean  
+                  resource=xs:string (URI)  
+                  signInQueryString=xs:string  
+                  signOutQueryString=xs:string  
+                  signOutReply=xs:string (URL)  
+    </wsFederation>  
+  </federationConfiguration>  
 </system.identityModel.services>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="0e23c-108">属性および要素</span><span class="sxs-lookup"><span data-stu-id="0e23c-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="0e23c-109">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="0e23c-110">属性</span><span class="sxs-lookup"><span data-stu-id="0e23c-110">Attributes</span></span>  
   
-|属性|Description|  
-|--------|-----------------|  
-|authenticationType|認証の種類を指定する URI。  WS フェデレーションのサインイン要求の wauth パラメーターを設定します。  省略可能です。  既定値は、wauth パラメーターが要求に含まれていないを指定します。 空の文字列です。|  
-|最新状態に維持|認証要求を目的の最大年齢 \(分単位\)。  WS フェデレーションのサインイン要求の wfresh パラメーターを設定します。  省略可能です。  既定値は 0 です。  省略可能です。 **Warning:**  次のリリースで。NET Framework 4.5 は、 `freshness`属性の種類が`xs:string`とその既定値は`null`。|  
-|homeRealm|ホーム ・ レルムの認証に使用する id プロバイダー \(IP\)。  WS フェデレーション サインイン要求の whr パラメーターを設定します。  省略可能です。  Whr パラメーターが要求に含まれていないことを指定します。 空の文字列が省略されます。|  
-|issuer|目的のトークン発行者の URI を指定します。  要求の基本 URL の Ws\-federation サインインとサインアウトの要求のために必要なに設定します。|  
-|persistentCookiesOnPassiveRedirects|認証の永続的な cookie が発行されたかどうかを指定します。  省略可能です。  既定値は"false"が、cookie が発行されませんでした。|  
-|passiveRedirectEnabled|WSFAM は、STS に認証されていない要求を自動的にリダイレクトできるかどうかを指定します。  省略可能です。  既定値は"true"が、認証されていない要求を自動的にリダイレクトされます。|  
-|policy|サインイン要求で使用する、関連するポリシーの場所を指定します。 URL を指定します。  既定値は空の文字列です。  WS フェデレーション サインイン要求の wp のパラメーターを設定します。  省略可能です。  既定値は、wp のパラメーター要求に含まれていないことを指定します。 空の文字列です。|  
-|realm|要求元の領域の URI。  \(依存元の相手 \(RP\) が、セキュリティ トークン サービス \(STS\) を識別する URI です。\)要求 wtrealm Ws\-federation サインイン要求のパラメーターを設定します。  必ず指定します。|  
-|返信|依存元パーティ \(RP\) が、セキュリティ トークン サービス \(STS から\) の返信を受信したいアドレスを識別する URL を指定します。  WS フェデレーションのサインイン要求の wreply パラメーターを設定します。  省略可能です。  既定値は、wreply パラメーターが要求に含まれていないを指定します。 空の文字列です。|  
-|要求|トークンの発行要求します。  WS フェデレーションのサインイン要求の wreq パラメーターを設定します。  省略可能です。  既定値は、wreq パラメーターが要求に含まれていないを指定します。 空の文字列です。  STS は、トークンを発行するのにはどのような知っている、wreq または wreqptr パラメーター内の要求を含まないを意味します。|  
-|requestPtr|トークン発行要求の場所を指定します。 URL を指定します。  要求の wreqptr パラメーターを設定します。  省略可能です。  既定値は、wreqptr パラメーターが要求に含まれていないを指定します。 空の文字列です。  STS は、トークンを発行するのにはどのような知っている、wreq または wreqptr パラメーター内の要求を含まないを意味します。|  
-|requireHttps|セキュリティ トークン サービス \(STS\) との通信が HTTPS プロトコルを使用する必要があるかどうかを指定します。  省略可能です。  既定値は"true"は、HTTPS を使用する必要があります。|  
-|リソース|アクセスして、リソース、依存元の相手 \(RP\) を識別する URI、セキュリティ トークン サービス \(STS\) にします。  省略可能です。  WS フェデレーションのサインイン要求の wres パラメーターを設定します。  省略可能です。  既定値は、wres パラメーターが要求に含まれていないを指定します。 空の文字列です。 **Note:**  wres は、従来型のパラメーターです。  指定、 `realm` wtrealm パラメーターを代わりに使用する属性。|  
-|signInQueryString|WS フェデレーション サインイン要求の URL にクエリ パラメーターを定義するアプリケーションを指定するのには、機能拡張ポイントを提供します。  省略可能です。  既定値は、要求で追加のパラメーターを含めるしないことを指定します。 空の文字列です。  パラメーターは次の形式を使用してクエリ文字列のフラグメントとして指定されている: `“param1=value1&param2=value2&param3=value3”`といった。 **Note:**  構成ファイル内の ' &"は、エンティティ参照を使用して、クエリ文字列内の文字を指定する必要が`&`。|  
-|signOutQueryString|WS フェデレーション サインイン要求の URL にクエリ パラメーターを定義するアプリケーションを指定するのには、機能拡張ポイントを提供します。  省略可能です。  既定値は、要求で追加のパラメーターを含めるしないことを指定します。 空の文字列です。  パラメーターは次の形式を使用してクエリ文字列のフラグメントとして指定されている: `“param1=value1&param2=value2&param3=value3”`といった。 **Note:**  構成ファイル内の ' &"は、エンティティ参照を使用して、クエリ文字列内の文字を指定する必要が`&`。|  
-|signOutReply|パッシブ、Ws\-federation プロトコルをサインアウト時のセキュリティ トークン サービス \(STS\) にクライアントがリダイレクトする URL を指定します。  Ws\-federation サインアウト要求には、wreply パラメーターを設定します。  省略可能です。  既定値は、要求で追加のパラメーターを含めるしないことを指定します。 空の文字列です。|  
+|<span data-ttu-id="0e23c-111">属性</span><span class="sxs-lookup"><span data-stu-id="0e23c-111">Attribute</span></span>|<span data-ttu-id="0e23c-112">説明</span><span class="sxs-lookup"><span data-stu-id="0e23c-112">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="0e23c-113">authenticationType</span><span class="sxs-lookup"><span data-stu-id="0e23c-113">authenticationType</span></span>|<span data-ttu-id="0e23c-114">認証の種類を指定する URI。</span><span class="sxs-lookup"><span data-stu-id="0e23c-114">A URI that specifies the authentication type.</span></span> <span data-ttu-id="0e23c-115">Ws-federation サインイン要求 wauth パラメーターを設定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-115">Sets the WS-Federation sign-in request wauth parameter.</span></span> <span data-ttu-id="0e23c-116">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-116">Optional.</span></span> <span data-ttu-id="0e23c-117">既定では、要求で wauth パラメーターが含まれていないことを指定する空の文字列です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-117">The default is an empty string, which specifies that the wauth parameter is not included in the request.</span></span>|  
+|<span data-ttu-id="0e23c-118">鮮度</span><span class="sxs-lookup"><span data-stu-id="0e23c-118">freshness</span></span>|<span data-ttu-id="0e23c-119">目的の最大期間、認証要求 (分) です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-119">The desired maximum age of authentication requests, in minutes.</span></span> <span data-ttu-id="0e23c-120">Ws-federation サインイン要求 wfresh パラメーターを設定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-120">Sets the WS-Federation sign-in request wfresh parameter.</span></span> <span data-ttu-id="0e23c-121">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-121">Optional.</span></span> <span data-ttu-id="0e23c-122">既定値は 0 です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-122">The default is zero.</span></span> <span data-ttu-id="0e23c-123">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-123">Optional.</span></span> <span data-ttu-id="0e23c-124">**警告:**の .NET Framework 4.5 では、次のリリースで、`freshness`型属性である`xs:string`し、その既定値に`null`です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-124">**Warning:**  In the next release of .NET Framework 4.5, the `freshness` attribute will be of type `xs:string` and its default value will be `null`.</span></span>|  
+|<span data-ttu-id="0e23c-125">homeRealm</span><span class="sxs-lookup"><span data-stu-id="0e23c-125">homeRealm</span></span>|<span data-ttu-id="0e23c-126">認証に使用する id プロバイダー (IP) のホーム領域。</span><span class="sxs-lookup"><span data-stu-id="0e23c-126">The home realm of the identity provider (IP) to use for authentication.</span></span> <span data-ttu-id="0e23c-127">Ws-federation サインイン要求 whr パラメーターを設定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-127">Sets the WS-Federation sign-in request whr parameter.</span></span> <span data-ttu-id="0e23c-128">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-128">Optional.</span></span> <span data-ttu-id="0e23c-129">既定では、要求に whr パラメーターが含まれていないことを指定する空の文字列です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-129">The default is an empty string, which specifies that the whr parameter is not included in the request.</span></span>|  
+|<span data-ttu-id="0e23c-130">issuer</span><span class="sxs-lookup"><span data-stu-id="0e23c-130">issuer</span></span>|<span data-ttu-id="0e23c-131">目的のトークン発行者の URI。</span><span class="sxs-lookup"><span data-stu-id="0e23c-131">The URI of the intended token issuer.</span></span> <span data-ttu-id="0e23c-132">ベース URL の Ws-federation サインイン要求およびサインアウト要求のために必要な設定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-132">Sets the base URL of WS-Federation sign-in requests and sign-out requests Required.</span></span>|  
+|<span data-ttu-id="0e23c-133">persistentCookiesOnPassiveRedirects</span><span class="sxs-lookup"><span data-stu-id="0e23c-133">persistentCookiesOnPassiveRedirects</span></span>|<span data-ttu-id="0e23c-134">認証で永続的な cookie が発行されるかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-134">Specifies whether persistent cookies are issued on authentication.</span></span> <span data-ttu-id="0e23c-135">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-135">Optional.</span></span> <span data-ttu-id="0e23c-136">既定値は"false"、cookie が発行されていません。</span><span class="sxs-lookup"><span data-stu-id="0e23c-136">The default is "false", cookies are not issued.</span></span>|  
+|<span data-ttu-id="0e23c-137">passiveRedirectEnabled</span><span class="sxs-lookup"><span data-stu-id="0e23c-137">passiveRedirectEnabled</span></span>|<span data-ttu-id="0e23c-138">自動的に承認されていない要求を STS にリダイレクトするため、WSFAM が有効になっているかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-138">Specifies whether the WSFAM is enabled to automatically redirect unauthorized requests to an STS.</span></span> <span data-ttu-id="0e23c-139">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-139">Optional.</span></span> <span data-ttu-id="0e23c-140">既定値は"true"、不正な要求が自動的にリダイレクトします。</span><span class="sxs-lookup"><span data-stu-id="0e23c-140">The default is "true", unauthorized requests are automatically redirected.</span></span>|  
+|<span data-ttu-id="0e23c-141">ポリシー</span><span class="sxs-lookup"><span data-stu-id="0e23c-141">policy</span></span>|<span data-ttu-id="0e23c-142">サインイン要求で使用する適切なポリシーの場所を指定する URL です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-142">A URL that specifies the location of the relevant policy to use on sign-in requests.</span></span> <span data-ttu-id="0e23c-143">既定値は空の文字列です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-143">The default is an empty string.</span></span> <span data-ttu-id="0e23c-144">Ws-federation サインイン要求 wp パラメーターを設定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-144">Sets the WS-Federation sign-in request wp parameter.</span></span> <span data-ttu-id="0e23c-145">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-145">Optional.</span></span> <span data-ttu-id="0e23c-146">既定では空の文字列、wp パラメーターが要求に含まれていないことを指定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-146">The default is an empty string, which specifies that the wp parameter is not included in the request.</span></span>|  
+|<span data-ttu-id="0e23c-147">realm</span><span class="sxs-lookup"><span data-stu-id="0e23c-147">realm</span></span>|<span data-ttu-id="0e23c-148">要求元の領域の URI。</span><span class="sxs-lookup"><span data-stu-id="0e23c-148">The URI of the requesting realm.</span></span> <span data-ttu-id="0e23c-149">(識別する URI を証明書利用者 (RP) セキュリティ トークン サービス (STS) にします。)Wtrealm Ws-federation サインイン要求の要求パラメーターを設定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-149">(A URI that identifies the relying party (RP) to the security token service (STS).) Sets the request wtrealm WS-Federation sign-in request parameter.</span></span> <span data-ttu-id="0e23c-150">必須です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-150">Required.</span></span>|  
+|<span data-ttu-id="0e23c-151">応答</span><span class="sxs-lookup"><span data-stu-id="0e23c-151">reply</span></span>|<span data-ttu-id="0e23c-152">これで、証明書利用者 (RP) アプリケーションにはセキュリティ トークン サービス (STS) からの応答を受信するアドレスを識別する URL です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-152">A URL that identifies the address at which the relying party (RP) application would like to receive replies from the Security Token Service (STS).</span></span> <span data-ttu-id="0e23c-153">Ws-federation サインイン要求 wreply パラメーターを設定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-153">Sets the WS-Federation sign-in request wreply parameter.</span></span> <span data-ttu-id="0e23c-154">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-154">Optional.</span></span> <span data-ttu-id="0e23c-155">既定では空の文字列、wreply パラメーターが要求に含まれていないことを指定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-155">The default is an empty string, which specifies that the wreply parameter is not included in the request.</span></span>|  
+|<span data-ttu-id="0e23c-156">要求</span><span class="sxs-lookup"><span data-stu-id="0e23c-156">request</span></span>|<span data-ttu-id="0e23c-157">トークン発行要求。</span><span class="sxs-lookup"><span data-stu-id="0e23c-157">The token issuance request.</span></span> <span data-ttu-id="0e23c-158">Ws-federation サインイン要求 wreq パラメーターを設定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-158">Sets the WS-Federation sign-in request wreq parameter.</span></span> <span data-ttu-id="0e23c-159">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-159">Optional.</span></span> <span data-ttu-id="0e23c-160">既定では、要求で wreq パラメーターが含まれていないことを指定する空の文字列です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-160">The default is an empty string, which specifies that the wreq parameter is not included in the request.</span></span> <span data-ttu-id="0e23c-161">要求に含めない、wreq または wreqptr パラメーターは、STS が発行するトークンの種類を知っていることを意味します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-161">Not including the wreq or the wreqptr parameter in the request implies that the STS knows what kind of token to issue.</span></span>|  
+|<span data-ttu-id="0e23c-162">requestPtr</span><span class="sxs-lookup"><span data-stu-id="0e23c-162">requestPtr</span></span>|<span data-ttu-id="0e23c-163">トークン発行要求の場所を指定する URL です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-163">A URL that specifies the location of the token issuance request.</span></span> <span data-ttu-id="0e23c-164">要求 wreqptr パラメーターを設定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-164">Sets the request wreqptr parameter.</span></span> <span data-ttu-id="0e23c-165">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-165">Optional.</span></span> <span data-ttu-id="0e23c-166">既定では、要求で wreqptr パラメーターが含まれていないことを指定する空の文字列です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-166">The default is an empty string, which specifies that the wreqptr parameter is not included in the request.</span></span> <span data-ttu-id="0e23c-167">要求に含めない、wreq または wreqptr パラメーターは、STS が発行するトークンの種類を知っていることを意味します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-167">Not including the wreq or the wreqptr parameter in the request implies that the STS knows what kind of token to issue.</span></span>|  
+|<span data-ttu-id="0e23c-168">requireHttps</span><span class="sxs-lookup"><span data-stu-id="0e23c-168">requireHttps</span></span>|<span data-ttu-id="0e23c-169">セキュリティ トークン サービス (STS) との通信で HTTPS プロトコルを使用する必要があるかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-169">Specifies whether communication with the security token service (STS) must use HTTPS protocol.</span></span> <span data-ttu-id="0e23c-170">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-170">Optional.</span></span> <span data-ttu-id="0e23c-171">既定値は"true"、HTTPS を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0e23c-171">The default is "true", HTTPS must be used.</span></span>|  
+|<span data-ttu-id="0e23c-172">リソース</span><span class="sxs-lookup"><span data-stu-id="0e23c-172">resource</span></span>|<span data-ttu-id="0e23c-173">証明書利用者 (RP)、アクセスされるリソースを識別する URI をセキュリティ トークン サービス (STS) にします。</span><span class="sxs-lookup"><span data-stu-id="0e23c-173">A URI that identifies the resource being accessed, the relying party (RP), to the to the security token service (STS).</span></span> <span data-ttu-id="0e23c-174">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-174">Optional.</span></span> <span data-ttu-id="0e23c-175">Ws-federation サインイン要求 wres パラメーターを設定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-175">Sets the WS-Federation sign-in request wres parameter.</span></span> <span data-ttu-id="0e23c-176">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-176">Optional.</span></span> <span data-ttu-id="0e23c-177">既定では、要求で wres パラメーターが含まれていないことを指定する空の文字列です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-177">The default is an empty string, which specifies that the wres parameter is not included in the request.</span></span> <span data-ttu-id="0e23c-178">**注:** wres は従来のパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="0e23c-178">**Note:**  wres is a legacy parameter.</span></span> <span data-ttu-id="0e23c-179">指定して、 `realm` wtrealm パラメーターを代わりに使用する属性。</span><span class="sxs-lookup"><span data-stu-id="0e23c-179">Specify the `realm` attribute to use the wtrealm parameter instead.</span></span>|  
+|<span data-ttu-id="0e23c-180">signInQueryString</span><span class="sxs-lookup"><span data-stu-id="0e23c-180">signInQueryString</span></span>|<span data-ttu-id="0e23c-181">Ws-federation サインイン要求 URL で定義されているアプリケーションのクエリ パラメーターを指定するための機能拡張ポイントを提供します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-181">Provides an extensibility point to specify application defined query parameters in the WS-Federation sign-in request URL.</span></span> <span data-ttu-id="0e23c-182">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-182">Optional.</span></span> <span data-ttu-id="0e23c-183">既定では、要求に追加のパラメーターを含めるない必要がありますを指定する空の文字列です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-183">The default is an empty string, which specifies that no additional parameters should be included in the request.</span></span> <span data-ttu-id="0e23c-184">パラメーターは、次の形式を使用してクエリ文字列のフラグメントとして指定します。`"param1=value1&param2=value2&param3=value3"`などです。</span><span class="sxs-lookup"><span data-stu-id="0e23c-184">The parameters are specified as a query string fragment using the following form: `"param1=value1&param2=value2&param3=value3"` and so on.</span></span> <span data-ttu-id="0e23c-185">**注:**構成ファイルで、' (& a)"クエリ文字列内の文字は、そのエンティティ参照を使用して指定する必要があります`&`です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-185">**Note:**  In a configuration file the ‘&" character in the query string must be specified using its entity reference, `&`.</span></span>|  
+|<span data-ttu-id="0e23c-186">signOutQueryString</span><span class="sxs-lookup"><span data-stu-id="0e23c-186">signOutQueryString</span></span>|<span data-ttu-id="0e23c-187">Ws-federation サインイン要求 URL で定義されているアプリケーションのクエリ パラメーターを指定するための機能拡張ポイントを提供します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-187">Provides an extensibility point to specify application defined query parameters in the WS-Federation sign-in request URL.</span></span> <span data-ttu-id="0e23c-188">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-188">Optional.</span></span> <span data-ttu-id="0e23c-189">既定では、要求に追加のパラメーターを含めるない必要がありますを指定する空の文字列です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-189">The default is an empty string, which specifies that no additional parameters should be included in the request.</span></span> <span data-ttu-id="0e23c-190">パラメーターは、次の形式を使用してクエリ文字列のフラグメントとして指定します。`"param1=value1&param2=value2&param3=value3"`などです。</span><span class="sxs-lookup"><span data-stu-id="0e23c-190">The parameters are specified as a query string fragment using the following form: `"param1=value1&param2=value2&param3=value3"` and so on.</span></span> <span data-ttu-id="0e23c-191">**注:**構成ファイルで、' (& a)"クエリ文字列内の文字は、そのエンティティ参照を使用して指定する必要があります`&`です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-191">**Note:**  In a configuration file the ‘&" character in the query string must be specified using its entity reference, `&`.</span></span>|  
+|<span data-ttu-id="0e23c-192">signOutReply</span><span class="sxs-lookup"><span data-stu-id="0e23c-192">signOutReply</span></span>|<span data-ttu-id="0e23c-193">パッシブ、Ws-federation プロトコルを介してサインアウト中にセキュリティ トークン サービス (STS) によって、クライアントをリダイレクトする URL を指定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-193">Specifies the URL to which the client should be redirected by the security token service (STS) during passive sign-out through the WS-Federation protocol.</span></span> <span data-ttu-id="0e23c-194">Ws-federation サインアウト要求を wreply パラメーターを設定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-194">Sets the wreply parameter on a WS-Federation sign-out request.</span></span> <span data-ttu-id="0e23c-195">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-195">Optional.</span></span> <span data-ttu-id="0e23c-196">既定では、要求に追加のパラメーターを含めるない必要がありますを指定する空の文字列です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-196">The default is an empty string, which specifies that no additional parameters should be included in the request.</span></span>|  
   
-### 子要素  
- なし  
+### <a name="child-elements"></a><span data-ttu-id="0e23c-197">子要素</span><span class="sxs-lookup"><span data-stu-id="0e23c-197">Child Elements</span></span>  
+ <span data-ttu-id="0e23c-198">なし</span><span class="sxs-lookup"><span data-stu-id="0e23c-198">None</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="0e23c-199">親要素</span><span class="sxs-lookup"><span data-stu-id="0e23c-199">Parent Elements</span></span>  
   
-|要素|Description|  
-|--------|-----------------|  
-|[\<federationConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)|構成設定を含む、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> \(WSFAM\) と、 <xref:System.IdentityModel.Services.SessionAuthenticationModule> \(SAM\)。|  
+|<span data-ttu-id="0e23c-200">要素</span><span class="sxs-lookup"><span data-stu-id="0e23c-200">Element</span></span>|<span data-ttu-id="0e23c-201">説明</span><span class="sxs-lookup"><span data-stu-id="0e23c-201">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="0e23c-202">\<federationConfiguration></span><span class="sxs-lookup"><span data-stu-id="0e23c-202">\<federationConfiguration></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)|<span data-ttu-id="0e23c-203">構成設定が含まれています、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) および<xref:System.IdentityModel.Services.SessionAuthenticationModule>(SAM)。</span><span class="sxs-lookup"><span data-stu-id="0e23c-203">Contains the settings that configure the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) and the <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM).</span></span>|  
   
-## 解説  
- 使用できます、 `<wsFederation>` 、WSFAM の Ws\-federation パラメーターの既定値の設定および既定の動作を構成するのには。  WS フェデレーション パラメーターの設定\] で定義されている、 `<wsFederation>`要素によって公開されるのと同じプロパティを設定する、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>クラス。  これらのプロパティを使用すると、WSFAM によって発行されるすべての要求を同じです。  WSFAM によって公開されるイベントのイベント ハンドラーを追加することにより処理要求の実行中に、Ws\-federation パラメーターを動的に変更できます。 例えば、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベント。  詳細については、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule> クラスのドキュメントを参照してください。  
+## <a name="remarks"></a><span data-ttu-id="0e23c-204">コメント</span><span class="sxs-lookup"><span data-stu-id="0e23c-204">Remarks</span></span>  
+ <span data-ttu-id="0e23c-205">使用することができます、 `<wsFederation>` WSFAM の Ws-federation パラメーターの既定の設定と既定の動作を構成する要素。</span><span class="sxs-lookup"><span data-stu-id="0e23c-205">You can use the `<wsFederation>` element to configure default WS-Federation parameter settings and default behavior for the WSFAM.</span></span> <span data-ttu-id="0e23c-206">定義されている WS フェデレーション パラメーターの設定、`<wsFederation>`要素によって公開されている同等のプロパティの設定、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule>クラスです。</span><span class="sxs-lookup"><span data-stu-id="0e23c-206">WS-Federation parameter settings defined under the `<wsFederation>` element set equivalent properties exposed by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> class.</span></span> <span data-ttu-id="0e23c-207">これらのプロパティは、WSFAM によって発行された要求のたびに同じです。</span><span class="sxs-lookup"><span data-stu-id="0e23c-207">These properties remain the same for every request issued by the WSFAM.</span></span> <span data-ttu-id="0e23c-208">Ws-federation パラメーターは、要求 WSFAM; によって公開されているイベントのイベント ハンドラーを追加することで処理中に動的に変更することができます。たとえば、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベント。</span><span class="sxs-lookup"><span data-stu-id="0e23c-208">You can change the WS-Federation parameters dynamically during request processing by adding event handlers for the events exposed by WSFAM; for example, the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event.</span></span> <span data-ttu-id="0e23c-209">詳細については、ドキュメントを参照して、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule>クラスです。</span><span class="sxs-lookup"><span data-stu-id="0e23c-209">For more information, see the documentation for the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> class.</span></span>  
   
- `<wsFederation>`要素で表される、 <xref:System.IdentityModel.Services.Configuration.WSFederationElement>クラス。  構成オブジェクトによって表される、 <xref:System.IdentityModel.Services.Configuration.WSFederationConfiguration>クラス。  1 つの<xref:System.IdentityModel.Services.Configuration.WSFederationConfiguration>インスタンスの設定には、 <xref:System.IdentityModel.Services.Configuration.FederationConfiguration>を通じてアクセスされるオブジェクト、 <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=fullName>プロパティと構成、WSFAM を提供します。  
+ <span data-ttu-id="0e23c-210">`<wsFederation>`要素として表されます、<xref:System.IdentityModel.Services.Configuration.WSFederationElement>クラスです。</span><span class="sxs-lookup"><span data-stu-id="0e23c-210">The `<wsFederation>` element is represented by the <xref:System.IdentityModel.Services.Configuration.WSFederationElement> class.</span></span> <span data-ttu-id="0e23c-211">構成オブジェクト自体がによって表される、<xref:System.IdentityModel.Services.Configuration.WsFederationConfiguration>クラスです。</span><span class="sxs-lookup"><span data-stu-id="0e23c-211">The configuration object itself is represented by the <xref:System.IdentityModel.Services.Configuration.WsFederationConfiguration> class.</span></span> <span data-ttu-id="0e23c-212">1 つ<xref:System.IdentityModel.Services.Configuration.WsFederationConfiguration>インスタンスに設定されて、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>を介してアクセスされるオブジェクト、<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>プロパティ、WSFAM の構成を提供します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-212">A single <xref:System.IdentityModel.Services.Configuration.WsFederationConfiguration> instance is set on the <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> object that is accessed through the <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType> property and provides configuration for the WSFAM.</span></span>  
   
-## 使用例  
- 次の XML に示す、 `<wsFederation>` 、WSFAM の設定を指定する要素。  
+## <a name="example"></a><span data-ttu-id="0e23c-213">例</span><span class="sxs-lookup"><span data-stu-id="0e23c-213">Example</span></span>  
+ <span data-ttu-id="0e23c-214">次の XML に示します、`<wsFederation>`要素、WSFAM の設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="0e23c-214">The following XML shows a `<wsFederation>` element that specifies settings for the WSFAM.</span></span>  
   
 > [!WARNING]
->  この例では、WSFAM を HTTPS を使用する必要はありません。  これは、ためには、 `requireHttps`の属性、 `<wsFederation>`が要素を設定`false`。  セキュリティ上のリスクを提示可能性がありますようにこの設定ほとんどの運用環境でしないでください。  
+>  <span data-ttu-id="0e23c-215">この例では、WSFAM は HTTPS を使用する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="0e23c-215">In this example, the WSFAM is not required to use HTTPS.</span></span> <span data-ttu-id="0e23c-216">これは、ため、`requireHttps`属性を`<wsFederation>`要素が設定`false`です。</span><span class="sxs-lookup"><span data-stu-id="0e23c-216">This is because the `requireHttps` attribute on the `<wsFederation>` element is set `false`.</span></span> <span data-ttu-id="0e23c-217">ほとんどの実稼働環境には、セキュリティ リスクがあると、この設定はお勧めできません。</span><span class="sxs-lookup"><span data-stu-id="0e23c-217">This setting is not recommended for most production environments as it may present a security risk.</span></span>  
   
-```  
+```xml
 <wsFederation passiveRedirectEnabled="true"   
-  issuer="http://localhost:15839/wsFederationSTS/Issue"   
-  realm="http://localhost:50969/"   
-  reply="http://localhost:50969/"   
-  requireHttps="false"   
-  signOutReply="http://localhost:50969/SignedOutPage.html"   
-  signOutQueryString="Param1=value2&Param2=value2"   
-  persistentCookiesOnPassiveRedirects="true" />  
-  
+              issuer="http://localhost:15839/wsFederationSTS/Issue"   
+              realm="http://localhost:50969/"   
+              reply="http://localhost:50969/"   
+              requireHttps="false"   
+              signOutReply="http://localhost:50969/SignedOutPage.html"   
+              signOutQueryString="Param1=value2&Param2=value2"   
+              persistentCookiesOnPassiveRedirects="true" />
 ```  
   
-## 参照  
- <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>   
- <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=fullName>
+## <a name="see-also"></a><span data-ttu-id="0e23c-218">関連項目</span><span class="sxs-lookup"><span data-stu-id="0e23c-218">See Also</span></span>  
+ <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>  
+ <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>

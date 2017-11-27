@@ -1,25 +1,28 @@
 ---
-title: "コントラクト | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Contract1
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: aa00f6b3-7e1f-4213-841a-206463fca20b
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 2e92c5d804fca3c04506e951a5c341c89eed1c54
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# コントラクト
-Contract  
+# <a name="contract"></a><span data-ttu-id="d65a2-102">コントラクト</span><span class="sxs-lookup"><span data-stu-id="d65a2-102">Contract</span></span>
+<span data-ttu-id="d65a2-103">コントラクト</span><span class="sxs-lookup"><span data-stu-id="d65a2-103">Contract</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="d65a2-104">構文</span><span class="sxs-lookup"><span data-stu-id="d65a2-104">Syntax</span></span>  
   
 ```  
 class Contract  
@@ -36,80 +39,80 @@ class Contract
 };  
 ```  
   
-## メソッド  
- Contract クラスで定義されているメソッドはありません。  
+## <a name="methods"></a><span data-ttu-id="d65a2-105">メソッド</span><span class="sxs-lookup"><span data-stu-id="d65a2-105">Methods</span></span>  
+ <span data-ttu-id="d65a2-106">Contract クラスで定義されているメソッドはありません。</span><span class="sxs-lookup"><span data-stu-id="d65a2-106">The Contract class does not define any methods.</span></span>  
   
-## プロパティ  
- Contract クラスには、次のプロパティがあります。  
+## <a name="properties"></a><span data-ttu-id="d65a2-107">プロパティ</span><span class="sxs-lookup"><span data-stu-id="d65a2-107">Properties</span></span>  
+ <span data-ttu-id="d65a2-108">Contract クラスには、次のプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="d65a2-108">The Contract class has the following properties:</span></span>  
   
-### AppDomainId  
- データ型 : sint32  
+### <a name="appdomainid"></a><span data-ttu-id="d65a2-109">AppDomainId</span><span class="sxs-lookup"><span data-stu-id="d65a2-109">AppDomainId</span></span>  
+ <span data-ttu-id="d65a2-110">データ型 : sint32</span><span class="sxs-lookup"><span data-stu-id="d65a2-110">Data type: sint32</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="d65a2-111">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="d65a2-111">Access type: Read-only</span></span>  
   
- コントラクトをホストする appdomain の appdomain ID。  
+ <span data-ttu-id="d65a2-112">コントラクトをホストする appdomain の appdomain ID。</span><span class="sxs-lookup"><span data-stu-id="d65a2-112">The appdomain id of the appdomain that hosts the contract.</span></span>  
   
-### Behaviors  
- データ型 : Behavior 配列  
+### <a name="behaviors"></a><span data-ttu-id="d65a2-113">ビヘイビアー</span><span class="sxs-lookup"><span data-stu-id="d65a2-113">Behaviors</span></span>  
+ <span data-ttu-id="d65a2-114">データ型 : Behavior array</span><span class="sxs-lookup"><span data-stu-id="d65a2-114">Data type: Behavior array</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="d65a2-115">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="d65a2-115">Access type: Read-only</span></span>  
   
- このコントラクトに関連付けられている動作。  
+ <span data-ttu-id="d65a2-116">このコントラクトに関連付けられている動作。</span><span class="sxs-lookup"><span data-stu-id="d65a2-116">The behaviors associated with this contract.</span></span>  
   
-### Name  
- データ型 : string  
+### <a name="name"></a><span data-ttu-id="d65a2-117">名前</span><span class="sxs-lookup"><span data-stu-id="d65a2-117">Name</span></span>  
+ <span data-ttu-id="d65a2-118">データ型: string</span><span class="sxs-lookup"><span data-stu-id="d65a2-118">Data type: string</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="d65a2-119">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="d65a2-119">Access type: Read-only</span></span>  
   
- WSDL でのコントラクトの名前。  
+ <span data-ttu-id="d65a2-120">WSDL でのコントラクトの名前。</span><span class="sxs-lookup"><span data-stu-id="d65a2-120">The name of the contract in WSDL.</span></span>  
   
-### Namespace  
- データ型 : string  
+### <a name="namespace"></a><span data-ttu-id="d65a2-121">名前空間</span><span class="sxs-lookup"><span data-stu-id="d65a2-121">Namespace</span></span>  
+ <span data-ttu-id="d65a2-122">データ型: string</span><span class="sxs-lookup"><span data-stu-id="d65a2-122">Data type: string</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="d65a2-123">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="d65a2-123">Access type: Read-only</span></span>  
   
- WSDL での `portType` 要素の名前空間。  
+ <span data-ttu-id="d65a2-124">WSDL での `portType` 要素の名前空間。</span><span class="sxs-lookup"><span data-stu-id="d65a2-124">The namespace of the `portType` element in WSDL.</span></span>  
   
-### Operations  
- データ型 : Operation 配列  
+### <a name="operations"></a><span data-ttu-id="d65a2-125">操作</span><span class="sxs-lookup"><span data-stu-id="d65a2-125">Operations</span></span>  
+ <span data-ttu-id="d65a2-126">データ型 : Operation 配列</span><span class="sxs-lookup"><span data-stu-id="d65a2-126">Data type: Operation array</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="d65a2-127">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="d65a2-127">Access type: Read-only</span></span>  
   
- このコントラクトの操作。  
+ <span data-ttu-id="d65a2-128">このコントラクトの操作。</span><span class="sxs-lookup"><span data-stu-id="d65a2-128">The operations of this contract.</span></span>  
   
-### ProcessId  
- データ型 : sint32  
+### <a name="processid"></a><span data-ttu-id="d65a2-129">ProcessId</span><span class="sxs-lookup"><span data-stu-id="d65a2-129">ProcessId</span></span>  
+ <span data-ttu-id="d65a2-130">データ型 : sint32</span><span class="sxs-lookup"><span data-stu-id="d65a2-130">Data type: sint32</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="d65a2-131">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="d65a2-131">Access type: Read-only</span></span>  
   
- コントラクトをホストするプロセスのプロセス ID。  
+ <span data-ttu-id="d65a2-132">コントラクトをホストするプロセスのプロセス ID。</span><span class="sxs-lookup"><span data-stu-id="d65a2-132">The process Id of the process that hosts the contract.</span></span>  
   
-### ref  
- データ型 : Contract  
+### <a name="ref"></a><span data-ttu-id="d65a2-133">ref</span><span class="sxs-lookup"><span data-stu-id="d65a2-133">ref</span></span>  
+ <span data-ttu-id="d65a2-134">データ型 : Contract</span><span class="sxs-lookup"><span data-stu-id="d65a2-134">Data type: Contract</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="d65a2-135">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="d65a2-135">Access type: Read-only</span></span>  
   
- コントラクトが双方向コントラクトのときのコールバックの型。  
+ <span data-ttu-id="d65a2-136">コントラクトが双方向コントラクトのときのコールバックの型。</span><span class="sxs-lookup"><span data-stu-id="d65a2-136">The type of callback when the contract is a duplex contract.</span></span>  
   
-### SessionMode  
- データ型 : string  
+### <a name="sessionmode"></a><span data-ttu-id="d65a2-137">SessionMode</span><span class="sxs-lookup"><span data-stu-id="d65a2-137">SessionMode</span></span>  
+ <span data-ttu-id="d65a2-138">データ型: string</span><span class="sxs-lookup"><span data-stu-id="d65a2-138">Data type: string</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="d65a2-139">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="d65a2-139">Access type: Read-only</span></span>  
   
- コントラクトでチャネル セッションを使用するために、このコントラクトに関連付けられたバインディングが必要かどうかを示します。  
+ <span data-ttu-id="d65a2-140">コントラクトでチャネル セッションを使用するために、このコントラクトに関連付けられたバインディングが必要かどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="d65a2-140">Indicates whether the contract requires the binding associated with this contract to use channel sessions.</span></span>  
   
-### Type  
- データ型 : string  
+### <a name="type"></a><span data-ttu-id="d65a2-141">型</span><span class="sxs-lookup"><span data-stu-id="d65a2-141">Type</span></span>  
+ <span data-ttu-id="d65a2-142">データ型: string</span><span class="sxs-lookup"><span data-stu-id="d65a2-142">Data type: string</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="d65a2-143">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="d65a2-143">Access type: Read-only</span></span>  
   
- コントラクトの型。  
+ <span data-ttu-id="d65a2-144">コントラクトの型。</span><span class="sxs-lookup"><span data-stu-id="d65a2-144">The type of the contract.</span></span>  
   
-## 要件  
+## <a name="requirements"></a><span data-ttu-id="d65a2-145">要件</span><span class="sxs-lookup"><span data-stu-id="d65a2-145">Requirements</span></span>  
   
-|MOF|Servicemodel.mof にて宣言済み。|  
-|---------|------------------------------|  
-|名前空間|root\\ServiceModel で定義|  
+|<span data-ttu-id="d65a2-146">MOF</span><span class="sxs-lookup"><span data-stu-id="d65a2-146">MOF</span></span>|<span data-ttu-id="d65a2-147">Servicemodel.mof にて宣言済み。</span><span class="sxs-lookup"><span data-stu-id="d65a2-147">Declared in Servicemodel.mof.</span></span>|  
+|---------|-----------------------------------|  
+|<span data-ttu-id="d65a2-148">Namespace</span><span class="sxs-lookup"><span data-stu-id="d65a2-148">Namespace</span></span>|<span data-ttu-id="d65a2-149">root\ServiceModel で定義</span><span class="sxs-lookup"><span data-stu-id="d65a2-149">Defined in root\ServiceModel</span></span>|  
   
-## 参照  
+## <a name="see-also"></a><span data-ttu-id="d65a2-150">関連項目</span><span class="sxs-lookup"><span data-stu-id="d65a2-150">See Also</span></span>  
  <xref:System.ServiceModel.Description.ContractDescription>

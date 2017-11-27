@@ -1,45 +1,48 @@
 ---
-title: "Getting Started (LINQ to DataSet) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "はじめに (LINQ to DataSet)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 97522119-f6a3-434c-a1ec-17396b74a556
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 8197fefdfe54eae46aa4e593fd5014a4485f9a48
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Getting Started (LINQ to DataSet)
-ここでは、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] を使ったプログラミングに関する概要を説明します。  
+# <a name="getting-started-linq-to-dataset"></a><span data-ttu-id="d36e8-102">はじめに (LINQ to DataSet)</span><span class="sxs-lookup"><span data-stu-id="d36e8-102">Getting Started (LINQ to DataSet)</span></span>
+<span data-ttu-id="d36e8-103">ここでは、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] を使ったプログラミングに関する概要を説明します。</span><span class="sxs-lookup"><span data-stu-id="d36e8-103">This section provides introductory information about programming with [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].</span></span>  
   
-## このセクションの内容  
- [LINQ to DataSet Overview](../../../../docs/framework/data/adonet/linq-to-dataset-overview.md)  
- [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] の概要について説明します。  
+## <a name="in-this-section"></a><span data-ttu-id="d36e8-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="d36e8-104">In This Section</span></span>  
+ [<span data-ttu-id="d36e8-105">LINQ to DataSet の概要</span><span class="sxs-lookup"><span data-stu-id="d36e8-105">LINQ to DataSet Overview</span></span>](../../../../docs/framework/data/adonet/linq-to-dataset-overview.md)  
+ <span data-ttu-id="d36e8-106">[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] の概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="d36e8-106">Provides a conceptual overview of [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].</span></span>  
   
- [Loading Data Into a DataSet](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)  
- <xref:System.Data.DataSet> にデータを読み込む例について説明します。  この例では、<xref:System.Data.Common.DataAdapter> を使用して、データベースからデータを取得します。  
+ [<span data-ttu-id="d36e8-107">データセットにデータを読み込む</span><span class="sxs-lookup"><span data-stu-id="d36e8-107">Loading Data Into a DataSet</span></span>](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)  
+ <span data-ttu-id="d36e8-108"><xref:System.Data.DataSet> にデータを読み込む例について説明します。</span><span class="sxs-lookup"><span data-stu-id="d36e8-108">Provides an example of populating a <xref:System.Data.DataSet>.</span></span> <span data-ttu-id="d36e8-109">この例では、<xref:System.Data.Common.DataAdapter> を使用して、データベースからデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="d36e8-109">This example uses <xref:System.Data.Common.DataAdapter> to retrieve data from a database.</span></span>  
   
- [Downloading Sample Databases](../../../../docs/framework/data/adonet/downloading-sample-databases-linq-to-dataset.md)  
- [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] セクションのサンプル全般にわたって使用される AdventureWorks サンプル データベースのダウンロードに関する情報を提供します。  
+ [<span data-ttu-id="d36e8-110">サンプル データベースのダウンロード</span><span class="sxs-lookup"><span data-stu-id="d36e8-110">Downloading Sample Databases</span></span>](../../../../docs/framework/data/adonet/downloading-sample-databases-linq-to-dataset.md)  
+ <span data-ttu-id="d36e8-111">[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] セクションのサンプル全般にわたって使用される AdventureWorks サンプル データベースのダウンロードに関する情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="d36e8-111">Provides information about downloading the AdventureWorks sample database, which is used in the samples throughout the [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] section.</span></span>  
   
- [How to: Create a LINQ to DataSet Project In Visual Studio](../../../../docs/framework/data/adonet/how-to-create-a-linq-to-dataset-project-in-vs.md)  
- Visual Studio での [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] プロジェクトの作成に関する情報を提供します。  
+ [<span data-ttu-id="d36e8-112">方法: Visual Studio での LINQ to DataSet プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="d36e8-112">How to: Create a LINQ to DataSet Project In Visual Studio</span></span>](../../../../docs/framework/data/adonet/how-to-create-a-linq-to-dataset-project-in-vs.md)  
+ <span data-ttu-id="d36e8-113">Visual Studio での [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] プロジェクトの作成に関する情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="d36e8-113">Provides information about creating a [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] project in Visual Studio.</span></span>  
   
-## 関連項目  
+## <a name="reference"></a><span data-ttu-id="d36e8-114">参照</span><span class="sxs-lookup"><span data-stu-id="d36e8-114">Reference</span></span>  
  <xref:System.Data.DataRowComparer>  
   
  <xref:System.Data.DataRowExtensions>  
   
  <xref:System.Data.DataTableExtensions>  
   
-## 参照  
- [LINQ to ADO.NET](http://msdn.microsoft.com/ja-jp/be3297b9-1b54-4d4c-82a8-add0d79c2006)   
- [LINQ \(Language\-Integrated Query\)](../Topic/LINQ%20\(Language-Integrated%20Query\).md)   
- [Getting Started with LINQ](http://msdn.microsoft.com/ja-jp/6cc9af04-950a-4cc3-83d4-2aeb4abe4de9)
+## <a name="see-also"></a><span data-ttu-id="d36e8-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="d36e8-115">See Also</span></span>  
+ [<span data-ttu-id="d36e8-116">LINQ to ADO.NET</span><span class="sxs-lookup"><span data-stu-id="d36e8-116">LINQ to ADO.NET</span></span>](http://msdn.microsoft.com/en-us/be3297b9-1b54-4d4c-82a8-add0d79c2006)  
+ [<span data-ttu-id="d36e8-117">統合言語クエリ (LINQ)</span><span class="sxs-lookup"><span data-stu-id="d36e8-117">LINQ (Language-Integrated Query)</span></span>](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
+ [<span data-ttu-id="d36e8-118">はじめに (LINQ について)</span><span class="sxs-lookup"><span data-stu-id="d36e8-118">Getting Started with LINQ</span></span>](http://msdn.microsoft.com/en-us/6cc9af04-950a-4cc3-83d4-2aeb4abe4de9)

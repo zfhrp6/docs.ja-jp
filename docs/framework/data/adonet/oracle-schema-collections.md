@@ -1,390 +1,393 @@
 ---
-title: "Oracle スキーマ コレクション | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Oracle スキーマ コレクション"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 89a75de8-dee8-45e2-a97f-254d7e62e7e1
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 828e5ae0a9db2542debf8e09e5d8875fcea0ba23
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Oracle スキーマ コレクション
-Microsoft .NET Framework Data Provider for Oracle は、共通のスキーマ コレクションに加えて次のスキーマ コレクションをサポートしています。  
+# <a name="oracle-schema-collections"></a><span data-ttu-id="993f1-102">Oracle スキーマ コレクション</span><span class="sxs-lookup"><span data-stu-id="993f1-102">Oracle Schema Collections</span></span>
+<span data-ttu-id="993f1-103">Microsoft .NET Framework Data Provider for Oracle は、共通のスキーマ コレクションに加えて次のスキーマ コレクションをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="993f1-103">The Microsoft .NET Framework Data Provider for Oracle supports the following specific schema collections in addition to the common schema collections:</span></span>  
   
--   列  
+-   <span data-ttu-id="993f1-104">列</span><span class="sxs-lookup"><span data-stu-id="993f1-104">Columns</span></span>  
   
--   Indexes  
+-   <span data-ttu-id="993f1-105">Indexes</span><span class="sxs-lookup"><span data-stu-id="993f1-105">Indexes</span></span>  
   
--   IndexColumns  
+-   <span data-ttu-id="993f1-106">IndexColumns</span><span class="sxs-lookup"><span data-stu-id="993f1-106">IndexColumns</span></span>  
   
--   手順  
+-   <span data-ttu-id="993f1-107">手順</span><span class="sxs-lookup"><span data-stu-id="993f1-107">Procedures</span></span>  
   
--   シーケンス  
+-   <span data-ttu-id="993f1-108">シーケンス</span><span class="sxs-lookup"><span data-stu-id="993f1-108">Sequences</span></span>  
   
--   Synonyms  
+-   <span data-ttu-id="993f1-109">Synonyms</span><span class="sxs-lookup"><span data-stu-id="993f1-109">Synonyms</span></span>  
   
--   \[テーブル\]  
+-   <span data-ttu-id="993f1-110">[テーブル]</span><span class="sxs-lookup"><span data-stu-id="993f1-110">Tables</span></span>  
   
--   Users  
+-   <span data-ttu-id="993f1-111">Users</span><span class="sxs-lookup"><span data-stu-id="993f1-111">Users</span></span>  
   
--   ビュー  
+-   <span data-ttu-id="993f1-112">ビュー</span><span class="sxs-lookup"><span data-stu-id="993f1-112">Views</span></span>  
   
--   関数  
+-   <span data-ttu-id="993f1-113">関数</span><span class="sxs-lookup"><span data-stu-id="993f1-113">Functions</span></span>  
   
--   パッケージ  
+-   <span data-ttu-id="993f1-114">パッケージ</span><span class="sxs-lookup"><span data-stu-id="993f1-114">Packages</span></span>  
   
--   PackageBodies  
+-   <span data-ttu-id="993f1-115">PackageBodies</span><span class="sxs-lookup"><span data-stu-id="993f1-115">PackageBodies</span></span>  
   
--   引数  
+-   <span data-ttu-id="993f1-116">引数</span><span class="sxs-lookup"><span data-stu-id="993f1-116">Arguments</span></span>  
   
--   UniqueKeys  
+-   <span data-ttu-id="993f1-117">UniqueKeys</span><span class="sxs-lookup"><span data-stu-id="993f1-117">UniqueKeys</span></span>  
   
--   PrimaryKeys  
+-   <span data-ttu-id="993f1-118">PrimaryKeys</span><span class="sxs-lookup"><span data-stu-id="993f1-118">PrimaryKeys</span></span>  
   
--   ForeignKeys  
+-   <span data-ttu-id="993f1-119">ForeignKeys</span><span class="sxs-lookup"><span data-stu-id="993f1-119">ForeignKeys</span></span>  
   
--   ForeignKeyColumns  
+-   <span data-ttu-id="993f1-120">ForeignKeyColumns</span><span class="sxs-lookup"><span data-stu-id="993f1-120">ForeignKeyColumns</span></span>  
   
--   ProcedureParameters  
+-   <span data-ttu-id="993f1-121">ProcedureParameters</span><span class="sxs-lookup"><span data-stu-id="993f1-121">ProcedureParameters</span></span>  
   
-## 列  
+## <a name="columns"></a><span data-ttu-id="993f1-122">列</span><span class="sxs-lookup"><span data-stu-id="993f1-122">Columns</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|OWNER|String|テーブル、ビュー、またはクラスターの所有者。|  
-|TABLE\_NAME|String|テーブル、ビュー、またはクラスターの名前。|  
-|COLUMN\_NAME|String|列名。|  
-|ID|Decimal \(10 進数型\)|作成された列のシーケンス番号。|  
-|DATATYPE|String|列のデータ型。|  
-|LENGTH|Decimal \(10 進数型\)|列の長さ \(バイト単位\)。|  
-|PRECISION|Decimal \(10 進数型\)|NUMBER データ型の場合は 10 進有効桁数、FLOAT データ型の場合はバイナリ有効桁数、その他のデータ型の場合は NULL になります。|  
-|SCALE|Decimal \(10 進数型\)|数値の小数点の右側にある数字。|  
-|NULLABLE|String|列に NULL を許可するかどうかを指定します。  列に NOT NULL 制約がある場合、または列が PRIMARY KEY の一部である場合、値は N になります。|  
+|<span data-ttu-id="993f1-123">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-123">ColumnName</span></span>|<span data-ttu-id="993f1-124">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-124">DataType</span></span>|<span data-ttu-id="993f1-125">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-125">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-126">OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-126">OWNER</span></span>|<span data-ttu-id="993f1-127">String</span><span class="sxs-lookup"><span data-stu-id="993f1-127">String</span></span>|<span data-ttu-id="993f1-128">テーブル、ビュー、またはクラスターの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-128">Owner of the table, view or cluster.</span></span>|  
+|<span data-ttu-id="993f1-129">TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-129">TABLE_NAME</span></span>|<span data-ttu-id="993f1-130">String</span><span class="sxs-lookup"><span data-stu-id="993f1-130">String</span></span>|<span data-ttu-id="993f1-131">テーブル、ビュー、またはクラスターの名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-131">Table, view, or cluster name.</span></span>|  
+|<span data-ttu-id="993f1-132">COLUMN_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-132">COLUMN_NAME</span></span>|<span data-ttu-id="993f1-133">String</span><span class="sxs-lookup"><span data-stu-id="993f1-133">String</span></span>|<span data-ttu-id="993f1-134">列名。</span><span class="sxs-lookup"><span data-stu-id="993f1-134">Column name.</span></span>|  
+|<span data-ttu-id="993f1-135">ID</span><span class="sxs-lookup"><span data-stu-id="993f1-135">ID</span></span>|<span data-ttu-id="993f1-136">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-136">Decimal</span></span>|<span data-ttu-id="993f1-137">作成された列のシーケンス番号。</span><span class="sxs-lookup"><span data-stu-id="993f1-137">Sequence number of the column as created.</span></span>|  
+|<span data-ttu-id="993f1-138">DATATYPE</span><span class="sxs-lookup"><span data-stu-id="993f1-138">DATATYPE</span></span>|<span data-ttu-id="993f1-139">String</span><span class="sxs-lookup"><span data-stu-id="993f1-139">String</span></span>|<span data-ttu-id="993f1-140">列のデータ型。</span><span class="sxs-lookup"><span data-stu-id="993f1-140">Datatype of the column.</span></span>|  
+|<span data-ttu-id="993f1-141">LENGTH</span><span class="sxs-lookup"><span data-stu-id="993f1-141">LENGTH</span></span>|<span data-ttu-id="993f1-142">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-142">Decimal</span></span>|<span data-ttu-id="993f1-143">列の長さ (バイト単位)。</span><span class="sxs-lookup"><span data-stu-id="993f1-143">Length of the column in bytes.</span></span>|  
+|<span data-ttu-id="993f1-144">PRECISION</span><span class="sxs-lookup"><span data-stu-id="993f1-144">PRECISION</span></span>|<span data-ttu-id="993f1-145">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-145">Decimal</span></span>|<span data-ttu-id="993f1-146">NUMBER データ型の場合は 10 進有効桁数、FLOAT データ型の場合はバイナリ有効桁数、その他のデータ型の場合は NULL になります。</span><span class="sxs-lookup"><span data-stu-id="993f1-146">Decimal precision for NUMBER datatype; binary precision for FLOAT datatype, null for all other datatypes.</span></span>|  
+|<span data-ttu-id="993f1-147">SCALE</span><span class="sxs-lookup"><span data-stu-id="993f1-147">SCALE</span></span>|<span data-ttu-id="993f1-148">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-148">Decimal</span></span>|<span data-ttu-id="993f1-149">数値の小数点の右側にある数字。</span><span class="sxs-lookup"><span data-stu-id="993f1-149">Digits to right of decimal point in a number.</span></span>|  
+|<span data-ttu-id="993f1-150">NULLABLE</span><span class="sxs-lookup"><span data-stu-id="993f1-150">NULLABLE</span></span>|<span data-ttu-id="993f1-151">String</span><span class="sxs-lookup"><span data-stu-id="993f1-151">String</span></span>|<span data-ttu-id="993f1-152">列に NULL を許可するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="993f1-152">Specifies whether a column allows NULLs.</span></span> <span data-ttu-id="993f1-153">列に NOT NULL 制約がある場合、または列が PRIMARY KEY の一部である場合、値は N になります。</span><span class="sxs-lookup"><span data-stu-id="993f1-153">Value is N if there is a NOT NULL constraint on the column or if the column is part of a PRIMARY KEY.</span></span>|  
   
-## Indexes  
+## <a name="indexes"></a><span data-ttu-id="993f1-154">Indexes</span><span class="sxs-lookup"><span data-stu-id="993f1-154">Indexes</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|OWNER|String|インデックスの所有者。|  
-|INDEX\_NAME|String|インデックス名。|  
-|INDEX\_TYPE|String|インデックスの型 \(NORMAL、BITMAP、FUNCTION\-BASED NORMAL、FUNCTION\-BASED BITMAP、または DOMAIN\)。|  
-|TABLE\_OWNER|String|インデックス付きオブジェクトの所有者。|  
-|TABLE\_NAME|String|インデックス付きオブジェクト名。|  
-|TABLE\_TYPE|String|インデックス オブジェクトの型 \(TABLE、CLUSTER など\)。|  
-|UNIQUENESS|String|インデックスが UNIQUE または NONUNIQUE のどちらであるかを指定します。|  
-|COMPRESSION|String|インデックスが ENABLED または DISABLED のどちらであるかを指定します。|  
-|PREFIX\_LENGTH|Decimal \(10 進数型\)|圧縮キーのプレフィックス内の列数。|  
-|TABLESPACE\_NAME|String|インデックスを含むテーブルスペースの名前。|  
-|INI\_TRANS|Decimal \(10 進数型\)|トランザクションの初期数。|  
-|MAX\_TRANS|Decimal \(10 進数型\)|トランザクションの最大数。|  
-|INITIAL\_EXTENT|Decimal \(10 進数型\)|初期エクステントのサイズ。|  
-|NEXT\_EXTENT|Decimal \(10 進数型\)|セカンダリ エクステントのサイズ。|  
-|MIN\_EXTENTS|Decimal \(10 進数型\)|セグメント内で許可されているエクステントの最小数。|  
-|MAX\_EXTENTS|Decimal \(10 進数型\)|セグメント内で許可されているエクステントの最大数。|  
-|PCT\_INCREASE|Decimal \(10 進数型\)|エクステントのサイズの増加率。|  
-|PCT\_THRESHOLD|Decimal \(10 進数型\)|インデックスのエントリごとに許可されるブロック領域のしきい値のパーセンテージ。|  
-|INCLUDE\_COLUMN|Decimal \(10 進数型\)|索引構成表の主キー \(オーバーフローなし\) のインデックスに含まれる最後の列の列 ID。  この列は、\*\_TAB\_COLUMNS データ辞書ビューの COLUMN\_ID 列にマップされます。|  
-|FREELISTS|Decimal \(10 進数型\)|このセグメントに割り当てられているプロセスの空きリスト数。|  
-|FREELIST\_GROUPS|Decimal \(10 進数型\)|このセグメントに割り当てられている空きリスト グループの数。|  
-|PCT\_FREE|Decimal \(10 進数型\)|ブロックにある空き領域の最小のパーセンテージ。|  
-|LOGGING|String|ログ情報。|  
-|BLEVEL|Decimal \(10 進数型\)|B\*\-ツリー レベル: ルート ブロックからリーフ ブロックまでのインデックスの深さ。  深さ 0 は、ルート ブロックとリーフ ブロックが同一であることを示します。|  
-|LEAF\_BLOCKS|Decimal \(10 進数型\)|インデックス内のリーフ ブロックの数。|  
-|DISTINCT\_KEYS|Decimal \(10 進数型\)|個別にインデックスが付けられた値の数。  UNIQUE および PRIMARY KEY 制約を強制するインデックスの場合、この値はテーブルの行数 \(USER\_TABLES.NUM\_ROWS\) と同じです。|  
-|AVG\_LEAF\_BLOCKS\_PER\_KEY|Decimal \(10 進数型\)|最も近い整数に丸められた、インデックスの個別の値が表示されるリーフ ブロックの平均数。  UNIQUE および PRIMARY KEY 制約を強制するインデックスの場合、この値は常に 1 になります。|  
-|AVG\_DATA\_BLOCKS\_PER\_KEY|Decimal \(10 進数型\)|最も近い整数に丸められた、インデックス内の個別の値によってポイントされている、テーブル内のデータ ブロックの平均数。  この統計情報は、インデックス列の値を含む行があるデータ ブロックの平均数を示します。|  
-|CLUSTERING\_FACTOR|Decimal \(10 進数型\)|インデックスの値に基づいて順序付けされている、テーブルの行数を示します。|  
-|STATUS|String|分割されていないインデックスが VALID または UNUSABLE のどちらであるかを示します。|  
-|NUM\_ROWS|Decimal \(10 進数型\)|インデックス内の行数。|  
-|SAMPLE\_SIZE|Decimal \(10 進数型\)|インデックスの分析に使用されるサンプルのサイズ。|  
-|LAST\_ANALYZED|DateTime|インデックスが最後に分析された日付。|  
-|DEGREE|String|インデックスがスキャンされるインスタンスごとのスレッド数。|  
-|INSTANCES|String|インデックスがスキャンされるインスタンス数。|  
-|PARTITIONED|String|インデックスが分割されているかどうかを示します \(YES または NO\)。|  
-|TEMPORARY|String|インデックスが一時テーブルにあるかどうかを示します。|  
-|GENERATED|String|インデックスの名前がシステムが生成した名前かどうかを示します \(Y または N\)。|  
-|SECONDARY|String|インデックスが Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトであるかどうかを示します \(Y または N\)。|  
-|BUFFER\_POOL|String|インデックス ブロックで使用される既定のバッファー プールの名前。|  
-|USER\_STATS|String|統計情報がユーザーによって直接入力されたものかどうかを示します。|  
-|DURATION|String|一時テーブルの存続期間を示します。1\) SYS$SESSION: セッションが存続している間、行が保持されます。2\) SYS$TRANSACTION: COMMIT 後に行が削除されます。3\) 永続テーブルの場合は NULL です。|  
-|PCT\_DIRECT\_ACCESS|Decimal \(10 進数型\)|索引構成表のセカンダリ インデックスでは、VALID であると推測される行のパーセンテージを示します。|  
-|ITYP\_OWNER|String|ドメイン インデックスでは、indextype の所有者を示します。|  
-|ITYP\_NAME|String|ドメイン インデックスでは、indextype の名前を示します。|  
-|PARAMETERS|String|ドメイン インデックスでは、パラメーターの文字列を示します。|  
-|GLOBAL\_STATS|String|分割されたインデックスでは、統計情報がインデックス全体を分析して収集されたものか \(YES\)、または基になるインデックスのパーティションおよびサブパーティションから推測されたものであるか \(NO\) どうかを示します。|  
-|DOMIDX\_STATUS|String|ドメイン インデックスのステータスが反映されます。  NULL: 指定されたインデックスはドメイン インデックスではありません。  VALID: インデックスは有効なドメイン インデックスです。  IDXTYP\_INVLD: このドメイン インデックスのインデックス型は無効です。|  
-|DOMIDX\_OPSTATUS|String|ドメイン インデックス上で実行された操作のステータスが反映されます。NULL: 指定されたインデックスはドメイン インデックスではありません。  VALID: 操作がエラーなく実行されました。  FAILED: エラーによって操作が失敗しました。|  
-|FUNCIDX\_STATUS|String|関数ベースのインデックスのステータスを示します。NULL: これは関数ベースのインデックスではありません。ENABLED: 関数ベースのインデックスが有効になっています。DISABLED: 関数ベースのインデックスが無効になっています。|  
-|JOIN\_INDEX|String|結合インデックスかどうかを示します。|  
+|<span data-ttu-id="993f1-155">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-155">ColumnName</span></span>|<span data-ttu-id="993f1-156">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-156">DataType</span></span>|<span data-ttu-id="993f1-157">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-157">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-158">OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-158">OWNER</span></span>|<span data-ttu-id="993f1-159">String</span><span class="sxs-lookup"><span data-stu-id="993f1-159">String</span></span>|<span data-ttu-id="993f1-160">インデックスの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-160">Owner of the index</span></span>|  
+|<span data-ttu-id="993f1-161">INDEX_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-161">INDEX_NAME</span></span>|<span data-ttu-id="993f1-162">String</span><span class="sxs-lookup"><span data-stu-id="993f1-162">String</span></span>|<span data-ttu-id="993f1-163">インデックス名。</span><span class="sxs-lookup"><span data-stu-id="993f1-163">Name of the index.</span></span>|  
+|<span data-ttu-id="993f1-164">INDEX_TYPE</span><span class="sxs-lookup"><span data-stu-id="993f1-164">INDEX_TYPE</span></span>|<span data-ttu-id="993f1-165">String</span><span class="sxs-lookup"><span data-stu-id="993f1-165">String</span></span>|<span data-ttu-id="993f1-166">インデックスの型 (NORMAL、BITMAP、FUNCTION-BASED NORMAL、FUNCTION-BASED BITMAP、または DOMAIN)。</span><span class="sxs-lookup"><span data-stu-id="993f1-166">Type of index (NORMAL, BITMAP, FUNCTION-BASED NORMAL, FUNCTION-BASED BITMAP, or DOMAIN).</span></span>|  
+|<span data-ttu-id="993f1-167">TABLE_OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-167">TABLE_OWNER</span></span>|<span data-ttu-id="993f1-168">String</span><span class="sxs-lookup"><span data-stu-id="993f1-168">String</span></span>|<span data-ttu-id="993f1-169">インデックス付きオブジェクトの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-169">Owner of the indexed object.</span></span>|  
+|<span data-ttu-id="993f1-170">TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-170">TABLE_NAME</span></span>|<span data-ttu-id="993f1-171">String</span><span class="sxs-lookup"><span data-stu-id="993f1-171">String</span></span>|<span data-ttu-id="993f1-172">インデックス付きオブジェクト名。</span><span class="sxs-lookup"><span data-stu-id="993f1-172">Name of the indexed object.</span></span>|  
+|<span data-ttu-id="993f1-173">TABLE_TYPE</span><span class="sxs-lookup"><span data-stu-id="993f1-173">TABLE_TYPE</span></span>|<span data-ttu-id="993f1-174">String</span><span class="sxs-lookup"><span data-stu-id="993f1-174">String</span></span>|<span data-ttu-id="993f1-175">インデックス オブジェクトの型 (TABLE、CLUSTER など)。</span><span class="sxs-lookup"><span data-stu-id="993f1-175">Type of the indexed object (for example, TABLE, CLUSTER).</span></span>|  
+|<span data-ttu-id="993f1-176">UNIQUENESS</span><span class="sxs-lookup"><span data-stu-id="993f1-176">UNIQUENESS</span></span>|<span data-ttu-id="993f1-177">String</span><span class="sxs-lookup"><span data-stu-id="993f1-177">String</span></span>|<span data-ttu-id="993f1-178">インデックスが UNIQUE または NONUNIQUE のどちらであるかを指定します。</span><span class="sxs-lookup"><span data-stu-id="993f1-178">Whether the index is UNIQUE or NONUNIQUE.</span></span>|  
+|<span data-ttu-id="993f1-179">COMPRESSION</span><span class="sxs-lookup"><span data-stu-id="993f1-179">COMPRESSION</span></span>|<span data-ttu-id="993f1-180">String</span><span class="sxs-lookup"><span data-stu-id="993f1-180">String</span></span>|<span data-ttu-id="993f1-181">インデックスが ENABLED または DISABLED のどちらであるかを指定します。</span><span class="sxs-lookup"><span data-stu-id="993f1-181">Whether the index is ENABLED or DISABLED.</span></span>|  
+|<span data-ttu-id="993f1-182">PREFIX_LENGTH</span><span class="sxs-lookup"><span data-stu-id="993f1-182">PREFIX_LENGTH</span></span>|<span data-ttu-id="993f1-183">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-183">Decimal</span></span>|<span data-ttu-id="993f1-184">圧縮キーのプレフィックス内の列数。</span><span class="sxs-lookup"><span data-stu-id="993f1-184">Number of columns in the prefix of the compression key.</span></span>|  
+|<span data-ttu-id="993f1-185">TABLESPACE_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-185">TABLESPACE_NAME</span></span>|<span data-ttu-id="993f1-186">String</span><span class="sxs-lookup"><span data-stu-id="993f1-186">String</span></span>|<span data-ttu-id="993f1-187">インデックスを含むテーブルスペースの名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-187">Name of the tablespace containing the index.</span></span>|  
+|<span data-ttu-id="993f1-188">INI_TRANS</span><span class="sxs-lookup"><span data-stu-id="993f1-188">INI_TRANS</span></span>|<span data-ttu-id="993f1-189">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-189">Decimal</span></span>|<span data-ttu-id="993f1-190">トランザクションの初期数。</span><span class="sxs-lookup"><span data-stu-id="993f1-190">Initial number of transactions.</span></span>|  
+|<span data-ttu-id="993f1-191">MAX_TRANS</span><span class="sxs-lookup"><span data-stu-id="993f1-191">MAX_TRANS</span></span>|<span data-ttu-id="993f1-192">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-192">Decimal</span></span>|<span data-ttu-id="993f1-193">トランザクションの最大数。</span><span class="sxs-lookup"><span data-stu-id="993f1-193">Maximum number of transactions.</span></span>|  
+|<span data-ttu-id="993f1-194">INITIAL_EXTENT</span><span class="sxs-lookup"><span data-stu-id="993f1-194">INITIAL_EXTENT</span></span>|<span data-ttu-id="993f1-195">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-195">Decimal</span></span>|<span data-ttu-id="993f1-196">初期エクステントのサイズ。</span><span class="sxs-lookup"><span data-stu-id="993f1-196">Size of the initial extent.</span></span>|  
+|<span data-ttu-id="993f1-197">NEXT_EXTENT</span><span class="sxs-lookup"><span data-stu-id="993f1-197">NEXT_EXTENT</span></span>|<span data-ttu-id="993f1-198">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-198">Decimal</span></span>|<span data-ttu-id="993f1-199">セカンダリ エクステントのサイズ。</span><span class="sxs-lookup"><span data-stu-id="993f1-199">Size of secondary extents.</span></span>|  
+|<span data-ttu-id="993f1-200">MIN_EXTENTS</span><span class="sxs-lookup"><span data-stu-id="993f1-200">MIN_EXTENTS</span></span>|<span data-ttu-id="993f1-201">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-201">Decimal</span></span>|<span data-ttu-id="993f1-202">セグメント内で許可されているエクステントの最小数。</span><span class="sxs-lookup"><span data-stu-id="993f1-202">Minimum number of extents allowed in the segment.</span></span>|  
+|<span data-ttu-id="993f1-203">MAX_EXTENTS</span><span class="sxs-lookup"><span data-stu-id="993f1-203">MAX_EXTENTS</span></span>|<span data-ttu-id="993f1-204">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-204">Decimal</span></span>|<span data-ttu-id="993f1-205">セグメント内で許可されているエクステントの最大数。</span><span class="sxs-lookup"><span data-stu-id="993f1-205">Maximum number of extents allowed in the segment.</span></span>|  
+|<span data-ttu-id="993f1-206">PCT_INCREASE</span><span class="sxs-lookup"><span data-stu-id="993f1-206">PCT_INCREASE</span></span>|<span data-ttu-id="993f1-207">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-207">Decimal</span></span>|<span data-ttu-id="993f1-208">エクステントのサイズの増加率。</span><span class="sxs-lookup"><span data-stu-id="993f1-208">Percentage increase in extent size.</span></span>|  
+|<span data-ttu-id="993f1-209">PCT_THRESHOLD</span><span class="sxs-lookup"><span data-stu-id="993f1-209">PCT_THRESHOLD</span></span>|<span data-ttu-id="993f1-210">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-210">Decimal</span></span>|<span data-ttu-id="993f1-211">インデックスのエントリごとに許可されるブロック領域のしきい値のパーセンテージ。</span><span class="sxs-lookup"><span data-stu-id="993f1-211">Threshold percentage of block space allowed per index entry.</span></span>|  
+|<span data-ttu-id="993f1-212">INCLUDE_COLUMN</span><span class="sxs-lookup"><span data-stu-id="993f1-212">INCLUDE_COLUMN</span></span>|<span data-ttu-id="993f1-213">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-213">Decimal</span></span>|<span data-ttu-id="993f1-214">索引構成表の主キー (オーバーフローなし) のインデックスに含まれる最後の列の列 ID。</span><span class="sxs-lookup"><span data-stu-id="993f1-214">Column ID of the last column to be included in index-organized table primary key (non-overflow) index.</span></span> <span data-ttu-id="993f1-215">この列は、*_TAB_COLUMNS データ辞書ビューの COLUMN_ID 列にマップされます。</span><span class="sxs-lookup"><span data-stu-id="993f1-215">This column maps to the COLUMN_ID column of the *_TAB_COLUMNS data dictionary views.</span></span>|  
+|<span data-ttu-id="993f1-216">FREELISTS</span><span class="sxs-lookup"><span data-stu-id="993f1-216">FREELISTS</span></span>|<span data-ttu-id="993f1-217">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-217">Decimal</span></span>|<span data-ttu-id="993f1-218">このセグメントに割り当てられているプロセスの空きリスト数。</span><span class="sxs-lookup"><span data-stu-id="993f1-218">Number of process freelists allocated to this segment.</span></span>|  
+|<span data-ttu-id="993f1-219">FREELIST_GROUPS</span><span class="sxs-lookup"><span data-stu-id="993f1-219">FREELIST_GROUPS</span></span>|<span data-ttu-id="993f1-220">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-220">Decimal</span></span>|<span data-ttu-id="993f1-221">このセグメントに割り当てられている空きリスト グループの数。</span><span class="sxs-lookup"><span data-stu-id="993f1-221">Number of freelist groups allocated to this segment.</span></span>|  
+|<span data-ttu-id="993f1-222">PCT_FREE</span><span class="sxs-lookup"><span data-stu-id="993f1-222">PCT_FREE</span></span>|<span data-ttu-id="993f1-223">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-223">Decimal</span></span>|<span data-ttu-id="993f1-224">ブロックにある空き領域の最小のパーセンテージ。</span><span class="sxs-lookup"><span data-stu-id="993f1-224">Minimum percentage of free space in a block.</span></span>|  
+|<span data-ttu-id="993f1-225">LOGGING</span><span class="sxs-lookup"><span data-stu-id="993f1-225">LOGGING</span></span>|<span data-ttu-id="993f1-226">String</span><span class="sxs-lookup"><span data-stu-id="993f1-226">String</span></span>|<span data-ttu-id="993f1-227">ログ情報。</span><span class="sxs-lookup"><span data-stu-id="993f1-227">Logging information.</span></span>|  
+|<span data-ttu-id="993f1-228">BLEVEL</span><span class="sxs-lookup"><span data-stu-id="993f1-228">BLEVEL</span></span>|<span data-ttu-id="993f1-229">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-229">Decimal</span></span>|<span data-ttu-id="993f1-230">B*-ツリー レベル: ルート ブロックからリーフ ブロックまでのインデックスの深さ。</span><span class="sxs-lookup"><span data-stu-id="993f1-230">B*-Tree level: depth of the index from its root block to its leaf blocks.</span></span> <span data-ttu-id="993f1-231">深さ 0 は、ルート ブロックとリーフ ブロックが同一であることを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-231">A depth of 0 indicates that the root block and leaf block are the same.</span></span>|  
+|<span data-ttu-id="993f1-232">LEAF_BLOCKS</span><span class="sxs-lookup"><span data-stu-id="993f1-232">LEAF_BLOCKS</span></span>|<span data-ttu-id="993f1-233">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-233">Decimal</span></span>|<span data-ttu-id="993f1-234">インデックス内のリーフ ブロックの数。</span><span class="sxs-lookup"><span data-stu-id="993f1-234">Number of leaf blocks in the index</span></span>|  
+|<span data-ttu-id="993f1-235">DISTINCT_KEYS</span><span class="sxs-lookup"><span data-stu-id="993f1-235">DISTINCT_KEYS</span></span>|<span data-ttu-id="993f1-236">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-236">Decimal</span></span>|<span data-ttu-id="993f1-237">個別にインデックスが付けられた値の数。</span><span class="sxs-lookup"><span data-stu-id="993f1-237">Number of distinct indexed values.</span></span> <span data-ttu-id="993f1-238">UNIQUE および PRIMARY KEY 制約を強制するインデックスの場合、この値はテーブルの行数 (USER_TABLES.NUM_ROWS) と同じです。</span><span class="sxs-lookup"><span data-stu-id="993f1-238">For indexes that enforce UNIQUE and PRIMARY KEY constraints, this value is the same as the number of rows in the table (USER_TABLES.NUM_ROWS).</span></span>|  
+|<span data-ttu-id="993f1-239">AVG_LEAF_BLOCKS_PER_KEY</span><span class="sxs-lookup"><span data-stu-id="993f1-239">AVG_LEAF_BLOCKS_PER_KEY</span></span>|<span data-ttu-id="993f1-240">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-240">Decimal</span></span>|<span data-ttu-id="993f1-241">最も近い整数に丸められた、インデックスの個別の値が表示されるリーフ ブロックの平均数。</span><span class="sxs-lookup"><span data-stu-id="993f1-241">Average number of leaf blocks in which each distinct value in the index appears rounded to the nearest integer.</span></span> <span data-ttu-id="993f1-242">UNIQUE および PRIMARY KEY 制約を強制するインデックスの場合、この値は常に 1 になります。</span><span class="sxs-lookup"><span data-stu-id="993f1-242">For indexes that enforce UNIQUE and PRIMARY KEY constraints, this value is always 1.</span></span>|  
+|<span data-ttu-id="993f1-243">AVG_DATA_BLOCKS_PER_KEY</span><span class="sxs-lookup"><span data-stu-id="993f1-243">AVG_DATA_BLOCKS_PER_KEY</span></span>|<span data-ttu-id="993f1-244">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-244">Decimal</span></span>|<span data-ttu-id="993f1-245">最も近い整数に丸められた、インデックス内の個別の値によってポイントされている、テーブル内のデータ ブロックの平均数。</span><span class="sxs-lookup"><span data-stu-id="993f1-245">Average number of data blocks in the table that are pointed to by a distinct value in the index rounded to the nearest integer.</span></span> <span data-ttu-id="993f1-246">この統計情報は、インデックス列の値を含む行があるデータ ブロックの平均数を示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-246">This statistic is the average number of data blocks that contain rows that contain a given value for the indexed columns.</span></span>|  
+|<span data-ttu-id="993f1-247">CLUSTERING_FACTOR</span><span class="sxs-lookup"><span data-stu-id="993f1-247">CLUSTERING_FACTOR</span></span>|<span data-ttu-id="993f1-248">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-248">Decimal</span></span>|<span data-ttu-id="993f1-249">インデックスの値に基づいて順序付けされている、テーブルの行数を示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-249">Indicates the amount of order of the rows in the table based on the values of the index.</span></span>|  
+|<span data-ttu-id="993f1-250">STATUS</span><span class="sxs-lookup"><span data-stu-id="993f1-250">STATUS</span></span>|<span data-ttu-id="993f1-251">String</span><span class="sxs-lookup"><span data-stu-id="993f1-251">String</span></span>|<span data-ttu-id="993f1-252">分割されていないインデックスが VALID または UNUSABLE のどちらであるかを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-252">Whether a nonpartitioned index is VALID or UNUSABLE.</span></span>|  
+|<span data-ttu-id="993f1-253">NUM_ROWS</span><span class="sxs-lookup"><span data-stu-id="993f1-253">NUM_ROWS</span></span>|<span data-ttu-id="993f1-254">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-254">Decimal</span></span>|<span data-ttu-id="993f1-255">インデックス内の行数。</span><span class="sxs-lookup"><span data-stu-id="993f1-255">Number of rows in the index.</span></span>|  
+|<span data-ttu-id="993f1-256">SAMPLE_SIZE</span><span class="sxs-lookup"><span data-stu-id="993f1-256">SAMPLE_SIZE</span></span>|<span data-ttu-id="993f1-257">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-257">Decimal</span></span>|<span data-ttu-id="993f1-258">インデックスの分析に使用されるサンプルのサイズ。</span><span class="sxs-lookup"><span data-stu-id="993f1-258">Size of the sample used to analyze the index.</span></span>|  
+|<span data-ttu-id="993f1-259">LAST_ANALYZED</span><span class="sxs-lookup"><span data-stu-id="993f1-259">LAST_ANALYZED</span></span>|<span data-ttu-id="993f1-260">DateTime</span><span class="sxs-lookup"><span data-stu-id="993f1-260">DateTime</span></span>|<span data-ttu-id="993f1-261">インデックスが最後に分析された日付。</span><span class="sxs-lookup"><span data-stu-id="993f1-261">Date on which this index was most recently analyzed.</span></span>|  
+|<span data-ttu-id="993f1-262">DEGREE</span><span class="sxs-lookup"><span data-stu-id="993f1-262">DEGREE</span></span>|<span data-ttu-id="993f1-263">String</span><span class="sxs-lookup"><span data-stu-id="993f1-263">String</span></span>|<span data-ttu-id="993f1-264">インデックスがスキャンされるインスタンスごとのスレッド数。</span><span class="sxs-lookup"><span data-stu-id="993f1-264">Number of threads per instance for scanning the index.</span></span>|  
+|<span data-ttu-id="993f1-265">INSTANCES</span><span class="sxs-lookup"><span data-stu-id="993f1-265">INSTANCES</span></span>|<span data-ttu-id="993f1-266">String</span><span class="sxs-lookup"><span data-stu-id="993f1-266">String</span></span>|<span data-ttu-id="993f1-267">インデックスがスキャンされるインスタンス数。</span><span class="sxs-lookup"><span data-stu-id="993f1-267">Number of instances across which the indexes to be scanned.</span></span>|  
+|<span data-ttu-id="993f1-268">PARTITIONED</span><span class="sxs-lookup"><span data-stu-id="993f1-268">PARTITIONED</span></span>|<span data-ttu-id="993f1-269">文字列型</span><span class="sxs-lookup"><span data-stu-id="993f1-269">String</span></span>|<span data-ttu-id="993f1-270">このインデックスがパーティション分割されているかどうか (はい &#124;です。いいえ)。</span><span class="sxs-lookup"><span data-stu-id="993f1-270">Whether this index is partitioned (YES &#124; NO).</span></span>|  
+|<span data-ttu-id="993f1-271">TEMPORARY</span><span class="sxs-lookup"><span data-stu-id="993f1-271">TEMPORARY</span></span>|<span data-ttu-id="993f1-272">String</span><span class="sxs-lookup"><span data-stu-id="993f1-272">String</span></span>|<span data-ttu-id="993f1-273">インデックスが一時テーブルにあるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-273">Whether the index is on a temporary table.</span></span>|  
+|<span data-ttu-id="993f1-274">GENERATED</span><span class="sxs-lookup"><span data-stu-id="993f1-274">GENERATED</span></span>|<span data-ttu-id="993f1-275">文字列型</span><span class="sxs-lookup"><span data-stu-id="993f1-275">String</span></span>|<span data-ttu-id="993f1-276">(Y &#124; 生成されたインデックスの名前がシステムであるかどうかN)。</span><span class="sxs-lookup"><span data-stu-id="993f1-276">Whether the name of the index is system generated (Y&#124;N).</span></span>|  
+|<span data-ttu-id="993f1-277">SECONDARY</span><span class="sxs-lookup"><span data-stu-id="993f1-277">SECONDARY</span></span>|<span data-ttu-id="993f1-278">文字列型</span><span class="sxs-lookup"><span data-stu-id="993f1-278">String</span></span>|<span data-ttu-id="993f1-279">インデックスが Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトでかどうか (Y &#124;です。N)。</span><span class="sxs-lookup"><span data-stu-id="993f1-279">Whether the index is a secondary object created by the ODCIIndexCreate method of the Oracle9i Data Cartridge (Y&#124;N).</span></span>|  
+|<span data-ttu-id="993f1-280">BUFFER_POOL</span><span class="sxs-lookup"><span data-stu-id="993f1-280">BUFFER_POOL</span></span>|<span data-ttu-id="993f1-281">String</span><span class="sxs-lookup"><span data-stu-id="993f1-281">String</span></span>|<span data-ttu-id="993f1-282">インデックス ブロックで使用される既定のバッファー プールの名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-282">Name of the default buffer pool to be used for the index blocks.</span></span>|  
+|<span data-ttu-id="993f1-283">USER_STATS</span><span class="sxs-lookup"><span data-stu-id="993f1-283">USER_STATS</span></span>|<span data-ttu-id="993f1-284">String</span><span class="sxs-lookup"><span data-stu-id="993f1-284">String</span></span>|<span data-ttu-id="993f1-285">統計情報がユーザーによって直接入力されたものかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-285">Whether the statistics were entered directly by the user.</span></span>|  
+|<span data-ttu-id="993f1-286">DURATION</span><span class="sxs-lookup"><span data-stu-id="993f1-286">DURATION</span></span>|<span data-ttu-id="993f1-287">String</span><span class="sxs-lookup"><span data-stu-id="993f1-287">String</span></span>|<span data-ttu-id="993f1-288">一時テーブルの存続期間を示します。1) SYS$SESSION: セッションが存続している間、行が保持されます。2) SYS$TRANSACTION: COMMIT 後に行が削除されます。3) 永続テーブルの場合は NULL です。</span><span class="sxs-lookup"><span data-stu-id="993f1-288">Indicates the duration of a temporary table: 1)SYS$SESSION: the rows are preserved for the duration of the session, 2) SYS$TRANSACTION: the rows are deleted after COMMIT, 3) Null for permanent Table.</span></span>|  
+|<span data-ttu-id="993f1-289">PCT_DIRECT_ACCESS</span><span class="sxs-lookup"><span data-stu-id="993f1-289">PCT_DIRECT_ACCESS</span></span>|<span data-ttu-id="993f1-290">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-290">Decimal</span></span>|<span data-ttu-id="993f1-291">索引構成表のセカンダリ インデックスでは、VALID であると推測される行のパーセンテージを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-291">For a secondary index on an index-organized table, the percentage of rows with VALID guess</span></span>|  
+|<span data-ttu-id="993f1-292">ITYP_OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-292">ITYP_OWNER</span></span>|<span data-ttu-id="993f1-293">String</span><span class="sxs-lookup"><span data-stu-id="993f1-293">String</span></span>|<span data-ttu-id="993f1-294">ドメイン インデックスでは、indextype の所有者を示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-294">For a domain index, the owner of the indextype.</span></span>|  
+|<span data-ttu-id="993f1-295">ITYP_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-295">ITYP_NAME</span></span>|<span data-ttu-id="993f1-296">String</span><span class="sxs-lookup"><span data-stu-id="993f1-296">String</span></span>|<span data-ttu-id="993f1-297">ドメイン インデックスでは、indextype の名前を示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-297">For a domain index, the name of the indextype.</span></span>|  
+|<span data-ttu-id="993f1-298">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="993f1-298">PARAMETERS</span></span>|<span data-ttu-id="993f1-299">String</span><span class="sxs-lookup"><span data-stu-id="993f1-299">String</span></span>|<span data-ttu-id="993f1-300">ドメイン インデックスでは、パラメーターの文字列を示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-300">For a domain index, the parameter string.</span></span>|  
+|<span data-ttu-id="993f1-301">GLOBAL_STATS</span><span class="sxs-lookup"><span data-stu-id="993f1-301">GLOBAL_STATS</span></span>|<span data-ttu-id="993f1-302">String</span><span class="sxs-lookup"><span data-stu-id="993f1-302">String</span></span>|<span data-ttu-id="993f1-303">分割されたインデックスでは、統計情報がインデックス全体を分析して収集されたものか (YES)、または基になるインデックスのパーティションおよびサブパーティションから推測されたものであるか (NO) どうかを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-303">For partitioned indexes, indicates whether statistics were collected by analyzing index as a whole (YES) or were estimated from statistics on underlying index partitions and subpartitions (NO).</span></span>|  
+|<span data-ttu-id="993f1-304">DOMIDX_STATUS</span><span class="sxs-lookup"><span data-stu-id="993f1-304">DOMIDX_STATUS</span></span>|<span data-ttu-id="993f1-305">String</span><span class="sxs-lookup"><span data-stu-id="993f1-305">String</span></span>|<span data-ttu-id="993f1-306">ドメイン インデックスのステータスが反映されます。</span><span class="sxs-lookup"><span data-stu-id="993f1-306">Reflects the status of the domain index.</span></span> <span data-ttu-id="993f1-307">NULL: 指定されたインデックスはドメイン インデックスではありません。</span><span class="sxs-lookup"><span data-stu-id="993f1-307">NULL: the specified index is not a domain index.</span></span> <span data-ttu-id="993f1-308">VALID: インデックスは有効なドメイン インデックスです。</span><span class="sxs-lookup"><span data-stu-id="993f1-308">VALID: the index is a valid domain index.</span></span> <span data-ttu-id="993f1-309">IDXTYP_INVLD: このドメイン インデックスのインデックス型は無効です。</span><span class="sxs-lookup"><span data-stu-id="993f1-309">IDXTYP_INVLD: the index type of this domain index is invalid.</span></span>|  
+|<span data-ttu-id="993f1-310">DOMIDX_OPSTATUS</span><span class="sxs-lookup"><span data-stu-id="993f1-310">DOMIDX_OPSTATUS</span></span>|<span data-ttu-id="993f1-311">String</span><span class="sxs-lookup"><span data-stu-id="993f1-311">String</span></span>|<span data-ttu-id="993f1-312">ドメイン インデックス上で実行された操作のステータスが反映されます。NULL: 指定されたインデックスはドメイン インデックスではありません。</span><span class="sxs-lookup"><span data-stu-id="993f1-312">Reflects the status of an operation that was performed on a domain index: NULL: the specified index is not a domain index.</span></span> <span data-ttu-id="993f1-313">VALID: 操作がエラーなく実行されました。</span><span class="sxs-lookup"><span data-stu-id="993f1-313">VALID: the operation performed without errors.</span></span> <span data-ttu-id="993f1-314">FAILED: エラーによって操作が失敗しました。</span><span class="sxs-lookup"><span data-stu-id="993f1-314">FAILED: the operation failed with an error.</span></span>|  
+|<span data-ttu-id="993f1-315">FUNCIDX_STATUS</span><span class="sxs-lookup"><span data-stu-id="993f1-315">FUNCIDX_STATUS</span></span>|<span data-ttu-id="993f1-316">String</span><span class="sxs-lookup"><span data-stu-id="993f1-316">String</span></span>|<span data-ttu-id="993f1-317">関数ベースのインデックスのステータスを示します。NULL: これは関数ベースのインデックスではありません。ENABLED: 関数ベースのインデックスが有効になっています。DISABLED: 関数ベースのインデックスが無効になっています。</span><span class="sxs-lookup"><span data-stu-id="993f1-317">Indicates the status of a function-based index: NULL: this is not a function-based index, ENABLED: the function-based index is enabled, DISABLED: the function-based index is disabled.</span></span>|  
+|<span data-ttu-id="993f1-318">JOIN_INDEX</span><span class="sxs-lookup"><span data-stu-id="993f1-318">JOIN_INDEX</span></span>|<span data-ttu-id="993f1-319">String</span><span class="sxs-lookup"><span data-stu-id="993f1-319">String</span></span>|<span data-ttu-id="993f1-320">結合インデックスかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-320">Indicates whether this is a join index or not.</span></span>|  
   
-## IndexColumns  
+## <a name="indexcolumns"></a><span data-ttu-id="993f1-321">IndexColumns</span><span class="sxs-lookup"><span data-stu-id="993f1-321">IndexColumns</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|INDEX\_OWNER|String|インデックスの所有者。|  
-|INDEX\_NAME|String|インデックス名。|  
-|TABLE\_OWNER|String|テーブルまたはクラスターの所有者。|  
-|TABLE\_NAME|String|テーブルまたはクラスターの名前。|  
-|COLUMN\_NAME|String|オブジェクト型列の列名または属性。|  
-|COLUMN\_POSITION|Decimal \(10 進数型\)|インデックス内の列または属性の位置。|  
-|COLUMN\_LENGTH|Decimal \(10 進数型\)|インデックスが付けられた列の長さ。|  
-|CHAR\_LENGTH|Decimal \(10 進数型\)|列の最大コードポイント長。|  
-|DESCEND|String|列が降順で並べ替えられるかどうかを示します。|  
+|<span data-ttu-id="993f1-322">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-322">ColumnName</span></span>|<span data-ttu-id="993f1-323">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-323">DataType</span></span>|<span data-ttu-id="993f1-324">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-324">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-325">INDEX_OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-325">INDEX_OWNER</span></span>|<span data-ttu-id="993f1-326">String</span><span class="sxs-lookup"><span data-stu-id="993f1-326">String</span></span>|<span data-ttu-id="993f1-327">インデックスの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-327">Owner of the index.</span></span>|  
+|<span data-ttu-id="993f1-328">INDEX_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-328">INDEX_NAME</span></span>|<span data-ttu-id="993f1-329">String</span><span class="sxs-lookup"><span data-stu-id="993f1-329">String</span></span>|<span data-ttu-id="993f1-330">インデックス名。</span><span class="sxs-lookup"><span data-stu-id="993f1-330">Name of the index.</span></span>|  
+|<span data-ttu-id="993f1-331">TABLE_OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-331">TABLE_OWNER</span></span>|<span data-ttu-id="993f1-332">String</span><span class="sxs-lookup"><span data-stu-id="993f1-332">String</span></span>|<span data-ttu-id="993f1-333">テーブルまたはクラスターの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-333">Owner of the table or cluster.</span></span>|  
+|<span data-ttu-id="993f1-334">TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-334">TABLE_NAME</span></span>|<span data-ttu-id="993f1-335">String</span><span class="sxs-lookup"><span data-stu-id="993f1-335">String</span></span>|<span data-ttu-id="993f1-336">テーブルまたはクラスターの名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-336">Name of the table or cluster.</span></span>|  
+|<span data-ttu-id="993f1-337">COLUMN_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-337">COLUMN_NAME</span></span>|<span data-ttu-id="993f1-338">String</span><span class="sxs-lookup"><span data-stu-id="993f1-338">String</span></span>|<span data-ttu-id="993f1-339">オブジェクト型列の列名または属性。</span><span class="sxs-lookup"><span data-stu-id="993f1-339">Column name or attribute of object type column.</span></span>|  
+|<span data-ttu-id="993f1-340">COLUMN_POSITION</span><span class="sxs-lookup"><span data-stu-id="993f1-340">COLUMN_POSITION</span></span>|<span data-ttu-id="993f1-341">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-341">Decimal</span></span>|<span data-ttu-id="993f1-342">インデックス内の列または属性の位置。</span><span class="sxs-lookup"><span data-stu-id="993f1-342">Position of column or attribute within the index.</span></span>|  
+|<span data-ttu-id="993f1-343">COLUMN_LENGTH</span><span class="sxs-lookup"><span data-stu-id="993f1-343">COLUMN_LENGTH</span></span>|<span data-ttu-id="993f1-344">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-344">Decimal</span></span>|<span data-ttu-id="993f1-345">インデックスが付けられた列の長さ。</span><span class="sxs-lookup"><span data-stu-id="993f1-345">Indexed length of the column.</span></span>|  
+|<span data-ttu-id="993f1-346">CHAR_LENGTH</span><span class="sxs-lookup"><span data-stu-id="993f1-346">CHAR_LENGTH</span></span>|<span data-ttu-id="993f1-347">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-347">Decimal</span></span>|<span data-ttu-id="993f1-348">列の最大コードポイント長。</span><span class="sxs-lookup"><span data-stu-id="993f1-348">Maximum codepoint length of the column.</span></span>|  
+|<span data-ttu-id="993f1-349">DESCEND</span><span class="sxs-lookup"><span data-stu-id="993f1-349">DESCEND</span></span>|<span data-ttu-id="993f1-350">String</span><span class="sxs-lookup"><span data-stu-id="993f1-350">String</span></span>|<span data-ttu-id="993f1-351">列が降順で並べ替えられるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-351">Whether the column is sorted in descending order.</span></span>|  
   
-## 手順  
+## <a name="procedures"></a><span data-ttu-id="993f1-352">手順</span><span class="sxs-lookup"><span data-stu-id="993f1-352">Procedures</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|OWNER|String|オブジェクトの所有者。|  
-|OBJECT\_NAME|String|オブジェクト名。|  
-|SUBOBJECT\_NAME|String|サブオブジェクト名 \(partition など\)。|  
-|OBJECT\_ID|Decimal \(10 進数型\)|オブジェクトの辞書オブジェクト数。|  
-|DATA\_OBJECT\_ID|Decimal \(10 進数型\)|オブジェクトを含むセグメントの辞書オブジェクト数。|  
-|LAST\_DDL\_TIME|DateTime|DDL コマンド \(許可および取り消しを含む\) の実行結果として、最後に変更されたオブジェクトのタイムスタンプ。|  
-|TIMESTAMP|String|オブジェクト \(文字データ\) の指定に対するタイムスタンプ。|  
-|STATUS|String|オブジェクトのステータス \(VALID、INVALID、または N\/A\)。|  
-|TEMPORARY|String|オブジェクトが一時的かどうかを示します \(現在のセッションでは、オブジェクト自体に置かれたデータだけが表示される\)。|  
-|GENERATED|String|このオブジェクトの名前がシステムによって生成されたかどうかを示します   \(Y または N\)。|  
-|SECONDARY|String|Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうかを示します \(Y または N\)。|  
-|CREATED|DateTime|オブジェクトが作成された日付。|  
+|<span data-ttu-id="993f1-353">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-353">ColumnName</span></span>|<span data-ttu-id="993f1-354">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-354">DataType</span></span>|<span data-ttu-id="993f1-355">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-355">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-356">OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-356">OWNER</span></span>|<span data-ttu-id="993f1-357">String</span><span class="sxs-lookup"><span data-stu-id="993f1-357">String</span></span>|<span data-ttu-id="993f1-358">オブジェクトの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-358">Owner of the object.</span></span>|  
+|<span data-ttu-id="993f1-359">OBJECT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-359">OBJECT_NAME</span></span>|<span data-ttu-id="993f1-360">String</span><span class="sxs-lookup"><span data-stu-id="993f1-360">String</span></span>|<span data-ttu-id="993f1-361">オブジェクト名。</span><span class="sxs-lookup"><span data-stu-id="993f1-361">Name of the object.</span></span>|  
+|<span data-ttu-id="993f1-362">SUBOBJECT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-362">SUBOBJECT_NAME</span></span>|<span data-ttu-id="993f1-363">String</span><span class="sxs-lookup"><span data-stu-id="993f1-363">String</span></span>|<span data-ttu-id="993f1-364">サブオブジェクト名 (partition など)。</span><span class="sxs-lookup"><span data-stu-id="993f1-364">Name of the subobject (for example, partition).</span></span>|  
+|<span data-ttu-id="993f1-365">OBJECT_ID</span><span class="sxs-lookup"><span data-stu-id="993f1-365">OBJECT_ID</span></span>|<span data-ttu-id="993f1-366">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-366">Decimal</span></span>|<span data-ttu-id="993f1-367">オブジェクトの辞書オブジェクト数。</span><span class="sxs-lookup"><span data-stu-id="993f1-367">Dictionary object number of the object.</span></span>|  
+|<span data-ttu-id="993f1-368">DATA_OBJECT_ID</span><span class="sxs-lookup"><span data-stu-id="993f1-368">DATA_OBJECT_ID</span></span>|<span data-ttu-id="993f1-369">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-369">Decimal</span></span>|<span data-ttu-id="993f1-370">オブジェクトを含むセグメントの辞書オブジェクト数。</span><span class="sxs-lookup"><span data-stu-id="993f1-370">Dictionary object number of the segment that contains the object.</span></span>|  
+|<span data-ttu-id="993f1-371">LAST_DDL_TIME</span><span class="sxs-lookup"><span data-stu-id="993f1-371">LAST_DDL_TIME</span></span>|<span data-ttu-id="993f1-372">DateTime</span><span class="sxs-lookup"><span data-stu-id="993f1-372">DateTime</span></span>|<span data-ttu-id="993f1-373">DDL コマンド (許可および取り消しを含む) の実行結果として、最後に変更されたオブジェクトのタイムスタンプ。</span><span class="sxs-lookup"><span data-stu-id="993f1-373">Timestamp for the last modification of the object resulting from a DDL command (including grants and revokes).</span></span>|  
+|<span data-ttu-id="993f1-374">TIMESTAMP</span><span class="sxs-lookup"><span data-stu-id="993f1-374">TIMESTAMP</span></span>|<span data-ttu-id="993f1-375">String</span><span class="sxs-lookup"><span data-stu-id="993f1-375">String</span></span>|<span data-ttu-id="993f1-376">オブジェクト (文字データ) の指定に対するタイムスタンプ。</span><span class="sxs-lookup"><span data-stu-id="993f1-376">Timestamp for the specification of the object (character data).</span></span>|  
+|<span data-ttu-id="993f1-377">STATUS</span><span class="sxs-lookup"><span data-stu-id="993f1-377">STATUS</span></span>|<span data-ttu-id="993f1-378">String</span><span class="sxs-lookup"><span data-stu-id="993f1-378">String</span></span>|<span data-ttu-id="993f1-379">オブジェクトのステータス (VALID、INVALID、または N/A)。</span><span class="sxs-lookup"><span data-stu-id="993f1-379">Status of the object (VALID, INVALID, or N/A).</span></span>|  
+|<span data-ttu-id="993f1-380">TEMPORARY</span><span class="sxs-lookup"><span data-stu-id="993f1-380">TEMPORARY</span></span>|<span data-ttu-id="993f1-381">String</span><span class="sxs-lookup"><span data-stu-id="993f1-381">String</span></span>|<span data-ttu-id="993f1-382">オブジェクトが一時的かどうかを示します (現在のセッションでは、オブジェクト自体に置かれたデータだけが表示される)。</span><span class="sxs-lookup"><span data-stu-id="993f1-382">Whether the object is temporary (the current session can see only data that it placed in this object itself).</span></span>|  
+|<span data-ttu-id="993f1-383">GENERATED</span><span class="sxs-lookup"><span data-stu-id="993f1-383">GENERATED</span></span>|<span data-ttu-id="993f1-384">String</span><span class="sxs-lookup"><span data-stu-id="993f1-384">String</span></span>|<span data-ttu-id="993f1-385">このオブジェクトの名前がシステムによって生成されたかどうかを示します </span><span class="sxs-lookup"><span data-stu-id="993f1-385">Was the name of this object system generated?</span></span> <span data-ttu-id="993f1-386">(Y &#124;です。N)。</span><span class="sxs-lookup"><span data-stu-id="993f1-386">(Y &#124; N).</span></span>|  
+|<span data-ttu-id="993f1-387">SECONDARY</span><span class="sxs-lookup"><span data-stu-id="993f1-387">SECONDARY</span></span>|<span data-ttu-id="993f1-388">文字列型</span><span class="sxs-lookup"><span data-stu-id="993f1-388">String</span></span>|<span data-ttu-id="993f1-389">これは、Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうか (Y &#124;です。N)。</span><span class="sxs-lookup"><span data-stu-id="993f1-389">Whether this is a secondary object created by the ODCIIndexCreate method of the Oracle9i Data Cartridge (Y &#124; N).</span></span>|  
+|<span data-ttu-id="993f1-390">CREATED</span><span class="sxs-lookup"><span data-stu-id="993f1-390">CREATED</span></span>|<span data-ttu-id="993f1-391">DateTime</span><span class="sxs-lookup"><span data-stu-id="993f1-391">DateTime</span></span>|<span data-ttu-id="993f1-392">オブジェクトが作成された日付。</span><span class="sxs-lookup"><span data-stu-id="993f1-392">The date the object was created.</span></span>|  
   
-## シーケンス  
+## <a name="sequences"></a><span data-ttu-id="993f1-393">シーケンス</span><span class="sxs-lookup"><span data-stu-id="993f1-393">Sequences</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|SEQUENCE\_OWNER|String|シーケンスの所有者の名前。|  
-|SEQUENCE\_NAME|String|シーケンス名。|  
-|MIN\_VALUE|Decimal \(10 進数型\)|シーケンスの最小値。|  
-|MAX\_VALUE|Decimal \(10 進数型\)|シーケンスの最大値。|  
-|INCREMENT\_BY|Decimal \(10 進数型\)|シーケンスがインクリメントされる値。|  
-|CYCLE\_FLAG|String|限界に到達するとシーケンスはラップされるかを示します。|  
-|ORDER\_FLAG|String|順に生成されたシーケンス番号。|  
-|CACHE\_SIZE|Decimal \(10 進数型\)|キャッシュするシーケンス番号の数。|  
-|LAST\_NUMBER|Decimal \(10 進数型\)|ディスクに書き込まれた最後のシーケンス番号。  シーケンスでキャッシュが使用される場合、ディスクに書き込まれた数はシーケンスのキャッシュに置かれた最後の番号になります。  この番号は多くの場合、使用された最後のシーケンス番号より大きくなります。|  
+|<span data-ttu-id="993f1-394">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-394">ColumnName</span></span>|<span data-ttu-id="993f1-395">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-395">DataType</span></span>|<span data-ttu-id="993f1-396">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-396">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-397">SEQUENCE_OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-397">SEQUENCE_OWNER</span></span>|<span data-ttu-id="993f1-398">String</span><span class="sxs-lookup"><span data-stu-id="993f1-398">String</span></span>|<span data-ttu-id="993f1-399">シーケンスの所有者の名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-399">Name of the owner of the sequence.</span></span>|  
+|<span data-ttu-id="993f1-400">SEQUENCE_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-400">SEQUENCE_NAME</span></span>|<span data-ttu-id="993f1-401">String</span><span class="sxs-lookup"><span data-stu-id="993f1-401">String</span></span>|<span data-ttu-id="993f1-402">シーケンス名。</span><span class="sxs-lookup"><span data-stu-id="993f1-402">Sequence name.</span></span>|  
+|<span data-ttu-id="993f1-403">MIN_VALUE</span><span class="sxs-lookup"><span data-stu-id="993f1-403">MIN_VALUE</span></span>|<span data-ttu-id="993f1-404">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-404">Decimal</span></span>|<span data-ttu-id="993f1-405">シーケンスの最小値。</span><span class="sxs-lookup"><span data-stu-id="993f1-405">Minimum value of the sequence.</span></span>|  
+|<span data-ttu-id="993f1-406">MAX_VALUE</span><span class="sxs-lookup"><span data-stu-id="993f1-406">MAX_VALUE</span></span>|<span data-ttu-id="993f1-407">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-407">Decimal</span></span>|<span data-ttu-id="993f1-408">シーケンスの最大値。</span><span class="sxs-lookup"><span data-stu-id="993f1-408">Maximum value of the sequence.</span></span>|  
+|<span data-ttu-id="993f1-409">INCREMENT_BY</span><span class="sxs-lookup"><span data-stu-id="993f1-409">INCREMENT_BY</span></span>|<span data-ttu-id="993f1-410">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-410">Decimal</span></span>|<span data-ttu-id="993f1-411">シーケンスがインクリメントされる値。</span><span class="sxs-lookup"><span data-stu-id="993f1-411">Value by which sequence is incremented.</span></span>|  
+|<span data-ttu-id="993f1-412">CYCLE_FLAG</span><span class="sxs-lookup"><span data-stu-id="993f1-412">CYCLE_FLAG</span></span>|<span data-ttu-id="993f1-413">String</span><span class="sxs-lookup"><span data-stu-id="993f1-413">String</span></span>|<span data-ttu-id="993f1-414">限界に到達するとシーケンスはラップされるかを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-414">Does sequence wrap around on reaching limit.</span></span>|  
+|<span data-ttu-id="993f1-415">ORDER_FLAG</span><span class="sxs-lookup"><span data-stu-id="993f1-415">ORDER_FLAG</span></span>|<span data-ttu-id="993f1-416">String</span><span class="sxs-lookup"><span data-stu-id="993f1-416">String</span></span>|<span data-ttu-id="993f1-417">順に生成されたシーケンス番号。</span><span class="sxs-lookup"><span data-stu-id="993f1-417">Are sequence numbers generated in order.</span></span>|  
+|<span data-ttu-id="993f1-418">CACHE_SIZE</span><span class="sxs-lookup"><span data-stu-id="993f1-418">CACHE_SIZE</span></span>|<span data-ttu-id="993f1-419">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-419">Decimal</span></span>|<span data-ttu-id="993f1-420">キャッシュするシーケンス番号の数。</span><span class="sxs-lookup"><span data-stu-id="993f1-420">Number of sequence numbers to cache.</span></span>|  
+|<span data-ttu-id="993f1-421">LAST_NUMBER</span><span class="sxs-lookup"><span data-stu-id="993f1-421">LAST_NUMBER</span></span>|<span data-ttu-id="993f1-422">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-422">Decimal</span></span>|<span data-ttu-id="993f1-423">ディスクに書き込まれた最後のシーケンス番号。</span><span class="sxs-lookup"><span data-stu-id="993f1-423">Last sequence number written to disk.</span></span> <span data-ttu-id="993f1-424">シーケンスでキャッシュが使用される場合、ディスクに書き込まれた数はシーケンスのキャッシュに置かれた最後の番号になります。</span><span class="sxs-lookup"><span data-stu-id="993f1-424">If a sequence uses caching, the number written to disk is the last number placed in the sequence cache.</span></span> <span data-ttu-id="993f1-425">この番号は多くの場合、使用された最後のシーケンス番号より大きくなります。</span><span class="sxs-lookup"><span data-stu-id="993f1-425">This number is likely to be greater than the last sequence number that was used.</span></span>|  
   
-## Synonyms  
+## <a name="synonyms"></a><span data-ttu-id="993f1-426">Synonyms</span><span class="sxs-lookup"><span data-stu-id="993f1-426">Synonyms</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|OWNER|String|シノニムの所有者。|  
-|SYNONYM\_NAME|String|シノニムの名前。|  
-|TABLE\_OWNER|String|シノニムが参照するオブジェクトの所有者。|  
-|TABLE\_NAME|String|シノニムが参照するオブジェクトの名前。|  
-|DB\_LINK|String|参照されるデータベース リンクの名前 \(参照される場合\)。|  
+|<span data-ttu-id="993f1-427">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-427">ColumnName</span></span>|<span data-ttu-id="993f1-428">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-428">DataType</span></span>|<span data-ttu-id="993f1-429">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-429">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-430">OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-430">OWNER</span></span>|<span data-ttu-id="993f1-431">String</span><span class="sxs-lookup"><span data-stu-id="993f1-431">String</span></span>|<span data-ttu-id="993f1-432">シノニムの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-432">Owner of the synonym.</span></span>|  
+|<span data-ttu-id="993f1-433">SYNONYM_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-433">SYNONYM_NAME</span></span>|<span data-ttu-id="993f1-434">String</span><span class="sxs-lookup"><span data-stu-id="993f1-434">String</span></span>|<span data-ttu-id="993f1-435">シノニムの名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-435">Name of the synonym.</span></span>|  
+|<span data-ttu-id="993f1-436">TABLE_OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-436">TABLE_OWNER</span></span>|<span data-ttu-id="993f1-437">String</span><span class="sxs-lookup"><span data-stu-id="993f1-437">String</span></span>|<span data-ttu-id="993f1-438">シノニムが参照するオブジェクトの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-438">Owner of the object referenced by the synonym.</span></span>|  
+|<span data-ttu-id="993f1-439">TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-439">TABLE_NAME</span></span>|<span data-ttu-id="993f1-440">String</span><span class="sxs-lookup"><span data-stu-id="993f1-440">String</span></span>|<span data-ttu-id="993f1-441">シノニムが参照するオブジェクトの名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-441">Name of the object referenced by the synonym.</span></span>|  
+|<span data-ttu-id="993f1-442">DB_LINK</span><span class="sxs-lookup"><span data-stu-id="993f1-442">DB_LINK</span></span>|<span data-ttu-id="993f1-443">String</span><span class="sxs-lookup"><span data-stu-id="993f1-443">String</span></span>|<span data-ttu-id="993f1-444">参照されるデータベース リンクの名前 (参照される場合)。</span><span class="sxs-lookup"><span data-stu-id="993f1-444">Name of the database link referenced, if any.</span></span>|  
   
-## \[テーブル\]  
+## <a name="tables"></a><span data-ttu-id="993f1-445">[テーブル]</span><span class="sxs-lookup"><span data-stu-id="993f1-445">Tables</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|OWNER|String|テーブルの所有者。|  
-|TABLE\_NAME|String|テーブルの名前。|  
-|TYPE|String|テーブルの型。|  
+|<span data-ttu-id="993f1-446">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-446">ColumnName</span></span>|<span data-ttu-id="993f1-447">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-447">DataType</span></span>|<span data-ttu-id="993f1-448">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-448">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-449">OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-449">OWNER</span></span>|<span data-ttu-id="993f1-450">String</span><span class="sxs-lookup"><span data-stu-id="993f1-450">String</span></span>|<span data-ttu-id="993f1-451">テーブルの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-451">Owner of the table.</span></span>|  
+|<span data-ttu-id="993f1-452">TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-452">TABLE_NAME</span></span>|<span data-ttu-id="993f1-453">String</span><span class="sxs-lookup"><span data-stu-id="993f1-453">String</span></span>|<span data-ttu-id="993f1-454">テーブルの名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-454">Name of the table.</span></span>|  
+|<span data-ttu-id="993f1-455">TYPE</span><span class="sxs-lookup"><span data-stu-id="993f1-455">TYPE</span></span>|<span data-ttu-id="993f1-456">String</span><span class="sxs-lookup"><span data-stu-id="993f1-456">String</span></span>|<span data-ttu-id="993f1-457">テーブルの型。</span><span class="sxs-lookup"><span data-stu-id="993f1-457">Type of table.</span></span>|  
   
-## Users  
+## <a name="users"></a><span data-ttu-id="993f1-458">Users</span><span class="sxs-lookup"><span data-stu-id="993f1-458">Users</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|NAME|String|ユーザー名。|  
-|ID|Decimal \(10 進数型\)|ユーザーの ID 番号。|  
-|CREATEDATE|DateTime|ユーザーの作成日。|  
+|<span data-ttu-id="993f1-459">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-459">ColumnName</span></span>|<span data-ttu-id="993f1-460">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-460">DataType</span></span>|<span data-ttu-id="993f1-461">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-461">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-462">NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-462">NAME</span></span>|<span data-ttu-id="993f1-463">String</span><span class="sxs-lookup"><span data-stu-id="993f1-463">String</span></span>|<span data-ttu-id="993f1-464">ユーザー名。</span><span class="sxs-lookup"><span data-stu-id="993f1-464">Name of the user.</span></span>|  
+|<span data-ttu-id="993f1-465">ID</span><span class="sxs-lookup"><span data-stu-id="993f1-465">ID</span></span>|<span data-ttu-id="993f1-466">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-466">Decimal</span></span>|<span data-ttu-id="993f1-467">ユーザーの ID 番号。</span><span class="sxs-lookup"><span data-stu-id="993f1-467">ID number of the user.</span></span>|  
+|<span data-ttu-id="993f1-468">CREATEDATE</span><span class="sxs-lookup"><span data-stu-id="993f1-468">CREATEDATE</span></span>|<span data-ttu-id="993f1-469">DateTime</span><span class="sxs-lookup"><span data-stu-id="993f1-469">DateTime</span></span>|<span data-ttu-id="993f1-470">ユーザーの作成日。</span><span class="sxs-lookup"><span data-stu-id="993f1-470">User creation date.</span></span>|  
   
-## ビュー  
+## <a name="views"></a><span data-ttu-id="993f1-471">ビュー</span><span class="sxs-lookup"><span data-stu-id="993f1-471">Views</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|OWNER|String|ビューの所有者。|  
-|VIEW\_NAME|String|ビューの名前。|  
-|TEXT\_LENGTH|Decimal \(10 進数型\)|ビュー テキストの長さ。|  
-|TEXT|String|ビュー テキスト。|  
-|TYPE\_TEXT\_LENGTH|Decimal \(10 進数型\)|型指定されたビューの TYPE 句の長さ。|  
-|TYPE\_TEXT|String|型指定されたビューの TYPE 句。|  
-|OID\_TEXT\_LENGTH|Decimal \(10 進数型\)|型指定されたビューの WITH OID 句の長さ。|  
-|OID\_TEXT|String|型指定されたビューの WITH OID 句。|  
-|VIEW\_TYPE\_OWNER|String|ビューが型指定されたビューである場合の、ビューの型の所有者。|  
-|VIEW\_TYPE|String|ビューが型指定されたビューである場合の、ビューの型。|  
-|SUPERVIEW\_NAME|String|スーパービューの名前。|  
+|<span data-ttu-id="993f1-472">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-472">ColumnName</span></span>|<span data-ttu-id="993f1-473">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-473">DataType</span></span>|<span data-ttu-id="993f1-474">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-474">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-475">OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-475">OWNER</span></span>|<span data-ttu-id="993f1-476">String</span><span class="sxs-lookup"><span data-stu-id="993f1-476">String</span></span>|<span data-ttu-id="993f1-477">ビューの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-477">Owner of the view.</span></span>|  
+|<span data-ttu-id="993f1-478">VIEW_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-478">VIEW_NAME</span></span>|<span data-ttu-id="993f1-479">String</span><span class="sxs-lookup"><span data-stu-id="993f1-479">String</span></span>|<span data-ttu-id="993f1-480">ビューの名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-480">Name of the view.</span></span>|  
+|<span data-ttu-id="993f1-481">TEXT_LENGTH</span><span class="sxs-lookup"><span data-stu-id="993f1-481">TEXT_LENGTH</span></span>|<span data-ttu-id="993f1-482">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-482">Decimal</span></span>|<span data-ttu-id="993f1-483">ビュー テキストの長さ。</span><span class="sxs-lookup"><span data-stu-id="993f1-483">Length of the view text.</span></span>|  
+|<span data-ttu-id="993f1-484">TEXT</span><span class="sxs-lookup"><span data-stu-id="993f1-484">TEXT</span></span>|<span data-ttu-id="993f1-485">String</span><span class="sxs-lookup"><span data-stu-id="993f1-485">String</span></span>|<span data-ttu-id="993f1-486">ビュー テキスト。</span><span class="sxs-lookup"><span data-stu-id="993f1-486">View text.</span></span>|  
+|<span data-ttu-id="993f1-487">TYPE_TEXT_LENGTH</span><span class="sxs-lookup"><span data-stu-id="993f1-487">TYPE_TEXT_LENGTH</span></span>|<span data-ttu-id="993f1-488">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-488">Decimal</span></span>|<span data-ttu-id="993f1-489">型指定されたビューの TYPE 句の長さ。</span><span class="sxs-lookup"><span data-stu-id="993f1-489">Length of the type clause of the typed view.</span></span>|  
+|<span data-ttu-id="993f1-490">TYPE_TEXT</span><span class="sxs-lookup"><span data-stu-id="993f1-490">TYPE_TEXT</span></span>|<span data-ttu-id="993f1-491">String</span><span class="sxs-lookup"><span data-stu-id="993f1-491">String</span></span>|<span data-ttu-id="993f1-492">型指定されたビューの TYPE 句。</span><span class="sxs-lookup"><span data-stu-id="993f1-492">Type clause of the typed view.</span></span>|  
+|<span data-ttu-id="993f1-493">OID_TEXT_LENGTH</span><span class="sxs-lookup"><span data-stu-id="993f1-493">OID_TEXT_LENGTH</span></span>|<span data-ttu-id="993f1-494">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-494">Decimal</span></span>|<span data-ttu-id="993f1-495">型指定されたビューの WITH OID 句の長さ。</span><span class="sxs-lookup"><span data-stu-id="993f1-495">Length of the WITH OID clause of the typed view.</span></span>|  
+|<span data-ttu-id="993f1-496">OID_TEXT</span><span class="sxs-lookup"><span data-stu-id="993f1-496">OID_TEXT</span></span>|<span data-ttu-id="993f1-497">String</span><span class="sxs-lookup"><span data-stu-id="993f1-497">String</span></span>|<span data-ttu-id="993f1-498">型指定されたビューの WITH OID 句。</span><span class="sxs-lookup"><span data-stu-id="993f1-498">WITH OID clause of the typed view.</span></span>|  
+|<span data-ttu-id="993f1-499">VIEW_TYPE_OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-499">VIEW_TYPE_OWNER</span></span>|<span data-ttu-id="993f1-500">String</span><span class="sxs-lookup"><span data-stu-id="993f1-500">String</span></span>|<span data-ttu-id="993f1-501">ビューが型指定されたビューである場合の、ビューの型の所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-501">Owner of the type of the view if the view is a typed view.</span></span>|  
+|<span data-ttu-id="993f1-502">VIEW_TYPE</span><span class="sxs-lookup"><span data-stu-id="993f1-502">VIEW_TYPE</span></span>|<span data-ttu-id="993f1-503">String</span><span class="sxs-lookup"><span data-stu-id="993f1-503">String</span></span>|<span data-ttu-id="993f1-504">ビューが型指定されたビューである場合の、ビューの型。</span><span class="sxs-lookup"><span data-stu-id="993f1-504">Type of the view if the view is a typed view.</span></span>|  
+|<span data-ttu-id="993f1-505">SUPERVIEW_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-505">SUPERVIEW_NAME</span></span>|<span data-ttu-id="993f1-506">String</span><span class="sxs-lookup"><span data-stu-id="993f1-506">String</span></span>|<span data-ttu-id="993f1-507">スーパービューの名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-507">Name of the superview.</span></span>|  
   
-## 関数  
+## <a name="functions"></a><span data-ttu-id="993f1-508">関数</span><span class="sxs-lookup"><span data-stu-id="993f1-508">Functions</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|OWNER|String|オブジェクトの所有者。|  
-|OBJECT\_NAME|String|オブジェクト名。|  
-|SUBOBJECT\_NAME|String|サブオブジェクト名 \(partition など\)。|  
-|OBJECT\_ID|Decimal \(10 進数型\)|オブジェクトの辞書オブジェクト数。|  
-|DATA\_OBJECT\_ID|Decimal \(10 進数型\)|オブジェクトを含むセグメントの辞書オブジェクト数。|  
-|OBJECT\_TYPE|String|オブジェクトの型。|  
-|CREATED|DateTime|オブジェクトが作成された日付。|  
-|LAST\_DDL\_TIME|DateTime|DDL コマンド \(許可および取り消しを含む\) の実行結果として、最後に変更されたオブジェクトのタイムスタンプ。|  
-|TIMESTAMP|String|オブジェクト \(文字データ\) の指定に対するタイムスタンプ。|  
-|STATUS|String|オブジェクトのステータス \(VALID、INVALID、または N\/A\)。|  
-|TEMPORARY|String|オブジェクトが一時的かどうかを示します \(現在のセッションでは、オブジェクト自体に置かれたデータだけが表示される\)。|  
-|GENERATED|String|このオブジェクトの名前がシステムによって生成されたかどうかを示します   \(Y または N\)。|  
-|SECONDARY|String|Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうかを示します \(Y または N\)。|  
+|<span data-ttu-id="993f1-509">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-509">ColumnName</span></span>|<span data-ttu-id="993f1-510">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-510">DataType</span></span>|<span data-ttu-id="993f1-511">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-511">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-512">OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-512">OWNER</span></span>|<span data-ttu-id="993f1-513">String</span><span class="sxs-lookup"><span data-stu-id="993f1-513">String</span></span>|<span data-ttu-id="993f1-514">オブジェクトの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-514">Owner of the object.</span></span>|  
+|<span data-ttu-id="993f1-515">OBJECT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-515">OBJECT_NAME</span></span>|<span data-ttu-id="993f1-516">String</span><span class="sxs-lookup"><span data-stu-id="993f1-516">String</span></span>|<span data-ttu-id="993f1-517">オブジェクト名。</span><span class="sxs-lookup"><span data-stu-id="993f1-517">Name of the object.</span></span>|  
+|<span data-ttu-id="993f1-518">SUBOBJECT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-518">SUBOBJECT_NAME</span></span>|<span data-ttu-id="993f1-519">String</span><span class="sxs-lookup"><span data-stu-id="993f1-519">String</span></span>|<span data-ttu-id="993f1-520">サブオブジェクト名 (partition など)。</span><span class="sxs-lookup"><span data-stu-id="993f1-520">Name of the subobject (for example, partition).</span></span>|  
+|<span data-ttu-id="993f1-521">OBJECT_ID</span><span class="sxs-lookup"><span data-stu-id="993f1-521">OBJECT_ID</span></span>|<span data-ttu-id="993f1-522">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-522">Decimal</span></span>|<span data-ttu-id="993f1-523">オブジェクトの辞書オブジェクト数。</span><span class="sxs-lookup"><span data-stu-id="993f1-523">Dictionary object number of the object.</span></span>|  
+|<span data-ttu-id="993f1-524">DATA_OBJECT_ID</span><span class="sxs-lookup"><span data-stu-id="993f1-524">DATA_OBJECT_ID</span></span>|<span data-ttu-id="993f1-525">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-525">Decimal</span></span>|<span data-ttu-id="993f1-526">オブジェクトを含むセグメントの辞書オブジェクト数。</span><span class="sxs-lookup"><span data-stu-id="993f1-526">Dictionary object number of the segment that contains the object.</span></span>|  
+|<span data-ttu-id="993f1-527">OBJECT_TYPE</span><span class="sxs-lookup"><span data-stu-id="993f1-527">OBJECT_TYPE</span></span>|<span data-ttu-id="993f1-528">String</span><span class="sxs-lookup"><span data-stu-id="993f1-528">String</span></span>|<span data-ttu-id="993f1-529">オブジェクトの型。</span><span class="sxs-lookup"><span data-stu-id="993f1-529">Type of the object.</span></span>|  
+|<span data-ttu-id="993f1-530">CREATED</span><span class="sxs-lookup"><span data-stu-id="993f1-530">CREATED</span></span>|<span data-ttu-id="993f1-531">DateTime</span><span class="sxs-lookup"><span data-stu-id="993f1-531">DateTime</span></span>|<span data-ttu-id="993f1-532">オブジェクトが作成された日付。</span><span class="sxs-lookup"><span data-stu-id="993f1-532">The date the object was created.</span></span>|  
+|<span data-ttu-id="993f1-533">LAST_DDL_TIME</span><span class="sxs-lookup"><span data-stu-id="993f1-533">LAST_DDL_TIME</span></span>|<span data-ttu-id="993f1-534">DateTime</span><span class="sxs-lookup"><span data-stu-id="993f1-534">DateTime</span></span>|<span data-ttu-id="993f1-535">DDL コマンド (許可および取り消しを含む) の実行結果として、最後に変更されたオブジェクトのタイムスタンプ。</span><span class="sxs-lookup"><span data-stu-id="993f1-535">Timestamp for the last modification of the object resulting from a DDL command (including grants and revokes).</span></span>|  
+|<span data-ttu-id="993f1-536">TIMESTAMP</span><span class="sxs-lookup"><span data-stu-id="993f1-536">TIMESTAMP</span></span>|<span data-ttu-id="993f1-537">String</span><span class="sxs-lookup"><span data-stu-id="993f1-537">String</span></span>|<span data-ttu-id="993f1-538">オブジェクト (文字データ) の指定に対するタイムスタンプ。</span><span class="sxs-lookup"><span data-stu-id="993f1-538">Timestamp for the specification of the object (character data)</span></span>|  
+|<span data-ttu-id="993f1-539">STATUS</span><span class="sxs-lookup"><span data-stu-id="993f1-539">STATUS</span></span>|<span data-ttu-id="993f1-540">String</span><span class="sxs-lookup"><span data-stu-id="993f1-540">String</span></span>|<span data-ttu-id="993f1-541">オブジェクトのステータス (VALID、INVALID、または N/A)。</span><span class="sxs-lookup"><span data-stu-id="993f1-541">Status of the object (VALID, INVALID, or N/A).</span></span>|  
+|<span data-ttu-id="993f1-542">TEMPORARY</span><span class="sxs-lookup"><span data-stu-id="993f1-542">TEMPORARY</span></span>|<span data-ttu-id="993f1-543">String</span><span class="sxs-lookup"><span data-stu-id="993f1-543">String</span></span>|<span data-ttu-id="993f1-544">オブジェクトが一時的かどうかを示します (現在のセッションでは、オブジェクト自体に置かれたデータだけが表示される)。</span><span class="sxs-lookup"><span data-stu-id="993f1-544">Whether the object is temporary (the current session can see only data that it placed in this object itself).</span></span>|  
+|<span data-ttu-id="993f1-545">GENERATED</span><span class="sxs-lookup"><span data-stu-id="993f1-545">GENERATED</span></span>|<span data-ttu-id="993f1-546">String</span><span class="sxs-lookup"><span data-stu-id="993f1-546">String</span></span>|<span data-ttu-id="993f1-547">このオブジェクトの名前がシステムによって生成されたかどうかを示します </span><span class="sxs-lookup"><span data-stu-id="993f1-547">Was the name of this object system generated?</span></span> <span data-ttu-id="993f1-548">(Y &#124;です。N)。</span><span class="sxs-lookup"><span data-stu-id="993f1-548">(Y &#124; N).</span></span>|  
+|<span data-ttu-id="993f1-549">SECONDARY</span><span class="sxs-lookup"><span data-stu-id="993f1-549">SECONDARY</span></span>|<span data-ttu-id="993f1-550">文字列型</span><span class="sxs-lookup"><span data-stu-id="993f1-550">String</span></span>|<span data-ttu-id="993f1-551">これは、Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうか (Y &#124;です。N)。</span><span class="sxs-lookup"><span data-stu-id="993f1-551">Whether this is a secondary object created by the ODCIIndexCreate method of the Oracle9i Data Cartridge (Y &#124; N).</span></span>|  
   
-## パッケージ  
+## <a name="packages"></a><span data-ttu-id="993f1-552">パッケージ</span><span class="sxs-lookup"><span data-stu-id="993f1-552">Packages</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|OWNER|String|オブジェクトの所有者。|  
-|OBJECT\_NAME|String|オブジェクト名。|  
-|SUBOBJECT\_NAME|String|サブオブジェクト名 \(partition など\)。|  
-|OBJECT\_ID|Decimal \(10 進数型\)|オブジェクトの辞書オブジェクト数。|  
-|DATA\_OBJECT\_ID|Decimal \(10 進数型\)|オブジェクトを含むセグメントの辞書オブジェクト数。|  
-|LAST\_DDL\_TIME|DateTime|DDL コマンド \(許可および取り消しを含む\) の実行結果として、最後に変更されたオブジェクトのタイムスタンプ。|  
-|TIMESTAMP|String|オブジェクト \(文字データ\) の指定に対するタイムスタンプ。|  
-|STATUS|String|オブジェクトのステータス \(VALID、INVALID、または N\/A\)。|  
-|TEMPORARY|String|オブジェクトが一時的かどうかを示します \(現在のセッションでは、オブジェクト自体に置かれたデータだけが表示される\)。|  
-|GENERATED|String|このオブジェクトの名前がシステムによって生成されたかどうかを示します   \(Y または N\)。|  
-|SECONDARY|String|Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうかを示します \(Y または N\)。|  
-|CREATED|DateTime|オブジェクトが作成された日付。|  
+|<span data-ttu-id="993f1-553">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-553">ColumnName</span></span>|<span data-ttu-id="993f1-554">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-554">DataType</span></span>|<span data-ttu-id="993f1-555">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-555">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-556">OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-556">OWNER</span></span>|<span data-ttu-id="993f1-557">String</span><span class="sxs-lookup"><span data-stu-id="993f1-557">String</span></span>|<span data-ttu-id="993f1-558">オブジェクトの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-558">Owner of the object.</span></span>|  
+|<span data-ttu-id="993f1-559">OBJECT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-559">OBJECT_NAME</span></span>|<span data-ttu-id="993f1-560">String</span><span class="sxs-lookup"><span data-stu-id="993f1-560">String</span></span>|<span data-ttu-id="993f1-561">オブジェクト名。</span><span class="sxs-lookup"><span data-stu-id="993f1-561">Name of the object.</span></span>|  
+|<span data-ttu-id="993f1-562">SUBOBJECT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-562">SUBOBJECT_NAME</span></span>|<span data-ttu-id="993f1-563">String</span><span class="sxs-lookup"><span data-stu-id="993f1-563">String</span></span>|<span data-ttu-id="993f1-564">サブオブジェクト名 (partition など)。</span><span class="sxs-lookup"><span data-stu-id="993f1-564">Name of the subobject (for example, partition).</span></span>|  
+|<span data-ttu-id="993f1-565">OBJECT_ID</span><span class="sxs-lookup"><span data-stu-id="993f1-565">OBJECT_ID</span></span>|<span data-ttu-id="993f1-566">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-566">Decimal</span></span>|<span data-ttu-id="993f1-567">オブジェクトの辞書オブジェクト数。</span><span class="sxs-lookup"><span data-stu-id="993f1-567">Dictionary object number of the object.</span></span>|  
+|<span data-ttu-id="993f1-568">DATA_OBJECT_ID</span><span class="sxs-lookup"><span data-stu-id="993f1-568">DATA_OBJECT_ID</span></span>|<span data-ttu-id="993f1-569">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-569">Decimal</span></span>|<span data-ttu-id="993f1-570">オブジェクトを含むセグメントの辞書オブジェクト数。</span><span class="sxs-lookup"><span data-stu-id="993f1-570">Dictionary object number of the segment that contains the object.</span></span>|  
+|<span data-ttu-id="993f1-571">LAST_DDL_TIME</span><span class="sxs-lookup"><span data-stu-id="993f1-571">LAST_DDL_TIME</span></span>|<span data-ttu-id="993f1-572">DateTime</span><span class="sxs-lookup"><span data-stu-id="993f1-572">DateTime</span></span>|<span data-ttu-id="993f1-573">DDL コマンド (許可および取り消しを含む) の実行結果として、最後に変更されたオブジェクトのタイムスタンプ。</span><span class="sxs-lookup"><span data-stu-id="993f1-573">Timestamp for the last modification of the object resulting from a DDL command (including grants and revokes).</span></span>|  
+|<span data-ttu-id="993f1-574">TIMESTAMP</span><span class="sxs-lookup"><span data-stu-id="993f1-574">TIMESTAMP</span></span>|<span data-ttu-id="993f1-575">String</span><span class="sxs-lookup"><span data-stu-id="993f1-575">String</span></span>|<span data-ttu-id="993f1-576">オブジェクト (文字データ) の指定に対するタイムスタンプ。</span><span class="sxs-lookup"><span data-stu-id="993f1-576">Timestamp for the specification of the object (character data).</span></span>|  
+|<span data-ttu-id="993f1-577">STATUS</span><span class="sxs-lookup"><span data-stu-id="993f1-577">STATUS</span></span>|<span data-ttu-id="993f1-578">String</span><span class="sxs-lookup"><span data-stu-id="993f1-578">String</span></span>|<span data-ttu-id="993f1-579">オブジェクトのステータス (VALID、INVALID、または N/A)。</span><span class="sxs-lookup"><span data-stu-id="993f1-579">Status of the object (VALID, INVALID, or N/A).</span></span>|  
+|<span data-ttu-id="993f1-580">TEMPORARY</span><span class="sxs-lookup"><span data-stu-id="993f1-580">TEMPORARY</span></span>|<span data-ttu-id="993f1-581">String</span><span class="sxs-lookup"><span data-stu-id="993f1-581">String</span></span>|<span data-ttu-id="993f1-582">オブジェクトが一時的かどうかを示します (現在のセッションでは、オブジェクト自体に置かれたデータだけが表示される)。</span><span class="sxs-lookup"><span data-stu-id="993f1-582">Whether the object is temporary (the current session can see only data that it placed in this object itself).</span></span>|  
+|<span data-ttu-id="993f1-583">GENERATED</span><span class="sxs-lookup"><span data-stu-id="993f1-583">GENERATED</span></span>|<span data-ttu-id="993f1-584">String</span><span class="sxs-lookup"><span data-stu-id="993f1-584">String</span></span>|<span data-ttu-id="993f1-585">このオブジェクトの名前がシステムによって生成されたかどうかを示します </span><span class="sxs-lookup"><span data-stu-id="993f1-585">Was the name of this object system generated?</span></span> <span data-ttu-id="993f1-586">(Y &#124;です。N)。</span><span class="sxs-lookup"><span data-stu-id="993f1-586">(Y &#124; N).</span></span>|  
+|<span data-ttu-id="993f1-587">SECONDARY</span><span class="sxs-lookup"><span data-stu-id="993f1-587">SECONDARY</span></span>|<span data-ttu-id="993f1-588">文字列型</span><span class="sxs-lookup"><span data-stu-id="993f1-588">String</span></span>|<span data-ttu-id="993f1-589">これは、Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうか (Y &#124;です。N)。</span><span class="sxs-lookup"><span data-stu-id="993f1-589">Whether this is a secondary object created by the ODCIIndexCreate method of the Oracle9i Data Cartridge (Y &#124; N).</span></span>|  
+|<span data-ttu-id="993f1-590">CREATED</span><span class="sxs-lookup"><span data-stu-id="993f1-590">CREATED</span></span>|<span data-ttu-id="993f1-591">DateTime</span><span class="sxs-lookup"><span data-stu-id="993f1-591">DateTime</span></span>|<span data-ttu-id="993f1-592">オブジェクトが作成された日付。</span><span class="sxs-lookup"><span data-stu-id="993f1-592">The date the object was created.</span></span>|  
   
-## PackageBodies  
+## <a name="packagebodies"></a><span data-ttu-id="993f1-593">PackageBodies</span><span class="sxs-lookup"><span data-stu-id="993f1-593">PackageBodies</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|OWNER|String|オブジェクトの所有者。|  
-|OBJECT\_NAME|String|オブジェクト名。|  
-|SUBOBJECT\_NAME|String|サブオブジェクト名 \(partition など\)。|  
-|OBJECT\_ID|Decimal \(10 進数型\)|オブジェクトの辞書オブジェクト数。|  
-|DATA\_OBJECT\_ID|Decimal \(10 進数型\)|オブジェクトを含むセグメントの辞書オブジェクト数。|  
-|LAST\_DDL\_TIME|DateTime|DDL コマンド \(許可および取り消しを含む\) の実行結果として、最後に変更されたオブジェクトのタイムスタンプ。|  
-|TIMESTAMP|String|オブジェクト \(文字データ\) の指定に対するタイムスタンプ。|  
-|STATUS|String|オブジェクトのステータス \(VALID、INVALID、または N\/A\)。|  
-|TEMPORARY|String|オブジェクトが一時的かどうかを示します \(現在のセッションでは、オブジェクト自体に置かれたデータだけが表示される\)。|  
-|GENERATED|String|このオブジェクトの名前がシステムによって生成されたかどうかを示します   \(Y または N\)。|  
-|SECONDARY|String|Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうかを示します \(Y または N\)。|  
-|CREATED|DateTime|オブジェクトが作成された日付。|  
+|<span data-ttu-id="993f1-594">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-594">ColumnName</span></span>|<span data-ttu-id="993f1-595">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-595">DataType</span></span>|<span data-ttu-id="993f1-596">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-596">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-597">OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-597">OWNER</span></span>|<span data-ttu-id="993f1-598">String</span><span class="sxs-lookup"><span data-stu-id="993f1-598">String</span></span>|<span data-ttu-id="993f1-599">オブジェクトの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-599">Owner of the object.</span></span>|  
+|<span data-ttu-id="993f1-600">OBJECT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-600">OBJECT_NAME</span></span>|<span data-ttu-id="993f1-601">String</span><span class="sxs-lookup"><span data-stu-id="993f1-601">String</span></span>|<span data-ttu-id="993f1-602">オブジェクト名。</span><span class="sxs-lookup"><span data-stu-id="993f1-602">Name of the object.</span></span>|  
+|<span data-ttu-id="993f1-603">SUBOBJECT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-603">SUBOBJECT_NAME</span></span>|<span data-ttu-id="993f1-604">String</span><span class="sxs-lookup"><span data-stu-id="993f1-604">String</span></span>|<span data-ttu-id="993f1-605">サブオブジェクト名 (partition など)。</span><span class="sxs-lookup"><span data-stu-id="993f1-605">Name of the subobject (for example, partition).</span></span>|  
+|<span data-ttu-id="993f1-606">OBJECT_ID</span><span class="sxs-lookup"><span data-stu-id="993f1-606">OBJECT_ID</span></span>|<span data-ttu-id="993f1-607">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-607">Decimal</span></span>|<span data-ttu-id="993f1-608">オブジェクトの辞書オブジェクト数。</span><span class="sxs-lookup"><span data-stu-id="993f1-608">Dictionary object number of the object.</span></span>|  
+|<span data-ttu-id="993f1-609">DATA_OBJECT_ID</span><span class="sxs-lookup"><span data-stu-id="993f1-609">DATA_OBJECT_ID</span></span>|<span data-ttu-id="993f1-610">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-610">Decimal</span></span>|<span data-ttu-id="993f1-611">オブジェクトを含むセグメントの辞書オブジェクト数。</span><span class="sxs-lookup"><span data-stu-id="993f1-611">Dictionary object number of the segment that contains the object.</span></span>|  
+|<span data-ttu-id="993f1-612">LAST_DDL_TIME</span><span class="sxs-lookup"><span data-stu-id="993f1-612">LAST_DDL_TIME</span></span>|<span data-ttu-id="993f1-613">DateTime</span><span class="sxs-lookup"><span data-stu-id="993f1-613">DateTime</span></span>|<span data-ttu-id="993f1-614">DDL コマンド (許可および取り消しを含む) の実行結果として、最後に変更されたオブジェクトのタイムスタンプ。</span><span class="sxs-lookup"><span data-stu-id="993f1-614">Timestamp for the last modification of the object resulting from a DDL command (including grants and revokes).</span></span>|  
+|<span data-ttu-id="993f1-615">TIMESTAMP</span><span class="sxs-lookup"><span data-stu-id="993f1-615">TIMESTAMP</span></span>|<span data-ttu-id="993f1-616">String</span><span class="sxs-lookup"><span data-stu-id="993f1-616">String</span></span>|<span data-ttu-id="993f1-617">オブジェクト (文字データ) の指定に対するタイムスタンプ。</span><span class="sxs-lookup"><span data-stu-id="993f1-617">Timestamp for the specification of the object (character data).</span></span>|  
+|<span data-ttu-id="993f1-618">STATUS</span><span class="sxs-lookup"><span data-stu-id="993f1-618">STATUS</span></span>|<span data-ttu-id="993f1-619">String</span><span class="sxs-lookup"><span data-stu-id="993f1-619">String</span></span>|<span data-ttu-id="993f1-620">オブジェクトのステータス (VALID、INVALID、または N/A)。</span><span class="sxs-lookup"><span data-stu-id="993f1-620">Status of the object (VALID, INVALID, or N/A).</span></span>|  
+|<span data-ttu-id="993f1-621">TEMPORARY</span><span class="sxs-lookup"><span data-stu-id="993f1-621">TEMPORARY</span></span>|<span data-ttu-id="993f1-622">String</span><span class="sxs-lookup"><span data-stu-id="993f1-622">String</span></span>|<span data-ttu-id="993f1-623">オブジェクトが一時的かどうかを示します (現在のセッションでは、オブジェクト自体に置かれたデータだけが表示される)。</span><span class="sxs-lookup"><span data-stu-id="993f1-623">Whether the object is temporary (the current session can see only data that it placed in this object itself).</span></span>|  
+|<span data-ttu-id="993f1-624">GENERATED</span><span class="sxs-lookup"><span data-stu-id="993f1-624">GENERATED</span></span>|<span data-ttu-id="993f1-625">String</span><span class="sxs-lookup"><span data-stu-id="993f1-625">String</span></span>|<span data-ttu-id="993f1-626">このオブジェクトの名前がシステムによって生成されたかどうかを示します </span><span class="sxs-lookup"><span data-stu-id="993f1-626">Was the name of this object system generated?</span></span> <span data-ttu-id="993f1-627">(Y &#124;です。N)。</span><span class="sxs-lookup"><span data-stu-id="993f1-627">(Y &#124; N).</span></span>|  
+|<span data-ttu-id="993f1-628">SECONDARY</span><span class="sxs-lookup"><span data-stu-id="993f1-628">SECONDARY</span></span>|<span data-ttu-id="993f1-629">文字列型</span><span class="sxs-lookup"><span data-stu-id="993f1-629">String</span></span>|<span data-ttu-id="993f1-630">これは、Oracle9i Data Cartridge の ODCIIndexCreate メソッドによって作成されたセカンダリ オブジェクトかどうか (Y &#124;です。N)。</span><span class="sxs-lookup"><span data-stu-id="993f1-630">Whether this is a secondary object created by the ODCIIndexCreate method of the Oracle9i Data Cartridge (Y &#124; N).</span></span>|  
+|<span data-ttu-id="993f1-631">CREATED</span><span class="sxs-lookup"><span data-stu-id="993f1-631">CREATED</span></span>|<span data-ttu-id="993f1-632">DateTime</span><span class="sxs-lookup"><span data-stu-id="993f1-632">DateTime</span></span>|<span data-ttu-id="993f1-633">オブジェクトが作成された日付。</span><span class="sxs-lookup"><span data-stu-id="993f1-633">The date the object was created.</span></span>|  
   
-## 引数  
+## <a name="arguments"></a><span data-ttu-id="993f1-634">引数</span><span class="sxs-lookup"><span data-stu-id="993f1-634">Arguments</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|OWNER|String|オブジェクトの所有者の名前。|  
-|PACKAGE\_NAME|String|パッケージ名。|  
-|OBJECT\_NAME|String|プロシージャまたは関数の名前。|  
-|ARGUMENT\_NAME|String|引数の名前。|  
-|POSITION|Decimal \(10 進数型\)|引数リスト内の位置。関数の戻り値の場合は NULL。|  
-|SEQUENCE|Decimal \(10 進数型\)|入れ子になったすべてのレベルを含む引数シーケンス。|  
-|DEFAULT\_VALUE|String|引数の既定値。|  
-|DEFAULT\_LENGTH|Decimal \(10 進数型\)|引数の既定値の長さ。|  
-|IN\_OUT|String|引数の方向 \(IN、OUT、または IN\/OUT\)。|  
-|DATA\_LENGTH|Decimal \(10 進数型\)|列の長さ \(バイト単位\)。|  
-|DATA\_PRECISION|Decimal \(10 進数型\)|小数桁数 \(NUMBER\) またはバイナリ桁数 \(FLOAT\) の長さ。|  
-|DATA\_SCALE|Decimal \(10 進数型\)|数値の小数点の右側にある数字。|  
-|DATA\_TYPE|String|引数のデータ型。|  
+|<span data-ttu-id="993f1-635">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-635">ColumnName</span></span>|<span data-ttu-id="993f1-636">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-636">DataType</span></span>|<span data-ttu-id="993f1-637">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-637">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-638">OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-638">OWNER</span></span>|<span data-ttu-id="993f1-639">String</span><span class="sxs-lookup"><span data-stu-id="993f1-639">String</span></span>|<span data-ttu-id="993f1-640">オブジェクトの所有者の名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-640">Name of the owner of the object.</span></span>|  
+|<span data-ttu-id="993f1-641">PACKAGE_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-641">PACKAGE_NAME</span></span>|<span data-ttu-id="993f1-642">String</span><span class="sxs-lookup"><span data-stu-id="993f1-642">String</span></span>|<span data-ttu-id="993f1-643">パッケージ名。</span><span class="sxs-lookup"><span data-stu-id="993f1-643">Package name.</span></span>|  
+|<span data-ttu-id="993f1-644">OBJECT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-644">OBJECT_NAME</span></span>|<span data-ttu-id="993f1-645">String</span><span class="sxs-lookup"><span data-stu-id="993f1-645">String</span></span>|<span data-ttu-id="993f1-646">プロシージャまたは関数の名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-646">Name of the procedure or function.</span></span>|  
+|<span data-ttu-id="993f1-647">ARGUMENT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-647">ARGUMENT_NAME</span></span>|<span data-ttu-id="993f1-648">String</span><span class="sxs-lookup"><span data-stu-id="993f1-648">String</span></span>|<span data-ttu-id="993f1-649">引数の名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-649">Name of the argument.</span></span>|  
+|<span data-ttu-id="993f1-650">POSITION</span><span class="sxs-lookup"><span data-stu-id="993f1-650">POSITION</span></span>|<span data-ttu-id="993f1-651">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-651">Decimal</span></span>|<span data-ttu-id="993f1-652">引数リスト内の位置。関数の戻り値の場合は NULL。</span><span class="sxs-lookup"><span data-stu-id="993f1-652">Position in argument list, or NULL for function return value.</span></span>|  
+|<span data-ttu-id="993f1-653">SEQUENCE</span><span class="sxs-lookup"><span data-stu-id="993f1-653">SEQUENCE</span></span>|<span data-ttu-id="993f1-654">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-654">Decimal</span></span>|<span data-ttu-id="993f1-655">入れ子になったすべてのレベルを含む引数シーケンス。</span><span class="sxs-lookup"><span data-stu-id="993f1-655">Argument sequence, including all nesting levels.</span></span>|  
+|<span data-ttu-id="993f1-656">DEFAULT_VALUE</span><span class="sxs-lookup"><span data-stu-id="993f1-656">DEFAULT_VALUE</span></span>|<span data-ttu-id="993f1-657">String</span><span class="sxs-lookup"><span data-stu-id="993f1-657">String</span></span>|<span data-ttu-id="993f1-658">引数の既定値。</span><span class="sxs-lookup"><span data-stu-id="993f1-658">Default value for the argument.</span></span>|  
+|<span data-ttu-id="993f1-659">DEFAULT_LENGTH</span><span class="sxs-lookup"><span data-stu-id="993f1-659">DEFAULT_LENGTH</span></span>|<span data-ttu-id="993f1-660">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-660">Decimal</span></span>|<span data-ttu-id="993f1-661">引数の既定値の長さ。</span><span class="sxs-lookup"><span data-stu-id="993f1-661">Length of default value for the argument.</span></span>|  
+|<span data-ttu-id="993f1-662">IN_OUT</span><span class="sxs-lookup"><span data-stu-id="993f1-662">IN_OUT</span></span>|<span data-ttu-id="993f1-663">String</span><span class="sxs-lookup"><span data-stu-id="993f1-663">String</span></span>|<span data-ttu-id="993f1-664">引数の方向 (IN、OUT、または IN/OUT)。</span><span class="sxs-lookup"><span data-stu-id="993f1-664">Argument direction (IN, OUT, or IN/OUT).</span></span>|  
+|<span data-ttu-id="993f1-665">DATA_LENGTH</span><span class="sxs-lookup"><span data-stu-id="993f1-665">DATA_LENGTH</span></span>|<span data-ttu-id="993f1-666">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-666">Decimal</span></span>|<span data-ttu-id="993f1-667">列の長さ (バイト単位)。</span><span class="sxs-lookup"><span data-stu-id="993f1-667">Length of the column in bytes.</span></span>|  
+|<span data-ttu-id="993f1-668">DATA_PRECISION</span><span class="sxs-lookup"><span data-stu-id="993f1-668">DATA_PRECISION</span></span>|<span data-ttu-id="993f1-669">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-669">Decimal</span></span>|<span data-ttu-id="993f1-670">小数桁数 (NUMBER) またはバイナリ桁数 (FLOAT) の長さ。</span><span class="sxs-lookup"><span data-stu-id="993f1-670">Length in decimal digits (NUMBER) or binary digits (FLOAT).</span></span>|  
+|<span data-ttu-id="993f1-671">DATA_SCALE</span><span class="sxs-lookup"><span data-stu-id="993f1-671">DATA_SCALE</span></span>|<span data-ttu-id="993f1-672">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-672">Decimal</span></span>|<span data-ttu-id="993f1-673">数値の小数点の右側にある数字。</span><span class="sxs-lookup"><span data-stu-id="993f1-673">Digits to right of decimal point in a number.</span></span>|  
+|<span data-ttu-id="993f1-674">DATA_TYPE</span><span class="sxs-lookup"><span data-stu-id="993f1-674">DATA_TYPE</span></span>|<span data-ttu-id="993f1-675">String</span><span class="sxs-lookup"><span data-stu-id="993f1-675">String</span></span>|<span data-ttu-id="993f1-676">引数のデータ型。</span><span class="sxs-lookup"><span data-stu-id="993f1-676">Data type of the argument.</span></span>|  
   
-## UniqueKeys  
+## <a name="uniquekeys"></a><span data-ttu-id="993f1-677">UniqueKeys</span><span class="sxs-lookup"><span data-stu-id="993f1-677">UniqueKeys</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|OWNER|String|制約定義の所有者。|  
-|CONSTRAINT\_NAME|String|制約定義の名前。|  
-|TABLE\_NAME|String|制約定義を持つテーブル \(またはビュー\) に関連付けられた名前。|  
-|SEARCH\_CONDITION|String|CHECK 制約の検索条件のテキスト。|  
-|R\_OWNER|String|参照制約で参照されるテーブルの所有者。|  
-|R\_CONSTRAINT\_NAME|String|参照テーブルの UNIQUE 制約の定義の名前。|  
-|DELETE\_RULE|String|参照制約の削除規則 \(CASCADE または NO ACTION\)。|  
-|STATUS|String|制約の強制ステータス \(ENABLED または DISABLED\)。|  
-|DEFERRABLE|String|制約を遅延可能にするかどうかを示します。|  
-|VALIDATED|String|すべてのデータが制約に従うかどうかを示します \(VALIDATED または NOT VALIDATED\)。|  
-|GENERATED|String|制約の名前がユーザーとシステムのどちらによって生成されたかを示します。|  
-|BAD|String|値 YES は、この制約が世紀をあいまいに指定していることを示します。  このあいまいさによるエラーを回避するには、TO\_DATE 関数に 4 桁の西暦を使って制約を定義し直します。|  
-|RELY|String|有効な制約が強制されたものであるかどうかを示します。|  
-|LAST\_CHANGE|DateTime|制約が最後に有効または無効になった日時を示します。|  
-|INDEX\_OWNER|String|インデックスを所有するユーザーの名前。|  
-|INDEX\_NAME|String|インデックス名。|  
+|<span data-ttu-id="993f1-678">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-678">ColumnName</span></span>|<span data-ttu-id="993f1-679">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-679">DataType</span></span>|<span data-ttu-id="993f1-680">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-680">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-681">OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-681">OWNER</span></span>|<span data-ttu-id="993f1-682">String</span><span class="sxs-lookup"><span data-stu-id="993f1-682">String</span></span>|<span data-ttu-id="993f1-683">制約定義の所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-683">Owner of the constraint definition.</span></span>|  
+|<span data-ttu-id="993f1-684">CONSTRAINT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-684">CONSTRAINT_NAME</span></span>|<span data-ttu-id="993f1-685">String</span><span class="sxs-lookup"><span data-stu-id="993f1-685">String</span></span>|<span data-ttu-id="993f1-686">制約定義の名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-686">Name of the constraint definition.</span></span>|  
+|<span data-ttu-id="993f1-687">TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-687">TABLE_NAME</span></span>|<span data-ttu-id="993f1-688">String</span><span class="sxs-lookup"><span data-stu-id="993f1-688">String</span></span>|<span data-ttu-id="993f1-689">制約定義を持つテーブル (またはビュー) に関連付けられた名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-689">Name associated with the table (or view) with constraint definition.</span></span>|  
+|<span data-ttu-id="993f1-690">SEARCH_CONDITION</span><span class="sxs-lookup"><span data-stu-id="993f1-690">SEARCH_CONDITION</span></span>|<span data-ttu-id="993f1-691">String</span><span class="sxs-lookup"><span data-stu-id="993f1-691">String</span></span>|<span data-ttu-id="993f1-692">CHECK 制約の検索条件のテキスト。</span><span class="sxs-lookup"><span data-stu-id="993f1-692">Text of search condition for a check constraint.</span></span>|  
+|<span data-ttu-id="993f1-693">R_OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-693">R_OWNER</span></span>|<span data-ttu-id="993f1-694">String</span><span class="sxs-lookup"><span data-stu-id="993f1-694">String</span></span>|<span data-ttu-id="993f1-695">参照制約で参照されるテーブルの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-695">Owner of table referred to in a referential constraint.</span></span>|  
+|<span data-ttu-id="993f1-696">R_CONSTRAINT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-696">R_CONSTRAINT_NAME</span></span>|<span data-ttu-id="993f1-697">String</span><span class="sxs-lookup"><span data-stu-id="993f1-697">String</span></span>|<span data-ttu-id="993f1-698">参照テーブルの UNIQUE 制約の定義の名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-698">Name of the unique constraint definition for referenced table.</span></span>|  
+|<span data-ttu-id="993f1-699">DELETE_RULE</span><span class="sxs-lookup"><span data-stu-id="993f1-699">DELETE_RULE</span></span>|<span data-ttu-id="993f1-700">String</span><span class="sxs-lookup"><span data-stu-id="993f1-700">String</span></span>|<span data-ttu-id="993f1-701">参照制約の削除規則 (CASCADE または NO ACTION)。</span><span class="sxs-lookup"><span data-stu-id="993f1-701">Delete rule for a referential constraint (CASCADE or NO ACTION).</span></span>|  
+|<span data-ttu-id="993f1-702">STATUS</span><span class="sxs-lookup"><span data-stu-id="993f1-702">STATUS</span></span>|<span data-ttu-id="993f1-703">String</span><span class="sxs-lookup"><span data-stu-id="993f1-703">String</span></span>|<span data-ttu-id="993f1-704">制約の強制ステータス (ENABLED または DISABLED)。</span><span class="sxs-lookup"><span data-stu-id="993f1-704">Enforcement status of constraint (ENABLED or DISABLED).</span></span>|  
+|<span data-ttu-id="993f1-705">DEFERRABLE</span><span class="sxs-lookup"><span data-stu-id="993f1-705">DEFERRABLE</span></span>|<span data-ttu-id="993f1-706">String</span><span class="sxs-lookup"><span data-stu-id="993f1-706">String</span></span>|<span data-ttu-id="993f1-707">制約を遅延可能にするかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-707">Whether the constraint is deferrable.</span></span>|  
+|<span data-ttu-id="993f1-708">VALIDATED</span><span class="sxs-lookup"><span data-stu-id="993f1-708">VALIDATED</span></span>|<span data-ttu-id="993f1-709">String</span><span class="sxs-lookup"><span data-stu-id="993f1-709">String</span></span>|<span data-ttu-id="993f1-710">すべてのデータが制約に従うかどうかを示します (VALIDATED または NOT VALIDATED)。</span><span class="sxs-lookup"><span data-stu-id="993f1-710">Whether all data obeys the constraint (VALIDATED or NOT VALIDATED).</span></span>|  
+|<span data-ttu-id="993f1-711">GENERATED</span><span class="sxs-lookup"><span data-stu-id="993f1-711">GENERATED</span></span>|<span data-ttu-id="993f1-712">String</span><span class="sxs-lookup"><span data-stu-id="993f1-712">String</span></span>|<span data-ttu-id="993f1-713">制約の名前がユーザーとシステムのどちらによって生成されたかを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-713">Whether the name of the constraint is user or system generated.</span></span>|  
+|<span data-ttu-id="993f1-714">BAD</span><span class="sxs-lookup"><span data-stu-id="993f1-714">BAD</span></span>|<span data-ttu-id="993f1-715">String</span><span class="sxs-lookup"><span data-stu-id="993f1-715">String</span></span>|<span data-ttu-id="993f1-716">値 YES は、この制約が世紀をあいまいに指定していることを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-716">A YES value indicates that this constraint specifies a century in an ambiguous manner.</span></span> <span data-ttu-id="993f1-717">このあいまいさによるエラーを回避するには、TO_DATE 関数に 4 桁の西暦を使って制約を定義し直します。</span><span class="sxs-lookup"><span data-stu-id="993f1-717">To avoid errors resulting from this ambiguity, rewrite the constraint using the TO_DATE function with a four-digit year.</span></span>|  
+|<span data-ttu-id="993f1-718">RELY</span><span class="sxs-lookup"><span data-stu-id="993f1-718">RELY</span></span>|<span data-ttu-id="993f1-719">String</span><span class="sxs-lookup"><span data-stu-id="993f1-719">String</span></span>|<span data-ttu-id="993f1-720">有効な制約が強制されたものであるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-720">Whether an enabled constraint is enforced or unenforced.</span></span>|  
+|<span data-ttu-id="993f1-721">LAST_CHANGE</span><span class="sxs-lookup"><span data-stu-id="993f1-721">LAST_CHANGE</span></span>|<span data-ttu-id="993f1-722">DateTime</span><span class="sxs-lookup"><span data-stu-id="993f1-722">DateTime</span></span>|<span data-ttu-id="993f1-723">制約が最後に有効または無効になった日時を示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-723">When the constraint was last enabled or disabled</span></span>|  
+|<span data-ttu-id="993f1-724">INDEX_OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-724">INDEX_OWNER</span></span>|<span data-ttu-id="993f1-725">String</span><span class="sxs-lookup"><span data-stu-id="993f1-725">String</span></span>|<span data-ttu-id="993f1-726">インデックスを所有するユーザーの名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-726">Name of the user owning the index</span></span>|  
+|<span data-ttu-id="993f1-727">INDEX_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-727">INDEX_NAME</span></span>|<span data-ttu-id="993f1-728">String</span><span class="sxs-lookup"><span data-stu-id="993f1-728">String</span></span>|<span data-ttu-id="993f1-729">インデックス名。</span><span class="sxs-lookup"><span data-stu-id="993f1-729">Name of the index</span></span>|  
   
-## PrimaryKeys  
+## <a name="primarykeys"></a><span data-ttu-id="993f1-730">PrimaryKeys</span><span class="sxs-lookup"><span data-stu-id="993f1-730">PrimaryKeys</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|OWNER|String|制約定義の所有者。|  
-|CONSTRAINT\_NAME|String|制約定義の名前。|  
-|TABLE\_NAME|String|制約定義を持つテーブル \(またはビュー\) に関連付けられた名前。|  
-|SEARCH\_CONDITION|String|CHECK 制約の検索条件のテキスト。|  
-|R\_OWNER|String|参照制約で参照されるテーブルの所有者。|  
-|R\_CONSTRAINT\_NAME|String|参照テーブルの UNIQUE 制約の定義の名前。|  
-|DELETE\_RULE|String|参照制約の削除規則 \(CASCADE または NO ACTION\)。|  
-|STATUS|String|制約の強制ステータス \(ENABLED または DISABLED\)。|  
-|DEFERRABLE|String|制約を遅延可能にするかどうかを示します。|  
-|VALIDATED|String|すべてのデータが制約に従うかどうかを示します \(VALIDATED または NOT VALIDATED\)。|  
-|GENERATED|String|制約の名前がユーザーとシステムのどちらによって生成されたかを示します。|  
-|BAD|String|値 YES は、この制約が世紀をあいまいに指定していることを示します。  このあいまいさによるエラーを回避するには、TO\_DATE 関数に 4 桁の西暦を使って制約を定義し直します。|  
-|RELY|String|有効な制約が強制されたものであるかどうかを示します。|  
-|LAST\_CHANGE|DateTime|制約が最後に有効または無効になった日時を示します。|  
-|INDEX\_OWNER|String|インデックスを所有するユーザーの名前。|  
-|INDEX\_NAME|String|インデックス名。|  
+|<span data-ttu-id="993f1-731">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-731">ColumnName</span></span>|<span data-ttu-id="993f1-732">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-732">DataType</span></span>|<span data-ttu-id="993f1-733">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-733">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-734">OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-734">OWNER</span></span>|<span data-ttu-id="993f1-735">String</span><span class="sxs-lookup"><span data-stu-id="993f1-735">String</span></span>|<span data-ttu-id="993f1-736">制約定義の所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-736">Owner of the constraint definition.</span></span>|  
+|<span data-ttu-id="993f1-737">CONSTRAINT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-737">CONSTRAINT_NAME</span></span>|<span data-ttu-id="993f1-738">String</span><span class="sxs-lookup"><span data-stu-id="993f1-738">String</span></span>|<span data-ttu-id="993f1-739">制約定義の名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-739">Name of the constraint definition.</span></span>|  
+|<span data-ttu-id="993f1-740">TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-740">TABLE_NAME</span></span>|<span data-ttu-id="993f1-741">String</span><span class="sxs-lookup"><span data-stu-id="993f1-741">String</span></span>|<span data-ttu-id="993f1-742">制約定義を持つテーブル (またはビュー) に関連付けられた名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-742">Name associated with the table (or view) with constraint definition.</span></span>|  
+|<span data-ttu-id="993f1-743">SEARCH_CONDITION</span><span class="sxs-lookup"><span data-stu-id="993f1-743">SEARCH_CONDITION</span></span>|<span data-ttu-id="993f1-744">String</span><span class="sxs-lookup"><span data-stu-id="993f1-744">String</span></span>|<span data-ttu-id="993f1-745">CHECK 制約の検索条件のテキスト。</span><span class="sxs-lookup"><span data-stu-id="993f1-745">Text of search condition for a check constraint.</span></span>|  
+|<span data-ttu-id="993f1-746">R_OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-746">R_OWNER</span></span>|<span data-ttu-id="993f1-747">String</span><span class="sxs-lookup"><span data-stu-id="993f1-747">String</span></span>|<span data-ttu-id="993f1-748">参照制約で参照されるテーブルの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-748">Owner of table referred to in a referential constraint.</span></span>|  
+|<span data-ttu-id="993f1-749">R_CONSTRAINT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-749">R_CONSTRAINT_NAME</span></span>|<span data-ttu-id="993f1-750">String</span><span class="sxs-lookup"><span data-stu-id="993f1-750">String</span></span>|<span data-ttu-id="993f1-751">参照テーブルの UNIQUE 制約の定義の名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-751">Name of the unique constraint definition for referenced table.</span></span>|  
+|<span data-ttu-id="993f1-752">DELETE_RULE</span><span class="sxs-lookup"><span data-stu-id="993f1-752">DELETE_RULE</span></span>|<span data-ttu-id="993f1-753">String</span><span class="sxs-lookup"><span data-stu-id="993f1-753">String</span></span>|<span data-ttu-id="993f1-754">参照制約の削除規則 (CASCADE または NO ACTION)。</span><span class="sxs-lookup"><span data-stu-id="993f1-754">Delete rule for a referential constraint (CASCADE or NO ACTION).</span></span>|  
+|<span data-ttu-id="993f1-755">STATUS</span><span class="sxs-lookup"><span data-stu-id="993f1-755">STATUS</span></span>|<span data-ttu-id="993f1-756">String</span><span class="sxs-lookup"><span data-stu-id="993f1-756">String</span></span>|<span data-ttu-id="993f1-757">制約の強制ステータス (ENABLED または DISABLED)。</span><span class="sxs-lookup"><span data-stu-id="993f1-757">Enforcement status of constraint (ENABLED or DISABLED).</span></span>|  
+|<span data-ttu-id="993f1-758">DEFERRABLE</span><span class="sxs-lookup"><span data-stu-id="993f1-758">DEFERRABLE</span></span>|<span data-ttu-id="993f1-759">String</span><span class="sxs-lookup"><span data-stu-id="993f1-759">String</span></span>|<span data-ttu-id="993f1-760">制約を遅延可能にするかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-760">Whether the constraint is deferrable.</span></span>|  
+|<span data-ttu-id="993f1-761">VALIDATED</span><span class="sxs-lookup"><span data-stu-id="993f1-761">VALIDATED</span></span>|<span data-ttu-id="993f1-762">String</span><span class="sxs-lookup"><span data-stu-id="993f1-762">String</span></span>|<span data-ttu-id="993f1-763">すべてのデータが制約に従うかどうかを示します (VALIDATED または NOT VALIDATED)。</span><span class="sxs-lookup"><span data-stu-id="993f1-763">Whether all data obeys the constraint (VALIDATED or NOT VALIDATED).</span></span>|  
+|<span data-ttu-id="993f1-764">GENERATED</span><span class="sxs-lookup"><span data-stu-id="993f1-764">GENERATED</span></span>|<span data-ttu-id="993f1-765">String</span><span class="sxs-lookup"><span data-stu-id="993f1-765">String</span></span>|<span data-ttu-id="993f1-766">制約の名前がユーザーとシステムのどちらによって生成されたかを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-766">Whether the name of the constraint is user or system generated.</span></span>|  
+|<span data-ttu-id="993f1-767">BAD</span><span class="sxs-lookup"><span data-stu-id="993f1-767">BAD</span></span>|<span data-ttu-id="993f1-768">String</span><span class="sxs-lookup"><span data-stu-id="993f1-768">String</span></span>|<span data-ttu-id="993f1-769">値 YES は、この制約が世紀をあいまいに指定していることを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-769">A YES value indicates that this constraint specifies a century in an ambiguous manner.</span></span> <span data-ttu-id="993f1-770">このあいまいさによるエラーを回避するには、TO_DATE 関数に 4 桁の西暦を使って制約を定義し直します。</span><span class="sxs-lookup"><span data-stu-id="993f1-770">To avoid errors resulting from this ambiguity, rewrite the constraint using the TO_DATE function with a four-digit year.</span></span>|  
+|<span data-ttu-id="993f1-771">RELY</span><span class="sxs-lookup"><span data-stu-id="993f1-771">RELY</span></span>|<span data-ttu-id="993f1-772">String</span><span class="sxs-lookup"><span data-stu-id="993f1-772">String</span></span>|<span data-ttu-id="993f1-773">有効な制約が強制されたものであるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-773">Whether an enabled constraint is enforced or unenforced.</span></span>|  
+|<span data-ttu-id="993f1-774">LAST_CHANGE</span><span class="sxs-lookup"><span data-stu-id="993f1-774">LAST_CHANGE</span></span>|<span data-ttu-id="993f1-775">DateTime</span><span class="sxs-lookup"><span data-stu-id="993f1-775">DateTime</span></span>|<span data-ttu-id="993f1-776">制約が最後に有効または無効になった日時を示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-776">When the constraint was last enabled or disabled.</span></span>|  
+|<span data-ttu-id="993f1-777">INDEX_OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-777">INDEX_OWNER</span></span>|<span data-ttu-id="993f1-778">String</span><span class="sxs-lookup"><span data-stu-id="993f1-778">String</span></span>|<span data-ttu-id="993f1-779">インデックスを所有するユーザーの名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-779">Name of the user owning the index.</span></span>|  
+|<span data-ttu-id="993f1-780">INDEX_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-780">INDEX_NAME</span></span>|<span data-ttu-id="993f1-781">String</span><span class="sxs-lookup"><span data-stu-id="993f1-781">String</span></span>|<span data-ttu-id="993f1-782">インデックス名。</span><span class="sxs-lookup"><span data-stu-id="993f1-782">Name of the index.</span></span>|  
   
-## ForeignKeys  
+## <a name="foreignkeys"></a><span data-ttu-id="993f1-783">ForeignKeys</span><span class="sxs-lookup"><span data-stu-id="993f1-783">ForeignKeys</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|PRIMARY\_KEY\_CONSTRAINT\_NAME|String|制約定義の名前。|  
-|PRIMARY\_KEY\_OWNER|String|制約定義の所有者。|  
-|PRIMARY\_KEY\_TABLE\_NAME|String|制約定義を持つテーブル \(またはビュー\) に関連付けられた名前。|  
-|FOREIGN\_KEY\_OWNER|String|制約定義の所有者。|  
-|FOREIGN\_KEY\_CONSTRIANT\_NAME|String|制約定義の名前。|  
-|FOREIGN\_KEY\_TABLE\_NAME|String|制約定義を持つテーブル \(またはビュー\) に関連付けられた名前。|  
-|SEARCH\_CONDITION|String|CHECK 制約の検索条件のテキスト。|  
-|R\_OWNER|String|参照制約で参照されるテーブルの所有者。|  
-|R\_CONSTRAINT\_NAME|String|参照テーブルの UNIQUE 制約の定義の名前。|  
-|DELETE\_RULE|String|参照制約の削除規則 \(CASCADE または NO ACTION\)。|  
-|STATUS|String|制約の強制ステータス \(ENABLED または DISABLED\)。|  
-|VALIDATED|String|すべてのデータが制約に従うかどうかを示します \(VALIDATED または NOT VALIDATED\)。|  
-|GENERATED|String|制約の名前がユーザーとシステムのどちらによって生成されたかを示します。|  
-|RELY|String|有効な制約が強制されたものであるかどうかを示します。|  
-|LAST\_CHANGE|DateTime|制約が最後に有効または無効になった日時を示します。|  
-|INDEX\_OWNER|String|インデックスを所有するユーザーの名前。|  
-|INDEX\_NAME|String|インデックス名。|  
+|<span data-ttu-id="993f1-784">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-784">ColumnName</span></span>|<span data-ttu-id="993f1-785">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-785">DataType</span></span>|<span data-ttu-id="993f1-786">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-786">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-787">PRIMARY_KEY_CONSTRAINT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-787">PRIMARY_KEY_CONSTRAINT_NAME</span></span>|<span data-ttu-id="993f1-788">String</span><span class="sxs-lookup"><span data-stu-id="993f1-788">String</span></span>|<span data-ttu-id="993f1-789">制約定義の名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-789">Name of the constraint definition.</span></span>|  
+|<span data-ttu-id="993f1-790">PRIMARY_KEY_OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-790">PRIMARY_KEY_OWNER</span></span>|<span data-ttu-id="993f1-791">String</span><span class="sxs-lookup"><span data-stu-id="993f1-791">String</span></span>|<span data-ttu-id="993f1-792">制約定義の所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-792">Owner of the constraint definition.</span></span>|  
+|<span data-ttu-id="993f1-793">PRIMARY_KEY_TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-793">PRIMARY_KEY_TABLE_NAME</span></span>|<span data-ttu-id="993f1-794">String</span><span class="sxs-lookup"><span data-stu-id="993f1-794">String</span></span>|<span data-ttu-id="993f1-795">制約定義を持つテーブル (またはビュー) に関連付けられた名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-795">Name associated with the table (or view) with constraint definition</span></span>|  
+|<span data-ttu-id="993f1-796">FOREIGN_KEY_OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-796">FOREIGN_KEY_OWNER</span></span>|<span data-ttu-id="993f1-797">String</span><span class="sxs-lookup"><span data-stu-id="993f1-797">String</span></span>|<span data-ttu-id="993f1-798">制約定義の所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-798">Owner of the constraint definition.</span></span>|  
+|<span data-ttu-id="993f1-799">FOREIGN_KEY_CONSTRIANT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-799">FOREIGN_KEY_CONSTRIANT_NAME</span></span>|<span data-ttu-id="993f1-800">String</span><span class="sxs-lookup"><span data-stu-id="993f1-800">String</span></span>|<span data-ttu-id="993f1-801">制約定義の名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-801">Name of the constraint definition.</span></span>|  
+|<span data-ttu-id="993f1-802">FOREIGN_KEY_TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-802">FOREIGN_KEY_TABLE_NAME</span></span>|<span data-ttu-id="993f1-803">String</span><span class="sxs-lookup"><span data-stu-id="993f1-803">String</span></span>|<span data-ttu-id="993f1-804">制約定義を持つテーブル (またはビュー) に関連付けられた名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-804">Name associated with the table (or view) with constraint definition.</span></span>|  
+|<span data-ttu-id="993f1-805">SEARCH_CONDITION</span><span class="sxs-lookup"><span data-stu-id="993f1-805">SEARCH_CONDITION</span></span>|<span data-ttu-id="993f1-806">String</span><span class="sxs-lookup"><span data-stu-id="993f1-806">String</span></span>|<span data-ttu-id="993f1-807">CHECK 制約の検索条件のテキスト。</span><span class="sxs-lookup"><span data-stu-id="993f1-807">Text of search condition for a check constraint</span></span>|  
+|<span data-ttu-id="993f1-808">R_OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-808">R_OWNER</span></span>|<span data-ttu-id="993f1-809">String</span><span class="sxs-lookup"><span data-stu-id="993f1-809">String</span></span>|<span data-ttu-id="993f1-810">参照制約で参照されるテーブルの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-810">Owner of table referred to in a referential constraint.</span></span>|  
+|<span data-ttu-id="993f1-811">R_CONSTRAINT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-811">R_CONSTRAINT_NAME</span></span>|<span data-ttu-id="993f1-812">String</span><span class="sxs-lookup"><span data-stu-id="993f1-812">String</span></span>|<span data-ttu-id="993f1-813">参照テーブルの UNIQUE 制約の定義の名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-813">Name of the unique constraint definition for referenced table.</span></span>|  
+|<span data-ttu-id="993f1-814">DELETE_RULE</span><span class="sxs-lookup"><span data-stu-id="993f1-814">DELETE_RULE</span></span>|<span data-ttu-id="993f1-815">String</span><span class="sxs-lookup"><span data-stu-id="993f1-815">String</span></span>|<span data-ttu-id="993f1-816">参照制約の削除規則 (CASCADE または NO ACTION)。</span><span class="sxs-lookup"><span data-stu-id="993f1-816">Delete rule for a referential constraint (CASCADE or NO ACTION).</span></span>|  
+|<span data-ttu-id="993f1-817">STATUS</span><span class="sxs-lookup"><span data-stu-id="993f1-817">STATUS</span></span>|<span data-ttu-id="993f1-818">String</span><span class="sxs-lookup"><span data-stu-id="993f1-818">String</span></span>|<span data-ttu-id="993f1-819">制約の強制ステータス (ENABLED または DISABLED)。</span><span class="sxs-lookup"><span data-stu-id="993f1-819">Enforcement status of constraint (ENABLED or DISABLED).</span></span>|  
+|<span data-ttu-id="993f1-820">VALIDATED</span><span class="sxs-lookup"><span data-stu-id="993f1-820">VALIDATED</span></span>|<span data-ttu-id="993f1-821">String</span><span class="sxs-lookup"><span data-stu-id="993f1-821">String</span></span>|<span data-ttu-id="993f1-822">すべてのデータが制約に従うかどうかを示します (VALIDATED または NOT VALIDATED)。</span><span class="sxs-lookup"><span data-stu-id="993f1-822">Whether all data obeys the constraint (VALIDATED or NOT VALIDATED).</span></span>|  
+|<span data-ttu-id="993f1-823">GENERATED</span><span class="sxs-lookup"><span data-stu-id="993f1-823">GENERATED</span></span>|<span data-ttu-id="993f1-824">String</span><span class="sxs-lookup"><span data-stu-id="993f1-824">String</span></span>|<span data-ttu-id="993f1-825">制約の名前がユーザーとシステムのどちらによって生成されたかを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-825">Whether the name of the constraint is user or system generated.</span></span>|  
+|<span data-ttu-id="993f1-826">RELY</span><span class="sxs-lookup"><span data-stu-id="993f1-826">RELY</span></span>|<span data-ttu-id="993f1-827">String</span><span class="sxs-lookup"><span data-stu-id="993f1-827">String</span></span>|<span data-ttu-id="993f1-828">有効な制約が強制されたものであるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-828">Whether an enabled constraint is enforced or unenforced.</span></span>|  
+|<span data-ttu-id="993f1-829">LAST_CHANGE</span><span class="sxs-lookup"><span data-stu-id="993f1-829">LAST_CHANGE</span></span>|<span data-ttu-id="993f1-830">DateTime</span><span class="sxs-lookup"><span data-stu-id="993f1-830">DateTime</span></span>|<span data-ttu-id="993f1-831">制約が最後に有効または無効になった日時を示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-831">When the constraint was last enabled or disabled.</span></span>|  
+|<span data-ttu-id="993f1-832">INDEX_OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-832">INDEX_OWNER</span></span>|<span data-ttu-id="993f1-833">String</span><span class="sxs-lookup"><span data-stu-id="993f1-833">String</span></span>|<span data-ttu-id="993f1-834">インデックスを所有するユーザーの名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-834">Name of the user owning the index.</span></span>|  
+|<span data-ttu-id="993f1-835">INDEX_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-835">INDEX_NAME</span></span>|<span data-ttu-id="993f1-836">String</span><span class="sxs-lookup"><span data-stu-id="993f1-836">String</span></span>|<span data-ttu-id="993f1-837">インデックス名。</span><span class="sxs-lookup"><span data-stu-id="993f1-837">Name of the index.</span></span>|  
   
-## ForeignKeyColumns  
+## <a name="foreignkeycolumns"></a><span data-ttu-id="993f1-838">ForeignKeyColumns</span><span class="sxs-lookup"><span data-stu-id="993f1-838">ForeignKeyColumns</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|OWNER|String|制約定義の所有者。|  
-|CONSTRAINT\_NAME|String|制約定義の名前。|  
-|TABLE\_NAME|String|制約定義を持つテーブル名。|  
-|COLUMN\_NAME|String|制約定義で指定されているオブジェクト型列の列名または属性名。|  
-|POSITION|Decimal \(10 進数型\)|オブジェクトの定義内の列または属性の元の位置。|  
+|<span data-ttu-id="993f1-839">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-839">ColumnName</span></span>|<span data-ttu-id="993f1-840">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-840">DataType</span></span>|<span data-ttu-id="993f1-841">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-841">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-842">OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-842">OWNER</span></span>|<span data-ttu-id="993f1-843">String</span><span class="sxs-lookup"><span data-stu-id="993f1-843">String</span></span>|<span data-ttu-id="993f1-844">制約定義の所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-844">Owner of the constraint definition.</span></span>|  
+|<span data-ttu-id="993f1-845">CONSTRAINT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-845">CONSTRAINT_NAME</span></span>|<span data-ttu-id="993f1-846">String</span><span class="sxs-lookup"><span data-stu-id="993f1-846">String</span></span>|<span data-ttu-id="993f1-847">制約定義の名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-847">Name of the constraint definition.</span></span>|  
+|<span data-ttu-id="993f1-848">TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-848">TABLE_NAME</span></span>|<span data-ttu-id="993f1-849">String</span><span class="sxs-lookup"><span data-stu-id="993f1-849">String</span></span>|<span data-ttu-id="993f1-850">制約定義を持つテーブル名。</span><span class="sxs-lookup"><span data-stu-id="993f1-850">Name of the table with constraint definition.</span></span>|  
+|<span data-ttu-id="993f1-851">COLUMN_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-851">COLUMN_NAME</span></span>|<span data-ttu-id="993f1-852">String</span><span class="sxs-lookup"><span data-stu-id="993f1-852">String</span></span>|<span data-ttu-id="993f1-853">制約定義で指定されているオブジェクト型列の列名または属性名。</span><span class="sxs-lookup"><span data-stu-id="993f1-853">Name of the column or attribute of the object type column specified in the constraint definition.</span></span>|  
+|<span data-ttu-id="993f1-854">POSITION</span><span class="sxs-lookup"><span data-stu-id="993f1-854">POSITION</span></span>|<span data-ttu-id="993f1-855">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-855">Decimal</span></span>|<span data-ttu-id="993f1-856">オブジェクトの定義内の列または属性の元の位置。</span><span class="sxs-lookup"><span data-stu-id="993f1-856">Original position of column or attribute in the definition of the object.</span></span>|  
   
-## ProcedureParameters  
+## <a name="procedureparameters"></a><span data-ttu-id="993f1-857">ProcedureParameters</span><span class="sxs-lookup"><span data-stu-id="993f1-857">ProcedureParameters</span></span>  
   
-|ColumnName|DataType|説明|  
-|----------------|--------------|--------|  
-|OWNER|String|オブジェクトの所有者。|  
-|OBJECT\_NAME|String|プロシージャまたは関数の名前。|  
-|PACKAGE\_NAME|String|プロシージャまたは関数の名前。|  
-|OBJECT\_ID|Decimal \(10 進数型\)|オブジェクトのオブジェクト番号。|  
-|OVERLOAD|String|オーバーロードの一意識別子。|  
-|ARGUMENT\_NAME|String|引数の名前。|  
-|POSITION|Decimal \(10 進数型\)|引数リスト内の位置。関数の戻り値の場合は NULL。|  
-|SEQUENCE|Decimal \(10 進数型\)|入れ子になったすべてのレベルを含む引数シーケンス。|  
-|DATA\_LEVEL|Decimal \(10 進数型\)|複合型の引数の入れ子の深さ。|  
-|DATA\_TYPE|String|引数のデータ型。|  
-|DEFAULT\_VALUE|String|引数の既定値。|  
-|DEFAULT\_LENGTH|Decimal \(10 進数型\)|引数の既定値の長さ。|  
-|IN\_OUT|String|引数の方向 \(IN、OUT、または IN\/OUT\)。|  
-|DATA\_LENGTH|Decimal \(10 進数型\)|列の長さ \(バイト単位\)。|  
-|DATA\_PRECISION|Decimal \(10 進数型\)|小数桁数 \(NUMBER\) またはバイナリ桁数 \(FLOAT\) の長さ。|  
-|DATA\_SCALE|Decimal \(10 進数型\)|数値の小数点の右側にある数字。|  
-|RADIX|Decimal \(10 進数型\)|数値の引数の基数。|  
-|CHARACTER\_SET\_NAME|String|引数の文字セットの名前。|  
-|TYPE\_OWNER|String|引数の型の所有者。|  
-|TYPE\_NAME|String|引数の型の名前。  パッケージ ローカル型である \(パッケージ指定で宣言されている\) 場合、この列にはパッケージ名が表示されます。|  
-|TYPE\_SUBNAME|String|パッケージ ローカル型にのみ関係します。  TYPE\_NAME 列で特定されたパッケージで宣言された型の名前が表示されます。|  
-|TYPE\_LINK|String|TYPE\_NAME 列で特定されたパッケージがリモート パッケージである場合は、パッケージ ローカル型のみに関係します。  この列には、リモート パッケージの参照に使用されるデータベース リンクが表示されます。|  
-|PLS\_TYPE|String|数値引数の場合、引数の PL\/SQL 型の名前を示します。  その他の場合は NULL が返されます。|  
-|CHAR\_LENGTH|Decimal \(10 進数型\)|文字列データ型の文字数制限。|  
-|CHAR\_USED|String|文字列のバイト数制限 \(B\) または文字数制限 \(C\) が正式であるかどうかを示します。|  
+|<span data-ttu-id="993f1-858">ColumnName</span><span class="sxs-lookup"><span data-stu-id="993f1-858">ColumnName</span></span>|<span data-ttu-id="993f1-859">DataType</span><span class="sxs-lookup"><span data-stu-id="993f1-859">DataType</span></span>|<span data-ttu-id="993f1-860">説明</span><span class="sxs-lookup"><span data-stu-id="993f1-860">Description</span></span>|  
+|----------------|--------------|-----------------|  
+|<span data-ttu-id="993f1-861">OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-861">OWNER</span></span>|<span data-ttu-id="993f1-862">String</span><span class="sxs-lookup"><span data-stu-id="993f1-862">String</span></span>|<span data-ttu-id="993f1-863">オブジェクトの所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-863">Owner of the object.</span></span>|  
+|<span data-ttu-id="993f1-864">OBJECT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-864">OBJECT_NAME</span></span>|<span data-ttu-id="993f1-865">String</span><span class="sxs-lookup"><span data-stu-id="993f1-865">String</span></span>|<span data-ttu-id="993f1-866">プロシージャまたは関数の名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-866">Name of the procedure or function.</span></span>|  
+|<span data-ttu-id="993f1-867">PACKAGE_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-867">PACKAGE_NAME</span></span>|<span data-ttu-id="993f1-868">String</span><span class="sxs-lookup"><span data-stu-id="993f1-868">String</span></span>|<span data-ttu-id="993f1-869">プロシージャまたは関数の名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-869">Name of the procedure or function.</span></span>|  
+|<span data-ttu-id="993f1-870">OBJECT_ID</span><span class="sxs-lookup"><span data-stu-id="993f1-870">OBJECT_ID</span></span>|<span data-ttu-id="993f1-871">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-871">Decimal</span></span>|<span data-ttu-id="993f1-872">オブジェクトのオブジェクト番号。</span><span class="sxs-lookup"><span data-stu-id="993f1-872">Object number of the object.</span></span>|  
+|<span data-ttu-id="993f1-873">OVERLOAD</span><span class="sxs-lookup"><span data-stu-id="993f1-873">OVERLOAD</span></span>|<span data-ttu-id="993f1-874">String</span><span class="sxs-lookup"><span data-stu-id="993f1-874">String</span></span>|<span data-ttu-id="993f1-875">オーバーロードの一意識別子。</span><span class="sxs-lookup"><span data-stu-id="993f1-875">Overload unique identifier.</span></span>|  
+|<span data-ttu-id="993f1-876">ARGUMENT_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-876">ARGUMENT_NAME</span></span>|<span data-ttu-id="993f1-877">String</span><span class="sxs-lookup"><span data-stu-id="993f1-877">String</span></span>|<span data-ttu-id="993f1-878">引数の名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-878">Name of the argument.</span></span>|  
+|<span data-ttu-id="993f1-879">POSITION</span><span class="sxs-lookup"><span data-stu-id="993f1-879">POSITION</span></span>|<span data-ttu-id="993f1-880">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-880">Decimal</span></span>|<span data-ttu-id="993f1-881">引数リスト内の位置。関数の戻り値の場合は NULL。</span><span class="sxs-lookup"><span data-stu-id="993f1-881">Position in the argument list, or null for a function return value.</span></span>|  
+|<span data-ttu-id="993f1-882">SEQUENCE</span><span class="sxs-lookup"><span data-stu-id="993f1-882">SEQUENCE</span></span>|<span data-ttu-id="993f1-883">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-883">Decimal</span></span>|<span data-ttu-id="993f1-884">入れ子になったすべてのレベルを含む引数シーケンス。</span><span class="sxs-lookup"><span data-stu-id="993f1-884">Argument sequence, including all nesting levels.</span></span>|  
+|<span data-ttu-id="993f1-885">DATA_LEVEL</span><span class="sxs-lookup"><span data-stu-id="993f1-885">DATA_LEVEL</span></span>|<span data-ttu-id="993f1-886">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-886">Decimal</span></span>|<span data-ttu-id="993f1-887">複合型の引数の入れ子の深さ。</span><span class="sxs-lookup"><span data-stu-id="993f1-887">Nesting depth of the argument for composite types.</span></span>|  
+|<span data-ttu-id="993f1-888">DATA_TYPE</span><span class="sxs-lookup"><span data-stu-id="993f1-888">DATA_TYPE</span></span>|<span data-ttu-id="993f1-889">String</span><span class="sxs-lookup"><span data-stu-id="993f1-889">String</span></span>|<span data-ttu-id="993f1-890">引数のデータ型。</span><span class="sxs-lookup"><span data-stu-id="993f1-890">Data type of the argument.</span></span>|  
+|<span data-ttu-id="993f1-891">DEFAULT_VALUE</span><span class="sxs-lookup"><span data-stu-id="993f1-891">DEFAULT_VALUE</span></span>|<span data-ttu-id="993f1-892">String</span><span class="sxs-lookup"><span data-stu-id="993f1-892">String</span></span>|<span data-ttu-id="993f1-893">引数の既定値。</span><span class="sxs-lookup"><span data-stu-id="993f1-893">Default value for the argument.</span></span>|  
+|<span data-ttu-id="993f1-894">DEFAULT_LENGTH</span><span class="sxs-lookup"><span data-stu-id="993f1-894">DEFAULT_LENGTH</span></span>|<span data-ttu-id="993f1-895">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-895">Decimal</span></span>|<span data-ttu-id="993f1-896">引数の既定値の長さ。</span><span class="sxs-lookup"><span data-stu-id="993f1-896">Length of the default value for the argument.</span></span>|  
+|<span data-ttu-id="993f1-897">IN_OUT</span><span class="sxs-lookup"><span data-stu-id="993f1-897">IN_OUT</span></span>|<span data-ttu-id="993f1-898">String</span><span class="sxs-lookup"><span data-stu-id="993f1-898">String</span></span>|<span data-ttu-id="993f1-899">引数の方向 (IN、OUT、または IN/OUT)。</span><span class="sxs-lookup"><span data-stu-id="993f1-899">Argument Direction (IN, OUT, or IN/OUT).</span></span>|  
+|<span data-ttu-id="993f1-900">DATA_LENGTH</span><span class="sxs-lookup"><span data-stu-id="993f1-900">DATA_LENGTH</span></span>|<span data-ttu-id="993f1-901">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-901">Decimal</span></span>|<span data-ttu-id="993f1-902">列の長さ (バイト単位)。</span><span class="sxs-lookup"><span data-stu-id="993f1-902">Length of the column (in bytes).</span></span>|  
+|<span data-ttu-id="993f1-903">DATA_PRECISION</span><span class="sxs-lookup"><span data-stu-id="993f1-903">DATA_PRECISION</span></span>|<span data-ttu-id="993f1-904">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-904">Decimal</span></span>|<span data-ttu-id="993f1-905">小数桁数 (NUMBER) またはバイナリ桁数 (FLOAT) の長さ。</span><span class="sxs-lookup"><span data-stu-id="993f1-905">Length in decimal digits (NUMBER) or binary digits (FLOAT).</span></span>|  
+|<span data-ttu-id="993f1-906">DATA_SCALE</span><span class="sxs-lookup"><span data-stu-id="993f1-906">DATA_SCALE</span></span>|<span data-ttu-id="993f1-907">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-907">Decimal</span></span>|<span data-ttu-id="993f1-908">数値の小数点の右側にある数字。</span><span class="sxs-lookup"><span data-stu-id="993f1-908">Digits to the right of the decimal point in a number.</span></span>|  
+|<span data-ttu-id="993f1-909">RADIX</span><span class="sxs-lookup"><span data-stu-id="993f1-909">RADIX</span></span>|<span data-ttu-id="993f1-910">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-910">Decimal</span></span>|<span data-ttu-id="993f1-911">数値の引数の基数。</span><span class="sxs-lookup"><span data-stu-id="993f1-911">Argument radix for a number.</span></span>|  
+|<span data-ttu-id="993f1-912">CHARACTER_SET_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-912">CHARACTER_SET_NAME</span></span>|<span data-ttu-id="993f1-913">String</span><span class="sxs-lookup"><span data-stu-id="993f1-913">String</span></span>|<span data-ttu-id="993f1-914">引数の文字セットの名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-914">Character set name for the argument.</span></span>|  
+|<span data-ttu-id="993f1-915">TYPE_OWNER</span><span class="sxs-lookup"><span data-stu-id="993f1-915">TYPE_OWNER</span></span>|<span data-ttu-id="993f1-916">String</span><span class="sxs-lookup"><span data-stu-id="993f1-916">String</span></span>|<span data-ttu-id="993f1-917">引数の型の所有者。</span><span class="sxs-lookup"><span data-stu-id="993f1-917">Owner of the type of the argument.</span></span>|  
+|<span data-ttu-id="993f1-918">TYPE_NAME</span><span class="sxs-lookup"><span data-stu-id="993f1-918">TYPE_NAME</span></span>|<span data-ttu-id="993f1-919">String</span><span class="sxs-lookup"><span data-stu-id="993f1-919">String</span></span>|<span data-ttu-id="993f1-920">引数の型の名前。</span><span class="sxs-lookup"><span data-stu-id="993f1-920">Name of the type of the argument.</span></span> <span data-ttu-id="993f1-921">パッケージ ローカル型である (パッケージ指定で宣言されている) 場合、この列にはパッケージ名が表示されます。</span><span class="sxs-lookup"><span data-stu-id="993f1-921">If the type is a package local type (that is, it is declared in a package specification), then this column displays the name of the package.</span></span>|  
+|<span data-ttu-id="993f1-922">TYPE_SUBNAME</span><span class="sxs-lookup"><span data-stu-id="993f1-922">TYPE_SUBNAME</span></span>|<span data-ttu-id="993f1-923">String</span><span class="sxs-lookup"><span data-stu-id="993f1-923">String</span></span>|<span data-ttu-id="993f1-924">パッケージ ローカル型にのみ関係します。</span><span class="sxs-lookup"><span data-stu-id="993f1-924">Relevant only for package local types.</span></span> <span data-ttu-id="993f1-925">TYPE_NAME 列で特定されたパッケージで宣言された型の名前が表示されます。</span><span class="sxs-lookup"><span data-stu-id="993f1-925">Displays the name of the type declared in the package identified in the TYPE_NAME column.</span></span>|  
+|<span data-ttu-id="993f1-926">TYPE_LINK</span><span class="sxs-lookup"><span data-stu-id="993f1-926">TYPE_LINK</span></span>|<span data-ttu-id="993f1-927">String</span><span class="sxs-lookup"><span data-stu-id="993f1-927">String</span></span>|<span data-ttu-id="993f1-928">TYPE_NAME 列で特定されたパッケージがリモート パッケージである場合は、パッケージ ローカル型のみに関係します。</span><span class="sxs-lookup"><span data-stu-id="993f1-928">Relevant only for package local types when the package identified in the TYPE_NAME column is a remote package.</span></span> <span data-ttu-id="993f1-929">この列には、リモート パッケージの参照に使用されるデータベース リンクが表示されます。</span><span class="sxs-lookup"><span data-stu-id="993f1-929">This column displays the database link used to refer to the remote package.</span></span>|  
+|<span data-ttu-id="993f1-930">PLS_TYPE</span><span class="sxs-lookup"><span data-stu-id="993f1-930">PLS_TYPE</span></span>|<span data-ttu-id="993f1-931">String</span><span class="sxs-lookup"><span data-stu-id="993f1-931">String</span></span>|<span data-ttu-id="993f1-932">数値引数の場合、引数の PL/SQL 型の名前を示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-932">For numeric arguments, the name of the PL/SQL type of the argument.</span></span> <span data-ttu-id="993f1-933">その他の場合は NULL が返されます。</span><span class="sxs-lookup"><span data-stu-id="993f1-933">Null otherwise.</span></span>|  
+|<span data-ttu-id="993f1-934">CHAR_LENGTH</span><span class="sxs-lookup"><span data-stu-id="993f1-934">CHAR_LENGTH</span></span>|<span data-ttu-id="993f1-935">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="993f1-935">Decimal</span></span>|<span data-ttu-id="993f1-936">文字列データ型の文字数制限。</span><span class="sxs-lookup"><span data-stu-id="993f1-936">Character limit for string data types.</span></span>|  
+|<span data-ttu-id="993f1-937">CHAR_USED</span><span class="sxs-lookup"><span data-stu-id="993f1-937">CHAR_USED</span></span>|<span data-ttu-id="993f1-938">String</span><span class="sxs-lookup"><span data-stu-id="993f1-938">String</span></span>|<span data-ttu-id="993f1-939">文字列のバイト数制限 (B) または文字数制限 (C) が正式であるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="993f1-939">Indicates whether the byte limit (B) or char limit (C) is official for the string.</span></span>|  
   
-## 参照  
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="993f1-940">関連項目</span><span class="sxs-lookup"><span data-stu-id="993f1-940">See Also</span></span>  
+ [<span data-ttu-id="993f1-941">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="993f1-941">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

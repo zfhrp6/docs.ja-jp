@@ -1,62 +1,63 @@
 ---
-title: "&lt;standardEndpoints&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;standardEndpoints&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d62153d7-a6e6-462a-a784-cca61e9c2ba1
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: cd4de65da3dcce6360fef6e404b0951dbbd26336
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;standardEndpoints&gt;
-この構成セクションでは、再使用可能な構成済みのエンドポイントである標準エンドポイントのコレクションを定義できます。  標準エンドポイントは、固定値に設定されたアドレス、バインディング、およびコントラクトの 1 つ以上の属性を持ちます。  たとえば、探索エンドポイントでは、コントラクトが固定されています。  標準エンドポイントを使用して、カスタム バインディングの定義と同様に新しいプロパティを指定して、サービス エンドポイントを拡張することもできます。  
+# <a name="ltstandardendpointsgt"></a><span data-ttu-id="6614f-102">&lt;standardEndpoints&gt;</span><span class="sxs-lookup"><span data-stu-id="6614f-102">&lt;standardEndpoints&gt;</span></span>
+<span data-ttu-id="6614f-103">この構成セクションでは、再使用可能な構成済みのエンドポイントである標準エンドポイントのコレクションを定義できます。</span><span class="sxs-lookup"><span data-stu-id="6614f-103">This configuration section allows you to define a collection of standard endpoints, which are reusable preconfigured endpoints.</span></span> <span data-ttu-id="6614f-104">標準エンドポイントは、固定値に設定されたアドレス、バインディング、およびコントラクトの 1 つ以上の属性を持ちます。</span><span class="sxs-lookup"><span data-stu-id="6614f-104">A standard endpoint will have one or more of the address, binding and contract attributes set to a fixed value.</span></span> <span data-ttu-id="6614f-105">たとえば、探索エンドポイントでは、コントラクトが固定されています。</span><span class="sxs-lookup"><span data-stu-id="6614f-105">For example, in the discovery endpoint the contract is fixed.</span></span> <span data-ttu-id="6614f-106">標準エンドポイントを使用して、カスタム バインドの定義と同様に新しいプロパティを指定して、サービス エンドポイントを拡張することもできます。</span><span class="sxs-lookup"><span data-stu-id="6614f-106">You can also use standard endpoints to extend service endpoint with new properties similar to defining custom bindings.</span></span>  
   
- \<system.ServiceModel\>  
+ <span data-ttu-id="6614f-107">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="6614f-107">\<system.ServiceModel></span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="6614f-108">構文</span><span class="sxs-lookup"><span data-stu-id="6614f-108">Syntax</span></span>  
   
-```  
-  
+```xml  
 <system.serviceModel>  
     <standardEndpoints>  
-  
     </standardEndpoints>  
 </system.serviceModel>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="6614f-109">属性および要素</span><span class="sxs-lookup"><span data-stu-id="6614f-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="6614f-110">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="6614f-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
- なし。  
+### <a name="attributes"></a><span data-ttu-id="6614f-111">属性</span><span class="sxs-lookup"><span data-stu-id="6614f-111">Attributes</span></span>  
+ <span data-ttu-id="6614f-112">なし。</span><span class="sxs-lookup"><span data-stu-id="6614f-112">None.</span></span>  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="6614f-113">子要素</span><span class="sxs-lookup"><span data-stu-id="6614f-113">Child Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<announcementEndpoint\>](../../../../../docs/framework/configure-apps/file-schema/wcf/announcementendpoint.md)|固定アナウンス コントラクトが含まれた標準エンドポイントを定義します。  サービスは、サービスが開いたとき、または閉じたときにオンラインおよびオフラインのアナウンス メッセージを送信することによって、その可用性をアナウンスすることもできます。  [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスは、[\<serviceDiscovery\>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicediscovery.md) 要素でアナウンス エンドポイントを指定し、AnnouncementClient を使用してアナウンスを実行します。  他のサービスからのアナウンスをリッスンしようとするクライアントは、実際に、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスとして動作します。このため、[\<services\>](../../../../../docs/framework/configure-apps/file-schema/wcf/services.md) セクションに、このクライアントのアナウンス エンドポイントを構成する必要があります。|  
-|[\<discoveryEndpoint\>](../../../../../docs/framework/configure-apps/file-schema/wcf/discoveryendpoint.md)|固定探索コントラクトが含まれた標準エンドポイントを定義します。  サービスの構成に追加すると、この要素により、探索メッセージをリッスンする場所が指定されます。  クライアントの構成に追加すると、この要素により、探索クエリの送信先となる場所が指定されます。|  
-|[\<dynamicEndpoint\>](../../../../../docs/framework/configure-apps/file-schema/wcf/dynamicendpoint.md)|この構成要素は、アプリケーションが、実行時に動的にエンドポイント アドレスを検索するクライアント プログラムとして機能するための情報を格納する標準エンドポイントを定義します。|  
-|[\<mexEndpoint\>](../../../../../docs/framework/configure-apps/file-schema/wcf/mexendpoint.md)|固定 IMetadataExchange コントラクトが含まれた標準エンドポイントを定義します。  IMetadataExchange はすべてのメタデータ交換エンドポイントでコントラクトとして指定されるため、独自のエンドポイントを定義せずにこの標準エンドポイントを使用できます。|  
-|[\<udpAnnoucementEndpoint\>](../../../../../docs/framework/configure-apps/file-schema/wcf/udpannoucementendpoint.md)|サービスが UDP バインディングでアナウンス メッセージを送信するために使用する標準エンドポイントを定義します。  これには固定コントラクトがあり、2 つの探索のバージョンをサポートします。  また、WS\-Discovery の仕様 \(WS\-Discovery April 2005 または WS\-Discovery V1.1\) に規定された固定 UDP バインディングと既定のアドレスも備えています。  アナウンス メッセージの送受信に使用するマルチキャスト アドレスを指定できます。|  
-|[\<udpDiscoveryEndpoint\>](../../../../../docs/framework/configure-apps/file-schema/wcf/udpdiscoveryendpoint.md)|UDP マルチキャスト バインディングを使用した探索操作用に事前に構成される標準エンドポイントを定義します。  このエンドポイントには固定コントラクトがあり、WS\-Discovery プロトコルの 2 つのバージョンをサポートします。  また、WS\-Discovery の仕様 \(WS\-Discovery April 2005 または WS\-Discovery V1.1\) に規定された固定 UDP バインディングと既定のアドレスも備えています。|  
-|[\<webHttpEndpoint\>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpendpoint.md)|[\<webHttp\>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md) の動作を自動的に追加する固定の [\<webHttpBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) バインディングを持つ標準エンドポイントを定義します。  このエンドポイントは、REST サービスを作成する場合に使用します。|  
-|[\<webScriptEndpoint\>](../../../../../docs/framework/configure-apps/file-schema/wcf/webscriptendpoint.md)|[\<enableWebScript\>](../../../../../docs/framework/configure-apps/file-schema/wcf/enablewebscript.md) の動作を自動的に追加する固定の [\<webHttpBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) バインディングを持つ標準エンドポイントを定義します。  このエンドポイントは、ASP.NET AJAX アプリケーションから呼び出されるサービスを作成する場合に使用します。|  
-|[\<workflowControlEndpoint\>](../../../../../docs/framework/configure-apps/file-schema/wcf/workflowcontrolendpoint.md)|ワークフロー インスタンスの実行の制御 \(作成、実行、保留、終了など\) に使用する標準エンドポイントを定義します。|  
+|<span data-ttu-id="6614f-114">要素</span><span class="sxs-lookup"><span data-stu-id="6614f-114">Element</span></span>|<span data-ttu-id="6614f-115">説明</span><span class="sxs-lookup"><span data-stu-id="6614f-115">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="6614f-116">\<announcementEndpoint ></span><span class="sxs-lookup"><span data-stu-id="6614f-116">\<announcementEndpoint></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/announcementendpoint.md)|<span data-ttu-id="6614f-117">固定アナウンス コントラクトが含まれた標準エンドポイントを定義します。</span><span class="sxs-lookup"><span data-stu-id="6614f-117">Defines a standard endpoint with a fixed announcement contract.</span></span> <span data-ttu-id="6614f-118">サービスは、サービスが開いたとき、または閉じたときにオンラインおよびオフラインのアナウンス メッセージを送信することによって、その可用性をアナウンスすることもできます。</span><span class="sxs-lookup"><span data-stu-id="6614f-118">A service can optionally announce its availability by sending an online and offline announcement message when it is opened or closed respectively.</span></span> <span data-ttu-id="6614f-119">A[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]サービスでアナウンス エンドポイントの指定、 [ \<serviceDiscovery >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicediscovery.md)要素と使用をお知らせを実行する AnnouncementClient です。</span><span class="sxs-lookup"><span data-stu-id="6614f-119">A [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] service specifies the announcement endpoints in the [\<serviceDiscovery>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicediscovery.md) element and uses the AnnouncementClient to perform the announcements.</span></span> <span data-ttu-id="6614f-120">他のサービスからのアナウンスが実際として動作しているをリッスンするように元のクライアントは、 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] ; のサービスでそのクライアントのアナウンス エンドポイントを構成する必要があるため、 [ \<services >](../../../../../docs/framework/configure-apps/file-schema/wcf/services.md)セクションです。</span><span class="sxs-lookup"><span data-stu-id="6614f-120">A client wishing to listen for the announcement from other service is actually acting as a [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] service; thus you have to configure the announcement endpoints for that client in the [\<services>](../../../../../docs/framework/configure-apps/file-schema/wcf/services.md) section.</span></span>|  
+|[<span data-ttu-id="6614f-121">\<discoveryEndpoint ></span><span class="sxs-lookup"><span data-stu-id="6614f-121">\<discoveryEndpoint></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/discoveryendpoint.md)|<span data-ttu-id="6614f-122">固定探索コントラクトが含まれた標準エンドポイントを定義します。</span><span class="sxs-lookup"><span data-stu-id="6614f-122">Defines a standard endpoint with a fixed discovery contract.</span></span> <span data-ttu-id="6614f-123">サービスの構成に追加すると、この要素により、探索メッセージをリッスンする場所が指定されます。</span><span class="sxs-lookup"><span data-stu-id="6614f-123">When added to the service configuration, it specifies where to listen for the discovery messages.</span></span> <span data-ttu-id="6614f-124">クライアントの構成に追加すると、この要素により、探索クエリの送信先となる場所が指定されます。</span><span class="sxs-lookup"><span data-stu-id="6614f-124">When added to the client configuration it specifies where to send the discovery queries.</span></span>|  
+|[<span data-ttu-id="6614f-125">\<dynamicEndpoint ></span><span class="sxs-lookup"><span data-stu-id="6614f-125">\<dynamicEndpoint></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/dynamicendpoint.md)|<span data-ttu-id="6614f-126">この構成要素は、アプリケーションが、実行時に動的にエンドポイント アドレスを検索するクライアント プログラムとして機能するための情報を格納する標準エンドポイントを定義します。</span><span class="sxs-lookup"><span data-stu-id="6614f-126">This configuration element defines a standard endpoint that contains information to enable an application to function as a client program that can find the endpoint address dynamically at runtime.</span></span>|  
+|[<span data-ttu-id="6614f-127">\<mexEndpoint ></span><span class="sxs-lookup"><span data-stu-id="6614f-127">\<mexEndpoint></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/mexendpoint.md)|<span data-ttu-id="6614f-128">固定 IMetadataExchange コントラクトが含まれた標準エンドポイントを定義します。</span><span class="sxs-lookup"><span data-stu-id="6614f-128">Defines a standard endpoint with a fixed IMetadataExchange contract.</span></span> <span data-ttu-id="6614f-129">IMetadataExchange はすべてのメタデータ交換エンドポイントでコントラクトとして指定されるため、独自のエンドポイントを定義せずにこの標準エンドポイントを使用できます。</span><span class="sxs-lookup"><span data-stu-id="6614f-129">Since all metadata exchange endpoints specify IMetadataExchange as their contract, you can use this standard point instead of defining one for yourself.</span></span>|  
+|[<span data-ttu-id="6614f-130">\<udpAnnoucementEndpoint ></span><span class="sxs-lookup"><span data-stu-id="6614f-130">\<udpAnnoucementEndpoint></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/udpannoucementendpoint.md)|<span data-ttu-id="6614f-131">サービスが UDP バインディングでアナウンス メッセージを送信するために使用する標準エンドポイントを定義します。</span><span class="sxs-lookup"><span data-stu-id="6614f-131">Defines a standard endpoint that is used by services to send announcement messages over a UDP binding.</span></span> <span data-ttu-id="6614f-132">これには固定コントラクトがあり、2 つの探索のバージョンをサポートします。</span><span class="sxs-lookup"><span data-stu-id="6614f-132">It has a fixed contract and supports two discovery versions.</span></span> <span data-ttu-id="6614f-133">また、WS-Discovery の仕様 (WS-Discovery April 2005 または WS-Discovery V1.1) に規定された固定 UDP バインディングと既定のアドレスも備えています。</span><span class="sxs-lookup"><span data-stu-id="6614f-133">In addition it has a fixed UDP binding and a default address value as specified in the WS-Discovery specifications (WS-Discovery April 2005 or WS-Discovery version 1.1).</span></span> <span data-ttu-id="6614f-134">アナウンス メッセージの送受信に使用するマルチキャスト アドレスを指定できます。</span><span class="sxs-lookup"><span data-stu-id="6614f-134">You can specify the multicast address to use for sending and receiving the announcement messages.</span></span>|  
+|[<span data-ttu-id="6614f-135">\<udpDiscoveryEndpoint ></span><span class="sxs-lookup"><span data-stu-id="6614f-135">\<udpDiscoveryEndpoint></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/udpdiscoveryendpoint.md)|<span data-ttu-id="6614f-136">UDP マルチキャスト バインディングを使用した探索操作用に事前に構成される標準エンドポイントを定義します。</span><span class="sxs-lookup"><span data-stu-id="6614f-136">Defines a standard endpoint that is pre-configured for discovery operations over a UDP multicast binding.</span></span> <span data-ttu-id="6614f-137">このエンドポイントには固定コントラクトがあり、WS-Discovery プロトコルの 2 つのバージョンをサポートします。</span><span class="sxs-lookup"><span data-stu-id="6614f-137">This endpoint has a fixed contract and supports two WS-Discovery protocol versions.</span></span> <span data-ttu-id="6614f-138">また、WS-Discovery の仕様 (WS-Discovery April 2005 または WS-Discovery V1.1) に規定された固定 UDP バインディングと既定のアドレスも備えています。</span><span class="sxs-lookup"><span data-stu-id="6614f-138">In addition, it has a fixed UDP binding and a default address as specified in the WS-Discovery specifications (WS-Discovery April 2005 or WS-Discovery V1.1).</span></span>|  
+|[<span data-ttu-id="6614f-139">\<webHttpEndpoint ></span><span class="sxs-lookup"><span data-stu-id="6614f-139">\<webHttpEndpoint></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpendpoint.md)|<span data-ttu-id="6614f-140">固定の標準エンドポイントを定義[ \<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)自動的にバインディングを追加、 [ \<webHttp >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md)動作します。</span><span class="sxs-lookup"><span data-stu-id="6614f-140">Defines a standard endpoint with a fixed [\<webHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) binding that automatically adds the [\<webHttp>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md) behavior.</span></span> <span data-ttu-id="6614f-141">このエンドポイントは、REST サービスを作成する場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="6614f-141">Use this endpoint when writing a REST service.</span></span>|  
+|[<span data-ttu-id="6614f-142">\<webScriptEndpoint ></span><span class="sxs-lookup"><span data-stu-id="6614f-142">\<webScriptEndpoint></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/webscriptendpoint.md)|<span data-ttu-id="6614f-143">固定の標準エンドポイントを定義[ \<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)自動的にバインディングを追加、 [ \<enableWebScript >](../../../../../docs/framework/configure-apps/file-schema/wcf/enablewebscript.md)動作します。</span><span class="sxs-lookup"><span data-stu-id="6614f-143">Defines a standard endpoint with a fixed [\<webHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) binding that automatically adds the [\<enableWebScript>](../../../../../docs/framework/configure-apps/file-schema/wcf/enablewebscript.md) behavior.</span></span> <span data-ttu-id="6614f-144">このエンドポイントは、ASP.NET AJAX アプリケーションから呼び出されるサービスを作成する場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="6614f-144">Use this endpoint when you are writing a service that is called from an ASP.NET AJAX application.</span></span>|  
+|[<span data-ttu-id="6614f-145">\<workflowControlEndpoint ></span><span class="sxs-lookup"><span data-stu-id="6614f-145">\<workflowControlEndpoint></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/workflowcontrolendpoint.md)|<span data-ttu-id="6614f-146">ワークフロー インスタンスの実行の制御 (作成、実行、保留、終了など) に使用する標準エンドポイントを定義します。</span><span class="sxs-lookup"><span data-stu-id="6614f-146">Defines a standard endpoint for controlling the execution of workflow instances (create, run, suspend, terminate, etc).</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="6614f-147">親要素</span><span class="sxs-lookup"><span data-stu-id="6614f-147">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|\<system.ServiceModel\>|すべての WCF 構成要素のルート要素です。|  
+|<span data-ttu-id="6614f-148">要素</span><span class="sxs-lookup"><span data-stu-id="6614f-148">Element</span></span>|<span data-ttu-id="6614f-149">説明</span><span class="sxs-lookup"><span data-stu-id="6614f-149">Description</span></span>|  
+|-------------|-----------------|  
+|<span data-ttu-id="6614f-150">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="6614f-150">\<system.ServiceModel></span></span>|<span data-ttu-id="6614f-151">すべての WCF 構成要素のルート要素です。</span><span class="sxs-lookup"><span data-stu-id="6614f-151">The root element of all WCF configuration elements.</span></span>|  
   
-## 参照  
- [標準エンドポイント](../../../../../docs/framework/wcf/feature-details/standard-endpoints.md)
+## <a name="see-also"></a><span data-ttu-id="6614f-152">関連項目</span><span class="sxs-lookup"><span data-stu-id="6614f-152">See Also</span></span>  
+ [<span data-ttu-id="6614f-153">標準エンドポイント</span><span class="sxs-lookup"><span data-stu-id="6614f-153">Standard Endpoints</span></span>](../../../../../docs/framework/wcf/feature-details/standard-endpoints.md)

@@ -1,30 +1,33 @@
 ---
-title: "How to: Make Entities Serializable | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : エンティティをシリアル化可能にする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a6c5bf6e-064a-4f77-b74c-76b3a5dec309
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 96d8e05fd6ce71536eacd909a831da0e14aa2f3d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Make Entities Serializable
-コードを作成するときに、エンティティをシリアル化可能にできます。  エンティティ クラスは <xref:System.Runtime.Serialization.DataContractAttribute> 属性で装飾し、列は <xref:System.Runtime.Serialization.DataMemberAttribute> 属性で装飾します。  
+# <a name="how-to-make-entities-serializable"></a><span data-ttu-id="41ac9-102">方法 : エンティティをシリアル化可能にする</span><span class="sxs-lookup"><span data-stu-id="41ac9-102">How to: Make Entities Serializable</span></span>
+<span data-ttu-id="41ac9-103">コードを作成するときに、エンティティをシリアル化可能にできます。</span><span class="sxs-lookup"><span data-stu-id="41ac9-103">You can make entities serializable when you generate your code.</span></span> <span data-ttu-id="41ac9-104">エンティティ クラスは <xref:System.Runtime.Serialization.DataContractAttribute> 属性で装飾し、列は <xref:System.Runtime.Serialization.DataMemberAttribute> 属性で装飾します。</span><span class="sxs-lookup"><span data-stu-id="41ac9-104">Entity classes are decorated with the <xref:System.Runtime.Serialization.DataContractAttribute> attribute, and columns with the <xref:System.Runtime.Serialization.DataMemberAttribute> attribute.</span></span>  
   
- [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] を使用している開発者は、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]を使用してこれを実現できます。  
+ <span data-ttu-id="41ac9-105">[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] を使用している開発者は、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]を使用してこれを実現できます。</span><span class="sxs-lookup"><span data-stu-id="41ac9-105">Developers using [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] can use the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] for this purpose.</span></span>  
   
- SQLMetal コマンド ライン ツールを使用する場合は、**\/serialization** オプションに引数 `unidirectional` を指定します。  詳細については、「[SqlMetal.exe \(コード生成ツール\)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」を参照してください。  
+ <span data-ttu-id="41ac9-106">SQLMetal コマンド ライン ツールを使用している場合を使用して、 **/serialization**オプションは、`unidirectional`引数。</span><span class="sxs-lookup"><span data-stu-id="41ac9-106">If you are using the SQLMetal command-line tool, use the **/serialization** option with the `unidirectional` argument.</span></span> <span data-ttu-id="41ac9-107">詳しくは、「[SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="41ac9-107">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span></span>  
   
-## 使用例  
- 次の SQLMetal コマンド ラインでは、シリアル化可能なエンティティを持つファイルが作成されます。  
+## <a name="example"></a><span data-ttu-id="41ac9-108">例</span><span class="sxs-lookup"><span data-stu-id="41ac9-108">Example</span></span>  
+ <span data-ttu-id="41ac9-109">次の SQLMetal コマンド ラインでは、シリアル化可能なエンティティを持つファイルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="41ac9-109">The following SQLMetal command lines produce files that have serializable entities.</span></span>  
   
 ```  
 sqlmetal /code:nwserializable.vb /language:vb "c:\northwnd.mdf" /sprocs /functions /pluralize /serialization:unidirectional  
@@ -34,6 +37,6 @@ sqlmetal /code:nwserializable.vb /language:vb "c:\northwnd.mdf" /sprocs /functio
 sqlmetal /code:nwserializable.cs /language:csharp "c:\northwnd.mdf" /sprocs /functions /pluralize /serialization:unidirectional  
 ```  
   
-## 参照  
- [Serialization](../../../../../../docs/framework/data/adonet/sql/linq/serialization.md)   
- [Creating the Object Model](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)
+## <a name="see-also"></a><span data-ttu-id="41ac9-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="41ac9-110">See Also</span></span>  
+ [<span data-ttu-id="41ac9-111">シリアル化</span><span class="sxs-lookup"><span data-stu-id="41ac9-111">Serialization</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/serialization.md)  
+ [<span data-ttu-id="41ac9-112">オブジェクト モデルの作成</span><span class="sxs-lookup"><span data-stu-id="41ac9-112">Creating the Object Model</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)

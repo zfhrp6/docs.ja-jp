@@ -1,53 +1,59 @@
 ---
-title: "DbDataAdapter を使用したデータの変更 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DbDataAdapter を使用したデータの変更"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: e35c7f9e-648b-4fcc-9361-d365c3e42c9a
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 850e56e6d6b5e6416ff9bb99e8c458982347e860
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DbDataAdapter を使用したデータの変更
-<xref:System.Data.Common.DbProviderFactory> オブジェクトの <xref:System.Data.Common.DbProviderFactory.CreateDataAdapter%2A> メソッドを使用すると、ファクトリの作成時に指定した基になるデータ プロバイダーに対して厳密に型指定された <xref:System.Data.Common.DbDataAdapter> オブジェクトを取得できます。  続いて <xref:System.Data.Common.DbCommandBuilder> を使用することで、データ ソースに対して <xref:System.Data.DataSet> のデータの挿入、更新、削除を実行するコマンドを作成できます。  
+# <a name="modifying-data-with-a-dbdataadapter"></a><span data-ttu-id="70b22-102">DbDataAdapter を使用したデータの変更</span><span class="sxs-lookup"><span data-stu-id="70b22-102">Modifying Data with a DbDataAdapter</span></span>
+<span data-ttu-id="70b22-103"><xref:System.Data.Common.DbProviderFactory.CreateDataAdapter%2A> オブジェクトの <xref:System.Data.Common.DbProviderFactory> メソッドを使用すると、ファクトリの作成時に指定した基になるデータ プロバイダーに対して厳密に型指定された <xref:System.Data.Common.DbDataAdapter> オブジェクトを取得できます。</span><span class="sxs-lookup"><span data-stu-id="70b22-103">The <xref:System.Data.Common.DbProviderFactory.CreateDataAdapter%2A> method of a <xref:System.Data.Common.DbProviderFactory> object gives you a <xref:System.Data.Common.DbDataAdapter> object that is strongly typed to the underlying data provider specified at the time you create the factory.</span></span> <span data-ttu-id="70b22-104">続いて <xref:System.Data.Common.DbCommandBuilder> を使用することで、データ ソースに対して <xref:System.Data.DataSet> のデータの挿入、更新、削除を実行するコマンドを作成できます。</span><span class="sxs-lookup"><span data-stu-id="70b22-104">You can then use a <xref:System.Data.Common.DbCommandBuilder> to create commands to insert, update, and delete data from a <xref:System.Data.DataSet> to a data source.</span></span>  
   
-## DbDataAdapter によるデータの取得  
- この例では、プロバイダー名と接続文字列に基づいて厳密に型指定された `DbDataAdapter` を作成する方法を示します。  このコード サンプルでは、<xref:System.Data.Common.DbProviderFactory> の <xref:System.Data.Common.DbProviderFactory.CreateConnection%2A> メソッドを使用して、<xref:System.Data.Common.DbConnection> を作成します。  次に、<xref:System.Data.Common.DbProviderFactory.CreateCommand%2A> メソッドを使用して <xref:System.Data.Common.DbCommand> を作成し、その `CommandText` プロパティと `Connection` プロパティを設定することでデータを選択します。  最後に、<xref:System.Data.Common.DbProviderFactory.CreateDataAdapter%2A> メソッドを使用して <xref:System.Data.Common.DbDataAdapter> オブジェクトを作成し、その `SelectCommand` プロパティを設定します。  `DbDataAdapter` の `Fill` メソッドにより、データが <xref:System.Data.DataTable> に読み込まれます。  
+## <a name="retrieving-data-with-a-dbdataadapter"></a><span data-ttu-id="70b22-105">DbDataAdapter によるデータの取得</span><span class="sxs-lookup"><span data-stu-id="70b22-105">Retrieving Data with a DbDataAdapter</span></span>  
+ <span data-ttu-id="70b22-106">この例では、プロバイダー名と接続文字列に基づいて厳密に型指定された `DbDataAdapter` を作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="70b22-106">This example demonstrates how to create a strongly typed `DbDataAdapter` based on a provider name and connection string.</span></span> <span data-ttu-id="70b22-107">このコード サンプルでは、<xref:System.Data.Common.DbProviderFactory.CreateConnection%2A> の <xref:System.Data.Common.DbProviderFactory> メソッドを使用して、<xref:System.Data.Common.DbConnection> を作成します。</span><span class="sxs-lookup"><span data-stu-id="70b22-107">The code uses the <xref:System.Data.Common.DbProviderFactory.CreateConnection%2A> method of the <xref:System.Data.Common.DbProviderFactory> to create a <xref:System.Data.Common.DbConnection>.</span></span> <span data-ttu-id="70b22-108">次に、<xref:System.Data.Common.DbProviderFactory.CreateCommand%2A> メソッドを使用して <xref:System.Data.Common.DbCommand> を作成し、その `CommandText` プロパティと `Connection` プロパティを設定することでデータを選択します。</span><span class="sxs-lookup"><span data-stu-id="70b22-108">Next, the code uses the <xref:System.Data.Common.DbProviderFactory.CreateCommand%2A> method to create a <xref:System.Data.Common.DbCommand> to select data by setting its `CommandText` and `Connection` properties.</span></span> <span data-ttu-id="70b22-109">最後に、<xref:System.Data.Common.DbDataAdapter> メソッドを使用して <xref:System.Data.Common.DbProviderFactory.CreateDataAdapter%2A> オブジェクトを作成し、その `SelectCommand` プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="70b22-109">Finally, the code creates a <xref:System.Data.Common.DbDataAdapter> object using the <xref:System.Data.Common.DbProviderFactory.CreateDataAdapter%2A> method and sets its `SelectCommand` property.</span></span> <span data-ttu-id="70b22-110">`Fill` の `DbDataAdapter` メソッドにより、データが <xref:System.Data.DataTable> に読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="70b22-110">The `Fill` method of the `DbDataAdapter` loads the data into a <xref:System.Data.DataTable>.</span></span>  
   
  [!code-csharp[DataWorks DbProviderFactories.DbDataAdapter#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbProviderFactories.DbDataAdapter/CS/source.cs#1)]
  [!code-vb[DataWorks DbProviderFactories.DbDataAdapter#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbProviderFactories.DbDataAdapter/VB/source.vb#1)]  
   
-## DbDataAdapter を使用したデータの変更  
- この例では、<xref:System.Data.Common.DbCommandBuilder> を使用してデータ ソースのデータの更新に必要なコマンドを生成することで、<xref:System.Data.Common.DbDataAdapter> を使用して `DataTable` のデータを変更する方法を示します。  `DbDataAdapter` の <xref:System.Data.Common.DbDataAdapter.SelectCommand%2A> は、Customers テーブルの CustomerID と CompanyName を取得するように設定されます。  <xref:System.Data.Common.DbCommandBuilder.GetInsertCommand%2A> メソッドを使用して <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A> プロパティを設定し、<xref:System.Data.Common.DbCommandBuilder.GetUpdateCommand%2A> メソッドを使用して <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A> プロパティを設定し、<xref:System.Data.Common.DbCommandBuilder.GetDeleteCommand%2A> メソッドを使用して <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> プロパティを設定します。  Customers テーブルに新しい行が追加され、データ ソースが更新されます。  次に、CustomerID を検索して追加された行を特定します。この行が、Customers テーブルの主キーとなります。  これにより CompanyName が変更され、データ ソースが更新されます。  最後に、その行を削除します。  
+## <a name="modifying-data-with-a-dbdataadapter"></a><span data-ttu-id="70b22-111">DbDataAdapter を使用したデータの変更</span><span class="sxs-lookup"><span data-stu-id="70b22-111">Modifying Data with a DbDataAdapter</span></span>  
+ <span data-ttu-id="70b22-112">この例では、`DataTable` を使用してデータ ソースのデータの更新に必要なコマンドを生成することで、<xref:System.Data.Common.DbDataAdapter> を使用して <xref:System.Data.Common.DbCommandBuilder> のデータを変更する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="70b22-112">This example demonstrates how to modify data in a `DataTable` using a <xref:System.Data.Common.DbDataAdapter> by using a <xref:System.Data.Common.DbCommandBuilder> to generate the commands required for updating data at the data source.</span></span> <span data-ttu-id="70b22-113"><xref:System.Data.Common.DbDataAdapter.SelectCommand%2A> の `DbDataAdapter` は、Customers テーブルの CustomerID と CompanyName を取得するように設定されます。</span><span class="sxs-lookup"><span data-stu-id="70b22-113">The <xref:System.Data.Common.DbDataAdapter.SelectCommand%2A> of the `DbDataAdapter` is set to retrieve the CustomerID and CompanyName from the Customers table.</span></span> <span data-ttu-id="70b22-114"><xref:System.Data.Common.DbCommandBuilder.GetInsertCommand%2A> メソッドを使用して <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A> プロパティを設定し、<xref:System.Data.Common.DbCommandBuilder.GetUpdateCommand%2A> メソッドを使用して <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A> プロパティを設定し、<xref:System.Data.Common.DbCommandBuilder.GetDeleteCommand%2A> メソッドを使用して <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="70b22-114">The <xref:System.Data.Common.DbCommandBuilder.GetInsertCommand%2A> method is used to set the <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A> property, the <xref:System.Data.Common.DbCommandBuilder.GetUpdateCommand%2A> method is used to set the <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A> property, and the <xref:System.Data.Common.DbCommandBuilder.GetDeleteCommand%2A> method is used to set the <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> property.</span></span> <span data-ttu-id="70b22-115">Customers テーブルに新しい行が追加され、データ ソースが更新されます。</span><span class="sxs-lookup"><span data-stu-id="70b22-115">The code adds a new row to the Customers table and updates the data source.</span></span> <span data-ttu-id="70b22-116">次に、CustomerID を検索して追加された行を特定します。この行が、Customers テーブルの主キーとなります。</span><span class="sxs-lookup"><span data-stu-id="70b22-116">The code then locates the added row by searching on the CustomerID, which is the primary key defined for the Customers table.</span></span> <span data-ttu-id="70b22-117">これにより CompanyName が変更され、データ ソースが更新されます。</span><span class="sxs-lookup"><span data-stu-id="70b22-117">It changes the CompanyName and updates the data source.</span></span> <span data-ttu-id="70b22-118">最後に、その行を削除します。</span><span class="sxs-lookup"><span data-stu-id="70b22-118">Finally, the code deletes the row.</span></span>  
   
  [!code-csharp[DataWorks DbProviderFactories.DbDataAdapterModify#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbProviderFactories.DbDataAdapterModify/CS/source.cs#1)]
  [!code-vb[DataWorks DbProviderFactories.DbDataAdapterModify#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbProviderFactories.DbDataAdapterModify/VB/source.vb#1)]  
   
-## パラメーターの処理  
- .NET Framework のデータ プロバイダーによって、パラメーターおよびパラメーターのプレースホルダーの名前付けや指定方法が異なります。  次の表に示すように、データ ソースごとに固有の構文が採用されています。  
+## <a name="handling-parameters"></a><span data-ttu-id="70b22-119">パラメーターの処理</span><span class="sxs-lookup"><span data-stu-id="70b22-119">Handling Parameters</span></span>  
+ <span data-ttu-id="70b22-120">.NET Framework のデータ プロバイダーによって、パラメーターおよびパラメーターのプレースホルダーの名前付けや指定方法が異なります。</span><span class="sxs-lookup"><span data-stu-id="70b22-120">The .NET Framework data providers handle naming and specifying parameters and parameter placeholders differently.</span></span> <span data-ttu-id="70b22-121">次の表に示すように、データ ソースごとに固有の構文が採用されています。</span><span class="sxs-lookup"><span data-stu-id="70b22-121">This syntax is tailored to a specific data source, as described in the following table.</span></span>  
   
-|データ プロバイダー|パラメーターの名前付け構文|  
-|----------------|-------------------|  
-|`SqlClient`|`@` *parametername* 形式の名前付きパラメーターが使用されます。|  
-|`OracleClient`|`:` *parmname* \(または *parmname*\) 形式の名前付きパラメーターが使用されます。|  
-|`OleDb`|疑問符 \(`?`\) で指定される位置パラメーター マーカーが使用されます。|  
-|`Odbc`|疑問符 \(`?`\) で指定される位置パラメーター マーカーが使用されます。|  
+|<span data-ttu-id="70b22-122">データ プロバイダー</span><span class="sxs-lookup"><span data-stu-id="70b22-122">Data provider</span></span>|<span data-ttu-id="70b22-123">パラメーターの名前付け構文</span><span class="sxs-lookup"><span data-stu-id="70b22-123">Parameter naming syntax</span></span>|  
+|-------------------|-----------------------------|  
+|`SqlClient`|<span data-ttu-id="70b22-124">`@`*parametername*形式の名前付きパラメーターが使用されます。</span><span class="sxs-lookup"><span data-stu-id="70b22-124">Uses named parameters in the format `@`*parametername*.</span></span>|  
+|`OracleClient`|<span data-ttu-id="70b22-125">`:`*parmname* (または *parmname*) 形式の名前付きパラメーターが使用されます。</span><span class="sxs-lookup"><span data-stu-id="70b22-125">Uses named parameters in the format `:`*parmname* (or *parmname*).</span></span>|  
+|`OleDb`|<span data-ttu-id="70b22-126">疑問符 (`?`) で指定される位置パラメーター マーカーが使用されます。</span><span class="sxs-lookup"><span data-stu-id="70b22-126">Uses positional parameter markers indicated by a question mark (`?`).</span></span>|  
+|`Odbc`|<span data-ttu-id="70b22-127">疑問符 (`?`) で指定される位置パラメーター マーカーが使用されます。</span><span class="sxs-lookup"><span data-stu-id="70b22-127">Uses positional parameter markers indicated by a question mark (`?`).</span></span>|  
   
- ファクトリ モデルは、パラメーター化された `DbCommand` オブジェクトおよび `DbDataAdapter` オブジェクトの作成には利用できません。  コード内に分岐を作って、使用するデータ プロバイダーに対応したパラメーターを作成する必要があります。  
+ <span data-ttu-id="70b22-128">ファクトリ モデルは、パラメーター化された `DbCommand` オブジェクトおよび `DbDataAdapter` オブジェクトの作成には利用できません。</span><span class="sxs-lookup"><span data-stu-id="70b22-128">The factory model is not helpful for creating parameterized `DbCommand` and `DbDataAdapter` objects.</span></span> <span data-ttu-id="70b22-129">コード内に分岐を作って、使用するデータ プロバイダーに対応したパラメーターを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="70b22-129">You will need to branch in your code to create parameters that are tailored to your data provider.</span></span>  
   
 > [!IMPORTANT]
->  プロバイダー固有のパラメーターを完全に回避するために、文字列の連結を利用して直接 SQL ステートメントを作成することは、セキュリティ上の理由から推奨されません。  パラメーターではなく文字列の連結を利用した場合、アプリケーションが SQL インジェクション攻撃に対して脆弱になります。  
+>  <span data-ttu-id="70b22-130">プロバイダー固有のパラメーターを完全に回避するために、文字列の連結を利用して直接 SQL ステートメントを作成することは、セキュリティ上の理由から推奨されません。</span><span class="sxs-lookup"><span data-stu-id="70b22-130">Avoiding provider-specific parameters altogether by using string concatenation to construct direct SQL statements is not recommended for security reasons.</span></span> <span data-ttu-id="70b22-131">パラメーターではなく文字列の連結を利用した場合、アプリケーションが SQL インジェクション攻撃に対して脆弱になります。</span><span class="sxs-lookup"><span data-stu-id="70b22-131">Using string concatenation instead of parameters leaves your application vulnerable to SQL injection attacks.</span></span>  
   
-## 参照  
- [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)   
- [DbProviderFactory の取得](../../../../docs/framework/data/adonet/obtaining-a-dbproviderfactory.md)   
- [DbConnection、DbCommand、および DbException](../../../../docs/framework/data/adonet/dbconnection-dbcommand-and-dbexception.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="70b22-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="70b22-132">See Also</span></span>  
+ [<span data-ttu-id="70b22-133">DbProviderFactories</span><span class="sxs-lookup"><span data-stu-id="70b22-133">DbProviderFactories</span></span>](../../../../docs/framework/data/adonet/dbproviderfactories.md)  
+ [<span data-ttu-id="70b22-134">DbProviderFactory の取得</span><span class="sxs-lookup"><span data-stu-id="70b22-134">Obtaining a DbProviderFactory</span></span>](../../../../docs/framework/data/adonet/obtaining-a-dbproviderfactory.md)  
+ [<span data-ttu-id="70b22-135">DbConnection、DbCommand、および DbException</span><span class="sxs-lookup"><span data-stu-id="70b22-135">DbConnection, DbCommand and DbException</span></span>](../../../../docs/framework/data/adonet/dbconnection-dbcommand-and-dbexception.md)  
+ [<span data-ttu-id="70b22-136">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="70b22-136">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

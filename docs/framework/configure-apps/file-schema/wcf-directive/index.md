@@ -5,38 +5,35 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: e471b042-d5e3-491c-bc81-758655016a3a
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 02aa885ca5ce761d8b34b4f867f8eb4fe9f1912a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.openlocfilehash: b86f690848795b3e7880de42cc0860ec19b9cb9a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="wcf-directive-syntax"></a>WCF ディレクティブ構文
-コンパイラに指示するために .svc ファイルの [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] ディレクティブによって使用される設定を指定します。 各ディレクティブには、そのディレクティブに固有な 1 つ以上の (値と対にした) 属性を含めることができます。 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] には [@ServiceHost](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) ディレクティブだけがあります。  
+# <a name="wcf-directive-syntax"></a><span data-ttu-id="8d44b-102">WCF ディレクティブ構文</span><span class="sxs-lookup"><span data-stu-id="8d44b-102">WCF Directive Syntax</span></span>
+<span data-ttu-id="8d44b-103">コンパイラに指示するために .svc ファイルの [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] ディレクティブによって使用される設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="8d44b-103">Specifies settings used by the [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] directives in the .svc files to direct the compilers.</span></span> <span data-ttu-id="8d44b-104">各ディレクティブには、そのディレクティブに固有な 1 つ以上の (値と対にした) 属性を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="8d44b-104">Each directive can contain one or more attributes (paired with values) that are specific to that directive.</span></span> [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]<span data-ttu-id="8d44b-105"> には [@ServiceHost](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) ディレクティブだけがあります。</span><span class="sxs-lookup"><span data-stu-id="8d44b-105"> has only the [@ServiceHost](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) directive.</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
+## <a name="in-this-section"></a><span data-ttu-id="8d44b-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="8d44b-106">In This Section</span></span>  
  [@ServiceHost](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md)  
- .svc コンパイラによって使用されるページ固有の属性を定義します。 .svc ファイルだけに組み込むことができます。  
+ <span data-ttu-id="8d44b-107">.svc コンパイラによって使用されるページ固有の属性を定義します。</span><span class="sxs-lookup"><span data-stu-id="8d44b-107">Defines page-specific attributes used by the .svc compiler.</span></span> <span data-ttu-id="8d44b-108">.svc ファイルだけに組み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="8d44b-108">Can be included only in .svc files.</span></span>  
   
-## <a name="related-sections"></a>関連項目  
- [方法 : IIS で WCF サービスをホストする](../../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)  
- インターネット インフォメーション サービス (IIS) でサービスをホストするときの @ServiceHost ディレクティブの使用方法について説明します。  
+## <a name="related-sections"></a><span data-ttu-id="8d44b-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="8d44b-109">Related Sections</span></span>  
+ [<span data-ttu-id="8d44b-110">方法 : IIS で WCF サービスをホストする</span><span class="sxs-lookup"><span data-stu-id="8d44b-110">How to: Host a WCF Service in IIS</span></span>](../../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)  
+ <span data-ttu-id="8d44b-111">インターネット インフォメーション サービス (IIS) でサービスをホストするときの @ServiceHost ディレクティブの使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="8d44b-111">Describes how the @ServiceHost directive is used when hosting a service in Internet Information Services (IIS)</span></span>  
   
- [方法 : WAS で WCF サービスをホストする](../../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)  
- Windows プロセス アクティブ化サービス (WAS) でサービスをホストするときの @ServiceHost ディレクティブの使用方法について説明します。  
+ [<span data-ttu-id="8d44b-112">方法 : WAS で WCF サービスをホストする</span><span class="sxs-lookup"><span data-stu-id="8d44b-112">How to: Host a WCF Service in WAS</span></span>](../../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)  
+ <span data-ttu-id="8d44b-113">Windows プロセス アクティブ化サービス (WAS) でサービスをホストするときの @ServiceHost ディレクティブの使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="8d44b-113">Describes how the @ServiceHost directive is used when hosting a service in Windows Process Activation Service (WAS)</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [ホスト](../../../../../docs/framework/wcf/feature-details/hosting.md)   
- [インターネット インフォメーション サービスでのホスティング](../../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)   
- [Windows プロセス アクティブ化サービスでのホスティング](../../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)
-
+## <a name="see-also"></a><span data-ttu-id="8d44b-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="8d44b-114">See Also</span></span>  
+ [<span data-ttu-id="8d44b-115">ホスティング</span><span class="sxs-lookup"><span data-stu-id="8d44b-115">Hosting</span></span>](../../../../../docs/framework/wcf/feature-details/hosting.md)  
+ [<span data-ttu-id="8d44b-116">インターネット インフォメーション サービスをホストしています。</span><span class="sxs-lookup"><span data-stu-id="8d44b-116">Hosting in Internet Information Services</span></span>](../../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
+ [<span data-ttu-id="8d44b-117">Windows プロセス アクティブ化サービスでのホスティング</span><span class="sxs-lookup"><span data-stu-id="8d44b-117">Hosting in Windows Process Activation Service</span></span>](../../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)

@@ -1,58 +1,61 @@
 ---
-title: "オブジェクトの具体化 (WCF Data Services) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "WCF Data Services, クライアント ライブラリ"
-  - "WCF Data Services, クエリ"
+title: "オブジェクトの具体化 (WCF Data Services)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WCF Data Services, client library
+- WCF Data Services, querying
 ms.assetid: f0dbf7b0-0292-4e31-9ae4-b98288336dc1
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f671d3b41e0812916d1db342c211f2db6456ede3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# オブジェクトの具体化 (WCF Data Services)
-**\[サービス参照の追加\]** ダイアログを使用して .NET Framework ベースのクライアント アプリケーションの [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] フィードを使用すると、フィードによって公開されるデータ モデルの各エンティティ型に対して同等のデータ クラスが生成されます。  詳細については、「[データ サービス クライアント ライブラリの生成](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)」を参照してください。  クエリによって返されるエンティティ データは、これらの生成されたクライアント データ サービス クラスのいずれかのインスタンスに具体化されます。  マージ オプションおよび追跡オブジェクトの ID 解決については、「[データ サービス コンテキストの管理](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md)」を参照してください。  
+# <a name="object-materialization-wcf-data-services"></a><span data-ttu-id="83b43-102">オブジェクトの具体化 (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="83b43-102">Object Materialization (WCF Data Services)</span></span>
+<span data-ttu-id="83b43-103">使用すると、**サービス参照の追加**ダイアログを使用、 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] .NET Framework ベースのクライアント アプリケーションでのフィード、同等のデータ クラスは、生成、フィードによって公開されているデータ モデルの各エンティティの種類。</span><span class="sxs-lookup"><span data-stu-id="83b43-103">When you use the **Add Service Reference** dialog to consume an [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] feed in a .NET Framework-based client application, equivalent data classes are generated for each entity type in the data model exposed by the feed.</span></span> <span data-ttu-id="83b43-104">詳細については、次を参照してください。[データ サービス クライアント ライブラリを生成する](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="83b43-104">For more information, see [Generating the Data Service Client Library](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md).</span></span> <span data-ttu-id="83b43-105">クエリによって返されるエンティティ データは、これらの生成されたクライアント データ サービス クラスのいずれかのインスタンスに具体化されます。</span><span class="sxs-lookup"><span data-stu-id="83b43-105">Entity data that is returned by a query is materialized into an instance of one of these generated client data service classes.</span></span> <span data-ttu-id="83b43-106">マージ オプションおよび追跡されているオブジェクトの id の解決については、次を参照してください。[データ サービス コンテキストを管理する](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="83b43-106">For information about merge options and identity resolution for tracked objects, see [Managing the Data Service Context](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md).</span></span>  
   
- さらに [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、ツールによって生成されたデータ クラスを使用する代わりに、独自のクライアント データ サービス クラスを定義できます。  これにより、"plain\-old CLR object" \(POCO\) データ クラスとして知られる独自のデータ クラスを使用できます。  これらの型のカスタム データ クラスを使用する際は、データ クラスを <xref:System.Data.Services.Common.DataServiceKeyAttribute> または <xref:System.Data.Services.Common.DataServiceEntityAttribute> で属性化し、クライアント上のその型名がデータ サービスのデータ モデル内の型名と一致するようにする必要があります。  
+ <span data-ttu-id="83b43-107">さらに [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、ツールによって生成されたデータ クラスを使用する代わりに、独自のクライアント データ サービス クラスを定義できます。</span><span class="sxs-lookup"><span data-stu-id="83b43-107">[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] also enables you to define your own client data service classes rather than using the tool-generated data classes.</span></span> <span data-ttu-id="83b43-108">これにより、"plain-old CLR object" (POCO) データ クラスとして知られる独自のデータ クラスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="83b43-108">This enables you to use your own data classes, also known as "plain-old CLR object" (POCO) data classes.</span></span> <span data-ttu-id="83b43-109">これらの種類のカスタム データ クラスを使用する場合は、いずれかでデータ クラスを属性する必要があります<xref:System.Data.Services.Common.DataServiceKeyAttribute>または<xref:System.Data.Services.Common.DataServiceEntityAttribute>型名前でデータ サービスのデータ モデルの型名クライアントと一致していることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="83b43-109">When using these types of custom data classes, you should attribute the data class with either <xref:System.Data.Services.Common.DataServiceKeyAttribute> or <xref:System.Data.Services.Common.DataServiceEntityAttribute> and ensure that type names on the client match type names in the data model of the data service.</span></span>  
   
- ライブラリではクエリ応答メッセージを受け取ると、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードから返されたデータを、クエリの型のクライアント データ サービス クラスのインスタンスに具体化します。  これらのオブジェクトを具体化する一般的なプロセスは次のとおりです。  
+ <span data-ttu-id="83b43-110">返されたデータを具体化するライブラリは、クエリの応答メッセージを受信した後、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードは、クエリの型のサービス クラスのクライアント データのインスタンスにします。</span><span class="sxs-lookup"><span data-stu-id="83b43-110">After the library receives the query response message, it materializes the returned data from the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed into instances of client data service classes that are of the type of the query.</span></span> <span data-ttu-id="83b43-111">これらのオブジェクトを具体化する一般的なプロセスは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="83b43-111">The general process for materializing these objects is as follows:</span></span>  
   
-1.  クライアント ライブラリは、応答メッセージ フィード内の `entry` 要素からシリアル化された型を読み取り、次のいずれかの方法で正しい型の新しいインスタンスの作成を試みます。  
+1.  <span data-ttu-id="83b43-112">クライアント ライブラリは、応答メッセージ フィード内の `entry` 要素からシリアル化された型を読み取り、次のいずれかの方法で正しい型の新しいインスタンスの作成を試みます。</span><span class="sxs-lookup"><span data-stu-id="83b43-112">The client library reads the serialized type from the `entry` element in the response message feed and attempts to create a new instance of the correct type, in one of the following ways:</span></span>  
   
-    -   フィードで宣言された型の名前が <xref:System.Data.Services.Client.DataServiceQuery%601> の型と同じ場合は、空のコンストラクターを使用してこの型の新しいインスタンスが作成されます。  
+    -   <span data-ttu-id="83b43-113">フィードで宣言された型の名前が <xref:System.Data.Services.Client.DataServiceQuery%601> の型と同じ場合は、空のコンストラクターを使用してこの型の新しいインスタンスが作成されます。</span><span class="sxs-lookup"><span data-stu-id="83b43-113">When the type declared in the feed has the same name as the type of the <xref:System.Data.Services.Client.DataServiceQuery%601>, a new instance of this type is created by using the empty constructor.</span></span>  
   
-    -   フィードで宣言された型の名前が <xref:System.Data.Services.Client.DataServiceQuery%601> の型から派生した型と同じ場合は、空のコンストラクターを使用して派生したこの型の新しいインスタンスが作成されます。  
+    -   <span data-ttu-id="83b43-114">フィードで宣言された型の名前が <xref:System.Data.Services.Client.DataServiceQuery%601> の型から派生した型と同じ場合は、空のコンストラクターを使用して派生したこの型の新しいインスタンスが作成されます。</span><span class="sxs-lookup"><span data-stu-id="83b43-114">When the type declared in the feed has the same name as a type that is derived from the type of the <xref:System.Data.Services.Client.DataServiceQuery%601>, a new instance of this derived type is created by using the empty constructor.</span></span>  
   
-    -   フィードで宣言された型が <xref:System.Data.Services.Client.DataServiceQuery%601> の型、または派生した型と一致しない場合は、空のコンストラクターを使用してクエリされた型の新しいインスタンスが作成されます。  
+    -   <span data-ttu-id="83b43-115">フィードで宣言された型が <xref:System.Data.Services.Client.DataServiceQuery%601> の型、または派生した型と一致しない場合は、空のコンストラクターを使用してクエリされた型の新しいインスタンスが作成されます。</span><span class="sxs-lookup"><span data-stu-id="83b43-115">When the type declared in the feed cannot be matched to the type of the <xref:System.Data.Services.Client.DataServiceQuery%601> or any derived types, a new instance of the queried type is created by using the empty constructor.</span></span>  
   
-    -   <xref:System.Data.Services.Client.DataServiceContext.ResolveType%2A> プロパティが設定されている場合、指定されたデリゲートが呼び出され、既定の名前ベースの型のマッピングを上書きし、<xref:System.Func%602> によって返された型の新しいインスタンスが代わりに作成されます。  このデリゲートが NULL 値を返した場合、クエリされた型の新しいインスタンスが代わりに作成されます。  継承のシナリオをサポートするために、既定の名前ベースの型名のマッピングを上書きすることが必要な場合があります。  
+    -   <span data-ttu-id="83b43-116"><xref:System.Data.Services.Client.DataServiceContext.ResolveType%2A> プロパティが設定されている場合、指定されたデリゲートが呼び出され、既定の名前ベースの型のマッピングを上書きし、<xref:System.Func%602> によって返された型の新しいインスタンスが代わりに作成されます。</span><span class="sxs-lookup"><span data-stu-id="83b43-116">When the <xref:System.Data.Services.Client.DataServiceContext.ResolveType%2A> property is set, the supplied delegate is called to override the default name-based type mapping and a new instance of the type returned by the <xref:System.Func%602> is created instead.</span></span> <span data-ttu-id="83b43-117">このデリゲートが NULL 値を返した場合、クエリされた型の新しいインスタンスが代わりに作成されます。</span><span class="sxs-lookup"><span data-stu-id="83b43-117">If this delegate returns a null value, a new instance of the queried type is created instead.</span></span> <span data-ttu-id="83b43-118">継承のシナリオをサポートするために、既定の名前ベースの型名のマッピングを上書きすることが必要な場合があります。</span><span class="sxs-lookup"><span data-stu-id="83b43-118">It may be required to override the default name-based type name mapping to support inheritance scenarios.</span></span>  
   
-2.  クライアント ライブラリは `entry` の `id` 要素から URI 値を読み取ります。これがエンティティの ID 値です。  <xref:System.Data.Services.Client.MergeOption> の  <xref:System.Data.Services.Client.DataServiceContext.MergeOption%2A> 値が使用されない限り、<xref:System.Data.Services.Client.DataServiceContext> のオブジェクトの追跡には、ID 値が使用されます。  さらに、クエリ応答でエンティティが複数回返されたときでも、単一のエンティティ インスタンスのみが作成されることを保証するためにも ID 値を使用します。  
+2.  <span data-ttu-id="83b43-119">クライアント ライブラリは `id` の `entry` 要素から URI 値を読み取ります。これがエンティティの ID 値です。</span><span class="sxs-lookup"><span data-stu-id="83b43-119">The client library reads the URI value from the `id` element of the `entry`, which is the identity value of the entity.</span></span> <span data-ttu-id="83b43-120"><xref:System.Data.Services.Client.DataServiceContext.MergeOption%2A> の  <xref:System.Data.Services.Client.MergeOption.NoTracking> 値が使用されない限り、<xref:System.Data.Services.Client.DataServiceContext> のオブジェクトの追跡には、ID 値が使用されます。</span><span class="sxs-lookup"><span data-stu-id="83b43-120">Unless a <xref:System.Data.Services.Client.DataServiceContext.MergeOption%2A> value of <xref:System.Data.Services.Client.MergeOption.NoTracking> is used, the identity value is used to track the object in the <xref:System.Data.Services.Client.DataServiceContext>.</span></span> <span data-ttu-id="83b43-121">さらに、クエリ応答でエンティティが複数回返されたときでも、単一のエンティティ インスタンスのみが作成されることを保証するためにも ID 値を使用します。</span><span class="sxs-lookup"><span data-stu-id="83b43-121">The identity value is also used to guarantee that only a single entity instance is created, even when an entity is returned multiple times in the query response.</span></span>  
   
-3.  クライアント ライブラリは、フィード エントリからプロパティを読み取り、新しく作成されたオブジェクトに対応するプロパティを設定します。  <xref:System.Data.Services.Client.DataServiceContext> に同じ ID 値のオブジェクトが既に存在する場合、プロパティは、<xref:System.Data.Services.Client.DataServiceContext> の <xref:System.Data.Services.Client.MergeOption> 設定に基づき設定されます。  応答には、クライアント型で対応するプロパティがないプロパティ値が含まれる場合があります。  そのような場合、アクションは、<xref:System.Data.Services.Client.DataServiceContext> の <xref:System.Data.Services.Client.DataServiceContext.IgnoreMissingProperties%2A> プロパティの値によって異なります。  このプロパティが `true` に設定されている場合は、欠落しているプロパティは無視されます。  それ以外の場合は、エラーが発生します。  プロパティは次のように設定されます。  
+3.  <span data-ttu-id="83b43-122">クライアント ライブラリは、フィード エントリからプロパティを読み取り、新しく作成されたオブジェクトに対応するプロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="83b43-122">The client library reads properties from the feed entry and set the corresponding properties on the newly created object.</span></span> <span data-ttu-id="83b43-123"><xref:System.Data.Services.Client.DataServiceContext> に同じ ID 値のオブジェクトが既に存在する場合、プロパティは、<xref:System.Data.Services.Client.MergeOption> の <xref:System.Data.Services.Client.DataServiceContext> 設定に基づき設定されます。</span><span class="sxs-lookup"><span data-stu-id="83b43-123">When an object that has the same identity value already occurs in the <xref:System.Data.Services.Client.DataServiceContext>, the properties are set based on the <xref:System.Data.Services.Client.MergeOption> setting of the <xref:System.Data.Services.Client.DataServiceContext>.</span></span> <span data-ttu-id="83b43-124">応答には、クライアント型で対応するプロパティがないプロパティ値が含まれる場合があります。</span><span class="sxs-lookup"><span data-stu-id="83b43-124">The response might contain property values for which a corresponding property does not occur in the client type.</span></span> <span data-ttu-id="83b43-125">そのような場合、アクションは、<xref:System.Data.Services.Client.DataServiceContext.IgnoreMissingProperties%2A> の <xref:System.Data.Services.Client.DataServiceContext> プロパティの値によって異なります。</span><span class="sxs-lookup"><span data-stu-id="83b43-125">When this occurs, the action depends on the value of the <xref:System.Data.Services.Client.DataServiceContext.IgnoreMissingProperties%2A> property of the <xref:System.Data.Services.Client.DataServiceContext>.</span></span> <span data-ttu-id="83b43-126">このプロパティが `true` に設定されている場合は、欠落しているプロパティは無視されます。</span><span class="sxs-lookup"><span data-stu-id="83b43-126">When this property is set to `true`, the missing property is ignored.</span></span> <span data-ttu-id="83b43-127">それ以外の場合は、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="83b43-127">Otherwise, an error is raised.</span></span> <span data-ttu-id="83b43-128">プロパティは次のように設定されます。</span><span class="sxs-lookup"><span data-stu-id="83b43-128">Properties are set as follows:</span></span>  
   
-    -   スカラー プロパティは、応答メッセージのエントリ内の対応する値に設定されます。  
+    -   <span data-ttu-id="83b43-129">スカラー プロパティは、応答メッセージのエントリ内の対応する値に設定されます。</span><span class="sxs-lookup"><span data-stu-id="83b43-129">Scalar properties are set to the corresponding value in the entry in the response message.</span></span>  
   
-    -   複合プロパティは、新しい複合型インスタンスに設定されます。このインスタンスは、応答からの複合型のプロパティとともに設定されます。  
+    -   <span data-ttu-id="83b43-130">複合プロパティは、新しい複合型インスタンスに設定されます。このインスタンスは、応答からの複合型のプロパティとともに設定されます。</span><span class="sxs-lookup"><span data-stu-id="83b43-130">Complex properties are set to a new complex type instance, which are set with the properties of the complex type from the response.</span></span>  
   
-    -   関連するエンティティのコレクションを返すナビゲーション プロパティは、<xref:System.Collections.Generic.ICollection%601> の新しいまたは既存のインスタンスに設定されます。ここで、`T` は関連エンティティの型です。  このコレクションは、関連オブジェクトが <xref:System.Data.Services.Client.DataServiceContext> に読み込まれていない限り空になります。  詳細については、「[遅延コンテンツの読み込み](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md)」を参照してください。  
+    -   <span data-ttu-id="83b43-131">関連するエンティティのコレクションを返すナビゲーション プロパティは、<xref:System.Collections.Generic.ICollection%601> の新しいまたは既存のインスタンスに設定されます。ここで、`T` は関連エンティティの型です。</span><span class="sxs-lookup"><span data-stu-id="83b43-131">Navigation properties that return a collection of related entities are set to a new or existing instance of <xref:System.Collections.Generic.ICollection%601>, where `T` is the type of the related entity.</span></span> <span data-ttu-id="83b43-132">このコレクションは、関連オブジェクトが <xref:System.Data.Services.Client.DataServiceContext> に読み込まれていない限り空になります。</span><span class="sxs-lookup"><span data-stu-id="83b43-132">This collection is empty unless the related objects have been loaded into the <xref:System.Data.Services.Client.DataServiceContext>.</span></span> <span data-ttu-id="83b43-133">詳細については、次を参照してください。[遅延コンテンツを読み込んで](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="83b43-133">For more information, see [Loading Deferred Content](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).</span></span>  
   
         > [!NOTE]
-        >  生成されたクライアント データ クラスでデータ バインディングがサポートされる場合、ナビゲーション プロパティは代わりに <xref:System.Data.Services.Client.DataServiceCollection%601> クラスのインスタンスを返します。  詳細については、「[コントロールへのデータのバインド](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)」を参照してください。  
+        >  <span data-ttu-id="83b43-134">生成されたクライアント データ クラスでデータ バインディングがサポートされる場合、ナビゲーション プロパティは代わりに <xref:System.Data.Services.Client.DataServiceCollection%601> クラスのインスタンスを返します。</span><span class="sxs-lookup"><span data-stu-id="83b43-134">When the generated client data classes support data binding, navigation properties return instances of the <xref:System.Data.Services.Client.DataServiceCollection%601> class instead.</span></span> <span data-ttu-id="83b43-135">詳細については、次を参照してください。[コントロールへのデータ バインディング](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="83b43-135">For more information, see [Binding Data to Controls](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md).</span></span>  
   
-4.  <xref:System.Data.Services.Client.DataServiceContext.ReadingEntity> イベントが発生します。  
+4.  <span data-ttu-id="83b43-136"><xref:System.Data.Services.Client.DataServiceContext.ReadingEntity> イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="83b43-136">The <xref:System.Data.Services.Client.DataServiceContext.ReadingEntity> event is raised.</span></span>  
   
-5.  クライアント ライブラリは <xref:System.Data.Services.Client.DataServiceContext> にオブジェクトをアタッチします。  <xref:System.Data.Services.Client.MergeOption> が <xref:System.Data.Services.Client.MergeOption> の場合は、オブジェクトはアタッチされません。  
+5.  <span data-ttu-id="83b43-137">クライアント ライブラリは <xref:System.Data.Services.Client.DataServiceContext> にオブジェクトをアタッチします。</span><span class="sxs-lookup"><span data-stu-id="83b43-137">The client library attaches the object to the <xref:System.Data.Services.Client.DataServiceContext>.</span></span> <span data-ttu-id="83b43-138"><xref:System.Data.Services.Client.MergeOption> が <xref:System.Data.Services.Client.MergeOption.NoTracking> の場合は、オブジェクトはアタッチされません。</span><span class="sxs-lookup"><span data-stu-id="83b43-138">The object is not attached when the <xref:System.Data.Services.Client.MergeOption> is <xref:System.Data.Services.Client.MergeOption.NoTracking>.</span></span>  
   
-## 参照  
- [データ サービスのクエリ](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)   
- [クエリ射影](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)
+## <a name="see-also"></a><span data-ttu-id="83b43-139">関連項目</span><span class="sxs-lookup"><span data-stu-id="83b43-139">See Also</span></span>  
+ [<span data-ttu-id="83b43-140">データ サービスに対するクエリ</span><span class="sxs-lookup"><span data-stu-id="83b43-140">Querying the Data Service</span></span>](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)  
+ [<span data-ttu-id="83b43-141">クエリの射影</span><span class="sxs-lookup"><span data-stu-id="83b43-141">Query Projections</span></span>](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)

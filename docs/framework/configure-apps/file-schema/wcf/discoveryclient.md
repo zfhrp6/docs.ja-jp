@@ -1,65 +1,70 @@
 ---
-title: "&lt;discoveryClient&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;discoveryClient&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a78f74c3-1152-4149-ab29-3f12d316caeb
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a0b7161c9e4564367348d1c94d469d6fa4a4b79b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;discoveryClient&gt;
-クライアント アプリケーションが実行時に探索可能なサービスを自動的に検索し、そのアドレスを見つけることができるカスタム バインディングを作成するための構成要素。  
+# <a name="ltdiscoveryclientgt"></a><span data-ttu-id="fee42-102">&lt;discoveryClient&gt;</span><span class="sxs-lookup"><span data-stu-id="fee42-102">&lt;discoveryClient&gt;</span></span>
+<span data-ttu-id="fee42-103">クライアント アプリケーションが実行時に探索可能なサービスを自動的に検索し、そのアドレスを見つけることができるカスタム バインドを作成するための構成要素。</span><span class="sxs-lookup"><span data-stu-id="fee42-103">A configuration element for creating a custom binding that enables a client application to automatically search for a discoverable service and find its address at runtime.</span></span>  
   
-## 構文  
+<span data-ttu-id="fee42-104">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="fee42-104">\<system.serviceModel></span></span>  
+<span data-ttu-id="fee42-105">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="fee42-105">\<bindings></span></span>  
+<span data-ttu-id="fee42-106">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="fee42-106">\<customBinding></span></span>  
+<span data-ttu-id="fee42-107">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="fee42-107">\<binding></span></span>  
+<span data-ttu-id="fee42-108">\<discoveryClient ></span><span class="sxs-lookup"><span data-stu-id="fee42-108">\<discoveryClient></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="fee42-109">構文</span><span class="sxs-lookup"><span data-stu-id="fee42-109">Syntax</span></span>  
   
-<discoveryClient discoveryEndpoint=”String” >  
-   <findCriteria duration=”TimeSpan”  
-       maxResults=”Integer”   
-       scopeMatchBy=”Uri” >  
-       <contractTypeNames>  
-          <add name="String" namespace="String" />  
-       <contractTypeNames>  
-       <extensions />  
-       <scopes>  
-          <add scope="URI"/>  
-       </scopes>  
-   </findCriteria>  
+```xml  
+<discoveryClient discoveryEndpoint="String" >
+  <findCriteria duration="TimeSpan" maxResults="Integer" scopeMatchBy="Uri">
+    <contractTypeNames>
+      <add name="String" namespace="String" />
+    <contractTypeNames>
+    <extensions />
+    <scopes>
+      <add scope="URI"/>
+    </scopes>
+  </findCriteria>
 </discoveryClient>  
-  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="fee42-110">属性および要素</span><span class="sxs-lookup"><span data-stu-id="fee42-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="fee42-111">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="fee42-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="fee42-112">属性</span><span class="sxs-lookup"><span data-stu-id="fee42-112">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|discoveryEndpoint|クライアント アプリケーションが実行時に探索可能なサービスを自動的に検索し、そのアドレスを見つけることができる探索エンドポイントの名前を含む文字列。|  
+|<span data-ttu-id="fee42-113">属性</span><span class="sxs-lookup"><span data-stu-id="fee42-113">Attribute</span></span>|<span data-ttu-id="fee42-114">説明</span><span class="sxs-lookup"><span data-stu-id="fee42-114">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="fee42-115">discoveryEndpoint</span><span class="sxs-lookup"><span data-stu-id="fee42-115">discoveryEndpoint</span></span>|<span data-ttu-id="fee42-116">クライアント アプリケーションが実行時に探索可能なサービスを自動的に検索し、そのアドレスを見つけることができる探索エンドポイントの名前を含む文字列。</span><span class="sxs-lookup"><span data-stu-id="fee42-116">A string that contains the name of the Discovery Endpoint that enables a client application to automatically search for a discoverable service and find its address at runtime.</span></span>|  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="fee42-117">子要素</span><span class="sxs-lookup"><span data-stu-id="fee42-117">Child Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<standardEndpoints\>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|探索サービスの検索にクライアント アプリケーションによって使用される基準を提供する構成要素。  基準は、\(探しているサービスを指定する\) 検索条件と \(検索をどのくらい続けるかを指定する\) 検索終了条件にグループ化できます。|  
+|<span data-ttu-id="fee42-118">要素</span><span class="sxs-lookup"><span data-stu-id="fee42-118">Element</span></span>|<span data-ttu-id="fee42-119">説明</span><span class="sxs-lookup"><span data-stu-id="fee42-119">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="fee42-120">\<standardEndpoints ></span><span class="sxs-lookup"><span data-stu-id="fee42-120">\<standardEndpoints></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|<span data-ttu-id="fee42-121">探索サービスの検索にクライアント アプリケーションによって使用される基準を提供する構成要素。</span><span class="sxs-lookup"><span data-stu-id="fee42-121">A configuration element that supplies a set of criteria used by a client application to search for a discovery service.</span></span> <span data-ttu-id="fee42-122">条件は、(探しているサービスの種類を指定する) 検索条件にグループ化できるし、検索終了条件 (期間、検索する必要があります)。</span><span class="sxs-lookup"><span data-stu-id="fee42-122">Criteria can be grouped into search criteria (specifying what services you’re looking for) and find termination criteria (how long the search should last).</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="fee42-123">親要素</span><span class="sxs-lookup"><span data-stu-id="fee42-123">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<binding\>](../../../../../docs/framework/misc/binding.md)|カスタム バインドのすべてのバインド機能を定義します。|  
+|<span data-ttu-id="fee42-124">要素</span><span class="sxs-lookup"><span data-stu-id="fee42-124">Element</span></span>|<span data-ttu-id="fee42-125">説明</span><span class="sxs-lookup"><span data-stu-id="fee42-125">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="fee42-126">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="fee42-126">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)|<span data-ttu-id="fee42-127">カスタム バインドのすべてのバインド機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="fee42-127">Defines all binding capabilities of the custom binding.</span></span>|  
   
-## 参照  
- <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>   
+## <a name="see-also"></a><span data-ttu-id="fee42-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="fee42-128">See Also</span></span>  
+ <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>  
  <xref:System.ServiceModel.Discovery.Configuration.DiscoveryClientElement>

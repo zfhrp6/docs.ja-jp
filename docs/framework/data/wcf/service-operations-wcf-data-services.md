@@ -1,118 +1,118 @@
 ---
-title: "サービス操作 (WCF Data Services) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "HTML"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "サービス操作 [WCF Data Services]"
-  - "WCF Data Services, サービス操作"
+title: "サービス操作 (WCF Data Services)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- service operations [WCF Data Services]
+- WCF Data Services, service operations
 ms.assetid: 583a690a-e60f-4990-8991-d6efce069d76
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 43f2b4bf7a7617587d76252108ec1ab5fb194a11
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# サービス操作 (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、データ サービスでサービス操作を定義して、サーバーでメソッドを公開できます。  その他のデータ サービス リソースと同様に、サービス操作は URI によってアドレス指定できます。  サービス操作では、データ サービスでビジネス ロジックを公開できます \(検証ロジックの実装、ロール ベースのセキュリティの適用、特殊なクエリ機能の公開など\)。  サービス操作は、<xref:System.Data.Services.DataService%601> から派生したデータ サービス クラスに追加されたメソッドです。他のすべてのデータ サービス リソースのように、サービス操作メソッドにパラメーターを指定できます。たとえば、次のサービス操作 URIでは、[クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) データ サービスに基づいて、`city` パラメーターに値 `London` を渡します。  
+# <a name="service-operations-wcf-data-services"></a><span data-ttu-id="e46ab-102">サービス操作 (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="e46ab-102">Service Operations (WCF Data Services)</span></span>
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="e46ab-103"> では、データ サービスでサービス操作を定義して、サーバーでメソッドを公開できます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-103"> enables you to define service operations on a data service to expose methods on the server.</span></span> <span data-ttu-id="e46ab-104">その他のデータ サービス リソースと同様に、サービス操作は URI によってアドレス指定できます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-104">Like other data service resources, service operations are addressed by URIs.</span></span> <span data-ttu-id="e46ab-105">サービス操作では、データ サービスでビジネス ロジックを公開できます (検証ロジックの実装、ロール ベースのセキュリティの適用、特殊なクエリ機能の公開など)。</span><span class="sxs-lookup"><span data-stu-id="e46ab-105">Service operations enable you to expose business logic in a data service, such as to implement validation logic, to apply role-based security, or to expose specialized querying capabilities.</span></span> <span data-ttu-id="e46ab-106">サービス操作は、<xref:System.Data.Services.DataService%601> から派生するデータ クラスに追加されるメソッドです。</span><span class="sxs-lookup"><span data-stu-id="e46ab-106">Service operations are methods added to the data service class that derives from <xref:System.Data.Services.DataService%601>.</span></span> <span data-ttu-id="e46ab-107">その他のすべてのデータ サービス リソースと同様に、パラメーターをサービス操作メソッドに指定できます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-107">Like all other data service resources, you can supply parameters to the service operation method.</span></span> <span data-ttu-id="e46ab-108">たとえば、次のサービス操作の URI (に基づいて、[クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)データ サービス) は、値を渡します`London`を`city`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="e46ab-108">For example, the following service operation URI (based on the [quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) data service) passes the value `London` to the `city` parameter:</span></span>  
   
 ```  
 http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'  
 ```  
   
- このサービス操作の定義を次に示します。  
+ <span data-ttu-id="e46ab-109">このサービス操作の定義を次に示します。</span><span class="sxs-lookup"><span data-stu-id="e46ab-109">The definition for this service operation is as follows:</span></span>  
   
  [!code-csharp[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperationdef)]
  [!code-vb[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperationdef)]  
   
- <xref:System.Data.Services.DataService%601> の <xref:System.Data.Services.DataService%601.CurrentDataSource%2A> を使用して、データ サービスが使用するデータ ソースに直接アクセスできます。  詳細については、「[方法 : サービス操作を定義する](../../../../docs/framework/data/wcf/how-to-define-a-service-operation-wcf-data-services.md)」を参照してください。  
+ <span data-ttu-id="e46ab-110"><xref:System.Data.Services.DataService%601.CurrentDataSource%2A> の <xref:System.Data.Services.DataService%601> を使用して、データ サービスが使用するデータ ソースに直接アクセスできます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-110">You can use the <xref:System.Data.Services.DataService%601.CurrentDataSource%2A> of the <xref:System.Data.Services.DataService%601> to directly access the data source that the data service is using.</span></span> <span data-ttu-id="e46ab-111">詳細については、次を参照してください。[する方法: サービス操作を定義する](../../../../docs/framework/data/wcf/how-to-define-a-service-operation-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="e46ab-111">For more information, see [How to: Define a Service Operation](../../../../docs/framework/data/wcf/how-to-define-a-service-operation-wcf-data-services.md).</span></span>  
   
- .NET Framework クライアント アプリケーションからサービス操作を呼び出す方法の詳細については、「[サービス操作の呼び出し](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md)」を参照してください。  
+ <span data-ttu-id="e46ab-112">.NET Framework クライアント アプリケーションからサービス操作を呼び出す方法については、次を参照してください。[サービス操作の呼び出し](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="e46ab-112">For information on how to call a service operation from a .NET Framework client application, see [Calling Service Operations](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md).</span></span>  
   
-## サービス操作の要件  
- データ サービスでサービス操作を定義する場合、次の要件が適用されます。  これらの要件を満たしていないメソッドは、データ サービスのサービス操作として公開されません。  
+## <a name="service-operation-requirements"></a><span data-ttu-id="e46ab-113">サービス操作の要件</span><span class="sxs-lookup"><span data-stu-id="e46ab-113">Service Operation Requirements</span></span>  
+ <span data-ttu-id="e46ab-114">データ サービスでサービス操作を定義する場合、次の要件が適用されます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-114">The following requirements apply when defining service operations on the data service.</span></span> <span data-ttu-id="e46ab-115">これらの要件を満たしていないメソッドは、データ サービスのサービス操作として公開されません。</span><span class="sxs-lookup"><span data-stu-id="e46ab-115">If a method does not meet these requirements, it will not be exposed as a service operation for the data service.</span></span>  
   
--   操作は、データ サービス クラスのメンバーであるパブリック インスタンス メソッドである必要があります。  
+-   <span data-ttu-id="e46ab-116">操作は、データ サービス クラスのメンバーであるパブリック インスタンス メソッドである必要があります。</span><span class="sxs-lookup"><span data-stu-id="e46ab-116">The operation must be a public instance method that is a member of the data service class.</span></span>  
   
--   操作メソッドは入力パラメーターだけを受け取ることができます。  メッセージの本文内で送信されるデータは、データ サービスからアクセスできません。  
+-   <span data-ttu-id="e46ab-117">操作メソッドは入力パラメーターだけを受け取ることができます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-117">The operation method may only accept input parameters.</span></span> <span data-ttu-id="e46ab-118">メッセージの本文内で送信されるデータは、データ サービスからアクセスできません。</span><span class="sxs-lookup"><span data-stu-id="e46ab-118">Data sent in the message body cannot be accessed by the data service.</span></span>  
   
--   パラメーターを定義する場合、各パラメーターの型はプリミティブ型である必要があります。  非プリミティブ型のいずれかのデータもシリアル化され、文字列パラメーターに渡される必要があります。  
+-   <span data-ttu-id="e46ab-119">パラメーターを定義する場合、各パラメーターの型はプリミティブ型である必要があります。</span><span class="sxs-lookup"><span data-stu-id="e46ab-119">If parameters are defined, the type of each parameter must be a primitive type.</span></span> <span data-ttu-id="e46ab-120">非プリミティブ型のいずれかのデータもシリアル化され、文字列パラメーターに渡される必要があります。</span><span class="sxs-lookup"><span data-stu-id="e46ab-120">Any data of a non-primitive type must be serialized and passed into a string parameter.</span></span>  
   
--   メソッドは次のいずれかを返す必要があります。  
+-   <span data-ttu-id="e46ab-121">メソッドは次のいずれかを返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="e46ab-121">The method must return one of the following:</span></span>  
   
-    -   `void` \(Visual Basic の場合は `Nothing`\)。  
+    -   <span data-ttu-id="e46ab-122">`void` (Visual Basic の場合は `Nothing`)。</span><span class="sxs-lookup"><span data-stu-id="e46ab-122">`void` (`Nothing` in Visual Basic)</span></span>  
   
     -   <xref:System.Collections.Generic.IEnumerable%601>  
   
     -   <xref:System.Linq.IQueryable%601>  
   
-    -   データ サービスが公開するデータ モデル内のエンティティ型。                  ``  
+    -   <span data-ttu-id="e46ab-123">データ サービスが公開するデータ モデル内のエンティティ型。</span><span class="sxs-lookup"><span data-stu-id="e46ab-123">An entity type in the data model that the data service exposes.</span></span>  
   
-    -   プリミティブ クラス \(整数や文字列など\)。  
+    -   <span data-ttu-id="e46ab-124">プリミティブ クラス (整数や文字列など)。</span><span class="sxs-lookup"><span data-stu-id="e46ab-124">A primitive class such as integer or string.</span></span>  
   
--   並べ替え、ページング、フィルター処理などのクエリ オプションをサポートするために、サービス操作メソッドから <xref:System.Linq.IQueryable%601> が返される必要があります。  クエリ オプションを含むサービス操作への要求は、<xref:System.Collections.Generic.IEnumerable%601> だけを返す操作で拒否されます。  
+-   <span data-ttu-id="e46ab-125">並べ替え、ページング、フィルター処理などのクエリ オプションをサポートするために、サービス操作メソッドから <xref:System.Linq.IQueryable%601> が返される必要があります。</span><span class="sxs-lookup"><span data-stu-id="e46ab-125">In order to support query options such as sorting, paging, and filtering, service operation methods should return <xref:System.Linq.IQueryable%601>.</span></span> <span data-ttu-id="e46ab-126">クエリ オプションを含むサービス操作への要求は、<xref:System.Collections.Generic.IEnumerable%601> だけを返す操作で拒否されます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-126">Requests to service operations that include query options are rejected for operations that only return <xref:System.Collections.Generic.IEnumerable%601>.</span></span>  
   
--   ナビゲーション プロパティを使用した関連エンティティへのアクセスをサポートするために、サービス操作は <xref:System.Linq.IQueryable%601> を返す必要があります。  
+-   <span data-ttu-id="e46ab-127">ナビゲーション プロパティを使用した関連エンティティへのアクセスをサポートするために、サービス操作は <xref:System.Linq.IQueryable%601> を返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="e46ab-127">In order to support accessing related entities by using navigation properties, the service operation must return <xref:System.Linq.IQueryable%601>.</span></span>  
   
--   メソッドには、`[WebGet]` 属性または `[WebInvoke]` 属性を使用して注釈を付ける必要があります。  
+-   <span data-ttu-id="e46ab-128">メソッドには、`[WebGet]` 属性または `[WebInvoke]` 属性を使用して注釈を付ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="e46ab-128">The method must be annotated with the `[WebGet]` or `[WebInvoke]` attribute.</span></span>  
   
-    -   `[WebGet]` では、GET 要求を使用してメソッドを呼び出すことができます。  
+    -   <span data-ttu-id="e46ab-129">`[WebGet]` では、GET 要求を使用してメソッドを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-129">`[WebGet]` enables the method to be invoked by using a GET request.</span></span>  
   
-    -   `[WebInvoke(Method = "POST")]` では、POST 要求を使用してメソッドを呼び出すことができます。  その他の <xref:System.ServiceModel.Web.WebInvokeAttribute> メソッドはサポートされていません。  
+    -   <span data-ttu-id="e46ab-130">`[WebInvoke(Method = "POST")]` では、POST 要求を使用してメソッドを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-130">`[WebInvoke(Method = "POST")]` enables the method to be invoked by using a POST request.</span></span> <span data-ttu-id="e46ab-131">その他の <xref:System.ServiceModel.Web.WebInvokeAttribute> メソッドはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="e46ab-131">Other <xref:System.ServiceModel.Web.WebInvokeAttribute> methods are not supported.</span></span>  
   
--   サービス操作には、<xref:System.Data.Services.SingleResultAttribute> を使用して注釈を付けることができます。この属性は、メソッドからの戻り値がエンティティのコレクションではなく 1 つのエンティティとなるように指定します。  この区別により、応答の結果のシリアル化、および追加のナビゲーション プロパティのトラバーサルを URI で表す方法が決定されます。  たとえば、AtomPub シリアル化を使用すると、1 種類のリソースのインスタンスがエントリ要素として表され、一連のインスタンスがフィード要素として表されます。  
+-   <span data-ttu-id="e46ab-132">サービス操作には、<xref:System.Data.Services.SingleResultAttribute> を使用して注釈を付けることができます。この属性は、メソッドからの戻り値がエンティティのコレクションではなく 1 つのエンティティとなるように指定します。</span><span class="sxs-lookup"><span data-stu-id="e46ab-132">A service operation may be annotated with the <xref:System.Data.Services.SingleResultAttribute> that specifies that the return value from the method is a single entity rather than a collection of entities.</span></span> <span data-ttu-id="e46ab-133">この区別により、応答の結果のシリアル化、および追加のナビゲーション プロパティのトラバーサルを URI で表す方法が決定されます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-133">This distinction dictates the resulting serialization of the response and the manner in which additional navigation property traversals are represented in the URI.</span></span> <span data-ttu-id="e46ab-134">たとえば、AtomPub シリアル化を使用すると、1 種類のリソースのインスタンスがエントリ要素として表され、一連のインスタンスがフィード要素として表されます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-134">For example, when using AtomPub serialization, a single resource type instance is represented as an entry element and a set of instances as a feed element.</span></span>  
   
-## サービス操作のアドレス指定  
- メソッドの名前を URI の最初のパス セグメントに配置することによってサービス操作のアドレスを指定できます。  たとえば、次の URI の場合、`Orders` オブジェクトの <xref:System.Linq.IQueryable%601> コレクションを返す `GetOrdersByState` 操作にアクセスします。  
+## <a name="addressing-service-operations"></a><span data-ttu-id="e46ab-135">サービス操作のアドレス指定</span><span class="sxs-lookup"><span data-stu-id="e46ab-135">Addressing Service Operations</span></span>  
+ <span data-ttu-id="e46ab-136">メソッドの名前を URI の最初のパス セグメントに配置することによってサービス操作のアドレスを指定できます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-136">You can address service operations by placing the name of the method in the first path segment of a URI.</span></span> <span data-ttu-id="e46ab-137">たとえば、次の URI の場合、`GetOrdersByState` オブジェクトの <xref:System.Linq.IQueryable%601> コレクションを返す `Orders` 操作にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="e46ab-137">As an example, the following URI accesses a `GetOrdersByState` operation that returns an <xref:System.Linq.IQueryable%601> collection of `Orders` objects.</span></span>  
   
 ```  
 http://localhost:12345/Northwind.svc/GetOrdersByState?state='CA'&includeItems=true  
 ```  
   
- サービス操作を呼び出すときは、パラメーターはクエリのオプションとして指定されます。  前のサービス操作は、文字列パラメーター `state` と、関連する `Order_Detail` オブジェクトを応答に含めるかどうかを指定するブール値パラメーター `includeItems` の両方を受け入れます。  
+ <span data-ttu-id="e46ab-138">サービス操作を呼び出すときは、パラメーターはクエリのオプションとして指定されます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-138">When calling a service operation, parameters are supplied as query options.</span></span> <span data-ttu-id="e46ab-139">前のサービス操作は、文字列パラメーター `state` と、関連する `includeItems` オブジェクトを応答に含めるかどうかを指定するブール値パラメーター `Order_Detail` の両方を受け入れます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-139">The previous service operation accepts both a string parameter `state` and a Boolean parameter `includeItems` that indicates whether to include related `Order_Detail` objects in the response.</span></span>  
   
- サービス操作の有効な戻り値の型を次に示します。  
+ <span data-ttu-id="e46ab-140">サービス操作の有効な戻り値の型を次に示します。</span><span class="sxs-lookup"><span data-stu-id="e46ab-140">The following are valid return types for a service operation:</span></span>  
   
-|有効な戻り値の型|URI のルール|  
-|--------------|--------------|  
-|`void` \(Visual Basic の場合は `Nothing`\)。<br /><br /> または<br /><br /> エンティティ型<br /><br /> または<br /><br /> プリミティブ型|URI は、サービス操作の名前である 1 つのパス セグメントである必要があります。  クエリ オプションは許可されません。|  
-|<xref:System.Collections.Generic.IEnumerable%601>|URI は、サービス操作の名前である 1 つのパス セグメントである必要があります。  結果型は <xref:System.Linq.IQueryable%601> 型ではないので、クエリ オプションは使用できません。|  
-|<xref:System.Linq.IQueryable%601>|サービス操作の名前であるパスに追加したクエリ パス セグメント セグメントが許可されます。  クエリ オプションも許可されます。|  
+|<span data-ttu-id="e46ab-141">有効な戻り値の型</span><span class="sxs-lookup"><span data-stu-id="e46ab-141">Valid Return Types</span></span>|<span data-ttu-id="e46ab-142">URI のルール</span><span class="sxs-lookup"><span data-stu-id="e46ab-142">URI Rules</span></span>|  
+|------------------------|---------------|  
+|<span data-ttu-id="e46ab-143">`void` (Visual Basic の場合は `Nothing`)。</span><span class="sxs-lookup"><span data-stu-id="e46ab-143">`void` (`Nothing` in Visual Basic)</span></span><br /><br /> <span data-ttu-id="e46ab-144">または</span><span class="sxs-lookup"><span data-stu-id="e46ab-144">-or-</span></span><br /><br /> <span data-ttu-id="e46ab-145">エンティティ型</span><span class="sxs-lookup"><span data-stu-id="e46ab-145">Entity types</span></span><br /><br /> <span data-ttu-id="e46ab-146">または</span><span class="sxs-lookup"><span data-stu-id="e46ab-146">-or-</span></span><br /><br /> <span data-ttu-id="e46ab-147">プリミティブ型</span><span class="sxs-lookup"><span data-stu-id="e46ab-147">Primitive types</span></span>|<span data-ttu-id="e46ab-148">URI は、サービス操作の名前である 1 つのパス セグメントである必要があります。</span><span class="sxs-lookup"><span data-stu-id="e46ab-148">The URI must be a single path segment that is the name of the service operation.</span></span> <span data-ttu-id="e46ab-149">クエリ オプションは許可されません。</span><span class="sxs-lookup"><span data-stu-id="e46ab-149">Query options are not allowed.</span></span>|  
+|<xref:System.Collections.Generic.IEnumerable%601>|<span data-ttu-id="e46ab-150">URI は、サービス操作の名前である 1 つのパス セグメントである必要があります。</span><span class="sxs-lookup"><span data-stu-id="e46ab-150">The URI must be a single path segment that is the name of the service operation.</span></span> <span data-ttu-id="e46ab-151">結果型は <xref:System.Linq.IQueryable%601> 型ではないので、クエリ オプションは使用できません。</span><span class="sxs-lookup"><span data-stu-id="e46ab-151">Because the result type is not an <xref:System.Linq.IQueryable%601> type, query options are not allowed.</span></span>|  
+|<xref:System.Linq.IQueryable%601>|<span data-ttu-id="e46ab-152">サービス操作の名前であるパスに追加したクエリ パス セグメント セグメントが許可されます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-152">Query path segments in addition to the path that is the name of the service operation are allowed.</span></span> <span data-ttu-id="e46ab-153">クエリ オプションも許可されます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-153">Query options are also allowed.</span></span>|  
   
- サービス操作の戻り値の型によっては、パス セグメントやクエリ オプションをさらに URI に追加できます。  たとえば、次の URI は、関連する `Order_Details` オブジェクトと一緒に `Orders` オブジェクトの <xref:System.Linq.IQueryable%601> コレクションを `RequiredDate` の降順で返す `GetOrdersByCity` 操作にアクセスします。  
+ <span data-ttu-id="e46ab-154">サービス操作の戻り値の型によっては、パス セグメントやクエリ オプションをさらに URI に追加できます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-154">Additional path segments or query options may be added to the URI depending on the return type of the service operation.</span></span> <span data-ttu-id="e46ab-155">たとえば、次の URI は、関連する `GetOrdersByCity` オブジェクトと一緒に <xref:System.Linq.IQueryable%601> オブジェクトの `Orders` コレクションを `RequiredDate` の降順で返す `Order_Details` 操作にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="e46ab-155">For example, the following URI accesses a `GetOrdersByCity` operation that returns an <xref:System.Linq.IQueryable%601> collection of `Orders` objects, ordered by `RequiredDate` in descending order, along with the related `Order_Details` objects:</span></span>  
   
 ```  
 http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'&$expand=Order_Details&$orderby=RequiredDate desc  
-  
 ```  
   
-## サービス操作のアクセス制御  
- サービス操作のサービス全体の表示は、エンティティ セットの表示が <xref:System.Data.Services.IDataServiceConfiguration.SetEntitySetAccessRule%2A> メソッドを使用して制御されるのと同じような方法で、<xref:System.Data.Services.IDataServiceConfiguration> クラスの <xref:System.Data.Services.IDataServiceConfiguration.SetServiceOperationAccessRule%2A> メソッドによって制御されます。  たとえば、データ サービス定義内の次のコード行は、`CustomersByCity` サービス操作へのアクセスを有効にします。  
+## <a name="service-operations-access-control"></a><span data-ttu-id="e46ab-156">サービス操作のアクセス制御</span><span class="sxs-lookup"><span data-stu-id="e46ab-156">Service Operations Access Control</span></span>  
+ <span data-ttu-id="e46ab-157">サービス操作のサービス全体の表示は、エンティティ セットの表示が <xref:System.Data.Services.IDataServiceConfiguration.SetServiceOperationAccessRule%2A> メソッドを使用して制御されるのと同じような方法で、<xref:System.Data.Services.IDataServiceConfiguration> クラスの <xref:System.Data.Services.IDataServiceConfiguration.SetEntitySetAccessRule%2A> メソッドによって制御されます。</span><span class="sxs-lookup"><span data-stu-id="e46ab-157">Service-wide visibility of service operations is controlled by the <xref:System.Data.Services.IDataServiceConfiguration.SetServiceOperationAccessRule%2A> method on the <xref:System.Data.Services.IDataServiceConfiguration> class in much the same way that entity set visibility is controlled by using the <xref:System.Data.Services.IDataServiceConfiguration.SetEntitySetAccessRule%2A> method.</span></span> <span data-ttu-id="e46ab-158">たとえば、データ サービス定義内の次のコード行は、`CustomersByCity` サービス操作へのアクセスを有効にします。</span><span class="sxs-lookup"><span data-stu-id="e46ab-158">For example, the following line of code in the data service definition enables access to the `CustomersByCity` service operation.</span></span>  
   
  [!code-csharp[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperationconfig)]
  [!code-vb[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperationconfig)]  
   
 > [!NOTE]
->  元になるエンティティ セットの制限アクセスによって非表示にされている戻り値の型がサービス操作にある場合、サービス操作はクライアント アプリケーションで使用できません。  
+>  <span data-ttu-id="e46ab-159">元になるエンティティ セットの制限アクセスによって非表示にされている戻り値の型がサービス操作にある場合、サービス操作はクライアント アプリケーションで使用できません。</span><span class="sxs-lookup"><span data-stu-id="e46ab-159">If a service operation has a return type that has been hidden by restricting access on the underlying entity sets, then the service operation will not be available to client applications.</span></span>  
   
- 詳細については、「[方法 : サービス操作を定義する](../../../../docs/framework/data/wcf/how-to-define-a-service-operation-wcf-data-services.md)」を参照してください。  
+ <span data-ttu-id="e46ab-160">詳細については、次を参照してください。[する方法: サービス操作を定義する](../../../../docs/framework/data/wcf/how-to-define-a-service-operation-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="e46ab-160">For more information, see [How to: Define a Service Operation](../../../../docs/framework/data/wcf/how-to-define-a-service-operation-wcf-data-services.md).</span></span>  
   
-## 例外の発生  
- データ サービスの実行で例外が発生するたびに、<xref:System.Data.Services.DataServiceException> クラスを使用することお勧めします。  これは、データ サービス ランタイムがこの例外のオブジェクトのプロパティを HTTP 応答メッセージに正しくマップする方法を認識しているためです。  サービス操作で <xref:System.Data.Services.DataServiceException> が発生する場合、返された例外は <xref:System.Reflection.TargetInvocationException> にラップされています。  <xref:System.Reflection.TargetInvocationException> をラップせずにベース <xref:System.Data.Services.DataServiceException> を返すには、<xref:System.Data.Services.DataService%601> の <xref:System.Data.Services.DataService%601.HandleException%2A> メソッドをオーバーライドし、<xref:System.Reflection.TargetInvocationException> から <xref:System.Data.Services.DataServiceException> を抽出して、トップ レベル エラーとして返す必要があります。次に例を示します。  
+## <a name="raising-exceptions"></a><span data-ttu-id="e46ab-161">例外の発生</span><span class="sxs-lookup"><span data-stu-id="e46ab-161">Raising Exceptions</span></span>  
+ <span data-ttu-id="e46ab-162">データ サービスの実行で例外が発生するたびに、<xref:System.Data.Services.DataServiceException> クラスを使用することお勧めします。</span><span class="sxs-lookup"><span data-stu-id="e46ab-162">We recommend that you use the <xref:System.Data.Services.DataServiceException> class whenever you raise an exception in the data service execution.</span></span> <span data-ttu-id="e46ab-163">これは、データ サービス ランタイムがこの例外のオブジェクトのプロパティを HTTP 応答メッセージに正しくマップする方法を認識しているためです。</span><span class="sxs-lookup"><span data-stu-id="e46ab-163">This is because the data service runtime knows how to map properties of this exception object correctly to the HTTP response message.</span></span> <span data-ttu-id="e46ab-164">サービス操作で <xref:System.Data.Services.DataServiceException> が発生する場合、返された例外は <xref:System.Reflection.TargetInvocationException> にラップされています。</span><span class="sxs-lookup"><span data-stu-id="e46ab-164">When you raise a <xref:System.Data.Services.DataServiceException> in a service operation, the returned exception is wrapped in a <xref:System.Reflection.TargetInvocationException>.</span></span> <span data-ttu-id="e46ab-165"><xref:System.Data.Services.DataServiceException> をラップせずにベース <xref:System.Reflection.TargetInvocationException> を返すには、<xref:System.Data.Services.DataService%601.HandleException%2A> の <xref:System.Data.Services.DataService%601> メソッドをオーバーライドし、<xref:System.Data.Services.DataServiceException> から <xref:System.Reflection.TargetInvocationException> を抽出して、トップ レベル エラーとして返す必要があります。次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="e46ab-165">To return the base <xref:System.Data.Services.DataServiceException> without the enclosing <xref:System.Reflection.TargetInvocationException>, you must override the <xref:System.Data.Services.DataService%601.HandleException%2A> method in the <xref:System.Data.Services.DataService%601>, extract the <xref:System.Data.Services.DataServiceException> from the <xref:System.Reflection.TargetInvocationException>, and return it as the top-level error, as in the following example:</span></span>  
   
  [!code-csharp[Astoria Northwind Service#HandleExceptions](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#handleexceptions)]
  [!code-vb[Astoria Northwind Service#HandleExceptions](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#handleexceptions)]  
   
-## 参照  
- [インターセプター](../../../../docs/framework/data/wcf/interceptors-wcf-data-services.md)
+## <a name="see-also"></a><span data-ttu-id="e46ab-166">関連項目</span><span class="sxs-lookup"><span data-stu-id="e46ab-166">See Also</span></span>  
+ [<span data-ttu-id="e46ab-167">インターセプター</span><span class="sxs-lookup"><span data-stu-id="e46ab-167">Interceptors</span></span>](../../../../docs/framework/data/wcf/interceptors-wcf-data-services.md)

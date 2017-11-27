@@ -1,26 +1,29 @@
 ---
-title: "要求/応答の相関関係 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "要求/応答の相関関係"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: cf4379bf-2d08-43f3-9584-dfa30ffcb1f6
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 16140f71875357e3a07ac4a5a9134d4ae04e0f43
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 要求/応答の相関関係
-要求\/応答の相関関係は、<xref:System.ServiceModel.Activities.ReceiveReply> と <xref:System.ServiceModel.Activities.Send> のペアと使用すると、ワークフロー サービスに双方向の操作を実装でき、<xref:System.ServiceModel.Activities.SendReply> と <xref:System.ServiceModel.Activities.Receive> のペアと使用すると、別の Web サービスの双方向の操作を呼び出すことができます。  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの双方向の操作を呼び出す場合、このサービスには、従来の命令型のコード ベースの [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを使用することも、ワークフロー サービスを使用することもできます。  要求\/応答の相関関係を使用するには、<xref:System.ServiceModel.BasicHttpBinding> などの双方向のバインドを使用する必要があります。  双方向の操作を呼び出す場合と実装する場合では、相関関係の初期化に同様の手順が使用されます。これらの手順については、このセクションで説明します。  
+# <a name="request-reply-correlation"></a><span data-ttu-id="87453-102">要求/応答の相関関係</span><span class="sxs-lookup"><span data-stu-id="87453-102">Request-Reply Correlation</span></span>
+<span data-ttu-id="87453-103">要求-応答の相関関係を併用、 <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply>ペアを使用して、ワークフロー サービスでは、双方向の操作を実装する、 <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply>ペアを別の web サイトでの双方向の操作を呼び出すサービス。</span><span class="sxs-lookup"><span data-stu-id="87453-103">Request-reply correlation is used with a <xref:System.ServiceModel.Activities.Receive>/<xref:System.ServiceModel.Activities.SendReply> pair to implement a two-way operation in a workflow service and with a <xref:System.ServiceModel.Activities.Send>/<xref:System.ServiceModel.Activities.ReceiveReply> pair that invokes a two-way operation in another Web service.</span></span> <span data-ttu-id="87453-104">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの双方向の操作を呼び出す場合、このサービスには、従来の命令型のコード ベースの [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを使用することも、ワークフロー サービスを使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="87453-104">When invoking a two-way operation in a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service, the service can be either a traditional imperative code-based [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service or it can be a workflow service.</span></span> <span data-ttu-id="87453-105">要求/応答の相関関係を使用するには、<xref:System.ServiceModel.BasicHttpBinding> などの双方向のバインドを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="87453-105">To use request-reply correlation a two-way binding must be used, such as <xref:System.ServiceModel.BasicHttpBinding>.</span></span> <span data-ttu-id="87453-106">双方向の操作を呼び出す場合と実装する場合では、相関関係の初期化に同様の手順が使用されます。これらの手順については、このセクションで説明します。</span><span class="sxs-lookup"><span data-stu-id="87453-106">Whether invoking or implementing a two-way operation, the correlation initialization steps are similar and are covered in this section.</span></span>  
   
-## Receive\/SendReply による双方向の操作での相関関係の使用  
- <xref:System.ServiceModel.Activities.Receive>\/<xref:System.ServiceModel.Activities.SendReply> のペアは、ワークフロー  サービスに双方向の操作を実装するために使用されます。  ランタイムは、要求\/応答の相関関係を使用して、応答が正しい呼び出し元にディスパッチされるようにします。  ワークフローが <xref:System.ServiceModel.Activities.WorkflowServiceHost> を使用してホストされている場合、つまり、ワークフロー サービスの場合は、既定の相関関係の初期化で十分です。  このシナリオでは、<xref:System.ServiceModel.Activities.Receive>\/<xref:System.ServiceModel.Activities.SendReply> のペアがワークフローによって使用されます。特定の相関関係の構成は不要です。  
+## <a name="using-correlation-in-a-two-way-operation-with-receivesendreply"></a><span data-ttu-id="87453-107">Receive/SendReply による双方向の操作での相関関係の使用</span><span class="sxs-lookup"><span data-stu-id="87453-107">Using Correlation in a Two-Way Operation with Receive/SendReply</span></span>  
+ <span data-ttu-id="87453-108">A <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply>ペアは、ワークフロー サービスに双方向の操作を実装するために使用します。</span><span class="sxs-lookup"><span data-stu-id="87453-108">A <xref:System.ServiceModel.Activities.Receive>/<xref:System.ServiceModel.Activities.SendReply> pair is used to implement a two-way operation in a workflow service.</span></span> <span data-ttu-id="87453-109">ランタイムは、要求/応答の相関関係を使用して、応答が正しい呼び出し元にディスパッチされるようにします。</span><span class="sxs-lookup"><span data-stu-id="87453-109">The runtime uses request-reply correlation to ensure that the reply is dispatched to the correct caller.</span></span> <span data-ttu-id="87453-110">ワークフローが <xref:System.ServiceModel.Activities.WorkflowServiceHost> を使用してホストされている場合、つまり、ワークフロー サービスの場合は、既定の相関関係の初期化で十分です。</span><span class="sxs-lookup"><span data-stu-id="87453-110">When a workflow is hosted using <xref:System.ServiceModel.Activities.WorkflowServiceHost>, which is the case for workflow services, then the default correlation initialization is sufficient.</span></span> <span data-ttu-id="87453-111">このシナリオでは、 <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply>ペアは、ワークフローで使用して、特定の相関関係の構成は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="87453-111">In this scenario, a <xref:System.ServiceModel.Activities.Receive>/<xref:System.ServiceModel.Activities.SendReply> pair is used by a workflow, and no specific correlation configuration is required.</span></span>  
   
 ```csharp  
 Receive StartOrder = new Receive  
@@ -37,11 +40,10 @@ SendReply ReplyToStartOrder = new SendReply
 };  
   
 // Construct a workflow using StartOrder and ReplyToStartOrder.  
-  
 ```  
   
-### 要求\/応答の相関関係の明示的な初期化  
- 他の双方向の操作が並列実行される場合、相関関係を明示的に構成する必要があります。  それには、<xref:System.ServiceModel.Activities.CorrelationHandle> と <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer> を指定するか、<xref:System.ServiceModel.Activities.CorrelationScope> 内に <xref:System.ServiceModel.Activities.Receive>\/<xref:System.ServiceModel.Activities.SendReply> を設定します。  この例では、要求\/応答の相関関係が <xref:System.ServiceModel.Activities.Receive>\/<xref:System.ServiceModel.Activities.SendReply> のペアを使用して構成されています。  
+### <a name="explicitly-initializing-request-reply-correlation"></a><span data-ttu-id="87453-112">要求/応答の相関関係の明示的な初期化</span><span class="sxs-lookup"><span data-stu-id="87453-112">Explicitly Initializing Request-Reply Correlation</span></span>  
+ <span data-ttu-id="87453-113">他の双方向の操作が並列実行される場合、相関関係を明示的に構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="87453-113">If other two-way operations are in parallel, then correlation should be explicitly configured.</span></span> <span data-ttu-id="87453-114">指定することによってこれ行う、<xref:System.ServiceModel.Activities.CorrelationHandle>と<xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer>、または配置することによって、 <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply>の内側、<xref:System.ServiceModel.Activities.CorrelationScope>です。</span><span class="sxs-lookup"><span data-stu-id="87453-114">This can be done by specifying a <xref:System.ServiceModel.Activities.CorrelationHandle> and <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer>, or by placing the <xref:System.ServiceModel.Activities.Receive>/<xref:System.ServiceModel.Activities.SendReply> inside of a <xref:System.ServiceModel.Activities.CorrelationScope>.</span></span> <span data-ttu-id="87453-115">この例では要求-応答の相関関係が構成されている、 <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply>ペア。</span><span class="sxs-lookup"><span data-stu-id="87453-115">In this example, request-reply correlation is configured on a <xref:System.ServiceModel.Activities.Receive>/<xref:System.ServiceModel.Activities.SendReply> pair.</span></span>  
   
 ```csharp  
 Variable<CorrelationHandle> RRHandle = new Variable<CorrelationHandle>();  
@@ -69,7 +71,7 @@ SendReply ReplyToStartOrder = new SendReply
 // Construct a workflow using StartOrder and ReplyToStartOrder.  
 ```  
   
- 相関関係を明示的に構成する代わりに、<xref:System.ServiceModel.Activities.CorrelationScope> アクティビティを使用することもできます。  <xref:System.ServiceModel.Activities.CorrelationScope> は、内包しているメッセージング アクティビティに暗黙の <xref:System.ServiceModel.Activities.CorrelationHandle> を提供します。  この例では、<xref:System.ServiceModel.Activities.Receive>\/<xref:System.ServiceModel.Activities.SendReply> ペアが <xref:System.ServiceModel.Activities.CorrelationScope> に内包されています。  明示的な相関関係の構成は不要です。  
+ <span data-ttu-id="87453-116">相関関係を明示的に構成する代わりに、<xref:System.ServiceModel.Activities.CorrelationScope> アクティビティを使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="87453-116">Instead of explicitly configuring the correlation, a <xref:System.ServiceModel.Activities.CorrelationScope> activity can be used.</span></span> <span data-ttu-id="87453-117"><xref:System.ServiceModel.Activities.CorrelationScope> は、内包しているメッセージング アクティビティに暗黙の <xref:System.ServiceModel.Activities.CorrelationHandle> を提供します。</span><span class="sxs-lookup"><span data-stu-id="87453-117"><xref:System.ServiceModel.Activities.CorrelationScope> provides an implicit <xref:System.ServiceModel.Activities.CorrelationHandle> to the messaging activities that it contains.</span></span> <span data-ttu-id="87453-118">この例では、 <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply>ペアに含まれている、<xref:System.ServiceModel.Activities.CorrelationScope>です。</span><span class="sxs-lookup"><span data-stu-id="87453-118">In this example, a <xref:System.ServiceModel.Activities.Receive>/<xref:System.ServiceModel.Activities.SendReply> pair is contained inside a <xref:System.ServiceModel.Activities.CorrelationScope>.</span></span> <span data-ttu-id="87453-119">明示的な相関関係の構成は不要です。</span><span class="sxs-lookup"><span data-stu-id="87453-119">No explicit correlation configuration is required.</span></span>  
   
 ```csharp  
 Receive StartOrder = new Receive  
@@ -101,9 +103,9 @@ CorrelationScope s = new CorrelationScope
 // Construct a workflow using the CorrelationScope.  
 ```  
   
- 追加の相関関係が必要な場合は、目的の種類の `CorrelationInitializer` を使用する各メッセージング アクティビティの <xref:System.ServiceModel.Activities.Send.CorrelationInitializers%2A> プロパティを使用して、追加の相関関係を構成します。  
+ <span data-ttu-id="87453-120">追加の相関関係が必要な場合は、目的の種類の <xref:System.ServiceModel.Activities.Send.CorrelationInitializers%2A> を使用する各メッセージング アクティビティの `CorrelationInitializer` プロパティを使用して、追加の相関関係を構成します。</span><span class="sxs-lookup"><span data-stu-id="87453-120">If additional correlations are required then they can be configured using the <xref:System.ServiceModel.Activities.Send.CorrelationInitializers%2A> property of the respective messaging activities using the desired `CorrelationInitializer` types.</span></span>  
   
-## Send\/ReceiveReply による双方向の操作での相関関係の使用  
- <xref:System.ServiceModel.Activities.Receive> アクティビティは、<xref:System.ServiceModel.Activities.WorkflowServiceHost> によってホストされるワークフロー サービスでのみ使用できますが、<xref:System.ServiceModel.Activities.Send> および <xref:System.ServiceModel.Activities.Send>\/<xref:System.ServiceModel.Activities.ReceiveReply> のペアは、Web サービスに対してメソッドを呼び出す必要のあるすべてのワークフローで使用できます。  ワークフローが <xref:System.ServiceModel.Activities.WorkflowServiceHost> を使用してホストされる場合は、前のセクションで説明した既定の相関関係が適用されますが、そうでない場合は、目的の <xref:System.ServiceModel.Activities.CorrelationInitializer> と <xref:System.ServiceModel.Activities.CorrelationHandle> を明示的に使用するか、<xref:System.ServiceModel.Activities.CorrelationScope> による暗黙の処理管理を使用して、相関関係を構成する必要があります。  
+## <a name="using-correlation-in-a-two-way-operation-with-sendreceivereply"></a><span data-ttu-id="87453-121">Send/ReceiveReply による双方向の操作での相関関係の使用</span><span class="sxs-lookup"><span data-stu-id="87453-121">Using Correlation in a Two-Way Operation with Send/ReceiveReply</span></span>  
+ <span data-ttu-id="87453-122">中に、<xref:System.ServiceModel.Activities.Receive>アクティビティは、によってホストされるワークフロー サービスでのみ使用できます<xref:System.ServiceModel.Activities.WorkflowServiceHost>、<xref:System.ServiceModel.Activities.Send>と<xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply>ペアは、Web サービスに対してメソッドを呼び出す必要のあるすべてのワークフローで使用できます。</span><span class="sxs-lookup"><span data-stu-id="87453-122">While the <xref:System.ServiceModel.Activities.Receive> activity can only be used in a workflow service hosted by <xref:System.ServiceModel.Activities.WorkflowServiceHost>, <xref:System.ServiceModel.Activities.Send> and the <xref:System.ServiceModel.Activities.Send>/<xref:System.ServiceModel.Activities.ReceiveReply> pair can be used in any workflow that must invoke a method on a Web service.</span></span> <span data-ttu-id="87453-123">ワークフローが <xref:System.ServiceModel.Activities.WorkflowServiceHost> を使用してホストされる場合は、前のセクションで説明した既定の相関関係が適用されますが、そうでない場合は、目的の <xref:System.ServiceModel.Activities.CorrelationInitializer> と <xref:System.ServiceModel.Activities.CorrelationHandle> を明示的に使用するか、<xref:System.ServiceModel.Activities.CorrelationScope> による暗黙の処理管理を使用して、相関関係を構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="87453-123">If the workflow is hosted using <xref:System.ServiceModel.Activities.WorkflowServiceHost> then the default correlation described in the previous section applies, but if not, then correlation must be configured either explicitly using the desired <xref:System.ServiceModel.Activities.CorrelationInitializer> and <xref:System.ServiceModel.Activities.CorrelationHandle>, or by using the implicit handle management of the <xref:System.ServiceModel.Activities.CorrelationScope>.</span></span>  
   
- 双方向の操作があるサービスで **\[サービス参照の追加\]** を使用する場合は、明示的に指定された Request\/Reply 相関関係を使用して、内部に <xref:System.ServiceModel.Activities.Send>\/<xref:System.ServiceModel.Activities.ReceiveReply> ペア アクティビティをラップするアクティビティが生成されます。
+ <span data-ttu-id="87453-124">使用する場合**サービス参照の追加**アクティビティを生成する双方向の操作で、サービスでラップする、 <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply>ペア要求/応答の相関関係で内部的にアクティビティを明示的に指定します。</span><span class="sxs-lookup"><span data-stu-id="87453-124">When using **Add Service Reference** on a service with two-way operations, activities are generated that wrap a <xref:System.ServiceModel.Activities.Send>/<xref:System.ServiceModel.Activities.ReceiveReply> pair activity internally with the Request/Reply correlation explicitly specified.</span></span>

@@ -1,30 +1,36 @@
 ---
-title: "バイナリ データの取得 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "バイナリ データの取得"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 56c5a9e3-31f1-482f-bce0-ff1c41a658d0
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: bd524ed605f1fe125480bae0949745f4f045f03a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# バイナリ データの取得
-既定では、**DataReader** は、行全体のデータが使用可能になると受信するデータを行として読み込みます。  バイナリ ラージ オブジェクト \(BLOB\) には、1 行に収まらない数ギガバイトのデータが含まれる場合があるため、別の処理が必要です。  **Command.ExecuteReader** メソッドは、<xref:System.Data.CommandBehavior> 引数を受け取って **DataReader** の既定の動作を変更するようにオーバーロードされています。  **ExecuteReader** メソッドに <xref:System.Data.CommandBehavior> を渡すと、数行のデータを読み込む代わりに、データを受け取った時点で順次読み込むように **DataReader** の既定の動作を変更できます。  これは BLOB やその他の大きなデータ構造を読み込む場合に理想的な処理です。  この動作は、データ ソースによって異なる場合があります。  たとえば、Microsoft Access から BLOB を返すと、受け取ったデータから順に読み込むのではなく、BLOB 全体をメモリに読み込みます。  
+# <a name="retrieving-binary-data"></a><span data-ttu-id="3fc56-102">バイナリ データの取得</span><span class="sxs-lookup"><span data-stu-id="3fc56-102">Retrieving Binary Data</span></span>
+<span data-ttu-id="3fc56-103">既定では、 **DataReader**行全体のデータは使用するとすぐに行として受信したデータを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="3fc56-103">By default, the **DataReader** loads incoming data as a row as soon as an entire row of data is available.</span></span> <span data-ttu-id="3fc56-104">バイナリ ラージ オブジェクト (BLOB) には、1 行に収まらない数ギガバイトのデータが含まれる場合があるため、別の処理が必要です。</span><span class="sxs-lookup"><span data-stu-id="3fc56-104">Binary large objects (BLOBs) need different treatment, however, because they can contain gigabytes of data that cannot be contained in a single row.</span></span> <span data-ttu-id="3fc56-105">**Command.ExecuteReader**メソッド オーバー ロードを実行するには、<xref:System.Data.CommandBehavior>引数の既定の動作を変更する、 **DataReader**です。</span><span class="sxs-lookup"><span data-stu-id="3fc56-105">The **Command.ExecuteReader** method has an overload that will take a <xref:System.Data.CommandBehavior> argument to modify the default behavior of the **DataReader**.</span></span> <span data-ttu-id="3fc56-106">渡すことができます<xref:System.Data.CommandBehavior.SequentialAccess>を**ExecuteReader**の既定の動作を変更する方法、 **DataReader**行のデータを読み込み中には、代わりにそれがデータを読み込む順番が受信できるようにします。</span><span class="sxs-lookup"><span data-stu-id="3fc56-106">You can pass <xref:System.Data.CommandBehavior.SequentialAccess> to the **ExecuteReader** method to modify the default behavior of the **DataReader** so that instead of loading rows of data, it will load data sequentially as it is received.</span></span> <span data-ttu-id="3fc56-107">これは BLOB やその他の大きなデータ構造を読み込む場合に理想的な処理です。</span><span class="sxs-lookup"><span data-stu-id="3fc56-107">This is ideal for loading BLOBs or other large data structures.</span></span> <span data-ttu-id="3fc56-108">この動作は、データ ソースによって異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="3fc56-108">Note that this behavior may depend on your data source.</span></span> <span data-ttu-id="3fc56-109">たとえば、Microsoft Access から BLOB を返すと、受け取ったデータから順に読み込むのではなく、BLOB 全体をメモリに読み込みます。</span><span class="sxs-lookup"><span data-stu-id="3fc56-109">For example, returning a BLOB from Microsoft Access will load the entire BLOB being loaded into memory, rather than sequentially as it is received.</span></span>  
   
- **SequentialAccess** を使用するように **DataReader** を設定するときは、返されたフィールドにアクセスする順序に注意してください。  使用可能になるとすぐに行全体を読み込む **DataReader** の既定の動作では、次の行を読み取るまでは返されたフィールドに任意の順序でアクセスできます。  しかし、**SequentialAccess** を使用しているときは、**DataReader** によって返された各フィールドに順番にアクセスする必要があります。  たとえば、クエリが 3 つの列 \(3 番目の列は BLOB\) を返す場合、最初のフィールドおよび 2 番目のフィールドの値は、3 番目のフィールドの BLOB データにアクセスする前に返す必要があります。  最初のフィールドまたは 2 番目のフィールドの前に 3 番目のフィールドにアクセスした場合は、最初のフィールドと 2 番目のフィールドの値は使用できなくなります。  これは、**SequentialAccess** が **DataReader** をデータを順番に返すように変更し、**DataReader** がデータを飛ばして読み込んだ後はそのデータを使用できなくなるためです。  
+ <span data-ttu-id="3fc56-110">設定するときに、 **DataReader**を使用する**SequentialAccess**、返されるフィールドにアクセスするシーケンスを確認することが重要です。</span><span class="sxs-lookup"><span data-stu-id="3fc56-110">When setting the **DataReader** to use **SequentialAccess**, it is important to note the sequence in which you access the fields returned.</span></span> <span data-ttu-id="3fc56-111">既定の動作、 **DataReader**、次の行を読み取るまでは、任意の順序で返されるフィールドにアクセスすることができますが、使用可能になるとすぐに行全体が読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="3fc56-111">The default behavior of the **DataReader**, which loads an entire row as soon as it is available, allows you to access the fields returned in any order until the next row is read.</span></span> <span data-ttu-id="3fc56-112">使用する場合**SequentialAccess**ただし、によって返されるフィールドにアクセスする必要があります、 **DataReader**の順序で。</span><span class="sxs-lookup"><span data-stu-id="3fc56-112">When using **SequentialAccess** however, you must access the fields returned by the **DataReader** in order.</span></span> <span data-ttu-id="3fc56-113">たとえば、クエリが 3 つの列 (3 番目の列は BLOB) を返す場合、最初のフィールドおよび 2 番目のフィールドの値は、3 番目のフィールドの BLOB データにアクセスする前に返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="3fc56-113">For example, if your query returns three columns, the third of which is a BLOB, you must return the values of the first and second fields before accessing the BLOB data in the third field.</span></span> <span data-ttu-id="3fc56-114">最初のフィールドまたは 2 番目のフィールドの前に 3 番目のフィールドにアクセスした場合は、最初のフィールドと 2 番目のフィールドの値は使用できなくなります。</span><span class="sxs-lookup"><span data-stu-id="3fc56-114">If you access the third field before the first or second fields, the first and second field values are no longer available.</span></span> <span data-ttu-id="3fc56-115">これは、ため**SequentialAccess**が変更、 **DataReader**シーケンスと、データにデータを返すことはできませんの後に、 **DataReader**を越えて読み取りができます。</span><span class="sxs-lookup"><span data-stu-id="3fc56-115">This is because **SequentialAccess** has modified the **DataReader** to return data in sequence and the data is not available after the **DataReader** has read past it.</span></span>  
   
- BLOB フィールドのデータにアクセスするときは、**DataReader** の **GetBytes** 型または **GetChars** 型のアクセサーを使用します。このアクセサーはデータを配列に読み込みます。  文字データ用の **GetString** を使用することもできますが、  システム リソースを節約するためには、BLOB 値全体を 1 つの文字列変数に読み込むことは望ましくありません。  特定のバッファー サイズのデータを返すように指定する代わりに、返されたデータから読み込む先頭バイトまたは先頭文字の開始位置を指定できます。  **GetBytes** と **GetChars** は、返されたバイト数または文字数を表す `long` 値を返します。  **GetBytes** または **GetChars** に null 配列を渡した場合、返される long 値は BLOB の総バイト数または総文字数になります。  オプションで、データ読み込みの開始位置を示す、配列内のインデックスを指定できます。  
+ <span data-ttu-id="3fc56-116">BLOB フィールドのデータにアクセスするときに使用して、 **GetBytes**または**GetChars**型指定されたアクセサーの**DataReader**配列のデータを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="3fc56-116">When accessing the data in the BLOB field, use the **GetBytes** or **GetChars** typed accessors of the **DataReader**, which fill an array with data.</span></span> <span data-ttu-id="3fc56-117">使用することも**GetString**文字データです。 ただしです。</span><span class="sxs-lookup"><span data-stu-id="3fc56-117">You can also use **GetString** for character data; however.</span></span> <span data-ttu-id="3fc56-118">システム リソースを節約するためには、BLOB 値全体を 1 つの文字列変数に読み込むことは望ましくありません。</span><span class="sxs-lookup"><span data-stu-id="3fc56-118">to conserve system resources you might not want to load an entire BLOB value into a single string variable.</span></span> <span data-ttu-id="3fc56-119">特定のバッファー サイズのデータを返すように指定する代わりに、返されたデータから読み込む先頭バイトまたは先頭文字の開始位置を指定できます。</span><span class="sxs-lookup"><span data-stu-id="3fc56-119">You can instead specify a specific buffer size of data to be returned, and a starting location for the first byte or character to be read from the returned data.</span></span> <span data-ttu-id="3fc56-120">**GetBytes**と**GetChars**が返されます、`long`をバイト数または返される文字数を表す値です。</span><span class="sxs-lookup"><span data-stu-id="3fc56-120">**GetBytes** and **GetChars** will return a `long` value, which represents the number of bytes or characters returned.</span></span> <span data-ttu-id="3fc56-121">Null 配列を渡す場合**GetBytes**または**GetChars**、返される long 型の値はバイトまたはキャラクター、BLOB 内の合計数になります。</span><span class="sxs-lookup"><span data-stu-id="3fc56-121">If you pass a null array to **GetBytes** or **GetChars**, the long value returned will be the total number of bytes or characters in the BLOB.</span></span> <span data-ttu-id="3fc56-122">オプションで、データ読み込みの開始位置を示す、配列内のインデックスを指定できます。</span><span class="sxs-lookup"><span data-stu-id="3fc56-122">You can optionally specify an index in the array as a starting position for the data being read.</span></span>  
   
-## 例  
- 次の例は、Microsoft SQL Server の **pubs** サンプル データベースから発行者 ID およびロゴを取得します。  発行者 ID \(`pub_id`\) は文字フィールドであり、ロゴはイメージ、つまり、BLOB です。  **logo** フィールドはビットマップなので、この例は、**GetBytes** を使用してバイナリ データを返します。  フィールドには順番にアクセスする必要があるため、現在の行のデータに対して発行者 ID はロゴの前にアクセスされることに注意してください。  
+## <a name="example"></a><span data-ttu-id="3fc56-123">例</span><span class="sxs-lookup"><span data-stu-id="3fc56-123">Example</span></span>  
+ <span data-ttu-id="3fc56-124">次の例は、パブリッシャーから ID およびロゴを返します、 **pubs** Microsoft SQL Server のサンプル データベース。</span><span class="sxs-lookup"><span data-stu-id="3fc56-124">The following example returns the publisher ID and logo from the **pubs** sample database in Microsoft SQL Server.</span></span> <span data-ttu-id="3fc56-125">発行者 ID (`pub_id`) は文字フィールドであり、ロゴはイメージ、つまり、BLOB です。</span><span class="sxs-lookup"><span data-stu-id="3fc56-125">The publisher ID (`pub_id`) is a character field, and the logo is an image, which is a BLOB.</span></span> <span data-ttu-id="3fc56-126">**ロゴ**フィールドはビットマップで、この例では、バイナリ データを使用して返されます**GetBytes**です。</span><span class="sxs-lookup"><span data-stu-id="3fc56-126">Because the **logo** field is a bitmap, the example returns binary data using **GetBytes**.</span></span> <span data-ttu-id="3fc56-127">フィールドには順番にアクセスする必要があるため、現在の行のデータに対して発行者 ID はロゴの前にアクセスされることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="3fc56-127">Notice that the publisher ID is accessed for the current row of data before the logo, because the fields must be accessed sequentially.</span></span>  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection object.  
@@ -88,7 +94,6 @@ Loop
 ' Close the reader and the connection.  
 reader.Close()  
 connection.Close()  
-  
 ```  
   
 ```csharp  
@@ -145,7 +150,7 @@ while (reader.Read())
   }  
   
   // Write the remaining buffer.  
-  writer.Write(outByte, 0, (int)retval - 1);  
+  writer.Write(outByte, 0, (int)retval);  
   writer.Flush();  
   
   // Close the output file.  
@@ -158,7 +163,7 @@ reader.Close();
 connection.Close();  
 ```  
   
-## 参照  
- [Working with DataReaders](http://msdn.microsoft.com/ja-jp/126a966a-d08d-4d22-a19f-f432908b2b54)   
- [SQL Server のバイナリ データと大きな値のデータ](../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="3fc56-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="3fc56-128">See Also</span></span>  
+ [<span data-ttu-id="3fc56-129">Datareader の操作</span><span class="sxs-lookup"><span data-stu-id="3fc56-129">Working with DataReaders</span></span>](http://msdn.microsoft.com/en-us/126a966a-d08d-4d22-a19f-f432908b2b54)  
+ [<span data-ttu-id="3fc56-130">SQL Server のバイナリ データと大きな値のデータ</span><span class="sxs-lookup"><span data-stu-id="3fc56-130">SQL Server Binary and Large-Value Data</span></span>](../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
+ [<span data-ttu-id="3fc56-131">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="3fc56-131">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

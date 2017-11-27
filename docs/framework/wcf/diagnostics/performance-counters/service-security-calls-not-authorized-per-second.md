@@ -1,29 +1,32 @@
 ---
-title: "サービス : 1 秒あたりの承認されていないセキュリティ呼び出し | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "サービス : 1 秒あたりの承認されていないセキュリティ呼び出し"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1eeade5a-ea62-4757-b1f9-1b1b1746abd1
-caps.latest.revision: 7
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: ad28d6afe26537e7a3eface8be70bcecf15b7aa8
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# サービス : 1 秒あたりの承認されていないセキュリティ呼び出し
-カウンター名 : 1 秒あたりの承認されていないセキュリティ呼び出し  
+# <a name="service-security-calls-not-authorized-per-second"></a><span data-ttu-id="e6da4-102">サービス : 1 秒あたりの承認されていないセキュリティ呼び出し</span><span class="sxs-lookup"><span data-stu-id="e6da4-102">Service: Security Calls Not Authorized Per Second</span></span>
+<span data-ttu-id="e6da4-103">カウンター名 : 1 秒あたりの承認されていないセキュリティ呼び出し</span><span class="sxs-lookup"><span data-stu-id="e6da4-103">Counter name: Security Calls Not Authorized Per Second</span></span>  
   
-## 説明  
- 有効なユーザーから適切な保護を適用して送信されたが、特定のタスクの実行がユーザーに許可されていない受信メッセージの 1 秒あたりの数です。  
+## <a name="description"></a><span data-ttu-id="e6da4-104">説明</span><span class="sxs-lookup"><span data-stu-id="e6da4-104">Description</span></span>  
+ <span data-ttu-id="e6da4-105">有効なユーザーから適切な保護を適用して送信されたが、特定のタスクの実行がユーザーに許可されていない受信メッセージの 1 秒あたりの数です。</span><span class="sxs-lookup"><span data-stu-id="e6da4-105">Number of incoming messages in one second, which are from a valid user and protected properly, but the user is not authorized to do specific tasks.</span></span>  
   
- このカウンターは <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> メソッドで `false` が返された場合にインクリメントされます。  
+ <span data-ttu-id="e6da4-106">このカウンターは <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> メソッドで `false` が返された場合にインクリメントされます。</span><span class="sxs-lookup"><span data-stu-id="e6da4-106">This counter is incremented when the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> method returns `false`.</span></span>  
   
- このカウンターは、パフォーマンス カウンター型 [PERF\_COUNTER\_COUNTER](http://go.microsoft.com/fwlink/?LinkId=94649) であり、その値は次の式を使用して計算されます。  
+ <span data-ttu-id="e6da4-107">このカウンターは、パフォーマンス カウンター型[PERF_COUNTER_COUNTER](http://go.microsoft.com/fwlink/?LinkId=94649)、次の数式を使用してその値を計算します。</span><span class="sxs-lookup"><span data-stu-id="e6da4-107">This counter is of performance counter type [PERF_COUNTER_COUNTER](http://go.microsoft.com/fwlink/?LinkId=94649), whose value is calculated using the following formula.</span></span>  
   
- \(N 1 \- N 0 \) \/ \( \(D 1 \-D 0 \) \/ F\)
+ <span data-ttu-id="e6da4-108">(N 1 - N 0 ) / ( (D 1 -D 0 ) / F)</span><span class="sxs-lookup"><span data-stu-id="e6da4-108">(N 1 - N 0 ) / ( (D 1 -D 0 ) / F)</span></span>

@@ -5,55 +5,52 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - runtime information events [.NET Framework]
 - ETW, runtime information events
 ms.assetid: 68b4edbc-7f3b-45f6-ab75-4fd066d6af9a
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: a9a01b1f47969d7ddec250fa8bcafe5e1a851b5c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="runtime-information-etw-events"></a>ランタイム情報 ETW イベント
-これらの ETW イベントは、SKU、バージョン番号、ランタイムのアクティブ化の方法、起動時に使用されたコマンド ライン パラメーター、GUID (該当する場合) などのランタイムに関する情報をログに記録します。 1 つのプロセスで複数のランタイムが実行されている場合は、これらのイベントの情報 (ClrInstanceID) によって、ランタイムのあいまいさを解消できます。  
+# <a name="runtime-information-etw-events"></a><span data-ttu-id="45ed3-102">ランタイム情報 ETW イベント</span><span class="sxs-lookup"><span data-stu-id="45ed3-102">Runtime Information ETW Events</span></span>
+<span data-ttu-id="45ed3-103">これらの ETW イベントは、SKU、バージョン番号、ランタイムのアクティブ化の方法、起動時に使用されたコマンド ライン パラメーター、GUID (該当する場合) などのランタイムに関する情報をログに記録します。</span><span class="sxs-lookup"><span data-stu-id="45ed3-103">These ETW events log information about the runtime, including the SKU, version number, the manner in which the runtime was activated, the command-line parameters it was started with, the GUID (if applicable), and other relevant information.</span></span> <span data-ttu-id="45ed3-104">1 つのプロセスで複数のランタイムが実行されている場合は、これらのイベントの情報 (ClrInstanceID) によって、ランタイムのあいまいさを解消できます。</span><span class="sxs-lookup"><span data-stu-id="45ed3-104">If multiple runtimes are executing within a process, the information provided by these events (the ClrInstanceID) helps disambiguate the runtimes.</span></span>  
   
- 次の表に、2 つのランタイム情報イベントを示します。 これらのイベントは、任意のキーワードまたはマスクで発生させることができます  (詳細については、「 [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)」を参照してください)。  
+ <span data-ttu-id="45ed3-105">次の表に、2 つのランタイム情報イベントを示します。</span><span class="sxs-lookup"><span data-stu-id="45ed3-105">The following table shows the two runtime information events.</span></span> <span data-ttu-id="45ed3-106">これらのイベントは、任意のキーワードまたはマスクで発生させることができます </span><span class="sxs-lookup"><span data-stu-id="45ed3-106">The events can be raised under any keyword or mask.</span></span> <span data-ttu-id="45ed3-107">(詳細については、「 [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)」を参照してください)。</span><span class="sxs-lookup"><span data-stu-id="45ed3-107">(For more information, see [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)</span></span>  
   
-|イベント|イベント ID|プロバイダー|説明|  
+|<span data-ttu-id="45ed3-108">イベント</span><span class="sxs-lookup"><span data-stu-id="45ed3-108">Event</span></span>|<span data-ttu-id="45ed3-109">イベント ID</span><span class="sxs-lookup"><span data-stu-id="45ed3-109">Event ID</span></span>|<span data-ttu-id="45ed3-110">プロバイダー</span><span class="sxs-lookup"><span data-stu-id="45ed3-110">Provider</span></span>|<span data-ttu-id="45ed3-111">説明</span><span class="sxs-lookup"><span data-stu-id="45ed3-111">Description</span></span>|  
 |-----------|--------------|--------------|-----------------|  
-|`RuntimeInformationEvent`|187|CLRRuntime|ランタイムが読み込まれたときに発生します。|  
-|`RuntimeInformationDCStart`|187|CLRRundown|読み込まれているランタイムを列挙します。|  
+|`RuntimeInformationEvent`|<span data-ttu-id="45ed3-112">187</span><span class="sxs-lookup"><span data-stu-id="45ed3-112">187</span></span>|<span data-ttu-id="45ed3-113">CLRRuntime</span><span class="sxs-lookup"><span data-stu-id="45ed3-113">CLRRuntime</span></span>|<span data-ttu-id="45ed3-114">ランタイムが読み込まれたときに発生します。</span><span class="sxs-lookup"><span data-stu-id="45ed3-114">Raised when a runtime is loaded.</span></span>|  
+|`RuntimeInformationDCStart`|<span data-ttu-id="45ed3-115">187</span><span class="sxs-lookup"><span data-stu-id="45ed3-115">187</span></span>|<span data-ttu-id="45ed3-116">CLRRundown</span><span class="sxs-lookup"><span data-stu-id="45ed3-116">CLRRundown</span></span>|<span data-ttu-id="45ed3-117">読み込まれているランタイムを列挙します。</span><span class="sxs-lookup"><span data-stu-id="45ed3-117">Enumerates the runtimes that are loaded.</span></span>|  
   
- 次の表にイベント データを示します。  
+ <span data-ttu-id="45ed3-118">次の表にイベント データを示します。</span><span class="sxs-lookup"><span data-stu-id="45ed3-118">The following table shows event data.</span></span>  
   
-|フィールド名|データ型|説明|  
+|<span data-ttu-id="45ed3-119">フィールド名</span><span class="sxs-lookup"><span data-stu-id="45ed3-119">Field name</span></span>|<span data-ttu-id="45ed3-120">データ型</span><span class="sxs-lookup"><span data-stu-id="45ed3-120">Data type</span></span>|<span data-ttu-id="45ed3-121">説明</span><span class="sxs-lookup"><span data-stu-id="45ed3-121">Description</span></span>|  
 |----------------|---------------|-----------------|  
-|ClrInstanceID|win:UInt16|CLR または CoreCLR のインスタンスの一意の ID。|  
-|Sku|win:UInt16|1 – デスクトップ CLR。<br /><br /> 2 – CoreCLR。|  
-|BclVersion – メジャー バージョン|win:UInt16|mscorlib.dll のメジャー バージョン。|  
-|BclVersion – マイナー バージョン|win:UInt16|mscorlib.dll のマイナー バージョン番号。|  
-|BclVersion – ビルド番号|win:UInt16|mscorlib.dll のビルド番号。|  
-|BclVersion – QFE|win:UInt16|mscorlib.dll の修正プログラムのバージョン番号。|  
-|VMVersion – メジャー バージョン|win:UInt16|clr.dll または coreclr.dll (SKU によって決まる) のバージョン。|  
-|VMVersion – マイナー バージョン|win:UInt16|clr.dll または coreclr.dll (SKU によって決まる) のマイナー バージョン。|  
-|VMVersion – ビルド番号|win:UInt16|clr.dll または coreclr.dll のビルド番号。|  
-|VMVersion – QFE|win:UInt16|clr.dll または coreclr.dll の修正プログラムのバージョン番号。|  
-|StartupFlags|win:UInt32|mscoree.h で定義された起動フラグ。|  
-|StartupMode|win:UInt8|0x01 - マネージ実行可能ファイル。<br /><br /> 0x02 - ホストされた CLR。<br /><br /> 0x04 - C++ マネージ相互運用。<br /><br /> 0x08 - COM アクティブ化。<br /><br /> 0x10 - その他。|  
-|CommandLine|win:UnicodeString|StartupMode=0x01 の場合のみ null 以外。|  
-|ComObjectGUID|win:GUID|StartupMode=0x08 の場合のみ null 以外。|  
-|RuntimeDLLPath|win:UnicodeString|プロセスに読み込まれた CLR .dll ファイルへのパス。|  
+|<span data-ttu-id="45ed3-122">ClrInstanceID</span><span class="sxs-lookup"><span data-stu-id="45ed3-122">ClrInstanceID</span></span>|<span data-ttu-id="45ed3-123">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="45ed3-123">win:UInt16</span></span>|<span data-ttu-id="45ed3-124">CLR または CoreCLR のインスタンスの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="45ed3-124">Unique ID for the instance of CLR or CoreCLR.</span></span>|  
+|<span data-ttu-id="45ed3-125">Sku</span><span class="sxs-lookup"><span data-stu-id="45ed3-125">Sku</span></span>|<span data-ttu-id="45ed3-126">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="45ed3-126">win:UInt16</span></span>|<span data-ttu-id="45ed3-127">1 – デスクトップ CLR。</span><span class="sxs-lookup"><span data-stu-id="45ed3-127">1 – Desktop CLR.</span></span><br /><br /> <span data-ttu-id="45ed3-128">2 – CoreCLR。</span><span class="sxs-lookup"><span data-stu-id="45ed3-128">2 – CoreCLR.</span></span>|  
+|<span data-ttu-id="45ed3-129">BclVersion – メジャー バージョン</span><span class="sxs-lookup"><span data-stu-id="45ed3-129">BclVersion – Major Version</span></span>|<span data-ttu-id="45ed3-130">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="45ed3-130">win:UInt16</span></span>|<span data-ttu-id="45ed3-131">mscorlib.dll のメジャー バージョン。</span><span class="sxs-lookup"><span data-stu-id="45ed3-131">Major version of mscorlib.dll.</span></span>|  
+|<span data-ttu-id="45ed3-132">BclVersion – マイナー バージョン</span><span class="sxs-lookup"><span data-stu-id="45ed3-132">BclVersion – Minor Version</span></span>|<span data-ttu-id="45ed3-133">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="45ed3-133">win:UInt16</span></span>|<span data-ttu-id="45ed3-134">mscorlib.dll のマイナー バージョン番号。</span><span class="sxs-lookup"><span data-stu-id="45ed3-134">Minor version number of mscorlib.dll.</span></span>|  
+|<span data-ttu-id="45ed3-135">BclVersion – ビルド番号</span><span class="sxs-lookup"><span data-stu-id="45ed3-135">BclVersion – Build Number</span></span>|<span data-ttu-id="45ed3-136">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="45ed3-136">win:UInt16</span></span>|<span data-ttu-id="45ed3-137">mscorlib.dll のビルド番号。</span><span class="sxs-lookup"><span data-stu-id="45ed3-137">Build number of mscorlib.dll.</span></span>|  
+|<span data-ttu-id="45ed3-138">BclVersion – QFE</span><span class="sxs-lookup"><span data-stu-id="45ed3-138">BclVersion – QFE</span></span>|<span data-ttu-id="45ed3-139">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="45ed3-139">win:UInt16</span></span>|<span data-ttu-id="45ed3-140">mscorlib.dll の修正プログラムのバージョン番号。</span><span class="sxs-lookup"><span data-stu-id="45ed3-140">Hotfix version number of mscorlib.dll.</span></span>|  
+|<span data-ttu-id="45ed3-141">VMVersion – メジャー バージョン</span><span class="sxs-lookup"><span data-stu-id="45ed3-141">VMVersion – Major Version</span></span>|<span data-ttu-id="45ed3-142">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="45ed3-142">win:UInt16</span></span>|<span data-ttu-id="45ed3-143">clr.dll または coreclr.dll (SKU によって決まる) のバージョン。</span><span class="sxs-lookup"><span data-stu-id="45ed3-143">Version of clr.dll or coreclr.dll, depending on SKU.</span></span>|  
+|<span data-ttu-id="45ed3-144">VMVersion – マイナー バージョン</span><span class="sxs-lookup"><span data-stu-id="45ed3-144">VMVersion – Minor Version</span></span>|<span data-ttu-id="45ed3-145">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="45ed3-145">win:UInt16</span></span>|<span data-ttu-id="45ed3-146">clr.dll または coreclr.dll (SKU によって決まる) のマイナー バージョン。</span><span class="sxs-lookup"><span data-stu-id="45ed3-146">Minor version of clr.dll or coreclr.dll, depending on SKU.</span></span>|  
+|<span data-ttu-id="45ed3-147">VMVersion – ビルド番号</span><span class="sxs-lookup"><span data-stu-id="45ed3-147">VMVersion – Build Number</span></span>|<span data-ttu-id="45ed3-148">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="45ed3-148">win:UInt16</span></span>|<span data-ttu-id="45ed3-149">clr.dll または coreclr.dll のビルド番号。</span><span class="sxs-lookup"><span data-stu-id="45ed3-149">Build number of clr.dll or coreclr.dll.</span></span>|  
+|<span data-ttu-id="45ed3-150">VMVersion – QFE</span><span class="sxs-lookup"><span data-stu-id="45ed3-150">VMVersion – QFE</span></span>|<span data-ttu-id="45ed3-151">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="45ed3-151">win:UInt16</span></span>|<span data-ttu-id="45ed3-152">clr.dll または coreclr.dll の修正プログラムのバージョン番号。</span><span class="sxs-lookup"><span data-stu-id="45ed3-152">Hotfix version number of clr.dll or coreclr.dll.</span></span>|  
+|<span data-ttu-id="45ed3-153">StartupFlags</span><span class="sxs-lookup"><span data-stu-id="45ed3-153">StartupFlags</span></span>|<span data-ttu-id="45ed3-154">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="45ed3-154">win:UInt32</span></span>|<span data-ttu-id="45ed3-155">mscoree.h で定義された起動フラグ。</span><span class="sxs-lookup"><span data-stu-id="45ed3-155">Startup flags defined in mscoree.h.</span></span>|  
+|<span data-ttu-id="45ed3-156">StartupMode</span><span class="sxs-lookup"><span data-stu-id="45ed3-156">StartupMode</span></span>|<span data-ttu-id="45ed3-157">win:UInt8</span><span class="sxs-lookup"><span data-stu-id="45ed3-157">win:UInt8</span></span>|<span data-ttu-id="45ed3-158">0x01 - マネージ実行可能ファイル。</span><span class="sxs-lookup"><span data-stu-id="45ed3-158">0x01 - Managed executable.</span></span><br /><br /> <span data-ttu-id="45ed3-159">0x02 - ホストされた CLR。</span><span class="sxs-lookup"><span data-stu-id="45ed3-159">0x02 - Hosted CLR.</span></span><br /><br /> <span data-ttu-id="45ed3-160">0x04 - C++ マネージ相互運用。</span><span class="sxs-lookup"><span data-stu-id="45ed3-160">0x04 - C++ managed interop.</span></span><br /><br /> <span data-ttu-id="45ed3-161">0x08 - COM アクティブ化。</span><span class="sxs-lookup"><span data-stu-id="45ed3-161">0x08 - COM-activated.</span></span><br /><br /> <span data-ttu-id="45ed3-162">0x10 - その他。</span><span class="sxs-lookup"><span data-stu-id="45ed3-162">0x10 - Other.</span></span>|  
+|<span data-ttu-id="45ed3-163">CommandLine</span><span class="sxs-lookup"><span data-stu-id="45ed3-163">CommandLine</span></span>|<span data-ttu-id="45ed3-164">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="45ed3-164">win:UnicodeString</span></span>|<span data-ttu-id="45ed3-165">StartupMode=0x01 の場合のみ null 以外。</span><span class="sxs-lookup"><span data-stu-id="45ed3-165">Non-null only if StartupMode=0x01.</span></span>|  
+|<span data-ttu-id="45ed3-166">ComObjectGUID</span><span class="sxs-lookup"><span data-stu-id="45ed3-166">ComObjectGUID</span></span>|<span data-ttu-id="45ed3-167">win:GUID</span><span class="sxs-lookup"><span data-stu-id="45ed3-167">win:GUID</span></span>|<span data-ttu-id="45ed3-168">StartupMode=0x08 の場合のみ null 以外。</span><span class="sxs-lookup"><span data-stu-id="45ed3-168">Non-null only if StartupMode=0x08.</span></span>|  
+|<span data-ttu-id="45ed3-169">RuntimeDLLPath</span><span class="sxs-lookup"><span data-stu-id="45ed3-169">RuntimeDLLPath</span></span>|<span data-ttu-id="45ed3-170">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="45ed3-170">win:UnicodeString</span></span>|<span data-ttu-id="45ed3-171">プロセスに読み込まれた CLR .dll ファイルへのパス。</span><span class="sxs-lookup"><span data-stu-id="45ed3-171">Path to the CLR .dll file that was loaded into the process.</span></span>|  
   
-## <a name="see-also"></a>関連項目  
- [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)
-
+## <a name="see-also"></a><span data-ttu-id="45ed3-172">関連項目</span><span class="sxs-lookup"><span data-stu-id="45ed3-172">See Also</span></span>  
+ [<span data-ttu-id="45ed3-173">CLR ETW イベント</span><span class="sxs-lookup"><span data-stu-id="45ed3-173">CLR ETW Events</span></span>](../../../docs/framework/performance/clr-etw-events.md)

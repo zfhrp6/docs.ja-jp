@@ -1,31 +1,38 @@
 ---
-title: "&lt;serviceBehaviors&gt; の &lt;behavior&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;serviceBehaviors&gt; の &lt;behavior&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 78fc0a08-55de-416a-ac12-a5e6ffc9a987
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 3a472f2dd3947088eaf676c4ae38946560652c9e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;serviceBehaviors&gt; の &lt;behavior&gt;
-`behavior` 要素には、サービスの動作設定のコレクションが含まれます。  各動作には、それぞれの `name` によってインデックスが付けられます。  サービスは、[\<endpoint\>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md) 要素の `behaviorConfiguration` 属性を使用して、この名前で各動作にリンクできます。  これにより、設定を再定義することなく、エンドポイント間で共通の動作構成を共有できます。  [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。  既定の構成、および名前のないバインディングと動作の詳細については、「[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)」および「[WCF サービスの簡略化された構成](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)」を参照してください。  
+# <a name="ltbehaviorgt-of-ltservicebehaviorsgt"></a><span data-ttu-id="c9805-102">&lt;serviceBehaviors&gt; の &lt;behavior&gt;</span><span class="sxs-lookup"><span data-stu-id="c9805-102">&lt;behavior&gt; of &lt;serviceBehaviors&gt;</span></span>
+<span data-ttu-id="c9805-103">`behavior` 要素には、サービスの動作設定のコレクションが含まれます。</span><span class="sxs-lookup"><span data-stu-id="c9805-103">The `behavior` element contains a collection of settings for the behavior of a service.</span></span> <span data-ttu-id="c9805-104">各動作には、それぞれの `name` によってインデックスが付けられます。</span><span class="sxs-lookup"><span data-stu-id="c9805-104">Each behavior is indexed by its `name`.</span></span> <span data-ttu-id="c9805-105">サービスを使用して、この名前を使用して各動作にリンクできます、`behaviorConfiguration`の属性、 [\<エンドポイント >](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md)要素。</span><span class="sxs-lookup"><span data-stu-id="c9805-105">Services can link to each behavior through this name using the `behaviorConfiguration` attribute of the [\<endpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md) element.</span></span> <span data-ttu-id="c9805-106">これにより、設定を再定義することなく、エンドポイント間で共通の動作構成を共有できます。</span><span class="sxs-lookup"><span data-stu-id="c9805-106">This allows endpoints to share common behavior configurations without redefining the settings.</span></span> <span data-ttu-id="c9805-107">[!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。</span><span class="sxs-lookup"><span data-stu-id="c9805-107">Starting with [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], bindings and behaviors are not required to have a name.</span></span> <span data-ttu-id="c9805-108">既定の構成と無名のバインディングおよび動作の詳細については、次を参照してください。[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="c9805-108">For more information about default configuration and nameless bindings and behaviors, see [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>  
   
 > [!NOTE]
->  Windows Workflow アクティビティに固有の動作要素 \([\<sendMessageChannelCache\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/sendmessagechannelcache.md) 要素など\) については、「[\<serviceBehaviors\> の \<behavior\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)」のページを参照してください。  
+>  <span data-ttu-id="c9805-109">Windows ワークフローのアクティビティに固有の動作要素など、 [ \<sendMessageChannelCache >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/sendmessagechannelcache.md)要素は、『、 [\<動作 > の\<serviceBehaviors >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)ページ。</span><span class="sxs-lookup"><span data-stu-id="c9805-109">Behavior elements specific to Windows Workflow activities, such as the [\<sendMessageChannelCache>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/sendmessagechannelcache.md) element, are documented in the [\<behavior> of \<serviceBehaviors>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md) page.</span></span>  
   
-## 構文  
+ <span data-ttu-id="c9805-110">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="c9805-110">\<system.ServiceModel></span></span>  
+<span data-ttu-id="c9805-111">\<ビヘイビアー ></span><span class="sxs-lookup"><span data-stu-id="c9805-111">\<behaviors></span></span>  
+<span data-ttu-id="c9805-112">\<serviceBehaviors ></span><span class="sxs-lookup"><span data-stu-id="c9805-112">\<serviceBehaviors></span></span>  
+<span data-ttu-id="c9805-113">\<動作 ></span><span class="sxs-lookup"><span data-stu-id="c9805-113">\<behavior></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="c9805-114">構文</span><span class="sxs-lookup"><span data-stu-id="c9805-114">Syntax</span></span>  
   
+```xml  
 <system.ServiceModel>  
   <behaviors>  
     <serviceBehaviors>  
@@ -35,36 +42,36 @@ caps.handback.revision: 10
 </system.ServiceModel>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="c9805-115">属性および要素</span><span class="sxs-lookup"><span data-stu-id="c9805-115">Attributes and Elements</span></span>  
+ <span data-ttu-id="c9805-116">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="c9805-116">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="c9805-117">属性</span><span class="sxs-lookup"><span data-stu-id="c9805-117">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|name|動作の構成名を含む一意の文字列。  この値は、要素の識別文字列として機能するため、一意のユーザー定義の文字列である必要があります。  [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。  既定の構成、および名前のないバインディングと動作の詳細については、「[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)」および「[WCF サービスの簡略化された構成](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)」を参照してください。|  
+|<span data-ttu-id="c9805-118">属性</span><span class="sxs-lookup"><span data-stu-id="c9805-118">Attribute</span></span>|<span data-ttu-id="c9805-119">説明</span><span class="sxs-lookup"><span data-stu-id="c9805-119">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="c9805-120">name</span><span class="sxs-lookup"><span data-stu-id="c9805-120">name</span></span>|<span data-ttu-id="c9805-121">動作の構成名を含む一意の文字列。</span><span class="sxs-lookup"><span data-stu-id="c9805-121">A unique string that contains the configuration name of the behavior.</span></span> <span data-ttu-id="c9805-122">この値は、要素の識別文字列として機能するため、一意のユーザー定義の文字列である必要があります。</span><span class="sxs-lookup"><span data-stu-id="c9805-122">This value is a user-defined string that must be unique, since it acts as the identification string for the element.</span></span> <span data-ttu-id="c9805-123">[!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。</span><span class="sxs-lookup"><span data-stu-id="c9805-123">Starting with [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], bindings and behaviors are not required to have a name.</span></span> <span data-ttu-id="c9805-124">既定の構成と無名のバインディングおよび動作の詳細については、次を参照してください。[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="c9805-124">For more information about default configuration and nameless bindings and behaviors, see [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>|  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="c9805-125">子要素</span><span class="sxs-lookup"><span data-stu-id="c9805-125">Child Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<dataContractSerializer\>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)|DataContractSerializer 用の構成データが含まれています。|  
-|[\<persistenceProvider\>](../../../../../docs/framework/configure-apps/file-schema/wcf/persistenceprovider.md)|使用する永続化プロバイダーの実装の型と、永続化操作に使用するタイムアウトを指定します。|  
-|[\<routing\>](../../../../../docs/framework/configure-apps/file-schema/wcf/routing-of-servicebehavior.md)|ルーティング構成の動的な変更を可能にするルーティング サービスへの実行時アクセスを提供します。|  
-|[\<serviceAuthenticationManager\>](../../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthenticationmanager.md)|サービス レベルで転送、メッセージ、または送信元の有効性を確立するワークフロー構成要素を提供します。|  
-|[\<serviceAuthorization\>](../../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md)|サービス操作へのアクセスを承認する設定を指定します。|  
-|[\<serviceCredentials\>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|サービスの認証に使用される資格情報と、クライアントの資格情報検証関連の設定を指定します。|  
-|[\<serviceDebug\>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md)|[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスのデバッグおよびヘルプ情報機能を指定します。|  
-|[\<serviceDiscovery\>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicediscovery.md)|サービス エンドポイントの探索可能性を指定します。|  
-|[\<serviceMetadata\>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md)|サービス メタデータと関連情報の公開を指定します。|  
-|[\<serviceSecurityAudit\>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md)|サービス操作中にセキュリティ イベントの監査を有効にする設定を指定します。|  
-|[\<serviceThrottling\>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicethrottling.md)|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスの調整機構を指定します。|  
-|[\<serviceTimeouts\>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicetimeouts.md)|サービスのタイムアウトを指定します。|  
-|[\<workflowRuntime\>](../../../../../docs/framework/configure-apps/file-schema/wcf/workflowruntime.md)|ワークフロー ベースの [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスをホストするための WorkflowRuntime のインスタンスの設定を指定します。|  
-|[\<useRequestHeadersForMetadataAddress\>](../../../../../docs/framework/configure-apps/file-schema/wcf/userequestheadersformetadataaddress.md)|メタデータのアドレス情報を要求メッセージ ヘッダーから取得できるようにします。|  
+|<span data-ttu-id="c9805-126">要素</span><span class="sxs-lookup"><span data-stu-id="c9805-126">Element</span></span>|<span data-ttu-id="c9805-127">説明</span><span class="sxs-lookup"><span data-stu-id="c9805-127">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="c9805-128">\<dataContractSerializer ></span><span class="sxs-lookup"><span data-stu-id="c9805-128">\<dataContractSerializer></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)|<span data-ttu-id="c9805-129">DataContractSerializer 用の構成データが含まれています。</span><span class="sxs-lookup"><span data-stu-id="c9805-129">Contains configuration data for the DataContractSerializer.</span></span>|  
+|[<span data-ttu-id="c9805-130">\<persistenceProvider ></span><span class="sxs-lookup"><span data-stu-id="c9805-130">\<persistenceProvider></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/persistenceprovider.md)|<span data-ttu-id="c9805-131">使用する永続化プロバイダーの実装の型と、永続化操作に使用するタイムアウトを指定します。</span><span class="sxs-lookup"><span data-stu-id="c9805-131">Specifies the type of the persistence provider implementation to use, as well as the time-out to use for persistence operations.</span></span>|  
+|[<span data-ttu-id="c9805-132">\<ルーティング ></span><span class="sxs-lookup"><span data-stu-id="c9805-132">\<routing></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/routing-of-servicebehavior.md)|<span data-ttu-id="c9805-133">ルーティング構成の動的な変更を可能にするルーティング サービスへの実行時アクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="c9805-133">Provides run-time access to the routing service to allow dynamic modification of the routing configuration.</span></span>|  
+|[<span data-ttu-id="c9805-134">\<serviceAuthenticationManager ></span><span class="sxs-lookup"><span data-stu-id="c9805-134">\<serviceAuthenticationManager></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthenticationmanager.md)|<span data-ttu-id="c9805-135">サービス レベルで転送、メッセージ、または送信元の有効性を確立するワークフロー構成要素を提供します。</span><span class="sxs-lookup"><span data-stu-id="c9805-135">Provides a workflow configuration element that establishes at the service level the validity of a transmission, message, or originator..</span></span>|  
+|[<span data-ttu-id="c9805-136">\<serviceAuthorization ></span><span class="sxs-lookup"><span data-stu-id="c9805-136">\<serviceAuthorization></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md)|<span data-ttu-id="c9805-137">サービス操作へのアクセスを承認する設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="c9805-137">Specifies settings that authorize access to service operations.</span></span>|  
+|[<span data-ttu-id="c9805-138">\<serviceCredentials ></span><span class="sxs-lookup"><span data-stu-id="c9805-138">\<serviceCredentials></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|<span data-ttu-id="c9805-139">サービスの認証に使用される資格情報と、クライアントの資格情報検証関連の設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="c9805-139">Specifies the credential to be used in authenticating the service and the client credential validation-related settings.</span></span>|  
+|[<span data-ttu-id="c9805-140">\<serviceDebug ></span><span class="sxs-lookup"><span data-stu-id="c9805-140">\<serviceDebug></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md)|<span data-ttu-id="c9805-141">[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスのデバッグおよびヘルプ情報機能を指定します。</span><span class="sxs-lookup"><span data-stu-id="c9805-141">Specifies debugging and help information features for a [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] service.</span></span>|  
+|[<span data-ttu-id="c9805-142">\<serviceDiscovery ></span><span class="sxs-lookup"><span data-stu-id="c9805-142">\<serviceDiscovery></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicediscovery.md)|<span data-ttu-id="c9805-143">サービス エンドポイントの探索可能性を指定します。</span><span class="sxs-lookup"><span data-stu-id="c9805-143">Specifies the discoverability of service endpoints.</span></span>|  
+|[<span data-ttu-id="c9805-144">\<serviceMetadata ></span><span class="sxs-lookup"><span data-stu-id="c9805-144">\<serviceMetadata></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md)|<span data-ttu-id="c9805-145">サービス メタデータと関連情報の公開を指定します。</span><span class="sxs-lookup"><span data-stu-id="c9805-145">Specifies the publication of service metadata and associated information.</span></span>|  
+|[<span data-ttu-id="c9805-146">\<serviceSecurityAudit ></span><span class="sxs-lookup"><span data-stu-id="c9805-146">\<serviceSecurityAudit></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md)|<span data-ttu-id="c9805-147">サービス操作中にセキュリティ イベントの監査を有効にする設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="c9805-147">Specifies settings that enable auditing of security events during service operations.</span></span>|  
+|[<span data-ttu-id="c9805-148">\<serviceThrottling ></span><span class="sxs-lookup"><span data-stu-id="c9805-148">\<serviceThrottling></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicethrottling.md)|<span data-ttu-id="c9805-149">[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスの調整機構を指定します。</span><span class="sxs-lookup"><span data-stu-id="c9805-149">Specifies the throttling mechanism of a [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] service.</span></span>|  
+|[<span data-ttu-id="c9805-150">\<serviceTimeouts ></span><span class="sxs-lookup"><span data-stu-id="c9805-150">\<serviceTimeouts></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicetimeouts.md)|<span data-ttu-id="c9805-151">サービスのタイムアウトを指定します。</span><span class="sxs-lookup"><span data-stu-id="c9805-151">Specifies the timeout for a service.</span></span>|  
+|[<span data-ttu-id="c9805-152">\<workflowRuntime ></span><span class="sxs-lookup"><span data-stu-id="c9805-152">\<workflowRuntime></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/workflowruntime.md)|<span data-ttu-id="c9805-153">ワークフロー ベースの [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスをホストするための WorkflowRuntime のインスタンスの設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="c9805-153">Specifies settings for an instance of WorkflowRuntime for hosting workflow-based [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] services.</span></span>|  
+|[<span data-ttu-id="c9805-154">\<useRequestHeadersForMetadataAddress ></span><span class="sxs-lookup"><span data-stu-id="c9805-154">\<useRequestHeadersForMetadataAddress></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/userequestheadersformetadataaddress.md)|<span data-ttu-id="c9805-155">メタデータのアドレス情報を要求メッセージ ヘッダーから取得できるようにします。</span><span class="sxs-lookup"><span data-stu-id="c9805-155">Enables the retrieval of metadata address information from the request message headers.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="c9805-156">親要素</span><span class="sxs-lookup"><span data-stu-id="c9805-156">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<serviceBehaviors\>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)|サービス動作要素のコレクション。|
+|<span data-ttu-id="c9805-157">要素</span><span class="sxs-lookup"><span data-stu-id="c9805-157">Element</span></span>|<span data-ttu-id="c9805-158">説明</span><span class="sxs-lookup"><span data-stu-id="c9805-158">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="c9805-159">\<serviceBehaviors ></span><span class="sxs-lookup"><span data-stu-id="c9805-159">\<serviceBehaviors></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)|<span data-ttu-id="c9805-160">サービス動作要素のコレクション。</span><span class="sxs-lookup"><span data-stu-id="c9805-160">A collection of service behavior elements.</span></span>|

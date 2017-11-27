@@ -1,33 +1,32 @@
 ---
-title: "メッセージ セキュリティ証明書 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "WS セキュリティ"
+title: "メッセージ セキュリティ証明書"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: WS Security
 ms.assetid: 909333b3-35ec-48f0-baff-9a50161896f6
-caps.latest.revision: 51
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 51
+caps.latest.revision: "51"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 0587883a7f354ec03e3fd47ea362b93f006028ba
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# メッセージ セキュリティ証明書
-このサンプルでは、クライアントの認証で X.509 v3 証明書による WS\-Security を使用するアプリケーションを実装する方法を示します。このアプリケーションでは、サーバーの X.509 v3 証明書を使用するサーバー認証が必要です。このサンプルでは、クライアント\/サーバー間のすべてのアプリケーション メッセージが署名されて暗号化される、既定の設定を使用します。このサンプルは、「[WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md)」に基づいており、クライアント コンソール プログラムと、インターネット インフォメーション サービス \(IIS\) によってホストされるサービス ライブラリで構成されています。サービスは、要求\/応答通信パターンを定義するコントラクトを実装します。  
+# <a name="message-security-certificate"></a><span data-ttu-id="781d4-102">メッセージ セキュリティ証明書</span><span class="sxs-lookup"><span data-stu-id="781d4-102">Message Security Certificate</span></span>
+<span data-ttu-id="781d4-103">このサンプルでは、クライアントの認証で X.509 v3 証明書による WS-Security を使用するアプリケーションを実装する方法を示します。このアプリケーションでは、サーバーの X.509 v3 証明書を使用するサーバー認証が必要です。</span><span class="sxs-lookup"><span data-stu-id="781d4-103">This sample demonstrates how to implement an application that uses WS-Security with X.509 v3 certificate authentication for the client and requires server authentication using the server's X.509 v3 certificate.</span></span> <span data-ttu-id="781d4-104">このサンプルでは、クライアント/サーバー間のすべてのアプリケーション メッセージが署名されて暗号化される、既定の設定を使用します。</span><span class="sxs-lookup"><span data-stu-id="781d4-104">This sample uses default settings such that all application messages between the client and server are signed and encrypted.</span></span> <span data-ttu-id="781d4-105">このサンプルがに基づいて、 [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md)クライアント コンソール プログラムとインターネット インフォメーション サービス (IIS) によってホストされるサービス ライブラリで構成されます。</span><span class="sxs-lookup"><span data-stu-id="781d4-105">This sample is based on the [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md) and consists of a client console program and a service library hosted by Internet Information Services (IIS).</span></span> <span data-ttu-id="781d4-106">サービスは、要求/応答通信パターンを定義するコントラクトを実装します。</span><span class="sxs-lookup"><span data-stu-id="781d4-106">The service implements a contract that defines a request-reply communication pattern.</span></span>  
   
 > [!NOTE]
->  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
+>  <span data-ttu-id="781d4-107">このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。</span><span class="sxs-lookup"><span data-stu-id="781d4-107">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- このサンプルは、構成を使用した認証の制御、およびセキュリティ コンテキストから呼び出し側の ID を取得する方法を示しています。次のサンプル コードを参照してください。  
+ <span data-ttu-id="781d4-108">このサンプルは、構成を使用した認証の制御、およびセキュリティ コンテキストから呼び出し側の ID を取得する方法を示しています。次のサンプル コードを参照してください。</span><span class="sxs-lookup"><span data-stu-id="781d4-108">The sample demonstrates controlling authentication by using configuration and how to obtain the caller’s identity from the security context, as shown in the following sample code.</span></span>  
   
 ```  
 public class CalculatorService : ICalculator  
@@ -43,9 +42,9 @@ public class CalculatorService : ICalculator
 }  
 ```  
   
- サービスは、そのサービスとの通信に使用する 1 つのエンドポイントと、WS\-MetadataExchange プロトコルを使用してサービスの WSDL ドキュメントを公開する 1 つのエンドポイントを公開します。これらのエンドポイントは構成ファイル \(Web.config\) で定義します。エンドポイントは、アドレス、バインディング、およびコントラクトがそれぞれ 1 つずつで構成されます。バインディングは、標準の [\<wsHttpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) 要素で構成されます。既定では、メッセージ セキュリティが使用されます。このサンプルでは、クライアント認証が必要な証明書に `clientCredentialType` 属性を設定します。  
+ <span data-ttu-id="781d4-109">サービスは、そのサービスとの通信に使用する 1 つのエンドポイントと、WS-MetadataExchange プロトコルを使用してサービスの WSDL ドキュメントを公開する 1 つのエンドポイントを公開します。これらのエンドポイントは構成ファイル (Web.config) で定義します。</span><span class="sxs-lookup"><span data-stu-id="781d4-109">The service exposes one endpoint for communicating with the service and one endpoint for exposing the service's WSDL document using the WS-MetadataExchange protocol, defined by using the configuration file (Web.config).</span></span> <span data-ttu-id="781d4-110">エンドポイントは、アドレス、バインディング、およびコントラクトがそれぞれ 1 つずつで構成されます。</span><span class="sxs-lookup"><span data-stu-id="781d4-110">The endpoint consists of an address, a binding, and a contract.</span></span> <span data-ttu-id="781d4-111">標準バインディングの構成は[ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)要素で、既定でメッセージ セキュリティを使用します。</span><span class="sxs-lookup"><span data-stu-id="781d4-111">The binding is configured with a standard [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) element, which defaults to using message security.</span></span> <span data-ttu-id="781d4-112">このサンプルでは、クライアント認証が必要な証明書に `clientCredentialType` 属性を設定します。</span><span class="sxs-lookup"><span data-stu-id="781d4-112">This sample sets the `clientCredentialType` attribute to Certificate to require client authentication.</span></span>  
   
-```  
+```xml  
 <system.serviceModel>  
     <protocolMapping>  
       <add scheme="http" binding="wsHttpBinding"/>  
@@ -92,12 +91,11 @@ public class CalculatorService : ICalculator
       </serviceBehaviors>  
     </behaviors>  
   </system.serviceModel>  
-  
 ```  
   
- この動作により、クライアントがサービスを認証する際に使用される、サービスの資格情報が指定されます。サーバー証明書のサブジェクト名は、[\<serviceCredentials\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) 要素の `findValue` 属性で指定されます。  
+ <span data-ttu-id="781d4-113">この動作により、クライアントがサービスを認証する際に使用される、サービスの資格情報が指定されます。</span><span class="sxs-lookup"><span data-stu-id="781d4-113">The behavior specifies the service's credentials that are used when the client authenticates the service.</span></span> <span data-ttu-id="781d4-114">サーバー証明書のサブジェクト名が指定された、`findValue`属性、 [ \<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)要素。</span><span class="sxs-lookup"><span data-stu-id="781d4-114">The server certificate subject name is specified in the `findValue` attribute in the [\<serviceCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) element.</span></span>  
   
-```  
+```xml  
 <!--For debugging purposes, set the includeExceptionDetailInFaults attribute to true.-->  
 <behaviors>  
       <serviceBehaviors>  
@@ -126,12 +124,11 @@ public class CalculatorService : ICalculator
         </behavior>  
       </serviceBehaviors>  
     </behaviors>  
-  
 ```  
   
- クライアント エンドポイント構成は、サービス エンドポイントの絶対アドレス、バインディング、およびコントラクトで構成されます。クライアント バインディングは、適切なセキュリティ モードおよび認証モードで構成されます。複数コンピューターのシナリオで実行する場合は、サービスのエンドポイント アドレスが適切に変更されていることを確認してください。  
+ <span data-ttu-id="781d4-115">クライアント エンドポイント構成は、サービス エンドポイントの絶対アドレス、バインディング、およびコントラクトで構成されます。</span><span class="sxs-lookup"><span data-stu-id="781d4-115">The client endpoint configuration consists of an absolute address for the service endpoint, the binding, and the contract.</span></span> <span data-ttu-id="781d4-116">クライアント バインディングは、適切なセキュリティ モードおよび認証モードで構成されます。</span><span class="sxs-lookup"><span data-stu-id="781d4-116">The client binding is configured with the appropriate security mode and authentication mode.</span></span> <span data-ttu-id="781d4-117">複数コンピューターのシナリオで実行する場合は、サービスのエンドポイント アドレスが適切に変更されていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="781d4-117">When running in a cross-computer scenario, ensure that the service endpoint address is changed accordingly.</span></span>  
   
-```  
+```xml  
 <system.serviceModel>  
     <client>  
       <!-- Use a behavior to configure the client certificate to present to the service. -->  
@@ -153,12 +150,11 @@ public class CalculatorService : ICalculator
     </bindings>  
 ...  
 </system.serviceModel>  
-  
 ```  
   
- クライアントの実装により、構成ファイルまたコードを使用して、使用する証明書が設定されます。次のサンプルでは、使用する証明書を構成ファイルで設定する方法を示します。  
+ <span data-ttu-id="781d4-118">クライアントの実装により、構成ファイルまたコードを使用して、使用する証明書が設定されます。</span><span class="sxs-lookup"><span data-stu-id="781d4-118">The client implementation can set the certificate to use, either through the configuration file or through code.</span></span> <span data-ttu-id="781d4-119">次のサンプルでは、使用する証明書を構成ファイルで設定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="781d4-119">The following sample shows how to set the certificate to use in the configuration file.</span></span>  
   
-```  
+```xml  
 <system.serviceModel>  
   ...  
   
@@ -189,10 +185,9 @@ public class CalculatorService : ICalculator
     </behaviors>  
   
 </system.serviceModel>  
-  
 ```  
   
- 次のサンプルでは、プログラムでサービスを呼び出す方法を示します。  
+ <span data-ttu-id="781d4-120">次のサンプルでは、プログラムでサービスを呼び出す方法を示します。</span><span class="sxs-lookup"><span data-stu-id="781d4-120">The following sample shows how to call the service in your program.</span></span>  
   
 ```  
 // Create a client.  
@@ -205,7 +200,7 @@ Console.WriteLine(client.GetCallerIdentity());
 client.Close();  
 ```  
   
- このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
+ <span data-ttu-id="781d4-121">このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="781d4-121">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="781d4-122">クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="781d4-122">Press ENTER in the client window to shut down the client.</span></span>  
   
 ```  
 CN=client.com  
@@ -216,11 +211,11 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
- メッセージ セキュリティ サンプルに用意されている Setup.bat バッチ ファイルを使用すると、適切な証明書を使用してクライアントとサーバーを構成し、証明書ベースのセキュリティを必要とするホスト アプリケーションを実行できるようになります。バッチ ファイルの実行には 3 つのモードを使用できます。単一コンピューター モードで実行するには、Visual Studio コマンド プロンプトで「**setup.bat**」と入力します。同様に、サービス モードの場合は「**setup.bat service**」と入力し、クライアント モードの場合は「**setup.bat client**」と入力します。このサンプルを複数のコンピューターで実行している場合は、クライアントおよびサーバー モードを使用します。詳細については、このトピック末尾のセットアップ手順を参照してください。次に、バッチ ファイルのセクションのうち、適切な構成で実行するために変更が必要となる部分を示します。  
+ <span data-ttu-id="781d4-123">メッセージ セキュリティ サンプルに用意されている Setup.bat バッチ ファイルを使用すると、適切な証明書を使用してクライアントとサーバーを構成し、証明書ベースのセキュリティを必要とするホスト アプリケーションを実行できるようになります。</span><span class="sxs-lookup"><span data-stu-id="781d4-123">The Setup.bat batch file included with the Message Security samples enables you to configure the client and server with relevant certificates to run a hosted application that requires certificate-based security.</span></span> <span data-ttu-id="781d4-124">バッチ ファイルの実行には 3 つのモードを使用できます。</span><span class="sxs-lookup"><span data-stu-id="781d4-124">The batch file can be run in three modes.</span></span> <span data-ttu-id="781d4-125">型の単一コンピューター モードで実行する**setup.bat** Visual Studio コマンド プロンプトで; サービス モードの種類の**setup.bat service**; とクライアント モードの種類の**setup.bat client**.</span><span class="sxs-lookup"><span data-stu-id="781d4-125">To run in single-computer mode type **setup.bat** in a Visual Studio Command Prompt ; for service mode type **setup.bat service**; and for client mode type **setup.bat client**.</span></span> <span data-ttu-id="781d4-126">このサンプルを複数のコンピューターで実行している場合は、クライアントおよびサーバー モードを使用します。</span><span class="sxs-lookup"><span data-stu-id="781d4-126">Use the client and server mode when running the sample across computers.</span></span> <span data-ttu-id="781d4-127">詳細については、このトピック末尾のセットアップ手順を参照してください。</span><span class="sxs-lookup"><span data-stu-id="781d4-127">See the setup procedure at the end of this topic for details.</span></span> <span data-ttu-id="781d4-128">次に、バッチ ファイルのセクションのうち、適切な構成で実行するために変更が必要となる部分を示します。</span><span class="sxs-lookup"><span data-stu-id="781d4-128">The following provides a brief overview of the different sections of the batch files so that they can be modified to run in appropriate configuration:</span></span>  
   
--   クライアント証明書の作成。  
+-   <span data-ttu-id="781d4-129">クライアント証明書の作成。</span><span class="sxs-lookup"><span data-stu-id="781d4-129">Creating the client certificate.</span></span>  
   
-     バッチ ファイルの次の行では、クライアント証明書を作成します。指定されたクライアント名が、作成される証明書のサブジェクト名に使用されます。証明書は、`CurrentUser` ストアの場所の `My` ストアに格納されます。  
+     <span data-ttu-id="781d4-130">バッチ ファイルの次の行では、クライアント証明書を作成します。</span><span class="sxs-lookup"><span data-stu-id="781d4-130">The following line in the batch file creates the client certificate.</span></span> <span data-ttu-id="781d4-131">指定されたクライアント名が、作成される証明書のサブジェクト名に使用されます。</span><span class="sxs-lookup"><span data-stu-id="781d4-131">The client name specified is used in the subject name of the certificate created.</span></span> <span data-ttu-id="781d4-132">証明書は、`My` ストアの場所の `CurrentUser` ストアに格納されます。</span><span class="sxs-lookup"><span data-stu-id="781d4-132">The certificate is stored in `My` store at the `CurrentUser` store location.</span></span>  
   
     ```  
     echo ************  
@@ -229,9 +224,9 @@ Press <ENTER> to terminate client.
     makecert.exe -sr CurrentUser -ss MY -a sha1 -n CN=%CLIENT_NAME% -sky exchange -pe  
     ```  
   
--   サーバーの信頼された証明書ストアへのクライアント証明書のインストール。  
+-   <span data-ttu-id="781d4-133">サーバーの信頼された証明書ストアへのクライアント証明書のインストール。</span><span class="sxs-lookup"><span data-stu-id="781d4-133">Installing the client certificate into the server’s trusted certificate store.</span></span>  
   
-     バッチ ファイルの次の行では、クライアント証明書をサーバーの TrustedPeople ストアにコピーし、サーバーが信頼\/非信頼を判断できるようにします。TrustedPeople ストアにインストールされた証明書が [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスに信頼されるには、クライアント証明書の検証モードを `PeerOrChainTrust` または `PeerTrust` に設定する必要があります。前のサービス構成サンプルを参照して、構成ファイルを使用してこれを行う手順を確認してください。  
+     <span data-ttu-id="781d4-134">バッチ ファイルの次の行では、クライアント証明書をサーバーの TrustedPeople ストアにコピーし、サーバーが信頼/非信頼を判断できるようにします。</span><span class="sxs-lookup"><span data-stu-id="781d4-134">The following line in the batch file copies the client certificate into the server's TrustedPeople store so that the server can make the relevant trust or no-trust decisions.</span></span> <span data-ttu-id="781d4-135">TrustedPeople ストアにインストールされた証明書が [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスに信頼されるには、クライアント証明書の検証モードを `PeerOrChainTrust` または `PeerTrust` に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="781d4-135">In order for a certificate installed in the TrustedPeople store to be trusted by a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service, the client certificate validation mode must be set to `PeerOrChainTrust` or `PeerTrust`.</span></span> <span data-ttu-id="781d4-136">前のサービス構成サンプルを参照して、構成ファイルを使用してこれを行う手順を確認してください。</span><span class="sxs-lookup"><span data-stu-id="781d4-136">See the previous service configuration sample to learn how this can be done by using a configuration file.</span></span>  
   
     ```  
     echo ************  
@@ -240,9 +235,9 @@ Press <ENTER> to terminate client.
     certmgr.exe -add -r CurrentUser -s My -c -n %CLIENT_NAME% -r LocalMachine -s TrustedPeople   
     ```  
   
--   サーバー証明書の作成。  
+-   <span data-ttu-id="781d4-137">サーバー証明書の作成。</span><span class="sxs-lookup"><span data-stu-id="781d4-137">Creating the server certificate.</span></span>  
   
-     Setup.bat バッチ ファイルの次の行は、使用するサーバー証明書を作成します。  
+     <span data-ttu-id="781d4-138">Setup.bat バッチ ファイルの次の行は、使用するサーバー証明書を作成します。</span><span class="sxs-lookup"><span data-stu-id="781d4-138">The following lines from the Setup.bat batch file create the server certificate to be used.</span></span>  
   
     ```  
     echo ************  
@@ -254,19 +249,19 @@ Press <ENTER> to terminate client.
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
     ```  
   
-     %SERVER\_NAME% 変数はサーバー名を指定します。証明書は LocalMachine ストアに保存されます。Setup.bat バッチ ファイルの実行にサービスの引数 \(**setup.bat service** など\) が使用された場合、%SERVER\_NAME% にはコンピューターの完全修飾ドメイン名が含まれます。それ以外の場合、既定値は localhost です。  
+     <span data-ttu-id="781d4-139">%SERVER_NAME% 変数はサーバー名を指定します。</span><span class="sxs-lookup"><span data-stu-id="781d4-139">The %SERVER_NAME% variable specifies the server name.</span></span> <span data-ttu-id="781d4-140">証明書は LocalMachine ストアに保存されます。</span><span class="sxs-lookup"><span data-stu-id="781d4-140">The certificate is stored in the LocalMachine store.</span></span> <span data-ttu-id="781d4-141">Setup.bat バッチ ファイルがサービスの引数を指定して実行されているかどうか (など、 **setup.bat service**)、%server_name% には、コンピューターの完全修飾ドメイン名が含まれています。</span><span class="sxs-lookup"><span data-stu-id="781d4-141">If the Setup.bat batch file is run with an argument of service (such as, **setup.bat service**) the %SERVER_NAME% contains the fully-qualified domain name of the computer.</span></span> <span data-ttu-id="781d4-142">それ以外の場合、既定値は localhost です。</span><span class="sxs-lookup"><span data-stu-id="781d4-142">Otherwise it defaults to localhost.</span></span>  
   
--   クライアントの信頼された証明書ストアへのサーバー証明書のインストール。  
+-   <span data-ttu-id="781d4-143">クライアントの信頼された証明書ストアへのサーバー証明書のインストール。</span><span class="sxs-lookup"><span data-stu-id="781d4-143">Installing the server certificate into the client’s trusted certificate store.</span></span>  
   
-     次の行は、サーバー証明書をクライアントの信頼されたユーザーのストアにコピーします。この手順が必要なのは、Makecert.exe によって生成される証明書がクライアント システムにより暗黙には信頼されないためです。マイクロソフト発行の証明書など、クライアントの信頼されたルート証明書に基づいた証明書が既にある場合は、クライアント証明書ストアにサーバー証明書を配置するこの手順は不要です。  
+     <span data-ttu-id="781d4-144">次の行は、サーバー証明書をクライアントの信頼されたユーザーのストアにコピーします。</span><span class="sxs-lookup"><span data-stu-id="781d4-144">The following line copies the server certificate into the client trusted people store.</span></span> <span data-ttu-id="781d4-145">この手順が必要なのは、Makecert.exe によって生成される証明書がクライアント システムにより暗黙には信頼されないからです。</span><span class="sxs-lookup"><span data-stu-id="781d4-145">This step is required because certificates generated by Makecert.exe are not implicitly trusted by the client system.</span></span> <span data-ttu-id="781d4-146">マイクロソフト発行の証明書など、クライアントの信頼されたルート証明書に基づいた証明書が既にある場合は、クライアント証明書ストアにサーバー証明書を配置するこの手順は不要です。</span><span class="sxs-lookup"><span data-stu-id="781d4-146">If you already have a certificate that is rooted in a client trusted root certificate—for example, a Microsoft-issued certificate—this step of populating the client certificate store with the server certificate is not required.</span></span>  
   
     ```  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
     ```  
   
--   証明書の秘密キーに関する権限の付与。  
+-   <span data-ttu-id="781d4-147">証明書の秘密キーに関する権限の付与。</span><span class="sxs-lookup"><span data-stu-id="781d4-147">Granting permissions on the certificate's private key.</span></span>  
   
-     Setup.bat ファイルの次の行は、LocalMachine ストアに保存されたサーバー証明書を [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ワーカー プロセス アカウントでアクセスできるようにします。  
+     <span data-ttu-id="781d4-148">Setup.bat ファイルの次の行は、LocalMachine ストアに保存されたサーバー証明書を [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ワーカー プロセス アカウントでアクセスできるようにします。</span><span class="sxs-lookup"><span data-stu-id="781d4-148">The following lines in the Setup.bat file make the server certificate stored in the LocalMachine store accessible to the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] worker process account.</span></span>  
   
     ```  
     echo ************  
@@ -280,72 +275,72 @@ Press <ENTER> to terminate client.
     ```  
   
     > [!NOTE]
-    >  英語 \(米国\) 以外の言語で Windows を使用している場合は、Setup.bat ファイルを編集し、"NT AUTHORITY\\NETWORK SERVICE" アカウント名を現在の地域に適した名前に変更してください。  
+    >  <span data-ttu-id="781d4-149">英語 (米国) 以外の英語版の Windows を使用している場合は、Setup.bat ファイルを編集し、"NT AUTHORITY\NETWORK SERVICE" アカウント名を現在の地域に適した名前に変更してください。</span><span class="sxs-lookup"><span data-stu-id="781d4-149">If you are using a non-U.S. English edition of Windows, you must edit the Setup.bat file and replace the "NT AUTHORITY\NETWORK SERVICE" account name with your regional equivalent.</span></span>  
   
 > [!NOTE]
->  このバッチ ファイルで使用されるツールは、C:\\Program Files\\Microsoft Visual Studio 8\\Common7\\tools または C:\\Program Files\\Microsoft SDKs\\Windows\\v6.0\\bin にあります。これらのディレクトリのうちいずれか 1 つは、システム パスにする必要があります。Visual Studio がインストールされている場合は、Visual Studio コマンド プロンプトを開いて、このディレクトリを簡単にパスに配置できます。**\[スタート\]**をクリックし、**\[すべてのプログラム\]**、**\[Visual Studio 2012\]**、**\[ツール\]** の順にクリックします。このコマンド プロンプトには、適切なパスが既に設定されています。設定されていない場合は、適切なディレクトリをパスに手動で追加する必要があります。  
+>  <span data-ttu-id="781d4-150">このバッチ ファイルで使用されるツールは、C:\Program Files\Microsoft Visual Studio 8\Common7\tools または C:\Program Files\Microsoft SDKs\Windows\v6.0\bin にあります。</span><span class="sxs-lookup"><span data-stu-id="781d4-150">The tools used in this batch file are located in either C:\Program Files\Microsoft Visual Studio 8\Common7\tools or C:\Program Files\Microsoft SDKs\Windows\v6.0\bin.</span></span> <span data-ttu-id="781d4-151">これらのディレクトリのうちいずれか 1 つは、システム パスにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="781d4-151">One of these directories must be in your system path.</span></span> <span data-ttu-id="781d4-152">Visual Studio がインストールされている場合は、Visual Studio コマンド プロンプトを開いて、このディレクトリを簡単にパスに配置できます。</span><span class="sxs-lookup"><span data-stu-id="781d4-152">If you have Visual Studio installed, the easiest way to get this directory in your path is to open the Visual Studio Command Prompt.</span></span> <span data-ttu-id="781d4-153">をクリックして**開始**、し、**すべてのプログラム**、 **Visual Studio 2012**、**ツール**です。</span><span class="sxs-lookup"><span data-stu-id="781d4-153">Click **Start**, and then select **All Programs**, **Visual Studio 2012**, **Tools**.</span></span> <span data-ttu-id="781d4-154">このコマンド プロンプトには、適切なパスが既に設定されています。</span><span class="sxs-lookup"><span data-stu-id="781d4-154">This command prompt has the appropriate paths already configured.</span></span> <span data-ttu-id="781d4-155">設定されていない場合は、適切なディレクトリをパスに手動で追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="781d4-155">Otherwise you must add the appropriate directory to your path manually.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="781d4-156">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="781d4-156">The samples may already be installed on your computer.</span></span> <span data-ttu-id="781d4-157">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="781d4-157">Check for the following (default) directory before continuing:</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="781d4-158">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="781d4-158">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="781d4-159">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="781d4-159">This sample is located in the following directory:</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\MessageSecurity`  
   
-### サンプルを設定、ビルド、および実行するには  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="781d4-160">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="781d4-160">To set up, build, and run the sample</span></span>  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  <span data-ttu-id="781d4-161">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="781d4-161">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  ソリューションの C\# 版または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  <span data-ttu-id="781d4-162">ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="781d4-162">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-### サンプルを同じコンピューターで実行するには  
+### <a name="to-run-the-sample-on-the-same-computer"></a><span data-ttu-id="781d4-163">サンプルを同じコンピューターで実行するには</span><span class="sxs-lookup"><span data-stu-id="781d4-163">To run the sample on the same computer</span></span>  
   
-1.  管理特権を使用して Visual Studio コマンド プロンプトを開き、サンプルのインストール フォルダーから Setup.bat を実行します。これにより、サンプルの実行に必要なすべての証明書がインストールされます。  
-  
-    > [!NOTE]
-    >  Setup.bat バッチ ファイルは、Visual Studio コマンド プロンプトから実行します。path 環境変数が SDK のインストール ディレクトリを指している必要があります。この環境変数は、Visual Studio コマンド プロンプト \(2010\) で自動設定されます。  
-  
-2.  サービスへのアクセスを検証します。ブラウザーにアドレス「`http://localhost/servicemodelsamples/service.svc`」を入力します。  
-  
-3.  Client.exe を \\client\\bin で起動します。クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。  
-  
-4.  クライアントとサービス間で通信できない場合は、「[Troubleshooting Tips](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
-  
-### サンプルを複数のコンピューターで実行するには  
-  
-1.  サービス コンピューターにディレクトリを作成します。インターネット インフォメーション サービス \(IIS\) 管理ツールを使用して、このディレクトリ用に servicemodelsamples という仮想アプリケーションを作成します。  
-  
-2.  サービス プログラム ファイルを \\inetpub\\wwwroot\\servicemodelsamples からサービス コンピューターの仮想ディレクトリにコピーします。ファイルのコピー先が \\bin サブディレクトリであることを確認します。また Setup.bat、Cleanup.bat、ImportClientCert.bat の各ファイルもサービス コンピューターにコピーします。  
-  
-3.  クライアント コンピューターにクライアント バイナリ用のディレクトリを作成します。  
-  
-4.  クライアント プログラム ファイルを、クライアント コンピューターに作成したクライアント ディレクトリにコピーします。Setup.bat、Cleanup.bat、ImportServiceCert.bat の各ファイルもクライアントにコピーします。  
-  
-5.  サーバー上で管理特権を使用して Visual Studio コマンド プロンプトを開き、**setup.bat service** を実行します。**setup.bat** に **service** 引数を指定して実行すると、コンピューターの完全修飾ドメイン名を使用してサービス証明書が作成され、Service.cer というファイルにエクスポートされます。  
-  
-6.  Web.config を編集して、新しい証明書名 \([\<serviceCertificate\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)の `findValue` 属性\) を反映します。これは、コンピューターの完全修飾ドメイン名と同じです。  
-  
-7.  Service.cer ファイルを、サービス ディレクトリからクライアント コンピューターのクライアント ディレクトリにコピーします。  
-  
-8.  クライアント上で、管理特権を使用して Visual Studio コマンド プロンプトを開き、**setup.bat client** を実行します。**setup.bat** に **client** 引数を指定して実行すると、client.com というクライアント証明書が作成され、Client.cer というファイルにエクスポートされます。  
-  
-9. クライアント コンピューターの Client.exe.config ファイルで、エンドポイントのアドレス値をサービスの新しいアドレスに合わせます。そのためには、localhost をサーバーの完全修飾ドメイン名に置き換えます。  
-  
-10. Client.cer ファイルを、クライアント ディレクトリからサーバーのサービス ディレクトリにコピーします。  
-  
-11. クライアント上で、管理特権を使用して Visual Studio コマンド プロンプトを開き、ImportServiceCert.bat を実行します。これにより、サービス証明書が Service.cer ファイルから CurrentUser \- TrustedPeople ストアにインポートされます。  
-  
-12. サーバー上で、管理特権を使用して Visual Studio コマンド プロンプトを開き、ImportClientCert.bat を実行します。これにより、クライアント証明書が Client.cer ファイルから LocalMachine \- TrustedPeople ストアにインポートされます。  
-  
-13. クライアント コンピューターで、コマンド プロンプト ウィンドウから Client.exe を起動します。クライアントとサービス間で通信できない場合は、「[Troubleshooting Tips](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
-  
-### サンプルの実行後にクリーンアップするには  
-  
--   サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。  
+1.  <span data-ttu-id="781d4-164">管理特権を使用して Visual Studio コマンド プロンプトを開き、サンプルのインストール フォルダーから Setup.bat を実行します。</span><span class="sxs-lookup"><span data-stu-id="781d4-164">Open a Visual Studio Command Prompt  with administrator privileges and run Setup.bat from the sample install folder.</span></span> <span data-ttu-id="781d4-165">これにより、サンプルの実行に必要なすべての証明書がインストールされます。</span><span class="sxs-lookup"><span data-stu-id="781d4-165">This installs all the certificates required for running the sample.</span></span>  
   
     > [!NOTE]
-    >  このサンプルを複数のコンピューターで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。複数のコンピューターで証明書を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルを実行した場合は、CurrentUser \- TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。  
+    >  <span data-ttu-id="781d4-166">Setup.bat バッチ ファイルは、Visual Studio コマンド プロンプトから実行します。</span><span class="sxs-lookup"><span data-stu-id="781d4-166">The Setup.bat batch file is designed to be run from a Visual Studio Command Prompt .</span></span> <span data-ttu-id="781d4-167">path 環境変数が SDK のインストール ディレクトリを指している必要があります。</span><span class="sxs-lookup"><span data-stu-id="781d4-167">It requires that the path environment variable point to the directory where the SDK is installed.</span></span> <span data-ttu-id="781d4-168">この環境変数は、Visual Studio コマンド プロンプト (2010) で自動設定されます。</span><span class="sxs-lookup"><span data-stu-id="781d4-168">This environment variable is automatically set within a Visual Studio Command Prompt (2010).</span></span>  
   
-## 参照
+2.  <span data-ttu-id="781d4-169">アドレスを入力して、ブラウザーを使用して、サービスへのアクセスを確認してください`http://localhost/servicemodelsamples/service.svc`です。</span><span class="sxs-lookup"><span data-stu-id="781d4-169">Verify access to the service using a browser by entering the address `http://localhost/servicemodelsamples/service.svc`.</span></span>  
+  
+3.  <span data-ttu-id="781d4-170">Client.exe を \client\bin で起動します。</span><span class="sxs-lookup"><span data-stu-id="781d4-170">Launch Client.exe from \client\bin.</span></span> <span data-ttu-id="781d4-171">クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。</span><span class="sxs-lookup"><span data-stu-id="781d4-171">Client activity is displayed on the client console application.</span></span>  
+  
+4.  <span data-ttu-id="781d4-172">クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="781d4-172">If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).</span></span>  
+  
+### <a name="to-run-the-sample-across-computers"></a><span data-ttu-id="781d4-173">サンプルを複数のコンピューターで実行するには</span><span class="sxs-lookup"><span data-stu-id="781d4-173">To run the sample across computers</span></span>  
+  
+1.  <span data-ttu-id="781d4-174">サービス コンピューターにディレクトリを作成します。</span><span class="sxs-lookup"><span data-stu-id="781d4-174">Create a directory on the service computer.</span></span> <span data-ttu-id="781d4-175">インターネット インフォメーション サービス (IIS) 管理ツールを使用して、このディレクトリ用に servicemodelsamples という仮想アプリケーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="781d4-175">Create a virtual application named servicemodelsamples for this directory by using the Internet Information Services (IIS) management tool.</span></span>  
+  
+2.  <span data-ttu-id="781d4-176">サービス プログラム ファイルを \inetpub\wwwroot\servicemodelsamples からサービス コンピューターの仮想ディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="781d4-176">Copy the service program files from \inetpub\wwwroot\servicemodelsamples to the virtual directory on the service computer.</span></span> <span data-ttu-id="781d4-177">ファイルのコピー先が \bin サブディレクトリであることを確認します。</span><span class="sxs-lookup"><span data-stu-id="781d4-177">Ensure that you copy the files in the \bin subdirectory.</span></span> <span data-ttu-id="781d4-178">また Setup.bat、Cleanup.bat、ImportClientCert.bat の各ファイルもサービス コンピューターにコピーします。</span><span class="sxs-lookup"><span data-stu-id="781d4-178">Also copy the Setup.bat, Cleanup.bat, and ImportClientCert.bat files to the service computer.</span></span>  
+  
+3.  <span data-ttu-id="781d4-179">クライアント コンピューターにクライアント バイナリ用のディレクトリを作成します。</span><span class="sxs-lookup"><span data-stu-id="781d4-179">Create a directory on the client computer for the client binaries.</span></span>  
+  
+4.  <span data-ttu-id="781d4-180">クライアント プログラム ファイルを、クライアント コンピューターに作成したクライアント ディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="781d4-180">Copy the client program files to the client directory on the client computer.</span></span> <span data-ttu-id="781d4-181">Setup.bat、Cleanup.bat、ImportServiceCert.bat の各ファイルもクライアントにコピーします。</span><span class="sxs-lookup"><span data-stu-id="781d4-181">Also copy the Setup.bat, Cleanup.bat, and ImportServiceCert.bat files to the client.</span></span>  
+  
+5.  <span data-ttu-id="781d4-182">サーバーで、実行**setup.bat service**管理者特権で Visual Studio コマンド プロンプトでします。</span><span class="sxs-lookup"><span data-stu-id="781d4-182">On the server, run **setup.bat service** in a Visual Studio command prompt with administrator privileges.</span></span> <span data-ttu-id="781d4-183">実行している**setup.bat**で、**サービス**引数が、コンピューターの完全修飾ドメイン名でサービス証明書を作成し、サービス証明書が Service.cer というファイルにエクスポートします。</span><span class="sxs-lookup"><span data-stu-id="781d4-183">Running **setup.bat** with the **service** argument creates a service certificate with the fully-qualified domain name of the computer and exports the service certificate to a file named Service.cer.</span></span>  
+  
+6.  <span data-ttu-id="781d4-184">新しい証明書名を反映するように Web.config を編集 (で、`findValue`属性、 [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) は、コンピューターの完全修飾ドメイン名と同じです。</span><span class="sxs-lookup"><span data-stu-id="781d4-184">Edit Web.config to reflect the new certificate name (in the `findValue` attribute in the [\<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) which is the same as the fully-qualified domain name of the computer.</span></span>  
+  
+7.  <span data-ttu-id="781d4-185">Service.cer ファイルを、サービス ディレクトリからクライアント コンピューターのクライアント ディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="781d4-185">Copy the Service.cer file from the service directory to the client directory on the client computer.</span></span>  
+  
+8.  <span data-ttu-id="781d4-186">クライアントでは、実行**setup.bat client**管理者特権で Visual Studio コマンド プロンプトでします。</span><span class="sxs-lookup"><span data-stu-id="781d4-186">On the client, run **setup.bat client** in a Visual Studio command prompt with administrator privileges.</span></span> <span data-ttu-id="781d4-187">実行している**setup.bat**で、**クライアント**引数は、client.com というクライアント証明書を作成し、クライアント証明書が Client.cer というファイルにエクスポートします。</span><span class="sxs-lookup"><span data-stu-id="781d4-187">Running **setup.bat** with the **client** argument creates a client certificate named client.com and exports the client certificate to a file named Client.cer.</span></span>  
+  
+9. <span data-ttu-id="781d4-188">クライアント コンピューターの Client.exe.config ファイルで、エンドポイントのアドレス値をサービスの新しいアドレスに合わせます。</span><span class="sxs-lookup"><span data-stu-id="781d4-188">In the Client.exe.config file on the client computer, change the address value of the endpoint to match the new address of your service.</span></span> <span data-ttu-id="781d4-189">そのためには、localhost をサーバーの完全修飾ドメイン名に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="781d4-189">Do this by replacing localhost with the fully-qualified domain name of the server.</span></span>  
+  
+10. <span data-ttu-id="781d4-190">Client.cer ファイルを、クライアント ディレクトリからサーバーのサービス ディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="781d4-190">Copy the Client.cer file from the client directory to the service directory on the server.</span></span>  
+  
+11. <span data-ttu-id="781d4-191">クライアント上で、管理特権を使用して Visual Studio コマンド プロンプトを開き、ImportServiceCert.bat を実行します。</span><span class="sxs-lookup"><span data-stu-id="781d4-191">On the client, run ImportServiceCert.bat in a Visual Studio command prompt with administrative privileges.</span></span> <span data-ttu-id="781d4-192">これにより、サービス証明書が Service.cer ファイルから CurrentUser - TrustedPeople ストアにインポートされます。</span><span class="sxs-lookup"><span data-stu-id="781d4-192">This imports the service certificate from the Service.cer file into the CurrentUser - TrustedPeople store.</span></span>  
+  
+12. <span data-ttu-id="781d4-193">サーバー上で、管理特権を使用して Visual Studio コマンド プロンプトを開き、ImportClientCert.bat を実行します。</span><span class="sxs-lookup"><span data-stu-id="781d4-193">On the server, run ImportClientCert.bat in a Visual Studio command prompt with administrative privileges.</span></span> <span data-ttu-id="781d4-194">これにより、クライアント証明書が Client.cer ファイルから LocalMachine - TrustedPeople ストアにインポートされます。</span><span class="sxs-lookup"><span data-stu-id="781d4-194">This imports the client certificate from the Client.cer file into the LocalMachine - TrustedPeople store.</span></span>  
+  
+13. <span data-ttu-id="781d4-195">クライアント コンピューターで、コマンド プロンプト ウィンドウから Client.exe を起動します。</span><span class="sxs-lookup"><span data-stu-id="781d4-195">On the client computer, launch Client.exe from a command prompt window.</span></span> <span data-ttu-id="781d4-196">クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="781d4-196">If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).</span></span>  
+  
+### <a name="to-clean-up-after-the-sample"></a><span data-ttu-id="781d4-197">サンプルの実行後にクリーンアップするには</span><span class="sxs-lookup"><span data-stu-id="781d4-197">To clean up after the sample</span></span>  
+  
+-   <span data-ttu-id="781d4-198">サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。</span><span class="sxs-lookup"><span data-stu-id="781d4-198">Run Cleanup.bat in the samples folder after you have finished running the sample.</span></span>  
+  
+    > [!NOTE]
+    >  <span data-ttu-id="781d4-199">このサンプルを複数のコンピューターで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。</span><span class="sxs-lookup"><span data-stu-id="781d4-199">This script does not remove service certificates on a client when running this sample across computers.</span></span> <span data-ttu-id="781d4-200">複数のコンピューターで証明書を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルを実行した場合は、CurrentUser - TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。</span><span class="sxs-lookup"><span data-stu-id="781d4-200">If you have run [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] samples that use certificates across computers, be sure to clear the service certificates that have been installed in the CurrentUser - TrustedPeople store.</span></span> <span data-ttu-id="781d4-201">削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。</span><span class="sxs-lookup"><span data-stu-id="781d4-201">To do this, use the following command: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` For example: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="781d4-202">関連項目</span><span class="sxs-lookup"><span data-stu-id="781d4-202">See Also</span></span>

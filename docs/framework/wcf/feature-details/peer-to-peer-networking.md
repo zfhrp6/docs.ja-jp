@@ -1,37 +1,40 @@
 ---
-title: "ピアツーピア ネットワーク | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ピアツーピア ネットワーク"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ad6cb67b-fd1c-4ca1-a767-b410da2e16ca
-caps.latest.revision: 17
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7e66a2f87d69ddba1676ed5e210859edfb5d8e41
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ピアツーピア ネットワーク
-ピア チャネルとは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のマルチパーティ対応ピアツーピア \(P2P\) 通信技術です。  この技術によって、アプリケーション開発者は安全で拡張可能なメッセージ ベースの P2P 通信チャネルを利用できます。  ピア チャネルのメリットを活用するマルチパーティ アプリケーションの一般的な例は、チャットなどの共同作業アプリケーションです。チャットでは、ユーザーのグループがサーバーなしのピアツーピア方式で互いに会話します。  ピア チャネルを使用することで、顧客シナリオや企業シナリオでの P2P コラボレーション、コンテンツ配布、負荷分散、および分散処理が実現します。  
+# <a name="peer-to-peer-networking"></a><span data-ttu-id="21af5-102">ピアツーピア ネットワーク</span><span class="sxs-lookup"><span data-stu-id="21af5-102">Peer-to-Peer Networking</span></span>
+<span data-ttu-id="21af5-103">ピア チャネルとは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のマルチパーティ対応ピアツーピア (P2P) 通信技術です。</span><span class="sxs-lookup"><span data-stu-id="21af5-103">Peer Channel is a multiparty, peer-to-peer (P2P) communication technology in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span></span> <span data-ttu-id="21af5-104">この技術によって、アプリケーション開発者は安全で拡張可能なメッセージ ベースの P2P 通信チャネルを利用できます。</span><span class="sxs-lookup"><span data-stu-id="21af5-104">It provides a secure and scalable message-based P2P communication channel for application developers.</span></span> <span data-ttu-id="21af5-105">ピア チャネルのメリットを活用するマルチパーティ アプリケーションの一般的な例は、チャットなどの共同作業アプリケーションです。チャットでは、ユーザーのグループがサーバーなしのピアツーピア方式で互いに会話します。</span><span class="sxs-lookup"><span data-stu-id="21af5-105">One common example of a multiparty application that can benefit from Peer Channel is a collaborative application, such as chat, where a group of people chat with one another in a peer-to-peer manner without servers.</span></span> <span data-ttu-id="21af5-106">ピア チャネルを使用することで、顧客シナリオや企業シナリオでの P2P コラボレーション、コンテンツ配布、負荷分散、および分散処理が実現します。</span><span class="sxs-lookup"><span data-stu-id="21af5-106">Peer Channel enables P2P collaboration, content distribution, load balancing, and distributed processing for both consumer and enterprise scenarios.</span></span>  
   
- [!INCLUDE[wv](../../../../includes/wv-md.md)] では、すべての [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と同様に、既定でピア チャネルが有効になっています。  ピア チャネルのクラスにアクセスするには、プロジェクトに System.ServiceModel.dll への参照を追加します。  
+ <span data-ttu-id="21af5-107">[!INCLUDE[wv](../../../../includes/wv-md.md)] では、すべての [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と同様に、既定でピア チャネルが有効になっています。</span><span class="sxs-lookup"><span data-stu-id="21af5-107">Peer Channel is enabled by default on [!INCLUDE[wv](../../../../includes/wv-md.md)], as is all of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span> <span data-ttu-id="21af5-108">ピア チャネルのクラスにアクセスするには、プロジェクトに System.ServiceModel.dll への参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="21af5-108">To access Peer Channel classes, add references to System.ServiceModel.dll to your project.</span></span>  
   
- 次の各セクションには、ピアツーピア ネットワークに関する情報と、ピア チャネルのクラスを使用してピア対応のネットワーク アプリケーションを作成する方法が記載されています。  
+ <span data-ttu-id="21af5-109">次の各セクションには、ピアツーピア ネットワークに関する情報と、ピア チャネルのクラスを使用してピア対応のネットワーク アプリケーションを作成する方法が記載されています。</span><span class="sxs-lookup"><span data-stu-id="21af5-109">The following sections contain information about peer-to-peer networking and the use of Peer Channel classes to create peer-enabled network applications.</span></span>  
   
-## このセクションの内容  
- [ピア チャネルのシナリオ](../../../../docs/framework/wcf/feature-details/peer-channel-scenarios.md): パブリケーション\/サブスクリプション メッセージング、コラボレーション、分散処理、ゲームなど、ピア チャネル API でサポートされる開発シナリオを紹介します。  
+## <a name="in-this-section"></a><span data-ttu-id="21af5-110">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="21af5-110">In This Section</span></span>  
+ <span data-ttu-id="21af5-111">[ピア チャネルのシナリオ](../../../../docs/framework/wcf/feature-details/peer-channel-scenarios.md): パブリケーション/サブスクリプション メッセージング、コラボレーション、分散処理、ゲームなど、ピア チャネル Api でサポートされる開発シナ リオをについて説明します。</span><span class="sxs-lookup"><span data-stu-id="21af5-111">[Peer Channel Scenarios](../../../../docs/framework/wcf/feature-details/peer-channel-scenarios.md):  Describes development scenarios supported by the Peer Channel APIs, such as publication/subscription messaging, collaboration, distributed processing, and gaming.</span></span>  
   
- [ピア チャネルの概要](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md): ピア メッシュ、ピア ノード、ピア チャネルのセキュリティ、およびピア リゾルバーについて説明します。  
+ <span data-ttu-id="21af5-112">[ピア チャネルの概念](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md): 説明がピア メッシュ、ピア ノード、ピア チャネルのセキュリティ、およびピア リゾルバー。</span><span class="sxs-lookup"><span data-stu-id="21af5-112">[Peer Channel Concepts](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md):  Describes Peer Meshes, Peer Nodes, Peer Channel security, and Peer Resolvers.</span></span>  
   
- [ピア チャネル アプリケーションの構築](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md): ピア チャネル アプリケーションの開発に関するガイダンスを示します。  
+ <span data-ttu-id="21af5-113">[ピア チャネル アプリケーションの構築](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md): ピア チャネル アプリケーションの開発に関するガイダンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="21af5-113">[Building a Peer Channel Application](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md):  Provides guidance on developing Peer Channel applications.</span></span>  
   
-## ピア チャネルのコード例  
- [ピア チャネル カスタム ピア リゾルバー](http://msdn.microsoft.com/ja-jp/5b75a2bb-7ff1-4a14-abe7-3debf0537d23)  
+## <a name="peer-channel-code-examples"></a><span data-ttu-id="21af5-114">ピア チャネルのコード例</span><span class="sxs-lookup"><span data-stu-id="21af5-114">Peer Channel Code Examples</span></span>  
+ [<span data-ttu-id="21af5-115">ピア チャネル カスタム ピア リゾルバー</span><span class="sxs-lookup"><span data-stu-id="21af5-115">Peer Channel Custom Peer Resolver</span></span>](http://msdn.microsoft.com/en-us/5b75a2bb-7ff1-4a14-abe7-3debf0537d23)  
   
-## ピア チャネル チームのブログ  
- [ピア チャネル チームのブログ](http://go.microsoft.com/fwlink/?LinkID=114530) \(http:\/\/go.microsoft.com\/fwlink\/?LinkID\=114530\)
+## <a name="peer-channel-team-blog"></a><span data-ttu-id="21af5-116">ピア チャネル チームのブログ</span><span class="sxs-lookup"><span data-stu-id="21af5-116">Peer Channel Team blog</span></span>  
+ <span data-ttu-id="21af5-117">[ピア チャネル チームのブログ](http://go.microsoft.com/fwlink/?LinkID=114530)(http://go.microsoft.com/fwlink/?LinkID=114530)</span><span class="sxs-lookup"><span data-stu-id="21af5-117">[Peer Channel Team Blog](http://go.microsoft.com/fwlink/?LinkID=114530) (http://go.microsoft.com/fwlink/?LinkID=114530)</span></span>

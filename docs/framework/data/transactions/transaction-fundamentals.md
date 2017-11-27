@@ -1,33 +1,37 @@
 ---
-title: "トランザクションの基盤  | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "トランザクションの基礎"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 353f4ee2-e6bf-4b1c-b1c8-385fc8a486c0
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a21de968f5fbd241bd71169cf9f444b84c05b599
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# トランザクションの基盤 
-トランザクションとは、複数のタスクを互いに結合したものです。たとえば、あるアプリケーションが 2 つのタスクを実行するものとします。まず、このアプリケーションはデータベースに新しいテーブルを作成します。次に、データを収集、フォーマットし、新しく作成したテーブルに挿入する特定のオブジェクトを呼び出します。この 2 つのタスクは、単に関連しているだけでなく、相互に依存しており、たとえば、新しいテーブルにデータを格納できなければ新しいテーブルを作成しないようにできます。単一のトランザクションのスコープ内でこの 2 つのタスクを実行すると、両タスク間の結合が行われます。第 2 のタスクが失敗すると、新しいテーブルの作成以前の時点まで第 1 のタスクがロールバックされます。  
+# <a name="transaction-fundamentals"></a><span data-ttu-id="a3e7c-102">トランザクションの基礎</span><span class="sxs-lookup"><span data-stu-id="a3e7c-102">Transaction Fundamentals</span></span>
+<span data-ttu-id="a3e7c-103">トランザクションとは、複数のタスクを互いに結合したものです。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-103">Transactions bind multiple tasks together.</span></span> <span data-ttu-id="a3e7c-104">たとえば、あるアプリケーションが 2 つのタスクを実行するものとします。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-104">For example, imagine that an application performs two tasks.</span></span> <span data-ttu-id="a3e7c-105">まず、このアプリケーションはデータベースに新しいテーブルを作成します。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-105">First, it creates a new table in a database.</span></span> <span data-ttu-id="a3e7c-106">次に、データを収集、フォーマットし、新しく作成したテーブルに挿入する特定のオブジェクトを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-106">Next, it calls a specialized object to collect, format, and insert data into the new table.</span></span> <span data-ttu-id="a3e7c-107">この 2 つのタスクは、単に関連しているだけでなく、相互に依存しており、たとえば、新しいテーブルにデータを格納できなければ新しいテーブルを作成しないようにできます。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-107">These two tasks are related and even interdependent, such that you want to avoid creating a new table unless you can fill it with data.</span></span> <span data-ttu-id="a3e7c-108">単一のトランザクションのスコープ内でこの 2 つのタスクを実行すると、両タスク間の結合が行われます。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-108">Executing both tasks within the scope of a single transaction enforces the connection between them.</span></span> <span data-ttu-id="a3e7c-109">第 2 のタスクが失敗すると、新しいテーブルの作成以前の時点まで第 1 のタスクがロールバックされます。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-109">If the second task fails, the first task is rolled back to a point before the new table was created.</span></span>  
   
- 動作を予測できるようにするため、すべてのトランザクションは基本 ACID プロパティ \(atomic、consistent、isolated、および durable\) を持つ必要があります。これらのプロパティは、ミッション クリティカルなトランザクションの役割を悉無律型の命題として規定します。ACID の詳細については、「[ACID プロパティ](http://go.microsoft.com/fwlink/?LinkId=98791)」を参照してください。要約すると、ACID を使用すれば、一連の関連タスクを 1 つの単位として成功または失敗させることができます。トランザクション処理の用語でいえば、トランザクションはコミットされるか中止されるかのいずれかである、ということになります。トランザクションをコミットするためには、すべての参加要素が、データに対する変更は永続化されるということを保証する必要があります。システム クラッシュその他の予期しない出来事が発生した場合でも、変更は保持されます。この保証を履行しない参加要素が 1 つでもあると、トランザクション全体が失敗します。そのトランザクションのスコープ内でのデータに対するすべての変更が、特定の時点までロールバックされます。  
+ <span data-ttu-id="a3e7c-110">動作を予測できるようにするため、すべてのトランザクションは基本 ACID プロパティ (atomic、consistent、isolated、および durable) を持つ必要があります。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-110">To ensure predictable behavior, all transactions must possess the basic ACID properties (atomic, consistent, isolated, and durable).</span></span> <span data-ttu-id="a3e7c-111">これらのプロパティは、ミッション クリティカルなトランザクションの役割を悉無律型の命題として規定します。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-111">These properties reinforce the role of mission-critical transactions as all-or-none propositions.</span></span> <span data-ttu-id="a3e7c-112">ACID の詳細についてを参照してください[ACID プロパティ](http://go.microsoft.com/fwlink/?LinkId=98791)です。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-112">For more information on ACID, please see [ACID Properties](http://go.microsoft.com/fwlink/?LinkId=98791).</span></span> <span data-ttu-id="a3e7c-113">要約すると、ACID を使用すれば、一連の関連タスクを 1 つの単位として成功または失敗させることができます。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-113">In summary, ACID guarantees that a set of related tasks either succeed or fail as a unit.</span></span> <span data-ttu-id="a3e7c-114">トランザクション処理の用語でいえば、トランザクションはコミットされるか中止されるかのいずれかである、ということになります。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-114">In transaction processing terminology, the transaction either commits or aborts.</span></span> <span data-ttu-id="a3e7c-115">トランザクションをコミットするためには、すべての参加要素が、データに対する変更は永続化されるということを保証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-115">For a transaction to commit, all participants must guarantee that any change to data will be permanent.</span></span> <span data-ttu-id="a3e7c-116">システム クラッシュその他の予期しない出来事が発生した場合でも、変更は保持されます。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-116">Changes must persist despite system crashes or other unforeseen events.</span></span> <span data-ttu-id="a3e7c-117">この保証を履行しない参加要素が 1 つでもあると、トランザクション全体が失敗します。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-117">If even a single participant fails to make this guarantee, the entire transaction fails.</span></span> <span data-ttu-id="a3e7c-118">そのトランザクションのスコープ内でのデータに対するすべての変更が、特定の時点までロールバックされます。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-118">All changes to data within the scope of the transaction are rolled back to a specific set point.</span></span>  
   
- トランザクションは、データベースやメッセージ キューなどの単一のデータ リソースに収容することができます。このシナリオでは、ローカル トランザクションは、パフォーマンスを向上させる <xref:System.Transactions> が提供するトランザクション マネージャーによって管理されます。これらのトランザクションは、データ リソースによって制御されるため、効率的で管理しやすくなっています。  
+ <span data-ttu-id="a3e7c-119">トランザクションは、データベースやメッセージ キューなどの単一のデータ リソースに収容することができます。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-119">A transaction can be confined to a single data resource, such as a database or message queue.</span></span> <span data-ttu-id="a3e7c-120">このシナリオでは、ローカル トランザクションは、パフォーマンスを向上させる <xref:System.Transactions> が提供するトランザクション マネージャーによって管理されます。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-120">In this scenario, the local transaction is managed by the Transaction Manager provided by <xref:System.Transactions> , which generates performance gain.</span></span> <span data-ttu-id="a3e7c-121">これらのトランザクションは、データ リソースによって制御されるため、効率的で管理しやすくなっています。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-121">Controlled by the data resource, these transactions are efficient and easy to manage.</span></span>  
   
- さらに、トランザクションは複数のデータ リソースにまたがることもできます。分散トランザクションにより、さまざまなシステムで発生する複数の異なる操作を、単一の成功または失敗操作に統合することができます。このシナリオでは、トランザクションは、各システムに常駐する Microsoft 分散トランザクション コーディネーター \(MSDTC\) によって調整されます。  
+ <span data-ttu-id="a3e7c-122">さらに、トランザクションは複数のデータ リソースにまたがることもできます。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-122">Transactions can also span multiple data resources.</span></span> <span data-ttu-id="a3e7c-123">分散トランザクションにより、さまざまなシステムで発生する複数の異なる操作を、単一の成功または失敗操作に統合することができます。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-123">Distributed transactions give you the ability to incorporate several distinct operations occurring on different systems into a single pass or fail action.</span></span> <span data-ttu-id="a3e7c-124">このシナリオでは、トランザクションは、各システムに常駐する Microsoft 分散トランザクション コーディネーター (MSDTC) によって調整されます。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-124">In this scenario, the transactions are coordinated by the Microsoft Distributed Transaction Coordinator (MSDTC) that resides in each system.</span></span>  
   
- <xref:System.Transactions> の提供するクラスを使用してトランザクション アプリケーションを開発する際は、必要なトランザクションの種類や関連するトランザクション マネージャーを気にする必要はありません。<xref:System.Transactions> インフラストラクチャが自動的にこれらを管理します。  
+ <span data-ttu-id="a3e7c-125"><xref:System.Transactions> の提供するクラスを使用してトランザクション アプリケーションを開発する際は、必要なトランザクションの種類や関連するトランザクション マネージャーを気にする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-125">When you develop a transactional application using the classes provided by <xref:System.Transactions>, you do not need to worry about what kind of transactions you need, or the transaction manager involved.</span></span> <span data-ttu-id="a3e7c-126"><xref:System.Transactions> インフラストラクチャが自動的にこれらを管理します。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-126">The <xref:System.Transactions> infrastructure automatically manages these for you.</span></span>  
   
- トランザクションの作成時に、トランザクションに適用する分離レベルを指定できます。分離レベルは <xref:System.Transactions.IsolationLevel> クラスによって定義されます。分離レベルにより、特定のトランザクションの影響を受けるデータに対して他のトランザクションが持つアクセス レベルが決定されます。  
+ <span data-ttu-id="a3e7c-127">トランザクションの作成時に、トランザクションに適用する分離レベルを指定できます。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-127">When you create a transaction, you can specify the isolation level that applies to the transaction.</span></span> <span data-ttu-id="a3e7c-128">分離レベルは <xref:System.Transactions.IsolationLevel> クラスによって定義されます。分離レベルにより、特定のトランザクションの影響を受けるデータに対して他のトランザクションが持つアクセス レベルが決定されます。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-128">The isolation level, defined by the <xref:System.Transactions.IsolationLevel> class, determines what level of access other transactions will have to the data affected by your transaction.</span></span>  
   
- トランザクションの作成には、ADO.NET、<xref:System.EnterpriseServices>、または <xref:System.Transactions> 名前空間が提供する新しいトランザクション プログラミング モデルを使用できます。<xref:System.Transactions> 名前空間を使用してトランザクション アプリケーションを作成する際に使用できる機能については、「[System.Transactions で提供される機能 ](../../../../docs/framework/data/transactions/features-provided-by-system-transactions.md)」を参照してください。  
+ <span data-ttu-id="a3e7c-129">ADO.NET を使用してトランザクションを作成する<xref:System.EnterpriseServices>、または、トランザクション プログラミング モデルによって提供される、<xref:System.Transactions>名前空間。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-129">You can create transactions using ADO.NET, <xref:System.EnterpriseServices>, or the transactional programming model provided by the <xref:System.Transactions> namespace.</span></span> <span data-ttu-id="a3e7c-130">[System.Transactions によって提供される機能](../../../../docs/framework/data/transactions/features-provided-by-system-transactions.md)を使用して、トランザクション アプリケーションの記述に使用できる機能について説明、<xref:System.Transactions>名前空間。</span><span class="sxs-lookup"><span data-stu-id="a3e7c-130">The [Features Provided by System.Transactions](../../../../docs/framework/data/transactions/features-provided-by-system-transactions.md) topic discusses the features that you can use to write a transactional application using the <xref:System.Transactions> namespace.</span></span>  
   
-## 参照  
- [System.Transactions で提供される機能 ](../../../../docs/framework/data/transactions/features-provided-by-system-transactions.md)
+## <a name="see-also"></a><span data-ttu-id="a3e7c-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="a3e7c-131">See Also</span></span>  
+ [<span data-ttu-id="a3e7c-132">System.Transactions により提供される機能</span><span class="sxs-lookup"><span data-stu-id="a3e7c-132">Features Provided by System.Transactions</span></span>](../../../../docs/framework/data/transactions/features-provided-by-system-transactions.md)

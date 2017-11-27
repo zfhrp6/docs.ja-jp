@@ -1,211 +1,210 @@
 ---
-title: "CLR メソッドと正規関数とのマッピング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: "CLR メソッドと正規関数とのマッピング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e3363261-2cb8-4b54-9555-2870be99b929
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 5d1e6a1cc362663be3aa6c6084f658eba25dfe54
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# CLR メソッドと正規関数とのマッピング
-Entity Framework は、文字列操作、数学関数などの多くのデータベース システム間で共通の機能を実装する正規関数のセットを提供します。  この関数により、開発者は広範なデータベース システムをターゲットとして指定することができます。  LINQ to Entities などのクエリ テクノロジから呼び出されると、これらの正規関数は使用されているプロバイダーに対応した正しい格納関数に変換されます。  これにより、関数の呼び出しをデータ ソース間で共通の形式で表すことができ、データ ソース間に一貫した方法でクエリを利用できます。  オペランドが数値型である場合は、ビット単位の AND、OR、NOT、および XOR 演算子も正規関数にマップされます。ブール型のオペランドの場合、ビット単位の AND、OR、NOT、および XOR 演算子は、それぞれのオペランドの論理 AND、OR、NOT、および XOR 演算を計算します。  詳細については、「[正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)」を参照してください。  
+# <a name="clr-method-to-canonical-function-mapping"></a><span data-ttu-id="2b719-102">CLR メソッドと正規関数とのマッピング</span><span class="sxs-lookup"><span data-stu-id="2b719-102">CLR Method to Canonical Function Mapping</span></span>
+<span data-ttu-id="2b719-103">Entity Framework は、文字列操作、数学関数などの多くのデータベース システム間で共通の機能を実装する正規関数のセットを提供します。</span><span class="sxs-lookup"><span data-stu-id="2b719-103">The Entity Framework provides a set of canonical functions that implement functionality that is common across many database systems, such as string manipulation and mathematical functions.</span></span> <span data-ttu-id="2b719-104">この関数により、開発者は広範なデータベース システムをターゲットとして指定することができます。</span><span class="sxs-lookup"><span data-stu-id="2b719-104">This enables developers to target a broad range of database systems.</span></span> <span data-ttu-id="2b719-105">LINQ to Entities などのクエリ テクノロジから呼び出されると、これらの正規関数は使用されているプロバイダーに対応した正しい格納関数に変換されます。</span><span class="sxs-lookup"><span data-stu-id="2b719-105">When called from a querying technology, such as LINQ to Entities, these canonical functions are translated to the correct corresponding store function for the provider being used.</span></span> <span data-ttu-id="2b719-106">これにより、関数の呼び出しをデータ ソース間で共通の形式で表すことができ、データ ソース間に一貫した方法でクエリを利用できます。</span><span class="sxs-lookup"><span data-stu-id="2b719-106">This allows function invocations to be expressed in a common form across data sources, providing a consistent query experience across data sources.</span></span> <span data-ttu-id="2b719-107">オペランドが数値型である場合は、ビット単位の AND、OR、NOT、および XOR 演算子も正規関数にマップされます。</span><span class="sxs-lookup"><span data-stu-id="2b719-107">The bitwise AND, OR, NOT, and XOR operators are also mapped to canonical functions when the operand is a numeric type.</span></span> <span data-ttu-id="2b719-108">ブール型のオペランドの場合、ビット単位の AND、OR、NOT、および XOR 演算子は、それぞれのオペランドの論理 AND、OR、NOT、および XOR 演算を計算します。</span><span class="sxs-lookup"><span data-stu-id="2b719-108">For Boolean operands, the bitwise AND, OR, NOT, and XOR operators compute the logical AND, OR, NOT, and XOR operations of their operands.</span></span> <span data-ttu-id="2b719-109">詳細については、次を参照してください。[正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</span><span class="sxs-lookup"><span data-stu-id="2b719-109">For more information, see [Canonical Functions](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md).</span></span>  
   
- LINQ シナリオの場合、Entity Framework に対するクエリでは、正規関数による、基になるデータ ソース上のメソッドへの特定の CLR メソッドのマッピングも行われます。  正規関数に明示的にマップされない LINQ to Entities クエリで任意のメソッドの呼び出しが実行されると、ランタイムの <xref:System.NotSupportedException> 例外がスローされます。  
+ <span data-ttu-id="2b719-110">LINQ シナリオの場合、Entity Framework に対するクエリでは、正規関数による、基になるデータ ソース上のメソッドへの特定の CLR メソッドのマッピングも行われます。</span><span class="sxs-lookup"><span data-stu-id="2b719-110">For LINQ scenarios, queries against the Entity Framework involve mapping certain CLR methods to methods on the underlying data source through canonical functions.</span></span> <span data-ttu-id="2b719-111">正規関数に明示的にマップされない LINQ to Entities クエリで任意のメソッドの呼び出しが実行されると、ランタイムの <xref:System.NotSupportedException> 例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="2b719-111">Any method calls in a LINQ to Entities query that are not explicitly mapped to a canonical function will result in a runtime <xref:System.NotSupportedException> exception being thrown.</span></span>  
   
-## System.String メソッド \(静的\) のマッピング  
+## <a name="systemstring-method-static-mapping"></a><span data-ttu-id="2b719-112">System.String メソッド (静的) のマッピング</span><span class="sxs-lookup"><span data-stu-id="2b719-112">System.String Method (Static) Mapping</span></span>  
   
-|System.String メソッド \(静的\)|正規関数|  
-|-------------------------------|----------|  
-|System.String Concat\(String `str0`, String `str1`\)|Concat\(`str0`, `str1`\)|  
-|System.String Concat\(String `str0`, String `str1`, String `str2`\)|Concat\(Concat\(`str0`, `str1`\), `str2`\)|  
-|System.String Concat\(String `str0`, String `str1`, String `str2`, String `str03`\)|Concat\(Concat\(Concat\(`str0`, `str1`\), `str2`\), `str3`\)|  
-|Boolean Equals\(String `a`, String `b`\)|\= 演算子|  
-|Boolean IsNullOrEmpty\(String `value`\)|\(IsNull\(`value`\)\) OR Length\(`value`\) \= 0|  
-|Boolean op\_Equality\(String `a`, String `b`\)|\= 演算子|  
-|Boolean op\_Inequality\(String `a` , String `b`\)|\!\= 演算子|  
-|Microsoft.VisualBasic.Strings.Trim\(String `str`\)|Trim\(`str`\)|  
-|Microsoft.VisualBasic.Strings.LTrim\(String `str`\)|Ltrim\(`str`\)|  
-|Microsoft.VisualBasic.Strings.RTrim\(String `str`\)|Rtrim\(`str`\)|  
-|Microsoft.VisualBasic.Strings.Len\(String `expression`\)|Length\(`expression`\)|  
-|Microsoft.VisualBasic.Strings.Left\(String `str`, Int32 `Length`\)|Left\(`str`, `Length`\)|  
-|Microsoft.VisualBasic.Strings.Mid\(String `str`, Int32 `Start`, Int32 `Length`\)|Substring\(`str`, `Start`, `Length`\)|  
-|Microsoft.VisualBasic.Strings.Right\(String `str`, Int32 `Length`\)|Right\(`str`, `Length`\)|  
-|Microsoft.VisualBasic.Strings.UCase\(String `Value`\)|ToUpper\(`Value`\)|  
-|Microsoft.VisualBasic.Strings.LCase\(String Value\)|ToLower\(`Value`\)|  
+|<span data-ttu-id="2b719-113">System.String メソッド (静的)</span><span class="sxs-lookup"><span data-stu-id="2b719-113">System.String method (static)</span></span>|<span data-ttu-id="2b719-114">正規関数</span><span class="sxs-lookup"><span data-stu-id="2b719-114">Canonical function</span></span>|  
+|-------------------------------------|------------------------|  
+|<span data-ttu-id="2b719-115">System.String Concat(String `str0`, String `str1`)</span><span class="sxs-lookup"><span data-stu-id="2b719-115">System.String Concat(String `str0`, String `str1`)</span></span>|<span data-ttu-id="2b719-116">Concat(`str0`, `str1`)</span><span class="sxs-lookup"><span data-stu-id="2b719-116">Concat(`str0`, `str1`)</span></span>|  
+|<span data-ttu-id="2b719-117">System.String Concat(String `str0`, String `str1`, String `str2`)</span><span class="sxs-lookup"><span data-stu-id="2b719-117">System.String Concat(String `str0`, String `str1`, String `str2`)</span></span>|<span data-ttu-id="2b719-118">Concat(Concat(`str0`, `str1`), `str2`)</span><span class="sxs-lookup"><span data-stu-id="2b719-118">Concat(Concat(`str0`, `str1`), `str2`)</span></span>|  
+|<span data-ttu-id="2b719-119">System.String Concat(String `str0`, String `str1`, String `str2`, String `str03`)</span><span class="sxs-lookup"><span data-stu-id="2b719-119">System.String Concat(String `str0`, String `str1`, String `str2`, String `str03`)</span></span>|<span data-ttu-id="2b719-120">Concat(Concat(Concat(`str0`, `str1`), `str2`), `str3`)</span><span class="sxs-lookup"><span data-stu-id="2b719-120">Concat(Concat(Concat(`str0`, `str1`), `str2`), `str3`)</span></span>|  
+|<span data-ttu-id="2b719-121">Boolean Equals(String `a`, String `b`)</span><span class="sxs-lookup"><span data-stu-id="2b719-121">Boolean Equals(String `a`, String `b`)</span></span>|<span data-ttu-id="2b719-122">= 演算子</span><span class="sxs-lookup"><span data-stu-id="2b719-122">= operator</span></span>|  
+|<span data-ttu-id="2b719-123">Boolean IsNullOrEmpty(String `value`)</span><span class="sxs-lookup"><span data-stu-id="2b719-123">Boolean IsNullOrEmpty(String `value`)</span></span>|<span data-ttu-id="2b719-124">(IsNull(`value`)) OR Length(`value`) = 0</span><span class="sxs-lookup"><span data-stu-id="2b719-124">(IsNull(`value`)) OR Length(`value`) = 0</span></span>|  
+|<span data-ttu-id="2b719-125">Boolean op_Equality(String `a`, String `b`)</span><span class="sxs-lookup"><span data-stu-id="2b719-125">Boolean op_Equality(String `a`, String `b`)</span></span>|<span data-ttu-id="2b719-126">= 演算子</span><span class="sxs-lookup"><span data-stu-id="2b719-126">= operator</span></span>|  
+|<span data-ttu-id="2b719-127">Boolean op_Inequality(String `a` , String `b`)</span><span class="sxs-lookup"><span data-stu-id="2b719-127">Boolean op_Inequality(String `a` , String `b`)</span></span>|<span data-ttu-id="2b719-128">!= 演算子</span><span class="sxs-lookup"><span data-stu-id="2b719-128">!= operator</span></span>|  
+|<span data-ttu-id="2b719-129">Microsoft.VisualBasic.Strings.Trim(String `str`)</span><span class="sxs-lookup"><span data-stu-id="2b719-129">Microsoft.VisualBasic.Strings.Trim(String `str`)</span></span>|<span data-ttu-id="2b719-130">Trim(`str`)</span><span class="sxs-lookup"><span data-stu-id="2b719-130">Trim(`str`)</span></span>|  
+|<span data-ttu-id="2b719-131">Microsoft.VisualBasic.Strings.LTrim(String `str`)</span><span class="sxs-lookup"><span data-stu-id="2b719-131">Microsoft.VisualBasic.Strings.LTrim(String `str`)</span></span>|<span data-ttu-id="2b719-132">Ltrim(`str`)</span><span class="sxs-lookup"><span data-stu-id="2b719-132">Ltrim(`str`)</span></span>|  
+|<span data-ttu-id="2b719-133">Microsoft.VisualBasic.Strings.RTrim(String `str`)</span><span class="sxs-lookup"><span data-stu-id="2b719-133">Microsoft.VisualBasic.Strings.RTrim(String `str`)</span></span>|<span data-ttu-id="2b719-134">Rtrim(`str`)</span><span class="sxs-lookup"><span data-stu-id="2b719-134">Rtrim(`str`)</span></span>|  
+|<span data-ttu-id="2b719-135">Microsoft.VisualBasic.Strings.Len(String `expression`)</span><span class="sxs-lookup"><span data-stu-id="2b719-135">Microsoft.VisualBasic.Strings.Len(String `expression`)</span></span>|<span data-ttu-id="2b719-136">Length(`expression`)</span><span class="sxs-lookup"><span data-stu-id="2b719-136">Length(`expression`)</span></span>|  
+|<span data-ttu-id="2b719-137">Microsoft.VisualBasic.Strings.Left(String `str`, Int32 `Length`)</span><span class="sxs-lookup"><span data-stu-id="2b719-137">Microsoft.VisualBasic.Strings.Left(String `str`, Int32 `Length`)</span></span>|<span data-ttu-id="2b719-138">Left(`str`, `Length`)</span><span class="sxs-lookup"><span data-stu-id="2b719-138">Left(`str`, `Length`)</span></span>|  
+|<span data-ttu-id="2b719-139">Microsoft.VisualBasic.Strings.Mid(String `str`, Int32 `Start`, Int32 `Length`)</span><span class="sxs-lookup"><span data-stu-id="2b719-139">Microsoft.VisualBasic.Strings.Mid(String `str`, Int32 `Start`, Int32 `Length`)</span></span>|<span data-ttu-id="2b719-140">Substring(`str`, `Start`, `Length`)</span><span class="sxs-lookup"><span data-stu-id="2b719-140">Substring(`str`, `Start`, `Length`)</span></span>|  
+|<span data-ttu-id="2b719-141">Microsoft.VisualBasic.Strings.Right(String `str`, Int32 `Length`)</span><span class="sxs-lookup"><span data-stu-id="2b719-141">Microsoft.VisualBasic.Strings.Right(String `str`, Int32 `Length`)</span></span>|<span data-ttu-id="2b719-142">Right(`str`, `Length`)</span><span class="sxs-lookup"><span data-stu-id="2b719-142">Right(`str`, `Length`)</span></span>|  
+|<span data-ttu-id="2b719-143">Microsoft.VisualBasic.Strings.UCase(String `Value`)</span><span class="sxs-lookup"><span data-stu-id="2b719-143">Microsoft.VisualBasic.Strings.UCase(String `Value`)</span></span>|<span data-ttu-id="2b719-144">ToUpper(`Value`)</span><span class="sxs-lookup"><span data-stu-id="2b719-144">ToUpper(`Value`)</span></span>|  
+|<span data-ttu-id="2b719-145">Microsoft.VisualBasic.Strings.LCase(String Value)</span><span class="sxs-lookup"><span data-stu-id="2b719-145">Microsoft.VisualBasic.Strings.LCase(String Value)</span></span>|<span data-ttu-id="2b719-146">ToLower(`Value`)</span><span class="sxs-lookup"><span data-stu-id="2b719-146">ToLower(`Value`)</span></span>|  
   
-## System.String メソッド \(インスタンス\) のマッピング  
+## <a name="systemstring-method-instance-mapping"></a><span data-ttu-id="2b719-147">System.String メソッド (インスタンス) のマッピング</span><span class="sxs-lookup"><span data-stu-id="2b719-147">System.String Method (Instance) Mapping</span></span>  
   
-|System.String メソッド \(インスタンス\)|正規関数|メモ|  
-|-----------------------------------|----------|--------|  
-|Boolean Contains\(String `value`\)|`this` LIKE '%`value`%'|`value` が定数ではない場合、IndexOf\(`this`, `value`\) \> 0 にマップされます。|  
-|Boolean EndsWith\(String `value`\)|`this` LIKE `'`%`value`'|`value` が定数ではない場合、Right\(`this`, length\(`value`\)\) \= `value` にマップされます。|  
-|Boolean StartsWith\(String `value`\)|`this` LIKE '`value`%'|`value` が定数ではない場合、IndexOf\(`this`, `value`\) \= 1 にマップされます。|  
-|長さ|Length\(`this`\)||  
-|Int32 IndexOf\(String `value`\)|IndexOf\(`this`, `value`\) \- 1||  
-|System.String Insert\(Int32 `startIndex`, String `value`\)|Concat\(Concat\(Substring\(`this`, 1, `startIndex`\), `value`\), Substring\(`this`, `startIndex`\+1, Length\(`this`\) \- `startIndex`\)\)||  
-|System.String Remove\(Int32 `startIndex`\)|Substring\(`this`, 1, `startIndex`\)||  
-|System.String Remove\(Int32 `startIndex`, Int32 `count`\)|Concat\(Substring\(`this`, 1, `startIndex`\) , Substring\(`this`, `startIndex` \+ `count` \+1, Length\(`this`\) \- \(`startIndex` \+ `count`\)\)\)|`count` が 0 以上の整数である場合、サポートされるのは Remove\(`startIndex`, `count`\) だけです。|  
-|System.String Replace\(String `oldValue`, String `newValue`\)|Replace\(`this`, `oldValue`, `newValue`\)||  
-|System.String Substring\(Int32 `startIndex`\)|Substring\(`this`, `startIndex` \+1, Length\(`this`\) \- `startIndex`\)||  
-|System.String Substring\(Int32 `startIndex`, Int32 `length`\)|Substring\(`this`, `startIndex` \+1, `length`\)||  
-|System.String ToLower\(\)|ToLower\(`this`\)||  
-|System.String ToUpper\(\)|ToUpper\(`this`\)||  
-|System.String Trim\(\)|Trim\(`this`\)||  
-|System.String TrimEnd\(Char\[\] `trimChars`\)|RTrim\(`this`\)||  
-|System.String TrimStart\(Char\[\]`trimChars`\)|LTrim\(`this`\)||  
-|Boolean Equals\(String `value`\)|\= 演算子||  
+|<span data-ttu-id="2b719-148">System.String メソッド (インスタンス)</span><span class="sxs-lookup"><span data-stu-id="2b719-148">System.String method (instance)</span></span>|<span data-ttu-id="2b719-149">正規関数</span><span class="sxs-lookup"><span data-stu-id="2b719-149">Canonical function</span></span>|<span data-ttu-id="2b719-150">メモ</span><span class="sxs-lookup"><span data-stu-id="2b719-150">Notes</span></span>|  
+|---------------------------------------|------------------------|-----------|  
+|<span data-ttu-id="2b719-151">Boolean Contains(String `value`)</span><span class="sxs-lookup"><span data-stu-id="2b719-151">Boolean Contains(String `value`)</span></span>|<span data-ttu-id="2b719-152">`this` LIKE '%`value`%'</span><span class="sxs-lookup"><span data-stu-id="2b719-152">`this` LIKE '%`value`%'</span></span>|<span data-ttu-id="2b719-153">`value` が定数ではない場合、IndexOf(`this`, `value`) &gt; 0 にマップされます。</span><span class="sxs-lookup"><span data-stu-id="2b719-153">If `value` is not a constant, then this maps to IndexOf(`this`, `value`) > 0</span></span>|  
+|<span data-ttu-id="2b719-154">Boolean EndsWith(String `value`)</span><span class="sxs-lookup"><span data-stu-id="2b719-154">Boolean EndsWith(String `value`)</span></span>|<span data-ttu-id="2b719-155">`this`同様に`'` % `value`'</span><span class="sxs-lookup"><span data-stu-id="2b719-155">`this` LIKE `'`%`value`'</span></span>|<span data-ttu-id="2b719-156">`value` が定数ではない場合、Right(`this`, length(`value`)) = `value` にマップされます。</span><span class="sxs-lookup"><span data-stu-id="2b719-156">If `value` is not a constant, then this maps to Right(`this`, length(`value`)) = `value`.</span></span>|  
+|<span data-ttu-id="2b719-157">Boolean StartsWith(String `value`)</span><span class="sxs-lookup"><span data-stu-id="2b719-157">Boolean StartsWith(String `value`)</span></span>|<span data-ttu-id="2b719-158">`this` LIKE '`value`%'</span><span class="sxs-lookup"><span data-stu-id="2b719-158">`this` LIKE '`value`%'</span></span>|<span data-ttu-id="2b719-159">`value` が定数ではない場合、IndexOf(`this`, `value`) = 1 にマップされます。</span><span class="sxs-lookup"><span data-stu-id="2b719-159">If `value` is not a constant, then this maps to IndexOf(`this`, `value`) = 1.</span></span>|  
+|<span data-ttu-id="2b719-160">長さ</span><span class="sxs-lookup"><span data-stu-id="2b719-160">Length</span></span>|<span data-ttu-id="2b719-161">Length(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-161">Length(`this`)</span></span>||  
+|<span data-ttu-id="2b719-162">Int32 IndexOf(String `value`)</span><span class="sxs-lookup"><span data-stu-id="2b719-162">Int32 IndexOf(String `value`)</span></span>|<span data-ttu-id="2b719-163">IndexOf(`this`, `value`) - 1</span><span class="sxs-lookup"><span data-stu-id="2b719-163">IndexOf(`this`, `value`) - 1</span></span>||  
+|<span data-ttu-id="2b719-164">System.String Insert(Int32 `startIndex`, String `value`)</span><span class="sxs-lookup"><span data-stu-id="2b719-164">System.String Insert(Int32 `startIndex`, String `value`)</span></span>|<span data-ttu-id="2b719-165">Concat(Concat(Substring(`this`, 1, `startIndex`), `value`), Substring(`this`, `startIndex`+1, Length(`this`) - `startIndex`))</span><span class="sxs-lookup"><span data-stu-id="2b719-165">Concat(Concat(Substring(`this`, 1, `startIndex`), `value`), Substring(`this`, `startIndex`+1, Length(`this`) - `startIndex`))</span></span>||  
+|<span data-ttu-id="2b719-166">System.String Remove(Int32 `startIndex`)</span><span class="sxs-lookup"><span data-stu-id="2b719-166">System.String Remove(Int32 `startIndex`)</span></span>|<span data-ttu-id="2b719-167">Substring(`this`, 1, `startIndex`)</span><span class="sxs-lookup"><span data-stu-id="2b719-167">Substring(`this`, 1, `startIndex`)</span></span>||  
+|<span data-ttu-id="2b719-168">System.String Remove(Int32 `startIndex`, Int32 `count`)</span><span class="sxs-lookup"><span data-stu-id="2b719-168">System.String Remove(Int32 `startIndex`, Int32 `count`)</span></span>|<span data-ttu-id="2b719-169">Concat (部分文字列 (`this`、1、 `startIndex`)、部分文字列 (`this`、 `startIndex`  +  `count` +1、長さ (`this`)-(`startIndex` + `count`)))</span><span class="sxs-lookup"><span data-stu-id="2b719-169">Concat(Substring(`this`, 1, `startIndex`) , Substring(`this`, `startIndex` + `count` +1, Length(`this`) - (`startIndex` + `count`)))</span></span>|<span data-ttu-id="2b719-170">`startIndex` が 0 以上の整数である場合、サポートされるのは Remove(`count`, `count`) だけです。</span><span class="sxs-lookup"><span data-stu-id="2b719-170">Remove(`startIndex`, `count`) is only supported if `count` is an integer greater than or equal to 0.</span></span>|  
+<span data-ttu-id="2b719-171">システムです。文字列の置換 (文字列`oldValue`、文字列`newValue`)</span><span class="sxs-lookup"><span data-stu-id="2b719-171">ystem.String Replace(String `oldValue`, String `newValue`)</span></span>|<span data-ttu-id="2b719-172">Replace(`this`, `oldValue`, `newValue`)</span><span class="sxs-lookup"><span data-stu-id="2b719-172">Replace(`this`, `oldValue`, `newValue`)</span></span>||  
+|<span data-ttu-id="2b719-173">System.String Substring(Int32 `startIndex`)</span><span class="sxs-lookup"><span data-stu-id="2b719-173">System.String Substring(Int32 `startIndex`)</span></span>|<span data-ttu-id="2b719-174">Substring(`this`, `startIndex` +1, Length(`this`) - `startIndex`)</span><span class="sxs-lookup"><span data-stu-id="2b719-174">Substring(`this`, `startIndex` +1, Length(`this`) - `startIndex`)</span></span>||  
+|<span data-ttu-id="2b719-175">System.String Substring(Int32 `startIndex`, Int32 `length`)</span><span class="sxs-lookup"><span data-stu-id="2b719-175">System.String Substring(Int32 `startIndex`, Int32 `length`)</span></span>|<span data-ttu-id="2b719-176">部分文字列 (`this`、 `startIndex` +1 `length`)</span><span class="sxs-lookup"><span data-stu-id="2b719-176">Substring(`this`, `startIndex` +1, `length`)</span></span>||  
+|<span data-ttu-id="2b719-177">System.String ToLower()</span><span class="sxs-lookup"><span data-stu-id="2b719-177">System.String ToLower()</span></span>|<span data-ttu-id="2b719-178">ToLower(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-178">ToLower(`this`)</span></span>||  
+|<span data-ttu-id="2b719-179">System.String ToUpper()</span><span class="sxs-lookup"><span data-stu-id="2b719-179">System.String ToUpper()</span></span>|<span data-ttu-id="2b719-180">ToUpper(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-180">ToUpper(`this`)</span></span>||  
+|<span data-ttu-id="2b719-181">System.String Trim()</span><span class="sxs-lookup"><span data-stu-id="2b719-181">System.String Trim()</span></span>|<span data-ttu-id="2b719-182">Trim(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-182">Trim(`this`)</span></span>||  
+|<span data-ttu-id="2b719-183">System.String TrimEnd(Char[] `trimChars`)</span><span class="sxs-lookup"><span data-stu-id="2b719-183">System.String TrimEnd(Char[] `trimChars`)</span></span>|<span data-ttu-id="2b719-184">RTrim(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-184">RTrim(`this`)</span></span>||  
+|<span data-ttu-id="2b719-185">System.String TrimStart(Char[]`trimChars`)</span><span class="sxs-lookup"><span data-stu-id="2b719-185">System.String TrimStart(Char[]`trimChars`)</span></span>|<span data-ttu-id="2b719-186">LTrim(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-186">LTrim(`this`)</span></span>||  
+|<span data-ttu-id="2b719-187">Boolean Equals(String `value`)</span><span class="sxs-lookup"><span data-stu-id="2b719-187">Boolean Equals(String `value`)</span></span>|<span data-ttu-id="2b719-188">= 演算子</span><span class="sxs-lookup"><span data-stu-id="2b719-188">= operator</span></span>||  
   
-## System.DateTime メソッド \(静的\) のマッピング  
+## <a name="systemdatetime-method-static-mapping"></a><span data-ttu-id="2b719-189">System.DateTime メソッド (静的) のマッピング</span><span class="sxs-lookup"><span data-stu-id="2b719-189">System.DateTime Method (Static) Mapping</span></span>  
   
-|System.DateTime メソッド \(静的\)|正規関数|メモ|  
-|---------------------------------|----------|--------|  
-|Boolean Equals\(DateTime `t1`, DateTime `t2`\)|\= 演算子||  
-|System.DateTime.Now|CurrentDateTime\(\)||  
-|System.DateTime.UtcNow|CurrentUtcDateTime\(\)||  
-|Boolean op\_Equality\(DateTime `d1`, DateTime `d2`\)|\= 演算子||  
-|Boolean op\_GreaterThan\(DateTime `t1`, DateTime `t2`\)|\> 演算子||  
-|Boolean op\_GreaterThanOrEqual\(DateTime `t1`, DateTime `t2`\)|\>\= 演算子||  
-|Boolean op\_Inequality\(DateTime `t1`, DateTime `t2`\)|\!\= 演算子||  
-|Boolean op\_LessThan\(DateTime `t1`, DateTime `t2`\)|\< 演算子||  
-|Boolean op\_LessThanOrEqual\(DateTime `t1`, DateTime `t2`\)|\<\= 演算子||  
-|Microsoft.VisualBasic.DateAndTime.DatePart\( \_<br /><br /> ByVal `Interval` As DateInterval, \_<br /><br /> ByVal `DateValue` As DateTime, \_<br /><br /> Optional ByVal `FirstDayOfWeekValue` As FirstDayOfWeek \= VbSunday, \_<br /><br /> Optional ByVal `FirstWeekOfYearValue` As FirstWeekOfYear \= VbFirstJan1 \_<br /><br /> \) As Integer||詳細については、「DatePart 関数」を参照してください。|  
-|Microsoft.VisualBasic.DateAndTime.Now|CurrentDateTime\(\)||  
-|Microsoft.VisualBasic.DateAndTime.Year\(DateTime `TimeValue`\)|Year\(\)||  
-|Microsoft.VisualBasic.DateAndTime.Month\(DateTime `TimeValue`\)|Month\(\)||  
-|Microsoft.VisualBasic.DateAndTime.Day\(DateTime `TimeValue`\)|Day\(\)||  
-|Microsoft.VisualBasic.DateAndTime.Hour\(DateTime `TimeValue`\)|Hour\(\)||  
-|Microsoft.VisualBasic.DateAndTime.Minute\(DateTime `TimeValue`\)|Minute\(\)||  
-|Microsoft.VisualBasic.DateAndTime.Second\(DateTime `TimeValue`\)|Second\(\)||  
+|<span data-ttu-id="2b719-190">System.DateTime メソッド (静的)</span><span class="sxs-lookup"><span data-stu-id="2b719-190">System.DateTime method (static)</span></span>|<span data-ttu-id="2b719-191">正規関数</span><span class="sxs-lookup"><span data-stu-id="2b719-191">Canonical function</span></span>|<span data-ttu-id="2b719-192">メモ</span><span class="sxs-lookup"><span data-stu-id="2b719-192">Notes</span></span>|  
+|---------------------------------------|------------------------|-----------|  
+|<span data-ttu-id="2b719-193">Boolean Equals(DateTime `t1`, DateTime `t2`)</span><span class="sxs-lookup"><span data-stu-id="2b719-193">Boolean Equals(DateTime `t1`, DateTime `t2`)</span></span>|<span data-ttu-id="2b719-194">= 演算子</span><span class="sxs-lookup"><span data-stu-id="2b719-194">= operator</span></span>||  
+|<span data-ttu-id="2b719-195">System.DateTime.Now</span><span class="sxs-lookup"><span data-stu-id="2b719-195">System.DateTime.Now</span></span>|<span data-ttu-id="2b719-196">CurrentDateTime()</span><span class="sxs-lookup"><span data-stu-id="2b719-196">CurrentDateTime()</span></span>||  
+|<span data-ttu-id="2b719-197">System.DateTime.UtcNow</span><span class="sxs-lookup"><span data-stu-id="2b719-197">System.DateTime.UtcNow</span></span>|<span data-ttu-id="2b719-198">CurrentUtcDateTime()</span><span class="sxs-lookup"><span data-stu-id="2b719-198">CurrentUtcDateTime()</span></span>||  
+|<span data-ttu-id="2b719-199">Boolean op_Equality(DateTime `d1`, DateTime `d2`)</span><span class="sxs-lookup"><span data-stu-id="2b719-199">Boolean op_Equality(DateTime `d1`, DateTime `d2`)</span></span>|<span data-ttu-id="2b719-200">= 演算子</span><span class="sxs-lookup"><span data-stu-id="2b719-200">= operator</span></span>||  
+|<span data-ttu-id="2b719-201">Boolean op_GreaterThan(DateTime `t1`, DateTime `t2`)</span><span class="sxs-lookup"><span data-stu-id="2b719-201">Boolean op_GreaterThan(DateTime `t1`, DateTime `t2`)</span></span>|<span data-ttu-id="2b719-202">> 演算子</span><span class="sxs-lookup"><span data-stu-id="2b719-202">> operator</span></span>||  
+|<span data-ttu-id="2b719-203">Boolean op_GreaterThanOrEqual(DateTime `t1`, DateTime `t2`)</span><span class="sxs-lookup"><span data-stu-id="2b719-203">Boolean op_GreaterThanOrEqual(DateTime `t1`, DateTime `t2`)</span></span>|<span data-ttu-id="2b719-204">>= 演算子</span><span class="sxs-lookup"><span data-stu-id="2b719-204">>= operator</span></span>||  
+|<span data-ttu-id="2b719-205">Boolean op_Inequality(DateTime `t1`, DateTime `t2`)</span><span class="sxs-lookup"><span data-stu-id="2b719-205">Boolean op_Inequality(DateTime `t1`, DateTime `t2`)</span></span>|<span data-ttu-id="2b719-206">!= 演算子</span><span class="sxs-lookup"><span data-stu-id="2b719-206">!= operator</span></span>||  
+|<span data-ttu-id="2b719-207">ブール op_LessThan (DateTime `t1`、DateTime `t2`)</span><span class="sxs-lookup"><span data-stu-id="2b719-207">Boolean op_LessThan(DateTime `t1`, DateTime `t2`)</span></span>|<span data-ttu-id="2b719-208">< 演算子</span><span class="sxs-lookup"><span data-stu-id="2b719-208">< operator</span></span>||  
+|<span data-ttu-id="2b719-209">Boolean op_LessThanOrEqual(DateTime `t1`, DateTime `t2`)</span><span class="sxs-lookup"><span data-stu-id="2b719-209">Boolean op_LessThanOrEqual(DateTime `t1`, DateTime `t2`)</span></span>|<span data-ttu-id="2b719-210"><= 演算子</span><span class="sxs-lookup"><span data-stu-id="2b719-210"><= operator</span></span>||  
+|<span data-ttu-id="2b719-211">Microsoft.VisualBasic.DateAndTime.DatePart( _</span><span class="sxs-lookup"><span data-stu-id="2b719-211">Microsoft.VisualBasic.DateAndTime.DatePart( _</span></span><br /><br /> <span data-ttu-id="2b719-212">ByVal `Interval` DateInterval、として\_</span><span class="sxs-lookup"><span data-stu-id="2b719-212">ByVal `Interval` As DateInterval, \_</span></span><br /><br /> <span data-ttu-id="2b719-213">ByVal `DateValue` 、DateTime として\_</span><span class="sxs-lookup"><span data-stu-id="2b719-213">ByVal `DateValue` As DateTime, \_</span></span><br /><br /> <span data-ttu-id="2b719-214">省略可能な ByVal `FirstDayOfWeekValue` FirstDayOfWeek として、曜日を =\_</span><span class="sxs-lookup"><span data-stu-id="2b719-214">Optional ByVal `FirstDayOfWeekValue` As FirstDayOfWeek = VbSunday, \_</span></span><br /><br /> <span data-ttu-id="2b719-215">省略可能な ByVal `FirstWeekOfYearValue` < として VbFirstJan1 を =\_</span><span class="sxs-lookup"><span data-stu-id="2b719-215">Optional ByVal `FirstWeekOfYearValue` As FirstWeekOfYear = VbFirstJan1 \_</span></span><br /><br /> <span data-ttu-id="2b719-216">) As Integer</span><span class="sxs-lookup"><span data-stu-id="2b719-216">) As Integer</span></span>||<span data-ttu-id="2b719-217">詳細については、「DatePart 関数」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="2b719-217">See the DatePart Function section for more information.</span></span>|  
+|<span data-ttu-id="2b719-218">Microsoft.VisualBasic.DateAndTime.Now</span><span class="sxs-lookup"><span data-stu-id="2b719-218">Microsoft.VisualBasic.DateAndTime.Now</span></span>|<span data-ttu-id="2b719-219">CurrentDateTime()</span><span class="sxs-lookup"><span data-stu-id="2b719-219">CurrentDateTime()</span></span>||  
+|<span data-ttu-id="2b719-220">Microsoft.VisualBasic.DateAndTime.Year(DateTime `TimeValue`)</span><span class="sxs-lookup"><span data-stu-id="2b719-220">Microsoft.VisualBasic.DateAndTime.Year(DateTime `TimeValue`)</span></span>|<span data-ttu-id="2b719-221">Year()</span><span class="sxs-lookup"><span data-stu-id="2b719-221">Year()</span></span>||  
+|<span data-ttu-id="2b719-222">Microsoft.VisualBasic.DateAndTime.Month(DateTime `TimeValue`)</span><span class="sxs-lookup"><span data-stu-id="2b719-222">Microsoft.VisualBasic.DateAndTime.Month(DateTime `TimeValue`)</span></span>|<span data-ttu-id="2b719-223">Month()</span><span class="sxs-lookup"><span data-stu-id="2b719-223">Month()</span></span>||  
+<span data-ttu-id="2b719-224">icrosoft です。VisualBasic.DateAndTime.Day (DateTime `TimeValue`)</span><span class="sxs-lookup"><span data-stu-id="2b719-224">icrosoft.VisualBasic.DateAndTime.Day(DateTime `TimeValue`)</span></span>|<span data-ttu-id="2b719-225">Day()</span><span class="sxs-lookup"><span data-stu-id="2b719-225">Day()</span></span>||  
+|<span data-ttu-id="2b719-226">Microsoft.VisualBasic.DateAndTime.Hour(DateTime `TimeValue`)</span><span class="sxs-lookup"><span data-stu-id="2b719-226">Microsoft.VisualBasic.DateAndTime.Hour(DateTime `TimeValue`)</span></span>|<span data-ttu-id="2b719-227">Hour()</span><span class="sxs-lookup"><span data-stu-id="2b719-227">Hour()</span></span>||  
+|<span data-ttu-id="2b719-228">Microsoft.VisualBasic.DateAndTime.Minute(DateTime `TimeValue`)</span><span class="sxs-lookup"><span data-stu-id="2b719-228">Microsoft.VisualBasic.DateAndTime.Minute(DateTime `TimeValue`)</span></span>|<span data-ttu-id="2b719-229">Minute()</span><span class="sxs-lookup"><span data-stu-id="2b719-229">Minute()</span></span>||  
+|<span data-ttu-id="2b719-230">Microsoft.VisualBasic.DateAndTime.Second(DateTime `TimeValue`)</span><span class="sxs-lookup"><span data-stu-id="2b719-230">Microsoft.VisualBasic.DateAndTime.Second(DateTime `TimeValue`)</span></span>|<span data-ttu-id="2b719-231">Second()</span><span class="sxs-lookup"><span data-stu-id="2b719-231">Second()</span></span>||  
   
-## System.DateTime メソッド \(インスタンス\) のマッピング  
+## <a name="systemdatetime-method-instance-mapping"></a><span data-ttu-id="2b719-232">System.DateTime メソッド (インスタンス) のマッピング</span><span class="sxs-lookup"><span data-stu-id="2b719-232">System.DateTime Method (Instance) Mapping</span></span>  
   
-|System.DateTime メソッド \(インスタンス\)|正規関数|  
-|-------------------------------------|----------|  
-|Boolean Equals\(DateTime `value`\)|\= 演算子|  
-|Day|Day\(`this`\)|  
-|Hour|Hour\(`this`\)|  
-|Millisecond|Millisecond\(`this`\)|  
-|Minute|Minute\(`this`\)|  
-|月|Month\(`this`\)|  
-|Second|Second\(`this`\)|  
-|Year|Year\(`this`\)|  
+|<span data-ttu-id="2b719-233">System.DateTime メソッド (インスタンス)</span><span class="sxs-lookup"><span data-stu-id="2b719-233">System.DateTime method (instance)</span></span>|<span data-ttu-id="2b719-234">正規関数</span><span class="sxs-lookup"><span data-stu-id="2b719-234">Canonical function</span></span>|  
+|-----------------------------------------|------------------------|  
+|<span data-ttu-id="2b719-235">Boolean Equals(DateTime `value`)</span><span class="sxs-lookup"><span data-stu-id="2b719-235">Boolean Equals(DateTime `value`)</span></span>|<span data-ttu-id="2b719-236">= 演算子</span><span class="sxs-lookup"><span data-stu-id="2b719-236">= operator</span></span>|  
+|<span data-ttu-id="2b719-237">Day</span><span class="sxs-lookup"><span data-stu-id="2b719-237">Day</span></span>|<span data-ttu-id="2b719-238">Day(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-238">Day(`this`)</span></span>|  
+|<span data-ttu-id="2b719-239">Hour</span><span class="sxs-lookup"><span data-stu-id="2b719-239">Hour</span></span>|<span data-ttu-id="2b719-240">Hour(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-240">Hour(`this`)</span></span>|  
+|<span data-ttu-id="2b719-241">Millisecond</span><span class="sxs-lookup"><span data-stu-id="2b719-241">Millisecond</span></span>|<span data-ttu-id="2b719-242">Millisecond(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-242">Millisecond(`this`)</span></span>|  
+|<span data-ttu-id="2b719-243">Minute</span><span class="sxs-lookup"><span data-stu-id="2b719-243">Minute</span></span>|<span data-ttu-id="2b719-244">Minute(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-244">Minute(`this`)</span></span>|  
+|<span data-ttu-id="2b719-245">月</span><span class="sxs-lookup"><span data-stu-id="2b719-245">Month</span></span>|<span data-ttu-id="2b719-246">Month(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-246">Month(`this`)</span></span>|  
+|<span data-ttu-id="2b719-247">Second</span><span class="sxs-lookup"><span data-stu-id="2b719-247">Second</span></span>|<span data-ttu-id="2b719-248">Second(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-248">Second(`this`)</span></span>|  
+|<span data-ttu-id="2b719-249">Year</span><span class="sxs-lookup"><span data-stu-id="2b719-249">Year</span></span>|<span data-ttu-id="2b719-250">Year(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-250">Year(`this`)</span></span>|  
   
-## System.DateTimeOffset メソッド \(インスタンス\) のマッピング  
- 示されているプロパティに対する `get` メソッドのマッピングを示します。  
+## <a name="systemdatetimeoffset-method-instance-mapping"></a><span data-ttu-id="2b719-251">System.DateTimeOffset メソッド (インスタンス) のマッピング</span><span class="sxs-lookup"><span data-stu-id="2b719-251">System.DateTimeOffset Method (Instance) Mapping</span></span>  
+ <span data-ttu-id="2b719-252">示されているプロパティに対する `get` メソッドのマッピングを示します。</span><span class="sxs-lookup"><span data-stu-id="2b719-252">The mapping shown for the `get` methods on the listed properties.</span></span>  
   
-|System.DateTimeOffset メソッド \(インスタンス\)|正規関数|メモ|  
-|-------------------------------------------|----------|--------|  
-|Day|Day\(`this`\)|SQL Server 2005 ではサポートされません。|  
-|Hour|Hour\(`this`\)|SQL Server 2005 ではサポートされません。|  
-|Millisecond|Millisecond\(`this`\)|SQL Server 2005 ではサポートされません。|  
-|Minute|Minute\(`this`\)|SQL Server 2005 ではサポートされません。|  
-|月|Month\(`this`\)|SQL Server 2005 ではサポートされません。|  
-|Second|Second\(`this`\)|SQL Server 2005 ではサポートされません。|  
-|Year|Year\(`this`\)|SQL Server 2005 ではサポートされません。|  
-  
-> [!NOTE]
->  比較した <xref:System.DateTimeOffset> オブジェクトが等しい場合、<xref:System.DateTimeOffset.Equals%2A> メソッドは `true` を返します。それ以外の場合は `false` を返します。  比較した <xref:System.DateTimeOffset> オブジェクトが等しい、より大きい、またはより小さい場合、<xref:System.DateTimeOffset.CompareTo%2A> メソッドはそれぞれ 0、1、または \-1 を返します。  
-  
-## System.DateTimeOffset メソッド \(静的\) のマッピング  
- 示されているプロパティに対する `get` メソッドのマッピングを示します。  
-  
-|System.DateTimeOffset メソッド \(静的\)|正規関数|メモ|  
-|---------------------------------------|----------|--------|  
-|System.DateTimeOffset.Now\(\)|CurrentDateTimeOffset\(\)|SQL Server 2005 ではサポートされません。|  
-  
-## System.TimeSpan メソッド \(インスタンス\) のマッピング  
- 示されているプロパティに対する `get` メソッドのマッピングを示します。  
-  
-|System.TimeSpan メソッド \(インスタンス\)|正規関数|メモ|  
-|-------------------------------------|----------|--------|  
-|時間|Hour\(`this`\)|SQL Server 2005 ではサポートされません。|  
-|Milliseconds|Millisecond\(`this`\)|SQL Server 2005 ではサポートされません。|  
-|分|Minute\(`this`\)|SQL Server 2005 ではサポートされません。|  
-|Seconds|Second\(`this`\)|SQL Server 2005 ではサポートされません。|  
+|<span data-ttu-id="2b719-253">System.DateTimeOffset メソッド (インスタンス)</span><span class="sxs-lookup"><span data-stu-id="2b719-253">System.DateTimeOffset method (instance)</span></span>|<span data-ttu-id="2b719-254">正規関数</span><span class="sxs-lookup"><span data-stu-id="2b719-254">Canonical function</span></span>|<span data-ttu-id="2b719-255">メモ</span><span class="sxs-lookup"><span data-stu-id="2b719-255">Notes</span></span>|  
+|-----------------------------------------------|------------------------|-----------|  
+|<span data-ttu-id="2b719-256">Day</span><span class="sxs-lookup"><span data-stu-id="2b719-256">Day</span></span>|<span data-ttu-id="2b719-257">Day(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-257">Day(`this`)</span></span>|<span data-ttu-id="2b719-258">SQL Server 2005 ではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="2b719-258">Not supported against SQL Server 2005.</span></span>|  
+|<span data-ttu-id="2b719-259">Hour</span><span class="sxs-lookup"><span data-stu-id="2b719-259">Hour</span></span>|<span data-ttu-id="2b719-260">Hour(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-260">Hour(`this`)</span></span>|<span data-ttu-id="2b719-261">SQL Server 2005 ではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="2b719-261">Not supported against SQL Server 2005.</span></span>|  
+|<span data-ttu-id="2b719-262">Millisecond</span><span class="sxs-lookup"><span data-stu-id="2b719-262">Millisecond</span></span>|<span data-ttu-id="2b719-263">Millisecond(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-263">Millisecond(`this`)</span></span>|<span data-ttu-id="2b719-264">SQL Server 2005 ではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="2b719-264">Not supported against SQL Server 2005.</span></span>|  
+|<span data-ttu-id="2b719-265">Minute</span><span class="sxs-lookup"><span data-stu-id="2b719-265">Minute</span></span>|<span data-ttu-id="2b719-266">Minute(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-266">Minute(`this`)</span></span>|<span data-ttu-id="2b719-267">SQL Server 2005 ではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="2b719-267">Not supported against SQL Server 2005.</span></span>|  
+|<span data-ttu-id="2b719-268">月</span><span class="sxs-lookup"><span data-stu-id="2b719-268">Month</span></span>|<span data-ttu-id="2b719-269">Month(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-269">Month(`this`)</span></span>|<span data-ttu-id="2b719-270">SQL Server 2005 ではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="2b719-270">Not supported against SQL Server 2005.</span></span>|  
+|<span data-ttu-id="2b719-271">Second</span><span class="sxs-lookup"><span data-stu-id="2b719-271">Second</span></span>|<span data-ttu-id="2b719-272">Second(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-272">Second(`this`)</span></span>|<span data-ttu-id="2b719-273">SQL Server 2005 ではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="2b719-273">Not supported against SQL Server 2005.</span></span>|  
+|<span data-ttu-id="2b719-274">Year</span><span class="sxs-lookup"><span data-stu-id="2b719-274">Year</span></span>|<span data-ttu-id="2b719-275">Year(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-275">Year(`this`)</span></span>|<span data-ttu-id="2b719-276">SQL Server 2005 ではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="2b719-276">Not supported against SQL Server 2005.</span></span>|  
   
 > [!NOTE]
->  比較した <xref:System.TimeSpan> オブジェクトが等しい場合、<xref:System.TimeSpan.Equals%2A> メソッドは `true` を返します。それ以外の場合は `false` を返します。  比較した <xref:System.TimeSpan> オブジェクトが等しい、より大きい、またはより小さい場合、<xref:System.TimeSpan.CompareTo%2A> メソッドはそれぞれ 0、1、または \-1 を返します。  
+>  <span data-ttu-id="2b719-277">比較した <xref:System.DateTimeOffset.Equals%2A> オブジェクトが等しい場合、`true` メソッドは <xref:System.DateTimeOffset> を返します。それ以外の場合は `false` を返します。</span><span class="sxs-lookup"><span data-stu-id="2b719-277">The <xref:System.DateTimeOffset.Equals%2A> method returns `true` if the compared <xref:System.DateTimeOffset> objects are equal; `false` otherwise.</span></span> <span data-ttu-id="2b719-278">比較した <xref:System.DateTimeOffset.CompareTo%2A> オブジェクトが等しい、より大きい、またはより小さい場合、<xref:System.DateTimeOffset> メソッドはそれぞれ 0、1、または -1 を返します。</span><span class="sxs-lookup"><span data-stu-id="2b719-278">The <xref:System.DateTimeOffset.CompareTo%2A> method returns 0, 1, or -1 depending on whether the compared <xref:System.DateTimeOffset> object is equal, greater than, or less than, respectively.</span></span>  
   
-### DatePart 関数  
- `DatePart` 関数は、`Interval` の値に応じて、複数の異なる正規関数のいずれかにマップされます。  サポートされている各 `Interval` 値に対応する正規関数のマッピングを次の表に示します。  
+## <a name="systemdatetimeoffset-method-static-mapping"></a><span data-ttu-id="2b719-279">System.DateTimeOffset メソッド (静的) のマッピング</span><span class="sxs-lookup"><span data-stu-id="2b719-279">System.DateTimeOffset Method (Static) Mapping</span></span>  
+ <span data-ttu-id="2b719-280">示されているプロパティに対する `get` メソッドのマッピングを示します。</span><span class="sxs-lookup"><span data-stu-id="2b719-280">The mapping shown for the `get` methods on the listed properties.</span></span>  
   
-|Interval 値|正規関数|  
-|----------------|----------|  
-|DateInterval.Year|Year\(\)|  
-|DateInterval.Month|Month\(\)|  
-|DateInterval.Day|Day\(\)|  
-|DateInterval.Hour|Hour\(\)|  
-|DateInterval.Minute|Minute\(\)|  
-|DateInterval.Second|Second\(\)|  
+|<span data-ttu-id="2b719-281">System.DateTimeOffset メソッド (静的)</span><span class="sxs-lookup"><span data-stu-id="2b719-281">System.DateTimeOffset method (static)</span></span>|<span data-ttu-id="2b719-282">正規関数</span><span class="sxs-lookup"><span data-stu-id="2b719-282">Canonical function</span></span>|<span data-ttu-id="2b719-283">メモ</span><span class="sxs-lookup"><span data-stu-id="2b719-283">Notes</span></span>|  
+|---------------------------------------------|------------------------|-----------|  
+|<span data-ttu-id="2b719-284">System.DateTimeOffset.Now()</span><span class="sxs-lookup"><span data-stu-id="2b719-284">System.DateTimeOffset.Now()</span></span>|<span data-ttu-id="2b719-285">CurrentDateTimeOffset()</span><span class="sxs-lookup"><span data-stu-id="2b719-285">CurrentDateTimeOffset()</span></span>|<span data-ttu-id="2b719-286">SQL Server 2005 ではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="2b719-286">Not supported against SQL Server 2005.</span></span>|  
   
-## 数学関数のマッピング  
+## <a name="systemtimespan-method-instance-mapping"></a><span data-ttu-id="2b719-287">System.TimeSpan メソッド (インスタンス) のマッピング</span><span class="sxs-lookup"><span data-stu-id="2b719-287">System.TimeSpan Method (Instance) Mapping</span></span>  
+ <span data-ttu-id="2b719-288">示されているプロパティに対する `get` メソッドのマッピングを示します。</span><span class="sxs-lookup"><span data-stu-id="2b719-288">The mapping shown for the `get` methods on the listed properties.</span></span>  
   
-|CLR メソッド|正規関数|  
-|--------------|----------|  
-|System.Decimal.Ceiling\(Decimal `d`\)|Ceiling\(`d`\)|  
-|System.Decimal.Floor\(Decimal `d`\)|Floor\(`d`\)|  
-|System.Decimal.Round\(Decimal `d`\)|Round\(`d`\)|  
-|System.Math.Ceiling\(Decimal `d`\)|Ceiling\(`d`\)|  
-|System.Math.Floor\(Decimal `d`\)|Floor\(`d`\)|  
-|System.Math.Round\(Decimal `d`\)|Round\(`d`\)|  
-|System.Math.Ceiling\(Double `a`\)|Ceiling\(`a`\)|  
-|System.Math.Floor\(Double `a`\)|Floor\(`a`\)|  
-|System.Math.Round\(Double `a`\)|Round\(`a`\)|  
-|System.Math.Round\(Double value, Int16 digits\)|Round\(value, digits\)|  
-|System.Math.Round\(Double value, Int32 digits\)|Round\(value, digits\)|  
-|System.Math.Round\(Decimal value, Int16 digits\)|Round\(value, digits\)|  
-|System.Math.Round\(Decimal value, Int32, digits\)|Round\(value, digits\)|  
-|System.Math.Abs\(Int16 value\)|Abs\(value\)|  
-|System.Math.Abs\(Int32 value\)|Abs\(value\)|  
-|System.Math.Abs\(Int64 value\)|Abs\(value\)|  
-|System.Math.Abs\(Byte value\)|Abs\(value\)|  
-|System.Math.Abs\(Single value\)|Abs\(value\)|  
-|System.Math.Abs\(Double value\)|Abs\(value\)|  
-|System.Math.Abs\(Decimal value\)|Abs\(value\)|  
-|System.Math.Truncate\(Double value, Int16 digits\)|Truncate\(value, digits\)|  
-|System.Math.Truncate\(Double value, Int32 digits\)|Truncate\(value, digits\)|  
-|System.Math.Truncate\(Decimal value, Int16 digits\)|Truncate\(value, digits\)|  
-|System.Math.Truncate\(Decimal value, Int32 digits\)|Truncate\(value, digits\)|  
-|System.Math.Power\(Int32 value, Int64 exponent\)|Power\(value, exponent\)|  
-|System.Math.Power\(Int32 value, Double exponent\)|Power\(value, exponent\)|  
-|System.Math.Power\(Int32 value, Decimal exponent\)|Power\(value, exponent\)|  
-|System.Math.Power\(Int64 value, Int64 exponent\)|Power\(value, exponent\)|  
-|System.Math.Power\(Int64 value, Double exponent\)|Power\(value, exponent\)|  
-|System.Math.Power\(Int64 value, Decimal exponent\)|Power\(value, exponent\)|  
-|System.Math.Power\(Double value, Int64 exponent\)|Power\(value, exponent\)|  
-|System.Math.Power\(Double value, Double exponent\)|Power\(value, exponent\)|  
-|System.Math.Power\(Double value, Decimal exponent\)|Power\(value, exponent\)|  
-|System.Math.Power\(Decimal value, Int64 exponent\)|Power\(value, exponent\)|  
-|System.Math.Power\(Decimal value, Double exponent\)|Power\(value, exponent\)|  
-|System.Math.Power\(Decimal value, Decimal exponent\)|Power\(value, exponent\)|  
+|<span data-ttu-id="2b719-289">System.TimeSpan メソッド (インスタンス)</span><span class="sxs-lookup"><span data-stu-id="2b719-289">System.TimeSpan method (instance)</span></span>|<span data-ttu-id="2b719-290">正規関数</span><span class="sxs-lookup"><span data-stu-id="2b719-290">Canonical function</span></span>|<span data-ttu-id="2b719-291">メモ</span><span class="sxs-lookup"><span data-stu-id="2b719-291">Notes</span></span>|  
+|-----------------------------------------|------------------------|-----------|  
+|<span data-ttu-id="2b719-292">時間</span><span class="sxs-lookup"><span data-stu-id="2b719-292">Hours</span></span>|<span data-ttu-id="2b719-293">Hour(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-293">Hour(`this`)</span></span>|<span data-ttu-id="2b719-294">SQL Server 2005 ではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="2b719-294">Not supported against SQL Server 2005.</span></span>|  
+|<span data-ttu-id="2b719-295">Milliseconds</span><span class="sxs-lookup"><span data-stu-id="2b719-295">Milliseconds</span></span>|<span data-ttu-id="2b719-296">Millisecond(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-296">Millisecond(`this`)</span></span>|<span data-ttu-id="2b719-297">SQL Server 2005 ではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="2b719-297">Not supported against SQL Server 2005.</span></span>|  
+|<span data-ttu-id="2b719-298">分</span><span class="sxs-lookup"><span data-stu-id="2b719-298">Minutes</span></span>|<span data-ttu-id="2b719-299">Minute(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-299">Minute(`this`)</span></span>|<span data-ttu-id="2b719-300">SQL Server 2005 ではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="2b719-300">Not supported against SQL Server 2005.</span></span>|  
+|<span data-ttu-id="2b719-301">Seconds</span><span class="sxs-lookup"><span data-stu-id="2b719-301">Seconds</span></span>|<span data-ttu-id="2b719-302">Second(`this`)</span><span class="sxs-lookup"><span data-stu-id="2b719-302">Second(`this`)</span></span>|<span data-ttu-id="2b719-303">SQL Server 2005 ではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="2b719-303">Not supported against SQL Server 2005.</span></span>|  
   
-## ビット演算子のマッピング  
+> [!NOTE]
+>  <span data-ttu-id="2b719-304">比較した <xref:System.TimeSpan.Equals%2A> オブジェクトが等しい場合、`true` メソッドは <xref:System.TimeSpan> を返します。それ以外の場合は `false` を返します。</span><span class="sxs-lookup"><span data-stu-id="2b719-304">The <xref:System.TimeSpan.Equals%2A> method returns `true` if the compared <xref:System.TimeSpan> objects are equal; `false` otherwise.</span></span> <span data-ttu-id="2b719-305">比較した <xref:System.TimeSpan.CompareTo%2A> オブジェクトが等しい、より大きい、またはより小さい場合、<xref:System.TimeSpan> メソッドはそれぞれ 0、1、または -1 を返します。</span><span class="sxs-lookup"><span data-stu-id="2b719-305">The <xref:System.TimeSpan.CompareTo%2A> method returns 0, 1, or -1 depending on whether the compared <xref:System.TimeSpan> object is equal, greater than, or less than, respectively.</span></span>  
   
-|ビット演算子|非ブール型のオペランドの正規関数|ブール型のオペランドの正規関数|  
-|------------|----------------------|---------------------|  
-|ビット演算子 AND|BitWiseAnd|op1 AND op2|  
-|ビット演算子 OR|BitWiseOr|op1 OR op2|  
-|ビット演算子 NOT|BitWiseNot|NOT\(op\)|  
-|ビット演算子 XOR|BitWiseXor|\(\(op1 AND NOT\(op2\)\) OR \(NOT\(op1\) AND op2\)\)|  
+### <a name="datepart-function"></a><span data-ttu-id="2b719-306">DatePart 関数</span><span class="sxs-lookup"><span data-stu-id="2b719-306">DatePart Function</span></span>  
+ <span data-ttu-id="2b719-307">`DatePart` 関数は、`Interval` の値に応じて、複数の異なる正規関数のいずれかにマップされます。</span><span class="sxs-lookup"><span data-stu-id="2b719-307">The `DatePart` Function is mapped to one of several different canonical functions, depending on the value of `Interval`.</span></span> <span data-ttu-id="2b719-308">サポートされている各 `Interval` 値に対応する正規関数のマッピングを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="2b719-308">The following table displays the canonical function mapping for the supported values of `Interval`:</span></span>  
   
-## その他のマッピング  
+|<span data-ttu-id="2b719-309">Interval 値</span><span class="sxs-lookup"><span data-stu-id="2b719-309">Interval value</span></span>|<span data-ttu-id="2b719-310">正規関数</span><span class="sxs-lookup"><span data-stu-id="2b719-310">Canonical function</span></span>|  
+|--------------------|------------------------|  
+|<span data-ttu-id="2b719-311">DateInterval.Year</span><span class="sxs-lookup"><span data-stu-id="2b719-311">DateInterval.Year</span></span>|<span data-ttu-id="2b719-312">Year()</span><span class="sxs-lookup"><span data-stu-id="2b719-312">Year()</span></span>|  
+|<span data-ttu-id="2b719-313">DateInterval.Month</span><span class="sxs-lookup"><span data-stu-id="2b719-313">DateInterval.Month</span></span>|<span data-ttu-id="2b719-314">Month()</span><span class="sxs-lookup"><span data-stu-id="2b719-314">Month()</span></span>|  
+|<span data-ttu-id="2b719-315">DateInterval.Day</span><span class="sxs-lookup"><span data-stu-id="2b719-315">DateInterval.Day</span></span>|<span data-ttu-id="2b719-316">Day()</span><span class="sxs-lookup"><span data-stu-id="2b719-316">Day()</span></span>|  
+|<span data-ttu-id="2b719-317">DateInterval.Hour</span><span class="sxs-lookup"><span data-stu-id="2b719-317">DateInterval.Hour</span></span>|<span data-ttu-id="2b719-318">Hour()</span><span class="sxs-lookup"><span data-stu-id="2b719-318">Hour()</span></span>|  
+|<span data-ttu-id="2b719-319">DateInterval.Minute</span><span class="sxs-lookup"><span data-stu-id="2b719-319">DateInterval.Minute</span></span>|<span data-ttu-id="2b719-320">Minute()</span><span class="sxs-lookup"><span data-stu-id="2b719-320">Minute()</span></span>|  
+|<span data-ttu-id="2b719-321">DateInterval.Second</span><span class="sxs-lookup"><span data-stu-id="2b719-321">DateInterval.Second</span></span>|<span data-ttu-id="2b719-322">Second()</span><span class="sxs-lookup"><span data-stu-id="2b719-322">Second()</span></span>|  
   
-|メソッド|正規関数|  
-|----------|----------|  
-|Guid.NewGuid\(\)|NewGuid\(\)|  
+## <a name="mathematical-function-mapping"></a><span data-ttu-id="2b719-323">数学関数のマッピング</span><span class="sxs-lookup"><span data-stu-id="2b719-323">Mathematical Function Mapping</span></span>  
   
-## 参照  
- [LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)
+|<span data-ttu-id="2b719-324">CLR メソッド</span><span class="sxs-lookup"><span data-stu-id="2b719-324">CLR method</span></span>|<span data-ttu-id="2b719-325">正規関数</span><span class="sxs-lookup"><span data-stu-id="2b719-325">Canonical function</span></span>|  
+|----------------|------------------------|  
+|<span data-ttu-id="2b719-326">System.Decimal.Ceiling(Decimal `d`)</span><span class="sxs-lookup"><span data-stu-id="2b719-326">System.Decimal.Ceiling(Decimal `d`)</span></span>|<span data-ttu-id="2b719-327">Ceiling(`d`)</span><span class="sxs-lookup"><span data-stu-id="2b719-327">Ceiling(`d`)</span></span>|  
+|<span data-ttu-id="2b719-328">System.Decimal.Floor(Decimal `d`)</span><span class="sxs-lookup"><span data-stu-id="2b719-328">System.Decimal.Floor(Decimal `d`)</span></span>|<span data-ttu-id="2b719-329">Floor(`d`)</span><span class="sxs-lookup"><span data-stu-id="2b719-329">Floor(`d`)</span></span>|  
+|<span data-ttu-id="2b719-330">System.Decimal.Round(Decimal `d`)</span><span class="sxs-lookup"><span data-stu-id="2b719-330">System.Decimal.Round(Decimal `d`)</span></span>|<span data-ttu-id="2b719-331">Round(`d`)</span><span class="sxs-lookup"><span data-stu-id="2b719-331">Round(`d`)</span></span>|  
+|<span data-ttu-id="2b719-332">System.Math.Ceiling(Decimal `d`)</span><span class="sxs-lookup"><span data-stu-id="2b719-332">System.Math.Ceiling(Decimal `d`)</span></span>|<span data-ttu-id="2b719-333">Ceiling(`d`)</span><span class="sxs-lookup"><span data-stu-id="2b719-333">Ceiling(`d`)</span></span>|  
+|<span data-ttu-id="2b719-334">System.Math.Floor(Decimal `d`)</span><span class="sxs-lookup"><span data-stu-id="2b719-334">System.Math.Floor(Decimal `d`)</span></span>|<span data-ttu-id="2b719-335">Floor(`d`)</span><span class="sxs-lookup"><span data-stu-id="2b719-335">Floor(`d`)</span></span>|  
+|<span data-ttu-id="2b719-336">System.Math.Round(Decimal `d`)</span><span class="sxs-lookup"><span data-stu-id="2b719-336">System.Math.Round(Decimal `d`)</span></span>|<span data-ttu-id="2b719-337">Round(`d`)</span><span class="sxs-lookup"><span data-stu-id="2b719-337">Round(`d`)</span></span>|  
+|<span data-ttu-id="2b719-338">System.Math.Ceiling(Double `a`)</span><span class="sxs-lookup"><span data-stu-id="2b719-338">System.Math.Ceiling(Double `a`)</span></span>|<span data-ttu-id="2b719-339">Ceiling(`a`)</span><span class="sxs-lookup"><span data-stu-id="2b719-339">Ceiling(`a`)</span></span>|  
+|<span data-ttu-id="2b719-340">System.Math.Floor(Double `a`)</span><span class="sxs-lookup"><span data-stu-id="2b719-340">System.Math.Floor(Double `a`)</span></span>|<span data-ttu-id="2b719-341">Floor(`a`)</span><span class="sxs-lookup"><span data-stu-id="2b719-341">Floor(`a`)</span></span>|  
+|<span data-ttu-id="2b719-342">System.Math.Round(Double `a`)</span><span class="sxs-lookup"><span data-stu-id="2b719-342">System.Math.Round(Double `a`)</span></span>|<span data-ttu-id="2b719-343">Round(`a`)</span><span class="sxs-lookup"><span data-stu-id="2b719-343">Round(`a`)</span></span>|  
+|<span data-ttu-id="2b719-344">System.Math.Round(Double value, Int16 digits)</span><span class="sxs-lookup"><span data-stu-id="2b719-344">System.Math.Round(Double value, Int16 digits)</span></span>|<span data-ttu-id="2b719-345">Round(value, digits)</span><span class="sxs-lookup"><span data-stu-id="2b719-345">Round(value, digits)</span></span>|  
+|<span data-ttu-id="2b719-346">System.Math.Round(Double value, Int32 digits)</span><span class="sxs-lookup"><span data-stu-id="2b719-346">System.Math.Round(Double value, Int32 digits)</span></span>|<span data-ttu-id="2b719-347">Round(value, digits)</span><span class="sxs-lookup"><span data-stu-id="2b719-347">Round(value, digits)</span></span>|  
+|<span data-ttu-id="2b719-348">System.Math.Round(Decimal value, Int16 digits)</span><span class="sxs-lookup"><span data-stu-id="2b719-348">System.Math.Round(Decimal value, Int16 digits)</span></span>|<span data-ttu-id="2b719-349">Round(value, digits)</span><span class="sxs-lookup"><span data-stu-id="2b719-349">Round(value, digits)</span></span>|  
+|<span data-ttu-id="2b719-350">System.Math.Round(Decimal value, Int32, digits)</span><span class="sxs-lookup"><span data-stu-id="2b719-350">System.Math.Round(Decimal value, Int32, digits)</span></span>|<span data-ttu-id="2b719-351">Round(value, digits)</span><span class="sxs-lookup"><span data-stu-id="2b719-351">Round(value, digits)</span></span>|  
+|<span data-ttu-id="2b719-352">System.Math.Abs(Int16 value)</span><span class="sxs-lookup"><span data-stu-id="2b719-352">System.Math.Abs(Int16 value)</span></span>|<span data-ttu-id="2b719-353">Abs(value)</span><span class="sxs-lookup"><span data-stu-id="2b719-353">Abs(value)</span></span>|  
+|<span data-ttu-id="2b719-354">System.Math.Abs(Int32 value)</span><span class="sxs-lookup"><span data-stu-id="2b719-354">System.Math.Abs(Int32 value)</span></span>|<span data-ttu-id="2b719-355">Abs(value)</span><span class="sxs-lookup"><span data-stu-id="2b719-355">Abs(value)</span></span>|  
+|<span data-ttu-id="2b719-356">System.Math.Abs(Int64 value)</span><span class="sxs-lookup"><span data-stu-id="2b719-356">System.Math.Abs(Int64 value)</span></span>|<span data-ttu-id="2b719-357">Abs(value)</span><span class="sxs-lookup"><span data-stu-id="2b719-357">Abs(value)</span></span>|  
+|<span data-ttu-id="2b719-358">System.Math.Abs(Byte value)</span><span class="sxs-lookup"><span data-stu-id="2b719-358">System.Math.Abs(Byte value)</span></span>|<span data-ttu-id="2b719-359">Abs(value)</span><span class="sxs-lookup"><span data-stu-id="2b719-359">Abs(value)</span></span>|  
+|<span data-ttu-id="2b719-360">System.Math.Abs(Single value)</span><span class="sxs-lookup"><span data-stu-id="2b719-360">System.Math.Abs(Single value)</span></span>|<span data-ttu-id="2b719-361">Abs(value)</span><span class="sxs-lookup"><span data-stu-id="2b719-361">Abs(value)</span></span>|  
+|<span data-ttu-id="2b719-362">System.Math.Abs(Double value)</span><span class="sxs-lookup"><span data-stu-id="2b719-362">System.Math.Abs(Double value)</span></span>|<span data-ttu-id="2b719-363">Abs(value)</span><span class="sxs-lookup"><span data-stu-id="2b719-363">Abs(value)</span></span>|  
+|<span data-ttu-id="2b719-364">System.Math.Abs(Decimal value)</span><span class="sxs-lookup"><span data-stu-id="2b719-364">System.Math.Abs(Decimal value)</span></span>|<span data-ttu-id="2b719-365">Abs(value)</span><span class="sxs-lookup"><span data-stu-id="2b719-365">Abs(value)</span></span>|  
+|<span data-ttu-id="2b719-366">System.Math.Truncate(Double value, Int16 digits)</span><span class="sxs-lookup"><span data-stu-id="2b719-366">System.Math.Truncate(Double value, Int16 digits)</span></span>|<span data-ttu-id="2b719-367">Truncate(value, digits)</span><span class="sxs-lookup"><span data-stu-id="2b719-367">Truncate(value, digits)</span></span>|  
+|<span data-ttu-id="2b719-368">System.Math.Truncate(Double value, Int32 digits)</span><span class="sxs-lookup"><span data-stu-id="2b719-368">System.Math.Truncate(Double value, Int32 digits)</span></span>|<span data-ttu-id="2b719-369">Truncate(value, digits)</span><span class="sxs-lookup"><span data-stu-id="2b719-369">Truncate(value, digits)</span></span>|  
+|<span data-ttu-id="2b719-370">System.Math.Truncate(Decimal value, Int16 digits)</span><span class="sxs-lookup"><span data-stu-id="2b719-370">System.Math.Truncate(Decimal value, Int16 digits)</span></span>|<span data-ttu-id="2b719-371">Truncate(value, digits)</span><span class="sxs-lookup"><span data-stu-id="2b719-371">Truncate(value, digits)</span></span>|  
+|<span data-ttu-id="2b719-372">System.Math.Truncate(Decimal value, Int32 digits)</span><span class="sxs-lookup"><span data-stu-id="2b719-372">System.Math.Truncate(Decimal value, Int32 digits)</span></span>|<span data-ttu-id="2b719-373">Truncate(value, digits)</span><span class="sxs-lookup"><span data-stu-id="2b719-373">Truncate(value, digits)</span></span>|  
+|<span data-ttu-id="2b719-374">System.Math.Power(Int32 value, Int64 exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-374">System.Math.Power(Int32 value, Int64 exponent)</span></span>|<span data-ttu-id="2b719-375">Power(value, exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-375">Power(value, exponent)</span></span>|  
+|<span data-ttu-id="2b719-376">System.Math.Power(Int32 value, Double exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-376">System.Math.Power(Int32 value, Double exponent)</span></span>|<span data-ttu-id="2b719-377">Power(value, exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-377">Power(value, exponent)</span></span>|  
+|<span data-ttu-id="2b719-378">System.Math.Power(Int32 value, Decimal exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-378">System.Math.Power(Int32 value, Decimal exponent)</span></span>|<span data-ttu-id="2b719-379">Power(value, exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-379">Power(value, exponent)</span></span>|  
+|<span data-ttu-id="2b719-380">System.Math.Power(Int64 value, Int64 exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-380">System.Math.Power(Int64 value, Int64 exponent)</span></span>|<span data-ttu-id="2b719-381">Power(value, exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-381">Power(value, exponent)</span></span>|  
+|<span data-ttu-id="2b719-382">System.Math.Power(Int64 value, Double exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-382">System.Math.Power(Int64 value, Double exponent)</span></span>|<span data-ttu-id="2b719-383">Power(value, exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-383">Power(value, exponent)</span></span>|  
+|<span data-ttu-id="2b719-384">System.Math.Power(Int64 value, Decimal exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-384">System.Math.Power(Int64 value, Decimal exponent)</span></span>|<span data-ttu-id="2b719-385">Power(value, exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-385">Power(value, exponent)</span></span>|  
+|<span data-ttu-id="2b719-386">System.Math.Power(Double value, Int64 exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-386">System.Math.Power(Double value, Int64 exponent)</span></span>|<span data-ttu-id="2b719-387">Power(value, exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-387">Power(value, exponent)</span></span>|  
+|<span data-ttu-id="2b719-388">System.Math.Power(Double value, Double exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-388">System.Math.Power(Double value, Double exponent)</span></span>|<span data-ttu-id="2b719-389">Power(value, exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-389">Power(value, exponent)</span></span>|  
+|<span data-ttu-id="2b719-390">System.Math.Power(Double value, Decimal exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-390">System.Math.Power(Double value, Decimal exponent)</span></span>|<span data-ttu-id="2b719-391">Power(value, exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-391">Power(value, exponent)</span></span>|  
+|<span data-ttu-id="2b719-392">System.Math.Power(Decimal value, Int64 exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-392">System.Math.Power(Decimal value, Int64 exponent)</span></span>|<span data-ttu-id="2b719-393">Power(value, exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-393">Power(value, exponent)</span></span>|  
+|<span data-ttu-id="2b719-394">System.Math.Power(Decimal value, Double exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-394">System.Math.Power(Decimal value, Double exponent)</span></span>|<span data-ttu-id="2b719-395">Power(value, exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-395">Power(value, exponent)</span></span>|  
+|<span data-ttu-id="2b719-396">System.Math.Power(Decimal value, Decimal exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-396">System.Math.Power(Decimal value, Decimal exponent)</span></span>|<span data-ttu-id="2b719-397">Power(value, exponent)</span><span class="sxs-lookup"><span data-stu-id="2b719-397">Power(value, exponent)</span></span>|  
+  
+## <a name="bitwise-operator-mapping"></a><span data-ttu-id="2b719-398">ビット演算子のマッピング</span><span class="sxs-lookup"><span data-stu-id="2b719-398">Bitwise Operator Mapping</span></span>  
+  
+|<span data-ttu-id="2b719-399">ビット演算子</span><span class="sxs-lookup"><span data-stu-id="2b719-399">Bitwise operator</span></span>|<span data-ttu-id="2b719-400">非ブール型のオペランドの正規関数</span><span class="sxs-lookup"><span data-stu-id="2b719-400">Canonical function for non-Boolean operands</span></span>|<span data-ttu-id="2b719-401">ブール型のオペランドの正規関数</span><span class="sxs-lookup"><span data-stu-id="2b719-401">Canonical function for Boolean operands</span></span>|  
+|----------------------|--------------------------------------------------|---------------------------------------------|  
+|<span data-ttu-id="2b719-402">ビット演算子 AND</span><span class="sxs-lookup"><span data-stu-id="2b719-402">Bitwise AND operator</span></span>|<span data-ttu-id="2b719-403">BitWiseAnd</span><span class="sxs-lookup"><span data-stu-id="2b719-403">BitWiseAnd</span></span>|<span data-ttu-id="2b719-404">op1 AND op2</span><span class="sxs-lookup"><span data-stu-id="2b719-404">op1 AND op2</span></span>|  
+|<span data-ttu-id="2b719-405">ビット演算子 OR</span><span class="sxs-lookup"><span data-stu-id="2b719-405">Bitwise OR operator</span></span>|<span data-ttu-id="2b719-406">BitWiseOr</span><span class="sxs-lookup"><span data-stu-id="2b719-406">BitWiseOr</span></span>|<span data-ttu-id="2b719-407">op1 OR op2</span><span class="sxs-lookup"><span data-stu-id="2b719-407">op1 OR op2</span></span>|  
+|<span data-ttu-id="2b719-408">ビット演算子 NOT</span><span class="sxs-lookup"><span data-stu-id="2b719-408">Bitwise NOT operator</span></span>|<span data-ttu-id="2b719-409">BitWiseNot</span><span class="sxs-lookup"><span data-stu-id="2b719-409">BitWiseNot</span></span>|<span data-ttu-id="2b719-410">NOT(op)</span><span class="sxs-lookup"><span data-stu-id="2b719-410">NOT(op)</span></span>|  
+|<span data-ttu-id="2b719-411">ビット演算子 XOR</span><span class="sxs-lookup"><span data-stu-id="2b719-411">Bitwise XOR operator</span></span>|<span data-ttu-id="2b719-412">BitWiseXor</span><span class="sxs-lookup"><span data-stu-id="2b719-412">BitWiseXor</span></span>|<span data-ttu-id="2b719-413">((op1 AND NOT(op2)) OR (NOT(op1) AND op2))</span><span class="sxs-lookup"><span data-stu-id="2b719-413">((op1 AND NOT(op2)) OR (NOT(op1) AND op2))</span></span>|  
+  
+## <a name="other-mapping"></a><span data-ttu-id="2b719-414">その他のマッピング</span><span class="sxs-lookup"><span data-stu-id="2b719-414">Other Mapping</span></span>  
+  
+|<span data-ttu-id="2b719-415">メソッド</span><span class="sxs-lookup"><span data-stu-id="2b719-415">Method</span></span>|<span data-ttu-id="2b719-416">正規関数</span><span class="sxs-lookup"><span data-stu-id="2b719-416">Canonical function</span></span>|  
+|------------|------------------------|  
+|<span data-ttu-id="2b719-417">Guid.NewGuid()</span><span class="sxs-lookup"><span data-stu-id="2b719-417">Guid.NewGuid()</span></span>|<span data-ttu-id="2b719-418">NewGuid()</span><span class="sxs-lookup"><span data-stu-id="2b719-418">NewGuid()</span></span>|  
+  
+## <a name="see-also"></a><span data-ttu-id="2b719-419">関連項目</span><span class="sxs-lookup"><span data-stu-id="2b719-419">See Also</span></span>  
+ [<span data-ttu-id="2b719-420">LINQ to Entities</span><span class="sxs-lookup"><span data-stu-id="2b719-420">LINQ to Entities</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)

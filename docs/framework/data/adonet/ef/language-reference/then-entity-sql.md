@@ -1,57 +1,54 @@
 ---
-title: "THEN (Entity SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "ESQL"
+title: THEN (Entity SQL)
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 54222642-23c6-4f61-9861-67caca53ac5f
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 99fd941c963ff87203d7b315beb606d40001224d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# THEN (Entity SQL)
-WHEN 句が `true` として評価された場合の結果です。  
+# <a name="then-entity-sql"></a><span data-ttu-id="4aadf-102">THEN (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="4aadf-102">THEN (Entity SQL)</span></span>
+<span data-ttu-id="4aadf-103">WHEN 句が `true`として評価された場合の結果です。</span><span class="sxs-lookup"><span data-stu-id="4aadf-103">The result of a WHEN clause when it evaluates to `true`.</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="4aadf-104">構文</span><span class="sxs-lookup"><span data-stu-id="4aadf-104">Syntax</span></span>  
   
 ```  
-  
 WHEN when_expression THEN then_expression  
 ```  
   
-## 引数  
+## <a name="arguments"></a><span data-ttu-id="4aadf-105">引数</span><span class="sxs-lookup"><span data-stu-id="4aadf-105">Arguments</span></span>  
  `when_expression`  
- 任意の有効なブール式。  
+ <span data-ttu-id="4aadf-106">任意の有効なブール式。</span><span class="sxs-lookup"><span data-stu-id="4aadf-106">Any valid Boolean expression.</span></span>  
   
  `then_expression`  
- コレクションを返す任意の有効なクエリ式。  
+ <span data-ttu-id="4aadf-107">コレクションを返す任意の有効なクエリ式。</span><span class="sxs-lookup"><span data-stu-id="4aadf-107">Any valid query expression that returns a collection.</span></span>  
   
-## 解説  
- `when_expression` が `true` として評価された場合、対応する `then-expression` が評価されます。 WHEN の条件が満たされなかった場合は、`else-expression` が評価されます。 ただし、`else-expression` が存在しない場合、結果は NULL になります。  
+## <a name="remarks"></a><span data-ttu-id="4aadf-108">コメント</span><span class="sxs-lookup"><span data-stu-id="4aadf-108">Remarks</span></span>  
+ <span data-ttu-id="4aadf-109">`when_expression` が `true`として評価された場合、対応する `then-expression`が評価されます。</span><span class="sxs-lookup"><span data-stu-id="4aadf-109">If `when_expression` evaluates to the value `true`, the result is the corresponding `then-expression`.</span></span> <span data-ttu-id="4aadf-110">WHEN の条件が満たされなかった場合は、 `else-expression` が評価されます。</span><span class="sxs-lookup"><span data-stu-id="4aadf-110">If none of the WHEN conditions are satisfied, the `else-expression` is evaluated.</span></span> <span data-ttu-id="4aadf-111">ただし、 `else-expression`が存在しない場合、結果は NULL になります。</span><span class="sxs-lookup"><span data-stu-id="4aadf-111">However, if there is no `else-expression`, the result is null.</span></span>  
   
- 例については、「[CASE](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md)」を参照してください。  
+ <span data-ttu-id="4aadf-112">例については、次を参照してください。[ケース](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md)です。</span><span class="sxs-lookup"><span data-stu-id="4aadf-112">For an example, see [CASE](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md).</span></span>  
   
-## 使用例  
- 次の Entity SQL クエリでは、CASE 式を使用して、一連の `Boolean` 式を評価します。 このクエリは、AdventureWorks Sales Model に基づいています。 このクエリをコンパイルして実行するには、次の手順を実行します。  
+## <a name="example"></a><span data-ttu-id="4aadf-113">例</span><span class="sxs-lookup"><span data-stu-id="4aadf-113">Example</span></span>  
+ <span data-ttu-id="4aadf-114">次の Entity SQL クエリでは、CASE 式を使用して、一連の `Boolean` 式を評価します。</span><span class="sxs-lookup"><span data-stu-id="4aadf-114">The following Entity SQL query uses the CASE expression to evaluate a set of `Boolean` expressions.</span></span> <span data-ttu-id="4aadf-115">このクエリは、AdventureWorks Sales Model に基づいています。</span><span class="sxs-lookup"><span data-stu-id="4aadf-115">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="4aadf-116">このクエリをコンパイルして実行するには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="4aadf-116">To compile and run this query, follow these steps:</span></span>  
   
-1.  「[PrimitiveType 結果を返すクエリの実行方法](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md)」の手順に従います。  
+1.  <span data-ttu-id="4aadf-117">」の手順に従って[する方法: PrimitiveType 結果が返されますそのクエリを実行する](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md)です。</span><span class="sxs-lookup"><span data-stu-id="4aadf-117">Follow the procedure in [How to: Execute a Query that Returns PrimitiveType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).</span></span>  
   
-2.  次のクエリを引数として `ExecutePrimitiveTypeQuery` メソッドに渡します。  
+2.  <span data-ttu-id="4aadf-118">次のクエリを引数として `ExecutePrimitiveTypeQuery` メソッドに渡します。</span><span class="sxs-lookup"><span data-stu-id="4aadf-118">Pass the following query as an argument to the `ExecutePrimitiveTypeQuery` method:</span></span>  
   
  [!code-csharp[DP EntityServices Concepts 2#CASE_WHEN_THEN_ELSE](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#case_when_then_else)]  
   
-## 参照  
- [CASE](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md)   
- [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+## <a name="see-also"></a><span data-ttu-id="4aadf-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="4aadf-119">See Also</span></span>  
+ [<span data-ttu-id="4aadf-120">場合</span><span class="sxs-lookup"><span data-stu-id="4aadf-120">CASE</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md)  
+ [<span data-ttu-id="4aadf-121">Entity SQL リファレンス</span><span class="sxs-lookup"><span data-stu-id="4aadf-121">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

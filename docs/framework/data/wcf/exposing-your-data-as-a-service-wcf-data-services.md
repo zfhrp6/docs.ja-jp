@@ -1,40 +1,43 @@
 ---
-title: "サービスとしてのデータの公開 (WCF Data Services) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "概要, WCF Data Services"
-  - "WCF Data Services, 構成"
-  - "WCF Data Services, 概要"
+title: "サービスとしてのデータの公開 (WCF Data Services)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WCF Data Services, configuring
+- getting started, WCF Data Services
+- WCF Data Services, getting started
 ms.assetid: df0bbcee-f66f-4a88-abb4-4e73c8b9c908
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 122d05d5e4bd7690f32b22453dccbfaab2fb7f13
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# サービスとしてのデータの公開 (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] を Visual Studio に統合すると、サービスを簡単に定義してデータを [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] フィードとして公開できます。  [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードを公開するデータ サービスを作成するには、次のような基本的な手順を実行します。  
+# <a name="exposing-your-data-as-a-service-wcf-data-services"></a><span data-ttu-id="7b1e8-102">サービスとしてのデータの公開 (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="7b1e8-102">Exposing Your Data as a Service (WCF Data Services)</span></span>
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="7b1e8-103">簡単としてデータを公開するサービスを定義するために Visual Studio と統合し、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードします。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-103"> integrates with Visual Studio to enable you to more easily define services to expose your data as [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] feeds.</span></span> <span data-ttu-id="7b1e8-104">公開データ サービスを作成する、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードには、次の基本的な手順が含まれます。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-104">Creating a data service that exposes an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed involves the following basic steps:</span></span>  
   
-1.  **データ モデルを定義します。** [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] は、[ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) に基づくデータ モデルをネイティブでサポートしています。  詳細については、「[方法: ADO.NET Entity Framework データ ソースを使用してデータ サービスを作成する](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md)」を参照してください。  
+1.  <span data-ttu-id="7b1e8-105">**定義****データ モデル**です。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-105">**Define** **the data model**.</span></span> [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="7b1e8-106">基づくデータ モデルをネイティブにサポート、 [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-106"> natively supports data models that are based on the [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md).</span></span> <span data-ttu-id="7b1e8-107">詳細については、次を参照してください。[する方法: ADO.NET Entity Framework データ ソースを使用してデータ サービスを作成](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md)です。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-107">For more information, see [How to: Create a Data Service Using an ADO.NET Entity Framework Data Source](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md).</span></span>  
   
-     [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] は、<xref:System.Linq.IQueryable%601> インターフェイスのインスタンスを返す共通言語ランタイム \(CLR\) オブジェクトに基づくデータ モデルもサポートします。  そのため、.NET Framework のリスト、配列、およびコレクションに基づいてデータ サービスを配置できます。これらのデータ構造での作成、更新、および削除操作を有効にするには、<xref:System.Data.Services.IUpdatable> インターフェイスも実装する必要があります。  詳細については、「[方法: リフレクション プロバイダーを使用してデータ サービスを作成する](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md)」を参照してください。  
+     [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="7b1e8-108"> は、<xref:System.Linq.IQueryable%601> インターフェイスのインスタンスを返す共通言語ランタイム (CLR) オブジェクトに基づくデータ モデルもサポートします。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-108"> also supports data models that are based on common language runtime (CLR) objects that return an instance of the <xref:System.Linq.IQueryable%601> interface.</span></span> <span data-ttu-id="7b1e8-109">そのため、.NET Framework のリスト、配列、およびコレクションに基づいてデータ サービスを配置できます。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-109">This enables you to deploy data services that are based on lists, arrays, and collections in the .NET Framework.</span></span> <span data-ttu-id="7b1e8-110">これらのデータ構造での作成、更新、および削除操作を有効にするには、<xref:System.Data.Services.IUpdatable> インターフェイスも実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-110">To enable create, update, and delete operations over these data structures, you must also implement the <xref:System.Data.Services.IUpdatable> interface.</span></span> <span data-ttu-id="7b1e8-111">詳細については、次を参照してください。[する方法: リフレクション プロバイダーを使用してデータ サービスを作成](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-111">For more information, see [How to: Create a Data Service Using the Reflection Provider](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md).</span></span>  
   
-     より高度なシナリオの場合、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] には、遅延バインディング データ型に基づいてデータ モデルを定義できるプロバイダーのセットが含まれています。  詳細については、「[カスタム データ サービス プロバイダー](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md)」を参照してください。  
+     <span data-ttu-id="7b1e8-112">高度なシナリオは、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]遅延バインディング データ型に基づいてデータ モデルを定義できるプロバイダーのセットが含まれています。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-112">For more advanced scenarios, [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] includes a set of providers that enable you to define a data model based on late-bound data types.</span></span> <span data-ttu-id="7b1e8-113">詳細については、次を参照してください。[カスタム データ サービス プロバイダー](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-113">For more information, see [Custom Data Service Providers](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md).</span></span>  
   
-2.  **データ サービスを作成します。**最も基本的なデータ サービスでは、<xref:System.Data.Services.DataService%601> クラスを継承するクラスを `T` 型 \(エンティティ コンテナーの名前空間修飾名\) と一緒に公開します。  詳細については、「[WCF Data Services の定義](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)」を参照してください。  
+2.  <span data-ttu-id="7b1e8-114">**データ サービスを作成します。**</span><span class="sxs-lookup"><span data-stu-id="7b1e8-114">**Create the data service.**</span></span> <span data-ttu-id="7b1e8-115">最も基本的なデータ サービスでは、 <xref:System.Data.Services.DataService%601> クラスを継承するクラスを `T` 型 (エンティティ コンテナーの名前空間修飾名) と一緒に公開します。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-115">The most basic data service exposes a class that inherits from the <xref:System.Data.Services.DataService%601> class, with a type `T` that is the namespace-qualified name of the entity container.</span></span> <span data-ttu-id="7b1e8-116">詳細については、「 [Defining WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)の開発と配置について説明します。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-116">For more information, see [Defining WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md).</span></span>  
   
-3.  **データ サービスを構成します。**既定では、エンティティ コンテナーによって公開されているリソースへのアクセスは、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] によって無効にされます。<xref:System.Data.Services.DataServiceConfiguration> インターフェイスを使用すると、リソースとサービス操作へのアクセスの構成、サポートされる [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] のバージョンの指定、およびサービス全体のその他の動作 \(バッチ動作、1 つの応答で返すことができるエンティティの最大数など\) の定義を行うことができます。詳細については、「[データ サービスの構成](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md)」を参照してください。  
+3.  <span data-ttu-id="7b1e8-117">**データ サービスを構成します。**</span><span class="sxs-lookup"><span data-stu-id="7b1e8-117">**Configure the data service.**</span></span> <span data-ttu-id="7b1e8-118">既定では、 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、エンティティ コンテナーによって公開されているリソースへのアクセスは無効になります。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-118">By default, [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] disables access to resources that are exposed by an entity container.</span></span> <span data-ttu-id="7b1e8-119"><xref:System.Data.Services.DataServiceConfiguration> インターフェイスを使用すると、リソースとサービス操作へのアクセスの構成、サポートされる [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] のバージョンの指定、およびサービス全体のその他の動作 (バッチ動作や 1 つの応答で返すことができるエンティティの最大数など) を定義できます。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-119">The <xref:System.Data.Services.DataServiceConfiguration> interface enables you to configure access to resources and service operations, specify the supported version of [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)], and to define other service-wide behaviors, such as batching behaviors or the maximum number of entities that can be returned in a single response.</span></span> <span data-ttu-id="7b1e8-120">詳細については、次を参照してください。[データ サービスの構成](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-120">For more information, see [Configuring the Data Service](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md).</span></span>  
   
- Northwind サンプル データベースに基づく単純なデータ サービスを作成する方法の例については、「[クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)」を参照してください。  
+ <span data-ttu-id="7b1e8-121">Northwind サンプル データベースに基づく単純なデータ サービスを作成する方法の例は、次を参照してください。[クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="7b1e8-121">For an example of how to create a simple data service that is based on the Northwind sample database, see [Quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span>  
   
-## 参照  
- [概要](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)   
- [概要](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)
+## <a name="see-also"></a><span data-ttu-id="7b1e8-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="7b1e8-122">See Also</span></span>  
+ [<span data-ttu-id="7b1e8-123">はじめに</span><span class="sxs-lookup"><span data-stu-id="7b1e8-123">Getting Started</span></span>](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)  
+ [<span data-ttu-id="7b1e8-124">概要</span><span class="sxs-lookup"><span data-stu-id="7b1e8-124">Overview</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)

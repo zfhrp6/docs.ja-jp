@@ -1,68 +1,72 @@
 ---
-title: "WorkflowApplication ReadLine ホスト | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WorkflowApplication ReadLine ホスト"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f7b362be-cb42-40d7-b9ef-cfc4aed2455b
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a65ca3d3d4a787132246312e28213e71defc94ec
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# WorkflowApplication ReadLine ホスト
-このサンプルは、汎用 ReadLine ホストです。用意されている `ReadLine` アクティビティ \(または文字列を使用して再開されるブックマークからデータを取得する他の同様のアクティビティ\) を使用して、任意のワークフローを読み込んで実行することができます。`WriteLine` アクティビティ、または <xref:System.Activities.Statements.WriteLine.TextWriter%2A> 拡張に書き込みを行うアクティビティからの出力は、ホスト ウィンドウに送られます。インスタンスがアイドル状態の場合、そのインスタンスの使用可能なブックマークがコンボ ボックスに表示されます。ブックマークを選択してテキストを入力し、ブックマークを再開するボタンをクリックすると、ワークフローの実行が続行されます。選択したワークフローを取り消したり、中止または終了することもできます。既定では永続化が有効になっており、ホストをシャットダウンして再起動しても、データベースに格納されているインスタンスがインスタンスの一覧に読み込まれます。<xref:System.Activities.WorkflowApplication> レベルのイベントをホストに出力するには、追跡を使用します。オプションで、アクティビティ レベルの詳細な追跡も行うことができます。  
+# <a name="workflowapplication-readline-host"></a><span data-ttu-id="35013-102">WorkflowApplication ReadLine ホスト</span><span class="sxs-lookup"><span data-stu-id="35013-102">WorkflowApplication ReadLine Host</span></span>
+<span data-ttu-id="35013-103">このサンプルは、汎用 ReadLine ホストです。</span><span class="sxs-lookup"><span data-stu-id="35013-103">This sample is a generic ReadLine host.</span></span> <span data-ttu-id="35013-104">用意されている `ReadLine` アクティビティ (または文字列を使用して再開されるブックマークからデータを取得する他の同様のアクティビティ) を使用して、任意のワークフローを読み込んで実行することができます。</span><span class="sxs-lookup"><span data-stu-id="35013-104">You can load and run any workflow using the included `ReadLine` activity (or other activities like it that get data from bookmarks resumed with strings).</span></span> <span data-ttu-id="35013-105">`WriteLine` アクティビティ、または <xref:System.Activities.Statements.WriteLine.TextWriter%2A> 拡張に書き込みを行うアクティビティからの出力は、ホスト ウィンドウに送られます。</span><span class="sxs-lookup"><span data-stu-id="35013-105">Output from the `WriteLine` activity or anything writing to the <xref:System.Activities.Statements.WriteLine.TextWriter%2A> extension is directed to the host window.</span></span> <span data-ttu-id="35013-106">インスタンスがアイドル状態の場合、そのインスタンスの使用可能なブックマークがコンボ ボックスに表示されます。</span><span class="sxs-lookup"><span data-stu-id="35013-106">When an instance is idle, the available bookmarks for that instance appear in a combo box.</span></span> <span data-ttu-id="35013-107">ブックマークを選択してテキストを入力し、ブックマークを再開するボタンをクリックすると、ワークフローの実行が続行されます。</span><span class="sxs-lookup"><span data-stu-id="35013-107">Selecting a bookmark, inputting some text, and pressing the resume bookmark button continue the execution of the workflow.</span></span> <span data-ttu-id="35013-108">選択したワークフローを取り消したり、中止または終了することもできます。</span><span class="sxs-lookup"><span data-stu-id="35013-108">You can also cancel, abort, or terminate a selected workflow.</span></span> <span data-ttu-id="35013-109">既定では永続化が有効になっており、ホストをシャットダウンして再起動しても、データベースに格納されているインスタンスがインスタンスの一覧に読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="35013-109">Persistence is on by default – you can shut down the host and bring it back, and the instance list is populated with the instances stored in the database.</span></span> <span data-ttu-id="35013-110"><xref:System.Activities.WorkflowApplication> レベルのイベントをホストに出力するには、追跡を使用します。オプションで、アクティビティ レベルの詳細な追跡も行うことができます。</span><span class="sxs-lookup"><span data-stu-id="35013-110">Tracking is used to output <xref:System.Activities.WorkflowApplication>-level events to the host with the option to add detailed tracking at the activity level.</span></span>  
   
-## サンプルの詳細  
- このホストには、ビューとインスタンス マネージャーの 2 つのレイヤーがあります。ビューは、`HostView` クラスと `WorkflowApplicationInfo` クラスで構成されます。このホストの一般的なパターンでは、`HostView` クラスを使用して、対象のインスタンスと適切に同期された `WorkflowApplicationInfo` オブジェクトに基づいて、ユーザーに使用可能なオプションを表示します。インスタンス マネージャー レイヤーは、すべてのホスト通信の中核となる `WorkflowApplicationManager` クラス、インスタンスとそれを開始するのに使用されたプログラム定義との関係を永続化する `WorkflowDefinitionExtension` クラス、およびその他のいくつかのクラスで構成されます。`HostView` から、`WorkflowApplicationManager` に対する制御操作の呼び出しが行われます。これらの呼び出しは、通常、ユーザー インターフェイスの応答性を維持するために非同期で実行されます。非同期呼び出しが完了すると、`WorkflowApplicationManager` から、適切に定義されたインターフェイス \(`IHostView`\) を介してビュー レイヤーにコールバックされます。`HostView` クラスは、ほとんどの場合、`WorkflowApplicationManager` クラスからのこれらの呼び出しをユーザー インターフェイス スレッドにディスパッチします。`HostView` クラスで提供されるスレッド セーフな <xref:System.Activities.Statements.WriteLine.TextWriter%2A> オブジェクトへのテキストの書き込みが実行されます。イベントを生成する方法はユーザー インターフェイスだけではありません。たとえば、<xref:System.Activities.WorkflowApplication> オブジェクトも、状態が `Idle`、`Complete`、または `Aborted` になると `WorkflowApplicationManager` に通知します。`WorkflowApplicationManager` クラスは、ホストにクリーンアップ処理または更新処理をディスパッチしてイベント スレッドを削除します。  
+## <a name="sample-details"></a><span data-ttu-id="35013-111">サンプルの詳細</span><span class="sxs-lookup"><span data-stu-id="35013-111">Sample Details</span></span>  
+ <span data-ttu-id="35013-112">このホストには、ビューとインスタンス マネージャーの 2 つのレイヤーがあります。</span><span class="sxs-lookup"><span data-stu-id="35013-112">There are two layers to this host: the view and the instance manager.</span></span> <span data-ttu-id="35013-113">ビューは、`HostView` クラスと `WorkflowApplicationInfo` クラスで構成されます。</span><span class="sxs-lookup"><span data-stu-id="35013-113">The view consists of the `HostView` and `WorkflowApplicationInfo` classes.</span></span> <span data-ttu-id="35013-114">このホストの一般的なパターンでは、`HostView` クラスを使用して、対象のインスタンスと適切に同期された `WorkflowApplicationInfo` オブジェクトに基づいて、ユーザーに使用可能なオプションを表示します。</span><span class="sxs-lookup"><span data-stu-id="35013-114">The general pattern for this host is for the `HostView` class to display available options to the user based on `WorkflowApplicationInfo` objects that are kept reasonably in synchronization with the instances they represent.</span></span> <span data-ttu-id="35013-115">インスタンス マネージャー レイヤーは、すべてのホスト通信の中核となる `WorkflowApplicationManager` クラス、インスタンスとそれを開始するのに使用されたプログラム定義との関係を永続化する `WorkflowDefinitionExtension` クラス、およびその他のいくつかのクラスで構成されます。</span><span class="sxs-lookup"><span data-stu-id="35013-115">The instance manager layer consists of the `WorkflowApplicationManager` class, which is the core of all host communications, and the `WorkflowDefinitionExtension` class, which persists the relationship between an instance and the program definition it was started with and a few other classes.</span></span> <span data-ttu-id="35013-116">`HostView` から、`WorkflowApplicationManager` に対する制御操作の呼び出しが行われます。</span><span class="sxs-lookup"><span data-stu-id="35013-116">The `HostView` calls control operations on the `WorkflowApplicationManager`.</span></span> <span data-ttu-id="35013-117">これらの呼び出しは、通常、ユーザー インターフェイスの応答性を維持するために非同期で実行されます。</span><span class="sxs-lookup"><span data-stu-id="35013-117">These calls are typically asynchronous to maintain a responsive user interface.</span></span> <span data-ttu-id="35013-118">非同期呼び出しが完了すると、`WorkflowApplicationManager` から、適切に定義されたインターフェイス (`IHostView`) を介してビュー レイヤーにコールバックされます。</span><span class="sxs-lookup"><span data-stu-id="35013-118">When the asynchronous calls complete, the `WorkflowApplicationManager` makes calls back into the view layer through a well-defined interface (`IHostView`).</span></span> <span data-ttu-id="35013-119">`HostView` クラスは、ほとんどの場合、`WorkflowApplicationManager` クラスからのこれらの呼び出しをユーザー インターフェイス スレッドにディスパッチします。</span><span class="sxs-lookup"><span data-stu-id="35013-119">The `HostView` class most often dispatches these calls from the `WorkflowApplicationManager` class to the user interface thread.</span></span> <span data-ttu-id="35013-120"><xref:System.Activities.Statements.WriteLine.TextWriter%2A> クラスで提供されるスレッド セーフな `HostView` オブジェクトへのテキストの書き込みが実行されます。</span><span class="sxs-lookup"><span data-stu-id="35013-120">Text writing is done to thread-safe <xref:System.Activities.Statements.WriteLine.TextWriter%2A> objects provided by the `HostView` class.</span></span> <span data-ttu-id="35013-121">イベントを生成する方法はユーザー インターフェイスだけではありません。</span><span class="sxs-lookup"><span data-stu-id="35013-121">The user interface is not the only thing generating events.</span></span> <span data-ttu-id="35013-122">たとえば、<xref:System.Activities.WorkflowApplication> オブジェクトも、状態が `WorkflowApplicationManager`、`Idle`、または `Complete` になると `Aborted` に通知します。</span><span class="sxs-lookup"><span data-stu-id="35013-122">The <xref:System.Activities.WorkflowApplication> objects also signal the `WorkflowApplicationManager` when they go `Idle`, `Complete`, or are `Aborted`, for example.</span></span> <span data-ttu-id="35013-123">`WorkflowApplicationManager` クラスは、ホストにクリーンアップ処理または更新処理をディスパッチしてイベント スレッドを削除します。</span><span class="sxs-lookup"><span data-stu-id="35013-123">The `WorkflowApplicationManager` class gets off the event thread by dispatching clean up or updating work to the host.</span></span>  
   
- <xref:System.Activities.WorkflowApplication> の起動に使用されたファイルは、`WorkflowDefinitionExtension` クラスを使用して簡単に記録することができます。このクラスは、永続化に参加してワークフロー定義のパスを永続化するために、<xref:System.Activities.Persistence.PersistenceIOParticipant> インターフェイスを実装します。  
+ <span data-ttu-id="35013-124"><xref:System.Activities.WorkflowApplication> の起動に使用されたファイルは、`WorkflowDefinitionExtension` クラスを使用して簡単に記録することができます。</span><span class="sxs-lookup"><span data-stu-id="35013-124">The recording of the file used to launch a <xref:System.Activities.WorkflowApplication> is facilitated by the `WorkflowDefinitionExtension` class.</span></span> <span data-ttu-id="35013-125">このクラスは、永続化に参加してワークフロー定義のパスを永続化するために、<xref:System.Activities.Persistence.PersistenceIOParticipant> インターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="35013-125">It implements the <xref:System.Activities.Persistence.PersistenceIOParticipant> interface to participate in persistence and persist the path to the workflow definition.</span></span>  
   
- `WorkflowApplicationManager.Load` メソッドは、格納されているパスを使用して、未完了の <xref:System.Activities.WorkflowApplication> オブジェクトの読み込みに必要なワークフロー プログラムをインスタンス化します。  
+ <span data-ttu-id="35013-126">`WorkflowApplicationManager.Load` メソッドは、格納されているパスを使用して、未完了の <xref:System.Activities.WorkflowApplication> オブジェクトの読み込みに必要なワークフロー プログラムをインスタンス化します。</span><span class="sxs-lookup"><span data-stu-id="35013-126">The `WorkflowApplicationManager.Load` method uses the stored path to instantiate the workflow programs required for loading unfinished <xref:System.Activities.WorkflowApplication> objects.</span></span>  
   
-#### サンプルを設定、ビルド、および実行するには  
+#### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="35013-127">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="35013-127">To set up, build, and run the sample</span></span>  
   
-1.  このサンプルを実行するには、SQL Express がインストールされている必要があります。SQL Express は [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] に付属しています。  
+1.  <span data-ttu-id="35013-128">このサンプルを実行するには、SQL Express がインストールされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="35013-128">This sample requires SQL Express to be installed.</span></span> <span data-ttu-id="35013-129">SQL Express は [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] に付属しています。</span><span class="sxs-lookup"><span data-stu-id="35013-129">SQL Express comes with [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span></span>  
   
-2.  Visual Studio 2010 コマンド プロンプトを開きます。  
+2.  <span data-ttu-id="35013-130">Visual Studio 2010 コマンド プロンプトを開きます。</span><span class="sxs-lookup"><span data-stu-id="35013-130">Open a Visual Studio 2010 command prompt.</span></span>  
   
-3.  サンプル ディレクトリ \(\\WF\\Basic\\Execution\\ControllingWorkflowApplications\) に移動して、CreateInstanceStore.cmd を実行します。  
+3.  <span data-ttu-id="35013-131">サンプル ディレクトリ (\WF\Basic\Execution\ControllingWorkflowApplications) に移動して、CreateInstanceStore.cmd を実行します。</span><span class="sxs-lookup"><span data-stu-id="35013-131">Navigate to the sample directory (\WF\Basic\Execution\ControllingWorkflowApplications) and run CreateInstanceStore.cmd.</span></span>  
   
-4.  CreateInstanceStore.cmd スクリプトは、SQL Server 2008 Express の既定のインスタンスにデータベースを作成しようとします。別のインスタンスにデータベースをインストールする場合は、そのようにスクリプトを変更してください。  
+4.  <span data-ttu-id="35013-132">CreateInstanceStore.cmd スクリプトは、SQL Server 2008 Express の既定のインスタンスにデータベースを作成しようとします。</span><span class="sxs-lookup"><span data-stu-id="35013-132">The CreateInstanceStore.cmd script attempts to create the database on the default instance of SQL Server 2008 Express.</span></span> <span data-ttu-id="35013-133">別のインスタンスにデータベースをインストールする場合は、そのようにスクリプトを変更してください。</span><span class="sxs-lookup"><span data-stu-id="35013-133">If you want to install the database on a different instance, modify the script to do so.</span></span>  
   
-5.  WorkflowApplicationReadLineHost プロジェクトをコンパイルし、コマンド ラインから実行します。  
+5.  <span data-ttu-id="35013-134">WorkflowApplicationReadLineHost プロジェクトをコンパイルし、コマンド ラインから実行します。</span><span class="sxs-lookup"><span data-stu-id="35013-134">Compile the WorkflowApplicationReadLineHost project and run it from the command line.</span></span>  
   
-6.  実行後、永続化を有効にするか無効にするかを必要に応じて切り替えることができます。また、詳細なアクティビティ追跡についても、有効にするか無効にするかを切り替えることができます。  
+6.  <span data-ttu-id="35013-135">実行後、永続化を有効にするか無効にするかを必要に応じて切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="35013-135">Once running, you can optionally turn persistence off or on.</span></span> <span data-ttu-id="35013-136">また、詳細なアクティビティ追跡についても、有効にするか無効にするかを切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="35013-136">Further, you can optionally turn detailed activity tracking on or off.</span></span>  
   
-7.  **\[実行\]** ボタンの横にある省略記号ボタンをクリックして、XAML ファイルで定義されたワークフローを参照します。  
+7.  <span data-ttu-id="35013-137">横に、省略記号ボタンを押して、**実行**をワークフローの XAML ファイルで定義されている参照ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="35013-137">Press the ellipsis button next to the **Run** button to browse for a workflow defined in a XAML file</span></span>  
   
-     SampleWorkflows フォルダーには、サンプルが 2 つあります。parallel1.xaml サンプルはアイドル状態になります。  
+     <span data-ttu-id="35013-138">SampleWorkflows フォルダーには、サンプルが 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="35013-138">Two samples can be found under the SampleWorkflows folder.</span></span> <span data-ttu-id="35013-139">parallel1.xaml サンプルはアイドル状態になります。</span><span class="sxs-lookup"><span data-stu-id="35013-139">The parallel1.xaml example goes idle.</span></span>  
   
-8.  サンプルを選択したら、**\[実行\]** ボタンをクリックします。  
+8.  <span data-ttu-id="35013-140">例を選択すると、キーを押して、**実行**ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="35013-140">Once an example is selected, press the **Run** button.</span></span>  
   
-9. ワークフローがアイドル状態になると、使用可能なブックマークが **\[ブックマーク\]** ボックスに読み込まれます。  
+9. <span data-ttu-id="35013-141">場合、またはワークフローがアイドル状態になったときに、**ブックマーク**コンボ ボックスには、使用可能なブックマークが設定されます。</span><span class="sxs-lookup"><span data-stu-id="35013-141">If or when the workflow goes idle, the **Bookmarks** combo box is populated with available bookmarks.</span></span>  
   
-10. ここで、ブックマークの再開や、ワークフローの取り消し、中止、または終了を実行できます。また、ホストをシャットダウンして再起動することもできます。永続化を有効なままにしてあれば、シャットダウン時にインスタンスがアンロードされ、起動時に再度読み込まれます。  
+10. <span data-ttu-id="35013-142">ここで、ブックマークの再開や、ワークフローの取り消し、中止、または終了を実行できます。</span><span class="sxs-lookup"><span data-stu-id="35013-142">The options at this point are to resume a bookmark, cancel, abort, or terminate the workflow.</span></span> <span data-ttu-id="35013-143">また、ホストをシャットダウンして再起動することもできます。</span><span class="sxs-lookup"><span data-stu-id="35013-143">You can also shut down the host and restart it.</span></span> <span data-ttu-id="35013-144">永続化を有効なままにしてあれば、シャットダウン時にインスタンスがアンロードされ、起動時に再度読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="35013-144">If persistence is left on, the instances are unloaded on shutdown and reloaded on start up.</span></span>  
   
-     ブックマークを再開するには、目的のブックマークを選択し、コンボ ボックスの横にあるテキスト ボックスに値を入力して、**\[ブックマークの再開\]** をクリックします。  
+     <span data-ttu-id="35013-145">ブックマークを再開するには、目的のブックマークの選択、キーを押して、コンボ ボックスの横にあるテキスト ボックスに値を入力**ブックマークの再開**です。</span><span class="sxs-lookup"><span data-stu-id="35013-145">To resume a bookmark, select the desired bookmark, type in a value in the text box next to the combo box and press **Resume Bookmark**.</span></span>  
   
-#### インスタンス ストア データベースを削除するには  
+#### <a name="to-remove-the-instance-store-database"></a><span data-ttu-id="35013-146">インスタンス ストア データベースを削除するには</span><span class="sxs-lookup"><span data-stu-id="35013-146">To remove the instance store database</span></span>  
   
-1.  Visual Studio 2010 コマンド プロンプトを開きます。  
+1.  <span data-ttu-id="35013-147">Visual Studio 2010 コマンド プロンプトを開きます。</span><span class="sxs-lookup"><span data-stu-id="35013-147">Open a Visual Studio 2010 command prompt.</span></span>  
   
-2.  サンプル ディレクトリ \(\\WF\\Basic\\Execution\\ControllingWorkflowApplications\) に移動して、RemoveInstanceStore.cmd を実行します。  
+2.  <span data-ttu-id="35013-148">サンプル ディレクトリ (\WF\Basic\Execution\ControllingWorkflowApplications) に移動して、RemoveInstanceStore.cmd を実行します。</span><span class="sxs-lookup"><span data-stu-id="35013-148">Navigate to the sample directory (\WF\Basic\Execution\ControllingWorkflowApplications) and run RemoveInstanceStore.cmd.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="35013-149">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="35013-149">The samples may already be installed on your machine.</span></span> <span data-ttu-id="35013-150">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="35013-150">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="35013-151">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="35013-151">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="35013-152">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="35013-152">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Execution\ControllingWorkflowApplications`  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="35013-153">関連項目</span><span class="sxs-lookup"><span data-stu-id="35013-153">See Also</span></span>
