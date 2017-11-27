@@ -1,76 +1,78 @@
 ---
-title: "&lt;smtp&gt; 要素 (ネットワーク設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/mailSettings/smtp"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#smtp"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<smtp> 要素"
-  - "smtp 要素"
+title: "&lt;smtp&gt;要素 (ネットワーク設定)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/mailSettings/smtp
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#smtp
+helpviewer_keywords:
+- <smtp> element
+- smtp element
 ms.assetid: 220b0329-e384-4e0c-86b4-0945ad17efd9
-caps.latest.revision: 13
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 17b4050c43354da7e7ba6c3ea13a0c7621faf0a0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;smtp&gt; 要素 (ネットワーク設定)
-電子メール送信の配信形式、配信方法、および差出人アドレスを設定します。  
+# <a name="ltsmtpgt-element-network-settings"></a><span data-ttu-id="a3e3d-102">&lt;smtp&gt;要素 (ネットワーク設定)</span><span class="sxs-lookup"><span data-stu-id="a3e3d-102">&lt;smtp&gt; Element (Network Settings)</span></span>
+<span data-ttu-id="a3e3d-103">電子メール送信の配信形式、配信方法、および差出人アドレスを設定します。</span><span class="sxs-lookup"><span data-stu-id="a3e3d-103">Configures the delivery format, delivery method, and from address for sending e-mails.</span></span>  
   
-## 構文  
+ <span data-ttu-id="a3e3d-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="a3e3d-104">\<configuration></span></span>  
+<span data-ttu-id="a3e3d-105">\<system.net ></span><span class="sxs-lookup"><span data-stu-id="a3e3d-105">\<system.net></span></span>  
+<span data-ttu-id="a3e3d-106">\<mailSettings ></span><span class="sxs-lookup"><span data-stu-id="a3e3d-106">\<mailSettings></span></span>  
+<span data-ttu-id="a3e3d-107">\<smtp ></span><span class="sxs-lookup"><span data-stu-id="a3e3d-107">\<smtp></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="a3e3d-108">構文</span><span class="sxs-lookup"><span data-stu-id="a3e3d-108">Syntax</span></span>  
   
+```xml  
       <smtp  
-  deliveryFormat="format"   
-  deliveryMethod="method"   
-  from="from address"   
-  <specifiedPickupDirectory> … </ specifiedPickupDirectory >  
-  <network> … </network>  
-/smtp>  
+        deliveryFormat="format"   
+        deliveryMethod="method"   
+        from="from address">
+          <specifiedPickupDirectory> … </ specifiedPickupDirectory >  
+          <network> … </network>  
+      </smtp>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="a3e3d-109">属性および要素</span><span class="sxs-lookup"><span data-stu-id="a3e3d-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="a3e3d-110">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="a3e3d-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="a3e3d-111">属性</span><span class="sxs-lookup"><span data-stu-id="a3e3d-111">Attributes</span></span>  
   
-|Attribute|説明|  
-|---------------|--------|  
-|`deliveryFormat`|送信する電子メールの配信形式を指定します。  指定できる値は SevenBit および International です。|  
-|`deliveryMethod`|電子メールの配信方法を指定します。  指定できる値は、network、pickupDirectoryFromIis、および specifiedPickupDirectory です。|  
-|`from`|送信する電子メールの差出人アドレスを指定します。|  
+|<span data-ttu-id="a3e3d-112">属性</span><span class="sxs-lookup"><span data-stu-id="a3e3d-112">Attribute</span></span>|<span data-ttu-id="a3e3d-113">説明</span><span class="sxs-lookup"><span data-stu-id="a3e3d-113">Description</span></span>|  
+|---------------|-----------------|  
+|`deliveryFormat`|<span data-ttu-id="a3e3d-114">送信する電子メールの配信形式を指定します。</span><span class="sxs-lookup"><span data-stu-id="a3e3d-114">Specifies the delivery format for outgoing e-mails.</span></span> <span data-ttu-id="a3e3d-115">指定できる値は SevenBit および International です。</span><span class="sxs-lookup"><span data-stu-id="a3e3d-115">Acceptable values are SevenBit and International.</span></span>|  
+|`deliveryMethod`|<span data-ttu-id="a3e3d-116">電子メールの配信方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="a3e3d-116">Specifies the delivery method for e-mails.</span></span> <span data-ttu-id="a3e3d-117">指定できる値は、network、pickupDirectoryFromIis、および specifiedPickupDirectory です。</span><span class="sxs-lookup"><span data-stu-id="a3e3d-117">Acceptable values are network, pickupDirectoryFromIis, and specifiedPickupDirectory.</span></span>|  
+|`from`|<span data-ttu-id="a3e3d-118">送信する電子メールの差出人アドレスを指定します。</span><span class="sxs-lookup"><span data-stu-id="a3e3d-118">Specifies the from address for outgoing e-mails.</span></span>|  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="a3e3d-119">子要素</span><span class="sxs-lookup"><span data-stu-id="a3e3d-119">Child Elements</span></span>  
   
-|Attribute|説明|  
-|---------------|--------|  
-|`specifiedPickupDirectory`|SMTP \(Simple Mail Transport Protocol\) サーバー用のローカル ディレクトリを設定します。|  
-|`network`|外部 SMTP サーバー用のネットワーク オプションを設定します。|  
+|<span data-ttu-id="a3e3d-120">属性</span><span class="sxs-lookup"><span data-stu-id="a3e3d-120">Attribute</span></span>|<span data-ttu-id="a3e3d-121">説明</span><span class="sxs-lookup"><span data-stu-id="a3e3d-121">Description</span></span>|  
+|---------------|-----------------|  
+|`specifiedPickupDirectory`|<span data-ttu-id="a3e3d-122">SMTP (Simple Mail Transport Protocol) サーバー用のローカル ディレクトリを設定します。</span><span class="sxs-lookup"><span data-stu-id="a3e3d-122">Configures the local directory for a Simple Mail Transport Protocol (SMTP) server.</span></span>|  
+|`network`|<span data-ttu-id="a3e3d-123">外部 SMTP サーバー用のネットワーク オプションを設定します。</span><span class="sxs-lookup"><span data-stu-id="a3e3d-123">Configures the network options for an external SMTP server.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="a3e3d-124">親要素</span><span class="sxs-lookup"><span data-stu-id="a3e3d-124">Parent Elements</span></span>  
   
-|**要素**|**説明**|  
-|------------|------------|  
-|[\<mailSettings\> 要素 \(ネットワーク設定\)](../../../../../docs/framework/configure-apps/file-schema/network/mailsettings-element-network-settings.md)|電子メールの送信オプションを設定します。|  
+|<span data-ttu-id="a3e3d-125">**要素**</span><span class="sxs-lookup"><span data-stu-id="a3e3d-125">**Element**</span></span>|<span data-ttu-id="a3e3d-126">**説明**</span><span class="sxs-lookup"><span data-stu-id="a3e3d-126">**Description**</span></span>|  
+|-----------------|---------------------|  
+|[<span data-ttu-id="a3e3d-127">\<mailSettings> 要素 (ネットワーク設定)</span><span class="sxs-lookup"><span data-stu-id="a3e3d-127">\<mailSettings> Element (Network Settings)</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/mailsettings-element-network-settings.md)|<span data-ttu-id="a3e3d-128">電子メールの送信オプションを設定します。</span><span class="sxs-lookup"><span data-stu-id="a3e3d-128">Configures mail sending options.</span></span>|  
   
-## 使用例  
- 既定のネットワーク資格情報を使用して電子メールを送信するために、適切な SMTP パラメーターを指定するコード例を次に示します。  
+## <a name="example"></a><span data-ttu-id="a3e3d-129">例</span><span class="sxs-lookup"><span data-stu-id="a3e3d-129">Example</span></span>  
+ <span data-ttu-id="a3e3d-130">次の例では、既定のネットワーク資格情報を使用して電子メールを送信する適切な SMTP パラメーターを指定します。</span><span class="sxs-lookup"><span data-stu-id="a3e3d-130">The following example specifies the appropriate SMTP parameters to send e-mail using the default network credentials.</span></span>  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <mailSettings>  
@@ -86,9 +88,9 @@ caps.handback.revision: 13
 </configuration>  
 ```  
   
-## 参照  
- <xref:System.Net.Configuration.SmtpSection?displayProperty=fullName>   
- <xref:System.Net.Mail.SmtpClient?displayProperty=fullName>   
- <xref:System.Net.Mail.SmtpDeliveryFormat>   
- <xref:System.Net.Mail.SmtpDeliveryMethod>   
- [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+## <a name="see-also"></a><span data-ttu-id="a3e3d-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="a3e3d-131">See Also</span></span>  
+ <xref:System.Net.Configuration.SmtpSection?displayProperty=nameWithType>  
+ <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>  
+ <xref:System.Net.Mail.SmtpDeliveryFormat>  
+ <xref:System.Net.Mail.SmtpDeliveryMethod>  
+ [<span data-ttu-id="a3e3d-132">ネットワーク設定スキーマ</span><span class="sxs-lookup"><span data-stu-id="a3e3d-132">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

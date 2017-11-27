@@ -1,50 +1,50 @@
 ---
-title: "カスタム バインディング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "Windows Communication Foundation, 構成"
-  - "Windows Communication Foundation, エンドポイント"
+title: "カスタム バインディング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Communication Foundation, endpoints
+- Windows Communication Foundation, configuration
 ms.assetid: 58532b6d-4eea-4a4f-854f-a1c8c842564d
-caps.latest.revision: 33
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 33
+caps.latest.revision: "33"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 07247573678d81bb45f8b4b7f07a453573326cbc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# カスタム バインディング
-システムが提供するバインディングの中にサービスの要件を満たすものがない場合は、<xref:System.ServiceModel.Channels.CustomBinding> クラスを使用できます。すべてのバインディングは、バインド要素の順序付き集合から作成されます。カスタム バインディングは、一連のシステム指定のバインド要素から作成したり、ユーザー定義のカスタム バインド要素を含めたりできます。カスタム バインド要素を使用すると、たとえば、新しいトランスポートまたはエンコーダーをサービス エンドポイントで使用できるようになります。実施例については、「[Custom Binding Samples](http://msdn.microsoft.com/ja-jp/657e8143-beb0-472d-9cfe-ed1a19c2ab08)」を参照してください。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][\<customBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+# <a name="custom-bindings"></a><span data-ttu-id="25b44-102">カスタム バインディング</span><span class="sxs-lookup"><span data-stu-id="25b44-102">Custom Bindings</span></span>
+<span data-ttu-id="25b44-103">システムが提供するバインディングの中にサービスの要件を満たすものがない場合は、<xref:System.ServiceModel.Channels.CustomBinding> クラスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="25b44-103">You can use the <xref:System.ServiceModel.Channels.CustomBinding> class when one of the system-provided bindings does not meet the requirements of your service.</span></span> <span data-ttu-id="25b44-104">すべてのバインディングは、バインド要素の順序付き集合から作成されます。</span><span class="sxs-lookup"><span data-stu-id="25b44-104">All bindings are constructed from an ordered set of binding elements.</span></span> <span data-ttu-id="25b44-105">カスタム バインディングは、一連のシステム指定のバインド要素から作成したり、ユーザー定義のカスタム バインド要素を含めたりできます。</span><span class="sxs-lookup"><span data-stu-id="25b44-105">Custom bindings can be built from a set of system-provided binding elements or can include user-defined custom binding elements.</span></span> <span data-ttu-id="25b44-106">カスタム バインド要素を使用すると、たとえば、新しいトランスポートまたはエンコーダーをサービス エンドポイントで使用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="25b44-106">You can use custom binding elements, for example, to enable the use of new transports or encoders at a service endpoint.</span></span> <span data-ttu-id="25b44-107">実施例については、次を参照してください。[カスタム バインディングのサンプル](http://msdn.microsoft.com/en-us/657e8143-beb0-472d-9cfe-ed1a19c2ab08)です。</span><span class="sxs-lookup"><span data-stu-id="25b44-107">For working examples, see [Custom Binding Samples](http://msdn.microsoft.com/en-us/657e8143-beb0-472d-9cfe-ed1a19c2ab08).</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="25b44-108">[ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="25b44-108"> [\<customBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).</span></span>  
   
-## カスタム バインディングの構築  
- カスタム バインディングは、特定の順序で "積み重ねられている" バインド要素のコレクションから <xref:System.ServiceModel.Channels.CustomBinding.%23ctor%2A> コンストラクターを使用して作成します。  
+## <a name="construction-of-a-custom-binding"></a><span data-ttu-id="25b44-109">カスタム バインドの構築</span><span class="sxs-lookup"><span data-stu-id="25b44-109">Construction of a Custom Binding</span></span>  
+ <span data-ttu-id="25b44-110">カスタム バインディングは、特定の順序で "積み重ねられている" バインディング要素のコレクションから <xref:System.ServiceModel.Channels.CustomBinding.%23ctor%2A> コンストラクターを使用して作成します。</span><span class="sxs-lookup"><span data-stu-id="25b44-110">A custom binding is constructed using the <xref:System.ServiceModel.Channels.CustomBinding.%23ctor%2A> constructor from a collection of binding elements that are "stacked" in a specific order:</span></span>  
   
--   最上位にあるのは、トランザクションのフローを可能にするオプションの <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> クラスです。  
+-   <span data-ttu-id="25b44-111">最上位にあるのは、トランザクションのフローを可能にするオプションの <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> クラスです。</span><span class="sxs-lookup"><span data-stu-id="25b44-111">At the top is an optional <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> class that allows flowing transactions.</span></span>  
   
--   その次にあるのは、WS\-ReliableMessaging 仕様で定義されているセッションおよび順序指定のメカニズムを提供する、オプションの <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> クラスです。セッションは、SOAP 中継局およびトランスポート中継局を通過できます。  
+-   <span data-ttu-id="25b44-112">その次にあるのは、WS-ReliableMessaging 仕様で定義されているセッションおよび順序指定のメカニズムを提供する、オプションの <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> クラスです。</span><span class="sxs-lookup"><span data-stu-id="25b44-112">Next is an optional <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> class that provides a session and ordering mechanisms as defined in the WS-ReliableMessaging specification.</span></span> <span data-ttu-id="25b44-113">セッションは、SOAP 中継局およびトランスポート中継局を通過できます。</span><span class="sxs-lookup"><span data-stu-id="25b44-113">A session can cross SOAP and transport intermediaries.</span></span>  
   
--   その次には、承認、認証、保護、機密性などのセキュリティ機能を提供する、オプションの <xref:System.ServiceModel.Channels.SecurityBindingElement> クラスがあります。  
+-   <span data-ttu-id="25b44-114">その次には、承認、認証、保護、機密性などのセキュリティ機能を提供する、オプションの <xref:System.ServiceModel.Channels.SecurityBindingElement> クラスがあります。</span><span class="sxs-lookup"><span data-stu-id="25b44-114">Next is an optional <xref:System.ServiceModel.Channels.SecurityBindingElement> class that provides security features such as authorization, authentication, protection, and confidentiality.</span></span>  
   
--   その次には、二重通信をネイティブでサポートしないトランスポート プロトコル \(HTTP など\) を使用して双方向の二重通信を可能にする、オプションの <xref:System.ServiceModel.Channels.CompositeDuplexBindingElement> クラスがあります。  
+-   <span data-ttu-id="25b44-115">その次には、二重通信をネイティブでサポートしないトランスポート プロトコル (HTTP など) を使用して双方向の二重通信を可能にする、オプションの <xref:System.ServiceModel.Channels.CompositeDuplexBindingElement> クラスがあります。</span><span class="sxs-lookup"><span data-stu-id="25b44-115">Next is an optional <xref:System.ServiceModel.Channels.CompositeDuplexBindingElement> class that provides the ability to have two way duplex communication with a transport protocol that does not support duplex communication natively, such as HTTP.</span></span>  
   
--   その次には、一方向通信を提供する、オプションの <xref:System.ServiceModel.Channels.OneWayBindingElement> クラスがあります。  
+-   <span data-ttu-id="25b44-116">その次には、一方向通信を提供する、オプションの <xref:System.ServiceModel.Channels.OneWayBindingElement> クラスがあります。</span><span class="sxs-lookup"><span data-stu-id="25b44-116">Next is an optional <xref:System.ServiceModel.Channels.OneWayBindingElement>) class that provides one-way communication.</span></span>  
   
--   その次にあるのは、オプションのストリーム セキュリティ バインド要素で、次のいずれかになります。  
+-   <span data-ttu-id="25b44-117">その次にあるのは、オプションのストリーム セキュリティ バインド要素で、次のいずれかになります。</span><span class="sxs-lookup"><span data-stu-id="25b44-117">Next is an optional stream security binding element which can be one of the following.</span></span>  
   
     -   <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>  
   
     -   <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>  
   
--   その次にあるのは、必須のメッセージ エンコード バインド要素です。独自のメッセージ エンコーダーを使用するか、次の 3 つのメッセージ エンコーディング バインディングのいずれかを使用できます。  
+-   <span data-ttu-id="25b44-118">その次にあるのは、必須のメッセージ エンコード バインド要素です。</span><span class="sxs-lookup"><span data-stu-id="25b44-118">Next is a required message encoding binding element.</span></span> <span data-ttu-id="25b44-119">独自のメッセージ エンコーダーを使用するか、次の 3 つのメッセージ エンコーディング バインディングのいずれかを使用できます。</span><span class="sxs-lookup"><span data-stu-id="25b44-119">You can use your own message encoder or one of the three message encoding bindings:</span></span>  
   
     -   <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  
   
@@ -52,7 +52,7 @@ caps.handback.revision: 33
   
     -   <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>  
   
- 最下位には、必須のトランスポート要素があります。独自のトランスポートを使用することも、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が提供する次のトランスポート バインド要素のいずれかを使用することもできます。  
+ <span data-ttu-id="25b44-120">最下位には、必須のトランスポート要素があります。</span><span class="sxs-lookup"><span data-stu-id="25b44-120">At the bottom is a required transport element.</span></span> <span data-ttu-id="25b44-121">独自のトランスポートを使用することも、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が提供する次のトランスポート バインド要素のいずれかを使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="25b44-121">You can use your own transport or one of the following transport binding elements [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] provides:</span></span>  
   
 -   <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  
   
@@ -70,22 +70,22 @@ caps.handback.revision: 33
   
 -   <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement>  
   
- 各層のオプションの概要を次の表に示します。  
+ <span data-ttu-id="25b44-122">各層のオプションの概要を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="25b44-122">The following table summarizes the options for each layer.</span></span>  
   
-|層|オプション|必須|  
-|-------|-----------|--------|  
-|トランザクション|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement>|×|  
-|信頼性|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>|×|  
-|セキュリティ|<xref:System.ServiceModel.Channels.SecurityBindingElement>|×|  
-|エンコーディング|テキスト、バイナリ、MTOM \(Message Transmission Optimization Mechanism\)、カスタム|○|  
-|トランスポート|TCP、HTTP、HTTPS、名前付きパイプ \(IPC\)、ピアツーピア \(P2P\)、メッセージ キュー \(MSMQ\)、カスタム|○|  
+|<span data-ttu-id="25b44-123">レイヤー</span><span class="sxs-lookup"><span data-stu-id="25b44-123">Layer</span></span>|<span data-ttu-id="25b44-124">オプション</span><span class="sxs-lookup"><span data-stu-id="25b44-124">Options</span></span>|<span data-ttu-id="25b44-125">必須</span><span class="sxs-lookup"><span data-stu-id="25b44-125">Required</span></span>|  
+|-----------|-------------|--------------|  
+|<span data-ttu-id="25b44-126">トランザクション</span><span class="sxs-lookup"><span data-stu-id="25b44-126">Transactions</span></span>|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement>|<span data-ttu-id="25b44-127">いいえ</span><span class="sxs-lookup"><span data-stu-id="25b44-127">No</span></span>|  
+|<span data-ttu-id="25b44-128">信頼性</span><span class="sxs-lookup"><span data-stu-id="25b44-128">Reliability</span></span>|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>|<span data-ttu-id="25b44-129">Ｘ</span><span class="sxs-lookup"><span data-stu-id="25b44-129">No</span></span>|  
+|<span data-ttu-id="25b44-130">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="25b44-130">Security</span></span>|<xref:System.ServiceModel.Channels.SecurityBindingElement>|<span data-ttu-id="25b44-131">いいえ</span><span class="sxs-lookup"><span data-stu-id="25b44-131">No</span></span>|  
+|<span data-ttu-id="25b44-132">エンコード</span><span class="sxs-lookup"><span data-stu-id="25b44-132">Encoding</span></span>|<span data-ttu-id="25b44-133">テキスト、バイナリ、MTOM (Message Transmission Optimization Mechanism)、カスタム</span><span class="sxs-lookup"><span data-stu-id="25b44-133">Text, binary, Message Transmission Optimization Mechanism (MTOM), custom</span></span>|<span data-ttu-id="25b44-134">はい</span><span class="sxs-lookup"><span data-stu-id="25b44-134">Yes</span></span>|  
+|<span data-ttu-id="25b44-135">Transport</span><span class="sxs-lookup"><span data-stu-id="25b44-135">Transport</span></span>|<span data-ttu-id="25b44-136">TCP、HTTP、HTTPS、名前付きパイプ (IPC)、ピアツーピア (P2P)、メッセージ キュー (MSMQ)、カスタム</span><span class="sxs-lookup"><span data-stu-id="25b44-136">TCP, HTTP, HTTPS, named pipes (also known as IPC), Peer-to-Peer (P2P), Message Queuing (also known as MSMQ), Custom</span></span>|<span data-ttu-id="25b44-137">はい</span><span class="sxs-lookup"><span data-stu-id="25b44-137">Yes</span></span>|  
   
- さらに、独自のバインド要素を定義し、それを定義済みの層のいずれかの間に挿入できます。  
+ <span data-ttu-id="25b44-138">さらに、独自のバインド要素を定義し、それを定義済みの層のいずれかの間に挿入できます。</span><span class="sxs-lookup"><span data-stu-id="25b44-138">In addition, you can define your own binding elements and insert them between any of the preceding defined layers.</span></span>  
   
-## 参照  
- [エンドポイントの作成の概要](../../../../docs/framework/wcf/endpoint-creation-overview.md)   
- [サービスとクライアントを構成するためのバインディングの使用](../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)   
- [システム標準のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)   
- [方法 : システム指定のバインディングをカスタマイズする](../../../../docs/framework/wcf/extending/how-to-customize-a-system-provided-binding.md)   
- [\<customBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)   
- [カスタム バインディング](../../../../docs/framework/wcf/samples/custom-binding.md)
+## <a name="see-also"></a><span data-ttu-id="25b44-139">関連項目</span><span class="sxs-lookup"><span data-stu-id="25b44-139">See Also</span></span>  
+ [<span data-ttu-id="25b44-140">エンドポイントの作成の概要</span><span class="sxs-lookup"><span data-stu-id="25b44-140">Endpoint Creation Overview</span></span>](../../../../docs/framework/wcf/endpoint-creation-overview.md)  
+ [<span data-ttu-id="25b44-141">サービスとクライアントを構成するためのバインディングの使用</span><span class="sxs-lookup"><span data-stu-id="25b44-141">Using Bindings to Configure Services and Clients</span></span>](../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
+ [<span data-ttu-id="25b44-142">システム標準のバインディング</span><span class="sxs-lookup"><span data-stu-id="25b44-142">System-Provided Bindings</span></span>](../../../../docs/framework/wcf/system-provided-bindings.md)  
+ [<span data-ttu-id="25b44-143">方法: システム指定のバインディングをカスタマイズします。</span><span class="sxs-lookup"><span data-stu-id="25b44-143">How to: Customize a System-Provided Binding</span></span>](../../../../docs/framework/wcf/extending/how-to-customize-a-system-provided-binding.md)  
+ [<span data-ttu-id="25b44-144">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="25b44-144">\<customBinding></span></span>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
+ [<span data-ttu-id="25b44-145">カスタム バインド</span><span class="sxs-lookup"><span data-stu-id="25b44-145">Custom Binding</span></span>](../../../../docs/framework/wcf/samples/custom-binding.md)

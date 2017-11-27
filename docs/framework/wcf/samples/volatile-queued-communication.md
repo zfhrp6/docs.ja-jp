@@ -1,37 +1,40 @@
 ---
-title: "揮発性キューによる通信 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "揮発性キューによる通信"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0d012f64-51c7-41d0-8e18-c756f658ee3d
-caps.latest.revision: 28
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 28
+caps.latest.revision: "28"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a7e6bb57245e9877fe337b86a03565d0197b0084
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 揮発性キューによる通信
-このサンプルでは、メッセージ キュー \(MSMQ\) トランスポートで揮発性キューによる通信を実行する方法を示します。このサンプルでは、<xref:System.ServiceModel.NetMsmqBinding> を使用しています。この場合、サービスは自己ホスト型コンソール アプリケーションで、サービスがキュー内のメッセージを受信したかどうかを監視できます。  
+# <a name="volatile-queued-communication"></a><span data-ttu-id="fc594-102">揮発性キューによる通信</span><span class="sxs-lookup"><span data-stu-id="fc594-102">Volatile Queued Communication</span></span>
+<span data-ttu-id="fc594-103">このサンプルでは、メッセージ キュー (MSMQ) トランスポートで揮発性キューによる通信を実行する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="fc594-103">This sample demonstrates how to perform volatile queued communication over the Message Queuing (MSMQ) transport.</span></span> <span data-ttu-id="fc594-104">このサンプルでは、<xref:System.ServiceModel.NetMsmqBinding> を使用しています。</span><span class="sxs-lookup"><span data-stu-id="fc594-104">This sample uses <xref:System.ServiceModel.NetMsmqBinding>.</span></span> <span data-ttu-id="fc594-105">この場合、サービスは自己ホスト型コンソール アプリケーションで、サービスがキュー内のメッセージを受信したかどうかを監視できます。</span><span class="sxs-lookup"><span data-stu-id="fc594-105">The service in this case is a self-hosted console application to enable you to observe the service receiving queued messages.</span></span>  
   
 > [!NOTE]
->  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
+>  <span data-ttu-id="fc594-106">このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。</span><span class="sxs-lookup"><span data-stu-id="fc594-106">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- キュー通信では、クライアントはサービスとの通信にキューを使用します。厳密には、クライアントはメッセージをキューに送信します。サービスは、メッセージをキューから受信します。このため、キューを使用する通信では、サービスとクライアントは同時に実行されていなくてもかまいません。  
+ <span data-ttu-id="fc594-107">キュー通信では、クライアントはサービスとの通信にキューを使用します。</span><span class="sxs-lookup"><span data-stu-id="fc594-107">In queued communication, the client communicates to the service using a queue.</span></span> <span data-ttu-id="fc594-108">厳密には、クライアントはメッセージをキューに送信します。</span><span class="sxs-lookup"><span data-stu-id="fc594-108">More precisely, the client sends messages to a queue.</span></span> <span data-ttu-id="fc594-109">サービスは、メッセージをキューから受信します。</span><span class="sxs-lookup"><span data-stu-id="fc594-109">The service receives messages from the queue.</span></span> <span data-ttu-id="fc594-110">したがって、キューを使用する通信では、サービスとクライアントが同時に実行されていなくてもかまいません。</span><span class="sxs-lookup"><span data-stu-id="fc594-110">The service and client therefore, do not have to be running at the same time to communicate using a queue.</span></span>  
   
- メッセージを保証なしで送信する場合、MSMQ ではメッセージ配信のみをベスト エフォートで実行します。これとは異なり、正確に 1 回の保証がある場合は、MSMQ はメッセージの配信を確認し、配信できない場合にはメッセージが配信できないことをユーザーに通知します。  
+ <span data-ttu-id="fc594-111">メッセージを保証なしで送信する場合、MSMQ ではメッセージ配信のみをベスト エフォートで実行します。これとは異なり、正確に 1 回の保証がある場合は、MSMQ はメッセージの配信を確認し、配信できない場合にはメッセージが配信できないことをユーザーに通知します。</span><span class="sxs-lookup"><span data-stu-id="fc594-111">When you send a message with no assurances, MSMQ only makes a best effort to deliver the message, unlike with Exactly Once assurances where MSMQ ensures that the message gets delivered or, if it cannot be delivered, lets you know that the message cannot be delivered.</span></span>  
   
- 一部のシナリオでは、保証なしの揮発性メッセージをキューに送信する場合があります。この場合は、メッセージの損失より適切な時間での配信が重要です。揮発性メッセージは、キュー マネージャがクラッシュすると失われます。したがって、キュー マネージャがクラッシュした場合は、揮発性メッセージの保存に使用される非トランザクション キューは残りますが、メッセージそのものは失われます。メッセージはディスク上に保存されないためです。  
+ <span data-ttu-id="fc594-112">一部のシナリオでは、保証なしの揮発性メッセージをキューに送信する場合があります。この場合は、メッセージの損失より適切な時間での配信が重要です。</span><span class="sxs-lookup"><span data-stu-id="fc594-112">In certain scenarios, you may want to send a volatile message with no assurances over a queue, when timely delivery is more important than losing messages.</span></span> <span data-ttu-id="fc594-113">揮発性メッセージは、キュー マネージャがクラッシュすると失われます。</span><span class="sxs-lookup"><span data-stu-id="fc594-113">Volatile messages do not survive queue manager crashes.</span></span> <span data-ttu-id="fc594-114">したがって、キュー マネージャがクラッシュした場合は、揮発性メッセージの保存に使用される非トランザクション キューは残りますが、メッセージそのものは失われます。メッセージはディスク上に保存されないためです。</span><span class="sxs-lookup"><span data-stu-id="fc594-114">Therefore if the queue manager crashes, the non-transactional queue used to store volatile messages survives but the messages themselves do not because the messages are not stored on the disk.</span></span>  
   
 > [!NOTE]
->  MSMQ を使用するトランザクションのスコープ内では、保証なしの揮発性メッセージを送信することはできません。また、揮発性メッセージを送信するには非トランザクション キューを作成する必要があります。  
+>  <span data-ttu-id="fc594-115">MSMQ を使用するトランザクションのスコープ内では、保証なしの揮発性メッセージを送信することはできません。</span><span class="sxs-lookup"><span data-stu-id="fc594-115">You cannot send volatile messages with no assurances within the scope of a transaction using MSMQ.</span></span> <span data-ttu-id="fc594-116">また、揮発性メッセージを送信するには非トランザクション キューを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fc594-116">You also must create a non-transactional queue to send volatile messages.</span></span>  
   
- このサンプルのサービス コントラクトは `IStockTicker` です。これは、キューでの使用に最適な一方向サービスを定義します。  
+ <span data-ttu-id="fc594-117">このサンプルのサービス コントラクトは `IStockTicker` です。これは、キューでの使用に最適な一方向サービスを定義します。</span><span class="sxs-lookup"><span data-stu-id="fc594-117">The service contract in this sample is `IStockTicker` that defines one-way services that are best suited for use with queuing.</span></span>  
   
 ```  
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
@@ -40,10 +43,9 @@ public interface IStockTicker
     [OperationContract(IsOneWay = true)]  
     void StockTick(string symbol, float price);  
 }  
-  
 ```  
   
- このサービス操作は、株価情報のシンボルと価格を表示します。次のサンプル コードを参照してください。  
+ <span data-ttu-id="fc594-118">このサービス操作は、株価情報のシンボルと価格を表示します。次のサンプル コードを参照してください。</span><span class="sxs-lookup"><span data-stu-id="fc594-118">The service operation displays the stock ticker symbol and price, as shown in the following sample code:</span></span>  
   
 ```  
 public class StockTickerService : IStockTicker  
@@ -54,10 +56,9 @@ public class StockTickerService : IStockTicker
      }  
      …  
 }  
-  
 ```  
   
- サービスは自己ホスト型です。MSMQ トランスポートを使用する場合、使用するキューをあらかじめ作成しておく必要があります。手動で作成することもコードで作成することもできます。このサンプルでは、キューの存在を確認して、必要な場合は作成するためのコードがサービスに含まれています。キュー名は構成ファイルから読み込まれます。ベース アドレスは、[ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) で使用され、サービスにプロキシが生成されます。  
+ <span data-ttu-id="fc594-119">サービスは自己ホスト型です。</span><span class="sxs-lookup"><span data-stu-id="fc594-119">The service is self hosted.</span></span> <span data-ttu-id="fc594-120">MSMQ トランスポートを使用する場合、使用するキューをあらかじめ作成しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="fc594-120">When using the MSMQ transport, the queue used must be created in advance.</span></span> <span data-ttu-id="fc594-121">手動で作成することもコードで作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="fc594-121">This can be done manually or through code.</span></span> <span data-ttu-id="fc594-122">このサンプルでは、キューの存在を確認して、必要な場合は作成するためのコードがサービスに含まれています。</span><span class="sxs-lookup"><span data-stu-id="fc594-122">In this sample, the service contains code to check for the existence of the queue and create it if required.</span></span> <span data-ttu-id="fc594-123">キュー名は構成ファイルから読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="fc594-123">The queue name is read from the configuration file.</span></span> <span data-ttu-id="fc594-124">ベース アドレスを使って、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービスのプロキシを生成します。</span><span class="sxs-lookup"><span data-stu-id="fc594-124">The base address is used by the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) to generate the proxy for the service.</span></span>  
   
 ```  
 // Host the service within this EXE console application.  
@@ -86,17 +87,16 @@ public static void Main()
         serviceHost.Close();  
     }  
 }  
-  
 ```  
   
- MSMQ キュー名は、構成ファイルの appSettings セクションに指定されます。サービスのエンドポイントは、構成ファイルの system.serviceModel セクションで定義されます。このエンドポイントは `netMsmqBinding` バインディングを指定します。  
+ <span data-ttu-id="fc594-125">MSMQ キュー名は、構成ファイルの appSettings セクションに指定されます。</span><span class="sxs-lookup"><span data-stu-id="fc594-125">The MSMQ queue name is specified in the appSettings section of the configuration file.</span></span> <span data-ttu-id="fc594-126">サービスのエンドポイントは、構成ファイルの system.serviceModel セクションで定義されます。このエンドポイントは `netMsmqBinding` バインディングを指定します。</span><span class="sxs-lookup"><span data-stu-id="fc594-126">The endpoint for the service is defined in the system.serviceModel section of the configuration file and specifies the `netMsmqBinding` binding.</span></span>  
   
 > [!NOTE]
->  <xref:System.Messaging> を使用してキューを作成する場合、キュー名では、ローカル コンピューターを表すのにドット \(.\) を使用し、パスの区切りにはバックスラッシュを使用します。[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] エンドポイント アドレスでは net.msmq: スキームが指定されます。ローカル コンピュータには "localhost" が使用され、そのパスにはスラッシュが先行します。  
+>  <span data-ttu-id="fc594-127"><xref:System.Messaging> を使用してキューを作成する場合、キュー名では、ローカル コンピューターを表すのにドット (.) を使用し、パスの区切りにはバックスラッシュを使用します。</span><span class="sxs-lookup"><span data-stu-id="fc594-127">The queue name uses a dot (.) for the local machine and backslash separators in its path when creating a queue using <xref:System.Messaging>.</span></span> <span data-ttu-id="fc594-128">[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] エンドポイント アドレスでは net.msmq: スキームが指定されます。ローカル コンピュータには "localhost" が使用され、そのパスにはスラッシュが先行します。</span><span class="sxs-lookup"><span data-stu-id="fc594-128">The [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] endpoint address specifies a net.msmq: scheme, uses "localhost" for the local machine and forward slashes in its path.</span></span>  
   
- メッセージの保証および持続性または揮発性についても、構成ファイルで指定します。  
+ <span data-ttu-id="fc594-129">メッセージの保証および持続性または揮発性についても、構成ファイルで指定します。</span><span class="sxs-lookup"><span data-stu-id="fc594-129">The assurances and durability or volatility of messages are also specified in the configuration.</span></span>  
   
-```  
+```xml  
 <appSettings>  
   <!-- use appSetting to configure MSMQ queue name -->  
   <add key="queueName" value=".\private$\ServiceModelSamplesVolatile" />  
@@ -125,10 +125,9 @@ public static void Main()
   </bindings>  
   ...  
 </system.serviceModel>  
-  
 ```  
   
- サンプルでは非トランザクション キューを使用してキューに置かれたメッセージを送信するので、トランザクション メッセージをキューに送信することはできません。  
+ <span data-ttu-id="fc594-130">サンプルでは非トランザクション キューを使用してキューに置かれたメッセージを送信するので、トランザクション メッセージをキューに送信することはできません。</span><span class="sxs-lookup"><span data-stu-id="fc594-130">Because the sample sends queued messages by using a non-transactional queue, transacted messages cannot be sent to the queue.</span></span>  
   
 ```  
 // Create a client.  
@@ -145,10 +144,9 @@ for (int i = 0; i < 10; i++)
   
 //Closing the client gracefully cleans up resources.  
 client.Close();  
-  
 ```  
   
- サンプルを実行すると、クライアントとサービスのアクティビティがサービスとクライアントの両方のコンソール ウィンドウに表示されます。サービスがクライアントからメッセージを受信するようすがわかります。どちらかのコンソールで Enter キーを押すと、サービスとクライアントがどちらもシャットダウンされます。キューが使用されているので、クライアントとサービスが同時に実行されている必要はありません。クライアントを実行してシャットダウンした後にサービスを起動しても、サービスはメッセージを受信します。  
+ <span data-ttu-id="fc594-131">サンプルを実行すると、クライアントとサービスのアクティビティがサービスとクライアントの両方のコンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="fc594-131">When you run the sample, the client and service activities are displayed in both the service and client console windows.</span></span> <span data-ttu-id="fc594-132">サービスがクライアントから受信したメッセージを表示できます。</span><span class="sxs-lookup"><span data-stu-id="fc594-132">You can see the service receive messages from the client.</span></span> <span data-ttu-id="fc594-133">どちらかのコンソールで Enter キーを押すと、サービスとクライアントがどちらもシャットダウンされます。</span><span class="sxs-lookup"><span data-stu-id="fc594-133">Press ENTER in each console window to shut down the service and client.</span></span> <span data-ttu-id="fc594-134">キューが使用されているので、クライアントとサービスが同時に実行されている必要はありません。</span><span class="sxs-lookup"><span data-stu-id="fc594-134">Note that because queuing is in use, the client and service do not have to be up and running at the same time.</span></span> <span data-ttu-id="fc594-135">クライアントを実行してシャットダウンした後にサービスを起動しても、サービスはメッセージを受信します。</span><span class="sxs-lookup"><span data-stu-id="fc594-135">You can run the client, shut it down, and then start up the service and it still receives its messages.</span></span>  
   
 ```  
 The service is ready.  
@@ -166,21 +164,21 @@ Stock Tick zzz8:43.32
 Stock Tick zzz9:43.3  
 ```  
   
-### サンプルを設定、ビルド、および実行するには  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="fc594-136">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="fc594-136">To set up, build, and run the sample</span></span>  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  <span data-ttu-id="fc594-137">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="fc594-137">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  ソリューションの C\# 版または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  <span data-ttu-id="fc594-138">ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="fc594-138">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  単一コンピュータ構成か複数コンピュータ構成かに応じて、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+3.  <span data-ttu-id="fc594-139">1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="fc594-139">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
- <xref:System.ServiceModel.NetMsmqBinding> を使用する場合の既定では、トランスポート セキュリティが有効です。MSMQ トランスポート セキュリティには、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> および <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> という 2 つの永続プロパティがあります。既定では、認証モードは `Windows` に設定され、保護レベルは `Sign` に設定されます。MSMQ の認証機能と署名機能を利用するには、ドメインに MSMQ があることと、MSMQ に関する Active Directory の統合オプションがインストールされていることが必要です。この条件を満たしていないコンピュータでこのサンプルを実行すると、エラーが発生します。  
+ <span data-ttu-id="fc594-140"><xref:System.ServiceModel.NetMsmqBinding> を使用する場合の既定では、トランスポート セキュリティが有効です。</span><span class="sxs-lookup"><span data-stu-id="fc594-140">By default with the <xref:System.ServiceModel.NetMsmqBinding>, transport security is enabled.</span></span> <span data-ttu-id="fc594-141">MSMQ トランスポート セキュリティでは、2 つの関連するプロパティがある<xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>と<xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.`既定では、認証モードに設定`Windows`保護レベルに設定されていると`Sign`です。</span><span class="sxs-lookup"><span data-stu-id="fc594-141">There are two pertinent properties for MSMQ transport security, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> and <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.` By default, the authentication mode is set to `Windows` and the protection level is set to `Sign`.</span></span> <span data-ttu-id="fc594-142">MSMQ の認証機能と署名機能を利用するには、ドメインに MSMQ があることと、MSMQ に関する Active Directory の統合オプションがインストールされていることが必要です。</span><span class="sxs-lookup"><span data-stu-id="fc594-142">For MSMQ to provide the authentication and signing feature, it must be part of a domain and the active directory integration option for MSMQ must be installed.</span></span> <span data-ttu-id="fc594-143">この条件を満たしていないコンピューターでこのサンプルを実行すると、エラーになります。</span><span class="sxs-lookup"><span data-stu-id="fc594-143">If you run this sample on a computer that does not satisfy these criteria you receive an error.</span></span>  
   
-### ワークグループに属しているコンピュータまたは Active Directory 統合のないコンピュータでこのサンプルを実行するには  
+### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup-or-without-active-directory-integration"></a><span data-ttu-id="fc594-144">ワークグループに属しているコンピューターまたは Active Directory 統合のないコンピューターでこのサンプルを実行するには</span><span class="sxs-lookup"><span data-stu-id="fc594-144">To run the sample on a computer joined to a workgroup or without active directory integration</span></span>  
   
-1.  ドメインに属していないコンピュータ、または Active Directory 統合がインストールされていないコンピュータを使用する場合は、トランスポート セキュリティをオフにします。オフにするには、認証モードと保護レベルを `None` にします。この構成コードの例を次に示します。  
+1.  <span data-ttu-id="fc594-145">ドメインに属していないコンピュータ、または Active Directory 統合がインストールされていないコンピュータを使用する場合は、トランスポート セキュリティをオフにします。オフにするには、認証モードと保護レベルを `None` にします。この構成コードの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="fc594-145">If your computer is not part of a domain or does not have active directory integration installed, turn off transport security by setting the authentication mode and protection level to `None` as shown in the following sample configuration code:</span></span>  
   
-    ```  
+    ```xml  
     <system.serviceModel>  
         <services>  
           <service name="Microsoft.ServiceModel.Samples.StockTickerService"  
@@ -223,21 +221,20 @@ Stock Tick zzz9:43.3
         </behaviors>  
   
       </system.serviceModel>  
-  
     ```  
   
-2.  サーバーとクライアントの両方の構成を変更したことを確認してから、サンプルを実行します。  
+2.  <span data-ttu-id="fc594-146">サーバーとクライアントの両方の構成を変更したことを確認してから、サンプルを実行します。</span><span class="sxs-lookup"><span data-stu-id="fc594-146">Ensure that you change the configuration on both the server and the client before you run the sample.</span></span>  
   
     > [!NOTE]
-    >  `security mode` を `None` に設定することは、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>、および `Message` のセキュリティを  `None` に設定することと同じです。  
+    >  <span data-ttu-id="fc594-147">`security mode` を `None` に設定することは、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>、および `Message` のセキュリティを `None` に設定することに相当します。</span><span class="sxs-lookup"><span data-stu-id="fc594-147">Setting `security mode` to `None` is equivalent to setting <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>, and `Message` security to `None`.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="fc594-148">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="fc594-148">The samples may already be installed on your computer.</span></span> <span data-ttu-id="fc594-149">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="fc594-149">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="fc594-150">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="fc594-150">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="fc594-151">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="fc594-151">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Volatile`  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="fc594-152">関連項目</span><span class="sxs-lookup"><span data-stu-id="fc594-152">See Also</span></span>

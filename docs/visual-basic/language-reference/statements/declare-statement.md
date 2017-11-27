@@ -1,161 +1,159 @@
 ---
-title: "Declare Statement | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Declare"
-  - "vb.Lib"
-  - "vb.Any"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Lib keyword"
-  - "declaring procedures, Declare statement"
-  - "functions [Visual Basic], function procedures"
-  - "declarations, procedures"
-  - "procedures, declaration"
-  - "procedures, external"
-  - "Alias keyword"
-  - "external references, Visual Basic"
-  - "DLLs, declaring procedures"
-  - "Declare statement"
-  - "declarations, external"
-  - "Visual Basic code, Function procedures"
-  - "As keyword, in Declare statement"
-  - "resources [Visual Basic], declaring"
-  - "Public keyword, Declare statement"
-  - "platform invoke, Visual Basic external references"
-  - "Sub procedures, declarations"
-  - "APIs, declaring API functions"
-  - "Visual Basic code, Sub procedures"
-  - "Function procedures, declaring"
+title: Declare Statement
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.Declare
+- vb.Lib
+- vb.Any
+helpviewer_keywords:
+- Lib keyword [Visual Basic]
+- declaring procedures [Visual Basic], Declare statement
+- functions [Visual Basic], function procedures
+- declarations [Visual Basic], procedures
+- procedures [Visual Basic], declaration
+- procedures [Visual Basic], external
+- Alias keyword [Visual Basic]
+- external references [Visual Basic], Visual Basic
+- DLLs, declaring procedures
+- Declare statement [Visual Basic]
+- declarations [Visual Basic], external
+- Visual Basic code, Function procedures
+- As keyword [Visual Basic], in Declare statement
+- resources [Visual Basic], declaring
+- Public keyword [Visual Basic], Declare statement
+- platform invoke, Visual Basic external references
+- Sub procedures [Visual Basic], declarations
+- APIs, declaring API functions
+- Visual Basic code, Sub procedures
+- Function procedures [Visual Basic], declaring
 ms.assetid: d3f21fb0-b804-4c99-97ed-583b23894cf1
-caps.latest.revision: 30
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 30
+caps.latest.revision: "30"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 2560f34a5130ef7453b50ffb4495b67bf1dfa4c8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Declare Statement
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-外部ファイル内で実装されているプロシージャへの参照を宣言します。  
+# <a name="declare-statement"></a><span data-ttu-id="9bcb2-102">Declare Statement</span><span class="sxs-lookup"><span data-stu-id="9bcb2-102">Declare Statement</span></span>
+<span data-ttu-id="9bcb2-103">外部ファイルで実装されているプロシージャへの参照を宣言します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-103">Declares a reference to a procedure implemented in an external file.</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="9bcb2-104">構文</span><span class="sxs-lookup"><span data-stu-id="9bcb2-104">Syntax</span></span>  
   
 ```  
-[ <attributelist> ] [ accessmodifier ] [ Shadows ] [ Overloads ] _  
-Declare [ charsetmodifier ] [ Sub ] name Lib "libname" _  
-[ Alias "aliasname" ] [ ([ parameterlist ]) ]  
+[ <attributelist> ] [ accessmodifier ] [ Shadows ] [ Overloads ] _  
+Declare [ charsetmodifier ] [ Sub ] name Lib "libname" _  
+[ Alias "aliasname" ] [ ([ parameterlist ]) ]  
 ' -or-  
-[ <attributelist> ] [ accessmodifier ] [ Shadows ] [ Overloads ] _  
-Declare [ charsetmodifier ] [ Function ] name Lib "libname" _  
-[ Alias "aliasname" ] [ ([ parameterlist ]) ] [ As returntype ]  
+[ <attributelist> ] [ accessmodifier ] [ Shadows ] [ Overloads ] _  
+Declare [ charsetmodifier ] [ Function ] name Lib "libname" _  
+[ Alias "aliasname" ] [ ([ parameterlist ]) ] [ As returntype ]  
 ```  
   
-## 指定項目  
+## <a name="parts"></a><span data-ttu-id="9bcb2-105">指定項目</span><span class="sxs-lookup"><span data-stu-id="9bcb2-105">Parts</span></span>  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`attributelist`|省略可能です。  「[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)」を参照してください。|  
-|`accessmodifier`|省略可能です。  次のいずれかになります。<br /><br /> -   [Public](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Private](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 「[Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。|  
-|`Shadows`|省略可能です。  「[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)」を参照してください。|  
-|`charsetmodifier`|省略可能です。  文字セットとファイル検索情報を指定します。  次のいずれかになります。<br /><br /> -   [Ansi](../../../visual-basic/language-reference/modifiers/ansi.md) \(既定値\)<br />-   [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)<br />-   [Auto](../../../visual-basic/language-reference/modifiers/auto.md)|  
-|`Sub`|省略できます。ただし、`Sub` か `Function` のどちらかを指定する必要があります。  外部プロシージャが戻り値を返さないことを表します。|  
-|`Function`|省略できます。ただし、`Sub` か `Function` のどちらかを指定する必要があります。  外部プロシージャが戻り値を返すことを表します。|  
-|`name`|必ず指定します。  この外部参照の名前です。  詳細については、「[Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。|  
-|`Lib`|必ず指定します。  `Lib` 句は、外部プロシージャを含む外部ファイル \(DLL またはコード リソース\) であることを示します。|  
-|`libname`|必ず指定します。  宣言するプロシージャが含まれているファイルの名前を指定します。|  
-|`Alias`|省略可能です。  `name` で指定した名前では、宣言するプロシージャをそのファイル内で特定できないことを表します。  識別子は `aliasname` で指定します。|  
-|`aliasname`|`Alias` キーワードを使用する場合は必ず指定します。  プロシージャを識別する文字列を、次のどちらかの方法で指定します。<br /><br /> ファイル内でのプロシージャのエントリ ポイント名を引用符 \(`""`\) で囲んで指定します。<br /><br /> または<br /><br /> シャープ記号 \(`#`\) の後ろに、ファイル内でのプロシージャのエントリ ポイントの序数を表す整数を指定します。|  
-|`parameterlist`|プロシージャがパラメーターを受け取る場合は、必ず指定します。  「[Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md)」を参照してください。|  
-|`returntype`|`Function` が指定されていて、`Option Strict` が `On` の場合は、必ず指定します。  プロシージャによって返される値のデータ型を指定します。|  
+|<span data-ttu-id="9bcb2-106">用語</span><span class="sxs-lookup"><span data-stu-id="9bcb2-106">Term</span></span>|<span data-ttu-id="9bcb2-107">定義</span><span class="sxs-lookup"><span data-stu-id="9bcb2-107">Definition</span></span>|  
+|---|---|  
+|`attributelist`|<span data-ttu-id="9bcb2-108">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-108">Optional.</span></span> <span data-ttu-id="9bcb2-109">参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-109">See [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md).</span></span>|  
+|`accessmodifier`|<span data-ttu-id="9bcb2-110">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-110">Optional.</span></span> <span data-ttu-id="9bcb2-111">次のいずれかの値を指定します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-111">Can be one of the following:</span></span><br /><br /> <span data-ttu-id="9bcb2-112">-   [パブリック](../../../visual-basic/language-reference/modifiers/public.md)</span><span class="sxs-lookup"><span data-stu-id="9bcb2-112">-   [Public](../../../visual-basic/language-reference/modifiers/public.md)</span></span><br /><span data-ttu-id="9bcb2-113">-   [保護されています。](../../../visual-basic/language-reference/modifiers/protected.md)</span><span class="sxs-lookup"><span data-stu-id="9bcb2-113">-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)</span></span><br /><span data-ttu-id="9bcb2-114">-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)</span><span class="sxs-lookup"><span data-stu-id="9bcb2-114">-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)</span></span><br /><span data-ttu-id="9bcb2-115">-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)</span><span class="sxs-lookup"><span data-stu-id="9bcb2-115">-   [Private](../../../visual-basic/language-reference/modifiers/private.md)</span></span><br />-   `Protected Friend`<br /><br /> <span data-ttu-id="9bcb2-116">参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-116">See [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>|  
+|`Shadows`|<span data-ttu-id="9bcb2-117">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-117">Optional.</span></span> <span data-ttu-id="9bcb2-118">参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-118">See [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).</span></span>|  
+|`charsetmodifier`|<span data-ttu-id="9bcb2-119">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-119">Optional.</span></span> <span data-ttu-id="9bcb2-120">文字セットとファイルを指定の情報を検索します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-120">Specifies character set and file search information.</span></span> <span data-ttu-id="9bcb2-121">次のいずれかの値を指定します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-121">Can be one of the following:</span></span><br /><br /> <span data-ttu-id="9bcb2-122">-   [Ansi](../../../visual-basic/language-reference/modifiers/ansi.md) (既定値)</span><span class="sxs-lookup"><span data-stu-id="9bcb2-122">-   [Ansi](../../../visual-basic/language-reference/modifiers/ansi.md) (default)</span></span><br /><span data-ttu-id="9bcb2-123">-   [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)</span><span class="sxs-lookup"><span data-stu-id="9bcb2-123">-   [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)</span></span><br /><span data-ttu-id="9bcb2-124">-   [自動](../../../visual-basic/language-reference/modifiers/auto.md)</span><span class="sxs-lookup"><span data-stu-id="9bcb2-124">-   [Auto](../../../visual-basic/language-reference/modifiers/auto.md)</span></span>|  
+|`Sub`|<span data-ttu-id="9bcb2-125">省略可能、ただしか`Sub`または`Function`表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-125">Optional, but either `Sub` or `Function` must appear.</span></span> <span data-ttu-id="9bcb2-126">外部プロシージャが値を返さないことを示します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-126">Indicates that the external procedure does not return a value.</span></span>|  
+|`Function`|<span data-ttu-id="9bcb2-127">省略可能、ただしか`Sub`または`Function`表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-127">Optional, but either `Sub` or `Function` must appear.</span></span> <span data-ttu-id="9bcb2-128">外部プロシージャが値を返すことを示します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-128">Indicates that the external procedure returns a value.</span></span>|  
+|`name`|<span data-ttu-id="9bcb2-129">必須です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-129">Required.</span></span> <span data-ttu-id="9bcb2-130">この外部参照の名前です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-130">Name of this external reference.</span></span> <span data-ttu-id="9bcb2-131">詳細については、次を参照してください。[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-131">For more information, see [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).</span></span>|  
+|`Lib`|<span data-ttu-id="9bcb2-132">必須です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-132">Required.</span></span> <span data-ttu-id="9bcb2-133">導入されています、`Lib`句は、外部プロシージャを含む外部ファイル (DLL またはコード リソース) を識別します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-133">Introduces a `Lib` clause, which identifies the external file (DLL or code resource) that contains an external procedure.</span></span>|  
+|`libname`|<span data-ttu-id="9bcb2-134">必須です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-134">Required.</span></span> <span data-ttu-id="9bcb2-135">宣言されたプロシージャを含むファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-135">Name of the file that contains the declared procedure.</span></span>|  
+|`Alias`|<span data-ttu-id="9bcb2-136">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-136">Optional.</span></span> <span data-ttu-id="9bcb2-137">指定された名前で、ファイル内で宣言されているプロシージャを識別できないことを示す`name`です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-137">Indicates that the procedure being declared cannot be identified within its file by the name specified in `name`.</span></span> <span data-ttu-id="9bcb2-138">その id を指定する`aliasname`です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-138">You specify its identification in `aliasname`.</span></span>|  
+|`aliasname`|<span data-ttu-id="9bcb2-139">使用するかどうかは必ず、`Alias`キーワード。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-139">Required if you use the `Alias` keyword.</span></span> <span data-ttu-id="9bcb2-140">2 つの方法のいずれかでプロシージャを識別する文字列。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-140">String that identifies the procedure in one of two ways:</span></span><br /><br /> <span data-ttu-id="9bcb2-141">引用符で囲まれた、ファイルの内部でプロシージャのエントリ ポイント名 (`""`)</span><span class="sxs-lookup"><span data-stu-id="9bcb2-141">The entry point name of the procedure within its file, within quotes (`""`)</span></span><br /><br /> <span data-ttu-id="9bcb2-142">または</span><span class="sxs-lookup"><span data-stu-id="9bcb2-142">-or-</span></span><br /><br /> <span data-ttu-id="9bcb2-143">番号記号 (`#`) とファイルの内部でプロシージャのエントリ ポイントの序数を指定する整数値</span><span class="sxs-lookup"><span data-stu-id="9bcb2-143">A number sign (`#`) followed by an integer specifying the ordinal number of the procedure's entry point within its file</span></span>|  
+|`parameterlist`|<span data-ttu-id="9bcb2-144">かどうか、プロシージャでは、パラメーターが必要です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-144">Required if the procedure takes parameters.</span></span> <span data-ttu-id="9bcb2-145">参照してください[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-145">See [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md).</span></span>|  
+|`returntype`|<span data-ttu-id="9bcb2-146">場合は必須`Function`が指定されていると`Option Strict`は`On`します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-146">Required if `Function` is specified and `Option Strict` is `On`.</span></span> <span data-ttu-id="9bcb2-147">プロシージャによって返される値のデータ型。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-147">Data type of the value returned by the procedure.</span></span>|  
   
-## 解説  
- 場合によっては、プロジェクト外部のファイル \(DLL やコード リソースなど\) 内で定義されたプロシージャを呼び出すことがあります。  このとき、Visual Basic コンパイラは、目的のプロシージャを正しく呼び出すために必要な情報 \(プロシージャの定義場所、識別方法、呼び出しシーケンスや戻り値の型、使用される文字セットなど\) を知りません。  `Declare` ステートメントは、外部プロシージャへの参照を作成し、この必須情報を提供します。  
+## <a name="remarks"></a><span data-ttu-id="9bcb2-148">コメント</span><span class="sxs-lookup"><span data-stu-id="9bcb2-148">Remarks</span></span>  
+ <span data-ttu-id="9bcb2-149">場合があります (DLL またはコード リソース) などのファイルをプロジェクト外で定義されているプロシージャを呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-149">Sometimes you need to call a procedure defined in a file (such as a DLL or code resource) outside your project.</span></span> <span data-ttu-id="9bcb2-150">これを行うときに、Visual Basic コンパイラには、プロシージャが配置されているなどと識別する方法、その呼び出し元のシーケンスと戻り値の型、文字列の文字セットを使用して、プロシージャを正しく呼び出すために必要な情報へのアクセスはありません。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-150">When you do this, the Visual Basic compiler does not have access to the information it needs to call the procedure correctly, such as where the procedure is located, how it is identified, its calling sequence and return type, and the string character set it uses.</span></span> <span data-ttu-id="9bcb2-151">`Declare`ステートメントは、外部プロシージャへの参照を作成し、この必要な情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-151">The `Declare` statement creates a reference to an external procedure and supplies this necessary information.</span></span>  
   
- `Declare` は、モジュール レベルでのみ使用できます。  つまり、外部参照の*宣言コンテキスト*は、クラス、構造体、またはモジュールであることが必要で、ソース ファイル、名前空間、インターフェイス、プロシージャ、ブロックでは宣言できません。  詳細については、「[Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。  
+ <span data-ttu-id="9bcb2-152">`Declare` は、モジュール レベルでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-152">You can use `Declare` only at module level.</span></span> <span data-ttu-id="9bcb2-153">つまり、*宣言コンテキスト*外部参照は、クラス、構造体、またはモジュールにする必要があり、ソース ファイル、名前空間、インターフェイス、プロシージャ、またはブロックすることはできません。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-153">This means the *declaration context* for an external reference must be a class, structure, or module, and cannot be a source file, namespace, interface, procedure, or block.</span></span> <span data-ttu-id="9bcb2-154">詳細については、「[宣言コンテキストと既定のアクセス レベル](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-154">For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).</span></span>  
   
- 外部参照は、既定で [Public](../../../visual-basic/language-reference/modifiers/public.md) アクセスになります。  アクセス修飾子を使用してこれらのアクセス レベルを調整できます。  
+ <span data-ttu-id="9bcb2-155">外部参照の既定値は[パブリック](../../../visual-basic/language-reference/modifiers/public.md)アクセスします。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-155">External references default to [Public](../../../visual-basic/language-reference/modifiers/public.md) access.</span></span> <span data-ttu-id="9bcb2-156">アクセス修飾子を使用してこれらのアクセス レベルを調整できます。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-156">You can adjust their access levels with the access modifiers.</span></span>  
   
-## 規則  
+## <a name="rules"></a><span data-ttu-id="9bcb2-157">ルール</span><span class="sxs-lookup"><span data-stu-id="9bcb2-157">Rules</span></span>  
   
--   **属性。**外部参照には属性を適用できます。  適用した属性はプロジェクト内でのみ有効であり、外部ファイル内では無効です。  
+-   <span data-ttu-id="9bcb2-158">**属性。**</span><span class="sxs-lookup"><span data-stu-id="9bcb2-158">**Attributes.**</span></span> <span data-ttu-id="9bcb2-159">属性は、外部参照に適用できます。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-159">You can apply attributes to an external reference.</span></span> <span data-ttu-id="9bcb2-160">外部のファイルではなく、プロジェクトでのみ適用するすべての属性を持ちません。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-160">Any attribute you apply has effect only in your project, not in the external file.</span></span>  
   
--   **修飾子。**外部プロシージャは暗黙的に [Shared](../../../visual-basic/language-reference/modifiers/shared.md) になります。  外部参照を宣言するときに `Shared` キーワードを使用することはできません。また、この共有ステータスは変更できません。  
+-   <span data-ttu-id="9bcb2-161">**修飾子です。**</span><span class="sxs-lookup"><span data-stu-id="9bcb2-161">**Modifiers.**</span></span> <span data-ttu-id="9bcb2-162">外部プロシージャは、暗黙的に[Shared](../../../visual-basic/language-reference/modifiers/shared.md)です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-162">External procedures are implicitly [Shared](../../../visual-basic/language-reference/modifiers/shared.md).</span></span> <span data-ttu-id="9bcb2-163">使用することはできません、`Shared`キーワードと、共有状態を変更して、外部参照を宣言することはできません。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-163">You cannot use the `Shared` keyword when declaring an external reference, and you cannot alter its shared status.</span></span>  
   
-     外部プロシージャは、オーバーライドに参加したり、インターフェイス メンバーを実装したり、イベントを処理したりすることはできません。  そのため、`Declare` ステートメント内では `Overrides`、`Overridable`、`NotOverridable`、`MustOverride`、`Implements`、または `Handles` キーワードを使用できません。  
+     <span data-ttu-id="9bcb2-164">外部プロシージャでは、オーバーライドに参加したり、インターフェイス メンバーの実装、またはイベントを処理できません。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-164">An external procedure cannot participate in overriding, implement interface members, or handle events.</span></span> <span data-ttu-id="9bcb2-165">同様に、使用することはできません、 `Overrides`、 `Overridable`、 `NotOverridable`、 `MustOverride`、 `Implements`、または`Handles`キーワード、`Declare`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-165">Accordingly, you cannot use the `Overrides`, `Overridable`, `NotOverridable`, `MustOverride`, `Implements`, or `Handles` keyword in a `Declare` statement.</span></span>  
   
--   **外部プロシージャ名。**この外部参照の名前 \(`name`\) を、外部ファイル内でのプロシージャのエントリ ポイント名 \(`aliasname`\) と同じにする必要はありません。  エントリ ポイント名を指定するには `Alias` 句を使用します。  この方法は、目的の外部プロシージャが Visual Basic の予約済みの修飾子や同じスコープ内の変数、プロシージャ、その他のプログラミング要素と同じ名前を持っている場合に役立ちます。  
-  
-    > [!NOTE]
-    >  ほとんどの DLL 内のエントリ ポイント名は、大文字と小文字を区別します。  
-  
--   **外部プロシージャ番号。**別の方法として、`Alias` 句を使用して、外部ファイルのエクスポート テーブル内でのエントリ ポイントの序数を指定することもできます。  この方法を使用する場合は、`aliasname` の先頭をシャープ記号 \(`#`\) にします。  この方法は、外部プロシージャ名のいずれかの文字が Visual Basic 内で許可されていない場合や、外部ファイルがプロシージャを名前なしでエクスポートする場合に役立ちます。  
-  
-## データ型のルール  
-  
--   **パラメーターのデータ型。** `Option Strict` が `On` の場合は、`parameterlist` 内の各パラメーターのデータ型を指定する必要があります。  任意のデータ型、または列挙体、構造体、クラス、インターフェイスの名前を指定できます。  各パラメーターに渡される引数のデータ型を指定するには、`parameterlist` 内で `As` 句を使用します。  
+-   <span data-ttu-id="9bcb2-166">**外部プロシージャの名前。**</span><span class="sxs-lookup"><span data-stu-id="9bcb2-166">**External Procedure Name.**</span></span> <span data-ttu-id="9bcb2-167">この外部参照に同じ名前を指定する必要はありません (で`name`)、外部ファイル内で、プロシージャのエントリ ポイント名として (`aliasname`)。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-167">You do not have to give this external reference the same name (in `name`) as the procedure's entry-point name within its external file (`aliasname`).</span></span> <span data-ttu-id="9bcb2-168">使用することができます、`Alias`句をエントリ ポイント名を指定します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-168">You can use an `Alias` clause to specify the entry-point name.</span></span> <span data-ttu-id="9bcb2-169">これは、外部プロシージャに同じ名前の Visual Basic の予約済み修飾子または変数、プロシージャ、またはその他のプログラミング要素がある場合は、同じスコープ内に役立ちます。 ことができます。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-169">This can be useful if the external procedure has the same name as a Visual Basic reserved modifier or a variable, procedure, or any other programming element in the same scope.</span></span>  
   
     > [!NOTE]
-    >  外部プロシージャが .NET Framework 用に記述されていない場合は、データ型の対応に注意する必要があります。  たとえば、`Integer` 型 \(Visual Basic 6.0 では 16 ビット\) のパラメーターを持つ Visual Basic 6.0 プロシージャへの外部参照を宣言する場合は、その `Declare` ステートメント内で、対応する引数を `Short` 型として指定する必要があります \(これが Visual Basic の 16 ビットの整数型に相当します\)。  同様に、`Long` は Visual Basic 6.0 では異なるデータ幅を持ち、`Date` は実装方法が異なります。  
+    >  <span data-ttu-id="9bcb2-170">ほとんどの Dll のエントリ ポイント名は大文字小文字を区別します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-170">Entry-point names in most DLLs are case-sensitive.</span></span>  
   
--   **戻り値の型。**外部プロシージャが `Function` で、`Option Strict` が `On` の場合は、呼び出し元コードに返される値のデータ型を指定する必要があります。  任意のデータ型、または列挙体、構造体、クラス、インターフェイスの名前を指定できます。  
+-   <span data-ttu-id="9bcb2-171">**外部プロシージャの数です。**</span><span class="sxs-lookup"><span data-stu-id="9bcb2-171">**External Procedure Number.**</span></span> <span data-ttu-id="9bcb2-172">また、使用することができます、`Alias`句を外部のファイルのエクスポート テーブル内のエントリ ポイントの序数を指定します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-172">Alternatively, you can use an `Alias` clause to specify the ordinal number of the entry point within the export table of the external file.</span></span> <span data-ttu-id="9bcb2-173">開始するには、`aliasname`は、番号記号 (`#`)。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-173">To do this, you begin `aliasname` with a number sign (`#`).</span></span> <span data-ttu-id="9bcb2-174">Visual basic では外部プロシージャ名の任意の文字が許可されていない場合、または外部のファイル名を指定せず、プロシージャをエクスポートする場合、これは役立つあります。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-174">This can be useful if any character in the external procedure name is not allowed in Visual Basic, or if the external file exports the procedure without a name.</span></span>  
+  
+## <a name="data-type-rules"></a><span data-ttu-id="9bcb2-175">データ型のルール</span><span class="sxs-lookup"><span data-stu-id="9bcb2-175">Data Type Rules</span></span>  
+  
+-   <span data-ttu-id="9bcb2-176">**パラメーターのデータ型。**</span><span class="sxs-lookup"><span data-stu-id="9bcb2-176">**Parameter Data Types.**</span></span> <span data-ttu-id="9bcb2-177">場合`Option Strict`は`On`、内の各パラメーターのデータ型を指定する必要があります`parameterlist`です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-177">If `Option Strict` is `On`, you must specify the data type of each parameter in `parameterlist`.</span></span> <span data-ttu-id="9bcb2-178">これには、任意のデータ型または列挙型、構造体、クラス、またはインターフェイスの名前を指定できます。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-178">This can be any data type or the name of an enumeration, structure, class, or interface.</span></span> <span data-ttu-id="9bcb2-179">内で`parameterlist`を使用する、`As`句を各パラメーターに渡される引数のデータ型を指定します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-179">Within `parameterlist`, you use an `As` clause to specify the data type of the argument to be passed to each parameter.</span></span>  
   
     > [!NOTE]
-    >  Visual Basic コンパイラは、指定したデータ型が外部プロシージャのものと互換性を持つかどうかを検証しません。  一致しない場合は、実行時に共通言語ランタイムが <xref:System.Runtime.InteropServices.MarshalDirectiveException> 例外を生成します。  
+    >  <span data-ttu-id="9bcb2-180">場合は、.NET Framework の外部プロシージャが書き込まれませんでした、する必要があります注意するデータ型の対応します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-180">If the external procedure was not written for the .NET Framework, you must take care that the data types correspond.</span></span> <span data-ttu-id="9bcb2-181">たとえばを使用する Visual Basic 6.0 プロシージャへの外部参照を宣言する場合、`Integer`パラメーター (Visual Basic 6.0 では 16 ビット) として、対応する引数を指定する必要があります`Short`で、`Declare`ステートメントでは、16 ビットであるためVisual Basic のビットの整数型。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-181">For example, if you declare an external reference to a Visual Basic 6.0 procedure with an `Integer` parameter (16 bits in Visual Basic 6.0), you must identify the corresponding argument as `Short` in the `Declare` statement, because that is the 16-bit integer type in Visual Basic.</span></span> <span data-ttu-id="9bcb2-182">同様に、`Long`別のデータ幅が、Visual Basic 6.0 と`Date`は異なる方法で実装します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-182">Similarly, `Long` has a different data width in Visual Basic 6.0, and `Date` is implemented differently.</span></span>  
   
--   **既定のデータ型。** `Option Strict` が `Off` で、`parameterlist` 内でパラメーターのデータ型を指定していない場合は、Visual Basic コンパイラは対応する引数を [Object Data Type](../../../visual-basic/language-reference/data-types/object-data-type.md)に変換します。  同様に、`returntype` を指定していない場合は、コンパイラは戻り値のデータ型を `Object` にします。  
+-   <span data-ttu-id="9bcb2-183">**データ型を返します。**</span><span class="sxs-lookup"><span data-stu-id="9bcb2-183">**Return Data Type.**</span></span> <span data-ttu-id="9bcb2-184">外部プロシージャがある場合、`Function`と`Option Strict`は`On`、呼び出し元のコードに返される値のデータ型を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-184">If the external procedure is a `Function` and `Option Strict` is `On`, you must specify the data type of the value returned to the calling code.</span></span> <span data-ttu-id="9bcb2-185">これには、任意のデータ型または列挙型、構造体、クラス、またはインターフェイスの名前を指定できます。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-185">This can be any data type or the name of an enumeration, structure, class, or interface.</span></span>  
   
     > [!NOTE]
-    >  使用しようとする外部プロシージャが別のプラットフォーム上で記述されている可能性もあるので、データ型を憶測で扱ったり、データ型を既定のままにしたりするのは危険です。  すべてのパラメーターと戻り値 \(ある場合\) に対してデータ型を指定した方が安全です。  こうすると、コードも読みやすくなります。  
+    >  <span data-ttu-id="9bcb2-186">Visual Basic コンパイラでは、データ型が外部プロシージャのものと互換性があるは検証されません。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-186">The Visual Basic compiler does not verify that your data types are compatible with those of the external procedure.</span></span> <span data-ttu-id="9bcb2-187">不一致がある場合、共通言語ランタイムを生成、<xref:System.Runtime.InteropServices.MarshalDirectiveException>実行時に例外です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-187">If there is a mismatch, the common language runtime generates a <xref:System.Runtime.InteropServices.MarshalDirectiveException> exception at run time.</span></span>  
   
-## \[動作\]  
+-   <span data-ttu-id="9bcb2-188">**既定のデータ型。**</span><span class="sxs-lookup"><span data-stu-id="9bcb2-188">**Default Data Types.**</span></span> <span data-ttu-id="9bcb2-189">場合`Option Strict`は`Off`内のパラメーターのデータ型を指定しないと`parameterlist`、Visual Basic コンパイラに対応する引数の変換、[オブジェクト データ型](../../../visual-basic/language-reference/data-types/object-data-type.md)です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-189">If `Option Strict` is `Off` and you do not specify the data type of a parameter in `parameterlist`, the Visual Basic compiler converts the corresponding argument to the [Object Data Type](../../../visual-basic/language-reference/data-types/object-data-type.md).</span></span> <span data-ttu-id="9bcb2-190">同様に、指定しない場合`returntype`、コンパイラは、戻り値のデータ型を受け取る`Object`です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-190">Similarly, if you do not specify `returntype`, the compiler takes the return data type to be `Object`.</span></span>  
   
--   **スコープ。**外部参照のスコープは、そのクラス、構造体、またはモジュール全体になります。  
+    > [!NOTE]
+    >  <span data-ttu-id="9bcb2-191">別のプラットフォームで書き込まれた外部プロシージャを扱うために、危険性のあるデータ型について、推測に基づいて作成したりすると、既定値です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-191">Because you are dealing with an external procedure that might have been written on a different platform, it is dangerous to make any assumptions about data types or to allow them to default.</span></span> <span data-ttu-id="9bcb2-192">存在する場合は安全にすべてのパラメーターと戻り値のデータ型を指定します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-192">It is much safer to specify the data type of every parameter and of the return value, if any.</span></span> <span data-ttu-id="9bcb2-193">これも、コードの読みやすさを向上します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-193">This also improves the readability of your code.</span></span>  
   
--   **有効期間。**外部参照の有効期間は、それが宣言されているクラス、構造体、またはモジュールと同じになります。  
+## <a name="behavior"></a><span data-ttu-id="9bcb2-194">動作</span><span class="sxs-lookup"><span data-stu-id="9bcb2-194">Behavior</span></span>  
   
--   **外部プロシージャの呼び出し。**外部プロシージャの呼び出し方は、`Function` または `Sub` プロシージャを呼び出すときと同じです。つまり、そのプロシージャが値を返す場合は式の中で使用し、値を返さない場合は [Call Statement](../../../visual-basic/language-reference/statements/call-statement.md) で指定します。  
+-   <span data-ttu-id="9bcb2-195">**スコープです。**</span><span class="sxs-lookup"><span data-stu-id="9bcb2-195">**Scope.**</span></span> <span data-ttu-id="9bcb2-196">外部参照では、そのクラス、構造体、またはモジュール全体にわたってスコープ内です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-196">An external reference is in scope throughout its class, structure, or module.</span></span>  
   
-     外部プロシージャに引数を渡すときは、`Declare` ステートメントの `parameterlist` で指定したとおりに指定します。  外部ファイルの中でパラメーターがどのように宣言されているかを気にする必要はありません。  同様に、戻り値がある場合は、`Declare` ステートメントの `returntype` で指定したとおりの方法で使用します。  
+-   <span data-ttu-id="9bcb2-197">**有効期間。**</span><span class="sxs-lookup"><span data-stu-id="9bcb2-197">**Lifetime.**</span></span> <span data-ttu-id="9bcb2-198">外部参照は、クラス、構造体、またはモジュールが宣言されている有効期間と同じです。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-198">An external reference has the same lifetime as the class, structure, or module in which it is declared.</span></span>  
   
--   **文字セット。** `charsetmodifier` では、外部プロシージャを呼び出すときに Visual Basic が文字列をどのようにマーシャリングするかを指定できます。  `Ansi` 修飾子は、すべての文字列を ANSI 値にマーシャリングすることを表します。`Unicode` 修飾子は、すべての文字列を Unicode 値にマーシャリングすることを表します。  `Auto` 修飾子は、文字列を外部参照の `name` または `aliasname` \(指定した場合\) に基づく .NET Framework の規則に従ってマーシャリングすることを表します。  既定値 `Ansi` です。  
+-   <span data-ttu-id="9bcb2-199">**外部プロシージャを呼び出しています。**</span><span class="sxs-lookup"><span data-stu-id="9bcb2-199">**Calling an External Procedure.**</span></span> <span data-ttu-id="9bcb2-200">呼び出すのと同じ方法で外部プロシージャを呼び出す、`Function`または`Sub`プロシージャ、またはを指定することで、値を返す場合、式で使用して、 [Call ステートメント](../../../visual-basic/language-reference/statements/call-statement.md)値を返さない場合です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-200">You call an external procedure the same way you call a `Function` or `Sub` procedure—by using it in an expression if it returns a value, or by specifying it in a [Call Statement](../../../visual-basic/language-reference/statements/call-statement.md) if it does not return a value.</span></span>  
   
-     さらに、`charsetmodifier` は、Visual Basic が外部ファイル内で外部プロシージャを検索する方法も指定します。  `Ansi` および `Unicode` を指定した場合、Visual Basic は検索中に名前を修飾しません。  `Auto` を指定した場合、Visual Basic は実行時プラットフォームの基本文字セットを調べて、外部プロシージャの名前を次のように修飾します。  
+     <span data-ttu-id="9bcb2-201">指定したとおり正確に外部プロシージャに引数を渡す`parameterlist`で、`Declare`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-201">You pass arguments to the external procedure exactly as specified by `parameterlist` in the `Declare` statement.</span></span> <span data-ttu-id="9bcb2-202">考慮されない方法、パラメーター宣言されている外部ファイルにします。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-202">Do not take into account how the parameters were originally declared in the external file.</span></span> <span data-ttu-id="9bcb2-203">同様に、戻り値がある場合を使用して、指定したとおり正確に`returntype`で、`Declare`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-203">Similarly, if there is a return value, use it exactly as specified by `returntype` in the `Declare` statement.</span></span>  
   
-    -   Windows 95、Windows 98、Windows Millennium Edition などの ANSI プラットフォームでは、まず名前修飾なしで外部プロシージャを検索します。  見つからなかった場合は、外部プロシージャ名の末尾に "A" を付けて再度検索します。  
+-   <span data-ttu-id="9bcb2-204">**文字を設定します。**</span><span class="sxs-lookup"><span data-stu-id="9bcb2-204">**Character Sets.**</span></span> <span data-ttu-id="9bcb2-205">指定できる`charsetmodifier`方法 Visual Basic が文字列マーシャ リングが外部プロシージャを呼び出すときにします。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-205">You can specify in `charsetmodifier` how Visual Basic should marshal strings when it calls the external procedure.</span></span> <span data-ttu-id="9bcb2-206">`Ansi`修飾子に指示を ANSI 値に、すべての文字列をマーシャ リングする Visual Basic、および`Unicode`修飾子の指示を Unicode 値のすべての文字列をマーシャ リングします。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-206">The `Ansi` modifier directs Visual Basic to marshal all strings to ANSI values, and the `Unicode` modifier directs it to marshal all strings to Unicode values.</span></span> <span data-ttu-id="9bcb2-207">`Auto`修飾子は、Visual Basic .NET Framework に従って文字列をマーシャ リングにルールが外部参照に基づくように指示`name`、または`aliasname`指定されている場合。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-207">The `Auto` modifier directs Visual Basic to marshal strings according to .NET Framework rules based on the external reference `name`, or `aliasname` if specified.</span></span> <span data-ttu-id="9bcb2-208">既定値は `Ansi` です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-208">The default value is `Ansi`.</span></span>  
   
-    -   Windows NT、Windows 2000、Windows XP などの Unicode プラットフォームでは、まず名前修飾なしで外部プロシージャを検索します。  見つからなかった場合は、外部プロシージャ名の末尾に "W" を付けて再度検索します。  
+     <span data-ttu-id="9bcb2-209">`charsetmodifier`また、Visual Basic が外部ファイルの内部で外部プロシージャを検索する方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-209">`charsetmodifier` also specifies how Visual Basic should look up the external procedure within its external file.</span></span> <span data-ttu-id="9bcb2-210">`Ansi`および`Unicode`検索するか、検索中にその名前を変更することがなく Visual Basic の直接両方です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-210">`Ansi` and `Unicode` both direct Visual Basic to look it up without modifying its name during the search.</span></span> <span data-ttu-id="9bcb2-211">`Auto`Visual Basic ランタイム プラットフォームの基本文字セットを確認し、場合によっては外部プロシージャ名は次のように変更が送信されます。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-211">`Auto` directs Visual Basic to determine the base character set of the run-time platform and possibly modify the external procedure name, as follows:</span></span>  
   
--   **しくみ。**Visual Basic は、.NET Framework の*プラットフォーム呼び出し* \(PInvoke\) 機構を使用して外部プロシージャの解決とアクセスを行います。  `Declare` ステートメントと <xref:System.Runtime.InteropServices.DllImportAttribute> クラスは両方ともこの機構を自動的に使用するので、PInvoke についての知識は必要ありません。  詳細については、「[Walkthrough: Calling Windows APIs](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)」を参照してください。  
+    -   <span data-ttu-id="9bcb2-212">プラットフォームでは、ANSI、Windows 95、Windows 98 または Windows Millennium Edition などは、名前のまま変更せずに、外部の手順をまず検索します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-212">On an ANSI platform, such as Windows 95, Windows 98, or Windows Millennium Edition, first look up the external procedure with no name modification.</span></span> <span data-ttu-id="9bcb2-213">失敗した場合は、外部プロシージャ名の末尾に"A"を追加し、再度検索します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-213">If that fails, append "A" to the end of the external procedure name and look it up again.</span></span>  
+  
+    -   <span data-ttu-id="9bcb2-214">Windows NT、Windows 2000、Windows XP などの Unicode プラットフォームでは、名前のまま変更せずに、外部の手順をまず検索します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-214">On a Unicode platform, such as Windows NT, Windows 2000, or Windows XP, first look up the external procedure with no name modification.</span></span> <span data-ttu-id="9bcb2-215">失敗した場合、追加"W"最後に、外部プロシージャの名前を指定し、再度検索します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-215">If that fails, append "W" to the end of the external procedure name and look it up again.</span></span>  
+  
+-   <span data-ttu-id="9bcb2-216">**メカニズムです。**</span><span class="sxs-lookup"><span data-stu-id="9bcb2-216">**Mechanism.**</span></span> <span data-ttu-id="9bcb2-217">Visual Basic、.NET Framework を使用して*プラットフォーム呼び出し*(PInvoke) メカニズムを解決し、外部プロシージャにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-217">Visual Basic uses the .NET Framework *platform invoke* (PInvoke) mechanism to resolve and access external procedures.</span></span> <span data-ttu-id="9bcb2-218">`Declare`ステートメントおよび<xref:System.Runtime.InteropServices.DllImportAttribute>両方のクラスが自動的に、このメカニズムを使用して、PInvoke を認識する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-218">The `Declare` statement and the <xref:System.Runtime.InteropServices.DllImportAttribute> class both use this mechanism automatically, and you do not need any knowledge of PInvoke.</span></span> <span data-ttu-id="9bcb2-219">詳細については、次を参照してください。[チュートリアル: Windows Api の呼び出し](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-219">For more information, see [Walkthrough: Calling Windows APIs](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md).</span></span>  
   
 > [!IMPORTANT]
->  共通言語ランタイム \(CLR\) の外部で実行される外部プロシージャは*アンマネージ コード*と呼ばれます。  たとえば Win32 API 関数や COM メソッドなどが該当しますが、このようなプロシージャを呼び出すとセキュリティ上のリスクが考えられます。  詳細については、「[アンマネージ コードの安全なコーディングのガイドライン](../Topic/Secure%20Coding%20Guidelines%20for%20Unmanaged%20Code.md)」を参照してください。  
+>  <span data-ttu-id="9bcb2-220">外部プロシージャは、共通言語ランタイム (CLR) の外部で実行する場合、は*アンマネージ コード*です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-220">If the external procedure runs outside the common language runtime (CLR), it is *unmanaged code*.</span></span> <span data-ttu-id="9bcb2-221">プロシージャを呼び出す場合などは、Win32 API 関数または COM メソッドの場合は、たとえば、セキュリティ リスクに対するアプリケーションを公開する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-221">When you call such a procedure, for example a Win32 API function or a COM method, you might expose your application to security risks.</span></span> <span data-ttu-id="9bcb2-222">詳細については、次を参照してください。[安全なコーディングのガイドライン、アンマネージ コード](../../../framework/security/secure-coding-guidelines-for-unmanaged-code.md)です。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-222">For more information, see [Secure Coding Guidelines for Unmanaged Code](../../../framework/security/secure-coding-guidelines-for-unmanaged-code.md).</span></span>  
   
-## 使用例  
- 次の例では、現在のユーザーの名前を返す `Function` プロシージャへの外部参照を宣言します。  その後、外部プロシージャ `GetUserNameA` を `getUser` プロシージャの一部として呼び出します。  
+## <a name="example"></a><span data-ttu-id="9bcb2-223">例</span><span class="sxs-lookup"><span data-stu-id="9bcb2-223">Example</span></span>  
+ <span data-ttu-id="9bcb2-224">次の例への外部参照の宣言、`Function`を現在のユーザー名を返すプロシージャです。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-224">The following example declares an external reference to a `Function` procedure that returns the current user name.</span></span> <span data-ttu-id="9bcb2-225">外部プロシージャを呼び出して`GetUserNameA`の一部として、`getUser`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-225">It then calls the external procedure `GetUserNameA` as part of the `getUser` procedure.</span></span>  
   
  [!code-vb[VbVbalrStatements#15](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/declare-statement_1.vb)]  
   
-## 使用例  
- <xref:System.Runtime.InteropServices.DllImportAttribute> を使うと、アンマネージ コード内の関数を別の方法で使うことができます。  インポートした関数を `Declare` ステートメントを使わずに宣言する例を次に示します。  
+## <a name="example"></a><span data-ttu-id="9bcb2-226">例</span><span class="sxs-lookup"><span data-stu-id="9bcb2-226">Example</span></span>  
+ <span data-ttu-id="9bcb2-227"><xref:System.Runtime.InteropServices.DllImportAttribute>関数を使用するアンマネージ コードでの代替手段を提供します。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-227">The <xref:System.Runtime.InteropServices.DllImportAttribute> provides an alternative way of using functions in unmanaged code.</span></span> <span data-ttu-id="9bcb2-228">次の例では、インポートされた関数を宣言を使用せず、`Declare`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="9bcb2-228">The following example declares an imported function without using a `Declare` statement.</span></span>  
   
  [!code-vb[VbVbalrStatements#16](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/declare-statement_2.vb)]  
   
  [!code-vb[VbVbalrStatements#1](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/declare-statement_3.vb)]  
   
-## 参照  
- <xref:Microsoft.VisualBasic.ErrObject.LastDllError%2A>   
- [Imports Statement \(.NET Namespace and Type\)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)   
- [AddressOf Operator](../../../visual-basic/language-reference/operators/addressof-operator.md)   
- [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)   
- [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)   
- [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md)   
- [Call Statement](../../../visual-basic/language-reference/statements/call-statement.md)   
- [Walkthrough: Calling Windows APIs](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)
+## <a name="see-also"></a><span data-ttu-id="9bcb2-229">関連項目</span><span class="sxs-lookup"><span data-stu-id="9bcb2-229">See Also</span></span>  
+ <xref:Microsoft.VisualBasic.ErrObject.LastDllError%2A>  
+ [<span data-ttu-id="9bcb2-230">Imports ステートメント (.NET 名前空間および型)</span><span class="sxs-lookup"><span data-stu-id="9bcb2-230">Imports Statement (.NET Namespace and Type)</span></span>](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
+ [<span data-ttu-id="9bcb2-231">AddressOf 演算子</span><span class="sxs-lookup"><span data-stu-id="9bcb2-231">AddressOf Operator</span></span>](../../../visual-basic/language-reference/operators/addressof-operator.md)  
+ [<span data-ttu-id="9bcb2-232">Function ステートメント</span><span class="sxs-lookup"><span data-stu-id="9bcb2-232">Function Statement</span></span>](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [<span data-ttu-id="9bcb2-233">Sub ステートメント</span><span class="sxs-lookup"><span data-stu-id="9bcb2-233">Sub Statement</span></span>](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [<span data-ttu-id="9bcb2-234">パラメーター リスト</span><span class="sxs-lookup"><span data-stu-id="9bcb2-234">Parameter List</span></span>](../../../visual-basic/language-reference/statements/parameter-list.md)  
+ [<span data-ttu-id="9bcb2-235">Call ステートメント</span><span class="sxs-lookup"><span data-stu-id="9bcb2-235">Call Statement</span></span>](../../../visual-basic/language-reference/statements/call-statement.md)  
+ [<span data-ttu-id="9bcb2-236">チュートリアル : Windows API の呼び出し</span><span class="sxs-lookup"><span data-stu-id="9bcb2-236">Walkthrough: Calling Windows APIs</span></span>](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)

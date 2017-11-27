@@ -1,26 +1,29 @@
 ---
-title: "KnownAssemblyAttribute | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: KnownAssemblyAttribute
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b3bc7f31-95ff-46e1-8308-d206ec426f6e
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e2ffa42fabed3fe32f557cee9c4cb14a331d7350
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# KnownAssemblyAttribute
-このサンプルでは、<xref:System.Runtime.Serialization.DataContractResolver> クラスを使用して、シリアル化プロセスおよび逆シリアル化プロセスをカスタマイズする方法を示します。  このサンプルで示すのは、シリアル化および逆シリアル化時に既知の型を動的に追加する方法です。  
+# <a name="knownassemblyattribute"></a><span data-ttu-id="9ee53-102">KnownAssemblyAttribute</span><span class="sxs-lookup"><span data-stu-id="9ee53-102">KnownAssemblyAttribute</span></span>
+<span data-ttu-id="9ee53-103">このサンプルでは、<xref:System.Runtime.Serialization.DataContractResolver> クラスを使用して、シリアル化プロセスおよび逆シリアル化プロセスをカスタマイズする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="9ee53-103">This sample demonstrates how the serialization and deserialization processes can be customized by using the <xref:System.Runtime.Serialization.DataContractResolver> class.</span></span> <span data-ttu-id="9ee53-104">このサンプルで示すのは、シリアル化および逆シリアル化時に既知の型を動的に追加する方法です。</span><span class="sxs-lookup"><span data-stu-id="9ee53-104">This sample shows how to dynamically add known types during serialization and deserialization.</span></span>  
   
-## サンプルの詳細  
- このサンプルは、4 つのプロジェクトで構成されます。  そのうちの 1 つは、IIS でホストされ、次のサービス コントラクトを定義するサービスに対応します。  
+## <a name="sample-details"></a><span data-ttu-id="9ee53-105">サンプルの詳細</span><span class="sxs-lookup"><span data-stu-id="9ee53-105">Sample Details</span></span>  
+ <span data-ttu-id="9ee53-106">このサンプルは、4 つのプロジェクトで構成されます。</span><span class="sxs-lookup"><span data-stu-id="9ee53-106">This sample is composed of four projects.</span></span> <span data-ttu-id="9ee53-107">そのうちの 1 つは、IIS でホストされ、次のサービス コントラクトを定義するサービスに対応します。</span><span class="sxs-lookup"><span data-stu-id="9ee53-107">One of them corresponds to the service, to be hosted by IIS, which defines the following service contract.</span></span>  
   
 ```  
 // Definition of a service contract.  
@@ -43,10 +46,9 @@ public interface IDataContractCalculator
     [OperationContract]  
     List<ComplexNumber> CombineLists(List<ComplexNumber> list1, List<ComplexNumber> list2);  
 }  
-  
 ```  
   
- サービス コントラクトの実装を次の例に示します。  
+ <span data-ttu-id="9ee53-108">サービス コントラクトの実装を次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="9ee53-108">The service contract is implemented as shown in the following example.</span></span>  
   
 ```  
 // Service class that implements the service contract.  
@@ -90,10 +92,9 @@ public interface IDataContractCalculator
         return result;  
     }  
 }  
-  
 ```  
   
- もう 1 つのプロジェクトは、サーバーと通信し、サーバーが公開しているメソッドを呼び出すクライアントに対応します。  クライアントの定義を次の例に示します。  
+ <span data-ttu-id="9ee53-109">もう 1 つのプロジェクトは、サーバーと通信し、サーバーが公開しているメソッドを呼び出すクライアントに対応します。</span><span class="sxs-lookup"><span data-stu-id="9ee53-109">Another project corresponds to the client, which communicates with the server and invokes the methods that it exposes.</span></span> <span data-ttu-id="9ee53-110">クライアントの定義を次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="9ee53-110">The definition of the client is shown in the following example.</span></span>  
   
 ```  
  // Client implementation code.  
@@ -194,14 +195,13 @@ public interface IDataContractCalculator
         Console.ReadLine();  
     }  
 }  
-  
 ```  
   
- サービス コントラクトの定義は、`KnownAssembly` 属性でマークされます。  この属性には型のライブラリの名前が含まれています。これらの型はすべて、実行時にサービスとクライアントの両方で既知となります。  
+ <span data-ttu-id="9ee53-111">サービス コントラクトの定義は、`KnownAssembly` 属性でマークされます。</span><span class="sxs-lookup"><span data-stu-id="9ee53-111">The definition of the service contract is marked with the `KnownAssembly` attribute.</span></span> <span data-ttu-id="9ee53-112">この属性には型のライブラリの名前が含まれています。これらの型はすべて、実行時にサービスとクライアントの両方で既知となります。</span><span class="sxs-lookup"><span data-stu-id="9ee53-112">This attribute contains the name of a library of types, which all become known at runtime by both the service and the client.</span></span>  
   
- `KnownAssembly` 属性は、操作の各動作に対して定義される `DataContractResolver` を使用して `DataContractSerializer` を定義するために `IContractBehavior` を実装します。  `DataContractResolver` は、作成時にアセンブリを十分に調べて、型と名前のマッピングを含むディクショナリを作成します。このディクショナリは、さまざまな型をシリアル化および逆シリアル化するときに使用されます。  このように、`ResolveType` 型および `ResolveName` 型は、必要なデータをディクショナリから検索する必要があります。  
+ <span data-ttu-id="9ee53-113">`KnownAssembly` 属性は、操作の各動作に対して定義される `IContractBehavior` を使用して `DataContractSerializer` を定義するために `DataContractResolver` を実装します。</span><span class="sxs-lookup"><span data-stu-id="9ee53-113">The `KnownAssembly` attribute implements `IContractBehavior` in order to define a `DataContractSerializer` with a `DataContractResolver` defined for each of the operation behaviors.</span></span> <span data-ttu-id="9ee53-114">`DataContractResolver` は、作成時にアセンブリを十分に調べて、型と名前のマッピングを含むディクショナリを作成します。このディクショナリは、さまざまな型をシリアル化および逆シリアル化するときに使用されます。</span><span class="sxs-lookup"><span data-stu-id="9ee53-114">The `DataContractResolver` reflects over the assembly when it is created, and creates the dictionary with the mapping between types and names to be used when serializing and deserializing the different types.</span></span> <span data-ttu-id="9ee53-115">このように、`ResolveType` 型および `ResolveName` 型は、必要なデータをディクショナリから検索する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9ee53-115">In that way, the `ResolveType` and `ResolveName` types must look up the data required in the dictionary.</span></span>  
   
- このサンプルでの `DataContractResolver` の定義を次の例に示します。  
+ <span data-ttu-id="9ee53-116">このサンプルでの `DataContractResolver` の定義を次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="9ee53-116">The `DataContractResolver` defined for this sample is shown in the following example.</span></span>  
   
 ```  
 public class MyDataContractResolver : DataContractResolver  
@@ -283,10 +283,9 @@ public class MyDataContractResolver : DataContractResolver
            }  
        }  
    }  
-  
 ```  
   
- このサンプルで使用する型のライブラリを次の例に示します。  
+ <span data-ttu-id="9ee53-117">このサンプルで使用する型のライブラリを次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="9ee53-117">The library of types used in this sample is shown in the following example.</span></span>  
   
 ```  
  [DataContract]  
@@ -329,12 +328,11 @@ public class ComplexNumberWithMagnitude : ComplexNumber
         set { }  
     }  
 }  
-  
 ```  
   
- `ComplexNumber` は、`ComplexNumberWithMagnitude` 型を静的に知る必要はありません。この型は実行時に既知となるためです。  
+ <span data-ttu-id="9ee53-118">`ComplexNumber` は、`ComplexNumberWithMagnitude` 型を静的に知る必要はありません。この型は実行時に既知となるためです。</span><span class="sxs-lookup"><span data-stu-id="9ee53-118">Note that `ComplexNumber` does not need to statically know the `ComplexNumberWithMagnitude` type, because it becomes known at runtime.</span></span>  
   
- このサンプルをビルドして実行した場合、クライアントでは次のような出力が取得されます。  
+ <span data-ttu-id="9ee53-119">このサンプルをビルドして実行した場合、クライアントでは次のような出力が取得されます。</span><span class="sxs-lookup"><span data-stu-id="9ee53-119">When the sample is built and executed, this is the expected output obtained in the client:</span></span>  
   
 ```  
 Add(1 + 2i, 3 + 4i) = 4 + 6i  
@@ -354,34 +352,33 @@ Lists combined:
 2 + 2i  
 3 + 3i  
 4 + 4i  
-  
 ```  
   
-#### サンプルを設定、実行、およびビルドするには  
+#### <a name="to-set-up-run-and-build-the-sample"></a><span data-ttu-id="9ee53-120">サンプルを設定、実行、およびビルドするには</span><span class="sxs-lookup"><span data-stu-id="9ee53-120">To set up, run, and build the sample</span></span>  
   
-1.  ソリューションの **KnownAssemblyAttribute** を右クリックし、**\[プロパティ\]** をクリックします。  
+1.  <span data-ttu-id="9ee53-121">ソリューションを右クリックして**KnownAssemblyAttribute**選択**プロパティ**です。</span><span class="sxs-lookup"><span data-stu-id="9ee53-121">Right-click the solution **KnownAssemblyAttribute** and select **Properties**.</span></span>  
   
-2.  **\[共通プロパティ\]** で、**\[スタートアップ プロジェクト\]** をクリックし、**\[マルチ スタートアップ プロジェクト\]** をクリックします。  
+2.  <span data-ttu-id="9ee53-122">**共通プロパティ****スタートアップ プロジェクト**、順にクリック**マルチ スタートアップ プロジェクト**です。</span><span class="sxs-lookup"><span data-stu-id="9ee53-122">In **Common Properties**, select **Startup Project**, and then click **Multiple startup projects**.</span></span>  
   
-3.  **サービス** プロジェクトと **クライアント** プロジェクトに **\[開始\]** アクションを追加します。  
+3.  <span data-ttu-id="9ee53-123">追加、**開始**アクションを**サービス**と**クライアント**プロジェクト。</span><span class="sxs-lookup"><span data-stu-id="9ee53-123">Add the **Start** action to the **Service** and **Client** projects.</span></span>  
   
-4.  **\[OK\]** をクリックし、**F5** キーを押してサンプルを実行します。  
+4.  <span data-ttu-id="9ee53-124">をクリックして**OK**とキーを押します**f5 キーを押して**サンプルを実行します。</span><span class="sxs-lookup"><span data-stu-id="9ee53-124">Click **OK**, and press **F5** to run the sample.</span></span>  
   
-5.  アプリケーションが正しく動作しない場合は、次の手順に従って環境設定が適切であることを確認してください。  
+5.  <span data-ttu-id="9ee53-125">アプリケーションが正しく動作しない場合は、次の手順に従って環境設定が適切であることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="9ee53-125">If the application does not run properly, follow these steps to make sure your environment has been properly set up:</span></span>  
   
-6.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](http://go.microsoft.com/fwlink/?LinkId=150774)」が実行済みであることを確認します。  
+6.  <span data-ttu-id="9ee53-126">実行したことを確認してください、 [1 回限りのセットアップの手順の Windows Communication Foundation サンプル](http://go.microsoft.com/fwlink/?LinkId=150774)です。</span><span class="sxs-lookup"><span data-stu-id="9ee53-126">Ensure that you have performed the [One-Time Set Up Procedure for the Windows Communication Foundation Samples](http://go.microsoft.com/fwlink/?LinkId=150774).</span></span>  
   
-7.  ソリューションをビルドするには、「[Windows Communication Foundation サンプルのビルド](http://go.microsoft.com/fwlink/?LinkId=150775)」の手順に従います。  
+7.  <span data-ttu-id="9ee53-127">指示に従って、ソリューションをビルドする[Windows Communication Foundation サンプルのビルド](http://go.microsoft.com/fwlink/?LinkId=150775)です。</span><span class="sxs-lookup"><span data-stu-id="9ee53-127">To build the solution, follow the instructions in [Building the Windows Communication Foundation Sample](http://go.microsoft.com/fwlink/?LinkId=150775).</span></span>  
   
-8.  単一のコンピュータの構成または複数のコンピュータの構成でサンプルを実行するには、「[Windows Communication Foundation サンプルの実行](http://go.microsoft.com/fwlink/?LinkId=150776)」の手順に従います。  
+8.  <span data-ttu-id="9ee53-128">1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](http://go.microsoft.com/fwlink/?LinkId=150776)です。</span><span class="sxs-lookup"><span data-stu-id="9ee53-128">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](http://go.microsoft.com/fwlink/?LinkId=150776).</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。  続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="9ee53-129">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="9ee53-129">The samples may already be installed on your machine.</span></span> <span data-ttu-id="9ee53-130">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="9ee53-130">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。  このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="9ee53-131">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="9ee53-131">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="9ee53-132">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="9ee53-132">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\KnownAssemblyAttribute`  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="9ee53-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="9ee53-133">See Also</span></span>

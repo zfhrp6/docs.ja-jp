@@ -1,87 +1,93 @@
 ---
-title: "Formulate Joins and Cross-Product Queries | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "結合およびクロス積クエリの作成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: d8072ede-0521-4670-9bec-1778ceeb875b
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 703823368f451839304ce02ff8b5f7259a44b935
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Formulate Joins and Cross-Product Queries
-次の例は、複数のテーブルからの結果を組み合わせる方法を示しています。  
+# <a name="formulate-joins-and-cross-product-queries"></a><span data-ttu-id="5e024-102">結合およびクロス積クエリの作成</span><span class="sxs-lookup"><span data-stu-id="5e024-102">Formulate Joins and Cross-Product Queries</span></span>
+<span data-ttu-id="5e024-103">次の例は、複数のテーブルからの結果を組み合わせる方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="5e024-103">The following examples show how to combine results from multiple tables.</span></span>  
   
-## 使用例  
- 次の例は、[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] の `From` 句 \(C\# の `from` 句\) で外部キー ナビゲーションを使用して、ロンドンの顧客の注文をすべて選択します。  
+## <a name="example"></a><span data-ttu-id="5e024-104">例</span><span class="sxs-lookup"><span data-stu-id="5e024-104">Example</span></span>  
+ <span data-ttu-id="5e024-105">次の例で外部キー ナビゲーションを使用して、`From`句[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)](`from`句 (C#)) ロンドンの顧客のすべての注文を選択します。</span><span class="sxs-lookup"><span data-stu-id="5e024-105">The following example uses foreign key navigation in the `From` clause in [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`from` clause in C#) to select all orders for customers in London.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#47](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#47)]
  [!code-vb[DLinqQueryExamples#47](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#47)]  
   
-## 使用例  
- 次の例は、[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] の `Where` 句 \(C\# の `where` 句\) で外部キー ナビゲーションを使用して、`Supplier` が米国にあり、在庫切れになっている `Products` をフィルター処理します。  
+## <a name="example"></a><span data-ttu-id="5e024-106">例</span><span class="sxs-lookup"><span data-stu-id="5e024-106">Example</span></span>  
+ <span data-ttu-id="5e024-107">外部キー ナビゲーションを使用する例を次、`Where`句[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)](`where`句 (C#)) を在庫切れのフィルター処理する`Products`が`Supplier`米国の州がします。</span><span class="sxs-lookup"><span data-stu-id="5e024-107">The following example uses foreign key navigation in the `Where` clause in [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`where` clause in C#) to filter for out-of-stock `Products` whose `Supplier` is in the United States.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#48](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#48)]
  [!code-vb[DLinqQueryExamples#48](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#48)]  
   
-## 使用例  
- 次の例は、[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] の `From` 句 \(C\# の `from` 句\) で外部キー ナビゲーションを使用して、シアトルの従業員をフィルター処理し、その担当区域を表示します。  
+## <a name="example"></a><span data-ttu-id="5e024-108">例</span><span class="sxs-lookup"><span data-stu-id="5e024-108">Example</span></span>  
+ <span data-ttu-id="5e024-109">次の例は、`From` の [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] 句 (C# の `from` 句) で外部キー ナビゲーションを使用して、シアトルの従業員をフィルター処理し、その担当区域を表示します。</span><span class="sxs-lookup"><span data-stu-id="5e024-109">The following example uses foreign key navigation in the `From` clause in [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`from` clause in C#) to filter for employees in Seattle and to list their territories.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#49](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#49)]  
   
-## 使用例  
- 次の例は、[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] の `Select` 句 \(C\# の `select` 句\) で外部キー ナビゲーションを使用して、上司と部下の関係にあり、同じ `City` 出身の 2 人の従業員の組み合わせをフィルター処理します。  
+## <a name="example"></a><span data-ttu-id="5e024-110">例</span><span class="sxs-lookup"><span data-stu-id="5e024-110">Example</span></span>  
+ <span data-ttu-id="5e024-111">次の例で外部キー ナビゲーションを使用して、`Select`句[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)](`select`句 (C#)) を 1 人の従業員が、他のレポート、および、両方の従業員は同じ従業員の組み合わせをフィルター処理する`City`です。</span><span class="sxs-lookup"><span data-stu-id="5e024-111">The following example uses foreign key navigation in the `Select` clause in [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] (`select` clause in C#) to filter for pairs of employees where one employee reports to the other and where both employees are from the same `City`.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#50](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#50)]
  [!code-vb[DLinqQueryExamples#50](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#50)]  
   
-## 使用例  
- 次の [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] の例は、すべての顧客と注文を調べ、注文と顧客が一致すること、およびリスト内のすべての顧客に連絡先名が指定されていることを確認します。  
+## <a name="example"></a><span data-ttu-id="5e024-112">例</span><span class="sxs-lookup"><span data-stu-id="5e024-112">Example</span></span>  
+ <span data-ttu-id="5e024-113">次[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)]例は、すべての顧客と注文を検索、顧客、注文が一致することを確認し、そのリスト内のすべての顧客の連絡先の名前が指定されていることを保証します。</span><span class="sxs-lookup"><span data-stu-id="5e024-113">The following [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] example looks for all customers and orders, makes sure that the orders are matched to customers, and guarantees that for every customer in that list, a contact name is provided.</span></span>  
   
  [!code-vb[DLinqQueryExamples#50v](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#50v)]  
   
-## 使用例  
- 次の例は、2 つのテーブルを明示的に結合し、両方のテーブルからの結果を投影します。  
+## <a name="example"></a><span data-ttu-id="5e024-114">例</span><span class="sxs-lookup"><span data-stu-id="5e024-114">Example</span></span>  
+ <span data-ttu-id="5e024-115">次の例は、2 つのテーブルを明示的に結合し、両方のテーブルからの結果を投影します。</span><span class="sxs-lookup"><span data-stu-id="5e024-115">The following example explicitly joins two tables and projects results from both tables.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#51](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#51)]
  [!code-vb[DLinqQueryExamples#51](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#51)]  
   
-## 使用例  
- 次の例は、3 つのテーブルを明示的に結合し、各テーブルからの結果を投影します。  
+## <a name="example"></a><span data-ttu-id="5e024-116">例</span><span class="sxs-lookup"><span data-stu-id="5e024-116">Example</span></span>  
+ <span data-ttu-id="5e024-117">次の例は、3 つのテーブルを明示的に結合し、各テーブルからの結果を投影します。</span><span class="sxs-lookup"><span data-stu-id="5e024-117">The following example explicitly joins three tables and projects results from each of them.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#52](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#52)]
  [!code-vb[DLinqQueryExamples#52](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#52)]  
   
-## 使用例  
- 次の例は、`DefaultIfEmpty()` を使用して、`LEFT OUTER JOIN` を実現する方法を示しています。  `Employee` に `Order` がない場合は、`DefaultIfEmpty()` メソッドから null が返されます。  
+## <a name="example"></a><span data-ttu-id="5e024-118">例</span><span class="sxs-lookup"><span data-stu-id="5e024-118">Example</span></span>  
+ <span data-ttu-id="5e024-119">次の例は、`LEFT OUTER JOIN` を使用して、`DefaultIfEmpty()` を実現する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="5e024-119">The following example shows how to achieve a `LEFT OUTER JOIN` by using `DefaultIfEmpty()`.</span></span> <span data-ttu-id="5e024-120">`DefaultIfEmpty()` に `Order` がない場合は、`Employee` メソッドから null が返されます。</span><span class="sxs-lookup"><span data-stu-id="5e024-120">The `DefaultIfEmpty()` method returns null when there is no `Order` for the `Employee`.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#53](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#53)]
  [!code-vb[DLinqQueryExamples#53](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#53)]  
   
-## 使用例  
- 次の例は、結合の結果の `let` 式を投影します。  
+## <a name="example"></a><span data-ttu-id="5e024-121">例</span><span class="sxs-lookup"><span data-stu-id="5e024-121">Example</span></span>  
+ <span data-ttu-id="5e024-122">次の例は、結合の結果の `let` 式を投影します。</span><span class="sxs-lookup"><span data-stu-id="5e024-122">The following example projects a `let` expression resulting from a join.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#54](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#54)]
  [!code-vb[DLinqQueryExamples#54](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#54)]  
   
-## 使用例  
- 次の例は、複合キーを使用する `join` を示しています。  
+## <a name="example"></a><span data-ttu-id="5e024-123">例</span><span class="sxs-lookup"><span data-stu-id="5e024-123">Example</span></span>  
+ <span data-ttu-id="5e024-124">次の例は、複合キーを使用する `join` を示しています。</span><span class="sxs-lookup"><span data-stu-id="5e024-124">The following example shows a `join` with a composite key.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#55](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#55)]
  [!code-vb[DLinqQueryExamples#55](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#55)]  
   
-## 使用例  
- 次の例は、一方が null 許容で他方がそうでない `join` の作成方法を示しています。  
+## <a name="example"></a><span data-ttu-id="5e024-125">例</span><span class="sxs-lookup"><span data-stu-id="5e024-125">Example</span></span>  
+ <span data-ttu-id="5e024-126">次の例は、一方が null 許容で他方がそうでない `join` の作成方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="5e024-126">The following example shows how to construct a `join` where one side is nullable and the other is not.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#56](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#56)]
  [!code-vb[DLinqQueryExamples#56](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#56)]  
   
-## 参照  
- [Query Examples](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)
+## <a name="see-also"></a><span data-ttu-id="5e024-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="5e024-127">See Also</span></span>  
+ [<span data-ttu-id="5e024-128">クエリの例</span><span class="sxs-lookup"><span data-stu-id="5e024-128">Query Examples</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)

@@ -1,53 +1,54 @@
 ---
-title: "キーボード イベントの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "イベント [Windows フォーム], キーボード"
-  - "キーボード イベント"
-  - "キーボード, キーボード イベント"
-  - "KeyDown イベント"
-  - "KeyPress イベント"
-  - "KeyUp イベント"
+title: "キーボード イベントの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- KeyPress event [Windows Forms]
+- keyboards [Windows Forms], keyboard events
+- KeyUp event
+- KeyDown event
+- keyboard events
+- events [Windows Forms], keyboard
 ms.assetid: d3f3e14b-a459-4ee6-9875-8957e34f8ee9
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 19bad48188a039baeeb6365a2cd38671f83fca4b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# キーボード イベントの使用
-多くの Windows フォーム プログラムは、キーボード イベントを処理することによってキーボード入力を処理します。  ここでは、どのような場合に各キーボード イベントを使用するか、また各イベントがどのようなデータを提供するかについての詳細を含め、キーボード イベントの概要について説明します。  「[イベント ハンドラーの概要 \(Windows フォーム\)](http://msdn.microsoft.com/library/be6fx1bb\(v=vs.110\))」、「[イベントの概要 \(Windows フォーム\)](http://msdn.microsoft.com/library/1h12f09z\(v=vs.110\))」も参照してください。  
+# <a name="using-keyboard-events"></a><span data-ttu-id="a5268-102">キーボード イベントの使用</span><span class="sxs-lookup"><span data-stu-id="a5268-102">Using Keyboard Events</span></span>
+<span data-ttu-id="a5268-103">多くの Windows フォーム プログラムは、キーボード イベントを処理することによってキーボード入力を処理します。</span><span class="sxs-lookup"><span data-stu-id="a5268-103">Most Windows Forms programs process keyboard input by handling the keyboard events.</span></span> <span data-ttu-id="a5268-104">ここでは、どのような場合に各キーボード イベントを使用するか、また各イベントがどのようなデータを提供するかについての詳細を含め、キーボード イベントの概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="a5268-104">This topic provides an overview of the keyboard events, including details on when to use each event and the data that is supplied for each event.</span></span>  <span data-ttu-id="a5268-105">参照してください[イベント ハンドラーの概要 (Windows フォーム)](http://msdn.microsoft.com/library/be6fx1bb\(v=vs.110\))、[イベントの概要 (Windows フォーム)](http://msdn.microsoft.com/library/1h12f09z\(v=vs.110\))です。</span><span class="sxs-lookup"><span data-stu-id="a5268-105">Also see [Event Handlers Overview (Windows Forms)](http://msdn.microsoft.com/library/be6fx1bb\(v=vs.110\)), [Events Overview (Windows Forms)](http://msdn.microsoft.com/library/1h12f09z\(v=vs.110\)).</span></span>  
   
-## キーボード イベント  
- Windows フォームは、ユーザーがキーボードのキーを押したときに発生する 2 つのイベントと、キーボードのキーを離したときに発生する 1 つのイベントを提供します。これらのイベントは次のとおりです。  
+## <a name="keyboard-events"></a><span data-ttu-id="a5268-106">キーボード イベント</span><span class="sxs-lookup"><span data-stu-id="a5268-106">Keyboard Events</span></span>  
+ <span data-ttu-id="a5268-107">Windows フォームは、ユーザーがキーボードのキーを押したときに発生する 2 つのイベントと、キーボードのキーを離したときに発生する 1 つのイベントを提供します。これらのイベントは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="a5268-107">Windows Forms provides two events that occur when a user presses a keyboard key and one event when a user releases a keyboard key:</span></span>  
   
--   <xref:System.Windows.Forms.Control.KeyDown> イベント。キーを押したときに 1 回発生します。  
+-   <span data-ttu-id="a5268-108"><xref:System.Windows.Forms.Control.KeyDown> イベント。キーを押したときに 1 回発生します。</span><span class="sxs-lookup"><span data-stu-id="a5268-108">The <xref:System.Windows.Forms.Control.KeyDown> event occurs once</span></span>  
   
--   <xref:System.Windows.Forms.Control.KeyPress> イベント。ユーザーが同じキーを押したままにすると、繰り返し発生する可能性があります。  
+-   <span data-ttu-id="a5268-109"><xref:System.Windows.Forms.Control.KeyPress> イベント。ユーザーが同じキーを押したままにすると、繰り返し発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a5268-109">The <xref:System.Windows.Forms.Control.KeyPress> event, which can occur multiple times when a user holds down the same key.</span></span>  
   
--   <xref:System.Windows.Forms.Control.KeyUp> イベント。ユーザーがキーを離したときに 1 回発生します。  
+-   <span data-ttu-id="a5268-110"><xref:System.Windows.Forms.Control.KeyUp> イベント。ユーザーがキーを離したときに 1 回発生します。</span><span class="sxs-lookup"><span data-stu-id="a5268-110">The <xref:System.Windows.Forms.Control.KeyUp> event occurs once when a user releases a key.</span></span>  
   
- ユーザーがキーを押すと、Windows フォームは、キーボード メッセージが文字キーまたは物理キーのどちらを示しているかに基づいて、発生させるイベントを決定します。  文字キーと物理キーの詳細については、「[キーボード入力のしくみ](../../../docs/framework/winforms/how-keyboard-input-works.md)」を参照してください。  
+ <span data-ttu-id="a5268-111">ユーザーがキーを押すと、Windows フォームは、キーボード メッセージが文字キーまたは物理キーのどちらを示しているかに基づいて、発生させるイベントを決定します。</span><span class="sxs-lookup"><span data-stu-id="a5268-111">When a user presses a key, Windows Forms determines which event to raise based on whether the keyboard message specifies a character key or a physical key.</span></span> <span data-ttu-id="a5268-112">文字および物理キーの詳細については、次を参照してください。[キーボード入力のしくみ](../../../docs/framework/winforms/how-keyboard-input-works.md)です。</span><span class="sxs-lookup"><span data-stu-id="a5268-112">For more information about character and physical keys, see [How Keyboard Input Works](../../../docs/framework/winforms/how-keyboard-input-works.md).</span></span>  
   
- 上の 3 つのキーボード イベントに関する説明を次の表に示します。  
+ <span data-ttu-id="a5268-113">上の 3 つのキーボード イベントに関する説明を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="a5268-113">The following table describes the three keyboard events.</span></span>  
   
-|キーボード イベント|説明|結果|  
-|----------------|--------|--------|  
-|<xref:System.Windows.Forms.Control.KeyDown>|このイベントは、ユーザーが物理キーを押すと発生します。|<xref:System.Windows.Forms.Control.KeyDown> のハンドラーは、次の項目を受け取ります。<br /><br /> <ul><li><xref:System.Windows.Forms.KeyEventArgs> パラメーター。このパラメーターは、物理キーボード ボタンを示す <xref:System.Windows.Forms.KeyEventArgs.KeyCode%2A> プロパティを提供します。</li><li><xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A> プロパティ \(Shift、Ctrl、または Alt キー\)。</li><li><xref:System.Windows.Forms.KeyEventArgs.KeyData%2A> プロパティ \(キー コードと修飾子を組み合わせます\)。  また、<xref:System.Windows.Forms.KeyEventArgs> パラメーターは、次のプロパティを提供します。<br /><br /> <ul><li><xref:System.Windows.Forms.KeyEventArgs.Handled%2A> プロパティ。基となるコントロールがキーを受け取らないように設定できます。</li><li><xref:System.Windows.Forms.KeyEventArgs.SuppressKeyPress%2A> プロパティ。これを使用すると、特定のキーストロークで <xref:System.Windows.Forms.Control.KeyPress> イベントと <xref:System.Windows.Forms.Control.KeyUp> イベントが発生しないようにすることができます。</li></ul></li></ul>|  
-|<xref:System.Windows.Forms.Control.KeyPress>|このイベントは、1 つまたは複数のキーを押すことにより文字が出力された場合に発生します。  たとえば、Shift キーを押しながら小文字の "a" キーを押すと、大文字の "A" が出力されます。|<xref:System.Windows.Forms.Control.KeyPress> は、<xref:System.Windows.Forms.Control.KeyDown> の後に発生します。<br /><br /> <ul><li><xref:System.Windows.Forms.Control.KeyPress> のハンドラーは、次の項目を受け取ります。</li><li><xref:System.Windows.Forms.KeyPressEventArgs> パラメーター。このパラメーターには、押したキーの文字コードが入ります。  この文字コードは、文字キーと修飾子キーの組み合わせごとに一意です。<br /><br />     たとえば、"A" キーは次の文字コードを生成します。<br /><br /> <ul><li>文字コード 65 \(Shift キーまたは Caps Lock キーと一緒に押した場合\)</li><li>97 \(単独で押した場合\)</li><li>1 \(Ctrl キーと一緒に押した場合\)</li></ul></li></ul>|  
-|<xref:System.Windows.Forms.Control.KeyUp>|このイベントは、ユーザーが物理キーを離すと発生します。|<xref:System.Windows.Forms.Control.KeyUp> のハンドラーは、次の項目を受け取ります。<br /><br /> <ul><li><xref:System.Windows.Forms.KeyEventArgs> パラメーターの値。次のプロパティを提供します。<br /><br /> <ul><li><xref:System.Windows.Forms.KeyEventArgs.KeyCode%2A> プロパティ \(物理キーボード ボタンを示します\)。</li><li><xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A> プロパティ \(Shift、Ctrl、または Alt キー\)。</li><li><xref:System.Globalization.SortKey.KeyData%2A> プロパティ \(キー コードと修飾子を組み合わせます\)。</li></ul></li></ul>|  
+|<span data-ttu-id="a5268-114">キーボード イベント</span><span class="sxs-lookup"><span data-stu-id="a5268-114">Keyboard event</span></span>|<span data-ttu-id="a5268-115">説明</span><span class="sxs-lookup"><span data-stu-id="a5268-115">Description</span></span>|<span data-ttu-id="a5268-116">結果</span><span class="sxs-lookup"><span data-stu-id="a5268-116">Results</span></span>|  
+|--------------------|-----------------|-------------|  
+|<xref:System.Windows.Forms.Control.KeyDown>|<span data-ttu-id="a5268-117">このイベントは、ユーザーが物理キーを押すと発生します。</span><span class="sxs-lookup"><span data-stu-id="a5268-117">This event is raised when a user presses a physical key.</span></span>|<span data-ttu-id="a5268-118"><xref:System.Windows.Forms.Control.KeyDown> のハンドラーは、次の項目を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="a5268-118">The handler for <xref:System.Windows.Forms.Control.KeyDown> receives:</span></span><br /><br /> <ul><li><span data-ttu-id="a5268-119"><xref:System.Windows.Forms.KeyEventArgs> パラメーター。このパラメーターは、物理キーボード ボタンを示す <xref:System.Windows.Forms.KeyEventArgs.KeyCode%2A> プロパティを提供します。</span><span class="sxs-lookup"><span data-stu-id="a5268-119">A <xref:System.Windows.Forms.KeyEventArgs> parameter, which provides the <xref:System.Windows.Forms.KeyEventArgs.KeyCode%2A> property (which specifies a physical keyboard button).</span></span></li><li><span data-ttu-id="a5268-120"><xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A> プロパティ (Shift、Ctrl、または Alt キー)。</span><span class="sxs-lookup"><span data-stu-id="a5268-120">The <xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A> property (SHIFT, CTRL, or ALT).</span></span></li><li><span data-ttu-id="a5268-121"><xref:System.Windows.Forms.KeyEventArgs.KeyData%2A> プロパティ (キー コードと修飾子を組み合わせます)。</span><span class="sxs-lookup"><span data-stu-id="a5268-121">The <xref:System.Windows.Forms.KeyEventArgs.KeyData%2A> property (which combines the key code and modifier).</span></span> <span data-ttu-id="a5268-122">また、<xref:System.Windows.Forms.KeyEventArgs> パラメーターは、次のプロパティを提供します。</span><span class="sxs-lookup"><span data-stu-id="a5268-122">The <xref:System.Windows.Forms.KeyEventArgs> parameter also provides:</span></span><br /><br /> <ul><li><span data-ttu-id="a5268-123"><xref:System.Windows.Forms.KeyEventArgs.Handled%2A> プロパティ。基となるコントロールがキーを受け取らないように設定できます。</span><span class="sxs-lookup"><span data-stu-id="a5268-123">The <xref:System.Windows.Forms.KeyEventArgs.Handled%2A> property, which can be set to prevent the underlying control from receiving the key.</span></span></li><li><span data-ttu-id="a5268-124"><xref:System.Windows.Forms.KeyEventArgs.SuppressKeyPress%2A> プロパティ。これを使用すると、特定のキーストロークで <xref:System.Windows.Forms.Control.KeyPress> イベントと <xref:System.Windows.Forms.Control.KeyUp> イベントが発生しないようにすることができます。</span><span class="sxs-lookup"><span data-stu-id="a5268-124">The <xref:System.Windows.Forms.KeyEventArgs.SuppressKeyPress%2A> property, which can be used to suppress the <xref:System.Windows.Forms.Control.KeyPress> and <xref:System.Windows.Forms.Control.KeyUp> events for that keystroke.</span></span></li></ul></li></ul>|  
+|<xref:System.Windows.Forms.Control.KeyPress>|<span data-ttu-id="a5268-125">このイベントは、1 つまたは複数のキーを押すことにより文字が出力された場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="a5268-125">This event is raised when the key or keys pressed result in a character.</span></span> <span data-ttu-id="a5268-126">たとえば、Shift キーを押しながら小文字の "a" キーを押すと、大文字の "A" が出力されます。</span><span class="sxs-lookup"><span data-stu-id="a5268-126">For example, a user presses SHIFT and the lowercase "a" keys, which result in a capital letter "A" character.</span></span>|<span data-ttu-id="a5268-127"><xref:System.Windows.Forms.Control.KeyPress> は、<xref:System.Windows.Forms.Control.KeyDown> の後に発生します。</span><span class="sxs-lookup"><span data-stu-id="a5268-127"><xref:System.Windows.Forms.Control.KeyPress> is raised after <xref:System.Windows.Forms.Control.KeyDown>.</span></span><br /><br /> <ul><li><span data-ttu-id="a5268-128"><xref:System.Windows.Forms.Control.KeyPress> のハンドラーは、次の項目を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="a5268-128">The handler for <xref:System.Windows.Forms.Control.KeyPress> receives:</span></span></li><li><span data-ttu-id="a5268-129"><xref:System.Windows.Forms.KeyPressEventArgs> パラメーター。このパラメーターには、押したキーの文字コードが入ります。</span><span class="sxs-lookup"><span data-stu-id="a5268-129">A <xref:System.Windows.Forms.KeyPressEventArgs> parameter, which contains the character code of the key that was pressed.</span></span> <span data-ttu-id="a5268-130">この文字コードは、文字キーと修飾子キーの組み合わせごとに一意です。</span><span class="sxs-lookup"><span data-stu-id="a5268-130">This character code is unique for every combination of a character key and a modifier key.</span></span><br /><br />     <span data-ttu-id="a5268-131">たとえば、"A" キーは次の文字コードを生成します。</span><span class="sxs-lookup"><span data-stu-id="a5268-131">For example, the "A" key will generate:</span></span><br /><br /> <ul><li><span data-ttu-id="a5268-132">文字コード 65 (Shift キーまたは Caps Lock キーと一緒に押した場合)</span><span class="sxs-lookup"><span data-stu-id="a5268-132">The character code 65, if it is pressed with the SHIFT key</span></span></li><li><span data-ttu-id="a5268-133">97 (単独で押した場合)</span><span class="sxs-lookup"><span data-stu-id="a5268-133">Or the CAPS LOCK key, 97 if it is pressed by itself,</span></span></li><li><span data-ttu-id="a5268-134">1 (Ctrl キーと一緒に押した場合)</span><span class="sxs-lookup"><span data-stu-id="a5268-134">And 1, if it is pressed with the CTRL key.</span></span></li></ul></li></ul>|  
+|<xref:System.Windows.Forms.Control.KeyUp>|<span data-ttu-id="a5268-135">このイベントは、ユーザーが物理キーを離すと発生します。</span><span class="sxs-lookup"><span data-stu-id="a5268-135">This event is raised when a user releases a physical key.</span></span>|<span data-ttu-id="a5268-136"><xref:System.Windows.Forms.Control.KeyUp> のハンドラーは、次の項目を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="a5268-136">The handler for <xref:System.Windows.Forms.Control.KeyUp> receives:</span></span><br /><br /> <ul><li><span data-ttu-id="a5268-137"><xref:System.Windows.Forms.KeyEventArgs> パラメーターの値。次のプロパティを提供します。</span><span class="sxs-lookup"><span data-stu-id="a5268-137">A <xref:System.Windows.Forms.KeyEventArgs> parameter:</span></span><br /><br /> <ul><li><span data-ttu-id="a5268-138"><xref:System.Windows.Forms.KeyEventArgs.KeyCode%2A> プロパティ (物理キーボード ボタンを示します)。</span><span class="sxs-lookup"><span data-stu-id="a5268-138">Which provides the <xref:System.Windows.Forms.KeyEventArgs.KeyCode%2A> property (which specifies a physical keyboard button).</span></span></li><li><span data-ttu-id="a5268-139"><xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A> プロパティ (Shift、Ctrl、または Alt キー)。</span><span class="sxs-lookup"><span data-stu-id="a5268-139">The <xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A> property (SHIFT, CTRL, or ALT).</span></span></li><li><span data-ttu-id="a5268-140"><xref:System.Globalization.SortKey.KeyData%2A> プロパティ (キー コードと修飾子を組み合わせます)。</span><span class="sxs-lookup"><span data-stu-id="a5268-140">The <xref:System.Globalization.SortKey.KeyData%2A> property (which combines the key code and modifier).</span></span></li></ul></li></ul>|  
   
-## 参照  
- [Windows フォーム アプリケーションにおけるキーボード入力](../../../docs/framework/winforms/keyboard-input-in-a-windows-forms-application.md)   
- [キーボード入力のしくみ](../../../docs/framework/winforms/how-keyboard-input-works.md)   
- [Windows フォーム アプリケーションにおけるマウス入力](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)
+## <a name="see-also"></a><span data-ttu-id="a5268-141">関連項目</span><span class="sxs-lookup"><span data-stu-id="a5268-141">See Also</span></span>  
+ [<span data-ttu-id="a5268-142">Windows フォーム アプリケーションにおけるキーボード入力</span><span class="sxs-lookup"><span data-stu-id="a5268-142">Keyboard Input in a Windows Forms Application</span></span>](../../../docs/framework/winforms/keyboard-input-in-a-windows-forms-application.md)  
+ [<span data-ttu-id="a5268-143">キーボード入力のしくみ</span><span class="sxs-lookup"><span data-stu-id="a5268-143">How Keyboard Input Works</span></span>](../../../docs/framework/winforms/how-keyboard-input-works.md)  
+ [<span data-ttu-id="a5268-144">Windows フォーム アプリケーションにおけるマウス入力</span><span class="sxs-lookup"><span data-stu-id="a5268-144">Mouse Input in a Windows Forms Application</span></span>](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)

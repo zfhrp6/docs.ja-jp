@@ -1,29 +1,32 @@
 ---
-title: "方法 : 一方向コントラクトと要求/応答コントラクトを使用して WCF サービスにアクセスする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : 一方向コントラクトと要求/応答コントラクトを使用して WCF サービスにアクセスする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 7e10d3a5-fcf4-4a4b-a8d6-92ee2c988b3b
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 20d9cad52c0f528b521b031173b5dce1cb4f2a50
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : 一方向コントラクトと要求/応答コントラクトを使用して WCF サービスにアクセスする
-次の手順では、一方向コントラクトと要求/応答コントラクトを定義し、双方向通信パターンを使用しない [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスにアクセスする方法を説明します。  
+# <a name="how-to-access-wcf-services-with-one-way-and-request-reply-contracts"></a><span data-ttu-id="04443-102">方法 : 一方向コントラクトと要求/応答コントラクトを使用して WCF サービスにアクセスする</span><span class="sxs-lookup"><span data-stu-id="04443-102">How to: Access WCF Services with One-Way and Request-Reply Contracts</span></span>
+<span data-ttu-id="04443-103">次の手順では、一方向コントラクトと要求/応答コントラクトを定義し、双方向通信パターンを使用しない [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスにアクセスする方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="04443-103">The following procedures describe how to access a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service that defines a one-way contract and a request-reply contract and that does not use the duplex communication pattern.</span></span>  
   
-### <a name="to-define-the-service"></a>サービスを定義するには  
+### <a name="to-define-the-service"></a><span data-ttu-id="04443-104">サービスを定義するには</span><span class="sxs-lookup"><span data-stu-id="04443-104">To define the service</span></span>  
   
-1.  サービス コントラクトを宣言します。 一方向では、操作が必要`IsOneWay`設定`true`内で、 <xref:System.ServiceModel.OperationContractAttribute>します。 次のコードは、`IOneWayCalculator`、`Add`、`Subtract`、および `Multiply` に対して一方向の操作を行う `Divide` コントラクトを宣言します。 また、`SayHello` という要求応答操作も定義します。  
+1.  <span data-ttu-id="04443-105">サービス コントラクトを宣言します。</span><span class="sxs-lookup"><span data-stu-id="04443-105">Declare the service contract.</span></span> <span data-ttu-id="04443-106">一方向の操作の場合は `IsOneWay` 内で `true` が <xref:System.ServiceModel.OperationContractAttribute> に設定されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="04443-106">The operations that are to be one-way must have `IsOneWay` set to `true` within the <xref:System.ServiceModel.OperationContractAttribute>.</span></span> <span data-ttu-id="04443-107">次のコードは、`IOneWayCalculator`、`Add`、`Subtract`、および `Multiply` に対して一方向の操作を行う `Divide` コントラクトを宣言します。</span><span class="sxs-lookup"><span data-stu-id="04443-107">The following code declares the `IOneWayCalculator` contract that has one-way operations for `Add`, `Subtract`, `Multiply`, and `Divide`.</span></span> <span data-ttu-id="04443-108">また、`SayHello` という要求応答操作も定義します。</span><span class="sxs-lookup"><span data-stu-id="04443-108">It also defines a request response operation called `SayHello`.</span></span>  
   
-    ```  
+    ```csharp  
     [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
     public interface IOneWayCalculator  
     {  
@@ -40,9 +43,9 @@ caps.handback.revision: 8
     }  
     ```  
   
-2.  サービス コントラクトを実装します。 次のコードは `IOnewayCalculator` インターフェイスを実装します。  
+2.  <span data-ttu-id="04443-109">サービス コントラクトを実装します。</span><span class="sxs-lookup"><span data-stu-id="04443-109">Implement the service contract.</span></span> <span data-ttu-id="04443-110">次のコードは `IOnewayCalculator` インターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="04443-110">The following code implements the `IOnewayCalculator` interface.</span></span>  
   
-    ```  
+    ```csharp  
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.PerCall)]  
     public class CalculatorService : IOneWayCalculator  
     {  
@@ -78,9 +81,9 @@ caps.handback.revision: 8
     }  
     ```  
   
-3.  コンソール アプリケーションでサービスをホストします。 次のコードはサービスをホストする方法を示しています。  
+3.  <span data-ttu-id="04443-111">コンソール アプリケーションでサービスをホストします。</span><span class="sxs-lookup"><span data-stu-id="04443-111">Host the service in a console application.</span></span> <span data-ttu-id="04443-112">次のコードはサービスをホストする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="04443-112">The following code shows how to host the service.</span></span>  
   
-    ```  
+    ```csharp  
     // Host the service within this EXE console application.  
     public static void Main()  
     {  
@@ -114,11 +117,11 @@ caps.handback.revision: 8
     }  
     ```  
   
-### <a name="to-access-the-service"></a>サービスにアクセスするには  
+### <a name="to-access-the-service"></a><span data-ttu-id="04443-113">サービスにアクセスするには</span><span class="sxs-lookup"><span data-stu-id="04443-113">To access the service</span></span>  
   
-1.  実行、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)メタデータ交換エンドポイント アドレスを使用して、次のコマンドラインを使用して、サービスのクライアント クラスを作成する: `Svcutil http://localhost:8000/Service` 、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)の次のサンプル コードに示すように、インターフェイスとクラスのセットを生成します。  
+1.  <span data-ttu-id="04443-114">実行、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)メタデータ交換エンドポイントのアドレスを使用して、次のコマンドラインを使用して、サービスのクライアント クラスを作成する: `Svcutil http://localhost:8000/Service` 、 [ServiceModelメタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)の次のサンプル コードに示すように、インターフェイスとクラスのセットを生成します。</span><span class="sxs-lookup"><span data-stu-id="04443-114">Run the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) using the metadata exchange endpoint address to create the client class for the service using the following command line: `Svcutil http://localhost:8000/Service` The [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) generates a set of interfaces and classes, as shown in the following sample code.</span></span>  
   
-    ```  
+    ```csharp  
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]  
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://Microsoft.ServiceModel.Samples", ConfigurationName="IOneWayCalculator")]  
     public interface IOneWayCalculator  
@@ -199,24 +202,22 @@ caps.handback.revision: 8
             return base.Channel.SayHello(name);  
         }  
     }  
-  
     ```  
   
-     `IOneWayCalculator`一方向サービス操作があるインターフェイス、 <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A>属性に設定`true`要求/応答サービス操作には、既定値に設定された属性が必要があると`false`です。 また、`OneWayCalculatorClient` クラスにも注目してください。 これはサービスを呼び出すために使用するクラスです。  
+     <span data-ttu-id="04443-115">`IOneWayCalculator` インターフェイスでは、一方向サービス操作の <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> 属性が `true` に設定されており、要求応答サービス操作の属性は既定値である `false` に設定されていることに注目してください。</span><span class="sxs-lookup"><span data-stu-id="04443-115">Notice in the `IOneWayCalculator` interface that the one-way service operations have the <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> attribute set to `true` and the request-reply service operation has the attribute set to the default value, `false`.</span></span> <span data-ttu-id="04443-116">また、`OneWayCalculatorClient` クラスにも注目してください。</span><span class="sxs-lookup"><span data-stu-id="04443-116">Also notice the `OneWayCalculatorClient` class.</span></span> <span data-ttu-id="04443-117">これはサービスを呼び出すために使用するクラスです。</span><span class="sxs-lookup"><span data-stu-id="04443-117">This is the class that you will use to call the service.</span></span>  
   
-2.  クライアント オブジェクトを作成します。  
+2.  <span data-ttu-id="04443-118">クライアント オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="04443-118">Create the client object.</span></span>  
   
-    ```  
+    ```csharp  
     // Create a client  
     WSHttpBinding binding = new WSHttpBinding();  
     EndpointAddress epAddress = new EndpointAddress("http://localhost:8000/servicemodelsamples/service");  
     OneWayCalculatorClient client = new OneWayCalculatorClient(binding, epAddress);  
-  
     ```  
   
-3.  サービス操作を呼び出します。  
+3.  <span data-ttu-id="04443-119">サービス操作を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="04443-119">Call service operations.</span></span>  
   
-    ```  
+    ```csharp  
     // Call the Add service operation.  
     double value1 = 100.00D;  
     double value2 = 15.99D;  
@@ -246,21 +247,19 @@ caps.handback.revision: 8
     string response = client.SayHello(name);  
     Console.WriteLine("SayHello([0])", name);  
     Console.WriteLine("SayHello() returned: " + response);  
-  
     ```  
   
-4.  クライアントを閉じて接続を終了し、リソースをクリーンアップします。  
+4.  <span data-ttu-id="04443-120">クライアントを閉じて接続を終了し、リソースをクリーンアップします。</span><span class="sxs-lookup"><span data-stu-id="04443-120">Close the client to close connections and clean up resources.</span></span>  
   
-    ```  
+    ```csharp  
     //Closing the client gracefully closes the connection and cleans up resources  
     client.Close();  
-  
     ```  
   
-## <a name="example"></a>例  
- このトピックで使用されているコードの完全な一覧を次に示します。  
+## <a name="example"></a><span data-ttu-id="04443-121">例</span><span class="sxs-lookup"><span data-stu-id="04443-121">Example</span></span>  
+ <span data-ttu-id="04443-122">このトピックで使用されているコードの完全な一覧を次に示します。</span><span class="sxs-lookup"><span data-stu-id="04443-122">The following is a complete listing of the code used  in this topic.</span></span>  
   
-```  
+```csharp  
 // Service.cs  
 using System;  
 using System.Configuration;  
@@ -352,8 +351,10 @@ namespace Microsoft.ServiceModel.Samples
             }  
         }  
     }  
-}  
-  
+} 
+```
+
+```csharp
 // client.cs  
 using System;  
 using System.ServiceModel;  
@@ -407,10 +408,7 @@ namespace Microsoft.ServiceModel.Samples
         }  
     }  
 }  
-  
 ```  
   
-<!-- TODO: review snippet reference  [!CODE [Microsoft.Win32.RegistryKey#4](Microsoft.Win32.RegistryKey#4)]  -->  
-  
-## <a name="see-also"></a>関連項目  
- [一方向サービス](../../../../docs/framework/wcf/feature-details/one-way-services.md)
+## <a name="see-also"></a><span data-ttu-id="04443-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="04443-123">See Also</span></span>  
+ [<span data-ttu-id="04443-124">一方向サービス</span><span class="sxs-lookup"><span data-stu-id="04443-124">One-Way Services</span></span>](../../../../docs/framework/wcf/feature-details/one-way-services.md)

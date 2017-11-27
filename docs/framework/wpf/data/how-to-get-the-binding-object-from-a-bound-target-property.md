@@ -1,42 +1,45 @@
 ---
-title: "方法 : バインドされているターゲット プロパティからのバインディング オブジェクトの取得 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "データ バインディング, 取得 (バインドされているターゲット プロパティからバインディング オブジェクトを)"
-  - "プロパティ, 取得 (バインディング オブジェクトを)"
+title: "方法 : バインドされているターゲット プロパティからのバインディング オブジェクトの取得"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- data binding [WPF], getting binding objects from bound target properties
+- properties [WPF], getting binding objects from
 ms.assetid: 87974c5f-136b-4de7-b07d-9285b62ab123
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 498849cc0205775f88c21d90d12b45c6b71a5dec
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : バインドされているターゲット プロパティからのバインディング オブジェクトの取得
-この例では、データにバインドされているターゲット プロパティからバインディング オブジェクトを取得する方法を示します。  
+# <a name="how-to-get-the-binding-object-from-a-bound-target-property"></a><span data-ttu-id="a7c02-102">方法 : バインドされているターゲット プロパティからのバインディング オブジェクトの取得</span><span class="sxs-lookup"><span data-stu-id="a7c02-102">How to: Get the Binding Object from a Bound Target Property</span></span>
+<span data-ttu-id="a7c02-103">この例では、データにバインドされているターゲット プロパティからバインディング オブジェクトを取得する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a7c02-103">This example shows how to obtain the binding object from a data-bound target property.</span></span>  
   
-## 使用例  
- <xref:System.Windows.Data.Binding> オブジェクトを取得する方法を次に示します。  
+## <a name="example"></a><span data-ttu-id="a7c02-104">例</span><span class="sxs-lookup"><span data-stu-id="a7c02-104">Example</span></span>  
+ <span data-ttu-id="a7c02-105">取得するには、次を行うことができます、<xref:System.Windows.Data.Binding>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a7c02-105">You can do the following to get the <xref:System.Windows.Data.Binding> object:</span></span>  
   
  [!code-csharp[BindValidation#GetBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml.cs#getbinding)]  
   
 > [!NOTE]
->  バインディングの[依存関係プロパティ](GTMT)を指定しなければならないのは、ターゲット オブジェクトに、データ バインディングを使用するプロパティが複数存在する可能性があるためです。  
+>  <span data-ttu-id="a7c02-106">ターゲット オブジェクトの複数のプロパティがデータ バインディングを使用している可能性があるため、バインディングの依存関係プロパティを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a7c02-106">You must specify the dependency property for the binding you want because it is possible that more than one property of the target object is using data binding.</span></span>  
   
- また、<xref:System.Windows.Data.BindingExpression> を取得してから <xref:System.Windows.Data.BindingExpression.ParentBinding%2A> プロパティの値を取得するという方法もあります。  
+ <span data-ttu-id="a7c02-107">また、取得することができます、<xref:System.Windows.Data.BindingExpression>の値を取得し、<xref:System.Windows.Data.BindingExpression.ParentBinding%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="a7c02-107">Alternatively, you can get the <xref:System.Windows.Data.BindingExpression> and then get the value of the <xref:System.Windows.Data.BindingExpression.ParentBinding%2A> property.</span></span>  
   
- コード例全体については、[バインディングの検証のサンプル](http://go.microsoft.com/fwlink/?LinkID=159972)を参照してください。  
+ <span data-ttu-id="a7c02-108">コード例全体については、「[バインディングの検証のサンプル](http://go.microsoft.com/fwlink/?LinkID=159972)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a7c02-108">For the complete example see [Binding Validation Sample](http://go.microsoft.com/fwlink/?LinkID=159972).</span></span>  
   
 > [!NOTE]
->  バインディングが <xref:System.Windows.Data.MultiBinding> である場合は、<xref:System.Windows.Data.BindingOperations>.<xref:System.Windows.Data.BindingOperations.GetMultiBinding%2A> を使用します。  <xref:System.Windows.Data.PriorityBinding> である場合は、<xref:System.Windows.Data.BindingOperations>.<xref:System.Windows.Data.BindingOperations.GetPriorityBinding%2A> を使用します。  ターゲット プロパティが、<xref:System.Windows.Data.Binding>、<xref:System.Windows.Data.MultiBinding>、<xref:System.Windows.Data.PriorityBinding> のどれを使用してバインドされているかが不明な場合は、<xref:System.Windows.Data.BindingOperations>.<xref:System.Windows.Data.BindingOperations.GetBindingBase%2A> を使用してください。  
+>  <span data-ttu-id="a7c02-109">バインドがある場合、<xref:System.Windows.Data.MultiBinding>を使用して<xref:System.Windows.Data.BindingOperations>.<xref:System.Windows.Data.BindingOperations.GetMultiBinding%2A>です。</span><span class="sxs-lookup"><span data-stu-id="a7c02-109">If your binding is a <xref:System.Windows.Data.MultiBinding>, use <xref:System.Windows.Data.BindingOperations>.<xref:System.Windows.Data.BindingOperations.GetMultiBinding%2A>.</span></span> <span data-ttu-id="a7c02-110">ある場合、<xref:System.Windows.Data.PriorityBinding>を使用して<xref:System.Windows.Data.BindingOperations>.<xref:System.Windows.Data.BindingOperations.GetPriorityBinding%2A>です。</span><span class="sxs-lookup"><span data-stu-id="a7c02-110">If it is a <xref:System.Windows.Data.PriorityBinding>, use <xref:System.Windows.Data.BindingOperations>.<xref:System.Windows.Data.BindingOperations.GetPriorityBinding%2A>.</span></span> <span data-ttu-id="a7c02-111">かどうか、ターゲット プロパティを使用してバインドがない場合、 <xref:System.Windows.Data.Binding>、 <xref:System.Windows.Data.MultiBinding>、または<xref:System.Windows.Data.PriorityBinding>、使用することができます<xref:System.Windows.Data.BindingOperations>.<xref:System.Windows.Data.BindingOperations.GetBindingBase%2A>です。</span><span class="sxs-lookup"><span data-stu-id="a7c02-111">If you are uncertain whether the target property is bound using a <xref:System.Windows.Data.Binding>, a <xref:System.Windows.Data.MultiBinding>, or a <xref:System.Windows.Data.PriorityBinding>, you can use <xref:System.Windows.Data.BindingOperations>.<xref:System.Windows.Data.BindingOperations.GetBindingBase%2A>.</span></span>  
   
-## 参照  
- [コードでバインディングを作成する](../../../../docs/framework/wpf/data/how-to-create-a-binding-in-code.md)   
- [方法のトピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="a7c02-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="a7c02-112">See Also</span></span>  
+ [<span data-ttu-id="a7c02-113">コードでバインディングを作成する</span><span class="sxs-lookup"><span data-stu-id="a7c02-113">Create a Binding in Code</span></span>](../../../../docs/framework/wpf/data/how-to-create-a-binding-in-code.md)  
+ [<span data-ttu-id="a7c02-114">方法トピック</span><span class="sxs-lookup"><span data-stu-id="a7c02-114">How-to Topics</span></span>](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

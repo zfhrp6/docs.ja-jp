@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,68 +13,66 @@ helpviewer_keywords:
 - ETW, common language runtime
 - ETW, CLR events
 ms.assetid: ef2b31c3-7426-43e7-9924-92339b96556d
-caps.latest.revision: 45
+caps.latest.revision: "45"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 57253982ec28b022cea102867f7b49788e10d422
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 1d0619388b429bd1824a62bc29ccb222eea1ffde
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="clr-etw-events"></a>CLR ETW イベント
-このセクションのトピックでは、Windows イベント トレーシング (ETW) イベントについて説明します。 各イベントは、キーワードとレベルに関連付けられています。詳細については、「[CLR ETW のキーワードとレベル](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)」トピックを参照してください。 CLR には、イベントのプロバイダーが 2 つあります。  
+# <a name="clr-etw-events"></a><span data-ttu-id="7c92a-102">CLR ETW イベント</span><span class="sxs-lookup"><span data-stu-id="7c92a-102">CLR ETW Events</span></span>
+<span data-ttu-id="7c92a-103">このセクションのトピックでは、Windows イベント トレーシング (ETW) イベントについて説明します。</span><span class="sxs-lookup"><span data-stu-id="7c92a-103">The topics in this section describe event tracing for Windows (ETW) events.</span></span> <span data-ttu-id="7c92a-104">各イベントは、キーワードとレベルに関連付けられています。詳細については、「[CLR ETW のキーワードとレベル](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)」トピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="7c92a-104">Each event has an associated keyword and level, which are described in the [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md) topic.</span></span> <span data-ttu-id="7c92a-105">CLR には、イベントのプロバイダーが 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="7c92a-105">The CLR has two providers for the events:</span></span>  
   
--   ランタイム プロバイダー。有効になっているキーワードに応じてイベントを発生させます (キーワードとはイベントのカテゴリです)。 CLR ランタイム プロバイダーの GUID は e13c0d23-ccbc-4e12-931b-d9cc2eee27e4 です。  
+-   <span data-ttu-id="7c92a-106">ランタイム プロバイダー。有効になっているキーワードに応じてイベントを発生させます (キーワードとはイベントのカテゴリです)。</span><span class="sxs-lookup"><span data-stu-id="7c92a-106">The runtime provider, which raises events depending on which keywords (categories of events) are enabled.</span></span> <span data-ttu-id="7c92a-107">CLR ランタイム プロバイダーの GUID は e13c0d23-ccbc-4e12-931b-d9cc2eee27e4 です。</span><span class="sxs-lookup"><span data-stu-id="7c92a-107">The CLR runtime provider GUID is e13c0d23-ccbc-4e12-931b-d9cc2eee27e4.</span></span>  
   
--   ランダウン プロバイダー。特殊な用途があります。 CLR ランダウン プロバイダーの GUID は a669021c-c450-4609-a035-5af59af4df18 です。  
+-   <span data-ttu-id="7c92a-108">ランダウン プロバイダー。特殊な用途があります。</span><span class="sxs-lookup"><span data-stu-id="7c92a-108">The rundown provider, which has special-purpose uses.</span></span> <span data-ttu-id="7c92a-109">CLR ランダウン プロバイダーの GUID は a669021c-c450-4609-a035-5af59af4df18 です。</span><span class="sxs-lookup"><span data-stu-id="7c92a-109">The CLR rundown provider GUID is a669021c-c450-4609-a035-5af59af4df18.</span></span>  
   
- プロバイダーの詳細については、「[CLR ETW Providers](../../../docs/framework/performance/clr-etw-providers.md)」(CLR ETW プロバイダー) を参照してください。  
+ <span data-ttu-id="7c92a-110">プロバイダーの詳細については、「[CLR ETW Providers](../../../docs/framework/performance/clr-etw-providers.md)」(CLR ETW プロバイダー) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7c92a-110">For more information about the providers, see [CLR ETW Providers](../../../docs/framework/performance/clr-etw-providers.md).</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [ランタイム情報イベント](../../../docs/framework/performance/runtime-information-etw-events.md)  
- SKU、バージョン番号、アクティブ化の方法、起動時に使用されたコマンド ライン パラメーター、GUID (該当する場合) などのランタイムに関する情報をキャプチャします。  
+## <a name="in-this-section"></a><span data-ttu-id="7c92a-111">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="7c92a-111">In This Section</span></span>  
+ [<span data-ttu-id="7c92a-112">ランタイム情報イベント</span><span class="sxs-lookup"><span data-stu-id="7c92a-112">Runtime Information Events</span></span>](../../../docs/framework/performance/runtime-information-etw-events.md)  
+ <span data-ttu-id="7c92a-113">SKU、バージョン番号、アクティブ化の方法、起動時に使用されたコマンド ライン パラメーター、GUID (該当する場合) などのランタイムに関する情報をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="7c92a-113">Captures information about the runtime, including the SKU, version number, the manner in which the runtime was activated, the command-line parameters it was started with, the GUID (if applicable), and other relevant information.</span></span>  
   
- [Exception Thrown_V1 イベント](../../../docs/framework/performance/exception-thrown-v1-etw-event.md)  
- スローされる例外に関する情報をキャプチャします。  
+ [<span data-ttu-id="7c92a-114">Exception Thrown_V1 イベント</span><span class="sxs-lookup"><span data-stu-id="7c92a-114">Exception Thrown_V1 Event</span></span>](../../../docs/framework/performance/exception-thrown-v1-etw-event.md)  
+ <span data-ttu-id="7c92a-115">スローされる例外に関する情報をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="7c92a-115">Captures information about exceptions that are thrown.</span></span>  
   
- [競合イベント](../../../docs/framework/performance/contention-etw-events.md)  
- ランタイムが使用するモニター ロックまたはネイティブ ロックの競合に関する情報をキャプチャします。  
+ [<span data-ttu-id="7c92a-116">競合イベント</span><span class="sxs-lookup"><span data-stu-id="7c92a-116">Contention Events</span></span>](../../../docs/framework/performance/contention-etw-events.md)  
+ <span data-ttu-id="7c92a-117">ランタイムが使用するモニター ロックまたはネイティブ ロックの競合に関する情報をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="7c92a-117">Captures information about contention for monitor locks or native locks that the runtime uses.</span></span>  
   
- [スレッド プール イベント](../../../docs/framework/performance/thread-pool-etw-events.md)  
- ワーカー スレッド プールと I/O スレッド プールに関する情報をキャプチャします。  
+ [<span data-ttu-id="7c92a-118">スレッド プール イベント</span><span class="sxs-lookup"><span data-stu-id="7c92a-118">Thread Pool Events</span></span>](../../../docs/framework/performance/thread-pool-etw-events.md)  
+ <span data-ttu-id="7c92a-119">ワーカー スレッド プールと I/O スレッド プールに関する情報をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="7c92a-119">Captures information about worker thread pools and I/O thread pools.</span></span>  
   
- [ローダー イベント](../../../docs/framework/performance/loader-etw-events.md)  
- アプリケーションのドメイン、アセンブリ、およびモジュールのロードとアンロードに関連する情報をキャプチャします。  
+ [<span data-ttu-id="7c92a-120">ローダー イベント</span><span class="sxs-lookup"><span data-stu-id="7c92a-120">Loader Events</span></span>](../../../docs/framework/performance/loader-etw-events.md)  
+ <span data-ttu-id="7c92a-121">アプリケーションのドメイン、アセンブリ、およびモジュールのロードとアンロードに関連する情報をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="7c92a-121">Captures information about loading and unloading application domains, assemblies, and modules.</span></span>  
   
- [メソッド イベント](../../../docs/framework/performance/method-etw-events.md)  
- CLR メソッド シンボルの解決に関する情報をキャプチャします。  
+ [<span data-ttu-id="7c92a-122">メソッド イベント</span><span class="sxs-lookup"><span data-stu-id="7c92a-122">Method Events</span></span>](../../../docs/framework/performance/method-etw-events.md)  
+ <span data-ttu-id="7c92a-123">CLR メソッド シンボルの解決に関する情報をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="7c92a-123">Captures information about CLR methods for symbol resolution.</span></span>  
   
- [ガベージ コレクション イベント](../../../docs/framework/performance/garbage-collection-etw-events.md)  
- 診断とデバッグに役立つガベージ コレクションに関する情報をキャプチャします。  
+ [<span data-ttu-id="7c92a-124">ガベージ コレクション イベント</span><span class="sxs-lookup"><span data-stu-id="7c92a-124">Garbage Collection Events</span></span>](../../../docs/framework/performance/garbage-collection-etw-events.md)  
+ <span data-ttu-id="7c92a-125">診断とデバッグに役立つガベージ コレクションに関する情報をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="7c92a-125">Captures information pertaining to garbage collection, to help in diagnostics and debugging.</span></span>  
   
- [JIT トレース イベント](../../../docs/framework/performance/jit-tracing-etw-events.md)  
- Just-In-Time (JIT) インライン展開と末尾呼び出しに関する情報をキャプチャします。  
+ [<span data-ttu-id="7c92a-126">JIT トレース イベント</span><span class="sxs-lookup"><span data-stu-id="7c92a-126">JIT Tracing Events</span></span>](../../../docs/framework/performance/jit-tracing-etw-events.md)  
+ <span data-ttu-id="7c92a-127">Just-In-Time (JIT) インライン展開と末尾呼び出しに関する情報をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="7c92a-127">Captures information about just-in-time (JIT) inlining and tail calls.</span></span>  
   
- [相互運用イベント](../../../docs/framework/performance/interop-etw-events.md)  
- Microsoft intermediate language (MSIL) のスタブ生成とキャッシュに関する情報をキャプチャします。  
+ [<span data-ttu-id="7c92a-128">相互運用イベント</span><span class="sxs-lookup"><span data-stu-id="7c92a-128">Interop Events</span></span>](../../../docs/framework/performance/interop-etw-events.md)  
+ <span data-ttu-id="7c92a-129">Microsoft intermediate language (MSIL) のスタブ生成とキャッシュに関する情報をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="7c92a-129">Captures information about Microsoft intermediate language (MSIL) stub generation and caching.</span></span>  
   
- [ARM のイベント](../../../docs/framework/performance/application-domain-resource-monitoring-arm-etw-events.md)  
- アプリケーション ドメインの状態に関する詳細な診断情報をキャプチャします。  
+ [<span data-ttu-id="7c92a-130">ARM のイベント</span><span class="sxs-lookup"><span data-stu-id="7c92a-130">ARM Events</span></span>](../../../docs/framework/performance/application-domain-resource-monitoring-arm-etw-events.md)  
+ <span data-ttu-id="7c92a-131">アプリケーション ドメインの状態に関する詳細な診断情報をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="7c92a-131">Captures detailed diagnostic information about the state of an application domain.</span></span>  
   
- [セキュリティ イベント](../../../docs/framework/performance/security-etw-events.md)  
- 厳密な名前と Authenticode の検証に関する情報をキャプチャします。  
+ [<span data-ttu-id="7c92a-132">セキュリティ イベント</span><span class="sxs-lookup"><span data-stu-id="7c92a-132">Security Events</span></span>](../../../docs/framework/performance/security-etw-events.md)  
+ <span data-ttu-id="7c92a-133">厳密な名前と Authenticode の検証に関する情報をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="7c92a-133">Captures information about strong name and Authenticode verification.</span></span>  
   
- [スタック イベント](../../../docs/framework/performance/stack-etw-event.md)  
- イベントが発生した後に、他のイベントでスタック トレースの生成に使用された情報をキャプチャします。  
+ [<span data-ttu-id="7c92a-134">スタック イベント</span><span class="sxs-lookup"><span data-stu-id="7c92a-134">Stack Event</span></span>](../../../docs/framework/performance/stack-etw-event.md)  
+ <span data-ttu-id="7c92a-135">イベントが発生した後に、他のイベントでスタック トレースの生成に使用された情報をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="7c92a-135">Captures information that is used with other events to generate stack traces after an event is raised.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [ETW によりデバッグおよびパフォーマンス調整を改善する](http://go.microsoft.com/fwlink/?LinkId=179696)   
- [Windows のパフォーマンスに関するブログ](http://go.microsoft.com/fwlink/?LinkId=179509)   
- [.NET Framework のログ記録の制御](../../../docs/framework/performance/controlling-logging.md)   
- [CLR ETW プロバイダー](../../../docs/framework/performance/clr-etw-providers.md)   
- [CLR ETW キーワードおよびレベル](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)   
- [共通言語ランタイムの ETW イベント](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)
-
+## <a name="see-also"></a><span data-ttu-id="7c92a-136">関連項目</span><span class="sxs-lookup"><span data-stu-id="7c92a-136">See Also</span></span>  
+ [<span data-ttu-id="7c92a-137">デバッグの向上と ETW でのパフォーマンス チューニング</span><span class="sxs-lookup"><span data-stu-id="7c92a-137">Improve Debugging And Performance Tuning With ETW</span></span>](http://go.microsoft.com/fwlink/?LinkId=179696)  
+ [<span data-ttu-id="7c92a-138">Windows パフォーマンス ブログ</span><span class="sxs-lookup"><span data-stu-id="7c92a-138">Windows Performance Blog</span></span>](http://go.microsoft.com/fwlink/?LinkId=179509)  
+ [<span data-ttu-id="7c92a-139">.NET Framework のログ記録の制御</span><span class="sxs-lookup"><span data-stu-id="7c92a-139">Controlling .NET Framework Logging</span></span>](../../../docs/framework/performance/controlling-logging.md)  
+ [<span data-ttu-id="7c92a-140">CLR ETW プロバイダー</span><span class="sxs-lookup"><span data-stu-id="7c92a-140">CLR ETW Providers</span></span>](../../../docs/framework/performance/clr-etw-providers.md)  
+ [<span data-ttu-id="7c92a-141">CLR ETW キーワードおよびレベル</span><span class="sxs-lookup"><span data-stu-id="7c92a-141">CLR ETW Keywords and Levels</span></span>](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)  
+ [<span data-ttu-id="7c92a-142">共通言語ランタイムの ETW イベント</span><span class="sxs-lookup"><span data-stu-id="7c92a-142">ETW Events in the Common Language Runtime</span></span>](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)

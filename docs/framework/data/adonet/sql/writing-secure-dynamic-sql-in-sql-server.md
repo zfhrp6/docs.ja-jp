@@ -1,84 +1,87 @@
 ---
-title: "SQL Server での安全な動的 SQL の作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "SQL Server での安全な動的 SQL の作成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: df5512b0-c249-40d2-82f9-f9a2ce6665bc
-caps.latest.revision: 9
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 926794f4bb603548b74dd95fd9040d9471d70a35
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# SQL Server での安全な動的 SQL の作成
-SQL インジェクションとは、悪意のあるユーザーによって、有効な入力データの代わりに Transact\-SQL ステートメントが入力されることをいいます。  この入力データが検証されずにサーバーに直接渡され、挿入されたコードがアプリケーションでそのまま実行された場合、その攻撃によってデータが破損または破壊される可能性があります。  
+# <a name="writing-secure-dynamic-sql-in-sql-server"></a><span data-ttu-id="4d229-102">SQL Server での安全な動的 SQL の作成</span><span class="sxs-lookup"><span data-stu-id="4d229-102">Writing Secure Dynamic SQL in SQL Server</span></span>
+<span data-ttu-id="4d229-103">SQL インジェクションとは、悪意のあるユーザーによって、有効な入力データの代わりに Transact-SQL ステートメントが入力されることをいいます。</span><span class="sxs-lookup"><span data-stu-id="4d229-103">SQL Injection is the process by which a malicious user enters Transact-SQL statements instead of valid input.</span></span> <span data-ttu-id="4d229-104">この入力データが検証されずにサーバーに直接渡され、挿入されたコードがアプリケーションでそのまま実行された場合、その攻撃によってデータが破損または破壊される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="4d229-104">If the input is passed directly to the server without being validated and if the application inadvertently executes the injected code, the attack has the potential to damage or destroy data.</span></span>  
   
- SQL Server では、構文的に有効であれば受信したクエリがすべて実行されるため、SQL ステートメントを構成するすべてのプロシージャに対して、インジェクションに対する脆弱性を検証する必要があります。  高いスキルを持った攻撃者は、その気になればパラメーター化されたデータでさえも操作できます。  動的 SQL を使用する場合は、必ずコマンドをパラメーター化するようにし、パラメーター値を直接クエリ文字列に追加することは避けてください。  
+ <span data-ttu-id="4d229-105">SQL Server では、構文的に有効であれば受信したクエリがすべて実行されるため、SQL ステートメントを構成するすべてのプロシージャに対して、インジェクションに対する脆弱性を検証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4d229-105">Any procedure that constructs SQL statements should be reviewed for injection vulnerabilities because SQL Server will execute all syntactically valid queries that it receives.</span></span> <span data-ttu-id="4d229-106">高いスキルを持った攻撃者は、その気になればパラメーター化されたデータでさえも操作できます。</span><span class="sxs-lookup"><span data-stu-id="4d229-106">Even parameterized data can be manipulated by a skilled and determined attacker.</span></span> <span data-ttu-id="4d229-107">動的 SQL を使用する場合は、必ずコマンドをパラメーター化するようにし、パラメーター値を直接クエリ文字列に追加することは避けてください。</span><span class="sxs-lookup"><span data-stu-id="4d229-107">If you use dynamic SQL, be sure to parameterize your commands, and never include parameter values directly into the query string.</span></span>  
   
-## SQL インジェクション攻撃の分析  
- インジェクションのプロセスは、テキスト文字列を途中で終了し、新しいコマンドを追加することによって行われます。  挿入されたコマンドが実行される前に別の文字列が追加される可能性があるため、攻撃者は挿入する文字列をコメント記号 "\-\-" で終了させます。  後続のテキストは実行時には無視されます。  セミコロン \(;\) 区切り記号を使用することで、複数のコマンドを挿入できます。  
+## <a name="anatomy-of-a-sql-injection-attack"></a><span data-ttu-id="4d229-108">SQL インジェクション攻撃の分析</span><span class="sxs-lookup"><span data-stu-id="4d229-108">Anatomy of a SQL Injection Attack</span></span>  
+ <span data-ttu-id="4d229-109">インジェクションのプロセスは、テキスト文字列を途中で終了し、新しいコマンドを追加することによって行われます。</span><span class="sxs-lookup"><span data-stu-id="4d229-109">The injection process works by prematurely terminating a text string and appending a new command.</span></span> <span data-ttu-id="4d229-110">挿入されたコマンドが実行される前に別の文字列が追加される可能性があるため、攻撃者は挿入する文字列をコメント記号 "--" で終了させます。</span><span class="sxs-lookup"><span data-stu-id="4d229-110">Because the inserted command may have additional strings appended to it before it is executed, the malefactor terminates the injected string with a comment mark "--".</span></span> <span data-ttu-id="4d229-111">後続のテキストは実行時には無視されます。</span><span class="sxs-lookup"><span data-stu-id="4d229-111">Subsequent text is ignored at execution time.</span></span> <span data-ttu-id="4d229-112">セミコロン (;) 区切り記号を使用することで、複数のコマンドを挿入できます。</span><span class="sxs-lookup"><span data-stu-id="4d229-112">Multiple commands can be inserted using a semicolon (;) delimiter.</span></span>  
   
- 挿入された SQL コードが構文的に正しい限り、改ざんをプログラムによって検出するのは不可能です。  そのため、すべてのユーザー入力を検証し、使用しているサーバーで作成された SQL コマンドを実行するコードを注意深く確認する必要があります。  検証されていないユーザー入力は決して連結しないでください。  文字列の連結は、スクリプト インジェクションの最初の段階です。  
+ <span data-ttu-id="4d229-113">挿入された SQL コードが構文的に正しい限り、改ざんをプログラムによって検出するのは不可能です。</span><span class="sxs-lookup"><span data-stu-id="4d229-113">As long as injected SQL code is syntactically correct, tampering cannot be detected programmatically.</span></span> <span data-ttu-id="4d229-114">そのため、すべてのユーザー入力を検証し、使用しているサーバーで作成された SQL コマンドを実行するコードを注意深く確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4d229-114">Therefore, you must validate all user input and carefully review code that executes constructed SQL commands in the server that you are using.</span></span> <span data-ttu-id="4d229-115">検証されていないユーザー入力は決して連結しないでください。</span><span class="sxs-lookup"><span data-stu-id="4d229-115">Never concatenate user input that is not validated.</span></span> <span data-ttu-id="4d229-116">文字列の連結は、スクリプト インジェクションの最初の段階です。</span><span class="sxs-lookup"><span data-stu-id="4d229-116">String concatenation is the primary point of entry for script injection.</span></span>  
   
- 次に、有用なガイドラインを示します。  
+ <span data-ttu-id="4d229-117">次に、有用なガイドラインを示します。</span><span class="sxs-lookup"><span data-stu-id="4d229-117">Here are some helpful guidelines:</span></span>  
   
--   Transact\-SQL ステートメントはユーザー入力から直接作成しないでください。ストアド プロシージャを使用して、ユーザー入力を検証してください。  
+-   <span data-ttu-id="4d229-118">Transact-SQL ステートメントはユーザー入力から直接作成しないでください。ストアド プロシージャを使用して、ユーザー入力を検証してください。</span><span class="sxs-lookup"><span data-stu-id="4d229-118">Never build Transact-SQL statements directly from user input; use stored procedures to validate user input.</span></span>  
   
--   ユーザー入力の型、長さ、形式、範囲をテストし、検証してください。  システム名をエスケープするには Transact\-SQL の QUOTENAME\(\) 関数を使用し、文字列内の任意の文字をエスケープするには REPLACE\(\) 関数を使用します。  
+-   <span data-ttu-id="4d229-119">ユーザー入力の型、長さ、形式、範囲をテストし、検証してください。</span><span class="sxs-lookup"><span data-stu-id="4d229-119">Validate user input by testing type, length, format, and range.</span></span> <span data-ttu-id="4d229-120">システム名をエスケープするには Transact-SQL の QUOTENAME() 関数を使用し、文字列内の任意の文字をエスケープするには REPLACE() 関数を使用します。</span><span class="sxs-lookup"><span data-stu-id="4d229-120">Use the Transact-SQL QUOTENAME() function to escape system names or the REPLACE() function to escape any character in a string.</span></span>  
   
--   アプリケーションの各層に、複数層の検証を実装します。  
+-   <span data-ttu-id="4d229-121">アプリケーションの各層に、複数層の検証を実装します。</span><span class="sxs-lookup"><span data-stu-id="4d229-121">Implement multiple layers of validation in each tier of your application.</span></span>  
   
--   入力のサイズとデータ型をテストし、適切な制限を適用します。  これは、意図的なバッファー オーバーランを防ぐのに役立ちます。  
+-   <span data-ttu-id="4d229-122">入力のサイズとデータ型をテストし、適切な制限を適用します。</span><span class="sxs-lookup"><span data-stu-id="4d229-122">Test the size and data type of input and enforce appropriate limits.</span></span> <span data-ttu-id="4d229-123">これは、意図的なバッファー オーバーランを防ぐのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="4d229-123">This can help prevent deliberate buffer overruns.</span></span>  
   
--   文字列変数の内容をテストし、期待値のみを許可します。  バイナリ データ、エスケープ シーケンス、およびコメント文字を含む入力は拒否します。  
+-   <span data-ttu-id="4d229-124">文字列変数の内容をテストし、期待値のみを許可します。</span><span class="sxs-lookup"><span data-stu-id="4d229-124">Test the content of string variables and accept only expected values.</span></span> <span data-ttu-id="4d229-125">バイナリ データ、エスケープ シーケンス、およびコメント文字を含む入力は拒否します。</span><span class="sxs-lookup"><span data-stu-id="4d229-125">Reject entries that contain binary data, escape sequences, and comment characters.</span></span>  
   
--   XML ドキュメントを扱う場合、入力時にすべてのデータをスキーマに照らして検証します。  
+-   <span data-ttu-id="4d229-126">XML ドキュメントを扱う場合、入力時にすべてのデータをスキーマに照らして検証します。</span><span class="sxs-lookup"><span data-stu-id="4d229-126">When you are working with XML documents, validate all data against its schema as it is entered.</span></span>  
   
--   多層環境では、信頼済みゾーンに入ることを許可する前にすべてのデータを検証する必要があります。  
+-   <span data-ttu-id="4d229-127">多層環境では、信頼済みゾーンに入ることを許可する前にすべてのデータを検証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4d229-127">In multi-tiered environments, all data should be validated before admission to the trusted zone.</span></span>  
   
--   フィールド内の文字列からファイル名を作成できる場合、AUX、CLOCK$、COM1 ～ COM8、CON、CONFIG$、LPT1 ～ LPT8、NUL、PRN の各文字列をフィールドに入力できないようにします。  
+-   <span data-ttu-id="4d229-128">フィールド内の文字列からファイル名を作成できる場合、AUX、CLOCK$、COM1 ～ COM8、CON、CONFIG$、LPT1 ～ LPT8、NUL、PRN の各文字列をフィールドに入力できないようにします。</span><span class="sxs-lookup"><span data-stu-id="4d229-128">Do not accept the following strings in fields from which file names can be constructed: AUX, CLOCK$, COM1 through COM8, CON, CONFIG$, LPT1 through LPT8, NUL, and PRN.</span></span>  
   
--   <xref:System.Data.SqlClient.SqlParameter> オブジェクトにストアド プロシージャとコマンドを組み合わせ、型チェックと長さ検証を実行します。  
+-   <span data-ttu-id="4d229-129"><xref:System.Data.SqlClient.SqlParameter> オブジェクトにストアド プロシージャとコマンドを組み合わせ、型チェックと長さ検証を実行します。</span><span class="sxs-lookup"><span data-stu-id="4d229-129">Use <xref:System.Data.SqlClient.SqlParameter> objects with stored procedures and commands to provide type checking and length validation.</span></span>  
   
--   クライアント コードで <xref:System.Text.RegularExpressions.Regex> 式を使用して、無効な文字を排除します。  
+-   <span data-ttu-id="4d229-130">クライアント コードで <xref:System.Text.RegularExpressions.Regex> 式を使用して、無効な文字を排除します。</span><span class="sxs-lookup"><span data-stu-id="4d229-130">Use <xref:System.Text.RegularExpressions.Regex> expressions in client code to filter invalid characters.</span></span>  
   
-## 動的 SQL を利用した手法  
- プロシージャ コードで動的に生成された SQL ステートメントを実行することで組み合わせ所有権を破棄すると、SQL Server は動的 SQL によりアクセスされるオブジェクトに対する呼び出し元の権限をチェックします。  
+## <a name="dynamic-sql-strategies"></a><span data-ttu-id="4d229-131">動的 SQL を利用した手法</span><span class="sxs-lookup"><span data-stu-id="4d229-131">Dynamic SQL Strategies</span></span>  
+ <span data-ttu-id="4d229-132">プロシージャ コードで動的に生成された SQL ステートメントを実行することで組み合わせ所有権を破棄すると、SQL Server は動的 SQL によりアクセスされるオブジェクトに対する呼び出し元の権限をチェックします。</span><span class="sxs-lookup"><span data-stu-id="4d229-132">Executing dynamically created SQL statements in your procedural code breaks the ownership chain, causing SQL Server to check the permissions of the caller against the objects being accessed by the dynamic SQL.</span></span>  
   
- SQL Server には、動的 SQL を実行するストアド プロシージャやユーザー定義関数を使用したデータ アクセスをユーザーに許可するための方法があります。  
+ <span data-ttu-id="4d229-133">SQL Server には、動的 SQL を実行するストアド プロシージャやユーザー定義関数を使用したデータ アクセスをユーザーに許可するための方法があります。</span><span class="sxs-lookup"><span data-stu-id="4d229-133">SQL Server has methods for granting users access to data using stored procedures and user-defined functions that execute dynamic SQL.</span></span>  
   
--   Transact\-SQL EXECUTE AS 句による権限の借用を利用します \(「[SQL Server での借用を使用した権限のカスタマイズ](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)」を参照\)。  
+-   <span data-ttu-id="4d229-134">TRANSACT-SQL の EXECUTE AS で権限借用の使用」の説明に従って、句[SQL Server での偽装でのアクセス許可をカスタマイズする](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)です。</span><span class="sxs-lookup"><span data-stu-id="4d229-134">Using impersonation with the Transact-SQL EXECUTE AS clause, as described in [Customizing Permissions with Impersonation in SQL Server](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md).</span></span>  
   
--   証明書を使ってストアド プロシージャに署名します \(「[SQL Server でのストアド プロシージャの署名](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)」を参照\)。  
+-   <span data-ttu-id="4d229-135">」の説明に従って証明書が、ストアド プロシージャへの署名[SQL Server でストアド プロシージャの署名](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)です。</span><span class="sxs-lookup"><span data-stu-id="4d229-135">Signing stored procedures with certificates, as described in [Signing Stored Procedures in SQL Server](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md).</span></span>  
   
-### EXECUTE AS  
- EXECUTE AS 句を使用すると、呼び出し元の権限が EXECUTE AS 句で指定されたユーザーの権限に置き換えられます。  入れ子になったストアド プロシージャやトリガーは、プロキシ ユーザーのセキュリティ コンテキストで実行されることに注意してください。  これにより、行レベルのセキュリティに依存するアプリケーションや監査を必要とするアプリケーションが中断されることがあります。  ユーザーの識別情報を返す関数では、最初の呼び出し元ではなく EXECUTE AS 句で指定されたユーザーが返されます。  プロシージャの実行後、または REVERT ステートメントが発行されたときにのみ、実行コンテキストが最初の呼び出し元に戻ります。  
+### <a name="execute-as"></a><span data-ttu-id="4d229-136">EXECUTE AS</span><span class="sxs-lookup"><span data-stu-id="4d229-136">EXECUTE AS</span></span>  
+ <span data-ttu-id="4d229-137">EXECUTE AS 句を使用すると、呼び出し元の権限が EXECUTE AS 句で指定されたユーザーの権限に置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="4d229-137">The EXECUTE AS clause replaces the permissions of the caller with that of the user specified in the EXECUTE AS clause.</span></span> <span data-ttu-id="4d229-138">入れ子になったストアド プロシージャやトリガーは、プロキシ ユーザーのセキュリティ コンテキストで実行されることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="4d229-138">Nested stored procedures or triggers execute under the security context of the proxy user.</span></span> <span data-ttu-id="4d229-139">これにより、行レベルのセキュリティに依存するアプリケーションや監査を必要とするアプリケーションが中断されることがあります。</span><span class="sxs-lookup"><span data-stu-id="4d229-139">This can break applications that rely on row-level security or require auditing.</span></span> <span data-ttu-id="4d229-140">ユーザーの識別情報を返す関数では、最初の呼び出し元ではなく EXECUTE AS 句で指定されたユーザーが返されます。</span><span class="sxs-lookup"><span data-stu-id="4d229-140">Some functions that return the identity of the user return the user specified in the EXECUTE AS clause, not the original caller.</span></span> <span data-ttu-id="4d229-141">プロシージャの実行後、または REVERT ステートメントが発行されたときにのみ、実行コンテキストが最初の呼び出し元に戻ります。</span><span class="sxs-lookup"><span data-stu-id="4d229-141">Execution context is reverted to the original caller only after execution of the procedure or when a REVERT statement is issued.</span></span>  
   
-### 証明書による署名  
- 証明書により署名されているストアド プロシージャが実行されると、証明書ユーザーに許可される権限が呼び出し元の権限にマージされます。  実行コンテキストは変わりません。証明書ユーザーは呼び出し元の権限を借用しません。  ストアド プロシージャの署名を実装するには、いくつかの手順を実行する必要があります。  プロシージャが変更されるたびに、再度署名する必要があります。  
+### <a name="certificate-signing"></a><span data-ttu-id="4d229-142">証明書による署名</span><span class="sxs-lookup"><span data-stu-id="4d229-142">Certificate Signing</span></span>  
+ <span data-ttu-id="4d229-143">証明書により署名されているストアド プロシージャが実行されると、証明書ユーザーに許可される権限が呼び出し元の権限にマージされます。</span><span class="sxs-lookup"><span data-stu-id="4d229-143">When a stored procedure that has been signed with a certificate executes, the permissions granted to the certificate user are merged with those of the caller.</span></span> <span data-ttu-id="4d229-144">実行コンテキストは変わりません。証明書ユーザーは呼び出し元の権限を借用しません。</span><span class="sxs-lookup"><span data-stu-id="4d229-144">The execution context remains the same; the certificate user does not impersonate the caller.</span></span> <span data-ttu-id="4d229-145">ストアド プロシージャの署名を実装するには、いくつかの手順を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4d229-145">Signing stored procedures requires several steps to implement.</span></span> <span data-ttu-id="4d229-146">プロシージャが変更されるたびに、再度署名する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4d229-146">Each time the procedure is modified, it must be re-signed.</span></span>  
   
-### 複数のデータベースへのアクセス  
- 動的に生成された SQL ステートメントを実行する場合、複数データベースの組み合わせ所有権は機能しません。  [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] では、別のデータベースのデータにアクセスするストアド プロシージャを作成し、両方のデータベースに存在する証明書でそのプロシージャに署名することによって、これを回避できます。  これにより、ユーザーは、データベースへのアクセス許可が付与されていなくても、そのプロシージャによって使用されるデータベース リソースにアクセスできるようになります。  
+### <a name="cross-database-access"></a><span data-ttu-id="4d229-147">複数のデータベースへのアクセス</span><span class="sxs-lookup"><span data-stu-id="4d229-147">Cross Database Access</span></span>  
+ <span data-ttu-id="4d229-148">動的に生成された SQL ステートメントを実行する場合、複数データベースの組み合わせ所有権は機能しません。</span><span class="sxs-lookup"><span data-stu-id="4d229-148">Cross-database ownership chaining does not work in cases where dynamically created SQL statements are executed.</span></span> <span data-ttu-id="4d229-149">[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] では、別のデータベースのデータにアクセスするストアド プロシージャを作成し、両方のデータベースに存在する証明書でそのプロシージャに署名することによって、これを回避できます。</span><span class="sxs-lookup"><span data-stu-id="4d229-149">You can work around this in [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] by creating a stored procedure that accesses data in another database and signing the procedure with a certificate that exists in both databases.</span></span> <span data-ttu-id="4d229-150">これにより、ユーザーは、データベースへのアクセス許可が付与されていなくても、そのプロシージャによって使用されるデータベース リソースにアクセスできるようになります。</span><span class="sxs-lookup"><span data-stu-id="4d229-150">This gives users access to the database resources used by the procedure without granting them database access or permissions.</span></span>  
   
-## 外部リソース  
- 詳細については、次のリソースを参照してください。  
+## <a name="external-resources"></a><span data-ttu-id="4d229-151">外部リソース</span><span class="sxs-lookup"><span data-stu-id="4d229-151">External Resources</span></span>  
+ <span data-ttu-id="4d229-152">詳細については、次のリソースを参照してください。</span><span class="sxs-lookup"><span data-stu-id="4d229-152">For more information, see the following resources.</span></span>  
   
-|リソース|説明|  
-|----------|--------|  
-|SQL Server Books Online の「[ストアド プロシージャ](http://go.microsoft.com/fwlink/?LinkId=98233)」および「[SQL インジェクション](http://go.microsoft.com/fwlink/?LinkId=98234)」|ストアド プロシージャの作成方法と SQL インジェクションのしくみについて説明します。|  
-|MSDN マガジンの「[SQL インジェクション](http://msdn.microsoft.com/msdnmag/issues/06/11/SQLSecurity/)」|文字と文字列の区切り方法、SQL インジェクション、切り捨て攻撃による変更について説明します。|  
+|<span data-ttu-id="4d229-153">リソース</span><span class="sxs-lookup"><span data-stu-id="4d229-153">Resource</span></span>|<span data-ttu-id="4d229-154">説明</span><span class="sxs-lookup"><span data-stu-id="4d229-154">Description</span></span>|  
+|--------------|-----------------|  
+|<span data-ttu-id="4d229-155">[ストアド プロシージャ](http://go.microsoft.com/fwlink/?LinkId=98233)と[SQL インジェクション](http://go.microsoft.com/fwlink/?LinkId=98234)SQL Server オンライン ブック</span><span class="sxs-lookup"><span data-stu-id="4d229-155">[Stored Procedures](http://go.microsoft.com/fwlink/?LinkId=98233) and [SQL Injection](http://go.microsoft.com/fwlink/?LinkId=98234) in SQL Server Books Online</span></span>|<span data-ttu-id="4d229-156">ストアド プロシージャの作成方法と SQL インジェクションのしくみについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4d229-156">Topics describe how to create stored procedures and how SQL Injection works.</span></span>|  
+|<span data-ttu-id="4d229-157">[新しい SQL 切り捨て攻撃とその回避方法](http://msdn.microsoft.com/msdnmag/issues/06/11/SQLSecurity/)MSDN マガジンのです。</span><span class="sxs-lookup"><span data-stu-id="4d229-157">[New SQL Truncation Attacks And How To Avoid Them](http://msdn.microsoft.com/msdnmag/issues/06/11/SQLSecurity/) in MSDN Magazine.</span></span>|<span data-ttu-id="4d229-158">文字と文字列の区切り方法、SQL インジェクション、切り捨て攻撃による変更について説明します。</span><span class="sxs-lookup"><span data-stu-id="4d229-158">Describes how to delimit characters and strings, SQL injection, and modification by  truncation attacks.</span></span>|  
   
-## 参照  
- [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)   
- [SQL Server セキュリティの概要](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)   
- [SQL Server におけるアプリケーション セキュリティのシナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)   
- [SQL Server でのストアド プロシージャを使用したアクセス許可の管理](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)   
- [SQL Server でのストアド プロシージャの署名](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)   
- [SQL Server での借用を使用した権限のカスタマイズ](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="4d229-159">関連項目</span><span class="sxs-lookup"><span data-stu-id="4d229-159">See Also</span></span>  
+ [<span data-ttu-id="4d229-160">ADO.NET アプリケーションのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="4d229-160">Securing ADO.NET Applications</span></span>](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
+ [<span data-ttu-id="4d229-161">SQL Server のセキュリティの概要</span><span class="sxs-lookup"><span data-stu-id="4d229-161">Overview of SQL Server Security</span></span>](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
+ [<span data-ttu-id="4d229-162">SQL Server におけるアプリケーション セキュリティ シナリオ</span><span class="sxs-lookup"><span data-stu-id="4d229-162">Application Security Scenarios in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
+ [<span data-ttu-id="4d229-163">SQL Server でストアド プロシージャを使用した権限の管理</span><span class="sxs-lookup"><span data-stu-id="4d229-163">Managing Permissions with Stored Procedures in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)  
+ [<span data-ttu-id="4d229-164">SQL Server でストアド プロシージャの署名</span><span class="sxs-lookup"><span data-stu-id="4d229-164">Signing Stored Procedures in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)  
+ [<span data-ttu-id="4d229-165">SQL Server での偽装アクセス許可のカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="4d229-165">Customizing Permissions with Impersonation in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)  
+ [<span data-ttu-id="4d229-166">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="4d229-166">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

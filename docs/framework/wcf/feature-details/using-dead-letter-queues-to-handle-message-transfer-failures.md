@@ -1,83 +1,89 @@
 ---
-title: "配信不能キューを使用したメッセージ転送エラー処理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "配信不能キューを使用したメッセージ転送エラー処理"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 9e891c6a-d960-45ea-904f-1a00e202d61a
-caps.latest.revision: 19
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1b02d1d826e78d7f324e638d7e2baac96bb8bbaa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 配信不能キューを使用したメッセージ転送エラー処理
-キューに置かれたメッセージは、配信に失敗する可能性があります。 配信に失敗したメッセージは、配信不能キューに記録されます。 配信の失敗は、ネットワーク エラー、キューが削除されている、キューがいっぱいになっている、認証エラー、配信が時間どおりに行われなかったなど、さまざまな理由で生じる可能性があります。  
+# <a name="using-dead-letter-queues-to-handle-message-transfer-failures"></a><span data-ttu-id="6d885-102">配信不能キューを使用したメッセージ転送エラー処理</span><span class="sxs-lookup"><span data-stu-id="6d885-102">Using Dead-Letter Queues to Handle Message Transfer Failures</span></span>
+<span data-ttu-id="6d885-103">キューに置かれたメッセージは、配信に失敗する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="6d885-103">Queued messages can fail delivery.</span></span> <span data-ttu-id="6d885-104">配信に失敗したメッセージは、配信不能キューに記録されます。</span><span class="sxs-lookup"><span data-stu-id="6d885-104">These failed messages are recorded in a dead-letter queue.</span></span> <span data-ttu-id="6d885-105">配信の失敗は、ネットワーク エラー、キューが削除されている、キューがいっぱいになっている、認証エラー、配信が時間どおりに行われなかったなど、さまざまな理由で生じる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="6d885-105">The failed delivery can be caused by reasons such as network failures, a deleted queue, a full queue, authentication failure, or a failure to deliver on time.</span></span>  
   
- キューに置かれたメッセージは、受信側のアプリケーションでタイムリーに読み取られないと、長時間キューに残ることがあります。 時間依存のメッセージでは、このような動作が適切でない場合があります。 時間依存のメッセージでは、メッセージをキューに格納しておくことができる期間を示す TTL (Time to Live) プロパティが、キューに置かれたバインディングに設定されおり、この期間を超えると、メッセージの有効期限が切れます。 期限切れのメッセージは、配信不能キューと呼ばれる特別なキューに送信されます。 また、キューのクォータの超過、認証エラーなどの理由で、メッセージが配信不能キューに置かれる場合もあります。  
+ <span data-ttu-id="6d885-106">キューに置かれたメッセージは、受信側のアプリケーションでタイムリーに読み取られないと、長時間キューに残ることがあります。</span><span class="sxs-lookup"><span data-stu-id="6d885-106">Queued messages can remain in the queue for a long time if the receiving application does not read them from the queue in a timely fashion.</span></span> <span data-ttu-id="6d885-107">時間依存のメッセージでは、このような動作が適切でない場合があります。</span><span class="sxs-lookup"><span data-stu-id="6d885-107">This behavior may not be appropriate for time-sensitive messages.</span></span> <span data-ttu-id="6d885-108">時間依存のメッセージでは、メッセージをキューに格納しておくことができる期間を示す TTL (Time to Live) プロパティが、キューに置かれたバインディングに設定されおり、この期間を超えると、メッセージの有効期限が切れます。</span><span class="sxs-lookup"><span data-stu-id="6d885-108">Time-sensitive messages have a Time to Live (TTL) property set in the queued binding, which indicates how long the messages can be in the queue before they must expire.</span></span> <span data-ttu-id="6d885-109">期限切れのメッセージは、配信不能キューと呼ばれる特別なキューに送信されます。</span><span class="sxs-lookup"><span data-stu-id="6d885-109">Expired messages are sent to a special queue called the dead-letter queue.</span></span> <span data-ttu-id="6d885-110">また、キューのクォータの超過、認証エラーなどの理由で、メッセージが配信不能キューに置かれる場合もあります。</span><span class="sxs-lookup"><span data-stu-id="6d885-110">Messages can also be put in a dead-letter queue for other reasons, such as exceeding a queue quota or because of authentication failure.</span></span>  
   
- 一般に、アプリケーションには、配信不能キューのメッセージとエラーの理由を読み取るための補正ロジックが記述されています。 補正ロジックはエラーの原因に依存します。 たとえば、認証エラーの場合は、メッセージに添付された証明書を修正し、メッセージを再送信できます。 また、ターゲット キューのクォータに達したために配信が失敗した場合は、クォータの問題が解決されていることを期待して配信を再試行できます。  
+ <span data-ttu-id="6d885-111">一般に、アプリケーションには、配信不能キューのメッセージとエラーの理由を読み取るための補正ロジックが記述されています。</span><span class="sxs-lookup"><span data-stu-id="6d885-111">Generally, applications write compensation logic to read messages from the dead-letter queue and failure reasons.</span></span> <span data-ttu-id="6d885-112">補正ロジックはエラーの原因に依存します。</span><span class="sxs-lookup"><span data-stu-id="6d885-112">The compensation logic depends on the cause of the failure.</span></span> <span data-ttu-id="6d885-113">たとえば、認証エラーの場合は、メッセージに添付された証明書を修正し、メッセージを再送信できます。</span><span class="sxs-lookup"><span data-stu-id="6d885-113">For example, in the case of authentication failure, you can correct the certificate attached with the message and resend the message.</span></span> <span data-ttu-id="6d885-114">また、ターゲット キューのクォータに達したために配信が失敗した場合は、クォータの問題が解決されていることを期待して配信を再試行できます。</span><span class="sxs-lookup"><span data-stu-id="6d885-114">If delivery failed because the target queue quota was reached, you can reattempt delivery in the hope that the quota problem was resolved.</span></span>  
   
- ほとんどのキュー システムには、そのシステムから配信できなかったすべてのメッセージを格納するための、システム全体の配信不能キューがあります。 メッセージ キュー (MSMQ) には、システム全体の配信不能キューが&2; 種類用意されています。1 つはトランザクション キューへの配信に失敗したメッセージを格納するトランザクション システム全体の配信不能キューで、もう&1; つは非トランザクション キューへの配信に失敗したメッセージを格納する非トランザクション システム全体の配信不能キューです。 2 つのクライアントが&2; つの異なるサービスにメッセージを送信しているために、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の異なるキューで、送信に同じ MSMQ サービスを共有している場合は、システム配信不能キューでメッセージが混在する可能性があります。 これは、必ずしも最適であるとは言えません。 場合によっては (たとえば、セキュリティ上の理由で)、一方のクライアントが、もう一方のクライアントのメッセージを配信不能キューから読み取ることができないようにする必要があるからです。 また、共有された配信不能キューでは、クライアントがキューを参照して、送信したメッセージを検索する必要もありますが、配信不能キューに置かれているメッセージの数によっては、これは極めて大きな負荷になる可能性があります。 したがって、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] `NetMsmqBinding`、`MsmqIntegrationBinding,`および MSMQ に[!INCLUDE[wv](../../../../includes/wv-md.md)](アプリケーション固有の配信不能キューとも呼ばれます)、カスタム配信不能キューが用意されています。  
+ <span data-ttu-id="6d885-115">ほとんどのキュー システムには、そのシステムから配信できなかったすべてのメッセージを格納するための、システム全体の配信不能キューがあります。</span><span class="sxs-lookup"><span data-stu-id="6d885-115">Most queuing systems have a system-wide dead-letter queue where all failed messages from that system are stored.</span></span> <span data-ttu-id="6d885-116">メッセージ キュー (MSMQ) には、システム全体の配信不能キューが 2 種類用意されています。1 つはトランザクション キューへの配信に失敗したメッセージを格納するトランザクション システム全体の配信不能キューで、もう 1 つは非トランザクション キューへの配信に失敗したメッセージを格納する非トランザクション システム全体の配信不能キューです。</span><span class="sxs-lookup"><span data-stu-id="6d885-116">Message Queuing (MSMQ) provides two system-wide dead-letter queues: a transactional system-wide dead-letter queue that stores messages that failed delivery to the transactional queue and a non-transactional system-wide dead-letter queue that stores messages that failed delivery to the non-transactional queue.</span></span> <span data-ttu-id="6d885-117">2 つのクライアントが 2 つの異なるサービスにメッセージを送信しているために、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の異なるキューで、送信に同じ MSMQ サービスを共有している場合は、システム配信不能キューでメッセージが混在する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="6d885-117">If two clients are sending messages to two different services, and therefore different queues in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] are sharing the same MSMQ service to send, then it is possible to have a mix of messages in the system dead-letter queue.</span></span> <span data-ttu-id="6d885-118">これは、必ずしも最適であるとは言えません。</span><span class="sxs-lookup"><span data-stu-id="6d885-118">This is not always optimal.</span></span> <span data-ttu-id="6d885-119">場合によっては (たとえば、セキュリティ上の理由で)、一方のクライアントが、もう一方のクライアントのメッセージを配信不能キューから読み取ることができないようにする必要があるからです。</span><span class="sxs-lookup"><span data-stu-id="6d885-119">In several cases (security, for example), you may not want one client to read another client's messages from a dead-letter queue.</span></span> <span data-ttu-id="6d885-120">また、共有された配信不能キューでは、クライアントがキューを参照して、送信したメッセージを検索する必要もありますが、配信不能キューに置かれているメッセージの数によっては、これは極めて大きな負荷になる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="6d885-120">A shared dead-letter queue also requires clients to browse through the queue to find a message that they sent, which can be prohibitively expensive based on the number of messages in the dead-letter queue.</span></span> <span data-ttu-id="6d885-121">したがって、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] `NetMsmqBinding`、`MsmqIntegrationBinding,`および MSMQ に[!INCLUDE[wv](../../../../includes/wv-md.md)](アプリケーション固有の配信不能キューとも呼ばれます)、カスタム配信不能キューを提供します。</span><span class="sxs-lookup"><span data-stu-id="6d885-121">Therefore, in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]`NetMsmqBinding`, `MsmqIntegrationBinding,` and MSMQ on [!INCLUDE[wv](../../../../includes/wv-md.md)] provide a custom dead-letter queue (sometimes referred to as an application-specific dead-letter queue).</span></span>  
   
- カスタム配信不能キューでは、同じ MSMQ サービスを共有してメッセージを送信するクライアントをそれぞれ分離できます。  
+ <span data-ttu-id="6d885-122">カスタム配信不能キューでは、同じ MSMQ サービスを共有してメッセージを送信するクライアントをそれぞれ分離できます。</span><span class="sxs-lookup"><span data-stu-id="6d885-122">The custom dead-letter queue provides isolation between clients that share the same MSMQ service to send messages.</span></span>  
   
- [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] の場合、[!INCLUDE[wxp](../../../../includes/wxp-md.md)] と [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、キューに置かれたすべてのクライアント アプリケーションに対して、システム全体で&1; つの配信不能キューが提供されます。 一方、[!INCLUDE[wv](../../../../includes/wv-md.md)] では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] により、キューに置かれたクライアント アプリケーションごとに配信不能キューが提供されます。  
+ <span data-ttu-id="6d885-123">[!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] の場合、[!INCLUDE[wxp](../../../../includes/wxp-md.md)] と [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、キューに置かれたすべてのクライアント アプリケーションに対して、システム全体で 1 つの配信不能キューが提供されます。</span><span class="sxs-lookup"><span data-stu-id="6d885-123">On [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] and [!INCLUDE[wxp](../../../../includes/wxp-md.md)], [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] provides a system-wide dead-letter queue for all queued client applications.</span></span> <span data-ttu-id="6d885-124">一方、[!INCLUDE[wv](../../../../includes/wv-md.md)] では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] により、キューに置かれたクライアント アプリケーションごとに配信不能キューが提供されます。</span><span class="sxs-lookup"><span data-stu-id="6d885-124">On [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] provides a dead-letter queue for each queued client application.</span></span>  
   
-## <a name="specifying-use-of-the-dead-letter-queue"></a>配信不能キューの使用の指定  
- 配信不能キューは、送信元アプリケーションのキュー マネージャーに存在します。 ここには、有効期限が切れたメッセージと転送または配信に失敗したメッセージが格納されます。  
+## <a name="specifying-use-of-the-dead-letter-queue"></a><span data-ttu-id="6d885-125">配信不能キューの使用の指定</span><span class="sxs-lookup"><span data-stu-id="6d885-125">Specifying Use of the Dead-Letter Queue</span></span>  
+ <span data-ttu-id="6d885-126">配信不能キューは、送信元アプリケーションのキュー マネージャーに存在します。</span><span class="sxs-lookup"><span data-stu-id="6d885-126">A dead-letter queue is in the queue manager of the sending application.</span></span> <span data-ttu-id="6d885-127">ここには、有効期限が切れたメッセージと転送または配信に失敗したメッセージが格納されます。</span><span class="sxs-lookup"><span data-stu-id="6d885-127">It stores messages that have expired or that have failed transfer or delivery.</span></span>  
   
- バインディングには、次の配信不能キュー プロパティがあります。  
+ <span data-ttu-id="6d885-128">バインディングには、次の配信不能キュー プロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="6d885-128">The binding has the following dead-letter queue properties:</span></span>  
   
 -   <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue%2A>  
   
 -   <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A>  
   
-## <a name="reading-messages-from-the-dead-letter-queue"></a>配信不能キューからのメッセージの読み取り  
- 配信不能キューからメッセージを読み取るアプリケーションは、アプリケーション キューからメッセージを読み取る [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスとよく似ていますが、次のようなわずかな違いがあります。  
+## <a name="reading-messages-from-the-dead-letter-queue"></a><span data-ttu-id="6d885-129">配信不能キューからのメッセージの読み取り</span><span class="sxs-lookup"><span data-stu-id="6d885-129">Reading Messages from the Dead-Letter Queue</span></span>  
+ <span data-ttu-id="6d885-130">配信不能キューからメッセージを読み取るアプリケーションは、アプリケーション キューからメッセージを読み取る [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスとよく似ていますが、次のようなわずかな違いがあります。</span><span class="sxs-lookup"><span data-stu-id="6d885-130">An application that reads messages out of a dead-letter queue is similar to a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service that reads from an application queue, except for the following minor differences:</span></span>  
   
--   トランザクション システムの配信不能キューからメッセージを読み取るには、URI (Uniform Resource Identifier) を net.msmq://localhost/system$;DeadXact という形式にする必要があります。  
+-   <span data-ttu-id="6d885-131">トランザクション システムの配信不能キューからメッセージを読み取るには、URI (Uniform Resource Identifier) を net.msmq://localhost/system$;DeadXact という形式にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d885-131">To read messages from a system transactional dead-letter queue, the Uniform Resource Identifier (URI) must be of the form: net.msmq://localhost/system$;DeadXact.</span></span>  
   
--   非トランザクション システムの配信不能キューからメッセージを読み取る場合、URI は、net.msmq://localhost/system$;DeadLetter という形式にする必要があります。  
+-   <span data-ttu-id="6d885-132">非トランザクション システムの配信不能キューからメッセージを読み取る場合、URI は、net.msmq://localhost/system$;DeadLetter という形式にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d885-132">To read messages from a system non-transactional dead-letter queue, the URI must be of the form: net.msmq://localhost/system$;DeadLetter.</span></span>  
   
--   カスタム配信不能キューからメッセージの読み取り、URI は、フォーム: net.msmq://localhost/private/のする必要があります*カスタム「名*> 場所*カスタム「名*カスタム配信不能キューの名前を指定します。  
+-   <span data-ttu-id="6d885-133">カスタム配信不能キューからメッセージの読み取り、URI でなければなりませんフォーム: net.msmq://localhost/private/\<*カスタム dlq 名*> 場所*カスタム dlq 名*カスタムの名前を指定します配信不能キュー。</span><span class="sxs-lookup"><span data-stu-id="6d885-133">To read messages from a custom dead-letter queue, the URI must be of the form:net.msmq://localhost/private/\<*custom-dlq-name*> where *custom-dlq-name* is the name of the custom dead-letter queue.</span></span>  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]キューのアドレスを参照してください方法[サービスのエンドポイントとキューのアドレス指定](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md)します。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="6d885-134">キューのアドレスを参照して方法[サービス エンドポイントとキューのアドレス指定](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md)です。</span><span class="sxs-lookup"><span data-stu-id="6d885-134"> how to address queues, see [Service Endpoints and Queue Addressing](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md).</span></span>  
   
- 受信側の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] スタックは、サービスがリッスンしているアドレスとメッセージのアドレスを照合します。 アドレスが一致する場合、メッセージはディスパッチされますが、一致しない場合はディスパッチされません。 これにより、配信不能キューから読み取るときに問題が生じる可能性があります。一般に、配信不能キュー内のメッセージは該当サービスにアドレス指定され、配信不能キュー サービスにアドレス指定されないからです。 そのため、配信不能キューから読み取るサービスは、`ServiceBehavior` アドレス フィルターをインストールし、受信者とは無関係にキュー内のすべてのメッセージを一致させるようスタックに指示する必要があります。 具体的には、追加する必要があります、`ServiceBehavior`で、 <xref:System.ServiceModel.AddressFilterMode>配信不能キューからメッセージを読み取るサービスへのパラメーターです。  
+ <span data-ttu-id="6d885-135">受信側の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] スタックは、サービスがリッスンしているアドレスとメッセージのアドレスを照合します。</span><span class="sxs-lookup"><span data-stu-id="6d885-135">The [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] stack on the receiver matches addresses that the service is listening on with the address on the message.</span></span> <span data-ttu-id="6d885-136">アドレスが一致する場合、メッセージはディスパッチされますが、一致しない場合はディスパッチされません。</span><span class="sxs-lookup"><span data-stu-id="6d885-136">If the addresses match, the message is dispatched; if not, the message is not dispatched.</span></span> <span data-ttu-id="6d885-137">これにより、配信不能キューから読み取るときに問題が生じる可能性があります。一般に、配信不能キュー内のメッセージは該当サービスにアドレス指定され、配信不能キュー サービスにアドレス指定されないからです。</span><span class="sxs-lookup"><span data-stu-id="6d885-137">This can cause problems when reading from the dead-letter queue, because messages in the dead-letter queue are typically addressed to the service and not the dead-letter queue service.</span></span> <span data-ttu-id="6d885-138">そのため、配信不能キューから読み取るサービスは、`ServiceBehavior` アドレス フィルターをインストールし、受信者とは無関係にキュー内のすべてのメッセージを一致させるようスタックに指示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d885-138">Therefore, the service reading from the dead-letter queue must install an address filter `ServiceBehavior` that instructs the stack to match all messages in the queue independently of the addressee.</span></span> <span data-ttu-id="6d885-139">具体的には、`ServiceBehavior` パラメーターを持つ <xref:System.ServiceModel.AddressFilterMode.Any> を、配信不能キューからメッセージを読み取るサービスに追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d885-139">Specifically, you must add a `ServiceBehavior` with the <xref:System.ServiceModel.AddressFilterMode.Any> parameter to the service reading messages from the dead-letter queue.</span></span>  
   
-## <a name="poison-message-handling-from-the-dead-letter-queue"></a>配信不能キューの有害メッセージの処理  
- 配信不能キューでは、条件付きで有害メッセージを処理できます。 システム キューからサブキューを作成できないため、システム配信不能キューから読み取るときは、`ReceiveErrorHandling` を `Move` に設定できません。 カスタム配信不能キューから読み取る場合は、サブキューを使用できるので、`Move` が有害メッセージに対する有効な処置であることに注意してください。  
+## <a name="poison-message-handling-from-the-dead-letter-queue"></a><span data-ttu-id="6d885-140">配信不能キューの有害メッセージの処理</span><span class="sxs-lookup"><span data-stu-id="6d885-140">Poison Message Handling from the Dead-Letter Queue</span></span>  
+ <span data-ttu-id="6d885-141">配信不能キューでは、条件付きで有害メッセージを処理できます。</span><span class="sxs-lookup"><span data-stu-id="6d885-141">Poison message handling is available on dead-letter queues, with some conditions.</span></span> <span data-ttu-id="6d885-142">システム キューからサブキューを作成できないため、システム配信不能キューから読み取るときは、`ReceiveErrorHandling` を `Move` に設定できません。</span><span class="sxs-lookup"><span data-stu-id="6d885-142">Because you cannot create sub-queues from system queues, when reading from the system dead-letter queue, the `ReceiveErrorHandling` cannot be set to `Move`.</span></span> <span data-ttu-id="6d885-143">カスタム配信不能キューから読み取る場合は、サブキューを使用できるので、`Move` が有害メッセージに対する有効な処置であることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="6d885-143">Note that if you are reading from a custom dead-letter queue, you can have sub-queues and, therefore, `Move` is a valid disposition for the poison message.</span></span>  
   
- `ReceiveErrorHandling` を `Reject` に設定しているときにカスタム配信不能キューから読み取った場合、有害メッセージはシステム配信不能キューに置かれます。 システム配信不能キューから読み取ると、有害メッセージは破棄 (削除) されます。 MSMQ のシステム配信不能キューから拒否すると、メッセージは破棄 (削除) されます。  
+ <span data-ttu-id="6d885-144">`ReceiveErrorHandling` を `Reject` に設定しているときにカスタム配信不能キューから読み取った場合、有害メッセージはシステム配信不能キューに置かれます。</span><span class="sxs-lookup"><span data-stu-id="6d885-144">When `ReceiveErrorHandling` is set to `Reject`, when reading from the custom dead letter queue, the poison message is put in the system dead-letter queue.</span></span> <span data-ttu-id="6d885-145">システム配信不能キューから読み取ると、有害メッセージは破棄 (削除) されます。</span><span class="sxs-lookup"><span data-stu-id="6d885-145">If reading from the system dead-letter queue, the message is dropped (purged).</span></span> <span data-ttu-id="6d885-146">MSMQ のシステム配信不能キューから拒否すると、メッセージは破棄 (削除) されます。</span><span class="sxs-lookup"><span data-stu-id="6d885-146">A reject from a system dead-letter queue in MSMQ drops (purges) the message.</span></span>  
   
-## <a name="example"></a>例  
- 次の例は、配信不能キューを作成する方法と、配信不能キューを使用して期限切れのメッセージを処理する方法を示しています。 この例は例では、に基づいて[する方法: WCF エンドポイントでのキューに置かれたメッセージの交換](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)します。 この例では、アプリケーションごとの配信不能キューを使用する発注書処理サービスにクライアント コードを書き込む方法を示します。 また、配信不能キューのメッセージを処理する方法も示します。  
+## <a name="example"></a><span data-ttu-id="6d885-147">例</span><span class="sxs-lookup"><span data-stu-id="6d885-147">Example</span></span>  
+ <span data-ttu-id="6d885-148">次の例は、配信不能キューを作成する方法と、配信不能キューを使用して期限切れのメッセージを処理する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="6d885-148">The following example shows how to create a dead-letter queue and how to use it to process expired messages.</span></span> <span data-ttu-id="6d885-149">例は例では、に基づいて[する方法: WCF エンドポイントとのキューに置かれたメッセージを交換](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)です。</span><span class="sxs-lookup"><span data-stu-id="6d885-149">The example is based on the example in [How to: Exchange Queued Messages with WCF Endpoints](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md).</span></span> <span data-ttu-id="6d885-150">この例では、アプリケーションごとの配信不能キューを使用する発注書処理サービスにクライアント コードを書き込む方法を示します。</span><span class="sxs-lookup"><span data-stu-id="6d885-150">The following example shows how to write the client code to the order processing service that uses a dead-letter queue for each application.</span></span> <span data-ttu-id="6d885-151">また、配信不能キューのメッセージを処理する方法も示します。</span><span class="sxs-lookup"><span data-stu-id="6d885-151">The example also shows how to process messages from the dead-letter queue.</span></span>  
   
- 以下は、アプリケーションごとの配信不能キューを指定するクライアントのコードです。  
+ <span data-ttu-id="6d885-152">以下は、アプリケーションごとの配信不能キューを指定するクライアントのコードです。</span><span class="sxs-lookup"><span data-stu-id="6d885-152">The following is code for a client that specifies a dead-letter queue for each application.</span></span>  
   
  [!code-csharp[S_DeadLetter#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_deadletter/cs/client.cs#1)]
  [!code-vb[S_DeadLetter#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_deadletter/vb/client.vb#1)]  
   
- 以下は、クライアント構成ファイルのコードです。  
+ <span data-ttu-id="6d885-153">以下は、クライアント構成ファイルのコードです。</span><span class="sxs-lookup"><span data-stu-id="6d885-153">The following is code for the client configuration file.</span></span>  
   
   
   
- 以下は、配信不能キューのメッセージを処理するサービスのコードです。  
+ <span data-ttu-id="6d885-154">以下は、配信不能キューのメッセージを処理するサービスのコードです。</span><span class="sxs-lookup"><span data-stu-id="6d885-154">The following is code for a service processing messages from a dead-letter queue.</span></span>  
   
  [!code-csharp[S_DeadLetter#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_deadletter/cs/dlservice.cs#3)]
  [!code-vb[S_DeadLetter#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_deadletter/vb/dlservice.vb#3)]  
   
- 以下は、配信不能キュー サービス構成ファイルのコードです。  
+ <span data-ttu-id="6d885-155">以下は、配信不能キュー サービス構成ファイルのコードです。</span><span class="sxs-lookup"><span data-stu-id="6d885-155">The following is code for the dead-letter queue service configuration file.</span></span>  
   
   
   
-## <a name="see-also"></a>関連項目  
- [キューの概要](../../../../docs/framework/wcf/feature-details/queues-overview.md)   
- [方法: キューの WCF エンドポイントとメッセージを交換](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)   
- [有害メッセージの処理](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)
+## <a name="see-also"></a><span data-ttu-id="6d885-156">関連項目</span><span class="sxs-lookup"><span data-stu-id="6d885-156">See Also</span></span>  
+ [<span data-ttu-id="6d885-157">キューの概要</span><span class="sxs-lookup"><span data-stu-id="6d885-157">Queues Overview</span></span>](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
+ [<span data-ttu-id="6d885-158">方法: Exchange の WCF エンドポイントとメッセージのキュー</span><span class="sxs-lookup"><span data-stu-id="6d885-158">How to: Exchange Queued Messages with WCF Endpoints</span></span>](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
+ [<span data-ttu-id="6d885-159">有害メッセージ処理</span><span class="sxs-lookup"><span data-stu-id="6d885-159">Poison Message Handling</span></span>](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)

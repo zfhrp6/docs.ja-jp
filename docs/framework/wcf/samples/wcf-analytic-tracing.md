@@ -1,128 +1,131 @@
 ---
-title: "WCF 分析トレース | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WCF 分析トレース"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6029c7c7-3515-4d36-9d43-13e8f4971790
-caps.latest.revision: 21
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: b752ea7fa4d4eda1afefca69778c68feb898177d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# WCF 分析トレース
-このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] の ETW に書き込む分析トレースのストリームに独自のトレース イベントを追加する方法を示します。分析トレースは、パフォーマンスを低下させずに簡単にサービスを確認できるようにするためのものです。このサンプルでは、<xref:System.Diagnostics.Eventing?displayProperty=fullName> API を使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと統合されるイベントを記述する方法を示します。  
+# <a name="wcf-analytic-tracing"></a><span data-ttu-id="ff9fc-102">WCF 分析トレース</span><span class="sxs-lookup"><span data-stu-id="ff9fc-102">WCF Analytic Tracing</span></span>
+<span data-ttu-id="ff9fc-103">このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] の ETW に書き込む分析トレースのストリームに独自のトレース イベントを追加する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-103">This sample demonstrates how to add your own tracing events into the stream of analytic traces that [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] writes to ETW in [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].</span></span> <span data-ttu-id="ff9fc-104">分析トレースは、パフォーマンスを低下させずに簡単にサービスを確認できるようにするためのものです。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-104">Analytic traces are meant to make it easy to get visibility into your services without paying a high performance penalty.</span></span> <span data-ttu-id="ff9fc-105">このサンプルでは、<xref:System.Diagnostics.Eventing?displayProperty=nameWithType> API を使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと統合されるイベントを記述する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-105">This sample shows how to use the <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> APIs to write events that integrate with [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services.</span></span>  
   
- <xref:System.Diagnostics.Eventing?displayProperty=fullName> API [!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「<xref:System.Diagnostics.Eventing?displayProperty=fullName>」を参照してください。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="ff9fc-106"> API <xref:System.Diagnostics.Eventing?displayProperty=nameWithType>、「<xref:System.Diagnostics.Eventing?displayProperty=nameWithType>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-106"> the <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> APIs, see <xref:System.Diagnostics.Eventing?displayProperty=nameWithType>.</span></span>  
   
- Windows でのイベントのトレースの詳細については、「[ETW によりデバッグおよびパフォーマンス調整を改善する](http://go.microsoft.com/fwlink/?LinkId=166488)」を参照してください。  
+ <span data-ttu-id="ff9fc-107">Windows イベント トレーシングの詳細については、次を参照してください。[デバッグを向上させると、パフォーマンスのチューニングを ETW](http://go.microsoft.com/fwlink/?LinkId=166488)です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-107">To learn more about event tracing in Windows, see [Improve Debugging and Performance Tuning with ETW](http://go.microsoft.com/fwlink/?LinkId=166488).</span></span>  
   
-## EventProvider の破棄  
- このサンプルでは、<xref:System.IDisposable?displayProperty=fullName> を実装した <xref:System.Diagnostics.Eventing.EventProvider?displayProperty=fullName> クラスを使用します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのトレースを実装する場合、サービスの有効期間に <xref:System.Diagnostics.Eventing.EventProvider> のリソースを使用することがあります。そのため、読みやすくするためにも、このサンプルでは、ラップされた <xref:System.Diagnostics.Eventing.EventProvider> を破棄しません。何かの理由で、サービスに対して別のトレースの要件を設定し、このリソースを破棄しなければならない場合は、アンマネージ リソースの破棄に関するベスト プラクティスに従ってこのサンプルを変更してください。アンマネージ リソースの破棄[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[Dispose メソッドの実装](http://go.microsoft.com/fwlink/?LinkId=166436)」を参照してください。  
+## <a name="disposing-eventprovider"></a><span data-ttu-id="ff9fc-108">EventProvider の破棄</span><span class="sxs-lookup"><span data-stu-id="ff9fc-108">Disposing EventProvider</span></span>  
+ <span data-ttu-id="ff9fc-109">このサンプルでは、<xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType> を実装した <xref:System.IDisposable?displayProperty=nameWithType> クラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-109">This sample uses the <xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType> class, which implements <xref:System.IDisposable?displayProperty=nameWithType>.</span></span> <span data-ttu-id="ff9fc-110">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのトレースを実装する場合、サービスの有効期間に <xref:System.Diagnostics.Eventing.EventProvider> のリソースを使用することがあります。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-110">When implementing tracing for a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service, it is likely that you may use the <xref:System.Diagnostics.Eventing.EventProvider>’s resources for the lifetime of the service.</span></span> <span data-ttu-id="ff9fc-111">そのため、読みやすくするためにも、このサンプルでは、ラップされた <xref:System.Diagnostics.Eventing.EventProvider> を破棄しません。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-111">For this reason, and for readability, this sample never disposes of the wrapped <xref:System.Diagnostics.Eventing.EventProvider>.</span></span> <span data-ttu-id="ff9fc-112">何かの理由で、サービスに対して別のトレースの要件を設定し、このリソースを破棄しなければならない場合は、アンマネージ リソースの破棄に関するベスト プラクティスに従ってこのサンプルを変更してください。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-112">If for some reason your service has different requirements for tracing and you must dispose of this resource, then you should modify this sample in accordance with the best practices for disposing of unmanaged resources.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="ff9fc-113">アンマネージ リソースを破棄するを参照してください[Dispose メソッドの実装](http://go.microsoft.com/fwlink/?LinkId=166436)です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-113"> disposing unmanaged resources, see [Implementing a Dispose Method](http://go.microsoft.com/fwlink/?LinkId=166436).</span></span>  
   
-## 自己ホスト型と Web ホスト型  
- Web ホスト型サービスの場合は、WCF の分析トレースで "HostReference" というフィールドが設定され、そのフィールドを使用してトレースの生成元のサービスを識別します。拡張可能なユーザー トレースをこのモデルに加えることができます。このサンプルで、そのためのベスト プラクティスを示します。結果の文字列にパイプ文字 '&#124;' が実際に表示さるときには、Web ホストの参照の形式は次のいずれかになります。  
+## <a name="self-hosting-vs-web-hosting"></a><span data-ttu-id="ff9fc-114">自己ホスト型と Web ホスト</span><span class="sxs-lookup"><span data-stu-id="ff9fc-114">Self-Hosting vs. Web Hosting</span></span>  
+ <span data-ttu-id="ff9fc-115">Web ホスト サービスの場合は、WCF の分析トレースは、"hostreference"をトレースの出力は、サービスの識別に使用される、フィールドを提供します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-115">For Web-hosted services, WCF’s analytic traces provide a field, called "HostReference", which is used to identify the service that is emitting the traces.</span></span> <span data-ttu-id="ff9fc-116">拡張可能なユーザー トレースをこのモデルに加えることができます。このサンプルで、そのためのベスト プラクティスを示します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-116">The extensible user traces can participate in this model and this sample demonstrates best practices for doing so.</span></span> <span data-ttu-id="ff9fc-117">Web ホストの形式の参照時にパイプ ' &#124;' 文字が実際には、その結果の表示文字列を次のいずれかにすることができます。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-117">The format of a Web host reference when the pipe ‘&#124;’ character actually appears in the resulting string can be any one of the following:</span></span>  
   
--   アプリケーションがルート以外にある場合  
+-   <span data-ttu-id="ff9fc-118">アプリケーションがルート以外にある場合</span><span class="sxs-lookup"><span data-stu-id="ff9fc-118">If the application is not at the root.</span></span>  
   
-     \<サイト名\>\<アプリケーション仮想パス\>&#124;\<サービス仮想パス\>&#124;\<サービス名\>  
+     <span data-ttu-id="ff9fc-119">\<SiteName >\<ApplicationVirtualPath > &#124;\<ServiceVirtualPath > &#124;です。\<ServiceName ></span><span class="sxs-lookup"><span data-stu-id="ff9fc-119">\<SiteName>\<ApplicationVirtualPath>&#124;\<ServiceVirtualPath>&#124;\<ServiceName></span></span>  
   
--   アプリケーションがルートにある場合  
+-   <span data-ttu-id="ff9fc-120">アプリケーションがルートにある場合</span><span class="sxs-lookup"><span data-stu-id="ff9fc-120">If the application is at the root.</span></span>  
   
-     \<サイト名\>&#124;\<サービス仮想パス\>&#124;\<サービス名\>  
+     <span data-ttu-id="ff9fc-121">\<SiteName > &#124;です。\<ServiceVirtualPath > &#124;です。\<ServiceName ></span><span class="sxs-lookup"><span data-stu-id="ff9fc-121">\<SiteName>&#124;\<ServiceVirtualPath>&#124;\<ServiceName></span></span>  
   
- 自己ホスト型サービスの場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の分析トレースで "HostReference" フィールドが設定されません。このサンプルの `WCFUserEventProvider` クラスは、自己ホスト型サービスで使用した場合も同じように動作します。  
+ <span data-ttu-id="ff9fc-122">自己ホスト型サービスは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の分析トレースで"HostReference"フィールドは設定されません。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-122">For self-hosted services, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]’s analytic traces do not populate the "HostReference" field.</span></span> <span data-ttu-id="ff9fc-123">このサンプルの `WCFUserEventProvider` クラスは、自己ホスト型サービスで使用した場合も同じように動作します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-123">The `WCFUserEventProvider` class in this sample behaves consistently when used by a self-hosted service.</span></span>  
   
-## カスタム イベントの詳細  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の ETW イベント プロバイダー マニフェストには、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの作成者がサービス コード内から生成できるように設計された 3 つのイベントが定義されています。次の表に、その 3 つのイベントの概要を示します。  
+## <a name="custom-event-details"></a><span data-ttu-id="ff9fc-124">カスタム イベントの詳細</span><span class="sxs-lookup"><span data-stu-id="ff9fc-124">Custom Event Details</span></span>  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="ff9fc-125"> の ETW イベント プロバイダー マニフェストには、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの作成者がサービス コード内から生成できるように設計された 3 つのイベントが定義されています。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-125">’s ETW Event Provider manifest defines three events that are designed to be emitted by [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service authors from within service code.</span></span> <span data-ttu-id="ff9fc-126">次の表に、その 3 つのイベントの概要を示します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-126">The following table shows a breakdown of the three events.</span></span>  
   
-|イベント|説明|イベント ID|  
-|----------|--------|-------------|  
-|UserDefinedInformationEventOccurred|このイベントは、問題以外の通知すべき処理がサービスで発生した場合に生成します。たとえば、データベースの呼び出しに成功した後にイベントを生成します。|301|  
-|UserDefinedWarningOccurred|このイベントは、後続の処理でエラーになる可能性がある問題が発生した場合に生成します。たとえば、データベースの呼び出しが失敗したものの、冗長なデータ ストアを使用して回復できた場合に警告イベントを生成します。|302|  
-|UserDefinedErrorOccurred|このイベントは、サービスが想定どおりに動作しなかった場合に生成します。たとえば、データベースの呼び出しが失敗し、別の場所からもデータを取得できなかった場合にイベントを生成します。|303|  
+|<span data-ttu-id="ff9fc-127">イベント</span><span class="sxs-lookup"><span data-stu-id="ff9fc-127">Event</span></span>|<span data-ttu-id="ff9fc-128">説明</span><span class="sxs-lookup"><span data-stu-id="ff9fc-128">Description</span></span>|<span data-ttu-id="ff9fc-129">イベント ID</span><span class="sxs-lookup"><span data-stu-id="ff9fc-129">Event ID</span></span>|  
+|-----------|-----------------|--------------|  
+|<span data-ttu-id="ff9fc-130">UserDefinedInformationEventOccurred</span><span class="sxs-lookup"><span data-stu-id="ff9fc-130">UserDefinedInformationEventOccurred</span></span>|<span data-ttu-id="ff9fc-131">このイベントは、問題以外の通知すべき処理がサービスで発生した場合に生成します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-131">Emit this event when something of note happens in your service that is not a problem.</span></span> <span data-ttu-id="ff9fc-132">たとえば、データベースの呼び出しに成功した後にイベントを生成します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-132">For example, you might emit an event after successfully making a call to a database.</span></span>|<span data-ttu-id="ff9fc-133">301</span><span class="sxs-lookup"><span data-stu-id="ff9fc-133">301</span></span>|  
+|<span data-ttu-id="ff9fc-134">UserDefinedWarningOccurred</span><span class="sxs-lookup"><span data-stu-id="ff9fc-134">UserDefinedWarningOccurred</span></span>|<span data-ttu-id="ff9fc-135">このイベントは、後続の処理でエラーになる可能性がある問題が発生した場合に生成します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-135">Emit this event when a problem occurs that may result in a failure in the future.</span></span> <span data-ttu-id="ff9fc-136">たとえば、データベースの呼び出しが失敗したものの、冗長なデータ ストアを使用して回復できた場合に警告イベントを生成します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-136">For example, you may emit a warning event when a call to a database fails but you were able to recover by falling back to a redundant data store.</span></span>|<span data-ttu-id="ff9fc-137">302</span><span class="sxs-lookup"><span data-stu-id="ff9fc-137">302</span></span>|  
+|<span data-ttu-id="ff9fc-138">UserDefinedErrorOccurred</span><span class="sxs-lookup"><span data-stu-id="ff9fc-138">UserDefinedErrorOccurred</span></span>|<span data-ttu-id="ff9fc-139">このイベントは、サービスが想定どおりに動作しなかった場合に生成します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-139">Emit this event when your service fails to behave as expected.</span></span> <span data-ttu-id="ff9fc-140">たとえば、データベースの呼び出しが失敗し、別の場所からもデータを取得できなかった場合にイベントを生成します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-140">For example, you might emit an event if a call to a database fails and you could not retrieve the data from elsewhere.</span></span>|<span data-ttu-id="ff9fc-141">303</span><span class="sxs-lookup"><span data-stu-id="ff9fc-141">303</span></span>|  
   
-#### このサンプルを使用するには  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="ff9fc-142">このサンプルを使用するには</span><span class="sxs-lookup"><span data-stu-id="ff9fc-142">To use this sample</span></span>  
   
-1.  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を使用して、WCFAnalyticTracingExtensibility.sln ソリューション ファイルを開きます。  
+1.  <span data-ttu-id="ff9fc-143">[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を使用して、WCFAnalyticTracingExtensibility.sln ソリューション ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-143">Using [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], open the WCFAnalyticTracingExtensibility.sln solution file.</span></span>  
   
-2.  ソリューションをビルドするには、Ctrl キーと Shift キーを押しながら B キーを押します。  
+2.  <span data-ttu-id="ff9fc-144">ソリューションをビルドするには、Ctrl キーと Shift キーを押しながら B キーを押します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-144">To build the solution, press CTRL+SHIFT+B.</span></span>  
   
-3.  ソリューションを実行するには、Ctrl キーを押しながら F5 キーを押します。  
+3.  <span data-ttu-id="ff9fc-145">ソリューションを実行するには、Ctrl キーを押しながら F5 キーを押します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-145">To run the solution, press CTRL+F5.</span></span>  
   
-     Web ブラウザーで、**\[Calculator.svc\]** をクリックします。サービスの WSDL ドキュメントの URI がブラウザーに表示されます。その URI をコピーします。  
+     <span data-ttu-id="ff9fc-146">Web ブラウザーで、をクリックして**[calculator.svc]**です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-146">In the Web browser, click **Calculator.svc**.</span></span> <span data-ttu-id="ff9fc-147">サービスの WSDL ドキュメントの URI がブラウザーに表示されます。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-147">The URI of the WSDL document for the service should appear in the browser.</span></span> <span data-ttu-id="ff9fc-148">その URI をコピーします。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-148">Copy that URI.</span></span>  
   
-4.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] テスト クライアント \(WcfTestClient.exe\) を実行します。  
+4.  <span data-ttu-id="ff9fc-149">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] テスト クライアント (WcfTestClient.exe) を実行します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-149">Run the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] test client (WcfTestClient.exe).</span></span>  
   
-     [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] テスト クライアント \(WcfTestClient.exe\) は \<[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] のインストール ディレクトリ\>\\Common7\\IDE\\WcfTestClient.exe にあります \([!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] の既定のインストール ディレクトリは C:\\Program Files\\Microsoft Visual Studio 10.0 です\)。  
+     <span data-ttu-id="ff9fc-150">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]にテスト用クライアント (WcfTestClient.exe) がある、 \< [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] Install Dir > \Common7\IDE\ WcfTestClient.exe (既定[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]インストール ディレクトリは C:\Program files \microsoft Visual Studio 10.0)。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-150">The [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] test client (WcfTestClient.exe) is located in the \<[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] Install Dir>\Common7\IDE\ WcfTestClient.exe (default [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] install dir is C:\Program Files\Microsoft Visual Studio 10.0).</span></span>  
   
-5.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] テスト クライアントで、**\[ファイル\]** メニューの **\[サービスの追加\]** をクリックしてサービスを追加します。  
+5.  <span data-ttu-id="ff9fc-151">内で、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]テスト クライアントを選択して、サービスを追加**ファイル**、し**サービスの追加**です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-151">Within the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] test client, add the service by selecting **File**, and then **Add Service**.</span></span>  
   
-     入力ボックスにエンドポイントのアドレスを追加します。  
+     <span data-ttu-id="ff9fc-152">入力ボックスにエンドポイントのアドレスを追加します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-152">Add the endpoint address in the input box.</span></span>  
   
-6.  **\[OK\]** をクリックしてダイアログ ボックスを閉じます。  
+6.  <span data-ttu-id="ff9fc-153">をクリックして**OK**ダイアログ ボックスを閉じます。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-153">Click **OK** to close the dialog.</span></span>  
   
-     ICalculator サービスが、左ペインの **\[マイ サービス プロジェクト\]** の下に追加されます。  
+     <span data-ttu-id="ff9fc-154">下の左ペインで、ICalculator サービスが追加された**マイ サービス プロジェクト**です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-154">The ICalculator service is added in the left pane under **My Service Projects**.</span></span>  
   
-7.  イベント ビューアー アプリケーションを開きます。  
+7.  <span data-ttu-id="ff9fc-155">イベント ビューアー アプリケーションを開きます。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-155">Open the Event Viewer application.</span></span>  
   
-     サービスを呼び出す前に、イベント ビューアーを起動し、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスから生成された追跡イベントをイベント ログでリッスンしていることを確認します。  
+     <span data-ttu-id="ff9fc-156">サービスを呼び出す前に、イベント ビューアーを起動し、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスから生成された追跡イベントをイベント ログでリッスンしていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-156">Before invoking the service, start Event Viewer and ensure that the event log is listening for tracking events emitted from the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service.</span></span>  
   
-8.  **\[スタート\]** メニューから、**\[管理ツール\]**、**\[イベント ビューアー\]** の順に選択します。**\[分析\]** ログと **\[デバッグ\]** ログを有効にします。  
+8.  <span data-ttu-id="ff9fc-157">**開始**メニューの **管理ツール**、し**イベント ビューアー**です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-157">From the **Start** menu, select **Administrative Tools**, and then **Event Viewer**.</span></span> <span data-ttu-id="ff9fc-158">有効にする、**分析**と**デバッグ**ログ。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-158">Enable the **Analytic** and **Debug** logs.</span></span>  
   
-9. イベント ビューアーのツリー ビューで、**\[イベント ビューアー\]**、**\[アプリケーションとサービス ログ\]**、**\[Microsoft\]**、**\[Windows\]** の順に選択して **\[アプリケーション サーバー \- アプリケーション\]** に移動します。**\[アプリケーション サーバー \- アプリケーション\]** を右クリックし、**\[表示\]**、**\[分析およびデバッグ ログの表示\]** の順にクリックします。  
+9. <span data-ttu-id="ff9fc-159">イベント ビューアーのツリー ビューに移動**イベント ビューアー**、 **Applications and Services Logs**、 **Microsoft**、 **Windows**、し、**アプリケーション サーバー-アプリケーション**です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-159">In the tree view in Event Viewer, navigate to **Event Viewer**, **Applications and Services Logs**, **Microsoft**, **Windows**, and then **Application Server-Applications**.</span></span> <span data-ttu-id="ff9fc-160">右クリック**アプリケーション サーバー-アプリケーション****ビュー**、し**分析およびデバッグ ログ**です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-160">Right-click **Application Server-Applications**, select **View**, and then **Show Analytic and Debug Logs**.</span></span>  
   
-     **\[分析およびデバッグ ログの表示\]** オプションがオンになっていることを確認します。**\[分析\]** ログを有効にします。  
+     <span data-ttu-id="ff9fc-161">いることを確認、 **分析およびデバッグ ログ**オプションはオンにします。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-161">Ensure that the **Show Analytic and Debug Logs** option is checked.</span></span> <span data-ttu-id="ff9fc-162">有効にする、**分析**ログ。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-162">Enable the **Analytic** log.</span></span>  
   
-     イベント ビューアーのツリー ビューで、**\[イベント ビューアー\]**、**\[アプリケーションとサービス ログ\]**、**\[Microsoft\]**、**\[Windows\]**、**\[アプリケーション サーバー \- アプリケーション\]** の順に選択して **\[分析\]** に移動します。**\[分析\]** を右クリックし、**\[ログを有効にする\]** を選択します。  
+     <span data-ttu-id="ff9fc-163">イベント ビューアーのツリー ビューに移動**イベント ビューアー**、 **Applications and Services Logs**、 **Microsoft**、 **Windows**、 **アプリケーション サーバー-アプリケーション**、し**分析**です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-163">In the tree view in Event Viewer, navigate to **Event Viewer**, **Applications and Services Logs**, **Microsoft**, **Windows**, **Application Server-Applications**, and then **Analytic**.</span></span> <span data-ttu-id="ff9fc-164">右クリック**分析**選択**ログの有効化**です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-164">Right-click **Analytic** and select **Enable Log**.</span></span>  
   
-10. WCF テスト クライアントを使用してサービスをテストします。  
+10. <span data-ttu-id="ff9fc-165">WCF テスト クライアントを使用してサービスをテストします。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-165">Test the service using the WCF Test Client.</span></span>  
   
-    1.  WCF テスト クライアントで、ICalculator サービス ノードの下の **\[Add\(\)\]** をダブルクリックします。  
+    1.  <span data-ttu-id="ff9fc-166">WCF テスト クライアントでダブルクリック**Add()** ICalculator サービス ノードの下。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-166">In the WCF Test Client, double-click **Add()** under the ICalculator service node.</span></span>  
   
-         **Add\(\)** メソッドが、2 つのパラメーターと共に右ペインに表示されます。  
+         <span data-ttu-id="ff9fc-167">**Add()**メソッドが 2 つのパラメーターと共に右ペインに表示されます。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-167">The **Add()** method appears in the right pane with two parameters.</span></span>  
   
-    2.  最初のパラメーターに「2」と入力し、2 番目のパラメーターに「3」と入力します。  
+    2.  <span data-ttu-id="ff9fc-168">最初のパラメーターに「2」と入力し、2 番目のパラメーターに「3」と入力します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-168">Type in 2 for the first parameter and 3 for the second parameter.</span></span>  
   
-    3.  **\[呼び出し\]** をクリックしてメソッドを呼び出します。  
+    3.  <span data-ttu-id="ff9fc-169">をクリックして**Invoke**メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-169">Click **Invoke** to invoke the method.</span></span>  
   
-11. 既に開いている **\[イベント ビューアー\]** ウィンドウに移動します。**\[イベント ビューアー\]**、**\[アプリケーションとサービス ログ\]**、**\[Microsoft\]**、**\[Windows\]** の順に選択して **\[アプリケーション サーバー \- アプリケーション\]** に移動します。  
+11. <span data-ttu-id="ff9fc-170">移動して、**イベント ビューアー**既に開いているウィンドウ。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-170">Go to the **Event Viewer** window that you have already opened.</span></span> <span data-ttu-id="ff9fc-171">移動**イベント ビューアー**、 **Applications and Services Logs**、 **Microsoft**、 **Windows**、**アプリケーションサーバー アプリケーション**です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-171">Navigate to **Event Viewer**, **Applications and Services Logs**, **Microsoft**, **Windows**, **Application Server-Applications**.</span></span>  
   
-12. **\[分析\]** ノードを右クリックし、**\[最新の情報に更新\]** をクリックします。  
+12. <span data-ttu-id="ff9fc-172">右クリックし、**分析**ノード**更新**です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-172">Right-click the **Analytic** node and select **Refresh**.</span></span>  
   
-     右ペインにイベントが表示されます。  
+     <span data-ttu-id="ff9fc-173">右ペインにイベントが表示されます。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-173">The events appear in the right pane.</span></span>  
   
-13. ID が 303 のイベントを探してダブルクリックして開き、内容を確認します。  
+13. <span data-ttu-id="ff9fc-174">ID が 303 のイベントを探してダブルクリックして開き、内容を確認します。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-174">Locate the event with the ID of 303 and double-click it to open it up and inspect its contents.</span></span>  
   
-     このイベントは、ICalculator サービスの `Add()` メソッドによって生成されたもので、ペイロードは "2\+3\=5" になります。  
+     <span data-ttu-id="ff9fc-175">このイベントは、によって生成されますが、 `Add()` ICalculator サービスのメソッドと等しい、ペイロードは"2 + 3 = 5"です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-175">This event was emitted by the `Add()` method of the ICalculator service and has a payload equal to "2+3=5".</span></span>  
   
-#### クリーンアップするには \(省略可能\)  
+#### <a name="to-clean-up-optional"></a><span data-ttu-id="ff9fc-176">クリーンアップするには (省略可能)</span><span class="sxs-lookup"><span data-stu-id="ff9fc-176">To clean up (Optional)</span></span>  
   
-1.  **イベント ビューアー**を開きます。  
+1.  <span data-ttu-id="ff9fc-177">開いている**イベント ビューアー**です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-177">Open **Event Viewer**.</span></span>  
   
-2.  **\[イベント ビューアー\]**、**\[アプリケーションとサービス ログ\]**、**\[Microsoft\]**、**\[Windows\]** の順に選択して **\[アプリケーション サーバー \- アプリケーション\]** に移動します。**\[分析\]** を右クリックし、**\[ログの無効化\]** を選択します。  
+2.  <span data-ttu-id="ff9fc-178">移動**イベント ビューアー**、 **Applications and Services Logs**、 **Microsoft**、 **Windows**、し**アプリケーション サーバー-アプリケーション**です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-178">Navigate to **Event Viewer**, **Applications and Services Logs**, **Microsoft**, **Windows**, and then **Application-Server-Applications**.</span></span> <span data-ttu-id="ff9fc-179">右クリック**分析**選択**ログの無効化**です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-179">Right-click **Analytic** and select **Disable Log**.</span></span>  
   
-3.  **\[イベント ビューアー\]**、**\[アプリケーションとサービス ログ\]**、**\[Microsoft\]**、**\[Windows\]**、**\[アプリケーション サーバー \- アプリケーション\]** の順に選択して **\[分析\]** に移動します。**\[分析\]** を右クリックし、**\[ログのクリア\]** を選択します。  
+3.  <span data-ttu-id="ff9fc-180">移動**イベント ビューアー**、 **Applications and Services Logs**、 **Microsoft**、 **Windows**、 **アプリケーション サーバー-アプリケーション**、し**分析**です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-180">Navigate to **Event Viewer**, **Applications and Services Logs**, **Microsoft**, **Windows**, **Application-Server-Applications**, and then **Analytic**.</span></span> <span data-ttu-id="ff9fc-181">右クリック**分析**選択**ログの消去**です。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-181">Right-click **Analytic** and select **Clear Log**.</span></span>  
   
-4.  **\[クリア\]** をクリックしてログをクリアします。  
+4.  <span data-ttu-id="ff9fc-182">をクリックして**オフ**イベントをクリアします。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-182">Click **Clear** to clear the events.</span></span>  
   
-## 既知の問題  
- **イベント ビューアー**の既知の問題により、ETW イベントをデコードできない場合があります。その場合、"ソース "Microsoft\-Windows\-Application Server\-Applications" からのイベント ID \<id\> の説明が見つかりません。このイベントを発生させるコンポーネントがローカル コンピューターにインストールされていないか、インストールが壊れています。ローカル コンピューターにコンポーネントをインストールするか、コンポーネントを修復してください。" というエラー メッセージが表示されます。このエラーが発生した場合は、**\[操作\]** メニューの **\[最新の情報に更新\]** をクリックしてください。これにより、イベントが正常にデコードされます。  
+## <a name="known-issue"></a><span data-ttu-id="ff9fc-183">既知の問題</span><span class="sxs-lookup"><span data-stu-id="ff9fc-183">Known Issue</span></span>  
+ <span data-ttu-id="ff9fc-184">既知の問題がある、**イベント ビューアー** ETW イベントのデコードに失敗する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-184">There is a known issue in the **Event Viewer** where it may fail to decode ETW events.</span></span> <span data-ttu-id="ff9fc-185">表示されているエラー メッセージが表示することがあります:"イベント ID の説明\<id > ソースから Microsoft Windows アプリケーション サーバー-アプリケーションが見つかりません。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-185">You may see an error message that says: "The description for Event ID \<id> from source Microsoft-Windows-Application Server-Applications cannot be found.</span></span> <span data-ttu-id="ff9fc-186">このイベントを発生させるコンポーネントがローカル コンピューターにインストールされていないか、インストールが破損しています。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-186">Either the component that raises this event is not installed on your local computer or the installation is corrupted.</span></span> <span data-ttu-id="ff9fc-187">インストールするか、ローカル コンピューター上のコンポーネントを修復します。"</span><span class="sxs-lookup"><span data-stu-id="ff9fc-187">You can install or repair the component on the local computer."</span></span> <span data-ttu-id="ff9fc-188">このエラーが発生した場合は、選択**更新**から、**アクション**メニュー。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-188">If you encounter this error, select **Refresh** from the **Actions** menu.</span></span> <span data-ttu-id="ff9fc-189">これにより、イベントが正常にデコードされます。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-189">The event should then decode properly.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="ff9fc-190">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-190">The samples may already be installed on your computer.</span></span> <span data-ttu-id="ff9fc-191">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-191">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="ff9fc-192">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-192">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="ff9fc-193">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="ff9fc-193">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ETWTrace`  
   
-## 参照  
- [AppFabric の監視のサンプル](http://go.microsoft.com/fwlink/?LinkId=193959)
+## <a name="see-also"></a><span data-ttu-id="ff9fc-194">関連項目</span><span class="sxs-lookup"><span data-stu-id="ff9fc-194">See Also</span></span>  
+ [<span data-ttu-id="ff9fc-195">AppFabric の監視のサンプル</span><span class="sxs-lookup"><span data-stu-id="ff9fc-195">AppFabric Monitoring Samples</span></span>](http://go.microsoft.com/fwlink/?LinkId=193959)

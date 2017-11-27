@@ -1,87 +1,92 @@
 ---
-title: "インクの収集 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "収集 (デジタル インクを)"
-  - "DefaultDrawingAttributes プロパティ"
-  - "デジタル インク, 収集"
-  - "DrawingAttributes プロパティ"
-  - "インク, 収集"
-  - "InkCanvas 要素"
-  - "プロパティ, DefaultDrawingAttributes"
-  - "プロパティ, DrawingAttributes"
+title: "インクの収集"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ink [WPF], collecting
+- InkCanvas element [WPF]
+- properties [WPF], DrawingAttributes
+- collecting digital ink [WPF]
+- digital ink [WPF], collecting
+- properties [WPF], DefaultDrawingAttributes
+- DefaultDrawingAttributes property [WPF]
 ms.assetid: 66a3129d-9577-43eb-acbd-56c147282016
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 81ed657de0c0e4d07fcb10b099cbf5e5c80a71fc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# インクの収集
-[Windows Presentation Foundation](../../../../docs/framework/wpf/index.md) プラットフォームでは、その機能の中核としてデジタル インクが収集されます。  ここでは、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] でのインクの収集方法について説明します。  
+# <a name="collecting-ink"></a><span data-ttu-id="12f23-102">インクの収集</span><span class="sxs-lookup"><span data-stu-id="12f23-102">Collecting Ink</span></span>
+<span data-ttu-id="12f23-103">[Windows Presentation Foundation](../../../../docs/framework/wpf/index.md) プラットフォームでは、その機能の中核としてデジタル インクが収集されます。</span><span class="sxs-lookup"><span data-stu-id="12f23-103">The [Windows Presentation Foundation](../../../../docs/framework/wpf/index.md) platform collects digital ink as a core part of its functionality.</span></span> <span data-ttu-id="12f23-104">ここでは、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] でのインクの収集方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="12f23-104">This topic discusses methods for collection of ink in [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)].</span></span>  
   
-## 必要条件  
- 以降に示す例を使用するには、まず [!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)] と [!INCLUDE[TLA2#tla_winfxsdk](../../../../includes/tla2sharptla-winfxsdk-md.md)] をインストールする必要があります。  また、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] に対応するアプリケーションの作成方法も理解しておく必要があります。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の概要については、「[チュートリアル: WPF の概要](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)」を参照してください。  
+## <a name="prerequisites"></a><span data-ttu-id="12f23-105">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="12f23-105">Prerequisites</span></span>  
+ <span data-ttu-id="12f23-106">以降に示す例を使用するには、まず、[!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)] と [!INCLUDE[TLA2#tla_winfxsdk](../../../../includes/tla2sharptla-winfxsdk-md.md)] をインストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="12f23-106">To use the following examples, you must first install [!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)] and the [!INCLUDE[TLA2#tla_winfxsdk](../../../../includes/tla2sharptla-winfxsdk-md.md)].</span></span> <span data-ttu-id="12f23-107">また、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] に対応するアプリケーションの作成方法も理解しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="12f23-107">You should also understand how to write applications for the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span></span> <span data-ttu-id="12f23-108">概要の詳細については[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]を参照してください[チュートリアル: 最初の WPF デスクトップ アプリケーション](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)です。</span><span class="sxs-lookup"><span data-stu-id="12f23-108">For more information about getting started with [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], see [Walkthrough: My first WPF desktop application](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).</span></span>  
   
-## InkCanvas 要素の使用  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] で最も簡単にインクを収集する方法は、<xref:System.Windows.Controls.InkCanvas> 要素を使用することです。  <xref:System.Windows.Controls.InkCanvas> 要素は、[!INCLUDE[TLA2#tla_tpclssdk](../../../../includes/tla2sharptla-tpclssdk-md.md)] 以前のバージョンの <xref:Microsoft.Ink.InkOverlay> オブジェクトに似ています。  
+## <a name="using-the-inkcanvas-element"></a><span data-ttu-id="12f23-109">InkCanvas 要素の使用</span><span class="sxs-lookup"><span data-stu-id="12f23-109">Using the InkCanvas Element</span></span>  
+ <span data-ttu-id="12f23-110"><xref:System.Windows.Controls.InkCanvas>要素でインクを収集する最も簡単な方法を提供する[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="12f23-110">The <xref:System.Windows.Controls.InkCanvas> element provides the easiest way to collect ink in [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span></span> <span data-ttu-id="12f23-111"><xref:System.Windows.Controls.InkCanvas>要素がに似ていますが、 [Microsoft.Ink.InkOverlay](https://msdn.microsoft.com/library/microsoft.ink.inkoverlay\(v=vs.90\).aspx)オブジェクトから、[!INCLUDE[TLA2#tla_tpclssdk](../../../../includes/tla2sharptla-tpclssdk-md.md)]と以前のバージョン。</span><span class="sxs-lookup"><span data-stu-id="12f23-111">The <xref:System.Windows.Controls.InkCanvas> element is similar to the [Microsoft.Ink.InkOverlay](https://msdn.microsoft.com/library/microsoft.ink.inkoverlay\(v=vs.90\).aspx) object from the [!INCLUDE[TLA2#tla_tpclssdk](../../../../includes/tla2sharptla-tpclssdk-md.md)] and earlier versions.</span></span>  
   
- <xref:System.Windows.Controls.InkCanvas> 要素は、インク入力を受け取って表示するために使用します。  インクは一般的に、スタイラスを使用して入力します。スタイラスはデジタイザーとの対話により、インク ストロークを生成します。  また、スタイラスの代わりにマウスを使用することもできます。  生成されたストロークは <xref:System.Windows.Ink.Stroke> オブジェクトとして表され、プログラムとユーザー入力の両方によって操作できます。  <xref:System.Windows.Controls.InkCanvas> を使用すると、ユーザーは既存の <xref:System.Windows.Ink.Stroke> を選択、変更、または削除することができます。  
+ <span data-ttu-id="12f23-112">使用して、<xref:System.Windows.Controls.InkCanvas>要素を受け取り、インク入力を表示します。</span><span class="sxs-lookup"><span data-stu-id="12f23-112">Use an <xref:System.Windows.Controls.InkCanvas> element to receive and display ink input.</span></span> <span data-ttu-id="12f23-113">インクは一般的に、スタイラスを使用して入力します。スタイラスはデジタイザーとの対話により、インク ストロークを生成します。</span><span class="sxs-lookup"><span data-stu-id="12f23-113">You commonly input ink through the use of a stylus, which interacts with a digitizer to produce ink strokes.</span></span> <span data-ttu-id="12f23-114">また、スタイラスの代わりにマウスを使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="12f23-114">In addition, a mouse can be used in place of a stylus.</span></span> <span data-ttu-id="12f23-115">作成したストロークとして表されます<xref:System.Windows.Ink.Stroke>プログラムとユーザーの両方の入力、オブジェクト、およびそれらを操作できます。</span><span class="sxs-lookup"><span data-stu-id="12f23-115">The created strokes are represented as <xref:System.Windows.Ink.Stroke> objects, and they can be manipulated both programmatically and by user input.</span></span> <span data-ttu-id="12f23-116"><xref:System.Windows.Controls.InkCanvas>により、ユーザーが選択、変更、削除、既存<xref:System.Windows.Ink.Stroke>です。</span><span class="sxs-lookup"><span data-stu-id="12f23-116">The <xref:System.Windows.Controls.InkCanvas> enables users to select, modify, or delete an existing <xref:System.Windows.Ink.Stroke>.</span></span>  
   
- XAML を使用して、`InkCanvas` 要素をツリーに追加するだけで簡単にインク収集を設定できます。  次の例では、[!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)] で作成された既定の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロジェクトに <xref:System.Windows.Controls.InkCanvas> を追加します。  
+ <span data-ttu-id="12f23-117">XAML を使用して、`InkCanvas` 要素をツリーに追加するだけで簡単にインク収集を設定できます。</span><span class="sxs-lookup"><span data-stu-id="12f23-117">By using XAML, you can set up ink collection as easily as adding an `InkCanvas` element to your tree.</span></span> <span data-ttu-id="12f23-118">次の例では追加、<xref:System.Windows.Controls.InkCanvas>既定[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]で作成されたプロジェクト[!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="12f23-118">The following example adds an <xref:System.Windows.Controls.InkCanvas> to a default [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] project created in [!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)].</span></span>  
   
- [!code-xml[DigitalInkTopics#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml#6)]  
+ [!code-xaml[DigitalInkTopics#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml#6)]  
   
- `InkCanvas` 要素には子要素を含めることもできます。これにより、ほとんどすべての XAML 要素にインク注釈機能を追加できます。  たとえば、インク処理機能をテキスト要素に追加するには、単にその要素を <xref:System.Windows.Controls.InkCanvas> の子にします。  
+ <span data-ttu-id="12f23-119">`InkCanvas` 要素には子要素を含めることもできます。これにより、ほとんどすべての XAML 要素にインク注釈機能を追加できます。</span><span class="sxs-lookup"><span data-stu-id="12f23-119">The `InkCanvas` element can also contain child elements, making it possible to add ink annotation capabilities to almost any type of XAML element.</span></span> <span data-ttu-id="12f23-120">たとえば、機能を追加する場合は、インクをテキスト要素に、単に使用するの子、<xref:System.Windows.Controls.InkCanvas>です。</span><span class="sxs-lookup"><span data-stu-id="12f23-120">For example, to add inking capabilities to a text element, simply make it a child of an <xref:System.Windows.Controls.InkCanvas>.</span></span>  
   
- [!code-xml[DigitalInkTopics#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml#5)]  
+ [!code-xaml[DigitalInkTopics#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml#5)]  
   
- インクを使用したイメージのマークアップのサポートも、簡単に追加できます。  
+ <span data-ttu-id="12f23-121">インクを使用したイメージのマークアップのサポートも、簡単に追加できます。</span><span class="sxs-lookup"><span data-stu-id="12f23-121">Adding support for marking up an image with ink is just as easy.</span></span>  
   
- [!code-xml[DigitalInkTopics#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml#7)]  
+ [!code-xaml[DigitalInkTopics#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml#7)]  
   
-### InkCollection モード  
- <xref:System.Windows.Controls.InkCanvas> は、<xref:System.Windows.Controls.InkCanvas.EditingMode%2A> プロパティを使用してさまざまな入力モードをサポートします。  
+### <a name="inkcollection-modes"></a><span data-ttu-id="12f23-122">InkCollection モード</span><span class="sxs-lookup"><span data-stu-id="12f23-122">InkCollection Modes</span></span>  
+ <span data-ttu-id="12f23-123"><xref:System.Windows.Controls.InkCanvas>さまざまな入力モードをサポートしています、<xref:System.Windows.Controls.InkCanvas.EditingMode%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="12f23-123">The <xref:System.Windows.Controls.InkCanvas> provides support for various input modes through its <xref:System.Windows.Controls.InkCanvas.EditingMode%2A> property.</span></span>  
   
-### インクの操作  
- <xref:System.Windows.Controls.InkCanvas> は、さまざまなインク編集操作をサポートしています。  たとえば、<xref:System.Windows.Controls.InkCanvas> は、ペンの消しゴム ツールによる消去をサポートします。この機能を要素に追加するために、追加コードは必要ありません。  
+### <a name="manipulating-ink"></a><span data-ttu-id="12f23-124">インクの操作</span><span class="sxs-lookup"><span data-stu-id="12f23-124">Manipulating Ink</span></span>  
+ <span data-ttu-id="12f23-125"><xref:System.Windows.Controls.InkCanvas>多くのインクの編集操作に対するサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="12f23-125">The <xref:System.Windows.Controls.InkCanvas> provides support for many ink editing operations.</span></span> <span data-ttu-id="12f23-126">たとえば、<xref:System.Windows.Controls.InkCanvas>追加のコードを持たない要素への機能を追加するために必要なサポート ペンの背面を消去します。</span><span class="sxs-lookup"><span data-stu-id="12f23-126">For example, <xref:System.Windows.Controls.InkCanvas> supports back-of-pen erase with no additional code needed to add the functionality to the element.</span></span>  
   
-#### Selection  
- 選択モードは、<xref:System.Windows.Controls.InkCanvasEditingMode> プロパティを **Select** に設定するだけで、簡単に設定できます。  次のコードは、<xref:System.Windows.Forms.CheckBox> の値に基づいて編集モードを設定します。  
+#### <a name="selection"></a><span data-ttu-id="12f23-127">選択ツール</span><span class="sxs-lookup"><span data-stu-id="12f23-127">Selection</span></span>  
+ <span data-ttu-id="12f23-128">選択モードは設定などの単純な<xref:System.Windows.Controls.InkCanvasEditingMode>プロパティを**選択**です。</span><span class="sxs-lookup"><span data-stu-id="12f23-128">Setting selection mode is as simple as setting the <xref:System.Windows.Controls.InkCanvasEditingMode> property to **Select**.</span></span> <span data-ttu-id="12f23-129">次のコードの値に基づいて編集モードの設定、 <xref:System.Windows.Forms.CheckBox>:</span><span class="sxs-lookup"><span data-stu-id="12f23-129">The following code sets the editing mode based on the value of a <xref:System.Windows.Forms.CheckBox>:</span></span>  
   
  [!code-csharp[DigitalInkTopics#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window1.xaml.cs#8)]
  [!code-vb[DigitalInkTopics#8](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DigitalInkTopics/VisualBasic/Window1.xaml.vb#8)]  
   
-#### DrawingAttributes  
- <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> プロパティは、インク ストロークの外観を変更するために使用します。  たとえば、<xref:System.Windows.Ink.DrawingAttributes> の <xref:System.Windows.Ink.DrawingAttributes.Color%2A> メンバーは、描画される <xref:System.Windows.Ink.Stroke> の色を設定します。  選択されたストロークの色を赤に変更する方法を次の例に示します。  
+#### <a name="drawingattributes"></a><span data-ttu-id="12f23-130">DrawingAttributes</span><span class="sxs-lookup"><span data-stu-id="12f23-130">DrawingAttributes</span></span>  
+ <span data-ttu-id="12f23-131">使用して、<xref:System.Windows.Ink.Stroke.DrawingAttributes%2A>インク ストロークの外観を変更するプロパティです。</span><span class="sxs-lookup"><span data-stu-id="12f23-131">Use the <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> property to change the appearance of ink strokes.</span></span> <span data-ttu-id="12f23-132">インスタンス、<xref:System.Windows.Ink.DrawingAttributes.Color%2A>のメンバー <xref:System.Windows.Ink.DrawingAttributes> 、表示の色を設定<xref:System.Windows.Ink.Stroke>です。</span><span class="sxs-lookup"><span data-stu-id="12f23-132">For instance, the <xref:System.Windows.Ink.DrawingAttributes.Color%2A> member of <xref:System.Windows.Ink.DrawingAttributes> sets the color of the rendered <xref:System.Windows.Ink.Stroke>.</span></span> <span data-ttu-id="12f23-133">次の例では、選択されたストロークの色を赤に変更します。</span><span class="sxs-lookup"><span data-stu-id="12f23-133">The following example changes the color of the selected strokes to red.</span></span>  
   
  [!code-csharp[DigitalInkTopics#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window1.xaml.cs#9)]
  [!code-vb[DigitalInkTopics#9](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DigitalInkTopics/VisualBasic/Window1.xaml.vb#9)]  
   
-### DefaultDrawingAttributes  
- <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> プロパティを使用すると、<xref:System.Windows.Controls.InkCanvas> で作成されるストロークの高さ、幅、色などのプロパティにアクセスできます。  <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> を変更すると、それ以降に <xref:System.Windows.Controls.InkCanvas> に入力されるストロークはすべて新しいプロパティ値を使用して描画されます。  
+### <a name="defaultdrawingattributes"></a><span data-ttu-id="12f23-134">DefaultDrawingAttributes</span><span class="sxs-lookup"><span data-stu-id="12f23-134">DefaultDrawingAttributes</span></span>  
+ <span data-ttu-id="12f23-135"><xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A>プロパティは高さ、幅、およびで作成される線の色などのプロパティへのアクセスを提供する<xref:System.Windows.Controls.InkCanvas>です。</span><span class="sxs-lookup"><span data-stu-id="12f23-135">The <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> property provides access to properties such as the height, width, and color of the strokes to be created in an <xref:System.Windows.Controls.InkCanvas>.</span></span> <span data-ttu-id="12f23-136">変更すると、<xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A>に入力されたすべての将来のストローク、<xref:System.Windows.Controls.InkCanvas>は、新しいプロパティの値で表示します。</span><span class="sxs-lookup"><span data-stu-id="12f23-136">Once you change the <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A>, all future strokes entered into the <xref:System.Windows.Controls.InkCanvas> are rendered with the new property values.</span></span>  
   
- 分離コード ファイルでの <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> の変更に加えて、XAML 構文を使用した <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> プロパティの指定もできます。  <xref:System.Windows.Ink.DrawingAttributes.Color%2A> プロパティを設定する方法を次の XAML コードに示します。  このコードを使用するには、Visual Studio 2005 で "HelloInkCanvas" という新しい [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロジェクトを作成します。  Window1.xaml ファイルのコードを次のコードに置き換えます。  
+ <span data-ttu-id="12f23-137">変更だけでなく、<xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A>を指定するため、XAML 構文を使用する分離コード ファイルで<xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="12f23-137">In addition to modifying the <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> in the code-behind file, you can use XAML syntax for specifying <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A> properties.</span></span> <span data-ttu-id="12f23-138">次の XAML コードを設定する方法を示しています、<xref:System.Windows.Ink.DrawingAttributes.Color%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="12f23-138">The following XAML code demonstrates how to set the <xref:System.Windows.Ink.DrawingAttributes.Color%2A> property.</span></span> <span data-ttu-id="12f23-139">このコードを使用するには、Visual Studio 2005 で "HelloInkCanvas" という新しい [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="12f23-139">To use this code, create a new [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] project called "HelloInkCanvas" in Visual Studio 2005.</span></span> <span data-ttu-id="12f23-140">Window1.xaml ファイルのコードを次のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="12f23-140">Replace the code in the Window1.xaml file with the following code.</span></span>  
   
- [!code-xml[HelloInkCanvas#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HelloInkCanvas/CSharp/Window1.xaml#1)]  
+ [!code-xaml[HelloInkCanvas#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HelloInkCanvas/CSharp/Window1.xaml#1)]  
   
- 次に、以下のボタン イベント ハンドラーを、分離コード ファイルの Window1 クラス内に追加します。  
+ <span data-ttu-id="12f23-141">次に、以下のボタン イベント ハンドラーを、分離コード ファイルの Window1 クラス内に追加します。</span><span class="sxs-lookup"><span data-stu-id="12f23-141">Next, add the following button event handlers to the code behind file, inside the Window1 class.</span></span>  
   
  [!code-csharp[HelloInkCanvas#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HelloInkCanvas/CSharp/Window1.xaml.cs#2)]  
   
- このコードのコピー後に、Microsoft Visual Studio 2005 で F5 キーを押し、デバッガーでプログラムを実行します。  
+ <span data-ttu-id="12f23-142">このコードのコピー後に、Microsoft Visual Studio 2005 で **F5** キーを押し、デバッガーでプログラムを実行します。</span><span class="sxs-lookup"><span data-stu-id="12f23-142">After copying this code, press **F5** in Microsoft Visual Studio 2005 to run the program in the debugger.</span></span>  
   
- <xref:System.Windows.Controls.StackPanel> によってボタンが <xref:System.Windows.Controls.InkCanvas> の上に配置されることに注目してください。  ボタンの上でインク処理を実行しようとすると、<xref:System.Windows.Controls.InkCanvas> によってインクがボタンの背後で収集および描画されます。  これは、ボタンが <xref:System.Windows.Controls.InkCanvas> の子ではなく兄弟であるためです。  また、ボタンは z オーダーの上位に位置するため、インクはその背後で描画されます。  
+ <span data-ttu-id="12f23-143">通知方法、<xref:System.Windows.Controls.StackPanel>ボタンの上に配置します。、<xref:System.Windows.Controls.InkCanvas>です。</span><span class="sxs-lookup"><span data-stu-id="12f23-143">Notice how the <xref:System.Windows.Controls.StackPanel> places the buttons on top of the <xref:System.Windows.Controls.InkCanvas>.</span></span> <span data-ttu-id="12f23-144">ボタンの上にインクをしようとする場合、<xref:System.Windows.Controls.InkCanvas>を収集し、ボタンの背景にインクをレンダリングします。</span><span class="sxs-lookup"><span data-stu-id="12f23-144">If you try to ink over the top of the buttons, the <xref:System.Windows.Controls.InkCanvas> collects and renders the ink behind the buttons.</span></span> <span data-ttu-id="12f23-145">これは、ボタンがあるため、<xref:System.Windows.Controls.InkCanvas>子とは対照的です。</span><span class="sxs-lookup"><span data-stu-id="12f23-145">This is because the buttons are siblings of the <xref:System.Windows.Controls.InkCanvas> as opposed to children.</span></span> <span data-ttu-id="12f23-146">また、ボタンは z オーダーの上位に位置するため、インクはその背後で描画されます。</span><span class="sxs-lookup"><span data-stu-id="12f23-146">Also, the buttons are higher in the z-order, so the ink is rendered behind them.</span></span>  
   
-## 参照  
- <xref:System.Windows.Ink.DrawingAttributes>   
- <xref:System.Windows.InkCanvas.DefaultDrawingAttributes%2A>   
+## <a name="see-also"></a><span data-ttu-id="12f23-147">関連項目</span><span class="sxs-lookup"><span data-stu-id="12f23-147">See Also</span></span>  
+ <xref:System.Windows.Ink.DrawingAttributes>  
+ <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A>  
  <xref:System.Windows.Ink>

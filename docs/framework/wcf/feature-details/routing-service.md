@@ -1,118 +1,121 @@
 ---
-title: "ルーティング サービス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ルーティング サービス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ca7c216a-5141-4132-8193-102c181d2eba
-caps.latest.revision: 13
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: a4f58c5124e229f1692dabbb0abded0e21a346f7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ルーティング サービス
-ルーティング サービスは、メッセージ ルーターとして機能する、汎用の SOAP 中継局です。  ルーティング サービスの主要な機能は、メッセージのコンテンツに基づいてメッセージをルーティングする機能です。これにより、メッセージのヘッダーまたはメッセージ本文内に含まれる値に基づいて、メッセージをクライアント エンドポイントに転送できます。  
+# <a name="routing-service"></a><span data-ttu-id="cd853-102">ルーティング サービス</span><span class="sxs-lookup"><span data-stu-id="cd853-102">Routing Service</span></span>
+<span data-ttu-id="cd853-103">ルーティング サービスは、メッセージ ルーターとして機能する、汎用の SOAP 中継局です。</span><span class="sxs-lookup"><span data-stu-id="cd853-103">The Routing Service is a generic SOAP intermediary that acts as a message router.</span></span> <span data-ttu-id="cd853-104">ルーティング サービスの主要な機能は、メッセージのコンテンツに基づいてメッセージをルーティングする機能です。これにより、メッセージのヘッダーまたはメッセージ本文内に含まれる値に基づいて、メッセージをクライアント エンドポイントに転送できます。</span><span class="sxs-lookup"><span data-stu-id="cd853-104">The core functionality of the Routing Service is the ability to route messages based on message content, which allows a message to be forwarded to a client endpoint based on a value within the message itself, in either the header or the message body.</span></span>  
   
- <xref:System.ServiceModel.Routing.RoutingService> は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスとして <xref:System.ServiceModel.Routing> 名前空間で実装されます。  ルーティング サービスは、メッセージを受信し、その内容に基づいて各メッセージを 1 つ以上のクライアント エンドポイントにルーティングする、1 つ以上のサービス エンドポイントを公開します。  このサービスには、次の機能が用意されています。  
+ <span data-ttu-id="cd853-105"><xref:System.ServiceModel.Routing.RoutingService> は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスとして <xref:System.ServiceModel.Routing> 名前空間で実装されます。</span><span class="sxs-lookup"><span data-stu-id="cd853-105">The <xref:System.ServiceModel.Routing.RoutingService> is implemented as a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service in the <xref:System.ServiceModel.Routing> namespace.</span></span> <span data-ttu-id="cd853-106">ルーティング サービスは、メッセージを受信し、その内容に基づいて各メッセージを 1 つ以上のクライアント エンドポイントにルーティングする、1 つ以上のサービス エンドポイントを公開します。</span><span class="sxs-lookup"><span data-stu-id="cd853-106">The Routing Service exposes one or more service endpoints that receive messages and then routes each message to one or more client endpoints based on the message content.</span></span> <span data-ttu-id="cd853-107">このサービスには、次の機能が用意されています。</span><span class="sxs-lookup"><span data-stu-id="cd853-107">The service provides the following features:</span></span>  
   
--   コンテンツ ベースのルーティング  
+-   <span data-ttu-id="cd853-108">コンテンツ ベースのルーティング</span><span class="sxs-lookup"><span data-stu-id="cd853-108">Content-based routing</span></span>  
   
-    -   サービスの集計  
+    -   <span data-ttu-id="cd853-109">サービスの集計</span><span class="sxs-lookup"><span data-stu-id="cd853-109">Service aggregation</span></span>  
   
-    -   サービスのバージョン管理  
+    -   <span data-ttu-id="cd853-110">サービスのバージョン管理</span><span class="sxs-lookup"><span data-stu-id="cd853-110">Service versioning</span></span>  
   
-    -   優先度ルーティング  
+    -   <span data-ttu-id="cd853-111">優先度ルーティング</span><span class="sxs-lookup"><span data-stu-id="cd853-111">Priority routing</span></span>  
   
-    -   動的構成  
+    -   <span data-ttu-id="cd853-112">動的構成</span><span class="sxs-lookup"><span data-stu-id="cd853-112">Dynamic configuration</span></span>  
   
--   プロトコル ブリッジ  
+-   <span data-ttu-id="cd853-113">プロトコル ブリッジ</span><span class="sxs-lookup"><span data-stu-id="cd853-113">Protocol bridging</span></span>  
   
--   SOAP 処理  
+-   <span data-ttu-id="cd853-114">SOAP 処理</span><span class="sxs-lookup"><span data-stu-id="cd853-114">SOAP processing</span></span>  
   
--   高度なエラー処理  
+-   <span data-ttu-id="cd853-115">高度なエラー処理</span><span class="sxs-lookup"><span data-stu-id="cd853-115">Advanced error handling</span></span>  
   
--   バックアップ エンドポイント  
+-   <span data-ttu-id="cd853-116">バックアップ エンドポイント</span><span class="sxs-lookup"><span data-stu-id="cd853-116">Backup endpoints</span></span>  
   
- 上記の機能の 1 つ以上を実現する中間サービスを作成することもできますが、このような実装では、特定のシナリオまたはソリューションに制限され、新しいアプリケーションにすぐに適用できません。  
+ <span data-ttu-id="cd853-117">上記の機能の 1 つ以上を実現する中間サービスを作成することもできますが、このような実装では、特定のシナリオまたはソリューションに制限され、新しいアプリケーションにすぐに適用できません。</span><span class="sxs-lookup"><span data-stu-id="cd853-117">While it is possible to create an intermediary service that accomplishes one or more of these goals, often such an implementation is tied to a specific scenario or solution and cannot be readily applied to new applications.</span></span>  
   
- ルーティング サービスは、動的に構成できるプラグ可能な汎用の SOAP 中継局を提供します。この中継局は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のサービスおよびチャネル モデルと互換性があり、SOAP ベースのメッセージのコンテンツ ベースのルーティングを実行できます。  
+ <span data-ttu-id="cd853-118">ルーティング サービスは、動的に構成できるプラグ可能な汎用の SOAP 中継局を提供します。この中継局は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のサービスおよびチャネル モデルと互換性があり、SOAP ベースのメッセージのコンテンツ ベースのルーティングを実行できます。</span><span class="sxs-lookup"><span data-stu-id="cd853-118">The Routing Service provides a generic, dynamically configurable, pluggable SOAP intermediary that is compatible with the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Service and Channel models and allows you to perform content-based routing of SOAP-based messages.</span></span>  
   
 > [!NOTE]
->  ルーティング サービスは、現在 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST サービスのルーティングをサポートしていません。  REST 呼び出しをルーティングする場合は、<xref:System.Web.Routing> または[アプリケーション要求ルーティング処理](http://go.microsoft.com/fwlink/?LinkId=164589) \(http:\/\/go.microsoft.com\/fwlink\/?LinkId\=164589\) を使用することを検討してください。  
+>  <span data-ttu-id="cd853-119">ルーティング サービスは、現在 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST サービスのルーティングをサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="cd853-119">The Routing Service does not currently support routing of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST services.</span></span>  <span data-ttu-id="cd853-120">REST 呼び出しをルーティングするには、使用を検討して<xref:System.Web.Routing>または[アプリケーション要求ルーティング処理](http://go.microsoft.com/fwlink/?LinkId=164589)(http://go.microsoft.com/fwlink/?LinkId=164589)。</span><span class="sxs-lookup"><span data-stu-id="cd853-120">To route REST calls, consider using <xref:System.Web.Routing> or [Application Request Routing](http://go.microsoft.com/fwlink/?LinkId=164589) (http://go.microsoft.com/fwlink/?LinkId=164589).</span></span>  
   
-## コンテンツ ベースのルーティング  
- コンテンツ ベースのルーティングは、メッセージに含まれている 1 つ以上の値に基づいて、メッセージをルーティングする機能です。  ルーティング サービスでは、各メッセージを確認し、メッセージの内容と開発者が作成したルーティング ロジックに基づいて、送信先エンドポイントにメッセージをルーティングします。  コンテンツ ベースのルーティングは、サービス集計、サービスのバージョン管理、および優先度ルーティングの基礎になります。  
+## <a name="content-based-routing"></a><span data-ttu-id="cd853-121">コンテンツ ベースのルーティング</span><span class="sxs-lookup"><span data-stu-id="cd853-121">Content-Based Routing</span></span>  
+ <span data-ttu-id="cd853-122">コンテンツ ベースのルーティングは、メッセージに含まれている 1 つ以上の値に基づいて、メッセージをルーティングする機能です。</span><span class="sxs-lookup"><span data-stu-id="cd853-122">Content-based routing is the ability to route a message based on one or more values contained within the message.</span></span> <span data-ttu-id="cd853-123">ルーティング サービスでは、各メッセージを確認し、メッセージの内容と開発者が作成したルーティング ロジックに基づいて、送信先エンドポイントにメッセージをルーティングします。</span><span class="sxs-lookup"><span data-stu-id="cd853-123">The Routing Service inspects each message and routes it to the destination endpoint based on the message contents and the routing logic you create.</span></span> <span data-ttu-id="cd853-124">コンテンツ ベースのルーティングは、サービス集計、サービスのバージョン管理、および優先度ルーティングの基礎になります。</span><span class="sxs-lookup"><span data-stu-id="cd853-124">Content-based routing provides the basis for service aggregation, service versioning, and priority routing.</span></span>  
   
- コンテンツ ベースのルーティングを実装するために、ルーティング サービスは <xref:System.ServiceModel.Dispatcher.MessageFilter> 実装に依存しています。これらの実装は、ルーティングするメッセージ内の特定の値を照合するために使用されます。  **MessageFilter** が 1 つのメッセージと一致すると、そのメッセージは、**MessageFilter** と関連付けられている送信先エンドポイントにルーティングされます。  メッセージ フィルターはフィルター テーブル \(<xref:System.ServiceModel.Routing.Configuration.FilterTableCollection>\) にグループ化されて、複雑なルーティング ロジックを構築します。  たとえば、フィルター テーブルに 5 つの相互に排他的なメッセージ フィルターが含まれ、それによって、5 つの送信先エンドポイントのうちの 1 つだけにメッセージがルーティングされる場合があります。  
+ <span data-ttu-id="cd853-125">コンテンツ ベースのルーティングを実装するために、ルーティング サービスは <xref:System.ServiceModel.Dispatcher.MessageFilter> 実装に依存しています。これらの実装は、ルーティングするメッセージ内の特定の値を照合するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="cd853-125">To implement content-based routing, the Routing Service relies on <xref:System.ServiceModel.Dispatcher.MessageFilter> implementations that are used to match specific values within the messages to be routed.</span></span> <span data-ttu-id="cd853-126">場合、 **MessageFilter**に関連付けられている送信先エンドポイントにルーティングされるメッセージ、メッセージと一致する、 **MessageFilter**です。</span><span class="sxs-lookup"><span data-stu-id="cd853-126">If a **MessageFilter** matches a message, the message is routed to the destination endpoint associated with the **MessageFilter**.</span></span>  <span data-ttu-id="cd853-127">メッセージ フィルターはフィルター テーブル (<xref:System.ServiceModel.Routing.Configuration.FilterTableCollection>) にグループ化されて、複雑なルーティング ロジックを構築します。</span><span class="sxs-lookup"><span data-stu-id="cd853-127">Message filters are grouped together into filter tables (<xref:System.ServiceModel.Routing.Configuration.FilterTableCollection>) to construct complex routing logic.</span></span> <span data-ttu-id="cd853-128">たとえば、フィルター テーブルに 5 つの相互に排他的なメッセージ フィルターが含まれ、それによって、5 つの送信先エンドポイントのうちの 1 つだけにメッセージがルーティングされる場合があります。</span><span class="sxs-lookup"><span data-stu-id="cd853-128">For example, a filter table might contain five mutually exclusive message filters that cause messages to be routed to only one of the five destination endpoints.</span></span>  
   
- ルーティング サービスを使用すると、コンテンツ ベースのルーティングの実行に使用するロジックを構成できるほか、ルーティング ロジックを実行時に動的に更新できます。  
+ <span data-ttu-id="cd853-129">ルーティング サービスを使用すると、コンテンツ ベースのルーティングの実行に使用するロジックを構成できるほか、ルーティング ロジックを実行時に動的に更新できます。</span><span class="sxs-lookup"><span data-stu-id="cd853-129">The Routing Service allows you to configure the logic that is used to perform content-based routing, as well as dynamically update the routing logic at run time.</span></span>  
   
- メッセージ フィルターをフィルター テーブルにグループ化することで、ルーティング ロジックを構築し、次のような複数のルーティング シナリオを処理できます。  
+ <span data-ttu-id="cd853-130">メッセージ フィルターをフィルター テーブルにグループ化することで、ルーティング ロジックを構築し、次のような複数のルーティング シナリオを処理できます。</span><span class="sxs-lookup"><span data-stu-id="cd853-130">Through the grouping of message filters into filter tables, routing logic can be constructed that allows you to handle multiple routing scenarios such as:</span></span>  
   
--   サービスの集計  
+-   <span data-ttu-id="cd853-131">サービスの集計</span><span class="sxs-lookup"><span data-stu-id="cd853-131">Service aggregation</span></span>  
   
--   サービスのバージョン管理  
+-   <span data-ttu-id="cd853-132">サービスのバージョン管理</span><span class="sxs-lookup"><span data-stu-id="cd853-132">Service versioning</span></span>  
   
--   優先度ルーティング  
+-   <span data-ttu-id="cd853-133">優先度ルーティング</span><span class="sxs-lookup"><span data-stu-id="cd853-133">Priority routing</span></span>  
   
--   動的構成  
+-   <span data-ttu-id="cd853-134">動的構成</span><span class="sxs-lookup"><span data-stu-id="cd853-134">Dynamic configuration</span></span>  
   
- メッセージ フィルターとフィルター テーブルの詳細については、「[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)」および「[メッセージ フィルター](../../../../docs/framework/wcf/feature-details/message-filters.md)」を参照してください。  
+ <span data-ttu-id="cd853-135">メッセージ フィルターとフィルター テーブルの詳細については、次を参照してください。[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)と[メッセージ フィルター](../../../../docs/framework/wcf/feature-details/message-filters.md)です。</span><span class="sxs-lookup"><span data-stu-id="cd853-135">For more information about message filters and filter tables, see [Routing Introduction](../../../../docs/framework/wcf/feature-details/routing-introduction.md) and [Message Filters](../../../../docs/framework/wcf/feature-details/message-filters.md).</span></span>  
   
-### サービスの集計  
- コンテンツ ベースのルーティングを使用することで、外部のクライアント アプリケーションからメッセージを受信する 1 つのエンドポイントを公開し、メッセージ内の値に基づいて、各メッセージを適切な内部エンドポイントにルーティングできます。  これは、さまざまなバックエンド アプリケーションに対して単一のエンドポイントを提供する場合だけでなく、アプリケーションをさまざまなサービスにファクタリングしているときに単一のアプリケーション エンドポイントを顧客に提供する場合にも便利です。  
+### <a name="service-aggregation"></a><span data-ttu-id="cd853-136">サービスの集計</span><span class="sxs-lookup"><span data-stu-id="cd853-136">Service Aggregation</span></span>  
+ <span data-ttu-id="cd853-137">コンテンツ ベースのルーティングを使用することで、外部のクライアント アプリケーションからメッセージを受信する 1 つのエンドポイントを公開し、メッセージ内の値に基づいて、各メッセージを適切な内部エンドポイントにルーティングできます。</span><span class="sxs-lookup"><span data-stu-id="cd853-137">By using content-based routing, you can expose one endpoint that receives messages from external client applications and then routes each message to the appropriate internal endpoint based on a value within the message.</span></span> <span data-ttu-id="cd853-138">これは、さまざまなバックエンド アプリケーションに対して単一のエンドポイントを提供する場合だけでなく、アプリケーションをさまざまなサービスにファクタリングしているときに単一のアプリケーション エンドポイントを顧客に提供する場合にも便利です。</span><span class="sxs-lookup"><span data-stu-id="cd853-138">This is useful to offer one specific endpoint for a variety of back-end applications, and also to present one application endpoint to customers while factoring your application into a variety of services.</span></span>  
   
-### サービスのバージョン管理  
- ソリューションを新しいバージョンに移行するときに、既存の顧客に対応するために、古いバージョンを同時に維持する必要がある場合があります。  このような場合の多くでは、新しいバージョンに接続するクライアントが、ソリューションとの通信時に別のアドレスを使用することが必要になります。  ルーティング サービスを使用すると、メッセージに含まれるバージョン固有の情報に基づいて、適切なソリューションにメッセージをルーティングすることで、ソリューションの両方のバージョンに対応する単一のサービス エンドポイントを公開できます。  実装の例については、「[サービスのバージョンを管理する方法](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)」を参照してください。  
+### <a name="service-versioning"></a><span data-ttu-id="cd853-139">サービスのバージョン管理</span><span class="sxs-lookup"><span data-stu-id="cd853-139">Service Versioning</span></span>  
+ <span data-ttu-id="cd853-140">ソリューションを新しいバージョンに移行するときに、既存の顧客に対応するために、古いバージョンを同時に維持する必要がある場合があります。</span><span class="sxs-lookup"><span data-stu-id="cd853-140">When migrating to a new version of your solution, you may have to maintain the old version in parallel to serve existing customers.</span></span> <span data-ttu-id="cd853-141">このような場合の多くでは、新しいバージョンに接続するクライアントが、ソリューションとの通信時に別のアドレスを使用することが必要になります。</span><span class="sxs-lookup"><span data-stu-id="cd853-141">Often this requires that clients connecting to the newer version must use a different address when communicating with the solution.</span></span> <span data-ttu-id="cd853-142">ルーティング サービスを使用すると、メッセージに含まれるバージョン固有の情報に基づいて、適切なソリューションにメッセージをルーティングすることで、ソリューションの両方のバージョンに対応する単一のサービス エンドポイントを公開できます。</span><span class="sxs-lookup"><span data-stu-id="cd853-142">The Routing Service allows you to expose one service endpoint that serves both versions of your solution by routing messages to the appropriate solution based on version-specific information contained in the message.</span></span> <span data-ttu-id="cd853-143">このような実装の例については、次を参照してください。[操作方法: サービスのバージョン管理](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)です。</span><span class="sxs-lookup"><span data-stu-id="cd853-143">For an example of such an implementation see [How To: Service Versioning](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md).</span></span>  
   
-### 優先度ルーティング  
- サービスを複数のクライアントに提供するときに、パートナーとサービス レベル アグリーメント \(SLA\) を結び、それらのパートナーのデータをすべて、その他のクライアントのデータとは別に処理するように規定している場合があります。  メッセージに含まれる顧客固有の情報を検索するフィルターを使用すると、特定のパートナーから送られたメッセージを、各パートナーの SLA 要件に合わせて作成されたエンドポイントに容易にルーティングできます。  
+### <a name="priority-routing"></a><span data-ttu-id="cd853-144">優先度ルーティング</span><span class="sxs-lookup"><span data-stu-id="cd853-144">Priority Routing</span></span>  
+ <span data-ttu-id="cd853-145">サービスを複数のクライアントに提供するときに、パートナーとサービス レベル アグリーメント (SLA) を結び、それらのパートナーのデータをすべて、その他のクライアントのデータとは別に処理するように規定している場合があります。</span><span class="sxs-lookup"><span data-stu-id="cd853-145">When providing a service for multiple clients, you may have a service level agreement (SLA) with some partners that requires all data from these partners to be processed separately from that of other clients.</span></span> <span data-ttu-id="cd853-146">メッセージに含まれる顧客固有の情報を検索するフィルターを使用すると、特定のパートナーから送られたメッセージを、各パートナーの SLA 要件に合わせて作成されたエンドポイントに容易にルーティングできます。</span><span class="sxs-lookup"><span data-stu-id="cd853-146">By using a filter that looks for customer-specific information contained in the message, you can easily route messages from specific partners to an endpoint that has been created to meet their SLA requirements.</span></span>  
   
-## 動的構成  
- サービスを中断させずにメッセージを処理する必要があるミッション クリティカルなシステムをサポートするには、システム内のコンポーネントの構成を実行時に変更できることが非常に重要です。  このニーズを満たすために、ルーティング サービスでは <xref:System.ServiceModel.IExtension%601> 実装が提供されています。これは、実行時にルーティング サービス構成を動的に更新できるようにする <xref:System.ServiceModel.Routing.RoutingExtension> です。  
+## <a name="dynamic-configuration"></a><span data-ttu-id="cd853-147">動的構成</span><span class="sxs-lookup"><span data-stu-id="cd853-147">Dynamic Configuration</span></span>  
+ <span data-ttu-id="cd853-148">サービスを中断させずにメッセージを処理する必要があるミッション クリティカルなシステムをサポートするには、システム内のコンポーネントの構成を実行時に変更できることが非常に重要です。</span><span class="sxs-lookup"><span data-stu-id="cd853-148">To support mission-critical systems, where messages must be processed without any service interruptions, it is vital that you be able to modify the configuration of components within the system at run time.</span></span> <span data-ttu-id="cd853-149">このニーズを満たすために、ルーティング サービスでは <xref:System.ServiceModel.IExtension%601> 実装が提供されています。これは、実行時にルーティング サービス構成を動的に更新できるようにする <xref:System.ServiceModel.Routing.RoutingExtension> です。</span><span class="sxs-lookup"><span data-stu-id="cd853-149">To support this need, the Routing Service provides an <xref:System.ServiceModel.IExtension%601> implementation, the <xref:System.ServiceModel.Routing.RoutingExtension>, which allows dynamic updating of the Routing Service configuration at run time.</span></span>  
   
- ルーティング サービスの動的構成の詳細については、「[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)」を参照してください。  
+ <span data-ttu-id="cd853-150">ルーティング サービスの動的な構成の詳細については、次を参照してください。[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)です。</span><span class="sxs-lookup"><span data-stu-id="cd853-150">For more information about dynamic configuration of the Routing Service, see [Routing Introduction](../../../../docs/framework/wcf/feature-details/routing-introduction.md).</span></span>  
   
-## プロトコル ブリッジ  
- 中継局シナリオの課題の 1 つは、内部エンドポイントとメッセージの送信先エンドポイントのトランスポートまたは SOAP バージョンの要件が異なる場合があることです。  このシナリオをサポートするために、ルーティング サービスでは、SOAP メッセージを送信先エンドポイントが必要とする <xref:System.ServiceModel.Channels.MessageVersion> に合わせて処理するなど、プロトコル間をブリッジできます。  これを利用して、内部の通信と外部の通信に別々のプロトコルを使用することができます。  
+## <a name="protocol-bridging"></a><span data-ttu-id="cd853-151">プロトコル ブリッジ</span><span class="sxs-lookup"><span data-stu-id="cd853-151">Protocol Bridging</span></span>  
+ <span data-ttu-id="cd853-152">中継局シナリオの課題の 1 つは、内部エンドポイントとメッセージの送信先エンドポイントのトランスポートまたは SOAP バージョンの要件が異なる場合があることです。</span><span class="sxs-lookup"><span data-stu-id="cd853-152">One of the challenges in intermediary scenarios is that the internal endpoints may have different transport or SOAP version requirements than the endpoint that messages are received on.</span></span> <span data-ttu-id="cd853-153">このシナリオをサポートするために、ルーティング サービスでは、SOAP メッセージを送信先エンドポイントが必要とする <xref:System.ServiceModel.Channels.MessageVersion> に合わせて処理するなど、プロトコル間をブリッジできます。</span><span class="sxs-lookup"><span data-stu-id="cd853-153">To support this scenario, the Routing Service can bridge protocols, including processing the SOAP message to the <xref:System.ServiceModel.Channels.MessageVersion> required by the destination endpoint(s).</span></span> <span data-ttu-id="cd853-154">これを利用して、内部の通信と外部の通信に別々のプロトコルを使用することができます。</span><span class="sxs-lookup"><span data-stu-id="cd853-154">In this way, one protocol can be used for internal communication, while another can be used for external communication.</span></span>  
   
- 異なるトランスポートを持つエンドポイント間でのメッセージのルーティングをサポートするために、ルーティング サービスでは、サービスが複数の異なるプロトコルをブリッジできるようにする、システム指定のバインディングを使用します。  この処理は、ルーティング サービスが公開するサービス エンドポイントで、メッセージのルーティング先のクライアント エンドポイントとは異なるプロトコルが使用されると、自動的に実行されます。  
+ <span data-ttu-id="cd853-155">異なるトランスポートを持つエンドポイント間でのメッセージのルーティングをサポートするために、ルーティング サービスでは、サービスが複数の異なるプロトコルをブリッジできるようにする、システム指定のバインディングを使用します。</span><span class="sxs-lookup"><span data-stu-id="cd853-155">To support the routing of messages between endpoints with different transports, the Routing Service uses system-provided bindings that enable the service to bridge dissimilar protocols.</span></span> <span data-ttu-id="cd853-156">この処理は、ルーティング サービスが公開するサービス エンドポイントで、メッセージのルーティング先のクライアント エンドポイントとは異なるプロトコルが使用されると、自動的に実行されます。</span><span class="sxs-lookup"><span data-stu-id="cd853-156">This occurs automatically when the service endpoint exposed by the Routing Service uses a different protocol than the client endpoints that messages are routed to.</span></span>  
   
-## SOAP 処理  
- 一般的なルーティング要件は、異なる SOAP 要件を持つエンドポイント間でメッセージをルーティングできることです。  この要件を満たすために、ルーティング サービスでは <xref:System.ServiceModel.Routing.SoapProcessingBehavior> が提供されます。これにより、送信先エンドポイントにメッセージがルーティングされる前に、送信先エンドポイントの要件を満たす新しい **MessageVersion** が自動的に作成されます。  この動作では、要求元のクライアント アプリケーションに応答メッセージを返す前に、その応答メッセージ用の新しい **MessageVersion** も作成されます。これによって、応答の **MessageVersion** が、元の要求のものと一致するようになります。  
+## <a name="soap-processing"></a><span data-ttu-id="cd853-157">SOAP 処理</span><span class="sxs-lookup"><span data-stu-id="cd853-157">SOAP Processing</span></span>  
+ <span data-ttu-id="cd853-158">一般的なルーティング要件は、異なる SOAP 要件を持つエンドポイント間でメッセージをルーティングできることです。</span><span class="sxs-lookup"><span data-stu-id="cd853-158">A common routing requirement is the ability to route messages between endpoints with differing SOAP requirements.</span></span> <span data-ttu-id="cd853-159">この要件をサポートするために、ルーティング サービスが、<xref:System.ServiceModel.Routing.SoapProcessingBehavior>を自動的に作成、新しい**MessageVersion**メッセージがルーティングされる前に、送信先エンドポイントの要件を満たしています。</span><span class="sxs-lookup"><span data-stu-id="cd853-159">To support this requirement, the Routing Service provides a <xref:System.ServiceModel.Routing.SoapProcessingBehavior> that automatically creates a new **MessageVersion** that meets the requirements of the destination endpoint before the message is routed to it.</span></span> <span data-ttu-id="cd853-160">この動作も新たに作成**MessageVersion**ことを確認する、要求元のクライアント アプリケーションに戻る前に応答メッセージに対して、 **MessageVersion**応答の一致しています。元の要求。</span><span class="sxs-lookup"><span data-stu-id="cd853-160">This behavior also creates a new **MessageVersion** for any response message before returning it to the requesting client application, to ensure that the **MessageVersion** of the response matches that of the original request.</span></span>  
   
- SOAP 処理の詳細については、「[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)」を参照してください。  
+ <span data-ttu-id="cd853-161">SOAP 処理の詳細については、次を参照してください。[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)です。</span><span class="sxs-lookup"><span data-stu-id="cd853-161">For more information about SOAP processing, see [Routing Introduction](../../../../docs/framework/wcf/feature-details/routing-introduction.md).</span></span>  
   
-## エラー処理  
- システムを構成する分散サービスがネットワーク通信に依存する場合は、システム内の通信が、一時的なネットワーク障害に対応可能である必要があります。  ルーティング サービスはエラー処理を実装しており、これによって、サービスの停止を招く可能性がある多くの通信障害を処理できます。  
+## <a name="error-handling"></a><span data-ttu-id="cd853-162">エラー処理</span><span class="sxs-lookup"><span data-stu-id="cd853-162">Error Handling</span></span>  
+ <span data-ttu-id="cd853-163">システムを構成する分散サービスがネットワーク通信に依存する場合は、システム内の通信が、一時的なネットワーク障害に対応可能である必要があります。</span><span class="sxs-lookup"><span data-stu-id="cd853-163">In a system composed of distributed services that rely on network communications, it is important to ensure that communications within your system are resistant to transient network failures.</span></span>  <span data-ttu-id="cd853-164">ルーティング サービスはエラー処理を実装しており、これによって、サービスの停止を招く可能性がある多くの通信障害を処理できます。</span><span class="sxs-lookup"><span data-stu-id="cd853-164">The Routing Service implements error handling that allows you to handle many communication failure scenarios that might otherwise result in a service outage.</span></span>  
   
- ルーティング サービスがメッセージを送信している間に <xref:System.ServiceModel.CommunicationException> が発生した場合は、エラー処理が実行されます。  これらの例外は、一般的に、<xref:System.ServiceModel.EndpointNotFoundException>、<xref:System.ServiceModel.ServerTooBusyException>、<xref:System.ServiceModel.CommunicationObjectFaultedException> など、定義されているクライアント エンドポイントとの通信を試みている間に問題が発生したことを示します。  また、エラー処理コードは、**TimeoutException** が発生すると、それをキャッチして再送信を試みます。この例外も、**CommunicationException** からは派生していない、一般的な例外です。  
+ <span data-ttu-id="cd853-165">ルーティング サービスがメッセージを送信している間に <xref:System.ServiceModel.CommunicationException> が発生した場合は、エラー処理が実行されます。</span><span class="sxs-lookup"><span data-stu-id="cd853-165">If the Routing Service encounters a <xref:System.ServiceModel.CommunicationException> while attempting to send a message, error handling will take place.</span></span>  <span data-ttu-id="cd853-166">これらの例外は、一般的に、<xref:System.ServiceModel.EndpointNotFoundException>、<xref:System.ServiceModel.ServerTooBusyException>、<xref:System.ServiceModel.CommunicationObjectFaultedException> など、定義されているクライアント エンドポイントとの通信を試みている間に問題が発生したことを示します。</span><span class="sxs-lookup"><span data-stu-id="cd853-166">These exceptions typically indicate that a problem was encountered while attempting to communicate with the defined client endpoint, such as an <xref:System.ServiceModel.EndpointNotFoundException>, <xref:System.ServiceModel.ServerTooBusyException>, or <xref:System.ServiceModel.CommunicationObjectFaultedException>.</span></span>  <span data-ttu-id="cd853-167">エラー処理コードでキャッチして再送信しようとしています。 はまた、 **TimeoutException**発生すると、から派生していない別の一般的な例外は**CommunicationException**です。</span><span class="sxs-lookup"><span data-stu-id="cd853-167">The error-handling code will also catch and attempt to retry sending when a **TimeoutException** occurs, which is another common exception that is not derived from **CommunicationException**.</span></span>  
   
- エラー処理[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)」を参照してください。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="cd853-168">エラー処理を参照してください[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)です。</span><span class="sxs-lookup"><span data-stu-id="cd853-168"> error handling, see [Routing Introduction](../../../../docs/framework/wcf/feature-details/routing-introduction.md).</span></span>  
   
-## バックアップ エンドポイント  
- フィルター テーブル内の各フィルター定義と関連付けられる送信先クライアント エンドポイントに加えて、転送エラーが発生した場合にメッセージをルーティングする、バックアップ エンドポイントのリストも作成できます。  エラーが発生した場合に、フィルター エントリのバックアップ リストが定義されていると、ルーティング サービスにより、そのリストに定義されている最初のエンドポイントにメッセージが送信されます。  この送信に失敗した場合は、送信に成功する、送信失敗に関連しないエラーが返される、またはバックアップ リスト内のすべてのエンドポイントで送信エラーが返されるまで、次のエンドポイントへの送信が試みられます。  
+## <a name="backup-endpoints"></a><span data-ttu-id="cd853-169">バックアップ エンドポイント</span><span class="sxs-lookup"><span data-stu-id="cd853-169">Backup Endpoints</span></span>  
+ <span data-ttu-id="cd853-170">フィルター テーブル内の各フィルター定義と関連付けられる送信先クライアント エンドポイントに加えて、転送エラーが発生した場合にメッセージをルーティングする、バックアップ エンドポイントのリストも作成できます。</span><span class="sxs-lookup"><span data-stu-id="cd853-170">In addition to the destination client endpoints associated with each filter definition in the filter table, you can also create a list of backup endpoints that the message will be routed to in the event of a transmission failure.</span></span> <span data-ttu-id="cd853-171">エラーが発生した場合に、フィルター エントリのバックアップ リストが定義されていると、ルーティング サービスにより、そのリストに定義されている最初のエンドポイントにメッセージが送信されます。</span><span class="sxs-lookup"><span data-stu-id="cd853-171">If an error occurs and a backup list is defined for the filter entry, the Routing Service will attempt to send the message to the first endpoint defined in the list.</span></span> <span data-ttu-id="cd853-172">この送信に失敗した場合は、送信に成功する、送信失敗に関連しないエラーが返される、またはバックアップ リスト内のすべてのエンドポイントで送信エラーが返されるまで、次のエンドポイントへの送信が試みられます。</span><span class="sxs-lookup"><span data-stu-id="cd853-172">If this transmission attempt fails, the service will try the next endpoint, and continue this process until the transmission attempt succeeds, returns a non-transmission related error, or all endpoints in the backup list have returned a transmission error.</span></span>  
   
- バックアップ エンドポイント[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)」および「[メッセージ フィルター](../../../../docs/framework/wcf/feature-details/message-filters.md)」を参照してください。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="cd853-173">エンドポイントのバックアップ、参照[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)と[メッセージ フィルター](../../../../docs/framework/wcf/feature-details/message-filters.md)です。</span><span class="sxs-lookup"><span data-stu-id="cd853-173"> backup endpoints, see [Routing Introduction](../../../../docs/framework/wcf/feature-details/routing-introduction.md) and [Message Filters](../../../../docs/framework/wcf/feature-details/message-filters.md).</span></span>  
   
-## ストリーム  
- バインディングがストリーミングをサポートするように設定すると、ルーティング サービスはメッセージを正常にストリーミングできます。  ただし、メッセージのバッファーが必要となる可能性のある条件がいくつかあります。  
+## <a name="streaming"></a><span data-ttu-id="cd853-174">ストリーム</span><span class="sxs-lookup"><span data-stu-id="cd853-174">Streaming</span></span>  
+ <span data-ttu-id="cd853-175">バインディングがストリーミングをサポートするように設定すると、ルーティング サービスはメッセージを正常にストリーミングできます。</span><span class="sxs-lookup"><span data-stu-id="cd853-175">The routing service can successfully stream messages if you set the binding to support streaming.</span></span>  <span data-ttu-id="cd853-176">ただし、メッセージのバッファーが必要となる可能性のある条件がいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="cd853-176">However, there are some conditions under which messages may need to buffered:</span></span>  
   
--   マルチキャスト \(追加のメッセージ コピーを作成するためのバッファー\)  
+-   <span data-ttu-id="cd853-177">マルチキャスト (追加のメッセージ コピーを作成するためのバッファー)</span><span class="sxs-lookup"><span data-stu-id="cd853-177">Multicast (buffer to create additional message copies)</span></span>  
   
--   フェールオーバー \(メッセージがバックアップに送信される必要がある場合のバッファー\)  
+-   <span data-ttu-id="cd853-178">フェールオーバー (メッセージがバックアップに送信される必要がある場合のバッファー)</span><span class="sxs-lookup"><span data-stu-id="cd853-178">Failover (buffer in case the message needs to be sent to a backup)</span></span>  
   
--   System.ServiceModel.Routing.RoutingConfiguration.RouteOnHeadersOnly は false です \(フィルターが本文を検査できるように MessageBuffer と共に MessageFilterTable を示すバッファー\)  
+-   <span data-ttu-id="cd853-179">System.ServiceModel.Routing.RoutingConfiguration.RouteOnHeadersOnly は false です (フィルターが本文を検査できるように MessageBuffer と共に MessageFilterTable を示すバッファー)</span><span class="sxs-lookup"><span data-stu-id="cd853-179">System.ServiceModel.Routing.RoutingConfiguration.RouteOnHeadersOnly is false (buffer to present the MessageFilterTable with a MessageBuffer so that filters can inspect the body)</span></span>  
   
--   動的構成  
+-   <span data-ttu-id="cd853-180">動的構成</span><span class="sxs-lookup"><span data-stu-id="cd853-180">Dynamic configuration</span></span>  
   
-## 参照  
- [ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)   
- [ルーティング コントラクト](../../../../docs/framework/wcf/feature-details/routing-contracts.md)   
- [メッセージ フィルター](../../../../docs/framework/wcf/feature-details/message-filters.md)
+## <a name="see-also"></a><span data-ttu-id="cd853-181">関連項目</span><span class="sxs-lookup"><span data-stu-id="cd853-181">See Also</span></span>  
+ [<span data-ttu-id="cd853-182">ルーティングの概要</span><span class="sxs-lookup"><span data-stu-id="cd853-182">Routing Introduction</span></span>](../../../../docs/framework/wcf/feature-details/routing-introduction.md)  
+ [<span data-ttu-id="cd853-183">ルーティング コントラクト</span><span class="sxs-lookup"><span data-stu-id="cd853-183">Routing Contracts</span></span>](../../../../docs/framework/wcf/feature-details/routing-contracts.md)  
+ [<span data-ttu-id="cd853-184">メッセージ フィルター</span><span class="sxs-lookup"><span data-stu-id="cd853-184">Message Filters</span></span>](../../../../docs/framework/wcf/feature-details/message-filters.md)

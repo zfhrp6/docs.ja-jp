@@ -1,39 +1,42 @@
 ---
-title: "TCP アクティベーション | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "TCP アクティベーション"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: bf8c215c-0228-4f4f-85c2-e33794ec09a7
-caps.latest.revision: 34
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 34
+caps.latest.revision: "34"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f02528828c3751b2f8e34bd7ebb8a1a789feeb2c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# TCP アクティベーション
-このサンプルでは、net.tcp プロトコルで通信するサービスをアクティブ化するために、Windows プロセス アクティブ化サービス \(WAS\) を使用してサービスをホストする方法について示します。  このサンプルは、「[概要](../../../../docs/framework/wcf/samples/getting-started-sample.md)」に基づいています。  
+# <a name="tcp-activation"></a><span data-ttu-id="3dd30-102">TCP アクティベーション</span><span class="sxs-lookup"><span data-stu-id="3dd30-102">TCP Activation</span></span>
+<span data-ttu-id="3dd30-103">このサンプルでは、net.tcp プロトコルで通信するサービスをアクティブ化するために、Windows プロセス アクティブ化サービス (WAS) を使用してサービスをホストする方法について示します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-103">This sample demonstrates hosting a service that uses Windows Process Activation Services (WAS) to activate a service that communicates over the net.tcp protocol.</span></span> <span data-ttu-id="3dd30-104">このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。</span><span class="sxs-lookup"><span data-stu-id="3dd30-104">This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md).</span></span>  
   
 > [!NOTE]
->  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
+>  <span data-ttu-id="3dd30-105">このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。</span><span class="sxs-lookup"><span data-stu-id="3dd30-105">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。  続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="3dd30-106">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="3dd30-106">The samples may already be installed on your computer.</span></span> <span data-ttu-id="3dd30-107">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="3dd30-107">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。  このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="3dd30-108">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="3dd30-108">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="3dd30-109">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="3dd30-109">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WASHost\TCPActivation`  
   
- このサンプルは、クライアント コンソール プログラム \(.exe\) と、WAS によってアクティブ化されるワーカー プロセス内でホストされるサービス ライブラリ \(.dll\) で構成されています。  クライアント アクティビティは、コンソール ウィンドウに表示されます。  
+ <span data-ttu-id="3dd30-110">このサンプルは、クライアント コンソール プログラム (.exe) と、WAS によってアクティブ化されるワーカー プロセス内でホストされるサービス ライブラリ (.dll) で構成されています。</span><span class="sxs-lookup"><span data-stu-id="3dd30-110">The sample consists of a client console program (.exe) and a service library (.dll) hosted in a worker process activated by WAS.</span></span> <span data-ttu-id="3dd30-111">クライアント アクティビティは、コンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="3dd30-111">Client activity is visible in the console window.</span></span>  
   
- サービスは、要求\/応答通信パターンを定義するコントラクトを実装します。  コントラクトは `ICalculator` インターフェイスによって定義されており、算術演算 \(Add、Subtract、Multiply、および Divide\) を公開しています。次のサンプル コードを参照してください。  
+ <span data-ttu-id="3dd30-112">サービスは、要求/応答通信パターンを定義するコントラクトを実装します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-112">The service implements a contract that defines a request-reply communication pattern.</span></span> <span data-ttu-id="3dd30-113">コントラクトは `ICalculator` インターフェイスによって定義されており、算術演算 (Add、Subtract、Multiply、および Divide) を公開しています。次のサンプル コードを参照してください。</span><span class="sxs-lookup"><span data-stu-id="3dd30-113">The contract is defined by the `ICalculator` interface, which exposes math operations (Add, Subtract, Multiply, and Divide), as shown in the following sample code:</span></span>  
   
 ```  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -50,7 +53,7 @@ public interface ICalculator
 }  
 ```  
   
- このサービス実装は、計算を行い、結果を返します。  
+ <span data-ttu-id="3dd30-114">このサービス実装は、計算を行い、結果を返します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-114">The service implementation calculates and returns the appropriate result:</span></span>  
   
 ```  
 // Service class that implements the service contract.  
@@ -75,11 +78,11 @@ public class CalculatorService : ICalculator
 }  
 ```  
   
- このサンプルでは、TCP ポート共有が有効でセキュリティが無効になっている net.tcp バインディングの変化形を使用します。  セキュリティ保護された TCP バインディングを使用する場合は、サーバーのセキュリティ モードを必要な設定に変更し、クライアントで Svcutil.exe を再実行して更新クライアントの構成ファイルを生成します。  
+ <span data-ttu-id="3dd30-115">このサンプルでは、TCP ポート共有が有効でセキュリティが無効になっている net.tcp バインディングの変化形を使用します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-115">The sample uses a variant of the net.tcp binding with TCP port sharing enabled and security turned off.</span></span> <span data-ttu-id="3dd30-116">セキュリティ保護された TCP バインディングを使用する場合は、サーバーのセキュリティ モードを必要な設定に変更し、クライアントで Svcutil.exe を再実行して更新クライアントの構成ファイルを生成します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-116">If you want to use a secured TCP binding, change the server's security mode to the desired setting and re-run Svcutil.exe on the client to generate an update client configuration file.</span></span>  
   
- サービスの構成を次のサンプルに示します。  
+ <span data-ttu-id="3dd30-117">サービスの構成を次のサンプルに示します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-117">The following sample shows the configuration for the service:</span></span>  
   
-```  
+```xml  
 <system.serviceModel>  
   
     <services>  
@@ -115,9 +118,9 @@ public class CalculatorService : ICalculator
   </system.serviceModel>  
 ```  
   
- クライアントのエンドポイントが構成されます。次のサンプル コードを参照してください。  
+ <span data-ttu-id="3dd30-118">クライアントのエンドポイントが構成されます。次のサンプル コードを参照してください。</span><span class="sxs-lookup"><span data-stu-id="3dd30-118">The client's endpoint is configured as shown in the following sample code:</span></span>  
   
-```  
+```xml  
 <system.serviceModel>  
     <bindings>  
         <netTcpBinding>  
@@ -134,7 +137,7 @@ public class CalculatorService : ICalculator
 </system.serviceModel>  
 ```  
   
- このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。  クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
+ <span data-ttu-id="3dd30-119">このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="3dd30-119">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="3dd30-120">クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-120">Press ENTER in the client window to shut down the client.</span></span>  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -145,36 +148,36 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-### サンプルをセットアップ、ビルド、および実行するには  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="3dd30-121">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="3dd30-121">To set up, build, and run the sample</span></span>  
   
-1.  [!INCLUDE[iisver](../../../../includes/iisver-md.md)] がインストールされていることを確認します。  [!INCLUDE[iisver](../../../../includes/iisver-md.md)] は WAS のアクティブ化に必要です。  
+1.  <span data-ttu-id="3dd30-122">[!INCLUDE[iisver](../../../../includes/iisver-md.md)] がインストールされていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-122">Ensure that [!INCLUDE[iisver](../../../../includes/iisver-md.md)] is installed.</span></span> [!INCLUDE[iisver](../../../../includes/iisver-md.md)]<span data-ttu-id="3dd30-123"> は WAS のアクティブ化に必要です。</span><span class="sxs-lookup"><span data-stu-id="3dd30-123"> is required for WAS activation.</span></span>  
   
-2.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+2.  <span data-ttu-id="3dd30-124">実行することを確認、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="3dd30-124">Be sure you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-     さらに、HTTP 以外の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アクティベーション コンポーネントをインストールする必要があります。  
+     <span data-ttu-id="3dd30-125">さらに、HTTP 以外の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アクティベーション コンポーネントをインストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="3dd30-125">In addition, you must install the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] non-HTTP activation components:</span></span>  
   
-    1.  **\[スタート\]** メニューの **\[コントロール パネル\]** をクリックします。  
+    1.  <span data-ttu-id="3dd30-126">**開始** メニューの 選択**コントロール パネルの **です。</span><span class="sxs-lookup"><span data-stu-id="3dd30-126">From the **Start** menu, choose **Control Panel**.</span></span>  
   
-    2.  **\[プログラムと機能\]** をクリックします。  
+    2.  <span data-ttu-id="3dd30-127">選択**プログラムと機能**します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-127">Select **Programs and Features**.</span></span>  
   
-    3.  **\[Turn Windows Components on or Off\]** をクリックします。  
+    3.  <span data-ttu-id="3dd30-128">をクリックして**Windows コンポーネントをオンまたはオフ**です。</span><span class="sxs-lookup"><span data-stu-id="3dd30-128">Click **Turn Windows Components on or Off**.</span></span>  
   
-    4.  **\[Microsoft .NET Framework 3.0\]** ノードを展開し、**\[Windows Communication Foundation Non\-HTTP Activation\]** 機能をオンにします。  
+    4.  <span data-ttu-id="3dd30-129">展開して、 **Microsoft .NET Framework 3.0**ノードとチェック、 **Windows Communication Foundation NON-HTTP Activation**機能します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-129">Expand the **Microsoft .NET Framework 3.0** node and check the **Windows Communication Foundation Non-HTTP Activation** feature.</span></span>  
   
-3.  TCP アクティベーションをサポートするよう WAS を構成します。  
+3.  <span data-ttu-id="3dd30-130">TCP アクティベーションをサポートするよう WAS を構成します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-130">Configure WAS to support TCP activation.</span></span>  
   
-     便宜上次の 2 つの手順が、サンプル ディレクトリにある AddNetTcpSiteBinding.cmd というバッチ ファイルに実装されています。  
+     <span data-ttu-id="3dd30-131">便宜上次の 2 つの手順が、サンプル ディレクトリにある AddNetTcpSiteBinding.cmd というバッチ ファイルに実装されています。</span><span class="sxs-lookup"><span data-stu-id="3dd30-131">As a convenience, the following two steps are implemented in a batch file called AddNetTcpSiteBinding.cmd located in the sample directory.</span></span>  
   
-    1.  net.tcp アクティベーションをサポートするには、既定の Web サイトをあらかじめ net.tcp ポートにバインドしておく必要があります。  これは、インターネット インフォメーション サービス 7.0 \(IIS\) 管理ツール セットと共にインストールされる Appcmd.exe を使用して行います。  管理者レベルのコマンド プロンプトから、次のコマンドを実行します。  
+    1.  <span data-ttu-id="3dd30-132">net.tcp アクティベーションをサポートするには、既定の Web サイトをあらかじめ net.tcp ポートにバインドしておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="3dd30-132">To support net.tcp activation, the default Web site must first be bound to a net.tcp port.</span></span> <span data-ttu-id="3dd30-133">これは、インターネット インフォメーション サービス 7.0 (IIS) 管理ツール セットと共にインストールされる Appcmd.exe を使用して行います。</span><span class="sxs-lookup"><span data-stu-id="3dd30-133">This can be done using Appcmd.exe, which is installed with the Internet Information Services 7.0 (IIS) management toolset.</span></span> <span data-ttu-id="3dd30-134">管理者レベルのコマンド プロンプトから、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-134">From an administrator-level command prompt, run the following command:</span></span>  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInformation='808:*']  
         ```  
   
         > [!TIP]
-        >  このコマンドはテキスト 1 行です。  このコマンドは、net.tcp サイト バインディングを、TCP ポート 808 で任意のホスト名をリッスンする既定の Web サイトに追加します。  
+        >  <span data-ttu-id="3dd30-135">このコマンドはテキスト 1 行です。</span><span class="sxs-lookup"><span data-stu-id="3dd30-135">This command is a single line of text.</span></span> <span data-ttu-id="3dd30-136">このコマンドは、net.tcp サイト バインディングを、TCP ポート 808 で任意のホスト名をリッスンする既定の Web サイトに追加します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-136">This command adds a net.tcp site binding to the default Web site listening on TCP port 808 with any hostname.</span></span>  
   
-    2.  サイト内のすべてのアプリケーションが同じ net.tcp バインディングを共有しますが、net.tcp サポートの有効化はアプリケーションごとに指定できます。  \/servicemodelsamples アプリケーションで net.tcp を有効にするには、管理者レベルのコマンド プロンプトから、次のコマンドを実行します。  
+    2.  <span data-ttu-id="3dd30-137">サイト内のすべてのアプリケーションが同じ net.tcp バインディングを共有しますが、net.tcp サポートの有効化はアプリケーションごとに指定できます。</span><span class="sxs-lookup"><span data-stu-id="3dd30-137">Although all applications within a site share a common net.tcp binding, each application can enable net.tcp support individually.</span></span> <span data-ttu-id="3dd30-138">/servicemodelsamples アプリケーションで net.tcp を有効にするには、管理者レベルのコマンド プロンプトから、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-138">To enable net.tcp for the /servicemodelsamples application, run the following command from an administrator-level command prompt:</span></span>  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set app   
@@ -182,17 +185,17 @@ Press <ENTER> to terminate client.
         ```  
   
         > [!NOTE]
-        >  このコマンドはテキスト 1 行です。  このコマンドにより、\/servicemodelsamples アプリケーションに http:\/\/localhost\/servicemodelsamples と net.tcp:\/\/localhost\/servicemodelsamples のどちらを使用してもアクセスできるようになります。  
+        >  <span data-ttu-id="3dd30-139">このコマンドはテキスト 1 行です。</span><span class="sxs-lookup"><span data-stu-id="3dd30-139">This command is a single line of text.</span></span> <span data-ttu-id="3dd30-140">このコマンドにより、/servicemodelsamples アプリケーションに http://localhost/servicemodelsamples と net.tcp://localhost/servicemodelsamples のどちらを使用してもアクセスできるようになります。</span><span class="sxs-lookup"><span data-stu-id="3dd30-140">This command enables the /servicemodelsamples application to be accessed using both http://localhost/servicemodelsamples and net.tcp://localhost/servicemodelsamples.</span></span>  
   
-4.  ソリューションの C\# 版または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+4.  <span data-ttu-id="3dd30-141">ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="3dd30-141">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-5.  サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+5.  <span data-ttu-id="3dd30-142">1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="3dd30-142">To run the sample in a single- or cross-computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
-     このサンプル用に追加した net.tcp サイト バインディングを削除します。  
+     <span data-ttu-id="3dd30-143">このサンプル用に追加した net.tcp サイト バインディングを削除します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-143">Remove the net.tcp site binding you added for this sample.</span></span>  
   
-     便宜上次の 2 つの手順が、サンプル ディレクトリにある RemoveNetTcpSiteBinding.cmd というバッチ ファイルに実装されています。  
+     <span data-ttu-id="3dd30-144">便宜上次の 2 つの手順が、サンプル ディレクトリにある RemoveNetTcpSiteBinding.cmd というバッチ ファイルに実装されています。</span><span class="sxs-lookup"><span data-stu-id="3dd30-144">As a convenience, the following two steps are implemented in a batch file called RemoveNetTcpSiteBinding.cmd located in the sample directory.</span></span>  
   
-    1.  管理者レベルのコマンド プロンプトから次のコマンドを実行して、有効なプロトコルの一覧から net.tcp を削除します。  
+    1.  <span data-ttu-id="3dd30-145">管理者レベルのコマンド プロンプトから次のコマンドを実行して、有効なプロトコルの一覧から net.tcp を削除します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-145">Remove net.tcp from the list of enabled protocols by running the following command from an administrator-level command prompt:</span></span>  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set app   
@@ -200,9 +203,9 @@ Press <ENTER> to terminate client.
         ```  
   
         > [!NOTE]
-        >  このコマンドは、全体で 1 行のテキストになるように入力する必要があります。  
+        >  <span data-ttu-id="3dd30-146">このコマンドは、全体で 1 行のテキストになるように入力する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3dd30-146">This command must be entered as a single line of text.</span></span>  
   
-    2.  管理者レベルのコマンド プロンプトから次のコマンドを実行して、net.tcp サイト バインディングを削除します。  
+    2.  <span data-ttu-id="3dd30-147">管理者レベルのコマンド プロンプトから次のコマンドを実行して、net.tcp サイト バインディングを削除します。</span><span class="sxs-lookup"><span data-stu-id="3dd30-147">Remove the net.tcp site binding by running the following command from an administrator-level command prompt:</span></span>  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site"   
@@ -210,7 +213,7 @@ Press <ENTER> to terminate client.
         ```  
   
         > [!NOTE]
-        >  このコマンドは、全体で 1 行のテキストになるように入力する必要があります。  
+        >  <span data-ttu-id="3dd30-148">このコマンドは、全体で 1 行のテキストになるように入力する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3dd30-148">This command must be typed in as a single line of text.</span></span>  
   
-## 参照  
- [AppFabric のホストおよび永続化のサンプル](http://go.microsoft.com/fwlink/?LinkId=193961)
+## <a name="see-also"></a><span data-ttu-id="3dd30-149">関連項目</span><span class="sxs-lookup"><span data-stu-id="3dd30-149">See Also</span></span>  
+ [<span data-ttu-id="3dd30-150">AppFabric ホスティングと永続性のサンプル</span><span class="sxs-lookup"><span data-stu-id="3dd30-150">AppFabric Hosting and Persistence Samples</span></span>](http://go.microsoft.com/fwlink/?LinkId=193961)

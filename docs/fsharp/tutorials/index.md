@@ -1,4 +1,12 @@
-# <a name="f-tutorials"></a>F# チュートリアル
+---
+redirect_url: /dotnet/fsharp/index
+ms.openlocfilehash: e9328a08370f1e7188fe3959d5d8ab3b382f8baa
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
+---
+# <a name="f-tutorials"></a><span data-ttu-id="34bc3-101">F# チュートリアル</span><span class="sxs-lookup"><span data-stu-id="34bc3-101">F# Tutorials</span></span>
 
 > [!NOTE]
-これは現在も進行中です。
+<span data-ttu-id="34bc3-102">これは現在も進行中です。</span><span class="sxs-lookup"><span data-stu-id="34bc3-102">This is still in-progress.</span></span>

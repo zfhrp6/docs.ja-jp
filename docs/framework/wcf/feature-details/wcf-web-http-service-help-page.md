@@ -1,32 +1,35 @@
 ---
-title: "WCF Web HTTP サービスのヘルプ ページ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WCF Web HTTP サービスのヘルプ ページ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 63c7c695-44b6-4f31-bb9c-00f2763f525e
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 96c54320c77de766f00bde1e560eb5b0f0df2671
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# WCF Web HTTP サービスのヘルプ ページ
-[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] には、WCF WEB HTTP サービスの自動的なヘルプ ページが用意されています。このヘルプ ページには、各操作の説明、要求と応答の形式、およびスキーマが一覧表示されます。この機能は、既定では無効になっています。ユーザーが WCF WEB HTTP サービスを参照し、URL の最後に "\/Help" を追加する \(http:\/\/localhost:8000\/Customers\/Help など\) と、次のようなページが表示されます。  
+# <a name="wcf-web-http-service-help-page"></a><span data-ttu-id="22d88-102">WCF Web HTTP サービスのヘルプ ページ</span><span class="sxs-lookup"><span data-stu-id="22d88-102">WCF Web HTTP Service Help Page</span></span>
+[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]<span data-ttu-id="22d88-103"> には、WCF WEB HTTP サービスの自動的なヘルプ ページが用意されています。</span><span class="sxs-lookup"><span data-stu-id="22d88-103"> provides an automatic help page for WCF WEB HTTP services.</span></span> <span data-ttu-id="22d88-104">このヘルプ ページには、各操作の説明、要求と応答の形式、およびスキーマが一覧表示されます。</span><span class="sxs-lookup"><span data-stu-id="22d88-104">This help page lists a description of each operation, request and response formats, and schemas.</span></span> <span data-ttu-id="22d88-105">この機能は、既定では無効になっています。</span><span class="sxs-lookup"><span data-stu-id="22d88-105">This functionality is turned off by default.</span></span> <span data-ttu-id="22d88-106">ユーザーが WCF WEB HTTP サービスを参照し、URL の最後に "/Help" を追加する (http://localhost:8000/Customers/Help など) と、次のようなページが表示されます。</span><span class="sxs-lookup"><span data-stu-id="22d88-106">When a user browses to a WCF WEB HTTP service and appends "/Help" on to the end of the URL, for example http://localhost:8000/Customers/Help, a help page like the following is displayed.</span></span>  
   
- ![WCF REST ヘルプ ページ](../../../../docs/framework/wcf/feature-details/media/wcfresthelppagemain.png "WCFRESTHELPPAGEMAIN")  
+ <span data-ttu-id="22d88-107">![WCF REST ヘルプ ページ](../../../../docs/framework/wcf/feature-details/media/wcfresthelppagemain.gif "WCFRESTHELPPAGEMAIN")</span><span class="sxs-lookup"><span data-stu-id="22d88-107">![WCF REST Help Page](../../../../docs/framework/wcf/feature-details/media/wcfresthelppagemain.gif "WCFRESTHELPPAGEMAIN")</span></span>  
   
- ヘルプ ページに一覧表示されているメソッドをユーザーがクリックすると、その操作の詳細を示すページが表示され、メッセージの形式や応答例など、そのメソッドの詳細が示されます。次の図は、メソッドのヘルプ ページの例です。  
+ <span data-ttu-id="22d88-108">ヘルプ ページに一覧表示されているメソッドをユーザーがクリックすると、その操作の詳細を示すページが表示され、メッセージの形式や応答例など、そのメソッドの詳細が示されます。</span><span class="sxs-lookup"><span data-stu-id="22d88-108">The user can then click any method listed in the help page and detailed page for that operation is displayed showing more information about the method, including message formats and example responses.</span></span> <span data-ttu-id="22d88-109">次の図は、メソッドのヘルプ ページの例です。</span><span class="sxs-lookup"><span data-stu-id="22d88-109">The following image is an example of a help page for a method.</span></span>  
   
- ![WCF REST ヘルプ ページの詳細](../../../../docs/framework/wcf/feature-details/media/wcfresthelppagedetail2.png "WCFRESTHELPPAGEDETAIL2")  
+ <span data-ttu-id="22d88-110">![WCF REST ヘルプ ページの詳細](../../../../docs/framework/wcf/feature-details/media/wcfresthelppagedetail2.gif "WCFRESTHELPPAGEDETAIL2")</span><span class="sxs-lookup"><span data-stu-id="22d88-110">![WCF REST Help Page Details](../../../../docs/framework/wcf/feature-details/media/wcfresthelppagedetail2.gif "WCFRESTHELPPAGEDETAIL2")</span></span>  
   
-## WCF Web HTTP ヘルプ ページの使用  
- <xref:System.ComponentModel.DescriptionAttribute> を使用して指定した場合は、WCF WEB HTTP ヘルプ ページに各操作の短い説明が表示されます。この属性は、適用される操作の短い説明を含む文字列を取得します。たとえば、次のコードでは、<xref:System.ComponentModel.DescriptionAttribute> を使用して短い説明を提供する方法を示しています。  
+## <a name="using-the-wcf-web-http-help-page"></a><span data-ttu-id="22d88-111">WCF Web HTTP ヘルプ ページの使用</span><span class="sxs-lookup"><span data-stu-id="22d88-111">Using the WCF Web HTTP Help Page</span></span>  
+ <span data-ttu-id="22d88-112"><xref:System.ComponentModel.DescriptionAttribute> を使用して指定した場合は、WCF WEB HTTP ヘルプ ページに各操作の短い説明が表示されます。</span><span class="sxs-lookup"><span data-stu-id="22d88-112">The WCF WEB HTTP Help page displays a short description for each operation provided that you specify one using the <xref:System.ComponentModel.DescriptionAttribute>.</span></span> <span data-ttu-id="22d88-113">この属性は、適用される操作の短い説明を含む文字列を取得します。</span><span class="sxs-lookup"><span data-stu-id="22d88-113">This attribute takes a string that contains a short description of the operation it is applied to.</span></span> <span data-ttu-id="22d88-114">たとえば、次のコードでは、<xref:System.ComponentModel.DescriptionAttribute> を使用して短い説明を提供する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="22d88-114">For example, the following code shows how to use the <xref:System.ComponentModel.DescriptionAttribute> to provide a short description.</span></span>  
   
 ```  
 [OperationContract]  
@@ -35,9 +38,9 @@ caps.handback.revision: 11
 SyndicationFeedFormatter GetTemplate1();  
 ```  
   
- WCF WEB HTTP ヘルプ ページを有効にするには、サービスのエンドポイントにエンドポイント動作を追加する必要があります。これは、構成で追加することも、コードで追加することもできます。WCF WEB HTTP ヘルプ ページを構成で有効化するには、`<webHttp>` 要素を持つエンドポイント動作を追加し、`enableHelp` を `true` に設定し、エンドポイントを追加して、エンドポイント動作を使用するようにそれを構成します。次の構成コードは、この実行方法を示しています。  
+ <span data-ttu-id="22d88-115">WCF WEB HTTP ヘルプ ページを有効にするには、サービスのエンドポイントにエンドポイント動作を追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="22d88-115">To turn on the WCF WEB HTTP Help page, you must add an endpoint behavior to your service's endpoints.</span></span> <span data-ttu-id="22d88-116">これは、構成で追加することも、コードで追加することもできます。</span><span class="sxs-lookup"><span data-stu-id="22d88-116">This can be done in configuration or code.</span></span> <span data-ttu-id="22d88-117">WCF WEB HTTP ヘルプ ページを構成で有効化するには、`<webHttp>` 要素を持つエンドポイント動作を追加し、`enableHelp` を `true` に設定し、エンドポイントを追加して、エンドポイント動作を使用するようにそれを構成します。</span><span class="sxs-lookup"><span data-stu-id="22d88-117">To enable the WCF WEB HTTP Help age in configuration, add an endpoint behavior with a `<webHttp>` element, set `enableHelp` to `true`, and add an endpoint and configure it to use the endpoint behavior.</span></span> <span data-ttu-id="22d88-118">次の構成コードは、この実行方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="22d88-118">The following configuration code shows how to do this.</span></span>  
   
-```  
+```xml  
 <endpointBehaviors>  
    <behavior name="RESTEndpointBehavior">  
       <webHttp enableHelp="true"/>  
@@ -52,7 +55,7 @@ SyndicationFeedFormatter GetTemplate1();
 </services>  
 ```  
   
- WCF Web HTTP ヘルプ ページをコードで有効化するには、サービス エンドポイントを追加し、<xref:System.ServiceModel.Description.WebHttpBehavior> をエンドポイントに追加し、<xref:System.ServiceModel.Description.WebHttpBehavior.EnableHelp%2A> を `true` に設定します。この方法を次のコードに示します。  
+ <span data-ttu-id="22d88-119">コード内で WCF Web HTTP ヘルプ ページを有効にするには、サービス エンドポイントを追加し、追加、<xref:System.ServiceModel.Description.WebHttpBehavior>エンドポイントの設定に<!--zz <xref:System.ServiceModel.Description.WebHttpBehavior.EnableHelp%2A>-->`EnableHelp`に`true`です。</span><span class="sxs-lookup"><span data-stu-id="22d88-119">To enable the WCF Web HTTP Help page in code, add a service endpoint and add a <xref:System.ServiceModel.Description.WebHttpBehavior> to the endpoint setting <!--zz <xref:System.ServiceModel.Description.WebHttpBehavior.EnableHelp%2A>--> `EnableHelp` to `true`.</span></span> <span data-ttu-id="22d88-120">この方法を次のコードに示します。</span><span class="sxs-lookup"><span data-stu-id="22d88-120">The following code shows how to do this.</span></span>  
   
 ```  
 using (WebServiceHost host = new WebServiceHost(typeof(Service), new Uri("http://localhost:8000/Customers")))  
@@ -63,12 +66,12 @@ using (WebServiceHost host = new WebServiceHost(typeof(Service), new Uri("http:/
 }  
 ```  
   
- ヘルプ ページは XHTML ベースで、ページの各部分を識別するマークアップがあります。これにより、クライアントは、<xref:System.Xml.Linq.XElement> またはその他の XLinq API を使用して、ページにプログラムでアクセスできます。  
+ <span data-ttu-id="22d88-121">ヘルプ ページは XHTML ベースで、ページの各部分を識別するマークアップがあります。</span><span class="sxs-lookup"><span data-stu-id="22d88-121">The help page is XHTML based with mark-up that identifies the different parts of the page.</span></span> <span data-ttu-id="22d88-122">これにより、クライアントは、<xref:System.Xml.Linq.XElement> またはその他の XLinq API を使用して、ページにプログラムでアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="22d88-122">This enables clients to programmatically access the page using <xref:System.Xml.Linq.XElement> or other XLinq APIs.</span></span>  
   
-## WCF Web HTTP サービスのヘルプ ページで使用されるスキーマ  
- WCF Web HTTP サービスのヘルプ ページでは、次のスキーマが使用されます。  
+## <a name="schemas-used-in-the-wcf-web-http-service-help-page"></a><span data-ttu-id="22d88-123">WCF Web HTTP サービスのヘルプ ページで使用されるスキーマ</span><span class="sxs-lookup"><span data-stu-id="22d88-123">Schemas Used in the WCF Web HTTP Service Help Page</span></span>  
+ <span data-ttu-id="22d88-124">WCF Web HTTP サービスのヘルプ ページでは、次のスキーマが使用されます。</span><span class="sxs-lookup"><span data-stu-id="22d88-124">The following schemas are used in the WCF Web HTTP service help page.</span></span>  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-16"?>  
 <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">  
   <xs:element name="anyType" nillable="true" type="xs:anyType" />  
@@ -245,7 +248,6 @@ using (WebServiceHost host = new WebServiceHost(typeof(Service), new Uri("http:/
   </xs:complexType>  
   <xs:element name="ArrayOfQName" nillable="true" type="tns:ArrayOfQName" />  
 </xs:schema>  
-  
 ```  
   
- データ コントラクトのシリアル化スキーマ[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[データ コントラクト スキーマの参照](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)」を参照してください。
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="22d88-125">データ コントラクトのシリアル化スキーマを参照してください[データ コントラクト スキーマの参照](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)です。</span><span class="sxs-lookup"><span data-stu-id="22d88-125"> the data contract serialization schema, see [Data Contract Schema Reference](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).</span></span>

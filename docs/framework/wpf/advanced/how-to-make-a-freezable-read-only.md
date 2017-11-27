@@ -1,47 +1,52 @@
 ---
-title: "方法 : Freezable を読み取り専用にする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Freezable オブジェクト, 読み取り専用にする"
+title: "方法 : Freezable を読み取り専用にする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: Freezable objects [WPF], making read-only
 ms.assetid: 6c544b7d-d3c9-4736-aa90-4b8728234ccb
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4c407a2fcccfbda29ba23f63ba6ae71302c734d2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Freezable を読み取り専用にする
-この例では、<xref:System.Windows.Freezable.Freeze%2A> メソッドを呼び出して、<xref:System.Windows.Freezable> を読み取り専用にする方法を示します。  
+# <a name="how-to-make-a-freezable-read-only"></a><span data-ttu-id="22663-102">方法 : Freezable を読み取り専用にする</span><span class="sxs-lookup"><span data-stu-id="22663-102">How to: Make a Freezable Read-Only</span></span>
+<span data-ttu-id="22663-103">この例では、作成、<xref:System.Windows.Freezable>呼び出すことによって、読み取り専用の<xref:System.Windows.Freezable.Freeze%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="22663-103">This example shows how to make a <xref:System.Windows.Freezable> read-only by calling its <xref:System.Windows.Freezable.Freeze%2A> method.</span></span>  
   
- 次に示す条件が 1 つでも `true` である場合は、<xref:System.Windows.Freezable> オブジェクトを固定できません。  
+ <span data-ttu-id="22663-104">固定することはできません、<xref:System.Windows.Freezable>オブジェクトのかどうか、次の条件のいずれかが`true`オブジェクトについて。</span><span class="sxs-lookup"><span data-stu-id="22663-104">You cannot freeze a <xref:System.Windows.Freezable> object if any one of the following conditions is `true` about the object:</span></span>  
   
--   アニメーション化されたプロパティ、またはデータ バインドされたプロパティがある。  
+-   <span data-ttu-id="22663-105">アニメーション化されたか、データ バインドされたプロパティ。</span><span class="sxs-lookup"><span data-stu-id="22663-105">It has animated or data bound properties.</span></span>  
   
--   動的リソースによって設定されたプロパティがある。  動的リソースの詳細については、「[XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)」を参照してください。  
+-   <span data-ttu-id="22663-106">動的リソースによって設定されているプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="22663-106">It has properties that are set by a dynamic resource.</span></span> <span data-ttu-id="22663-107">動的なリソースの詳細については、次を参照してください。、 [XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)です。</span><span class="sxs-lookup"><span data-stu-id="22663-107">For more information about dynamic resources, see the [XAML Resources](../../../../docs/framework/wpf/advanced/xaml-resources.md).</span></span>  
   
--   固定できない <xref:System.Windows.Freezable> のサブオブジェクトが含まれている。  
+-   <span data-ttu-id="22663-108">含まれている<xref:System.Windows.Freezable>サブオブジェクトを固定することはできません。</span><span class="sxs-lookup"><span data-stu-id="22663-108">It contains <xref:System.Windows.Freezable> sub-objects that cannot be frozen.</span></span>  
   
- <xref:System.Windows.Freezable> オブジェクトに関してこれらの条件が `false` であり、オブジェクトを変更しない場合は、オブジェクトを固定して、性能の向上を図ることをお勧めします。  
+ <span data-ttu-id="22663-109">これらの条件が場合`false`の<xref:System.Windows.Freezable>オブジェクトとする予定がない、変更、パフォーマンスの利点を固定することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="22663-109">If these conditions are `false` for your <xref:System.Windows.Freezable> object and you do not intend to modify it, consider freezing it to gain performance benefits.</span></span>  
   
-## 使用例  
- 次の例では、<xref:System.Windows.Freezable> オブジェクトの一種の <xref:System.Windows.Media.SolidColorBrush> を固定します。  
+## <a name="example"></a><span data-ttu-id="22663-110">例</span><span class="sxs-lookup"><span data-stu-id="22663-110">Example</span></span>  
+ <span data-ttu-id="22663-111">次の例がフリーズする、<xref:System.Windows.Media.SolidColorBrush>の型である<xref:System.Windows.Freezable>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="22663-111">The following example freezes a <xref:System.Windows.Media.SolidColorBrush>, which is a type of <xref:System.Windows.Freezable> object.</span></span>  
   
  [!code-csharp[freezablesample_procedural#FreezeExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#freezeexample1)]
  [!code-vb[freezablesample_procedural#FreezeExample1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#freezeexample1)]  
   
- <xref:System.Windows.Freezable> オブジェクトの詳細については、「[Freezable オブジェクトの概要](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)」を参照してください。  
+ <span data-ttu-id="22663-112">詳細については<xref:System.Windows.Freezable>、オブジェクトを参照してください、 [Freezable オブジェクトの概要](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="22663-112">For more information about <xref:System.Windows.Freezable> objects, see the [Freezable Objects Overview](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md).</span></span>  
   
-## 参照  
- <xref:System.Windows.Freezable>   
- <xref:System.Windows.Freezable.CanFreeze%2A>   
- <xref:System.Windows.Freezable.Freeze%2A>   
- [Freezable オブジェクトの概要](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/advanced/base-elements-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="22663-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="22663-113">See Also</span></span>  
+ <xref:System.Windows.Freezable>  
+ <xref:System.Windows.Freezable.CanFreeze%2A>  
+ <xref:System.Windows.Freezable.Freeze%2A>  
+ [<span data-ttu-id="22663-114">Freezable オブジェクトの概要</span><span class="sxs-lookup"><span data-stu-id="22663-114">Freezable Objects Overview</span></span>](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)  
+ [<span data-ttu-id="22663-115">方法トピック</span><span class="sxs-lookup"><span data-stu-id="22663-115">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/base-elements-how-to-topics.md)

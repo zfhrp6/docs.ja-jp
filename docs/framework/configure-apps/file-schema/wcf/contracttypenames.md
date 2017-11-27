@@ -1,70 +1,75 @@
 ---
-title: "&lt;contractTypeNames&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;contractTypeNames&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 5ec5efc6-87f8-4160-9be0-dcd2e01df3df
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 95be974404fdd845ee3a24bb194e9ba5e890147d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;contractTypeNames&gt;
-検索対象サービスのコントラクト名であるコントラクト型名のリストと、サービスを検索するときに一般的に使用される条件を指定する構成セクション。  複数のコントラクト名が指定されると、すべてのコントラクトに一致するサービス エンドポイントのみが適用されます。  [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] では、1 つのエンドポイントでサポートされるのは 1 つのコントラクトだけであることに注意してください。  
+# <a name="ltcontracttypenamesgt"></a><span data-ttu-id="269af-102">&lt;contractTypeNames&gt;</span><span class="sxs-lookup"><span data-stu-id="269af-102">&lt;contractTypeNames&gt;</span></span>
+<span data-ttu-id="269af-103">検索対象サービスのコントラクト名であるコントラクト型名のリストと、サービスを検索するときに一般的に使用される条件を指定する構成セクション。</span><span class="sxs-lookup"><span data-stu-id="269af-103">A configuration section that specifies a list of contract type names, which are the contract names of the services being searched for, and the criteria typically used when searching for a service.</span></span> <span data-ttu-id="269af-104">複数のコントラクト名が指定されると、すべてのコントラクトに一致するサービス エンドポイントのみが適用されます。</span><span class="sxs-lookup"><span data-stu-id="269af-104">If more than one contract name is specified, only service endpoints matching ALL contracts will reply.</span></span> <span data-ttu-id="269af-105">[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] では、1 つのエンドポイントでサポートされるのは 1 つのコントラクトだけであることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="269af-105">Note that in [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)], an endpoint can only support one contract.</span></span>  
   
-## 構文  
+ <span data-ttu-id="269af-106">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="269af-106">\<system.ServiceModel></span></span>  
+<span data-ttu-id="269af-107">\<standardEndpoints ></span><span class="sxs-lookup"><span data-stu-id="269af-107">\<standardEndpoints></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="269af-108">構文</span><span class="sxs-lookup"><span data-stu-id="269af-108">Syntax</span></span>  
   
+```xml  
 <system.serviceModel>  
-    <standardEndpoints>  
-       <dynamicEndpoint>   
-          <standardEndpoint>  
-             <discoveryClientSettings discoveryEndpoint=”String” >  
-               <findCriteria duration=”TimeSpan”  
-                  maxResults=”Integer”   
-                  scopeMatchBy=”Uri” >  
-                  <contractTypeNames>  
-                     <add name="String" namespace="String" />  
-                  <contractTypeNames>  
-                  <extensions />  
-                  <scopes>  
-                    <add scope="URI"/>  
-                  </scopes>  
-               </findCriteria>  
-             </discoveryClientSettings>  
-          <standardEndpoint>  
-       </dynamicEndpoint>          
-    </standardEndpoints>  
+  <standardEndpoints>
+    <dynamicEndpoint>
+      <standardEndpoint>
+        <discoveryClientSettings discoveryEndpoint="String">
+          <findCriteria duration="TimeSpan" 
+                        maxResults="Integer" 
+                        scopeMatchBy="Uri">
+            <contractTypeNames>
+              <add name="String" namespace="String" />
+            <contractTypeNames>
+            <extensions />
+            <scopes>
+              <add scope="URI"/>
+            </scopes>
+          </findCriteria>
+        </discoveryClientSettings>
+      <standardEndpoint>
+    </dynamicEndpoint>
+  </standardEndpoints>  
 </system.serviceModel>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="269af-109">属性および要素</span><span class="sxs-lookup"><span data-stu-id="269af-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="269af-110">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="269af-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
- なし。  
+### <a name="attributes"></a><span data-ttu-id="269af-111">属性</span><span class="sxs-lookup"><span data-stu-id="269af-111">Attributes</span></span>  
+ <span data-ttu-id="269af-112">なし。</span><span class="sxs-lookup"><span data-stu-id="269af-112">None.</span></span>  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="269af-113">子要素</span><span class="sxs-lookup"><span data-stu-id="269af-113">Child Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<add\>](../../../../../docs/framework/configure-apps/file-schema/wcf/contracttypenames.md)|コントラクト型名は、サービスを検索するときに一般的に使用される条件セットを参照するプロパティです。|  
+|<span data-ttu-id="269af-114">要素</span><span class="sxs-lookup"><span data-stu-id="269af-114">Element</span></span>|<span data-ttu-id="269af-115">説明</span><span class="sxs-lookup"><span data-stu-id="269af-115">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="269af-116">\<add></span><span class="sxs-lookup"><span data-stu-id="269af-116">\<add></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/contracttypenames.md)|<span data-ttu-id="269af-117">コントラクト型名は、サービスを検索するときに一般的に使用される条件セットを参照するプロパティです。</span><span class="sxs-lookup"><span data-stu-id="269af-117">A contract type name is a property that refers to the set of criteria typically used when searching for a service.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="269af-118">親要素</span><span class="sxs-lookup"><span data-stu-id="269af-118">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<findCriteria\>](../../../../../docs/framework/configure-apps/file-schema/wcf/findcriteria.md)|探索サービスの検索にクライアント アプリケーションによって使用される基準を提供する構成要素。  基準は、\(探しているサービスを指定する\) 検索条件と \(検索をどのくらい続けるかを指定する\) 検索終了条件にグループ化できます。|  
+|<span data-ttu-id="269af-119">要素</span><span class="sxs-lookup"><span data-stu-id="269af-119">Element</span></span>|<span data-ttu-id="269af-120">説明</span><span class="sxs-lookup"><span data-stu-id="269af-120">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="269af-121">\<findCriteria ></span><span class="sxs-lookup"><span data-stu-id="269af-121">\<findCriteria></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/findcriteria.md)|<span data-ttu-id="269af-122">探索サービスの検索にクライアント アプリケーションによって使用される基準を提供する構成要素。</span><span class="sxs-lookup"><span data-stu-id="269af-122">A configuration element that supplies a set of criteria used by a client application to search for a discovery service.</span></span> <span data-ttu-id="269af-123">条件は、(探しているサービスの種類を指定する) 検索条件にグループ化できるし、検索終了条件 (期間、検索する必要があります)。</span><span class="sxs-lookup"><span data-stu-id="269af-123">Criteria can be grouped into search criteria (specifying what services you’re looking for) and find termination criteria (how long the search should last).</span></span>|  
   
-## 参照  
- <xref:System.ServiceModel.Discovery.FindCriteria>   
- <xref:System.ServiceModel.Discovery.Configuration.FindCriteriaElement>   
+## <a name="see-also"></a><span data-ttu-id="269af-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="269af-124">See Also</span></span>  
+ <xref:System.ServiceModel.Discovery.FindCriteria>  
+ <xref:System.ServiceModel.Discovery.Configuration.FindCriteriaElement>  
  <xref:System.ServiceModel.Discovery.Configuration.ContractTypeNameElementCollection>

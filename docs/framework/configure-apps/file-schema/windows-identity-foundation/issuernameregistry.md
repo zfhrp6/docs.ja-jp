@@ -1,82 +1,91 @@
 ---
-title: "&lt;issuerNameRegistry&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;issuerNameRegistry&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 58b39d12-c953-40c4-88af-d7eb3343ca28
-caps.latest.revision: 13
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 12
+caps.latest.revision: "13"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 0c0552e06564e09832cf78afeb8f183a0a0dc94c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;issuerNameRegistry&gt;
-ハンドラーで、トークン ハンドラー コレクションで使用される発行者名レジストリを構成します。  
+# <a name="ltissuernameregistrygt"></a><span data-ttu-id="af1fb-102">&lt;issuerNameRegistry&gt;</span><span class="sxs-lookup"><span data-stu-id="af1fb-102">&lt;issuerNameRegistry&gt;</span></span>
+<span data-ttu-id="af1fb-103">トークン ハンドラーはコレクション内のハンドラーによって使用される発行者名レジストリを構成します。</span><span class="sxs-lookup"><span data-stu-id="af1fb-103">Configures the issuer name registry that is used by handlers in the token handler collection.</span></span>  
   
-## 構文  
+ <span data-ttu-id="af1fb-104">\<system.identityModel ></span><span class="sxs-lookup"><span data-stu-id="af1fb-104">\<system.identityModel></span></span>  
+<span data-ttu-id="af1fb-105">\<identityConfiguration ></span><span class="sxs-lookup"><span data-stu-id="af1fb-105">\<identityConfiguration></span></span>  
+<span data-ttu-id="af1fb-106">\<securityTokenHandlers ></span><span class="sxs-lookup"><span data-stu-id="af1fb-106">\<securityTokenHandlers></span></span>  
+<span data-ttu-id="af1fb-107">\<securityTokenHandlerConfiguration ></span><span class="sxs-lookup"><span data-stu-id="af1fb-107">\<securityTokenHandlerConfiguration></span></span>  
+<span data-ttu-id="af1fb-108">\<issuerNameRegistry ></span><span class="sxs-lookup"><span data-stu-id="af1fb-108">\<issuerNameRegistry></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="af1fb-109">構文</span><span class="sxs-lookup"><span data-stu-id="af1fb-109">Syntax</span></span>  
+  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <securityTokenHandlers>  
-      <securityTokenHandlerConfiguration>  
-        <issuerNameRegistry type=xs:string>  
-          <optionalCustomConfigurationElements />  
-        </issuerNameRegistry>  
-      </securityTokenHandlerConfiguration>  
-    </securityTokenHandlers>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <securityTokenHandlers>  
+      <securityTokenHandlerConfiguration>  
+        <issuerNameRegistry type=xs:string>  
+          <optionalCustomConfigurationElements />  
+        </issuerNameRegistry>  
+      </securityTokenHandlerConfiguration>  
+    </securityTokenHandlers>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="af1fb-110">属性および要素</span><span class="sxs-lookup"><span data-stu-id="af1fb-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="af1fb-111">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="af1fb-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="af1fb-112">属性</span><span class="sxs-lookup"><span data-stu-id="af1fb-112">Attributes</span></span>  
   
-|属性|Description|  
-|--------|-----------------|  
-|type|派生した型は<xref:System.IdentityModel.Tokens.IssuerNameRegistry>クラス。  ユーザー設定を指定する方法の詳細については`type`を参照してください[Custom Type References](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md#BKMK_CustomTypeReferences)。|  
+|<span data-ttu-id="af1fb-113">属性</span><span class="sxs-lookup"><span data-stu-id="af1fb-113">Attribute</span></span>|<span data-ttu-id="af1fb-114">説明</span><span class="sxs-lookup"><span data-stu-id="af1fb-114">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="af1fb-115">型</span><span class="sxs-lookup"><span data-stu-id="af1fb-115">type</span></span>|<span data-ttu-id="af1fb-116">派生する型、<xref:System.IdentityModel.Tokens.IssuerNameRegistry>クラスです。</span><span class="sxs-lookup"><span data-stu-id="af1fb-116">A type that derives from the <xref:System.IdentityModel.Tokens.IssuerNameRegistry> class.</span></span> <span data-ttu-id="af1fb-117">詳細については、ユーザー設定を指定する方法についての`type`、[カスタム型の参照] を参照してください。</span><span class="sxs-lookup"><span data-stu-id="af1fb-117">For more information about how to specify a custom `type`, see [Custom Type References].</span></span>|  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="af1fb-118">子要素</span><span class="sxs-lookup"><span data-stu-id="af1fb-118">Child Elements</span></span>  
   
-|要素|Description|  
-|--------|-----------------|  
-|[\<trustedIssuers\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md)|`type`属性には、構成ベースの発行者名レジストリを指定します \(、 <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>クラス\) は、 [\<trustedIssuers\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md)要素を指定する必要があります。  [\<trustedIssuers\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md)要素を取ることができます`<add>`、 `<clear>`、または`<remove>`要素の子要素として。|  
+|<span data-ttu-id="af1fb-119">要素</span><span class="sxs-lookup"><span data-stu-id="af1fb-119">Element</span></span>|<span data-ttu-id="af1fb-120">説明</span><span class="sxs-lookup"><span data-stu-id="af1fb-120">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="af1fb-121">\<trustedIssuers ></span><span class="sxs-lookup"><span data-stu-id="af1fb-121">\<trustedIssuers></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md)|<span data-ttu-id="af1fb-122">ときに、`type`属性構成ベースの発行者名レジストリの指定 (、<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>クラス) では、 [ \<trustedIssuers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md)要素を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="af1fb-122">When the `type` attribute specifies the configuration-based issuer name registry (the <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> class), the [\<trustedIssuers>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md) element must be specified.</span></span> <span data-ttu-id="af1fb-123">[ \<TrustedIssuers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md)要素がかかることが`<add>`、 `<clear>`、または`<remove>`子要素としての要素。</span><span class="sxs-lookup"><span data-stu-id="af1fb-123">The [\<trustedIssuers>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md) element can take `<add>`, `<clear>`, or `<remove>` elements as child elements.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="af1fb-124">親要素</span><span class="sxs-lookup"><span data-stu-id="af1fb-124">Parent Elements</span></span>  
   
-|要素|Description|  
-|--------|-----------------|  
-|[\<securityTokenHandlerConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|構成コレクションのセキュリティ トークン ハンドラーを提供します。|  
+|<span data-ttu-id="af1fb-125">要素</span><span class="sxs-lookup"><span data-stu-id="af1fb-125">Element</span></span>|<span data-ttu-id="af1fb-126">説明</span><span class="sxs-lookup"><span data-stu-id="af1fb-126">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="af1fb-127">\<securityTokenHandlerConfiguration ></span><span class="sxs-lookup"><span data-stu-id="af1fb-127">\<securityTokenHandlerConfiguration></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|<span data-ttu-id="af1fb-128">トークン ハンドラーのセキュリティのコレクションの構成を提供します。</span><span class="sxs-lookup"><span data-stu-id="af1fb-128">Provides configuration for a collection of security token handlers.</span></span>|  
   
-## 解説  
- すべてのトークンの発行者、発行者名レジストリを使用して検証されます。  これからの派生オブジェクトです、 <xref:System.IdentityModel.Tokens.IssuerNameRegistry>クラス。  発行者名レジストリ ニーモニックの名前に対応する発行者によって作成されたトークンの署名を確認するために必要な暗号化の材料を関連付けるために使用されます。  発行者名レジストリ依存元のパーティ \(RP\) アプリケーションによって信頼されている発行者の一覧を維持します。  発行者名レジストリの種類を使用して指定される、 `type`属性。  `<issuerNameRegistry>`要素は、指定した型の構成を提供する 1 つまたは複数の子要素を持つことができます。  オーバーライドして子要素を処理するロジックを提供、 <xref:System.IdentityModel.Tokens.IssuerNameRegistry.LoadCustomConfiguration%2A>メソッド。  
+## <a name="remarks"></a><span data-ttu-id="af1fb-129">コメント</span><span class="sxs-lookup"><span data-stu-id="af1fb-129">Remarks</span></span>  
+ <span data-ttu-id="af1fb-130">すべての発行者トークンは、発行者名レジストリを使用して検証されます。</span><span class="sxs-lookup"><span data-stu-id="af1fb-130">All issuer tokens are validated using an issuer name registry.</span></span> <span data-ttu-id="af1fb-131">これはから派生するオブジェクト、<xref:System.IdentityModel.Tokens.IssuerNameRegistry>クラスです。</span><span class="sxs-lookup"><span data-stu-id="af1fb-131">This is an object that derives from the <xref:System.IdentityModel.Tokens.IssuerNameRegistry> class.</span></span> <span data-ttu-id="af1fb-132">発行者名レジストリを使用して、対応する発行元によって生成されるトークンの署名を確認するために必要な暗号化マテリアルをニーモニック名を関連付けます。</span><span class="sxs-lookup"><span data-stu-id="af1fb-132">The issuer name registry is used to associate a mnemonic name to the cryptographic material that is needed to verify the signatures of tokens produced by the corresponding issuer.</span></span> <span data-ttu-id="af1fb-133">発行者名レジストリでは、証明書利用者 (rp) アプリケーションで信頼される発行者の一覧を管理します。</span><span class="sxs-lookup"><span data-stu-id="af1fb-133">The issuer name registry maintains a list of issuers that are trusted by the relying party (RP) application.</span></span> <span data-ttu-id="af1fb-134">使用して、発行者名レジストリの型を指定、`type`属性。</span><span class="sxs-lookup"><span data-stu-id="af1fb-134">The type of the issuer name registry is specified using the `type` attribute.</span></span> <span data-ttu-id="af1fb-135">`<issuerNameRegistry>`要素は、指定した種類の構成を提供する 1 つまたは複数の子要素を持つことができます。</span><span class="sxs-lookup"><span data-stu-id="af1fb-135">The `<issuerNameRegistry>` element can have one or more child elements that provide configuration for the specified type.</span></span> <span data-ttu-id="af1fb-136">オーバーライドすることでこれらの子要素を処理するロジックを提供する、<xref:System.IdentityModel.Tokens.IssuerNameRegistry.LoadCustomConfiguration%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="af1fb-136">You provide the logic that processes these child elements by overriding the <xref:System.IdentityModel.Tokens.IssuerNameRegistry.LoadCustomConfiguration%2A> method.</span></span>  
   
- 名前レジストリの種類、ボックスの外の提供、シングル ・発行者をたんだぜ、 <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>クラス。  このクラスは、一連の構成で指定されている信頼された発行者の証明書を使用します。  これは、子の構成要素、する必要があります`<trustedIssuers>`、\[信頼できる発行元の証明書のコレクションを設定されている場合します。  証明書を指定する、ASN.1 を使用してエンコードされた形式の証明書の拇印と追加またはを使用して、コレクションからの削除を信頼`<add>`、 `<clear>`、または`<remove>`の要素。  
+ <span data-ttu-id="af1fb-137">WIF では、単一の発行者名レジストリの型を既定で、<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>クラスです。</span><span class="sxs-lookup"><span data-stu-id="af1fb-137">WIF provides a single issuer name registry type out of the box, the <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> class.</span></span> <span data-ttu-id="af1fb-138">このクラスは、一連の構成で指定されている信頼された発行者の証明書を使用します。</span><span class="sxs-lookup"><span data-stu-id="af1fb-138">This class uses a set of trusted issuer certificates that are specified in configuration.</span></span> <span data-ttu-id="af1fb-139">構成の子要素では、必要な`<trustedIssuers>`、信頼された発行者の証明書のコレクションが構成されています。</span><span class="sxs-lookup"><span data-stu-id="af1fb-139">It requires a child configuration element, `<trustedIssuers>`, under which the collection of trusted issuer certificates is configured.</span></span> <span data-ttu-id="af1fb-140">信頼された証明書が、ASN.1 を使用してエンコードされた証明書の拇印の形式とが追加または削除をコレクションからを使用して指定`<add>`、 `<clear>`、または`<remove>`要素。</span><span class="sxs-lookup"><span data-stu-id="af1fb-140">Trusted certificates are specified using the ASN.1 encoded form of the certificate thumbprint and are added or removed from the collection by using `<add>`, `<clear>`, or `<remove>` elements.</span></span>  
   
- `<issuerNameRegistry>`要素で表される、 <xref:System.IdentityModel.Configuration.IssuerNameRegistryElement>クラス。  
+ <span data-ttu-id="af1fb-141">`<issuerNameRegistry>`要素として表されます、<xref:System.IdentityModel.Configuration.IssuerNameRegistryElement>クラスです。</span><span class="sxs-lookup"><span data-stu-id="af1fb-141">The `<issuerNameRegistry>` element is represented by the <xref:System.IdentityModel.Configuration.IssuerNameRegistryElement> class.</span></span>  
   
 > [!NOTE]
->  指定する、 `<issuerNameRegistry>`要素の子要素として、 [\<identityConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)要素は推奨されていませんが、旧バージョンとの互換性のためのサポートもします。  設定で、 `<securityTokenHandlerConfiguration>`要素無効もに、 `<identityConfiguration>`要素。  
+>  <span data-ttu-id="af1fb-142">指定する、`<issuerNameRegistry>`要素の子要素として、 [ \<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)要素は推奨されていませんもは旧バージョンとの互換性のため、引き続きサポートします。</span><span class="sxs-lookup"><span data-stu-id="af1fb-142">Specifying the `<issuerNameRegistry>` element as a child element of the [\<identityConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) element has been deprecated, but is still supported for backward compatibility.</span></span> <span data-ttu-id="af1fb-143">上の設定、`<securityTokenHandlerConfiguration>`要素をオーバーライドで、`<identityConfiguration>`要素。</span><span class="sxs-lookup"><span data-stu-id="af1fb-143">Settings on the `<securityTokenHandlerConfiguration>` element override those on the `<identityConfiguration>` element.</span></span>  
   
-## 使用例  
- 次の XML 名のレジストリをベースの構成の発行者を指定する方法を示します。  
+## <a name="example"></a><span data-ttu-id="af1fb-144">例</span><span class="sxs-lookup"><span data-stu-id="af1fb-144">Example</span></span>  
+ <span data-ttu-id="af1fb-145">次の XML では、名前のレジストリをベースの構成の発行者を指定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="af1fb-145">The following XML shows how to specify the configuration based issuer name registry.</span></span>  
   
-```  
+```xml  
 <issuerNameRegistry type="System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">  
   <trustedIssuers>  
     <add thumbprint="9B74CB … 1EF40D0" name="LocalSTS" />  
   </trustedIssuers>  
 </issuerNameRegistry>  
-  
 ```  
   
-## 参照  
- <xref:System.IdentityModel.Tokens.IssuerNameRegistry>   
+## <a name="see-also"></a><span data-ttu-id="af1fb-146">関連項目</span><span class="sxs-lookup"><span data-stu-id="af1fb-146">See Also</span></span>  
+ <xref:System.IdentityModel.Tokens.IssuerNameRegistry>  
  <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>

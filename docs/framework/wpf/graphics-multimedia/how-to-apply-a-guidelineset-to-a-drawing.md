@@ -1,40 +1,43 @@
 ---
-title: "方法 : 描画に GuidelineSet を適用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "グラフィックス [WPF], GuidelineSet プロパティ"
-  - "GuidelineSet プロパティ, 適用 (描画に)"
+title: "方法 : 描画に GuidelineSet を適用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- GuidelineSet property [WPF], applying to drawings
+- graphics [WPF], GuidelineSet property
 ms.assetid: 45f3e0b4-8820-45a7-b865-b8ea5b17b0c8
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: dd8d93d128c03cb9ee482860603e5734e96c6fc2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 描画に GuidelineSet を適用する
-この例では、<xref:System.Windows.Media.GuidelineSet> を <xref:System.Windows.Media.DrawingGroup> に適用する方法を示します。  
+# <a name="how-to-apply-a-guidelineset-to-a-drawing"></a><span data-ttu-id="c3ef4-102">方法 : 描画に GuidelineSet を適用する</span><span class="sxs-lookup"><span data-stu-id="c3ef4-102">How to: Apply a GuidelineSet to a Drawing</span></span>
+<span data-ttu-id="c3ef4-103">この例では、適用、<xref:System.Windows.Media.GuidelineSet>を<xref:System.Windows.Media.DrawingGroup>です。</span><span class="sxs-lookup"><span data-stu-id="c3ef4-103">This example shows how to apply a <xref:System.Windows.Media.GuidelineSet> to a <xref:System.Windows.Media.DrawingGroup>.</span></span>  
   
- <xref:System.Windows.Media.DrawingGroup> クラスは、<xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A> プロパティを持つ <xref:System.Windows.Media.Drawing> の唯一の型です。  <xref:System.Windows.Media.GuidelineSet> を <xref:System.Windows.Media.Drawing> の別の型に適用するには、その型を <xref:System.Windows.Media.DrawingGroup> に追加した後、<xref:System.Windows.Media.GuidelineSet> を <xref:System.Windows.Media.DrawingGroup> に適用します。  
+ <span data-ttu-id="c3ef4-104"><xref:System.Windows.Media.DrawingGroup>クラスは、タイプののみ<xref:System.Windows.Media.Drawing>を持つ、<xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="c3ef4-104">The <xref:System.Windows.Media.DrawingGroup> class is the only type of <xref:System.Windows.Media.Drawing> that has a <xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A> property.</span></span> <span data-ttu-id="c3ef4-105">適用する、<xref:System.Windows.Media.GuidelineSet>の別の型に<xref:System.Windows.Media.Drawing>に追加、<xref:System.Windows.Media.DrawingGroup>適用し、<xref:System.Windows.Media.GuidelineSet>を<xref:System.Windows.Media.DrawingGroup>です。</span><span class="sxs-lookup"><span data-stu-id="c3ef4-105">To apply a <xref:System.Windows.Media.GuidelineSet> to another type of <xref:System.Windows.Media.Drawing>, add it to a <xref:System.Windows.Media.DrawingGroup> and then apply the <xref:System.Windows.Media.GuidelineSet> to your <xref:System.Windows.Media.DrawingGroup>.</span></span>  
   
-## 使用例  
- 次の例では、<xref:System.Windows.Media.DrawingGroup> オブジェクトを 2 つ作成します。両者はほとんど同じですが、唯一異なっているのは、2 番目の <xref:System.Windows.Media.DrawingGroup> が <xref:System.Windows.Media.GuidelineSet> を持っているのに対し、1 番目は持っていないことです。  
+## <a name="example"></a><span data-ttu-id="c3ef4-106">例</span><span class="sxs-lookup"><span data-stu-id="c3ef4-106">Example</span></span>  
+ <span data-ttu-id="c3ef4-107">次の例では、2 つ作成されます<xref:System.Windows.Media.DrawingGroup>とほぼ同じです。 唯一の違いがあるオブジェクト: 2 つ目<xref:System.Windows.Media.DrawingGroup>が、<xref:System.Windows.Media.GuidelineSet>最初がないとします。</span><span class="sxs-lookup"><span data-stu-id="c3ef4-107">The following example creates two <xref:System.Windows.Media.DrawingGroup> objects that are almost identical; the only difference is: the second <xref:System.Windows.Media.DrawingGroup> has a <xref:System.Windows.Media.GuidelineSet> and the first does not.</span></span>  
   
- この例からの出力を次の図に示します。  2 つの <xref:System.Windows.Media.DrawingGroup> オブジェクトのレンダリングの違いはごくわずかなので、描画の一部を拡大してあります。  
+ <span data-ttu-id="c3ef4-108">この例からの出力を次の図に示します。</span><span class="sxs-lookup"><span data-stu-id="c3ef4-108">The following illustration shows the output from the example.</span></span> <span data-ttu-id="c3ef4-109">違いは、2 つの表示のため<xref:System.Windows.Media.DrawingGroup>オブジェクトはあまり軽度でないの図面の特定の部分は拡大されます。</span><span class="sxs-lookup"><span data-stu-id="c3ef4-109">Because the rendering difference between the two <xref:System.Windows.Media.DrawingGroup> objects is so subtle, portions of the drawings are enlarged.</span></span>  
   
- ![GuidelineSet がある &#40;またはない&#41; DrawingGroup](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-drawinggroup-guidelineset.png "graphicsmm\_drawinggroup\_guidelineset")  
+ <span data-ttu-id="c3ef4-110">![GuidelineSet が有効/無効な DrawingGroup](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-drawinggroup-guidelineset.png "graphicsmm_drawinggroup_guidelineset")</span><span class="sxs-lookup"><span data-stu-id="c3ef4-110">![A DrawingGroup with and without a GuidelineSet](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-drawinggroup-guidelineset.png "graphicsmm_drawinggroup_guidelineset")</span></span>  
   
  [!code-csharp[DrawingMiscSnippets_snip#GraphicsMMDrawingGroupGuidelineSetExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/DrawingGroupGuidelineSetExample.cs#graphicsmmdrawinggroupguidelinesetexamplewholepage)]
- [!code-xml[DrawingMiscSnippets_snip#GraphicsMMDrawingGroupGuidelineSetExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/DrawingGroupGuidelineSetExample.xaml#graphicsmmdrawinggroupguidelinesetexamplewholepage)]  
+ [!code-xaml[DrawingMiscSnippets_snip#GraphicsMMDrawingGroupGuidelineSetExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/DrawingGroupGuidelineSetExample.xaml#graphicsmmdrawinggroupguidelinesetexamplewholepage)]  
   
-## 参照  
- <xref:System.Windows.Media.DrawingGroup>   
- <xref:System.Windows.Media.GuidelineSet>   
- [Drawing オブジェクトの概要](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)
+## <a name="see-also"></a><span data-ttu-id="c3ef4-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="c3ef4-111">See Also</span></span>  
+ <xref:System.Windows.Media.DrawingGroup>  
+ <xref:System.Windows.Media.GuidelineSet>  
+ [<span data-ttu-id="c3ef4-112">Drawing オブジェクトの概要</span><span class="sxs-lookup"><span data-stu-id="c3ef4-112">Drawing Objects Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)

@@ -1,70 +1,71 @@
 ---
-title: "Windows フォームの MenuStrip コントロールへのメニュー項目のマージ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "MenuStrip, マージ"
-  - "マージ, 一般的な概念"
+title: "Windows フォームの MenuStrip コントロールへのメニュー項目のマージ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- MenuStrip [Windows Forms], merging
+- merging [Windows Forms], general concepts
 ms.assetid: 95e113ba-f362-4dda-8a76-6d95ddc45cee
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c8e042b3f7b0a2a2e40b8fba33fca6c147086df6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォームの MenuStrip コントロールへのメニュー項目のマージ
-マルチ ドキュメント インターフェイス \(MDI: Multiple Document Interface\) アプリケーションがある場合、子フォームのメニュー項目またはメニュー全体を親フォームのメニューにマージできます。  
+# <a name="merging-menu-items-in-the-windows-forms-menustrip-control"></a><span data-ttu-id="9dfe5-102">Windows フォームの MenuStrip コントロールへのメニュー項目のマージ</span><span class="sxs-lookup"><span data-stu-id="9dfe5-102">Merging Menu Items in the Windows Forms MenuStrip Control</span></span>
+<span data-ttu-id="9dfe5-103">マルチ ドキュメント インターフェイス (MDI) アプリケーションがある場合は、親フォームのメニューにメニュー項目や子フォーム全体のメニューをマージできます。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-103">If you have a multiple-document interface (MDI) application, you can merge menu items or whole menus from the child form into the menus of the parent form.</span></span>  
   
- このトピックでは、MDI アプリケーションでメニュー項目のマージに関連する基本概念について説明します。  
+ <span data-ttu-id="9dfe5-104">このトピックでは、MDI アプリケーションでメニュー項目のマージに関連付けられている基本的な概念について説明します。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-104">This topic describes the basic concepts associated with merging menu items in an MDI application.</span></span>  
   
-## 一般的な概念  
- マージ手順には、ターゲット コントロールとソース コントロールが関係します。  
+## <a name="general-concepts"></a><span data-ttu-id="9dfe5-105">一般的な概念</span><span class="sxs-lookup"><span data-stu-id="9dfe5-105">General Concepts</span></span>  
+ <span data-ttu-id="9dfe5-106">マージ手順には、ターゲットとソース管理の両方が含まれます。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-106">Merging procedures involve both a target and a source control:</span></span>  
   
--   ターゲットは、メニュー項目をマージするメイン フォームまたは MDI 親フォームの <xref:System.Windows.Forms.MenuStrip> コントロールです。  
+-   <span data-ttu-id="9dfe5-107">ターゲットが、<xref:System.Windows.Forms.MenuStrip>メニュー項目のマージをメインまたは MDI 親フォームのコントロールです。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-107">The target is the <xref:System.Windows.Forms.MenuStrip> control on the main or MDI parent form into which you are merging menu items.</span></span>  
   
--   ソースは、ターゲット メニューにマージするメニュー項目が含まれる MDI 子フォームの <xref:System.Windows.Forms.MenuStrip> コントロールです。  
+-   <span data-ttu-id="9dfe5-108">ソースは、<xref:System.Windows.Forms.MenuStrip>ターゲット メニューにマージするメニュー項目を含む MDI 子フォーム上のコントロールです。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-108">The source is the <xref:System.Windows.Forms.MenuStrip> control on the MDI child form that contains the menu items you want to merge into the target menu.</span></span>  
   
- <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> プロパティは、作成するドロップダウン リストのメニュー項目を、現在の MDI 親フォームに対する MDI 子フォームのタイトルを使用して識別します。  たとえば、**\[ウィンドウ\]** メニューで現在開いている MDI の子フォームを列挙します。  
+ <span data-ttu-id="9dfe5-109"><xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A>プロパティは、現在の MDI のタイトルが表示されます - ドロップダウン リストを持つ親フォームの MDI 子メニュー項目を識別します。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-109">The <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> property identifies the menu item whose drop-down list you will populate with the titles of the current MDI parent form's MDI children.</span></span> <span data-ttu-id="9dfe5-110">たとえば、通常を一覧表示する MDI 子フォームで現在開かれている、**ウィンドウ**メニュー。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-110">For example, you typically list MDI children that are currently open on the **Window** menu.</span></span>  
   
- <xref:System.Windows.Forms.ToolStripMenuItem.IsMdiWindowListEntry%2A> プロパティは、MDI 子フォームの <xref:System.Windows.Forms.MenuStrip> のどのメニュー項目を表示するかを指定します。  
+ <span data-ttu-id="9dfe5-111"><xref:System.Windows.Forms.ToolStripMenuItem.IsMdiWindowListEntry%2A>プロパティを識別するメニュー項目に由来する<xref:System.Windows.Forms.MenuStrip>MDI 子フォームでします。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-111">The <xref:System.Windows.Forms.ToolStripMenuItem.IsMdiWindowListEntry%2A> property identifies which menu items come from a <xref:System.Windows.Forms.MenuStrip> on an MDI child form.</span></span>  
   
- メニュー項目のマージは手動または自動で行うことができます。  どちらの方法でもメニュー項目は同様にマージされますが、マージをアクティブにする方法は異なります。詳細については、このトピックで後述する「手動マージ」と「自動マージ」を参照してください。  手動マージと自動マージのどちらでも、個々のマージ処理は次のマージ処理に影響します。  
+ <span data-ttu-id="9dfe5-112">メニュー項目は、手動または自動マージできます。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-112">You can merge menu items manually or automatically.</span></span> <span data-ttu-id="9dfe5-113">メニュー項目が、両方の方法に対して同じ方法でマージが、マージが「手動マージ」と「の自動マージ」セクションでは、このトピックの後半で説明したように、異なるアクティブ化します。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-113">The menu items merge in the same way for both methods, but the merge is activated differently, as discussed in the "Manual Merging" and "Automatic Merging" sections later in this topic.</span></span> <span data-ttu-id="9dfe5-114">手動および自動マージするには、各マージ アクションは、次のマージ処理の影響を与えます。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-114">In both manual and automatic merging, each merge action affects the next merge action.</span></span>  
   
- <xref:System.Windows.Forms.MenuStrip> のマージによって、ある <xref:System.Windows.Forms.ToolStrip> のメニュー項目を閉じずに他のメニュー項目に移動します。<xref:System.Windows.Forms.MainMenu> の場合と同様です。  
+ <span data-ttu-id="9dfe5-115"><xref:System.Windows.Forms.MenuStrip>1 つからメニュー項目を移動するマージ<xref:System.Windows.Forms.ToolStrip>を別の場合と同様に、それらを複製するのではなく<xref:System.Windows.Forms.MainMenu>です。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-115"><xref:System.Windows.Forms.MenuStrip> merging moves menu items from one <xref:System.Windows.Forms.ToolStrip> to another rather than cloning them, as was the case with <xref:System.Windows.Forms.MainMenu>.</span></span>  
   
-## MergeAction の値  
- <xref:System.Windows.Forms.MergeAction> プロパティを使用してソース <xref:System.Windows.Forms.MenuStrip> のメニュー項目にマージ処理を設定します。  
+## <a name="mergeaction-values"></a><span data-ttu-id="9dfe5-116">MergeAction 値</span><span class="sxs-lookup"><span data-stu-id="9dfe5-116">MergeAction Values</span></span>  
+ <span data-ttu-id="9dfe5-117">ソース内のメニュー項目にマージ アクションを設定する<xref:System.Windows.Forms.MenuStrip>を使用して、<xref:System.Windows.Forms.MergeAction>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-117">You set the merge action on menu items in the source <xref:System.Windows.Forms.MenuStrip> using the <xref:System.Windows.Forms.MergeAction> property.</span></span>  
   
- 次の表で、使用できるマージ処理の意味と一般的な使用法を説明します。  
+ <span data-ttu-id="9dfe5-118">次の表では、使用できるマージ処理の意味と一般的な使用について説明します。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-118">The following table describes the meaning and typical use of the available merge actions.</span></span>  
   
-|MergeAction の値|Description|一般的な用途|  
-|--------------------|-----------------|------------|  
-|<xref:System.Windows.Forms.MergeAction>|\(既定\) ターゲット項目のコレクションの末尾にソース項目を追加します。|プログラムの一部がアクティブな場合、メニューの末尾にメニュー項目を追加します。|  
-|<xref:System.Windows.Forms.MergeAction>|ターゲット項目のコレクションのうち、ソース項目に設定された <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> プロパティに相当する場所にソース項目を追加します。|プログラムの一部がアクティブな場合、メニューの中間または先頭にメニュー項目を追加します。<br /><br /> <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> 値がどちらのメニュー項目でも同じ場合、逆順で追加します。  元の順序を維持するには、<xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> を適切に設定します。|  
-|<xref:System.Windows.Forms.MergeAction>|一致するテキストを検索します。一致するテキストが見つからない場合は <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> 値を使用します。次に、この一致するターゲット メニュー項目をソース メニュー項目で置換します。|ターゲット メニュー項目を、名前は同じで何かが異なるソース メニュー項目で置換します。|  
-|<xref:System.Windows.Forms.MergeAction>|一致するテキストを検索します。一致するテキストが見つからない場合は <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> 値を使用します。次に、ソースのすべてのドロップダウン項目をターゲットに追加します。|メニュー項目をサブメニューに挿入または追加したり、メニュー項目をサブメニューから削除したりするメニュー構造を構築します。  たとえば、MDI 子フォームのメニュー項目をメインの <xref:System.Windows.Forms.MenuStrip> の **\[名前を付けて保存\]** メニューに追加できます。<br /><br /> <xref:System.Windows.Forms.MergeAction> を使用すると、処理を実行しなくてもメニュー構造内を検索できます。  これは、以降の項目を評価する 1 つの方法です。|  
-|<xref:System.Windows.Forms.MergeAction>|一致するテキストを検索します。一致するテキストが見つからない場合は <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> 値を使用します。次に、ターゲットから項目を削除します。|ターゲットの <xref:System.Windows.Forms.MenuStrip> からメニュー項目を削除します。|  
+|<span data-ttu-id="9dfe5-119">MergeAction 値</span><span class="sxs-lookup"><span data-stu-id="9dfe5-119">MergeAction Value</span></span>|<span data-ttu-id="9dfe5-120">説明</span><span class="sxs-lookup"><span data-stu-id="9dfe5-120">Description</span></span>|<span data-ttu-id="9dfe5-121">一般的な用途</span><span class="sxs-lookup"><span data-stu-id="9dfe5-121">Typical Use</span></span>|  
+|-----------------------|-----------------|-----------------|  
+|<xref:System.Windows.Forms.MergeAction.Append>|<span data-ttu-id="9dfe5-122">(既定値)ソース項目をターゲット項目のコレクションの末尾に追加します。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-122">(Default) Adds the source item to the end of the target item's collection.</span></span>|<span data-ttu-id="9dfe5-123">プログラムの一部がアクティブな場合、メニューの末尾にメニュー項目を追加します。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-123">Adding menu items to the end of the menu when some part of the program is activated.</span></span>|  
+|<xref:System.Windows.Forms.MergeAction.Insert>|<span data-ttu-id="9dfe5-124">指定された場所で、ターゲット項目のコレクションに元の項目を追加、<xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A>ソース項目のプロパティで設定します。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-124">Adds the source item to the target item's collection, in the location specified by the <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> property set on the source item.</span></span>|<span data-ttu-id="9dfe5-125">プログラムの一部がアクティブになったときに、中央またはメニューの先頭にメニュー項目を追加します。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-125">Adding menu items to the middle or the beginning of the menu when some part of the program is activated.</span></span><br /><br /> <span data-ttu-id="9dfe5-126">場合の値<xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A>は両方のメニュー項目を追加する逆の順序で。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-126">If the value of <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> is the same for both menu items, they are added in reverse order.</span></span> <span data-ttu-id="9dfe5-127">設定<xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A>適切に元の順序を保持します。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-127">Set <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> appropriately to preserve the original order.</span></span>|  
+|<xref:System.Windows.Forms.MergeAction.Replace>|<span data-ttu-id="9dfe5-128">一致するテキストを検索または使用して、<xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A>以外の場合、テキストの不一致が検出され、ソースのメニュー項目に一致する対象のメニュー項目を置換値します。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-128">Finds a text match, or uses the <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> value if no text match is found, and then replaces the matching target menu item with the source menu item.</span></span>|<span data-ttu-id="9dfe5-129">何か異なるものと同じ名前のソースのメニュー項目にターゲット メニュー項目を置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-129">Replacing a target menu item with a source menu item of the same name that does something different.</span></span>|  
+|<xref:System.Windows.Forms.MergeAction.MatchOnly>|<span data-ttu-id="9dfe5-130">一致するテキストを検索または使用して、<xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A>値の場合は、テキストの不一致が検出され、ソースからすべてのドロップダウン項目をターゲットに追加します。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-130">Finds a text match, or uses the <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> value if no text match is found, and then adds all the drop-down items from the source to the target.</span></span>|<span data-ttu-id="9dfe5-131">メニュー構造を構築を挿入します。 または、サブメニューにメニュー項目を追加またはサブメニューからメニュー項目を削除します。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-131">Building a menu structure that inserts or adds menu items into a submenu, or removes menu items from a submenu.</span></span> <span data-ttu-id="9dfe5-132">主に、MDI 子からメニュー項目を追加するなど、 <xref:System.Windows.Forms.MenuStrip>**名前を付けて保存**メニュー。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-132">For example, you can add a menu item from an MDI child to a main <xref:System.Windows.Forms.MenuStrip>**Save As** menu.</span></span><br /><br /> <span data-ttu-id="9dfe5-133"><xref:System.Windows.Forms.MergeAction.MatchOnly>使用すると、操作を行わずにメニュー構造をナビゲートできます。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-133"><xref:System.Windows.Forms.MergeAction.MatchOnly> allows you to navigate through the menu structure without taking any action.</span></span> <span data-ttu-id="9dfe5-134">それ以降の項目を評価する方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-134">It provides a way to evaluate the subsequent items.</span></span>|  
+|<xref:System.Windows.Forms.MergeAction.Remove>|<span data-ttu-id="9dfe5-135">一致するテキストを検索または使用して、<xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A>値の場合は、テキストの不一致が検出され、ターゲットから項目を削除します。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-135">Finds a text match, or uses the <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> value if no text match is found, and then removes the item from the target.</span></span>|<span data-ttu-id="9dfe5-136">ターゲットからメニュー項目を削除する<xref:System.Windows.Forms.MenuStrip>です。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-136">Removing a menu item from the target <xref:System.Windows.Forms.MenuStrip>.</span></span>|  
   
-## 手動マージ  
- <xref:System.Windows.Forms.MenuStrip> コントロールのみが自動マージに参加します。  <xref:System.Windows.Forms.ToolStrip> や <xref:System.Windows.Forms.StatusStrip> など、他のコントロールの項目を結合するには、必要に応じて <xref:System.Windows.Forms.ToolStripManager.Merge%2A> メソッドと <xref:System.Windows.Forms.ToolStripManager.RevertMerge%2A> メソッドをコードで呼び出して、手動でマージする必要があります。  
+## <a name="manual-merging"></a><span data-ttu-id="9dfe5-137">手動マージ</span><span class="sxs-lookup"><span data-stu-id="9dfe5-137">Manual Merging</span></span>  
+ <span data-ttu-id="9dfe5-138">のみ<xref:System.Windows.Forms.MenuStrip>のコントロールの自動マージに参加します。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-138">Only <xref:System.Windows.Forms.MenuStrip> controls participate in automatic merging.</span></span> <span data-ttu-id="9dfe5-139">など、他のコントロールの項目を結合する<xref:System.Windows.Forms.ToolStrip>と<xref:System.Windows.Forms.StatusStrip>コントロール、する必要があります手動でマージを呼び出すことによって、<xref:System.Windows.Forms.ToolStripManager.Merge%2A>と<xref:System.Windows.Forms.ToolStripManager.RevertMerge%2A>必要に応じて、コード内のメソッドです。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-139">To combine the items of other controls, such as <xref:System.Windows.Forms.ToolStrip> and <xref:System.Windows.Forms.StatusStrip> controls, you must merge them manually, by calling the <xref:System.Windows.Forms.ToolStripManager.Merge%2A> and <xref:System.Windows.Forms.ToolStripManager.RevertMerge%2A> methods in your code as required.</span></span>  
   
-## 自動マージ  
- ソース フォームをアクティブにすることで、MDI アプリケーションの自動マージを使用できます。  MDI アプリケーションの <xref:System.Windows.Forms.MenuStrip> を使用するには、<xref:System.Windows.Forms.Form.MainMenuStrip%2A> プロパティをターゲットの <xref:System.Windows.Forms.MenuStrip> に設定します。これは、ソースの <xref:System.Windows.Forms.MenuStrip> で実行するマージ処理が、ターゲットの <xref:System.Windows.Forms.MenuStrip> に反映されるようにするためです。  
+## <a name="automatic-merging"></a><span data-ttu-id="9dfe5-140">自動マージ</span><span class="sxs-lookup"><span data-stu-id="9dfe5-140">Automatic Merging</span></span>  
+ <span data-ttu-id="9dfe5-141">ソース フォームをアクティブ化して、MDI アプリケーションの自動マージを使用することができます。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-141">You can use automatic merging for MDI applications by activating the source form.</span></span> <span data-ttu-id="9dfe5-142">使用する、 <xref:System.Windows.Forms.MenuStrip> MDI アプリケーションでは、次のように設定します。、<xref:System.Windows.Forms.Form.MainMenuStrip%2A>プロパティをターゲットに<xref:System.Windows.Forms.MenuStrip>アクションの結合ソースで行うように<xref:System.Windows.Forms.MenuStrip>はターゲットに反映されます<xref:System.Windows.Forms.MenuStrip>です。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-142">To use a <xref:System.Windows.Forms.MenuStrip> in an MDI application, set the <xref:System.Windows.Forms.Form.MainMenuStrip%2A> property to the target <xref:System.Windows.Forms.MenuStrip> so that merging actions performed on the source <xref:System.Windows.Forms.MenuStrip> are reflected in the target <xref:System.Windows.Forms.MenuStrip>.</span></span>  
   
- MDI ソースで <xref:System.Windows.Forms.MenuStrip> をアクティブにすることで、自動マージをトリガーできます。  アクティブになると、ソース <xref:System.Windows.Forms.MenuStrip> は MDI のターゲットにマージされます。  新しいフォームがアクティブになると、前のフォームではマージが元の状態に戻り、新しいフォームでマージがトリガーされます。  この動作は、必要に応じて各 <xref:System.Windows.Forms.ToolStripItem> で <xref:System.Windows.Forms.ToolStripItem.MergeAction%2A> プロパティを設定する方法、および各 <xref:System.Windows.Forms.MenuStrip> で <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> プロパティを設定する方法で制御できます。  
+ <span data-ttu-id="9dfe5-143">アクティブ化して自動マージをトリガーすることができます、 <xref:System.Windows.Forms.MenuStrip> MDI ソースにします。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-143">You can trigger automatic merging by activating the <xref:System.Windows.Forms.MenuStrip> on the MDI source.</span></span> <span data-ttu-id="9dfe5-144">ソースの起動時に<xref:System.Windows.Forms.MenuStrip>MDI ターゲットにマージされます。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-144">Upon activation, the source <xref:System.Windows.Forms.MenuStrip> is merged into the MDI target.</span></span> <span data-ttu-id="9dfe5-145">新しいフォームがアクティブになったときに、マージで最後のフォームの元に戻す、新しいフォームに発生します。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-145">When a new form becomes active, the merge is reverted on the last form and triggered on the new form.</span></span> <span data-ttu-id="9dfe5-146">設定してこの動作を制御することができます、<xref:System.Windows.Forms.ToolStripItem.MergeAction%2A>プロパティごとに、必要に応じて<xref:System.Windows.Forms.ToolStripItem>を設定したり、<xref:System.Windows.Forms.ToolStrip.AllowMerge%2A>プロパティをそれぞれ<xref:System.Windows.Forms.MenuStrip>です。</span><span class="sxs-lookup"><span data-stu-id="9dfe5-146">You can control this behavior by setting the <xref:System.Windows.Forms.ToolStripItem.MergeAction%2A> property as needed on each <xref:System.Windows.Forms.ToolStripItem>, and by setting the <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> property on each <xref:System.Windows.Forms.MenuStrip>.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.ToolStripManager>   
- <xref:System.Windows.Forms.MenuStrip>   
- [MenuStrip コントロール](../../../../docs/framework/winforms/controls/menustrip-control-windows-forms.md)   
- [方法 : MenuStrip を使用して MDI ウィンドウの一覧を作成する](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-window-list-with-menustrip-windows-forms.md)   
- [方法 : MDI アプリケーションでメニューの自動マージを設定する](../../../../docs/framework/winforms/controls/how-to-set-up-automatic-menu-merging-for-mdi-applications.md)
+## <a name="see-also"></a><span data-ttu-id="9dfe5-147">関連項目</span><span class="sxs-lookup"><span data-stu-id="9dfe5-147">See Also</span></span>  
+ <xref:System.Windows.Forms.ToolStripManager>  
+ <xref:System.Windows.Forms.MenuStrip>  
+ [<span data-ttu-id="9dfe5-148">MenuStrip コントロール</span><span class="sxs-lookup"><span data-stu-id="9dfe5-148">MenuStrip Control</span></span>](../../../../docs/framework/winforms/controls/menustrip-control-windows-forms.md)  
+ [<span data-ttu-id="9dfe5-149">方法: MenuStrip を使用して MDI ウィンドウの一覧を作成する</span><span class="sxs-lookup"><span data-stu-id="9dfe5-149">How to: Create an MDI Window List with MenuStrip</span></span>](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-window-list-with-menustrip-windows-forms.md)  
+ [<span data-ttu-id="9dfe5-150">方法: MDI アプリケーションでメニューの自動マージを設定する</span><span class="sxs-lookup"><span data-stu-id="9dfe5-150">How to: Set Up Automatic Menu Merging for MDI Applications</span></span>](../../../../docs/framework/winforms/controls/how-to-set-up-automatic-menu-merging-for-mdi-applications.md)

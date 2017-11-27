@@ -1,25 +1,28 @@
 ---
-title: "HttpTransportBindingElement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: HttpTransportBindingElement
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 088a7bce-6bb2-4839-ad74-f68d4b1aa0f9
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6b1542406caf9bb3684ccf2d97ed441f1dc3d0db
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# HttpTransportBindingElement
-HttpTransportBindingElement  
+# <a name="httptransportbindingelement"></a><span data-ttu-id="1f7d8-102">HttpTransportBindingElement</span><span class="sxs-lookup"><span data-stu-id="1f7d8-102">HttpTransportBindingElement</span></span>
+<span data-ttu-id="1f7d8-103">HttpTransportBindingElement</span><span class="sxs-lookup"><span data-stu-id="1f7d8-103">HttpTransportBindingElement</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="1f7d8-104">構文</span><span class="sxs-lookup"><span data-stu-id="1f7d8-104">Syntax</span></span>  
   
 ```  
 class HttpTransportBindingElement : TransportBindingElement  
@@ -39,101 +42,101 @@ class HttpTransportBindingElement : TransportBindingElement
 };  
 ```  
   
-## メソッド  
- HttpTransportBindingElement クラスは、メソッドを一切定義しません。  
+## <a name="methods"></a><span data-ttu-id="1f7d8-105">メソッド</span><span class="sxs-lookup"><span data-stu-id="1f7d8-105">Methods</span></span>  
+ <span data-ttu-id="1f7d8-106">HttpTransportBindingElement クラスは、メソッドを一切定義しません。</span><span class="sxs-lookup"><span data-stu-id="1f7d8-106">The HttpTransportBindingElement class does not define any methods.</span></span>  
   
-## プロパティ  
- HttpTransportBindingElement クラスには、次のプロパティがあります。  
+## <a name="properties"></a><span data-ttu-id="1f7d8-107">プロパティ</span><span class="sxs-lookup"><span data-stu-id="1f7d8-107">Properties</span></span>  
+ <span data-ttu-id="1f7d8-108">HttpTransportBindingElement クラスには、次のプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="1f7d8-108">The HttpTransportBindingElement class has the following properties:</span></span>  
   
-### AllowCookies  
- データ型 : boolean  
+### <a name="allowcookies"></a><span data-ttu-id="1f7d8-109">AllowCookies</span><span class="sxs-lookup"><span data-stu-id="1f7d8-109">AllowCookies</span></span>  
+ <span data-ttu-id="1f7d8-110">データ型 : boolean</span><span class="sxs-lookup"><span data-stu-id="1f7d8-110">Data type: boolean</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="1f7d8-111">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="1f7d8-111">Access type: Read-only</span></span>  
   
- クライアントがクッキーを受け入れて、それらを今後の要求に反映させるかどうかを指定する値です。  
+ <span data-ttu-id="1f7d8-112">クライアントがクッキーを受け入れて、それらを今後の要求に反映させるかどうかを指定する値です。</span><span class="sxs-lookup"><span data-stu-id="1f7d8-112">A value that indicates whether the client accepts cookies and propagates them on future requests.</span></span>  
   
-### AuthenticationScheme  
- データ型 : string  
+### <a name="authenticationscheme"></a><span data-ttu-id="1f7d8-113">AuthenticationScheme</span><span class="sxs-lookup"><span data-stu-id="1f7d8-113">AuthenticationScheme</span></span>  
+ <span data-ttu-id="1f7d8-114">データ型: string</span><span class="sxs-lookup"><span data-stu-id="1f7d8-114">Data type: string</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="1f7d8-115">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="1f7d8-115">Access type: Read-only</span></span>  
   
- HTTP リスナーにより処理されているクライアント要求の認証に使用する認証方式です。  
+ <span data-ttu-id="1f7d8-116">HTTP リスナーにより処理されているクライアント要求の認証に使用する認証方式です。</span><span class="sxs-lookup"><span data-stu-id="1f7d8-116">The authentication scheme used to authenticate client requests being processed by an HTTP listener.</span></span>  
   
-### BypassProxyOnLocal  
- データ型 : boolean  
+### <a name="bypassproxyonlocal"></a><span data-ttu-id="1f7d8-117">BypassProxyOnLocal</span><span class="sxs-lookup"><span data-stu-id="1f7d8-117">BypassProxyOnLocal</span></span>  
+ <span data-ttu-id="1f7d8-118">データ型 : boolean</span><span class="sxs-lookup"><span data-stu-id="1f7d8-118">Data type: boolean</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="1f7d8-119">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="1f7d8-119">Access type: Read-only</span></span>  
   
- プロキシをローカル アドレスで無視するかどうかを示す値です。  
+ <span data-ttu-id="1f7d8-120">プロキシをローカル アドレスで無視するかどうかを示す値です。</span><span class="sxs-lookup"><span data-stu-id="1f7d8-120">A value that indicates whether proxies are ignored for local addresses.</span></span>  
   
-### HostNameComparisonMode  
- データ型 : string  
+### <a name="hostnamecomparisonmode"></a><span data-ttu-id="1f7d8-121">HostNameComparisonMode</span><span class="sxs-lookup"><span data-stu-id="1f7d8-121">HostNameComparisonMode</span></span>  
+ <span data-ttu-id="1f7d8-122">データ型: string</span><span class="sxs-lookup"><span data-stu-id="1f7d8-122">Data type: string</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="1f7d8-123">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="1f7d8-123">Access type: Read-only</span></span>  
   
- URI の照合時にサービスに到達するため、ホスト名が使用されたかどうかを示す値。  
+ <span data-ttu-id="1f7d8-124">URI の照合時にサービスに到達するため、ホスト名が使用されたかどうかを示す値。</span><span class="sxs-lookup"><span data-stu-id="1f7d8-124">A value that indicates whether the hostname is used to reach the service when matching on the URI.</span></span>  
   
-### KeepAliveEnabled  
- データ型 : boolean  
+### <a name="keepaliveenabled"></a><span data-ttu-id="1f7d8-125">KeepAliveEnabled</span><span class="sxs-lookup"><span data-stu-id="1f7d8-125">KeepAliveEnabled</span></span>  
+ <span data-ttu-id="1f7d8-126">データ型 : boolean</span><span class="sxs-lookup"><span data-stu-id="1f7d8-126">Data type: boolean</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="1f7d8-127">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="1f7d8-127">Access type: Read-only</span></span>  
   
- 有効な場合は、HTTP 接続がアクティビティ レベルとは無関係に維持されます。  
+ <span data-ttu-id="1f7d8-128">有効な場合は、HTTP 接続がアクティビティ レベルとは無関係に維持されます。</span><span class="sxs-lookup"><span data-stu-id="1f7d8-128">When enabled, HTTP connections are kept alive regardless of activity level.</span></span>  
   
-### MaxBufferSize  
- データ型 : sint32  
+### <a name="maxbuffersize"></a><span data-ttu-id="1f7d8-129">MaxBufferSize</span><span class="sxs-lookup"><span data-stu-id="1f7d8-129">MaxBufferSize</span></span>  
+ <span data-ttu-id="1f7d8-130">データ型 : sint32</span><span class="sxs-lookup"><span data-stu-id="1f7d8-130">Data type: sint32</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="1f7d8-131">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="1f7d8-131">Access type: Read-only</span></span>  
   
- バッファー プールの最大サイズ。  
+ <span data-ttu-id="1f7d8-132">バッファー プールの最大サイズ。</span><span class="sxs-lookup"><span data-stu-id="1f7d8-132">The maximum size of the buffer pool.</span></span>  
   
-### ProxyAddress  
- データ型 : string  
+### <a name="proxyaddress"></a><span data-ttu-id="1f7d8-133">ProxyAddress</span><span class="sxs-lookup"><span data-stu-id="1f7d8-133">ProxyAddress</span></span>  
+ <span data-ttu-id="1f7d8-134">データ型: string</span><span class="sxs-lookup"><span data-stu-id="1f7d8-134">Data type: string</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="1f7d8-135">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="1f7d8-135">Access type: Read-only</span></span>  
   
- HTTP 要求に使用するプロキシのアドレスを格納する URI です。  
+ <span data-ttu-id="1f7d8-136">HTTP 要求に使用するプロキシのアドレスを格納する URI です。</span><span class="sxs-lookup"><span data-stu-id="1f7d8-136">A URI that contains the address of the proxy to use for HTTP requests.</span></span>  
   
-### ProxyAuthenticationScheme  
- データ型 : string  
+### <a name="proxyauthenticationscheme"></a><span data-ttu-id="1f7d8-137">ProxyAuthenticationScheme</span><span class="sxs-lookup"><span data-stu-id="1f7d8-137">ProxyAuthenticationScheme</span></span>  
+ <span data-ttu-id="1f7d8-138">データ型: string</span><span class="sxs-lookup"><span data-stu-id="1f7d8-138">Data type: string</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="1f7d8-139">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="1f7d8-139">Access type: Read-only</span></span>  
   
- HTTP プロキシにより処理されているクライアント要求の認証に使用する認証方式です。  
+ <span data-ttu-id="1f7d8-140">HTTP プロキシにより処理されているクライアント要求の認証に使用する認証方式です。</span><span class="sxs-lookup"><span data-stu-id="1f7d8-140">The authentication scheme used to authenticate client requests being processed by an HTTP proxy.</span></span>  
   
-### Realm  
- データ型 : string  
+### <a name="realm"></a><span data-ttu-id="1f7d8-141">Realm</span><span class="sxs-lookup"><span data-stu-id="1f7d8-141">Realm</span></span>  
+ <span data-ttu-id="1f7d8-142">データ型: string</span><span class="sxs-lookup"><span data-stu-id="1f7d8-142">Data type: string</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="1f7d8-143">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="1f7d8-143">Access type: Read-only</span></span>  
   
- 認証レルム。  
+ <span data-ttu-id="1f7d8-144">認証領域。</span><span class="sxs-lookup"><span data-stu-id="1f7d8-144">The authentication realm.</span></span>  
   
-### TransferMode  
- データ型 : string  
+### <a name="transfermode"></a><span data-ttu-id="1f7d8-145">TransferMode</span><span class="sxs-lookup"><span data-stu-id="1f7d8-145">TransferMode</span></span>  
+ <span data-ttu-id="1f7d8-146">データ型: string</span><span class="sxs-lookup"><span data-stu-id="1f7d8-146">Data type: string</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="1f7d8-147">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="1f7d8-147">Access type: Read-only</span></span>  
   
- メッセージが要求や応答をバッファーするか、ストリーミングするかを指定する値です。  
+ <span data-ttu-id="1f7d8-148">メッセージが要求や応答をバッファーするか、ストリーミングするかを指定する値です。</span><span class="sxs-lookup"><span data-stu-id="1f7d8-148">A value that specifies whether messages are buffered or streamed or a request or response.</span></span>  
   
-### UnsafeConnectionNtlmAuthentication  
- データ型 : boolean  
+### <a name="unsafeconnectionntlmauthentication"></a><span data-ttu-id="1f7d8-149">UnsafeConnectionNtlmAuthentication</span><span class="sxs-lookup"><span data-stu-id="1f7d8-149">UnsafeConnectionNtlmAuthentication</span></span>  
+ <span data-ttu-id="1f7d8-150">データ型 : boolean</span><span class="sxs-lookup"><span data-stu-id="1f7d8-150">Data type: boolean</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="1f7d8-151">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="1f7d8-151">Access type: Read-only</span></span>  
   
- サーバー上で安全ではない接続共有を有効にするかどうかを示す値です。  
+ <span data-ttu-id="1f7d8-152">サーバー上で安全ではない接続共有を有効にするかどうかを示す値です。</span><span class="sxs-lookup"><span data-stu-id="1f7d8-152">A value that indicates whether Unsafe Connection Sharing is enabled on the server.</span></span>  
   
-### UseDefaultWebProxy  
- データ型 : boolean  
+### <a name="usedefaultwebproxy"></a><span data-ttu-id="1f7d8-153">UseDefaultWebProxy</span><span class="sxs-lookup"><span data-stu-id="1f7d8-153">UseDefaultWebProxy</span></span>  
+ <span data-ttu-id="1f7d8-154">データ型 : boolean</span><span class="sxs-lookup"><span data-stu-id="1f7d8-154">Data type: boolean</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="1f7d8-155">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="1f7d8-155">Access type: Read-only</span></span>  
   
- ユーザー固有の設定ではなく、コンピューター全体のプロキシ設定を使用するかどうかを示す値です。  
+ <span data-ttu-id="1f7d8-156">ユーザー固有の設定ではなく、コンピューター全体のプロキシ設定を使用するかどうかを示す値です。</span><span class="sxs-lookup"><span data-stu-id="1f7d8-156">A value that indicates whether the machine-wide proxy settings are used rather than the user specific settings.</span></span>  
   
-## 要件  
+## <a name="requirements"></a><span data-ttu-id="1f7d8-157">要件</span><span class="sxs-lookup"><span data-stu-id="1f7d8-157">Requirements</span></span>  
   
-|MOF|Servicemodel.mof にて宣言済み|  
-|---------|-----------------------------|  
-|名前空間|root\\ServiceModel で定義|  
+|<span data-ttu-id="1f7d8-158">MOF</span><span class="sxs-lookup"><span data-stu-id="1f7d8-158">MOF</span></span>|<span data-ttu-id="1f7d8-159">Servicemodel.mof にて宣言済み。</span><span class="sxs-lookup"><span data-stu-id="1f7d8-159">Declared in Servicemodel.mof.</span></span>|  
+|---------|-----------------------------------|  
+|<span data-ttu-id="1f7d8-160">Namespace</span><span class="sxs-lookup"><span data-stu-id="1f7d8-160">Namespace</span></span>|<span data-ttu-id="1f7d8-161">root\ServiceModel で定義</span><span class="sxs-lookup"><span data-stu-id="1f7d8-161">Defined in root\ServiceModel</span></span>|  
   
-## 参照  
+## <a name="see-also"></a><span data-ttu-id="1f7d8-162">関連項目</span><span class="sxs-lookup"><span data-stu-id="1f7d8-162">See Also</span></span>  
  <xref:System.ServiceModel.Channels.HttpTransportBindingElement>

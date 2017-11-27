@@ -1,43 +1,45 @@
 ---
-title: "データ サービス プロバイダー (WCF Data Services) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "WCF Data Services, プロバイダー"
+title: "データ サービス プロバイダー (WCF Data Services)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: WCF Data Services, providers
 ms.assetid: a0160b1b-3d9c-4cc8-8391-cb0986a60a41
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 3f794088f2494157e22b8551c6241786c7a73398
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# データ サービス プロバイダー (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] は、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] フィードとしてデータを公開する複数のプロバイダー モデルをサポートします。  このトピックでは、データ ソースに最適な [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] プロバイダーを選択するための情報を示します。  
+# <a name="data-services-providers-wcf-data-services"></a><span data-ttu-id="b5f0c-102">データ サービス プロバイダー (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="b5f0c-102">Data Services Providers (WCF Data Services)</span></span>
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="b5f0c-103">データとして公開するための複数のプロバイダー モデルをサポートしている、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードします。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-103"> supports multiple provider models for exposing data as an [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] feed.</span></span> <span data-ttu-id="b5f0c-104">このトピックでは、データ ソースに最適な [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] プロバイダーを選択するための情報を示します。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-104">This topic provides information to enable you to select the best [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] provider for your data source.</span></span>  
   
-## データ ソース プロバイダー  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] は、データ サービスのデータ モデルを定義する以下のプロバイダーをサポートします。  
+## <a name="data-source-providers"></a><span data-ttu-id="b5f0c-105">データ ソース プロバイダー</span><span class="sxs-lookup"><span data-stu-id="b5f0c-105">Data Source Providers</span></span>  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="b5f0c-106">データ サービスのデータ モデルを定義するには、次のプロバイダーをサポートします。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-106"> supports the following providers for defining the data model of a data service.</span></span>  
   
-|プロバイダー|説明|  
-|------------|--------|  
-|Entity Framework プロバイダー|このプロバイダーは、ADO.NET Entity Framework を使用して、リレーショナル データにマップするデータ モデルを定義することによってデータ サービスでリレーショナル データを使用します。  データ ソースとしては、SQL Server 以外にも、Entity Framework をサポートするサードパーティ プロバイダーのある任意のデータ ソースを使用できます。  SQL Server データベースなどのリレーショナル データ ソースの場合は、Entity Framework プロバイダーを使用してください。  詳細については、「[Entity Framework プロバイダー](../../../../docs/framework/data/wcf/entity-framework-provider-wcf-data-services.md)」を参照してください。|  
-|リフレクション プロバイダー|このプロバイダーは、リフレクションを使用して、<xref:System.Linq.IQueryable%601> インターフェイスのインスタンスとして公開できる既存のデータ クラスに基づいてデータ モデルを定義できます。  <xref:System.Data.Services.IUpdatable> インターフェイスを実装することによって更新できます。  実行時に定義される静的なデータ クラス \(LINQ to SQL や型指定された DataSet によって生成されたデータ クラスなど\) がある場合は、このプロバイダーを使用してください。  詳細については、「[リフレクション プロバイダー](../../../../docs/framework/data/wcf/reflection-provider-wcf-data-services.md)」を参照してください。|  
-|カスタム データ サービス プロバイダー|[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] には、遅延バインディング データ型に基づいてデータ モデルを動的に定義できるプロバイダーのセットが含まれています。  公開されるデータが不明な場合、アプリケーションを設計中の場合、または Entity Framework プロバイダーやリフレクション プロバイダーでは不十分な場合には、これらのインターフェイスを実装する必要があります。  詳細については、「[カスタム データ サービス プロバイダー](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md)」を参照してください。|  
+|<span data-ttu-id="b5f0c-107">プロバイダー</span><span class="sxs-lookup"><span data-stu-id="b5f0c-107">Provider</span></span>|<span data-ttu-id="b5f0c-108">説明</span><span class="sxs-lookup"><span data-stu-id="b5f0c-108">Description</span></span>|  
+|--------------|-----------------|  
+|<span data-ttu-id="b5f0c-109">Entity Framework プロバイダー</span><span class="sxs-lookup"><span data-stu-id="b5f0c-109">Entity Framework provider</span></span>|<span data-ttu-id="b5f0c-110">このプロバイダーは、ADO.NET Entity Framework を使用して、リレーショナル データにマップするデータ モデルを定義することによってデータ サービスでリレーショナル データを使用します。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-110">This provider uses the ADO.NET Entity Framework to enable you to use relational data with a data service by defining a data model that maps to relational data.</span></span> <span data-ttu-id="b5f0c-111">データ ソースとしては、SQL Server 以外にも、Entity Framework をサポートするサードパーティ プロバイダーのある任意のデータ ソースを使用できます。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-111">Your data source can be SQL Server or any other data source with third-party provider support for the Entity Framework.</span></span> <span data-ttu-id="b5f0c-112">SQL Server データベースなどのリレーショナル データ ソースの場合は、Entity Framework プロバイダーを使用してください。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-112">You should use the Entity Framework provider when you have a relational data source, such as a SQL Server database.</span></span> <span data-ttu-id="b5f0c-113">詳細については、次を参照してください。 [Entity Framework プロバイダー](../../../../docs/framework/data/wcf/entity-framework-provider-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-113">For more information, see [Entity Framework Provider](../../../../docs/framework/data/wcf/entity-framework-provider-wcf-data-services.md).</span></span>|  
+|<span data-ttu-id="b5f0c-114">リフレクション プロバイダー</span><span class="sxs-lookup"><span data-stu-id="b5f0c-114">Reflection provider</span></span>|<span data-ttu-id="b5f0c-115">このプロバイダーは、リフレクションを使用して、<xref:System.Linq.IQueryable%601> インターフェイスのインスタンスとして公開できる既存のデータ クラスに基づいてデータ モデルを定義できます。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-115">This provider uses reflection to enable you to define a data model based on existing data classes that can be exposed as instances of the <xref:System.Linq.IQueryable%601> interface.</span></span> <span data-ttu-id="b5f0c-116"><xref:System.Data.Services.IUpdatable> インターフェイスを実装することによって更新できます。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-116">Updates are enabled by implementing the <xref:System.Data.Services.IUpdatable> interface.</span></span> <span data-ttu-id="b5f0c-117">実行時に定義される静的なデータ クラス (LINQ to SQL や型指定された DataSet によって生成されたデータ クラスなど) がある場合は、このプロバイダーを使用してください。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-117">You should use this provider when you have static data classes that are defined at runtime, such as those generated by LINQ to SQL or defined by a typed DataSet.</span></span> <span data-ttu-id="b5f0c-118">詳細については、次を参照してください。[リフレクション プロバイダー](../../../../docs/framework/data/wcf/reflection-provider-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-118">For more information, see [Reflection Provider](../../../../docs/framework/data/wcf/reflection-provider-wcf-data-services.md).</span></span>|  
+|<span data-ttu-id="b5f0c-119">カスタム データ サービス プロバイダー</span><span class="sxs-lookup"><span data-stu-id="b5f0c-119">Custom Data Service Providers</span></span>|[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="b5f0c-120"> には、遅延バインディング データ型に基づいてデータ モデルを動的に定義できるプロバイダーのセットが含まれています。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-120"> includes a set of providers that enable you to dynamically define a data model based on late-bound data types.</span></span> <span data-ttu-id="b5f0c-121">公開されるデータが不明な場合、アプリケーションを設計中の場合、または Entity Framework プロバイダーやリフレクション プロバイダーでは不十分な場合には、これらのインターフェイスを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-121">You should implement these interfaces when the data being exposed is not known when the application is being designed or when the Entity Framework or reflection providers are not sufficient.</span></span> <span data-ttu-id="b5f0c-122">詳細については、次を参照してください。[カスタム データ サービス プロバイダー](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-122">For more information, see [Custom Data Service Providers](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md).</span></span>|  
   
-## その他のデータ サービス プロバイダー  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] には、次の追加のデータ サービス プロバイダーがあり、他のいずれかのプロバイダーを使用して定義されたデータ ソースのパフォーマンスが向上します。  
+## <a name="other-data-service-providers"></a><span data-ttu-id="b5f0c-123">その他のデータ サービス プロバイダー</span><span class="sxs-lookup"><span data-stu-id="b5f0c-123">Other Data Service Providers</span></span>  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="b5f0c-124">他のプロバイダーのいずれかを使用して定義されているデータ ソースのパフォーマンスを強化する次の追加のデータ サービス プロバイダーがあります。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-124"> has the following additional data service provider that enhances the performance of a data source defined by using one of the other providers.</span></span>  
   
-|プロバイダー|説明|  
-|------------|--------|  
-|ストリーミング プロバイダー|このプロバイダーを使用すると、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] を使用してバイナリ ラージ オブジェクト データ型を公開できます。  ストリーミング プロバイダーは、<xref:System.Data.Services.Providers.IDataServiceStreamProvider> インターフェイスを実装することによって作成されます。  このプロバイダーは、任意のデータ ソース プロバイダーと共に実装できます。  詳細については、「[ストリーミング プロバイダー](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md)」を参照してください。|  
+|<span data-ttu-id="b5f0c-125">プロバイダー</span><span class="sxs-lookup"><span data-stu-id="b5f0c-125">Provider</span></span>|<span data-ttu-id="b5f0c-126">説明</span><span class="sxs-lookup"><span data-stu-id="b5f0c-126">Description</span></span>|  
+|--------------|-----------------|  
+|<span data-ttu-id="b5f0c-127">ストリーミング プロバイダー</span><span class="sxs-lookup"><span data-stu-id="b5f0c-127">Streaming provider</span></span>|<span data-ttu-id="b5f0c-128">このプロバイダーを使用すると、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] を使用してバイナリ ラージ オブジェクト データ型を公開できます。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-128">This provider enables you to expose binary large object data types by using [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].</span></span> <span data-ttu-id="b5f0c-129">ストリーミング プロバイダーは、<xref:System.Data.Services.Providers.IDataServiceStreamProvider> インターフェイスを実装することによって作成されます。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-129">A streaming provider is created by implementing the <xref:System.Data.Services.Providers.IDataServiceStreamProvider> interface.</span></span> <span data-ttu-id="b5f0c-130">このプロバイダーは、任意のデータ ソース プロバイダーと共に実装できます。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-130">This provider can be implemented together with any data source provider.</span></span> <span data-ttu-id="b5f0c-131">詳細については、次を参照してください。[ストリーミング プロバイダー](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="b5f0c-131">For more information, see [Streaming Provider](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md).</span></span>|  
   
-## 参照  
- [WCF Data Services の定義](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)   
- [データ サービスの構成](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md)   
- [データ サービスのホスティング](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md)
+## <a name="see-also"></a><span data-ttu-id="b5f0c-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="b5f0c-132">See Also</span></span>  
+ [<span data-ttu-id="b5f0c-133">WCF Data Services の定義</span><span class="sxs-lookup"><span data-stu-id="b5f0c-133">Defining WCF Data Services</span></span>](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  
+ [<span data-ttu-id="b5f0c-134">データ サービスの構成</span><span class="sxs-lookup"><span data-stu-id="b5f0c-134">Configuring the Data Service</span></span>](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md)  
+ [<span data-ttu-id="b5f0c-135">データ サービスのホスティング</span><span class="sxs-lookup"><span data-stu-id="b5f0c-135">Hosting the Data Service</span></span>](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md)

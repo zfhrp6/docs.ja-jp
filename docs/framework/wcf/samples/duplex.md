@@ -1,33 +1,32 @@
 ---
-title: "二重 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "二重のサービス コントラクト"
+title: "二重"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: Duplex Service Contract
 ms.assetid: bc5de6b6-1a63-42a3-919a-67d21bae24e0
-caps.latest.revision: 40
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 40
+caps.latest.revision: "40"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: b0c5b5dc6bff78f06df75f4b5a9c5c3a8647dbf4
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 二重
-双方向サンプルでは、双方向コントラクトを定義して実装する方法を示します。  双方向通信は、クライアントがサービスとのセッションを確立し、サービスからクライアントにメッセージを返信できるチャネルがサービスに提供されると発生します。  このサンプルは、「[概要](../../../../docs/framework/wcf/samples/getting-started-sample.md)」に基づいています。  双方向コントラクトは、クライアントからサービスへのプライマリ インターフェイスとサービスからクライアントへのコールバック インターフェイスという 2 つのインターフェイスのペアとして定義されます。  このサンプルでは、`ICalculatorDuplex` インターフェイスを使用することにより、クライアントは算術演算を実行し、セッション経由で結果を計算できます。  サービスは、`ICalculatorDuplexCallback` インターフェイスで結果を返します。  コンテキストを確立して、クライアントとサービスの間で送信される一連のメッセージを相互に関連付ける必要があるため、二重のコントラクトにはセッションが必要です。  
+# <a name="duplex"></a><span data-ttu-id="4e4e7-102">二重</span><span class="sxs-lookup"><span data-stu-id="4e4e7-102">Duplex</span></span>
+<span data-ttu-id="4e4e7-103">双方向サンプルでは、双方向コントラクトを定義して実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-103">The Duplex sample demonstrates how to define and implement a duplex contract.</span></span> <span data-ttu-id="4e4e7-104">双方向通信は、クライアントがサービスとのセッションを確立し、サービスからクライアントにメッセージを返信できるチャネルがサービスに提供されると発生します。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-104">Duplex communication occurs when a client establishes a session with a service and gives the service a channel on which the service can send messages back to the client.</span></span> <span data-ttu-id="4e4e7-105">このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-105">This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md).</span></span> <span data-ttu-id="4e4e7-106">双方向コントラクトは、クライアントからサービスへのプライマリ インターフェイスとサービスからクライアントへのコールバック インターフェイスという 2 つのインターフェイスのペアとして定義されます。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-106">A duplex contract is defined as a pair of interfaces—a primary interface from the client to the service and a callback interface from the service to the client.</span></span> <span data-ttu-id="4e4e7-107">このサンプルでは、`ICalculatorDuplex` インターフェイスを使用することにより、クライアントは算術演算を実行し、セッション経由で結果を計算できます。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-107">In this sample, the `ICalculatorDuplex` interface allows the client to perform math operations, calculating the result over a session.</span></span> <span data-ttu-id="4e4e7-108">サービスは、`ICalculatorDuplexCallback` インターフェイスで結果を返します。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-108">The service returns results on the `ICalculatorDuplexCallback` interface.</span></span> <span data-ttu-id="4e4e7-109">コンテキストを確立して、クライアントとサービスの間で送信される一連のメッセージを相互に関連付ける必要があるため、二重のコントラクトにはセッションが必要です。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-109">A duplex contract requires a session, because a context must be established to correlate the set of messages being sent between the client and the service.</span></span>  
   
 > [!NOTE]
->  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
+>  <span data-ttu-id="4e4e7-110">このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-110">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- この例では、クライアントはコンソール アプリケーション \(.exe\) であり、サービスはインターネット インフォメーション サービス \(IIS\) によってホストされます。  双方向コントラクトは、次のように定義されます。  
+ <span data-ttu-id="4e4e7-111">この例では、クライアントはコンソール アプリケーション (.exe) であり、サービスはインターネット インフォメーション サービス (IIS) によってホストされます。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-111">In this sample, the client is a console application (.exe) and the service is hosted by Internet Information Services (IIS).</span></span> <span data-ttu-id="4e4e7-112">双方向コントラクトは、次のように定義されます。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-112">The duplex contract is defined as follows:</span></span>  
   
 ```  
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples", SessionMode=SessionMode.Required,  
@@ -53,10 +52,9 @@ public interface ICalculatorDuplexCallback
     [OperationContract(IsOneWay = true)]  
     void Equation(string eqn);  
 }  
-  
 ```  
   
- `CalculatorService` クラスは、プライマリ `ICalculatorDuplex` インターフェイスを実装します。  このサービスは <xref:System.ServiceModel.InstanceContextMode> インスタンス モードを使用して、各セッションの結果を保持します。  クライアントへのコールバック チャネルへのアクセスには、`Callback` というプライベート プロパティを使用します。  サービスはこのコールバックを使用し、コールバック インターフェイスを介してメッセージをクライアントに返信します。  
+ <span data-ttu-id="4e4e7-113">`CalculatorService` クラスは、プライマリ `ICalculatorDuplex` インターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-113">The `CalculatorService` class implements the primary `ICalculatorDuplex` interface.</span></span> <span data-ttu-id="4e4e7-114">このサービスは <xref:System.ServiceModel.InstanceContextMode.PerSession> インスタンス モードを使用して、各セッションの結果を保持します。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-114">The service uses the <xref:System.ServiceModel.InstanceContextMode.PerSession> instance mode to maintain the result for each session.</span></span> <span data-ttu-id="4e4e7-115">クライアントへのコールバック チャネルへのアクセスには、`Callback` というプライベート プロパティを使用します。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-115">A private property named `Callback` is used to access the callback channel to the client.</span></span> <span data-ttu-id="4e4e7-116">サービスはこのコールバックを使用し、コールバック インターフェイスを介してメッセージをクライアントに返信します。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-116">The service uses the callback for sending messages back to the client through the callback interface.</span></span>  
   
 ```  
 [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]  
@@ -93,7 +91,7 @@ public class CalculatorService : ICalculatorDuplex
 }  
 ```  
   
- クライアントは、サービスからのメッセージを受信するために、双方向コントラクトのコールバック インターフェイスを実装するクラスを提供する必要があります。  このサンプルでは、`CallbackHandler` クラスは `ICalculatorDuplexCallback` インターフェイスを実装するように定義されています。  
+ <span data-ttu-id="4e4e7-117">クライアントは、サービスからのメッセージを受信するために、双方向コントラクトのコールバック インターフェイスを実装するクラスを提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-117">The client must provide a class that implements the callback interface of the duplex contract, for receiving messages from the service.</span></span> <span data-ttu-id="4e4e7-118">このサンプルでは、`CallbackHandler` クラスは `ICalculatorDuplexCallback` インターフェイスを実装するように定義されています。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-118">In the sample, a `CallbackHandler` class is defined to implement the `ICalculatorDuplexCallback` interface.</span></span>  
   
 ```  
 public class CallbackHandler : ICalculatorDuplexCallback  
@@ -108,10 +106,9 @@ public class CallbackHandler : ICalculatorDuplexCallback
       Console.WriteLine("Equation({0}", equation);  
    }  
 }  
-  
 ```  
   
- 双方向コントラクト用に生成されるプロキシは、コンストラクト時に <xref:System.ServiceModel.InstanceContext> が提供される必要があります。  この <xref:System.ServiceModel.InstanceContext> がコールバック インターフェイスを実装するオブジェクトのサイトとして使用され、サービスから返信されるメッセージを処理します。  <xref:System.ServiceModel.InstanceContext> は、`CallbackHandler` クラスのインスタンスを使用して構築されます。  このオブジェクトは、コールバック インターフェイスでサービスからクライアントに送信されるメッセージを処理します。  
+ <span data-ttu-id="4e4e7-119">双方向コントラクト用に生成されるプロキシは、コンストラクト時に <xref:System.ServiceModel.InstanceContext> が提供される必要があります。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-119">The proxy that is generated for a duplex contract requires a <xref:System.ServiceModel.InstanceContext> to be provided upon construction.</span></span> <span data-ttu-id="4e4e7-120">この <xref:System.ServiceModel.InstanceContext> がコールバック インターフェイスを実装するオブジェクトのサイトとして使用され、サービスから返信されるメッセージを処理します。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-120">This <xref:System.ServiceModel.InstanceContext> is used as the site for an object that implements the callback interface and handles messages that are sent back from the service.</span></span> <span data-ttu-id="4e4e7-121"><xref:System.ServiceModel.InstanceContext> は、`CallbackHandler` クラスのインスタンスを使用して構築されます。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-121">An <xref:System.ServiceModel.InstanceContext> is constructed with an instance of the `CallbackHandler` class.</span></span> <span data-ttu-id="4e4e7-122">このオブジェクトは、コールバック インターフェイスでサービスからクライアントに送信されるメッセージを処理します。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-122">This object handles messages sent from the service to the client on the callback interface.</span></span>  
   
 ```  
 // Construct InstanceContext to handle messages on callback interface.  
@@ -146,12 +143,11 @@ Console.ReadLine();
   
 //Closing the client gracefully closes the connection and cleans up resources.  
 client.Close();  
-  
 ```  
   
- この構成は、セッション通信と双方向通信の両方をサポートするバインディングを提供するように変更されています。  `wsDualHttpBinding` はセッション通信をサポートし、どちらの方向にも HTTP 接続が 1 つ用意される双方向 HTTP 接続を提供して双方向通信を実現します。  サービスでの構成の唯一の違いは、使用されるバインディングです。  クライアントで、サーバーがクライアントへの接続に使用するアドレスを構成する必要があります。次のサンプル構成を参照してください。  
+ <span data-ttu-id="4e4e7-123">この構成は、セッション通信と双方向通信の両方をサポートするバインディングを提供するように変更されています。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-123">The configuration has been modified to provide a binding that supports both session communication and duplex communication.</span></span> <span data-ttu-id="4e4e7-124">`wsDualHttpBinding` はセッション通信をサポートし、どちらの方向にも HTTP 接続が 1 つ用意される双方向 HTTP 接続を提供して双方向通信を実現します。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-124">The `wsDualHttpBinding` supports session communication and allows duplex communication by providing dual HTTP connections, one for each direction.</span></span> <span data-ttu-id="4e4e7-125">サービスでの構成の唯一の違いは、使用されるバインディングです。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-125">On the service, the only difference in configuration is the binding that is used.</span></span> <span data-ttu-id="4e4e7-126">クライアントで、サーバーがクライアントへの接続に使用するアドレスを構成する必要があります。次のサンプル構成を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-126">On the client, you must configure an address that the server can use to connect to the client as shown in the following sample configuration.</span></span>  
   
-```  
+```xml  
 <client>  
   <endpoint name=""  
             address="http://localhost/servicemodelsamples/service.svc"   
@@ -168,23 +164,22 @@ client.Close();
     </binding>  
   </wsDualHttpBinding>  
 </bindings>  
-  
 ```  
   
- サンプルを実行すると、クライアントに戻ってきたメッセージがサービスから送信されたコールバック インターフェイスに表示されます。  それぞれの中間結果が表示され、その後にすべての操作が完了したときの数式全体が表示されます。  Enter キーを押してクライアントをシャットダウンします。  
+ <span data-ttu-id="4e4e7-127">サンプルを実行すると、クライアントに戻ってきたメッセージがサービスから送信されたコールバック インターフェイスに表示されます。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-127">When you run the sample, you see the messages that are returned to the client on the callback interface that is sent from the service.</span></span> <span data-ttu-id="4e4e7-128">それぞれの中間結果が表示され、その後にすべての操作が完了したときの数式全体が表示されます。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-128">Each intermediate result is displayed, followed by the entire equation upon the completion of all operations.</span></span> <span data-ttu-id="4e4e7-129">Enter キーを押してクライアントをシャットダウンします。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-129">Press ENTER to shut down the client.</span></span>  
   
-### サンプルをセットアップ、ビルド、および実行するには  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="4e4e7-130">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="4e4e7-130">To set up, build, and run the sample</span></span>  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  <span data-ttu-id="4e4e7-131">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-131">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  ソリューションの C\# 版、C\+\+ 版、または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  <span data-ttu-id="4e4e7-132">C#、C++、または Visual Basic .NET のバージョンのソリューションをビルドするの指示に従って、 [Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-132">To build the C#, C++, or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  単一コンピューター構成か複数コンピューター構成かに応じて、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+3.  <span data-ttu-id="4e4e7-133">1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-133">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
     > [!IMPORTANT]
-    >  複数コンピューター構成でクライアントを実行する場合は、[\<wsDualHttpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md) 要素内の [endpoint](http://msdn.microsoft.com/ja-jp/13aa23b7-2f08-4add-8dbf-a99f8127c017) 要素の `address` 属性と、[\<binding\>](../../../../docs/framework/misc/binding.md) 要素の `clientBaseAddress` 属性の両方に含まれる "localhost" を、適切なコンピューターの名前で置き換える必要があります。次を参照してください。  
+    >  <span data-ttu-id="4e4e7-134">複数コンピューター構成でクライアントを実行している場合は、両方の"localhost"を置換することを確認して、`address`の属性、[エンドポイント](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素および`clientBaseAddress`の属性、 [ \<バインド >](../../../../docs/framework/misc/binding.md)の要素、 [ \<wsDualHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)では、次に示すように、適切なコンピューターの名前を持つ要素。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-134">When running the client in a cross-machine configuration, be sure to replace "localhost" in both the `address` attribute of the [endpoint](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017) element and the `clientBaseAddress` attribute of the [\<binding>](../../../../docs/framework/misc/binding.md) element of the [\<wsDualHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md) element with the name of the appropriate machine, as shown in the following:</span></span>  
   
-    ```  
+    ```xml  
     <client>  
     <endpoint name = ""  
     address="http://service_machine_name/servicemodelsamples/service.svc"  
@@ -198,12 +193,12 @@ client.Close();
     ```  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。  続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="4e4e7-135">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-135">The samples may already be installed on your machine.</span></span> <span data-ttu-id="4e4e7-136">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-136">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」に移動して、すべての [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルおよび [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。  このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="4e4e7-137">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-137">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="4e4e7-138">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="4e4e7-138">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Duplex`  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="4e4e7-139">関連項目</span><span class="sxs-lookup"><span data-stu-id="4e4e7-139">See Also</span></span>

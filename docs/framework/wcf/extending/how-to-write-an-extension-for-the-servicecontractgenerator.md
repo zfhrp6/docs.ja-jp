@@ -1,29 +1,32 @@
 ---
-title: "方法 : ServiceContractGenerator の拡張を記述する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : ServiceContractGenerator の拡張を記述する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 876ca823-bd16-4bdf-9e0f-02092df90e51
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 39fb7fde2d293ae96e11b7c77b4a16d18ee3cac9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : ServiceContractGenerator の拡張を記述する
-このトピックでは、<xref:System.ServiceModel.Description.ServiceContractGenerator> の拡張を記述する方法について説明します。これは、操作の動作に <xref:System.ServiceModel.Description.IOperationContractGenerationExtension> インターフェイスを実装するか、コントラクトの動作に <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> インターフェイスを実装することで可能になります。このトピックでは、<xref:System.ServiceModel.Description.IServiceContractGenerationExtension> インターフェイスをコントラクト動作に実装する方法を説明します。  
+# <a name="how-to-write-an-extension-for-the-servicecontractgenerator"></a><span data-ttu-id="dc2df-102">方法 : ServiceContractGenerator の拡張を記述する</span><span class="sxs-lookup"><span data-stu-id="dc2df-102">How to: Write an Extension for the ServiceContractGenerator</span></span>
+<span data-ttu-id="dc2df-103">このトピックでは、<xref:System.ServiceModel.Description.ServiceContractGenerator> の拡張を記述する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="dc2df-103">This topic describes how to write an extension for the <xref:System.ServiceModel.Description.ServiceContractGenerator>.</span></span> <span data-ttu-id="dc2df-104">これは、操作の動作に <xref:System.ServiceModel.Description.IOperationContractGenerationExtension> インターフェイスを実装するか、コントラクトの動作に <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> インターフェイスを実装することで可能になります。</span><span class="sxs-lookup"><span data-stu-id="dc2df-104">This can be done by implementing the <xref:System.ServiceModel.Description.IOperationContractGenerationExtension> interface on an operation behavior or implementing the <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> interface on a contract behavior.</span></span> <span data-ttu-id="dc2df-105">このトピックでは、<xref:System.ServiceModel.Description.IServiceContractGenerationExtension> インターフェイスをコントラクト動作に実装する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="dc2df-105">This topic shows how to implement the <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> interface on a contract behavior.</span></span>  
   
- <xref:System.ServiceModel.Description.ServiceContractGenerator> は、サービス コントラクト、クライアント型、およびクライアント構成を <xref:System.ServiceModel.Description.ServiceEndpoint>、<xref:System.ServiceModel.Description.ContractDescription>、<xref:System.ServiceModel.Channels.Binding> の各インターフェイスから生成します。通常は、サービス メタデータから <xref:System.ServiceModel.Description.ServiceEndpoint>、<xref:System.ServiceModel.Description.ContractDescription>、および <xref:System.ServiceModel.Channels.Binding> インスタンスをインポートし、これらのインスタンスを使用してサービスを呼び出すコードを生成します。この例では、<xref:System.ServiceModel.Description.IWsdlImportExtension> の実装を使用して WSDL 注釈を処理し、生成されたコードに関するコメントを生成するために、インポートしたコントラクトにコード生成拡張を追加します。  
+ <span data-ttu-id="dc2df-106"><xref:System.ServiceModel.Description.ServiceContractGenerator> は、サービス コントラクト、クライアント型、およびクライアント構成を <xref:System.ServiceModel.Description.ServiceEndpoint>、<xref:System.ServiceModel.Description.ContractDescription>、<xref:System.ServiceModel.Channels.Binding> の各インターフェイスから生成します。</span><span class="sxs-lookup"><span data-stu-id="dc2df-106">The <xref:System.ServiceModel.Description.ServiceContractGenerator> generates service contracts, client types, and client configurations from <xref:System.ServiceModel.Description.ServiceEndpoint>, <xref:System.ServiceModel.Description.ContractDescription>, and <xref:System.ServiceModel.Channels.Binding> instances.</span></span> <span data-ttu-id="dc2df-107">通常は、サービス メタデータから <xref:System.ServiceModel.Description.ServiceEndpoint>、<xref:System.ServiceModel.Description.ContractDescription>、および <xref:System.ServiceModel.Channels.Binding> インスタンスをインポートし、これらのインスタンスを使用してサービスを呼び出すコードを生成します。</span><span class="sxs-lookup"><span data-stu-id="dc2df-107">Typically, you import <xref:System.ServiceModel.Description.ServiceEndpoint>, <xref:System.ServiceModel.Description.ContractDescription>, and <xref:System.ServiceModel.Channels.Binding> instances from service metadata and then use these instances to generate code to call the service.</span></span> <span data-ttu-id="dc2df-108">この例では、<xref:System.ServiceModel.Description.IWsdlImportExtension> の実装を使用して WSDL 注釈を処理し、生成されたコードに関するコメントを生成するために、インポートしたコントラクトにコード生成拡張を追加します。</span><span class="sxs-lookup"><span data-stu-id="dc2df-108">In this example, an <xref:System.ServiceModel.Description.IWsdlImportExtension> implementation is used to process WSDL annotations and then add code generation extensions to the imported contracts to generate comments on the generated code.</span></span>  
   
-### ServiceContractGenerator の拡張を記述するには  
+### <a name="to-write-an-extension-for-the-servicecontractgenerator"></a><span data-ttu-id="dc2df-109">ServiceContractGenerator の拡張を記述するには</span><span class="sxs-lookup"><span data-stu-id="dc2df-109">To write an extension for the ServiceContractGenerator</span></span>  
   
-1.  <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> を実装します。生成されたサービス コントラクトを変更するには、<xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> メソッドに渡された <xref:System.ServiceModel.Description.ServiceContractGenerationContext> インスタンスを使用します。  
+1.  <span data-ttu-id="dc2df-110"><xref:System.ServiceModel.Description.IServiceContractGenerationExtension> を実装します。</span><span class="sxs-lookup"><span data-stu-id="dc2df-110">Implement <xref:System.ServiceModel.Description.IServiceContractGenerationExtension>.</span></span> <span data-ttu-id="dc2df-111">生成されたサービス コントラクトを変更するには、<xref:System.ServiceModel.Description.ServiceContractGenerationContext> メソッドに渡された <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> インスタンスを使用します。</span><span class="sxs-lookup"><span data-stu-id="dc2df-111">To modify the generated service contract, use the <xref:System.ServiceModel.Description.ServiceContractGenerationContext> instance passed into the <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> method.</span></span>  
   
     ```  
     public void GenerateContract(ServiceContractGenerationContext context)  
@@ -33,7 +36,7 @@ caps.handback.revision: 13
     }  
     ```  
   
-2.  同じクラスに <xref:System.ServiceModel.Description.IWsdlImportExtension> を実装します。<xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> メソッドは、インポートされた <xref:System.ServiceModel.Description.ContractDescription> インスタンスにコード生成拡張を追加することによって、特定の WSDL 拡張 \(この場合は WSDL 注釈\) を処理できます。  
+2.  <span data-ttu-id="dc2df-112">同じクラスに <xref:System.ServiceModel.Description.IWsdlImportExtension> を実装します。</span><span class="sxs-lookup"><span data-stu-id="dc2df-112">Implement <xref:System.ServiceModel.Description.IWsdlImportExtension> on the same class.</span></span> <span data-ttu-id="dc2df-113"><xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> メソッドは、インポートされた <xref:System.ServiceModel.Description.ContractDescription> インスタンスにコード生成拡張を追加することによって、特定の WSDL 拡張 (この場合は WSDL 注釈) を処理できます。</span><span class="sxs-lookup"><span data-stu-id="dc2df-113">The <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> method can process a specific WSDL extension (WSDL annotations in this case) by adding a code generation extension to the imported <xref:System.ServiceModel.Description.ContractDescription> instance.</span></span>  
   
     ```  
     public void ImportContract(WsdlImporter importer, WsdlContractConversionContext context)  
@@ -67,9 +70,9 @@ caps.handback.revision: 13
             }  
     ```  
   
-3.  クライアント構成に WSDL インポーターを追加します。  
+3.  <span data-ttu-id="dc2df-114">クライアント構成に WSDL インポーターを追加します。</span><span class="sxs-lookup"><span data-stu-id="dc2df-114">Add the WSDL importer to your client configuration.</span></span>  
   
-    ```  
+    ```xml  
     <metadata>  
       <wsdlImporters>  
         <extension type="Microsoft.WCF.Documentation.WsdlDocumentationImporter, WsdlDocumentation" />  
@@ -77,7 +80,7 @@ caps.handback.revision: 13
     </metadata>  
     ```  
   
-4.  クライアント コードで、`MetadataExchangeClient` を作成して `GetMetadata` を呼び出します。  
+4.  <span data-ttu-id="dc2df-115">クライアント コードで、`MetadataExchangeClient` を作成して `GetMetadata` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="dc2df-115">In the client code, create a `MetadataExchangeClient` and call `GetMetadata`.</span></span>  
   
     ```  
     MetadataExchangeClient mexClient = new MetadataExchangeClient(metadataAddress);  
@@ -85,13 +88,13 @@ caps.handback.revision: 13
     MetadataSet metaDocs = mexClient.GetMetadata();  
     ```  
   
-5.  `WsdlImporter` を作成して `ImportAllContracts` を呼び出します。  
+5.  <span data-ttu-id="dc2df-116">`WsdlImporter` を作成して `ImportAllContracts` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="dc2df-116">Create a `WsdlImporter` and call `ImportAllContracts`.</span></span>  
   
     ```  
     WsdlImporter importer = new WsdlImporter(metaDocs);            System.Collections.ObjectModel.Collection<ContractDescription> contracts = importer.ImportAllContracts();  
     ```  
   
-6.  `ServiceContractGenerator` を作成して、コントラクトごとに `GenerateServiceContractType` を呼び出します。  
+6.  <span data-ttu-id="dc2df-117">`ServiceContractGenerator` を作成して、コントラクトごとに `GenerateServiceContractType` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="dc2df-117">Create a `ServiceContractGenerator` and call `GenerateServiceContractType` for each contract.</span></span>  
   
     ```  
     ServiceContractGenerator generator = new ServiceContractGenerator();  
@@ -103,8 +106,8 @@ caps.handback.revision: 13
        throw new Exception("There were errors during code compilation.");  
     ```  
   
-7.  <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> を実装する特定のコントラクトのコントラクト動作ごとに、<xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> が自動的に呼び出されます。その後、渡された <xref:System.ServiceModel.Description.ServiceContractGenerationContext> をこのメソッドで変更できます。この例では、コメントが追加されています。  
+7.  <span data-ttu-id="dc2df-118"><xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> を実装する特定のコントラクトのコントラクト動作ごとに、<xref:System.ServiceModel.Description.IServiceContractGenerationExtension> が自動的に呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="dc2df-118"><xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> is called automatically for each contract behavior on a given contract that implements <xref:System.ServiceModel.Description.IServiceContractGenerationExtension>.</span></span> <span data-ttu-id="dc2df-119">その後、渡された <xref:System.ServiceModel.Description.ServiceContractGenerationContext> をこのメソッドで変更できます。</span><span class="sxs-lookup"><span data-stu-id="dc2df-119">This method can then modify the <xref:System.ServiceModel.Description.ServiceContractGenerationContext> passed in.</span></span> <span data-ttu-id="dc2df-120">この例では、コメントが追加されています。</span><span class="sxs-lookup"><span data-stu-id="dc2df-120">In this example comments are added.</span></span>  
   
-## 参照  
- [メタデータ](../../../../docs/framework/wcf/feature-details/metadata.md)   
- [方法 : カスタム WSDL をインポートする](../../../../docs/framework/wcf/extending/how-to-import-custom-wsdl.md)
+## <a name="see-also"></a><span data-ttu-id="dc2df-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="dc2df-121">See Also</span></span>  
+ [<span data-ttu-id="dc2df-122">メタデータ</span><span class="sxs-lookup"><span data-stu-id="dc2df-122">Metadata</span></span>](../../../../docs/framework/wcf/feature-details/metadata.md)  
+ [<span data-ttu-id="dc2df-123">方法: カスタム WSDL をインポート</span><span class="sxs-lookup"><span data-stu-id="dc2df-123">How to: Import Custom WSDL</span></span>](../../../../docs/framework/wcf/extending/how-to-import-custom-wsdl.md)

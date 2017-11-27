@@ -1,57 +1,60 @@
 ---
-title: "Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Basic2
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 04e4d3bd-ab89-4b50-8f42-2a4430751a9c
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: cb77e794119db2434a38ff7271912f50e483d766
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Basic
-このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の基本的な機能を示すサンプルのセクションが含まれています。  
+# <a name="basic"></a><span data-ttu-id="9f5ba-102">Basic</span><span class="sxs-lookup"><span data-stu-id="9f5ba-102">Basic</span></span>
+<span data-ttu-id="9f5ba-103">このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の基本的な機能を示すサンプルのセクションが含まれています。</span><span class="sxs-lookup"><span data-stu-id="9f5ba-103">This section includes sections of samples that demonstrate basic [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]functionality.</span></span>  
   
-## このセクションの内容  
- [概要](../../../../docs/framework/wcf/samples/getting-started-sample.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用して、一般的なサービスと一般的なクライアントを実装する方法を示します。  
+## <a name="in-this-section"></a><span data-ttu-id="9f5ba-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="9f5ba-104">In This Section</span></span>  
+ [<span data-ttu-id="9f5ba-105">はじめに</span><span class="sxs-lookup"><span data-stu-id="9f5ba-105">Getting Started</span></span>](../../../../docs/framework/wcf/samples/getting-started-sample.md)  
+ <span data-ttu-id="9f5ba-106">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用して、一般的なサービスと一般的なクライアントを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="9f5ba-106">Demonstrates how to implement a typical service and a typical client using [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span>  
   
- [AJAX](../../../../docs/framework/wcf/samples/ajax.md)  
- Asynchronous JavaScript and XML を示します。  
+ [<span data-ttu-id="9f5ba-107">AJAX</span><span class="sxs-lookup"><span data-stu-id="9f5ba-107">AJAX</span></span>](../../../../docs/framework/wcf/samples/ajax.md)  
+ <span data-ttu-id="9f5ba-108">Asynchronous JavaScript and XML を示します。</span><span class="sxs-lookup"><span data-stu-id="9f5ba-108">Demonstrates Asynchronous JavaScript and XML.</span></span>  
   
- [バインド](../../../../docs/framework/wcf/samples/binding.md)  
- エンドポイント要素のバインディング属性の使用方法を示します。  
+ [<span data-ttu-id="9f5ba-109">バインド</span><span class="sxs-lookup"><span data-stu-id="9f5ba-109">Binding</span></span>](../../../../docs/framework/wcf/samples/binding.md)  
+ <span data-ttu-id="9f5ba-110">エンドポイント要素のバインディング属性の使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="9f5ba-110">Demonstrates using the binding attribute of an endpoint element.</span></span>  
   
- [クライアント](../../../../docs/framework/wcf/samples/client.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント アプリケーションを示します。  
+ [<span data-ttu-id="9f5ba-111">クライアント</span><span class="sxs-lookup"><span data-stu-id="9f5ba-111">Client</span></span>](../../../../docs/framework/wcf/samples/client.md)  
+ <span data-ttu-id="9f5ba-112">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント アプリケーションを示します。</span><span class="sxs-lookup"><span data-stu-id="9f5ba-112">Demonstrates [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client applications.</span></span>  
   
- [コントラクト](../../../../docs/framework/wcf/samples/contract.md)  
- データ コントラクトを示します。  
+ [<span data-ttu-id="9f5ba-113">コントラクト</span><span class="sxs-lookup"><span data-stu-id="9f5ba-113">Contract</span></span>](../../../../docs/framework/wcf/samples/contract.md)  
+ <span data-ttu-id="9f5ba-114">データ コントラクトを示します。</span><span class="sxs-lookup"><span data-stu-id="9f5ba-114">Demonstrates data contracts.</span></span>  
   
- [探索](../../../../docs/framework/wcf/samples/discovery-samples.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 探索を示します。  
+ [<span data-ttu-id="9f5ba-115">検出</span><span class="sxs-lookup"><span data-stu-id="9f5ba-115">Discovery</span></span>](../../../../docs/framework/wcf/samples/discovery-samples.md)  
+ <span data-ttu-id="9f5ba-116">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 探索を示します。</span><span class="sxs-lookup"><span data-stu-id="9f5ba-116">Demonstrates [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] discovery.</span></span>  
   
- [管理](../../../../docs/framework/wcf/samples/management.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 管理を示します。  
+ [<span data-ttu-id="9f5ba-117">管理</span><span class="sxs-lookup"><span data-stu-id="9f5ba-117">Management</span></span>](../../../../docs/framework/wcf/samples/management.md)  
+ <span data-ttu-id="9f5ba-118">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 管理を示します。</span><span class="sxs-lookup"><span data-stu-id="9f5ba-118">Demonstrates [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] management.</span></span>  
   
- [ルーティング サービス](../../../../docs/framework/wcf/samples/routing-services.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ルーティング サービスを示します。  
+ [<span data-ttu-id="9f5ba-119">ルーティング サービス</span><span class="sxs-lookup"><span data-stu-id="9f5ba-119">Routing Services</span></span>](../../../../docs/framework/wcf/samples/routing-services.md)  
+ <span data-ttu-id="9f5ba-120">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ルーティング サービスを示します。</span><span class="sxs-lookup"><span data-stu-id="9f5ba-120">Demonstrates [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] routing services.</span></span>  
   
- [セキュリティ](../../../../docs/framework/wcf/samples/security-in-wcf.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティを示します。  
+ [<span data-ttu-id="9f5ba-121">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="9f5ba-121">Security</span></span>](../../../../docs/framework/wcf/samples/security-in-wcf.md)  
+ <span data-ttu-id="9f5ba-122">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティを示します。</span><span class="sxs-lookup"><span data-stu-id="9f5ba-122">Demonstrates [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] security.</span></span>  
   
- [サービス](../../../../docs/framework/wcf/samples/services.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを示します。  
+ [<span data-ttu-id="9f5ba-123">サービス</span><span class="sxs-lookup"><span data-stu-id="9f5ba-123">Services</span></span>](../../../../docs/framework/wcf/samples/services.md)  
+ <span data-ttu-id="9f5ba-124">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを示します。</span><span class="sxs-lookup"><span data-stu-id="9f5ba-124">Demonstrates [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services.</span></span>  
   
- [配信](../../../../docs/framework/wcf/samples/syndication.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 配信を示します。  
+ [<span data-ttu-id="9f5ba-125">配信</span><span class="sxs-lookup"><span data-stu-id="9f5ba-125">Syndication</span></span>](../../../../docs/framework/wcf/samples/syndication.md)  
+ <span data-ttu-id="9f5ba-126">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 配信を示します。</span><span class="sxs-lookup"><span data-stu-id="9f5ba-126">Demonstrates[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] syndication.</span></span>  
   
- [Web](../../../../docs/framework/wcf/samples/web.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] での Web ホスティングを示します。
+ [<span data-ttu-id="9f5ba-127">Web</span><span class="sxs-lookup"><span data-stu-id="9f5ba-127">Web</span></span>](../../../../docs/framework/wcf/samples/web.md)  
+ <span data-ttu-id="9f5ba-128">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] での Web ホスティングを示します。</span><span class="sxs-lookup"><span data-stu-id="9f5ba-128">Demonstrates Web-hosting in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span>

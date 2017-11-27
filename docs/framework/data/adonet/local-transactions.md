@@ -1,58 +1,64 @@
 ---
-title: "ローカル トランザクション | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ローカル トランザクション"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 8ae3712f-ef5e-41a1-9ea9-b3d0399439f1
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: f9b1280f3a05a42a2f713adf993bb439245c95a1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ローカル トランザクション
-[!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] でのトランザクションは、複数のタスクをバインドして単一の作業単位として実行する場合に使用します。  たとえば、あるアプリケーションが 2 つのタスクを実行するものとします。  まず、注文情報に従ってテーブルが更新されます。  次に、在庫情報を含むテーブルが更新され、注文品の金額が借方記入されます。  いずれかのタスクが失敗すると、両方の更新がロールバックされます。  
+# <a name="local-transactions"></a><span data-ttu-id="88039-102">ローカル トランザクション</span><span class="sxs-lookup"><span data-stu-id="88039-102">Local Transactions</span></span>
+<span data-ttu-id="88039-103">[!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] でのトランザクションは、複数のタスクをバインドして単一の作業単位として実行する場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="88039-103">Transactions in [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] are used when you want to bind multiple tasks together so that they execute as a single unit of work.</span></span> <span data-ttu-id="88039-104">たとえば、あるアプリケーションが 2 つのタスクを実行するものとします。</span><span class="sxs-lookup"><span data-stu-id="88039-104">For example, imagine that an application performs two tasks.</span></span> <span data-ttu-id="88039-105">まず、注文情報に従ってテーブルが更新されます。</span><span class="sxs-lookup"><span data-stu-id="88039-105">First, it updates a table with order information.</span></span> <span data-ttu-id="88039-106">次に、在庫情報を含むテーブルが更新され、注文品の金額が借方記入されます。</span><span class="sxs-lookup"><span data-stu-id="88039-106">Second, it updates a table that contains inventory information, debiting the items ordered.</span></span> <span data-ttu-id="88039-107">いずれかのタスクが失敗すると両方の更新がロールバックされます。</span><span class="sxs-lookup"><span data-stu-id="88039-107">If either task fails, then both updates are rolled back.</span></span>  
   
-## トランザクションの種類の判別  
- 単一フェーズであり、データベースによって直接処理されるトランザクションは、ローカル トランザクションであると見なされます。  トランザクション モニターによってコーディネートされ、トランザクションの解決にフェール セーフ機構 \(2 フェーズのコミットなど\) を使用しているトランザクションは、分散トランザクションであると見なされます。  
+## <a name="determining-the-transaction-type"></a><span data-ttu-id="88039-108">トランザクションの種類の判別</span><span class="sxs-lookup"><span data-stu-id="88039-108">Determining the Transaction Type</span></span>  
+ <span data-ttu-id="88039-109">トランザクションは、単一フェーズであり、データベースによって直接処理されるときにローカル トランザクションであると見なされます。</span><span class="sxs-lookup"><span data-stu-id="88039-109">A transaction is considered to be a local transaction when it is a single-phase transaction and is handled by the database directly.</span></span> <span data-ttu-id="88039-110">トランザクションは、トランザクション モニターによってコーディネートされ、トランザクションの解決にフェール セーフ機構 (2 フェーズ コミットなど) を使用して、分散トランザクションであると見なされます。</span><span class="sxs-lookup"><span data-stu-id="88039-110">A transaction is considered to be a distributed transaction when it is coordinated by a transaction monitor and uses fail-safe mechanisms (such as two-phase commit) for transaction resolution.</span></span>  
   
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] データ プロバイダーは、それぞれ独自の `Transaction` オブジェクトを使用してローカル トランザクションを実行しています。  トランザクションを SQL Server データベースで実行できるようにする場合は、<xref:System.Data.SqlClient> トランザクションを選択します。  Oracle トランザクションの場合は、<xref:System.Data.OracleClient> プロバイダーを使用します。  さらに、トランザクションを必要とする、プロバイダーに依存しないコードを記述するための新しい <xref:System.Data.Common.DbTransaction> クラスもあります。  
-  
-> [!NOTE]
->  トランザクションは、サーバー上で実行するのが最も効率的です。  明示的なトランザクションを広範に使用する SQL Server データベースを操作する場合は、Transact\-SQL の BEGIN TRANSACTION ステートメントを使用して、ストアド プロシージャとしてトランザクション処理を記述するとよいでしょう。  サーバー側のトランザクション実行の詳細については、SQL Server オンライン ブックを参照してください。  
-  
-## 単一の接続を使用したトランザクションの実行  
- [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] では、`Connection` オブジェクトを使用してトランザクションを制御します。  ローカル トランザクションは、`BeginTransaction` メソッドを使用して開始できます。  トランザクションを開始すると、`Command` オブジェクトの `Transaction` プロパティを使用して、そのトランザクションにコマンドを参加させることができます。  次に、トランザクションの内容が成功したか失敗したかに基づいて、データ ソースに対する変更をコミットまたはロールバックします。  
+ <span data-ttu-id="88039-111">[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] データ プロバイダーは、それぞれ独自の `Transaction` オブジェクトを使用してローカル トランザクションを実行しています。</span><span class="sxs-lookup"><span data-stu-id="88039-111">Each of the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] data providers has its own `Transaction` object for performing local transactions.</span></span> <span data-ttu-id="88039-112">トランザクションを SQL Server データベースで実行できるようにする場合は、<xref:System.Data.SqlClient> トランザクションを選択します。</span><span class="sxs-lookup"><span data-stu-id="88039-112">If you require a transaction to be performed in a SQL Server database, select a <xref:System.Data.SqlClient> transaction.</span></span> <span data-ttu-id="88039-113">Oracle トランザクションの場合は、<xref:System.Data.OracleClient> プロバイダーを使用します。</span><span class="sxs-lookup"><span data-stu-id="88039-113">For an Oracle transaction, use the <xref:System.Data.OracleClient> provider.</span></span> <span data-ttu-id="88039-114">さらに、トランザクションを必要とする、プロバイダーに依存しないコードを記述するための新しい <xref:System.Data.Common.DbTransaction> クラスもあります。</span><span class="sxs-lookup"><span data-stu-id="88039-114">In addition, there is a new <xref:System.Data.Common.DbTransaction> class that is available for writing provider-independent code that requires transactions.</span></span>  
   
 > [!NOTE]
->  `EnlistDistributedTransaction` メソッドをローカル トランザクションで使用することはできません。  
+>  <span data-ttu-id="88039-115">トランザクションは、サーバー上で実行するのが最も効率的です。</span><span class="sxs-lookup"><span data-stu-id="88039-115">Transactions are most efficient when it is performed on the server.</span></span> <span data-ttu-id="88039-116">明示的なトランザクションを広範に使用する SQL Server データベースを操作する場合は、Transact-SQL の BEGIN TRANSACTION ステートメントを使用して、ストアド プロシージャとしてトランザクション処理を記述するとよいでしょう。</span><span class="sxs-lookup"><span data-stu-id="88039-116">If you are working with a SQL Server database that makes extensive use of explicit transactions, consider writing them as stored procedures using the Transact-SQL BEGIN TRANSACTION statement.</span></span> <span data-ttu-id="88039-117">サーバー側のトランザクション実行の詳細については、SQL Server オンライン ブックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="88039-117">For more information about performing server-side transactions, see SQL Server Books Online.</span></span>  
   
- トランザクションのスコープは、接続に限定されています。  次の例では、`try` ブロック内の 2 つの個別のコマンドで構成される明示的なトランザクションを実行しています。  これらのコマンドは、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] の AdventureWorks サンプル データベース内の Production.ScrapReason テーブルに対して INSERT ステートメントを実行し、例外がスローされない場合にコミットします。  `catch` ブロック内のコードは、例外がスローされた場合にトランザクションをロールバックします。  トランザクションが完了する前に中止されるか接続が終了すると、トランザクションは自動的にロールバックされます。  
+## <a name="performing-a-transaction-using-a-single-connection"></a><span data-ttu-id="88039-118">単一の接続を使用したトランザクションの実行</span><span class="sxs-lookup"><span data-stu-id="88039-118">Performing a Transaction Using a Single Connection</span></span>  
+ <span data-ttu-id="88039-119">[!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] では、`Connection` オブジェクトを使用してトランザクションを制御します。</span><span class="sxs-lookup"><span data-stu-id="88039-119">In [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], you control transactions with the `Connection` object.</span></span> <span data-ttu-id="88039-120">ローカル トランザクションは、`BeginTransaction` メソッドを使用して開始できます。</span><span class="sxs-lookup"><span data-stu-id="88039-120">You can initiate a local transaction with the `BeginTransaction` method.</span></span> <span data-ttu-id="88039-121">トランザクションを開始すると、`Transaction` オブジェクトの `Command` プロパティを使用して、そのトランザクションにコマンドを参加させることができます。</span><span class="sxs-lookup"><span data-stu-id="88039-121">Once you have begun a transaction, you can enlist a command in that transaction with the `Transaction` property of a `Command` object.</span></span> <span data-ttu-id="88039-122">次に、トランザクションの内容が成功したか失敗したかに基づいて、データ ソースに対する変更をコミットまたはロールバックします。</span><span class="sxs-lookup"><span data-stu-id="88039-122">You can then commit or roll back modifications made at the data source based on the success or failure of the components of the transaction.</span></span>  
   
-## 例  
- トランザクションを実行するには、次の手順に従います。  
+> [!NOTE]
+>  <span data-ttu-id="88039-123">`EnlistDistributedTransaction` メソッドをローカル トランザクションで使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="88039-123">The `EnlistDistributedTransaction` method should not be used for a local transaction.</span></span>  
   
-1.  <xref:System.Data.SqlClient.SqlConnection> オブジェクトの <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> メソッドを呼び出して、トランザクションの開始位置をマークします。  <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> メソッドは、トランザクションへの参照を返します。  この参照は、トランザクションに参加する <xref:System.Data.SqlClient.SqlCommand> オブジェクトに割り当てられます。  
+ <span data-ttu-id="88039-124">トランザクションのスコープは、接続に限定されています。</span><span class="sxs-lookup"><span data-stu-id="88039-124">The scope of the transaction is limited to the connection.</span></span> <span data-ttu-id="88039-125">次の例では、`try` ブロック内の 2 つの個別のコマンドで構成される明示的なトランザクションを実行しています。</span><span class="sxs-lookup"><span data-stu-id="88039-125">The following example performs an explicit transaction that consists of two separate commands in the `try` block.</span></span> <span data-ttu-id="88039-126">これらのコマンドは、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] の AdventureWorks サンプル データベース内の Production.ScrapReason テーブルに対して INSERT ステートメントを実行し、例外がスローされない場合にコミットします。</span><span class="sxs-lookup"><span data-stu-id="88039-126">The commands execute INSERT statements against the Production.ScrapReason table in the AdventureWorks [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] sample database, which are committed if no exceptions are thrown.</span></span> <span data-ttu-id="88039-127">`catch` ブロック内のコードは、例外がスローされた場合にトランザクションをロールバックします。</span><span class="sxs-lookup"><span data-stu-id="88039-127">The code in the `catch` block rolls back the transaction if an exception is thrown.</span></span> <span data-ttu-id="88039-128">トランザクションが完了する前に中止されるか接続が終了すると、トランザクションは自動的にロールバックされます。</span><span class="sxs-lookup"><span data-stu-id="88039-128">If the transaction is aborted or the connection is closed before the transaction has completed, it is automatically rolled back.</span></span>  
   
-2.  実行する <xref:System.Data.SqlClient.SqlCommand> の <xref:System.Data.SqlClient.SqlCommand.Transaction%2A> プロパティに、`Transaction` オブジェクトを割り当てます。  アクティブなトランザクションを持つ接続上でコマンドが実行され、`Command` オブジェクトの `Transaction` プロパティに `Transaction` オブジェクトが割り当てられていない場合は、例外がスローされます。  
+## <a name="example"></a><span data-ttu-id="88039-129">例</span><span class="sxs-lookup"><span data-stu-id="88039-129">Example</span></span>  
+ <span data-ttu-id="88039-130">トランザクションを実行するには、次の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="88039-130">Follow these steps to perform a transaction.</span></span>  
   
-3.  必要なコマンドを実行します。  
+1.  <span data-ttu-id="88039-131"><xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> オブジェクトの <xref:System.Data.SqlClient.SqlConnection> メソッドを呼び出して、トランザクションの開始位置をマークします。</span><span class="sxs-lookup"><span data-stu-id="88039-131">Call the <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> method of the <xref:System.Data.SqlClient.SqlConnection> object to mark the start of the transaction.</span></span> <span data-ttu-id="88039-132"><xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> メソッドは、トランザクションへの参照を返します。</span><span class="sxs-lookup"><span data-stu-id="88039-132">The <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> method returns a reference to the transaction.</span></span> <span data-ttu-id="88039-133">この参照は、トランザクションに参加する <xref:System.Data.SqlClient.SqlCommand> オブジェクトに割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="88039-133">This reference is assigned to the <xref:System.Data.SqlClient.SqlCommand> objects that are enlisted in the transaction.</span></span>  
   
-4.  <xref:System.Data.SqlClient.SqlTransaction> オブジェクトの <xref:System.Data.SqlClient.SqlTransaction.Commit%2A> メソッドを呼び出してトランザクションを完了するか、<xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> メソッドを呼び出してトランザクションを終了します。  <xref:System.Data.SqlClient.SqlTransaction.Commit%2A> または <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> メソッドが実行される前に接続が終了または破棄されると、トランザクションはロールバックされます。  
+2.  <span data-ttu-id="88039-134">実行する `Transaction` の <xref:System.Data.SqlClient.SqlCommand.Transaction%2A> プロパティに、<xref:System.Data.SqlClient.SqlCommand> オブジェクトを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="88039-134">Assign the `Transaction` object to the <xref:System.Data.SqlClient.SqlCommand.Transaction%2A> property of the <xref:System.Data.SqlClient.SqlCommand> to be executed.</span></span> <span data-ttu-id="88039-135">アクティブなトランザクションを持つ接続上でコマンドが実行され、`Transaction` オブジェクトの `Transaction` プロパティに `Command` オブジェクトが割り当てられていない場合は、例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="88039-135">If a command is executed on a connection with an active transaction, and the `Transaction` object has not been assigned to the `Transaction` property of the `Command` object, an exception is thrown.</span></span>  
   
- Microsoft SQL Server で [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] を使用するトランザクション ロジックを次のコード サンプルに示します。  
+3.  <span data-ttu-id="88039-136">必要なコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="88039-136">Execute the required commands.</span></span>  
+  
+4.  <span data-ttu-id="88039-137"><xref:System.Data.SqlClient.SqlTransaction.Commit%2A> オブジェクトの <xref:System.Data.SqlClient.SqlTransaction> メソッドを呼び出してトランザクションを完了するか、<xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> メソッドを呼び出してトランザクションを終了します。</span><span class="sxs-lookup"><span data-stu-id="88039-137">Call the <xref:System.Data.SqlClient.SqlTransaction.Commit%2A> method of the <xref:System.Data.SqlClient.SqlTransaction> object to complete the transaction, or call the <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> method to end the transaction.</span></span> <span data-ttu-id="88039-138"><xref:System.Data.SqlClient.SqlTransaction.Commit%2A> または <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> メソッドが実行される前に接続が終了または破棄されると、トランザクションはロールバックされます。</span><span class="sxs-lookup"><span data-stu-id="88039-138">If the connection is closed or disposed before either the <xref:System.Data.SqlClient.SqlTransaction.Commit%2A> or <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> methods have been executed, the transaction is rolled back.</span></span>  
+  
+ <span data-ttu-id="88039-139">Microsoft SQL Server で [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] を使用するトランザクション ロジックを次のコード サンプルに示します。</span><span class="sxs-lookup"><span data-stu-id="88039-139">The following code example demonstrates transactional logic using [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] with Microsoft SQL Server.</span></span>  
   
  [!code-csharp[DataWorks SqlTransaction.Local#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlTransaction.Local/CS/source.cs#1)]
  [!code-vb[DataWorks SqlTransaction.Local#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlTransaction.Local/VB/source.vb#1)]  
   
-## 参照  
- [トランザクションと同時実行](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)   
- [分散トランザクション](../../../../docs/framework/data/adonet/distributed-transactions.md)   
- [SQL Server と System.Transactions の統合](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="88039-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="88039-140">See Also</span></span>  
+ [<span data-ttu-id="88039-141">トランザクションと同時実行</span><span class="sxs-lookup"><span data-stu-id="88039-141">Transactions and Concurrency</span></span>](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
+ [<span data-ttu-id="88039-142">分散トランザクション</span><span class="sxs-lookup"><span data-stu-id="88039-142">Distributed Transactions</span></span>](../../../../docs/framework/data/adonet/distributed-transactions.md)  
+ [<span data-ttu-id="88039-143">SQL Server と System.Transactions の統合</span><span class="sxs-lookup"><span data-stu-id="88039-143">System.Transactions Integration with SQL Server</span></span>](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)  
+ [<span data-ttu-id="88039-144">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="88039-144">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

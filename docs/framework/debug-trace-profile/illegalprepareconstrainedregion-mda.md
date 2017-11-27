@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - PrepareConstrainedRegions method
 - managed debugging assistants (MDAs), illegal PrepareConstrainedRegions
@@ -21,36 +15,35 @@ helpviewer_keywords:
 - IllegalPrepareConstrainedRegions MDA
 - MDAs (managed debugging assistants), illegal PrepareConstrainedRegions
 ms.assetid: 2f9b5031-f910-4e01-a196-f89eab313eaf
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6cc4e8f1ff53288206aae8f6bafe5784bbab18d8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: dad43859e6bec288b66c6c10256a6b2cbc1bbe0d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="illegalprepareconstrainedregion-mda"></a>illegalPrepareConstrainedRegion MDA
-`illegalPrepareConstrainedRegion` マネージ デバッグ アシスタント (MDA) は、<xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A?displayProperty=fullName> メソッドの呼び出しが、例外ハンドラーの `try` ステートメントの直前にない場合にアクティブ化されます。 この制限は、MSIL レベルであり、呼び出しと `try` の間でコメントなどのコードを生成しないソースの使用が許可されます。  
+# <a name="illegalprepareconstrainedregion-mda"></a><span data-ttu-id="369df-102">illegalPrepareConstrainedRegion MDA</span><span class="sxs-lookup"><span data-stu-id="369df-102">illegalPrepareConstrainedRegion MDA</span></span>
+<span data-ttu-id="369df-103">`illegalPrepareConstrainedRegion` マネージ デバッグ アシスタント (MDA) は、<xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A?displayProperty=nameWithType> メソッドの呼び出しが、例外ハンドラーの `try` ステートメントの直前にない場合にアクティブ化されます。</span><span class="sxs-lookup"><span data-stu-id="369df-103">The `illegalPrepareConstrainedRegion` managed debugging assistant (MDA) is activated when a <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A?displayProperty=nameWithType> method call does not immediately precede the `try` statement of the exception handler.</span></span> <span data-ttu-id="369df-104">この制限は、MSIL レベルであり、呼び出しと `try` の間でコメントなどのコードを生成しないソースの使用が許可されます。</span><span class="sxs-lookup"><span data-stu-id="369df-104">This restriction is at the MSIL level, so it is permissible to have non-code-generating source between the call and the `try`, such as comments.</span></span>  
   
-## <a name="symptoms"></a>症状  
- そのように扱われず、単純な例外処理ブロック (`finally` または `catch`) として扱われる制約された実行領域 (CER)。 その結果、メモリ不足の状態やスレッドの中止のときには領域は実行されません。  
+## <a name="symptoms"></a><span data-ttu-id="369df-105">症状</span><span class="sxs-lookup"><span data-stu-id="369df-105">Symptoms</span></span>  
+ <span data-ttu-id="369df-106">そのように扱われず、単純な例外処理ブロック (`finally` または `catch`) として扱われる制約された実行領域 (CER)。</span><span class="sxs-lookup"><span data-stu-id="369df-106">A constrained execution region (CER) that is never treated as such, but as a simple exception handling block (`finally` or `catch`).</span></span> <span data-ttu-id="369df-107">その結果、メモリ不足の状態やスレッドの中止のときには領域は実行されません。</span><span class="sxs-lookup"><span data-stu-id="369df-107">As a consequence, the region does not run in the event of an out-of-memory condition or a thread abort.</span></span>  
   
-## <a name="cause"></a>原因  
- CER の準備パターンが正しく実行されません。  エラー イベントが発生します。 `catch`/`finally`/`fault`/`filter` ブロックで CER の導入として例外ハンドラーをマークするために使用される <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> メソッドの呼び出しを `try` ステートメントの直前に使用する必要があります。  
+## <a name="cause"></a><span data-ttu-id="369df-108">原因</span><span class="sxs-lookup"><span data-stu-id="369df-108">Cause</span></span>  
+ <span data-ttu-id="369df-109">CER の準備パターンが正しく実行されません。</span><span class="sxs-lookup"><span data-stu-id="369df-109">The preparation pattern for a CER is not followed correctly.</span></span>  <span data-ttu-id="369df-110">エラー イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="369df-110">This is an error event.</span></span> <span data-ttu-id="369df-111"><xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A>例外ハンドラーとしての CER の概要を示すために使用されるメソッドの呼び出し、 `catch` / `finally` / `fault` / `filter`直前のブロックを使用する必要があります、`try`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="369df-111">The <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> method call used to mark exception handlers as introducing a CER in their `catch`/`finally`/`fault`/`filter` blocks must be used immediately before the `try` statement.</span></span>  
   
-## <a name="resolution"></a>解決策  
- `try`ステートメントの直前に <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> の呼び出しがあることを確認します。  
+## <a name="resolution"></a><span data-ttu-id="369df-112">解決策</span><span class="sxs-lookup"><span data-stu-id="369df-112">Resolution</span></span>  
+ <span data-ttu-id="369df-113">`try`ステートメントの直前に <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> の呼び出しがあることを確認します。</span><span class="sxs-lookup"><span data-stu-id="369df-113">Ensure that the call to <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> happens immediately before the `try` statement.</span></span>  
   
-## <a name="effect-on-the-runtime"></a>ランタイムへの影響  
- この MDA は CLR に影響しません。  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="369df-114">ランタイムへの影響</span><span class="sxs-lookup"><span data-stu-id="369df-114">Effect on the Runtime</span></span>  
+ <span data-ttu-id="369df-115">この MDA は CLR に影響しません。</span><span class="sxs-lookup"><span data-stu-id="369df-115">This MDA has no effect on the CLR.</span></span>  
   
-## <a name="output"></a>出力  
- MDA は、<xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> メソッドの呼び出し元の名前、MSIL のオフセット、および呼び出しが try ブロックの先頭の直前にないことを示すメッセージを表示します。  
+## <a name="output"></a><span data-ttu-id="369df-116">出力</span><span class="sxs-lookup"><span data-stu-id="369df-116">Output</span></span>  
+ <span data-ttu-id="369df-117">MDA は、<xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> メソッドの呼び出し元の名前、MSIL のオフセット、および呼び出しが try ブロックの先頭の直前にないことを示すメッセージを表示します。</span><span class="sxs-lookup"><span data-stu-id="369df-117">The MDA displays the name of the method calling the <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> method, the MSIL offset, and a message indicating the call does not immediately precede the beginning of the try block.</span></span>  
   
-## <a name="configuration"></a>構成  
+## <a name="configuration"></a><span data-ttu-id="369df-118">構成</span><span class="sxs-lookup"><span data-stu-id="369df-118">Configuration</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -60,8 +53,8 @@ ms.lasthandoff: 08/21/2017
 </mdaConfig>  
 ```  
   
-## <a name="example"></a>例  
- 次のコード例では、この MDA のアクティブ化の原因となるパターンを示します。  
+## <a name="example"></a><span data-ttu-id="369df-119">例</span><span class="sxs-lookup"><span data-stu-id="369df-119">Example</span></span>  
+ <span data-ttu-id="369df-120">次のコード例では、この MDA のアクティブ化の原因となるパターンを示します。</span><span class="sxs-lookup"><span data-stu-id="369df-120">The following code example demonstrates the pattern that causes this MDA to be activated.</span></span>  
   
 ```  
 void MethodWithInvalidPCR()  
@@ -79,9 +72,8 @@ void MethodWithInvalidPCR()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A>   
- [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)   
- [相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)
-
+## <a name="see-also"></a><span data-ttu-id="369df-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="369df-121">See Also</span></span>  
+ <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
+ <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A>  
+ [<span data-ttu-id="369df-122">マネージ デバッグ アシスタントによるエラーの診断</span><span class="sxs-lookup"><span data-stu-id="369df-122">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
+ [<span data-ttu-id="369df-123">相互運用マーシャリング</span><span class="sxs-lookup"><span data-stu-id="369df-123">Interop Marshaling</span></span>](../../../docs/framework/interop/interop-marshaling.md)

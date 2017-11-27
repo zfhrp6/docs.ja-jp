@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - COM interop, COM wrappers
 - RCW
@@ -21,60 +15,58 @@ helpviewer_keywords:
 - runtime callable wrappers
 - interoperation with unmanaged code, COM wrappers
 ms.assetid: 7e542583-1e31-4e10-b523-8cf2f29cb4a4
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 607f5689e9b2221a916c80732bb54d64cd21bf4d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 980ed0a10c4e8152da20846710b21c244a341271
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="runtime-callable-wrapper"></a>ランタイム呼び出し可能ラッパー
-共通言語ランタイムは、ランタイム呼び出し可能ラッパー (RCW) と呼ばれるプロキシを介して COM オブジェクトを公開します。 .NET クライアントでは RCW が普通のオブジェクトとして示されますが、その主な機能は、.NET クライアントと COM オブジェクトの間で呼び出しをマーシャリングすることです。  
+# <a name="runtime-callable-wrapper"></a><span data-ttu-id="9331a-102">ランタイム呼び出し可能ラッパー</span><span class="sxs-lookup"><span data-stu-id="9331a-102">Runtime Callable Wrapper</span></span>
+<span data-ttu-id="9331a-103">共通言語ランタイムは、ランタイム呼び出し可能ラッパー (RCW) と呼ばれるプロキシを介して COM オブジェクトを公開します。</span><span class="sxs-lookup"><span data-stu-id="9331a-103">The common language runtime exposes COM objects through a proxy called the runtime callable wrapper (RCW).</span></span> <span data-ttu-id="9331a-104">.NET クライアントでは RCW が普通のオブジェクトとして示されますが、その主な機能は、.NET クライアントと COM オブジェクトの間で呼び出しをマーシャリングすることです。</span><span class="sxs-lookup"><span data-stu-id="9331a-104">Although the RCW appears to be an ordinary object to .NET clients, its primary function is to marshal calls between a .NET client and a COM object.</span></span>  
   
- ランタイムは、COM オブジェクトごとに 1 つの RCW を、そのオブジェクトに存在する参照の数に関係なく作成します。 ランタイムは、各オブジェクトで、プロセスごとに 1 つの RCW を保持します。  1 つのアプリケーション ドメインまたはアパートメントで RCW を作成し、別のアプリケーション ドメインまたはアパートメントへの参照を渡すと、最初のオブジェクトへのプロキシが使用されます。  次の図が示すように、任意の数のマネージ クライアントが、INew および INewer のインターフェイスを公開する COM オブジェクトへの参照を保持できます。  
+ <span data-ttu-id="9331a-105">ランタイムは、COM オブジェクトごとに 1 つの RCW を、そのオブジェクトに存在する参照の数に関係なく作成します。</span><span class="sxs-lookup"><span data-stu-id="9331a-105">The runtime creates exactly one RCW for each COM object, regardless of the number of references that exist on that object.</span></span> <span data-ttu-id="9331a-106">ランタイムは、各オブジェクトで、プロセスごとに 1 つの RCW を保持します。</span><span class="sxs-lookup"><span data-stu-id="9331a-106">The runtime maintains a single RCW per process for each object.</span></span>  <span data-ttu-id="9331a-107">1 つのアプリケーション ドメインまたはアパートメントで RCW を作成し、別のアプリケーション ドメインまたはアパートメントへの参照を渡すと、最初のオブジェクトへのプロキシが使用されます。</span><span class="sxs-lookup"><span data-stu-id="9331a-107">If you create an RCW in one application domain or apartment, and then pass a reference to another application domain or apartment, a proxy to the first object will be used.</span></span>  <span data-ttu-id="9331a-108">次の図が示すように、任意の数のマネージ クライアントが、INew および INewer のインターフェイスを公開する COM オブジェクトへの参照を保持できます。</span><span class="sxs-lookup"><span data-stu-id="9331a-108">As the following illustration shows, any number of managed clients can hold a reference to the COM objects that expose INew and INewer interfaces.</span></span>  
   
- ![RCW](../../../docs/framework/interop/media/rcw.gif "rcw")  
-ランタイム呼び出し可能ラッパーを介して COM オブジェクトにアクセスする  
+ <span data-ttu-id="9331a-109">![RCW](../../../docs/framework/interop/media/rcw.gif "rcw")</span><span class="sxs-lookup"><span data-stu-id="9331a-109">![RCW](../../../docs/framework/interop/media/rcw.gif "rcw")</span></span>  
+<span data-ttu-id="9331a-110">ランタイム呼び出し可能ラッパーを介して COM オブジェクトにアクセスする</span><span class="sxs-lookup"><span data-stu-id="9331a-110">Accessing COM objects through the runtime callable wrapper</span></span>  
   
- ランタイムは、タイプ ライブラリから派生したメタデータを使用して、呼び出される COM オブジェクトとそのオブジェクトのラッパーの両方を作成します。 各 RCW は、ラップする COM オブジェクトでインターフェイス ポインターのキャッシュを保持し、RCW が不要になった時点で、COM オブジェクトでのその参照を解放します。 ランタイムは、RCW でのガベージ コレクションを実行します。  
+ <span data-ttu-id="9331a-111">ランタイムは、タイプ ライブラリから派生したメタデータを使用して、呼び出される COM オブジェクトとそのオブジェクトのラッパーの両方を作成します。</span><span class="sxs-lookup"><span data-stu-id="9331a-111">Using metadata derived from a type library, the runtime creates both the COM object being called and a wrapper for that object.</span></span> <span data-ttu-id="9331a-112">各 RCW は、ラップする COM オブジェクトでインターフェイス ポインターのキャッシュを保持し、RCW が不要になった時点で、COM オブジェクトでのその参照を解放します。</span><span class="sxs-lookup"><span data-stu-id="9331a-112">Each RCW maintains a cache of interface pointers on the COM object it wraps and releases its reference on the COM object when the RCW is no longer needed.</span></span> <span data-ttu-id="9331a-113">ランタイムは、RCW でのガベージ コレクションを実行します。</span><span class="sxs-lookup"><span data-stu-id="9331a-113">The runtime performs garbage collection on the RCW.</span></span>  
   
- RCW は、他のさまざまなアクティビティも実行しますが、ラップされたオブジェクトのために、マネージ コードとアンマネージ コードの間でデータをマーシャリングします。 具体的には、RCW はクライアントとサーバーの間でデータの異なる表現が渡されるとき、常にメソッド引数やメソッドの戻り値のマーシャリングを提供します。  
+ <span data-ttu-id="9331a-114">RCW は、他のさまざまなアクティビティも実行しますが、ラップされたオブジェクトのために、マネージ コードとアンマネージ コードの間でデータをマーシャリングします。</span><span class="sxs-lookup"><span data-stu-id="9331a-114">Among other activities, the RCW marshals data between managed and unmanaged code, on behalf of the wrapped object.</span></span> <span data-ttu-id="9331a-115">具体的には、RCW はクライアントとサーバーの間でデータの異なる表現が渡されるとき、常にメソッド引数やメソッドの戻り値のマーシャリングを提供します。</span><span class="sxs-lookup"><span data-stu-id="9331a-115">Specifically, the RCW provides marshaling for method arguments and method return values whenever the client and server have different representations of the data passed between them.</span></span>  
   
- 標準ラッパーは、組み込みのマーシャリング規則を適用します。 たとえば、.NET クライアントが文字列型を引数の一部としてアンマネージ オブジェクトに渡すとき、ラッパーは文字列を BSTR 型に変換します。 COM オブジェクトが、マネージ呼び出し元に BSTR を返す場合、呼び出し元は文字列を受信します。 クライアントとサーバーはどちらも、それぞれが使い慣れているデータを送受信します。 その他の型は、変換する必要がありません。 たとえば、標準的なラッパーはマネージ コードとアンマネージ コードの間で、型を変換しないで 4 バイトの整数を常に受け渡しします。  
+ <span data-ttu-id="9331a-116">標準ラッパーは、組み込みのマーシャリング規則を適用します。</span><span class="sxs-lookup"><span data-stu-id="9331a-116">The standard wrapper enforces built-in marshaling rules.</span></span> <span data-ttu-id="9331a-117">たとえば、.NET クライアントが文字列型を引数の一部としてアンマネージ オブジェクトに渡すとき、ラッパーは文字列を BSTR 型に変換します。</span><span class="sxs-lookup"><span data-stu-id="9331a-117">For example, when a .NET client passes a String type as part of an argument to an unmanaged object, the wrapper converts the string to a BSTR type.</span></span> <span data-ttu-id="9331a-118">COM オブジェクトが、マネージ呼び出し元に BSTR を返す場合、呼び出し元は文字列を受信します。</span><span class="sxs-lookup"><span data-stu-id="9331a-118">Should the COM object return a BSTR to its managed caller, the caller receives a String.</span></span> <span data-ttu-id="9331a-119">クライアントとサーバーはどちらも、それぞれが使い慣れているデータを送受信します。</span><span class="sxs-lookup"><span data-stu-id="9331a-119">Both the client and the server send and receive data that is familiar to them.</span></span> <span data-ttu-id="9331a-120">その他の型は、変換する必要がありません。</span><span class="sxs-lookup"><span data-stu-id="9331a-120">Other types require no conversion.</span></span> <span data-ttu-id="9331a-121">たとえば、標準的なラッパーはマネージ コードとアンマネージ コードの間で、型を変換しないで 4 バイトの整数を常に受け渡しします。</span><span class="sxs-lookup"><span data-stu-id="9331a-121">For instance, a standard wrapper will always pass a 4-byte integer between managed and unmanaged code without converting the type.</span></span>  
   
-## <a name="marshaling-selected-interfaces"></a>選択したインターフェイスのマーシャリング  
- [ランタイム呼び出し可能ラッパー](../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW) の主な目標は、マネージとアンマネージのプログラミング モデルの違いを見えなくすることです。 次の図に示すように、RCW は選択された COM インターフェイスを .NET クライアントに公開することなく使用して、シームレスな移行を実現します。  
+## <a name="marshaling-selected-interfaces"></a><span data-ttu-id="9331a-122">選択したインターフェイスのマーシャリング</span><span class="sxs-lookup"><span data-stu-id="9331a-122">Marshaling selected interfaces</span></span>  
+ <span data-ttu-id="9331a-123">[ランタイム呼び出し可能ラッパー](../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW) の主な目標は、マネージとアンマネージのプログラミング モデルの違いを見えなくすることです。</span><span class="sxs-lookup"><span data-stu-id="9331a-123">The primary goal of the [runtime callable wrapper](../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW) is to hide the differences between the managed and unmanaged programming models.</span></span> <span data-ttu-id="9331a-124">次の図に示すように、RCW は選択された COM インターフェイスを .NET クライアントに公開することなく使用して、シームレスな移行を実現します。</span><span class="sxs-lookup"><span data-stu-id="9331a-124">To create a seamless transition, the RCW consumes selected COM interfaces without exposing them to the .NET client, as shown in the following illustration.</span></span>  
   
- ![RCW とインターフェイス](../../../docs/framework/interop/media/rcwwithinterfaces.gif "rcwwithinterfaces")  
-COM インターフェイスおよびランタイム呼び出し可能ラッパー  
+ <span data-ttu-id="9331a-125">![RCW とインターフェイス](../../../docs/framework/interop/media/rcwwithinterfaces.gif "rcwwithinterfaces")</span><span class="sxs-lookup"><span data-stu-id="9331a-125">![RCW With Interfaces](../../../docs/framework/interop/media/rcwwithinterfaces.gif "rcwwithinterfaces")</span></span>  
+<span data-ttu-id="9331a-126">COM インターフェイスおよびランタイム呼び出し可能ラッパー</span><span class="sxs-lookup"><span data-stu-id="9331a-126">COM interfaces and the runtime callable wrapper</span></span>  
   
- 事前バインディングされたオブジェクトとして作成されると、RCW は特定の型になります。 これは、COM オブジェクトが実装するインターフェイスを実装し、オブジェクトのインターフェイスからのメソッド、プロパティ、およびイベントを公開します。 図では、RCW は INew インターフェイスを公開しますが、**IUnknown** と **IDispatch** インターフェイスを使用します。 さらに、RCW は、INew インターフェイスのすべてのメンバーを .NET クライアントに公開します。  
+ <span data-ttu-id="9331a-127">事前バインディングされたオブジェクトとして作成されると、RCW は特定の型になります。</span><span class="sxs-lookup"><span data-stu-id="9331a-127">When created as an early-bound object, the RCW is a specific type.</span></span> <span data-ttu-id="9331a-128">これは、COM オブジェクトが実装するインターフェイスを実装し、オブジェクトのインターフェイスからのメソッド、プロパティ、およびイベントを公開します。</span><span class="sxs-lookup"><span data-stu-id="9331a-128">It implements the interfaces that the COM object implements and exposes the methods, properties, and events from the object's interfaces.</span></span> <span data-ttu-id="9331a-129">図では、RCW は INew インターフェイスを公開しますが、**IUnknown** と **IDispatch** インターフェイスを使用します。</span><span class="sxs-lookup"><span data-stu-id="9331a-129">In the illustration, the RCW exposes the INew interface but consumes the **IUnknown** and **IDispatch** interfaces.</span></span> <span data-ttu-id="9331a-130">さらに、RCW は、INew インターフェイスのすべてのメンバーを .NET クライアントに公開します。</span><span class="sxs-lookup"><span data-stu-id="9331a-130">Further, the RCW exposes all members of the INew interface to the .NET client.</span></span>  
   
- RCW は、それがラップするオブジェクトによって公開されている、次の表にリストされたインターフェイスを使用します。  
+ <span data-ttu-id="9331a-131">RCW は、それがラップするオブジェクトによって公開されている、次の表にリストされたインターフェイスを使用します。</span><span class="sxs-lookup"><span data-stu-id="9331a-131">The RCW consumes the interfaces listed in the following table, which are exposed by the object it wraps.</span></span>  
   
-|インターフェイス|説明|  
+|<span data-ttu-id="9331a-132">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="9331a-132">Interface</span></span>|<span data-ttu-id="9331a-133">説明</span><span class="sxs-lookup"><span data-stu-id="9331a-133">Description</span></span>|  
 |---------------|-----------------|  
-|**IDispatch**|リフレクションによる COM オブジェクトへの遅延バインディングのために使用します。|  
-|**IErrorInfo**|エラー、そのソース、ヘルプ ファイル、ヘルプ コンテキスト、およびエラーを定義したインターフェイスの GUID (.NET クラスでは常に **GUID_NULL**) に関する説明文を示します。|  
-|**IProvideClassInfo**|ラップされている COM オブジェクトが **IProvideClassInfo** を実装する場合、RCW はこのインターフェイスから型情報を抽出して、より優れた型 ID を提供します。|  
-|**IUnknown**|オブジェクト ID、強制型変換、および有効期間管理のために使用します。<br /><br /> -   オブジェクト ID<br />     ランタイムは、各オブジェクトの **IUnknown** インターフェイスの値を比較することによって、複数の COM オブジェクトを区別します。<br />-   強制型変換<br />     RCW は、**QueryInterface** メソッドによって実行される、動的な型の探索を認識します。<br />-   有効期間管理<br />     RCW は **QueryInterface** メソッドを使用して、アンマネージ オブジェクトへの参照を取得し、ランタイムがラッパーでガベージ コレクションを実行してアンマネージ オブジェクトが解放されるまでその参照を保持します。|  
+|<span data-ttu-id="9331a-134">**IDispatch**</span><span class="sxs-lookup"><span data-stu-id="9331a-134">**IDispatch**</span></span>|<span data-ttu-id="9331a-135">リフレクションによる COM オブジェクトへの遅延バインディングのために使用します。</span><span class="sxs-lookup"><span data-stu-id="9331a-135">For late binding to COM objects through reflection.</span></span>|  
+|<span data-ttu-id="9331a-136">**IErrorInfo**</span><span class="sxs-lookup"><span data-stu-id="9331a-136">**IErrorInfo**</span></span>|<span data-ttu-id="9331a-137">エラー、そのソース、ヘルプ ファイル、ヘルプ コンテキスト、およびエラーを定義したインターフェイスの GUID (.NET クラスでは常に **GUID_NULL**) に関する説明文を示します。</span><span class="sxs-lookup"><span data-stu-id="9331a-137">Provides a textual description of the error, its source, a Help file, Help context, and the GUID of the interface that defined the error (always **GUID_NULL** for .NET classes).</span></span>|  
+|<span data-ttu-id="9331a-138">**IProvideClassInfo**</span><span class="sxs-lookup"><span data-stu-id="9331a-138">**IProvideClassInfo**</span></span>|<span data-ttu-id="9331a-139">ラップされている COM オブジェクトが **IProvideClassInfo** を実装する場合、RCW はこのインターフェイスから型情報を抽出して、より優れた型 ID を提供します。</span><span class="sxs-lookup"><span data-stu-id="9331a-139">If the COM object being wrapped implements **IProvideClassInfo**, the RCW extracts the type information from this interface to provide better type identity.</span></span>|  
+|<span data-ttu-id="9331a-140">**IUnknown**</span><span class="sxs-lookup"><span data-stu-id="9331a-140">**IUnknown**</span></span>|<span data-ttu-id="9331a-141">オブジェクト ID、強制型変換、および有効期間管理のために使用します。</span><span class="sxs-lookup"><span data-stu-id="9331a-141">For object identity, type coercion, and lifetime management:</span></span><br /><br /> <span data-ttu-id="9331a-142">-   オブジェクト ID</span><span class="sxs-lookup"><span data-stu-id="9331a-142">-   Object identity</span></span><br />     <span data-ttu-id="9331a-143">ランタイムは、各オブジェクトの **IUnknown** インターフェイスの値を比較することによって、複数の COM オブジェクトを区別します。</span><span class="sxs-lookup"><span data-stu-id="9331a-143">The runtime distinguishes between COM objects by comparing the value of the **IUnknown** interface for each object.</span></span><br /><span data-ttu-id="9331a-144">-   強制型変換</span><span class="sxs-lookup"><span data-stu-id="9331a-144">-   Type coercion</span></span><br />     <span data-ttu-id="9331a-145">RCW は、**QueryInterface** メソッドによって実行される、動的な型の探索を認識します。</span><span class="sxs-lookup"><span data-stu-id="9331a-145">The RCW recognizes the dynamic type discovery performed by the **QueryInterface** method.</span></span><br /><span data-ttu-id="9331a-146">-   有効期間管理</span><span class="sxs-lookup"><span data-stu-id="9331a-146">-   Lifetime management</span></span><br />     <span data-ttu-id="9331a-147">RCW は **QueryInterface** メソッドを使用して、アンマネージ オブジェクトへの参照を取得し、ランタイムがラッパーでガベージ コレクションを実行してアンマネージ オブジェクトが解放されるまでその参照を保持します。</span><span class="sxs-lookup"><span data-stu-id="9331a-147">Using the **QueryInterface** method, the RCW gets and holds a reference to an unmanaged object until the runtime performs garbage collection on the wrapper, which releases the unmanaged object.</span></span>|  
   
- 必要に応じて、RCW はそれがラップするオブジェクトによって公開されている、次の表にリストされたインターフェイスを使用することもできます。  
+ <span data-ttu-id="9331a-148">必要に応じて、RCW はそれがラップするオブジェクトによって公開されている、次の表にリストされたインターフェイスを使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="9331a-148">The RCW optionally consumes the interfaces listed in the following table, which are exposed by the object it wraps.</span></span>  
   
-|インターフェイス|説明|  
+|<span data-ttu-id="9331a-149">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="9331a-149">Interface</span></span>|<span data-ttu-id="9331a-150">説明</span><span class="sxs-lookup"><span data-stu-id="9331a-150">Description</span></span>|  
 |---------------|-----------------|  
-|**IConnectionPoint** と **IConnectionPointContainer**|RCW は、接続ポイントのイベント スタイルを公開するオブジェクトを、デリゲート ベースのイベントに変換します。|  
-|**IDispatchEx**|クラスが **IDispatchEx** を実装する場合、RCW は **IExpando** を実装します。 **IDispatchEx** インターフェイスは、**IDispatch** インターフェイスの拡張版で、**IDispatch** とは異なり、列挙、追加、削除、および大文字小文字を区別したメンバーの呼び出しが可能になります。|  
-|**IEnumVARIANT**|列挙をサポートする COM 型がコレクションとして扱われることを可能にします。|  
+|<span data-ttu-id="9331a-151">**IConnectionPoint** と **IConnectionPointContainer**</span><span class="sxs-lookup"><span data-stu-id="9331a-151">**IConnectionPoint** and **IConnectionPointContainer**</span></span>|<span data-ttu-id="9331a-152">RCW は、接続ポイントのイベント スタイルを公開するオブジェクトを、デリゲート ベースのイベントに変換します。</span><span class="sxs-lookup"><span data-stu-id="9331a-152">The RCW converts objects that expose the connection-point event style to delegate-based events.</span></span>|  
+|<span data-ttu-id="9331a-153">**IDispatchEx**</span><span class="sxs-lookup"><span data-stu-id="9331a-153">**IDispatchEx**</span></span>|<span data-ttu-id="9331a-154">クラスが **IDispatchEx** を実装する場合、RCW は **IExpando** を実装します。</span><span class="sxs-lookup"><span data-stu-id="9331a-154">If the class implements **IDispatchEx**, the RCW implements **IExpando**.</span></span> <span data-ttu-id="9331a-155">**IDispatchEx** インターフェイスは、**IDispatch** インターフェイスの拡張版で、**IDispatch** とは異なり、列挙、追加、削除、および大文字小文字を区別したメンバーの呼び出しが可能になります。</span><span class="sxs-lookup"><span data-stu-id="9331a-155">The **IDispatchEx** interface is an extension of the **IDispatch** interface that, unlike **IDispatch**, enables enumeration, addition, deletion, and case-sensitive calling of members.</span></span>|  
+|<span data-ttu-id="9331a-156">**IEnumVARIANT**</span><span class="sxs-lookup"><span data-stu-id="9331a-156">**IEnumVARIANT**</span></span>|<span data-ttu-id="9331a-157">列挙をサポートする COM 型がコレクションとして扱われることを可能にします。</span><span class="sxs-lookup"><span data-stu-id="9331a-157">Enables COM types that support enumerations to be treated as collections.</span></span>|  
   
-## <a name="see-also"></a>関連項目  
- [COM ラッパー](../../../docs/framework/interop/com-wrappers.md)   
- [選択したインターフェイスのマーシャリング](http://msdn.microsoft.com/en-us/fdb97fd0-f694-4832-bf15-a4e7cf413840)   
- [COM 呼び出し可能ラッパー](../../../docs/framework/interop/com-callable-wrapper.md)   
- [タイプ ライブラリからアセンブリへの変換の要約](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)   
- [タイプ ライブラリのアセンブリとしてのインポート](../../../docs/framework/interop/importing-a-type-library-as-an-assembly.md)
-
+## <a name="see-also"></a><span data-ttu-id="9331a-158">関連項目</span><span class="sxs-lookup"><span data-stu-id="9331a-158">See Also</span></span>  
+ [<span data-ttu-id="9331a-159">COM ラッパー</span><span class="sxs-lookup"><span data-stu-id="9331a-159">COM Wrappers</span></span>](../../../docs/framework/interop/com-wrappers.md)  
+ [<span data-ttu-id="9331a-160">選択したインターフェイスのマーシャ リング</span><span class="sxs-lookup"><span data-stu-id="9331a-160">Marshaling Selected Interfaces</span></span>](http://msdn.microsoft.com/en-us/fdb97fd0-f694-4832-bf15-a4e7cf413840)  
+ [<span data-ttu-id="9331a-161">COM 呼び出し可能ラッパー</span><span class="sxs-lookup"><span data-stu-id="9331a-161">COM Callable Wrapper</span></span>](../../../docs/framework/interop/com-callable-wrapper.md)  
+ [<span data-ttu-id="9331a-162">タイプ ライブラリからアセンブリへの変換の要約</span><span class="sxs-lookup"><span data-stu-id="9331a-162">Type Library to Assembly Conversion Summary</span></span>](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)  
+ [<span data-ttu-id="9331a-163">タイプ ライブラリのアセンブリとしてのインポート</span><span class="sxs-lookup"><span data-stu-id="9331a-163">Importing a Type Library as an Assembly</span></span>](../../../docs/framework/interop/importing-a-type-library-as-an-assembly.md)

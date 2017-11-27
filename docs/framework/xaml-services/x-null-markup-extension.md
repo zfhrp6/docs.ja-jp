@@ -1,57 +1,60 @@
 ---
-title: "x:Null Markup Extension | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "NullExtension"
-  - "x:NullExtension"
-  - "x:Null"
-  - "Null"
-  - "xNull"
-helpviewer_keywords: 
-  - "Null markup extension in XAML [XAML Services]"
-  - "x:Null markup extension [XAML Services]"
-  - "XAML [XAML Services], x:Null markup extension"
+title: "x:Null のマークアップ拡張機能"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- NullExtension
+- x:NullExtension
+- x:Null
+- Null
+- xNull
+helpviewer_keywords:
+- Null markup extension in XAML [XAML Services]
+- x:Null markup extension [XAML Services]
+- XAML [XAML Services], x:Null markup extension
 ms.assetid: 2e3ccc21-4996-481d-91b5-3910d8b3bfa3
-caps.latest.revision: 20
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: a60d74bdf3343d02eaf912ac7700f36a649f659c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# x:Null Markup Extension
-XAML メンバーの値として `null` を指定します。  
+# <a name="xnull-markup-extension"></a><span data-ttu-id="156c2-102">x:Null のマークアップ拡張機能</span><span class="sxs-lookup"><span data-stu-id="156c2-102">x:Null Markup Extension</span></span>
+<span data-ttu-id="156c2-103">指定`null`XAML メンバーに対する値として。</span><span class="sxs-lookup"><span data-stu-id="156c2-103">Specifies `null` as a value for a XAML member.</span></span>  
   
-## XAML 属性の使用方法  
+## <a name="xaml-attribute-usage"></a><span data-ttu-id="156c2-104">XAML 属性の使用方法</span><span class="sxs-lookup"><span data-stu-id="156c2-104">XAML Attribute Usage</span></span>  
   
+```xaml  
+<object property="{x:Null}" .../>  
 ```  
-<object property="{x:Null}" .../>  
-```  
   
-## 解説  
- [!INCLUDE[TLA#tla_cshrp](../../../includes/tlasharptla-cshrp-md.md)] および [!INCLUDE[TLA#tla_cpp](../../../includes/tlasharptla-cpp-md.md)] における null 参照のキーワードは null です。  null 参照の [!INCLUDE[TLA#tla_visualb](../../../includes/tlasharptla-visualb-md.md)] キーワードは `Nothing` ですが、どの分離コード言語が XAML と関連付けられているかに関係なく、XAML の使用方法としては常に `{x:Null}` を使用してください。  
+## <a name="remarks"></a><span data-ttu-id="156c2-105">コメント</span><span class="sxs-lookup"><span data-stu-id="156c2-105">Remarks</span></span>  
+ <span data-ttu-id="156c2-106">内の null 参照用のキーワードを[!INCLUDE[TLA#tla_cshrp](../../../includes/tlasharptla-cshrp-md.md)]と[!INCLUDE[TLA#tla_cpp](../../../includes/tlasharptla-cpp-md.md)]が null です。</span><span class="sxs-lookup"><span data-stu-id="156c2-106">The keyword for a null reference in [!INCLUDE[TLA#tla_cshrp](../../../includes/tlasharptla-cshrp-md.md)] and [!INCLUDE[TLA#tla_cpp](../../../includes/tlasharptla-cpp-md.md)] is null.</span></span> <span data-ttu-id="156c2-107">[!INCLUDE[TLA#tla_visualb](../../../includes/tlasharptla-visualb-md.md)] Null 参照のキーワードは、 `Nothing`、常に使用するが、 `{x:Null}` XAML の使用方法に関係なく、XAML と関連付けた分離コード言語として。</span><span class="sxs-lookup"><span data-stu-id="156c2-107">The [!INCLUDE[TLA#tla_visualb](../../../includes/tlasharptla-visualb-md.md)] keyword for a null reference is `Nothing`, but you always use `{x:Null}` as the XAML usage regardless which code-behind language you associate with the XAML.</span></span>  
   
- `x:Null` のマークアップ拡張機能には、設定可能なプロパティはありません。  
+ <span data-ttu-id="156c2-108">`x:Null`マークアップ拡張機能には設定可能なプロパティはありません。</span><span class="sxs-lookup"><span data-stu-id="156c2-108">The `x:Null` markup extension has no settable properties.</span></span>  
   
- null の使用方法は多くの場合、CLR <xref:System.Nullable%601> 値の XAML メンバーの公開と関連付けられます。  
+ <span data-ttu-id="156c2-109">Null の使用状況は、XAML メンバーの公開を CLR に関連付けられて多くの場合、<xref:System.Nullable%601>値。</span><span class="sxs-lookup"><span data-stu-id="156c2-109">A null usage is often associated with the XAML member exposure of a CLR <xref:System.Nullable%601> value.</span></span>  
   
- XAML のあらゆるマークアップ拡張機能と同様、`x:Null` マークアップ拡張機能は、属性値の処理をリテラルやイベント ハンドラー参照以外にエスケープする場合、中かっこ \(`{,}`\) を使用します。  属性構文は、このマークアップ拡張機能で最も多く使用される構文です。  `x:Null` マークアップ拡張機能では位置指定パラメーターや構築引数は使用されないので、オブジェクト要素構文 `<x:Null />` は技術的には使用できますが、使用されることはまれです。  
+ <span data-ttu-id="156c2-110">`x:Null`マークアップ拡張機能のすべての XAML マークアップ拡張機能と同様に、中かっこを使用して (`{,}`) 以外のリテラルまたはイベント ハンドラーの参照を属性値の処理をエスケープします。</span><span class="sxs-lookup"><span data-stu-id="156c2-110">The `x:Null` markup extension, like all XAML markup extensions, uses the braces (`{,}`) for escaping the handling of attribute values to be other than literals or event-handler references.</span></span> <span data-ttu-id="156c2-111">属性構文では、このマークアップ拡張機能で最も頻繁に使用される構文です。</span><span class="sxs-lookup"><span data-stu-id="156c2-111">Attribute syntax is the syntax most frequently used with this markup extension.</span></span> <span data-ttu-id="156c2-112">オブジェクトの要素の構文`<x:Null />`技術的に可能ですが、めったに使用されないため、`x:Null`マークアップ拡張機能には、位置指定パラメーター、または構築引数はありません。</span><span class="sxs-lookup"><span data-stu-id="156c2-112">An object element syntax `<x:Null />` is technically possible, but is rarely used because the `x:Null` markup extension has no positional parameters or construction arguments.</span></span>  
   
- マークアップ拡張機能については、「[マークアップ拡張機能と WPF XAML](../../../ocs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)」を参照してください。  
+ <span data-ttu-id="156c2-113">マークアップ拡張機能の概要については、次を参照してください。[マークアップ拡張機能と WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)です。</span><span class="sxs-lookup"><span data-stu-id="156c2-113">For information about markup extensions, see [Markup Extensions and WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).</span></span>  
   
- .NET Framework XAML サービスでは、このマークアップ拡張機能の処理は、<xref:System.Windows.Markup.NullExtension> クラスによって定義されます。  
+ <span data-ttu-id="156c2-114">.NET Framework XAML サービスで、このマークアップ拡張機能の処理がによって定義された、<xref:System.Windows.Markup.NullExtension>クラスです。</span><span class="sxs-lookup"><span data-stu-id="156c2-114">In .NET Framework XAML Services, the handling for this markup extension is defined by the <xref:System.Windows.Markup.NullExtension> class.</span></span>  
   
-## WPF の使用上の注意  
- `null` は、参照型の依存関係プロパティの初期未設定値であるとは限らないことに注意してください。  初期既定値は、依存関係プロパティごとに異なることがあります。また、プロパティ固有のメタデータに基づいていることがあります。  依存関係プロパティの多くは、その検証コールバックの実装により、マークアップまたはコードのいずれによる場合でも、`null` を値として許容しません。  依存関係プロパティの詳細については、「[依存関係プロパティの概要](../../../ocs/framework/wpf/advanced/dependency-properties-overview.md)」を参照してください。  
+## <a name="wpf-usage-notes"></a><span data-ttu-id="156c2-115">WPF の使用上の注意</span><span class="sxs-lookup"><span data-stu-id="156c2-115">WPF Usage Notes</span></span>  
+ <span data-ttu-id="156c2-116">なお`null`必ずしも参照型の依存関係プロパティの初期設定されていない値ではありません。</span><span class="sxs-lookup"><span data-stu-id="156c2-116">Note that `null` is not necessarily the initial unset value for a reference-type dependency property.</span></span> <span data-ttu-id="156c2-117">既定の初期値は、依存関係プロパティごとに異なることができ、プロパティ固有のメタデータに基づくことができます。</span><span class="sxs-lookup"><span data-stu-id="156c2-117">The initial default value can vary for each dependency property and can be based on property-specific metadata.</span></span> <span data-ttu-id="156c2-118">多くの依存関係プロパティを受け入れない`null`マークアップまたはコードの検証コールバックの実装のための値として。</span><span class="sxs-lookup"><span data-stu-id="156c2-118">Many dependency properties do not accept `null` as a value, either through markup or code because of their validation callback implementations.</span></span> <span data-ttu-id="156c2-119">依存関係プロパティの詳細については、次を参照してください。[依存関係プロパティの概要](../../../docs/framework/wpf/advanced/dependency-properties-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="156c2-119">For more information about dependency properties, see [Dependency Properties Overview](../../../docs/framework/wpf/advanced/dependency-properties-overview.md).</span></span>  
   
-## 参照  
- <xref:System.Windows.DependencyProperty.UnsetValue>   
- [XAML の概要 \(WPF\)](../../../ocs/framework/wpf/advanced/xaml-overview-wpf.md)   
- [マークアップ拡張機能と WPF XAML](../../../ocs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
+## <a name="see-also"></a><span data-ttu-id="156c2-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="156c2-120">See Also</span></span>  
+ <xref:System.Windows.DependencyProperty.UnsetValue>  
+ [<span data-ttu-id="156c2-121">XAML の概要 (WPF)</span><span class="sxs-lookup"><span data-stu-id="156c2-121">XAML Overview (WPF)</span></span>](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
+ [<span data-ttu-id="156c2-122">マークアップ拡張機能と WPF XAML</span><span class="sxs-lookup"><span data-stu-id="156c2-122">Markup Extensions and WPF XAML</span></span>](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)

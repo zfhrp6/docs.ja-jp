@@ -1,46 +1,47 @@
 ---
-title: "マルチ ドキュメント インターフェイス (MDI) アプリケーション | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "フォーム, MDI"
-  - "MDI"
-  - "Windows フォーム, MDI アプリケーション"
-  - "ウィンドウ, MDI"
+title: "マルチ ドキュメント インターフェイス (MDI) アプリケーション"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- forms [Windows Forms], MDI
+- windows [Windows Forms], mDI
+- Windows Forms, MDI applications
+- MDI
 ms.assetid: 599faf75-13cf-49cc-ad3c-255545e5cb97
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c122931b0a00f487ddab07550913988462cfd50e
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# マルチ ドキュメント インターフェイス (MDI) アプリケーション
-マルチ ドキュメント インターフェイス \(MDI: Multiple Document Interface\) アプリケーションでは、一度に複数のドキュメントを開き、各ドキュメントをそれぞれのウィンドウに表示できます。  通常、MDI アプリケーションには \[ウィンドウ\] メニューがあり、その中にウィンドウまたはドキュメントを切り替えるためのサブメニューがあります。  
+# <a name="multiple-document-interface-mdi-applications"></a><span data-ttu-id="b2d4a-102">マルチ ドキュメント インターフェイス (MDI) アプリケーション</span><span class="sxs-lookup"><span data-stu-id="b2d4a-102">Multiple-Document Interface (MDI) Applications</span></span>
+<span data-ttu-id="b2d4a-103">マルチ ドキュメント インターフェイス (MDI) アプリケーションでは、独自のウィンドウに表示される各ドキュメントに、同時に複数のドキュメントを表示できます。</span><span class="sxs-lookup"><span data-stu-id="b2d4a-103">Multiple-document interface (MDI) applications enable you to display multiple documents at the same time, with each document displayed in its own window.</span></span> <span data-ttu-id="b2d4a-104">MDI アプリケーションには、多くの場合、ウィンドウまたはドキュメントを切り替えるためのサブメニューのあるウィンドウのメニュー項目があります。</span><span class="sxs-lookup"><span data-stu-id="b2d4a-104">MDI applications often have a Window menu item with submenus for switching between windows or documents.</span></span>  
   
 > [!NOTE]
->  MDI フォームと Windows フォーム内のシングル ドキュメント インターフェイス \(SDI: Single\-Document Interface\) ウィンドウとの間には、動作に関していくつかの違いがあります。  `Opacity` プロパティは、MDI 子フォームの外観には作用しません。  さらに、<xref:System.Windows.Forms.Form.CenterToParent%2A> メソッドも、MDI 子フォームの動作には作用しません。  
+>  <span data-ttu-id="b2d4a-105">いくつかの動作の違い MDI フォームとシングル ドキュメント インターフェイス (SDI) windows と Windows フォームがあります。</span><span class="sxs-lookup"><span data-stu-id="b2d4a-105">There are some behavior differences between MDI forms and single-document interface (SDI) windows in Windows Forms.</span></span> <span data-ttu-id="b2d4a-106">`Opacity`プロパティでは MDI 子フォームの外観には影響しません。</span><span class="sxs-lookup"><span data-stu-id="b2d4a-106">The `Opacity` property does not affect the appearance of MDI child forms.</span></span> <span data-ttu-id="b2d4a-107">さらに、<xref:System.Windows.Forms.Form.CenterToParent%2A>メソッドでは MDI 子フォームの動作には影響しません。</span><span class="sxs-lookup"><span data-stu-id="b2d4a-107">Additionally, the <xref:System.Windows.Forms.Form.CenterToParent%2A> method does not affect the behavior of MDI child forms.</span></span>  
   
-## このセクションの内容  
- [方法 : MDI 親フォームを作成する](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)  
- MDI アプリケーション内に複数のドキュメントのコンテナーを作成する方法について説明します。  
+## <a name="in-this-section"></a><span data-ttu-id="b2d4a-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="b2d4a-108">In This Section</span></span>  
+ [<span data-ttu-id="b2d4a-109">方法: MDI 親フォームを作成する</span><span class="sxs-lookup"><span data-stu-id="b2d4a-109">How to: Create MDI Parent Forms</span></span>](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)  
+ <span data-ttu-id="b2d4a-110">MDI アプリケーション内で複数のドキュメントのコンテナーを作成するための手順を示します。</span><span class="sxs-lookup"><span data-stu-id="b2d4a-110">Gives directions for creating the container for the multiple documents within an MDI application.</span></span>  
   
- [方法 : MDI 子フォームを作成する](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)  
- MDI 親フォーム内で動作するウィンドウを 1 つ以上作成する方法について説明します。  
+ [<span data-ttu-id="b2d4a-111">方法: MDI 子フォームを作成する</span><span class="sxs-lookup"><span data-stu-id="b2d4a-111">How to: Create MDI Child Forms</span></span>](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)  
+ <span data-ttu-id="b2d4a-112">MDI 親フォーム内で動作する 1 つまたは複数のウィンドウを作成するための手順を示します。</span><span class="sxs-lookup"><span data-stu-id="b2d4a-112">Gives directions for creating one or more windows that operate within an MDI parent form.</span></span>  
   
- [方法 : アクティブな MDI 子フォームを特定する](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md)  
- フォーカスを持つ子ウィンドウを確認する方法、およびそのウィンドウの内容をクリップボードに送る方法について説明します。  
+ [<span data-ttu-id="b2d4a-113">方法: アクティブな MDI 子フォームを特定する</span><span class="sxs-lookup"><span data-stu-id="b2d4a-113">How to: Determine the Active MDI Child</span></span>](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md)  
+ <span data-ttu-id="b2d4a-114">フォーカスがある子ウィンドウを確認するための手順を示します (とその内容をクリップボードに送信する)。</span><span class="sxs-lookup"><span data-stu-id="b2d4a-114">Gives directions for verifying the child window that has focus (and sending its contents to the Clipboard).</span></span>  
   
- [方法 : アクティブな MDI 子フォームにデータを送信する](../../../../docs/framework/winforms/advanced/how-to-send-data-to-the-active-mdi-child.md)  
- アクティブな子ウィンドウに情報を転送する方法について説明します。  
+ [<span data-ttu-id="b2d4a-115">方法: アクティブな MDI 子フォームにデータを送信する</span><span class="sxs-lookup"><span data-stu-id="b2d4a-115">How to: Send Data to the Active MDI Child</span></span>](../../../../docs/framework/winforms/advanced/how-to-send-data-to-the-active-mdi-child.md)  
+ <span data-ttu-id="b2d4a-116">アクティブな子ウィンドウに情報を転送するための手順を示します。</span><span class="sxs-lookup"><span data-stu-id="b2d4a-116">Gives directions for transporting information to the active child window.</span></span>  
   
- [方法 : MDI 子フォームを配置する](../../../../docs/framework/winforms/advanced/how-to-arrange-mdi-child-forms.md)  
- MDI アプリケーションの子ウィンドウを並べて表示したり、重ねて表示したり、並べ替えたりする方法について説明します。
+ [<span data-ttu-id="b2d4a-117">方法: MDI 子フォームを配置する</span><span class="sxs-lookup"><span data-stu-id="b2d4a-117">How to: Arrange MDI Child Forms</span></span>](../../../../docs/framework/winforms/advanced/how-to-arrange-mdi-child-forms.md)  
+ <span data-ttu-id="b2d4a-118">並べて表示、重ねて表示したり、または MDI アプリケーションの子ウィンドウの配置の手順を示します。</span><span class="sxs-lookup"><span data-stu-id="b2d4a-118">Gives directions for tiling, cascading, or arranging the child windows of an MDI application.</span></span>

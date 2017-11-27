@@ -1,44 +1,46 @@
 ---
-title: "初期化のインスタンス化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "初期化のインスタンス化"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 154d049f-2140-4696-b494-c7e53f6775ef
-caps.latest.revision: 31
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 31
+caps.latest.revision: "31"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 715786cf6e7086d0b626f18c4192e3469fc1fb82
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 初期化のインスタンス化
-このサンプルでは、インターフェイス `IObjectControl` を定義して、「[プール](../../../../docs/framework/wcf/samples/pooling.md)」サンプルを拡張します。このインターフェイスでは、オブジェクトのアクティブ化\/非アクティブ化を切り替えることによって、そのオブジェクトの初期化をカスタマイズできます。クライアントは、オブジェクトをプールに返すメソッドや、プールに返さないメソッドを呼び出します。  
+# <a name="instancing-initialization"></a><span data-ttu-id="1ad33-102">初期化のインスタンス化</span><span class="sxs-lookup"><span data-stu-id="1ad33-102">Instancing Initialization</span></span>
+<span data-ttu-id="1ad33-103">このサンプルを拡張、[プーリング](../../../../docs/framework/wcf/samples/pooling.md)インターフェイスを定義することでサンプル`IObjectControl`でのアクティブ化と非アクティブ化するオブジェクトの初期化をカスタマイズします。</span><span class="sxs-lookup"><span data-stu-id="1ad33-103">This sample extends the [Pooling](../../../../docs/framework/wcf/samples/pooling.md) sample by defining an interface, `IObjectControl`, which customizes the initialization of an object by activating and deactivating it.</span></span> <span data-ttu-id="1ad33-104">クライアントは、オブジェクトをプールに返すメソッドや、プールに返さないメソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-104">The client invokes methods that return the object to the pool and that do not return the object to the pool.</span></span>  
   
 > [!NOTE]
->  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
+>  <span data-ttu-id="1ad33-105">このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1ad33-105">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
-## 拡張ポイント  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 拡張機能作成の最初の手順は、使用する機能拡張ポイントの決定です。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] での用語 *EndpointDispatcher* は、受信メッセージをユーザーのサービス上のメソッド呼び出しに変換したり、メソッドからの戻り値を送信メッセージに変換する実行時コンポーネントを表します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、各エンドポイントの EndpointDispatcher を作成します。  
+## <a name="extensibility-points"></a><span data-ttu-id="1ad33-106">拡張ポイント</span><span class="sxs-lookup"><span data-stu-id="1ad33-106">Extensibility Points</span></span>  
+ <span data-ttu-id="1ad33-107">[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 拡張機能作成の最初の手順は、使用する機能拡張ポイントの決定です。</span><span class="sxs-lookup"><span data-stu-id="1ad33-107">The first step in creating a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] extension is to decide the extensibility point to use.</span></span> <span data-ttu-id="1ad33-108">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]、用語*EndpointDispatcher*実行時コンポーネントが受信メッセージをユーザーのサービス上のメソッド呼び出しに変換するためにそのメソッドから戻り値を変換したりするには、送信メッセージ。</span><span class="sxs-lookup"><span data-stu-id="1ad33-108">In [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], the term *EndpointDispatcher* refers to a run-time component responsible for converting incoming messages into method invocations on the user’s service and for converting return values from that method to an outgoing message.</span></span> <span data-ttu-id="1ad33-109">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、各エンドポイントの EndpointDispatcher を作成します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-109">A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service creates an EndpointDispatcher for each endpoint.</span></span>  
   
- EndpointDispatcher は <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> クラスを使用して、\(サービスによって送受信されるすべてのメッセージの\) エンドポイント スコープ拡張を提供します。このクラスにより、EndpointDispatcher の動作を制御するさまざまなプロパティをカスタマイズできます。このサンプルでは、サービス クラスのインスタンスを提供するオブジェクトをポイントする <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> プロパティに焦点を当てています。  
+ <span data-ttu-id="1ad33-110">EndpointDispatcher は <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> クラスを使用して、(サービスによって送受信されるすべてのメッセージの) エンドポイント スコープ拡張を提供します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-110">The EndpointDispatcher offers endpoint scope (for all messages received or sent by the service) extensibility using the <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> class.</span></span> <span data-ttu-id="1ad33-111">このクラスにより、EndpointDispatcher の動作を制御するさまざまなプロパティをカスタマイズできます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-111">This class allows you to customize various properties that control the behavior of the EndpointDispatcher.</span></span> <span data-ttu-id="1ad33-112">このサンプルでは、サービス クラスのインスタンスを提供するオブジェクトをポイントする <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> プロパティに焦点を当てています。</span><span class="sxs-lookup"><span data-stu-id="1ad33-112">This sample focuses on the <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> property that points to the object that provides the instances of the service class.</span></span>  
   
-## IInstanceProvider  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、EndpointDispatcher は <xref:System.ServiceModel.Dispatcher.IInstanceProvider> インターフェイスを実装しているインスタンス プロバイダを使用して、サービス クラスのインスタンスを作成します。このインターフェイスに含まれるメソッドは、次の 2 つのみです。  
+## <a name="iinstanceprovider"></a><span data-ttu-id="1ad33-113">IInstanceProvider</span><span class="sxs-lookup"><span data-stu-id="1ad33-113">IInstanceProvider</span></span>  
+ <span data-ttu-id="1ad33-114">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、EndpointDispatcher は <xref:System.ServiceModel.Dispatcher.IInstanceProvider> インターフェイスを実装しているインスタンス プロバイダを使用して、サービス クラスのインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-114">In [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], the EndpointDispatcher creates instances of a service class by using an instance provider that implements the <xref:System.ServiceModel.Dispatcher.IInstanceProvider> interface.</span></span> <span data-ttu-id="1ad33-115">このインターフェイスに含まれるメソッドは、次の 2 つのみです。</span><span class="sxs-lookup"><span data-stu-id="1ad33-115">This interface has only two methods:</span></span>  
   
--   <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A>: メッセージが到着すると、このディスパッチャは <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> メソッドを呼び出し、メッセージを処理するためのサービス クラスのインスタンスを作成します。このメソッドの呼び出し頻度は <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティで決まります。たとえば <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティが <xref:System.ServiceModel.InstanceContextMode?displayProperty=fullName> に設定されている場合、サービス クラスの新しいインスタンスが作成され、到着する各メッセージが処理されます。したがって、<xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> はメッセージが到着するたびに呼び出されます。  
+-   <span data-ttu-id="1ad33-116"><xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A>: メッセージが到着すると、このディスパッチャは <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> メソッドを呼び出し、メッセージを処理するためのサービス クラスのインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-116"><xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A>: When a message arrives, the Dispatcher calls the <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> method to create an instance of the service class to process the message.</span></span> <span data-ttu-id="1ad33-117">このメソッドの呼び出し頻度は <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティで決まります。</span><span class="sxs-lookup"><span data-stu-id="1ad33-117">The frequency of the calls to this method is determined by the <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> property.</span></span> <span data-ttu-id="1ad33-118">たとえば <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティが <xref:System.ServiceModel.InstanceContextMode.PerCall?displayProperty=nameWithType> に設定されている場合、サービス クラスの新しいインスタンスが作成され、到着する各メッセージが処理されます。したがって、<xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> はメッセージが到着するたびに呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-118">For example if the <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> property is set to <xref:System.ServiceModel.InstanceContextMode.PerCall?displayProperty=nameWithType>, a new instance of service class is created to process each message that arrives, so <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> is called whenever a message arrives.</span></span>  
   
--   <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%2A>: サービス インスタンスがメッセージの処理を完了すると、EndpointDispatcher は <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%2A> メソッドを呼び出します。<xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> メソッドと同様、このメソッドへの呼び出し頻度は <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティで決まります。  
+-   <span data-ttu-id="1ad33-119"><xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%2A>: サービス インスタンスがメッセージの処理を完了すると、EndpointDispatcher は <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%2A> メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-119"><xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%2A>: When the service instance finishes processing the message, the EndpointDispatcher calls the <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%2A> method.</span></span> <span data-ttu-id="1ad33-120"><xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> メソッドと同様、このメソッドへの呼び出し頻度は <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティで決まります。</span><span class="sxs-lookup"><span data-stu-id="1ad33-120">As in the <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> method, the frequency of the calls to this method is determined by the <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> property.</span></span>  
   
-## オブジェクト プール  
- `ObjectPoolInstanceProvider` クラスには、オブジェクト プールの実装が含まれています。このクラスは、サービス モデルのレイヤと対話する <xref:System.ServiceModel.Dispatcher.IInstanceProvider> インターフェイスを実装しています。EndpointDispatcher が、新しいインスタンスを作成する代わりに <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> メソッドを呼び出すと、カスタム実装はメモリ内プールで既存のオブジェクトを検索します。検索されたオブジェクトが使用可能な場合は、そのオブジェクトが返されます。使用可能なオブジェクトがない場合、`ObjectPoolInstanceProvider` は `ActiveObjectsCount` プロパティ \(プールから返されるオブジェクト数\) が最大プール サイズに達しているかどうかをチェックします。最大サイズに達していない場合は、新しいインスタンスが作成されて呼び出し元に返され、その後 `ActiveObjectsCount` がインクリメントされます。最大サイズに達していると、構成期間中、オブジェクト作成要求がキューに置かれます。`GetObjectFromThePool` の実装を次のサンプル コードに示します。  
+## <a name="the-object-pool"></a><span data-ttu-id="1ad33-121">オブジェクト プール</span><span class="sxs-lookup"><span data-stu-id="1ad33-121">The Object Pool</span></span>  
+ <span data-ttu-id="1ad33-122">`ObjectPoolInstanceProvider` クラスには、オブジェクト プールの実装が含まれています。</span><span class="sxs-lookup"><span data-stu-id="1ad33-122">The `ObjectPoolInstanceProvider` class contains the implementation for the object pool.</span></span> <span data-ttu-id="1ad33-123">このクラスは、サービス モデルのレイヤと対話する <xref:System.ServiceModel.Dispatcher.IInstanceProvider> インターフェイスを実装しています。</span><span class="sxs-lookup"><span data-stu-id="1ad33-123">This class implements the <xref:System.ServiceModel.Dispatcher.IInstanceProvider> interface to interact with the service model layer.</span></span> <span data-ttu-id="1ad33-124">EndpointDispatcher が、新しいインスタンスを作成する代わりに <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> メソッドを呼び出すと、カスタム実装はメモリ内プールで既存のオブジェクトを検索します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-124">When the EndpointDispatcher calls the <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> method, instead of creating a new instance, the custom implementation looks for an existing object in an in-memory pool.</span></span> <span data-ttu-id="1ad33-125">検索されたオブジェクトが使用可能な場合は、そのオブジェクトが返されます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-125">If one is available, it is returned.</span></span> <span data-ttu-id="1ad33-126">使用可能なオブジェクトがない場合、`ObjectPoolInstanceProvider` は `ActiveObjectsCount` プロパティ (プールから返されるオブジェクト数) が最大プール サイズに達しているかどうかをチェックします。</span><span class="sxs-lookup"><span data-stu-id="1ad33-126">Otherwise, `ObjectPoolInstanceProvider` checks whether the `ActiveObjectsCount` property (number of objects returned from the pool) has reached the maximum pool size.</span></span> <span data-ttu-id="1ad33-127">最大サイズに達していない場合は、新しいインスタンスが作成されて呼び出し元に返され、その後 `ActiveObjectsCount` がインクリメントされます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-127">If not, a new instance is created and returned to the caller and `ActiveObjectsCount` is subsequently incremented.</span></span> <span data-ttu-id="1ad33-128">最大サイズに達していると、構成期間中、オブジェクト作成要求がキューに置かれます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-128">Otherwise an object creation request is queued for a configured period of time.</span></span> <span data-ttu-id="1ad33-129">`GetObjectFromThePool` の実装を次のサンプル コードに示します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-129">The implementation for `GetObjectFromThePool` is shown in the following sample code.</span></span>  
   
 ```  
-  
 private object GetObjectFromThePool()  
 {  
     bool didNotTimeout =   
@@ -80,7 +82,7 @@ ResourceHelper.GetString("ExObjectCreationTimeout"));
 }  
 ```  
   
- カスタム `ReleaseInstance` 実装は、解放されたインスタンスをプールに戻し、`ActiveObjectsCount` 値をデクリメントします。EndpointDispatcher はこれらのメソッドをさまざまなスレッドから呼び出すので、`ObjectPoolInstanceProvider` クラスのクラス レベル メンバへの同期アクセスが必要となります。  
+ <span data-ttu-id="1ad33-130">カスタム `ReleaseInstance` 実装は、解放されたインスタンスをプールに戻し、`ActiveObjectsCount` 値をデクリメントします。</span><span class="sxs-lookup"><span data-stu-id="1ad33-130">The custom `ReleaseInstance` implementation adds the released instance back to the pool and decrements the `ActiveObjectsCount` value.</span></span> <span data-ttu-id="1ad33-131">EndpointDispatcher はこれらのメソッドをさまざまなスレッドから呼び出すので、`ObjectPoolInstanceProvider` クラスのクラス レベル メンバへの同期アクセスが必要となります。</span><span class="sxs-lookup"><span data-stu-id="1ad33-131">The EndpointDispatcher can call these methods from different threads, and therefore synchronized access to the class level members in the `ObjectPoolInstanceProvider` class is required.</span></span>  
   
 ```  
 public void ReleaseInstance(InstanceContext instanceContext, object instance)  
@@ -131,46 +133,44 @@ public void ReleaseInstance(InstanceContext instanceContext, object instance)
   
     availableCount.Release(1);  
 }  
-  
 ```  
   
- `ReleaseInstance` メソッドには、*初期化のクリーンアップ*機能があります。通常は、プールにはその有効期間中に最小限の数のオブジェクトが保持されます。ただし、使用率が非常に高くなり、プールでオブジェクトを追加作成する必要が生じて、その数が構成に指定されている上限に達する可能性があります。プールが最終的にアクティブでなくなると、そうした過剰なオブジェクトは余分なオーバーヘッドになります。したがって、`activeObjectsCount` がゼロに達すると、アイドル タイマが起動し、クリーンアップ サイクルがトリガされて実行されます。  
+ <span data-ttu-id="1ad33-132">`ReleaseInstance`メソッドには、*初期化のクリーンアップ*機能します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-132">The `ReleaseInstance` method provides a *clean up initialization* feature.</span></span> <span data-ttu-id="1ad33-133">通常は、プールにはその有効期間中に最小限の数のオブジェクトが保持されます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-133">Normally the pool maintains a minimum number of objects for the lifetime of the pool.</span></span> <span data-ttu-id="1ad33-134">ただし、使用率が非常に高くなり、プールでオブジェクトを追加作成する必要が生じて、その数が構成に指定されている上限に達する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="1ad33-134">However, there can be periods of excessive usage that require creating additional objects in the pool to reach the maximum limit specified in the configuration.</span></span> <span data-ttu-id="1ad33-135">プールが最終的にアクティブでなくなると、そうした過剰なオブジェクトは余分なオーバーヘッドになります。</span><span class="sxs-lookup"><span data-stu-id="1ad33-135">Eventually when the pool becomes less active those surplus objects can become an extra overhead.</span></span> <span data-ttu-id="1ad33-136">したがって、`activeObjectsCount` がゼロに達すると、アイドル タイマが起動し、クリーンアップ サイクルがトリガされて実行されます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-136">Therefore when the `activeObjectsCount` reaches zero an idle timer is started that triggers and performs a clean-up cycle.</span></span>  
   
 ```  
 if (activeObjectsCount == 0)  
 {  
     idleTimer.Start();   
 }  
-  
 ```  
   
- ServiceModel のレイヤ拡張は、次の動作を使用してフックされます。  
+ <span data-ttu-id="1ad33-137">ServiceModel のレイヤ拡張は、次の動作を使用してフックされます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-137">ServiceModel layer extensions are hooked up using the following behaviors:</span></span>  
   
--   サービスの動作 : サービス ランタイム全体のカスタマイズを実現します。  
+-   <span data-ttu-id="1ad33-138">サービスの動作 : サービス ランタイム全体のカスタマイズを実現します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-138">Service Behaviors: These allow for the customization of the entire service runtime.</span></span>  
   
--   エンドポイントの動作 : EndpointDispatcher を含む、特定のサービス エンドポイントのカスタマイズを実現します。  
+-   <span data-ttu-id="1ad33-139">エンドポイントの動作 : EndpointDispatcher を含む、特定のサービス エンドポイントのカスタマイズを実現します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-139">Endpoint Behaviors: These allow for the customization of a particular service endpoint, including the EndpointDispatcher.</span></span>  
   
--   コントラクトの動作 : クライアント上またはサービス上で、それぞれ <xref:System.ServiceModel.Dispatcher.ClientRuntime> クラスまたは <xref:System.ServiceModel.Dispatcher.DispatchRuntime> クラスのカスタマイズを実現します。  
+-   <span data-ttu-id="1ad33-140">コントラクトの動作 : クライアント上またはサービス上で、それぞれ <xref:System.ServiceModel.Dispatcher.ClientRuntime> クラスまたは <xref:System.ServiceModel.Dispatcher.DispatchRuntime> クラスのカスタマイズを実現します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-140">Contract Behaviors: These allow for the customization of either <xref:System.ServiceModel.Dispatcher.ClientRuntime> or <xref:System.ServiceModel.Dispatcher.DispatchRuntime> classes on the client or the service respectively.</span></span>  
   
--   操作の動作 : クライアント上またはサービス上のいずれかで、それぞれ <xref:System.ServiceModel.Dispatcher.ClientOperation> クラスまたは <xref:System.ServiceModel.Dispatcher.DispatchOperation> クラスのカスタマイズを実現します。  
+-   <span data-ttu-id="1ad33-141">操作の動作 : クライアント上またはサービス上のいずれかで、それぞれ <xref:System.ServiceModel.Dispatcher.ClientOperation> クラスまたは <xref:System.ServiceModel.Dispatcher.DispatchOperation> クラスのカスタマイズを実現します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-141">Operation Behaviors: These allow for the customization of either <xref:System.ServiceModel.Dispatcher.ClientOperation> or <xref:System.ServiceModel.Dispatcher.DispatchOperation> classes on the client or the service respectively.</span></span>  
   
- オブジェクト プール拡張を行うには、エンドポイントの動作またはサービスの動作のどちらかを作成します。この例ではサービスの動作を使用します。この動作では、オブジェクト プール機能がサービスの各エンドポイントに適用されます。サービス動作を作成するには、<xref:System.ServiceModel.Description.IServiceBehavior> インターフェイスを実装します。ServiceModel にカスタム動作を認識させるには、次のようにいくつかの方法があります。  
+ <span data-ttu-id="1ad33-142">オブジェクト プール拡張を行うには、エンドポイントの動作またはサービスの動作のどちらかを作成します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-142">For the purpose of an object pooling extension, either an endpoint behavior or a service behavior can be created.</span></span> <span data-ttu-id="1ad33-143">この例ではサービスの動作を使用します。この動作では、オブジェクト プール機能がサービスの各エンドポイントに適用されます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-143">In this example, we use a service behavior, which applies object pooling ability to every endpoint of the service.</span></span> <span data-ttu-id="1ad33-144">サービス動作を作成するには、<xref:System.ServiceModel.Description.IServiceBehavior> インターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-144">Service behaviors are created by implementing the <xref:System.ServiceModel.Description.IServiceBehavior> interface.</span></span> <span data-ttu-id="1ad33-145">ServiceModel にカスタム動作を認識させるには、次のようにいくつかの方法があります。</span><span class="sxs-lookup"><span data-stu-id="1ad33-145">There are several ways to make the ServiceModel aware of the custom behaviors:</span></span>  
   
--   カスタム属性を使用する。  
+-   <span data-ttu-id="1ad33-146">カスタム属性を使用する。</span><span class="sxs-lookup"><span data-stu-id="1ad33-146">Using a custom attribute.</span></span>  
   
--   カスタム動作をサービス説明の動作コレクションに強制的に追加する。  
+-   <span data-ttu-id="1ad33-147">カスタム動作をサービス説明の動作コレクションに強制的に追加する。</span><span class="sxs-lookup"><span data-stu-id="1ad33-147">Imperatively adding it to the service description’s behaviors collection.</span></span>  
   
--   構成ファイルを拡張する。  
+-   <span data-ttu-id="1ad33-148">構成ファイルを拡張する。</span><span class="sxs-lookup"><span data-stu-id="1ad33-148">Extending the configuration file.</span></span>  
   
- このサンプルではカスタム属性を使用します。<xref:System.ServiceModel.ServiceHost> が構築されると、サービスの種類の定義で使用されている属性が調べられ、使用可能な動作がサービス説明の動作コレクションに追加されます。  
+ <span data-ttu-id="1ad33-149">このサンプルではカスタム属性を使用します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-149">This sample uses a custom attribute.</span></span> <span data-ttu-id="1ad33-150"><xref:System.ServiceModel.ServiceHost> が構築されると、サービスの種類の定義で使用されている属性が調べられ、使用可能な動作がサービス説明の動作コレクションに追加されます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-150">When the <xref:System.ServiceModel.ServiceHost> is constructed, it examines the attributes used in the service’s type definition and adds the available behaviors to the service description’s behaviors collection.</span></span>  
   
- <xref:System.ServiceModel.Description.IServiceBehavior> インターフェイスには、<xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A>、<xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A>、および <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> の 3 つのメソッドがあります。これらのメソッドは、<xref:System.ServiceModel.ServiceHost> の初期化中に [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって呼び出されます。最初に、<xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A?displayProperty=fullName> が呼び出されます。このメソッドによってサービスの不整合性を検査できます。次に、<xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A?displayProperty=fullName> が呼び出されます。このメソッドは、非常に高度なシナリオでのみ必要です。最後に、<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=fullName> が呼び出されます。このメソッドはランタイムを構成します。次のパラメータは、<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=fullName> に渡されます。  
+ <span data-ttu-id="1ad33-151"><xref:System.ServiceModel.Description.IServiceBehavior>インターフェイスには 3 つの方法: <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> `,` <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> `,`と<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A>です。</span><span class="sxs-lookup"><span data-stu-id="1ad33-151">The <xref:System.ServiceModel.Description.IServiceBehavior> interface has three methods: <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A>`,` <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A>`,` and <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A>.</span></span> <span data-ttu-id="1ad33-152">これらのメソッドは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の初期化中に <xref:System.ServiceModel.ServiceHost> によって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-152">These methods are called by [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] when the <xref:System.ServiceModel.ServiceHost> is being initialized.</span></span> <span data-ttu-id="1ad33-153">最初に、<xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A?displayProperty=nameWithType> が呼び出されます。このメソッドによってサービスの不整合性を検査できます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-153"><xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A?displayProperty=nameWithType> is called first; it allows the service to be inspected for inconsistencies.</span></span> <span data-ttu-id="1ad33-154">次に、<xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A?displayProperty=nameWithType> が呼び出されます。このメソッドは、非常に高度なシナリオでのみ必要です。</span><span class="sxs-lookup"><span data-stu-id="1ad33-154"><xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A?displayProperty=nameWithType> is called next; this method is only required in very advanced scenarios.</span></span> <span data-ttu-id="1ad33-155">最後に、<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> が呼び出されます。このメソッドはランタイムを構成します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-155"><xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> is called last and is responsible for configuring the runtime.</span></span> <span data-ttu-id="1ad33-156">次のパラメータは、<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> に渡されます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-156">The following parameters are passed into <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType>:</span></span>  
   
--   `Description` : このパラメータは、サービス全体のサービスの説明を提供します。これを使用すると、サービスのエンドポイント、コントラクト、バインディング、およびサービスに関連するその他のデータに関する説明データを検査できます。  
+-   <span data-ttu-id="1ad33-157">`Description` : このパラメータは、サービス全体のサービスの説明を提供します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-157">`Description`: This parameter provides the service description for the entire service.</span></span> <span data-ttu-id="1ad33-158">これを使用すると、サービスのエンドポイント、コントラクト、バインディング、およびサービスに関連するその他のデータに関する説明データを検査できます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-158">This can be used to inspect description data about the service’s endpoints, contracts, bindings, and other data associated with the service.</span></span>  
   
--   `ServiceHostBase` : このパラメータは、現在初期化中の <xref:System.ServiceModel.ServiceHostBase> を提供します。  
+-   <span data-ttu-id="1ad33-159">`ServiceHostBase` : このパラメータは、現在初期化中の <xref:System.ServiceModel.ServiceHostBase> を提供します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-159">`ServiceHostBase`: This parameter provides the <xref:System.ServiceModel.ServiceHostBase> that is currently being initialized.</span></span>  
   
- カスタム <xref:System.ServiceModel.Description.IServiceBehavior> 実装では、`ObjectPoolInstanceProvider` の新しいインスタンスがインスタンス化され、<xref:System.ServiceModel.ServiceHostBase> に関連付けられた各 <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> 内の <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> プロパティに割り当てられます。  
+ <span data-ttu-id="1ad33-160">カスタム <xref:System.ServiceModel.Description.IServiceBehavior> 実装では、`ObjectPoolInstanceProvider` の新しいインスタンスがインスタンス化され、<xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> に関連付けられた各 <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> 内の <xref:System.ServiceModel.ServiceHostBase> プロパティに割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-160">In the custom <xref:System.ServiceModel.Description.IServiceBehavior> implementation, a new instance of `ObjectPoolInstanceProvider` is instantiated and assigned to the <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> property in each <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> that is attached to the <xref:System.ServiceModel.ServiceHostBase>.</span></span>  
   
 ```  
 public void ApplyDispatchBehavior(ServiceDescription description, ServiceHostBase serviceHostBase)  
@@ -198,9 +198,9 @@ public void ApplyDispatchBehavior(ServiceDescription description, ServiceHostBas
 }   
 ```  
   
- <xref:System.ServiceModel.Description.IServiceBehavior> 実装のほかにも、`ObjectPoolingAttribute` クラスには属性引数を使用してオブジェクト プールをカスタマイズするいくつかのメンバがあります。こうしたメンバには `MaxSize`、`MinSize`、`Enabled`、`CreationTimeout` などがあり、.NET Enterprise Services で提供されるオブジェクト プール機能のセットに一致します。  
+ <span data-ttu-id="1ad33-161"><xref:System.ServiceModel.Description.IServiceBehavior> 実装のほかにも、`ObjectPoolingAttribute` クラスには属性引数を使用してオブジェクト プールをカスタマイズするいくつかのメンバがあります。</span><span class="sxs-lookup"><span data-stu-id="1ad33-161">In addition to an <xref:System.ServiceModel.Description.IServiceBehavior> implementation the `ObjectPoolingAttribute` class has several members to customize the object pool using the attribute arguments.</span></span> <span data-ttu-id="1ad33-162">こうしたメンバには `MaxSize`、`MinSize`、`Enabled`、`CreationTimeout` などがあり、.NET Enterprise Services で提供されるオブジェクト プール機能のセットに一致します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-162">These members include `MaxSize`, `MinSize`, `Enabled` and `CreationTimeout`, to match the object pooling feature set provided by .NET Enterprise Services.</span></span>  
   
- オブジェクト プールの動作は、新しく作成されたカスタム `ObjectPooling` 属性を使用してサービス実装に注釈を付けることにより、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスに追加できるようになりました。  
+ <span data-ttu-id="1ad33-163">オブジェクト プールの動作は、新しく作成されたカスタム [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 属性を使用してサービス実装に注釈を付けることにより、`ObjectPooling` サービスに追加できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="1ad33-163">The object pooling behavior can now be added to a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service by annotating the service implementation with the newly created custom `ObjectPooling` attribute.</span></span>  
   
 ```  
 [ObjectPooling(MaxSize=1024, MinSize=10, CreationTimeout=30000]      
@@ -210,22 +210,21 @@ public class PoolService : IPoolService
 }  
 ```  
   
-## アクティブ化と非アクティブ化のフック  
- オブジェクト プールの主な目的は、比較的負荷のかかる作成および初期化を伴う有効期間の短いオブジェクトを最適化することです。そのため、オブジェクト プールが適切に使用された場合は、アプリケーションのパフォーマンスを大幅に向上させることができます。オブジェクトはプールから返されるので、コンストラクタが呼び出されるのは 1 回だけです。ただし一部のアプリケーションでは、単一のコンテキスト内で使用されるリソースを初期化してクリーンアップできるようにするために、ある一定のレベルの制御が必要になります。たとえば、一連の計算に使用されているオブジェクトは、次の計算を実行する前に、そのオブジェクトのプライベート フィールドをリセットできます。Enterprise Services では、オブジェクト開発者が <xref:System.EnterpriseServices.ServicedComponent> ベース クラスの `Activate` メソッドおよび `Deactivate` メソッドをオーバーライドすることにより、コンテキスト固有のこの種の初期化が実現されます。  
+## <a name="hooking-activation-and-deactivation"></a><span data-ttu-id="1ad33-164">アクティブ化と非アクティブ化のフック</span><span class="sxs-lookup"><span data-stu-id="1ad33-164">Hooking Activation and Deactivation</span></span>  
+ <span data-ttu-id="1ad33-165">オブジェクト プールの主な目的は、比較的負荷のかかる作成および初期化を伴う有効期間の短いオブジェクトを最適化することです。</span><span class="sxs-lookup"><span data-stu-id="1ad33-165">The primary objective of object pooling is to optimize short-lived objects with relatively expensive creation and initialization.</span></span> <span data-ttu-id="1ad33-166">そのため、オブジェクト プールが適切に使用された場合は、アプリケーションのパフォーマンスを大幅に向上させることができます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-166">Therefore it can give a dramatic performance boost to an application if properly used.</span></span> <span data-ttu-id="1ad33-167">オブジェクトはプールから返されるので、コンストラクタが呼び出されるのは 1 回だけです。</span><span class="sxs-lookup"><span data-stu-id="1ad33-167">Because the object is returned from the pool, the constructor is called only once.</span></span> <span data-ttu-id="1ad33-168">ただし一部のアプリケーションでは、単一のコンテキスト内で使用されるリソースを初期化してクリーンアップできるようにするために、ある一定のレベルの制御が必要になります。</span><span class="sxs-lookup"><span data-stu-id="1ad33-168">However, some applications require some level of control so that they can initialize and clean-up the resources used during a single context.</span></span> <span data-ttu-id="1ad33-169">たとえば、一連の計算に使用されているオブジェクトは、次の計算を実行する前に、そのオブジェクトのプライベート フィールドをリセットできます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-169">For example, an object being used for a set of calculations can reset its private fields before processing the next calculation.</span></span> <span data-ttu-id="1ad33-170">Enterprise Services では、オブジェクト開発者が `Activate` ベース クラスの `Deactivate` メソッドおよび <xref:System.EnterpriseServices.ServicedComponent> メソッドをオーバーライドすることにより、コンテキスト固有のこの種の初期化が実現されます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-170">Enterprise Services enabled this kind of context-specific initialization by letting the object developer override `Activate` and `Deactivate` methods from the <xref:System.EnterpriseServices.ServicedComponent> base class.</span></span>  
   
- オブジェクト プールは、オブジェクトがプールから返される直前に `Activate` メソッドを呼び出します。オブジェクトがプールに返される際には `Deactivate` メソッドが呼び出されます。<xref:System.EnterpriseServices.ServicedComponent> ベース クラスには、`CanBePooled` という `boolean` プロパティもあります。このプロパティを使用すると、オブジェクトをさらにプールできるかどうかをプールに通知できます。  
+ <span data-ttu-id="1ad33-171">オブジェクト プールは、オブジェクトがプールから返される直前に `Activate` メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="1ad33-171">The object pool calls the `Activate` method just before returning the object from the pool.</span></span> <span data-ttu-id="1ad33-172">オブジェクトがプールに返される際には `Deactivate` メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-172">`Deactivate` is called when the object returns back to the pool.</span></span> <span data-ttu-id="1ad33-173"><xref:System.EnterpriseServices.ServicedComponent> ベース クラスには、`boolean` という `CanBePooled` プロパティもあります。このプロパティを使用すると、オブジェクトをさらにプールできるかどうかをプールに通知できます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-173">The <xref:System.EnterpriseServices.ServicedComponent> base class also has a `boolean` property called `CanBePooled`, which can be used to notify the pool whether the object can be pooled further.</span></span>  
   
- このサンプルではこの機能に似た動作が行われるように、前述のメンバを持つパブリック インターフェイス \(`IObjectControl`\) を宣言しています。このインターフェイスは、コンテキスト固有の初期化を提供するためのサービス クラスによって実装されます。<xref:System.ServiceModel.Dispatcher.IInstanceProvider> の実装は、これらの要件を満たすように変更する必要があります。ここで、`GetInstance` メソッドを呼び出してオブジェクトを取得するたびに、オブジェクトが `IObjectControl` を実装しているかどうかをチェックする必要があります。実装されている場合は、`Activate` メソッドを正しく呼び出す必要があります。  
+ <span data-ttu-id="1ad33-174">このサンプルではこの機能に似た動作が行われるように、前述のメンバを持つパブリック インターフェイス (`IObjectControl`) を宣言しています。</span><span class="sxs-lookup"><span data-stu-id="1ad33-174">To mimic this functionality, the sample declares a public interface (`IObjectControl`) that has the aforementioned members.</span></span> <span data-ttu-id="1ad33-175">このインターフェイスは、コンテキスト固有の初期化を提供するためのサービス クラスによって実装されます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-175">This interface is then implemented by service classes intended to provide context specific initialization.</span></span> <span data-ttu-id="1ad33-176"><xref:System.ServiceModel.Dispatcher.IInstanceProvider> の実装は、これらの要件を満たすように変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1ad33-176">The <xref:System.ServiceModel.Dispatcher.IInstanceProvider> implementation must be modified to meet these requirements.</span></span> <span data-ttu-id="1ad33-177">ここで、毎回オブジェクトを取得するを呼び出して、`GetInstance`メソッド、オブジェクトが実装されているかどうか確認する必要があります`IObjectControl.`場合は、呼び出す必要があります、`Activate`メソッド適切にします。</span><span class="sxs-lookup"><span data-stu-id="1ad33-177">Now, each time you get an object by calling the `GetInstance` method, you must check whether the object implements `IObjectControl.` If it does, you must call the `Activate` method appropriately.</span></span>  
   
 ```  
 if (obj is IObjectControl)  
 {  
     ((IObjectControl)obj).Activate();  
 }  
-  
 ```  
   
- オブジェクトをプールに返すときには、そのオブジェクトをプールに追加し直す前に、`CanBePooled` プロパティのチェックが必要です。  
+ <span data-ttu-id="1ad33-178">オブジェクトをプールに返すときには、そのオブジェクトをプールに追加し直す前に、`CanBePooled` プロパティのチェックが必要です。</span><span class="sxs-lookup"><span data-stu-id="1ad33-178">When returning an object to the pool, a check is required for the `CanBePooled` property before adding the object back to the pool.</span></span>  
   
 ```  
 if (instance is IObjectControl)  
@@ -237,10 +236,9 @@ if (instance is IObjectControl)
        pool.Push(instance);  
     }  
 }  
-  
 ```  
   
- オブジェクトをプールできるかどうかはサービス開発者が決定できるので、指定時間におけるプール内のオブジェクト数は、最低サイズ未満になる場合があります。したがって、オブジェクト数が最低レベル未満になっているかどうかをチェックし、クリーンアップ手順において必要な初期化を実行する必要があります。  
+ <span data-ttu-id="1ad33-179">オブジェクトをプールできるかどうかはサービス開発者が決定できるので、指定時間におけるプール内のオブジェクト数は、最低サイズ未満になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="1ad33-179">Because the service developer can decide whether an object can be pooled, the object count in the pool at a given time can go below the minimum size.</span></span> <span data-ttu-id="1ad33-180">したがって、オブジェクト数が最低レベル未満になっているかどうかをチェックし、クリーンアップ手順において必要な初期化を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1ad33-180">Therefore you must check whether the object count has gone below the minimum level and perform the necessary initialization in the clean-up procedure.</span></span>  
   
 ```  
 // Remove the surplus objects.  
@@ -258,23 +256,23 @@ else if (pool.Count < minPoolSize)
 }  
 ```  
   
- このサンプルを実行すると、操作要求と応答がサービスとクライアントの両方のコンソール ウィンドウに表示されます。どちらかのコンソールで Enter キーを押すと、サービスとクライアントがどちらもシャットダウンされます。  
+ <span data-ttu-id="1ad33-181">このサンプルを実行すると、操作要求と応答がサービスとクライアントの両方のコンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-181">When you run the sample, the operation requests and responses are displayed in both the service and client console windows.</span></span> <span data-ttu-id="1ad33-182">どちらかのコンソールで Enter キーを押すと、サービスとクライアントがどちらもシャットダウンされます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-182">Press Enter in each console window to shut down the service and client.</span></span>  
   
-#### サンプルを設定、ビルド、および実行するには  
+#### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="1ad33-183">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="1ad33-183">To set up, build, and run the sample</span></span>  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  <span data-ttu-id="1ad33-184">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="1ad33-184">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  ソリューションをビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  <span data-ttu-id="1ad33-185">指示に従って、ソリューションをビルドする[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="1ad33-185">To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  単一コンピューター構成か複数コンピューター構成かに応じて、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+3.  <span data-ttu-id="1ad33-186">1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="1ad33-186">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="1ad33-187">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="1ad33-187">The samples may already be installed on your machine.</span></span> <span data-ttu-id="1ad33-188">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="1ad33-188">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="1ad33-189">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="1ad33-189">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="1ad33-190">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="1ad33-190">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Initialization`  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="1ad33-191">関連項目</span><span class="sxs-lookup"><span data-stu-id="1ad33-191">See Also</span></span>

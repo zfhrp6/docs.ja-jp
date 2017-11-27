@@ -1,50 +1,54 @@
 ---
-title: "スキーマの制限 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "スキーマの制限"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 73d2980e-e73c-4987-913a-8ddc93d09144
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: c254865800694af8eb754c3e8d4072688fd7e89a
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# スキーマの制限
-**GetSchema** メソッドの 2 番目のオプション パラメーターは、返されるスキーマ情報の量を制限するために使用される制限で、文字列の配列として **GetSchema** メソッドに渡されます。  配列での位置により、渡すことができる値が決定します。これは、制限の番号に相当します。  
+# <a name="schema-restrictions"></a><span data-ttu-id="cd03d-102">スキーマの制限</span><span class="sxs-lookup"><span data-stu-id="cd03d-102">Schema Restrictions</span></span>
+<span data-ttu-id="cd03d-103">2 番目の省略可能なパラメーター、 **GetSchema**メソッドは、スキーマ情報の量を制限するために使用される制限が返されに渡される、 **GetSchema**文字列の配列としてメソッド.</span><span class="sxs-lookup"><span data-stu-id="cd03d-103">The second optional parameter of the **GetSchema** method is the restrictions that are used to limit the amount of schema information returned, and it is passed to the **GetSchema** method as an array of strings.</span></span> <span data-ttu-id="cd03d-104">配列での位置により、渡すことができる値が決定します。これは、制限の番号に相当します。</span><span class="sxs-lookup"><span data-stu-id="cd03d-104">The position in the array determines the values that you can pass, and this is equivalent to the restriction number.</span></span>  
   
- たとえば、次の表は、.NET Framework Data Provider for SQL Server を使用して、"Tables" スキーマ コレクションによりサポートされる制限を示しています。  SQL Server スキーマ コレクションの追加の制限をこのトピックの終わりに示します。  
+ <span data-ttu-id="cd03d-105">たとえば、次の表は、.NET Framework Data Provider for SQL Server を使用して、"Tables" スキーマ コレクションによりサポートされる制限を示しています。</span><span class="sxs-lookup"><span data-stu-id="cd03d-105">For example, the following table describes the restrictions supported by the "Tables" schema collection using the .NET Framework Data Provider for SQL Server.</span></span> <span data-ttu-id="cd03d-106">SQL Server スキーマ コレクションの追加の制限をこのトピックの終わりに示します。</span><span class="sxs-lookup"><span data-stu-id="cd03d-106">Additional restrictions for SQL Server schema collections are listed at the end of this topic.</span></span>  
   
-|制限の名前|パラメーター名|制限の既定値|制限の番号|  
-|-----------|-------------|------------|-----------|  
-|Catalog|@Catalog|TABLE\_CATALOG|1|  
-|オーナー|@Owner|TABLE\_SCHEMA|2|  
-|テーブル|@Name|TABLE\_NAME|3|  
-|TableType|@TableType|TABLE\_TYPE|4|  
+|<span data-ttu-id="cd03d-107">制限の名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-107">Restriction Name</span></span>|<span data-ttu-id="cd03d-108">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="cd03d-108">Parameter Name</span></span>|<span data-ttu-id="cd03d-109">制限の既定値</span><span class="sxs-lookup"><span data-stu-id="cd03d-109">Restriction Default</span></span>|<span data-ttu-id="cd03d-110">制限の番号</span><span class="sxs-lookup"><span data-stu-id="cd03d-110">Restriction Number</span></span>|  
+|----------------------|--------------------|-------------------------|------------------------|  
+|<span data-ttu-id="cd03d-111">Catalog</span><span class="sxs-lookup"><span data-stu-id="cd03d-111">Catalog</span></span>|@Catalog|<span data-ttu-id="cd03d-112">TABLE_CATALOG</span><span class="sxs-lookup"><span data-stu-id="cd03d-112">TABLE_CATALOG</span></span>|<span data-ttu-id="cd03d-113">1</span><span class="sxs-lookup"><span data-stu-id="cd03d-113">1</span></span>|  
+|<span data-ttu-id="cd03d-114">Owner</span><span class="sxs-lookup"><span data-stu-id="cd03d-114">Owner</span></span>|@Owner|<span data-ttu-id="cd03d-115">TABLE_SCHEMA</span><span class="sxs-lookup"><span data-stu-id="cd03d-115">TABLE_SCHEMA</span></span>|<span data-ttu-id="cd03d-116">2</span><span class="sxs-lookup"><span data-stu-id="cd03d-116">2</span></span>|  
+|<span data-ttu-id="cd03d-117">テーブル</span><span class="sxs-lookup"><span data-stu-id="cd03d-117">Table</span></span>|@Name|<span data-ttu-id="cd03d-118">TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-118">TABLE_NAME</span></span>|<span data-ttu-id="cd03d-119">3</span><span class="sxs-lookup"><span data-stu-id="cd03d-119">3</span></span>|  
+|<span data-ttu-id="cd03d-120">TableType</span><span class="sxs-lookup"><span data-stu-id="cd03d-120">TableType</span></span>|@TableType|<span data-ttu-id="cd03d-121">TABLE_TYPE</span><span class="sxs-lookup"><span data-stu-id="cd03d-121">TABLE_TYPE</span></span>|<span data-ttu-id="cd03d-122">4</span><span class="sxs-lookup"><span data-stu-id="cd03d-122">4</span></span>|  
   
-## 制限値の指定  
- "Tables" スキーマ コレクションの制限の 1 つを使用するには、4 つの要素を使って文字列の配列を作成してから、制限の番号と一致する要素内に値を配置します。  たとえば、**GetSchema** メソッドにより返されるテーブルを、"Sales" スキーマ内のテーブルのみに制限するには、**GetSchema** メソッドに渡す前に、配列の 2 番目の要素を "Sales" に設定します。  
-  
-> [!NOTE]
->  `SqlClient` と `OracleClient` の制限のコレクションには、追加の `ParameterName` 列があります。  制限の既定の列は、下位互換性のために存在してはいますが、現在は無視されています。  制限の値を指定する場合、文字列置換ではなく、パラメーター付きのクエリを使って、SQL への注入攻撃のリスクを最小限にする必要があります。  
+## <a name="specifying-restriction-values"></a><span data-ttu-id="cd03d-123">制限値の指定</span><span class="sxs-lookup"><span data-stu-id="cd03d-123">Specifying Restriction Values</span></span>  
+ <span data-ttu-id="cd03d-124">"Tables" スキーマ コレクションの制限の 1 つを使用するには、4 つの要素を使って文字列の配列を作成してから、制限の番号と一致する要素内に値を配置します。</span><span class="sxs-lookup"><span data-stu-id="cd03d-124">To use one of the restrictions of the "Tables" schema collection, simply create an array of strings with four elements, then place a value in the element that matches the restriction number.</span></span> <span data-ttu-id="cd03d-125">たとえば、テーブルを制限によって返される、 **GetSchema** "Sales"スキーマ内のテーブルのみをメソッドに渡す前に"Sales"に配列の 2 番目の要素を設定する、 **GetSchema**メソッドです。</span><span class="sxs-lookup"><span data-stu-id="cd03d-125">For example, to restrict the tables returned by the **GetSchema** method to only those tables in the "Sales" schema, set the second element of the array to "Sales" before passing it to the **GetSchema** method.</span></span>  
   
 > [!NOTE]
->  配列内の要素数は、指定したスキーマ コレクションでサポートされる制限数以下にする必要があります。そうでない場合、<xref:System.ArgumentException> がスローされます。  制限は最大数よりも小さい場合があります。  指定されていない制限は、null \(無制限\) と見なされます。  
+>  <span data-ttu-id="cd03d-126">`SqlClient` と `OracleClient` の制限のコレクションには、追加の `ParameterName` 列があります。</span><span class="sxs-lookup"><span data-stu-id="cd03d-126">The restrictions collections for `SqlClient` and `OracleClient` have an additional `ParameterName` column.</span></span> <span data-ttu-id="cd03d-127">制限の既定の列は、下位互換性のために存在してはいますが、現在は無視されています。</span><span class="sxs-lookup"><span data-stu-id="cd03d-127">The restriction default column is still there for backwards compatibility, but is currently ignored.</span></span> <span data-ttu-id="cd03d-128">制限の値を指定する場合、文字列置換ではなく、パラメーター付きのクエリを使って、SQL への注入攻撃のリスクを最小限にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="cd03d-128">Parameterized queries rather than string replacement should be used to minimize the risk of an SQL injection attack when specifying restriction values.</span></span>  
   
- .NET Framework マネージ プロバイダーでは、"Restrictions" という制限のスキーマ コレクションの名前を指定して **GetSchema** メソッドを呼び出すことにより、サポートされる制限の一覧を特定します。  これにより、コレクション名の一覧、制限の名前、既定の制限値、および制限の番号と共に、<xref:System.Data.DataTable> が返されます。  
+> [!NOTE]
+>  <span data-ttu-id="cd03d-129">配列内の要素数は、指定したスキーマ コレクションでサポートされる制限数以下にする必要があります。そうでない場合、<xref:System.ArgumentException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="cd03d-129">The number of elements in the array must be less than or equal to the number of restrictions supported for the specified schema collection else an <xref:System.ArgumentException> will be thrown.</span></span> <span data-ttu-id="cd03d-130">制限は最大数よりも小さい場合があります。</span><span class="sxs-lookup"><span data-stu-id="cd03d-130">There can be fewer than the maximum number of restrictions.</span></span> <span data-ttu-id="cd03d-131">指定されていない制限は、null (無制限) と見なされます。</span><span class="sxs-lookup"><span data-stu-id="cd03d-131">The missing restrictions are assumed to be null (unrestricted).</span></span>  
   
-### 例  
- .NET Framework Data Provider for the SQL Server <xref:System.Data.SqlClient.SqlConnection> クラスの <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> メソッドを使って、**AdventureWorks** サンプル データベースに含まれるすべてのテーブルに関するスキーマ情報を取得し、返される情報を "Sales" スキーマ内のテーブルのみに制限する方法について、いくつかの例を次に示します。  
+ <span data-ttu-id="cd03d-132">呼び出すことによってサポートされている制限の一覧を特定の .NET Framework マネージ プロバイダーを照会することができます、 **GetSchema** "Restrictions"は、制限のスキーマ コレクションの名前を持つメソッドです。</span><span class="sxs-lookup"><span data-stu-id="cd03d-132">You can query a .NET Framework managed provider to determine the list of supported restrictions by calling the **GetSchema** method with the name of the restrictions schema collection, which is "Restrictions".</span></span> <span data-ttu-id="cd03d-133">これにより、コレクション名の一覧、制限の名前、既定の制限値、および制限の番号と共に、<xref:System.Data.DataTable> が返されます。</span><span class="sxs-lookup"><span data-stu-id="cd03d-133">This will return a <xref:System.Data.DataTable> with a list of the collection names, the restriction names, the default restriction values, and the restriction numbers.</span></span>  
   
- \[Visual Basic\]  
+### <a name="example"></a><span data-ttu-id="cd03d-134">例</span><span class="sxs-lookup"><span data-stu-id="cd03d-134">Example</span></span>  
+ <span data-ttu-id="cd03d-135">次の例を使用する方法を示します、<xref:System.Data.SqlClient.SqlConnection.GetSchema%2A>の .NET Framework Data Provider for SQL Server メソッド<xref:System.Data.SqlClient.SqlConnection>に関する、すべてのテーブルに含まれているスキーマ情報を取得するクラス、 **AdventureWorks**サンプル データベース、および"Sales"スキーマ内のテーブルのみに返される情報を制限します。</span><span class="sxs-lookup"><span data-stu-id="cd03d-135">The following examples demonstrate how to use the <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> method of the .NET Framework Data Provider for the SQL Server <xref:System.Data.SqlClient.SqlConnection> class to retrieve schema information about all of the tables contained in the **AdventureWorks** sample database, and to restrict the information returned to only those tables in the "Sales" schema:</span></span>  
   
-```  
+```vb  
 Imports System.Data.SqlClient  
   
 Module Module1  
@@ -76,9 +80,7 @@ End Sub
 End Module  
 ```  
   
- \[C\#\]  
-  
-```  
+```csharp  
 using System;  
 using System.Data;  
 using System.Data.SqlClient;  
@@ -138,136 +140,136 @@ class Program
 }  
 ```  
   
-## SQL Server スキーマの制限  
- 次の表に、SQL Server スキーマ コレクションの制限を示します。  
+## <a name="sql-server-schema-restrictions"></a><span data-ttu-id="cd03d-136">SQL Server スキーマの制限</span><span class="sxs-lookup"><span data-stu-id="cd03d-136">SQL Server Schema Restrictions</span></span>  
+ <span data-ttu-id="cd03d-137">次の表に、SQL Server スキーマ コレクションの制限を示します。</span><span class="sxs-lookup"><span data-stu-id="cd03d-137">The following tables list the restrictions for SQL Server schema collections.</span></span>  
   
-### Users  
+### <a name="users"></a><span data-ttu-id="cd03d-138">Users</span><span class="sxs-lookup"><span data-stu-id="cd03d-138">Users</span></span>  
   
-|制限の名前|パラメーター名|制限の既定値|制限の番号|  
-|-----------|-------------|------------|-----------|  
-|User\_Name|@Name|name|1|  
+|<span data-ttu-id="cd03d-139">制限の名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-139">Restriction Name</span></span>|<span data-ttu-id="cd03d-140">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="cd03d-140">Parameter Name</span></span>|<span data-ttu-id="cd03d-141">制限の既定値</span><span class="sxs-lookup"><span data-stu-id="cd03d-141">Restriction Default</span></span>|<span data-ttu-id="cd03d-142">制限の番号</span><span class="sxs-lookup"><span data-stu-id="cd03d-142">Restriction Number</span></span>|  
+|----------------------|--------------------|-------------------------|------------------------|  
+|<span data-ttu-id="cd03d-143">User_Name</span><span class="sxs-lookup"><span data-stu-id="cd03d-143">User_Name</span></span>|@Name|<span data-ttu-id="cd03d-144">name</span><span class="sxs-lookup"><span data-stu-id="cd03d-144">name</span></span>|<span data-ttu-id="cd03d-145">1</span><span class="sxs-lookup"><span data-stu-id="cd03d-145">1</span></span>|  
   
-### Databases  
+### <a name="databases"></a><span data-ttu-id="cd03d-146">Databases</span><span class="sxs-lookup"><span data-stu-id="cd03d-146">Databases</span></span>  
   
-|制限の名前|パラメーター名|制限の既定値|制限の番号|  
-|-----------|-------------|------------|-----------|  
-|名前|@Name|名前|1|  
+|<span data-ttu-id="cd03d-147">制限の名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-147">Restriction Name</span></span>|<span data-ttu-id="cd03d-148">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="cd03d-148">Parameter Name</span></span>|<span data-ttu-id="cd03d-149">制限の既定値</span><span class="sxs-lookup"><span data-stu-id="cd03d-149">Restriction Default</span></span>|<span data-ttu-id="cd03d-150">制限の番号</span><span class="sxs-lookup"><span data-stu-id="cd03d-150">Restriction Number</span></span>|  
+|----------------------|--------------------|-------------------------|------------------------|  
+|<span data-ttu-id="cd03d-151">名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-151">Name</span></span>|@Name|<span data-ttu-id="cd03d-152">名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-152">Name</span></span>|<span data-ttu-id="cd03d-153">1</span><span class="sxs-lookup"><span data-stu-id="cd03d-153">1</span></span>|  
   
-### \[テーブル\]  
+### <a name="tables"></a><span data-ttu-id="cd03d-154">[テーブル]</span><span class="sxs-lookup"><span data-stu-id="cd03d-154">Tables</span></span>  
   
-|制限の名前|パラメーター名|制限の既定値|制限の番号|  
-|-----------|-------------|------------|-----------|  
-|Catalog|@Catalog|TABLE\_CATALOG|1|  
-|オーナー|@Owner|TABLE\_SCHEMA|2|  
-|テーブル|@Name|TABLE\_NAME|3|  
-|TableType|@TableType|TABLE\_TYPE|4|  
+|<span data-ttu-id="cd03d-155">制限の名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-155">Restriction Name</span></span>|<span data-ttu-id="cd03d-156">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="cd03d-156">Parameter Name</span></span>|<span data-ttu-id="cd03d-157">制限の既定値</span><span class="sxs-lookup"><span data-stu-id="cd03d-157">Restriction Default</span></span>|<span data-ttu-id="cd03d-158">制限の番号</span><span class="sxs-lookup"><span data-stu-id="cd03d-158">Restriction Number</span></span>|  
+|----------------------|--------------------|-------------------------|------------------------|  
+|<span data-ttu-id="cd03d-159">Catalog</span><span class="sxs-lookup"><span data-stu-id="cd03d-159">Catalog</span></span>|@Catalog|<span data-ttu-id="cd03d-160">TABLE_CATALOG</span><span class="sxs-lookup"><span data-stu-id="cd03d-160">TABLE_CATALOG</span></span>|<span data-ttu-id="cd03d-161">1</span><span class="sxs-lookup"><span data-stu-id="cd03d-161">1</span></span>|  
+|<span data-ttu-id="cd03d-162">Owner</span><span class="sxs-lookup"><span data-stu-id="cd03d-162">Owner</span></span>|@Owner|<span data-ttu-id="cd03d-163">TABLE_SCHEMA</span><span class="sxs-lookup"><span data-stu-id="cd03d-163">TABLE_SCHEMA</span></span>|<span data-ttu-id="cd03d-164">2</span><span class="sxs-lookup"><span data-stu-id="cd03d-164">2</span></span>|  
+|<span data-ttu-id="cd03d-165">テーブル</span><span class="sxs-lookup"><span data-stu-id="cd03d-165">Table</span></span>|@Name|<span data-ttu-id="cd03d-166">TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-166">TABLE_NAME</span></span>|<span data-ttu-id="cd03d-167">3</span><span class="sxs-lookup"><span data-stu-id="cd03d-167">3</span></span>|  
+|<span data-ttu-id="cd03d-168">TableType</span><span class="sxs-lookup"><span data-stu-id="cd03d-168">TableType</span></span>|@TableType|<span data-ttu-id="cd03d-169">TABLE_TYPE</span><span class="sxs-lookup"><span data-stu-id="cd03d-169">TABLE_TYPE</span></span>|<span data-ttu-id="cd03d-170">4</span><span class="sxs-lookup"><span data-stu-id="cd03d-170">4</span></span>|  
   
-### 列  
+### <a name="columns"></a><span data-ttu-id="cd03d-171">列</span><span class="sxs-lookup"><span data-stu-id="cd03d-171">Columns</span></span>  
   
-|制限の名前|パラメーター名|制限の既定値|制限の番号|  
-|-----------|-------------|------------|-----------|  
-|Catalog|@Catalog|TABLE\_CATALOG|1|  
-|オーナー|@Owner|TABLE\_SCHEMA|2|  
-|テーブル|@Table|TABLE\_NAME|3|  
-|Column|@Column|COLUMN\_NAME|4|  
+|<span data-ttu-id="cd03d-172">制限の名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-172">Restriction Name</span></span>|<span data-ttu-id="cd03d-173">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="cd03d-173">Parameter Name</span></span>|<span data-ttu-id="cd03d-174">制限の既定値</span><span class="sxs-lookup"><span data-stu-id="cd03d-174">Restriction Default</span></span>|<span data-ttu-id="cd03d-175">制限の番号</span><span class="sxs-lookup"><span data-stu-id="cd03d-175">Restriction Number</span></span>|  
+|----------------------|--------------------|-------------------------|------------------------|  
+|<span data-ttu-id="cd03d-176">Catalog</span><span class="sxs-lookup"><span data-stu-id="cd03d-176">Catalog</span></span>|@Catalog|<span data-ttu-id="cd03d-177">TABLE_CATALOG</span><span class="sxs-lookup"><span data-stu-id="cd03d-177">TABLE_CATALOG</span></span>|<span data-ttu-id="cd03d-178">1</span><span class="sxs-lookup"><span data-stu-id="cd03d-178">1</span></span>|  
+|<span data-ttu-id="cd03d-179">Owner</span><span class="sxs-lookup"><span data-stu-id="cd03d-179">Owner</span></span>|@Owner|<span data-ttu-id="cd03d-180">TABLE_SCHEMA</span><span class="sxs-lookup"><span data-stu-id="cd03d-180">TABLE_SCHEMA</span></span>|<span data-ttu-id="cd03d-181">2</span><span class="sxs-lookup"><span data-stu-id="cd03d-181">2</span></span>|  
+|<span data-ttu-id="cd03d-182">テーブル</span><span class="sxs-lookup"><span data-stu-id="cd03d-182">Table</span></span>|@Table|<span data-ttu-id="cd03d-183">TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-183">TABLE_NAME</span></span>|<span data-ttu-id="cd03d-184">3</span><span class="sxs-lookup"><span data-stu-id="cd03d-184">3</span></span>|  
+|<span data-ttu-id="cd03d-185">列</span><span class="sxs-lookup"><span data-stu-id="cd03d-185">Column</span></span>|@Column|<span data-ttu-id="cd03d-186">COLUMN_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-186">COLUMN_NAME</span></span>|<span data-ttu-id="cd03d-187">4</span><span class="sxs-lookup"><span data-stu-id="cd03d-187">4</span></span>|  
   
-### StructuredTypeMembers  
+### <a name="structuredtypemembers"></a><span data-ttu-id="cd03d-188">StructuredTypeMembers</span><span class="sxs-lookup"><span data-stu-id="cd03d-188">StructuredTypeMembers</span></span>  
   
-|制限の名前|パラメーター名|制限の既定値|制限の番号|  
-|-----------|-------------|------------|-----------|  
-|Catalog|@Catalog|TABLE\_CATALOG|1|  
-|オーナー|@Owner|TABLE\_SCHEMA|2|  
-|テーブル|@Table|TABLE\_NAME|3|  
-|Column|@Column|COLUMN\_NAME|4|  
+|<span data-ttu-id="cd03d-189">制限の名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-189">Restriction Name</span></span>|<span data-ttu-id="cd03d-190">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="cd03d-190">Parameter Name</span></span>|<span data-ttu-id="cd03d-191">制限の既定値</span><span class="sxs-lookup"><span data-stu-id="cd03d-191">Restriction Default</span></span>|<span data-ttu-id="cd03d-192">制限の番号</span><span class="sxs-lookup"><span data-stu-id="cd03d-192">Restriction Number</span></span>|  
+|----------------------|--------------------|-------------------------|------------------------|  
+|<span data-ttu-id="cd03d-193">Catalog</span><span class="sxs-lookup"><span data-stu-id="cd03d-193">Catalog</span></span>|@Catalog|<span data-ttu-id="cd03d-194">TABLE_CATALOG</span><span class="sxs-lookup"><span data-stu-id="cd03d-194">TABLE_CATALOG</span></span>|<span data-ttu-id="cd03d-195">1</span><span class="sxs-lookup"><span data-stu-id="cd03d-195">1</span></span>|  
+|<span data-ttu-id="cd03d-196">Owner</span><span class="sxs-lookup"><span data-stu-id="cd03d-196">Owner</span></span>|@Owner|<span data-ttu-id="cd03d-197">TABLE_SCHEMA</span><span class="sxs-lookup"><span data-stu-id="cd03d-197">TABLE_SCHEMA</span></span>|<span data-ttu-id="cd03d-198">2</span><span class="sxs-lookup"><span data-stu-id="cd03d-198">2</span></span>|  
+|<span data-ttu-id="cd03d-199">テーブル</span><span class="sxs-lookup"><span data-stu-id="cd03d-199">Table</span></span>|@Table|<span data-ttu-id="cd03d-200">TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-200">TABLE_NAME</span></span>|<span data-ttu-id="cd03d-201">3</span><span class="sxs-lookup"><span data-stu-id="cd03d-201">3</span></span>|  
+|<span data-ttu-id="cd03d-202">列</span><span class="sxs-lookup"><span data-stu-id="cd03d-202">Column</span></span>|@Column|<span data-ttu-id="cd03d-203">COLUMN_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-203">COLUMN_NAME</span></span>|<span data-ttu-id="cd03d-204">4</span><span class="sxs-lookup"><span data-stu-id="cd03d-204">4</span></span>|  
   
-### ビュー  
+### <a name="views"></a><span data-ttu-id="cd03d-205">ビュー</span><span class="sxs-lookup"><span data-stu-id="cd03d-205">Views</span></span>  
   
-|制限の名前|パラメーター名|制限の既定値|制限の番号|  
-|-----------|-------------|------------|-----------|  
-|Catalog|@Catalog|TABLE\_CATALOG|1|  
-|オーナー|@Owner|TABLE\_SCHEMA|2|  
-|テーブル|@Table|TABLE\_NAME|3|  
+|<span data-ttu-id="cd03d-206">制限の名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-206">Restriction Name</span></span>|<span data-ttu-id="cd03d-207">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="cd03d-207">Parameter Name</span></span>|<span data-ttu-id="cd03d-208">制限の既定値</span><span class="sxs-lookup"><span data-stu-id="cd03d-208">Restriction Default</span></span>|<span data-ttu-id="cd03d-209">制限の番号</span><span class="sxs-lookup"><span data-stu-id="cd03d-209">Restriction Number</span></span>|  
+|----------------------|--------------------|-------------------------|------------------------|  
+|<span data-ttu-id="cd03d-210">Catalog</span><span class="sxs-lookup"><span data-stu-id="cd03d-210">Catalog</span></span>|@Catalog|<span data-ttu-id="cd03d-211">TABLE_CATALOG</span><span class="sxs-lookup"><span data-stu-id="cd03d-211">TABLE_CATALOG</span></span>|<span data-ttu-id="cd03d-212">1</span><span class="sxs-lookup"><span data-stu-id="cd03d-212">1</span></span>|  
+|<span data-ttu-id="cd03d-213">Owner</span><span class="sxs-lookup"><span data-stu-id="cd03d-213">Owner</span></span>|@Owner|<span data-ttu-id="cd03d-214">TABLE_SCHEMA</span><span class="sxs-lookup"><span data-stu-id="cd03d-214">TABLE_SCHEMA</span></span>|<span data-ttu-id="cd03d-215">2</span><span class="sxs-lookup"><span data-stu-id="cd03d-215">2</span></span>|  
+|<span data-ttu-id="cd03d-216">テーブル</span><span class="sxs-lookup"><span data-stu-id="cd03d-216">Table</span></span>|@Table|<span data-ttu-id="cd03d-217">TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-217">TABLE_NAME</span></span>|<span data-ttu-id="cd03d-218">3</span><span class="sxs-lookup"><span data-stu-id="cd03d-218">3</span></span>|  
   
-### ViewColumns  
+### <a name="viewcolumns"></a><span data-ttu-id="cd03d-219">ViewColumns</span><span class="sxs-lookup"><span data-stu-id="cd03d-219">ViewColumns</span></span>  
   
-|制限の名前|パラメーター名|制限の既定値|制限の番号|  
-|-----------|-------------|------------|-----------|  
-|Catalog|@Catalog|VIEW\_CATALOG|1|  
-|オーナー|@Owner|VIEW\_SCHEMA|2|  
-|テーブル|@Table|VIEW\_NAME|3|  
-|Column|@Column|COLUMN\_NAME|4|  
+|<span data-ttu-id="cd03d-220">制限の名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-220">Restriction Name</span></span>|<span data-ttu-id="cd03d-221">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="cd03d-221">Parameter Name</span></span>|<span data-ttu-id="cd03d-222">制限の既定値</span><span class="sxs-lookup"><span data-stu-id="cd03d-222">Restriction Default</span></span>|<span data-ttu-id="cd03d-223">制限の番号</span><span class="sxs-lookup"><span data-stu-id="cd03d-223">Restriction Number</span></span>|  
+|----------------------|--------------------|-------------------------|------------------------|  
+|<span data-ttu-id="cd03d-224">Catalog</span><span class="sxs-lookup"><span data-stu-id="cd03d-224">Catalog</span></span>|@Catalog|<span data-ttu-id="cd03d-225">VIEW_CATALOG</span><span class="sxs-lookup"><span data-stu-id="cd03d-225">VIEW_CATALOG</span></span>|<span data-ttu-id="cd03d-226">1</span><span class="sxs-lookup"><span data-stu-id="cd03d-226">1</span></span>|  
+|<span data-ttu-id="cd03d-227">Owner</span><span class="sxs-lookup"><span data-stu-id="cd03d-227">Owner</span></span>|@Owner|<span data-ttu-id="cd03d-228">VIEW_SCHEMA</span><span class="sxs-lookup"><span data-stu-id="cd03d-228">VIEW_SCHEMA</span></span>|<span data-ttu-id="cd03d-229">2</span><span class="sxs-lookup"><span data-stu-id="cd03d-229">2</span></span>|  
+|<span data-ttu-id="cd03d-230">テーブル</span><span class="sxs-lookup"><span data-stu-id="cd03d-230">Table</span></span>|@Table|<span data-ttu-id="cd03d-231">VIEW_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-231">VIEW_NAME</span></span>|<span data-ttu-id="cd03d-232">3</span><span class="sxs-lookup"><span data-stu-id="cd03d-232">3</span></span>|  
+|<span data-ttu-id="cd03d-233">列</span><span class="sxs-lookup"><span data-stu-id="cd03d-233">Column</span></span>|@Column|<span data-ttu-id="cd03d-234">COLUMN_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-234">COLUMN_NAME</span></span>|<span data-ttu-id="cd03d-235">4</span><span class="sxs-lookup"><span data-stu-id="cd03d-235">4</span></span>|  
   
-### ProcedureParameters  
+### <a name="procedureparameters"></a><span data-ttu-id="cd03d-236">ProcedureParameters</span><span class="sxs-lookup"><span data-stu-id="cd03d-236">ProcedureParameters</span></span>  
   
-|制限の名前|パラメーター名|制限の既定値|制限の番号|  
-|-----------|-------------|------------|-----------|  
-|Catalog|@Catalog|SPECIFIC\_CATALOG|1|  
-|オーナー|@Owner|SPECIFIC\_SCHEMA|2|  
-|名前|@Name|SPECIFIC\_NAME|3|  
-|パラメーター|@Parameter|PARAMETER\_NAME|4|  
+|<span data-ttu-id="cd03d-237">制限の名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-237">Restriction Name</span></span>|<span data-ttu-id="cd03d-238">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="cd03d-238">Parameter Name</span></span>|<span data-ttu-id="cd03d-239">制限の既定値</span><span class="sxs-lookup"><span data-stu-id="cd03d-239">Restriction Default</span></span>|<span data-ttu-id="cd03d-240">制限の番号</span><span class="sxs-lookup"><span data-stu-id="cd03d-240">Restriction Number</span></span>|  
+|----------------------|--------------------|-------------------------|------------------------|  
+|<span data-ttu-id="cd03d-241">Catalog</span><span class="sxs-lookup"><span data-stu-id="cd03d-241">Catalog</span></span>|@Catalog|<span data-ttu-id="cd03d-242">SPECIFIC_CATALOG</span><span class="sxs-lookup"><span data-stu-id="cd03d-242">SPECIFIC_CATALOG</span></span>|<span data-ttu-id="cd03d-243">1</span><span class="sxs-lookup"><span data-stu-id="cd03d-243">1</span></span>|  
+|<span data-ttu-id="cd03d-244">Owner</span><span class="sxs-lookup"><span data-stu-id="cd03d-244">Owner</span></span>|@Owner|<span data-ttu-id="cd03d-245">SPECIFIC_SCHEMA</span><span class="sxs-lookup"><span data-stu-id="cd03d-245">SPECIFIC_SCHEMA</span></span>|<span data-ttu-id="cd03d-246">2</span><span class="sxs-lookup"><span data-stu-id="cd03d-246">2</span></span>|  
+|<span data-ttu-id="cd03d-247">名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-247">Name</span></span>|@Name|<span data-ttu-id="cd03d-248">SPECIFIC_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-248">SPECIFIC_NAME</span></span>|<span data-ttu-id="cd03d-249">3</span><span class="sxs-lookup"><span data-stu-id="cd03d-249">3</span></span>|  
+|<span data-ttu-id="cd03d-250">パラメーター</span><span class="sxs-lookup"><span data-stu-id="cd03d-250">Parameter</span></span>|@Parameter|<span data-ttu-id="cd03d-251">PARAMETER_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-251">PARAMETER_NAME</span></span>|<span data-ttu-id="cd03d-252">4</span><span class="sxs-lookup"><span data-stu-id="cd03d-252">4</span></span>|  
   
-### 手順  
+### <a name="procedures"></a><span data-ttu-id="cd03d-253">手順</span><span class="sxs-lookup"><span data-stu-id="cd03d-253">Procedures</span></span>  
   
-|制限の名前|パラメーター名|制限の既定値|制限の番号|  
-|-----------|-------------|------------|-----------|  
-|Catalog|@Catalog|SPECIFIC\_CATALOG|1|  
-|オーナー|@Owner|SPECIFIC\_SCHEMA|2|  
-|名前|@Name|SPECIFIC\_NAME|3|  
-|種類|@Type|ROUTINE\_TYPE|4|  
+|<span data-ttu-id="cd03d-254">制限の名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-254">Restriction Name</span></span>|<span data-ttu-id="cd03d-255">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="cd03d-255">Parameter Name</span></span>|<span data-ttu-id="cd03d-256">制限の既定値</span><span class="sxs-lookup"><span data-stu-id="cd03d-256">Restriction Default</span></span>|<span data-ttu-id="cd03d-257">制限の番号</span><span class="sxs-lookup"><span data-stu-id="cd03d-257">Restriction Number</span></span>|  
+|----------------------|--------------------|-------------------------|------------------------|  
+|<span data-ttu-id="cd03d-258">Catalog</span><span class="sxs-lookup"><span data-stu-id="cd03d-258">Catalog</span></span>|@Catalog|<span data-ttu-id="cd03d-259">SPECIFIC_CATALOG</span><span class="sxs-lookup"><span data-stu-id="cd03d-259">SPECIFIC_CATALOG</span></span>|<span data-ttu-id="cd03d-260">1</span><span class="sxs-lookup"><span data-stu-id="cd03d-260">1</span></span>|  
+|<span data-ttu-id="cd03d-261">Owner</span><span class="sxs-lookup"><span data-stu-id="cd03d-261">Owner</span></span>|@Owner|<span data-ttu-id="cd03d-262">SPECIFIC_SCHEMA</span><span class="sxs-lookup"><span data-stu-id="cd03d-262">SPECIFIC_SCHEMA</span></span>|<span data-ttu-id="cd03d-263">2</span><span class="sxs-lookup"><span data-stu-id="cd03d-263">2</span></span>|  
+|<span data-ttu-id="cd03d-264">名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-264">Name</span></span>|@Name|<span data-ttu-id="cd03d-265">SPECIFIC_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-265">SPECIFIC_NAME</span></span>|<span data-ttu-id="cd03d-266">3</span><span class="sxs-lookup"><span data-stu-id="cd03d-266">3</span></span>|  
+|<span data-ttu-id="cd03d-267">型</span><span class="sxs-lookup"><span data-stu-id="cd03d-267">Type</span></span>|@Type|<span data-ttu-id="cd03d-268">ROUTINE_TYPE</span><span class="sxs-lookup"><span data-stu-id="cd03d-268">ROUTINE_TYPE</span></span>|<span data-ttu-id="cd03d-269">4</span><span class="sxs-lookup"><span data-stu-id="cd03d-269">4</span></span>|  
   
-### IndexColumns  
+### <a name="indexcolumns"></a><span data-ttu-id="cd03d-270">IndexColumns</span><span class="sxs-lookup"><span data-stu-id="cd03d-270">IndexColumns</span></span>  
   
-|制限の名前|パラメーター名|制限の既定値|制限の番号|  
-|-----------|-------------|------------|-----------|  
-|Catalog|@Catalog|db\_name\(\)|1|  
-|オーナー|@Owner|user\_name\(\)|2|  
-|テーブル|@Table|o.  name|3|  
-|ConstraintName|@ConstraintName|x.  name|4|  
-|Column|@Column|c.  name|5|  
+|<span data-ttu-id="cd03d-271">制限の名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-271">Restriction Name</span></span>|<span data-ttu-id="cd03d-272">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="cd03d-272">Parameter Name</span></span>|<span data-ttu-id="cd03d-273">制限の既定値</span><span class="sxs-lookup"><span data-stu-id="cd03d-273">Restriction Default</span></span>|<span data-ttu-id="cd03d-274">制限の番号</span><span class="sxs-lookup"><span data-stu-id="cd03d-274">Restriction Number</span></span>|  
+|----------------------|--------------------|-------------------------|------------------------|  
+|<span data-ttu-id="cd03d-275">Catalog</span><span class="sxs-lookup"><span data-stu-id="cd03d-275">Catalog</span></span>|@Catalog|<span data-ttu-id="cd03d-276">db_name()</span><span class="sxs-lookup"><span data-stu-id="cd03d-276">db_name()</span></span>|<span data-ttu-id="cd03d-277">1</span><span class="sxs-lookup"><span data-stu-id="cd03d-277">1</span></span>|  
+|<span data-ttu-id="cd03d-278">Owner</span><span class="sxs-lookup"><span data-stu-id="cd03d-278">Owner</span></span>|@Owner|<span data-ttu-id="cd03d-279">user_name()</span><span class="sxs-lookup"><span data-stu-id="cd03d-279">user_name()</span></span>|<span data-ttu-id="cd03d-280">2</span><span class="sxs-lookup"><span data-stu-id="cd03d-280">2</span></span>|  
+|<span data-ttu-id="cd03d-281">テーブル</span><span class="sxs-lookup"><span data-stu-id="cd03d-281">Table</span></span>|@Table|<span data-ttu-id="cd03d-282">o.name</span><span class="sxs-lookup"><span data-stu-id="cd03d-282">o.name</span></span>|<span data-ttu-id="cd03d-283">3</span><span class="sxs-lookup"><span data-stu-id="cd03d-283">3</span></span>|  
+|<span data-ttu-id="cd03d-284">ConstraintName</span><span class="sxs-lookup"><span data-stu-id="cd03d-284">ConstraintName</span></span>|@ConstraintName|<span data-ttu-id="cd03d-285">x.name</span><span class="sxs-lookup"><span data-stu-id="cd03d-285">x.name</span></span>|<span data-ttu-id="cd03d-286">4</span><span class="sxs-lookup"><span data-stu-id="cd03d-286">4</span></span>|  
+|<span data-ttu-id="cd03d-287">列</span><span class="sxs-lookup"><span data-stu-id="cd03d-287">Column</span></span>|@Column|<span data-ttu-id="cd03d-288">c.name</span><span class="sxs-lookup"><span data-stu-id="cd03d-288">c.name</span></span>|<span data-ttu-id="cd03d-289">5</span><span class="sxs-lookup"><span data-stu-id="cd03d-289">5</span></span>|  
   
-### Indexes  
+### <a name="indexes"></a><span data-ttu-id="cd03d-290">Indexes</span><span class="sxs-lookup"><span data-stu-id="cd03d-290">Indexes</span></span>  
   
-|制限の名前|パラメーター名|制限の既定値|制限の番号|  
-|-----------|-------------|------------|-----------|  
-|Catalog|@Catalog|db\_name\(\)|1|  
-|オーナー|@Owner|user\_name\(\)|2|  
-|テーブル|@Table|o.  name|3|  
+|<span data-ttu-id="cd03d-291">制限の名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-291">Restriction Name</span></span>|<span data-ttu-id="cd03d-292">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="cd03d-292">Parameter Name</span></span>|<span data-ttu-id="cd03d-293">制限の既定値</span><span class="sxs-lookup"><span data-stu-id="cd03d-293">Restriction Default</span></span>|<span data-ttu-id="cd03d-294">制限の番号</span><span class="sxs-lookup"><span data-stu-id="cd03d-294">Restriction Number</span></span>|  
+|----------------------|--------------------|-------------------------|------------------------|  
+|<span data-ttu-id="cd03d-295">Catalog</span><span class="sxs-lookup"><span data-stu-id="cd03d-295">Catalog</span></span>|@Catalog|<span data-ttu-id="cd03d-296">db_name()</span><span class="sxs-lookup"><span data-stu-id="cd03d-296">db_name()</span></span>|<span data-ttu-id="cd03d-297">1</span><span class="sxs-lookup"><span data-stu-id="cd03d-297">1</span></span>|  
+|<span data-ttu-id="cd03d-298">Owner</span><span class="sxs-lookup"><span data-stu-id="cd03d-298">Owner</span></span>|@Owner|<span data-ttu-id="cd03d-299">user_name()</span><span class="sxs-lookup"><span data-stu-id="cd03d-299">user_name()</span></span>|<span data-ttu-id="cd03d-300">2</span><span class="sxs-lookup"><span data-stu-id="cd03d-300">2</span></span>|  
+|<span data-ttu-id="cd03d-301">テーブル</span><span class="sxs-lookup"><span data-stu-id="cd03d-301">Table</span></span>|@Table|<span data-ttu-id="cd03d-302">o.name</span><span class="sxs-lookup"><span data-stu-id="cd03d-302">o.name</span></span>|<span data-ttu-id="cd03d-303">3</span><span class="sxs-lookup"><span data-stu-id="cd03d-303">3</span></span>|  
   
-### UserDefinedTypes  
+### <a name="userdefinedtypes"></a><span data-ttu-id="cd03d-304">UserDefinedTypes</span><span class="sxs-lookup"><span data-stu-id="cd03d-304">UserDefinedTypes</span></span>  
   
-|制限の名前|パラメーター名|制限の既定値|制限の番号|  
-|-----------|-------------|------------|-----------|  
-|assembly\_name|@AssemblyName|assemblies.  name|1|  
-|udt\_name|@UDTName|types.assembly\_class|2|  
+|<span data-ttu-id="cd03d-305">制限の名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-305">Restriction Name</span></span>|<span data-ttu-id="cd03d-306">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="cd03d-306">Parameter Name</span></span>|<span data-ttu-id="cd03d-307">制限の既定値</span><span class="sxs-lookup"><span data-stu-id="cd03d-307">Restriction Default</span></span>|<span data-ttu-id="cd03d-308">制限の番号</span><span class="sxs-lookup"><span data-stu-id="cd03d-308">Restriction Number</span></span>|  
+|----------------------|--------------------|-------------------------|------------------------|  
+|<span data-ttu-id="cd03d-309">assembly_name</span><span class="sxs-lookup"><span data-stu-id="cd03d-309">assembly_name</span></span>|@AssemblyName|<span data-ttu-id="cd03d-310">assemblies.name</span><span class="sxs-lookup"><span data-stu-id="cd03d-310">assemblies.name</span></span>|<span data-ttu-id="cd03d-311">1</span><span class="sxs-lookup"><span data-stu-id="cd03d-311">1</span></span>|  
+|<span data-ttu-id="cd03d-312">udt_name</span><span class="sxs-lookup"><span data-stu-id="cd03d-312">udt_name</span></span>|@UDTName|<span data-ttu-id="cd03d-313">types.assembly_class</span><span class="sxs-lookup"><span data-stu-id="cd03d-313">types.assembly_class</span></span>|<span data-ttu-id="cd03d-314">2</span><span class="sxs-lookup"><span data-stu-id="cd03d-314">2</span></span>|  
   
-### ForeignKeys  
+### <a name="foreignkeys"></a><span data-ttu-id="cd03d-315">ForeignKeys</span><span class="sxs-lookup"><span data-stu-id="cd03d-315">ForeignKeys</span></span>  
   
-|制限の名前|パラメーター名|制限の既定値|制限の番号|  
-|-----------|-------------|------------|-----------|  
-|Catalog|@Catalog|CONSTRAINT\_CATALOG|1|  
-|オーナー|@Owner|CONSTRAINT\_SCHEMA|2|  
-|テーブル|@Table|TABLE\_NAME|3|  
-|名前|@Name|CONSTRAINT\_NAME|4|  
+|<span data-ttu-id="cd03d-316">制限の名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-316">Restriction Name</span></span>|<span data-ttu-id="cd03d-317">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="cd03d-317">Parameter Name</span></span>|<span data-ttu-id="cd03d-318">制限の既定値</span><span class="sxs-lookup"><span data-stu-id="cd03d-318">Restriction Default</span></span>|<span data-ttu-id="cd03d-319">制限の番号</span><span class="sxs-lookup"><span data-stu-id="cd03d-319">Restriction Number</span></span>|  
+|----------------------|--------------------|-------------------------|------------------------|  
+|<span data-ttu-id="cd03d-320">Catalog</span><span class="sxs-lookup"><span data-stu-id="cd03d-320">Catalog</span></span>|@Catalog|<span data-ttu-id="cd03d-321">CONSTRAINT_CATALOG</span><span class="sxs-lookup"><span data-stu-id="cd03d-321">CONSTRAINT_CATALOG</span></span>|<span data-ttu-id="cd03d-322">1</span><span class="sxs-lookup"><span data-stu-id="cd03d-322">1</span></span>|  
+|<span data-ttu-id="cd03d-323">Owner</span><span class="sxs-lookup"><span data-stu-id="cd03d-323">Owner</span></span>|@Owner|<span data-ttu-id="cd03d-324">CONSTRAINT_SCHEMA</span><span class="sxs-lookup"><span data-stu-id="cd03d-324">CONSTRAINT_SCHEMA</span></span>|<span data-ttu-id="cd03d-325">2</span><span class="sxs-lookup"><span data-stu-id="cd03d-325">2</span></span>|  
+|<span data-ttu-id="cd03d-326">テーブル</span><span class="sxs-lookup"><span data-stu-id="cd03d-326">Table</span></span>|@Table|<span data-ttu-id="cd03d-327">TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-327">TABLE_NAME</span></span>|<span data-ttu-id="cd03d-328">3</span><span class="sxs-lookup"><span data-stu-id="cd03d-328">3</span></span>|  
+|<span data-ttu-id="cd03d-329">名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-329">Name</span></span>|@Name|<span data-ttu-id="cd03d-330">CONSTRAINT_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-330">CONSTRAINT_NAME</span></span>|<span data-ttu-id="cd03d-331">4</span><span class="sxs-lookup"><span data-stu-id="cd03d-331">4</span></span>|  
   
-## SQL Server 2008 スキーマの制限  
- 次の表に、SQL Server 2008 スキーマ コレクションの制限を示します。  これらの制限は、.NET Framework 3.5 SP1 および SQL Server 2008 以降で有効です。  これらの制限は、以前のバージョンの .NET Framework および SQL Server ではサポートされません。  
+## <a name="sql-server-2008-schema-restrictions"></a><span data-ttu-id="cd03d-332">SQL Server 2008 スキーマの制限</span><span class="sxs-lookup"><span data-stu-id="cd03d-332">SQL Server 2008 Schema Restrictions</span></span>  
+ <span data-ttu-id="cd03d-333">次の表に、SQL Server 2008 スキーマ コレクションの制限を示します。</span><span class="sxs-lookup"><span data-stu-id="cd03d-333">The following tables list the restrictions for SQL Server 2008 schema collections.</span></span> <span data-ttu-id="cd03d-334">これらの制限は、.NET Framework 3.5 SP1 および SQL Server 2008 以降で有効です。</span><span class="sxs-lookup"><span data-stu-id="cd03d-334">These restrictions are valid beginning with version 3.5 SP1 of the .NET Framework and SQL Server 2008.</span></span> <span data-ttu-id="cd03d-335">これらの制限は、以前のバージョンの .NET Framework および SQL Server ではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="cd03d-335">They are not supported in earlier versions of the .NET Framework and SQL Server.</span></span>  
   
-### ColumnSetColumns  
+### <a name="columnsetcolumns"></a><span data-ttu-id="cd03d-336">ColumnSetColumns</span><span class="sxs-lookup"><span data-stu-id="cd03d-336">ColumnSetColumns</span></span>  
   
-|制限の名前|パラメーター名|制限の既定値|制限の番号|  
-|-----------|-------------|------------|-----------|  
-|Catalog|@Catalog|TABLE\_CATALOG|1|  
-|オーナー|@Owner|TABLE\_SCHEMA|2|  
-|テーブル|@Table|TABLE\_NAME|3|  
+|<span data-ttu-id="cd03d-337">制限の名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-337">Restriction Name</span></span>|<span data-ttu-id="cd03d-338">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="cd03d-338">Parameter Name</span></span>|<span data-ttu-id="cd03d-339">制限の既定値</span><span class="sxs-lookup"><span data-stu-id="cd03d-339">Restriction Default</span></span>|<span data-ttu-id="cd03d-340">制限の番号</span><span class="sxs-lookup"><span data-stu-id="cd03d-340">Restriction Number</span></span>|  
+|----------------------|--------------------|-------------------------|------------------------|  
+|<span data-ttu-id="cd03d-341">Catalog</span><span class="sxs-lookup"><span data-stu-id="cd03d-341">Catalog</span></span>|@Catalog|<span data-ttu-id="cd03d-342">TABLE_CATALOG</span><span class="sxs-lookup"><span data-stu-id="cd03d-342">TABLE_CATALOG</span></span>|<span data-ttu-id="cd03d-343">1</span><span class="sxs-lookup"><span data-stu-id="cd03d-343">1</span></span>|  
+|<span data-ttu-id="cd03d-344">Owner</span><span class="sxs-lookup"><span data-stu-id="cd03d-344">Owner</span></span>|@Owner|<span data-ttu-id="cd03d-345">TABLE_SCHEMA</span><span class="sxs-lookup"><span data-stu-id="cd03d-345">TABLE_SCHEMA</span></span>|<span data-ttu-id="cd03d-346">2</span><span class="sxs-lookup"><span data-stu-id="cd03d-346">2</span></span>|  
+|<span data-ttu-id="cd03d-347">テーブル</span><span class="sxs-lookup"><span data-stu-id="cd03d-347">Table</span></span>|@Table|<span data-ttu-id="cd03d-348">TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-348">TABLE_NAME</span></span>|<span data-ttu-id="cd03d-349">3</span><span class="sxs-lookup"><span data-stu-id="cd03d-349">3</span></span>|  
   
-### AllColumns  
+### <a name="allcolumns"></a><span data-ttu-id="cd03d-350">AllColumns</span><span class="sxs-lookup"><span data-stu-id="cd03d-350">AllColumns</span></span>  
   
-|制限の名前|パラメーター名|制限の既定値|制限の番号|  
-|-----------|-------------|------------|-----------|  
-|Catalog|@Catalog|TABLE\_CATALOG|1|  
-|オーナー|@Owner|TABLE\_SCHEMA|2|  
-|テーブル|@Table|TABLE\_NAME|3|  
-|Column|@Column|COLUMN\_NAME|4|  
+|<span data-ttu-id="cd03d-351">制限の名前</span><span class="sxs-lookup"><span data-stu-id="cd03d-351">Restriction Name</span></span>|<span data-ttu-id="cd03d-352">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="cd03d-352">Parameter Name</span></span>|<span data-ttu-id="cd03d-353">制限の既定値</span><span class="sxs-lookup"><span data-stu-id="cd03d-353">Restriction Default</span></span>|<span data-ttu-id="cd03d-354">制限の番号</span><span class="sxs-lookup"><span data-stu-id="cd03d-354">Restriction Number</span></span>|  
+|----------------------|--------------------|-------------------------|------------------------|  
+|<span data-ttu-id="cd03d-355">Catalog</span><span class="sxs-lookup"><span data-stu-id="cd03d-355">Catalog</span></span>|@Catalog|<span data-ttu-id="cd03d-356">TABLE_CATALOG</span><span class="sxs-lookup"><span data-stu-id="cd03d-356">TABLE_CATALOG</span></span>|<span data-ttu-id="cd03d-357">1</span><span class="sxs-lookup"><span data-stu-id="cd03d-357">1</span></span>|  
+|<span data-ttu-id="cd03d-358">Owner</span><span class="sxs-lookup"><span data-stu-id="cd03d-358">Owner</span></span>|@Owner|<span data-ttu-id="cd03d-359">TABLE_SCHEMA</span><span class="sxs-lookup"><span data-stu-id="cd03d-359">TABLE_SCHEMA</span></span>|<span data-ttu-id="cd03d-360">2</span><span class="sxs-lookup"><span data-stu-id="cd03d-360">2</span></span>|  
+|<span data-ttu-id="cd03d-361">テーブル</span><span class="sxs-lookup"><span data-stu-id="cd03d-361">Table</span></span>|@Table|<span data-ttu-id="cd03d-362">TABLE_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-362">TABLE_NAME</span></span>|<span data-ttu-id="cd03d-363">3</span><span class="sxs-lookup"><span data-stu-id="cd03d-363">3</span></span>|  
+|<span data-ttu-id="cd03d-364">列</span><span class="sxs-lookup"><span data-stu-id="cd03d-364">Column</span></span>|@Column|<span data-ttu-id="cd03d-365">COLUMN_NAME</span><span class="sxs-lookup"><span data-stu-id="cd03d-365">COLUMN_NAME</span></span>|<span data-ttu-id="cd03d-366">4</span><span class="sxs-lookup"><span data-stu-id="cd03d-366">4</span></span>|  
   
-## 参照  
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="cd03d-367">関連項目</span><span class="sxs-lookup"><span data-stu-id="cd03d-367">See Also</span></span>  
+ [<span data-ttu-id="cd03d-368">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="cd03d-368">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

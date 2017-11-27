@@ -1,83 +1,86 @@
 ---
-title: "&lt;namedCaches&gt; 要素 (キャッシュ設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<namedCaches> 要素"
-  - "キャッシュ [.NET Framework], 構成"
-  - "namedCaches 要素"
+title: "&lt;namedCaches&gt;要素 (キャッシュの設定)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- namedCaches element
+- caching [.NET Framework], configuration
+- <namedCaches> element
 ms.assetid: 6bd4fbc5-55a6-4dc4-998b-cdcc7e023330
-caps.latest.revision: 14
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: bdafddcb05dd50f059c9f6804573beec085a4a2a
+ms.sourcegitcommit: d0f7646d67db5809cf43ff1d27b399a4020e8ee2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/25/2017
 ---
-# &lt;namedCaches&gt; 要素 (キャッシュ設定)
-名前付き <xref:System.Runtime.Caching.MemoryCache> インスタンスの構成設定のコレクションを指定します。  <xref:System.Runtime.Caching.Configuration.MemoryCacheSection.NamedCaches%2A> プロパティは、構成ファイルの 1 つ以上の `namedCaches` 要素の構成設定のコレクションを参照します。  
+# <a name="ltnamedcachesgt-element-cache-settings"></a><span data-ttu-id="baba8-102">&lt;namedCaches&gt;要素 (キャッシュの設定)</span><span class="sxs-lookup"><span data-stu-id="baba8-102">&lt;namedCaches&gt; Element (Cache Settings)</span></span>
+<span data-ttu-id="baba8-103">名前付きの構成設定のコレクションを指定<xref:System.Runtime.Caching.MemoryCache>インスタンス。</span><span class="sxs-lookup"><span data-stu-id="baba8-103">Specifies a collection of configuration settings for the named <xref:System.Runtime.Caching.MemoryCache> instances.</span></span> <span data-ttu-id="baba8-104"><xref:System.Runtime.Caching.Configuration.MemoryCacheSection.NamedCaches%2A>プロパティは、1 つ以上の構成設定のコレクションを参照`namedCaches`構成ファイルの要素。</span><span class="sxs-lookup"><span data-stu-id="baba8-104">The <xref:System.Runtime.Caching.Configuration.MemoryCacheSection.NamedCaches%2A> property references the collection of configuration settings from one or more `namedCaches` elements of the configuration file.</span></span>  
   
-## 構文  
+ <span data-ttu-id="baba8-105">\<configuration></span><span class="sxs-lookup"><span data-stu-id="baba8-105">\<configuration></span></span>  
+<span data-ttu-id="baba8-106">\<system.runtime.caching ></span><span class="sxs-lookup"><span data-stu-id="baba8-106">\< system.runtime.caching></span></span>  
+<span data-ttu-id="baba8-107">\<memoryCache ></span><span class="sxs-lookup"><span data-stu-id="baba8-107">\<memoryCache></span></span>  
+<span data-ttu-id="baba8-108">\<namedCaches ></span><span class="sxs-lookup"><span data-stu-id="baba8-108">\<namedCaches></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="baba8-109">構文</span><span class="sxs-lookup"><span data-stu-id="baba8-109">Syntax</span></span>  
+  
+```xml  
 <namedCaches>  
-  <add name="default"   
+  <add name="default"/>   
 </namedCaches>  
 ```  
   
-## 型  
+## <a name="type"></a><span data-ttu-id="baba8-110">型</span><span class="sxs-lookup"><span data-stu-id="baba8-110">Type</span></span>  
  `None`  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="baba8-111">属性および要素</span><span class="sxs-lookup"><span data-stu-id="baba8-111">Attributes and Elements</span></span>  
+ <span data-ttu-id="baba8-112">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="baba8-112">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="baba8-113">属性</span><span class="sxs-lookup"><span data-stu-id="baba8-113">Attributes</span></span>  
   
-|Attribute|説明|  
-|---------------|--------|  
-|`CacheMemoryLimitMegabytes`|<xref:System.Runtime.Caching.MemoryCache> のインスタンスについて許可される最大サイズ \(MB 単位\) を指定する整数値。  既定値は 0 です。これは、<xref:System.Runtime.Caching.MemoryCache> クラスの自動サイズ変更ヒューリスティックが既定で使用されることを意味します。|  
-|`Name`|キャッシュの名前。|  
-|`PhysicalMemoryLimitPercentage`|キャッシュで使用できる物理的にインストールされたコンピューター メモリの最大パーセンテージを指定する 0 ～ 100 の整数値。  既定値は 0 です。これは、<xref:System.Runtime.Caching.MemoryCache> クラスの自動サイズ変更ヒューリスティックが既定で使用されることを意味します。|  
-|`PollingInterval`|キャッシュの実装が、現在のメモリ負荷を、キャッシュ インスタンスに設定されているメモリ制限の絶対値および割合と比較する時間間隔を示す値。  この値は "HH:MM:SS" の形式で入力されます。|  
+|<span data-ttu-id="baba8-114">属性</span><span class="sxs-lookup"><span data-stu-id="baba8-114">Attribute</span></span>|<span data-ttu-id="baba8-115">説明</span><span class="sxs-lookup"><span data-stu-id="baba8-115">Description</span></span>|  
+|---------------|-----------------|  
+|`cacheMemoryLimitMegabytes`|<span data-ttu-id="baba8-116">メガバイト単位で、最大許容サイズを指定する整数値のインスタンス、<xref:System.Runtime.Caching.MemoryCache>まで拡大できます。</span><span class="sxs-lookup"><span data-stu-id="baba8-116">An integer value that specifies the maximum allowable size, in megabytes, that an instance of a <xref:System.Runtime.Caching.MemoryCache> can grow to.</span></span> <span data-ttu-id="baba8-117">既定値は 0、つまりのサイズの自動変更のヒューリスティック、<xref:System.Runtime.Caching.MemoryCache>クラスは、既定で使用されます。</span><span class="sxs-lookup"><span data-stu-id="baba8-117">The default value is 0, which means that the autosizing heuristics of the <xref:System.Runtime.Caching.MemoryCache> class are used by default.</span></span>|  
+|`name`|<span data-ttu-id="baba8-118">キャッシュの名前。</span><span class="sxs-lookup"><span data-stu-id="baba8-118">The name of the cache.</span></span>|  
+|`physicalMemoryLimitPercentage`|<span data-ttu-id="baba8-119">キャッシュで利用できる物理的にインストールされているコンピューターのメモリの最大パーセンテージを指定する整数 0 ~ 100 の値。</span><span class="sxs-lookup"><span data-stu-id="baba8-119">An integer value between 0 and 100 that specifies the maximum percentage of physically installed computer memory that can be consumed by the cache.</span></span> <span data-ttu-id="baba8-120">既定値は 0、つまりのサイズの自動変更のヒューリスティック、<xref:System.Runtime.Caching.MemoryCache>クラスは、既定で使用されます。</span><span class="sxs-lookup"><span data-stu-id="baba8-120">The default value is 0, which means that the autosizing heuristics of the <xref:System.Runtime.Caching.MemoryCache> class are used by default.</span></span>|  
+|`pollingInterval`|<span data-ttu-id="baba8-121">時間間隔を示す値。この値を超えると、キャッシュの実装によりキャッシュ インスタンスに設定されている絶対およびパーセントのメモリ制限と現在のメモリ負荷が比較されます。</span><span class="sxs-lookup"><span data-stu-id="baba8-121">A value that indicates the time interval after which the cache implementation compares the current memory load against the absolute and percentage-based memory limits that are set for the cache instance.</span></span> <span data-ttu-id="baba8-122">この値は"HH:MM:SS"形式で入力します。</span><span class="sxs-lookup"><span data-stu-id="baba8-122">This value is entered in "HH:MM:SS" format.</span></span>|  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="baba8-123">子要素</span><span class="sxs-lookup"><span data-stu-id="baba8-123">Child Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<add\>](../../../../../docs/framework/configure-apps/file-schema/runtime/add-element-for-namedcaches.md)|名前付きキャッシュをメモリ キャッシュの `namedCaches` コレクションに追加します。|  
-|[\<&#91;clear&#93;\>](../../../../../docs/framework/configure-apps/file-schema/runtime/clear-element-for-namedcaches.md)|メモリ キャッシュの `namedCaches` コレクションを削除します。|  
-|[\<削除\>](../../../../../docs/framework/configure-apps/file-schema/runtime/remove-element-for-namedcaches.md)|メモリ キャッシュの `namedCaches` コレクションから、名前付きキャッシュ エントリを削除します。|  
+|<span data-ttu-id="baba8-124">要素</span><span class="sxs-lookup"><span data-stu-id="baba8-124">Element</span></span>|<span data-ttu-id="baba8-125">説明</span><span class="sxs-lookup"><span data-stu-id="baba8-125">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="baba8-126">\<add></span><span class="sxs-lookup"><span data-stu-id="baba8-126">\<add></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/add-element-for-namedcaches.md)|<span data-ttu-id="baba8-127">名前付きキャッシュを、メモリ キャッシュの `namedCaches` コレクションに追加します。</span><span class="sxs-lookup"><span data-stu-id="baba8-127">Adds a named cache to the `namedCaches` collection for a memory cache.</span></span>|  
+|[<span data-ttu-id="baba8-128">\<clear></span><span class="sxs-lookup"><span data-stu-id="baba8-128">\<clear></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/clear-element-for-namedcaches.md)|<span data-ttu-id="baba8-129">メモリ キャッシュの `namedCaches` コレクションを消去します。</span><span class="sxs-lookup"><span data-stu-id="baba8-129">Clears the `namedCaches` collection for a memory cache.</span></span>|  
+|[<span data-ttu-id="baba8-130">\<remove></span><span class="sxs-lookup"><span data-stu-id="baba8-130">\<remove></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/remove-element-for-namedcaches.md)|<span data-ttu-id="baba8-131">名前付きキャッシュ エントリを、メモリ キャッシュの `namedCaches` コレクションから削除します。</span><span class="sxs-lookup"><span data-stu-id="baba8-131">Removes a named cache entry from the `namedCaches` collection for a memory cache.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="baba8-132">親要素</span><span class="sxs-lookup"><span data-stu-id="baba8-132">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<memoryCache\>](../../../../../docs/framework/configure-apps/file-schema/runtime/memorycache-element-cache-settings.md)|<xref:System.Runtime.Caching.MemoryCache> クラスに基づいたキャッシュの構成に使用される要素を定義します。|  
+|<span data-ttu-id="baba8-133">要素</span><span class="sxs-lookup"><span data-stu-id="baba8-133">Element</span></span>|<span data-ttu-id="baba8-134">説明</span><span class="sxs-lookup"><span data-stu-id="baba8-134">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="baba8-135">\<memoryCache></span><span class="sxs-lookup"><span data-stu-id="baba8-135">\<memoryCache></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/memorycache-element-cache-settings.md)|<span data-ttu-id="baba8-136"><xref:System.Runtime.Caching.MemoryCache> クラスに基づくキャッシュを構成するために使用される要素を定義します。</span><span class="sxs-lookup"><span data-stu-id="baba8-136">Defines an element that is used to configure a cache that is based on the <xref:System.Runtime.Caching.MemoryCache> class.</span></span>|  
   
-## 解説  
- Web.config ファイルのメモリ キャッシュ構成セクションには、`namedCaches` コレクションの `add`、`remove`、および `clear` 属性を含めることができます。  各 `namedCaches` エントリは、`name` 属性によって一意に識別されます。  
+## <a name="remarks"></a><span data-ttu-id="baba8-137">コメント</span><span class="sxs-lookup"><span data-stu-id="baba8-137">Remarks</span></span>  
+ <span data-ttu-id="baba8-138">Web.config ファイルのメモリ キャッシュ構成セクションを含めることができます`add`、 `remove`、および`clear`の属性を`namedCaches`コレクション。</span><span class="sxs-lookup"><span data-stu-id="baba8-138">The memory cache configuration section of the Web.config file can contain `add`, `remove`, and `clear` attributes for the `namedCaches` collection.</span></span> <span data-ttu-id="baba8-139">各`namedCaches`によってエントリを一意に識別、`name`属性。</span><span class="sxs-lookup"><span data-stu-id="baba8-139">Each `namedCaches` entry is uniquely identified by the `name` attribute.</span></span>  
   
- アプリケーション構成ファイル内の情報を参照することにより、メモリ キャッシュ エントリのインスタンスを取得できます。  既定では、既定のキャッシュ インスタンスのみが構成ファイルにエントリを持ちます。  既定のキャッシュ インスタンスは、<xref:System.Runtime.Caching.MemoryCache.Default%2A> プロパティから返されるインスタンスです。  
+ <span data-ttu-id="baba8-140">アプリケーション構成ファイル内の情報を参照することによって、メモリのキャッシュ エントリのインスタンスを取得できます。</span><span class="sxs-lookup"><span data-stu-id="baba8-140">You can retrieve instances of memory cache entries by referencing the information in the application configuration files.</span></span> <span data-ttu-id="baba8-141">既定では、既定のキャッシュ インスタンスの構成ファイルにエントリがあります。</span><span class="sxs-lookup"><span data-stu-id="baba8-141">By default, only the default cache instance has an entry in the configuration file.</span></span> <span data-ttu-id="baba8-142">既定のキャッシュ インスタンスは、インスタンスから返される、<xref:System.Runtime.Caching.MemoryCache.Default%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="baba8-142">The default cache instance is the instance that is returned from the <xref:System.Runtime.Caching.MemoryCache.Default%2A> property.</span></span>  
   
- 名前属性を "default" に設定した場合、要素では既定のメモリ キャッシュ インスタンスが使用されます。  
+ <span data-ttu-id="baba8-143">Name 属性を"default"を設定した場合、要素は、既定のメモリ キャッシュ インスタンスを使用します。</span><span class="sxs-lookup"><span data-stu-id="baba8-143">If you set the name attribute to "default", the element uses the default memory cache instance.</span></span>  
   
-## 使用例  
- `name` 属性を "default" に設定して、キャッシュの名前を既定のキャッシュ エントリ名に設定する方法を次の例に示します。  
+## <a name="example"></a><span data-ttu-id="baba8-144">例</span><span class="sxs-lookup"><span data-stu-id="baba8-144">Example</span></span>  
+ <span data-ttu-id="baba8-145">次の例は、既定のキャッシュ エントリ名に設定して、キャッシュの名前を設定する方法を示しています、`name`属性を"default"です。</span><span class="sxs-lookup"><span data-stu-id="baba8-145">The following example shows how to set the name of the cache to the default cache entry name by setting the `name` attribute to "default".</span></span>  
   
- `cacheMemoryLimitMegabytes` 属性と `physicalMemoryPercentage` 属性は 0 に設定されています。  これらの属性を 0 に設定すると、<xref:System.Runtime.Caching.MemoryCache> クラスの自動サイズ変更ヒューリスティックが使用されます。  キャッシュの実装は、現在のメモリ負荷を、メモリ制限の絶対値および割合と 2 分ごとに比較します。  
+ <span data-ttu-id="baba8-146">`cacheMemoryLimitMegabytes` 属性および `physicalMemoryPercentage` 属性はゼロに設定されます。</span><span class="sxs-lookup"><span data-stu-id="baba8-146">The `cacheMemoryLimitMegabytes` attribute and the `physicalMemoryPercentage` attribute are set to zero.</span></span> <span data-ttu-id="baba8-147">これらの属性を 0 に設定することを意味のサイズの自動変更のヒューリスティック、<xref:System.Runtime.Caching.MemoryCache>クラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="baba8-147">Setting these attributes to zero means that the autosizing heuristics of the <xref:System.Runtime.Caching.MemoryCache> class are used.</span></span> <span data-ttu-id="baba8-148">キャッシュの実装では、現在のメモリ負荷を絶対指定とパーセンテージに基づくメモリ制限の 2 分ごとと比較します。</span><span class="sxs-lookup"><span data-stu-id="baba8-148">The cache implementation compares the current memory load against the absolute and percentage-based memory limits every two minutes.</span></span>  
   
-```  
+```xml  
 <configuration>  
   
   <system.runtime.caching>  
@@ -94,5 +97,5 @@ caps.handback.revision: 14
 </configuration>  
 ```  
   
-## 参照  
- [\<memoryCache\> 要素 \(キャッシュ設定\)](../../../../../docs/framework/configure-apps/file-schema/runtime/memorycache-element-cache-settings.md)
+## <a name="see-also"></a><span data-ttu-id="baba8-149">関連項目</span><span class="sxs-lookup"><span data-stu-id="baba8-149">See Also</span></span>  
+ [<span data-ttu-id="baba8-150">\<memoryCache > 要素 (キャッシュの設定)</span><span class="sxs-lookup"><span data-stu-id="baba8-150">\<memoryCache> Element (Cache Settings)</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/memorycache-element-cache-settings.md)

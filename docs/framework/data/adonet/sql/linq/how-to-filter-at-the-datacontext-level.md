@@ -1,29 +1,35 @@
 ---
-title: "How to: Filter at the DataContext Level | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : データ コンテキスト レベルでフィルター処理する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 15505cd7-0df2-427a-9f86-e0f96f60ee2e
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 69b711802d04e005095167db7df544e0f00d0b19
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# How to: Filter at the DataContext Level
-`EntitySets` を `DataContext` レベルでフィルター処理できます。  このフィルター処理は、対象の <xref:System.Data.Linq.DataContext> インスタンスを使って実行されたすべてのクエリに適用されます。  
+# <a name="how-to-filter-at-the-datacontext-level"></a><span data-ttu-id="28cac-102">方法 : データ コンテキスト レベルでフィルター処理する</span><span class="sxs-lookup"><span data-stu-id="28cac-102">How to: Filter at the DataContext Level</span></span>
+<span data-ttu-id="28cac-103">`EntitySets` を `DataContext` レベルでフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="28cac-103">You can filter `EntitySets` at the `DataContext` level.</span></span> <span data-ttu-id="28cac-104">このフィルター処理は、対象の <xref:System.Data.Linq.DataContext> インスタンスを使って実行されたすべてのクエリに適用されます。</span><span class="sxs-lookup"><span data-stu-id="28cac-104">Such filters apply to all queries done with that <xref:System.Data.Linq.DataContext> instance.</span></span>  
   
-## 使用例  
- 次の例では、あらかじめ読み込まれた顧客からの注文を `ShippedDate` に基づいてフィルター処理するために <xref:System.Data.Linq.DataLoadOptions.AssociateWith%28System.Linq.Expressions.LambdaExpression%29?displayProperty=fullName> が使用されます。  
+## <a name="example"></a><span data-ttu-id="28cac-105">例</span><span class="sxs-lookup"><span data-stu-id="28cac-105">Example</span></span>  
+ <span data-ttu-id="28cac-106">次の例では、あらかじめ読み込まれた顧客からの注文を <xref:System.Data.Linq.DataLoadOptions.AssociateWith%28System.Linq.Expressions.LambdaExpression%29?displayProperty=nameWithType> に基づいてフィルター処理するために `ShippedDate` が使用されます。</span><span class="sxs-lookup"><span data-stu-id="28cac-106">In the following example, <xref:System.Data.Linq.DataLoadOptions.AssociateWith%28System.Linq.Expressions.LambdaExpression%29?displayProperty=nameWithType> is used to filter the pre-loaded orders for customers by `ShippedDate`.</span></span>  
   
  [!code-csharp[DLinqQueryConcepts#10](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#10)]
  [!code-vb[DLinqQueryConcepts#10](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#10)]  
   
-## 参照  
- [Query Concepts](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)
+## <a name="see-also"></a><span data-ttu-id="28cac-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="28cac-107">See Also</span></span>  
+ [<span data-ttu-id="28cac-108">クエリの概念</span><span class="sxs-lookup"><span data-stu-id="28cac-108">Query Concepts</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)

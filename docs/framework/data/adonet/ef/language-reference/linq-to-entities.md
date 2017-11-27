@@ -1,106 +1,105 @@
 ---
-title: "LINQ to Entities | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: LINQ to Entities
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 641f9b68-9046-47a1-abb0-1c8eaeda0e2d
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 685651f4291a11b857da82a63068e4bd2333275c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# LINQ to Entities
-LINQ to Entities は、開発者が Visual Basic または Visual C\# を使用して Entity Framework 概念モデルに対するクエリを作成するための統合言語クエリ \(LINQ\) のサポートを提供します。  Entity Framework に対するクエリで代表的なものが、コマンド ツリー クエリです。これはオブジェクト コンテキストに対して実行されます。  LINQ to Entities では、統合言語クエリ \(LINQ\) クエリをコマンド ツリー クエリに変換し、そのクエリを Entity Framework に対して実行します。返されたオブジェクトは、Entity Framework でも LINQ でも使用できます。  次に、LINQ to Entities クエリを作成して実行する手順を示します。  
+# <a name="linq-to-entities"></a><span data-ttu-id="133d1-102">LINQ to Entities</span><span class="sxs-lookup"><span data-stu-id="133d1-102">LINQ to Entities</span></span>
+<span data-ttu-id="133d1-103">LINQ to Entities は、開発者が Visual Basic または Visual C# を使用して Entity Framework 概念モデルに対するクエリを作成するための統合言語クエリ (LINQ) のサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="133d1-103">LINQ to Entities provides Language-Integrated Query (LINQ) support that enables developers to write queries against the Entity Framework conceptual model using Visual Basic or Visual C#.</span></span> <span data-ttu-id="133d1-104">Entity Framework に対するクエリで代表的なものが、コマンド ツリー クエリです。これはオブジェクト コンテキストに対して実行されます。</span><span class="sxs-lookup"><span data-stu-id="133d1-104">Queries against the Entity Framework are represented by command tree queries, which execute against the object context.</span></span> <span data-ttu-id="133d1-105">LINQ to Entities では、統合言語クエリ (LINQ) クエリをコマンド ツリー クエリに変換し、そのクエリを Entity Framework に対して実行します。返されたオブジェクトは、Entity Framework でも LINQ でも使用できます。</span><span class="sxs-lookup"><span data-stu-id="133d1-105">LINQ to Entities converts Language-Integrated Queries (LINQ) queries to command tree queries, executes the queries against the Entity Framework, and returns objects that can be used by both the Entity Framework and LINQ.</span></span> <span data-ttu-id="133d1-106">次に、LINQ to Entities クエリを作成して実行する手順を示します。</span><span class="sxs-lookup"><span data-stu-id="133d1-106">The following is the process for creating and executing a LINQ to Entities query:</span></span>  
   
-1.  <xref:System.Data.Objects.ObjectContext> から <xref:System.Data.Objects.ObjectQuery%601> インスタンスを作成します。  
+1.  <span data-ttu-id="133d1-107"><xref:System.Data.Objects.ObjectQuery%601> から <xref:System.Data.Objects.ObjectContext> インスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="133d1-107">Construct an <xref:System.Data.Objects.ObjectQuery%601> instance from <xref:System.Data.Objects.ObjectContext>.</span></span>  
   
-2.  <xref:System.Data.Objects.ObjectQuery%601> インスタンスを使用して、C\# または Visual Basic で LINQ to Entities クエリを作成します。  
+2.  <span data-ttu-id="133d1-108"><xref:System.Data.Objects.ObjectQuery%601> インスタンスを使用して、C# または Visual Basic で LINQ to Entities クエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="133d1-108">Compose a LINQ to Entities query in C# or Visual Basic by using the <xref:System.Data.Objects.ObjectQuery%601> instance.</span></span>  
   
-3.  LINQ 標準クエリ演算子および標準クエリ式をコマンド ツリーに変換します。  
+3.  <span data-ttu-id="133d1-109">LINQ 標準クエリ演算子および標準クエリ式をコマンド ツリーに変換します。</span><span class="sxs-lookup"><span data-stu-id="133d1-109">Convert LINQ standard query operators and expressions to command trees.</span></span>  
   
-4.  コマンド ツリーで表されたクエリをデータ ソースに対して実行します。  実行中にデータ ソースに対してスローされた例外は、クライアントに直接渡されます。  
+4.  <span data-ttu-id="133d1-110">コマンド ツリーで表されたクエリをデータ ソースに対して実行します。</span><span class="sxs-lookup"><span data-stu-id="133d1-110">Execute the query, in command tree representation, against the data source.</span></span> <span data-ttu-id="133d1-111">実行中にデータ ソースに対してスローされた例外は、クライアントに直接渡されます。</span><span class="sxs-lookup"><span data-stu-id="133d1-111">Any exceptions thrown on the data source during execution are passed directly up to the client.</span></span>  
   
-5.  クエリの結果をクライアントに返します。  
+5.  <span data-ttu-id="133d1-112">クエリの結果をクライアントに返します。</span><span class="sxs-lookup"><span data-stu-id="133d1-112">Return query results back to the client.</span></span>  
   
-## ObjectQuery インスタンスの構築  
- <xref:System.Data.Objects.ObjectQuery%601> ジェネリック クラスは、0 個以上の型指定されたエンティティのコレクションを返すクエリを表します。  通常、オブジェクト クエリは手作業で構築されるのではなく、既存のオブジェクト コンテキストから構築され、常にそのオブジェクト コンテキストに属しています。  このコンテキストにより、クエリの作成と実行に必要な接続情報とメタデータ情報が取得されます。  <xref:System.Data.Objects.ObjectQuery%601> ジェネリック クラスでは、<xref:System.Linq.IQueryable%601> ジェネリック インターフェイスが実装されます。このインターフェイスのビルダー メソッドにより、LINQ クエリを段階的に構築できます。  C\# `var` キーワード \(Visual Basic の場合は `Dim`、ローカル型推論を有効にする\) を使用することで、コンパイラでエンティティの型を推論することもできます。  
+## <a name="constructing-an-objectquery-instance"></a><span data-ttu-id="133d1-113">ObjectQuery インスタンスの構築</span><span class="sxs-lookup"><span data-stu-id="133d1-113">Constructing an ObjectQuery Instance</span></span>  
+ <span data-ttu-id="133d1-114"><xref:System.Data.Objects.ObjectQuery%601> ジェネリック クラスは、0 個以上の型指定されたエンティティのコレクションを返すクエリを表します。</span><span class="sxs-lookup"><span data-stu-id="133d1-114">The <xref:System.Data.Objects.ObjectQuery%601> generic class represents a query that returns a collection of zero or more typed entities.</span></span> <span data-ttu-id="133d1-115">通常、オブジェクト クエリは手作業で構築されるのではなく、既存のオブジェクト コンテキストから構築され、常にそのオブジェクト コンテキストに属しています。</span><span class="sxs-lookup"><span data-stu-id="133d1-115">An object query is typically constructed from an existing object context, instead of being manually constructed, and always belongs to that object context.</span></span> <span data-ttu-id="133d1-116">このコンテキストにより、クエリの作成と実行に必要な接続情報とメタデータ情報が取得されます。</span><span class="sxs-lookup"><span data-stu-id="133d1-116">This context provides the connection and metadata information that is required to compose and execute the query.</span></span> <span data-ttu-id="133d1-117"><xref:System.Data.Objects.ObjectQuery%601> ジェネリック クラスでは、<xref:System.Linq.IQueryable%601> ジェネリック インターフェイスが実装されます。このインターフェイスのビルダー メソッドにより、LINQ クエリを段階的に構築できます。</span><span class="sxs-lookup"><span data-stu-id="133d1-117">The <xref:System.Data.Objects.ObjectQuery%601> generic class implements the <xref:System.Linq.IQueryable%601> generic interface, whose builder methods enable LINQ queries to be incrementally built.</span></span> <span data-ttu-id="133d1-118">C# `var` キーワード (Visual Basic の場合は `Dim`、ローカル型推論を有効にする) を使用することで、コンパイラでエンティティの型を推論することもできます。</span><span class="sxs-lookup"><span data-stu-id="133d1-118">You can also let the compiler infer the type of entities by using the C# `var` keyword (`Dim` in Visual Basic, with local type inference enabled).</span></span>  
   
-## クエリの作成  
- <xref:System.Linq.IQueryable%601> ジェネリック インターフェイスを実装する <xref:System.Data.Objects.ObjectQuery%601> ジェネリック クラスのインスタンスは、LINQ to Entities クエリのデータ ソースとして動作します。  クエリでは、データ ソースから取得する情報を正確に指定できます。  また、並べ替え、グループ化、整形方法を指定して情報を取得することもできます。  LINQ では、クエリが変数に格納されます。  このクエリ変数は、クエリの情報を保存するだけで、なんらかのアクションを実行したり、データを返したりすることはありません。  クエリを作成した後、データを取得するには、そのクエリを実行する必要があります。  
+## <a name="composing-the-queries"></a><span data-ttu-id="133d1-119">クエリの作成</span><span class="sxs-lookup"><span data-stu-id="133d1-119">Composing the Queries</span></span>  
+ <span data-ttu-id="133d1-120"><xref:System.Data.Objects.ObjectQuery%601> ジェネリック インターフェイスを実装する <xref:System.Linq.IQueryable%601> ジェネリック クラスのインスタンスは、LINQ to Entities クエリのデータ ソースとして動作します。</span><span class="sxs-lookup"><span data-stu-id="133d1-120">Instances of the <xref:System.Data.Objects.ObjectQuery%601> generic class, which implements the generic <xref:System.Linq.IQueryable%601> interface, serve as the data source for LINQ to Entities queries.</span></span> <span data-ttu-id="133d1-121">クエリでは、データ ソースから取得する情報を正確に指定できます。</span><span class="sxs-lookup"><span data-stu-id="133d1-121">In a query, you specify exactly the information that you want to retrieve from the data source.</span></span> <span data-ttu-id="133d1-122">また、並べ替え、グループ化、整形方法を指定して情報を取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="133d1-122">A query can also specify how that information should be sorted, grouped, and shaped before it is returned.</span></span> <span data-ttu-id="133d1-123">LINQ では、クエリが変数に格納されます。</span><span class="sxs-lookup"><span data-stu-id="133d1-123">In LINQ, a query is stored in a variable.</span></span> <span data-ttu-id="133d1-124">このクエリ変数は、クエリの情報を保存するだけで、なんらかのアクションを実行したり、データを返したりすることはありません。</span><span class="sxs-lookup"><span data-stu-id="133d1-124">This query variable takes no action and returns no data; it only stores the query information.</span></span> <span data-ttu-id="133d1-125">クエリを作成した後、データを取得するには、そのクエリを実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="133d1-125">After you create a query you must execute that query to retrieve any data.</span></span>  
   
- LINQ to Entities クエリは、クエリ式の構文とメソッド ベースのクエリ構文という 2 とおりの構文を使って作成できます。  クエリ式の構文とメソッド ベースのクエリ構文は、C\# 3.0 と Visual Basic 9.0 で新たに導入された機能です。  
+ <span data-ttu-id="133d1-126">LINQ to Entities クエリは、クエリ式の構文とメソッド ベースのクエリ構文という 2 とおりの構文を使って作成できます。</span><span class="sxs-lookup"><span data-stu-id="133d1-126">LINQ to Entities queries can be composed in two different syntaxes: query expression syntax and method-based query syntax.</span></span> <span data-ttu-id="133d1-127">クエリ式の構文とメソッド ベースのクエリ構文は、C# 3.0 と Visual Basic 9.0 で新たに導入された機能です。</span><span class="sxs-lookup"><span data-stu-id="133d1-127">Query expression syntax and method-based query syntax are new in C# 3.0 and Visual Basic 9.0.</span></span>  
   
- 詳細については、「[LINQ to Entities でのクエリ](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)」を参照してください。  
+ <span data-ttu-id="133d1-128">詳細については、次を参照してください。[で LINQ to Entities クエリ](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)です。</span><span class="sxs-lookup"><span data-stu-id="133d1-128">For more information, see [Queries in LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md).</span></span>  
   
-## クエリの変換  
- LINQ to Entities クエリを Entity Framework に対して実行するには、LINQ クエリを Entity Framework に対して実行できるコマンド ツリー表現に変換する必要があります。  
+## <a name="query-conversion"></a><span data-ttu-id="133d1-129">クエリの変換</span><span class="sxs-lookup"><span data-stu-id="133d1-129">Query Conversion</span></span>  
+ <span data-ttu-id="133d1-130">LINQ to Entities クエリを Entity Framework に対して実行するには、LINQ クエリを Entity Framework に対して実行できるコマンド ツリー表現に変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="133d1-130">To execute a LINQ to Entities query against the Entity Framework, the LINQ query must be converted to a command tree representation that can be executed against the Entity Framework.</span></span>  
   
- LINQ to Entities クエリは、LINQ 標準クエリ演算子 \(<xref:System.Linq.Queryable.Select%2A>、<xref:System.Linq.Queryable.Where%2A>、<xref:System.Linq.Queryable.GroupBy%2A> など\) と式 \(x \> 10 や Contact.LastName など\) で構成されます。  LINQ 演算子はクラスで定義されるものではなく、クラスのメソッドです。  LINQ の式には、<xref:System.Linq.Expressions> 名前空間の型で許容される要素だけでなく、ラムダ関数で表される要素であれば何でも使用できます。  これは Entity Framework で許容される式のスーパーセットです。定義により、このような式はデータベースで許容され、<xref:System.Data.Objects.ObjectQuery%601> でサポートされる操作に限定されています。  
+ <span data-ttu-id="133d1-131">LINQ to Entities クエリは、LINQ 標準クエリ演算子 (<xref:System.Linq.Queryable.Select%2A>、<xref:System.Linq.Queryable.Where%2A>、<xref:System.Linq.Queryable.GroupBy%2A> など) と式 (x > 10 や Contact.LastName など) で構成されます。</span><span class="sxs-lookup"><span data-stu-id="133d1-131">LINQ to Entities queries are comprised of LINQ standard query operators (such as <xref:System.Linq.Queryable.Select%2A>, <xref:System.Linq.Queryable.Where%2A>, and <xref:System.Linq.Queryable.GroupBy%2A>) and expressions (x > 10, Contact.LastName, and so on).</span></span> <span data-ttu-id="133d1-132">LINQ 演算子はクラスで定義されるものではなく、クラスのメソッドです。</span><span class="sxs-lookup"><span data-stu-id="133d1-132">LINQ operators are not defined by a class, but rather are methods on a class.</span></span> <span data-ttu-id="133d1-133">LINQ の式には、<xref:System.Linq.Expressions> 名前空間の型で許容される要素だけでなく、ラムダ関数で表される要素であれば何でも使用できます。</span><span class="sxs-lookup"><span data-stu-id="133d1-133">In LINQ, expressions can contain anything allowed by types within the <xref:System.Linq.Expressions> namespace and, by extension, anything that can be represented in a lambda function.</span></span> <span data-ttu-id="133d1-134">これは Entity Framework で許容される式のスーパーセットです。定義により、このような式はデータベースで許容され、<xref:System.Data.Objects.ObjectQuery%601> でサポートされる操作に限定されています。</span><span class="sxs-lookup"><span data-stu-id="133d1-134">This is a superset of the expressions that are allowed by the Entity Framework, which are by definition restricted to operations allowed on the database, and supported by <xref:System.Data.Objects.ObjectQuery%601>.</span></span>  
   
- Entity Framework では、演算子と式は 1 つの型の階層で表された後、コマンド ツリーに配置されます。  このコマンド ツリーが、Entity Framework でのクエリの実行に使用されます。  LINQ クエリをコマンド ツリーとして表現できない場合、クエリの変換中に例外がスローされます。  LINQ to Entities クエリを変換する際には、標準クエリ演算子の変換と式の変換という 2 つの変換が実行されます。  
+ <span data-ttu-id="133d1-135">Entity Framework では、演算子と式は 1 つの型の階層で表された後、コマンド ツリーに配置されます。</span><span class="sxs-lookup"><span data-stu-id="133d1-135">In the Entity Framework, both operators and expressions are represented by a single type hierarchy, which are then placed in a command tree.</span></span> <span data-ttu-id="133d1-136">このコマンド ツリーが、Entity Framework でのクエリの実行に使用されます。</span><span class="sxs-lookup"><span data-stu-id="133d1-136">The command tree is used by the Entity Framework to execute the query.</span></span> <span data-ttu-id="133d1-137">LINQ クエリをコマンド ツリーとして表現できない場合、クエリの変換中に例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="133d1-137">If the LINQ query cannot be expressed as a command tree, an exception will be thrown when the query is being converted.</span></span> <span data-ttu-id="133d1-138">LINQ to Entities クエリを変換する際には、標準クエリ演算子の変換と式の変換という 2 つの変換が実行されます。</span><span class="sxs-lookup"><span data-stu-id="133d1-138">The conversion of LINQ to Entities queries involves two sub-conversions: the conversion of the standard query operators, and the conversion of the expressions.</span></span>  
   
- LINQ to Entities で正しく変換されない LINQ 標準クエリ演算子は多数あります。  このような演算子を使用すると、クエリの変換時に例外が発生します。  サポートされる LINQ to Entities クエリの一覧については、「[サポート対象の LINQ メソッドとサポート非対象の LINQ メソッド \(LINQ to Entities\)](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md)」を参照してください。  
+ <span data-ttu-id="133d1-139">LINQ to Entities で正しく変換されない LINQ 標準クエリ演算子は多数あります。</span><span class="sxs-lookup"><span data-stu-id="133d1-139">There are a number of LINQ standard query operators that do not have a valid translation in LINQ to Entities.</span></span> <span data-ttu-id="133d1-140">このような演算子を使用すると、クエリの変換時に例外が発生します。</span><span class="sxs-lookup"><span data-stu-id="133d1-140">Attempts to use these operators will result in an exception at query translation time.</span></span> <span data-ttu-id="133d1-141">サポートされている LINQ to Entities 演算子の一覧は、次を参照してください。[サポートされているとサポートされていない LINQ メソッド (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md)です。</span><span class="sxs-lookup"><span data-stu-id="133d1-141">For a list of supported LINQ to Entities operators, see [Supported and Unsupported LINQ Methods (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md).</span></span>  
   
- LINQ to Entities の標準クエリ演算子の使用方法の詳細については、「[LINQ to Entities クエリの標準クエリ演算子](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md)」を参照してください。  
+ <span data-ttu-id="133d1-142">詳細については、LINQ to Entities で標準クエリ演算子を使用して、次を参照してください。 [LINQ to Entities クエリで標準クエリ演算子](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md)です。</span><span class="sxs-lookup"><span data-stu-id="133d1-142">For more information about using the standard query operators in LINQ to Entities, see [Standard Query Operators in LINQ to Entities Queries](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md).</span></span>  
   
- 一般的に、LINQ to Entities の式はサーバー上で評価されるため、式の動作が CLR セマンティクスに従っているとは限りません。  詳細については、「[LINQ to Entities クエリ内の式](../../../../../../docs/framework/data/adonet/ef/language-reference/expressions-in-linq-to-entities-queries.md)」を参照してください。  
+ <span data-ttu-id="133d1-143">一般的に、LINQ to Entities の式はサーバー上で評価されるため、式の動作が CLR セマンティクスに従っているとは限りません。</span><span class="sxs-lookup"><span data-stu-id="133d1-143">In general, expressions in LINQ to Entities are evaluated on the server, so the behavior of the expression should not be expected to follow CLR semantics.</span></span> <span data-ttu-id="133d1-144">詳細については、次を参照してください。 [LINQ to Entities クエリ内の式](../../../../../../docs/framework/data/adonet/ef/language-reference/expressions-in-linq-to-entities-queries.md)です。</span><span class="sxs-lookup"><span data-stu-id="133d1-144">For more information, see [Expressions in LINQ to Entities Queries](../../../../../../docs/framework/data/adonet/ef/language-reference/expressions-in-linq-to-entities-queries.md).</span></span>  
   
- CLR メソッドの呼び出しがデータ ソースの正規関数にどのようにマップされるかについては、「[CLR メソッドと正規関数とのマッピング](../../../../../../docs/framework/data/adonet/ef/language-reference/clr-method-to-canonical-function-mapping.md)」を参照してください。  
+ <span data-ttu-id="133d1-145">CLR メソッドの呼び出しが、データ ソースの正規関数にマップする方法については、次を参照してください。[正規の関数マッピングに CLR メソッド](../../../../../../docs/framework/data/adonet/ef/language-reference/clr-method-to-canonical-function-mapping.md)です。</span><span class="sxs-lookup"><span data-stu-id="133d1-145">For information about how CLR method calls are mapped to canonical functions in the data source, see [CLR Method to Canonical Function Mapping](../../../../../../docs/framework/data/adonet/ef/language-reference/clr-method-to-canonical-function-mapping.md).</span></span>  
   
- [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] クエリから正規関数、データベース関数、およびカスタム関数を呼び出す方法については、「[LINQ to Entities クエリ内の関数の呼び出し](../../../../../../docs/framework/data/adonet/ef/language-reference/calling-functions-in-linq-to-entities-queries.md)」を参照してください。  
+ <span data-ttu-id="133d1-146">正規の呼び出し、データベース、する方法とカスタム関数内からについて[!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)]クエリを参照してください[LINQ to Entities クエリ内の関数の呼び出し](../../../../../../docs/framework/data/adonet/ef/language-reference/calling-functions-in-linq-to-entities-queries.md)です。</span><span class="sxs-lookup"><span data-stu-id="133d1-146">For information about how to call canonical, database, and custom functions from within [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] queries, see [Calling Functions in LINQ to Entities Queries](../../../../../../docs/framework/data/adonet/ef/language-reference/calling-functions-in-linq-to-entities-queries.md).</span></span>  
   
-## クエリの実行  
- ユーザーが LINQ クエリを作成すると、Entity Framework と互換性のある表現 \(コマンド ツリーの形\) に変換された後、データ ソースに対して実行されます。  クエリの実行時に、すべてのクエリ式 \(またはクエリの構成要素\) がクライアントまたはサーバー上で評価されます。  これには、結果の具体化やエンティティの投影で使用される式も含まれます。  詳細については、「[クエリの実行](../../../../../../docs/framework/data/adonet/ef/language-reference/query-execution.md)」を参照してください。  クエリを 1 回コンパイルしてから、異なるパラメーターを使用して数回実行することでパフォーマンスを向上させる方法については、「[コンパイル済みクエリ \(LINQ to Entities\)](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md)」を参照してください。  
+## <a name="query-execution"></a><span data-ttu-id="133d1-147">クエリの実行</span><span class="sxs-lookup"><span data-stu-id="133d1-147">Query Execution</span></span>  
+ <span data-ttu-id="133d1-148">ユーザーが LINQ クエリを作成すると、Entity Framework と互換性のある表現 (コマンド ツリーの形) に変換された後、データ ソースに対して実行されます。</span><span class="sxs-lookup"><span data-stu-id="133d1-148">After the LINQ query is created by the user, it is converted to a representation that is compatible with the Entity Framework (in the form of command trees), which is then executed against the data source.</span></span> <span data-ttu-id="133d1-149">クエリの実行時に、すべてのクエリ式 (またはクエリの構成要素) がクライアントまたはサーバー上で評価されます。</span><span class="sxs-lookup"><span data-stu-id="133d1-149">At query execution time, all query expressions (or components of the query) are evaluated on the client or on the server.</span></span> <span data-ttu-id="133d1-150">これには、結果の具体化やエンティティの投影で使用される式も含まれます。</span><span class="sxs-lookup"><span data-stu-id="133d1-150">This includes expressions that are used in result materialization or entity projections.</span></span> <span data-ttu-id="133d1-151">詳細については、次を参照してください。[クエリの実行](../../../../../../docs/framework/data/adonet/ef/language-reference/query-execution.md)です。</span><span class="sxs-lookup"><span data-stu-id="133d1-151">For more information, see [Query Execution](../../../../../../docs/framework/data/adonet/ef/language-reference/query-execution.md).</span></span> <span data-ttu-id="133d1-152">クエリを 1 回コンパイルして、複数回実行で他のパラメーターによってパフォーマンスを向上させる方法については、次を参照してください。[コンパイルされたクエリ (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md)です。</span><span class="sxs-lookup"><span data-stu-id="133d1-152">For information on how to improve performance by compiling a query once and then executing it several times with different parameters, see [Compiled Queries  (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md).</span></span>  
   
-## 具体化  
- 具体化は、クエリの結果を CLR 型としてクライアントに返すプロセスです。  LINQ to Entities では、クエリの結果のデータ レコードは決して返されません。常に返されるのは、ユーザーまたは Entity Framework で定義された CLR 型、またはコンパイラによって生成される CLR 型 \(匿名型\) です。  オブジェクトの具体化は、すべて Entity Framework によって実行されます。  Entity Framework と CLR とのマッピングができないことが原因でエラーが発生すると、オブジェクトの具体化中に例外がスローされます。  
+## <a name="materialization"></a><span data-ttu-id="133d1-153">具体化</span><span class="sxs-lookup"><span data-stu-id="133d1-153">Materialization</span></span>  
+ <span data-ttu-id="133d1-154">具体化は、クエリの結果を CLR 型としてクライアントに返すプロセスです。</span><span class="sxs-lookup"><span data-stu-id="133d1-154">Materialization is the process of returning query results back to the client as CLR types.</span></span> <span data-ttu-id="133d1-155">LINQ to Entities では、クエリの結果のデータ レコードは決して返されません。常に返されるのは、ユーザーまたは Entity Framework で定義された CLR 型、またはコンパイラによって生成される CLR 型 (匿名型) です。</span><span class="sxs-lookup"><span data-stu-id="133d1-155">In LINQ to Entities, query results data records are never returned; there is always a backing CLR type, defined by the user or by the Entity Framework, or generated by the compiler (anonymous types).</span></span> <span data-ttu-id="133d1-156">オブジェクトの具体化は、すべて Entity Framework によって実行されます。</span><span class="sxs-lookup"><span data-stu-id="133d1-156">All object materialization is performed by the Entity Framework.</span></span> <span data-ttu-id="133d1-157">Entity Framework と CLR とのマッピングができないことが原因でエラーが発生すると、オブジェクトの具体化中に例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="133d1-157">Any errors that result from an inability to map between the Entity Framework and the CLR will cause exceptions to be thrown during object materialization.</span></span>  
   
- 通常、クエリの結果は次のいずれかの形で返されます。  
+ <span data-ttu-id="133d1-158">通常、クエリの結果は次のいずれかの形で返されます。</span><span class="sxs-lookup"><span data-stu-id="133d1-158">Query results are usually returned as one of the following:</span></span>  
   
--   0 個以上の型指定されたエンティティ オブジェクトのコレクション、または概念モデルで定義されている複合型のプロジェクション。  
+-   <span data-ttu-id="133d1-159">0 個以上の型指定されたエンティティ オブジェクトのコレクション、または概念モデルで定義されている複合型のプロジェクション。</span><span class="sxs-lookup"><span data-stu-id="133d1-159">A collection of zero or more typed entity objects or a projection of complex types defined in the conceptual model.</span></span>  
   
--   [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] でサポートされる CLR 型。  
+-   <span data-ttu-id="133d1-160">[!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] でサポートされる CLR 型。</span><span class="sxs-lookup"><span data-stu-id="133d1-160">CLR types that are supported by the [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].</span></span>  
   
--   インライン コレクション。  
+-   <span data-ttu-id="133d1-161">インライン コレクション。</span><span class="sxs-lookup"><span data-stu-id="133d1-161">Inline collections.</span></span>  
   
--   匿名型。  
+-   <span data-ttu-id="133d1-162">匿名型。</span><span class="sxs-lookup"><span data-stu-id="133d1-162">Anonymous types.</span></span>  
   
- 詳細については、「[クエリ結果](../../../../../../docs/framework/data/adonet/ef/language-reference/query-results.md)」を参照してください。  
+ <span data-ttu-id="133d1-163">詳細については、次を参照してください。[クエリ結果](../../../../../../docs/framework/data/adonet/ef/language-reference/query-results.md)です。</span><span class="sxs-lookup"><span data-stu-id="133d1-163">For more information, see [Query Results](../../../../../../docs/framework/data/adonet/ef/language-reference/query-results.md).</span></span>  
   
-## このセクションの内容  
- [LINQ to Entities でのクエリ](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)  
+## <a name="in-this-section"></a><span data-ttu-id="133d1-164">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="133d1-164">In This Section</span></span>  
+ [<span data-ttu-id="133d1-165">LINQ to Entities でのクエリ</span><span class="sxs-lookup"><span data-stu-id="133d1-165">Queries in LINQ to Entities</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)  
   
- [LINQ to Entities クエリ内の式](../../../../../../docs/framework/data/adonet/ef/language-reference/expressions-in-linq-to-entities-queries.md)  
+ [<span data-ttu-id="133d1-166">LINQ to Entities クエリ内の式</span><span class="sxs-lookup"><span data-stu-id="133d1-166">Expressions in LINQ to Entities Queries</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/expressions-in-linq-to-entities-queries.md)  
   
- [LINQ to Entities クエリ内の関数の呼び出し](../../../../../../docs/framework/data/adonet/ef/language-reference/calling-functions-in-linq-to-entities-queries.md)  
+ [<span data-ttu-id="133d1-167">LINQ to Entities クエリで関数の呼び出し</span><span class="sxs-lookup"><span data-stu-id="133d1-167">Calling Functions in LINQ to Entities Queries</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/calling-functions-in-linq-to-entities-queries.md)  
   
- [コンパイル済みクエリ \(LINQ to Entities\)](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md)  
+ [<span data-ttu-id="133d1-168">コンパイル済みクエリ (LINQ to Entities)</span><span class="sxs-lookup"><span data-stu-id="133d1-168">Compiled Queries  (LINQ to Entities)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md)  
   
- [クエリの実行](../../../../../../docs/framework/data/adonet/ef/language-reference/query-execution.md)  
+ [<span data-ttu-id="133d1-169">クエリの実行</span><span class="sxs-lookup"><span data-stu-id="133d1-169">Query Execution</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/query-execution.md)  
   
- [クエリ結果](../../../../../../docs/framework/data/adonet/ef/language-reference/query-results.md)  
+ [<span data-ttu-id="133d1-170">クエリ結果</span><span class="sxs-lookup"><span data-stu-id="133d1-170">Query Results</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/query-results.md)  
   
- [LINQ to Entities クエリの標準クエリ演算子](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md)  
+ [<span data-ttu-id="133d1-171">LINQ to Entities クエリ内の標準クエリ演算子</span><span class="sxs-lookup"><span data-stu-id="133d1-171">Standard Query Operators in LINQ to Entities Queries</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md)  
   
- [CLR メソッドと正規関数とのマッピング](../../../../../../docs/framework/data/adonet/ef/language-reference/clr-method-to-canonical-function-mapping.md)  
+ [<span data-ttu-id="133d1-172">正規の関数マッピングに CLR メソッド</span><span class="sxs-lookup"><span data-stu-id="133d1-172">CLR Method to Canonical Function Mapping</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/clr-method-to-canonical-function-mapping.md)  
   
- [サポート対象の LINQ メソッドとサポート非対象の LINQ メソッド \(LINQ to Entities\)](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md)  
+ [<span data-ttu-id="133d1-173">サポートされており、サポートされていない LINQ メソッド (LINQ to Entities)</span><span class="sxs-lookup"><span data-stu-id="133d1-173">Supported and Unsupported LINQ Methods (LINQ to Entities)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md)  
   
- [LINQ to Entities の既知の問題および注意点](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)  
+ [<span data-ttu-id="133d1-174">既知の問題とエンティティを LINQ での考慮事項</span><span class="sxs-lookup"><span data-stu-id="133d1-174">Known Issues and Considerations in LINQ to Entities</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)  
   
-## 参照  
- [LINQ to Entities の既知の問題および注意点](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)   
- [LINQ \(Language\-Integrated Query\)](../Topic/LINQ%20\(Language-Integrated%20Query\).md)   
- [LINQ と ADO.NET](../../../../../../docs/framework/data/adonet/linq-and-ado-net.md)   
- [ADO.NET Entity Framework](../../../../../../docs/framework/data/adonet/ef/index.md)
+## <a name="see-also"></a><span data-ttu-id="133d1-175">関連項目</span><span class="sxs-lookup"><span data-stu-id="133d1-175">See Also</span></span>  
+ [<span data-ttu-id="133d1-176">既知の問題とエンティティを LINQ での考慮事項</span><span class="sxs-lookup"><span data-stu-id="133d1-176">Known Issues and Considerations in LINQ to Entities</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)  
+ [<span data-ttu-id="133d1-177">統合言語クエリ (LINQ)</span><span class="sxs-lookup"><span data-stu-id="133d1-177">LINQ (Language-Integrated Query)</span></span>](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
+ [<span data-ttu-id="133d1-178">LINQ と ADO.NET</span><span class="sxs-lookup"><span data-stu-id="133d1-178">LINQ and ADO.NET</span></span>](../../../../../../docs/framework/data/adonet/linq-and-ado-net.md)  
+ [<span data-ttu-id="133d1-179">ADO.NET Entity Framework</span><span class="sxs-lookup"><span data-stu-id="133d1-179">ADO.NET Entity Framework</span></span>](../../../../../../docs/framework/data/adonet/ef/index.md)

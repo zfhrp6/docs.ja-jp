@@ -1,80 +1,84 @@
 ---
-title: "GDI+ でのグラフィックス パス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "描画, パス"
-  - "GDI+, 描画 (パスを)"
-  - "グラフィックス, パス"
-  - "パス, 描画"
+title: "GDI+ でのグラフィックス パス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- graphics [Windows Forms], paths
+- GDI+, drawing paths
+- paths [Windows Forms], drawing
+- drawing [Windows Forms], paths
 ms.assetid: a5500dec-666c-41fd-9da3-2169dd89c5eb
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e027228ea1cc047f213c28ac3a4984c2f0227c5a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# GDI+ でのグラフィックス パス
-パスは、直線、四角形、および単純な曲線を組み合わせて作成されます。  ピクチャの描画に最も適した基本的なビルド ブロックとして次の図形を使用できることは、「[ベクター グラフィックスの概要](../../../../docs/framework/winforms/advanced/vector-graphics-overview.md)」で既に説明しました。  
+# <a name="graphics-paths-in-gdi"></a><span data-ttu-id="5ec1a-102">GDI+ でのグラフィックス パス</span><span class="sxs-lookup"><span data-stu-id="5ec1a-102">Graphics Paths in GDI+</span></span>
+<span data-ttu-id="5ec1a-103">パスは、線、四角形、および単純な曲線を組み合わせることで形成されます。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-103">Paths are formed by combining lines, rectangles, and simple curves.</span></span> <span data-ttu-id="5ec1a-104">メッセージの取り消し、[ベクター グラフィックスの概要](../../../../docs/framework/winforms/advanced/vector-graphics-overview.md)基本的な構成要素は次の図を描画するため、最も役に立つことが証明されたこと。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-104">Recall from the [Vector Graphics Overview](../../../../docs/framework/winforms/advanced/vector-graphics-overview.md) that the following basic building blocks have proven to be the most useful for drawing pictures:</span></span>  
   
--   線  
+-   <span data-ttu-id="5ec1a-105">線</span><span class="sxs-lookup"><span data-stu-id="5ec1a-105">Lines</span></span>  
   
--   四角形  
+-   <span data-ttu-id="5ec1a-106">四角形</span><span class="sxs-lookup"><span data-stu-id="5ec1a-106">Rectangles</span></span>  
   
--   楕円  
+-   <span data-ttu-id="5ec1a-107">省略記号ボタン</span><span class="sxs-lookup"><span data-stu-id="5ec1a-107">Ellipses</span></span>  
   
--   円弧  
+-   <span data-ttu-id="5ec1a-108">円弧</span><span class="sxs-lookup"><span data-stu-id="5ec1a-108">Arcs</span></span>  
   
--   多角形  
+-   <span data-ttu-id="5ec1a-109">多角形</span><span class="sxs-lookup"><span data-stu-id="5ec1a-109">Polygons</span></span>  
   
--   カーディナル スプライン  
+-   <span data-ttu-id="5ec1a-110">カーディナル スプライン</span><span class="sxs-lookup"><span data-stu-id="5ec1a-110">Cardinal splines</span></span>  
   
--   ベジエ スプライン  
+-   <span data-ttu-id="5ec1a-111">ベジエ スプライン</span><span class="sxs-lookup"><span data-stu-id="5ec1a-111">Bézier splines</span></span>  
   
- GDI\+ の <xref:System.Drawing.Drawing2D.GraphicsPath> オブジェクトを使用すると、複数のビルド ブロックから成るシーケンスを 1 つの単位として定義できます。  こうすると、直線、四角形、多角形、および曲線から成るシーケンス全体を <xref:System.Drawing.Graphics> クラスの <xref:System.Drawing.Graphics.DrawPath%2A> メソッドへの 1 回の呼び出しで描画できます。  直線、円弧、ベジエ スプライン、およびカーディナル スプラインを組み合わせて作成したパスを次の図に示します。  
+ <span data-ttu-id="5ec1a-112">GDI + での<xref:System.Drawing.Drawing2D.GraphicsPath>オブジェクトでは、1 つの単位にこれらの構成要素のシーケンスを収集することができます。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-112">In GDI+, the <xref:System.Drawing.Drawing2D.GraphicsPath> object allows you to collect a sequence of these building blocks into a single unit.</span></span> <span data-ttu-id="5ec1a-113">1 回の呼び出しで、線、四角形を多角形、および曲線のシーケンス全体を描画し、ことができます、<xref:System.Drawing.Graphics.DrawPath%2A>のメソッド、<xref:System.Drawing.Graphics>クラスです。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-113">The entire sequence of lines, rectangles, polygons, and curves can then be drawn with one call to the <xref:System.Drawing.Graphics.DrawPath%2A> method of the <xref:System.Drawing.Graphics> class.</span></span> <span data-ttu-id="5ec1a-114">次の図は、行、円弧をベジエ スプラインを通過するカーディナル スプラインを組み合わせることによって作成されるパスを示します。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-114">The following illustration shows a path created by combining a line, an arc, a Bézier spline, and a cardinal spline.</span></span>  
   
- ![パス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art14.png "Aboutgdip02\_art14")  
+ <span data-ttu-id="5ec1a-115">![パス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art14.gif "Aboutgdip02_art14")</span><span class="sxs-lookup"><span data-stu-id="5ec1a-115">![Path](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art14.gif "Aboutgdip02_art14")</span></span>  
   
-## パスの使用  
- The <xref:System.Drawing.Drawing2D.GraphicsPath> クラスには、描画される項目のシーケンスを作成するためのメソッドとして、<xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A>、<xref:System.Drawing.Drawing2D.GraphicsPath.AddRectangle%2A>、<xref:System.Drawing.Drawing2D.GraphicsPath.AddEllipse%2A>、<xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%2A>、<xref:System.Drawing.Drawing2D.GraphicsPath.AddPolygon%2A>、<xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A> \(カーディナル スプライン用\)、および <xref:System.Drawing.Drawing2D.GraphicsPath.AddBezier%2A> が用意されています。  これらの各メソッドはオーバーロードされています。つまり、各メソッドが複数の異なるパラメーター リストをサポートします。  たとえば、ある <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> メソッドは 4 個の整数を受け取り、別の <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> メソッドは 2 個の <xref:System.Drawing.Point> オブジェクトを受け取ります。  
+## <a name="using-a-path"></a><span data-ttu-id="5ec1a-116">パスを使用します。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-116">Using a Path</span></span>  
+ <span data-ttu-id="5ec1a-117"><xref:System.Drawing.Drawing2D.GraphicsPath>クラスが描画される項目のシーケンスを作成するための次のメソッドを提供: <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A>、 <xref:System.Drawing.Drawing2D.GraphicsPath.AddRectangle%2A>、 <xref:System.Drawing.Drawing2D.GraphicsPath.AddEllipse%2A>、 <xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%2A>、 <xref:System.Drawing.Drawing2D.GraphicsPath.AddPolygon%2A>、 <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A> (用カーディナル スプライン)、および<xref:System.Drawing.Drawing2D.GraphicsPath.AddBezier%2A>です。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-117">The <xref:System.Drawing.Drawing2D.GraphicsPath> class provides the following methods for creating a sequence of items to be drawn: <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddRectangle%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddEllipse%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddPolygon%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A> (for cardinal splines), and <xref:System.Drawing.Drawing2D.GraphicsPath.AddBezier%2A>.</span></span> <span data-ttu-id="5ec1a-118">これらの各メソッドはオーバー ロードです。つまり、各メソッドは、いくつかの異なるパラメーター リストをサポートします。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-118">Each of these methods is overloaded; that is, each method supports several different parameter lists.</span></span> <span data-ttu-id="5ec1a-119">たとえば、1 つバリエーションの 1 つの<xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A>メソッドは、4 つの整数と別のバリエーションを受信、<xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A>メソッドは、2 つ受け取ります<xref:System.Drawing.Point>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-119">For example, one variation of the <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> method receives four integers, and another variation of the <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> method receives two <xref:System.Drawing.Point> objects.</span></span>  
   
- 直線、四角形、およびベジエ スプラインをパスに追加するメソッドには、1 回の呼び出しで複数の項目をパスに追加するコンパニオン メソッドである <xref:System.Drawing.Drawing2D.GraphicsPath.AddLines%2A>、<xref:System.Drawing.Drawing2D.GraphicsPath.AddRectangles%2A>、および <xref:System.Drawing.Drawing2D.GraphicsPath.AddBeziers%2A> があります。  また、<xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A> メソッドと <xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%2A> メソッドには、閉じた曲線または扇形をパスに追加するコンパニオン メソッド <xref:System.Drawing.Drawing2D.GraphicsPath.AddClosedCurve%2A> と <xref:System.Drawing.Drawing2D.GraphicsPath.AddPie%2A> があります。  
+ <span data-ttu-id="5ec1a-120">線、四角形、およびベジエ スプラインをパスに追加するためのメソッドを 1 つの呼び出しパスにいくつかの項目を追加する複数形のコンパニオン メソッドがある: <xref:System.Drawing.Drawing2D.GraphicsPath.AddLines%2A>、 <xref:System.Drawing.Drawing2D.GraphicsPath.AddRectangles%2A>、および<xref:System.Drawing.Drawing2D.GraphicsPath.AddBeziers%2A>です。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-120">The methods for adding lines, rectangles, and Bézier splines to a path have plural companion methods that add several items to the path in a single call: <xref:System.Drawing.Drawing2D.GraphicsPath.AddLines%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddRectangles%2A>, and <xref:System.Drawing.Drawing2D.GraphicsPath.AddBeziers%2A>.</span></span> <span data-ttu-id="5ec1a-121">また、<xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A>と<xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%2A>メソッドがあるコンパニオン メソッド<xref:System.Drawing.Drawing2D.GraphicsPath.AddClosedCurve%2A>と<xref:System.Drawing.Drawing2D.GraphicsPath.AddPie%2A>パスに閉じた曲線または円グラフを追加します。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-121">Also, the <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A> and <xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%2A> methods have companion methods, <xref:System.Drawing.Drawing2D.GraphicsPath.AddClosedCurve%2A> and <xref:System.Drawing.Drawing2D.GraphicsPath.AddPie%2A>, that add a closed curve or pie to the path.</span></span>  
   
- パスを描画するには、<xref:System.Drawing.Graphics> オブジェクト、<xref:System.Drawing.Pen> オブジェクト、および <xref:System.Drawing.Drawing2D.GraphicsPath> オブジェクトが必要です。  <xref:System.Drawing.Graphics> オブジェクトは <xref:System.Drawing.Graphics.DrawPath%2A> メソッドを提供し、<xref:System.Drawing.Pen> オブジェクトはパスの描画に使用される線の幅や色などの属性を格納します。  <xref:System.Drawing.Drawing2D.GraphicsPath> オブジェクトは、パスを構成する直線と曲線のシーケンスを格納します。  <xref:System.Drawing.Pen> オブジェクトと <xref:System.Drawing.Drawing2D.GraphicsPath> オブジェクトは、引数として <xref:System.Drawing.Graphics.DrawPath%2A> メソッドに渡されます。  直線、楕円、およびベジエ スプラインで構成されるパスを描画する例を次に示します。  
+ <span data-ttu-id="5ec1a-122">パスの描画、する必要があります、<xref:System.Drawing.Graphics>オブジェクト、<xref:System.Drawing.Pen>オブジェクト、および<xref:System.Drawing.Drawing2D.GraphicsPath>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-122">To draw a path, you need a <xref:System.Drawing.Graphics> object, a <xref:System.Drawing.Pen> object, and a <xref:System.Drawing.Drawing2D.GraphicsPath> object.</span></span> <span data-ttu-id="5ec1a-123"><xref:System.Drawing.Graphics>オブジェクトは、提供、<xref:System.Drawing.Graphics.DrawPath%2A>メソッド、および<xref:System.Drawing.Pen>オブジェクトは、パスを表示するために使用する線の色、幅などの属性を格納します。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-123">The <xref:System.Drawing.Graphics> object provides the <xref:System.Drawing.Graphics.DrawPath%2A> method, and the <xref:System.Drawing.Pen> object stores attributes, such as width and color, of the line used to render the path.</span></span> <span data-ttu-id="5ec1a-124"><xref:System.Drawing.Drawing2D.GraphicsPath>オブジェクトは、直線と曲線のパスを構成するのシーケンスを格納します。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-124">The <xref:System.Drawing.Drawing2D.GraphicsPath> object stores the sequence of lines and curves that make up the path.</span></span> <span data-ttu-id="5ec1a-125"><xref:System.Drawing.Pen>オブジェクトおよび<xref:System.Drawing.Drawing2D.GraphicsPath>への引数として渡されるオブジェクト、<xref:System.Drawing.Graphics.DrawPath%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-125">The <xref:System.Drawing.Pen> object and the <xref:System.Drawing.Drawing2D.GraphicsPath> object are passed as arguments to the <xref:System.Drawing.Graphics.DrawPath%2A> method.</span></span> <span data-ttu-id="5ec1a-126">次の例では、パスは、行、楕円、およびベジエ スプラインを描画します。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-126">The following example draws a path that consists of a line, an ellipse, and a Bézier spline:</span></span>  
   
  [!code-csharp[LinesCurvesAndShapes#101](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#101)]
  [!code-vb[LinesCurvesAndShapes#101](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#101)]  
   
- このパスを次の図に示します。  
+ <span data-ttu-id="5ec1a-127">次の図は、パスを示します。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-127">The following illustration shows the path.</span></span>  
   
- ![パス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art15.png "Aboutgdip02\_art15")  
+ <span data-ttu-id="5ec1a-128">![パス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art15.gif "Aboutgdip02_art15")</span><span class="sxs-lookup"><span data-stu-id="5ec1a-128">![Path](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art15.gif "Aboutgdip02_art15")</span></span>  
   
- 直線、四角形、および曲線をパスに追加する以外に、パスを別のパスに追加することもできます。  こうすると、既存のパスを組み合わせて、大きい複雑なパスを作成できます。  
+ <span data-ttu-id="5ec1a-129">にパスを線、四角形、および曲線を追加するだけでなく、パスにパスを追加できます。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-129">In addition to adding lines, rectangles, and curves to a path, you can add paths to a path.</span></span> <span data-ttu-id="5ec1a-130">これにより、大規模で複雑なパスを形成する既存のパスを結合することができます。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-130">This allows you to combine existing paths to form large, complex paths.</span></span>  
   
  [!code-csharp[LinesCurvesAndShapes#102](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#102)]
  [!code-vb[LinesCurvesAndShapes#102](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#102)]  
   
- 上記以外に、文字列と扇形の 2 種類の項目をパスに追加できます。  扇形は、楕円の内部にある一部分です。  円弧、カーディナル スプライン、文字列、および扇形からパスを作成する例を次に示します。  
+ <span data-ttu-id="5ec1a-131">パスに追加できる他の 2 つの項目がある: 文字列と扇形です。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-131">There are two other items you can add to a path: strings and pies.</span></span> <span data-ttu-id="5ec1a-132">円、楕円の内部の一部です。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-132">A pie is a portion of the interior of an ellipse.</span></span> <span data-ttu-id="5ec1a-133">次の例では、円弧、通過するカーディナル スプライン、文字列、および、円グラフからパスを作成します。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-133">The following example creates a path from an arc, a cardinal spline, a string, and a pie:</span></span>  
   
  [!code-csharp[LinesCurvesAndShapes#103](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#103)]
  [!code-vb[LinesCurvesAndShapes#103](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#103)]  
   
- このパスを次の図に示します。  パスは連続している必要はありません。円弧、カーディナル スプライン、文字列、および扇形は分離されています。  
+ <span data-ttu-id="5ec1a-134">次の図は、パスを示します。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-134">The following illustration shows the path.</span></span> <span data-ttu-id="5ec1a-135">接続されている; パスがないことに注意してください。弧をカーディナル スプライン、文字列、および円グラフが区切られます。</span><span class="sxs-lookup"><span data-stu-id="5ec1a-135">Note that a path does not have to be connected; the arc, cardinal spline, string, and pie are separated.</span></span>  
   
- ![パス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art16.png "Aboutgdip02\_Art16")  
+ <span data-ttu-id="5ec1a-136">![パス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art16.gif "Aboutgdip02_Art16")</span><span class="sxs-lookup"><span data-stu-id="5ec1a-136">![Paths](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art16.gif "Aboutgdip02_Art16")</span></span>  
   
-## 参照  
- <xref:System.Drawing.Drawing2D.GraphicsPath?displayProperty=fullName>   
- <xref:System.Drawing.Point?displayProperty=fullName>   
- [直線、曲線、および図形](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)   
- [方法 : 描画する Graphics オブジェクトを作成する](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)   
- [パスの作成および描画](../../../../docs/framework/winforms/advanced/constructing-and-drawing-paths.md)
+## <a name="see-also"></a><span data-ttu-id="5ec1a-137">関連項目</span><span class="sxs-lookup"><span data-stu-id="5ec1a-137">See Also</span></span>  
+ <xref:System.Drawing.Drawing2D.GraphicsPath?displayProperty=nameWithType>  
+ <xref:System.Drawing.Point?displayProperty=nameWithType>  
+ [<span data-ttu-id="5ec1a-138">直線、曲線、および図形</span><span class="sxs-lookup"><span data-stu-id="5ec1a-138">Lines, Curves, and Shapes</span></span>](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
+ [<span data-ttu-id="5ec1a-139">方法: 描画する Graphics オブジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="5ec1a-139">How to: Create Graphics Objects for Drawing</span></span>](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)  
+ [<span data-ttu-id="5ec1a-140">パスの作成および描画</span><span class="sxs-lookup"><span data-stu-id="5ec1a-140">Constructing and Drawing Paths</span></span>](../../../../docs/framework/winforms/advanced/constructing-and-drawing-paths.md)

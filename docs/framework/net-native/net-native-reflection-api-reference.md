@@ -5,60 +5,57 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 0429c049-22a3-4ba1-9cc8-f6ee91e31d9c
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 695c6626c997fd8d1f034b700f4a4918eddf7db6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 6c12c583d6c2040a093fb769803b79a6d88459ae
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="net-native-reflection-api-reference"></a>.NET ネイティブ リフレクション API リファレンス
-[!INCLUDE[net_native](../../../includes/net-native-md.md)] には次の 3 つの新しい例外型が含まれています。 [System.Runtime.CompilerServices.MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)、 [System.Reflection.MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)、および [System.Reflection.MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)です。 3 つの例外型すべてについて、次の点に注意してください。  
+# <a name="net-native-reflection-api-reference"></a><span data-ttu-id="81163-102">.NET ネイティブ リフレクション API リファレンス</span><span class="sxs-lookup"><span data-stu-id="81163-102">.NET Native Reflection API Reference</span></span>
+[!INCLUDE[net_native](../../../includes/net-native-md.md)]<span data-ttu-id="81163-103"> には次の 3 つの新しい例外型が含まれています。 [System.Runtime.CompilerServices.MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)、 [System.Reflection.MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)、および [System.Reflection.MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)です。</span><span class="sxs-lookup"><span data-stu-id="81163-103"> includes three new exception types: [System.Runtime.CompilerServices.MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), [System.Reflection.MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), and [System.Reflection.MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md).</span></span> <span data-ttu-id="81163-104">3 つの例外型すべてについて、次の点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="81163-104">Note the following about all three exception types:</span></span>  
   
- これらの型は、内部でのみ使用してください。  
- これら 3 つの例外型は、 [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンでのみ使用されます。 [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンがデータの欠落を検出し、プログラムの実行を続行できない場合に、これらの例外がスローされます。  
+ <span data-ttu-id="81163-105">これらの型は、内部でのみ使用してください。</span><span class="sxs-lookup"><span data-stu-id="81163-105">These types are for internal use only.</span></span>  
+ <span data-ttu-id="81163-106">これら 3 つの例外型は、 [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンでのみ使用されます。</span><span class="sxs-lookup"><span data-stu-id="81163-106">These three exception types are for the use of the [!INCLUDE[net_native](../../../includes/net-native-md.md)] tool chain only.</span></span> <span data-ttu-id="81163-107">[!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンがデータの欠落を検出し、プログラムの実行を続行できない場合に、これらの例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="81163-107">The exceptions are thrown when the [!INCLUDE[net_native](../../../includes/net-native-md.md)] tool chain detects missing data that does not allow program execution to continue.</span></span>  
   
- これらの例外をコード内で処理しないでください。  
- これらの例外は、アプリケーションで必要なメタデータが存在しないこと ( [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) 例外と [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外)、またはアプリケーションで必要な実装コードが欠落していること ( [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) 例外) のどちらかを示します。 これらの例外状態を修正するには、ランタイム ディレクティブ (.rd.xml) ファイルを変更して必要なメタデータまたは実装コードを実行時に使用できるようにします。 詳細については、「 [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)」を参照してください。 次の 2 つのトラブルシューティング ツールを使用して、 [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) および [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) 例外を取り除くための適切なエントリをランタイム ディレクティブ ファイルに提供できます。  
+ <span data-ttu-id="81163-108">これらの例外をコード内で処理しないでください。</span><span class="sxs-lookup"><span data-stu-id="81163-108">Do not handle these exceptions in your code.</span></span>  
+ <span data-ttu-id="81163-109">これらの例外は、アプリケーションで必要なメタデータが存在しないこと ( [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) 例外と [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外)、またはアプリケーションで必要な実装コードが欠落していること ( [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) 例外) のどちらかを示します。</span><span class="sxs-lookup"><span data-stu-id="81163-109">These exceptions indicate either that metadata needed by your application is absent (the [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) and [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) exceptions) or that implementation code needed by your application is missing (the [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) exception).</span></span> <span data-ttu-id="81163-110">これらの例外状態を修正するには、ランタイム ディレクティブ (.rd.xml) ファイルを変更して必要なメタデータまたは実装コードを実行時に使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="81163-110">You correct these exception conditions by modifying a runtime directives (.rd.xml) file to make the required metadata or implementation code available at runtime.</span></span> <span data-ttu-id="81163-111">詳細については、「 [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="81163-111">For more information, see [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).</span></span> <span data-ttu-id="81163-112">次の 2 つのトラブルシューティング ツールを使用して、 [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) および [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) 例外を取り除くための適切なエントリをランタイム ディレクティブ ファイルに提供できます。</span><span class="sxs-lookup"><span data-stu-id="81163-112">Two troubleshooters are available that supply the appropriate entries for your runtime directives file that will eliminate [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) and [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) exceptions:</span></span>  
   
--   [MissingMetadataException トラブルシューティング ツール](http://dotnet.github.io/native/troubleshooter/type.html) (型の場合)。  
+-   <span data-ttu-id="81163-113">[MissingMetadataException トラブルシューティング ツール](http://dotnet.github.io/native/troubleshooter/type.html) (型の場合)。</span><span class="sxs-lookup"><span data-stu-id="81163-113">The [MissingMetadataException troubleshooter](http://dotnet.github.io/native/troubleshooter/type.html) for types.</span></span>  
   
--   [MissingMetadataException トラブルシューティング ツール](http://dotnet.github.io/native/troubleshooter/method.html) (メソッドの場合)。  
+-   <span data-ttu-id="81163-114">[MissingMetadataException トラブルシューティング ツール](http://dotnet.github.io/native/troubleshooter/method.html) (メソッドの場合)。</span><span class="sxs-lookup"><span data-stu-id="81163-114">The [MissingMetadataException troubleshooter](http://dotnet.github.io/native/troubleshooter/method.html) for methods.</span></span>  
   
 > [!NOTE]
->  このリファレンスでは、 [!INCLUDE[net_native](../../../includes/net-native-md.md)]に固有の 3 つの例外の型について説明しています。 .NET Framework の主要なリフレクション API に関するリファレンス ドキュメントについては、「 [System.Reflection 名前空間](http://msdn.microsoft.com/library/gg145033.aspx)」を参照してください。 .NET Framework の主要な相互運用 API に関するリファレンス ドキュメントについては、「 <xref:System.Runtime.InteropServices>」を参照してください。  
+>  <span data-ttu-id="81163-115">このリファレンスでは、 [!INCLUDE[net_native](../../../includes/net-native-md.md)]に固有の 3 つの例外の型について説明しています。</span><span class="sxs-lookup"><span data-stu-id="81163-115">This reference documents three exception types that are unique to [!INCLUDE[net_native](../../../includes/net-native-md.md)].</span></span> <span data-ttu-id="81163-116">.NET Framework の主要なリフレクション API に関するリファレンス ドキュメントについては、「 [System.Reflection 名前空間](http://msdn.microsoft.com/library/gg145033.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="81163-116">For reference documentation for the .NET Framework core reflection API, see [System.Reflection Namespaces](http://msdn.microsoft.com/library/gg145033.aspx).</span></span> <span data-ttu-id="81163-117">.NET Framework の主要な相互運用 API に関するリファレンス ドキュメントについては、「 <xref:System.Runtime.InteropServices>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="81163-117">For reference documentation for the .NET Framework core interop API, see <xref:System.Runtime.InteropServices>.</span></span>  
   
-## <a name="systemreflection-namespace"></a>System.Reflection 名前空間  
- <xref:System.Reflection> 名前空間には、.NET Framework でリフレクションに使用される主要な型が含まれています。 [!INCLUDE[net_native](../../../includes/net-native-md.md)]の場合は、次の 2 つの新しい例外の種類も含まれています。  
+## <a name="systemreflection-namespace"></a><span data-ttu-id="81163-118">System.Reflection 名前空間</span><span class="sxs-lookup"><span data-stu-id="81163-118">System.Reflection namespace</span></span>  
+ <span data-ttu-id="81163-119"><xref:System.Reflection> 名前空間には、.NET Framework でリフレクションに使用される主要な型が含まれています。</span><span class="sxs-lookup"><span data-stu-id="81163-119">The <xref:System.Reflection> namespace contains the core types used for reflection in the .NET Framework.</span></span> <span data-ttu-id="81163-120">[!INCLUDE[net_native](../../../includes/net-native-md.md)]の場合は、次の 2 つの新しい例外の種類も含まれています。</span><span class="sxs-lookup"><span data-stu-id="81163-120">For [!INCLUDE[net_native](../../../includes/net-native-md.md)], it also includes two new exception types:</span></span>  
   
-|クラス|説明|  
+|<span data-ttu-id="81163-121">クラス</span><span class="sxs-lookup"><span data-stu-id="81163-121">Class</span></span>|<span data-ttu-id="81163-122">説明</span><span class="sxs-lookup"><span data-stu-id="81163-122">Description</span></span>|  
 |-----------|-----------------|  
-|[MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)|この例外は、存在しないメタデータを取得するためにリフレクションが使用された場合にスローされます。|  
-|[MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)|この例外は、型または型のメンバーのメタデータは使用可能だが、その実装が削除されている場合にスローされます。|  
+|[<span data-ttu-id="81163-123">MissingMetadataException</span><span class="sxs-lookup"><span data-stu-id="81163-123">MissingMetadataException</span></span>](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)|<span data-ttu-id="81163-124">この例外は、存在しないメタデータを取得するためにリフレクションが使用された場合にスローされます。</span><span class="sxs-lookup"><span data-stu-id="81163-124">The exception that is thrown when reflection is used to retrieve metadata that isn't present.</span></span>|  
+|[<span data-ttu-id="81163-125">MissingRuntimeArtifactException</span><span class="sxs-lookup"><span data-stu-id="81163-125">MissingRuntimeArtifactException</span></span>](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)|<span data-ttu-id="81163-126">この例外は、型または型のメンバーのメタデータは使用可能だが、その実装が削除されている場合にスローされます。</span><span class="sxs-lookup"><span data-stu-id="81163-126">The exception that is thrown when metadata for a type or type member is available but its implementation has been removed.</span></span>|  
   
- この名前空間の他の型に関するドキュメントについては、.NET Framework ドキュメント セットで <xref:System.Reflection> リファレンス ページを参照してください。  
+ <span data-ttu-id="81163-127">この名前空間の他の型に関するドキュメントについては、.NET Framework ドキュメント セットで <xref:System.Reflection> リファレンス ページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="81163-127">For documentation about the other types in this namespace, see the <xref:System.Reflection> reference pages in the .NET Framework documentation set.</span></span>  
   
-## <a name="systemruntimecompilerservices-namespace"></a>System.Runtime.CompilerServices 名前空間  
- <xref:System.Runtime.CompilerServices> 名前空間には、言語コンパイラによって自動的にデザインされた型が含まれています。 [!INCLUDE[net_native](../../../includes/net-native-md.md)]の場合は、次の新しい例外の種類も含まれています。  
+## <a name="systemruntimecompilerservices-namespace"></a><span data-ttu-id="81163-128">System.Runtime.CompilerServices 名前空間</span><span class="sxs-lookup"><span data-stu-id="81163-128">System.Runtime.CompilerServices namespace</span></span>  
+ <span data-ttu-id="81163-129"><xref:System.Runtime.CompilerServices> 名前空間には、言語コンパイラによって自動的にデザインされた型が含まれています。</span><span class="sxs-lookup"><span data-stu-id="81163-129">The <xref:System.Runtime.CompilerServices> namespace includes types designed for user by language compilers.</span></span> <span data-ttu-id="81163-130">[!INCLUDE[net_native](../../../includes/net-native-md.md)]の場合は、次の新しい例外の種類も含まれています。</span><span class="sxs-lookup"><span data-stu-id="81163-130">For [!INCLUDE[net_native](../../../includes/net-native-md.md)], it also includes a new exception type:</span></span>  
   
-|クラス|説明|  
+|<span data-ttu-id="81163-131">クラス</span><span class="sxs-lookup"><span data-stu-id="81163-131">Class</span></span>|<span data-ttu-id="81163-132">説明</span><span class="sxs-lookup"><span data-stu-id="81163-132">Description</span></span>|  
 |-----------|-----------------|  
-|[MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)|この例外は、手動マーシャリング メソッドが呼び出されたが、型のメタデータがスタティック分析でも、ランタイム ディレクティブ ファイルにも見つからない場合にスローされます。|  
+|[<span data-ttu-id="81163-133">MissingInteropDataException</span><span class="sxs-lookup"><span data-stu-id="81163-133">MissingInteropDataException</span></span>](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)|<span data-ttu-id="81163-134">この例外は、手動マーシャリング メソッドが呼び出されたが、型のメタデータがスタティック分析でも、ランタイム ディレクティブ ファイルにも見つからない場合にスローされます。</span><span class="sxs-lookup"><span data-stu-id="81163-134">The exception that is thrown when a manual marshaling method is called, but metadata for a type isn't found by static analysis or in a runtime directives file.</span></span>|  
   
- この名前空間の他の型に関するドキュメントについては、.NET Framework ドキュメント セットで <xref:System.Runtime.CompilerServices> リファレンス ページを参照してください。  
+ <span data-ttu-id="81163-135">この名前空間の他の型に関するドキュメントについては、.NET Framework ドキュメント セットで <xref:System.Runtime.CompilerServices> リファレンス ページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="81163-135">For documentation about the other types in this namespace, see the <xref:System.Runtime.CompilerServices> reference pages in the .NET Framework documentation set.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [MissingInteropDataException クラス](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)   
- [MissingMetadataException クラス](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)   
- [MissingRuntimeArtifactException クラス](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)   
- [はじめに](../../../docs/framework/net-native/getting-started-with-net-native.md)
-
+## <a name="see-also"></a><span data-ttu-id="81163-136">関連項目</span><span class="sxs-lookup"><span data-stu-id="81163-136">See Also</span></span>  
+ [<span data-ttu-id="81163-137">MissingInteropDataException クラス</span><span class="sxs-lookup"><span data-stu-id="81163-137">MissingInteropDataException Class</span></span>](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)  
+ [<span data-ttu-id="81163-138">MissingMetadataException クラス</span><span class="sxs-lookup"><span data-stu-id="81163-138">MissingMetadataException Class</span></span>](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)  
+ [<span data-ttu-id="81163-139">MissingRuntimeArtifactException クラス</span><span class="sxs-lookup"><span data-stu-id="81163-139">MissingRuntimeArtifactException Class</span></span>](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)  
+ [<span data-ttu-id="81163-140">はじめに</span><span class="sxs-lookup"><span data-stu-id="81163-140">Getting Started</span></span>](../../../docs/framework/net-native/getting-started-with-net-native.md)

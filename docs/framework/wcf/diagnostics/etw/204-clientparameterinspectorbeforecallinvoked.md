@@ -1,41 +1,44 @@
 ---
-title: "204 - ClientParameterInspectorBeforeCallInvoked | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 204 - ClientParameterInspectorBeforeCallInvoked
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8253555a-9002-4565-8ede-33d7a33a895f
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f896055d958947e54ee77bb812b8d424e6f4f94f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 204 - ClientParameterInspectorBeforeCallInvoked
-## プロパティ  
+# <a name="204---clientparameterinspectorbeforecallinvoked"></a><span data-ttu-id="23539-102">204 - ClientParameterInspectorBeforeCallInvoked</span><span class="sxs-lookup"><span data-stu-id="23539-102">204 - ClientParameterInspectorBeforeCallInvoked</span></span>
+## <a name="properties"></a><span data-ttu-id="23539-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="23539-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|ID|204|  
-|キーワード|Troubleshooting、ServiceModel|  
-|レベル|情報|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Analytic|  
+|<span data-ttu-id="23539-104">ID</span><span class="sxs-lookup"><span data-stu-id="23539-104">ID</span></span>|<span data-ttu-id="23539-105">204</span><span class="sxs-lookup"><span data-stu-id="23539-105">204</span></span>|  
+|<span data-ttu-id="23539-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="23539-106">Keywords</span></span>|<span data-ttu-id="23539-107">Troubleshooting、ServiceModel</span><span class="sxs-lookup"><span data-stu-id="23539-107">Troubleshooting, ServiceModel</span></span>|  
+|<span data-ttu-id="23539-108">レベル</span><span class="sxs-lookup"><span data-stu-id="23539-108">Level</span></span>|<span data-ttu-id="23539-109">情報</span><span class="sxs-lookup"><span data-stu-id="23539-109">Information</span></span>|  
+|<span data-ttu-id="23539-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="23539-110">Channel</span></span>|<span data-ttu-id="23539-111">Microsoft-Windows-Application Server-Applications/Analytic</span><span class="sxs-lookup"><span data-stu-id="23539-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## 説明  
- このイベントは、クライアント パラメーター インスペクターで Service Model が `BeforeCall` メソッドを呼び出した後に生成されます。  
+## <a name="description"></a><span data-ttu-id="23539-112">説明</span><span class="sxs-lookup"><span data-stu-id="23539-112">Description</span></span>  
+ <span data-ttu-id="23539-113">このイベントは、クライアント パラメーター インスペクターで Service Model が `BeforeCall` メソッドを呼び出した後に生成されます。</span><span class="sxs-lookup"><span data-stu-id="23539-113">This event is emitted after the Service Model has invoked the `BeforeCall` method on a client parameter inspector.</span></span>  
   
-## メッセージ  
- ディスパッチャーが型 '%1' の ClientParameterInspector で 'BeforeCall' を呼び出しました。  
+## <a name="message"></a><span data-ttu-id="23539-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="23539-114">Message</span></span>  
+ <span data-ttu-id="23539-115">ディスパッチャーが型 '%1' の ClientParameterInspector で 'BeforeCall' を呼び出しました。</span><span class="sxs-lookup"><span data-stu-id="23539-115">The Dispatcher invoked 'BeforeCall' on a ClientParameterInspector of type '%1'.</span></span>  
   
-## 詳細  
+## <a name="details"></a><span data-ttu-id="23539-116">詳細</span><span class="sxs-lookup"><span data-stu-id="23539-116">Details</span></span>  
   
-|データ項目名|データ項目の型|説明|  
-|------------|-------------|--------|  
-|TypeName|`xs:string`|呼び出されたインスペクターの型の CLR FullName。|  
-|HostReference|`xs:string`|Web ホスト サービスの場合は、このフィールドにより、サービスが Web 階層内で一意に識別されます。その形式は、'Web サイト名アプリケーション仮想パス&#124;サービス仮想パス&#124;サービス名' と定義されます。例: 'Default Web Site\/CalculatorApplication&#124;\/CalculatorService.svc&#124;CalculatorService'。|  
-|AppDomain|`xs:string`|AppDomain.CurrentDomain.FriendlyName で返される文字列。|
+|<span data-ttu-id="23539-117">データ項目名</span><span class="sxs-lookup"><span data-stu-id="23539-117">Data Item Name</span></span>|<span data-ttu-id="23539-118">データ項目の型</span><span class="sxs-lookup"><span data-stu-id="23539-118">Data Item Type</span></span>|<span data-ttu-id="23539-119">説明</span><span class="sxs-lookup"><span data-stu-id="23539-119">Description</span></span>|  
+|--------------------|--------------------|-----------------|  
+|<span data-ttu-id="23539-120">TypeName</span><span class="sxs-lookup"><span data-stu-id="23539-120">TypeName</span></span>|`xs:string`|<span data-ttu-id="23539-121">呼び出されたインスペクターの型の CLR FullName。</span><span class="sxs-lookup"><span data-stu-id="23539-121">The CLR FullName of the invoked inspector's type.</span></span>|  
+|<span data-ttu-id="23539-122">HostReference</span><span class="sxs-lookup"><span data-stu-id="23539-122">HostReference</span></span>|`xs:string`|<span data-ttu-id="23539-123">Web ホスト サービスの場合は、このフィールドにより、サービスが Web 階層内で一意に識別されます。</span><span class="sxs-lookup"><span data-stu-id="23539-123">For Web-hosted services, this field uniquely identifies the service in the Web hierarchy.</span></span> <span data-ttu-id="23539-124">その形式とは見なさ ' Web サイト名アプリケーション仮想パス &#124;です。サービス仮想パス &#124;です。ServiceName' です。</span><span class="sxs-lookup"><span data-stu-id="23539-124">Its format is defined as 'Web Site Name Application Virtual Path&#124;Service Virtual Path&#124;ServiceName'.</span></span> <span data-ttu-id="23539-125">例: ' 既定の Web サイト/CalculatorApplication &#124;/CalculatorService.svc &#124;です。CalculatorService'。</span><span class="sxs-lookup"><span data-stu-id="23539-125">Example: 'Default Web Site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService'.</span></span>|  
+|<span data-ttu-id="23539-126">AppDomain</span><span class="sxs-lookup"><span data-stu-id="23539-126">AppDomain</span></span>|`xs:string`|<span data-ttu-id="23539-127">AppDomain.CurrentDomain.FriendlyName で返される文字列。</span><span class="sxs-lookup"><span data-stu-id="23539-127">The string returned by AppDomain.CurrentDomain.FriendlyName.</span></span>|

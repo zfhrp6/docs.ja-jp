@@ -1,51 +1,54 @@
 ---
-title: "エンティティ キー | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "エンティティ キー"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0d447a6d-fa7a-4db0-8e7a-fd45e385fca0
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: d0d7df7ff1a0e8e732688e10befb4bffa86599d0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# エンティティ キー
-*エンティティ キー*とは、ID を確認するために使用する[エンティティ型](../../../../docs/framework/data/adonet/entity-type.md)の[プロパティ](../../../../docs/framework/data/adonet/property.md)または一連のプロパティです。  エンティティ キーを構成するプロパティは、デザイン時に選択されます。  エンティティ キー プロパティの値は、実行時に[エンティティ セット](../../../../docs/framework/data/adonet/entity-set.md)内でエンティティ型のインスタンスを一意に識別する必要があります。  エンティティ キーを構成するプロパティには、エンティティ セット内のインスタンスの一意性を保証するものを選択する必要があります。  
+# <a name="entity-key"></a><span data-ttu-id="7cf4d-102">エンティティ キー</span><span class="sxs-lookup"><span data-stu-id="7cf4d-102">entity key</span></span>
+<span data-ttu-id="7cf4d-103">*エンティティ キー*は、[プロパティ](../../../../docs/framework/data/adonet/property.md)または一連のプロパティの[エンティティ型](../../../../docs/framework/data/adonet/entity-type.md)id を判断するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-103">An *entity key* is a [property](../../../../docs/framework/data/adonet/property.md) or a set of properties of an [entity type](../../../../docs/framework/data/adonet/entity-type.md) that are used to determine identity.</span></span> <span data-ttu-id="7cf4d-104">エンティティ キーを構成するプロパティは、デザイン時に選択されます。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-104">The properties that make up an entity key are chosen at design time.</span></span> <span data-ttu-id="7cf4d-105">エンティティのキー プロパティの値は、内のエンティティ型インスタンスを一意に識別する必要があります、[エンティティ セット](../../../../docs/framework/data/adonet/entity-set.md)実行時にします。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-105">The values of entity key properties must uniquely identify an entity type instance within an [entity set](../../../../docs/framework/data/adonet/entity-set.md) at run time.</span></span> <span data-ttu-id="7cf4d-106">エンティティ キーを構成するプロパティには、エンティティ セット内のインスタンスの一意性を保証するものを選択する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-106">The properties that make up an entity key should be chosen to guarantee uniqueness of instances in an entity set.</span></span>  
   
- エンティティ キーを構成する一連のプロパティには、次の要件があります。  
+ <span data-ttu-id="7cf4d-107">エンティティ キーを構成する一連のプロパティには、次の要件があります。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-107">The following are the requirements for a set of properties to be an entity key:</span></span>  
   
--   エンティティ セット内では、2 つ以上のエンティティ キーを同じにすることができません。  つまり、エンティティ セット内の 2 つのエンティティに対して、キーを構成するすべてのプロパティの値を同じにすることができません。  ただし、エンティティ キーを構成する一部 \(すべてではなく\) の値は同じにすることができます。  
+-   <span data-ttu-id="7cf4d-108">エンティティ セット内では、2 つ以上のエンティティ キーを同じにすることができません。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-108">No two entity keys within an entity set can be identical.</span></span> <span data-ttu-id="7cf4d-109">つまり、エンティティ セット内の 2 つのエンティティに対して、キーを構成するすべてのプロパティの値を同じにすることができません。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-109">That is, for any two entities within an entity set, the values for all of the properties that constitute a key cannot be the same.</span></span> <span data-ttu-id="7cf4d-110">ただし、エンティティ キーを構成する一部 (すべてではなく) の値は同じにすることができます。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-110">However, some (but not all) of the values that make up an entity key can be the same.</span></span>  
   
--   エンティティ キーは、null 値が許可されない不変[プリミティブ型のプロパティ](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md)で構成する必要があります。  
+-   <span data-ttu-id="7cf4d-111">エンティティ キー必要がありますの非 null 値が、変更できないセットから成る[プリミティブ型のプロパティ](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md)です。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-111">An entity key must consist of a set of non-nullable, immutable, [primitive type properties](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md).</span></span>  
   
--   エンティティ型のエンティティ キーを構成するプロパティは、変更できません。  エンティティ型に対して複数のエンティティ キーを許可することはできません。代理キーはサポートされていません。  
+-   <span data-ttu-id="7cf4d-112">エンティティ型のエンティティ キーを構成するプロパティは、変更できません。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-112">The properties that make up an entity key for a given entity type cannot change.</span></span> <span data-ttu-id="7cf4d-113">エンティティ型に対して複数のエンティティ キーを許可することはできません。代理キーはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-113">You cannot allow more than one possible entity key for a given entity type; surrogate keys are not supported.</span></span>  
   
--   エンティティが継承階層に含まれる場合、ルート エンティティには、エンティティ キーを構成するすべてのプロパティを含める必要があり、そのエンティティ キーをルート エンティティ型に定義する必要があります。  詳細については、「[Entity Data Model: 継承](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md)」を参照してください。  
+-   <span data-ttu-id="7cf4d-114">エンティティが継承階層に含まれる場合、ルート エンティティには、エンティティ キーを構成するすべてのプロパティを含める必要があり、そのエンティティ キーをルート エンティティ型に定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-114">When an entity is involved in an inheritance hierarchy, the root entity must contain all the properties that make up the entity key, and the entity key must be defined on the root entity type.</span></span> <span data-ttu-id="7cf4d-115">詳細については、次を参照してください。 [Entity Data Model: 継承](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md)です。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-115">For more information, see [Entity Data Model: Inheritance](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).</span></span>  
   
-## 例  
- 下のダイアグラムは、`Book`、`Publisher`、および `Author` という 3 つのエンティティ型の概念モデルを示しています。  各エンティティ型のエンティティ キーを構成するプロパティには、"\(キー\)" と示されています。  `Author` エンティティ型には、`Name` と `Address` の 2 つのプロパティで構成されるエンティティ キーが含まれます。  
+## <a name="example"></a><span data-ttu-id="7cf4d-116">例</span><span class="sxs-lookup"><span data-stu-id="7cf4d-116">Example</span></span>  
+ <span data-ttu-id="7cf4d-117">下のダイアグラムは、`Book`、`Publisher`、および `Author` という 3 つのエンティティ型の概念モデルを示しています。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-117">The diagram below shows a conceptual model with three entity types: `Book`, `Publisher`, and `Author`.</span></span> <span data-ttu-id="7cf4d-118">各エンティティ型のエンティティ キーを構成するプロパティには、"(キー)" と示されています。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-118">The properties of each entity type that make up its entity key are denoted with "(Key)".</span></span> <span data-ttu-id="7cf4d-119">`Author` エンティティ型には、`Name` と `Address` の 2 つのプロパティで構成されるエンティティ キーが含まれます。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-119">Note that the `Author` entity type has an entity key that consists of two properties, `Name` and `Address`.</span></span>  
   
- ![モデル例](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")  
+ <span data-ttu-id="7cf4d-120">![モデルの例](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")</span><span class="sxs-lookup"><span data-stu-id="7cf4d-120">![Example Model](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")</span></span>  
   
- [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) では、概念スキーマ定義言語 \([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)\) と呼ばれるドメイン固有言語 \(DSL\) を使用して概念モデルを定義します。  次の CSDL は、上のダイアグラムに示された `Book` エンティティ型を定義します。  エンティティ キーは、エンティティ型の `ISBN` プロパティを参照して定義されています。  
+ <span data-ttu-id="7cf4d-121">[ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md)概念スキーマ定義言語と呼ばれるドメイン固有言語 (DSL) を使用して ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) 概念モデルを定義します。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-121">The [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) uses a domain-specific language (DSL) called conceptual schema definition language ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) to define conceptual models.</span></span> <span data-ttu-id="7cf4d-122">次の CSDL は、上のダイアグラムに示された `Book` エンティティ型を定義します。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-122">The CSDL below defines the `Book` entity type shown in the diagram above.</span></span> <span data-ttu-id="7cf4d-123">エンティティ キーは、エンティティ型の `ISBN` プロパティを参照して定義されています。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-123">Note that the entity key is defined by referencing the `ISBN` property of the entity type.</span></span>  
   
  [!code-xml[EDM_Example_Model#EntityExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entityexample)]  
   
- 国際標準図書番号 \(ISBN\) は書籍を一意に識別するものであるため、`ISBN` プロパティは、エンティティ キーに適しています。  
+ <span data-ttu-id="7cf4d-124">国際標準図書番号 (ISBN) は書籍を一意に識別するものであるため、`ISBN` プロパティは、エンティティ キーに適しています。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-124">The `ISBN` property is a good choice for the entity key because an International Standard Book Number (ISBN) uniquely identifies a book.</span></span>  
   
- 次の CSDL は、上のダイアグラムに示された `Author` エンティティ型を定義します。  エンティティ キーは、`Name` と `Address` の 2 つのプロパティで構成されています。  
+ <span data-ttu-id="7cf4d-125">次の CSDL は、上のダイアグラムに示された `Author` エンティティ型を定義します。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-125">The CSDL below defines the `Author` entity type shown in the diagram above.</span></span> <span data-ttu-id="7cf4d-126">エンティティ キーは、`Name` と `Address` の 2 つのプロパティで構成されています。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-126">Note that the entity key consists of two properties, `Name` and `Address`.</span></span>  
   
  [!code-xml[EDM_Example_Model#CompositeKeyExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#compositekeyexample)]  
   
- 同じ名前の 2 人の著者が同じ住所に住む可能性は低いため、エンティティ キーに `Name` および `Address` を使用するのは妥当な選択になります。  ただし、エンティティ キーのこの選択では、エンティティ セット内のエンティティ キーの一意性を絶対的に保証することはできません。  この場合には、`AuthorId` などのプロパティを追加して、著者を一意に識別することが推奨されます。  
+ <span data-ttu-id="7cf4d-127">同じ名前の 2 人の著者が同じ住所に住む可能性は低いため、エンティティ キーに `Name` および `Address` を使用するのは妥当な選択になります。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-127">Using `Name` and `Address` for the entity key is a reasonable choice, because two authors of the same name are unlikely to live at the same address.</span></span> <span data-ttu-id="7cf4d-128">ただし、エンティティ キーのこの選択では、エンティティ セット内のエンティティ キーの一意性を絶対的に保証することはできません。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-128">However, this choice for an entity key does not absolutely guarantee unique entity keys in an entity set.</span></span> <span data-ttu-id="7cf4d-129">この場合には、`AuthorId` などのプロパティを追加して、著者を一意に識別することが推奨されます。</span><span class="sxs-lookup"><span data-stu-id="7cf4d-129">Adding a property, such as `AuthorId`, that could be used to uniquely identify an author would be recommended in this case.</span></span>  
   
-## 参照  
- [Entity Data Model キーの概念](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)   
- [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)
+## <a name="see-also"></a><span data-ttu-id="7cf4d-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="7cf4d-130">See Also</span></span>  
+ [<span data-ttu-id="7cf4d-131">エンティティ データ モデルの主要な概念</span><span class="sxs-lookup"><span data-stu-id="7cf4d-131">Entity Data Model Key Concepts</span></span>](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
+ [<span data-ttu-id="7cf4d-132">エンティティ データ モデル</span><span class="sxs-lookup"><span data-stu-id="7cf4d-132">Entity Data Model</span></span>](../../../../docs/framework/data/adonet/entity-data-model.md)

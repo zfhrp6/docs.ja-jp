@@ -1,74 +1,77 @@
 ---
-title: "方法 : XMLDataProvider と XPath クエリを使用して XML データにバインドする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "バインド, XML データに (XmlDataProvider クエリを使用)"
-  - "データ バインディング, バインド (XmlDataProvider クエリを使用して XML データに)"
-  - "XmlDataProvider, バインド (XML データに)"
+title: "方法 : XMLDataProvider と XPath クエリを使用して XML データにバインドする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- XmlDataProvider [WPF], binding to XML data
+- data binding [WPF], binding to XML data using XmlDataProvider queries
+- binding [WPF], to XML data using XmlDataProvider queries
 ms.assetid: 7dcd018f-16aa-4870-8e47-c1b4ea31e574
-caps.latest.revision: 22
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 21
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 06a515b266b2787c24e95b461075d9059e4311dc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : XMLDataProvider と XPath クエリを使用して XML データにバインドする
-この例では、<xref:System.Windows.Data.XmlDataProvider> を使用して [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] データにバインドする方法を示します。  
+# <a name="how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries"></a><span data-ttu-id="dbd83-102">方法 : XMLDataProvider と XPath クエリを使用して XML データにバインドする</span><span class="sxs-lookup"><span data-stu-id="dbd83-102">How to: Bind to XML Data Using an XMLDataProvider and XPath Queries</span></span>
+<span data-ttu-id="dbd83-103">この例をバインドする方法を示しています。[!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]データを使用して、<xref:System.Windows.Data.XmlDataProvider>です。</span><span class="sxs-lookup"><span data-stu-id="dbd83-103">This example shows how to bind to [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] data using an <xref:System.Windows.Data.XmlDataProvider>.</span></span>  
   
- <xref:System.Windows.Data.XmlDataProvider> を使用して、アプリケーションでデータ バインディングを介してアクセスできる基になるデータは、[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] ノードの任意のツリーです。  つまり、<xref:System.Windows.Data.XmlDataProvider> とは、[!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] ノードの任意のツリーを[バインディング ソース](GTMT)として使用するための便利な手段です。  
+ <span data-ttu-id="dbd83-104"><xref:System.Windows.Data.XmlDataProvider>では、アプリケーションでのデータ バインドを介してアクセスできるデータを基になることができますが、ツリーの[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]ノード。</span><span class="sxs-lookup"><span data-stu-id="dbd83-104">With an <xref:System.Windows.Data.XmlDataProvider>, the underlying data that can be accessed through data binding in your application can be any tree of [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] nodes.</span></span> <span data-ttu-id="dbd83-105">言い換えると、<xref:System.Windows.Data.XmlDataProvider>の任意のツリーを使用する便利な手段を提供[!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]バインディング ソースとしてのノードです。</span><span class="sxs-lookup"><span data-stu-id="dbd83-105">In other words, an <xref:System.Windows.Data.XmlDataProvider> provides a convenient way to use any tree of [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] nodes as a binding source.</span></span>  
   
-## 使用例  
- 次の例では、データは [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] データ アイランドとして直接 <xref:System.Windows.FrameworkElement.Resources%2A> セクションに埋め込まれています。  [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] データ アイランドは、`<x:XData>` タグ内にラップされていることと、常にルート ノードを 1 つだけ \(この例では *Inventory*\) 持つことが必要です。  
+## <a name="example"></a><span data-ttu-id="dbd83-106">例</span><span class="sxs-lookup"><span data-stu-id="dbd83-106">Example</span></span>  
+ <span data-ttu-id="dbd83-107">次の例では、データとして直接埋め込まれて、 [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] *データ アイランド*内で、<xref:System.Windows.FrameworkElement.Resources%2A>セクションです。</span><span class="sxs-lookup"><span data-stu-id="dbd83-107">In the following example, the data is embedded directly as an [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] *data island* within the <xref:System.Windows.FrameworkElement.Resources%2A> section.</span></span> <span data-ttu-id="dbd83-108">[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] データ アイランドは、`<x:XData>` タグ内にラップされていることと、常にルート ノードを 1 つだけ (この例では *Inventory*) 持つことが必要です。</span><span class="sxs-lookup"><span data-stu-id="dbd83-108">An [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data island must be wrapped in `<x:XData>` tags and always have a single root node, which is *Inventory* in this example.</span></span>  
   
 > [!NOTE]
->  [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] データのルート ノードには **xmlns** 属性があり、[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] 名前空間が空の文字列に設定されています。  これは、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ページ内にインラインで配置されるデータ アイランドに XPath クエリを適用する場合の必須事項です。  このインラインの場合は、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] と、必然的にデータ アイランドも <xref:System.Windows> 名前空間を継承します。  このため、XPath クエリが <xref:System.Windows> 名前空間によって修飾されることを防ぐために、名前空間を空白に設定する必要があります。このようにしなければ、クエリの検索範囲が本来のものとは異なってしまいます。  
+>  <span data-ttu-id="dbd83-109">[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] データのルート ノードには、[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] 名前空間を空の文字列に設定する **xmlns** 属性があります。</span><span class="sxs-lookup"><span data-stu-id="dbd83-109">The root node of the [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data has an **xmlns** attribute that sets the [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] namespace to an empty string.</span></span> <span data-ttu-id="dbd83-110">これは、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ページ内にインラインで配置されるデータ アイランドに XPath クエリを適用する場合に必須です。</span><span class="sxs-lookup"><span data-stu-id="dbd83-110">This is a requirement for applying XPath queries to a data island that is inline within the [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] page.</span></span> <span data-ttu-id="dbd83-111">インラインここでは、 [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]、継承データ アイランド、<xref:System.Windows>名前空間。</span><span class="sxs-lookup"><span data-stu-id="dbd83-111">In this inline case, the [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], and thus the data island, inherits the <xref:System.Windows> namespace.</span></span> <span data-ttu-id="dbd83-112">このため、名前空間で修飾されているから XPath クエリを保持する場合は空白に設定する必要があります、<xref:System.Windows>名前空間は、クエリの送信先を誤るとします。</span><span class="sxs-lookup"><span data-stu-id="dbd83-112">Because of this, you need to set the namespace blank to keep XPath queries from being qualified by the <xref:System.Windows> namespace, which would misdirect the queries.</span></span>  
   
- [!code-xml[XMLDataSource#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSource/CS/Window1.xaml#1)]  
+ [!code-xaml[XMLDataSource#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSource/CS/Window1.xaml#1)]  
   
- この例に示すように、同じバインディング宣言を属性構文で作成するには、特殊文字を適切にエスケープする必要があります。  詳細については、「[XML 文字エンティティと XAML](../../../../docs/framework/xaml-services/xml-character-entities-and-xaml.md)」を参照してください。  
+ <span data-ttu-id="dbd83-113">この例に示すように、同じバインディング宣言を属性構文で作成するには、特殊文字を適切にエスケープする必要があります。</span><span class="sxs-lookup"><span data-stu-id="dbd83-113">As shown in this example, to create the same binding declaration in attribute syntax you must escape the special characters properly.</span></span> <span data-ttu-id="dbd83-114">詳しくは、「[XML Character Entities and XAML](../../../../docs/framework/xaml-services/xml-character-entities-and-xaml.md)」(XML 文字エンティティと XAML) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="dbd83-114">For more information, see [XML Character Entities and XAML](../../../../docs/framework/xaml-services/xml-character-entities-and-xaml.md).</span></span>  
   
- この例を実行すると、次の項目が <xref:System.Windows.Controls.ListBox> に表示されます。  これらは、*Books* の下のすべての要素のうち、*Stock* の値が "*out*" か、*Number* の値が 3 に等しいか 8 以上のものの *Title* です。  *CD* の項目が 1 つも返されないのは、<xref:System.Windows.Data.XmlDataProvider> の <xref:System.Windows.Data.XmlDataProvider.XPath%2A> の設定値が、*Books* 要素のみを公開するように指定されている \(フィルターを設定することと同じ\) からです。  
+ <span data-ttu-id="dbd83-115"><xref:System.Windows.Controls.ListBox>この例を実行すると、次の項目が表示されます。</span><span class="sxs-lookup"><span data-stu-id="dbd83-115">The <xref:System.Windows.Controls.ListBox> will show the following items when this example is run.</span></span> <span data-ttu-id="dbd83-116">これらは、*Books* の下のすべての要素のうち、*Stock* の値が "*out*" か、*Number* の値が 3 に等しいか 8 以上のものの *Title* です。</span><span class="sxs-lookup"><span data-stu-id="dbd83-116">These are the *Title*s of all of the elements under *Books* with either a *Stock* value of "*out*" or a *Number* value of 3 or greater than or equals to 8.</span></span> <span data-ttu-id="dbd83-117">注意してない*CD*ために、項目が返されます、<xref:System.Windows.Data.XmlDataProvider.XPath%2A>セットの値を<xref:System.Windows.Data.XmlDataProvider>だけであることを示します、*ブック*(本質的にフィルターを設定する) の要素を公開する必要があります。</span><span class="sxs-lookup"><span data-stu-id="dbd83-117">Notice that no *CD* items are returned because the <xref:System.Windows.Data.XmlDataProvider.XPath%2A> value set on the <xref:System.Windows.Data.XmlDataProvider> indicates that only the *Books* elements should be exposed (essentially setting a filter).</span></span>  
   
- ![XPath の例](../../../../docs/framework/wpf/data/media/xpathexample.png "XPathExample")  
+ <span data-ttu-id="dbd83-118">![XPath の例](../../../../docs/framework/wpf/data/media/xpathexample.PNG "XPathExample")</span><span class="sxs-lookup"><span data-stu-id="dbd83-118">![XPath Example](../../../../docs/framework/wpf/data/media/xpathexample.PNG "XPathExample")</span></span>  
   
- この例で書籍のタイトルが表示されるのは、<xref:System.Windows.DataTemplate> 内の <xref:System.Windows.Controls.TextBlock> バインディングの <xref:System.Windows.Data.Binding.XPath%2A> が "*Title*" に設定されているためです。  属性、たとえば *ISBN* の値を表示するには、<xref:System.Windows.Data.Binding.XPath%2A> の値を "`@ISBN`" に設定します。  
+ <span data-ttu-id="dbd83-119">この例では、書籍のタイトルが表示されて、<xref:System.Windows.Data.Binding.XPath%2A>の<xref:System.Windows.Controls.TextBlock>でのバインディング、<xref:System.Windows.DataTemplate>に設定されている"*タイトル*"です。</span><span class="sxs-lookup"><span data-stu-id="dbd83-119">In this example, the book titles are displayed because the <xref:System.Windows.Data.Binding.XPath%2A> of the <xref:System.Windows.Controls.TextBlock> binding in the <xref:System.Windows.DataTemplate> is set to "*Title*".</span></span> <span data-ttu-id="dbd83-120">など、属性の値を表示するかどうか、 *ISBN*を設定する<xref:System.Windows.Data.Binding.XPath%2A>値を"`@ISBN`"です。</span><span class="sxs-lookup"><span data-stu-id="dbd83-120">If you want to display the value of an attribute, such as the *ISBN*, you would set that <xref:System.Windows.Data.Binding.XPath%2A> value to "`@ISBN`".</span></span>  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 内の **XPath** プロパティは、XmlNode.SelectNodes メソッドによって処理されます。  別の結果を得るために、**XPath** クエリを変更することもできます。  前の例での、バインドされた <xref:System.Windows.Controls.ListBox> に対する <xref:System.Windows.Data.Binding.XPath%2A> クエリの例を次に示します。  
+ <span data-ttu-id="dbd83-121">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 内の **XPath** プロパティは、XmlNode.SelectNodes メソッドによって処理されます。</span><span class="sxs-lookup"><span data-stu-id="dbd83-121">The **XPath** properties in [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] are handled by the XmlNode.SelectNodes method.</span></span> <span data-ttu-id="dbd83-122">別の結果を得るために、**XPath** クエリを変更できます。</span><span class="sxs-lookup"><span data-stu-id="dbd83-122">You can modify the **XPath** queries to get different results.</span></span> <span data-ttu-id="dbd83-123">ここでは、いくつかの例を<xref:System.Windows.Data.Binding.XPath%2A>にバインドされているクエリを<xref:System.Windows.Controls.ListBox>前の例。</span><span class="sxs-lookup"><span data-stu-id="dbd83-123">Here are some examples for the <xref:System.Windows.Data.Binding.XPath%2A> query on the bound <xref:System.Windows.Controls.ListBox> from the previous example:</span></span>  
   
--   `XPath="Book[1]"` は、最初の書籍要素 \("XML in Action"\) を返します。  **XPath** のインデックスが 0 ではなく 1 から開始することに注意してください。  
+-   <span data-ttu-id="dbd83-124">`XPath="Book[1]"` は、最初の書籍要素 ("XML in Action") を返します。</span><span class="sxs-lookup"><span data-stu-id="dbd83-124">`XPath="Book[1]"` will return the first book element ("XML in Action").</span></span> <span data-ttu-id="dbd83-125">**XPath** のインデックスが 0 ではなく 1 から開始することにご注意ください。</span><span class="sxs-lookup"><span data-stu-id="dbd83-125">Note that **XPath** indexes are based on 1, not 0.</span></span>  
   
--   `XPath="Book[@*]"` は、任意の属性を持つすべての書籍要素を返します。  
+-   <span data-ttu-id="dbd83-126">`XPath="Book[@*]"` は、任意の属性を持つすべての書籍要素を返します。</span><span class="sxs-lookup"><span data-stu-id="dbd83-126">`XPath="Book[@*]"` will return all book elements with any attributes.</span></span>  
   
--   `XPath="Book[last()-1]"` は、最後から 2 番目の書籍要素 \("Introducing Microsoft .NET"\) を返します。  
+-   <span data-ttu-id="dbd83-127">`XPath="Book[last()-1]"` は、最後から 2 番目の書籍要素 ("Introducing Microsoft .NET") を返します。</span><span class="sxs-lookup"><span data-stu-id="dbd83-127">`XPath="Book[last()-1]"` will return the second to last book element ("Introducing Microsoft .NET").</span></span>  
   
--   `XPath="*[position()>3]"` は、最初の 3 つを除くすべての書籍要素を返します。  
+-   <span data-ttu-id="dbd83-128">`XPath="*[position()>3]"` は、最初の 3 つを除くすべての書籍要素を返します。</span><span class="sxs-lookup"><span data-stu-id="dbd83-128">`XPath="*[position()>3]"` will return all of the book elements except for the first 3.</span></span>  
   
- **XPath** クエリを実行すると、1 つの <xref:System.Xml.XmlNode> または XmlNode のリストが返されます。  <xref:System.Xml.XmlNode> は[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] オブジェクトです。つまり、<xref:System.Windows.Data.Binding.Path%2A> プロパティを使用して[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] のプロパティにバインドできます。  前の例をもう一度考えてみます。  例の残りの部分はそのままで <xref:System.Windows.Controls.TextBlock> バインディングを次のように変更すると、返された XmlNode の名前が <xref:System.Windows.Controls.ListBox> に表示されます。  この場合、返されたノードの名前はすべて "*Book*" です。  
+ <span data-ttu-id="dbd83-129">実行すると、 **XPath**クエリで返されます、<xref:System.Xml.XmlNode>または XmlNodes の一覧です。</span><span class="sxs-lookup"><span data-stu-id="dbd83-129">When you run an **XPath** query, it returns an <xref:System.Xml.XmlNode> or a list of XmlNodes.</span></span> <span data-ttu-id="dbd83-130"><xref:System.Xml.XmlNode>[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]使用できるオブジェクト、<xref:System.Windows.Data.Binding.Path%2A>にバインドするプロパティ、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]プロパティです。</span><span class="sxs-lookup"><span data-stu-id="dbd83-130"><xref:System.Xml.XmlNode> is a [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] object, which means you can use the <xref:System.Windows.Data.Binding.Path%2A> property to bind to the [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] properties.</span></span> <span data-ttu-id="dbd83-131">前の例をもう一度考えてみます。</span><span class="sxs-lookup"><span data-stu-id="dbd83-131">Consider the previous example again.</span></span> <span data-ttu-id="dbd83-132">場合の例では、残りの部分は、同じまま変更して、<xref:System.Windows.Controls.TextBlock>には、次のバインドで返される XmlNodes の名前が表示されます、<xref:System.Windows.Controls.ListBox>です。</span><span class="sxs-lookup"><span data-stu-id="dbd83-132">If the rest of the example stays the same and you change the <xref:System.Windows.Controls.TextBlock> binding to the following, you will see the names of the returned XmlNodes in the <xref:System.Windows.Controls.ListBox>.</span></span> <span data-ttu-id="dbd83-133">この場合、返されたノードの名前はすべて "*Book*" です。</span><span class="sxs-lookup"><span data-stu-id="dbd83-133">In this case, the name of all the returned nodes is "*Book*".</span></span>  
   
- [!code-xml[XmlDataSourceVariation#XmlNodePath](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSourceVariation/CS/Page1.xaml#xmlnodepath)]  
+ [!code-xaml[XmlDataSourceVariation#XmlNodePath](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSourceVariation/CS/Page1.xaml#xmlnodepath)]  
   
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ページのソースに [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] をデータ アイランドとして埋め込む方法では、コンパイルの時点で正確なデータ コンテンツが必要となるので、アプリケーションによっては不都合が生じます。  したがって、次の例のように、外部ファイル [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] からデータを取得する機能もサポートされています。  
+ <span data-ttu-id="dbd83-134">[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ページのソースに [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] をデータ アイランドとして埋め込む方法では、コンパイル時に正確なデータ コンテンツが必要となるので、アプリケーションによっては不都合が生じます。</span><span class="sxs-lookup"><span data-stu-id="dbd83-134">In some applications, embedding the [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] as a data island within the source of the [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] page can be inconvenient because the exact content of the data must be known at compile time.</span></span> <span data-ttu-id="dbd83-135">したがって、次の例のように、外部 [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] ファイルからのデータの取得もサポートされています。</span><span class="sxs-lookup"><span data-stu-id="dbd83-135">Therefore, obtaining the data from an external [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] file is also supported, as in the following example:</span></span>  
   
- [!code-xml[XMLDataSource2#XmlFileExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSource2/CS/Window1.xaml#xmlfileexample)]  
+ [!code-xaml[XMLDataSource2#XmlFileExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSource2/CS/Window1.xaml#xmlfileexample)]  
   
- [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] データがリモートの [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] ファイル内に存在する場合は、次のように、適切な [!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)] を <xref:System.Windows.Data.XmlDataProvider.Source%2A> 属性に割り当てることによってデータへのアクセスを定義します。  
+ <span data-ttu-id="dbd83-136">場合、[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]リモート データが存在する[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]ファイルがアクセスを定義するデータに適切なを割り当てることによって[!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)]を<xref:System.Windows.Data.XmlDataProvider.Source%2A>次のように属性します。</span><span class="sxs-lookup"><span data-stu-id="dbd83-136">If the [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data resides in a remote [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] file, you would define access to the data by assigning an appropriate [!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)] to the <xref:System.Windows.Data.XmlDataProvider.Source%2A> attribute as follows:</span></span>  
   
-```  
+```xml  
 <XmlDataProvider x:Key="BookData" Source="http://MyUrl" XPath="Books"/>  
 ```  
   
-## 参照  
- <xref:System.Windows.Data.ObjectDataProvider>   
- [XDocument、XElement、または LINQ for XML クエリの結果にバインドする](../../../../docs/framework/wpf/data/how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md)   
- [階層 XML データでマスター詳細パターンを使用する](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)   
- [バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)   
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="dbd83-137">関連項目</span><span class="sxs-lookup"><span data-stu-id="dbd83-137">See Also</span></span>  
+ <xref:System.Windows.Data.ObjectDataProvider>  
+ [<span data-ttu-id="dbd83-138">XDocument、XElement、または LINQ for XML クエリの結果にバインドする</span><span class="sxs-lookup"><span data-stu-id="dbd83-138">Bind to XDocument, XElement, or LINQ for XML Query Results</span></span>](../../../../docs/framework/wpf/data/how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md)  
+ [<span data-ttu-id="dbd83-139">階層 XML データでマスター詳細パターンを使用する</span><span class="sxs-lookup"><span data-stu-id="dbd83-139">Use the Master-Detail Pattern with Hierarchical XML Data</span></span>](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)  
+ [<span data-ttu-id="dbd83-140">バインディング ソースの概要</span><span class="sxs-lookup"><span data-stu-id="dbd83-140">Binding Sources Overview</span></span>](../../../../docs/framework/wpf/data/binding-sources-overview.md)  
+ [<span data-ttu-id="dbd83-141">データ バインディングの概要</span><span class="sxs-lookup"><span data-stu-id="dbd83-141">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [<span data-ttu-id="dbd83-142">方法トピック</span><span class="sxs-lookup"><span data-stu-id="dbd83-142">How-to Topics</span></span>](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

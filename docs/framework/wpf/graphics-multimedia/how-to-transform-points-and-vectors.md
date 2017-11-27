@@ -1,30 +1,33 @@
 ---
-title: "方法 : 点およびベクターを変換する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "グラフィックス, 変換 (Point オブジェクトを)"
-  - "グラフィックス, 変換 (Vector オブジェクトを)"
-  - "Point オブジェクト, 変換"
-  - "変換 (Point オブジェクトを)"
-  - "変換 (Vector オブジェクトを)"
-  - "Vector オブジェクト, 変換"
+title: "方法 : 点およびベクターを変換する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Vector objects [WPF], transforming
+- transforming Point objects [WPF]
+- transforming Vector objects [WPF]
+- graphics [WPF], transforming Vector objects [WPF]
+- Point objects [WPF], transforming
+- graphics [WPF], transforming Point objects [WPF]
 ms.assetid: 9fff2742-9162-46be-bc88-310fc3900af4
-caps.latest.revision: 4
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d2c3443855f32b89c3f6cb34647a47cf50a34cee
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : 点およびベクターを変換する
-この例では、<xref:System.Windows.Media.Matrix> を使用して <xref:System.Windows.Point> オブジェクトおよび <xref:System.Windows.Vector> オブジェクトを変換する方法を説明します。  
+# <a name="how-to-transform-points-and-vectors"></a><span data-ttu-id="a8f56-102">方法 : 点およびベクターを変換する</span><span class="sxs-lookup"><span data-stu-id="a8f56-102">How to: Transform Points and Vectors</span></span>
+<span data-ttu-id="a8f56-103">この例を使用する方法を示しています、<xref:System.Windows.Media.Matrix>を変換する<xref:System.Windows.Point>と<xref:System.Windows.Vector>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a8f56-103">This example shows how to use a <xref:System.Windows.Media.Matrix> to transform <xref:System.Windows.Point> and <xref:System.Windows.Vector> objects.</span></span>  
   
-## 使用例  
+## <a name="example"></a><span data-ttu-id="a8f56-104">例</span><span class="sxs-lookup"><span data-stu-id="a8f56-104">Example</span></span>  
  [!code-csharp[MatrixExamples_snip#MatrixTransformExamples_csharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixtransformexamples_csharp)]

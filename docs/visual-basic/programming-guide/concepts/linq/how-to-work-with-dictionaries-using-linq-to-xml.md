@@ -1,33 +1,28 @@
 ---
-title: "方法: LINQ to XML (Visual Basic) を使用してディクショナリを作業 |Microsoft ドキュメント"
+title: "方法: LINQ to XML (Visual Basic) を使用してディクショナリを使用"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 6cb3f969-1986-414a-b850-87418712edea
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3441e513012ba24419a3c5330cdb2f75f5ca394f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: dc7290a3afca22ffc92914efacdb768a72e2aef7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a>方法: LINQ to XML (Visual Basic) を使用してディクショナリを使用
-さまざまなデータ構造と XML を相互に変換すると便利な場合がよくあります。 このトピックでは、この方法の特定の実装を説明に変換して、 <xref:System.Collections.Generic.Dictionary%602>to XML と背面</xref:System.Collections.Generic.Dictionary%602>。  
+# <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a><span data-ttu-id="edf27-102">方法: LINQ to XML (Visual Basic) を使用してディクショナリを使用</span><span class="sxs-lookup"><span data-stu-id="edf27-102">How to: Work with Dictionaries Using LINQ to XML (Visual Basic)</span></span>
+<span data-ttu-id="edf27-103">さまざまなデータ構造と XML を相互に変換すると便利な場合がよくあります。</span><span class="sxs-lookup"><span data-stu-id="edf27-103">It is often convenient to convert varieties of data structures to XML, and XML back to other data structures.</span></span> <span data-ttu-id="edf27-104">このトピックでは、<xref:System.Collections.Generic.Dictionary%602> と XML を相互に変換することによる、一般的な相互変換の実装について説明します。</span><span class="sxs-lookup"><span data-stu-id="edf27-104">This topic shows a specific implementation of this general approach by converting a <xref:System.Collections.Generic.Dictionary%602> to XML and back.</span></span>  
   
-## <a name="example"></a>例  
- この例では、組み込み式で XML リテラルと、クエリを使用します。 新しいクエリ プロジェクト<xref:System.Xml.Linq.XElement>の新しいコンテンツの表示と非オブジェクトの場合、これをなります、 `Root` <xref:System.Xml.Linq.XElement>オブジェクト</xref:System.Xml.Linq.XElement></xref:System.Xml.Linq.XElement>。  
+## <a name="example"></a><span data-ttu-id="edf27-105">例</span><span class="sxs-lookup"><span data-stu-id="edf27-105">Example</span></span>  
+ <span data-ttu-id="edf27-106">この例では、埋め込み式の中で XML リテラルと、クエリを使用します。</span><span class="sxs-lookup"><span data-stu-id="edf27-106">This example uses XML literals and a query in an embedded expression.</span></span> <span data-ttu-id="edf27-107">新しいクエリ プロジェクト<xref:System.Xml.Linq.XElement>するオブジェクトの新しいコンテンツになる、 `Root` <xref:System.Xml.Linq.XElement>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="edf27-107">The query projects new <xref:System.Xml.Linq.XElement> objects, which then become the new content for the `Root` <xref:System.Xml.Linq.XElement> object.</span></span>  
   
 ```vb  
 Dim dict As Dictionary(Of String, String) = New Dictionary(Of String, String)()  
@@ -43,7 +38,7 @@ Dim root As XElement = _
 Console.WriteLine(root)  
 ```  
   
- このコードを実行すると、次の出力が生成されます。  
+ <span data-ttu-id="edf27-108">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="edf27-108">This code produces the following output:</span></span>  
   
 ```xml  
           <Root>  
@@ -54,8 +49,8 @@ Console.WriteLine(root)
 </Root>  
 ```  
   
-## <a name="example"></a>例  
- 次のコードは、XML からディクショナリを作成します。  
+## <a name="example"></a><span data-ttu-id="edf27-109">例</span><span class="sxs-lookup"><span data-stu-id="edf27-109">Example</span></span>  
+ <span data-ttu-id="edf27-110">次のコードは、XML からディクショナリを作成します。</span><span class="sxs-lookup"><span data-stu-id="edf27-110">The following code creates a dictionary from XML.</span></span>  
   
 ```vb  
 Dim root As XElement = _  
@@ -75,7 +70,7 @@ For Each str As String In dict.Keys
 Next  
 ```  
   
- このコードを実行すると、次の出力が生成されます。  
+ <span data-ttu-id="edf27-111">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="edf27-111">This code produces the following output:</span></span>  
   
 ```  
 Child1:Value1  
@@ -84,6 +79,5 @@ Child3:Value3
 Child4:Value4  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [射影と変換 (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
-
+## <a name="see-also"></a><span data-ttu-id="edf27-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="edf27-112">See Also</span></span>  
+ [<span data-ttu-id="edf27-113">射影と変換 (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="edf27-113">Projections and Transformations (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - SOAP, XML serialization
 - XML serialization, SOAP
@@ -19,39 +14,37 @@ helpviewer_keywords:
 - attributes [.NET Framework], XML serialization
 - serialization, attributes
 ms.assetid: 93ee258c-9c0f-4a08-897c-c10db7a00f91
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: a6af8cd2560bb9c39657d8e5b088954996ba2a04
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 052996bedcb10494cb2fee1ccf3ba7b5a083356b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="attributes-that-control-encoded-soap-serialization"></a>エンコード済み SOAP シリアル化を制御する属性 
-World Wide Web コンソーシアム (www.w3.org) のドキュメント『Simple Object Access Protocol (SOAP) 1.1』には、SOAP パラメーターのエンコード方法について説明したオプションのセクション (セクション 5) が含まれています。 このセクション 5 の仕様に準拠するには、<xref:System.Xml.Serialization> 名前空間で指定されている特殊な属性セットを使用する必要があります。 これらの属性をクラスやクラスのメンバーに適宜適用し、<xref:System.Xml.Serialization.XmlSerializer> を使用して、クラスのインスタンスをシリアル化します。  
+# <a name="attributes-that-control-encoded-soap-serialization"></a><span data-ttu-id="1e216-102">エンコード済み SOAP シリアル化を制御する属性</span><span class="sxs-lookup"><span data-stu-id="1e216-102">Attributes That Control Encoded SOAP Serialization</span></span> 
+<span data-ttu-id="1e216-103">World Wide Web コンソーシアム (www.w3.org) のドキュメント『Simple Object Access Protocol (SOAP) 1.1』には、SOAP パラメーターのエンコード方法について説明したオプションのセクション (セクション 5) が含まれています。</span><span class="sxs-lookup"><span data-stu-id="1e216-103">The World Wide Web Consortium (www.w3.org) document named "Simple Object Access Protocol (SOAP) 1.1" contains an optional section (section 5) that describes how SOAP parameters can be encoded.</span></span> <span data-ttu-id="1e216-104">このセクション 5 の仕様に準拠するには、<xref:System.Xml.Serialization> 名前空間で指定されている特殊な属性セットを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1e216-104">To conform to section 5 of the specification, you must use a special set of attributes found in the <xref:System.Xml.Serialization> namespace.</span></span> <span data-ttu-id="1e216-105">これらの属性をクラスやクラスのメンバーに適宜適用し、<xref:System.Xml.Serialization.XmlSerializer> を使用して、クラスのインスタンスをシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="1e216-105">Apply those attributes as appropriate to classes and members of classes, and then use the <xref:System.Xml.Serialization.XmlSerializer> to serialize instances of the class or classes.</span></span>  
   
- これらの属性、およびその適用対象と機能を次の表に示します。 これらの属性を使用する XML シリアル化の制御の詳細については、「[How to: Serialize an Object as a SOAP-Encoded XML Stream](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)」(方法 : オブジェクトを SOAP エンコード済み XML ストリームとしてシリアル化する) および「[How to: Override Encoded SOAP XML Serialization](../../../docs/standard/serialization/how-to-override-encoded-soap-xml-serialization.md)」(方法 : SOAP エンコード済み XML シリアル化をオーバーライドする) を参照してください。  
+ <span data-ttu-id="1e216-106">これらの属性、およびその適用対象と機能を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="1e216-106">The following table shows the attributes, where they can be applied, and what they do.</span></span> <span data-ttu-id="1e216-107">これらの属性を使用する XML シリアル化の制御の詳細については、「[How to: Serialize an Object as a SOAP-Encoded XML Stream](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)」(方法 : オブジェクトを SOAP エンコード済み XML ストリームとしてシリアル化する) および「[How to: Override Encoded SOAP XML Serialization](../../../docs/standard/serialization/how-to-override-encoded-soap-xml-serialization.md)」(方法 : SOAP エンコード済み XML シリアル化をオーバーライドする) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1e216-107">For more information about using these attributes to control XML serialization, see [How to: Serialize an Object as a SOAP-Encoded XML Stream](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md) and [How to: Override Encoded SOAP XML Serialization](../../../docs/standard/serialization/how-to-override-encoded-soap-xml-serialization.md).</span></span>  
   
- 属性の詳細については、「[属性](../../../docs/standard/attributes/index.md)」を参照してください。  
+ <span data-ttu-id="1e216-108">属性の詳細については、「[属性](../../../docs/standard/attributes/index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1e216-108">For more information about attributes, see [Attributes](../../../docs/standard/attributes/index.md).</span></span>  
   
-|属性|対象|指定内容|  
+|<span data-ttu-id="1e216-109">属性</span><span class="sxs-lookup"><span data-stu-id="1e216-109">Attribute</span></span>|<span data-ttu-id="1e216-110">対象</span><span class="sxs-lookup"><span data-stu-id="1e216-110">Applies to</span></span>|<span data-ttu-id="1e216-111">指定内容</span><span class="sxs-lookup"><span data-stu-id="1e216-111">Specifies</span></span>|  
 |---------------|----------------|---------------|  
-|<xref:System.Xml.Serialization.SoapAttributeAttribute>|パブリック フィールド、パブリック プロパティ、パブリック パラメーター、または戻り値|クラス メンバーを XML 属性としてシリアル化します。|  
-|<xref:System.Xml.Serialization.SoapElementAttribute>|パブリック フィールド、パブリック プロパティ、パブリック パラメーター、または戻り値|クラスを XML 要素としてシリアル化します。|  
-|<xref:System.Xml.Serialization.SoapEnumAttribute>|列挙体識別子であるパブリック フィールド|列挙体のメンバーの要素名を指定します。|  
-|<xref:System.Xml.Serialization.SoapIgnoreAttribute>|パブリック プロパティとパブリック フィールド|クラスのシリアル化時に、そのクラスに含まれているプロパティまたはフィールドを無視します。|  
-|<xref:System.Xml.Serialization.SoapIncludeAttribute>|パブリック派生クラス宣言、およびパブリック メソッド (Web サービス記述言語 (WSDL: Web Service Description Language) ドキュメント用)|シリアル化時に認識されるように、スキーマの生成時にその型を対象に含めます。|  
-|<xref:System.Xml.Serialization.SoapTypeAttribute>|パブリック クラス宣言|クラスを XML 型としてシリアル化します。|  
+|<xref:System.Xml.Serialization.SoapAttributeAttribute>|<span data-ttu-id="1e216-112">パブリック フィールド、パブリック プロパティ、パブリック パラメーター、または戻り値</span><span class="sxs-lookup"><span data-stu-id="1e216-112">Public field, property, parameter, or return value.</span></span>|<span data-ttu-id="1e216-113">クラス メンバーを XML 属性としてシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="1e216-113">The class member will be serialized as an XML attribute.</span></span>|  
+|<xref:System.Xml.Serialization.SoapElementAttribute>|<span data-ttu-id="1e216-114">パブリック フィールド、パブリック プロパティ、パブリック パラメーター、または戻り値</span><span class="sxs-lookup"><span data-stu-id="1e216-114">Public field, property, parameter, or return value.</span></span>|<span data-ttu-id="1e216-115">クラスを XML 要素としてシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="1e216-115">The class will be serialized as an XML element.</span></span>|  
+|<xref:System.Xml.Serialization.SoapEnumAttribute>|<span data-ttu-id="1e216-116">列挙体識別子であるパブリック フィールド</span><span class="sxs-lookup"><span data-stu-id="1e216-116">Public field that is an enumeration identifier.</span></span>|<span data-ttu-id="1e216-117">列挙体のメンバーの要素名を指定します。</span><span class="sxs-lookup"><span data-stu-id="1e216-117">The element name of an enumeration member.</span></span>|  
+|<xref:System.Xml.Serialization.SoapIgnoreAttribute>|<span data-ttu-id="1e216-118">パブリック プロパティとパブリック フィールド</span><span class="sxs-lookup"><span data-stu-id="1e216-118">Public properties and fields.</span></span>|<span data-ttu-id="1e216-119">クラスのシリアル化時に、そのクラスに含まれているプロパティまたはフィールドを無視します。</span><span class="sxs-lookup"><span data-stu-id="1e216-119">The property or field should be ignored when the containing class is serialized.</span></span>|  
+|<xref:System.Xml.Serialization.SoapIncludeAttribute>|<span data-ttu-id="1e216-120">パブリック派生クラス宣言、およびパブリック メソッド (Web サービス記述言語 (WSDL: Web Service Description Language) ドキュメント用)</span><span class="sxs-lookup"><span data-stu-id="1e216-120">Public-derived class declarations and public methods for Web Services Description Language (WSDL) documents.</span></span>|<span data-ttu-id="1e216-121">シリアル化時に認識されるように、スキーマの生成時にその型を対象に含めます。</span><span class="sxs-lookup"><span data-stu-id="1e216-121">The type should be included when generating schemas (to be recognized when serialized).</span></span>|  
+|<xref:System.Xml.Serialization.SoapTypeAttribute>|<span data-ttu-id="1e216-122">パブリック クラス宣言</span><span class="sxs-lookup"><span data-stu-id="1e216-122">Public class declarations.</span></span>|<span data-ttu-id="1e216-123">クラスを XML 型としてシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="1e216-123">The class should be serialized as an XML type.</span></span>|  
   
-## <a name="see-also"></a>関連項目  
- [XML シリアル化および SOAP シリアル化](../../../docs/standard/serialization/xml-and-soap-serialization.md)   
- [方法 : オブジェクトを SOAP エンコード済み XML ストリームとしてシリアル化する](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)   
- [方法 : SOAP エンコード済み XML シリアル化をオーバーライドする](../../../docs/standard/serialization/how-to-override-encoded-soap-xml-serialization.md)   
- [属性](../../../docs/standard/attributes/index.md)   
- <xref:System.Xml.Serialization.XmlSerializer>   
- [方法 : オブジェクトをシリアル化する](../../../docs/standard/serialization/how-to-serialize-an-object.md)   
- [方法 : オブジェクトを逆シリアル化する](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
-
+## <a name="see-also"></a><span data-ttu-id="1e216-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="1e216-124">See Also</span></span>  
+ [<span data-ttu-id="1e216-125">XML シリアル化および SOAP シリアル化</span><span class="sxs-lookup"><span data-stu-id="1e216-125">XML and SOAP Serialization</span></span>](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
+ [<span data-ttu-id="1e216-126">方法 : オブジェクトを SOAP エンコード済み XML ストリームとしてシリアル化する</span><span class="sxs-lookup"><span data-stu-id="1e216-126">How to: Serialize an Object as a SOAP-Encoded XML Stream</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)  
+ [<span data-ttu-id="1e216-127">方法 : SOAP エンコード済み XML シリアル化をオーバーライドする</span><span class="sxs-lookup"><span data-stu-id="1e216-127">How to: Override Encoded SOAP XML Serialization</span></span>](../../../docs/standard/serialization/how-to-override-encoded-soap-xml-serialization.md)  
+ [<span data-ttu-id="1e216-128">属性</span><span class="sxs-lookup"><span data-stu-id="1e216-128">Attributes</span></span>](../../../docs/standard/attributes/index.md)  
+ <xref:System.Xml.Serialization.XmlSerializer>  
+ [<span data-ttu-id="1e216-129">方法 : オブジェクトをシリアル化する</span><span class="sxs-lookup"><span data-stu-id="1e216-129">How to: Serialize an Object</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+ [<span data-ttu-id="1e216-130">方法 : オブジェクトを逆シリアル化する</span><span class="sxs-lookup"><span data-stu-id="1e216-130">How to: Deserialize an Object</span></span>](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

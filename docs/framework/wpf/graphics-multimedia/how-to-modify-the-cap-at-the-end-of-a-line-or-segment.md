@@ -1,38 +1,41 @@
 ---
-title: "方法 : 直線または線分の終点のキャップを変更する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "グラフィックス, 形状キャップ"
-  - "Shape 要素, キャップ"
-  - "Shape 要素, 終点"
+title: "方法 : 直線または線分の終点のキャップを変更する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Shape elements [WPF], ends
+- Shape elements [WPF], caps
+- graphics [WPF], Shape caps
 ms.assetid: f4bf3416-b3d8-4568-b98e-3eda8f6dbf7a
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e062b82e698a99705a2b06588aa9aae3a0c93157
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 直線または線分の終点のキャップを変更する
-この例では、開いた <xref:System.Windows.Shapes.Shape> 要素の始点または終点の形状を変更する方法を示します。  開いた <xref:System.Windows.Shapes.Shape> の始点のキャップを変更するには、<xref:System.Windows.Shapes.Shape.StrokeStartLineCap%2A> プロパティを使用します。  開いた <xref:System.Windows.Shapes.Shape> の終点のキャップを変更するには、<xref:System.Windows.Shapes.Shape.StrokeEndLineCap%2A> プロパティを使用します。  使用できる線キャップを確認するには、<xref:System.Windows.Media.PenLineCap> 列挙体を参照してください。  
+# <a name="how-to-modify-the-cap-at-the-end-of-a-line-or-segment"></a><span data-ttu-id="69c8a-102">方法 : 直線または線分の終点のキャップを変更する</span><span class="sxs-lookup"><span data-stu-id="69c8a-102">How to: Modify the Cap at the End of a Line or Segment</span></span>
+<span data-ttu-id="69c8a-103">この例は、開始のまたは末尾に、開いている図形を変更する方法を示します<xref:System.Windows.Shapes.Shape>要素。</span><span class="sxs-lookup"><span data-stu-id="69c8a-103">This example shows how to modify the shape at the start or end of an open <xref:System.Windows.Shapes.Shape> element.</span></span> <span data-ttu-id="69c8a-104">開いているの先頭に cap を変更する<xref:System.Windows.Shapes.Shape>を使用してその<xref:System.Windows.Shapes.Shape.StrokeStartLineCap%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="69c8a-104">To change the cap at the beginning of an open <xref:System.Windows.Shapes.Shape>, use its <xref:System.Windows.Shapes.Shape.StrokeStartLineCap%2A> property.</span></span> <span data-ttu-id="69c8a-105">開いているの最後に、cap を変更する<xref:System.Windows.Shapes.Shape>を使用してその<xref:System.Windows.Shapes.Shape.StrokeEndLineCap%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="69c8a-105">To change the cap at the end of an open <xref:System.Windows.Shapes.Shape>, use its <xref:System.Windows.Shapes.Shape.StrokeEndLineCap%2A> property.</span></span> <span data-ttu-id="69c8a-106">使用可能なライン キャップを表示するを参照してください。、<xref:System.Windows.Media.PenLineCap>列挙します。</span><span class="sxs-lookup"><span data-stu-id="69c8a-106">To view the available line caps, see the <xref:System.Windows.Media.PenLineCap> enumeration.</span></span>  
   
 > [!NOTE]
->  このプロパティは、<xref:System.Windows.Shapes.Line>、<xref:System.Windows.Shapes.Polyline>、または開いた <xref:System.Windows.Shapes.Path> 要素などの開いた図形に対してのみ適用されます。  
+>  <span data-ttu-id="69c8a-107">このプロパティは、開いている図形など、 <xref:System.Windows.Shapes.Line>、 <xref:System.Windows.Shapes.Polyline>、または開いている<xref:System.Windows.Shapes.Path>要素。</span><span class="sxs-lookup"><span data-stu-id="69c8a-107">This property only affects an open shape, such as a <xref:System.Windows.Shapes.Line>, a <xref:System.Windows.Shapes.Polyline>, or an open <xref:System.Windows.Shapes.Path> element.</span></span>  
   
- 次の例では、4 つの <xref:System.Windows.Shapes.Polyline> 要素を描画し、それぞれの端に異なる形状のセットを使用します。  
+ <span data-ttu-id="69c8a-108">次の例では、次の 4 つを描画<xref:System.Windows.Shapes.Polyline>要素の各端に別の図形のセットを使用しています。</span><span class="sxs-lookup"><span data-stu-id="69c8a-108">The following example draws four <xref:System.Windows.Shapes.Polyline> elements and uses a different set of shapes on the ends of each.</span></span>  
   
-## 使用例  
- [!code-xml[drawingwithshapeelements#ShapeLineCaps1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingWithShapeElements/CS/linecapsandjoinsexample.xaml#shapelinecaps1)]  
+## <a name="example"></a><span data-ttu-id="69c8a-109">例</span><span class="sxs-lookup"><span data-stu-id="69c8a-109">Example</span></span>  
+ [!code-xaml[drawingwithshapeelements#ShapeLineCaps1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingWithShapeElements/CS/linecapsandjoinsexample.xaml#shapelinecaps1)]  
   
- この例は、より大きなサンプルの一部です。サンプル全体については、[図形要素のサンプル](http://go.microsoft.com/fwlink/?LinkID=160037)を参照してください。  
+ <span data-ttu-id="69c8a-110">この例より大きなサンプルの一部サンプル全体については、次を参照してください。[図形要素のサンプル](http://go.microsoft.com/fwlink/?LinkID=160037)です。</span><span class="sxs-lookup"><span data-stu-id="69c8a-110">This example is part of a larger sample; for the complete sample, see [Shape Elements Sample](http://go.microsoft.com/fwlink/?LinkID=160037).</span></span>  
   
-## 参照  
- <xref:System.Windows.Shapes.Polyline>   
+## <a name="see-also"></a><span data-ttu-id="69c8a-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="69c8a-111">See Also</span></span>  
+ <xref:System.Windows.Shapes.Polyline>  
  <xref:System.Windows.Media.PenLineCap>

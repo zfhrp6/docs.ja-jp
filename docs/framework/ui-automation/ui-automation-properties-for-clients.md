@@ -1,49 +1,55 @@
 ---
-title: "UI Automation Properties for Clients | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "properties, UI Automation clients"
-  - "UI Automation, client properties"
+title: "クライアントの UI オートメーション プロパティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- properties, UI Automation clients
+- UI Automation, client properties
 ms.assetid: 255905af-0b17-485c-93d4-8a2db2a6524b
-caps.latest.revision: 17
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: 0c9a007d88189172e6331c6876f2a18f341cd5cc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# UI Automation Properties for Clients
+# <a name="ui-automation-properties-for-clients"></a><span data-ttu-id="3aff3-102">クライアントの UI オートメーション プロパティ</span><span class="sxs-lookup"><span data-stu-id="3aff3-102">UI Automation Properties for Clients</span></span>
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の最新情報については、「[Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
+>  <span data-ttu-id="3aff3-103">このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="3aff3-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="3aff3-104">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="3aff3-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- ここでは、UI オートメーション クライアント アプリケーションに公開される [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティについて説明します。  
+ <span data-ttu-id="3aff3-105">ここでは、UI オートメーション クライアント アプリケーションに公開される [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティについて説明します。</span><span class="sxs-lookup"><span data-stu-id="3aff3-105">This overview introduces you to [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties as they are exposed to UI Automation client applications.</span></span>  
   
- <xref:System.Windows.Automation.AutomationElement> オブジェクトのプロパティには、[!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] 要素 \(通常はコントロール\) に関する情報が含まれます。<xref:System.Windows.Automation.AutomationElement> のプロパティは汎用的なもので、コントロール型に固有ではありません。 これらのプロパティの多くは、<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation> 構造体で公開されます。  
+ <span data-ttu-id="3aff3-106"><xref:System.Windows.Automation.AutomationElement> オブジェクトのプロパティには、 [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] 要素 (通常はコントロール) に関する情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="3aff3-106">Properties on <xref:System.Windows.Automation.AutomationElement> objects contain information about [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] elements, usually controls.</span></span> <span data-ttu-id="3aff3-107"><xref:System.Windows.Automation.AutomationElement> のプロパティは汎用的なもので、コントロール型に固有ではありません。</span><span class="sxs-lookup"><span data-stu-id="3aff3-107">The properties of an <xref:System.Windows.Automation.AutomationElement> are generic; that is, not specific to a control type.</span></span> <span data-ttu-id="3aff3-108">これらのプロパティの多くは、 <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation> 構造体で公開されます。</span><span class="sxs-lookup"><span data-stu-id="3aff3-108">Many of these properties are exposed in the <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation> structure.</span></span>  
   
- また、コントロール パターンもプロパティを持ちます。 コントロール パターンのプロパティは、パターンに固有です。 たとえば、<xref:System.Windows.Automation.ScrollPattern> に含まれるプロパティを使用すると、ウィンドウを垂直方向または水平方向のどちらにスクロールできるのかや、現在のビュー サイズおよびスクロール位置をクライアント アプリケーションで検出できます。 コントロール パターンは、そのすべてのプロパティを構造体 \(<xref:System.Windows.Automation.ScrollPattern.ScrollPatternInformation> など\) を介して公開します。  
+ <span data-ttu-id="3aff3-109">また、コントロール パターンもプロパティを持ちます。</span><span class="sxs-lookup"><span data-stu-id="3aff3-109">Control patterns also have properties.</span></span> <span data-ttu-id="3aff3-110">コントロール パターンのプロパティは、パターンに固有です。</span><span class="sxs-lookup"><span data-stu-id="3aff3-110">The properties of control patterns are specific to the pattern.</span></span> <span data-ttu-id="3aff3-111">たとえば、 <xref:System.Windows.Automation.ScrollPattern> に含まれるプロパティを使用すると、ウィンドウを垂直方向または水平方向のどちらにスクロールできるのかや、現在のビュー サイズおよびスクロール位置をクライアント アプリケーションで検出できます。</span><span class="sxs-lookup"><span data-stu-id="3aff3-111">For example, <xref:System.Windows.Automation.ScrollPattern> has properties that enable a client application to discover whether a window is vertically or horizontally scrollable, and what the current view sizes and scroll positions are.</span></span> <span data-ttu-id="3aff3-112">コントロール パターンは、そのすべてのプロパティを構造体 ( <xref:System.Windows.Automation.ScrollPattern.ScrollPatternInformation>など) を介して公開します。</span><span class="sxs-lookup"><span data-stu-id="3aff3-112">Control patterns expose all their properties through a structure; for example, <xref:System.Windows.Automation.ScrollPattern.ScrollPatternInformation>.</span></span>  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティは読み取り専用です。 コントロールのプロパティを設定するには、適切なコントロール パターンのメソッドを使用する必要があります。 たとえば、スクロール ウィンドウの位置の値を変更する場合は、<xref:System.Windows.Automation.ScrollPattern.Scroll%2A> を使用します。  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]<span data-ttu-id="3aff3-113"> プロパティは読み取り専用です。</span><span class="sxs-lookup"><span data-stu-id="3aff3-113"> properties are read-only.</span></span> <span data-ttu-id="3aff3-114">コントロールのプロパティを設定するには、適切なコントロール パターンのメソッドを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3aff3-114">To set properties of a control, you must use the methods of the appropriate control pattern.</span></span> <span data-ttu-id="3aff3-115">たとえば、スクロール ウィンドウの位置の値を変更する場合は、 <xref:System.Windows.Automation.ScrollPattern.Scroll%2A> を使用します。</span><span class="sxs-lookup"><span data-stu-id="3aff3-115">For example, use <xref:System.Windows.Automation.ScrollPattern.Scroll%2A> to change the position values of a scrolling window.</span></span>  
   
- パフォーマンスを向上させるために、<xref:System.Windows.Automation.AutomationElement> オブジェクトを取得したときに、コントロールおよびコントロール パターンのプロパティ値をキャッシュできます。 詳細については、「[Caching in UI Automation Clients](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md)」を参照してください。  
+ <span data-ttu-id="3aff3-116">パフォーマンスを向上させるために、 <xref:System.Windows.Automation.AutomationElement> オブジェクトを取得したときに、コントロールおよびコントロール パターンのプロパティ値をキャッシュできます。</span><span class="sxs-lookup"><span data-stu-id="3aff3-116">To improve performance, property values of controls and control patterns can be cached when <xref:System.Windows.Automation.AutomationElement> objects are retrieved.</span></span> <span data-ttu-id="3aff3-117">詳細については、次を参照してください。 [UI オートメーション クライアントにおけるキャッシュ](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md)です。</span><span class="sxs-lookup"><span data-stu-id="3aff3-117">For more information, see [Caching in UI Automation Clients](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md).</span></span>  
   
 <a name="Property_IDs"></a>   
-## プロパティ ID  
- プロパティ [!INCLUDE[TLA#tla_id#plural](../../../includes/tlasharptla-idsharpplural-md.md)] は、<xref:System.Windows.Automation.AutomationProperty> オブジェクトにカプセル化される一意の定数値です。 UI オートメーション クライアント アプリケーションは、これらの [!INCLUDE[TLA2#tla_id#plural](../../../includes/tla2sharptla-idsharpplural-md.md)] を <xref:System.Windows.Automation.AutomationElement> クラスまたは適切なコントロール パターン クラス \(<xref:System.Windows.Automation.ScrollPattern> など\) から取得します。 UI オートメーション プロバイダーは、<xref:System.Windows.Automation.AutomationElementIdentifiers> またはコントロール パターン識別子クラスの 1 つ \(<xref:System.Windows.Automation.ScrollPatternIdentifiers> など\) からこれらを取得します。  
+## <a name="property-ids"></a><span data-ttu-id="3aff3-118">プロパティ ID</span><span class="sxs-lookup"><span data-stu-id="3aff3-118">Property IDs</span></span>  
+ <span data-ttu-id="3aff3-119">プロパティ [!INCLUDE[TLA#tla_id#plural](../../../includes/tlasharptla-idsharpplural-md.md)] は、 <xref:System.Windows.Automation.AutomationProperty> オブジェクトにカプセル化される一意の定数値です。</span><span class="sxs-lookup"><span data-stu-id="3aff3-119">Property [!INCLUDE[TLA#tla_id#plural](../../../includes/tlasharptla-idsharpplural-md.md)] are unique, constant values that are encapsulated in <xref:System.Windows.Automation.AutomationProperty> objects.</span></span> <span data-ttu-id="3aff3-120">UI オートメーション クライアント アプリケーションは、これらの [!INCLUDE[TLA2#tla_id#plural](../../../includes/tla2sharptla-idsharpplural-md.md)] を <xref:System.Windows.Automation.AutomationElement> クラスまたは適切なコントロール パターン クラス ( <xref:System.Windows.Automation.ScrollPattern>など) から取得します。</span><span class="sxs-lookup"><span data-stu-id="3aff3-120">UI Automation client applications get these [!INCLUDE[TLA2#tla_id#plural](../../../includes/tla2sharptla-idsharpplural-md.md)] from the <xref:System.Windows.Automation.AutomationElement> class or from the appropriate control pattern class, such as <xref:System.Windows.Automation.ScrollPattern>.</span></span> <span data-ttu-id="3aff3-121">UI オートメーション プロバイダーは、 <xref:System.Windows.Automation.AutomationElementIdentifiers> またはコントロール パターン識別子クラスの 1 つ ( <xref:System.Windows.Automation.ScrollPatternIdentifiers>など) からこれらを取得します。</span><span class="sxs-lookup"><span data-stu-id="3aff3-121">UI Automation providers get them from <xref:System.Windows.Automation.AutomationElementIdentifiers> or from one of the control pattern identifiers classes, such as <xref:System.Windows.Automation.ScrollPatternIdentifiers>.</span></span>  
   
- <xref:System.Windows.Automation.AutomationProperty> の数値 <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> は、<xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPropertyValue%2A?displayProperty=fullName> メソッドで照会するプロパティを識別するために、プロバイダーによって使用されます。 通常、クライアント アプリケーションで <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> を調べる必要はありません。<xref:System.Windows.Automation.AutomationIdentifier.ProgrammaticName%2A> は、デバッグと診断の目的のみに使用されます。  
+ <span data-ttu-id="3aff3-122">数値<xref:System.Windows.Automation.AutomationIdentifier.Id%2A>の<xref:System.Windows.Automation.AutomationProperty>でのクエリ対象のプロパティを識別するプロバイダーによって使用される、<xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPropertyValue%2A?displayProperty=nameWithType>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="3aff3-122">The numeric <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> of an <xref:System.Windows.Automation.AutomationProperty> is used by providers to identify properties that are being queried for in the <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPropertyValue%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="3aff3-123">通常、クライアント アプリケーションで <xref:System.Windows.Automation.AutomationIdentifier.Id%2A>を調べる必要はありません。</span><span class="sxs-lookup"><span data-stu-id="3aff3-123">In general, client applications do not need to examine the <xref:System.Windows.Automation.AutomationIdentifier.Id%2A>.</span></span> <span data-ttu-id="3aff3-124"><xref:System.Windows.Automation.AutomationIdentifier.ProgrammaticName%2A> は、デバッグと診断の目的のみに使用されます。</span><span class="sxs-lookup"><span data-stu-id="3aff3-124">The <xref:System.Windows.Automation.AutomationIdentifier.ProgrammaticName%2A> is used only for debugging and diagnostic purposes.</span></span>  
   
 <a name="Property_Conditions"></a>   
-## プロパティ条件  
- プロパティ [!INCLUDE[TLA2#tla_id#plural](../../../includes/tla2sharptla-idsharpplural-md.md)] は、<xref:System.Windows.Automation.AutomationElement> オブジェクトの検出に使用する <xref:System.Windows.Automation.PropertyCondition> オブジェクトを構築する際に使用されます。 たとえば、特定の名前を持つ <xref:System.Windows.Automation.AutomationElement> を検出したい場合や、すべての有効なコントロールを検出したい場合があります。 各 <xref:System.Windows.Automation.PropertyCondition> では、<xref:System.Windows.Automation.AutomationProperty> 識別子と、そのプロパティが一致する必要がある値を指定します。  
+## <a name="property-conditions"></a><span data-ttu-id="3aff3-125">プロパティ条件</span><span class="sxs-lookup"><span data-stu-id="3aff3-125">Property Conditions</span></span>  
+ <span data-ttu-id="3aff3-126">プロパティ [!INCLUDE[TLA2#tla_id#plural](../../../includes/tla2sharptla-idsharpplural-md.md)] は、 <xref:System.Windows.Automation.PropertyCondition> オブジェクトの検出に使用する <xref:System.Windows.Automation.AutomationElement> オブジェクトを構築する際に使用されます。</span><span class="sxs-lookup"><span data-stu-id="3aff3-126">The property [!INCLUDE[TLA2#tla_id#plural](../../../includes/tla2sharptla-idsharpplural-md.md)] are used in constructing <xref:System.Windows.Automation.PropertyCondition> objects used to find <xref:System.Windows.Automation.AutomationElement> objects.</span></span> <span data-ttu-id="3aff3-127">たとえば、特定の名前を持つ <xref:System.Windows.Automation.AutomationElement> を検出したい場合や、すべての有効なコントロールを検出したい場合があります。</span><span class="sxs-lookup"><span data-stu-id="3aff3-127">For example, you might wish to find an <xref:System.Windows.Automation.AutomationElement> that has a certain name, or all controls that are enabled.</span></span> <span data-ttu-id="3aff3-128">各 <xref:System.Windows.Automation.PropertyCondition> では、 <xref:System.Windows.Automation.AutomationProperty> 識別子と、そのプロパティが一致する必要がある値を指定します。</span><span class="sxs-lookup"><span data-stu-id="3aff3-128">Each <xref:System.Windows.Automation.PropertyCondition> specifies an <xref:System.Windows.Automation.AutomationProperty> identifier and the value that the property must match.</span></span>  
   
- 詳細については、次のリファレンス トピックを参照してください。  
+ <span data-ttu-id="3aff3-129">詳細については、次のリファレンス トピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="3aff3-129">For more information, see the following reference topics:</span></span>  
   
 -   <xref:System.Windows.Automation.AutomationElement.FindFirst%2A>  
   
@@ -52,62 +58,62 @@ caps.handback.revision: 17
 -   <xref:System.Windows.Automation.TreeWalker.Condition%2A>  
   
 <a name="Retrieving_Properties"></a>   
-## プロパティの取得  
- <xref:System.Windows.Automation.AutomationElement> のいくつかのプロパティと、コントロール パターン クラスのすべてのプロパティは、<xref:System.Windows.Automation.AutomationElement> またはコントロール パターン オブジェクトの、`Current` プロパティまたは `Cached` プロパティの入れ子になったプロパティとして公開されます。  
+## <a name="retrieving-properties"></a><span data-ttu-id="3aff3-130">プロパティの取得</span><span class="sxs-lookup"><span data-stu-id="3aff3-130">Retrieving Properties</span></span>  
+ <span data-ttu-id="3aff3-131"><xref:System.Windows.Automation.AutomationElement> のいくつかのプロパティと、コントロール パターン クラスのすべてのプロパティは、 `Current` またはコントロール パターン オブジェクトの、 `Cached` プロパティまたは <xref:System.Windows.Automation.AutomationElement> プロパティの入れ子になったプロパティとして公開されます。</span><span class="sxs-lookup"><span data-stu-id="3aff3-131">Some properties of <xref:System.Windows.Automation.AutomationElement> and all properties of a control pattern class are exposed as nested properties of the `Current` or `Cached` property of the <xref:System.Windows.Automation.AutomationElement> or control pattern object.</span></span>  
   
- また、<xref:System.Windows.Automation.AutomationElement.Cached%2A> または <xref:System.Windows.Automation.AutomationElement.Current%2A> の構造体にはないプロパティを含む、任意の <xref:System.Windows.Automation.AutomationElement> またはコントロール パターン プロパティは、次のいずれかのメソッドを使用して取得できます。  
+ <span data-ttu-id="3aff3-132">また、 <xref:System.Windows.Automation.AutomationElement> または <xref:System.Windows.Automation.AutomationElement.Cached%2A> の構造体にはないプロパティを含む、任意の <xref:System.Windows.Automation.AutomationElement.Current%2A> またはコントロール パターン プロパティは、次のいずれかのメソッドを使用して取得できます。</span><span class="sxs-lookup"><span data-stu-id="3aff3-132">In addition, any <xref:System.Windows.Automation.AutomationElement> or control pattern property, including a property that is not available in the <xref:System.Windows.Automation.AutomationElement.Cached%2A> or <xref:System.Windows.Automation.AutomationElement.Current%2A> structure, can be retrieved by using one of the following methods:</span></span>  
   
 -   <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>  
   
 -   <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A>  
   
- これらのメソッドを使用すると、パフォーマンスがわずかながら向上すると共に、すべてのプロパティにアクセスできます。  
+ <span data-ttu-id="3aff3-133">これらのメソッドを使用すると、パフォーマンスがわずかながら向上すると共に、すべてのプロパティにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="3aff3-133">These methods offer slightly better performance as well as access to the full range of properties.</span></span>  
   
- <xref:System.Windows.Automation.AutomationElement> のプロパティを取得する 2 とおりの方法を次のコード例で示します。  
+ <span data-ttu-id="3aff3-134"><xref:System.Windows.Automation.AutomationElement>のプロパティを取得する 2 とおりの方法を次のコード例で示します。</span><span class="sxs-lookup"><span data-stu-id="3aff3-134">The following code example shows the two ways of retrieving a property on an <xref:System.Windows.Automation.AutomationElement>.</span></span>  
   
  [!code-csharp[UIAClient_snip#121](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#121)]
  [!code-vb[UIAClient_snip#121](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#121)]  
   
- <xref:System.Windows.Automation.AutomationElement> でサポートされるコントロール パターンのプロパティを取得する場合は、コントロール パターン オブジェクトを取得する必要はありません。 単にパターン プロパティ識別子の 1 つをメソッドに渡します。  
+ <span data-ttu-id="3aff3-135"><xref:System.Windows.Automation.AutomationElement>でサポートされるコントロール パターンのプロパティを取得する場合は、コントロール パターン オブジェクトを取得する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="3aff3-135">To retrieve properties of control patterns supported by the <xref:System.Windows.Automation.AutomationElement>, you do not need to retrieve the control pattern object.</span></span> <span data-ttu-id="3aff3-136">単にパターン プロパティ識別子の 1 つをメソッドに渡します。</span><span class="sxs-lookup"><span data-stu-id="3aff3-136">Simply pass one of the pattern property identifiers to the method.</span></span>  
   
- コントロール パターンのプロパティを取得する 2 とおりの方法を次のコード例で示します。  
+ <span data-ttu-id="3aff3-137">コントロール パターンのプロパティを取得する 2 とおりの方法を次のコード例で示します。</span><span class="sxs-lookup"><span data-stu-id="3aff3-137">The following code example shows the two ways of retrieving a property on a control pattern.</span></span>  
   
  [!code-csharp[UIAClient_snip#122](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#122)]
  [!code-vb[UIAClient_snip#122](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#122)]  
   
- `Get` メソッドは <xref:System.Object> を返します。 アプリケーションは、この値を使用する前に、返されたオブジェクトを適切な型にキャストする必要があります。  
+ <span data-ttu-id="3aff3-138">`Get` メソッドは <xref:System.Object>を返します。</span><span class="sxs-lookup"><span data-stu-id="3aff3-138">The `Get` methods return an <xref:System.Object>.</span></span> <span data-ttu-id="3aff3-139">アプリケーションは、この値を使用する前に、返されたオブジェクトを適切な型にキャストする必要があります。</span><span class="sxs-lookup"><span data-stu-id="3aff3-139">The application must cast the returned object to the proper type before using the value.</span></span>  
   
 <a name="_Default_Property_Values"></a>   
-## 既定のプロパティ値  
- UI オートメーション プロバイダーがプロパティを実装していない場合、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] システムは既定値を提供できます。 たとえば、コントロールのプロバイダーが <xref:System.Windows.Automation.AutomationElement.HelpTextProperty> によって識別されたプロパティをサポートしていない場合、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] は空の文字列を返します。 同様に、プロバイダーが <xref:System.Windows.Automation.AutomationElement.IsDockPatternAvailableProperty> によって識別されたプロパティをサポートしていない場合、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] は `false` を返します。  
+## <a name="default-property-values"></a><span data-ttu-id="3aff3-140">既定のプロパティ値</span><span class="sxs-lookup"><span data-stu-id="3aff3-140">Default Property Values</span></span>  
+ <span data-ttu-id="3aff3-141">UI オートメーション プロバイダーがプロパティを実装していない場合、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] システムは既定値を提供できます。</span><span class="sxs-lookup"><span data-stu-id="3aff3-141">If a UI Automation provider does not implement a property, the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] system is able to supply a default value.</span></span> <span data-ttu-id="3aff3-142">たとえば、コントロールのプロバイダーが <xref:System.Windows.Automation.AutomationElement.HelpTextProperty>によって識別されたプロパティをサポートしていない場合、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] は空の文字列を返します。</span><span class="sxs-lookup"><span data-stu-id="3aff3-142">For example, if the provider for a control does not support the property identified by <xref:System.Windows.Automation.AutomationElement.HelpTextProperty>, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] returns an empty string.</span></span> <span data-ttu-id="3aff3-143">同様に、プロバイダーが <xref:System.Windows.Automation.AutomationElement.IsDockPatternAvailableProperty>によって識別されたプロパティをサポートしていない場合、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] は `false`を返します。</span><span class="sxs-lookup"><span data-stu-id="3aff3-143">Similarly, if the provider does not support the property identified by <xref:System.Windows.Automation.AutomationElement.IsDockPatternAvailableProperty>, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] returns `false`.</span></span>  
   
- この動作は、<xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=fullName> と <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=fullName> のメソッド オーバーロードを使用して変更できます。 2 番目のパラメーターとして `true` を指定した場合、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] は既定値を返さず、代わりに特殊な値 <xref:System.Windows.Automation.AutomationElement.NotSupported> を返します。  
+ <span data-ttu-id="3aff3-144">使用してこの動作を変更することができます、<xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=nameWithType>と<xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=nameWithType>メソッドのオーバー ロードします。</span><span class="sxs-lookup"><span data-stu-id="3aff3-144">You can change this behavior by using the <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=nameWithType> and <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=nameWithType> method overloads.</span></span> <span data-ttu-id="3aff3-145">2 番目のパラメーターとして `true` を指定した場合、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] は既定値を返さず、代わりに特殊な値 <xref:System.Windows.Automation.AutomationElement.NotSupported>を返します。</span><span class="sxs-lookup"><span data-stu-id="3aff3-145">When you specify `true` as the second parameter, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] does not return a default value, but instead returns the special value <xref:System.Windows.Automation.AutomationElement.NotSupported>.</span></span>  
   
- 次のコード例は、要素からプロパティを取得することを試みています。プロパティがサポートされていない場合は、代わりにアプリケーション定義の値が使用されます。  
+ <span data-ttu-id="3aff3-146">次のコード例は、要素からプロパティを取得することを試みています。プロパティがサポートされていない場合は、代わりにアプリケーション定義の値が使用されます。</span><span class="sxs-lookup"><span data-stu-id="3aff3-146">The following example code attempts to retrieve a property from an element, and if the property is not supported, an application-defined value is used instead.</span></span>  
   
  [!code-csharp[UIAClient_snip#123](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#123)]
  [!code-vb[UIAClient_snip#123](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#123)]  
   
- 要素によってサポートされているプロパティを調べるためには、<xref:System.Windows.Automation.AutomationElement.GetSupportedProperties%2A> を使用します。 これにより、<xref:System.Windows.Automation.AutomationProperty> 識別子の配列が返されます。  
+ <span data-ttu-id="3aff3-147">要素によってサポートされているプロパティを調べるためには、 <xref:System.Windows.Automation.AutomationElement.GetSupportedProperties%2A>を使用します。</span><span class="sxs-lookup"><span data-stu-id="3aff3-147">To discover what properties are supported by an element, use <xref:System.Windows.Automation.AutomationElement.GetSupportedProperties%2A>.</span></span> <span data-ttu-id="3aff3-148">これにより、 <xref:System.Windows.Automation.AutomationProperty> 識別子の配列が返されます。</span><span class="sxs-lookup"><span data-stu-id="3aff3-148">This returns an array of <xref:System.Windows.Automation.AutomationProperty> identifiers.</span></span>  
   
 <a name="Property_changed_Events"></a>   
-## プロパティ変更イベント  
- <xref:System.Windows.Automation.AutomationElement> またはコントロール パターンのプロパティ値が変化すると、イベントが発生します。 アプリケーションは、<xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A> を呼び出し、目的のプロパティを指定するために最後のパラメーターとして <xref:System.Windows.Automation.AutomationProperty> 識別子の配列を提供して、このようなイベントをサブスクライブできます。  
+## <a name="property-changed-events"></a><span data-ttu-id="3aff3-149">プロパティ変更イベント</span><span class="sxs-lookup"><span data-stu-id="3aff3-149">Property-changed Events</span></span>  
+ <span data-ttu-id="3aff3-150"><xref:System.Windows.Automation.AutomationElement> またはコントロール パターンのプロパティ値が変化すると、イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="3aff3-150">When a property value on an <xref:System.Windows.Automation.AutomationElement> or control pattern changes, an event is raised.</span></span> <span data-ttu-id="3aff3-151">アプリケーションは、 <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A>を呼び出し、目的のプロパティを指定するために最後のパラメーターとして <xref:System.Windows.Automation.AutomationProperty> 識別子の配列を提供して、このようなイベントをサブスクライブできます。</span><span class="sxs-lookup"><span data-stu-id="3aff3-151">An application can subscribe to such events by calling <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A>, supplying an array of <xref:System.Windows.Automation.AutomationProperty> identifiers as the last parameter in order to specify the properties of interest.</span></span>  
   
- <xref:System.Windows.Automation.AutomationPropertyChangedEventHandler> では、イベント引数の <xref:System.Windows.Automation.AutomationPropertyChangedEventArgs.Property%2A> メンバーを調べることによって、変更されたプロパティを識別できます。 また、引数には、変更された [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティの古い値と新しい値も含まれています。 これらの値は <xref:System.Object> 型であり、使用する前に正しい型にキャストする必要があります。  
+ <span data-ttu-id="3aff3-152"><xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>では、イベント引数の <xref:System.Windows.Automation.AutomationPropertyChangedEventArgs.Property%2A> メンバーを調べることによって、変更されたプロパティを識別できます。</span><span class="sxs-lookup"><span data-stu-id="3aff3-152">In the <xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>, you can identify the property that has changed by checking the <xref:System.Windows.Automation.AutomationPropertyChangedEventArgs.Property%2A> member of the event arguments.</span></span> <span data-ttu-id="3aff3-153">また、引数には、変更された [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティの古い値と新しい値も含まれています。</span><span class="sxs-lookup"><span data-stu-id="3aff3-153">The arguments also contain the old and new values of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] property that has changed.</span></span> <span data-ttu-id="3aff3-154">これらの値は <xref:System.Object> 型であり、使用する前に正しい型にキャストする必要があります。</span><span class="sxs-lookup"><span data-stu-id="3aff3-154">These values are of type <xref:System.Object> and must be cast to the correct type before being used.</span></span>  
   
 <a name="Additional_AutomationElement_Properties"></a>   
-## その他の AutomationElement プロパティ  
- <xref:System.Windows.Automation.AutomationElement.Current%2A> プロパティおよび <xref:System.Windows.Automation.AutomationElement.Cached%2A> プロパティの構造体に加えて、<xref:System.Windows.Automation.AutomationElement> には、単純なプロパティ アクセサーを介して取得される次のプロパティがあります。  
+## <a name="additional-automationelement-properties"></a><span data-ttu-id="3aff3-155">その他の AutomationElement プロパティ</span><span class="sxs-lookup"><span data-stu-id="3aff3-155">Additional AutomationElement Properties</span></span>  
+ <span data-ttu-id="3aff3-156"><xref:System.Windows.Automation.AutomationElement.Current%2A> プロパティおよび <xref:System.Windows.Automation.AutomationElement.Cached%2A> プロパティの構造体に加えて、 <xref:System.Windows.Automation.AutomationElement> には、単純なプロパティ アクセサーを介して取得される次のプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="3aff3-156">In addition to the <xref:System.Windows.Automation.AutomationElement.Current%2A> and <xref:System.Windows.Automation.AutomationElement.Cached%2A> property structures, <xref:System.Windows.Automation.AutomationElement> has the following properties, which are retrieved through simple property accessors.</span></span>  
   
-|プロパティ|説明|  
-|-----------|--------|  
-|<xref:System.Windows.Automation.AutomationElement.CachedChildren%2A>|キャッシュ内にある子 <xref:System.Windows.Automation.AutomationElement> オブジェクトのコレクション。|  
-|<xref:System.Windows.Automation.AutomationElement.CachedParent%2A>|キャッシュ内にある <xref:System.Windows.Automation.AutomationElement> 親オブジェクト。|  
-|<xref:System.Windows.Automation.AutomationElement.FocusedElement%2A>|\(静的なプロパティ\) 入力フォーカスがある <xref:System.Windows.Automation.AutomationElement>。|  
-|<xref:System.Windows.Automation.AutomationElement.RootElement%2A>|\(静的プロパティ\) ルート <xref:System.Windows.Automation.AutomationElement>。|  
+|<span data-ttu-id="3aff3-157">プロパティ</span><span class="sxs-lookup"><span data-stu-id="3aff3-157">Property</span></span>|<span data-ttu-id="3aff3-158">説明</span><span class="sxs-lookup"><span data-stu-id="3aff3-158">Description</span></span>|  
+|--------------|-----------------|  
+|<xref:System.Windows.Automation.AutomationElement.CachedChildren%2A>|<span data-ttu-id="3aff3-159">キャッシュ内にある子 <xref:System.Windows.Automation.AutomationElement> オブジェクトのコレクション。</span><span class="sxs-lookup"><span data-stu-id="3aff3-159">A collection of child <xref:System.Windows.Automation.AutomationElement> objects that are in the cache.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElement.CachedParent%2A>|<span data-ttu-id="3aff3-160">キャッシュ内にある <xref:System.Windows.Automation.AutomationElement> 親オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="3aff3-160">An <xref:System.Windows.Automation.AutomationElement> parent object that is in the cache.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElement.FocusedElement%2A>|<span data-ttu-id="3aff3-161">(静的なプロパティ) 入力フォーカスがある <xref:System.Windows.Automation.AutomationElement> 。</span><span class="sxs-lookup"><span data-stu-id="3aff3-161">(Static property) The <xref:System.Windows.Automation.AutomationElement> that has the input focus.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElement.RootElement%2A>|<span data-ttu-id="3aff3-162">(静的プロパティ) ルート <xref:System.Windows.Automation.AutomationElement>。</span><span class="sxs-lookup"><span data-stu-id="3aff3-162">(Static property) The root <xref:System.Windows.Automation.AutomationElement>.</span></span>|  
   
-## 参照  
- [Caching in UI Automation Clients](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md)   
- [Server\-Side UI Automation Provider Implementation](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)   
- [Subscribe to UI Automation Events](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)
+## <a name="see-also"></a><span data-ttu-id="3aff3-163">関連項目</span><span class="sxs-lookup"><span data-stu-id="3aff3-163">See Also</span></span>  
+ [<span data-ttu-id="3aff3-164">UI オートメーション クライアントにおけるキャッシュ</span><span class="sxs-lookup"><span data-stu-id="3aff3-164">Caching in UI Automation Clients</span></span>](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md)  
+ [<span data-ttu-id="3aff3-165">サーバー側 UI オートメーション プロバイダーの実装</span><span class="sxs-lookup"><span data-stu-id="3aff3-165">Server-Side UI Automation Provider Implementation</span></span>](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)  
+ [<span data-ttu-id="3aff3-166">UI オートメーション イベントにサブスクライブします。</span><span class="sxs-lookup"><span data-stu-id="3aff3-166">Subscribe to UI Automation Events</span></span>](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)

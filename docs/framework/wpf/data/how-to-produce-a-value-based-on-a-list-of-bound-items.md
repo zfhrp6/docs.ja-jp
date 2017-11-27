@@ -1,43 +1,49 @@
 ---
-title: "方法 : バインドされた項目の一覧に基づいて値を生成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "データ バインディング, MultiBinding"
-  - "MultiBinding"
+title: "方法 : バインドされた項目の一覧に基づいて値を生成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- data binding [WPF], MultiBinding
+- Multibinding [WPF]
 ms.assetid: b3d06378-b511-4181-95aa-316d60c9229b
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7d16a198ed78c1ffd9dcaad595e9cc9be3cb2de0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : バインドされた項目の一覧に基づいて値を生成する
-<xref:System.Windows.Data.MultiBinding> を使用すると、ソース プロパティの一覧に[バインディング ターゲット](GTMT) プロパティをバインドし、指定した入力で値を生成するロジックを適用することができます。  この例では、<xref:System.Windows.Data.MultiBinding> を使用する方法を示します。  
+# <a name="how-to-produce-a-value-based-on-a-list-of-bound-items"></a><span data-ttu-id="53e9f-102">方法 : バインドされた項目の一覧に基づいて値を生成する</span><span class="sxs-lookup"><span data-stu-id="53e9f-102">How to: Produce a Value Based on a List of Bound Items</span></span>
+<span data-ttu-id="53e9f-103"><xref:System.Windows.Data.MultiBinding>使用すると、ソースのプロパティの一覧にバインディング ターゲット プロパティをバインドし、指定された入力の値を生成するロジックを適用できます。</span><span class="sxs-lookup"><span data-stu-id="53e9f-103"><xref:System.Windows.Data.MultiBinding> allows you to bind a binding target property to a list of source properties and then apply logic to produce a value with the given inputs.</span></span> <span data-ttu-id="53e9f-104">この例は、使用する方法を示します<xref:System.Windows.Data.MultiBinding>です。</span><span class="sxs-lookup"><span data-stu-id="53e9f-104">This example demonstrates how to use <xref:System.Windows.Data.MultiBinding>.</span></span>  
   
-## 使用例  
- 次の例では、`NameListData` は、`PersonName` オブジェクトのコレクションを参照します。このオブジェクトは、`firstName` と `lastName` の 2 つのプロパティを含みます。  個人の氏名を姓から表示する <xref:System.Windows.Controls.TextBlock> を生成する例を次に示します。  
+## <a name="example"></a><span data-ttu-id="53e9f-105">例</span><span class="sxs-lookup"><span data-stu-id="53e9f-105">Example</span></span>  
+ <span data-ttu-id="53e9f-106">次の例では、`NameListData` は、`PersonName` オブジェクトのコレクションを参照します。このオブジェクトは、`firstName` と `lastName` の 2 つのプロパティを含みます。</span><span class="sxs-lookup"><span data-stu-id="53e9f-106">In the following example, `NameListData` refers to a collection of `PersonName` objects, which are objects that contain two properties, `firstName` and `lastName`.</span></span> <span data-ttu-id="53e9f-107">次のコード生成、<xref:System.Windows.Controls.TextBlock>最後の名前を持つ人物の姓と名の先頭を示すです。</span><span class="sxs-lookup"><span data-stu-id="53e9f-107">The following example produces a <xref:System.Windows.Controls.TextBlock> that shows the first and last names of a person with the last name first.</span></span>  
   
- [!code-xml[MultiBinding#Resources1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MultiBinding/CSharp/Window1.xaml#resources1)]  
-[!code-xml[MultiBinding#Resources2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MultiBinding/CSharp/Window1.xaml#resources2)]  
-[!code-xml[MultiBinding#MultiBindingTextBox2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MultiBinding/CSharp/Window1.xaml#multibindingtextbox2)]  
-[!code-xml[MultiBinding#Window](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MultiBinding/CSharp/Window1.xaml#window)]  
+ [!code-xaml[MultiBinding#Resources1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MultiBinding/CSharp/Window1.xaml#resources1)]  
+[!code-xaml[MultiBinding#Resources2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MultiBinding/CSharp/Window1.xaml#resources2)]  
+[!code-xaml[MultiBinding#MultiBindingTextBox2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MultiBinding/CSharp/Window1.xaml#multibindingtextbox2)]  
+[!code-xaml[MultiBinding#Window](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MultiBinding/CSharp/Window1.xaml#window)]  
   
- 姓が先の形式を生成する方法を理解するには、次に示す `NameConverter` の実装を参照してください。  
+ <span data-ttu-id="53e9f-108">姓が先の形式を生成する方法を理解するには、次に示す `NameConverter` の実装をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="53e9f-108">To understand how the last-name-first format is produced, let's take a look at the implementation of the `NameConverter`:</span></span>  
   
  [!code-csharp[MultiBinding#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MultiBinding/CSharp/NameConverter.cs#3)]
  [!code-vb[MultiBinding#3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/MultiBinding/VisualBasic/NameConverter.vb#3)]  
   
- `NameConverter` では、<xref:System.Windows.Data.IMultiValueConverter> インターフェイスを実装します。  `NameConverter` は、個々のバインディングから値を受け取り、それらを値のオブジェクト配列に格納します。  <xref:System.Windows.Data.Binding> 要素が <xref:System.Windows.Data.MultiBinding> 要素の下に出現する順序は、値が配列内に格納されている順序です。  <xref:System.Windows.Data.MultiBinding.ConverterParameter%2A> 属性の値は、名前の形式を決定するパラメーターの切り替えを実行する <xref:System.Windows.Data.MultiBinding.Converter%2A> メソッドのパラメーター引数によって参照されます。  
+ <span data-ttu-id="53e9f-109">`NameConverter` は、<xref:System.Windows.Data.IMultiValueConverter> インターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="53e9f-109">`NameConverter` implements the <xref:System.Windows.Data.IMultiValueConverter> interface.</span></span> <span data-ttu-id="53e9f-110">`NameConverter` は、個々のバインディングから値を受け取り、それらを値のオブジェクト配列に格納します。</span><span class="sxs-lookup"><span data-stu-id="53e9f-110">`NameConverter` takes the values from the individual bindings and stores them in the values object array.</span></span> <span data-ttu-id="53e9f-111">順序、<xref:System.Windows.Data.Binding>下にある要素が表示されます、<xref:System.Windows.Data.MultiBinding>要素は、それらの値が配列に格納されている順序。</span><span class="sxs-lookup"><span data-stu-id="53e9f-111">The order in which the <xref:System.Windows.Data.Binding> elements appear under the <xref:System.Windows.Data.MultiBinding> element is the order in which those values are stored in the array.</span></span> <span data-ttu-id="53e9f-112">値、<xref:System.Windows.Data.MultiBinding.ConverterParameter%2A>属性がのパラメーターの引数によって参照される、<xref:System.Windows.Data.MultiBinding.Converter%2A>メソッドで、名前を書式設定する方法を決定するパラメーターの切り替えを実行します。</span><span class="sxs-lookup"><span data-stu-id="53e9f-112">The value of the <xref:System.Windows.Data.MultiBinding.ConverterParameter%2A> attribute is referenced by the parameter argument of the <xref:System.Windows.Data.MultiBinding.Converter%2A> method, which performs a switch on the parameter to determine how to format the name.</span></span>  
   
-## 参照  
- [バインドされたデータを変換する](../../../../docs/framework/wpf/data/how-to-convert-bound-data.md)   
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="53e9f-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="53e9f-113">See Also</span></span>  
+ [<span data-ttu-id="53e9f-114">バインドされたデータを変換する</span><span class="sxs-lookup"><span data-stu-id="53e9f-114">Convert Bound Data</span></span>](../../../../docs/framework/wpf/data/how-to-convert-bound-data.md)  
+ [<span data-ttu-id="53e9f-115">データ バインディングの概要</span><span class="sxs-lookup"><span data-stu-id="53e9f-115">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [<span data-ttu-id="53e9f-116">方法トピック</span><span class="sxs-lookup"><span data-stu-id="53e9f-116">How-to Topics</span></span>](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

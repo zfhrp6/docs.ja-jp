@@ -1,184 +1,185 @@
 ---
-title: "企業の購買プロセス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "企業の購買プロセス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a5e57336-4290-41ea-936d-435593d97055
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ea3814fe187fb721771b6ce09a5fa0ff95558852
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 企業の購買プロセス
-このサンプルは、Request for Proposals \(RFP: 提案依頼書\) に基づくごく基本的な購買プロセスを作成する方法を示しています。この購買プロセスでは最良の提案が自動的に選択されます。  このサンプルでは、<xref:System.Activities.Statements.Parallel>、<xref:System.Activities.Statements.ParallelForEach%601>、および <xref:System.Activities.Statements.ForEach%601> と、プロセスを表すワークフローを作成するカスタム アクティビティが組み合わされています。  
+# <a name="corporate-purchase-process"></a><span data-ttu-id="311ff-102">企業の購買プロセス</span><span class="sxs-lookup"><span data-stu-id="311ff-102">Corporate Purchase Process</span></span>
+<span data-ttu-id="311ff-103">このサンプルは、Request for Proposals (RFP: 提案依頼書) に基づくごく基本的な購買プロセスを作成する方法を示しています。この購買プロセスでは最良の提案が自動的に選択されます。</span><span class="sxs-lookup"><span data-stu-id="311ff-103">This sample shows how to create a very basic Request for Proposals (RFP) based purchase process with automatic best proposal selection.</span></span> <span data-ttu-id="311ff-104">このサンプルでは、<xref:System.Activities.Statements.Parallel>、<xref:System.Activities.Statements.ParallelForEach%601>、および <xref:System.Activities.Statements.ForEach%601> と、プロセスを表すワークフローを作成するカスタム アクティビティが組み合わされています。</span><span class="sxs-lookup"><span data-stu-id="311ff-104">It combines <xref:System.Activities.Statements.Parallel>, <xref:System.Activities.Statements.ParallelForEach%601>, and <xref:System.Activities.Statements.ForEach%601> and a custom activity to create a workflow that represents the process.</span></span>  
   
- このサンプルには、異なる参加者として \(元の要求者や特定のベンダーとして\) プロセスとやり取りできる [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] クライアント アプリケーションが含まれています。  
+ <span data-ttu-id="311ff-105">このサンプルには、異なる参加者として (元の要求者や特定のベンダーとして) プロセスとやり取りできる [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] クライアント アプリケーションが含まれています。</span><span class="sxs-lookup"><span data-stu-id="311ff-105">This sample contains an [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] client application that allows interacting with the process as different participants (as the original requester or a particular vendor).</span></span>  
   
-## 必要条件  
+## <a name="requirements"></a><span data-ttu-id="311ff-106">要件</span><span class="sxs-lookup"><span data-stu-id="311ff-106">Requirements</span></span>  
   
--   [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]。  
+-   [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]<span data-ttu-id="311ff-107">。</span><span class="sxs-lookup"><span data-stu-id="311ff-107">.</span></span>  
   
--   [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]。  
+-   [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]<span data-ttu-id="311ff-108">。</span><span class="sxs-lookup"><span data-stu-id="311ff-108">.</span></span>  
   
-## 使用例  
+## <a name="demonstrates"></a><span data-ttu-id="311ff-109">使用例</span><span class="sxs-lookup"><span data-stu-id="311ff-109">Demonstrates</span></span>  
   
--   カスタム アクティビティ。  
+-   <span data-ttu-id="311ff-110">カスタム アクティビティ。</span><span class="sxs-lookup"><span data-stu-id="311ff-110">Custom activities.</span></span>  
   
--   アクティビティの構成。  
+-   <span data-ttu-id="311ff-111">アクティビティの構成。</span><span class="sxs-lookup"><span data-stu-id="311ff-111">Composition of activities.</span></span>  
   
--   ブックマーク。  
+-   <span data-ttu-id="311ff-112">ブックマーク。</span><span class="sxs-lookup"><span data-stu-id="311ff-112">Bookmarks.</span></span>  
   
--   永続性。  
+-   <span data-ttu-id="311ff-113">永続性。</span><span class="sxs-lookup"><span data-stu-id="311ff-113">Persistence.</span></span>  
   
--   スキーマ化された永続化。  
+-   <span data-ttu-id="311ff-114">スキーマ化された永続化。</span><span class="sxs-lookup"><span data-stu-id="311ff-114">Schematized persistence.</span></span>  
   
--   トレース。  
+-   <span data-ttu-id="311ff-115">トレース。</span><span class="sxs-lookup"><span data-stu-id="311ff-115">Tracing.</span></span>  
   
--   追跡。  
+-   <span data-ttu-id="311ff-116">追跡。</span><span class="sxs-lookup"><span data-stu-id="311ff-116">Tracking.</span></span>  
   
--   さまざまなクライアントでの [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のホスティング \([!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web アプリケーションおよび WinForms アプリケーション\)。  
+-   <span data-ttu-id="311ff-117">さまざまなクライアントでの [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のホスティング ([!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web アプリケーションおよび WinForms アプリケーション)。</span><span class="sxs-lookup"><span data-stu-id="311ff-117">Hosting [!INCLUDE[wf1](../../../../includes/wf1-md.md)] in different clients ([!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web applications and WinForms applications).</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。  続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="311ff-118">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="311ff-118">The samples may already be installed on your machine.</span></span> <span data-ttu-id="311ff-119">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="311ff-119">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。  このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="311ff-120">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="311ff-120">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="311ff-121">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="311ff-121">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Application\PurchaseProcess`  
   
-## プロセスの説明  
- このサンプルは、任意の会社のためにベンダーからの提案を集める [!INCLUDE[wf](../../../../includes/wf-md.md)] プログラムの実装を示しています。  
+## <a name="description-of-the-process"></a><span data-ttu-id="311ff-122">プロセスの説明</span><span class="sxs-lookup"><span data-stu-id="311ff-122">Description of the Process</span></span>  
+ <span data-ttu-id="311ff-123">このサンプルは、任意の会社のためにベンダーからの提案を集める [!INCLUDE[wf](../../../../includes/wf-md.md)] プログラムの実装を示しています。</span><span class="sxs-lookup"><span data-stu-id="311ff-123">This sample shows an implementation of a [!INCLUDE[wf](../../../../includes/wf-md.md)] program to gather proposals from vendors for a generic company.</span></span>  
   
-1.  Company X の従業員が Request for Proposal \(RFP\) を作成します。  
+1.  <span data-ttu-id="311ff-124">Company X の従業員が Request for Proposal (RFP) を作成します。</span><span class="sxs-lookup"><span data-stu-id="311ff-124">An employee of Company X creates a Request for Proposal (RFP).</span></span>  
   
-    1.  RFP のタイトルと説明を入力します。  
+    1.  <span data-ttu-id="311ff-125">RFP のタイトルと説明を入力します。</span><span class="sxs-lookup"><span data-stu-id="311ff-125">The employee types in the RFP title and description.</span></span>  
   
-    2.  提案の送信を依頼するベンダーを選択します。  
+    2.  <span data-ttu-id="311ff-126">提案の送信を依頼するベンダーを選択します。</span><span class="sxs-lookup"><span data-stu-id="311ff-126">The employee selects the vendors that he wants to invite to submit proposals.</span></span>  
   
-2.  従業員が提案を送信します。  
+2.  <span data-ttu-id="311ff-127">従業員が提案を送信します。</span><span class="sxs-lookup"><span data-stu-id="311ff-127">The employee submits the proposal.</span></span>  
   
-    1.  ワークフローのインスタンスが作成されます。  
+    1.  <span data-ttu-id="311ff-128">ワークフローのインスタンスが作成されます。</span><span class="sxs-lookup"><span data-stu-id="311ff-128">An instance of the workflow is created.</span></span>  
   
-    2.  ワークフローは、すべてのベンダーから提案が送信されるまで待機します。  
+    2.  <span data-ttu-id="311ff-129">ワークフローは、すべてのベンダーから提案が送信されるまで待機します。</span><span class="sxs-lookup"><span data-stu-id="311ff-129">The workflow is waiting for all vendors to submit their proposals.</span></span>  
   
-3.  すべての提案が受信されると、それらがワークフローによって反復処理されて、最良の提案が選択されます。  
+3.  <span data-ttu-id="311ff-130">すべての提案が受信されると、それらがワークフローによって反復処理されて、最良の提案が選択されます。</span><span class="sxs-lookup"><span data-stu-id="311ff-130">After all proposals are received, the workflow iterates through all the received proposals and selects the best one.</span></span>  
   
-    1.  ベンダーにはそれぞれ評価があります \(評価リストは VendorRepository.cs に格納されています\)。  
+    1.  <span data-ttu-id="311ff-131">ベンダーにはそれぞれ評価があります (評価リストは VendorRepository.cs に格納されています)。</span><span class="sxs-lookup"><span data-stu-id="311ff-131">Each vendor has a reputation (this sample stores the reputation list in VendorRepository.cs).</span></span>  
   
-    2.  提案の合計金額は、\(ベンダーによって入力された金額\) \* \(記録されているベンダーの評価\) \/ 100 という式によって決定されます。  
+    2.  <span data-ttu-id="311ff-132">提案の合計金額は、(ベンダーによって入力された金額) * (記録されているベンダーの評価) / 100 という式によって決定されます。</span><span class="sxs-lookup"><span data-stu-id="311ff-132">The total value of the proposal is determined by (The value typed in by the vendor) * (The vendor's recorded reputation) / 100.</span></span>  
   
-4.  元の要求者は、送信されたすべての提案を表示できます。  最良の提案はレポートの特別なセクションに表示されます。  
+4.  <span data-ttu-id="311ff-133">元の要求者は、送信されたすべての提案を表示できます。</span><span class="sxs-lookup"><span data-stu-id="311ff-133">The original requester can see all the submitted proposals.</span></span> <span data-ttu-id="311ff-134">最良の提案はレポートの特別なセクションに表示されます。</span><span class="sxs-lookup"><span data-stu-id="311ff-134">The best proposal is presented in a special section in the report.</span></span>  
   
-## プロセスの定義  
- このサンプルのコア ロジックでは <xref:System.Activities.Statements.ParallelForEach%601> アクティビティが使用されています。このアクティビティは、各ベンダーからの提案を待機して \(ブックマークを作成するカスタム アクティビティを使用\)、ベンダーの提案を RFP として登録します \(<xref:System.Activities.Statements.InvokeMethod> アクティビティを使用\)。  
+## <a name="process-definition"></a><span data-ttu-id="311ff-135">プロセスの定義</span><span class="sxs-lookup"><span data-stu-id="311ff-135">Process Definition</span></span>  
+ <span data-ttu-id="311ff-136">このサンプルのコア ロジックでは <xref:System.Activities.Statements.ParallelForEach%601> アクティビティが使用されています。このアクティビティは、各ベンダーからの提案を待機して (ブックマークを作成するカスタム アクティビティを使用)、ベンダーの提案を RFP として登録します (<xref:System.Activities.Statements.InvokeMethod> アクティビティを使用)。</span><span class="sxs-lookup"><span data-stu-id="311ff-136">The core logic of the sample uses a <xref:System.Activities.Statements.ParallelForEach%601> activity that waits for the offers from each vendor (using a custom activity that creates a bookmark), and registers the vendor proposal as an RFP (using an <xref:System.Activities.Statements.InvokeMethod> activity).</span></span>  
   
- その後、`RfpRepository` に格納されている受信したすべての提案が反復処理されて、調整金額が計算されます \(<xref:System.Activities.Statements.Assign> アクティビティと <xref:System.Activities.Expressions> アクティビティを使用\)。調整金額が前の最良の提案より優れている場合は、その新しい金額が最良の提案に割り当てられます \(<xref:System.Activities.Statements.If> アクティビティと <xref:System.Activities.Statements.Assign> アクティビティを使用\)。  
+ <span data-ttu-id="311ff-137">その後、`RfpRepository` に格納されている受信したすべての提案が反復処理されて、調整金額が計算されます (<xref:System.Activities.Statements.Assign> アクティビティと <xref:System.Activities.Expressions> アクティビティを使用)。調整金額が前の最良の提案より優れている場合は、その新しい金額が最良の提案に割り当てられます (<xref:System.Activities.Statements.If> アクティビティと <xref:System.Activities.Statements.Assign> アクティビティを使用)。</span><span class="sxs-lookup"><span data-stu-id="311ff-137">The sample then iterates through all of the received proposals stored in the `RfpRepository`, calculating the adjusted value (using an <xref:System.Activities.Statements.Assign> activity and <xref:System.Activities.Expressions> activities), and if the adjusted value is better than the previous best offer, assigns the new value as the best offer (using <xref:System.Activities.Statements.If> and <xref:System.Activities.Statements.Assign> activities).</span></span>  
   
-## このサンプルのプロジェクト  
- このサンプルには次のプロジェクトが含まれています。  
+## <a name="projects-in-this-sample"></a><span data-ttu-id="311ff-138">このサンプルのプロジェクト</span><span class="sxs-lookup"><span data-stu-id="311ff-138">Projects in this Sample</span></span>  
+ <span data-ttu-id="311ff-139">このサンプルには次のプロジェクトが含まれています。</span><span class="sxs-lookup"><span data-stu-id="311ff-139">This sample contains the following projects.</span></span>  
   
-|プロジェクト|説明|  
-|------------|--------|  
-|Common|プロセス内で使用されるエンティティ オブジェクト \(Request for Proposal、Vendor、および Vendor Proposal\)。|  
-|WfDefinition|購買プロセス ワークフローのインスタンスの作成および使用のためにクライアント アプリケーションによって使用されるプロセス \([!INCLUDE[wf1](../../../../includes/wf1-md.md)] プログラムとしてのプロセス\) とホスト \(`PurchaseProcessHost`\) の定義。|  
-|WebClient|購買プロセスのインスタンスを作成したりそれに参加したりできる [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] クライアント アプリケーション。  独自に作成したホストを使用してワークフロー エンジンとやり取りします。|  
-|WinFormsClient|購買プロセスのインスタンスを作成したりそれに参加したりできる Windows フォーム クライアント アプリケーション。  独自に作成したホストを使用してワークフロー エンジンとやり取りします。|  
+|<span data-ttu-id="311ff-140">プロジェクト</span><span class="sxs-lookup"><span data-stu-id="311ff-140">Project</span></span>|<span data-ttu-id="311ff-141">説明</span><span class="sxs-lookup"><span data-stu-id="311ff-141">Description</span></span>|  
+|-------------|-----------------|  
+|<span data-ttu-id="311ff-142">Common</span><span class="sxs-lookup"><span data-stu-id="311ff-142">Common</span></span>|<span data-ttu-id="311ff-143">プロセス内で使用されるエンティティ オブジェクト (Request for Proposal、Vendor、および Vendor Proposal)。</span><span class="sxs-lookup"><span data-stu-id="311ff-143">The entity objects used within the process (Request for Proposal, Vendor, and Vendor Proposal).</span></span>|  
+|<span data-ttu-id="311ff-144">WfDefinition</span><span class="sxs-lookup"><span data-stu-id="311ff-144">WfDefinition</span></span>|<span data-ttu-id="311ff-145">購買プロセス ワークフローのインスタンスの作成および使用のためにクライアント アプリケーションによって使用されるプロセス ([!INCLUDE[wf1](../../../../includes/wf1-md.md)] プログラムとしてのプロセス) とホスト (`PurchaseProcessHost`) の定義。</span><span class="sxs-lookup"><span data-stu-id="311ff-145">The definition of the process (as a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] program) and host (`PurchaseProcessHost`) used by client applications for creating and using instances of the purchase process workflow.</span></span>|  
+|<span data-ttu-id="311ff-146">WebClient</span><span class="sxs-lookup"><span data-stu-id="311ff-146">WebClient</span></span>|<span data-ttu-id="311ff-147">購買プロセスのインスタンスを作成したりそれに参加したりできる [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] クライアント アプリケーション。</span><span class="sxs-lookup"><span data-stu-id="311ff-147">An [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] client application that allows the users to create and participate in instances of the purchase process.</span></span> <span data-ttu-id="311ff-148">独自に作成したホストを使用してワークフロー エンジンとやり取りします。</span><span class="sxs-lookup"><span data-stu-id="311ff-148">It uses a custom-created host to interact with the workflow engine.</span></span>|  
+|<span data-ttu-id="311ff-149">WinFormsClient</span><span class="sxs-lookup"><span data-stu-id="311ff-149">WinFormsClient</span></span>|<span data-ttu-id="311ff-150">購買プロセスのインスタンスを作成したりそれに参加したりできる Windows フォーム クライアント アプリケーション。</span><span class="sxs-lookup"><span data-stu-id="311ff-150">A Windows Forms client application that allows the users to create and participate in instances of the purchase process.</span></span> <span data-ttu-id="311ff-151">独自に作成したホストを使用してワークフロー エンジンとやり取りします。</span><span class="sxs-lookup"><span data-stu-id="311ff-151">It uses a custom-created host to interact with the workflow engine.</span></span>|  
   
-### WfDefinition  
- 次の表には、WfDefinition プロジェクトの最も重要なファイルの説明が含まれています。  
+### <a name="wfdefinition"></a><span data-ttu-id="311ff-152">WfDefinition</span><span class="sxs-lookup"><span data-stu-id="311ff-152">WfDefinition</span></span>  
+ <span data-ttu-id="311ff-153">次の表には、WfDefinition プロジェクトの最も重要なファイルの説明が含まれています。</span><span class="sxs-lookup"><span data-stu-id="311ff-153">The following table contains a description of the most important files in the WfDefinition project.</span></span>  
   
-|ファイル|説明|  
-|----------|--------|  
-|IPurchaseProcessHost.cs|ワークフローのホストのインターフェイス。|  
-|PurchaseProcessHost.cs|ワークフローのホストの実装。  ホストは、ワークフロー ランタイムの詳細を抽象化します。`PurchaseProcess` ワークフローのインスタンスの読み込み、実行、およびインスタンスとのやり取りのために、すべてのクライアント アプリケーションで使用されます。|  
-|PurchaseProcessWorkflow.cs|Purchase Process ワークフローの定義を含むアクティビティ \(<xref:System.Activities.Activity> から派生します\)。<br /><br /> <xref:System.Activities.Activity> から派生するアクティビティは、既存のカスタム アクティビティと [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] アクティビティ ライブラリのアクティビティをまとめることで機能を構成します。  これらのアクティビティをまとめることは、カスタム機能を作成するための最も基本的な方法です。|  
-|WaitForVendorProposal.cs|このカスタム アクティビティは <xref:System.Activities.NativeActivity> から派生し、後にベンダーが提案を送信するときに再開する必要がある名前付きブックマークを作成します。<br /><br /> <xref:System.Activities.NativeActivity> から派生するアクティビティは、<xref:System.Activities.CodeActivity> から派生するアクティビティと同様に、<xref:System.Activities.NativeActivity.Execute%2A> をオーバーライドすることで、命令型機能を作成します。ただし、<xref:System.Activities.ActivityContext> メソッドに渡される `Execute` を介して、ワークフロー ランタイムのすべての機能にもアクセスできます。  このコンテキストは、子アクティビティのスケジュールと取り消し、非永続化ゾーン \(アトミック トランザクションの中など、ランタイムによってワークフローのデータが永続化されない実行ブロック\) の設定、および <xref:System.Activities.Bookmark> オブジェクト \(一時停止したワークフローの再開を処理\) をサポートします。|  
-|TrackingParticipant.cs|すべての追跡イベントを受信してテキスト ファイルに保存する <xref:System.Activities.Tracking.TrackingParticipant>。<br /><br /> 追跡参加要素は拡張としてワークフロー インスタンスに追加されます。|  
-|XmlWorkflowInstanceStore.cs|ワークフロー アプリケーションを XML ファイルに保存するカスタムの <xref:System.Runtime.DurableInstancing.InstanceStore>。|  
-|XmlPersistenceParticipant.cs|Request for Proposal のインスタンスを XML ファイルに保存するカスタムの <xref:System.Activities.Persistence.PersistenceParticipant>。|  
-|AsyncResult.cs \/ CompletedAsyncResult.cs|永続化コンポーネントに非同期パターンを実装するためのヘルパー クラス。|  
+|<span data-ttu-id="311ff-154">ファイル</span><span class="sxs-lookup"><span data-stu-id="311ff-154">File</span></span>|<span data-ttu-id="311ff-155">説明</span><span class="sxs-lookup"><span data-stu-id="311ff-155">Description</span></span>|  
+|----------|-----------------|  
+|<span data-ttu-id="311ff-156">IPurchaseProcessHost.cs</span><span class="sxs-lookup"><span data-stu-id="311ff-156">IPurchaseProcessHost.cs</span></span>|<span data-ttu-id="311ff-157">ワークフローのホストのインターフェイス。</span><span class="sxs-lookup"><span data-stu-id="311ff-157">Interface for the host of the workflow.</span></span>|  
+|<span data-ttu-id="311ff-158">PurchaseProcessHost.cs</span><span class="sxs-lookup"><span data-stu-id="311ff-158">PurchaseProcessHost.cs</span></span>|<span data-ttu-id="311ff-159">ワークフローのホストの実装。</span><span class="sxs-lookup"><span data-stu-id="311ff-159">Implementation of a host for the workflow.</span></span> <span data-ttu-id="311ff-160">ホストは、ワークフロー ランタイムの詳細を抽象化します。`PurchaseProcess` ワークフローのインスタンスの読み込み、実行、およびインスタンスとのやり取りのために、すべてのクライアント アプリケーションで使用されます。</span><span class="sxs-lookup"><span data-stu-id="311ff-160">The host abstracts the details of the workflow runtime and is used in all the client applications to load, run, and interact with `PurchaseProcess` workflow instances.</span></span>|  
+|<span data-ttu-id="311ff-161">PurchaseProcessWorkflow.cs</span><span class="sxs-lookup"><span data-stu-id="311ff-161">PurchaseProcessWorkflow.cs</span></span>|<span data-ttu-id="311ff-162">Purchase Process ワークフローの定義を含むアクティビティ (<xref:System.Activities.Activity> から派生します)。</span><span class="sxs-lookup"><span data-stu-id="311ff-162">An activity that contains the definition of the Purchase Process workflow (derives from <xref:System.Activities.Activity>).</span></span><br /><br /> <span data-ttu-id="311ff-163"><xref:System.Activities.Activity> から派生するアクティビティは、既存のカスタム アクティビティと [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] アクティビティ ライブラリのアクティビティをまとめることで機能を構成します。</span><span class="sxs-lookup"><span data-stu-id="311ff-163">Activities that derive from <xref:System.Activities.Activity> compose functionality by assembling existing custom activities and activities from the [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] activity library.</span></span> <span data-ttu-id="311ff-164">これらのアクティビティをまとめることは、カスタム機能を作成するための最も基本的な方法です。</span><span class="sxs-lookup"><span data-stu-id="311ff-164">Assembling these activities is the most basic way to create custom functionality.</span></span>|  
+|<span data-ttu-id="311ff-165">WaitForVendorProposal.cs</span><span class="sxs-lookup"><span data-stu-id="311ff-165">WaitForVendorProposal.cs</span></span>|<span data-ttu-id="311ff-166">このカスタム アクティビティは <xref:System.Activities.NativeActivity> から派生し、後にベンダーが提案を送信するときに再開する必要がある名前付きブックマークを作成します。</span><span class="sxs-lookup"><span data-stu-id="311ff-166">This custom activity derives from <xref:System.Activities.NativeActivity> and creates a named bookmark that must be resumed later by a vendor when submitting the proposal.</span></span><br /><br /> <span data-ttu-id="311ff-167"><xref:System.Activities.NativeActivity> から派生するアクティビティは、<xref:System.Activities.CodeActivity> から派生するアクティビティと同様に、<xref:System.Activities.NativeActivity.Execute%2A> をオーバーライドすることで、命令型機能を作成します。ただし、<xref:System.Activities.ActivityContext> メソッドに渡される `Execute` を介して、ワークフロー ランタイムのすべての機能にもアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="311ff-167">Activities that derive from <xref:System.Activities.NativeActivity>, like those that derive from <xref:System.Activities.CodeActivity>, create imperative functionality by overriding <xref:System.Activities.NativeActivity.Execute%2A>, but also have access to all of the functionality of the workflow runtime through the <xref:System.Activities.ActivityContext> that gets passed into the `Execute` method.</span></span> <span data-ttu-id="311ff-168">このコンテキストは、子アクティビティのスケジュールと取り消し、非永続化ゾーン (アトミック トランザクションの中など、ランタイムによってワークフローのデータが永続化されない実行ブロック) の設定、および <xref:System.Activities.Bookmark> オブジェクト (一時停止したワークフローの再開を処理) をサポートします。</span><span class="sxs-lookup"><span data-stu-id="311ff-168">This context has support for scheduling and canceling child activities, setting up no-persist zones (execution blocks during which the runtime does not persist the workflow’s data, such as within atomic transactions), and <xref:System.Activities.Bookmark> objects (handles for resuming paused workflows).</span></span>|  
+|<span data-ttu-id="311ff-169">TrackingParticipant.cs</span><span class="sxs-lookup"><span data-stu-id="311ff-169">TrackingParticipant.cs</span></span>|<span data-ttu-id="311ff-170">すべての追跡イベントを受信してテキスト ファイルに保存する <xref:System.Activities.Tracking.TrackingParticipant>。</span><span class="sxs-lookup"><span data-stu-id="311ff-170">A <xref:System.Activities.Tracking.TrackingParticipant> that receives all tracking events and saves them to a text file.</span></span><br /><br /> <span data-ttu-id="311ff-171">追跡参加要素は拡張としてワークフロー インスタンスに追加されます。</span><span class="sxs-lookup"><span data-stu-id="311ff-171">Tracking participants are added to workflow instance as Extensions.</span></span>|  
+|<span data-ttu-id="311ff-172">XmlWorkflowInstanceStore.cs</span><span class="sxs-lookup"><span data-stu-id="311ff-172">XmlWorkflowInstanceStore.cs</span></span>|<span data-ttu-id="311ff-173">ワークフロー アプリケーションを XML ファイルに保存するカスタムの <xref:System.Runtime.DurableInstancing.InstanceStore>。</span><span class="sxs-lookup"><span data-stu-id="311ff-173">A custom <xref:System.Runtime.DurableInstancing.InstanceStore> that saves workflow applications to XML files.</span></span>|  
+|<span data-ttu-id="311ff-174">XmlPersistenceParticipant.cs</span><span class="sxs-lookup"><span data-stu-id="311ff-174">XmlPersistenceParticipant.cs</span></span>|<span data-ttu-id="311ff-175">Request for Proposal のインスタンスを XML ファイルに保存するカスタムの <xref:System.Activities.Persistence.PersistenceParticipant>。</span><span class="sxs-lookup"><span data-stu-id="311ff-175">A custom <xref:System.Activities.Persistence.PersistenceParticipant> that saves an instance of request for proposal to an XML file.</span></span>|  
+|<span data-ttu-id="311ff-176">AsyncResult.cs / CompletedAsyncResult.cs</span><span class="sxs-lookup"><span data-stu-id="311ff-176">AsyncResult.cs / CompletedAsyncResult.cs</span></span>|<span data-ttu-id="311ff-177">永続化コンポーネントに非同期パターンを実装するためのヘルパー クラス。</span><span class="sxs-lookup"><span data-stu-id="311ff-177">Helper classes for implementing the asynchronous pattern in the persistence components.</span></span>|  
   
-### Common  
- 次の表には、Common プロジェクトの最も重要なクラスの説明が含まれています。  
+### <a name="common"></a><span data-ttu-id="311ff-178">Common</span><span class="sxs-lookup"><span data-stu-id="311ff-178">Common</span></span>  
+ <span data-ttu-id="311ff-179">次の表には、Common プロジェクトの最も重要なクラスの説明が含まれています。</span><span class="sxs-lookup"><span data-stu-id="311ff-179">The following table contains a description of the most important classes in the Common project.</span></span>  
   
-|クラス|説明|  
-|---------|--------|  
-|Vendor|Request for Proposals で提案を送信するベンダー。|  
-|RequestForProposal|Request for Proposals \(RFP\) は、ベンダーに特定の商品またはサービスについての提案の送信を求める依頼書です。|  
-|VendorProposal|ベンダーによって具象 RFP に送信された提案。|  
-|VendorRepository|Vendor のリポジトリ。  この実装には、Vendor のインスタンスのメモリ内コレクションと、それらのインスタンスを公開するためのメソッドが含まれています。|  
-|RfpRepository|Request for Proposals のリポジトリ。  この実装は、Linq to XML を使用して、スキーマ化された永続化によって生成された Request for Proposal の XML ファイルをクエリします。  このクラスは <xref:System.Runtime.Persistence.IDataViewMapper> を実装します。|  
-|IOHelper|このクラスは、I\/O 関連のすべての問題を処理します \(フォルダー、パスなど\)。|  
+|<span data-ttu-id="311ff-180">クラス</span><span class="sxs-lookup"><span data-stu-id="311ff-180">Class</span></span>|<span data-ttu-id="311ff-181">説明</span><span class="sxs-lookup"><span data-stu-id="311ff-181">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="311ff-182">Vendor</span><span class="sxs-lookup"><span data-stu-id="311ff-182">Vendor</span></span>|<span data-ttu-id="311ff-183">Request for Proposals で提案を送信するベンダー。</span><span class="sxs-lookup"><span data-stu-id="311ff-183">A vendor that submits proposals in a Request for Proposals.</span></span>|  
+|<span data-ttu-id="311ff-184">RequestForProposal</span><span class="sxs-lookup"><span data-stu-id="311ff-184">RequestForProposal</span></span>|<span data-ttu-id="311ff-185">Request for Proposals (RFP) は、ベンダーに特定の商品またはサービスについての提案の送信を求める依頼書です。</span><span class="sxs-lookup"><span data-stu-id="311ff-185">A request for proposals (RFP) is an invitation for vendors to submit proposals on a specific commodity or service.</span></span>|  
+|<span data-ttu-id="311ff-186">VendorProposal</span><span class="sxs-lookup"><span data-stu-id="311ff-186">VendorProposal</span></span>|<span data-ttu-id="311ff-187">ベンダーによって具象 RFP に送信された提案。</span><span class="sxs-lookup"><span data-stu-id="311ff-187">A proposal submitted by a vendor to a concrete RFP.</span></span>|  
+|<span data-ttu-id="311ff-188">VendorRepository</span><span class="sxs-lookup"><span data-stu-id="311ff-188">VendorRepository</span></span>|<span data-ttu-id="311ff-189">Vendor のリポジトリ。</span><span class="sxs-lookup"><span data-stu-id="311ff-189">The repository of Vendors.</span></span> <span data-ttu-id="311ff-190">この実装には、Vendor のインスタンスのメモリ内コレクションと、それらのインスタンスを公開するためのメソッドが含まれています。</span><span class="sxs-lookup"><span data-stu-id="311ff-190">This implementation contains an in-memory collection of instances of Vendor and methods for exposing those instances.</span></span>|  
+|<span data-ttu-id="311ff-191">RfpRepository</span><span class="sxs-lookup"><span data-stu-id="311ff-191">RfpRepository</span></span>|<span data-ttu-id="311ff-192">Request for Proposals のリポジトリ。</span><span class="sxs-lookup"><span data-stu-id="311ff-192">The repository of Requests for Proposals.</span></span> <span data-ttu-id="311ff-193">この実装は、Linq to XML を使用して、スキーマ化された永続化によって生成された Request for Proposal の XML ファイルをクエリします。</span><span class="sxs-lookup"><span data-stu-id="311ff-193">This implementation contains uses Linq to XML to query the XML file of Requests for Proposal generated by the schematized persistence.</span></span> <span data-ttu-id="311ff-194">このクラスは実装[System.Runtime.Persistence.IDataViewMapper](https://msdn.microsoft.com/library/system.runtime.persistence.idataviewmapper(v=vs.110).aspx)です。</span><span class="sxs-lookup"><span data-stu-id="311ff-194">This class implements [System.Runtime.Persistence.IDataViewMapper](https://msdn.microsoft.com/library/system.runtime.persistence.idataviewmapper(v=vs.110).aspx).</span></span>|  
+|<span data-ttu-id="311ff-195">IOHelper</span><span class="sxs-lookup"><span data-stu-id="311ff-195">IOHelper</span></span>|<span data-ttu-id="311ff-196">このクラスは、I/O 関連のすべての問題を処理します (フォルダー、パスなど)。</span><span class="sxs-lookup"><span data-stu-id="311ff-196">This class handles all I/O-related issues (folders, paths, and so on.)</span></span>|  
   
-### Web Client  
- 次の表には、Web Client プロジェクトの最も重要な Web ページの説明が含まれています。  
+### <a name="web-client"></a><span data-ttu-id="311ff-197">Web Client</span><span class="sxs-lookup"><span data-stu-id="311ff-197">Web Client</span></span>  
+ <span data-ttu-id="311ff-198">次の表には、Web Client プロジェクトの最も重要な Web ページの説明が含まれています。</span><span class="sxs-lookup"><span data-stu-id="311ff-198">The following table contains a description of the most important Web pages in the Web Client project.</span></span>  
   
-|||  
+|<span data-ttu-id="311ff-199">ファイル</span><span class="sxs-lookup"><span data-stu-id="311ff-199">File</span></span>|<span data-ttu-id="311ff-200">説明</span><span class="sxs-lookup"><span data-stu-id="311ff-200">Description</span></span>|  
 |-|-|  
-|ファイル|説明|  
-|CreateRfp.aspx|新しい Request for Proposals を作成して送信します。|  
-|Default.aspx|アクティブな Request for Proposals と完了した Request for Proposals をすべて表示します。|  
-|GetVendorProposal.aspx|具象 Request for Proposals 内のベンダーからの提案を取得します。  このページを使用するのはベンダーだけです。|  
-|ShowRfp.aspx|Request for Proposals に関するすべての情報 \(受信した提案、日付、金額、およびその他の情報\) を表示します。  このページを使用するのは Request for Proposal の作成者だけです。|  
+|<span data-ttu-id="311ff-201">CreateRfp.aspx</span><span class="sxs-lookup"><span data-stu-id="311ff-201">CreateRfp.aspx</span></span>|<span data-ttu-id="311ff-202">新しい Request for Proposals を作成して送信します。</span><span class="sxs-lookup"><span data-stu-id="311ff-202">Creates and submits a new Request for Proposals.</span></span>|  
+|<span data-ttu-id="311ff-203">Default.aspx</span><span class="sxs-lookup"><span data-stu-id="311ff-203">Default.aspx</span></span>|<span data-ttu-id="311ff-204">アクティブな Request for Proposals と完了した Request for Proposals をすべて表示します。</span><span class="sxs-lookup"><span data-stu-id="311ff-204">Shows all active and completed Requests for Proposals.</span></span>|  
+|<span data-ttu-id="311ff-205">GetVendorProposal.aspx</span><span class="sxs-lookup"><span data-stu-id="311ff-205">GetVendorProposal.aspx</span></span>|<span data-ttu-id="311ff-206">具象 Request for Proposals 内のベンダーからの提案を取得します。</span><span class="sxs-lookup"><span data-stu-id="311ff-206">Gets a proposal from a vendor in a concrete Request for Proposals.</span></span> <span data-ttu-id="311ff-207">このページを使用するのはベンダーだけです。</span><span class="sxs-lookup"><span data-stu-id="311ff-207">This page is used only by vendors.</span></span>|  
+|<span data-ttu-id="311ff-208">ShowRfp.aspx</span><span class="sxs-lookup"><span data-stu-id="311ff-208">ShowRfp.aspx</span></span>|<span data-ttu-id="311ff-209">Request for Proposals に関するすべての情報 (受信した提案、日付、金額、およびその他の情報) を表示します。</span><span class="sxs-lookup"><span data-stu-id="311ff-209">Show all the information about a Request for Proposals (received proposals, dates, values, and other information).</span></span> <span data-ttu-id="311ff-210">このページを使用するのは Request for Proposal の作成者だけです。</span><span class="sxs-lookup"><span data-stu-id="311ff-210">This page is only used by the creator of the Request for Proposal.</span></span>|  
   
-### WinForms Client  
- 次の表には、WinForms Client プロジェクトの最も重要なフォームの説明が含まれています。  
+### <a name="winforms-client"></a><span data-ttu-id="311ff-211">WinForms Client</span><span class="sxs-lookup"><span data-stu-id="311ff-211">WinForms Client</span></span>  
+ <span data-ttu-id="311ff-212">次の表には、WinForms Client プロジェクトの最も重要なフォームの説明が含まれています。</span><span class="sxs-lookup"><span data-stu-id="311ff-212">The following table contains a description of the most important forms in the Win Forms project.</span></span>  
   
-|||  
+|<span data-ttu-id="311ff-213">フォーム</span><span class="sxs-lookup"><span data-stu-id="311ff-213">Form</span></span>|<span data-ttu-id="311ff-214">説明</span><span class="sxs-lookup"><span data-stu-id="311ff-214">Description</span></span>|  
 |-|-|  
-|フォーム|説明|  
-|NewRfp|新しい Request for Proposals を作成して送信します。|  
-|ShowProposals|アクティブな Request for Proposals と完了した Request for Proposals をすべて表示します。 **Note:**  Request for Proposal を作成または変更した後にこの画面に変更内容が表示されない場合は、UI の **\[Refresh\]** ボタンをクリックしてください。|  
-|SubmitProposal|具象 Request for Proposals 内のベンダーからの提案を取得します。  このウィンドウを使用するのはベンダーだけです。|  
-|ViewRfp|Request for Proposals に関するすべての情報 \(受信した提案、日付、金額、およびその他の情報\) を表示します。  このウィンドウを使用するのは Request for Proposals の作成者だけです。|  
+|<span data-ttu-id="311ff-215">NewRfp</span><span class="sxs-lookup"><span data-stu-id="311ff-215">NewRfp</span></span>|<span data-ttu-id="311ff-216">新しい Request for Proposals を作成して送信します。</span><span class="sxs-lookup"><span data-stu-id="311ff-216">Creates and submits a new Request for Proposals.</span></span>|  
+|<span data-ttu-id="311ff-217">ShowProposals</span><span class="sxs-lookup"><span data-stu-id="311ff-217">ShowProposals</span></span>|<span data-ttu-id="311ff-218">アクティブな Request for Proposals と完了した Request for Proposals をすべて表示します。</span><span class="sxs-lookup"><span data-stu-id="311ff-218">Show all active and finished Requests for Proposals.</span></span> <span data-ttu-id="311ff-219">**注:**  をクリックする必要があります、**更新**を作成または Request for Proposal を変更した後、その画面に変更を表示する UI のボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="311ff-219">**Note:**  You may need to click the **Refresh** button in the UI to see changes in that screen after you create or modify a Request for Proposal.</span></span>|  
+|<span data-ttu-id="311ff-220">SubmitProposal</span><span class="sxs-lookup"><span data-stu-id="311ff-220">SubmitProposal</span></span>|<span data-ttu-id="311ff-221">具象 Request for Proposals 内のベンダーからの提案を取得します。</span><span class="sxs-lookup"><span data-stu-id="311ff-221">Get a proposal from a vendor in a concrete Request for Proposals.</span></span> <span data-ttu-id="311ff-222">このウィンドウを使用するのはベンダーだけです。</span><span class="sxs-lookup"><span data-stu-id="311ff-222">This window is used only by vendors.</span></span>|  
+|<span data-ttu-id="311ff-223">ViewRfp</span><span class="sxs-lookup"><span data-stu-id="311ff-223">ViewRfp</span></span>|<span data-ttu-id="311ff-224">Request for Proposals に関するすべての情報 (受信した提案、日付、金額、およびその他の情報) を表示します。</span><span class="sxs-lookup"><span data-stu-id="311ff-224">Show all the information about a Request for Proposals (received proposals, dates, values, and other information).</span></span> <span data-ttu-id="311ff-225">このウィンドウを使用するのは Request for Proposals の作成者だけです。</span><span class="sxs-lookup"><span data-stu-id="311ff-225">This window  is only used by the creator of the Request for Proposals.</span></span>|  
   
-### 永続化ファイル  
- 次の表は、永続化プロバイダー \(`XmlPersistenceProvider`\) によって生成されるファイルを示しています。これらのファイルは、現在のシステムの一時フォルダーのパスに配置されます \(<xref:System.IO.Path.GetTempPath%2A> を使用\)。  トレース ファイルは現在の実行パスに作成されます。  
+### <a name="persistence-files"></a><span data-ttu-id="311ff-226">永続化ファイル</span><span class="sxs-lookup"><span data-stu-id="311ff-226">Persistence Files</span></span>  
+ <span data-ttu-id="311ff-227">次の表は、永続化プロバイダー (`XmlPersistenceProvider`) によって生成されるファイルを示しています。これらのファイルは、現在のシステムの一時フォルダーのパスに配置されます (<xref:System.IO.Path.GetTempPath%2A> を使用)。</span><span class="sxs-lookup"><span data-stu-id="311ff-227">The following table shows the files generated by the persistence provider (`XmlPersistenceProvider`) are located in the path of the current system's temporary folder (using <xref:System.IO.Path.GetTempPath%2A>).</span></span> <span data-ttu-id="311ff-228">トレース ファイルは現在の実行パスに作成されます。</span><span class="sxs-lookup"><span data-stu-id="311ff-228">The tracing file is created in the current execution path.</span></span>  
   
-||||  
+|<span data-ttu-id="311ff-229">ファイル名</span><span class="sxs-lookup"><span data-stu-id="311ff-229">File Name</span></span>|<span data-ttu-id="311ff-230">説明</span><span class="sxs-lookup"><span data-stu-id="311ff-230">Description</span></span>|<span data-ttu-id="311ff-231">パス</span><span class="sxs-lookup"><span data-stu-id="311ff-231">Path</span></span>|  
 |-|-|-|  
-|ファイル名|説明|パス|  
-|rfps.xml|アクティブな Request for Proposals と完了した Request for Proposals をすべて含む XML ファイル。|<xref:System.IO.Path.GetTempPath%2A>|  
-|\[instanceid\]|このファイルには、ワークフロー インスタンスに関するすべての情報が含まれています。<br /><br /> このファイルは、スキーマ化された永続化の実装 \(XmlPersistenceProvider の PersistenceParticipant\) によって生成されます。|<xref:System.IO.Path.GetTempPath%2A>|  
-|\[instanceId\].tracking|具象インスタンス内で発生したすべてのイベントを含むテキスト ファイル。<br /><br /> このファイルは TrackingParticipant によって生成されます。|<xref:System.IO.Path.GetTempPath%2A>|  
-|PurchaseProcess.Tracing.TraceLog.txt|App.config ファイルまたは Web.config ファイルの構成パラメーターに基づいてワークフローによって生成されるトレース ファイル。|現在の実行パス|  
+|<span data-ttu-id="311ff-232">rfps.xml</span><span class="sxs-lookup"><span data-stu-id="311ff-232">rfps.xml</span></span>|<span data-ttu-id="311ff-233">アクティブな Request for Proposals と完了した Request for Proposals をすべて含む XML ファイル。</span><span class="sxs-lookup"><span data-stu-id="311ff-233">The XML file with all the active and finished Requests for Proposals.</span></span>|<xref:System.IO.Path.GetTempPath%2A>|  
+|<span data-ttu-id="311ff-234">[instanceid]</span><span class="sxs-lookup"><span data-stu-id="311ff-234">[instanceid]</span></span>|<span data-ttu-id="311ff-235">このファイルには、ワークフロー インスタンスに関するすべての情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="311ff-235">This file contains all the information about a workflow instance.</span></span><br /><br /> <span data-ttu-id="311ff-236">このファイルは、スキーマ化された永続化の実装 (XmlPersistenceProvider の PersistenceParticipant) によって生成されます。</span><span class="sxs-lookup"><span data-stu-id="311ff-236">This file is generated by the schematized persistence implementation (PersistenceParticipant in XmlPersistenceProvider).</span></span>|<xref:System.IO.Path.GetTempPath%2A>|  
+|<span data-ttu-id="311ff-237">[instanceId].tracking</span><span class="sxs-lookup"><span data-stu-id="311ff-237">[instanceId].tracking</span></span>|<span data-ttu-id="311ff-238">具象インスタンス内で発生したすべてのイベントを含むテキスト ファイル。</span><span class="sxs-lookup"><span data-stu-id="311ff-238">A text file with all the events that occurred within a concrete instance.</span></span><br /><br /> <span data-ttu-id="311ff-239">このファイルは TrackingParticipant によって生成されます。</span><span class="sxs-lookup"><span data-stu-id="311ff-239">This file is generated by TrackingParticipant.</span></span>|<xref:System.IO.Path.GetTempPath%2A>|  
+|<span data-ttu-id="311ff-240">PurchaseProcess.Tracing.TraceLog.txt</span><span class="sxs-lookup"><span data-stu-id="311ff-240">PurchaseProcess.Tracing.TraceLog.txt</span></span>|<span data-ttu-id="311ff-241">App.config ファイルまたは Web.config ファイルの構成パラメーターに基づいてワークフローによって生成されるトレース ファイル。</span><span class="sxs-lookup"><span data-stu-id="311ff-241">The tracing file generated by the workflow based on the configuration parameters in the App.config or Web.config files.</span></span>|<span data-ttu-id="311ff-242">現在の実行パス</span><span class="sxs-lookup"><span data-stu-id="311ff-242">Current execution path</span></span>|  
   
-#### このサンプルを使用するには  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="311ff-243">このサンプルを使用するには</span><span class="sxs-lookup"><span data-stu-id="311ff-243">To use this sample</span></span>  
   
-1.  [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] を使用して、PurchaseProcess.sln ソリューション ファイルを開きます。  
+1.  <span data-ttu-id="311ff-244">[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] を使用して、PurchaseProcess.sln ソリューション ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="311ff-244">Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the PurchaseProcess.sln solution file.</span></span>  
   
-2.  Web Client プロジェクトを実行するには、**\[ソリューション エクスプローラー\]** を開き、**\[Web Client\]** プロジェクトを右クリックして、  **\[スタートアップ プロジェクトに設定\]** をクリックします。  
+2.  <span data-ttu-id="311ff-245">実行するには、Web Client プロジェクトを開く**ソリューション エクスプ ローラー**を右クリックし、 **Web クライアント**プロジェクト。</span><span class="sxs-lookup"><span data-stu-id="311ff-245">To execute the Web Client project, open **Solution Explorer** and right-click the **Web Client** project.</span></span> <span data-ttu-id="311ff-246">選択**スタートアップ プロジェクトとして設定**です。</span><span class="sxs-lookup"><span data-stu-id="311ff-246">Select **Set as Startup Project**.</span></span>  
   
-3.  WinForms Client プロジェクトを実行するには、**\[ソリューション エクスプローラー\]** を開き、**\[WinForms Client\]** プロジェクトを右クリックして、  **\[スタートアップ プロジェクトに設定\]** をクリックします。  
+3.  <span data-ttu-id="311ff-247">実行するには、WinForms Client プロジェクトを開く**ソリューション エクスプ ローラー**を右クリックし、 **WinForms Client**プロジェクト。</span><span class="sxs-lookup"><span data-stu-id="311ff-247">To execute the WinForms Client project, open **Solution Explorer** and right-click the **WinForms Client** project.</span></span> <span data-ttu-id="311ff-248">選択**スタートアップ プロジェクトとして設定**です。</span><span class="sxs-lookup"><span data-stu-id="311ff-248">Select **Set as Startup Project**.</span></span>  
   
-4.  ソリューションをビルドするには、Ctrl キーと Shift キーを押しながら B キーを押します。  
+4.  <span data-ttu-id="311ff-249">ソリューションをビルドするには、Ctrl キーと Shift キーを押しながら B キーを押します。</span><span class="sxs-lookup"><span data-stu-id="311ff-249">To build the solution, press CTRL+SHIFT+B.</span></span>  
   
-5.  ソリューションを実行するには、Ctrl キーを押しながら F5 キーを押します。  
+5.  <span data-ttu-id="311ff-250">ソリューションを実行するには、Ctrl キーを押しながら F5 キーを押します。</span><span class="sxs-lookup"><span data-stu-id="311ff-250">To run the solution, press CTRL+F5.</span></span>  
   
-### Web Client のオプション  
+### <a name="web-client-options"></a><span data-ttu-id="311ff-251">Web Client のオプション</span><span class="sxs-lookup"><span data-stu-id="311ff-251">Web Client Options</span></span>  
   
--   **Create a new RFP**: 新しい Request for Proposals \(RFP\) を作成し、Purchase Process ワークフローを開始します。  
+-   <span data-ttu-id="311ff-252">**Create 新しい RFP**: 新しい要求を for Proposals (RFP) を作成し、Purchase Process ワークフローを開始します。</span><span class="sxs-lookup"><span data-stu-id="311ff-252">**Create a new RFP**: Creates a new Request for Proposals (RFP) and starts a Purchase Process workflow.</span></span>  
   
--   **Refresh**: メイン ウィンドウの \[Active and Finished RFPs\] の一覧を更新します。  
+-   <span data-ttu-id="311ff-253">**更新**: Active and Finished RFPs メイン ウィンドウの一覧を更新します。</span><span class="sxs-lookup"><span data-stu-id="311ff-253">**Refresh**: Refreshes the list of Active and Finished RFPs in the main window.</span></span>  
   
--   **View**: 既存の RFP の内容を表示します。  ベンダーは自身の提案を送信できます \(依頼されている場合。依頼されていない場合は RFP が完了していません\)。  
+-   <span data-ttu-id="311ff-254">**ビュー**: 既存の RFP の内容を表示します。</span><span class="sxs-lookup"><span data-stu-id="311ff-254">**View**: Shows the content of an existing RFP.</span></span> <span data-ttu-id="311ff-255">ベンダーは自身の提案を送信できます (依頼されている場合。依頼されていない場合は RFP が完了していません)。</span><span class="sxs-lookup"><span data-stu-id="311ff-255">Vendors can submit their proposals (if invited or the RFP is not finished).</span></span>  
   
--   View As: さまざまな ID を使用して RFP にアクセスできます。そのためには、アクティブな RFP のグリッドの **\[View as\]** ボックスで目的の参加者を選択します。  
+-   <span data-ttu-id="311ff-256">ビューとして: ユーザーには、目的の参加者を選択して別の id を使用して RFP がアクセスできる、**として表示**アクティブな Rfp のグリッドのコンボ ボックス。</span><span class="sxs-lookup"><span data-stu-id="311ff-256">View As: The user can access the RFP using different identities by selecting the desired participant in the **View as** combo box in the active RFPs grid.</span></span>  
   
-### WinForms Client のオプション  
+### <a name="winforms-client-options"></a><span data-ttu-id="311ff-257">WinForms Client のオプション</span><span class="sxs-lookup"><span data-stu-id="311ff-257">WinForms Client Options</span></span>  
   
--   **Create RFP**: 新しい Request for Proposals \(RFP\) を作成し、Purchase Process ワークフローを開始します。  
+-   <span data-ttu-id="311ff-258">**Create RFP**: 新しい要求を for Proposals (RFP) を作成し、Purchase Process ワークフローを開始します。</span><span class="sxs-lookup"><span data-stu-id="311ff-258">**Create RFP**: Creates a new Request for Proposals (RFP) and starts a Purchase Process workflow.</span></span>  
   
--   **Refresh**: メイン ウィンドウの \[Active and Finished RFPs\] の一覧を更新します。  
+-   <span data-ttu-id="311ff-259">**更新**: Active and Finished RFPs メイン ウィンドウの一覧を更新します。</span><span class="sxs-lookup"><span data-stu-id="311ff-259">**Refresh**: Refreshes the list of Active and Finished RFPs in the main window.</span></span>  
   
--   **View RFP**: 既存の RFP の内容を表示します。  ベンダーは自身の提案を送信できます \(依頼されている場合。依頼されていない場合は RFP が完了していません\)。  
+-   <span data-ttu-id="311ff-260">**View RFP**: 既存の RFP の内容を表示します。</span><span class="sxs-lookup"><span data-stu-id="311ff-260">**View RFP**: Shows the content of an existing RFP.</span></span> <span data-ttu-id="311ff-261">ベンダーは自身の提案を送信できます (依頼されている場合。依頼されていない場合は RFP が完了していません)。</span><span class="sxs-lookup"><span data-stu-id="311ff-261">Vendors can submit their proposals (if invited or the RFP is not finished)</span></span>  
   
--   **Connect As**: さまざまな ID を使用して RFP にアクセスできます。そのためには、アクティブな RFP のグリッドの **\[View as\]** コンボ ボックスで目的の参加者を選択します。  
+-   <span data-ttu-id="311ff-262">**Connect As**: ユーザーが目的の参加者を選択して別の id を使用して RFP にアクセスできる、**として表示**アクティブな Rfp のグリッドのコンボ ボックス。</span><span class="sxs-lookup"><span data-stu-id="311ff-262">**Connect As**: The user can access the RFP using different identities by selecting the desired participant in the **View as** combo box in the active RFPs grid.</span></span>  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="311ff-263">関連項目</span><span class="sxs-lookup"><span data-stu-id="311ff-263">See Also</span></span>

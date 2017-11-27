@@ -1,65 +1,64 @@
 ---
-title: "Declaration Contexts and Default Access Levels (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "module level, defined"
-  - "declaration contexts, Visual Basic"
-  - "procedure level, defined"
-  - "namespace level, defined"
-  - "access levels, Visual Basic"
-  - "access levels, default levels"
+title: "宣言コンテキストと既定のアクセス レベル (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- module level, defined
+- declaration contexts, Visual Basic
+- procedure level, defined
+- namespace level, defined
+- access levels, Visual Basic
+- access levels, default levels
 ms.assetid: bf63b96e-e825-4745-88c8-5dae222728db
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: b89b74a6c0393f6a52a0b5c1ddf6f66c505564ba
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Declaration Contexts and Default Access Levels (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-このトピックでは、Visual Basic のどのデータ型がどのデータ型の中で宣言できるかについて説明します。また、指定がない場合の各データ型の既定のアクセス レベルを示します。  
+# <a name="declaration-contexts-and-default-access-levels-visual-basic"></a><span data-ttu-id="c82ac-102">宣言コンテキストと既定のアクセス レベル (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c82ac-102">Declaration Contexts and Default Access Levels (Visual Basic)</span></span>
+<span data-ttu-id="c82ac-103">このトピックでは、どのデータ型内でどの Visual Basic の型を宣言することができ、どのようなこれらのアクセス レベルを既定値も指定しない場合について説明します。</span><span class="sxs-lookup"><span data-stu-id="c82ac-103">This topic describes which Visual Basic types can be declared within which other types, and what their access levels default to if not specified.</span></span>  
   
-## 宣言コンテキストのレベル  
- *宣言コンテキスト*とは、プログラミング要素が宣言されるコードの領域のことです。  別のプログラミング要素の中であることも多く、この場合このプログラミング要素は "*コンテナー要素*" と呼ばれます。  
+## <a name="declaration-context-levels"></a><span data-ttu-id="c82ac-104">宣言コンテキスト レベル</span><span class="sxs-lookup"><span data-stu-id="c82ac-104">Declaration Context Levels</span></span>  
+ <span data-ttu-id="c82ac-105">*宣言コンテキスト*プログラミング要素が宣言されているコードの領域。</span><span class="sxs-lookup"><span data-stu-id="c82ac-105">The *declaration context* of a programming element is the region of code in which it is declared.</span></span> <span data-ttu-id="c82ac-106">これが呼び出される別のプログラミング要素は、多くの場合、*要素を含む*です。</span><span class="sxs-lookup"><span data-stu-id="c82ac-106">This is often another programming element, which is then called the *containing element*.</span></span>  
   
- 宣言コンテキストのレベルは次のとおりです。  
+ <span data-ttu-id="c82ac-107">宣言コンテキストのレベル次に示します。</span><span class="sxs-lookup"><span data-stu-id="c82ac-107">The levels for declaration contexts are the following:</span></span>  
   
--   *名前空間レベル*: 同じソース ファイルまたは名前空間内にあるが、クラス、構造体、モジュール、インターフェイスは異なる  
+-   <span data-ttu-id="c82ac-108">*Namespace レベル*: ソース ファイルまたは名前空間内にあるが、クラス、構造体、モジュール、またはインターフェイス</span><span class="sxs-lookup"><span data-stu-id="c82ac-108">*Namespace level* — within a source file or namespace but not within a class, structure, module, or interface</span></span>  
   
--   *モジュール レベル*: 同じクラス、構造体、モジュール、インターフェイス内にあるが、プロシージャやブロックは異なる  
+-   <span data-ttu-id="c82ac-109">*モジュール レベル*: クラス、構造体、モジュール、またはインターフェイス内にあるが、プロシージャまたはブロック</span><span class="sxs-lookup"><span data-stu-id="c82ac-109">*Module level* — within a class, structure, module, or interface but not within a procedure or block</span></span>  
   
--   *プロシージャ レベル*: 同じプロシージャまたはブロック \(`If` や `For` など\) 内にある  
+-   <span data-ttu-id="c82ac-110">*プロシージャ レベル*— プロシージャまたはブロック内 (など`If`または`For`)</span><span class="sxs-lookup"><span data-stu-id="c82ac-110">*Procedure level* — within a procedure or block (such as `If` or `For`)</span></span>  
   
- 次の表に、宣言されたさまざまなプログラミング要素の既定のアクセス レベルを、宣言コンテキスト別に示します。  
+ <span data-ttu-id="c82ac-111">次の表は、その宣言コンテキストに応じて、さまざまな宣言されたプログラミングの要素の既定のアクセス レベルを示します。</span><span class="sxs-lookup"><span data-stu-id="c82ac-111">The following table shows the default access levels for various declared programming elements, depending on their declaration contexts.</span></span>  
   
-|宣言された要素|名前空間レベル|モジュール レベル|プロシージャ レベル|  
-|-------------|-------------|---------------|----------------|  
-|変数 \([Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md)\)|不可|`Private` \(`Structure` では `Public`、`Interface` では不可\)|`Public`|  
-|定数 \([Const Statement](../../../visual-basic/language-reference/statements/const-statement.md)\)|不可|`Private` \(`Structure` では `Public`、`Interface` では不可\)|`Public`|  
-|列挙型 \([Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md)\)|`Friend`|`Public`|不可|  
-|クラス \([Class Statement](../../../visual-basic/language-reference/statements/class-statement.md)\)|`Friend`|`Public`|不可|  
-|構造体 \([Structure Statement](../../../visual-basic/language-reference/statements/structure-statement.md)\)|`Friend`|`Public`|不可|  
-|モジュール \([Module Statement](../../../visual-basic/language-reference/statements/module-statement.md)\)|`Friend`|不可|不可|  
-|インターフェイス \([Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md)\)|`Friend`|`Public`|不可|  
-|プロシージャ \([Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)、[Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)\)|不可|`Public`|不可|  
-|外部参照 \([Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)\)|不可|`Public` \(`Interface` では不可\)|不可|  
-|演算子 \([Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)\)|不可|`Public` \(`Interface` または `Module` では不可\)|不可|  
-|プロパティ \([Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)\)|不可|`Public`|不可|  
-|既定のプロパティ \([Default](../../../visual-basic/language-reference/modifiers/default.md)\)|不可|`Public` \(`Module` では不可\)|不可|  
-|イベント \([Event Statement](../../../visual-basic/language-reference/statements/event-statement.md)\)|不可|`Public`|不可|  
-|デリゲート \([Delegate Statement](../../../visual-basic/language-reference/statements/delegate-statement.md)\)|`Friend`|`Public`|不可|  
+|<span data-ttu-id="c82ac-112">宣言された要素</span><span class="sxs-lookup"><span data-stu-id="c82ac-112">Declared element</span></span>|<span data-ttu-id="c82ac-113">Namespace レベル</span><span class="sxs-lookup"><span data-stu-id="c82ac-113">Namespace level</span></span>|<span data-ttu-id="c82ac-114">モジュール レベル</span><span class="sxs-lookup"><span data-stu-id="c82ac-114">Module level</span></span>|<span data-ttu-id="c82ac-115">プロシージャ レベル</span><span class="sxs-lookup"><span data-stu-id="c82ac-115">Procedure level</span></span>|  
+|----------------------|---------------------|------------------|---------------------|  
+|<span data-ttu-id="c82ac-116">変数 ([Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md))</span><span class="sxs-lookup"><span data-stu-id="c82ac-116">Variable ([Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md))</span></span>|<span data-ttu-id="c82ac-117">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-117">Not allowed</span></span>|<span data-ttu-id="c82ac-118">`Private`(`Public`で`Structure`で許可されていない、 `Interface`)</span><span class="sxs-lookup"><span data-stu-id="c82ac-118">`Private` (`Public` in `Structure`, not allowed in `Interface`)</span></span>|`Public`|  
+|<span data-ttu-id="c82ac-119">定数 ([Const ステートメント](../../../visual-basic/language-reference/statements/const-statement.md))</span><span class="sxs-lookup"><span data-stu-id="c82ac-119">Constant ([Const Statement](../../../visual-basic/language-reference/statements/const-statement.md))</span></span>|<span data-ttu-id="c82ac-120">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-120">Not allowed</span></span>|<span data-ttu-id="c82ac-121">`Private`(`Public`で`Structure`で許可されていない、 `Interface`)</span><span class="sxs-lookup"><span data-stu-id="c82ac-121">`Private` (`Public` in `Structure`, not allowed in `Interface`)</span></span>|`Public`|  
+|<span data-ttu-id="c82ac-122">列挙 ([Enum ステートメント](../../../visual-basic/language-reference/statements/enum-statement.md))</span><span class="sxs-lookup"><span data-stu-id="c82ac-122">Enumeration ([Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md))</span></span>|`Friend`|`Public`|<span data-ttu-id="c82ac-123">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-123">Not allowed</span></span>|  
+|<span data-ttu-id="c82ac-124">クラス ([Class ステートメント](../../../visual-basic/language-reference/statements/class-statement.md))</span><span class="sxs-lookup"><span data-stu-id="c82ac-124">Class ([Class Statement](../../../visual-basic/language-reference/statements/class-statement.md))</span></span>|`Friend`|`Public`|<span data-ttu-id="c82ac-125">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-125">Not allowed</span></span>|  
+|<span data-ttu-id="c82ac-126">構造体 ([ステートメントを構造体](../../../visual-basic/language-reference/statements/structure-statement.md))</span><span class="sxs-lookup"><span data-stu-id="c82ac-126">Structure ([Structure Statement](../../../visual-basic/language-reference/statements/structure-statement.md))</span></span>|`Friend`|`Public`|<span data-ttu-id="c82ac-127">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-127">Not allowed</span></span>|  
+|<span data-ttu-id="c82ac-128">モジュール ([モジュール ステートメント](../../../visual-basic/language-reference/statements/module-statement.md))</span><span class="sxs-lookup"><span data-stu-id="c82ac-128">Module ([Module Statement](../../../visual-basic/language-reference/statements/module-statement.md))</span></span>|`Friend`|<span data-ttu-id="c82ac-129">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-129">Not allowed</span></span>|<span data-ttu-id="c82ac-130">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-130">Not allowed</span></span>|  
+|<span data-ttu-id="c82ac-131">インターフェイス ([Interface ステートメント](../../../visual-basic/language-reference/statements/interface-statement.md))</span><span class="sxs-lookup"><span data-stu-id="c82ac-131">Interface ([Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md))</span></span>|`Friend`|`Public`|<span data-ttu-id="c82ac-132">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-132">Not allowed</span></span>|  
+|<span data-ttu-id="c82ac-133">プロシージャ ([関数ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)、 [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md))</span><span class="sxs-lookup"><span data-stu-id="c82ac-133">Procedure ([Function Statement](../../../visual-basic/language-reference/statements/function-statement.md), [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md))</span></span>|<span data-ttu-id="c82ac-134">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-134">Not allowed</span></span>|`Public`|<span data-ttu-id="c82ac-135">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-135">Not allowed</span></span>|  
+|<span data-ttu-id="c82ac-136">外部参照 ([Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md))</span><span class="sxs-lookup"><span data-stu-id="c82ac-136">External reference ([Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md))</span></span>|<span data-ttu-id="c82ac-137">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-137">Not allowed</span></span>|<span data-ttu-id="c82ac-138">`Public`(では許可されません`Interface`)</span><span class="sxs-lookup"><span data-stu-id="c82ac-138">`Public` (not allowed in `Interface`)</span></span>|<span data-ttu-id="c82ac-139">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-139">Not allowed</span></span>|  
+|<span data-ttu-id="c82ac-140">演算子 ([Operator ステートメント](../../../visual-basic/language-reference/statements/operator-statement.md))</span><span class="sxs-lookup"><span data-stu-id="c82ac-140">Operator ([Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md))</span></span>|<span data-ttu-id="c82ac-141">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-141">Not allowed</span></span>|<span data-ttu-id="c82ac-142">`Public`(では許可されません`Interface`または`Module`)</span><span class="sxs-lookup"><span data-stu-id="c82ac-142">`Public` (not allowed in `Interface` or `Module`)</span></span>|<span data-ttu-id="c82ac-143">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-143">Not allowed</span></span>|  
+|<span data-ttu-id="c82ac-144">プロパティ ([Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md))</span><span class="sxs-lookup"><span data-stu-id="c82ac-144">Property ([Property Statement](../../../visual-basic/language-reference/statements/property-statement.md))</span></span>|<span data-ttu-id="c82ac-145">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-145">Not allowed</span></span>|`Public`|<span data-ttu-id="c82ac-146">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-146">Not allowed</span></span>|  
+|<span data-ttu-id="c82ac-147">既定のプロパティ ([既定](../../../visual-basic/language-reference/modifiers/default.md))</span><span class="sxs-lookup"><span data-stu-id="c82ac-147">Default property ([Default](../../../visual-basic/language-reference/modifiers/default.md))</span></span>|<span data-ttu-id="c82ac-148">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-148">Not allowed</span></span>|<span data-ttu-id="c82ac-149">`Public`(では許可されません`Module`)</span><span class="sxs-lookup"><span data-stu-id="c82ac-149">`Public` (not allowed in `Module`)</span></span>|<span data-ttu-id="c82ac-150">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-150">Not allowed</span></span>|  
+|<span data-ttu-id="c82ac-151">イベント ([Event ステートメント](../../../visual-basic/language-reference/statements/event-statement.md))</span><span class="sxs-lookup"><span data-stu-id="c82ac-151">Event ([Event Statement](../../../visual-basic/language-reference/statements/event-statement.md))</span></span>|<span data-ttu-id="c82ac-152">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-152">Not allowed</span></span>|`Public`|<span data-ttu-id="c82ac-153">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-153">Not allowed</span></span>|  
+|<span data-ttu-id="c82ac-154">デリゲート ([Delegate ステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md))</span><span class="sxs-lookup"><span data-stu-id="c82ac-154">Delegate ([Delegate Statement](../../../visual-basic/language-reference/statements/delegate-statement.md))</span></span>|`Friend`|`Public`|<span data-ttu-id="c82ac-155">許可されていません</span><span class="sxs-lookup"><span data-stu-id="c82ac-155">Not allowed</span></span>|  
   
- 詳細については、「[Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
+ <span data-ttu-id="c82ac-156">詳細については、次を参照してください。 [Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。</span><span class="sxs-lookup"><span data-stu-id="c82ac-156">For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>  
   
-## 参照  
- [Friend](../../../visual-basic/language-reference/modifiers/friend.md)   
- [Private](../../../visual-basic/language-reference/modifiers/private.md)   
- [Public](../../../visual-basic/language-reference/modifiers/public.md)
+## <a name="see-also"></a><span data-ttu-id="c82ac-157">関連項目</span><span class="sxs-lookup"><span data-stu-id="c82ac-157">See Also</span></span>  
+ [<span data-ttu-id="c82ac-158">Friend</span><span class="sxs-lookup"><span data-stu-id="c82ac-158">Friend</span></span>](../../../visual-basic/language-reference/modifiers/friend.md)  
+ [<span data-ttu-id="c82ac-159">Private</span><span class="sxs-lookup"><span data-stu-id="c82ac-159">Private</span></span>](../../../visual-basic/language-reference/modifiers/private.md)  
+ [<span data-ttu-id="c82ac-160">Public</span><span class="sxs-lookup"><span data-stu-id="c82ac-160">Public</span></span>](../../../visual-basic/language-reference/modifiers/public.md)

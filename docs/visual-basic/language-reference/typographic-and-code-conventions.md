@@ -1,61 +1,60 @@
 ---
-title: "Typographic and Code Conventions (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "coding conventions, Visual Basic"
-  - "best practices, coding conventions"
-  - "conventions, Visual Basic coding"
-  - "typographic conventions"
-  - "document conventions"
-  - "conventions, documentation"
-  - "Visual Basic code, conventions"
+title: "表記規則とコード規則 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- coding conventions [Visual Basic], Visual Basic
+- best practices [Visual Basic], coding conventions
+- conventions [Visual Basic], Visual Basic coding
+- typographic conventions [Visual Basic]
+- document conventions [Visual Basic]
+- conventions [Visual Basic], documentation
+- Visual Basic code, conventions
 ms.assetid: 1916cd81-ea9d-4faa-81f7-4a0d864b60f4
-caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 7b6db5c223b0548e308b49a686cff72eaaf8da36
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Typographic and Code Conventions (Visual Basic)
-[!INCLUDE[vs2017banner](../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-Visual Basic のヘルプは、次の表記規則とコード規則に従って記述されています。  
+# <a name="typographic-and-code-conventions-visual-basic"></a><span data-ttu-id="57a13-102">表記規則とコード規則 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="57a13-102">Typographic and Code Conventions (Visual Basic)</span></span>
+<span data-ttu-id="57a13-103">Visual Basic のドキュメントでは、次の文字体裁とコード規則を使用します。</span><span class="sxs-lookup"><span data-stu-id="57a13-103">Visual Basic documentation uses the following typographic and code conventions.</span></span>  
   
-## 表記規則  
+## <a name="typographic-conventions"></a><span data-ttu-id="57a13-104">表記規則</span><span class="sxs-lookup"><span data-stu-id="57a13-104">Typographic Conventions</span></span>  
   
-|例|Description|  
-|-------|-----------------|  
-|`Sub`, `If`, `ChDir`, `Print`, `True`, `Debug`|言語特有のキーワードやランタイム メンバーは、先頭が大文字になっており、この例に示す書式が使用されています。|  
-|SmallProject、ButtonCollection|ユーザーが入力する語および句には、この例に示す書式が使用されています。|  
-|[Module Statement](../../visual-basic/language-reference/statements/module-statement.md)|クリックすると他のヘルプ ページに移動するリンクには、この例に示す書式が使用されています。|  
-|*object*、*variableName*、`argumentList`|ユーザーが入力する情報のプレースホルダーには、この例に示す書式が使用されています。|  
-|\[ Shadows \]、\[ *expressionList* \]|構文内の省略可能な項目は、角かっこで囲まれています。|  
-|{ `Public` &#124; `Friend` &#124; `Private` }|構文内で、複数の項目から 1 つを選択する必要がある場合は、項目が中かっこで囲まれ、縦棒で区切られています。<br /><br /> 1 つの項目だけを選択する必要があります。|  
-|\[ `Protected` &#124; `Friend` \]|構文内で、複数の項目から選択可能な場合は、項目が角かっこで囲まれ、縦棒で区切られています。<br /><br /> これらの項目を任意に組み合わせて選択するか、または何も選択しないこともできます。|  
-|\[{ `ByVal` &#124; `ByRef` }\]|構文内で、項目を 1 つだけ選択するか、何も選択しないこともできる場合は、項目が中かっこを囲む角かっこで囲まれ、縦棒で区切られています。|  
-|*memberName* 1、*memberName*2、*memberName*3|同じプレースホルダーの複数のインスタンスは、この例に示すように添字によって区別されます。|  
-|*memberName1*<br /><br /> ...<br /><br /> *memberNameN*|構文内の省略記号 \(...\) は、省略記号の直前の種類の項目が無限に続くことを示します。<br /><br /> コードでは、わかりやすくするために省略されたコードを示します。|  
-|ESC、ENTER|キーボードのキー名やキー シーケンスは、すべて大文字で表記されます。|  
-|Alt \+ F1|キー名の間にプラス記号 \(\+\) がある場合、一方のキーを押したままでもう一方のキーを押す必要があります。  たとえば、Alt \+ F1 は Alt キーを押しながら、F1 キーを押すことを表します。|  
+|<span data-ttu-id="57a13-105">例</span><span class="sxs-lookup"><span data-stu-id="57a13-105">Example</span></span>|<span data-ttu-id="57a13-106">説明</span><span class="sxs-lookup"><span data-stu-id="57a13-106">Description</span></span>|  
+|-------------|-----------------|  
+|<span data-ttu-id="57a13-107">`Sub`, `If`, `ChDir`, `Print`, `True`, `Debug`</span><span class="sxs-lookup"><span data-stu-id="57a13-107">`Sub`, `If`, `ChDir`, `Print`, `True`, `Debug`</span></span>|<span data-ttu-id="57a13-108">言語固有のキーワードとランタイムのメンバーは、先頭の大文字があるし、は、この例で示すように書式設定します。</span><span class="sxs-lookup"><span data-stu-id="57a13-108">Language-specific keywords and runtime members have initial uppercase letters and are formatted as shown in this example.</span></span>|  
+|<span data-ttu-id="57a13-109">**SmallProject**、 **ButtonCollection**</span><span class="sxs-lookup"><span data-stu-id="57a13-109">**SmallProject**, **ButtonCollection**</span></span>|<span data-ttu-id="57a13-110">この例で示すように、単語や語句を入力するように指示されますが書式設定します。</span><span class="sxs-lookup"><span data-stu-id="57a13-110">Words and phrases you are instructed to type are formatted as shown in this example.</span></span>|  
+|[<span data-ttu-id="57a13-111">Module ステートメント</span><span class="sxs-lookup"><span data-stu-id="57a13-111">Module Statement</span></span>](../../visual-basic/language-reference/statements/module-statement.md)|<span data-ttu-id="57a13-112">リンクをクリックすると別のヘルプ ページに移動することができますは、この例で示すように書式設定です。</span><span class="sxs-lookup"><span data-stu-id="57a13-112">Links you can click to go to another Help page are formatted as shown in this example.</span></span>|  
+|<span data-ttu-id="57a13-113">*オブジェクト*、 *variableName*、`argumentList`</span><span class="sxs-lookup"><span data-stu-id="57a13-113">*object*, *variableName*, `argumentList`</span></span>|<span data-ttu-id="57a13-114">指定した情報のプレース ホルダーは、この例で示すようにフォーマットされます。</span><span class="sxs-lookup"><span data-stu-id="57a13-114">Placeholders for information that you supply are formatted as shown in this example.</span></span>|  
+|<span data-ttu-id="57a13-115">[影]、[*から抜け出します*]</span><span class="sxs-lookup"><span data-stu-id="57a13-115">[ Shadows ], [ *expressionList* ]</span></span>|<span data-ttu-id="57a13-116">構文では、省略可能な項目は角かっこで囲まれます。</span><span class="sxs-lookup"><span data-stu-id="57a13-116">In syntax, optional items are enclosed in brackets.</span></span>|  
+|<span data-ttu-id="57a13-117">{ `Public` &#124; `Friend` &#124; `Private` }</span><span class="sxs-lookup"><span data-stu-id="57a13-117">{ `Public` &#124; `Friend` &#124; `Private` }</span></span>|<span data-ttu-id="57a13-118">構文では、2 つ以上の項目間の選択を行う必要があります項目中かっこで囲むし、が縦棒で区切られてです。</span><span class="sxs-lookup"><span data-stu-id="57a13-118">In syntax, when you must make a choice between two or more items, the items are enclosed in braces and separated by vertical bars.</span></span><br /><br /> <span data-ttu-id="57a13-119">1 つ、および 1 つだけ、項目を選択する必要があります。</span><span class="sxs-lookup"><span data-stu-id="57a13-119">You must select one, and only one, of the items.</span></span>|  
+|<span data-ttu-id="57a13-120">[ `Protected` &#124; `Friend` ]</span><span class="sxs-lookup"><span data-stu-id="57a13-120">[ `Protected` &#124; `Friend` ]</span></span>|<span data-ttu-id="57a13-121">構文では、2 つ以上の項目間を選択するオプションがある場合は、アイテムが角かっこで囲むし、縦棒で区切られてです。</span><span class="sxs-lookup"><span data-stu-id="57a13-121">In syntax, when you have the option of selecting between two or more items, the items are enclosed in square brackets and separated by vertical bars.</span></span><br /><br /> <span data-ttu-id="57a13-122">アイテムの任意の組み合わせまたは項目を選択できません。</span><span class="sxs-lookup"><span data-stu-id="57a13-122">You can select any combination of the items, or no item.</span></span>|  
+|<span data-ttu-id="57a13-123">[{ `ByVal` &#124; `ByRef` }]</span><span class="sxs-lookup"><span data-stu-id="57a13-123">[{ `ByVal` &#124; `ByRef` }]</span></span>|<span data-ttu-id="57a13-124">構文では、2 つ以上の項目を選択できますが、項目を完全に省略することも、アイテムが角かっこ、中かっこで囲まれ、縦棒で区切られてで囲まれました。</span><span class="sxs-lookup"><span data-stu-id="57a13-124">In syntax, when you can select no more than one item, but you can also omit the items completely, the items are enclosed in square brackets surrounded by braces and separated by vertical bars.</span></span>|  
+|<span data-ttu-id="57a13-125">*memberName*1、 *memberName*2、 *memberName*3</span><span class="sxs-lookup"><span data-stu-id="57a13-125">*memberName*1, *memberName*2, *memberName*3</span></span>|<span data-ttu-id="57a13-126">同じプレース ホルダーの複数のインスタンスは、例のように、添字によって区別されます。</span><span class="sxs-lookup"><span data-stu-id="57a13-126">Multiple instances of the same placeholder are differentiated by subscripts, as shown in the example.</span></span>|  
+|<span data-ttu-id="57a13-127">*memberName1*</span><span class="sxs-lookup"><span data-stu-id="57a13-127">*memberName1*</span></span><br /><br /> <span data-ttu-id="57a13-128">...</span><span class="sxs-lookup"><span data-stu-id="57a13-128">...</span></span><br /><br /> <span data-ttu-id="57a13-129">*memberNameN*</span><span class="sxs-lookup"><span data-stu-id="57a13-129">*memberNameN*</span></span>|<span data-ttu-id="57a13-130">省略記号 (...) の構文では、省略記号の直前の種類のアイテムの不特定数を示すために使用します。</span><span class="sxs-lookup"><span data-stu-id="57a13-130">In syntax, an ellipsis (...) is used to indicate an indefinite number of items of the kind immediately in front of the ellipsis.</span></span><br /><br /> <span data-ttu-id="57a13-131">コードでは、わかりやすく説明を省略するとコードを示します。</span><span class="sxs-lookup"><span data-stu-id="57a13-131">In code, ellipses signify code omitted for the sake of clarity.</span></span>|  
+|<span data-ttu-id="57a13-132">ESC キーを入力してください</span><span class="sxs-lookup"><span data-stu-id="57a13-132">ESC, ENTER</span></span>|<span data-ttu-id="57a13-133">キー名とキーボードのキー シーケンスがすべて大文字で表示されます。</span><span class="sxs-lookup"><span data-stu-id="57a13-133">Key names and key sequences on the keyboard appear in all uppercase letters.</span></span>|  
+|<span data-ttu-id="57a13-134">ALT + F1</span><span class="sxs-lookup"><span data-stu-id="57a13-134">ALT+F1</span></span>|<span data-ttu-id="57a13-135">キー名の間に正符号 (+) が表示されたらは、他のキーを押しているときに 1 つのキーを押しながら必要があります。</span><span class="sxs-lookup"><span data-stu-id="57a13-135">When plus signs (+) appear between key names, you must hold down one key while pressing the other.</span></span> <span data-ttu-id="57a13-136">たとえば、F1 キーを押しながら ALT キーを押しながら alt キーを押しながら f1 キーを意味します。</span><span class="sxs-lookup"><span data-stu-id="57a13-136">For example, ALT+F1 means hold down the ALT key while pressing the F1 key.</span></span>|  
   
-## コード規則  
+## <a name="code-conventions"></a><span data-ttu-id="57a13-137">コード規則</span><span class="sxs-lookup"><span data-stu-id="57a13-137">Code Conventions</span></span>  
   
-|例|Description|  
-|-------|-----------------|  
-|`sampleString = "Hello, world!"`|コード サンプルは、固定ピッチ フォントで表記され、この例に示す書式になっています。|  
-|このステートメントは、`sampleString` の値を "Hello, world\!" に設定します。|解説文に含まれるコード要素は、この例に示すように固定ピッチ フォントで表記されます。|  
-|`' This is a comment.`<br /><br /> `REM This is also a comment.`|コードのコメントは、アポストロフィ \('\) や REM キーワードで始まります。|  
-|`sampleVar = "This is an " _`<br /><br /> `& "example" _`<br /><br /> `& " of how to continue code."`|行末の空白とアンダースコア \( \_\) は、ステートメントが次の行に継続することを示します。|  
+|<span data-ttu-id="57a13-138">例</span><span class="sxs-lookup"><span data-stu-id="57a13-138">Example</span></span>|<span data-ttu-id="57a13-139">説明</span><span class="sxs-lookup"><span data-stu-id="57a13-139">Description</span></span>|  
+|-------------|-----------------|  
+|`sampleString = "Hello, world!"`|<span data-ttu-id="57a13-140">コード サンプルでは、固定ピッチ フォントで表示され、は、この例で示すように書式設定します。</span><span class="sxs-lookup"><span data-stu-id="57a13-140">Code samples appear in a fixed-pitch font and are formatted as shown in this example.</span></span>|  
+|<span data-ttu-id="57a13-141">前のステートメントの値を設定する`sampleString`に「こんにちは, world!」</span><span class="sxs-lookup"><span data-stu-id="57a13-141">The previous statement sets the value of `sampleString` to "Hello, world!"</span></span>|<span data-ttu-id="57a13-142">説明テキストでコード要素は、この例で示すようを固定ピッチ フォントで表示されます。</span><span class="sxs-lookup"><span data-stu-id="57a13-142">Code elements in explanatory text appear in a fixed-pitch font, as shown in this example.</span></span>|  
+|`' This is a comment.`<br /><br /> `REM This is also a comment.`|<span data-ttu-id="57a13-143">コードのコメントはアポストロフィ (') または REM キーワードによって導入されました。</span><span class="sxs-lookup"><span data-stu-id="57a13-143">Code comments are introduced by an apostrophe (') or the REM keyword.</span></span>|  
+|`sampleVar = "This is an " _`<br /><br /> `& "example" _`<br /><br /> `& " of how to continue code."`|<span data-ttu-id="57a13-144">アンダー スコア (_)、行の末尾にスペースは、次の行に、ステートメントを続行することを示します。</span><span class="sxs-lookup"><span data-stu-id="57a13-144">A space followed by an underscore ( _) at the end of a line indicates that the statement continues on the following line.</span></span>|  
   
-## 参照  
- [Visual Basic Language Reference](../../visual-basic/language-reference/index.md)   
- [キーワード](../../visual-basic/language-reference/keywords/index.md)   
- [Visual Basic Runtime Library Members](../../visual-basic/language-reference/runtime-library-members.md)   
- [Visual Basic Naming Conventions](../../visual-basic/programming-guide/program-structure/naming-conventions.md)   
- [方法 : コード内でステートメントを分割および連結する](../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)   
- [Comments in Code](../../visual-basic/programming-guide/program-structure/comments-in-code.md)
+## <a name="see-also"></a><span data-ttu-id="57a13-145">関連項目</span><span class="sxs-lookup"><span data-stu-id="57a13-145">See Also</span></span>  
+ [<span data-ttu-id="57a13-146">Visual Basic の言語リファレンス</span><span class="sxs-lookup"><span data-stu-id="57a13-146">Visual Basic Language Reference</span></span>](../../visual-basic/language-reference/index.md)  
+ [<span data-ttu-id="57a13-147">キーワード</span><span class="sxs-lookup"><span data-stu-id="57a13-147">Keywords</span></span>](../../visual-basic/language-reference/keywords/index.md)  
+ [<span data-ttu-id="57a13-148">Visual Basic ランタイム ライブラリのメンバー</span><span class="sxs-lookup"><span data-stu-id="57a13-148">Visual Basic Runtime Library Members</span></span>](../../visual-basic/language-reference/runtime-library-members.md)  
+ [<span data-ttu-id="57a13-149">Visual Basic の名前付け規則</span><span class="sxs-lookup"><span data-stu-id="57a13-149">Visual Basic Naming Conventions</span></span>](../../visual-basic/programming-guide/program-structure/naming-conventions.md)  
+ [<span data-ttu-id="57a13-150">方法 : コード内でステートメントを分割および連結する</span><span class="sxs-lookup"><span data-stu-id="57a13-150">How to: Break and Combine Statements in Code</span></span>](../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)  
+ [<span data-ttu-id="57a13-151">コード内のコメント</span><span class="sxs-lookup"><span data-stu-id="57a13-151">Comments in Code</span></span>](../../visual-basic/programming-guide/program-structure/comments-in-code.md)

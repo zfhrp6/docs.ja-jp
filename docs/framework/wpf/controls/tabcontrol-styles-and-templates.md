@@ -1,86 +1,88 @@
 ---
-title: "TabControl のスタイルとテンプレート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ControlTemplate [WPF], TabControl"
-  - "パーツ [WPF], TabControl"
-  - "状態 [WPF], TabControl"
-  - "スタイル [WPF], TabControl"
-  - "TabControl [WPF], スタイルおよびテンプレート"
-  - "テンプレート [WPF], TabControl"
+title: "TabControl のスタイルとテンプレート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- ControlTemplate [WPF], TabControl
+- TabControl [WPF], styles and templates [WPF]
+- parts [WPF], TabControl
+- styles [WPF], TabControl
+- states [WPF], TabControl
+- templates [WPF], TabControl
 ms.assetid: f6b19a30-f10e-4fa1-96ce-f17a54092ab6
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 054d744c9c15f73ef99f9e9df3a775831b1fe148
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# TabControl のスタイルとテンプレート
-このトピックでは、<xref:System.Windows.Controls.TabControl> コントロールのスタイルおよびテンプレートについて説明します。  既定の <xref:System.Windows.Controls.ControlTemplate> に変更を加えることで、コントロールに独自の外観を設定できます。  詳細については、「[ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
+# <a name="tabcontrol-styles-and-templates"></a><span data-ttu-id="b8a88-102">TabControl のスタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="b8a88-102">TabControl Styles and Templates</span></span>
+<span data-ttu-id="b8a88-103">このトピックは、のスタイルとテンプレートについて説明します、<xref:System.Windows.Controls.TabControl>コントロール。</span><span class="sxs-lookup"><span data-stu-id="b8a88-103">This topic describes the styles and templates for the <xref:System.Windows.Controls.TabControl> control.</span></span> <span data-ttu-id="b8a88-104">既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。</span><span class="sxs-lookup"><span data-stu-id="b8a88-104">You can modify the default <xref:System.Windows.Controls.ControlTemplate> to give the control a unique appearance.</span></span> <span data-ttu-id="b8a88-105">詳細については、「[Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b8a88-105">For more information, see [Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).</span></span>  
   
-## TabControl パーツ  
- 次の表は、<xref:System.Windows.Controls.TabControl> コントロールの名前付きパーツの一覧です。  
+## <a name="tabcontrol-parts"></a><span data-ttu-id="b8a88-106">TabControl 部分</span><span class="sxs-lookup"><span data-stu-id="b8a88-106">TabControl Parts</span></span>  
+ <span data-ttu-id="b8a88-107">次の表に、名前付きのパーツの<xref:System.Windows.Controls.TabControl>コントロール。</span><span class="sxs-lookup"><span data-stu-id="b8a88-107">The following table lists the named parts for the <xref:System.Windows.Controls.TabControl> control.</span></span>  
   
-||||  
+|<span data-ttu-id="b8a88-108">パーツ</span><span class="sxs-lookup"><span data-stu-id="b8a88-108">Part</span></span>|<span data-ttu-id="b8a88-109">型</span><span class="sxs-lookup"><span data-stu-id="b8a88-109">Type</span></span>|<span data-ttu-id="b8a88-110">説明</span><span class="sxs-lookup"><span data-stu-id="b8a88-110">Description</span></span>|  
 |-|-|-|  
-|指定項目|種類|Description|  
-|PART\_SelectedContentHost|<xref:System.Windows.Controls.ContentPresenter>|現在選択されている <xref:System.Windows.Controls.TabItem> のコンテンツを表示するオブジェクト。|  
+|<span data-ttu-id="b8a88-111">PART_SelectedContentHost</span><span class="sxs-lookup"><span data-stu-id="b8a88-111">PART_SelectedContentHost</span></span>|<xref:System.Windows.Controls.ContentPresenter>|<span data-ttu-id="b8a88-112">現在選択されているの内容を表示するオブジェクト<xref:System.Windows.Controls.TabItem>です。</span><span class="sxs-lookup"><span data-stu-id="b8a88-112">The object that shows the content of the currently selected <xref:System.Windows.Controls.TabItem>.</span></span>|  
   
- <xref:System.Windows.Controls.TabControl> の <xref:System.Windows.Controls.ControlTemplate> を作成する際には、テンプレートの <xref:System.Windows.Controls.ScrollViewer> に <xref:System.Windows.Controls.ItemsPresenter> を含めることができます。  <xref:System.Windows.Controls.ItemsPresenter> により、<xref:System.Windows.Controls.TabControl> の各項目が表示されます。また、<xref:System.Windows.Controls.ScrollViewer> により、コントロール内でスクロールできるようになります。  <xref:System.Windows.Controls.ItemsPresenter> が <xref:System.Windows.Controls.ScrollViewer> の直接の子でない場合は、<xref:System.Windows.Controls.ItemsPresenter> に `ItemsPresenter` という名前を付ける必要があります。  
+ <span data-ttu-id="b8a88-113">作成するときに、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.TabControl>、テンプレートを含めることがあります、<xref:System.Windows.Controls.ItemsPresenter>内で、<xref:System.Windows.Controls.ScrollViewer>です。</span><span class="sxs-lookup"><span data-stu-id="b8a88-113">When you create a <xref:System.Windows.Controls.ControlTemplate> for a <xref:System.Windows.Controls.TabControl>, your template might contain an <xref:System.Windows.Controls.ItemsPresenter> within a <xref:System.Windows.Controls.ScrollViewer>.</span></span> <span data-ttu-id="b8a88-114">(、<xref:System.Windows.Controls.ItemsPresenter>内の各項目を表示、 <xref:System.Windows.Controls.TabControl>;<xref:System.Windows.Controls.ScrollViewer>コントロール内でスクロールできるように) します。</span><span class="sxs-lookup"><span data-stu-id="b8a88-114">(The <xref:System.Windows.Controls.ItemsPresenter> displays each item in the <xref:System.Windows.Controls.TabControl>; the <xref:System.Windows.Controls.ScrollViewer> enables scrolling within the control).</span></span>  <span data-ttu-id="b8a88-115">場合、<xref:System.Windows.Controls.ItemsPresenter>の直接の子ではない、<xref:System.Windows.Controls.ScrollViewer>を付ける必要があります、<xref:System.Windows.Controls.ItemsPresenter>名、`ItemsPresenter`です。</span><span class="sxs-lookup"><span data-stu-id="b8a88-115">If the <xref:System.Windows.Controls.ItemsPresenter> is not the direct child of the <xref:System.Windows.Controls.ScrollViewer>, you must give the <xref:System.Windows.Controls.ItemsPresenter> the name, `ItemsPresenter`.</span></span>  
   
-## TabControl の状態  
- 次の表は、<xref:System.Windows.Controls.TabControl> コントロールの表示状態の一覧です。  
+## <a name="tabcontrol-states"></a><span data-ttu-id="b8a88-116">TabControl の状態</span><span class="sxs-lookup"><span data-stu-id="b8a88-116">TabControl States</span></span>  
+ <span data-ttu-id="b8a88-117">次の表に、用ビジュアル状態、<xref:System.Windows.Controls.TabControl>コントロール。</span><span class="sxs-lookup"><span data-stu-id="b8a88-117">The following table lists the visual states for the <xref:System.Windows.Controls.TabControl> control.</span></span>  
   
-|VisualState 名|VisualStateGroup 名|Description|  
-|-------------------|------------------------|-----------------|  
-|Normal|CommonStates|既定の状態です。|  
-|Disabled|CommonStates|コントロールが無効になっています。|  
-|Valid|ValidationStates|このコントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `false` です。|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがありません。|  
+|<span data-ttu-id="b8a88-118">VisualState 名</span><span class="sxs-lookup"><span data-stu-id="b8a88-118">VisualState Name</span></span>|<span data-ttu-id="b8a88-119">VisualStateGroup 名</span><span class="sxs-lookup"><span data-stu-id="b8a88-119">VisualStateGroup Name</span></span>|<span data-ttu-id="b8a88-120">説明</span><span class="sxs-lookup"><span data-stu-id="b8a88-120">Description</span></span>|  
+|----------------------|---------------------------|-----------------|  
+|<span data-ttu-id="b8a88-121">標準</span><span class="sxs-lookup"><span data-stu-id="b8a88-121">Normal</span></span>|<span data-ttu-id="b8a88-122">CommonStates</span><span class="sxs-lookup"><span data-stu-id="b8a88-122">CommonStates</span></span>|<span data-ttu-id="b8a88-123">既定の状態です。</span><span class="sxs-lookup"><span data-stu-id="b8a88-123">The default state.</span></span>|  
+|<span data-ttu-id="b8a88-124">無効</span><span class="sxs-lookup"><span data-stu-id="b8a88-124">Disabled</span></span>|<span data-ttu-id="b8a88-125">CommonStates</span><span class="sxs-lookup"><span data-stu-id="b8a88-125">CommonStates</span></span>|<span data-ttu-id="b8a88-126">コントロールが無効になっています。</span><span class="sxs-lookup"><span data-stu-id="b8a88-126">The control is disabled.</span></span>|  
+|<span data-ttu-id="b8a88-127">有効</span><span class="sxs-lookup"><span data-stu-id="b8a88-127">Valid</span></span>|<span data-ttu-id="b8a88-128">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="b8a88-128">ValidationStates</span></span>|<span data-ttu-id="b8a88-129">コントロールを使用して、<xref:System.Windows.Controls.Validation>クラスおよび<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`false`します。</span><span class="sxs-lookup"><span data-stu-id="b8a88-129">The control uses the <xref:System.Windows.Controls.Validation> class and the <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `false`.</span></span>|  
+|<span data-ttu-id="b8a88-130">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="b8a88-130">InvalidFocused</span></span>|<span data-ttu-id="b8a88-131">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="b8a88-131">ValidationStates</span></span>|<span data-ttu-id="b8a88-132"><xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスします。</span><span class="sxs-lookup"><span data-stu-id="b8a88-132">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control has focus.</span></span>|  
+|<span data-ttu-id="b8a88-133">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="b8a88-133">InvalidUnfocused</span></span>|<span data-ttu-id="b8a88-134">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="b8a88-134">ValidationStates</span></span>|<span data-ttu-id="b8a88-135"><xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスがないです。</span><span class="sxs-lookup"><span data-stu-id="b8a88-135">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control does not have focus.</span></span>|  
   
-## TabItem パーツ  
- <xref:System.Windows.Controls.TabItem> コントロールには、名前付きのパーツは存在しません。  
+## <a name="tabitem-parts"></a><span data-ttu-id="b8a88-136">TabItem 部分</span><span class="sxs-lookup"><span data-stu-id="b8a88-136">TabItem Parts</span></span>  
+ <span data-ttu-id="b8a88-137"><xref:System.Windows.Controls.TabItem>コントロールには、その名前付きの部分はありません。</span><span class="sxs-lookup"><span data-stu-id="b8a88-137">The <xref:System.Windows.Controls.TabItem> control does not have any named parts.</span></span>  
   
-## TabItem の状態  
- 次の表は、<xref:System.Windows.Controls.TabItem> コントロールの表示状態の一覧です。  
+## <a name="tabitem-states"></a><span data-ttu-id="b8a88-138">TabItem 状態</span><span class="sxs-lookup"><span data-stu-id="b8a88-138">TabItem States</span></span>  
+ <span data-ttu-id="b8a88-139">次の表に、用ビジュアル状態、<xref:System.Windows.Controls.TabItem>コントロール。</span><span class="sxs-lookup"><span data-stu-id="b8a88-139">The following table lists the visual states for the <xref:System.Windows.Controls.TabItem> control.</span></span>  
   
-|VisualState 名|VisualStateGroup 名|Description|  
-|-------------------|------------------------|-----------------|  
-|Normal|CommonStates|既定の状態です。|  
-|MouseOver|CommonStates|マウス ポインターがコントロール上に配置されています。|  
-|Disabled|CommonStates|コントロールが無効になっています。|  
-|Focused|FocusStates|コントロールにフォーカスがあります。|  
-|Unfocused|FocusStates|コントロールにフォーカスがありません。|  
-|Selected|SelectionStates|コントロールは選択されています。|  
-|Unselected|SelectionStates|コントロールは選択されていません。|  
-|Valid|ValidationStates|このコントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `false` です。|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがありません。|  
+|<span data-ttu-id="b8a88-140">VisualState 名</span><span class="sxs-lookup"><span data-stu-id="b8a88-140">VisualState Name</span></span>|<span data-ttu-id="b8a88-141">VisualStateGroup 名</span><span class="sxs-lookup"><span data-stu-id="b8a88-141">VisualStateGroup Name</span></span>|<span data-ttu-id="b8a88-142">説明</span><span class="sxs-lookup"><span data-stu-id="b8a88-142">Description</span></span>|  
+|----------------------|---------------------------|-----------------|  
+|<span data-ttu-id="b8a88-143">標準</span><span class="sxs-lookup"><span data-stu-id="b8a88-143">Normal</span></span>|<span data-ttu-id="b8a88-144">CommonStates</span><span class="sxs-lookup"><span data-stu-id="b8a88-144">CommonStates</span></span>|<span data-ttu-id="b8a88-145">既定の状態です。</span><span class="sxs-lookup"><span data-stu-id="b8a88-145">The default state.</span></span>|  
+|<span data-ttu-id="b8a88-146">MouseOver</span><span class="sxs-lookup"><span data-stu-id="b8a88-146">MouseOver</span></span>|<span data-ttu-id="b8a88-147">CommonStates</span><span class="sxs-lookup"><span data-stu-id="b8a88-147">CommonStates</span></span>|<span data-ttu-id="b8a88-148">マウス ポインターがコントロール上に配置されます。</span><span class="sxs-lookup"><span data-stu-id="b8a88-148">The mouse pointer is positioned over the control.</span></span>|  
+|<span data-ttu-id="b8a88-149">無効</span><span class="sxs-lookup"><span data-stu-id="b8a88-149">Disabled</span></span>|<span data-ttu-id="b8a88-150">CommonStates</span><span class="sxs-lookup"><span data-stu-id="b8a88-150">CommonStates</span></span>|<span data-ttu-id="b8a88-151">コントロールが無効になっています。</span><span class="sxs-lookup"><span data-stu-id="b8a88-151">The control is disabled.</span></span>|  
+|<span data-ttu-id="b8a88-152">フォーカスされている</span><span class="sxs-lookup"><span data-stu-id="b8a88-152">Focused</span></span>|<span data-ttu-id="b8a88-153">FocusStates</span><span class="sxs-lookup"><span data-stu-id="b8a88-153">FocusStates</span></span>|<span data-ttu-id="b8a88-154">コントロールにフォーカスがあります。</span><span class="sxs-lookup"><span data-stu-id="b8a88-154">The control has focus.</span></span>|  
+|<span data-ttu-id="b8a88-155">フォーカスされていない</span><span class="sxs-lookup"><span data-stu-id="b8a88-155">Unfocused</span></span>|<span data-ttu-id="b8a88-156">FocusStates</span><span class="sxs-lookup"><span data-stu-id="b8a88-156">FocusStates</span></span>|<span data-ttu-id="b8a88-157">コントロールにフォーカスがありません。</span><span class="sxs-lookup"><span data-stu-id="b8a88-157">The control does not have focus.</span></span>|  
+|<span data-ttu-id="b8a88-158">選択済み</span><span class="sxs-lookup"><span data-stu-id="b8a88-158">Selected</span></span>|<span data-ttu-id="b8a88-159">SelectionStates</span><span class="sxs-lookup"><span data-stu-id="b8a88-159">SelectionStates</span></span>|<span data-ttu-id="b8a88-160">コントロールが選択されます。</span><span class="sxs-lookup"><span data-stu-id="b8a88-160">The control is selected.</span></span>|  
+|<span data-ttu-id="b8a88-161">未選択</span><span class="sxs-lookup"><span data-stu-id="b8a88-161">Unselected</span></span>|<span data-ttu-id="b8a88-162">SelectionStates</span><span class="sxs-lookup"><span data-stu-id="b8a88-162">SelectionStates</span></span>|<span data-ttu-id="b8a88-163">コントロールが選択されていません。</span><span class="sxs-lookup"><span data-stu-id="b8a88-163">The control is not selected.</span></span>|  
+|<span data-ttu-id="b8a88-164">有効</span><span class="sxs-lookup"><span data-stu-id="b8a88-164">Valid</span></span>|<span data-ttu-id="b8a88-165">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="b8a88-165">ValidationStates</span></span>|<span data-ttu-id="b8a88-166">コントロールを使用して、<xref:System.Windows.Controls.Validation>クラスおよび<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`false`します。</span><span class="sxs-lookup"><span data-stu-id="b8a88-166">The control uses the <xref:System.Windows.Controls.Validation> class and the <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `false`.</span></span>|  
+|<span data-ttu-id="b8a88-167">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="b8a88-167">InvalidFocused</span></span>|<span data-ttu-id="b8a88-168">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="b8a88-168">ValidationStates</span></span>|<span data-ttu-id="b8a88-169"><xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスします。</span><span class="sxs-lookup"><span data-stu-id="b8a88-169">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control has focus.</span></span>|  
+|<span data-ttu-id="b8a88-170">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="b8a88-170">InvalidUnfocused</span></span>|<span data-ttu-id="b8a88-171">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="b8a88-171">ValidationStates</span></span>|<span data-ttu-id="b8a88-172"><xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスがないです。</span><span class="sxs-lookup"><span data-stu-id="b8a88-172">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control does not have focus.</span></span>|  
   
-## TabControl ControlTemplate の例  
- 次の例は、<xref:System.Windows.Controls.TabControl> コントロールと <xref:System.Windows.Controls.TabItem> コントロールの <xref:System.Windows.Controls.ControlTemplate> を定義する方法を示しています。  
+## <a name="tabcontrol-controltemplate-example"></a><span data-ttu-id="b8a88-173">TabControl ControlTemplate の例</span><span class="sxs-lookup"><span data-stu-id="b8a88-173">TabControl ControlTemplate Example</span></span>  
+ <span data-ttu-id="b8a88-174">次の例は、定義する方法を示します、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.TabControl>と<xref:System.Windows.Controls.TabItem>コントロール。</span><span class="sxs-lookup"><span data-stu-id="b8a88-174">The following example shows how to define a <xref:System.Windows.Controls.ControlTemplate> for the <xref:System.Windows.Controls.TabControl> and <xref:System.Windows.Controls.TabItem> controls.</span></span>  
   
- [!code-xml[ControlTemplateExamples#TabControl](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/tabcontrol.xaml#tabcontrol)]  
+ [!code-xaml[ControlTemplateExamples#TabControl](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/tabcontrol.xaml#tabcontrol)]  
   
- 前の例では、次の 1 つ以上のリソースを使用しています。  
+ <span data-ttu-id="b8a88-175">前の例では、次のリソースの 1 つ以上を使用します。</span><span class="sxs-lookup"><span data-stu-id="b8a88-175">The preceding example uses one or more of the following resources.</span></span>  
   
- [!code-xml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
+ [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- サンプル全体については、「[ControlTemplate を使用したスタイル設定のサンプル](http://go.microsoft.com/fwlink/?LinkID=160041)」を参照してください。.  
+ <span data-ttu-id="b8a88-176">完全なサンプルについては、[Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b8a88-176">For the complete sample, see [Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041).</span></span>  
   
-## 参照  
- <xref:System.Windows.FrameworkElement.Style%2A>   
- <xref:System.Windows.Controls.ControlTemplate>   
- [コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)   
- [コントロールのカスタマイズ](../../../../docs/framework/wpf/controls/control-customization.md)   
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
+## <a name="see-also"></a><span data-ttu-id="b8a88-177">関連項目</span><span class="sxs-lookup"><span data-stu-id="b8a88-177">See Also</span></span>  
+ <xref:System.Windows.FrameworkElement.Style%2A>  
+ <xref:System.Windows.Controls.ControlTemplate>  
+ [<span data-ttu-id="b8a88-178">コントロールのスタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="b8a88-178">Control Styles and Templates</span></span>](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [<span data-ttu-id="b8a88-179">コントロールのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="b8a88-179">Control Customization</span></span>](../../../../docs/framework/wpf/controls/control-customization.md)  
+ [<span data-ttu-id="b8a88-180">スタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="b8a88-180">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [<span data-ttu-id="b8a88-181">ControlTemplate の作成による既存のコントロールの外観のカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="b8a88-181">Customizing the Appearance of an Existing Control by Creating a ControlTemplate</span></span>](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

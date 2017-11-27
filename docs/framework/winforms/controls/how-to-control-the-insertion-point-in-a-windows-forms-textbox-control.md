@@ -1,46 +1,50 @@
 ---
-title: "方法 : Windows フォーム TextBox コントロールでのカーソル位置を制御する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "カーソル位置, TextBox コントロール"
-  - "テキスト ボックス, 制御 (挿入ポイントを)"
-  - "TextBox コントロール [Windows フォーム], カーソル位置"
+title: "方法 : Windows フォーム TextBox コントロールでのカーソル位置を制御する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- TextBox control [Windows Forms], insertion point
+- insertion points [Windows Forms], TextBox controls
+- text boxes [Windows Forms], controlling insertion point
 ms.assetid: 5bee7d34-5121-429e-ab1f-d8ff67bc74c1
-caps.latest.revision: 19
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5cc3dab3acafdb151cf14f81145ef47e5a6ff689
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォーム TextBox コントロールでのカーソル位置を制御する
-Windows フォーム <xref:System.Windows.Forms.TextBox> コントロールに最初にフォーカスが設定されたとき、テキスト ボックスの既定のカーソル位置は、既存テキストの左端になります。  キーボードまたはマウスを使用して、カーソル位置を移動できます。  テキスト ボックスからフォーカスが他に移され、再びフォーカスを受け取った場合は、最後にカーソルが置かれていた場所がカーソル位置となります。  
+# <a name="how-to-control-the-insertion-point-in-a-windows-forms-textbox-control"></a><span data-ttu-id="6bba1-102">方法 : Windows フォーム TextBox コントロールでのカーソル位置を制御する</span><span class="sxs-lookup"><span data-stu-id="6bba1-102">How to: Control the Insertion Point in a Windows Forms TextBox Control</span></span>
+<span data-ttu-id="6bba1-103">Windows フォーム<xref:System.Windows.Forms.TextBox>コントロールが最初にフォーカスを受け取る、既存のテキストの左側には、テキスト ボックス内の既定のカーソル。</span><span class="sxs-lookup"><span data-stu-id="6bba1-103">When a Windows Forms <xref:System.Windows.Forms.TextBox> control first receives the focus, the default insertion within the text box is to the left of any existing text.</span></span> <span data-ttu-id="6bba1-104">ユーザーは、キーボードまたはマウスのカーソルを移動できます。</span><span class="sxs-lookup"><span data-stu-id="6bba1-104">The user can move the insertion point with the keyboard or the mouse.</span></span> <span data-ttu-id="6bba1-105">テキスト ボックスを失い、フォーカスを得た場合、挿入ポイントされます任意の場所、ユーザー最後置かれます。</span><span class="sxs-lookup"><span data-stu-id="6bba1-105">If the text box loses and then regains the focus, the insertion point will be wherever the user last placed it.</span></span>  
   
- 場合によっては、この動作により混乱することがあります。  ワード プロセッシング アプリケーションでは、新しい文字が既存テキストの後に表示されるという前提で作業します。  データ入力アプリケーションでは、新しい文字を入力すると既存の入力が置き換えられるという前提で作業します。  <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> プロパティおよび <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> プロパティを使用すると、用途に合わせて動作を変更できます。  
+ <span data-ttu-id="6bba1-106">場合によっては、この動作は、ユーザーに混乱を招くことがあります。</span><span class="sxs-lookup"><span data-stu-id="6bba1-106">In some cases, this behavior can be disconcerting to the user.</span></span> <span data-ttu-id="6bba1-107">ユーザーのワード プロセッシング アプリケーションで、既存のテキストの後に表示する新しい文字と思ったかもしれません。</span><span class="sxs-lookup"><span data-stu-id="6bba1-107">In a word processing application, the user might expect new characters to appear after any existing text.</span></span> <span data-ttu-id="6bba1-108">データ エントリのアプリケーションでは、ユーザーは、既存のエントリを置き換える新しい文字と思ったかもしれません。</span><span class="sxs-lookup"><span data-stu-id="6bba1-108">In a data entry application, the user might expect new characters to replace any existing entry.</span></span> <span data-ttu-id="6bba1-109"><xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A>と<xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A>を目的に合わせて動作を変更するプロパティが有効にします。</span><span class="sxs-lookup"><span data-stu-id="6bba1-109">The <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> and <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> properties enable you to modify the behavior to suit your purpose.</span></span>  
   
-### TextBox コントロールのカーソル位置を制御するには  
+### <a name="to-control-the-insertion-point-in-a-textbox-control"></a><span data-ttu-id="6bba1-110">TextBox コントロールのカーソル位置を制御するには</span><span class="sxs-lookup"><span data-stu-id="6bba1-110">To control the insertion point in a TextBox control</span></span>  
   
-1.  <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> プロパティに適切な値を設定します。  0 に設定すると、最初の文字のすぐ左側がカーソル位置となります。  
+1.  <span data-ttu-id="6bba1-111"><xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> プロパティに適切な値を設定します。</span><span class="sxs-lookup"><span data-stu-id="6bba1-111">Set the <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> property to an appropriate value.</span></span> <span data-ttu-id="6bba1-112">0 は、最初の文字の左側にすぐにカーソルを配置します。</span><span class="sxs-lookup"><span data-stu-id="6bba1-112">Zero places the insertion point immediately to the left of the first character.</span></span>  
   
-2.  \(省略可能\) <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> プロパティに、選択するテキストの長さを設定します。  
+2.  <span data-ttu-id="6bba1-113">(省略可能)設定、<xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A>プロパティを選択するテキストの長さをします。</span><span class="sxs-lookup"><span data-stu-id="6bba1-113">(Optional) Set the <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> property to the length of the text you want to select.</span></span>  
   
-     次のコードでは、常にカーソル位置が 0 に戻されます。  `TextBox1_Enter` イベント ハンドラーは、コントロールにバインドする必要があります。詳細については、「[Windows フォーム内でのイベント ハンドラーの作成](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)」を参照してください。  
+     <span data-ttu-id="6bba1-114">次のコードは、常に 0 に挿入ポイントを返します。</span><span class="sxs-lookup"><span data-stu-id="6bba1-114">The code below always returns the insertion point to 0.</span></span> <span data-ttu-id="6bba1-115">`TextBox1_Enter`イベント ハンドラーが; 詳細については、コントロールにバインドする必要がありますを参照してください[Windows フォームでのイベント ハンドラーの作成](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="6bba1-115">The `TextBox1_Enter` event handler must be bound to the control; for more information, see [Creating Event Handlers in Windows Forms](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md).</span></span>  
   
     ```vb  
     Private Sub TextBox1_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles TextBox1.Enter  
        TextBox1.SelectionStart = 0  
        TextBox1.SelectionLength = 0  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -48,7 +52,6 @@ Windows フォーム <xref:System.Windows.Forms.TextBox> コントロールに�
        textBox1.SelectionStart = 0;  
        textBox1.SelectionLength = 0;  
     }  
-  
     ```  
   
     ```cpp  
@@ -61,19 +64,19 @@ Windows フォーム <xref:System.Windows.Forms.TextBox> コントロールに�
        }  
     ```  
   
-## 既定でのカーソル位置の表示  
- <xref:System.Windows.Forms.TextBox> のカーソル位置は、<xref:System.Windows.Forms.TextBox> コントロールがタブ オーダーの最初にある場合にだけ、新しいフォーム上に既定で表示されます。  それ以外の場合、カーソル位置は、キーボードまたはマウスを使って <xref:System.Windows.Forms.TextBox> にフォーカスを移動した場合にだけ表示されます。  
+## <a name="making-the-insertion-point-visible-by-default"></a><span data-ttu-id="6bba1-116">カーソルを既定で表示します。</span><span class="sxs-lookup"><span data-stu-id="6bba1-116">Making the Insertion Point Visible by Default</span></span>  
+ <span data-ttu-id="6bba1-117"><xref:System.Windows.Forms.TextBox>挿入ポイントが既定では、新しいフォーム場合にのみに表示される、<xref:System.Windows.Forms.TextBox>コントロールがタブ オーダーの先頭にします。</span><span class="sxs-lookup"><span data-stu-id="6bba1-117">The <xref:System.Windows.Forms.TextBox> insertion point is visible by default in a new form only if the <xref:System.Windows.Forms.TextBox> control is first in the tab order.</span></span> <span data-ttu-id="6bba1-118">挿入ポイントが提供する場合にのみを表示するそれ以外の場合、<xref:System.Windows.Forms.TextBox>キーボードまたはマウスでフォーカスがあります。</span><span class="sxs-lookup"><span data-stu-id="6bba1-118">Otherwise, the insertion point appears only if you give the <xref:System.Windows.Forms.TextBox> the focus with either the keyboard or the mouse.</span></span>  
   
-#### 新しいフォーム上でテキスト ボックスのカーソル位置を既定で表示するには  
+#### <a name="to-make-the-text-box-insertion-point-visible-by-default-on-a-new-form"></a><span data-ttu-id="6bba1-119">新しいフォームに既定では、テキスト ボックスの挿入ポイントを表示する</span><span class="sxs-lookup"><span data-stu-id="6bba1-119">To make the text box insertion point visible by default on a new form</span></span>  
   
--   <xref:System.Windows.Forms.TextBox> コントロールの <xref:System.Windows.Forms.Control.TabIndex%2A> プロパティを `0` に設定します。  
+-   <span data-ttu-id="6bba1-120">設定、<xref:System.Windows.Forms.TextBox>コントロールの<xref:System.Windows.Forms.Control.TabIndex%2A>プロパティを`0`です。</span><span class="sxs-lookup"><span data-stu-id="6bba1-120">Set the <xref:System.Windows.Forms.TextBox> control's <xref:System.Windows.Forms.Control.TabIndex%2A> property to `0`.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.TextBox>   
- [TextBox コントロールの概要](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)   
- [方法 : Windows フォームの TextBox コントロールを使用してパスワード テキスト ボックスを作成する](../../../../docs/framework/winforms/controls/how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)   
- [方法 : 読み取り専用テキスト ボックスを作成する](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)   
- [方法 : 文字列に引用符を挿入する](../../../../docs/framework/winforms/controls/how-to-put-quotation-marks-in-a-string-windows-forms.md)   
- [方法 : Windows フォーム TextBox コントロールでテキストを選択する](../../../../docs/framework/winforms/controls/how-to-select-text-in-the-windows-forms-textbox-control.md)   
- [方法 : Windows フォーム TextBox コントロールで複数行を表示する](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)   
- [TextBox コントロール](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="6bba1-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="6bba1-121">See Also</span></span>  
+ <xref:System.Windows.Forms.TextBox>  
+ [<span data-ttu-id="6bba1-122">TextBox コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="6bba1-122">TextBox Control Overview</span></span>](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)  
+ [<span data-ttu-id="6bba1-123">方法: Windows フォームの TextBox コントロールを使用してパスワード テキスト ボックスを作成する</span><span class="sxs-lookup"><span data-stu-id="6bba1-123">How to: Create a Password Text Box with the Windows Forms TextBox Control</span></span>](../../../../docs/framework/winforms/controls/how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)  
+ [<span data-ttu-id="6bba1-124">方法: 読み取り専用テキスト ボックスを作成する</span><span class="sxs-lookup"><span data-stu-id="6bba1-124">How to: Create a Read-Only Text Box</span></span>](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)  
+ [<span data-ttu-id="6bba1-125">方法: 文字列に引用符を挿入する</span><span class="sxs-lookup"><span data-stu-id="6bba1-125">How to: Put Quotation Marks in a String</span></span>](../../../../docs/framework/winforms/controls/how-to-put-quotation-marks-in-a-string-windows-forms.md)  
+ [<span data-ttu-id="6bba1-126">方法: Windows フォーム TextBox コントロールでテキストを選択する</span><span class="sxs-lookup"><span data-stu-id="6bba1-126">How to: Select Text in the Windows Forms TextBox Control</span></span>](../../../../docs/framework/winforms/controls/how-to-select-text-in-the-windows-forms-textbox-control.md)  
+ [<span data-ttu-id="6bba1-127">方法: Windows フォーム TextBox コントロールで複数行を表示する</span><span class="sxs-lookup"><span data-stu-id="6bba1-127">How to: View Multiple Lines in the Windows Forms TextBox Control</span></span>](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)  
+ [<span data-ttu-id="6bba1-128">TextBox コントロール</span><span class="sxs-lookup"><span data-stu-id="6bba1-128">TextBox Control</span></span>](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)

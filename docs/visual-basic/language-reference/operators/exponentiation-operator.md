@@ -1,95 +1,92 @@
 ---
-title: "^ Operator (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.^"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "raising numbers to powers"
-  - "^ operator [Visual Basic], exponention"
-  - "square operator"
-  - "^ operator [Visual Basic]"
-  - "exponentiation operator [Visual Basic]"
-  - "exponent"
-  - "numbers, rasing"
-  - "powers"
-  - "arithmetic operators, exponentiation"
+title: "^ 演算子 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.^
+helpviewer_keywords:
+- raising numbers to powers
+- ^ operator [Visual Basic], exponention
+- square operator [Visual Basic]
+- ^ operator [Visual Basic]
+- exponentiation operator [Visual Basic]
+- exponent
+- numbers [Visual Basic], rasing
+- powers
+- arithmetic operators [Visual Basic], exponentiation
 ms.assetid: d89a1ca8-83da-4784-a87b-a9d7dceb3f62
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 9e7159f289b687055c7d75cc8da58d6f76607a83
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ^ Operator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-数値のべき乗を求めます。  
+# <a name="-operator-visual-basic"></a><span data-ttu-id="436ef-102">^ 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="436ef-102">^ Operator (Visual Basic)</span></span>
+<span data-ttu-id="436ef-103">別の数値の累乗する数値を生成します。</span><span class="sxs-lookup"><span data-stu-id="436ef-103">Raises a number to the power of another number.</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="436ef-104">構文</span><span class="sxs-lookup"><span data-stu-id="436ef-104">Syntax</span></span>  
   
 ```  
-  
 number ^ exponent  
 ```  
   
-## 指定項目  
+## <a name="parts"></a><span data-ttu-id="436ef-105">指定項目</span><span class="sxs-lookup"><span data-stu-id="436ef-105">Parts</span></span>  
  `number`  
- 必ず指定します。  任意の数式を指定します。  
+ <span data-ttu-id="436ef-106">必須です。</span><span class="sxs-lookup"><span data-stu-id="436ef-106">Required.</span></span> <span data-ttu-id="436ef-107">任意の数式。</span><span class="sxs-lookup"><span data-stu-id="436ef-107">Any numeric expression.</span></span>  
   
  `exponent`  
- 必ず指定します。  任意の数式を指定します。  
+ <span data-ttu-id="436ef-108">必須です。</span><span class="sxs-lookup"><span data-stu-id="436ef-108">Required.</span></span> <span data-ttu-id="436ef-109">任意の数式。</span><span class="sxs-lookup"><span data-stu-id="436ef-109">Any numeric expression.</span></span>  
   
-## 結果  
- 結果は、`number` を `exponent` で累乗したもので、常に `Double` 値です。  
+## <a name="result"></a><span data-ttu-id="436ef-110">結果</span><span class="sxs-lookup"><span data-stu-id="436ef-110">Result</span></span>  
+ <span data-ttu-id="436ef-111">結果は`number`の累乗`exponent`、として常に、`Double`値。</span><span class="sxs-lookup"><span data-stu-id="436ef-111">The result is `number` raised to the power of `exponent`, always as a `Double` value.</span></span>  
   
-## サポートされている型  
- `Double`.  他の型のオペランドはすべて `Double` に変換されます。  
+## <a name="supported-types"></a><span data-ttu-id="436ef-112">サポートされている型</span><span class="sxs-lookup"><span data-stu-id="436ef-112">Supported Types</span></span>  
+ <span data-ttu-id="436ef-113">`Double`。</span><span class="sxs-lookup"><span data-stu-id="436ef-113">`Double`.</span></span> <span data-ttu-id="436ef-114">任意の異なる型のオペランドに変換`Double`です。</span><span class="sxs-lookup"><span data-stu-id="436ef-114">Operands of any different type are converted to `Double`.</span></span>  
   
-## 解説  
- Visual Basic は、すべての指数演算を [Double Data Type](../../../visual-basic/language-reference/data-types/double-data-type.md) で行います。  
+## <a name="remarks"></a><span data-ttu-id="436ef-115">コメント</span><span class="sxs-lookup"><span data-stu-id="436ef-115">Remarks</span></span>  
+ <span data-ttu-id="436ef-116">Visual Basic での累乗を常に実行する、 [Double データ型](../../../visual-basic/language-reference/data-types/double-data-type.md)です。</span><span class="sxs-lookup"><span data-stu-id="436ef-116">Visual Basic always performs exponentiation in the [Double Data Type](../../../visual-basic/language-reference/data-types/double-data-type.md).</span></span>  
   
- `exponent` の値は、小数、負の値、またはその両方です。  
+ <span data-ttu-id="436ef-117">値`exponent`、小数部は、負の値、またはその両方です。</span><span class="sxs-lookup"><span data-stu-id="436ef-117">The value of `exponent` can be fractional, negative, or both.</span></span>  
   
- 1 つの式の中で複数の指数演算が行われるとき、`^` 演算子は左から右の順に評価されます。  
+ <span data-ttu-id="436ef-118">1 つの式で複数の指数演算を実行すると、`^`としては、左から右に演算子が評価されます。</span><span class="sxs-lookup"><span data-stu-id="436ef-118">When more than one exponentiation is performed in a single expression, the `^` operator is evaluated as it is encountered from left to right.</span></span>  
   
 > [!NOTE]
->  `^` 演算子は *オーバーロード* できます。つまり、オペランドがそのクラスまたは構造体の型であれば、クラスまたは構造体がこの動作を再定義できます。  このようなクラスまたは構造体でこの演算子を使用している場合、再定義された動作を確認してください。  詳細については、「[Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+>  <span data-ttu-id="436ef-119">`^`演算子を指定できます*オーバー ロードされた*、つまり、あるクラスまたは構造体を再定義できますその動作オペランドは、そのクラスまたは構造体の型を持つときにします。</span><span class="sxs-lookup"><span data-stu-id="436ef-119">The `^` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure.</span></span> <span data-ttu-id="436ef-120">コードは、このようなクラスまたは構造体で、この演算子を使用する場合は、再定義された動作を理解することを確認します。</span><span class="sxs-lookup"><span data-stu-id="436ef-120">If your code uses this operator on such a class or structure, be sure you understand its redefined behavior.</span></span> <span data-ttu-id="436ef-121">詳細については、次を参照してください。[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)です。</span><span class="sxs-lookup"><span data-stu-id="436ef-121">For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).</span></span>  
   
-## 使用例  
- `^` 演算子を使って数値のべき乗を求める例を次に示します。  結果は、最初のオペランドを第 2 のオペランドで累乗した数値です。  
+## <a name="example"></a><span data-ttu-id="436ef-122">例</span><span class="sxs-lookup"><span data-stu-id="436ef-122">Example</span></span>  
+ <span data-ttu-id="436ef-123">次の例では、`^`べき乗の指数部の累乗にする演算子です。</span><span class="sxs-lookup"><span data-stu-id="436ef-123">The following example uses the `^` operator to raise a number to the power of an exponent.</span></span> <span data-ttu-id="436ef-124">最初のオペランドが 2 番目の累乗になります。</span><span class="sxs-lookup"><span data-stu-id="436ef-124">The result is the first operand raised to the power of the second.</span></span>  
   
  [!code-vb[VbVbalrOperators#20](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/exponentiation-operator_1.vb)]  
   
- この例の結果は、次のようになります。  
+ <span data-ttu-id="436ef-125">前の例では、次の結果が生成されます。</span><span class="sxs-lookup"><span data-stu-id="436ef-125">The preceding example produces the following results:</span></span>  
   
- `exp1` が 4 \(2 の 2 乗\) に設定されます。  
+ <span data-ttu-id="436ef-126">`exp1`4 (2 乗) に設定されます。</span><span class="sxs-lookup"><span data-stu-id="436ef-126">`exp1` is set to 4 (2 squared).</span></span>  
   
- `exp2` が 19683 \(3 の 3 乗を 3 乗\) に設定されます。  
+ <span data-ttu-id="436ef-127">`exp2`19683 (3 乗、次にその値が 2 乗) に設定されます。</span><span class="sxs-lookup"><span data-stu-id="436ef-127">`exp2` is set to 19683 (3 cubed, then that value cubed).</span></span>  
   
- `exp3` が \-125 \(\-5 の 2 乗\) に設定されます。  
+ <span data-ttu-id="436ef-128">`exp3`-125 (-5 乗) に設定されます。</span><span class="sxs-lookup"><span data-stu-id="436ef-128">`exp3` is set to -125 (-5 cubed).</span></span>  
   
- `exp4` が 625 \(\-5 の 4 乗\) に設定されます。  
+ <span data-ttu-id="436ef-129">`exp4`625 (4 乗-5) に設定されます。</span><span class="sxs-lookup"><span data-stu-id="436ef-129">`exp4` is set to 625 (-5 to the fourth power).</span></span>  
   
- `exp5` が 2 \(8 の平方根\) に設定されます。  
+ <span data-ttu-id="436ef-130">`exp5`2 (8 の立方根) に設定されます。</span><span class="sxs-lookup"><span data-stu-id="436ef-130">`exp5` is set to 2 (cube root of 8).</span></span>  
   
- `exp6` が 0.5 \(1.0 を 8 の平方根で除算した商\) に設定されます。  
+ <span data-ttu-id="436ef-131">`exp6`0.5 (1.0 8 の立方根で割った値) に設定されます。</span><span class="sxs-lookup"><span data-stu-id="436ef-131">`exp6` is set to 0.5 (1.0 divided by the cube root of 8).</span></span>  
   
- この例ではかっこが重要な役割を果たしていることに注目してください。  *演算子の優先順位*のために、Visual Basic では通常 `^` 演算子を、単項 `–` 演算子よりも先に \(つまり最初に\) 実行します。  `exp4` および `exp6` をかっこなしで計算すると、次のような結果になります。  
+ <span data-ttu-id="436ef-132">上記の例の式のかっこの中の重要性に注意してください。</span><span class="sxs-lookup"><span data-stu-id="436ef-132">Note the importance of the parentheses in the expressions in the preceding example.</span></span> <span data-ttu-id="436ef-133">ため*演算子の優先順位*、Visual Basic は通常は、 `^` 、それ以外の前に、の演算子も、単項`–`演算子。</span><span class="sxs-lookup"><span data-stu-id="436ef-133">Because of *operator precedence*, Visual Basic normally performs the `^` operator before any others, even the unary `–` operator.</span></span> <span data-ttu-id="436ef-134">場合`exp4`と`exp6`が計算されたかっこがない場合、次の結果が生成されるとします。</span><span class="sxs-lookup"><span data-stu-id="436ef-134">If `exp4` and `exp6` had been calculated without parentheses, they would have produced the following results:</span></span>  
   
- \-625 になります`exp4 = -5 ^ 4` は として – （第 4 の 5 乗）計算されます。  
+ <span data-ttu-id="436ef-135">`exp4 = -5 ^ 4`– (4 乗 5) として計算される-625 になります。</span><span class="sxs-lookup"><span data-stu-id="436ef-135">`exp4 = -5 ^ 4` would be calculated as –(5 to the fourth power), which would result in -625.</span></span>  
   
- `exp6 = 8 ^ -1.0 / 3.0` は \(8 の –1 乗、0.125\) を 3.0 で除算した商となり、0.041666666666666666666666666666667 になります。  
+ <span data-ttu-id="436ef-136">`exp6 = 8 ^ -1.0 / 3.0`(– 1 power または 0.125 8) として計算が 3.0 では 0.041666666666666666666666666666667 ことになりますで割った値します。</span><span class="sxs-lookup"><span data-stu-id="436ef-136">`exp6 = 8 ^ -1.0 / 3.0` would be calculated as (8 to the –1 power, or 0.125) divided by 3.0, which would result in 0.041666666666666666666666666666667.</span></span>  
   
-## 参照  
- [^\= Operator](../../../visual-basic/language-reference/operators/exponentiation-assignment-operator.md)   
- [Arithmetic Operators](../../../visual-basic/language-reference/operators/arithmetic-operators.md)   
- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)   
- [Operators Listed by Functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)   
- [Arithmetic Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+## <a name="see-also"></a><span data-ttu-id="436ef-137">関連項目</span><span class="sxs-lookup"><span data-stu-id="436ef-137">See Also</span></span>  
+ [<span data-ttu-id="436ef-138">^= 演算子</span><span class="sxs-lookup"><span data-stu-id="436ef-138">^= Operator</span></span>](../../../visual-basic/language-reference/operators/exponentiation-assignment-operator.md)  
+ [<span data-ttu-id="436ef-139">算術演算子</span><span class="sxs-lookup"><span data-stu-id="436ef-139">Arithmetic Operators</span></span>](../../../visual-basic/language-reference/operators/arithmetic-operators.md)  
+ [<span data-ttu-id="436ef-140">Visual Basic における演算子の優先順位</span><span class="sxs-lookup"><span data-stu-id="436ef-140">Operator Precedence in Visual Basic</span></span>](../../../visual-basic/language-reference/operators/operator-precedence.md)  
+ [<span data-ttu-id="436ef-141">機能別の演算子一覧</span><span class="sxs-lookup"><span data-stu-id="436ef-141">Operators Listed by Functionality</span></span>](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
+ [<span data-ttu-id="436ef-142">Visual Basic における算術演算子</span><span class="sxs-lookup"><span data-stu-id="436ef-142">Arithmetic Operators in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

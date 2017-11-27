@@ -1,33 +1,39 @@
 ---
-title: "接続文字列と構成ファイル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "接続文字列と構成ファイル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 37df2641-661e-407a-a3fb-7bf9540f01e8
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: fe56dc279471f77a3f9ae014f65faaa99a113624
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 接続文字列と構成ファイル
-接続文字列をアプリケーションのコードに組み込むと、セキュリティ上の脆弱性やメンテナンスの問題を引き起こす可能性があります。  アプリケーションのソース コード内にコンパイルされた暗号化されていない接続文字列は、[Ildasm.exe \(IL 逆アセンブラー\)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md) を使用して参照することができます。  さらに、接続文字列が変わるたびにアプリケーションを再コンパイルする必要性が生じます。  そのため、接続文字列はアプリケーション構成ファイルに保存することをお勧めします。  
+# <a name="connection-strings-and-configuration-files"></a><span data-ttu-id="b8b14-102">接続文字列と構成ファイル</span><span class="sxs-lookup"><span data-stu-id="b8b14-102">Connection Strings and Configuration Files</span></span>
+<span data-ttu-id="b8b14-103">接続文字列をアプリケーションのコードに組み込むと、セキュリティ上の脆弱性やメンテナンスの問題を引き起こす可能性があります。</span><span class="sxs-lookup"><span data-stu-id="b8b14-103">Embedding connection strings in your application's code can lead to security vulnerabilities and maintenance problems.</span></span> <span data-ttu-id="b8b14-104">使用して、アプリケーションのソース コードにコンパイルされ暗号化されていない接続文字列を表示できます、 [Ildasm.exe (IL 逆アセンブラー)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md)ツールです。</span><span class="sxs-lookup"><span data-stu-id="b8b14-104">Unencrypted connection strings compiled into an application's source code can be viewed using the [Ildasm.exe (IL Disassembler)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md) tool.</span></span> <span data-ttu-id="b8b14-105">さらに、接続文字列が変わるたびにアプリケーションを再コンパイルする必要性が生じます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-105">Moreover, if the connection string ever changes, your application must be recompiled.</span></span> <span data-ttu-id="b8b14-106">そのため、接続文字列はアプリケーション構成ファイルに保存することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b8b14-106">For these reasons, we recommend storing connection strings in an application configuration file.</span></span>  
   
-## アプリケーション構成ファイルの使用  
- アプリケーション構成ファイルには、特定のアプリケーションに固有の設定が格納されます。  たとえば、ASP.NET アプリケーションには少なくとも 1 つの **web.config** ファイルが存在するほか、Windows アプリケーションにも必要に応じて **app.config** ファイルを割り当てることができます。  構成ファイルの名前と場所はアプリケーションのホストによって異なりますが、どの構成ファイルにも共通の要素があります。  
+## <a name="working-with-application-configuration-files"></a><span data-ttu-id="b8b14-107">アプリケーション構成ファイルの使用</span><span class="sxs-lookup"><span data-stu-id="b8b14-107">Working with Application Configuration Files</span></span>  
+ <span data-ttu-id="b8b14-108">アプリケーション構成ファイルには、特定のアプリケーションに固有の設定が格納されます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-108">Application configuration files contain settings that are specific to a particular application.</span></span> <span data-ttu-id="b8b14-109">1 つまたは複数の ASP.NET アプリケーションは、たとえば、 **web.config**ファイル、および Windows アプリケーションは、省略可能な可能性があります**app.config**ファイル。</span><span class="sxs-lookup"><span data-stu-id="b8b14-109">For example, an ASP.NET application can have one or more **web.config** files, and a Windows application can have an optional **app.config** file.</span></span> <span data-ttu-id="b8b14-110">構成ファイルの名前と場所はアプリケーションのホストによって異なりますが、どの構成ファイルにも共通の要素があります。</span><span class="sxs-lookup"><span data-stu-id="b8b14-110">Configuration files share common elements, although the name and location of a configuration file vary depending on the application's host.</span></span>  
   
-### connectionStrings セクション  
- 接続文字列は、アプリケーション構成ファイルの **configuration** 要素の **connectionStrings** セクションにキーと値のペアとして格納できます。  子要素には、**add**、**clear**、および **remove** が存在します。  
+### <a name="the-connectionstrings-section"></a><span data-ttu-id="b8b14-111">connectionStrings セクション</span><span class="sxs-lookup"><span data-stu-id="b8b14-111">The connectionStrings Section</span></span>  
+ <span data-ttu-id="b8b14-112">接続文字列は、キーと値のペアとして保存すること、 **connectionStrings**のセクションで、**構成**アプリケーション構成ファイルの要素。</span><span class="sxs-lookup"><span data-stu-id="b8b14-112">Connection strings can be stored as key/value pairs in the **connectionStrings** section of the **configuration** element of an application configuration file.</span></span> <span data-ttu-id="b8b14-113">子要素には、**追加**、**オフ**、および**削除**です。</span><span class="sxs-lookup"><span data-stu-id="b8b14-113">Child elements include **add**, **clear**, and **remove**.</span></span>  
   
- 次の構成ファイル フラグメントは、接続文字列を格納するためのスキーマと構文の例を示しています。  **name** 属性は、実行時に取得する接続文字列を一意に識別するための名前です。  **providerName** は、machine.config ファイルに登録された .NET Framework データ プロバイダーの不変名です。  
+ <span data-ttu-id="b8b14-114">次の構成ファイル フラグメントは、接続文字列を格納するためのスキーマと構文の例を示しています。</span><span class="sxs-lookup"><span data-stu-id="b8b14-114">The following configuration file fragment demonstrates the schema and syntax for storing a connection string.</span></span> <span data-ttu-id="b8b14-115">**名前**属性は、実行時に取得できるようにするために、接続文字列を一意に識別する指定した名前です。</span><span class="sxs-lookup"><span data-stu-id="b8b14-115">The **name** attribute is a name that you provide to uniquely identify a connection string so that it can be retrieved at run time.</span></span> <span data-ttu-id="b8b14-116">**ProviderName** machine.config ファイルに登録されている .NET Framework データ プロバイダーの不変の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-116">The **providerName** is the invariant name of the .NET Framework data provider, which is registered in the machine.config file.</span></span>  
   
-```  
+```xml  
 <?xml version='1.0' encoding='utf-8'?>  
   <configuration>  
     <connectionStrings>  
@@ -40,14 +46,14 @@ caps.handback.revision: 4
 ```  
   
 > [!NOTE]
->  構成ファイルに接続文字列の一部を保存しておき、<xref:System.Data.Common.DbConnectionStringBuilder> クラスを使用して実行時に補完できます。  接続文字列の要素を事前に知ることができない場合や、機密情報を構成ファイルに保存したくない場合には有効な手段です。  詳細については、「[接続文字列ビルダー](../../../../docs/framework/data/adonet/connection-string-builders.md)」を参照してください。  
+>  <span data-ttu-id="b8b14-117">構成ファイルに接続文字列の一部を保存しておき、<xref:System.Data.Common.DbConnectionStringBuilder> クラスを使用して実行時に補完できます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-117">You can save part of a connection string in a configuration file and use the <xref:System.Data.Common.DbConnectionStringBuilder> class to complete it at run time.</span></span> <span data-ttu-id="b8b14-118">接続文字列の要素を事前に知ることができない場合や、機密情報を構成ファイルに保存したくない場合には有効な手段です。</span><span class="sxs-lookup"><span data-stu-id="b8b14-118">This is useful in scenarios where you do not know elements of the connection string ahead of time, or when you do not want to save sensitive information in a configuration file.</span></span> <span data-ttu-id="b8b14-119">詳細については、次を参照してください。[接続文字列ビルダー](../../../../docs/framework/data/adonet/connection-string-builders.md)です。</span><span class="sxs-lookup"><span data-stu-id="b8b14-119">For more information, see [Connection String Builders](../../../../docs/framework/data/adonet/connection-string-builders.md).</span></span>  
   
-### 外部構成ファイルの使用  
- 外部構成ファイルとは、単一のセクションから成る、構成ファイルのフラグメントを含んだ独立したファイルを言います。  外部構成ファイルは、メインの構成ファイルによって参照されます。  **connectionStrings** セクションを物理的に分かれたファイルに保存できるため、アプリケーションの配置後に接続文字列を編集する場合に有効な手段です。  たとえば、構成ファイルに修正が加えられた場合、ASP.NET の標準的な動作ではアプリケーション ドメインが再起動され、その結果、状態情報が失われてしまいます。  しかし、外部構成ファイルに対する修正であればアプリケーションの再起動は伴いません。  外部構成ファイルは ASP.NET だけでなく、Windows アプリケーションでも使用できます。  また、ファイルのアクセス セキュリティや権限を使用して、外部構成ファイルへのアクセスを制限することもできます。  実行時における外部構成ファイルの使用は透過的であり、特殊なコーディングも不要です。  
+### <a name="using-external-configuration-files"></a><span data-ttu-id="b8b14-120">外部構成ファイルの使用</span><span class="sxs-lookup"><span data-stu-id="b8b14-120">Using External Configuration Files</span></span>  
+ <span data-ttu-id="b8b14-121">外部構成ファイルとは、単一のセクションから成る、構成ファイルのフラグメントを含んだ独立したファイルを言います。</span><span class="sxs-lookup"><span data-stu-id="b8b14-121">External configuration files are separate files that contain a fragment of a configuration file consisting of a single section.</span></span> <span data-ttu-id="b8b14-122">外部構成ファイルは、メインの構成ファイルによって参照されます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-122">The external configuration file is then referenced by the main configuration file.</span></span> <span data-ttu-id="b8b14-123">格納する、 **connectionStrings**物理的に独立したファイルのセクションは、アプリケーションの展開後の接続文字列を変更することが場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="b8b14-123">Storing the **connectionStrings** section in a physically separate file is useful in situations where connection strings may be edited after the application is deployed.</span></span> <span data-ttu-id="b8b14-124">たとえば、構成ファイルに修正が加えられた場合、ASP.NET の標準的な動作ではアプリケーション ドメインが再起動され、その結果、状態情報が失われてしまいます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-124">For example, the standard ASP.NET behavior is to restart an application domain when configuration files are modified, which results in state information being lost.</span></span> <span data-ttu-id="b8b14-125">しかし、外部構成ファイルに対する修正であればアプリケーションの再起動は伴いません。</span><span class="sxs-lookup"><span data-stu-id="b8b14-125">However, modifying an external configuration file does not cause an application restart.</span></span> <span data-ttu-id="b8b14-126">外部構成ファイルは ASP.NET だけでなく、Windows アプリケーションでも使用できます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-126">External configuration files are not limited to ASP.NET; they can also be used by Windows applications.</span></span> <span data-ttu-id="b8b14-127">また、ファイルのアクセス セキュリティや権限を使用して、外部構成ファイルへのアクセスを制限することもできます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-127">In addition, file access security and permissions can be used to restrict access to external configuration files.</span></span> <span data-ttu-id="b8b14-128">実行時における外部構成ファイルの使用は透過的であり、特殊なコーディングも不要です。</span><span class="sxs-lookup"><span data-stu-id="b8b14-128">Working with external configuration files at run time is transparent, and requires no special coding.</span></span>  
   
- 外部構成ファイルに接続文字列を保存するには、**connectionStrings** セクションだけを含んだファイルを別途作成します。  それ以外の要素、セクション、または属性は含めないでください。  外部構成ファイルの構文の例を次に示します。  
+ <span data-ttu-id="b8b14-129">接続文字列を外部構成ファイルに保存するには、のみを含む別のファイルを作成、 **connectionStrings**セクションです。</span><span class="sxs-lookup"><span data-stu-id="b8b14-129">To store connection strings in an external configuration file, create a separate file that contains only the **connectionStrings** section.</span></span> <span data-ttu-id="b8b14-130">それ以外の要素、セクション、または属性は含めないでください。</span><span class="sxs-lookup"><span data-stu-id="b8b14-130">Do not include any additional elements, sections, or attributes.</span></span> <span data-ttu-id="b8b14-131">外部構成ファイルの構文の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-131">This example shows the syntax for an external configuration file.</span></span>  
   
-```  
+```xml  
 <connectionStrings>  
   <add name="Name"   
    providerName="System.Data.ProviderName"   
@@ -55,62 +61,62 @@ caps.handback.revision: 4
 </connectionStrings>  
 ```  
   
- 外部ファイルの完全修飾名および場所は、メインのアプリケーション構成ファイルの **configSource** 属性で指定します。  この例では、`connections.config` という名前の外部構成ファイルを参照しています。  
+ <span data-ttu-id="b8b14-132">使用するメインのアプリケーション構成ファイルで、 **configSource**属性を完全修飾名と外部のファイルの場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-132">In the main application configuration file, you use the **configSource** attribute to specify the fully qualified name and location of the external file.</span></span> <span data-ttu-id="b8b14-133">この例では、`connections.config` という名前の外部構成ファイルを参照しています。</span><span class="sxs-lookup"><span data-stu-id="b8b14-133">This example refers to an external configuration file named `connections.config`.</span></span>  
   
-```  
+```xml  
 <?xml version='1.0' encoding='utf-8'?>  
 <configuration>  
     <connectionStrings configSource="connections.config"/>  
 </configuration>  
 ```  
   
-## 接続文字列の実行時の取得  
- .NET Framework 2.0 では、<xref:System.Configuration> 名前空間に新しいクラスが導入され、実行時に簡単に構成ファイルから接続文字列を取得できるようになりました。  プログラムから名前またはプロバイダー名を使用して接続文字列を取得できます。  
+## <a name="retrieving-connection-strings-at-run-time"></a><span data-ttu-id="b8b14-134">接続文字列の実行時の取得</span><span class="sxs-lookup"><span data-stu-id="b8b14-134">Retrieving Connection Strings at Run Time</span></span>  
+ <span data-ttu-id="b8b14-135">.NET Framework 2.0 では、<xref:System.Configuration> 名前空間に新しいクラスが導入され、実行時に簡単に構成ファイルから接続文字列を取得できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="b8b14-135">The .NET Framework 2.0 introduced new classes in the <xref:System.Configuration> namespace to simplify retrieving connection strings from configuration files at run time.</span></span> <span data-ttu-id="b8b14-136">プログラムから名前またはプロバイダー名を使用して接続文字列を取得できます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-136">You can programmatically retrieve a connection string by name or by provider name.</span></span>  
   
 > [!NOTE]
->  **connectionStrings** セクションは、**machine.config** ファイルにも存在します。このセクションには、Visual Studio によって使用される接続文字列が格納されます。  Windows アプリケーションの **app.config** ファイルからプロバイダー名で接続文字列を取得した場合、まず **machine.config** 内の接続文字列が読み込まれ、その後、**app.config** のエントリが読み込まれます。  **connectionStrings** 要素の直後に **clear** を追加すると、継承されたすべての参照がメモリ内のデータ構造から削除され、ローカルの **app.config** ファイルに定義されている接続文字列だけが考慮されます。  
+>  <span data-ttu-id="b8b14-137">**Machine.config**ファイルも含まれます、 **connectionStrings**セクションでは、Visual Studio によって使用される接続文字列が含まれています。</span><span class="sxs-lookup"><span data-stu-id="b8b14-137">The **machine.config** file also contains a **connectionStrings** section, which contains connection strings used by Visual Studio.</span></span> <span data-ttu-id="b8b14-138">プロバイダー名を使用して接続文字列を取得するときに、 **app.config**ファイル内の接続文字列の Windows アプリケーションで**machine.config** からロードしてから、エントリを取得**app.config**です。追加**オフ**後すぐに、 **connectionStrings**要素は、接続文字列だけが、ローカルで定義されているように、メモリ内データ構造体から継承されたすべての参照を削除**app.config**ファイルと見なされます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-138">When retrieving connection strings by provider name from the **app.config** file in a Windows application, the connection strings in **machine.config** get loaded first, and then the entries from **app.config**. Adding **clear** immediately after the **connectionStrings** element removes all inherited references from the data structure in memory, so that only the connection strings defined in the local **app.config** file are considered.</span></span>  
   
-### 構成クラスの使用  
- .NET Framework 2.0 以降では、ローカル コンピューター上の構成ファイルで作業するときに、廃止された <xref:System.Configuration.ConfigurationSettings> に代わって <xref:System.Configuration.ConfigurationManager> を使用します。  ASP.NET 構成ファイルでの作業では、<xref:System.Web.Configuration.WebConfigurationManager> を使用します。  Web サーバー上の構成ファイルを扱うことを目的に設計され、**system.web** など、構成ファイルのセクションにプログラムからアクセスできます。  
-  
-> [!NOTE]
->  実行時に構成ファイルにアクセスするには、呼び出し元に権限を付与する必要があります。必要な権限は、アプリケーションの種類、構成ファイル、格納場所などによって異なります。  詳細については、「[Using the Configuration Classes](../Topic/Using%20the%20Configuration%20Classes.md)」と「<xref:System.Web.Configuration.WebConfigurationManager>」\(ASP.NET アプリケーションの場合\)、および「<xref:System.Configuration.ConfigurationManager>」\(Windows アプリケーションの場合\) を参照してください。  
-  
- <xref:System.Configuration.ConnectionStringSettingsCollection> を使用すると、アプリケーション構成ファイルから接続文字列を取得できます。  このコレクションには、それぞれが **connectionStrings** セクションの単一のエントリを表す一連の <xref:System.Configuration.ConnectionStringSettings> オブジェクトが格納されます。  個々のプロパティは接続文字列の属性にマップされており、名前またはプロバイダー名を指定することによって接続文字列を取得できます。  
-  
-|プロパティ|説明|  
-|-----------|--------|  
-|<xref:System.Configuration.ConnectionStringSettings.Name%2A>|接続文字列の名前。  **name** 属性にマップされています。|  
-|<xref:System.Configuration.ConnectionStringSettings.ProviderName%2A>|プロバイダーの完全修飾名。  **providerName** 属性にマップされています。|  
-|<xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A>|接続文字列。  **connectionString** 属性にマップされています。|  
-  
-### 例 : すべての接続文字列を一覧表示する  
- この例では、`ConnectionStringSettings` コレクションを反復処理しながら、<xref:System.Configuration.ConnectionStringSettings.Name%2A>、<xref:System.Configuration.ConnectionStringSettings.ProviderName%2A>、<xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A> の各プロパティをコンソール ウィンドウに表示します。  
+### <a name="working-with-the-configuration-classes"></a><span data-ttu-id="b8b14-139">構成クラスの使用</span><span class="sxs-lookup"><span data-stu-id="b8b14-139">Working with the Configuration Classes</span></span>  
+ <span data-ttu-id="b8b14-140">.NET Framework 2.0 以降では、ローカル コンピューター上の構成ファイルで作業するときに、廃止された <xref:System.Configuration.ConfigurationManager> に代わって <xref:System.Configuration.ConfigurationSettings> を使用します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-140">Starting with the .NET Framework 2.0, <xref:System.Configuration.ConfigurationManager> is used when working with configuration files on the local computer, replacing the deprecated <xref:System.Configuration.ConfigurationSettings>.</span></span> <span data-ttu-id="b8b14-141">ASP.NET 構成ファイルでの作業では、<xref:System.Web.Configuration.WebConfigurationManager> を使用します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-141"><xref:System.Web.Configuration.WebConfigurationManager> is used to work with ASP.NET configuration files.</span></span> <span data-ttu-id="b8b14-142">Web サーバー上の構成ファイルを使用するように設計されたなどにより、構成ファイルのセクションにプログラムでアクセス**system.web**です。</span><span class="sxs-lookup"><span data-stu-id="b8b14-142">It is designed to work with configuration files on a Web server, and allows programmatic access to configuration file sections such as **system.web**.</span></span>  
   
 > [!NOTE]
->  プロジェクトの種類によっては System.Configuration.dll がインクルードされていない場合があります。構成クラスを使用する場合は、必要に応じて参照設定するようにしてください。  特定のアプリケーションの構成ファイルの名前と場所は、アプリケーションの種類やホストしているプロセスによって異なります。  
+>  <span data-ttu-id="b8b14-143">実行時に構成ファイルにアクセスするには、呼び出し元に権限を付与する必要があります。必要な権限は、アプリケーションの種類、構成ファイル、格納場所などによって異なります。</span><span class="sxs-lookup"><span data-stu-id="b8b14-143">Accessing configuration files at run time requires granting permissions to the caller; the required permissions depend on the type of application, configuration file, and location.</span></span> <span data-ttu-id="b8b14-144">詳細については、次を参照してください。[構成クラスを使用して](http://msdn.microsoft.com/library/98d2b386-baf6-4a17-974b-76e3b4c87acc)と<xref:System.Web.Configuration.WebConfigurationManager>ASP.NET アプリケーション用と<xref:System.Configuration.ConfigurationManager>Windows アプリケーション用。</span><span class="sxs-lookup"><span data-stu-id="b8b14-144">For more information, see [Using the Configuration Classes](http://msdn.microsoft.com/library/98d2b386-baf6-4a17-974b-76e3b4c87acc) and <xref:System.Web.Configuration.WebConfigurationManager> for ASP.NET applications, and <xref:System.Configuration.ConfigurationManager> for Windows applications.</span></span>  
+  
+ <span data-ttu-id="b8b14-145"><xref:System.Configuration.ConnectionStringSettingsCollection> を使用すると、アプリケーション構成ファイルから接続文字列を取得できます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-145">You can use the <xref:System.Configuration.ConnectionStringSettingsCollection> to retrieve connection strings from application configuration files.</span></span> <span data-ttu-id="b8b14-146">コレクションが含まれています<xref:System.Configuration.ConnectionStringSettings>オブジェクト、単一のエントリを表す、 **connectionStrings**セクションです。</span><span class="sxs-lookup"><span data-stu-id="b8b14-146">It contains a collection of <xref:System.Configuration.ConnectionStringSettings> objects, each of which represents a single entry in the **connectionStrings** section.</span></span> <span data-ttu-id="b8b14-147">個々のプロパティは接続文字列の属性にマップされており、名前またはプロバイダー名を指定することによって接続文字列を取得できます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-147">Its properties map to connection string attributes, allowing you to retrieve a connection string by specifying the name or the provider name.</span></span>  
+  
+|<span data-ttu-id="b8b14-148">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b8b14-148">Property</span></span>|<span data-ttu-id="b8b14-149">説明</span><span class="sxs-lookup"><span data-stu-id="b8b14-149">Description</span></span>|  
+|--------------|-----------------|  
+|<xref:System.Configuration.ConnectionStringSettings.Name%2A>|<span data-ttu-id="b8b14-150">接続文字列の名前。</span><span class="sxs-lookup"><span data-stu-id="b8b14-150">The name of the connection string.</span></span> <span data-ttu-id="b8b14-151">マップ、**名前**属性。</span><span class="sxs-lookup"><span data-stu-id="b8b14-151">Maps to the **name** attribute.</span></span>|  
+|<xref:System.Configuration.ConnectionStringSettings.ProviderName%2A>|<span data-ttu-id="b8b14-152">プロバイダーの完全修飾名。</span><span class="sxs-lookup"><span data-stu-id="b8b14-152">The fully qualified provider name.</span></span> <span data-ttu-id="b8b14-153">マップ、 **providerName**属性。</span><span class="sxs-lookup"><span data-stu-id="b8b14-153">Maps to the **providerName** attribute.</span></span>|  
+|<xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A>|<span data-ttu-id="b8b14-154">接続文字列。</span><span class="sxs-lookup"><span data-stu-id="b8b14-154">The connection string.</span></span> <span data-ttu-id="b8b14-155">マップ、 **connectionString**属性。</span><span class="sxs-lookup"><span data-stu-id="b8b14-155">Maps to the **connectionString** attribute.</span></span>|  
+  
+### <a name="example-listing-all-connection-strings"></a><span data-ttu-id="b8b14-156">例 : すべての接続文字列を一覧表示する</span><span class="sxs-lookup"><span data-stu-id="b8b14-156">Example: Listing All Connection Strings</span></span>  
+ <span data-ttu-id="b8b14-157">この例では、`ConnectionStringSettings` コレクションを反復処理しながら、<xref:System.Configuration.ConnectionStringSettings.Name%2A>、<xref:System.Configuration.ConnectionStringSettings.ProviderName%2A>、<xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A> の各プロパティをコンソール ウィンドウに表示します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-157">This example iterates through the `ConnectionStringSettings` collection and displays the <xref:System.Configuration.ConnectionStringSettings.Name%2A>, <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A>, and <xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A> properties in the console window.</span></span>  
+  
+> [!NOTE]
+>  <span data-ttu-id="b8b14-158">プロジェクトの種類によっては System.Configuration.dll がインクルードされていない場合があります。構成クラスを使用する場合は、必要に応じて参照設定するようにしてください。</span><span class="sxs-lookup"><span data-stu-id="b8b14-158">System.Configuration.dll is not included in all project types, and you may need to set a reference to it in order to use the configuration classes.</span></span> <span data-ttu-id="b8b14-159">特定のアプリケーションの構成ファイルの名前と場所は、アプリケーションの種類やホストしているプロセスによって異なります。</span><span class="sxs-lookup"><span data-stu-id="b8b14-159">The name and location of a particular application configuration file varies by the type of application and the hosting process.</span></span>  
   
  [!code-csharp[DataWorks ConnectionStringSettings.RetrieveFromConfig#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks ConnectionStringSettings.RetrieveFromConfig/CS/source.cs#1)]
  [!code-vb[DataWorks ConnectionStringSettings.RetrieveFromConfig#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringSettings.RetrieveFromConfig/VB/source.vb#1)]  
   
-### 例 : 接続文字列を名前で取得する  
- 次の例では、接続文字列の名前を指定することによって、接続文字列を構成ファイルから取得する方法を説明します。  このコードでは、指定された入力パラメーターと <xref:System.Configuration.ConfigurationManager.ConnectionStrings%2A> の名前とを照合することによって、<xref:System.Configuration.ConnectionStringSettings> オブジェクトを作成します。  一致する名前が見つからなかった場合は `null` \(Visual Basic の場合は `Nothing`\) が返されます。  
+### <a name="example-retrieving-a-connection-string-by-name"></a><span data-ttu-id="b8b14-160">例 : 接続文字列を名前で取得する</span><span class="sxs-lookup"><span data-stu-id="b8b14-160">Example: Retrieving a Connection String by Name</span></span>  
+ <span data-ttu-id="b8b14-161">次の例では、接続文字列の名前を指定することによって、接続文字列を構成ファイルから取得する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-161">This example demonstrates how to retrieve a connection string from a configuration file by specifying its name.</span></span> <span data-ttu-id="b8b14-162">このコードでは、指定された入力パラメーターと <xref:System.Configuration.ConnectionStringSettings> の名前とを照合することによって、<xref:System.Configuration.ConfigurationManager.ConnectionStrings%2A> オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-162">The code creates a <xref:System.Configuration.ConnectionStringSettings> object, matching the supplied input parameter to the <xref:System.Configuration.ConfigurationManager.ConnectionStrings%2A> name.</span></span> <span data-ttu-id="b8b14-163">一致する名前が見つからなかった場合は `null` (Visual Basic の場合は `Nothing`) が返されます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-163">If no matching name is found, the function returns `null` (`Nothing` in Visual Basic).</span></span>  
   
  [!code-csharp[DataWorks ConnectionStringSettings.RetrieveFromConfigByName#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks ConnectionStringSettings.RetrieveFromConfigByName/CS/source.cs#1)]
  [!code-vb[DataWorks ConnectionStringSettings.RetrieveFromConfigByName#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringSettings.RetrieveFromConfigByName/VB/source.vb#1)]  
   
-### 例 : 接続文字列をプロバイダー名で取得する  
- 次の例では、プロバイダーの不変名を *System.Data.ProviderName* の形式で指定することによって接続文字列を取得する方法を説明します。  このコードでは、<xref:System.Configuration.ConnectionStringSettingsCollection> を反復処理し、最初に見つかった <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A> の接続文字列を返します。  プロバイダー名が見つからなかった場合は `null` \(Visual Basic の場合は `Nothing`\) が返されます。  
+### <a name="example-retrieving-a-connection-string-by-provider-name"></a><span data-ttu-id="b8b14-164">例 : 接続文字列をプロバイダー名で取得する</span><span class="sxs-lookup"><span data-stu-id="b8b14-164">Example: Retrieving a Connection String by Provider Name</span></span>  
+ <span data-ttu-id="b8b14-165">この例は、の形式でプロバイダーの不変名を指定することによって、接続文字列を取得する方法を示します*System.Data.ProviderName*です。</span><span class="sxs-lookup"><span data-stu-id="b8b14-165">This example demonstrates how to retrieve a connection string by specifying the provider-invariant name in the format *System.Data.ProviderName*.</span></span> <span data-ttu-id="b8b14-166">このコードでは、<xref:System.Configuration.ConnectionStringSettingsCollection> を反復処理し、最初に見つかった <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A> の接続文字列を返します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-166">The code iterates through the <xref:System.Configuration.ConnectionStringSettingsCollection> and returns the connection string for the first <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A> found.</span></span> <span data-ttu-id="b8b14-167">プロバイダー名が見つからなかった場合は `null` (Visual Basic の場合は `Nothing`) が返されます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-167">If the provider name is not found, the function returns `null` (`Nothing` in Visual Basic).</span></span>  
   
  [!code-csharp[DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider/CS/source.cs#1)]
  [!code-vb[DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider/VB/source.vb#1)]  
   
-## 保護構成を使った構成ファイル セクションの暗号化  
- ASP.NET 2.0 では、*保護構成*と呼ばれる、構成ファイルの機密情報を暗号化するための新しい機能が導入されました。  保護構成は、主に ASP.NET を想定して設計されたものですが、Windows アプリケーションの構成ファイル セクションを暗号化する目的でも使用できます。  保護構成機能の詳細については、「[Encrypting Configuration Information Using Protected Configuration](../Topic/Encrypting%20Configuration%20Information%20Using%20Protected%20Configuration.md)」を参照してください。  
+## <a name="encrypting-configuration-file-sections-using-protected-configuration"></a><span data-ttu-id="b8b14-168">保護構成を使った構成ファイル セクションの暗号化</span><span class="sxs-lookup"><span data-stu-id="b8b14-168">Encrypting Configuration File Sections Using Protected Configuration</span></span>  
+ <span data-ttu-id="b8b14-169">ASP.NET 2.0 と呼ばれる、新しい機能が導入されました。*保護構成*、構成ファイル内の機密情報を暗号化することができます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-169">ASP.NET 2.0 introduced a new feature, called *protected configuration*, that enables you to encrypt sensitive information in a configuration file.</span></span> <span data-ttu-id="b8b14-170">保護構成は、主に ASP.NET を想定して設計されたものですが、Windows アプリケーションの構成ファイル セクションを暗号化する目的でも使用できます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-170">Although primarily designed for ASP.NET, protected configuration can also be used to encrypt configuration file sections in Windows applications.</span></span> <span data-ttu-id="b8b14-171">保護された構成機能の詳細については、次を参照してください。[暗号化の構成情報を使用して保護された構成](http://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1)です。</span><span class="sxs-lookup"><span data-stu-id="b8b14-171">For a detailed description of the protected configuration capabilities, see [Encrypting Configuration Information Using Protected Configuration](http://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1).</span></span>  
   
- 次の構成ファイル フラグメントは、暗号化後の **connectionStrings** セクションを示しています。  **configProtectionProvider** には、接続文字列の暗号化と復号化に使用される、保護構成プロバイダーが指定されています。  **EncryptedData** セクションには暗号文が格納されています。  
+ <span data-ttu-id="b8b14-172">次の構成ファイル フラグメントは、 **connectionStrings**暗号化された後のセクションです。</span><span class="sxs-lookup"><span data-stu-id="b8b14-172">The following configuration file fragment shows the **connectionStrings** section after it has been encrypted.</span></span> <span data-ttu-id="b8b14-173">**ConfigProtectionProvider**暗号化し、の接続文字列を暗号化解除に使用する保護された構成プロバイダーを指定します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-173">The **configProtectionProvider** specifies the protected configuration provider used to encrypt and decrypt the connection strings.</span></span> <span data-ttu-id="b8b14-174">**EncryptedData**セクションには、暗号化テキストが含まれています。</span><span class="sxs-lookup"><span data-stu-id="b8b14-174">The **EncryptedData** section contains the cipher text.</span></span>  
   
-```  
+```xml  
 <connectionStrings configProtectionProvider="DataProtectionConfigurationProvider">  
   <EncryptedData>  
     <CipherData>  
@@ -120,12 +126,12 @@ caps.handback.revision: 4
 </connectionStrings>  
 ```  
   
- 暗号化された接続文字列は実行時に取得されることになります。このとき、.NET Framework は、指定されたプロバイダーを使用して **CipherValue** を復号化し、アプリケーションに利用可能な接続文字列を提供します。  復号化のプロセスを管理するためのコードを自分で作成する必要はありません。  
+ <span data-ttu-id="b8b14-175">.NET Framework で指定されたプロバイダーを使用して、暗号化を解除する実行時に暗号化された接続文字列が取得される場合、 **CipherValue**アプリケーションを利用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="b8b14-175">When the encrypted connection string is retrieved at run time, the .NET Framework uses the specified provider to decrypt the **CipherValue** and make it available to your application.</span></span> <span data-ttu-id="b8b14-176">復号化のプロセスを管理するためのコードを自分で作成する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="b8b14-176">You do not need to write any additional code to manage the decryption process.</span></span>  
   
-### 保護構成プロバイダー  
- 保護構成プロバイダーは、ローカル コンピューターの **machine.config** ファイルの **configProtectedData** セクションに登録されます。次のフラグメントを見ると、.NET Framework が備えている 2 つの保護構成プロバイダーが指定されていることがわかります。  ここでは、読みやすくするために一部の値を省略しています。  
+### <a name="protected-configuration-providers"></a><span data-ttu-id="b8b14-177">保護構成プロバイダー</span><span class="sxs-lookup"><span data-stu-id="b8b14-177">Protected Configuration Providers</span></span>  
+ <span data-ttu-id="b8b14-178">保護された構成プロバイダーが登録されている、 **configProtectedData**のセクションで、 **machine.config** 2 つを示しています、次のフラグメントに示すように、ローカル コンピューター上のファイル保護構成プロバイダーが .NET Framework に付属しています。</span><span class="sxs-lookup"><span data-stu-id="b8b14-178">Protected configuration providers are registered in the **configProtectedData** section of the **machine.config** file on the local computer, as shown in the following fragment, which shows the two protected configuration providers supplied with the .NET Framework.</span></span> <span data-ttu-id="b8b14-179">ここでは、読みやすくするために一部の値を省略しています。</span><span class="sxs-lookup"><span data-stu-id="b8b14-179">The values shown here have been truncated for readability.</span></span>  
   
-```  
+```xml  
 <configProtectedData defaultProvider="RsaProtectedConfigurationProvider">  
   <providers>  
     <add name="RsaProtectedConfigurationProvider"   
@@ -136,47 +142,47 @@ caps.handback.revision: 4
 </configProtectedData>  
 ```  
   
- 別の保護構成プロバイダーが必要な場合は、それを **machine.config** ファイルに追加することによって構成できます。  また、<xref:System.Configuration.ProtectedConfigurationProvider> 抽象基本クラスを継承することで、保護構成プロバイダーを独自に作成することもできます。  次の表は、.NET Framework に含まれている 2 つの構成プロバイダーを示しています。  
+ 追加することによって、別の保護構成プロバイダーを構成することができます、 **machine.config**ファイル。 また、<xref:System.Configuration.ProtectedConfigurationProvider> 抽象基本クラスを継承することで、保護構成プロバイダーを独自に作成することもできます。 <span data-ttu-id="b8b14-182">次の表は、.NET Framework に含まれている 2 つの構成プロバイダーを示しています。</span><span class="sxs-lookup"><span data-stu-id="b8b14-182">The following table describes the two configuration files included with the .NET Framework.</span></span>  
   
-|プロバイダー|説明|  
-|------------|--------|  
-|<xref:System.Configuration.RSAProtectedConfigurationProvider>|データの暗号化と復号化には、RSA 暗号化アルゴリズムが使用されます。  RSA アルゴリズムは、公開キー暗号化だけでなく、デジタル署名にも使用されます。  "公開キー" として知られているほか、2 つの異なるキーが使用されることから非対称暗号化と呼ばれる場合もあります。  [ASP.NET IIS Registration Tool \(Aspnet\_regiis.exe\)](../Topic/ASP.NET%20IIS%20Registration%20Tool%20\(Aspnet_regiis.exe\).md) を使用すると、Web.config ファイルのセクションを暗号化したり、暗号化キーを管理したりすることができます。  構成ファイルは、その処理時に ASP.NET によって復号化されます。  ASP.NET アプリケーションの ID には、セクションの暗号化と復号化に使用される暗号化キーへの読み取りアクセスが必要です。|  
-|<xref:System.Configuration.DPAPIProtectedConfigurationProvider>|構成セクションの暗号化に Windows Data Protection API \(DPAPI\) が使用されます。  この API には、Windows の組み込み暗号化サービスが使用され、コンピューター単位またはユーザー アカウント単位の保護を構成できます。  コンピューター単位の保護は、同じサーバー上の複数のアプリケーションで情報を共有する必要がある場合に使用します。  共有ホスティング環境など、特定のユーザー ID で実行されるサービスには、ユーザー アカウント単位の保護を使用できます。  各アプリケーションは、ファイルやデータベースなど、各種リソースへのアクセスが制限された別々の ID で実行されます。|  
+|<span data-ttu-id="b8b14-183">プロバイダー</span><span class="sxs-lookup"><span data-stu-id="b8b14-183">Provider</span></span>|<span data-ttu-id="b8b14-184">説明</span><span class="sxs-lookup"><span data-stu-id="b8b14-184">Description</span></span>|  
+|--------------|-----------------|  
+|<!--zz<xref:System.Configuration.RSAProtectedConfigurationProvider>-->`System.Configuration.RSAProtectedConfigurationProvider`|<span data-ttu-id="b8b14-185">データの暗号化と復号化には、RSA 暗号化アルゴリズムが使用されます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-185">Uses the RSA encryption algorithm to encrypt and decrypt data.</span></span> <span data-ttu-id="b8b14-186">RSA アルゴリズムは、公開キー暗号化だけでなく、デジタル署名にも使用されます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-186">The RSA algorithm can be used for both public key encryption and digital signatures.</span></span> <span data-ttu-id="b8b14-187">"公開キー" として知られているほか、2 つの異なるキーが使用されることから非対称暗号化と呼ばれる場合もあります。</span><span class="sxs-lookup"><span data-stu-id="b8b14-187">It is also known as "public key" or asymmetrical encryption because it employs two different keys.</span></span> <span data-ttu-id="b8b14-188">使用することができます、 [ASP.NET IIS 登録ツール (Aspnet_regiis.exe)](http://msdn.microsoft.com/library/6491c41e-e2b0-481f-9863-db3614d5f96b)を Web.config ファイルのセクションを暗号化および暗号化キーを管理します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-188">You can use the [ASP.NET IIS Registration Tool (Aspnet_regiis.exe)](http://msdn.microsoft.com/library/6491c41e-e2b0-481f-9863-db3614d5f96b) to encrypt sections in a Web.config file and manage the encryption keys.</span></span> <span data-ttu-id="b8b14-189">構成ファイルは、その処理時に ASP.NET によって復号化されます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-189">ASP.NET decrypts the configuration file when it processes the file.</span></span> <span data-ttu-id="b8b14-190">ASP.NET アプリケーションの ID には、セクションの暗号化と復号化に使用される暗号化キーへの読み取りアクセスが必要です。</span><span class="sxs-lookup"><span data-stu-id="b8b14-190">The identity of the ASP.NET application must have read access to the encryption key that is used to encrypt and decrypt the encrypted sections.</span></span>|  
+|<!--zz<xref:System.Configuration.DPAPIProtectedConfigurationProvider>-->`System.Configuration.DPAPIProtectedConfigurationProvider`|<span data-ttu-id="b8b14-191">構成セクションの暗号化に Windows Data Protection API (DPAPI) が使用されます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-191">Uses the Windows Data Protection API (DPAPI) to encrypt configuration sections.</span></span> <span data-ttu-id="b8b14-192">この API には、Windows の組み込み暗号化サービスが使用され、コンピューター単位またはユーザー アカウント単位の保護を構成できます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-192">It uses the Windows built-in cryptographic services and can be configured for either machine-specific or user-account-specific protection.</span></span> <span data-ttu-id="b8b14-193">コンピューター単位の保護は、同じサーバー上の複数のアプリケーションで情報を共有する必要がある場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-193">Machine-specific protection is useful for multiple applications on the same server that need to share information.</span></span> <span data-ttu-id="b8b14-194">共有ホスティング環境など、特定のユーザー ID で実行されるサービスには、ユーザー アカウント単位の保護を使用できます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-194">User-account-specific protection can be used with services that run with a specific user identity, such as a shared hosting environment.</span></span> <span data-ttu-id="b8b14-195">各アプリケーションは、ファイルやデータベースなど、各種リソースへのアクセスが制限された別々の ID で実行されます。</span><span class="sxs-lookup"><span data-stu-id="b8b14-195">Each application runs under a separate identity which restricts access to resources such as files and databases.</span></span>|  
   
- どちらのプロバイダーも、強力なデータ暗号化機能を備えています。  ただし、Web ファームなど、複数のサーバーで、同じ構成ファイルを暗号化して使用する場合、データの暗号化に使用される暗号化キーをエクスポートしたり、それを別のサーバーにインポートしたりできるのは、`RsaProtectedConfigurationProvider` だけです。  詳細については、「[Importing and Exporting Protected Configuration RSA Key Containers](../Topic/Importing%20and%20Exporting%20Protected%20Configuration%20RSA%20Key%20Containers.md)」を参照してください。  
+ <span data-ttu-id="b8b14-196">どちらのプロバイダーも、強力なデータ暗号化機能を備えています。</span><span class="sxs-lookup"><span data-stu-id="b8b14-196">Both providers offer strong encryption of data.</span></span> <span data-ttu-id="b8b14-197">ただし、Web ファームなど、複数のサーバーで、同じ構成ファイルを暗号化して使用する場合、データの暗号化に使用される暗号化キーをエクスポートしたり、それを別のサーバーにインポートしたりできるのは、`RsaProtectedConfigurationProvider` だけです。</span><span class="sxs-lookup"><span data-stu-id="b8b14-197">However, if you are planning to use the same encrypted configuration file on multiple servers, such as a Web farm, only the `RsaProtectedConfigurationProvider` enables you to export the encryption keys used to encrypt the data and import them on another server.</span></span> <span data-ttu-id="b8b14-198">詳細については、次を参照してください。[インポートおよびエクスポートする保護された構成の RSA キー コンテナー](http://msdn.microsoft.com/library/f3022b39-f17f-48c1-b067-025eab0ce8bc)です。</span><span class="sxs-lookup"><span data-stu-id="b8b14-198">For more information, see [Importing and Exporting Protected Configuration RSA Key Containers](http://msdn.microsoft.com/library/f3022b39-f17f-48c1-b067-025eab0ce8bc).</span></span>  
   
-### 構成クラスの使用  
- <xref:System.Configuration> 名前空間には、構成設定をプログラムから行うためのクラスが存在します。  <xref:System.Configuration.ConfigurationManager> クラスは、コンピューター、アプリケーション、ユーザーの各構成ファイルへのアクセスを提供します。  ASP.NET アプリケーションを作成している場合は、同じ機能を持った <xref:System.Web.Configuration.WebConfigurationManager> クラスを使用します。他にも **\<system.web\>** の設定など、ASP.NET アプリケーション固有の設定にもアクセスできます。  
-  
-> [!NOTE]
->  <xref:System.Security.Cryptography> 名前空間には、データの暗号化と復号化に関連した補足的なオプションを提供するクラスが存在します。  これらのクラスは、保護構成では利用できない暗号化サービスが必要な場合に使用します。  これらのクラスは必ずしも純粋なマネージ実装とは限らず、アンマネージ Microsoft CryptoAPI 用のラッパーもあります。  詳細については、「[Cryptographic Services](http://msdn.microsoft.com/ja-jp/68a1e844-c63c-44af-9247-f6716eb23781)」を参照してください。  
-  
-### App.config の例  
- ここでは、Windows アプリケーションの **app.config** ファイルにある **connectionStrings** セクションを条件に応じて暗号化したり復号化したりする方法を紹介します。  この例に示したプロシージャは、MyApplication.exe など、アプリケーションの名前を引数として受け取ります。  その後、**app.config** ファイルを暗号化して、その実行可能ファイルと同じフォルダーに MyApplication.exe.config という名前でコピーします。  
+### <a name="using-the-configuration-classes"></a><span data-ttu-id="b8b14-199">構成クラスの使用</span><span class="sxs-lookup"><span data-stu-id="b8b14-199">Using the Configuration Classes</span></span>  
+ <span data-ttu-id="b8b14-200"><xref:System.Configuration> 名前空間には、構成設定をプログラムから行うためのクラスが存在します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-200">The <xref:System.Configuration> namespace provides classes to work with configuration settings programmatically.</span></span> <span data-ttu-id="b8b14-201"><xref:System.Configuration.ConfigurationManager> クラスは、コンピューター、アプリケーション、ユーザーの各構成ファイルへのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-201">The <xref:System.Configuration.ConfigurationManager> class provides access to machine, application, and user configuration files.</span></span> <span data-ttu-id="b8b14-202">使用することができます、ASP.NET アプリケーションを作成する場合、<xref:System.Web.Configuration.WebConfigurationManager>内で検索できるなどの ASP.NET アプリケーションに固有の設定にアクセスすることもできます、同じ機能を提供するクラス **\<system.web >**です。</span><span class="sxs-lookup"><span data-stu-id="b8b14-202">If you are creating an ASP.NET application, you can use the <xref:System.Web.Configuration.WebConfigurationManager> class, which provides the same functionality while also allowing you to access settings that are unique to ASP.NET applications, such as those found in **\<system.web>**.</span></span>  
   
 > [!NOTE]
->  接続文字列は暗号化したときと同じコンピューターでしか復号化できません。  
+>  <span data-ttu-id="b8b14-203"><xref:System.Security.Cryptography> 名前空間には、データの暗号化と復号化に関連した補足的なオプションを提供するクラスが存在します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-203">The <xref:System.Security.Cryptography> namespace contains classes that provide additional options for encrypting and decrypting data.</span></span> <span data-ttu-id="b8b14-204">これらのクラスは、保護構成では利用できない暗号化サービスが必要な場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-204">Use these classes if you require cryptographic services that are not available using protected configuration.</span></span> <span data-ttu-id="b8b14-205">これらのクラスは必ずしも純粋なマネージ実装とは限らず、アンマネージ Microsoft CryptoAPI 用のラッパーもあります。</span><span class="sxs-lookup"><span data-stu-id="b8b14-205">Some of these classes are wrappers for the unmanaged Microsoft CryptoAPI, while others are purely managed implementations.</span></span> <span data-ttu-id="b8b14-206">詳細については、次を参照してください。 [Cryptographic Services](http://msdn.microsoft.com/en-us/68a1e844-c63c-44af-9247-f6716eb23781)です。</span><span class="sxs-lookup"><span data-stu-id="b8b14-206">For more information, see [Cryptographic Services](http://msdn.microsoft.com/en-us/68a1e844-c63c-44af-9247-f6716eb23781).</span></span>  
   
- このコードは、<xref:System.Configuration.ConfigurationManager.OpenExeConfiguration%2A> メソッドを使用して **app.config** ファイルを編集モードで開き、<xref:System.Configuration.ConfigurationManager.GetSection%2A> メソッドを使用して **connectionStrings** セクションを返します。  さらに、<xref:System.Configuration.SectionInformation.IsProtected%2A> プロパティをチェックし、セクションがまだ暗号化されていなければ、<xref:System.Configuration.SectionInformation.ProtectSection%2A> を呼び出して暗号化します。  それ以外の場合は、<xref:System.Configuration.SectionInformation.UnProtectSection%2A> メソッドを呼び出してセクションを復号化します。  最後に、<xref:System.Configuration.Configuration.Save%2A> メソッドで操作を完了し、変更内容を保存します。  
+### <a name="appconfig-example"></a><span data-ttu-id="b8b14-207">App.config の例</span><span class="sxs-lookup"><span data-stu-id="b8b14-207">App.config Example</span></span>  
+ <span data-ttu-id="b8b14-208">この例では、暗号化を切り替える、 **connectionStrings** 」の「、 **app.config** Windows アプリケーション用のファイルです。</span><span class="sxs-lookup"><span data-stu-id="b8b14-208">This example demonstrates how to toggle encrypting the **connectionStrings** section in an **app.config** file for a Windows application.</span></span> <span data-ttu-id="b8b14-209">この例に示したプロシージャは、MyApplication.exe など、アプリケーションの名前を引数として受け取ります。</span><span class="sxs-lookup"><span data-stu-id="b8b14-209">In this example, the procedure takes the name of the application as an argument, for example, "MyApplication.exe".</span></span> <span data-ttu-id="b8b14-210">**App.config**ファイルが、暗号化および MyApplication.exe.config という名前で実行可能ファイルが含まれているフォルダーにコピーします。</span><span class="sxs-lookup"><span data-stu-id="b8b14-210">The **app.config** file will then be encrypted and copied to the folder that contains the executable under the name of "MyApplication.exe.config".</span></span>  
   
 > [!NOTE]
->  このコードを実行するには、プロジェクトで `System.Configuration.dll` を参照設定する必要があります。  
+>  <span data-ttu-id="b8b14-211">接続文字列は暗号化したときと同じコンピューターでしか復号化できません。</span><span class="sxs-lookup"><span data-stu-id="b8b14-211">The connection string can only be decrypted on the computer on which it was encrypted.</span></span>  
+  
+ <span data-ttu-id="b8b14-212">コードを使用して、<xref:System.Configuration.ConfigurationManager.OpenExeConfiguration%2A>を開くメソッドを**app.config**ファイルを編集し、<xref:System.Configuration.ConfigurationManager.GetSection%2A>メソッドを返します。、 **connectionStrings**セクションです。</span><span class="sxs-lookup"><span data-stu-id="b8b14-212">The code uses the <xref:System.Configuration.ConfigurationManager.OpenExeConfiguration%2A> method to open the **app.config** file for editing, and the <xref:System.Configuration.ConfigurationManager.GetSection%2A> method returns the **connectionStrings** section.</span></span> <span data-ttu-id="b8b14-213">さらに、<xref:System.Configuration.SectionInformation.IsProtected%2A> プロパティをチェックし、セクションがまだ暗号化されていなければ、<xref:System.Configuration.SectionInformation.ProtectSection%2A> を呼び出して暗号化します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-213">The code then checks the <xref:System.Configuration.SectionInformation.IsProtected%2A> property, calling the <xref:System.Configuration.SectionInformation.ProtectSection%2A> to encrypt the section if it is not encrypted.</span></span> <span data-ttu-id="b8b14-214">それ以外の場合は、<xref:System.Configuration.SectionInformation.UnprotectSection%2A> メソッドを呼び出してセクションを復号化します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-214">The <xref:System.Configuration.SectionInformation.UnprotectSection%2A> method is invoked to decrypt the section.</span></span> <span data-ttu-id="b8b14-215">最後に、<xref:System.Configuration.Configuration.Save%2A> メソッドで操作を完了し、変更内容を保存します。</span><span class="sxs-lookup"><span data-stu-id="b8b14-215">The <xref:System.Configuration.Configuration.Save%2A> method completes the operation and saves the changes.</span></span>  
+  
+> [!NOTE]
+>  <span data-ttu-id="b8b14-216">このコードを実行するには、プロジェクトで `System.Configuration.dll` を参照設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b8b14-216">You must set a reference to `System.Configuration.dll` in your project for the code to run.</span></span>  
   
  [!code-csharp[DataWorks ConnectionStrings.Encrypt#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks ConnectionStrings.Encrypt/CS/source.cs#1)]
  [!code-vb[DataWorks ConnectionStrings.Encrypt#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStrings.Encrypt/VB/source.vb#1)]  
   
-### Web.config の例  
- この例では、`WebConfigurationManager` の <xref:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration%2A> メソッドを使用しています。  この場合、チルダを使用して、**Web.config** ファイルの相対パスを指定できる点に注目してください。  このコードを実行するには、`System.Web.Configuration` クラスへの参照が必要です。  
+### <a name="webconfig-example"></a><span data-ttu-id="b8b14-217">Web.config の例</span><span class="sxs-lookup"><span data-stu-id="b8b14-217">Web.config Example</span></span>  
+ <span data-ttu-id="b8b14-218">この例では、<xref:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration%2A> の `WebConfigurationManager` メソッドを使用しています。</span><span class="sxs-lookup"><span data-stu-id="b8b14-218">This example uses the <xref:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration%2A> method of the `WebConfigurationManager`.</span></span> <span data-ttu-id="b8b14-219">ここで指定できる点への相対パスに注意してください、 **Web.config**チルダを使用してファイル。</span><span class="sxs-lookup"><span data-stu-id="b8b14-219">Note that in this case you can supply the relative path to the **Web.config** file by using a tilde.</span></span> <span data-ttu-id="b8b14-220">このコードを実行するには、`System.Web.Configuration` クラスへの参照が必要です。</span><span class="sxs-lookup"><span data-stu-id="b8b14-220">The code requires a reference to the `System.Web.Configuration` class.</span></span>  
   
  [!code-csharp[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/CS/source.cs#1)]
  [!code-vb[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/VB/source.vb#1)]  
   
- ASP.NET アプリケーションのセキュリティ保護の詳細については、「[NIB: ASP.NET Security](http://msdn.microsoft.com/ja-jp/04b37532-18d9-40b4-8e5f-ee09a70b311d)」および ASP.NET デベロッパー センターの「[ASP.NET 2.0 のセキュリティ プラクティス](http://go.microsoft.com/fwlink/?LinkId=59997)」を参照してください。  
+ <span data-ttu-id="b8b14-221">ASP.NET アプリケーションのセキュリティ保護の詳細については、次を参照してください。 [NIB: ASP.NET セキュリティ](http://msdn.microsoft.com/en-us/04b37532-18d9-40b4-8e5f-ee09a70b311d)と[一目で ASP.NET 2.0 セキュリティ プラクティス](http://go.microsoft.com/fwlink/?LinkId=59997)ASP.NET デベロッパー センターにします。</span><span class="sxs-lookup"><span data-stu-id="b8b14-221">For more information securing ASP.NET applications, see [NIB: ASP.NET Security](http://msdn.microsoft.com/en-us/04b37532-18d9-40b4-8e5f-ee09a70b311d) and [ASP.NET 2.0 Security Practices at a Glance](http://go.microsoft.com/fwlink/?LinkId=59997) on the ASP.NET Developer Center.</span></span>  
   
-## 参照  
- [接続文字列ビルダー](../../../../docs/framework/data/adonet/connection-string-builders.md)   
- [接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)   
- [Using the Configuration Classes](../Topic/Using%20the%20Configuration%20Classes.md)   
- [アプリの構成](../../../../docs/framework/configure-apps/index.md)   
- [ASP.NET Web Site Administration](../Topic/ASP.NET%20Web%20Site%20Administration.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="b8b14-222">関連項目</span><span class="sxs-lookup"><span data-stu-id="b8b14-222">See Also</span></span>  
+ [<span data-ttu-id="b8b14-223">接続文字列ビルダー</span><span class="sxs-lookup"><span data-stu-id="b8b14-223">Connection String Builders</span></span>](../../../../docs/framework/data/adonet/connection-string-builders.md)  
+ [<span data-ttu-id="b8b14-224">接続情報の保護</span><span class="sxs-lookup"><span data-stu-id="b8b14-224">Protecting Connection Information</span></span>](../../../../docs/framework/data/adonet/protecting-connection-information.md)  
+ [<span data-ttu-id="b8b14-225">構成クラスの使用</span><span class="sxs-lookup"><span data-stu-id="b8b14-225">Using the Configuration Classes</span></span>](http://msdn.microsoft.com/library/98d2b386-baf6-4a17-974b-76e3b4c87acc)  
+ [<span data-ttu-id="b8b14-226">アプリの構成</span><span class="sxs-lookup"><span data-stu-id="b8b14-226">Configuring Apps</span></span>](../../../../docs/framework/configure-apps/index.md)  
+ [<span data-ttu-id="b8b14-227">ASP.NET Web サイトの管理</span><span class="sxs-lookup"><span data-stu-id="b8b14-227">ASP.NET Web Site Administration</span></span>](http://msdn.microsoft.com/library/1298034b-5f7d-464d-abd1-ad9e6b3eeb7e)  
+ [<span data-ttu-id="b8b14-228">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="b8b14-228">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

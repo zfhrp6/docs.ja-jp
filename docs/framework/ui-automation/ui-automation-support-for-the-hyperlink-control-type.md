@@ -1,85 +1,88 @@
 ---
-title: "UI Automation Support for the Hyperlink Control Type | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Hyperlink control type"
-  - "UI Automation, Hyperlink control type"
-  - "control types, Hyperlink"
+title: "UI オートメーションによる Hyperlink コントロール型のサポート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Hyperlink control type
+- UI Automation, Hyperlink control type
+- control types, Hyperlink
 ms.assetid: 110cceea-5932-4955-a1a6-13afc51422b2
-caps.latest.revision: 22
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: 0d468b173704f7e37fbb2c80168227405d6ce439
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# UI Automation Support for the Hyperlink Control Type
+# <a name="ui-automation-support-for-the-hyperlink-control-type"></a><span data-ttu-id="13849-102">UI オートメーションによる Hyperlink コントロール型のサポート</span><span class="sxs-lookup"><span data-stu-id="13849-102">UI Automation Support for the Hyperlink Control Type</span></span>
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の最新情報については、「[Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
+>  <span data-ttu-id="13849-103">このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="13849-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="13849-104">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="13849-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- このトピックでは、Hyperlink コントロール型に対する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] のサポートについて説明します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] でのコントロール型とは、コントロールが <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> プロパティを使用するために満たす必要がある一連の条件のことです。 条件には、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティの値、およびコントロール パターンに関する特定のガイドラインが含まれます。  
+ <span data-ttu-id="13849-105">このトピックでは、Hyperlink コントロール型に対する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] のサポートについて説明します。</span><span class="sxs-lookup"><span data-stu-id="13849-105">This topic provides information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] support for the Hyperlink control type.</span></span> <span data-ttu-id="13849-106">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]でのコントロール型とは、コントロールが <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> プロパティを使用するために満たす必要がある一連の条件のことです。</span><span class="sxs-lookup"><span data-stu-id="13849-106">In [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], a control type is a set of conditions that a control must meet in order to use the <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> property.</span></span> <span data-ttu-id="13849-107">条件には、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティの値、およびコントロール パターンに関する特定のガイドラインが含まれます。</span><span class="sxs-lookup"><span data-stu-id="13849-107">The conditions include specific guidelines for [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree structure, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] property values and control patterns.</span></span>  
   
- ハイパーリンク コントロールによって、ユーザーはページ内の移動、ページ間の移動、およびウィンドウのオープンを実行できます。  
+ <span data-ttu-id="13849-108">ハイパーリンク コントロールによって、ユーザーはページ内の移動、ページ間の移動、およびウィンドウのオープンを実行できます。</span><span class="sxs-lookup"><span data-stu-id="13849-108">Hyperlink controls enable a user to navigate within a page, from one page to another page, and open windows.</span></span>  
   
- 以下の各セクションで、Hyperlink コントロール型に必要な [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、プロパティ、コントロール パターン、およびイベントを定義します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の要件は、[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、[!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]、[!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] のいずれの場合でも、すべてのハイパーリンク コントロールに適用されます。  
+ <span data-ttu-id="13849-109">以下の各セクションで、Hyperlink コントロール型に必要な [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、プロパティ、コントロール パターン、およびイベントを定義します。</span><span class="sxs-lookup"><span data-stu-id="13849-109">The following sections define the required [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree structure, properties, control patterns, and events for the Hyperlink control type.</span></span> <span data-ttu-id="13849-110">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の要件は、 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、 [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]、 [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]のいずれの場合でも、すべてのハイパーリンク コントロールに適用されます。</span><span class="sxs-lookup"><span data-stu-id="13849-110">The [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requirements apply to all hyperlink controls, whether [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], or [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].</span></span>  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
-## 必須の UI オートメーション ツリー構造  
- 次の表に、ハイパーリンク コントロールに関連する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコントロール ビューとコンテンツ ビューを示し、それぞれのビューに含めることができる内容について説明します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーの詳細については、「[UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)」を参照してください。  
+## <a name="required-ui-automation-tree-structure"></a><span data-ttu-id="13849-111">必須の UI オートメーション ツリー構造</span><span class="sxs-lookup"><span data-stu-id="13849-111">Required UI Automation Tree Structure</span></span>  
+ <span data-ttu-id="13849-112">次の表に、ハイパーリンク コントロールに関連する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコントロール ビューとコンテンツ ビューを示し、それぞれのビューに含めることができる内容について説明します。</span><span class="sxs-lookup"><span data-stu-id="13849-112">The following table depicts the control view and the content view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree that pertains to hyperlinks controls and describes what can be contained in each view.</span></span> <span data-ttu-id="13849-113">詳細については、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]ツリーを参照してください[UI オートメーション ツリーの概要](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="13849-113">For more information about the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree, see [UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).</span></span>  
   
-|コントロール ビュー|コンテンツ ビュー|  
-|----------------|---------------|  
-|ハイパーリンク|ハイパーリンク|  
+|<span data-ttu-id="13849-114">コントロール ビュー</span><span class="sxs-lookup"><span data-stu-id="13849-114">Control View</span></span>|<span data-ttu-id="13849-115">コンテンツ ビュー</span><span class="sxs-lookup"><span data-stu-id="13849-115">Content View</span></span>|  
+|------------------|------------------|  
+|<span data-ttu-id="13849-116">ハイパーリンク</span><span class="sxs-lookup"><span data-stu-id="13849-116">Hyperlink</span></span>|<span data-ttu-id="13849-117">ハイパーリンク</span><span class="sxs-lookup"><span data-stu-id="13849-117">Hyperlink</span></span>|  
   
 <a name="Required_UI_Automation_Properties"></a>   
-## 必須の UI オートメーション プロパティ  
- 次の表に、Hyperlink コントロール型に特に関連する値または定義を持つ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティを示します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティの詳細については、「[UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)」を参照してください。  
+## <a name="required-ui-automation-properties"></a><span data-ttu-id="13849-118">必須の UI オートメーション プロパティ</span><span class="sxs-lookup"><span data-stu-id="13849-118">Required UI Automation Properties</span></span>  
+ <span data-ttu-id="13849-119">次の表に、Hyperlink コントロール型に特に関連する値または定義を持つ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティを示します。</span><span class="sxs-lookup"><span data-stu-id="13849-119">The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties whose value or definition is especially relevant to the Hyperlink control type.</span></span> <span data-ttu-id="13849-120">詳細については[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]プロパティを参照してください[クライアントの UI オートメーション プロパティ](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)です。</span><span class="sxs-lookup"><span data-stu-id="13849-120">For more information on [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties, see [UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).</span></span>  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティ|値|ノート|  
-|---------------------------------------------------------------------------------|-------|---------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|「ノート」を参照してください。|このプロパティの値は、アプリケーションのすべてのコントロールにおいて一意である必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|「ノート」を参照してください。|コントロール全体を格納する最も外側の四角形。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|「ノート」を参照してください。|四角形領域が存在する場合にサポートされます。 四角形領域の内側にクリック不可能な点が存在し、特別なヒット テストを実行する場合は、クリック可能な点をオーバーライドして提供します。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|「ノート」を参照してください。|コントロールがキーボード フォーカスを受け取ることができる場合は、このプロパティをサポートする必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|「ノート」を参照してください。|ハイパーリンク コントロールの名前は、下線付きで画面に表示されるテキストです。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|「ノート」を参照してください。|ハイパーリンク コントロールのクリック可能なポイントは、マウス ポインターを使用してクリックした場合にハイパーリンクを起動するポイントである必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|「ノート」を参照してください。|静的なテキスト ラベルがある場合、このプロパティは対象のコントロールへの参照を公開する必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|ハイパーリンク|この値は、すべての [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] フレームワークで同じです。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"ハイパーリンク"|Hyperlink コントロール型に対応するローカライズされた文字列。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|ハイパーリンク コントロールは、常に [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコンテンツ ビューに含まれます。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|ハイパーリンク コントロールは、常に [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコントロール ビューに含まれます。|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]<span data-ttu-id="13849-121"> プロパティ</span><span class="sxs-lookup"><span data-stu-id="13849-121"> Property</span></span>|<span data-ttu-id="13849-122">値</span><span class="sxs-lookup"><span data-stu-id="13849-122">Value</span></span>|<span data-ttu-id="13849-123">ノート</span><span class="sxs-lookup"><span data-stu-id="13849-123">Notes</span></span>|  
+|------------------------------------------------------------------------------------|-----------|-----------|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|<span data-ttu-id="13849-124">ノートを参照してください。</span><span class="sxs-lookup"><span data-stu-id="13849-124">See notes.</span></span>|<span data-ttu-id="13849-125">このプロパティの値は、アプリケーションのすべてのコントロールで一意である必要があります。</span><span class="sxs-lookup"><span data-stu-id="13849-125">The value of this property needs to be unique across all controls in an application.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|<span data-ttu-id="13849-126">「ノート」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="13849-126">See notes.</span></span>|<span data-ttu-id="13849-127">コントロール全体を格納する最も外側の四角形。</span><span class="sxs-lookup"><span data-stu-id="13849-127">The outermost rectangle that contains the whole control.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|<span data-ttu-id="13849-128">「ノート」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="13849-128">See notes.</span></span>|<span data-ttu-id="13849-129">四角形領域が存在する場合にサポートされます。</span><span class="sxs-lookup"><span data-stu-id="13849-129">Supported if there is a bounding rectangle.</span></span> <span data-ttu-id="13849-130">四角形領域内にクリック不可能な点が存在し、特別なヒット テストを実行する場合は、オーバーライドしてクリック可能な点を提供します。</span><span class="sxs-lookup"><span data-stu-id="13849-130">If not every point within the bounding rectangle is clickable, and you perform specialized hit testing, then override and provide a clickable point.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|<span data-ttu-id="13849-131">「ノート」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="13849-131">See notes.</span></span>|<span data-ttu-id="13849-132">コントロールがキーボード フォーカスを受け取ることができる場合は、このプロパティをサポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="13849-132">If the control can receive keyboard focus, it must support this property.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|<span data-ttu-id="13849-133">「ノート」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="13849-133">See notes.</span></span>|<span data-ttu-id="13849-134">ハイパーリンク コントロールの名前は、下線付きで画面に表示されるテキストです。</span><span class="sxs-lookup"><span data-stu-id="13849-134">The hyperlink control’s name is the text that is displayed on the screen as underlined.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|<span data-ttu-id="13849-135">「ノート」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="13849-135">See notes.</span></span>|<span data-ttu-id="13849-136">ハイパーリンク コントロールのクリック可能なポイントは、マウス ポインターを使用してクリックした場合にハイパーリンクを起動するポイントである必要があります。</span><span class="sxs-lookup"><span data-stu-id="13849-136">The hyperlink control’s clickable point must be a point that launches the hyperlink if clicked with a mouse pointer.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|<span data-ttu-id="13849-137">「ノート」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="13849-137">See notes.</span></span>|<span data-ttu-id="13849-138">静的なテキスト ラベルがある場合、このプロパティは対象のコントロールへの参照を公開する必要があります。</span><span class="sxs-lookup"><span data-stu-id="13849-138">If there is a static text label then this property must expose a reference to that control.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|<span data-ttu-id="13849-139">ハイパーリンク</span><span class="sxs-lookup"><span data-stu-id="13849-139">Hyperlink</span></span>|<span data-ttu-id="13849-140">この値は、すべての [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] フレームワークで同じです。</span><span class="sxs-lookup"><span data-stu-id="13849-140">This value is the same for all [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] frameworks.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|<span data-ttu-id="13849-141">"ハイパーリンク"</span><span class="sxs-lookup"><span data-stu-id="13849-141">"hyperlink"</span></span>|<span data-ttu-id="13849-142">Hyperlink コントロール型に対応するローカライズされた文字列。</span><span class="sxs-lookup"><span data-stu-id="13849-142">Localized string corresponding to the Hyperlink control type.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|<span data-ttu-id="13849-143">True</span><span class="sxs-lookup"><span data-stu-id="13849-143">True</span></span>|<span data-ttu-id="13849-144">ハイパーリンク コントロールは、常に [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコンテンツ ビューに含まれます。</span><span class="sxs-lookup"><span data-stu-id="13849-144">The hyperlink control is always included in the content view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|<span data-ttu-id="13849-145">True</span><span class="sxs-lookup"><span data-stu-id="13849-145">True</span></span>|<span data-ttu-id="13849-146">ハイパーリンク コントロールは、常に [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコントロール ビューに含まれます。</span><span class="sxs-lookup"><span data-stu-id="13849-146">The hyperlink control is always included in the control view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree.</span></span>|  
   
 <a name="Required_UI_Automation_Control_Patterns"></a>   
-## 必須の UI オートメーション コントロール パターンおよびプロパティ  
- 次の表に、すべてのハイパーリンク コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] コントロール パターンを示します。 コントロール パターンの詳細については、「[UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)」を参照してください。  
+## <a name="required-ui-automation-control-patterns-and-properties"></a><span data-ttu-id="13849-147">必須の UI オートメーション コントロール パターンおよびプロパティ</span><span class="sxs-lookup"><span data-stu-id="13849-147">Required UI Automation Control Patterns and Properties</span></span>  
+ <span data-ttu-id="13849-148">次の表に、すべてのハイパーリンク コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] コントロール パターンを示します。</span><span class="sxs-lookup"><span data-stu-id="13849-148">The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] control patterns required to be supported by all hyperlink controls.</span></span> <span data-ttu-id="13849-149">コントロール パターンの詳細については、「 [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="13849-149">For more information on control patterns, see [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).</span></span>  
   
-|コントロール パターン\/パターン プロパティ|サポート\/値|ノート|  
-|-----------------------------|-------------|---------|  
-|<xref:System.Windows.Automation.Provider.IInvokeProvider>|はい|すべてのハイパーリンク コントロールは、Invoke パターンをサポートする必要があります。|  
-|<xref:System.Windows.Automation.Provider.IValueProvider>|状況に依存|ユーザーにとって有効で意味のある情報がリンクに含まれている場合、ハイパーリンク コントロールは Value コントロール パターンをサポートする必要があります。|  
-|<xref:System.Windows.Automation.Provider.IValueProvider.Value>|例: "http:\/\/www..."|インターネット アドレスまたはイントラネット アドレスの URL は、ユーザーにとって意味のある情報が含まれるハイパーリンクの例です。 一方、プログラム リンクはアプリケーションにしか意味がないため、Value プロパティには使用しないことをお勧めします。|  
+|<span data-ttu-id="13849-150">コントロール パターン/パターン プロパティ</span><span class="sxs-lookup"><span data-stu-id="13849-150">Control Pattern/Pattern Property</span></span>|<span data-ttu-id="13849-151">サポート/値</span><span class="sxs-lookup"><span data-stu-id="13849-151">Support/Value</span></span>|<span data-ttu-id="13849-152">ノート</span><span class="sxs-lookup"><span data-stu-id="13849-152">Notes</span></span>|  
+|---------------------------------------|--------------------|-----------|  
+|<xref:System.Windows.Automation.Provider.IInvokeProvider>|<span data-ttu-id="13849-153">はい</span><span class="sxs-lookup"><span data-stu-id="13849-153">Yes</span></span>|<span data-ttu-id="13849-154">すべてのハイパーリンク コントロールは、Invoke パターンをサポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="13849-154">All hyperlink controls must support the Invoke pattern.</span></span>|  
+|<xref:System.Windows.Automation.Provider.IValueProvider>|<span data-ttu-id="13849-155">状況に依存</span><span class="sxs-lookup"><span data-stu-id="13849-155">Depends</span></span>|<span data-ttu-id="13849-156">ユーザーにとって有効で意味のある情報がリンクに含まれている場合、ハイパーリンク コントロールは Value コントロール パターンをサポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="13849-156">Hyperlink controls should support the Value control pattern when the link contains information that is usable and meaningful to the user.</span></span>|  
+|<xref:System.Windows.Automation.Provider.IValueProvider.Value>|<span data-ttu-id="13849-157">例: "http://www..."</span><span class="sxs-lookup"><span data-stu-id="13849-157">For example, "http://www...."</span></span>|<span data-ttu-id="13849-158">インターネット アドレスまたはイントラネット アドレスの URL は、ユーザーにとって意味のある情報が含まれるハイパーリンクの例です。</span><span class="sxs-lookup"><span data-stu-id="13849-158">A URL for an Internet or Intranet address is an example of a hyperlink that contains information that is meaningful to the user.</span></span> <span data-ttu-id="13849-159">一方、プログラム リンクはアプリケーションにしか意味がないため、Value プロパティには使用しないことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="13849-159">A programmatic link, however, is meaningful only to an application and is not recommended for the Value property.</span></span>|  
   
 <a name="Required_UI_Automation_Events"></a>   
-## 必須の UI オートメーション イベント  
- 次の表に、すべてのハイパーリンク コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベントを示します。 イベントの詳細については、「[UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md)」を参照してください。  
+## <a name="required-ui-automation-events"></a><span data-ttu-id="13849-160">必須の UI オートメーション イベント</span><span class="sxs-lookup"><span data-stu-id="13849-160">Required UI Automation Events</span></span>  
+ <span data-ttu-id="13849-161">次の表に、すべてのハイパーリンク コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベントを示します。</span><span class="sxs-lookup"><span data-stu-id="13849-161">The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] events required to be supported by all hyperlink controls.</span></span> <span data-ttu-id="13849-162">イベントの詳細については、「 [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="13849-162">For more information on events, see [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md).</span></span>  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベント|Support|ノート|  
-|--------------------------------------------------------------------------------|-------------|---------|  
-|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|必要|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必要|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必要|なし|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]<span data-ttu-id="13849-163"> イベント</span><span class="sxs-lookup"><span data-stu-id="13849-163"> Event</span></span>|<span data-ttu-id="13849-164">Support</span><span class="sxs-lookup"><span data-stu-id="13849-164">Support</span></span>|<span data-ttu-id="13849-165">ノート</span><span class="sxs-lookup"><span data-stu-id="13849-165">Notes</span></span>|  
+|---------------------------------------------------------------------------------|-------------|-----------|  
+|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|<span data-ttu-id="13849-166">必要</span><span class="sxs-lookup"><span data-stu-id="13849-166">Required</span></span>|<span data-ttu-id="13849-167">なし</span><span class="sxs-lookup"><span data-stu-id="13849-167">None</span></span>|  
+|<span data-ttu-id="13849-168"><xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="13849-168"><xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> property-changed event.</span></span>|<span data-ttu-id="13849-169">必要</span><span class="sxs-lookup"><span data-stu-id="13849-169">Required</span></span>|<span data-ttu-id="13849-170">なし</span><span class="sxs-lookup"><span data-stu-id="13849-170">None</span></span>|  
+|<span data-ttu-id="13849-171"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="13849-171"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> property-changed event.</span></span>|<span data-ttu-id="13849-172">必要</span><span class="sxs-lookup"><span data-stu-id="13849-172">Required</span></span>|<span data-ttu-id="13849-173">なし</span><span class="sxs-lookup"><span data-stu-id="13849-173">None</span></span>|  
+|<span data-ttu-id="13849-174"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="13849-174"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> property-changed event.</span></span>|<span data-ttu-id="13849-175">必要</span><span class="sxs-lookup"><span data-stu-id="13849-175">Required</span></span>|<span data-ttu-id="13849-176">なし</span><span class="sxs-lookup"><span data-stu-id="13849-176">None</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|<span data-ttu-id="13849-177">必須</span><span class="sxs-lookup"><span data-stu-id="13849-177">Required</span></span>|<span data-ttu-id="13849-178">なし</span><span class="sxs-lookup"><span data-stu-id="13849-178">None</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|<span data-ttu-id="13849-179">必須</span><span class="sxs-lookup"><span data-stu-id="13849-179">Required</span></span>|<span data-ttu-id="13849-180">なし</span><span class="sxs-lookup"><span data-stu-id="13849-180">None</span></span>|  
   
-## 参照  
- <xref:System.Windows.Automation.ControlType.Hyperlink>   
- [UI Automation Control Types Overview](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)   
- [UI Automation Overview](../../../docs/framework/ui-automation/ui-automation-overview.md)
+## <a name="see-also"></a><span data-ttu-id="13849-181">関連項目</span><span class="sxs-lookup"><span data-stu-id="13849-181">See Also</span></span>  
+ <xref:System.Windows.Automation.ControlType.Hyperlink>  
+ [<span data-ttu-id="13849-182">UI オートメーション コントロール型の概要</span><span class="sxs-lookup"><span data-stu-id="13849-182">UI Automation Control Types Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)  
+ [<span data-ttu-id="13849-183">UI オートメーションの概要</span><span class="sxs-lookup"><span data-stu-id="13849-183">UI Automation Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-overview.md)

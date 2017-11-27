@@ -1,62 +1,60 @@
 ---
-title: "構造体のデザイン | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "クラス ライブラリ デザインのガイドライン [.NET Framework] 構造体"
-  - "構造体の割り当てを解除"
-  - "構造体の割り当てください。"
-  - "値型、構造体"
-  - "構造の設計"
-  - "型のデザインのガイドライン、構造体"
-  - "構造体 [.NET Framework] のデザイン ガイドライン"
+title: "構造体のデザイン"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- class library design guidelines [.NET Framework], structures
+- deallocating structures
+- allocating structures
+- value types, structures
+- structure design
+- type design guidelines, structures
+- structures [.NET Framework], design guidelines
 ms.assetid: 1f48b2d8-608c-4be6-9ba4-d8f203ed9f9f
-caps.latest.revision: 12
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: d1566d2b67e1dda5b0b221a2c10affb6bdaea888
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 構造体のデザイン
-ほとんどの場合、汎用的な値の型は構造体、c\# のキーワードと呼ばれます。 このセクションでは、一般的な構造体のデザインのガイドラインを示します。  
+# <a name="struct-design"></a><span data-ttu-id="d8619-102">構造体のデザイン</span><span class="sxs-lookup"><span data-stu-id="d8619-102">Struct Design</span></span>
+<span data-ttu-id="d8619-103">ほとんどの場合に、汎用的な値の型を構造体、その c# キーワードと呼びます。</span><span class="sxs-lookup"><span data-stu-id="d8619-103">The general-purpose value type is most often referred to as a struct, its C# keyword.</span></span> <span data-ttu-id="d8619-104">このセクションでは、一般的な構造体のデザインのガイドラインを示します。</span><span class="sxs-lookup"><span data-stu-id="d8619-104">This section provides guidelines for general struct design.</span></span>  
   
- **X のしないで** 構造体の既定のコンス トラクターを提供します。  
+ <span data-ttu-id="d8619-105">**X しないで**構造体の既定のコンス トラクターを提供します。</span><span class="sxs-lookup"><span data-stu-id="d8619-105">**X DO NOT** provide a default constructor for a struct.</span></span>  
   
- このガイドラインに従うには、配列の項目ごとに、コンス トラクターを実行することがなく作成する構造体の配列が使用できます。 C\# で許可しないことを既定のコンス トラクターを持つ構造体に注意してください。  
+ <span data-ttu-id="d8619-106">このガイドラインに従う、配列の各項目で、コンス トラクターを実行しなくても作成する構造体の配列を使用できます。</span><span class="sxs-lookup"><span data-stu-id="d8619-106">Following this guideline allows arrays of structs to be created without having to run the constructor on each item of the array.</span></span> <span data-ttu-id="d8619-107">C# は許可されていないことを既定のコンス トラクターを持つ構造体に注意してください。</span><span class="sxs-lookup"><span data-stu-id="d8619-107">Notice that C# does not allow structs to have default constructors.</span></span>  
   
- **X のしないで** 変更可能な値の型を定義します。  
+ <span data-ttu-id="d8619-108">**X しないで**変更可能な値の型を定義します。</span><span class="sxs-lookup"><span data-stu-id="d8619-108">**X DO NOT** define mutable value types.</span></span>  
   
- 変更可能な値の型には、いくつかの問題があります。 たとえば、プロパティ get アクセス操作子が値型を返すときに、呼び出し元は、コピーを受け取ります。 コピーが暗黙的に作成されるため、開発者は、コピー、および元の値ではなくを変化することに注意してください限りません。 また、一部の言語 \(動的言語、特に\) では、できるコピーによって、ローカル変数を逆参照されたときにも、ために、変更可能な値の型を使用して問題があります。  
+ <span data-ttu-id="d8619-109">変更可能な値の型には、いくつかの問題があります。</span><span class="sxs-lookup"><span data-stu-id="d8619-109">Mutable value types have several problems.</span></span> <span data-ttu-id="d8619-110">たとえば、プロパティ get アクセス操作子が値型を返すときに、呼び出し元は、コピーを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="d8619-110">For example, when a property getter returns a value type, the caller receives a copy.</span></span> <span data-ttu-id="d8619-111">コピーが暗黙的に作成されるため、開発者が、コピー、および元の値ではなくを変更することに注意してくださいできない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="d8619-111">Because the copy is created implicitly, developers might not be aware that they are mutating the copy, and not the original value.</span></span> <span data-ttu-id="d8619-112">また、一部の言語 (動的言語、特に) では、逆参照時に、ローカル変数があっても、コピーできるようにするために、変更可能な値の型を使用して問題があります。</span><span class="sxs-lookup"><span data-stu-id="d8619-112">Also, some languages (dynamic languages, in particular) have problems using mutable value types because even local variables, when dereferenced, cause a copy to be made.</span></span>  
   
- **✓ は** すべてのインスタンス データの状態が 0 に設定されているように、false の場合、または null \(該当する場合\) は無効です。  
+ <span data-ttu-id="d8619-113">**✓ しないで**すべてのインスタンス データの状態が 0 に設定されている、false の場合、または null (該当する場合) が有効であることを確認します。</span><span class="sxs-lookup"><span data-stu-id="d8619-113">**✓ DO** ensure that a state where all instance data is set to zero, false, or null (as appropriate) is valid.</span></span>  
   
- 無効なインスタンスの偶発的な作成を禁止これは、構造体の配列が作成されるときです。  
+ <span data-ttu-id="d8619-114">構造体の配列の作成時に、無効なインスタンスの偶発的な作成ができなくなります。</span><span class="sxs-lookup"><span data-stu-id="d8619-114">This prevents accidental creation of invalid instances when an array of the structs is created.</span></span>  
   
- **✓ は** 実装 <xref:System.IEquatable%601> を値の型。  
+ <span data-ttu-id="d8619-115">**✓ は**実装<xref:System.IEquatable%601>を値の型。</span><span class="sxs-lookup"><span data-stu-id="d8619-115">**✓ DO** implement <xref:System.IEquatable%601> on value types.</span></span>  
   
- <xref:System.Object.Equals%2A?displayProperty=fullName> 値型のメソッドとボックス化、および既定の実装はリフレクションを使用しているため、非常に効率です。<xref:System.IEquatable%601.Equals%2A> 多くのパフォーマンスを向上させることができ、できる機構を実装するため、ボックス化は発生しません。  
+ <span data-ttu-id="d8619-116"><xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッド値の型をボックス化、発生して、既定の実装はリフレクションを使用しているため、非常に効率はします。</span><span class="sxs-lookup"><span data-stu-id="d8619-116">The <xref:System.Object.Equals%2A?displayProperty=nameWithType> method on value types causes boxing, and its default implementation is not very efficient, because it uses reflection.</span></span> <span data-ttu-id="d8619-117"><xref:System.IEquatable%601.Equals%2A>多くのパフォーマンスが向上し、ボックス化は発生しませんできるように実装することができます。</span><span class="sxs-lookup"><span data-stu-id="d8619-117"><xref:System.IEquatable%601.Equals%2A> can have much better performance and can be implemented so that it will not cause boxing.</span></span>  
   
- **X のしないで** 明示的に延長 <xref:System.ValueType>します。 実際には、ほとんどの言語は、これを防ぐ。  
+ <span data-ttu-id="d8619-118">**X しないで**明示的に拡張<xref:System.ValueType>です。</span><span class="sxs-lookup"><span data-stu-id="d8619-118">**X DO NOT** explicitly extend <xref:System.ValueType>.</span></span> <span data-ttu-id="d8619-119">実際には、ほとんどの言語は、これを防ぐ。</span><span class="sxs-lookup"><span data-stu-id="d8619-119">In fact, most languages prevent this.</span></span>  
   
- 通常、構造体では、非常に役に立ちますが、小規模で、1 つ、変更できないの値がないボックス化する多くの場合にのみ使用する必要があります。  
+ <span data-ttu-id="d8619-120">一般に、構造体は、非常に役に立ちますが、いないボックス化頻繁に小さく、1 つ、変更できない値に対してのみ使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d8619-120">In general, structs can be very useful but should only be used for small, single, immutable values that will not be boxed frequently.</span></span>  
   
- *部分 © 2005年、2009 Microsoft Corporation します。 All rights reserved.*  
+ <span data-ttu-id="d8619-121">*部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*</span><span class="sxs-lookup"><span data-stu-id="d8619-121">*Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*</span></span>  
   
- *翔泳社からのアクセス許可によって検出 [Framework デザイン ガイドライン: 規則が、表現方法と再利用可能な .NET ライブラリを 2 nd Edition パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) は Cwalina Brad エイブラムスによる、Microsoft Windows の開発シリーズの一部として Addison\-wesley Professional、2008 年 10 月 22 日を公開します。*  
+ <span data-ttu-id="d8619-122">*ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*</span><span class="sxs-lookup"><span data-stu-id="d8619-122">*Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*</span></span>  
   
-## 参照  
- [型デザインのガイドライン](../../../docs/standard/design-guidelines/type.md)   
- [Framework デザイン ガイドライン](../../../docs/standard/design-guidelines/index.md)   
- [クラスまたは構造体の選択](../../../docs/standard/design-guidelines/choosing-between-class-and-struct.md)
+## <a name="see-also"></a><span data-ttu-id="d8619-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="d8619-123">See Also</span></span>  
+ [<span data-ttu-id="d8619-124">型のデザインのガイドライン</span><span class="sxs-lookup"><span data-stu-id="d8619-124">Type Design Guidelines</span></span>](../../../docs/standard/design-guidelines/type.md)  
+ [<span data-ttu-id="d8619-125">フレームワーク デザインのガイドライン</span><span class="sxs-lookup"><span data-stu-id="d8619-125">Framework Design Guidelines</span></span>](../../../docs/standard/design-guidelines/index.md)  
+ [<span data-ttu-id="d8619-126">クラスと構造体の使い分け</span><span class="sxs-lookup"><span data-stu-id="d8619-126">Choosing Between Class and Struct</span></span>](../../../docs/standard/design-guidelines/choosing-between-class-and-struct.md)

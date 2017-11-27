@@ -1,195 +1,188 @@
 ---
-title: "DataGrid のスタイルとテンプレート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ControlTemplate [WPF], DataGrid"
-  - "DataGrid [WPF], スタイルおよびテンプレート"
-  - "パーツ [WPF], DataGrid"
-  - "状態 [WPF], DataGrid"
-  - "スタイル [WPF], DataGrid"
-  - "テンプレート [WPF], DataGrid"
+title: "DataGrid のスタイルとテンプレート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- states [WPF], DataGrid
+- ControlTemplate [WPF], DataGrid
+- DataGrid [WPF], styles and templates
+- templates [WPF], DataGrid
+- styles [WPF], DataGrid
+- parts [WPF], DataGrid
 ms.assetid: 9cb31d63-f148-4d25-b079-816e73f988c7
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b2dd7e47454cdfa806ce025d905073468f70f7cb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataGrid のスタイルとテンプレート
-このトピックでは、<xref:System.Windows.Controls.DataGrid> コントロールのスタイルおよびテンプレートについて説明します。  既定の <xref:System.Windows.Controls.ControlTemplate> に変更を加えることで、コントロールに独自の外観を設定できます。  詳細については、「[ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
+# <a name="datagrid-styles-and-templates"></a><span data-ttu-id="6c475-102">DataGrid のスタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="6c475-102">DataGrid Styles and Templates</span></span>
+<span data-ttu-id="6c475-103">このトピックは、のスタイルとテンプレートについて説明します、<xref:System.Windows.Controls.DataGrid>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6c475-103">This topic describes the styles and templates for the <xref:System.Windows.Controls.DataGrid> control.</span></span> <span data-ttu-id="6c475-104">既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。</span><span class="sxs-lookup"><span data-stu-id="6c475-104">You can modify the default <xref:System.Windows.Controls.ControlTemplate> to give the control a unique appearance.</span></span> <span data-ttu-id="6c475-105">詳細については、「[Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6c475-105">For more information, see [Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).</span></span>  
   
-## DataGrid のパーツ  
- 次の表は、<xref:System.Windows.Controls.DataGrid> コントロールの名前付きパーツの一覧です。  
+## <a name="datagrid-parts"></a><span data-ttu-id="6c475-106">DataGrid のパーツ</span><span class="sxs-lookup"><span data-stu-id="6c475-106">DataGrid Parts</span></span>  
+ <span data-ttu-id="6c475-107">次の表に、名前付きのパーツの<xref:System.Windows.Controls.DataGrid>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6c475-107">The following table lists the named parts for the <xref:System.Windows.Controls.DataGrid> control.</span></span>  
   
-||||  
+|<span data-ttu-id="6c475-108">パーツ</span><span class="sxs-lookup"><span data-stu-id="6c475-108">Part</span></span>|<span data-ttu-id="6c475-109">型</span><span class="sxs-lookup"><span data-stu-id="6c475-109">Type</span></span>|<span data-ttu-id="6c475-110">説明</span><span class="sxs-lookup"><span data-stu-id="6c475-110">Description</span></span>|  
 |-|-|-|  
-|指定項目|種類|Description|  
-|PART\_ColumnHeadersPresenter|<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>|列ヘッダーが含まれる行。|  
+|<span data-ttu-id="6c475-111">PART_ColumnHeadersPresenter</span><span class="sxs-lookup"><span data-stu-id="6c475-111">PART_ColumnHeadersPresenter</span></span>|<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>|<span data-ttu-id="6c475-112">列ヘッダーを含んでいる行。</span><span class="sxs-lookup"><span data-stu-id="6c475-112">The row that contains the column headers.</span></span>|  
   
- <xref:System.Windows.Controls.DataGrid> の <xref:System.Windows.Controls.ControlTemplate> を作成するときに、テンプレートの <xref:System.Windows.Controls.ScrollViewer> 内に <xref:System.Windows.Controls.ItemsPresenter> が含まれる場合があります。  <xref:System.Windows.Controls.ItemsPresenter> により、<xref:System.Windows.Controls.DataGrid> の各項目が表示されます。また、<xref:System.Windows.Controls.ScrollViewer> により、コントロール内でスクロールできるようになります。  <xref:System.Windows.Controls.ItemsPresenter> が <xref:System.Windows.Controls.ScrollViewer> の直接の子でない場合は、<xref:System.Windows.Controls.ItemsPresenter> に `ItemsPresenter` という名前を付ける必要があります。  
+ <span data-ttu-id="6c475-113">作成するときに、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.DataGrid>、テンプレートを含めることがあります、<xref:System.Windows.Controls.ItemsPresenter>内で、<xref:System.Windows.Controls.ScrollViewer>です。</span><span class="sxs-lookup"><span data-stu-id="6c475-113">When you create a <xref:System.Windows.Controls.ControlTemplate> for a <xref:System.Windows.Controls.DataGrid>, your template might contain an <xref:System.Windows.Controls.ItemsPresenter> within a <xref:System.Windows.Controls.ScrollViewer>.</span></span> <span data-ttu-id="6c475-114">(、<xref:System.Windows.Controls.ItemsPresenter>内の各項目を表示、 <xref:System.Windows.Controls.DataGrid>;<xref:System.Windows.Controls.ScrollViewer>コントロール内でスクロールできるように) します。</span><span class="sxs-lookup"><span data-stu-id="6c475-114">(The <xref:System.Windows.Controls.ItemsPresenter> displays each item in the <xref:System.Windows.Controls.DataGrid>; the <xref:System.Windows.Controls.ScrollViewer> enables scrolling within the control).</span></span>  <span data-ttu-id="6c475-115">場合、<xref:System.Windows.Controls.ItemsPresenter>の直接の子ではない、<xref:System.Windows.Controls.ScrollViewer>を付ける必要があります、<xref:System.Windows.Controls.ItemsPresenter>名、`ItemsPresenter`です。</span><span class="sxs-lookup"><span data-stu-id="6c475-115">If the <xref:System.Windows.Controls.ItemsPresenter> is not the direct child of the <xref:System.Windows.Controls.ScrollViewer>, you must give the <xref:System.Windows.Controls.ItemsPresenter> the name, `ItemsPresenter`.</span></span>  
   
- <xref:System.Windows.Controls.DataGrid> の既定のテンプレートには、<xref:System.Windows.Controls.ScrollViewer> コントロールが含まれています。  <xref:System.Windows.Controls.ScrollViewer> で定義されたパーツの詳細については、「[ScrollViewer のスタイルとテンプレート](../../../../docs/framework/wpf/controls/scrollviewer-styles-and-templates.md)」を参照してください。  
+ <span data-ttu-id="6c475-116">既定のテンプレート、<xref:System.Windows.Controls.DataGrid>が含まれています、<xref:System.Windows.Controls.ScrollViewer>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6c475-116">The default template for the <xref:System.Windows.Controls.DataGrid> contains a <xref:System.Windows.Controls.ScrollViewer> control.</span></span> <span data-ttu-id="6c475-117">によって定義されたパートの詳細については、<xref:System.Windows.Controls.ScrollViewer>を参照してください[ScrollViewer スタイルとテンプレート](../../../../docs/framework/wpf/controls/scrollviewer-styles-and-templates.md)です。</span><span class="sxs-lookup"><span data-stu-id="6c475-117">For more information about the parts defined by the <xref:System.Windows.Controls.ScrollViewer>, see [ScrollViewer Styles and Templates](../../../../docs/framework/wpf/controls/scrollviewer-styles-and-templates.md).</span></span>  
   
-## DataGrid の状態  
- 次の表は、<xref:System.Windows.Controls.DataGrid> コントロールの表示状態の一覧です。  
+## <a name="datagrid-states"></a><span data-ttu-id="6c475-118">DataGrid の状態</span><span class="sxs-lookup"><span data-stu-id="6c475-118">DataGrid States</span></span>  
+ <span data-ttu-id="6c475-119">次の表に、用ビジュアル状態、<xref:System.Windows.Controls.DataGrid>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6c475-119">The following table lists the visual states for the <xref:System.Windows.Controls.DataGrid> control.</span></span>  
   
-||||  
+|<span data-ttu-id="6c475-120">VisualState 名</span><span class="sxs-lookup"><span data-stu-id="6c475-120">VisualState Name</span></span>|<span data-ttu-id="6c475-121">VisualStateGroup 名</span><span class="sxs-lookup"><span data-stu-id="6c475-121">VisualStateGroup Name</span></span>|<span data-ttu-id="6c475-122">説明</span><span class="sxs-lookup"><span data-stu-id="6c475-122">Description</span></span>|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|Normal|CommonStates|既定の状態です。|  
-|Disabled|CommonStates|コントロールが無効になっています。|  
-|InvalidFocused|ValidationStates|コントロールは有効ではありませんが、フォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|コントロールは有効ではなく、フォーカスはありません。|  
-|Valid|ValidationStates|コントロールが有効です。|  
+|<span data-ttu-id="6c475-123">標準</span><span class="sxs-lookup"><span data-stu-id="6c475-123">Normal</span></span>|<span data-ttu-id="6c475-124">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-124">CommonStates</span></span>|<span data-ttu-id="6c475-125">既定の状態です。</span><span class="sxs-lookup"><span data-stu-id="6c475-125">The default state.</span></span>|  
+|<span data-ttu-id="6c475-126">無効</span><span class="sxs-lookup"><span data-stu-id="6c475-126">Disabled</span></span>|<span data-ttu-id="6c475-127">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-127">CommonStates</span></span>|<span data-ttu-id="6c475-128">コントロールが無効になっています。</span><span class="sxs-lookup"><span data-stu-id="6c475-128">The control is disabled.</span></span>|  
+|<span data-ttu-id="6c475-129">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="6c475-129">InvalidFocused</span></span>|<span data-ttu-id="6c475-130">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-130">ValidationStates</span></span>|<span data-ttu-id="6c475-131">コントロールが無効で、フォーカスがあります。</span><span class="sxs-lookup"><span data-stu-id="6c475-131">The control is not valid and has focus.</span></span>|  
+|<span data-ttu-id="6c475-132">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="6c475-132">InvalidUnfocused</span></span>|<span data-ttu-id="6c475-133">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-133">ValidationStates</span></span>|<span data-ttu-id="6c475-134">コントロールが無効で、フォーカスがありません。</span><span class="sxs-lookup"><span data-stu-id="6c475-134">The control is not valid and does not have focus.</span></span>|  
+|<span data-ttu-id="6c475-135">有効</span><span class="sxs-lookup"><span data-stu-id="6c475-135">Valid</span></span>|<span data-ttu-id="6c475-136">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-136">ValidationStates</span></span>|<span data-ttu-id="6c475-137">コントロールは有効です。</span><span class="sxs-lookup"><span data-stu-id="6c475-137">The control is valid.</span></span>|  
   
-## DataGridCell のパーツ  
- <xref:System.Windows.Controls.DataGridCell> 要素には、名前付きのパーツは存在しません。  
+## <a name="datagridcell-parts"></a><span data-ttu-id="6c475-138">DataGridCell 部分</span><span class="sxs-lookup"><span data-stu-id="6c475-138">DataGridCell Parts</span></span>  
+ <span data-ttu-id="6c475-139"><xref:System.Windows.Controls.DataGridCell>要素には、すべて名前付きのパートはありません。</span><span class="sxs-lookup"><span data-stu-id="6c475-139">The <xref:System.Windows.Controls.DataGridCell> element does not have any named parts.</span></span>  
   
-## DataGridCell の状態  
- 次の表は、<xref:System.Windows.Controls.DataGridCell> 要素の表示状態の一覧です。  
+## <a name="datagridcell-states"></a><span data-ttu-id="6c475-140">DataGridCell 状態</span><span class="sxs-lookup"><span data-stu-id="6c475-140">DataGridCell States</span></span>  
+ <span data-ttu-id="6c475-141">次の表に、用ビジュアル状態、<xref:System.Windows.Controls.DataGridCell>要素。</span><span class="sxs-lookup"><span data-stu-id="6c475-141">The following table lists the visual states for the <xref:System.Windows.Controls.DataGridCell> element.</span></span>  
   
-||||  
+|<span data-ttu-id="6c475-142">VisualState 名</span><span class="sxs-lookup"><span data-stu-id="6c475-142">VisualState Name</span></span>|<span data-ttu-id="6c475-143">VisualStateGroup 名</span><span class="sxs-lookup"><span data-stu-id="6c475-143">VisualStateGroup Name</span></span>|<span data-ttu-id="6c475-144">説明</span><span class="sxs-lookup"><span data-stu-id="6c475-144">Description</span></span>|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|Normal|CommonStates|既定の状態です。|  
-|MouseOver|CommonStates|マウス ポインターは、セルの上に置かれています。|  
-|Focused|FocusStates|セルにフォーカスがあります。|  
-|Unfocused|FocusStates|セルにフォーカスがありません。|  
-|Current|CurrentStates|セルは現在のセルです。|  
-|Regular|CurrentStates|セルは現在のセルではありません。|  
-|表示|InteractionStates|セルは表示モードです。|  
-|編集|InteractionStates|セルは編集モードです。|  
-|Selected|SelectionStates|セルが選択されています。|  
-|Unselected|SelectionStates|セルは選択されていません。|  
-|InvalidFocused|ValidationStates|セルは有効ではありませんが、フォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|セルは有効ではなく、フォーカスはありません。|  
-|Valid|ValidationStates|セルは有効です。|  
+|<span data-ttu-id="6c475-145">標準</span><span class="sxs-lookup"><span data-stu-id="6c475-145">Normal</span></span>|<span data-ttu-id="6c475-146">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-146">CommonStates</span></span>|<span data-ttu-id="6c475-147">既定の状態です。</span><span class="sxs-lookup"><span data-stu-id="6c475-147">The default state.</span></span>|  
+|<span data-ttu-id="6c475-148">MouseOver</span><span class="sxs-lookup"><span data-stu-id="6c475-148">MouseOver</span></span>|<span data-ttu-id="6c475-149">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-149">CommonStates</span></span>|<span data-ttu-id="6c475-150">マウス ポインターがセル上で配置されます。</span><span class="sxs-lookup"><span data-stu-id="6c475-150">The mouse pointer is positioned over the cell.</span></span>|  
+|<span data-ttu-id="6c475-151">フォーカスされている</span><span class="sxs-lookup"><span data-stu-id="6c475-151">Focused</span></span>|<span data-ttu-id="6c475-152">FocusStates</span><span class="sxs-lookup"><span data-stu-id="6c475-152">FocusStates</span></span>|<span data-ttu-id="6c475-153">セルには、フォーカスがあります。</span><span class="sxs-lookup"><span data-stu-id="6c475-153">The cell has focus.</span></span>|  
+|<span data-ttu-id="6c475-154">フォーカスされていない</span><span class="sxs-lookup"><span data-stu-id="6c475-154">Unfocused</span></span>|<span data-ttu-id="6c475-155">FocusStates</span><span class="sxs-lookup"><span data-stu-id="6c475-155">FocusStates</span></span>|<span data-ttu-id="6c475-156">セルにフォーカスがないです。</span><span class="sxs-lookup"><span data-stu-id="6c475-156">The cell does not have focus</span></span>|  
+|<span data-ttu-id="6c475-157">現在</span><span class="sxs-lookup"><span data-stu-id="6c475-157">Current</span></span>|<span data-ttu-id="6c475-158">CurrentStates</span><span class="sxs-lookup"><span data-stu-id="6c475-158">CurrentStates</span></span>|<span data-ttu-id="6c475-159">セルは、現在のセルです。</span><span class="sxs-lookup"><span data-stu-id="6c475-159">The cell is the current cell.</span></span>|  
+|<span data-ttu-id="6c475-160">Regular</span><span class="sxs-lookup"><span data-stu-id="6c475-160">Regular</span></span>|<span data-ttu-id="6c475-161">CurrentStates</span><span class="sxs-lookup"><span data-stu-id="6c475-161">CurrentStates</span></span>|<span data-ttu-id="6c475-162">セルは、現在のセルではありません。</span><span class="sxs-lookup"><span data-stu-id="6c475-162">The cell is not the current cell.</span></span>|  
+|<span data-ttu-id="6c475-163">表示</span><span class="sxs-lookup"><span data-stu-id="6c475-163">Display</span></span>|<span data-ttu-id="6c475-164">InteractionStates</span><span class="sxs-lookup"><span data-stu-id="6c475-164">InteractionStates</span></span>|<span data-ttu-id="6c475-165">セルが表示モードです。</span><span class="sxs-lookup"><span data-stu-id="6c475-165">The cell is in display mode.</span></span>|  
+|<span data-ttu-id="6c475-166">編集</span><span class="sxs-lookup"><span data-stu-id="6c475-166">Editing</span></span>|<span data-ttu-id="6c475-167">InteractionStates</span><span class="sxs-lookup"><span data-stu-id="6c475-167">InteractionStates</span></span>|<span data-ttu-id="6c475-168">セルが編集モードです。</span><span class="sxs-lookup"><span data-stu-id="6c475-168">The cell is in edit mode.</span></span>|  
+|<span data-ttu-id="6c475-169">選択済み</span><span class="sxs-lookup"><span data-stu-id="6c475-169">Selected</span></span>|<span data-ttu-id="6c475-170">SelectionStates</span><span class="sxs-lookup"><span data-stu-id="6c475-170">SelectionStates</span></span>|<span data-ttu-id="6c475-171">セルが選択されます。</span><span class="sxs-lookup"><span data-stu-id="6c475-171">The cell is selected.</span></span>|  
+|<span data-ttu-id="6c475-172">未選択</span><span class="sxs-lookup"><span data-stu-id="6c475-172">Unselected</span></span>|<span data-ttu-id="6c475-173">SelectionStates</span><span class="sxs-lookup"><span data-stu-id="6c475-173">SelectionStates</span></span>|<span data-ttu-id="6c475-174">セルが選択されていません。</span><span class="sxs-lookup"><span data-stu-id="6c475-174">The cell is not selected.</span></span>|  
+|<span data-ttu-id="6c475-175">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="6c475-175">InvalidFocused</span></span>|<span data-ttu-id="6c475-176">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-176">ValidationStates</span></span>|<span data-ttu-id="6c475-177">セルが正しくないと、フォーカスがあります。</span><span class="sxs-lookup"><span data-stu-id="6c475-177">The cell is not valid and has focus.</span></span>|  
+|<span data-ttu-id="6c475-178">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="6c475-178">InvalidUnfocused</span></span>|<span data-ttu-id="6c475-179">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-179">ValidationStates</span></span>|<span data-ttu-id="6c475-180">セルが正しくないと、フォーカスされていません。</span><span class="sxs-lookup"><span data-stu-id="6c475-180">The cell is not valid and does not have focus.</span></span>|  
+|<span data-ttu-id="6c475-181">有効</span><span class="sxs-lookup"><span data-stu-id="6c475-181">Valid</span></span>|<span data-ttu-id="6c475-182">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-182">ValidationStates</span></span>|<span data-ttu-id="6c475-183">セルは有効です。</span><span class="sxs-lookup"><span data-stu-id="6c475-183">The cell is valid.</span></span>|  
   
-## DataGridRow のパーツ  
- <xref:System.Windows.Controls.DataGridRow> 要素には、名前付きのパーツは存在しません。  
+## <a name="datagridrow-parts"></a><span data-ttu-id="6c475-184">DataGridRow 部分</span><span class="sxs-lookup"><span data-stu-id="6c475-184">DataGridRow Parts</span></span>  
+ <span data-ttu-id="6c475-185"><xref:System.Windows.Controls.DataGridRow>要素には、すべて名前付きのパートはありません。</span><span class="sxs-lookup"><span data-stu-id="6c475-185">The <xref:System.Windows.Controls.DataGridRow> element does not have any named parts.</span></span>  
   
-## DataGridRow の状態  
- 次の表は、<xref:System.Windows.Controls.DataGridRow> 要素の表示状態の一覧です。  
+## <a name="datagridrow-states"></a><span data-ttu-id="6c475-186">DataGridRow 状態</span><span class="sxs-lookup"><span data-stu-id="6c475-186">DataGridRow States</span></span>  
+ <span data-ttu-id="6c475-187">次の表に、用ビジュアル状態、<xref:System.Windows.Controls.DataGridRow>要素。</span><span class="sxs-lookup"><span data-stu-id="6c475-187">The following table lists the visual states for the <xref:System.Windows.Controls.DataGridRow> element.</span></span>  
   
-||||  
+|<span data-ttu-id="6c475-188">VisualState 名</span><span class="sxs-lookup"><span data-stu-id="6c475-188">VisualState Name</span></span>|<span data-ttu-id="6c475-189">VisualStateGroup 名</span><span class="sxs-lookup"><span data-stu-id="6c475-189">VisualStateGroup Name</span></span>|<span data-ttu-id="6c475-190">説明</span><span class="sxs-lookup"><span data-stu-id="6c475-190">Description</span></span>|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|Normal|CommonStates|既定の状態です。|  
-|MouseOver|CommonStates|マウス ポインターは、行の上に置かれています。|  
-|MouseOver\_Editing|CommonStates|マウス ポインターは行の上に置かれ、行は編集モードです。|  
-|MouseOver\_Selected|CommonStates|マウス ポインターは行の上に置かれ、行が選択されています。|  
-|MouseOver\_Unfocused\_Editing|CommonStates|マウス ポインターは行の上に置かれ、行は編集モードで、フォーカスはありません。|  
-|MouseOver\_Unfocused\_Selected|CommonStates|マウス ポインターは行の上に置かれ、行が選択され、フォーカスはありません。|  
-|Normal\_AlternatingRow|CommonStates|行は交互の行です。|  
-|Normal\_Editing|CommonStates|行は編集モードです。|  
-|Normal\_Selected|CommonStates|行が選択されています。|  
-|Unfocused\_Editing|CommonStates|行は編集モードで、フォーカスはありません。|  
-|Unfocused\_Selected|CommonStates|行が選択され、フォーカスはありません。|  
-|InvalidFocused|ValidationStates|コントロールは有効ではありませんが、フォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|コントロールは有効ではなく、フォーカスはありません。|  
-|Valid|ValidationStates|コントロールが有効です。|  
+|<span data-ttu-id="6c475-191">標準</span><span class="sxs-lookup"><span data-stu-id="6c475-191">Normal</span></span>|<span data-ttu-id="6c475-192">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-192">CommonStates</span></span>|<span data-ttu-id="6c475-193">既定の状態です。</span><span class="sxs-lookup"><span data-stu-id="6c475-193">The default state.</span></span>|  
+|<span data-ttu-id="6c475-194">MouseOver</span><span class="sxs-lookup"><span data-stu-id="6c475-194">MouseOver</span></span>|<span data-ttu-id="6c475-195">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-195">CommonStates</span></span>|<span data-ttu-id="6c475-196">マウス ポインターが行位置します。</span><span class="sxs-lookup"><span data-stu-id="6c475-196">The mouse pointer is positioned over the row.</span></span>|  
+|<span data-ttu-id="6c475-197">MouseOver_Editing</span><span class="sxs-lookup"><span data-stu-id="6c475-197">MouseOver_Editing</span></span>|<span data-ttu-id="6c475-198">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-198">CommonStates</span></span>|<span data-ttu-id="6c475-199">行の上にマウス ポインターが配置されているし、行が編集モードにします。</span><span class="sxs-lookup"><span data-stu-id="6c475-199">The mouse pointer is positioned over the row and the row is in edit mode.</span></span>|  
+|<span data-ttu-id="6c475-200">MouseOver_Selected</span><span class="sxs-lookup"><span data-stu-id="6c475-200">MouseOver_Selected</span></span>|<span data-ttu-id="6c475-201">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-201">CommonStates</span></span>|<span data-ttu-id="6c475-202">行の上にマウス ポインターが配置されているし、行を選択します。</span><span class="sxs-lookup"><span data-stu-id="6c475-202">The mouse pointer is positioned over the row and the row is selected.</span></span>|  
+|<span data-ttu-id="6c475-203">MouseOver_Unfocused_Editing</span><span class="sxs-lookup"><span data-stu-id="6c475-203">MouseOver_Unfocused_Editing</span></span>|<span data-ttu-id="6c475-204">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-204">CommonStates</span></span>|<span data-ttu-id="6c475-205">行の上にマウス ポインターが配置されているは、行モードを編集し、フォーカスを持っていません。</span><span class="sxs-lookup"><span data-stu-id="6c475-205">The mouse pointer is positioned over the row, the row is in edit mode, and does not have focus.</span></span>|  
+|<span data-ttu-id="6c475-206">MouseOver_Unfocused_Selected</span><span class="sxs-lookup"><span data-stu-id="6c475-206">MouseOver_Unfocused_Selected</span></span>|<span data-ttu-id="6c475-207">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-207">CommonStates</span></span>|<span data-ttu-id="6c475-208">行の上にマウス ポインターが配置されている、行が選択され、フォーカスを持っていません。</span><span class="sxs-lookup"><span data-stu-id="6c475-208">The mouse pointer is positioned over the row, the row is selected, and does not have focus.</span></span>|  
+|<span data-ttu-id="6c475-209">Normal_AlternatingRow</span><span class="sxs-lookup"><span data-stu-id="6c475-209">Normal_AlternatingRow</span></span>|<span data-ttu-id="6c475-210">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-210">CommonStates</span></span>|<span data-ttu-id="6c475-211">その行は、交互の行です。</span><span class="sxs-lookup"><span data-stu-id="6c475-211">The row is an alternating row.</span></span>|  
+|<span data-ttu-id="6c475-212">Normal_Editing</span><span class="sxs-lookup"><span data-stu-id="6c475-212">Normal_Editing</span></span>|<span data-ttu-id="6c475-213">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-213">CommonStates</span></span>|<span data-ttu-id="6c475-214">行は編集モードです。</span><span class="sxs-lookup"><span data-stu-id="6c475-214">The row is in edit mode.</span></span>|  
+|<span data-ttu-id="6c475-215">Normal_Selected</span><span class="sxs-lookup"><span data-stu-id="6c475-215">Normal_Selected</span></span>|<span data-ttu-id="6c475-216">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-216">CommonStates</span></span>|<span data-ttu-id="6c475-217">行が選択されます。</span><span class="sxs-lookup"><span data-stu-id="6c475-217">The row is selected.</span></span>|  
+|<span data-ttu-id="6c475-218">Unfocused_Editing</span><span class="sxs-lookup"><span data-stu-id="6c475-218">Unfocused_Editing</span></span>|<span data-ttu-id="6c475-219">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-219">CommonStates</span></span>|<span data-ttu-id="6c475-220">この行は、編集モードでは、れ、フォーカスされていません。</span><span class="sxs-lookup"><span data-stu-id="6c475-220">The row is in edit mode and does not have focus.</span></span>|  
+|<span data-ttu-id="6c475-221">Unfocused_Selected</span><span class="sxs-lookup"><span data-stu-id="6c475-221">Unfocused_Selected</span></span>|<span data-ttu-id="6c475-222">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-222">CommonStates</span></span>|<span data-ttu-id="6c475-223">行が選択され、フォーカスを持っていません。</span><span class="sxs-lookup"><span data-stu-id="6c475-223">The row is selected and does not have focus.</span></span>|  
+|<span data-ttu-id="6c475-224">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="6c475-224">InvalidFocused</span></span>|<span data-ttu-id="6c475-225">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-225">ValidationStates</span></span>|<span data-ttu-id="6c475-226">コントロールが無効で、フォーカスがあります。</span><span class="sxs-lookup"><span data-stu-id="6c475-226">The control is not valid and has focus.</span></span>|  
+|<span data-ttu-id="6c475-227">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="6c475-227">InvalidUnfocused</span></span>|<span data-ttu-id="6c475-228">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-228">ValidationStates</span></span>|<span data-ttu-id="6c475-229">コントロールが無効で、フォーカスがありません。</span><span class="sxs-lookup"><span data-stu-id="6c475-229">The control is not valid and does not have focus.</span></span>|  
+|<span data-ttu-id="6c475-230">有効</span><span class="sxs-lookup"><span data-stu-id="6c475-230">Valid</span></span>|<span data-ttu-id="6c475-231">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-231">ValidationStates</span></span>|<span data-ttu-id="6c475-232">コントロールは有効です。</span><span class="sxs-lookup"><span data-stu-id="6c475-232">The control is valid.</span></span>|  
   
-## DataGridRowHeader のパーツ  
- 次の表は、<xref:System.Windows.Controls.Primitives.DataGridRowHeader> 要素の名前付きパーツの一覧です。  
+## <a name="datagridrowheader-parts"></a><span data-ttu-id="6c475-233">DataGridRowHeader 部分</span><span class="sxs-lookup"><span data-stu-id="6c475-233">DataGridRowHeader Parts</span></span>  
+ <span data-ttu-id="6c475-234">次の表に、名前付きのパーツの<xref:System.Windows.Controls.Primitives.DataGridRowHeader>要素。</span><span class="sxs-lookup"><span data-stu-id="6c475-234">The following table lists the named parts for the <xref:System.Windows.Controls.Primitives.DataGridRowHeader> element.</span></span>  
   
-||||  
+|<span data-ttu-id="6c475-235">パーツ</span><span class="sxs-lookup"><span data-stu-id="6c475-235">Part</span></span>|<span data-ttu-id="6c475-236">型</span><span class="sxs-lookup"><span data-stu-id="6c475-236">Type</span></span>|<span data-ttu-id="6c475-237">説明</span><span class="sxs-lookup"><span data-stu-id="6c475-237">Description</span></span>|  
 |-|-|-|  
-|指定項目|種類|Description|  
-|PART\_TopHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|行ヘッダーのサイズを上端から変更する場合に使用する要素です。|  
-|PART\_BottomHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|行ヘッダーのサイズを下端から変更する場合に使用する要素です。|  
+|<span data-ttu-id="6c475-238">PART_TopHeaderGripper</span><span class="sxs-lookup"><span data-stu-id="6c475-238">PART_TopHeaderGripper</span></span>|<xref:System.Windows.Controls.Primitives.Thumb>|<span data-ttu-id="6c475-239">上部の行ヘッダーのサイズを変更するために使用する要素。</span><span class="sxs-lookup"><span data-stu-id="6c475-239">The element that is used to resize the row header from the top.</span></span>|  
+|<span data-ttu-id="6c475-240">PART_BottomHeaderGripper</span><span class="sxs-lookup"><span data-stu-id="6c475-240">PART_BottomHeaderGripper</span></span>|<xref:System.Windows.Controls.Primitives.Thumb>|<span data-ttu-id="6c475-241">下部から、行ヘッダーのサイズを変更するために使用する要素。</span><span class="sxs-lookup"><span data-stu-id="6c475-241">The element that is used to resize the row header from the bottom.</span></span>|  
   
-## DataGridRowHeader の状態  
- 次の表は、<xref:System.Windows.Controls.Primitives.DataGridRowHeader> 要素の表示状態の一覧です。  
+## <a name="datagridrowheader-states"></a><span data-ttu-id="6c475-242">DataGridRowHeader 状態</span><span class="sxs-lookup"><span data-stu-id="6c475-242">DataGridRowHeader States</span></span>  
+ <span data-ttu-id="6c475-243">次の表に、用ビジュアル状態、<xref:System.Windows.Controls.Primitives.DataGridRowHeader>要素。</span><span class="sxs-lookup"><span data-stu-id="6c475-243">The following table lists the visual states for the <xref:System.Windows.Controls.Primitives.DataGridRowHeader> element.</span></span>  
   
-||||  
+|<span data-ttu-id="6c475-244">VisualState 名</span><span class="sxs-lookup"><span data-stu-id="6c475-244">VisualState Name</span></span>|<span data-ttu-id="6c475-245">VisualStateGroup 名</span><span class="sxs-lookup"><span data-stu-id="6c475-245">VisualStateGroup Name</span></span>|<span data-ttu-id="6c475-246">説明</span><span class="sxs-lookup"><span data-stu-id="6c475-246">Description</span></span>|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|Normal|CommonStates|既定の状態です。|  
-|MouseOver|CommonStates|マウス ポインターは、行の上に置かれています。|  
-|MouseOver\_CurrentRow|CommonStates|マウス ポインターは行の上に置かれ、行は現在の行です。|  
-|MouseOver\_CurrentRow\_Selected|CommonStates|マウス ポインターは行の上に置かれ、行は現在の行で、選択されています。|  
-|MouseOver\_EditingRow|CommonStates|マウス ポインターは行の上に置かれ、行は編集モードです。|  
-|MouseOver\_Selected|CommonStates|マウス ポインターは行の上に置かれ、行が選択されています。|  
-|MouseOver\_Unfocused\_CurrentRow\_Selected|CommonStates|マウス ポインターは行の上に置かれ、行は現在の行で、選択され、フォーカスはありません。|  
-|MouseOver\_Unfocused\_EditingRow|CommonStates|マウス ポインターは行の上に置かれ、行は編集モードで、フォーカスはありません。|  
-|MouseOver\_Unfocused\_Selected|CommonStates|マウス ポインターは行の上に置かれ、行が選択され、フォーカスはありません。|  
-|Normal\_CurrentRow|CommonStates|行は現在の行です。|  
-|Normal\_CurrentRow\_Selected|CommonStates|行は現在の行で、選択されています。|  
-|Normal\_EditingRow|CommonStates|行は編集モードです。|  
-|Normal\_Selected|CommonStates|行が選択されています。|  
-|Unfocused\_CurrentRow\_Selected|CommonStates|行は現在の行で、選択され、フォーカスはありません。|  
-|Unfocused\_EditingRow|CommonStates|行は編集モードで、フォーカスはありません。|  
-|Unfocused\_Selected|CommonStates|行が選択され、フォーカスはありません。|  
-|InvalidFocused|ValidationStates|コントロールは有効ではありませんが、フォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|コントロールは有効ではなく、フォーカスはありません。|  
-|Valid|ValidationStates|コントロールが有効です。|  
+|<span data-ttu-id="6c475-247">標準</span><span class="sxs-lookup"><span data-stu-id="6c475-247">Normal</span></span>|<span data-ttu-id="6c475-248">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-248">CommonStates</span></span>|<span data-ttu-id="6c475-249">既定の状態です。</span><span class="sxs-lookup"><span data-stu-id="6c475-249">The default state.</span></span>|  
+|<span data-ttu-id="6c475-250">MouseOver</span><span class="sxs-lookup"><span data-stu-id="6c475-250">MouseOver</span></span>|<span data-ttu-id="6c475-251">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-251">CommonStates</span></span>|<span data-ttu-id="6c475-252">マウス ポインターが行位置します。</span><span class="sxs-lookup"><span data-stu-id="6c475-252">The mouse pointer is positioned over the row.</span></span>|  
+|<span data-ttu-id="6c475-253">MouseOver_CurrentRow</span><span class="sxs-lookup"><span data-stu-id="6c475-253">MouseOver_CurrentRow</span></span>|<span data-ttu-id="6c475-254">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-254">CommonStates</span></span>|<span data-ttu-id="6c475-255">行の上にマウス ポインターが配置されているし、行は、現在の行。</span><span class="sxs-lookup"><span data-stu-id="6c475-255">The mouse pointer is positioned over the row and the row is the current row.</span></span>|  
+|<span data-ttu-id="6c475-256">MouseOver_CurrentRow_Selected</span><span class="sxs-lookup"><span data-stu-id="6c475-256">MouseOver_CurrentRow_Selected</span></span>|<span data-ttu-id="6c475-257">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-257">CommonStates</span></span>|<span data-ttu-id="6c475-258">、行の上にマウス ポインターが配置されているし、は、行の現在および選択します。</span><span class="sxs-lookup"><span data-stu-id="6c475-258">The mouse pointer is positioned over the row, and the row is current and selected.</span></span>|  
+|<span data-ttu-id="6c475-259">MouseOver_EditingRow</span><span class="sxs-lookup"><span data-stu-id="6c475-259">MouseOver_EditingRow</span></span>|<span data-ttu-id="6c475-260">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-260">CommonStates</span></span>|<span data-ttu-id="6c475-261">行の上にマウス ポインターが配置されているし、行が編集モードにします。</span><span class="sxs-lookup"><span data-stu-id="6c475-261">The mouse pointer is positioned over the row and the row is in edit mode.</span></span>|  
+|<span data-ttu-id="6c475-262">MouseOver_Selected</span><span class="sxs-lookup"><span data-stu-id="6c475-262">MouseOver_Selected</span></span>|<span data-ttu-id="6c475-263">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-263">CommonStates</span></span>|<span data-ttu-id="6c475-264">行の上にマウス ポインターが配置されているし、行を選択します。</span><span class="sxs-lookup"><span data-stu-id="6c475-264">The mouse pointer is positioned over the row and the row is selected.</span></span>|  
+|<span data-ttu-id="6c475-265">MouseOver_Unfocused_CurrentRow_Selected</span><span class="sxs-lookup"><span data-stu-id="6c475-265">MouseOver_Unfocused_CurrentRow_Selected</span></span>|<span data-ttu-id="6c475-266">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-266">CommonStates</span></span>|<span data-ttu-id="6c475-267">マウス ポインターが配置されている、行、行は、現在選択されているとにフォーカスがないです。</span><span class="sxs-lookup"><span data-stu-id="6c475-267">The mouse pointer is positioned over the row, the row is current and selected, and does not have focus.</span></span>|  
+|<span data-ttu-id="6c475-268">MouseOver_Unfocused_EditingRow</span><span class="sxs-lookup"><span data-stu-id="6c475-268">MouseOver_Unfocused_EditingRow</span></span>|<span data-ttu-id="6c475-269">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-269">CommonStates</span></span>|<span data-ttu-id="6c475-270">行の上にマウス ポインターが配置されているは、行モードを編集し、フォーカスを持っていません。</span><span class="sxs-lookup"><span data-stu-id="6c475-270">The mouse pointer is positioned over the row, the row is in edit mode, and does not have focus.</span></span>|  
+|<span data-ttu-id="6c475-271">MouseOver_Unfocused_Selected</span><span class="sxs-lookup"><span data-stu-id="6c475-271">MouseOver_Unfocused_Selected</span></span>|<span data-ttu-id="6c475-272">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-272">CommonStates</span></span>|<span data-ttu-id="6c475-273">行の上にマウス ポインターが配置されている、行が選択され、フォーカスを持っていません。</span><span class="sxs-lookup"><span data-stu-id="6c475-273">The mouse pointer is positioned over the row, the row is selected, and does not have focus.</span></span>|  
+|<span data-ttu-id="6c475-274">Normal_CurrentRow</span><span class="sxs-lookup"><span data-stu-id="6c475-274">Normal_CurrentRow</span></span>|<span data-ttu-id="6c475-275">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-275">CommonStates</span></span>|<span data-ttu-id="6c475-276">行は、現在の行です。</span><span class="sxs-lookup"><span data-stu-id="6c475-276">The row is the current row.</span></span>|  
+|<span data-ttu-id="6c475-277">Normal_CurrentRow_Selected</span><span class="sxs-lookup"><span data-stu-id="6c475-277">Normal_CurrentRow_Selected</span></span>|<span data-ttu-id="6c475-278">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-278">CommonStates</span></span>|<span data-ttu-id="6c475-279">行は、現在の行は、され、選択されます。</span><span class="sxs-lookup"><span data-stu-id="6c475-279">The row is the current row and is selected.</span></span>|  
+|<span data-ttu-id="6c475-280">Normal_EditingRow</span><span class="sxs-lookup"><span data-stu-id="6c475-280">Normal_EditingRow</span></span>|<span data-ttu-id="6c475-281">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-281">CommonStates</span></span>|<span data-ttu-id="6c475-282">行は編集モードです。</span><span class="sxs-lookup"><span data-stu-id="6c475-282">The row is in edit mode.</span></span>|  
+|<span data-ttu-id="6c475-283">Normal_Selected</span><span class="sxs-lookup"><span data-stu-id="6c475-283">Normal_Selected</span></span>|<span data-ttu-id="6c475-284">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-284">CommonStates</span></span>|<span data-ttu-id="6c475-285">行が選択されます。</span><span class="sxs-lookup"><span data-stu-id="6c475-285">The row is selected.</span></span>|  
+|<span data-ttu-id="6c475-286">Unfocused_CurrentRow_Selected</span><span class="sxs-lookup"><span data-stu-id="6c475-286">Unfocused_CurrentRow_Selected</span></span>|<span data-ttu-id="6c475-287">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-287">CommonStates</span></span>|<span data-ttu-id="6c475-288">行を現在の行が選択されている、フォーカスを持っていません。</span><span class="sxs-lookup"><span data-stu-id="6c475-288">The row is the current row, is selected, and does not have focus.</span></span>|  
+|<span data-ttu-id="6c475-289">Unfocused_EditingRow</span><span class="sxs-lookup"><span data-stu-id="6c475-289">Unfocused_EditingRow</span></span>|<span data-ttu-id="6c475-290">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-290">CommonStates</span></span>|<span data-ttu-id="6c475-291">この行は、編集モードでは、れ、フォーカスされていません。</span><span class="sxs-lookup"><span data-stu-id="6c475-291">The row is in edit mode and does not have focus.</span></span>|  
+|<span data-ttu-id="6c475-292">Unfocused_Selected</span><span class="sxs-lookup"><span data-stu-id="6c475-292">Unfocused_Selected</span></span>|<span data-ttu-id="6c475-293">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-293">CommonStates</span></span>|<span data-ttu-id="6c475-294">行が選択され、フォーカスを持っていません。</span><span class="sxs-lookup"><span data-stu-id="6c475-294">The row is selected and does not have focus.</span></span>|  
+|<span data-ttu-id="6c475-295">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="6c475-295">InvalidFocused</span></span>|<span data-ttu-id="6c475-296">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-296">ValidationStates</span></span>|<span data-ttu-id="6c475-297">コントロールが無効で、フォーカスがあります。</span><span class="sxs-lookup"><span data-stu-id="6c475-297">The control is not valid and has focus.</span></span>|  
+|<span data-ttu-id="6c475-298">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="6c475-298">InvalidUnfocused</span></span>|<span data-ttu-id="6c475-299">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-299">ValidationStates</span></span>|<span data-ttu-id="6c475-300">コントロールが無効で、フォーカスがありません。</span><span class="sxs-lookup"><span data-stu-id="6c475-300">The control is not valid and does not have focus.</span></span>|  
+|<span data-ttu-id="6c475-301">有効</span><span class="sxs-lookup"><span data-stu-id="6c475-301">Valid</span></span>|<span data-ttu-id="6c475-302">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-302">ValidationStates</span></span>|<span data-ttu-id="6c475-303">コントロールは有効です。</span><span class="sxs-lookup"><span data-stu-id="6c475-303">The control is valid.</span></span>|  
   
-## DataGridColumnHeadersPresenter のパーツ  
- 次の表は、<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter> 要素の名前付きパーツの一覧です。  
+## <a name="datagridcolumnheaderspresenter-parts"></a><span data-ttu-id="6c475-304">DataGridColumnHeadersPresenter 部分</span><span class="sxs-lookup"><span data-stu-id="6c475-304">DataGridColumnHeadersPresenter Parts</span></span>  
+ <span data-ttu-id="6c475-305">次の表に、名前付きのパーツの<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>要素。</span><span class="sxs-lookup"><span data-stu-id="6c475-305">The following table lists the named parts for the <xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter> element.</span></span>  
   
-||||  
+|<span data-ttu-id="6c475-306">パーツ</span><span class="sxs-lookup"><span data-stu-id="6c475-306">Part</span></span>|<span data-ttu-id="6c475-307">型</span><span class="sxs-lookup"><span data-stu-id="6c475-307">Type</span></span>|<span data-ttu-id="6c475-308">説明</span><span class="sxs-lookup"><span data-stu-id="6c475-308">Description</span></span>|  
 |-|-|-|  
-|指定項目|種類|Description|  
-|PART\_FillerColumnHeader|<xref:System.Windows.Controls.Primitives.DataGridColumnHeader>|列ヘッダーのプレースホルダーです。|  
+|<span data-ttu-id="6c475-309">PART_FillerColumnHeader</span><span class="sxs-lookup"><span data-stu-id="6c475-309">PART_FillerColumnHeader</span></span>|<xref:System.Windows.Controls.Primitives.DataGridColumnHeader>|<span data-ttu-id="6c475-310">列ヘッダーのプレース ホルダーです。</span><span class="sxs-lookup"><span data-stu-id="6c475-310">The placeholder for column headers.</span></span>|  
   
-## DataGridColumnHeadersPresenter の状態  
- 次の表は、<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter> 要素の表示状態の一覧です。  
+## <a name="datagridcolumnheaderspresenter-states"></a><span data-ttu-id="6c475-311">DataGridColumnHeadersPresenter 状態</span><span class="sxs-lookup"><span data-stu-id="6c475-311">DataGridColumnHeadersPresenter States</span></span>  
+ <span data-ttu-id="6c475-312">次の表に、用ビジュアル状態、<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>要素。</span><span class="sxs-lookup"><span data-stu-id="6c475-312">The following table lists the visual states for the <xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter> element.</span></span>  
   
-||||  
+|<span data-ttu-id="6c475-313">VisualState 名</span><span class="sxs-lookup"><span data-stu-id="6c475-313">VisualState Name</span></span>|<span data-ttu-id="6c475-314">VisualStateGroup 名</span><span class="sxs-lookup"><span data-stu-id="6c475-314">VisualStateGroup Name</span></span>|<span data-ttu-id="6c475-315">説明</span><span class="sxs-lookup"><span data-stu-id="6c475-315">Description</span></span>|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|InvalidFocused|ValidationStates|セルは有効ではありませんが、フォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|セルは有効ではなく、フォーカスはありません。|  
-|Valid|ValidationStates|セルは有効です。|  
+|<span data-ttu-id="6c475-316">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="6c475-316">InvalidFocused</span></span>|<span data-ttu-id="6c475-317">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-317">ValidationStates</span></span>|<span data-ttu-id="6c475-318">セルが正しくないと、フォーカスがあります。</span><span class="sxs-lookup"><span data-stu-id="6c475-318">The cell is not valid and has focus.</span></span>|  
+|<span data-ttu-id="6c475-319">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="6c475-319">InvalidUnfocused</span></span>|<span data-ttu-id="6c475-320">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-320">ValidationStates</span></span>|<span data-ttu-id="6c475-321">セルが正しくないと、フォーカスされていません。</span><span class="sxs-lookup"><span data-stu-id="6c475-321">The cell is not valid and does not have focus.</span></span>|  
+|<span data-ttu-id="6c475-322">有効</span><span class="sxs-lookup"><span data-stu-id="6c475-322">Valid</span></span>|<span data-ttu-id="6c475-323">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-323">ValidationStates</span></span>|<span data-ttu-id="6c475-324">セルは有効です。</span><span class="sxs-lookup"><span data-stu-id="6c475-324">The cell is valid.</span></span>|  
   
-## DataGridColumnHeader のパーツ  
- 次の表は、<xref:System.Windows.Controls.Primitives.DataGridColumnHeader> 要素の名前付きパーツの一覧です。  
+## <a name="datagridcolumnheader-parts"></a><span data-ttu-id="6c475-325">DataGridColumnHeader 部分</span><span class="sxs-lookup"><span data-stu-id="6c475-325">DataGridColumnHeader Parts</span></span>  
+ <span data-ttu-id="6c475-326">次の表に、名前付きのパーツの<xref:System.Windows.Controls.Primitives.DataGridColumnHeader>要素。</span><span class="sxs-lookup"><span data-stu-id="6c475-326">The following table lists the named parts for the <xref:System.Windows.Controls.Primitives.DataGridColumnHeader> element.</span></span>  
   
-||||  
+|<span data-ttu-id="6c475-327">パーツ</span><span class="sxs-lookup"><span data-stu-id="6c475-327">Part</span></span>|<span data-ttu-id="6c475-328">型</span><span class="sxs-lookup"><span data-stu-id="6c475-328">Type</span></span>|<span data-ttu-id="6c475-329">説明</span><span class="sxs-lookup"><span data-stu-id="6c475-329">Description</span></span>|  
 |-|-|-|  
-|指定項目|種類|Description|  
-|PART\_LeftHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|列ヘッダーのサイズを左端から変更する場合に使用する要素です。|  
-|PART\_RightHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|列ヘッダーのサイズを右端から変更する場合に使用する要素です。|  
+|<span data-ttu-id="6c475-330">PART_LeftHeaderGripper</span><span class="sxs-lookup"><span data-stu-id="6c475-330">PART_LeftHeaderGripper</span></span>|<xref:System.Windows.Controls.Primitives.Thumb>|<span data-ttu-id="6c475-331">左側の列ヘッダーのサイズを変更するために使用する要素。</span><span class="sxs-lookup"><span data-stu-id="6c475-331">The element that is used to resize the column header from the left.</span></span>|  
+|<span data-ttu-id="6c475-332">PART_RightHeaderGripper</span><span class="sxs-lookup"><span data-stu-id="6c475-332">PART_RightHeaderGripper</span></span>|<xref:System.Windows.Controls.Primitives.Thumb>|<span data-ttu-id="6c475-333">右側の列ヘッダーのサイズを変更するために使用する要素。</span><span class="sxs-lookup"><span data-stu-id="6c475-333">The element that is used to resize the column header from the right.</span></span>|  
   
-## DataGridColumnHeader の状態  
- 次の表は、<xref:System.Windows.Controls.Primitives.DataGridColumnHeader> 要素の表示状態の一覧です。  
+## <a name="datagridcolumnheader-states"></a><span data-ttu-id="6c475-334">DataGridColumnHeader 状態</span><span class="sxs-lookup"><span data-stu-id="6c475-334">DataGridColumnHeader States</span></span>  
+ <span data-ttu-id="6c475-335">次の表に、用ビジュアル状態、<xref:System.Windows.Controls.Primitives.DataGridColumnHeader>要素。</span><span class="sxs-lookup"><span data-stu-id="6c475-335">The following table lists the visual states for the <xref:System.Windows.Controls.Primitives.DataGridColumnHeader> element.</span></span>  
   
-||||  
+|<span data-ttu-id="6c475-336">VisualState 名</span><span class="sxs-lookup"><span data-stu-id="6c475-336">VisualState Name</span></span>|<span data-ttu-id="6c475-337">VisualStateGroup 名</span><span class="sxs-lookup"><span data-stu-id="6c475-337">VisualStateGroup Name</span></span>|<span data-ttu-id="6c475-338">説明</span><span class="sxs-lookup"><span data-stu-id="6c475-338">Description</span></span>|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|Normal|CommonStates|既定の状態です。|  
-|MouseOver|CommonStates|マウス ポインターがコントロール上に配置されています。|  
-|Pressed|CommonStates|コントロールが押されています。|  
-|SortAscending|SortStates|列は昇順に並べ替えられます。|  
-|SortDescending|SortStates|列は降順に並べ替えられます。|  
-|Unsorted|SortStates|列は並べ替えられません。|  
-|InvalidFocused|ValidationStates|コントロールは有効ではありませんが、フォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|コントロールは有効ではなく、フォーカスはありません。|  
-|Valid|ValidationStates|コントロールが有効です。|  
+|<span data-ttu-id="6c475-339">標準</span><span class="sxs-lookup"><span data-stu-id="6c475-339">Normal</span></span>|<span data-ttu-id="6c475-340">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-340">CommonStates</span></span>|<span data-ttu-id="6c475-341">既定の状態です。</span><span class="sxs-lookup"><span data-stu-id="6c475-341">The default state.</span></span>|  
+|<span data-ttu-id="6c475-342">MouseOver</span><span class="sxs-lookup"><span data-stu-id="6c475-342">MouseOver</span></span>|<span data-ttu-id="6c475-343">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-343">CommonStates</span></span>|<span data-ttu-id="6c475-344">マウス ポインターがコントロール上に配置されています。</span><span class="sxs-lookup"><span data-stu-id="6c475-344">The mouse pointer is positioned over the control.</span></span>|  
+|<span data-ttu-id="6c475-345">押されている</span><span class="sxs-lookup"><span data-stu-id="6c475-345">Pressed</span></span>|<span data-ttu-id="6c475-346">CommonStates</span><span class="sxs-lookup"><span data-stu-id="6c475-346">CommonStates</span></span>|<span data-ttu-id="6c475-347">コントロールが押されています。</span><span class="sxs-lookup"><span data-stu-id="6c475-347">The control is pressed.</span></span>|  
+|<span data-ttu-id="6c475-348">SortAscending</span><span class="sxs-lookup"><span data-stu-id="6c475-348">SortAscending</span></span>|<span data-ttu-id="6c475-349">SortStates</span><span class="sxs-lookup"><span data-stu-id="6c475-349">SortStates</span></span>|<span data-ttu-id="6c475-350">列は、昇順で並べ替えられます。</span><span class="sxs-lookup"><span data-stu-id="6c475-350">The column is sorted in ascending order.</span></span>|  
+|<span data-ttu-id="6c475-351">SortDescending</span><span class="sxs-lookup"><span data-stu-id="6c475-351">SortDescending</span></span>|<span data-ttu-id="6c475-352">SortStates</span><span class="sxs-lookup"><span data-stu-id="6c475-352">SortStates</span></span>|<span data-ttu-id="6c475-353">列は、降順で並べ替えられます。</span><span class="sxs-lookup"><span data-stu-id="6c475-353">The column is sorted in descending order.</span></span>|  
+|<span data-ttu-id="6c475-354">並べ替えられていません。</span><span class="sxs-lookup"><span data-stu-id="6c475-354">Unsorted</span></span>|<span data-ttu-id="6c475-355">SortStates</span><span class="sxs-lookup"><span data-stu-id="6c475-355">SortStates</span></span>|<span data-ttu-id="6c475-356">列が並べ替えられていません。</span><span class="sxs-lookup"><span data-stu-id="6c475-356">The column is not sorted.</span></span>|  
+|<span data-ttu-id="6c475-357">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="6c475-357">InvalidFocused</span></span>|<span data-ttu-id="6c475-358">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-358">ValidationStates</span></span>|<span data-ttu-id="6c475-359">コントロールが無効で、フォーカスがあります。</span><span class="sxs-lookup"><span data-stu-id="6c475-359">The control is not valid and has focus.</span></span>|  
+|<span data-ttu-id="6c475-360">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="6c475-360">InvalidUnfocused</span></span>|<span data-ttu-id="6c475-361">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-361">ValidationStates</span></span>|<span data-ttu-id="6c475-362">コントロールが無効で、フォーカスがありません。</span><span class="sxs-lookup"><span data-stu-id="6c475-362">The control is not valid and does not have focus.</span></span>|  
+|<span data-ttu-id="6c475-363">有効</span><span class="sxs-lookup"><span data-stu-id="6c475-363">Valid</span></span>|<span data-ttu-id="6c475-364">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="6c475-364">ValidationStates</span></span>|<span data-ttu-id="6c475-365">コントロールは有効です。</span><span class="sxs-lookup"><span data-stu-id="6c475-365">The control is valid.</span></span>|  
   
-## DataGrid ControlTemplate の例  
- <xref:System.Windows.Controls.DataGrid> コントロールの <xref:System.Windows.Controls.ControlTemplate> およびその関連付けられた型を定義する方法を次の例に示します。  
+## <a name="datagrid-controltemplate-example"></a><span data-ttu-id="6c475-366">DataGrid ControlTemplate の例</span><span class="sxs-lookup"><span data-stu-id="6c475-366">DataGrid ControlTemplate Example</span></span>  
+ <span data-ttu-id="6c475-367">次の例は、定義する方法を示します、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.DataGrid>コントロールとその関連する型。</span><span class="sxs-lookup"><span data-stu-id="6c475-367">The following example shows how to define a <xref:System.Windows.Controls.ControlTemplate> for the <xref:System.Windows.Controls.DataGrid> control and its associated types.</span></span>  
   
- [!code-xml[ControlTemplateExamples#DataGrid](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/datagrid.xaml#datagrid)]  
+ [!code-xaml[ControlTemplateExamples#DataGrid](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/datagrid.xaml#datagrid)]  
   
- 前の例では、次の 1 つ以上のリソースを使用しています。  
+ <span data-ttu-id="6c475-368">前の例では、次のリソースの 1 つ以上を使用します。</span><span class="sxs-lookup"><span data-stu-id="6c475-368">The preceding example uses one or more of the following resources.</span></span>  
   
- [!code-xml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
+ [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- サンプル全体については、「[ControlTemplate を使用したスタイル設定のサンプル](http://go.microsoft.com/fwlink/?LinkID=160041)」を参照してください。.  
+ <span data-ttu-id="6c475-369">完全なサンプルについては、[Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6c475-369">For the complete sample, see [Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041).</span></span>  
   
-## 参照  
- <xref:System.Windows.FrameworkElement.Style%2A>   
- <xref:System.Windows.Controls.ControlTemplate>   
- [コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)   
- [コントロールのカスタマイズ](../../../../docs/framework/wpf/controls/control-customization.md)   
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
+## <a name="see-also"></a><span data-ttu-id="6c475-370">関連項目</span><span class="sxs-lookup"><span data-stu-id="6c475-370">See Also</span></span>  
+ <xref:System.Windows.FrameworkElement.Style%2A>  
+ <xref:System.Windows.Controls.ControlTemplate>  
+ [<span data-ttu-id="6c475-371">コントロールのスタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="6c475-371">Control Styles and Templates</span></span>](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [<span data-ttu-id="6c475-372">コントロールのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="6c475-372">Control Customization</span></span>](../../../../docs/framework/wpf/controls/control-customization.md)  
+ [<span data-ttu-id="6c475-373">スタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="6c475-373">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [<span data-ttu-id="6c475-374">ControlTemplate の作成による既存のコントロールの外観のカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="6c475-374">Customizing the Appearance of an Existing Control by Creating a ControlTemplate</span></span>](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

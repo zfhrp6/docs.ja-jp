@@ -1,48 +1,47 @@
 ---
-title: "Array Conversions (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "arrays [Visual Basic], converting type"
-  - "type conversion, arrays"
-  - "conversions, type"
-  - "arrays [Visual Basic], data types"
-  - "conversions, data type"
-  - "object arrays, converting type"
-  - "data type conversion, array conversions"
-  - "conversions, array types"
-  - "object arrays"
+title: "配列の変換 (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- arrays [Visual Basic], converting type
+- type conversion [Visual Basic], arrays
+- conversions [Visual Basic], type
+- arrays [Visual Basic], data types
+- conversions [Visual Basic], data type
+- object arrays [Visual Basic], converting type
+- data type conversion [Visual Basic], array conversions
+- conversions [Visual Basic], array types
+- object arrays
 ms.assetid: fceff7d2-a1b7-44c7-b9aa-8bd831d8a444
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 40dc9805157dd0bc991ca2375c3436aa6b6e09a9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Array Conversions (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-以下の条件が満たされる場合は、配列型を異なる配列型に変換できます。  
+# <a name="array-conversions-visual-basic"></a><span data-ttu-id="42cf9-102">配列の変換 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="42cf9-102">Array Conversions (Visual Basic)</span></span>
+<span data-ttu-id="42cf9-103">別の配列型、配列型を変換するには、次の条件を満たしていれば。</span><span class="sxs-lookup"><span data-stu-id="42cf9-103">You can convert an array type to a different array type provided you meet the following conditions:</span></span>  
   
--   **ランクが等しいこと。**2 つの配列のランクが同じである、つまり、次元数が同じである必要があります。  ただし、それぞれの次元の長さは同じでなくてもかまいません。  
+-   <span data-ttu-id="42cf9-104">**ランクが等しい。**</span><span class="sxs-lookup"><span data-stu-id="42cf9-104">**Equal Rank.**</span></span> <span data-ttu-id="42cf9-105">2 つの配列のランクは同じである必要があります、つまり、同じ次元数がある必要があります。</span><span class="sxs-lookup"><span data-stu-id="42cf9-105">The ranks of the two arrays must be the same, that is, they must have the same number of dimensions.</span></span> <span data-ttu-id="42cf9-106">ただし、それぞれの次元の長さが同じにする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="42cf9-106">However, the lengths of the respective dimensions do not need to be the same.</span></span>  
   
--   **要素のデータ型。**両方の配列の要素のデータ型が、参照型である必要があります。  整数型 \(`Integer`\) の配列を長整数型 \(`Long`\) またはオブジェクト型 \(`Object`\) の配列には変換できません。これは、少なくとも 1 つの値型が関連するためです。  詳細については、「[Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)」を参照してください。  
+-   <span data-ttu-id="42cf9-107">**要素のデータ型。**</span><span class="sxs-lookup"><span data-stu-id="42cf9-107">**Element Data Type.**</span></span> <span data-ttu-id="42cf9-108">両方の配列の要素のデータ型は、参照型である必要があります。</span><span class="sxs-lookup"><span data-stu-id="42cf9-108">The data types of the elements of both arrays must be reference types.</span></span> <span data-ttu-id="42cf9-109">変換することはできません、`Integer`配列を`Long`配列、またはにも、`Object`に少なくとも 1 つの値の型が関係するための配列。</span><span class="sxs-lookup"><span data-stu-id="42cf9-109">You cannot convert an `Integer` array to a `Long` array, or even to an `Object` array, because at least one value type is involved.</span></span> <span data-ttu-id="42cf9-110">詳細については、次を参照してください。[値型と参照型](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)です。</span><span class="sxs-lookup"><span data-stu-id="42cf9-110">For more information, see [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).</span></span>  
   
--   **変換性。**2 つの配列の要素型の間で、変換 \(拡張または縮小\) できる必要があります。  この要件を満たさない例としては、`String` 配列と、<xref:System.Attribute?displayProperty=fullName> から派生したクラスの配列との間での変換があります。  これらの 2 つの型には共通する点はありません。また、両者の間では変換は行われません。  
+-   <span data-ttu-id="42cf9-111">**変換可能性です。**</span><span class="sxs-lookup"><span data-stu-id="42cf9-111">**Convertibility.**</span></span> <span data-ttu-id="42cf9-112">変換、拡張または縮小は、2 つの配列の要素の型の間でできる必要があります。</span><span class="sxs-lookup"><span data-stu-id="42cf9-112">A conversion, either widening or narrowing, must be possible between the element types of the two arrays.</span></span> <span data-ttu-id="42cf9-113">この要件に失敗した例は、の間で変換しようとする`String`配列とクラスの配列から派生した<xref:System.Attribute?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="42cf9-113">An example that fails this requirement is an attempted conversion between a `String` array and an array of a class derived from <xref:System.Attribute?displayProperty=nameWithType>.</span></span> <span data-ttu-id="42cf9-114">これらの 2 種類 nothing に共通あり、それらの間に任意の種類の変換が存在しないです。</span><span class="sxs-lookup"><span data-stu-id="42cf9-114">These two types have nothing in common, and no conversion of any kind exists between them.</span></span>  
   
- ある配列型から別の配列型への変換は、それぞれの要素の変換が拡張か縮小かによって、拡大変換または縮小変換になります。  詳細については、「[Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)」を参照してください。  
+ <span data-ttu-id="42cf9-115">1 つの配列型の間の変換は、拡大または自動それぞれの要素の変換を拡大または縮小するかどうかに応じて縮小します。</span><span class="sxs-lookup"><span data-stu-id="42cf9-115">A conversion of one array type to another is widening or narrowing depending on whether the conversion of the respective elements is widening or narrowing.</span></span> <span data-ttu-id="42cf9-116">詳細については、「 [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="42cf9-116">For more information, see [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).</span></span>  
   
-## オブジェクト型 \(Object\) の配列への変換  
- オブジェクト型 \(`Object`\) の配列を初期化せずに宣言すると、初期化されない限り、要素型はオブジェクト型 \(`Object`\) のままです。  要素型を特定のクラスの配列に設定すると、そのクラスの型になります。  ただし、基になる型はオブジェクト型 \(`Object`\) のままで、その後要素型を関係のないクラスの別な配列に設定できます。  すべてのクラスがオブジェクト型 \(`Object`\) から派生するため、配列の要素型を任意のクラスから任意の他のクラスへ変更できます。  
+## <a name="conversion-to-an-object-array"></a><span data-ttu-id="42cf9-117">オブジェクトの配列への変換</span><span class="sxs-lookup"><span data-stu-id="42cf9-117">Conversion to an Object Array</span></span>  
+ <span data-ttu-id="42cf9-118">宣言する場合、`Object`初期化せず、要素の型の配列が`Object`それが初期化されていない限りです。</span><span class="sxs-lookup"><span data-stu-id="42cf9-118">When you declare an `Object` array without initializing it, its element type is `Object` as long as it remains uninitialized.</span></span> <span data-ttu-id="42cf9-119">を特定のクラスの配列を設定するとそのクラスの型になります。</span><span class="sxs-lookup"><span data-stu-id="42cf9-119">When you set it to an array of a specific class, it takes on the type of that class.</span></span> <span data-ttu-id="42cf9-120">しかし、基になる型は`Object`、関連のないクラスの別の配列を後で設定できます。</span><span class="sxs-lookup"><span data-stu-id="42cf9-120">However, its underlying type is still `Object`, and you can subsequently set it to another array of an unrelated class.</span></span> <span data-ttu-id="42cf9-121">すべてのクラスを派生させるため`Object`、任意のクラス、配列の要素の型を変更するには、他のクラスです。</span><span class="sxs-lookup"><span data-stu-id="42cf9-121">Since all classes derive from `Object`, you can change the array's element type from any class to any other class.</span></span>  
   
- 次の例では、`student` 型と `String` 型の間で変換は行われていませんが、共に `Object` から派生しているため、すべての代入が有効になります。  
+ <span data-ttu-id="42cf9-122">次の例では、変換が存在しない型の間で`student`と`String`から派生して両方`Object`ので、すべての割り当てが無効です。</span><span class="sxs-lookup"><span data-stu-id="42cf9-122">In the following example, no conversion exists between types `student` and `String`, but both derive from `Object`, so all assignments are valid.</span></span>  
   
 ```  
 ' Assume student has already been defined as a class.  
@@ -55,10 +54,10 @@ testArray = names
 ' testArray is now a String array.  
 ```  
   
-### 基になる配列の型  
- 最初に特定のクラスを使用して配列を宣言していた場合、配列の基となる要素型はそのクラスになります。  後で要素型を他のクラスの配列に設定する場合は、2 つのクラス間で変換が必要になります。  
+### <a name="underlying-type-of-an-array"></a><span data-ttu-id="42cf9-123">基になる、配列の型</span><span class="sxs-lookup"><span data-stu-id="42cf9-123">Underlying Type of an Array</span></span>  
+ <span data-ttu-id="42cf9-124">特定のクラスを含む配列を宣言していた場合は、そのクラスは、基になる要素の種類です。</span><span class="sxs-lookup"><span data-stu-id="42cf9-124">If you originally declare an array with a specific class, its underlying element type is that class.</span></span> <span data-ttu-id="42cf9-125">設定した場合、後で別のクラスの配列を 2 つのクラス間の変換が必要があります。</span><span class="sxs-lookup"><span data-stu-id="42cf9-125">If you subsequently set it to an array of another class, there must be a conversion between the two classes.</span></span>  
   
- 次の例では、`students` が `student` 配列になります。  `String` と `student` との変換はできないため、最後のステートメントはエラーになります。  
+ <span data-ttu-id="42cf9-126">次の例では、`students`は、`student`配列。</span><span class="sxs-lookup"><span data-stu-id="42cf9-126">In the following example, `students` is a `student` array.</span></span> <span data-ttu-id="42cf9-127">間で変換が存在しないため`String`と`student`、最後のステートメントは失敗します。</span><span class="sxs-lookup"><span data-stu-id="42cf9-127">Since no conversion exists between `String` and `student`, the last statement fails.</span></span>  
   
 ```  
 Dim students() As student  
@@ -68,12 +67,12 @@ students = New Student(3) {}
 students = names  
 ```  
   
-## 参照  
- [データ型](../../../../visual-basic/programming-guide/language-features/data-types/index.md)   
- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)   
- [Implicit and Explicit Conversions](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)   
- [Conversions Between Strings and Other Types](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)   
- [How to: Convert an Object to Another Type in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)   
- [Data Types](../../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [Type Conversion Functions](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
+## <a name="see-also"></a><span data-ttu-id="42cf9-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="42cf9-128">See Also</span></span>  
+ [<span data-ttu-id="42cf9-129">データの種類</span><span class="sxs-lookup"><span data-stu-id="42cf9-129">Data Types</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
+ [<span data-ttu-id="42cf9-130">Visual Basic での型変換</span><span class="sxs-lookup"><span data-stu-id="42cf9-130">Type Conversions in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
+ [<span data-ttu-id="42cf9-131">暗黙の型変換と明示的な型変換</span><span class="sxs-lookup"><span data-stu-id="42cf9-131">Implicit and Explicit Conversions</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
+ [<span data-ttu-id="42cf9-132">文字列とその他の型との変換</span><span class="sxs-lookup"><span data-stu-id="42cf9-132">Conversions Between Strings and Other Types</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)  
+ [<span data-ttu-id="42cf9-133">方法: オブジェクトを Visual Basic での別の型に変換</span><span class="sxs-lookup"><span data-stu-id="42cf9-133">How to: Convert an Object to Another Type in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)  
+ [<span data-ttu-id="42cf9-134">データの種類</span><span class="sxs-lookup"><span data-stu-id="42cf9-134">Data Types</span></span>](../../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [<span data-ttu-id="42cf9-135">データ型変換関数</span><span class="sxs-lookup"><span data-stu-id="42cf9-135">Type Conversion Functions</span></span>](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [<span data-ttu-id="42cf9-136">配列</span><span class="sxs-lookup"><span data-stu-id="42cf9-136">Arrays</span></span>](../../../../visual-basic/programming-guide/language-features/arrays/index.md)

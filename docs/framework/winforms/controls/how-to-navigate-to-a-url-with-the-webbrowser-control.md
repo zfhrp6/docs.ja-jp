@@ -1,36 +1,39 @@
 ---
-title: "方法 : WebBrowser コントロールで URL に移動する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "WebBrowser.Navigate"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "例 [Windows フォーム], WebBrowser コントロール"
-  - "URL, 移動"
-  - "WebBrowser コントロール [Windows フォーム], 例"
-  - "WebBrowser コントロール [Windows フォーム], 移動 (URL に)"
+title: "方法 : WebBrowser コントロールで URL に移動する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+f1_keywords: WebBrowser.Navigate
+helpviewer_keywords:
+- WebBrowser control [Windows Forms], examples
+- URLs [Windows Forms], navigating to
+- WebBrowser control [Windows Forms], navigating to URLs
+- examples [Windows Forms], WebBrowser control
 ms.assetid: b3ec38cb-f509-4d0b-bd79-9f3611259c62
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 28ceb5e465b8737d047c9c0e65bd9efc8cd3c8ec
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : WebBrowser コントロールで URL に移動する
-次のコード例は、指定した URL に <xref:System.Windows.Forms.WebBrowser> コントロールで移動する方法を示しています。  
+# <a name="how-to-navigate-to-a-url-with-the-webbrowser-control"></a><span data-ttu-id="8b72c-102">方法 : WebBrowser コントロールで URL に移動する</span><span class="sxs-lookup"><span data-stu-id="8b72c-102">How to: Navigate to a URL with the WebBrowser Control</span></span>
+<span data-ttu-id="8b72c-103">次のコード例では、移動、<xref:System.Windows.Forms.WebBrowser>特定の URL をコントロールします。</span><span class="sxs-lookup"><span data-stu-id="8b72c-103">The following code example demonstrates how to navigate the <xref:System.Windows.Forms.WebBrowser> control to a specific URL.</span></span>  
   
- 新しいドキュメントが完全に読み込まれたタイミングを判断するには、<xref:System.Windows.Forms.WebBrowser.DocumentCompleted> イベントを処理します。  このイベントの例については、「[方法 : WebBrowser コントロールを使用して印刷する](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md)」を参照してください。  
+ <span data-ttu-id="8b72c-104">調べるには、新しいドキュメントが完全に読み込まれるときに、処理、<xref:System.Windows.Forms.WebBrowser.DocumentCompleted>イベント。</span><span class="sxs-lookup"><span data-stu-id="8b72c-104">To determine when the new document is fully loaded, handle the <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> event.</span></span> <span data-ttu-id="8b72c-105">このイベントのデモについては、次を参照してください。[する方法: WebBrowser コントロールを使用して印刷](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="8b72c-105">For a demonstration of this event, see [How to: Print with a WebBrowser Control](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md).</span></span>  
   
-## 使用例  
+## <a name="example"></a><span data-ttu-id="8b72c-106">例</span><span class="sxs-lookup"><span data-stu-id="8b72c-106">Example</span></span>  
   
 ```vb  
 Me.webBrowser1.Navigate("http://www.microsoft.com")  
@@ -40,17 +43,17 @@ Me.webBrowser1.Navigate("http://www.microsoft.com")
 this.webBrowser1.Navigate("http://www.microsoft.com");  
 ```  
   
-## コードのコンパイル  
- この例には、次の項目が必要です。  
+## <a name="compiling-the-code"></a><span data-ttu-id="8b72c-107">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="8b72c-107">Compiling the Code</span></span>  
+ <span data-ttu-id="8b72c-108">この例で必要な要素は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="8b72c-108">This example requires:</span></span>  
   
--   `webBrowser1` という名前の <xref:System.Windows.Forms.WebBrowser> コントロール。  
+-   <span data-ttu-id="8b72c-109">`webBrowser1` という名前の <xref:System.Windows.Forms.WebBrowser> コントロール。</span><span class="sxs-lookup"><span data-stu-id="8b72c-109">A <xref:System.Windows.Forms.WebBrowser> control named `webBrowser1`.</span></span>  
   
--   `System` アセンブリおよび `System.Windows.Forms` アセンブリへの参照。  
+-   <span data-ttu-id="8b72c-110">`System` アセンブリおよび `System.Windows.Forms` アセンブリへの参照。</span><span class="sxs-lookup"><span data-stu-id="8b72c-110">References to the `System` and `System.Windows.Forms` assemblies.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.WebBrowser>   
- <xref:System.Windows.Forms.WebBrowser.DocumentCompleted?displayProperty=fullName>   
- <xref:System.Windows.Forms.WebBrowser.Navigating?displayProperty=fullName>   
- <xref:System.Windows.Forms.WebBrowser.Navigated?displayProperty=fullName>   
- [WebBrowser コントロール](../../../../docs/framework/winforms/controls/webbrowser-control-windows-forms.md)   
- [方法 : WebBrowser コントロールを使用して印刷する](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md)
+## <a name="see-also"></a><span data-ttu-id="8b72c-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="8b72c-111">See Also</span></span>  
+ <xref:System.Windows.Forms.WebBrowser>  
+ <xref:System.Windows.Forms.WebBrowser.DocumentCompleted?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.WebBrowser.Navigating?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.WebBrowser.Navigated?displayProperty=nameWithType>  
+ [<span data-ttu-id="8b72c-112">WebBrowser コントロール</span><span class="sxs-lookup"><span data-stu-id="8b72c-112">WebBrowser Control</span></span>](../../../../docs/framework/winforms/controls/webbrowser-control-windows-forms.md)  
+ [<span data-ttu-id="8b72c-113">方法: WebBrowser コントロールを使用して印刷する</span><span class="sxs-lookup"><span data-stu-id="8b72c-113">How to: Print with a WebBrowser Control</span></span>](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md)

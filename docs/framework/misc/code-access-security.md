@@ -1,89 +1,82 @@
 ---
-title: "コード アクセス セキュリティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "呼び出し履歴"
-  - "コード アクセス セキュリティ"
-  - "付与 (アクセス許可の), コード アクセス セキュリティ"
-  - "悪意のあるコード"
-  - "モバイル コード セキュリティ"
-  - "名前付きアクセス許可セット, コード アクセス セキュリティ"
-  - "アクセス許可 [.NET Framework], コード アクセス セキュリティ"
-  - "セキュリティ [.NET Framework], コード アクセス セキュリティ"
-  - "スタック ウォーク"
-  - "信頼されるコード"
-  - "アンマネージ コード, コード アクセス セキュリティ"
-  - "ユーザー認証, コード アクセス セキュリティ"
+title: "コード アクセス セキュリティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- named permission sets, code access security
+- call stacks
+- malicious code
+- stack walk
+- security [.NET Framework], code access security
+- permissions [.NET Framework], code access security
+- trusted code
+- mobile code security
+- unmanaged code, code access security
+- granting permissions, code access security
+- user authentication, code access security
+- code access security
 ms.assetid: 859af632-c80d-4736-8d6f-1e01b09ce127
-caps.latest.revision: 25
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 23
+caps.latest.revision: "25"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 3582516dece69589d98acb66f1dde2249d9d8832
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# コード アクセス セキュリティ
-複雑にリンクされた現在のコンピューター システムには、多種多様な、多くの場合は不明なソースからコードが送信されてきます。  このようなコードは、電子メールに添付されていたり、文書に含まれていたり、インターネットからダウンロードされたりします。  ウイルスやワームのような悪意のあるコードによってコンピューター上のデータを破損または破壊され、時間的にも金銭的にも直接の被害を受けた経験のあるユーザーは少なくありません。  
+# <a name="code-access-security"></a><span data-ttu-id="ac450-102">コード アクセス セキュリティ</span><span class="sxs-lookup"><span data-stu-id="ac450-102">Code Access Security</span></span>
+[!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
- ほとんどのセキュリティ機構では、ログオン資格情報 \(通常はパスワード\) に基づいてユーザーに権限を与え、そのユーザーがアクセスできるリソース \(多くの場合はディレクトリとファイル\) を制限しています。  しかし、この方法では対処できないさまざまな問題が存在します。たとえば、ユーザーはさまざまなソースからコードを入手しますが、中には信頼できない入手先もあります。コードに、悪意のあるコードからねらわれやすいバグがあったり、脆弱性が潜んでいる可能性もあります。また、コードがユーザーの予期しない動作をする場合もあります。  これらの結果、ユーザーが慎重で信頼できるとしても、実行したソフトウェアが悪意のあるソフトウェアやエラーを含むソフトウェアであった場合は、コンピューター システムが損害を受けたり、機密データが漏洩したりする可能性があります。  多くのオペレーティング システムのセキュリティ機構では、Web ページ上のスクリプトなどの場合を除き、コードを実行するためには、その細部にわたるまで完全に信頼されていることが要求されます。  そのため、信頼関係のないコンピューター システム間でも、一方のシステムから送信されたコードをもう一方のシステムで安全に実行できるようにするための、幅広く適用できるセキュリティ機構が必要になります。  
+ <span data-ttu-id="ac450-103">複雑にリンクされた現在のコンピューター システムには、多種多様な、多くの場合は不明なソースからコードが送信されてきます。</span><span class="sxs-lookup"><span data-stu-id="ac450-103">Today's highly connected computer systems are frequently exposed to code originating from various, possibly unknown sources.</span></span> <span data-ttu-id="ac450-104">このようなコードは、電子メールに添付されていたり、文書に含まれていたり、インターネットからダウンロードされたりします。</span><span class="sxs-lookup"><span data-stu-id="ac450-104">Code can be attached to e-mail, contained in documents, or downloaded over the Internet.</span></span> <span data-ttu-id="ac450-105">ウイルスやワームのような悪意のあるコードによってコンピューター上のデータを破損または破壊され、時間的にも金銭的にも直接の被害を受けた経験のあるユーザーは少なくありません。</span><span class="sxs-lookup"><span data-stu-id="ac450-105">Unfortunately, many computer users have experienced firsthand the effects of malicious mobile code, including viruses and worms, which can damage or destroy data and cost time and money.</span></span>  
   
- コンピューター システムを悪意のあるコードから簡単に保護できるようにしたり、発生元の不明なコードを安全に実行できるようにしたり、信頼されているコードを故意または過失によって露呈したセキュリティの脆弱性から保護できるようにしたりするために、.NET Framework はコード アクセス セキュリティというセキュリティ機構を提供しています。  コード アクセス セキュリティにより、コードの発生元や、そのコードの身元を示すその他の基準に基づいて、コードをさまざまなレベルで信頼できます。  また、コードに対してさまざまな信頼レベルを強制的に適用することにより、実行するために完全に信頼されていなければならないコードの数は少なくなります。  コード アクセス セキュリティを使用することで、作成したコードが悪意のあるコードやバグのあるコードによって誤用される可能性も低くなります。  コードによって実行できる一連の操作を指定できるため、開発者の責任を軽減できます。  コード アクセス セキュリティは、コードにセキュリティの脆弱性があった場合に、それによって被る可能性のある損害を最小限に抑えるためにも役立ちます。  
+ <span data-ttu-id="ac450-106">ほとんどのセキュリティ機構では、ログオン資格情報 (通常はパスワード) に基づいてユーザーに権限を与え、そのユーザーがアクセスできるリソース (多くの場合はディレクトリとファイル) を制限しています。</span><span class="sxs-lookup"><span data-stu-id="ac450-106">Most common security mechanisms give rights to users based on their logon credentials (usually a password) and restrict resources (often directories and files) that the user is allowed to access.</span></span> <span data-ttu-id="ac450-107">しかし、この方法では対処できないさまざまな問題が存在します。たとえば、ユーザーはさまざまなソースからコードを入手しますが、中には信頼できない入手先もあります。コードに、悪意のあるコードからねらわれやすいバグがあったり、脆弱性が潜んでいる可能性もあります。また、コードがユーザーの予期しない動作をする場合もあります。</span><span class="sxs-lookup"><span data-stu-id="ac450-107">However, this approach fails to address several issues: users obtain code from many sources, some of which might be unreliable; code can contain bugs or vulnerabilities that enable it to be exploited by malicious code; and code sometimes does things that the user does not know it will do.</span></span> <span data-ttu-id="ac450-108">これらの結果、ユーザーが慎重で信頼できるとしても、実行したソフトウェアが悪意のあるソフトウェアやエラーを含むソフトウェアであった場合は、コンピューター システムが損害を受けたり、機密データが漏洩したりする可能性があります。</span><span class="sxs-lookup"><span data-stu-id="ac450-108">As a result, computer systems can be damaged and private data can be leaked when cautious and trustworthy users run malicious or error-filled software.</span></span> <span data-ttu-id="ac450-109">多くのオペレーティング システムのセキュリティ機構では、Web ページ上のスクリプトなどの場合を除き、コードを実行するためには、その細部にわたるまで完全に信頼されていることが要求されます。</span><span class="sxs-lookup"><span data-stu-id="ac450-109">Most operating system security mechanisms require that every piece of code must be completely trusted in order to run, except perhaps for scripts on a Web page.</span></span> <span data-ttu-id="ac450-110">そのため、信頼関係のないコンピューター システム間でも、一方のシステムから送信されたコードをもう一方のシステムで安全に実行できるようにするための、幅広く適用できるセキュリティ機構が必要になります。</span><span class="sxs-lookup"><span data-stu-id="ac450-110">Therefore, there is still a need for a widely applicable security mechanism that allows code originating from one computer system to execute with protection on another system, even when there is no trust relationship between the systems.</span></span>  
+  
+ <span data-ttu-id="ac450-111">コンピューター システムを悪意のあるコードから簡単に保護できるようにしたり、発生元の不明なコードを安全に実行できるようにしたり、信頼されているコードを故意または過失によって露呈したセキュリティの脆弱性から保護できるようにしたりするために、.NET Framework はコード アクセス セキュリティというセキュリティ機構を提供しています。</span><span class="sxs-lookup"><span data-stu-id="ac450-111">The .NET Framework provides a security mechanism called code access security to help protect computer systems from malicious mobile code, to allow code from unknown origins to run with protection, and to help prevent trusted code from intentionally or accidentally compromising security.</span></span> <span data-ttu-id="ac450-112">コード アクセス セキュリティにより、コードの発生元や、そのコードの身元を示すその他の基準に基づいて、コードをさまざまなレベルで信頼できます。</span><span class="sxs-lookup"><span data-stu-id="ac450-112">Code access security enables code to be trusted to varying degrees depending on where the code originates and on other aspects of the code's identity.</span></span> <span data-ttu-id="ac450-113">また、コードに対してさまざまな信頼レベルを強制的に適用することにより、実行するために完全に信頼されていなければならないコードの数は少なくなります。</span><span class="sxs-lookup"><span data-stu-id="ac450-113">Code access security also enforces the varying levels of trust on code, which minimizes the amount of code that must be fully trusted in order to run.</span></span> <span data-ttu-id="ac450-114">コード アクセス セキュリティを使用することで、作成したコードが悪意のあるコードやバグのあるコードによって誤用される可能性も低くなります。</span><span class="sxs-lookup"><span data-stu-id="ac450-114">Using code access security can reduce the likelihood that your code will be misused by malicious or error-filled code.</span></span> <span data-ttu-id="ac450-115">コードによって実行できる一連の操作を指定できるため、開発者の責任を軽減できます。</span><span class="sxs-lookup"><span data-stu-id="ac450-115">It can reduce your liability, because you can specify the set of operations your code should be allowed to perform.</span></span> <span data-ttu-id="ac450-116">コード アクセス セキュリティは、コードにセキュリティの脆弱性があった場合に、それによって被る可能性のある損害を最小限に抑えるためにも役立ちます。</span><span class="sxs-lookup"><span data-stu-id="ac450-116">Code access security can also help minimize the damage that can result from security vulnerabilities in your code.</span></span>  
   
 > [!NOTE]
->  [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] で、コード アクセス セキュリティ システムに大幅な変更が加えられています。  最も重要な変更点は、[透過的セキュリティ](../../../docs/framework/misc/security-transparent-code.md)の導入ですが、コード アクセス セキュリティに影響を及ぼす重要な変更は、このほかにもあります。  これらの変更については、「[セキュリティの変更点](../../../docs/framework/security/security-changes.md)」を参照してください。  
+>  <span data-ttu-id="ac450-117">[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] で、コード アクセス セキュリティ システムに大幅な変更が加えられています。</span><span class="sxs-lookup"><span data-stu-id="ac450-117">Major changes have been made to code access security in the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)].</span></span> <span data-ttu-id="ac450-118">最も注目すべき変更されて[セキュリティ透過性](../../../docs/framework/misc/security-transparent-code.md)、コード アクセス セキュリティに影響するその他の重要な変更もありますが、します。</span><span class="sxs-lookup"><span data-stu-id="ac450-118">The most notable change has been [security transparency](../../../docs/framework/misc/security-transparent-code.md), but there are also other significant changes that affect code access security.</span></span> <span data-ttu-id="ac450-119">これらの変更については、次を参照してください。[セキュリティの変更点](../../../docs/framework/security/security-changes.md)です。</span><span class="sxs-lookup"><span data-stu-id="ac450-119">For information about these changes, see [Security Changes](../../../docs/framework/security/security-changes.md).</span></span>  
   
- コード アクセス セキュリティは、主にライブラリ コードと部分的に信頼されたアプリケーションに影響します。  ライブラリ開発者は、部分的に信頼されたアプリケーションによる認証されていないアクセスからコードを保護する必要があります。  部分的に信頼されたアプリケーションは、インターネットなどの外部リソースから読み込まれるアプリケーションです。  デスクトップまたはローカル イントラネットにインストールされているアプリケーションは、完全に信頼されたアプリケーションとして実行されます。  完全に信頼されたアプリケーションは、完全に信頼されているため、[セキュリティ透過的](../../../docs/framework/misc/security-transparent-code.md)とマークされている場合を除き、コード アクセス セキュリティの影響を受けません。  完全に信頼されたアプリケーションの唯一の制限事項は、<xref:System.Security.SecurityTransparentAttribute> 属性でマークされているアプリケーションは <xref:System.Security.SecurityCriticalAttribute> 属性でマークされているコードを呼び出すことができない点です。  部分的に信頼されたアプリケーションは、コード アクセス セキュリティを適用できるように、サンドボックス \(Internet Explorer など\) で実行する必要があります。  インターネットからアプリケーションをダウンロードし、デスクトップから実行しようとすると、<xref:System.NotSupportedException> が返されます。このとき、"ネットワーク上の場所からアセンブリの読み込みを試みました。以前のバージョンの .NET Framework では、これによりアセンブリがサンドボックス化されました。  このリリースの .NET Framework では CAS ポリシーが既定で有効ではないため、この読み込みは危険な場合があります。" というメッセージが表示されます。 アプリケーションを確実に信頼できる場合、そのアプリケーションは、[\<loadFromRemoteSources\> 要素](../../../docs/framework/configure-apps/file-schema/runtime/loadfromremotesources-element.md)を使用して、完全に信頼されたアプリケーションとして実行できます。  アプリケーションをサンドボックス内で実行する方法の詳細については、「[方法 : サンドボックスで部分信頼コードを実行する](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)」をご覧ください。  
+ <span data-ttu-id="ac450-120">コード アクセス セキュリティは、主にライブラリ コードと部分的に信頼されたアプリケーションに影響します。</span><span class="sxs-lookup"><span data-stu-id="ac450-120">Code access security primarily affects library code and partially trusted applications.</span></span> <span data-ttu-id="ac450-121">ライブラリ開発者は、部分的に信頼されたアプリケーションによる認証されていないアクセスからコードを保護する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ac450-121">Library developers must protect their code from unauthorized access from partially trusted applications.</span></span> <span data-ttu-id="ac450-122">部分的に信頼されたアプリケーションは、インターネットなどの外部リソースから読み込まれるアプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="ac450-122">Partially trusted applications are applications that are loaded from external sources such as the Internet.</span></span> <span data-ttu-id="ac450-123">デスクトップまたはローカル イントラネットにインストールされているアプリケーションは、完全に信頼されたアプリケーションとして実行されます。</span><span class="sxs-lookup"><span data-stu-id="ac450-123">Applications that are installed on your desktop or on the local intranet run in full trust.</span></span> <span data-ttu-id="ac450-124">完全に信頼されたアプリケーションは影響を受けませんコード アクセス セキュリティによってとしてマークされている場合を除き、[セキュリティ透過的な](../../../docs/framework/misc/security-transparent-code.md)完全に信頼されているため、します。</span><span class="sxs-lookup"><span data-stu-id="ac450-124">Full-trust applications are not affected by code access security unless they are marked as [security-transparent](../../../docs/framework/misc/security-transparent-code.md), because they are fully trusted.</span></span> <span data-ttu-id="ac450-125">完全に信頼されたアプリケーションの唯一の制限事項は、<xref:System.Security.SecurityTransparentAttribute> 属性でマークされているアプリケーションは <xref:System.Security.SecurityCriticalAttribute> 属性でマークされているコードを呼び出すことができない点です。</span><span class="sxs-lookup"><span data-stu-id="ac450-125">The only limitation for full-trust applications is that applications that are marked with the <xref:System.Security.SecurityTransparentAttribute> attribute cannot call code that is marked with the <xref:System.Security.SecurityCriticalAttribute> attribute.</span></span> <span data-ttu-id="ac450-126">部分的に信頼されたアプリケーションは、コード アクセス セキュリティを適用できるように、サンドボックス (Internet Explorer など) で実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ac450-126">Partially trusted applications must be run in a sandbox (for example, in Internet Explorer) so that code access security can be applied.</span></span> <span data-ttu-id="ac450-127">インターネットからアプリケーションをダウンロードし、デスクトップから実行しようとすると、<xref:System.NotSupportedException> が返されます。このとき、"ネットワーク上の場所からアセンブリの読み込みを試みました。以前のバージョンの .NET Framework では、これによりアセンブリがサンドボックス化されました。</span><span class="sxs-lookup"><span data-stu-id="ac450-127">If you download an application from the Internet and try to run it from your desktop, you will get a <xref:System.NotSupportedException> with the message: "An attempt was made to load an assembly from a network location which would have caused the assembly to be sandboxed in previous versions of the .NET Framework.</span></span> <span data-ttu-id="ac450-128">このリリースの .NET Framework では CAS ポリシーが既定で有効ではないため、この読み込みは危険な場合があります。" というメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="ac450-128">This release of the .NET Framework does not enable CAS policy by default, so this load may be dangerous."</span></span> <span data-ttu-id="ac450-129">アプリケーションが信頼できることを確認したらが有効にした場合を使用して完全な信頼として実行するように、 [ \<loadFromRemoteSources > 要素](../../../docs/framework/configure-apps/file-schema/runtime/loadfromremotesources-element.md)です。</span><span class="sxs-lookup"><span data-stu-id="ac450-129">If you are sure that the application can be trusted, you can enable it to be run as full trust by using the [\<loadFromRemoteSources> element](../../../docs/framework/configure-apps/file-schema/runtime/loadfromremotesources-element.md).</span></span> <span data-ttu-id="ac450-130">サンド ボックスで、アプリケーションの実行方法の詳細については、次を参照してください。[する方法: 実行部分信頼コードをサンド ボックスで](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)です。</span><span class="sxs-lookup"><span data-stu-id="ac450-130">For information about running an application in a sandbox, see [How to: Run Partially Trusted Code in a Sandbox](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md).</span></span>  
   
- 共通言語ランタイムに対応したマネージ コードすべては、単一コード アクセス セキュリティ呼び出しを行わない場合でも、コード アクセス セキュリティの利点を享受することになります。  詳しくは、「[コード アクセス セキュリティの基礎](../../../docs/framework/misc/code-access-security-basics.md)」をご覧ください。  
-  
-> [!CAUTION]
->  コード アクセス セキュリティと部分的に信頼できるコード  
->   
->  .NET Framework には、コード アクセス セキュリティ \(CAS\) と呼ばれる、同一アプリケーションで実行される各種コードにさまざまな信頼レベルを強制的に適用するメカニズムが備わっています。  .NET Framework におけるコード アクセス セキュリティを、部分的に信頼できるコード、特に発生元の不明なコードのセキュリティ境界として使用しないでください。  発生元の不明なコードの読み込みと実行に関しては、他のセキュリティ対策を適切に導入することなく行わないようにしてください。  
->   
->  このポリシーは .NET Framework のすべてのバージョンに適用されますが、Silverlight に含まれる .NET Framework には適用されません。  
+ <span data-ttu-id="ac450-131">共通言語ランタイムに対応したマネージ コードすべては、単一コード アクセス セキュリティ呼び出しを行わない場合でも、コード アクセス セキュリティの利点を享受することになります。</span><span class="sxs-lookup"><span data-stu-id="ac450-131">All managed code that targets the common language runtime receives the benefits of code access security, even if that code does not make a single code access security call.</span></span> <span data-ttu-id="ac450-132">詳しくは、「[コード アクセス セキュリティの基礎](../../../docs/framework/misc/code-access-security-basics.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="ac450-132">For more information, see [Code Access Security Basics](../../../docs/framework/misc/code-access-security-basics.md).</span></span>  
   
 <a name="key_functions"></a>   
-## コード アクセス セキュリティの主な機能  
- コード アクセス セキュリティにより、コードがアクセスする対象を保護されたリソースと保護された操作に制限できます。  .NET Framework では、コード アクセス セキュリティは次の機能を果たします。  
+## <a name="key-functions-of-code-access-security"></a><span data-ttu-id="ac450-133">コード アクセス セキュリティの主な機能</span><span class="sxs-lookup"><span data-stu-id="ac450-133">Key Functions of Code Access Security</span></span>  
+ <span data-ttu-id="ac450-134">コード アクセス セキュリティにより、コードがアクセスする対象を保護されたリソースと保護された操作に制限できます。</span><span class="sxs-lookup"><span data-stu-id="ac450-134">Code access security helps limit the access that code has to protected resources and operations.</span></span> <span data-ttu-id="ac450-135">.NET Framework では、コード アクセス セキュリティは次の機能を果たします。</span><span class="sxs-lookup"><span data-stu-id="ac450-135">In the .NET Framework, code access security performs the following functions:</span></span>  
   
--   各種システム リソースにアクセスするための権限や権限セットを定義する。  
+-   <span data-ttu-id="ac450-136">各種システム リソースにアクセスするための権限や権限セットを定義する。</span><span class="sxs-lookup"><span data-stu-id="ac450-136">Defines permissions and permission sets that represent the right to access various system resources.</span></span>  
   
--   呼び出し元が特定の権限を所有していることをコードから要求できるようにする。  
+-   <span data-ttu-id="ac450-137">呼び出し元が特定の権限を所有していることをコードから要求できるようにする。</span><span class="sxs-lookup"><span data-stu-id="ac450-137">Enables code to demand that its callers have specific permissions.</span></span>  
   
--   呼び出し元にデジタル署名があることをコード自身が要求できるようにします。これにより、特定の組織またはサイトからの呼び出し元だけが、保護されたコードを呼び出すことができます。  
+-   <span data-ttu-id="ac450-138">呼び出し元にデジタル署名があることをコード自身が要求できるようにします。これにより、特定の組織またはサイトからの呼び出し元だけが、保護されたコードを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="ac450-138">Enables code to demand that its callers possess a digital signature, thus allowing only callers from a particular organization or site to call the protected code.</span></span>  
   
--   呼び出し履歴上で、各呼び出し元に付与された権限を、その呼び出し元に求められる権限と比較することにより、コードに対する制限を実行時に強制する。  
+-   <span data-ttu-id="ac450-139">呼び出し履歴上で、各呼び出し元に付与された権限を、その呼び出し元に求められる権限と比較することにより、コードに対する制限を実行時に強制する。</span><span class="sxs-lookup"><span data-stu-id="ac450-139">Enforces restrictions on code at run time by comparing the granted permissions of every caller on the call stack to the permissions that callers must have.</span></span>  
   
 <a name="walking_the_call_stack"></a>   
-## コール スタック ウォークの実行  
- コードがリソースにアクセスしたり、操作を実行したりすることを許可されているかどうかを判断するために、ランタイムのセキュリティ システムはコール スタック ウォークを行い、コール スタック内の各呼び出し元に与えられているアクセス許可と、確認要求されているアクセス許可とを比較します。  コール スタックに、確認要求されたアクセス許可を持っていない呼び出し元があった場合は、セキュリティ例外がスローされ、アクセスは拒否されます。  スタック ウォークは、信頼レベルの低いコードが信頼レベルの高いコードを呼び出して利用し、承認されていないアクションを実行しようとする攻撃を防止できるようにするために実行します。  コードの呼び出し元すべてに対して実行時にアクセス許可を確認要求することは、確かにパフォーマンスに影響しますが、信頼レベルの低いコードによる攻撃からコードを保護できるようにするためには必要です。  パフォーマンスを最適化するためにコードが実行するスタック ウォークを減らすこともできますが、その場合は、セキュリティの脆弱性を露呈しないように常に注意する必要があります。  
+## <a name="walking-the-call-stack"></a><span data-ttu-id="ac450-140">コール スタック ウォークの実行</span><span class="sxs-lookup"><span data-stu-id="ac450-140">Walking the Call Stack</span></span>  
+ <span data-ttu-id="ac450-141">コードがリソースにアクセスしたり、操作を実行したりすることを許可されているかどうかを判断するために、ランタイムのセキュリティ システムはコール スタック ウォークを行い、コール スタック内の各呼び出し元に与えられているアクセス許可と、確認要求されているアクセス許可とを比較します。</span><span class="sxs-lookup"><span data-stu-id="ac450-141">To determine whether code is authorized to access a resource or perform an operation, the runtime's security system walks the call stack, comparing the granted permissions of each caller to the permission being demanded.</span></span> <span data-ttu-id="ac450-142">コール スタックに、確認要求されたアクセス許可を持っていない呼び出し元があった場合は、セキュリティ例外がスローされ、アクセスは拒否されます。</span><span class="sxs-lookup"><span data-stu-id="ac450-142">If any caller in the call stack does not have the demanded permission, a security exception is thrown and access is refused.</span></span> <span data-ttu-id="ac450-143">スタック ウォークは、信頼レベルの低いコードが信頼レベルの高いコードを呼び出して利用し、承認されていないアクションを実行しようとする攻撃を防止できるようにするために実行します。</span><span class="sxs-lookup"><span data-stu-id="ac450-143">The stack walk is designed to help prevent luring attacks, in which less-trusted code calls highly trusted code and uses it to perform unauthorized actions.</span></span> <span data-ttu-id="ac450-144">コードの呼び出し元すべてに対して実行時にアクセス許可を確認要求することは、確かにパフォーマンスに影響しますが、信頼レベルの低いコードによる攻撃からコードを保護できるようにするためには必要です。</span><span class="sxs-lookup"><span data-stu-id="ac450-144">Demanding permissions of all callers at run time affects performance, but it is essential to help protect code from luring attacks by less-trusted code.</span></span> <span data-ttu-id="ac450-145">パフォーマンスを最適化するためにコードが実行するスタック ウォークを減らすこともできますが、その場合は、セキュリティの脆弱性を露呈しないように常に注意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ac450-145">To optimize performance, you can have your code perform fewer stack walks; however, you must be sure that you do not expose a security weakness whenever you do this.</span></span>  
   
- アセンブリ A4 のメソッドが、その呼び出し元にアクセス許可 P が与えられていることを確認要求する場合に、結果として行われるスタック ウォークを次の図に示します。  
+ <span data-ttu-id="ac450-146">アセンブリ A4 のメソッドが、その呼び出し元にアクセス許可 P が与えられていることを確認要求する場合に、結果として行われるスタック ウォークを次の図に示します。</span><span class="sxs-lookup"><span data-stu-id="ac450-146">The following illustration shows the stack walk that results when a method in Assembly A4 demands that its callers have permission P.</span></span>  
   
- ![コード アクセス セキュリティ](../../../docs/framework/misc/media/slide-10a.gif "slide\_10a")  
-セキュリティ スタック ウォーク  
+ <span data-ttu-id="ac450-147">![コード アクセス セキュリティ](../../../docs/framework/misc/media/slide-10a.gif "slide_10a")</span><span class="sxs-lookup"><span data-stu-id="ac450-147">![Code access security](../../../docs/framework/misc/media/slide-10a.gif "slide_10a")</span></span>  
+<span data-ttu-id="ac450-148">セキュリティ スタック ウォーク</span><span class="sxs-lookup"><span data-stu-id="ac450-148">Security stack walk</span></span>  
   
 <a name="related_topics"></a>   
-## 関連トピック  
+## <a name="related-topics"></a><span data-ttu-id="ac450-149">関連トピック</span><span class="sxs-lookup"><span data-stu-id="ac450-149">Related Topics</span></span>  
   
-|タイトル|説明|  
-|----------|--------|  
-|[コード アクセス セキュリティの基礎](../../../docs/framework/misc/code-access-security-basics.md)|コード アクセス セキュリティとその最も一般的な使用方法について説明します。|  
-|[透過的セキュリティ コード、レベル 2](../../../docs/framework/misc/security-transparent-code-level-2.md)|[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] のセキュリティ透過モデルについて説明します。|  
-|[部分信頼コードからのライブラリの使用](../../../docs/framework/misc/using-libraries-from-partially-trusted-code.md)|ライブラリを有効にしてアンマネージ コードと共に使用できるようにする方法と、アンマネージ コードからライブラリを使用する方法について説明します。|  
-|[セキュリティの基本概念](../../../docs/standard/security/key-security-concepts.md)|.NET Framework セキュリティ システムで使用されるさまざまな重要用語と概念について、概要を示します。|  
-|[ロール ベース セキュリティ](../../../docs/standard/security/role-based-security.md)|ロールに基づいて、セキュリティを組み込む方法について説明します。|  
-|[暗号サービス](../../../docs/standard/security/cryptographic-services.md)|アプリケーションに暗号を組み込む方法について説明します。|
+|<span data-ttu-id="ac450-150">タイトル</span><span class="sxs-lookup"><span data-stu-id="ac450-150">Title</span></span>|<span data-ttu-id="ac450-151">説明</span><span class="sxs-lookup"><span data-stu-id="ac450-151">Description</span></span>|  
+|-----------|-----------------|  
+|[<span data-ttu-id="ac450-152">コード アクセス セキュリティの基礎</span><span class="sxs-lookup"><span data-stu-id="ac450-152">Code Access Security Basics</span></span>](../../../docs/framework/misc/code-access-security-basics.md)|<span data-ttu-id="ac450-153">コード アクセス セキュリティとその最も一般的な使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ac450-153">Describes code access security and its most common uses.</span></span>|  
+|[<span data-ttu-id="ac450-154">透過的セキュリティ コード、レベル 2</span><span class="sxs-lookup"><span data-stu-id="ac450-154">Security-Transparent Code, Level 2</span></span>](../../../docs/framework/misc/security-transparent-code-level-2.md)|<span data-ttu-id="ac450-155">[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] のセキュリティ透過モデルについて説明します。</span><span class="sxs-lookup"><span data-stu-id="ac450-155">Describes the security transparency model in the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].</span></span>|  
+|[<span data-ttu-id="ac450-156">部分信頼コードからライブラリを使用します。</span><span class="sxs-lookup"><span data-stu-id="ac450-156">Using Libraries from Partially Trusted Code</span></span>](../../../docs/framework/misc/using-libraries-from-partially-trusted-code.md)|<span data-ttu-id="ac450-157">ライブラリを有効にしてアンマネージ コードと共に使用できるようにする方法と、アンマネージ コードからライブラリを使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ac450-157">Describes how to enable libraries for use with unmanaged code and how to use libraries from unmanaged code.</span></span>|  
+|[<span data-ttu-id="ac450-158">セキュリティの基本概念</span><span class="sxs-lookup"><span data-stu-id="ac450-158">Key Security Concepts</span></span>](../../../docs/standard/security/key-security-concepts.md)|<span data-ttu-id="ac450-159">.NET Framework セキュリティ システムで使用されるさまざまな重要用語と概念について、概要を示します。</span><span class="sxs-lookup"><span data-stu-id="ac450-159">Provides an overview of many of the key terms and concepts used in the .NET Framework security system.</span></span>|  
+|[<span data-ttu-id="ac450-160">ロール ベースのセキュリティ</span><span class="sxs-lookup"><span data-stu-id="ac450-160">Role-Based Security</span></span>](../../../docs/standard/security/role-based-security.md)|<span data-ttu-id="ac450-161">ロールに基づいて、セキュリティを組み込む方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ac450-161">Describes how to incorporate security based on roles.</span></span>|  
+|[<span data-ttu-id="ac450-162">Cryptographic Services</span><span class="sxs-lookup"><span data-stu-id="ac450-162">Cryptographic Services</span></span>](../../../docs/standard/security/cryptographic-services.md)|<span data-ttu-id="ac450-163">アプリケーションに暗号を組み込む方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ac450-163">Describes how to incorporate cryptography into your applications.</span></span>|

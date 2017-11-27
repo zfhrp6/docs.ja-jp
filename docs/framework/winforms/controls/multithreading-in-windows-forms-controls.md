@@ -1,53 +1,53 @@
 ---
-title: "Windows フォーム コントロールのマルチスレッド処理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "BackgroundWorker コンポーネント"
-  - "BeginInvoke メソッド"
-  - "スレッド処理 [Windows フォーム], コントロール"
+title: "Windows フォーム コントロールのマルチスレッド処理"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- BackgroundWorker component
+- threading [Windows Forms], controls
 ms.assetid: c311d652-0f26-45fa-bdcc-b1615d73ce4e
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c4651ca9707dcf0fac2edea0f004275cfcf18cf2
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# Windows フォーム コントロールのマルチスレッド処理
-多くのアプリケーションでは、時間がかかる操作を別スレッドで実行することにより、ユーザー インターフェイス \(UI\) の反応を良くすることができます。  Windows フォーム コントロールでマルチスレッド処理を行うための手段はいくつか用意されています。たとえば、<xref:System.Threading> 名前空間、<xref:System.Windows.Forms.Control.BeginInvoke%2A?displayProperty=fullName> メソッド、および `BackgroundWorker` コンポーネントです。  
+# <a name="multithreading-in-windows-forms-controls"></a><span data-ttu-id="96684-102">Windows フォーム コントロールのマルチスレッド処理</span><span class="sxs-lookup"><span data-stu-id="96684-102">Multithreading in Windows Forms Controls</span></span>
+<span data-ttu-id="96684-103">多くのアプリケーションで行うことができます、ユーザー インターフェイス (UI) 応答性の高い別のスレッドで時間のかかる操作を実行することによってです。</span><span class="sxs-lookup"><span data-stu-id="96684-103">In many applications, you can make your user interface (UI) more responsive by performing time-consuming operations on another thread.</span></span> <span data-ttu-id="96684-104">多数のツールが使用できるマルチ スレッド処理など、Windows フォーム コントロールを<xref:System.Threading>名前空間、<xref:System.Windows.Forms.Control.BeginInvoke%2A?displayProperty=nameWithType>メソッド、および`BackgroundWorker`コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="96684-104">A number of tools are available for multithreading your Windows Forms controls, including the <xref:System.Threading> namespace, the <xref:System.Windows.Forms.Control.BeginInvoke%2A?displayProperty=nameWithType> method, and the `BackgroundWorker` component.</span></span>  
   
 > [!NOTE]
->  `BackgroundWorker` コンポーネントは、<xref:System.Threading> 名前空間および <xref:System.Windows.Forms.Control.BeginInvoke%2A?displayProperty=fullName> メソッドに代わるもので、また機能が追加されています。ただし、この名前空間とメソッドは、下位互換性を保つ目的、および必要に応じて将来使用する目的から、そのまま残されています。  詳細については、「[BackgroundWorker コンポーネントの概要](../../../../docs/framework/winforms/controls/backgroundworker-component-overview.md)」を参照してください。  
+>  <span data-ttu-id="96684-105">`BackgroundWorker`コンポーネントの置換し、する機能を追加、<xref:System.Threading>名前空間および<xref:System.Windows.Forms.Control.BeginInvoke%2A?displayProperty=nameWithType>メソッドです。 ただし、これらは保持されます両方の下位互換性と将来の使用を選択した場合。</span><span class="sxs-lookup"><span data-stu-id="96684-105">The `BackgroundWorker` component replaces and adds functionality to the <xref:System.Threading> namespace and the <xref:System.Windows.Forms.Control.BeginInvoke%2A?displayProperty=nameWithType> method; however, these are retained for both backward compatibility and future use, if you choose.</span></span> <span data-ttu-id="96684-106">詳細については、次を参照してください。 [BackgroundWorker コンポーネントの概要](../../../../docs/framework/winforms/controls/backgroundworker-component-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="96684-106">For more information, see [BackgroundWorker Component Overview](../../../../docs/framework/winforms/controls/backgroundworker-component-overview.md).</span></span>  
   
-## このセクションの内容  
- [方法 : Windows フォーム コントロールのスレッド セーフな呼び出しを行う](../../../../docs/framework/winforms/controls/how-to-make-thread-safe-calls-to-windows-forms-controls.md)  
- Windows フォーム コントロールのスレッド セーフな呼び出しを行う方法を示します。  
+## <a name="in-this-section"></a><span data-ttu-id="96684-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="96684-107">In This Section</span></span>  
+ [<span data-ttu-id="96684-108">方法: Windows フォーム コントロールのスレッド セーフな呼び出しを行う</span><span class="sxs-lookup"><span data-stu-id="96684-108">How to: Make Thread-Safe Calls to Windows Forms Controls</span></span>](../../../../docs/framework/winforms/controls/how-to-make-thread-safe-calls-to-windows-forms-controls.md)  
+ <span data-ttu-id="96684-109">Windows フォーム コントロールにスレッド セーフな呼び出しを行う方法を示します。</span><span class="sxs-lookup"><span data-stu-id="96684-109">Shows how to make thread-safe calls to Windows Forms controls.</span></span>  
   
- [方法 : バックグラウンド スレッドを使用してファイルを検索する](../../../../docs/framework/winforms/controls/how-to-use-a-background-thread-to-search-for-files.md)  
- <xref:System.Threading> 名前空間および <xref:System.Windows.Forms.Control.BeginInvoke%2A> メソッドを使用して、ファイルを非同期で検索する方法を示します。  
+ [<span data-ttu-id="96684-110">方法: バックグラウンド スレッドを使用してファイルを検索する</span><span class="sxs-lookup"><span data-stu-id="96684-110">How to: Use a Background Thread to Search for Files</span></span>](../../../../docs/framework/winforms/controls/how-to-use-a-background-thread-to-search-for-files.md)  
+ <span data-ttu-id="96684-111">使用する方法を示します、<xref:System.Threading>名前空間および<xref:System.Windows.Forms.Control.BeginInvoke%2A>メソッドを非同期的にファイルを検索します。</span><span class="sxs-lookup"><span data-stu-id="96684-111">Shows how to use the <xref:System.Threading> namespace and the <xref:System.Windows.Forms.Control.BeginInvoke%2A> method to search for files asynchronously.</span></span>  
   
-## 関連項目  
+## <a name="reference"></a><span data-ttu-id="96684-112">参照</span><span class="sxs-lookup"><span data-stu-id="96684-112">Reference</span></span>  
  <xref:System.ComponentModel.BackgroundWorker>  
- 非同期の操作用のワーカー スレッドをカプセル化するコンポーネントについて説明されています。  
+ <span data-ttu-id="96684-113">非同期操作のワーカー スレッドをカプセル化するコンポーネントについて説明します。</span><span class="sxs-lookup"><span data-stu-id="96684-113">Documents a component that encapsulates a worker thread for asynchronous operations.</span></span>  
   
  <xref:System.Media.SoundPlayer.LoadAsync%2A>  
- サウンドを非同期で読み込む方法について説明されています。  
+ <span data-ttu-id="96684-114">サウンドを非同期的に読み込む方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="96684-114">Documents how to load a sound asynchronously.</span></span>  
   
  <xref:System.Windows.Forms.PictureBox.LoadAsync%2A>  
- イメージを非同期で読み込む方法について説明されています。  
+ <span data-ttu-id="96684-115">イメージを非同期的に読み込む方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="96684-115">Documents how to load an image asynchronously.</span></span>  
   
-## 関連項目  
- [方法 : バックグラウンドで操作を実行する](../../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
- 時間がかかる操作を <xref:System.ComponentModel.BackgroundWorker> コンポーネントで実行する方法を示します。  
+## <a name="related-sections"></a><span data-ttu-id="96684-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="96684-116">Related Sections</span></span>  
+ [<span data-ttu-id="96684-117">方法: バックグラウンドで操作を実行する</span><span class="sxs-lookup"><span data-stu-id="96684-117">How to: Run an Operation in the Background</span></span>](../../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
+ <span data-ttu-id="96684-118">時間のかかる操作を行う方法を示しています、<xref:System.ComponentModel.BackgroundWorker>コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="96684-118">Shows how to perform a time-consuming operation with the <xref:System.ComponentModel.BackgroundWorker> component.</span></span>  
   
- [BackgroundWorker コンポーネントの概要](../../../../docs/framework/winforms/controls/backgroundworker-component-overview.md)  
- <xref:System.ComponentModel.BackgroundWorker> コンポーネントを使用して非同期の操作を実行する方法を説明するトピックを示します。
+ [<span data-ttu-id="96684-119">BackgroundWorker コンポーネントの概要</span><span class="sxs-lookup"><span data-stu-id="96684-119">BackgroundWorker Component Overview</span></span>](../../../../docs/framework/winforms/controls/backgroundworker-component-overview.md)  
+ <span data-ttu-id="96684-120">使用する方法について説明するトピックを提供、<xref:System.ComponentModel.BackgroundWorker>コンポーネントの非同期操作をします。</span><span class="sxs-lookup"><span data-stu-id="96684-120">Provides topics that describe how to use the <xref:System.ComponentModel.BackgroundWorker> component for asynchronous operations.</span></span>

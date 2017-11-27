@@ -1,83 +1,86 @@
 ---
-title: "UI Automation Support for the Thumb Control Type | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "control types, Thumb"
-  - "UI Automation, Thumb control type"
-  - "Thumb control type"
+title: "UI オートメーションによる Thumb コントロール型のサポート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- control types, Thumb
+- UI Automation, Thumb control type
+- Thumb control type
 ms.assetid: 13636338-e320-4355-b071-ede20a3fb1de
-caps.latest.revision: 20
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: 80de9fc87acb514bb8bf149d9930217173811012
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# UI Automation Support for the Thumb Control Type
+# <a name="ui-automation-support-for-the-thumb-control-type"></a><span data-ttu-id="12c54-102">UI オートメーションによる Thumb コントロール型のサポート</span><span class="sxs-lookup"><span data-stu-id="12c54-102">UI Automation Support for the Thumb Control Type</span></span>
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の最新情報については、「[Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
+>  <span data-ttu-id="12c54-103">このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="12c54-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="12c54-104">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="12c54-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- このトピックでは、Thumb コントロール型に対する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] のサポートについて説明します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] でのコントロール型とは、コントロールが <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> プロパティを使用するために満たす必要がある一連の条件のことです。 条件には、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティの値、およびコントロール パターンに関する特定のガイドラインが含まれます。  
+ <span data-ttu-id="12c54-105">このトピックでは、Thumb コントロール型に対する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] のサポートについて説明します。</span><span class="sxs-lookup"><span data-stu-id="12c54-105">This topic provides information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] support for the Thumb control type.</span></span> <span data-ttu-id="12c54-106">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]でのコントロール型とは、コントロールが <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> プロパティを使用するために満たす必要がある一連の条件のことです。</span><span class="sxs-lookup"><span data-stu-id="12c54-106">In [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], a control type is a set of conditions that a control must meet in order to use the <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> property.</span></span> <span data-ttu-id="12c54-107">条件には、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティの値、およびコントロール パターンに関する特定のガイドラインが含まれます。</span><span class="sxs-lookup"><span data-stu-id="12c54-107">The conditions include specific guidelines for [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree structure, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] property values, and control patterns.</span></span>  
   
- Thumb コントロールは、スクロール バー ボタンなどのようにコントロールを移動 \(またはドラッグ\) したり、ウィンドウ サイズ変更ウィジェットなどのようにサイズ変更したりできる機能を提供します。 Thumb コントロールは、ウィンドウの移動可能な枠線として実装することもできます。 ドラッグ アンド ドロップ機能は提供されないことに注意してください。 Thumb コントロールは、マウス フォーカスを受け取ることはできますが、通常キーボード フォーカスを受け取ることはできません。 コントロール開発者は、適切に動作するように \(ドラッグしたりサイズ変更したりできるように\)、コントロールを実装する必要があります。  
+ <span data-ttu-id="12c54-108">Thumb コントロールは、スクロール バー ボタンなどのようにコントロールを移動 (またはドラッグ) したり、ウィンドウ サイズ変更ウィジェットなどのようにサイズ変更したりできる機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="12c54-108">Thumb controls provide the functionality that enables a control to be moved (or dragged), such as a scroll bar button, or resized, such as a window resizing widget.</span></span> <span data-ttu-id="12c54-109">Thumb コントロールは、ウィンドウの移動可能な枠線として実装することもできます。</span><span class="sxs-lookup"><span data-stu-id="12c54-109">Thumb controls can also be implemented as movable borders of panes.</span></span> <span data-ttu-id="12c54-110">ドラッグ アンド ドロップ機能は提供されないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="12c54-110">Note that it does not provide drag-and-drop functionality.</span></span> <span data-ttu-id="12c54-111">Thumb コントロールは、マウス フォーカスを受け取ることはできますが、通常キーボード フォーカスを受け取ることはできません。</span><span class="sxs-lookup"><span data-stu-id="12c54-111">Thumb controls can receive mouse focus but usually not keyboard focus.</span></span> <span data-ttu-id="12c54-112">コントロール開発者は、適切に動作するように (ドラッグしたりサイズ変更したりできるように)、コントロールを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="12c54-112">The control developer must implement the control so that it acts appropriately (can be dragged or resized).</span></span>  
   
- 以下の各セクションで、Thumb コントロール型に必要な [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、プロパティ、コントロール パターン、およびイベントを定義します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の要件は、[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、[!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]、[!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] のいずれの場合でも、すべての Thumb コントロールに当てはまります。  
+ <span data-ttu-id="12c54-113">以下の各セクションで、Thumb コントロール型に必要な [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、プロパティ、コントロール パターン、およびイベントを定義します。</span><span class="sxs-lookup"><span data-stu-id="12c54-113">The following sections define the required [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree structure, properties, control patterns, and events for the Thumb control type.</span></span> <span data-ttu-id="12c54-114">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の要件は、 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、 [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]、 [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]のいずれの場合でも、すべての Thumb コントロールに当てはまります。</span><span class="sxs-lookup"><span data-stu-id="12c54-114">The [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requirements apply to all thumb controls, whether [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], or [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].</span></span>  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
-## 必須の UI オートメーション ツリー構造  
- 次の表に、Thumb コントロールに関連する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコントロール ビューとコンテンツ ビューを示し、それぞれのビューに含めることができる内容について説明します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーの詳細については、「[UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)」を参照してください。  
+## <a name="required-ui-automation-tree-structure"></a><span data-ttu-id="12c54-115">必須の UI オートメーション ツリー構造</span><span class="sxs-lookup"><span data-stu-id="12c54-115">Required UI Automation Tree Structure</span></span>  
+ <span data-ttu-id="12c54-116">次の表に、Thumb コントロールに関連する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコントロール ビューとコンテンツ ビューを示し、それぞれのビューに含めることができる内容について説明します。</span><span class="sxs-lookup"><span data-stu-id="12c54-116">The following table depicts the control view and the content view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree that pertains to thumb controls and describes what can be contained in each view.</span></span> <span data-ttu-id="12c54-117">詳細については、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]ツリーを参照してください[UI オートメーション ツリーの概要](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="12c54-117">For more information on the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree, see [UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).</span></span>  
   
-|コントロール ビュー|コンテンツ ビュー|  
-|----------------|---------------|  
-|つまみ|-   該当なし|  
+|<span data-ttu-id="12c54-118">コントロール ビュー</span><span class="sxs-lookup"><span data-stu-id="12c54-118">Control View</span></span>|<span data-ttu-id="12c54-119">コンテンツ ビュー</span><span class="sxs-lookup"><span data-stu-id="12c54-119">Content View</span></span>|  
+|------------------|------------------|  
+|<span data-ttu-id="12c54-120">つまみ</span><span class="sxs-lookup"><span data-stu-id="12c54-120">Thumb</span></span>|<span data-ttu-id="12c54-121">-利用不可</span><span class="sxs-lookup"><span data-stu-id="12c54-121">-   Not applicable</span></span>|  
   
- Thumb コントロールは、マウスを使用して操作するためだけに存在しているので、コンテンツ ビューには表示されません。 これらの機能は、Thumb コンテナーでサポートされる Scroll パターン、Transform パターン、RangeValue パターンなど別のコントロール パターンを使用して公開されます。  
+ <span data-ttu-id="12c54-122">Thumb コントロールは、マウスを使用して操作するためだけに存在しているので、コンテンツ ビューには表示されません。</span><span class="sxs-lookup"><span data-stu-id="12c54-122">Thumb controls never appear in Content View because they only exist for being manipulated with a mouse.</span></span> <span data-ttu-id="12c54-123">これらの機能は、Thumb コンテナーでサポートされる Scroll パターン、Transform パターン、RangeValue パターンなど別のコントロール パターンを使用して公開されます。</span><span class="sxs-lookup"><span data-stu-id="12c54-123">Their functionality is exposed though another control pattern, such as Scroll Pattern, Transform Pattern, or RangeValue Pattern, being supported on the Thumb container.</span></span>  
   
 <a name="Required_UI_Automation_Properties"></a>   
-## 必須の UI オートメーション プロパティ  
- 次の表に、Thumb コントロールに特に関連する値または定義を持つ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティを示します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティの詳細については、「[UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)」を参照してください。  
+## <a name="required-ui-automation-properties"></a><span data-ttu-id="12c54-124">必須の UI オートメーション プロパティ</span><span class="sxs-lookup"><span data-stu-id="12c54-124">Required UI Automation Properties</span></span>  
+ <span data-ttu-id="12c54-125">次の表に、Thumb コントロールに特に関連する値または定義を持つ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティを示します。</span><span class="sxs-lookup"><span data-stu-id="12c54-125">The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties whose value or definition is especially relevant to thumb controls.</span></span> <span data-ttu-id="12c54-126">詳細については[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]プロパティを参照してください[クライアントの UI オートメーション プロパティ](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)です。</span><span class="sxs-lookup"><span data-stu-id="12c54-126">For more information on [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties, see [UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).</span></span>  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティ|値|ノート|  
-|---------------------------------------------------------------------------------|-------|---------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|「ノート」を参照してください。|このプロパティの値は、アプリケーションのすべてのコントロールにおいて一意である必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|「ノート」を参照してください。|コントロール全体を格納する最も外側の四角形。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|「ノート」を参照してください。|Thumb コントロールの表示されているクライアント領域内の任意のポイント。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|「ノート」を参照してください。|コントロールがキーボード フォーカスを受け取ることができる場合は、このプロパティをサポートする必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|`Null`|Thumb コントロールは、UI オートメーション ツリーのコンテンツ ビューには表示されないため、名前は不要です。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|`Null`|Thumb コントロールにラベルはありません。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|つまみ|この値は、すべての UI フレームワークで同じです。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"Thumb"|Thumb コントロール型に対応する、ローカライズされた文字列。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|False|Thumb コントロールにコンテンツはありません。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|Thumb コントロールは、常にコントロールである必要があります。|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]<span data-ttu-id="12c54-127"> プロパティ</span><span class="sxs-lookup"><span data-stu-id="12c54-127"> Property</span></span>|<span data-ttu-id="12c54-128">値</span><span class="sxs-lookup"><span data-stu-id="12c54-128">Value</span></span>|<span data-ttu-id="12c54-129">ノート</span><span class="sxs-lookup"><span data-stu-id="12c54-129">Notes</span></span>|  
+|------------------------------------------------------------------------------------|-----------|-----------|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|<span data-ttu-id="12c54-130">ノートを参照してください。</span><span class="sxs-lookup"><span data-stu-id="12c54-130">See notes.</span></span>|<span data-ttu-id="12c54-131">このプロパティの値は、アプリケーションのすべてのコントロールで一意である必要があります。</span><span class="sxs-lookup"><span data-stu-id="12c54-131">The value of this property needs to be unique across all controls in an application.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|<span data-ttu-id="12c54-132">「ノート」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="12c54-132">See notes.</span></span>|<span data-ttu-id="12c54-133">コントロール全体を格納する最も外側の四角形。</span><span class="sxs-lookup"><span data-stu-id="12c54-133">The outermost rectangle that contains the whole control.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|<span data-ttu-id="12c54-134">「ノート」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="12c54-134">See notes.</span></span>|<span data-ttu-id="12c54-135">Thumb コントロールの表示されているクライアント領域内の任意のポイント。</span><span class="sxs-lookup"><span data-stu-id="12c54-135">Any point within the visible client area of the Thumb control.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|<span data-ttu-id="12c54-136">「ノート」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="12c54-136">See notes.</span></span>|<span data-ttu-id="12c54-137">コントロールがキーボード フォーカスを受け取ることができる場合は、このプロパティをサポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="12c54-137">If the control can receive keyboard focus, it must support this property.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|`Null`|<span data-ttu-id="12c54-138">Thumb コントロールは、UI オートメーション ツリーのコンテンツ ビューには表示されないため、名前は不要です。</span><span class="sxs-lookup"><span data-stu-id="12c54-138">The Thumb control is not available in the Content View of the UI Automation tree so it does not require a name.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|`Null`|<span data-ttu-id="12c54-139">Thumb コントロールにラベルはありません。</span><span class="sxs-lookup"><span data-stu-id="12c54-139">Thumb controls never have a label.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|<span data-ttu-id="12c54-140">つまみ</span><span class="sxs-lookup"><span data-stu-id="12c54-140">Thumb</span></span>|<span data-ttu-id="12c54-141">この値は、すべての UI フレームワークで同じです。</span><span class="sxs-lookup"><span data-stu-id="12c54-141">This value is the same for all UI frameworks.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|<span data-ttu-id="12c54-142">"Thumb"</span><span class="sxs-lookup"><span data-stu-id="12c54-142">"thumb"</span></span>|<span data-ttu-id="12c54-143">Thumb コントロール型に対応する、ローカライズされた文字列。</span><span class="sxs-lookup"><span data-stu-id="12c54-143">Localized string corresponding to the Thumb control type.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|<span data-ttu-id="12c54-144">False</span><span class="sxs-lookup"><span data-stu-id="12c54-144">False</span></span>|<span data-ttu-id="12c54-145">Thumb コントロールにコンテンツはありません。</span><span class="sxs-lookup"><span data-stu-id="12c54-145">The Thumb control is never content.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|<span data-ttu-id="12c54-146">True</span><span class="sxs-lookup"><span data-stu-id="12c54-146">True</span></span>|<span data-ttu-id="12c54-147">Thumb コントロールは、常にコントロールである必要があります。</span><span class="sxs-lookup"><span data-stu-id="12c54-147">The Thumb control must always be a control.</span></span>|  
   
 <a name="Required_UI_Automation_Control_Patterns"></a>   
-## 必須の UI オートメーション コントロール パターン  
- 次の表に、Thumb コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] コントロール パターンを示します。 コントロール パターンの詳細については、「[UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)」を参照してください。  
+## <a name="required-ui-automation-control-patterns"></a><span data-ttu-id="12c54-148">必須の UI オートメーション コントロール パターン</span><span class="sxs-lookup"><span data-stu-id="12c54-148">Required UI Automation Control Patterns</span></span>  
+ <span data-ttu-id="12c54-149">次の表に、Thumb コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] コントロール パターンを示します。</span><span class="sxs-lookup"><span data-stu-id="12c54-149">The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] control patterns required to be supported by thumb controls.</span></span> <span data-ttu-id="12c54-150">コントロール パターンの詳細については、「 [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="12c54-150">For more information on control patterns, see [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).</span></span>  
   
-|コントロール パターン\/パターン プロパティ|サポート\/値|ノート|  
-|-----------------------------|-------------|---------|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider>|必要|Thumb コントロールを画面で移動できるようにします。|  
+|<span data-ttu-id="12c54-151">コントロール パターン/パターン プロパティ</span><span class="sxs-lookup"><span data-stu-id="12c54-151">Control Pattern/Pattern Property</span></span>|<span data-ttu-id="12c54-152">サポート/値</span><span class="sxs-lookup"><span data-stu-id="12c54-152">Support/Value</span></span>|<span data-ttu-id="12c54-153">ノート</span><span class="sxs-lookup"><span data-stu-id="12c54-153">Notes</span></span>|  
+|---------------------------------------|--------------------|-----------|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider>|<span data-ttu-id="12c54-154">必要</span><span class="sxs-lookup"><span data-stu-id="12c54-154">Required</span></span>|<span data-ttu-id="12c54-155">Thumb コントロールを画面で移動できるようにします。</span><span class="sxs-lookup"><span data-stu-id="12c54-155">Enables the thumb control to be moved on the screen.</span></span>|  
   
 <a name="Required_UI_Automation_Events"></a>   
-## 必須の UI オートメーション イベント  
- 次の表に、すべての Thumb コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベントを示します。 イベントの詳細については、「[UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md)」を参照してください。  
+## <a name="required-ui-automation-events"></a><span data-ttu-id="12c54-156">必須の UI オートメーション イベント</span><span class="sxs-lookup"><span data-stu-id="12c54-156">Required UI Automation Events</span></span>  
+ <span data-ttu-id="12c54-157">次の表に、すべての Thumb コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベントを示します。</span><span class="sxs-lookup"><span data-stu-id="12c54-157">The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] events required to be supported by all thumb controls.</span></span> <span data-ttu-id="12c54-158">イベントの詳細については、「 [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="12c54-158">For more information about events, see [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md).</span></span>  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベント|Support|ノート|  
-|--------------------------------------------------------------------------------|-------------|---------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必要|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必要|なし|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]<span data-ttu-id="12c54-159"> イベント</span><span class="sxs-lookup"><span data-stu-id="12c54-159"> Event</span></span>|<span data-ttu-id="12c54-160">Support</span><span class="sxs-lookup"><span data-stu-id="12c54-160">Support</span></span>|<span data-ttu-id="12c54-161">ノート</span><span class="sxs-lookup"><span data-stu-id="12c54-161">Notes</span></span>|  
+|---------------------------------------------------------------------------------|-------------|-----------|  
+|<span data-ttu-id="12c54-162"><xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="12c54-162"><xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> property-changed event.</span></span>|<span data-ttu-id="12c54-163">必要</span><span class="sxs-lookup"><span data-stu-id="12c54-163">Required</span></span>|<span data-ttu-id="12c54-164">なし</span><span class="sxs-lookup"><span data-stu-id="12c54-164">None</span></span>|  
+|<span data-ttu-id="12c54-165"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="12c54-165"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> property-changed event.</span></span>|<span data-ttu-id="12c54-166">必要</span><span class="sxs-lookup"><span data-stu-id="12c54-166">Required</span></span>|<span data-ttu-id="12c54-167">なし</span><span class="sxs-lookup"><span data-stu-id="12c54-167">None</span></span>|  
+|<span data-ttu-id="12c54-168"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="12c54-168"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> property-changed event.</span></span>|<span data-ttu-id="12c54-169">必要</span><span class="sxs-lookup"><span data-stu-id="12c54-169">Required</span></span>|<span data-ttu-id="12c54-170">なし</span><span class="sxs-lookup"><span data-stu-id="12c54-170">None</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|<span data-ttu-id="12c54-171">必須</span><span class="sxs-lookup"><span data-stu-id="12c54-171">Required</span></span>|<span data-ttu-id="12c54-172">なし</span><span class="sxs-lookup"><span data-stu-id="12c54-172">None</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|<span data-ttu-id="12c54-173">必須</span><span class="sxs-lookup"><span data-stu-id="12c54-173">Required</span></span>|<span data-ttu-id="12c54-174">なし</span><span class="sxs-lookup"><span data-stu-id="12c54-174">None</span></span>|  
   
-## 参照  
- <xref:System.Windows.Automation.ControlType.Thumb>   
- [UI Automation Control Types Overview](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)   
- [UI Automation Overview](../../../docs/framework/ui-automation/ui-automation-overview.md)
+## <a name="see-also"></a><span data-ttu-id="12c54-175">関連項目</span><span class="sxs-lookup"><span data-stu-id="12c54-175">See Also</span></span>  
+ <xref:System.Windows.Automation.ControlType.Thumb>  
+ [<span data-ttu-id="12c54-176">UI オートメーション コントロール型の概要</span><span class="sxs-lookup"><span data-stu-id="12c54-176">UI Automation Control Types Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)  
+ [<span data-ttu-id="12c54-177">UI オートメーションの概要</span><span class="sxs-lookup"><span data-stu-id="12c54-177">UI Automation Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-overview.md)

@@ -1,30 +1,34 @@
 ---
-title: "アクティビティ クラスを使用したワークフロー アクティビティの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "アクティビティ クラスを使用したワークフロー アクティビティの作成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 7b7b1c66-f093-43c3-b4d1-7173b46516da
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f4fc6d0807c07952e9b3abe2861ef04bc225142f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# アクティビティ クラスを使用したワークフロー アクティビティの作成
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] で [!INCLUDE[wf](../../../includes/wf-md.md)] を使用してアクティビティを作成する最も基本的な方法は、カスタム アクティビティまたは [ビルトイン アクティビティ ライブラリ](../../../docs/framework/windows-workflow-foundation//net-framework-4-5-built-in-activity-library.md) のアクティビティをアセンブルして、機能を作成する <xref:System.Activities.Activity> から継承するクラスを作成することです。ここでは、2 つのメッセージをコンソールに書き込むアクティビティを作成する方法について説明します。  
+# <a name="workflow-activity-authoring-using-the-activity-class"></a><span data-ttu-id="b191c-102">アクティビティ クラスを使用したワークフロー アクティビティの作成</span><span class="sxs-lookup"><span data-stu-id="b191c-102">Workflow Activity Authoring Using the Activity Class</span></span>
+<span data-ttu-id="b191c-103">使用して、アクティビティを作成する最も簡単な方法[!INCLUDE[wf](../../../includes/wf-md.md)]で[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]から継承するクラスを作成するのには、<xref:System.Activities.Activity>を作成する機能をまとめることでカスタム アクティビティまたはアクティビティから、[ビルトイン アクティビティ ライブラリ](../../../docs/framework/windows-workflow-foundation/net-framework-4-5-built-in-activity-library.md).</span><span class="sxs-lookup"><span data-stu-id="b191c-103">The most basic way to create an activity using [!INCLUDE[wf](../../../includes/wf-md.md)] in [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] is to create a class that inherits from <xref:System.Activities.Activity> that creates functionality by assembling custom activities or activities from the [Built-In Activity Library](../../../docs/framework/windows-workflow-foundation/net-framework-4-5-built-in-activity-library.md).</span></span> <span data-ttu-id="b191c-104">ここでは、2 つのメッセージをコンソールに書き込むアクティビティを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b191c-104">This topic demonstrates how to create an activity that writes two messages to the console.</span></span>  
   
-### アクティビティ デザイナーを使ってカスタム アクティビティを作成するには  
+### <a name="to-create-a-custom-activity-using-the-activity-designer"></a><span data-ttu-id="b191c-105">アクティビティ デザイナーを使ってカスタム アクティビティを作成するには</span><span class="sxs-lookup"><span data-stu-id="b191c-105">To create a custom Activity using the activity designer</span></span>  
   
-1.  [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] を開きます。  
+1.  <span data-ttu-id="b191c-106">[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] を開きます。</span><span class="sxs-lookup"><span data-stu-id="b191c-106">Open [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].</span></span>  
   
-2.  \[ファイル\]、\[新規作成\]、\[プロジェクト\] の順にクリックします。**\[プロジェクトの種類\]** ウィンドウの **\[Visual C\#\]** の下にある **\[ワークフロー 4.0\]** を選択し、**v2010 ノード**を選択します。**\[テンプレート\]** ウィンドウで **\[アクティビティ ライブラリ\]** をクリックします。新しいプロジェクトに HelloActivity という名前を付けます。  
+2.  <span data-ttu-id="b191c-107">[ファイル]、[新規作成]、[プロジェクト] の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="b191c-107">Select File, New, Project.</span></span> <span data-ttu-id="b191c-108">選択**Workflow 4.0**  **Visual c#**で、**プロジェクトの種類**ウィンドウ、および選択、 **v2010**ノード。</span><span class="sxs-lookup"><span data-stu-id="b191c-108">Select **Workflow 4.0** under **Visual C#** in the **Project Types** window, and select the **v2010** node.</span></span> <span data-ttu-id="b191c-109">選択**アクティビティ ライブラリ**で、**テンプレート**ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="b191c-109">Select **Activity Library** in the **Templates** window.</span></span> <span data-ttu-id="b191c-110">新しいプロジェクトに HelloActivity という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="b191c-110">Name the new project HelloActivity.</span></span>  
   
-3.  新しいアクティビティを開きます。<xref:System.Activities.Statements.Sequence> アクティビティをツールボックスからデザイナー画面にドラッグします。  
+3.  <span data-ttu-id="b191c-111">新しいアクティビティを開きます。</span><span class="sxs-lookup"><span data-stu-id="b191c-111">Open the new activity.</span></span>  <span data-ttu-id="b191c-112"><xref:System.Activities.Statements.Sequence> アクティビティをツールボックスからデザイナー画面にドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b191c-112">Drag a <xref:System.Activities.Statements.Sequence> activity from the toolbox onto the designer surface.</span></span>  
   
-4.  <xref:System.Activities.Statements.WriteLine> アクティビティを <xref:System.Activities.Statements.Sequence> アクティビティにドラッグします。**テキスト** フィールドに「`"Hello World"`」\(引用符を含む\) と入力します。  
+4.  <span data-ttu-id="b191c-113"><xref:System.Activities.Statements.WriteLine> アクティビティを <xref:System.Activities.Statements.Sequence> アクティビティにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b191c-113">Drag a <xref:System.Activities.Statements.WriteLine> activity into the <xref:System.Activities.Statements.Sequence> activity.</span></span> <span data-ttu-id="b191c-114">入力`"Hello World"`(引用符を含む) に、**テキスト**フィールドです。</span><span class="sxs-lookup"><span data-stu-id="b191c-114">Enter `"Hello World"` (with quotes) into the **Text** field.</span></span>  
   
-5.  2 つ目の <xref:System.Activities.Statements.WriteLine> アクティビティを、1 つ目の下にある <xref:System.Activities.Statements.Sequence> アクティビティにドラッグします。**テキスト** フィールドに「`"Goodbye"`」\(引用符を含む\) と入力します。
+5.  <span data-ttu-id="b191c-115">2 つ目の <xref:System.Activities.Statements.WriteLine> アクティビティを、1 つ目の下にある <xref:System.Activities.Statements.Sequence> アクティビティにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b191c-115">Drag a second <xref:System.Activities.Statements.WriteLine> activity into the <xref:System.Activities.Statements.Sequence> activity, below the first one.</span></span> <span data-ttu-id="b191c-116">入力`"Goodbye"`(引用符を含む) に、**テキスト**フィールドです。</span><span class="sxs-lookup"><span data-stu-id="b191c-116">Enter `"Goodbye"` (with quotes) into the **Text** field.</span></span>

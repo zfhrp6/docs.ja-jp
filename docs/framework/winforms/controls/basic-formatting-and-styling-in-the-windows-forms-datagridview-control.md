@@ -1,70 +1,71 @@
 ---
-title: "Windows フォームの DataGridView コントロールの基本的な書式設定およびスタイル設定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "データ グリッド, 書式指定"
-  - "DataGridView コントロール [Windows フォーム], 書式設定およびスタイル設定"
+title: "Windows フォームの DataGridView コントロールの基本的な書式設定およびスタイル設定"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- DataGridView control [Windows Forms], formatting and styling
+- data grids [Windows Forms], formatting
 ms.assetid: b9b90836-1f56-4aa9-8db8-edc78fe830e8
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1c6ae9c4159f8f9eafd73608e4fc3f4a646c1eaa
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# Windows フォームの DataGridView コントロールの基本的な書式設定およびスタイル設定
-`DataGridView` コントロールを使用すると、セルの基本的な外観およびセルの値の表示形式を簡単に定義できます。  `DataGridView` コントロールのさまざまなプロパティからアクセスできる `DataGridViewCellStyle` オブジェクトのプロパティを設定することにより、個々のセル、特定の列や行のセル、またはコントロール内のすべてのセルに対して、外観および書式スタイルを定義できます。  加えて、`CellFormatting` イベントを処理することにより、セルの値などの要因に基づいてこれらのスタイルを動的に変更できます。  
+# <a name="basic-formatting-and-styling-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="4ef03-102">Windows フォームの DataGridView コントロールの基本的な書式設定およびスタイル設定</span><span class="sxs-lookup"><span data-stu-id="4ef03-102">Basic Formatting and Styling in the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="4ef03-103">`DataGridView`コントロールでは、簡単にセルの基本の外観およびセルの値の表示形式を定義します。</span><span class="sxs-lookup"><span data-stu-id="4ef03-103">The `DataGridView` control makes it easy to define the basic appearance of cells and the display formatting of cell values.</span></span> <span data-ttu-id="4ef03-104">外観を定義することができ、個々 のセル、行、および特定の列にセルまたはコントロールのすべてのセルのプロパティを設定してスタイルの書式設定、`DataGridViewCellStyle`さまざまなを介してアクセスされるオブジェクト`DataGridView`プロパティを制御します。</span><span class="sxs-lookup"><span data-stu-id="4ef03-104">You can define appearance and formatting styles for individual cells, for cells in specific columns and rows, or for all cells in the control by setting the properties of the `DataGridViewCellStyle` objects accessed through various `DataGridView` control properties.</span></span> <span data-ttu-id="4ef03-105">さらに、処理することにより、セルの値などの要因に基づいて動的にこれらのスタイルを変更することができます、`CellFormatting`イベント。</span><span class="sxs-lookup"><span data-stu-id="4ef03-105">Additionally, you can modify these styles dynamically based on factors such as the cell value by handling the `CellFormatting` event.</span></span>  
   
-## このセクションの内容  
- [方法 : Windows フォーム DataGridView コントロールの境界線とグリッド線のスタイルを変更する](../../../../docs/framework/winforms/controls/change-the-border-and-gridline-styles-in-the-datagrid.md)  
- `DataGridView` のプロパティを設定して、コントロールの輪郭およびセル間の境界線の外観を定義する方法を説明します。  
+## <a name="in-this-section"></a><span data-ttu-id="4ef03-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="4ef03-106">In This Section</span></span>  
+ [<span data-ttu-id="4ef03-107">方法: Windows フォーム DataGridView コントロールの境界線とグリッド線のスタイルを変更する</span><span class="sxs-lookup"><span data-stu-id="4ef03-107">How to: Change the Border and Gridline Styles in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/change-the-border-and-gridline-styles-in-the-datagrid.md)  
+ <span data-ttu-id="4ef03-108">設定する方法について説明`DataGridView`コントロールの境界線とセル間の境界線の外観を定義するプロパティです。</span><span class="sxs-lookup"><span data-stu-id="4ef03-108">Describes how to set `DataGridView` properties that define the appearance of the control border and the boundary lines between cells.</span></span>  
   
- [Windows フォーム DataGridView コントロールでのセルのスタイル](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)  
- `DataGridViewCellStyle` クラスについてと、この型のプロパティがどのようにやり取りしてコントロール内のセルの表示方法が定義されるかについて説明します。  
+ [<span data-ttu-id="4ef03-109">Windows フォーム DataGridView コントロールでのセルのスタイル</span><span class="sxs-lookup"><span data-stu-id="4ef03-109">Cell Styles in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)  
+ <span data-ttu-id="4ef03-110">について説明します、`DataGridViewCellStyle`クラス対話方法とその型のプロパティをコントロールにセルを表示する方法を定義します。</span><span class="sxs-lookup"><span data-stu-id="4ef03-110">Describes the `DataGridViewCellStyle` class and how properties of that type interact to define how cells are displayed in the control.</span></span>  
   
- [方法 : Windows フォーム DataGridView コントロールの既定のセル スタイルを設定する](../../../../docs/framework/winforms/controls/how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md)  
- `DataGridViewCellStyle` のプロパティを使用して、特定の行や列のセル、およびコントロール全体のセルに対して既定の外観を定義する方法を説明します。  
+ [<span data-ttu-id="4ef03-111">方法: Windows フォーム DataGridView コントロールの既定のセル スタイルを設定する</span><span class="sxs-lookup"><span data-stu-id="4ef03-111">How to: Set Default Cell Styles for the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md)  
+ <span data-ttu-id="4ef03-112">使用する方法について説明`DataGridViewCellStyle`特定の行と列では、コントロール全体では、セルの既定の外観を定義するプロパティです。</span><span class="sxs-lookup"><span data-stu-id="4ef03-112">Describes how to use `DataGridViewCellStyle` properties to define the default appearance of cells in specific rows and columns and in the entire control.</span></span>  
   
- [方法 : Windows フォーム DataGridView コントロールのデータの書式を設定する](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md)  
- `DataGridViewCellStyle` のプロパティを使用してセルの表示値の書式を設定する方法を説明します。  
+ [<span data-ttu-id="4ef03-113">方法: Windows フォーム DataGridView コントロールのデータの書式を設定する</span><span class="sxs-lookup"><span data-stu-id="4ef03-113">How to: Format Data in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md)  
+ <span data-ttu-id="4ef03-114">使用して、セルの表示値の書式を設定する方法について説明`DataGridViewCellStyle`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="4ef03-114">Describes how to format cell display values using `DataGridViewCellStyle` properties.</span></span>  
   
- [方法 : Windows フォーム DataGridView コントロールのフォントと色のスタイルを設定する](../../../../docs/framework/winforms/controls/how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control.md)  
- `DefaultCellStyle` プロパティを使用して、コントロール内のすべてのセルの基本的な表示特性を設定する方法を説明します。  
+ [<span data-ttu-id="4ef03-115">方法: Windows フォーム DataGridView コントロールのフォントと色のスタイルを設定する</span><span class="sxs-lookup"><span data-stu-id="4ef03-115">How to: Set Font and Color Styles in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control.md)  
+ <span data-ttu-id="4ef03-116">使用する方法について説明します、`DefaultCellStyle`基本的な設定するプロパティがコントロールにすべてのセルの特性を表示します。</span><span class="sxs-lookup"><span data-stu-id="4ef03-116">Describes how to use the `DefaultCellStyle` property to set basic display characteristics for all cells in the control.</span></span>  
   
- [方法 : Windows フォーム DataGridView コントロールに交互の行のスタイルを設定する](../../../../docs/framework/winforms/controls/how-to-set-alternating-row-styles-for-the-windows-forms-datagridview-control.md)  
- 行の表示を交互に変えて、コントロール内で帳簿のような効果を生む方法を説明します。  
+ [<span data-ttu-id="4ef03-117">方法: Windows フォーム DataGridView コントロールに交互の行のスタイルを設定する</span><span class="sxs-lookup"><span data-stu-id="4ef03-117">How to: Set Alternating Row Styles for the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-set-alternating-row-styles-for-the-windows-forms-datagridview-control.md)  
+ <span data-ttu-id="4ef03-118">異なる方法で表示される交互の行を使用して、コントロールで、帳簿のような効果を作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="4ef03-118">Describes how to create a ledger-like effect in the control using alternating rows that are displayed differently.</span></span>  
   
- [方法 : 行テンプレートを使用して Windows フォーム DataGridView コントロールの行をカスタマイズする](../../../../docs/framework/winforms/controls/use-the-row-template-to-customize-rows-in-the-datagrid.md)  
- `RowTemplate` プロパティを使用して、コントロール内のすべての行に対して適用される行のプロパティを設定する方法を説明します。  
+ [<span data-ttu-id="4ef03-119">方法: 行テンプレートを使用して Windows フォーム DataGridView コントロールの行をカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="4ef03-119">How to: Use the Row Template to Customize Rows in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/use-the-row-template-to-customize-rows-in-the-datagrid.md)  
+ <span data-ttu-id="4ef03-120">使用する方法について説明します、`RowTemplate`プロパティをすべての行のコントロールで使用される行のプロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="4ef03-120">Describes how to use the `RowTemplate` property to set row properties that will be used for all rows in the control.</span></span>  
   
-## 関連項目  
+## <a name="reference"></a><span data-ttu-id="4ef03-121">参照</span><span class="sxs-lookup"><span data-stu-id="4ef03-121">Reference</span></span>  
  <xref:System.Windows.Forms.DataGridView>  
- <xref:System.Windows.Forms.DataGridView> コントロールの参照ドキュメントを提供します。  
+ <span data-ttu-id="4ef03-122"><xref:System.Windows.Forms.DataGridView> コントロールのリファレンス ドキュメントを提供します。</span><span class="sxs-lookup"><span data-stu-id="4ef03-122">Provides reference documentation for the <xref:System.Windows.Forms.DataGridView> control.</span></span>  
   
  <xref:System.Windows.Forms.DataGridViewCellStyle>  
- <xref:System.Windows.Forms.DataGridViewCellStyle> クラスの参照ドキュメントを提供します。  
+ <span data-ttu-id="4ef03-123">リファレンス ドキュメントを提供、<xref:System.Windows.Forms.DataGridViewCellStyle>クラスです。</span><span class="sxs-lookup"><span data-stu-id="4ef03-123">Provides reference documentation for the <xref:System.Windows.Forms.DataGridViewCellStyle> class.</span></span>  
   
  <xref:System.Windows.Forms.DataGridView.CellFormatting>  
- <xref:System.Windows.Forms.DataGridView.CellFormatting> イベントの参照ドキュメントを提供します。  
+ <span data-ttu-id="4ef03-124">リファレンス ドキュメントを提供、<xref:System.Windows.Forms.DataGridView.CellFormatting>イベント。</span><span class="sxs-lookup"><span data-stu-id="4ef03-124">Provides reference documentation for the <xref:System.Windows.Forms.DataGridView.CellFormatting> event.</span></span>  
   
  <xref:System.Windows.Forms.DataGridView.RowTemplate%2A>  
- <xref:System.Windows.Forms.DataGridView.RowTemplate%2A> プロパティの参照ドキュメントを提供します。  
+ <span data-ttu-id="4ef03-125">リファレンス ドキュメントを提供、<xref:System.Windows.Forms.DataGridView.RowTemplate%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="4ef03-125">Provides reference documentation for the <xref:System.Windows.Forms.DataGridView.RowTemplate%2A> property.</span></span>  
   
-## 関連項目  
- [Windows フォーム DataGridView コントロールのカスタマイズ](../../../../docs/framework/winforms/controls/customizing-the-windows-forms-datagridview-control.md)  
- <xref:System.Windows.Forms.DataGridView> のセルと行を独自に描画する方法と、セル、列、行の派生型を作成する方法についてのトピックを示します。  
+## <a name="related-sections"></a><span data-ttu-id="4ef03-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="4ef03-126">Related Sections</span></span>  
+ [<span data-ttu-id="4ef03-127">Windows フォーム DataGridView コントロールのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="4ef03-127">Customizing the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/customizing-the-windows-forms-datagridview-control.md)  
+ <span data-ttu-id="4ef03-128"><xref:System.Windows.Forms.DataGridView> のセルおよび行のカスタム描画と、セル、列、および行の派生型の作成について説明するトピックを示します。</span><span class="sxs-lookup"><span data-stu-id="4ef03-128">Provides topics that describe custom painting <xref:System.Windows.Forms.DataGridView> cells and rows, and creating derived cell, column, and row types.</span></span>  
   
- [Windows フォーム DataGridView コントロールでの列、行、およびセルの基本機能](../../../../docs/framework/winforms/controls/basic-column-row-and-cell-features-wf-datagridview-control.md)  
- セル、行、および列の一般的なプロパティを説明するトピックを示します。  
+ [<span data-ttu-id="4ef03-129">Windows フォーム DataGridView コントロールでの列、行、およびセルの基本機能</span><span class="sxs-lookup"><span data-stu-id="4ef03-129">Basic Column, Row, and Cell Features in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/basic-column-row-and-cell-features-wf-datagridview-control.md)  
+ <span data-ttu-id="4ef03-130">よくを説明するトピックに使用されるセル、行、および列のプロパティを提供します。</span><span class="sxs-lookup"><span data-stu-id="4ef03-130">Provides topics that describe commonly used cell, row, and column properties.</span></span>  
   
-## 参照  
- [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="4ef03-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="4ef03-131">See Also</span></span>  
+ [<span data-ttu-id="4ef03-132">DataGridView コントロール</span><span class="sxs-lookup"><span data-stu-id="4ef03-132">DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)

@@ -1,35 +1,37 @@
 ---
-title: "バッチ処理 (WCF Data Services) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "WCF Data Services, クライアント ライブラリ"
+title: "バッチ処理 (WCF Data Services)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: WCF Data Services, client library
 ms.assetid: 962a49d1-cc11-4b96-bc7d-071dd6607d6c
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e929e9771ba1d47016919f017f3476b17581d8a1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# バッチ処理 (WCF Data Services)
-[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] は、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] ベースのサービスに対する要求のバッチ処理をサポートしています。  詳細については、「[OData: バッチ処理](http://go.microsoft.com/fwlink/?LinkId=186075)」を参照してください。[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、<xref:System.Data.Services.Client.DataServiceContext> を使用する各操作 \(クエリの実行や変更の保存など\) は、データ サービスに個別に送信される要求になります。  操作セットの論理スコープを維持するために、操作バッチを明示的に定義する必要があります。  この定義により、バッチ内のすべての操作が 1 つの HTTP 要求でデータ サービスに送信され、サーバーが操作を自動的に処理できるようになり、データ サービスへのラウンド トリップの数が減少します。  
+# <a name="batching-operations-wcf-data-services"></a><span data-ttu-id="b2a6a-102">バッチ処理 (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="b2a6a-102">Batching Operations (WCF Data Services)</span></span>
+<span data-ttu-id="b2a6a-103">[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]バッチへの要求の処理をサポートする、 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-ベースのサービスです。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-103">The [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] supports batch processing of requests to an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-based service.</span></span> <span data-ttu-id="b2a6a-104">詳細については、次を参照してください。 [OData: バッチ処理](http://go.microsoft.com/fwlink/?LinkId=186075)です。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-104">For more information, see [OData: Batch Processing](http://go.microsoft.com/fwlink/?LinkId=186075).</span></span> <span data-ttu-id="b2a6a-105">[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]、使用する各操作、<xref:System.Data.Services.Client.DataServiceContext>クエリを実行するなど、別のデータ サービスに送信される要求の結果の変更を保存します。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-105">In [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], each operation that uses the <xref:System.Data.Services.Client.DataServiceContext>, such as executing a query or saving changes, results in a separate request being sent to the data service.</span></span> <span data-ttu-id="b2a6a-106">操作セットの論理スコープを維持するために、操作バッチを明示的に定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-106">In order to maintain a logical scope for sets of operations, you can explicitly define operational batches.</span></span> <span data-ttu-id="b2a6a-107">これにより、バッチ内のすべての操作に 1 つの HTTP 要求でデータ サービスに送信し、により、サーバーは、操作をアトミックに、処理をされ、データ サービスへのラウンド トリップの数が減ることです。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-107">This ensures that all operations in the batch are sent to the data service in a single HTTP request, enables the server to process the operations atomically, and reduces the number of round trips to the data service.</span></span>  
   
-## クエリ操作のバッチ処理  
- 複数のクエリを 1 つのバッチで実行するには、バッチ内の各クエリを <xref:System.Data.Services.Client.DataServiceRequest%601> クラスの個別のインスタンスとして作成する必要があります。  この方法でクエリ要求を作成すると、クエリ自身が URI として定義されます。このクエリは、リソースのアドレス指定のルールに従います。  詳細については、「[データ サービス リソースへのアクセス](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)」を参照してください。  バッチ化されたクエリ要求は、クエリ要求オブジェクトを含む <xref:System.Data.Services.Client.DataServiceContext.ExecuteBatch%2A> メソッドが呼び出されたときにデータ サービスに送信されます。  このメソッドは、<xref:System.Data.Services.Client.DataServiceResponse> オブジェクトを返します。このオブジェクトは、バッチ内の個々の要求への応答を表す <xref:System.Data.Services.Client.QueryOperationResponse%601> オブジェクトのコレクションです。個々のオブジェクトには、クエリによって返されるオブジェクトのコレクションまたはエラー情報が含まれます。  バッチ内のいずれかのクエリ操作が失敗した場合、<xref:System.Data.Services.Client.QueryOperationResponse%601> オブジェクトで失敗した操作のエラー情報が返され、残りの操作は引き続き実行されます。  詳細については、「[方法: クエリをバッチで実行する](../../../../docs/framework/data/wcf/how-to-execute-queries-in-a-batch-wcf-data-services.md)」を参照してください。  
+## <a name="batching-query-operations"></a><span data-ttu-id="b2a6a-108">クエリ操作のバッチ処理</span><span class="sxs-lookup"><span data-stu-id="b2a6a-108">Batching Query Operations</span></span>  
+ <span data-ttu-id="b2a6a-109">複数のクエリを 1 つのバッチで実行するには、バッチ内の各クエリを <xref:System.Data.Services.Client.DataServiceRequest%601> クラスの個別のインスタンスとして作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-109">To execute multiple queries in a single batch, you must create each query in the batch as a separate instance of the <xref:System.Data.Services.Client.DataServiceRequest%601> class.</span></span> <span data-ttu-id="b2a6a-110">この方法でクエリ要求を作成すると、クエリ自身が URI として定義されます。このクエリは、リソースのアドレス指定のルールに従います。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-110">When you create a query request in this manner, the query itself is defined as a URI, and it follows the rules for addressing resources.</span></span> <span data-ttu-id="b2a6a-111">詳細については、次を参照してください。[データ サービス リソースのへのアクセス](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-111">For more information, see [Accessing Data Service Resources](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md).</span></span> <span data-ttu-id="b2a6a-112">バッチ化されたクエリ要求は、クエリ要求オブジェクトを含む <xref:System.Data.Services.Client.DataServiceContext.ExecuteBatch%2A> メソッドが呼び出されたときにデータ サービスに送信されます。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-112">The batched query requests are sent to the data service when the <xref:System.Data.Services.Client.DataServiceContext.ExecuteBatch%2A> method is called that contains the query request objects.</span></span> <span data-ttu-id="b2a6a-113">このメソッドは、<xref:System.Data.Services.Client.DataServiceResponse> オブジェクトを返します。このオブジェクトは、バッチ内の個々の要求への応答を表す <xref:System.Data.Services.Client.QueryOperationResponse%601> オブジェクトのコレクションです。個々のオブジェクトには、クエリによって返されるオブジェクトのコレクションまたはエラー情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-113">This method returns a <xref:System.Data.Services.Client.DataServiceResponse> object, which is a collection of <xref:System.Data.Services.Client.QueryOperationResponse%601> objects that represent responses to individual queries in the batch, each of which contains either a collection of objects returned by the query or error information.</span></span> <span data-ttu-id="b2a6a-114">バッチ内のいずれかのクエリ操作が失敗した場合、<xref:System.Data.Services.Client.QueryOperationResponse%601> オブジェクトで失敗した操作のエラー情報が返され、残りの操作は引き続き実行されます。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-114">When any single query operation in the batch fails, error information is returned in the <xref:System.Data.Services.Client.QueryOperationResponse%601> object for the operation that failed and the remaining operations are still executed.</span></span> <span data-ttu-id="b2a6a-115">詳細については、次を参照してください。[する方法: バッチ内のクエリの実行](../../../../docs/framework/data/wcf/how-to-execute-queries-in-a-batch-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-115">For more information, see [How to: Execute Queries in a Batch](../../../../docs/framework/data/wcf/how-to-execute-queries-in-a-batch-wcf-data-services.md).</span></span>  
   
- バッチ クエリは、非同期で実行することもできます。  詳細については、「[非同期操作](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)」を参照してください。  
+ <span data-ttu-id="b2a6a-116">バッチ クエリは、非同期で実行することもできます。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-116">Batched queries can also be executed asynchronously.</span></span> <span data-ttu-id="b2a6a-117">詳細については、次を参照してください。[非同期操作](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-117">For more information, see [Asynchronous Operations](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md).</span></span>  
   
-## 変更の保存操作のバッチ処理  
- <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> メソッドを呼び出すとき、コンテキストが追跡するすべての変更が REST ベースの操作に変換され、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] サービスに対する要求として送信されます。  既定では、これらの変更は 1 つの要求メッセージで送信されません。  すべての変更を 1 つの要求で送信するには、<xref:System.Data.Services.Client.DataServiceContext.SaveChanges%28System.Data.Services.Client.SaveChangesOptions%29> メソッドを呼び出して、メソッドに指定する <xref:System.Data.Services.Client.SaveChangesOptions> 列挙体に <xref:System.Data.Services.Client.SaveChangesOptions> の値を含める必要があります。  
+## <a name="batching-the-savechanges-operation"></a><span data-ttu-id="b2a6a-118">変更の保存操作のバッチ処理</span><span class="sxs-lookup"><span data-stu-id="b2a6a-118">Batching the SaveChanges Operation</span></span>  
+ <span data-ttu-id="b2a6a-119">呼び出すと、<xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A>メソッドは、すべての変更をトラックとして送信される REST ベースの操作に変換されたコンテキストの要求を[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]サービス。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-119">When you call the <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> method, all changes that the context tracks are translated into REST-based operations that are sent as requests to the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] service.</span></span> <span data-ttu-id="b2a6a-120">既定では、これらの変更は 1 つの要求メッセージで送信されません。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-120">By default, these changes are not sent in a single request message.</span></span> <span data-ttu-id="b2a6a-121">すべての変更が 1 つの要求で送信されることが必要なを呼び出す必要があります、<xref:System.Data.Services.Client.DataServiceContext.SaveChanges%28System.Data.Services.Client.SaveChangesOptions%29>メソッドの値を含める<xref:System.Data.Services.Client.SaveChangesOptions.Batch>で、<xref:System.Data.Services.Client.SaveChangesOptions>メソッドに指定する列挙体です。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-121">To require that all changes be sent in a single request, you must call the <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%28System.Data.Services.Client.SaveChangesOptions%29> method and include a value of <xref:System.Data.Services.Client.SaveChangesOptions.Batch> in the <xref:System.Data.Services.Client.SaveChangesOptions> enumeration that you supply to the method.</span></span>  
   
- バッチ処理された変更を非同期で保存することもできます。  詳細については、「[非同期操作](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)」を参照してください。  
+ <span data-ttu-id="b2a6a-122">バッチ処理された変更を非同期で保存することもできます。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-122">You can also asynchronously save batched changes.</span></span> <span data-ttu-id="b2a6a-123">詳細については、次を参照してください。[非同期操作](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="b2a6a-123">For more information, see [Asynchronous Operations](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md).</span></span>  
   
-## 参照  
- [WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
+## <a name="see-also"></a><span data-ttu-id="b2a6a-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="b2a6a-124">See Also</span></span>  
+ [<span data-ttu-id="b2a6a-125">WCF Data Services クライアント ライブラリ</span><span class="sxs-lookup"><span data-stu-id="b2a6a-125">WCF Data Services Client Library</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

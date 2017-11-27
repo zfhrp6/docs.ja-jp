@@ -1,34 +1,34 @@
 ---
-title: "Windows フォームにおけるマウスのキャプチャ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "マウス, キャプチャ"
+title: "Windows フォームにおけるマウスのキャプチャ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: mouse [Windows Forms], capture
 ms.assetid: 8911d4b0-a4f8-4f93-8246-371aebd27d0c
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8004b05ea25341a142bfcfd9ae812ee3bebd6d5b
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# Windows フォームにおけるマウスのキャプチャ
-*マウスのキャプチャ*とは、コントロールがすべてのマウス入力のコマンドを受け取ることを意味します。  コントロールがマウスをキャプチャしている場合は、マウス ポインターが境界内にあるかどうかにかかわらず、マウス入力を受け取ります。  
+# <a name="mouse-capture-in-windows-forms"></a><span data-ttu-id="ce649-102">Windows フォームにおけるマウスのキャプチャ</span><span class="sxs-lookup"><span data-stu-id="ce649-102">Mouse Capture in Windows Forms</span></span>
+<span data-ttu-id="ce649-103">*マウスのキャプチャ*コントロールは、すべてのマウス入力のコマンドを実行する場合を参照します。</span><span class="sxs-lookup"><span data-stu-id="ce649-103">*Mouse capture* refers to when a control takes command of all mouse input.</span></span> <span data-ttu-id="ce649-104">コントロールがマウスをキャプチャしていた場合は、ポインターが境界内にあるかどうかを示す、マウス入力を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="ce649-104">When a control has captured the mouse, it receives mouse input whether or not the pointer is within its borders.</span></span>  
   
-## マウスのキャプチャの設定  
- Windows フォーム内では、マウスは、ユーザーがコントロール上でマウス ボタンを押した時にコントロールによってキャプチャされ、ユーザーがマウス ボタンを離したときにコントロールによって解放されます。  
+## <a name="setting-mouse-capture"></a><span data-ttu-id="ce649-105">マウスのキャプチャの設定</span><span class="sxs-lookup"><span data-stu-id="ce649-105">Setting Mouse Capture</span></span>  
+ <span data-ttu-id="ce649-106">Windows フォームでは、ユーザーがコントロールでマウス ボタンを押すし、ユーザーがマウス ボタンを離すと、マウスがコントロールによってリリースされたときに、マウスがコントロールによってキャプチャされます。</span><span class="sxs-lookup"><span data-stu-id="ce649-106">In Windows Forms the mouse is captured by the control when the user presses a mouse button on a control, and the mouse is released by the control when the user releases the mouse button.</span></span>  
   
- <xref:System.Windows.Forms.Control> クラスの <xref:System.Windows.Forms.Control.Capture%2A> プロパティは、コントロールがマウスをキャプチャしているかどうかを指定します。  コントロールがマウスのキャプチャをいつ失ったかを判断するには、<xref:System.Windows.Forms.Control.MouseCaptureChanged> イベントを処理します。  
+ <span data-ttu-id="ce649-107"><xref:System.Windows.Forms.Control.Capture%2A>のプロパティ、<xref:System.Windows.Forms.Control>クラスは、コントロールがマウスをキャプチャしたかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="ce649-107">The <xref:System.Windows.Forms.Control.Capture%2A> property of the <xref:System.Windows.Forms.Control> class specifies whether a control has captured the mouse.</span></span> <span data-ttu-id="ce649-108">調べるには、コントロールがマウス キャプチャを失ったときに、処理、<xref:System.Windows.Forms.Control.MouseCaptureChanged>イベント。</span><span class="sxs-lookup"><span data-stu-id="ce649-108">To determine when a control loses mouse capture, handle the <xref:System.Windows.Forms.Control.MouseCaptureChanged> event.</span></span>  
   
- 手前のウィンドウだけがマウスをキャプチャできます。  背面のウィンドウがマウスをキャプチャしようとすると、ウィンドウは、マウス ポインターがウィンドウの表示部分内にあるときに発生したマウス イベントのメッセージだけを受け取ります。  また、前面のウィンドウがマウスをキャプチャした場合でも、ユーザーは別のウィンドウをクリックすると、そのウィンドウを前面に表示できます。  マウスがキャプチャされると、ショートカット キーは動作しません。  
+ <span data-ttu-id="ce649-109">前面のウィンドウのみでは、マウスをキャプチャできます。</span><span class="sxs-lookup"><span data-stu-id="ce649-109">Only the foreground window can capture the mouse.</span></span> <span data-ttu-id="ce649-110">バック グラウンド ウィンドウがマウスをキャプチャしようとすると、ウィンドウは、ウィンドウの表示部分内でマウス ポインターがあるときに発生するマウス イベントのメッセージだけを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="ce649-110">When a background window attempts to capture the mouse, the window receives messages only for mouse events that occur when the mouse pointer is within the visible portion of the window.</span></span> <span data-ttu-id="ce649-111">また、場合でも、前面のウィンドウは、マウスをキャプチャして、ユーザーでもはクリックして別のウィンドウが前面に取り込みます。</span><span class="sxs-lookup"><span data-stu-id="ce649-111">Also, even if the foreground window has captured the mouse, the user can still click another window, bringing it to the foreground.</span></span> <span data-ttu-id="ce649-112">マウスがキャプチャされると、ショートカット キーは機能しません。</span><span class="sxs-lookup"><span data-stu-id="ce649-112">When the mouse is captured, shortcut keys do not work.</span></span>  
   
-## 参照  
- [Windows フォーム アプリケーションにおけるマウス入力](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)
+## <a name="see-also"></a><span data-ttu-id="ce649-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="ce649-113">See Also</span></span>  
+ [<span data-ttu-id="ce649-114">Windows フォーム アプリケーションにおけるマウス入力</span><span class="sxs-lookup"><span data-stu-id="ce649-114">Mouse Input in a Windows Forms Application</span></span>](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)

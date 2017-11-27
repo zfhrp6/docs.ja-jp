@@ -1,90 +1,86 @@
 ---
-title: "WCF の &lt;states&gt;、&lt;workflowInstanceQuery&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WCF の &lt;states&gt;、&lt;workflowInstanceQuery&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d17f7525-8035-4e9e-85a0-4cddae59f85d
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: fb2a277759904a415316e29ba8151f7c1a0f475d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WCF の &lt;states&gt;、&lt;workflowInstanceQuery&gt;
-追跡レコードが作成されたときの追跡ワークフロー インスタンスの定期受信済み状態のコレクションを表します。  
+# <a name="ltstatesgt-of-wcf-ltworkflowinstancequerygt"></a><span data-ttu-id="64183-102">WCF の &lt;states&gt;、&lt;workflowInstanceQuery&gt;</span><span class="sxs-lookup"><span data-stu-id="64183-102">&lt;states&gt; of WCF, &lt;workflowInstanceQuery&gt;</span></span>
+<span data-ttu-id="64183-103">追跡レコードが作成されたときの追跡ワークフロー インスタンスの定期受信済み状態のコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="64183-103">Represents a collection of subscribed states from the tracked workflow instance when the tracking records are created.</span></span>  
   
- 追跡プロファイルのクエリの詳細については、「[追跡プロファイル](../../../../../docs/framework/windows-workflow-foundation//tracking-profiles.md)」を参照してください。  
+ <span data-ttu-id="64183-104">追跡プロファイルのクエリの詳細については、次を参照してください[追跡プロファイル。](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)</span><span class="sxs-lookup"><span data-stu-id="64183-104">For more information on tracking profile queries, see [Tracking Profiles](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)</span></span>  
   
-## 構文  
+ <span data-ttu-id="64183-105">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="64183-105">\<system.serviceModel></span></span>  
+<span data-ttu-id="64183-106">\<追跡 ></span><span class="sxs-lookup"><span data-stu-id="64183-106">\<tracking></span></span>  
+<span data-ttu-id="64183-107">\<trackingProfile ></span><span class="sxs-lookup"><span data-stu-id="64183-107">\<trackingProfile></span></span>  
+<span data-ttu-id="64183-108">\<ワークフロー ></span><span class="sxs-lookup"><span data-stu-id="64183-108">\<workflow></span></span>  
+<span data-ttu-id="64183-109">\<workflowInstanceQueries ></span><span class="sxs-lookup"><span data-stu-id="64183-109">\<workflowInstanceQueries></span></span>  
+<span data-ttu-id="64183-110">\<workflowInstanceQuery ></span><span class="sxs-lookup"><span data-stu-id="64183-110">\<workflowInstanceQuery></span></span>  
+<span data-ttu-id="64183-111">\<状態 ></span><span class="sxs-lookup"><span data-stu-id="64183-111">\<states></span></span>  
   
-```vb  
+## <a name="syntax"></a><span data-ttu-id="64183-112">構文</span><span class="sxs-lookup"><span data-stu-id="64183-112">Syntax</span></span>  
   
-<tracking>  
-   <trackingProfile name="Name">  
-       <workflow>  
-          <workflowInstanceQueries>  
-             <workflowInstanceQuery>  
-                <states>  
-                   <state name="Name"/>  
-                </states>  
-            </workflowInstanceQuery>  
-         </workflowInstanceQueries>  
-       </workflow>  
-   </trackingProfile>  
-</tracking>  
+```xml
+<tracking>   <trackingProfile name="Name">       <workflow>          <workflowInstanceQueries>             <workflowInstanceQuery>                <states>                   <state name="Name"/>                </states>            </workflowInstanceQuery>         </workflowInstanceQueries>       </workflow>   </trackingProfile></tracking>  
+```
   
-```  
+## <a name="attributes-and-elements"></a><span data-ttu-id="64183-113">属性および要素</span><span class="sxs-lookup"><span data-stu-id="64183-113">Attributes and Elements</span></span>  
+ <span data-ttu-id="64183-114">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="64183-114">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+### <a name="attributes"></a><span data-ttu-id="64183-115">属性</span><span class="sxs-lookup"><span data-stu-id="64183-115">Attributes</span></span>  
+ <span data-ttu-id="64183-116">なし。</span><span class="sxs-lookup"><span data-stu-id="64183-116">None.</span></span>  
   
-### 属性  
- なし。  
+### <a name="child-elements"></a><span data-ttu-id="64183-117">子要素</span><span class="sxs-lookup"><span data-stu-id="64183-117">Child Elements</span></span>  
   
-### 子要素  
+|<span data-ttu-id="64183-118">要素</span><span class="sxs-lookup"><span data-stu-id="64183-118">Element</span></span>|<span data-ttu-id="64183-119">説明</span><span class="sxs-lookup"><span data-stu-id="64183-119">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="64183-120">\<状態 ></span><span class="sxs-lookup"><span data-stu-id="64183-120">\<states></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md)|<span data-ttu-id="64183-121">追跡レコードが作成されたときの追跡ワークフロー インスタンスの定期受信済み状態。</span><span class="sxs-lookup"><span data-stu-id="64183-121">A subscribed state from the tracked workflow instance when the tracking record is created.</span></span>|  
   
-|要素|説明|  
-|--------|--------|  
-|[\<states\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md)|追跡レコードが作成されたときの追跡ワークフロー インスタンスの定期受信済み状態。|  
+### <a name="parent-elements"></a><span data-ttu-id="64183-122">親要素</span><span class="sxs-lookup"><span data-stu-id="64183-122">Parent Elements</span></span>  
   
-### 親要素  
+|<span data-ttu-id="64183-123">要素</span><span class="sxs-lookup"><span data-stu-id="64183-123">Element</span></span>|<span data-ttu-id="64183-124">説明</span><span class="sxs-lookup"><span data-stu-id="64183-124">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="64183-125">\<workflowInstanceQuery ></span><span class="sxs-lookup"><span data-stu-id="64183-125">\<workflowInstanceQuery></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflowinstancequery.md)|<span data-ttu-id="64183-126">開始したイベントや完了したイベントなど、ワークフロー インスタンスのライフサイクルの変化を追跡するクエリ。</span><span class="sxs-lookup"><span data-stu-id="64183-126">A query that tracks workflow instance life cycle changes such as a started or completed event.</span></span>|  
   
-|要素|説明|  
-|--------|--------|  
-|[\<workflowInstanceQuery\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflowinstancequery.md)|開始したイベントや完了したイベントなど、ワークフロー インスタンスのライフサイクルの変化を追跡するクエリ。|  
+## <a name="remarks"></a><span data-ttu-id="64183-127">コメント</span><span class="sxs-lookup"><span data-stu-id="64183-127">Remarks</span></span>  
+ <span data-ttu-id="64183-128">返されたレコードは、このコレクションの状態でフィルター処理されます。</span><span class="sxs-lookup"><span data-stu-id="64183-128">The returned records are filtered by the states in this collection.</span></span>  
   
-## 解説  
- 返されたレコードは、このコレクションの状態でフィルター処理されます。  
+ <span data-ttu-id="64183-129">次の表に、有効な状態の値を示します。</span><span class="sxs-lookup"><span data-stu-id="64183-129">Possible state values are described in the following table.</span></span>  
   
- 次の表に、有効な状態の値を示します。  
+|<span data-ttu-id="64183-130">状態</span><span class="sxs-lookup"><span data-stu-id="64183-130">State</span></span>|<span data-ttu-id="64183-131">説明</span><span class="sxs-lookup"><span data-stu-id="64183-131">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="64183-132">Aborted</span><span class="sxs-lookup"><span data-stu-id="64183-132">Aborted</span></span>|<span data-ttu-id="64183-133">ワークフロー インスタンスは中止されました。</span><span class="sxs-lookup"><span data-stu-id="64183-133">The workflow instance is aborted.</span></span>|  
+|<span data-ttu-id="64183-134">Completed</span><span class="sxs-lookup"><span data-stu-id="64183-134">Completed</span></span>|<span data-ttu-id="64183-135">ワークフロー インスタンスは完了しました。</span><span class="sxs-lookup"><span data-stu-id="64183-135">The workflow instance is completed.</span></span>|  
+|<span data-ttu-id="64183-136">Deleted</span><span class="sxs-lookup"><span data-stu-id="64183-136">Deleted</span></span>|<span data-ttu-id="64183-137">ワークフロー インスタンスは削除されました。</span><span class="sxs-lookup"><span data-stu-id="64183-137">The workflow instance is deleted.</span></span>|  
+|<span data-ttu-id="64183-138">Idle</span><span class="sxs-lookup"><span data-stu-id="64183-138">Idle</span></span>|<span data-ttu-id="64183-139">ワークフロー インスタンスはアイドル状態です。</span><span class="sxs-lookup"><span data-stu-id="64183-139">The workflow instance is idle.</span></span>|  
+|<span data-ttu-id="64183-140">Persisted</span><span class="sxs-lookup"><span data-stu-id="64183-140">Persisted</span></span>|<span data-ttu-id="64183-141">ワークフロー インスタンスは永続化されました。</span><span class="sxs-lookup"><span data-stu-id="64183-141">The workflow instance is persisted.</span></span>|  
+|<span data-ttu-id="64183-142">Resumed</span><span class="sxs-lookup"><span data-stu-id="64183-142">Resumed</span></span>|<span data-ttu-id="64183-143">ワークフロー インスタンスが再開されました。</span><span class="sxs-lookup"><span data-stu-id="64183-143">The workflow instance is resumed.</span></span>|  
+|<span data-ttu-id="64183-144">Started</span><span class="sxs-lookup"><span data-stu-id="64183-144">Started</span></span>|<span data-ttu-id="64183-145">ワークフロー インスタンスが開始されました。</span><span class="sxs-lookup"><span data-stu-id="64183-145">The workflow instance is started.</span></span>|  
+|<span data-ttu-id="64183-146">UnhandledException</span><span class="sxs-lookup"><span data-stu-id="64183-146">UnhandledException</span></span>|<span data-ttu-id="64183-147">ワークフロー インスタンスで未処理の例外が発生しました。</span><span class="sxs-lookup"><span data-stu-id="64183-147">The workflow instance encountered an unhandled exception.</span></span>|  
+|<span data-ttu-id="64183-148">アンロード</span><span class="sxs-lookup"><span data-stu-id="64183-148">Unloaded</span></span>|<span data-ttu-id="64183-149">ワークフロー インスタンスはアンロードされました。</span><span class="sxs-lookup"><span data-stu-id="64183-149">The workflow instance is unloaded.</span></span>|  
+|<span data-ttu-id="64183-150">Canceled</span><span class="sxs-lookup"><span data-stu-id="64183-150">Canceled</span></span>|<span data-ttu-id="64183-151">ワークフロー インスタンスは取り消されました。</span><span class="sxs-lookup"><span data-stu-id="64183-151">The workflow instance is canceled.</span></span>|  
+|<span data-ttu-id="64183-152">Suspended</span><span class="sxs-lookup"><span data-stu-id="64183-152">Suspended</span></span>|<span data-ttu-id="64183-153">ワークフロー インスタンスが中断されています。</span><span class="sxs-lookup"><span data-stu-id="64183-153">The workflow instance is suspended.</span></span>|  
+|<span data-ttu-id="64183-154">Terminated</span><span class="sxs-lookup"><span data-stu-id="64183-154">Terminated</span></span>|<span data-ttu-id="64183-155">ワークフロー インスタンスは終了しました。</span><span class="sxs-lookup"><span data-stu-id="64183-155">The workflow instance is terminated.</span></span>|  
+|<span data-ttu-id="64183-156">Unsuspended</span><span class="sxs-lookup"><span data-stu-id="64183-156">Unsuspended</span></span>|<span data-ttu-id="64183-157">ワークフロー インスタンスの中断が解除されました。</span><span class="sxs-lookup"><span data-stu-id="64183-157">The workflow instance is unsuspended.</span></span>|  
   
-|状態|説明|  
-|--------|--------|  
-|Aborted|ワークフロー インスタンスは中止されました。|  
-|Completed|ワークフロー インスタンスは完了しました。|  
-|Deleted|ワークフロー インスタンスは削除されました。|  
-|Idle|ワークフロー インスタンスはアイドル状態です。|  
-|Persisted|ワークフロー インスタンスは永続化されました。|  
-|Resumed|ワークフロー インスタンスが再開されました。|  
-|Started|ワークフロー インスタンスが開始されました。|  
-|UnhandledException|ワークフロー インスタンスで未処理の例外が発生しました。|  
-|アンロード|ワークフロー インスタンスはアンロードされました。|  
-|Canceled|ワークフロー インスタンスは取り消されました。|  
-|Suspended|ワークフロー インスタンスが中断されています。|  
-|Terminated|ワークフロー インスタンスは終了しました。|  
-|Unsuspended|ワークフロー インスタンスの中断が解除されました。|  
+## <a name="example"></a><span data-ttu-id="64183-158">例</span><span class="sxs-lookup"><span data-stu-id="64183-158">Example</span></span>  
+ <span data-ttu-id="64183-159">次の構成は、このクエリを使用して、`Started` インスタンス状態のワークフロー インスタンス レベルの追跡レコードを定期受信します。</span><span class="sxs-lookup"><span data-stu-id="64183-159">The following configuration subscribes to workflow instance-level tracking records for the `Started` instance state using this query.</span></span>  
   
-## 使用例  
- 次の構成は、このクエリを使用して、`Started` インスタンス状態のワークフロー インスタンス レベルの追跡レコードを定期受信します。  
-  
-```  
-  
+```xml  
 <workflowInstanceQueries>  
     <workflowInstanceQuery>  
       <states>  
@@ -92,12 +88,11 @@ caps.handback.revision: 3
       </states>  
     </workflowInstanceQuery>  
 </workflowInstanceQueries>  
-  
 ```  
   
-## 参照  
- [System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement](assetId:///System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?qualifyHint=False&amp;autoUpgrade=True)   
- [System.ServiceModel.Activities.Tracking.Configuration.StateElementCollection](assetId:///System.ServiceModel.Activities.Tracking.Configuration.StateElementCollection?qualifyHint=False&amp;autoUpgrade=True)   
- [System.Activities.Tracking.WorkflowInstanceQuery](assetId:///System.Activities.Tracking.WorkflowInstanceQuery?qualifyHint=False&amp;autoUpgrade=True)   
- [ワークフロー追跡とトレース](../../../../../docs/framework/windows-workflow-foundation//workflow-tracking-and-tracing.md)   
- [追跡プロファイル](../../../../../docs/framework/windows-workflow-foundation//tracking-profiles.md)
+## <a name="see-also"></a><span data-ttu-id="64183-160">関連項目</span><span class="sxs-lookup"><span data-stu-id="64183-160">See Also</span></span>  
+ <span data-ttu-id="64183-161"><xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="64183-161"><xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?displayProperty=nameWithType></span></span>       
+ <span data-ttu-id="64183-162"><xref:System.ServiceModel.Activities.Tracking.Configuration.StateElementCollection?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="64183-162"><xref:System.ServiceModel.Activities.Tracking.Configuration.StateElementCollection?displayProperty=nameWithType></span></span>       
+ <span data-ttu-id="64183-163"><xref:System.Activities.Tracking.WorkflowInstanceQuery?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="64183-163"><xref:System.Activities.Tracking.WorkflowInstanceQuery?displayProperty=nameWithType></span></span>       
+ [<span data-ttu-id="64183-164">ワークフローの追跡とトレース</span><span class="sxs-lookup"><span data-stu-id="64183-164">Workflow Tracking and Tracing</span></span>](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
+ [<span data-ttu-id="64183-165">追跡プロファイル</span><span class="sxs-lookup"><span data-stu-id="64183-165">Tracking Profiles</span></span>](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)

@@ -1,87 +1,90 @@
 ---
-title: "Control Pattern Mapping for UI Automation Clients | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "control patterns, for UI Automation clients"
-  - "UI Automation, clients, control patterns for"
+title: "UI オートメーション クライアントのコントロール パターン マッピング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- control patterns, for UI Automation clients
+- UI Automation, clients, control patterns for
 ms.assetid: 8b81645b-8be3-4e26-9c98-4fb0fceca06b
-caps.latest.revision: 18
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: 31beb7ab9a978f5bb379a3c1d61c90c19c26ca6b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Control Pattern Mapping for UI Automation Clients
+# <a name="control-pattern-mapping-for-ui-automation-clients"></a><span data-ttu-id="5d348-102">UI オートメーション クライアントのコントロール パターン マッピング</span><span class="sxs-lookup"><span data-stu-id="5d348-102">Control Pattern Mapping for UI Automation Clients</span></span>
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の最新情報については、「[Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」をご覧ください。  
+>  <span data-ttu-id="5d348-103">このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="5d348-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="5d348-104">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5d348-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- このトピックでは、コントロール型とそれに関連するコントロール パターンを示します。  
+ <span data-ttu-id="5d348-105">このトピックでは、コントロール型とそれに関連するコントロール パターンを示します。</span><span class="sxs-lookup"><span data-stu-id="5d348-105">This topic lists control types and their associated control patterns.</span></span>  
   
- 次の表に、コントロール パターンを次のカテゴリに整理して示します。  
+ <span data-ttu-id="5d348-106">次の表に、コントロール パターンを次のカテゴリに整理して示します。</span><span class="sxs-lookup"><span data-stu-id="5d348-106">The following table organizes the control patterns into the following categories:</span></span>  
   
--   サポートされています。 コントロールはこのコントロール パターンをサポートする必要があります。  
+-   <span data-ttu-id="5d348-107">サポートされています。</span><span class="sxs-lookup"><span data-stu-id="5d348-107">Supported.</span></span> <span data-ttu-id="5d348-108">コントロールはこのコントロール パターンをサポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="5d348-108">The control must support this control pattern.</span></span>  
   
--   条件付きサポート。 コントロールは、その状態に応じてこのコントロール パターンをサポートする場合があります。  
+-   <span data-ttu-id="5d348-109">条件付きサポート。</span><span class="sxs-lookup"><span data-stu-id="5d348-109">Conditional support.</span></span> <span data-ttu-id="5d348-110">コントロールは、その状態に応じてこのコントロール パターンをサポートする場合があります。</span><span class="sxs-lookup"><span data-stu-id="5d348-110">The control may support this control pattern depending on the state of the control.</span></span>  
   
--   サポートされていません。 コントロールはこのコントロール パターンをサポートしません。カスタム コントロールは、このコントロール パターンをサポートする場合があります。  
+-   <span data-ttu-id="5d348-111">サポートされていません。</span><span class="sxs-lookup"><span data-stu-id="5d348-111">Not supported.</span></span> <span data-ttu-id="5d348-112">コントロールはこのコントロール パターンをサポートしません。カスタム コントロールは、このコントロール パターンをサポートする場合があります。</span><span class="sxs-lookup"><span data-stu-id="5d348-112">The control does not support this control pattern; custom controls may support this control pattern.</span></span>  
   
 > [!NOTE]
->  一部のコントロールは、その機能に応じて複数のコントロール パターンを条件付きでサポートします。 たとえば、メニュー項目コントロールは、メニュー コントロール内での機能に応じて、<xref:System.Windows.Automation.InvokePattern>、<xref:System.Windows.Automation.ExpandCollapsePattern>、<xref:System.Windows.Automation.TogglePattern>、または <xref:System.Windows.Automation.SelectionItemPattern> コントロール パターンを条件付きでサポートします。  
+>  <span data-ttu-id="5d348-113">一部のコントロールは、その機能に応じて複数のコントロール パターンを条件付きでサポートします。</span><span class="sxs-lookup"><span data-stu-id="5d348-113">Some controls have conditional support for several control patterns depending on the functionality of the control.</span></span> <span data-ttu-id="5d348-114">たとえば、メニュー項目コントロールは、メニュー コントロール内での機能に応じて、 <xref:System.Windows.Automation.InvokePattern>、 <xref:System.Windows.Automation.ExpandCollapsePattern>、 <xref:System.Windows.Automation.TogglePattern>、または <xref:System.Windows.Automation.SelectionItemPattern> コントロール パターンを条件付きでサポートします。</span><span class="sxs-lookup"><span data-stu-id="5d348-114">For example, the menu item control has conditional support for the <xref:System.Windows.Automation.InvokePattern>, <xref:System.Windows.Automation.ExpandCollapsePattern>, <xref:System.Windows.Automation.TogglePattern>, or <xref:System.Windows.Automation.SelectionItemPattern> control pattern, depending on its function in the menu control.</span></span>  
   
 <a name="control_mapping_clients"></a>   
-## クライアントの UI オートメーション コントロール パターン  
+## <a name="ui-automation-control-patterns-for-clients"></a><span data-ttu-id="5d348-115">クライアントの UI オートメーション コントロール パターン</span><span class="sxs-lookup"><span data-stu-id="5d348-115">UI Automation Control Patterns for Clients</span></span>  
   
-|コントロール型|サポート状況|条件付きサポート|サポート非対象|  
-|-------------|------------|--------------|-------------|  
-|ボタン|なし|呼び出し、トグル、展開\/折りたたみ|なし|  
-|予定表|グリッド、テーブル|選択、スクロール|値|  
-|チェック ボックス|切り替え|なし|なし|  
-|コンボ ボックス|展開\/折りたたみ|選択、値|スクロール|  
-|データ グリッド|グリッド|スクロール、選択、テーブル|なし|  
-|データ項目|選択項目|展開\/折りたたみ、グリッド項目、スクロール項目、テーブル、トグル、値|なし|  
-|ドキュメント|テキスト|スクロール、値|なし|  
-|編集|なし|テキスト、範囲の値、値|なし|  
-|グループ化|なし|展開\/折りたたみ|なし|  
-|ヘッダー|なし|変換|なし|  
-|ヘッダー項目|なし|変換、呼び出し|なし|  
-|ハイパーリンク|呼び出し|値|なし|  
-|イメージ|なし|グリッド項目、テーブル項目|呼び出し、選択項目|  
-|リスト|なし|グリッド、複数のビュー、スクロール、選択|テーブル|  
-|リスト項目|選択項目|展開\/折りたたみ、グリッド項目、呼び出し、スクロール項目、トグル、値|なし|  
-|メニュー|なし|なし|なし|  
-|メニュー バー|なし|展開\/折りたたみ、ドック、変換|なし|  
-|メニュー項目|なし|展開\/折りたたみ、呼び出し、選択項目、トグル|なし|  
-|ペイン|なし|ドック、 スクロール、変換|ウィンドウ|  
-|進行状況バー|なし|範囲の値、値|なし|  
-|オプション ボタン|選択項目|なし|切り替え|  
-|スクロール バー|なし|範囲値|スクロール|  
-|区切り記号|なし|なし|なし|  
-|スライダー|なし|範囲の値、選択、値|なし|  
-|Spinner|なし|範囲の値、選択、値|なし|  
-|分割ボタン|呼び出し、展開\/折りたたみ|なし|なし|  
-|ステータス バー|なし|グリッド|なし|  
-|タブ|選択ツール|スクロール|なし|  
-|タブ項目|選択項目|なし|呼び出し|  
-|テーブル|グリッド、グリッド項目、テーブル、テーブル項目|なし|なし|  
-|テキスト|なし|グリッド項目、テーブル項目、テキスト|値|  
-|つまみ|変換|なし|なし|  
-|タイトル バー|なし|なし|なし|  
-|ツール バー|なし|ドック、展開\/折りたたみ、変換|なし|  
-|ツール ヒント|なし|テキスト、ウィンドウ|なし|  
-|ツリー|なし|スクロール、選択|なし|  
-|ツリー項目|展開\/折りたたみ|呼び出し、スクロール項目、選択項目、トグル|なし|  
-|ウィンドウ|変換、ウィンドウ|ドッキング|なし|  
+|<span data-ttu-id="5d348-116">コントロール型</span><span class="sxs-lookup"><span data-stu-id="5d348-116">Control Type</span></span>|<span data-ttu-id="5d348-117">サポート状況</span><span class="sxs-lookup"><span data-stu-id="5d348-117">Supported</span></span>|<span data-ttu-id="5d348-118">条件付きサポート</span><span class="sxs-lookup"><span data-stu-id="5d348-118">Conditional Support</span></span>|<span data-ttu-id="5d348-119">サポート非対象</span><span class="sxs-lookup"><span data-stu-id="5d348-119">Not Supported</span></span>|  
+|------------------|---------------|-------------------------|-------------------|  
+|<span data-ttu-id="5d348-120">ボタン</span><span class="sxs-lookup"><span data-stu-id="5d348-120">Button</span></span>|<span data-ttu-id="5d348-121">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-121">None</span></span>|<span data-ttu-id="5d348-122">呼び出し、トグル、展開/折りたたみ</span><span class="sxs-lookup"><span data-stu-id="5d348-122">Invoke, Toggle, Expand Collapse</span></span>|<span data-ttu-id="5d348-123">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-123">None</span></span>|  
+|<span data-ttu-id="5d348-124">予定表</span><span class="sxs-lookup"><span data-stu-id="5d348-124">Calendar</span></span>|<span data-ttu-id="5d348-125">グリッド、テーブル</span><span class="sxs-lookup"><span data-stu-id="5d348-125">Grid, Table</span></span>|<span data-ttu-id="5d348-126">選択、スクロール</span><span class="sxs-lookup"><span data-stu-id="5d348-126">Selection, Scroll</span></span>|<span data-ttu-id="5d348-127">値</span><span class="sxs-lookup"><span data-stu-id="5d348-127">Value</span></span>|  
+|<span data-ttu-id="5d348-128">チェック ボックス</span><span class="sxs-lookup"><span data-stu-id="5d348-128">Check Box</span></span>|<span data-ttu-id="5d348-129">切り替え</span><span class="sxs-lookup"><span data-stu-id="5d348-129">Toggle</span></span>|<span data-ttu-id="5d348-130">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-130">None</span></span>|<span data-ttu-id="5d348-131">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-131">None</span></span>|  
+|<span data-ttu-id="5d348-132">コンボ ボックス</span><span class="sxs-lookup"><span data-stu-id="5d348-132">Combo Box</span></span>|<span data-ttu-id="5d348-133">展開/折りたたみ</span><span class="sxs-lookup"><span data-stu-id="5d348-133">Expand Collapse</span></span>|<span data-ttu-id="5d348-134">選択、値</span><span class="sxs-lookup"><span data-stu-id="5d348-134">Selection, Value</span></span>|<span data-ttu-id="5d348-135">スクロール</span><span class="sxs-lookup"><span data-stu-id="5d348-135">Scroll</span></span>|  
+|<span data-ttu-id="5d348-136">データ グリッド</span><span class="sxs-lookup"><span data-stu-id="5d348-136">Data Grid</span></span>|<span data-ttu-id="5d348-137">グリッド</span><span class="sxs-lookup"><span data-stu-id="5d348-137">Grid</span></span>|<span data-ttu-id="5d348-138">スクロール、選択、テーブル</span><span class="sxs-lookup"><span data-stu-id="5d348-138">Scroll, Selection, Table</span></span>|<span data-ttu-id="5d348-139">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-139">None</span></span>|  
+|<span data-ttu-id="5d348-140">データ項目</span><span class="sxs-lookup"><span data-stu-id="5d348-140">Data Item</span></span>|<span data-ttu-id="5d348-141">選択項目</span><span class="sxs-lookup"><span data-stu-id="5d348-141">Selection Item</span></span>|<span data-ttu-id="5d348-142">展開/折りたたみ、グリッド項目、スクロール項目、テーブル、トグル、値</span><span class="sxs-lookup"><span data-stu-id="5d348-142">Expand Collapse, Grid Item, Scroll Item, Table, Toggle, Value</span></span>|<span data-ttu-id="5d348-143">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-143">None</span></span>|  
+|<span data-ttu-id="5d348-144">ドキュメント</span><span class="sxs-lookup"><span data-stu-id="5d348-144">Document</span></span>|<span data-ttu-id="5d348-145">テキスト</span><span class="sxs-lookup"><span data-stu-id="5d348-145">Text</span></span>|<span data-ttu-id="5d348-146">スクロール、値</span><span class="sxs-lookup"><span data-stu-id="5d348-146">Scroll, Value</span></span>|<span data-ttu-id="5d348-147">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-147">None</span></span>|  
+|<span data-ttu-id="5d348-148">編集</span><span class="sxs-lookup"><span data-stu-id="5d348-148">Edit</span></span>|<span data-ttu-id="5d348-149">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-149">None</span></span>|<span data-ttu-id="5d348-150">テキスト、範囲の値、値</span><span class="sxs-lookup"><span data-stu-id="5d348-150">Text, Range Value, Value</span></span>|<span data-ttu-id="5d348-151">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-151">None</span></span>|  
+|<span data-ttu-id="5d348-152">グループ化</span><span class="sxs-lookup"><span data-stu-id="5d348-152">Group</span></span>|<span data-ttu-id="5d348-153">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-153">None</span></span>|<span data-ttu-id="5d348-154">展開/折りたたみ</span><span class="sxs-lookup"><span data-stu-id="5d348-154">Expand Collapse</span></span>|<span data-ttu-id="5d348-155">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-155">None</span></span>|  
+|<span data-ttu-id="5d348-156">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="5d348-156">Header</span></span>|<span data-ttu-id="5d348-157">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-157">None</span></span>|<span data-ttu-id="5d348-158">変換</span><span class="sxs-lookup"><span data-stu-id="5d348-158">Transform</span></span>|<span data-ttu-id="5d348-159">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-159">None</span></span>|  
+|<span data-ttu-id="5d348-160">ヘッダー項目</span><span class="sxs-lookup"><span data-stu-id="5d348-160">Header Item</span></span>|<span data-ttu-id="5d348-161">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-161">None</span></span>|<span data-ttu-id="5d348-162">変換、呼び出し</span><span class="sxs-lookup"><span data-stu-id="5d348-162">Transform, Invoke</span></span>|<span data-ttu-id="5d348-163">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-163">None</span></span>|  
+|<span data-ttu-id="5d348-164">ハイパーリンク</span><span class="sxs-lookup"><span data-stu-id="5d348-164">Hyperlink</span></span>|<span data-ttu-id="5d348-165">呼び出し</span><span class="sxs-lookup"><span data-stu-id="5d348-165">Invoke</span></span>|<span data-ttu-id="5d348-166">値</span><span class="sxs-lookup"><span data-stu-id="5d348-166">Value</span></span>|<span data-ttu-id="5d348-167">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-167">None</span></span>|  
+|<span data-ttu-id="5d348-168">イメージ</span><span class="sxs-lookup"><span data-stu-id="5d348-168">Image</span></span>|<span data-ttu-id="5d348-169">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-169">None</span></span>|<span data-ttu-id="5d348-170">グリッド項目、テーブル項目</span><span class="sxs-lookup"><span data-stu-id="5d348-170">Grid Item, Table Item</span></span>|<span data-ttu-id="5d348-171">呼び出し、選択項目</span><span class="sxs-lookup"><span data-stu-id="5d348-171">Invoke, Selection Item</span></span>|  
+|<span data-ttu-id="5d348-172">リスト</span><span class="sxs-lookup"><span data-stu-id="5d348-172">List</span></span>|<span data-ttu-id="5d348-173">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-173">None</span></span>|<span data-ttu-id="5d348-174">グリッド、複数のビュー、スクロール、選択</span><span class="sxs-lookup"><span data-stu-id="5d348-174">Grid, Multiple View, Scroll, Selection</span></span>|<span data-ttu-id="5d348-175">テーブル</span><span class="sxs-lookup"><span data-stu-id="5d348-175">Table</span></span>|  
+|<span data-ttu-id="5d348-176">リスト項目</span><span class="sxs-lookup"><span data-stu-id="5d348-176">List Item</span></span>|<span data-ttu-id="5d348-177">選択項目</span><span class="sxs-lookup"><span data-stu-id="5d348-177">Selection Item</span></span>|<span data-ttu-id="5d348-178">展開/折りたたみ、グリッド項目、呼び出し、スクロール項目、トグル、値</span><span class="sxs-lookup"><span data-stu-id="5d348-178">Expand Collapse, Grid Item, Invoke, Scroll Item, Toggle, Value</span></span>|<span data-ttu-id="5d348-179">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-179">None</span></span>|  
+|<span data-ttu-id="5d348-180">メニュー</span><span class="sxs-lookup"><span data-stu-id="5d348-180">Menu</span></span>|<span data-ttu-id="5d348-181">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-181">None</span></span>|<span data-ttu-id="5d348-182">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-182">None</span></span>|<span data-ttu-id="5d348-183">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-183">None</span></span>|  
+|<span data-ttu-id="5d348-184">メニュー バー</span><span class="sxs-lookup"><span data-stu-id="5d348-184">Menu Bar</span></span>|<span data-ttu-id="5d348-185">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-185">None</span></span>|<span data-ttu-id="5d348-186">展開/折りたたみ、ドック、変換</span><span class="sxs-lookup"><span data-stu-id="5d348-186">Expand Collapse, Dock, Transform</span></span>|<span data-ttu-id="5d348-187">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-187">None</span></span>|  
+|<span data-ttu-id="5d348-188">メニュー項目</span><span class="sxs-lookup"><span data-stu-id="5d348-188">Menu Item</span></span>|<span data-ttu-id="5d348-189">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-189">None</span></span>|<span data-ttu-id="5d348-190">展開/折りたたみ、呼び出し、選択項目、トグル</span><span class="sxs-lookup"><span data-stu-id="5d348-190">Expand Collapse, Invoke, Selection Item, Toggle</span></span>|<span data-ttu-id="5d348-191">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-191">None</span></span>|  
+|<span data-ttu-id="5d348-192">ペイン</span><span class="sxs-lookup"><span data-stu-id="5d348-192">Pane</span></span>|<span data-ttu-id="5d348-193">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-193">None</span></span>|<span data-ttu-id="5d348-194">ドック、</span><span class="sxs-lookup"><span data-stu-id="5d348-194">Dock.</span></span> <span data-ttu-id="5d348-195">スクロール、変換</span><span class="sxs-lookup"><span data-stu-id="5d348-195">Scroll, Transform</span></span>|<span data-ttu-id="5d348-196">ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="5d348-196">Window</span></span>|  
+|<span data-ttu-id="5d348-197">進行状況バー</span><span class="sxs-lookup"><span data-stu-id="5d348-197">Progress Bar</span></span>|<span data-ttu-id="5d348-198">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-198">None</span></span>|<span data-ttu-id="5d348-199">範囲の値、値</span><span class="sxs-lookup"><span data-stu-id="5d348-199">Range Value, Value</span></span>|<span data-ttu-id="5d348-200">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-200">None</span></span>|  
+|<span data-ttu-id="5d348-201">オプション ボタン</span><span class="sxs-lookup"><span data-stu-id="5d348-201">Radio Button</span></span>|<span data-ttu-id="5d348-202">選択項目</span><span class="sxs-lookup"><span data-stu-id="5d348-202">Selection Item</span></span>|<span data-ttu-id="5d348-203">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-203">None</span></span>|<span data-ttu-id="5d348-204">切り替え</span><span class="sxs-lookup"><span data-stu-id="5d348-204">Toggle</span></span>|  
+|<span data-ttu-id="5d348-205">スクロール バー</span><span class="sxs-lookup"><span data-stu-id="5d348-205">Scroll Bar</span></span>|<span data-ttu-id="5d348-206">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-206">None</span></span>|<span data-ttu-id="5d348-207">範囲値</span><span class="sxs-lookup"><span data-stu-id="5d348-207">Range Value</span></span>|<span data-ttu-id="5d348-208">スクロール</span><span class="sxs-lookup"><span data-stu-id="5d348-208">Scroll</span></span>|  
+|<span data-ttu-id="5d348-209">区切り記号</span><span class="sxs-lookup"><span data-stu-id="5d348-209">Separator</span></span>|<span data-ttu-id="5d348-210">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-210">None</span></span>|<span data-ttu-id="5d348-211">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-211">None</span></span>|<span data-ttu-id="5d348-212">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-212">None</span></span>|  
+|<span data-ttu-id="5d348-213">スライダー</span><span class="sxs-lookup"><span data-stu-id="5d348-213">Slider</span></span>|<span data-ttu-id="5d348-214">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-214">None</span></span>|<span data-ttu-id="5d348-215">範囲の値、選択、値</span><span class="sxs-lookup"><span data-stu-id="5d348-215">Range Value, Selection, Value</span></span>|<span data-ttu-id="5d348-216">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-216">None</span></span>|  
+|<span data-ttu-id="5d348-217">Spinner</span><span class="sxs-lookup"><span data-stu-id="5d348-217">Spinner</span></span>|<span data-ttu-id="5d348-218">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-218">None</span></span>|<span data-ttu-id="5d348-219">範囲の値、選択、値</span><span class="sxs-lookup"><span data-stu-id="5d348-219">Range Value, Selection, Value</span></span>|<span data-ttu-id="5d348-220">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-220">None</span></span>|  
+|<span data-ttu-id="5d348-221">分割ボタン</span><span class="sxs-lookup"><span data-stu-id="5d348-221">Split Button</span></span>|<span data-ttu-id="5d348-222">呼び出し、展開/折りたたみ</span><span class="sxs-lookup"><span data-stu-id="5d348-222">Invoke, Expand Collapse</span></span>|<span data-ttu-id="5d348-223">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-223">None</span></span>|<span data-ttu-id="5d348-224">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-224">None</span></span>|  
+|<span data-ttu-id="5d348-225">ステータス バー</span><span class="sxs-lookup"><span data-stu-id="5d348-225">Status Bar</span></span>|<span data-ttu-id="5d348-226">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-226">None</span></span>|<span data-ttu-id="5d348-227">グリッド</span><span class="sxs-lookup"><span data-stu-id="5d348-227">Grid</span></span>|<span data-ttu-id="5d348-228">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-228">None</span></span>|  
+|<span data-ttu-id="5d348-229">タブ</span><span class="sxs-lookup"><span data-stu-id="5d348-229">Tab</span></span>|<span data-ttu-id="5d348-230">選択ツール</span><span class="sxs-lookup"><span data-stu-id="5d348-230">Selection</span></span>|<span data-ttu-id="5d348-231">スクロール</span><span class="sxs-lookup"><span data-stu-id="5d348-231">Scroll</span></span>|<span data-ttu-id="5d348-232">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-232">None</span></span>|  
+|<span data-ttu-id="5d348-233">タブ項目</span><span class="sxs-lookup"><span data-stu-id="5d348-233">Tab Item</span></span>|<span data-ttu-id="5d348-234">選択項目</span><span class="sxs-lookup"><span data-stu-id="5d348-234">Selection Item</span></span>|<span data-ttu-id="5d348-235">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-235">None</span></span>|<span data-ttu-id="5d348-236">呼び出し</span><span class="sxs-lookup"><span data-stu-id="5d348-236">Invoke</span></span>|  
+|<span data-ttu-id="5d348-237">テーブル</span><span class="sxs-lookup"><span data-stu-id="5d348-237">Table</span></span>|<span data-ttu-id="5d348-238">グリッド、グリッド項目、テーブル、テーブル項目</span><span class="sxs-lookup"><span data-stu-id="5d348-238">Grid, Grid Item, Table, Table Item</span></span>|<span data-ttu-id="5d348-239">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-239">None</span></span>|<span data-ttu-id="5d348-240">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-240">None</span></span>|  
+|<span data-ttu-id="5d348-241">テキスト</span><span class="sxs-lookup"><span data-stu-id="5d348-241">Text</span></span>|<span data-ttu-id="5d348-242">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-242">None</span></span>|<span data-ttu-id="5d348-243">グリッド項目、テーブル項目、テキスト</span><span class="sxs-lookup"><span data-stu-id="5d348-243">Grid Item, Table Item, Text</span></span>|<span data-ttu-id="5d348-244">値</span><span class="sxs-lookup"><span data-stu-id="5d348-244">Value</span></span>|  
+|<span data-ttu-id="5d348-245">つまみ</span><span class="sxs-lookup"><span data-stu-id="5d348-245">Thumb</span></span>|<span data-ttu-id="5d348-246">変換</span><span class="sxs-lookup"><span data-stu-id="5d348-246">Transform</span></span>|<span data-ttu-id="5d348-247">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-247">None</span></span>|<span data-ttu-id="5d348-248">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-248">None</span></span>|  
+|<span data-ttu-id="5d348-249">タイトル バー</span><span class="sxs-lookup"><span data-stu-id="5d348-249">Title Bar</span></span>|<span data-ttu-id="5d348-250">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-250">None</span></span>|<span data-ttu-id="5d348-251">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-251">None</span></span>|<span data-ttu-id="5d348-252">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-252">None</span></span>|  
+|<span data-ttu-id="5d348-253">ツール バー</span><span class="sxs-lookup"><span data-stu-id="5d348-253">Tool Bar</span></span>|<span data-ttu-id="5d348-254">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-254">None</span></span>|<span data-ttu-id="5d348-255">ドック、展開/折りたたみ、変換</span><span class="sxs-lookup"><span data-stu-id="5d348-255">Dock, Expand Collapse, Transform</span></span>|<span data-ttu-id="5d348-256">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-256">None</span></span>|  
+|<span data-ttu-id="5d348-257">ツール ヒント</span><span class="sxs-lookup"><span data-stu-id="5d348-257">Tool Tip</span></span>|<span data-ttu-id="5d348-258">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-258">None</span></span>|<span data-ttu-id="5d348-259">テキスト、ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="5d348-259">Text, Window</span></span>|<span data-ttu-id="5d348-260">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-260">None</span></span>|  
+|<span data-ttu-id="5d348-261">ツリー</span><span class="sxs-lookup"><span data-stu-id="5d348-261">Tree</span></span>|<span data-ttu-id="5d348-262">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-262">None</span></span>|<span data-ttu-id="5d348-263">スクロール、選択</span><span class="sxs-lookup"><span data-stu-id="5d348-263">Scroll, Selection</span></span>|<span data-ttu-id="5d348-264">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-264">None</span></span>|  
+|<span data-ttu-id="5d348-265">ツリー項目</span><span class="sxs-lookup"><span data-stu-id="5d348-265">Tree Item</span></span>|<span data-ttu-id="5d348-266">展開/折りたたみ</span><span class="sxs-lookup"><span data-stu-id="5d348-266">Expand Collapse</span></span>|<span data-ttu-id="5d348-267">呼び出し、スクロール項目、選択項目、トグル</span><span class="sxs-lookup"><span data-stu-id="5d348-267">Invoke, Scroll Item, Selection Item, Toggle</span></span>|<span data-ttu-id="5d348-268">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-268">None</span></span>|  
+|<span data-ttu-id="5d348-269">ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="5d348-269">Window</span></span>|<span data-ttu-id="5d348-270">変換、ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="5d348-270">Transform, Window</span></span>|<span data-ttu-id="5d348-271">ドッキング</span><span class="sxs-lookup"><span data-stu-id="5d348-271">Dock</span></span>|<span data-ttu-id="5d348-272">なし</span><span class="sxs-lookup"><span data-stu-id="5d348-272">None</span></span>|  
   
 > [!NOTE]
->  上記のサポート対象のコントロール パターンが存在せず、条件付きサポートのコントロール パターンが 1 つ以上存在するコントロール型では、それらの条件付きコントロール パターンのうちの 1 つが必ずサポートされます。  
+>  <span data-ttu-id="5d348-273">上記のサポート対象のコントロール パターンが存在せず、条件付きサポートのコントロール パターンが 1 つ以上存在するコントロール型では、それらの条件付きコントロール パターンのうちの 1 つが必ずサポートされます。</span><span class="sxs-lookup"><span data-stu-id="5d348-273">If a control type has no supported control patterns listed but has one or more conditionally-supported control patterns, then one of those conditional control patterns will be supported at all times.</span></span>  
   
-## 参照  
- [UI Automation Overview](../../../docs/framework/ui-automation/ui-automation-overview.md)
+## <a name="see-also"></a><span data-ttu-id="5d348-274">関連項目</span><span class="sxs-lookup"><span data-stu-id="5d348-274">See Also</span></span>  
+ [<span data-ttu-id="5d348-275">UI オートメーションの概要</span><span class="sxs-lookup"><span data-stu-id="5d348-275">UI Automation Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-overview.md)

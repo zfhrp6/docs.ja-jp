@@ -1,43 +1,46 @@
 ---
-title: "218 - ClientOperationCompleted | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 218 - ClientOperationCompleted
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b069bced-7bb2-4e01-8227-e5dbda17af09
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ea826aa99e847f74c5a44113f2ae16d7322873f9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 218 - ClientOperationCompleted
-## プロパティ  
+# <a name="218---clientoperationcompleted"></a><span data-ttu-id="32d4f-102">218 - ClientOperationCompleted</span><span class="sxs-lookup"><span data-stu-id="32d4f-102">218 - ClientOperationCompleted</span></span>
+## <a name="properties"></a><span data-ttu-id="32d4f-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="32d4f-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|ID|218|  
-|キーワード|Troubleshooting、ServiceModel|  
-|レベル|情報|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Analytic|  
+|<span data-ttu-id="32d4f-104">ID</span><span class="sxs-lookup"><span data-stu-id="32d4f-104">ID</span></span>|<span data-ttu-id="32d4f-105">218</span><span class="sxs-lookup"><span data-stu-id="32d4f-105">218</span></span>|  
+|<span data-ttu-id="32d4f-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="32d4f-106">Keywords</span></span>|<span data-ttu-id="32d4f-107">Troubleshooting、ServiceModel</span><span class="sxs-lookup"><span data-stu-id="32d4f-107">Troubleshooting, ServiceModel</span></span>|  
+|<span data-ttu-id="32d4f-108">レベル</span><span class="sxs-lookup"><span data-stu-id="32d4f-108">Level</span></span>|<span data-ttu-id="32d4f-109">情報</span><span class="sxs-lookup"><span data-stu-id="32d4f-109">Information</span></span>|  
+|<span data-ttu-id="32d4f-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="32d4f-110">Channel</span></span>|<span data-ttu-id="32d4f-111">Microsoft-Windows-Application Server-Applications/Analytic</span><span class="sxs-lookup"><span data-stu-id="32d4f-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## 説明  
- このイベントは、ある操作が完了した直後にクライアントによって生成されます。一方向の操作の場合は、メッセージが正常に送信された直後に生成されます。要求 \- 応答の操作の場合は、応答の受信後に生成されます。  
+## <a name="description"></a><span data-ttu-id="32d4f-112">説明</span><span class="sxs-lookup"><span data-stu-id="32d4f-112">Description</span></span>  
+ <span data-ttu-id="32d4f-113">このイベントは、ある操作が完了した直後にクライアントによって生成されます。</span><span class="sxs-lookup"><span data-stu-id="32d4f-113">This event is emitted by clients just after an operation completes.</span></span> <span data-ttu-id="32d4f-114">一方向の操作の場合は、メッセージが正常に送信された直後に生成されます。</span><span class="sxs-lookup"><span data-stu-id="32d4f-114">For one-way operations, this is just after the message is sent successfully.</span></span> <span data-ttu-id="32d4f-115">要求 - 応答の操作の場合は、応答の受信後に生成されます。</span><span class="sxs-lookup"><span data-stu-id="32d4f-115">For request-response operations this is after the response is received.</span></span>  
   
-## メッセージ  
- クライアントは '%2' コントラクトと関連付けられている Action '%1' の実行を完了しました。メッセージは '%3' に送信されました。  
+## <a name="message"></a><span data-ttu-id="32d4f-116">メッセージ</span><span class="sxs-lookup"><span data-stu-id="32d4f-116">Message</span></span>  
+ <span data-ttu-id="32d4f-117">クライアントは '%2' コントラクトと関連付けられている Action '%1' の実行を完了しました。</span><span class="sxs-lookup"><span data-stu-id="32d4f-117">The Client completed executing Action '%1' associated with the '%2' contract.</span></span> <span data-ttu-id="32d4f-118">メッセージは '%3' に送信されました。</span><span class="sxs-lookup"><span data-stu-id="32d4f-118">The message was sent to '%3'.</span></span>  
   
-## 詳細  
+## <a name="details"></a><span data-ttu-id="32d4f-119">詳細</span><span class="sxs-lookup"><span data-stu-id="32d4f-119">Details</span></span>  
   
-|データ項目名|データ項目の型|説明|  
-|------------|-------------|--------|  
-|Action|xs:string|送信メッセージの SOAP アクション ヘッダー。|  
-|Contract Name|`xs:string`|コントラクトの名前。例: ICalculator。|  
-|Destination|`xs:string`|メッセージの送信先のサービス エンドポイントのアドレス。|  
-|HostReference|`xs:string`|Web ホスト サービスの場合は、このフィールドにより、サービスが Web 階層内で一意に識別されます。その形式は、'Web サイト名アプリケーション仮想パス&#124;サービス仮想パス&#124;サービス名' と定義されます。例: 'Default Web Site\/CalculatorApplication&#124;\/CalculatorService.svc&#124;CalculatorService'。|  
-|AppDomain|`xs:string`|AppDomain.CurrentDomain.FriendlyName で返される文字列。|
+|<span data-ttu-id="32d4f-120">データ項目名</span><span class="sxs-lookup"><span data-stu-id="32d4f-120">Data Item Name</span></span>|<span data-ttu-id="32d4f-121">データ項目の型</span><span class="sxs-lookup"><span data-stu-id="32d4f-121">Data Item Type</span></span>|<span data-ttu-id="32d4f-122">説明</span><span class="sxs-lookup"><span data-stu-id="32d4f-122">Description</span></span>|  
+|--------------------|--------------------|-----------------|  
+|<span data-ttu-id="32d4f-123">アクション</span><span class="sxs-lookup"><span data-stu-id="32d4f-123">Action</span></span>|<span data-ttu-id="32d4f-124">xs:string</span><span class="sxs-lookup"><span data-stu-id="32d4f-124">xs:string</span></span>|<span data-ttu-id="32d4f-125">送信メッセージの SOAP アクション ヘッダー。</span><span class="sxs-lookup"><span data-stu-id="32d4f-125">The SOAP action header of the outgoing message.</span></span>|  
+|<span data-ttu-id="32d4f-126">Contract Name</span><span class="sxs-lookup"><span data-stu-id="32d4f-126">Contract Name</span></span>|`xs:string`|<span data-ttu-id="32d4f-127">コントラクトの名前。</span><span class="sxs-lookup"><span data-stu-id="32d4f-127">The name of the contract.</span></span> <span data-ttu-id="32d4f-128">例: ICalculator。</span><span class="sxs-lookup"><span data-stu-id="32d4f-128">Example: ICalculator.</span></span>|  
+|<span data-ttu-id="32d4f-129">保存先</span><span class="sxs-lookup"><span data-stu-id="32d4f-129">Destination</span></span>|`xs:string`|<span data-ttu-id="32d4f-130">メッセージの送信先のサービス エンドポイントのアドレス。</span><span class="sxs-lookup"><span data-stu-id="32d4f-130">The address of the service endpoint that the message was sent to.</span></span>|  
+|<span data-ttu-id="32d4f-131">HostReference</span><span class="sxs-lookup"><span data-stu-id="32d4f-131">HostReference</span></span>|`xs:string`|<span data-ttu-id="32d4f-132">Web ホスト サービスの場合は、このフィールドにより、サービスが Web 階層内で一意に識別されます。</span><span class="sxs-lookup"><span data-stu-id="32d4f-132">For Web-hosted services, this field uniquely identifies the service in the Web hierarchy.</span></span> <span data-ttu-id="32d4f-133">その形式とは見なさ ' Web サイト名アプリケーション仮想パス &#124;です。サービス仮想パス &#124;です。ServiceName' です。</span><span class="sxs-lookup"><span data-stu-id="32d4f-133">Its format is defined as 'Web Site Name Application Virtual Path&#124;Service Virtual Path&#124;ServiceName'.</span></span> <span data-ttu-id="32d4f-134">例: ' 既定の Web サイト/CalculatorApplication &#124;/CalculatorService.svc &#124;です。CalculatorService'。</span><span class="sxs-lookup"><span data-stu-id="32d4f-134">Example: 'Default Web Site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService'.</span></span>|  
+|<span data-ttu-id="32d4f-135">AppDomain</span><span class="sxs-lookup"><span data-stu-id="32d4f-135">AppDomain</span></span>|`xs:string`|<span data-ttu-id="32d4f-136">AppDomain.CurrentDomain.FriendlyName で返される文字列。</span><span class="sxs-lookup"><span data-stu-id="32d4f-136">The string returned by AppDomain.CurrentDomain.FriendlyName.</span></span>|

@@ -1,30 +1,32 @@
 ---
-title: "&lt;services&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;サービス&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 80d76ba9-2058-48ad-9b91-5e4be7e5c113
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: eb292a62c2b042c387799164ff4cec88bd2ca482
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;services&gt;
-サービスは、設定ファイルの `services` セクションで定義されます。  各サービスには、独自の `service` 設定セクションがあります。  
+# <a name="ltservicesgt"></a><span data-ttu-id="91ad1-102">&lt;サービス&gt;</span><span class="sxs-lookup"><span data-stu-id="91ad1-102">&lt;services&gt;</span></span>
+<span data-ttu-id="91ad1-103">サービスは、設定ファイルの `services` セクションで定義されます。</span><span class="sxs-lookup"><span data-stu-id="91ad1-103">Services are defined in the `services` section of the configuration file.</span></span> <span data-ttu-id="91ad1-104">各サービスには、独自の `service` 設定セクションがあります。</span><span class="sxs-lookup"><span data-stu-id="91ad1-104">Each service has its own `service` configuration section.</span></span>  
   
- \<system.ServiceModel\>  
+ <span data-ttu-id="91ad1-105">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="91ad1-105">\<system.ServiceModel></span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="91ad1-106">構文</span><span class="sxs-lookup"><span data-stu-id="91ad1-106">Syntax</span></span>  
   
-```  
-  
+```xml  
 <system.serviceModel>  
         <services>  
         <service>  
@@ -33,23 +35,23 @@ caps.handback.revision: 7
 </system.serviceModel>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="91ad1-107">属性および要素</span><span class="sxs-lookup"><span data-stu-id="91ad1-107">Attributes and Elements</span></span>  
+ <span data-ttu-id="91ad1-108">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="91ad1-108">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
- なし  
+### <a name="attributes"></a><span data-ttu-id="91ad1-109">属性</span><span class="sxs-lookup"><span data-stu-id="91ad1-109">Attributes</span></span>  
+ <span data-ttu-id="91ad1-110">なし</span><span class="sxs-lookup"><span data-stu-id="91ad1-110">None</span></span>  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="91ad1-111">子要素</span><span class="sxs-lookup"><span data-stu-id="91ad1-111">Child Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<service\>](../../../../../docs/framework/configure-apps/file-schema/wcf/service.md)|サービス コントラクト、動作、および特定のサービスのエンドポイントを定義します。|  
+|<span data-ttu-id="91ad1-112">要素</span><span class="sxs-lookup"><span data-stu-id="91ad1-112">Element</span></span>|<span data-ttu-id="91ad1-113">説明</span><span class="sxs-lookup"><span data-stu-id="91ad1-113">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="91ad1-114">\<サービス ></span><span class="sxs-lookup"><span data-stu-id="91ad1-114">\<service></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/service.md)|<span data-ttu-id="91ad1-115">サービス コントラクト、動作、および特定のサービスのエンドポイントを定義します。</span><span class="sxs-lookup"><span data-stu-id="91ad1-115">Define the service contract, behavior, and endpoints of the particular service.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="91ad1-116">親要素</span><span class="sxs-lookup"><span data-stu-id="91ad1-116">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<system.serviceModel\>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)|すべての Windows Communication Foundation \(WCF\) 構成要素のルート要素です。|  
+|<span data-ttu-id="91ad1-117">要素</span><span class="sxs-lookup"><span data-stu-id="91ad1-117">Element</span></span>|<span data-ttu-id="91ad1-118">説明</span><span class="sxs-lookup"><span data-stu-id="91ad1-118">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="91ad1-119">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="91ad1-119">\<system.serviceModel></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)|<span data-ttu-id="91ad1-120">すべての Windows Communication Foundation (WCF) 構成要素のルート要素です。</span><span class="sxs-lookup"><span data-stu-id="91ad1-120">The root element of all Windows Communication Foundation (WCF) configuration elements.</span></span>|  
   
-## 参照  
+## <a name="see-also"></a><span data-ttu-id="91ad1-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="91ad1-121">See Also</span></span>  
  <xref:System.ServiceModel.Configuration.ServicesSection>

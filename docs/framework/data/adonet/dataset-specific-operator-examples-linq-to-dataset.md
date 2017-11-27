@@ -1,54 +1,56 @@
 ---
-title: "DataSet-Specific Operator Examples (LINQ to DataSet) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DataSet 固有の演算子の例 (LINQ to DataSet)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 8fdd64af-6ad0-46cd-91c8-dbe26620eeb1
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: dea56be6aad0e596eaf9a61fae1352474f99fb04
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataSet-Specific Operator Examples (LINQ to DataSet)
-このトピックでは、<xref:System.Data.DataTableExtensions.CopyToDataTable%2A> メソッドおよび <xref:System.Data.DataRowComparer> クラスの使用例を紹介しています。  
+# <a name="dataset-specific-operator-examples-linq-to-dataset"></a><span data-ttu-id="b7937-102">DataSet 固有の演算子の例 (LINQ to DataSet)</span><span class="sxs-lookup"><span data-stu-id="b7937-102">DataSet-Specific Operator Examples (LINQ to DataSet)</span></span>
+<span data-ttu-id="b7937-103">このトピックでは、<xref:System.Data.DataTableExtensions.CopyToDataTable%2A> メソッドおよび <xref:System.Data.DataRowComparer> クラスの使用例を紹介しています。</span><span class="sxs-lookup"><span data-stu-id="b7937-103">The examples in this topic demonstrate how to use the <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> method and the <xref:System.Data.DataRowComparer> class.</span></span>  
   
- これらの例で使用されている `FillDataSet` メソッドの指定については、「[Loading Data Into a DataSet](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)」を参照してください。  
+ <span data-ttu-id="b7937-104">`FillDataSet`でこれらの例で使用されるメソッドが指定された[、データセットにデータを読み込む](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)します。</span><span class="sxs-lookup"><span data-stu-id="b7937-104">The `FillDataSet` method used in these examples is specified in [Loading Data Into a DataSet](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md).</span></span>  
   
- このトピックの例には、AdventureWorks サンプル データベースの Contact、Address、Product、SalesOrderHeader、SalesOrderDetail の各テーブルが使用されています。  
+ <span data-ttu-id="b7937-105">このトピックの例には、AdventureWorks サンプル データベースの Contact、Address、Product、SalesOrderHeader、SalesOrderDetail の各テーブルが使用されています。</span><span class="sxs-lookup"><span data-stu-id="b7937-105">The examples in this topic use the Contact, Address, Product, SalesOrderHeader, and SalesOrderDetail tables in the AdventureWorks sample database.</span></span>  
   
- このトピックの例には、次の `using`\/`Imports` ステートメントが使用されています。  
+ <span data-ttu-id="b7937-106">このトピックの例では、次を使用して`using` / `Imports`ステートメント。</span><span class="sxs-lookup"><span data-stu-id="b7937-106">The examples in this topic use the following `using`/`Imports` statements:</span></span>  
   
  [!code-csharp[DP LINQ to DataSet Examples#ImportsUsing](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#importsusing)]
  [!code-vb[DP LINQ to DataSet Examples#ImportsUsing](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#importsusing)]  
   
- 詳細については、「[How to: Create a LINQ to DataSet Project In Visual Studio](../../../../docs/framework/data/adonet/how-to-create-a-linq-to-dataset-project-in-vs.md)」を参照してください。  
+ <span data-ttu-id="b7937-107">詳細については、次を参照してください。[する方法: Visual Studio でデータセット プロジェクトに LINQ 作成](../../../../docs/framework/data/adonet/how-to-create-a-linq-to-dataset-project-in-vs.md)です。</span><span class="sxs-lookup"><span data-stu-id="b7937-107">For more information, see [How to: Create a LINQ to DataSet Project In Visual Studio](../../../../docs/framework/data/adonet/how-to-create-a-linq-to-dataset-project-in-vs.md).</span></span>  
   
-## CopyToDataTable  
+## <a name="copytodatatable"></a><span data-ttu-id="b7937-108">CopyToDataTable</span><span class="sxs-lookup"><span data-stu-id="b7937-108">CopyToDataTable</span></span>  
   
-### 例  
- この例では、<xref:System.Data.DataTableExtensions.CopyToDataTable%2A> メソッドを使用して、<xref:System.Data.DataTable> にクエリ結果を読み込みます。  
+### <a name="example"></a><span data-ttu-id="b7937-109">例</span><span class="sxs-lookup"><span data-stu-id="b7937-109">Example</span></span>  
+ <span data-ttu-id="b7937-110">この例では、<xref:System.Data.DataTable> メソッドを使用して、<xref:System.Data.DataTableExtensions.CopyToDataTable%2A> にクエリ結果を読み込みます。</span><span class="sxs-lookup"><span data-stu-id="b7937-110">This example loads a <xref:System.Data.DataTable> with query results by using the <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> method.</span></span>  
   
  [!code-csharp[DP LINQ to DataSet Examples#LoadDataTableWithQueryResults](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#loaddatatablewithqueryresults)]
  [!code-vb[DP LINQ to DataSet Examples#LoadDataTableWithQueryResults](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#loaddatatablewithqueryresults)]  
   
-```  
+## <a name="datarowcomparer"></a><span data-ttu-id="b7937-111">DataRowComparer</span><span class="sxs-lookup"><span data-stu-id="b7937-111">DataRowComparer</span></span>  
   
-```  
-  
-## DataRowComparer  
-  
-### 例  
- この例では 2 つの異なるデータ行を <xref:System.Data.DataRowComparer> を使用して比較します。  
+### <a name="example"></a><span data-ttu-id="b7937-112">例</span><span class="sxs-lookup"><span data-stu-id="b7937-112">Example</span></span>  
+ <span data-ttu-id="b7937-113">この例では 2 つの異なるデータ行を <xref:System.Data.DataRowComparer> を使用して比較します。</span><span class="sxs-lookup"><span data-stu-id="b7937-113">This example compares two different data rows by using <xref:System.Data.DataRowComparer>.</span></span>  
   
  [!code-csharp[DP LINQ to DataSet Examples#CompareDifferentDataRows](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#comparedifferentdatarows)]  
   
-## 参照  
- [Loading Data Into a DataSet](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)   
- [LINQ to DataSet Examples](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)
+## <a name="see-also"></a><span data-ttu-id="b7937-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="b7937-114">See Also</span></span>  
+ [<span data-ttu-id="b7937-115">データセットにデータを読み込む</span><span class="sxs-lookup"><span data-stu-id="b7937-115">Loading Data Into a DataSet</span></span>](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)  
+ [<span data-ttu-id="b7937-116">LINQ to DataSet の例</span><span class="sxs-lookup"><span data-stu-id="b7937-116">LINQ to DataSet Examples</span></span>](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)

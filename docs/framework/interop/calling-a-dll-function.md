@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - unmanaged functions, calling
 - unmanaged functions
@@ -22,36 +16,34 @@ helpviewer_keywords:
 - interoperation with unmanaged code, platform invoke
 - DLL functions
 ms.assetid: 113646de-7ea0-4f0e-8df0-c46dab3e8733
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b676599513b923ae46d6ec27d7506435d9cbfcd2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 36f84796b9682411d7907cfc10d584d772ef00a7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="calling-a-dll-function"></a>DLL 関数の呼び出し
-アンマネージ DLL 関数の呼び出しは、他のマネージ コードの呼び出しとほとんど同じですが、最初のうちは DLL 関数がわかりづらいと感じる違いがあります。 ここでは、通常とは異なる呼び出しに関連するいくつかの問題について説明しているトピックを紹介します。  
+# <a name="calling-a-dll-function"></a><span data-ttu-id="88a68-102">DLL 関数の呼び出し</span><span class="sxs-lookup"><span data-stu-id="88a68-102">Calling a DLL Function</span></span>
+<span data-ttu-id="88a68-103">アンマネージ DLL 関数の呼び出しは、他のマネージ コードの呼び出しとほとんど同じですが、最初のうちは DLL 関数がわかりづらいと感じる違いがあります。</span><span class="sxs-lookup"><span data-stu-id="88a68-103">Although calling unmanaged DLL functions is nearly identical to calling other managed code, there are differences that can make DLL functions seem confusing at first.</span></span> <span data-ttu-id="88a68-104">ここでは、通常とは異なる呼び出しに関連するいくつかの問題について説明しているトピックを紹介します。</span><span class="sxs-lookup"><span data-stu-id="88a68-104">This section introduces topics that describe some of the unusual calling-related issues.</span></span>  
   
- プラットフォーム呼び出しから返される構造体は、マネージ コードとアンマネージ コードで同じ表現のデータ型である必要があります。 このような型のことは *blittable 型*と呼ばれます。これは、会話が必要ではないためです (「[Blittable and Non-Blittable Types](../../../docs/framework/interop/blittable-and-non-blittable-types.md)」(blittable 型と非 blittable 型) を参照してください)。 戻り値の型が非 blittable 構造体の関数を呼び出すには、非 blittable 型と同じサイズの blittable ヘルパー型を定義し、関数からデータが返された後にそのデータを変換します。  
+ <span data-ttu-id="88a68-105">プラットフォーム呼び出しから返される構造体は、マネージ コードとアンマネージ コードで同じ表現のデータ型である必要があります。</span><span class="sxs-lookup"><span data-stu-id="88a68-105">Structures that are returned from platform invoke calls must be data types that have the same representation in managed and unmanaged code.</span></span> <span data-ttu-id="88a68-106">このような型のことは *blittable 型*と呼ばれます。これは、会話が必要ではないためです (「[Blittable and Non-Blittable Types](../../../docs/framework/interop/blittable-and-non-blittable-types.md)」(blittable 型と非 blittable 型) を参照してください)。</span><span class="sxs-lookup"><span data-stu-id="88a68-106">Such types are called *blittable types* because they do not require conversion (see [Blittable and Non-Blittable Types](../../../docs/framework/interop/blittable-and-non-blittable-types.md)).</span></span> <span data-ttu-id="88a68-107">戻り値の型が非 blittable 構造体の関数を呼び出すには、非 blittable 型と同じサイズの blittable ヘルパー型を定義し、関数からデータが返された後にそのデータを変換します。</span><span class="sxs-lookup"><span data-stu-id="88a68-107">To call a function that has a non-blittable structure as its return type, you can define a blittable helper type of the same size as the non-blittable type and convert the data after the function returns.</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [構造体の受け渡し](../../../docs/framework/interop/passing-structures.md)  
- 事前に定義されたレイアウトを使用して、データ構造体の受け渡しに関する問題を特定します。  
+## <a name="in-this-section"></a><span data-ttu-id="88a68-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="88a68-108">In This Section</span></span>  
+ [<span data-ttu-id="88a68-109">構造体の受け渡し</span><span class="sxs-lookup"><span data-stu-id="88a68-109">Passing Structures</span></span>](../../../docs/framework/interop/passing-structures.md)  
+ <span data-ttu-id="88a68-110">事前に定義されたレイアウトを使用して、データ構造体の受け渡しに関する問題を特定します。</span><span class="sxs-lookup"><span data-stu-id="88a68-110">Identifies the issues of passing data structures with a predefined layout.</span></span>  
   
- [コールバック関数](../../../docs/framework/interop/callback-functions.md)  
- コールバック関数に関する基本情報を提供します。  
+ [<span data-ttu-id="88a68-111">コールバック関数</span><span class="sxs-lookup"><span data-stu-id="88a68-111">Callback Functions</span></span>](../../../docs/framework/interop/callback-functions.md)  
+ <span data-ttu-id="88a68-112">コールバック関数に関する基本情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="88a68-112">Provides basic information about callback functions.</span></span>  
   
- [方法: コールバック関数を実装する](../../../docs/framework/interop/how-to-implement-callback-functions.md)  
- マネージ コードにコールバック関数を実装する方法について説明します。  
+ [<span data-ttu-id="88a68-113">方法: コールバック関数を実装する</span><span class="sxs-lookup"><span data-stu-id="88a68-113">How to: Implement Callback Functions</span></span>](../../../docs/framework/interop/how-to-implement-callback-functions.md)  
+ <span data-ttu-id="88a68-114">マネージ コードにコールバック関数を実装する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="88a68-114">Describes how to implement callback functions in managed code.</span></span>  
   
-## <a name="related-sections"></a>関連項目  
- [アンマネージ DLL 関数の処理](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)  
- プラットフォーム呼び出しを使用して、アンマネージ DLL 関数を呼び出す方法について説明します。  
+## <a name="related-sections"></a><span data-ttu-id="88a68-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="88a68-115">Related Sections</span></span>  
+ [<span data-ttu-id="88a68-116">アンマネージ DLL 関数の処理</span><span class="sxs-lookup"><span data-stu-id="88a68-116">Consuming Unmanaged DLL Functions</span></span>](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)  
+ <span data-ttu-id="88a68-117">プラットフォーム呼び出しを使用して、アンマネージ DLL 関数を呼び出す方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="88a68-117">Describes how to call unmanaged DLL functions using platform invoke.</span></span>  
   
- [プラットフォーム呼び出しによるデータのマーシャリング](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)  
- メソッドのパラメーターを宣言してアンマネージ ライブラリによってエクスポートされた関数に引数を渡す方法について説明します。
-
+ [<span data-ttu-id="88a68-118">プラットフォーム呼び出しによるデータのマーシャリング</span><span class="sxs-lookup"><span data-stu-id="88a68-118">Marshaling Data with Platform Invoke</span></span>](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)  
+ <span data-ttu-id="88a68-119">メソッドのパラメーターを宣言してアンマネージ ライブラリによってエクスポートされた関数に引数を渡す方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="88a68-119">Describes how to declare method parameters and pass arguments to functions exported by unmanaged libraries.</span></span>

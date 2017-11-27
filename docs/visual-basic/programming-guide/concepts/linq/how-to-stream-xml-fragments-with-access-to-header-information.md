@@ -1,43 +1,34 @@
 ---
-title: "方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム出力 |Microsoft ドキュメント"
+title: "方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム出力"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: effd10df-87c4-4d7a-8a9a-1434d829dca5
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 299a938cd4b10dbca308685e389fab76656ac20b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: f745d0725b9b05620b4b967e51b452e54fe5e6d9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-stream-xml-fragments-with-access-to-header-information-visual-basic"></a>方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム出力
-大きな XML ファイルを任意に読み取り、アプリケーションのメモリ使用量を予想できるようにアプリケーションを作成しなければならない場合があります。 大きな XML ファイルを XML ツリーに設定しようとすると、ファイルのサイズに比例してメモリが過剰に使用されます。 したがって、代わりにストリーミングの手法を使用する必要があります。  
+# <a name="how-to-stream-xml-fragments-with-access-to-header-information-visual-basic"></a><span data-ttu-id="3b7a1-102">方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム出力</span><span class="sxs-lookup"><span data-stu-id="3b7a1-102">How to: Stream XML Fragments with Access to Header Information (Visual Basic)</span></span>
+<span data-ttu-id="3b7a1-103">大きな XML ファイルを任意に読み取り、アプリケーションのメモリ使用量を予想できるようにアプリケーションを作成しなければならない場合があります。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-103">Sometimes you have to read arbitrarily large XML files, and write your application so that the memory footprint of the application is predictable.</span></span> <span data-ttu-id="3b7a1-104">大きな XML ファイルを XML ツリーに設定しようとすると、ファイルのサイズに比例してメモリが過剰に使用されます。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-104">If you attempt to populate an XML tree with a large XML file, your memory usage will be proportional to the size of the file—that is, excessive.</span></span> <span data-ttu-id="3b7a1-105">したがって、代わりにストリーミングの手法を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-105">Therefore, you should use a streaming technique instead.</span></span>  
   
- 1 つのオプションが<xref:System.Xml.XmlReader>。</xref:System.Xml.XmlReader>を使用してアプリケーションを作成するには ただし、使用する場合があります[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]XML ツリーに対してクエリします。 このような場合は、カスタムの軸メソッドを独自に記述します。 詳細については、次を参照してください。[方法:、LINQ to XML 軸メソッド (Visual Basic) を記述](../../../../visual-basic/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md)します。  
+ <span data-ttu-id="3b7a1-106">これを実現する 1 つの選択肢として、<xref:System.Xml.XmlReader> を使用してアプリケーションを作成する方法があります。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-106">One option is to write your application using <xref:System.Xml.XmlReader>.</span></span> <span data-ttu-id="3b7a1-107">ただし、場合によっては、XML ツリーに対してクエリを実行するとき、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] の使用が必要になることがあります。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-107">However, you might want to use [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] to query the XML tree.</span></span> <span data-ttu-id="3b7a1-108">このような場合は、カスタムの軸メソッドを独自に記述します。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-108">If this is the case, you can write your own custom axis method.</span></span> <span data-ttu-id="3b7a1-109">詳細については、次を参照してください。[する方法: LINQ を XML 軸メソッド (Visual Basic) に書き込む](../../../../visual-basic/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md)です。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-109">For more information, see [How to: Write a LINQ to XML Axis Method (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md).</span></span>  
   
- 使用する小さなメソッドを記述する、独自の軸メソッドを記述する、<xref:System.Xml.XmlReader>対象のノードのいずれかに達するまで、ノードを読み取れません</xref:System.Xml.XmlReader>。 メソッドを呼び出して、<xref:System.Xml.Linq.XNode.ReadFrom%2A>からを読み取ります、<xref:System.Xml.XmlReader>し、XML フラグメントをインスタンス化します</xref:System.Xml.XmlReader></xref:System.Xml.Linq.XNode.ReadFrom%2A>。 これで、カスタムの軸メソッド上に LINQ クエリを記述できます。  
+ <span data-ttu-id="3b7a1-110">独自の軸メソッドを記述するには、<xref:System.Xml.XmlReader> を使用して、対象となるノードの 1 つに到達するまでノードを読み取る小さなメソッドを記述します。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-110">To write your own axis method, you write a small method that uses the <xref:System.Xml.XmlReader> to read nodes until it reaches one of the nodes in which you are interested.</span></span> <span data-ttu-id="3b7a1-111">このメソッドから <xref:System.Xml.Linq.XNode.ReadFrom%2A> が呼び出され、これにより <xref:System.Xml.XmlReader> からデータが読み取られ、XML フラグメントがインスタンス化されます。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-111">The method then calls <xref:System.Xml.Linq.XNode.ReadFrom%2A>, which reads from the <xref:System.Xml.XmlReader> and instantiates an XML fragment.</span></span> <span data-ttu-id="3b7a1-112">これで、カスタムの軸メソッド上に LINQ クエリを記述できます。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-112">You can then write LINQ queries on your custom axis method.</span></span>  
   
- ストリーミングの手法は、ソース ドキュメントを&1; 回だけ処理する必要がある場合に適しており、ドキュメントの順序で要素を処理できます。 一部の標準クエリ演算子でなど<xref:System.Linq.Enumerable.OrderBy%2A>、そのソースを反復処理する、すべてのデータを収集、並べ替えられて、および最終的に、シーケンスの最初の項目が生成されます</xref:System.Linq.Enumerable.OrderBy%2A>。 最初の項目を生成する前にソースを具体化するクエリ演算子を使用すると、メモリ使用量を低く維持することができないので注意してください。  
+ <span data-ttu-id="3b7a1-113">ストリーミングの手法は、ソース ドキュメントを 1 回だけ処理する必要がある場合に適しており、ドキュメントの順序で要素を処理できます。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-113">Streaming techniques are best applied in situations where you need to process the source document only once, and you can process the elements in document order.</span></span> <span data-ttu-id="3b7a1-114"><xref:System.Linq.Enumerable.OrderBy%2A> などの一部の標準クエリ演算子では、ソースが反復処理され、すべてのデータが収集され並べ替えられて、最終的にはシーケンス内の最初の項目が生成されます。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-114">Certain standard query operators, such as <xref:System.Linq.Enumerable.OrderBy%2A>, iterate their source, collect all of the data, sort it, and then finally yield the first item in the sequence.</span></span> <span data-ttu-id="3b7a1-115">最初の項目を生成する前にソースを具体化するクエリ演算子を使用すると、メモリ使用量を低く維持することができないので注意してください。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-115">Note that if you use a query operator that materializes its source before yielding the first item, you will not retain a small memory footprint.</span></span>  
   
-## <a name="example"></a>例  
- ストリーム出力は関心の高い問題となる場合があるため、例を使って説明します。 次の XML ドキュメントでは、カスタムの軸メソッドのコンシューマーが、各項目が属している顧客の名前も認識している必要があります。  
+## <a name="example"></a><span data-ttu-id="3b7a1-116">例</span><span class="sxs-lookup"><span data-stu-id="3b7a1-116">Example</span></span>  
+ <span data-ttu-id="3b7a1-117">ストリーム出力は関心の高い問題となる場合があるため、例を使って説明します。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-117">Sometimes the problem gets just a little more interesting.</span></span> <span data-ttu-id="3b7a1-118">次の XML ドキュメントでは、カスタムの軸メソッドのコンシューマーが、各項目が属している顧客の名前も認識している必要があります。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-118">In the following XML document, the consumer of your custom axis method also has to know the name of the customer that each item belongs to.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -84,11 +75,11 @@ ms.lasthandoff: 03/13/2017
 </Root>  
 ```  
   
- この例で採用している方法では、ヘッダー情報の監視と保存が行われ、その後でヘッダー情報と列挙される詳細情報の両方が含まれている小さな XML ツリーが構築されます。 次に、軸メソッドによってこの新しい小さな XML ツリーが生成されます。 これでクエリは、詳細情報だけでなくヘッダー情報にもアクセスできるようになります。  
+ <span data-ttu-id="3b7a1-119">この例で採用している方法では、ヘッダー情報の監視と保存が行われ、その後でヘッダー情報と列挙される詳細情報の両方が含まれている小さな XML ツリーが構築されます。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-119">The approach that this example takes is to also watch for this header information, save the header information, and then build a small XML tree that contains both the header information and the detail that you are enumerating.</span></span> <span data-ttu-id="3b7a1-120">次に、軸メソッドによってこの新しい小さな XML ツリーが生成されます。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-120">The axis method then yields this new, small XML tree.</span></span> <span data-ttu-id="3b7a1-121">これでクエリは、詳細情報だけでなくヘッダー情報にもアクセスできるようになります。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-121">The query then has access to the header information as well as the detail information.</span></span>  
   
- この方法で使用されるメモリは少量です。 詳細な XML フラグメントが個々に生成されるときに、前のフラグメントへの参照は保持されず、そのフラグメントはガベージ コレクションの対象になります。 この手法を使用すると、存続期間の短いオブジェクトがヒープ上に多数作成されるので注意してください。  
+ <span data-ttu-id="3b7a1-122">この方法で使用されるメモリは少量です。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-122">This approach has a small memory footprint.</span></span> <span data-ttu-id="3b7a1-123">詳細な XML フラグメントが個々に生成されるときに、前のフラグメントへの参照は保持されず、そのフラグメントはガベージ コレクションの対象になります。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-123">As each detail XML fragment is yielded, no references are kept to the previous fragment, and it is available for garbage collection.</span></span> <span data-ttu-id="3b7a1-124">この手法を使用すると、存続期間の短いオブジェクトがヒープ上に多数作成されるので注意してください。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-124">Note that this technique creates many short lived objects on the heap.</span></span>  
   
- 次の例では、URI で指定されたファイルから XML フラグメントをストリーム出力する、カスタムの軸メソッドを実装して使用する方法を示します。 このカスタムの軸は、`Customer`、`Name`、`Item` の各要素を含んだドキュメントを前提として記述されています。また、それらの要素は、上記の `Source.xml` ドキュメントと同じように配置されます。 これは単純な実装です。 ただし、より堅牢に実装する場合は、無効なドキュメントの解析にも対応するようにします。  
+ <span data-ttu-id="3b7a1-125">次の例では、URI で指定されたファイルから XML フラグメントをストリーム出力する、カスタムの軸メソッドを実装して使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-125">The following example shows how to implement and use a custom axis method that streams XML fragments from the file specified by the URI.</span></span> <span data-ttu-id="3b7a1-126">このカスタムの軸は、`Customer`、`Name`、`Item` の各要素を含んだドキュメントを前提として記述されています。また、それらの要素は、上記の `Source.xml` ドキュメントと同じように配置されます。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-126">This custom axis is specifically written such that it expects a document that has `Customer`, `Name`, and `Item` elements, and that those elements will be arranged as in the above `Source.xml` document.</span></span> <span data-ttu-id="3b7a1-127">これは単純な実装です。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-127">It is a simplistic implementation.</span></span> <span data-ttu-id="3b7a1-128">ただし、より堅牢に実装する場合は、無効なドキュメントの解析にも対応するようにします。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-128">A more robust implementation would be prepared to parse an invalid document.</span></span>  
   
 ```vb  
 Module Module1  
@@ -221,7 +212,7 @@ Public Class StreamCustomerItemEnumerator
 End Class  
 ```  
   
- このコードを実行すると、次の出力が生成されます。  
+ <span data-ttu-id="3b7a1-129">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="3b7a1-129">This code produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -248,6 +239,5 @@ End Class
 </Root>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [高度な LINQ to XML のプログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
-
+## <a name="see-also"></a><span data-ttu-id="3b7a1-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="3b7a1-130">See Also</span></span>  
+ [<span data-ttu-id="3b7a1-131">高度な LINQ to XML プログラミング (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3b7a1-131">Advanced LINQ to XML Programming (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

@@ -1,56 +1,62 @@
 ---
-title: "メッセージ セキュリティと証明書クライアント | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "メッセージ セキュリティと証明書クライアント"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 99770573-c815-4428-a38c-e4335c8bd7ce
-caps.latest.revision: 16
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: afc1e0def03040acaa5cffe3f67339a61cda7d5c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# メッセージ セキュリティと証明書クライアント
-次のシナリオでは、メッセージ セキュリティ モードを使用して保護されている [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアントおよびサービスを示します。クライアントとサービスは、どちらも証明書を使用して認証されます。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][分散アプリケーションのセキュリティ](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).  
+# <a name="message-security-with-a-certificate-client"></a><span data-ttu-id="432ba-102">メッセージ セキュリティと証明書クライアント</span><span class="sxs-lookup"><span data-stu-id="432ba-102">Message Security with a Certificate Client</span></span>
+<span data-ttu-id="432ba-103">次のシナリオでは、メッセージ セキュリティ モードを使用して保護されている [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアントおよびサービスを示します。</span><span class="sxs-lookup"><span data-stu-id="432ba-103">The following scenario shows a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] client and service secured using message security mode.</span></span> <span data-ttu-id="432ba-104">クライアントとサービスは、どちらも証明書を使用して認証されます。</span><span class="sxs-lookup"><span data-stu-id="432ba-104">Both the client and the service are authenticated with certificates.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="432ba-105">[分散アプリケーションのセキュリティ](../../../../docs/framework/wcf/feature-details/distributed-application-security.md)です。</span><span class="sxs-lookup"><span data-stu-id="432ba-105"> [Distributed Application Security](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).</span></span>  
   
- サンプル アプリケーションについては、「[メッセージ セキュリティ証明書](../../../../docs/framework/wcf/samples/message-security-certificate.md)」を参照してください。  
+ <span data-ttu-id="432ba-106">サンプル アプリケーションについては、次を参照してください。[メッセージのセキュリティ証明書](../../../../docs/framework/wcf/samples/message-security-certificate.md)です。</span><span class="sxs-lookup"><span data-stu-id="432ba-106">For a sample application, see [Message Security Certificate](../../../../docs/framework/wcf/samples/message-security-certificate.md).</span></span>  
   
- ![証明書を持つクライアント](../../../../docs/framework/wcf/feature-details/media/clientwithcertificate.gif "ClientWithCertificate")  
+ <span data-ttu-id="432ba-107">![証明書を使用するクライアント](../../../../docs/framework/wcf/feature-details/media/clientwithcertificate.gif "ClientWithCertificate")</span><span class="sxs-lookup"><span data-stu-id="432ba-107">![Client with certificate](../../../../docs/framework/wcf/feature-details/media/clientwithcertificate.gif "ClientWithCertificate")</span></span>  
   
-|特性|説明|  
-|--------|--------|  
-|セキュリティ モード|メッセージ|  
-|相互運用性|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のみ|  
-|認証 \(サーバー\)|サービス証明書を使用|  
-|認証 \(クライアント\)|クライアント証明書を使用|  
-|整合性|○|  
-|機密性|○|  
-|トランスポート|HTTP|  
-|バインディング|<xref:System.ServiceModel.WSHttpBinding>|  
+|<span data-ttu-id="432ba-108">特徴</span><span class="sxs-lookup"><span data-stu-id="432ba-108">Characteristic</span></span>|<span data-ttu-id="432ba-109">説明</span><span class="sxs-lookup"><span data-stu-id="432ba-109">Description</span></span>|  
+|--------------------|-----------------|  
+|<span data-ttu-id="432ba-110">セキュリティ モード</span><span class="sxs-lookup"><span data-stu-id="432ba-110">Security Mode</span></span>|<span data-ttu-id="432ba-111">メッセージ</span><span class="sxs-lookup"><span data-stu-id="432ba-111">Message</span></span>|  
+|<span data-ttu-id="432ba-112">相互運用性</span><span class="sxs-lookup"><span data-stu-id="432ba-112">Interoperability</span></span>|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="432ba-113"> のみ</span><span class="sxs-lookup"><span data-stu-id="432ba-113"> only</span></span>|  
+|<span data-ttu-id="432ba-114">認証 (サーバー)</span><span class="sxs-lookup"><span data-stu-id="432ba-114">Authentication (Server)</span></span>|<span data-ttu-id="432ba-115">サービス証明書を使用</span><span class="sxs-lookup"><span data-stu-id="432ba-115">Using service certificate</span></span>|  
+|<span data-ttu-id="432ba-116">認証 (クライアント)</span><span class="sxs-lookup"><span data-stu-id="432ba-116">Authentication (Client)</span></span>|<span data-ttu-id="432ba-117">クライアント証明書を使用</span><span class="sxs-lookup"><span data-stu-id="432ba-117">Using client certificate</span></span>|  
+|<span data-ttu-id="432ba-118">整合性</span><span class="sxs-lookup"><span data-stu-id="432ba-118">Integrity</span></span>|<span data-ttu-id="432ba-119">はい</span><span class="sxs-lookup"><span data-stu-id="432ba-119">Yes</span></span>|  
+|<span data-ttu-id="432ba-120">機密性</span><span class="sxs-lookup"><span data-stu-id="432ba-120">Confidentiality</span></span>|<span data-ttu-id="432ba-121">はい</span><span class="sxs-lookup"><span data-stu-id="432ba-121">Yes</span></span>|  
+|<span data-ttu-id="432ba-122">Transport</span><span class="sxs-lookup"><span data-stu-id="432ba-122">Transport</span></span>|<span data-ttu-id="432ba-123">HTTP</span><span class="sxs-lookup"><span data-stu-id="432ba-123">HTTP</span></span>|  
+|<span data-ttu-id="432ba-124">バインディング</span><span class="sxs-lookup"><span data-stu-id="432ba-124">Binding</span></span>|<xref:System.ServiceModel.WSHttpBinding>|  
   
-## サービス  
- 次のコードと構成は、別々に実行します。以下のいずれかを実行します。  
+## <a name="service"></a><span data-ttu-id="432ba-125">サービス</span><span class="sxs-lookup"><span data-stu-id="432ba-125">Service</span></span>  
+ <span data-ttu-id="432ba-126">次のコードと構成は、別々に実行します。</span><span class="sxs-lookup"><span data-stu-id="432ba-126">The following code and configuration are meant to run independently.</span></span> <span data-ttu-id="432ba-127">次のいずれかの操作を行います。</span><span class="sxs-lookup"><span data-stu-id="432ba-127">Do one of the following:</span></span>  
   
--   構成を使用せずに、コードを使用してスタンドアロン サービスを作成します。  
+-   <span data-ttu-id="432ba-128">構成を使用せずに、コードを使用してスタンドアロン サービスを作成します。</span><span class="sxs-lookup"><span data-stu-id="432ba-128">Create a stand-alone service using the code with no configuration.</span></span>  
   
--   提供された構成を使用してサービスを作成しますが、エンドポイントを定義しません。  
+-   <span data-ttu-id="432ba-129">提供された構成を使用してサービスを作成しますが、エンドポイントを定義しません。</span><span class="sxs-lookup"><span data-stu-id="432ba-129">Create a service using the supplied configuration, but do not define any endpoints.</span></span>  
   
-### コード  
- 次のコードは、メッセージ セキュリティを使用するサービス エンドポイントを作成し、セキュリティで保護されたコンテキストを確立する方法を示しています。  
+### <a name="code"></a><span data-ttu-id="432ba-130">コード</span><span class="sxs-lookup"><span data-stu-id="432ba-130">Code</span></span>  
+ <span data-ttu-id="432ba-131">次のコードは、メッセージ セキュリティを使用するサービス エンドポイントを作成し、セキュリティで保護されたコンテキストを確立する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="432ba-131">The following code shows how to create a service endpoint that uses message security to establish a secure context.</span></span>  
   
  [!code-csharp[C_SecurityScenarios#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#10)]
  [!code-vb[C_SecurityScenarios#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#10)]  
   
-### 構成  
- コードの代わりに次の構成を使用できます。  
+### <a name="configuration"></a><span data-ttu-id="432ba-132">構成</span><span class="sxs-lookup"><span data-stu-id="432ba-132">Configuration</span></span>  
+ <span data-ttu-id="432ba-133">コードの代わりに次の構成を使用できます。</span><span class="sxs-lookup"><span data-stu-id="432ba-133">The following configuration can be used instead of the code.</span></span>  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <system.serviceModel>  
@@ -88,26 +94,26 @@ caps.handback.revision: 16
 </configuration>  
 ```  
   
-## クライアント  
- 次のコードと構成は、別々に実行します。以下のいずれかの操作を行います。  
+## <a name="client"></a><span data-ttu-id="432ba-134">Client</span><span class="sxs-lookup"><span data-stu-id="432ba-134">Client</span></span>  
+ <span data-ttu-id="432ba-135">次のコードと構成は、別々に実行します。</span><span class="sxs-lookup"><span data-stu-id="432ba-135">The following code and configuration are meant to run independently.</span></span> <span data-ttu-id="432ba-136">次のいずれかの操作を行います。</span><span class="sxs-lookup"><span data-stu-id="432ba-136">Do one of the following:</span></span>  
   
--   コード \(およびクライアント コード\) を使用してスタンドアロン クライアントを作成します。  
+-   <span data-ttu-id="432ba-137">コード (およびクライアント コード) を使用してスタンドアロン クライアントを作成します。</span><span class="sxs-lookup"><span data-stu-id="432ba-137">Create a stand-alone client using the code (and client code).</span></span>  
   
--   エンドポイント アドレスを定義しないクライアントを作成します。代わりに、引数として構成名を受け取るクライアント コンストラクターを使用する。次に例を示します。  
+-   <span data-ttu-id="432ba-138">エンドポイント アドレスを定義しないクライアントを作成します。</span><span class="sxs-lookup"><span data-stu-id="432ba-138">Create a client that does not define any endpoint addresses.</span></span> <span data-ttu-id="432ba-139">代わりに、引数として構成名を受け取るクライアント コンストラクターを使用します。</span><span class="sxs-lookup"><span data-stu-id="432ba-139">Instead, use the client constructor that takes the configuration name as an argument.</span></span> <span data-ttu-id="432ba-140">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="432ba-140">For example:</span></span>  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
-### コード  
- クライアントを作成する場合のコード例を次に示します。バインディングではメッセージ モード セキュリティを使用し、クライアント資格情報の種類は `Certificate` に設定します。  
+### <a name="code"></a><span data-ttu-id="432ba-141">コード</span><span class="sxs-lookup"><span data-stu-id="432ba-141">Code</span></span>  
+ <span data-ttu-id="432ba-142">クライアントを作成する場合のコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="432ba-142">The following code creates the client.</span></span> <span data-ttu-id="432ba-143">バインディングではメッセージ モード セキュリティを使用し、クライアント資格情報の種類は `Certificate` に設定します。</span><span class="sxs-lookup"><span data-stu-id="432ba-143">The binding is to message mode security, and the client credential type is set to `Certificate`.</span></span>  
   
  [!code-csharp[C_SecurityScenarios#17](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#17)]
  [!code-vb[C_SecurityScenarios#17](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#17)]  
   
-### 構成  
- 次の構成は、エンドポイントの動作を使用してクライアント証明書を指定します。証明書の詳細については、「[証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)」を参照してください。また、コード内で \<`identity`\> 要素を使用して、予想されるサーバー ID のドメイン ネーム システム \(DNS: Domain Name System\) を指定します。ID [!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[サービス ID と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)」を参照してください。  
+### <a name="configuration"></a><span data-ttu-id="432ba-144">構成</span><span class="sxs-lookup"><span data-stu-id="432ba-144">Configuration</span></span>  
+ <span data-ttu-id="432ba-145">次の構成は、エンドポイントの動作を使用してクライアント証明書を指定します。</span><span class="sxs-lookup"><span data-stu-id="432ba-145">The following configuration specifies the client certificate using an endpoint behavior.</span></span> <span data-ttu-id="432ba-146">証明書の詳細については、「[証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="432ba-146">For more information about certificates, see [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span></span> <span data-ttu-id="432ba-147">コードを使用しても、<`identity`> 要素を予想されるサーバー id のドメイン ネーム システム (DNS) を指定します。</span><span class="sxs-lookup"><span data-stu-id="432ba-147">The code also uses an <`identity`> element to specify a Domain Name System (DNS) of the expected server identity.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="432ba-148">id を参照してください[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。</span><span class="sxs-lookup"><span data-stu-id="432ba-148"> identity, see [Service Identity and Authentication](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).</span></span>  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <system.serviceModel>  
@@ -147,8 +153,8 @@ caps.handback.revision: 16
 </configuration>  
 ```  
   
-## 参照  
- [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)   
- [サービス ID と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)   
- [証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)   
- [Windows Server AppFabric のセキュリティ モデル](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a><span data-ttu-id="432ba-149">関連項目</span><span class="sxs-lookup"><span data-stu-id="432ba-149">See Also</span></span>  
+ [<span data-ttu-id="432ba-150">セキュリティの概要</span><span class="sxs-lookup"><span data-stu-id="432ba-150">Security Overview</span></span>](../../../../docs/framework/wcf/feature-details/security-overview.md)  
+ [<span data-ttu-id="432ba-151">サービス Id と認証</span><span class="sxs-lookup"><span data-stu-id="432ba-151">Service Identity and Authentication</span></span>](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
+ [<span data-ttu-id="432ba-152">証明書の使用</span><span class="sxs-lookup"><span data-stu-id="432ba-152">Working with Certificates</span></span>](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
+ [<span data-ttu-id="432ba-153">Windows Server App Fabric のセキュリティ モデル</span><span class="sxs-lookup"><span data-stu-id="432ba-153">Security Model for Windows Server App Fabric</span></span>](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

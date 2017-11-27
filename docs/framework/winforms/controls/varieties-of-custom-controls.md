@@ -1,123 +1,124 @@
 ---
-title: "さまざまなカスタム コントロール | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "複合コントロール"
-  - "コントロール [Windows フォーム], 複合"
-  - "コントロール [Windows フォーム], 拡張"
-  - "コントロール [Windows フォーム], 型"
-  - "コントロール [Windows フォーム], ユーザー コントロール"
-  - "カスタム コントロール [Windows フォーム]"
-  - "拡張されたコントロール"
-  - "ユーザー コントロール [Windows フォーム]"
+title: "さまざまなカスタム コントロール"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- controls [Windows Forms], user controls
+- controls [Windows Forms], types of
+- composite controls [Windows Forms]
+- extended controls [Windows Forms]
+- controls [Windows Forms], extended
+- user controls [Windows Forms]
+- custom controls [Windows Forms]
+- controls [Windows Forms], composite
 ms.assetid: 3cea09e5-4344-4ccb-9858-b66ccac210ff
-caps.latest.revision: 20
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8a8d858228630147e1fbcdfab6a52fba5a63a566
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# さまざまなカスタム コントロール
-.NET Framework では、新しいコントロールを開発および実装できます。  継承を通じて、使い慣れたユーザー コントロールや既存のコントロールの機能の拡張もできます。  また、それぞれ独自の描画を実行するカスタム コントロールを作成することもできます。  
+# <a name="varieties-of-custom-controls"></a><span data-ttu-id="d008d-102">さまざまなカスタム コントロール</span><span class="sxs-lookup"><span data-stu-id="d008d-102">Varieties of Custom Controls</span></span>
+<span data-ttu-id="d008d-103">.NET Framework を使用して、新しいコントロールを開発し、実装できます。</span><span class="sxs-lookup"><span data-stu-id="d008d-103">With the .NET Framework, you can develop and implement new controls.</span></span> <span data-ttu-id="d008d-104">継承によって、使い慣れたユーザー コントロールや既存のコントロールの機能を拡張できます。</span><span class="sxs-lookup"><span data-stu-id="d008d-104">You can extend the functionality of the familiar user control as well as existing controls through inheritance.</span></span> <span data-ttu-id="d008d-105">また、独自の描画を実行するカスタム コントロールを作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="d008d-105">You can also write custom controls that perform their own painting.</span></span>  
   
- 作成するコントロールの種類を決めるときに、判断に迷うことがあります。  ここでは、継承できる各種コントロールの違いを明らかにし、プロジェクトに合わせて特定の種類のコントロールを選択する方法について説明します。  
+ <span data-ttu-id="d008d-106">作成するコントロールの種類を決めるときに、判断に迷うことがあります。</span><span class="sxs-lookup"><span data-stu-id="d008d-106">Deciding which kind of control to create can be confusing.</span></span> <span data-ttu-id="d008d-107">このトピックでは、継承できる各種コントロールの違いを示し、プロジェクトに合わせて特定の種類のコントロールを選択する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d008d-107">This topic highlights the differences among the various kinds of controls from which you can inherit, and provides you with information about how to choose a particular kind of control for your project.</span></span>  
   
 > [!NOTE]
->  Web フォームで使用するコントロールの作成については、「[Developing Custom ASP.NET Server Controls](../Topic/Developing%20Custom%20ASP.NET%20Server%20Controls.md)」を参照してください。  
+>  <span data-ttu-id="d008d-108">Web フォームで使用するコントロールを作成する方法については、「[カスタム ASP.NET サーバー コントロールの開発](http://msdn.microsoft.com/library/fbe26c16-cff4-4089-b3dd-877411f0c0ef)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d008d-108">For information about authoring a control to use on Web Forms, see [Developing Custom ASP.NET Server Controls](http://msdn.microsoft.com/library/fbe26c16-cff4-4089-b3dd-877411f0c0ef).</span></span>  
   
-## 基本コントロール クラス  
- <xref:System.Windows.Forms.Control> クラスは、Windows フォーム コントロールの基本クラスです。  このクラスは、Windows フォーム アプリケーションでのビジュアル表示に必要なインフラストラクチャを提供します。  
+## <a name="base-control-class"></a><span data-ttu-id="d008d-109">基本コントロール クラス</span><span class="sxs-lookup"><span data-stu-id="d008d-109">Base Control Class</span></span>  
+ <span data-ttu-id="d008d-110"><xref:System.Windows.Forms.Control>クラスでは、Windows フォーム コントロールの基本クラスです。</span><span class="sxs-lookup"><span data-stu-id="d008d-110">The <xref:System.Windows.Forms.Control> class is the base class for Windows Forms controls.</span></span> <span data-ttu-id="d008d-111">このクラスは、Windows フォーム アプリケーションでのビジュアル表示に必要なインフラストラクチャを提供します。</span><span class="sxs-lookup"><span data-stu-id="d008d-111">It provides the infrastructure required for visual display in Windows Forms applications.</span></span>  
   
- <xref:System.Windows.Forms.Control> クラスは、Windows フォーム アプリケーションでビジュアル表示を実現するために次のタスクを実行します。  
+ <span data-ttu-id="d008d-112"><xref:System.Windows.Forms.Control>クラスは、Windows フォーム アプリケーションでのビジュアル表示を提供する次のタスクを実行します。</span><span class="sxs-lookup"><span data-stu-id="d008d-112">The <xref:System.Windows.Forms.Control> class performs the following tasks to provide visual display in Windows Forms applications:</span></span>  
   
--   ウィンドウ ハンドルを公開する。  
+-   <span data-ttu-id="d008d-113">ウィンドウ ハンドルを公開する。</span><span class="sxs-lookup"><span data-stu-id="d008d-113">Exposes a window handle.</span></span>  
   
--   メッセージ ルーティングを管理する。  
+-   <span data-ttu-id="d008d-114">メッセージ ルーティングを管理する。</span><span class="sxs-lookup"><span data-stu-id="d008d-114">Manages message routing.</span></span>  
   
--   マウス イベントとキーボード イベントの他にさまざまなユーザー インターフェイス イベントを提供する。  
+-   <span data-ttu-id="d008d-115">マウス イベントとキーボード イベント、および他のさまざまなユーザー インターフェイス イベントを提供する。</span><span class="sxs-lookup"><span data-stu-id="d008d-115">Provides mouse and keyboard events, and many other user interface events.</span></span>  
   
--   高度なレイアウト機能を提供する。  
+-   <span data-ttu-id="d008d-116">高度なレイアウト機能を提供する。</span><span class="sxs-lookup"><span data-stu-id="d008d-116">Provides advanced layout features.</span></span>  
   
--   <xref:System.Windows.Forms.Control.ForeColor%2A>、<xref:System.Windows.Forms.Control.BackColor%2A>、<xref:System.Windows.Forms.Control.Height%2A>、<xref:System.Windows.Forms.Control.Width%2A> など、ビジュアル表示に固有のさまざまなプロパティを格納する。  
+-   <span data-ttu-id="d008d-117">ビジュアル表示に固有の多くのプロパティを含む<xref:System.Windows.Forms.Control.ForeColor%2A>、 <xref:System.Windows.Forms.Control.BackColor%2A>、 <xref:System.Windows.Forms.Control.Height%2A>、および<xref:System.Windows.Forms.Control.Width%2A>です。</span><span class="sxs-lookup"><span data-stu-id="d008d-117">Contains many properties specific to visual display, such as <xref:System.Windows.Forms.Control.ForeColor%2A>, <xref:System.Windows.Forms.Control.BackColor%2A>, <xref:System.Windows.Forms.Control.Height%2A>, and <xref:System.Windows.Forms.Control.Width%2A>.</span></span>  
   
--   Windows フォーム コントロールが Microsoft® ActiveX® コントロールとして機能するのに必要なセキュリティとスレッドのサポートを提供する。  
+-   <span data-ttu-id="d008d-118">Windows フォーム コントロールが Microsoft® ActiveX® コントロールとして機能するために必要なセキュリティとスレッドのサポートを提供する。</span><span class="sxs-lookup"><span data-stu-id="d008d-118">Provides the security and threading support necessary for a Windows Forms control to act as a Microsoft® ActiveX® control.</span></span>  
   
- 基本クラスによってインフラストラクチャの大部分が提供されるため、Windows フォーム コントロールは比較的簡単に開発できます。  
+ <span data-ttu-id="d008d-119">インフラストラクチャの大部分は基本クラスによって提供されるため、独自の Windows フォーム コントロールを比較的簡単に開発できます。</span><span class="sxs-lookup"><span data-stu-id="d008d-119">Because so much of the infrastructure is provided by the base class, it is relatively easy to develop your own Windows Forms controls.</span></span>  
   
-## コントロールの種類  
- Windows フォームは、*複合*、*拡張*、*カスタム*の 3 種類のユーザー定義コントロールをサポートします。  次の各セクションでは、それぞれのコントロールについて説明し、プロジェクトで使用する種類を選択する際の推奨事項を示します。  
+## <a name="kinds-of-controls"></a><span data-ttu-id="d008d-120">コントロールの種類</span><span class="sxs-lookup"><span data-stu-id="d008d-120">Kinds of Controls</span></span>  
+ <span data-ttu-id="d008d-121">Windows フォームは、*複合*、*拡張*、*カスタム*の 3 種類のユーザー定義コントロールをサポートします。</span><span class="sxs-lookup"><span data-stu-id="d008d-121">Windows Forms supports three kinds of user-defined controls: *composite*, *extended*, and *custom*.</span></span> <span data-ttu-id="d008d-122">以下のセクションでは、各種コントロールについて説明し、プロジェクトで使用する種類を選択する際の推奨事項を示します。</span><span class="sxs-lookup"><span data-stu-id="d008d-122">The following sections describe each kind of control and give recommendations for choosing the kind to use in your projects.</span></span>  
   
-### 複合コントロール  
- 複合コントロールは、Windows フォーム コントロールのコレクションをコモン コンテナーにカプセル化したものです。  この種のコントロールは、*ユーザー コントロール*とも呼ばれます。  コンテナーに含まれているコントロールは、*内在コントロール*と言います。  
+### <a name="composite-controls"></a><span data-ttu-id="d008d-123">複合コントロール</span><span class="sxs-lookup"><span data-stu-id="d008d-123">Composite Controls</span></span>  
+ <span data-ttu-id="d008d-124">複合コントロールは、共通のコンテナーにカプセル化された Windows フォーム コントロールのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="d008d-124">A composite control is a collection of Windows Forms controls encapsulated in a common container.</span></span> <span data-ttu-id="d008d-125">この種のコントロールは、*ユーザー コントロール*とも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="d008d-125">This kind of control is sometimes called a *user control*.</span></span> <span data-ttu-id="d008d-126">含まれているコントロールは、*内在コントロール*と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="d008d-126">The contained controls are called *constituent controls*.</span></span>  
   
- 複合コントロールは、含まれる各 Windows フォーム コントロールに関連付けられている本来の機能をすべて保持し、選択したプロパティを公開および関連付けることができます。  また、開発者側の追加作業が不要な、既定のキーボード処理機能を数多く提供します。  
+ <span data-ttu-id="d008d-127">複合コントロールは、含まれている各 Windows フォーム コントロールに関連する固有の機能をすべて保持し、それらのプロパティを選択的に公開してバインドできます。</span><span class="sxs-lookup"><span data-stu-id="d008d-127">A composite control holds all of the inherent functionality associated with each of the contained Windows Forms controls and enables you to selectively expose and bind their properties.</span></span> <span data-ttu-id="d008d-128">また、開発者側での追加作業を必要としない多数の既定のキーボード処理機能も提供します。</span><span class="sxs-lookup"><span data-stu-id="d008d-128">A composite control also provides a great deal of default keyboard handling functionality with no extra development effort on your part.</span></span>  
   
- たとえば、複合コントロールを作成して、データベースの顧客アドレス データを表示することもできます。  このコントロールには、データベース フィールドを表示するための <xref:System.Windows.Forms.DataGridView> コントロール、データ ソースへのバインディングを処理するための <xref:System.Windows.Forms.BindingSource> コントロール、およびレコード間を移動するための <xref:System.Windows.Forms.BindingNavigator> コントロールが含まれます。  データ バインディング プロパティを選択的に公開し、さらにコントロール全体をパッケージ化してアプリケーション間で再利用できます。  この種の複合コントロールの例については、「[方法 : Windows フォーム コントロールに属性を適用する](../../../../docs/framework/winforms/controls/how-to-apply-attributes-in-windows-forms-controls.md)」を参照してください。  
+ <span data-ttu-id="d008d-129">たとえば、データベースの顧客の住所データを表示する複合コントロールを作成できます。</span><span class="sxs-lookup"><span data-stu-id="d008d-129">For example, a composite control could be built to display customer address data from a database.</span></span> <span data-ttu-id="d008d-130">このコントロールを含めることが、<xref:System.Windows.Forms.DataGridView>データベース フィールドを表示するコントロールを<xref:System.Windows.Forms.BindingSource>データ ソースへのバインディングを処理して、<xref:System.Windows.Forms.BindingNavigator>レコード間を移動するコントロール。</span><span class="sxs-lookup"><span data-stu-id="d008d-130">This control could include a <xref:System.Windows.Forms.DataGridView> control to display the database fields, a <xref:System.Windows.Forms.BindingSource> to handle binding to a data source, and a <xref:System.Windows.Forms.BindingNavigator> control to move through the records.</span></span> <span data-ttu-id="d008d-131">データ バインディング プロパティを選択的に公開したり、コントロール全体をパッケージ化してアプリケーション間で再利用したりできます。</span><span class="sxs-lookup"><span data-stu-id="d008d-131">You could selectively expose data binding properties, and you could package and reuse the entire control from application to application.</span></span> <span data-ttu-id="d008d-132">この種の複合コントロールの例については、「[方法 : Windows フォーム コントロールに属性を適用する](../../../../docs/framework/winforms/controls/how-to-apply-attributes-in-windows-forms-controls.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d008d-132">For an example of this kind of composite control, see [How to: Apply Attributes in Windows Forms Controls](../../../../docs/framework/winforms/controls/how-to-apply-attributes-in-windows-forms-controls.md).</span></span>  
   
- 複合コントロールを作成するには、<xref:System.Windows.Forms.UserControl> クラスから派生します。  <xref:System.Windows.Forms.UserControl> 基本クラスは、子コントロールに対してキーボード ルーティング機能を提供し、複数の子コントロールを 1 つのグループとして機能させることができます。  詳細については、「[複合 Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-a-composite-windows-forms-control.md)」を参照してください。  
+ <span data-ttu-id="d008d-133">派生する複合コントロールを作成する、<xref:System.Windows.Forms.UserControl>クラスです。</span><span class="sxs-lookup"><span data-stu-id="d008d-133">To author a composite control, derive from the <xref:System.Windows.Forms.UserControl> class.</span></span> <span data-ttu-id="d008d-134"><xref:System.Windows.Forms.UserControl>基底クラスが子コントロールおよび子コントロールがグループとして動作できるようにキーボード ルーティングを提供します。</span><span class="sxs-lookup"><span data-stu-id="d008d-134">The <xref:System.Windows.Forms.UserControl> base class provides keyboard routing for child controls and enables child controls to work as a group.</span></span> <span data-ttu-id="d008d-135">詳細については、「[複合 Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-a-composite-windows-forms-control.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d008d-135">For more information, see [Developing a Composite Windows Forms Control](../../../../docs/framework/winforms/controls/developing-a-composite-windows-forms-control.md).</span></span>  
   
- **推奨事項**  
+ <span data-ttu-id="d008d-136">**推奨事項**</span><span class="sxs-lookup"><span data-stu-id="d008d-136">**Recommendation**</span></span>  
   
- <xref:System.Windows.Forms.UserControl> クラスからの継承は、次の場合に適しています。  
+ <span data-ttu-id="d008d-137">次の場合に、<xref:System.Windows.Forms.UserControl> クラスから継承します。</span><span class="sxs-lookup"><span data-stu-id="d008d-137">Inherit from the <xref:System.Windows.Forms.UserControl> class if:</span></span>  
   
--   いくつかの Windows フォーム コントロールの機能を 1 つの再利用可能な単位に結合する場合。  
+-   <span data-ttu-id="d008d-138">いくつかの Windows フォーム コントロールの機能を再利用可能な 1 つの単位に結合します。</span><span class="sxs-lookup"><span data-stu-id="d008d-138">You want to combine the functionality of several Windows Forms controls into a single reusable unit.</span></span>  
   
-### 拡張コントロール  
- 既存の Windows フォーム コントロールから継承したコントロールを派生できます。  この方法では、Windows フォーム コントロールの本来の機能をすべて保持しながら、カスタム プロパティやカスタム メソッドなどを追加して、それらの機能を拡張できます。  この方法では、基本コントロールの描画ロジックをオーバーライドし、そのユーザー インターフェイスの外観を変更して拡張できます。  
+### <a name="extended-controls"></a><span data-ttu-id="d008d-139">拡張コントロール</span><span class="sxs-lookup"><span data-stu-id="d008d-139">Extended Controls</span></span>  
+ <span data-ttu-id="d008d-140">既存の Windows フォーム コントロールから継承されたコントロールを派生できます。</span><span class="sxs-lookup"><span data-stu-id="d008d-140">You can derive an inherited control from any existing Windows Forms control.</span></span> <span data-ttu-id="d008d-141">この方法では、Windows フォーム コントロールの固有の機能をすべて保持し、カスタム プロパティやカスタム メソッドなどの機能を追加してその機能を拡張できます。</span><span class="sxs-lookup"><span data-stu-id="d008d-141">With this approach, you can retain all of the inherent functionality of a Windows Forms control, and then extend that functionality by adding custom properties, methods, or other features.</span></span> <span data-ttu-id="d008d-142">この方法を使用して、基本コントロールの描画ロジックをオーバーライドし、そのユーザー インターフェイスの外観を変更して拡張できます。</span><span class="sxs-lookup"><span data-stu-id="d008d-142">With this option, you can override the base control's paint logic, and then extend its user interface by changing its appearance.</span></span>  
   
- たとえば、<xref:System.Windows.Forms.Button> コントロールから派生させることで、ユーザーがクリックした回数を追跡するコントロールを作成できます。  
+ <span data-ttu-id="d008d-143">たとえばから派生したコントロールを作成することができます、<xref:System.Windows.Forms.Button>回数ユーザーを追跡するコントロールがクリックしました。</span><span class="sxs-lookup"><span data-stu-id="d008d-143">For example, you can create a control derived from the <xref:System.Windows.Forms.Button> control that tracks how many times a user has clicked it.</span></span>  
   
- 一部のコントロールでは、基本クラスの <xref:System.Windows.Forms.Control.OnPaint%2A> メソッドをオーバーライドすることにより、コントロールのグラフィカル ユーザー インターフェイスに独自の外観を与えることもできます。  クリックを追跡する拡張ボタンでは、<xref:System.Windows.Forms.Control.OnPaint%2A> メソッドをオーバーライドして <xref:System.Windows.Forms.Control.OnPaint%2A> の基本実装を呼び出し、<xref:System.Windows.Forms.Button> コントロールのクライアント領域の一角にクリック回数を描画できます。  
+ <span data-ttu-id="d008d-144">一部のコントロールに追加することもカスタムの外観をコントロールのグラフィカル ユーザー インターフェイスをオーバーライドすることで、<xref:System.Windows.Forms.Control.OnPaint%2A>基底クラスのメソッドです。</span><span class="sxs-lookup"><span data-stu-id="d008d-144">In some controls, you can also add a custom appearance to the graphical user interface of your control by overriding the <xref:System.Windows.Forms.Control.OnPaint%2A> method of the base class.</span></span> <span data-ttu-id="d008d-145">拡張ボタンのクリックを追跡する、オーバーライドすることができます、<xref:System.Windows.Forms.Control.OnPaint%2A>の基本実装を呼び出すメソッドを<xref:System.Windows.Forms.Control.OnPaint%2A>、1 つの隅にあるをクリックしてカウントを描画し、<xref:System.Windows.Forms.Button>コントロールのクライアント領域。</span><span class="sxs-lookup"><span data-stu-id="d008d-145">For an extended button that tracks clicks, you can override the <xref:System.Windows.Forms.Control.OnPaint%2A> method to call the base implementation of <xref:System.Windows.Forms.Control.OnPaint%2A>, and then draw the click count in one corner of the <xref:System.Windows.Forms.Button> control's client area.</span></span>  
   
- **推奨事項**  
+ <span data-ttu-id="d008d-146">**推奨事項**</span><span class="sxs-lookup"><span data-stu-id="d008d-146">**Recommendation**</span></span>  
   
- Windows フォーム コントロールからの継承は、次の場合に適しています。  
+ <span data-ttu-id="d008d-147">次の場合に、Windows フォーム コントロールから継承します。</span><span class="sxs-lookup"><span data-stu-id="d008d-147">Inherit from a Windows Forms control if:</span></span>  
   
--   必要な機能のほとんどが、既存の Windows フォーム コントロールの機能と同じである場合。  
+-   <span data-ttu-id="d008d-148">必要とする機能のほとんどが、既存の Windows フォーム コントロールと同じです。</span><span class="sxs-lookup"><span data-stu-id="d008d-148">Most of the functionality you need is already identical to an existing Windows Forms control.</span></span>  
   
--   独自のグラフィカル ユーザー インターフェイスが必要でない場合。または、既存のコントロールに新しいグラフィカル ユーザー インターフェイスをデザインする場合。  
+-   <span data-ttu-id="d008d-149">カスタムのグラフィカル ユーザー インターフェイスが不要な場合、または既存のコントロールの新しいグラフィカル ユーザー インターフェイスをデザインする場合。</span><span class="sxs-lookup"><span data-stu-id="d008d-149">You do not need a custom graphical user interface, or you want to design a new graphical user interface for an existing control.</span></span>  
   
-### カスタム コントロール  
- コントロールを作成する方法には、<xref:System.Windows.Forms.Control> から継承することにより、コントロールを最初から作成する方法もあります。  <xref:System.Windows.Forms.Control> クラスは、コントロールで必要とされるすべての基本的な機能 \(マウスやキーボードの処理イベントなど\) を提供しますが、コントロール固有の機能やグラフィカル インターフェイスは提供しません。  
+### <a name="custom-controls"></a><span data-ttu-id="d008d-150">カスタム コントロール</span><span class="sxs-lookup"><span data-stu-id="d008d-150">Custom Controls</span></span>  
+ <span data-ttu-id="d008d-151">コントロールを作成する別の方法は、最初から大幅に 1 つを継承して作成する<xref:System.Windows.Forms.Control>です。</span><span class="sxs-lookup"><span data-stu-id="d008d-151">Another way to create a control is to create one substantially from the beginning by inheriting from <xref:System.Windows.Forms.Control>.</span></span> <span data-ttu-id="d008d-152"><xref:System.Windows.Forms.Control>クラスは、すべてのマウス、キーボード イベントを処理などのコントロールに必要な基本的な機能がないコントロール固有の機能またはグラフィカル インターフェイスを提供します。</span><span class="sxs-lookup"><span data-stu-id="d008d-152">The <xref:System.Windows.Forms.Control> class provides all of the basic functionality required by controls, including mouse and keyboard handling events, but no control-specific functionality or graphical interface.</span></span>  
   
- <xref:System.Windows.Forms.Control> クラスから継承してコントロールを作成する場合は、<xref:System.Windows.Forms.UserControl> コントロールや既存の Windows フォーム コントロールから継承する場合に比べて、より多くの検討と作業が必要です。  開発者に数多くの実装作業が委ねられるため、作成されるコントロールは、複合コントロールや拡張コントロールよりも柔軟で、ニーズにちょうど合うようコントロールを調整できます。  
+ <span data-ttu-id="d008d-153">継承することで、コントロールの作成、<xref:System.Windows.Forms.Control>クラスは、多くの配慮と労力よりから継承する必要があります。<xref:System.Windows.Forms.UserControl>または既存の Windows フォーム コントロールです。</span><span class="sxs-lookup"><span data-stu-id="d008d-153">Creating a control by inheriting from the <xref:System.Windows.Forms.Control> class requires much more thought and effort than inheriting from <xref:System.Windows.Forms.UserControl> or an existing Windows Forms control.</span></span> <span data-ttu-id="d008d-154">多くの実装が開発者に委ねられるため、作成されるコントロールは、複合コントロールや拡張コントロールよりも柔軟性に優れ、ニーズに合わせてコントロールを調整できます。</span><span class="sxs-lookup"><span data-stu-id="d008d-154">Because a great deal of implementation is left for you, your control can have greater flexibility than a composite or extended control, and you can tailor your control to suit your exact needs.</span></span>  
   
- カスタム コントロールを実装するには、必要な機能別のコードだけでなく、コントロールの <xref:System.Windows.Forms.Control.OnPaint%2A> イベントのコードも記述する必要があります。  また、<xref:System.Windows.Forms.Control.WndProc%2A> メソッドをオーバーライドして、Windows メッセージを直接処理することもできます。  これは、最も強力なコントロールの作成方法ですが、この方法を活用するには、Microsoft Win32® API を十分に理解しておく必要があります。  
+ <span data-ttu-id="d008d-155">カスタム コントロールを実装するのには、用のコードを記述する必要があります、<xref:System.Windows.Forms.Control.OnPaint%2A>する必要がありますすべて機能固有のコードと同様に、コントロールのイベントです。</span><span class="sxs-lookup"><span data-stu-id="d008d-155">To implement a custom control, you must write code for the <xref:System.Windows.Forms.Control.OnPaint%2A> event of the control, as well as any feature-specific code you need.</span></span> <span data-ttu-id="d008d-156">オーバーライドすることも、<xref:System.Windows.Forms.Control.WndProc%2A>直接メソッドとハンドルの windows メッセージ。</span><span class="sxs-lookup"><span data-stu-id="d008d-156">You can also override the <xref:System.Windows.Forms.Control.WndProc%2A> method and handle windows messages directly.</span></span> <span data-ttu-id="d008d-157">これはコントロールを作成する最も強力な方法ですが、この手法を効果的に使用するには、Microsoft Win32® API を十分に理解している必要があります。</span><span class="sxs-lookup"><span data-stu-id="d008d-157">This is the most powerful way to create a control, but to use this technique effectively, you need to be familiar with the Microsoft Win32® API.</span></span>  
   
- カスタム コントロールの例として、アナログ時計の外観と動作を模した時計コントロールがあります。  カスタム描画を実行することにより、内部の <xref:System.Windows.Forms.Timer> コンポーネントからの <xref:System.Windows.Forms.Timer.Tick> イベントに応答して、時計の針を動かすことができます。  詳細については、「[方法 : シンプルな Windows フォーム コントロールを開発する](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md)」を参照してください。  
+ <span data-ttu-id="d008d-158">カスタム コントロールの例として、アナログ時計の外観と動作を複製した時計コントロールがあります。</span><span class="sxs-lookup"><span data-stu-id="d008d-158">An example of a custom control is a clock control that duplicates the appearance and behavior of an analog clock.</span></span> <span data-ttu-id="d008d-159">応答を移動する時計の針が呼び出されるカスタム描画<xref:System.Windows.Forms.Timer.Tick>内部からのイベント<xref:System.Windows.Forms.Timer>コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="d008d-159">Custom painting is invoked to cause the hands of the clock to move in response to <xref:System.Windows.Forms.Timer.Tick> events from an internal <xref:System.Windows.Forms.Timer> component.</span></span> <span data-ttu-id="d008d-160">詳細については、「[方法 : シンプルな Windows フォーム コントロールを開発する](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d008d-160">For more information, see [How to: Develop a Simple Windows Forms Control](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md).</span></span>  
   
- **推奨事項**  
+ <span data-ttu-id="d008d-161">**推奨事項**</span><span class="sxs-lookup"><span data-stu-id="d008d-161">**Recommendation**</span></span>  
   
- <xref:System.Windows.Forms.Control> クラスからの継承は、次の場合に適しています。  
+ <span data-ttu-id="d008d-162">次の場合に、<xref:System.Windows.Forms.Control> クラスから継承します。</span><span class="sxs-lookup"><span data-stu-id="d008d-162">Inherit from the <xref:System.Windows.Forms.Control> class if:</span></span>  
   
--   コンポーネントに独自のグラフィカル表示を使用する場合。  
+-   <span data-ttu-id="d008d-163">コントロールのカスタムのグラフィカル表現を提供します。</span><span class="sxs-lookup"><span data-stu-id="d008d-163">You want to provide a custom graphical representation of your control.</span></span>  
   
--   標準のコントロールにはない、独自の機能を実装する必要がある場合。  
+-   <span data-ttu-id="d008d-164">標準コントロールでは使用できないカスタムの機能を実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d008d-164">You need to implement custom functionality that is not available through standard controls.</span></span>  
   
-### ActiveX コントロール  
- Windows フォーム インストラクチャは、Windows フォーム コントロールをホストするために最適化されていますが、代わりに ActiveX コントロールを使用することもできます。  Visual Studio では、このタスクに対するサポートが用意されています。  詳細については、「[方法 : Windows フォームに ActiveX コントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)」を参照してください。  
+### <a name="activex-controls"></a><span data-ttu-id="d008d-165">ActiveX コントロール</span><span class="sxs-lookup"><span data-stu-id="d008d-165">ActiveX Controls</span></span>  
+ <span data-ttu-id="d008d-166">Windows フォーム インストラクチャは、Windows フォーム コントロールをホストするために最適化されていますが、ActiveX コントロールを使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="d008d-166">Although the Windows Forms infrastructure has been optimized to host Windows Forms controls, you can still use ActiveX controls.</span></span> <span data-ttu-id="d008d-167">Visual Studio では、このタスクに対するサポートが用意されています。</span><span class="sxs-lookup"><span data-stu-id="d008d-167">There is support for this task in Visual Studio.</span></span> <span data-ttu-id="d008d-168">詳細については、「[方法 : Windows フォームに ActiveX コントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d008d-168">For more information, see [How to: Add ActiveX Controls to Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md).</span></span>  
   
-### ウィンドウなしのコントロール  
- Microsoft Visual Basic® 6.0 と ActiveX テクノロジは、*ウィンドウなしの*コントロールをサポートします。  ウィンドウなしのコントロールは、Windows フォームではサポートされません。  
+### <a name="windowless-controls"></a><span data-ttu-id="d008d-169">ウィンドウなしのコントロール</span><span class="sxs-lookup"><span data-stu-id="d008d-169">Windowless Controls</span></span>  
+ <span data-ttu-id="d008d-170">Microsoft Visual Basic® 6.0 と ActiveX テクノロジは、"*ウィンドウなし*" のコントロールをサポートします。</span><span class="sxs-lookup"><span data-stu-id="d008d-170">The Microsoft Visual Basic® 6.0and ActiveX technologies support *windowless* controls.</span></span> <span data-ttu-id="d008d-171">ウィンドウなしのコントロールは、Windows フォームではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="d008d-171">Windowless controls are not supported in Windows Forms.</span></span>  
   
-## カスタムのデザイン体験  
- カスタムのデザイン時体験を実装する必要がある場合は、独自のデザイナーを作成できます。  複合コントロールの場合は、<xref:System.Windows.Forms.Design.ParentControlDesigner> クラスや <xref:System.Windows.Forms.Design.DocumentDesigner> クラスからカスタム デザイナー クラスを派生します。  拡張コントロールやカスタム コントロールの場合は、<xref:System.Windows.Forms.Design.ControlDesigner> クラスからカスタム デザイナー クラスを派生します。  
+## <a name="custom-design-experience"></a><span data-ttu-id="d008d-172">カスタム デザイン エクスペリエンス</span><span class="sxs-lookup"><span data-stu-id="d008d-172">Custom Design Experience</span></span>  
+ <span data-ttu-id="d008d-173">カスタムのデザイン時エクスペリエンスを実装する必要がある場合は、独自のデザイナーを作成できます。</span><span class="sxs-lookup"><span data-stu-id="d008d-173">If you need to implement a custom design-time experience, you can author your own designer.</span></span> <span data-ttu-id="d008d-174">複合コントロール、カスタム デザイナー クラスから派生させます、<xref:System.Windows.Forms.Design.ParentControlDesigner>または<xref:System.Windows.Forms.Design.DocumentDesigner>クラスです。</span><span class="sxs-lookup"><span data-stu-id="d008d-174">For composite controls, derive your custom designer class from the <xref:System.Windows.Forms.Design.ParentControlDesigner> or the <xref:System.Windows.Forms.Design.DocumentDesigner> classes.</span></span> <span data-ttu-id="d008d-175">拡張およびカスタムのコントロールのカスタム デザイナー クラスから派生させる、<xref:System.Windows.Forms.Design.ControlDesigner>クラスです。</span><span class="sxs-lookup"><span data-stu-id="d008d-175">For extended and custom controls, derive your custom designer class from the <xref:System.Windows.Forms.Design.ControlDesigner> class.</span></span>  
   
- <xref:System.ComponentModel.DesignerAttribute> を使用して、コントロールをデザイナーに関連付けます。  詳細については、「[Extending Design\-Time Support](../Topic/Extending%20Design-Time%20Support.md)」および「[How to: Create a Windows Forms Control That Takes Advantage of Design\-Time Features](../Topic/How%20to:%20Create%20a%20Windows%20Forms%20Control%20That%20Takes%20Advantage%20of%20Design-Time%20Features.md)」を参照してください。  
+ <span data-ttu-id="d008d-176">使用して、<xref:System.ComponentModel.DesignerAttribute>にコントロールをデザイナーに関連付けます。</span><span class="sxs-lookup"><span data-stu-id="d008d-176">Use the <xref:System.ComponentModel.DesignerAttribute> to associate your control with your designer.</span></span> <span data-ttu-id="d008d-177">詳細については、「[デザイン時サポートの拡張](http://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)」および「[方法 : デザイン時機能を活用した Windows フォーム コントロールを作成する](http://msdn.microsoft.com/library/8e0bad0e-56f3-43d2-bf63-a945c654d97c)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d008d-177">For more information, see [Extending Design-Time Support](http://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2) and [How to: Create a Windows Forms Control That Takes Advantage of Design-Time Features](http://msdn.microsoft.com/library/8e0bad0e-56f3-43d2-bf63-a945c654d97c).</span></span>  
   
-## 参照  
- [.NET Framework を使用したカスタム Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)   
- [方法 : シンプルな Windows フォーム コントロールを開発する](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md)   
- [複合 Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-a-composite-windows-forms-control.md)   
- [Extending Design\-Time Support](../Topic/Extending%20Design-Time%20Support.md)   
- [How to: Create a Windows Forms Control That Takes Advantage of Design\-Time Features](../Topic/How%20to:%20Create%20a%20Windows%20Forms%20Control%20That%20Takes%20Advantage%20of%20Design-Time%20Features.md)
+## <a name="see-also"></a><span data-ttu-id="d008d-178">関連項目</span><span class="sxs-lookup"><span data-stu-id="d008d-178">See Also</span></span>  
+ [<span data-ttu-id="d008d-179">.NET Framework を使用したカスタム Windows フォーム コントロールの開発</span><span class="sxs-lookup"><span data-stu-id="d008d-179">Developing Custom Windows Forms Controls with the .NET Framework</span></span>](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
+ [<span data-ttu-id="d008d-180">方法: シンプルな Windows フォーム コントロールを開発する</span><span class="sxs-lookup"><span data-stu-id="d008d-180">How to: Develop a Simple Windows Forms Control</span></span>](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md)  
+ [<span data-ttu-id="d008d-181">複合 Windows フォーム コントロールの開発</span><span class="sxs-lookup"><span data-stu-id="d008d-181">Developing a Composite Windows Forms Control</span></span>](../../../../docs/framework/winforms/controls/developing-a-composite-windows-forms-control.md)  
+ [<span data-ttu-id="d008d-182">デザイン時サポートの拡張</span><span class="sxs-lookup"><span data-stu-id="d008d-182">Extending Design-Time Support</span></span>](http://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)  
+ [<span data-ttu-id="d008d-183">方法: デザイン時機能を活用した Windows フォーム コントロールを作成する</span><span class="sxs-lookup"><span data-stu-id="d008d-183">How to: Create a Windows Forms Control That Takes Advantage of Design-Time Features</span></span>](http://msdn.microsoft.com/library/8e0bad0e-56f3-43d2-bf63-a945c654d97c)

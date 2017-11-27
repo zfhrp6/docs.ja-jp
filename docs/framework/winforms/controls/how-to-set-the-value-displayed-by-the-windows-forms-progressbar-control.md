@@ -1,54 +1,54 @@
 ---
-title: "方法 : Windows フォーム ProgressBar コントロールによって表示される値を設定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Increment メソッド"
-  - "PerformStep メソッド"
-  - "プログレス コントロール, 設定 (表示される値を)"
-  - "ProgressBar コントロール [Windows フォーム], 設定 (表示される値を)"
-  - "Step プロパティ"
-  - "Value プロパティ"
+title: "方法 : Windows フォーム ProgressBar コントロールによって表示される値を設定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ProgressBar control [Windows Forms], setting value displayed
+- progress controls [Windows Forms], setting value displayed
 ms.assetid: 0e5010ad-1e9a-4271-895e-5a3d24d37a26
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d3fd66e10515e5135545f6fcfa64546141346519
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォーム ProgressBar コントロールによって表示される値を設定する
+# <a name="how-to-set-the-value-displayed-by-the-windows-forms-progressbar-control"></a><span data-ttu-id="13781-102">方法 : Windows フォーム ProgressBar コントロールによって表示される値を設定する</span><span class="sxs-lookup"><span data-stu-id="13781-102">How to: Set the Value Displayed by the Windows Forms ProgressBar Control</span></span>
 > [!IMPORTANT]
->  <xref:System.Windows.Forms.ToolStripProgressBar> コントロールは、<xref:System.Windows.Forms.ProgressBar> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.ProgressBar> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  
+>  <span data-ttu-id="13781-103"><xref:System.Windows.Forms.ToolStripProgressBar> コントロールは、<xref:System.Windows.Forms.ProgressBar> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.ProgressBar> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。</span><span class="sxs-lookup"><span data-stu-id="13781-103">The <xref:System.Windows.Forms.ToolStripProgressBar> control replaces and adds functionality to the <xref:System.Windows.Forms.ProgressBar> control; however, the <xref:System.Windows.Forms.ProgressBar> control is retained for both backward compatibility and future use, if you choose.</span></span>  
   
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] では、<xref:System.Windows.Forms.ProgressBar> コントロールに値を表示する方法として、いくつかの異なる方法があります。  どの方法を選択するかは、実行するタスクや解決しようとする問題によって決まります。  選択できる方法を次の表に示します。  
+ <span data-ttu-id="13781-104">[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]内で指定された値を表示するいくつかの方法を提供する、<xref:System.Windows.Forms.ProgressBar>コントロール。</span><span class="sxs-lookup"><span data-stu-id="13781-104">The [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] gives you several different ways to display a given value within the <xref:System.Windows.Forms.ProgressBar> control.</span></span> <span data-ttu-id="13781-105">選択するための方法は、前のタスクまたは当面の問題によって異なります。</span><span class="sxs-lookup"><span data-stu-id="13781-105">Which approach you choose will depend on the task at hand or the problem you are solving.</span></span> <span data-ttu-id="13781-106">次の表は、ことができます、方法を示します。</span><span class="sxs-lookup"><span data-stu-id="13781-106">The following table shows the approaches you can choose.</span></span>  
   
-|方法|Description|  
-|--------|-----------------|  
-|<xref:System.Windows.Forms.ProgressBar> コントロールの値を直接設定する。|この方法は、データ ソースからレコードを読み取る場合など、測定する項目の合計数がわかっている場合に便利です。  また、値を 1 回か 2 回だけ設定すれば済む場合も、この方法が簡単です。  さらに、プログレス バーに表示される値を減らす必要がある場合にも、この方法を使用します。|  
-|<xref:System.Windows.Forms.ProgressBar> の表示を固定された値だけ増加させる。|この方法は、既知の総数から処理された経過時間やファイル数など、最小値と最大値の間の単純なカウントを表示する場合に便利です。|  
-|<xref:System.Windows.Forms.ProgressBar> の表示を可変の値だけ増加させる。|この方法は、表示される値を複数回、それぞれ異なる量だけ変化させる必要がある場合に便利です。  たとえば、ディスクにいくつかのファイルを書き込みながら、消費されたハード ディスク容量を表示する場合などです。|  
+|<span data-ttu-id="13781-107">方法</span><span class="sxs-lookup"><span data-stu-id="13781-107">Approach</span></span>|<span data-ttu-id="13781-108">説明</span><span class="sxs-lookup"><span data-stu-id="13781-108">Description</span></span>|  
+|--------------|-----------------|  
+|<span data-ttu-id="13781-109">値を設定、<xref:System.Windows.Forms.ProgressBar>直接制御します。</span><span class="sxs-lookup"><span data-stu-id="13781-109">Set the value of the <xref:System.Windows.Forms.ProgressBar> control directly.</span></span>|<span data-ttu-id="13781-110">この方法は、データ ソースからのレコードの読み取りなど、関連を測定する項目の合計がわかっている場合のタスクに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="13781-110">This approach is useful for tasks where you know the total of the item measured that will be involved, such as reading records from a data source.</span></span> <span data-ttu-id="13781-111">さらに、値を 1 ~ 2 回設定するだけで済みますこれがそれを実行する簡単な方法です。</span><span class="sxs-lookup"><span data-stu-id="13781-111">Additionally, if you only need to set the value once or twice, this is an easy way to do it.</span></span> <span data-ttu-id="13781-112">最後に、進行状況バーに表示される値を小さく必要がある場合は、このプロセスを使用します。</span><span class="sxs-lookup"><span data-stu-id="13781-112">Finally, use this process if you need to decrease the value displayed by the progress bar.</span></span>|  
+|<span data-ttu-id="13781-113">増加、<xref:System.Windows.Forms.ProgressBar>固定値を表示します。</span><span class="sxs-lookup"><span data-stu-id="13781-113">Increase the <xref:System.Windows.Forms.ProgressBar> display by a fixed value.</span></span>|<span data-ttu-id="13781-114">この方法は、最小値と最大値の場合は、経過時間や、既知の合計から処理されたファイルの数など、間の単純なカウントを表示する場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="13781-114">This approach is useful when you are displaying a simple count between the minimum and maximum, such as elapsed time or the number of files that have been processed out of a known total.</span></span>|  
+|<span data-ttu-id="13781-115">増加、<xref:System.Windows.Forms.ProgressBar>が変化する値を表示します。</span><span class="sxs-lookup"><span data-stu-id="13781-115">Increase the <xref:System.Windows.Forms.ProgressBar> display by a value that varies.</span></span>|<span data-ttu-id="13781-116">この方法は、表示されている値をそれぞれ異なる量の回数を変更する必要がある場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="13781-116">This approach is useful when you need to change the displayed value a number of times in different amounts.</span></span> <span data-ttu-id="13781-117">例は、一連のファイルをディスクに書き込み中に使用されているハード_ディスク領域の量を表示する場合します。</span><span class="sxs-lookup"><span data-stu-id="13781-117">An example would be showing the amount of hard-disk space being consumed while writing a series of files to the disk.</span></span>|  
   
- プログレス バーに表示される値を設定する最も直接的な方法は、<xref:System.Windows.Forms.ProgressBar.Value%2A> プロパティを設定することです。  この操作は、デザイン時でも実行時でも実行できます。  
+ <span data-ttu-id="13781-118">進行状況バーに表示される値を設定する最も直接的な方法は、設定して、<xref:System.Windows.Forms.ProgressBar.Value%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="13781-118">The most direct way to set the value displayed by a progress bar is by setting the <xref:System.Windows.Forms.ProgressBar.Value%2A> property.</span></span> <span data-ttu-id="13781-119">これは、デザイン時に、または実行時に実行できます。</span><span class="sxs-lookup"><span data-stu-id="13781-119">This can be done either at design time or at run time.</span></span>  
   
-### ProgressBar の値を直接設定するには  
+### <a name="to-set-the-progressbar-value-directly"></a><span data-ttu-id="13781-120">プログレス バーの値を直接設定するには</span><span class="sxs-lookup"><span data-stu-id="13781-120">To set the ProgressBar value directly</span></span>  
   
-1.  <xref:System.Windows.Forms.ProgressBar> コントロールの <xref:System.Windows.Forms.ProgressBar.Minimum%2A> 値および <xref:System.Windows.Forms.ProgressBar.Maximum%2A> 値を設定します。  
+1.  <span data-ttu-id="13781-121">設定、<xref:System.Windows.Forms.ProgressBar>コントロールの<xref:System.Windows.Forms.ProgressBar.Minimum%2A>と<xref:System.Windows.Forms.ProgressBar.Maximum%2A>値。</span><span class="sxs-lookup"><span data-stu-id="13781-121">Set the <xref:System.Windows.Forms.ProgressBar> control's <xref:System.Windows.Forms.ProgressBar.Minimum%2A> and <xref:System.Windows.Forms.ProgressBar.Maximum%2A> values.</span></span>  
   
-2.  コードで、そのコントロールの <xref:System.Windows.Forms.ProgressBar.Value%2A> プロパティを、設定した最小値と最大値の間の整数値に設定します。  
+2.  <span data-ttu-id="13781-122">コードでは、設定コントロールの<xref:System.Windows.Forms.ProgressBar.Value%2A>プロパティが確立されている最小値と最大値までの整数値にします。</span><span class="sxs-lookup"><span data-stu-id="13781-122">In code, set the control's <xref:System.Windows.Forms.ProgressBar.Value%2A> property to an integer value between the minimum and maximum values you have established.</span></span>  
   
     > [!NOTE]
-    >  <xref:System.Windows.Forms.ProgressBar.Value%2A> プロパティを、<xref:System.Windows.Forms.ProgressBar.Minimum%2A> プロパティおよび <xref:System.Windows.Forms.ProgressBar.Maximum%2A> プロパティによって設定された範囲外に設定すると、コントロールが <xref:System.ArgumentException> 例外をスローします。  
+    >  <span data-ttu-id="13781-123">設定した場合、<xref:System.Windows.Forms.ProgressBar.Value%2A>プロパティによって確立された境界の外、<xref:System.Windows.Forms.ProgressBar.Minimum%2A>と<xref:System.Windows.Forms.ProgressBar.Maximum%2A>プロパティ、コントロールをスロー、<xref:System.ArgumentException>例外。</span><span class="sxs-lookup"><span data-stu-id="13781-123">If you set the <xref:System.Windows.Forms.ProgressBar.Value%2A> property outside the boundaries established by the <xref:System.Windows.Forms.ProgressBar.Minimum%2A> and <xref:System.Windows.Forms.ProgressBar.Maximum%2A> properties, the control throws an <xref:System.ArgumentException> exception.</span></span>  
   
-     <xref:System.Windows.Forms.ProgressBar> の値を直接設定する方法を次のコード例に示します。  このコードは、データ ソースからレコードを読み取り、1 レコード読み取るごとにプログレス バーとラベルを更新します。  この例では、フォームに <xref:System.Windows.Forms.Label> コントロール、<xref:System.Windows.Forms.ProgressBar> コントロール、およびデータ テーブルがあり、データ テーブルの `CustomerRow`  という行に `FirstName`  および `Last Name`  というフィールドがあることが必須条件です。  
+     <span data-ttu-id="13781-124">次のコード例を設定する方法を示しています、<xref:System.Windows.Forms.ProgressBar>直接値します。</span><span class="sxs-lookup"><span data-stu-id="13781-124">The following code example illustrates how to set the <xref:System.Windows.Forms.ProgressBar> value directly.</span></span> <span data-ttu-id="13781-125">コードでは、データ ソースからレコードを読み取り、データ レコードが読み取られるたびに、進行状況バーとラベルを更新します。</span><span class="sxs-lookup"><span data-stu-id="13781-125">The code reads records from a data source and updates the progress bar and label every time a data record is read.</span></span> <span data-ttu-id="13781-126">この例では、フォームがある必要があります、<xref:System.Windows.Forms.Label>コントロール、<xref:System.Windows.Forms.ProgressBar>と呼ばれる行のデータ テーブルとコントロール、`CustomerRow`で`FirstName`と`LastName`フィールドです。</span><span class="sxs-lookup"><span data-stu-id="13781-126">This example requires that your form has a <xref:System.Windows.Forms.Label> control, a <xref:System.Windows.Forms.ProgressBar> control, and a data table with a row called `CustomerRow` with `FirstName` and `LastName` fields.</span></span>  
   
     ```vb  
     Public Sub CreateNewRecords()  
@@ -69,7 +69,6 @@ caps.handback.revision: 14
        ' Updates the label to show that a record was read.  
        Label1.Text = "Records Read = " & ProgressBar1.Value.ToString()  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -94,19 +93,19 @@ caps.handback.revision: 14
     }  
     ```  
   
-     固定された間隔で増加する進行状況を表示する場合は、値を設定してから、その間隔で <xref:System.Windows.Forms.ProgressBar> コントロールの値を増加させるメソッドを呼び出します。  これは、タイマーなどのように、進行状況を全体に対する割合として表さない状況で便利です。  
+     固定された間隔でする進行状況を表示する場合は、値を設定および増加するメソッドを呼び出す、<xref:System.Windows.Forms.ProgressBar>その間隔でのコントロールの値。 <span data-ttu-id="13781-128">これは、タイマーおよびその他のシナリオを表さない進行状況全体に占める割合として便利です。</span><span class="sxs-lookup"><span data-stu-id="13781-128">This is useful for timers and other scenarios where you are not measuring progress as a percentage of the whole.</span></span>  
   
-### プログレス バーを固定された値だけ増加させるには  
+### <a name="to-increase-the-progress-bar-by-a-fixed-value"></a><span data-ttu-id="13781-129">固定値によって、進行状況バーを強化するには</span><span class="sxs-lookup"><span data-stu-id="13781-129">To increase the progress bar by a fixed value</span></span>  
   
-1.  <xref:System.Windows.Forms.ProgressBar> コントロールの <xref:System.Windows.Forms.ProgressBar.Minimum%2A> 値および <xref:System.Windows.Forms.ProgressBar.Maximum%2A> 値を設定します。  
+1.  <span data-ttu-id="13781-130">設定、<xref:System.Windows.Forms.ProgressBar>コントロールの<xref:System.Windows.Forms.ProgressBar.Minimum%2A>と<xref:System.Windows.Forms.ProgressBar.Maximum%2A>値。</span><span class="sxs-lookup"><span data-stu-id="13781-130">Set the <xref:System.Windows.Forms.ProgressBar> control's <xref:System.Windows.Forms.ProgressBar.Minimum%2A> and <xref:System.Windows.Forms.ProgressBar.Maximum%2A> values.</span></span>  
   
-2.  コントロールの <xref:System.Windows.Forms.ProgressBar.Step%2A> プロパティに、プログレス バーの表示値を増加させる量を表す整数を設定します。  
+2.  <span data-ttu-id="13781-131">コントロールの設定<xref:System.Windows.Forms.ProgressBar.Step%2A>プログレス バーに時間を表す整数のプロパティに値が表示されます。</span><span class="sxs-lookup"><span data-stu-id="13781-131">Set the control's <xref:System.Windows.Forms.ProgressBar.Step%2A> property to an integer representing the amount to increase the progress bar's displayed value.</span></span>  
   
-3.  <xref:System.Windows.Forms.ProgressBar.PerformStep%2A> メソッドを呼び出して、表示される値を <xref:System.Windows.Forms.ProgressBar.Step%2A> プロパティに設定した量だけ変更します。  
+3.  <span data-ttu-id="13781-132">呼び出す、<xref:System.Windows.Forms.ProgressBar.PerformStep%2A>に設定した値によって示される値を変更するメソッドを<xref:System.Windows.Forms.ProgressBar.Step%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="13781-132">Call the <xref:System.Windows.Forms.ProgressBar.PerformStep%2A> method to change the value displayed by the amount set in the <xref:System.Windows.Forms.ProgressBar.Step%2A> property.</span></span>  
   
-     コピー操作中にプログレス バーにファイル数を表示させる方法を次のコード例に示します。  
+     <span data-ttu-id="13781-133">次のコード例は、進行状況バーが、コピー操作でファイルの数を維持する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="13781-133">The following code example illustrates how a progress bar can maintain a count of the files in a copy operation.</span></span>  
   
-     この例では、各ファイルがメモリに読み込まれるたびに、プログレス バーおよびラベルが、読み込んだファイルの合計数を反映するように更新されます。  この例では、フォームに <xref:System.Windows.Forms.Label> コントロールおよび <xref:System.Windows.Forms.ProgressBar> コントロールがあることが必須条件です。  
+     <span data-ttu-id="13781-134">次の例では、各ファイルがメモリに読み込まれると、進行状況バーとラベル更新されますファイルの合計数を読み取るを反映するようにします。</span><span class="sxs-lookup"><span data-stu-id="13781-134">In the following example, as each file is read into memory, the progress bar and label are updated to reflect the total files read.</span></span> <span data-ttu-id="13781-135">この例では、フォームがある必要があります、<xref:System.Windows.Forms.Label>コントロールと<xref:System.Windows.Forms.ProgressBar>コントロール。</span><span class="sxs-lookup"><span data-stu-id="13781-135">This example requires that your form has a <xref:System.Windows.Forms.Label> control and a <xref:System.Windows.Forms.ProgressBar> control.</span></span>  
   
     ```vb  
     Public Sub LoadFiles()  
@@ -132,7 +131,6 @@ caps.handback.revision: 14
           Label1.Text = "# of Files Read = " & ProgressBar1.Value.ToString  
        Next i  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -161,17 +159,17 @@ caps.handback.revision: 14
     }  
     ```  
   
-     最後に、プログレス バーに表示される値をそのたびに異なる量だけ増加させる方法を説明します。  これは、異なるサイズのファイルをハード ディスクに書き込む場合や、進行状況を全体に対する割合で表す場合など、一連の操作を追跡する場合に便利です。  
+     最後に、プログレス バーに表示されるので、それぞれの増加は、一意の時間値を大きくことができます。 <span data-ttu-id="13781-137">これは、機能は、一連のハード ディスクへのサイズの異なるファイルの書き込みや、全体に占める割合としての進行状況の測定など、一意の操作の追跡をすることは、ときに便利です。</span><span class="sxs-lookup"><span data-stu-id="13781-137">This is useful when you are keeping track of a series of unique operations, such as writing files of different sizes to a hard disk, or measuring progress as a percentage of the whole.</span></span>  
   
-### プログレス バーを動的な値だけ増加させるには  
+### <a name="to-increase-the-progress-bar-by-a-dynamic-value"></a><span data-ttu-id="13781-138">動的な値で進行状況バーを向上させる</span><span class="sxs-lookup"><span data-stu-id="13781-138">To increase the progress bar by a dynamic value</span></span>  
   
-1.  <xref:System.Windows.Forms.ProgressBar> コントロールの <xref:System.Windows.Forms.ProgressBar.Minimum%2A> 値および <xref:System.Windows.Forms.ProgressBar.Maximum%2A> 値を設定します。  
+1.  <span data-ttu-id="13781-139">設定、<xref:System.Windows.Forms.ProgressBar>コントロールの<xref:System.Windows.Forms.ProgressBar.Minimum%2A>と<xref:System.Windows.Forms.ProgressBar.Maximum%2A>値。</span><span class="sxs-lookup"><span data-stu-id="13781-139">Set the <xref:System.Windows.Forms.ProgressBar> control's <xref:System.Windows.Forms.ProgressBar.Minimum%2A> and <xref:System.Windows.Forms.ProgressBar.Maximum%2A> values.</span></span>  
   
-2.  <xref:System.Windows.Forms.ProgressBar.Increment%2A> メソッドを呼び出して、表示される値を指定した整数だけ変化させます。  
+2.  <span data-ttu-id="13781-140">呼び出す、<xref:System.Windows.Forms.ProgressBar.Increment%2A>メソッドを指定する整数値に表示される値を変更します。</span><span class="sxs-lookup"><span data-stu-id="13781-140">Call the <xref:System.Windows.Forms.ProgressBar.Increment%2A> method to change the value displayed by an integer you specify.</span></span>  
   
-     コピー操作中に消費されたディスク容量をプログレス バーで計算する方法を次のコード例に示します。  
+     <span data-ttu-id="13781-141">次のコード例は、どのように進行状況バーがコピー操作中にディスク領域が使用されてを計算することができますを示しています。</span><span class="sxs-lookup"><span data-stu-id="13781-141">The following code example illustrates how a progress bar can calculate how much disk space has been used during a copy operation.</span></span>  
   
-     この例では、各ファイルがハード ディスクに書き込まれるたびに、プログレス バーとラベルが更新され、使用できるハード ディスク容量が反映されます。  この例では、フォームに <xref:System.Windows.Forms.Label> コントロールおよび <xref:System.Windows.Forms.ProgressBar> コントロールがあることが必須条件です。  
+     <span data-ttu-id="13781-142">次の例では、各ファイルがハード ディスクに書き込まれると、進行状況バーとラベル更新されます使用可能なハード_ディスク領域の量を反映するようにします。</span><span class="sxs-lookup"><span data-stu-id="13781-142">In the following example, as each file is written to the hard disk, the progress bar and label are updated to reflect the amount of hard-disk space available.</span></span> <span data-ttu-id="13781-143">この例では、フォームがある必要があります、<xref:System.Windows.Forms.Label>コントロールと<xref:System.Windows.Forms.ProgressBar>コントロール。</span><span class="sxs-lookup"><span data-stu-id="13781-143">This example requires that your form has a <xref:System.Windows.Forms.Label> control and a <xref:System.Windows.Forms.ProgressBar> control.</span></span>  
   
     ```vb  
     Public Sub ReadFiles()  
@@ -203,7 +201,6 @@ caps.handback.revision: 14
           ProgressBar1.Value.ToString()  
        Next i  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -237,8 +234,8 @@ caps.handback.revision: 14
     }  
     ```  
   
-## 参照  
- <xref:System.Windows.Forms.ProgressBar>   
- <xref:System.Windows.Forms.ToolStripProgressBar>   
- [ProgressBar コントロールの概要](../../../../docs/framework/winforms/controls/progressbar-control-overview-windows-forms.md)   
- [ProgressBar コントロール](../../../../docs/framework/winforms/controls/progressbar-control-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="13781-144">関連項目</span><span class="sxs-lookup"><span data-stu-id="13781-144">See Also</span></span>  
+ <xref:System.Windows.Forms.ProgressBar>  
+ <xref:System.Windows.Forms.ToolStripProgressBar>  
+ [<span data-ttu-id="13781-145">ProgressBar コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="13781-145">ProgressBar Control Overview</span></span>](../../../../docs/framework/winforms/controls/progressbar-control-overview-windows-forms.md)  
+ [<span data-ttu-id="13781-146">ProgressBar コントロール</span><span class="sxs-lookup"><span data-stu-id="13781-146">ProgressBar Control</span></span>](../../../../docs/framework/winforms/controls/progressbar-control-windows-forms.md)

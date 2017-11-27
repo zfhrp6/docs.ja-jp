@@ -1,43 +1,46 @@
 ---
-title: "認証の拡張保護の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "認証の拡張保護の概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3d2ceffe-a7bf-4bd9-a5a2-9406423bd7f8
-caps.latest.revision: 4
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: d8dadf09434778bc32bb75c5eff5ff4cb0494373
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 認証の拡張保護の概要
-認証時の拡張保護によって、攻撃者がクライアントの資格情報をインターセプトして特定のサーバーに転送する man\-in\-the\-middle \(MITM\) 攻撃を防ぐことができます。  
+# <a name="extended-protection-for-authentication-overview"></a><span data-ttu-id="d0a24-102">認証の拡張保護の概要</span><span class="sxs-lookup"><span data-stu-id="d0a24-102">Extended Protection for Authentication Overview</span></span>
+<span data-ttu-id="d0a24-103">認証時の拡張保護によって、攻撃者がクライアントの資格情報をインターセプトして特定のサーバーに転送する man-in-the-middle (MITM) 攻撃を防ぐことができます。</span><span class="sxs-lookup"><span data-stu-id="d0a24-103">Extended Protection for Authentication helps protect against man-in-the-middle (MITM) attacks, in which an attacker intercepts a client’s credentials and forwards them to a server.</span></span>  
   
- クライアント、サーバー、および攻撃者の 3 つの参加要素が存在するシナリオについて考えてみます。サーバーには `https://server` という URL があり、一方で攻撃者には `https://attacker` という URL があります。攻撃者は、自身がサーバーであるかのようにしてクライアントが攻撃者にアクセスするように騙します。次に、攻撃者はサーバーに要求を送信します。攻撃者がセキュリティで保護されたリソースへのアクセスを試みると、サーバーは攻撃者に対して WWW 認証ヘッダーで応答します。攻撃者は認証情報を持っていないため、WWW 認証ヘッダーをクライアントに送信します。クライアントは攻撃者に WWW 認証ヘッダーを送信し、攻撃者はそのヘッダーをサーバーに送信してクライアントの資格情報を利用してセキュリティで保護されたリソースにアクセスします。  
+ <span data-ttu-id="d0a24-104">クライアント、サーバー、および攻撃者の 3 つの参加要素が存在するシナリオについて考えてみます。</span><span class="sxs-lookup"><span data-stu-id="d0a24-104">Consider a scenario with three participants: a client, server, and attacker.</span></span> <span data-ttu-id="d0a24-105">サーバーには `https://server` という URL があり、一方で攻撃者には `https://attacker` という URL があります。</span><span class="sxs-lookup"><span data-stu-id="d0a24-105">The server has the URL `https://server`, whereas the attacker has the URL `https://attacker`.</span></span> <span data-ttu-id="d0a24-106">攻撃者は、自身がサーバーであるかのようにしてクライアントが攻撃者にアクセスするように騙します。</span><span class="sxs-lookup"><span data-stu-id="d0a24-106">The attacker tricks the client into accessing the attacker as if it were the server.</span></span> <span data-ttu-id="d0a24-107">次に、攻撃者はサーバーに要求を送信します。</span><span class="sxs-lookup"><span data-stu-id="d0a24-107">The attacker then sends a request to the server.</span></span> <span data-ttu-id="d0a24-108">攻撃者がセキュリティで保護されたリソースへのアクセスを試みると、サーバーは攻撃者に対して WWW 認証ヘッダーで応答します。</span><span class="sxs-lookup"><span data-stu-id="d0a24-108">If the attacker is trying to access a secure resource, the server replies to the attacker with a WWW-Authenticate header.</span></span> <span data-ttu-id="d0a24-109">攻撃者は認証情報を持っていないため、WWW 認証ヘッダーをクライアントに送信します。</span><span class="sxs-lookup"><span data-stu-id="d0a24-109">The attacker does not have the authentication information, so it sends the WWW-Authenticate header on to the client.</span></span> <span data-ttu-id="d0a24-110">クライアントは攻撃者に WWW 認証ヘッダーを送信し、攻撃者はそのヘッダーをサーバーに送信してクライアントの資格情報を利用してセキュリティで保護されたリソースにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="d0a24-110">The client sends the Authorization header to the attacker, and the attacker sends the header on to the server and gets access to the secure resources using the client’s credentials.</span></span>  
   
- 現在のところ、クライアント アプリケーションが HTTPS で Kerberos、Digest または NTLM を使用してサーバーに対する認証を実行する場合、最初にトランスポート レベルのセキュリティ \(TLS\) チャネルが構築され、このチャネルを使用して認証が行われます。しかし、Secure Sockets Layer \(SSL\) によって生成されるセッション キーと認証時に生成されるセッション キーはバインドされていません。そのため前述のシナリオでは、TLS \(HTTPS チャネルなど\) で通信が行われると、2 つの SSL チャネルが作成されます。1 つはクライアントと攻撃者間のチャネルで、もう 1 つは攻撃者とサーバー間のチャネルです。まず、クライアントの資格情報がクライアントと攻撃者間の SSL チャネルでクライアントからサーバーに送信され、次に、攻撃者とサーバー間のチャネルでクライアントの資格情報が送信されます。クライアントの資格情報がサーバーに届くと、サーバーは情報が送信されたチャネルを検出せずに、クライアントではなく攻撃者から発信された資格情報を確認します。  
+ <span data-ttu-id="d0a24-111">現在のところ、クライアント アプリケーションが HTTPS で Kerberos、Digest または NTLM を使用してサーバーに対する認証を実行する場合、最初にトランスポート レベルのセキュリティ (TLS) チャネルが構築され、このチャネルを使用して認証が行われます。</span><span class="sxs-lookup"><span data-stu-id="d0a24-111">Currently, when a client application authenticates itself to the server using Kerberos, Digest, or NTLM using HTTPS, a Transport Level Security (TLS) channel is first established and authentication takes place using this channel.</span></span> <span data-ttu-id="d0a24-112">しかし、Secure Sockets Layer (SSL) によって生成されるセッション キーと認証時に生成されるセッション キーはバインドされていません。</span><span class="sxs-lookup"><span data-stu-id="d0a24-112">However, there is no binding between the session key generated by Secure Sockets Layer (SSL) and the session key that is generated during authentication.</span></span> <span data-ttu-id="d0a24-113">そのため前述のシナリオでは、TLS (HTTPS チャネルなど) で通信が行われると、2 つの SSL チャネルが作成されます。1 つはクライアントと攻撃者間のチャネルで、もう 1 つは攻撃者とサーバー間のチャネルです。</span><span class="sxs-lookup"><span data-stu-id="d0a24-113">So, in the previous scenario, if the communication takes places over a TLS (such as an HTTPS channel), there are two SSL channels created: one between the client and the attacker, and another between the attacker and the server.</span></span> <span data-ttu-id="d0a24-114">まず、クライアントの資格情報がクライアントと攻撃者間の SSL チャネルでクライアントからサーバーに送信され、次に、攻撃者とサーバー間のチャネルでクライアントの資格情報が送信されます。</span><span class="sxs-lookup"><span data-stu-id="d0a24-114">The client’s credentials are sent from the client to the server first over the SSL channel between the client and the attacker and then over the channel between the attacker and the server.</span></span> <span data-ttu-id="d0a24-115">クライアントの資格情報がサーバーに届くと、サーバーは情報が送信されたチャネルを検出せずに、クライアントではなく攻撃者から発信された資格情報を確認します。</span><span class="sxs-lookup"><span data-stu-id="d0a24-115">Once the client’s credentials reach the server, the server verifies the credentials without detecting that the channel over which those credentials were sent originated with the attacker and not the client.</span></span>  
   
- これを解決するには、TLS で保護された外部チャネルとクライアントが認証されている内部チャネルを使用して、チャネル バインディング トークン \(CBT\) をサーバーに渡します。CBT は TLS で保護された外部チャネルのプロパティで、外部チャネルをクライアントが認証されている内部チャネルでの対話とバインドするために使用します。  
+ <span data-ttu-id="d0a24-116">これを解決するには、TLS で保護された外部チャネルとクライアントが認証されている内部チャネルを使用して、チャネル バインディング トークン (CBT) をサーバーに渡します。</span><span class="sxs-lookup"><span data-stu-id="d0a24-116">The solution is to use a TLS-secured outer channel and a client-authenticated inner channel, and to pass a Channel Binding Token (CBT) to the server.</span></span> <span data-ttu-id="d0a24-117">CBT は TLS で保護された外部チャネルのプロパティで、外部チャネルをクライアントが認証されている内部チャネルでの対話とバインドするために使用します。</span><span class="sxs-lookup"><span data-stu-id="d0a24-117">The CBT is a property of the TLS-secured outer channel, and is used to bind the outer channel to a conversation over the client-authenticated inner channel.</span></span>  
   
- 前述のシナリオでは、クライアントと攻撃者間の TLS チャネルの CBT は、サーバーに送信される認証情報によって結び付けられます。CBT 管理サーバーは、クライアントと攻撃者間のチャネルに対応するクライアント認証情報内の CBT を、攻撃者とサーバー間のチャネルに追加されている CBT と比較します。CBT はチャネルの送信先によって特定されるため、クライアントと攻撃者間の CBT は、攻撃者とサーバー間の CBT とは一致しません。これにより、サーバーは MITM 攻撃を検出して認証要求を拒否することができます。  
+ <span data-ttu-id="d0a24-118">前述のシナリオでは、クライアントと攻撃者間の TLS チャネルの CBT は、サーバーに送信される認証情報によって結び付けられます。</span><span class="sxs-lookup"><span data-stu-id="d0a24-118">In the previous scenario, the CBT of the client-attacker TLS channel is merged with the authorization information that is sent to the server.</span></span> <span data-ttu-id="d0a24-119">CBT 管理サーバーは、クライアントと攻撃者間のチャネルに対応するクライアント認証情報内の CBT を、攻撃者とサーバー間のチャネルに追加されている CBT と比較します。</span><span class="sxs-lookup"><span data-stu-id="d0a24-119">A CBT-aware server compares the CBT contained in the client authentication information, which corresponds to the client-attacker channel, to the CBT attached to the attacker-server channel.</span></span> <span data-ttu-id="d0a24-120">CBT はチャネルの送信先によって特定されるため、クライアントと攻撃者間の CBT は、攻撃者とサーバー間の CBT とは一致しません。</span><span class="sxs-lookup"><span data-stu-id="d0a24-120">A CBT is specific to a channel’s destination, so the client-attacker CBT does not match the attacker-server CBT.</span></span> <span data-ttu-id="d0a24-121">これにより、サーバーは MITM 攻撃を検出して認証要求を拒否することができます。</span><span class="sxs-lookup"><span data-stu-id="d0a24-121">This lets the server detect the MITM attack and refuse the authentication request.</span></span>  
   
- クライアント側が構成設定する必要は一切ありません。クライアントが CBT をサーバーに渡すように更新しておくと、常にこの動作が実行されます。サーバーを更新しておくと、サーバーが CBT を使用するように設定したり、CBT を無視するように設定することもできます。サーバーを更新しない場合、CBT は無視されます。  
+ <span data-ttu-id="d0a24-122">クライアント側が構成設定する必要は一切ありません。</span><span class="sxs-lookup"><span data-stu-id="d0a24-122">The client side does not require any configuration setting.</span></span> <span data-ttu-id="d0a24-123">クライアントが CBT をサーバーに渡すように更新しておくと、常にこの動作が実行されます。</span><span class="sxs-lookup"><span data-stu-id="d0a24-123">Once the client has been updated to pass the CBT to the server, it always does so.</span></span> <span data-ttu-id="d0a24-124">サーバーを更新しておくと、サーバーが CBT を使用するように設定したり、CBT を無視するように設定することもできます。</span><span class="sxs-lookup"><span data-stu-id="d0a24-124">If the server has also been updated, it can be configured to use the CBT or ignore it.</span></span> <span data-ttu-id="d0a24-125">サーバーを更新しない場合、CBT は無視されます。</span><span class="sxs-lookup"><span data-stu-id="d0a24-125">If it has not been updated, it ignores it.</span></span>  
   
- サーバーには、次の保護レベルを設定できます。  
+ <span data-ttu-id="d0a24-126">サーバーには、次の保護レベルを設定できます。</span><span class="sxs-lookup"><span data-stu-id="d0a24-126">The server can have the following levels of protection:</span></span>  
   
--   なし。チャネル バインディングの検証は実行されません。更新されていないすべてのサーバーの動作です。  
+-   <span data-ttu-id="d0a24-127">なし。</span><span class="sxs-lookup"><span data-stu-id="d0a24-127">None.</span></span> <span data-ttu-id="d0a24-128">チャネル バインディングの検証は実行されません。</span><span class="sxs-lookup"><span data-stu-id="d0a24-128">No channel binding validation is performed.</span></span> <span data-ttu-id="d0a24-129">更新されていないすべてのサーバーの動作です。</span><span class="sxs-lookup"><span data-stu-id="d0a24-129">This is the behavior of all servers that have not been updated.</span></span>  
   
--   一部。更新されたすべてのクライアントは、サーバーにチャネル バインディング情報を提供する必要があります。クライアントが更新されていなければ、その必要はありません。アプリケーションの互換性を許容する中間のオプションです。  
+-   <span data-ttu-id="d0a24-130">一部。</span><span class="sxs-lookup"><span data-stu-id="d0a24-130">Partial.</span></span> <span data-ttu-id="d0a24-131">更新されたすべてのクライアントは、サーバーにチャネル バインディング情報を提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d0a24-131">All clients that have been updated must provide channel binding information to the server.</span></span> <span data-ttu-id="d0a24-132">クライアントが更新されていなければ、その必要はありません。</span><span class="sxs-lookup"><span data-stu-id="d0a24-132">Clients that have not been updated do not have to do so.</span></span> <span data-ttu-id="d0a24-133">アプリケーションの互換性を許容する中間のオプションです。</span><span class="sxs-lookup"><span data-stu-id="d0a24-133">This is an intermediate option that allows for application compatibility.</span></span>  
   
--   完全。すべてのクライアントがチャネル バインディング情報を提供する必要があります。サーバーは、クライアントが要求しないクライアントからの認証要求を拒否します。  
+-   <span data-ttu-id="d0a24-134">完全。</span><span class="sxs-lookup"><span data-stu-id="d0a24-134">Full.</span></span> <span data-ttu-id="d0a24-135">すべてのクライアントがチャネル バインディング情報を提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d0a24-135">All clients must provide channel binding information.</span></span> <span data-ttu-id="d0a24-136">サーバーは、クライアントが要求しないクライアントからの認証要求を拒否します。</span><span class="sxs-lookup"><span data-stu-id="d0a24-136">The server rejects authentication requests from clients that do not do so.</span></span>  
   
- 詳細については、Win7 CBT\/拡張保護サンプルを参照してください。  
+ <span data-ttu-id="d0a24-137">詳細については、Win7 CBT/拡張保護サンプルを参照してください。</span><span class="sxs-lookup"><span data-stu-id="d0a24-137">For more information, see the Win7 CBT/Extended Protection sample.</span></span>  
   
-## 参照  
- [Windows Server AppFabric のセキュリティ モデル](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a><span data-ttu-id="d0a24-138">関連項目</span><span class="sxs-lookup"><span data-stu-id="d0a24-138">See Also</span></span>  
+ [<span data-ttu-id="d0a24-139">Windows Server App Fabric のセキュリティ モデル</span><span class="sxs-lookup"><span data-stu-id="d0a24-139">Security Model for Windows Server App Fabric</span></span>](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

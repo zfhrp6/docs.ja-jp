@@ -1,80 +1,79 @@
 ---
-title: "Entity Framework 用の EntityClient プロバイダー | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: "Entity Framework 用の EntityClient プロバイダー"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8c5db787-78e6-4a34-8dc1-188bca0aca5e
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: eb6d8d4db676502b8c363a7d45407384333b3f22
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Entity Framework 用の EntityClient プロバイダー
-EntityClient プロバイダーは、概念モデルで記述されているデータにアクセスするために Entity Framework アプリケーションで使用するデータ プロバイダーです。  概念モデルの詳細については、「[モデリングとマッピング](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md)」を参照してください。  EntityClient は、他の .NET Framework データ プロバイダーを使用してデータ ソースにアクセスします。  たとえば、EntityClient は、SQL Server データベースにアクセスするときは .NET Framework Data Provider for SQL Server \(SqlClient\) を使用します。  SqlClient プロバイダーの詳細については、「[Entity Framework 用 SqlClient](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)」を参照してください。  EntityClient プロバイダーは <xref:System.Data.EntityClient> 名前空間で実装されます。  
+# <a name="entityclient-provider-for-the-entity-framework"></a><span data-ttu-id="12b4d-102">Entity Framework 用の EntityClient プロバイダー</span><span class="sxs-lookup"><span data-stu-id="12b4d-102">EntityClient Provider for the Entity Framework</span></span>
+<span data-ttu-id="12b4d-103">EntityClient プロバイダーは、概念モデルで記述されているデータにアクセスするために Entity Framework アプリケーションで使用するデータ プロバイダーです。</span><span class="sxs-lookup"><span data-stu-id="12b4d-103">The EntityClient provider is a data provider used by Entity Framework applications to access data described in a conceptual model.</span></span> <span data-ttu-id="12b4d-104">概念モデルについては、次を参照してください。[モデリングとマッピング](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md)です。</span><span class="sxs-lookup"><span data-stu-id="12b4d-104">For information about conceptual models, see [Modeling and Mapping](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md).</span></span> <span data-ttu-id="12b4d-105">EntityClient は、他の .NET Framework データ プロバイダーを使用してデータ ソースにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="12b4d-105">EntityClient uses other .NET Framework data providers to access the data source.</span></span> <span data-ttu-id="12b4d-106">たとえば、EntityClient は、SQL Server データベースにアクセスするときは .NET Framework Data Provider for SQL Server (SqlClient) を使用します。</span><span class="sxs-lookup"><span data-stu-id="12b4d-106">For example, EntityClient uses the .NET Framework Data Provider for SQL Server (SqlClient) when accessing a SQL Server database.</span></span> <span data-ttu-id="12b4d-107">SqlClient プロバイダーについては、次を参照してください。 [Entity Framework 用 SqlClient](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)です。</span><span class="sxs-lookup"><span data-stu-id="12b4d-107">For information about the SqlClient provider, see [SqlClient for the Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md).</span></span> <span data-ttu-id="12b4d-108">EntityClient プロバイダーは <xref:System.Data.EntityClient> 名前空間で実装されます。</span><span class="sxs-lookup"><span data-stu-id="12b4d-108">The EntityClient provider is implemented in the <xref:System.Data.EntityClient> namespace.</span></span>  
   
-## 接続の管理  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] は、基になるデータ プロバイダーおよびリレーショナル データベースに <xref:System.Data.EntityClient.EntityConnection> を提供することにより、ストレージ固有の [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] データ プロバイダーに基づいて構築されます。  <xref:System.Data.EntityClient.EntityConnection> オブジェクトを構築するには、必要なモデルとマッピング、さらにストレージ固有のデータ プロバイダー名と接続文字列を含んだ一連のメタデータを参照する必要があります。  <xref:System.Data.EntityClient.EntityConnection> を確立すると、概念モデルから生成されたクラスを使用してエンティティにアクセスできます。  
+## <a name="managing-connections"></a><span data-ttu-id="12b4d-109">接続の管理</span><span class="sxs-lookup"><span data-stu-id="12b4d-109">Managing Connections</span></span>  
+ <span data-ttu-id="12b4d-110">[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]ストレージ固有のベースとして構築[!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)]データ プロバイダーを提供することによって、<xref:System.Data.EntityClient.EntityConnection>基になるデータ プロバイダーおよびリレーショナル データベースにします。</span><span class="sxs-lookup"><span data-stu-id="12b4d-110">The [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] builds on top of storage-specific [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] data providers by providing an <xref:System.Data.EntityClient.EntityConnection> to an underlying data provider and relational database.</span></span> <span data-ttu-id="12b4d-111">構築するために、<xref:System.Data.EntityClient.EntityConnection>オブジェクトを必要なモデルとマッピング、および記憶域に固有のデータ プロバイダーの名前と接続文字列が格納されたメタデータのセットを参照する必要があります。</span><span class="sxs-lookup"><span data-stu-id="12b4d-111">To construct an <xref:System.Data.EntityClient.EntityConnection> object, you have to reference a set of metadata that contains the necessary models and mapping, and also a storage-specific data provider name and connection string.</span></span> <span data-ttu-id="12b4d-112">後に、<xref:System.Data.EntityClient.EntityConnection>が代わりに、エンティティを概念モデルから生成されたクラスからアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="12b4d-112">After the <xref:System.Data.EntityClient.EntityConnection> is in place, entities can be accessed through the classes generated from the conceptual model.</span></span>  
   
- app.config ファイルの接続文字列を指定できます。  
+ <span data-ttu-id="12b4d-113">app.config ファイルの接続文字列を指定できます。</span><span class="sxs-lookup"><span data-stu-id="12b4d-113">You can specify a connection string in app.config file.</span></span>  
   
- <xref:System.Data.EntityClient> には、<xref:System.Data.EntityClient.EntityConnectionStringBuilder> クラスも含まれています。  このクラスを使用すると、開発者はこのクラスのプロパティおよびメソッドを使用することによって、正しい構文の接続文字列をプログラムで作成し、既存の接続文字列の解析や再作成を行うことができます。  詳細については、「[EntityConnection の接続文字列を作成する方法](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md)」を参照してください。  
+ <span data-ttu-id="12b4d-114"><xref:System.Data.EntityClient> には、<xref:System.Data.EntityClient.EntityConnectionStringBuilder> クラスも含まれています。</span><span class="sxs-lookup"><span data-stu-id="12b4d-114">The <xref:System.Data.EntityClient> also includes the <xref:System.Data.EntityClient.EntityConnectionStringBuilder> class.</span></span> <span data-ttu-id="12b4d-115">このクラスを使用すると、開発者はこのクラスのプロパティおよびメソッドを使用することによって、正しい構文の接続文字列をプログラムで作成し、既存の接続文字列の解析や再作成を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="12b4d-115">This class enables developers to programmatically create syntactically correct connection strings, and parse and rebuild existing connection strings, by using properties and methods of the class.</span></span> <span data-ttu-id="12b4d-116">詳細については、次を参照してください。[する方法: EntityConnection の接続文字列を構築](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md)です。</span><span class="sxs-lookup"><span data-stu-id="12b4d-116">For more information, see [How to: Build an EntityConnection Connection String](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md).</span></span>  
   
-## クエリの作成  
- [!INCLUDE[esql](../../../../../includes/esql-md.md)] 言語は、エンティティの概念スキーマを直接操作し、継承やリレーションシップなどの Entity Data Model 概念をサポートする、ストレージの影響を受けない SQL の言語です。  エンティティ モデルに対して [!INCLUDE[esql](../../../../../includes/esql-md.md)] コマンドを実行するには、<xref:System.Data.EntityClient.EntityCommand> クラスを使用します。  <xref:System.Data.EntityClient.EntityCommand> オブジェクトを構築する場合は、ストアド プロシージャ名またはクエリ テキストを指定できます。  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] は、ストレージ固有のデータ プロバイダーと連携し、汎用的な [!INCLUDE[esql](../../../../../includes/esql-md.md)] をストレージ固有のクエリに変換します。  [!INCLUDE[esql](../../../../../includes/esql-md.md)] クエリ記述の詳細については、「[Entity SQL 言語](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)」を参照してください。  
+## <a name="creating-queries"></a><span data-ttu-id="12b4d-117">クエリの作成</span><span class="sxs-lookup"><span data-stu-id="12b4d-117">Creating Queries</span></span>  
+ <span data-ttu-id="12b4d-118">[!INCLUDE[esql](../../../../../includes/esql-md.md)]言語は、エンティティの概念スキーマを直接操作し、継承やリレーションシップなど、Entity Data Model 概念をサポートする SQL のストレージに依存しない言語。</span><span class="sxs-lookup"><span data-stu-id="12b4d-118">The [!INCLUDE[esql](../../../../../includes/esql-md.md)] language is a storage-independent dialect of SQL that works directly with conceptual entity schemas and supports Entity Data Model concepts such as inheritance and relationships.</span></span> <span data-ttu-id="12b4d-119"><xref:System.Data.EntityClient.EntityCommand>を実行するクラスが使用される、[!INCLUDE[esql](../../../../../includes/esql-md.md)]エンティティ モデルに対してコマンド。</span><span class="sxs-lookup"><span data-stu-id="12b4d-119">The <xref:System.Data.EntityClient.EntityCommand> class is used to execute an [!INCLUDE[esql](../../../../../includes/esql-md.md)] command against an entity model.</span></span> <span data-ttu-id="12b4d-120"><xref:System.Data.EntityClient.EntityCommand> オブジェクトを構築する場合は、ストアド プロシージャ名またはクエリ テキストを指定できます。</span><span class="sxs-lookup"><span data-stu-id="12b4d-120">When you construct <xref:System.Data.EntityClient.EntityCommand> objects, you can specify a stored procedure name or a query text.</span></span> <span data-ttu-id="12b4d-121">[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] は、ストレージ固有のデータ プロバイダーと連携し、汎用的な [!INCLUDE[esql](../../../../../includes/esql-md.md)] をストレージ固有のクエリに変換します。</span><span class="sxs-lookup"><span data-stu-id="12b4d-121">The [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] works with storage-specific data providers to translate generic [!INCLUDE[esql](../../../../../includes/esql-md.md)] into storage-specific queries.</span></span> <span data-ttu-id="12b4d-122">書き込みの詳細については[!INCLUDE[esql](../../../../../includes/esql-md.md)]クエリを参照してください[Entity SQL 言語](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)します。</span><span class="sxs-lookup"><span data-stu-id="12b4d-122">For more information about writing [!INCLUDE[esql](../../../../../includes/esql-md.md)] queries, see [Entity SQL Language](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md).</span></span>  
   
- 次の例では、<xref:System.Data.EntityClient.EntityCommand> オブジェクトを作成し、[!INCLUDE[esql](../../../../../includes/esql-md.md)] クエリ テキストを <xref:System.Data.EntityClient.EntityCommand.CommandText%2A?displayProperty=fullName> プロパティに割り当てます。  この [!INCLUDE[esql](../../../../../includes/esql-md.md)] クエリは、概念モデルから表示価格で並べ替えた製品を要求します。  次のコードでは、ストレージ モデルが認識されません。  
+ <span data-ttu-id="12b4d-123">次の例を作成、<xref:System.Data.EntityClient.EntityCommand>オブジェクトと割り当てます、[!INCLUDE[esql](../../../../../includes/esql-md.md)]クエリ テキストにその<xref:System.Data.EntityClient.EntityCommand.CommandText%2A?displayProperty=nameWithType>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="12b4d-123">The following example creates an <xref:System.Data.EntityClient.EntityCommand> object and assigns an [!INCLUDE[esql](../../../../../includes/esql-md.md)] query text to its <xref:System.Data.EntityClient.EntityCommand.CommandText%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="12b4d-124">これは、[!INCLUDE[esql](../../../../../includes/esql-md.md)]クエリは、概念モデルから表示価格で並べ替えた製品を要求します。</span><span class="sxs-lookup"><span data-stu-id="12b4d-124">This [!INCLUDE[esql](../../../../../includes/esql-md.md)] query requests products ordered by the list price from the conceptual model.</span></span> <span data-ttu-id="12b4d-125">次のコードでは、ストレージ モデルが認識されません。</span><span class="sxs-lookup"><span data-stu-id="12b4d-125">The following code has no knowledge of the storage model at all.</span></span>  
   
  `EntityCommand cmd = conn.CreateCommand();`  
   
- `cmd.CommandText = @"` `SELECT VALUE p`  
+ <span data-ttu-id="12b4d-126">`cmd.CommandText = @"` `SELECT VALUE p`</span><span class="sxs-lookup"><span data-stu-id="12b4d-126">`cmd.CommandText = @"` `SELECT VALUE p`</span></span>  
   
  `FROM AdventureWorksEntities.Product AS p`  
   
  `ORDER BY p.ListPrice ";`  
   
-## クエリの実行  
- クエリを実行すると、そのクエリが解析され、正規コマンド ツリーに変換されます。  すべての後続の処理は、コマンド ツリーで行われます。  コマンド ツリーは <xref:System.Data.SqlClient> など、<xref:System.Data.EntityClient> と基になる [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] データ プロバイダー間の通信手段です。  
+## <a name="executing-queries"></a><span data-ttu-id="12b4d-127">クエリの実行</span><span class="sxs-lookup"><span data-stu-id="12b4d-127">Executing Queries</span></span>  
+ <span data-ttu-id="12b4d-128">クエリを実行すると、そのクエリが解析され、正規コマンド ツリーに変換されます。</span><span class="sxs-lookup"><span data-stu-id="12b4d-128">When a query is executed, it is parsed and converted into a canonical command tree.</span></span> <span data-ttu-id="12b4d-129">すべての後続の処理は、コマンド ツリーで行われます。</span><span class="sxs-lookup"><span data-stu-id="12b4d-129">All subsequent processing is performed on the command tree.</span></span> <span data-ttu-id="12b4d-130">コマンド ツリーは <xref:System.Data.EntityClient> など、[!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] と基になる <xref:System.Data.SqlClient> データ プロバイダー間の通信手段です。</span><span class="sxs-lookup"><span data-stu-id="12b4d-130">The command tree is the means of communication between the <xref:System.Data.EntityClient> and the underlying [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] data provider, such as <xref:System.Data.SqlClient>.</span></span>  
   
- 概念モデルに対する <xref:System.Data.EntityClient.EntityCommand> の実行結果は、<xref:System.Data.EntityClient.EntityDataReader> によって公開されます。  <xref:System.Data.EntityClient.EntityDataReader> を返すコマンドを実行するには、<xref:System.Data.EntityClient.EntityCommand.ExecuteReader%2A> を呼び出します。  <xref:System.Data.EntityClient.EntityDataReader> は、構造化されたさまざまな結果を記述するための <xref:System.Data.IExtendedDataRecord> を実装します。  
+ <span data-ttu-id="12b4d-131">概念モデルに対する <xref:System.Data.EntityClient.EntityDataReader> の実行結果は、<xref:System.Data.EntityClient.EntityCommand> によって公開されます。</span><span class="sxs-lookup"><span data-stu-id="12b4d-131">The <xref:System.Data.EntityClient.EntityDataReader> exposes the results of executing a <xref:System.Data.EntityClient.EntityCommand> against a conceptual model.</span></span> <span data-ttu-id="12b4d-132"><xref:System.Data.EntityClient.EntityDataReader> を返すコマンドを実行するには、<xref:System.Data.EntityClient.EntityCommand.ExecuteReader%2A> を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="12b4d-132">To execute the command that returns the <xref:System.Data.EntityClient.EntityDataReader>, call <xref:System.Data.EntityClient.EntityCommand.ExecuteReader%2A>.</span></span> <span data-ttu-id="12b4d-133"><xref:System.Data.EntityClient.EntityDataReader> は、構造化されたさまざまな結果を記述するための <xref:System.Data.IExtendedDataRecord> を実装します。</span><span class="sxs-lookup"><span data-stu-id="12b4d-133">The <xref:System.Data.EntityClient.EntityDataReader> implements <xref:System.Data.IExtendedDataRecord> to describe rich structured results.</span></span>  
   
-## トランザクションの管理  
- Entity Framework では、自動トランザクションと明示的トランザクションという 2 つの使用方法があります。  自動トランザクションでは <xref:System.Transactions> 名前空間を使用し、明示的トランザクションでは <xref:System.Data.EntityClient.EntityTransaction> クラスを使用します。  
+## <a name="managing-transactions"></a><span data-ttu-id="12b4d-134">トランザクションの管理</span><span class="sxs-lookup"><span data-stu-id="12b4d-134">Managing Transactions</span></span>  
+ <span data-ttu-id="12b4d-135">Entity Framework では、自動トランザクションと明示的トランザクションという 2 つの使用方法があります。</span><span class="sxs-lookup"><span data-stu-id="12b4d-135">In the Entity Framework, there are two ways to use transactions: automatic and explicit.</span></span> <span data-ttu-id="12b4d-136">自動トランザクションでは <xref:System.Transactions> 名前空間を使用し、明示的トランザクションでは <xref:System.Data.EntityClient.EntityTransaction> クラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="12b4d-136">Automatic transactions use the <xref:System.Transactions> namespace, and explicit transactions use the <xref:System.Data.EntityClient.EntityTransaction> class.</span></span>  
   
- 概念モデル経由で公開されたデータを更新するには、「[How to: Manage Transactions in the Entity Framework](http://msdn.microsoft.com/ja-jp/4a55eb7f-f826-4a48-9df1-aebe2352ebef)」を参照してください。  
+ <span data-ttu-id="12b4d-137">は、概念モデルによって公開されるデータを更新するには参照してください[する方法: Entity Framework でのトランザクションの管理](http://msdn.microsoft.com/en-us/4a55eb7f-f826-4a48-9df1-aebe2352ebef)です。</span><span class="sxs-lookup"><span data-stu-id="12b4d-137">To update data that is exposed through a conceptual model; see [How to: Manage Transactions in the Entity Framework](http://msdn.microsoft.com/en-us/4a55eb7f-f826-4a48-9df1-aebe2352ebef).</span></span>  
   
-## このセクションの内容  
- [EntityConnection の接続文字列を作成する方法](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md)  
+## <a name="in-this-section"></a><span data-ttu-id="12b4d-138">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="12b4d-138">In This Section</span></span>  
+ [<span data-ttu-id="12b4d-139">方法: EntityConnection の接続文字列を作成します。</span><span class="sxs-lookup"><span data-stu-id="12b4d-139">How to: Build an EntityConnection Connection String</span></span>](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md)  
   
- [PrimitiveType 結果を返すクエリの実行方法](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md)  
+ [<span data-ttu-id="12b4d-140">方法: PrimitiveType 結果を返すクエリを実行</span><span class="sxs-lookup"><span data-stu-id="12b4d-140">How to: Execute a Query that Returns PrimitiveType Results</span></span>](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md)  
   
- [StructuralType 結果を返すクエリの実行方法](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md)  
+ [<span data-ttu-id="12b4d-141">方法: StructuralType 結果を返すクエリを実行</span><span class="sxs-lookup"><span data-stu-id="12b4d-141">How to: Execute a Query that Returns StructuralType Results</span></span>](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md)  
   
- [RefType 結果を返すクエリの実行方法](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-reftype-results.md)  
+ [<span data-ttu-id="12b4d-142">方法: RefType 結果を返すクエリを実行</span><span class="sxs-lookup"><span data-stu-id="12b4d-142">How to: Execute a Query that Returns RefType Results</span></span>](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-reftype-results.md)  
   
- [複合型を返すクエリの実行方法](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-complex-types.md)  
+ [<span data-ttu-id="12b4d-143">方法: 複合型を返すクエリを実行</span><span class="sxs-lookup"><span data-stu-id="12b4d-143">How to: Execute a Query that Returns Complex Types</span></span>](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-complex-types.md)  
   
- [入れ子になったコレクションを返すクエリの実行方法](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-nested-collections.md)  
+ [<span data-ttu-id="12b4d-144">方法: 入れ子になったコレクションを返すクエリを実行</span><span class="sxs-lookup"><span data-stu-id="12b4d-144">How to: Execute a Query that Returns Nested Collections</span></span>](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-nested-collections.md)  
   
- [EntityCommand を使用してパラメーター化 Entity SQL クエリを実行する方法](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-parameterized-entity-sql-query-using-entitycommand.md)  
+ [<span data-ttu-id="12b4d-145">方法: EntityCommand を使用してパラメーター化 Entity SQL クエリを実行</span><span class="sxs-lookup"><span data-stu-id="12b4d-145">How to: Execute a Parameterized Entity SQL Query Using EntityCommand</span></span>](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-parameterized-entity-sql-query-using-entitycommand.md)  
   
- [EntityCommand を使用してパラメーター化されたストアド プロシージャを実行する方法](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-parameterized-stored-procedure-using-entitycommand.md)  
+ [<span data-ttu-id="12b4d-146">方法: EntityCommand を使用してパラメーター化されたストアド プロシージャの実行</span><span class="sxs-lookup"><span data-stu-id="12b4d-146">How to: Execute a Parameterized Stored Procedure Using EntityCommand</span></span>](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-parameterized-stored-procedure-using-entitycommand.md)  
   
- [ポリモーフィック クエリを実行する方法](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-polymorphic-query.md)  
+ [<span data-ttu-id="12b4d-147">方法: ポリモーフィック クエリを実行</span><span class="sxs-lookup"><span data-stu-id="12b4d-147">How to: Execute a Polymorphic Query</span></span>](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-polymorphic-query.md)  
   
- [Navigate 演算子でリレーションシップをナビゲートする方法](../../../../../docs/framework/data/adonet/ef/how-to-navigate-relationships-with-the-navigate-operator.md)  
+ [<span data-ttu-id="12b4d-148">方法: でリレーションシップをナビゲート、Navigate 演算子</span><span class="sxs-lookup"><span data-stu-id="12b4d-148">How to: Navigate Relationships with the Navigate Operator</span></span>](../../../../../docs/framework/data/adonet/ef/how-to-navigate-relationships-with-the-navigate-operator.md)  
   
-## 参照  
- [Managing Connections and Transactions](http://msdn.microsoft.com/ja-jp/b6659d2a-9a45-4e98-acaa-d7a8029e5b99)   
- [ADO.NET Entity Framework](../../../../../docs/framework/data/adonet/ef/index.md)   
- [言語リファレンス](../../../../../docs/framework/data/adonet/ef/language-reference/index.md)
+## <a name="see-also"></a><span data-ttu-id="12b4d-149">関連項目</span><span class="sxs-lookup"><span data-stu-id="12b4d-149">See Also</span></span>  
+ [<span data-ttu-id="12b4d-150">接続とトランザクションを管理します。</span><span class="sxs-lookup"><span data-stu-id="12b4d-150">Managing Connections and Transactions</span></span>](http://msdn.microsoft.com/en-us/b6659d2a-9a45-4e98-acaa-d7a8029e5b99)  
+ [<span data-ttu-id="12b4d-151">ADO.NET Entity Framework</span><span class="sxs-lookup"><span data-stu-id="12b4d-151">ADO.NET Entity Framework</span></span>](../../../../../docs/framework/data/adonet/ef/index.md)  
+ [<span data-ttu-id="12b4d-152">言語リファレンス</span><span class="sxs-lookup"><span data-stu-id="12b4d-152">Language Reference</span></span>](../../../../../docs/framework/data/adonet/ef/language-reference/index.md)

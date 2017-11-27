@@ -1,39 +1,40 @@
 ---
-title: "方法 : C# のアプリケーションに複数の設定セットを追加する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "アプリケーション設定 [Windows フォーム], C#"
-  - "アプリケーション設定 [Windows フォーム], 複数セット"
+title: "方法 : C# のアプリケーションに複数の設定セットを追加する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- application settings [Windows Forms], multiple sets
+- application settings [Windows Forms], C#
 ms.assetid: 45007ac6-cf07-4be7-bc38-3f0ef962faf9
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ec541a8f83990eec79226be7fb4880ef8dda639d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : C# のアプリケーションに複数の設定セットを追加する
-アプリケーションの中に、複数の設定セットを用意する場合があります。  たとえば、特定のグループの設定だけが頻繁に変更されると想定されるアプリケーションを開発する場合は、それらの設定を 1 つのファイルに分離しておき、他の設定に影響を与えることなく、そのファイル全体を置換できるようにすると便利です。  Visual Studio では、複数の設定セットをプロジェクトに追加できます。  追加の設定セットには、Properties.Settings オブジェクトを介してアクセスできます。  
+# <a name="how-to-add-multiple-sets-of-settings-to-your-application-in-c"></a><span data-ttu-id="8702b-102">方法 : C# のアプリケーションに複数の設定セットを追加する</span><span class="sxs-lookup"><span data-stu-id="8702b-102">How To: Add Multiple Sets of Settings To Your Application in C#</span></span> #
+<span data-ttu-id="8702b-103">場合によってで、アプリケーションに複数セットの設定があることができます。</span><span class="sxs-lookup"><span data-stu-id="8702b-103">In some cases, you might want to have multiple sets of settings in an application.</span></span> <span data-ttu-id="8702b-104">たとえばを開発しているアプリケーションの設定の特定のグループが頻繁に変更すると思われる場合だと考えられますファイルを置換できる、されるように 1 つのファイルに分離してその他の設定は変わりません。</span><span class="sxs-lookup"><span data-stu-id="8702b-104">For example, if you are developing an application where a particular group of settings is expected to change frequently, it might be wise to separate them all into a single file so that the file can be replaced wholesale, leaving other settings unaffected.</span></span> <span data-ttu-id="8702b-105">Visual Studio では、複数のセットの設定をプロジェクトに追加することができます。</span><span class="sxs-lookup"><span data-stu-id="8702b-105">Visual Studio allows you to add multiple sets of settings to your project.</span></span> <span data-ttu-id="8702b-106">設定の追加セットは、Properties.Settings オブジェクト経由でアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="8702b-106">Additional sets of settings can be accessed via the Properties.Settings object.</span></span>  
   
-### アプリケーションに追加の設定セットを追加するには  
+### <a name="to-add-an-additional-set-of-setting-to-your-application"></a><span data-ttu-id="8702b-107">アプリケーションに追加の設定セットを追加するには</span><span class="sxs-lookup"><span data-stu-id="8702b-107">To Add an Additional Set of Setting to your Application</span></span>  
   
-1.  **\[プロジェクト\]** メニューの **\[新しい項目の追加\]** をクリックします。  **\[新しい項目の追加\]** ダイアログ ボックスが表示されます。  
+1.  <span data-ttu-id="8702b-108">**[プロジェクト]** メニューの **[新しい項目の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="8702b-108">From the **Project** menu, choose **Add New Item**.</span></span> <span data-ttu-id="8702b-109">**[新しい項目の追加]** ダイアログ ボックスが開きます。</span><span class="sxs-lookup"><span data-stu-id="8702b-109">The **Add New Item** dialog box opens.</span></span>  
   
-2.  **\[新しい項目の追加\]** ダイアログ ボックスで、**\[設定ファイル\]** をクリックし、ファイルの名前を入力します。次に、**\[追加\]** をクリックして、新しい設定ファイルをソリューションに追加します。  
+2.  <span data-ttu-id="8702b-110">**新しい項目の追加**ダイアログ ボックスで、**設定ファイル**、ファイルの名前を入力して、をクリックして**追加**をソリューションに新しい設定ファイルを追加します。</span><span class="sxs-lookup"><span data-stu-id="8702b-110">In the **Add New Item** dialog box, select **Settings File**, type in a name for the file, and click **Add** to add a new settings file to your solution.</span></span>  
   
-3.  **ソリューション エクスプローラー**で、新しい設定ファイルを **\[プロパティ\]** フォルダーにドラッグします。  これで、新しい設定をコード内で使用できます。  
+3.  <span data-ttu-id="8702b-111">**ソリューション エクスプ ローラー**に、新しい設定ファイルをドラッグして、**プロパティ**フォルダーです。</span><span class="sxs-lookup"><span data-stu-id="8702b-111">In **Solution Explorer**, drag the new Settings file into the **Properties** folder.</span></span> <span data-ttu-id="8702b-112">これにより、コードで使用できる新しい設定です。</span><span class="sxs-lookup"><span data-stu-id="8702b-112">This allows your new settings to be available in code.</span></span>  
   
-4.  他の設定ファイルと同じように、このファイルに設定を追加し、ファイルの設定を使用します。  このグループの設定は、Properties.Settings オブジェクトを介してアクセスできます。  
+4.  <span data-ttu-id="8702b-113">追加し、その他の設定ファイルと同様に、このファイルの設定を使用します。</span><span class="sxs-lookup"><span data-stu-id="8702b-113">Add and use settings in this file as you would any other settings file.</span></span> <span data-ttu-id="8702b-114">この設定は、Properties.Settings オブジェクトでのグループにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="8702b-114">You can access this group of settings via the Properties.Settings object.</span></span>  
   
-## 参照  
- [アプリケーション設定とユーザー設定の使用](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)   
- [アプリケーション設定の概要](../../../../docs/framework/winforms/advanced/application-settings-overview.md)
+## <a name="see-also"></a><span data-ttu-id="8702b-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="8702b-115">See Also</span></span>  
+ [<span data-ttu-id="8702b-116">アプリケーション設定とユーザー設定の使用</span><span class="sxs-lookup"><span data-stu-id="8702b-116">Using Application Settings and User Settings</span></span>](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)  
+ [<span data-ttu-id="8702b-117">アプリケーション設定の概要</span><span class="sxs-lookup"><span data-stu-id="8702b-117">Application Settings Overview</span></span>](../../../../docs/framework/winforms/advanced/application-settings-overview.md)

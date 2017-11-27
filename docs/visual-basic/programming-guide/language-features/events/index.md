@@ -1,136 +1,117 @@
 ---
 title: "イベント (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - events [Visual Basic], about events
 - events [Visual Basic]
 ms.assetid: 8fb0353a-e41b-4e23-b78f-da65db832f70
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 84f8385e1b2f16c4bcfa53ef2c77e1f0cf61e5e3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: c85936d366f377b3da45b4e342c3373aae959984
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="events-visual-basic"></a>イベント (Visual Basic)
-[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] プロジェクトとは、順に実行される一連のプロシージャと思っているかもしれませんが、実際には、ほとんどのプログラムはイベント ドリブン型です。つまり、実行の流れは、外部で発生する "*イベント*" と呼ばれる事象によって決まります。  
+# <a name="events-visual-basic"></a><span data-ttu-id="12e87-102">イベント (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="12e87-102">Events (Visual Basic)</span></span>
+<span data-ttu-id="12e87-103">[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] プロジェクトとは、順に実行される一連のプロシージャと思っているかもしれませんが、実際には、ほとんどのプログラムはイベント ドリブン型です。つまり、実行の流れは、外部で発生する "*イベント*" と呼ばれる事象によって決まります。</span><span class="sxs-lookup"><span data-stu-id="12e87-103">While you might visualize a [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] project as a series of procedures that execute in a sequence, in reality, most programs are event driven—meaning the flow of execution is determined by external occurrences called *events*.</span></span>  
   
- イベントは、何らかの重要な出来事が発生したことをアプリケーションに通知するシグナルです。 たとえば、ユーザーがフォーム上のコントロールをクリックすると、フォームは、`Click` イベントを発生させて、そのイベントを処理するプロシージャを呼び出すことができます。 イベントは、複数のタスク間の通信を可能にすることもできます。 たとえば、メインのアプリケーションとは別のアプリケーションで並べ替えタスクを実行するとします。 ユーザーが並べ替えを取り消した場合、アプリケーションは並べ替え処理の停止を指示するキャンセル イベントを送信できます。  
+ <span data-ttu-id="12e87-104">イベントは、何らかの重要な出来事が発生したことをアプリケーションに通知するシグナルです。</span><span class="sxs-lookup"><span data-stu-id="12e87-104">An event is a signal that informs an application that something important has occurred.</span></span> <span data-ttu-id="12e87-105">たとえば、ユーザーがフォーム上のコントロールをクリックすると、フォームは、`Click` イベントを発生させて、そのイベントを処理するプロシージャを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="12e87-105">For example, when a user clicks a control on a form, the form can raise a `Click` event and call a procedure that handles the event.</span></span> <span data-ttu-id="12e87-106">イベントは、複数のタスク間の通信を可能にすることもできます。</span><span class="sxs-lookup"><span data-stu-id="12e87-106">Events also allow separate tasks to communicate.</span></span> <span data-ttu-id="12e87-107">たとえば、メインのアプリケーションとは別のアプリケーションで並べ替えタスクを実行するとします。</span><span class="sxs-lookup"><span data-stu-id="12e87-107">Say, for example, that your application performs a sort task separately from the main application.</span></span> <span data-ttu-id="12e87-108">ユーザーが並べ替えを取り消した場合、アプリケーションは並べ替え処理の停止を指示するキャンセル イベントを送信できます。</span><span class="sxs-lookup"><span data-stu-id="12e87-108">If a user cancels the sort, your application can send a cancel event instructing the sort process to stop.</span></span>  
   
-## <a name="event-terms-and-concepts"></a>イベントの用語と概念  
- このセクションでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] で使用される用語と概念について説明します。  
+## <a name="event-terms-and-concepts"></a><span data-ttu-id="12e87-109">イベントの用語と概念</span><span class="sxs-lookup"><span data-stu-id="12e87-109">Event Terms and Concepts</span></span>  
+ <span data-ttu-id="12e87-110">このセクションでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] で使用される用語と概念について説明します。</span><span class="sxs-lookup"><span data-stu-id="12e87-110">This section describes the terms and concepts used with events in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].</span></span>  
   
-### <a name="declaring-events"></a>イベントの宣言  
- イベントは、次の例に示すように、`Event` キーワードを使用して、クラス、構造体、モジュール、およびインターフェイス内で宣言します。  
+### <a name="declaring-events"></a><span data-ttu-id="12e87-111">イベントの宣言</span><span class="sxs-lookup"><span data-stu-id="12e87-111">Declaring Events</span></span>  
+ <span data-ttu-id="12e87-112">イベントは、次の例に示すように、`Event` キーワードを使用して、クラス、構造体、モジュール、およびインターフェイス内で宣言します。</span><span class="sxs-lookup"><span data-stu-id="12e87-112">You declare events within classes, structures, modules, and interfaces using the `Event` keyword, as in the following example:</span></span>  
   
  [!code-vb[VbVbalrEvents#24](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_1.vb)]  
   
-### <a name="raising-events"></a>イベントの発生  
- イベントは、重要な出来事が発生したことを通知するメッセージに似ています。 メッセージをブロードキャストする動作は、"*イベントの発生*" と呼ばれます。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では、次の例に示すように、`RaiseEvent` ステートメントを使用してイベントを発生させます。  
+### <a name="raising-events"></a><span data-ttu-id="12e87-113">イベントの発生</span><span class="sxs-lookup"><span data-stu-id="12e87-113">Raising Events</span></span>  
+ <span data-ttu-id="12e87-114">イベントは、重要な出来事が発生したことを通知するメッセージに似ています。</span><span class="sxs-lookup"><span data-stu-id="12e87-114">An event is like a message announcing that something important has occurred.</span></span> <span data-ttu-id="12e87-115">メッセージをブロードキャストする動作は、"*イベントの発生*" と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="12e87-115">The act of broadcasting the message is called *raising* the event.</span></span> <span data-ttu-id="12e87-116">[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では、次の例に示すように、`RaiseEvent` ステートメントを使用してイベントを発生させます。</span><span class="sxs-lookup"><span data-stu-id="12e87-116">In [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], you raise events with the `RaiseEvent` statement, as in the following example:</span></span>  
   
  [!code-vb[VbVbalrEvents#25](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_2.vb)]  
   
- イベントは、イベントを宣言しているクラス、モジュール、または構造体のスコープ内で発生させる必要があります。 たとえば、基本クラスから継承された派生クラスでイベントを発生させることはできません。  
+ <span data-ttu-id="12e87-117">イベントは、イベントを宣言しているクラス、モジュール、または構造体のスコープ内で発生させる必要があります。</span><span class="sxs-lookup"><span data-stu-id="12e87-117">Events must be raised within the scope of the class, module, or structure where they are declared.</span></span> <span data-ttu-id="12e87-118">たとえば、基本クラスから継承された派生クラスでイベントを発生させることはできません。</span><span class="sxs-lookup"><span data-stu-id="12e87-118">For example, a derived class cannot raise events inherited from a base class.</span></span>  
   
-### <a name="event-senders"></a>イベントの送信元  
- イベントを発生させる機能を持つオブジェクトが "*イベントの送信元*" になります。これは "*イベント ソース*" とも呼ばれます。 イベントの送信元の例として、フォーム、コントロール、およびユーザー定義オブジェクトがあります。  
+### <a name="event-senders"></a><span data-ttu-id="12e87-119">イベントの送信元</span><span class="sxs-lookup"><span data-stu-id="12e87-119">Event Senders</span></span>  
+ <span data-ttu-id="12e87-120">イベントを発生させる機能を持つオブジェクトが "*イベントの送信元*" になります。これは "*イベント ソース*" とも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="12e87-120">Any object capable of raising an event is an *event sender*, also known as an *event source*.</span></span> <span data-ttu-id="12e87-121">イベントの送信元の例として、フォーム、コントロール、およびユーザー定義オブジェクトがあります。</span><span class="sxs-lookup"><span data-stu-id="12e87-121">Forms, controls, and user-defined objects are examples of event senders.</span></span>  
   
-### <a name="event-handlers"></a>イベント ハンドラー  
- "*イベント ハンドラー*" は、対応するイベントが発生したときに呼び出されるプロシージャです。 イベント ハンドラーと一致するシグネチャを持つ任意の有効なサブルーチンを使用できます。 ただし、関数はイベント ソースに値を返すことができないため、イベント ハンドラーとして使用することはできません。  
+### <a name="event-handlers"></a><span data-ttu-id="12e87-122">イベント ハンドラー</span><span class="sxs-lookup"><span data-stu-id="12e87-122">Event Handlers</span></span>  
+ <span data-ttu-id="12e87-123">"*イベント ハンドラー*" は、対応するイベントが発生したときに呼び出されるプロシージャです。</span><span class="sxs-lookup"><span data-stu-id="12e87-123">*Event handlers* are procedures that are called when a corresponding event occurs.</span></span> <span data-ttu-id="12e87-124">イベント ハンドラーと一致するシグネチャを持つ任意の有効なサブルーチンを使用できます。</span><span class="sxs-lookup"><span data-stu-id="12e87-124">You can use any valid subroutine with a matching signature as an event handler.</span></span> <span data-ttu-id="12e87-125">ただし、関数はイベント ソースに値を返すことができないため、イベント ハンドラーとして使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="12e87-125">You cannot use a function as an event handler, however, because it cannot return a value to the event source.</span></span>  
   
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では、イベント ハンドラーの標準的な名前付け規則である、イベントの送信元、アンダースコア、およびイベントの名前の組み合わせを使用しています。 たとえば、`button1` という名前のボタンの `Click` イベントには、`Sub button1_Click` という名前が付けられます。  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<span data-ttu-id="12e87-126"> では、イベント ハンドラーの標準的な名前付け規則である、イベントの送信元、アンダースコア、およびイベントの名前の組み合わせを使用しています。</span><span class="sxs-lookup"><span data-stu-id="12e87-126"> uses a standard naming convention for event handlers that combines the name of the event sender, an underscore, and the name of the event.</span></span> <span data-ttu-id="12e87-127">たとえば、`button1` という名前のボタンの `Click` イベントには、`Sub button1_Click` という名前が付けられます。</span><span class="sxs-lookup"><span data-stu-id="12e87-127">For example, the `Click` event of a button named `button1` would be named `Sub button1_Click`.</span></span>  
   
 > [!NOTE]
->  独自のイベントに対するイベント ハンドラーを定義するときは、この名前付け規則を使用することをお勧めしますが、使用は必須ではありません。任意の有効なサブルーチン名を付けることができます。  
+>  <span data-ttu-id="12e87-128">独自のイベントに対するイベント ハンドラーを定義するときは、この名前付け規則を使用することをお勧めしますが、使用は必須ではありません。任意の有効なサブルーチン名を付けることができます。</span><span class="sxs-lookup"><span data-stu-id="12e87-128">We recommend that you use this naming convention when defining event handlers for your own events, but it is not required; you can use any valid subroutine name.</span></span>  
   
-## <a name="associating-events-with-event-handlers"></a>イベントとイベント ハンドラーの関連付け  
- イベント ハンドラーを使用する前に、`Handles` ステートメントまたは `AddHandler` ステートメントを使用して、イベントをイベント ハンドラーに関連付けておく必要があります。  
+## <a name="associating-events-with-event-handlers"></a><span data-ttu-id="12e87-129">イベントとイベント ハンドラーの関連付け</span><span class="sxs-lookup"><span data-stu-id="12e87-129">Associating Events with Event Handlers</span></span>  
+ <span data-ttu-id="12e87-130">イベント ハンドラーを使用する前に、`Handles` ステートメントまたは `AddHandler` ステートメントを使用して、イベントをイベント ハンドラーに関連付けておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="12e87-130">Before an event handler becomes usable, you must first associate it with an event by using either the `Handles` or `AddHandler` statement.</span></span>  
   
-### <a name="withevents-and-the-handles-clause"></a>WithEvents と Handles 句  
- `WithEvents` ステートメントと `Handles` 句を使用して、指定するイベント ハンドラーを宣言できます。 `WithEvents` キーワードを使用して宣言されたオブジェクトによって発生したイベントは、次の例に示すように、そのイベント用の `Handles` ステートメントがある任意のプロシージャで処理できます。  
+### <a name="withevents-and-the-handles-clause"></a><span data-ttu-id="12e87-131">WithEvents と Handles 句</span><span class="sxs-lookup"><span data-stu-id="12e87-131">WithEvents and the Handles Clause</span></span>  
+ <span data-ttu-id="12e87-132">`WithEvents` ステートメントと `Handles` 句を使用して、指定するイベント ハンドラーを宣言できます。</span><span class="sxs-lookup"><span data-stu-id="12e87-132">The `WithEvents` statement and `Handles` clause provide a declarative way of specifying event handlers.</span></span> <span data-ttu-id="12e87-133">`WithEvents` キーワードを使用して宣言されたオブジェクトによって発生したイベントは、次の例に示すように、そのイベント用の `Handles` ステートメントがある任意のプロシージャで処理できます。</span><span class="sxs-lookup"><span data-stu-id="12e87-133">An event raised by an object declared with the `WithEvents` keyword can be handled by any procedure with a `Handles` statement for that event, as shown in the following example:</span></span>  
   
  [!code-vb[VbVbalrEvents#1](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_3.vb)]  
   
- 多くの場合、イベント ハンドラーを指定するための最善の選択は、`WithEvents` ステートメントと `Handles` 句を使用することです。これは、宣言型の構文により簡単にコーディング、読み取り、デバッグを実行できるためです。 ただし、`WithEvents` 変数には、次の使用制限があることに注意してください。  
+ <span data-ttu-id="12e87-134">多くの場合、イベント ハンドラーを指定するための最善の選択は、`WithEvents` ステートメントと `Handles` 句を使用することです。これは、宣言型の構文により簡単にコーディング、読み取り、デバッグを実行できるためです。</span><span class="sxs-lookup"><span data-stu-id="12e87-134">The `WithEvents` statement and the `Handles` clause are often the best choice for event handlers because the declarative syntax they use makes event handling easier to code, read and debug.</span></span> <span data-ttu-id="12e87-135">ただし、`WithEvents` 変数には、次の使用制限があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="12e87-135">However, be aware of the following limitations on the use of `WithEvents` variables:</span></span>  
   
--   `WithEvents` 変数をオブジェクト変数として使用することはできません。 つまり、`Object` として宣言することはできません。変数を宣言するときは、クラス名を指定する必要があります。  
+-   <span data-ttu-id="12e87-136">`WithEvents` 変数をオブジェクト変数として使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="12e87-136">You cannot use a `WithEvents` variable as an object variable.</span></span> <span data-ttu-id="12e87-137">つまり、`Object` として宣言することはできません。変数を宣言するときは、クラス名を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="12e87-137">That is, you cannot declare it as `Object`—you must specify the class name when you declare the variable.</span></span>  
   
--   共有イベントはクラス インスタンスに関連付けられないため、`WithEvents` を使用して共有イベントを宣言によって処理することはできません。 同様に、`WithEvents` または`Handles` を使用して `Structure` からイベントを処理することはできません。 どちらの場合も、`AddHandler` ステートメント使用して、これらのイベントを処理することができます。  
+-   <span data-ttu-id="12e87-138">共有イベントがクラスのインスタンスに関連付けられていないために、使用できません`WithEvents`を宣言によって共有されているイベントを処理します。</span><span class="sxs-lookup"><span data-stu-id="12e87-138">Because shared events are not tied to class instances, you cannot use `WithEvents` to declaratively handle shared events.</span></span> <span data-ttu-id="12e87-139">同様に、`WithEvents` または`Handles` を使用して `Structure` からイベントを処理することはできません。</span><span class="sxs-lookup"><span data-stu-id="12e87-139">Similarly, you cannot use `WithEvents` or `Handles` to handle events from a `Structure`.</span></span> <span data-ttu-id="12e87-140">どちらの場合も、`AddHandler` ステートメント使用して、これらのイベントを処理することができます。</span><span class="sxs-lookup"><span data-stu-id="12e87-140">In both cases, you can use the `AddHandler` statement to handle those events.</span></span>  
   
--   `WithEvents` 変数の配列を作成することはできません。  
+-   <span data-ttu-id="12e87-141">`WithEvents` 変数の配列を作成することはできません。</span><span class="sxs-lookup"><span data-stu-id="12e87-141">You cannot create arrays of `WithEvents` variables.</span></span>  
   
- `WithEvents` 変数を使用して、1 つのイベント ハンドラーで 1 つまたは複数の種類のイベントを、または 1 つまたは複数のイベント ハンドラーで同じ種類のイベントを処理することができます。  
+ <span data-ttu-id="12e87-142">`WithEvents` 変数を使用して、1 つのイベント ハンドラーで 1 つまたは複数の種類のイベントを、または 1 つまたは複数のイベント ハンドラーで同じ種類のイベントを処理することができます。</span><span class="sxs-lookup"><span data-stu-id="12e87-142">`WithEvents` variables allow a single event handler to handle one or more kind of event, or one or more event handlers to handle the same kind of event.</span></span>  
   
- `Handles` 句は、イベントをイベント ハンドラーに関連付けるための標準的な方法ですが、イベントをイベント ハンドラーに関連付ける動作はコンパイル時に限定されます。  
+ <span data-ttu-id="12e87-143">`Handles` 句は、イベントをイベント ハンドラーに関連付けるための標準的な方法ですが、イベントをイベント ハンドラーに関連付ける動作はコンパイル時に限定されます。</span><span class="sxs-lookup"><span data-stu-id="12e87-143">Although the `Handles` clause is the standard way of associating an event with an event handler, it is limited to associating events with event handlers at compile time.</span></span>  
   
- 場合によっては (フォームやコントロールに関連付けられたイベントなど)、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] は、空のイベント ハンドラーを自動的にスタブとして作成し、それをイベントに関連付けます。 たとえば、デザイン モードでフォームのコマンド ボタンをダブルクリックすると、次のコードに示すように、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] はコマンド ボタン用の空のイベント ハンドラーと `WithEvents` 変数を作成します。  
+ <span data-ttu-id="12e87-144">場合によっては (フォームやコントロールに関連付けられたイベントなど)、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] は、空のイベント ハンドラーを自動的にスタブとして作成し、それをイベントに関連付けます。</span><span class="sxs-lookup"><span data-stu-id="12e87-144">In some cases, such as with events associated with forms or controls, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] automatically stubs out an empty event handler and associates it with an event.</span></span> <span data-ttu-id="12e87-145">たとえば、デザイン モードでフォームのコマンド ボタンをダブルクリックすると、次のコードに示すように、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] はコマンド ボタン用の空のイベント ハンドラーと `WithEvents` 変数を作成します。</span><span class="sxs-lookup"><span data-stu-id="12e87-145">For example, when you double-click a command button on a form in design mode, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] creates an empty event handler and a `WithEvents` variable for the command button, as in the following code:</span></span>  
   
  [!code-vb[VbVbalrEvents#26](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_4.vb)]  
   
-### <a name="addhandler-and-removehandler"></a>AddHandler と RemoveHandler  
- `AddHandler` ステートメントは、イベント ハンドラーを指定できるという点で `Handles` 句に似ています。 ただし、`AddHandler` を `RemoveHandler` と一緒に使用すると、`Handles` 句よりも柔軟性が増し、イベントに関連付けられたイベント ハンドラーを動的に追加、削除、変更することができます。 共有イベントまたは構造体からのイベントを処理する場合は、`AddHandler` を使用する必要があります。  
+### <a name="addhandler-and-removehandler"></a><span data-ttu-id="12e87-146">AddHandler と RemoveHandler</span><span class="sxs-lookup"><span data-stu-id="12e87-146">AddHandler and RemoveHandler</span></span>  
+ <span data-ttu-id="12e87-147">`AddHandler` ステートメントは、イベント ハンドラーを指定できるという点で `Handles` 句に似ています。</span><span class="sxs-lookup"><span data-stu-id="12e87-147">The `AddHandler` statement is similar to the `Handles` clause in that both allow you to specify an event handler.</span></span> <span data-ttu-id="12e87-148">ただし、`AddHandler` を `RemoveHandler` と一緒に使用すると、`Handles` 句よりも柔軟性が増し、イベントに関連付けられたイベント ハンドラーを動的に追加、削除、変更することができます。</span><span class="sxs-lookup"><span data-stu-id="12e87-148">However, `AddHandler`, used with `RemoveHandler`, provides greater flexibility than the `Handles` clause, allowing you to dynamically add, remove, and change the event handler associated with an event.</span></span> <span data-ttu-id="12e87-149">共有イベントまたは構造体からのイベントを処理する場合は、`AddHandler` を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="12e87-149">If you want to handle shared events or events from a structure, you must use `AddHandler`.</span></span>  
   
- `AddHandler` は 2 つの引数 (コントロールなどのイベントの送信元から渡されるイベント名と、デリゲートを評価する式) を使用します。 `AddHandler` を使用する場合はデリゲート クラスを明示的に指定する必要がありません。これは、`AddressOf` ステートメントが常にデリゲートへの参照を返すためです。 次の例では、オブジェクトによって発生するイベントにイベント ハンドラーを関連付けます。  
+ <span data-ttu-id="12e87-150">`AddHandler` は 2 つの引数 (コントロールなどのイベントの送信元から渡されるイベント名と、デリゲートを評価する式) を使用します。</span><span class="sxs-lookup"><span data-stu-id="12e87-150">`AddHandler` takes two arguments: the name of an event from an event sender such as a control, and an expression that evaluates to a delegate.</span></span> <span data-ttu-id="12e87-151">`AddHandler` を使用する場合はデリゲート クラスを明示的に指定する必要がありません。これは、`AddressOf` ステートメントが常にデリゲートへの参照を返すためです。</span><span class="sxs-lookup"><span data-stu-id="12e87-151">You do not need to explicitly specify the delegate class when using `AddHandler`, since the `AddressOf` statement always returns a reference to the delegate.</span></span> <span data-ttu-id="12e87-152">次の例では、オブジェクトによって発生するイベントにイベント ハンドラーを関連付けます。</span><span class="sxs-lookup"><span data-stu-id="12e87-152">The following example associates an event handler with an event raised by an object:</span></span>  
   
  [!code-vb[VbVbalrEvents#28](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_5.vb)]  
   
- イベントとイベント ハンドラーと関連付けを解除する `RemoveHandler` は、`AddHandler` と同じ構文を使用します。 例:  
+ <span data-ttu-id="12e87-153">イベントとイベント ハンドラーと関連付けを解除する `RemoveHandler` は、`AddHandler` と同じ構文を使用します。</span><span class="sxs-lookup"><span data-stu-id="12e87-153">`RemoveHandler`, which disconnects an event from an event handler, uses the same syntax as `AddHandler`.</span></span> <span data-ttu-id="12e87-154">例:</span><span class="sxs-lookup"><span data-stu-id="12e87-154">For example:</span></span>  
   
  [!code-vb[VbVbalrEvents#29](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_6.vb)]  
   
- 次の例では、イベントにイベント ハンドラーが関連付けられた後、イベントが発生します。 イベント ハンドラーがイベントをキャッチし、メッセージを表示します。  
+ <span data-ttu-id="12e87-155">次の例では、イベントにイベント ハンドラーが関連付けられた後、イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="12e87-155">In the following example, an event handler is associated with an event, and the event is raised.</span></span> <span data-ttu-id="12e87-156">イベント ハンドラーがイベントをキャッチし、メッセージを表示します。</span><span class="sxs-lookup"><span data-stu-id="12e87-156">The event handler catches the event and displays a message.</span></span>  
   
- 次に、最初のイベント ハンドラーが削除され、別のイベント ハンドラーがイベントに関連付けられます。 もう一度イベントが発生し、別のメッセージが表示されます。  
+ <span data-ttu-id="12e87-157">次に、最初のイベント ハンドラーが削除され、別のイベント ハンドラーがイベントに関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="12e87-157">Then the first event handler is removed and a different event handler is associated with the event.</span></span> <span data-ttu-id="12e87-158">もう一度イベントが発生し、別のメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="12e87-158">When the event is raised again, a different message is displayed.</span></span>  
   
- 最後に、2 つ目のイベント ハンドラーが削除され、3 回目のイベントが発生します。 イベントに関連付けられているイベント ハンドラーがないため、何も実行されません。  
+ <span data-ttu-id="12e87-159">最後に、2 つ目のイベント ハンドラーが削除され、3 回目のイベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="12e87-159">Finally, the second event handler is removed and the event is raised for a third time.</span></span> <span data-ttu-id="12e87-160">イベントに関連付けられているイベント ハンドラーがないため、何も実行されません。</span><span class="sxs-lookup"><span data-stu-id="12e87-160">Because there is no longer an event handler associated with the event, no action is taken.</span></span>  
   
  [!code-vb[VbVbalrEvents#38](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_7.vb)]  
   
-## <a name="handling-events-inherited-from-a-base-class"></a>基本クラスから継承されたイベントの処理  
- "*派生クラス*" は基本クラスから特性を継承したクラスであり、基本クラスによって発生したイベントを `Handles``MyBase` ステートメントを使用して処理できます。  
+## <a name="handling-events-inherited-from-a-base-class"></a><span data-ttu-id="12e87-161">基本クラスから継承されたイベントの処理</span><span class="sxs-lookup"><span data-stu-id="12e87-161">Handling Events Inherited from a Base Class</span></span>  
+ <span data-ttu-id="12e87-162">"*派生クラス*" は基本クラスから特性を継承したクラスであり、基本クラスによって発生したイベントを `Handles``MyBase` ステートメントを使用して処理できます。</span><span class="sxs-lookup"><span data-stu-id="12e87-162">*Derived classes*—classes that inherit characteristics from a base class—can handle events raised by their base class using the `Handles``MyBase` statement.</span></span>  
   
-#### <a name="to-handle-events-from-a-base-class"></a>基本クラスのイベントを処理するには  
+#### <a name="to-handle-events-from-a-base-class"></a><span data-ttu-id="12e87-163">基本クラスのイベントを処理するには</span><span class="sxs-lookup"><span data-stu-id="12e87-163">To handle events from a base class</span></span>  
   
--   イベント ハンドラー プロシージャの宣言行に `Handles MyBase.`*eventname* ステートメントを追加して、派生クラスのイベント ハンドラーを宣言します。*eventname* は処理する基本クラスのイベント名です。 例:  
+-   <span data-ttu-id="12e87-164">イベント ハンドラー プロシージャの宣言行に `Handles MyBase.`*eventname* ステートメントを追加して、派生クラスのイベント ハンドラーを宣言します。*eventname* は処理する基本クラスのイベント名です。</span><span class="sxs-lookup"><span data-stu-id="12e87-164">Declare an event handler in the derived class by adding a `Handles MyBase.`*eventname* statement to the declaration line of your event-handler procedure, where *eventname* is the name of the event in the base class you are handling.</span></span> <span data-ttu-id="12e87-165">例:</span><span class="sxs-lookup"><span data-stu-id="12e87-165">For example:</span></span>  
   
      [!code-vb[VbVbalrEvents#12](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_8.vb)]  
   
-## <a name="related-sections"></a>関連項目  
+## <a name="related-sections"></a><span data-ttu-id="12e87-166">関連項目</span><span class="sxs-lookup"><span data-stu-id="12e87-166">Related Sections</span></span>  
   
-|タイトル|説明|  
+|<span data-ttu-id="12e87-167">タイトル</span><span class="sxs-lookup"><span data-stu-id="12e87-167">Title</span></span>|<span data-ttu-id="12e87-168">説明</span><span class="sxs-lookup"><span data-stu-id="12e87-168">Description</span></span>|  
 |-----------|-----------------|  
-|[チュートリアル : イベントの宣言と発生](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md)|クラスのイベントを宣言して発生させる方法を手順を追って説明します。|  
-|[チュートリアル : イベントの処理](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md)|イベント ハンドラー プロシージャの記述方法を示します。|  
-|[方法: カスタム イベントを宣言してブロックを回避する](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)|イベント ハンドラーを非同期に呼び出すことができるカスタム イベントの定義方法を示します。|  
-|[方法: カスタム イベントを宣言してメモリを節約する](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)|イベントを処理するときにのみ、メモリを使用するカスタム イベントを定義する方法を示します。|  
-|[Visual Basic での継承されたイベント ハンドラーのトラブルシューティング](../../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)|継承されたコンポーネントのイベント ハンドラーで生じる一般的な問題を一覧表示します。|  
-|[イベント](../../../../standard/events/index.md)|[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のイベント モデルについて概説します。|  
-|[Windows フォーム内のイベント ハンドラーの作成](https://msdn.microsoft.com/library/dacysss4.aspx)|Windows フォーム オブジェクトに関連付けられているイベントの処理方法について説明します。|  
-|[デリゲート](../../../../visual-basic/programming-guide/language-features/delegates/index.md)|Visual Basic でのデリゲートの概要を示します。|
-
+|[<span data-ttu-id="12e87-169">チュートリアル : イベントの宣言と発生</span><span class="sxs-lookup"><span data-stu-id="12e87-169">Walkthrough: Declaring and Raising Events</span></span>](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md)|<span data-ttu-id="12e87-170">クラスのイベントを宣言して発生させる方法を手順を追って説明します。</span><span class="sxs-lookup"><span data-stu-id="12e87-170">Provides a step-by-step description of how to declare and raise events for a class.</span></span>|  
+|[<span data-ttu-id="12e87-171">チュートリアル : イベントの処理</span><span class="sxs-lookup"><span data-stu-id="12e87-171">Walkthrough: Handling Events</span></span>](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md)|<span data-ttu-id="12e87-172">イベント ハンドラー プロシージャの記述方法を示します。</span><span class="sxs-lookup"><span data-stu-id="12e87-172">Demonstrates how to write an event-handler procedure.</span></span>|  
+|[<span data-ttu-id="12e87-173">方法: カスタム イベントを宣言してブロックを回避する</span><span class="sxs-lookup"><span data-stu-id="12e87-173">How to: Declare Custom Events To Avoid Blocking</span></span>](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)|<span data-ttu-id="12e87-174">イベント ハンドラーを非同期に呼び出すことができるカスタム イベントの定義方法を示します。</span><span class="sxs-lookup"><span data-stu-id="12e87-174">Demonstrates how to define a custom event that allows its event handlers to be called asynchronously.</span></span>|  
+|[<span data-ttu-id="12e87-175">方法: カスタム イベントを宣言してメモリを節約する</span><span class="sxs-lookup"><span data-stu-id="12e87-175">How to: Declare Custom Events To Conserve Memory</span></span>](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)|<span data-ttu-id="12e87-176">イベントを処理するときにのみ、メモリを使用するカスタム イベントを定義する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="12e87-176">Demonstrates how to define a custom event that uses memory only when the event is handled.</span></span>|  
+|[<span data-ttu-id="12e87-177">Visual Basic での継承されたイベント ハンドラーのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="12e87-177">Troubleshooting Inherited Event Handlers in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)|<span data-ttu-id="12e87-178">継承されたコンポーネントのイベント ハンドラーで生じる一般的な問題を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="12e87-178">Lists common issues that arise with event handlers in inherited components.</span></span>|  
+|[<span data-ttu-id="12e87-179">イベント</span><span class="sxs-lookup"><span data-stu-id="12e87-179">Events</span></span>](../../../../standard/events/index.md)|<span data-ttu-id="12e87-180">[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のイベント モデルについて概説します。</span><span class="sxs-lookup"><span data-stu-id="12e87-180">Provides an overview of the event model in the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].</span></span>|  
+|[<span data-ttu-id="12e87-181">Windows フォーム内のイベント ハンドラーの作成</span><span class="sxs-lookup"><span data-stu-id="12e87-181">Creating Event Handlers in Windows Forms</span></span>](https://msdn.microsoft.com/library/dacysss4.aspx)|<span data-ttu-id="12e87-182">Windows フォーム オブジェクトに関連付けられているイベントの処理方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="12e87-182">Describes how to work with events associated with Windows Forms objects.</span></span>|  
+|[<span data-ttu-id="12e87-183">デリゲート</span><span class="sxs-lookup"><span data-stu-id="12e87-183">Delegates</span></span>](../../../../visual-basic/programming-guide/language-features/delegates/index.md)|<span data-ttu-id="12e87-184">Visual Basic でのデリゲートの概要を示します。</span><span class="sxs-lookup"><span data-stu-id="12e87-184">Provides an overview of delegates in Visual Basic.</span></span>|

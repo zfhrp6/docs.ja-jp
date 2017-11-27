@@ -1,42 +1,45 @@
 ---
-title: "方法 : チャネルのセキュリティ資格情報を指定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : チャネルのセキュリティ資格情報を指定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f8e03f47-9c4f-4dd5-8f85-429e6d876119
-caps.latest.revision: 18
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 2a1b2ba0ab49ebf470c0245f0827f82e1fe20ce8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : チャネルのセキュリティ資格情報を指定する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービス モニカーを使用すると、COM アプリケーションで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを呼び出すことができます。 ほとんどの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスで、クライアントは認証と承認のための資格情報の指定が要求されます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントから呼び出す場合、この資格情報をマネージ コードまたはアプリケーション構成ファイルに指定できます。 呼び出すときに、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービス、COM アプリケーションから使用して、 <xref:System.ServiceModel.ComIntegration.IChannelCredentials>インターフェイス資格情報を指定します。 このトピックを使用して資格情報を指定するさまざまな方法を示しますが、 <xref:System.ServiceModel.ComIntegration.IChannelCredentials>インターフェイスです。  
+# <a name="how-to-specify-channel-security-credentials"></a><span data-ttu-id="cde31-102">方法 : チャネルのセキュリティ資格情報を指定する</span><span class="sxs-lookup"><span data-stu-id="cde31-102">How to: Specify Channel Security Credentials</span></span>
+<span data-ttu-id="cde31-103">[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービス モニカーを使用すると、COM アプリケーションで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="cde31-103">The [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Service Moniker allows COM applications to call [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services.</span></span> <span data-ttu-id="cde31-104">ほとんどの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスで、クライアントは認証と承認のための資格情報の指定が要求されます。</span><span class="sxs-lookup"><span data-stu-id="cde31-104">Most [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services require the client to specify credentials for authentication and authorization.</span></span> <span data-ttu-id="cde31-105">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントから呼び出す場合、この資格情報をマネージ コードまたはアプリケーション構成ファイルに指定できます。</span><span class="sxs-lookup"><span data-stu-id="cde31-105">When calling a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service from a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client, you can specify these credentials in managed code or in an application configuration file.</span></span> <span data-ttu-id="cde31-106">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを COM アプリケーションから呼び出す場合、<xref:System.ServiceModel.ComIntegration.IChannelCredentials> インターフェイスを使用して資格情報を指定できます。</span><span class="sxs-lookup"><span data-stu-id="cde31-106">When calling a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service from a COM application, you can use the <xref:System.ServiceModel.ComIntegration.IChannelCredentials> interface to specify credentials.</span></span> <span data-ttu-id="cde31-107">ここでは、<xref:System.ServiceModel.ComIntegration.IChannelCredentials> インターフェイスを使用して資格情報を指定するさまざまな方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="cde31-107">This topic will illustrate various ways to specify credentials using the <xref:System.ServiceModel.ComIntegration.IChannelCredentials> interface.</span></span>  
   
 > [!NOTE]
->  <xref:System.ServiceModel.ComIntegration.IChannelCredentials> IDispatch ベースのインターフェイスは、Visual Studio 環境で IntelliSense 機能は得られません。  
+>  <span data-ttu-id="cde31-108"><xref:System.ServiceModel.ComIntegration.IChannelCredentials> は IDispatch ベースのインターフェイスです。Visual Studio 環境で IntelliSense 機能を取得することはできません。</span><span class="sxs-lookup"><span data-stu-id="cde31-108"><xref:System.ServiceModel.ComIntegration.IChannelCredentials> is an IDispatch-based interface and you will not get IntelliSense functionality in the Visual Studio environment.</span></span>  
   
- この記事を使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]で定義されたサービス、[メッセージ セキュリティ サンプル](../../../../docs/framework/wcf/samples/message-security-sample.md)します。  
+ <span data-ttu-id="cde31-109">この記事の内容を使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]で定義されたサービス、[メッセージ セキュリティ サンプル](../../../../docs/framework/wcf/samples/message-security-sample.md)です。</span><span class="sxs-lookup"><span data-stu-id="cde31-109">This article will use the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service defined in the [Message Security Sample](../../../../docs/framework/wcf/samples/message-security-sample.md).</span></span>  
   
-### <a name="to-specify-a-client-certificate"></a>クライアント証明書を指定するには  
+### <a name="to-specify-a-client-certificate"></a><span data-ttu-id="cde31-110">クライアント証明書を指定するには</span><span class="sxs-lookup"><span data-stu-id="cde31-110">To specify a client certificate</span></span>  
   
-1.  メッセージ セキュリティのディレクトリの Setup.bat ファイルを実行し、必要なテスト証明書を作成してインストールします。  
+1.  <span data-ttu-id="cde31-111">メッセージ セキュリティのディレクトリの Setup.bat ファイルを実行し、必要なテスト証明書を作成してインストールします。</span><span class="sxs-lookup"><span data-stu-id="cde31-111">Run the Setup.bat file in the Message Security directory to create and install the required test certificates.</span></span>  
   
-2.  メッセージ セキュリティのプロジェクトを開きます。  
+2.  <span data-ttu-id="cde31-112">メッセージ セキュリティのプロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="cde31-112">Open the Message Security project.</span></span>  
   
-3.  追加`[ServiceBehavior(Namespace=``http://Microsoft.ServiceModel.Samples``)]`に、`ICalculator`インターフェイス定義です。  
+3.  <span data-ttu-id="cde31-113">追加`[ServiceBehavior(Namespace=``http://Microsoft.ServiceModel.Samples``)]`を`ICalculator`インターフェイス定義です。</span><span class="sxs-lookup"><span data-stu-id="cde31-113">Add `[ServiceBehavior(Namespace=``http://Microsoft.ServiceModel.Samples``)]` to the `ICalculator` interface definition.</span></span>  
   
-4.  追加`bindingNamespace=``http://Microsoft.ServiceModel.Samples`サービスの App.config 内のエンドポイント タグにします。  
+4.  <span data-ttu-id="cde31-114">追加`bindingNamespace=``http://Microsoft.ServiceModel.Samples`サービス用の App.config 内のエンドポイント タグにします。</span><span class="sxs-lookup"><span data-stu-id="cde31-114">Add `bindingNamespace=``http://Microsoft.ServiceModel.Samples` to the endpoint tag in the App.config for the service.</span></span>  
   
-5.  メッセージ セキュリティ サンプルをビルドし、Service.exe を実行します。 Internet Explorer を使用してサービスの URI (http://localhost:8000/ServiceModelSamples/Service) を参照し、サービスが動作していることを確認します。  
+5.  <span data-ttu-id="cde31-115">メッセージ セキュリティ サンプルをビルドし、Service.exe を実行します。</span><span class="sxs-lookup"><span data-stu-id="cde31-115">Build the Message Security Sample and run Service.exe.</span></span> <span data-ttu-id="cde31-116">Internet Explorer を使用してサービスの URI (http://localhost:8000/ServiceModelSamples/Service) を参照し、サービスが動作していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="cde31-116">Use Internet Explorer and browse to the service's URI (http://localhost:8000/ServiceModelSamples/Service) to ensure that the service is working.</span></span>  
   
-6.  Visual Basic 6.0 を開き、新しい標準 .exe ファイルを作成します。 フォームにボタンを追加し、追加したボタンをダブルクリックして次のコードをクリック ハンドラーに追加します。  
+6.  <span data-ttu-id="cde31-117">Visual Basic 6.0 を開き、新しい標準 .exe ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="cde31-117">Open Visual Basic 6.0 and create a new Standard .exe file.</span></span> <span data-ttu-id="cde31-118">フォームにボタンを追加し、追加したボタンをダブルクリックして次のコードをクリック ハンドラーに追加します。</span><span class="sxs-lookup"><span data-stu-id="cde31-118">Add a button to the form and double-click the button to add the following code to the Click handler:</span></span>  
   
     ```  
         monString = "service:mexAddress=http://localhost:8000/ServiceModelSamples/Service?wsdl"  
@@ -55,32 +58,31 @@ caps.handback.revision: 18
         MsgBox monikerProxy.Add(3, 4)  
     ```  
   
-7.  Visual Basic アプリケーションを実行し、結果を確認します。  
+7.  <span data-ttu-id="cde31-119">Visual Basic アプリケーションを実行し、結果を確認します。</span><span class="sxs-lookup"><span data-stu-id="cde31-119">Run the Visual Basic application and verify the results.</span></span>  
   
-     Visual Basic アプリケーションに Add(3,4) の結果を示すメッセージ ボックスが表示されます。 <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromFile%28System.String%2CSystem.String%2CSystem.String%29>または<xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromStoreByName%28System.String%2CSystem.String%2CSystem.String%29>の代わりに使用することもできます<xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromStore%28System.String%2CSystem.String%2CSystem.String%2CSystem.Object%29>クライアント資格情報を設定します。  
+     <span data-ttu-id="cde31-120">Visual Basic アプリケーションに Add(3,4) の結果を示すメッセージ ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="cde31-120">The Visual Basic application will display a message box with the result from calling Add(3, 4).</span></span> <span data-ttu-id="cde31-121"><xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromFile%28System.String%2CSystem.String%2CSystem.String%29> または <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromStoreByName%28System.String%2CSystem.String%2CSystem.String%29> を <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromStore%28System.String%2CSystem.String%2CSystem.String%2CSystem.Object%29> の代わりに使用して、クライアント証明書を設定することもできます。</span><span class="sxs-lookup"><span data-stu-id="cde31-121"><xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromFile%28System.String%2CSystem.String%2CSystem.String%29> or <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromStoreByName%28System.String%2CSystem.String%2CSystem.String%29> can also be used in place of <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromStore%28System.String%2CSystem.String%2CSystem.String%2CSystem.Object%29> to set the Client Certificate:</span></span>  
   
     ```  
     monikerProxy.ChannelCredentials.SetClientCertificateFromFile "C:\MyClientCert.pfx", "password", "DefaultKeySet"  
     ```  
   
 > [!NOTE]
->  この呼び出しを機能させるには、クライアントが実行されているコンピューターでクライアント証明書を信頼する必要があります。  
+>  <span data-ttu-id="cde31-122">この呼び出しを機能させるには、クライアントが実行されているコンピューターでクライアント証明書を信頼する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cde31-122">For this call to work, the client certificate needs to be trusted on the machine the client is running on.</span></span>  
   
 > [!NOTE]
->  モニカーの形式が正しくないか、`GetObject` を呼び出せない場合は、"構文が無効です" というメッセージが返されます。 このエラーが発生した場合は、使用しているモニカーが正しく、サービスが使用可能であることを確認してください。  
+>  <span data-ttu-id="cde31-123">モニカーの形式が正しくないか、`GetObject` を呼び出せない場合は、"構文が無効です" というメッセージが返されます。</span><span class="sxs-lookup"><span data-stu-id="cde31-123">If the moniker is malformed or if the service is unavailable, the call to `GetObject` will return an error saying "Invalid Syntax."</span></span> <span data-ttu-id="cde31-124">このエラーが発生した場合は、使用しているモニカーが正しく、サービスが使用可能であることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="cde31-124">If you receive this error, make sure the moniker you are using is correct and the service is available.</span></span>  
   
-### <a name="to-specify-user-name-and-password"></a>ユーザー名とパスワードを指定するには  
+### <a name="to-specify-user-name-and-password"></a><span data-ttu-id="cde31-125">ユーザー名とパスワードを指定するには</span><span class="sxs-lookup"><span data-stu-id="cde31-125">To specify user name and password</span></span>  
   
-1.  `wsHttpBinding` を使用するよう App.config ファイルを変更します。 これは、ユーザー名とパスワードの検証に必要です。  
-  
-  
-  
-2.  
-          `clientCredentialType` を UserName に設定します。  
+1.  <span data-ttu-id="cde31-126">`wsHttpBinding` を使用するよう App.config ファイルを変更します。</span><span class="sxs-lookup"><span data-stu-id="cde31-126">Modify the Service App.config file to use the `wsHttpBinding`.</span></span> <span data-ttu-id="cde31-127">これは、ユーザー名とパスワードの検証に必要です。</span><span class="sxs-lookup"><span data-stu-id="cde31-127">This is required for user name and password validation:</span></span>  
   
   
   
-3.  Visual Basic 6.0 を開き、新しい標準 .exe ファイルを作成します。 フォームにボタンを追加し、追加したボタンをダブルクリックして次のコードをクリック ハンドラーに追加します。  
+2.  <span data-ttu-id="cde31-128">`clientCredentialType` を UserName に設定します。</span><span class="sxs-lookup"><span data-stu-id="cde31-128">Set the `clientCredentialType` to UserName:</span></span>  
+  
+  
+  
+3.  <span data-ttu-id="cde31-129">Visual Basic 6.0 を開き、新しい標準 .exe ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="cde31-129">Open Visual Basic 6.0 and create a new Standard .exe file.</span></span> <span data-ttu-id="cde31-130">フォームにボタンを追加し、追加したボタンをダブルクリックして次のコードをクリック ハンドラーに追加します。</span><span class="sxs-lookup"><span data-stu-id="cde31-130">Add a button to the form and double-click the button to add the following code to the Click handler:</span></span>  
   
     ```  
     monString = "service:mexAddress=http://localhost:8000/ServiceModelSamples/Service?wsdl"  
@@ -96,18 +98,18 @@ caps.handback.revision: 18
     MsgBox monikerProxy.Add(3, 4)  
     ```  
   
-4.  Visual Basic アプリケーションを実行し、結果を確認します。 Visual Basic アプリケーションに Add(3,4) の結果を示すメッセージ ボックスが表示されます。  
+4.  <span data-ttu-id="cde31-131">Visual Basic アプリケーションを実行し、結果を確認します。</span><span class="sxs-lookup"><span data-stu-id="cde31-131">Run the Visual Basic application and verify the results.</span></span> <span data-ttu-id="cde31-132">Visual Basic アプリケーションに Add(3,4) の結果を示すメッセージ ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="cde31-132">The Visual Basic application will display a message box with the result from calling Add(3, 4).</span></span>  
   
     > [!NOTE]
-    >  この例のサービス モニカーに指定されたバインディングは、WSHttpBinding_ICalculator に変更されました。 なお、有効なユーザー名とパスワードへの呼び出しで指定する必要があります<xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetUserNameCredential%28System.String%2CSystem.String%29>します。  
+    >  <span data-ttu-id="cde31-133">この例のサービス モニカーに指定されたバインディングは、WSHttpBinding_ICalculator に変更されました。</span><span class="sxs-lookup"><span data-stu-id="cde31-133">The binding specified in the service moniker in this sample has been changed to WSHttpBinding_ICalculator.</span></span> <span data-ttu-id="cde31-134">また、<xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetUserNameCredential%28System.String%2CSystem.String%29> の呼び出しにも有効なユーザー名とパスワードを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cde31-134">Also note that you must supply a valid user name and password in the call to <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetUserNameCredential%28System.String%2CSystem.String%29>.</span></span>  
   
-### <a name="to-specify-windows-credentials"></a>Windows 資格情報を指定するには  
+### <a name="to-specify-windows-credentials"></a><span data-ttu-id="cde31-135">Windows 資格情報を指定するには</span><span class="sxs-lookup"><span data-stu-id="cde31-135">To specify Windows Credentials</span></span>  
   
-1.  サービスの App.config ファイルで、`clientCredentialType` を Windows に設定します。  
+1.  <span data-ttu-id="cde31-136">サービスの App.config ファイルで、`clientCredentialType` を Windows に設定します。</span><span class="sxs-lookup"><span data-stu-id="cde31-136">Set `clientCredentialType` to Windows in the Service App.config file:</span></span>  
   
   
   
-2.  Visual Basic 6.0 を開き、新しい標準 .exe ファイルを作成します。 フォームにボタンを追加し、追加したボタンをダブルクリックして次のコードをクリック ハンドラーに追加します。  
+2.  <span data-ttu-id="cde31-137">Visual Basic 6.0 を開き、新しい標準 .exe ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="cde31-137">Open Visual Basic 6.0 and create a new Standard .exe file.</span></span> <span data-ttu-id="cde31-138">フォームにボタンを追加し、追加したボタンをダブルクリックして次のコードをクリック ハンドラーに追加します。</span><span class="sxs-lookup"><span data-stu-id="cde31-138">Add a button to the form and double-click the button to add the following code to the Click handler:</span></span>  
   
     ```  
     monString = "service:mexAddress=http://localhost:8000/ServiceModelSamples/Service?wsdl"  
@@ -122,16 +124,16 @@ caps.handback.revision: 18
     MsgBox monikerProxy.Add(3, 4)  
     ```  
   
-3.  Visual Basic アプリケーションを実行し、結果を確認します。 Visual Basic アプリケーションに Add(3,4) の結果を示すメッセージ ボックスが表示されます。  
+3.  <span data-ttu-id="cde31-139">Visual Basic アプリケーションを実行し、結果を確認します。</span><span class="sxs-lookup"><span data-stu-id="cde31-139">Run the Visual Basic application and verify the results.</span></span> <span data-ttu-id="cde31-140">Visual Basic アプリケーションに Add(3,4) の結果を示すメッセージ ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="cde31-140">The Visual Basic application will display a message box with the result from calling Add(3, 4).</span></span>  
   
     > [!NOTE]
-    >  "ドメイン"、"ユーザー ID"、"パスワード" を有効な値に置き換える必要があります。  
+    >  <span data-ttu-id="cde31-141">"ドメイン"、"ユーザー ID"、"パスワード" を有効な値に置き換える必要があります。</span><span class="sxs-lookup"><span data-stu-id="cde31-141">You must replace "domain", "userID", and "password" with valid values.</span></span>  
   
-### <a name="to-specify-an-issue-token"></a>発行トークンを指定するには  
+### <a name="to-specify-an-issue-token"></a><span data-ttu-id="cde31-142">発行トークンを指定するには</span><span class="sxs-lookup"><span data-stu-id="cde31-142">To specify an issue token</span></span>  
   
-1.  発行トークンは、フェデレーション セキュリティを使用するアプリケーションのみが使用します。 フェデレーション セキュリティの詳細については、次を参照してください。[フェデレーションと発行されたトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)と[フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)します。  
+1.  <span data-ttu-id="cde31-143">発行トークンは、フェデレーション セキュリティを使用するアプリケーションのみが使用します。</span><span class="sxs-lookup"><span data-stu-id="cde31-143">Issue tokens are used only for applications using federated security.</span></span> <span data-ttu-id="cde31-144">フェデレーション セキュリティの詳細については、次を参照してください。[フェデレーションと発行されたトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)と[フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)です。</span><span class="sxs-lookup"><span data-stu-id="cde31-144">For more information about federated security, see [Federation and Issued Tokens](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md) and [Federation Sample](../../../../docs/framework/wcf/samples/federation-sample.md).</span></span>  
   
-     次の Visual Basic のコード例を呼び出す方法を示しています、 <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetIssuedToken%28System.String%2CSystem.String%2CSystem.String%29>メソッド。  
+     <span data-ttu-id="cde31-145"><xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetIssuedToken%28System.String%2CSystem.String%2CSystem.String%29> メソッドを呼び出す方法を次の Visual Basic コード例に示します。</span><span class="sxs-lookup"><span data-stu-id="cde31-145">The following Visual Basic code example illustrates how to call the <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetIssuedToken%28System.String%2CSystem.String%2CSystem.String%29> method:</span></span>  
   
     ```  
         monString = "service:mexAddress=http://localhost:8000/ServiceModelSamples/Service?wsdl"  
@@ -143,11 +145,11 @@ caps.handback.revision: 18
     monikerProxy.SetIssuedToken("http://somemachine/sts", "bindingType", "binding")  
     ```  
   
-     このメソッドのパラメーターの詳細については、次を参照してください。 <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetIssuedToken%28System.String%2CSystem.String%2CSystem.String%29>します。  
+     <span data-ttu-id="cde31-146">このメソッドのパラメーターの詳細については、<xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetIssuedToken%28System.String%2CSystem.String%2CSystem.String%29> を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cde31-146">For more information about the parameters for this method, see <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetIssuedToken%28System.String%2CSystem.String%2CSystem.String%29>.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)   
- [方法: フェデレーション サービスで資格情報を構成します。](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)   
- [方法: フェデレーション クライアントを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)   
- [メッセージ セキュリティ](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)   
- [バインディングとセキュリティ](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)
+## <a name="see-also"></a><span data-ttu-id="cde31-147">関連項目</span><span class="sxs-lookup"><span data-stu-id="cde31-147">See Also</span></span>  
+ [<span data-ttu-id="cde31-148">フェデレーション</span><span class="sxs-lookup"><span data-stu-id="cde31-148">Federation</span></span>](../../../../docs/framework/wcf/feature-details/federation.md)  
+ [<span data-ttu-id="cde31-149">方法: フェデレーション サービスの資格情報を構成します。</span><span class="sxs-lookup"><span data-stu-id="cde31-149">How to: Configure Credentials on a Federation Service</span></span>](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)  
+ [<span data-ttu-id="cde31-150">方法: フェデレーション クライアントを作成します。</span><span class="sxs-lookup"><span data-stu-id="cde31-150">How to: Create a Federated Client</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
+ [<span data-ttu-id="cde31-151">メッセージ セキュリティ</span><span class="sxs-lookup"><span data-stu-id="cde31-151">Message Security</span></span>](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)  
+ [<span data-ttu-id="cde31-152">バインディングとセキュリティ</span><span class="sxs-lookup"><span data-stu-id="cde31-152">Bindings and Security</span></span>](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)

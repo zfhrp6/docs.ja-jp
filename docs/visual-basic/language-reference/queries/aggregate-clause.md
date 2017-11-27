@@ -1,34 +1,33 @@
 ---
-title: "Aggregate Clause (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.QueryAggregateIn"
-  - "vb.QueryAggregate"
-  - "vb.QueryAggregateInto"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Aggregate clause"
-  - "Aggregate statement"
-  - "queries [Visual Basic], Aggregate"
+title: "Aggregate 句 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.QueryAggregateIn
+- vb.QueryAggregate
+- vb.QueryAggregateInto
+helpviewer_keywords:
+- Aggregate clause [Visual Basic]
+- Aggregate statement [Visual Basic]
+- queries [Visual Basic], Aggregate
 ms.assetid: 1315a814-5db6-4077-b34b-b141e11cc0eb
-caps.latest.revision: 25
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 25
+caps.latest.revision: "25"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 47017414a92bfbca0df4ce6e2b70398a01762d37
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Aggregate Clause (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-1 つ以上の集計関数をコレクションに適用します。  
+# <a name="aggregate-clause-visual-basic"></a><span data-ttu-id="a57b6-102">Aggregate 句 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a57b6-102">Aggregate Clause (Visual Basic)</span></span>
+<span data-ttu-id="a57b6-103">コレクションに 1 つまたは複数の集計関数を適用します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-103">Applies one or more aggregate functions to a collection.</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="a57b6-104">構文</span><span class="sxs-lookup"><span data-stu-id="a57b6-104">Syntax</span></span>  
   
 ```  
 Aggregate element [As type] In collection _  
@@ -37,60 +36,58 @@ Aggregate element [As type] In collection _
   Into expressionList  
 ```  
   
-## 指定項目  
+## <a name="parts"></a><span data-ttu-id="a57b6-105">指定項目</span><span class="sxs-lookup"><span data-stu-id="a57b6-105">Parts</span></span>  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`element`|必ず指定します。  コレクションの各要素を反復処理するために使用する変数。|  
-|`type`|省略可能です。  `element` の型。  型の指定がない場合、`element` の型は `collection` から推論されます。|  
-|`collection`|必ず指定します。  操作対象のコレクションを参照します。|  
-|`clause`|省略可能です。  クエリ結果を絞り込むために集計句に適用する、`Where` 句などの 1 つ以上のクエリ句。|  
-|`expressionList`|必ず指定します。  コレクションに適用する集計関数を識別する、1 つまたは複数のコンマで区切られた式。  集計関数にエイリアスを適用して、クエリ結果のメンバー名を指定できます。  エイリアスの指定がない場合は、集計関数の名前が使用されます。  例については、後の集計関数に関するセクションを参照してください。|  
+|<span data-ttu-id="a57b6-106">用語</span><span class="sxs-lookup"><span data-stu-id="a57b6-106">Term</span></span>|<span data-ttu-id="a57b6-107">定義</span><span class="sxs-lookup"><span data-stu-id="a57b6-107">Definition</span></span>|  
+|---|---|  
+|`element`|<span data-ttu-id="a57b6-108">必須です。</span><span class="sxs-lookup"><span data-stu-id="a57b6-108">Required.</span></span> <span data-ttu-id="a57b6-109">変数なコレクションの要素を反復処理するために使用します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-109">Variable used to iterate through the elements of the collection.</span></span>|  
+|`type`|<span data-ttu-id="a57b6-110">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="a57b6-110">Optional.</span></span> <span data-ttu-id="a57b6-111">`element` の型。</span><span class="sxs-lookup"><span data-stu-id="a57b6-111">The type of `element`.</span></span> <span data-ttu-id="a57b6-112">型が指定されていない場合の種類`element`から推論される`collection`です。</span><span class="sxs-lookup"><span data-stu-id="a57b6-112">If no type is specified, the type of `element` is inferred from `collection`.</span></span>|  
+|`collection`|<span data-ttu-id="a57b6-113">必須です。</span><span class="sxs-lookup"><span data-stu-id="a57b6-113">Required.</span></span> <span data-ttu-id="a57b6-114">操作対象のコレクションを参照します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-114">Refers to the collection to operate on.</span></span>|  
+|`clause`|<span data-ttu-id="a57b6-115">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="a57b6-115">Optional.</span></span> <span data-ttu-id="a57b6-116">1 つまたは複数の句がクエリなど、 `Where` aggregate 句または句を適用するクエリの結果を絞り込むの句。</span><span class="sxs-lookup"><span data-stu-id="a57b6-116">One or more query clauses, such as a `Where` clause, to refine the query result to apply the aggregate clause or clauses to.</span></span>|  
+|`expressionList`|<span data-ttu-id="a57b6-117">必須です。</span><span class="sxs-lookup"><span data-stu-id="a57b6-117">Required.</span></span> <span data-ttu-id="a57b6-118">1 つまたは複数カンマ区切りの式をコレクションに適用する集計関数を識別します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-118">One or more comma-delimited expressions that identify an aggregate function to apply to the collection.</span></span> <span data-ttu-id="a57b6-119">エイリアスは、クエリ結果のメンバー名を指定する集計関数に適用できます。</span><span class="sxs-lookup"><span data-stu-id="a57b6-119">You can apply an alias to an aggregate function to specify a member name for the query result.</span></span> <span data-ttu-id="a57b6-120">別名が指定されていない場合は、集計関数の名前が使用されます。</span><span class="sxs-lookup"><span data-stu-id="a57b6-120">If no alias is supplied, the name of the aggregate function is used.</span></span> <span data-ttu-id="a57b6-121">例については、このトピックの後半の集計関数に関するセクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="a57b6-121">For examples, see the section about aggregate functions later in this topic.</span></span>|  
   
-## 解説  
- `Aggregate` 句を使用すると、クエリに集計関数を含めることができます。  集計関数は、一連の値のチェックと計算を実行し、単一の値を返します。  クエリ結果型のメンバーを使用することで、計算後の値にアクセスできます。  使用できる標準的な集計関数には、`All`、`Any`、`Average`、`Count`、`LongCount`、`Max`、`Min`、および `Sum` の各関数があります。  これらの関数は、SQL での集計に精通している開発者にとってはなじみのあるものです。  これらについては、このトピックの次のセクションで説明します。  
+## <a name="remarks"></a><span data-ttu-id="a57b6-122">コメント</span><span class="sxs-lookup"><span data-stu-id="a57b6-122">Remarks</span></span>  
+ <span data-ttu-id="a57b6-123">`Aggregate`に集計関数をクエリに含める句を使用できます。</span><span class="sxs-lookup"><span data-stu-id="a57b6-123">The `Aggregate` clause can be used to include aggregate functions in your queries.</span></span> <span data-ttu-id="a57b6-124">集計関数は、値のセットに対してチェックと計算を実行し、1 つの値を返します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-124">Aggregate functions perform checks and computations over a set of values and return a single value.</span></span> <span data-ttu-id="a57b6-125">クエリ結果の型のメンバーを使用して計算値にアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="a57b6-125">You can access the computed value by using a member of the query result type.</span></span> <span data-ttu-id="a57b6-126">使用できる標準の集計関数は、 `All`、 `Any`、 `Average`、 `Count`、 `LongCount`、 `Max`、 `Min`、および`Sum`関数。</span><span class="sxs-lookup"><span data-stu-id="a57b6-126">The standard aggregate functions that you can use are the `All`, `Any`, `Average`, `Count`, `LongCount`, `Max`, `Min`, and `Sum` functions.</span></span> <span data-ttu-id="a57b6-127">これらの関数は、SQL での集計に慣れている開発者に習熟しています。</span><span class="sxs-lookup"><span data-stu-id="a57b6-127">These functions are familiar to developers who are familiar with aggregates in SQL.</span></span> <span data-ttu-id="a57b6-128">これらは、このトピックの次のセクションで説明します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-128">They are described in the following section of this topic.</span></span>  
   
- 集計関数の結果は、クエリ結果の中にクエリ結果型のフィールドとして格納されます。  集計関数の結果にエイリアスを適用して、集計値を保持するクエリ結果型のメンバーの名前を指定できます。  エイリアスの指定がない場合は、集計関数の名前が使用されます。  
+ <span data-ttu-id="a57b6-129">集計関数の結果は、クエリ結果の型のフィールドとして、クエリ結果に含まれます。</span><span class="sxs-lookup"><span data-stu-id="a57b6-129">The result of an aggregate function is included in the query result as a field of the query result type.</span></span> <span data-ttu-id="a57b6-130">集計値を保持するクエリ結果の型のメンバーの名前を指定する集計関数の結果のエイリアスを指定することができます。</span><span class="sxs-lookup"><span data-stu-id="a57b6-130">You can supply an alias for the aggregate function result to specify the name of the member of the query result type that will hold the aggregate value.</span></span> <span data-ttu-id="a57b6-131">別名が指定されていない場合は、集計関数の名前が使用されます。</span><span class="sxs-lookup"><span data-stu-id="a57b6-131">If no alias is supplied, the name of the aggregate function is used.</span></span>  
   
- `Aggregate` 句は、クエリを開始することも、クエリ内に追加の句として含めることもできます。  `Aggregate` 句でクエリを開始した場合、結果は、`Into` 句に指定された集計関数の結果と同じ単一の値になります。  `Into` 句に複数の集計関数を指定した場合は、クエリから、`Into` 句に含まれる集計関数のそれぞれの結果を参照する個別のプロパティを持つ単一の型が返されます。  `Aggregate` 句がクエリ内の追加の句として指定された場合、クエリのコレクションに返される型は、`Into` 句に指定された集計関数のそれぞれの結果を参照する個別のプロパティを持ちます。  
+ <span data-ttu-id="a57b6-132">`Aggregate`句は、クエリを開始するかは、クエリで追加の句として追加できます。</span><span class="sxs-lookup"><span data-stu-id="a57b6-132">The `Aggregate` clause can begin a query, or it can be included as an additional clause in a query.</span></span> <span data-ttu-id="a57b6-133">場合、`Aggregate`句がクエリを開始すると、結果は、1 つの値で指定された集計関数の結果では、`Into`句。</span><span class="sxs-lookup"><span data-stu-id="a57b6-133">If the `Aggregate` clause begins a query, the result is a single value that is the result of the aggregate function specified in the `Into` clause.</span></span> <span data-ttu-id="a57b6-134">1 つ以上の集計関数がで指定されている場合、`Into`句内の各集計関数の結果を参照する別のプロパティを持つ 1 つの型が返されます、`Into`句。</span><span class="sxs-lookup"><span data-stu-id="a57b6-134">If more than one aggregate function is specified in the `Into` clause, the query returns a single type with a separate property to reference the result of each aggregate function in the `Into` clause.</span></span> <span data-ttu-id="a57b6-135">場合、`Aggregate`句がクエリの他の句として含まれていますが、クエリのコレクションに返される型が内の各集計関数の結果を参照する個別のプロパティ、`Into`句。</span><span class="sxs-lookup"><span data-stu-id="a57b6-135">If the `Aggregate` clause is included as an additional clause in a query, the type returned in the query collection will have a separate property to reference the result of each aggregate function in the `Into` clause.</span></span>  
   
-## 集計関数  
- `Aggregate` 句と共に使用できる標準的な集計関数を次に示します。  
+## <a name="aggregate-functions"></a><span data-ttu-id="a57b6-136">集計関数</span><span class="sxs-lookup"><span data-stu-id="a57b6-136">Aggregate Functions</span></span>  
+ <span data-ttu-id="a57b6-137">次のリストで使用できる標準の集計関数の説明、`Aggregate`句。</span><span class="sxs-lookup"><span data-stu-id="a57b6-137">The following list describes the standard aggregate functions that can be used with the `Aggregate` clause.</span></span>  
   
-|||  
-|-|-|  
-|Function|Description|  
-|`All`|コレクション内のすべての要素が、指定された条件を満たす場合は `true` を返します。それ以外の場合は `false` を返します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#5](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_1.vb)]|  
-|`Any`|コレクション内のいずれかの要素が、指定された条件を満たす場合は `true` を返します。それ以外の場合は `false` を返します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#6](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_2.vb)]|  
-|`Average`|コレクション内のすべての要素の平均を計算します。または、コレクション内のすべての要素に対して、指定された式を計算します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#7](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_3.vb)]|  
-|`Count`|コレクション内の要素の数をカウントします。  オプションの `Boolean` 式を指定することで、コレクション内で条件を満たしている要素の数だけをカウントできます。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#8](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_4.vb)]|  
-|`Group`|`Group By` 句または `Group Join` 句の結果としてグループ化されているクエリ結果を参照します。  `Group` 関数は、`Group By` 句または `Group Join` 句の `Into` 句でのみ有効です。  使用例を含む詳細については、「[Group By 句](../../../visual-basic/language-reference/queries/group-by-clause.md)」および「[Group Join Clause](../../../visual-basic/language-reference/queries/group-join-clause.md)」を参照してください。|  
-|`LongCount`|コレクション内の要素の数をカウントします。  オプションの `Boolean` 式を指定することで、コレクション内で条件を満たしている要素の数だけをカウントできます。  結果を `Long` として返します。  例については、`Count` 集計関数を参照してください。|  
-|`Max`|コレクションの最大値を計算します。または、コレクション内のすべての要素に対して、指定された式を計算します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#9](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_5.vb)]|  
-|`Min`|コレクションの最小値を計算します。または、コレクション内のすべての要素に対して、指定された式を計算します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#10](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_6.vb)]|  
-|`Sum`|コレクション内のすべての要素の合計を計算します。または、コレクション内のすべての要素に対して、指定された式を計算します。  例を次に示します。<br /><br /> [!code-vb[VbSimpleQuerySamples#15](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_7.vb)]|  
+|<span data-ttu-id="a57b6-138">関数</span><span class="sxs-lookup"><span data-stu-id="a57b6-138">Function</span></span>|<span data-ttu-id="a57b6-139">説明</span><span class="sxs-lookup"><span data-stu-id="a57b6-139">Description</span></span>|  
+|---|---|  
+|`All`|<span data-ttu-id="a57b6-140">返します`true`がコレクション内のすべての要素が指定された条件を満たす場合、それ以外の場合を返します`false`です。</span><span class="sxs-lookup"><span data-stu-id="a57b6-140">Returns `true` if all elements in the collection satisfy a specified condition; otherwise returns `false`.</span></span> <span data-ttu-id="a57b6-141">例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-141">Following is an example:</span></span><br /><br /> [!code-vb[VbSimpleQuerySamples#5](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_1.vb)]|  
+|`Any`|<span data-ttu-id="a57b6-142">返します`true`返しますそれ以外の場合、コレクション内の要素が指定された条件を満たす場合`false`です。</span><span class="sxs-lookup"><span data-stu-id="a57b6-142">Returns `true` if any element in the collection satisfies a specified condition; otherwise returns `false`.</span></span> <span data-ttu-id="a57b6-143">例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-143">Following is an example:</span></span><br /><br /> [!code-vb[VbSimpleQuerySamples#6](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_2.vb)]|  
+|`Average`|<span data-ttu-id="a57b6-144">コレクションまたはコレクション内のすべての要素に指定された計算式のすべての要素の平均を計算します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-144">Computes the average of all elements in the collection, or a computes supplied expression for all elements in the collection.</span></span> <span data-ttu-id="a57b6-145">例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-145">Following is an example:</span></span><br /><br /> [!code-vb[VbSimpleQuerySamples#7](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_3.vb)]|  
+|`Count`|<span data-ttu-id="a57b6-146">コレクション内の要素の数をカウントします。</span><span class="sxs-lookup"><span data-stu-id="a57b6-146">Counts the number of elements in the collection.</span></span> <span data-ttu-id="a57b6-147">省略可能なを指定することができます`Boolean`式、条件を満たす、コレクション内の要素の数のみをカウントします。</span><span class="sxs-lookup"><span data-stu-id="a57b6-147">You can supply an optional `Boolean` expression to count only the number of elements in the collection that satisfy a condition.</span></span> <span data-ttu-id="a57b6-148">例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-148">Following is an example:</span></span><br /><br /> [!code-vb[VbSimpleQuerySamples#8](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_4.vb)]|  
+|`Group`|<span data-ttu-id="a57b6-149">結果としてグループ化されているクエリの結果を指す、`Group By`または`Group Join`句。</span><span class="sxs-lookup"><span data-stu-id="a57b6-149">Refers to query results that are grouped as a result of a `Group By` or `Group Join` clause.</span></span> <span data-ttu-id="a57b6-150">`Group`関数がでのみ有効では、`Into`の句、`Group By`または`Group Join`句。</span><span class="sxs-lookup"><span data-stu-id="a57b6-150">The `Group` function is valid only in the `Into` clause of a `Group By` or `Group Join` clause.</span></span> <span data-ttu-id="a57b6-151">詳細と例については、次を参照してください。[グループ By 句](../../../visual-basic/language-reference/queries/group-by-clause.md)と[Group Join 句](../../../visual-basic/language-reference/queries/group-join-clause.md)です。</span><span class="sxs-lookup"><span data-stu-id="a57b6-151">For more information and examples, see [Group By Clause](../../../visual-basic/language-reference/queries/group-by-clause.md) and [Group Join Clause](../../../visual-basic/language-reference/queries/group-join-clause.md).</span></span>|  
+|`LongCount`|<span data-ttu-id="a57b6-152">コレクション内の要素の数をカウントします。</span><span class="sxs-lookup"><span data-stu-id="a57b6-152">Counts the number of elements in the collection.</span></span> <span data-ttu-id="a57b6-153">省略可能なを指定することができます`Boolean`式、条件を満たす、コレクション内の要素の数のみをカウントします。</span><span class="sxs-lookup"><span data-stu-id="a57b6-153">You can supply an optional `Boolean` expression to count only the number of elements in the collection that satisfy a condition.</span></span> <span data-ttu-id="a57b6-154">結果として返します、`Long`です。</span><span class="sxs-lookup"><span data-stu-id="a57b6-154">Returns the result as a `Long`.</span></span> <span data-ttu-id="a57b6-155">例については、次を参照してください。、`Count`集計関数。</span><span class="sxs-lookup"><span data-stu-id="a57b6-155">For an example, see the `Count` aggregate function.</span></span>|  
+|`Max`|<span data-ttu-id="a57b6-156">をコレクションから最大値を計算またはコレクション内のすべての要素に対して指定された式を計算します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-156">Computes the maximum value from the collection, or computes a supplied expression for all elements in the collection.</span></span> <span data-ttu-id="a57b6-157">例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-157">Following is an example:</span></span><br /><br /> [!code-vb[VbSimpleQuerySamples#9](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_5.vb)]|  
+|`Min`|<span data-ttu-id="a57b6-158">をコレクションから最小値を計算またはコレクション内のすべての要素に対して指定された式を計算します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-158">Computes the minimum value from the collection, or computes a supplied expression for all elements in the collection.</span></span> <span data-ttu-id="a57b6-159">例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-159">Following is an example:</span></span><br /><br /> [!code-vb[VbSimpleQuerySamples#10](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_6.vb)]|  
+|`Sum`|<span data-ttu-id="a57b6-160">コレクション内のすべての要素の合計を計算またはコレクション内のすべての要素に対して指定された式を計算します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-160">Computes the sum of all elements in the collection, or computes a supplied expression for all elements in the collection.</span></span> <span data-ttu-id="a57b6-161">例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-161">Following is an example:</span></span><br /><br /> [!code-vb[VbSimpleQuerySamples#15](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_7.vb)]|  
   
-## 使用例  
- 次のコード例は、`Aggregate` 句を使用して集計関数をクエリ結果に適用する方法を示しています。  
+## <a name="example"></a><span data-ttu-id="a57b6-162">例</span><span class="sxs-lookup"><span data-stu-id="a57b6-162">Example</span></span>  
+ <span data-ttu-id="a57b6-163">次のコード例を使用する方法を示しています、`Aggregate`句を集計関数、クエリ結果に適用します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-163">The following code example shows how to use the `Aggregate` clause to apply aggregate functions to a query result.</span></span>  
   
  [!code-vb[VbSimpleQuerySamples#4](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_8.vb)]  
   
-## ユーザー定義集計関数の作成  
- <xref:System.Collections.Generic.IEnumerable%601> 型に拡張メソッドを追加することで、独自のカスタム集計関数をクエリ式の中に指定できます。  カスタム メソッドでは、その集計関数を参照した列挙可能なコレクションに対して計算または操作を実行できます。  拡張メソッドの詳細については、「[拡張メソッド](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)」を参照してください。  
+## <a name="creating-user-defined-aggregate-functions"></a><span data-ttu-id="a57b6-164">ユーザー定義集計関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-164">Creating User-Defined Aggregate Functions</span></span>  
+ <span data-ttu-id="a57b6-165">拡張メソッドを追加することによって、クエリ式で、独自のカスタム集計関数を含めることができます、<xref:System.Collections.Generic.IEnumerable%601>型です。</span><span class="sxs-lookup"><span data-stu-id="a57b6-165">You can include your own custom aggregate functions in a query expression by adding extension methods to the <xref:System.Collections.Generic.IEnumerable%601> type.</span></span> <span data-ttu-id="a57b6-166">カスタム メソッドでは計算または集計関数が参照する列挙可能なコレクションの操作を実行できます。</span><span class="sxs-lookup"><span data-stu-id="a57b6-166">Your custom method can then perform a calculation or operation on the enumerable collection that has referenced your aggregate function.</span></span> <span data-ttu-id="a57b6-167">拡張メソッドについて詳しくは、「[拡張メソッド](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a57b6-167">For more information about extension methods, see [Extension Methods](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md).</span></span>  
   
- たとえば、次のコード例は、数値コレクションの中央値を計算するカスタム集計関数を示します。  `Median` 拡張メソッドには 2 つのオーバーロードがあります。  最初のオーバーロードは、入力として `IEnumerable(Of Double)` 型のコレクションを受け取ります。  `Double` 型のクエリ フィールドに対して `Median` 集計関数が呼び出された場合は、このメソッドが呼び出されます。  `Median` メソッドの 2 番目のオーバーロードには、任意のジェネリック型を渡すことができます。  `Median` メソッドのジェネリック オーバーロードは、`Func(Of T, Double)` ラムダ式を参照する 2 番目のパラメーターを受け取り、コレクション内の型の値を対応する `Double` 型の値として投影するために使用します。  その後、中央値の計算を `Median` メソッドの他のオーバーロードに委任します。  ラムダ式の詳細については、「[Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)」を参照してください。  
+ <span data-ttu-id="a57b6-168">たとえば、次のコード例は、数値のコレクションの中央値を計算するカスタムの集計関数を示します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-168">For example, the following code example shows a custom aggregate function that calculates the median value of a collection of numbers.</span></span> <span data-ttu-id="a57b6-169">2 つのオーバー ロードがあります、`Median`拡張メソッド。</span><span class="sxs-lookup"><span data-stu-id="a57b6-169">There are two overloads of the `Median` extension method.</span></span> <span data-ttu-id="a57b6-170">最初のオーバー ロードを受け入れると、入力として型のコレクション`IEnumerable(Of Double)`です。</span><span class="sxs-lookup"><span data-stu-id="a57b6-170">The first overload accepts, as input, a collection of type `IEnumerable(Of Double)`.</span></span> <span data-ttu-id="a57b6-171">場合、`Median`型のクエリ フィールドの集計関数が呼び出されます`Double`、このメソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="a57b6-171">If the `Median` aggregate function is called for a query field of type `Double`, this method will be called.</span></span> <span data-ttu-id="a57b6-172">2 番目のオーバー ロード、`Median`任意のジェネリック型をメソッドに渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="a57b6-172">The second overload of the `Median` method can be passed any generic type.</span></span> <span data-ttu-id="a57b6-173">ジェネリック オーバー ロード、`Median`メソッドが参照する 2 番目のパラメーターを受け取り、`Func(Of T, Double)`型の対応する値として (コレクション) から型の値を射影する、ラムダ式`Double`です。</span><span class="sxs-lookup"><span data-stu-id="a57b6-173">The generic overload of the `Median` method takes a second parameter that references the `Func(Of T, Double)` lambda expression to project a value for a type (from a collection) as the corresponding value of type `Double`.</span></span> <span data-ttu-id="a57b6-174">その他のオーバー ロードに中央値の計算をデリゲートして、`Median`メソッドです。</span><span class="sxs-lookup"><span data-stu-id="a57b6-174">It then delegates the calculation of the median value to the other overload of the `Median` method.</span></span> <span data-ttu-id="a57b6-175">ラムダ式について詳しくは、「[ラムダ式](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a57b6-175">For more information about lambda expressions, see [Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).</span></span>  
   
  [!code-vb[VbSimpleQuerySamples#18](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_9.vb)]  
   
- 次のコード例は、`Integer` 型のコレクションと `Double` 型のコレクションに対して `Median` 集計関数を呼び出す例を示します。  `Double` 型のコレクションに対して `Median` 集計関数を呼び出すクエリでは、`Double` 型のコレクションを入力として受け取る `Median` メソッドのオーバーロードが呼び出されます。  `Integer` 型のコレクションに対して `Median` 集計関数を呼び出すクエリでは、`Median` メソッドのジェネリック オーバーロードが呼び出されます。  
+ <span data-ttu-id="a57b6-176">次のコード例は例のクエリを呼び出すことを示して、`Median`集計関数の種類のコレクションを`Integer`、およびコレクションの型の`Double`します。</span><span class="sxs-lookup"><span data-stu-id="a57b6-176">The following code example shows sample queries that call the `Median` aggregate function on a collection of type `Integer`, and a collection of type `Double`.</span></span> <span data-ttu-id="a57b6-177">呼び出すクエリ、`Median`集計関数の型のコレクション`Double`のオーバー ロードを呼び出して、`Median`型のコレクションを入力として受け取るメソッド`Double`です。</span><span class="sxs-lookup"><span data-stu-id="a57b6-177">The query that calls the `Median` aggregate function on the collection of type `Double` calls the overload of the `Median` method that accepts, as input, a collection of type `Double`.</span></span> <span data-ttu-id="a57b6-178">呼び出すクエリ、`Median`集計関数の型のコレクションに対する`Integer`のジェネリック オーバー ロードを呼び出して、`Median`メソッドです。</span><span class="sxs-lookup"><span data-stu-id="a57b6-178">The query that calls the `Median` aggregate function on the collection of type `Integer` calls the generic overload of the `Median` method.</span></span>  
   
  [!code-vb[VbSimpleQuerySamples#19](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_10.vb)]  
   
-## 参照  
- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   
- [Queries](../../../visual-basic/language-reference/queries/queries.md)   
- [Select Clause](../../../visual-basic/language-reference/queries/select-clause.md)   
- [From Clause](../../../visual-basic/language-reference/queries/from-clause.md)   
- [Where Clause](../../../visual-basic/language-reference/queries/where-clause.md)   
- [Group By 句](../../../visual-basic/language-reference/queries/group-by-clause.md)
+## <a name="see-also"></a><span data-ttu-id="a57b6-179">関連項目</span><span class="sxs-lookup"><span data-stu-id="a57b6-179">See Also</span></span>  
+ [<span data-ttu-id="a57b6-180">Visual Basic における LINQ の概要</span><span class="sxs-lookup"><span data-stu-id="a57b6-180">Introduction to LINQ in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+ [<span data-ttu-id="a57b6-181">クエリ</span><span class="sxs-lookup"><span data-stu-id="a57b6-181">Queries</span></span>](../../../visual-basic/language-reference/queries/queries.md)  
+ [<span data-ttu-id="a57b6-182">Select 句</span><span class="sxs-lookup"><span data-stu-id="a57b6-182">Select Clause</span></span>](../../../visual-basic/language-reference/queries/select-clause.md)  
+ [<span data-ttu-id="a57b6-183">From 句</span><span class="sxs-lookup"><span data-stu-id="a57b6-183">From Clause</span></span>](../../../visual-basic/language-reference/queries/from-clause.md)  
+ [<span data-ttu-id="a57b6-184">WHERE 句</span><span class="sxs-lookup"><span data-stu-id="a57b6-184">Where Clause</span></span>](../../../visual-basic/language-reference/queries/where-clause.md)  
+ [<span data-ttu-id="a57b6-185">Group By 句</span><span class="sxs-lookup"><span data-stu-id="a57b6-185">Group By Clause</span></span>](../../../visual-basic/language-reference/queries/group-by-clause.md)

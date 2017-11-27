@@ -1,65 +1,71 @@
 ---
-title: "方法 : メタデータをサービス エンドポイントからエクスポートする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : メタデータをサービス エンドポイントからエクスポートする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: b6c4dfd0-f270-43ec-961a-e16eb6af2f2c
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d076878f31d162713feaecc0a92c2f6f534897b9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : メタデータをサービス エンドポイントからエクスポートする
-このトピックでは、メタデータをサービス エンドポイントからエクスポートする方法について説明します。  
+# <a name="how-to-export-metadata-from-service-endpoints"></a><span data-ttu-id="28913-102">方法 : メタデータをサービス エンドポイントからエクスポートする</span><span class="sxs-lookup"><span data-stu-id="28913-102">How to: Export Metadata from Service Endpoints</span></span>
+<span data-ttu-id="28913-103">このトピックでは、メタデータをサービス エンドポイントからエクスポートする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="28913-103">This topic explains how to export metadata from service endpoints.</span></span>  
   
-### メタデータをサービス エンドポイントからエクスポートするには  
+### <a name="to-export-metadata-from-service-endpoints"></a><span data-ttu-id="28913-104">メタデータをサービス エンドポイントからエクスポートするには</span><span class="sxs-lookup"><span data-stu-id="28913-104">To export metadata from service endpoints</span></span>  
   
-1.  新しい Visual Studio コンソール アプリケーション プロジェクトを作成します。  以下の手順で示されているコードを、生成された Program.cs ファイルの main\(\) メソッド内に追加します。  
+1.  <span data-ttu-id="28913-105">新しい Visual Studio コンソール アプリケーション プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="28913-105">Create a new Visual Studio Console App Project.</span></span> <span data-ttu-id="28913-106">以下の手順で示されているコードを、生成された Program.cs ファイルの main() メソッド内に追加します。</span><span class="sxs-lookup"><span data-stu-id="28913-106">Add the code shown in the following steps in the generated Program.cs file within the main() method.</span></span>  
   
-2.  <xref:System.ServiceModel.Description.WsdlExporter> を作成します。  
+2.  <span data-ttu-id="28913-107"><xref:System.ServiceModel.Description.WsdlExporter> を作成します。</span><span class="sxs-lookup"><span data-stu-id="28913-107">Create a <xref:System.ServiceModel.Description.WsdlExporter>.</span></span>  
   
      [!code-csharp[S_UEWsdlExporter#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#1)]
      [!code-vb[S_UEWsdlExporter#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#1)]  
   
-3.  <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> プロパティを <xref:System.ServiceModel.Description.PolicyVersion> 列挙体のいずれかの値に設定します。  この例では、値を、WS\-Policy 1.5 に対応する <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A> に設定します。  
+3.  <span data-ttu-id="28913-108"><xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> プロパティを <xref:System.ServiceModel.Description.PolicyVersion> 列挙体のいずれかの値に設定します。</span><span class="sxs-lookup"><span data-stu-id="28913-108">Set the <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> property to one of the values from the <xref:System.ServiceModel.Description.PolicyVersion> enumeration.</span></span> <span data-ttu-id="28913-109">この例では、値を、WS-Policy 1.5 に対応する <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A> に設定します。</span><span class="sxs-lookup"><span data-stu-id="28913-109">This sample sets the value to <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A> which corresponds to WS-Policy 1.5.</span></span>  
   
      [!code-csharp[S_UEWsdlExporter#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#2)]
      [!code-vb[S_UEWsdlExporter#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#2)]  
   
-4.  <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトの配列を作成します。  
+4.  <span data-ttu-id="28913-110"><xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトの配列を作成します。</span><span class="sxs-lookup"><span data-stu-id="28913-110">Create an array of <xref:System.ServiceModel.Description.ServiceEndpoint> objects.</span></span>  
   
      [!code-csharp[S_UEWsdlExporter#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#3)]
      [!code-vb[S_UEWsdlExporter#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#3)]  
   
-5.  サービス エンドポイントのメタデータをエクスポートします。  
+5.  <span data-ttu-id="28913-111">サービス エンドポイントのメタデータをエクスポートします。</span><span class="sxs-lookup"><span data-stu-id="28913-111">Export metadata for each service endpoint.</span></span>  
   
      [!code-csharp[S_UEWsdlExporter#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#4)]
      [!code-vb[S_UEWsdlExporter#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#4)]  
   
-6.  エクスポート プロセス中にエラーが発生していないことを確認し、メタデータを取得します。  
+6.  <span data-ttu-id="28913-112">エクスポート プロセス中にエラーが発生していないことを確認し、メタデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="28913-112">Check to make sure no errors occurred during the export process and retrieve the metadata.</span></span>  
   
      [!code-csharp[S_UEWsdlExporter#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#5)]
      [!code-vb[S_UEWsdlExporter#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#5)]  
   
-7.  これで、メタデータを使用できます。たとえば、<xref:System.ServiceModel.Description.MetadataSet.WriteTo%28System.Xml.XmlWriter%29> メソッドを呼び出してメタデータをファイルに書き込むことができます。  
+7.  <span data-ttu-id="28913-113">これで、メタデータを使用できます。たとえば、<xref:System.ServiceModel.Description.MetadataSet.WriteTo%28System.Xml.XmlWriter%29> メソッドを呼び出してメタデータをファイルに書き込むことができます。</span><span class="sxs-lookup"><span data-stu-id="28913-113">You can now use the metadata, such as write it to a file by calling the <xref:System.ServiceModel.Description.MetadataSet.WriteTo%28System.Xml.XmlWriter%29> method.</span></span>  
   
-## 使用例  
- この例の完全なコードの一覧を以下に示します。  
+## <a name="example"></a><span data-ttu-id="28913-114">例</span><span class="sxs-lookup"><span data-stu-id="28913-114">Example</span></span>  
+ <span data-ttu-id="28913-115">この例の完全なコードの一覧を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="28913-115">The following is the full code listing for this example.</span></span>  
   
  [!code-csharp[S_UEWsdlExporter#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#0)]
  [!code-vb[S_UEWsdlExporter#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#0)]  
   
-## コードのコンパイル  
- Program.cs をコンパイルするときは、System.ServiceModel.dll への参照を追加してください。  
+## <a name="compiling-the-code"></a><span data-ttu-id="28913-116">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="28913-116">Compiling the Code</span></span>  
+ <span data-ttu-id="28913-117">Program.cs をコンパイルするときは、System.ServiceModel.dll への参照を追加してください。</span><span class="sxs-lookup"><span data-stu-id="28913-117">When compiling Program.cs reference System.ServiceModel.dll.</span></span>  
   
-## 参照  
- [メタデータ アーキテクチャの概要](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)   
- [メタデータを使用する](../../../../docs/framework/wcf/feature-details/using-metadata.md)   
- [エンドポイント : アドレス、バインディング、およびコントラクト](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+## <a name="see-also"></a><span data-ttu-id="28913-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="28913-118">See Also</span></span>  
+ [<span data-ttu-id="28913-119">メタデータ アーキテクチャの概要</span><span class="sxs-lookup"><span data-stu-id="28913-119">Metadata Architecture Overview</span></span>](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)  
+ [<span data-ttu-id="28913-120">メタデータを使用します。</span><span class="sxs-lookup"><span data-stu-id="28913-120">Using Metadata</span></span>](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
+ [<span data-ttu-id="28913-121">エンドポイント: アドレス、バインディング、およびコントラクト</span><span class="sxs-lookup"><span data-stu-id="28913-121">Endpoints: Addresses, Bindings, and Contracts</span></span>](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)

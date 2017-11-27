@@ -1,102 +1,105 @@
 ---
-title: "方法: メッセージング アクティビティを使用してワークフロー サービスを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法: メッセージング アクティビティを使用してワークフロー サービスを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 53d094e2-6901-4aa1-88b8-024b27ccf78b
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6b2f418298b5b937b5d4c7af2bd2def38c5827e9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法: メッセージング アクティビティを使用してワークフロー サービスを作成する
-このトピックでは、メッセージング アクティビティを使用して単純なワークフロー サービスを作成する方法について説明します。  ここでは、メッセージング アクティビティだけで構成されるサービスのワークフロー サービスを作成する機構に重点を置きます。  実際のサービスでは、ワークフローに他の多くのアクティビティが含まれます。  このサービスは、文字列を取得して、それを呼び出し元に返す、Echo という 1 つの操作を実装します。  このトピックは、一連の 2 つのトピックの最初のものです。  次のトピック「[方法: ワークフロー アプリケーションからサービスにアクセスする](../../../../docs/framework/wcf/feature-details/how-to-access-a-service-from-a-workflow-application.md)」では、このトピックで作成したサービスを呼び出すワークフロー アプリケーションの作成方法について説明します。  
+# <a name="how-to-create-a-workflow-service-with-messaging-activities"></a><span data-ttu-id="d373d-102">方法: メッセージング アクティビティを使用してワークフロー サービスを作成する</span><span class="sxs-lookup"><span data-stu-id="d373d-102">How to: Create a Workflow Service with Messaging Activities</span></span>
+<span data-ttu-id="d373d-103">このトピックでは、メッセージング アクティビティを使用して単純なワークフロー サービスを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d373d-103">This topic describes how to create a simple workflow service using messaging activities.</span></span> <span data-ttu-id="d373d-104">ここでは、メッセージング アクティビティだけで構成されるサービスのワークフロー サービスを作成する機構に重点を置きます。</span><span class="sxs-lookup"><span data-stu-id="d373d-104">This topic focuses on the mechanics of creating a workflow service where the service consists solely of messaging activities.</span></span> <span data-ttu-id="d373d-105">実際のサービスでは、ワークフローに他の多くのアクティビティが含まれます。</span><span class="sxs-lookup"><span data-stu-id="d373d-105">In a real-world service, the workflow contains many other activities.</span></span> <span data-ttu-id="d373d-106">このサービスは、文字列を取得して、それを呼び出し元に返す、Echo という 1 つの操作を実装します。</span><span class="sxs-lookup"><span data-stu-id="d373d-106">The service implements one operation called Echo, which takes a string and returns the string to the caller.</span></span> <span data-ttu-id="d373d-107">このトピックは、一連の 2 つのトピックの最初のものです。</span><span class="sxs-lookup"><span data-stu-id="d373d-107">This topic is the first in a series of two topics.</span></span> <span data-ttu-id="d373d-108">次のトピック「 [How To: サービス アプリケーションからアクセスする、ワークフロー](../../../../docs/framework/wcf/feature-details/how-to-access-a-service-from-a-workflow-application.md)このトピックで作成したサービスを呼び出すことができるワークフロー アプリケーションを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d373d-108">The next topic [How To: Access a Service From a Workflow Application](../../../../docs/framework/wcf/feature-details/how-to-access-a-service-from-a-workflow-application.md) discusses how to create a workflow application that can call the service created in this topic.</span></span>  
   
-### ワークフロー サービス プロジェクトを作成するには  
+### <a name="to-create-a-workflow-service-project"></a><span data-ttu-id="d373d-109">ワークフロー サービス プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="d373d-109">To create a workflow service project</span></span>  
   
-1.  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を起動します。  
+1.  <span data-ttu-id="d373d-110">[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を起動します。</span><span class="sxs-lookup"><span data-stu-id="d373d-110">Start [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].</span></span>  
   
-2.  **\[ファイル\]** メニューで **\[新規作成\]**、**\[プロジェクト\]** の順に選択して、**\[新しいプロジェクト\]** ダイアログ ボックスを表示します。  インストールされているテンプレートの一覧で **\[ワークフロー\]** を選択し、プロジェクトの種類の一覧で **\[WCF ワークフロー サービス アプリケーション\]** を選択します。  次の図に示すように、プロジェクトに `MyWFService` という名前を付け、既定の場所を使用します。  
+2.  <span data-ttu-id="d373d-111">クリックして、**ファイル**メニューの [**新規**、し**プロジェクト**を表示する、**新しいプロジェクト] ダイアログ**です。</span><span class="sxs-lookup"><span data-stu-id="d373d-111">Click the **File** menu, select **New**, and then **Project** to display the **New Project Dialog**.</span></span> <span data-ttu-id="d373d-112">選択**ワークフロー**インストールされたテンプレートの一覧から、 **WCF ワークフロー サービス アプリケーション**プロジェクトの種類の一覧からです。</span><span class="sxs-lookup"><span data-stu-id="d373d-112">Select **Workflow** from the list of installed templates and **WCF Workflow Service Application** from the list of project types.</span></span> <span data-ttu-id="d373d-113">プロジェクトに名前を`MyWFService`し、次の図に示すように既定の場所を使用します。</span><span class="sxs-lookup"><span data-stu-id="d373d-113">Name the project `MyWFService` and use the default location as shown in the following illustration.</span></span>  
   
-     **\[OK\]** をクリックして **\[新しいプロジェクト\]** ダイアログ ボックスを閉じます。  
+     <span data-ttu-id="d373d-114">クリックして、 **ok**を消去するボタン、**新しいプロジェクト ダイアログ**です。</span><span class="sxs-lookup"><span data-stu-id="d373d-114">Click the **OK** button to dismiss the **New Project Dialog**.</span></span>  
   
-3.  プロジェクトが作成されると、次の図に示すように、Service1.xamlx ファイルがデザイナーで開かれます。  
+3.  <span data-ttu-id="d373d-115">プロジェクトが作成されると、次の図に示すように、Service1.xamlx ファイルがデザイナーで開かれます。</span><span class="sxs-lookup"><span data-stu-id="d373d-115">When the project is created, the Service1.xamlx file is opened in the designer as shown in the following illustration.</span></span>  
   
-     ![デザイナーに表示されている既定のワークフロー](../../../../docs/framework/wcf/feature-details/media/defaultworkflowservice.JPG "DefaultWorkflowService")  
+     <span data-ttu-id="d373d-116">![デザイナーに表示される既定のワークフロー](../../../../docs/framework/wcf/feature-details/media/defaultworkflowservice.JPG "DefaultWorkflowService")</span><span class="sxs-lookup"><span data-stu-id="d373d-116">![The default workflow displayed in the designer](../../../../docs/framework/wcf/feature-details/media/defaultworkflowservice.JPG "DefaultWorkflowService")</span></span>  
   
-     "**シーケンシャル サービス**" というラベルの付いたアクティビティを右クリックし、**\[削除\]** をクリックします。  
+     <span data-ttu-id="d373d-117">ラベルの付いたアクティビティを右クリックして**シーケンシャル サービス**選択**削除**です。</span><span class="sxs-lookup"><span data-stu-id="d373d-117">Right-click the activity labeled **Sequential Service** and select **Delete**.</span></span>  
   
-### ワークフロー サービスを実装するには  
+### <a name="to-implement-the-workflow-service"></a><span data-ttu-id="d373d-118">ワークフロー サービスを実装するには</span><span class="sxs-lookup"><span data-stu-id="d373d-118">To implement the workflow service</span></span>  
   
-1.  画面左側の **\[ツールボックス\]** タブをクリックしてツールボックスを表示し、プッシュピンをクリックしてウィンドウを開いたままにします。  次の図に示すように、ツールボックスの **\[メッセージング\]** セクションを展開して、メッセージング アクティビティおよびメッセージング アクティビティ テンプレートを表示します。  
+1.  <span data-ttu-id="d373d-119">選択、**ツールボックス**ツールボックスを表示するウィンドウを開いておき、プッシュピンをクリックして、画面の左側にあるタブ。</span><span class="sxs-lookup"><span data-stu-id="d373d-119">Select the **Toolbox** tab on the left side of the screen to display the toolbox and click the pushpin to keep the window open.</span></span> <span data-ttu-id="d373d-120">展開、**メッセージング**セクションのツールボックスに次の図に示すように、メッセージング アクティビティおよびメッセージング アクティビティ テンプレートを表示します。</span><span class="sxs-lookup"><span data-stu-id="d373d-120">Expand the **Messaging** section of the toolbox to display the messaging activities and the messaging activity templates as shown in the following illustration.</span></span>  
   
-     ![メッセージング タブが展開されているツールボックス](../../../../docs/framework/wcf/feature-details/media/wfdesignertoolbox.JPG "WFDesignerToolbox")  
+     <span data-ttu-id="d373d-121">![展開されているメッセージ タブ、ツールボックス](../../../../docs/framework/wcf/feature-details/media/wfdesignertoolbox.JPG "WFDesignerToolbox")</span><span class="sxs-lookup"><span data-stu-id="d373d-121">![The toolbox with messaging tab expanded](../../../../docs/framework/wcf/feature-details/media/wfdesignertoolbox.JPG "WFDesignerToolbox")</span></span>  
   
-2.  **\[ReceiveAndSendReply\]** テンプレートをワークフロー デザイナーにドラッグ アンド ドロップします。  これにより、<xref:System.ServiceModel.Activities.Sequence> アクティビティが作成されます。次の図に示すように、**Receive** アクティビティの後に <xref:System.ServiceModel.Activities.SendReply> アクティビティがあります。  
+2.  <span data-ttu-id="d373d-122">ドラッグ アンド ドロップ、 **ReceiveAndSendReply**テンプレートをワークフロー デザイナーにします。</span><span class="sxs-lookup"><span data-stu-id="d373d-122">Drag and drop a **ReceiveAndSendReply** template to the workflow designer.</span></span> <span data-ttu-id="d373d-123">これを作成、 <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence`アクティビティと、**受信**アクティビティの後に、<xref:System.ServiceModel.Activities.SendReply>アクティビティの次の図に示すようにします。</span><span class="sxs-lookup"><span data-stu-id="d373d-123">This creates a <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` activity with a **Receive** activity followed by a <xref:System.ServiceModel.Activities.SendReply> activity as shown in the following illustration.</span></span>  
   
-     ![デザイナーに表示された ReceiveAndSendReply テンプレート](../../../../docs/framework/wcf/feature-details/media/receiveandsendreply.JPG "ReceiveAndSendReply")  
+     <span data-ttu-id="d373d-124">![デザイナーでの ReceiveAndSendReply テンプレート](../../../../docs/framework/wcf/feature-details/media/receiveandsendreply.JPG "ReceiveAndSendReply")</span><span class="sxs-lookup"><span data-stu-id="d373d-124">![ReceiveAndSendReply template in designer](../../../../docs/framework/wcf/feature-details/media/receiveandsendreply.JPG "ReceiveAndSendReply")</span></span>  
   
-     <xref:System.ServiceModel.Activities.SendReply> アクティビティの <xref:System.ServiceModel.Activities.SendReply.Request%2A> プロパティは `Receive` に設定されています。これは、<xref:System.ServiceModel.Activities.Receive> アクティビティが応答する <xref:System.ServiceModel.Activities.SendReply> アクティビティの名前です。  
+     <span data-ttu-id="d373d-125"><xref:System.ServiceModel.Activities.SendReply> アクティビティの <xref:System.ServiceModel.Activities.SendReply.Request%2A> プロパティは `Receive` に設定されています。これは、<xref:System.ServiceModel.Activities.Receive> アクティビティが応答する <xref:System.ServiceModel.Activities.SendReply> アクティビティの名前です。</span><span class="sxs-lookup"><span data-stu-id="d373d-125">Notice that the <xref:System.ServiceModel.Activities.SendReply> activity’s <xref:System.ServiceModel.Activities.SendReply.Request%2A> property is set to `Receive`, the name of the <xref:System.ServiceModel.Activities.Receive> activity to which the <xref:System.ServiceModel.Activities.SendReply> activity is replying.</span></span>  
   
-3.  <xref:System.ServiceModel.Activities.Receive> アクティビティの `[OperationName]` というラベルの付いたボックスに「**Echo**」と入力します。  これにより、サービスが実装する操作の名前が定義されます。  
+3.  <span data-ttu-id="d373d-126"><xref:System.ServiceModel.Activities.Receive>アクティビティ タイプ`Echo`というラベルの付いたボックスに「 **OperationName**です。</span><span class="sxs-lookup"><span data-stu-id="d373d-126">In the <xref:System.ServiceModel.Activities.Receive> activity type `Echo` into the textbox labeled **OperationName**.</span></span> <span data-ttu-id="d373d-127">これにより、サービスが実装する操作の名前が定義されます。</span><span class="sxs-lookup"><span data-stu-id="d373d-127">This defines the name of the operation the service implements.</span></span>  
   
-     ![操作名を指定する](../../../../docs/framework/wcf/feature-details/media/defineoperation.JPG "DefineOperation")  
+     <span data-ttu-id="d373d-128">![操作の名前を指定](../../../../docs/framework/wcf/feature-details/media/defineoperation.JPG "DefineOperation")</span><span class="sxs-lookup"><span data-stu-id="d373d-128">![Specify the operation name](../../../../docs/framework/wcf/feature-details/media/defineoperation.JPG "DefineOperation")</span></span>  
   
-4.  <xref:System.ServiceModel.Activities.Receive> アクティビティを選択した状態で、プロパティ ウィンドウがまだ開いていない場合は、**\[表示\]** メニューの **\[プロパティ ウィンドウ\]** をクリックして開きます。  **\[プロパティ ウィンドウ\]** で、**\[CanCreateInstance\]** が表示されるまで下へスクロールし、次の図に示すように、チェックボックスをオンにします。  この設定によって、ワークフロー サービス ホストはメッセージが受信されると \(必要に応じて\) サービスの新しいインスタンスを作成できるようになります。  
+4.  <span data-ttu-id="d373d-129"><xref:System.ServiceModel.Activities.Receive>  をクリックして開いていない場合は、アクティビティを選択すると、により、プロパティ ウィンドウを開き、**ビュー**メニューを選択して**プロパティ ウィンドウ**します。</span><span class="sxs-lookup"><span data-stu-id="d373d-129">With the <xref:System.ServiceModel.Activities.Receive> activity selected, open the properties window if not already open by clicking the **View** menu and selecting **Properties Window**.</span></span> <span data-ttu-id="d373d-130">**プロパティ ウィンドウ**が表示されるまで下へスクロール**CanCreateInstance**し、次の図に示すように、チェック ボックスをクリックします。</span><span class="sxs-lookup"><span data-stu-id="d373d-130">In the **Properties Window** scroll down until you see **CanCreateInstance** and click the checkbox as shown in the following illustration.</span></span> <span data-ttu-id="d373d-131">この設定によって、ワークフロー サービス ホストはメッセージが受信されると (必要に応じて) サービスの新しいインスタンスを作成できるようになります。</span><span class="sxs-lookup"><span data-stu-id="d373d-131">This setting enables the workflow service host to create a new instance of the service (if needed) when a message is received.</span></span>  
   
-     ![CanCreateInstance プロパティ](../../../../docs/framework/wcf/feature-details/media/cancreateinstance.JPG "CanCreateInstance")  
+     <span data-ttu-id="d373d-132">![CanCreateInstance プロパティ](../../../../docs/framework/wcf/feature-details/media/cancreateinstance.JPG "CanCreateInstance")</span><span class="sxs-lookup"><span data-stu-id="d373d-132">![CanCreateInstance property](../../../../docs/framework/wcf/feature-details/media/cancreateinstance.JPG "CanCreateInstance")</span></span>  
   
-5.  <xref:System.ServiceModel.Activities.Sequence> アクティビティを選択し、デザイナーの左下隅にある **\[変数\]** をクリックします。  これにより、変数エディターが開かれます。  **\[変数の作成\]** リンクをクリックして、操作に送られる文字列を格納する変数を追加します。  変数に `msg` という名前を付け、次の図に示すように、その **\[変数\]** の種類を文字列に設定します。  
+5.  <span data-ttu-id="d373d-133">選択、 <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence`アクティビティをクリック、**変数**デザイナーの左下隅のボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="d373d-133">Select the <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` activity and click the **Variables** button in the lower left corner of the designer.</span></span> <span data-ttu-id="d373d-134">これにより、変数エディターが開かれます。</span><span class="sxs-lookup"><span data-stu-id="d373d-134">This displays the variables editor.</span></span> <span data-ttu-id="d373d-135">クリックして、**変数を作成**リンクを操作に送信される文字列を格納する変数を追加します。</span><span class="sxs-lookup"><span data-stu-id="d373d-135">Click the **Create Variable** link to add a variable to store the string sent to the operation.</span></span> <span data-ttu-id="d373d-136">変数の名前`msg`設定とその**変数**次の図に示すように文字列を入力します。</span><span class="sxs-lookup"><span data-stu-id="d373d-136">Name the variable `msg` and set its **Variable** type to String as shown in the following illustration.</span></span>  
   
-     ![変数の追加](../../../../docs/framework/wcf/feature-details/media/addvariable.JPG "AddVariable")  
+     <span data-ttu-id="d373d-137">![変数を追加](../../../../docs/framework/wcf/feature-details/media/addvariable.JPG "AddVariable")</span><span class="sxs-lookup"><span data-stu-id="d373d-137">![Add a variable](../../../../docs/framework/wcf/feature-details/media/addvariable.JPG "AddVariable")</span></span>  
   
-     **\[変数\]** をもう一度クリックして、変数エディターを閉じます。  
+     <span data-ttu-id="d373d-138">クリックして、**変数**ボタンをもう一度、変数エディターを閉じます。</span><span class="sxs-lookup"><span data-stu-id="d373d-138">Click the **Variables** button again to close the variables editor.</span></span>  
   
-6.  アクティビティの **\[コンテンツ\]** ボックスの <xref:System.ServiceModel.Activities.Receive> **\[定義..\]** リンクをクリックして、**\[コンテンツ定義\]** ダイアログ ボックスを表示します。  **\[パラメーター\]** オプション ボタンを選択し、**\[新しいパラメーターの追加\]** リンクをクリックし、`[名前]` ボックスに**「inMsg」**と入力し、**\[型\]** ボックスの **\[文字列\]** を選択し、`[割り当て先]` ボックスに「**msg**」と入力します。  
+6.  <span data-ttu-id="d373d-139">クリックして、**を定義する.**</span><span class="sxs-lookup"><span data-stu-id="d373d-139">Click the **Define..**</span></span> <span data-ttu-id="d373d-140">内のリンク、**コンテンツ**テキスト ボックスに、<xref:System.ServiceModel.Activities.Receive>を表示するアクティビティ、**コンテンツ定義**ダイアログ。</span><span class="sxs-lookup"><span data-stu-id="d373d-140">link in the **Content** text box in the <xref:System.ServiceModel.Activities.Receive> activity to display the **Content Definition** dialog.</span></span> <span data-ttu-id="d373d-141">選択、**パラメーター**ラジオ ボタンをクリックして、**新しいパラメーターを追加**リンクで、入力`inMsg`で、**名前**テキスト ボックスで、**文字列**で、**型**ドロップ ダウン リスト ボックス、および種類`msg`で、**を割り当てる**テキスト ボックスの次の図に示すようにします。</span><span class="sxs-lookup"><span data-stu-id="d373d-141">Select the **Parameters** radio button, click the **Add new Parameter** link, type `inMsg` in the **name** text box, select **String** in the **Type** drop down list box, and type `msg` in the **Assign To** text box as shown in the following illustration.</span></span>  
   
-     ![パラメーター コンテンツの追加](../../../../docs/framework/wcf/feature-details/media/parameterscontent.jpg "ParametersContent")  
+     <span data-ttu-id="d373d-142">![パラメーター コンテンツを追加する](../../../../docs/framework/wcf/feature-details/media/parameterscontent.jpg "ParametersContent")</span><span class="sxs-lookup"><span data-stu-id="d373d-142">![Adding Parameters Content](../../../../docs/framework/wcf/feature-details/media/parameterscontent.jpg "ParametersContent")</span></span>  
   
-     これにより、Receive アクティビティが文字列パラメーターを受け取り、そのデータが `msg` 変数にバインドされるように指定されます。  **\[OK\]** をクリックして **\[コンテンツ定義\]** ダイアログ ボックスを閉じます。  
+     <span data-ttu-id="d373d-143">これにより、Receive アクティビティが文字列パラメーターを受け取り、そのデータが `msg` 変数にバインドされるように指定されます。</span><span class="sxs-lookup"><span data-stu-id="d373d-143">This specifies that the Receive activity receives string parameter and that data is bound to the `msg` variable.</span></span> <span data-ttu-id="d373d-144">をクリックして**OK**を閉じる、**コンテンツ定義**ダイアログ。</span><span class="sxs-lookup"><span data-stu-id="d373d-144">Click **OK** to close the **Content Definition** dialog.</span></span>  
   
-7.  **\[定義...\]** アクティビティの **\[コンテンツ\]** ボックスの <xref:System.ServiceModel.Activities.SendReply> リンクをクリックして、**\[コンテンツ定義\]** ダイアログ ボックスを表示します。  **\[パラメーター\]** オプション ボタンを選択し、**\[新しいパラメーターの追加\]** リンクをクリックして `[名前]` ボックスに**「msg」**と入力し、**\[型\]** ボックスの **\[文字列\]** を選択し、`[値]` ボックスに「**msg**」と入力します。  
+7.  <span data-ttu-id="d373d-145">クリックして、**を定義しています.**内のリンク、**コンテンツ**ボックスに、<xref:System.ServiceModel.Activities.SendReply>を表示するアクティビティ、**コンテンツ定義**ダイアログ。</span><span class="sxs-lookup"><span data-stu-id="d373d-145">Click the **Define...** link in the **Content** box in the <xref:System.ServiceModel.Activities.SendReply> activity to display the **Content Definition** dialog.</span></span> <span data-ttu-id="d373d-146">選択、**パラメーター**ラジオ ボタンをクリックして、**新しいパラメーターを追加**リンクで、入力`outMsg`で、**名前** ボックスに、select**文字列**で、**型**ドロップダウン リスト ボックス、および`msg`で、**値**テキスト ボックスの次の図に示すようにします。</span><span class="sxs-lookup"><span data-stu-id="d373d-146">Select the **Parameters** radio button, click the **Add new Parameter** link, type `outMsg` in the **name** textbox, select **String** in the **Type** dropdown list box, and `msg` in the **Value** text box as shown in the following illustration.</span></span>  
   
-     ![パラメーター コンテンツの追加](../../../../docs/framework/wcf/feature-details/media/parameterscontent2.jpg "ParametersContent2")  
+     <span data-ttu-id="d373d-147">![パラメーター コンテンツを追加する](../../../../docs/framework/wcf/feature-details/media/parameterscontent2.jpg "ParametersContent2")</span><span class="sxs-lookup"><span data-stu-id="d373d-147">![Adding Parameters Content](../../../../docs/framework/wcf/feature-details/media/parameterscontent2.jpg "ParametersContent2")</span></span>  
   
-     これにより、<xref:System.ServiceModel.Activities.SendReply> アクティビティがメッセージまたはメッセージ コントラクト型を送信し、そのデータが `msg` 変数にバインドされるように指定されます。  これは <xref:System.ServiceModel.Activities.SendReply> アクティビティであるため、`msg` のデータは、アクティビティがクライアントに送り返すメッセージの設定に使用されます。  **\[OK\]** をクリックして **\[コンテンツ定義\]** ダイアログ ボックスを閉じます。  
+     <span data-ttu-id="d373d-148">これにより、<xref:System.ServiceModel.Activities.SendReply> アクティビティがメッセージまたはメッセージ コントラクト型を送信し、そのデータが `msg` 変数にバインドされるように指定されます。</span><span class="sxs-lookup"><span data-stu-id="d373d-148">This specifies that the <xref:System.ServiceModel.Activities.SendReply> activity sends a message or message contract type and that data is bound to the `msg` variable.</span></span> <span data-ttu-id="d373d-149">これは <xref:System.ServiceModel.Activities.SendReply> アクティビティであるため、`msg` のデータは、アクティビティがクライアントに送り返すメッセージの設定に使用されます。</span><span class="sxs-lookup"><span data-stu-id="d373d-149">Because this is a <xref:System.ServiceModel.Activities.SendReply> activity, this means the data in `msg` is used to populate the message the activity sends back to the client.</span></span> <span data-ttu-id="d373d-150">をクリックして**OK**を閉じる、**コンテンツ定義**ダイアログ。</span><span class="sxs-lookup"><span data-stu-id="d373d-150">Click **OK** to close the **Content Definition** dialog.</span></span>  
   
-8.  **\[ビルド\]** メニューの **\[ソリューションのビルド\]** をクリックして、ソリューションを保存およびビルドします。  
+8.  <span data-ttu-id="d373d-151">保存しをクリックして、ソリューションをビルド、**ビルド**メニューを選択して**ソリューションのビルド**です。</span><span class="sxs-lookup"><span data-stu-id="d373d-151">Save and build the solution by clicking the **Build** menu and selecting **Build Solution**.</span></span>  
   
-## ワークフロー サービス プロジェクトの構成  
- ワークフロー サービスは完成しました。  ここでは、ホストと実行を容易にするように、ワークフロー サービス ソリューションを構成する方法について説明します。  このソリューションでは、ASP.NET 開発サーバーを使用してサービスをホストします。  
+## <a name="configure-the-workflow-service-project"></a><span data-ttu-id="d373d-152">ワークフロー サービス プロジェクトの構成</span><span class="sxs-lookup"><span data-stu-id="d373d-152">Configure the Workflow Service Project</span></span>  
+ <span data-ttu-id="d373d-153">ワークフロー サービスは完成しました。</span><span class="sxs-lookup"><span data-stu-id="d373d-153">The workflow service is complete.</span></span> <span data-ttu-id="d373d-154">ここでは、ホストと実行を容易にするように、ワークフロー サービス ソリューションを構成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d373d-154">This section explains how to configure the workflow service solution to make it easy to host and run.</span></span> <span data-ttu-id="d373d-155">このソリューションでは、ASP.NET 開発サーバーを使用してサービスをホストします。</span><span class="sxs-lookup"><span data-stu-id="d373d-155">This solution uses the ASP.NET Development Server to host the service.</span></span>  
   
-#### プロジェクトのスタートアップ オプションを設定するには  
+#### <a name="to-set-project-start-up-options"></a><span data-ttu-id="d373d-156">プロジェクトのスタートアップ オプションを設定するには</span><span class="sxs-lookup"><span data-stu-id="d373d-156">To set project start up options</span></span>  
   
-1.  **ソリューション エクスプローラー**で **\[MyWFService\]** を右クリックし、**\[プロパティ\]** をクリックして **\[プロジェクトのプロパティ\]** ダイアログ ボックスを表示します。  
+1.  <span data-ttu-id="d373d-157">**ソリューション エクスプ ローラー**を右クリックして**MyWFService**選択**プロパティ**を表示する、**プロジェクトのプロパティ**ダイアログ。</span><span class="sxs-lookup"><span data-stu-id="d373d-157">In the **Solution Explorer**, right-click **MyWFService** and select **Properties** to display the **Project Properties** dialog.</span></span>  
   
-2.  **\[Web\]** タブを選択し、次の図に示すように、**\[開始動作\]** の **\[ページを指定する\]** を選択して、ボックスに「`Service1.xamlx`」と入力します。  
+2.  <span data-ttu-id="d373d-158">選択、 **Web** ] タブを選択**特定のページ**[**開始動作**と型`Service1.xamlx`テキスト ボックスの次の図に示すようにします。</span><span class="sxs-lookup"><span data-stu-id="d373d-158">Select the **Web** tab and select **Specific Page** under **Start Action** and type `Service1.xamlx` in the text box as shown in the following illustration.</span></span>  
   
-     ![プロジェクト プロパティ ダイアログ](../../../../docs/framework/wcf/feature-details/media/projectpropertiesdlg.JPG "ProjectPropertiesDlg")  
+     <span data-ttu-id="d373d-159">![プロジェクトの [プロパティ] ダイアログ ボックス](../../../../docs/framework/wcf/feature-details/media/projectpropertiesdlg.JPG "ProjectPropertiesDlg")</span><span class="sxs-lookup"><span data-stu-id="d373d-159">![The project properties dialog](../../../../docs/framework/wcf/feature-details/media/projectpropertiesdlg.JPG "ProjectPropertiesDlg")</span></span>  
   
-     これにより、ASP.NET 開発サーバーの Service1.xamlx で定義されたサービスがホストされます。  
+     <span data-ttu-id="d373d-160">これにより、ASP.NET 開発サーバーの Service1.xamlx で定義されたサービスがホストされます。</span><span class="sxs-lookup"><span data-stu-id="d373d-160">This hosts the service defined in Service1.xamlx in the ASP.NET Development Server.</span></span>  
   
-3.  Ctrl キーを押しながら F5 キーを押して、サービスを起動します。  次の図に示すように、ASP.NET 開発サーバーのアイコンが、デスクトップの右下側に表示されます。  
+3.  <span data-ttu-id="d373d-161">Ctrl キーを押しながら F5 キーを押して、サービスを起動します。</span><span class="sxs-lookup"><span data-stu-id="d373d-161">Press Ctrl + F5 to launch the service.</span></span> <span data-ttu-id="d373d-162">次の図に示すように、ASP.NET 開発サーバーのアイコンが、デスクトップの右下側に表示されます。</span><span class="sxs-lookup"><span data-stu-id="d373d-162">The ASP.NET Development Server icon is displayed in the lower right side of the desktop as shown in the following image.</span></span>  
   
-     ![ASP.NET Developer Server のアイコン](../../../../docs/framework/wcf/feature-details/media/aspnetdevservericon.JPG "ASPNETDEVServerIcon")  
+     <span data-ttu-id="d373d-163">![ASP.NET Developer Server のアイコン](../../../../docs/framework/wcf/feature-details/media/aspnetdevservericon.JPG "ASPNETDEVServerIcon")</span><span class="sxs-lookup"><span data-stu-id="d373d-163">![The ASP.NET Developer Server Icon](../../../../docs/framework/wcf/feature-details/media/aspnetdevservericon.JPG "ASPNETDEVServerIcon")</span></span>  
   
-     また、Internet Explorer に、サービスの WCF サービス ヘルプ ページが表示されます。  
+     <span data-ttu-id="d373d-164">また、Internet Explorer に、サービスの WCF サービス ヘルプ ページが表示されます。</span><span class="sxs-lookup"><span data-stu-id="d373d-164">In addition, Internet Explorer displays the WCF Service Help Page for the service.</span></span>  
   
-     ![WCF ヘルプ ページ](../../../../docs/framework/wcf/feature-details/media/wcfhelppate.JPG "WCFHelpPate")  
+     <span data-ttu-id="d373d-165">![WCF ヘルプ ページ](../../../../docs/framework/wcf/feature-details/media/wcfhelppate.JPG "WCFHelpPate")</span><span class="sxs-lookup"><span data-stu-id="d373d-165">![WCF Help Page](../../../../docs/framework/wcf/feature-details/media/wcfhelppate.JPG "WCFHelpPate")</span></span>  
   
-4.  「[方法: ワークフロー アプリケーションからサービスにアクセスする](../../../../docs/framework/wcf/feature-details/how-to-access-a-service-from-a-workflow-application.md)」トピックに進み、このサービスを呼び出すワークフロー クライアントを作成します。  
+4.  <span data-ttu-id="d373d-166">進んで、 [How To: サービス アプリケーションからアクセスする、ワークフロー](../../../../docs/framework/wcf/feature-details/how-to-access-a-service-from-a-workflow-application.md)このサービスを呼び出すワークフロー クライアントを作成するトピックです。</span><span class="sxs-lookup"><span data-stu-id="d373d-166">Continue on to the [How To: Access a Service From a Workflow Application](../../../../docs/framework/wcf/feature-details/how-to-access-a-service-from-a-workflow-application.md) topic to create a workflow client that calls this service.</span></span>  
   
-## 参照  
- [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)   
- [ワークフロー サービスのホストの概要](../../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md)   
- [メッセージング アクティビティ](../../../../docs/framework/wcf/feature-details/messaging-activities.md)
+## <a name="see-also"></a><span data-ttu-id="d373d-167">関連項目</span><span class="sxs-lookup"><span data-stu-id="d373d-167">See Also</span></span>  
+ [<span data-ttu-id="d373d-168">ワークフロー サービス</span><span class="sxs-lookup"><span data-stu-id="d373d-168">Workflow Services</span></span>](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
+ [<span data-ttu-id="d373d-169">ホスト ワークフロー サービスの概要</span><span class="sxs-lookup"><span data-stu-id="d373d-169">Hosting Workflow Services Overview</span></span>](../../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md)  
+ [<span data-ttu-id="d373d-170">メッセージング アクティビティ</span><span class="sxs-lookup"><span data-stu-id="d373d-170">Messaging Activities</span></span>](../../../../docs/framework/wcf/feature-details/messaging-activities.md)

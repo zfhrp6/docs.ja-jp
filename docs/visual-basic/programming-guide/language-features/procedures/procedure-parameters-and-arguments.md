@@ -1,81 +1,80 @@
 ---
-title: "Procedure Parameters and Arguments (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "procedures, arguments"
-  - "procedures, argument lists"
-  - "values, passing to procedures"
-  - "arguments [Visual Basic], passing"
-  - "procedures, parameters"
-  - "Visual Basic code, argument lists"
-  - "Visual Basic code, procedures"
-  - "parameters, Visual Basic procedures"
-  - "parameters, lists"
-  - "arguments [Visual Basic], Visual Basic procedures"
-  - "arguments [Visual Basic], procedures"
-  - "parameter lists"
-  - "Visual Basic code, parameter lists"
-  - "argument lists"
-  - "procedures, parameter lists"
+title: "プロシージャのパラメーターと引数 (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- procedures [Visual Basic], arguments
+- procedures [Visual Basic], argument lists
+- values [Visual Basic], passing to procedures
+- arguments [Visual Basic], passing
+- procedures [Visual Basic], parameters
+- Visual Basic code, argument lists
+- Visual Basic code, procedures
+- parameters [Visual Basic], Visual Basic procedures
+- parameters [Visual Basic], lists
+- arguments [Visual Basic], Visual Basic procedures
+- arguments [Visual Basic], procedures
+- parameter lists [Visual Basic]
+- Visual Basic code, parameter lists
+- argument lists [Visual Basic]
+- procedures [Visual Basic], parameter lists
 ms.assetid: ff275aff-aa13-40df-bd4c-63486db8c1e9
-caps.latest.revision: 21
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 726667950cfb227a0359bd6238c202883561749c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Procedure Parameters and Arguments (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-プロシージャは、ほとんどの場合、呼び出されたときの状況に関する情報を必要とします。  繰り返し実行されるタスクや共有されているタスクを実行するプロシージャは、呼び出されるたびに異なる情報を使用します。  この情報は、プロシージャを呼び出すときに渡される変数、定数、および式から構成されています。  
+# <a name="procedure-parameters-and-arguments-visual-basic"></a><span data-ttu-id="fc541-102">プロシージャのパラメーターと引数 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fc541-102">Procedure Parameters and Arguments (Visual Basic)</span></span>
+<span data-ttu-id="fc541-103">ほとんどの場合、プロシージャが呼び出されたときの状況に関する情報を必要とします。</span><span class="sxs-lookup"><span data-stu-id="fc541-103">In most cases, a procedure needs some information about the circumstances in which it has been called.</span></span> <span data-ttu-id="fc541-104">繰り返しまたは共有のタスクを実行する手順は、呼び出しごとに異なる情報を使用します。</span><span class="sxs-lookup"><span data-stu-id="fc541-104">A procedure that performs repeated or shared tasks uses different information for each call.</span></span> <span data-ttu-id="fc541-105">この情報は、変数、定数、およびメソッドを呼び出すときに、プロシージャに渡す式で構成されます。</span><span class="sxs-lookup"><span data-stu-id="fc541-105">This information consists of variables, constants, and expressions that you pass to the procedure when you call it.</span></span>  
   
- *パラメーター*は、プロシージャが呼び出されるときに期待する値を表します。  パラメーターは、プロシージャの宣言で定義されます。  
+ <span data-ttu-id="fc541-106">A*パラメーター*プロシージャには、このメソッドを呼び出すときに指定することが期待される値を表します。</span><span class="sxs-lookup"><span data-stu-id="fc541-106">A *parameter* represents a value that the procedure expects you to supply when you call it.</span></span> <span data-ttu-id="fc541-107">プロシージャの宣言では、そのパラメーターを定義します。</span><span class="sxs-lookup"><span data-stu-id="fc541-107">The procedure's declaration defines its parameters.</span></span>  
   
- プロシージャは、パラメーターなしでも、1 つのパラメーターでも、複数のパラメーターでも定義できます。  プロシージャの定義のうち、パラメーターを指定する部分を*パラメーター リスト*と呼びます。  
+ <span data-ttu-id="fc541-108">パラメーターを指定せず、1 つのパラメーター、または 1 つ以上を持つプロシージャを定義することができます。</span><span class="sxs-lookup"><span data-stu-id="fc541-108">You can define a procedure with no parameters, one parameter, or more than one.</span></span> <span data-ttu-id="fc541-109">パラメーターを指定するプロシージャの定義の一部と呼ばれる、*パラメーター リスト*です。</span><span class="sxs-lookup"><span data-stu-id="fc541-109">The part of the procedure definition that specifies the parameters is called the *parameter list*.</span></span>  
   
- *引数*は、プロシージャを呼び出すときに、プロシージャのパラメーターに渡す値を表します。  呼び出し元のコードは、プロシージャを呼び出すときに引数を渡します。  プロシージャ呼び出しのうち、引数を指定する部分を*引数リスト*と呼びます。  
+ <span data-ttu-id="fc541-110">*引数*プロシージャを呼び出す場合、プロシージャのパラメーターに指定した値を表します。</span><span class="sxs-lookup"><span data-stu-id="fc541-110">An *argument* represents the value you supply to a procedure parameter when you call the procedure.</span></span> <span data-ttu-id="fc541-111">呼び出し元のコードは、プロシージャを呼び出すときに、引数を指定します。</span><span class="sxs-lookup"><span data-stu-id="fc541-111">The calling code supplies the arguments when it calls the procedure.</span></span> <span data-ttu-id="fc541-112">引数を指定するプロシージャ呼び出しの一部と呼ばれる、*引数リスト*です。</span><span class="sxs-lookup"><span data-stu-id="fc541-112">The part of the procedure call that specifies the arguments is called the *argument list*.</span></span>  
   
- 次の図は、プロシージャ `safeSquareRoot` を 2 つの場所から呼び出すコードを示したものです。  最初の呼び出しでは、変数 `x` の値 \(4.0\) をパラメーター `number` に渡し、`root` の戻り値 \(2.0\) が変数 `y` に代入されます。  2 番目の呼び出しでは、リテラル値 9.0 を `number` に渡し、戻り値 \(3.0\) を変数 `z` に代入します。  
+ <span data-ttu-id="fc541-113">次の図は、プロシージャを呼び出すコード`safeSquareRoot`2 つの異なる場所からします。</span><span class="sxs-lookup"><span data-stu-id="fc541-113">The following illustration shows code calling the procedure `safeSquareRoot` from two different places.</span></span> <span data-ttu-id="fc541-114">最初の呼び出しは、変数の値を渡します`x`(4.0) パラメーターに`number`、され、戻り値で`root`(2.0)、変数に割り当てられた`y`です。</span><span class="sxs-lookup"><span data-stu-id="fc541-114">The first call passes the value of the variable `x` (4.0) to the parameter `number`, and the return value in `root` (2.0) is assigned to the variable `y`.</span></span> <span data-ttu-id="fc541-115">2 番目の呼び出しにリテラル値 9.0 に渡します`number`、戻り値 (3.0) を変数に代入し、`z`です。</span><span class="sxs-lookup"><span data-stu-id="fc541-115">The second call passes the literal value 9.0 to `number`, and assigns the return value (3.0) to variable `z`.</span></span>  
   
- ![パラメーターに引数を渡すグラフィック ダイアグラム](../../../../visual-basic/programming-guide/language-features/procedures/media/parametersargue.gif "ParametersArgue")  
-パラメーターに引数を渡す  
+ <span data-ttu-id="fc541-116">![パラメーターに引数を渡すグラフィック ダイアグラム](./media/parametersargue.gif "ParametersArgue")</span><span class="sxs-lookup"><span data-stu-id="fc541-116">![Graphic diagram of passing argument to parameter](./media/parametersargue.gif "ParametersArgue")</span></span>  
+<span data-ttu-id="fc541-117">パラメーターに引数を渡す</span><span class="sxs-lookup"><span data-stu-id="fc541-117">Passing an argument to a parameter</span></span>  
   
- 詳細については、「[Differences Between Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/differences-between-parameters-and-arguments.md)」を参照してください。  
+ <span data-ttu-id="fc541-118">詳細については、次を参照してください。[の相違点の間でパラメーターと引数](./differences-between-parameters-and-arguments.md)です。</span><span class="sxs-lookup"><span data-stu-id="fc541-118">For more information, see [Differences Between Parameters and Arguments](./differences-between-parameters-and-arguments.md).</span></span>  
   
-## パラメーターのデータ型  
- パラメーターのデータ型を宣言するには、パラメーターの宣言の中で `As` 句を使用します。  たとえば、次の関数は、文字列型と整数型の引数を受け取ります。  
+## <a name="parameter-data-type"></a><span data-ttu-id="fc541-119">パラメーターのデータ型</span><span class="sxs-lookup"><span data-stu-id="fc541-119">Parameter Data Type</span></span>  
+ <span data-ttu-id="fc541-120">使用して、パラメーターのデータ型を定義する、`As`宣言内の句。</span><span class="sxs-lookup"><span data-stu-id="fc541-120">You define a data type for a parameter by using the `As` clause in its declaration.</span></span> <span data-ttu-id="fc541-121">たとえば、次の関数は、文字列と整数を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="fc541-121">For example, the following function accepts a string and an integer.</span></span>  
   
  [!code-vb[VbVbcnProcedures#32](./codesnippet/VisualBasic/procedure-parameters-and-arguments_1.vb)]  
   
- 型チェック スイッチ \([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)\) が `Off,` の場合、`As` 句は省略可能です。ただし、いずれかのパラメーターがこれを使用している場合は、すべてのパラメーターで使用する必要があります。  型チェックが `On` になっている場合は、プロシージャのすべての引数に `As` 句が必要です。  
+ <span data-ttu-id="fc541-122">型チェック スイッチの場合 ([Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) は`Off,`、`As`ことを除き、すべてのパラメーターがそれを使用する必要があります任意の 1 つのパラメーターが使用している場合は、句は省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fc541-122">If the type checking switch ([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) is `Off,` the `As` clause is optional, except that if any one parameter uses it, all parameters must use it.</span></span> <span data-ttu-id="fc541-123">型チェックが場合`On`、`As`句はすべてのプロシージャのパラメーターは必須です。</span><span class="sxs-lookup"><span data-stu-id="fc541-123">If type checking is `On`, the `As` clause is required for all procedure parameters.</span></span>  
   
- `String` パラメーターに `Byte` を渡すなど、呼び出し元のコードが、対応するパラメーターとは異なるデータ型の引数を渡す場合、次のいずれかの作業が必要です。  
+ <span data-ttu-id="fc541-124">呼び出し元のコードがなど、対応するパラメーターの異なるデータ型の引数を指定するかどうかは`Byte`を`String`パラメーターを次のいずれかの操作にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="fc541-124">If the calling code expects to supply an argument with a data type different from that of its corresponding parameter, such as `Byte` to a `String` parameter, it must do one of the following:</span></span>  
   
--   パラメーターのデータ型に拡大変換されるデータ型の引数だけを渡す  
+-   <span data-ttu-id="fc541-125">パラメーターのデータ型に拡大変換するデータ型の引数だけを渡す</span><span class="sxs-lookup"><span data-stu-id="fc541-125">Supply only arguments with data types that widen to the parameter data type;</span></span>  
   
--   暗黙の縮小変換を許可する `Option Strict Off` を設定する  
+-   <span data-ttu-id="fc541-126">設定`Option Strict Off`暗黙的な縮小変換です使用できるように、または。</span><span class="sxs-lookup"><span data-stu-id="fc541-126">Set `Option Strict Off` to allow implicit narrowing conversions; or</span></span>  
   
--   変換キーワードを使用してデータ型を明示的に変換する  
+-   <span data-ttu-id="fc541-127">変換キーワードを使用して、データ型を明示的に変換します。</span><span class="sxs-lookup"><span data-stu-id="fc541-127">Use a conversion keyword to explicitly convert the data type.</span></span>  
   
-### 型パラメーター。  
- *ジェネリック プロシージャ* も、通常のパラメーターの他に 1 つ以上の*型パラメーター*を定義します。  ジェネリック プロシージャを使うと、呼び出し元のコードは、プロシージャを呼び出すたびに異なるデータ型を渡すことができるため、個々の呼び出しの要件に合わせてデータ型を変更できます。  [Generic Procedures in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md) を参照してください。  
+### <a name="type-parameters"></a><span data-ttu-id="fc541-128">型パラメーター</span><span class="sxs-lookup"><span data-stu-id="fc541-128">Type Parameters</span></span>  
+ <span data-ttu-id="fc541-129">A*ジェネリック プロシージャ*も 1 つまたは複数定義されて*パラメーター入力*だけでなく、通常のパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="fc541-129">A *generic procedure* also defines one or more *type parameters* in addition to its normal parameters.</span></span> <span data-ttu-id="fc541-130">ジェネリック プロシージャでは、個々 の呼び出しの要件をデータ型を調整できるように、プロシージャを呼び出すたびに異なるデータ型を渡すには、呼び出し元のコードを許可します。</span><span class="sxs-lookup"><span data-stu-id="fc541-130">A generic procedure allows the calling code to pass different data types each time it calls the procedure, so it can tailor the data types to the requirements of each individual call.</span></span> <span data-ttu-id="fc541-131">「 [Generic Procedures in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="fc541-131">See [Generic Procedures in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md).</span></span>  
   
-## 参照  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Sub Procedures](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md)   
- [Function プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)   
- [Property プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)   
- [Operator Procedures](../../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)   
- [How to: Define a Parameter for a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-parameter-for-a-procedure.md)   
- [How to: Pass Arguments to a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-pass-arguments-to-a-procedure.md)   
- [Passing Arguments by Value and by Reference](../../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)   
- [Procedure Overloading](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)   
- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+## <a name="see-also"></a><span data-ttu-id="fc541-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="fc541-132">See Also</span></span>  
+ [<span data-ttu-id="fc541-133">手順</span><span class="sxs-lookup"><span data-stu-id="fc541-133">Procedures</span></span>](./index.md)  
+ [<span data-ttu-id="fc541-134">Sub プロシージャ</span><span class="sxs-lookup"><span data-stu-id="fc541-134">Sub Procedures</span></span>](./sub-procedures.md)  
+ [<span data-ttu-id="fc541-135">Function プロシージャ</span><span class="sxs-lookup"><span data-stu-id="fc541-135">Function Procedures</span></span>](./function-procedures.md)  
+ [<span data-ttu-id="fc541-136">Property プロシージャ</span><span class="sxs-lookup"><span data-stu-id="fc541-136">Property Procedures</span></span>](./property-procedures.md)  
+ [<span data-ttu-id="fc541-137">演算子プロシージャ</span><span class="sxs-lookup"><span data-stu-id="fc541-137">Operator Procedures</span></span>](./operator-procedures.md)  
+ [<span data-ttu-id="fc541-138">方法 : プロシージャにパラメーターを定義する</span><span class="sxs-lookup"><span data-stu-id="fc541-138">How to: Define a Parameter for a Procedure</span></span>](./how-to-define-a-parameter-for-a-procedure.md)  
+ [<span data-ttu-id="fc541-139">方法: プロシージャに引数を渡す</span><span class="sxs-lookup"><span data-stu-id="fc541-139">How to: Pass Arguments to a Procedure</span></span>](./how-to-pass-arguments-to-a-procedure.md)  
+ [<span data-ttu-id="fc541-140">引数の値渡しと参照渡し</span><span class="sxs-lookup"><span data-stu-id="fc541-140">Passing Arguments by Value and by Reference</span></span>](./passing-arguments-by-value-and-by-reference.md)  
+ [<span data-ttu-id="fc541-141">プロシージャのオーバーロード</span><span class="sxs-lookup"><span data-stu-id="fc541-141">Procedure Overloading</span></span>](./procedure-overloading.md)  
+ [<span data-ttu-id="fc541-142">Visual Basic での型変換</span><span class="sxs-lookup"><span data-stu-id="fc541-142">Type Conversions in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)

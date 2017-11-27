@@ -1,71 +1,71 @@
 ---
-title: "ListView コントロールの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ListView"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "リスト ビュー"
-  - "一覧"
-  - "ListView コントロール [Windows フォーム], ListView コントロールの概要"
+title: "ListView コントロールの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: ListView
+helpviewer_keywords:
+- lists
+- ListView control [Windows Forms], about ListView control
+- list views
 ms.assetid: c9ef56c1-3bb1-4101-9f4e-e95e720f2756
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bda009beb429345d05aeba4e04f2ce1f07e627da
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ListView コントロールの概要 (Windows フォーム)
-Windows フォームの <xref:System.Windows.Forms.ListView> コントロールは、項目をアイコンと一緒に一覧表示します。  リスト ビューを使用すると、Windows エクスプローラーの右側のペインのようなユーザー インターフェイスを作成できます。  このコントロールには、LargeIcon、SmallIcon、List、Details の 4 つのビュー モードがあります。  
+# <a name="listview-control-overview-windows-forms"></a><span data-ttu-id="1c35c-102">ListView コントロールの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="1c35c-102">ListView Control Overview (Windows Forms)</span></span>
+<span data-ttu-id="1c35c-103">Windows フォーム <xref:System.Windows.Forms.ListView> コントロールにはアイコン表示で項目の一覧が表示されます。</span><span class="sxs-lookup"><span data-stu-id="1c35c-103">The Windows Forms <xref:System.Windows.Forms.ListView> control displays a list of items with icons.</span></span> <span data-ttu-id="1c35c-104">リスト ビューを使用すると、Windows エクスプローラーの右側のペインのようなユーザー インターフェイスを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="1c35c-104">You can use a list view to create a user interface like the right pane of Windows Explorer.</span></span> <span data-ttu-id="1c35c-105">コントロールが 4 つの表示モード: LargeIcon、SmallIcon、リスト、および詳細。</span><span class="sxs-lookup"><span data-stu-id="1c35c-105">The control has four view modes: LargeIcon, SmallIcon, List, and Details.</span></span>  
   
-## ListView コントロールで可能なこと  
+## <a name="what-you-can-do-with-the-listview-control"></a><span data-ttu-id="1c35c-106">ListView コントロールに行うことができます。</span><span class="sxs-lookup"><span data-stu-id="1c35c-106">What You Can Do with the ListView Control</span></span>  
   
 > [!NOTE]
->  新しく追加されたビュー モードである、並べて表示モードは、Windows XP と Windows Server 2003 の各オペレーティング システムでのみ使用できます。  詳細については、「[方法 : Windows フォーム ListView コントロールの "並べて表示" ビューを有効にする](../../../../docs/framework/winforms/controls/how-to-enable-tile-view-in-a-windows-forms-listview-control.md)」を参照してください。  
+>  <span data-ttu-id="1c35c-107">タイルで、追加の表示モードは Windows XP および Windows Server 2003 オペレーティング システムではできるだけです。</span><span class="sxs-lookup"><span data-stu-id="1c35c-107">An additional view mode, Tile, is only available on Windows XP and the Windows Server 2003 operating system.</span></span> <span data-ttu-id="1c35c-108">詳細については、次を参照してください。[する方法: Windows フォーム ListView コントロールの並べて表示ビューを有効にする](../../../../docs/framework/winforms/controls/how-to-enable-tile-view-in-a-windows-forms-listview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="1c35c-108">For more information, see [How to: Enable Tile View in a Windows Forms ListView Control](../../../../docs/framework/winforms/controls/how-to-enable-tile-view-in-a-windows-forms-listview-control.md).</span></span>  
   
- LargeIcon モードでは、項目のテキストのそばに大きなアイコンが表示されます。コントロールが十分に大きい場合は、項目が複数の列に表示されます。  SmallIcon モードは、表示されるアイコンが小さい点を除けば LargeIcon モードと同じです。  List モードでは、小さなアイコンが表示されますが、項目は必ず 1 列で表示されます。  Details モードでは、各項目に関する情報が複数の列に表示されます。  詳細については、「[方法 : Windows フォーム ListView コントロールに列を追加する](../../../../docs/framework/winforms/controls/how-to-add-columns-to-the-windows-forms-listview-control.md)」を参照してください。  ビュー モードは、<xref:System.Windows.Forms.ListView.View%2A> プロパティによって決定されます。  いずれのモードでも、イメージ リストのイメージを表示できます。  詳細については、「[方法 : Windows フォーム ListView コントロールのアイコンを表示する](../../../../docs/framework/winforms/controls/how-to-display-icons-for-the-windows-forms-listview-control.md)」を参照してください。  
+ <span data-ttu-id="1c35c-109">LargeIcon モードには、項目のテキストの横にある大きいアイコンが表示されます。項目は、コントロールが十分な大きさである場合に、複数の列に表示されます。</span><span class="sxs-lookup"><span data-stu-id="1c35c-109">The LargeIcon mode displays large icons next to the item text; the items appear in multiple columns if the control is large enough.</span></span> <span data-ttu-id="1c35c-110">SmallIcon モードでは、小さいアイコンを表示する点を除いて同じです。</span><span class="sxs-lookup"><span data-stu-id="1c35c-110">The SmallIcon mode is the same except that it displays small icons.</span></span> <span data-ttu-id="1c35c-111">一覧モードでは、小さいアイコンが表示されますは常に 1 つの列であります。</span><span class="sxs-lookup"><span data-stu-id="1c35c-111">The List mode displays small icons but is always in a single column.</span></span> <span data-ttu-id="1c35c-112">詳細モードでは、複数の列に項目が表示されます。</span><span class="sxs-lookup"><span data-stu-id="1c35c-112">The Details mode displays items in multiple columns.</span></span> <span data-ttu-id="1c35c-113">詳細については、「[する方法: Windows フォーム ListView コントロール列の追加](../../../../docs/framework/winforms/controls/how-to-add-columns-to-the-windows-forms-listview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="1c35c-113">For details, see [How to: Add Columns to the Windows Forms ListView Control](../../../../docs/framework/winforms/controls/how-to-add-columns-to-the-windows-forms-listview-control.md).</span></span> <span data-ttu-id="1c35c-114">表示モードはによって決定されます、<xref:System.Windows.Forms.ListView.View%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="1c35c-114">The view mode is determined by the <xref:System.Windows.Forms.ListView.View%2A> property.</span></span> <span data-ttu-id="1c35c-115">イメージ リストのイメージの表示モードがすべて表示できます。</span><span class="sxs-lookup"><span data-stu-id="1c35c-115">All of the view modes can display images from image lists.</span></span> <span data-ttu-id="1c35c-116">詳細については、「[する方法: Windows フォーム ListView コントロールの表示アイコン](../../../../docs/framework/winforms/controls/how-to-display-icons-for-the-windows-forms-listview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="1c35c-116">For details, see [How to: Display Icons for the Windows Forms ListView Control](../../../../docs/framework/winforms/controls/how-to-display-icons-for-the-windows-forms-listview-control.md).</span></span>  
   
- 次の表では、<xref:System.Windows.Forms.ListView> のメンバーの一部およびそれらが有効であるビューを一覧しています。  
+ <span data-ttu-id="1c35c-117">次の表の一覧、<xref:System.Windows.Forms.ListView>メンバーおよびで有効であるビューです。</span><span class="sxs-lookup"><span data-stu-id="1c35c-117">The following table lists some of the <xref:System.Windows.Forms.ListView> members and the views they are valid in.</span></span>  
   
-|ListView メンバー|ビュー|  
-|-------------------|---------|  
-|<xref:System.Windows.Forms.ListView.Alignment%2A> プロパティ|<xref:System.Windows.Forms.View> または <xref:System.Windows.Forms.View>|  
-|<xref:System.Windows.Forms.ListView.AutoArrange%2A> プロパティ|<xref:System.Windows.Forms.View> または <xref:System.Windows.Forms.View>|  
-|<xref:System.Windows.Forms.ListView.AutoResizeColumn%2A> メソッド|<xref:System.Windows.Forms.View>|  
-|<xref:System.Windows.Forms.ListView.Columns%2A> プロパティ|<xref:System.Windows.Forms.View> または <xref:System.Windows.Forms.View>|  
-|<xref:System.Windows.Forms.ListView.DrawSubItem> イベント|<xref:System.Windows.Forms.View>|  
-|<xref:System.Windows.Forms.ListView.FindItemWithText%2A> メソッド|<xref:System.Windows.Forms.View>、<xref:System.Windows.Forms.View>、または <xref:System.Windows.Forms.View>|  
-|<xref:System.Windows.Forms.ListView.FindNearestItem%2A> メソッド|<xref:System.Windows.Forms.View> または <xref:System.Windows.Forms.View>|  
-|<xref:System.Windows.Forms.ListView.GetItemAt%2A> メソッド|<xref:System.Windows.Forms.View> または <xref:System.Windows.Forms.View>|  
-|<xref:System.Windows.Forms.ListView.Groups%2A> プロパティ|<xref:System.Windows.Forms.View> 以外のすべてのビュー|  
-|<xref:System.Windows.Forms.ListView.HeaderStyle%2A> プロパティ|<xref:System.Windows.Forms.View>.|  
-|<xref:System.Windows.Forms.ListView.InsertionMark%2A> プロパティ|<xref:System.Windows.Forms.View>、<xref:System.Windows.Forms.View>、または <xref:System.Windows.Forms.View>|  
+|<span data-ttu-id="1c35c-118">ListView のメンバー</span><span class="sxs-lookup"><span data-stu-id="1c35c-118">ListView member</span></span>|<span data-ttu-id="1c35c-119">表示</span><span class="sxs-lookup"><span data-stu-id="1c35c-119">View</span></span>|  
+|---------------------|----------|  
+|<span data-ttu-id="1c35c-120"><xref:System.Windows.Forms.ListView.Alignment%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="1c35c-120"><xref:System.Windows.Forms.ListView.Alignment%2A> property</span></span>|<span data-ttu-id="1c35c-121"><xref:System.Windows.Forms.View.SmallIcon> または <xref:System.Windows.Forms.View.LargeIcon></span><span class="sxs-lookup"><span data-stu-id="1c35c-121"><xref:System.Windows.Forms.View.SmallIcon> or <xref:System.Windows.Forms.View.LargeIcon></span></span>|  
+|<span data-ttu-id="1c35c-122"><xref:System.Windows.Forms.ListView.AutoArrange%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="1c35c-122"><xref:System.Windows.Forms.ListView.AutoArrange%2A> property</span></span>|<span data-ttu-id="1c35c-123"><xref:System.Windows.Forms.View.SmallIcon> または <xref:System.Windows.Forms.View.LargeIcon></span><span class="sxs-lookup"><span data-stu-id="1c35c-123"><xref:System.Windows.Forms.View.SmallIcon> or <xref:System.Windows.Forms.View.LargeIcon></span></span>|  
+|<span data-ttu-id="1c35c-124"><xref:System.Windows.Forms.ListView.AutoResizeColumn%2A> メソッド</span><span class="sxs-lookup"><span data-stu-id="1c35c-124"><xref:System.Windows.Forms.ListView.AutoResizeColumn%2A> method</span></span>|<xref:System.Windows.Forms.View.Details>|  
+|<span data-ttu-id="1c35c-125"><xref:System.Windows.Forms.ListView.Columns%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="1c35c-125"><xref:System.Windows.Forms.ListView.Columns%2A> property</span></span>|<span data-ttu-id="1c35c-126"><xref:System.Windows.Forms.View.Details> または <xref:System.Windows.Forms.View.Tile></span><span class="sxs-lookup"><span data-stu-id="1c35c-126"><xref:System.Windows.Forms.View.Details> or <xref:System.Windows.Forms.View.Tile></span></span>|  
+|<span data-ttu-id="1c35c-127"><xref:System.Windows.Forms.ListView.DrawSubItem> イベント</span><span class="sxs-lookup"><span data-stu-id="1c35c-127"><xref:System.Windows.Forms.ListView.DrawSubItem> event</span></span>|<xref:System.Windows.Forms.View.Details>|  
+|<span data-ttu-id="1c35c-128"><xref:System.Windows.Forms.ListView.FindItemWithText%2A> メソッド</span><span class="sxs-lookup"><span data-stu-id="1c35c-128"><xref:System.Windows.Forms.ListView.FindItemWithText%2A> method</span></span>|<span data-ttu-id="1c35c-129"><xref:System.Windows.Forms.View.Details>、<xref:System.Windows.Forms.View.List>、または <xref:System.Windows.Forms.View.Tile></span><span class="sxs-lookup"><span data-stu-id="1c35c-129"><xref:System.Windows.Forms.View.Details>, <xref:System.Windows.Forms.View.List>, or <xref:System.Windows.Forms.View.Tile></span></span>|  
+|<span data-ttu-id="1c35c-130"><xref:System.Windows.Forms.ListView.FindNearestItem%2A> メソッド</span><span class="sxs-lookup"><span data-stu-id="1c35c-130"><xref:System.Windows.Forms.ListView.FindNearestItem%2A> method</span></span>|<span data-ttu-id="1c35c-131"><xref:System.Windows.Forms.View.SmallIcon> または <xref:System.Windows.Forms.View.LargeIcon></span><span class="sxs-lookup"><span data-stu-id="1c35c-131"><xref:System.Windows.Forms.View.SmallIcon> or <xref:System.Windows.Forms.View.LargeIcon></span></span>|  
+|<span data-ttu-id="1c35c-132"><xref:System.Windows.Forms.ListView.GetItemAt%2A> メソッド</span><span class="sxs-lookup"><span data-stu-id="1c35c-132"><xref:System.Windows.Forms.ListView.GetItemAt%2A> method</span></span>|<span data-ttu-id="1c35c-133"><xref:System.Windows.Forms.View.Details> または <xref:System.Windows.Forms.View.Tile></span><span class="sxs-lookup"><span data-stu-id="1c35c-133"><xref:System.Windows.Forms.View.Details> or <xref:System.Windows.Forms.View.Tile></span></span>|  
+|<span data-ttu-id="1c35c-134"><xref:System.Windows.Forms.ListView.Groups%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="1c35c-134"><xref:System.Windows.Forms.ListView.Groups%2A> property</span></span>|<span data-ttu-id="1c35c-135">除くすべてのビュー<xref:System.Windows.Forms.View.List></span><span class="sxs-lookup"><span data-stu-id="1c35c-135">All views except <xref:System.Windows.Forms.View.List></span></span>|  
+|<span data-ttu-id="1c35c-136"><xref:System.Windows.Forms.ListView.HeaderStyle%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="1c35c-136"><xref:System.Windows.Forms.ListView.HeaderStyle%2A> property</span></span>|<span data-ttu-id="1c35c-137"><xref:System.Windows.Forms.View.Details>。</span><span class="sxs-lookup"><span data-stu-id="1c35c-137"><xref:System.Windows.Forms.View.Details>.</span></span>|  
+|<span data-ttu-id="1c35c-138"><xref:System.Windows.Forms.ListView.InsertionMark%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="1c35c-138"><xref:System.Windows.Forms.ListView.InsertionMark%2A> property</span></span>|<span data-ttu-id="1c35c-139"><xref:System.Windows.Forms.View.LargeIcon>、<xref:System.Windows.Forms.View.SmallIcon>、または <xref:System.Windows.Forms.View.Tile></span><span class="sxs-lookup"><span data-stu-id="1c35c-139"><xref:System.Windows.Forms.View.LargeIcon>, <xref:System.Windows.Forms.View.SmallIcon>, or <xref:System.Windows.Forms.View.Tile></span></span>|  
   
- <xref:System.Windows.Forms.ListView> コントロールの主要プロパティは <xref:System.Windows.Forms.ListView.Items%2A> です。このプロパティは、コントロールによって表示される項目を保持します。  <xref:System.Windows.Forms.ListView.SelectedItems%2A> プロパティは、コントロールで現在選択されている項目を保持します。  <xref:System.Windows.Forms.ListView.MultiSelect%2A> プロパティが `true` に設定されている場合、ユーザーは複数の項目を選択できます。たとえば、一度に複数の項目を別のコントロールにドラッグ アンド ドロップできます。  <xref:System.Windows.Forms.ListView.CheckBoxes%2A> プロパティが `true` に設定されている場合、<xref:System.Windows.Forms.ListView> コントロールでは、項目の横にチェック ボックスを表示できます。  
+ <span data-ttu-id="1c35c-140">キー プロパティ、<xref:System.Windows.Forms.ListView>コントロールが<xref:System.Windows.Forms.ListView.Items%2A>、コントロールによって表示される項目が含まれています。</span><span class="sxs-lookup"><span data-stu-id="1c35c-140">The key property of the <xref:System.Windows.Forms.ListView> control is <xref:System.Windows.Forms.ListView.Items%2A>, which contains the items displayed by the control.</span></span> <span data-ttu-id="1c35c-141"><xref:System.Windows.Forms.ListView.SelectedItems%2A>プロパティには、コントロールで現在選択されている項目のコレクションが含まれています。</span><span class="sxs-lookup"><span data-stu-id="1c35c-141">The <xref:System.Windows.Forms.ListView.SelectedItems%2A> property contains a collection of the items currently selected in the control.</span></span> <span data-ttu-id="1c35c-142">ユーザーがドラッグ アンド場合、別のコントロールには、一度にいくつかの項目をドロップする例については、複数の項目を選択できる、<xref:System.Windows.Forms.ListView.MultiSelect%2A>プロパティに設定されている`true`です。</span><span class="sxs-lookup"><span data-stu-id="1c35c-142">The user can select multiple items, for example to drag and drop several items at a time to another control, if the <xref:System.Windows.Forms.ListView.MultiSelect%2A> property is set to `true`.</span></span> <span data-ttu-id="1c35c-143"><xref:System.Windows.Forms.ListView>場合、コントロールは、項目の横にチェック ボックスを表示できます、<xref:System.Windows.Forms.ListView.CheckBoxes%2A>プロパティに設定されている`true`です。</span><span class="sxs-lookup"><span data-stu-id="1c35c-143">The <xref:System.Windows.Forms.ListView> control can display check boxes next to the items, if the <xref:System.Windows.Forms.ListView.CheckBoxes%2A> property is set to `true`.</span></span>  
   
- <xref:System.Windows.Forms.ListView.Activation%2A> プロパティは、リスト内の項目をアクティブにするためにユーザーが実行する必要のある操作を決定します。指定できるオプションは、<xref:System.Windows.Forms.ItemActivation>、<xref:System.Windows.Forms.ItemActivation>、および <xref:System.Windows.Forms.ItemActivation> です。  アクティブ化する操作が <xref:System.Windows.Forms.ItemActivation> の場合、項目をアクティブにするにはシングル クリックする必要があります。  <xref:System.Windows.Forms.ItemActivation> の場合は、項目をアクティブにするには、ダブルクリックする必要があります。シングル クリックすると、項目テキストの色が変わります。  <xref:System.Windows.Forms.ItemActivation> の場合は、項目をアクティブにするには、ダブルクリックする必要がありますが、外観は変わりません。  
+ <span data-ttu-id="1c35c-144"><xref:System.Windows.Forms.ListView.Activation%2A>プロパティは、アクションの種類、ユーザーは、リスト内の項目をアクティブに実行する必要がありますを決定します。 オプションは、 <xref:System.Windows.Forms.ItemActivation.Standard>、 <xref:System.Windows.Forms.ItemActivation.OneClick>、と<xref:System.Windows.Forms.ItemActivation.TwoClick>。</span><span class="sxs-lookup"><span data-stu-id="1c35c-144">The <xref:System.Windows.Forms.ListView.Activation%2A> property determines what type of action the user must take to activate an item in the list: the options are <xref:System.Windows.Forms.ItemActivation.Standard>, <xref:System.Windows.Forms.ItemActivation.OneClick>, and <xref:System.Windows.Forms.ItemActivation.TwoClick>.</span></span> <span data-ttu-id="1c35c-145"><xref:System.Windows.Forms.ItemActivation.OneClick>アクティブ化には、シングル クリックで項目をアクティブ化が必要です。</span><span class="sxs-lookup"><span data-stu-id="1c35c-145"><xref:System.Windows.Forms.ItemActivation.OneClick> activation requires a single click to activate the item.</span></span> <span data-ttu-id="1c35c-146"><xref:System.Windows.Forms.ItemActivation.TwoClick>アクティブ化をダブルクリックすると、アイテムをアクティブ化ユーザーが必要です。1 回のクリックでは、項目のテキストの色を変更します。</span><span class="sxs-lookup"><span data-stu-id="1c35c-146"><xref:System.Windows.Forms.ItemActivation.TwoClick> activation requires the user to double-click to activate the item; a single click changes the color of the item text.</span></span> <span data-ttu-id="1c35c-147"><xref:System.Windows.Forms.ItemActivation.Standard>アクティブ化をダブルクリックすると、アイテムをアクティブ化ユーザーが必要ですが、アイテムの外観は変わりません。</span><span class="sxs-lookup"><span data-stu-id="1c35c-147"><xref:System.Windows.Forms.ItemActivation.Standard> activation requires the user to double-click to activate an item, but the item does not change appearance.</span></span>  
   
- <xref:System.Windows.Forms.ListView> コントロールでは、グループ化、並べて表示ビュー、挿入マークなど、Windows XP プラットフォームで使用できる visual スタイルなどの機能もサポートされています。  詳細については、「[Windows XP Features and Windows Forms Controls](http://msdn.microsoft.com/ja-jp/bc7fab94-fce9-4bf1-a8ad-a5837c91c3c0)」を参照してください。  
+ <span data-ttu-id="1c35c-148"><xref:System.Windows.Forms.ListView>コントロールもサポートしている visual スタイルと使用できるその他の機能グループ化、並べて表示ビュー、および挿入マークを含む、Windows XP のプラットフォームでします。</span><span class="sxs-lookup"><span data-stu-id="1c35c-148">The <xref:System.Windows.Forms.ListView> control also supports the visual styles and other features available on the Windows XP platform, including grouping, tile view, and insertion marks.</span></span> <span data-ttu-id="1c35c-149">詳細については、次を参照してください。 [Windows XP の機能と Windows フォーム コントロール](http://msdn.microsoft.com/en-us/bc7fab94-fce9-4bf1-a8ad-a5837c91c3c0)です。</span><span class="sxs-lookup"><span data-stu-id="1c35c-149">For more information, see [Windows XP Features and Windows Forms Controls](http://msdn.microsoft.com/en-us/bc7fab94-fce9-4bf1-a8ad-a5837c91c3c0).</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.ListView>   
- [ListView コントロール](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)   
- [方法 : Windows フォーム ListView コントロールで項目を追加および削除する](../../../../docs/framework/winforms/controls/how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)   
- [方法 : Windows フォーム ListView コントロールに列を追加する](../../../../docs/framework/winforms/controls/how-to-add-columns-to-the-windows-forms-listview-control.md)   
- [方法 : Windows フォーム ListView コントロールのアイコンを表示する](../../../../docs/framework/winforms/controls/how-to-display-icons-for-the-windows-forms-listview-control.md)   
- [方法 : Windows フォーム ListView コントロールの列にサブ項目を表示する](../../../../docs/framework/winforms/controls/how-to-display-subitems-in-columns-with-the-windows-forms-listview-control.md)   
- [方法 : Windows フォーム ListView コントロール内の項目を選択する](../../../../docs/framework/winforms/controls/how-to-select-an-item-in-the-windows-forms-listview-control.md)   
- [方法 : Windows フォーム ListView コントロールの項目をグループ化する](../../../../docs/framework/winforms/controls/how-to-group-items-in-a-windows-forms-listview-control.md)   
- [方法 : Windows フォーム ListView コントロールに挿入マークを表示する](../../../../docs/framework/winforms/controls/how-to-display-an-insertion-mark-in-a-windows-forms-listview-control.md)   
- [方法 : ListView コントロールに検索機能を追加する](../../../../docs/framework/winforms/controls/how-to-add-search-capabilities-to-a-listview-control.md)   
- [方法 : TreeView コントロールまたは ListView コントロール \(Windows フォーム\) にカスタム情報を追加する](../../../../docs/framework/winforms/controls/add-custom-information-to-a-treeview-or-listview-control-wf.md)   
- [方法 : Windows フォームでマルチペイン ユーザー インターフェイスを作成する](../../../../docs/framework/winforms/controls/how-to-create-a-multipane-user-interface-with-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="1c35c-150">関連項目</span><span class="sxs-lookup"><span data-stu-id="1c35c-150">See Also</span></span>  
+ <xref:System.Windows.Forms.ListView>  
+ [<span data-ttu-id="1c35c-151">ListView コントロール</span><span class="sxs-lookup"><span data-stu-id="1c35c-151">ListView Control</span></span>](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)  
+ [<span data-ttu-id="1c35c-152">方法: Windows フォーム ListView コントロールで項目を追加および削除する</span><span class="sxs-lookup"><span data-stu-id="1c35c-152">How to: Add and Remove Items with the Windows Forms ListView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)  
+ [<span data-ttu-id="1c35c-153">方法: Windows フォーム ListView コントロールに列を追加する</span><span class="sxs-lookup"><span data-stu-id="1c35c-153">How to: Add Columns to the Windows Forms ListView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-add-columns-to-the-windows-forms-listview-control.md)  
+ [<span data-ttu-id="1c35c-154">方法: Windows フォーム ListView コントロールのアイコンを表示する</span><span class="sxs-lookup"><span data-stu-id="1c35c-154">How to: Display Icons for the Windows Forms ListView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-display-icons-for-the-windows-forms-listview-control.md)  
+ [<span data-ttu-id="1c35c-155">方法: Windows フォーム ListView コントロールの列にサブ項目を表示する</span><span class="sxs-lookup"><span data-stu-id="1c35c-155">How to: Display Subitems in Columns with the Windows Forms ListView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-display-subitems-in-columns-with-the-windows-forms-listview-control.md)  
+ [<span data-ttu-id="1c35c-156">方法: Windows フォーム ListView コントロール内の項目を選択する</span><span class="sxs-lookup"><span data-stu-id="1c35c-156">How to: Select an Item in the Windows Forms ListView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-select-an-item-in-the-windows-forms-listview-control.md)  
+ [<span data-ttu-id="1c35c-157">方法: Windows フォーム ListView コントロールの項目をグループ化する</span><span class="sxs-lookup"><span data-stu-id="1c35c-157">How to: Group Items in a Windows Forms ListView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-group-items-in-a-windows-forms-listview-control.md)  
+ [<span data-ttu-id="1c35c-158">方法: Windows フォーム ListView コントロールに挿入マークを表示する</span><span class="sxs-lookup"><span data-stu-id="1c35c-158">How to: Display an Insertion Mark in a Windows Forms ListView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-display-an-insertion-mark-in-a-windows-forms-listview-control.md)  
+ [<span data-ttu-id="1c35c-159">方法: ListView コントロールに検索機能を追加する</span><span class="sxs-lookup"><span data-stu-id="1c35c-159">How to: Add Search Capabilities to a ListView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-add-search-capabilities-to-a-listview-control.md)  
+ [<span data-ttu-id="1c35c-160">方法: TreeView コントロールまたは ListView コントロール (Windows フォーム) にカスタム情報を追加する</span><span class="sxs-lookup"><span data-stu-id="1c35c-160">How to: Add Custom Information to a TreeView or ListView Control (Windows Forms)</span></span>](../../../../docs/framework/winforms/controls/add-custom-information-to-a-treeview-or-listview-control-wf.md)  
+ [<span data-ttu-id="1c35c-161">方法: Windows フォームでマルチペイン ユーザー インターフェイスを作成する</span><span class="sxs-lookup"><span data-stu-id="1c35c-161">How to: Create a Multipane User Interface with Windows Forms</span></span>](../../../../docs/framework/winforms/controls/how-to-create-a-multipane-user-interface-with-windows-forms.md)

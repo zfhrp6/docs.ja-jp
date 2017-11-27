@@ -1,39 +1,45 @@
 ---
-title: "方法 : ThicknessConverter オブジェクトを使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "境界線の太さ"
-  - "ThicknessConverter オブジェクト"
+title: "方法 : ThicknessConverter オブジェクトを使用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- border thickness [WPF]
+- ThicknessConverter objects [WPF]
 ms.assetid: 52682194-d7fd-499c-8005-73fcc84e7b2c
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8ce70dcd749f31d77061b4669d83d2e0b83726c1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : ThicknessConverter オブジェクトを使用する
-## 使用例  
- この例では、<xref:System.Windows.ThicknessConverter> のインスタンスを作成し、それを使用して境界線の太さを変更する方法を説明します。  
+# <a name="how-to-use-a-thicknessconverter-object"></a><span data-ttu-id="125ce-102">方法 : ThicknessConverter オブジェクトを使用する</span><span class="sxs-lookup"><span data-stu-id="125ce-102">How to: Use a ThicknessConverter Object</span></span>
+## <a name="example"></a><span data-ttu-id="125ce-103">例</span><span class="sxs-lookup"><span data-stu-id="125ce-103">Example</span></span>  
+ <span data-ttu-id="125ce-104">この例は、のインスタンスを作成する方法を示しています。<xref:System.Windows.ThicknessConverter>境界線の太さを変更するとします。</span><span class="sxs-lookup"><span data-stu-id="125ce-104">This example shows how to create an instance of <xref:System.Windows.ThicknessConverter> and use it to change the thickness of a border.</span></span>  
   
- この例では、`changeThickness` という名前のカスタム メソッドを定義します。このメソッドは、まず別の [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] ファイルで定義されている <xref:System.Windows.Controls.ListBoxItem> のコンテンツを <xref:System.Windows.Thickness> のインスタンスに変換し、次にそのコンテンツを <xref:System.String> に変換します。  このメソッドは、<xref:System.Windows.Controls.ListBoxItem> を <xref:System.Windows.ThicknessConverter> オブジェクトに渡します。このオブジェクトは、<xref:System.Windows.Controls.ListBoxItem> の <xref:System.Windows.Controls.ContentControl.Content%2A> を <xref:System.Windows.Thickness> のインスタンスに変換します。  その後、この値は、<xref:System.Windows.Controls.Border> の <xref:System.Windows.Controls.Border.BorderThickness%2A> プロパティの値として戻されます。  
+ <span data-ttu-id="125ce-105">例と呼ばれるカスタム メソッドを定義する`changeThickness`; このメソッドは最初のコンテンツを変換、<xref:System.Windows.Controls.ListBoxItem>個別で定義されている、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]ファイルのインスタンスを<xref:System.Windows.Thickness>、後に、コンテンツに変換します、<xref:System.String>です。</span><span class="sxs-lookup"><span data-stu-id="125ce-105">The example defines a custom method called `changeThickness`; this method first converts the contents of a <xref:System.Windows.Controls.ListBoxItem>, as defined in a separate [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] file, to an instance of <xref:System.Windows.Thickness>, and later converts the content into a <xref:System.String>.</span></span> <span data-ttu-id="125ce-106">このメソッドは、<xref:System.Windows.Controls.ListBoxItem>を<xref:System.Windows.ThicknessConverter>に変換するオブジェクト、<xref:System.Windows.Controls.ContentControl.Content%2A>の<xref:System.Windows.Controls.ListBoxItem>のインスタンスに<xref:System.Windows.Thickness>です。</span><span class="sxs-lookup"><span data-stu-id="125ce-106">This method passes the <xref:System.Windows.Controls.ListBoxItem> to a <xref:System.Windows.ThicknessConverter> object, which converts the <xref:System.Windows.Controls.ContentControl.Content%2A> of a <xref:System.Windows.Controls.ListBoxItem> to an instance of <xref:System.Windows.Thickness>.</span></span> <span data-ttu-id="125ce-107">この値がの値として渡されたし、<xref:System.Windows.Controls.Border.BorderThickness%2A>のプロパティ、<xref:System.Windows.Controls.Border>です。</span><span class="sxs-lookup"><span data-stu-id="125ce-107">This value is then passed back as the value of the <xref:System.Windows.Controls.Border.BorderThickness%2A> property of the <xref:System.Windows.Controls.Border>.</span></span>  
   
- この例は実行できません。  
+ <span data-ttu-id="125ce-108">この例は実行できません。</span><span class="sxs-lookup"><span data-stu-id="125ce-108">This example does not run.</span></span>  
   
  [!code-csharp[ThicknessConverter#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThicknessConverter/CSharp/Window1.xaml.cs#1)]
  [!code-vb[ThicknessConverter#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThicknessConverter/VisualBasic/Window1.xaml.vb#1)]  
   
-## 参照  
- <xref:System.Windows.Thickness>   
- <xref:System.Windows.ThicknessConverter>   
- <xref:System.Windows.Controls.Border>   
- [How to: Change the Margin Property](http://msdn.microsoft.com/ja-jp/8a313efd-5f99-4097-b4c1-8fa49d8379a2)   
- [How to: Convert a ListBoxItem to a new Data Type](http://msdn.microsoft.com/ja-jp/7a080b88-184e-4b27-bb61-d42bafba9727)   
- [パネルの概要](../../../../docs/framework/wpf/controls/panels-overview.md)
+## <a name="see-also"></a><span data-ttu-id="125ce-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="125ce-109">See Also</span></span>  
+ <xref:System.Windows.Thickness>  
+ <xref:System.Windows.ThicknessConverter>  
+ <xref:System.Windows.Controls.Border>  
+ [<span data-ttu-id="125ce-110">方法: Margin プロパティの変更</span><span class="sxs-lookup"><span data-stu-id="125ce-110">How to: Change the Margin Property</span></span>](http://msdn.microsoft.com/en-us/8a313efd-5f99-4097-b4c1-8fa49d8379a2)  
+ [<span data-ttu-id="125ce-111">方法: ListBoxItem を新しいデータ型に変換します。</span><span class="sxs-lookup"><span data-stu-id="125ce-111">How to: Convert a ListBoxItem to a new Data Type</span></span>](http://msdn.microsoft.com/en-us/7a080b88-184e-4b27-bb61-d42bafba9727)  
+ [<span data-ttu-id="125ce-112">パネルの概要</span><span class="sxs-lookup"><span data-stu-id="125ce-112">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)

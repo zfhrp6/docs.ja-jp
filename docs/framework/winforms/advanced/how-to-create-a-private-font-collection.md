@@ -1,62 +1,66 @@
 ---
-title: "方法 : プライベート フォント コレクションを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "フォント, 作成 (プライベート コレクションを)"
-  - "プライベート フォント コレクション, 作成"
+title: "方法: プライベート フォント コレクションを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- private font collections [Windows Forms], creating
+- fonts [Windows Forms], creating private collections
 ms.assetid: 6533d5e5-a8dc-4b76-9fc4-3bf75c8b9212
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3016fb9a1b1d8466137bcaddb0b885c02c399baf
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : プライベート フォント コレクションを作成する
-<xref:System.Drawing.Text.PrivateFontCollection> クラスは、<xref:System.Drawing.Text.FontCollection> 抽象基本クラスを継承します。  <xref:System.Drawing.Text.PrivateFontCollection> オブジェクトを使用して、アプリケーションに固有のフォント セットを維持できます。  プライベート フォント コレクションには、インストールされているシステム フォントだけでなく、コンピューターにインストールされていないフォントを含むことができます。  プライベート フォント コレクションにフォント ファイルを追加するには、<xref:System.Drawing.Text.PrivateFontCollection> オブジェクトの <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile%2A> メソッドを呼び出します。  
+# <a name="how-to-create-a-private-font-collection"></a><span data-ttu-id="ee6e1-102">方法: プライベート フォント コレクションを作成する</span><span class="sxs-lookup"><span data-stu-id="ee6e1-102">How to: Create a Private Font Collection</span></span>
+<span data-ttu-id="ee6e1-103"><xref:System.Drawing.Text.PrivateFontCollection>クラスから継承、<xref:System.Drawing.Text.FontCollection>抽象基本クラスです。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-103">The <xref:System.Drawing.Text.PrivateFontCollection> class inherits from the <xref:System.Drawing.Text.FontCollection> abstract base class.</span></span> <span data-ttu-id="ee6e1-104">使用することができます、<xref:System.Drawing.Text.PrivateFontCollection>具体的には、アプリケーションのフォントのセットを保持するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-104">You can use a <xref:System.Drawing.Text.PrivateFontCollection> object to maintain a set of fonts specifically for your application.</span></span> <span data-ttu-id="ee6e1-105">プライベート フォント コレクションには、インストールされているシステム フォントだけでなく、コンピューターにインストールされていないフォントを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-105">A private font collection can include installed system fonts as well as fonts that have not been installed on the computer.</span></span> <span data-ttu-id="ee6e1-106">プライベート フォント コレクションにフォント ファイルを追加するには、呼び出し、<xref:System.Drawing.Text.PrivateFontCollection.AddFontFile%2A>のメソッド、<xref:System.Drawing.Text.PrivateFontCollection>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-106">To add a font file to a private font collection, call the <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile%2A> method of a <xref:System.Drawing.Text.PrivateFontCollection> object.</span></span>  
   
- <xref:System.Drawing.Text.PrivateFontCollection> オブジェクトの <xref:System.Drawing.Text.FontCollection.Families%2A> プロパティは、<xref:System.Drawing.FontFamily> オブジェクトの配列を格納します。  
+ <span data-ttu-id="ee6e1-107"><xref:System.Drawing.Text.FontCollection.Families%2A>のプロパティ、<xref:System.Drawing.Text.PrivateFontCollection>オブジェクトには配列が含まれています<xref:System.Drawing.FontFamily>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-107">The <xref:System.Drawing.Text.FontCollection.Families%2A> property of a <xref:System.Drawing.Text.PrivateFontCollection> object contains an array of <xref:System.Drawing.FontFamily> objects.</span></span>  
   
- プライベート フォント コレクション内のフォント ファミリの数は、そのコレクションに追加されたフォント ファイルの数と必ずしも同じではありません。  たとえば、ArialBd.tff、Times.tff、TimesBd.tff の各ファイルをコレクションに追加するとします。  コレクション内には 3 つのファイルがありますが、Times.tff と TimesBd.tff は同じファミリに属しているため、コレクション内のファミリ数は 2 つだけになります。  
+ <span data-ttu-id="ee6e1-108">プライベート フォント コレクション内のフォント ファミリの数は必ずしもをコレクションに追加されているフォント ファイルの数と同じです。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-108">The number of font families in a private font collection is not necessarily the same as the number of font files that have been added to the collection.</span></span> <span data-ttu-id="ee6e1-109">たとえば、ArialBd.tff、Times.tff、および TimesBd.tff ファイル コレクションを追加するとします。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-109">For example, suppose you add the files ArialBd.tff, Times.tff, and TimesBd.tff to a collection.</span></span> <span data-ttu-id="ee6e1-110">ありますが、3 つのファイル、コレクション内の 2 つだけのファミリ Times.tff と TimesBd.tff 同じファミリに属しているためです。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-110">There will be three files but only two families in the collection because Times.tff and TimesBd.tff belong to the same family.</span></span>  
   
-## 使用例  
- 次の 3 つのフォント ファイルを <xref:System.Drawing.Text.PrivateFontCollection> オブジェクトに追加する例を次に示します。  
+## <a name="example"></a><span data-ttu-id="ee6e1-111">例</span><span class="sxs-lookup"><span data-stu-id="ee6e1-111">Example</span></span>  
+ <span data-ttu-id="ee6e1-112">次の例では、次の 3 種類のフォント ファイルを<xref:System.Drawing.Text.PrivateFontCollection>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-112">The following example adds the following three font files to a <xref:System.Drawing.Text.PrivateFontCollection> object:</span></span>  
   
--   C:\\*systemroot*\\Fonts\\Arial.tff \(Arial、標準\)  
+-   <span data-ttu-id="ee6e1-113">C:\\*systemroot*\Fonts\Arial.tff (Arial、正規)</span><span class="sxs-lookup"><span data-stu-id="ee6e1-113">C:\\*systemroot*\Fonts\Arial.tff (Arial, regular)</span></span>  
   
--   C:\\*systemroot*\\Fonts\\CourBI.tff \(Courier New、太字斜体\)  
+-   <span data-ttu-id="ee6e1-114">C:\\*systemroot*\Fonts\CourBI.tff (媒体使用新しい、太字斜体)</span><span class="sxs-lookup"><span data-stu-id="ee6e1-114">C:\\*systemroot*\Fonts\CourBI.tff (Courier New, bold italic)</span></span>  
   
--   C:\\*systemroot*\\Fonts\\TimesBd.tff \(Times New Roman、太字\)  
+-   <span data-ttu-id="ee6e1-115">C:\\*systemroot*\Fonts\TimesBd.tff (Times New Roman、太字)</span><span class="sxs-lookup"><span data-stu-id="ee6e1-115">C:\\*systemroot*\Fonts\TimesBd.tff (Times New Roman, bold)</span></span>  
   
- このコードは、<xref:System.Drawing.Text.PrivateFontCollection> オブジェクトの <xref:System.Drawing.Text.FontCollection.Families%2A> プロパティから <xref:System.Drawing.FontFamily> オブジェクトの配列を取得します。  
+ <span data-ttu-id="ee6e1-116">コードの配列を取得する<xref:System.Drawing.FontFamily>オブジェクトから、<xref:System.Drawing.Text.FontCollection.Families%2A>のプロパティ、<xref:System.Drawing.Text.PrivateFontCollection>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-116">The code retrieves an array of <xref:System.Drawing.FontFamily> objects from the <xref:System.Drawing.Text.FontCollection.Families%2A> property of the <xref:System.Drawing.Text.PrivateFontCollection> object.</span></span>  
   
- このコードはコレクション内の <xref:System.Drawing.FontFamily> オブジェクトごとに <xref:System.Drawing.FontFamily.IsStyleAvailable%2A> メソッドを呼び出し、各種のスタイル \(標準、太字、斜体、太字斜体、下線、および取り消し線\) を使用できるかどうかを確認します。  <xref:System.Drawing.FontFamily.IsStyleAvailable%2A> メソッドに渡される引数は、<xref:System.Drawing.FontStyle> 列挙体のメンバーです。  
+ <span data-ttu-id="ee6e1-117">各<xref:System.Drawing.FontFamily>コードの呼び出し、コレクション内のオブジェクト、 <xref:System.Drawing.FontFamily.IsStyleAvailable%2A> (標準、太字、斜体、太字、斜体、下線、取り消し線) のさまざまなスタイルが使用できるかどうかを調べます。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-117">For each <xref:System.Drawing.FontFamily> object in the collection, the code calls the <xref:System.Drawing.FontFamily.IsStyleAvailable%2A> method to determine whether various styles (regular, bold, italic, bold italic, underline, and strikeout) are available.</span></span> <span data-ttu-id="ee6e1-118">渡される引数、<xref:System.Drawing.FontFamily.IsStyleAvailable%2A>メソッドのメンバーである、<xref:System.Drawing.FontStyle>列挙します。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-118">The arguments passed to the <xref:System.Drawing.FontFamily.IsStyleAvailable%2A> method are members of the <xref:System.Drawing.FontStyle> enumeration.</span></span>  
   
- 特定のファミリとスタイルの組み合わせを使用できる場合、<xref:System.Drawing.Font> オブジェクトはそのファミリとスタイルを使用して作成されます。  別の形式の <xref:System.Drawing.Font.%23ctor%2A> コンストラクターの場合、最初に渡される引数は <xref:System.Drawing.FontFamily> オブジェクトですが、この <xref:System.Drawing.Font.%23ctor%2A> コンストラクターに渡される最初の引数はフォント ファミリ名です。  <xref:System.Drawing.Font> オブジェクトが作成されると、そのオブジェクトが <xref:System.Drawing.Graphics> クラスの <xref:System.Drawing.Graphics.DrawString%2A> メソッドに渡され、ファミリ名と一緒にスタイルの名前が表示されます。  
+ <span data-ttu-id="ee6e1-119">特定のファミリ/スタイルの組み合わせがある場合、<xref:System.Drawing.Font>そのファミリとスタイルを使用してオブジェクトを構築します。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-119">If a given family/style combination is available, a <xref:System.Drawing.Font> object is constructed using that family and style.</span></span> <span data-ttu-id="ee6e1-120">渡される最初の引数、<xref:System.Drawing.Font.%23ctor%2A>コンス トラクターは、フォント ファミリ名 (されません、<xref:System.Drawing.FontFamily>オブジェクトの別の形式の場合と同様、<xref:System.Drawing.Font.%23ctor%2A>コンス トラクター)。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-120">The first argument passed to the <xref:System.Drawing.Font.%23ctor%2A> constructor is the font family name (not a <xref:System.Drawing.FontFamily> object as is the case for other variations of the <xref:System.Drawing.Font.%23ctor%2A> constructor).</span></span> <span data-ttu-id="ee6e1-121">後に、<xref:System.Drawing.Font>オブジェクトを構築に渡される、<xref:System.Drawing.Graphics.DrawString%2A>のメソッド、<xref:System.Drawing.Graphics>スタイルの名前と共に、ファミリ名を表示するクラス。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-121">After the <xref:System.Drawing.Font> object is constructed, it is passed to the <xref:System.Drawing.Graphics.DrawString%2A> method of the <xref:System.Drawing.Graphics> class to display the family name along with the name of the style.</span></span>  
   
- 下記のコードによる出力の例を次の図に示します。  
+ <span data-ttu-id="ee6e1-122">次のコードの出力は、次の図に示すように、出力に似ています。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-122">The output of the following code is similar to the output shown in the following illustration.</span></span>  
   
- ![フォント テキスト](../../../../docs/framework/winforms/advanced/media/csfontstext7.png "csfontstext7")  
+ <span data-ttu-id="ee6e1-123">![フォント テキスト](../../../../docs/framework/winforms/advanced/media/csfontstext7.png "csfontstext7")</span><span class="sxs-lookup"><span data-stu-id="ee6e1-123">![Fonts Text](../../../../docs/framework/winforms/advanced/media/csfontstext7.png "csfontstext7")</span></span>  
   
- 次のコード例でプライベート フォント コレクションに追加されている Arial.tff は、Arial 標準スタイルのフォント ファイルです。  しかし、プログラム出力では、Arial フォント ファミリについて標準以外にも使用できるスタイルがいくつか示されています。  これは、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] で、標準スタイルから太字、斜体、および太字斜体の各スタイルをシミュレートできるためです。  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] では、標準スタイルを基に下線および取り消し線を生成することもできます。  
+ <span data-ttu-id="ee6e1-124">次のコード例でプライベート フォント コレクションに追加された) Arial.tff は、Arial 正規スタイルのフォント ファイルです。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-124">Arial.tff (which was added to the private font collection in the following code example) is the font file for the Arial regular style.</span></span> <span data-ttu-id="ee6e1-125">ただし、プログラムの出力が Arial フォント ファミリの標準以外の複数の使用可能なスタイルを表示することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-125">Note, however, that the program output shows several available styles other than regular for the Arial font family.</span></span> <span data-ttu-id="ee6e1-126">これはため[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]太字、斜体、および太字斜体のスタイル標準のスタイルからをシミュレートすることができます。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-126">That is because [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] can simulate the bold, italic, and bold italic styles from the regular style.</span></span> [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]<span data-ttu-id="ee6e1-127">下線や標準のスタイルから取り消し線も生成できます。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-127"> can also produce underlines and strikeouts from the regular style.</span></span>  
   
- 同様に、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] では、太字スタイルまたは斜体スタイルから太字斜体スタイルをシミュレートできます。  プログラム出力には、TimesBd.tff \(Times New Roman 太字\) がコレクション内の唯一の Times ファイルである場合も、Times ファミリの太字斜体スタイルを使用できることが示されます。  
+ <span data-ttu-id="ee6e1-128">同様に、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]太字または斜体のスタイルのいずれかから太字斜体のスタイルをシミュレートすることができます。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-128">Similarly, [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] can simulate the bold italic style from either the bold style or the italic style.</span></span> <span data-ttu-id="ee6e1-129">太字斜体スタイルが回ファミリの使用可能な場合でも、TimesBd.tff (Times New Roman、太字) は、唯一プログラム出力を示しています、コレクション内の回ファイル。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-129">The program output shows that the bold italic style is available for the Times family even though TimesBd.tff (Times New Roman, bold) is the only Times file in the collection.</span></span>  
   
  [!code-csharp[System.Drawing.FontsAndText#51](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.FontsAndText/CS/Class1.cs#51)]
  [!code-vb[System.Drawing.FontsAndText#51](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.FontsAndText/VB/Class1.vb#51)]  
   
-## コードのコンパイル  
- 前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.PaintEventHandler> のパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  
+## <a name="compiling-the-code"></a><span data-ttu-id="ee6e1-130">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="ee6e1-130">Compiling the Code</span></span>  
+ <span data-ttu-id="ee6e1-131">前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.PaintEventHandler> のパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。</span><span class="sxs-lookup"><span data-stu-id="ee6e1-131">The preceding example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs> `e`, which is a parameter of <xref:System.Windows.Forms.PaintEventHandler>.</span></span>  
   
-## 参照  
- <xref:System.Drawing.Text.PrivateFontCollection>   
- [フォントとテキストの使用](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)
+## <a name="see-also"></a><span data-ttu-id="ee6e1-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="ee6e1-132">See Also</span></span>  
+ <xref:System.Drawing.Text.PrivateFontCollection>  
+ [<span data-ttu-id="ee6e1-133">フォントとテキストの使用</span><span class="sxs-lookup"><span data-stu-id="ee6e1-133">Using Fonts and Text</span></span>](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)
