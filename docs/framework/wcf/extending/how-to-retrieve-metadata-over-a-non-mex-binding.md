@@ -1,29 +1,32 @@
 ---
-title: "方法: MEX 以外のバインディングを介してメタデータを取得する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法: MEX 以外のバインディングを介してメタデータを取得する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 2292e124-81b2-4317-b881-ce9c1ec66ecb
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f214c45ea09c96d5cb77646f31b7c53338761621
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法: MEX 以外のバインディングを介してメタデータを取得する
-ここでは、MEX 以外のバインディングを介して MEX エンドポイントからメタデータを取得する方法を説明します。このサンプル コードは、[カスタム セキュア メタデータ エンドポイント](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) のサンプルに基づいています。  
+# <a name="how-to-retrieve-metadata-over-a-non-mex-binding"></a>方法: MEX 以外のバインディングを介してメタデータを取得する
+ここでは、MEX 以外のバインディングを介して MEX エンドポイントからメタデータを取得する方法を説明します。 このサンプルのコードがに基づいて、[カスタム セキュリティで保護されたメタデータ エンドポイント](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md)サンプルです。  
   
-### MEX 以外のバインディングを介してメタデータを取得するには  
+### <a name="to-retrieve-metadata-over-a-non-mex-binding"></a>MEX 以外のバインディングを介してメタデータを取得するには  
   
-1.  MEX エンドポイントで使用されているバインディングを特定します。[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスの場合、サービスの構成ファイルにアクセスすることで MEX バインディングを特定できます。この場合、MEX バインディングは、次のサービス構成で定義されています。  
+1.  MEX エンドポイントで使用されているバインディングを特定します。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスの場合、サービスの構成ファイルにアクセスすることで MEX バインディングを特定できます。 この場合、MEX バインディングは、次のサービス構成で定義されています。  
   
-    ```  
+    ```xml  
     <services>  
         <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
                 behaviorConfiguration="CalculatorServiceBehavior">  
@@ -55,9 +58,9 @@ caps.handback.revision: 10
      </bindings>  
     ```  
   
-2.  クライアント構成ファイルで、同じカスタム バインディングを構成します。ここでクライアントは `clientCredentials` 動作も定義して、MEX エンドポイントからメタデータを要求するときに、サービスに対する認証で使用する証明書を指定します。カスタム バインディングを介してメタデータを要求するときに Svcutil.exe を使用する場合は、Svcutil.exe の構成ファイル \(Svcutil.exe.config\) に MEX エンドポイント構成を追加する必要があります。また、エンドポイント構成の名前が、次のコードに示すように、MEX エンドポイントのアドレスの URI スキームと一致する必要があります。  
+2.  クライアント構成ファイルで、同じカスタム バインディングを構成します。 ここでクライアントは `clientCredentials` 動作も定義して、MEX エンドポイントからメタデータを要求するときに、サービスに対する認証で使用する証明書を指定します。 カスタム バインディングを介してメタデータを要求するときに Svcutil.exe を使用する場合は、Svcutil.exe の構成ファイル (Svcutil.exe.config) に MEX エンドポイント構成を追加する必要があります。また、エンドポイント構成の名前が、次のコードに示すように、MEX エンドポイントのアドレスの URI スキームと一致する必要があります。  
   
-    ```  
+    ```xml  
     <system.serviceModel>  
       <client>  
         <endpoint name="http"  
@@ -90,7 +93,7 @@ caps.handback.revision: 10
     </system.serviceModel>  
     ```  
   
-3.  `MetadataExchangeClient` を作成して `GetMetadata` を呼び出します。これを行うには、次の例に示すように、構成でカスタム バインディングを指定する方法と、コードでカスタム バインディングを指定する方法の 2 つの方法があります。  
+3.  `MetadataExchangeClient` を作成して `GetMetadata` を呼び出します。 これを行うには、次の例に示すように、構成でカスタム バインディングを指定する方法と、コードでカスタム バインディングを指定する方法の 2 つの方法があります。  
   
     ```  
     // The custom binding is specified in configuration.  
@@ -128,7 +131,7 @@ caps.handback.revision: 10
     ServiceEndpointCollection endpoints = importer.ImportAllEndpoints();  
     ```  
   
-5.  この時点で、サービス エンドポイントのコレクションが取得されます。メタデータのインポート[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[方法 : メタデータをサービス エンドポイントにインポートする](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md)」を参照してください。  
+5.  この時点で、サービス エンドポイントのコレクションが取得されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]メタデータのインポートを参照してください[する方法: サービス エンドポイントにメタデータのインポート](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md)です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [メタデータ](../../../../docs/framework/wcf/feature-details/metadata.md)

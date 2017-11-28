@@ -1,28 +1,31 @@
 ---
-title: "構成ファイルにおける探索の構成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "構成ファイルにおける探索の構成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b9884c11-8011-4763-bc2c-c526b80175d0
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c1ecdf6c3c8df4c6e69f0877ed8797cb0ac1a25b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 構成ファイルにおける探索の構成
-探索で使用される構成設定は、4 つの主なグループに分類されます。  このトピックでは、各グループについて簡単に説明し、各グループの構成方法の例を紹介します。  以下の各セクションは、各領域についてのより詳細なドキュメントにリンクされます。  
+# <a name="configuring-discovery-in-a-configuration-file"></a>構成ファイルにおける探索の構成
+探索で使用される構成設定は、4 つの主なグループに分類されます。 このトピックでは、各グループについて簡単に説明し、各グループの構成方法の例を紹介します。 以下の各セクションは、各領域についてのより詳細なドキュメントにリンクされます。  
   
-## 動作の構成  
- 探索では、サービスの動作とエンドポイントの動作が使用されます。  <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> 動作により、サービスのすべてのエンドポイントの探索が有効になるだけでなく、アナウンス エンドポイントの指定が可能になります。  次の例は、<xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> を追加し、アナウンス エンドポイントを指定する方法を示しています。  
+## <a name="behavior-configuration"></a>動作の構成  
+ 探索では、サービスの動作とエンドポイントの動作が使用されます。 <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> 動作により、サービスのすべてのエンドポイントの探索が有効になるだけでなく、アナウンス エンドポイントの指定が可能になります。  次の例は、<xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> を追加し、アナウンス エンドポイントを指定する方法を示しています。  
   
-```  
+```xml  
 <behaviors>  
       <serviceBehaviors>  
         <behavior name="helloWorldServiceBehavior">  
@@ -35,9 +38,9 @@ caps.handback.revision: 7
       </serviceBehaviors>  
 ```  
   
- 動作を指定したら、これを \<`service`\> 要素から参照します。次にその例を示します。  
+ 動作を指定したら、これを <`service`> 要素から参照します。次にその例を示します。  
   
-```  
+```xml  
 <system.serviceModel>  
    <services>  
       <service name="HelloWorldService" behaviorConfiguration="helloWorldServiceBehavior">  
@@ -53,9 +56,9 @@ caps.handback.revision: 7
   
  サービスを探索可能にするには、探索エンドポイントを追加する必要もあります。上の例では、<xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> 標準エンドポイントを追加しています。  
   
- アナウンス エンドポイントを追加する場合は、アナウンス リスナー サービスを \<`services`\> 要素に追加する必要もあります。次にその例を示します。  
+ アナウンス エンドポイントを追加する場合は、アナウンス リスナー サービスを <`services`> 要素に追加する必要もあります。次にその例を示します。  
   
-```  
+```xml  
 <services>  
    <service name="HelloWorldService" behaviorConfiguration="helloWorldServiceBehavior">  
       <!-- Application Endpoint -->  
@@ -71,9 +74,9 @@ caps.handback.revision: 7
    </service>  
 ```  
   
- <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> 動作は、特定のエンドポイントの探索を有効または無効にするために使用されます。  次の例では、サービスに 2 つのアプリケーション エンドポイントを構成します。1 つのエンドポイントでは探索を有効し、もう 1 つでは探索を無効にします。  それぞれのエンドポイントには <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> 動作が追加されます。  
+ <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> 動作は、特定のエンドポイントの探索を有効または無効にするために使用されます。  次の例では、サービスに 2 つのアプリケーション エンドポイントを構成します。1 つのエンドポイントでは探索を有効し、もう 1 つでは探索を無効にします。 それぞれのエンドポイントには <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> 動作が追加されます。  
   
-```  
+```xml  
 <system.serviceModel>  
    <services>  
       <service name="HelloWorldService"  
@@ -109,12 +112,11 @@ caps.handback.revision: 7
         </behavior>  
      </endpointBehaviors>  
    </behaviors>  
-  
 ```  
   
- <xref:System.ServiceModel.Discovery.EndpointBehavior> 動作を使用すると、サービスから返されるエンドポイント メタデータにカスタム メタデータを追加することもできます。  その方法を次の例に示します。  
+ <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> 動作を使用すると、サービスから返されるエンドポイント メタデータにカスタム メタデータを追加することもできます。 その方法を次の例に示します。  
   
-```  
+```xml  
 <behavior name="ep4Behavior">  
    <endpointDiscovery enabled="true">  
       <extensions>  
@@ -128,9 +130,9 @@ caps.handback.revision: 7
 </behavior>  
 ```  
   
- <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> 動作を使用すると、クライアントがサービスの検索に使用するスコープと型を追加することもできます。  クライアント側の構成ファイルでこの構成を行う方法を次の例に示します。  
+ <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> 動作を使用すると、クライアントがサービスの検索に使用するスコープと型を追加することもできます。 クライアント側の構成ファイルでこの構成を行う方法を次の例に示します。  
   
-```  
+```xml  
 <behavior name="ep2Behavior">  
    <endpointDiscovery enabled="true">  
       <scopes>  
@@ -145,12 +147,12 @@ caps.handback.revision: 7
 </behavior>  
 ```  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> および <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> については、「[WCF Discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)」を参照してください。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>と<xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>を参照してください[WCF Discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)です。  
   
-## バインディング要素の構成  
- バインディング要素の構成は、クライアント側で最も興味深い構成です。  構成を使用して、WCF クライアント アプリケーションからのサービスの探索に使用する検索条件を指定できます。  次の例では、<xref:System.ServiceModel.Discovery.DiscoveryClient> チャネルとのカスタム バインディングを作成し、型とスコープを含む検索条件を指定しています。  また、<xref:System.ServiceModel.Discovery.FindCritera.Duration%2A> プロパティと <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> プロパティの値も指定しています。  
+## <a name="binding-element-configuration"></a>バインド要素の構成  
+ バインディング要素の構成は、クライアント側で最も興味深い構成です。 構成を使用して、WCF クライアント アプリケーションからのサービスの探索に使用する検索条件を指定できます。  次の例では、<xref:System.ServiceModel.Discovery.DiscoveryClient> チャネルとのカスタム バインディングを作成し、型とスコープを含む検索条件を指定しています。 また、<xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> プロパティと <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> プロパティの値も指定しています。  
   
-```  
+```xml  
 <bindings>  
    <customBinding>  
       <!-- Binding Configuration for the Application Endpoint -->  
@@ -174,9 +176,9 @@ caps.handback.revision: 7
         </binding>  
 ```  
   
- このカスタム バインディング構成は、クライアント エンドポイントから参照される必要があります。  
+ このカスタム バインド構成は、クライアント エンドポイントから参照される必要があります。  
   
-```  
+```xml  
 <client>  
       <endpoint address="http://schemas.microsoft.com/discovery/dynamic"  
                 binding="customBinding"  
@@ -185,12 +187,12 @@ caps.handback.revision: 7
     </client>  
 ```  
   
- 検索条件[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[探索検索と FindCriteria](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md)」を参照してください。  [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 探索およびバインディング要素については、「[WCF Discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)」を参照してください。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]検索条件を参照してください[探索の検索と FindCriteria](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]探索とバインド要素を参照してください、 [WCF Discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
   
-## 標準エンドポイントの構成  
- 標準エンドポイントは定義済みのエンドポイントで、これには、1 つ以上のプロパティ \(アドレス、バインディング、またはコントラクト\) の既定値、または、変更できない 1 つ以上のプロパティ値が設定されています。  .NET 4 には、<xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>、<xref:System.ServiceModel.Discovery.UpdAnnouncementEndpoint>、および <xref:System.ServiceModel.Discovery.DynamicEndpoint> という 3 種類の探索関連の標準エンドポイントが用意されています。  <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> は、UDP マルチキャスト バインディングを使用した探索操作用に事前に構成されている標準エンドポイントです。  <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> は、UDP バインディングを使用したアナウンスの送信用に事前に構成されている標準エンドポイントです。  <xref:System.ServiceModel.Discovery.DynamicEnpoint> は、実行時に探索対象のサービスのエンドポイント アドレスを動的に検索するために探索が使用する標準エンドポイントです。  標準のバインディングは、追加する標準エンドポイントの種類を指定した種類属性を含む \<`endpoint`\> 要素を使用して、指定されます。  <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> および <xref:System.ServiceModel.Discovery.UpdAnnouncementEndpoint> を追加する方法を次の例に示します。  
+## <a name="standard-endpoint-configuration"></a>標準エンドポイントの構成  
+ 標準エンドポイントは定義済みのエンドポイントで、これには、1 つ以上のプロパティ (アドレス、バインディング、またはコントラクト) の既定値、または、変更できない 1 つ以上のプロパティ値が設定されています。 .NET 4 には、<xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>、<xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>、および <xref:System.ServiceModel.Discovery.DynamicEndpoint> という 3 種類の探索関連の標準エンドポイントが用意されています。  <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> は、UDP マルチキャスト バインディングを使用した探索操作用に事前に構成されている標準エンドポイントです。 <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> は、UDP バインディングを使用したアナウンスの送信用に事前に構成されている標準エンドポイントです。 <xref:System.ServiceModel.Discovery.DynamicEndpoint> は、実行時に探索対象のサービスのエンドポイント アドレスを動的に検索するために探索が使用する標準エンドポイントです。  標準のバインディングは、追加する標準エンドポイントの種類を指定した種類属性を含む <`endpoint`> 要素を使用して、指定されます。 <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> および <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> を追加する方法を次の例に示します。  
   
-```  
+```xml  
 <services>  
    <service name="HelloWorldService">  
       <!-- ...  -->          
@@ -202,9 +204,9 @@ caps.handback.revision: 7
 </services>  
 ```  
   
- 標準エンドポイントは、\<`standardEndpoints`\> 要素で構成します。  <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> および <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> を構成する方法を次の例に示します。  
+ 標準エンドポイントは、<`standardEndpoints`> 要素で構成します。 <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> および <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> を構成する方法を次の例に示します。  
   
-```  
+```xml  
 <standardEndpoints>  
       <udpAnnouncementEndpoint>  
         <standardEndpoint   
@@ -234,9 +236,9 @@ caps.handback.revision: 7
       </udpDiscoveryEndpoint>  
 ```  
   
- 標準エンドポイント構成を追加したら、各エンドポイントの \<`endpoint`\> 要素でこの構成を参照します。次にその例を示します。  
+ 標準エンドポイント構成を追加したら、各エンドポイントの <`endpoint`> 要素でこの構成を参照します。次にその例を示します。  
   
-```  
+```xml  
 <services>  
    <service name="HelloWorldService">  
       <!-- ...  -->          
@@ -248,9 +250,9 @@ caps.handback.revision: 7
 </services>  
 ```  
   
- 探索で使用されるその他の標準エンドポイントとは異なり、<xref:System.ServiceModel.Discovery.DynamicEndpoint> にはバインディングとコントラクトを指定します。  <xref:System.ServiceModel.Discovery.DynamicEndpoint> を追加し、構成する方法を次の例に示します。  
+ 探索で使用されるその他の標準エンドポイントとは異なり、<xref:System.ServiceModel.Discovery.DynamicEndpoint> にはバインディングとコントラクトを指定します。 <xref:System.ServiceModel.Discovery.DynamicEndpoint> を追加し、構成する方法を次の例に示します。  
   
-```  
+```xml  
 <system.serviceModel>  
     <client>  
       <endpoint kind="dynamicEndpoint" binding="basicHttpBinding" contract="IHelloWorldService" endpointConfiguration="dynamicEndpointConfiguration" />  
@@ -277,4 +279,4 @@ caps.handback.revision: 7
 </system.ServiceModel>  
 ```  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 標準エンドポイント、「」を参照してください。 [標準エンドポイント](../../../../docs/framework/wcf/feature-details/standard-endpoints.md)
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]標準エンドポイントを参照してください[標準エンドポイント](../../../../docs/framework/wcf/feature-details/standard-endpoints.md)

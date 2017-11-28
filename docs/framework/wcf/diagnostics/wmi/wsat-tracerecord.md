@@ -1,25 +1,28 @@
 ---
-title: "WSAT_TraceRecord | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: WSAT_TraceRecord
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 99bc7f66-1335-40d8-aa68-e754d569dc0d
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 3966311bc10b5ad2ee401ef9e3e13c8f36e14505
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# WSAT_TraceRecord
-WSAT\_TraceRecord  
+# <a name="wsattracerecord"></a>WSAT_TraceRecord
+WSAT_TraceRecord  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class WSAT_TraceRecord : WSAT_TraceEvent  
@@ -30,32 +33,32 @@ class WSAT_TraceRecord : WSAT_TraceEvent
 };  
 ```  
   
-## メソッド  
- WSAT\_TraceRecord クラスで定義されるメソッドはありません。  
+## <a name="methods"></a>メソッド  
+ WSAT_TraceRecord クラスで定義されるメソッドはありません。  
   
-## プロパティ  
- WSAT\_TraceRecord クラスには、次のプロパティがあります。  
+## <a name="properties"></a>プロパティ  
+ WSAT_TraceRecord クラスには、次のプロパティがあります。  
   
-### ActivityID  
+### <a name="activityid"></a>ActivityID  
  データ型: object  
 アクセスの種類 : 読み取り専用  
   
  トレース レコードのアクティビティ ID です。  
   
-### EventID  
+### <a name="eventid"></a>EventID  
  データ型 : sint32  
 アクセスの種類 : 読み取り専用  
   
  トレース レコードのイベント ID です。  
   
-### TraceRecord  
+### <a name="tracerecord"></a>TraceRecord  
  データ型: string  
 アクセスの種類 : 読み取り専用  
   
  トレース レコード  
   
-## 要件  
+## <a name="requirements"></a>要件  
   
 |MOF|Servicemodel.mof にて宣言済み。|  
-|---------|------------------------------|  
-|名前空間|root\\ServiceModel で定義|
+|---------|-----------------------------------|  
+|Namespace|root\ServiceModel で定義|

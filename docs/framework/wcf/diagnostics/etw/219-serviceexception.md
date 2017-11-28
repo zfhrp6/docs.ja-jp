@@ -1,42 +1,45 @@
 ---
-title: "219 - ServiceException | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 219 - ServiceException
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 81e2efac-39aa-4ed2-85a9-97eb8793b844
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: dd38ab45bceeee577d9e33f699a03a81c09dfc99
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 219 - ServiceException
-## プロパティ  
+# <a name="219---serviceexception"></a>219 - ServiceException
+## <a name="properties"></a>プロパティ  
   
 |||  
 |-|-|  
 |ID|219|  
 |キーワード|EndToEndMonitoring、HealthMonitoring、Troubleshooting、ServiceModel|  
-|レベル|Error \(エラー\)|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Analytic|  
+|レベル|Error|  
+|チャネル|Microsoft-Windows-Application Server-Applications/Analytic|  
   
-## 説明  
- このイベントは、WCF サービスがハンドルされない例外を検出した場合に生成されます。これには、アクティベーション中のハンドルされない例外、メッセージ処理中のハンドルされない例外、およびユーザー コード内でのハンドルされない例外が含まれます。  
+## <a name="description"></a>説明  
+ このイベントは、WCF サービスがハンドルされない例外を検出した場合に生成されます。 これには、アクティベーション中のハンドルされない例外、メッセージ処理中のハンドルされない例外、およびユーザー コード内でのハンドルされない例外が含まれます。  
   
-## メッセージ  
- メッセージの処理中に種類 '%2' のハンドルされない例外がスローされました。完全な例外 ToString: %1。  
+## <a name="message"></a>メッセージ  
+ メッセージの処理中に種類 '%2' のハンドルされない例外がスローされました。 完全な例外 ToString: %1。  
   
-## 詳細  
+## <a name="details"></a>詳細  
   
 |データ項目名|データ項目の型|説明|  
-|------------|-------------|--------|  
-|ExceptionToString|`xs:string`|CLR 例外に対して `ToString`\(\) を呼び出した結果。|  
+|--------------------|--------------------|-----------------|  
+|ExceptionToString|`xs:string`|CLR 例外に対して `ToString`() を呼び出した結果。|  
 |ExceptionTypeName|`xs:string`|例外の型の CLR FullName。|  
-|HostReference|`xs:string`|Web ホスト サービスの場合は、このフィールドにより、サービスが Web 階層内で一意に識別されます。その形式は、'Web サイト名アプリケーション仮想パス&#124;サービス仮想パス&#124;サービス名' と定義されます。例: 'Default Web Site\/CalculatorApplication&#124;\/CalculatorService.svc&#124;CalculatorService'。|  
+|HostReference|`xs:string`|Web ホスト サービスの場合は、このフィールドにより、サービスが Web 階層内で一意に識別されます。 その形式とは見なさ ' Web サイト名アプリケーション仮想パス &#124;です。サービス仮想パス &#124;です。ServiceName' です。 例: ' 既定の Web サイト/CalculatorApplication &#124;/CalculatorService.svc &#124;です。CalculatorService'。|  
 |AppDomain|`xs:string`|AppDomain.CurrentDomain.FriendlyName で返される文字列。|

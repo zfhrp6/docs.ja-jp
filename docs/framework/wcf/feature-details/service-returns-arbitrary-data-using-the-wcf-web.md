@@ -1,27 +1,30 @@
 ---
-title: "方法 : WCF Web HTTP プログラミング モデルを使用して任意のデータを返すサービスを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : WCF Web HTTP プログラミング モデルを使用して任意のデータを返すサービスを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0283955a-b4ae-458d-ad9e-6fbb6f529e3d
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 64179a559986f11fa263fac7fe680ddd9bea809c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : WCF Web HTTP プログラミング モデルを使用して任意のデータを返すサービスを作成する
-開発者は、データがサービス操作から返される流れを完全に制御する必要が生じることがあります。サービス操作が [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではサポートされない形式でデータを返す必要がある場合がこれに当てはまります。このトピックでは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルを使用してこのようなサービスを作成する方法を説明します。ストリームを返す操作を 1 つ持つサービスを例に取ります。  
+# <a name="how-to-create-a-service-that-returns-arbitrary-data-using-the-wcf-web-http-programming-model"></a>方法 : WCF Web HTTP プログラミング モデルを使用して任意のデータを返すサービスを作成する
+開発者は、データがサービス操作から返される流れを完全に制御する必要が生じることがあります。 サービス操作でサポートされていない形式でデータを返す必要がある場合は、この[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]です。 このトピックでは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルを使用してこのようなサービスを作成する方法を説明します。 ストリームを返す操作を 1 つ持つサービスを例に取ります。  
   
-### サービス コントラクトを実装するには  
+### <a name="to-implement-the-service-contract"></a>サービス コントラクトを実装するには  
   
-1.  サービス コントラクトを定義します。コントラクトは `IImageServer` と呼ばれ、<xref:System.IO.Stream> を返す `GetImage` というメソッドが入っています。  
+1.  サービス コントラクトを定義します。 コントラクトは `IImageServer` と呼ばれ、`GetImage` を返す <xref:System.IO.Stream> というメソッドが入っています。  
   
     ```  
     [ServiceContract]  
@@ -34,7 +37,7 @@ caps.handback.revision: 11
   
      このメソッドは <xref:System.IO.Stream> を戻すので、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] はその操作がサービス操作から戻るデータを完全に制御できると想定し、戻されたデータにフォーマットを適用しません。  
   
-2.  サービス コントラクトを実装します。コントラクトには 1 つの操作 \(`GetImage`\) しかありません。このメソッドはビットマップを生成して、それを <xref:System.IO.MemoryStream> に .jpg 形式で保存します。操作はそのストリームを呼び出し元に戻します。  
+2.  サービス コントラクトを実装します。 コントラクトには 1 つの操作 (`GetImage`) しかありません。 このメソッドはビットマップを生成して、それを <xref:System.IO.MemoryStream> に .jpg 形式で保存します。 操作はそのストリームを呼び出し元に戻します。  
   
     ```  
     public class Service : IImageServer  
@@ -58,11 +61,11 @@ caps.handback.revision: 11
        }  
     ```  
   
-     コードの最後から 2 番目の行にある `WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";`  に注意してください。  
+     コードの最後から 2 番目の行にある `WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";` に注意してください。  
   
-     これはコンテンツの種類のヘッダーを `“image/jpeg”` に設定します。この例では .jpg ファイルを戻す方法を示していますが、必要に応じて、任意の種類のデータを任意の形式で戻すように変更できます。操作はデータを生成または取得してそれをストリームに書き込む必要があります。  
+     これにより、コンテンツ タイプ ヘッダーに設定`"image/jpeg"`です。 この例では .jpg ファイルを戻す方法を示していますが、必要に応じて、任意の種類のデータを任意の形式で戻すように変更できます。 操作はデータを生成または取得してそれをストリームに書き込む必要があります。  
   
-### サービスをホストするには  
+### <a name="to-host-the-service"></a>サービスをホストするには  
   
 1.  コンソール アプリケーションを作成し、サービスをホストします。  
   
@@ -85,14 +88,12 @@ caps.handback.revision: 11
   
     ```  
     ServiceHost host = new ServiceHost(typeof(Service), new Uri(baseAddress));  
-  
     ```  
   
 4.  <xref:System.ServiceModel.WebHttpBinding> と <xref:System.ServiceModel.Description.WebHttpBehavior> を使用して、エンドポイントを追加します。  
   
     ```  
     host.AddServiceEndpoint(typeof(IImageServer), new WebHttpBinding(), "").Behaviors.Add(new WebHttpBehavior());  
-  
     ```  
   
 5.  サービス ホストを開きます。  
@@ -108,16 +109,15 @@ caps.handback.revision: 11
     Console.Write("Press ENTER to close the host");  
     Console.ReadLine();  
     host.Close();  
-  
     ```  
   
-### Internet Explorer を使用して生のサービスを呼び出すには  
+### <a name="to-call-the-raw-service-using-internet-explorer"></a>Internet Explorer を使用して生のサービスを呼び出すには  
   
-1.  サービスを実行します。サービスからの次の出力が表示されます。`Service is running Press ENTER to close the host`  
+1.  サービスを実行します。サービスからの次の出力が表示されます。 `Service is running Press ENTER to close the host`  
   
 2.  Internet Explorer を開き「`http://localhost:8000/Service/GetImage?width=50&height=40`」と入力します。黄色い長方形とその中心を通る青い斜線が表示されます。  
   
-## 使用例  
+## <a name="example"></a>例  
  この例で使用されているコードの全容を次に示します。  
   
 ```  
@@ -179,12 +179,11 @@ namespace RawImageService
         }  
     }  
 }  
-  
 ```  
   
-## コードのコンパイル  
+## <a name="compiling-the-code"></a>コードのコンパイル  
   
 -   コード例のコンパイル時には、System.ServiceModel.dll と System.ServiceModel.Web.dll を参照します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

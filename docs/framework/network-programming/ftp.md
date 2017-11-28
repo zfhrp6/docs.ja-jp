@@ -7,24 +7,17 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
-helpviewer_keywords:
-- FTP
+helpviewer_keywords: FTP
 ms.assetid: 9b43f8b4-89d7-46a7-89fc-71aca916dd32
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d2274873140c415a970884389e71163be7f4cba6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: d7b169a6de494d10fa332ebf5f2aa315ae69653a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ftp"></a>FTP
 .NET Framework は、<xref:System.Net.FtpWebRequest> クラスと <xref:System.Net.FtpWebResponse> クラスを使用して、FTP プロトコルの包括的なサポートを提供します。 これらのクラスは <xref:System.Net.WebRequest> と <xref:System.Net.WebResponse> から派生します。 ほとんどの場合、<xref:System.Net.WebRequest> クラスと <xref:System.Net.WebResponse> クラスは、要求を行うために必要なすべてを提供しますが、プロパティとして公開されている FTP 固有の機能にアクセスする必要がある場合は、これらのクラスを <xref:System.Net.FtpWebRequest> または <xref:System.Net.FtpWebResponse> に型キャストすることができます。  
@@ -36,9 +29,8 @@ ms.lasthandoff: 08/21/2017
  (<xref:System.Net.FtpWebRequest.Proxy%2A> プロパティで指定された) プロキシが HTTP プロキシの場合、<xref:System.Net.WebRequestMethods.Ftp.DownloadFile>、<xref:System.Net.WebRequestMethods.Ftp.ListDirectory>、および <xref:System.Net.WebRequestMethods.Ftp.ListDirectoryDetails> コマンドのみがサポートされます。  
   
 ## <a name="see-also"></a>関連項目  
- [プロキシを介したインターネットへのアクセス](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)   
- [ネットワーク プログラミングのサンプル](../../../docs/framework/network-programming/network-programming-samples.md)   
- [FTP クライアント テクノロジのサンプル](http://go.microsoft.com/fwlink/?LinkID=179557)   
- [FTP エクスプローラー テクノロジのサンプル](http://go.microsoft.com/fwlink/?LinkID=179569)   
+ [プロキシを介したインターネットへのアクセス](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)  
+ [ネットワーク プログラミングのサンプル](../../../docs/framework/network-programming/network-programming-samples.md)  
+ [FTP クライアント テクノロジのサンプル](http://go.microsoft.com/fwlink/?LinkID=179557)  
+ [FTP エクスプローラー テクノロジのサンプル](http://go.microsoft.com/fwlink/?LinkID=179569)  
  [アプリケーション プロトコルの使用](../../../docs/framework/network-programming/using-application-protocols.md)
-

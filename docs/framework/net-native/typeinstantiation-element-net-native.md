@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: a5eada64-075b-4162-9655-ded84e4681f2
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b4b0a295e5d788eb50ba39227ac6971ea057ec1e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 442970c8253147313a38e1a1518219a96ec41945
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="lttypeinstantiationgt-element-net-native"></a>&lt;TypeInstantiation&gt; 要素 (.NET ネイティブ)
 構築されたジェネリック型にランタイム リフレクション ポリシーを適用します。  
@@ -54,9 +52,9 @@ ms.lasthandoff: 08/21/2017
 |`Browse`|リフレクション|省略可能な属性です。 プログラム要素に関する情報の照会を制御しますが、実行時アクセスは有効にしません。|  
 |`Dynamic`|リフレクション|省略可能な属性です。 コンストラクター、メソッド、フィールド、プロパティ、およびイベントを含むすべての型のメンバーへの実行時アクセスを制御して、動的プログラミングを有効にします。|  
 |`Serialize`|シリアル化|省略可能な属性です。 コンストラクター、フィールド、およびプロパティへの実行時アクセスを制御し、Newtonsoft の JSON シリアライザーなどのライブラリによって型インスタンスをシリアル化および逆シリアル化できるようにします。|  
-|`DataContractSerializer`|シリアル化|省略可能な属性です。 <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=fullName> クラスを使用するシリアル化のポリシーを制御します。|  
-|`DataContractJsonSerializer`|シリアル化|省略可能な属性です。 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=fullName> クラスを使用する JSON シリアル化のポリシーを制御します。|  
-|`XmlSerializer`|シリアル化|省略可能な属性です。 <xref:System.Xml.Serialization.XmlSerializer?displayProperty=fullName> クラスを使用する XML シリアル化のポリシーを制御します。|  
+|`DataContractSerializer`|シリアル化|省略可能な属性です。 <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> クラスを使用するシリアル化のポリシーを制御します。|  
+|`DataContractJsonSerializer`|シリアル化|省略可能な属性です。 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> クラスを使用する JSON シリアル化のポリシーを制御します。|  
+|`XmlSerializer`|シリアル化|省略可能な属性です。 <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> クラスを使用する XML シリアル化のポリシーを制御します。|  
 |`MarshalObject`|Interop|省略可能な属性です。 Windows ランタイムと COM に参照型をマーシャリングするためのポリシーを制御します。|  
 |`MarshalDelegate`|Interop|省略可能な属性です。 ネイティブ コードへの関数ポインターとしてデリゲート型をマーシャリングするためのポリシーを制御します。|  
 |`MarshalStructure`|Interop|省略可能な属性です。 ネイティブ コードに構造体をマーシャリングするためのポリシーを制御します。|  
@@ -65,7 +63,7 @@ ms.lasthandoff: 08/21/2017
   
 |値|説明|  
 |-----------|-----------------|  
-|*type_name*|型名。 この `<TypeInstantiation>` 要素が [\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md) 要素、[\<Type>](../../../docs/framework/net-native/type-element-net-native.md) 要素、または別の `<TypeInstantiation>` 要素の子である場合、*type_name* には名前空間なしで型の名前を指定できます。 それ以外の場合は、*type_name* には完全修飾型名を含める必要があります。 型名は修飾されません。 たとえば、<xref:System.Collections.Generic.List%601?displayProperty=fullName> オブジェクトの場合、`<TypeInstantiation>` 要素は次のように示されることがあります。<br /><br /> `\<TypeInstantiation Name=System.Collections.Generic.List Dynamic="Required Public" />`|  
+|*type_name*|型名。 この `<TypeInstantiation>` 要素が [\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md) 要素、[\<Type>](../../../docs/framework/net-native/type-element-net-native.md) 要素、または別の `<TypeInstantiation>` 要素の子である場合、*type_name* には名前空間なしで型の名前を指定できます。 それ以外の場合は、*type_name* には完全修飾型名を含める必要があります。 型名は修飾されません。 たとえば、<xref:System.Collections.Generic.List%601?displayProperty=nameWithType> オブジェクトの場合、`<TypeInstantiation>` 要素は次のように示されることがあります。<br /><br /> `\<TypeInstantiation Name=System.Collections.Generic.List Dynamic="Required Public" />`|  
   
 ## <a name="arguments-attribute"></a>引数属性  
   
@@ -113,7 +111,7 @@ ms.lasthandoff: 08/21/2017
   
  [!code-csharp[ProjectN_Reflection#2](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/makegenerictype1.cs#2)]  
   
- [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンでコンパイルされると、この例は <xref:System.Type.GetGenericTypeDefinition%2A?displayProperty=fullName> メソッドを呼び出す行で [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外をスローします。 次の `<TypeInstantiation>` 要素をランタイム ディレクティブ ファイルに追加すると、この例外を排除して、必要なメタデータを提供できます。  
+ [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンでコンパイルされると、この例は <xref:System.Type.GetGenericTypeDefinition%2A?displayProperty=nameWithType> メソッドを呼び出す行で [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外をスローします。 次の `<TypeInstantiation>` 要素をランタイム ディレクティブ ファイルに追加すると、この例外を排除して、必要なメタデータを提供できます。  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
@@ -127,7 +125,6 @@ ms.lasthandoff: 08/21/2017
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
- [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)   
+ [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)  
  [ランタイム ディレクティブ ポリシーの設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
-

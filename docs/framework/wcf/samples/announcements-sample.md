@@ -1,26 +1,29 @@
 ---
-title: "アナウンスのサンプル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "アナウンスのサンプル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 954a75e4-9a97-41d6-94fc-43765d4205a9
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 05e2c45b66f92229877ac3ec867da9b71cd4156a
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# アナウンスのサンプル
-このサンプルでは、探索機能のアナウンス機能を使用する方法を示します。アナウンス機能を使用すると、サービスに関するメタデータを含むアナウンス メッセージをサービスから送信できます。既定では、サービスが開始されたときに Hello アナウンスが送信され、サービスがシャットダウンされたときに Bye アナウンスが送信されます。これらのアナウンスは、マルチキャストすることも、Point\-to\-Point 送信することもできます。このサンプルは、2 つのプロジェクト \(サービスとクライアント\) で構成されます。  
+# <a name="announcements-sample"></a>アナウンスのサンプル
+このサンプルでは、探索機能のアナウンス機能を使用する方法を示します。 アナウンス機能を使用すると、サービスに関するメタデータを含むアナウンス メッセージをサービスから送信できます。 既定では、サービスが開始されたときに Hello アナウンスが送信され、サービスがシャットダウンされたときに Bye アナウンスが送信されます。 これらのアナウンスは、マルチキャストすることも、Point-to-Point 送信することもできます。 このサンプルは、2 つのプロジェクト (サービスとクライアント) で構成されます。  
   
-## サービス  
- このプロジェクトには、自己ホスト型の電卓サービスが含まれています。`Main` メソッドでは、サービス ホストが作成され、それにサービス エンドポイントが追加されます。次に、<xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> が作成されます。アナウンスを有効にする場合は、アナウンス エンドポイントを <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> に追加する必要があります。この場合、UDP マルチキャストを使用して、標準エンドポイントをアナウンス エンドポイントとして追加します。これにより、既知の UDP アドレスからアナウンスがブロードキャストされます。  
+## <a name="service"></a>サービス  
+ このプロジェクトには、自己ホスト型の電卓サービスが含まれています。 `Main` メソッドでは、サービス ホストが作成され、それにサービス エンドポイントが追加されます。 次に、<xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> が作成されます。 アナウンスを有効にする場合は、アナウンス エンドポイントを <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> に追加する必要があります。 この場合、UDP マルチキャストを使用して、標準エンドポイントをアナウンス エンドポイントとして追加します。 これにより、既知の UDP アドレスからアナウンスがブロードキャストされます。  
   
 ```  
 Uri baseAddress = new Uri("http://localhost:8000/" + Guid.NewGuid().ToString());  
@@ -43,8 +46,8 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), base
 }  
 ```  
   
-## クライアント  
- このプロジェクトでは、クライアントが <xref:System.ServiceModel.Discovery.AnnouncementService> をホストすることに注意してください。また、2 つのデリゲートがイベントに登録されます。これらのイベントにより、オンラインおよびオフラインのアナウンスを受信したときのクライアントの処理が決定されます。  
+## <a name="client"></a>クライアント  
+ このプロジェクトでは、クライアントが <xref:System.ServiceModel.Discovery.AnnouncementService> をホストすることに注意してください。 また、2 つのデリゲートがイベントに登録されます。 これらのイベントにより、オンラインおよびオフラインのアナウンスを受信したときのクライアントの処理が決定されます。  
   
 ```  
 // Create an AnnouncementService instance  
@@ -73,25 +76,25 @@ static void OnOfflineEvent(object sender, AnnouncementEventArgs e)
 }  
 ```  
   
-#### このサンプルを使用するには  
+#### <a name="to-use-this-sample"></a>このサンプルを使用するには  
   
-1.  このサンプルでは HTTP エンドポイントを使用します。このサンプルを実行するには、適切な URL ACL を追加する必要があります \(詳細については、「[HTTP および HTTPS の構成](http://go.microsoft.com/fwlink/?LinkId=70353)」を参照してください\)。管理特権で次のコマンドを実行すると、適切な ACL が追加されます。そのままではコマンドが動作しない場合は、代わりに、ドメインとユーザー名を引数に指定して実行してみてください。`netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`  
+1.  このサンプルは、HTTP エンドポイントを使用して、このサンプルを適切な URL Acl を実行する必要があります追加を参照してください[を構成する HTTP および HTTPS](http://go.microsoft.com/fwlink/?LinkId=70353)詳細についてはします。 管理特権で次のコマンドを実行すると、適切な ACL が追加されます。 そのままではコマンドが動作しない場合は、代わりに、ドメインとユーザー名を引数に指定して実行してみてください。 `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`  
   
 2.  ソリューションをビルドします。  
   
 3.  client.exe アプリケーションを実行します。  
   
-4.  service.exe アプリケーションを実行します。クライアントは、オンライン アナウンスを受信します。  
+4.  service.exe アプリケーションを実行します。 クライアントは、オンライン アナウンスを受信します。  
   
-5.  service.exe アプリケーションを終了します。クライアントは、オフライン アナウンスを受信します。  
+5.  service.exe アプリケーションを終了します。 クライアントは、オフライン アナウンスを受信します。  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\Announcements`  
   
-## 参照
+## <a name="see-also"></a>関連項目

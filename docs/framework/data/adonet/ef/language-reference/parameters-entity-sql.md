@@ -1,31 +1,30 @@
 ---
-title: "パラメーター (Entity SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: "パラメーター (Entity SQL)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8d618edd-0988-4ff2-8263-ce59448af7a5
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 2a3700b5f9bdc996b147609d86bcaed0ec0bb116
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# パラメーター (Entity SQL)
-パラメーターは、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] の外部で定義される変数です。通常は、ホスト言語で使用されるバインド API を通じて定義されます。  それぞれのパラメーターには、名前と型があります。  パラメーター名は、クエリ式内で、プレフィックスとして @ 記号を付けて定義されます。これにより、クエリ内で定義されているプロパティ名などの他の名前と明確に区別されます。  
+# <a name="parameters-entity-sql"></a>パラメーター (Entity SQL)
+パラメーターは、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] の外部で定義される変数です。通常は、ホスト言語で使用されるバインド API を通じて定義されます。 それぞれのパラメーターには、名前と型があります。 クエリ式でパラメーター名が定義されているで (@) 記号をプレフィックスとして。 これにより、クエリ内で定義されている他の名前 (プロパティ名など) と明確に区別されます。  
   
  パラメーターをバインドするための API は、ホスト言語によって提供されます。  
   
-## 例  
+## <a name="example"></a>例  
   
 ```  
 select c   
@@ -33,6 +32,6 @@ select c
       where c.Name = @name  
 ```  
   
-## 参照  
- [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)   
+## <a name="see-also"></a>関連項目  
+ [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
  [Entity SQL の概要](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)

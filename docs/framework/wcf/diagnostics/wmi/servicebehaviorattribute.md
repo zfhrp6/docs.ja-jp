@@ -1,25 +1,28 @@
 ---
-title: "ServiceBehaviorAttribute | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: ServiceBehaviorAttribute
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 5faa266f-587f-4e03-828d-1c7dd5acfe65
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f7401acd5aefcb7a8c02ea6c05a94374e41d9b9d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ServiceBehaviorAttribute
+# <a name="servicebehaviorattribute"></a>ServiceBehaviorAttribute
 ServiceBehaviorAttribute  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class ServiceBehaviorAttribute : Behavior  
@@ -42,121 +45,121 @@ class ServiceBehaviorAttribute : Behavior
 };  
 ```  
   
-## メソッド  
+## <a name="methods"></a>メソッド  
  ServiceBehaviorAttribute クラスは、メソッドを一切定義しません。  
   
-## プロパティ  
+## <a name="properties"></a>プロパティ  
  ServiceBehaviorAttribute クラスには、次のプロパティがあります。  
   
-### AutomaticSessionShutdown  
+### <a name="automaticsessionshutdown"></a>AutomaticSessionShutdown  
  データ型 : boolean  
   
  アクセスの種類 : 読み取り専用  
   
  クライアントが出力セッションを閉じるときにセッションを自動的に閉じるかどうかを示します。  
   
-### ConcurrencyMode  
+### <a name="concurrencymode"></a>ConcurrencyMode  
  データ型: string  
 アクセスの種類 : 読み取り専用  
   
  サービスで、1 つのスレッド、複数のスレッド、または再入呼び出しをサポートするかどうかを示します。  
   
-### ConfigurationName  
- データ型 : string  
+### <a name="configurationname"></a>ConfigurationName  
+ データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  サービス構成の名前。  
   
-### IgnoreExtensionDataObject  
+### <a name="ignoreextensiondataobject"></a>IgnoreExtensionDataObject  
  データ型 : boolean  
   
  アクセスの種類 : 読み取り専用  
   
  不明なシリアル化データをネットワークで送信するかどうかを指定します。  
   
-### IncludeExceptionDetailInFaults  
+### <a name="includeexceptiondetailinfaults"></a>IncludeExceptionDetailInFaults  
  データ型 : boolean  
   
  アクセスの種類 : 読み取り専用  
   
  デバッグの目的でクライアントに返される SOAP エラーの詳細に、マネージ例外情報を含めるかどうかを指定します。  
   
-### InstanceContextMode  
- データ型 : string  
+### <a name="instancecontextmode"></a>InstanceContextMode  
+ データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  新しいサービス オブジェクトを作成するタイミングを指定します。  
   
-### MaxItemsInObjectGraph  
+### <a name="maxitemsinobjectgraph"></a>MaxItemsInObjectGraph  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  1 つのシリアル化されたオブジェクトで許可される項目の最大数。  
   
-### Name  
- データ型 : string  
+### <a name="name"></a>名前  
+ データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  WSDL でのサービスの名前属性。  
   
-### 名前空間  
- データ型 : string  
+### <a name="namespace"></a>名前空間  
+ データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  WSDL でのサービスのターゲット名前空間。  
   
-### ReleaseServiceInstanceOnTransactionComplete  
+### <a name="releaseserviceinstanceontransactioncomplete"></a>ReleaseServiceInstanceOnTransactionComplete  
  データ型 : boolean  
   
  アクセスの種類 : 読み取り専用  
   
  現在のトランザクションの完了時に、サービス オブジェクトをリサイクルするかどうかを指定します。  
   
-### TransactionAutoCompleteOnSessionClose  
+### <a name="transactionautocompleteonsessionclose"></a>TransactionAutoCompleteOnSessionClose  
  データ型 : boolean  
   
  アクセスの種類 : 読み取り専用  
   
  現在のセッションの終了時に、保留中のトランザクションを完了するかどうかを指定します。  
   
-### TransactionIsolationLevel  
- データ型 : string  
+### <a name="transactionisolationlevel"></a>TransactionIsolationLevel  
+ データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  トランザクションの分離レベルを指定します。  
   
-### TransactionTimeout  
+### <a name="transactiontimeout"></a>TransactionTimeout  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  トランザクションを完了しなければならない期間。  
   
-### UseSynchronizationContext  
+### <a name="usesynchronizationcontext"></a>UseSynchronizationContext  
  データ型 : boolean  
   
  アクセスの種類 : 読み取り専用  
   
  現在の同期コンテキストを使用してスレッドの実行を選択するかどうかを指定します。  
   
-### ValidateMustUnderstand  
+### <a name="validatemustunderstand"></a>ValidateMustUnderstand  
  データ型 : boolean  
   
  アクセスの種類 : 読み取り専用  
   
  システムまたはアプリケーションで SOAP MustUnderstand ヘッダー処理を強制的に行うかどうかを指定します。  
   
-## 要件  
+## <a name="requirements"></a>要件  
   
 |MOF|Servicemodel.mof にて宣言済み。|  
-|---------|------------------------------|  
-|名前空間|root\\ServiceModel で定義|  
+|---------|-----------------------------------|  
+|Namespace|root\ServiceModel で定義|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.ServiceBehaviorAttribute>

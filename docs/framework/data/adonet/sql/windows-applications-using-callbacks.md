@@ -1,36 +1,40 @@
 ---
-title: "コールバックを使用した Windows アプリケーション | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "コールバックを使用した Windows アプリケーション"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: ae2ea457-0764-4b06-8977-713c77e85bd2
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 83286fa5909dde8cde081ef34864be8f27b57122
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# コールバックを使用した Windows アプリケーション
-非同期処理は多くの場合、データベース操作を開始し、データベース操作が完了するまで待つことなく、他のプロセスの実行を継続できるようにします。  ただし、ほとんどの場合、データベース操作の完了時に何らかの処理を行う必要があります。  たとえば、Windows アプリケーションでは、ユーザー インターフェイス スレッドの応答性を維持しながら、時間のかかる操作をバックグラウンド スレッドに委任することができます。  また一方、データベース操作の完了時に、この結果を使用してフォームを表示することができます。  このような場合、コールバックによって最適に実行されます。  
+# <a name="windows-applications-using-callbacks"></a>コールバックを使用した Windows アプリケーション
+非同期処理は多くの場合、データベース操作を開始し、データベース操作が完了するまで待つことなく、他のプロセスの実行を継続できるようにします。 ただし、ほとんどの場合、データベース操作の完了時に何らかの処理を行う必要があります。 たとえば、Windows アプリケーションでは、ユーザー インターフェイス スレッドの応答性を維持しながら、時間のかかる操作をバックグラウンド スレッドに委任することができます。 また一方、データベース操作の完了時に、この結果を使用してフォームを表示することができます。 このような場合、コールバックによって最適に実行されます。  
   
- コールバックを定義するには、<xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> メソッド、<xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A> メソッド、または <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> メソッドで <xref:System.AsyncCallback> デリゲートを指定します。  このデリゲートは、操作の完了時に呼び出されます。  デリゲートに <xref:System.Data.SqlClient.SqlCommand> 自身への参照を渡すことができるため、<xref:System.Data.SqlClient.SqlCommand> オブジェクトにアクセスしたり、グローバル変数を使用することなく適切な `End` メソッドを呼び出したりすることが容易になります。  
+ コールバックを定義するには、<xref:System.AsyncCallback> メソッド、<xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> メソッド、または <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A> メソッドで <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> デリゲートを指定します。 このデリゲートは、操作の完了時に呼び出されます。 デリゲートに <xref:System.Data.SqlClient.SqlCommand> 自身への参照を渡すことができるため、<xref:System.Data.SqlClient.SqlCommand> オブジェクトにアクセスしたり、グローバル変数を使用することなく適切な `End` メソッドを呼び出したりすることが容易になります。  
   
-## 例  
- 次の Windows アプリケーションは、<xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> メソッドを使って、数秒の遅れを伴う \(時間のかかるコマンドをエミュレートする\) Transact\-SQL ステートメントを実行する例を示しています。  
+## <a name="example"></a>例  
+ 次の Windows アプリケーションは、<xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> メソッドを使って、数秒の遅れを伴う (時間のかかるコマンドをエミュレートする) Transact-SQL ステートメントを実行する例を示しています。  
   
- この例では、別のスレッドからのフォームと対話するメソッドを呼び出す方法など、重要なテクニックを多数紹介しています。  また、この例は、ユーザーがコマンドを複数回同時に実行しないようにする方法と、コールバック プロシージャが呼び出される前にフォームが閉じないようにする方法を示しています。  
+ この例では、別のスレッドからのフォームと対話するメソッドを呼び出す方法など、重要なテクニックを多数紹介しています。 また、この例は、ユーザーがコマンドを複数回同時に実行しないようにする方法と、コールバック プロシージャが呼び出される前にフォームが閉じないようにする方法を示しています。  
   
- この例をセットアップするには、新しい Windows アプリケーションを作成します。  フォーム上に、<xref:System.Windows.Forms.Button> コントロールと 2 つの <xref:System.Windows.Forms.Label> コントロールを配置します \(各コントロールは既定の名前のまま使用します\)。  お使いの環境に応じて接続文字列を変更し、次のコードをフォームのクラスに追加します。  
+ この例をセットアップするには、新しい Windows アプリケーションを作成します。 フォーム上に、<xref:System.Windows.Forms.Button> コントロールと 2 つの <xref:System.Windows.Forms.Label> コントロールを配置します (各コントロールは既定の名前のまま使用します)。 お使いの環境に応じて接続文字列を変更し、次のコードをフォームのクラスに追加します。  
   
- \[Visual Basic\]  
-  
-```  
+```vb  
 ' Add these to the top of the class:  
 Imports System  
 Imports System.Data  
@@ -384,6 +388,6 @@ private void Form1_Load(object sender, System.EventArgs e)
 }  
 ```  
   
-## 参照  
- [非同期操作](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [非同期操作](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

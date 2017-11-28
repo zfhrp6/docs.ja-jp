@@ -1,47 +1,50 @@
 ---
-title: "探索 (サンプル) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "探索 (サンプル)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 522a00b4-a789-4e8c-b8d7-a4c3d863a182
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 424d2be5e8aa5733f3fe8159ebbf181a1f906f3a
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 探索 (サンプル)
+# <a name="discovery-samples"></a>探索 (サンプル)
 このセクションには、探索機能関連のサンプルが含まれています。  
   
-## このセクションの内容  
- [アナウンス](../../../../docs/framework/wcf/samples/announcements-sample.md)  
+## <a name="in-this-section"></a>このセクションの内容  
+ [お知らせ](../../../../docs/framework/wcf/samples/announcements-sample.md)  
  探索機能を使用したアナウンスを使用する方法を示します。  
   
  [非同期検索](../../../../docs/framework/wcf/samples/asynchronous-find-sample.md)  
  すべての電卓サービスを検索する非同期検索を実行する方法を示します。  
   
- [Basic](../../../../docs/framework/wcf/samples/basic-sample.md)  
+ [基本](../../../../docs/framework/wcf/samples/basic-sample.md)  
  プログラムでサービスを探索可能にする方法と、<xref:System.ServiceModel.Discovery.DynamicEndpoint> を使用してそのサービスを検索する方法を示します。  
   
  [構成](../../../../docs/framework/wcf/samples/configuration-sample.md)  
  構成ファイルを使用してサービスを探索可能にする方法と、構成によって <xref:System.ServiceModel.Discovery.DynamicEndpoint> を使用してそのサービスを検索する方法を示します。  
   
  [探索バインディング要素のサンプル](../../../../docs/framework/wcf/samples/discovery-binding-element-sample.md)  
- 探索バインディング要素をカスタム バインディングに追加する方法を示します。これにより、チャネルが開いている場合にクライアントでサービスを探索できるようになります。  
+ 探索バインド要素をカスタム バインドに追加する方法を示します。 これにより、チャネルが開いている場合にクライアントでサービスを探索できるようになります。  
   
  [探索プロキシのサンプル](../../../../docs/framework/wcf/samples/discovery-proxy-sample.md)  
  既存のサービスに関する情報を格納するために探索プロキシの実装を作成する方法と、クライアントからそのプロキシに情報のクエリを行う方法を示します。  
   
- [一意の ListenUri モードのサンプルを使用したサービスの探索](../../../../docs/framework/wcf/samples/discover-a-service-with-unique-listen-uri-mode-sample.md)  
- <xref:System.ServiceModel.Channels.BindingContext.ListenUriMode%2A> プロパティが <xref:System.ServiceModel.Description.ListenUriMode> に設定されているサービスを探索する方法を示します。  
+ [一意の Listenuri モードのサンプルのサービスを検出します。](../../../../docs/framework/wcf/samples/discover-a-service-with-unique-listen-uri-mode-sample.md)  
+ <xref:System.ServiceModel.Channels.BindingContext.ListenUriMode%2A> プロパティが <xref:System.ServiceModel.Description.ListenUriMode.Unique> に設定されているサービスを探索する方法を示します。  
   
- [スコープを使用した探索](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)  
+ [スコープの検出](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)  
  スコープを使用して探索可能なエンドポイントを分類する方法と、<xref:System.ServiceModel.Discovery.DiscoveryClient> を使用してエンドポイントの非同期検索を実行する方法を示します。  
   
  [カスタム検索基準](../../../../docs/framework/wcf/samples/custom-find-criteria.md)  
