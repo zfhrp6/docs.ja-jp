@@ -1,49 +1,53 @@
 ---
-title: "110 – CustomTrackingRecordWarning | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "110 – CustomTrackingRecordWarning"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3bc093de-be47-4ed0-983f-05b4246446fc
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d75ceef6dbe290cafc6127ae007d1dcc3d28b50f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 110 – CustomTrackingRecordWarning
-## プロパティ  
+# <a name="110---customtrackingrecordwarning"></a><span data-ttu-id="e2217-102">110 – CustomTrackingRecordWarning</span><span class="sxs-lookup"><span data-stu-id="e2217-102">110 - CustomTrackingRecordWarning</span></span>
+## <a name="properties"></a><span data-ttu-id="e2217-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="e2217-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|Id|110|  
-|キーワード|UserEvents、EndToEndMonitoring、Troubleshooting、HealthMonitoring、WFTracking|  
-|レベル|Warning \(警告\)|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Analytic|  
+|<span data-ttu-id="e2217-104">ID</span><span class="sxs-lookup"><span data-stu-id="e2217-104">Id</span></span>|<span data-ttu-id="e2217-105">110</span><span class="sxs-lookup"><span data-stu-id="e2217-105">110</span></span>|  
+|<span data-ttu-id="e2217-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="e2217-106">Keywords</span></span>|<span data-ttu-id="e2217-107">UserEvents、EndToEndMonitoring、Troubleshooting、HealthMonitoring、WFTracking</span><span class="sxs-lookup"><span data-stu-id="e2217-107">UserEvents, EndToEndMonitoring, Troubleshooting, HealthMonitoring, WFTracking</span></span>|  
+|<span data-ttu-id="e2217-108">レベル</span><span class="sxs-lookup"><span data-stu-id="e2217-108">Level</span></span>|<span data-ttu-id="e2217-109">警告</span><span class="sxs-lookup"><span data-stu-id="e2217-109">Warning</span></span>|  
+|<span data-ttu-id="e2217-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="e2217-110">Channel</span></span>|<span data-ttu-id="e2217-111">Microsoft-Windows-Application Server-Applications/Analytic</span><span class="sxs-lookup"><span data-stu-id="e2217-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## 説明  
- このイベントは、ワークフロー インスタンス内のアクティビティが警告レベルで CustomTrackingRecord を生成したときに、ETW 追跡参加要素によって生成されます。  
+## <a name="description"></a><span data-ttu-id="e2217-112">説明</span><span class="sxs-lookup"><span data-stu-id="e2217-112">Description</span></span>  
+ <span data-ttu-id="e2217-113">このイベントは、ワークフロー インスタンス内のアクティビティが警告レベルで CustomTrackingRecord を生成したときに、ETW 追跡参加要素によって生成されます。</span><span class="sxs-lookup"><span data-stu-id="e2217-113">This event is emitted by the ETW tracking participant when an activity within a workflow instance emits CustomTrackingRecord with level warning</span></span>  
   
-## メッセージ  
- TrackRecord \= CustomTrackingRecord、InstanceID \= %1、RecordNumber\=%2、EventTime\=%3、Name\=%4、ActivityName\=%5、ActivityId\=%6、ActivityInstanceId\=%7、ActivityTypeName\=%8、Data\=%9、Annotations\=%10、ProfileName \= %11  
+## <a name="message"></a><span data-ttu-id="e2217-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="e2217-114">Message</span></span>  
+ <span data-ttu-id="e2217-115">TrackRecord = CustomTrackingRecord、InstanceID = %1、RecordNumber=%2、EventTime=%3、Name=%4、ActivityName=%5、ActivityId=%6、ActivityInstanceId=%7、ActivityTypeName=%8、Data=%9、Annotations=%10、ProfileName = %11</span><span class="sxs-lookup"><span data-stu-id="e2217-115">TrackRecord = CustomTrackingRecord, InstanceID = %1, RecordNumber=%2, EventTime=%3, Name=%4, ActivityName=%5, ActivityId=%6, ActivityInstanceId=%7, ActivityTypeName=%8, Data=%9, Annotations=%10, ProfileName = %11</span></span>  
   
-## 詳細  
+## <a name="details"></a><span data-ttu-id="e2217-116">詳細</span><span class="sxs-lookup"><span data-stu-id="e2217-116">Details</span></span>  
   
-|データ項目名|データ項目型|説明|  
-|------------|------------|--------|  
-|InstanceId|xs:GUID|ワークフローのインスタンス ID|  
-|RecordNumber|xs:long|生成されたレコードのシーケンス番号|  
-|EventTime|xs:dateTime|イベントの生成時刻 \(UTC\)|  
-|Name|xs:string|CustomTrackingRecord の名前|  
-|ActivityName|xs:string|CustomTrackingRecord を出力するアクティビティの名前|  
-|ActivityId|xs:string|CustomTrackingRecord を出力するアクティビティの ID|  
-|ActivityInstanceId|xs:string|CustomTrackingRecord を出力するアクティビティのインスタンス|  
-|ActivityTypeName|xs:string|CustomTrackingRecord を出力するアクティビティの名前|  
-|Data|xs:string|このイベントで追跡されたデータ。値は、\<items\>\<\> item  name \= "dataName" type\="System.String"\<dataName\>\<\/item\>\/items という形式で XML 要素に格納されます。データが追跡されなかった場合は、文字列に \<items\/\> が含まれます。ETW イベントのサイズは、ETW バッファーのサイズまたは ETW イベントの最大ペイロードに制限されます。イベントのサイズが ETW の制限を超えると、注釈が破棄され、データの値が \<items\>...\<\/items\> に置き換えられて、イベントが切り捨てられます。string、char、bool、int、short、long、uint、ushort、ulong、System.Single、float、double、System.Guid、System.DateTimeOffset、および System.DateTime の各型は、ToString\(\) から返される値として格納されます。その他のすべての型は、System.Runtime.Serialization.NetDataContractSerializer を使用してシリアル化されます。|  
-|Annotations|xs:string|このイベントに追加された注釈。値は、\<items\>\<\> item  name \= "annotationName" type\="System.String"\<annotationValue\>\<\/item\>\/items という形式で XML 要素に格納されます。注釈が指定されていない場合は、文字列に \<items\/\> が含まれます。ETW イベントのサイズは、ETW バッファーのサイズまたは ETW イベントの最大ペイロードに制限されます。イベントのサイズが ETW の制限を超えると、注釈が破棄され、注釈値が \<items\>...\<\/items\> に置き換えられて、イベントが切り捨てられます。|  
-|ProfileName|xs:string|このイベントを生成した追跡プロファイルの名前|  
-|HostReference|xs:string|Web ホスト サービスの場合は、このフィールドにより、サービスが Web 階層内で一意に識別されます。その形式は、"Web サイト名アプリケーション仮想パス&#124;サービス仮想パス&#124;サービス名" と定義されます。たとえば、"Default Web Site\/CalculatorApplication&#124;\/CalculatorService.svc&#124;CalculatorService" と定義されます。|  
-|AppDomain|xs:string|AppDomain.CurrentDomain.FriendlyName で返される文字列。|
+|<span data-ttu-id="e2217-117">データ項目名</span><span class="sxs-lookup"><span data-stu-id="e2217-117">Data Item Name</span></span>|<span data-ttu-id="e2217-118">データ項目の型</span><span class="sxs-lookup"><span data-stu-id="e2217-118">Data Item Type</span></span>|<span data-ttu-id="e2217-119">説明</span><span class="sxs-lookup"><span data-stu-id="e2217-119">Description</span></span>|  
+|--------------------|--------------------|-----------------|  
+|<span data-ttu-id="e2217-120">InstanceId</span><span class="sxs-lookup"><span data-stu-id="e2217-120">InstanceId</span></span>|<span data-ttu-id="e2217-121">xs:GUID</span><span class="sxs-lookup"><span data-stu-id="e2217-121">xs:GUID</span></span>|<span data-ttu-id="e2217-122">ワークフローのインスタンス ID</span><span class="sxs-lookup"><span data-stu-id="e2217-122">The instance id for the workflow</span></span>|  
+|<span data-ttu-id="e2217-123">RecordNumber</span><span class="sxs-lookup"><span data-stu-id="e2217-123">RecordNumber</span></span>|<span data-ttu-id="e2217-124">xs:long</span><span class="sxs-lookup"><span data-stu-id="e2217-124">xs:long</span></span>|<span data-ttu-id="e2217-125">生成されたレコードのシーケンス番号</span><span class="sxs-lookup"><span data-stu-id="e2217-125">The sequence number of the emitted record</span></span>|  
+|<span data-ttu-id="e2217-126">EventTime</span><span class="sxs-lookup"><span data-stu-id="e2217-126">EventTime</span></span>|<span data-ttu-id="e2217-127">xs:dateTime</span><span class="sxs-lookup"><span data-stu-id="e2217-127">xs:dateTime</span></span>|<span data-ttu-id="e2217-128">イベントの生成時刻 (UTC)</span><span class="sxs-lookup"><span data-stu-id="e2217-128">The time in UTC when the event was emitted</span></span>|  
+|<span data-ttu-id="e2217-129">名前</span><span class="sxs-lookup"><span data-stu-id="e2217-129">Name</span></span>|<span data-ttu-id="e2217-130">xs:string</span><span class="sxs-lookup"><span data-stu-id="e2217-130">xs:string</span></span>|<span data-ttu-id="e2217-131">CustomTrackingRecord の名前</span><span class="sxs-lookup"><span data-stu-id="e2217-131">The name of the CustomTrackingRecord</span></span>|  
+|<span data-ttu-id="e2217-132">ActivityName</span><span class="sxs-lookup"><span data-stu-id="e2217-132">ActivityName</span></span>|<span data-ttu-id="e2217-133">xs:string</span><span class="sxs-lookup"><span data-stu-id="e2217-133">xs:string</span></span>|<span data-ttu-id="e2217-134">CustomTrackingRecord を出力するアクティビティの名前</span><span class="sxs-lookup"><span data-stu-id="e2217-134">The name of the activity that emitted the CustomTrackingRecord</span></span>|  
+|<span data-ttu-id="e2217-135">ActivityId</span><span class="sxs-lookup"><span data-stu-id="e2217-135">ActivityId</span></span>|<span data-ttu-id="e2217-136">xs:string</span><span class="sxs-lookup"><span data-stu-id="e2217-136">xs:string</span></span>|<span data-ttu-id="e2217-137">CustomTrackingRecord を出力するアクティビティの ID</span><span class="sxs-lookup"><span data-stu-id="e2217-137">The id of the activity that emitted the CustomTrackingRecord</span></span>|  
+|<span data-ttu-id="e2217-138">ActivityInstanceId</span><span class="sxs-lookup"><span data-stu-id="e2217-138">ActivityInstanceId</span></span>|<span data-ttu-id="e2217-139">xs:string</span><span class="sxs-lookup"><span data-stu-id="e2217-139">xs:string</span></span>|<span data-ttu-id="e2217-140">CustomTrackingRecord を出力するアクティビティのインスタンス</span><span class="sxs-lookup"><span data-stu-id="e2217-140">The instance id of the activity that emitted the CustomTrackingRecord</span></span>|  
+|<span data-ttu-id="e2217-141">ActivityTypeName</span><span class="sxs-lookup"><span data-stu-id="e2217-141">ActivityTypeName</span></span>|<span data-ttu-id="e2217-142">xs:string</span><span class="sxs-lookup"><span data-stu-id="e2217-142">xs:string</span></span>|<span data-ttu-id="e2217-143">CustomTrackingRecord を出力するアクティビティの名前</span><span class="sxs-lookup"><span data-stu-id="e2217-143">The name of the activity that emitted the CustomTrackingRecord</span></span>|  
+|<span data-ttu-id="e2217-144">データ</span><span class="sxs-lookup"><span data-stu-id="e2217-144">Data</span></span>|<span data-ttu-id="e2217-145">xs:string</span><span class="sxs-lookup"><span data-stu-id="e2217-145">xs:string</span></span>|<span data-ttu-id="e2217-146">このイベントで追跡されたデータ。</span><span class="sxs-lookup"><span data-stu-id="e2217-146">The data that was tracked with this event.</span></span>  <span data-ttu-id="e2217-147">形式で xml 要素に値が格納されている\<項目 >\<項目名 ="dataName"type="System.String"> dataValue\<項目/>\</items >。</span><span class="sxs-lookup"><span data-stu-id="e2217-147">The values are stored in an xml element in the format \<items>\< item  name = "dataName" type="System.String">dataValue\</item>\</items>.</span></span>  <span data-ttu-id="e2217-148">データが追跡されなかったかどうかは、文字列に含まれる\<項目/>。</span><span class="sxs-lookup"><span data-stu-id="e2217-148">If no data was tracked then the string contains \<items/>.</span></span> <span data-ttu-id="e2217-149">ETW イベントのサイズは、ETW バッファーのサイズまたは ETW イベントの最大ペイロードに制限されます。</span><span class="sxs-lookup"><span data-stu-id="e2217-149">The ETW event size is limited by the ETW buffer size or the max payload for an ETW event.</span></span> <span data-ttu-id="e2217-150">イベントのサイズが ETW の制限を超えるかどうかは、注釈を削除して、データ値を置き換えることによって、イベントが切り捨てられる\<項目 >.\</items >。</span><span class="sxs-lookup"><span data-stu-id="e2217-150">If the size of the event exceeds the ETW limits, then the event is truncated by dropping the annotations and replacing the data value with \<items>...\</items>.</span></span>  <span data-ttu-id="e2217-151">string、char、bool、int、short、long、uint、ushort、ulong、System.Single、float、double、System.Guid、System.DateTimeOffset、および System.DateTime の各型は、ToString() から返される値として格納されます。</span><span class="sxs-lookup"><span data-stu-id="e2217-151">The following types are stored as their value as returned by ToString(); string,char,bool,int,short,long,uint,ushort,ulong,System.Single,float,double,System.Guid,System.DateTimeOffset,System.DateTime.</span></span>  <span data-ttu-id="e2217-152">その他のすべての型は、System.Runtime.Serialization.NetDataContractSerializer を使用してシリアル化されます。</span><span class="sxs-lookup"><span data-stu-id="e2217-152">All other types are serialized using System.Runtime.Serialization.NetDataContractSerializer.</span></span>|  
+|<span data-ttu-id="e2217-153">コメント</span><span class="sxs-lookup"><span data-stu-id="e2217-153">Annotations</span></span>|<span data-ttu-id="e2217-154">xs:string</span><span class="sxs-lookup"><span data-stu-id="e2217-154">xs:string</span></span>|<span data-ttu-id="e2217-155">このイベントに追加された注釈。</span><span class="sxs-lookup"><span data-stu-id="e2217-155">The annotations that were added to this event.</span></span>  <span data-ttu-id="e2217-156">形式で xml 要素に値が格納されている\<項目 >\<項目名 ="annotationName"type="System.String"> annotationValue\<項目/>\</items >。</span><span class="sxs-lookup"><span data-stu-id="e2217-156">The values are stored in an xml element in the format \<items>\< item  name = "annotationName" type="System.String">annotationValue\</item>\</items>.</span></span>  <span data-ttu-id="e2217-157">注釈が指定されていない場合、文字列が含まれる\<項目/>。</span><span class="sxs-lookup"><span data-stu-id="e2217-157">If no annotations are specified then the string contains \<items/>.</span></span> <span data-ttu-id="e2217-158">ETW イベントのサイズは、ETW バッファーのサイズまたは ETW イベントの最大ペイロードに制限されます。</span><span class="sxs-lookup"><span data-stu-id="e2217-158">The ETW event size is limited by the ETW buffer size or the max payload for an ETW event.</span></span> <span data-ttu-id="e2217-159">イベントのサイズが ETW の制限を超えるかどうかは、注釈を削除しを持つ注釈の値を置き換えることによって、イベントが切り捨てられ\<項目 >.\</items >。</span><span class="sxs-lookup"><span data-stu-id="e2217-159">If the size of the event exceeds the ETW limits, then the event is truncated by dropping the annotations and replacing the annotation value with \<items>...\</items>.</span></span>|  
+|<span data-ttu-id="e2217-160">ProfileName</span><span class="sxs-lookup"><span data-stu-id="e2217-160">ProfileName</span></span>|<span data-ttu-id="e2217-161">xs:string</span><span class="sxs-lookup"><span data-stu-id="e2217-161">xs:string</span></span>|<span data-ttu-id="e2217-162">このイベントを生成した追跡プロファイルの名前</span><span class="sxs-lookup"><span data-stu-id="e2217-162">The name or the tracking profile that resulted in this event being emitted</span></span>|  
+|<span data-ttu-id="e2217-163">HostReference</span><span class="sxs-lookup"><span data-stu-id="e2217-163">HostReference</span></span>|<span data-ttu-id="e2217-164">xs:string</span><span class="sxs-lookup"><span data-stu-id="e2217-164">xs:string</span></span>|<span data-ttu-id="e2217-165">Web ホスト サービスの場合は、このフィールドにより、サービスが Web 階層内で一意に識別されます。</span><span class="sxs-lookup"><span data-stu-id="e2217-165">For web hosted services, this field uniquely identifies the service in the web hierarchy.</span></span>  <span data-ttu-id="e2217-166">これは、形式とは見なさ ' Web サイト名アプリケーション仮想パス &#124;です。サービス仮想パス &#124;です。ServiceName' 例: ' 既定の Web サイト/CalculatorApplication &#124;/CalculatorService.svc &#124;です。CalculatorService'</span><span class="sxs-lookup"><span data-stu-id="e2217-166">It's format is defined as 'Web Site Name Application Virtual Path&#124;Service Virtual Path&#124;ServiceName' Example: 'Default Web Site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService'</span></span>|  
+|<span data-ttu-id="e2217-167">AppDomain</span><span class="sxs-lookup"><span data-stu-id="e2217-167">AppDomain</span></span>|<span data-ttu-id="e2217-168">xs:string</span><span class="sxs-lookup"><span data-stu-id="e2217-168">xs:string</span></span>|<span data-ttu-id="e2217-169">AppDomain.CurrentDomain.FriendlyName で返される文字列。</span><span class="sxs-lookup"><span data-stu-id="e2217-169">The string returned by AppDomain.CurrentDomain.FriendlyName.</span></span>|

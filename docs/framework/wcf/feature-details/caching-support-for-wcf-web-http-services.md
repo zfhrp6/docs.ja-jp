@@ -1,58 +1,60 @@
 ---
-title: "WCF WEB HTTP サービスのキャッシュ サポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WCF WEB HTTP サービスのキャッシュ サポート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 7f8078e0-00d9-415c-b8ba-c1b6d5c31799
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: b951c77e522180fa615a9b6853bfc195a3e5bcb2
+ms.sourcegitcommit: 5d0e069655439984862a835f400058b7e8bbadc6
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/28/2017
 ---
-# WCF WEB HTTP サービスのキャッシュ サポート
-[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] を使用すると、WCF Web HTTP サービスの ASP.NET で既に提供されている、宣言によるキャッシュ機構を使用できます。これにより、WCF Web HTTP サービス操作からの応答をキャッシュできます。キャッシュ用に構成されているサービスに対してユーザーが HTTP GET を送信すると、ASP.NET は、キャッシュされた応答を送り返し、サービス メソッドは呼び出されません。キャッシュの有効期限が切れると、ユーザーが次回に HTTP GET を送信したときに、サービス メソッドが呼び出され、応答が再度キャッシュされます。ASP.NET キャッシュ[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[ASP.NET のキャッシュの概要](http://go.microsoft.com/fwlink/?LinkId=152534)」を参照してください。  
+# <a name="caching-support-for-wcf-web-http-services"></a><span data-ttu-id="b4c51-102">WCF WEB HTTP サービスのキャッシュ サポート</span><span class="sxs-lookup"><span data-stu-id="b4c51-102">Caching Support for WCF Web HTTP Services</span></span>
+[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]<span data-ttu-id="b4c51-103">WCF Web HTTP サービスで既に ASP.NET での使用可能な宣言によるキャッシュ機構を使用できます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-103"> enables you to use the declarative caching mechanism already available in ASP.NET in your WCF Web HTTP services.</span></span> <span data-ttu-id="b4c51-104">これにより、WCF Web HTTP サービス操作からの応答をキャッシュできます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-104">This allows you to cache responses from your WCF Web HTTP service operations.</span></span> <span data-ttu-id="b4c51-105">キャッシュ用に構成されているサービスに対してユーザーが HTTP GET を送信すると、ASP.NET は、キャッシュされた応答を送り返し、サービス メソッドは呼び出されません。</span><span class="sxs-lookup"><span data-stu-id="b4c51-105">When a user sends an HTTP GET to your service that is configured for caching, ASP.NET sends back the cached response and the service method is not called.</span></span> <span data-ttu-id="b4c51-106">キャッシュの有効期限が切れると、ユーザーが次回に HTTP GET を送信したときに、サービス メソッドが呼び出され、応答が再度キャッシュされます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-106">When the cache expires, the next time a user sends an HTTP GET, your service method is called and the response is once again cached.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="b4c51-107">ASP.NET キャッシュを参照してください[ASP.NET のキャッシュの概要](http://go.microsoft.com/fwlink/?LinkId=152534)</span><span class="sxs-lookup"><span data-stu-id="b4c51-107"> ASP.NET caching, see [ASP.NET Caching Overview](http://go.microsoft.com/fwlink/?LinkId=152534)</span></span>  
   
-## 基本的な Web HTTP サービスのキャッシュ  
- WEB HTTP サービスのキャッシュを有効にするには、まず、<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> の <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute.RequirementsMode%2A> を <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> または <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required> に設定してサービスに適用し、ASP.NET との互換性を有効にする必要があります。  
+## <a name="basic-web-http-service-caching"></a><span data-ttu-id="b4c51-108">基本的な Web HTTP サービスのキャッシュ</span><span class="sxs-lookup"><span data-stu-id="b4c51-108">Basic Web HTTP Service Caching</span></span>  
+ <span data-ttu-id="b4c51-109">WEB HTTP サービスのキャッシュを有効にするには、まず、<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> の <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute.RequirementsMode%2A> を <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> または <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required> に設定してサービスに適用し、ASP.NET との互換性を有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b4c51-109">To enable WEB HTTP service caching you must first enable ASP.NET compatibility by applying the <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> to the service setting <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute.RequirementsMode%2A> to <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> or <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>.</span></span>  
   
- [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)] では、キャッシュ プロファイル名を指定できる <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> という新しい属性が導入されています。この属性は、サービス操作に適用されます。次の例では、<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> をサービスに適用して ASP.NET との互換性を有効にし、`GetCustomer` 操作をキャッシュできるように構成しています。<xref:System.ServiceModel.Activation.AspNetCacheProfileAttribute> 属性には、使用されるキャッシュ設定が含まれるキャッシュ プロファイルを指定します。  
+ [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)]<span data-ttu-id="b4c51-110"> では、キャッシュ プロファイル名を指定できる <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> という新しい属性が導入されています。</span><span class="sxs-lookup"><span data-stu-id="b4c51-110"> introduces a new attribute called <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> that allows you to specify a cache profile name.</span></span> <span data-ttu-id="b4c51-111">この属性は、サービス操作に適用されます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-111">This attribute is applied to a service operation.</span></span> <span data-ttu-id="b4c51-112">次の例では、<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> をサービスに適用して ASP.NET との互換性を有効にし、`GetCustomer` 操作をキャッシュできるように構成しています。</span><span class="sxs-lookup"><span data-stu-id="b4c51-112">The following example applies the <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> to a service to enable ASP.NET compatibility and configures the `GetCustomer` operation for caching.</span></span> <span data-ttu-id="b4c51-113"><!--zz<xref:System.ServiceModel.Activation.AspNetCacheProfileAttribute>--> `System.ServiceModel.Activation.AspNetCacheProfileAttribute`属性を使用するキャッシュの設定が含まれるキャッシュ プロファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="b4c51-113">The <!--zz<xref:System.ServiceModel.Activation.AspNetCacheProfileAttribute>--> `System.ServiceModel.Activation.AspNetCacheProfileAttribute` attribute specifies a cache profile that contains the cache settings to be used.</span></span>  
   
+```csharp
+[ServiceContract] AspNetCompatibilityRequirements(RequirementsMode=AspNetCompatibilityRequirementsMode.Allowed)]
+public class Service
+{
+    [WebGet(UriTemplate = "{id}")]
+    [AspNetCacheProfile("CacheFor60Seconds")]
+    public Customer GetCustomer(string id)
+    {
+        // ...
+    }
+}
 ```  
-[ServiceContract] AspNetCompatibilityRequirements(RequirementsMode=AspNetCompatibilityRequirementsMode.Allowed)]  
-    public class Service  
-    {   
-        [WebGet(UriTemplate = "{id}")]  
-        [AspNetCacheProfile("CacheFor60Seconds")]  
-        public Customer GetCustomer(string id)  
-        {  
-             // ...  
-        }  
-}  
-```  
   
- また、ASP.NET 互換性モードを Web.config ファイルで有効にすることも必要です。次にその例を示します。  
+ <span data-ttu-id="b4c51-114">また、ASP.NET 互換性モードを Web.config ファイルで有効にすることも必要です。次にその例を示します。</span><span class="sxs-lookup"><span data-stu-id="b4c51-114">You must also turn on ASP.NET compatibility mode in the Web.config file as shown in the following example.</span></span>  
   
-```  
-<system.serviceModel>  
-        <serviceHostingEnvironment aspNetCompatibilityEnabled="true" />      
-</system.serviceModel>  
-  
-```  
+```xml
+<system.serviceModel>
+  <serviceHostingEnvironment aspNetCompatibilityEnabled="true" />
+</system.serviceModel>
+```
   
 > [!WARNING]
->  ASP.NET 互換性モードが有効にされていない場合は、<xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> が使用されて、例外がスローされます。  
+>  <span data-ttu-id="b4c51-115">ASP.NET 互換性モードが有効にされていない場合は、<xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> が使用されて、例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-115">If ASP.NET compatibility mode is not turned on and the <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> is used an exception is thrown.</span></span>  
   
- <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> によって指定されたキャッシュ プロファイル名によって、Web.config 構成ファイルに追加されるキャッシュ プロファイルが特定されます。キャッシュ プロファイルは、\<`outputCacheSetting`\> 要素内に定義します。次にその構成例を示します。  
+ <span data-ttu-id="b4c51-116"><xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> によって指定されたキャッシュ プロファイル名によって、Web.config 構成ファイルに追加されるキャッシュ プロファイルが特定されます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-116">The cache profile name specified by the <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> identifies a cache profile that is added to your Web.config configuration file.</span></span> <span data-ttu-id="b4c51-117">キャッシュ プロファイルが定義されている、<`outputCacheSetting`> 要素の次の構成例に示すようにします。</span><span class="sxs-lookup"><span data-stu-id="b4c51-117">The cache profile is defined with in a <`outputCacheSetting`> element as shown in the following configuration example.</span></span>  
   
-```  
-<!-- ...  -->  
+```xml
+<!-- ...  -->
 <system.web>  
    <caching>  
       <outputCacheSettings>  
@@ -65,108 +67,109 @@ caps.handback.revision: 11
 </system.web>  
 ```  
   
- これは、ASP.NET アプリケーションで使用できる構成要素と同じです。ASP.NET キャッシュ プロファイル[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、<xref:System.Web.Configuration.OutputCacheProfile> を参照してください。Web HTTP サービスの場合、キャッシュ プロファイルで最も重要な属性は `cacheDuration` と `varyByParam` です。この 2 つの属性はどちらも必要です。`cacheDuration` は、応答がキャッシュに保持される時間 \(秒数\) を設定します。`varyByParam` では、応答のキャッシュに使用されるクエリ文字列パラメーターを指定できます。異なるクエリ文字列パラメーターの値を使用する要求は、すべて個別にキャッシュされます。たとえば、http:\/\/MyServer\/MyHttpService\/MyOperation?param\=10 に最初の要求を送ると、同じ URI を使用して送られるすべての後続の要求には、キャッシュされている応答が返されます \(キャッシュ期間が経過していない場合\)。クエリ文字列パラメーターの値が異なることを除いて同じである同様の要求に対する応答は、個別にキャッシュされます。このような個別のキャッシングを行わない場合は、`varyByParam` を "none" に設定します。  
+ <span data-ttu-id="b4c51-118">これは、ASP.NET アプリケーションで使用できる構成要素と同じです。</span><span class="sxs-lookup"><span data-stu-id="b4c51-118">This is the same configuration element that is available to ASP.NET applications.</span></span> <span data-ttu-id="b4c51-119">ASP.NET キャッシュ プロファイル[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、<xref:System.Web.Configuration.OutputCacheProfile> を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b4c51-119">[!INCLUDE[crabout](../../../../includes/crabout-md.md)] ASP.NET cache profiles, see <xref:System.Web.Configuration.OutputCacheProfile>.</span></span> <span data-ttu-id="b4c51-120">Web HTTP サービスの場合、キャッシュ プロファイルで最も重要な属性は `cacheDuration` と `varyByParam` です。</span><span class="sxs-lookup"><span data-stu-id="b4c51-120">For Web HTTP services, the most important attributes in the cache profile are: `cacheDuration` and `varyByParam`.</span></span> <span data-ttu-id="b4c51-121">この 2 つの属性はどちらも必要です。</span><span class="sxs-lookup"><span data-stu-id="b4c51-121">Both of these attributes are required.</span></span> <span data-ttu-id="b4c51-122">`cacheDuration` は、応答がキャッシュに保持される時間 (秒数) を設定します。</span><span class="sxs-lookup"><span data-stu-id="b4c51-122">`cacheDuration` sets the amount of time a response should be cached in seconds.</span></span> <span data-ttu-id="b4c51-123">`varyByParam` では、応答のキャッシュに使用されるクエリ文字列パラメーターを指定できます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-123">`varyByParam` allows you to specify a query string parameter that is used to cache responses.</span></span> <span data-ttu-id="b4c51-124">異なるクエリ文字列パラメーターの値を使用する要求は、すべて個別にキャッシュされます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-124">All requests made with different query string parameter values are cached separately.</span></span> <span data-ttu-id="b4c51-125">たとえば、http://MyServer/MyHttpService/MyOperation?param=10 に最初の要求を送ると、同じ URI を使用して送られるすべての後続の要求には、キャッシュされている応答が返されます (キャッシュ期間が経過していない場合)。</span><span class="sxs-lookup"><span data-stu-id="b4c51-125">For example, once an initial request is made to http://MyServer/MyHttpService/MyOperation?param=10 all subsequent requests made with the same URI would be returned the cached response (so long as the cache duration has not elapsed).</span></span> <span data-ttu-id="b4c51-126">クエリ文字列パラメーターの値が異なることを除いて同じである同様の要求に対する応答は、個別にキャッシュされます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-126">Responses for a similar request that is the same but has a different value for the parameter query string parameter are cached separately.</span></span> <span data-ttu-id="b4c51-127">このような個別のキャッシングを行わない場合は、`varyByParam` を "none" に設定します。</span><span class="sxs-lookup"><span data-stu-id="b4c51-127">If you do not want this separate caching behavior, set `varyByParam` to "none".</span></span>  
   
-## SQL キャッシュ依存関係  
- Web HTTP サービスの応答も、SQL キャッシュ依存関係と併せてキャッシュできます。SQL データベースに格納されているデータに応じて WCF Web HTTP サービスが異なる場合は、サービスの応答をキャッシュして、キャッシュした応答を、SQL データベース テーブル内のデータの変更時に無効にすることもできます。この動作は、すべて Web.config ファイル内で構成します。まず、\<`connectionStrings`\> 要素に接続文字列を定義します。  
+## <a name="sql-cache-dependency"></a><span data-ttu-id="b4c51-128">SQL キャッシュ依存関係</span><span class="sxs-lookup"><span data-stu-id="b4c51-128">SQL Cache Dependency</span></span>  
+ <span data-ttu-id="b4c51-129">Web HTTP サービスの応答も、SQL キャッシュ依存関係と併せてキャッシュできます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-129">Web HTTP service responses can also be cached with a SQL cache dependency.</span></span> <span data-ttu-id="b4c51-130">SQL データベースに格納されているデータに応じて WCF Web HTTP サービスが異なる場合は、サービスの応答をキャッシュして、キャッシュした応答を、SQL データベース テーブル内のデータの変更時に無効にすることもできます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-130">If your WCF Web HTTP service depends on data stored in a SQL database, you may want to cache the service's response and invalidate the cached response when data in the SQL database table changes.</span></span> <span data-ttu-id="b4c51-131">この動作は、すべて Web.config ファイル内で構成します。</span><span class="sxs-lookup"><span data-stu-id="b4c51-131">This behavior is configured completely within the Web.config file.</span></span> <span data-ttu-id="b4c51-132">内の接続文字列を定義する必要があります最初に、<`connectionStrings`> 要素。</span><span class="sxs-lookup"><span data-stu-id="b4c51-132">You must first define a connection string in the <`connectionStrings`> element.</span></span>  
   
+```xml
+<connectionStrings>
+  <add name="connectString"
+       connectionString="Data Source=MyService;Initial Catalog=MyTestDatabase;Integrated Security=True"
+       providerName="System.Data.SqlClient" />
+</connectionStrings>
 ```  
-<connectionStrings>  
-    <add name="connectString"  
-        connectionString="Data Source=MyService;Initial Catalog=MyTestDatabase;Integrated Security=True"  
-        providerName="System.Data.SqlClient" />  
-  </connectionStrings>  
+  
+ <span data-ttu-id="b4c51-133">内の SQL キャッシュ依存関係を有効にする必要があります、<`caching`> 内の要素、<`system.web`> 要素の構成例を次に示すようにします。</span><span class="sxs-lookup"><span data-stu-id="b4c51-133">Then you must enable SQL cache dependency within a <`caching`> element within the <`system.web`> element as shown in the following config example.</span></span>  
+  
+```xml  
+<system.web>
+  <caching>
+    <sqlCacheDependency enabled="true" pollTime="1000">
+      <databases>
+        <add name="MyTestDatabase" connectionStringName="connectString" />
+      </databases>
+    </sqlCacheDependency>
+    <!-- ... -->
+  </caching>
+  <!-- ... -->
+</system.web>
 ```  
   
- 次に、\<`system.web`\> 要素内の \<`caching`\> 要素内で SQL キャッシュ依存関係を有効にします。次にその構成例を示します。  
+ <span data-ttu-id="b4c51-134">ここでは、SQL キャッシュ依存関係を有効にし、ポーリング タイムを 1000 ミリ秒に設定しています。</span><span class="sxs-lookup"><span data-stu-id="b4c51-134">Here SQL cache dependency is enabled and a polling time of 1000 milliseconds is set.</span></span> <span data-ttu-id="b4c51-135">ポーリング タイムが経過するたびに、データベース テーブルで更新の有無が確認されます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-135">Each time the polling time elapses the database table is checked for updates.</span></span> <span data-ttu-id="b4c51-136">変更が検出されると、キャッシュの内容が削除され、次にサービス操作が呼び出されたときに、新しい応答がキャッシュされます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-136">If changes are detected the contents of the cache are removed and the next time the service operation is invoked a new response is cached.</span></span> <span data-ttu-id="b4c51-137">内で、<`sqlCacheDependency`> 要素は、データベースを追加し、内の接続文字列を参照、<`databases`> 要素の次の例に示すようにします。</span><span class="sxs-lookup"><span data-stu-id="b4c51-137">Within the <`sqlCacheDependency`> element add the databases and reference the connection strings within the <`databases`> element as shown in the following example.</span></span>  
   
-```  
-<system.web>  
-   <caching>  
-      <sqlCacheDependency enabled="true" pollTime="1000" >  
-         <databases>  
-            <add name="MyTestDatabase" connectionStringName="connectString" />  
-         </databases>  
-      </sqlCacheDependency>  
-      <!-- ... -->  
-   </caching>  
-   <!-- ... -->  
+```xml  
+<system.web>
+  <caching>
+    <sqlCacheDependency enabled="true" pollTime="1000">
+      <databases>
+        <add name="MyTestDatabase" connectionStringName="connectString" />
+      </databases>  
+    </sqlCacheDependency>  
+    <!-- ... -->  
+  </caching>  
+  <!-- ... -->  
 </system.web>  
 ```  
   
- ここでは、SQL キャッシュ依存関係を有効にし、ポーリング タイムを 1000 ミリ秒に設定しています。ポーリング タイムが経過するたびに、データベース テーブルで更新の有無が確認されます。変更が検出されると、キャッシュの内容が削除され、次にサービス操作が呼び出されたときに、新しい応答がキャッシュされます。\<`sqlCacheDependency`\> 要素内にデータベースを追加し、\<`databases`\> 要素内の接続文字列を参照します。次にその例を示します。  
+ <span data-ttu-id="b4c51-138">次に、出力キャッシュ内の設定を構成する必要があります、<`caching`> 要素の次の例に示すようにします。</span><span class="sxs-lookup"><span data-stu-id="b4c51-138">Next you must configure the output cache settings within the <`caching`> element as shown in the following example.</span></span>  
   
-```  
-<system.web>  
-   <caching>  
-      <sqlCacheDependency enabled="true" pollTime="1000" >  
-         <databases>  
-            <add name="MyTestDatabase" connectionStringName="connectString" />  
-         </databases>  
-      </sqlCacheDependency>  
-      <!-- ... -->  
-   </caching>  
-   <!-- ... -->  
-</system.web>  
-```  
-  
- 次に、\<`caching`\> 要素内に出力キャッシュの設定を構成します。次にその構成例を示します。  
-  
-```  
-<system.web>  
-<caching>  
-      <!-- ...  -->  
-<outputCacheSettings>  
-<outputCacheProfiles>  
-<add name="CacheFor60Seconds" duration="60" varyByParam="none" sqlDependency="MyTestDatabase:MyTable"/>  
-</outputCacheProfiles>  
-</outputCacheSettings>  
-</caching>  
-<!-- ... -->  
-</system.web>  
+```xml
+<system.web>
+  <caching>  
+    <!-- ...  -->
+    <outputCacheSettings>
+      <outputCacheProfiles>
+        <add name="CacheFor60Seconds" duration="60" varyByParam="none" sqlDependency="MyTestDatabase:MyTable" />
+      </outputCacheProfiles>
+    </outputCacheSettings>
+  </caching>
+  <!-- ... -->
+</system.web>
 ```  
   
- ここでは、キャッシュ期間が 60 秒に、`varyByParam` が none に設定されており、`sqlDependency` が、コロン区切りのデータベース名とテーブルのペアをセミコロンで区切ったリストに設定されています。`MyTable` のデータが変更されると、キャッシュされているサービス操作への応答が削除されます。この操作が呼び出されると、新しい応答が \(サービス操作の呼び出しによって\) 生成され、キャッシュされて、クライアントに返されます。  
+ <span data-ttu-id="b4c51-139">ここでは、キャッシュ期間が 60 秒に、`varyByParam` が none に設定されており、`sqlDependency` が、コロン区切りのデータベース名とテーブルのペアをセミコロンで区切ったリストに設定されています。</span><span class="sxs-lookup"><span data-stu-id="b4c51-139">Here the cache duration is set to 60 seconds, `varyByParam` is set to none and `sqlDependency` is set to a semicolon delimited list of database name/table pairs separated by colons.</span></span> <span data-ttu-id="b4c51-140">`MyTable` のデータが変更されると、キャッシュされているサービス操作への応答が削除されます。この操作が呼び出されると、新しい応答が (サービス操作の呼び出しによって) 生成され、キャッシュされて、クライアントに返されます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-140">When data in `MyTable` is changed the cached response for the service operation is removed and when the operation is invoked a new response is generated (by calling the service operation), cached, and returned to the client.</span></span>  
   
 > [!IMPORTANT]
->  ASP.NET から SQL データベースにアクセスするには、[ASP.NET SQL Server 登録ツール](http://go.microsoft.com/fwlink/?LinkId=152536)を使用する必要があります。また、適切なユーザー アカウントに、データベースおよびテーブルへのアクセスを許可する必要があります。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]、「[Web アプリケーションから SQL Server へのアクセス](http://go.microsoft.com/fwlink/?LinkId=178988)」を参照してください。  
+>  <span data-ttu-id="b4c51-141">SQL データベースにアクセスする asp.net、使用する必要があります、 [ASP.NET SQL Server の登録ツール](http://go.microsoft.com/fwlink/?LinkId=152536)です。</span><span class="sxs-lookup"><span data-stu-id="b4c51-141">For ASP.NET to access a SQL database, you must use the [ASP.NET SQL Server Registration Tool](http://go.microsoft.com/fwlink/?LinkId=152536).</span></span> <span data-ttu-id="b4c51-142">また、適切なユーザー アカウントに、データベースおよびテーブルへのアクセスを許可する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b4c51-142">In addition you must allow the appropriate user account access to the database and table.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="b4c51-143">[Web アプリケーションから SQL Server へのアクセス](http://go.microsoft.com/fwlink/?LinkId=178988)です。</span><span class="sxs-lookup"><span data-stu-id="b4c51-143"> [Accessing SQL Server from a Web Application](http://go.microsoft.com/fwlink/?LinkId=178988).</span></span>  
   
-## 条件付きの HTTP GET ベースのキャッシュ  
- Web HTTP シナリオでは、条件付き HTTP GET がサービスで使用されて、「[HTTP の仕様](http://go.microsoft.com/fwlink/?LinkId=165800)」で説明されているように、インテリジェントな HTTP キャッシュが実装されることがよくあります。そのためには、サービスが ETag ヘッダーの値を HTTP 応答に設定する必要があります。また、HTTP 要求の If\-None\-Match ヘッダーの値を確認して、指定されている ETag が現在の ETag と一致するかどうかを調べる必要もあります。  
+## <a name="conditional-http-get-based-caching"></a><span data-ttu-id="b4c51-144">条件付きの HTTP GET ベースのキャッシュ</span><span class="sxs-lookup"><span data-stu-id="b4c51-144">Conditional HTTP GET Based Caching</span></span>  
+ <span data-ttu-id="b4c51-145">Web HTTP シナリオで条件付きの HTTP GET はよく使用サービスによってキャッシュを実装するインテリジェント HTTP」の説明に従って、 [HTTP 仕様](http://go.microsoft.com/fwlink/?LinkId=165800)です。</span><span class="sxs-lookup"><span data-stu-id="b4c51-145">In Web HTTP scenarios a conditional HTTP GET is often used by services to implement intelligent HTTP caching as described in the [HTTP Specification](http://go.microsoft.com/fwlink/?LinkId=165800).</span></span> <span data-ttu-id="b4c51-146">そのためには、サービスが ETag ヘッダーの値を HTTP 応答に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b4c51-146">To do this the service must set the value of the ETag header in the HTTP response.</span></span> <span data-ttu-id="b4c51-147">また、HTTP 要求の If-None-Match ヘッダーの値を確認して、指定されている ETag が現在の ETag と一致するかどうかを調べる必要もあります。</span><span class="sxs-lookup"><span data-stu-id="b4c51-147">It also must check the If-None-Match header in the HTTP request to see whether any of the ETag specified matches the current ETag.</span></span>  
   
- GET および HEAD 要求の場合、<xref:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalRetrieve%2A> は ETag 値を取得し、この値と要求内の If\-None\-Match ヘッダーとを比較します。ヘッダーが存在し、一致が見つかった場合は、HTTP ステータス コード 304 \(変更なし\) が設定された <xref:System.ServiceModel.Web.WebFaultException> がスローされ、一致する ETag が設定されている応答に ETag ヘッダーが追加されます。  
+ <span data-ttu-id="b4c51-148">GET および HEAD 要求の場合、<xref:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalRetrieve%2A> は ETag 値を取得し、この値と要求内の If-None-Match ヘッダーとを比較します。</span><span class="sxs-lookup"><span data-stu-id="b4c51-148">For GET and HEAD requests, <xref:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalRetrieve%2A> takes an ETag value and checks it against the If-None-Match header of the request.</span></span> <span data-ttu-id="b4c51-149">ヘッダーが存在し、一致が見つかった場合は、HTTP ステータス コード 304 (変更なし) が設定された <xref:System.ServiceModel.Web.WebFaultException> がスローされ、一致する ETag が設定されている応答に ETag ヘッダーが追加されます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-149">If the header is present and there is a match, a <xref:System.ServiceModel.Web.WebFaultException> with a HTTP status code 304 (Not Modified) is thrown and an ETag header is added to the response with the matching ETag.</span></span>  
   
- <xref:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalRetrieve%2A> メソッドのオーバーロードの 1 つは、最終更新日を取得し、これを、要求の If\-Modified\-Since ヘッダーと比較します。ヘッダーが存在し、リソースが変更されていない場合は、HTTP ステータス コード 304 \(変更なし\) が設定された <xref:System.ServiceModel.Web.WebFaultException> がスローされます。  
+ <span data-ttu-id="b4c51-150"><xref:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalRetrieve%2A> メソッドのオーバーロードの 1 つは、最終更新日を取得し、これを、要求の If-Modified-Since ヘッダーと比較します。</span><span class="sxs-lookup"><span data-stu-id="b4c51-150">One overload of the <xref:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalRetrieve%2A> method takes a last modified date and checks it against the If-Modified-Since header of the request.</span></span> <span data-ttu-id="b4c51-151">ヘッダーが存在し、リソースが変更されていない場合は、HTTP ステータス コード 304 (変更なし) が設定された <xref:System.ServiceModel.Web.WebFaultException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-151">If the header is present and the resource has not been modified since, a <xref:System.ServiceModel.Web.WebFaultException> with an HTTP status code 304 (Not Modified) is thrown.</span></span>  
   
- PUT、POST、および DELETE の各要求の場合、<xref:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalUpdate%2A> は、リソースの現在の ETag 値を取得します。現在の ETag 値が null の場合、メソッドは、If\-None\- Match ヘッダーの値が "\*" であるかどうかを確認します。現在の ETag 値が既定値ではない場合、メソッドは、現在の ETag 値と要求の If\-None\- Match ヘッダーを比較します。どちらの場合も、求められるヘッダーが要求内に存在しない、またはヘッダーの値がチェック条件を満たしていないと、メソッドは、HTTP ステータス コード 412 \(必須条件に失敗しました\) が設定された <xref:System.ServiceModel.Web.WebFaultException> をスローし、応答の ETag ヘッダーを現在の ETag 値に設定します。  
+ <span data-ttu-id="b4c51-152">PUT、POST、および DELETE の各要求の場合、<xref:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalUpdate%2A> は、リソースの現在の ETag 値を取得します。</span><span class="sxs-lookup"><span data-stu-id="b4c51-152">For PUT, POST, and DELETE requests, <xref:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalUpdate%2A> takes the current ETag value of a resource.</span></span> <span data-ttu-id="b4c51-153">現在の ETag 値が null の場合は、メソッドはなし-If-match ヘッダーがの値を持つことが確認"*"です。</span><span class="sxs-lookup"><span data-stu-id="b4c51-153">If the current ETag value is null, the method checks that the If-None- Match header has a value of "*".</span></span>  <span data-ttu-id="b4c51-154">現在の ETag 値が既定値ではない場合、メソッドは、現在の ETag 値と要求の If-None- Match ヘッダーを比較します。</span><span class="sxs-lookup"><span data-stu-id="b4c51-154">If the current ETag value is not a default value, then the method checks the current ETag value against the If- Match header of the request.</span></span> <span data-ttu-id="b4c51-155">どちらの場合も、求められるヘッダーが要求内に存在しない、またはヘッダーの値がチェック条件を満たしていないと、メソッドは、HTTP ステータス コード 412 (必須条件に失敗しました) が設定された <xref:System.ServiceModel.Web.WebFaultException> をスローし、応答の ETag ヘッダーを現在の ETag 値に設定します。</span><span class="sxs-lookup"><span data-stu-id="b4c51-155">In either case, the method throws a <xref:System.ServiceModel.Web.WebFaultException> with an HTTP status code 412 (Precondition Failed) if the expected header is not present in the request or its value does not satisfy the conditional check and sets the ETag header of the response to the current ETag value.</span></span>  
   
- `CheckConditional` メソッドも <xref:System.ServiceModel.Web.OutgoingWebResponseContext.SetETag%2A> メソッドも、応答ヘッダーに設定される ETag 値が、確実に HTTP 仕様に沿った有効な ETag になるようにします。これには、ETag 値を囲む二重引用符がない場合に二重引用符を付ける処理や、二重引用符内の文字を適切にエスケープする処理が含まれます。ETag の弱い比較はサポートされていません。  
+ <span data-ttu-id="b4c51-156">`CheckConditional` メソッドも <xref:System.ServiceModel.Web.OutgoingWebResponseContext.SetETag%2A> メソッドも、応答ヘッダーに設定される ETag 値が、確実に HTTP 仕様に沿った有効な ETag になるようにします。</span><span class="sxs-lookup"><span data-stu-id="b4c51-156">Both the `CheckConditional` methods and the <xref:System.ServiceModel.Web.OutgoingWebResponseContext.SetETag%2A> method ensures that the ETag value set on the response header is a valid ETag according to the HTTP specification.</span></span> <span data-ttu-id="b4c51-157">これには、ETag 値を囲む二重引用符がない場合に二重引用符を付ける処理や、二重引用符内の文字を適切にエスケープする処理が含まれます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-157">This includes surrounding the ETag value in double quotes if they are not already present and properly escaping any internal double quote characters.</span></span> <span data-ttu-id="b4c51-158">ETag の弱い比較はサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="b4c51-158">Weak ETag comparison is not supported.</span></span>  
   
- これらのメソッドを使用する方法の例を次に示します。  
+ <span data-ttu-id="b4c51-159">これらのメソッドを使用する方法の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="b4c51-159">The following example shows how to use these methods.</span></span>  
   
+```csharp
+[WebGet(UriTemplate = "{id}"), Description("Returns the specified customer from customers collection. Returns NotFound if there is no such customer. Supports conditional GET.")]
+public Customer GetCustomer(string id)
+{
+    lock (writeLock)
+    {
+        // return NotFound if there is no item with the specified id.
+        object itemEtag = customerEtags[id];
+        if (itemEtag == null)
+        {
+            throw new WebFaultException(HttpStatusCode.NotFound);
+        }
+  
+        // return NotModified if the client did a conditional GET and the customer item has not changed
+        // since when the client last retrieved it
+        WebOperationContext.Current.IncomingRequest.CheckConditionalRetrieve((long)itemEtag);
+        Customer result = this.customers[id] as Customer;
+        
+        // set the customer etag before returning the result
+        WebOperationContext.Current.OutgoingResponse.SetETag((long)itemEtag);
+        return result;
+    }
+}
 ```  
-[WebGet(UriTemplate = "{id}"), Description("Returns the specified customer from customers collection. Returns NotFound if there is no such customer. Supports conditional GET.")]  
-public Customer GetCustomer(string id)  
-{  
-    lock (writeLock)  
-    {  
-        // return NotFound if there is no item with the specified id.  
-        object itemEtag = customerEtags[id];  
-        if (itemEtag == null)  
-        {  
-            throw new WebFaultException(HttpStatusCode.NotFound);  
-        }  
   
-        // return NotModified if the client did a conditional GET and the customer item has not changed  
-        // since when the client last retrieved it  
-                 WebOperationContext.Current.IncomingRequest.CheckConditionalRetrieve((long)itemEtag);  
-       Customer result = this.customers[id] as Customer;  
-       // set the customer etag before returning the result  
-                WebOperationContext.Current.OutgoingResponse.SetETag((long)itemEtag);  
-                return result;  
-    }  
-}  
-```  
-  
-## セキュリティに関する注意事項  
- 承認が必要な要求の応答はキャッシュしないでください。応答がキャッシュから提供された場合は、承認が実行されません。このような応答をキャッシュすると、重大なセキュリティの脆弱性が生じます。通常、承認が必要な要求ではユーザー固有のデータが提供されるため、サーバー側でキャッシュしても利点はありません。このような場合は、クライアント側でキャッシュするか、単にキャッシュをまったく行わない方が適切です。
+## <a name="security-considerations"></a><span data-ttu-id="b4c51-160">セキュリティの考慮事項</span><span class="sxs-lookup"><span data-stu-id="b4c51-160">Security Considerations</span></span>  
+ <span data-ttu-id="b4c51-161">承認が必要な要求の応答はキャッシュしないでください。応答がキャッシュから提供された場合は、承認が実行されません。</span><span class="sxs-lookup"><span data-stu-id="b4c51-161">Requests that require authorization should not have their responses cached, because the authorization is not performed when the response is served from the cache.</span></span>  <span data-ttu-id="b4c51-162">このような応答をキャッシュすると、重大なセキュリティの脆弱性が生じます。</span><span class="sxs-lookup"><span data-stu-id="b4c51-162">Caching such responses would introduce a serious security vulnerability.</span></span>  <span data-ttu-id="b4c51-163">通常、承認が必要な要求ではユーザー固有のデータが提供されるため、サーバー側でキャッシュしても利点はありません。</span><span class="sxs-lookup"><span data-stu-id="b4c51-163">Usually, requests that require authorization provide user-specific data and therefore server-side caching is not even beneficial.</span></span>  <span data-ttu-id="b4c51-164">このような場合は、クライアント側でキャッシュするか、単にキャッシュをまったく行わない方が適切です。</span><span class="sxs-lookup"><span data-stu-id="b4c51-164">In such situations, client-side caching or simply not caching at all will be more appropriate.</span></span>

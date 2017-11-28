@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - maximum staleness
 - freshness of cached resources
@@ -20,41 +15,39 @@ helpviewer_keywords:
 - staleness of cached resources
 - age of cached resources
 ms.assetid: 7f775925-89a1-4956-ba90-c869c1749a94
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 834deeff69687e0edf1671b35328d41842914b4d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: baec376501feb70e4a9ceb3f33ac66fa76b91ac1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="cache-policy-interactionmaximum-age-and-maximum-staleness"></a>キャッシュ ポリシーの相互作用 — 最大有効期間と最大期限延長
-最新のコンテンツをクライアント アプリケーションに確実に返すために、クライアントのキャッシュ ポリシーとサーバーの再検証要件の相互作用によって、常に最も保守的なキャッシュ ポリシーが適用されます。 このトピックの例はいずれも、1 月 1 日にキャッシュされ、1 月 4 日に期限切れになるリソースのキャッシュ ポリシーを示しています。  
+# <a name="cache-policy-interactionmaximum-age-and-maximum-staleness"></a><span data-ttu-id="6b4db-102">キャッシュ ポリシーの相互作用 — 最大有効期間と最大期限延長</span><span class="sxs-lookup"><span data-stu-id="6b4db-102">Cache Policy Interaction—Maximum Age and Maximum Staleness</span></span>
+<span data-ttu-id="6b4db-103">最新のコンテンツをクライアント アプリケーションに確実に返すために、クライアントのキャッシュ ポリシーとサーバーの再検証要件の相互作用によって、常に最も保守的なキャッシュ ポリシーが適用されます。</span><span class="sxs-lookup"><span data-stu-id="6b4db-103">To help ensure that the freshest content is returned to the client application, the interaction of client cache policy and server revalidation requirements always results in the most conservative cache policy.</span></span> <span data-ttu-id="6b4db-104">このトピックの例はいずれも、1 月 1 日にキャッシュされ、1 月 4 日に期限切れになるリソースのキャッシュ ポリシーを示しています。</span><span class="sxs-lookup"><span data-stu-id="6b4db-104">All the examples in this topic illustrate the cache policy for a resource that is cached on January 1 and expires on January 4.</span></span>  
   
- 以下の例では、最大期限延長値 (`maxStale`) と最大有効期間 (`maxAge`) を組み合わせて使用しています。  
+ <span data-ttu-id="6b4db-105">以下の例では、最大期限延長値 (`maxStale`) と最大有効期間 (`maxAge`) を組み合わせて使用しています。</span><span class="sxs-lookup"><span data-stu-id="6b4db-105">In the following examples, the maximum staleness value (`maxStale`) is used in conjunction with a maximum age (`maxAge`):</span></span>  
   
--   キャッシュ ポリシーで `maxAge` = 5 日間が設定され、`maxStale` 値が指定されていない場合は、`maxAge` 値に従い、コンテンツは 1 月 6 日まで使用できます。 ただし、サーバーの再検証要件に従い、コンテンツは 1 月 4 日に期限切れになります。 コンテンツの有効期限の方が保守的 (早い) ので、`maxAge` ポリシーよりも優先されます。 そのため、コンテンツは 1 月 4 日に期限切れになり、最大有効期間に達していないとしても、必ず再検証されます。  
+-   <span data-ttu-id="6b4db-106">キャッシュ ポリシーで `maxAge` = 5 日間が設定され、`maxStale` 値が指定されていない場合は、`maxAge` 値に従い、コンテンツは 1 月 6 日まで使用できます。</span><span class="sxs-lookup"><span data-stu-id="6b4db-106">If the cache policy sets `maxAge` = 5 days and does not specify a `maxStale` value, according to the `maxAge` value, the content is usable until January 6.</span></span> <span data-ttu-id="6b4db-107">ただし、サーバーの再検証要件に従い、コンテンツは 1 月 4 日に期限切れになります。</span><span class="sxs-lookup"><span data-stu-id="6b4db-107">However, according to the server's revalidation requirements, the content expires on January 4.</span></span> <span data-ttu-id="6b4db-108">コンテンツの有効期限の方が保守的 (早い) ので、`maxAge` ポリシーよりも優先されます。</span><span class="sxs-lookup"><span data-stu-id="6b4db-108">Because the content expiration date is more conservative (sooner), it takes precedence over the `maxAge` policy.</span></span> <span data-ttu-id="6b4db-109">そのため、コンテンツは 1 月 4 日に期限切れになり、最大有効期間に達していないとしても、必ず再検証されます。</span><span class="sxs-lookup"><span data-stu-id="6b4db-109">Therefore, the content expires on January 4 and must be revalidated even though its maximum age has not been reached.</span></span>  
   
--   キャッシュ ポリシーで `maxAge` = 5 日間と `maxStale` = 3 日間が設定されている場合、`maxAge` 値に従い、コンテンツは 1 月 6 日まで使用できます。 `maxStale` 値に従い、コンテンツは 1 月 7 日まで使用できます。 そのため、コンテンツは 1 月 6 日に再検証されます。  
+-   <span data-ttu-id="6b4db-110">キャッシュ ポリシーで `maxAge` = 5 日間と `maxStale` = 3 日間が設定されている場合、`maxAge` 値に従い、コンテンツは 1 月 6 日まで使用できます。</span><span class="sxs-lookup"><span data-stu-id="6b4db-110">If the cache policy sets `maxAge` = 5 days and `maxStale` = 3 days, according to the `maxAge` value, the content is usable until January 6.</span></span> <span data-ttu-id="6b4db-111">`maxStale` 値に従い、コンテンツは 1 月 7 日まで使用できます。</span><span class="sxs-lookup"><span data-stu-id="6b4db-111">According to the `maxStale` value, the content is usable until January 7.</span></span> <span data-ttu-id="6b4db-112">そのため、コンテンツは 1 月 6 日に再検証されます。</span><span class="sxs-lookup"><span data-stu-id="6b4db-112">Therefore, the content gets revalidated on January 6.</span></span>  
   
--   キャッシュ ポリシーで `maxAge` = 5 日間と `maxStale` = 1 日間が設定されている場合、`maxAge` 値に従い、コンテンツは 1 月 6 日まで使用できます。 `maxStale` 値に従い、コンテンツは 1 月 5 日まで使用できます。 そのため、コンテンツは 1 月 5 日に再検証されます。  
+-   <span data-ttu-id="6b4db-113">キャッシュ ポリシーで `maxAge` = 5 日間と `maxStale` = 1 日間が設定されている場合、`maxAge` 値に従い、コンテンツは 1 月 6 日まで使用できます。</span><span class="sxs-lookup"><span data-stu-id="6b4db-113">If the cache policy sets `maxAge` = 5 days and `maxStale` = 1 day, according to the `maxAge` value, the content is usable until January 6.</span></span> <span data-ttu-id="6b4db-114">`maxStale` 値に従い、コンテンツは 1 月 5 日まで使用できます。</span><span class="sxs-lookup"><span data-stu-id="6b4db-114">According to the `maxStale` value, the content is usable until January 5.</span></span> <span data-ttu-id="6b4db-115">そのため、コンテンツは 1 月 5 日に再検証されます。</span><span class="sxs-lookup"><span data-stu-id="6b4db-115">Therefore, the content gets revalidated on January 5.</span></span>  
   
- 最大有効期間がコンテンツの有効期限よりも短い場合、より保守的なキャッシュ動作が常に優先され、最大期限延長値の影響はありません。 以下の例は、コンテンツの期限切れ前に最大有効期間 (`maxAge`) に達したときの最大期限延長 (`maxStale`) 値の影響を示しています。  
+ <span data-ttu-id="6b4db-116">最大有効期間がコンテンツの有効期限よりも短い場合、より保守的なキャッシュ動作が常に優先され、最大期限延長値の影響はありません。</span><span class="sxs-lookup"><span data-stu-id="6b4db-116">When the maximum age is less than the content expiration date, the more conservative caching behavior always prevails and the maximum staleness value has no effect.</span></span> <span data-ttu-id="6b4db-117">以下の例は、コンテンツの期限切れ前に最大有効期間 (`maxAge`) に達したときの最大期限延長 (`maxStale`) 値の影響を示しています。</span><span class="sxs-lookup"><span data-stu-id="6b4db-117">The following examples illustrate the effect of setting a maximum staleness (`maxStale`) value when the maximum age (`maxAge`) is reached before the content expires:</span></span>  
   
--   キャッシュ ポリシーで `maxAge` = 1 日間に設定され、`maxStale` 値が指定されていない場合、期限切れ前でも、コンテンツは 1 月 2 日に再検証されます。  
+-   <span data-ttu-id="6b4db-118">キャッシュ ポリシーで `maxAge` = 1 日間に設定され、`maxStale` 値が指定されていない場合、期限切れ前でも、コンテンツは 1 月 2 日に再検証されます。</span><span class="sxs-lookup"><span data-stu-id="6b4db-118">If the cache policy sets `maxAge` = 1 day and does not specify a value for `maxStale` value, the content is revalidated on January 2 even though it has not expired.</span></span>  
   
--   キャッシュ ポリシーで `maxAge` = 1 日、`maxStale` = 3 日間が設定されている場合、より保守的なポリシー設定を適用するために、コンテンツは 1 月 2 日に再検証されます。  
+-   <span data-ttu-id="6b4db-119">キャッシュ ポリシーで `maxAge` = 1 日、`maxStale` = 3 日間が設定されている場合、より保守的なポリシー設定を適用するために、コンテンツは 1 月 2 日に再検証されます。</span><span class="sxs-lookup"><span data-stu-id="6b4db-119">If the cache policy sets `maxAge` = 1 day and `maxStale` = 3 days, the content is revalidated on January 2 to enforce the more conservative policy setting.</span></span>  
   
--   キャッシュ ポリシーで `maxAge` = 1 日、`maxStale` = 1 日が設定されている場合、コンテンツは 1 月 2 日に再検証されます。  
+-   <span data-ttu-id="6b4db-120">キャッシュ ポリシーで `maxAge` = 1 日、`maxStale` = 1 日が設定されている場合、コンテンツは 1 月 2 日に再検証されます。</span><span class="sxs-lookup"><span data-stu-id="6b4db-120">If the cache policy sets `maxAge` = 1 day and `maxStale` = 1 day, the content is revalidated on January 2.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [ネットワーク アプリケーションのキャッシュ管理](../../../docs/framework/network-programming/cache-management-for-network-applications.md)   
- [キャッシュ ポリシー](../../../docs/framework/network-programming/cache-policy.md)   
- [場所ベースのキャッシュ ポリシー](../../../docs/framework/network-programming/location-based-cache-policies.md)   
- [時間ベースのキャッシュ ポリシー](../../../docs/framework/network-programming/time-based-cache-policies.md)   
- [ネットワーク アプリケーションでのキャッシュの構成](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)   
- [キャッシュ ポリシーの相互作用 — 最大有効期間と最小鮮度](../../../docs/framework/network-programming/cache-policy-interaction-maximum-age-and-minimum-freshness.md)
-
+## <a name="see-also"></a><span data-ttu-id="6b4db-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="6b4db-121">See Also</span></span>  
+ [<span data-ttu-id="6b4db-122">ネットワーク アプリケーションのキャッシュ管理</span><span class="sxs-lookup"><span data-stu-id="6b4db-122">Cache Management for Network Applications</span></span>](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
+ [<span data-ttu-id="6b4db-123">キャッシュ ポリシー</span><span class="sxs-lookup"><span data-stu-id="6b4db-123">Cache Policy</span></span>](../../../docs/framework/network-programming/cache-policy.md)  
+ [<span data-ttu-id="6b4db-124">場所ベースのキャッシュ ポリシー</span><span class="sxs-lookup"><span data-stu-id="6b4db-124">Location-Based Cache Policies</span></span>](../../../docs/framework/network-programming/location-based-cache-policies.md)  
+ [<span data-ttu-id="6b4db-125">時間ベースのキャッシュ ポリシー</span><span class="sxs-lookup"><span data-stu-id="6b4db-125">Time-Based Cache Policies</span></span>](../../../docs/framework/network-programming/time-based-cache-policies.md)  
+ [<span data-ttu-id="6b4db-126">ネットワーク アプリケーションでのキャッシュの構成</span><span class="sxs-lookup"><span data-stu-id="6b4db-126">Configuring Caching in Network Applications</span></span>](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)  
+ [<span data-ttu-id="6b4db-127">キャッシュ ポリシーの相互作用 - 最大有効期間と最小鮮度</span><span class="sxs-lookup"><span data-stu-id="6b4db-127">Cache Policy Interaction—Maximum Age and Minimum Freshness</span></span>](../../../docs/framework/network-programming/cache-policy-interaction-maximum-age-and-minimum-freshness.md)

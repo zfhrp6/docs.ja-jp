@@ -1,106 +1,109 @@
 ---
-title: "メッセージ キューを介したメッセージ セキュリティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "メッセージ キューを介したメッセージ セキュリティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 329aea9c-fa80-45c0-b2b9-e37fd7b85b38
-caps.latest.revision: 22
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 6e3d87ab31b7a0910b270e81c28985ffe9279d4c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# メッセージ キューを介したメッセージ セキュリティ
-このサンプルでは、クライアントの認証で X.509v3 証明書による WS\-Security を使用するアプリケーションを実装する方法を示します。このアプリケーションでは、サーバーの X.509v3 証明書を MSMQ 経由で使用するサーバー認証が必要です。MSMQ ストア内のメッセージの暗号化を保持したり、アプリケーションで独自のメッセージ認証を実行できるようにするには、メッセージ セキュリティの使用が望ましい場合があります。  
+# <a name="message-security-over-message-queuing"></a><span data-ttu-id="78c84-102">メッセージ キューを介したメッセージ セキュリティ</span><span class="sxs-lookup"><span data-stu-id="78c84-102">Message Security over Message Queuing</span></span>
+<span data-ttu-id="78c84-103">このサンプルでは、クライアントの認証で X.509v3 証明書による WS-Security を使用するアプリケーションを実装する方法を示します。このアプリケーションでは、サーバーの X.509v3 証明書を MSMQ 経由で使用するサーバー認証が必要です。</span><span class="sxs-lookup"><span data-stu-id="78c84-103">This sample demonstrates how to implement an application that uses WS-Security with X.509v3 certificate authentication for the client and requires server authentication using the server's X.509v3 certificate over MSMQ.</span></span> <span data-ttu-id="78c84-104">MSMQ ストア内のメッセージの暗号化を保持したり、アプリケーションで独自のメッセージ認証を実行できるようにするには、メッセージ セキュリティの使用が望ましい場合があります。</span><span class="sxs-lookup"><span data-stu-id="78c84-104">Message security is sometimes more desirable to ensure that the messages in the MSMQ store stay encrypted and the application can perform its own authentication of the message.</span></span>  
   
- このサンプルは、「[トランザクション MSMQ バインディング](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)」のサンプルに基づいています。メッセージは暗号化されて署名されます。  
+ <span data-ttu-id="78c84-105">このサンプルがに基づいて、[トランザクション MSMQ バインディング](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="78c84-105">This sample is based on the [Transacted MSMQ Binding](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) sample.</span></span> <span data-ttu-id="78c84-106">メッセージは暗号化されて署名されます。</span><span class="sxs-lookup"><span data-stu-id="78c84-106">The messages are encrypted and signed.</span></span>  
   
-### サンプルを設定、ビルド、および実行するには  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="78c84-107">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="78c84-107">To set up, build, and run the sample</span></span>  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  <span data-ttu-id="78c84-108">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="78c84-108">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  サービスを最初に実行すると、サービスはキューが存在するかどうかを確認します。キューが存在しない場合、サービスによってキューが作成されます。最初にサービスを実行してキューを作成することも、MSMQ キュー マネージャーでキューを作成することもできます。Windows 2008 でキューを作成するには、次の手順に従います。  
+2.  <span data-ttu-id="78c84-109">サービスを最初に実行すると、サービスはキューが存在するかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="78c84-109">If the service is run first, it will check to ensure that the queue is present.</span></span> <span data-ttu-id="78c84-110">キューが存在しない場合、サービスによってキューが作成されます。</span><span class="sxs-lookup"><span data-stu-id="78c84-110">If the queue is not present, the service will create one.</span></span> <span data-ttu-id="78c84-111">最初にサービスを実行してキューを作成することも、MSMQ キュー マネージャーでキューを作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="78c84-111">You can run the service first to create the queue, or you can create one via the MSMQ Queue Manager.</span></span> <span data-ttu-id="78c84-112">Windows 2008 でキューを作成するには、次の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="78c84-112">Follow these steps to create a queue in Windows 2008.</span></span>  
   
-    1.  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] でサーバー マネージャーを開きます。  
+    1.  <span data-ttu-id="78c84-113">[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] でサーバー マネージャーを開きます。</span><span class="sxs-lookup"><span data-stu-id="78c84-113">Open Server Manager in [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].</span></span>  
   
-    2.  **\[機能\]** タブを展開します。  
+    2.  <span data-ttu-id="78c84-114">展開して、**機能**タブです。</span><span class="sxs-lookup"><span data-stu-id="78c84-114">Expand the **Features** tab.</span></span>  
   
-    3.  **\[プライベート メッセージ キュー\]** を右クリックし、**\[新規作成\]**、**\[専用キュー\]** の順にクリックします。  
+    3.  <span data-ttu-id="78c84-115">右クリック**プライベート メッセージ キュー**を選択して**新規**、**プライベート キュー**です。</span><span class="sxs-lookup"><span data-stu-id="78c84-115">Right-click **Private Message Queues**, and select **New**, **Private Queue**.</span></span>  
   
-    4.  **\[トランザクション\]** ボックスをオンにします。  
+    4.  <span data-ttu-id="78c84-116">チェック、**トランザクション**ボックス。</span><span class="sxs-lookup"><span data-stu-id="78c84-116">Check the **Transactional** box.</span></span>  
   
-    5.  新しいキューの名前として、「`ServiceModelSamplesTransacted`」と入力します。  
+    5.  <span data-ttu-id="78c84-117">入力`ServiceModelSamplesTransacted`として、新しいキューの名前。</span><span class="sxs-lookup"><span data-stu-id="78c84-117">Enter `ServiceModelSamplesTransacted` as the name of the new queue.</span></span>  
   
-3.  ソリューションの C\# 版または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+3.  <span data-ttu-id="78c84-118">ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="78c84-118">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-### サンプルを同じコンピューターで実行するには  
+### <a name="to-run-the-sample-on-the-same-computer"></a><span data-ttu-id="78c84-119">サンプルを同じコンピューターで実行するには</span><span class="sxs-lookup"><span data-stu-id="78c84-119">To run the sample on the same computer</span></span>  
   
-1.  Makecert.exe と FindPrivateKey.exe を格納するフォルダーがパスに含まれていることを確認します。  
+1.  <span data-ttu-id="78c84-120">Makecert.exe と FindPrivateKey.exe を格納するフォルダーがパスに含まれていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="78c84-120">Ensure that the path includes the folder that contains Makecert.exe and FindPrivateKey.exe.</span></span>  
   
-2.  Setup.bat をサンプルのインストール フォルダで実行します。これにより、サンプルの実行に必要なすべての証明書がインストールされます。  
-  
-    > [!NOTE]
-    >  サンプルの実行後は、Cleanup.bat を実行して証明書を削除してください。他のセキュリティ サンプルでも同じ証明書を使用します。  
-  
-3.  Service.exe を \\service\\bin で起動します。  
-  
-4.  Client.exe を \\client\\bin で起動します。クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。  
-  
-5.  クライアントとサービス間で通信できない場合は、「[Troubleshooting Tips](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
-  
-### サンプルを複数のコンピューターで実行するには  
-  
-1.  Setup.bat、Cleanup.bat、ImportClientCert.bat の各ファイルをサービス コンピューターにコピーします。  
-  
-2.  クライアント コンピューターにクライアント バイナリ用のディレクトリを作成します。  
-  
-3.  クライアント プログラム ファイルを、クライアント コンピューターに作成したクライアント ディレクトリにコピーします。Setup.bat、Cleanup.bat、ImportServiceCert.bat の各ファイルもクライアントにコピーします。  
-  
-4.  サーバーで `setup.bat service` を実行します。`setup.bat` に `service` 引数を指定して実行すると、コンピューターの完全修飾ドメイン名を使用してサービス証明書が作成され、Service.cer というファイルにエクスポートされます。  
-  
-5.  サービスの service.exe.config を編集して、新しい証明書名 \([\<serviceCertificate\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)の `findValue` 属性\) を反映します。これは、コンピューターの完全修飾ドメイン名と同じです。  
-  
-6.  Service.cer ファイルを、サービス ディレクトリからクライアント コンピューターのクライアント ディレクトリにコピーします。  
-  
-7.  クライアントで `setup.bat client` を実行します。`setup.bat` に `client` 引数を指定して実行すると、client.com というクライアント証明書が作成され、Client.cer というファイルにエクスポートされます。  
-  
-8.  クライアント コンピューターの Client.exe.config ファイルで、エンドポイントのアドレス値をサービスの新しいアドレスに合わせます。そのためには、localhost をサーバーの完全修飾ドメイン名に置き換えます。さらに、サービス証明書の名前を、サービス コンピューターの完全修飾ドメイン名 \(`clientCredentials` の下にある `serviceCertificate` の `defaultCertificate` 要素の `findValue` 属性\) と同じ名前に変更する必要があります。  
-  
-9. Client.cer ファイルを、クライアント ディレクトリからサーバーのサービス ディレクトリにコピーします。  
-  
-10. クライアントで `ImportServiceCert.bat` を実行します。これにより、サービス証明書が Service.cer ファイルから CurrentUser \- TrustedPeople ストアにインポートされます。  
-  
-11. サーバーで `ImportClientCert.bat` を実行します。これにより、クライアント証明書が Client.cer ファイルから LocalMachine \- TrustedPeople ストアにインポートされます。  
-  
-12. サービス コンピューターで、コマンド プロンプトから Service.exe を起動します。  
-  
-13. クライアント コンピューターで、コマンド プロンプトから Client.exe を起動します。クライアントとサービス間で通信できない場合は、「[Troubleshooting Tips](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
-  
-### サンプルの実行後にクリーンアップするには  
-  
--   サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。  
+2.  <span data-ttu-id="78c84-121">Setup.bat をサンプルのインストール フォルダーで実行します。</span><span class="sxs-lookup"><span data-stu-id="78c84-121">Run Setup.bat from the sample install folder.</span></span> <span data-ttu-id="78c84-122">これにより、サンプルの実行に必要なすべての証明書がインストールされます。</span><span class="sxs-lookup"><span data-stu-id="78c84-122">This installs all the certificates required for running the sample.</span></span>  
   
     > [!NOTE]
-    >  このサンプルを複数のコンピューターで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。複数のコンピューターで証明書を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルを実行した場合は、CurrentUser \- TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。  
+    >  <span data-ttu-id="78c84-123">サンプルの実行後は、Cleanup.bat を実行して証明書を削除してください。</span><span class="sxs-lookup"><span data-stu-id="78c84-123">Ensure that you remove the certificates by running Cleanup.bat when you have finished with the sample.</span></span> <span data-ttu-id="78c84-124">他のセキュリティ サンプルでも同じ証明書を使用します。</span><span class="sxs-lookup"><span data-stu-id="78c84-124">Other security samples use the same certificates.</span></span>  
   
-## 必要条件  
- このサンプルでは、MSMQ がインストールされて実行中であることが必要です。  
+3.  <span data-ttu-id="78c84-125">Service.exe を \service\bin で起動します。</span><span class="sxs-lookup"><span data-stu-id="78c84-125">Launch Service.exe from \service\bin.</span></span>  
   
-## 使用例  
- クライアントは、サービスの公開キーを使用してメッセージを暗号化し、独自の証明書を使用してメッセージ署名を行います。キューからのメッセージを読み込むサービスは、信頼されたユーザーのストア内の証明書を使用して、クライアント証明書を認証します。次にメッセージを復号化し、サービス操作にディスパッチします。  
+4.  <span data-ttu-id="78c84-126">Client.exe を \client\bin で起動します。</span><span class="sxs-lookup"><span data-stu-id="78c84-126">Launch Client.exe from \client\bin.</span></span> <span data-ttu-id="78c84-127">クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。</span><span class="sxs-lookup"><span data-stu-id="78c84-127">Client activity is displayed on the client console application.</span></span>  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] メッセージは MSMQ メッセージの本文のペイロードとして送信されるので、メッセージ本文は MSMQ ストアで暗号化されたまま残ります。これによりメッセージは、望ましくない公開から保護されます。MSMQ 自体では、送信されるメッセージが暗号化されているかどうかは認識されません。  
+5.  <span data-ttu-id="78c84-128">クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="78c84-128">If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).</span></span>  
   
- このサンプルは、MSMQ でメッセージ レベルの相互認証を使用する方法を示します。証明書は、帯域外で交換されます。サービスとクライアントは同時に実行される必要がないため、キューに置かれたアプリケーションでは常にその状態です。  
+### <a name="to-run-the-sample-across-computers"></a><span data-ttu-id="78c84-129">サンプルを複数のコンピューターで実行するには</span><span class="sxs-lookup"><span data-stu-id="78c84-129">To run the sample across computers</span></span>  
   
-## 説明  
- クライアントとサービス コードのこのサンプルは、1 つの違いを除き、「[トランザクション MSMQ バインディング](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)」と同じです。操作コントラクトには、メッセージの署名および暗号化が必要であることを示す注釈が保護レベルで付けられます。  
+1.  <span data-ttu-id="78c84-130">Setup.bat、Cleanup.bat、ImportClientCert.bat の各ファイルをサービス コンピューターにコピーします。</span><span class="sxs-lookup"><span data-stu-id="78c84-130">Copy the Setup.bat, Cleanup.bat, and ImportClientCert.bat files to the service computer.</span></span>  
+  
+2.  <span data-ttu-id="78c84-131">クライアント コンピューターにクライアント バイナリ用のディレクトリを作成します。</span><span class="sxs-lookup"><span data-stu-id="78c84-131">Create a directory on the client computer for the client binaries.</span></span>  
+  
+3.  <span data-ttu-id="78c84-132">クライアント プログラム ファイルを、クライアント コンピューターに作成したクライアント ディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="78c84-132">Copy the client program files to the client directory on the client computer.</span></span> <span data-ttu-id="78c84-133">Setup.bat、Cleanup.bat、ImportServiceCert.bat の各ファイルもクライアントにコピーします。</span><span class="sxs-lookup"><span data-stu-id="78c84-133">Also copy the Setup.bat, Cleanup.bat, and ImportServiceCert.bat files to the client.</span></span>  
+  
+4.  <span data-ttu-id="78c84-134">サーバーで `setup.bat service` を実行します。</span><span class="sxs-lookup"><span data-stu-id="78c84-134">On the server, run `setup.bat service`.</span></span> <span data-ttu-id="78c84-135">実行している`setup.bat`で、`service`引数が、コンピューターの完全修飾ドメイン名でサービス証明書を作成し、サービス証明書が Service.cer というファイルにエクスポートします。</span><span class="sxs-lookup"><span data-stu-id="78c84-135">Running `setup.bat` with the `service` argument creates a service certificate with the fully-qualified domain name of the computer and exports the service certificate to a file named Service.cer.</span></span>  
+  
+5.  <span data-ttu-id="78c84-136">新しい証明書名を反映するようにサービスの service.exe.config の編集 (で、`findValue`属性、 [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) は、コンピューターの完全修飾ドメイン名と同じです。</span><span class="sxs-lookup"><span data-stu-id="78c84-136">Edit service's service.exe.config to reflect the new certificate name (in the `findValue` attribute in the [\<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) which is the same as the fully-qualified domain name of the computer.</span></span>  
+  
+6.  <span data-ttu-id="78c84-137">Service.cer ファイルを、サービス ディレクトリからクライアント コンピューターのクライアント ディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="78c84-137">Copy the Service.cer file from the service directory to the client directory on the client computer.</span></span>  
+  
+7.  <span data-ttu-id="78c84-138">クライアントで `setup.bat client` を実行します。</span><span class="sxs-lookup"><span data-stu-id="78c84-138">On the client, run `setup.bat client`.</span></span> <span data-ttu-id="78c84-139">`setup.bat`に `client` 引数を指定して実行すると、client.com というクライアント証明書が作成され、Client.cer というファイルにエクスポートされます。</span><span class="sxs-lookup"><span data-stu-id="78c84-139">Running `setup.bat` with the `client` argument creates a client certificate named client.com and exports the client certificate to a file named Client.cer.</span></span>  
+  
+8.  <span data-ttu-id="78c84-140">クライアント コンピューターの Client.exe.config ファイルで、エンドポイントのアドレス値をサービスの新しいアドレスに合わせます。</span><span class="sxs-lookup"><span data-stu-id="78c84-140">In the Client.exe.config file on the client computer, change the address value of the endpoint to match the new address of your service.</span></span> <span data-ttu-id="78c84-141">そのためには、localhost をサーバーの完全修飾ドメイン名に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="78c84-141">Do this by replacing localhost with the fully-qualified domain name of the server.</span></span>  <span data-ttu-id="78c84-142">さらに、サービス証明書の名前を、サービス コンピューターの完全修飾ドメイン名 (`findValue` の下にある `defaultCertificate` の `serviceCertificate` 要素の `clientCredentials` 属性) と同じ名前に変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="78c84-142">You must also change the certificate name of the service to be the same as the fully-qualified domain name of the service computer (in the `findValue` attribute in the `defaultCertificate` element of `serviceCertificate` under `clientCredentials`).</span></span>  
+  
+9. <span data-ttu-id="78c84-143">Client.cer ファイルを、クライアント ディレクトリからサーバーのサービス ディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="78c84-143">Copy the Client.cer file from the client directory to the service directory on the server.</span></span>  
+  
+10. <span data-ttu-id="78c84-144">クライアントで `ImportServiceCert.bat` を実行します。</span><span class="sxs-lookup"><span data-stu-id="78c84-144">On the client, run `ImportServiceCert.bat`.</span></span> <span data-ttu-id="78c84-145">これにより、サービス証明書が Service.cer ファイルから CurrentUser - TrustedPeople ストアにインポートされます。</span><span class="sxs-lookup"><span data-stu-id="78c84-145">This imports the service certificate from the Service.cer file into the CurrentUser - TrustedPeople store.</span></span>  
+  
+11. <span data-ttu-id="78c84-146">サーバーで `ImportClientCert.bat` を実行します。これにより、クライアント証明書が Client.cer ファイルから LocalMachine - TrustedPeople ストアにインポートされます。</span><span class="sxs-lookup"><span data-stu-id="78c84-146">On the server, run `ImportClientCert.bat`, This imports the client certificate from the Client.cer file into the LocalMachine - TrustedPeople store.</span></span>  
+  
+12. <span data-ttu-id="78c84-147">サービス コンピューターで、コマンド プロンプトから Service.exe を起動します。</span><span class="sxs-lookup"><span data-stu-id="78c84-147">On the service computer, launch Service.exe from the command prompt.</span></span>  
+  
+13. <span data-ttu-id="78c84-148">クライアント コンピューターで、コマンド プロンプトから Client.exe を起動します。</span><span class="sxs-lookup"><span data-stu-id="78c84-148">On the client computer, launch Client.exe from the command prompt.</span></span> <span data-ttu-id="78c84-149">クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="78c84-149">If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).</span></span>  
+  
+### <a name="to-clean-up-after-the-sample"></a><span data-ttu-id="78c84-150">サンプルの実行後にクリーンアップするには</span><span class="sxs-lookup"><span data-stu-id="78c84-150">To clean up after the sample</span></span>  
+  
+-   <span data-ttu-id="78c84-151">サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。</span><span class="sxs-lookup"><span data-stu-id="78c84-151">Run Cleanup.bat in the samples folder once you have finished running the sample.</span></span>  
+  
+    > [!NOTE]
+    >  <span data-ttu-id="78c84-152">このサンプルを複数のコンピューターで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。</span><span class="sxs-lookup"><span data-stu-id="78c84-152">This script does not remove service certificates on a client when running this sample across computers.</span></span> <span data-ttu-id="78c84-153">複数のコンピューターで証明書を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルを実行した場合は、CurrentUser - TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。</span><span class="sxs-lookup"><span data-stu-id="78c84-153">If you have run [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] samples that use certificates across computers, be sure to clear the service certificates that have been installed in the CurrentUser - TrustedPeople store.</span></span> <span data-ttu-id="78c84-154">削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。</span><span class="sxs-lookup"><span data-stu-id="78c84-154">To do this, use the following command: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` For example: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.</span></span>  
+  
+## <a name="requirements"></a><span data-ttu-id="78c84-155">要件</span><span class="sxs-lookup"><span data-stu-id="78c84-155">Requirements</span></span>  
+ <span data-ttu-id="78c84-156">このサンプルでは、MSMQ がインストールされて実行中であることが必要です。</span><span class="sxs-lookup"><span data-stu-id="78c84-156">This sample requires that MSMQ is installed and running.</span></span>  
+  
+## <a name="demonstrates"></a><span data-ttu-id="78c84-157">使用例</span><span class="sxs-lookup"><span data-stu-id="78c84-157">Demonstrates</span></span>  
+ <span data-ttu-id="78c84-158">クライアントは、サービスの公開キーを使用してメッセージを暗号化し、独自の証明書を使用してメッセージ署名を行います。</span><span class="sxs-lookup"><span data-stu-id="78c84-158">The client encrypts the message using the public key of the service and signs the message using its own certificate.</span></span> <span data-ttu-id="78c84-159">キューからのメッセージを読み込むサービスは、信頼されたユーザーのストア内の証明書を使用して、クライアント証明書を認証します。</span><span class="sxs-lookup"><span data-stu-id="78c84-159">The service reading the message from the queue authenticates the client certificate with the certificate in its trusted people store.</span></span> <span data-ttu-id="78c84-160">次にメッセージを復号化し、サービス操作にディスパッチします。</span><span class="sxs-lookup"><span data-stu-id="78c84-160">It then decrypts the message and dispatches the message to the service operation.</span></span>  
+  
+ <span data-ttu-id="78c84-161">[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] メッセージは MSMQ メッセージの本文のペイロードとして送信されるので、メッセージ本文は MSMQ ストアで暗号化されたまま残ります。</span><span class="sxs-lookup"><span data-stu-id="78c84-161">Because the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] message is carried as a payload in the body of the MSMQ message, the body remains encrypted in the MSMQ store.</span></span> <span data-ttu-id="78c84-162">これによりメッセージは、望ましくない公開から保護されます。</span><span class="sxs-lookup"><span data-stu-id="78c84-162">This secures the message from unwanted disclosure of the message.</span></span> <span data-ttu-id="78c84-163">MSMQ 自体では、送信されるメッセージが暗号化されているかどうかは認識されません。</span><span class="sxs-lookup"><span data-stu-id="78c84-163">Note that MSMQ itself is not aware whether the message it is carrying is encrypted.</span></span>  
+  
+ <span data-ttu-id="78c84-164">このサンプルは、MSMQ でメッセージ レベルの相互認証を使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="78c84-164">The sample demonstrates how mutual authentication at the message level can be used with MSMQ.</span></span> <span data-ttu-id="78c84-165">証明書は、帯域外で交換されます。</span><span class="sxs-lookup"><span data-stu-id="78c84-165">The certificates are exchanged out-of-band.</span></span> <span data-ttu-id="78c84-166">サービスとクライアントは同時に実行される必要がないため、キューに置かれたアプリケーションでは常にその状態です。</span><span class="sxs-lookup"><span data-stu-id="78c84-166">This is always the case with queued application because the service and the client do not have to be up and running at the same time.</span></span>  
+  
+## <a name="description"></a><span data-ttu-id="78c84-167">説明</span><span class="sxs-lookup"><span data-stu-id="78c84-167">Description</span></span>  
+ <span data-ttu-id="78c84-168">サンプルのクライアントとサービス コードと同じ、[トランザクション MSMQ バインディング](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)違いの 1 つのサンプルです。</span><span class="sxs-lookup"><span data-stu-id="78c84-168">The sample client and service code are the same as the [Transacted MSMQ Binding](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) sample with one difference.</span></span> <span data-ttu-id="78c84-169">操作コントラクトには、メッセージの署名および暗号化が必要であることを示す注釈が保護レベルで付けられます。</span><span class="sxs-lookup"><span data-stu-id="78c84-169">The operation contract is annotated with protection level, which suggests that the message must be signed and encrypted.</span></span>  
   
 ```  
 // Define a service contract.   
@@ -112,11 +115,11 @@ public interface IOrderProcessor
 }  
 ```  
   
- メッセージが、サービスとクライアントの識別に必要なトークンを使用してセキュリティ保護されるには、App.config に資格情報を格納する必要があります。  
+ <span data-ttu-id="78c84-170">メッセージが、サービスとクライアントの識別に必要なトークンを使用してセキュリティ保護されるには、App.config に資格情報を格納する必要があります。</span><span class="sxs-lookup"><span data-stu-id="78c84-170">To ensure that the message is secured using the required token to identify the service and client, the App.config contains credential information.</span></span>  
   
- クライアント構成では、サービスを認証するサービス証明書を指定します。また、LocalMachine のストアを信頼されるストアとして使用し、サービスの有効性を信頼します。さらに、クライアントのサービス認証用として、メッセージに関連付けられたクライアント証明書を指定します。  
+ <span data-ttu-id="78c84-171">クライアント構成では、サービスを認証するサービス証明書を指定します。</span><span class="sxs-lookup"><span data-stu-id="78c84-171">The client configuration specifies the service certificate to authenticate the service.</span></span> <span data-ttu-id="78c84-172">また、LocalMachine のストアを信頼されるストアとして使用し、サービスの有効性を信頼します。</span><span class="sxs-lookup"><span data-stu-id="78c84-172">It uses its LocalMachine store as the trusted store to rely on the validity of the service.</span></span> <span data-ttu-id="78c84-173">さらに、クライアントのサービス認証用として、メッセージに関連付けられたクライアント証明書を指定します。</span><span class="sxs-lookup"><span data-stu-id="78c84-173">It also specifies the client certificate that is attached with the message for service authentication of the client.</span></span>  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   
@@ -172,12 +175,11 @@ public interface IOrderProcessor
 </configuration>  
 ```  
   
- セキュリティ モードが Message に設定されている場合は、ClientCredentialType は Certificate に設定されることに注意してください。  
+ <span data-ttu-id="78c84-174">セキュリティ モードが Message に設定されている場合は、ClientCredentialType は Certificate に設定されることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="78c84-174">Note that the security mode is set to Message and the ClientCredentialType is set to Certificate.</span></span>  
   
- サービス構成には、サービスの資格情報を指定するサービス動作が含まれます。この資格情報は、クライアントがサービスを認証する際に使用されます。サーバー証明書のサブジェクト名は、[\<serviceCredentials\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)の `findValue` 属性で指定されています。  
+ <span data-ttu-id="78c84-175">サービス構成には、サービスの資格情報を指定するサービス動作が含まれます。この資格情報は、クライアントがサービスを認証する際に使用されます。</span><span class="sxs-lookup"><span data-stu-id="78c84-175">The service configuration includes a service behavior that specifies the service's credentials that are used when the client authenticates the service.</span></span> <span data-ttu-id="78c84-176">サーバー証明書のサブジェクト名が指定された、`findValue`属性、 [ \<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)です。</span><span class="sxs-lookup"><span data-stu-id="78c84-176">The server certificate subject name is specified in the `findValue` attribute in the [\<serviceCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).</span></span>  
   
-```  
-  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   
@@ -249,10 +251,9 @@ public interface IOrderProcessor
   </system.serviceModel>  
   
 </configuration>  
-  
 ```  
   
- このサンプルは、構成を使用した認証の制御、およびセキュリティ コンテキストから呼び出し側の ID を取得する方法を示しています。次のサンプル コードを参照してください。  
+ <span data-ttu-id="78c84-177">このサンプルは、構成を使用した認証の制御、およびセキュリティ コンテキストから呼び出し側の ID を取得する方法を示しています。次のサンプル コードを参照してください。</span><span class="sxs-lookup"><span data-stu-id="78c84-177">The sample demonstrates controlling authentication using configuration, and how to obtain the caller’s identity from the security context, as shown in the following sample code:</span></span>  
   
 ```  
     // Service class which implements the service contract.  
@@ -278,7 +279,7 @@ public interface IOrderProcessor
 }  
 ```  
   
- 実行時、サービス コードにはクライアント ID が表示されます。サービス コードからの出力サンプルを次に示します。  
+ <span data-ttu-id="78c84-178">実行時、サービス コードにはクライアント ID が表示されます。</span><span class="sxs-lookup"><span data-stu-id="78c84-178">When run, the service code displays the client identification.</span></span> <span data-ttu-id="78c84-179">サービス コードからの出力サンプルを次に示します。</span><span class="sxs-lookup"><span data-stu-id="78c84-179">The following is a sample output from the service code:</span></span>  
   
 ```  
 The service is ready.  
@@ -294,35 +295,33 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
         Order status: Pending  
 ```  
   
-## 説明  
+## <a name="comments"></a><span data-ttu-id="78c84-180">コメント</span><span class="sxs-lookup"><span data-stu-id="78c84-180">Comments</span></span>  
   
--   クライアント証明書の作成。  
+-   <span data-ttu-id="78c84-181">クライアント証明書の作成。</span><span class="sxs-lookup"><span data-stu-id="78c84-181">Creating the client certificate.</span></span>  
   
-     バッチ ファイルの次の行では、クライアント証明書を作成します。指定されたクライアント名が、作成される証明書のサブジェクト名に使用されます。証明書は、`CurrentUser` ストアの場所の `My` ストアに格納されます。  
+     <span data-ttu-id="78c84-182">バッチ ファイルの次の行では、クライアント証明書を作成します。</span><span class="sxs-lookup"><span data-stu-id="78c84-182">The following line in the batch file creates the client certificate.</span></span> <span data-ttu-id="78c84-183">指定されたクライアント名が、作成される証明書のサブジェクト名に使用されます。</span><span class="sxs-lookup"><span data-stu-id="78c84-183">The client name specified is used in the subject name of the certificate created.</span></span> <span data-ttu-id="78c84-184">証明書は、`My` ストアの場所の `CurrentUser` ストアに格納されます。</span><span class="sxs-lookup"><span data-stu-id="78c84-184">The certificate is stored in `My` store at the `CurrentUser` store location.</span></span>  
   
     ```  
     echo ************  
     echo making client cert  
     echo ************  
     makecert.exe -sr CurrentUser -ss MY -a sha1 -n CN=%CLIENT_NAME% -sky exchange -pe  
-  
     ```  
   
--   クライアント証明書のサーバーの信頼された証明書ストアへのインストール。  
+-   <span data-ttu-id="78c84-185">クライアント証明書のサーバーの信頼された証明書ストアへのインストール。</span><span class="sxs-lookup"><span data-stu-id="78c84-185">Installing the client certificate into server’s trusted certificate store.</span></span>  
   
-     バッチ ファイルの次の行では、クライアント証明書をサーバーの TrustedPeople ストアにコピーし、サーバーが信頼\/非信頼を判断できるようにします。TrustedPeople ストアにインストールされた証明書が [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスに信頼されるには、クライアント証明書の検証モードの値を `PeerOrChainTrust` または `PeerTrust` に設定する必要があります。前のサービス構成サンプルを参照して、構成ファイルを使用してこれを行う手順を確認してください。  
+     <span data-ttu-id="78c84-186">バッチ ファイルの次の行では、クライアント証明書をサーバーの TrustedPeople ストアにコピーし、サーバーが信頼/非信頼を判断できるようにします。</span><span class="sxs-lookup"><span data-stu-id="78c84-186">The following line in the batch file copies the client certificate into the server's TrustedPeople store so that the server can make the relevant trust or no-trust decisions.</span></span> <span data-ttu-id="78c84-187">TrustedPeople ストアにインストールされた証明書が [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスに信頼されるには、クライアント証明書の検証モードの値を `PeerOrChainTrust` または `PeerTrust` に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="78c84-187">For a certificate installed in the TrustedPeople store to be trusted by a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service, the client certificate validation mode must be set to `PeerOrChainTrust` or `PeerTrust` value.</span></span> <span data-ttu-id="78c84-188">前のサービス構成サンプルを参照して、構成ファイルを使用してこれを行う手順を確認してください。</span><span class="sxs-lookup"><span data-stu-id="78c84-188">See the previous service configuration sample to learn how this can be done using a configuration file.</span></span>  
   
     ```  
     echo ************  
     echo copying client cert to server's LocalMachine store  
     echo ************  
     certmgr.exe -add -r CurrentUser -s My -c -n %CLIENT_NAME% -r LocalMachine -s TrustedPeople  
-  
     ```  
   
--   サーバー証明書の作成。  
+-   <span data-ttu-id="78c84-189">サーバー証明書の作成。</span><span class="sxs-lookup"><span data-stu-id="78c84-189">Creating the server certificate.</span></span>  
   
-     Setup.bat バッチ ファイルの次の行は、使用するサーバー証明書を作成します。  
+     <span data-ttu-id="78c84-190">Setup.bat バッチ ファイルの次の行は、使用するサーバー証明書を作成します。</span><span class="sxs-lookup"><span data-stu-id="78c84-190">The following lines from the Setup.bat batch file create the server certificate to be used:</span></span>  
   
     ```  
     echo ************  
@@ -334,26 +333,26 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
     ```  
   
-     %SERVER\_NAME% 変数はサーバー名を指定します。証明書は LocalMachine ストアに保存されます。セットアップ バッチ ファイルの実行にサービスの引数 \(`setup.bat service` など\) が使用された場合、%SERVER\_NAME% にはコンピューターの完全修飾ドメイン名が含まれます。それ以外の場合、既定値は localhost です。  
+     <span data-ttu-id="78c84-191">%SERVER_NAME% 変数はサーバー名を指定します。</span><span class="sxs-lookup"><span data-stu-id="78c84-191">The %SERVER_NAME% variable specifies the server name.</span></span> <span data-ttu-id="78c84-192">証明書は LocalMachine ストアに保存されます。</span><span class="sxs-lookup"><span data-stu-id="78c84-192">The certificate is stored in the LocalMachine store.</span></span> <span data-ttu-id="78c84-193">セットアップ バッチ ファイルがサービスの引数を指定して実行されているかどうか (など、 `setup.bat service`)、%server_name% には、コンピューターの完全修飾ドメイン名が含まれています。それ以外の場合、既定値は localhost</span><span class="sxs-lookup"><span data-stu-id="78c84-193">If the setup batch file is run with an argument of service (such as, `setup.bat service`) the %SERVER_NAME% contains the fully-qualified domain name of the computer.Otherwise it defaults to localhost</span></span>  
   
--   サーバー証明書のクライアントの信頼された証明書ストアへのインストール。  
+-   <span data-ttu-id="78c84-194">サーバー証明書のクライアントの信頼された証明書ストアへのインストール。</span><span class="sxs-lookup"><span data-stu-id="78c84-194">Installing server certificate into the client’s trusted certificate store.</span></span>  
   
-     次の行は、サーバー証明書をクライアントの信頼されたユーザーのストアにコピーします。この手順が必要なのは、Makecert.exe によって生成される証明書がクライアント システムにより暗黙には信頼されないためです。マイクロソフト発行の証明書など、クライアントの信頼されたルート証明書に基づいた証明書が既にある場合は、クライアント証明書ストアにサーバー証明書を配置するこの手順は不要です。  
+     <span data-ttu-id="78c84-195">次の行は、サーバー証明書をクライアントの信頼されたユーザーのストアにコピーします。</span><span class="sxs-lookup"><span data-stu-id="78c84-195">The following line copies the server certificate into the client trusted people store.</span></span> <span data-ttu-id="78c84-196">この手順が必要なのは、Makecert.exe によって生成される証明書がクライアント システムにより暗黙には信頼されないからです。</span><span class="sxs-lookup"><span data-stu-id="78c84-196">This step is required because certificates generated by Makecert.exe are not implicitly trusted by the client system.</span></span> <span data-ttu-id="78c84-197">マイクロソフト発行の証明書など、クライアントの信頼されたルート証明書に基づいた証明書が既にある場合は、クライアント証明書ストアにサーバー証明書を配置するこの手順は不要です。</span><span class="sxs-lookup"><span data-stu-id="78c84-197">If you already have a certificate that is rooted in a client trusted root certificate—for example, a Microsoft-issued certificate—this step of populating the client certificate store with the server certificate is not required.</span></span>  
   
     ```  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
     ```  
   
     > [!NOTE]
-    >  英語 \(米国\) 以外の言語で Microsoft Windows を使用している場合は、Setup.bat ファイルを編集し、"NT AUTHORITY\\NETWORK SERVICE" アカウント名を現在の地域に適した名前に変更してください。  
+    >  <span data-ttu-id="78c84-198">英語 (米国) 以外の言語で Microsoft Windows を使用している場合は、Setup.bat ファイルを編集し、"NT AUTHORITY\NETWORK SERVICE" アカウント名を現在の地域に適した名前に変更してください。</span><span class="sxs-lookup"><span data-stu-id="78c84-198">If you are using a non-U.S. English edition of Microsoft Windows you must edit the Setup.bat file and replace the "NT AUTHORITY\NETWORK SERVICE" account name with your regional equivalent.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="78c84-199">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="78c84-199">The samples may already be installed on your computer.</span></span> <span data-ttu-id="78c84-200">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="78c84-200">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="78c84-201">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="78c84-201">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="78c84-202">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="78c84-202">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\MessageSecurity`  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="78c84-203">関連項目</span><span class="sxs-lookup"><span data-stu-id="78c84-203">See Also</span></span>

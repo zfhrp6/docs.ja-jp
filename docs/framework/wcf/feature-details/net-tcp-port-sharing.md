@@ -1,62 +1,65 @@
 ---
-title: "Net.TCP ポート共有 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ポート アクティベーション [WCF]"
-  - "ポート共有 [WCF]"
+title: "Net.TCP ポート共有"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- port activation [WCF]
+- port sharing [WCF]
 ms.assetid: f13692ee-a179-4439-ae72-50db9534eded
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: cc0736b0c13f286b999fc0e098a45364141945da
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Net.TCP ポート共有
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、高パフォーマンス通信用の新しい TCP ベースのネットワーク プロトコル \(net.tcp:\/\/\) が提供されます。  また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、net.tcp ポートを複数のユーザー プロセスで共有できる新しいシステム コンポーネントとして Net.TCP ポート共有サービスが導入されています。  
+# <a name="nettcp-port-sharing"></a><span data-ttu-id="2fbcc-102">Net.TCP ポート共有</span><span class="sxs-lookup"><span data-stu-id="2fbcc-102">Net.TCP Port Sharing</span></span>
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="2fbcc-103"> では、高パフォーマンス通信用の新しい TCP ベースのネットワーク プロトコル (net.tcp://) が提供されます。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-103"> provides a new TCP-based network protocol (net.tcp://) for high-performance communication.</span></span> <span data-ttu-id="2fbcc-104">また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、net.tcp ポートを複数のユーザー プロセスで共有できる新しいシステム コンポーネントとして Net.TCP ポート共有サービスが導入されています。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-104">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] also introduces a new system component, the Net.TCP Port Sharing Service that enables net.tcp ports to be shared across multiple user processes.</span></span>  
   
-## 背景と動機  
- TCP\/IP プロトコルの導入当初は、それを使用するアプリケーション プロトコルは少ししかありませんでした。  TCP\/IP では、ポート番号を使用して一意の 16 ビットのポート番号を各アプリケーション プロトコルに割り当てることでアプリケーションが区別されました。  たとえば、現在 HTTP トラフィックは TCP ポート 80、SMTP は TCP ポート 25、FTP は TCP ポート 20 と 21 を使用するように標準化されています。  他のアプリケーションで TCP をトランスポートとして使用する場合は、規則により、または正式な標準化を通じて別の利用可能なポート番号を選択できます。  
+## <a name="background-and-motivation"></a><span data-ttu-id="2fbcc-105">背景と動機</span><span class="sxs-lookup"><span data-stu-id="2fbcc-105">Background and Motivation</span></span>  
+ <span data-ttu-id="2fbcc-106">TCP/IP プロトコルの導入当初は、それを使用するアプリケーション プロトコルは少ししかありませんでした。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-106">When the TCP/IP protocol was first introduced, only a small number of application protocols made use of it.</span></span> <span data-ttu-id="2fbcc-107">TCP/IP では、ポート番号を使用して一意の 16 ビットのポート番号を各アプリケーション プロトコルに割り当てることでアプリケーションが区別されました。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-107">TCP/IP used port numbers to differentiate between applications by assigning a unique 16-bit port number to each application protocol.</span></span> <span data-ttu-id="2fbcc-108">たとえば、現在 HTTP トラフィックは TCP ポート 80、SMTP は TCP ポート 25、FTP は TCP ポート 20 と 21 を使用するように標準化されています。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-108">For example, HTTP traffic today is standardized to use TCP port 80, SMTP uses TCP port 25, and FTP uses TCP ports 20 and 21.</span></span> <span data-ttu-id="2fbcc-109">他のアプリケーションで TCP をトランスポートとして使用する場合は、規則により、または正式な標準化を通じて別の利用可能なポート番号を選択できます。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-109">Other applications using TCP as a transport can choose another available port number, either by convention or through formal standardization.</span></span>  
   
- ポート番号を使用してアプリケーションを区別することについては、セキュリティの問題がありました。  通常、ファイアウォールは、よく知られたわずかなエントリ ポイントを除いてすべてのポートの TCP トラフィックをブロックするよう構成されています。そのため、非標準のポートを使用するアプリケーションを展開する際に、企業のファイアウォールまたはパーソナル ファイアウォールがあるために展開が複雑になることや、展開が不可能になる場合がよくあります。  アプリケーションが、許可済みの標準の Well\-known ポートで通信できる場合は、外部攻撃の侵入経路を減らすことができます。  多くのファイアウォールは、TCP ポート 80 のトラフィックを既定で許可するよう構成されているため、多くのネットワーク アプリケーションが HTTP プロトコルを利用します。  
+ <span data-ttu-id="2fbcc-110">ポート番号を使用してアプリケーションを区別することについては、セキュリティの問題がありました。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-110">Using port numbers to distinguish between applications had security problems.</span></span> <span data-ttu-id="2fbcc-111">通常、ファイアウォールは、よく知られたわずかなエントリ ポイントを除いてすべてのポートの TCP トラフィックをブロックするよう構成されています。そのため、非標準のポートを使用するアプリケーションを展開する際に、企業のファイアウォールまたはパーソナル ファイアウォールがあるために展開が複雑になることや、展開が不可能になる場合がよくあります。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-111">Firewalls are generally configured to block TCP traffic on all ports except for a few well-known entry points, so deploying an application that uses a non-standard port is often complicated or even impossible due to the presence of corporate and personal firewalls.</span></span> <span data-ttu-id="2fbcc-112">アプリケーションが、許可済みの標準の Well-known ポートで通信できる場合は、外部攻撃の侵入経路を減らすことができます。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-112">Applications that can communicate over standard, well-known ports that are already permitted, reduce the external attack surface.</span></span> <span data-ttu-id="2fbcc-113">多くのファイアウォールは、TCP ポート 80 のトラフィックを既定で許可するよう構成されているため、多くのネットワーク アプリケーションが HTTP プロトコルを利用します。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-113">Many network applications make use of the HTTP protocol because most firewalls are configured by default to allow traffic on TCP port 80.</span></span>  
   
- 多くの異なる HTTP アプリケーションのトラフィックを 1 つの TCP ポートに多重化する HTTP.SYS モデルが、Windows プラットフォームで標準になってきました。  このモデルを使用すると、ファイアウォール管理者は共通の制御点を使用できるようになり、また、アプリケーション開発者はネットワークを利用できる新しいアプリケーションを構築する際に、展開コストを最小限にできます。  
+ <span data-ttu-id="2fbcc-114">多くの異なる HTTP アプリケーションのトラフィックを 1 つの TCP ポートに多重化する HTTP.SYS モデルが、Windows プラットフォームで標準になってきました。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-114">The HTTP.SYS model in which traffic for many different HTTP applications is multiplexed onto a single TCP port has become standard on the Windows platform.</span></span> <span data-ttu-id="2fbcc-115">このモデルを使用すると、ファイアウォール管理者は共通の制御点を使用できるようになり、また、アプリケーション開発者はネットワークを利用できる新しいアプリケーションを構築する際に、展開コストを最小限にできます。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-115">This provides a common point of control for firewall administrators while allowing application developers to minimize the deployment cost of building new applications that can make use of the network.</span></span>  
   
- インターネット インフォメーション サービス \(IIS\) には、HTTP アプリケーション間でポートを共有する機能が以前からあります。  しかし、このインフラストラクチャが完全に一般化されたのは、[!INCLUDE[iis601](../../../../includes/iis601-md.md)] での HTTP.SYS \(カーネル モードの HTTP プロトコル リスナー\) の導入以降のことでした。  実際には、HTTP.SYS が、任意のユーザー プロセスで HTTP トラフィック専用の TCP ポートを共有することを許可します。  この機能により、多数の HTTP アプリケーションが同一の物理コンピューター上にそれぞれ別の独立したプロセスとして共存しながら、TCP ポート 80 でのトラフィックの送受信に必要なネットワーク インフラストラクチャを共有することができます。  Net.TCP ポート共有サービスは、net.tcp アプリケーションで同じ種類のポート共有を可能にします。  
+ <span data-ttu-id="2fbcc-116">インターネット インフォメーション サービス (IIS) には、HTTP アプリケーション間でポートを共有する機能が以前からあります。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-116">The ability to share ports across multiple HTTP applications has long been a feature of Internet Information Services (IIS).</span></span> <span data-ttu-id="2fbcc-117">しかし、このインフラストラクチャが完全に一般化されたのは、[!INCLUDE[iis601](../../../../includes/iis601-md.md)] での HTTP.SYS (カーネル モードの HTTP プロトコル リスナー) の導入以降のことでした。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-117">However, it was only with the introduction of HTTP.SYS (the kernel-mode HTTP protocol listener) with [!INCLUDE[iis601](../../../../includes/iis601-md.md)] that this infrastructure was fully generalized.</span></span> <span data-ttu-id="2fbcc-118">実際には、HTTP.SYS が、任意のユーザー プロセスで HTTP トラフィック専用の TCP ポートを共有することを許可します。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-118">In effect, HTTP.SYS allows arbitrary user processes to share the TCP ports dedicated to HTTP traffic.</span></span> <span data-ttu-id="2fbcc-119">この機能により、多数の HTTP アプリケーションが同一の物理コンピューター上にそれぞれ別の独立したプロセスとして共存しながら、TCP ポート 80 でのトラフィックの送受信に必要なネットワーク インフラストラクチャを共有することができます。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-119">This capability allows many HTTP applications to coexist on the same physical machine in separate, isolated processes while sharing the network infrastructure required to send and receive traffic over TCP port 80.</span></span> <span data-ttu-id="2fbcc-120">Net.TCP ポート共有サービスは、net.tcp アプリケーションで同じ種類のポート共有を可能にします。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-120">The Net.TCP Port Sharing Service enables the same type of port sharing for net.tcp applications.</span></span>  
   
-## ポート共有アーキテクチャ  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のポート共有アーキテクチャには主に 3 つのコンポーネントがあります。  
+## <a name="port-sharing-architecture"></a><span data-ttu-id="2fbcc-121">ポート共有アーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="2fbcc-121">Port Sharing Architecture</span></span>  
+ <span data-ttu-id="2fbcc-122">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のポート共有アーキテクチャには主に 3 つのコンポーネントがあります。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-122">The Port Sharing architecture in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] has three main components:</span></span>  
   
--   ワーカー プロセス : 共有ポートを使用して net.tcp:\/\/ で通信するすべてのプロセスです。  
+-   <span data-ttu-id="2fbcc-123">ワーカー プロセス : 共有ポートを使用して net.tcp:// で通信するすべてのプロセスです。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-123">A Worker Process: Any process communicating over net.tcp:// using shared ports.</span></span>  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] TCP トランスポート : net.tcp:\/\/ protocol を実装します。  
+-   <span data-ttu-id="2fbcc-124">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] TCP トランスポート : net.tcp:// protocol を実装します。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-124">The [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] TCP transport: Implements the net.tcp:// protocol.</span></span>  
   
--   Net.TCP ポート共有サービス : 多数のワーカー プロセスで 1 つの TCP ポートを共有できます。  
+-   <span data-ttu-id="2fbcc-125">Net.TCP ポート共有サービス : 多数のワーカー プロセスで 1 つの TCP ポートを共有できます。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-125">The Net.TCP Port Sharing Service: Allows many worker processes to share the same TCP port.</span></span>  
   
- Net.TCP ポート共有サービスは、net.tcp:\/\/ を通じて通信されるワーカー プロセスの代わりに net.tcp:\/\/ 接続を受け入れるユーザー モードの Windows サービスです。  ソケット接続が到着すると、ポート共有サービスは受信メッセージ ストリームを検査して送信先アドレスを取得します。  このアドレスを基にポート共有サービスは、最終的に処理されるアプリケーションにデータ ストリームをルーティングできます。  
+ <span data-ttu-id="2fbcc-126">Net.TCP ポート共有サービスは、net.tcp:// を通じて通信されるワーカー プロセスの代わりに net.tcp:// 接続を受け入れるユーザー モードの Windows サービスです。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-126">The Net.TCP Port Sharing Service is a user-mode Windows service that accepts net.tcp:// connections on behalf of the worker processes that connect through it.</span></span> <span data-ttu-id="2fbcc-127">ソケット接続が到着すると、ポート共有サービスは受信メッセージ ストリームを検査して送信先アドレスを取得します。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-127">When a socket connection arrives, the port sharing service inspects the incoming message stream to obtain its destination address.</span></span> <span data-ttu-id="2fbcc-128">このアドレスを基にポート共有サービスは、最終的に処理されるアプリケーションにデータ ストリームをルーティングできます。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-128">Based on this address, the port sharing service can route the data stream to the application that ultimately processes it.</span></span>  
   
- net.tcp:\/\/ ポート共有を使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを開くときに、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] TCP トランスポート インフラストラクチャは、アプリケーション プロセスの TCP ソケットを直接開きません。  その代わりにトランスポート インフラストラクチャは、サービスのベース アドレス URI \(Uniform Resource Identifier\) を Net.TCP ポート共有サービスに登録し、ポート共有サービスがトランスポート インフラストラクチャの代わりにメッセージをリッスンするまで待機します。  アプリケーション サービス宛てのメッセージが到着すると、そのメッセージはポート共有サービスによりディスパッチされます。  
+ <span data-ttu-id="2fbcc-129">net.tcp:// ポート共有を使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを開くときに、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] TCP トランスポート インフラストラクチャは、アプリケーション プロセスの TCP ソケットを直接開きません。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-129">When a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service that uses net.tcp:// port sharing opens, the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] TCP transport infrastructure does not directly open a TCP socket in the application process.</span></span> <span data-ttu-id="2fbcc-130">その代わりにトランスポート インフラストラクチャは、サービスのベース アドレス URI (Uniform Resource Identifier) を Net.TCP ポート共有サービスに登録し、ポート共有サービスがトランスポート インフラストラクチャの代わりにメッセージをリッスンするまで待機します。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-130">Instead, the transport infrastructure registers the service’s base address Uniform Resource Identifier (URI) with the Net.TCP Port Sharing Service and waits for the port sharing service to listen for messages on its behalf.</span></span>  <span data-ttu-id="2fbcc-131">アプリケーション サービス宛てのメッセージが到着すると、そのメッセージはポート共有サービスによりディスパッチされます。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-131">The port sharing service dispatches messages addressed to the application service as they arrive.</span></span>  
   
-## ポート共有のインストール  
- Net.TCP ポート共有サービスは、[!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)] をサポートするすべてのオペレーティング システムで利用できますが、サービスは既定では有効にされていません。  セキュリティ予防措置として、管理者は Net.TCP ポート共有サービスを初めて使用する前に手動で有効にする必要があります。  Net.TCP ポート共有サービスでは、ポート共有サービスが所有するネットワーク ソケットのいくつかの特性を操作するための構成オプションが公開されます。  [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [方法 : Net.TCP ポート共有サービスを有効にする](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md).  
+## <a name="installing-port-sharing"></a><span data-ttu-id="2fbcc-132">ポート共有のインストール</span><span class="sxs-lookup"><span data-stu-id="2fbcc-132">Installing Port Sharing</span></span>  
+ <span data-ttu-id="2fbcc-133">Net.TCP ポート共有サービスは、[!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)] をサポートするすべてのオペレーティング システムで利用できますが、サービスは既定では有効にされていません。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-133">The Net.TCP Port Sharing Service is available on all operating systems that support [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)], but the service is not enabled by default.</span></span> <span data-ttu-id="2fbcc-134">セキュリティ予防措置として、管理者は Net.TCP ポート共有サービスを初めて使用する前に手動で有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-134">As a security precaution, an administrator must manually enable the Net.TCP Port Sharing Service prior to first use.</span></span> <span data-ttu-id="2fbcc-135">Net.TCP ポート共有サービスでは、ポート共有サービスが所有するネットワーク ソケットのいくつかの特性を操作するための構成オプションが公開されます。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-135">The Net.TCP Port Sharing Service exposes configuration options that allow you to manipulate several characteristics of the network sockets owned by the port sharing service.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="2fbcc-136">[する方法: Net.TCP ポート共有サービスを有効にする](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md)です。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-136"> [How to: Enable the Net.TCP Port Sharing Service](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md).</span></span>  
   
-## アプリケーションでの Net.tcp ポート共有の使用  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションで net.tcp:\/\/ ポート共有を使用する最も簡単な方法は、<xref:System.ServiceModel.NetTcpBinding> を使用してサービスを公開し、<xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> プロパティを使用して Net.TCP ポート共有サービスを有効にすることです。  
+## <a name="using-nettcp-port-sharing-in-an-application"></a><span data-ttu-id="2fbcc-137">アプリケーションでの Net.tcp ポート共有の使用</span><span class="sxs-lookup"><span data-stu-id="2fbcc-137">Using Net.tcp Port Sharing in an Application</span></span>  
+ <span data-ttu-id="2fbcc-138">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションで net.tcp:// ポート共有を使用する最も簡単な方法は、<xref:System.ServiceModel.NetTcpBinding> を使用してサービスを公開し、<xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> プロパティを使用して Net.TCP ポート共有サービスを有効にすることです。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-138">The easiest way to use net.tcp:// port sharing in your [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] application is to expose a service using the <xref:System.ServiceModel.NetTcpBinding> and then to enable Net.TCP Port Sharing Service using the <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> property.</span></span>  
   
- その方法[!INCLUDE[crabout](../../../../includes/crabout-md.md)]「[方法 : ポート共有を使用するように WCF サービスを構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-wcf-service-to-use-port-sharing.md)」を参照してください。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="2fbcc-139">を参照してください方法[する方法: ポートの共有を使用する WCF サービスを構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-wcf-service-to-use-port-sharing.md)です。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-139"> how to do this, see [How to: Configure a WCF Service to Use Port Sharing](../../../../docs/framework/wcf/feature-details/how-to-configure-a-wcf-service-to-use-port-sharing.md).</span></span>  
   
-## ポート共有のセキュリティへの影響  
- Net.TCP ポート共有サービスは、アプリケーションとネットワークの間に、処理を行うための 1 つの層を提供しますが、アプリケーションでポート共有を使用する場合、アプリケーションがネットワークを直接リッスンしている場合と同様に、アプリケーションをセキュリティで保護する必要があります。  具体的には、ポート共有を使用するアプリケーションでは、そのアプリケーションが実行される際のプロセス特権を評価する必要があります。  組み込みの Network Service アカウントを使用してアプリケーションを実行することを検討します。このアカウントはネットワーク通信に必要な最小限のプロセス特権のセットを使用して実行されます。  
+## <a name="security-implications-of-port-sharing"></a><span data-ttu-id="2fbcc-140">ポート共有のセキュリティへの影響</span><span class="sxs-lookup"><span data-stu-id="2fbcc-140">Security Implications of Port Sharing</span></span>  
+ <span data-ttu-id="2fbcc-141">Net.TCP ポート共有サービスは、アプリケーションとネットワークの間に、処理を行うための 1 つの層を提供しますが、アプリケーションでポート共有を使用する場合、アプリケーションがネットワークを直接リッスンしている場合と同様に、アプリケーションをセキュリティで保護する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-141">Although the Net.TCP Port Sharing Service provides a layer of processing between applications and the network, applications that use port sharing should still be secured as if they were directly listening on the network.</span></span> <span data-ttu-id="2fbcc-142">具体的には、ポート共有を使用するアプリケーションでは、そのアプリケーションが実行される際のプロセス特権を評価する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-142">Specifically, applications that use port sharing should evaluate the process privileges under which they run.</span></span> <span data-ttu-id="2fbcc-143">組み込みの Network Service アカウントを使用してアプリケーションを実行することを検討します。このアカウントはネットワーク通信に必要な最小限のプロセス特権のセットを使用して実行されます。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-143">Consider running your application using the built-in Network Service account, which runs with the minimal set of process privileges required for network communication.</span></span>  
   
-## 参照  
- [Net.TCP ポート共有サービスを構成する](../../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)   
- [ホスト](../../../../docs/framework/wcf/feature-details/hosting.md)   
- [方法 : ポート共有を使用するように WCF サービスを構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-wcf-service-to-use-port-sharing.md)   
- [方法 : Net.TCP ポート共有サービスを有効にする](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md)
+## <a name="see-also"></a><span data-ttu-id="2fbcc-144">関連項目</span><span class="sxs-lookup"><span data-stu-id="2fbcc-144">See Also</span></span>  
+ [<span data-ttu-id="2fbcc-145">Net.TCP ポート共有サービスを構成します。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-145">Configuring the Net.TCP Port Sharing Service</span></span>](../../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)  
+ [<span data-ttu-id="2fbcc-146">ホスティング</span><span class="sxs-lookup"><span data-stu-id="2fbcc-146">Hosting</span></span>](../../../../docs/framework/wcf/feature-details/hosting.md)  
+ [<span data-ttu-id="2fbcc-147">方法: ポート共有を使用する WCF サービスを構成します。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-147">How to: Configure a WCF Service to Use Port Sharing</span></span>](../../../../docs/framework/wcf/feature-details/how-to-configure-a-wcf-service-to-use-port-sharing.md)  
+ [<span data-ttu-id="2fbcc-148">方法: Net.TCP ポート共有サービスを有効にします。</span><span class="sxs-lookup"><span data-stu-id="2fbcc-148">How to: Enable the Net.TCP Port Sharing Service</span></span>](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md)

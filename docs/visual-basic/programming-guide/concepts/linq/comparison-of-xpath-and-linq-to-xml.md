@@ -1,106 +1,102 @@
 ---
-title: "XPath と LINQ to XML1 の比較 |Microsoft ドキュメント"
+title: "XPath と LINQ to XML1 の比較"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: c3fd07c1-6761-4e4b-8eb1-ddd780ed8d44
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e9601c51468fdf5adab8e521f8f89ee7f2e12869
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 761df14ee4bdfa9ddeb3f742134f4f47f8bb283f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="comparison-of-xpath-and-linq-to-xml"></a>XPath と LINQ to XML の比較
-XPath と [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] の機能はある程度似ています。 どちらも XML ツリーに対してクエリを実行するために使用され、結果として、要素のコレクション、属性のコレクション、ノードのコレクション、要素や属性の値などを返します。 ただし、相違点もいくつかあります。  
+# <a name="comparison-of-xpath-and-linq-to-xml"></a><span data-ttu-id="f3398-102">XPath と LINQ to XML の比較</span><span class="sxs-lookup"><span data-stu-id="f3398-102">Comparison of XPath and LINQ to XML</span></span>
+<span data-ttu-id="f3398-103">XPath と [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の機能はある程度似ています。</span><span class="sxs-lookup"><span data-stu-id="f3398-103">XPath and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] offer some similar functionality.</span></span> <span data-ttu-id="f3398-104">どちらも XML ツリーに対してクエリを実行するために使用され、結果として、要素のコレクション、属性のコレクション、ノードのコレクション、要素や属性の値などを返します。</span><span class="sxs-lookup"><span data-stu-id="f3398-104">Both can be used to query an XML tree, returning such results as a collection of elements, a collection of attributes, a collection of nodes, or the value of an element or attribute.</span></span> <span data-ttu-id="f3398-105">ただし、相違点もいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="f3398-105">However, there are also some differences.</span></span>  
   
-## <a name="differences-between-xpath-and-linq-to-xml"></a>XPath と LINQ to XML の違い  
- XPath では、新しい型を射影できません。 XPath では、ツリーからノードのコレクションが返されるだけですが、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] では、クエリを実行し、オブジェクト グラフまたは XML ツリーを新しい構造に射影できます。 [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] クエリは、XPath 式と比べて、はるかに多機能かつ強力です。  
+## <a name="differences-between-xpath-and-linq-to-xml"></a><span data-ttu-id="f3398-106">XPath と LINQ to XML の違い</span><span class="sxs-lookup"><span data-stu-id="f3398-106">Differences Between XPath and LINQ to XML</span></span>  
+ <span data-ttu-id="f3398-107">XPath では、新しい型を射影できません。</span><span class="sxs-lookup"><span data-stu-id="f3398-107">XPath does not allow projection of new types.</span></span> <span data-ttu-id="f3398-108">XPath では、ツリーからノードのコレクションが返されるだけですが、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] では、クエリを実行し、オブジェクト グラフまたは XML ツリーを新しい構造に射影できます。</span><span class="sxs-lookup"><span data-stu-id="f3398-108">It can only return collections of nodes from the tree, whereas [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] can execute a query and project an object graph or an XML tree in a new shape.</span></span> [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="f3398-109"> クエリは、XPath 式と比べて、はるかに多機能かつ強力です。</span><span class="sxs-lookup"><span data-stu-id="f3398-109"> queries encompass much more functionality and are much more powerful than XPath expressions.</span></span>  
   
- XPath 式は、文字列内に独立して存在します。 Visual Basic コンパイラは、コンパイル時に XPath 式を解析することはできません。 これに対し、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]クエリが解析され、ビジュアルの基本的なコンパイラでコンパイルします。 コンパイラを使用することにより、多くのクエリ エラーを検出できます。  
+ <span data-ttu-id="f3398-110">XPath 式は、文字列内に独立して存在します。</span><span class="sxs-lookup"><span data-stu-id="f3398-110">XPath expressions exist in isolation within a string.</span></span> <span data-ttu-id="f3398-111">Visual Basic コンパイラは、コンパイル時に XPath 式を解析することはできません。</span><span class="sxs-lookup"><span data-stu-id="f3398-111">The Visual Basic compiler cannot help parse the XPath expression at compile time.</span></span> <span data-ttu-id="f3398-112">これに対し、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]クエリが解析され、ビジュアルの基本的なコンパイラでコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="f3398-112">By contrast, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] queries are parsed and compiled by theVisual Basic compiler.</span></span> <span data-ttu-id="f3398-113">コンパイラを使用することにより、多くのクエリ エラーを検出できます。</span><span class="sxs-lookup"><span data-stu-id="f3398-113">The compiler is able to catch many query errors.</span></span>  
   
- XPath の結果は厳密に型指定されません。 多くの場合、XPath 式を評価した結果はオブジェクトであり、開発者が適切な型を決定し、必要に応じて結果をキャストする必要があります。 一方、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] クエリからの射影は厳密に型指定されます。  
+ <span data-ttu-id="f3398-114">XPath の結果は厳密に型指定されません。</span><span class="sxs-lookup"><span data-stu-id="f3398-114">XPath results are not strongly typed.</span></span> <span data-ttu-id="f3398-115">多くの場合、XPath 式を評価した結果はオブジェクトであり、開発者が適切な型を決定し、必要に応じて結果をキャストする必要があります。</span><span class="sxs-lookup"><span data-stu-id="f3398-115">In a number of circumstances, the result of evaluating an XPath expression is an object, and it is up to the developer to determine the proper type and cast the result as necessary.</span></span> <span data-ttu-id="f3398-116">一方、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] クエリからの射影は厳密に型指定されます。</span><span class="sxs-lookup"><span data-stu-id="f3398-116">By contrast, the projections from a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query are strongly typed.</span></span>  
   
-## <a name="result-ordering"></a>結果の順序付け  
- XPath 1.0 勧告には、XPath 式の評価結果であるコレクションは順序付けされないことが記載されています。  
+## <a name="result-ordering"></a><span data-ttu-id="f3398-117">結果の順序付け</span><span class="sxs-lookup"><span data-stu-id="f3398-117">Result Ordering</span></span>  
+ <span data-ttu-id="f3398-118">XPath 1.0 勧告には、XPath 式の評価結果であるコレクションは順序付けされないことが記載されています。</span><span class="sxs-lookup"><span data-stu-id="f3398-118">The XPath 1.0 Recommendation states that a collection that is the result of evaluating an XPath expression is unordered.</span></span>  
   
- ただし、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] の XPath 軸メソッドから返されるコレクションを反復処理すると、コレクション内のノードがドキュメント順に返されます。 これは、ドキュメントの逆順として述語が表現されている `preceding` や `preceding-sibling` などの XPath 軸にアクセスする場合でも同様です。  
+ <span data-ttu-id="f3398-119">ただし、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の XPath 軸メソッドから返されるコレクションを反復処理すると、コレクション内のノードがドキュメント順に返されます。</span><span class="sxs-lookup"><span data-stu-id="f3398-119">However, when iterating through a collection returned by a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] XPath axis method, the nodes in the collection are returned in document order.</span></span> <span data-ttu-id="f3398-120">これは、ドキュメントの逆順として述語が表現されている `preceding` や `preceding-sibling` などの XPath 軸にアクセスする場合でも同様です。</span><span class="sxs-lookup"><span data-stu-id="f3398-120">This is the case even when accessing the XPath axes where predicates are expressed in terms of reverse document order, such as `preceding` and `preceding-sibling`.</span></span>  
   
- 一方、ほとんどの[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]軸がドキュメントの順序はなく、これらの&2; つのコレクションを返す<xref:System.Xml.Linq.XNode.Ancestors%2A>と<xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A>、コレクションをドキュメントの逆順に返します</xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A></xref:System.Xml.Linq.XNode.Ancestors%2A>。 次の表では、軸を列挙し、それぞれのコレクションの順序を示します。  
+ <span data-ttu-id="f3398-121">一方、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 軸のほとんどはコレクションをドキュメント順に返しますが、<xref:System.Xml.Linq.XNode.Ancestors%2A> と <xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A> の 2 つは、コレクションをドキュメントの逆順に返します。</span><span class="sxs-lookup"><span data-stu-id="f3398-121">By contrast, most of the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] axes return collections in document order, but two of them, <xref:System.Xml.Linq.XNode.Ancestors%2A> and <xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A>, return collections in reverse document order.</span></span> <span data-ttu-id="f3398-122">次の表では、軸を列挙し、それぞれのコレクションの順序を示します。</span><span class="sxs-lookup"><span data-stu-id="f3398-122">The following table enumerates the axes, and indicates collection order for each:</span></span>  
   
-|LINQ to XML 軸|並べ替え|  
+|<span data-ttu-id="f3398-123">LINQ to XML 軸</span><span class="sxs-lookup"><span data-stu-id="f3398-123">LINQ to XML axis</span></span>|<span data-ttu-id="f3398-124">並べ替え</span><span class="sxs-lookup"><span data-stu-id="f3398-124">Ordering</span></span>|  
 |----------------------|--------------|  
-|XContainer.DescendantNodes|ドキュメント順|  
-|XContainer.Descendants|ドキュメント順|  
-|XContainer.Elements|ドキュメント順|  
-|XContainer.Nodes|ドキュメント順|  
-|XContainer.NodesAfterSelf|ドキュメント順|  
-|XContainer.NodesBeforeSelf|ドキュメント順|  
-|XElement.AncestorsAndSelf|ドキュメントの逆順|  
-|XElement.Attributes|ドキュメント順|  
-|XElement.DescendantNodesAndSelf|ドキュメント順|  
-|XElement.DescendantsAndSelf|ドキュメント順|  
-|XNode.Ancestors|ドキュメントの逆順|  
-|XNode.ElementsAfterSelf|ドキュメント順|  
-|XNode.ElementsBeforeSelf|ドキュメント順|  
-|XNode.NodesAfterSelf|ドキュメント順|  
-|XNode.NodesBeforeSelf|ドキュメント順|  
+|<span data-ttu-id="f3398-125">XContainer.DescendantNodes</span><span class="sxs-lookup"><span data-stu-id="f3398-125">XContainer.DescendantNodes</span></span>|<span data-ttu-id="f3398-126">ドキュメント順</span><span class="sxs-lookup"><span data-stu-id="f3398-126">Document order</span></span>|  
+|<span data-ttu-id="f3398-127">XContainer.Descendants</span><span class="sxs-lookup"><span data-stu-id="f3398-127">XContainer.Descendants</span></span>|<span data-ttu-id="f3398-128">ドキュメント順</span><span class="sxs-lookup"><span data-stu-id="f3398-128">Document order</span></span>|  
+|<span data-ttu-id="f3398-129">XContainer.Elements</span><span class="sxs-lookup"><span data-stu-id="f3398-129">XContainer.Elements</span></span>|<span data-ttu-id="f3398-130">ドキュメント順</span><span class="sxs-lookup"><span data-stu-id="f3398-130">Document order</span></span>|  
+|<span data-ttu-id="f3398-131">XContainer.Nodes</span><span class="sxs-lookup"><span data-stu-id="f3398-131">XContainer.Nodes</span></span>|<span data-ttu-id="f3398-132">ドキュメント順</span><span class="sxs-lookup"><span data-stu-id="f3398-132">Document order</span></span>|  
+|<span data-ttu-id="f3398-133">XContainer.NodesAfterSelf</span><span class="sxs-lookup"><span data-stu-id="f3398-133">XContainer.NodesAfterSelf</span></span>|<span data-ttu-id="f3398-134">ドキュメント順</span><span class="sxs-lookup"><span data-stu-id="f3398-134">Document order</span></span>|  
+|<span data-ttu-id="f3398-135">XContainer.NodesBeforeSelf</span><span class="sxs-lookup"><span data-stu-id="f3398-135">XContainer.NodesBeforeSelf</span></span>|<span data-ttu-id="f3398-136">ドキュメント順</span><span class="sxs-lookup"><span data-stu-id="f3398-136">Document order</span></span>|  
+|<span data-ttu-id="f3398-137">XElement.AncestorsAndSelf</span><span class="sxs-lookup"><span data-stu-id="f3398-137">XElement.AncestorsAndSelf</span></span>|<span data-ttu-id="f3398-138">ドキュメントの逆順</span><span class="sxs-lookup"><span data-stu-id="f3398-138">Reverse document order</span></span>|  
+|<span data-ttu-id="f3398-139">XElement.Attributes</span><span class="sxs-lookup"><span data-stu-id="f3398-139">XElement.Attributes</span></span>|<span data-ttu-id="f3398-140">ドキュメント順</span><span class="sxs-lookup"><span data-stu-id="f3398-140">Document order</span></span>|  
+|<span data-ttu-id="f3398-141">XElement.DescendantNodesAndSelf</span><span class="sxs-lookup"><span data-stu-id="f3398-141">XElement.DescendantNodesAndSelf</span></span>|<span data-ttu-id="f3398-142">ドキュメント順</span><span class="sxs-lookup"><span data-stu-id="f3398-142">Document order</span></span>|  
+|<span data-ttu-id="f3398-143">XElement.DescendantsAndSelf</span><span class="sxs-lookup"><span data-stu-id="f3398-143">XElement.DescendantsAndSelf</span></span>|<span data-ttu-id="f3398-144">ドキュメント順</span><span class="sxs-lookup"><span data-stu-id="f3398-144">Document order</span></span>|  
+|<span data-ttu-id="f3398-145">XNode.Ancestors</span><span class="sxs-lookup"><span data-stu-id="f3398-145">XNode.Ancestors</span></span>|<span data-ttu-id="f3398-146">ドキュメントの逆順</span><span class="sxs-lookup"><span data-stu-id="f3398-146">Reverse document order</span></span>|  
+|<span data-ttu-id="f3398-147">XNode.ElementsAfterSelf</span><span class="sxs-lookup"><span data-stu-id="f3398-147">XNode.ElementsAfterSelf</span></span>|<span data-ttu-id="f3398-148">ドキュメント順</span><span class="sxs-lookup"><span data-stu-id="f3398-148">Document order</span></span>|  
+|<span data-ttu-id="f3398-149">XNode.ElementsBeforeSelf</span><span class="sxs-lookup"><span data-stu-id="f3398-149">XNode.ElementsBeforeSelf</span></span>|<span data-ttu-id="f3398-150">ドキュメント順</span><span class="sxs-lookup"><span data-stu-id="f3398-150">Document order</span></span>|  
+|<span data-ttu-id="f3398-151">XNode.NodesAfterSelf</span><span class="sxs-lookup"><span data-stu-id="f3398-151">XNode.NodesAfterSelf</span></span>|<span data-ttu-id="f3398-152">ドキュメント順</span><span class="sxs-lookup"><span data-stu-id="f3398-152">Document order</span></span>|  
+|<span data-ttu-id="f3398-153">XNode.NodesBeforeSelf</span><span class="sxs-lookup"><span data-stu-id="f3398-153">XNode.NodesBeforeSelf</span></span>|<span data-ttu-id="f3398-154">ドキュメント順</span><span class="sxs-lookup"><span data-stu-id="f3398-154">Document order</span></span>|  
   
-## <a name="positional-predicates"></a>位置述語  
- XPath 式では、多くの軸で位置述語がドキュメント順として表現されますが、逆方向軸つまり `preceding`、`preceding-sibling`、`ancestor`、および `ancestor-or-self` の場合は、ドキュメントの逆順で表現されます。 たとえば、XPath 式 `preceding-sibling::*[1]` は、直前の兄弟を返します。 これは、最終的な結果セットがドキュメント順で表される場合も同様です。  
+## <a name="positional-predicates"></a><span data-ttu-id="f3398-155">位置述語</span><span class="sxs-lookup"><span data-stu-id="f3398-155">Positional Predicates</span></span>  
+ <span data-ttu-id="f3398-156">XPath 式では、多くの軸で位置述語がドキュメント順として表現されますが、逆方向軸つまり `preceding`、`preceding-sibling`、`ancestor`、および `ancestor-or-self` の場合は、ドキュメントの逆順で表現されます。</span><span class="sxs-lookup"><span data-stu-id="f3398-156">Within an XPath expression, positional predicates are expressed in terms of document order for many axes, but are expressed in reverse document order for reverse axes, which are `preceding`, `preceding-sibling`, `ancestor`, and `ancestor-or-self`.</span></span> <span data-ttu-id="f3398-157">たとえば、XPath 式 `preceding-sibling::*[1]` は、直前の兄弟を返します。</span><span class="sxs-lookup"><span data-stu-id="f3398-157">For example, the XPath expression `preceding-sibling::*[1]` returns the immediately preceding sibling.</span></span> <span data-ttu-id="f3398-158">これは、最終的な結果セットがドキュメント順で表される場合も同様です。</span><span class="sxs-lookup"><span data-stu-id="f3398-158">This is the case even though the final result set is presented in document order.</span></span>  
   
- 一方、LINQ to XML の位置述語は、常に軸の順序として表現されます。 たとえば、`anElement.ElementsBeforeSelf().ToList()[0]` は、直前の兄弟ではなく、クエリされる要素の親の最初の子要素を返します。 別の例として、`anElement.Ancestors().ToList()[0]` は親要素を返します。  
+ <span data-ttu-id="f3398-159">一方、LINQ to XML の位置述語は、常に軸の順序として表現されます。</span><span class="sxs-lookup"><span data-stu-id="f3398-159">By contrast, all positional predicates in LINQ to XML are always expressed in terms of the order of the axis.</span></span> <span data-ttu-id="f3398-160">たとえば、`anElement.ElementsBeforeSelf().ToList()[0]` は、直前の兄弟ではなく、クエリされる要素の親の最初の子要素を返します。</span><span class="sxs-lookup"><span data-stu-id="f3398-160">For example, `anElement.ElementsBeforeSelf().ToList()[0]` returns the first child element of the parent of the queried element, not the immediate preceding sibling.</span></span> <span data-ttu-id="f3398-161">別の例として、`anElement.Ancestors().ToList()[0]` は親要素を返します。</span><span class="sxs-lookup"><span data-stu-id="f3398-161">Another example: `anElement.Ancestors().ToList()[0]` returns the parent element.</span></span>  
   
- 上記の方法では、コレクション全体が具体化されます。 これは、このクエリを記述する方法としては、最も効率的な方法とはいえません。 このように記述されているのは、位置述語の動作を明らかにするためです。 同じクエリを作成するより適切な方法を使用して、<xref:System.Linq.Enumerable.First%2A>メソッドを次のとおりです: `anElement.ElementsBeforeSelf().First()`</xref:System.Linq.Enumerable.First%2A> 。  
+ <span data-ttu-id="f3398-162">上記の方法では、コレクション全体が具体化されます。</span><span class="sxs-lookup"><span data-stu-id="f3398-162">Note that the above approach materializes the entire collection.</span></span> <span data-ttu-id="f3398-163">これは、このクエリを記述する方法としては、最も効率的な方法とはいえません。</span><span class="sxs-lookup"><span data-stu-id="f3398-163">This is not the most efficient way to write that query.</span></span> <span data-ttu-id="f3398-164">このように記述されているのは、位置述語の動作を明らかにするためです。</span><span class="sxs-lookup"><span data-stu-id="f3398-164">It was written in that way to demonstrate the behavior of positional predicates.</span></span> <span data-ttu-id="f3398-165">同じクエリをより適切に記述するには、<xref:System.Linq.Enumerable.First%2A> メソッドを、`anElement.ElementsBeforeSelf().First()` のように使用します。</span><span class="sxs-lookup"><span data-stu-id="f3398-165">A more appropriate way to write the same query is to use the <xref:System.Linq.Enumerable.First%2A> method, as follows: `anElement.ElementsBeforeSelf().First()`.</span></span>  
   
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] で直前の要素を検索する場合は、次の式を記述します。  
+ <span data-ttu-id="f3398-166">[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] で直前の要素を検索する場合は、次の式を記述します。</span><span class="sxs-lookup"><span data-stu-id="f3398-166">If you wanted to find the immediately preceding element in [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], you would write the following expression:</span></span>  
   
  `ElementsBeforeSelf().Last()`  
   
-## <a name="performance-differences"></a>パフォーマンスの違い  
- XPath 機能を使用する XPath クエリ[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]は実行しませんだけでなく[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]クエリ。  
+## <a name="performance-differences"></a><span data-ttu-id="f3398-167">パフォーマンスの違い</span><span class="sxs-lookup"><span data-stu-id="f3398-167">Performance Differences</span></span>  
+ <span data-ttu-id="f3398-168">[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の XPath 機能を使用する XPath クエリのパフォーマンスは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] クエリよりも低くなります。</span><span class="sxs-lookup"><span data-stu-id="f3398-168">XPath queries that use the XPath functionality in [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] will not perform as well as [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] queries.</span></span>  
   
-## <a name="comparison-of-composition"></a>構成の比較  
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] クエリの構成は、XPath 式の構成に似ている部分がありますが、構文はかなり異なります。  
+## <a name="comparison-of-composition"></a><span data-ttu-id="f3398-169">構成の比較</span><span class="sxs-lookup"><span data-stu-id="f3398-169">Comparison of Composition</span></span>  
+ <span data-ttu-id="f3398-170">[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] クエリの構成は、XPath 式の構成に似ている部分がありますが、構文はかなり異なります。</span><span class="sxs-lookup"><span data-stu-id="f3398-170">Composition of a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query is somewhat parallel to composition of an XPath expression, although very different in syntax.</span></span>  
   
- たとえば、`customers` という変数に要素があり、`CompanyName` というすべての子要素の下で `Customer` という孫要素を検索する場合は、次のように XPath 式を記述します。  
+ <span data-ttu-id="f3398-171">たとえば、`customers` という変数に要素があり、`CompanyName` というすべての子要素の下で `Customer` という孫要素を検索する場合は、次のように XPath 式を記述します。</span><span class="sxs-lookup"><span data-stu-id="f3398-171">For example, if you have an element in a variable named `customers`, and you want to find a grandchild element named `CompanyName` under all child elements named `Customer`, you would write an XPath expression as follows:</span></span>  
   
 ```vb  
 customers.XPathSelectElements("./Customer/CompanyName")  
 ```  
   
- これと同等の [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] クエリは次のとおりです。  
+ <span data-ttu-id="f3398-172">これと同等の [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] クエリは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="f3398-172">The equivalent [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query is:</span></span>  
   
 ```vb  
 customers.Element("Customer").Elements("CompanyName")  
 ```  
   
- 同様の対応関係が XPath 軸ごとに存在します。  
+ <span data-ttu-id="f3398-173">同様の対応関係が XPath 軸ごとに存在します。</span><span class="sxs-lookup"><span data-stu-id="f3398-173">There are similar parallels for each of the XPath axes.</span></span>  
   
-|XPath 軸|LINQ to XML 軸|  
+|<span data-ttu-id="f3398-174">XPath 軸</span><span class="sxs-lookup"><span data-stu-id="f3398-174">XPath axis</span></span>|<span data-ttu-id="f3398-175">LINQ to XML 軸</span><span class="sxs-lookup"><span data-stu-id="f3398-175">LINQ to XML axis</span></span>|  
 |----------------|----------------------|  
-|child (既定の軸)|<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName></xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName>|  
-|Parent (..)|<xref:System.Xml.Linq.XObject.Parent%2A?displayProperty=fullName></xref:System.Xml.Linq.XObject.Parent%2A?displayProperty=fullName>|  
-|attribute 軸 (@)|<xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=fullName></xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=fullName><br /><br /> または<br /><br /> <xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=fullName></xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=fullName>|  
-|ancestor 軸|<xref:System.Xml.Linq.XNode.Ancestors%2A?displayProperty=fullName></xref:System.Xml.Linq.XNode.Ancestors%2A?displayProperty=fullName>|  
-|ancestor-or-self 軸|<xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A?displayProperty=fullName></xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A?displayProperty=fullName>|  
-|descendant 軸 (//)|<xref:System.Xml.Linq.XContainer.Descendants%2A?displayProperty=fullName></xref:System.Xml.Linq.XContainer.Descendants%2A?displayProperty=fullName><br /><br /> または<br /><br /> <xref:System.Xml.Linq.XContainer.DescendantNodes%2A?displayProperty=fullName></xref:System.Xml.Linq.XContainer.DescendantNodes%2A?displayProperty=fullName>|  
-|descendant-or-self|<xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A?displayProperty=fullName></xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A?displayProperty=fullName><br /><br /> または<br /><br /> <xref:System.Xml.Linq.XElement.DescendantNodesAndSelf%2A?displayProperty=fullName></xref:System.Xml.Linq.XElement.DescendantNodesAndSelf%2A?displayProperty=fullName>|  
-|following-sibling|<xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A?displayProperty=fullName></xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A?displayProperty=fullName><br /><br /> または<br /><br /> <xref:System.Xml.Linq.XNode.NodesAfterSelf%2A?displayProperty=fullName></xref:System.Xml.Linq.XNode.NodesAfterSelf%2A?displayProperty=fullName>|  
-|preceding-sibling|<xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=fullName></xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=fullName><br /><br /> または<br /><br /> <xref:System.Xml.Linq.XNode.NodesBeforeSelf%2A?displayProperty=fullName></xref:System.Xml.Linq.XNode.NodesBeforeSelf%2A?displayProperty=fullName>|  
-|following|同等の軸はありません。|  
-|preceding|同等の軸はありません。|  
+|<span data-ttu-id="f3398-176">child (既定の軸)</span><span class="sxs-lookup"><span data-stu-id="f3398-176">child (the default axis)</span></span>|<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="f3398-177">Parent (..)</span><span class="sxs-lookup"><span data-stu-id="f3398-177">Parent (..)</span></span>|<xref:System.Xml.Linq.XObject.Parent%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="f3398-178">attribute 軸 (@)</span><span class="sxs-lookup"><span data-stu-id="f3398-178">attribute axis (@)</span></span>|<xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType><br /><br /> <span data-ttu-id="f3398-179">または</span><span class="sxs-lookup"><span data-stu-id="f3398-179">or</span></span><br /><br /> <xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="f3398-180">ancestor 軸</span><span class="sxs-lookup"><span data-stu-id="f3398-180">ancestor axis</span></span>|<xref:System.Xml.Linq.XNode.Ancestors%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="f3398-181">ancestor-or-self 軸</span><span class="sxs-lookup"><span data-stu-id="f3398-181">ancestor-or-self axis</span></span>|<xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="f3398-182">descendant 軸 (//)</span><span class="sxs-lookup"><span data-stu-id="f3398-182">descendant axis (//)</span></span>|<xref:System.Xml.Linq.XContainer.Descendants%2A?displayProperty=nameWithType><br /><br /> <span data-ttu-id="f3398-183">または</span><span class="sxs-lookup"><span data-stu-id="f3398-183">or</span></span><br /><br /> <xref:System.Xml.Linq.XContainer.DescendantNodes%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="f3398-184">descendant-or-self</span><span class="sxs-lookup"><span data-stu-id="f3398-184">descendant-or-self</span></span>|<xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A?displayProperty=nameWithType><br /><br /> <span data-ttu-id="f3398-185">または</span><span class="sxs-lookup"><span data-stu-id="f3398-185">or</span></span><br /><br /> <xref:System.Xml.Linq.XElement.DescendantNodesAndSelf%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="f3398-186">following-sibling</span><span class="sxs-lookup"><span data-stu-id="f3398-186">following-sibling</span></span>|<xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A?displayProperty=nameWithType><br /><br /> <span data-ttu-id="f3398-187">または</span><span class="sxs-lookup"><span data-stu-id="f3398-187">or</span></span><br /><br /> <xref:System.Xml.Linq.XNode.NodesAfterSelf%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="f3398-188">preceding-sibling</span><span class="sxs-lookup"><span data-stu-id="f3398-188">preceding-sibling</span></span>|<xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType><br /><br /> <span data-ttu-id="f3398-189">または</span><span class="sxs-lookup"><span data-stu-id="f3398-189">or</span></span><br /><br /> <xref:System.Xml.Linq.XNode.NodesBeforeSelf%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="f3398-190">following</span><span class="sxs-lookup"><span data-stu-id="f3398-190">following</span></span>|<span data-ttu-id="f3398-191">同等の軸はありません。</span><span class="sxs-lookup"><span data-stu-id="f3398-191">No direct equivalent.</span></span>|  
+|<span data-ttu-id="f3398-192">preceding</span><span class="sxs-lookup"><span data-stu-id="f3398-192">preceding</span></span>|<span data-ttu-id="f3398-193">同等の軸はありません。</span><span class="sxs-lookup"><span data-stu-id="f3398-193">No direct equivalent.</span></span>|  
   
-## <a name="see-also"></a>関連項目  
- [LINQ to XML の XPath ユーザー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="f3398-194">関連項目</span><span class="sxs-lookup"><span data-stu-id="f3398-194">See Also</span></span>  
+ [<span data-ttu-id="f3398-195">LINQ to XML を XPath ユーザー (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f3398-195">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

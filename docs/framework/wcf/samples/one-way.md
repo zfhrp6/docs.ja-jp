@@ -1,28 +1,31 @@
 ---
-title: "一方向 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "一方向"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 74e3e03d-cd15-4191-a6a5-1efa2dcb9e73
-caps.latest.revision: 26
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 26
+caps.latest.revision: "26"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 05dbd465345f3b0cd9506f581f1a779f834c50fe
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 一方向
-このサンプルでは、一方向サービス操作へのサービスのアクセスを示します。クライアントは、双方向サービス操作の場合と同様、サービス操作の完了を待機しません。このサンプルは「[概要](../../../../docs/framework/wcf/samples/getting-started-sample.md)」に基づき、`wsHttpBinding` バインディングを使用しています。このサンプルでは、サービスは自己ホスト型コンソール アプリケーションであり、サービスが要求を受信して処理するかどうかを監視できます。また、クライアントもコンソール アプリケーションです。  
+# <a name="one-way"></a><span data-ttu-id="9bd9c-102">一方向</span><span class="sxs-lookup"><span data-stu-id="9bd9c-102">One-Way</span></span>
+<span data-ttu-id="9bd9c-103">このサンプルでは、一方向サービス操作へのサービスのアクセスを示します。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-103">This sample demonstrates a service contact with one-way service operations.</span></span> <span data-ttu-id="9bd9c-104">クライアントは、双方向サービス操作の場合と同様、サービス操作の完了を待機しません。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-104">The client does not wait for service operations to complete as is the case with two-way service operations.</span></span> <span data-ttu-id="9bd9c-105">このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)を使用して、`wsHttpBinding`バインドします。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-105">This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) and uses the `wsHttpBinding` binding.</span></span> <span data-ttu-id="9bd9c-106">このサンプルでは、サービスは自己ホスト型コンソール アプリケーションであり、サービスが要求を受信して処理するかどうかを監視できます。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-106">The service in this sample is a self-hosted console application to enable you to observe the service that receives and processes requests.</span></span> <span data-ttu-id="9bd9c-107">また、クライアントもコンソール アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-107">The client is also a console application.</span></span>  
   
 > [!NOTE]
->  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
+>  <span data-ttu-id="9bd9c-108">このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-108">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- 一方向サービス コントラクトを作成するには、サービス コントラクトを定義し、<xref:System.ServiceModel.OperationContractAttribute> クラスを各操作に適用し、<xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> を `true` に設定します。次のコードを参照してください。  
+ <span data-ttu-id="9bd9c-109">一方向サービス コントラクトを作成するには、サービス コントラクトを定義し、<xref:System.ServiceModel.OperationContractAttribute> クラスを各操作に適用し、<xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> を `true` に設定します。次のコードを参照してください。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-109">To create a one-way service contract, define your service contract, apply the <xref:System.ServiceModel.OperationContractAttribute> class to each operation, and set <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> to `true` as shown in the following sample code:</span></span>  
   
 ```  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -37,10 +40,9 @@ public interface IOneWayCalculator
     [OperationContract(IsOneWay = true)]  
     void Divide(double n1, double n2);  
 }  
-  
 ```  
   
- クライアントがサービス操作の完了を待機しないことを示すため、このサンプルではサービス コードに 5 秒の遅延を実装します。次のサンプル コードを参照してください。  
+ <span data-ttu-id="9bd9c-110">クライアントがサービス操作の完了を待機しないことを示すため、このサンプルではサービス コードに 5 秒の遅延を実装します。次のサンプル コードを参照してください。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-110">To demonstrate that the client does not wait for the service operations to complete, the service code in this sample implements a five-second delay, as shown in the following sample code:</span></span>  
   
 ```  
 / This service class implements the service contract.  
@@ -58,14 +60,13 @@ public class CalculatorService : IOneWayCalculator
     }  
     ...  
 }  
-  
 ```  
   
- クライアントがサービスを呼び出すと、サービス操作の完了を待たずに呼び出しが返されます。  
+ <span data-ttu-id="9bd9c-111">クライアントがサービスを呼び出すと、サービス操作の完了を待たずに呼び出しが返されます。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-111">When the client calls the service, the call returns without waiting for the service operation to complete.</span></span>  
   
- サンプルを実行すると、クライアントとサービスのアクティビティがサービスとクライアントの両方のコンソール ウィンドウに表示されます。サービスがクライアントから受信したメッセージを表示できます。どちらかのコンソールで Enter キーを押すと、サービスとクライアントがどちらもシャットダウンされます。  
+ <span data-ttu-id="9bd9c-112">サンプルを実行すると、クライアントとサービスのアクティビティがサービスとクライアントの両方のコンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-112">When you run the sample, the client and service activities are displayed in both the service and client console windows.</span></span> <span data-ttu-id="9bd9c-113">サービスがクライアントから受信したメッセージを表示できます。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-113">You can see the service receive messages from the client.</span></span> <span data-ttu-id="9bd9c-114">どちらかのコンソールで Enter キーを押すと、サービスとクライアントがどちらもシャットダウンされます。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-114">Press ENTER in each console window to shut down both the service and the client.</span></span>  
   
- 先にクライアントが完了してその次にサービスが完了し、クライアントが一方向サービス操作の完了を待たないことが示されます。クライアントからの出力を次に示します。  
+ <span data-ttu-id="9bd9c-115">先にクライアントが完了してその次にサービスが完了し、クライアントが一方向サービス操作の完了を待たないことが示されます。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-115">The client finishes ahead of the service, demonstrating that a client does not wait for one-way service operations to complete.</span></span> <span data-ttu-id="9bd9c-116">クライアントからの出力を次に示します。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-116">The client output is as follows:</span></span>  
   
 ```  
 Add(100,15.99)  
@@ -74,10 +75,9 @@ Multiply(9,81.25)
 Divide(22,7)  
   
 Press <ENTER> to terminate client.  
-  
 ```  
   
- サービスからの出力が次のように表示されます。  
+ <span data-ttu-id="9bd9c-117">サービスからの出力が次のように表示されます。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-117">The following service output is shown:</span></span>  
   
 ```  
 The service is ready.  
@@ -91,30 +91,29 @@ Processing Add(100,15.99) - result: 115.99
 Processing Subtract(145,76.54) - result: 68.46  
 Processing Multiply(9,81.25) - result: 731.25  
 Processing Divide(22,7) - result: 3.14285714285714  
-  
 ```  
   
 > [!NOTE]
->  HTTP は本来、要求\/応答プロトコルです。つまり、要求が行われると応答が返されます。これは、HTTP を介して公開される一方向サービス操作にも当てはまります。この操作が呼び出されると、サービスは HTTP ステータス コード 202 を返し、その後サービス操作が実行されます。このステータス コードは、要求は処理用に受け入れられたが、処理はまだ完了していないことを示します。操作を呼び出したクライアントは、サービスから 202 応答を受信するまでブロックします。これにより、セッションを使用するように構成されているバインディングを使用して複数の一方向メッセージが送信されたときに、いくつかの予期しない動作が発生する場合があります。このサンプルで使用されている `wsHttpBinding` バインディングは、既定ではセッションを使用してセキュリティ コンテキストを確立するように構成されています。既定では、セッション内のメッセージは、送信される順序で到着することが保証されています。このため、セッション内の 2 番目のメッセージが送信されても、最初のメッセージが処理されるまでは処理されません。この結果、クライアントは、前のメッセージの処理が完了するまではメッセージの 202 応答を受信しません。このため、クライアントは以降のそれぞれの操作呼び出しでブロックしているように見えます。この動作を回避するため、サンプルでは、メッセージを処理用の各インスタンスに同時にディスパッチするようにランタイムを構成します。サンプルでは、各メッセージが異なるインスタンスによって処理できるように <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> を `PerCall` に設定します。複数のスレッドがメッセージを同時にディスパッチするように、<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> が `Multiple` に設定されています。  
+>  <span data-ttu-id="9bd9c-118">HTTP は本来、要求/応答プロトコルです。つまり、要求が行われると応答が返されます。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-118">HTTP is, by definition, a request/response protocol; when a request is made, a response is returned.</span></span> <span data-ttu-id="9bd9c-119">これは、HTTP を介して公開される一方向サービス操作にも当てはまります。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-119">This is true even for a one-way service operation that is exposed over HTTP.</span></span> <span data-ttu-id="9bd9c-120">この操作が呼び出されると、サービスは HTTP ステータス コード 202 を返し、その後サービス操作が実行されます。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-120">When the operation is called, the service returns an HTTP status code of 202 before the service operation has executed.</span></span> <span data-ttu-id="9bd9c-121">このステータス コードは、要求は処理用に受け入れられたが、処理はまだ完了していないことを示します。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-121">This status code means that the request has been accepted for processing, but the processing has not yet been completed.</span></span> <span data-ttu-id="9bd9c-122">操作を呼び出したクライアントは、サービスから 202 応答を受信するまでブロックします。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-122">The client that called the operation blocks until it receives the 202 response from the service.</span></span> <span data-ttu-id="9bd9c-123">これにより、セッションを使用するように構成されているバインディングを使用して複数の一方向メッセージが送信されたときに、いくつかの予期しない動作が発生する場合があります。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-123">This can cause some unexpected behavior when multiple one-way messages are sent using a binding that is configured to use sessions.</span></span> <span data-ttu-id="9bd9c-124">このサンプルで使用されている `wsHttpBinding` バインディングは、既定ではセッションを使用してセキュリティ コンテキストを確立するように構成されています。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-124">The `wsHttpBinding` binding used in this sample is configured to use sessions by default to establish a security context.</span></span> <span data-ttu-id="9bd9c-125">既定では、セッション内のメッセージは、送信される順序で到着することが保証されています。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-125">By default, messages in a session are guaranteed to arrive in the order in which they are sent.</span></span> <span data-ttu-id="9bd9c-126">このため、セッション内の 2 番目のメッセージが送信されても、最初のメッセージが処理されるまでは処理されません。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-126">Because of this, when the second message in a session is sent, it is not processed until the first message has been processed.</span></span> <span data-ttu-id="9bd9c-127">この結果、クライアントは、前のメッセージの処理が完了するまではメッセージの 202 応答を受信しません。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-127">The result of this is that the client does not receive the 202 response for a message until the processing of the previous message has been completed.</span></span> <span data-ttu-id="9bd9c-128">このため、クライアントは以降のそれぞれの操作呼び出しでブロックしているように見えます。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-128">The client therefore appears to block on each subsequent operation call.</span></span> <span data-ttu-id="9bd9c-129">この動作を回避するため、サンプルでは、メッセージを処理用の各インスタンスに同時にディスパッチするようにランタイムを構成します。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-129">To avoid this behavior, this sample configures the runtime to dispatch messages concurrently to distinct instances for processing.</span></span> <span data-ttu-id="9bd9c-130">サンプルでは、各メッセージが異なるインスタンスによって処理できるように <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> を `PerCall` に設定します。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-130">The sample sets <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> to `PerCall` so that each message can be processed by a different instance.</span></span> <span data-ttu-id="9bd9c-131">複数のスレッドがメッセージを同時にディスパッチするように、<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> が `Multiple` に設定されています。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-131"><xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> is set to `Multiple` to allow more than one thread to dispatch messages at a time.</span></span>  
   
-### サンプルを設定、ビルド、および実行するには  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="9bd9c-132">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="9bd9c-132">To set up, build, and run the sample</span></span>  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  <span data-ttu-id="9bd9c-133">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-133">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  ソリューションの C\# 版または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  <span data-ttu-id="9bd9c-134">ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-134">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  単一コンピュータ構成か複数コンピュータ構成かに応じて、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+3.  <span data-ttu-id="9bd9c-135">1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-135">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
 > [!NOTE]
->  サービスを先に実行してからクライアントを実行してください。また、クライアントをシャットダウンした後でサービスをシャットダウンしてください。これにより、サービスが終了したことによりクライアントでセキュリティ セッションが正常に終了できない場合に発生する、クライアント側の例外が回避できます。  
+>  <span data-ttu-id="9bd9c-136">サービスを先に実行してからクライアントを実行してください。また、クライアントをシャットダウンした後でサービスをシャットダウンしてください。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-136">Run the service before you run the client and shut down the client before shutting down the service.</span></span> <span data-ttu-id="9bd9c-137">これにより、サービスが終了したことによりクライアントでセキュリティ セッションが正常に終了できない場合に発生する、クライアント側の例外が回避できます。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-137">This avoids a client exception when the client cannot close the security session cleanly because the service is gone.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="9bd9c-138">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-138">The samples may already be installed on your machine.</span></span> <span data-ttu-id="9bd9c-139">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-139">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="9bd9c-140">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-140">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="9bd9c-141">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="9bd9c-141">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Oneway`  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="9bd9c-142">関連項目</span><span class="sxs-lookup"><span data-stu-id="9bd9c-142">See Also</span></span>

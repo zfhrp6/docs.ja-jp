@@ -1,50 +1,53 @@
 ---
-title: "形式の自動選択 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "形式の自動選択"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: dab51e56-8517-4a6a-bb54-b55b15ab37bb
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 5c3465611fcf418e194c44815c765f8823d8ad83
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 形式の自動選択
-このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] REST プログラミング モデルで形式の自動選択 \(XML または JSON\) を有効にする方法と、操作コードで形式を明示的に設定する方法を示します。  
+# <a name="automatic-format-selection"></a><span data-ttu-id="a34b8-102">形式の自動選択</span><span class="sxs-lookup"><span data-stu-id="a34b8-102">Automatic Format Selection</span></span>
+<span data-ttu-id="a34b8-103">このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] REST プログラミング モデルで形式の自動選択 (XML または JSON) を有効にする方法と、操作コードで形式を明示的に設定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a34b8-103">This sample demonstrates how to enable automatic format selection (XML or JSON) with the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] REST programming model, as well as how to explicitly set the format in the operation code.</span></span>  
   
-## サンプルの詳細  
- このサンプルは、サービスと、サービスに要求を発行するクライアント コードで構成されます。  サービスは、単一の HTTP `GET` 操作 \(`EchoWithGet`\) と単一の HTTP `POST` 操作 \(`EchoWithPost`\) をサポートします。  どちらの操作でも文字列を要求し、応答で文字列を返します。  `GET` 操作では、文字列は URI クエリ文字列パラメーターで示されます。  `POST` 操作では、文字列は XML でシリアル化された要求の本文で示されます。  サービスは、[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] の新機能である形式の自動選択と形式の強制選択を利用して、XML または JSON 形式のいずれかで応答を返すことができます。  
+## <a name="sample-details"></a><span data-ttu-id="a34b8-104">サンプルの詳細</span><span class="sxs-lookup"><span data-stu-id="a34b8-104">Sample Details</span></span>  
+ <span data-ttu-id="a34b8-105">このサンプルは、サービスと、サービスに要求を発行するクライアント コードで構成されます。</span><span class="sxs-lookup"><span data-stu-id="a34b8-105">The sample consists of a service along with client code that makes requests to the service.</span></span> <span data-ttu-id="a34b8-106">サービスは、単一の HTTP `GET` 操作 (`EchoWithGet`) と単一の HTTP `POST` 操作 (`EchoWithPost`) をサポートします。</span><span class="sxs-lookup"><span data-stu-id="a34b8-106">The service supports a single HTTP `GET` operation (`EchoWithGet`) and a single HTTP `POST` operation (`EchoWithPost`).</span></span> <span data-ttu-id="a34b8-107">どちらの操作でも文字列を要求し、応答で文字列を返します。</span><span class="sxs-lookup"><span data-stu-id="a34b8-107">Both operations expect a string and then return the string in the response.</span></span> <span data-ttu-id="a34b8-108">`GET` 操作では、文字列は URI クエリ文字列パラメーターで示されます。</span><span class="sxs-lookup"><span data-stu-id="a34b8-108">With the `GET` operation, the string is provided in a URI query-string parameter.</span></span> <span data-ttu-id="a34b8-109">`POST` 操作では、文字列は XML でシリアル化された要求の本文で示されます。</span><span class="sxs-lookup"><span data-stu-id="a34b8-109">With the `POST` operation, the string is provided in the body of the request, serialized in XML.</span></span> <span data-ttu-id="a34b8-110">サービスは、[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] の新機能である形式の自動選択と形式の強制選択を利用して、XML または JSON 形式のいずれかで応答を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="a34b8-110">The service is able to return responses in either XML or JSON, utilizing the new automatic format selection and imperative format selection features in [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)].</span></span>  
   
- このサンプルでは、App.config ファイルを使用して形式の自動選択を有効にしています。  既定の Web HTTP エンドポイントでは、`automaticFormatSelectionEnabled` 属性に `true` の値が指定されています。  形式の自動選択が有効な場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャは、要求の HTTP Accept ヘッダーまたは Content\-Type ヘッダーを指定して最適な応答形式 \(XML または JSON\) を選択します。  開発者は、`automaticFormatSelectionEnabled` 属性を `true` に設定する以外、この新しい機能を使用するためにコードまたは構成を追加する必要はありません。  Program.cs のクライアント コードでは、要求は、“application\/xml” または “application\/json” として指定された HTTP Accept ヘッダーを使用してサービスの `GET` 操作と `POST` 操作の両方に送信され、サービスはそれぞれの形式で応答を返します。  
+ <span data-ttu-id="a34b8-111">このサンプルでは、App.config ファイルを使用して形式の自動選択を有効にしています。</span><span class="sxs-lookup"><span data-stu-id="a34b8-111">In the sample, automatic format selection is enabled using the App.config file.</span></span> <span data-ttu-id="a34b8-112">既定の Web HTTP エンドポイントでは、`automaticFormatSelectionEnabled` 属性に `true` の値が指定されています。</span><span class="sxs-lookup"><span data-stu-id="a34b8-112">On the default Web HTTP endpoint, the `automaticFormatSelectionEnabled` attribute has been given a value of `true`.</span></span> <span data-ttu-id="a34b8-113">形式の自動選択が有効な場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャは、要求の HTTP Accept ヘッダーまたは Content-Type ヘッダーを指定して最適な応答形式 (XML または JSON) を選択します。</span><span class="sxs-lookup"><span data-stu-id="a34b8-113">With automatic format selection enabled, the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastructure selects the most appropriate response format (XML or JSON) given the HTTP Accept or Content-Type headers of the request.</span></span> <span data-ttu-id="a34b8-114">開発者は、`automaticFormatSelectionEnabled` 属性を `true` に設定する以外、この新しい機能を使用するためにコードまたは構成を追加する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="a34b8-114">The developer is not required to provide any additional code or configuration other than setting the `automaticFormatSelectionEnabled` attribute to `true` to use this new feature.</span></span> <span data-ttu-id="a34b8-115">Program.cs のクライアント コードで要求が送信されるには、両方の`GET`と`POST`""application/xml"または"application/json"のいずれかとして指定された HTTP Accept ヘッダーを持つサービスとサービスの操作で応答が返されますそれぞれの形式です。</span><span class="sxs-lookup"><span data-stu-id="a34b8-115">In the client code in Program.cs, requests are sent to both the `GET` and `POST` operations of the service with the HTTP Accept header specified as either "application/xml" or "application/json" and the service returns a response in that respective format.</span></span>  
   
- また、`GET` 操作では、形式の強制選択が使用されます。  `GET` 操作では、オプションの `format` クエリ文字列パラメーターがあるかどうかをチェックし、ある場合は、<xref:System.ServiceModel.Web.WebOperationContext.OutgoingResponse%2A> プロパティで応答形式を設定します。  この方法で応答形式を強制的に設定すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャで実行された形式の自動選択がオーバーライドされます。  
+ <span data-ttu-id="a34b8-116">また、`GET` 操作では、形式の強制選択が使用されます。</span><span class="sxs-lookup"><span data-stu-id="a34b8-116">Also in the `GET` operation, imperative format selection is used.</span></span> <span data-ttu-id="a34b8-117">`GET` 操作では、オプションの `format` クエリ文字列パラメーターがあるかどうかをチェックし、ある場合は、<xref:System.ServiceModel.Web.WebOperationContext.OutgoingResponse%2A> プロパティで応答形式を設定します。</span><span class="sxs-lookup"><span data-stu-id="a34b8-117">The `GET` operation checks for an optional `format` query-string parameter and if present, sets the response format on the <xref:System.ServiceModel.Web.WebOperationContext.OutgoingResponse%2A> property.</span></span> <span data-ttu-id="a34b8-118">この方法で応答形式を強制的に設定すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャで実行された形式の自動選択がオーバーライドされます。</span><span class="sxs-lookup"><span data-stu-id="a34b8-118">Imperatively setting the response format in this way overrides the automatic format selection done by the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastructure.</span></span>  
   
- このサンプルは、コンソール アプリケーション内で実行される自己ホスト型サービスとクライアントで構成されています。  コンソール アプリケーションが実行されると、クライアントはサービスに要求を発行し、応答からの適切な情報をコンソール ウィンドウに書き込みます。  
+ <span data-ttu-id="a34b8-119">このサンプルは、コンソール アプリケーション内で実行される自己ホスト型サービスとクライアントで構成されています。</span><span class="sxs-lookup"><span data-stu-id="a34b8-119">The sample consists of a self-hosted service and a client that runs within a console application.</span></span> <span data-ttu-id="a34b8-120">コンソール アプリケーションが実行されると、クライアントはサービスに要求を発行し、応答からの適切な情報をコンソール ウィンドウに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="a34b8-120">As the console application runs, the client makes requests to the service and writes the pertinent information from the responses to the console window.</span></span>  
   
-#### このサンプルを使用するには  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="a34b8-121">このサンプルを使用するには</span><span class="sxs-lookup"><span data-stu-id="a34b8-121">To use this sample</span></span>  
   
-1.  形式の自動選択サンプルのソリューションを開きます。  サンプルを正しく実行するには、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を起動するときに、管理者として実行する必要があります。  管理者として実行するには、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] アイコンを右クリックし、コンテキスト メニューの **\[管理者として実行\]** をクリックします。  
+1.  <span data-ttu-id="a34b8-122">形式の自動選択サンプルのソリューションを開きます。</span><span class="sxs-lookup"><span data-stu-id="a34b8-122">Open the solution for the Automatic Format Selection Sample.</span></span> <span data-ttu-id="a34b8-123">サンプルを正しく実行するには、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を起動するときに、管理者として実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a34b8-123">When launching [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], you must run as an administrator for the sample to execute successfully.</span></span> <span data-ttu-id="a34b8-124">これには、右クリックし、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]アイコンを選択**管理者として実行**コンテキスト メニューからです。</span><span class="sxs-lookup"><span data-stu-id="a34b8-124">Do this by right-clicking the [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] icon and select **Run as Administrator** from the context menu.</span></span>  
   
-2.  Ctrl キーと Shift キーを押しながら B キーを押してソリューションをビルドし、Ctrl キーを押しながら F5 キーを押してコンソール アプリケーションの AutomaticFormatSelection プロジェクトを実行します。  コンソール ウィンドウが表示されて、実行中のサービスの URI および実行中のサービスの HTML ヘルプ ページの URI が示されます。  
+2.  <span data-ttu-id="a34b8-125">Ctrl キーと Shift キーを押しながら B キーを押してソリューションをビルドし、Ctrl キーを押しながら F5 キーを押してコンソール アプリケーションの AutomaticFormatSelection プロジェクトを実行します。</span><span class="sxs-lookup"><span data-stu-id="a34b8-125">Press CTRL+SHIFT+B to build the solution and then press Ctrl+F5 to run the console application AutomaticFormatSelection project.</span></span> <span data-ttu-id="a34b8-126">コンソール ウィンドウが表示されて、実行中のサービスの URI および実行中のサービスの HTML ヘルプ ページの URI が示されます。</span><span class="sxs-lookup"><span data-stu-id="a34b8-126">The console window appears and provides the URI of the running service and the URI of the HTML help page for the running service.</span></span>  
   
-3.  サンプルが実行されると、クライアントは要求をサービスに送信し、応答をコンソール ウィンドウに書き込みます。  応答の形式は XML または JSON になります。  
+3.  <span data-ttu-id="a34b8-127">サンプルが実行されると、クライアントは要求をサービスに送信し、応答をコンソール ウィンドウに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="a34b8-127">As the sample runs, the client sends requests to the service and writes the responses to the console window.</span></span> <span data-ttu-id="a34b8-128">応答の形式は XML または JSON になります。</span><span class="sxs-lookup"><span data-stu-id="a34b8-128">Notice the different formats of the responses in XML and JSON.</span></span>  
   
-4.  任意のキーを押して、サンプルを終了します。  
+4.  <span data-ttu-id="a34b8-129">任意のキーを押して、サンプルを終了します。</span><span class="sxs-lookup"><span data-stu-id="a34b8-129">Press any key to terminate the sample.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。  続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="a34b8-130">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="a34b8-130">The samples may already be installed on your machine.</span></span> <span data-ttu-id="a34b8-131">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="a34b8-131">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。  このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="a34b8-132">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="a34b8-132">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="a34b8-133">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="a34b8-133">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\AutomaticFormatSelection`  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="a34b8-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="a34b8-134">See Also</span></span>

@@ -1,29 +1,35 @@
 ---
-title: "DataView イベントの処理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DataView イベントの処理"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: e5675663-fc91-4e0d-87a9-481b25b64c0f
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 2abade8bbbf5ab8a9d2cf146271e89703ec34cb9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataView イベントの処理
-<xref:System.Data.DataView> の <xref:System.Data.DataView.ListChanged> イベントを使用して、ビューが更新されているかどうかを確認できます。  基になるテーブルの行の追加、削除、または変更や、このスキーマの列の追加または削除、親子のリレーションシップの変更など、これらの更新を行うとこのイベントが発生します。  さらに、現在表示されている行のリストが新しい並べ替え順序またはフィルターの適用により大幅に変更された場合、**ListChanged** イベントはそのことも通知します。  
+# <a name="handling-dataview-events"></a><span data-ttu-id="a1dcc-102">DataView イベントの処理</span><span class="sxs-lookup"><span data-stu-id="a1dcc-102">Handling DataView Events</span></span>
+<span data-ttu-id="a1dcc-103"><xref:System.Data.DataView.ListChanged> の <xref:System.Data.DataView> イベントを使用して、ビューが更新されているかどうかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="a1dcc-103">You can use the <xref:System.Data.DataView.ListChanged> event of the <xref:System.Data.DataView> to determine if a view has been updated.</span></span> <span data-ttu-id="a1dcc-104">基になるテーブルの行の追加、削除、または変更や、このスキーマの列の追加または削除、親子のリレーションシップの変更など、これらの更新を行うとこのイベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="a1dcc-104">Updates that raise the event include adding, deleting, or modifying a row in the underlying table; adding or deleting a column to the schema of the underlying table; and a change in a parent or child relationship.</span></span> <span data-ttu-id="a1dcc-105">**ListChanged**イベントもユーザーに通知を表示している行のリストが新しい並べ替え順序またはフィルターの適用により大幅に変更します。</span><span class="sxs-lookup"><span data-stu-id="a1dcc-105">The **ListChanged** event also notifies you if the list of rows you are viewing has changed significantly due to the application of a new sort order or a filter.</span></span>  
   
- **ListChanged** イベントは、<xref:System.ComponentModel> 名前空間の **ListChangedEventHandler** デリゲートを実装し、<xref:System.ComponentModel.ListChangedEventArgs> オブジェクトを入力として受け取ります。  発生した変更の内容を確認するには、**ListChangedEventArgs** オブジェクトの **ListChangedType** プロパティの <xref:System.ComponentModel.ListChangedType> 列挙値を使用します。  行の追加、削除、または移動による変更の場合、追加された行または移動された行の新しいインデックスと削除された行の古いインデックスには、**ListChangedEventArgs** オブジェクトの **NewIndex** プロパティを使用してアクセスできます。  移動された行の場合、移動前の古いインデックスにアクセスするには **ListChangedEventArgs** オブジェクトの **OldIndex** プロパティを使用します。  
+ <span data-ttu-id="a1dcc-106">**ListChanged**イベントを実装して、 **ListChangedEventHandler**の委任、<xref:System.ComponentModel>入力名前空間として受け取り、<xref:System.ComponentModel.ListChangedEventArgs>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a1dcc-106">The **ListChanged** event implements the **ListChangedEventHandler** delegate of the <xref:System.ComponentModel> namespace and takes as input a <xref:System.ComponentModel.ListChangedEventArgs> object.</span></span> <span data-ttu-id="a1dcc-107">使用して変更の種類が発生したかを決定できます、<xref:System.ComponentModel.ListChangedType>の列挙値に、 **ListChangedType**のプロパティ、 **ListChangedEventArgs**オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a1dcc-107">You can determine what type of change has occurred using the <xref:System.ComponentModel.ListChangedType> enumeration value in the **ListChangedType** property of the **ListChangedEventArgs** object.</span></span> <span data-ttu-id="a1dcc-108">追加変更、削除、または、行を移動追加または削除された行の新しいインデックスと、削除された行の古いインデックスにアクセスできますを使用して、 **NewIndex**のプロパティ、 **ListChangedEventArgs**オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a1dcc-108">For changes that involve adding, deleting, or moving rows, the new index of the added or moved row and the previous index of the deleted row can be accessed using the **NewIndex** property of the **ListChangedEventArgs** object.</span></span> <span data-ttu-id="a1dcc-109">移動先の行の場合、移動された行の古いインデックス アクセスできるを使用して、 **OldIndex**のプロパティ、 **ListChangedEventArgs**オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a1dcc-109">In the case of a moved row, the previous index of the moved row can be accessed using the **OldIndex** property of the **ListChangedEventArgs** object.</span></span>  
   
- **DataViewManager** は、さらにテーブルが追加または削除された場合に、または基になる **DataSet** の **Relations** コレクションが変更された場合に、そのことを通知するために **ListChanged** イベントを公開します。  
+ <span data-ttu-id="a1dcc-110">**DataViewManager**も公開、 **ListChanged**テーブルが追加または削除された場合、またはに、変更を加えた場合に通知するイベント、**リレーション**のコレクション、基になる**データセット**です。</span><span class="sxs-lookup"><span data-stu-id="a1dcc-110">The **DataViewManager** also exposes a **ListChanged** event to notify you if a table has been added or removed, or if a change has been made to the **Relations** collection of the underlying **DataSet**.</span></span>  
   
- **ListChanged** イベント ハンドラーを追加する方法を次のコード サンプルに示します。  
+ <span data-ttu-id="a1dcc-111">次のコード例は、追加する方法を示します、 **ListChanged**イベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="a1dcc-111">The following code example shows how to add a **ListChanged** event handler.</span></span>  
   
 ```vb  
 AddHandler custView.ListChanged, _  
@@ -39,7 +45,6 @@ Private Shared Sub OnListChanged( _
   Console.WriteLine(vbTab & "OldIndex = " & args.OldIndex)  
   Console.WriteLine(vbTab & "NewIndex = " & args.NewIndex)  
 End Sub  
-  
 ```  
   
 ```csharp  
@@ -56,8 +61,8 @@ protected static void OnListChanged(object sender,
 }  
 ```  
   
-## 参照  
- <xref:System.Data.DataView>   
- <xref:System.ComponentModel.ListChangedEventHandler>   
- [DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="a1dcc-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="a1dcc-112">See Also</span></span>  
+ <xref:System.Data.DataView>  
+ <xref:System.ComponentModel.ListChangedEventHandler>  
+ [<span data-ttu-id="a1dcc-113">DataViews</span><span class="sxs-lookup"><span data-stu-id="a1dcc-113">DataViews</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)  
+ [<span data-ttu-id="a1dcc-114">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="a1dcc-114">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)
