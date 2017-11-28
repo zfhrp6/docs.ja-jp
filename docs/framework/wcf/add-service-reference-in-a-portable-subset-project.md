@@ -1,38 +1,41 @@
 ---
-title: "ポータブル サブセット プロジェクトでサービス参照を追加する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ポータブル サブセット プロジェクトでサービス参照を追加する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 61ccfe0f-a34b-40ca-8f5e-725fa1b8095e
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d7bd456b8c89c315321ad23683708d9dacc1dda2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ポータブル サブセット プロジェクトでサービス参照を追加する
-ポータブル サブセット プロジェクトにより、.NET アセンブリ プログラマは 1 つのソース ツリーを保持しつつ、システムを構築できるようになります。また、ポータブル サブセット プロジェクトは、複数の .NET プラットフォーム \(デスクトップ、Silverlight、Windows Phone、および XBOX\) をサポートしています。ポータブル サブセット プロジェクトは、コア .NET プラットフォームで使用できる .NET Framework アセンブリである .NET ポータブル ライブラリのみを参照します。  
+# <a name="add-service-reference-in-a-portable-subset-project"></a>ポータブル サブセット プロジェクトでサービス参照を追加する
+ポータブル サブセット プロジェクトは、.NET アセンブリ プログラマは 1 つのソース ツリーを保持し、複数の .NET 実装 (デスクトップ、Silverlight、Windows Phone、および XBOX) をサポートしながらビルド システムを有効にします。 ポータブル サブセット プロジェクトは、任意の .NET 実装で使用できる .NET framework アセンブリである .NET ポータブル ライブラリのみを参照します。  
   
-## サービス参照の追加の詳細  
+## <a name="add-service-reference-details"></a>サービス参照の追加の詳細  
  ポータブル サブセット プロジェクトでサービス参照を追加する場合は、次の制限が適用されます。  
   
-1.  <xref:System.Xml.Serialization.XmlSerializer> では、文字エンコーディングのみを使用できます。SOAP エンコーディングを使用すると、インポート中にエラーが発生します。  
+1.  <xref:System.Xml.Serialization.XmlSerializer> では、文字エンコーディングのみを使用できます。 SOAP エンコーディングを使用すると、インポート中にエラーが発生します。  
   
 2.  <xref:System.Runtime.Serialization.DataContractSerializer> シナリオを使用するサービスの場合、再利用された型をポータブル サブセットからのみ受け取ることを確認するために、データ コントラクト サロゲートが提供されます。  
   
-3.  ポータブル ライブラリでサポートされていないバインド \(<xref:System.ServiceModel.BasicHttpBinding>、トランザクション フロー、信頼できるセッション、または MTOM エンコーディングがない <xref:System.ServiceModel.WsHttpBinding>、および等価のカスタム バインドを除くすべてのバインド\) に依存するエンドポイントは無視されます。  
+3.  ポータブル ライブラリでサポートされていないバインド (<xref:System.ServiceModel.BasicHttpBinding>、トランザクション フロー、信頼できるセッション、または MTOM エンコーディングがない <xref:System.ServiceModel.WSHttpBinding>、および等価のカスタム バインドを除くすべてのバインド) に依存するエンドポイントは無視されます。  
   
 4.  メッセージ ヘッダーは、インポート前にすべての操作におけるすべてのメッセージの説明から削除されます。  
   
-5.  非ポータブル属性 \(<xref:System.ComponentModel.DesignerCategoryAttribute>、<xref:System.Serializable>、および <xref:System.ServiceModel.TransactionFlow>\) は、生成されたクライアント プロキシ コードから削除されます。  
+5.  非ポータブル属性 (<xref:System.ComponentModel.DesignerCategoryAttribute>、<xref:System.SerializableAttribute>、および <xref:System.ServiceModel.TransactionFlowAttribute>) は、生成されたクライアント プロキシ コードから削除されます。  
   
-6.  非ポータブル プロパティ \(ProtectionLevel、SessionMode、IsInitiating、IsTerminating\) は、<xref:System.ServiceModel.ServiceContractAttribute>、<xref:System.ServiceModel.OperationContract>、および <xref:System.ServiceModel.FaultContract> から削除されます。  
+6.  非ポータブル プロパティ (ProtectionLevel、SessionMode、IsInitiating、IsTerminating) は、<xref:System.ServiceModel.ServiceContractAttribute>、<xref:System.ServiceModel.OperationContractAttribute>、および <xref:System.ServiceModel.FaultContractAttribute> から削除されます。  
   
 7.  すべてのサービス操作は、クライアント プロキシ上で非同期操作として生成されます。  
   
@@ -50,6 +53,6 @@ caps.handback.revision: 3
   
 14. ポータブル サブセット プロジェクトでは <xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> はサポートされません。  
   
-## 参照  
- [WCF クライアントを使用したサービスへのアクセス](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)   
- [汎用性のあるクラス ライブラリ](http://msdn.microsoft.com/library/gg597391\(v=vs.110\))
+## <a name="see-also"></a>関連項目  
+ [WCF クライアントを使用したサービスへのアクセス](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)  
+ [ポータブル クラス ライブラリ](http://msdn.microsoft.com/library/gg597391\(v=vs.110\))

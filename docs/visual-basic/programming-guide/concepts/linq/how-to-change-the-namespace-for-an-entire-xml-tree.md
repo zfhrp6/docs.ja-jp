@@ -1,34 +1,30 @@
 ---
-title: "方法: XML ツリー全体 (Visual Basic) の Namespace の変更 |Microsoft ドキュメント"
+title: "方法: Namespace、全体 XML ツリーを変更 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 1837324b-5cb5-4fa8-95b9-3071efa0f913
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: af216e734c85806056e37d92733a3e4d49f8b73c
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 1c5ee83840f9d8b4105e7af53008a329dfde37d3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-change-the-namespace-for-an-entire-xml-tree-visual-basic"></a>方法: Namespace、全体 XML ツリーの変更 (Visual Basic)
-要素または属性の名前空間をプログラムで変更しなければならない場合があります。 LINQ to XML では、この操作を簡単に行うことができます。 <xref:System.Xml.Linq.XElement.Name%2A?displayProperty=fullName>プロパティを設定することができます</xref:System.Xml.Linq.XElement.Name%2A?displayProperty=fullName>。 <xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=fullName>プロパティを設定することはできませんに属性を簡単にコピーすることができます、 <xref:System.Collections.Generic.List%601?displayProperty=fullName>、既存の属性を削除してから目的の新しい名前空間に含まれる新しい属性を追加します</xref:System.Collections.Generic.List%601?displayProperty=fullName></xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=fullName>。  
+# <a name="how-to-change-the-namespace-for-an-entire-xml-tree-visual-basic"></a>方法: Namespace、全体 XML ツリーを変更 (Visual Basic)
+要素または属性の名前空間をプログラムで変更しなければならない場合があります。 LINQ to XML では、この操作を簡単に行うことができます。 <xref:System.Xml.Linq.XElement.Name%2A?displayProperty=nameWithType> プロパティを設定できます。 <xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=nameWithType> プロパティは設定できませんが、簡単に属性を <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> にコピーし、既存の属性を削除して、目的の新しい名前空間に含まれる新しい属性を追加できます。  
   
- 詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の使用](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)します。  
+ 詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の操作](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)です。  
   
 ## <a name="example"></a>例  
- 次のコードは、名前空間に含まれない&2; つの XML ツリーを作成します。 次に、各ツリーの名前空間を変更して、1 つのツリーに結合します。  
+ 次のコードは、名前空間に含まれない 2 つの XML ツリーを作成します。 次に、各ツリーの名前空間を変更して、1 つのツリーに結合します。  
   
 ```vb  
 Dim tree1 As XElement = _  

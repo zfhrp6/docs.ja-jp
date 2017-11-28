@@ -1,75 +1,77 @@
 ---
-title: "&lt;appDomainManagerType&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<appDomainManagerType> 要素"
-  - "appDomainManagerType 要素"
+title: "&lt;appDomainManagerType&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- appDomainManagerType element
+- <appDomainManagerType> element
 ms.assetid: ae8d5a7e-e7f7-47f7-98d9-455cc243a322
-caps.latest.revision: 7
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 56d68efe176540ba82ec7b86f35678905ebc970b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;appDomainManagerType&gt; 要素
-既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーとして機能する型を指定します。  
+# <a name="ltappdomainmanagertypegt-element"></a>&lt;appDomainManagerType&gt;要素
+既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーの役割を果たす種類を指定します。  
   
-## 構文  
+ \<configuration>  
+\<ランタイム >  
+\<appDomainManagerType >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <appDomainManagerAssembly   
    value="type name" />  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|Attribute|説明|  
-|---------------|--------|  
-|`value`|必須の属性です。  プロセスの既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーとして機能する型の名前を、名前空間を含めて指定します。|  
+|属性|説明|  
+|---------------|-----------------|  
+|`value`|必須の属性です。 プロセスの既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーとして機能する名前空間を含む、型の名前を指定します。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
+|-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
   
-## 解説  
- アプリケーション ドメイン マネージャーの型を指定するには、この要素と [\<appDomainManagerAssembly\>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md) 要素の両方を指定する必要があります。  これらの要素のどちらかが指定されていない場合、もう一方の要素は無視されます。  
+## <a name="remarks"></a>コメント  
+ アプリケーション ドメイン マネージャーの種類を指定するには、この両方の要素を指定する必要があります、 [ \<appDomainManagerAssembly >](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md)要素。 これらの要素のいずれかが指定されていない場合、その他は無視されます。  
   
- 既定のアプリケーション ドメインが読み込まれるとき、<xref:System.TypeLoadException> は指定された型が [\<appDomainManagerAssembly\>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md) 要素で指定されたアセンブリにあるスローされます; とプロセスは起動しません。  
+ 既定のアプリケーション ドメインが読み込まれるときに<xref:System.TypeLoadException>で指定されたアセンブリでは、指定した型が存在しない場合にスローされますが、 [ \<appDomainManagerAssembly >](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md)要素であるとプロセスが失敗する起動します。  
   
- 既定のアプリケーション ドメインに対するアプリケーション ドメイン マネージャーの型を指定すると、既定のアプリケーション ドメインから作成される他のアプリケーション ドメインにも、そのアプリケーション ドメイン マネージャーの型が継承されます。  新しいアプリケーション ドメインに対して別のアプリケーション ドメイン マネージャーの型を指定するには、<xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=fullName> プロパティと <xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=fullName> プロパティを使用します。  
+ 既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーの種類を指定すると、既定のアプリケーション ドメインから作成された他のアプリケーション ドメインは、アプリケーション ドメイン マネージャーの型を継承します。 使用して、<xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=nameWithType>と<xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=nameWithType>プロパティを新しいアプリケーション ドメインの別のアプリケーション ドメイン マネージャーの種類を指定します。  
   
- アプリケーション ドメイン マネージャーの型を指定する場合は、アプリケーションに完全信頼が必要です \(たとえば、デスクトップ上で実行されるアプリケーションは完全に信頼されています\)。アプリケーションに完全信頼がない場合は、<xref:System.TypeLoadException> がスローされます。  
+ アプリケーション ドメイン マネージャーの種類を指定するには、アプリケーションに完全な信頼が必要です。 (たとえば、デスクトップで実行されているアプリケーションが完全な信頼。)アプリケーションには、完全な信頼がない場合、<xref:System.TypeLoadException>がスローされます。  
   
- 型と名前空間の形式は、<xref:System.Type.FullName%2A?displayProperty=fullName> プロパティで使用される形式と同じです。  
+ 名前空間と型の形式は、同じ形式に使用される、<xref:System.Type.FullName%2A?displayProperty=nameWithType>プロパティです。  
   
- この構成要素は、[!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] 以降でのみ使用できます。  
+ この構成要素はでのみ使用できますが、[!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)]およびそれ以降。  
   
-## 使用例  
- 次の例は、プロセスの既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーとして、`AdMgrExample` アセンブリ内の `MyMgr` 型を指定する方法を示しています。  
+## <a name="example"></a>例  
+ 次の例は、プロセスの既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーを指定する方法を示しています、`MyMgr`に入力、`AdMgrExample`アセンブリ。  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <appDomainManagerType value="MyMgr" />  
@@ -79,10 +81,10 @@ caps.handback.revision: 7
 </configuration>  
 ```  
   
-## 参照  
- <xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=fullName>   
- <xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=fullName>   
- [\<appDomainManagerAssembly\> 要素](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md)   
- [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [SetAppDomainManagerType メソッド](../Topic/ICLRControl::SetAppDomainManagerType%20Method.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=nameWithType>  
+ <xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=nameWithType>  
+ [\<appDomainManagerAssembly > 要素](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md)  
+ [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [SetAppDomainManagerType メソッド](../../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-setappdomainmanagertype-method.md)

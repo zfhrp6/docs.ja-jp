@@ -1,31 +1,27 @@
 ---
-title: "LINQ to XML Annotations2 |Microsoft ドキュメント"
+title: LINQ to XML Annotations2
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: c3e8b3ff-fceb-4428-b0ca-1ed6f128aac8
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1f2e5bea1cde74548daa1697b6a0a819e3eba3e4
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: ca84af7cd750529eadb9d0967f4d5570b7038a07
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="linq-to-xml-annotations"></a>LINQ to XML の注釈
-内の注釈[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]任意の型の任意のオブジェクトを XML ツリー内の任意の XML コンポーネントに関連付けることができます。  
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の注釈を使用すると、任意の型の任意のオブジェクトを XML ツリー内の任意の XML コンポーネントに関連付けることができます。  
   
- など、XML コンポーネントに注釈を追加する、<xref:System.Xml.Linq.XElement>または<xref:System.Xml.Linq.XAttribute>を呼び出す、<xref:System.Xml.Linq.XObject.AddAnnotation%2A>メソッド</xref:System.Xml.Linq.XObject.AddAnnotation%2A></xref:System.Xml.Linq.XAttribute></xref:System.Xml.Linq.XElement>。 注釈は型によって取得します。  
+ <xref:System.Xml.Linq.XElement> や <xref:System.Xml.Linq.XAttribute> などの XML コンポーネントに注釈を追加するには、<xref:System.Xml.Linq.XObject.AddAnnotation%2A> メソッドを呼び出します。 注釈は型によって取得します。  
   
  注釈は XML 情報セットの一部ではないことに注意してください。注釈はシリアル化も逆シリアル化もされません。  
   
@@ -34,10 +30,10 @@ ms.lasthandoff: 03/13/2017
   
 |メソッド|説明|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XObject.AddAnnotation%2A></xref:System.Xml.Linq.XObject.AddAnnotation%2A>|<xref:System.Xml.Linq.XObject>。</xref:System.Xml.Linq.XObject>の注釈の一覧にオブジェクトを追加します。|  
-|<xref:System.Xml.Linq.XObject.Annotation%2A></xref:System.Xml.Linq.XObject.Annotation%2A>|<xref:System.Xml.Linq.XObject>。</xref:System.Xml.Linq.XObject>から指定した型の最初の注釈オブジェクトを取得します。|  
-|<xref:System.Xml.Linq.XObject.Annotations%2A></xref:System.Xml.Linq.XObject.Annotations%2A>|<xref:System.Xml.Linq.XObject>。</xref:System.Xml.Linq.XObject>の指定した型の注釈のコレクションを取得します。|  
-|<xref:System.Xml.Linq.XObject.RemoveAnnotations%2A></xref:System.Xml.Linq.XObject.RemoveAnnotations%2A>|<xref:System.Xml.Linq.XObject>。</xref:System.Xml.Linq.XObject>から指定した型の注釈を削除します。|  
+|<xref:System.Xml.Linq.XObject.AddAnnotation%2A>|オブジェクトを <xref:System.Xml.Linq.XObject> の注釈の一覧に追加します。|  
+|<xref:System.Xml.Linq.XObject.Annotation%2A>|指定された型の最初の注釈オブジェクトを <xref:System.Xml.Linq.XObject> から取得します。|  
+|<xref:System.Xml.Linq.XObject.Annotations%2A>|<xref:System.Xml.Linq.XObject> について指定された型の注釈のコレクションを取得します。|  
+|<xref:System.Xml.Linq.XObject.RemoveAnnotations%2A>|指定された型の注釈を <xref:System.Xml.Linq.XObject> から削除します。|  
   
 ## <a name="see-also"></a>関連項目  
- [高度な LINQ to XML のプログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+ [高度な LINQ to XML プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

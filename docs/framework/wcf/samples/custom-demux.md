@@ -1,23 +1,26 @@
 ---
-title: "カスタム Demux | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "カスタム Demux"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: fc54065c-518e-4146-b24a-0fe00038bfa7
-caps.latest.revision: 41
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 41
+caps.latest.revision: "41"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d7c74648a249ec833f2b0fc8b8f5eea9247dc364
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# カスタム Demux
-このサンプルでは、MSMQ メッセージ ヘッダーをさまざまなサービス操作にマッピングする方法を通して、<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスで複数のサービス操作を使用できることを示します \(「[Windows Communication Foundation へのメッセージ キュー](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)」と「[Windows Communication Foundation でのメッセージ キュー](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)」のサンプルでは 1 つだけ使用しています\)。  
+# <a name="custom-demux"></a>カスタム Demux
+このサンプルでは、MSMQ メッセージ ヘッダーをさまざまなサービス操作にマップする方法を[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]を使用するサービス<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>で示したように 1 つのサービス操作の使用に限定されない、[メッセージ キューをWindows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)と[メッセージ キューへの Windows Communication Foundation](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)サンプルです。  
   
  このサンプルのサービスは自己ホスト型コンソール アプリケーションであるので、サービスを実行すると、キューに置かれたメッセージを受信するようすを観察できます。  
   
@@ -37,7 +40,7 @@ public interface IOrderProcessor
 }  
 ```  
   
- MSMQ メッセージには Action ヘッダーがないので、  さまざまな MSMQ メッセージを操作コントラクトに自動的にマッピングすることはできません。  したがって、存在する操作コントラクトは 1 つだけです。  この制限を克服するために、サービスは <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> インターフェイスの <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A> メソッドを実装します。  <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A> メソッドによって、メッセージの特定のヘッダーを特定のサービス操作にマッピングできるようになります。  このサンプルでは、メッセージのラベル ヘッダーをサービス操作にマッピングします。  操作コントラクトの `Name` パラメータは、特定のメッセージ ラベルに対してどのサービス操作をディスパッチするかを示します。  たとえば、メッセージのラベル ヘッダーに "SubmitPurchaseOrder" が含まれている場合に、"SubmitPurchaseOrder" サービス操作を呼び出します。  
+ MSMQ メッセージには Action ヘッダーがないので、 さまざまな MSMQ メッセージを操作コントラクトに自動的にマッピングすることはできません。 したがって、存在する操作コントラクトは 1 つだけです。 この制限を克服するために、サービスは <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A> インターフェイスの <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> メソッドを実装します。 <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A> メソッドによって、メッセージの特定のヘッダーを特定のサービス操作にマッピングできるようになります。 このサンプルでは、メッセージのラベル ヘッダーをサービス操作にマッピングします。 操作コントラクトの `Name` パラメータは、特定のメッセージ ラベルに対してどのサービス操作をディスパッチするかを示します。 たとえば、メッセージのラベル ヘッダーに "SubmitPurchaseOrder" が含まれている場合に、"SubmitPurchaseOrder" サービス操作を呼び出します。  
   
 ```  
 public class OperationSelector : IDispatchOperationSelector  
@@ -50,7 +53,7 @@ public class OperationSelector : IDispatchOperationSelector
 }  
 ```  
   
- サービスは <xref:System.ServiceModel.Description.IContractBehavior> インターフェイスの <xref:System.ServiceModel.Description.IContractBehavior.ApplyDispatchBehavior%28System.ServiceModel.Description.ContractDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%2CSystem.ServiceModel.Dispatcher.DispatchRuntime%29> メソッドを実装する必要があります。次のサンプル コードを参照してください。  これによって、カスタムの `OperationSelector` がサービス フレームワークのディスパッチ ランタイムに適用されます。  
+ サービスは <xref:System.ServiceModel.Description.IContractBehavior.ApplyDispatchBehavior%28System.ServiceModel.Description.ContractDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%2CSystem.ServiceModel.Dispatcher.DispatchRuntime%29> インターフェイスの <xref:System.ServiceModel.Description.IContractBehavior> メソッドを実装する必要があります。次のサンプル コードを参照してください。 これによって、カスタムの `OperationSelector` がサービス フレームワークのディスパッチ ランタイムに適用されます。  
   
 ```  
 void IContractBehavior.ApplyDispatchBehavior(ContractDescription description, ServiceEndpoint endpoint, DispatchRuntime dispatch)  
@@ -59,7 +62,7 @@ void IContractBehavior.ApplyDispatchBehavior(ContractDescription description, Se
 }  
 ```  
   
- メッセージが OperationSelector に到達するには、ディスパッチャの <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> を通過する必要があります。  既定の設定では、メッセージのアクションが、サービスによって実装されているどのコントラクトにも見つからない場合に、メッセージが拒否されます。  この検査を回避するために、`MatchAllFilterBehavior` という名前の <xref:System.ServiceModel.Description.IEndpointBehavior> を実装します。これは、次に示すように <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter> を適用して、どのメッセージも `ContractFilter` を通過できるようにするものです。  
+ メッセージが OperationSelector に到達するには、ディスパッチャの <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> を通過する必要があります。 既定の設定では、メッセージのアクションが、サービスによって実装されているどのコントラクトにも見つからない場合に、メッセージが拒否されます。 この検査を回避するために、<xref:System.ServiceModel.Description.IEndpointBehavior> という名前の `MatchAllFilterBehavior` を実装します。これは、次に示すように `ContractFilter` を適用して、どのメッセージも <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter> を通過できるようにするものです。  
   
 ```  
 public void ApplyDispatchBehavior(ServiceEndpoint serviceEndpoint, EndpointDispatcher endpointDispatcher)  
@@ -68,7 +71,7 @@ public void ApplyDispatchBehavior(ServiceEndpoint serviceEndpoint, EndpointDispa
 }  
 ```  
   
- メッセージをサービスが受信すると、ラベル ヘッダーからの情報を使用して該当するサービス操作がディスパッチされます。  メッセージの本文が逆シリアル化されて `PurchaseOrder` オブジェクトが作成されます。次のサンプル コードを参照してください。  
+ メッセージをサービスが受信すると、ラベル ヘッダーからの情報を使用して該当するサービス操作がディスパッチされます。 メッセージの本文が逆シリアル化されて `PurchaseOrder` オブジェクトが作成されます。次のサンプル コードを参照してください。  
   
 ```  
 [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]  
@@ -81,7 +84,7 @@ public void SubmitPurchaseOrder(MsmqMessage<PurchaseOrder> msg)
 }  
 ```  
   
- サービスは自己ホスト型です。  MSMQ を使用するときは、使用するキューをあらかじめ作成しておく必要があります。  手動で作成することもコードで作成することもできます。  このサンプルでは、サービスのコードの中でキューの存在を確認し、存在しない場合は作成します。  キュー名は構成ファイルから読み込まれます。  
+ サービスは自己ホスト型です。 MSMQ を使用するときは、使用するキューをあらかじめ作成しておく必要があります。 手動で作成することもコードで作成することもできます。 このサンプルでは、サービスのコードの中でキューの存在を確認し、存在しない場合は作成します。 キュー名は構成ファイルから読み込まれます。  
   
 ```  
 public static void Main()  
@@ -116,18 +119,17 @@ public static void Main()
  MSMQ キュー名は、構成ファイルの appSettings セクションで指定されます。  
   
 > [!NOTE]
->  キュー名では、ドット \(.\) を使用してローカル コンピューターを表し、バックスラッシュを使用してパスを区切ります。  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイント アドレスでは msmq.formatname スキームが指定され、ローカル コンピューターを表す localhost が使用されます。  このスキームの後には、MSMQ 形式名のアドレス指定ガイドラインに沿って正しく書式設定されたキューのアドレスが続きます。  
+>  キュー名では、ドット (.) を使用してローカル コンピューターを表し、バックスラッシュを使用してパスを区切ります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイント アドレスでは msmq.formatname スキームが指定され、ローカル コンピューターを表す localhost が使用されます。 このスキームの後には、MSMQ 形式名のアドレス指定ガイドラインに沿って正しく書式設定されたキューのアドレスが続きます。  
   
-```  
+```xml  
 <appSettings>  
     <!-- Use appSetting to configure the MSMQ queue name. -->  
     <add key="queueName" value=".\private$\Orders" />  
 </appSettings>  
-  
 ```  
   
 > [!NOTE]
->  このサンプルを実行するには、[メッセージ キュー](http://go.microsoft.com/fwlink/?LinkId=95143)がインストールされている必要があります。  
+>  このサンプルのインストールが必要[メッセージ キュー](http://go.microsoft.com/fwlink/?LinkId=95143)です。  
   
  サービスを開始してクライアントを実行します。  
   
@@ -160,31 +162,31 @@ Processing Purchase Order: 28fc457a-1a56-4fe0-9dde-156965c21ed6
 Purchase Order 28fc457a-1a56-4fe0-9dde-156965c21ed6 is canceled  
 ```  
   
-### サンプルをセットアップ、ビルド、および実行するには  
+### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。  
   
-2.  サービスを最初に実行すると、サービスはキューが存在するかどうかを確認します。  キューが存在しない場合、サービスによってキューが作成されます。  最初にサービスを実行してキューを作成することも、MSMQ キュー マネージャーでキューを作成することもできます。  Windows 2008 でキューを作成するには、次の手順に従います。  
+2.  サービスを最初に実行すると、サービスはキューが存在するかどうかを確認します。 キューが存在しない場合、サービスによってキューが作成されます。 最初にサービスを実行してキューを作成することも、MSMQ キュー マネージャーでキューを作成することもできます。 Windows 2008 でキューを作成するには、次の手順に従います。  
   
     1.  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] でサーバー マネージャーを開きます。  
   
-    2.  **\[機能\]** タブを展開します。  
+    2.  展開して、**機能**タブです。  
   
-    3.  **\[プライベート メッセージ キュー\]** を右クリックし、**\[新規作成\]**、**\[専用キュー\]** の順にクリックします。  
+    3.  右クリック**プライベート メッセージ キュー**を選択して**新規**、**プライベート キュー**です。  
   
-    4.  **\[トランザクション\]** ボックスをオンにします。  
+    4.  チェック、**トランザクション**ボックス。  
   
-    5.  新しいキューの名前として、`「ServiceModelSamplesTransacted」`と入力します。  
+    5.  入力`ServiceModelSamplesTransacted`として、新しいキューの名前。  
   
-3.  ソリューションの C\# 版または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+3.  ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
   
-4.  サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+4.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
-### サンプルを複数のコンピューターで実行するには  
+### <a name="to-run-the-sample-across-computers"></a>サンプルを複数のコンピューターで実行するには  
   
-1.  サービスのプログラム ファイルを、言語固有のフォルダーにある \\service\\bin\\ フォルダーからサービス コンピューターにコピーします。  
+1.  サービスのプログラム ファイルを、言語固有のフォルダーにある \service\bin\ フォルダーからサービス コンピューターにコピーします。  
   
-2.  クライアント プログラム ファイルを、言語固有のフォルダーにある \\client\\bin\\ フォルダーからクライアント コンピューターにコピーします。  
+2.  クライアント プログラム ファイルを、言語固有のフォルダーにある \client\bin\ フォルダーからクライアント コンピューターにコピーします。  
   
 3.  Client.exe.config ファイルを開き、orderQueueName を変更して "." の代わりにサービス コンピューター名を指定します。  
   
@@ -193,14 +195,14 @@ Purchase Order 28fc457a-1a56-4fe0-9dde-156965c21ed6 is canceled
 5.  クライアント コンピューターで、コマンド プロンプトから Client.exe を起動します。  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。  続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。  このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\CustomDemux`  
   
-## 参照  
- [WCF でのキュー](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)   
+## <a name="see-also"></a>関連項目  
+ [WCF でのキュー](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
  [メッセージ キュー](http://go.microsoft.com/fwlink/?LinkId=95143)

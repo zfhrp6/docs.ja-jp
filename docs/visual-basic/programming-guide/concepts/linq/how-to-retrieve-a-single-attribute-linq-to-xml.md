@@ -1,34 +1,30 @@
 ---
-title: "方法: 単一の属性 (LINQ to XML) を取得する (Visual Basic) |Microsoft ドキュメント"
+title: "方法: 単一の属性 (LINQ to XML) を取得する (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 11b938d7-c011-4048-900e-8b9183c41c94
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 35f477ead2bdcfdf78781459f93a755dbc89e5cc
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 08b9b2bed60f5818db9c494047ade576e8526bb7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-retrieve-a-single-attribute-linq-to-xml-visual-basic"></a>方法: 単一の属性 (LINQ to XML) を取得する (Visual Basic)
 このトピックでは、属性名を指定して要素の単一の属性を取得する方法について説明します。 これは、特定の属性を持つ要素を検索するクエリ式を記述する場合に便利です。  
   
- <xref:System.Xml.Linq.XElement.Attribute%2A>のメソッド、<xref:System.Xml.Linq.XElement>クラスを返します、<xref:System.Xml.Linq.XAttribute>指定した名前です。</xref:System.Xml.Linq.XAttribute> </xref:System.Xml.Linq.XElement> </xref:System.Xml.Linq.XElement.Attribute%2A> 。  
+ <xref:System.Xml.Linq.XElement.Attribute%2A> クラスの <xref:System.Xml.Linq.XElement> メソッドは、指定された名前を持つ <xref:System.Xml.Linq.XAttribute> を返します。  
   
 ## <a name="example"></a>例  
- 次の例では、<xref:System.Xml.Linq.XElement.Attribute%2A>メソッド</xref:System.Xml.Linq.XElement.Attribute%2A>。  
+ 次の例では、<xref:System.Xml.Linq.XElement.Attribute%2A> メソッドを使用します。  
   
 ```vb  
 Dim cust As XElement = <PhoneNumbers>  
@@ -51,7 +47,7 @@ work
 ```  
   
 ## <a name="example"></a>例  
- 属性の値を取得する場合は、キャストできますで場合と同様<xref:System.Xml.Linq.XElement>オブジェクト</xref:System.Xml.Linq.XElement>。 次に例を示します。  
+ 属性の値を取得する場合は、<xref:System.Xml.Linq.XElement> オブジェクトを使用して行う場合と同じように、その属性をキャストできます。 次に例を示します。  
   
 ```vb  
 Dim cust As XElement = <PhoneNumbers>  
@@ -73,10 +69,10 @@ home
 work  
 ```  
   
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]provides explicit cast operators for the <xref:System.Xml.Linq.XAttribute> class to `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?`, `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID`, and `GUID?`.</xref:System.Xml.Linq.XAttribute>  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] では、`string`、`bool`、`bool?`、`int`、`int?`、`uint`、`uint?`、`long`、`long?`、`ulong`、`ulong?`、`float`、`float?`、`double`、`double?`、`decimal`、`decimal?`、`DateTime`、`DateTime?`、`TimeSpan`、`TimeSpan?`、`GUID`、および `GUID?` に対する <xref:System.Xml.Linq.XAttribute> クラスのための明示的なキャスト演算子が用意されています。  
   
 ## <a name="example"></a>例  
- 上記と同じコードを使用して、名前空間内の属性を取得する例を次に示します。 詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の使用](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)します。  
+ 上記と同じコードを使用して、名前空間内の属性を取得する例を次に示します。 詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の操作](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)です。  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  

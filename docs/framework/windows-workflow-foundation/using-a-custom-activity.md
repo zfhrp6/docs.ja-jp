@@ -1,26 +1,30 @@
 ---
-title: "カスタム アクティビティの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "カスタム アクティビティの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8f356419-681a-4175-ae93-878eee970249
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e534f9a3e8d0a7d675e43bc03266e4863f95d45d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# カスタム アクティビティの使用
-<xref:System.Activities.Activity> またはそのサブクラスから派生するアクティビティは、結合してより大規模なワークフローにしたり、コードで直接作成したりすることができます。このトピックでは、コードまたはデザイナーで作成したワークフロー内でカスタム アクティビティを使用する方法について説明します。  
+# <a name="using-a-custom-activity"></a>カスタム アクティビティの使用
+<xref:System.Activities.Activity> またはそのサブクラスから派生するアクティビティは、結合してより大規模なワークフローにしたり、コードで直接作成したりすることができます。 このトピックでは、コードまたはデザイナーで作成したワークフロー内でカスタム アクティビティを使用する方法について説明します。  
   
 > [!NOTE]
->  カスタム アクティビティは、そのアクティビティが定義されているのと同じプロジェクト内で使用できます。これは、カスタム アクティビティとそのカスタム アクティビティを使用するアクティビティの両方がコンパイルされる \(たとえば、ビルド プロセスで生成された、インスタンス化する型によって読み込まれる\) 場合に限ります。参照しているアクティビティが \(ActivityXAMLServices の使用などによって\) 読み込まれる場合は、参照アセンブリを別のプロジェクトに配置するか、デザイナーで生成される XAML を手作業で編集して参照アセンブリを有効にする必要があります。  
+>  カスタム アクティビティとそれを使用するアクティビティの両方のコンパイル (ビルド処理によって生成された、インスタンス化する型では読み込まなど) 限り、それらが定義されている、同じプロジェクトでカスタム アクティビティを使用できます、参照元のアクティビティが読み込まれている場合動的に別のプロジェクトに参照アセンブリを配置する必要がありますし (例: ActivityXAMLServices の使用など)、またはデザイナーで生成される XAML を手作業で編集を有効にする必要があります。  
   
-#### ワークフロー プロジェクトへのカスタム アクティビティの使用  
+#### <a name="using-a-custom-activity-to-a-workflow-project"></a>ワークフロー プロジェクトへのカスタム アクティビティの使用  
   
 1.  ホスト プロジェクトから、カスタム アクティビティを含むアクティビティ ライブラリ プロジェクトへの参照を追加します。  
   

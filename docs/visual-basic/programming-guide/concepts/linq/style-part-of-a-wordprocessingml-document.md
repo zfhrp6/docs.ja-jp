@@ -1,26 +1,22 @@
 ---
-title: "WordprocessingML Document2 の一部のスタイルを設定 |Microsoft ドキュメント"
+title: "WordprocessingML Document2 のスタイル パーツについて"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 292cc094-9483-4192-ac3b-a5dc51fbac12
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1f25a71f9464d24f9362465a9f14144f62cd183f
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: d16363f377cc8a41ae8192e753ad70a8062588d6
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="style-part-of-a-wordprocessingml-document"></a>WordprocessingML ドキュメントのスタイル パーツ
 このトピックでは、Office Open XML WordprocessingML ドキュメントのスタイル パーツの例について説明します。  
@@ -154,4 +150,4 @@ ms.lasthandoff: 03/13/2017
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [Office の詳細については Open XML WordprocessingML ドキュメント (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+ [Office の詳細は Open XML WordprocessingML ドキュメント (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)

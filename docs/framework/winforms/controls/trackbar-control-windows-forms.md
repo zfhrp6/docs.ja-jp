@@ -1,38 +1,39 @@
 ---
-title: "TrackBar コントロール (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "スライダー コントロール"
-  - "スライダー"
-  - "TrackBar コントロール [Windows フォーム]"
+title: "TrackBar コントロール (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- sliders
+- slider controls [Windows Forms]
+- TrackBar control [Windows Forms]
 ms.assetid: 37d6aee3-7e8a-4a10-a99c-3a6e09199553
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 36e978aedd1f1259ff99703e0b94d623d565a8ee
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# TrackBar コントロール (Windows フォーム)
-Windows フォームの `TrackBar` コントロールは、大量の情報内を移動する場合や、数値設定を視覚的に調整する場合などに使用します \("スライダー" コントロールとも呼ばれます\)。  `TrackBar` コントロールは、つまみ \(スライダー\) と軸目盛りという 2 つの部分で構成されます。  つまみは調整できます。  つまみの位置は <xref:System.Windows.Forms.TrackBar.Value%2A> プロパティに対応しています。  軸目盛りは、一定の間隔で区切られた視覚的なインジケーターです。  トラック バーは、指定した単位で移動し、水平または垂直に調整できます。  たとえば、トラック バーを使用して、カーソルの点滅速度やマウスの速度などが設定できます。  
+# <a name="trackbar-control-windows-forms"></a>TrackBar コントロール (Windows フォーム)
+Windows フォーム`TrackBar`コントロール ("slider"コントロールと呼ばれることもあります) を使用して大量の情報内を移動するかを視覚的に数値の設定を調整します。 `TrackBar`コントロールに 2 つの部分がある: スクロール ボックス、スライダーとティックとも呼ばれます。 つまみでは、調整可能な部分です。 その位置に対応して、<xref:System.Windows.Forms.TrackBar.Value%2A>プロパティです。 目盛りは、一定の間隔で間隔が視覚インジケーターです。 トラック バーは、増分値を指定し、水平方向または垂直方向に整列することができますをで移動します。 トラック バーの使用例はではカーソルの点滅速度やマウス速度を設定します。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [TrackBar コントロールの概要](../../../../docs/framework/winforms/controls/trackbar-control-overview-windows-forms.md)  
- `TrackBar` コントロールの全般的な概念を説明します。このコントロールにより、ユーザーは数値設定を視覚的に調整して情報内を移動できます。  
+ 一般的な概念が導入されています、`TrackBar`コントロールで、視覚的に数値の設定を調整して情報を移動することができます。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.Windows.Forms.TrackBar> クラス  
- クラスとそのメンバーに関する参照情報を提供します。  
+ クラスとそのメンバーに関するリファレンス情報を提供します。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- 使用方法に関する情報へのリンクを含む、Windows フォーム コントロールの完全なリストを提供します。
+ Windows フォーム コントロールの完全な一覧を、使用に関する情報リンクと共に提供します。

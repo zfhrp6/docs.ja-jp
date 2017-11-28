@@ -1,48 +1,52 @@
 ---
-title: "方法 : 描画されたテキストにタブ ストップを設定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "タブ, 描画されたテキスト"
-  - "テキスト, 描画 (タブ ストップを使用して)"
+title: "方法 : 描画されたテキストにタブ ストップを設定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- text [Windows Forms], drawing with tab stops
+- tabs [Windows Forms], drawn text
 ms.assetid: 64878f98-39ba-4303-b63f-0859ab682eeb
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e561e8096780301230071e869dac482a6a908a5e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 描画されたテキストにタブ ストップを設定する
-テキストにタブ ストップを設定するには、<xref:System.Drawing.StringFormat> オブジェクトの <xref:System.Drawing.StringFormat.SetTabStops%2A> メソッドを呼び出し、その <xref:System.Drawing.StringFormat> オブジェクトを <xref:System.Drawing.Graphics> クラスの <xref:System.Drawing.Graphics.DrawString%2A> メソッドに渡します。  
+# <a name="how-to-set-tab-stops-in-drawn-text"></a>方法 : 描画されたテキストにタブ ストップを設定する
+テキストのタブ ストップを設定するには呼び出すことによって、<xref:System.Drawing.StringFormat.SetTabStops%2A>のメソッド、<xref:System.Drawing.StringFormat>オブジェクトを渡す、<xref:System.Drawing.StringFormat>オブジェクトを<xref:System.Drawing.Graphics.DrawString%2A>のメソッド、<xref:System.Drawing.Graphics>クラスです。  
   
 > [!NOTE]
->  <xref:System.Windows.Forms.TextRenderer?displayProperty=fullName> では描画されたテキストへのタブ ストップの追加はサポートされていませんが、<xref:System.Windows.Forms.TextFormatFlags?displayProperty=fullName> フラグを使用して既存のタブ ストップを拡張できます。  
+>  <xref:System.Windows.Forms.TextRenderer?displayProperty=nameWithType>を使用して既存のタブを展開することができますが、描画するテキストへのタブ位置を追加するサポートされていませんが停止する機能は、<xref:System.Windows.Forms.TextFormatFlags.ExpandTabs?displayProperty=nameWithType>フラグ。  
   
-## 使用例  
- 150、250、350 の各位置にタブ ストップを設定する例を次に示します。  このコードは、名前とテストの得点とをタブで区切ったリストを表示します。  
+## <a name="example"></a>例  
+ 次の例では、150、250、および 350 にタブ ストップを設定します。 次に、コードでは、名前と試験の点数のタブ付きの一覧が表示されます。  
   
- 表示されるタブ区切りのテキストを次の図に示します。  
+ 次の図は、タブ付きのテキストを示します。  
   
  ![フォント テキスト](../../../../docs/framework/winforms/advanced/media/fontstext4.png "fontstext4")  
   
- 次のコードでは、<xref:System.Drawing.StringFormat.SetTabStops%2A> メソッドに 2 つの引数を渡します。  2 番目の引数は、タブのオフセットを格納している配列です。  <xref:System.Drawing.StringFormat.SetTabStops%2A> に渡される最初の引数は 0 で、この値は、配列内の最初のオフセットが 0 の位置、つまり外接する四角形の左端から測定されることを示します。  
+ 次のコードは 2 つの引数を渡す、<xref:System.Drawing.StringFormat.SetTabStops%2A>メソッドです。 2 番目の引数は、タブのオフセットを含む配列です。 渡される最初の引数<xref:System.Drawing.StringFormat.SetTabStops%2A>が 0 で、配列内の最初のオフセットが 0、外接する四角形の左端の位置から測定されることを示します。  
   
  [!code-csharp[System.Drawing.FontsAndText#41](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.FontsAndText/CS/Class1.cs#41)]
  [!code-vb[System.Drawing.FontsAndText#41](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.FontsAndText/VB/Class1.vb#41)]  
   
-## コードのコンパイル  
+## <a name="compiling-the-code"></a>コードのコンパイル  
   
--   前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.PaintEventHandler> のパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  
+-   前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.PaintEventHandler> のパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。  
   
-## 参照  
- [フォントとテキストの使用](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)   
- [方法 : GDI を使用してテキストを描画する](../../../../docs/framework/winforms/advanced/how-to-draw-text-with-gdi.md)
+## <a name="see-also"></a>関連項目  
+ [フォントとテキストの使用](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)  
+ [方法: GDI を使用してテキストを描画する](../../../../docs/framework/winforms/advanced/how-to-draw-text-with-gdi.md)

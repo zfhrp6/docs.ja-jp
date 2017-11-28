@@ -1,52 +1,59 @@
 ---
-title: "アクティビティを作成する方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "アクティビティを作成する方法"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: c09b1e99-21b5-4d96-9c04-ec31db3f4436
-caps.latest.revision: 39
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 39
+caps.latest.revision: "39"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6b52daa513bad9d0cb05fcabb27ff5755f8dba2a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# アクティビティを作成する方法
-アクティビティは [!INCLUDE[wf1](../../../includes/wf1-md.md)] の動作の中心的な単位です。アクティビティの実行ロジックはマネージ コードで実装できます。または他のアクティビティを使用して実装できます。このトピックでは、2 つのアクティビティを作成する方法について説明します。最初のアクティビティは、コードを使用してその実行ロジックを実装する単純なアクティビティです。2 番目のアクティビティの実装は他のアクティビティを使用して定義されています。これらのアクティビティは、チュートリアルの次の手順で使用します。  
+# <a name="how-to-create-an-activity"></a>アクティビティを作成する方法
+アクティビティは [!INCLUDE[wf1](../../../includes/wf1-md.md)] の動作の中心的な単位です。 アクティビティの実行ロジックはマネージ コードで実装できます。または他のアクティビティを使用して実装できます。 このトピックでは、2 つのアクティビティを作成する方法について説明します。 最初のアクティビティは、コードを使用してその実行ロジックを実装する単純なアクティビティです。 2 番目のアクティビティの実装は他のアクティビティを使用して定義されています。 これらのアクティビティは、チュートリアルの次の手順で使用します。  
   
 > [!NOTE]
->  チュートリアルの完成版をダウンロードするには、「[Windows Workflow Foundation \(WF45\) \- チュートリアル入門](http://go.microsoft.com/fwlink/?LinkID=248976)」を参照してください。  
+>  チュートリアルの完成版をダウンロードするには、「 [Windows Workflow Foundation (WF45) - Getting Started Tutorial (Windows Workflow Foundation (WF45) - チュートリアル入門)](http://go.microsoft.com/fwlink/?LinkID=248976)」を参照してください。  
   
-### アクティビティ ライブラリ プロジェクトを作成するには  
+### <a name="to-create-the-activity-library-project"></a>アクティビティ ライブラリ プロジェクトを作成するには  
   
-1.  [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] を開き、**\[ファイル\]** メニューの **\[新規作成\]** の **\[プロジェクト\]** をクリックします。  
+1.  開いている[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]選択**新規**、**プロジェクト**から、**ファイル**メニュー。  
   
-2.  **\[インストールされているテンプレート\]** の一覧で **\[その他のプロジェクトの種類\]** ノードを展開し、**\[Visual Studio ソリューション\]** を選択します。  
+2.  展開、**その他のプロジェクトの種類**内のノード、**インストール済み**、**テンプレート**選択**Visual Studio ソリューション**です。  
   
-3.  **\[Visual Studio ソリューション\]** リストで **\[空のソリューション\]** を選択します。.NET Framework バージョンのドロップダウン リストで **\[.NET Framework 4.5\]** が選択されていることを確認します。**\[名前\]** ボックスに「`WF45GettingStartedTutorial`」と入力し、**\[OK\]** をクリックします。  
+3.  選択**空のソリューション**から、 **Visual Studio ソリューション** ボックスの一覧です。 .NET Framework バージョンのドロップダウン リストで **[.NET Framework 4.5]** が選択されていることを確認します。 型`WF45GettingStartedTutorial`で、**名前**ボックスし、をクリックして**OK**です。  
   
-4.  **ソリューション エクスプローラー**で **WF45GettingStartedTutorial** を右クリックし、**\[追加\]** をポイントして、**\[新しいプロジェクト\]** をクリックします。  
+4.  右クリック**WF45GettingStartedTutorial**で**ソリューション エクスプ ローラー**選択**追加**、**新しいプロジェクト**です。  
   
     > [!TIP]
-    >  **ソリューション エクスプローラー** ウィンドウが表示されない場合は、**\[表示\]** メニューの **\[ソリューション エクスプローラー\]** をクリックします。  
+    >  **ソリューション エクスプローラー** ウィンドウが表示されない場合は、 **[表示]** メニューの **[ソリューション エクスプローラー]** をクリックします。  
   
-5.  **\[インストール済み\]** ノードで、**\[Visual C\#\]**、**\[ワークフロー\]** \(または **\[Visual Basic\]**、**\[ワークフロー\]**\) の順に選択します。[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] バージョンのドロップダウン リストで **\[.NET Framework 4.5\]** が選択されていることを確認します。**\[ワークフロー\]** リストで **\[アクティビティ ライブラリ\]** を選択します。**\[名前\]** ボックスに「`NumberGuessWorkflowActivities`」と入力し、**\[OK\]** をクリックします。  
+5.  **[インストール済み]** ノードで、 **[Visual C#]**、 **[ワークフロー]** (または **[Visual Basic]**、 **[ワークフロー]**) の順に選択します。 いることを確認**.NET Framework 4.5**でが選択されている、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]バージョンのドロップダウン リスト。 選択**アクティビティ ライブラリ**から、**ワークフロー**  ボックスの一覧です。 型`NumberGuessWorkflowActivities`で、**名前**ボックスし、をクリックして**OK**です。  
   
     > [!NOTE]
-    >  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] で第一言語として設定されているプログラミング言語に応じて、**\[インストール済み\]** ノードの **\[他の言語\]** ノードの下に、**\[Visual C\#\]** ノードまたは **\[Visual Basic\]** ノードが表示されます。  
+    >  プログラミング言語に応じてで第一言語として構成されて[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]、 **Visual c#**または**Visual Basic**ノード可能性があります、**他の言語**内のノード、**インストール**ノード。  
   
-6.  **ソリューション エクスプローラー**で **Activity1.xaml** を右クリックし、**\[削除\]** をクリックします。**\[OK\]** をクリックして確定します。  
+6.  右クリック**Activity1.xaml**で**ソリューション エクスプ ローラー**選択**削除**です。 **[OK]** をクリックして確定します。  
   
-### ReadInt アクティビティを作成するには  
+### <a name="to-create-the-readint-activity"></a>ReadInt アクティビティを作成するには  
   
-1.  **\[プロジェクト\]** メニューの **\[新しい項目の追加\]** をクリックします。  
+1.  選択**新しい項目の追加**から、**プロジェクト**メニュー。  
   
-2.  **\[インストール済み\]** の **\[共通項目\]** ノードで、**\[ワークフロー\]** を選択します。**\[ワークフロー\]** リストで **\[コード アクティビティ\]** を選択します。  
+2.  **インストール**、**共通項目**ノードで、選択**ワークフロー**です。 選択**コード アクティビティ**から、**ワークフロー**  ボックスの一覧です。  
   
-3.  **\[名前\]** ボックスに「`ReadInt`」と入力し、**\[追加\]** をクリックします。  
+3.  型`ReadInt`に、**名前**ボックスし、をクリックして**追加**です。  
   
 4.  既存の `ReadInt` 定義を次の定義に置き換えます。  
   
@@ -54,64 +61,64 @@ caps.handback.revision: 39
      [!code-vb[CFX_WF_GettingStarted#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/readint.vb#1)]  
   
     > [!NOTE]
-    >  `ReadInt` アクティビティは、コード アクティビティ テンプレートの既定値である <xref:System.Activities.CodeActivity> ではなく <xref:System.Activities.NativeActivity%601> から派生します。<xref:System.Activities.CodeActivity%601> は、<xref:System.Activities.Activity%601.Result%2A> 引数を介して公開される 1 つの結果がアクティビティによって提供される場合に使用できますが、<xref:System.Activities.CodeActivity%601> ではブックマークの使用がサポートされていないため、<xref:System.Activities.NativeActivity%601> が使用されます。  
+    >  `ReadInt` アクティビティは、コード アクティビティ テンプレートの既定値である <xref:System.Activities.NativeActivity%601> ではなく <xref:System.Activities.CodeActivity> から派生します。 <xref:System.Activities.CodeActivity%601> は、<xref:System.Activities.Activity%601.Result%2A> 引数を介して公開される 1 つの結果がアクティビティによって提供される場合に使用できますが、<xref:System.Activities.CodeActivity%601> ではブックマークの使用がサポートされていないため、<xref:System.Activities.NativeActivity%601> が使用されます。  
   
-### Prompt アクティビティを作成するには  
+### <a name="to-create-the-prompt-activity"></a>Prompt アクティビティを作成するには  
   
-1.  **Ctrl** キーと **Shift** キーを押しながら **B** キーを押して、プロジェクトをビルドします。プロジェクトをビルドすると、このプロジェクトの `ReadInt` アクティビティを使用して、この手順からカスタム アクティビティをビルドできます。  
+1.  Ctrl キーと Shift キーを押しながら B キーを押して、プロジェクトをビルドします。 プロジェクトをビルドすると、このプロジェクトの `ReadInt` アクティビティを使用して、この手順からカスタム アクティビティをビルドできます。  
   
-2.  **\[プロジェクト\]** メニューの **\[新しい項目の追加\]** をクリックします。  
+2.  選択**新しい項目の追加**から、**プロジェクト**メニュー。  
   
-3.  **\[インストール済み\]** の **\[共通項目\]** ノードで、**\[ワークフロー\]** を選択します。**\[ワークフロー\]** リストで **\[アクティビティ\]** を選択します。  
+3.  **インストール**、**共通項目**ノードで、選択**ワークフロー**です。 選択**アクティビティ**から、**ワークフロー**  ボックスの一覧です。  
   
-4.  **\[名前\]** ボックスに「`Prompt`」と入力し、**\[追加\]** をクリックします。  
+4.  型`Prompt`に、**名前**ボックスし、をクリックして**追加**です。  
   
-5.  **ソリューション エクスプローラー**で **Prompt.xaml** をダブルクリックし、デザイナーにワークフローを表示します \(まだ表示されていない場合\)。  
+5.  ダブルクリックして**Prompt.xaml**で**ソリューション エクスプ ローラー**をまだ表示されていない場合、デザイナーで表示します。  
   
-6.  アクティビティ デザイナーの左下にある **\[引数\]** をクリックし、**\[引数\]** ペインを表示します。  
+6.  をクリックして**引数**を表示するアクティビティ デザイナーの左下横で、**引数**ウィンドウです。  
   
-7.  **\[引数の作成\]** をクリックします。  
+7.  をクリックして**引数の作成**です。  
   
-8.  **\[名前\]** ボックスに「`BookmarkName`」と入力し、**\[方向\]** ボックスの一覧の **\[IN\]** を選択して、**\[引数の型\]** ボックスの一覧の **\[String\]** を選択し、Enter キーを押して引数を保存します。  
+8.  型`BookmarkName`に、**名前**ボックスで、**で**から、**方向**ドロップダウン リストで、**文字列**から**引数の型**ドロップダウン リストと、引数を保存するには ENTER キーを押します。  
   
-9. **\[引数の作成\]** をクリックします。  
+9. をクリックして**引数の作成**です。  
   
-10. 新しく追加した `BookmarkName` 引数の下にある **\[名前\]** ボックスに「`Result`」と入力し、**\[方向\]** ボックスで **\[OUT\]** を選択して、**\[引数の型\]** ドロップダウン リストで **\[Int32\]** を選択し、Enter キーを押します。  
+10. 型`Result`に、**名前**、新たに追加の下にあるボックスを`BookmarkName`引数で、**アウト**から、**方向**ドロップダウン リストで、**Int32**から、**引数の型**ドロップダウン リストとし、ENTER キーを押します。  
   
-11. **\[引数の作成\]** をクリックします。  
+11. をクリックして**引数の作成**です。  
   
-12. **\[名前\]** ボックスに「`Text`」と入力し、**\[方向\]** ボックスで **\[IN\]** を選択して、**\[引数の型\]** ボックスで **\[String\]** を選択し、Enter キーを押して引数を保存します。  
+12. 型`Text`に、**名前**ボックスで、**で**から、**方向**ドロップダウン リストで、**文字列**から**引数の型**ドロップダウン リストと、引数を保存するには ENTER キーを押します。  
   
-     これら 3 つの引数は、次の手順で、`Prompt` アクティビティに追加される <xref:System.Activities.Statements.WriteLine> アクティビティと `ReadInt` アクティビティの対応する引数にバインドされます。  
+     これら 3 つの引数は、次の手順で、<xref:System.Activities.Statements.WriteLine> アクティビティに追加される `ReadInt` アクティビティと `Prompt` アクティビティの対応する引数にバインドされます。  
   
-13. アクティビティ デザイナーの左下にある **\[引数\]** をクリックし、**\[引数\]** ペインを閉じます。  
+13. をクリックして**引数**を閉じる、アクティビティ デザイナーの左下横で、**引数**ウィンドウです。  
   
-14. **ツールボックス**の **\[制御フロー\]** セクションから **Sequence** アクティビティをドラッグし、**Prompt** アクティビティ デザイナーの **\[ここにアクティビティをドロップ\]** ラベルの上にドロップします。  
-  
-    > [!TIP]
-    >  **\[ツールボックス\]** ウィンドウが表示されていない場合は、**\[表示\]** メニューの **\[ツールボックス\]** をクリックします。  
-  
-15. **ツールボックス**の **\[プリミティブ\]** セクションから **WriteLine** アクティビティをドラッグし、**Sequence** アクティビティの **\[ここにアクティビティをドロップ\]** ラベルの上にドロップします。  
-  
-16. **\[プロパティ\]** ウィンドウの **\[C\# の式を入力してください\]** ボックスまたは **\[VB の式を入力してください\]** ボックスに「`Text`」と入力して、**WriteLine** アクティビティの **Text** 引数を **Prompt** アクティビティの **Text** 引数にバインドします。次に Tab キーを 2 回押します。これで、IntelliSense リスト メンバー ウィンドウを閉じ、プロパティから選択を外してプロパティ値を保存します。このプロパティは、アクティビティ自体の **\[C\# の式を入力してください\]** ボックスまたは **\[VB の式を入力してください\]** ボックスに「`Text`」と入力して設定することもできます。  
+14. ドラッグ、**シーケンス**からアクティビティを**制御フロー**のセクションで、**ツールボックス**上にドロップし、**ここにアクティビティをドロップ**のラベル、**プロンプト**アクティビティ デザイナー。  
   
     > [!TIP]
-    >  **\[プロパティ\]** ウィンドウが表示されていない場合は、**\[表示\]** メニューの **\[プロパティ ウィンドウ\]** を選択します。  
+    >  場合、**ツールボックス**ウィンドウが表示されない場合、選択**ツールボックス**から、**ビュー**メニュー。  
   
-17. **ツールボックス**の **\[NumberGuessWorkflowActivities\]** セクションから **ReadInt** アクティビティをドラッグし、**WriteLine** アクティビティの後になるように **Sequence** アクティビティ内にドロップします。  
+15. ドラッグ、 **WriteLine**からアクティビティを**プリミティブ**のセクションで、**ツールボックス**上にドロップし、**ここにアクティビティをドロップ**のラベル、**シーケンス**アクティビティ。  
   
-18. **\[プロパティ\]** ウィンドウで **BookmarkName** 引数の右にある **\[VB の式を入力してください\]** ボックスに「`BookmarkName`」と入力して、**ReadInt** アクティビティの **BookmarkName** 引数を **Prompt** アクティビティの **BookmarkName** 引数にバインドします。次に Tab キーを 2 回押して IntelliSense リスト メンバー ウィンドウを閉じ、プロパティを保存します。  
+16. バインド、**テキスト**の引数、 **WriteLine**アクティビティを**テキスト**の引数、**プロンプト**」と入力してアクティビティ`Text`**c# 式を入力**または**VB の式を入力**ボックスに、**プロパティ**キー 2 回のウィンドウとし、TAB キーを押します。 これで、IntelliSense リスト メンバー ウィンドウを閉じ、プロパティから選択を外してプロパティ値を保存します。 このプロパティは、」と入力して設定することもできます`Text`に、 **c# 式を入力**または**VB の式を入力**アクティビティ自体のボックスです。  
   
-19. **\[プロパティ\]** ウィンドウの **Result** 引数の右にある **\[VB の式を入力してください\]** ボックスに「`Result`」と入力して、**ReadInt** アクティビティの **Result** 引数を **Prompt** アクティビティの **Result** 引数にバインドします。次に Tab キーを 2 回押します。  
+    > [!TIP]
+    >  場合、**プロパティ ウィンドウ**が表示されていない select**プロパティ ウィンドウ**から、**ビュー**メニュー。  
+  
+17. ドラッグ、 **ReadInt**からアクティビティを**NumberGuessWorkflowActivities**のセクションで、**ツールボックス**内にドロップし、**シーケンス**アクティビティの後になるように、 **WriteLine**アクティビティ。  
+  
+18. バインド、 **BookmarkName**の引数、 **ReadInt**アクティビティを**BookmarkName**の引数、**プロンプト** 」と入力してアクティビティ`BookmarkName`に、 **VB の式を入力**の右側のボックスに、 **BookmarkName**の引数、**プロパティ ウィンドウ**、TAB キーを押します 2IntelliSense リスト メンバー ウィンドウを閉じて、プロパティを保存する時間します。  
+  
+19. バインド、**結果**の引数、 **ReadInt**アクティビティを**結果**の引数、**プロンプト**」と入力してアクティビティ`Result`**VB の式を入力**の右側のボックスに、**結果**の引数、**プロパティ ウィンドウ**とし、TAB キーを 2 回押します。  
   
 20. Ctrl キーと Shift キーを押しながら B キーを押して、ソリューションをビルドします。  
   
-     これらのアクティビティを使用してワークフローを作成する手順については、チュートリアルの次の手順「[ワークフローを作成する方法](../../../docs/framework/windows-workflow-foundation//how-to-create-a-workflow.md)」を参照してください。  
+     これらのアクティビティを使用してワークフローを作成する方法については、チュートリアルでは、次の手順を参照してください[する方法: ワークフローを作成](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md)です。  
   
-## 参照  
- <xref:System.Activities.CodeActivity>   
- <xref:System.Activities.NativeActivity%601>   
- [カスタム アクティビティの設計と実装](../../../docs/framework/windows-workflow-foundation//designing-and-implementing-custom-activities.md)   
- [チュートリアル入門](../../../docs/framework/windows-workflow-foundation//getting-started-tutorial.md)   
- [ワークフローを作成する方法](../../../docs/framework/windows-workflow-foundation//how-to-create-a-workflow.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Activities.CodeActivity>  
+ <xref:System.Activities.NativeActivity%601>  
+ [カスタム アクティビティの設計と実装](../../../docs/framework/windows-workflow-foundation/designing-and-implementing-custom-activities.md)  
+ [チュートリアル入門](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md)  
+ [ワークフローを作成する方法](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md)  
  [カスタム アクティビティ デザイナーでの ExpressionTextBox の使用](../../../docs/framework/windows-workflow-foundation/samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)

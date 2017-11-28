@@ -1,96 +1,98 @@
 ---
-title: "方法 : ToolStripMenuItems に拡張機能を追加する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "チェック マーク, 追加 (メニューに)"
-  - "コマンド [Windows フォーム], グループ化 (メニューの)"
-  - "イメージ [Windows フォーム], 追加 (メニューに)"
-  - "ショートカット キー, 表示 (メニューに)"
-  - "メニュー項目, 追加 (チェック マークを)"
-  - "メニュー項目, 追加 (イメージを)"
-  - "メニュー項目, 表示 (アクセス キーを)"
-  - "メニュー項目, 表示 (ショートカット キーを)"
-  - "メニュー項目, 表示 (区切り記号を)"
-  - "メニュー, グループ化 (コマンドを)"
-  - "区切り記号, 表示 (メニューに)"
-  - "ToolStripMenuItem"
-  - "ToolStripMenuItem, 追加 (チェック マークを)"
-  - "ToolStripMenuItem, 追加 (イメージを)"
-  - "ToolStripMenuItem, 表示 (アクセス キーを)"
-  - "ToolStripMenuItem, 表示 (ショートカット キーを)"
-  - "ToolStripMenuItem, 表示 (区分線を)"
-  - "ToolStripSeparator, 表示 (MenuStrips に)"
+title: "方法 : ToolStripMenuItems に拡張機能を追加する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- commands [Windows Forms], grouping on menus
+- check marks [Windows Forms], adding to menus
+- ToolStripMenuItems [Windows Forms], displaying access keys
+- menus [Windows Forms], grouping commands
+- menu items [Windows Forms], displaying shortcut keys
+- ToolStripMenuItems
+- separators [Windows Forms], displaying on menus
+- menu items [Windows Forms], showing separators
+- menu items [Windows Forms], adding check marks
+- ToolStripMenuItems [Windows Forms], adding check marks
+- menu items [Windows Forms], adding images
+- ToolStripSeparators [Windows Forms], displaying on MenuStrips
+- menu items [Windows Forms], displaying access keys
+- ToolStripMenuItems [Windows Forms], displaying shortcut keys
+- ToolStripMenuItems [Windows Forms], adding images
+- keyboard shortcuts [Windows Forms], displaying on menus
+- images [Windows Forms], adding to menus
+- ToolStripMenuItems [Windows Forms], showing separator bars
 ms.assetid: aa5f19bb-b545-4378-bfa6-36ba592f0d7c
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2701094ffcbcf7eeb14444163b995816398876fe
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : ToolStripMenuItems に拡張機能を追加する
-<xref:System.Windows.Forms.MenuStrip> コントロールと <xref:System.Windows.Forms.ContextMenuStrip> コントロールの操作性は、次の方法で向上できます。  
+# <a name="how-to-add-enhancements-to-toolstripmenuitems"></a>方法 : ToolStripMenuItems に拡張機能を追加する
+操作性を強化できます<xref:System.Windows.Forms.MenuStrip>と<xref:System.Windows.Forms.ContextMenuStrip>次の方法でコントロール。  
   
--   チェック マークを追加して、機能を有効にするかどうか \(ワード プロセッサ アプリケーションの余白部分にルーラーを表示するかどうかなど\) を指定したり、現在表示されているファイルをファイル リスト \(**\[ウィンドウ\]** メニューなど\) に示したりします。  
+-   ワード プロセッシング アプリケーションでは、余白部分に、ルーラーを表示するかどうかなどの機能がオンまたはオフになっているかどうかを指定する、またはどのファイルの一覧では、対象のファイルなど、表示されているを示すためにチェック マークを追加、**ウィンドウ**メニューです。  
   
 -   メニュー コマンドを視覚的に表現するイメージを追加します。  
   
--   ショートカット キーを表示して、マウスの代わりにキーボードを使ってコマンドを実行できるようにします。  たとえば、Ctrl キーを押しながら C キーを押すと、**Copy** コマンドが実行されます。  
+-   コマンドを実行するために、マウスの代わりにキーボードを提供するショートカット キーを表示します。 たとえば、実行 ctrl キーを押しながら C キーを押して、**コピー**コマンド。  
   
--   アクセス キーを表示して、マウスの代わりにキーボードを使ってメニューを移動できるようにします。  たとえば、Alt キーを押しながら F キーを押すと、**\[ファイル\]** メニューが選択されます。  
+-   メニューのナビゲーションのマウス、キーボードの代わりを提供するアクセス キーを表示します。 たとえば、選択 ALT キーを押しながら F キーを押すと、**ファイル**メニュー。  
   
--   区分線を表示して、関連するコマンドをグループ化し、メニューを読みやすくします。  
+-   関連するコマンドをグループ化し、メニューを読みやすくのセパレーター バーを表示します。  
   
-### メニュー コマンドにチェック マークを表示するには  
+### <a name="to-display-a-check-mark-on-a-menu-command"></a>メニュー コマンドにチェック マークを表示するには  
   
--   <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> プロパティを `true` に設定します。  
+-   設定の<xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A>プロパティを`true`です。  
   
-     これにより、<xref:System.Windows.Forms.ToolStripMenuItem.CheckState%2A> プロパティも `true` に設定されます。  この手順を使用するのは、メニュー コマンドを選択していなくても、既定でチェック マークを付けて表示する場合のみです。  
+     これも設定されている、<xref:System.Windows.Forms.ToolStripMenuItem.CheckState%2A>プロパティを`true`です。 既定では、選択されているかどうかに関係なく、チェック マークを付けて表示するメニュー コマンドを追加する場合にのみ、この手順を使用します。  
   
-### クリックするたびに状態が切り替わるチェック マークを表示するには  
+### <a name="to-display-a-check-mark-that-changes-state-with-each-click"></a>クリックするたびに状態を変更するチェック マークを表示するには  
   
--   メニュー コマンドの <xref:System.Windows.Forms.ToolStripMenuItem.CheckOnClick%2A> プロパティを `true` に設定します。  
+-   メニュー コマンドの設定<xref:System.Windows.Forms.ToolStripMenuItem.CheckOnClick%2A>プロパティを`true`です。  
   
-### メニュー コマンドにイメージを追加するには  
+### <a name="to-add-an-image-to-a-menu-command"></a>メニュー コマンドにイメージを追加するには  
   
--   メニュー コマンドの <xref:System.Windows.Forms.ToolStripItem.Image%2A> プロパティにイメージの名前を設定します。  このメニュー コマンドの <xref:System.Windows.Forms.ToolStripItemDisplayStyle> プロパティが <xref:System.Windows.Forms.ToolStripItemDisplayStyle> または <xref:System.Windows.Forms.ToolStripItemDisplayStyle> に設定されている場合は、イメージを表示できません。  
-  
-> [!NOTE]
->  イメージの余白には、チェック マークを表示することもできます。  また、イメージの <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> プロパティを `true` に設定すると、実行時にイメージの周りにハッチングされた境界線が表示されます。  
-  
-### メニュー コマンドのショートカット キーを表示するには  
-  
--   メニュー コマンドの <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys%2A> プロパティに適切なキーの組み合わせ \(たとえば、**\[開く**\] メニュー コマンドの場合には、Ctrl \+ O など\) を設定し、<xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A> プロパティを `true` に設定します。  
-  
-### メニュー コマンドのカスタム ショートカット キーを表示するには  
-  
--   メニュー コマンドの <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeyDisplayString%2A> プロパティに適切なキーの組み合わせ \(Shift \+ Ctrl \+ O ではなく、Ctrl \+ Shift \+ O など\) を設定し、<xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A> プロパティを `true` に設定します。  
-  
-### メニュー コマンドのアクセス キーを表示するには  
-  
--   メニュー コマンドの <xref:System.Windows.Forms.ToolStripItem.Text%2A> プロパティを設定するときは、アクセス キーとして下線を付ける文字の前にアンパサンド \(&\) を入力します。  たとえば、メニュー項目の <xref:System.Windows.Forms.ToolStripItem.Text%2A> プロパティに「`開く(&O)`」と入力すると、メニュー コマンドには "開く\(**O**\)" と表示されます。  
-  
-     このメニュー コマンドに移動するには、Alt キーを押して <xref:System.Windows.Forms.MenuStrip> にフォーカスを移し、目的のメニューのアクセス キーを押します。  メニューが開き、アクセス キーが設定されたメニュー項目が表示されたら、アクセス キーを押すだけで目的のメニュー コマンドを選択できます。  
+-   メニュー コマンドの設定<xref:System.Windows.Forms.ToolStripItem.Image%2A>プロパティをイメージの名前にします。 場合、<xref:System.Windows.Forms.ToolStripItemDisplayStyle>このメニュー コマンドのプロパティに設定されて<xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text>または<xref:System.Windows.Forms.ToolStripItemDisplayStyle.None>イメージを表示することはできません。  
   
 > [!NOTE]
->  同じメニュー システムに Alt \+ F を 2 回定義するなど、アクセス キーを重複して定義することは避けてください。  重複するアクセス キーの選択順序は保証されません。  
+>  イメージの余白も表示できます、チェック マークできます。 また、設定することができます、<xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A>するイメージのプロパティ`true`、し、イメージは、実行時にハッチ境界線と共に表示されます。  
   
-### メニュー コマンドの間に区分線を表示するには  
+### <a name="to-display-a-shortcut-key-for-a-menu-command"></a>メニュー コマンドのショートカット キーを表示するには  
   
--   <xref:System.Windows.Forms.MenuStrip> と、それに含める項目を定義した後に、<xref:System.Windows.Forms.ToolStripItemCollection.AddRange%2A> メソッドまたは <xref:System.Windows.Forms.ToolStripItemCollection.Add%2A> メソッドを使用して、メニュー コマンドと <xref:System.Windows.Forms.ToolStripSeparator> コントロールを任意の順序で <xref:System.Windows.Forms.MenuStrip> に追加します。  
+-   メニュー コマンドの設定<xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys%2A>プロパティの CTRL + O など、目的のキーボードの組み合わせを**開く**メニュー コマンド、およびセット、<xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A>プロパティを`true`です。  
   
-     \[Visual Basic\]  
+### <a name="to-display-custom-shortcut-keys-for-a-menu-command"></a>メニュー コマンドのカスタム ショートカット キーを表示するには  
   
-    ```  
+-   メニュー コマンドの設定<xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeyDisplayString%2A>CTRL + SHIFT + O はなく、shift キーを押しながら CTRL + O、およびセットなど、目的のキーボードの組み合わせにプロパティ、<xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A>プロパティを`true`です。  
+  
+### <a name="to-display-an-access-key-for-a-menu-command"></a>メニュー コマンドのアクセス キーを表示するには  
+  
+-   設定すると、<xref:System.Windows.Forms.ToolStripItem.Text%2A>メニュー コマンドは、プロパティには、アンパサンドを入力してください (&) は、アクセス キーとして下線が引か 文字の前にします。 たとえば、入力`&Open`として、<xref:System.Windows.Forms.ToolStripItem.Text%2A>として表示されるメニュー コマンド、メニュー項目のプロパティと、 **O**ペン。  
+  
+     このメニューにコマンドを移動するにフォーカスを与える alt キーを押して、<xref:System.Windows.Forms.MenuStrip>メニュー名のアクセス キーを押します。 メニューが開き、アクセス キーを持つ項目を表示、ときにのみ、メニュー コマンドを選択するアクセス キーを押す必要があります。  
+  
+> [!NOTE]
+>  メニューに同じシステムで 2 回 ALT キーを押しながら F キーを定義するなどの重複するアクセス キーを定義しないようにします。 重複するアクセス キーの選択順序を保証できません。  
+  
+### <a name="to-display-a-separator-bar-between-menu-commands"></a>メニュー コマンドの間の区切り線を表示するには  
+  
+-   定義した後、<xref:System.Windows.Forms.MenuStrip>および登録するには、項目を使用して、<xref:System.Windows.Forms.ToolStripItemCollection.AddRange%2A>または<xref:System.Windows.Forms.ToolStripItemCollection.Add%2A>とメニュー コマンドを追加するメソッドと<xref:System.Windows.Forms.ToolStripSeparator>コントロールを<xref:System.Windows.Forms.MenuStrip>順序で。  
+  
+    ```vb  
     ' This code adds a top-level File menu to the MenuStrip.  
     Me.menuStrip1.Items.Add(New ToolStripMenuItem() _  
     {Me.fileToolStripMenuItem})  
@@ -102,12 +104,9 @@ caps.handback.revision: 10
     ToolStripMenuItem() {Me.newToolStripMenuItem, _  
     Me.openToolStripMenuItem, Me.toolStripSeparator1, _  
     Me.saveToolStripMenuItem, Me.exitToolStripMenuItem})  
-  
     ```  
   
-     \[C\#\]  
-  
-    ```  
+    ```csharp  
     // This code adds a top-level File menu to the MenuStrip.  
     this.menuStrip1.Items.Add(new ToolStripItem[]_  
     {this.fileToolStripMenuItem});  
@@ -124,7 +123,7 @@ caps.handback.revision: 10
     this.exitToolStripMenuItem});  
     ```  
   
-## 参照  
- <xref:System.Windows.Forms.MenuStrip>   
- <xref:System.Windows.Forms.ToolStripMenuItem>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.MenuStrip>  
+ <xref:System.Windows.Forms.ToolStripMenuItem>  
  [MenuStrip コントロールの概要](../../../../docs/framework/winforms/controls/menustrip-control-overview-windows-forms.md)

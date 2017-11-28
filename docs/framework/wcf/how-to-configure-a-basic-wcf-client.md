@@ -1,36 +1,35 @@
 ---
-title: "方法 : 基本的な Windows Communication Foundation クライアントを構成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "WCF クライアント [WCF], 構成"
+title: "方法 : 基本的な Windows Communication Foundation クライアントを構成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: WCF clients [WCF], configuring
 ms.assetid: d067b86d-afb0-47bf-94f6-45180a3d8d78
-caps.latest.revision: 47
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 47
+caps.latest.revision: "47"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1f4d6b5386e82a2052182ba3f4a929de13b27c22
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 基本的な Windows Communication Foundation クライアントを構成する
-これは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの作成に必要な 6 つのタスクのうち、5 番目のタスクです。  6 つのすべてのタスクの概要については、「[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)」を参照してください。  
+# <a name="how-to-configure-a-basic-windows-communication-foundation-client"></a>方法 : 基本的な Windows Communication Foundation クライアントを構成する
+これは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの作成に必要な 6 つのタスクのうち、5 番目のタスクです。 タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  
   
- ここでは、[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] の "サービス参照の追加" 機能、または[ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) を使用して生成されたクライアント構成ファイルについて説明します。  クライアントを構成するには、クライアントがサービスにアクセスするために使用するエンドポイントを指定します。  エンドポイントには、アドレス、バインディング、およびコントラクトがあり、クライアントを構成する過程でそれぞれを指定する必要があります。  
+ このトピックのサービス参照の追加機能を使用して生成されたクライアント構成ファイルを disuccess[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]または[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 クライアントを構成するには、クライアントがサービスにアクセスするために使用するエンドポイントを指定します。 エンドポイントには、アドレス、バインディング、およびコントラクトがあり、クライアントを構成する過程でそれぞれを指定する必要があります。  
   
-### Windows Communication Foundation クライアントを構成するには  
+### <a name="to-configure-a-windows-communication-foundation-client"></a>Windows Communication Foundation クライアントを構成するには  
   
-1.  GettingStartedClient プロジェクトから生成された構成ファイル \(App.config\) を開きます。  生成された構成ファイルを次の例に示します。  [\<system.serviceModel\>](../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)[\<endpoint\> セクション内に](http://msdn.microsoft.com/ja-jp/13aa23b7-2f08-4add-8dbf-a99f8127c017) 要素があるのがわかります。  
+1.  GettingStartedClient プロジェクトから生成された構成ファイル (App.config) を開きます。 生成された構成ファイルを次の例に示します。 下にある、 [ \<system.serviceModel >](../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)セクションで、検索、 [\<エンドポイント >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素。  
   
-    ```  
+    ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
     <configuration>  
         <startup>   
@@ -55,39 +54,18 @@ caps.handback.revision: 47
                 </endpoint>  
             </client>  
         </system.serviceModel>  
-    </configuration><?xml version="1.0" encoding="utf-8" ?>  
-    <configuration>  
-        <startup>   
-            <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5,Profile=Client" />  
-        </startup>  
-        <system.serviceModel>  
-            <bindings>  
-                <wsHttpBinding>  
-                    <binding name="WSHttpBinding_ICalculator" />  
-                </wsHttpBinding>  
-            </bindings>  
-            <client>  
-                <endpoint address="http://localhost:8000/ServiceModelSamples/Service/CalculatorService"  
-                    binding="wsHttpBinding" bindingConfiguration="WSHttpBinding_ICalculator"  
-                    contract="ServiceReference1.ICalculator" name="WSHttpBinding_ICalculator">  
-                    <identity>  
-                        <userPrincipalName value="migree@redmond.corp.microsoft.com" />  
-                    </identity>  
-                </endpoint>  
-            </client>  
-        </system.serviceModel>  
     </configuration>   
     ```  
   
-     この例では、アドレス http:\/\/localhost:8000\/ServiceModelSamples\/Service\/CalculatorService に配置されたサービスにアクセスするために、クライアントが使用するエンドポイントを構成しています。  
+     この例では、アドレス http://localhost:8000/ServiceModelSamples/Service/CalculatorService に配置されたサービスにアクセスするために、クライアントが使用するエンドポイントを構成しています。  
   
-     endpoint 要素は、`ServiceReference1.ICalculator` サービス コントラクトが、WCF クライアントと WCF サービス間の通信に使用されるように指定します。  WCF チャネルはシステム標準の <xref:System.ServiceModel.WsHttpBinding> で構成されます。  このコントラクトは、Visual Studio の "サービス参照の追加" を使用して生成されました。  基本的には、GettingStartedLib プロジェクトで定義されているコントラクトのコピーです。  <xref:System.ServiceModel.WsHttpBinding> バインディングは、トランスポートとして HTTP を指定し、相互運用可能なセキュリティ、およびその他の構成詳細を指定します。  
+     endpoint 要素は、`ServiceReference1.ICalculator` サービス コントラクトが、WCF クライアントと WCF サービス間の通信に使用されるように指定します。 WCF チャネルは、システム指定の構成 <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`>。 このコントラクトは、Visual Studio の "サービス参照の追加" を使用して生成されました。 基本的には、GettingStartedLib プロジェクトで定義されているコントラクトのコピーです。 <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> バインディングでは、トランスポート、相互運用可能なセキュリティ、およびその他の構成の詳細として HTTP を指定します。  
   
-2.  この構成で生成されたクライアントを使用する方法[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[方法 : クライアントを使用する](../../../docs/framework/wcf/how-to-use-a-wcf-client.md)」を参照してください。  
+2.  [!INCLUDE[crabout](../../../includes/crabout-md.md)]この構成では、生成されたクライアントを使用して、表示する方法[する方法: クライアントを使用して](../../../docs/framework/wcf/how-to-use-a-wcf-client.md)です。  
   
-## 参照  
- [サービスとクライアントを構成するためのバインディングの使用](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)   
- [ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)   
- [方法 : クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)   
- [概要](../../../docs/framework/wcf/samples/getting-started-sample.md)   
- [自己ホスト](../../../docs/framework/wcf/samples/self-host.md)
+## <a name="see-also"></a>関連項目  
+ [サービスとクライアントを構成するためのバインディングの使用](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
+ [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)  
+ [方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  
+ [はじめに](../../../docs/framework/wcf/samples/getting-started-sample.md)  
+ [自己ホストします。](../../../docs/framework/wcf/samples/self-host.md)

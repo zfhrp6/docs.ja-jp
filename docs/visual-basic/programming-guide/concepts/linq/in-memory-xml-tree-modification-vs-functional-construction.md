@@ -1,31 +1,27 @@
 ---
-title: "メモリ内の XML ツリーの変更と関数型構築 (LINQ to XML) (Visual Basic) |Microsoft ドキュメント"
+title: "メモリ内の XML ツリーの変更と関数型構築 (LINQ to XML) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: d91c4ebf-6549-43cc-9961-26d4a82f722b
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 0456d221f01573e6ef1c67a3e0d1db585e6f3b0c
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 3652933a5d25b298167f54525800eceee16264e8
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml-visual-basic"></a>メモリ内の XML ツリーの変更と関数型構築 (LINQ to XML) (Visual Basic)
-XML ドキュメントの構造を変更する場合は、XML ツリーを直接変更するのが従来の方法です。 一般的なアプリケーションでは、ドキュメントを DOM や [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] などのデータ ストアに読み込み、プログラミング インターフェイスを使用してノードの挿入、削除、または内容変更を行い、その後に XML をファイルに保存するか、またはネットワーク上に送信します。  
+XML ドキュメントの構造を変更する場合は、XML ツリーを直接変更するのが従来の方法です。 一般的なアプリケーションでは、ドキュメントを DOM や [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] などのデータ ストアに読み込み、プログラミング インターフェイスを使用してノードの挿入、削除、または内容変更を行い、その後に XML をファイルに保存するか、またはネットワーク上に送信します。  
   
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]では、別の方法として多くのシナリオで役に立つ*: 関数型構築*します。 関数型構築では、データの変更が、データ ストアの詳細な操作としてではなく変換の問題として扱われます。 データの表現をある形式から別の形式に効率よく変換できれば、データ ストアを何らかの方法で操作して別の構造にする場合と同じ結果を得られます。 クエリの結果を渡す関数型構築の方法で重要です<xref:System.Xml.Linq.XDocument>と<xref:System.Xml.Linq.XElement>コンス トラクター</xref:System.Xml.Linq.XElement> </xref:System.Xml.Linq.XDocument> 。  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] では、多くのシナリオで役立つもう 1 つの方法として、*関数型構築*を使用できます。 関数型構築では、データの変更が、データ ストアの詳細な操作としてではなく変換の問題として扱われます。 データの表現をある形式から別の形式に効率よく変換できれば、データ ストアを何らかの方法で操作して別の構造にする場合と同じ結果を得られます。 関数型構築の方法で重要なのは、クエリの結果を <xref:System.Xml.Linq.XDocument> コンストラクターと <xref:System.Xml.Linq.XElement> コンストラクターに渡す処理です。  
   
  多くの場合、変換コードは、データ ストアを操作する場合に比べてはるかに短時間で作成でき、堅牢性と保守性にも優れています。 この場合、変換コードによる方法では、より大きな処理能力を必要とする可能性はありますが、効果的にデータを変更できます。 開発者が関数型の方法に精通していれば、ほとんどの場合、作成されるコードもよりわかりやすくなります。 ツリーの各部分を変更するコードが簡単に見つかります。  
   

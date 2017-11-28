@@ -1,24 +1,28 @@
 ---
-title: "ModelItem 編集コンテキストの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ModelItem 編集コンテキストの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 7f9f1ea5-0147-4079-8eca-be94f00d3aa1
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: fde8bf45e01f8e3fede04c08d63177271a4a6faf
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ModelItem 編集コンテキストの使用
-<xref:System.Activities.Presentation.Model.ModelItem> 編集コンテキストは、ホスト アプリケーションがデザイナーとの通信に使用するオブジェクトです。<xref:System.Activities.Presentation.EditingContext> は使用できる 2 個のメソッド <xref:System.Activities.Presentation.EditingContext.Items%2A> と <xref:System.Activities.Presentation.EditingContext.Services%2A>を公開します。  
+# <a name="using-the-modelitem-editing-context"></a>ModelItem 編集コンテキストの使用
+<xref:System.Activities.Presentation.Model.ModelItem> 編集コンテキストは、ホスト アプリケーションがデザイナーとの通信に使用するオブジェクトです。 <xref:System.Activities.Presentation.EditingContext> は使用できる 2 つのメソッド <xref:System.Activities.Presentation.EditingContext.Items%2A> と <xref:System.Activities.Presentation.EditingContext.Services%2A> を公開します。  
   
-## Items コレクション  
- <xref:System.Activities.Presentation.EditingContext.Items%2A> コレクションは、ホストとデザイナー間で共有されるデータ、またはすべてのデザイナーで使用可能なデータへのアクセスに使用されます。このコレクションには、<xref:System.Activities.Presentation.ContextItemManager> クラスを介してアクセスされる次の機能があります。  
+## <a name="the-items-collection"></a>Items コレクション  
+ <xref:System.Activities.Presentation.EditingContext.Items%2A> コレクションは、ホストとデザイナー間で共有されるデータ、またはすべてのデザイナーで使用可能なデータへのアクセスに使用されます。 このコレクションには、<xref:System.Activities.Presentation.ContextItemManager> クラスを介してアクセスされる次の機能があります。  
   
 1.  <xref:System.Activities.Presentation.ContextItemManager.GetValue%2A>  
   
@@ -28,8 +32,8 @@ caps.handback.revision: 2
   
 4.  <xref:System.Activities.Presentation.ContextItemManager.SetValue%2A>  
   
-## Services コレクション  
- <xref:System.Activities.Presentation.EditingContext.Services%2A> コレクションは、デザイナーとホスト間の対話に使用されるサービス、またはすべてのデザイナーで使用されるサービスへのアクセスに使用されます。このコレクションには、重要な次のメソッドがあります。  
+## <a name="the-services-collection"></a>Services コレクション  
+ <xref:System.Activities.Presentation.EditingContext.Services%2A> コレクションは、デザイナーとホスト間の対話に使用されるサービス、またはすべてのデザイナーで使用されるサービスへのアクセスに使用されます。 このコレクションには、重要な次のメソッドがあります。  
   
 1.  <xref:System.Activities.Presentation.ServiceManager.Publish%2A>  
   
@@ -39,18 +43,17 @@ caps.handback.revision: 2
   
 4.  <xref:System.Activities.Presentation.ServiceManager.GetService%2A>  
   
-## デザイナーへのアクティビティの割り当て  
+## <a name="assigning-a-designer-an-activity"></a>デザイナーへのアクティビティの割り当て  
  アクティビティで使用されるデザイナーを指定するには、Designer 属性が使用されます。  
   
 ```  
 [Designer(typeof(MyClassDesigner))]  
 public sealed class MyClass : CodeActivity  
 {  
-  
 ```  
   
-## サービスの作成  
- デザイナーとホスト間の情報のコンジットとして機能するサービスを作成するには、インターフェイスと実装を作成する必要があります。インターフェイスはサービスのメンバーを定義するために <xref:System.Activities.Presentation.ServiceManager.Publish%2A> メソッドによって使用され、実装にはサービスのロジックが含まれます。次のコード例では、サービス インターフェイスと実装が作成されます。  
+## <a name="creating-a-service"></a>サービスの作成  
+ デザイナーとホスト間の情報のコンジットとして機能するサービスを作成するには、インターフェイスと実装を作成する必要があります。 インターフェイスはサービスのメンバーを定義するために <xref:System.Activities.Presentation.ServiceManager.Publish%2A> メソッドによって使用され、実装にはサービスのロジックが含まれます。 次のコード例では、サービス インターフェイスと実装が作成されます。  
   
 ```  
 public interface IMyService  
@@ -69,18 +72,17 @@ public interface IMyService
             } ;  
         }  
     }  
-  
 ```  
   
-## サービスの公開  
+## <a name="publishing-a-service"></a>サービスの公開  
  デザイナーでサービスを使用するには、最初に <xref:System.Activities.Presentation.ServiceManager.Publish%2A> メソッドを使用してホストで公開する必要があります。  
   
 ```  
 this.Context.Services.Publish<IMyService>(new MyServiceImpl);  
 ```  
   
-## サービスの定期受信  
- デザイナーは、<xref:System.Activities.Presentation.WorkflowViewElement.OnModelItemChanged%2A> メソッドの <xref:System.Activities.Presentation.ServiceManager.Subscribe%2A> メソッドを使用してサービスにアクセスします。次のコード スニペットは、サービスを定期受信する方法を示しています。  
+## <a name="subscribing-to-a-service"></a>サービスの定期受信  
+ デザイナーは、<xref:System.Activities.Presentation.ServiceManager.Subscribe%2A> メソッドの <xref:System.Activities.Presentation.WorkflowViewElement.OnModelItemChanged%2A> メソッドを使用してサービスにアクセスします。 次のコード スニペットは、サービスを定期受信する方法を示しています。  
   
 ```  
 protected override void OnModelItemChanged(object newItem)  
@@ -96,18 +98,17 @@ protected override void OnModelItemChanged(object newItem)
         subscribed = true;   
     }  
 }  
-  
 ```  
   
-## Items コレクションを使用したデータの共有  
- Items コレクションの使用は Services コレクションの使用と似ていますが、Publish の代わりに <xref:System.Activities.Presentation.ContextItemManager.SetValue%2A> が使用されます。このコレクションは、複雑な機能よりも、デザイナーとホスト間での単純なデータの共有に適しています。  
+## <a name="sharing-data-using-the-items-collection"></a>Items コレクションを使用したデータの共有  
+ Items コレクションの使用は Services コレクションの使用と似ていますが、Publish の代わりに <xref:System.Activities.Presentation.ContextItemManager.SetValue%2A> が使用されます。 このコレクションは、複雑な機能よりも、デザイナーとホスト間での単純なデータの共有に適しています。  
   
-## EditingContext ホスト項目およびサービス  
+## <a name="editingcontext-host-items-and-services"></a>EditingContext ホスト項目およびサービス  
  .NET Framework には、編集コンテキストを介してアクセスされる多数の項目とサービスが組み込まれています。  
   
  項目:  
   
--   <xref:System.Activities.Presentation.Hosting.AssemblyContextControlItem>: ワークフロー内でコントロール \(式エディターなど\) に使用される参照先ローカル アセンブリのリストを管理します。  
+-   <xref:System.Activities.Presentation.Hosting.AssemblyContextControlItem>: ワークフロー内でコントロール (式エディターなど) に使用される参照先ローカル アセンブリのリストを管理します。  
   
 -   <xref:System.Activities.Presentation.Hosting.ReadOnlyState>: デザイナーが読み取り専用状態かどうかを示します。  
   
@@ -125,17 +126,17 @@ protected override void OnModelItemChanged(object newItem)
   
 -   <xref:System.Activities.Presentation.IActivityToolboxService>: ツールボックスの内容を更新できるようにします。  
   
--   <xref:System.Activities.Presentation.Hosting.ICommandService>: デザイナー コマンド \(コンテキスト メニューなど\) をカスタム提供サービスの実装と統合するために使用します。  
+-   <xref:System.Activities.Presentation.Hosting.ICommandService>: デザイナー コマンド (コンテキスト メニューなど) をカスタム提供サービスの実装と統合するために使用します。  
   
 -   <xref:System.Activities.Presentation.Debug.IDesignerDebugView>: デザイナー デバッガーの機能を提供します。  
   
--   <xref:System.Activities.Presentation.View.IExpressionEditorService>: \[式エディター\] ダイアログへのアクセスを可能にします。  
+-   <xref:System.Activities.Presentation.View.IExpressionEditorService>: [式エディター] ダイアログへのアクセスを可能にします。  
   
 -   <xref:System.Activities.Presentation.IIntegratedHelpService>: デザイナーに統合ヘルプ機能を提供します。  
   
 -   <xref:System.Activities.Presentation.Validation.IValidationErrorService>:  <xref:System.Activities.Presentation.Validation.IValidationErrorService.ShowValidationErrors%2A> を使用した検証エラーへのアクセスを可能にします。  
   
--   <xref:System.Activities.Presentation.IWorkflowDesignerStorageService>: データを格納および取得するための内部サービスを提供します。このサービスは、.Net Framework によって内部的に使用されます。外部での使用を目的としていません。  
+-   <xref:System.Activities.Presentation.IWorkflowDesignerStorageService>: データを格納および取得するための内部サービスを提供します。 このサービスは、.Net Framework によって内部的に使用されます。外部での使用を目的としていません。  
   
 -   <xref:System.Activities.Presentation.IXamlLoadErrorService>:  <xref:System.Activities.Presentation.IXamlLoadErrorService.ShowXamlLoadErrors%2A> を使用した XAML 読み込みエラー コレクションへのアクセスを可能にします。  
   
@@ -151,4 +152,4 @@ protected override void OnModelItemChanged(object newItem)
   
 -   <xref:System.Activities.Presentation.View.VirtualizedContainerService>: 仮想コンテナーの UI 動作をカスタマイズするために使用します。  
   
--   <xref:System.Activities.Presentation.Hosting.WindowHelperService>: イベント通知のデリゲートを登録および登録解除するために使用します。ウィンドウ所有者も設定できます。
+-   <xref:System.Activities.Presentation.Hosting.WindowHelperService>: イベント通知のデリゲートを登録および登録解除するために使用します。 ウィンドウ所有者も設定できます。

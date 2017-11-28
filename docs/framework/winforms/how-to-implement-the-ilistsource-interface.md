@@ -1,31 +1,35 @@
 ---
-title: "方法 : IListSource インターフェイスを実装する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "データ バインド, 実装"
-  - "IListSource インターフェイス"
+title: "方法 : IListSource インターフェイスを実装する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- data binding [Windows Forms], implementing
+- IListSource interface
 ms.assetid: 63ce27aa-2e23-4fbd-8228-0c1726f6c421
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 149b6a421100d2b6f678e89f6b3ebf6b276dc4a1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : IListSource インターフェイスを実装する
-<xref:System.Collections.IList> を実装する代わりに別の場所からリストを提供する、バインドできるクラスを作成するには、<xref:System.ComponentModel.IListSource> インターフェイスを実装します。  
+# <a name="how-to-implement-the-ilistsource-interface"></a>方法 : IListSource インターフェイスを実装する
+実装、<xref:System.ComponentModel.IListSource>インターフェイスを実装しないバインド可能なクラスを作成する<xref:System.Collections.IList>が、別の場所からリストを提供します。  
   
-## 使用例  
- <xref:System.ComponentModel.IListSource> インターフェイスを実装する方法を次のコード例に示します。  `EmployeeListSource` というコンポーネントは、<xref:System.ComponentModel.IListSource.GetList%2A> メソッドを実装することにより、データ バインディングの <xref:System.Collections.IList> を公開します。  
+## <a name="example"></a>例  
+ 次のコード例は、実装する方法を示します、<xref:System.ComponentModel.IListSource>インターフェイスです。 という名前のコンポーネント`EmployeeListSource`公開、<xref:System.Collections.IList>を実装してデータ バインディング、<xref:System.ComponentModel.IListSource.GetList%2A>メソッドです。  
   
  [!code-csharp[System.ComponentModel.IListSource#1](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.IListSource/CS/EmployeeListSource.cs#1)]
  [!code-vb[System.ComponentModel.IListSource#1](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.IListSource/VB/EmployeeListSource.vb#1)]  
@@ -39,14 +43,14 @@ caps.handback.revision: 6
  [!code-csharp[System.ComponentModel.IListSource#1000](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.IListSource/CS/Form1.cs#1000)]
  [!code-vb[System.ComponentModel.IListSource#1000](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.IListSource/VB/Form1.vb#1000)]  
   
-## コードのコンパイル  
- この例には、次の項目が必要です。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ この例で必要な要素は次のとおりです。  
   
--   System.Drawing アセンブリと System.Windows.Forms アセンブリへの参照。  
+-   System.Drawing アセンブリおよび System.Windows.Forms アセンブリへの参照。  
   
-## 参照  
- <xref:System.ComponentModel.IListSource>   
- <xref:System.ComponentModel.ITypedList>   
- <xref:System.ComponentModel.BindingList%601>   
- <xref:System.ComponentModel.IBindingList>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.ComponentModel.IListSource>  
+ <xref:System.ComponentModel.ITypedList>  
+ <xref:System.ComponentModel.BindingList%601>  
+ <xref:System.ComponentModel.IBindingList>  
  [データ連結と Windows フォーム](../../../docs/framework/winforms/data-binding-and-windows-forms.md)

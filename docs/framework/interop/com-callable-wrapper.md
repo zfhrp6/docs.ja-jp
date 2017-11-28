@@ -5,15 +5,12 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - CCW
 - COM interop, COM wrappers
@@ -22,21 +19,20 @@ helpviewer_keywords:
 - interoperation with unmanaged code, COM wrappers
 - COM callable wrappers
 ms.assetid: d04be3b5-27b9-4f5b-8469-a44149fabf78
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cbf466fb52af94d51babb30fdee85f4a056298c6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 874550511ed04427003f6fd54fdd97b3001356fc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="com-callable-wrapper"></a>COM 呼び出し可能ラッパー
 COM クライアントが .NET オブジェクトを呼び出すと、共通言語ランタイムがマネージ オブジェクトとそのオブジェクトのための COM 呼び出し可能ラッパー (CCW: COM Callable Wrapper) を作成します。 COM クライアントは .NET オブジェクトを直接参照できないため、CCW をマネージ オブジェクトのプロキシとして使用します。  
   
- ランタイムは、サービスを要求している COM クライアントの数に関係なく、1 つのマネージ オブジェクトに対して 1 つの CCW を作成します。 次の図に示すように、複数の COM クライアントが、INew インターフェイスを公開する CCW への参照を保持できます。 CCW は、INew インターフェイスを実装するマネージ オブジェクトへの 1 つの参照を保持し、ガベージ コレクションされます。 COM クライアントと .NET クライアントは、同一のマネージ オブジェクトに対して同時に要求できます。  
+ ランタイムは、サービスを要求している COM クライアントの数に関係なく、1 つのマネージ オブジェクトに対して 1 つの CCW を作成します。 次の図に示すように、複数の COM クライアントが、INew インターフェイスを公開する CCW への参照を保持できます。 CCW は、INew インターフェイスを実装するマネージ オブジェクトへの 1 つの参照を保持し、ガベージ コレクションされます。 COM クライアントと .NET クライアントは、同一のマネージ オブジェジェクトに対して同時に要求できます。  
   
  ![COM 呼び出し可能ラッパー](../../../docs/framework/interop/media/ccw.gif "ccw")  
 COM 呼び出し可能ラッパー経由の .NET オブジェクト アクセス  
@@ -189,11 +185,10 @@ public class LoanApp : IAnother {
  自動的に生成されたデュアル インターフェイスが適切な場合もまれにありますが、より多くの場合、それはバージョンに関連する複雑さを生じさせます。 たとえば、派生クラスのクラス インターフェイスを使用する COM クライアントは、基本クラスが変更されると簡単に中断します。 サード パーティが基本クラスを提供するとき、クラス インターフェイスのレイアウトを自分で制御することはできません。 さらに、ディスパッチ専用インターフェイスとは異なり、デュアル インターフェイス (**ClassInterface.AutoDual**) は、エクスポートされたタイプ ライブラリ内にクラス インターフェイスの説明を提供します。 そのような説明は、遅延バインディングのクライアントが実行時に DISPID をキャッシュすることを促進します。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>   
- [COM 呼び出し可能ラッパー](../../../docs/framework/interop/com-callable-wrapper.md)   
- [COM ラッパー](../../../docs/framework/interop/com-wrappers.md)   
- [COM への .NET Framework コンポーネントの公開](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)   
- [COM インターフェイスのシミュレート](http://msdn.microsoft.com/en-us/ad2ab959-e2be-411b-aaff-275c3fba606c)   
- [要件 (相互運用のための .NET 型の)](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md)   
+ <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>  
+ [COM 呼び出し可能ラッパー](../../../docs/framework/interop/com-callable-wrapper.md)  
+ [COM ラッパー](../../../docs/framework/interop/com-wrappers.md)  
+ [COM への .NET Framework コンポーネントの公開](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
+ [COM インターフェイスのシミュレート](http://msdn.microsoft.com/en-us/ad2ab959-e2be-411b-aaff-275c3fba606c)  
+ [要件 (相互運用のための .NET 型の)](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md)  
  [ランタイム呼び出し可能ラッパー](../../../docs/framework/interop/runtime-callable-wrapper.md)
-

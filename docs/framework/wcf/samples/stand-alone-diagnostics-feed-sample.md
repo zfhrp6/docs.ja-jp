@@ -1,25 +1,28 @@
 ---
-title: "スタンドアロン診断フィードのサンプル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "スタンドアロン診断フィードのサンプル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d31c6c1f-292c-4d95-8e23-ed8565970ea5
-caps.latest.revision: 26
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 26
+caps.latest.revision: "26"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c95a2e1e1790633df77e7c4ecd6603e68321e478
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# スタンドアロン診断フィードのサンプル
-このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用して配信用の RSS フィードおよび Atom フィードを作成する方法を示します。  このサンプルは基本の "Hello World" プログラムであり、オブジェクト モデルの基本とオブジェクト モデルを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスにセットアップする方法を示しています。  
+# <a name="stand-alone-diagnostics-feed-sample"></a>スタンドアロン診断フィードのサンプル
+このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用して配信用の RSS フィードおよび Atom フィードを作成する方法を示します。 このサンプルは基本の "Hello World" プログラムであり、オブジェクト モデルの基本とオブジェクト モデルを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスにセットアップする方法を示しています。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、特殊なデータ型 \(<xref:System.ServiceModel.Syndication.SyndicationFeedFormatter>\) を返すサービス操作として配信フィードをモデル化します。  <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> のインスタンスは、フィードを RSS 2.0 形式および Atom 1.0 形式の両方にシリアル化できます。  使用するコントラクトを次のサンプル コードに示します。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、特殊なデータ型 (<xref:System.ServiceModel.Syndication.SyndicationFeedFormatter>) を返すサービス操作として配信フィードをモデル化します。 <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> のインスタンスは、フィードを RSS 2.0 形式および Atom 1.0 形式の両方にシリアル化できます。 使用するコントラクトを次のサンプル コードに示します。  
   
 ```  
 [ServiceContract(Namespace = "")]  
@@ -39,9 +42,9 @@ caps.handback.revision: 26
     }  
 ```  
   
- `GetProcesses` 操作には、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が HTTP GET 要求をサービス操作にディスパッチする方法を制御し、送信されるメッセージの形式を指定できるようにする <xref:System.ServiceModel.Web.WebGetAttribute> 属性で注釈が付けられています。  
+ `GetProcesses` 操作には、<xref:System.ServiceModel.Web.WebGetAttribute> が HTTP GET 要求をサービス操作にディスパッチする方法を制御し、送信されるメッセージの形式を指定できるようにする [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 属性で注釈が付けられています。  
   
- あらゆる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと同様に、配信フィードは、任意のマネージ アプリケーション内での自己ホストが可能です。  配信サービスが適切に機能するには、特定のバインディング \(<xref:System.ServiceModel.WebHttpBinding>\) と、特定のエンドポイント動作 \(<xref:System.ServiceModel.Description.WebHttpBehavior>\) が必要です。  新しい <xref:System.ServiceModel.Web.WebServiceHost> クラスには、特定の構成を使用せずにこのようなエンドポイントを作成する際に便利な API が用意されています。  
+ あらゆる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと同様に、配信フィードは、任意のマネージ アプリケーション内での自己ホストが可能です。 配信サービスが適切に機能するには、特定のバインディング (<xref:System.ServiceModel.WebHttpBinding>) と、特定のエンドポイント動作 (<xref:System.ServiceModel.Description.WebHttpBehavior>) が必要です。 新しい <xref:System.ServiceModel.Web.WebServiceHost> クラスには、特定の構成を使用せずにこのようなエンドポイントを作成する際に便利な API が用意されています。  
   
 ```  
 WebServiceHost host = new WebServiceHost(typeof(ProcessService), new Uri("http://localhost:8000/diagnostics"));  
@@ -50,15 +53,15 @@ WebServiceHost host = new WebServiceHost(typeof(ProcessService), new Uri("http:/
             //using the proper binding (the WebHttpBinding) and endpoint behavior (the WebHttpBehavior)  
 ```  
   
- または、IIS でホストされる .svc ファイルから <xref:System.ServiceModel.Activation.WebServiceHostFactory> を使用して、同等の機能を用意することもできます \(この手法は、このサンプル コードでは示されません\)。  
+ または、IIS でホストされる .svc ファイルから <xref:System.ServiceModel.Activation.WebServiceHostFactory> を使用して、同等の機能を用意することもできます (この手法は、このサンプル コードでは示されません)。  
   
 ```  
 <%@ ServiceHost Language="C#|VB" Debug="true" Service="ProcessService" %>  
 ```  
   
- このサービスは標準の HTTP GET を使用して要求を受け取るので、サービスへのアクセスには、RSS または ATOM に対応している任意のクライアントを使用できます。  たとえば、Internet Explorer 7 などの RSS 対応のブラウザで、http:\/\/localhost:8000\/diagnostics\/feed\/?format\=atom または http:\/\/localhost:8000\/diagnostics\/feed\/?format\=rss に移動することで、このサービスの出力を表示できます。  
+ このサービスは標準の HTTP GET を使用して要求を受け取るので、サービスへのアクセスには、RSS または ATOM に対応している任意のクライアントを使用できます。 たとえば、Internet Explorer 7 などの RSS 対応のブラウザで、http://localhost:8000/diagnostics/feed/?format=atom または http://localhost:8000/diagnostics/feed/?format=rss に移動することで、このサービスの出力を表示できます。  
   
- 命令型コードを使用して、配信データの読み取りと処理に[WCF 配信オブジェクト モデルを Atom や RSS に割り当てる方法](../../../../docs/framework/wcf/feature-details/how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md)を使用することもできます。  
+ 使用することも、[方法、WCF 配信オブジェクト モデルにマップ Atom および RSS](../../../../docs/framework/wcf/feature-details/how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md)シンジケート データの読み取りし、命令型コードを使用してそれを処理します。  
   
 ```  
 XmlReader reader = XmlReader.Create( "http://localhost:8000/diagnostics/feed/?format=rss",  
@@ -81,25 +84,25 @@ foreach (SyndicationItem i in feed.Items)
 }  
 ```  
   
-### サンプルをセットアップ、ビルド、および実行するには  
+### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」のセットアップ手順の説明に従って、コンピュータ上で HTTP および HTTPS の正しいアドレス登録アクセス許可があることを確認します。  
+1.  権限があるか、適切なアドレス登録 HTTP おようび HTTPS 用コンピューター上の指示の設定の説明に従って確認[Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。  
   
 2.  ソリューションをビルドします。  
   
 3.  コンソール アプリケーションを実行します。  
   
-4.  コンソール アプリケーションの実行中に、RSS 対応のブラウザーを使用して http:\/\/localhost:8000\/diagnostics\/feed\/?format\=atom または http:\/\/localhost:8000\/diagnostics\/feed\/?format\=rss に移動します。  
+4.  コンソール アプリケーションの実行中に、RSS 対応のブラウザーを使用して http://localhost:8000/diagnostics/feed/?format=atom または http://localhost:8000/diagnostics/feed/?format=rss に移動します。  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。  続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。  このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Syndication\DiagnosticsFeed`  
   
-## 参照  
- [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)   
+## <a name="see-also"></a>関連項目  
+ [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
  [WCF 配信](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)

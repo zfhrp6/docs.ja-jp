@@ -1,42 +1,41 @@
 ---
-title: "方法 : Windows Communication Foundation サービス コントラクトを定義する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "サービス コントラクト [WCF], 定義"
+title: "方法 : Windows Communication Foundation サービス コントラクトを定義する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: service contracts [WCF], defining
 ms.assetid: 67bf05b7-1d08-4911-83b7-a45d0b036fc3
-caps.latest.revision: 58
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 58
+caps.latest.revision: "58"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 2ffe53d3e44f86feadc292eccb1692bd58a0c056
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows Communication Foundation サービス コントラクトを定義する
-これは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの作成に必要な 6 つのタスクのうち、1 番目のタスクです。6 つのすべてのタスクの概要については、「[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)」を参照してください。  
+# <a name="how-to-define-a-windows-communication-foundation-service-contract"></a>方法 : Windows Communication Foundation サービス コントラクトを定義する
+これは、基本的な [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの作成に必要な 6 つのタスクのうちの最初のタスクです。 タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスを作成する場合、まずサービス コントラクトを定義します。サービス コントラクトは、サービスがサポートする操作を指定します。操作は Web サービス メソッドと見なすことができます。コントラクトは C\+\+、C\#、または Visual Basic \(VB\) インターフェイスを定義することで作成します。インターフェイスの各メソッドは、特定のサービス操作に対応しています。各インターフェイスには <xref:System.ServiceModel.ServiceContractAttribute> が適用されており、各操作には <xref:System.ServiceModel.OperationContractAttribute> 属性が適用されている必要があります。<xref:System.ServiceModel.ServiceContractAttribute> 属性を持つインターフェイス内のメソッドに <xref:System.ServiceModel.OperationContractAttribute> 属性がない場合、そのメソッドはサービスによって公開されません。  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスを作成する場合、まずサービス コントラクトを定義します。 サービス コントラクトは、サービスがサポートする操作を指定します。 操作は Web サービス メソッドと見なすことができます。 コントラクトは C++、C#、または Visual Basic (VB) インターフェイスを定義することで作成します。 インターフェイスの各メソッドは、特定のサービス操作に対応しています。 各インターフェイスには <xref:System.ServiceModel.ServiceContractAttribute> が適用されており、各操作には <xref:System.ServiceModel.OperationContractAttribute> 属性が適用されている必要があります。 <xref:System.ServiceModel.ServiceContractAttribute> 属性を持つインターフェイス内のメソッドに <xref:System.ServiceModel.OperationContractAttribute> 属性がない場合、そのメソッドはサービスによって公開されません。  
   
  手順の後に、このタスクに使用するコード例を示します。  
   
-### サービス コントラクトを定義するには  
+### <a name="to-define-a-service-contract"></a>サービス コントラクトを定義するには  
   
-1.  **\[スタート\]** メニューで [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] を右クリックし、**\[管理者として実行\]** をクリックして、管理者としてプログラムを開きます。  
+1.  開いている[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]でプログラムを右クリックして、管理者として、**開始**メニューを選択して**管理者として実行**です。  
   
-2.  **\[ファイル\]** メニューの **\[新規作成\]** をポイントして **\[プロジェクト\]** をクリックすることにより、WCF サービス ライブラリ プロジェクトを作成します。**\[新しいプロジェクト\]** ダイアログで、左側の **\[Visual C\#\]** \(C\# プロジェクトの場合\) を展開するか、または **\[他の言語\]** を展開し、**\[Visual Basic\]** \(Visual Basic プロジェクトの場合\) を展開します。選択した言語の **\[WCF\]** を選択します。プロジェクト テンプレートの一覧がダイアログの中央部分に表示されます。**\[WCF サービス ライブラリ\]** を選択します。**\[名前\]** ボックスに「`GettingStartedLib`」と入力し、ダイアログの最下部の **\[ソリューション名\]** ボックスに「`GettingStarted`」と入力します。  
+2.  クリックして、WCF サービス ライブラリ プロジェクトを作成、**ファイル**メニューを選択して**新規**、**プロジェクト**です。 **新しいプロジェクト**ダイアログ ボックスで、ダイアログ ボックスの左側にある展開**Visual c#** c# プロジェクトまたは**他の言語**し**Visual Basic** Visual Basic プロジェクト。 選択した言語を選択**WCF**とプロジェクト テンプレートの一覧がダイアログの中央のセクションに表示されます。 選択**WCF サービス ライブラリ**、および種類`GettingStartedLib`で、**名前** テキスト ボックスと`GettingStarted`で、**ソリューション名**ダイアログの下部にあるテキスト ボックス。  
   
-3.  Visual Studio により、IService1.cs \(または IService1.vb\)、Service1.cs \(または Service1.vb\)、App.config の 3 つのファイルを含むプロジェクトが作成されます。IService1 ファイルには、既定のサービス コントラクトが含まれています。Service1 ファイルには、サービス コントラクトの既定の実装が含まれています。App.config ファイルには、Visual Studio WCF サービス ホストに既定のサービスを読み込むために必要な構成が含まれています。WCF サービス ホスト ツールの詳細については、「[WCF サービス ホスト \(WcfSvcHost.exe\)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)」を参照してください。  
+3.  Visual Studio により、IService1.cs (または IService1.vb)、Service1.cs (または Service1.vb)、App.config の 3 つのファイルを含むプロジェクトが作成されます。IService1 ファイルには、既定のサービス コントラクトが含まれています。  Service1 ファイルには、サービス コントラクトの既定の実装が含まれています。 App.config ファイルには、Visual Studio WCF サービス ホストに既定のサービスを読み込むために必要な構成が含まれています。 WCF サービス ホスト ツールの詳細については、次を参照してください[WCF サービス ホスト (WcfSvcHost.exe)。](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)  
   
-4.  IService1.cs または IService1.vb ファイルを開き、名前空間の宣言を残したまま、名前空間宣言内のコードを削除します。次のコードに示すように、名前空間宣言内に新しいインターフェイス `ICalculator` を定義します。  
+4.  IService1.cs または IService1.vb ファイルを開き、名前空間の宣言を残したまま、名前空間宣言内のコードを削除します。 次のコードに示すように、名前空間宣言内に新しいインターフェイス `ICalculator` を定義します。  
   
     ```  
     // IService.cs  
@@ -62,7 +61,6 @@ caps.handback.revision: 58
                 double Divide(double n1, double n2);  
             }  
     }  
-  
     ```  
   
     ```  
@@ -85,17 +83,16 @@ caps.handback.revision: 58
             Function Divide(ByVal n1 As Double, ByVal n2 As Double) As Double  
         End Interface  
     End Namespace  
-  
     ```  
   
-     このコントラクトは、オンライン電卓を定義します。`ICalculator` インターフェイスは <xref:System.ServiceModel.ServiceContractAttribute> 属性でマークされています。この属性は、コントラクト名を区別するために使用される名前空間を定義します。各電卓操作は <xref:System.ServiceModel.OperationContractAttribute> 属性でマークされています。  
+     このコントラクトは、オンライン電卓を定義します。 `ICalculator` インターフェイスは <xref:System.ServiceModel.ServiceContractAttribute> 属性でマークされています。 この属性は、コントラクト名を区別するために使用される名前空間を定義します。 各電卓操作は <xref:System.ServiceModel.OperationContractAttribute> 属性でマークされています。  
   
     > [!NOTE]
-    >  属性を使用してインターフェイス、メンバー、またはクラスに注釈を付けるときは、属性名から "Attribute" 部分を削除できます。したがって、<xref:System.ServiceModel.ServiceContractAttribute> は、C\# では `[ServiceContract]`、Visual Basic では `<ServiceContract>` になります。  
+    >  属性を使用してインターフェイス、メンバー、またはクラスに注釈を付けるときは、属性名から "Attribute" 部分を削除できます。 したがって、<xref:System.ServiceModel.ServiceContractAttribute> は、C# では `[ServiceContract]`、Visual Basic では `<ServiceContract>` になります。  
   
-## 参照  
- <xref:System.ServiceModel.ServiceContractAttribute>   
- <xref:System.ServiceModel.OperationContractAttribute>   
- [方法 : サービス コントラクトを実装する](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)   
- [概要](../../../docs/framework/wcf/samples/getting-started-sample.md)   
- [自己ホスト](../../../docs/framework/wcf/samples/self-host.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.ServiceModel.ServiceContractAttribute>  
+ <xref:System.ServiceModel.OperationContractAttribute>  
+ [方法: サービス コントラクトを実装する](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)  
+ [はじめに](../../../docs/framework/wcf/samples/getting-started-sample.md)  
+ [自己ホストします。](../../../docs/framework/wcf/samples/self-host.md)

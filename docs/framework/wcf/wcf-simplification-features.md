@@ -1,30 +1,33 @@
 ---
-title: "WCF の単純化機能 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WCF の単純化機能"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4535a511-6064-4da0-b361-80262a891663
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7eff41d26c03fab2f87db096905b7f4584309d33
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# WCF の単純化機能
+# <a name="wcf-simplification-features"></a>WCF の単純化機能
 ここでは、WCF アプリケーションの作成を容易にする新機能について説明します。  
   
-## 生成された構成ファイルの簡略化  
- Visual Studio でサービス参照を追加したり、SvcUtil.exe ツールを使用したりすると、クライアント構成ファイルが生成されます。以前のバージョンの WCF では、このような構成ファイルには、各バインド プロパティの値が既定値であっても、その値が含まれていました。WCF 4.5 では、生成された構成ファイルには、既定値以外の値に設定されているバインド プロパティのみが含まれます。  
+## <a name="simplified-generated-configuration-files"></a>生成された構成ファイルの簡略化  
+ Visual Studio でサービス参照を追加したり、SvcUtil.exe ツールを使用したりすると、クライアント構成ファイルが生成されます。 以前のバージョンの WCF では、このような構成ファイルには、各バインド プロパティの値が既定値であっても、その値が含まれていました。 WCF 4.5 では、生成された構成ファイルには、既定値以外の値に設定されているバインド プロパティのみが含まれます。  
   
  WCF 3.0 で生成された構成ファイルの例を次に示します。  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
     <system.serviceModel>  
@@ -55,13 +58,11 @@ caps.handback.revision: 7
         </client>  
     </system.serviceModel>  
 </configuration>  
-  
 ```  
   
  WCF 4.5 で生成された同じ構成ファイルの例を次に示します。  
   
-```  
-  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
     <system.serviceModel>  
@@ -77,62 +78,61 @@ caps.handback.revision: 7
         </client>  
     </system.serviceModel>  
 </configuration>  
-  
 ```  
   
-## コントラクト優先の開発  
- WCF では、コントラクト優先の開発がサポートされるようになりました。svcutl.exe ツールには、WSDL ドキュメントからサービス コントラクトとデータ コントラクトを生成できるようにする \/serviceContract スイッチがあります。  
+## <a name="contract-first-development"></a>コントラクト優先の開発  
+ WCF では、コントラクト優先の開発がサポートされるようになりました。 svcutl.exe ツールには、WSDL ドキュメントからサービス コントラクトとデータ コントラクトを生成できるようにする /serviceContract スイッチがあります。  
   
-## ポータブル サブセット プロジェクトからのサービス参照の追加  
- ポータブル サブセット プロジェクトにより、.NET アセンブリ プログラマは 1 つのソース ツリーを保持しつつ、システムを構築できるようになります。また、ポータブル サブセット プロジェクトは、複数の .NET プラットフォーム \(デスクトップ、Silverlight、Windows Phone、および XBOX\) をサポートしています。ポータブル サブセット プロジェクトは、コア .NET プラットフォームで使用できる .NET Framework アセンブリである .NET ポータブル ライブラリのみを参照します。開発者から見れば、他の WCF クライアント アプリケーション内でサービス参照を追加するのと同じです。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)][ポータブル サブセット プロジェクトでサービス参照を追加する](../../../docs/framework/wcf/add-service-reference-in-a-portable-subset-project.md).  
+## <a name="add-service-reference-from-a-portable-subset-project"></a>ポータブル サブセット プロジェクトからのサービス参照の追加  
+ ポータブル サブセット プロジェクトは、.NET アセンブリ プログラマは 1 つのソース ツリーを保持し、複数の .NET 実装 (デスクトップ、Silverlight、Windows Phone、および XBOX) をサポートしながらビルド システムを有効にします。 ポータブル サブセット プロジェクトは、任意の .NET 実装で使用できる .NET framework アセンブリである .NET ポータブル ライブラリのみを参照します。 開発者から見れば、他の WCF クライアント アプリケーション内でサービス参照を追加するのと同じです。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][ポータブル サブセット プロジェクトでサービス参照の追加](../../../docs/framework/wcf/add-service-reference-in-a-portable-subset-project.md)です。  
   
-## ASP.NET 互換性モードの既定値の変更  
- WCF には ASP.NET 互換性モードが用意されています。これにより、開発者は WCF サービスを作成する際に ASP.NET HTTP パイプラインの機能へのフル アクセスが付与されます。このモードを使用するには、web.config の [\<serviceHostingEnvironment\>](../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md) セクションで `aspNetCompatibilityEnabled` 属性を true に設定する必要があります。さらに、この appDomain 内のサービスでは、<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> の `RequirementsMode` プロパティを <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode> または <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode> に設定しておく必要があります。既定では、<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> は <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode> に設定され、既定の WCF サービス アプリケーション テンプレートでは、`aspNetCompatibilityEnabled` 属性が `true` に設定されます。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)]「[Windows Communication Foundation 4.5 の新機能](../../../docs/framework/wcf/whats-new.md)」および「[WCF サービスと ASP.NET](../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)」を参照してください。  
+## <a name="aspnet-compatibility-mode-default-changed"></a>ASP.NET 互換性モードの既定値の変更  
+ WCF には ASP.NET 互換性モードが用意されています。これにより、開発者は WCF サービスを作成する際に ASP.NET HTTP パイプラインの機能へのフル アクセスが付与されます。 このモードを使用するに設定する必要があります、`aspNetCompatibilityEnabled`属性を true に、 [ \<serviceHostingEnvironment >](../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md) web.config のセクションです。さらに、この appDomain 内のサービスでは、`RequirementsMode` の <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> プロパティを <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> または <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required> に設定しておく必要があります。 既定では<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute>に設定されているようになりました<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>、既定の WCF サービス アプリケーション テンプレートと、`aspNetCompatibilityEnabled`属性を`true`です。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Windows Communication Foundation 4.5 の新機能](../../../docs/framework/wcf/whats-new.md)と[WCF サービスと ASP.NET](../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)です。  
   
-## ストリーミングの強化  
+## <a name="streaming-improvements"></a>ストリーミングの強化  
   
--   非同期ストリーミングに対する新しいサポートが WCF に追加されました。非同期ストリーミングを有効にするには、エンドポイントの <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior> 動作をサービス ホストに追加し、その <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.AsynchronousSendEnabled%2A> プロパティを `true` に設定します。これにより、読み取りに時間のかかる複数のクライアントに対してサービスがストリーム メッセージを送信するときにスケーラビリティが得られます。WCF では、クライアントごとに 1 つのスレッドがブロックされなくなり、別のクライアントにサービスを提供するためにスレッドを解放します。  
+-   非同期ストリーミングに対する新しいサポートが WCF に追加されました。 非同期ストリーミングを有効にするには、エンドポイントの <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior> 動作をサービス ホストに追加し、その <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.AsynchronousSendEnabled%2A> プロパティを `true` に設定します。  これにより、読み取りに時間のかかる複数のクライアントに対してサービスがストリーム メッセージを送信するときにスケーラビリティが得られます。 WCF では、クライアントごとに 1 つのスレッドがブロックされなくなり、別のクライアントにサービスを提供するためにスレッドを解放します。  
   
--   サービスが IIS でホストされるときのメッセージのバッファー処理に関する制限がなくなりました。以前のバージョンの WCF では、ストリーム メッセージ転送を使用する IIS でホストされるサービスに対するメッセージを受信すると、ASP.NET はメッセージ全体を WCF に送信する前にバッファー処理しました。これにより、メモリの大量消費が発生しました。このバッファー処理は .NET 4.5 で削除されました。現在は、IIS でホストされる WCF サービスが、メッセージ全体が受信される前に着信ストリームの処理を開始できるため、実際のストリーミングが可能になります。これにより、WCF は、メッセージにすぐに応答できるようになり、パフォーマンスは向上します。さらに、着信要求に対する ASP.NET のサイズ制限である `maxRequestLength` の値を指定する必要がなくなりました。このプロパティを設定した場合、このプロパティは無視されます。`maxRequestLength`[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[\<httpRuntime\> 要素](http://go.microsoft.com/fwlink/?LinkId=223344)」を参照してください。maxAllowedContentLength はまだ構成する必要があります。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)]、「[requestFiltering の requestLimits 要素](http://go.microsoft.com/fwlink/?LinkId=225908)」を参照してください。  
+-   サービスが IIS でホストされるときのメッセージのバッファー処理に関する制限がなくなりました。 以前のバージョンの WCF では、ストリーム メッセージ転送を使用する IIS でホストされるサービスに対するメッセージを受信すると、ASP.NET はメッセージ全体を WCF に送信する前にバッファー処理しました。 これにより、メモリの大量消費が発生しました。 このバッファー処理は .NET 4.5 で削除されました。現在は、IIS でホストされる WCF サービスが、メッセージ全体が受信される前に着信ストリームの処理を開始できるため、実際のストリーミングが可能になります。 これにより、WCF は、メッセージにすぐに応答できるようになり、パフォーマンスは向上します。 さらに、着信要求に対する ASP.NET のサイズ制限である `maxRequestLength` の値を指定する必要がなくなりました。 このプロパティを設定した場合、このプロパティは無視されます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]`maxRequestLength`を参照してください[ \<httpRuntime > 構成要素](http://go.microsoft.com/fwlink/?LinkId=223344)です。 要件を構成する必要があります[!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [IIS 要求制限](http://go.microsoft.com/fwlink/?LinkId=225908)です。  
   
-## トランスポートの新しい既定値  
+## <a name="new-transport-default-values"></a>トランスポートの新しい既定値  
  次の表は、変更された設定と追加情報の場所を示しています。  
   
-|プロパティ|場所|新しい既定値|詳細情報|  
-|-----------|--------|------------|----------|  
-|channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 秒|このプロパティは、.Net Framing プロトコルを使用して TCP 接続がそれ自体の認証にかかる時間を決定します。クライアントは、サーバーが認証を実行するための十分な情報を得る前に初期データを送信する必要があります。このタイムアウトは意図的に ReceiveTimeout \(10 分\) よりも小さい値に設定されます。これにより、悪意のある認証されていないクライアントは、長時間にわたってサーバーへの接続を保持できません。既定値は 30 秒です。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|  
-|listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|16 \* プロセッサの数|このソケット レベルのプロパティは、キューに入れられる "受入保留中の" 要求の数を示します。リッスン バックログ キューがいっぱいになると、新しいソケット要求は拒否されます。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|  
-|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 \* トランスポート用のプロセッサの数<br /><br /> 4 \* SMSvcHost.exe 用のプロセッサの数|このプロパティは、サーバーがリスナーで待機できるチャネルの数を制限します。MaxPendingAccepts が小さすぎると、待機しているすべてのチャネルが接続のサービスを開始する間隔が小さくなりますが、新しいチャネルがリッスンを開始できなくなります。接続がこの間に到着した場合、サーバー上でこの接続を待機しているものがないため、接続は失敗します。このプロパティは、<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A> プロパティを大きな値に設定することで構成できます。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)].<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A> および[Configuring the Net.TCP Port Sharing Service](http://msdn.microsoft.com/ja-jp/b6dd81fa-68b7-4e1b-868e-88e5901b7ea0)|  
-|maxPendingConnections|ConnectionOrientedTransportBindingElement|12 \* プロセッサの数|このプロパティは、トランスポートが受け入れたにもかかわらず ServiceModel ディスパッチャーによって取得されていない接続の数を制御します。この値を設定するには、バインドの `MaxConnections` を使用するか、またはバインド要素の `maxOutboundConnectionsPerEndpoint` を使用してください。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A>|  
-|receiveTimeout|SMSvcHost.exe|30 秒|このプロパティは、TCP フレーム データを読み取り、基になる接続からディスパッチする接続を実行するためのタイムアウトを指定します。これは、SMSvcHost.exe サービスで受信接続からの前文データの読み取り操作を行う時間に制限を設定するために使用されます。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Configuring the Net.TCP Port Sharing Service](http://msdn.microsoft.com/ja-jp/b6dd81fa-68b7-4e1b-868e-88e5901b7ea0).|  
+|プロパティ|オン|新しい既定値|詳細情報|  
+|--------------|--------|-----------------|----------------------|  
+|channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 秒|このプロパティは、.Net Framing プロトコルを使用して TCP 接続がそれ自体の認証にかかる時間を決定します。 クライアントは、サーバーが認証を実行するための十分な情報を得る前に初期データを送信する必要があります。 このタイムアウトは意図的に ReceiveTimeout (10 分) よりも小さい値に設定されます。これにより、悪意のある認証されていないクライアントは、長時間にわたってサーバーへの接続を保持できません。 既定値は 30 秒です。 [!INCLUDE[crdefault](../../../includes/crabout-md.md)] <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|  
+|listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|16 * プロセッサの数|このソケット レベルのプロパティは、キューに入れられる "受入保留中の" 要求の数を示します。 リッスン バックログ キューがいっぱいになると、新しいソケット要求は拒否されます。 [!INCLUDE[crdefault](../../../includes/crabout-md.md)]<xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|  
+|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * トランスポート用のプロセッサの数<br /><br /> 4 \* SMSvcHost.exe 用のプロセッサの数|このプロパティは、サーバーがリスナーで待機できるチャネルの数を制限します。 MaxPendingAccepts が小さすぎると、待機しているすべてのチャネルが接続のサービスを開始する間隔が小さくなりますが、新しいチャネルがリッスンを開始できなくなります。 接続がこの間に到着した場合、サーバー上でこの接続を待機しているものがないため、接続は失敗します。 このプロパティは、<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A> プロパティを大きな値に設定することで構成できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A>と[Net.TCP ポート共有サービスを構成します。](http://msdn.microsoft.com/en-us/b6dd81fa-68b7-4e1b-868e-88e5901b7ea0)|  
+|maxPendingConnections|ConnectionOrientedTransportBindingElement|12 * プロセッサの数|このプロパティは、トランスポートが受け入れたにもかかわらず ServiceModel ディスパッチャーによって取得されていない接続の数を制御します。 この値を設定するには、バインドの `MaxConnections` を使用するか、またはバインド要素の `maxOutboundConnectionsPerEndpoint` を使用してください。 [!INCLUDE[crdefault](../../../includes/crabout-md.md)]<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A>|  
+|receiveTimeout|SMSvcHost.exe|30 秒|このプロパティは、TCP フレーム データを読み取り、基になる接続からディスパッチする接続を実行するためのタイムアウトを指定します。 これは、SMSvcHost.exe サービスで受信接続からの前文データの読み取り操作を行う時間に制限を設定するために使用されます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Net.TCP ポート共有サービスを構成する](http://msdn.microsoft.com/en-us/b6dd81fa-68b7-4e1b-868e-88e5901b7ea0)です。|  
   
 > [!NOTE]
->  これらの新しい既定値は、.NET Framework 4.5 がインストールされているコンピューターに WCF サービスを配置する場合のみ使用されます。.NET Framework 4.0 がインストールされているコンピューターに同じサービスを配置すると、.NET Framework 4.0 の既定値が使用されます。このような場合は、これらの設定を明示的に構成することをお勧めします。  
+>  これらの新しい既定値は、.NET Framework 4.5 がインストールされているコンピューターに WCF サービスを配置する場合のみ使用されます。 .NET Framework 4.0 がインストールされているコンピューターに同じサービスを配置すると、.NET Framework 4.0 の既定値が使用されます。 このような場合は、これらの設定を明示的に構成することをお勧めします。  
   
-## XmlDictionaryReaderQuotas  
- <xref:System.Xml.XmlDictionaryReaderQuotas> には、メッセージの作成中にエンコーダーで使用されるメモリの量を制限する XML ディクショナリ リーダーの構成可能なクォータ値が格納されます。これらのクォータは構成可能ですが、開発者がこのクォータを明示的に設定する必要性を低くするために既定値が変更されました。`MaxReceivedMessageSize` クォータは変更されていないため、メモリ使用量を引き続き制限して、<xref:System.Xml.XmlDictionaryReaderQuotas> の複雑さを処理する必要性を回避できます。次の表に、クォータ、クォータの新しい既定値、および各クォータの用途の簡単な説明を示します。  
+## <a name="xmldictionaryreaderquotas"></a>XmlDictionaryReaderQuotas  
+ <xref:System.Xml.XmlDictionaryReaderQuotas> には、メッセージの作成中にエンコーダーで使用されるメモリの量を制限する XML ディクショナリ リーダーの構成可能なクォータ値が格納されます。 これらのクォータは構成可能ですが、開発者がこのクォータを明示的に設定する必要性を低くするために既定値が変更されました。 `MaxReceivedMessageSize` クォータは変更されていないため、メモリ使用量を引き続き制限して、<xref:System.Xml.XmlDictionaryReaderQuotas> の複雑さを処理する必要性を回避できます。 次の表に、クォータ、クォータの新しい既定値、および各クォータの用途の簡単な説明を示します。  
   
 |クォータの名前|既定値|説明|  
-|-------------|---------|--------|  
-|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength%2A>|Int32.MaxValue|許容される最大配列長を取得または設定します。このクォータは、XML リーダーが返すプリミティブ配列 \(バイト配列など\) の最大サイズを制限します。このクォータは、XML リーダー自体のメモリ消費は制限しませんが、このリーダーを使用するコンポーネントのメモリ消費を制限します。たとえば、<xref:System.Runtime.Serialization.DataContractSerializer> が <xref:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength%2A> でセキュリティ保護されたリーダーを使用するときは、このクォータを超えるバイト配列を逆シリアル化することはありません。|  
-|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A>|Int32.MaxValue|1 回の読み取りで返すことができる最大バイト数を取得または設定します。このクォータは、要素の開始タグとその属性を読み取るときに、1 回の読み取り操作で読み取るバイト数を制限します \(ストリーミングを使用しない場合、要素名自体がクォータに照らし合わせてカウントされることはありません\)。XML 属性が多すぎると、属性名は一意かどうかを確認する必要があるため、処理時間が大幅に増加する可能性があります。<xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A> によってこの脅威を軽減できます。|  
-|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A>|128 ノードの深さ|このクォータは、XML 要素の入れ子の深さの最大値を制限します。<xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> は <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A> と相互に関係しています。リーダーは常に、現在の要素とそのすべての先祖に関するデータをメモリ内に維持します。このため、リーダーのメモリ消費の最大値は、この 2 つの設定値の積に比例します。深く入れ子になったオブジェクト グラフを逆シリアル化する場合、デシリアライザーはスタック全体にアクセスし、回復不可能な <xref:System.StackOverflowException> をスローするしかありません。<xref:System.Runtime.Serialization.DataContractSerializer> の場合も <xref:System.Runtime.Serialization.XmlSerializer> の場合も、XML の入れ子構造とオブジェクトの入れ子構造との間に直接的な相関関係が存在します。この脅威を軽減するには、<xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> を使用します。|  
-|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxNameTableCharCount%2A>|Int32.MaxValue|このクォータは、nametable で使用できる最大文字数を制限します。nametable には、XML ドキュメントを処理するときに出現する特定の文字列 \(名前空間やプレフィックスなど\) が入っています。これらの文字列はメモリ内でバッファー化されるので、ストリーミングが予想されるときは、このクォータを使用して過度のバッファーを防止します。|  
-|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A>|Int32.MaxValue|このクォータは、XML リーダーが返す文字列の最大サイズを制限します。このクォータは、XML リーダー自体のメモリ消費は制限しませんが、このリーダーを使用するコンポーネントのメモリ消費を制限します。たとえば、<xref:System.Runtime.Serialization.DataContractSerializer> が <xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A> でセキュリティ保護されたリーダーを使用するときは、このクォータを超える文字列を逆シリアル化することはありません。|  
+|----------------|-------------------|-----------------|  
+|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength%2A>|Int32.MaxValue|許される最大配列長を取得または設定します。 このクォータは、XML リーダーが返すプリミティブ配列 (バイト配列など) の最大サイズを制限します。 このクォータは、XML リーダー自体のメモリ消費は制限しませんが、このリーダーを使用するコンポーネントのメモリ消費を制限します。 たとえば、 <xref:System.Runtime.Serialization.DataContractSerializer> が <xref:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength%2A>でセキュリティ保護されたリーダーを使用するときは、このクォータを超えるバイト配列を逆シリアル化することはありません。|  
+|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A>|Int32.MaxValue|1 回の読み取りで返すことができる最大バイト数を取得または設定します。 このクォータは、要素の開始タグとその属性を読み取るときに、1 回の読み取り操作で読み取るバイト数を制限します  (ストリーミングを使用しない場合、要素名自体がクォータに照らし合わせてカウントされることはありません)。 XML 属性が多すぎると、属性名は一意かどうかを確認する必要があるため、処理時間が大幅に増加する可能性があります。 <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A> によってこの脅威を軽減できます。|  
+|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A>|128 ノードの深さ|このクォータは、XML 要素の入れ子の深さの最大値を制限します。  <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> は <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A> と相互に関係しています。リーダーは常に、現在の要素とそのすべての先祖に関するデータをメモリ内に維持します。このため、リーダーのメモリ消費の最大値は、この 2 つの設定値の積に比例します。 深く入れ子になったオブジェクト グラフを逆シリアル化する場合、デシリアライザーはスタック全体にアクセスし、回復不可能な <xref:System.StackOverflowException>をスローするしかありません。 XML の入れ子と両方のオブジェクトの入れ子の間に直接的な相関関係が存在する、<xref:System.Runtime.Serialization.DataContractSerializer>と<!--zz <xref:System.Runtime.Serialization.XmlSerializer>-->`System.Runtime.Serialization.XmlSerializer`です。 この脅威を軽減するには、<xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> を使用します。|  
+|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxNameTableCharCount%2A>|Int32.MaxValue|このクォータは、nametable で使用できる最大文字数を制限します。 nametable には、XML ドキュメントを処理するときに出現する特定の文字列 (名前空間やプレフィックスなど) が入っています。 これらの文字列はメモリ内でバッファー化されるので、ストリーミングが予想されるときは、このクォータを使用して過度のバッファーを防止します。|  
+|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A>|Int32.MaxValue|このクォータは、XML リーダーが返す文字列の最大サイズを制限します。 このクォータは、XML リーダー自体のメモリ消費は制限しませんが、このリーダーを使用するコンポーネントのメモリ消費を制限します。 たとえば、 <xref:System.Runtime.Serialization.DataContractSerializer> が <xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A>でセキュリティ保護されたリーダーを使用するときは、このクォータを超える文字列を逆シリアル化することはありません。|  
   
 > [!IMPORTANT]
->  データのセキュリティ保護の詳細については、「[セキュリティに関するデータの考慮事項](../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)」の「XML の安全な使用」を参照してください。  
+>  XML の安全な使用」を参照してください[データのセキュリティに関する考慮事項](../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)詳細については、データを保護します。  
   
 > [!NOTE]
->  これらの新しい既定値は、.NET Framework 4.5 がインストールされているコンピューターに WCF サービスを配置する場合のみ使用されます。.NET Framework 4.0 がインストールされているコンピューターに同じサービスを配置すると、.NET Framework 4.0 の既定値が使用されます。このような場合は、これらの設定を明示的に構成することをお勧めします。  
+>  これらの新しい既定値は、.NET Framework 4.5 がインストールされているコンピューターに WCF サービスを配置する場合のみ使用されます。 .NET Framework 4.0 がインストールされているコンピューターに同じサービスを配置すると、.NET Framework 4.0 の既定値が使用されます。 このような場合は、これらの設定を明示的に構成することをお勧めします。  
   
-## WCF 構成検証  
- Visual Studio 内でのビルド プロセスの一環として、WCF 構成ファイルが検証されるようになりました。検証に失敗すると、Visual Studio では検証エラーと警告の一覧が表示されます。  
+## <a name="wcf-configuration-validation"></a>WCF 構成検証  
+ Visual Studio 内でのビルド プロセスの一環として、WCF 構成ファイルが検証されるようになりました。 検証に失敗すると、Visual Studio では検証エラーと警告の一覧が表示されます。  
   
-## XML エディターのツールヒント  
+## <a name="xml-editor-tooltips"></a>XML エディターのツールヒント  
  新規および既存の WCF サービスの開発者がサービスを構成するうえで役立つよう、Visual Studio の XML エディターでは、サービス構成ファイルに含まれる各構成要素とそのプロパティにツールヒントが表示されるようになりました。  
   
-## BasicHttpBinding の機能強化  
+## <a name="basichttpbinding-improvements"></a>BasicHttpBinding の機能強化  
   
 1.  単一の WCF エンドポイントでさまざまな認証モードに応答できます。  
   

@@ -15,18 +15,16 @@ helpviewer_keywords:
 - times [.NET Framework], time zones
 - time [.NET Framework], time zones
 ms.assetid: 295c16e0-641b-4771-94b3-39c1ffa98c13
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1d08bfb8a745182420781f4cc4e289b96c7cc1a7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.openlocfilehash: 1e85fc8eac25cc6fdfb8cb3aaa77318019695c51
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="dates-times-and-time-zones"></a>日付、時刻、およびタイム ゾーン
 
 .NET は基本的な <xref:System.DateTime> 構造体だけでなく、タイム ゾーンでの作業をサポートする次のクラスも提供しています。
@@ -86,4 +84,3 @@ ms.lasthandoff: 09/05/2017
 ## <a name="reference"></a>参照
 
 <xref:System.TimeZoneInfo?displayProperty=nameWithType>
-

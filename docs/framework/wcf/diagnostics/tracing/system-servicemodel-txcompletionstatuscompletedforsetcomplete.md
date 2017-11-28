@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.TxCompletionStatusCompletedForSetComplete | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.TxCompletionStatusCompletedForSetComplete
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 201ffd59-df9e-40d9-9697-7de442ab8b35
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d0b02494f416467dfe66ecd67a893543d0ed04f4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.TxCompletionStatusCompletedForSetComplete
+# <a name="systemservicemodeltxcompletionstatuscompletedforsetcomplete"></a>System.ServiceModel.TxCompletionStatusCompletedForSetComplete
 SetTransactionComplete が呼び出されたため、指定された操作の指定のトランザクションは完了されました。  
   
-## 説明  
+## <a name="description"></a>説明  
  OperationContext によって現在のトランザクションを完了することをユーザーが明示的に指定した場合にトレースされます。  
   
-## 参照  
- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
+## <a name="see-also"></a>関連項目  
+ [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [トレースを使用して、アプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)

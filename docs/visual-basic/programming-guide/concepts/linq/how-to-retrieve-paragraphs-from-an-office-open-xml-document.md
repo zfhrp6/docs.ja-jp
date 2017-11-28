@@ -1,40 +1,36 @@
 ---
-title: "方法: Office Open XML ドキュメント (Visual Basic の場合) から段落を取得 |Microsoft ドキュメント"
+title: "方法: Office Open XML ドキュメント (Visual Basic) から段落を取得"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 66053f21-9217-473c-a6f3-a0897be07756
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 303fffb8a548805f4ae7c1e66d683b35b9faf2b0
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: ecce435601092e0025a977c797100e0b5ff74b86
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-retrieve-paragraphs-from-an-office-open-xml-document-visual-basic"></a>方法: Office Open XML ドキュメント (Visual Basic の場合) から段落を取得
+# <a name="how-to-retrieve-paragraphs-from-an-office-open-xml-document-visual-basic"></a>方法: Office Open XML ドキュメント (Visual Basic) から段落を取得
 このトピックでは、Office Open XML ドキュメントを開き、そのドキュメント内のすべての段落のコレクションを取得する例について説明します。  
   
- Office Open XML の詳細については、次を参照してください。 [www.openxmldeveloper.org](http://go.microsoft.com/fwlink/?LinkID=95573)します。  
+ Office Open XML の詳細については、[www.openxmldeveloper.org](http://go.microsoft.com/fwlink/?LinkID=95573) を参照してください。  
   
 ## <a name="example"></a>例  
- この例では、Office Open XML パッケージを開き、Open XML パッケージ内のリレーションシップを使用してドキュメントとスタイル パーツを検索します。 段落を含む匿名型のコレクションを射影、ドキュメントを照会し、<xref:System.Xml.Linq.XElement>ノード、各段落のスタイル名、および各段落のテキスト</xref:System.Xml.Linq.XElement>。  
+ この例では、Office Open XML パッケージを開き、Open XML パッケージ内のリレーションシップを使用してドキュメントとスタイル パーツを検索します。 次に、ドキュメントに対してクエリを実行して、段落 <xref:System.Xml.Linq.XElement> ノード、各段落のスタイル名、および各段落のテキストを含む匿名型のコレクションを射影します。  
   
  この例では、例の中でも提供される `StringConcatenate` という名前の拡張メソッドを使用します。  
   
- この例の動作を説明する詳細なチュートリアルについては[純粋関数型変換の XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)します。  
+ この例の動作方法を説明する詳細なチュートリアルを参照してください。[純粋関数型変換の XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)です。  
   
- この例では、WindowsBase アセンブリに含まれるクラスを使用します。 内の型を使用して、<xref:System.IO.Packaging?displayProperty=fullName>名前空間</xref:System.IO.Packaging?displayProperty=fullName>。  
+ この例では、WindowsBase アセンブリに含まれるクラスを使用します。 また、<xref:System.IO.Packaging?displayProperty=nameWithType> 名前空間内の型を使用します。  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -165,7 +161,7 @@ Module Module1
 End Module  
 ```  
   
- 実行する」に記載するサンプルの Open XML ドキュメントと[ソース Office Open XML ドキュメント (Visual Basic) を作成する](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)、この例は、次の出力を生成します。  
+ 説明されているサンプル Open XML ドキュメントの実行と[ソース Office Open XML ドキュメント (Visual Basic) を作成する](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)、この例には、次の出力が生成されます。  
   
 ```  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  

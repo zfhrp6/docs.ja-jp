@@ -1,38 +1,38 @@
 ---
-title: "OpenFileDialog コンポーネントの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "OpenFileDialog"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "[ファイルを開く] ダイアログ ボックス, 表示 (Windows フォームで)"
-  - "OpenFileDialog コンポーネント, OpenFileDialog の概要"
+title: "OpenFileDialog コンポーネントの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: OpenFileDialog
+helpviewer_keywords:
+- OpenFileDialog component [Windows Forms], about OpenFileDialog
+- Open File dialog box [Windows Forms], displaying in Windows Forms
 ms.assetid: cd717300-46b6-4f82-8207-b218fa7fa407
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 35c947e3efbb9b2e5df775f83ffc6068e49c84e8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# OpenFileDialog コンポーネントの概要 (Windows フォーム)
-Windows フォームの <xref:System.Windows.Forms.OpenFileDialog> コンポーネントは、定義済みのダイアログ ボックスです。  Windows オペレーティング システムの **\[ファイルを開く\]** ダイアログ ボックスと同じダイアログ ボックスです。  このコンポーネントは、<xref:System.Windows.Forms.CommonDialog> クラスを継承しています。  
+# <a name="openfiledialog-component-overview-windows-forms"></a>OpenFileDialog コンポーネントの概要 (Windows フォーム)
+Windows フォームの <xref:System.Windows.Forms.OpenFileDialog> コンポーネントは、事前構成済みのダイアログ ボックスです。 これは、同じ**ファイルを開く** ダイアログ ボックスが、Windows オペレーティング システムによって公開されています。 これは、<xref:System.Windows.Forms.CommonDialog> クラスを継承しています。  
   
-## このコンポーネントの使用  
- このコンポーネントは、独自のダイアログ ボックスを使用せずにファイル選択を行うための簡易ソリューションとして、Windows ベースのアプリケーション内で使用できます。  Windows の標準のダイアログ ボックスを使用して、一般的な基本機能を持つアプリケーションを作成できます。  ただし、<xref:System.Windows.Forms.OpenFileDialog> コンポーネントを使用する場合は、独自のファイル オープン ロジックを記述する必要があります。  
+## <a name="using-this-component"></a>このコンポーネントを使用します。  
+ 簡易ソリューションとして、Windows ベースのアプリケーション内でこのコンポーネントを使用して、独自のダイアログ ボックスを構成する代わりにファイルを選択します。 Windows の標準のダイアログ ボックスを使用して、ユーザーがすぐに慣れる基本的な機能を持つアプリケーションを作成します。 ただし、ときに使用して、<xref:System.Windows.Forms.OpenFileDialog>コンポーネント、独自のファイルを開くロジックを記述する必要があります。  
   
- <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> メソッドを使用して、実行時にダイアログを表示します。  <xref:System.Windows.Forms.OpenFileDialog.Multiselect%2A> プロパティを使用すると、複数のファイルを選択して開くことができます。  また、<xref:System.Windows.Forms.OpenFileDialog.ShowReadOnly%2A> プロパティを使用すると、読み取り専用で開くためのチェック ボックスをダイアログ ボックスに表示するかどうかを指定できます。  <xref:System.Windows.Forms.OpenFileDialog.ReadOnlyChecked%2A> プロパティは、読み取り専用チェック ボックスがオンかオフかを示します。  <xref:System.Windows.Forms.FileDialog.Filter%2A> プロパティは、現在のファイル名フィルター文字列を設定します。この文字列で、ダイアログ ボックスの "ファイルの種類" で表示される選択肢を設定します。  
+ 使用して、<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>メソッドを実行時に、ダイアログ ボックスを表示します。 複数選択するためファイルにで開くことがユーザーを有効にすることができます、<xref:System.Windows.Forms.OpenFileDialog.Multiselect%2A>プロパティです。 また、使用することができます、<xref:System.Windows.Forms.OpenFileDialog.ShowReadOnly%2A>プロパティのかどうか ダイアログ ボックスで、読み取り専用 チェック ボックスが表示されます。 <xref:System.Windows.Forms.OpenFileDialog.ReadOnlyChecked%2A>プロパティは読み取り専用チェック ボックスをオンになっているかどうかを示します。 最後に、<xref:System.Windows.Forms.FileDialog.Filter%2A>プロパティ設定の現在のファイル名フィルターの文字列 ダイアログ ボックスで、"ファイルの種類 ボックスに表示される選択肢を決定します。  
   
- フォームに登録すると、<xref:System.Windows.Forms.OpenFileDialog> コンポーネントは Windows フォーム デザイナーの下部のトレイに表示されます。  
+ フォームに追加されたとき、<xref:System.Windows.Forms.OpenFileDialog>コンポーネントは、Windows フォーム デザイナーの下部にあるトレイに表示されます。  
   
-## 参照  
- <xref:System.Windows.Forms.OpenFileDialog>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.OpenFileDialog>  
  [OpenFileDialog コンポーネント](../../../../docs/framework/winforms/controls/openfiledialog-component-windows-forms.md)

@@ -1,70 +1,75 @@
 ---
-title: "エキスパンダーの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "コントロール, Expander"
-  - "Expander コントロール, エキスパンダー コントロールの概要"
+title: "エキスパンダーの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- controls [WPF], Expander
+- Expander control [WPF], about Expander control
 ms.assetid: 877bf425-0e54-49ec-8fd2-13a211377abb
-caps.latest.revision: 20
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 19
+caps.latest.revision: "20"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ff0a4432f6de8458e89132bbf46bab7568a04b60
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# エキスパンダーの概要
-<xref:System.Windows.Controls.Expander> コントロールとは、ウィンドウに似た、ヘッダーを持つ展開可能な領域内にコンテンツを表示するための手段です。  
+# <a name="expander-overview"></a>エキスパンダーの概要
+<xref:System.Windows.Controls.Expander>コントロールがコンテンツをウィンドウのようになり、ヘッダーを含む拡張可能な領域を提供する方法を提供します。  
   
-   
   
 <a name="CreatinganExpanderinXAML"></a>   
-## 単純なエキスパンダーの作成  
- 簡単な <xref:System.Windows.Controls.Expander> コントロールを作成する方法を次の例に示します。  この例では、前の図のような外観の <xref:System.Windows.Controls.Expander> を作成します。  
+## <a name="creating-a-simple-expander"></a>単純なエキスパンダーの作成  
+ 次の例は、単純なを作成する方法を示します<xref:System.Windows.Controls.Expander>コントロール。 この例で作成、<xref:System.Windows.Controls.Expander>前の図のようになります。  
   
- [!code-xml[ExpanderExample#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpanderExample/CSharp/Page1.xaml#2)]  
+ [!code-xaml[ExpanderExample#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpanderExample/CSharp/Page1.xaml#2)]  
   
- <xref:System.Windows.Controls.Expander> の <xref:System.Windows.Controls.ContentControl.Content%2A> および <xref:System.Windows.Controls.HeaderedContentControl.Header%2A> には、<xref:System.Windows.Controls.RadioButton> オブジェクトや <xref:System.Windows.Controls.Image> オブジェクトなどの複雑なコンテンツも格納できます。  
+ <xref:System.Windows.Controls.ContentControl.Content%2A>と<xref:System.Windows.Controls.HeaderedContentControl.Header%2A>の<xref:System.Windows.Controls.Expander>など、複雑なコンテンツは、ことができますも含まれて<xref:System.Windows.Controls.RadioButton>と<xref:System.Windows.Controls.Image>オブジェクト。  
   
 <a name="SettingtheDirectionoftheExpandingWindow"></a>   
-## コンテンツ エリアの展開方向の設定  
- <xref:System.Windows.Controls.ExpandDirection> プロパティを使用して、<xref:System.Windows.Controls.Expander> コントロールのコンテンツ領域を <xref:System.Windows.Controls.ExpandDirection>、<xref:System.Windows.Controls.ExpandDirection>、<xref:System.Windows.Controls.ExpandDirection>、<xref:System.Windows.Controls.ExpandDirection> の 4 つのうちどの方向に展開するかを設定します。  コンテンツ領域が折りたたまれているときは、<xref:System.Windows.Controls.Expander> <xref:System.Windows.Controls.HeaderedContentControl.Header%2A> およびそのトグル ボタンだけが表示されます。  方向を示す矢印を表示する <xref:System.Windows.Controls.Button> コントロールが、コンテンツ エリアを展開したり折りたたんだりするためのトグル ボタンとして使用されます。  展開されると、<xref:System.Windows.Controls.Expander> は、ウィンドウに似た領域にすべてのコンテンツを表示しようとします。  
+## <a name="setting-the-direction-of-the-expanding-content-area"></a>コンテンツ エリアの展開方向の設定  
+ コンテンツ領域を設定することができます、<xref:System.Windows.Controls.Expander>を 4 つの方向のいずれかで展開コントロール (<xref:System.Windows.Controls.ExpandDirection.Down>、 <xref:System.Windows.Controls.ExpandDirection.Up>、 <xref:System.Windows.Controls.ExpandDirection.Left>、または<xref:System.Windows.Controls.ExpandDirection.Right>) を使用して、<xref:System.Windows.Controls.ExpandDirection>プロパティです。 ときに、コンテンツ領域が折りたたまれて、のみ、 <xref:System.Windows.Controls.Expander> <xref:System.Windows.Controls.HeaderedContentControl.Header%2A>され、トグル ボタンが表示されます。 A<xref:System.Windows.Controls.Button>方向矢印を表示するコントロールは、展開または折りたたみのコンテンツ領域にトグル ボタンとして使用します。 展開すると、<xref:System.Windows.Controls.Expander>ウィンドウのような領域内のすべてのコンテンツの表示しようとしています。  
   
 <a name="SettingSizeDimensionsonanExpanderinaPanel"></a>   
-## パネル内のエキスパンダーのサイズの制御  
- <xref:System.Windows.Controls.Expander> コントロールが <xref:System.Windows.Controls.StackPanel> などの <xref:System.Windows.Controls.Panel> から継承されるレイアウト コントロールの内側にあり、<xref:System.Windows.Controls.Expander.ExpandDirection%2A> プロパティが <xref:System.Windows.Controls.ExpandDirection> または <xref:System.Windows.Controls.ExpandDirection> に設定されている場合は、<xref:System.Windows.Controls.Expander> に対して <xref:System.Windows.FrameworkElement.Height%2A> を指定しないでください。  同様に、<xref:System.Windows.Controls.Expander.ExpandDirection%2A> プロパティが <xref:System.Windows.Controls.ExpandDirection> または <xref:System.Windows.Controls.ExpandDirection> に設定されている場合は、<xref:System.Windows.Controls.Expander> に対して <xref:System.Windows.FrameworkElement.Width%2A> を指定しないでください。  
+## <a name="controlling-the-size-of-an-expander-in-a-panel"></a>パネル内のエキスパンダーのサイズの制御  
+ 場合、<xref:System.Windows.Controls.Expander>コントロールがから継承するレイアウト コントロールの内部<xref:System.Windows.Controls.Panel>など<xref:System.Windows.Controls.StackPanel>を指定しない、<xref:System.Windows.FrameworkElement.Height%2A>上、<xref:System.Windows.Controls.Expander>ときに、<xref:System.Windows.Controls.Expander.ExpandDirection%2A>プロパティに設定されている<xref:System.Windows.Controls.ExpandDirection.Down>または<xref:System.Windows.Controls.ExpandDirection.Up>です。 同様に、指定しない、<xref:System.Windows.FrameworkElement.Width%2A>上、<xref:System.Windows.Controls.Expander>ときに、<xref:System.Windows.Controls.Expander.ExpandDirection%2A>プロパティに設定されている<xref:System.Windows.Controls.ExpandDirection.Left>または<xref:System.Windows.Controls.ExpandDirection.Right>です。  
   
- 展開されたコンテンツを表示する方向のサイズを <xref:System.Windows.Controls.Expander> コントロールに対して設定すると、コンテンツが使用する領域は<xref:System.Windows.Controls.Expander> によって制御され、その周囲に境界線が表示されます。  コンテンツが折りたたまれても境界線は表示されます。  展開されたコンテンツ領域のサイズを設定するには、<xref:System.Windows.Controls.Expander> のコンテンツに対してサイズを設定します。スクロール可能にする場合は、コンテンツを囲む <xref:System.Windows.Controls.ScrollViewer> に対してサイズを設定します。  
+ サイズを設定すると、<xref:System.Windows.Controls.Expander>展開されたコンテンツが表示されている方向、<xref:System.Windows.Controls.Expander>周囲の境界線を表示し、コンテンツでは使用される領域のコントロールを取得します。 コンテンツが折りたたまれても、境界線は表示されます。 展開されたコンテンツ領域のサイズを設定するには、コンテンツのサイズを設定、 <xref:System.Windows.Controls.Expander>、または上で、機能のスクロールする場合、<xref:System.Windows.Controls.ScrollViewer>コンテンツを囲みます。  
   
- <xref:System.Windows.Controls.Expander> コントロールが <xref:System.Windows.Controls.DockPanel> の最後の要素である場合は、<xref:System.Windows.Controls.DockPanel> の残りの領域に等しくなるように、<xref:System.Windows.Controls.Expander> のサイズが [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] によって自動的に設定されます。  この既定の動作を回避するには、<xref:System.Windows.Controls.DockPanel> オブジェクトの <xref:System.Windows.Controls.DockPanel.LastChildFill%2A> プロパティを `false` に設定するか、<xref:System.Windows.Controls.Expander> が <xref:System.Windows.Controls.DockPanel> の最後の要素にならないようにします。  
+ ときに、<xref:System.Windows.Controls.Expander>コントロールは、最後の要素、 <xref:System.Windows.Controls.DockPanel>、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]が自動的に設定、<xref:System.Windows.Controls.Expander>ディメンションの残りの部分と等しく、<xref:System.Windows.Controls.DockPanel>です。 この既定の動作を防ぐためには、設定、<xref:System.Windows.Controls.DockPanel.LastChildFill%2A>プロパティを<xref:System.Windows.Controls.DockPanel>オブジェクトを`false`、ことを確認または、<xref:System.Windows.Controls.Expander>の最後の要素ではありません、<xref:System.Windows.Controls.DockPanel>です。  
   
 <a name="CreatingScrollableContent"></a>   
-## スクロール可能なコンテンツの作成  
- コンテンツが大きすぎてコンテンツ領域に表示できない場合は、<xref:System.Windows.Controls.Expander> のコンテンツを <xref:System.Windows.Controls.ScrollViewer> でラップすると、コンテンツがスクロール可能になります。  <xref:System.Windows.Controls.Expander> コントロールは、スクロール機能を自動的に持つわけではありません。  <xref:System.Windows.Controls.ScrollViewer> コントロールを持つ <xref:System.Windows.Controls.Expander> コントロールを次の図に示します。  
+## <a name="creating-scrollable-content"></a>スクロール可能なコンテンツの作成  
+ 内容がコンテンツ領域のサイズに対して大きすぎる場合は、内容をラップすることができます、<xref:System.Windows.Controls.Expander>で、<xref:System.Windows.Controls.ScrollViewer>スクロール可能なコンテンツを提供するためにします。 <xref:System.Windows.Controls.Expander>コントロールはスクロール機能を自動的に提供しません。 次の図は、<xref:System.Windows.Controls.Expander>が含まれるコントロール、<xref:System.Windows.Controls.ScrollViewer>コントロール。  
   
  **ScrollViewer 内のエキスパンダー**  
   
  ![ScrollBar を持つ Expander](../../../../docs/framework/wpf/controls/media/expanderwithscrollbar.JPG "ExpanderWithScrollBar")  
   
- <xref:System.Windows.Controls.Expander> コントロールを <xref:System.Windows.Controls.ScrollViewer> 内に配置する場合は、<xref:System.Windows.Controls.Expander> コンテンツが開く方向に対応する <xref:System.Windows.Controls.ScrollViewer> のサイズ プロパティを、<xref:System.Windows.Controls.Expander> コンテンツ領域のサイズに設定します。  たとえば、<xref:System.Windows.Controls.Expander> の <xref:System.Windows.Controls.Expander.ExpandDirection%2A> プロパティを <xref:System.Windows.Controls.ExpandDirection> に設定する \(コンテンツ領域が下に開く\) 場合は、<xref:System.Windows.Controls.ScrollViewer> コントロールの <xref:System.Windows.FrameworkElement.Height%2A> プロパティを、コンテンツ領域に必要な高さに設定します。  このような設定を行わずにコンテンツ自体の高さのサイズを設定しても、この設定は <xref:System.Windows.Controls.ScrollViewer> に認識されないので、コンテンツはスクロール可能にはなりません。  
+ 配置するとき、<xref:System.Windows.Controls.Expander>で制御、 <xref:System.Windows.Controls.ScrollViewer>、設定、<xref:System.Windows.Controls.ScrollViewer>ディメンションの方向に対応するプロパティ、<xref:System.Windows.Controls.Expander>のサイズにコンテンツが表示されます、<xref:System.Windows.Controls.Expander>コンテンツ領域です。 例では、設定した場合の<xref:System.Windows.Controls.Expander.ExpandDirection%2A>プロパティを<xref:System.Windows.Controls.Expander>に<xref:System.Windows.Controls.ExpandDirection.Down>(コンテンツ領域はダウンが開きます)、設定、<xref:System.Windows.FrameworkElement.Height%2A>プロパティを<xref:System.Windows.Controls.ScrollViewer>コンテンツ領域の必要な高さを制御します。 代わりにコンテンツそのものの高さを設定した場合<xref:System.Windows.Controls.ScrollViewer>この設定は認識されず、したがって、スクロール可能なコンテンツは提供されません。  
   
- コンテンツが複雑で、<xref:System.Windows.Controls.ScrollViewer> コントロールを持つ <xref:System.Windows.Controls.Expander> コントロールを作成する方法を次の例に示します。  この例では、ここで最初に示した図のような <xref:System.Windows.Controls.Expander> を作成します。  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Controls.Expander>を持つ複合コンテンツを含むコントロール、<xref:System.Windows.Controls.ScrollViewer>コントロール。 この例で作成、<xref:System.Windows.Controls.Expander>先頭の図は、このセクションのようなものです。  
   
  [!code-csharp[ExpanderRichContent#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpanderRichContent/CSharp/Window1.xaml.cs#1)]
  [!code-vb[ExpanderRichContent#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpanderRichContent/VisualBasic/Window1.xaml.vb#1)]
- [!code-xml[ExpanderRichContent#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpanderRichContent/CSharp/Window1.xaml#1)]  
+ [!code-xaml[ExpanderRichContent#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpanderRichContent/CSharp/Window1.xaml#1)]  
   
 <a name="UsingtheAlignmentProperties"></a>   
-## 配置プロパティの使用  
- コンテンツの配置 \(左揃えや上揃えなど\) を指定するには、<xref:System.Windows.Controls.Expander> コントロールの <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A> プロパティおよび <xref:System.Windows.Controls.Control.VerticalContentAlignment%2A> プロパティを設定します。  これらのプロパティを設定すると、配置がヘッダーに適用され、展開されたコンテンツにも適用されます。  
+## <a name="using-the-alignment-properties"></a>配置プロパティの使用  
+ コンテンツの配置を設定することができます、<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A>と<xref:System.Windows.Controls.Control.VerticalContentAlignment%2A>プロパティを<xref:System.Windows.Controls.Expander>コントロール。 これらのプロパティを設定すると、配置がヘッダーに適用され、展開されたコンテンツにも適用されます。  
   
-## 参照  
- <xref:System.Windows.Controls.Expander>   
- <xref:System.Windows.Controls.ExpandDirection>   
- [方法のトピック](../../../../docs/framework/wpf/controls/expander-how-to-topics.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Controls.Expander>  
+ <xref:System.Windows.Controls.ExpandDirection>  
+ [データ バインドに関する「方法」トピック](../../../../docs/framework/wpf/controls/expander-how-to-topics.md)

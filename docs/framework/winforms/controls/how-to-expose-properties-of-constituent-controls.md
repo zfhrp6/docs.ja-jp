@@ -1,34 +1,38 @@
 ---
-title: "方法 : 内在コントロールのプロパティを公開する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "内在コントロール"
-  - "コントロール [Windows フォーム], 内在"
-  - "カスタム コントロール [Windows フォーム], 公開 (プロパティを)"
-  - "ユーザー コントロール [Windows フォーム], 公開 (内在コントロールを)"
+title: "方法 : 内在コントロールのプロパティを公開する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- user controls [Windows Forms], exposing constituent controls
+- controls [Windows Forms], constituent
+- custom controls [Windows Forms], exposing properties
+- constituent controls
 ms.assetid: 5c1ec98b-aa48-4823-986e-4712551cfdf1
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: eb85cb77c28ad443fb6837a5305a080c450220f5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 内在コントロールのプロパティを公開する
-複合コントロールを構成するコントロールを "*内在コントロール*" と呼びます。  これらのコントロールは、通常はプライベートとして宣言されるため、開発者がアクセスすることはできません。  このようなコントロールのプロパティを後で利用できるようにする場合は、プロパティを公開する必要があります。  内在コントロールのプロパティを公開するには、ユーザー コントロールにプロパティを作成し、そのプロパティの `get` アクセサーと `set` アクセサーを使用して、内在コントロールのプライベート プロパティに変更を反映します。  
+# <a name="how-to-expose-properties-of-constituent-controls"></a>方法 : 内在コントロールのプロパティを公開する
+複合コントロールを構成するコントロールが呼び出されます*内在コントロール*です。 これらのコントロールは、通常、プライベートとして宣言し、ため、開発者がアクセスできません。 以降のユーザーにこれらのコントロールのプロパティを使用できるようにする場合は、ユーザーに公開する必要があります。 内在コントロールのプロパティは、ユーザー コントロールでプロパティを作成および使用によって公開される、`get`と`set`内在コントロールのプライベート プロパティの変更を有効にするためのプロパティのアクセサー。  
   
- `MyButton` という名前の内在ボタンを持つ、仮想のユーザー コントロールを例に考えます。  この場合、ユーザーが `ConstituentButtonBackColor` プロパティを要求すると、`MyButton` の <xref:System.Windows.Forms.Control.BackColor%2A> プロパティに格納されている値が返されます。  ユーザーがこのプロパティに値を割り当てると、値は自動的に `MyButton` の <xref:System.Windows.Forms.Control.BackColor%2A> プロパティに渡され、`set` コードが実行されて `MyButton` の色を変更します。  
+ という名前の構成要素であるボタンで、仮想的なユーザー コントロールを検討してください`MyButton`です。 ユーザーが要求したときに、この例では、`ConstituentButtonBackColor`プロパティに格納された値、<xref:System.Windows.Forms.Control.BackColor%2A>のプロパティ`MyButton`配信されます。 ユーザーには、このプロパティに値が割り当てられ、その値を自動的に渡されます、<xref:System.Windows.Forms.Control.BackColor%2A>プロパティ`MyButton`と`set`の色を変更する、コードが実行されます`MyButton`です。  
   
- 内在ボタンの <xref:System.Windows.Forms.Control.BackColor%2A> プロパティを公開する方法を次の例に示します。  
+ 次の例は、公開する方法を示します、<xref:System.Windows.Forms.Control.BackColor%2A>内在ボタンのプロパティ。  
   
 ```vb  
 Public Property ButtonColor() as System.Drawing.Color  
@@ -55,15 +59,15 @@ public Color ButtonColor
 }  
 ```  
   
-### 内在コントロールのプロパティを公開するには  
+### <a name="to-expose-a-property-of-a-constituent-control"></a>内在コントロールのプロパティを公開するには  
   
 1.  ユーザー コントロールのパブリック プロパティを作成します。  
   
-2.  プロパティの `get` セクションに、公開するプロパティの値を取得するコードを記述します。  
+2.  `get`を公開するプロパティの値を取得するコードを記述するプロパティのセクションでします。  
   
-3.  プロパティの `set` セクションに、内在コントロールの公開されたプロパティにプロパティの値を渡すコードを記述します。  
+3.  `set`プロパティ、プロパティの値を公開されている、内在コントロールのプロパティに渡すコードの記述のセクションです。  
   
-## 参照  
- <xref:System.Windows.Forms.UserControl>   
- [Windows フォーム コントロールのプロパティ](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.UserControl>  
+ [Windows フォーム コントロールのプロパティ](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)  
  [さまざまなカスタム コントロール](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)

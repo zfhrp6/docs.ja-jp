@@ -1,49 +1,50 @@
 ---
-title: "オプションのリストを表示するための Windows フォーム コントロール | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "オプションの一覧 (Windows フォームの)"
-  - "Windows フォーム コントロール, 一覧表示 (オプションを)"
+title: "オプションのリストを表示するための Windows フォーム コントロール"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Forms controls, listing options
+- option lists in Windows Forms
 ms.assetid: 5bc064c7-bc1f-4b62-8f4b-252f864b118e
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0e1b26ec97f4b379e6b2d75a407408b8382bca52
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# オプションのリストを表示するための Windows フォーム コントロール
-オプションのリストをユーザーが選択できるようにするには、Windows フォームにさまざまなコントロールを追加します。  ユーザーの入力をどれだけ制限するかに応じて、<xref:System.Windows.Forms.ListBox> コントロール、<xref:System.Windows.Forms.ComboBox> コントロール、または <xref:System.Windows.Forms.CheckedListBox> コントロールを追加できます。  どのコントロールが最適であるかを判断するには、以下のリンクを使用してください。  
+# <a name="windows-forms-controls-used-to-list-options"></a>オプションのリストを表示するための Windows フォーム コントロール
+選択できるオプションの一覧をユーザーに提供する場合は、Windows フォームにさまざまなコントロールを追加できます。 量によって制限するユーザーの入力ですが、追加できます、<xref:System.Windows.Forms.ListBox>コントロール、<xref:System.Windows.Forms.ComboBox>コントロール、または<xref:System.Windows.Forms.CheckedListBox>コントロール。 次のリンクを使用して、最適なコントロールがニーズを判断します。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [ListBox の代わりに Windows フォーム ComboBox を使用する場合](../../../../docs/framework/winforms/controls/when-to-use-a-windows-forms-combobox-instead-of-a-listbox.md)  
- Windows フォームの制限とニーズに応じて適切なリスト ベース コントロールを推奨します。  
+ Windows フォームの制限とニーズに応じて適切なリストに基づくコントロールをお勧めします。  
   
- [方法 : Windows フォーム ComboBox、ListBox、または CheckedListBox コントロールの特定の項目にアクセスする](../../../../docs/framework/winforms/controls/access-specific-items-in-a-wf-combobox-listbox-or-checkedlistbox.md)  
- リスト内のどの項目が指定された位置に表示されるかをプログラミングによって判断する方法について説明します。  
+ [方法: Windows フォーム ComboBox、ListBox、または CheckedListBox コントロールの特定の項目にアクセスする](../../../../docs/framework/winforms/controls/access-specific-items-in-a-wf-combobox-listbox-or-checkedlistbox.md)  
+ 指定した位置に項目を一覧が表示されますかプログラムで判断する方法を示します。  
   
- [方法 : Windows フォームの ComboBox、ListBox、または CheckedListBox コントロールに項目を追加または削除する](../../../../docs/framework/winforms/controls/add-and-remove-items-from-a-wf-combobox.md)  
- コントロールの項目のリスト内の項目を追加または削除する方法について説明します。  
+ [方法: Windows フォームの ComboBox、ListBox、または CheckedListBox コントロールに項目を追加または削除する](../../../../docs/framework/winforms/controls/add-and-remove-items-from-a-wf-combobox.md)  
+ 追加またはコントロールの項目のリストから項目を削除する方法について説明します。  
   
- [方法 : Windows フォーム ComboBox、ListBox、または CheckedListBox コントロールのルックアップ テーブルを作成する](../../../../docs/framework/winforms/controls/create-a-lookup-table-for-a-wf-combobox-listbox.md)  
- フォーム データを使いやすい形式で表示および保持する方法について説明します。  
+ [方法: Windows フォーム ComboBox、ListBox、または CheckedListBox コントロールのルックアップ テーブルを作成する](../../../../docs/framework/winforms/controls/create-a-lookup-table-for-a-wf-combobox-listbox.md)  
+ 表示して、使いやすい形式のフォームのデータを格納する方法についてを説明します。  
   
- [方法 : Windows フォームの ComboBox または ListBox コントロールをデータにバインドする ](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data.md)  
- リスト ベースのコントロールをデータ ソースに連結する方法について説明します。  
+ [方法: Windows フォームの ComboBox または ListBox コントロールをデータにバインドする](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data.md)  
+ リストに基づくコントロールをデータ ソースにバインドするための手順を示します。  
   
- [方法 : Windows フォーム ComboBox、ListBox、または CheckedListBox コントロールを並べ替える](../../../../docs/framework/winforms/controls/sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)  
- データ ソースにあるリスト データを並べ替える方法について説明します。  
+ [方法: Windows フォーム ComboBox、ListBox、または CheckedListBox コントロールを並べ替える](../../../../docs/framework/winforms/controls/sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)  
+ データ ソースにあるリストのデータを並べ替える方法について説明します。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.Windows.Forms.CheckedListBox>  
  このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
   
@@ -53,7 +54,7 @@ caps.handback.revision: 10
  <xref:System.Windows.Forms.ListBox>  
  このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [CheckedListBox コントロールの概要](../../../../docs/framework/winforms/controls/checkedlistbox-control-overview-windows-forms.md)  
  このコントロールの用途、主な機能、およびプロパティについて説明します。  
   
@@ -64,4 +65,4 @@ caps.handback.revision: 10
  このコントロールの用途、主な機能、およびプロパティについて説明します。  
   
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- 使用方法に関する情報へのリンクを含む、Windows フォーム コントロールの完全なリストを提供します。
+ Windows フォーム コントロールの完全な一覧を、使用に関する情報リンクと共に提供します。

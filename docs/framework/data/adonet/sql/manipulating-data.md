@@ -1,32 +1,38 @@
 ---
-title: "データの操作 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "データの操作"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 51096a2e-8b38-4c4d-a523-799bfdb7ec69
-caps.latest.revision: 6
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 5117d2aba6fe368a7a17e3d35d8c4887582267e3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# データの操作
-複数のアクティブな結果セット \(MARS : Multiple Active Result Set\) の導入前は、開発者は複数の接続またはサーバー側のカーソルのいずれかを使用して特定のシナリオを解決しなければなりませんでした。  さらに、トランザクションの状況で複数の接続を使用するときは、接続をバインド \(**sp\_getbindtoken** と **sp\_bindsession**\) する必要がありました。  以下のシナリオでは、複数の接続の代わりに MARS の有効な接続の使い方について説明します。  
+# <a name="manipulating-data"></a>データの操作
+複数のアクティブな結果セット (MARS : Multiple Active Result Set) の導入前は、開発者は複数の接続またはサーバー側のカーソルのいずれかを使用して特定のシナリオを解決しなければなりませんでした。 さらに、複数の接続、トランザクションの状況で使用されていたときにバインドされた接続 (で**sp_getbindtoken**と**sp_bindsession**) が必要でした。 以下のシナリオでは、複数の接続の代わりに MARS の有効な接続の使い方について説明します。  
   
-## MARS で複数のコマンドを使用する  
+## <a name="using-multiple-commands-with-mars"></a>MARS で複数のコマンドを使用する  
  次のコンソール アプリケーションでは、2 つの <xref:System.Data.SqlClient.SqlDataReader> オブジェクトを 2 つの <xref:System.Data.SqlClient.SqlCommand> オブジェクトと使用する方法、および 1 つの <xref:System.Data.SqlClient.SqlConnection> オブジェクトを MARS を有効にして使用する方法について示します。  
   
-### 例  
- この例では、**AdventureWorks** データベースとの接続を 1 つ開きます。  <xref:System.Data.SqlClient.SqlCommand> オブジェクトを使用して、<xref:System.Data.SqlClient.SqlDataReader> が作成されます。  リーダーが使用されると、2 番目の <xref:System.Data.SqlClient.SqlDataReader> リーダーが開かれます。このとき、最初の <xref:System.Data.SqlClient.SqlDataReader> から取得したデータが 2 番目のリーダーの WHERE 句に入力されます。  
+### <a name="example"></a>例  
+ 例では、接続を 1 つを開き、 **AdventureWorks**データベース。 <xref:System.Data.SqlClient.SqlCommand> オブジェクトを使用して、<xref:System.Data.SqlClient.SqlDataReader> が作成されます。 リーダーが使用されると、2 番目の <xref:System.Data.SqlClient.SqlDataReader> リーダーが開かれます。このとき、最初の <xref:System.Data.SqlClient.SqlDataReader> から取得したデータが 2 番目のリーダーの WHERE 句に入力されます。  
   
 > [!NOTE]
->  次の例では、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] に含まれるサンプルの **AdventureWorks** データベースを使用します。  サンプル コードの接続文字列は、データベースがローカルのコンピューターにインストールされて利用可能な状態になっていることを前提としています。  必要に応じて、お使いの環境に合わせて接続文字列を変更してください。  
+>  次の例は、サンプル**AdventureWorks**データベースに含まれている[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]です。 サンプル コードの接続文字列は、データベースがローカルのコンピューターにインストールされて利用可能な状態になっていることを前提としています。 必要に応じて、お使いの環境に合わせて接続文字列を変更してください。  
   
 ```vb  
 Option Strict On  
@@ -167,14 +173,14 @@ static void Main()
 }  
 ```  
   
-## MARS によるデータの読み取りと更新  
- MARS を使用すると、複数の保留中の操作について、読み取り操作と DML \(データ操作言語\) 操作の両方で 1 つの接続を使用することができます。  この機能により、アプリケーションで接続ビジー エラーを処理する必要がなくなります。  さらに、MARS ではサーバー側カーソルのユーザーを置き換えることができます。通常、この処理は多くのリソースを消費します。  最後に、複数の操作を単一の接続で実行できるので、同じトランザクション コンテキストを共有することにより、システムのストアド プロシージャである **sp\_getbindtoken** と **sp\_bindsession** を使用する必要がなくなります。  
+## <a name="reading-and-updating-data-with-mars"></a>MARS によるデータの読み取りと更新  
+ MARS を使用すると、複数の保留中の操作について、読み取り操作と DML (データ操作言語) 操作の両方で 1 つの接続を使用することができます。 この機能により、アプリケーションで接続ビジー エラーを処理する必要がなくなります。 さらに、MARS ではサーバー側カーソルのユーザーを置き換えることができます。通常、この処理は多くのリソースを消費します。 最後に、複数の操作は、単一の接続で実行できる、ために共有することを使用する必要がなくなるため、同じトランザクション コンテキスト**sp_getbindtoken**と**sp_bindsession**格納されているシステムプロシージャです。  
   
-### 例  
- 次のコンソール アプリケーションでは、2 つの <xref:System.Data.SqlClient.SqlDataReader> オブジェクトを 3 つの <xref:System.Data.SqlClient.SqlCommand> オブジェクトと使用する方法、および 1 つの <xref:System.Data.SqlClient.SqlConnection> オブジェクトを MARS を有効にして使用する方法について示します。  最初のコマンド オブジェクトでは、格付けが 5 のベンダーの一覧を取得します。  2 番目のコマンド オブジェクトでは、<xref:System.Data.SqlClient.SqlDataReader> から提供されるベンダー ID を使用して特定のベンダーのすべての製品について 2 番目の <xref:System.Data.SqlClient.SqlDataReader> を読み取ります。  各製品のレコードは、2 番目の <xref:System.Data.SqlClient.SqlDataReader> によってアクセスされます。  計算が実行され、新規 **OnOrderQty** を判定します。  3 番目のコマンド オブジェクトでは、**ProductVendor** テーブルを新しい値で更新します。  このプロセスはすべて単一のトランザクションで行われ、最後にロールバックされます。  
+### <a name="example"></a>例  
+ 次のコンソール アプリケーションでは、2 つの <xref:System.Data.SqlClient.SqlDataReader> オブジェクトを 3 つの <xref:System.Data.SqlClient.SqlCommand> オブジェクトと使用する方法、および 1 つの <xref:System.Data.SqlClient.SqlConnection> オブジェクトを MARS を有効にして使用する方法について示します。 最初のコマンド オブジェクトでは、格付けが 5 のベンダーの一覧を取得します。 2 番目のコマンド オブジェクトでは、<xref:System.Data.SqlClient.SqlDataReader> から提供されるベンダー ID を使用して特定のベンダーのすべての製品について 2 番目の <xref:System.Data.SqlClient.SqlDataReader> を読み取ります。 各製品のレコードは、2 番目の <xref:System.Data.SqlClient.SqlDataReader> によってアクセスされます。 どのような新しいを決定する計算を実行**OnOrderQty**する必要があります。 更新する 3 番目のコマンド オブジェクトを使用して、 **ProductVendor**新しい値を持つテーブルです。 このプロセスはすべて単一のトランザクションで行われ、最後にロールバックされます。  
   
 > [!NOTE]
->  次の例では、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] に含まれるサンプルの **AdventureWorks** データベースを使用します。  サンプル コードの接続文字列は、データベースがローカルのコンピューターにインストールされて利用可能な状態になっていることを前提としています。  必要に応じて、お使いの環境に合わせて接続文字列を変更してください。  
+>  次の例は、サンプル**AdventureWorks**データベースに含まれている[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]です。 サンプル コードの接続文字列は、データベースがローカルのコンピューターにインストールされて利用可能な状態になっていることを前提としています。 必要に応じて、お使いの環境に合わせて接続文字列を変更してください。  
   
 ```vb  
 Option Strict On  
@@ -406,6 +412,6 @@ private static string GetConnectionString()
 }  
 ```  
   
-## 参照  
- [複数のアクティブな結果セット \(MARS\)](../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [複数のアクティブな結果セット (MARS)](../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

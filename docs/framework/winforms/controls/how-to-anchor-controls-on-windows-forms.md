@@ -1,72 +1,73 @@
 ---
-title: "方法 : Windows フォームにコントロールを固定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Anchor プロパティ, 有効化 (サイズ変更可能なフォーム)"
-  - "コントロール [Windows フォーム], 固定"
-  - "コントロール [Windows フォーム], 配置"
-  - "フォーム, サイズ変更"
-  - "サイズ変更 (フォームを)"
-  - "画面の解像度とコントロールの表示"
-  - "Windows フォーム コントロール, 画面の解像度"
-  - "Windows フォーム コントロール, サイズ"
-  - "Windows フォーム, サイズ変更"
+title: "方法 : Windows フォームにコントロールを固定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Anchor property [Windows Forms], enabling resizable forms
+- Windows Forms controls, screen resolutions
+- resizing forms [Windows Forms]
+- Windows Forms controls, size
+- screen resolution and control display
+- controls [Windows Forms], anchoring
+- forms [Windows Forms], resizing
+- Windows Forms, resizing
+- controls [Windows Forms], positioning
 ms.assetid: 59ea914f-fbd3-427a-80fe-decd02f7ae6d
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4c6f7cc527c7409ffecab2ac67386d0f819cce3e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームにコントロールを固定する
-実行時にユーザーがサイズ変更できるフォームをデザインする場合は、フォームのコントロールが適切にサイズ変更され、再配置されるようにする必要があります。  フォームでコントロールのサイズを動的に変更するには、Windows フォーム コントロールの <xref:System.Windows.Forms.Control.Anchor%2A> プロパティを使用します。  <xref:System.Windows.Forms.Control.Anchor%2A> プロパティでは、コントロールの固定位置を定義します。  コントロールをフォームに固定し、フォームをサイズ変更する場合は、コントロールと固定位置の距離が保持されます。  たとえば、フォームの左端、右端、および下端に固定している <xref:System.Windows.Forms.TextBox> コントロールがあるとします。フォームをサイズ変更すると、<xref:System.Windows.Forms.TextBox> コントロールは水平方向にサイズ変更され、フォームの左右の端からの距離が保持されます。  また、フォームの下端からの距離が常に保持されるように、コントロール自体が垂直方向に再配置されます。  コントロールを固定せず、フォームをサイズ変更しない場合は、フォームの端からのコントロールの位置が変更されます。  
+# <a name="how-to-anchor-controls-on-windows-forms"></a>方法 : Windows フォームにコントロールを固定する
+実行時にサイズを変更できるユーザーをフォームをデザインする場合、フォーム上のコントロールがサイズし、位置を正しくです。 使用することができますが、フォームを動的にコントロールのサイズを変更するには、 <xref:System.Windows.Forms.Control.Anchor%2A> Windows フォーム コントロールのプロパティです。 <xref:System.Windows.Forms.Control.Anchor%2A>プロパティがコントロールの固定位置を定義します。 フォームにコントロールを固定すると、フォームのサイズが、コントロールは、コントロールと、アンカー位置の間の距離を保持します。 ある場合など、<xref:System.Windows.Forms.TextBox>フォームのサイズを変更、左、右、およびフォームの下端が固定されるコントロール、<xref:System.Windows.Forms.TextBox>フォームの横の右側と左側からの距離が維持されるため、水平方向にサイズ変更を制御します。 さらに、コントロール配置自体垂直方向にその場所は、フォームの下部エッジからの距離では常にできるようにします。 コントロールが固定されていないと、フォームのサイズが、フォームの端を基準としたコントロールの位置が変更されました。  
   
- <xref:System.Windows.Forms.Control.Anchor%2A> プロパティは <xref:System.Windows.Forms.Control.AutoSize%2A> プロパティとやり取りします。  詳細については、「[AutoSize プロパティの概要](../../../../docs/framework/winforms/controls/autosize-property-overview.md)」を参照してください。  
+ <xref:System.Windows.Forms.Control.Anchor%2A>プロパティの対話、<xref:System.Windows.Forms.Control.AutoSize%2A>プロパティです。 詳細については、次を参照してください。 [AutoSize プロパティの概要](../../../../docs/framework/winforms/controls/autosize-property-overview.md)です。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-### フォームにコントロールを固定するには  
+### <a name="to-anchor-a-control-on-a-form"></a>フォーム上のコントロールを固定するには  
   
 1.  固定するコントロールを選択します。  
   
     > [!NOTE]
-    >  複数のコントロールを同時に固定できます。これを行うには、Ctrl キーを押しながら各コントロールをクリックして選択し、以降の手順を実行します。  
+    >  CTRL キーを押し、して選択し、各コントロールをクリックし、この手順の残りの部分で同時に複数のコントロールを固定できます。  
   
-2.  **\[プロパティ\]** ウィンドウで、<xref:System.Windows.Forms.Control.Anchor%2A> プロパティの右にある矢印をクリックします。  
+2.  **プロパティ** ウィンドウの右側の矢印をクリックして、<xref:System.Windows.Forms.Control.Anchor%2A>プロパティです。  
   
-     エディターにクロスが表示されます。  
+     クロス エディターが表示されます。  
   
-3.  アンカーを設定するには、クロスの上、下、左、右のいずれかの部分をクリックします。  
+3.  アンカーを設定するには、左上、右、またはクロスの下部のセクションをクリックします。  
   
-     既定では、コントロールが上と左に固定されます。  
+     コントロール、ページのトップへと左に固定既定です。  
   
-4.  アンカー設定を無効にするには、クロスの該当するアームをクリックします。  
+4.  固定されているコントロールの辺をクリアするには、その arm クロスをクリックします。  
   
-5.  <xref:System.Windows.Forms.Control.Anchor%2A> プロパティ エディターを閉じるには、<xref:System.Windows.Forms.Control.Anchor%2A> プロパティ名をもう一度クリックします。  
+5.  閉じるには、<xref:System.Windows.Forms.Control.Anchor%2A>プロパティ エディターをクリックして、<xref:System.Windows.Forms.Control.Anchor%2A>プロパティ名をもう一度です。  
   
- 実行時にフォームが表示されると、フォームの端からの距離を保持するために、コントロールのサイズが変更されます。  固定された端からの距離は、Windows フォーム デザイナーでコントロールを配置したときに定義した距離と常に等しくなります。  
+ 実行時に、フォームが表示されたら、フォームの端からの距離を保持するコントロールのサイズを変更します。 アンカーのエッジからの距離。 常に同じ距離は、Windows フォーム デザイナーでコントロールが配置されているときに定義されています。  
   
 > [!NOTE]
->  <xref:System.Windows.Forms.ComboBox> コントロールなどの特定のコントロールでは、高さが制限されています。  フォームまたはコンテナーの下端にコントロールを固定する場合、制限された高さよりコントロールを高くすることはできません。  
+>  などの特定のコントロール、<xref:System.Windows.Forms.ComboBox>の高さに制限されている、制御します。 フォームまたはコンテナーの最下位にコントロールを固定強制的にコントロールを制限された高さを高くことはできません。  
   
- 継承したコントロールを固定できるようにするには、`Protected` にする必要があります。  コントロールのアクセス レベルを変更するには、**\[プロパティ\]** ウィンドウで `Modifiers` プロパティを設定します。  
+ 継承されたコントロールがある必要があります`Protected`固定できるようにします。 コントロールのアクセス レベルを変更するには、次のように設定します。 その`Modifiers`プロパティに、**プロパティ**ウィンドウです。  
   
-## 参照  
- [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)   
- [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)   
- [AutoSize プロパティの概要](../../../../docs/framework/winforms/controls/autosize-property-overview.md)   
- [方法 : Windows フォーム上のコントロールをドッキングする](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)   
- [チュートリアル : FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)   
- [チュートリアル : TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)   
- [チュートリアル : Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト](../../../../docs/framework/winforms/controls/windows-forms-controls-padding-autosize.md)
+## <a name="see-also"></a>関連項目  
+ [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)  
+ [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
+ [AutoSize プロパティの概要](../../../../docs/framework/winforms/controls/autosize-property-overview.md)  
+ [方法: Windows フォーム上のコントロールをドッキングする](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)  
+ [チュートリアル: FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)  
+ [チュートリアル: TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)  
+ [チュートリアル: Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト](../../../../docs/framework/winforms/controls/windows-forms-controls-padding-autosize.md)

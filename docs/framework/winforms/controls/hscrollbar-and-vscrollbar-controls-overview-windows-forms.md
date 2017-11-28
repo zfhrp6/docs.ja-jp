@@ -1,51 +1,52 @@
 ---
-title: "HScrollBar コントロールと VScrollBar コントロールの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "HScrollBar"
-  - "VScrollBar"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "HScrollBar コントロール [Windows フォーム], HScrollBar の概要"
-  - "スクロール バー, スクロール バーの概要"
-  - "ScrollBar コントロール [Windows フォーム]"
-  - "ScrollBar コントロール [Windows フォーム], ScrollBar コントロールの概要"
-  - "VScrollBar コントロール [Windows フォーム], VScrollBar コントロールの概要"
+title: "HScrollBar コントロールと VScrollBar コントロールの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- HScrollBar
+- VScrollBar
+helpviewer_keywords:
+- ScrollBar control [Windows Forms]
+- HScrollBar control [Windows Forms], about HScrollBar
+- VScrollBar control [Windows Forms], about VScrollBar control
+- ScrollBar control [Windows Forms], about ScrollBar control
+- scroll bars [Windows Forms], about scroll bars
 ms.assetid: 8b307679-1cae-41d8-99aa-3d1efd207cd6
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 80ec592bf83969ae57495b0df2af110b5622ea11
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# HScrollBar コントロールと VScrollBar コントロールの概要 (Windows フォーム)
-Windows フォームの <xref:System.Windows.Forms.ScrollBar> コントロールを使用すると、アプリケーションまたはコントロール内で水平または垂直にスクロールすることにより、項目の長い一覧や大量の情報を簡単に見ることができるようになります。  スクロール バーは Windows インターフェイスの一般的な要素であるため、<xref:System.Windows.Forms.ScrollBar> コントロールは多くの場合、<xref:System.Windows.Forms.ScrollableControl> クラスから派生していないコントロールと共に使用されます。  同様に、多くの開発者は、独自のユーザー コントロールを作成するときに <xref:System.Windows.Forms.ScrollBar> コントロールを使用します。  
+# <a name="hscrollbar-and-vscrollbar-controls-overview-windows-forms"></a>HScrollBar コントロールと VScrollBar コントロールの概要 (Windows フォーム)
+Windows フォーム<xref:System.Windows.Forms.ScrollBar>または垂直方向に水平方向にスクロールすることにより、アプリケーションまたはコントロール内で簡単にナビゲート長い一覧の項目または大量の情報を提供するコントロールを使用します。 スクロール バーは、Windows のインターフェイスの一般的な要素をそのため、<xref:System.Windows.Forms.ScrollBar>コントロールから派生していないを持つコントロールが使用される多くの場合、<xref:System.Windows.Forms.ScrollableControl>クラスです。 組み込むに多くの開発者が同様に、選択、<xref:System.Windows.Forms.ScrollBar>独自のユーザー コントロールを作成するときに制御します。  
   
- <xref:System.Windows.Forms.HScrollBar> \(水平\) コントロールおよび <xref:System.Windows.Forms.VScrollBar> \(垂直\) コントロールは他のコントロールとは独立して動作し、独自のイベント、プロパティ、およびメソッドのセットを備えています。  <xref:System.Windows.Forms.ScrollBar> コントロールは、テキスト ボックス、リスト ボックス、コンボ ボックス、または MDI フォームに結び付けられている組み込みのスクロール バーとは異なります。<xref:System.Windows.Forms.TextBox> コントロールには、コントロールに結び付けられているスクロール バーを表示または非表示にするための <xref:System.Windows.Forms.TextBox.ScrollBars%2A> プロパティがあります。  
+ <xref:System.Windows.Forms.HScrollBar> (水平) と<xref:System.Windows.Forms.VScrollBar>(縦方向) の制御は、他のコントロールから独立して動作して、独自のイベント、プロパティ、およびメソッドのセット。 <xref:System.Windows.Forms.ScrollBar>コントロールは、テキスト ボックス、リスト ボックス、コンボ ボックス、または MDI フォームにアタッチされている組み込みのスクロール バーと同じではありません (、<xref:System.Windows.Forms.TextBox>コントロールが、<xref:System.Windows.Forms.TextBox.ScrollBars%2A>プロパティ、コントロールに関連付けられているスクロール バーを非表示)。  
   
- <xref:System.Windows.Forms.ScrollBar> コントロールは、<xref:System.Windows.Forms.ScrollBar.Scroll> イベントを使用して、スクロール バーに沿ったスクロール ボックスの動きを監視します。スクロール ボックスは、"つまみ" とも呼ばれます。  <xref:System.Windows.Forms.ScrollBar.Scroll> イベントを使用すると、スクロール バーがドラッグされているときにスクロール バーの値にアクセスできます。  
+ <xref:System.Windows.Forms.ScrollBar>使用を制御、<xref:System.Windows.Forms.ScrollBar.Scroll>スクロール バーに沿ったスクロール ボックス (つまみとも呼ばれます) の動きを監視するイベントです。 使用して、<xref:System.Windows.Forms.ScrollBar.Scroll>がドラッグされていると、イベントがスクロール バーの値へのアクセスを提供します。  
   
-## Value プロパティ  
- <xref:System.Windows.Forms.ScrollBar.Value%2A> プロパティ \(既定では 0\) は、スクロール バー内でのスクロール ボックスの位置に対応する `integer` 値です。  スクロール ボックスの値が最小の場合、スクロール ボックスは水平スクロール バーの左端、または垂直スクロール バーの上端に移動します。  スクロール ボックスの値が最大の場合、スクロール ボックスは右端または下端に移動します。  同様に、最大と最小の中間の値では、スクロール ボックスの先端はスクロール バーの中央に位置します。  
+## <a name="value-property"></a>Value プロパティ  
+ <xref:System.Windows.Forms.ScrollBar.Value%2A>プロパティ (つまり、既定では、0) は、`integer`スクロール バーのスクロール ボックスの位置に対応する値。 スクロール ボックスの位置は、最小値では、ときに、左端の位置 (水平スクロール バーまたは (垂直スクロール バーの上端の位置に移動します。 スクロール ボックスがの場合、最大値、一番右にスクロール ボックスの移動、または最下部の位置です。 同様に、範囲の上部と下部の中間値は、スクロール バーの途中でスクロール ボックスの先端を配置します。  
   
- マウスをクリックしてスクロール バーの値を変更する以外に、ユーザーはスクロール ボックスをバー上の任意の位置にドラッグすることもできます。  結果の値はスクロール ボックスの位置によって決まりますが、常にユーザーによって設定された <xref:System.Windows.Forms.ScrollBar.Minimum%2A> プロパティから <xref:System.Windows.Forms.ScrollBar.Maximum%2A> プロパティまでの範囲内にあります。  
+ に加えて、マウスのクリックを使用して、スクロール バーの値を変更する、ユーザーが任意の時点、バーのスクロール ボックスをドラッグすることもできます。 結果の値は、スクロール ボックスの位置によって異なりますが、範囲内では常に、<xref:System.Windows.Forms.ScrollBar.Minimum%2A>に<xref:System.Windows.Forms.ScrollBar.Maximum%2A>ユーザーによって設定されるプロパティです。  
   
-## LargeChange プロパティおよび SmallChange プロパティ  
- ユーザーが PageUp キーか PageDown キーを押すか、またはスクロール ボックスのどちらかの側でスクロール バー領域をクリックすると、<xref:System.Windows.Forms.ScrollBar.LargeChange%2A> プロパティに設定された値に従って <xref:System.Windows.Forms.ScrollBar.Value%2A> プロパティが変化します。  
+## <a name="largechange-and-smallchange-properties"></a>LargeChange と SmallChange プロパティ  
+ ユーザーが PAGEUP または PAGEDOWN キーを押すかスクロール ボックスのどちら側にスクロール バーのトラックをクリックしたときに、<xref:System.Windows.Forms.ScrollBar.Value%2A>プロパティの変更に設定された値に従って、<xref:System.Windows.Forms.ScrollBar.LargeChange%2A>プロパティです。  
   
- ユーザーがいずれかの方向キーを押すか、またはスクロール バーのいずれかのボタンをクリックすると、<xref:System.Windows.Forms.ScrollBar.SmallChange%2A> プロパティに設定された値に従って <xref:System.Windows.Forms.ScrollBar.Value%2A> プロパティが変化します。  
+ 押されたときの矢印のいずれかのキーか、スクロール バーのボタンのいずれかをクリックすると、<xref:System.Windows.Forms.ScrollBar.Value%2A>プロパティの変更に設定された値に従って、<xref:System.Windows.Forms.ScrollBar.SmallChange%2A>プロパティです。  
   
-## 参照  
- <xref:System.Windows.Forms.HScrollBar>   
- <xref:System.Windows.Forms.VScrollBar>   
- [Additions to Windows Forms for the .NET Framework 2.0](http://msdn.microsoft.com/ja-jp/c61a923d-3d6a-4c8c-820c-e94c83f3f9a8)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.HScrollBar>  
+ <xref:System.Windows.Forms.VScrollBar>  
+ [.NET Framework 2.0 の Windows フォームへの追加](http://msdn.microsoft.com/en-us/c61a923d-3d6a-4c8c-820c-e94c83f3f9a8)  
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

@@ -1,54 +1,60 @@
 ---
-title: "方法 : データ形式がデータ オブジェクトに存在するかどうかを判別する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "データ形式 [WPF], 判断 (存在するかどうかを)"
-  - "DataFormats クラス [WPF]"
-  - "ドラッグ アンド ドロップ [WPF], 存在するデータ形式"
+title: "方法 : データ形式がデータ オブジェクトに存在するかどうかを判別する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DataFormats class [WPF]
+- drag-and-drop [WPF], data formats present
+- data formats [WPF], determining if present
 ms.assetid: e487a454-c9fc-4e53-aeaa-c458d059ad4c
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9e5eaad64e18ff955340a8e91bfe8bd0e09dd8d7
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : データ形式がデータ オブジェクトに存在するかどうかを判別する
-さまざまな <xref:System.Windows.DataObject.GetDataPresent%2A> メソッドのオーバーロードを使用して、特定のデータ形式がデータ オブジェクトに存在するかどうかを照会する方法を次の例に示します。  
+# <a name="how-to-determine-if-a-data-format-is-present-in-a-data-object"></a>方法 : データ形式がデータ オブジェクトに存在するかどうかを判別する
+次の例は、さまざまな使用方法を示して<xref:System.Windows.DataObject.GetDataPresent%2A>特定のデータ形式は、データ オブジェクトに存在するかどうかをクエリ メソッドはオーバー ロードします。  
   
-## 例  
+## <a name="example"></a>例  
   
-### Description  
- <xref:System.Windows.DataObject.GetDataPresent%28System.String%29> オーバーロードを使用して、記述子文字列ごとに特定のデータ形式の存在を照会するコード例を次に示します。  
+### <a name="description"></a>説明  
+ 次のコード例を使用して、<xref:System.Windows.DataObject.GetDataPresent%28System.String%29>記述子の文字列によって特定のデータ形式の存在をクエリするオーバー ロードします。  
   
-### コード  
+### <a name="code"></a>コード  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_QueryDataFormats_String](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_querydataformats_string)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_QueryDataFormats_String](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_querydataformats_string)]  
   
-## 例  
+## <a name="example"></a>例  
   
-### Description  
- <xref:System.Windows.DataObject.GetDataPresent%28System.Type%29> オーバーロードを使用して、型ごとに特定のデータ形式の存在を照会するコード例を次に示します。  
+### <a name="description"></a>説明  
+ 次のコード例を使用して、<xref:System.Windows.DataObject.GetDataPresent%28System.Type%29>型によって特定のデータ形式の存在をクエリするオーバー ロードします。  
   
-### コード  
+### <a name="code"></a>コード  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_QueryDataFormats_Type](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_querydataformats_type)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_QueryDataFormats_Type](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_querydataformats_type)]  
   
-## 例  
+## <a name="example"></a>例  
   
-### Description  
- <xref:System.Windows.DataObject.GetDataPresent%28System.String%2CSystem.Boolean%29> オーバーロードを使用して記述子文字列ごとにデータを照会し、自動変換が可能なデータ形式の処理方法を指定するコード例を次に示します。  
+### <a name="description"></a>説明  
+ 次のコード例を使用して、<xref:System.Windows.DataObject.GetDataPresent%28System.String%2CSystem.Boolean%29>記述子文字列でデータを照会するオーバー ロードし、自動変換可能なデータ形式を処理する方法を指定します。  
   
-### コード  
+### <a name="code"></a>コード  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_QueryDataFormats_Autoconvert](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_querydataformats_autoconvert)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_QueryDataFormats_Autoconvert](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_querydataformats_autoconvert)]  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.IDataObject>

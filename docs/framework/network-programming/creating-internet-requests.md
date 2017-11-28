@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - WebRequest class, sending and receiving data
 - Networking
@@ -21,19 +16,18 @@ helpviewer_keywords:
 - Internet, requesting data
 - data requests, creating requests
 ms.assetid: faab683e-3f1e-4eee-b5e9-59f7245033d5
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d5bc99f08542718ccd449c069c91082d8227f9a4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 52f1fc2601aca9b4d823d42ed961fcf007e5e5ce
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="creating-internet-requests"></a>インターネット要求の作成
-アプリケーションは、<xref:System.Net.WebRequest.Create%2A?displayProperty=fullName> メソッドを使用して <xref:System.Net.WebRequest> のインスタンスを作成します。 これは、渡された URI スキームに基づいて **WebRequest** から派生するクラスを作成する静的メソッドです。  
+アプリケーションは、<xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> メソッドを使用して <xref:System.Net.WebRequest> のインスタンスを作成します。 これは、渡された URI スキームに基づいて **WebRequest** から派生するクラスを作成する静的メソッドです。  
   
 ## <a name="web-file-and-ftp-requests"></a>Web、ファイルおよび FTP 要求  
  .NET Framework は、**WebRequest** から派生する <xref:System.Net.HttpWebRequest> クラスを提供することにより、HTTP および HTTPS 要求を処理します。 ほとんどの場合、**WebRequest** クラスは要求を行うのに必要なすべてのプロパティを提供しますが、必要に応じて、**WebRequest.Create** メソッドで作成した **WebRequest** オブジェクトを **HttpWebRequest** 型にキャストすることにより、その要求の HTTP 固有のプロパティにアクセスすることができます。 同様に、**HttpWebResponse** オブジェクトは、HTTP および HTTPS 要求からの応答を処理します。 **HttpWebResponse** オブジェクトの HTTP 固有のプロパティにアクセスするには、**WebResponse** オブジェクトを **HttpWebResponse** 型にキャストする必要があります。  
@@ -43,6 +37,5 @@ ms.lasthandoff: 08/21/2017
  アプリケーション レベルの他のプロトコルを使用する要求を処理するには、**WebRequest** および **WebResponse** から派生するプロトコル固有のクラスを実装する必要があります。 詳細については、「[Programming Pluggable Protocols](../../../docs/framework/network-programming/programming-pluggable-protocols.md)」(プラグ可能なプロトコルのプログラミング) を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [方法: WebRequest クラスを使用してデータを要求する](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)   
+ [方法: WebRequest クラスを使用してデータを要求する](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)  
  [データの要求](../../../docs/framework/network-programming/requesting-data.md)
-

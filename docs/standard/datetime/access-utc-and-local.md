@@ -1,59 +1,69 @@
 ---
-title: "方法 : 定義済みの UTC オブジェクトおよびローカル タイム ゾーン オブジェクトにアクセスする | Microsoft Docs"
-ms.custom: ""
-ms.date: "04/10/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ローカル タイム ゾーンへのアクセス"
-  - "定義済みのタイム ゾーン"
-  - "タイム ゾーン [.NET Framework], local"
-  - "タイム ゾーン [.NET Framework], 取得"
-  - "タイム ゾーン [.NET Framework], UTC"
-  - "UTC 時刻, 定義済み"
+title: "方法: 定義済みの UTC とローカル タイム ゾーン オブジェクトにアクセス"
+ms.custom: 
+ms.date: 04/10/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- time zones [.NET Framework], local
+- predefined time zones
+- UTC times, predefined
+- local time zone access
+- time zones [.NET Framework], retrieving
+- time zones [.NET Framework], UTC
 ms.assetid: 961fb70b-83f0-4dab-a042-cb5fcd817cf5
-caps.latest.revision: 9
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 4538407bc66ad7974a9a4998c8e5d7ccb38fab4e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : 定義済みの UTC オブジェクトおよびローカル タイム ゾーン オブジェクトにアクセスする
-<xref:System.TimeZoneInfo> クラスに用意されている 2 つのプロパティ、<xref:System.TimeZoneInfo.Utc%2A> および <xref:System.TimeZoneInfo.Local%2A> を使用すると、コードから定義済みのタイム ゾーン オブジェクトにアクセスできます。  このトピックでは、これらのプロパティから返される <xref:System.TimeZoneInfo> オブジェクトにアクセスする方法について説明します。  
-  
-### 世界協定時刻 \(UTC: Coordinated Universal Time\) の TimeZoneInfo オブジェクトにアクセスするには  
-  
-1.  `static` \(Visual Basic では `Shared`\) <xref:System.TimeZoneInfo.Utc%2A?displayProperty=fullName> プロパティを使用して、世界協定時刻にアクセスします。  
-  
-2.  プロパティから返された <xref:System.TimeZoneInfo> オブジェクトをオブジェクト変数に割り当てることはせず、そのまま <xref:System.TimeZoneInfo.Utc%2A?displayProperty=fullName> プロパティを使用して世界協定時刻にアクセスします。  
-  
-### ローカル タイム ゾーンにアクセスするには  
-  
-1.  `static` \(Visual Basic では `Shared`\) <xref:System.TimeZoneInfo.Local%2A?displayProperty=fullName> プロパティを使用して、ローカル システム タイム ゾーンにアクセスします。  
-  
-2.  プロパティから返された <xref:System.TimeZoneInfo> オブジェクトをオブジェクト変数に割り当てることはせず、そのまま <xref:System.TimeZoneInfo.Local%2A?displayProperty=fullName> プロパティを使用してローカル タイム ゾーンにアクセスします。  
-  
-## 使用例  
- 次のコードは、米国およびカナダ東部標準時タイム ゾーンの時刻に変換し、コンソールにタイム ゾーンの名前を表示するために <xref:System.TimeZoneInfo.Local%2A?displayProperty=fullName> と <xref:System.TimeZoneInfo.Utc%2A?displayProperty=fullName> のプロパティを使用します。  
-  
- [!code-csharp[System.TimeZone2.Concepts#13](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#13)]
- [!code-vb[System.TimeZone2.Concepts#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#13)]  
-  
- ローカル タイム ゾーンにアクセスする場合は、<xref:System.TimeZoneInfo> オブジェクト変数にローカル タイム ゾーンを割り当てることはせず、必ず <xref:System.TimeZoneInfo.Local%2A?displayProperty=fullName> プロパティを使用してください。  同様に、世界協定時刻にアクセスする場合は、UTC ゾーンを <xref:System.TimeZoneInfo> オブジェクト変数に割り当てることはせず、必ず <xref:System.TimeZoneInfo.Utc%2A?displayProperty=fullName> プロパティを使用してください。これにより、<xref:System.TimeZoneInfo> オブジェクト変数が <xref:System.TimeZoneInfo.ClearCachedData%2A?displayProperty=fullName> メソッド呼び出しによって無効になるのを防ぐことができます。  
-  
-## コードのコンパイル  
- この例には、次の項目が必要です。  
-  
--   System.Core.dll への参照をプロジェクトに追加する。  
-  
--   <xref:System> 名前空間を `using` ステートメントでインポートする \(C\# のコードで必要\)。  
-  
-## 参照  
- [日付、時刻、およびタイム ゾーン](../../../docs/standard/datetime/index.md)   
- [ローカル システムで定義されているタイム ゾーンの検索](../../../docs/standard/datetime/finding-the-time-zones-on-local-system.md)   
- [方法 : TimeZoneInfo オブジェクトをインスタンス化する](../../../docs/standard/datetime/instantiate-time-zone-info.md)
+# <a name="how-to-access-the-predefined-utc-and-local-time-zone-objects"></a>方法: 定義済みの UTC とローカル タイム ゾーン オブジェクトにアクセス
+
+<xref:System.TimeZoneInfo>クラスには、2 つのプロパティが用意されています<xref:System.TimeZoneInfo.Utc%2A>と<xref:System.TimeZoneInfo.Local%2A>、定義済みのタイム ゾーン オブジェクトをコードのアクセス権を付与します。 このトピックでは、これらのプロパティから返される <xref:System.TimeZoneInfo> オブジェクトにアクセスする方法について説明します。
+
+### <a name="to-access-the-coordinated-universal-time-utc-timezoneinfo-object"></a>世界協定時刻 (UTC) の TimeZoneInfo オブジェクトにアクセスするには
+
+1. 使用して、 `static` (`Shared` Visual Basic で)<xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType>協定世界時にアクセスするプロパティです。
+
+2. 割り当てるのではなく、<xref:System.TimeZoneInfo>オブジェクト変数に、プロパティによって返されるオブジェクトに引き続きアクセスを介して世界協定時刻、<xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType>プロパティです。
+
+### <a name="to-access-the-local-time-zone"></a>ローカル タイム ゾーンにアクセスするには
+
+1. 使用して、 `static` (`Shared` Visual Basic で)<xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType>ローカル システムのタイム ゾーンにアクセスするプロパティです。
+
+2. 割り当てるのではなく、<xref:System.TimeZoneInfo>オブジェクト変数に、プロパティによって返されるオブジェクトに引き続きアクセスを通じて、ローカル タイム ゾーン、<xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType>プロパティです。
+
+## <a name="example"></a>例
+
+次のコードでは、<xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType>と<xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType>プロパティから米国およびカナダ東部標準時ゾーンの時刻の変換をできるだけでなく、タイム ゾーンの名前をコンソールに表示します。
+
+[!code-csharp[System.TimeZone2.Concepts#13](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#13)]
+[!code-vb[System.TimeZone2.Concepts#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#13)]
+
+を介して、ローカル タイム ゾーンを常にアクセスする必要があります、<xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType>にゾーンのローカル時刻を割り当てるのではなく、プロパティ、<xref:System.TimeZoneInfo>オブジェクト変数です。 同様に、アクセスすることは常に世界協定時刻で、<xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType>にゾーンの UTC を割り当てるのではなく、プロパティ、<xref:System.TimeZoneInfo>オブジェクト変数です。 これにより、<xref:System.TimeZoneInfo>オブジェクト変数への呼び出しによって無効にされてから、<xref:System.TimeZoneInfo.ClearCachedData%2A?displayProperty=nameWithType>メソッドです。
+
+## <a name="compiling-the-code"></a>コードのコンパイル
+
+この例で必要な要素は次のとおりです。
+
+* される System.Core.dll への参照をプロジェクトに追加します。
+
+* <xref:System>と共に名前空間をインポートする、`using`ステートメント (c# コードで必要です)。
+
+## <a name="see-also"></a>関連項目
+
+[日付、時刻、およびタイム ゾーン](../../../docs/standard/datetime/index.md)
+[ローカル システムで定義されているタイム ゾーンの検索](../../../docs/standard/datetime/finding-the-time-zones-on-local-system.md)
+[する方法: TimeZoneInfo オブジェクトをインスタンス化](../../../docs/standard/datetime/instantiate-time-zone-info.md)

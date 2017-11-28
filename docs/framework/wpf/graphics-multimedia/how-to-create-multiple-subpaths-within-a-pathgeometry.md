@@ -1,40 +1,41 @@
 ---
-title: "方法 : PathGeometry 内に複数のサブパスを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "クラス, PathGeometry"
-  - "グラフィックス [WPF], サブパス"
-  - "複数のサブパス"
-  - "PathGeometry クラス"
-  - "サブパス"
+title: "方法 : PathGeometry 内に複数のサブパスを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- multiple subpaths [WPF]
+- graphics [WPF], subpaths
+- subpaths [WPF]
 ms.assetid: 104a862c-dde2-4e62-ac87-80660dd1681c
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3a9a233df95f69a68c5410c5836dacd5ab2c239a
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : PathGeometry 内に複数のサブパスを作成する
-この例では、<xref:System.Windows.Media.PathGeometry> 内に複数のサブパスを作成する方法を示します。  複数のサブパスを作成するには、サブパスごとに <xref:System.Windows.Media.PathFigure> を作成します。  
+# <a name="how-to-create-multiple-subpaths-within-a-pathgeometry"></a>方法 : PathGeometry 内に複数のサブパスを作成する
+この例は、内の複数のサブパスを作成する方法を示します、<xref:System.Windows.Media.PathGeometry>です。 作成する複数のサブパスを作成するには<xref:System.Windows.Media.PathFigure>各サブ パスにします。  
   
-## 使用例  
- 次の例では、それぞれが三角形の 2 つのサブパスを作成します。  
+## <a name="example"></a>例  
+ 次の例は、1 つずつ、2 つのサブパス三角形を作成します。  
   
- [!code-xml[GeometrySample#38](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/pathgeometryexample.xaml#38)]  
+ [!code-xaml[GeometrySample#38](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/pathgeometryexample.xaml#38)]  
   
- <xref:System.Windows.Shapes.Path> と [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の属性構文を使用して複数のサブパスを作成する方法を次の例に示します。  それぞれが三角形を描画する 2 つのサブパスが作成されるように、各 `M` が新しいサブパスを作成します。  
+ 次の例を使用して複数のサブパスを作成する方法を示しています、<xref:System.Windows.Shapes.Path>と[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]属性構文です。 各`M`されるため、例では、三角形を描画それぞれ 2 つのサブパスを作成する新しいサブパスを作成します。  
   
- [!code-xml[GeometrySample#58](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/geometryattributesyntaxexample.xaml#58)]  
+ [!code-xaml[GeometrySample#58](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/geometryattributesyntaxexample.xaml#58)]  
   
- \(この属性構文は、実際には <xref:System.Windows.Media.PathGeometry> の軽量バージョンである <xref:System.Windows.Media.StreamGeometry> を作成します。  詳細については、「[パス マークアップ構文](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md)」のページを参照してください。\)  
+ (この属性の構文が実際に作成するメモ、 <xref:System.Windows.Media.StreamGeometry>、軽量バージョンの<xref:System.Windows.Media.PathGeometry>です。 詳細については、「[パス マークアップ構文](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md)」のページを参照してください。)  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ジオメトリの概要](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)

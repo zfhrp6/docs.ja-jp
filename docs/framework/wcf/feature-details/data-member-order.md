@@ -1,38 +1,43 @@
 ---
-title: "データ メンバーの順序 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "データ コントラクト [WCF], メンバーの順序"
+title: "データ メンバーの順序"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: data contracts [WCF], ordering members
 ms.assetid: 0658a47d-b6e5-4ae0-ba72-ababc3c6ff33
-caps.latest.revision: 17
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 06b311f0ca8e9b0a298cd1d9a5e87ff96d13a787
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# データ メンバーの順序
-一部のアプリケーションでは、各種のデータ メンバーから送信される、または受信されると予想できるデータの順序 \(たとえばシリアル化された XML でデータが表れる順序\) がわかると便利です。この順序を変更する必要が生じることもあります。ここでは、このような順序を決定する規則について説明します。  
+# <a name="data-member-order"></a>データ メンバーの順序
+一部のアプリケーションでは、各種のデータ メンバーから送信される、または受信されると予想できるデータの順序 (たとえばシリアル化された XML でデータが表れる順序) がわかると便利です。 この順序を変更する必要が生じることもあります。 ここでは、このような順序を決定する規則について説明します。  
   
-## 基本的な規則  
+## <a name="basic-rules"></a>基本的な規則  
  データの順序を決定する基本的な規則には、次のようなものがあります。  
   
 -   データ コントラクト型が継承階層の一部である場合、その基本型のデータ メンバーが常に最初の順番になります。  
   
--   次に来るのは <xref:System.Runtime.Serialization.DataMemberAttribute> 属性の <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> プロパティが設定されていない、現在の型のデータ メンバー \(アルファベット順\) になります。  
+-   次に来るのは <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> 属性の <xref:System.Runtime.Serialization.DataMemberAttribute> プロパティが設定されていない、現在の型のデータ メンバー (アルファベット順) になります。  
   
--   その次に来るのは、<xref:System.Runtime.Serialization.DataMemberAttribute> 属性の <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> プロパティが設定されているすべてのデータ メンバーです。これらのデータ メンバーはまず `Order` プロパティの値によって並べられ、次に特定の `Order` 値を持つメンバーが複数ある場合は、そのアルファベット順に並びます。Order 値はスキップされることがあります。  
+-   その次に来るのは、<xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> 属性の <xref:System.Runtime.Serialization.DataMemberAttribute> プロパティが設定されているすべてのデータ メンバーです。 これらのデータ メンバーはまず `Order` プロパティの値によって並べられ、次に特定の `Order` 値を持つメンバーが複数ある場合は、そのアルファベット順に並びます。 Order 値はスキップされることがあります。  
   
  アルファベット順は、<xref:System.String.CompareOrdinal%2A> メソッドを呼び出すことによって確立されます。  
   
-## 例  
+## <a name="examples"></a>例  
  次のコードについて考えてみましょう。  
   
  [!code-csharp[C_DataContractNames#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontractnames/cs/source.cs#4)]
@@ -40,7 +45,7 @@ caps.handback.revision: 17
   
  作成される XML は、次のようになります。  
   
-```  
+```xml  
 <DerivedType>  
     <!-- Zebra is a base data member, and appears first. -->  
     <zebra/>   
@@ -66,7 +71,7 @@ caps.handback.revision: 17
 </DerivedType>  
 ```  
   
-## 参照  
- <xref:System.Runtime.Serialization.DataContractAttribute>   
- [データ コントラクトの等価性](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Runtime.Serialization.DataContractAttribute>  
+ [データ コントラクトの等価性](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)  
  [データ コントラクトの使用](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)

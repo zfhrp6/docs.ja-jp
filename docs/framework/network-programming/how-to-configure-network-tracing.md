@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - formatting [.NET Framework], network tracing
 - network tracing, configuring
@@ -22,21 +17,20 @@ helpviewer_keywords:
 - application configuration files, network tracing
 - sockets, trace output
 ms.assetid: 5ef9fe4b-8d3d-490e-9259-1d014b2181af
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 3a713b9b2d76d6198d035226aaa55be7345b87f1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 12f328d58ef568c78d1e2c8a8ff564839cba9f3b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-configure-network-tracing"></a>方法: ネットワークのトレースを構成する
 アプリケーションまたはコンピューターの構成ファイルには、ネットワークのトレースの形式と内容を決定する設定が保持されます。 この手順に従う前に、トレースが有効になっていることを確認します。 トレースの有効化については、「[ネットワークのトレースの有効化](../../../docs/framework/network-programming/enabling-network-tracing.md)」を参照してください。  
   
- コンピューター構成ファイルの machine.config は、Windows をインストールしたディレクトリの %Windir%\Microsoft.NET\Framework フォルダーに格納されます。 コンピューターにインストールされた .NET Framework のバージョンごとに、%Windir%\Microsoft.NET\Framework の下のフォルダーに別々の machine.config ファイルがあります (たとえば、C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\machine.config)。  
+ コンピューター構成ファイルの machine.config は、Windows をインストールしたディレクトリの %Windir%\Microsoft.NET\Framework フォルダーに格納されます。 (たとえば、C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\machine.config または C:\Windows\ コンピューターにインストールされている .NET Framework のバージョンごとに、%Windir%\Microsoft.NET\Framework の下のフォルダーに別々 の machine.config ファイルがあります。Microsoft.NET\Framework64\v4.0.30319\Config\machine.config。)。  
   
  これらの設定は、コンピューター構成ファイルよりも優先されるアプリケーション構成ファイルでも行うことができます。  
   
@@ -112,8 +106,7 @@ ms.lasthandoff: 08/21/2017
 |`Tracemode`|省略可能な <xref:System.String> 属性です。 プロトコル トレースを 16 進数およびテキストの形式で表示するには、`includehex` に設定します。 テキストのみを表示するには、`protocolonly` に設定します。 既定値は `includehex` です。<br /><br /> この属性は、この例に示すように、\<switches> 要素で設定する必要があります。 この属性を \<source> 要素の下の要素で設定すると、例外がスローされます。|  
   
 ## <a name="see-also"></a>関連項目  
- [ネットワークのトレースの解釈](../../../docs/framework/network-programming/interpreting-network-tracing.md)   
- [.NET Framework のネットワークのトレース](../../../docs/framework/network-programming/network-tracing.md)   
- [ネットワークのトレースの有効化](../../../docs/framework/network-programming/enabling-network-tracing.md)   
+ [ネットワークのトレースの解釈](../../../docs/framework/network-programming/interpreting-network-tracing.md)  
+ [.NET Framework のネットワークのトレース](../../../docs/framework/network-programming/network-tracing.md)  
+ [ネットワークのトレースを有効にします。](../../../docs/framework/network-programming/enabling-network-tracing.md)  
  [実装とトレースの概要](http://msdn.microsoft.com/en-us/e924e57c-33cf-4b0e-9e7f-a45d13e38f2c)
-

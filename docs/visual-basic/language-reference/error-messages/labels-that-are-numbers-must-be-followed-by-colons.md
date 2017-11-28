@@ -1,39 +1,37 @@
 ---
-title: "Labels that are numbers must be followed by colons | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc30801"
-  - "bc30801"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30801"
+title: "数字を指定するラベルの後には、コロンが必要です。"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc30801
+- bc30801
+helpviewer_keywords: BC30801
 ms.assetid: 67743319-2d1c-496e-bfd9-22b046b43b5a
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: f6c2615f37329ce70b4e6d51d3aa789947b6bec5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Labels that are numbers must be followed by colons
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-行番号にはその他のラベルと同じ規則が適用され、コロンを記述する必要があります。  
+# <a name="labels-that-are-numbers-must-be-followed-by-colons"></a>数字を指定するラベルの後には、コロンが必要です。
+行番号は、ラベルの他の種類と同じ規則に従うし、コロンを含める必要があります。  
   
- **Error ID:** BC30801  
+ **エラー ID:** BC30801  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   コード行の先頭に番号を記述し、その後ろにコロンを記述します。次に例を示します。  
+-   配置後にコードの行の先頭のコロン数例えば：  
   
     ```  
     400:    X += 1  
     ```  
   
-## 参照  
- [GoTo Statement](../../../visual-basic/language-reference/statements/goto-statement.md)
+## <a name="see-also"></a>関連項目  
+ [GoTo ステートメント](../../../visual-basic/language-reference/statements/goto-statement.md)

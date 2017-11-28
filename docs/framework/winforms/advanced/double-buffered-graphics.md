@@ -1,51 +1,52 @@
 ---
-title: "ダブル バッファリングされたグラフィックス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ダブル バッファリング"
-  - "例 [Windows フォーム], ダブル バッファリングされたグラフィックス"
-  - "ちらつき, 軽減 (ダブル バッファリングにより)"
-  - "グラフィックス, ダブル バッファリング"
+title: "ダブル バッファリングされたグラフィックス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- double buffering
+- graphics [Windows Forms], double-buffered
+- flicker [Windows Forms], reducing with double buffering
+- examples [Windows Forms], double-buffered graphics
 ms.assetid: 4f6fef99-0972-436e-9d73-0167e4033f71
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 89413e0958366dd39c62bfaedb7e36471123bc22
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ダブル バッファリングされたグラフィックス
-グラフィックスをプログラミングするときは、ちらつきが一般的な問題になります。  複数の複雑な描画操作を必要とするグラフィックス操作を実行すると、描画されたイメージがちらつきなどによって適切に表示されないことがあります。  このような問題に対処するために、.NET Framework では、ダブル バッファリングを利用できます。  
+# <a name="double-buffered-graphics"></a>ダブル バッファリングされたグラフィックス
+グラフィックスをプログラミングするときは、ちらつきが一般的な問題になります。 複数の複雑な描画操作を必要とするグラフィックス操作を実行すると、描画されたイメージがちらつきなどによって適切に表示されないことがあります。 このような問題に対処するために、.NET Framework では、ダブル バッファリングを利用できます。  
   
- ダブル バッファリングでは、メモリ バッファーを使用して、複数の描画操作に関連するちらつきの問題に対処します。  ダブル バッファリングを有効にすると、すべての描画操作が画面上の描画サーフェイスではなく、最初にメモリ バッファーに描画されます。  描画操作がすべて完了すると、メモリ バッファーが、関連付けられている描画サーフェイスに直接コピーされます。  画面上で実行されるグラフィックス操作は 1 つだけなので、複雑な描画操作に関連するイメージのちらつきが解消されます。  
+ ダブル バッファリングでは、メモリ バッファーを使用して、複数の描画操作に関連するちらつきの問題に対処します。 ダブル バッファリングを有効にすると、すべての描画操作が画面上の描画サーフェイスではなく、最初にメモリ バッファーに描画されます。 描画操作がすべて完了すると、メモリ バッファーが、関連付けられている描画サーフェイスに直接コピーされます。 画面上で実行されるグラフィックス操作は 1 つだけなので、複雑な描画操作に関連するイメージのちらつきが解消されます。  
   
-## 既定のダブル バッファリング  
- アプリケーションでダブル バッファリングを使用するには、.NET Framework に用意されている、フォームやコントロールに対する既定のダブル バッファリングを使用するのが最も簡単です。  Windows フォームや作成した Windows コントロールに対して既定のダブル バッファリングを有効にするには、<xref:System.Windows.Forms.Control.DoubleBuffered%2A> プロパティを `true` に設定するか、<xref:System.Windows.Forms.Control.SetStyle%2A> メソッドを使用します。  詳細については、「[方法 : フォームとコントロールのダブル バッファリングを行うことによってグラフィックスのちらつきを軽減する](../../../../docs/framework/winforms/advanced/how-to-reduce-graphics-flicker-with-double-buffering-for-forms-and-controls.md)」を参照してください。  
+## <a name="default-double-buffering"></a>既定のダブル バッファリング  
+ アプリケーションでダブル バッファリングを使用するには、.NET Framework に用意されている、フォームやコントロールに対する既定のダブル バッファリングを使用するのが最も簡単です。 ダブル バッファリングを Windows フォームの既定値を有効にすることができ、設定が Windows コントロールを作成した、<xref:System.Windows.Forms.Control.DoubleBuffered%2A>プロパティを`true`またはを使用して、<xref:System.Windows.Forms.Control.SetStyle%2A>メソッドです。 詳細については、「[方法: フォームとコントロールのダブル バッファリングを行うことによってグラフィックスのちらつきを軽減する](../../../../docs/framework/winforms/advanced/how-to-reduce-graphics-flicker-with-double-buffering-for-forms-and-controls.md)」を参照してください。  
   
-## バッファリングされたグラフィックスの手動管理  
- アニメーションや高度なメモリ管理など、より高度なダブル バッファリングのシナリオでは、.NET Framework クラスを使用して独自のダブル バッファリング ロジックを実装できます。  個々のグラフィックス バッファーの割り当てと管理を担当するクラスは <xref:System.Drawing.BufferedGraphicsContext> クラスです。  各アプリケーション ドメインには、そのアプリケーションの既定のダブル バッファリングをすべて管理する、それぞれ独自の既定の <xref:System.Drawing.BufferedGraphicsContext> インスタンスがあります。  多くの場合、アプリケーションごとに存在するアプリケーション ドメインは 1 つだけなので、通常、アプリケーションごとに 1 つの既定の <xref:System.Drawing.BufferedGraphicsContext> があります。  既定の <xref:System.Drawing.BufferedGraphicsContext> インスタンスは、<xref:System.Drawing.BufferedGraphicsManager> クラスによって管理されます。  既定の <xref:System.Drawing.BufferedGraphicsContext> インスタンスへの参照を取得するには、[BufferedGraphicsManager.Current プロパティ](frlrfSystemDrawingBufferedGraphicsManagerClassCurrentTopic)を呼び出します。  また、専用の <xref:System.Drawing.BufferedGraphicsContext> インスタンスを作成して、グラフィックス重視のアプリケーションのパフォーマンスを向上させることもできます。  <xref:System.Drawing.BufferedGraphicsContext> インスタンスの作成方法については、「[方法 : バッファリングされたグラフィックスを手動で管理する](../../../../docs/framework/winforms/advanced/how-to-manually-manage-buffered-graphics.md)」を参照してください。  
+## <a name="manually-managing-buffered-graphics"></a>バッファリングされたグラフィックスの手動管理  
+ アニメーションや高度なメモリ管理など、より高度なダブル バッファリングのシナリオでは、.NET Framework クラスを使用して独自のダブル バッファリング ロジックを実装できます。 割り当てと個々 のグラフィックス バッファーを管理するクラスは、<xref:System.Drawing.BufferedGraphicsContext>クラスです。 すべてのアプリケーション ドメインが、独自の既定<xref:System.Drawing.BufferedGraphicsContext>ダブル バッファリングをそのアプリケーション用の既定のすべてを管理するインスタンス。 ほとんどの場合がある 1 つだけのアプリケーション ドメインごとのアプリケーションでは、1 つの既定値は、通常、<xref:System.Drawing.BufferedGraphicsContext>アプリケーションごとです。 既定の<xref:System.Drawing.BufferedGraphicsContext>によってインスタンスの管理、<xref:System.Drawing.BufferedGraphicsManager>クラスです。 既定値への参照を取得する<xref:System.Drawing.BufferedGraphicsContext>を呼び出してインスタンス、<xref:System.Drawing.BufferedGraphicsManager.Current%2A>です。 作成することも、専用<xref:System.Drawing.BufferedGraphicsContext>インスタンスで、画像を多用するアプリケーションのパフォーマンスを向上させることができます。 作成する方法については、<xref:System.Drawing.BufferedGraphicsContext>インスタンスは、「[する方法: バッファリングされたグラフィックス管理手動で](../../../../docs/framework/winforms/advanced/how-to-manually-manage-buffered-graphics.md)です。  
   
-## バッファリングされたグラフィックスの手動表示  
- <xref:System.Drawing.BufferedGraphicsContext> クラスのインスタンスを使用して [BufferedGraphicsContext.Allocate メソッド](frlrfSystemDrawingBufferedGraphicsContextClassAllocateTopic)を呼び出すと、グラフィックス バッファーを作成できます。このメソッドは、<xref:System.Drawing.BufferedGraphics> クラスのインスタンスを返します。  <xref:System.Drawing.BufferedGraphics> オブジェクトは、フォームやコントロールなどの描画面に関連付けられたメモリ バッファーを管理します。  
+## <a name="manually-displaying-buffered-graphics"></a>バッファリングされたグラフィックスの手動表示  
+ インスタンスを使用することができます、<xref:System.Drawing.BufferedGraphicsContext>を呼び出すことによってグラフィックス バッファーを作成するクラス、<xref:System.Drawing.BufferedGraphicsContext.Allocate%2A?displayProperty=nameWithType>のインスタンスが返されます、<xref:System.Drawing.BufferedGraphics>クラスです。 A<xref:System.Drawing.BufferedGraphics>オブジェクトは、フォームやコントロールなどの表示サーフェイスに関連付けられているメモリ バッファーを管理します。  
   
- インスタンス化された <xref:System.Drawing.BufferedGraphics> クラスは、メモリ内のグラフィックス バッファーへの描画を管理します。  グラフィックスは、[BufferedGraphics.Graphics プロパティ](frlrfSystemDrawingBufferedGraphicsClassGraphicsTopic)を通じてメモリ バッファーに描画できます。このプロパティは、メモリ バッファーを直接表す <xref:System.Drawing.Graphics> オブジェクトを公開します。  この <xref:System.Drawing.Graphics> オブジェクトには、描画サーフェイスを表す <xref:System.Drawing.Graphics> オブジェクトに描画する場合と同じように描画できます。  すべてのグラフィックスをバッファーに描画すると、[BufferedGraphics.Render メソッド](frlrfSystemDrawingBufferedGraphicsClassRenderTopic)を使用して、バッファーの内容を画面上の描画サーフェイスにコピーできます。  
+ インスタンス化された後、<xref:System.Drawing.BufferedGraphics>クラスは、メモリ内のグラフィックス バッファーへのレンダリングを管理します。 使用メモリ バッファーにグラフィックスをレンダリングすることができます、<xref:System.Drawing.BufferedGraphics.Graphics%2A>を公開、<xref:System.Drawing.Graphics>を直接メモリ バッファーを表すオブジェクト。 次のように描画できる<xref:System.Drawing.Graphics>オブジェクトと同じように、<xref:System.Drawing.Graphics>描画サーフェイスを表すオブジェクト。 バッファーへのすべてのグラフィックスを描画されて、したらを使用して、<xref:System.Drawing.BufferedGraphics.Render%2A?displayProperty=nameWithType>を画面の描画サーフェイスへのバッファーの内容をコピーします。  
   
- <xref:System.Drawing.BufferedGraphics> クラスの使い方の詳細については、「[方法 : バッファリングされたグラフィックスを手動で描画する](../../../../docs/framework/winforms/advanced/how-to-manually-render-buffered-graphics.md)」を参照してください。  グラフィックスの描画の詳細については、「[Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)」を参照してください。  
+ 使用する方法について、<xref:System.Drawing.BufferedGraphics>クラスを参照してください[バッファリングされたグラフィックス レンダリング手動で](../../../../docs/framework/winforms/advanced/how-to-manually-render-buffered-graphics.md)です。 グラフィックスの描画の詳細については、「[Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)」を参照してください。  
   
-## 参照  
- <xref:System.Drawing.BufferedGraphics>   
- <xref:System.Drawing.BufferedGraphicsContext>   
- <xref:System.Drawing.BufferedGraphicsManager>   
- [方法 : バッファリングされたグラフィックスを手動で描画する](../../../../docs/framework/winforms/advanced/how-to-manually-render-buffered-graphics.md)   
- [方法 : フォームとコントロールのダブル バッファリングを行うことによってグラフィックスのちらつきを軽減する](../../../../docs/framework/winforms/advanced/how-to-reduce-graphics-flicker-with-double-buffering-for-forms-and-controls.md)   
- [方法 : バッファリングされたグラフィックスを手動で管理する](../../../../docs/framework/winforms/advanced/how-to-manually-manage-buffered-graphics.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Drawing.BufferedGraphics>  
+ <xref:System.Drawing.BufferedGraphicsContext>  
+ <xref:System.Drawing.BufferedGraphicsManager>  
+ [方法: バッファリングされたグラフィックスを手動で描画する](../../../../docs/framework/winforms/advanced/how-to-manually-render-buffered-graphics.md)  
+ [方法: フォームとコントロールのダブル バッファリングを行うことによってグラフィックスのちらつきを軽減する](../../../../docs/framework/winforms/advanced/how-to-reduce-graphics-flicker-with-double-buffering-for-forms-and-controls.md)  
+ [方法: バッファリングされたグラフィックスを手動で管理する](../../../../docs/framework/winforms/advanced/how-to-manually-manage-buffered-graphics.md)  
  [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)

@@ -1,42 +1,47 @@
 ---
-title: "方法 : Windows フォームの RichTextBox コントロールにファイルを読み込む | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "テキスト ボックス、ファイルの表示"
-  - "例 [Windows フォーム]、テキスト ボックス"
-  - ".rtf ファイル、RichTextBox コントロールで開く"
-  - "RTF ファイル、RichTextBox コントロールで開く"
-  - "テキスト ファイル、RichTextBox コントロールで表示"
-  - ".rtf ファイル、RichTextBox コントロールで表示"
-  - "RichTextBox コントロール [Windows フォーム], ファイルを開く"
-  - "RTF ファイル、RichTextBox コントロールで表示"
+title: "方法 : Windows フォームの RichTextBox コントロールにファイルを読み込む"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- text boxes [Windows Forms], displaying files
+- examples [Windows Forms], text boxes
+- .rtf files [Windows Forms], opening in RichTextBox control
+- RTF files [Windows Forms], opening in RichTextBox control
+- text files [Windows Forms], displaying in RichTextBox control
+- .rtf files [Windows Forms], displaying in RichTextBox control
+- RichTextBox control [Windows Forms], opening files
+- RTF files [Windows Forms], displaying in RichTextBox control
 ms.assetid: c03451be-f285-4428-a71a-c41e002cc919
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ba0e2aec42fa3656b64140134efa27fe8e940e1e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームの RichTextBox コントロールにファイルを読み込む
-Windows フォームの <xref:System.Windows.Forms.RichTextBox> コントロールには、プレーン テキスト、Unicode のプレーン テキスト、リッチ テキスト形式 \(RTF\) ファイルを表示できます。 それには、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A> メソッドを呼び出します。 また、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A> メソッドを使用してストリームからデータを読み込むこともできます。 詳細については、「<xref:System.Windows.Forms.RichTextBox.LoadFile%28System.IO.Stream%2CSystem.Windows.Forms.RichTextBoxStreamType%29>」を参照してください。  
+# <a name="how-to-load-files-into-the-windows-forms-richtextbox-control"></a>方法 : Windows フォームの RichTextBox コントロールにファイルを読み込む
+Windows フォームの <xref:System.Windows.Forms.RichTextBox> コントロールには、プレーン テキスト、Unicode のプレーン テキスト、リッチ テキスト形式 (RTF) ファイルを表示できます。 それには、 <xref:System.Windows.Forms.RichTextBox.LoadFile%2A> メソッドを呼び出します。 また、 <xref:System.Windows.Forms.RichTextBox.LoadFile%2A> メソッドを使用してストリームからデータを読み込むこともできます。 詳細については、「 <xref:System.Windows.Forms.RichTextBox.LoadFile%28System.IO.Stream%2CSystem.Windows.Forms.RichTextBoxStreamType%29>」を参照してください。  
   
-### RichTextBox コントロールにファイルを読み込むには  
+### <a name="to-load-a-file-into-the-richtextbox-control"></a>RichTextBox コントロールにファイルを読み込むには  
   
-1.  <xref:System.Windows.Forms.OpenFileDialog> コンポーネントを使用して、開くファイルのパスを決定します。 概要については、「[OpenFileDialog コンポーネントの概要](../../../../docs/framework/winforms/controls/openfiledialog-component-overview-windows-forms.md)」を参照してください。  
+1.  <xref:System.Windows.Forms.OpenFileDialog> コンポーネントを使用して、開くファイルのパスを決定します。 概要については、次を参照してください。 [OpenFileDialog コンポーネントの概要](../../../../docs/framework/winforms/controls/openfiledialog-component-overview-windows-forms.md)です。  
   
-2.  読み込むファイルと、必要に応じてファイルの種類を指定して、<xref:System.Windows.Forms.RichTextBox> コントロールの <xref:System.Windows.Forms.RichTextBox.LoadFile%2A> メソッドを呼び出します。 次の例では、読み込むファイルは <xref:System.Windows.Forms.OpenFileDialog> コンポーネントの <xref:System.Windows.Forms.FileDialog.FileName%2A> プロパティから取得されます。 引数にファイル名だけを指定してメソッドを呼び出すと、ファイルの種類は RTF と見なされます。 別の種類のファイルを指定するには、2 番目の引数として <xref:System.Windows.Forms.RichTextBoxStreamType> 列挙型の値を指定します。  
+2.  読み込むファイルと、必要に応じてファイルの種類を指定して、 <xref:System.Windows.Forms.RichTextBox.LoadFile%2A> コントロールの <xref:System.Windows.Forms.RichTextBox> メソッドを呼び出します。 次の例では、読み込むファイルは <xref:System.Windows.Forms.OpenFileDialog> コンポーネントの <xref:System.Windows.Forms.FileDialog.FileName%2A> プロパティから取得されます。 引数にファイル名だけを指定してメソッドを呼び出すと、ファイルの種類は RTF と見なされます。 別の種類のファイルを指定するには、2 番目の引数として <xref:System.Windows.Forms.RichTextBoxStreamType> 列挙型の値を指定します。  
   
-     次の例では、ボタンがクリックされたときに <xref:System.Windows.Forms.OpenFileDialog> コンポーネントが表示されます。 次に、選択されたファイルが開き、<xref:System.Windows.Forms.RichTextBox> コントロールに表示されます。 この例ではフォームにボタン `btnOpenFile` があることを前提としています。  
+     次の例では、ボタンがクリックされたときに <xref:System.Windows.Forms.OpenFileDialog> コンポーネントが表示されます。 次に、選択されたファイルが開き、 <xref:System.Windows.Forms.RichTextBox> コントロールに表示されます。 この例ではフォームにボタン`btnOpenFile`があることを前提としています。  
   
     ```vb  
     Private Sub btnOpenFile_Click(ByVal sender As System.Object, _  
@@ -46,7 +51,6 @@ Windows フォームの <xref:System.Windows.Forms.RichTextBox> コントロー�
               RichTextBoxStreamType.RichText)  
           End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -57,7 +61,6 @@ Windows フォームの <xref:System.Windows.Forms.RichTextBox> コントロー�
          richTextBox1.LoadFile(openFileDialog1.FileName, RichTextBoxStreamType.RichText);  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -73,11 +76,10 @@ Windows フォームの <xref:System.Windows.Forms.RichTextBox> コントロー�
        }  
     ```  
   
-     \([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]、[!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]\) フォームのコンストラクターに次のコードを挿入してイベント ハンドラーを登録します。  
+     ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]、 [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) フォームのコンストラクターに次のコードを挿入してイベント ハンドラーを登録します。  
   
     ```csharp  
     this.btnOpenFile.Click += new System.EventHandler(this. btnOpenFile_Click);  
-  
     ```  
   
     ```cpp  
@@ -86,10 +88,10 @@ Windows フォームの <xref:System.Windows.Forms.RichTextBox> コントロー�
     ```  
   
     > [!IMPORTANT]
-    >  このプロセスを実行するには、アセンブリに対して <xref:System.Security.Permissions.FileIOPermission?displayProperty=fullName> クラスで特権レベルが許可されていることが必要な場合があります。 部分的に信頼されたコンテキストで実行している場合、プロセスは、特権がないため例外をスローする可能性があります。 詳細については、「[コード アクセス セキュリティの基礎](../../../../docs/framework/misc/code-access-security-basics.md)」を参照してください。  
+    >  このプロセスを実行するには、アセンブリに対して <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> クラスで特権レベルが許可されていることが必要な場合があります。 部分的に信頼されたコンテキストで実行している場合、プロセスは、特権がないため例外をスローする可能性があります。 詳しくは、「[コード アクセス セキュリティの基礎](../../../../docs/framework/misc/code-access-security-basics.md)」をご覧ください。  
   
-## 参照  
- <xref:System.Windows.Forms.RichTextBox.LoadFile%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.RichTextBox>   
- [RichTextBox コントロール](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.RichTextBox.LoadFile%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.RichTextBox>  
+ [RichTextBox コントロール](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)  
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

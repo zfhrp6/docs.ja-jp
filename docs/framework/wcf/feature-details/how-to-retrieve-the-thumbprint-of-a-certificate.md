@@ -1,53 +1,55 @@
 ---
-title: "方法 : 証明書のサムプリントを取得する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "証明書 [WCF], サムプリントの取得"
+title: "方法 : 証明書のサムプリントを取得する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: certificates [WCF], retrieving thumbprint
 ms.assetid: da3101aa-78cd-4c34-9652-d1f24777eeab
-caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 4719be3d4e98407062bd246df4f14b9cbf452c74
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 証明書のサムプリントを取得する
-認証に X.509 証明書を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションを記述するときは、多くの場合、証明書に含まれているクレームを指定する必要があります。 たとえば、<xref:System.Security.Cryptography.X509Certificates.X509FindType> メソッドで <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> 列挙体を使用する場合は、拇印クレームを指定する必要があります。 クレーム値を検索するには 2 つの手順を実行する必要があります。 まず、証明書用の Microsoft 管理コンソール \(MMC\) スナップインを開きます  \(「[方法 : MMC スナップインを使用して証明書を参照する](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)」を参照\)。 次に、ここで説明されているとおりに適切な証明書を検索してその拇印 \(または他のクレーム値\) をコピーします。  
+# <a name="how-to-retrieve-the-thumbprint-of-a-certificate"></a>方法 : 証明書のサムプリントを取得する
+認証に X.509 証明書を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションを記述するときは、多くの場合、証明書に含まれているクレームを指定する必要があります。 たとえば、 <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> メソッドで <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> 列挙体を使用する場合は、拇印クレームを指定する必要があります。 クレーム値を検索するには 2 つの手順を実行する必要があります。 まず、証明書用の Microsoft 管理コンソール (MMC) スナップインを開きます (「 [How to: View Certificates with the MMC Snap-in](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)」を参照)。次に、ここで説明されているとおりに適切な証明書を検索してその拇印 (または他のクレーム値) をコピーします。  
   
- サービス認証で証明書を使用する場合は、**\[Issued To\]** 列 \(コンソールの 1 番目の列\) の値に注意することが重要です。 トランスポート セキュリティとして SSL \(Secure Sockets Layer\) を使用する場合、実行される最初のチェックの 1 つで、サービスのベース アドレス URI \(Uniform Resource Identifier\) が **\[Issued To\]** の値と比較されます。 値は一致する必要があります。一致しない場合は、認証が停止します。  
+ サービス認証で証明書を使用する場合は、 **[Issued To]** 列 (コンソールの 1 番目の列) の値に注意することが重要です。 トランスポート セキュリティとして SSL (Secure Sockets Layer) を使用する場合、実行される最初のチェックの 1 つで、サービスのベース アドレス URI (Uniform Resource Identifier) が **[Issued To]** の値と比較されます。 値は一致する必要があります。一致しない場合は、認証が停止します。  
   
- また、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] SDK の Makecert.exe ツールを使用して、開発時専用の一時的な証明書を作成することもできます。 ただし、既定では、このような証明書は証明機関から発行されないため、実稼働環境では使用できません。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [方法 : 開発中に使用する一時的な証明書を作成する](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)。  
+ また、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] SDK の Makecert.exe ツールを使用して、開発時専用の一時的な証明書を作成することもできます。 ただし、既定では、このような証明書は証明機関から発行されないため、実稼働環境では使用できません。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][する方法: 開発中に使用するための一時的な証明書を作成](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)です。  
   
-### 証明書の拇印を取得するには  
+### <a name="to-retrieve-a-certificates-thumbprint"></a>証明書の拇印を取得するには  
   
-1.  証明書用の Microsoft 管理コンソール \(MMC\) スナップインを開きます  \(「[方法 : MMC スナップインを使用して証明書を参照する](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)」を参照\)。  
+1.  証明書用の Microsoft 管理コンソール (MMC) スナップインを開きます (「 [How to: View Certificates with the MMC Snap-in](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)」を参照)。  
   
-2.  **\[Console Root\]** ウィンドウの左ペインで、**\[Certificates \(Local Computer\)\]** をクリックします。  
+2.  **[Console Root]** ウィンドウの左ペインで、 **[Certificates (Local Computer)]**をクリックします。  
   
-3.  **\[Personal\]** フォルダーをクリックして展開します。  
+3.  **[Personal]** フォルダーをクリックして展開します。  
   
-4.  **\[Certificates\]** フォルダーをクリックして展開します。  
+4.  **[Certificates]** フォルダーをクリックして展開します。  
   
-5.  証明書リストの **\[Intended Purposes\]** 見出しを確認します。 目的として **\[Client Authentication\]** が表示されている証明書を検索します。  
+5.  証明書リストの **[Intended Purposes]** 見出しを確認します。 目的として **[Client Authentication]** が表示されている証明書を検索します。  
   
 6.  証明書をダブルクリックします。  
   
-7.  **\[Certificate\]** ダイアログ ボックスの **\[Details\]** タブをクリックします。  
+7.  **[Certificate]** ダイアログ ボックスの **[Details]** タブをクリックします。  
   
-8.  フィールド リストをスクロールし、**\[Thumbprint\]** をクリックします。  
+8.  フィールド リストをスクロールし、 **[Thumbprint]**をクリックします。  
   
-9. ボックスから 16 進文字をコピーします。 この拇印を `X509FindType` のコードで使用する場合は、16 進文字の間のスペースを削除します。 たとえば、拇印 "a9 09 50 2d d8 2a e4 14 33 e6 f8 38 86 b0 0d 42 77 a3 2a 7b" は、コード内で "a909502dd82ae41433e6f83886b00d4277a32a7b" として指定する必要があります。  
+9. ボックスから 16 進文字をコピーします。 この拇印を `X509FindType`のコードで使用する場合は、16 進文字の間のスペースを削除します。 たとえば、拇印 "a9 09 50 2d d8 2a e4 14 33 e6 f8 38 86 b0 0d 42 77 a3 2a 7b" は、コード内で "a909502dd82ae41433e6f83886b00d4277a32a7b" として指定する必要があります。  
   
-## 参照  
- <xref:System.Security.Cryptography.X509Certificates.X509FindType>   
- <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A>   
- [方法 : SSL 証明書を使用してポートを構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)   
- [方法 : MMC スナップインを使用して証明書を参照する](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)   
- [方法 : 開発中に使用する一時的な証明書を作成する](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint>  
+ <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A>  
+ [方法: SSL 証明書でポートを構成します。](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)  
+ [方法: MMC スナップインで証明書を表示](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)  
+ [方法: 開発中に使用するための一時的な証明書を作成](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)

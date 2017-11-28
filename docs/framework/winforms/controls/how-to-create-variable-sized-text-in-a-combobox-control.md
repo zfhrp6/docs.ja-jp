@@ -1,33 +1,35 @@
 ---
-title: "方法 : ComboBox コントロールにサイズ変更可能なテキストを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "コンボ ボックス, 描画 (テキストを)"
-  - "ComboBox コントロール [Windows フォーム], 描画 (カスタム テキストを)"
-  - "ComboBox コントロール [Windows フォーム], 例 [C#]"
-  - "例 [Windows フォーム], ComboBox コントロール"
-  - "テキスト, 描画 (コンボ ボックスに)"
+title: "方法 : ComboBox コントロールにサイズ変更可能なテキストを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: vb
+helpviewer_keywords:
+- text [Windows Forms], drawing in combo boxes
+- examples [Windows Forms], ComboBox control
+- combo boxes [Windows Forms], drawing text
+- ComboBox control [Windows Forms], examples [C#]
+- ComboBox control [Windows Forms], drawing custom text
 ms.assetid: ce39b9ea-e626-49fe-bd5a-f567f6d157df
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a6f0dcfd24414ef868a1a5414af4fcde1b9a14ec
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : ComboBox コントロールにサイズ変更可能なテキストを作成する
-この例では、<xref:System.Windows.Forms.ComboBox> コントロールでのテキストのカスタム描画の方法を示します。  項目が特定の基準を満たす場合、より大きなフォントで描画され赤色になります。  
+# <a name="how-to-create-variable-sized-text-in-a-combobox-control"></a>方法 : ComboBox コントロールにサイズ変更可能なテキストを作成する
+この例は、内のテキストのカスタムの描画、<xref:System.Windows.Forms.ComboBox>コントロール。 項目は、特定の条件を満たしている場合を大きいフォントで描画され、赤になっています。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```vb  
 Private Sub ComboBox1_MeasureItem(ByVal sender As Object, ByVal e As _  
@@ -62,22 +64,22 @@ e.Bounds.X, e.Bounds.Y)
 End Sub  
 ```  
   
-## コードのコンパイル  
- この例には、次の項目が必要です。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ この例で必要な要素は次のとおりです。  
   
--   Windows フォーム。  
+-   Windows フォームです。  
   
--   <xref:System.Windows.Forms.ComboBox.Items%2A> プロパティに 3 つの項目を持つ、 `ListBox1`  という名前の <xref:System.Windows.Forms.ComboBox> コントロール。  この例では、3 つの項目に  `"One", Two", and Three"` という名前が付けられています。   `ComboBox1`  の <xref:System.Windows.Forms.ComboBox.DrawMode%2A> プロパティを <xref:System.Windows.Forms.DrawMode> に設定する必要があります。  
+-   A<xref:System.Windows.Forms.ComboBox>という名前のコントロール`ListBox1`で 3 つの項目を含む、<xref:System.Windows.Forms.ComboBox.Items%2A>プロパティです。 この例では、3 つの項目の名前は`"One", Two", and Three"`します。 <xref:System.Windows.Forms.ComboBox.DrawMode%2A>プロパティ`ComboBox1`に設定する必要があります<xref:System.Windows.Forms.DrawMode.OwnerDrawVariable>です。  
   
     > [!NOTE]
-    >  この手法は <xref:System.Windows.Forms.ListBox> コントロールにも適用できます。その場合は、<xref:System.Windows.Forms.ComboBox> の代わりに <xref:System.Windows.Forms.ListBox> を使用します。  
+    >  この手法に適用も、<xref:System.Windows.Forms.ListBox>コントロール — 代わりに使用することができます、<xref:System.Windows.Forms.ListBox>の<xref:System.Windows.Forms.ComboBox>です。  
   
--   <xref:System.Windows.Forms?displayProperty=fullName> 名前空間および <xref:System.Drawing?displayProperty=fullName> 名前空間への参照。  
+-   <xref:System.Windows.Forms?displayProperty=nameWithType> 名前空間と <xref:System.Drawing?displayProperty=nameWithType> 名前空間への参照。  
   
-## 参照  
- <xref:System.Windows.Forms.ComboBox.DrawItem>   
- <xref:System.Windows.Forms.DrawItemEventArgs>   
- <xref:System.Windows.Forms.ComboBox.MeasureItem>   
- [組み込みのオーナー描画サポートを備えたコントロール](../../../../docs/framework/winforms/controls/controls-with-built-in-owner-drawing-support.md)   
- [ListBox コントロール](../../../../docs/framework/winforms/controls/listbox-control-windows-forms.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.ComboBox.DrawItem>  
+ <xref:System.Windows.Forms.DrawItemEventArgs>  
+ <xref:System.Windows.Forms.ComboBox.MeasureItem>  
+ [組み込みのオーナー描画サポートを備えたコントロール](../../../../docs/framework/winforms/controls/controls-with-built-in-owner-drawing-support.md)  
+ [ListBox コントロール](../../../../docs/framework/winforms/controls/listbox-control-windows-forms.md)  
  [ComboBox コントロール](../../../../docs/framework/winforms/controls/combobox-control-windows-forms.md)

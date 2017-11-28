@@ -1,36 +1,32 @@
 ---
-title: "方法: Office Open XML ドキュメント (Visual Basic) の変更 |Microsoft ドキュメント"
+title: "方法: Office Open XML ドキュメント (Visual Basic) の変更"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 1cefd7f5-8e39-44c4-869c-f8021538a777
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 04de8ce23af62d7abb6bc5274e96868f830c4320
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 0d2f6b9bc7acf7c9108112b61fe8edf70c549cac
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-modify-an-office-open-xml-document-visual-basic"></a>方法: Office Open XML ドキュメント (Visual Basic) の変更
 このトピックでは、Office Open XML ドキュメントを開き、それを変更して保存する例について説明します。  
   
- Office Open XML の詳細については、次を参照してください。 [www.openxmldeveloper.org](http://go.microsoft.com/fwlink/?LinkID=95573)します。  
+ Office Open XML の詳細については、[www.openxmldeveloper.org](http://go.microsoft.com/fwlink/?LinkID=95573) を参照してください。  
   
 ## <a name="example"></a>例  
  この例では、ドキュメント内の最初の段落要素を検索します。 次に、段落からテキストを取得し、段落内のテキスト ランをすべて削除します。 また、大文字に変換された最初の段落のテキストから構成される新しいテキスト ランを作成します。 最後に、変更した XML を Open XML パッケージにシリアル化して閉じます。  
   
- この例では、WindowsBase アセンブリに含まれるクラスを使用します。 内の型を使用して、<xref:System.IO.Packaging?displayProperty=fullName>名前空間</xref:System.IO.Packaging?displayProperty=fullName>。  
+ この例では、WindowsBase アセンブリに含まれるクラスを使用します。 また、<xref:System.IO.Packaging?displayProperty=nameWithType> 名前空間内の型を使用します。  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -150,7 +146,7 @@ End Module
   
  このプログラムを実行した後で `SampleDoc.docx` を開くと、このプログラムによってドキュメント内の最初の段落が大文字に変換されたかどうかを確認できます。  
   
- 実行する」に記載するサンプルの Open XML ドキュメントと[ソース Office Open XML ドキュメント (Visual Basic) を作成する](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)、この例は、次の出力を生成します。  
+ 説明されているサンプル Open XML ドキュメントの実行と[ソース Office Open XML ドキュメント (Visual Basic) を作成する](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)、この例には、次の出力が生成されます。  
   
 ```  
 New first paragraph: >PARSING WORDPROCESSINGML WITH LINQ TO XML<  

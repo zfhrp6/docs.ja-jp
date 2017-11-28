@@ -1,24 +1,28 @@
 ---
-title: "ワークフローの一時停止と再開 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ワークフローの一時停止と再開"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 11f38339-79c7-4295-b610-24a7223bbf6d
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 31e3bdf501a88e78c5ae251499baf2512f73579d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ワークフローの一時停止と再開
+# <a name="pausing-and-resuming-a-workflow"></a>ワークフローの一時停止と再開
 ワークフローはブックマークや <xref:System.Activities.Statements.Delay> などのブロッキング アクティビティへの応答として一時停止および再開をしますが、永続化を使用して、明示的に一時停止、アンロード、再開することもできます。  
   
-## ワークフローの一時停止  
- ワークフローを一時停止するには、<xref:System.Activities.WorkflowApplication.Unload%2A> を使用します。このメソッドはワークフローの永続化とアンロードを要求し、ワークフローが 30 秒以内にアンロードしないと <xref:System.TimeoutException> をスローします。  
+## <a name="pausing-a-workflow"></a>ワークフローの一時停止  
+ ワークフローを一時停止するには、<xref:System.Activities.WorkflowApplication.Unload%2A> を使用します。  このメソッドはワークフローの永続化とアンロードを要求し、ワークフローが 30 秒以内にアンロードしないと <xref:System.TimeoutException> をスローします。  
   
 ```csharp  
 try  
@@ -30,20 +34,18 @@ catch (TimeoutException e)
 {  
     Console.WriteLine(e.Message);  
 }  
-  
 ```  
   
-## ワークフローの再開  
- 以前に一時停止およびアンロードされているワークフローを再開するには、<xref:System.Activities.WorkflowApplication.Load%2A> を使用します。このメソッドは、ワークフローを永続化ストアからメモリに読み込みます。  
+## <a name="resuming-a-workflow"></a>ワークフローの再開  
+ 以前に一時停止およびアンロードされているワークフローを再開するには、<xref:System.Activities.WorkflowApplication.Load%2A> を使用します。 このメソッドは、ワークフローを永続化ストアからメモリに読み込みます。  
   
 ```csharp  
 WorkflowApplication application = new WorkflowApplication(activity);  
 application.InstanceStore = instanceStore;  
 application.Load(id);  
-  
 ```  
   
-## 例  
+## <a name="example"></a>例  
  次のコード例は、永続化を使用してワークフローを一時停止および再開する方法を示しています。  
   
 ```csharp  
@@ -60,7 +62,7 @@ static void StartAndUnloadInstance()
     SqlWorkflowInstanceStore instanceStore = SetupSqlpersistenceStore();  
     wfApp.InstanceStore = instanceStore;  
     wfApp.Extensions.Add(SetupMyFileTrackingParticipant);  
-    wfApp.PersistableIdle = (e) => {          ///persists application state and remove it from memory   
+    wfApp.PersistableIdle = (e) => {          ///persists application state and remove it from memory   
     return PersistableIdleAction.Unload;  
     };  
     wfApp.Unloaded = (e) => {  
@@ -73,7 +75,7 @@ static void StartAndUnloadInstance()
 }  
   
 static void LoadAndCompleteInstance(Guid id)   
-{            
+{            
     Console.WriteLine("Press <enter> to load the persisted workflow");  
     Console.ReadLine();  
     AutoResetEvent waitHandler = new AutoResetEvent(false);  
@@ -106,7 +108,7 @@ public static Activity GetDelayedWF()
   
 private static SqlWorkflowInstanceStore SetupSqlpersistenceStore()   
 {   
-     string connectionString = ConfigurationManager.AppSettings["SqlWF4PersistenceConnectionString"].ToString();  
+     string connectionString = ConfigurationManager.AppSettings["SqlWF4PersistenceConnectionString"].ToString();  
     SqlWorkflowInstanceStore sqlWFInstanceStore = new SqlWorkflowInstanceStore(connectionString);  
     sqlWFInstanceStore.InstanceCompletionAction = InstanceCompletionAction.DeleteAll;  
     InstanceHandle handle = sqlWFInstanceStore.CreateInstanceHandle();  
@@ -115,5 +117,4 @@ private static SqlWorkflowInstanceStore SetupSqlpersistenceStore()
     sqlWFInstanceStore.DefaultInstanceOwner = view.InstanceOwner;  
     return sqlWFInstanceStore;  
 }  
-  
 ```

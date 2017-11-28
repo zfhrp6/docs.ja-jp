@@ -1,35 +1,33 @@
 ---
-title: "String constants must end with a double quote | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc30648"
-  - "bc30648"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30648"
+title: "文字列定数の終わりには、二重引用符を指定しなければなりません。"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc30648
+- bc30648
+helpviewer_keywords: BC30648
 ms.assetid: eefb77a4-efbc-4000-8871-edce7ef7f2df
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 02f8c127f35a511c9f8529078e5c1eaedda2cfae
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# String constants must end with a double quote
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-文字列定数は、引用符で囲む必要があります。  
+# <a name="string-constants-must-end-with-a-double-quote"></a>文字列定数の終わりには、二重引用符を指定しなければなりません。
+文字列定数は、最初し、最後は引用符で囲まれます。  
   
  **ErrorID:** BC30648  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   リテラル文字列が引用符 \("\) で終わっていることを確認してください。  他のテキスト エディターから値を貼り付けた場合は、貼り付けた文字が、左右で向きの違う二重引用符 \(" または "\) や 2 つの単一引用符 \(''\) などの二重引用符に似た文字ではなく、有効な二重引用符であることを確認します。  
+-   文字列リテラルは引用符 (") で終わることを確認してください。 その他のテキスト エディターから値を貼り付ける場合は、貼り付けられた文字が有効な引用符と、「スマート」または「中」の引用符などのような文字のない 1 つを確認してください (「または」) または 2 つの単一引用符 (") です。  
   
-## 参照  
- [Strings](../../../visual-basic/programming-guide/language-features/strings/index.md)
+## <a name="see-also"></a>関連項目  
+ [文字列](../../../visual-basic/programming-guide/language-features/strings/index.md)

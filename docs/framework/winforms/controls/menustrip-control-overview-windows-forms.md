@@ -1,72 +1,72 @@
 ---
-title: "MenuStrip コントロールの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "MenuStrip"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "メニュー, 作成"
-  - "MenuStrip コントロール [Windows フォーム], MenuStrip コントロールの概要"
+title: "MenuStrip コントロールの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: MenuStrip
+helpviewer_keywords:
+- MenuStrip control [Windows Forms], about MenuStrip control
+- menus [Windows Forms], creating
 ms.assetid: f45516e5-bf01-4468-b851-d45f4c33c055
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 06cd4e812f4acf546dad577a2e1ddc571281ebe3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# MenuStrip コントロールの概要 (Windows フォーム)
-メニューは、共通のテーマでグループ化されたコマンドを保持することによってユーザーにさまざまな機能を公開します。  
+# <a name="menustrip-control-overview-windows-forms"></a>MenuStrip コントロールの概要 (Windows フォーム)
+メニューは、共通のテーマでグループ化されているコマンドを保持して、ユーザーに機能を公開します。  
   
- <xref:System.Windows.Forms.MenuStrip> コントロールは、このバージョンの Visual Studio および .NET Framework で追加された新機能です。  このコントロールを使用すると、Microsoft Office に表示されるようなメニューを簡単に作成できます。  
+ <xref:System.Windows.Forms.MenuStrip>コントロールはこのバージョンの Visual Studio と .NET Framework に新しいです。 コントロールで、Microsoft Office で見つかったものと同様のメニューを簡単に作成できます。  
   
- <xref:System.Windows.Forms.MenuStrip> コントロールは、マルチ ドキュメント インターフェイス \(MDI: Multiple Document Interface\) と、メニューのマージ、ツール ヒント、およびオーバーフローをサポートします。  アクセス キー、ショートカット キー、チェック マーク、イメージ、および区分線を追加してメニューの使いやすさと読みやすさを向上させることもできます。  
+ <xref:System.Windows.Forms.MenuStrip>マルチ ドキュメント インターフェイス (MDI) とメニューのマージ、ツール ヒント、およびオーバーフロー コントロールをサポートしています。 アクセス キー、ショートカット キー、チェック マーク、イメージ、およびのセパレーター バーを追加することで、メニューの読みやすさと使いやすさを強化できます。  
   
- <xref:System.Windows.Forms.MenuStrip> コントロールは、<xref:System.Windows.Forms.MainMenu> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.MainMenu> コントロールは、下位互換性を保持するため、および将来必要になったときに使用できるように保持されています。  
+ <xref:System.Windows.Forms.MenuStrip>コントロールの置換し、する機能を追加、<xref:System.Windows.Forms.MainMenu>コントロール。 ただし、、<xref:System.Windows.Forms.MainMenu>を選択した場合、旧バージョンとの互換性および将来使用するコントロールは保持されます。  
   
-## MenuStrip コントロールの用途  
- <xref:System.Windows.Forms.MenuStrip> コントロールを使用すると、次のことができます。  
+## <a name="ways-to-use-the-menustrip-control"></a>MenuStrip コントロールの使用方法  
+ 使用して、<xref:System.Windows.Forms.MenuStrip>を制御します。  
   
--   簡単にカスタマイズでき、一般的に使用できるだけでなく、高度なユーザー インターフェイス機能とレイアウト機能 \(テキストとイメージの並べ替えと配置、ドラッグ アンド ドロップ操作、MDI、オーバーフロー、およびメニュー コマンドにアクセスするための代替モード\) をサポートするメニューを作成する。  
+-   拡張ユーザー テキストとイメージの並べ替えとアラインメント、ドラッグ アンド ドロップ操作、MDI、オーバーフロー、メニュー コマンドにアクセスするの代替モードなどのインターフェイスとレイアウトの機能をサポートするメニューは一般的に使用される、簡単にカスタマイズされた作成します。  
   
--   オペレーティング システムの標準的な外観と動作をサポートする。  
+-   標準的な外観とオペレーティング システムの動作をサポートします。  
   
--   他のコントロールのイベント処理と同じように、コンテナーおよびコンテナーに含まれる項目のすべてを一貫して処理する。  
+-   その他のコントロールのイベントを処理する同じ方法ですべてのコンテナーおよびコンテナー内の項目を一貫してイベントを処理します。  
   
- <xref:System.Windows.Forms.MenuStrip> および関連クラスの特に重要なプロパティのいくつかを次の表に示します。  
+ 次の表に、いくつかの特に重要なプロパティ<xref:System.Windows.Forms.MenuStrip>クラスに関連付けられているとします。  
   
-|プロパティ|Description|  
-|-----------|-----------------|  
-|<xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A>|MDI 子フォームの一覧を表示するために使用する <xref:System.Windows.Forms.ToolStripMenuItem> を取得または設定します。|  
-|<xref:System.Windows.Forms.ToolStripItem.MergeAction%2A?displayProperty=fullName>|MDI アプリケーションの子メニューを親メニューにマージする方法を取得または設定します。|  
-|<xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A?displayProperty=fullName>|MDI アプリケーションのメニュー内のマージされた項目の位置を取得または設定します。|  
-|<xref:System.Windows.Forms.Form.IsMdiContainer%2A?displayProperty=fullName>|フォームが MDI 子フォームのコンテナーであるかどうかを示す値を取得または設定します。|  
-|<xref:System.Windows.Forms.MenuStrip.ShowItemToolTips%2A>|<xref:System.Windows.Forms.MenuStrip> に対してツール ヒントを表示するかどうかを示す値を取得または設定します。|  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A>|取得または設定、 <xref:System.Windows.Forms.ToolStripMenuItem> MDI 子フォームの一覧の表示に使用されます。|  
+|<xref:System.Windows.Forms.ToolStripItem.MergeAction%2A?displayProperty=nameWithType>|取得または MDI アプリケーションのメニューを親と子メニューをマージする方法を設定します。|  
+|<xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A?displayProperty=nameWithType>|取得または MDI アプリケーションでメニュー内でマージされた項目の位置を設定します。|  
+|<xref:System.Windows.Forms.Form.IsMdiContainer%2A?displayProperty=nameWithType>|取得またはフォームが MDI 子フォームのコンテナーかどうかを示す値を設定します。|  
+|<xref:System.Windows.Forms.MenuStrip.ShowItemToolTips%2A>|取得または設定のツール ヒントを表示するかどうかを示す値、<xref:System.Windows.Forms.MenuStrip>です。|  
 |<xref:System.Windows.Forms.MenuStrip.CanOverflow%2A>|<xref:System.Windows.Forms.MenuStrip> がオーバーフロー機能をサポートするかどうかを示す値を取得または設定します。|  
-|<xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys%2A>|<xref:System.Windows.Forms.ToolStripMenuItem> に関連付けられたショートカット キーを取得または設定します。|  
-|<xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A>|<xref:System.Windows.Forms.ToolStripMenuItem> に関連付けられたショートカット キーを <xref:System.Windows.Forms.ToolStripMenuItem> の横に表示するかどうかを示す値を取得または設定します。|  
+|<xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys%2A>|取得または設定に関連付けられているショートカット キー、<xref:System.Windows.Forms.ToolStripMenuItem>です。|  
+|<xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A>|関連付けられたショートカット キーのキーかどうかを示す値を取得または設定、<xref:System.Windows.Forms.ToolStripMenuItem>横に表示されますが、<xref:System.Windows.Forms.ToolStripMenuItem>です。|  
   
- 重要な <xref:System.Windows.Forms.MenuStrip> コンパニオン クラスを次の表に示します。  
+ 次の表は、重要な<xref:System.Windows.Forms.MenuStrip>コンパニオン クラスです。  
   
-|Class|Description|  
+|クラス|説明|  
 |-----------|-----------------|  
-|<xref:System.Windows.Forms.ToolStripMenuItem>|<xref:System.Windows.Forms.MenuStrip> または <xref:System.Windows.Forms.ContextMenuStrip> に表示される選択可能なオプションを表します。|  
+|<xref:System.Windows.Forms.ToolStripMenuItem>|表示される選択可能なオプションを表す、<xref:System.Windows.Forms.MenuStrip>または<xref:System.Windows.Forms.ContextMenuStrip>です。|  
 |<xref:System.Windows.Forms.ContextMenuStrip>|ショートカット メニューを表します。|  
-|<xref:System.Windows.Forms.ToolStripDropDown>|<xref:System.Windows.Forms.ToolStripDropDownButton> または上位レベルのメニュー項目をクリックしたときに表示される一覧から特定の項目を選択できるようにするコントロールを表します。|  
-|<xref:System.Windows.Forms.ToolStripDropDownItem>|クリック時にドロップダウン項目を表示する、<xref:System.Windows.Forms.ToolStripItem> から派生するコントロールの基本機能を提供します。|  
+|<xref:System.Windows.Forms.ToolStripDropDown>|ユーザーが、ユーザーがクリックしたときに表示される一覧から 1 つの項目を選択できるコントロールを表す、<xref:System.Windows.Forms.ToolStripDropDownButton>または高レベルのメニュー項目。|  
+|<xref:System.Windows.Forms.ToolStripDropDownItem>|派生したコントロールの基本的な機能を提供<xref:System.Windows.Forms.ToolStripItem>クリックされたときにドロップダウン項目を表示します。|  
   
-## 参照  
- <xref:System.Windows.Forms.ToolStrip>   
- <xref:System.Windows.Forms.MenuStrip>   
- <xref:System.Windows.Forms.ContextMenuStrip>   
- <xref:System.Windows.Forms.StatusStrip>   
- <xref:System.Windows.Forms.ToolStripItem>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.ToolStrip>  
+ <xref:System.Windows.Forms.MenuStrip>  
+ <xref:System.Windows.Forms.ContextMenuStrip>  
+ <xref:System.Windows.Forms.StatusStrip>  
+ <xref:System.Windows.Forms.ToolStripItem>  
  <xref:System.Windows.Forms.ToolStripDropDown>

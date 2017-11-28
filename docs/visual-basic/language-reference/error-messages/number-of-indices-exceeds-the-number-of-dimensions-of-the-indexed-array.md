@@ -1,38 +1,35 @@
 ---
-title: "Number of indices exceeds the number of dimensions of the indexed array | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc30106"
-  - "vbc30106"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30106"
+title: "インデックス番号がインデックス付き配列の次元を超えています。"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc30106
+- vbc30106
+helpviewer_keywords: BC30106
 ms.assetid: 2c5363e1-62c2-4f5a-b675-c7337aeb363d
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 8fdf031734d441daca2073925f6d45d6ba9f1f52
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Number of indices exceeds the number of dimensions of the indexed array
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-配列要素へのアクセスに使用するインデックスの数は、配列のランク、つまり配列について宣言した次元の数と同じである必要があります。  
+# <a name="number-of-indices-exceeds-the-number-of-dimensions-of-the-indexed-array"></a>インデックス番号がインデックス付き配列の次元を超えています。
+配列要素にアクセスするために使用されるインデックスの数は、配列のランク、つまり配列に宣言した次元の数とまったく同じである必要があります。  
   
- **Error ID:** BC30106  
+ **エラー ID:** BC30106  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   添字の合計数が配列のランクと同じになるまで、配列参照から添字を削除します。  次に例を示します。  
+-   添字の合計数が、配列のランクと同じになるまでは、配列参照からの添字を削除します。 例:  
   
-    ```  
-    [Visual Basic]  
+    ```vb  
     Dim gameBoard(3, 3) As String  
   
     ' Incorrect code. The array has two dimensions.  
@@ -44,5 +41,5 @@ caps.handback.revision: 10
     gameBoard(1, 0) = "O"  
     ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [配列](../../../visual-basic/programming-guide/language-features/arrays/index.md)

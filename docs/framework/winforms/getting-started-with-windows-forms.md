@@ -1,69 +1,70 @@
 ---
-title: "Windows フォームについて | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Designer_System.Windows.Forms.Design.FormDocumentDesigner"
-  - "vb.wfc.formdesigner"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "はじめに, Windows フォーム"
-  - "Windows フォーム, はじめに"
+title: "Windows フォームについて"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- Designer_System.Windows.Forms.Design.FormDocumentDesigner
+- vb.wfc.formdesigner
+helpviewer_keywords:
+- Windows Forms, getting started
+- getting started [Windows Forms], Windows Forms
 ms.assetid: a031aa58-5027-4082-b590-df7c12c77dec
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7735e721917c5f78b791a200a670599fe3cff310
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# Windows フォームについて
-Windows フォームを使用すると、Windows ベースのパワフルなアプリケーションを作成できます。  以下のトピックには、Windows フォームのパワーを利用してデータの表示やユーザー入力の処理を行う方法、およびアプリケーションを簡単に、またセキュリティを強力に保護しながら配置する方法が詳細に説明されています。  
+# <a name="getting-started-with-windows-forms"></a>Windows フォームについて
+Windows フォームでは、Windows ベースの強力なアプリケーションを作成できます。 次のトピックは、データを表示、ユーザー入力を処理し、強化されたセキュリティを使用して簡単に、アプリケーションの展開の Windows フォームの機能を利用する方法詳細について説明します。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [Windows フォームの概要](../../../docs/framework/winforms/windows-forms-overview.md)  
- Windows フォームとスマート クライアント アプリケーションの概要を示します。  
+ Windows フォームとスマート クライアント アプリケーションの概要を説明します。  
   
  [新しい Windows フォームの作成](../../../docs/framework/winforms/creating-a-new-windows-form.md)  
- Windows フォーム アプリケーションの作成における基本的な概念について説明したトピックへのリンクが用意されています。  
+ Windows フォーム アプリケーションを作成するための基本的な概念を説明するトピックへのリンクが含まれています。  
   
  [Windows フォーム内でのイベント ハンドラーの作成](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
- Windows フォームのイベント ハンドラーを作成する方法を説明したトピックへのリンクが用意されています。  
+ Windows フォーム イベント ハンドラーを作成する方法を説明するトピックへのリンクが含まれています。  
   
  [Windows フォームのサイズとスケールを調整する](../../../docs/framework/winforms/adjusting-the-size-and-scale-of-windows-forms.md)  
- Windows フォームのサイズとスケールを調節する方法について説明したトピックへのリンクが用意されています。  
+ Windows フォームの小数点以下桁数とサイズを調整する方法を説明するトピックへのリンクが含まれています。  
   
  [Windows フォームの表示形式の変更](../../../docs/framework/winforms/changing-the-appearance-of-windows-forms.md)  
- Windows フォーム アプリケーションの外観を変更する方法について説明したトピックへのリンクが用意されています。  
+ Windows フォーム アプリケーションの外観を変更する方法について説明したトピックへのリンクを示します。  
   
  [Windows フォーム コントロール](../../../docs/framework/winforms/controls/index.md)  
- Windows フォームのコンロトールとコンポーネントの使い方について説明したトピックへのリンクが用意されています。  
+ Windows フォーム コントロールおよびコンポーネントを使用する方法について説明したトピックへのリンクが含まれています。  
   
  [Windows フォームでのユーザー入力](../../../docs/framework/winforms/user-input-in-windows-forms.md)  
- Windows フォーム アプリケーションでユーザーからの入力を処理する方法について説明したトピックへのリンクが用意されています。  
+ Windows フォーム アプリケーションでユーザーからの入力を処理する方法について説明したトピックへのリンクが含まれています。  
   
  [Windows フォームのダイアログ ボックス](../../../docs/framework/winforms/dialog-boxes-in-windows-forms.md)  
- Windows フォームで使用できるさまざまなダイアログ ボックスについて説明したトピックへのリンクが用意されています。  
+ Windows フォームで使用するためのさまざまなダイアログ ボックスについて説明するトピックへのリンクが含まれています。  
   
- [Windows フォームでのデータ バインド](../../../docs/framework/winforms/windows-forms-data-binding.md)  
- Windows フォームのデータ バインディング アーキテクチャについて、およびそれを Windows フォーム アプリケーションで使用する方法について説明したトピックへのリンクが用意されています。  
+ [Windows フォームでのデータ バインディング](../../../docs/framework/winforms/windows-forms-data-binding.md)  
+ Windows フォーム データ バインディング アーキテクチャおよび Windows フォーム アプリケーションで使用する方法を説明するトピックへのリンクが含まれています。  
   
  [Windows フォームのセキュリティ](../../../docs/framework/winforms/windows-forms-security.md)  
- セキュリティが強化された Windows フォーム アプリケーションを作成する方法について説明したトピックへのリンクが用意されています。  
+ セキュリティが強化された Windows フォーム アプリケーションを構築する方法を説明するトピックへのリンクが含まれています。  
   
  [Windows フォームの ClickOnce 配置](../../../docs/framework/winforms/clickonce-deployment-for-windows-forms.md)  
- Windows フォーム アプリケーションを簡単に配置する方法について説明したトピックへのリンクが用意されています。  
+ Windows フォーム アプリケーションを簡単に展開する方法を説明するトピックへのリンクが含まれています。  
   
- [方法 : Windows フォームのコレクションにアクセス キーを指定する](../../../docs/framework/winforms/how-to-access-keyed-collections-in-windows-forms.md)  
- インデックスではなくキーを使用してコレクションにアクセスする方法について説明します。  
+ [方法: Windows フォームのコレクションにアクセス キーを指定する](../../../docs/framework/winforms/how-to-access-keyed-collections-in-windows-forms.md)  
+ インデックスではなく、キーのコレクションにアクセスする方法を示します。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [Windows フォーム アプリケーションの拡張](../../../docs/framework/winforms/advanced/index.md)  
- Windows フォーム アプリケーションを作成するための高度な概念について説明したトピックへのリンクが用意されています。
+ Windows フォーム アプリケーションを作成するためのより高度な概念について説明したトピックへのリンクが含まれています。

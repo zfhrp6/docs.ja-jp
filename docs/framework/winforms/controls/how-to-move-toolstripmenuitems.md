@@ -1,85 +1,86 @@
 ---
-title: "方法 : ToolStripMenuItems を移動する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "メニュー項目, 切り取りと貼り付け"
-  - "メニュー項目, ドラッグ アンド ドロップ"
-  - "メニュー項目, 移動"
-  - "メニュー, 配置 (項目を)"
-  - "MenuStrip コントロール [Windows フォーム], 配置 (項目を)"
-  - "ToolStripMenuItem, 切り取りと貼り付け"
-  - "ToolStripMenuItem, ドラッグ アンド ドロップ"
-  - "ToolStripMenuItem, 移動"
+title: "方法 : ToolStripMenuItems を移動する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- ToolStripMenuItems [Windows Forms], moving
+- menus [Windows Forms], arranging items
+- ToolStripMenuItems [Windows Forms], dragging and dropping
+- menu items [Windows Forms], moving
+- menu items [Windows Forms], cutting and pasting
+- menu items [Windows Forms], dragging and dropping
+- MenuStrip control [Windows Forms], arranging items
+- ToolStripMenuItems [Windows Forms], cutting and pasting
 ms.assetid: cab9e03e-4edd-4c25-b3e3-bd1edc602bd9
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 342eeeb2d156488605f244da0112869a371dfa97
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : ToolStripMenuItems を移動する
-デザイン時には、トップレベル メニュー全体とそのメニュー項目を、<xref:System.Windows.Forms.MenuStrip> 上の別の位置に移動できます。  また、トップレベル メニュー間で個々のメニュー項目を移動したり、メニュー内でメニュー項目の位置を変更したりすることもできます。  
+# <a name="how-to-move-toolstripmenuitems"></a>方法 : ToolStripMenuItems を移動する
+デザイン時に行うことができますトップレベル メニュー全体とそのメニュー項目を別の場所、<xref:System.Windows.Forms.MenuStrip>です。 トップレベル メニュー間で個々 のメニュー項目を移動したり、メニュー内のメニュー項目の位置を変更できます。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-### トップレベル メニューとそのメニュー項目を別のトップレベル位置に移動するには  
+### <a name="to-move-a-top-level-menu-and-its-menu-items-to-another-top-level-location"></a>トップレベル メニューとそのメニュー項目を最上位レベルの別の場所に移動するには  
   
-1.  移動するメニューをクリックし、マウスの左ボタンを押したままにします。  
+1.  クリックして、移動するメニューにマウスの左ボタンを押したままにします。  
   
-2.  移動先になる位置の前にあるトップレベル メニューまでカーソル位置をドラッグし、マウスの左ボタンを離します。  
+2.  前となる新しい場所にあるトップレベルのメニューにカーソルをドラッグし、マウスの左ボタンを離します。  
   
-     選択したメニューが、カーソル位置の右側に移動します。  
+     選択されたメニューは、カーソルの右側に移動します。  
   
-### トップレベル メニューとそのメニュー項目をドロップダウン位置に移動するには  
+### <a name="to-move-a-top-level-menu-and-its-menu-items-to-a-drop-down-location"></a>トップレベル メニューとそのメニュー項目をドロップダウンの場所に移動するには  
   
-1.  移動するメニューを左クリックし、Ctrl キーを押しながら X キーを押すか、メニューを右クリックして、ショートカット メニューの **\[切り取り\]** を選択します。  
+1.  移動、ctrl キーを押しながら X キーを押すかメニューを右クリックして、選択するメニューを左クリックして**切り取り**ショートカット メニューからです。  
   
-2.  移動先のトップレベル メニューで、移動先になる位置の上にあるメニュー項目を左クリックし、Ctrl キーを押しながら V キーを押すか、移動先になる位置の上にあるメニュー項目を右クリックし、ショートカット メニューの **\[貼り付け\]** をクリックします。  
+2.  宛先のトップレベル メニューで、メニュー項目となる新しい場所の上をクリックして、ctrl キーを押しながら V キーを押しますまたはとなる新しい場所の上のメニュー項目を右クリックし、選択**貼り付け**ショートカット メニューからです。  
   
-     切り取ったメニューが、選択したメニュー項目の後に挿入されます。  
+     切り取ったメニューは、選択されたメニュー項目の後に挿入されます。  
   
-### 項目コレクション エディターを使用して、メニュー項目をメニュー内で移動するには  
+### <a name="to-move-a-menu-item-within-a-menu-using-the-items-collection-editor"></a>Items コレクション エディターを使用してメニュー内のメニュー項目を移動するには  
   
-1.  移動するメニュー項目を含むメニューを右クリックします。  
+1.  移動するメニュー項目が含まれているメニューを右クリックします。  
   
-2.  ショートカット メニューの **\[DropDownItems の編集\]** をクリックします。  
+2.  ショートカット メニューから選択**ドロップダウン項目の編集**です。  
   
-3.  **項目コレクション エディター**で、移動するメニュー項目を左クリックします。  
+3.  **Items コレクション エディター**に移動するメニュー項目を左クリックします。  
   
-4.  ↑キーまたは↓キーを押して、メニュー項目をメニュー内で移動します。  
+4.  メニュー内のメニュー項目を移動する上下矢印キーをクリックします。  
   
-5.  **\[OK\]** をクリックします。  
+5.  **[OK]** をクリックします。  
   
-### キーボードを使用して、メニュー項目をメニュー内で移動するには  
+### <a name="to-move-a-menu-item-within-a-menu-using-the-keyboard"></a>キーボードを使用してメニュー内のメニュー項目を移動するには  
   
-1.  Alt キーを押したままにします。  
+1.  キーを押して、ALT キーを押したままにします。  
   
-2.  移動するメニュー項目をクリックし、マウスの左ボタンを押したままにします。  
+2.  移動するメニュー項目をマウスの左ボタンを押したままにします。  
   
-3.  メニュー項目を新しい位置にドラッグし、マウスの左ボタンを離します。  
+3.  メニュー項目を新しい場所にドラッグし、マウスの左ボタンを離します。  
   
-### メニュー項目を別のメニューに移動するには  
+### <a name="to-move-a-menu-item-to-another-menu"></a>別のメニューにメニュー項目を移動するには  
   
-1.  移動するメニュー項目を左クリックし、Ctrl キーを押しながら X キーを押すか、メニュー項目を右クリックし、ショートカット メニューの **\[切り取り\]** をクリックします。  
+1.  移動および ctrl キーを押しながら X キーを押しますまたはメニュー項目を右クリックしを選択するメニュー項目を左クリックして**切り取り**ショートカット メニューからです。  
   
-2.  切り取ったメニュー項目の移動先になるメニューを左クリックします。  
+2.  メニュー項目を格納するメニューをクリックしてください。  
   
-3.  移動先になる位置の前にあるメニュー項目を左クリックし、Ctrl キーを押しながら V キーを押すか、移動先になる位置の前にあるメニュー項目を右クリックし、ショートカット メニューの **\[貼り付け\]** をクリックします。  
+3.  前となる新しい場所にあるメニュー項目を左クリックし、ctrl キーを押しながら V キーを押してまたはメニュー項目となる新しい場所を選択する前にを右クリックして**貼り付け**ショートカット メニューからです。  
   
-     切り取ったメニュー項目が、選択したメニュー項目の後に挿入されます。  
+     切り取りするメニュー項目が選択されたメニュー項目の後に挿入されます。  
   
-## 参照  
- <xref:System.Windows.Forms.MenuStrip>   
- <xref:System.Windows.Forms.ToolStripMenuItem>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.MenuStrip>  
+ <xref:System.Windows.Forms.ToolStripMenuItem>  
  [MenuStrip コントロールの概要](../../../../docs/framework/winforms/controls/menustrip-control-overview-windows-forms.md)

@@ -1,48 +1,51 @@
 ---
-title: "チュートリアル : Windows フォームにおけるドラッグ アンド ドロップ操作の実行 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ドラッグ アンド ドロップ, Windows フォーム"
-  - "Windows フォーム, ドラッグ アンド ドロップ操作"
+title: "チュートリアル: Windows フォームにおけるドラッグ アンド ドロップ操作の実行"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Windows Forms, drag and drop operations
+- drag and drop [Windows Forms], Windows Forms
 ms.assetid: eb66f6bf-4a7d-4c2d-b276-40fefb2d3b6c
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fe2b54123e117f21f3bda7bc78bc9c5b45fc9ae3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル : Windows フォームにおけるドラッグ アンド ドロップ操作の実行
-Windows ベースのアプリケーション内でドラッグ アンド ドロップ操作を実行するには、<xref:System.Windows.Forms.Control.DragEnter>、<xref:System.Windows.Forms.Control.DragLeave>、<xref:System.Windows.Forms.Control.DragDrop> などの一連のイベントを処理する必要があります。  これらのイベントのイベント引数で提供される情報を使用することにより、ドラッグ アンド ドロップ操作を簡単に実現できます。  
+# <a name="walkthrough-performing-a-drag-and-drop-operation-in-windows-forms"></a>チュートリアル: Windows フォームにおけるドラッグ アンド ドロップ操作の実行
+Windows ベースのアプリケーション内でドラッグ アンド ドロップ操作を実行する必要がありますを処理する、一連のイベント、特に、 <xref:System.Windows.Forms.Control.DragEnter>、 <xref:System.Windows.Forms.Control.DragLeave>、および<xref:System.Windows.Forms.Control.DragDrop>イベント。 情報の操作、使用可能なイベントのこれらのイベントの引数、ドラッグ アンド ドロップ操作を簡単に実現できます。  
   
-## データのドラッグ  
- すべてのドラッグ アンド ドロップ操作は、ドラッグから始まります。  ドラッグが開始されたときにデータを収集できるようにする機能は、<xref:System.Windows.Forms.Control.DoDragDrop%2A> メソッドに実装されています。  
+## <a name="dragging-data"></a>データのドラッグ  
+ すべてのドラッグ アンド ドロップ操作では、ドラッグから始まります。 ドラッグの開始時に収集するデータを有効にする機能は実装、<xref:System.Windows.Forms.Control.DoDragDrop%2A>メソッドです。  
   
- 次の例では、最も直観的な <xref:System.Windows.Forms.Control.MouseDown> イベントを使用してドラッグ操作を開始しています。これは、ほとんどのドラッグ アンド ドロップ操作は、マウス ボタンが押されることによって開始されるためです。  ただし、ドラッグ アンド ドロップの手順は任意のイベントを使用して開始できます。  
+ 次の例で、<xref:System.Windows.Forms.Control.MouseDown>イベントが最も簡単なになっているために、ドラッグ操作を開始するため (ドラッグ アンド ドロップ操作のほとんどは、マウス ボタンが押されているで始まります)。 ただし、ドラッグ アンド ドロップ手順を開始するすべてのイベントを使用できることに注意してください。  
   
 > [!NOTE]
->  ドラッグに関するカスタム イベントのあるコントロールもあります。  たとえば、<xref:System.Windows.Forms.ListView> コントロールと <xref:System.Windows.Forms.TreeView> コントロールには、<xref:System.Windows.Forms.TreeView.ItemDrag> イベントがあります。  
+>  特定のコントロールでは、ドラッグに固有のカスタム イベントがあります。 <xref:System.Windows.Forms.ListView>と<xref:System.Windows.Forms.TreeView>コントロール、たとえば、ある、<xref:System.Windows.Forms.TreeView.ItemDrag>イベント。  
   
-#### ドラッグ操作を開始するには  
+#### <a name="to-start-a-drag-operation"></a>ドラッグ操作を開始するには  
   
-1.  ドラッグが  開始されるコントロールの <xref:System.Windows.Forms.Control.MouseDown> のイベントでドラッグされるデータを設定するに `DoDragDrop` のメソッドを使用して実行できる処理のドラッグがあります。  詳細については、「<xref:System.Windows.Forms.DragEventArgs.Data%2A>」および「<xref:System.Windows.Forms.DragEventArgs.AllowedEffect%2A>」を参照してください。  
+1.  <xref:System.Windows.Forms.Control.MouseDown> 、ドラッグを開始する場所を使用するコントロールのイベントを`DoDragDrop`ドラッグされるデータを設定するメソッドとドラッグ許可の結果が設定されます。 詳細については、<xref:System.Windows.Forms.DragEventArgs.Data%2A> および <xref:System.Windows.Forms.DragEventArgs.AllowedEffect%2A> を参照してください。  
   
-     ドラッグ操作を開始する方法の例を次に示します。  ドラッグが開始されるコントロールは <xref:System.Windows.Forms.Button> コントロール、ドラッグされるデータは、<xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Text%2A> プロパティを表す文字列、実行できる処理はコピーまたは移動のいずれかです。  
+     次の例では、ドラッグ操作を開始する方法を示します。 コントロールのドラッグが開始されるは、<xref:System.Windows.Forms.Button>コントロール、ドラッグされるデータは、文字列を表す、<xref:System.Windows.Forms.Control.Text%2A>のプロパティ、<xref:System.Windows.Forms.Button>制御、および許可された効果をコピーまたは移動します。  
   
     ```vb  
     Private Sub Button1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button1.MouseDown  
        Button1.DoDragDrop(Button1.Text, DragDropEffects.Copy Or DragDropEffects.Move)  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -52,22 +55,21 @@ Windows ベースのアプリケーション内でドラッグ アンド ドロ�
        button1.DoDragDrop(button1.Text, DragDropEffects.Copy |   
           DragDropEffects.Move);  
     }  
-  
     ```  
   
     > [!NOTE]
-    >  `DoDragDrop` メソッドでは、任意のデータをパラメーターとして使用できます。上の例では、<xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Text%2A> プロパティがドラッグの開始位置 \(<xref:System.Windows.Forms.Button> コントロール\) に関連するため、値をハードコーディングしたり、データセットからデータを取得したりせずに、このプロパティを使用しています。  Windows ベースのアプリケーションにドラッグ アンド ドロップ操作を組み込む場合には、この点を考慮してください。  
+    >  すべてのデータをパラメーターとして使用できます、`DoDragDrop`メソッド以外の場合は、上記の例では、<xref:System.Windows.Forms.Control.Text%2A>のプロパティ、 <xref:System.Windows.Forms.Button> (ではなく、値をハードコーディングまたはデータセットからデータを取得する) にコントロールが使用されたに関連するプロパティがあるため、ドラッグされている場所 (、<xref:System.Windows.Forms.Button>コントロール)。 ドラッグ アンド ドロップ操作を Windows ベースのアプリケーションに組み込む場合に、この点に留意してください。  
   
- ドラッグ操作が行われている間、<xref:System.Windows.Forms.Control.QueryContinueDrag> イベントを処理できます。これは、ドラッグ操作を続けてよいかどうかシステムの "許可を得る" イベントです。  このメソッドを処理するときは、たとえば、カーソルが置かれたときに <xref:System.Windows.Forms.TreeView> コントロールの <xref:System.Windows.Forms.TreeNode> を展開するなど、ドラッグ操作に影響するメソッドを呼び出すのにも適しています。  
+ ドラッグ操作が有効な状態を処理できます、 <xref:System.Windows.Forms.Control.QueryContinueDrag> 「アクセス許可を要求する」イベントのドラッグ操作を続行するシステムです。 このメソッドを処理する場合も、適切なポイントを展開するなど、ドラッグ操作に影響があるメソッドを呼び出すには<xref:System.Windows.Forms.TreeNode>で、<xref:System.Windows.Forms.TreeView>上にカーソルを合わせるとを制御します。  
   
-## データのドロップ  
- Windows フォームまたはコントロール上の場所からデータのドラッグを開始したら、それをどこかにドロップする必要があります。  データをドロップできるように正しく設定されているフォームまたはコントロールの領域をカーソルが横切ると、カーソルの形が変わります。  <xref:System.Windows.Forms.Control.AllowDrop%2A> プロパティを設定し、<xref:System.Windows.Forms.Control.DragEnter> イベントと <xref:System.Windows.Forms.Control.DragDrop> イベントを処理することにより、Windows フォームまたはコントロール内の任意の領域で、ドロップされたデータを受け入れることができます。  
+## <a name="dropping-data"></a>データを削除します。  
+ データの場所から Windows フォームまたはコントロールのドラッグを開始した後は必然的にする任意の場所にドロップします。 カーソルは、フォームまたはデータを削除するが正しく構成されているコントロールの領域を超えたときに変更されます。 設定して削除されたデータを受け入れるように Windows フォームまたはコントロール内の任意の領域ができる、<xref:System.Windows.Forms.Control.AllowDrop%2A>プロパティと処理、<xref:System.Windows.Forms.Control.DragEnter>と<xref:System.Windows.Forms.Control.DragDrop>イベント。  
   
-#### ドロップを実行するには  
+#### <a name="to-perform-a-drop"></a>Drop を実行するには  
   
-1.  <xref:System.Windows.Forms.Control.AllowDrop%2A> プロパティを true に設定します。  
+1.  設定、<xref:System.Windows.Forms.Control.AllowDrop%2A>プロパティを true にします。  
   
-2.  ドロップ先のコントロールの `DragEnter` イベントで、ドラッグされるデータが適切な型 \(この場合、<xref:System.Windows.Forms.Control.Text%2A>\) であることを確認します。  次に、コードでは、ドロップしたときの効果を <xref:System.Windows.Forms.DragDropEffects> 列挙定数の値に設定します。  詳細については、「<xref:System.Windows.Forms.DragEventArgs.Effect%2A>」を参照してください。  
+2.  `DragEnter`ドラッグされるデータが適切な型を確実に削除が行われる、コントロールのイベントを (この場合、 <xref:System.Windows.Forms.Control.Text%2A>)。 コード内の値にドロップが発生したときに発生する効果を設定し、<xref:System.Windows.Forms.DragDropEffects>列挙します。 詳細については、「<xref:System.Windows.Forms.DragEventArgs.Effect%2A>」を参照してください。  
   
     ```vb  
     Private Sub TextBox1_DragEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles TextBox1.DragEnter  
@@ -77,7 +79,6 @@ Windows ベースのアプリケーション内でドラッグ アンド ドロ�
          e.Effect = DragDropEffects.None  
        End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -89,21 +90,19 @@ Windows ベースのアプリケーション内でドラッグ アンド ドロ�
        else  
           e.Effect = DragDropEffects.None;  
     }  
-  
     ```  
   
     > [!NOTE]
-    >  <xref:System.Windows.Forms.DataObject.SetData%2A> メソッドの <xref:System.Object> パラメーターとして独自のオブジェクトを指定することで、固有の <xref:System.Windows.Forms.DataFormats> を定義できます。  その場合は、指定するオブジェクトがシリアル化できるオブジェクトであることを確認してください。  詳細については、「[ISerializable インターフェイス](frlrfSystemRuntimeSerializationISerializableClassTopic)」を参照してください。  
+    >  独自に定義することができます<xref:System.Windows.Forms.DataFormats>オブジェクトとして指定することによって、<xref:System.Object>のパラメーター、<xref:System.Windows.Forms.DataObject.SetData%2A>メソッドです。 必要があります、これには、実施する際に指定されたオブジェクトがシリアル化可能であります。 詳細については、「<xref:System.Runtime.Serialization.ISerializable>」を参照してください。  
   
-3.  ドロップ先のコントロールの <xref:System.Windows.Forms.Control.DragDrop> イベントで、<xref:System.Windows.Forms.DataObject.GetData%2A> メソッドを使用して、ドラッグされるデータを取得します。  詳細については、「[DtaObject.Data プロパティ](frlrfSystemSecurityCryptographyXmlDataObjectClassDataTopic)」を参照してください。  
+3.  <xref:System.Windows.Forms.Control.DragDrop>を使用して、削除が行われる、コントロールのイベントを<xref:System.Windows.Forms.DataObject.GetData%2A>ドラッグされるデータを取得します。 詳細については、「<xref:System.Security.Cryptography.Xml.DataObject.Data%2A>」を参照してください。  
   
-     次の例では、データがドロップされるドラッグ先のコントロールは <xref:System.Windows.Forms.TextBox> コントロールです。  コードでは、<xref:System.Windows.Forms.TextBox> コントロールの <xref:System.Windows.Forms.Control.Text%2A> プロパティをドラッグされたデータと同じ内容に設定します。  
+     次の例で、<xref:System.Windows.Forms.TextBox>コントロールは、(、削除が行われる) にドラッグされているコントロール。 コード セット、<xref:System.Windows.Forms.Control.Text%2A>のプロパティ、<xref:System.Windows.Forms.TextBox>ドラッグされるデータと等しいを制御します。  
   
     ```vb  
     Private Sub TextBox1_DragDrop(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles TextBox1.DragDrop  
        TextBox1.Text = e.Data.GetData(DataFormats.Text).ToString  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -112,13 +111,12 @@ Windows ベースのアプリケーション内でドラッグ アンド ドロ�
     {  
        textBox1.Text = e.Data.GetData(DataFormats.Text).ToString();  
     }  
-  
     ```  
   
     > [!NOTE]
-    >  さらに、<xref:System.Windows.Forms.DragEventArgs.KeyState%2A> プロパティを使用して、ドラッグ アンド ドロップ操作中に押されたキーに応じて特定の効果が得られるようにできます。たとえば一般的に、Ctrl キーを押しながらドラッグしたデータはコピーされます。  
+    >  さらに、使用できますが、<xref:System.Windows.Forms.DragEventArgs.KeyState%2A>プロパティ、キーによって、ドラッグ アンド ドロップ操作中に押されているように、特定の効果の発生 (たとえば、これは、CTRL キーが押されたときに、ドラッグしたデータをコピーする標準的な)。  
   
-## 参照  
- [方法 : クリップボードにデータを追加する](../../../../docs/framework/winforms/advanced/how-to-add-data-to-the-clipboard.md)   
- [方法 : クリップボードからデータを取得する](../../../../docs/framework/winforms/advanced/how-to-retrieve-data-from-the-clipboard.md)   
+## <a name="see-also"></a>関連項目  
+ [方法: クリップボードにデータを追加する](../../../../docs/framework/winforms/advanced/how-to-add-data-to-the-clipboard.md)  
+ [方法: クリップボードからデータを取得する](../../../../docs/framework/winforms/advanced/how-to-retrieve-data-from-the-clipboard.md)  
  [ドラッグ アンド ドロップ操作とクリップボードのサポート](../../../../docs/framework/winforms/advanced/drag-and-drop-operations-and-clipboard-support.md)

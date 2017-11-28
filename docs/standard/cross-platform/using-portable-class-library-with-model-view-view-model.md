@@ -1,99 +1,100 @@
 ---
-title: "Model-View-View Model を利用した汎用性のあるクラス ライブラリの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "汎用性のあるクラス ライブラリ [.NET Framework]、および MVVM"
-  - "MVVM、および汎用性のあるクラス ライブラリ"
+title: "Model-View-View Model を利用した汎用性のあるクラス ライブラリの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Portable Class Library [.NET Framework], and MVVM
+- MVVM, and Portable Class Library
 ms.assetid: 41a0b9f8-15a2-431a-bc35-e310b2953b03
-caps.latest.revision: 17
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: e39a8df5c8aee05414e778f15a29bbeda8dba930
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Model-View-View Model を利用した汎用性のあるクラス ライブラリの使用
-Model\-View\-View Model \(MVVM\) パターンを実装し、複数のプラットフォーム間でアセンブリを共有するには、.NET Framework [ポータブル クラス ライブラリ](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) を使用できます。  
+# <a name="using-portable-class-library-with-model-view-view-model"></a>Model-View-View Model を利用した汎用性のあるクラス ライブラリの使用
+.NET Framework を使用して[ポータブル クラス ライブラリ](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)モデル-ビュー-ビュー モデル (MVVM) パターンを実装し、複数のプラットフォーム間でアセンブリを共有します。  
   
- MVVM は、基になるビジネス ロジックからのユーザー インターフェイスを分離するアプリケーション パターンです。  [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)]の [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] のプロジェクトのモデルおよびビュー モデル クラスを実装し、異なるプラットフォーム用にカスタマイズされたビューを作成します。  この方法は一度だけデータ モデルおよびビジネス ロジックを記述できるようになり、次の図に示すように、.NET Framework、Silverlight、Windows Phone、および [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] のアプリケーションからのコードを使用します。  
+ MVVM は、基になるビジネス ロジックからユーザー インターフェイスを分離するアプリケーション パターンです。 モデルとビューのモデル クラスを実装することができます、[!INCLUDE[net_portable](../../../includes/net-portable-md.md)]プロジェクト[!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)]、し、さまざまなプラットフォーム用にカスタマイズされたビューを作成します。 この方法では、データを記述することができますのモデルとビジネス ロジックを 1 回だけ、.NET Framework、Silverlight、Windows Phone からのコードを使用して[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]アプリの場合、次の図に示すようにします。  
   
- ![MVVM を使用したポータブルのダイアグラム](../../../docs/standard/cross-platform/media/portablemvvmdiagram.png "PortableMVVMdiagram")  
+ ![MVVM ダイアグラムを含むポータブル](../../../docs/standard/cross-platform/media/portablemvvmdiagram.png "PortableMVVMdiagram")  
   
- このトピックには MVVM パターンに関する一般的な情報は含まれていません。  [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] を使用して MVVM を実装する方法についてのみ説明します。  MVVM の詳細については、MSDN [MVVM Quickstart](http://go.microsoft.com/fwlink/?LinkId=234934) ライブラリを参照します。  
+ このトピックには、一般的なパターンについては、MVVM は行いません。 のみを使用する方法に関する情報を提供[!INCLUDE[net_portable](../../../includes/net-portable-md.md)]MVVM を実装します。 MVVM の詳細については、次を参照してください。、 [MVVM クイック スタート](http://go.microsoft.com/fwlink/?LinkId=234934)です。  
   
-## MVVM をサポートしているクラス  
- [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] プロジェクトに対し、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、[!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]、Silverlight、または Windows Phone 7.5 を対象とする場合は、MVVM パターンの実装に次のクラスを使用できます。  
+## <a name="classes-that-support-mvvm"></a>MVVM をサポートするクラス  
+ 対象にする場合、 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、 [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]、Silverlight、または Windows Phone 7.5 用、[!INCLUDE[net_portable](../../../includes/net-portable-md.md)]プロジェクトでは、次のクラスは MVVM パターンを実装するために使用できます。  
   
--   <xref:System.Collections.ObjectModel.ObservableCollection%601?displayProperty=fullName> クラス  
+-   <xref:System.Collections.ObjectModel.ObservableCollection%601?displayProperty=nameWithType> クラス  
   
--   <xref:System.Collections.ObjectModel.ReadOnlyObservableCollection%601?displayProperty=fullName> クラス  
+-   <xref:System.Collections.ObjectModel.ReadOnlyObservableCollection%601?displayProperty=nameWithType> クラス  
   
--   <xref:System.Collections.Specialized.INotifyCollectionChanged?displayProperty=fullName> クラス  
+-   <xref:System.Collections.Specialized.INotifyCollectionChanged?displayProperty=nameWithType> クラス  
   
--   <xref:System.Collections.Specialized.NotifyCollectionChangedAction?displayProperty=fullName> クラス  
+-   <xref:System.Collections.Specialized.NotifyCollectionChangedAction?displayProperty=nameWithType> クラス  
   
--   <xref:System.Collections.Specialized.NotifyCollectionChangedEventArgs?displayProperty=fullName> クラス  
+-   <xref:System.Collections.Specialized.NotifyCollectionChangedEventArgs?displayProperty=nameWithType> クラス  
   
--   <xref:System.Collections.Specialized.NotifyCollectionChangedEventHandler?displayProperty=fullName> クラス  
+-   <xref:System.Collections.Specialized.NotifyCollectionChangedEventHandler?displayProperty=nameWithType> クラス  
   
--   <xref:System.ComponentModel.DataErrorsChangedEventArgs?displayProperty=fullName> クラス  
+-   <xref:System.ComponentModel.DataErrorsChangedEventArgs?displayProperty=nameWithType> クラス  
   
--   <xref:System.ComponentModel.INotifyDataErrorInfo?displayProperty=fullName> クラス  
+-   <xref:System.ComponentModel.INotifyDataErrorInfo?displayProperty=nameWithType> クラス  
   
--   <xref:System.ComponentModel.INotifyPropertyChanged?displayProperty=fullName> クラス  
+-   <xref:System.ComponentModel.INotifyPropertyChanged?displayProperty=nameWithType> クラス  
   
--   <xref:System.Windows.Input.ICommand?displayProperty=fullName> クラス  
+-   <xref:System.Windows.Input.ICommand?displayProperty=nameWithType> クラス  
   
--   <xref:System.ComponentModel.DataAnnotations?displayProperty=fullName> 名前空間のすべてのクラス  
+-   すべてのクラス、<xref:System.ComponentModel.DataAnnotations?displayProperty=nameWithType>名前空間  
   
-## MVVM の実装  
- MVVM を実装するには、通常はモデルとビュー モデルの両方を [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] プロジェクト内に作成します。[!INCLUDE[net_portable](../../../includes/net-portable-md.md)] プロジェクトは非移植性のプロジェクトを参照できないためです。  モデルおよびビュー モデルは、同じプロジェクトに含めることも、個別のプロジェクトに含めることもできます。  異なるプロジェクトを使用する場合は、ビュー モデル プロジェクトからの参照をモデル プロジェクトに追加します。  
+## <a name="implementing-mvvm"></a>MVVM を実装します。  
+ MVVM を実装するには、通常を作成するモデルとでは、ビュー モデルの両方、[!INCLUDE[net_portable](../../../includes/net-portable-md.md)]ために、プロジェクト、[!INCLUDE[net_portable](../../../includes/net-portable-md.md)]プロジェクトは、移植性のないプロジェクトを参照できません。 モデルとビューのモデルは、同じプロジェクト内、またはそれぞれ別のプロジェクトを指定できます。 個別のプロジェクトを使用する場合は、モデル プロジェクトをビュー モデル プロジェクトからの参照を追加します。  
   
- モデルおよびビュー モデルのプロジェクトをコンパイルした後は、ビューを含むアプリケーションでこれらのアセンブリを参照します。  ビューがビュー モデルのみと対話する場合は、ビュー モデルを含むアセンブリを参照するだけで済みます。  
+ モデルをコンパイルして、モデル プロジェクトを表示すると後、は、ビューを含むアプリでそれらのアセンブリを参照します。 をビュー モデルにのみ、ビューが操作する場合のみ、ビュー モデルを含むアセンブリを参照する必要があります。  
   
-### モデル  
- 次の例は、[!INCLUDE[net_portable](../../../includes/net-portable-md.md)] プロジェクトに含めることのできる簡易モデル クラスを示しています。  
+### <a name="model"></a>モデル  
+ 次の例にある単純なモデル クラスを示しています、[!INCLUDE[net_portable](../../../includes/net-portable-md.md)]プロジェクト。  
   
  [!code-csharp[PortableClassLibraryMVVM#1](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/customer.cs#1)]
  [!code-vb[PortableClassLibraryMVVM#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/customer.vb#1)]  
   
- 以下に、[!INCLUDE[net_portable](../../../includes/net-portable-md.md)] プロジェクトでのデータの挿入、取得、および更新の簡単な方法例を示します。  実際のアプリケーションでは、データは Windows Communication Foundation \(WCF\) サービスなどのソースから取得します。  
+ 次の例は、設定、取得、およびデータの更新を簡単な方法を示しています、[!INCLUDE[net_portable](../../../includes/net-portable-md.md)]プロジェクト。 実際のアプリでは、Windows Communication Foundation (WCF) サービスなどのソースからデータを取得します。  
   
  [!code-csharp[PortableClassLibraryMVVM#2](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/customerrepository.cs#2)]
  [!code-vb[PortableClassLibraryMVVM#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/customerrepository.vb#2)]  
   
-### ビュー モデル  
- ビュー モデルの基本クラスは MVVM パターンの実装時に追加されることがよくあります。  基本クラスの例を次に示します。  
+### <a name="view-model"></a>ビュー モデル  
+ MVVM パターンを実装するときに、モデルの表示の基本クラスが頻繁に追加されます。 次の例では、基本クラスを示します。  
   
  [!code-csharp[PortableClassLibraryMVVM#3](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/viewmodelbase.cs#3)]
  [!code-vb[PortableClassLibraryMVVM#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/viewmodelbase.vb#3)]  
   
- MVVM パターンでは <xref:System.Windows.Input.ICommand> インターフェイスの実装がよく使用されます。  <xref:System.Windows.Input.ICommand> インターフェイスを実装する例を次に示します。  
+ 実装、<xref:System.Windows.Input.ICommand>インターフェイスは MVVM パターンでよく使用します。 <xref:System.Windows.Input.ICommand> インターフェイスを実装する例を次に示します。  
   
  [!code-csharp[PortableClassLibraryMVVM#4](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/relaycommand.cs#4)]
  [!code-vb[PortableClassLibraryMVVM#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/relaycommand.vb#4)]  
   
- 簡易ビュー モデルの例を次に示します。  
+ 次の例は、簡略化されたビュー モデルを示しています。  
   
  [!code-csharp[PortableClassLibraryMVVM#5](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/mainpageviewmodel.cs#5)]
  [!code-vb[PortableClassLibraryMVVM#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/customerviewmodel.vb#5)]  
   
-### ビュー  
- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] アプリケーション、[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリケーション、Silverlight ベースのアプリケーション、または Windows Phone 7.5 アプリケーションでは、モデルおよびビュー モデルのプロジェクトを含むアセンブリを参照できます。次に、ビュー モデルと対話するビューを作成します。  次の例では、ビュー モデルからデータを取得し、更新する簡易 Windows Presentation Foundation \(WPF\) アプリケーションを示します。  似たようなビューは Silverlight、Windows Phone、または [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリケーションでも作成できます。  
+### <a name="view"></a>表示  
+ [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]アプリ、[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]アプリ、Silverlight ベースのアプリまたは Windows Phone 7.5 アプリの場合は、モデルとビューのモデル プロジェクトを含むアセンブリを参照することができます。  連携するビューを作成するには、ビュー モデルにします。 次の例を取得し、ビュー モデルからデータを更新するシンプルな Windows Presentation Foundation (WPF) アプリを示します。 Silverlight では、Windows Phone のようなビューを作成する可能性がありますまたは[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]アプリ。  
   
- [!code-xml[PortableClassLibraryMVVM#6](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/mainwindow.xaml#6)]  
+ [!code-xaml[PortableClassLibraryMVVM#6](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/mainwindow.xaml#6)]  
   
-## 参照  
- [汎用性のあるクラス ライブラリ](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)
+## <a name="see-also"></a>関連項目  
+ [ポータブル クラス ライブラリ](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)

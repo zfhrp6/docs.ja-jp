@@ -1,81 +1,84 @@
 ---
-title: "&lt;publisherPolicy&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/publisherPolicy"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/dependentAssembly/publisherPolicy"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#publisherPolicy"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<publisherPolicy> 要素"
-  - "コンテナー タグ, <publisherPolicy> 要素"
-  - "publisherPolicy 要素"
+title: "&lt;publisherPolicy&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/publisherPolicy
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/dependentAssembly/publisherPolicy
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#publisherPolicy
+helpviewer_keywords:
+- publisherPolicy element
+- container tags, <publisherPolicy> element
+- <publisherPolicy> element
 ms.assetid: 4613407e-d0a8-4ef2-9f81-a6acb9fdc7d4
-caps.latest.revision: 18
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "18"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 654887c870a7f620c52fa402d6324de39fdb2feb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;publisherPolicy&gt; 要素
-ランタイムが発行者ポリシーを適用するかどうかを指定します。  
+# <a name="ltpublisherpolicygt-element"></a>&lt;publisherPolicy&gt;要素
+ランタイムが発行元ポリシーを適用するかどうかを指定します。  
   
-## 構文  
+ \<configuration>  
+\<ランタイム >  
+\<assemblyBinding >  
+\<dependentAssembly >  
+\<publisherPolicy >  
   
-```  
+## <a name="syntax"></a>構文  
   
+```xml  
 <publisherPolicy apply="yes|no"/>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|Attribute|説明|  
-|---------------|--------|  
+|属性|説明|  
+|---------------|-----------------|  
 |`apply`|発行者ポリシーを適用するかどうかを指定します。|  
   
-## apply 属性  
+## <a name="apply-attribute"></a>属性を適用します。  
   
 |値|説明|  
-|-------|--------|  
-|`yes`|発行者ポリシーを適用します。  これは、既定の設定です。|  
-|`no`|発行者ポリシーを適用しません。|  
+|-----------|-----------------|  
+|`yes`|発行者ポリシーを適用します。 これは、既定の設定です。|  
+|`no`|発行者ポリシーは適用されません。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
+|-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
   
-## 解説  
- コンポーネントの販売元は、アセンブリの新しいバージョンをリリースするときに、以前のバージョンを使用していたアプリケーションが新しいバージョンを使用するように、発行者ポリシーを含めることができます。  指定するには、特定のアセンブリの発行者ポリシーを適用するかどうか **\<dependentAssembly\>** 要素に **\<publisherPolicy\>** 要素を含めます。  
+## <a name="remarks"></a>コメント  
+ コンポーネントの開発元は、アセンブリの新しいバージョンをリリースするとき仕入先はこれで、古いバージョンを使用するアプリケーションが新しいバージョンを使用するため、発行者ポリシーを含めることができます。 特定のアセンブリの発行者ポリシーを適用するかどうかを指定するには、配置、  **\<publisherPolicy >**内の要素、  **\<dependentAssembly >**要素。  
   
- **apply** 属性の既定の設定は **yes** です。  **apply** 属性を **no** に設定すると、アセンブリに対して既に設定されていたすべての **yes** がオーバーライドされます。  
+ 既定の設定、**適用**属性は**はい**です。 設定、**適用**属性を**ありません**以前のどのオーバーライド**はい**アセンブリに対して既に設定します。  
   
- アクセス許可はアプリケーションに明示的にアプリケーション構成ファイルの [\<publisherPolicy apply\= "いいえ」\/\>](../../../../../docs/framework/configure-apps/file-schema/runtime/publisherpolicy-element.md) 要素を使用して発行者ポリシーを無視する必要があります。  アクセス許可は、[SecurityPermission クラス](frlrfSystemSecurityPermissionsSecurityPermissionClassTopic)の [BindingRedirects](frlrfSystemSecurityPermissionsSecurityPermissionFlagClassTopic) フラグを設定することによって付与されます。  詳細については、「[アセンブリ バインディング リダイレクトのセキュリティ アクセス許可](../../../../../docs/framework/configure-apps/assembly-binding-redirection-security-permission.md)」を参照してください。  
+ アクセス許可は、アプリケーションを使用して発行者ポリシーを明示的に無視する必要、 [ \<publisherPolicy 適用 ="no"/>](../../../../../docs/framework/configure-apps/file-schema/runtime/publisherpolicy-element.md)アプリケーション構成ファイル内の要素。 許可を設定して、<xref:System.Security.Permissions.SecurityPermissionFlag>フラグを<xref:System.Security.Permissions.SecurityPermission>です。 詳細については、次を参照してください。[アセンブリ バインディング リダイレクトのセキュリティのアクセス許可](../../../../../docs/framework/configure-apps/assembly-binding-redirection-security-permission.md)です。  
   
-## 使用例  
- アセンブリ `myAssembly` の発行者ポリシーを無効にする例を示します。  
+## <a name="example"></a>例  
+ 次の例が、アセンブリの発行者ポリシーをオフに`myAssembly`です。  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">  
@@ -90,8 +93,8 @@ caps.handback.revision: 17
 </configuration>  
 ```  
   
-## 参照  
- [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [ランタイムがアセンブリを検索する方法](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
+## <a name="see-also"></a>関連項目  
+ [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [ランタイムがアセンブリを検索する方法](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [アセンブリ バージョンのリダイレクト](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)

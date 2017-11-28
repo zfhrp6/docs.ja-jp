@@ -1,31 +1,27 @@
 ---
-title: "方法: ツリー (Visual Basic) ですべてのノードを一覧表示 |Microsoft ドキュメント"
+title: "方法: ツリー (Visual Basic) ですべてのノードを一覧表示"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: e19289c4-26d1-435b-b0db-fb8bc856b753
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6e3aa8df843b8b601b2724f6de48d66d1a806db4
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 988c531451162560cac99d8b8e1c25861ef82ae5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-list-all-nodes-in-a-tree-visual-basic"></a>方法: ツリー (Visual Basic) ですべてのノードを一覧表示
-ツリー内のすべてのノードを一覧表示すると便利な場合があります。 これは、メソッドやプロパティがツリーに及ぼす影響を確認するときに役立ちます。 すべてのノードをテキスト形式で一覧表示する方法の&1; つは、ツリー内の任意のノードを正確かつ明確に識別する XPath 式を生成することです。  
+ツリー内のすべてのノードを一覧表示すると便利な場合があります。 これは、メソッドやプロパティがツリーに及ぼす影響を確認するときに役立ちます。 すべてのノードをテキスト形式で一覧表示する方法の 1 つは、ツリー内の任意のノードを正確かつ明確に識別する XPath 式を生成することです。  
   
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] を使用して XPath 式を実行する方法は特に有効ではありません。 XPath 式は [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] クエリよりパフォーマンスが低く、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] クエリの方がはるかに強力です。 ただし、XPath 式は、XML ツリー内のノードを識別する手段としては有効です。  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] を使用して XPath 式を実行する方法は特に有効ではありません。 XPath 式は [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] クエリよりパフォーマンスが低く、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] クエリの方がはるかに強力です。 ただし、XPath 式は、XML ツリー内のノードを識別する手段としては有効です。  
   
 ## <a name="example"></a>例  
  この例では、XML ツリー内の任意のノードを表す特定の XPath 式を生成する、`GetXPath` という名前の関数を示します。 この関数は、ノードが名前空間に含まれている場合でも、適切な XPath 式を生成します。 XPath 式は、名前空間プレフィックスを使用して生成されます。  
@@ -245,7 +241,7 @@ End Module
   
  この例を実行すると、次の出力が生成されます。  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
 <?target data?>  
 <Root AttName="An Attribute" xmlns:aw="http://www.adventure-works.com">  

@@ -1,67 +1,71 @@
 ---
-title: "方法 : 複合モードを使用してアルファ ブレンドを制御する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "アルファ ブレンド, 複合"
-  - "色, ブレンド"
-  - "色, 制御 (透明度を)"
+title: "方法 : 複合モードを使用してアルファ ブレンドを制御する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- alpha blending [Windows Forms], compositing
+- colors [Windows Forms], blending
+- colors [Windows Forms], controlling transparency
 ms.assetid: f331df2d-b395-4b0a-95be-24fec8c9bbb5
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 564d46cb2d72ac63962657b39146489aaafd6a5b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 複合モードを使用してアルファ ブレンドを制御する
-場合によっては、次のような特徴を持つオフスクリーン ビットマップを作成する必要が生じることがあります。  
+# <a name="how-to-use-compositing-mode-to-control-alpha-blending"></a>方法 : 複合モードを使用してアルファ ブレンドを制御する
+次の特性を持つ画面外となるビットマップを作成する場合があります。  
   
--   色のアルファ値は 255 未満である。  
+-   色は、アルファ値は 255 より小さいがあります。  
   
--   ビットマップを作成しても、色が相互にアルファ ブレンドされることはない。  
+-   色いないアルファ ビットマップを作成すると、互いとブレンドされます。  
   
--   完成したビットマップを表示するときに、ディスプレイ デバイス上でビットマップの色が背景色とアルファ ブレンドされる。  
+-   完成したビットマップを表示する場合、ビットマップの色は、ディスプレイ デバイスの背景色とブレンド alpha になります。  
   
- このようなビットマップを作成するには、空の <xref:System.Drawing.Bitmap> オブジェクトを作成し、そのビットマップに基づいて <xref:System.Drawing.Graphics> オブジェクトを作成します。  <xref:System.Drawing.Graphics> オブジェクトの複合モードを <xref:System.Drawing.Drawing2D.CompositingMode?displayProperty=fullName> に設定します。  
+ このようなビットマップを作成するには空白を構築<xref:System.Drawing.Bitmap>オブジェクト、および構築し、<xref:System.Drawing.Graphics>そのビットマップに基づいてオブジェクト。 複合モードの設定、<xref:System.Drawing.Graphics>オブジェクトを<xref:System.Drawing.Drawing2D.CompositingMode.SourceCopy?displayProperty=nameWithType>です。  
   
-## 使用例  
- <xref:System.Drawing.Bitmap> オブジェクトに基づいて <xref:System.Drawing.Graphics> オブジェクトを作成する例を次に示します。  このコードは、<xref:System.Drawing.Graphics> オブジェクトと共に 2 つの半透明ブラシ \(アルファ \= 160\) を使用して、ビットマップを塗りつぶします。  このコードでは、赤い楕円と緑の楕円が半透明ブラシで塗りつぶされます。  緑の楕円は赤の楕円の上に重なりますが、<xref:System.Drawing.Graphics> オブジェクトの複合モードが <xref:System.Drawing.Drawing2D.CompositingMode> に設定されているため、緑が赤とブレンドされることはありません。  
+## <a name="example"></a>例  
+ 次の例を作成、<xref:System.Drawing.Graphics>オブジェクトに基づいて、<xref:System.Drawing.Bitmap>オブジェクト。 コードを使用して、 <xref:System.Drawing.Graphics> 2 つの半透明ブラシと共にオブジェクト (アルファ 160 を =)、ビットマップを描画します。 コードでは、赤い楕円および半透明ブラシを使用して、緑の楕円を塗りつぶします。 緑色の楕円に赤の楕円が重複していますが、ため、赤と緑のブレンドいないの複合モード、<xref:System.Drawing.Graphics>にオブジェクトが設定されている<xref:System.Drawing.Drawing2D.CompositingMode.SourceCopy>です。  
   
- このコードは、画面上にビットマップを 2 回描画します。1 回目は白い背景上、2 回目は複数色の背景上に描画します。  2 つの楕円の一部に含まれるビットマップ内のピクセルのアルファ要素が 160 であるため、楕円の色が画面上で背景色とブレンドされます。  
+ コードは、ビットマップを描画画面に 2 回: 白い背景の 1 回に 1 回、および色付きの背景にします。 2 つの楕円の一部である、ビットマップのピクセルが 160、アルファ コンポーネントであるため、省略記号は、画面の背景色とブレンドされます。  
   
- コード例による出力を次の図に示します。  2 つの楕円は、背景とはブレンドされますが、相互にブレンドされることはありません。  
+ 次の図は、コード例の出力を示します。 省略記号は、バック グラウンドとブレンドされますが、互いにブレンドしないことに注意してください。  
   
- ![ソース コピー](../../../../docs/framework/winforms/advanced/media/sourcecopy.png "sourcecopy")  
+ ![コピーをソース](../../../../docs/framework/winforms/advanced/media/sourcecopy.png "sourcecopy")  
   
- このコード例には、次のようなステートメントがあります。  
+ このコード例には、このステートメントが含まれています。  
   
  [!code-csharp[System.Drawing.AlphaBlending#41](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.AlphaBlending/CS/Class1.cs#41)]
  [!code-vb[System.Drawing.AlphaBlending#41](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlphaBlending/VB/Class1.vb#41)]  
   
- 2 つの楕円を背景だけではなく、相互にブレンドする場合には、このステートメントを次のように変更します。  
+ 互いにだけでなく、バック グラウンドでブレンドする、省略記号を設定する場合は、そのステートメントを次のように変更します。  
   
  [!code-csharp[System.Drawing.AlphaBlending#42](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.AlphaBlending/CS/Class1.cs#42)]
  [!code-vb[System.Drawing.AlphaBlending#42](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlphaBlending/VB/Class1.vb#42)]  
   
- 変更後のコードによる出力を次の図に示します。  
+ 次の図は、変更後のコードの出力を示します。  
   
- ![ソース オーバー](../../../../docs/framework/winforms/advanced/media/sourceover.png "sourceover")  
+ ![ソース上](../../../../docs/framework/winforms/advanced/media/sourceover.png "sourceover")  
   
  [!code-csharp[System.Drawing.AlphaBlending#43](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.AlphaBlending/CS/Class1.cs#43)]
  [!code-vb[System.Drawing.AlphaBlending#43](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlphaBlending/VB/Class1.vb#43)]  
   
-## コードのコンパイル  
- 前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.PaintEventHandler> のパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ 前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.PaintEventArgs> のパラメーターである `e`<xref:System.Windows.Forms.PaintEventHandler> を必要とします。  
   
-## 参照  
- <xref:System.Drawing.Color.FromArgb%2A>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Drawing.Color.FromArgb%2A>  
  [アルファ ブレンドの直線と塗りつぶし](../../../../docs/framework/winforms/advanced/alpha-blending-lines-and-fills.md)
