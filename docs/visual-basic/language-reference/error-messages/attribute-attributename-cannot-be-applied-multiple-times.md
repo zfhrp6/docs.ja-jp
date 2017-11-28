@@ -1,42 +1,40 @@
 ---
-title: "Attribute &#39;&lt;attributename&gt;&#39; cannot be applied multiple times | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc30663"
-  - "vbc30663"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30663"
+title: "属性 &#39;&lt;attributename&gt;&#39; 複数回適用できません"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc30663
+- vbc30663
+helpviewer_keywords: BC30663
 ms.assetid: 3760e7ff-7238-40a1-8676-77d858a64fc0
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 216cf54fd164ca95b6378517a679b5b54183559f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Attribute &#39;&lt;attributename&gt;&#39; cannot be applied multiple times
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-この属性は 1 回しか適用できません。  属性を複数回適用できるかどうかは、`AttributeUsage` 属性によって決まります。  
+# <a name="attribute-39ltattributenamegt39-cannot-be-applied-multiple-times"></a>属性 &#39;&lt;attributename&gt;&#39; 複数回適用できません
+属性は、1 回のみ適用できます。 `AttributeUsage`属性は属性を複数回適用できるかどうかを決定します。  
   
- **Error ID:** BC30663  
+ **エラー ID:** BC30663  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  属性が適用されているのが 1 回だけであることを確認します。  
+1.  属性は 1 回のみ適用することを確認します。  
   
-2.  独自に作成したカスタム属性を使用している場合は、複数の属性を使用できるよう、次に示す例のように `AttributeUsage` 属性を変更することを検討します。  
+2.  開発したカスタム属性を使用している場合は、変更することを検討してください、`AttributeUsage`を次の例と同様、複数の属性の使用を許可する属性。  
   
-    ```  
-    <AttributeUsage(AllowMultiple := True)>  
-    ```  
+```vb  
+<AttributeUsage(AllowMultiple := True)>  
+```  
   
-## 参照  
- <xref:System.AttributeUsageAttribute>   
- [カスタム属性の作成](../Topic/Creating%20Custom%20Attributes%20\(C%23%20and%20Visual%20Basic\).md)   
- [AttributeUsage](../Topic/AttributeUsage%20\(C%23%20and%20Visual%20Basic\).md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.AttributeUsageAttribute>  
+ [カスタム属性の作成](../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)  
+ [AttributeUsage](../../../visual-basic/programming-guide/concepts/attributes/attributeusage.md)

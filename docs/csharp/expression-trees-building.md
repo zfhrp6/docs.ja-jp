@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 542754a9-7f40-4293-b299-b9f80241902c
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: c0d7bcf6e07f4a49e15e6f6f4e028eebfe82d8bf
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="building-expression-trees"></a>式ツリーの構築
 
 [前回 -- 式の解釈](expression-trees-interpreting.md)
@@ -180,4 +178,3 @@ BlockExpression body = Expression.Block(
 また、現時点では、`Expression` クラス メソッドを使用して直接構築できない C# 式があります。 一般的に、C# 5 と C# 6 で追加された最新の演算子と式です (たとえば、`async` は構築できず、新しい `?.` 演算子は直接作成できません)。
 
 [次回 -- 式の変換](expression-trees-translating.md)
-

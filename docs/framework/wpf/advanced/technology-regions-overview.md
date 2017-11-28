@@ -1,73 +1,76 @@
 ---
-title: "技術領域の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "空域"
-  - "相互運用性 [WPF], 空域"
-  - "Win32 コード, 空域"
-  - "Win32 コード, ウィンドウ領域"
-  - "Win32 コード, WPF 相互運用"
-  - "ウィンドウ領域"
+title: "技術領域の概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- window regions [WPF]
+- Win32 code [WPF], WPF interoperation
+- Win32 code [WPF], airspace
+- airspace [WPF]
+- interoperability [WPF], airspace
+- Win32 code [WPF], window regions
 ms.assetid: b7cc350f-b9e2-48b1-be14-60f3d853222e
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6fb2f920928002e4ee374e36f307a537e4af593c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 技術領域の概要
-WPF、Win32、DirectX など、複数のプレゼンテーション テクノロジを 1 つのアプリケーションで使用する場合、それらのテクノロジでは共通のトップレベル ウィンドウ内のレンダリング領域を共有する必要があります。  このトピックでは、WPF 相互運用アプリケーションのプレゼンテーションや入力に影響を与える可能性がある問題について説明します。  
+# <a name="technology-regions-overview"></a>技術領域の概要
+、WPF、Win32、または DirectX、などのアプリケーションで複数のプレゼンテーション テクノロジが使用されている場合、共通のトップレベル ウィンドウ内の表示領域を共有する必要があります。 このトピックでは、プレゼンテーション層と、WPF の相互運用アプリケーションへの入力は影響を与える問題について説明します。  
   
-## 領域  
- トップレベル ウィンドウ内では、相互運用アプリケーションのテクノロジの 1 つを構成する HWND のそれぞれに独自の領域 \("空域" とも呼ばれます\) がある、と考えることができます。  ウィンドウ内の各ピクセルはただ 1 つの HWND に属しており、これがその HWND の領域を構成します   \(厳密に言えば、複数の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] HWND が存在する場合には複数の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 領域が存在しますが、ここでは説明しやすくするために、存在する領域は 1 つだけであると仮定します\)。  領域は、アプリケーションの有効期間中にそのピクセルの上に描画を試行するすべての層またはその他のウィンドウが、同じ描画レベル テクノロジの一部である必要があることを意味しています。  [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] 上で [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ピクセルを描画しようとすると、望ましくない結果が生じるため、相互運用 [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] によって可能な限り禁止されています。  
+## <a name="regions"></a>領域  
+ 最上位レベルのウィンドウ内には、次の相互運用アプリケーションのテクノロジのいずれかを構成する各 HWND 領域を持つ独自 (「空域」とも呼ばれます) を考えることができます。 ウィンドウ内の各ピクセルは、その HWND の領域を構成する 1 つだけの HWND に属しています。 (厳密には、複数の 1 つである[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]領域の 1 つ以上を使用する必要がある場合[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]HWND をこの説明の目的で、すれば、1 つだけですが)。 領域は、すべての層またはアプリケーションの有効期間中にそのピクセルの上をレンダリングしようとする他のウィンドウは、同じレンダリング レベル テクノロジの一部である必要がありますを意味します。 レンダリングしようとしています。[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]経由でピクセル[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]、望ましくない結果につながると相互運用を可能な限り許可されていない[!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]です。  
   
-### 領域の例  
- [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]、および [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] が混在するアプリケーションを次の図に示します。  それぞれのテクノロジは別個の、重複しないピクセルのセットを使用しているので、領域の問題は発生しません。  
+### <a name="region-examples"></a>領域の例  
+ 次の図に、アプリケーションが混在している[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]、 [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]、および[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。 各テクノロジ (ピクセル単位) の独自、重複しない別々 のセットを使用して、領域の問題はありません。  
   
  ![空域の問題がないウィンドウ](../../../../docs/framework/wpf/advanced/media/migrationinteroparchitectarticle01.png "MigrationInteropArchitectArticle01")  
   
- このアプリケーションでマウス ポインターの位置を使用して、これら 3 つのどの領域の上にも描画を試みるアニメーションを作成するとします。  アニメーション自体をどのテクノロジが担当するとしても、そのテクノロジは他の 2 つの領域に違反することになります。  Win32 の領域の上に WPF の円の描画を試みる場合を次の図に示します。  
+ このアプリケーションがこれら 3 つの領域の上にレンダリングしようとするアニメーションを作成する、マウス ポインターの位置を使用するとします。 テクノロジは、アニメーション自体の原因に関係なくそのテクノロジが、その他の 2 つの領域に違反します。 次の図は、Win32 領域 WPF 円を表示するためにしようとします。  
   
  ![相互運用ダイアグラム](../../../../docs/framework/wpf/advanced/media/migrationinteroparchitectarticle02.png "MigrationInteropArchitectArticle02")  
   
- 領域の違反は、異なるテクノロジの間で透明度\/アルファ ブレンドを使用した場合にも発生します。  次の図では、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のボックスが [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] および [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] の領域に違反しています。  この [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ボックス内のピクセルは半透明であるため、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] と [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の両方によって共通に所有されている必要がありますが、それは不可能です。  したがって、これも領域の違反となり、作成できません。  
+ 別の違反は、透過性/アルファ ブレンドさまざまなテクノロジを使用しようとするかどうかです。  次の図に、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]  ボックスに違反しています、[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]と[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]領域。 にピクセル[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]半透明ボックスが所有する共同で両方[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]と[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]、それが不可能です。  このため、別の違反は、これをビルドできません。  
   
  ![相互運用ダイアグラム](../../../../docs/framework/wpf/advanced/media/migrationinteroparchitectarticle03.png "MigrationInteropArchitectArticle03")  
   
- 前の 3 つの例では四角形領域を使用しましたが、別の形状を使用することもできます。  たとえば、領域に穴を使用できます。  四角形の穴がある [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] の領域を次の図に示します。これは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] と [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] の領域を結合したサイズです。  
+ 前の 3 つの例に使用される四角形の領域が、別の図形が可能です。  たとえば、地域、穴ことができます。 次の図は、[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]領域のサイズは、この四角形の穴を[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]と[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]の地域の結合します。  
   
  ![相互運用ダイアグラム](../../../../docs/framework/wpf/advanced/media/migrationinteroparchitectarticle04.png "MigrationInteropArchitectArticle04")  
   
- 領域は、次の図のように、まったく四角形でない図形や、[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] の HRGN \(領域\) で記述できる任意の図形にすることもできます。  
+ 領域を完全に四角形以外にすることはできますがない図形や、 [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] HRGN (リージョン)。  
   
  ![相互運用ダイアグラム](../../../../docs/framework/wpf/advanced/media/migrationinteroparchitectarticle05.png "MigrationInteropArchitectArticle05")  
   
-## 透過性とトップレベル ウィンドウ  
- Windows でのウィンドウ マネージャーは、実際には [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] の HWND のみを処理します。  したがって、それぞれの [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Window> は HWND です。  <xref:System.Windows.Window> HWND は、すべての HWND の一般規則に従う必要があります。  その HWND 内で、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] コードは [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] 全体がサポートすることであれば、すべて実行できます。  しかし、デスクトップ上で他の HWND と対話する場合、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] の処理と描画の規則に従う必要があります。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] の非四角形ウィンドウ用 HRGN と、ピクセルごとのアルファ情報をサポートするレイヤード ウィンドウを使用することで、四角形以外のウィンドウをサポートします。  
+## <a name="transparency-and-top-level-windows"></a>透過性と最上位のウィンドウ  
+ Windows のウィンドウ マネージャーが本当にのみ処理[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]Hwnd です。 そのため、すべて[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Window> HWND がします。 <xref:System.Windows.Window> HWND は、HWND の一般的な規則で従う必要があります。 その HWND 内[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コード実行できるあらゆる全体的な[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)][!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]をサポートします。 デスクトップで、その他の Hwnd とのやり取りの[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]に従う必要があります[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]処理とルールを表示します。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]使用して、四角形以外の windows をサポートしている[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]— HRGNs 四角形以外の windows、およびピクセルごとの alpha 用レイヤード ウィンドウです。  
   
- 一定のアルファおよびカラー キーはサポートされません。  [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] のレイヤード ウィンドウの機能は、プラットフォームによって異なります。  
+ 定数のアルファおよびカラー キーがサポートされていません。  [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]レイヤード ウィンドウの機能は、プラットフォームによって異なります。  
   
- レイヤード ウィンドウでは、ウィンドウ内のすべてのピクセルに適用するアルファ値を指定することで、ウィンドウ全体を半透明にすることができます   \([!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] は実際にはピクセルごとのアルファをサポートしていますが、このモードでは、ダイアログやドロップダウンなどを含むすべての子 HWND を開発者自身で描画する必要があるため、これを実用プログラムで使用することは非常に困難です\)。  
+ レイヤード ウィンドウを行えるウィンドウ全体半透明 (半透明) ウィンドウ内のすべてのピクセルに適用するアルファ値を指定しています。  ([!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]実際サポート ピクセルごとのアルファがこのモードですべての子を描画する必要があるために、実用的なプログラムで使用する非常に困難 HWND 自分で、ダイアログ ボックスおよびドロップダウン リストを含む)。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は HRGN をサポートしますが、この機能に対応するマネージ [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] はありません。  プラットフォーム呼び出しおよび <xref:System.Windows.Interop.HwndSource> を使用すると、関連する [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] を呼び出すことができます。  詳細については、「[マネージ コードからのネイティブ関数の呼び出し](../Topic/Calling%20Native%20Functions%20from%20Managed%20Code.md)」を参照してください。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]HRGNs; をサポートしていますただし、マネージいいえ[!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]この機能のためです。 プラットフォームを使用する呼び出しと<xref:System.Windows.Interop.HwndSource>を呼び出して、関連する[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)][!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]です。 詳細については、次を参照してください。[マネージ コードからネイティブ関数を呼び出して](/cpp/dotnet/calling-native-functions-from-managed-code)です。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] レイヤード ウィンドウの機能は、オペレーティング システムによってさまざまに異なります。  これは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では描画に [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] が使用されますが、レイヤード ウィンドウは [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] レンダリングではなく、主に [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] レンダリング用に設計されているためです。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]レイヤード ウィンドウでは、さまざまなオペレーティング システムで異なる機能があります。 これは、ため[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]を使用して[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]、表示するレイヤード ウィンドウが、主に用に設計された、[!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)]レンダリングできません[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]レンダリングします。  
   
--   [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、[!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)] 以降では、ハードウェアで加速されたレイヤード ウィンドウをサポートします。  ハードウェアで加速されたレイヤード ウィンドウを [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)] 上で使用するには、[!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)] によるサポートが必要となるため、この機能は、実行するマシンの [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)] のバージョンに依存します。  
+-   [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]サポートするハードウェア アクセラレータ レイヤー上の windows[!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)]およびそれ以降。 ハードウェア アクセラレータ レイヤー上の windows[!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)]からのサポートを必要と[!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)]機能のバージョンによって異なりますので、[!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)]そのコンピューターにします。  
   
--   [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、特にレンダリングがハードウェアで加速されている場合、要求された正確な色を描画することを保証できないため、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、透明度カラー キーをサポートしません。  
+-   [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]透明色キーはサポートしません[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ハードウェア アクセラレータによるレンダリングは、特に場合、要求された正確な色を表示するためには保証できません。  
   
--   アプリケーションを [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)] で実行している場合、レイヤード ウィンドウを [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] サーフェイス上で実行すると、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] アプリケーションでの描画時に、ちらつきが発生します   \(実際のレンダリング シーケンスでは、まず [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] がレイヤード ウィンドウを非表示にし、次に [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] が描画を実行した後、[!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] がレイヤード ウィンドウを元に戻します\)。  この制限は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 以外のレイヤード ウィンドウでも同じです。  
+-   アプリケーションが実行されている場合[!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)]、レイヤード ウィンドウの上に[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]画面がちらつく場合に、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]アプリケーションが表示されます。  (実際のレンダリング シーケンスは[!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)]し、階層化 ウィンドウを非表示に[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]を描画すると、し[!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)]レイヤード ウィンドウを戻します)。  非[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]レイヤード ウィンドウにもこの制限があります。  
   
-## 参照  
- [WPF と Win32 の相互運用性](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)   
- [チュートリアル: Win32 での WPF クロックのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-clock-in-win32.md)   
+## <a name="see-also"></a>関連項目  
+ [WPF と Win32 の相互運用性](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)  
+ [チュートリアル: Win32 での WPF クロックのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-clock-in-win32.md)  
  [WPF での Win32 コンテンツのホスト](../../../../docs/framework/wpf/advanced/hosting-win32-content-in-wpf.md)

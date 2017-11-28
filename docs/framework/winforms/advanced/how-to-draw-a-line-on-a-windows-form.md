@@ -1,46 +1,49 @@
 ---
-title: "方法 : Windows フォームに直線を描画する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Graphics.DrawLine"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "描画 (線を)"
-  - "描画, 線"
-  - "例 [Windows フォーム], 描画 (フォームに直線を)"
-  - "線, 描画"
+title: "方法 : Windows フォームに直線を描画する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+f1_keywords: Graphics.DrawLine
+helpviewer_keywords:
+- examples [Windows Forms], drawing lines on forms
+- drawing [Windows Forms], lines
+- lines [Windows Forms], drawing
+- drawing lines
 ms.assetid: 55c1dbeb-75d0-430c-9814-a24b8971ad8c
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 984cdaca14c354ca78118412911c69c282ddd1bc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームに直線を描画する
-この例は、フォームに直線を描画します。  通常、フォームに描画するときは、この例に示すように、フォームの <xref:System.Windows.Forms.Control.Paint> イベントを処理し、<xref:System.Windows.Forms.PaintEventArgs> の <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> プロパティを使用して描画を実行します。  
+# <a name="how-to-draw-a-line-on-a-windows-form"></a>方法 : Windows フォームに直線を描画する
+この例では、フォームに直線を描画します。 通常、フォームに描画するときに処理するフォームの<xref:System.Windows.Forms.Control.Paint>イベント描画を使用して実行し、<xref:System.Windows.Forms.PaintEventArgs.Graphics%2A>のプロパティ、<xref:System.Windows.Forms.PaintEventArgs>この例で示すように、  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-csharp[System.Drawing.UsingAPen#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingAPen/CS/Class1.cs#11)]
  [!code-vb[System.Drawing.UsingAPen#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingAPen/VB/Class1.vb#11)]  
   
-## コードのコンパイル  
- 前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ 前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.PaintEventArgs> イベント ハンドラーのパラメーターである `e`<xref:System.Windows.Forms.Control.Paint> を必要とします。  
   
-## 信頼性の高いプログラミング  
- システム リソースを消費するオブジェクト \(<xref:System.Drawing.Pen> オブジェクトなど\) では、必ず <xref:System.IDisposable.Dispose%2A> を呼び出す必要があります。  
+## <a name="robust-programming"></a>信頼性の高いプログラミング  
+ 常に呼び出す必要があります<xref:System.IDisposable.Dispose%2A>など、システム リソースを消費するすべてのオブジェクトに対する<xref:System.Drawing.Pen>オブジェクト。  
   
-## 参照  
- <xref:System.Drawing.Graphics.DrawLine%2A>   
- <xref:System.Windows.Forms.Control.OnPaint%2A>   
- [グラフィックス プログラミングについて](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)   
- [ペンを使用した直線と図形の描画](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Drawing.Graphics.DrawLine%2A>  
+ <xref:System.Windows.Forms.Control.OnPaint%2A>  
+ [グラフィックス プログラミングについて](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)  
+ [ペンを使用した直線と図形の描画](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)  
  [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)

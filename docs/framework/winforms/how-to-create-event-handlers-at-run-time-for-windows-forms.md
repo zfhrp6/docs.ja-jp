@@ -1,45 +1,49 @@
 ---
-title: "方法 : Windows フォームで実行時にイベント ハンドラーを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Button コントロール [Windows フォーム], イベント ハンドラー"
-  - "イベント ハンドラー, 作成"
-  - "例 [Windows フォーム], イベント処理"
-  - "実行時に, 作成 (イベント ハンドラーを)"
-  - "Windows フォーム, イベント処理"
+title: "方法 : Windows フォームで実行時にイベント ハンドラーを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- Windows Forms, event handling
+- event handlers [Windows Forms], creating
+- run time [Windows Forms], creating event handlers at
+- examples [Windows Forms], event handling
+- Button control [Windows Forms], event handlers
 ms.assetid: 2e7c9e1a-61fe-444d-8113-3c5bacf1c8cb
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 53664bcf8c776338399297687a16ec430bca128b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームで実行時にイベント ハンドラーを作成する
-Windows フォーム デザイナーを使用してイベント ハンドラーを作成する他に、実行時にもイベント ハンドラーを作成できます。  これによって、プログラムが最初に起動したときにイベント ハンドラーを接続する代わりに、コード内に記述されている条件に基づいて、実行時にイベント ハンドラーを接続できます。  
+# <a name="how-to-create-event-handlers-at-run-time-for-windows-forms"></a>方法 : Windows フォームで実行時にイベント ハンドラーを作成する
+Windows フォーム デザイナーを使用してイベント ハンドラーを作成する他に、実行時にもイベント ハンドラーを作成できます。 これにより、プログラムが最初に起動したときにイベント ハンドラーを接続する代わりに、コード内に記述されている条件に基づいて、実行時にイベント ハンドラーを接続できます。  
   
-### 実行時にイベント ハンドラーを作成するには  
+### <a name="to-create-an-event-handler-at-run-time"></a>実行時にイベント ハンドラーを作成するには  
   
 1.  コード エディターで、イベント ハンドラーを追加するフォームを開きます。  
   
 2.  処理するイベントに対応するメソッド シグネチャを持つメソッドをフォームに追加します。  
   
-     たとえば、<xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Click> イベントを処理する場合は、次のようなメソッドを作成します。  
+     処理する場合など、<xref:System.Windows.Forms.Control.Click>のイベント、<xref:System.Windows.Forms.Button>コントロールを次のようメソッドを作成するとします。  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As Object, ByVal e As EventArgs)  
        ' Add event handler code here.  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -47,7 +51,6 @@ Windows フォーム デザイナーを使用してイベント ハンドラー�
     {  
     // Add event handler code here.  
     }  
-  
     ```  
   
     ```cpp  
@@ -59,29 +62,27 @@ Windows フォーム デザイナーを使用してイベント ハンドラー�
        }  
     ```  
   
-3.  アプリケーションの必要に応じて、イベント ハンドラーにコードを追加します。  
+3.  アプリケーションに応じて、イベント ハンドラーにコードを追加します。  
   
 4.  イベント ハンドラーをどのフォームまたはコントロールに対して作成するかを指定します。  
   
-5.  フォームのクラスのメソッドに、イベントを処理するためのイベント ハンドラーを指定するコードを追加します。  たとえば、次のコードは、<xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Click> イベントを処理する `button1_Click` イベント ハンドラーを指定します。  
+5.  フォームのクラスのメソッドに、イベントを処理するためのイベント ハンドラーを指定するコードを追加します。 たとえば、次のコードには、イベント ハンドラーを指定します。`button1_Click`ハンドル、<xref:System.Windows.Forms.Control.Click>のイベント、<xref:System.Windows.Forms.Button>コントロール。  
   
     ```vb  
     AddHandler Button1.Click, AddressOf Button1_Click  
-  
     ```  
   
     ```csharp  
     button1.Click += new EventHandler(button1_Click);  
-  
     ```  
   
     ```cpp  
     button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);  
     ```  
   
-     上の Visual Basic コードの <xref:System.ComponentModel.EventHandlerList.AddHandler%2A> メソッドは、ボタンに対するクリック イベント ハンドラーを作成しています。  
+     <xref:System.ComponentModel.EventHandlerList.AddHandler%2A>上の Visual Basic のコードに示されているメソッドは、ボタンの click イベント ハンドラーを確立します。  
   
-## 参照  
- [Windows フォーム内でのイベント ハンドラーの作成](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)   
- [イベント ハンドラーの概要](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)   
- [Troubleshooting Inherited Event Handlers in Visual Basic](../Topic/Troubleshooting%20Inherited%20Event%20Handlers%20in%20Visual%20Basic.md)
+## <a name="see-also"></a>関連項目  
+ [Windows フォーム内でのイベント ハンドラーの作成](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
+ [イベント ハンドラーの概要](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)  
+ [Visual Basic での継承されたイベント ハンドラーのトラブルシューティング](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)

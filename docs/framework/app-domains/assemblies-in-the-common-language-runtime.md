@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -20,16 +19,15 @@ helpviewer_keywords:
 - version boundaries
 - type boundaries
 ms.assetid: 2cfebe19-7436-49f1-bd99-3c4019f0b676
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 7dfa8bab1d142462d49524495e3e5dc0b4960a4d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: faa41efa7f3ad898557e966d141aa8f5108d60bd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="assemblies-in-the-common-language-runtime"></a>共通言語ランタイムのアセンブリ
 アセンブリは .NET Framework アプリケーションのビルド ブロックであり、配置、バージョン管理、再利用、アクティブ化のスコープの指定、およびセキュリティ アクセス許可の基本単位となります。 アセンブリは、相互に連携して 1 つの論理的な機能単位を形成するように構築された型やリソースの集合です。 共通言語ランタイムは、型の実装に関して必要な情報をアセンブリから取得します。 共通言語ランタイムにとって、型はアセンブリのコンテキストの外部には存在しません。  
@@ -52,7 +50,7 @@ ms.lasthandoff: 07/28/2017
   
  アセンブリには、静的アセンブリと動的アセンブリの 2 種類があります。 静的アセンブリには、.NET Framework の各型 (インターフェイスおよびクラス) と、アセンブリ用のリソース (ビットマップ、JPEG ファイル、リソース ファイルなど) を格納できます。 静的アセンブリは、ディスク上のポータブル実行可能 (PE) ファイルに保存されます。 .NET Framework を使用して動的アセンブリを作成することもできます。動的アセンブリはメモリから直接実行され、実行前にディスクに保存されることはありません。 動的アセンブリは、実行後にディスクに保存できます。  
   
- アセンブリを作成するには、いくつかの方法があります。 Visual Studio など、これまで .dll ファイルや .exe ファイルの作成に使用してきた開発ツールを使用できます。 他の開発環境で作成されたモジュールを使ってアセンブリを作成するには、[!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] に付属している各種ツールを使用できます。 動的アセンブリの作成には、<xref:System.Reflection.Emit?displayProperty=fullName> などの共通言語ランタイム API も使用できます。  
+ アセンブリを作成するには、いくつかの方法があります。 Visual Studio など、これまで .dll ファイルや .exe ファイルの作成に使用してきた開発ツールを使用できます。 他の開発環境で作成されたモジュールを使ってアセンブリを作成するには、[!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] に付属している各種ツールを使用できます。 動的アセンブリの作成には、<xref:System.Reflection.Emit?displayProperty=nameWithType> などの共通言語ランタイム API も使用できます。  
   
 ## <a name="related-topics"></a>関連トピック  
   
@@ -71,5 +69,4 @@ ms.lasthandoff: 07/28/2017
 |[ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|実行時に .NET Framework でアセンブリ参照がどのように解決されるかについて説明します。|  
   
 ## <a name="reference"></a>参照  
- <xref:System.Reflection.Assembly?displayProperty=fullName>
-
+ <xref:System.Reflection.Assembly?displayProperty=nameWithType>

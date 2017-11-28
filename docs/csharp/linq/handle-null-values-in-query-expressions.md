@@ -7,16 +7,14 @@ manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
 ms.assetid: ac63ae8b-724d-4251-9334-528f4e884ae7
+ms.openlocfilehash: d16256e31b073a599504ffef6501ed34430a7694
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: f4f189504c57c9c01268b10bc96ad3c9af49ddbd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="handle-null-values-in-query-expressions"></a>クエリ式の null 値の処理
 
@@ -26,7 +24,7 @@ ms.lasthandoff: 07/28/2017
 
  次の例に示すように、null 参照の例外を回避する防御的なコーディングをすることができます。  
   
- [!code-cs[csProgGuideLINQ#82](../../../samples/snippets/csharp/concepts/linq/how-to-handle-null-values-in-query-expressions_1.cs)]  
+ [!code-csharp[csProgGuideLINQ#82](../../../samples/snippets/csharp/concepts/linq/how-to-handle-null-values-in-query-expressions_1.cs)]  
   
  前の例では、`where` 句によって、カテゴリ シーケンス内のすべての null 要素が除外されます。 この手法は、join 句での null チェックに依存しません。 この例の null 条件式が機能する理由は、`Products.CategoryID` が `int?` 型 (`Nullable<int>` の短縮形) であるためです。  
   
@@ -34,10 +32,9 @@ ms.lasthandoff: 07/28/2017
 
  join 句で、比較キーの一方だけが null 許容値型である場合、クエリ式でもう一方のキーを null 許容型にキャストできます。 次の例では、`EmployeeID` は `int?` 型の値を含む列であるとします。  
   
- [!code-cs[csProgGuideLINQ#83](../../../samples/snippets/csharp/concepts/linq/how-to-handle-null-values-in-query-expressions_2.cs)]  
+ [!code-csharp[csProgGuideLINQ#83](../../../samples/snippets/csharp/concepts/linq/how-to-handle-null-values-in-query-expressions_2.cs)]  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Nullable%601>   
- [LINQ クエリ式](index.md)   
+ <xref:System.Nullable%601>  
+ [LINQ クエリ式](index.md)  
  [Null 許容型](../programming-guide/nullable-types/index.md)
-

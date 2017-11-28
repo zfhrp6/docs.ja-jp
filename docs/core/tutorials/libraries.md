@@ -10,14 +10,12 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 9f6e8679-bd7e-4317-b3f9-7255a260d9cf
+ms.openlocfilehash: 21f8a4f4862cabd21ab9017056f3f71706e8e9a1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
-ms.openlocfilehash: c0525462ac5efaa8d96ac2bf4c12a823ef40df31
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/19/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="developing-libraries-with-cross-platform-tools"></a>クロス プラットフォーム ツールによるライブラリの開発
 
 この記事では、クロスプラットフォーム CLI ツールを使用して .NET 用ライブラリを作成する方法について説明します。 CLI は、サポートされる任意の OS で動作する効率的で低レベルのエクスペリエンスを提供します。 Visual Studio でライブラリを構築することもできます。Visual Studio で構築する場合は、[Visual Studio ガイドを参照](libraries-with-vs.md)してください。
@@ -260,6 +258,8 @@ netstandard1.4/
    dotnet build
    ```
 
+   [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+
 1. `dotnet test` コマンドを実行して、xUnit が実行されることを確認します。 MSTest を使用する場合は、MSTest コンソール実行ツールが実行されることを確認します。
     
 以上です。 コマンド ライン ツールを使用して、すべてのプラットフォームでライブラリをテストできるようになりました。 すべてをセットアップしてテストに進む場合、ライブラリのテストはとても単純です。
@@ -342,4 +342,3 @@ $ dotnet add reference ../AwesomeLibrary.Core/AwesomeLibrary.Core.csproj
 ### <a name="structuring-a-solution"></a>ソリューションの構築
 
 マルチプロジェクト ソリューションのもう 1 つの重要な側面は、全体のプロジェクト構造を適切に構築することです。 ただし、`dotnet sln add` でソリューション ファイルに各プロジェクト ファイルがリンクされ、ソリューション レベルで `dotnet restore` と `dotnet build` を実行できる限り、好みに応じてコードを整理することができます。
-

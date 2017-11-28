@@ -1,65 +1,64 @@
 ---
-title: "Derived Math Functions (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "arithmetic operations, derived math functions"
-  - "cosecant function"
-  - "arcsecant function"
-  - "arccotangent function"
-  - "functions [Visual Basic], derived math functions"
-  - "inverse functions"
-  - "math functions, derived"
-  - "derived math functions"
-  - "cotangent function"
-  - "angles"
-  - "secant function"
-  - "trigonometric functions"
-  - "logarithms"
-  - "arccosecant function"
-  - "hyperbolic functions"
-  - "arcsine function"
-  - "degrees"
-  - "arccosine function"
+title: "数値演算関数の導出 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- arithmetic operations, derived math functions
+- cosecant function
+- arcsecant function
+- arccotangent function
+- functions [Visual Basic], derived math functions
+- inverse functions
+- math functions, derived
+- derived math functions
+- cotangent function
+- angles
+- secant function
+- trigonometric functions
+- logarithms
+- arccosecant function
+- hyperbolic functions
+- arcsine function
+- degrees
+- arccosine function
 ms.assetid: 63e449d8-9444-44fb-8db1-6d9cf346e2aa
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 5816fa4c8c384eca116fa1512950a3588c6e3392
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Derived Math Functions (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-次の表に、Visual Basic に組み込まれていない数値演算関数の導出式を示します。これらは、<xref:System.Math?displayProperty=fullName> オブジェクトの組み込みの数値演算関数から導くことができます。  ファイルまたはプロジェクトに `Imports System.Math` を追加すると、組み込みの数値演算関数にアクセスできます。  
+# <a name="derived-math-functions-visual-basic"></a>数値演算関数の導出 (Visual Basic)
+次の表はの組み込みの数値演算関数から派生可能な非組み込みの数値演算関数、<xref:System.Math?displayProperty=nameWithType>オブジェクト。 組み込みの数値演算関数は追加することでアクセスできる`Imports System.Math`ファイルまたはプロジェクトにします。  
   
-|Function|組み込み関数を使った導出式|  
-|--------------|-------------------|  
-|セカント \(Sec\(x\)\)|1 \/ Cos\(x\)|  
-|コセカント \(Csc\(x\)\)|1 \/ Sin\(x\)|  
-|コタンジェント \(Ctan\(x\)\)|1 \/ Tan\(x\)|  
-|アークサイン \(Asin\(x\)\)|Atan\(x \/ Sqrt\(\-x \* x \+ 1\)\)|  
-|アークコサイン \(Acos\(x\)\)|Atan\(\-x \/ Sqrt\(\-x \* x \+ 1\)\) \+ 2 \* Atan\(1\)|  
-|アークセカント \(Asec\(x\)\)|2 \* Atan\(1\) – Atan\(Sign\(x\) \/ Sqrt\(x \* x – 1\)\)|  
-|アークコセカント \(Acsc\(x\)\)|Atan\(Sign\(x\) \/ Sqrt\(x \* x – 1\)\)|  
-|アークコタンジェント \(Acot\(x\)\)|2 \* Atan\(1\) \- Atan\(x\)|  
-|ハイパーボリック サイン \(Sinh\(x\)\)|\(Exp\(x\) – Exp\(\-x\)\) \/ 2|  
-|ハイパーボリック コサイン \(Cosh\(x\)\)|\(Exp\(x\) \+ Exp\(\-x\)\) \/ 2|  
-|ハイパーボリック タンジェント \(Tanh\(x\)\)|\(Exp\(x\) – Exp\(\-x\)\) \/ \(Exp\(x\) \+ Exp\(\-x\)\)|  
-|ハイパーボリック セカント \(Sech\(x\)\)|2 \/ \(Exp\(x\) \+ Exp\(\-x\)\)|  
-|ハイパーボリック コセカント \(Csch\(x\)\)|2 \/ \(Exp\(x\) – Exp\(\-x\)\)|  
-|ハイパーボリック コタンジェント \(Coth\(x\)\)|\(Exp\(x\) \+ Exp\(\-x\)\) \/ \(Exp\(x\) – Exp\(\-x\)\)|  
-|ハイパーボリック アークサイン \(Asinh\(x\)\)|Log\(x \+ Sqrt\(x \* x \+ 1\)\)|  
-|ハイパーボリック アークコサイン \(Acosh\(x\)\)|Log\(x \+ Sqrt\(x \* x – 1\)\)|  
-|ハイパーボリック アークタンジェント \(Atanh\(x\)\)|Log\(\(1 \+ x\) \/ \(1 – x\)\) \/ 2|  
-|ハイパーボリック アークセカント \(AsecH\(x\)\)|Log\(\(Sqrt\(\-x \* x \+ 1\) \+ 1\) \/ x\)|  
-|ハイパーボリック アークコセカント \(Acsch\(x\)\)|Log\(\(Sign\(x\) \* Sqrt\(x \* x \+ 1\) \+ 1\) \/ x\)|  
-|ハイパーボリック アークコタンジェント \(Acoth\(x\)\)|Log\(\(x \+ 1\) \/ \(x – 1\)\) \/ 2|  
+|関数|同等の派生|  
+|--------------|-------------------------|  
+|正割 (Sec(x))|1/Cos(x)|  
+|余割 (Csc(x))|1/Sin(x)|  
+|コタンジェント (Ctan(x))|1/Tan(x)|  
+|逆正弦 (Asin(x))|Atan (x/Sqrt (-x * x + 1))|  
+|逆余弦 (Acos(x))|Atan (-x/Sqrt (-x * x + 1)) + 2 \* Atan(1)|  
+|逆正割 (Asec(x))|2 * Atan(1) – Atan(Sign(x)/Sqrt (x \* x 1))|  
+|逆余割 (Acsc(x))|Atan(Sign(x)/Sqrt (x * x 1))|  
+|逆余接 (Acot(x))|2 * Atan(1) - Atan(x)|  
+|双曲線正弦 (Sinh(x))|(関数: Exp(-x))/2|  
+|双曲線余弦 (Cosh(x))|(関数 + Exp(-x))/2|  
+|双曲線正接 (Tanh(x))|(関数: Exp(-x))/(関数 + Exp(-x))|  
+|双曲線正割 (Sech(x))|2/(関数 + Exp(-x))|  
+|双曲線余割 (Csch(x))|2/(関数: Exp(-x))|  
+|双曲線余接 (Coth(x))|(関数 + Exp(-x))/(関数: Exp(-x))|  
+|逆双曲線正弦 (Asinh(x))|ログ (x + Sqrt (x * x + 1))|  
+|逆ハイパーボリック コサイン (Acosh(x))|ログ (x + Sqrt (x * x 1))|  
+|逆双曲線正接 (Atanh(x))|ログ ((1 + x)/(1 – x))/2|  
+|逆双曲線正割 (AsecH(x))|ログ ((Sqrt (-x * x + 1) + 1)/x)|  
+|逆双曲線余割 (Acsch(x))|Log((Sign(x) * Sqrt (x \* x + 1) + 1)/x)|  
+|逆双曲線余接 (Acoth(x))|ログ ((x + 1)/(x – 1))/2|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [数値演算関数](../../../visual-basic/language-reference/functions/math-functions.md)

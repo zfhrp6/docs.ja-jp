@@ -1,50 +1,48 @@
 ---
-title: "&lt;c&gt; (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "c XML tag"
-  - "<c> XML tag"
+title: '&lt;c&gt; (Visual Basic)'
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- c XML tag
+- <c> XML tag
 ms.assetid: 36ad5d1b-11f7-4012-8932-41962ac327d1
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 7e57cae8fd4b93fee59992d717135ad7d3d78be5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;c&gt; (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-説明の内部にあるテキストがコードであることを示します。  
+# <a name="ltcgt-visual-basic"></a>&lt;c&gt; (Visual Basic)
+説明内のテキストがコードであることを示します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
+```xml  
 <c>text</c>  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
   
-|||  
-|-|-|  
-|パラメーター|Description|  
-|`text`|コードとして指定するテキスト。|  
+|パラメーター|説明|  
+|---|---|  
+|`text`|コードとして指定するテキストです。|  
   
-## 解説  
- `<c>` タグを使用すると、説明内のテキストをコードとして指定できます。  コードとして複数行を指定する場合は、[\<code\>](../../../visual-basic/language-reference/xmldoc/code.md) タグを使用します。  
+## <a name="remarks"></a>コメント  
+ `<c>`タグを使用する方法を示す説明内のテキストは、コードとしてマークする必要があります。 複数行をコードとして指定する場合は、[\<code>](../../../visual-basic/language-reference/xmldoc/code.md) タグを使用します。  
   
- コンパイル時に [\/doc](../../../visual-basic/reference/command-line-compiler/doc.md) を指定してドキュメント コメントをファイルに出力します。  
+ コンパイル時に [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) を指定して、ドキュメント コメントをファイルに出力します。  
   
-## 使用例  
- summary セクション内で `<c>` タグを使用して、`Counter` がコードであることを示す例は次のとおりです。  
+## <a name="example"></a>例  
+ この例では、`<c>`ことを示す概要 セクションにタグ`Counter`コードに示します。  
   
  [!code-vb[VbVbcnXmlDocComments#1](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/c_1.vb)]  
   
-## 参照  
- [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)
+## <a name="see-also"></a>関連項目  
+ [XML のコメント用タグ](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

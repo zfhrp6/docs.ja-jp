@@ -1,42 +1,23 @@
 ---
 title: "Visual Basic の新機能"
-ms.date: 2017-04-27
+ms.date: 04/27/2017
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-f1_keywords:
-- VB.StartPage.WhatsNew
-dev_langs:
-- VB
+f1_keywords: VB.StartPage.WhatsNew
 helpviewer_keywords:
 - new features, Visual Basic
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-caps.latest.revision: 145
+caps.latest.revision: "145"
 author: rpetrusha
 ms.author: ronpet
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: d26eb23aae6e5baec98e27a246d06af6b78e0802
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0a9379d5dd2d1c6b3ed6820e350c19fb346ac84c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="whats-new-for-visual-basic"></a>Visual Basic の新機能
 
@@ -192,4 +173,3 @@ End Interface
   
 ## <a name="see-also"></a>関連項目  
  [Visual Studio 2017 の新機能](/visualstudio/ide/whats-new-in-visual-studio)
-

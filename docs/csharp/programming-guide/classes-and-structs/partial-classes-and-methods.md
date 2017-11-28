@@ -1,40 +1,22 @@
 ---
 title: "部分クラスと部分メソッド (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - partial methods [C#]
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-caps.latest.revision: 35
+caps.latest.revision: "35"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 662b3308c3baa429ed29adca750cbb9b143b79dc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 41b07af83faa6af23695f3719aae29183c35a417
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>部分クラスと部分メソッド (C# プログラミング ガイド)
 [クラス](../../../csharp/language-reference/keywords/class.md)や[構造体](../../../csharp/language-reference/keywords/struct.md)、[インターフェイス](../../../csharp/language-reference/keywords/interface.md)やメソッドの定義を、複数のソース ファイルに分割できます。 各ソース ファイルには型やメソッドの定義のセクションが含まれ、分割されたすべての部分はアプリケーションのコンパイル時に結合されます。  
@@ -48,7 +30,7 @@ ms.lasthandoff: 09/25/2017
   
 -   クラス定義を分割するには、次のように [partial](../../../csharp/language-reference/keywords/partial-type.md) キーワード修飾子を使用します。  
   
- [!code-cs[csProgGuideObjects#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_1.cs)]  
+ [!code-csharp[csProgGuideObjects#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_1.cs)]  
   
  `partial` キーワードは、クラス、構造体、またはインターフェイスの他の部分を名前空間内で定義できることを示します。 `partial` キーワードは、すべての部分で使用する必要があります。 最終的な型を形成するためには、コンパイル時にすべての部分が利用可能である必要があります。 また、すべての部分で同じアクセシビリティ (`public` や `private` など) を使用する必要があります。  
   
@@ -61,15 +43,15 @@ ms.lasthandoff: 09/25/2017
   
  次の例は、入れ子にされた型は、それを包含する型自体が partial でない場合でも、partial にできることを示しています。  
   
- [!code-cs[csProgGuideObjects#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_2.cs)]  
+ [!code-csharp[csProgGuideObjects#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_2.cs)]  
   
  部分型定義の属性は、コンパイル時に結合されます。 たとえば、次のような宣言があるとします。  
   
- [!code-cs[csProgGuideObjects#23](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_3.cs)]  
+ [!code-csharp[csProgGuideObjects#23](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_3.cs)]  
   
  これらは、次の宣言と等価です。  
   
- [!code-cs[csProgGuideObjects#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_4.cs)]  
+ [!code-csharp[csProgGuideObjects#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_4.cs)]  
   
  各部分型定義に含まれる次の要素は、すべて結合されます。  
   
@@ -85,24 +67,24 @@ ms.lasthandoff: 09/25/2017
   
  たとえば、次のような宣言があるとします。  
   
- [!code-cs[csProgGuideObjects#21](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_5.cs)]  
+ [!code-csharp[csProgGuideObjects#21](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_5.cs)]  
   
  これらは、次の宣言と等価です。  
   
- [!code-cs[csProgGuideObjects#22](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_6.cs)]  
+ [!code-csharp[csProgGuideObjects#22](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_6.cs)]  
   
 ### <a name="restrictions"></a>制約  
  部分クラス定義を使用する場合は、いくつかの規則に従う必要があります。  
   
 -   同じ型の部分である部分型定義はすべて `partial` で修飾する必要があります。 たとえば、次のクラス宣言はエラーになります。  
   
-     [!code-cs[csProgGuideObjects#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_7.cs)]  
+     [!code-csharp[csProgGuideObjects#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_7.cs)]  
   
 -   `partial` 修飾子は、`class`、`struct`、または `interface` キーワードの直前にのみ配置できます。  
   
 -   入れ子にされた部分型は、次の例に示すように、部分型定義で宣言できます。  
   
-     [!code-cs[csProgGuideObjects#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_8.cs)]  
+     [!code-csharp[csProgGuideObjects#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_8.cs)]  
   
 -   同じ型の部分である部分型定義は、すべて同じアセンブリおよび同じモジュール (.exe ファイルまたは .dll ファイル) 内で定義する必要があります。 部分定義は、複数のモジュールにまたがることができません。  
   
@@ -136,7 +118,7 @@ ms.lasthandoff: 09/25/2017
  次の例では、クラス `CoOrds` のフィールドとコンストラクターを 1 つの部分クラス定義で宣言し、メンバー `PrintCoOrds` を別の部分クラス定義で宣言しています。  
   
 ### <a name="code"></a>コード  
- [!code-cs[csProgGuideObjects#17](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_9.cs)]  
+ [!code-csharp[csProgGuideObjects#17](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_9.cs)]  
   
 ## <a name="example-2"></a>例 2  
   
@@ -144,7 +126,7 @@ ms.lasthandoff: 09/25/2017
  次の例は、部分構造体と部分インターフェイスも開発できることを示しています。  
   
 ### <a name="code"></a>コード  
- [!code-cs[csProgGuideObjects#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_10.cs)]  
+ [!code-csharp[csProgGuideObjects#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_10.cs)]  
   
 ## <a name="partial-methods"></a>部分メソッド  
  部分クラスまたは構造体には部分メソッドを含めることができます。 クラスのある部分に、メソッドのシグネチャが含まれます。 同じ部分または別の部分に、オプションの実装を定義できます。 実装が指定されていない場合、メソッドとメソッドに対するすべての呼び出しは、コンパイル時に削除されます。  
@@ -184,9 +166,8 @@ partial void onNameChanged()
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [クラス](../../../csharp/programming-guide/classes-and-structs/classes.md)   
- [構造体](../../../csharp/programming-guide/classes-and-structs/structs.md)   
- [インターフェイス](../../../csharp/programming-guide/interfaces/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [クラス](../../../csharp/programming-guide/classes-and-structs/classes.md)  
+ [構造体](../../../csharp/programming-guide/classes-and-structs/structs.md)  
+ [インターフェイス](../../../csharp/programming-guide/interfaces/index.md)  
  [partial (型)](../../../csharp/language-reference/keywords/partial-type.md)
-

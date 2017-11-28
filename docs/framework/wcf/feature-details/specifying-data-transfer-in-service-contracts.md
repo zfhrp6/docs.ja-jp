@@ -1,25 +1,30 @@
 ---
-title: "サービス コントラクトでのデータ転送の指定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "サービス コントラクト [WCF], データ転送"
+title: "サービス コントラクトでのデータ転送の指定"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: service contracts [WCF], data transfer
 ms.assetid: 7c5a26c8-89c9-4bcb-a4bc-7131e6d01f0c
-caps.latest.revision: 38
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 38
+caps.latest.revision: "38"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 50d55a9eea39e45a9608f27ad02706ad56de89f9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# サービス コントラクトでのデータ転送の指定
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、一種のメッセージング インフラストラクチャと考えることができます。サービス操作では、メッセージを受信し、それらのメッセージを処理し、送信することができます。メッセージは、操作コントラクトを使用して記述されます。たとえば、次のようなコントラクトがあるとします。  
+# <a name="specifying-data-transfer-in-service-contracts"></a>サービス コントラクトでのデータ転送の指定
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、一種のメッセージング インフラストラクチャと考えることができます。 サービス操作では、メッセージを受信し、それらのメッセージを処理し、送信することができます。 メッセージは、操作コントラクトを使用して記述されます。 たとえば、次のようなコントラクトがあるとします。  
   
 ```csharp  
 [ServiceContract]  
@@ -43,8 +48,8 @@ End Interface
   
  ここでは、操作コントラクトでメッセージを記述するさまざまな方法について説明します。  
   
-## パラメーターを使用したメッセージの記述  
- メッセージを記述する最も簡単な方法は、パラメーター リストと戻り値を使用することです。前の例では、`fromCity` と `toCity` の 2 つの文字列パラメーターを使用して要求メッセージを記述し、float 型の戻り値を使用して応答メッセージを記述しました。戻り値だけでは応答メッセージを記述できない場合は、out パラメーターを使用できます。たとえば、次の操作は、`fromCity` と `toCity` を要求メッセージに含め、数値と通貨を応答メッセージに含めます。  
+## <a name="describing-messages-by-using-parameters"></a>パラメーターを使用したメッセージの記述  
+ メッセージを記述する最も簡単な方法は、パラメーター リストと戻り値を使用することです。 前の例では、`fromCity` と `toCity` の 2 つの文字列パラメーターを使用して要求メッセージを記述し、float 型の戻り値を使用して応答メッセージを記述しました。 戻り値だけでは応答メッセージを記述できない場合は、out パラメーターを使用できます。 たとえば、次の操作は、`fromCity` と `toCity` を要求メッセージに含め、数値と通貨を応答メッセージに含めます。  
   
 ```csharp  
 [OperationContract]  
@@ -56,9 +61,9 @@ float GetAirfare(string fromCity, string toCity, out string currency);
     Function GetAirfare(fromCity As String, toCity As String) As Double  
 ```  
   
- また、参照パラメーターを使用すると、要求メッセージと応答メッセージの両方のパラメーター部分を作成できます。パラメーターは、シリアル化 \(XML への変換\) が可能な型にする必要があります。既定では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、<xref:System.Runtime.Serialization.DataContractSerializer> クラスというコンポーネントを使用してこの変換を実行します。ほとんどのプリミティブ型 \(`int`、`string`、`float`、`DateTime` など\) がサポートされます。ユーザー定義型には、通常、データ コントラクトが存在する必要があります。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][データ コントラクトの使用](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
+ また、参照パラメーターを使用すると、要求メッセージと応答メッセージの両方のパラメーター部分を作成できます。 パラメーターは、シリアル化 (XML への変換) が可能な型にする必要があります。 既定では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、<xref:System.Runtime.Serialization.DataContractSerializer> クラスというコンポーネントを使用してこの変換を実行します。 ほとんどのプリミティブ型 (`int`、`string`、`float`、`DateTime` など) がサポートされます。 ユーザー定義型には、通常、データ コントラクトが存在する必要があります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][データ コントラクトを使用して](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)です。  
   
-```  
+```csharp
 public interface IAirfareQuoteService  
 {  
     [OperationContract]  
@@ -89,10 +94,9 @@ Public Interface IAirfareQuoteService
         Public toCity As String  
     End Class  
 End Interface  
-  
 ```  
   
- 場合によっては、使用する型のシリアル化に `DataContractSerializer` が適さないことがあります。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、代替のシリアル化エンジンとして <xref:System.Xml.Serialization.XmlSerializer> をサポートしているため、パラメーターのシリアル化にこれを使用することもできます。<xref:System.Xml.Serialization.XmlSerializer> では、`XmlAttributeAttribute` などの属性を使用することによって、結果の XML をより細かく制御できます。特定の操作やサービス全体で <xref:System.Xml.Serialization.XmlSerializer> を使用するように切り替えるには、<xref:System.ServiceModel.XmlSerializerFormatAttribute> 属性を操作またはサービスに適用します。次に例を示します。  
+ 場合によっては、使用する型のシリアル化に `DataContractSerializer` が適さないことがあります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、代替のシリアル化エンジンとして <xref:System.Xml.Serialization.XmlSerializer> をサポートしているため、パラメーターのシリアル化にこれを使用することもできます。 <xref:System.Xml.Serialization.XmlSerializer> では、`XmlAttributeAttribute` などの属性を使用することによって、結果の XML をより細かく制御できます。 特定の操作やサービス全体で <xref:System.Xml.Serialization.XmlSerializer> を使用するように切り替えるには、<xref:System.ServiceModel.XmlSerializerFormatAttribute> 属性を操作またはサービスに適用します。 例:  
   
 ```csharp  
 [ServiceContract]  
@@ -109,7 +113,6 @@ public class Itinerary
     [XmlAttribute]  
     public bool isFirstClass;  
 }  
-  
 ```  
   
 ```vb  
@@ -128,29 +131,26 @@ Class Itinerary
     <XmlSerializerFormat()>  
     Public isFirstClass As Boolean  
 End Class  
-  
 ```  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [XmlSerializer クラスの使用](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md).「XmlSerializer の使用」で説明するような明確な理由がある場合を除き、ここで示す <xref:System.Xml.Serialization.XmlSerializer> への手動での切り替えはお勧めしません。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][XmlSerializer クラスを使用して](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)です。 「XmlSerializer の使用」で説明するような明確な理由がある場合を除き、ここで示す <xref:System.Xml.Serialization.XmlSerializer> への手動での切り替えはお勧めしません。  
   
- .NET パラメーター名をコントラクト名から分離するには、<xref:System.ServiceModel.MessageParameterAttribute> 属性を使用し、`Name` プロパティを使用してコントラクト名を設定します。たとえば、次の操作コントラクトは、このトピックの最初の例に相当します。  
+ .NET パラメーター名をコントラクト名から分離するには、<xref:System.ServiceModel.MessageParameterAttribute> 属性を使用し、`Name` プロパティを使用してコントラクト名を設定します。 たとえば、次の操作コントラクトは、このトピックの最初の例に相当します。  
   
 ```csharp  
 [OperationContract]  
 public float GetAirfare(  
     [MessageParameter(Name="fromCity")] string originCity,  
     [MessageParameter(Name="toCity")] string destinationCity);  
-  
 ```  
   
 ```vb  
 <OperationContract()>  
   Function GetAirfare(<MessageParameter(Name := "fromCity")> fromCity As String, <MessageParameter(Name := "toCity")> toCity As String) As Double  
-  
 ```  
   
-## 空のメッセージの記述  
- 空の要求メッセージを記述するには、入力パラメーターや参照パラメーターを一切指定しません。C\# の場合:  
+## <a name="describing-empty-messages"></a>空のメッセージの記述  
+ 空の要求メッセージを記述するには、入力パラメーターや参照パラメーターを一切指定しません。 C# の場合:  
   
  `[OperationContract]`  
   
@@ -162,18 +162,16 @@ public float GetAirfare(
   
  `Function GetCurrentTemperature() as Integer`  
   
- 空の応答メッセージを記述するには、戻り値の型として `void` を指定し、出力パラメーターや参照パラメーターを一切指定しません。たとえば:  
+ 空の応答メッセージを記述するには、戻り値の型として `void` を指定し、出力パラメーターや参照パラメーターを一切指定しません。 次の場合:  
   
 ```csharp  
 [OperationContract]  
 public void SetTemperature(int temperature);  
-  
 ```  
   
 ```vb  
 <OperationContract()>  
 Sub SetTemperature(temperature As Integer)  
-  
 ```  
   
  これは、次のような一方向操作コントラクトと異なります。  
@@ -181,19 +179,17 @@ Sub SetTemperature(temperature As Integer)
 ```csharp  
 [OperationContract(IsOneWay=true)]  
 public void SetLightbulbStatus(bool isOn);  
-  
 ```  
   
 ```vb  
 <OperationContract(IsOneWay:=True)>  
 Sub SetLightbulbStatus(isOne As Boolean)  
-  
 ```  
   
- `SetTemperatureStatus` 操作は空のメッセージを返します。入力メッセージの処理中にエラーが発生した場合は、代わりにエラーを返す可能性があります。`SetLightbulbStatus` 操作は何も返しません。この操作からエラー状態を伝達することはできません。  
+ `SetTemperatureStatus` 操作は空のメッセージを返します。 入力メッセージの処理中にエラーが発生した場合は、代わりにエラーを返す可能性があります。 `SetLightbulbStatus` 操作は何も返しません。 この操作からエラー状態を伝達することはできません。  
   
-## メッセージ コントラクトを使用したメッセージの記述  
- 1 つの型を使用してメッセージ全体を表現する場合があります。この場合、データ コントラクトを使用することもできますが、メッセージ コントラクトを使用する方法をお勧めします。この方法を使用すると、結果の XML での不要なレベルのラップを回避できます。さらに、メッセージ コントラクトを使用すると、結果のメッセージをより細かく制御できます。たとえば、メッセージの本文とヘッダーに含める情報をそれぞれ決めることができます。次に、メッセージ コントラクトの使用例を示します。  
+## <a name="describing-messages-by-using-message-contracts"></a>メッセージ コントラクトを使用したメッセージの記述  
+ 1 つの型を使用してメッセージ全体を表現する場合があります。 この場合、データ コントラクトを使用することもできますが、メッセージ コントラクトを使用する方法をお勧めします。この方法を使用すると、結果の XML での不要なレベルのラップを回避できます。 さらに、メッセージ コントラクトを使用すると、結果のメッセージをより細かく制御できます。 たとえば、メッセージの本文とヘッダーに含める情報をそれぞれ決めることができます。 次に、メッセージ コントラクトの使用例を示します。  
   
 ```csharp  
 [ServiceContract]  
@@ -223,7 +219,6 @@ public class Itinerary
     [DataMember] public string fromCity;  
     [DataMember] public string toCity;  
 }  
-  
 ```  
   
 ```vb  
@@ -253,44 +248,39 @@ Public Class Itinerary
     <DataMember()> Public Property fromCity As String  
     <DataMember()> Public Property toCity As String  
 End Class  
-  
 ```  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [メッセージ コントラクトの使用](../../../../docs/framework/wcf/feature-details/using-message-contracts.md).  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][メッセージ コントラクトを使用して](../../../../docs/framework/wcf/feature-details/using-message-contracts.md)です。  
   
- 前の例でも <xref:System.Runtime.Serialization.DataContractSerializer> クラスが既定で使用されます。メッセージ コントラクトで、<xref:System.Xml.Serialization.XmlSerializer> クラスを使用することもできます。これを行うには、操作またはコントラクトに <xref:System.ServiceModel.XmlSerializerFormatAttribute> 属性を適用し、メッセージ ヘッダーと本文メンバーで <xref:System.Xml.Serialization.XmlSerializer> クラスと互換性のある型を使用します。  
+ 前の例でも <xref:System.Runtime.Serialization.DataContractSerializer> クラスが既定で使用されます。 メッセージ コントラクトで、<xref:System.Xml.Serialization.XmlSerializer> クラスを使用することもできます。 これを行うには、操作またはコントラクトに <xref:System.ServiceModel.XmlSerializerFormatAttribute> 属性を適用し、メッセージ ヘッダーと本文メンバーで <xref:System.Xml.Serialization.XmlSerializer> クラスと互換性のある型を使用します。  
   
-## ストリームを使用したメッセージの記述  
- 操作でメッセージを記述する場合は、<xref:System.IO.Stream> クラスまたはその派生クラスを操作コントラクトで使用したり、メッセージ コントラクト本文メンバー \(この場合、唯一のメンバーである必要があります\) として使用したりする方法もあります。受信メッセージの場合、型は `Stream` である必要があり、派生クラスを使用することはできません。  
+## <a name="describing-messages-by-using-streams"></a>ストリームを使用したメッセージの記述  
+ 操作でメッセージを記述する場合は、<xref:System.IO.Stream> クラスまたはその派生クラスを操作コントラクトで使用したり、メッセージ コントラクト本文メンバー (この場合、唯一のメンバーである必要があります) として使用したりする方法もあります。 受信メッセージの場合、型は `Stream` である必要があり、派生クラスを使用することはできません。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、シリアライザーを呼び出す代わりに、ストリームからデータを取得して送信メッセージに直接配置するか、受信メッセージからデータを取得してストリームに直接配置します。次に、ストリームの使用例を示します。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、シリアライザーを呼び出す代わりに、ストリームからデータを取得して送信メッセージに直接配置するか、受信メッセージからデータを取得してストリームに直接配置します。 次に、ストリームの使用例を示します。  
   
 ```csharp  
 [OperationContract]  
 public Stream DownloadFile(string fileName);  
-  
 ```  
   
 ```vb  
 <OperationContract()>  
 Function DownloadFile(fileName As String) As String  
-  
 ```  
   
- 1 つのメッセージ本文で `Stream` と非ストリーム データを組み合わせることはできません。追加データをメッセージ ヘッダーに配置するには、メッセージ コントラクトを使用します。操作コントラクトを定義するときのストリームの不適切な使用例を次に示します。  
+ 1 つのメッセージ本文で `Stream` と非ストリーム データを組み合わせることはできません。 追加データをメッセージ ヘッダーに配置するには、メッセージ コントラクトを使用します。 操作コントラクトを定義するときのストリームの不適切な使用例を次に示します。  
   
 ```csharp  
 //Incorrect:  
 // [OperationContract]  
 // public void UploadFile (string fileName, Stream fileData);  
-  
 ```  
   
 ```vb  
 'Incorrect:  
     '<OperationContract()>  
     Public Sub UploadFile(fileName As String, fileData As StreamingContext)  
-  
 ```  
   
  操作コントラクトを定義するときのストリームの正しい使用例を次に示します。  
@@ -305,7 +295,6 @@ public class UploadFileMessage
     [MessageHeader] public string fileName;  
     [MessageBodyMember] public Stream fileData;  
 }  
-  
 ```  
   
 ```vb  
@@ -319,46 +308,41 @@ Public Class UploadFileMessage
     <MessageBodyMember()>  
     Public Property fileData As Stream  
 End Class  
-  
 ```  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [大規模データとストリーミング](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md).  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][大量のデータとストリーミング](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)です。  
   
-## メッセージ クラスの使用  
+## <a name="using-the-message-class"></a>メッセージ クラスの使用  
  送受信されるメッセージをプログラムによって完全に制御するには、次のコード例に示すように <xref:System.ServiceModel.Channels.Message> クラスを直接使用します。  
   
 ```csharp  
 [OperationContract]  
 public void LogMessage(Message m);  
-  
 ```  
   
 ```vb  
 <OperationContract()>  
 Sub LogMessage(m As Message)  
-  
 ```  
   
- これは高度なシナリオです。詳細については、「[メッセージ クラスの使用](../../../../docs/framework/wcf/feature-details/using-the-message-class.md)」を参照してください。  
+ これで詳しく説明されている高度なシナリオは、[メッセージ クラスを使用して](../../../../docs/framework/wcf/feature-details/using-the-message-class.md)です。  
   
-## エラー メッセージの記述  
- 一方向ではない操作では、戻り値と出力パラメーターまたは参照パラメーターによって記述されるメッセージに加え、通常の応答メッセージとエラー メッセージの少なくとも 2 つのメッセージを返すことができます。たとえば、次の操作コントラクトがあるとします。  
+## <a name="describing-fault-messages"></a>エラー メッセージの記述  
+ 一方向ではない操作では、戻り値と出力パラメーターまたは参照パラメーターによって記述されるメッセージに加え、通常の応答メッセージとエラー メッセージの少なくとも 2 つのメッセージを返すことができます。 たとえば、次の操作コントラクトがあるとします。  
   
 ```csharp  
 [OperationContract]  
 float GetAirfare(string fromCity, string toCity, DateTime date);  
-  
 ```  
   
 ```vb  
 <OperationContract()>  
 Function GetAirfare(fromCity As String, toCity As String, date as DateTime)  
-  
 ```  
   
- この操作は、`float` 型の数値を含む通常のメッセージか、エラー コードと説明を含むエラー メッセージのいずれかを返すことができます。これは、サービス実装で <xref:System.ServiceModel.FaultException> をスローすることによって実現できます。  
+ この操作は、`float` 型の数値を含む通常のメッセージか、エラー コードと説明を含むエラー メッセージのいずれかを返すことができます。 これは、サービス実装で <xref:System.ServiceModel.FaultException> をスローすることによって実現できます。  
   
- <xref:System.ServiceModel.FaultContractAttribute> 属性を使用すると、追加のエラー メッセージを指定できます。追加のエラーは、次のコード例に示すように、<xref:System.Runtime.Serialization.DataContractSerializer> を使用してシリアル化できる必要があります。  
+ <xref:System.ServiceModel.FaultContractAttribute> 属性を使用すると、追加のエラー メッセージを指定できます。 追加のエラーは、次のコード例に示すように、<xref:System.Runtime.Serialization.DataContractSerializer> を使用してシリアル化できる必要があります。  
   
 ```csharp  
 [OperationContract]  
@@ -376,7 +360,6 @@ public class ItineraryNotAvailableFault
     [DataMember]  
     public DateTime alternativeSuggestedDate;  
 }  
-  
 ```  
   
 ```vb  
@@ -392,29 +375,26 @@ Public Class
   <DataMember()>  
   Public Property alternativeSuggestedDate As DateTime  
 End Class  
-  
 ```  
   
- これらの追加エラーは、適切なデータ コントラクト型の <xref:System.ServiceModel.FaultException%601> をスローすることによって生成できます。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][例外とエラーの処理](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md).  
+ これらの追加エラーは、適切なデータ コントラクト型の <xref:System.ServiceModel.FaultException%601> をスローすることによって生成できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][例外とエラーの処理](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)です。  
   
- <xref:System.Xml.Serialization.XmlSerializer> クラスを使用してエラーを記述することはできません。<xref:System.ServiceModel.XmlSerializerFormatAttribute> は、エラー コントラクトに影響を及ぼしません。  
+ <xref:System.Xml.Serialization.XmlSerializer> クラスを使用してエラーを記述することはできません。 <xref:System.ServiceModel.XmlSerializerFormatAttribute> は、エラー コントラクトに影響を及ぼしません。  
   
-## 派生型の使用  
- 操作コントラクトやメッセージ コントラクトで基本型を使用し、その後、実際に操作を呼び出すときに派生型を使用する場合があります。この場合、<xref:System.ServiceModel.ServiceKnownTypeAttribute> 属性または何らかの代替機構を使用して、派生型を使用できるようにする必要があります。次の操作があるとします。  
+## <a name="using-derived-types"></a>派生型の使用  
+ 操作コントラクトやメッセージ コントラクトで基本型を使用し、その後、実際に操作を呼び出すときに派生型を使用する場合があります。 この場合、<xref:System.ServiceModel.ServiceKnownTypeAttribute> 属性または何らかの代替機構を使用して、派生型を使用できるようにする必要があります。 次の操作があるとします。  
   
 ```csharp  
 [OperationContract]  
 public bool IsLibraryItemAvailable(LibraryItem item);  
-  
 ```  
   
-```vbs  
+```vb
 <OperationContract()>  
     Function IsLibraryItemAvailable(item As LibraryItem) As Boolean  
-  
 ```  
   
- `LibraryItem` から派生する `Book` と `Magazine` の 2 つの型があると想定します。`IsLibraryItemAvailable` 操作でこれらの型を使用するには、操作を次のように変更します。  
+ `Book` から派生する `Magazine` と `LibraryItem` の 2 つの型があると想定します。 `IsLibraryItemAvailable` 操作でこれらの型を使用するには、操作を次のように変更します。  
   
  `[OperationContract]`  
   
@@ -424,10 +404,9 @@ public bool IsLibraryItemAvailable(LibraryItem item);
   
  `public bool IsLibraryItemAvailable(LibraryItem item);`  
   
- 既定の <xref:System.Runtime.Serialization.DataContractSerializer> を使用している場合は、次のコード例に示すように <xref:System.Runtime.Serialization.KnownTypeAttribute> 属性を使用できます。  
+ 既定の <xref:System.Runtime.Serialization.KnownTypeAttribute> を使用している場合は、次のコード例に示すように <xref:System.Runtime.Serialization.DataContractSerializer> 属性を使用できます。  
   
 ```csharp  
-  
 [OperationContract]  
 public bool IsLibraryItemAvailable(LibraryItem item);  
   
@@ -440,7 +419,6 @@ public class LibraryItem
 {  
     //code omitted  
 }  
-  
 ```  
   
 ```vb  
@@ -454,28 +432,26 @@ Function IsLibraryItemAvailable(item As LibraryItem) As Boolean
 Public Class LibraryItem  
   'Code Omitted  
 End Class  
-  
 ```  
   
- <xref:System.Xml.Serialization.XmlSerializer> を使用する場合は、<xref:System.Xml.Serialization.XmlIncludeAttribute> 属性を使用できます。  
+ <xref:System.Xml.Serialization.XmlIncludeAttribute> を使用する場合は、<xref:System.Xml.Serialization.XmlSerializer> 属性を使用できます。  
   
- <xref:System.ServiceModel.ServiceKnownTypeAttribute> 属性は、操作に適用することもサービス全体に適用することもできます。この属性は、<xref:System.Runtime.Serialization.KnownTypeAttribute> 属性と同様に、型を受け取るか、既知の型の一覧を取得するために呼び出すメソッドの名前を受け取ります。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][既知のデータ コントラクト型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
+ <xref:System.ServiceModel.ServiceKnownTypeAttribute> 属性は、操作に適用することもサービス全体に適用することもできます。 この属性は、<xref:System.Runtime.Serialization.KnownTypeAttribute> 属性と同様に、型を受け取るか、既知の型の一覧を取得するために呼び出すメソッドの名前を受け取ります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][データが既知の型をコントラクト](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)です。  
   
-## Use と Style の指定  
- Web サービス記述言語 \(WSDL: Web Services Description Language\) を使用してサービスを記述するときは、一般にドキュメントとリモート プロシージャ コール \(RPC: Remote Procedure Call\) の 2 つのスタイルが使用されます。ドキュメント スタイルでは、スキーマを使用してメッセージ本文全体が記述されます。WSDL では、該当するスキーマの中の要素を参照して、メッセージ本文のさまざまな部分を記述します。RPC スタイルでは、WSDL は、要素ではなく、メッセージの各部を表すスキーマ型を参照します。場合によっては、これらのスタイルのいずれかを手動で選択することが必要になります。これを行うには、<xref:System.ServiceModel.DataContractFormatAttribute> 属性を適用し、`Style` プロパティを設定するか \(<xref:System.Runtime.Serialization.DataContractSerializer> を使用している場合\)、<xref:System.ServiceModel.XmlSerializerFormatAttribute> 属性の `Style` を設定します \(<xref:System.Xml.Serialization.XmlSerializer> を使用している場合\)。  
+## <a name="specifying-the-use-and-style"></a>Use と Style の指定  
+ Web サービス記述言語 (WSDL: Web Services Description Language) を使用してサービスを記述するときは、一般にドキュメントとリモート プロシージャ コール (RPC: Remote Procedure Call) の 2 つのスタイルが使用されます。 ドキュメント スタイルでは、スキーマを使用してメッセージ本文全体が記述されます。WSDL では、該当するスキーマの中の要素を参照して、メッセージ本文のさまざまな部分を記述します。 RPC スタイルでは、WSDL は、要素ではなく、メッセージの各部を表すスキーマ型を参照します。 場合によっては、これらのスタイルのいずれかを手動で選択することが必要になります。 これを行うには、<xref:System.ServiceModel.DataContractFormatAttribute> 属性を適用し、`Style` プロパティを設定するか (<xref:System.Runtime.Serialization.DataContractSerializer> を使用している場合)、`Style` 属性の <xref:System.ServiceModel.XmlSerializerFormatAttribute> を設定します (<xref:System.Xml.Serialization.XmlSerializer> を使用している場合)。  
   
- また、<xref:System.Xml.Serialization.XmlSerializer> はシリアル化された XML の形式を 2 とおり \(`Literal` および `Encoded`\) サポートしています。`Literal` は最も一般に受け入れられたフォームであり、<xref:System.Runtime.Serialization.DataContractSerializer> がサポートする唯一のフォームです。`Encoded` は SOAP 仕様のセクション 5 に記載されたレガシ フォームであり、新しいサービスにはお勧めしません。`Encoded` モードに切り替えるには、<xref:System.ServiceModel.XmlSerializerFormatAttribute> 属性の `Use` プロパティを `Encoded` に設定します。  
+ また、<xref:System.Xml.Serialization.XmlSerializer> はシリアル化された XML の形式を 2 とおり (`Literal` および `Encoded`) サポートしています。 `Literal` は最も一般に受け入れられたフォームであり、<xref:System.Runtime.Serialization.DataContractSerializer> がサポートする唯一のフォームです。 `Encoded` は SOAP 仕様のセクション 5 に記載されたレガシ フォームであり、新しいサービスにはお勧めしません。 `Encoded` モードに切り替えるには、`Use` 属性の <xref:System.ServiceModel.XmlSerializerFormatAttribute> プロパティを `Encoded` に設定します。  
   
  ほとんどの場合、`Style` プロパティと `Use` プロパティの既定の設定は変更しないでください。  
   
-## シリアル化プロセスの制御  
+## <a name="controlling-the-serialization-process"></a>シリアル化プロセスの制御  
  データをシリアル化する方法をカスタマイズする場合、さまざまな設定を行うことができます。  
   
-### サーバーのシリアル化設定の変更  
- 既定の <xref:System.Runtime.Serialization.DataContractSerializer> を使用している場合は、<xref:System.ServiceModel.ServiceBehaviorAttribute> 属性をサービスに適用することで、サービスでのシリアル化プロセスの一部の側面を制御できます。具体的には、`MaxItemsInObjectGraph` プロパティを使用して、<xref:System.Runtime.Serialization.DataContractSerializer> が逆シリアル化するオブジェクトの最大数を制限するクォータを設定できます。また、`IgnoreExtensionDataObject` プロパティを使用すると、ラウンド トリップ バージョン管理機能を無効にできます。クォータ[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[セキュリティに関するデータの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)」を参照してください。ラウンドトリップ[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[上位互換性のあるデータ コントラクト](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)」を参照してください。  
+### <a name="changing-server-serialization-settings"></a>サーバーのシリアル化設定の変更  
+ 既定の <xref:System.Runtime.Serialization.DataContractSerializer> を使用している場合は、<xref:System.ServiceModel.ServiceBehaviorAttribute> 属性をサービスに適用することで、サービスでのシリアル化プロセスの一部の側面を制御できます。 具体的には、`MaxItemsInObjectGraph` プロパティを使用して、<xref:System.Runtime.Serialization.DataContractSerializer> が逆シリアル化するオブジェクトの最大数を制限するクォータを設定できます。 また、`IgnoreExtensionDataObject` プロパティを使用すると、ラウンド トリップ バージョン管理機能を無効にできます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]クォータを参照してください[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]ラウンド トリップを参照してください[上位互換性のあるデータ コントラクト](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)です。  
   
 ```csharp  
-  
 [ServiceBehavior(MaxItemsInObjectGraph=100000)]  
 public class MyDataService:IDataService  
 {  
@@ -487,7 +463,6 @@ public class MyDataService:IDataService
 ```  
   
 ```vb  
-  
 <ServiceBehavior(MaxItemsInObjectGraph:=100000)>  
 Public Class MyDataService Implements IDataService  
   
@@ -495,15 +470,14 @@ Public Class MyDataService Implements IDataService
          ‘ Implementation omitted  
     End Function  
 End Interface  
-  
 ```  
   
-### シリアル化の動作  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、特定の操作で使用しているシリアライザーに応じて自動的にプラグインされる、<xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> と <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> の 2 つの動作が用意されています。これらの動作は自動的に適用されるため、通常、これらの動作を意識する必要はありません。  
+### <a name="serialization-behaviors"></a>シリアル化の動作  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、特定の操作で使用しているシリアライザーに応じて自動的にプラグインされる、<xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> と <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> の 2 つの動作が用意されています。 これらの動作は自動的に適用されるため、通常、これらの動作を意識する必要はありません。  
   
- ただし、`DataContractSerializerOperationBehavior` には、`MaxItemsInObjectGraph`、`IgnoreExtensionDataObject`、および `DataContractSurrogate` の 3 つのプロパティがあり、これらを使用してシリアル化プロセスをカスタマイズできます。最初の 2 つのプロパティの意味は、前のセクションの説明と同じです。`DataContractSurrogate` プロパティを使用すると、シリアル化プロセスをカスタマイズおよび拡張するための強力な機構であるデータ コントラクト サロゲートを有効にできます。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][データ コントラクト サロゲート](../../../../docs/framework/wcf/extending/data-contract-surrogates.md).  
+ ただし、`DataContractSerializerOperationBehavior` には、`MaxItemsInObjectGraph`、`IgnoreExtensionDataObject`、および `DataContractSurrogate` の 3 つのプロパティがあり、これらを使用してシリアル化プロセスをカスタマイズできます。 最初の 2 つのプロパティの意味は、前のセクションの説明と同じです。 `DataContractSurrogate` プロパティを使用すると、シリアル化プロセスをカスタマイズおよび拡張するための強力な機構であるデータ コントラクト サロゲートを有効にできます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][データ コントラクト サロゲート](../../../../docs/framework/wcf/extending/data-contract-surrogates.md)です。  
   
- `DataContractSerializerOperationBehavior` を使用すると、クライアントとサーバーの両方のシリアル化をカスタマイズできます。クライアントで `MaxItemsInObjectGraph` クォータを増やす方法を次の例に示します。  
+ `DataContractSerializerOperationBehavior` を使用すると、クライアントとサーバーの両方のシリアル化をカスタマイズできます。 クライアントで `MaxItemsInObjectGraph` クォータを増やす方法を次の例に示します。  
   
 ```csharp  
 ChannelFactory<IDataService> factory = new ChannelFactory<IDataService>(binding, address);  
@@ -518,7 +492,6 @@ foreach (OperationDescription op in factory.Endpoint.Contract.Operations)
     }  
 }  
 IDataService client = factory.CreateChannel();  
-  
 ```  
   
 ```vb  
@@ -530,7 +503,6 @@ For Each op As OperationDescription In factory.Endpoint.Contract.Operations
         End If  
      Next  
     Dim client As IDataService = factory.CreateChannel  
-  
 ```  
   
  自己ホスト型サービスでの同等のコードを次に示します。  
@@ -551,7 +523,6 @@ foreach (OperationDescription op in ep.Contract.Operations)
 }  
 }  
 serviceHost.Open();  
-  
 ```  
   
 ```vb  
@@ -566,15 +537,14 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
             Next  
         Next  
         serviceHost.Open()  
-  
 ```  
   
  Web ホスト型の場合は、新しい `ServiceHost` 派生クラスを作成し、サービス ホスト ファクトリを使用してプラグインする必要があります。  
   
-### 構成でのシリアル化設定の制御  
+### <a name="controlling-serialization-settings-in-configuration"></a>構成でのシリアル化設定の制御  
  次の例に示すように、`MaxItemsInObjectGraph` と `IgnoreExtensionDataObject` は、`dataContractSerializer` エンドポイントまたはサービスの動作を使用して構成によって制御できます。  
   
-```  
+```xml  
 <configuration>  
     <system.serviceModel>  
         <behaviors>  
@@ -594,27 +564,26 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
         </client>  
     </system.serviceModel>  
 </configuration>  
-  
 ```  
   
-### 共有する型のシリアル化、オブジェクト グラフの保存、およびカスタム シリアライザー  
- <xref:System.Runtime.Serialization.DataContractSerializer> は、.NET 型名ではなく、データ コントラクト名を使用してシリアル化を実行します。これは、サービス指向アーキテクチャの基本思想と一致しており、高度な柔軟性の実現を可能にします。つまり、ネットワーク コントラクトに影響を及ぼさずに .NET 型を変更できます。まれなケースとして、実際の .NET 型名をシリアル化することにより、.NET Framework リモート処理テクノロジと同様のクライアントとサーバー間の密結合を導入することが必要になる場合があります。.NET Framework リモート処理から [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] への移行時に発生するまれなケースを除き、これはお勧めしません。この場合、<xref:System.Runtime.Serialization.DataContractSerializer> クラスではなく、<xref:System.Runtime.Serialization.NetDataContractSerializer> クラスを使用する必要があります。  
+### <a name="shared-type-serialization-object-graph-preservation-and-custom-serializers"></a>共有する型のシリアル化、オブジェクト グラフの保存、およびカスタム シリアライザー  
+ <xref:System.Runtime.Serialization.DataContractSerializer> は、.NET 型名ではなく、データ コントラクト名を使用してシリアル化を実行します。 これは、サービス指向アーキテクチャの基本思想と一致しており、高度な柔軟性の実現を可能にします。つまり、ネットワーク コントラクトに影響を及ぼさずに .NET 型を変更できます。 まれなケースとして、実際の .NET 型名をシリアル化することにより、.NET Framework リモート処理テクノロジと同様のクライアントとサーバー間の密結合を導入することが必要になる場合があります。 .NET Framework リモート処理から [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] への移行時に発生するまれなケースを除き、これはお勧めしません。 この場合、<xref:System.Runtime.Serialization.NetDataContractSerializer> クラスではなく、<xref:System.Runtime.Serialization.DataContractSerializer> クラスを使用する必要があります。  
   
- <xref:System.Runtime.Serialization.DataContractSerializer> は、通常、オブジェクト グラフをオブジェクト ツリーとしてシリアル化します。つまり、同じオブジェクトが複数回にわたって参照される場合、そのオブジェクトは複数回にわたってシリアル化されます。たとえば、`billTo` および `shipTo` という、Address 型の 2 つのフィールドを持つ `PurchaseOrder` インスタンスがあるとします。この両方のフィールドに同じ Address インスタンスを設定すると、シリアル化および逆シリアル化の後に 2 つの同一の Address インスタンスが生じます。これは、オブジェクト グラフを XML で表現する相互運用可能な標準の方法がないためです \(ただし、`Style` と `Use` に関する前のセクションで説明した <xref:System.Xml.Serialization.XmlSerializer> で使用できる従来の SOAP エンコード標準を除きます\)。オブジェクト グラフをツリーとしてシリアル化する場合、循環参照が含まれたグラフをシリアル化できないなどの欠点があります。場合によっては、相互運用が可能ではありませんが、真のオブジェクト グラフ シリアル化に切り替えることが必要になります。これを行うには、`preserveObjectReferences` パラメーターを `true` に設定して構築した <xref:System.Runtime.Serialization.DataContractSerializer> を使用します。  
+ <xref:System.Runtime.Serialization.DataContractSerializer> は、通常、オブジェクト グラフをオブジェクト ツリーとしてシリアル化します。 つまり、同じオブジェクトが複数回にわたって参照される場合、そのオブジェクトは複数回にわたってシリアル化されます。 たとえば、`PurchaseOrder` および `billTo` という、Address 型の 2 つのフィールドを持つ `shipTo` インスタンスがあるとします。 この両方のフィールドに同じ Address インスタンスを設定すると、シリアル化および逆シリアル化の後に 2 つの同一の Address インスタンスが生じます。 これは、オブジェクト グラフを XML で表現する相互運用可能な標準の方法がないためです (ただし、<xref:System.Xml.Serialization.XmlSerializer> と `Style` に関する前のセクションで説明した `Use` で使用できる従来の SOAP エンコード標準を除きます)。 オブジェクト グラフをツリーとしてシリアル化する場合、循環参照が含まれたグラフをシリアル化できないなどの欠点があります。 場合によっては、相互運用が可能ではありませんが、真のオブジェクト グラフ シリアル化に切り替えることが必要になります。 これを行うには、<xref:System.Runtime.Serialization.DataContractSerializer> パラメーターを `preserveObjectReferences` に設定して構築した `true` を使用します。  
   
- シナリオによっては、組み込みのシリアライザーでは不十分な場合があります。ただし、ほとんどの場合、<xref:System.Runtime.Serialization.DataContractSerializer> と <xref:System.Runtime.Serialization.NetDataContractSerializer> の派生元である <xref:System.Runtime.Serialization.XmlObjectSerializer> 抽象クラスを使用できます。  
+ シナリオによっては、組み込みのシリアライザーでは不十分な場合があります。 ただし、ほとんどの場合、<xref:System.Runtime.Serialization.XmlObjectSerializer> と <xref:System.Runtime.Serialization.DataContractSerializer> の派生元である <xref:System.Runtime.Serialization.NetDataContractSerializer> 抽象クラスを使用できます。  
   
- 前述の 3 つのケース \(.NET 型の保存、オブジェクト グラフの保存、および `XmlObjectSerializer` ベースの完全なカスタム シリアル化\) では、必ずカスタム シリアライザーをプラグインする必要があります。これを行うには、次の手順を実行します:  
+ 前の 3 つのケース (.NET 型の保存、オブジェクト グラフの保存、および `XmlObjectSerializer` ベースの完全なカスタム シリアル化) では、必ずカスタム シリアライザーをプラグインする必要があります。 これを行うには、次の手順を実行します。  
   
 1.  <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> から派生する独自の動作を記述します。  
   
-2.  独自のシリアライザー \(<xref:System.Runtime.Serialization.NetDataContractSerializer>、`preserveObjectReferences` が `true` に設定された <xref:System.Runtime.Serialization.DataContractSerializer>、独自のカスタム <xref:System.Runtime.Serialization.XmlObjectSerializer> のいずれか\) を返すように 2 つの `CreateSerializer` メソッドをオーバーライドします。  
+2.  独自のシリアライザー (`CreateSerializer`、<xref:System.Runtime.Serialization.NetDataContractSerializer> が <xref:System.Runtime.Serialization.DataContractSerializer> に設定された `preserveObjectReferences`、独自のカスタム `true` のいずれか) を返すように 2 つの <xref:System.Runtime.Serialization.XmlObjectSerializer> メソッドをオーバーライドします。  
   
 3.  サービス ホストを開いたり、クライアント チャネルを作成したりする前に、既存の <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> 動作を削除し、前の手順で作成したカスタム派生クラスをプラグインします。  
   
- シリアル化の高度な概念[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[シリアル化と逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)」を参照してください。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]シリアル化の概念の詳細を参照してください[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)です。  
   
-## 参照  
- [XmlSerializer クラスの使用](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)   
- [方法 : ストリーミングを有効にする](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)   
- [方法 : クラスまたは構造体に基本的なデータ コントラクトを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)
+## <a name="see-also"></a>関連項目  
+ [XmlSerializer クラスの使用](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)  
+ [方法: ストリーミングを有効にします。](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)  
+ [方法: クラスまたは構造体に基本的なデータ コントラクトを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)

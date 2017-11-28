@@ -1,36 +1,36 @@
 ---
-title: "PageSetupDialog コンポーネントの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "PageSetupDialog"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "[ページ設定] ダイアログ ボックス, 表示"
-  - "PageSetupDialog コンポーネント"
+title: "PageSetupDialog コンポーネントの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: PageSetupDialog
+helpviewer_keywords:
+- Page Setup dialog box [Windows Forms], displaying
+- PageSetupDialog component
 ms.assetid: 791caacb-a5ca-4fca-bad9-1a5721ad697c
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 082dbff66c8a0f06635936011f802c99b88e41df
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# PageSetupDialog コンポーネントの概要 (Windows フォーム)
-Windows フォームの <xref:System.Windows.Forms.PageSetupDialog> コンポーネントは、Windows ベースのアプリケーションで印刷時のページ設定に使用する定義済みダイアログ ボックスです。  このコントロールは、独自のダイアログ ボックスを使用せずにページ設定を行うための簡易ソリューションとして、Windows ベースのアプリケーションの中で使用します。  罫線と余白の調整、ヘッダーとフッター、および印刷の縦向きまたは横向きを設定できます。  Windows の標準のダイアログ ボックスを使用して、一般的な基本機能を持つアプリケーションを作成できます。  
+# <a name="pagesetupdialog-component-overview-windows-forms"></a>PageSetupDialog コンポーネントの概要 (Windows フォーム)
+Windows フォーム<xref:System.Windows.Forms.PageSetupDialog>コンポーネントは、構成済みのダイアログ ボックスが Windows ベースのアプリケーションで印刷ページの詳細を設定するために使用します。 独自のダイアログ ボックスを構成する代わりに、ページの基本設定を設定するのにユーザーの簡単な解決策として、Windows ベース アプリケーションの中で使用します。 ユーザーに境界線と余白の調整、ヘッダーとフッター、および縦または横方向の設定を有効にすることができます。 Windows の標準のダイアログ ボックスを使用して、ユーザーがすぐに慣れる基本的な機能を持つアプリケーションを作成します。  
   
-## 主要なプロパティおよびメソッド  
- <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> メソッドを使用して、実行時にダイアログを表示します。  このコンポーネントには、ページ単位で適用されるプロパティ \(<xref:System.Drawing.Printing.PrintDocument> クラス\) とすべてのドキュメントに適用されるプロパティ \(<xref:System.Drawing.Printing.PageSettings> クラス\) があります。  また、<xref:System.Windows.Forms.PageSetupDialog> コンポーネントを使用して、<xref:System.Drawing.Printing.PrinterSettings> クラスに格納される特定のプリンター設定を決定できます。  
+## <a name="key-properties-and-methods"></a>キー プロパティとメソッド  
+ 使用して、<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>メソッドを実行時に、ダイアログ ボックスを表示します。 このコンポーネントには 1 つのページのいずれかに関連するプロパティを設定できます (<xref:System.Drawing.Printing.PrintDocument>クラス)、または任意の文書 (<xref:System.Drawing.Printing.PageSettings>クラス)。 さらに、<xref:System.Windows.Forms.PageSetupDialog>に格納されている特定のプリンター設定を確認するコンポーネントを使用することができます、<xref:System.Drawing.Printing.PrinterSettings>クラスです。  
   
- フォームに登録すると、<xref:System.Windows.Forms.PageSetupDialog> コンポーネントは Windows フォーム デザイナーの下部のトレイに表示されます。  
+ フォームに追加されたとき、<xref:System.Windows.Forms.PageSetupDialog>コンポーネントは、Windows フォーム デザイナーの下部にあるトレイに表示されます。  
   
-## 参照  
- <xref:System.Windows.Forms.PageSetupDialog>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.PageSetupDialog>  
  [PageSetupDialog コンポーネント](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md)

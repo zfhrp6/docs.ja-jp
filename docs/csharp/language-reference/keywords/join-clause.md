@@ -1,42 +1,24 @@
 ---
 title: "join 句 (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - join
 - join_CSharpKeyword
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - join clause [C#]
 - join keyword [C#]
 ms.assetid: 76e9df84-092c-41a6-9537-c3f1cbd7f0fb
-caps.latest.revision: 29
+caps.latest.revision: "29"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 17c8f7f5ff6d1266421cdb87ae562028c61ae97f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 3368ba14101eda38ed8e3ee2bdc81bcab74a9b82
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="join-clause-c-reference"></a>join 句 (C# リファレンス)
 `join` 句は、オブジェクト モデル内での直接リレーションシップがない、さまざまなソース シーケンスの要素を関連付ける際に役立ちます。 唯一の要件は、等価性を比較できるいくつかの値が各ソース内の要素間で共有されていることです。 たとえば、食品販売会社には特定の商品についての供給元のリストと購入者のリストがあります。 `join` 句は、たとえば指定された地域のすべての供給元および購入者のリストを作成するために使用できます。  
@@ -52,14 +34,14 @@ ms.lasthandoff: 07/28/2017
 ## <a name="inner-join"></a>内部結合  
  次の例は、単純な内部等結合を示しています。 このクエリによって "商品名/カテゴリ" のペアからなるフラットなシーケンスが生成されます。 複数の要素に同じカテゴリ文字列が含まれます。 `categories` の要素に一致する `products` がない場合、そのカテゴリは結果に含まれません。  
   
- [!code-cs[cscsrefQueryKeywords#24](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_1.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#24](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_1.cs)]  
   
  詳細については、「[方法: 内部結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-inner-joins.md)」を参照してください。  
   
 ## <a name="group-join"></a>Group Join  
  `into` 式を使用した `join` 句はグループ結合と呼ばれます。  
   
- [!code-cs[cscsrefQueryKeywords#25](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_2.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#25](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_2.cs)]  
   
  グループ結合によって生成される階層形式の結果シーケンスでは、左側のソース シーケンスの要素と一致する右側のソース シーケンスの 1 つ以上の要素が関連付けられています。 リレーショナル データベースにおいてグループ結合に相当する用語はありません。グループ結合とは、本質的にはオブジェクト配列のシーケンスです。  
   
@@ -69,14 +51,14 @@ ms.lasthandoff: 07/28/2017
   
  また、当然ながらグループ結合の結果を別のサブクエリのジェネレーターとして使用することもできます。  
   
- [!code-cs[cscsrefQueryKeywords#26](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_3.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#26](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_3.cs)]  
   
  詳細については、「[方法: グループ化結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-grouped-joins.md)」を参照してください。  
   
 ## <a name="left-outer-join"></a>左外部結合  
  左外部結合では、右側のシーケンスに一致する要素がなくても、左側のソース シーケンスのすべての要素が返されます。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] で左外部結合を実行するには、`DefaultIfEmpty` メソッドとグループ結合を組み合わせて使用し、左側の要素に一致するものがない場合に既定の右側の要素を生成するように指定します。 参照型用の既定値として `null` を使用するか、ユーザー定義の既定の型を指定できます。 次の例では、ユーザー定義の既定の型を示しています。  
   
- [!code-cs[cscsrefQueryKeywords#27](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_4.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#27](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_4.cs)]  
   
  詳細については、「[方法: 左外部結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-left-outer-joins.md)」を参照してください。  
   
@@ -97,20 +79,19 @@ ms.lasthandoff: 07/28/2017
 ## <a name="example"></a>例  
  次の例では、同じ照合キーを使用し、同じデータ ソースでの内部結合、グループ結合、左外部結合の結果を比較しています。 これらの例には、結果をコンソールにわかりやすく表示するためのコードがいくつか追加されています。  
   
- [!code-cs[cscsrefQueryKeywords#23](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_5.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#23](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_5.cs)]  
   
 ## <a name="remarks"></a>コメント  
  `join` 句の後に `into` がない場合は、<xref:System.Linq.Enumerable.Join%2A> メソッド呼び出しに変換されます。 `join` 句の後に `into` がある場合は、<xref:System.Linq.Enumerable.GroupJoin%2A> メソッド呼び出しに変換されます。  
   
 ## <a name="see-also"></a>関連項目  
- [クエリ キーワード (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)   
- [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)   
- [結合操作](http://msdn.microsoft.com/library/442d176d-028c-4beb-8d22-407d4ef89107)   
- [group 句](../../../csharp/language-reference/keywords/group-clause.md)   
- [方法: 左外部結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-left-outer-joins.md)   
- [方法: 内部結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-inner-joins.md)   
- [方法: グループ化結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-grouped-joins.md)   
- [方法: join 句の結果の順序を指定する](../../../csharp/programming-guide/linq-query-expressions/how-to-order-the-results-of-a-join-clause.md)   
- [方法: 複合キーを使用して結合する](../../../csharp/programming-guide/linq-query-expressions/how-to-join-by-using-composite-keys.md)   
- [方法 : サンプル データベースをインストールする](http://msdn.microsoft.com/library/ed1291f6-604c-4972-ae22-0345c6dea12e)
-
+ [クエリ キーワード (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)  
+ [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)  
+ [結合演算](../../programming-guide/concepts/linq/join-operations.md)  
+ [group 句](../../../csharp/language-reference/keywords/group-clause.md)  
+ [方法: 左外部結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-left-outer-joins.md)  
+ [方法: 内部結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-inner-joins.md)  
+ [方法: グループ化結合を実行する](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-grouped-joins.md)  
+ [方法: join 句の結果の順序を指定する](../../../csharp/programming-guide/linq-query-expressions/how-to-order-the-results-of-a-join-clause.md)  
+ [方法: 複合キーを使用して結合する](../../../csharp/programming-guide/linq-query-expressions/how-to-join-by-using-composite-keys.md)  
+ [方法 : サンプル データベースをインストールする](/visualstudio/data-tools/installing-database-systems-tools-and-samples)

@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -18,16 +17,15 @@ helpviewer_keywords:
 - reflection,partial trust
 - link demands
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 756873e93d6e13cbb9077d10a52a718932afcedb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 653b91f899da5962132577fba0df6ecfcdfde4ae
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="security-considerations-for-reflection"></a>リフレクションに関するセキュリティ上の考慮事項
 リフレクションを使用すると、型とメンバーに関する情報を取得し、メンバーにアクセスできます (つまり、メソッドやコンストラクターの呼び出し、プロパティ値の取得と設定、イベント ハンドラーの追加と削除などを実行できます)。 リフレクションを使用した型とメンバーに関する情報の取得には、制限がありません。 すべてのコードで、次のタスクを実行するためにリフレクションを使用できます。  
@@ -52,9 +50,9 @@ ms.lasthandoff: 07/28/2017
   
  たとえば、サンドボックス化されたアプリケーション ドメインで実行されるコードは、アプリケーション ドメインから追加のアクセス許可が付与されていない限り、この一覧に示したアクセスに限定されます。  
   
- [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)] 以降では、通常はアクセスできないメンバーにアクセスしようとすると、対象オブジェクトと <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=fullName> フラグが設定された <xref:System.Security.Permissions.ReflectionPermission> の許可セットに対する要求が生成されます。 完全な信頼で実行されているコード (コマンド ラインから起動されるアプリケーションのコードなど) には、必要とされるこれらのアクセス許可が常にあります。 (ただし、後で説明するように、セキュリティ クリティカルなメンバーにアクセスする場合は制限があります)。  
+ [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)] 以降では、通常はアクセスできないメンバーにアクセスしようとすると、対象オブジェクトと <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> フラグが設定された <xref:System.Security.Permissions.ReflectionPermission> の許可セットに対する要求が生成されます。 完全な信頼で実行されているコード (コマンド ラインから起動されるアプリケーションのコードなど) には、必要とされるこれらのアクセス許可が常にあります。 (ただし、後で説明するように、セキュリティ クリティカルなメンバーにアクセスする場合は制限があります)。  
   
- 必要に応じて、サンドボックス化されたアプリケーション ドメインから、<xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=fullName> フラグが設定された <xref:System.Security.Permissions.ReflectionPermission> を付与できます。これについては、後半の「[通常はアクセスできないメンバーへのアクセス](#accessingNormallyInaccessible)」で説明します。  
+ 必要に応じて、サンドボックス化されたアプリケーション ドメインから、<xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> フラグが設定された <xref:System.Security.Permissions.ReflectionPermission> を付与できます。これについては、後半の「[通常はアクセスできないメンバーへのアクセス](#accessingNormallyInaccessible)」で説明します。  
   
 <a name="accessingSecurityCritical"></a>   
 ## <a name="accessing-security-critical-members"></a>セキュリティ クリティカルなメンバーへのアクセス  
@@ -87,21 +85,21 @@ ms.lasthandoff: 07/28/2017
 ## <a name="accessing-members-that-are-normally-inaccessible"></a>通常はアクセスできないメンバーへのアクセス  
  リフレクションを使用して、共通言語ランタイムのアクセシビリティ規則によりアクセスできないメンバーを呼び出すには、次の 2 つのアクセス許可のどちらかをコードに許可する必要があります。  
   
--   コードから非パブリック メンバーを呼び出せるようにするには、<xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=fullName> フラグが設定された <xref:System.Security.Permissions.ReflectionPermission> をコードに与える必要があります。  
+-   コードから非パブリック メンバーを呼び出せるようにするには、<xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> フラグが設定された <xref:System.Security.Permissions.ReflectionPermission> をコードに与える必要があります。  
   
     > [!NOTE]
     >  既定で、インターネットを起源とするコードにこのアクセス許可を与えることは、セキュリティ ポリシーによって禁じられています。 インターネットを起源とするコードには、このアクセス許可を絶対に与えないでください。  
   
--   呼び出されるメンバーが格納されているアセンブリの許可セットが、呼び出し元のコードが格納されているアセンブリの許可セットと同じか、またはそのサブセットである場合に限り、コードから非パブリック メンバーを呼び出せるようにするには、<xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=fullName> フラグが設定された <xref:System.Security.Permissions.ReflectionPermission> をコードに与える必要があります。  
+-   呼び出されるメンバーが格納されているアセンブリの許可セットが、呼び出し元のコードが格納されているアセンブリの許可セットと同じか、またはそのサブセットである場合に限り、コードから非パブリック メンバーを呼び出せるようにするには、<xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> フラグが設定された <xref:System.Security.Permissions.ReflectionPermission> をコードに与える必要があります。  
   
- たとえば、アプリケーション ドメインにインターネット アクセス許可を付与すると共に、<xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=fullName> に <xref:System.Security.Permissions.ReflectionPermission> フラグを指定するとします。次に、A と B の 2 つのアセンブリを使用して、インターネット アプリケーションを実行します。  
+ たとえば、アプリケーション ドメインにインターネット アクセス許可を付与すると共に、<xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> に <xref:System.Security.Permissions.ReflectionPermission> フラグを指定するとします。次に、A と B の 2 つのアセンブリを使用して、インターネット アプリケーションを実行します。  
   
 -   アセンブリ B の許可セットには、アセンブリ A に付与されていないアクセス許可が含まれていないため、アセンブリ A でリフレクションを使用してアセンブリ B のプライベート メンバーにアクセスできます。  
   
 -   アセンブリ A では、リフレクションを使用して mscorlib.dll などの [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] アセンブリのプライベート メンバーにアクセスすることはできません。これは、mscorlib.dll が完全に信頼されており、アセンブリ A に付与されていないアクセス許可を持つためです。実行時にコード アクセス セキュリティによりスタックを走査すると、<xref:System.MemberAccessException> がスローされます。  
   
 ## <a name="serialization"></a>シリアル化  
- シリアル化の目的で、<xref:System.Security.Permissions.SecurityPermission> に <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A?displayProperty=fullName> フラグを指定することで、アクセシビリティに関係なく、シリアル化が可能な型のメンバーを取得および設定できるようになります。 このアクセス許可があると、コードで、インスタンスのプライベート状態を探索したり、変更したりできます。 型に対して適切なアクセス許可が与えられていると同時に、メタデータ内でシリアル化可能として[マークされている](../../../docs/standard/attributes/applying-attributes.md)必要があります。  
+ シリアル化の目的で、<xref:System.Security.Permissions.SecurityPermission> に <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A?displayProperty=nameWithType> フラグを指定することで、アクセシビリティに関係なく、シリアル化が可能な型のメンバーを取得および設定できるようになります。 このアクセス許可があると、コードで、インスタンスのプライベート状態を探索したり、変更したりできます。 型に対して適切なアクセス許可が与えられていると同時に、メタデータ内でシリアル化可能として[マークされている](../../../docs/standard/attributes/applying-attributes.md)必要があります。  
   
 ## <a name="parameters-of-type-methodinfo"></a>MethodInfo 型のパラメーター  
  特に、信頼されているコードには、<xref:System.Reflection.MethodInfo> パラメーターを受け取るパブリック メンバーを記述しないでください。 このようなメンバーは、悪意のあるコードの攻撃を受けやすい場合があります。 たとえば、信頼性の高いコード内で、<xref:System.Reflection.MethodInfo> パラメーターを受け取るパブリック メンバーの場合を考えてみましょう。 このパブリック メンバーが、渡されたパラメーターに対して間接的に <xref:System.Reflection.MethodBase.Invoke%2A> メソッドを呼び出すとします。 パブリック メンバーが必要なアクセス許可を確認しない場合、セキュリティ システムは呼び出し元が大きな権限を持っていると判断するため、その <xref:System.Reflection.MethodBase.Invoke%2A> メソッド呼び出しは常に成功します。 悪意のあるコードがそのメソッドを直接呼び出すアクセス許可を持っていなくても、パブリック メンバーを呼び出すことによって間接的にこのメソッドを呼び出すことができます。  
@@ -110,18 +108,17 @@ ms.lasthandoff: 07/28/2017
   
 -   [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、透過的なコードからリフレクションを使用してセキュリティ クリティカルなメンバーにアクセスすることはできません。  
   
--   <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=fullName> フラグは、[!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)] で導入されました。 以前のバージョンの [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] では、コードから非パブリック メンバーにアクセスするためにリフレクションを使用するには <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=fullName> フラグを指定する必要がありました。 このアクセス許可は、部分的に信頼されるコードには絶対に付与しないでください。  
+-   <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> フラグは、[!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)] で導入されました。 以前のバージョンの [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] では、コードから非パブリック メンバーにアクセスするためにリフレクションを使用するには <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> フラグを指定する必要がありました。 このアクセス許可は、部分的に信頼されるコードには絶対に付与しないでください。  
   
--   [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] 以降、リフレクションを使用して非パブリックな型とメンバーに関する情報を取得する場合、アクセス許可が不要になりました。 以前のバージョンでは、<xref:System.Security.Permissions.ReflectionPermission> に <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=fullName> フラグを指定する必要があります。  
+-   [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] 以降、リフレクションを使用して非パブリックな型とメンバーに関する情報を取得する場合、アクセス許可が不要になりました。 以前のバージョンでは、<xref:System.Security.Permissions.ReflectionPermission> に <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> フラグを指定する必要があります。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Security.Permissions.ReflectionPermissionFlag>   
- <xref:System.Security.Permissions.ReflectionPermission>   
- <xref:System.Security.Permissions.SecurityPermission>   
- [セキュリティの変更](../../../docs/framework/security/security-changes.md)   
- [コード アクセス セキュリティ](../../../docs/framework/misc/code-access-security.md)   
- [リフレクション出力のセキュリティ関連事項](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)   
- [型情報の表示](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)   
- [属性の適用](../../../docs/standard/attributes/applying-attributes.md)   
+ <xref:System.Security.Permissions.ReflectionPermissionFlag>  
+ <xref:System.Security.Permissions.ReflectionPermission>  
+ <xref:System.Security.Permissions.SecurityPermission>  
+ [セキュリティの変更](../../../docs/framework/security/security-changes.md)  
+ [コード アクセス セキュリティ](../../../docs/framework/misc/code-access-security.md)  
+ [リフレクション出力のセキュリティ関連事項](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)  
+ [型情報の表示](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)  
+ [属性の適用](../../../docs/standard/attributes/applying-attributes.md)  
  [カスタム属性へのアクセス](../../../docs/framework/reflection-and-codedom/accessing-custom-attributes.md)
-

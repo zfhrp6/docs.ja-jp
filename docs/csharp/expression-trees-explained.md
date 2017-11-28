@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: bbcdd339-86eb-4ae5-9911-4c214a39a92d
+ms.openlocfilehash: 1de856a139ac7a6dee25f1dae54924e33f14a33b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 14673f86d7d228bc1fc17a3154e0337b4c6e5f57
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="expression-trees-explained"></a>式ツリーの説明
 
 [前回 -- 概要](expression-trees.md)
@@ -50,7 +48,7 @@ var sum = 1 + 2;
 
 これは複雑に見えるかもしれませんが、とても強力です。 同じプロセスに従って、はるかに複雑な式を分解することができます。 次の式について考えます。
 ```csharp
-var finalAnswer = this.SecretSauceFuncion(
+var finalAnswer = this.SecretSauceFunction(
     currentState.createInterimResult(), currentState.createSecondValue(1, 2),
     decisionServer.considerFinalOptions("hello")) +
     MoreSecretSauce('A', DateTime.Now, true);
@@ -75,4 +73,3 @@ var finalAnswer = this.SecretSauceFuncion(
 実行できないことの 1 つが式ツリーの変更です。  式ツリーは不変のデータ構造です。 式ツリーを変更するには、元の式ツリーのコピーに変更を加えた新しいツリーを作成する必要があります。 
 
 [次回 -- 式ツリーをサポートするフレームワークの型](expression-classes.md)
-

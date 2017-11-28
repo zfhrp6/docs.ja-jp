@@ -1,30 +1,21 @@
 ---
 title: "マルチスレッド アプリケーション (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: b7015cfb-d506-4eac-b2f8-b2caaa9cc977
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 48b056172e3260952155eb40a1a393d86da78344
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: dfe0f9c6e911295270df8464d1070a524412466d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="multithreaded-applications-c"></a>マルチスレッド アプリケーション (C#)
 C# では、複数のタスクを同時に実行するアプリケーションを記述できます。 他のタスクを止める可能性があるタスクは個別のスレッドで実行できます。これは*マルチスレッド*や*フリー スレッド*と呼ばれているプロセスです。  
@@ -59,7 +50,7 @@ newThread.Abort();
 ### <a name="thread-methods"></a>スレッド メソッド  
  次の表は、個々のスレッドを制御できるメソッドをまとめたものです。  
   
-|メソッド|アクション|  
+|メソッド|操作|  
 |------------|------------|  
 |<xref:System.Threading.Thread.Start%2A>|スレッドの実行を開始します。|  
 |<xref:System.Threading.Thread.Sleep%2A>|指定した時間だけスレッドを一時停止します。|  
@@ -91,8 +82,7 @@ newThread.Abort();
  *フォアグラウンド スレッド*は無期限で実行されます。*バックグラウンド スレッド*は、最後のフォアグラウンド スレッドが停止した直後に停止します。 <xref:System.Threading.Thread.IsBackground%2A> プロパティを利用し、スレッドのバックグラウンド状態を確認したり、変更したりできます。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Threading.Thread>   
- [スレッドの同期 (C#)](../../../../csharp/programming-guide/concepts/threading/thread-synchronization.md)   
- [マルチスレッド プロシージャのパラメーターと戻り値 (C#)](../../../../csharp/programming-guide/concepts/threading/parameters-and-return-values-for-multithreaded-procedures.md)   
+ <xref:System.Threading.Thread>  
+ [スレッドの同期 (C#)](../../../../csharp/programming-guide/concepts/threading/thread-synchronization.md)  
+ [マルチスレッド プロシージャのパラメーターと戻り値 (C#)](../../../../csharp/programming-guide/concepts/threading/parameters-and-return-values-for-multithreaded-procedures.md)  
  [スレッド処理 (C#)](../../../../csharp/programming-guide/concepts/threading/index.md)
-

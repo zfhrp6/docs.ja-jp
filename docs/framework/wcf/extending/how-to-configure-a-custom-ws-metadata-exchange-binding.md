@@ -1,32 +1,35 @@
 ---
-title: "方法 : カスタム WS-Metadata Exchange バインディングを構成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "WS-Metadata Exchange [WCF]"
-  - "WS-Metadata Exchange [WCF], カスタム バインディングの構成"
+title: "方法 : カスタム WS-Metadata Exchange バインディングを構成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WS-Metadata Exchange [WCF]
+- WS-Metadata Exchange [WCF], configuring a custom binding
 ms.assetid: cdba4d73-da64-4805-bc56-9822becfd1e4
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 4202c0471c681257fa1ab1153d363e59615e10c2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : カスタム WS-Metadata Exchange バインディングを構成する
-ここでは、カスタム WS\-Metadata Exchange バインディングを構成する方法について説明します。  [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、4 つのシステム定義のメタデータ バインディングがありますが、どのバインディングでもメタデータを公開できます。  ここでは、`wsHttpBinding` を使用してメタデータを公開する方法を示します。  このバインディングでは、メタデータをセキュリティで保護して公開することができます。  ここに示すコードは、「[概要](../../../../docs/framework/wcf/samples/getting-started-sample.md)」に基づいています。  
+# <a name="how-to-configure-a-custom-ws-metadata-exchange-binding"></a>方法 : カスタム WS-Metadata Exchange バインディングを構成する
+ここでは、カスタム WS-Metadata Exchange バインディングを構成する方法について説明します。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、4 つのシステム定義のメタデータ バインディングがありますが、どのバインディングでもメタデータを公開できます。 ここでは、`wsHttpBinding` を使用してメタデータを公開する方法を示します。 このバインディングでは、メタデータをセキュリティで保護して公開することができます。 この記事でコードがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。  
   
-### 構成ファイルの使用  
+### <a name="using-a-configuration-file"></a>構成ファイルの使用  
   
 1.  サービスの構成ファイルで、`serviceMetadata` タグを含んだサービス動作を追加します。  
   
-    ```  
+    ```xml  
     <behaviors>  
        <serviceBehaviors>  
          <behavior name="CalculatorServiceBehavior">  
@@ -38,14 +41,14 @@ caps.handback.revision: 7
   
 2.  この新しい動作を参照する `behaviorConfiguration` 属性をサービス タグに追加します。  
   
-    ```  
+    ```xml  
     <service        name="Microsoft.ServiceModel.Samples.CalculatorService"  
     behaviorConfiguration="CalculatorServiceBehavior">   
     ```  
   
 3.  メタデータ エンドポイントを追加し、アドレスに mex、バインディングに `wsHttpBinding`、コントラクトに <xref:System.ServiceModel.Description.IMetadataExchange> をそれぞれ指定します。  
   
-    ```  
+    ```xml  
     <endpoint address="mex"  
               binding="wsHttpBinding"  
               contract="IMetadataExchange" />  
@@ -53,13 +56,13 @@ caps.handback.revision: 7
   
 4.  Metadata Exchange エンドポイントが適切に動作することを確認するには、クライアントの構成ファイルにエンドポイント タグを追加します。  
   
-    ```  
+    ```xml  
     <endpoint name="MyMexEndpoint"               address="http://localhost:8000/servicemodelsamples/service/mex"  
               binding="wsHttpBinding"  
               contract="IMetadataExchange"/>  
     ```  
   
-5.  クライアントの Main\(\) メソッドで、新しい <xref:System.ServiceModel.Description.MetadataExchangeClient> インスタンスを作成し、その <xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> プロパティを `true` に設定し、<xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> を呼び出して返されるメタデータのコレクションを反復処理します。  
+5.  クライアントの Main() メソッドで、新しい <xref:System.ServiceModel.Description.MetadataExchangeClient> インスタンスを作成し、その <xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> プロパティを `true` に設定し、<xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> を呼び出して返されるメタデータのコレクションを反復処理します。  
   
     ```  
     string mexAddress = "http://localhost:8000/servicemodelsamples/service/mex";  
@@ -71,9 +74,9 @@ caps.handback.revision: 7
     Console.WriteLine("Metadata section: " + section.Dialect.ToString());  
     ```  
   
-### コードによる構成  
+### <a name="configuring-by-code"></a>コードによる構成  
   
-1.  <xref:System.ServiceModel.WsHttpBinding> バインディングのインスタンスを作成します。  
+1.  作成、<<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> バインディング インスタンス。  
   
     ```  
     WSHttpBinding binding = new WSHttpBinding();  
@@ -94,7 +97,7 @@ caps.handback.revision: 7
     serviceHost.Description.Behaviors.Add(smb);  
     ```  
   
-4.  前に作成した <xref:System.ServiceModel.WSHttpBinding> を指定する Metadata Exchange エンドポイントを追加します。  
+4.  メタデータ交換エンドポイントを追加を指定する、<<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> 以前に作成します。  
   
     ```  
     serviceHost.AddServiceEndpoint(typeof(IMetadataExchange), binding, mexAddress);  
@@ -102,13 +105,13 @@ caps.handback.revision: 7
   
 5.  Metadata Exchange エンドポイントが適切に動作することを確認するには、クライアントの構成ファイルにエンドポイント タグを追加します。  
   
-    ```  
+    ```xml  
     <endpoint name="MyMexEndpoint"               address="http://localhost:8000/servicemodelsamples/service/mex"  
               binding="wsHttpBinding"  
               contract="IMetadataExchange"/>  
     ```  
   
-6.  クライアントの Main\(\) メソッドで、新しい <xref:System.ServiceModel.Description.MetadataExchangeClient> インスタンスを作成し、その <xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> プロパティを `true` に設定し、<xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> を呼び出して返されるメタデータのコレクションを反復処理します。  
+6.  クライアントの Main() メソッドで、新しい <xref:System.ServiceModel.Description.MetadataExchangeClient> インスタンスを作成し、その <xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> プロパティを `true` に設定し、<xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> を呼び出して返されるメタデータのコレクションを反復処理します。  
   
     ```  
     string mexAddress = "http://localhost:8000/servicemodelsamples/service/mex";  
@@ -118,12 +121,11 @@ caps.handback.revision: 7
     MetadataSet mdSet = mexClient.GetMetadata(new EndpointAddress(mexAddress));  
     foreach (MetadataSection section in mdSet.MetadataSections)  
     Console.WriteLine("Metadata section: " + section.Dialect.ToString());  
-  
     ```  
   
-## 参照  
- [メタデータ公開動作](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md)   
- [メタデータの抽出](../../../../docs/framework/wcf/samples/retrieve-metadata.md)   
- [メタデータ](../../../../docs/framework/wcf/feature-details/metadata.md)   
- [メタデータの公開](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)   
+## <a name="see-also"></a>関連項目  
+ [メタデータ公開動作](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md)  
+ [メタデータを取得します。](../../../../docs/framework/wcf/samples/retrieve-metadata.md)  
+ [メタデータ](../../../../docs/framework/wcf/feature-details/metadata.md)  
+ [メタデータの公開](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)  
  [メタデータ エンドポイントを公開する](../../../../docs/framework/wcf/publishing-metadata-endpoints.md)

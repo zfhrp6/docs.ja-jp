@@ -1,40 +1,43 @@
 ---
-title: "ShouldSerialize メソッドと Reset メソッドによる既定値の定義 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "カスタム コントロール [Windows フォーム], プロパティ メソッド"
-  - "Reset メソッド"
-  - "ShouldPersist メソッド"
+title: "ShouldSerialize メソッドと Reset メソッドによる既定値の定義"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- custom controls [Windows Forms], property methods
+- ShouldPersist method
 ms.assetid: 7b6c5e00-3771-46b4-9142-5a80d5864a5e
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d082b0e3db1e1c115d28446cf515cf6acf60a7d2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ShouldSerialize メソッドと Reset メソッドによる既定値の定義
-`ShouldSerialize` メソッドと `Reset` メソッドは、プロパティに単純な既定値がない場合に、このプロパティに指定できるオプションのメソッドです。  プロパティに単純な既定値がある場合には、<xref:System.ComponentModel.DefaultValueAttribute> を適用して、属性クラス コンストラクターに既定値を指定します。  ShouldSerialize メソッドまたは Reset メソッドを使用すると、次に示す機能がデザイナーで有効になります。  
+# <a name="defining-default-values-with-the-shouldserialize-and-reset-methods"></a>ShouldSerialize メソッドと Reset メソッドによる既定値の定義
+`ShouldSerialize``Reset`プロパティ用に指定できるオプションのメソッドは、プロパティがない場合、単純な既定値があります。 プロパティの単純な既定値が、適用してください、<xref:System.ComponentModel.DefaultValueAttribute>し、代わりに、属性クラスのコンス トラクターを既定値を指定します。 これらのメカニズムのいずれかにより、デザイナーで、次の機能。  
   
--   プロパティの既定値が変更された場合、変更を示すマークがプロパティ ブラウザーに表示されます。  
+-   プロパティが既定値から変更された場合に、プロパティ ブラウザーで表示を提供します。  
   
--   プロパティの既定値に戻すには、ユーザーがプロパティを右クリックして、**\[リセット\]** をクリックします。  
+-   ユーザーが、プロパティを右クリックし、選択**リセット**プロパティを既定値に復元します。  
   
--   デザイナーで、さらに効率的なコードが生成されます。  
+-   デザイナーより効率的なコードを生成します。  
   
     > [!NOTE]
-    >  <xref:System.ComponentModel.DefaultValueAttribute> を適用するか、`Reset`*PropertyName* メソッドと `ShouldSerialize`*PropertyName* メソッドを提供します。  この 2 種類の操作を同時に実行しないでください。  
+    >  適用するか、<xref:System.ComponentModel.DefaultValueAttribute>提供または`Reset` *PropertyName*と`ShouldSerialize` *PropertyName*メソッドです。 どちらも使用しないでください。  
   
- 次のコードに示すように、`Reset`*PropertyName* メソッドはプロパティに既定値を設定します。  
+ `Reset` *PropertyName*メソッドは、次のコード フラグメントで示すように、既定値にプロパティを設定します。  
   
 ```vb  
 Public Sub ResetMyFont()  
@@ -49,9 +52,9 @@ public void ResetMyFont() {
 ```  
   
 > [!NOTE]
->  `Reset` メソッドがなく、<xref:System.ComponentModel.DefaultValueAttribute> が適用されておらず、宣言で既定値が指定されていないプロパティの場合、[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] の Windows フォーム デザイナーの **\[プロパティ\]** ウィンドウのショートカット メニューでは、このプロパティの `Reset` オプションが無効になります。  
+>  プロパティがない場合、`Reset`メソッド、されていない、 <xref:System.ComponentModel.DefaultValueAttribute>、および、その宣言で指定された既定値はありません、`Reset`オプションのショートカット メニューでそのプロパティは無効になって、 **のプロパティ**で Windows フォーム デザイナーのウィンドウ[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]します。  
   
- [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] などのデザイナーでは、`ShouldSerialize`*PropertyName* メソッドを使用して、プロパティの既定値が変更されているかどうかを確認し、プロパティが変更されている場合にだけフォームにコードを書き込みます。これにより、コード生成処理の効率性が向上します。  次に例を示します。  
+ などのデザイナー[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]を使用して、 `ShouldSerialize` *PropertyName*プロパティが既定値から変更されたかどうかを確認し、プロパティ場合にのみフォームにコードを記述する方法を変更すると、のでより効率的なコード生成します。 例:  
   
 ```vb  
 'Returns true if the font has changed; otherwise, returns false.  
@@ -69,7 +72,7 @@ public bool ShouldSerializeMyFont() {
 }  
 ```  
   
- 完全なコード例を次に示します。  
+ 完全なコード例に従います。  
   
 ```vb  
 Option Explicit  
@@ -148,9 +151,9 @@ public class MyControl : Control {
 }  
 ```  
   
- この場合、`MyFont` プロパティがアクセスするプライベート変数の値が `null` であっても、プロパティ ブラウザーには `null` は表示されません。その代わりに、親の <xref:System.Windows.Forms.Control.Font%2A> プロパティ \(`null` 以外の場合\)、または <xref:System.Windows.Forms.Control> で定義されている <xref:System.Windows.Forms.Control.Font%2A> の既定値が表示されます。  つまり、`MyFont`  プロパティの既定値を簡単に設定できないため、このプロパティには <xref:System.ComponentModel.DefaultValueAttribute> を適用できません。  代わりに、`MyFont` プロパティに対しては、`ShouldSerialize` メソッドと `Reset` メソッドを実装する必要があります。  
+ ここでは、プライベート変数の値がからアクセスする場合でも、`MyFont`プロパティは`null`、プロパティ ブラウザーは表示されません`null`代わりに、表示、<xref:System.Windows.Forms.Control.Font%2A>されていない場合は、親のプロパティ`null`、。既定値または<xref:System.Windows.Forms.Control.Font%2A>で定義された値<xref:System.Windows.Forms.Control>です。 既定値ため`MyFont`、単に設定することはできませんと<xref:System.ComponentModel.DefaultValueAttribute>このプロパティには適用できません。 代わりに、`ShouldSerialize`と`Reset`のメソッドを実装する必要があります、`MyFont`プロパティです。  
   
-## 参照  
- [Windows フォーム コントロールのプロパティ](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)   
- [プロパティの定義](../../../../docs/framework/winforms/controls/defining-a-property-in-windows-forms-controls.md)   
+## <a name="see-also"></a>関連項目  
+ [Windows フォーム コントロールのプロパティ](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)  
+ [プロパティの定義](../../../../docs/framework/winforms/controls/defining-a-property-in-windows-forms-controls.md)  
  [プロパティ変更イベント](../../../../docs/framework/winforms/controls/property-changed-events.md)

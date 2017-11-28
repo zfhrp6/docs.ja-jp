@@ -1,37 +1,42 @@
 ---
-title: "WPF のブラシの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ブラシ, ブラシの概要"
+title: "WPF のブラシの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: brushes [WPF], about brushes
 ms.assetid: ecea1955-420b-45c6-bf43-c1404c072c41
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: de5bcaeffb77f52b80c229cf0402c2c090e40d81
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WPF のブラシの概要
-スクリーン上に表示されるものはすべてブラシによって描画されているため、目で見ることができます。  たとえば、ブラシはボタンの背景、テキストの前景、および図形を塗りつぶすために使用されます。  ここでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のブラシを使用した塗りつぶしの概念について説明し、例を示します。  ブラシを使用すると、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] オブジェクトに、純色やパターンとイメージの複雑なセットなどを適用できます。  
+# <a name="wpf-brushes-overview"></a>WPF のブラシの概要
+画面に表示できるものは、ブラシによって描画されているために表示されます。 たとえば、ブラシを使用して、ボタン、テキストの前景色、図形の塗りつぶしの背景について説明します。 このトピックでの描画の概念を説明する[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]ブラシし、例について説明します。 ブラシを使用すると、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] オブジェクトを単色で塗りつぶすことも、パターンとイメージの複雑な組み合わせで塗りつぶすこともできます。  
   
 <a name="paintingwithbrush"></a>   
-## ブラシによる塗りつぶし  
- <xref:System.Windows.Media.Brush> は、その出力で領域を塗りつぶします。  ブラシによって出力の種類がそれぞれ異なります。  純色で領域を塗りつぶすブラシもあれば、グラデーション、パターン、イメージ、または描画で塗りつぶすブラシもあります。  <xref:System.Windows.Media.Brush> のさまざまな種類の例を次の図に示します。  
+## <a name="painting-with-a-brush"></a>ブラシで描画  
+ A<xref:System.Windows.Media.Brush>その出力を使用して領域を「描画」です。 さまざまなブラシでは、さまざまな種類の出力があります。 ブラシは、純色、グラデーション、パターン、画像、または描画と他のユーザーで領域を塗りつぶすです。 次の図は、別のそれぞれの例を示します<xref:System.Windows.Media.Brush>型です。  
   
- ![ブラシの種類](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-brushtypes.png "graphicsmm\_brushtypes")  
+ ![ブラシの種類](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-brushtypes.jpg "graphicsmm_brushtypes")  
 ブラシの例  
   
- ほとんどのビジュアル オブジェクトでは、その塗りつぶし方法を指定できます。  <xref:System.Windows.Media.Brush> を使用できる一般的なオブジェクトとプロパティの一部を次の表に示します。  
+ ほとんどのビジュアル オブジェクトを使用すると、描画された方法を指定できます。 次の表は、いくつかの一般的なオブジェクトおよびプロパティを使用することができます、<xref:System.Windows.Media.Brush>です。  
   
-|Class|ブラシのプロパティ|  
-|-----------|---------------|  
+|クラス|ブラシのプロパティ|  
+|-----------|----------------------|  
 |<xref:System.Windows.Controls.Border>|<xref:System.Windows.Controls.Border.BorderBrush%2A>, <xref:System.Windows.Controls.Border.Background%2A>|  
 |<xref:System.Windows.Controls.Control>|<xref:System.Windows.Controls.Control.Background%2A>, <xref:System.Windows.Controls.Control.Foreground%2A>|  
 |<xref:System.Windows.Controls.Panel>|<xref:System.Windows.Controls.Panel.Background%2A>|  
@@ -39,139 +44,139 @@ caps.handback.revision: 12
 |<xref:System.Windows.Shapes.Shape>|<xref:System.Windows.Shapes.Shape.Fill%2A>, <xref:System.Windows.Shapes.Shape.Stroke%2A>|  
 |<xref:System.Windows.Controls.TextBlock>|<xref:System.Windows.Controls.TextBlock.Background%2A>|  
   
- 以下のセクションでは、さまざまな種類の <xref:System.Windows.Media.Brush> について説明し、それぞれの例を示します。  
+ 次のセクションでは、説明、異なる<xref:System.Windows.Media.Brush>型し、それぞれの例を提供します。  
   
 <a name="paintwithsolidcolorbrush"></a>   
-## 純色での塗りつぶし  
- <xref:System.Windows.Media.SolidColorBrush> は、領域を均一の <xref:System.Windows.Media.Color> \(純色\) で塗りつぶします。  <xref:System.Windows.Media.SolidColorBrush> の <xref:System.Windows.Media.SolidColorBrush.Color%2A> を指定するにはさまざまな方法があります。たとえば、アルファ、赤、青、緑の各チャネルを指定したり、<xref:System.Windows.Media.Colors> クラスで提供されている定義済みの色のいずれかを使用したりできます。  
+## <a name="paint-with-a-solid-color"></a>純色で描画  
+ A <xref:System.Windows.Media.SolidColorBrush> 、純色で領域を塗りつぶします<xref:System.Windows.Media.Color>です。 さまざまなを指定する方法がある、<xref:System.Windows.Media.SolidColorBrush.Color%2A>の<xref:System.Windows.Media.SolidColorBrush>: たとえば、そのアルファ、赤、青、および緑チャネルを指定したり、によって提供される定義済みの色のいずれかを使用、<xref:System.Windows.Media.Colors>クラスです。  
   
- <xref:System.Windows.Media.SolidColorBrush> を使用して、<xref:System.Windows.Shapes.Rectangle> の <xref:System.Windows.Shapes.Shape.Fill%2A> を塗りつぶす例を次に示します。  塗りつぶされた四角形を次の図に示します。  
+ 次の例では、<xref:System.Windows.Media.SolidColorBrush>を描画する、<xref:System.Windows.Shapes.Shape.Fill%2A>の<xref:System.Windows.Shapes.Rectangle>です。 塗りつぶされた四角形を次の図に示します。  
   
- ![SolidColorBrush を使用して描画された四角形](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-brush-ovw-solidcolorbrush.png "graphicsmm\_brush\_ovw\_solidcolorbrush")  
-SolidColorBrush を使用して塗りつぶされた四角形  
+ ![SolidColorBrush を使用して描画された四角形](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-brush-ovw-solidcolorbrush.png "graphicsmm_brush_ovw_solidcolorbrush")  
+SolidColorBrush を使用して描画された四角形  
   
  [!code-csharp[BrushesIntroduction_snip#GraphicsMMSolidColorBrushExampleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/BrushTypesExample.cs#graphicsmmsolidcolorbrushexampleinline)]
  [!code-vb[BrushesIntroduction_snip#GraphicsMMSolidColorBrushExampleInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/brushtypesexample.vb#graphicsmmsolidcolorbrushexampleinline)]
- [!code-xml[BrushesIntroduction_snip#GraphicsMMSolidColorBrushExampleInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmsolidcolorbrushexampleinline)]  
+ [!code-xaml[BrushesIntroduction_snip#GraphicsMMSolidColorBrushExampleInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmsolidcolorbrushexampleinline)]  
   
- <xref:System.Windows.Media.SolidColorBrush> クラスの詳細については、「[純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)」を参照してください。  
+ 詳細については、<xref:System.Windows.Media.SolidColorBrush>クラスを参照してください[純色、グラデーションの概要でペイント](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)です。  
   
 <a name="paintwithlineargradientbrush"></a>   
-## 線形グラデーションでの塗りつぶし  
- <xref:System.Windows.Media.LinearGradientBrush> は、線形グラデーションで領域を塗りつぶします。  線形グラデーションは、直線つまりグラデーション軸を境にして 2 つ以上の色をブレンドします。  グラデーション内の色とその位置を指定するには、<xref:System.Windows.Media.GradientStop> オブジェクトを使用します。  
+## <a name="paint-with-a-linear-gradient"></a>線形グラデーションの描画  
+ A<xref:System.Windows.Media.LinearGradientBrush>線形グラデーションで領域を塗りつぶします。 線形グラデーションは、次の 2 つまたは複数の色をグラデーション軸のライン全体でブレンドします。 使用する<xref:System.Windows.Media.GradientStop>グラデーションとその位置に、色を指定するオブジェクト。  
   
- <xref:System.Windows.Media.LinearGradientBrush> を使用して、<xref:System.Windows.Shapes.Rectangle> の <xref:System.Windows.Shapes.Shape.Fill%2A> を塗りつぶす例を次に示します。  塗りつぶされた四角形を次の図に示します。  
+ 次の例では、<xref:System.Windows.Media.LinearGradientBrush>を描画する、<xref:System.Windows.Shapes.Shape.Fill%2A>の<xref:System.Windows.Shapes.Rectangle>です。 塗りつぶされた四角形を次の図に示します。  
   
- ![LinearGradientBrush を使用して描画された四角形](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-brush-ovw-lineargradientbrush.png "graphicsmm\_brush\_ovw\_lineargradientbrush")  
-LinearGradientBrush を使用して塗りつぶされた四角形  
+ ![LinearGradientBrush を使用して描画された四角形](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-brush-ovw-lineargradientbrush.jpg "graphicsmm_brush_ovw_lineargradientbrush")  
+LinearGradientBrush を使用して描画された四角形  
   
  [!code-csharp[BrushesIntroduction_snip#GraphicsMMLinearGradientBrushExampleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/BrushTypesExample.cs#graphicsmmlineargradientbrushexampleinline)]
  [!code-vb[BrushesIntroduction_snip#GraphicsMMLinearGradientBrushExampleInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/brushtypesexample.vb#graphicsmmlineargradientbrushexampleinline)]
- [!code-xml[BrushesIntroduction_snip#GraphicsMMLinearGradientBrushExampleInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmlineargradientbrushexampleinline)]  
+ [!code-xaml[BrushesIntroduction_snip#GraphicsMMLinearGradientBrushExampleInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmlineargradientbrushexampleinline)]  
   
- <xref:System.Windows.Media.LinearGradientBrush> クラスの詳細については、「[純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)」を参照してください。  
+ 詳細については、<xref:System.Windows.Media.LinearGradientBrush>クラスを参照してください[純色、グラデーションの概要でペイント](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)です。  
   
 <a name="paintwithradialgradientbrush"></a>   
-## 放射状グラデーションでの塗りつぶし  
- <xref:System.Windows.Media.RadialGradientBrush> は、放射状グラデーションで領域を塗りつぶします。  放射状グラデーションは、円を境にして 2 つ以上の色をブレンドします。  <xref:System.Windows.Media.LinearGradientBrush> クラスと同様、グラデーション内の色とその位置を指定するには、<xref:System.Windows.Media.GradientStop> オブジェクトを使用します。  
+## <a name="paint-with-a-radial-gradient"></a>放射状グラデーションの描画  
+ A<xref:System.Windows.Media.RadialGradientBrush>放射状グラデーションで領域を塗りつぶします。 放射状グラデーションは、円の間で 2 つまたは複数の色を合成します。 同様、<xref:System.Windows.Media.LinearGradientBrush>クラスを使用する<xref:System.Windows.Media.GradientStop>グラデーションとその位置に、色を指定するオブジェクト。  
   
- <xref:System.Windows.Media.RadialGradientBrush> を使用して、<xref:System.Windows.Shapes.Rectangle> の <xref:System.Windows.Shapes.Shape.Fill%2A> を塗りつぶす例を次に示します。  塗りつぶされた四角形を次の図に示します。  
+ 次の例では、<xref:System.Windows.Media.RadialGradientBrush>を描画する、<xref:System.Windows.Shapes.Shape.Fill%2A>の<xref:System.Windows.Shapes.Rectangle>です。 塗りつぶされた四角形を次の図に示します。  
   
- ![RadialGradientBrush を使用して描画された四角形](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-brush-ovw-radialgradientbrush.png "graphicsmm\_brush\_ovw\_radialgradientbrush")  
-RadialGradientBrush を使用して塗りつぶされた四角形  
+ ![RadialGradientBrush を使用して描画された四角形](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-brush-ovw-radialgradientbrush.jpg "graphicsmm_brush_ovw_radialgradientbrush")  
+RadialGradientBrush を使用して描画された四角形  
   
  [!code-csharp[BrushesIntroduction_snip#GraphicsMMRadialGradientBrushExampleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/BrushTypesExample.cs#graphicsmmradialgradientbrushexampleinline)]
  [!code-vb[BrushesIntroduction_snip#GraphicsMMRadialGradientBrushExampleInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/brushtypesexample.vb#graphicsmmradialgradientbrushexampleinline)]
- [!code-xml[BrushesIntroduction_snip#GraphicsMMRadialGradientBrushExampleInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmradialgradientbrushexampleinline)]  
+ [!code-xaml[BrushesIntroduction_snip#GraphicsMMRadialGradientBrushExampleInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmradialgradientbrushexampleinline)]  
   
- <xref:System.Windows.Media.RadialGradientBrush> クラスの詳細については、「[純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)」を参照してください。  
+ 詳細については、<xref:System.Windows.Media.RadialGradientBrush>クラスを参照してください[純色、グラデーションの概要でペイント](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)です。  
   
 <a name="paintwithimage"></a>   
-## イメージでの塗りつぶし  
- <xref:System.Windows.Media.ImageBrush> は、<xref:System.Windows.Media.ImageSource> で領域を塗りつぶします。  
+## <a name="paint-with-an-image"></a>イメージの描画  
+ <xref:System.Windows.Media.ImageBrush>領域を塗りつぶします、<xref:System.Windows.Media.ImageSource>です。  
   
- <xref:System.Windows.Media.ImageBrush> を使用して、<xref:System.Windows.Shapes.Rectangle> の <xref:System.Windows.Shapes.Shape.Fill%2A> を塗りつぶす例を次に示します。  塗りつぶされた四角形を次の図に示します。  
+ 次の例では、<xref:System.Windows.Media.ImageBrush>を描画する、<xref:System.Windows.Shapes.Shape.Fill%2A>の<xref:System.Windows.Shapes.Rectangle>です。 塗りつぶされた四角形を次の図に示します。  
   
- ![ImageBrush で描画された四角形](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-brush-ovw-imagebrush.png "graphicsmm\_brush\_ovw\_imagebrush")  
-イメージを使用して塗りつぶされた四角形  
+ ![ImageBrush で描画された四角形](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-brush-ovw-imagebrush.jpg "graphicsmm_brush_ovw_imagebrush")  
+イメージを使用して描画された四角形  
   
  [!code-csharp[BrushesIntroduction_snip#GraphicsMMImageBrushExampleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/BrushTypesExample.cs#graphicsmmimagebrushexampleinline)]
  [!code-vb[BrushesIntroduction_snip#GraphicsMMImageBrushExampleInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/brushtypesexample.vb#graphicsmmimagebrushexampleinline)]
- [!code-xml[BrushesIntroduction_snip#GraphicsMMImageBrushExampleInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmimagebrushexampleinline)]  
+ [!code-xaml[BrushesIntroduction_snip#GraphicsMMImageBrushExampleInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmimagebrushexampleinline)]  
   
- <xref:System.Windows.Media.ImageBrush> クラスの詳細については、「[イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)」を参照してください。  
+ 詳細については、<xref:System.Windows.Media.ImageBrush>クラスを参照してください[イメージ、図形、およびビジュアルの描画](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)です。  
   
 <a name="paintwithdrawing"></a>   
-## 描画での塗りつぶし  
- <xref:System.Windows.Media.DrawingBrush> は、<xref:System.Windows.Media.Drawing> で領域を塗りつぶします。  <xref:System.Windows.Media.Drawing> は、図形、イメージ、テキスト、および、メディアを含むことができます。  
+## <a name="paint-with-a-drawing"></a>描画を使用して描画  
+ A<xref:System.Windows.Media.DrawingBrush>領域を塗りつぶします、<xref:System.Windows.Media.Drawing>です。 A<xref:System.Windows.Media.Drawing>図形、画像、テキスト、およびメディアに含めることができます。  
   
- <xref:System.Windows.Media.DrawingBrush> を使用して、<xref:System.Windows.Shapes.Rectangle> の <xref:System.Windows.Shapes.Shape.Fill%2A> を塗りつぶす例を次に示します。  塗りつぶされた四角形を次の図に示します。  
+ 次の例では、<xref:System.Windows.Media.DrawingBrush>を描画する、<xref:System.Windows.Shapes.Shape.Fill%2A>の<xref:System.Windows.Shapes.Rectangle>です。 塗りつぶされた四角形を次の図に示します。  
   
- ![DrawingBrush を使用して描画された四角形](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-brush-ovw-drawingbrush.png "graphicsmm\_brush\_ovw\_drawingbrush")  
-DrawingBrush を使用して塗りつぶされた四角形  
+ ![DrawingBrush を使用して描画された四角形](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-brush-ovw-drawingbrush.jpg "graphicsmm_brush_ovw_drawingbrush")  
+DrawingBrush を使用して描画された四角形  
   
  [!code-csharp[BrushesIntroduction_snip#GraphicsMMDrawingBrushExampleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/BrushTypesExample.cs#graphicsmmdrawingbrushexampleinline)]
  [!code-vb[BrushesIntroduction_snip#GraphicsMMDrawingBrushExampleInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/brushtypesexample.vb#graphicsmmdrawingbrushexampleinline)]
- [!code-xml[BrushesIntroduction_snip#GraphicsMMDrawingBrushExampleInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmdrawingbrushexampleinline)]  
+ [!code-xaml[BrushesIntroduction_snip#GraphicsMMDrawingBrushExampleInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmdrawingbrushexampleinline)]  
   
- <xref:System.Windows.Media.DrawingBrush> クラスの詳細については、「[イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)」を参照してください。  
+ 詳細については、<xref:System.Windows.Media.DrawingBrush>クラスを参照してください[イメージ、図形、およびビジュアルの描画](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)です。  
   
 <a name="paintwithvisual"></a>   
-## ビジュアルでの塗りつぶし  
- <xref:System.Windows.Media.VisualBrush> は、<xref:System.Windows.Media.Visual> オブジェクトで領域を塗りつぶします。  Visual オブジェクトの例としては、<xref:System.Windows.Controls.Button>、<xref:System.Windows.Controls.Page>、<xref:System.Windows.Controls.MediaElement> などがあります。  また、<xref:System.Windows.Media.VisualBrush> を使用すると、アプリケーションのある部分の内容を別の領域に投影することもできます。これは、反射効果を作成し、画面の一部を際立たせる場合に非常に役立ちます。  
+## <a name="paint-with-a-visual"></a>ビジュアルを使用して描画  
+ A<xref:System.Windows.Media.VisualBrush>領域を塗りつぶします、<xref:System.Windows.Media.Visual>オブジェクト。 ビジュアル オブジェクトの例として、 <xref:System.Windows.Controls.Button>、 <xref:System.Windows.Controls.Page>、および<xref:System.Windows.Controls.MediaElement>です。 A<xref:System.Windows.Media.VisualBrush>別の領域に、アプリケーションの 1 つの部分からコンテンツをプロジェクトすることもできますが反射効果を作成し、画面の一部を際立たせるを非常に役立ちます。  
   
- <xref:System.Windows.Media.VisualBrush> を使用して、<xref:System.Windows.Shapes.Rectangle> の <xref:System.Windows.Shapes.Shape.Fill%2A> を塗りつぶす例を次に示します。  塗りつぶされた四角形を次の図に示します。  
+ 次の例では、<xref:System.Windows.Media.VisualBrush>を描画する、<xref:System.Windows.Shapes.Shape.Fill%2A>の<xref:System.Windows.Shapes.Rectangle>です。 塗りつぶされた四角形を次の図に示します。  
   
- ![VisualBrush を使用して描画された四角形](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-brush-ovw-visualbrush.png "graphicsmm\_brush\_ovw\_visualbrush")  
-VisualBrush を使用して塗りつぶされた四角形  
+ ![VisualBrush を使用して描画された四角形](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-brush-ovw-visualbrush.jpg "graphicsmm_brush_ovw_visualbrush")  
+VisualBrush を使用して描画された四角形  
   
  [!code-csharp[BrushesIntroduction_snip#GraphicsMMVisualBrushExampleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/BrushTypesExample.cs#graphicsmmvisualbrushexampleinline)]
  [!code-vb[BrushesIntroduction_snip#GraphicsMMVisualBrushExampleInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/brushtypesexample.vb#graphicsmmvisualbrushexampleinline)]
- [!code-xml[BrushesIntroduction_snip#GraphicsMMVisualBrushExampleInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmvisualbrushexampleinline)]  
+ [!code-xaml[BrushesIntroduction_snip#GraphicsMMVisualBrushExampleInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmvisualbrushexampleinline)]  
   
- <xref:System.Windows.Media.VisualBrush> クラスの詳細については、「[イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)」を参照してください。  
+ 詳細については、<xref:System.Windows.Media.VisualBrush>クラスを参照してください[イメージ、図形、およびビジュアルの描画](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)です。  
   
 <a name="paintwithpredefinedbrushesandsystemcolors"></a>   
-## 定義済みブラシおよびシステム ブラシを使用した塗りつぶし  
- 便宜上、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] では、オブジェクトの塗りつぶしに使用できる定義済みブラシとシステム ブラシのセットが提供されています。  
+## <a name="paint-using-predefined-and-system-brushes"></a>定義済みおよびシステム ブラシを使用して描く  
+ 便宜上、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]のセットがあらかじめ定義されており、オブジェクトの描画に使用できるシステムのブラシを提供します。  
   
--   使用可能な定義済みブラシの一覧については、<xref:System.Windows.Media.Brushes> クラスを参照してください。  定義済みブラシの使用方法の例については、「[純色で領域を塗りつぶす](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-solid-color.md)」を参照してください。  
+-   使用可能な定義済みのブラシの一覧は、次を参照してください。、<xref:System.Windows.Media.Brushes>クラスです。 定義済みのブラシを使用する方法を示す例は、次を参照してください。[を純色で領域を塗りつぶす](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-solid-color.md)です。  
   
--   使用可能なシステム ブラシの一覧については、<xref:System.Windows.SystemColors> クラスを参照してください。  例については、「[システム ブラシで領域を塗りつぶす](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-system-brush.md)」を参照してください。  
+-   使用可能なシステム ブラシの一覧は、次を参照してください。、<xref:System.Windows.SystemColors>クラスです。 例については、次を参照してください。[システム ブラシを使用して領域を塗りつぶす](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-system-brush.md)です。  
   
 <a name="commonbrushfeatures"></a>   
-## ブラシの共通機能  
- <xref:System.Windows.Media.Brush> オブジェクトが提供する <xref:System.Windows.Media.Brush.Opacity%2A> プロパティを使用すると、ブラシを透明にしたり、部分的に透明にしたりできます。  <xref:System.Windows.Media.Brush.Opacity%2A> の値を 0 にするとブラシは完全に透明になり、<xref:System.Windows.Media.Brush.Opacity%2A> の値を 1 にするとブラシは完全に不透明になります。  <xref:System.Windows.Media.Brush.Opacity%2A> プロパティを使用して、<xref:System.Windows.Media.SolidColorBrush> の不透明度を 25% にする例を次に示します。  
+## <a name="common-brush-features"></a>ブラシの共通機能  
+ <xref:System.Windows.Media.Brush>オブジェクトは、提供、<xref:System.Windows.Media.Brush.Opacity%2A>ブラシを透明または半透明な使用できるプロパティです。 <xref:System.Windows.Media.Brush.Opacity%2A> 0 の値により、ブラシの中に完全に透明、 <xref:System.Windows.Media.Brush.Opacity%2A> 1 の値を指定すると、ブラシは完全に不透明です。 次の例では、<xref:System.Windows.Media.Brush.Opacity%2A>プロパティを<xref:System.Windows.Media.SolidColorBrush>25% 不透明です。  
   
- [!code-xml[BrushOverviewExamples_snip#OpacityExample1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/OpacityExample.xaml#opacityexample1xaml)]  
+ [!code-xaml[BrushOverviewExamples_snip#OpacityExample1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/OpacityExample.xaml#opacityexample1xaml)]  
   
  [!code-csharp[BrushOverviewExamples_snip#OpacityExample1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/OpacityExample.cs#opacityexample1csharp)]  
   
- ブラシに部分的に透明な色が含まれる場合は、ブラシの不透明度の値との乗算により、色の不透明度の値が結合されます。  たとえば、ブラシの不透明度の値が 0.5 で、ブラシで使用されている色の不透明度値も 0.5 である場合は、出力される色の不透明度は 0.25 になります。  
+ ブラシに部分的に透明な色が含まれている場合、色の不透明度の値がブラシの不透明度の値で乗算を結合します。 たとえば、ブラシが 0.5 の不透明度の値、ブラシで使用される色も 0.5 の不透明度の値を持っている場合は、出力色によって 0.25 の不透明度値があります。  
   
 > [!NOTE]
->  <xref:System.Windows.UIElement.Opacity%2A?displayProperty=fullName> プロパティを使用して要素全体の不透明度を変更するより、ブラシの不透明度の値を変更する方が効率的です。  
+>  使用して、要素全体の不透明度を変更するよりも、ブラシの不透明度の値を変更する方が効率的であるその<xref:System.Windows.UIElement.Opacity%2A?displayProperty=nameWithType>プロパティです。  
   
- <xref:System.Windows.Media.Brush.Transform%2A> プロパティまたは <xref:System.Windows.Media.Brush.RelativeTransform%2A> プロパティを使用すると、ブラシのコンテンツの回転、拡大縮小、傾斜、および平行移動を行うことができます。  詳細については、「[ブラシの変換の概要](../../../../docs/framework/wpf/graphics-multimedia/brush-transformation-overview.md)」を参照してください。  
+ 回転、拡大縮小、傾斜、およびを使用して、ブラシのコンテンツを翻訳、<xref:System.Windows.Media.Brush.Transform%2A>または<xref:System.Windows.Media.Brush.RelativeTransform%2A>プロパティです。 詳細については、次を参照してください。[ブラシの変換の概要](../../../../docs/framework/wpf/graphics-multimedia/brush-transformation-overview.md)です。  
   
- これらは <xref:System.Windows.Media.Animation.Animatable> オブジェクトであるため、<xref:System.Windows.Media.Brush> オブジェクトはアニメーション化できます。  詳細については、「[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)」を参照してください。  
+ いるため、<xref:System.Windows.Media.Animation.Animatable>オブジェクト、<xref:System.Windows.Media.Brush>オブジェクトをアニメーション化します。 詳しくは、「 [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)」をご覧ください。  
   
 <a name="freezable_features"></a>   
-### Freezable の機能  
- <xref:System.Windows.Freezable> クラスを継承するので、<xref:System.Windows.Media.Brush> クラスはいくつかの特殊な機能を備えています。<xref:System.Windows.Media.Brush> オブジェクトを[リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)として宣言したり、複数のオブジェクトで共有したり、複製したりできます。  さらに、<xref:System.Windows.Media.VisualBrush> を除くすべての種類の <xref:System.Windows.Media.Brush> は、読み取り専用にして、パフォーマンスを向上させ、スレッド セーフにすることができます。  
+### <a name="freezable-features"></a>Freezable 機能  
+ 継承しているため、<xref:System.Windows.Freezable>クラス、<xref:System.Windows.Media.Brush>クラスには、いくつかの特別な機能が用意されています:<xref:System.Windows.Media.Brush>としてオブジェクトを宣言することができます[リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)、複数のオブジェクト間で共有およびクローンを作成します。 さらに、すべて、<xref:System.Windows.Media.Brush>型除く<xref:System.Windows.Media.VisualBrush>パフォーマンスを向上させるためには読み取り専用に、スレッド セーフに行われたことができます。  
   
- <xref:System.Windows.Freezable> のさまざまな機能の詳細については、「[Freezable オブジェクトの概要](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)」を参照してください。  
+ によって提供されるさまざまな機能の詳細については<xref:System.Windows.Freezable>、オブジェクトを参照してください[Freezable オブジェクトの概要](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
   
- <xref:System.Windows.Media.VisualBrush> オブジェクトを固定できない理由の詳細については、<xref:System.Windows.Media.VisualBrush> のページを参照してください。  
+ 理由の詳細については<xref:System.Windows.Media.VisualBrush>オブジェクトにすることはできません固定されるを参照してください、<xref:System.Windows.Media.VisualBrush>の種類 ページ。  
   
-## 参照  
- <xref:System.Windows.Media.Brush>   
- <xref:System.Windows.Media.Brushes>   
- [純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)   
- [イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)   
- [Freezable オブジェクトの概要](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)   
- [ブラシのサンプル](http://go.microsoft.com/fwlink/?LinkID=159973)   
- [ImageBrush のサンプル](http://go.microsoft.com/fwlink/?LinkID=160005)   
- [VisualBrush のサンプル](http://go.microsoft.com/fwlink/?LinkID=160049)   
- [方法のトピック](../../../../docs/framework/wpf/graphics-multimedia/brushes-how-to-topics.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Media.Brush>  
+ <xref:System.Windows.Media.Brushes>  
+ [純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
+ [イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)  
+ [Freezable オブジェクトの概要](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)  
+ [ブラシのサンプル](http://go.microsoft.com/fwlink/?LinkID=159973)  
+ [ImageBrush のサンプル](http://go.microsoft.com/fwlink/?LinkID=160005)  
+ [VisualBrush のサンプル](http://go.microsoft.com/fwlink/?LinkID=160049)  
+ [方法トピック](../../../../docs/framework/wpf/graphics-multimedia/brushes-how-to-topics.md)  
  [パフォーマンスに関するその他の推奨事項](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)

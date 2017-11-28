@@ -1,41 +1,33 @@
 ---
-title: "XML 宣言 (Visual Basic) でシリアル化 |Microsoft ドキュメント"
+title: "XML 宣言 (Visual Basic) でシリアル化します。"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 8726f79e-2bb0-4ba0-969d-197cca591647
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 373df9b28ae7434d33ae81eba701d289cf1aa4f7
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: e8544157104b202a36f2ef75b069bcdd297b9158
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="serializing-with-an-xml-declaration-visual-basic"></a>XML 宣言 (Visual Basic) でシリアル化します。
 このトピックでは、シリアル化を実行する際に XML 宣言を生成するかどうかを制御する方法について説明します。  
   
 ## <a name="xml-declaration-generation"></a>XML 宣言の生成  
- シリアル化、<xref:System.IO.File>または<xref:System.IO.TextWriter>を使用して、<xref:System.Xml.Linq.XElement.Save%2A?displayProperty=fullName>メソッドまたは<xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=fullName>メソッドは、XML 宣言を生成します</xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=fullName></xref:System.Xml.Linq.XElement.Save%2A?displayProperty=fullName></xref:System.IO.TextWriter></xref:System.IO.File>。 シリアル化すると、 <xref:System.Xml.XmlWriter>、ライターの設定 (で指定されている、<xref:System.Xml.XmlWriterSettings>オブジェクト)、XML 宣言を生成するかどうかどうかを決定します</xref:System.Xml.XmlWriterSettings></xref:System.Xml.XmlWriter>。  
+ <xref:System.IO.File> メソッドまたは <xref:System.IO.TextWriter> メソッドを使用して <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType> または <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType> にシリアル化すると、XML 宣言が生成されます。 <xref:System.Xml.XmlWriter> にシリアル化する場合は、<xref:System.Xml.XmlWriterSettings> オブジェクトで指定したライター設定により、XML 宣言が生成されるかどうかが決定されます。  
   
  `ToString` メソッドを使用して文字列にシリアル化する場合、生成される XML には XML 宣言は含まれません。  
   
 ### <a name="serializing-with-an-xml-declaration"></a>XML 宣言付きのシリアル化  
- 次の例を作成し、 <xref:System.Xml.Linq.XElement>、ファイルにドキュメントを保存し、ファイルをコンソールに出力します</xref:System.Xml.Linq.XElement>。  
+ 次の例では、<xref:System.Xml.Linq.XElement> を作成し、ドキュメントをファイルに保存して、そのファイルをコンソールに出力します。  
   
 ```vb  
 Dim root As XElement = <Root>  
@@ -56,7 +48,7 @@ Console.WriteLine(str)
 ```  
   
 ### <a name="serializing-without-an-xml-declaration"></a>XML 宣言なしでのシリアル化  
- 次の例<xref:System.Xml.Linq.XElement><xref:System.Xml.XmlWriter>。</xref:System.Xml.XmlWriter></xref:System.Xml.Linq.XElement>を保存する方法を示しています。  
+ <xref:System.Xml.Linq.XElement> を <xref:System.Xml.XmlWriter> に保存する方法を次の例に示します。  
   
 ```vb  
 Dim sb As StringBuilder = New StringBuilder()  
@@ -79,4 +71,4 @@ Console.WriteLine(sb.ToString())
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [XML ツリーをシリアル化する (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md)
+ [(Visual Basic) の XML ツリーをシリアル化します。](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md)

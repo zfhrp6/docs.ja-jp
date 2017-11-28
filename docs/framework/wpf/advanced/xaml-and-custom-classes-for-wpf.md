@@ -1,127 +1,130 @@
 ---
-title: "WPF における XAML とカスタム クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "クラス, カスタム クラス (XAML)"
-  - "カスタム クラス (XAML)"
-  - "XAML, カスタム クラス"
+title: "WPF における XAML とカスタム クラス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- custom classes in XAML [WPF]
+- XAML [WPF], custom classes
+- classes [WPF], custom classes in XAML
 ms.assetid: e7313137-581e-4a64-8453-d44e15a6164a
-caps.latest.revision: 22
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 21
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c494b386cc52786c5adfbcbbea78b912bbf9887d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WPF における XAML とカスタム クラス
-[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] のフレームワークで実装される XAML は [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] の言語のカスタム クラスまたは構造体を定義してXAML マークアップを使用してアクセスすることができます。  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] で定義されている型とカスタム型は、通常はカスタム型を XAML 名前空間プレフィックスにマップすることで、同じマークアップ ファイルで使用することができます。  このトピックでは満たすカスタム クラスが XAML 要素として使用する必要があるという要件について説明します。  
+# <a name="xaml-and-custom-classes-for-wpf"></a>WPF における XAML とカスタム クラス
+実装されている XAML[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]フレームワークは、いずれかでカスタムのクラスまたは構造体を定義する機能をサポートしている[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]言語、およびしアクセス クラスの XAML マークアップを使用しています。 組み合わせを使用できる[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]の XAML 名前空間プレフィックスをカスタムの型をマップして、通常の型と同じマークアップ ファイル内でカスタム型を定義します。 このトピックでは、カスタムのクラスは、XAML 要素として使用できるように満たす必要がある要件について説明します。  
   
-   
+ 
   
 <a name="Custom_Classes_in_Applications_vs__in_Assemblies"></a>   
-## アプリケーション内のカスタム クラスとアセンブリ内のカスタム クラス  
- XAML で使用するカスタム クラスは 2 種類の形でも定義できます : コードとしてビハインドかの主要なアプリケーションを作成 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 他のコード内またはクラス ライブラリとして使用されている実行可能ファイルまたは DLL などの別のアセンブリのクラス。  これらの方法には、それぞれ利点と欠点があります。  
+## <a name="custom-classes-in-applications-or-assemblies"></a>アプリケーションまたはアセンブリのカスタム クラス  
+ 2 つの方法で XAML で使用されるカスタム クラスを定義することができます。 分離コードまたはその他のプライマリを生成するコード内で[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーション、または実行可能ファイルなどの別のアセンブリ内のクラスまたはクラス ライブラリとして使用される DLL として。 これらの方法は、特定の長所と短所がします。  
   
--   クラス ライブラリを作成する場合の利点は、それらのカスタム クラスを異なる多くのアプリケーションの間で共有できることです。  別のライブラリはアプリケーションのバージョン管理の問題に制御しやすくなります。の使用を目的の XAML ページ ルート要素として持つクラスの作成が簡単になります。  
+-   クラス ライブラリを作成する利点は、このようなカスタム クラスを異なる多くのアプリケーション間で共有できることです。 別のライブラリもとしてアプリケーションのバージョン管理の問題を簡単にコントロールをここで、目的のクラスの使用状況は、XAML ページ上のルート要素としては、クラスの作成を簡略化します。  
   
--   カスタム クラスをアプリケーション内で定義する場合の利点は、比較的軽量であることです。メインのアプリケーションの実行可能ファイルとは別のアセンブリを導入する場合に生じる配置やテストの問題を最小限に抑えることができます。  
+-   アプリケーションでカスタム クラスを定義する利点は、この手法は比較的軽量され、展開とメインのアプリケーション実行可能ファイルを超える個別のアセンブリを導入するときに発生するテストの問題を最小限に抑えられます。  
   
--   同じまたは別のアセンブリで定義されてカスタム クラスがCLR 名前空間と XML 名前空間の間の要素としての XAML で使用するために割り当てる必要があるかどうか。  「[XAML 名前空間および WPF XAML の名前空間の割り当て](../../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)」を参照してください。  
+-   同じまたは別のアセンブリで定義されているかどうか、カスタム クラスを XAML では要素として使用するために CLR 名前空間と XML 名前空間の間でマップする必要があります。 参照してください[XAML 名前空間と WPF XAML 向け Namespace マッピング](../../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)です。  
   
 <a name="Requirements_for_a_Custom_Class_as_a_XAML_Element"></a>   
-## XAML 要素としてのカスタム クラスの要件  
- カスタム クラスをオブジェクト要素としてインスタンス化できるようにするには、次の要件が満たされている必要があります。  
+## <a name="requirements-for-a-custom-class-as-a-xaml-element"></a>XAML 要素としてカスタム クラスの要件  
+ オブジェクト要素としてインスタンス化できるようにするには、ために、クラスは、次の要件を満たす必要があります。  
   
--   カスタム クラスがパブリックであり、既定の \(パラメーターなしの\) パブリック コンストラクターがサポートされている   \(構造体に関する説明は次のセクションを参照してください\)。  
+-   カスタム クラスは、パブリックおよび既定 (パラメーターなし) のコンス トラクターをサポートする必要があります。 (次の構造に関する注意事項のセクションを参照してください)。  
   
--   カスタム クラスが入れ子になっていない。  入れ子になったクラスや、そのクラスの一般的な CLR で使用される構文の "ドット" は、添付プロパティなどの他の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] または XAML の機能に干渉します。  
+-   カスタム クラスでは、入れ子になったクラスをすることはできません。 入れ子になったクラスおよびその一般的な CLR 使用法の構文で「ドット」が他の干渉[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]やアタッチされるプロパティなどの XAML 機能します。  
   
- オブジェクト要素構文を使用できるようになると、オブジェクト定義でそのオブジェクトを値の型とする他のパブリック プロパティでプロパティ要素構文を使用できるようにもなります。  これは、オブジェクト要素としてインスタンス化できるようになったオブジェクトは、そのプロパティのプロパティ要素値として設定できるためです。  
+ オブジェクトの定義はオブジェクト要素の構文を有効にするだけでなく、そのオブジェクトの値の型として取得するその他のパブリック プロパティのプロパティ要素構文も可能です。 これは、オブジェクトがオブジェクト要素としてインスタンス化するようになりましたことができます、このようなプロパティのプロパティ要素の値を入力することもできるためです。  
   
-### 構造体  
- カスタム型を [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の XAML で構築されるため常に定義する構造体。これは [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] コンパイラが暗黙的に既定ではすべてのプロパティ値を初期化する構造体の既定のコンストラクターが作成されるためです。  既定のコンストラクターの動作やある構造体におけるオブジェクト要素の使用が望ましくない場合もあります。  その理由は、構造体は値と関数を概念的に一体として入れることを意図しており、このため含まれた値が排他的な解釈を持つ可能性があり、その結果プロパティがまったく設定できない場合が生じるためです。  このような構造体の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の例は <xref:System.Windows.GridLength> です。  一般的にこのような構造体には、異なる解釈や構造体の値のモードを作成する文字列の規則を使って値を属性形式で表示できるようにする型コンバーターを実装します。  この構造体では、コード構築が既定以外のコンストラクターによって行われる場合にも、同じ動作が見られると考えられます。  
+### <a name="structures"></a>構造体  
+ カスタムの型がで XAML で構築することが常として定義する構造体[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。これは、ため、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]コンパイラが暗黙的にすべてのプロパティ値を既定値を初期化する構造体の既定のコンス トラクターを作成します。 場合によっては、既定の構築動作やオブジェクト要素の使用法、構造体は望ましくありません。 構造体では、値と関数を概念的には、共用体、含まれる値は相互に排他的な解釈が可能性があります、そのため、プロパティのいずれも、設定可能な可能性があります。 A[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]このような構造の例は、<xref:System.Windows.GridLength>です。 一般に、このような構造は、値は、さまざまな解釈や構造体の値のモードを作成する文字列の規則を使用して、属性の形式で表現できるように、型コンバーターを実装する必要があります。 構造体には、既定以外のコンス トラクターを使用してコード構築の同様の動作も公開する必要があります。  
   
 <a name="Requirements_for_Properties_of_a_Custom_Class_as_XAML"></a>   
-## カスタム クラスのプロパティの XAML 属性としての要件  
- プロパティでは、値の型 \(プリミティブなど\) を参照するか、既定のコンストラクターまたは XAML プロセッサからアクセスできる専用の型コンバーターを持つ型のクラスを使用する必要があります。  CLR における XAML の実装では、XAML プロセッサはそのようなコンバーターを、言語プリミティブのネイティブ サポートを通じて検索するか、またはバッキング型定義の型やメンバーに対する <xref:System.ComponentModel.TypeConverterAttribute> のアプリケーションを通じて検索します。  
+## <a name="requirements-for-properties-of-a-custom-class-as-xaml-attributes"></a>XAML 属性としてカスタム クラスのプロパティの要件  
+ プロパティは、(プリミティブ) など、値の型を参照または既定のコンス トラクターまたは、XAML プロセッサがアクセスできる専用の型コンバーターのいずれかを持つ型にクラスを使用する必要があります。 CLR の XAML 実装で XAML プロセッサか見つける言語プリミティブのネイティブ サポート、またはアプリケーションの使用は、このようなコンバーター<xref:System.ComponentModel.TypeConverterAttribute>型またはメンバーの種類の定義をバックアップする  
   
- そのほか、抽象クラス型やインターフェイスを参照することもできます。  抽象クラスやインターフェイスの場合は、そのインターフェイスを実装する実用クラスのインスタンスや、その抽象クラスを派生する型のインスタンスによって、XAML 解析時にプロパティ値が設定されることが想定されます。  
+ または、参照することも、抽象クラス型またはインターフェイス。 抽象クラスまたはインターフェイスは、XAML 解析時に、予想インターフェイスを実装する実際的なクラスのインスタンスまたは抽象クラスから派生した型のインスタンスでプロパティの値を入力する必要があります。  
   
- プロパティは抽象クラスで宣言できますが、その抽象クラスから派生する実用クラスでしか設定できません。  これは、クラスのオブジェクト要素を作成するには、クラスにパブリックな既定のコンストラクターが必要であるためです。  
+ プロパティは、抽象クラスで宣言することができますが、抽象クラスから派生するクラスでのみ設定できます。 これは、クラスにパブリックの既定のコンス トラクターが必要なすべてのクラスのオブジェクトの要素を作成するためです。  
   
-### 型コンバーターによって実現される属性構文  
- 属性として割り当てられた専用の型コンバーターをクラス レベルで用意すると、適用される型変換によって、その型をインスタンス化する必要がある任意のプロパティで属性構文を使用できるようになります。  型コンバーターを用意しても、その型のオブジェクト要素の使用は有効になりません。オブジェクト要素の使用は、その型の既定のコンストラクターが存在する場合にのみ有効です。  したがって、型コンバーターによって実現されるプロパティは、その型自体でオブジェクト要素構文もサポートされていない限り、一般にプロパティ構文では使用できません。  例外として、プロパティ要素に文字列を含める場合には、プロパティ要素構文を指定できます。  この使用方法は、実際には属性構文の使用方法と本質的に変わらず、属性値で空白の堅牢な処理が必要な場合を除いては一般的ではありません。  文字列を受け取るプロパティ要素の使用方法と、それと同等な属性の使用方法を次の例に示します。  
+### <a name="typeconverter-enabled-attribute-syntax"></a>TypeConverter 属性構文は有効になっています。  
+ クラス レベルで、属性付きの専用の型コンバーターを提供する場合、適用される型変換はその型のインスタンスを作成する必要がある任意のプロパティの属性の構文を使用できます。 型コンバーターは、型のオブジェクト要素の使用を有効にしません。その型の既定のコンス トラクターが存在するだけでは、オブジェクト要素の使用方法を使用できます。 そのため、型コンバーターによって有効になっているプロパティは、その型自体では、オブジェクトの要素の構文もサポートしていない限り一般にプロパティの構文では使用できません。 この例外は、プロパティ要素構文では、指定しますが、プロパティ要素に文字列を含めることができますです。 使用状況は、属性の構文の使用方法に非常に基本的に相当し、属性の値のより堅牢な空白の処理の必要性がない限りは一般的ではありません。 たとえば、次に示しますプロパティ要素の使用、文字列を受け取ると、属性の使用方法と同じ。  
   
- [!code-xml[XamlOvwSupport#GoofyTCPE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page8.xaml#goofytcpe)]  
+ [!code-xaml[XamlOvwSupport#GoofyTCPE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page8.xaml#goofytcpe)]  
   
- [!code-xml[XamlOvwSupport#GoofyTCPE2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page8.xaml#goofytcpe2)]  
+ [!code-xaml[XamlOvwSupport#GoofyTCPE2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page8.xaml#goofytcpe2)]  
   
- 属性構文を使用できますがプロパティ要素構文です <xref:System.Windows.Input.Cursor> の型を使用するさまざまなプロパティ拒否されるオブジェクト要素を含むプロパティの例としてはXAML で。  <xref:System.Windows.Input.Cursor> クラスには専用の型コンバーター <xref:System.Windows.Input.CursorConverter> がありますが、既定のコンストラクターは公開されていません。このため、<xref:System.Windows.FrameworkElement.Cursor%2A> プロパティは、実際の <xref:System.Windows.Input.Cursor> 型は参照型であるにもかかわらず、属性構文でしか設定できません。  
+ 属性の構文が許可されているオブジェクトの要素を含むプロパティ要素構文が XAML で許可されていないプロパティの例としては、さまざまなプロパティを<xref:System.Windows.Input.Cursor>型です。 <xref:System.Windows.Input.Cursor>クラスには専用の型コンバーター <xref:System.Windows.Input.CursorConverter>、既定のコンス トラクターを公開しないため、<xref:System.Windows.FrameworkElement.Cursor%2A>プロパティのみ設定できます属性構文でも、実際<xref:System.Windows.Input.Cursor>型は参照型です。  
   
-### プロパティごとの型コンバーター  
- プロパティ レベルで型コンバーターを宣言することもできます。  これにより、プロパティの型のオブジェクトをインラインでインスタンス化する "ミニ言語" が実現されます。これは、渡される属性の文字列値を <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A> 操作の入力として適切な型に基づいて処理することによって行われます。  通常XAML でプロパティを設定できるようにするための唯一の手段として便宜上アクセサーを提供するようにします。  ただし、使用する既存の [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] 型に既定のコンストラクターも、属性として割り当てられた型コンバーターも用意されていない場合に、属性の型コンバーターを使用することもできます。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] API では <xref:System.Globalization.CultureInfo> の型を使用する特定のプロパティです。  この場合[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は.NET Framework の以前のバージョンで使用され<xref:System.Globalization.CultureInfo> の型はXAML のプロパティ値として使用するために必要なコンストラクターまたは型レベルの型変換を直接サポートされていませんでしたアドレスの互換性移行のシナリオを実現するために [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] 既存の <xref:System.Globalization.CultureInfo> の型を使用しています。  
+### <a name="per-property-type-converters"></a>プロパティごとに型コンバーター  
+ 代わりに、プロパティ自体は、プロパティ レベルで実行する型コンバーターを宣言する場合があります。 これにより、入力として受信する属性の文字列値を処理することでプロパティ インラインの型のオブジェクトをインスタンス化"ミニ language"、<xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>操作、適切な型に基づきます。 便利なアクセサーを提供するこれは、通常 XAML でのプロパティ設定を有効にする唯一の手段としてにないとします。 ただし、既存を使用する属性の型コンバーターを使用することはも[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]既定のコンス トラクターまたは属性付く型コンバーターのいずれかを指定しない型です。 例を[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]API は、特定のプロパティを<xref:System.Globalization.CultureInfo>型です。 この場合、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 、既存の使用[!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)]<xref:System.Globalization.CultureInfo>より以前のバージョンのフレームワークを使用した互換性と移行のシナリオに対応する型が、<xref:System.Globalization.CultureInfo>型が必要なコンス トラクターをサポートしていませんでしたまたは型レベルに直接で XAML プロパティの値として使用できる型の変換。  
   
- XAML を使用するプロパティを公開するときには常に \(コントロールを作成する場合は特に\)、そのプロパティを依存関係プロパティで補足することを強くお勧めします。  これは <xref:System.Windows.DependencyProperty> のサポートを使用することでパフォーマンスを向上できるためXAML プロセッサの [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] の既存の実装を使用する場合は特に当てはまります。  依存関係プロパティは、XAML でアクセス可能なプロパティに対して期待されるプロパティ システム機能をそのプロパティのために公開します。  これには、アニメーション、データ バインディング、スタイルのサポートなどの機能が含まれます。  詳細については、「[カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)」および「[XAML 読み込みと依存関係プロパティ](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)」を参照してください。  
+ XAML の使用方法のプロパティを公開するときにコントロール作成者の場合に特にする必要があります強く依存関係プロパティを使用してそのプロパティをバックアップします。 既存の使用する場合に特に[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]、XAML プロセッサの実装を使用してパフォーマンスを向上させることができますので<xref:System.Windows.DependencyProperty>バックアップを作成します。 依存関係プロパティには、XAML のアクセス可能なプロパティの予想される、プロパティのプロパティ システムの機能が公開されます。 これには、アニメーション、データ バインディング、およびスタイルのサポートなどの機能が含まれます。 詳細については、次を参照してください。[依存関係プロパティのカスタム](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)と[XAML 読み込みと依存関係プロパティ](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)です。  
   
-### 型コンバーターの作成と割り当て  
- プロパティ型の型変換を提供するためにカスタム <xref:System.ComponentModel.TypeConverter> 派生クラスの作成が必要になることはあります。  XAML の使用をサポートする型コンバーターの派生および作成の手順や、<xref:System.ComponentModel.TypeConverterAttribute> の適用方法については、「[TypeConverters および XAML](../../../../docs/framework/wpf/advanced/typeconverters-and-xaml.md)」を参照してください。  
+### <a name="writing-and-attributing-a-type-converter"></a>作成と実行する型コンバーターを割り当て  
+ 場合によっては、書き込む必要があるカスタム<xref:System.ComponentModel.TypeConverter>プロパティの型の型の変換を提供するクラスを派生します。 派生し、XAML の使用をサポートする型コンバーターを作成する方法および適用する方法について、<xref:System.ComponentModel.TypeConverterAttribute>を参照してください[TypeConverters と XAML](../../../../docs/framework/wpf/advanced/typeconverters-and-xaml.md)です。  
   
 <a name="Requirements_for_Events_of_a_Custom_Class_as_XAML"></a>   
-## カスタム クラスのイベントの XAML イベント ハンドラー属性構文の要件  
- イベントを [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] イベントとして使用できるようにするには、既定のコンストラクターをサポートするクラスか、派生クラスでイベントにアクセスできる抽象クラスで、パブリック イベントとして公開する必要があります。  [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] イベントを[ルーティング イベント](GTMT)として便利に使用できるようにするには、明示的な `add` メソッドと `remove` メソッドを実装する必要があります。それらのメソッドは、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] イベント シグネチャのハンドラーを追加および削除し、それらのハンドラーを <xref:System.Windows.UIElement.AddHandler%2A> メソッドと <xref:System.Windows.UIElement.RemoveHandler%2A> メソッドに転送します。  これらのメソッドは、イベントがアタッチされているインスタンスのルーティング イベント ハンドラー ストアのハンドラーを追加または削除します。  
+## <a name="requirements-for-xaml-event-handler-attribute-syntax-on-events-of-a-custom-class"></a>カスタム クラスのイベントで XAML のイベント ハンドラー属性の構文の要件  
+ として使用できるように、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]イベント、イベントは既定のコンス トラクターをサポートするクラスでイベントをパブリックとして公開する必要がありますか、イベントを派生クラスでアクセスできるクラスを抽象にします。 ルーティングされたイベントで簡単に使用するために、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]イベントを明示的に実装する必要があります`add`と`remove`を追加および用のハンドラーを削除する方法、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]イベントのシグネチャ、にこれらのハンドラーを前後<xref:System.Windows.UIElement.AddHandler%2A>と<xref:System.Windows.UIElement.RemoveHandler%2A>メソッドです。 これらのメソッドを追加またはにイベントが関連付けられているインスタンスにルーティング イベント ハンドラーのストアには、ハンドラーを削除します。  
   
 > [!NOTE]
->  <xref:System.Windows.UIElement.AddHandler%2A> を使用して直接ルーティング イベントのハンドラーを登録し、[ルーティング イベント](GTMT)を公開する [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] イベントを意図的に定義しないようにすることもできます。  これは通常イベントのハンドラーをアタッチする XAML 属性構文を有効にしてクラスがその型の機能は透過的な XAML ビューを提供するためにお勧めできません。  
+>  ハンドラーを使用して、ルーティングされたイベントを直接登録することは<xref:System.Windows.UIElement.AddHandler%2A>は意図的に定義して、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]ルーティング イベントを公開するイベントです。 これは通常、しないでイベントは、ハンドラーをアタッチするため、XAML 属性の構文を有効にしないと、結果として得られるクラスが提供される型の機能の透明度が減少 XAML ビュー。  
   
 <a name="Collection_Properties"></a>   
-## コレクション プロパティの作成  
- コレクション型を受け取るプロパティには、コレクションに追加されるオブジェクトを指定できる XAML 構文があります。  この構文には注目すべき機能が 2 つあります。  
+## <a name="writing-collection-properties"></a>コレクション プロパティの作成  
+ コレクションの種類を取得するプロパティには、コレクションに追加されるオブジェクトを指定することができます XAML 構文があります。 この構文では、2 つの主な機能があります。  
   
--   コレクション オブジェクトとなるオブジェクトをオブジェクト要素構文で指定する必要はありません。  コレクション型を受け取るプロパティを XAML で指定するたびに、そのコレクション型の存在が暗黙的に示されます。  
+-   コレクション オブジェクトであるオブジェクトは、オブジェクトの要素の構文で指定する必要はありません。 コレクション型を受け取る XAML のプロパティを指定するには、そのコレクションの種類の存在は暗黙の型です。  
   
--   マークアップにおけるコレクション プロパティの子要素が処理されると、コレクションのメンバーになります。  通常は、コレクションのメンバーにコードでアクセスするには、`Add` などのリスト\/ディクショナリ メソッドを使用するか、インデクサーを使用します。  ただしXAML  構文はメソッドやインデクサー \(例外をサポートしていません : XAML 2009 はメソッドをサポートできますがXAML 2009 を使用する可能な WPF の使用を制限します ; [XAML 2009 言語機能](../../../../docs/framework/xaml-services/xaml-2009-language-features.md) を参照してください。  コレクションは要素ツリーの構築のためにごく一般的に必要になるため、それらのコレクションを宣言型の XAML で設定するための何らかの方法が必要です。  このため、コレクション プロパティの子要素は、コレクション プロパティ型の値であるコレクションに追加することによって処理されます。  
+-   マークアップでコレクション プロパティの子要素は、コレクションのメンバーに処理されます。 通常は、コレクションのメンバーにコード アクセスは、リストのディクショナリ/メソッドを介して実行など`Add`、またはインデクサーを使用します。 メソッドまたはインデクサーは、XAML 構文でサポートされていません (例外: を参照してください。 XAML 2009 は、メソッドをサポートできますが、XAML 2009 を使用可能な WPF の使用法を制限[XAML 2009 言語機能](../../../../docs/framework/xaml-services/xaml-2009-language-features.md))。 コレクションは、要素のツリーを構築するため、非常に一般的な要件と、何らかの方法を宣言型の XAML でこれらのコレクションを設定する必要があります。 そのため、コレクション プロパティの子要素は、コレクション プロパティの型の値であるコレクションに追加して処理されます。  
   
- .NET Framework XAML サービス実装しコレクション プロパティを構成します。がWPF XAML プロセッサは次のシグネチャを使用します。  プロパティのプロパティ型で次のいずれかを実装する必要があります。  
+ .NET Framework XAML サービス実装であるため、WPF XAML プロセッサは、コレクション プロパティの構成内容を次の定義を使用します。 プロパティのプロパティの型は、次のいずれかで実装する必要があります。  
   
--   <xref:System.Collections.IList> を実装します。  
+-   実装して<xref:System.Collections.IList>です。  
   
--   <xref:System.Collections.IDictionary>、またはこれと同等のジェネリック クラス \(<xref:System.Collections.Generic.IDictionary%602>\) を実装します。  
+-   実装して<xref:System.Collections.IDictionary>または同等のジェネリック (<xref:System.Collections.Generic.IDictionary%602>)。  
   
--   <xref:System.Array> から派生します \(XAML の配列に関する詳細については[x:Array のマークアップ拡張機能](../../../../docs/framework/xaml-services/x-array-markup-extension.md) を参照してください\)。  
+-   派生した<xref:System.Array>(XAML での配列の詳細については、次を参照してください[X:array のマークアップ拡張機能](../../../../docs/framework/xaml-services/x-array-markup-extension.md)。)。  
   
--   <xref:System.Windows.Markup.IAddChild> \([!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] で定義されているインターフェイス\) を実装します。  
+-   実装して<xref:System.Windows.Markup.IAddChild>(インターフェイスによって定義された[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)])。  
   
- これらの型はCLR がオブジェクト グラフを作成すると基になるコレクションに項目を追加するためにXAML プロセッサによって使用される `Add` のメソッドを入力します。  
+ CLR でこれらの型のそれぞれが、`Add`メソッドで、XAML プロセッサによって、オブジェクト グラフを作成するときに、基になるコレクションに項目を追加するために使用します。  
   
 > [!NOTE]
->  `Dictionary` の一般的な `List` とインターフェイスは[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] XAML プロセッサによってコレクション検出では \(<xref:System.Collections.Generic.IList%601> と <xref:System.Collections.Generic.IDictionary%602> はサポートされていません。  一方、<xref:System.Collections.Generic.List%601> クラスおよび <xref:System.Collections.Generic.Dictionary%602> クラスを基本クラスとして使用することはできます。それぞれ、<xref:System.Collections.IList> と <xref:System.Collections.IDictionary> を直接実装しているためです。  
+>  ジェネリック`List`と`Dictionary`インターフェイス (<xref:System.Collections.Generic.IList%601>と<xref:System.Collections.Generic.IDictionary%602>) によってコレクションの検出はサポートされていません、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] XAML プロセッサ。 ただし、使用することができます、<xref:System.Collections.Generic.List%601>を基底クラスとしてクラスを実装するため<xref:System.Collections.IList>直接、または<xref:System.Collections.Generic.Dictionary%602>を基底クラスとして実装するため<xref:System.Collections.IDictionary>直接です。  
   
- コレクションを受け取るプロパティを宣言するときには、その型の新しいインスタンスでそのプロパティ値がどのように初期化されるかに注意する必要があります。  プロパティを依存関係プロパティとして実装しない場合は、コレクション型のコンストラクターを呼び出す補足フィールドを使用できます。  プロパティが依存関係プロパティの場合は、そのコレクション プロパティを既定の型コンストラクターの一部として初期化する必要がある可能性があります。  これは、依存関係プロパティはメタデータから既定値を受け取りますが、コレクション プロパティの初期値は、通常、共有された静的コレクションにはしないためです。  包含型のインスタンスごとにコレクション インスタンスが必要です。  詳細については、「[カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)」を参照してください。  
+ コレクションを受け取るプロパティを宣言する場合は、そのプロパティ値を型の新しいインスタンスを初期化する方法について注意します。 依存関係プロパティとしてプロパティを実装していない場合は、コレクション型のコンス トラクターを呼び出すバッキング フィールドを使用してプロパティを持つ十分です。 プロパティが依存関係プロパティの場合は、既定の型コンス トラクターの一部として、コレクション プロパティを初期化する必要があります。 これは依存関係プロパティのメタデータから既定値は、通常たくない、静的で共有のコレクションであるコレクション プロパティの初期値です。 包含型のインスタンスごとに、コレクション インスタンスを設定する必要があります。 詳細については、「[カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)」を参照してください。  
   
- コレクション プロパティにカスタム コレクション型を実装することもできます。  暗黙的なコレクション プロパティとして扱われるため、カスタム コレクション型では既定のコンストラクターを用意する必要はありません。既定のコンストラクターがなくても、XAML で暗黙的に使用できます。  ただし、コレクション型の既定のコンストラクターを用意することもできます。  これを実行することで、  既定のコンストラクターを用意しないと、そのコレクションをオブジェクト要素として明示的に宣言できない場合に役立てることができます。  マークアップ スタイルの問題から明示的なコレクションが好まれることもあります。  また、既定のコンストラクターを用意すると、そのコレクション型をプロパティ値として使用する新しいオブジェクトを作成するときの初期化要件が単純化されます。  
+ コレクション プロパティにカスタム コレクション型を実装することができます。 暗黙的なコレクション プロパティの処理のため、カスタム コレクション型は XAML で暗黙的に使用するために既定のコンス トラクターを提供するには必要ありません。 ただし、コレクション型の既定のコンス トラクターを必要に応じて指定できます。 指定できます。 既定のコンス トラクターを用意する場合を除き、オブジェクト要素としてコレクションを明示的に宣言することはできません。 一部のマークアップの作成者たいマークアップ スタイルの問題として、明示的なコレクションを参照してください。 既定のコンス トラクターは、プロパティ値としてコレクション型の型を使用する新しいオブジェクトを作成するときに、初期化要件を簡略化できます。  
   
 <a name="XAMLCONtent"></a>   
-## XAML コンテンツ プロパティの宣言  
- XAML 言語で [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] のコンテンツ プロパティの概念を定義します。  オブジェクト構文で使用できる各クラスは、XAML コンテンツ プロパティを 1 つだけ持つことができます。  プロパティをクラスの XAML コンテンツ プロパティとして宣言するには、クラス定義の一部として <xref:System.Windows.Markup.ContentPropertyAttribute> を適用し、  目的の XAML コンテンツ プロパティの名前をその属性の <xref:System.Windows.Markup.ContentPropertyAttribute.Name%2A> として指定します。  プロパティは文字列でない <xref:System.Reflection.PropertyInfo> などのリフレクションの構造体として名前を指定します。  
+## <a name="declaring-xaml-content-properties"></a>XAML コンテンツ プロパティを宣言します。  
+ XAML 言語の概念を定義する、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]コンテンツ プロパティです。 オブジェクトの構文では使用する各クラスには、ただ 1 つの XAML コンテンツ プロパティを持つことができます。 クラスの XAML コンテンツ プロパティであるプロパティを宣言するには、適用、<xref:System.Windows.Markup.ContentPropertyAttribute>クラス定義の一部として。 としての目的の XAML コンテンツ プロパティの名前を指定、<xref:System.Windows.Markup.ContentPropertyAttribute.Name%2A>属性にします。 プロパティは文字列として指定、名前でリフレクション コンストラクトではなくなど<xref:System.Reflection.PropertyInfo>です。  
   
- コレクション プロパティを XAML コンテンツ プロパティとして指定することもできます。  この結果、そのプロパティの使用方法で、コレクション オブジェクト要素やプロパティ要素のタグを間にはさまずに、オブジェクト要素に 1 つ以上の子要素を持たせることができます。  それらの要素は XAML コンテンツ プロパティの値として扱われ、対応するコレクション インスタンスに追加されます。  
+ XAML コンテンツ プロパティであるコレクション プロパティを指定することができます。 これは、結果、オブジェクト要素が介在するコレクション オブジェクトの要素またはプロパティ要素タグを行わなくても、1 つまたは複数の子要素を持つ、そのプロパティの使用率。 これらの要素は、XAML コンテンツ プロパティの値として扱われます、バッキング コレクション インスタンスに追加します。  
   
- 既存の XAML コンテンツ プロパティはプロパティ型を使用します `Object`。  この場合、XAML コンテンツ プロパティで、<xref:System.String> などのプリミティブ値も、1 つの参照オブジェクト値も受け取ることができます。  このモデルに従う場合は、型の判定や使用できる型の処理をその型で行う必要があります。  <xref:System.Object> コンテンツ タイプは一般に、オブジェクト コンテンツを文字列として追加する単純な手段と \(既定のプレゼンテーションが適用されます\)、既定以外のプレゼンテーションまたは追加データを指定するオブジェクト コンテンツを追加する高度な手段の両方をサポートする場合に使用されます。  
+ いくつかの既存の XAML コンテンツ プロパティのプロパティの型を使用して`Object`です。 これにより、XAML コンテンツなどのプリミティブが実行できるプロパティ値、<xref:System.String>だけでなく、1 つの参照オブジェクトの値を取得します。 このモデルを実行する場合、型は型の判定と使用可能な型の処理を担当になります。 一般的な理由、<xref:System.Object>コンテンツの型を文字列として (既定のプレゼンテーションの処理方法を受け取ります)、オブジェクトのコンテンツを追加する、両方の簡単な手段をサポートするか、または高度な手段を追加するオブジェクトの既定以外のプレゼンテーションを指定するコンテンツまたは追加のデータ。  
   
 <a name="Serializing"></a>   
-## XAML のシリアル化  
- 一部のシナリオではなどのコントロールを作成する場合などXAML  でインスタンス化できるオブジェクト表現も同等の XAML マークアップによってシリアル化できるようにする必要があります。  シリアル化の要件については、ここでは説明しません。  詳細については、「[コントロールの作成の概要](../../../../docs/framework/wpf/controls/control-authoring-overview.md)」および「[要素のツリーおよびシリアル化](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)」を参照してください。  
+## <a name="serializing-xaml"></a>XAML シリアル化します。  
+ 場合など、特定のシナリオをコントロールの作成者は、XAML でインスタンス化できる任意のオブジェクト表現は、同等の XAML マークアップにもシリアル化できるようにすることもできます。 シリアル化の要件は、このトピックでは説明しません。 参照してください[作成の概要を制御](../../../../docs/framework/wpf/controls/control-authoring-overview.md)と[要素ツリーおよびシリアル化](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)です。  
   
-## 参照  
- [XAML の概要 \(WPF\)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)   
- [カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)   
- [コントロールの作成の概要](../../../../docs/framework/wpf/controls/control-authoring-overview.md)   
- [基本要素の概要](../../../../docs/framework/wpf/advanced/base-elements-overview.md)   
+## <a name="see-also"></a>関連項目  
+ [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
+ [カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
+ [コントロールの作成の概要](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  
+ [基本要素の概要](../../../../docs/framework/wpf/advanced/base-elements-overview.md)  
  [XAML 読み込みと依存関係プロパティ](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)

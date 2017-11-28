@@ -1,52 +1,56 @@
 ---
-title: "GDI+ でのベジエ スプライン | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ベジエ スプライン"
-  - "GDI+, ベジエ スプライン"
-  - "スプライン, ベジエ"
+title: "B &#233; ベジエ スプライン GDI + で"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Bezier splines
+- splines [Windows Forms], Bezier
+- GDI+, Bezier splines
 ms.assetid: 5774ce1e-87d4-4bc7-88c4-4862052781b8
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 52cead578ad03052b5734c5b7a5b5a897dd48732
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# GDI+ でのベジエ スプライン
-ベジエ スプラインは、4 つの点、つまり 2 つのエンドポイント \(p1 と p2\) と 2 つの制御点 \(c1 と c2\) によって指定される曲線です。  曲線は p1 で開始され、p2 で終了します。  この曲線は制御点を通過しません。しかし、制御点は磁石のような役割を果たし、曲線を特定の方向に引っ張って曲線の曲がり方を制御します。  ベジエ曲線およびそのエンドポイントと制御点を次の図に示します。  
+# <a name="b233zier-splines-in-gdi"></a>B &#233; ベジエ スプライン GDI + で
+ベジエ スプラインは、4 つのポイントで指定された曲線: 次の 2 つの終点 (p1 と p2) と 2 つの制御ポイント (c1 と c2)。 曲線では、p1 で開始され、p2 で終了します。 コントロール ポイントを曲線が通過しませんが、管理ポイントが磁石、特定の方向に曲線をプルし、曲線曲がる方法に影響を与えるとして機能します。 次の図は、およびそのエンドポイントとの制御点のベジエ曲線を示します。  
   
- ![ベジエ スプライン](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art11a.png "Aboutgdip02\_art11a")  
+ ![ベジエ スプライン](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art11a.gif "Aboutgdip02_art11a")  
   
- 曲線は p1 で開始され、制御点 c1 に向かって移動します。  p1 における曲線の接線は、p1 と c1 を結ぶ直線です。  エンドポイント p2 における接線は、c2 と p2 を結ぶ直線です。  
+ 曲線では、p1 で開始し、制御ポイント c1 に向かって移動します。 P1 における曲線接線は、c1 を p1 から描画される直線です。 エンドポイント p2 における接線は、c2 から p2 に描画される直線です。  
   
-## ベジエ スプラインの描画  
- ベジエ スプラインを描画するには、<xref:System.Drawing.Graphics> クラスのインスタンスと <xref:System.Drawing.Pen> が必要です。  <xref:System.Drawing.Graphics> クラスのインスタンスは <xref:System.Drawing.Graphics.DrawBezier%2A> メソッドを提供し、<xref:System.Drawing.Pen> は曲線を描画するために使用される線の幅や色などの属性を格納します。  <xref:System.Drawing.Pen> は、引数の 1 つとして <xref:System.Drawing.Graphics.DrawBezier%2A> メソッドに渡されます。  <xref:System.Drawing.Graphics.DrawBezier%2A> メソッドに渡される他の引数は、エンドポイントと制御点です。  開始点 \(0, 0\)、制御点 \(40, 20\) および \(80, 150\)、終了点 \(100, 10\) のベジエ スプラインを描画する例を次に示します。  
+## <a name="drawing-bzier-splines"></a>ベジエ スプラインを描画します。  
+ ベジエ スプラインを描画する必要がありますのインスタンス、<xref:System.Drawing.Graphics>クラスおよび<xref:System.Drawing.Pen>です。 インスタンス、<xref:System.Drawing.Graphics>クラスを提供、<xref:System.Drawing.Graphics.DrawBezier%2A>メソッド、および<xref:System.Drawing.Pen>曲線を表示するために使用する線の色、幅などの属性を格納します。 <xref:System.Drawing.Pen>への引数の 1 つとして渡される、<xref:System.Drawing.Graphics.DrawBezier%2A>メソッドです。 残りの引数が渡される、<xref:System.Drawing.Graphics.DrawBezier%2A>メソッドは、エンドポイントとの制御点。 次の例は、開始位置 (0, 0) のベジエ スプラインを描画コントロール ポイント (40, 20) と (80、150)、および終了位置 (100, 10)。  
   
  [!code-csharp[LinesCurvesAndShapes#71](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#71)]
  [!code-vb[LinesCurvesAndShapes#71](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#71)]  
   
- 曲線、制御点、および 2 つの接線を次の図に示します。  
+ 次の図は、曲線、コントロール ポイント、および 2 つの接線を示します。  
   
- ![ベジエ スプライン](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art12.png "Aboutgdip02\_art12")  
+ ![ベジエ スプライン](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art12.gif "Aboutgdip02_art12")  
   
- ベジエ スプラインは、自動車業界向けのデザイン用に Pierre Bézier 氏によって開発されました。  それ以降、ベジエ スプラインはコンピューター支援設計のさまざまな用途で利用できることが実証され、フォントのアウトラインの定義にも使用されています。  ベジエ スプラインで作成できるさまざまな図形のいくつかを次の図に示します。  
+ ベジエ スプラインは、自動車の業界でデザインもともとサンピエール ベジエによって開発されました。 さまざまな種類のコンピューター支援設計で利用できることがわかっていますので、フォントの輪郭の定義にも使用されます。 ベジエ スプラインことで得られるさまざまな図形を次の図のうち一部を示しています。  
   
- ![パス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art13.png "Aboutgdip02\_art13")  
+ ![パス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art13.gif "Aboutgdip02_art13")  
   
-## 参照  
- <xref:System.Drawing.Graphics?displayProperty=fullName>   
- <xref:System.Drawing.Pen?displayProperty=fullName>   
- [直線、曲線、および図形](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)   
- [曲線の作成と描画](../../../../docs/framework/winforms/advanced/constructing-and-drawing-curves.md)   
- [方法 : 描画する Graphics オブジェクトを作成する](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)   
- [方法 : ペンを作成する](../../../../docs/framework/winforms/advanced/how-to-create-a-pen.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Drawing.Graphics?displayProperty=nameWithType>  
+ <xref:System.Drawing.Pen?displayProperty=nameWithType>  
+ [直線、曲線、および図形](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
+ [曲線の作成と描画](../../../../docs/framework/winforms/advanced/constructing-and-drawing-curves.md)  
+ [方法: 描画する Graphics オブジェクトを作成する](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)  
+ [方法: ペンを作成する](../../../../docs/framework/winforms/advanced/how-to-create-a-pen.md)

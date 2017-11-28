@@ -5,25 +5,27 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
 helpviewer_keywords:
 - assemblies [.NET Framework], attributes
 - assembly binding, attributes
 - assembly manifest, attributes
 ms.assetid: 36a98a81-b5b5-4c19-912a-11f91eff7f4e
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 0683ee1e79d9e5fd9bef7af3b6b85dd5a58c3845
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 53dcff7fea0f2a751574d470031b56697e76447d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="setting-assembly-attributes"></a>アセンブリ属性の設定
 アセンブリの属性は、アセンブリに関する情報を提供する値です。 属性は、次のような情報に分類されます。  
@@ -45,11 +47,13 @@ ms.lasthandoff: 07/28/2017
 |---------------------------------|-----------------|  
 |<xref:System.Reflection.AssemblyCultureAttribute>|アセンブリがサポートするカルチャを示す列挙フィールド。 アセンブリがカルチャに依存しないように指定することもできます。その場合は、アセンブリが既定のカルチャのリソースを格納することを意味します。 **注:** ランタイムは、カルチャ属性が null に設定されていないすべてのアセンブリを、サテライト アセンブリとして扱います。 そのようなアセンブリには、サテライト アセンブリ バインディング規則が適用されます。 詳細については、「 [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)」を参照してください。|  
 |<xref:System.Reflection.AssemblyFlagsAttribute>|アセンブリを並列で実行できるかどうかなどのアセンブリ属性を設定する値。|  
-|<xref:System.Reflection.AssemblyVersionAttribute>|*major*.*minor*.*build*.*revision* 形式の数値 (たとえば、2.4.0.0)。 共通言語ランタイムは、この値を使用して、厳密な名前付きアセンブリでのバインディング操作を実行します。 **注:** <xref:System.Reflection.AssemblyInformationalVersionAttribute> 属性がアセンブリに適用されない場合、<xref:System.Reflection.AssemblyVersionAttribute> 属性によって指定されたバージョン番号が <xref:System.Windows.Forms.Application.ProductVersion%2A?displayProperty=fullName>、<xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=fullName>、および <xref:System.Windows.Forms.Application.UserAppDataRegistry%2A?displayProperty=fullName> の各プロパティで使用されます。|  
+|<xref:System.Reflection.AssemblyVersionAttribute>|*major*.*minor*.*build*.*revision* 形式の数値 (たとえば、2.4.0.0)。 共通言語ランタイムは、この値を使用して、厳密な名前付きアセンブリでのバインディング操作を実行します。 **注:** <xref:System.Reflection.AssemblyInformationalVersionAttribute> 属性がアセンブリに適用されない場合、<xref:System.Reflection.AssemblyVersionAttribute> 属性によって指定されたバージョン番号が <xref:System.Windows.Forms.Application.ProductVersion%2A?displayProperty=nameWithType>、<xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType>、および <xref:System.Windows.Forms.Application.UserAppDataRegistry%2A?displayProperty=nameWithType> の各プロパティで使用されます。|  
   
  バージョン属性とカルチャ属性をアセンブリに適用する方法を次のコード例で示します。  
   
- [!code-cpp[AssemblyDelaySignAttribute#3](../../../samples/snippets/cpp/VS_Snippets_CLR/AssemblyDelaySignAttribute/cpp/source2.cpp#3)] [!code-csharp[AssemblyDelaySignAttribute#3](../../../samples/snippets/csharp/VS_Snippets_CLR/AssemblyDelaySignAttribute/cs/source2.cs#3)] [!code-vb[AssemblyDelaySignAttribute#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyDelaySignAttribute/vb/source2.vb#3)]  
+ [!code-cpp[AssemblyDelaySignAttribute#3](../../../samples/snippets/cpp/VS_Snippets_CLR/AssemblyDelaySignAttribute/cpp/source2.cpp#3)]
+ [!code-csharp[AssemblyDelaySignAttribute#3](../../../samples/snippets/csharp/VS_Snippets_CLR/AssemblyDelaySignAttribute/cs/source2.cs#3)]
+ [!code-vb[AssemblyDelaySignAttribute#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyDelaySignAttribute/vb/source2.vb#3)]  
   
 ## <a name="informational-attributes"></a>情報属性  
  情報属性は、追加の会社情報または製品情報をアセンブリに指定する場合に使用できます。 アセンブリに適用できる情報属性について、次の表で説明します。  
@@ -59,7 +63,7 @@ ms.lasthandoff: 07/28/2017
 |<xref:System.Reflection.AssemblyCompanyAttribute>|会社名を指定する文字列値。|  
 |<xref:System.Reflection.AssemblyCopyrightAttribute>|著作権情報を指定する文字列値。|  
 |<xref:System.Reflection.AssemblyFileVersionAttribute>|Win32 ファイル バージョン番号を指定する文字列値。 通常、この属性の既定値はアセンブリ バージョンです。|  
-|<xref:System.Reflection.AssemblyInformationalVersionAttribute>|完全な製品バージョン番号など、共通言語ランタイムによって使用されないバージョン情報を指定する文字列値。 **注:** この属性をアセンブリに適用した場合は、<xref:System.Windows.Forms.Application.ProductVersion%2A?displayProperty=fullName> プロパティを使用して、この属性で指定された文字列を実行時に取得できます。 この文字列は、<xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=fullName> プロパティと <xref:System.Windows.Forms.Application.UserAppDataRegistry%2A?displayProperty=fullName> プロパティによって提供されるパスとレジストリ キーにも使用されます。|  
+|<xref:System.Reflection.AssemblyInformationalVersionAttribute>|完全な製品バージョン番号など、共通言語ランタイムによって使用されないバージョン情報を指定する文字列値。 **注:** この属性をアセンブリに適用した場合は、<xref:System.Windows.Forms.Application.ProductVersion%2A?displayProperty=nameWithType> プロパティを使用して、この属性で指定された文字列を実行時に取得できます。 この文字列は、<xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> プロパティと <xref:System.Windows.Forms.Application.UserAppDataRegistry%2A?displayProperty=nameWithType> プロパティによって提供されるパスとレジストリ キーにも使用されます。|  
 |<xref:System.Reflection.AssemblyProductAttribute>|製品情報を指定する文字列値。|  
 |<xref:System.Reflection.AssemblyTrademarkAttribute>|商標情報を指定する文字列値。|  
   
@@ -86,9 +90,10 @@ ms.lasthandoff: 07/28/2017
   
  次のコード例では、遅延署名を使用し、公開キー ファイル `myKey.snk`を使用する厳密な名前付きアセンブリを作成する場合に適用する属性を示します。  
   
- [!code-cpp[AssemblyDelaySignAttribute#4](../../../samples/snippets/cpp/VS_Snippets_CLR/AssemblyDelaySignAttribute/cpp/source2.cpp#4)] [!code-csharp[AssemblyDelaySignAttribute#4](../../../samples/snippets/csharp/VS_Snippets_CLR/AssemblyDelaySignAttribute/cs/source2.cs#4)] [!code-vb[AssemblyDelaySignAttribute#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyDelaySignAttribute/vb/source2.vb#4)]  
+ [!code-cpp[AssemblyDelaySignAttribute#4](../../../samples/snippets/cpp/VS_Snippets_CLR/AssemblyDelaySignAttribute/cpp/source2.cpp#4)]
+ [!code-csharp[AssemblyDelaySignAttribute#4](../../../samples/snippets/csharp/VS_Snippets_CLR/AssemblyDelaySignAttribute/cs/source2.cs#4)]
+ [!code-vb[AssemblyDelaySignAttribute#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyDelaySignAttribute/vb/source2.vb#4)]  
   
 ## <a name="see-also"></a>関連項目  
- [アセンブリの作成](../../../docs/framework/app-domains/create-assemblies.md)   
+ [アセンブリの作成](../../../docs/framework/app-domains/create-assemblies.md)  
  [アセンブリを使用したプログラミング](../../../docs/framework/app-domains/programming-with-assemblies.md)
-

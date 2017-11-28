@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - assemblies [.NET Framework], global assembly cache
 - global assembly cache, viewing contents
@@ -30,16 +24,15 @@ helpviewer_keywords:
 - global assembly cache, Gacutil.exe
 - Global Assembly Cache tool
 ms.assetid: 4c7be9c8-72ae-481f-a01c-1a4716806e99
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 90c8a2467d48a45fe333cd07e34bca5ecfa5d727
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a42ef6cc2a1418c5071f94f4c8a7497a8701a73a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="gacutilexe-global-assembly-cache-tool"></a>Gacutil.exe (グローバル アセンブリ キャッシュ ツール)
 グローバル アセンブリ キャッシュ ツールを使用すると、グローバル アセンブリ キャッシュとダウンロード キャッシュの内容を表示および操作できます。  
@@ -66,7 +59,7 @@ gacutil [options] [assemblyName | assemblyPath | assemblyListFile]
 |------------|-----------------|  
 |**/cdl**|ダウンロード キャッシュの内容を削除します。|  
 |**/f**|このオプションを **/i** オプションまたは **/il** オプションと共に使用して、アセンブリを強制的に再インストールします。 同じ名前のアセンブリがグローバル アセンブリ キャッシュに既に存在する場合、既存のアセンブリは上書きされます。|  
-|**/h**[**elp**]|このツールのコマンド構文とオプションを表示します。|  
+|**/h****[elp]**|このツールのコマンド構文とオプションを表示します。|  
 |**/i** *assemblyPath*|アセンブリをグローバル アセンブリ キャッシュにインストールします。|  
 |**/if**  *assemblyPath*|アセンブリをグローバル アセンブリ キャッシュにインストールします。 同じ名前のアセンブリがグローバル アセンブリ キャッシュに既に存在する場合、既存のアセンブリは上書きされます。<br /><br /> このオプションを指定するのは、**/i** オプションと **/f** オプションを一緒に指定するのと同じです。|  
 |**/il** *assemblyListFile*|*assemblyListFile* で指定された 1 つ以上のアセンブリをグローバル アセンブリ キャッシュにインストールします。|  
@@ -80,7 +73,7 @@ gacutil [options] [assemblyName | assemblyPath | assemblyListFile]
 |**/u**  *assemblyName*|アセンブリをグローバル アセンブリ キャッシュからアンインストールします。|  
 |**/uf**  *assemblyName*|指定したアセンブリへのすべての参照を削除して、アセンブリを強制的にアンインストールします。<br /><br /> このオプションを指定するのは、**/u** オプションと **/f** オプションを一緒に指定するのと同じです。 **注:** このオプションを使用しても、Microsoft Windows インストーラーを使用してインストールされたアセンブリを削除することはできません。 削除しようとすると、エラー メッセージが表示されます。|  
 |**/ul** *assemblyListFile*|*assemblyListFile* で指定された 1 つ以上のアセンブリをグローバル アセンブリ キャッシュからアンインストールします。|  
-|**/u**[**ngen**] *assemblyName*|指定したアセンブリをグローバル アセンブリ キャッシュからアンインストールします。 指定したアセンブリが既存の参照カウントを持っている場合、参照カウントは表示されますが、アセンブリはグローバル アセンブリ キャッシュから削除されません。 **注:** .NET Framework Version 2.0 では、`/ungen` はサポートされていません。 代わりに、[Ngen.exe (ネイティブ イメージ ジェネレーター)](../../../docs/framework/tools/ngen-exe-native-image-generator.md)の `uninstall` コマンドを使用します。 <br /><br /> .NET Framework Version 1.0 と 1.1 で **/ungen** を指定すると、Gacutil.exe はネイティブ イメージ キャッシュからアセンブリを削除します。 このキャッシュは、[Ngen.exe (ネイティブ イメージ ジェネレーター)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) を使用して作成したアセンブリのネイティブ イメージを格納します。|  
+|**/u****[ngen]** *assemblyName*|指定したアセンブリをグローバル アセンブリ キャッシュからアンインストールします。 指定したアセンブリが既存の参照カウントを持っている場合、参照カウントは表示されますが、アセンブリはグローバル アセンブリ キャッシュから削除されません。 **注:** .NET Framework Version 2.0 では、`/ungen` はサポートされていません。 代わりに、[Ngen.exe (ネイティブ イメージ ジェネレーター)](../../../docs/framework/tools/ngen-exe-native-image-generator.md)の `uninstall` コマンドを使用します。 <br /><br /> .NET Framework Version 1.0 と 1.1 で **/ungen** を指定すると、Gacutil.exe はネイティブ イメージ キャッシュからアセンブリを削除します。 このキャッシュは、[Ngen.exe (ネイティブ イメージ ジェネレーター)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) を使用して作成したアセンブリのネイティブ イメージを格納します。|  
 |**/ur**  *assemblyName*<br /><br /> *scheme*<br /><br /> *id*<br /><br /> *description*|指定したアセンブリへの参照をグローバル アセンブリ キャッシュからアンインストールします。 アセンブリへの参照を削除するには、アセンブリをインストールしたときに **/i** オプションおよび **/r** (または **/ir**) オプションと共に指定したのと同じ *scheme*、*id* および *description* の各パラメーターを指定する必要があります。 これらのパラメーターとして指定できる有効な値については、**/r** オプションを参照してください。<br /><br /> このオプションを指定するのは、**/u** オプションと **/r** オプションを一緒に指定するのと同じです。|  
 |**/?**|このツールのコマンド構文とオプションを表示します。|  
   
@@ -165,8 +158,7 @@ gacutil /l
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [ツール](../../../docs/framework/tools/index.md)   
- [グローバル アセンブリ キャッシュ](../../../docs/framework/app-domains/gac.md)   
- [Regasm.exe (アセンブリ登録ツール)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md)   
+ [ツール](../../../docs/framework/tools/index.md)  
+ [グローバル アセンブリ キャッシュ](../../../docs/framework/app-domains/gac.md)  
+ [Regasm.exe (アセンブリ登録ツール)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md)  
  [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
-

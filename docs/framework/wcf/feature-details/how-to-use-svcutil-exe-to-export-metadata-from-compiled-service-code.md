@@ -1,34 +1,37 @@
 ---
-title: "方法 : Svcutil.exe を使用してコンパイル済みのサービス コードからメタデータをエクスポートする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : Svcutil.exe を使用してコンパイル済みのサービス コードからメタデータをエクスポートする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 95d0aed3-16a2-4398-89bb-39418eeb7355
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 444fab903683b952d1a8c312c3f6032be880da68
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Svcutil.exe を使用してコンパイル済みのサービス コードからメタデータをエクスポートする
+# <a name="how-to-use-svcutilexe-to-export-metadata-from-compiled-service-code"></a>方法 : Svcutil.exe を使用してコンパイル済みのサービス コードからメタデータをエクスポートする
 Svcutil.exe は、次のように、コンパイル済みアセンブリのサービス、コントラクト、およびデータ型のメタデータをエクスポートできます。  
   
--   Svcutil.exe を使用して、アセンブリのセットに対するすべてのコンパイル済みサービス コントラクトのメタデータをエクスポートするには、入力パラメーターとして各アセンブリを指定します。これが既定の動作です。  
+-   Svcutil.exe を使用して、アセンブリのセットに対するすべてのコンパイル済みサービス コントラクトのメタデータをエクスポートするには、入力パラメーターとして各アセンブリを指定します。 これが既定の動作です。  
   
--   Svcutil.exe を使用して、コンパイル済みサービスのメタデータをエクスポートするには、入力パラメーターとしてサービス アセンブリを指定します。`/serviceName` オプションを使用して、エクスポートするサービスの構成名を指定する必要があります。Svcutil.exe を実行すると、指定した実行可能アセンブリの構成ファイルが自動的に読み込まれます。  
+-   Svcutil.exe を使用して、コンパイル済みサービスのメタデータをエクスポートするには、入力パラメーターとしてサービス アセンブリを指定します。 `/serviceName` オプションを使用して、エクスポートするサービスの構成名を指定する必要があります。 Svcutil.exe を実行すると、指定した実行可能アセンブリの構成ファイルが自動的に読み込まれます。  
   
 -   アセンブリ セットのすべてのデータ コントラクト型をエクスポートするには、`/dataContractOnly` オプションを使用します。  
   
 > [!NOTE]
 >  `/reference` オプションを使用して、任意の依存アセンブリへのファイル パスを指定してください。  
   
-### コンパイル済みサービス コントラクトのメタデータをエクスポートするには  
+### <a name="to-export-metadata-for-compiled-service-contracts"></a>コンパイル済みサービス コントラクトのメタデータをエクスポートするには  
   
 1.  サービス コントラクトの実装を 1 つ以上のクラス ライブラリにコンパイルします。  
   
@@ -41,13 +44,13 @@ Svcutil.exe は、次のように、コンパイル済みアセンブリのサ�
     svcutil.exe Contracts.dll  
     ```  
   
-### コンパイル済みサービスのメタデータをエクスポートするには  
+### <a name="to-export-metadata-for-a-compiled-service"></a>コンパイル済みサービスのメタデータをエクスポートするには  
   
 1.  サービスの実装を実行可能アセンブリにコンパイルします。  
   
 2.  サービス実行可能ファイルの構成ファイルを作成し、サービス構成を追加します。  
   
-    ```  
+    ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
     <configuration>  
       <system.serviceModel>  
@@ -69,7 +72,7 @@ Svcutil.exe は、次のように、コンパイル済みアセンブリのサ�
     svcutil.exe /serviceName:MyService Service.exe /reference:path/Contracts.dll  
     ```  
   
-### コンパイル済みデータ コントラクトのメタデータをエクスポートするには  
+### <a name="to-export-metadata-for-compiled-data-contracts"></a>コンパイル済みデータ コントラクトのメタデータをエクスポートするには  
   
 1.  データ コントラクトの実装を 1 つ以上のクラス ライブラリにコンパイルします。  
   
@@ -82,7 +85,7 @@ Svcutil.exe は、次のように、コンパイル済みアセンブリのサ�
     svcutil.exe /dataContractOnly Contracts.dll  
     ```  
   
-## 使用例  
+## <a name="example"></a>例  
  単純なサービス実装および構成のメタデータを生成する方法を次の例に示します。  
   
  サービス コントラクトのメタデータをエクスポートするには、次のように指定します。  
@@ -167,9 +170,8 @@ public class MyService : IPersonFinder
     </services>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
-## 参照  
- [ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)   
- [メタデータのエクスポートとインポート](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)
+## <a name="see-also"></a>関連項目  
+ [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)  
+ [エクスポートして、メタデータのインポート](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)

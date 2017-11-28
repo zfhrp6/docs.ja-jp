@@ -10,14 +10,12 @@ ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.devlang: csharp
 ms.assetid: 87e93838-a363-4813-b859-7356023d98ed
+ms.openlocfilehash: 6cdc4eb0d0fea93b5210532210ad0c928e35a7a5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5585db33fb5020ed18c26f32ce0b63f97353d20f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="microservices-hosted-in-docker"></a>Docker でホストされているマイクロサービス
 
 ## <a name="introduction"></a>はじめに
@@ -94,6 +92,7 @@ Dotnet restore では NuGet パッケージ マネージャーを使用して、
 ```console
 dotnet build
 ```
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
 アプリケーションをビルドしたら、それをコマンドラインから実行します。
 
@@ -140,7 +139,7 @@ Project.json には、プロジェクトに関する情報が格納されてい�
 
 ラムダ式の引数は、要求の `HttpContext` です。 そのプロパティの 1 つは `Request` オブジェクトです。 `Request` オブジェクトには `Query` プロパティが含まれており、このプロパティには、要求のクエリ文字列のすべての値のディクショナリが含まれています。 最初に追加するのは、緯度の値と経度の値の検索です。
 
-[!code-csharp[ReadQueryString](../../../samples/csharp/getting-started/WeatherMicroservice/Startup.cs#ReadQueryString "クエリ文字列から変数を読み取る")]
+[!code-csharp[ReadQueryString](../../../samples/csharp/getting-started/WeatherMicroservice/Startup.cs#ReadQueryString "read variables from the query string")]
 
 クエリのディクショナリ値は `StringValue` 型です。 その型には、文字列のコレクションを含めることができます。 この天気予報サービスでは、各値は 1 つの文字列です。 そのために、上記のコードには `FirstOrDefault()` への呼び出しが含まれています。 
 
@@ -156,17 +155,17 @@ bool TryParse(string s, out double result);
 
 拡張メソッドは静的メソッドとして定義されますが、最初のパラメーターに `this` 修飾子を追加することにより、そのクラスのメンバーとして呼び出すことができます。 拡張メソッドは、静的クラスでのみ定義できます。 解析の拡張メソッドを含むクラスの定義を次に示します。
 
-[!code-csharp[TryParseExtension](../../../samples/csharp/getting-started/WeatherMicroservice/Extensions.cs#TryParseExtension "null 許容への解析を試行")]
+[!code-csharp[TryParseExtension](../../../samples/csharp/getting-started/WeatherMicroservice/Extensions.cs#TryParseExtension "try parse to a nullable")]
 
 `default(double?)` 式は、`double?` 型の既定値を返します。 既定値は null 値 (値なし) です。
 
 この拡張メソッドを使用して、クエリ文字列の引数を double 型に変換することができます。
 
-[!code-csharp[UseTryParse](../../../samples/csharp/getting-started/WeatherMicroservice/Startup.cs#UseTryParse "try parse 拡張メソッドの使用")]
+[!code-csharp[UseTryParse](../../../samples/csharp/getting-started/WeatherMicroservice/Startup.cs#UseTryParse "Use the try parse extension method")]
 
 解析コードを簡単にテストするために、引数の値が含まれるように応答を更新します。
 
-[!code-csharp[WriteResponse](../../../samples/csharp/getting-started/WeatherMicroservice/Startup.cs#WriteResponse "出力応答を書き込む")]
+[!code-csharp[WriteResponse](../../../samples/csharp/getting-started/WeatherMicroservice/Startup.cs#WriteResponse "Write the output response")]
 
 この時点で、Web アプリケーションを実行して、解析コードが機能しているかどうかを確認することができます。 ブラウザーで Web 要求に値を追加すると、更新された結果が表示されます。
 
@@ -196,11 +195,11 @@ public class WeatherReport
 
 次に、これらの値をランダムに設定するコンストラクターを構築します。 このコンストラクターは、緯度と経度の値を使用して乱数ジェネレーターに値を設定します。 つまり同じ場所の予報は同じということになります。 緯度と経度の引数を変更すると、異なる予報が得られます (異なる値を与えたため)。
 
-[!code-csharp[WeatherReportConstructor](../../../samples/csharp/getting-started/WeatherMicroservice/WeatherReport.cs#WeatherReportConstructor "天気予報コンストラクター")]
+[!code-csharp[WeatherReportConstructor](../../../samples/csharp/getting-started/WeatherMicroservice/WeatherReport.cs#WeatherReportConstructor "Weather Report Constructor")]
 
 これで、応答メソッドで 5 日間の予報を生成できるようになりました。
 
-[!code-csharp[GenerateRandomReport](../../../samples/csharp/getting-started/WeatherMicroservice/Startup.cs#GenerateRandomReport "ランダムな天気予報の生成")]
+[!code-csharp[GenerateRandomReport](../../../samples/csharp/getting-started/WeatherMicroservice/Startup.cs#GenerateRandomReport "Generate a random weather report")]
 
 ### <a name="build-the-json-response"></a>JSON 応答の構築
 
@@ -212,7 +211,7 @@ dotnet add package Newtonsoft.Json
 
 すると、`JsonConvert` クラスを使用して、文字列にオブジェクトを書き込めるようになります。
 
-[!code-csharp[ConvertToJson](../../../samples/csharp/getting-started/WeatherMicroservice/Startup.cs#ConvertToJSON "オブジェクトを JSON に変換")]
+[!code-csharp[ConvertToJson](../../../samples/csharp/getting-started/WeatherMicroservice/Startup.cs#ConvertToJSON "Convert objects to JSON")]
 
 上記のコードは、予報オブジェクト (一連の `WeatherForecast` オブジェクト) を JSON パケットに変換します。 応答パケットを作成したら、コンテンツの種類を `application/json` に設定し、文字列を書き込みます。
 
@@ -248,7 +247,7 @@ WORKDIR /app
 # copy csproj and restore as distinct layers
 
 COPY WeatherMicroservice.csproj .
-RUN dotnet restore
+RUN dotnet restore 
 
 # copy and build everything else
 
@@ -257,6 +256,8 @@ COPY . .
 # RUN dotnet restore
 RUN dotnet publish -c Release -o out
 ```
+
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
 これでプロジェクト ファイルが現在のディレクトリから Docker VM にコピーされ、すべてのパッケージが復元されます。 .Net CLI を使用するということは、Docker イメージに .NET Core SDK を含める必要があるということになります。 その後、アプリケーションの残りの部分がコピーされ、dotnet publish コマンドによってアプリケーションがビルドされパッケージ化されます。
 
@@ -350,4 +351,3 @@ docker rmi weather-microservice
 そのサービスの Docker コンテナー イメージを構築し、コンピューターでそのコンテナーを実行しました。 サービスにターミナル ウィンドウをアタッチし、サービスからの診断メッセージを確認しました。
 
 その流れで、C# 言語の機能のうちいくつかが実際に動作していることを確認しました。
-

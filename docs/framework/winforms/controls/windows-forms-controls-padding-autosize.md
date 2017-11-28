@@ -1,48 +1,49 @@
 ---
-title: "チュートリアル : Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Margin.Bottom"
-  - "Margin.Left"
-  - "Margin.Top"
-  - "Margin.All"
-  - "Margin.Right"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "AutoSize プロパティ, チュートリアル"
-  - "レイアウト [Windows フォーム], マージンと埋め込み"
-  - "Margin プロパティ [Windows フォーム], チュートリアル"
-  - "Padding プロパティ [Windows フォーム], チュートリアル"
-  - "チュートリアル [Windows フォーム], レイアウト"
-  - "Windows フォーム, レイアウト"
+title: "チュートリアル : Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- Margin.Bottom
+- Margin.Left
+- Margin.Top
+- Margin.All
+- Margin.Right
+helpviewer_keywords:
+- Margin property [Windows Forms], walkthroughs
+- walkthroughs [Windows Forms], layout
+- AutoSize property [Windows Forms], walkthroughs
+- Padding property [Windows Forms], walkthroughs
+- layout [Windows Forms], margins and padding
+- Windows Forms, layout
 ms.assetid: f8ae2a6b-db13-4630-8e25-d104091205c7
-caps.latest.revision: 28
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 28
+caps.latest.revision: "28"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2dce58776af84b1f4c733ddce2553e4b18b1b824
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル : Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト
-フォーム上にコントロールを正確に配置することは、多くのアプリケーションで重要度の高い処理です。  **Windows フォーム デザイナー**には、そのためのさまざまなレイアウト ツールが用意されています。  最も重要な 3 つのプロパティは、<xref:System.Windows.Forms.Control.Margin%2A>、<xref:System.Windows.Forms.Control.Padding%2A>、および <xref:System.Windows.Forms.Control.AutoSize%2A> です。これらは、すべての Windows フォーム コントロールに存在します。  
+# <a name="walkthrough-laying-out-windows-forms-controls-with-padding-margins-and-the-autosize-property"></a>チュートリアル : Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト
+フォーム上のコントロールを正確に配置することは、多くのアプリケーションで優先度の高い作業です。 **Windows フォーム デザイナー**これを実現するさまざまなレイアウト ツールを提供します。 最も重要な 3 つが、 <xref:System.Windows.Forms.Control.Margin%2A>、 <xref:System.Windows.Forms.Control.Padding%2A>、および<xref:System.Windows.Forms.Control.AutoSize%2A>プロパティで、すべての Windows フォーム コントロール上に存在します。  
   
- <xref:System.Windows.Forms.Control.Margin%2A> プロパティは、コントロール周囲の空白領域を定義します。これによってコントロールの境界線と他のコントロールとの間で、指定した距離が保たれます。  
+ <xref:System.Windows.Forms.Control.Margin%2A> プロパティは、その他のコントロールで、コントロールの枠線からの指定された距離を保持するコントロールの周囲のスペースを定義します。  
   
- <xref:System.Windows.Forms.Control.Padding%2A> プロパティはコントロールの内部の空白領域を定義します。これによって、コントロールの内容 \(たとえばその <xref:System.Windows.Forms.Control.Text%2A> プロパティの値\) とコントロールの境界線との間で、指定した距離が保たれます。  
+ <xref:System.Windows.Forms.Control.Padding%2A> プロパティは、コントロールの内容 (<xref:System.Windows.Forms.Control.Text%2A> プロパティの値など) で、コントロールの枠線からの指定した距離を保持するコントロールの内部のスペースを定義します。  
   
- コントロールの <xref:System.Windows.Forms.Control.Padding%2A> プロパティと <xref:System.Windows.Forms.Control.Margin%2A> プロパティを次の図に示します。  
+ 次の図は、コントロールの <xref:System.Windows.Forms.Control.Padding%2A> プロパティと <xref:System.Windows.Forms.Control.Margin%2A> プロパティを示しています。  
   
- ![Windows フォーム コントロールのパディングとマージン](../../../../docs/framework/winforms/controls/media/vs-winformpadmargin.gif "VS\_WinFormPadMargin")  
+ ![フォーム コントロールの Windows のパディングとマージン](../../../../docs/framework/winforms/controls/media/vs-winformpadmargin.gif "VS_WinFormPadMargin")  
   
- <xref:System.Windows.Forms.Control.AutoSize%2A> プロパティを使用すると、コントロールのサイズが内容に合わせて自動的に調整されます。  コントロールは元の <xref:System.Windows.Forms.Control.Size%2A> プロパティの値よりも小さいサイズには自動調整されず、<xref:System.Windows.Forms.Control.Padding%2A> プロパティの値に対する領域を占めます。  
+ <xref:System.Windows.Forms.Control.AutoSize%2A>プロパティ、コントロールの内容を自動的にサイズに通知します。 これは、サイズは変更されませんが元の値より小さくなる自体<xref:System.Windows.Forms.Control.Size%2A>プロパティ、およびそれがの値のアカウントがその<xref:System.Windows.Forms.Control.Padding%2A>プロパティです。  
   
  このチュートリアルでは、以下のタスクを行います。  
   
@@ -50,155 +51,155 @@ caps.handback.revision: 28
   
 -   コントロールのマージンの設定  
   
--   コントロールの埋め込みの設定  
+-   コントロールの余白を設定  
   
--   コントロールの自動サイズ変更  
+-   自動的に、コントロールのサイズ変更  
   
- ここでは、これらの重要なレイアウト機能が果たす役割について理解します。  
+ 終了すると、これらの重要なレイアウト機能が果たす役割について理解できます。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-## 必須コンポーネント  
+## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを完了するための要件は次のとおりです。  
   
--   Visual Studio がインストールされているコンピューターで、Windows フォーム アプリケーション プロジェクトを作成および実行するための十分なアクセス許可が付与されていること。  
+-   作成し、Visual Studio がインストールされているコンピューターで Windows フォーム アプリケーション プロジェクトを実行できる十分なアクセスを許可します。  
   
-## プロジェクトの作成  
+## <a name="creating-the-project"></a>プロジェクトの作成  
  最初にプロジェクトを作成し、フォームを設定します。  
   
-#### プロジェクトを作成するには  
+#### <a name="to-create-the-project"></a>プロジェクトを作成するには  
   
-1.  `LayoutExample` という名前の **Windows アプリケーション** プロジェクトを作成します。  詳細については、「[How to: Create a Windows Application Project](http://msdn.microsoft.com/ja-jp/b2f93fed-c635-4705-8d0e-cf079a264efa)」を参照してください。  
+1.  作成、 **Windows アプリケーション**というプロジェクト`LayoutExample`です。 詳細については、次を参照してください。[する方法: Windows アプリケーション プロジェクトを作成](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)です。  
   
-2.  **Windows フォーム デザイナー**でフォームを選択します。  
+2.  フォームを選択、 **Windows フォーム デザイナー**です。  
   
-## コントロールのマージンの設定  
- <xref:System.Windows.Forms.Control.Margin%2A> プロパティを使用すると、コントロール間の既定の距離を設定できます。  別のコントロールのすぐ近くまでコントロールを移動すると、両方のコントロールのマージンを示すスナップ線が表示されます。  また、移動中のコントロールは、マージンで定義された距離にスナップします。  
+## <a name="setting-margins-for-your-controls"></a>コントロールのマージンの設定  
+ 使用して、コントロールの間で既定の間隔を設定することができます、<xref:System.Windows.Forms.Control.Margin%2A>プロパティです。 コントロールを移動するときに別のコントロールに十分な数を閉じるには、2 つのコントロールの余白を示すスナップ線が表示されます。 移動中のコントロールは、余白で定義された距離にもスナップされます。  
   
-#### Margin プロパティを使用してフォーム上にコントロールを配置するには  
+#### <a name="to-arrange-controls-on-your-form-using-the-margin-property"></a>Margin プロパティを使用して、フォーム上のコントロールを配置するには  
   
-1.  **ツールボックス**から 2 つの <xref:System.Windows.Forms.Button> コントロールをフォームにドラッグします。  
+1.  2 つをドラッグして<xref:System.Windows.Forms.Button>から制御、**ツールボックス**フォーム上にします。  
   
-2.  <xref:System.Windows.Forms.Button> コントロールのどちらかを選択し、もう 1 つのコントロールにほぼ接触するまで近づけます。  
+2.  いずれかを選択、<xref:System.Windows.Forms.Button>を制御し、ほぼに触れることまで、その他の近くに移動します。  
   
-     両方のコントロールの間にスナップ線が表示されることを確認します。  この距離は、この 2 つのコントロールの <xref:System.Windows.Forms.Control.Margin%2A> 値の合計です。  移動中のコントロールは、この距離にスナップします。  詳細については、「[チュートリアル : スナップ線を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)」を参照してください。  
+     それらの間に表示されるスナップ線を観察します。 この距離は、2 つのコントロールの<xref:System.Windows.Forms.Control.Margin%2A>値。 移動中のコントロールは、この距離にスナップされます。 詳細については、「[チュートリアル: Windows フォームを使用するスナップ線上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)です。  
   
-3.  一方のコントロールの <xref:System.Windows.Forms.Control.Margin%2A> プロパティを変更します。これを行うには **\[プロパティ\]** ウィンドウで <xref:System.Windows.Forms.Control.Margin%2A> エントリを展開し、<xref:System.Windows.Forms.Padding.All%2A> プロパティを 20 に設定します。  
+3.  変更、<xref:System.Windows.Forms.Control.Margin%2A>を展開して、コントロールのいずれかのプロパティ、<xref:System.Windows.Forms.Control.Margin%2A>内のエントリ、**プロパティ**ウィンドウと設定、 <xref:System.Windows.Forms.Padding.All%2A> 20 プロパティです。  
   
-4.  <xref:System.Windows.Forms.Button> コントロールの一方を選択し、他方のコントロールに近づけます。  
+4.  いずれかを選択、<xref:System.Windows.Forms.Button>を制御し、もう一方の近くに移動します。  
   
-     マージンの合計値を定義しているスナップ線が延長され、他方のコントロールからより遠い距離にコントロールがスナップします。  
+     スナップ線を定義する、余白の値の合計が長いと、コントロールが他のコントロールから、広範囲にスナップされます。  
   
-5.  選択したコントロールの <xref:System.Windows.Forms.Control.Margin%2A> プロパティを変更します。これを行うには **\[プロパティ\]** ウィンドウで <xref:System.Windows.Forms.Control.Margin%2A> エントリを展開し、<xref:System.Windows.Forms.Padding.Top%2A> プロパティを 5 に設定します。  
+5.  変更、<xref:System.Windows.Forms.Control.Margin%2A>を展開して選択したコントロールのプロパティ、<xref:System.Windows.Forms.Control.Margin%2A>内のエントリ、**プロパティ**ウィンドウと設定、 <xref:System.Windows.Forms.Padding.Top%2A> 5 プロパティです。  
   
-6.  選択したコントロールを他方のコントロールの下に移動し、スナップ線が短くなったことを確認します。  選択したコントロールを他方のコントロールの左に移動し、手順 4. で確認した値をスナップ線が維持していることを確認します。  
+6.  その他のコントロールの下の選択したコントロールを移動し、スナップ線が短いことを確認します。 選択したコントロールを他のコントロールの左側に移動し、スナップ線が手順 4. で計測された値を保持することを確認します。  
   
-7.  <xref:System.Windows.Forms.Control.Margin%2A> プロパティの各要素 \(<xref:System.Windows.Forms.Padding.Left%2A>、<xref:System.Windows.Forms.Padding.Top%2A>、<xref:System.Windows.Forms.Padding.Right%2A>、<xref:System.Windows.Forms.Padding.Bottom%2A>\) を異なる値に設定できます。また、<xref:System.Windows.Forms.Padding.All%2A> プロパティを使用してすべての要素を同じ値に設定することもできます。  
+7.  側面のそれぞれを設定することができます、<xref:System.Windows.Forms.Control.Margin%2A>プロパティ、 <xref:System.Windows.Forms.Padding.Left%2A>、 <xref:System.Windows.Forms.Padding.Top%2A>、 <xref:System.Windows.Forms.Padding.Right%2A>、 <xref:System.Windows.Forms.Padding.Bottom%2A>、別の値に設定できるはすべてに同じ値を<xref:System.Windows.Forms.Padding.All%2A>プロパティです。  
   
-## コントロールの埋め込みの設定  
- アプリケーションに要求される正確なレイアウトを実現するために、コントロール内に子コントロールを含めることもあります。  子コントロールの境界線と親コントロールの境界線の間隔を指定するには、親コントロールの <xref:System.Windows.Forms.Control.Padding%2A> プロパティと子コントロールの <xref:System.Windows.Forms.Control.Margin%2A> プロパティを組み合わせて使用します。  <xref:System.Windows.Forms.Control.Padding%2A> プロパティは、コントロールの内容 \(たとえば、<xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Text%2A> プロパティ\) と境界線の間隔を制御するためにも使用します。  
+## <a name="setting-padding-for-your-controls"></a>コントロールの余白を設定  
+ アプリケーションに必要な正確なレイアウトを実現するために、コントロールが子コントロールを含む多くの場合。 親コントロールの境界線に子コントロールの境界線の近接度を指定する場合は、使用、親コントロールの<xref:System.Windows.Forms.Control.Padding%2A>と共に子コントロールのプロパティ<xref:System.Windows.Forms.Control.Margin%2A>プロパティです。 <xref:System.Windows.Forms.Control.Padding%2A>コントロールのコンテンツの近接度を制御するプロパティを使用しても (たとえば、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Text%2A>プロパティ)、境界線をします。  
   
-#### 埋め込みを使用してフォーム上にコントロールを配置するには  
+#### <a name="to-arrange-controls-on-your-form-using-padding"></a>埋め込みを使用して、フォーム上のコントロールを配置するには  
   
-1.  **ツールボックス**からフォームに、<xref:System.Windows.Forms.Button> コントロールをドラッグします。  
-  
-2.  <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.AutoSize%2A> プロパティの値を `true` に変更します。  
-  
-3.  <xref:System.Windows.Forms.Control.Padding%2A> プロパティを変更します。これを行うには **\[プロパティ\]** ウィンドウで <xref:System.Windows.Forms.Control.Padding%2A> エントリを展開し、<xref:System.Windows.Forms.Padding.All%2A> プロパティを 5 に設定します。  
-  
-     コントロールが拡大され、新しい埋め込みのための領域が確保されます。  
-  
-4.  **ツールボックス**からフォームに、<xref:System.Windows.Forms.GroupBox> コントロールをドラッグします。  **ツールボックス**の <xref:System.Windows.Forms.Button> コントロールを <xref:System.Windows.Forms.GroupBox> コントロールにドラッグします。  <xref:System.Windows.Forms.Button> コントロールを <xref:System.Windows.Forms.GroupBox> コントロールの右下隅に揃えて配置します。  
-  
-     <xref:System.Windows.Forms.Button> コントロールが <xref:System.Windows.Forms.GroupBox> コントロールの下側と右側の境界線に近づくと、スナップ線が表示されることを確認します。  これらのスナップ線は、<xref:System.Windows.Forms.Button> の <xref:System.Windows.Forms.Control.Margin%2A> プロパティに対応します。  
-  
-5.  <xref:System.Windows.Forms.GroupBox> コントロールの <xref:System.Windows.Forms.Control.Padding%2A> プロパティを変更します。これを行うには **\[プロパティ\]** ウィンドウで <xref:System.Windows.Forms.Control.Padding%2A> エントリを展開し、<xref:System.Windows.Forms.Padding.All%2A> プロパティを 20 に設定します。  
-  
-6.  <xref:System.Windows.Forms.GroupBox> コントロール内の <xref:System.Windows.Forms.Button> コントロールを選択し、<xref:System.Windows.Forms.GroupBox> の中心の方向に移動します。  
-  
-     <xref:System.Windows.Forms.GroupBox> コントロールの境界線からより遠い距離でスナップ線が表示されます。  この距離は、<xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Margin%2A> プロパティと <xref:System.Windows.Forms.GroupBox> コントロールの <xref:System.Windows.Forms.Control.Padding%2A> プロパティの合計です。  
-  
-## コントロールの自動サイズ変更  
- アプリケーションによっては、デザイン時と実行時でコントロールのサイズが異なるものがあります。  たとえば、<xref:System.Windows.Forms.Button> コントロールのテキストはデータベースから取得されることがあり、その長さを事前に知ることはできません。  
-  
- <xref:System.Windows.Forms.Control.AutoSize%2A> プロパティを `true` に設定すると、コントロールのサイズはその内容に合わせて自動的に調整されます。  詳細については、「[AutoSize プロパティの概要](../../../../docs/framework/winforms/controls/autosize-property-overview.md)」を参照してください。  
-  
-#### AutoSize プロパティを使用してフォーム上にコントロールを配置するには  
-  
-1.  **ツールボックス**からフォームに、<xref:System.Windows.Forms.Button> コントロールをドラッグします。  
+1.  ドラッグ、<xref:System.Windows.Forms.Button>から制御、**ツールボックス**フォーム上にします。  
   
 2.  <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.AutoSize%2A> プロパティの値を `true` に変更します。  
   
-3.  <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Text%2A> プロパティを "This button has a long string for its Text property." に変更します。  
+3.  変更、<xref:System.Windows.Forms.Control.Padding%2A>プロパティを展開して、<xref:System.Windows.Forms.Control.Padding%2A>内のエントリ、**プロパティ**ウィンドウと設定、 <xref:System.Windows.Forms.Padding.All%2A> 5 プロパティです。  
   
-     この変更をコミットすると、<xref:System.Windows.Forms.Button> コントロールのサイズが新しいテキストに合わせて変更されます。  
+     コントロールを拡張する場合、新しい余白の領域を確保します。  
   
-4.  **ツールボックス**から別の <xref:System.Windows.Forms.Button> コントロールをフォームにドラッグします。  
+4.  ドラッグ、<xref:System.Windows.Forms.GroupBox>から制御、**ツールボックス**フォーム上にします。 ドラッグ、<xref:System.Windows.Forms.Button>から制御、**ツールボックス**に、<xref:System.Windows.Forms.GroupBox>コントロール。 位置、<xref:System.Windows.Forms.Button>の右下隅と揃えるためにの制御、<xref:System.Windows.Forms.GroupBox>コントロール。  
   
-5.  <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Text%2A> プロパティを "This button has a long string for its Text property." に変更します。  
+     として表示されるスナップ線を観察、<xref:System.Windows.Forms.Button>下と右の境界線のコントロールが近づく、<xref:System.Windows.Forms.GroupBox>コントロール。 これらのスナップ線に対応している、<xref:System.Windows.Forms.Control.Margin%2A>のプロパティ、<xref:System.Windows.Forms.Button>です。  
   
-     この変更をコミットすると、<xref:System.Windows.Forms.Button> コントロールのサイズは自動的に調整されず、テキストがコントロールの右端でクリップされます。  
+5.  変更、<xref:System.Windows.Forms.GroupBox>コントロールの<xref:System.Windows.Forms.Control.Padding%2A>プロパティを展開して、<xref:System.Windows.Forms.Control.Padding%2A>内のエントリ、**プロパティ**ウィンドウと設定、 <xref:System.Windows.Forms.Padding.All%2A> 20 プロパティです。  
   
-6.  <xref:System.Windows.Forms.Control.Padding%2A> プロパティを変更します。これを行うには **\[プロパティ\]** ウィンドウで <xref:System.Windows.Forms.Control.Padding%2A> エントリを展開し、<xref:System.Windows.Forms.Padding.All%2A> プロパティを 5 に設定します。  
+6.  選択、<xref:System.Windows.Forms.Button>内の制御、<xref:System.Windows.Forms.GroupBox>を制御しの中央に移動、<xref:System.Windows.Forms.GroupBox>です。  
   
-     コントロールの内部のテキストが 4 辺でクリップされます。  
+     枠線から遠隔地にスナップ線が表示される、<xref:System.Windows.Forms.GroupBox>コントロール。 この距離は、の<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Margin%2A>プロパティおよび<xref:System.Windows.Forms.GroupBox>コントロールの<xref:System.Windows.Forms.Control.Padding%2A>プロパティです。  
   
-7.  <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.AutoSize%2A> プロパティを `true` に変更します。  
+## <a name="automatically-sizing-your-controls"></a>自動的に、コントロールのサイズ変更  
+ 一部のアプリケーションでコントロールのサイズはできません、同じ実行時にデザイン時と同じ。 テキスト、<xref:System.Windows.Forms.Button>コントロール、たとえば、考慮できる、データベースからとその長さは事前にわかっていません。  
   
-     <xref:System.Windows.Forms.Button> コントロールのサイズが自動的に変更され、文字列全体が囲まれます。  また、テキストの周囲に埋め込みが追加され、<xref:System.Windows.Forms.Button> コントロールが上下左右に拡大されます。  
+ ときに、<xref:System.Windows.Forms.Control.AutoSize%2A>プロパティに設定されている`true`、そのコンテンツへのコントロールのサイズがします。 詳細については、次を参照してください。 [AutoSize プロパティの概要](../../../../docs/framework/winforms/controls/autosize-property-overview.md)です。  
   
-8.  **ツールボックス**からフォームに、<xref:System.Windows.Forms.Button> コントロールをドラッグします。  フォームの右下隅付近に配置してください。  
+#### <a name="to-arrange-controls-on-your-form-using-the-autosize-property"></a>AutoSize プロパティを使用して、フォーム上のコントロールを配置するには  
+  
+1.  ドラッグ、<xref:System.Windows.Forms.Button>から制御、**ツールボックス**フォーム上にします。  
+  
+2.  <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.AutoSize%2A> プロパティの値を `true` に変更します。  
+  
+3.  変更、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Text%2A>プロパティを"**このボタンには、Text プロパティの長い文字列**"。  
+  
+     変更をコミットする場合、<xref:System.Windows.Forms.Button>コントロールの新しいテキストが収まるようにサイズを変更します。  
+  
+4.  別のドラッグ<xref:System.Windows.Forms.Button>から制御、**ツールボックス**フォーム上にします。  
+  
+5.  変更、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Text%2A>プロパティを"**このボタンには、Text プロパティの長い文字列**"。  
+  
+     変更をコミットする場合、<xref:System.Windows.Forms.Button>コントロール サイズ変更されない自体、およびテキストは、コントロールの右端で切り詰められます。  
+  
+6.  変更、<xref:System.Windows.Forms.Control.Padding%2A>プロパティを展開して、<xref:System.Windows.Forms.Control.Padding%2A>内のエントリ、**プロパティ**ウィンドウと設定、 <xref:System.Windows.Forms.Padding.All%2A> 5 プロパティです。  
+  
+     コントロールの内部のテキストは、すべての 4 辺にクリップされます。  
+  
+7.  変更、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.AutoSize%2A>プロパティを`true`です。  
+  
+     <xref:System.Windows.Forms.Button>コントロールのサイズは、文字列全体が含まれます。 テキストの周辺の余白が追加されても、原因、<xref:System.Windows.Forms.Button>コントロールをすべて次の 4 つの方向に展開します。  
+  
+8.  ドラッグ、<xref:System.Windows.Forms.Button>から制御、**ツールボックス**フォーム上にします。 フォームの右下隅近くに配置します。  
   
 9. <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.AutoSize%2A> プロパティの値を `true` に変更します。  
   
-10. <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Anchor%2A> プロパティを <xref:System.Windows.Forms.AnchorStyles>、<xref:System.Windows.Forms.AnchorStyles> に設定します。  
+10. 設定、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Anchor%2A>プロパティを<xref:System.Windows.Forms.AnchorStyles.Right>、<xref:System.Windows.Forms.AnchorStyles.Bottom>です。  
   
-11. <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Text%2A> プロパティを "This button has a long string for its Text property." に変更します。  
+11. 変更、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Text%2A>プロパティを"**このボタンには、Text プロパティの長い文字列**"。  
   
-     この変更をコミットすると、<xref:System.Windows.Forms.Button> コントロールのサイズが左方向に調整されます。  通常、自動サイズ変更により、コントロールは <xref:System.Windows.Forms.Control.Anchor%2A> プロパティ設定と反対の方向に拡大されます。  
+     変更をコミットする場合、<xref:System.Windows.Forms.Button>コントロールは左方向サイズ変更します。 自動サイズ変更が反対の方向にコントロールのサイズを大きく一般に、その<xref:System.Windows.Forms.Control.Anchor%2A>プロパティの設定。  
   
-## AutoSize プロパティと AutoSizeMode プロパティ  
- 一部のコントロールは、`AutoSizeMode` プロパティをサポートしています。このプロパティにより、コントロールの自動サイズ変更動作をより細かく制御できます。  
+## <a name="autosize-and-autosizemode-properties"></a>AutoSize と AutoSizeMode プロパティ  
+ 一部のコントロールのサポート、`AutoSizeMode`プロパティ、コントロールの自動サイズ変更動作をより詳細に制御できます。  
   
-#### AutoSizeMode プロパティを使用するには  
+#### <a name="to-use-the-autosizemode-property"></a>AutoSizeMode プロパティを使用するには  
   
-1.  **ツールボックス**からフォームに、<xref:System.Windows.Forms.Panel> コントロールをドラッグします。  
+1.  ドラッグ、<xref:System.Windows.Forms.Panel>から制御、**ツールボックス**フォーム上にします。  
   
-2.  <xref:System.Windows.Forms.Panel> コントロールの <xref:System.Windows.Forms.Control.AutoSize%2A> プロパティの値を `true` に設定します。  
+2.  値を設定、<xref:System.Windows.Forms.Panel>コントロールの<xref:System.Windows.Forms.Control.AutoSize%2A>プロパティを`true`です。  
   
-3.  **ツールボックス**の <xref:System.Windows.Forms.Button> コントロールを <xref:System.Windows.Forms.Panel> コントロールにドラッグします。  
+3.  ドラッグ、<xref:System.Windows.Forms.Button>から制御、**ツールボックス**に、<xref:System.Windows.Forms.Panel>コントロール。  
   
-4.  <xref:System.Windows.Forms.Button> コントロールを <xref:System.Windows.Forms.Panel> コントロールの右下隅付近に配置します。  
+4.  場所、<xref:System.Windows.Forms.Button>の右下隅のコントロール、<xref:System.Windows.Forms.Panel>コントロール。  
   
-5.  <xref:System.Windows.Forms.Panel> コントロールを選択し、右下のサイズ変更ハンドルをグラブします。  <xref:System.Windows.Forms.Panel> コントロールを拡大または縮小します。  
+5.  選択、<xref:System.Windows.Forms.Panel>を制御し、右下のサイズ変更ハンドルを取得します。 サイズ変更、<xref:System.Windows.Forms.Panel>コントロールを大きくしたり小さくします。  
   
     > [!NOTE]
-    >  <xref:System.Windows.Forms.Panel> コントロールのサイズは自由に変更できますが、<xref:System.Windows.Forms.Button> コントロールの右下隅の位置を越えて縮小できません。  この動作は、`AutoSizeMode` プロパティの既定値である <xref:System.Windows.Forms.AutoSizeMode> で指定されます。  
+    >  サイズを変更する自由に、<xref:System.Windows.Forms.Panel>コントロールがサイズを調整できないことの位置よりも小さい、<xref:System.Windows.Forms.Button>コントロールの右下隅です。 この動作は、の既定値で指定された、`AutoSizeMode`プロパティである<xref:System.Windows.Forms.AutoSizeMode.GrowOnly>です。  
   
-6.  <xref:System.Windows.Forms.Panel> コントロールの `AutoSizeMode` プロパティの値を <xref:System.Windows.Forms.AutoSizeMode> に設定します。  
+6.  値を設定、<xref:System.Windows.Forms.Panel>コントロールの`AutoSizeMode`プロパティを<xref:System.Windows.Forms.AutoSizeMode.GrowAndShrink>です。  
   
-     <xref:System.Windows.Forms.Panel> コントロールのサイズが自動的に変更され、<xref:System.Windows.Forms.Button> コントロールが囲まれます。  <xref:System.Windows.Forms.Panel> コントロールのサイズは変更できません。  
+     <xref:System.Windows.Forms.Panel>コントロールのサイズを囲むように、<xref:System.Windows.Forms.Button>コントロール。 サイズを変更することはできません、<xref:System.Windows.Forms.Panel>コントロール。  
   
-7.  <xref:System.Windows.Forms.Button> コントロールを <xref:System.Windows.Forms.Panel> コントロールの左上隅の方向にドラッグします。  
+7.  ドラッグ、<xref:System.Windows.Forms.Button>コントロールの左上隅に向かって、<xref:System.Windows.Forms.Panel>コントロール。  
   
-     <xref:System.Windows.Forms.Button> コントロールの新しい位置に合わせて、<xref:System.Windows.Forms.Panel> コントロールのサイズが変更されます。  
+     <xref:System.Windows.Forms.Panel>コントロール サイズを変更し、<xref:System.Windows.Forms.Button>コントロールの新しい位置。  
   
-## 次の手順  
- Windows フォーム アプリケーションにコントロールを配置するためのレイアウト機能は、他にも数多くあります。  次のような組み合わせを試すことができます。  
+## <a name="next-steps"></a>次の手順  
+ Windows フォーム アプリケーションでのコントロールの配置の他の多くのレイアウト機能があります。 一部の操作を試すの組み合わせを次に示します。  
   
--   <xref:System.Windows.Forms.TableLayoutPanel> コントロールを使用してフォームをビルドします。  詳細については、「[チュートリアル : TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)」を参照してください。  <xref:System.Windows.Forms.TableLayoutPanel> コントロールの <xref:System.Windows.Forms.Control.Padding%2A> プロパティの値、およびその子コントロールの <xref:System.Windows.Forms.Control.Margin%2A> プロパティの値を変更してみてください。  
+-   フォームを使用して、ビルド、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。 詳細については、「[チュートリアル: Windows を使用して、TableLayoutPanel をフォーム上コントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)です。 値を変更してみてください、<xref:System.Windows.Forms.TableLayoutPanel>コントロールの<xref:System.Windows.Forms.Control.Padding%2A>プロパティだけでなく<xref:System.Windows.Forms.Control.Margin%2A>コントロールの子コントロールのプロパティです。  
   
--   また、<xref:System.Windows.Forms.FlowLayoutPanel> コントロールを使用して同じ内容を試みます。  詳細については、「[チュートリアル : FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)」を参照してください。  
+-   同じ実験を使用して、再試行してください、<xref:System.Windows.Forms.FlowLayoutPanel>コントロール。 詳細については、「[チュートリアル: Windows を使用して、FlowLayoutPanel をフォーム上コントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)です。  
   
--   <xref:System.Windows.Forms.Panel> コントロール内で子コントロールのドッキングを試みます。  <xref:System.Windows.Forms.Control.Padding%2A> プロパティは、<xref:System.Windows.Forms.ScrollableControl.DockPadding%2A> プロパティをより一般化したものです。機能を確認するには、<xref:System.Windows.Forms.Panel> コントロール内に子コントロールを配置し、その子コントロールの <xref:System.Windows.Forms.Control.Dock%2A> プロパティを <xref:System.Windows.Forms.DockStyle> に設定します。  次に、<xref:System.Windows.Forms.Panel> コントロールの <xref:System.Windows.Forms.Control.Padding%2A> プロパティをさまざまな値に変更して変化を確認します。  
+-   実験で子コントロールのドッキングと、<xref:System.Windows.Forms.Panel>コントロール。 <xref:System.Windows.Forms.Control.Padding%2A>プロパティは、の一般的な実現、<xref:System.Windows.Forms.ScrollableControl.DockPadding%2A>プロパティ、およびを満たすことができる自分でこれは大文字と小文字子コントロールを配置することにより、<xref:System.Windows.Forms.Panel>コントロールおよび子コントロールの設定<xref:System.Windows.Forms.Control.Dock%2A>プロパティを<xref:System.Windows.Forms.DockStyle.Fill>. 設定、<xref:System.Windows.Forms.Panel>コントロールの<xref:System.Windows.Forms.Control.Padding%2A>プロパティをさまざまな値変化を確認します。  
   
-## 参照  
- <xref:System.Windows.Forms.Control.AutoSize%2A>   
- <xref:System.Windows.Forms.ScrollableControl.DockPadding%2A>   
- <xref:System.Windows.Forms.Control.Margin%2A>   
- <xref:System.Windows.Forms.Control.Padding%2A>   
- [AutoSize プロパティの概要](../../../../docs/framework/winforms/controls/autosize-property-overview.md)   
- [チュートリアル : TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)   
- [チュートリアル : FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)   
- [チュートリアル : スナップ線を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.Control.AutoSize%2A>  
+ <xref:System.Windows.Forms.ScrollableControl.DockPadding%2A>  
+ <xref:System.Windows.Forms.Control.Margin%2A>  
+ <xref:System.Windows.Forms.Control.Padding%2A>  
+ [AutoSize プロパティの概要](../../../../docs/framework/winforms/controls/autosize-property-overview.md)  
+ [チュートリアル: TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)  
+ [チュートリアル: FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)  
+ [チュートリアル: スナップ線を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)

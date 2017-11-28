@@ -1,55 +1,58 @@
 ---
-title: "方法 : Windows フォーム上のオブジェクトをレイヤー化する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "コントロール [Windows フォーム], レイヤー化"
-  - "コントロール [Windows フォーム], 配置"
-  - "Windows フォーム コントロール, レイヤー化"
-  - "z オーダー"
-  - "z オーダー"
+title: "方法 : Windows フォーム上のオブジェクトをレイヤー化する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- Windows Forms controls, layering
+- controls [Windows Forms], layering
+- z order
+- controls [Windows Forms], positioning
+- z-order
 ms.assetid: 1acc4281-2976-4715-86f4-bda68134baaf
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bda4cb3641ff890646614af35d38ff13621cc16b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォーム上のオブジェクトをレイヤー化する
-複雑なユーザー インターフェイスを作成したり、マルチ ドキュメント インターフェイス \(MDI\) フォームを使用したりする場合は、コントロールと子フォームをレイヤー化する必要が生じることがよくあります。  グループのコンテキストで、コントロールとウィンドウを移動および制御するには、コントロールの z オーダーを操作します。  *Z オーダー*は、コントロールの視覚的な階層構造であり、フォームの z 軸 \(奥行\) に沿ってフォームに描かれます。  z オーダーのウィンドウは、ほかのすべてのウィンドウの上に重ねて、一番上に表示されます。  ほかのすべてのウィンドウは、z オーダーのウィンドウの下に重ねて表示されます。  
+# <a name="how-to-layer-objects-on-windows-forms"></a>方法 : Windows フォーム上のオブジェクトをレイヤー化する
+複雑なユーザー インターフェイスを作成またはマルチ ドキュメント インターフェイス (MDI) フォームを操作するときに多くの場合のコントロールと複雑なユーザー インターフェイス (UI) を作成する子フォームをレイヤーにします。 移動し、コントロールと windows グループのコンテキスト内での追跡を z オーダーを操作できます。 *Z オーダー* (深度) のフォームの z 軸に沿ってフォーム上のコントロールのビジュアルの重ね順がします。 Z オーダーの上部にあるウィンドウには、他のすべてのウィンドウが重複しています。 その他のすべての windows では、z オーダーの下部にあるウィンドウと重複します。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-### デザイン時にコントロールをレイヤー化するには  
+### <a name="to-layer-controls-at-design-time"></a>デザイン時にコントロールをレイヤーに  
   
-1.  レイヤー化するコントロールを選択します。  
+1.  レイヤーにするコントロールを選択します。  
   
-2.  **\[書式\]** メニューの **\[順序\]** をポイントし、**\[最前面へ移動\]** または **\[最背面へ移動\]** をクリックします。  
+2.  **形式** メニューのをポイント**順序**、クリックして**前面へ移動**または**最背面へ移動**です。  
   
-### プログラムによってコントロールをレイヤー化するには  
+### <a name="to-layer-controls-programmatically"></a>コントロールをプログラムでレイヤーを  
   
--   <xref:System.Windows.Forms.Control.BringToFront%2A> メソッドおよび <xref:System.Windows.Forms.Control.SendToBack%2A> メソッドを使用して、コントロールの z オーダーを操作します。  
+-   使用して、<xref:System.Windows.Forms.Control.BringToFront%2A>と<xref:System.Windows.Forms.Control.SendToBack%2A>コントロールの z オーダーを操作するメソッド。  
   
-     たとえば、<xref:System.Windows.Forms.TextBox> コントロール `txtFirstName` が別のコントロールの下に表示されている場合は、次のコードを使用して、一番上に表示します。  
+     たとえば場合、<xref:System.Windows.Forms.TextBox>コントロール、`txtFirstName`はすぐ下に別制御したい場合一番上にある、次のコードを使用します。  
   
     ```vb  
     txtFirstName.BringToFront()  
-  
     ```  
   
     ```csharp  
     txtFirstName.BringToFront();  
-  
     ```  
   
     ```cpp  
@@ -57,11 +60,11 @@ caps.handback.revision: 14
     ```  
   
 > [!NOTE]
->  Windows フォームでは、*コントロール コンテインメント*をサポートしています。  コントロール コンテインメントとは、コンテナーであるコントロールに、さまざまなコントロールが配置されている状態です。たとえば、<xref:System.Windows.Forms.GroupBox> コントロールには、さまざまな <xref:System.Windows.Forms.RadioButton> コントロールが含まれています。  このとき、コンテナーであるコントロールでコントロールをレイヤー化できます。  グループ ボックスを移動すると、中に含まれているコントロールも移動されます。  
+>  Windows フォームをサポートしている*コントロール コンテインメント*です。 コントロール コンテインメントの数などのコンテナー コントロール内のコントロールの数に配置する<xref:System.Windows.Forms.RadioButton>内で制御、<xref:System.Windows.Forms.GroupBox>コントロール。 コントロールを格納しているコントロール内で、階層化することができます。 グループ化するボックスを移動すると、その内部に格納されているためにも、コントロールが移動します。  
   
-## 参照  
- [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)   
- [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)   
- [各 Windows フォーム コントロールのラベル設定とショートカットの作成](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)   
- [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)   
+## <a name="see-also"></a>関連項目  
+ [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)  
+ [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
+ [各 Windows フォーム コントロールのラベル設定とショートカットの作成](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  
+ [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
  [Windows フォーム コントロールの機能別一覧](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)

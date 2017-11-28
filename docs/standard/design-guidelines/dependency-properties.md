@@ -1,56 +1,54 @@
 ---
-title: "依存関係プロパティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "依存関係プロパティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 212cfb1e-cec4-4047-94a6-47209b387f6f
-caps.latest.revision: 4
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 21e2026e7ce0f2dcf1ffc9a328b1bb9630cd8fbf
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 依存関係プロパティ
-依存関係プロパティ \(DP\) は、たとえば、型の変数 \(フィールド\) に格納することではなくプロパティ ストア内の値を格納する標準プロパティです。  
+# <a name="dependency-properties"></a>依存関係プロパティ
+依存関係プロパティ (DP) は、たとえば (フィールド) の型の変数に保存することではなく、プロパティ ストア内の値を格納する標準プロパティです。  
   
- 割り当てられた依存プロパティは、オブジェクトとそのコンテナーの間のリレーションシップを記述する「プロパティ」を表す、Get および Set の静的メソッドとしてモデル化された依存関係プロパティの種類 \(の位置など、 `Button` 上のオブジェクト、 `Panel` コンテナー\) です。  
+ 割り当てられた依存プロパティはオブジェクトとそのコンテナーの間のリレーションシップを記述する「プロパティ」を表す、Get および Set の静的メソッドとしてモデル化された依存関係プロパティの種類 (の位置など、`Button`上のオブジェクト、 `Panel`コンテナー) です。  
   
- **✓ は** プロパティをスタイル設定、トリガー、データ バインディング、アニメーション、動的リソース、および継承などの WPF 機能をサポートする必要がある場合は、依存関係プロパティを提供します。  
+ **✓ しないで**プロパティ スタイル設定、トリガー、データ バインディング、アニメーション、動的なリソース、および継承などの WPF 機能をサポートする必要がある場合は、依存関係プロパティを提供します。  
   
-## 依存関係プロパティのデザイン  
- **✓ は** から継承 <xref:System.Windows.DependencyObject>, 、または依存関係プロパティを実装する場合、そのサブタイプのいずれかです。 種類は、プロパティ ストアの非常に効率的な実装を提供し、自動的に WPF データ バインドをサポートします。  
+## <a name="dependency-property-design"></a>依存関係プロパティのデザイン  
+ **✓ しないで**から継承<xref:System.Windows.DependencyObject>、または依存関係プロパティを実装する場合、そのサブタイプのいずれか。 種類は、プロパティ ストアの非常に効率的な実装を提供し、自動的に WPF データ バインディングをサポートします。  
   
- **✓ は** は、通常の CLR プロパティとパブリック静的な読み取り専用フィールドのインスタンスを格納する指定 <xref:System.Windows.DependencyProperty?displayProperty=fullName> 各依存関係プロパティ。  
+ **✓ しないで**正規の CLR プロパティとパブリックな静的読み取り専用フィールドのインスタンスを格納する提供<xref:System.Windows.DependencyProperty?displayProperty=nameWithType>各依存関係プロパティです。  
   
- **✓ は** インスタンス メソッドを呼び出すことによって依存関係プロパティを実装する <xref:System.Windows.DependencyObject.GetValue%2A?displayProperty=fullName> と <xref:System.Windows.DependencyObject.SetValue%2A?displayProperty=fullName>です。  
+ **✓ しないで**依存関係プロパティを実装するインスタンス メソッドを呼び出すことによって<xref:System.Windows.DependencyObject.GetValue%2A?displayProperty=nameWithType>と<xref:System.Windows.DependencyObject.SetValue%2A?displayProperty=nameWithType>です。  
   
- **✓ は** "Property"を使用してプロパティの名前をアスタリスクの依存関係プロパティの静的フィールドの名前  
+ **✓ しないで**"Property"のプロパティの名前をアスタリスクの依存関係プロパティの静的フィールドの名前  
   
- **X のしないで** 代わりにメタデータの設定は、コード内の依存関係プロパティの既定値を明示的に設定します。  
+ **X しないで**コード内の依存関係プロパティの既定値を明示的に設定を代わりにメタデータの設定です。  
   
- プロパティの既定値を明示的に設定すると、スタイルなどのなんらかの暗黙的な方法で設定されているからそのプロパティをできない場合があります。  
+ プロパティの既定値を明示的に設定するから、スタイルなどのいくつかの暗黙的な方法で設定されているそのプロパティをできない場合があります。  
   
- **X のしないで** 静的フィールドにアクセスする標準的なコード以外のプロパティ アクセサーにコードを追加します。  
+ **X しないで**静的フィールドにアクセスする標準コード以外のプロパティ アクセサーにコードを配置します。  
   
- 静的フィールドを直接使用することはありませんとコードが実行プロパティ、スタイルなどの暗黙的な方法でスタイル処理のためです。  
+ 静的フィールドを直接使用するコードはありませんは実行、スタイルなどの暗黙的な方法で、プロパティが設定されている場合のスタイルを設定するためです。  
   
- **X のしないで** 依存関係プロパティを使用してセキュリティで保護されたデータを格納します。 でもプライベート依存関係プロパティは、パブリックにアクセスできます。  
+ **X しないで**依存関係プロパティを使用してセキュリティで保護されたデータを格納します。 さらにプライベート依存関係プロパティをパブリックにアクセスすることができます。  
   
-## 接続されている依存関係プロパティのデザイン  
- 前のセクションで説明されている依存関係プロパティは宣言型の組み込みのプロパティを表しますたとえば、 `Text` プロパティは、プロパティの `TextButton`, 、それを宣言します。 特殊な依存関係プロパティは、接続されている依存関係プロパティです。  
+## <a name="attached-dependency-property-design"></a>接続されている依存関係プロパティのデザイン  
+ 前のセクションで説明されている依存関係プロパティの宣言する型の組み込みのプロパティを表しますたとえば、`Text`プロパティは、プロパティの`TextButton`を宣言しています。 依存関係プロパティの特別な種類は、接続されている依存関係プロパティです。  
   
- 添付プロパティの典型的な例は、 <xref:System.Windows.Controls.Grid.Column%2A?displayProperty=fullName> プロパティです。 プロパティ ボタン \(いないグリッドの\) 列の位置を表すは、「その」ボタンをグリッドで、グリッドで、ボタンが含まれている場合にのみ該当します。  
+ 添付プロパティの典型的な例は、<xref:System.Windows.Controls.Grid.Column%2A?displayProperty=nameWithType>プロパティです。 プロパティ ボタン (いないグリッドの) 列の位置を表すは"にアタッチされて"ボタン グリッドで、グリッドで、ボタンが含まれている場合にのみ関連します。  
   
 ```  
 <Grid>  
@@ -64,7 +62,7 @@ caps.handback.revision: 4
 </Grid>  
 ```  
   
- 添付プロパティの定義は、アクセサーが静的の Get と Set メソッドで表されること以外に、通常の依存関係プロパティのほとんどの場合ようになります。  
+ 添付プロパティの定義は、アクセサーが静的の Get および Set メソッドによって表される点を除いて、ほとんどの場合と同様に、通常の依存関係プロパティの検索します。  
   
 ```  
 public class Grid {  
@@ -86,27 +84,27 @@ public class Grid {
 }  
 ```  
   
-## 依存関係プロパティの検証  
- プロパティは、多くの場合、検証と呼ばれるものを実装します。 プロパティの値を変更しようとは、検証ロジックを実行します。  
+## <a name="dependency-property-validation"></a>依存関係プロパティの検証  
+ プロパティは、多くの場合、検証と呼ばれるものを実装します。 プロパティの値を変更する試みが行われたときに検証ロジックを実行します。  
   
- 残念なことに依存関係プロパティ アクセサーの場合は、任意の検証コードを含めることはできません。 代わりに、依存関係プロパティの検証ロジックは、プロパティの登録時に指定する必要があります。  
+ 残念なことに依存関係プロパティのアクセサーでは、任意の検証コードを含めることはできません。 代わりに、依存関係プロパティの検証ロジックは、プロパティの登録中に指定する必要があります。  
   
- **X のしないで** プロパティのアクセサーの依存関係プロパティの検証ロジックを配置します。 代わりに、検証コールバックを渡す `DependencyProperty.Register` メソッドです。  
+ **X しないで**プロパティのアクセサーの依存関係プロパティの検証ロジックを配置します。 代わりに、検証コールバックを渡す`DependencyProperty.Register`メソッドです。  
   
-## 依存関係プロパティの変更通知  
- **X のしないで** 依存関係プロパティのアクセサーで変更通知のロジックを実装します。 依存関係プロパティには、変更通知のコールバックを指定する必要がある組み込みの変更通知機能があり、 <xref:System.Windows.PropertyMetadata>です。  
+## <a name="dependency-property-change-notifications"></a>依存関係プロパティの変更通知  
+ **X しないで**依存関係プロパティのアクセサーでの変更通知のロジックを実装します。 依存関係プロパティを変更通知のコールバックを指定することによって処理するために使用する必要があります組み込みの変更通知機能があり、<xref:System.Windows.PropertyMetadata>です。  
   
-## 依存関係プロパティの値の強制型変換  
- プロパティ ストアが実際に変更される前に、set アクセス操作子、プロパティ set アクセス操作子に渡された値が変更されたときにプロパティの強制型変換が行われます。  
+## <a name="dependency-property-value-coercion"></a>依存関係プロパティの値の強制  
+ プロパティの強制変換は、プロパティ ストアが実際に変更する前に、set アクセス操作子がプロパティ set アクセス操作子に渡された値が変更されたときに行われます。  
   
- **X のしないで** 依存関係プロパティのアクセサーに強制変換ロジックを実装します。  
+ **X しないで**依存関係プロパティのアクセサーに強制変換ロジックを実装します。  
   
- 依存関係プロパティが、組み込みの強制型変換機能を持っているし、強制型変換のコールバックを指定することで使用できます、 `PropertyMetadata`です。  
+ 依存関係プロパティが、ビルトインの強制変換機能を持っているし、強制型変換のコールバックを指定することによって使用できます、`PropertyMetadata`です。  
   
- *部分 © 2005年、2009 Microsoft Corporation します。 All rights reserved.*  
+ *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
   
- *翔泳社からのアクセス許可によって検出 [Framework デザイン ガイドライン: 規則が、表現方法と再利用可能な .NET ライブラリを 2 nd Edition パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) は Cwalina Brad エイブラムスによる、Microsoft Windows の開発シリーズの一部として Addison\-wesley Professional、2008 年 10 月 22 日を公開します。*  
+ *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## 参照  
- [Framework デザイン ガイドライン](../../../docs/standard/design-guidelines/index.md)   
- [一般的な設計パターン](../../../docs/standard/design-guidelines/common-design-patterns.md)
+## <a name="see-also"></a>関連項目  
+ [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)  
+ [一般的なデザイン パターン](../../../docs/standard/design-guidelines/common-design-patterns.md)

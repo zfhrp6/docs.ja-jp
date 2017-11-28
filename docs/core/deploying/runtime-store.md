@@ -9,12 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 9521d8b4-25fc-412b-a65b-4c975ebf6bfd
+ms.openlocfilehash: 607f8259fa6d8488a7fccf3c7d90b6cf40d5f237
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 57e9a2b8aa952860a380b60c44fd2df16ef6463c
-ms.openlocfilehash: e039190b49b35bd2675a175c6ff3631d6d344e4a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="runtime-package-store"></a>ランタイム パッケージ ストア
 
@@ -25,19 +24,11 @@ NET Core 2.0 以降、ターゲット環境に存在する既知のパッケー�
 \dotnet   
 &nbsp;&nbsp;\store   
 &nbsp;&nbsp;&nbsp;&nbsp;\x64   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\net47   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\microsoft.applicationinsights   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\microsoft.aspnetcore   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\netcoreapp2.0   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\microsoft.applicationinsights   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\microsoft.aspnetcore   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...   
 &nbsp;&nbsp;&nbsp;&nbsp;\x86   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\net47   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\microsoft.applicationinsights   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\microsoft.aspnetcore   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\netcoreapp2.0   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\microsoft.applicationinsights   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\microsoft.aspnetcore   
@@ -95,9 +86,9 @@ dotnet store --manifest packages.csproj --runtime win10-x64 --framework netcorea
 
 ```xml
 <StoreArtifacts>
-  <Package Id="newtonsoft.json" Version="10.0.3" />
-  <Package Id="castle.core" Version="4.1.0" />
-  <Package Id="moq" Version="4.7.63" />
+  <Package Id="Newtonsoft.Json" Version="10.0.3" />
+  <Package Id="Castle.Core" Version="4.1.0" />
+  <Package Id="Moq" Version="4.7.63" />
 </StoreArtifacts>
 ```
 
@@ -155,6 +146,5 @@ dotnet publish --manifest manifest.xml
 展開が発行時に*トリミング*されると、指定した特定のバージョンのマニフェスト パッケージのみが、発行された出力から引かれます。 アプリを開始するには、指定されたバージョンのパッケージがホスト上に存在する必要があります。
 
 ## <a name="see-also"></a>関連項目
- [dotnet-publish](../tools/dotnet-publish.md)   
- [dotnet-store](../tools/dotnet-store.md)   
-
+ [dotnet-publish](../tools/dotnet-publish.md)  
+ [dotnet-store](../tools/dotnet-store.md)  

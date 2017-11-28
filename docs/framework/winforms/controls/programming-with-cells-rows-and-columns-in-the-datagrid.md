@@ -1,68 +1,69 @@
 ---
-title: "Windows フォーム DataGridView コントロールのセル、行、および列を使用したプログラミング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "セル, データ グリッド"
-  - "列 [Windows フォーム], データ グリッド"
-  - "データ グリッド, 要素"
-  - "DataGridView コントロール [Windows フォーム], プログラミング (グリッド要素を使用して)"
-  - "行 [Windows フォーム], データ グリッド"
+title: "Windows フォーム DataGridView コントロールのセル、行、および列を使用したプログラミング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- data grids [Windows Forms], elements
+- columns [Windows Forms], data grids
+- cells [Windows Forms], data grids
+- DataGridView control [Windows Forms], programming with grid elements
+- rows [Windows Forms], data grids
 ms.assetid: 0d76f7e4-4149-42c6-9118-bb37d6669dc5
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 313867b76d569fb98b1bd5d46c658763d0020726
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォーム DataGridView コントロールのセル、行、および列を使用したプログラミング
-ここでは、セル、行、列の各オブジェクトを使用したさまざまなプログラミング タスクの例を紹介するトピックを示します。  
+# <a name="programming-with-cells-rows-and-columns-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールのセル、行、および列を使用したプログラミング
+このセクションでは、セル、行、および列オブジェクトに関連するさまざまなプログラミング タスクについて説明するトピックを提供します。  
   
-## このセクションの内容  
- [方法 : Windows フォーム DataGridView コントロールの各セルにツールヒントを追加する](../../../../docs/framework/winforms/controls/add-tooltips-to-individual-cells-in-a-wf-datagridview-control.md)  
- <xref:System.Windows.Forms.DataGridView.CellFormatting> イベントを使用してセルごとに異なるツールヒントを表示する方法について説明します。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [方法: Windows フォーム DataGridView コントロールの各セルにツールヒントを追加する](../../../../docs/framework/winforms/controls/add-tooltips-to-individual-cells-in-a-wf-datagridview-control.md)  
+ 処理する方法について説明します、<xref:System.Windows.Forms.DataGridView.CellFormatting>個々 のセルを別のツール ヒントを提供するイベントです。  
   
- [方法 : Windows フォーム DataGridView コントロールのセルの変更に基づいてカスタム動作を実行する](../../../../docs/framework/winforms/controls/perform-a-custom-action-based-on-changes-in-a-cell-of-a-datagrid.md)  
- <xref:System.Windows.Forms.DataGridView.CellValueChanged> イベントと <xref:System.Windows.Forms.DataGridView.CellStateChanged> イベントを処理する方法について説明します。  
+ [方法: Windows フォーム DataGridView コントロールのセルの変更に基づいてカスタム動作を実行する](../../../../docs/framework/winforms/controls/perform-a-custom-action-based-on-changes-in-a-cell-of-a-datagrid.md)  
+ 処理する方法について説明します、<xref:System.Windows.Forms.DataGridView.CellValueChanged>と<xref:System.Windows.Forms.DataGridView.CellStateChanged>イベント。  
   
- [方法 : Windows フォームの DataGridView コントロールのバンドを操作する](../../../../docs/framework/winforms/controls/how-to-manipulate-bands-in-the-windows-forms-datagridview-control.md)  
- 行および列の基本型である <xref:System.Windows.Forms.DataGridViewBand> 型のオブジェクトを使用したプログラミングの方法について説明します。  
+ [方法: Windows フォームの DataGridView コントロールのバンドを操作する](../../../../docs/framework/winforms/controls/how-to-manipulate-bands-in-the-windows-forms-datagridview-control.md)  
+ 型のオブジェクトのプログラミング方法について説明<xref:System.Windows.Forms.DataGridViewBand>、これは行と列の基本型です。  
   
- [方法 : Windows フォームの DataGridView コントロールの行を操作する](../../../../docs/framework/winforms/controls/how-to-manipulate-rows-in-the-windows-forms-datagridview-control.md)  
- `DataGridViewRow` 型のオブジェクトを使用したプログラミングの方法について説明します。  
+ [方法: Windows フォームの DataGridView コントロールの行を操作する](../../../../docs/framework/winforms/controls/how-to-manipulate-rows-in-the-windows-forms-datagridview-control.md)  
+ 型のオブジェクトのプログラミング方法について説明`DataGridViewRow`です。  
   
- [方法 : Windows フォーム DataGridView コントロールの列を操作する](../../../../docs/framework/winforms/controls/how-to-manipulate-columns-in-the-windows-forms-datagridview-control.md)  
- `DataGridViewColumn` 型のオブジェクトを使用したプログラミングの方法について説明します。  
+ [方法: Windows フォーム DataGridView コントロールの列を操作する](../../../../docs/framework/winforms/controls/how-to-manipulate-columns-in-the-windows-forms-datagridview-control.md)  
+ 型のオブジェクトのプログラミング方法について説明`DataGridViewColumn`です。  
   
- [方法 : Windows フォーム DataGridView コントロールのイメージ列を操作する](../../../../docs/framework/winforms/controls/how-to-work-with-image-columns-in-the-windows-forms-datagridview-control.md)  
- `DataGridViewImageColumn` クラスを使用したプログラミングの方法について説明します。  
+ [方法: Windows フォーム DataGridView コントロールのイメージ列を操作する](../../../../docs/framework/winforms/controls/how-to-work-with-image-columns-in-the-windows-forms-datagridview-control.md)  
+ 使用したプログラミング方法について説明します、`DataGridViewImageColumn`クラスです。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.Windows.Forms.DataGridView>  
- <xref:System.Windows.Forms.DataGridView> コントロールの参照ドキュメントを提供します。  
+ <xref:System.Windows.Forms.DataGridView> コントロールのリファレンス ドキュメントを提供します。  
   
  <xref:System.Windows.Forms.DataGridViewCell>  
- <xref:System.Windows.Forms.DataGridViewCell> クラスの参照ドキュメントを提供します。  
+ リファレンス ドキュメントを提供、<xref:System.Windows.Forms.DataGridViewCell>クラスです。  
   
  <xref:System.Windows.Forms.DataGridViewRow>  
- <xref:System.Windows.Forms.DataGridViewRow> クラスの参照ドキュメントを提供します。  
+ リファレンス ドキュメントを提供、<xref:System.Windows.Forms.DataGridViewRow>クラスです。  
   
  <xref:System.Windows.Forms.DataGridViewColumn>  
- <xref:System.Windows.Forms.DataGridViewColumn> クラスの参照ドキュメントを提供します。  
+ リファレンス ドキュメントを提供、<xref:System.Windows.Forms.DataGridViewColumn>クラスです。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [Windows フォーム DataGridView コントロールでの列、行、およびセルの基本機能](../../../../docs/framework/winforms/controls/basic-column-row-and-cell-features-wf-datagridview-control.md)  
- セル、行、および列の一般的なプロパティを説明するトピックを示します。  
+ よくを説明するトピックに使用されるセル、行、および列のプロパティを提供します。  
   
-## 参照  
- [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)   
+## <a name="see-also"></a>関連項目  
+ [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)  
  [Windows フォーム DataGridView コントロールの列型](../../../../docs/framework/winforms/controls/column-types-in-the-windows-forms-datagridview-control.md)

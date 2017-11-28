@@ -1,50 +1,51 @@
 ---
-title: "Windows フォーム DataGridView コントロールでのパフォーマンス チューニング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "DataGridView コントロール [Windows フォーム], パフォーマンス チューニング"
-  - "パフォーマンス チューニング, データ グリッド"
-  - "パフォーマンス, DataGridView コントロール"
+title: "Windows フォーム DataGridView コントロールでのパフォーマンス チューニング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- DataGridView control [Windows Forms], performance tuning
+- performance [Windows Forms], DataGridView control
+- performance tuning [Windows Forms], data grids
 ms.assetid: 6ccbff28-a0ff-41e4-b601-61b31b61851d
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 452c55d38a896ec96e0992a4b9826f08dc4caa0e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォーム DataGridView コントロールでのパフォーマンス チューニング
-`DataGridView` コントロールで大量のデータを扱うときは、慎重に使用しないと、オーバーヘッドのために大量のメモリが消費されることがあります。  クライアントのメモリが限られている場合は、メモリ消費の多い機能を使わないようにすることで、このオーバーヘッドをある程度回避できます。  また、仮想モードを使用して一部または全部のデータ保守タスクとデータ取得タスクを自力で管理すると、メモリ使用状況をシナリオに合わせてカスタマイズできます。  
+# <a name="performance-tuning-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでのパフォーマンス チューニング
+大量のデータを使用するときに、`DataGridView`コントロールが大量のオーバーヘッドが、メモリを使用できるは、慎重に使用する場合を除き、します。 メモリの制限とのクライアントではメモリ消費の多い機能を回避することでこのオーバーヘッドの一部を回避できます。 データ メンテナンスの一部またはすべてを管理することもでき、シナリオでは、メモリ使用量をカスタマイズするために仮想モードを使用して自分でタスクを取得します。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [Windows フォーム DataGridView コントロールを拡張するための推奨される手順](../../../../docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)  
- 大量のデータを扱うときに、無用なメモリ消費とパフォーマンス低下を避けるような方法で `DataGridView` コントロールを使用するための詳細を説明します。  
+ 使用する方法について説明します、`DataGridView`大量のデータを操作するときに、不要なメモリの使用状況とパフォーマンスの低下を回避する方法で制御します。  
   
  [Windows フォーム DataGridView コントロールでの仮想モード](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md)  
- 仮想モードを使用して標準のデータ バインディング機構を補完する \(または置き換える\) 方法について説明します。  
+ 仮想モードを使用して補完したり、標準的なデータ バインディング機構を置換する方法について説明します。  
   
- [チュートリアル : Windows フォーム DataGridView コントロールでの仮想モードの実装](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md)  
- いくつかの仮想モード イベントのハンドラーを実装する方法について説明します。  また、ユーザー編集に対する行レベルのロールバックとコミットを実装する方法の具体例を示します。  
+ [チュートリアル: Windows フォーム DataGridView コントロールでの仮想モードの実装](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md)  
+ 複数の仮想モード イベントのハンドラーを実装する方法について説明します。 行レベルのロールバックとユーザーを編集するためのコミットを実装する方法も示します。  
   
- [Windows フォーム DataGridView コントロールでの Just\-In\-Time データ読み込みによる仮想モードの実装](../../../../docs/framework/winforms/controls/implementing-virtual-mode-jit-data-loading-in-the-datagrid.md)  
- データを要求時に読み込む方法について説明します。この方法は、クライアント メモリに格納できないくらい多くのデータを表示しなければならないときに役立ちます。  
+ [Windows フォーム DataGridView コントロールでの Just-In-Time データ読み込みによる仮想モードの実装](../../../../docs/framework/winforms/controls/implementing-virtual-mode-jit-data-loading-in-the-datagrid.md)  
+ 必要に応じて、使用可能なクライアントのメモリを格納できるよりもを表示する複数のデータがある場合に有用なデータを読み込む方法について説明します。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.Windows.Forms.DataGridView>  
- <xref:System.Windows.Forms.DataGridView> コントロールの参照ドキュメントを提供します。  
+ <xref:System.Windows.Forms.DataGridView> コントロールのリファレンス ドキュメントを提供します。  
   
  <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>  
- <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> プロパティの参照ドキュメントを提供します。  
+ リファレンス ドキュメントを提供、<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>プロパティです。  
   
-## 参照  
- [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)   
+## <a name="see-also"></a>関連項目  
+ [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)  
  [Windows フォーム DataGridView コントロールでのデータ表示モード](../../../../docs/framework/winforms/controls/data-display-modes-in-the-windows-forms-datagridview-control.md)

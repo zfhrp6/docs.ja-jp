@@ -1,82 +1,83 @@
 ---
-title: "チュートリアル : Windows フォーム コントロールのスマート タグを使用した共通タスクの実行 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "デザイナー アクション"
-  - "DesignerAction オブジェクト モデル"
-  - "スマート タグ"
+title: "チュートリアル : Windows フォーム コントロールのスマート タグを使用した共通タスクの実行"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- DesignerAction object model
+- smart tags
+- designer actions
 ms.assetid: cac337e6-00f6-4584-80f4-75728f5ea113
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2e6b815be85576f037e0f24668c44756b95abd6e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル : Windows フォーム コントロールのスマート タグを使用した共通タスクの実行
-Windows フォーム アプリケーションのフォームやコントロールを構成するときは、繰り返し実行するタスクが数多くあります。  そのような共通タスクには、次のようなものがあります。  
+# <a name="walkthrough-performing-common-tasks-using-smart-tags-on-windows-forms-controls"></a>チュートリアル : Windows フォーム コントロールのスマート タグを使用した共通タスクの実行
+Windows フォーム アプリケーションのフォームとコントロールを作成するときに、繰り返し実行する多くのタスクを使用します。 これらは、発生する、よく実行されるタスクの一部を示します。  
   
--   <xref:System.Windows.Forms.TabControl> へのタブの追加または削除  
+-   追加または取り外し、タブ、<xref:System.Windows.Forms.TabControl>です。  
   
--   親コントロールへのコントロールのドッキング  
+-   コントロールの親へのドッキングします。  
   
--   <xref:System.Windows.Forms.SplitContainer> コントロールの方向の変更  
+-   向きの変更、<xref:System.Windows.Forms.SplitContainer>コントロール。  
   
- 開発をスピードアップするために、多くのコントロールにはスマート タグが用意されています。スマート タグは、上記のような共通タスクをデザイン時に単一の操作で実行できるようにする状況依存のメニューです。  これらのタスクは、*スマートタグ動詞*と呼ばれています。  
+ 開発を高速には、多くのコントロールは、デザイン時に 1 つのジェスチャで上記のような一般的なタスクを実行することは状況依存のメニューは、スマート タグを提供します。 これらのタスクが呼び出されます*スマート タグ動詞*です。  
   
- スマート タグは、デザイナーでコントロール インスタンスが有効な間、コントロール インスタンスに表示されいつでも使用できます。  
+ スマート タグは、その有効期間、デザイナーでのコントロールのインスタンスに接続されたままし、常に利用します。  
   
  このチュートリアルでは、以下のタスクを行います。  
   
 -   Windows フォーム プロジェクトの作成  
   
--   スマート タグの使用  
+-   スマート タグを使用します。  
   
--   スマート タグの有効化と無効化  
+-   有効にして、スマート タグを無効化  
   
- ここでは、これらの重要なレイアウト機能が果たす役割について理解します。  
+ 終了すると、これらの重要なレイアウト機能が果たす役割について理解できます。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-## プロジェクトの作成  
+## <a name="creating-the-project"></a>プロジェクトの作成  
  最初にプロジェクトを作成し、フォームを設定します。  
   
-#### プロジェクトを作成するには  
+#### <a name="to-create-the-project"></a>プロジェクトを作成するには  
   
-1.  "SmartTagsExample" という名前の Windows ベース アプリケーション プロジェクトを作成します。  詳細については、「[How to: Create a Windows Application Project](http://msdn.microsoft.com/ja-jp/b2f93fed-c635-4705-8d0e-cf079a264efa)」を参照してください。  
+1.  "SmartTagsExample"と呼ばれる Windows ベースのアプリケーション プロジェクトを作成します。 詳細については、「[方法 : Windows アプリケーション プロジェクトを作成する](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)」を参照してください。  
   
-2.  **Windows フォーム デザイナー**でフォームを選択します。  
+2.  フォームを選択、 **Windows フォーム デザイナー**です。  
   
-## スマート タグの使用  
- スマート タグを提供するコントロールでは、デザイン時にいつでもスマート タグを使用できます。  
+## <a name="using-smart-tags"></a>スマート タグを使用します。  
+ スマート タグは提供するコントロールのデザイン時に常に使用します。  
   
-#### スマート タグを使用するには  
+#### <a name="to-use-smart-tags"></a>スマート タグを使用するには  
   
-1.  **ツールボックス**の <xref:System.Windows.Forms.TabControl> コントロールをフォームにドラッグします。  スマート タグ グリフ \(![スマート タグ グリフ](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.png "VS\_WinFormSmtTagGlyph")\) が <xref:System.Windows.Forms.TabControl> の横に表示されます。  
+1.  ドラッグ、<xref:System.Windows.Forms.TabControl>から、**ツールボックス**フォーム上にします。 スマート タグ グリフを注意してください (![スマート タグ グリフ](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) のサイドに表示される、<xref:System.Windows.Forms.TabControl>です。  
   
-2.  スマート タグ グリフをクリックします。  グリフの横に表示されるショートカット メニューの **\[タブの追加\]** をクリックします。  新しいタブ ページが <xref:System.Windows.Forms.TabControl> に追加されることを確認してください。  
+2.  スマート タグ グリフをクリックします。 グリフの横に表示されるショートカット メニューで、選択、**タブの追加**項目。 新しいタブ ページが追加されたことを確認、<xref:System.Windows.Forms.TabControl>です。  
   
-3.  **ツールボックス**からフォームに、<xref:System.Windows.Forms.TableLayoutPanel> コントロールをドラッグします。  
+3.  ドラッグ、<xref:System.Windows.Forms.TableLayoutPanel>から制御、**ツールボックス**フォーム上にします。  
   
-4.  スマート タグ グリフをクリックします。  グリフの横に表示されるショートカット メニューの **\[列の追加\]** をクリックします。  新しい列が <xref:System.Windows.Forms.TableLayoutPanel> コントロールに追加されることを確認してください。  
+4.  スマート タグ グリフをクリックします。 グリフの横に表示されるショートカット メニューで、選択、**列の追加**項目。 新しい列が追加されたことを確認、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。  
   
-5.  **ツールボックス**からフォームに、<xref:System.Windows.Forms.SplitContainer> コントロールをドラッグします。  
+5.  ドラッグ、<xref:System.Windows.Forms.SplitContainer>から制御、**ツールボックス**フォーム上にします。  
   
-6.  スマート タグ グリフをクリックします。  グリフの横に表示されるショートカット メニューの **\[上下分割の方向\]** をクリックします。  <xref:System.Windows.Forms.SplitContainer> コントロールの分割バーが横向きになったことを確認してください。  
+6.  スマート タグ グリフをクリックします。 グリフの横に表示されるショートカット メニューで、選択、**水平分割線の向き**項目。 されることを確認、<xref:System.Windows.Forms.SplitContainer>コントロールの分割バーは水平方向です。  
   
-## 参照  
- <xref:System.Windows.Forms.TextBox>   
- <xref:System.Windows.Forms.TabControl>   
- <xref:System.Windows.Forms.SplitContainer>   
- <xref:System.ComponentModel.Design.DesignerActionList>   
- [Walkthrough: Adding Smart Tags to a Windows Forms Component](../Topic/Walkthrough:%20Adding%20Smart%20Tags%20to%20a%20Windows%20Forms%20Component.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.TextBox>  
+ <xref:System.Windows.Forms.TabControl>  
+ <xref:System.Windows.Forms.SplitContainer>  
+ <xref:System.ComponentModel.Design.DesignerActionList>  
+ [チュートリアル: Windows フォームのコンポーネントへのスマート タグの追加](http://msdn.microsoft.com/library/a6814169-fa7d-4527-808c-637ca5c95f63)

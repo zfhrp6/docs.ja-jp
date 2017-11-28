@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - uninstalling server resources
 - removing server resources
@@ -26,16 +20,15 @@ helpviewer_keywords:
 - progress information for installation
 - reporting installation progress
 ms.assetid: 3f9d0533-f895-4897-b4ea-528284e0241d
-caps.latest.revision: 40
+caps.latest.revision: "40"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 611df94890200f442e8e2b0f5d1442eb44f25c70
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8660d2c87936f6fa7a8b9b86872300911c1ae99d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="installutilexe-installer-tool"></a>Installutil.exe (インストーラー ツール)
 インストーラー ツールは、指定したアセンブリ内のインストーラー コンポーネントを実行することによってサーバー リソースのインストールとアンインストールを実行できるコマンド ライン ユーティリティです。 このツールは、<xref:System.Configuration.Install> 名前空間のクラスと組み合わせることによって動作します。  
@@ -62,7 +55,7 @@ installutil [/u[ninstall]] [options] assembly [[options] assembly] ...
 |オプション|説明|  
 |------------|-----------------|  
 |`/h[elp]`<br /><br /> または<br /><br /> `/?`|このツールのコマンド構文とオプションを表示します。|  
-|`/help` *assembly*<br /><br /> または<br /><br /> `/?` *assembly*|InstallUtil.exe のコマンド構文とオプションと共に、指定したアセンブリ内でそれぞれのインストーラーによって認識される追加オプションを表示します。 このオプションを指定すると、各インストーラー コンポーネントの <xref:System.Configuration.Install.Installer.HelpText%2A?displayProperty=fullName> プロパティによって返されるテキストが InstallUtil.exe のヘルプ テキストに追加されます。|  
+|`/help` *assembly*<br /><br /> または<br /><br /> `/?` *assembly*|InstallUtil.exe のコマンド構文とオプションと共に、指定したアセンブリ内でそれぞれのインストーラーによって認識される追加オプションを表示します。 このオプションを指定すると、各インストーラー コンポーネントの <xref:System.Configuration.Install.Installer.HelpText%2A?displayProperty=nameWithType> プロパティによって返されるテキストが InstallUtil.exe のヘルプ テキストに追加されます。|  
 |`/AssemblyName` "*assemblyName*<br /><br /> ,Version=*major.minor.build.revision*<br /><br /> ,Culture=*locale*<br /><br /> ,PublicKeyToken=*publicKeyToken*"|グローバル アセンブリ キャッシュに登録されている必要があるアセンブリの厳密な名前を指定します。 アセンブリ名は、バージョン、カルチャ、およびアセンブリの公開キー トークンによって完全修飾にする必要があります。 完全修飾名は、引用符で囲む必要があります。<br /><br /> たとえば、"myAssembly, Culture=neutral, PublicKeyToken=0038abc9deabfle5, Version=4.0.0.0" は、完全修飾のアセンブリ名です。|  
 |`/InstallStateDir=[` *directoryName* `]`|アセンブリをアンインストールするために使用されるデータを格納する .InstallState ファイルのディレクトリを指定します。 既定のディレクトリは、アセンブリを格納しているディレクトリです。|  
 |`/LogFile=`[*filename*]|インストールの進行状況を記録するログ ファイルの名前を指定します。 既定では、`/LogFile` オプションを省略した場合は、*assemblyname*.InstallLog という名前のログ ファイルが作成されます。 *filename* を省略した場合、ログ ファイルは生成されません。|  
@@ -75,7 +68,7 @@ installutil [/u[ninstall]] [options] assembly [[options] assembly] ...
  アセンブリ内で使用されるそれぞれのインストーラーでは、「[オプション](#options)」で示したオプション以外のオプションも認識される場合があります。 これらのオプションを確認するには、コマンド ラインで `/?` オプションまたは `/help` オプションと共にアセンブリのパスを指定して InstallUtil.exe を実行します。 これらのオプションを指定するには、InstallUtil.exe で認識されるオプションと共にそれらのオプションをコマンド ラインに含めます。  
   
 > [!NOTE]
->  個々のインストーラー コンポーネントでサポートされるオプションのヘルプ テキストは、<xref:System.Configuration.Install.Installer.HelpText%2A?displayProperty=fullName> プロパティによって返されます。 コマンド ラインで入力された個々のオプションには、<xref:System.Configuration.Install.Installer.Context%2A?displayProperty=fullName> プロパティからプログラムでアクセスできます。  
+>  個々のインストーラー コンポーネントでサポートされるオプションのヘルプ テキストは、<xref:System.Configuration.Install.Installer.HelpText%2A?displayProperty=nameWithType> プロパティによって返されます。 コマンド ラインで入力された個々のオプションには、<xref:System.Configuration.Install.Installer.Context%2A?displayProperty=nameWithType> プロパティからプログラムでアクセスできます。  
   
  オプションとコマンド ライン パラメーターはすべてインストール ログ ファイルに書き込まれます。 ただし、一部のインストーラー コンポーネントで認識される `/Password` パラメーターを使用する場合、パスワード情報は 8 つのアスタリスク (*) に置き換えられ、ログ ファイルに表示されません。  
   
@@ -95,7 +88,7 @@ installutil [/u[ninstall]] [options] assembly [[options] assembly] ...
   
 -   *assemblyname*.InstallState - アセンブリをアンインストールするために使用されるデータが含まれます。  
   
- Installutil.exe は、リフレクションを使用して指定されたアセンブリを調査し、<xref:System.Configuration.Install.Installer> 属性が <xref:System.ComponentModel.RunInstallerAttribute?displayProperty=fullName> に設定されたすべての `true` タイプを検索します。 次に、<xref:System.Configuration.Install.Installer.Install%2A?displayProperty=fullName> タイプの各インスタンスについて、<xref:System.Configuration.Install.Installer.Uninstall%2A?displayProperty=fullName> メソッドまたは <xref:System.Configuration.Install.Installer> メソッドを実行します。 Installutil.exe は、トランザクション的な方法でインストールを実行します。つまり、いずれかのアセンブリのインストールに失敗した場合には、他のすべてのアセンブリのインストールをロールバックします。 アンインストールはトランザクション的な方法では実行されません。  
+ Installutil.exe は、リフレクションを使用して指定されたアセンブリを調査し、<xref:System.Configuration.Install.Installer> 属性が <xref:System.ComponentModel.RunInstallerAttribute?displayProperty=nameWithType> に設定されたすべての `true` タイプを検索します。 次に、<xref:System.Configuration.Install.Installer.Install%2A?displayProperty=nameWithType> タイプの各インスタンスについて、<xref:System.Configuration.Install.Installer.Uninstall%2A?displayProperty=nameWithType> メソッドまたは <xref:System.Configuration.Install.Installer> メソッドを実行します。 Installutil.exe は、トランザクション的な方法でインストールを実行します。つまり、いずれかのアセンブリのインストールに失敗した場合には、他のすべてのアセンブリのインストールをロールバックします。 アンインストールはトランザクション的な方法では実行されません。  
   
  Installutil.exe では、遅延署名されたアセンブリのインストールおよびアンインストールはできませんが、厳密な名前付きアセンブリのインストールおよびアンインストールはできます。  
   
@@ -110,7 +103,7 @@ installutil [/u[ninstall]] [options] assembly [[options] assembly] ...
 installutil /?  
 ```  
   
- InstallUtil.exe のコマンド構文とオプションの説明を表示するコマンドを次に示します。 インストーラーの <xref:System.Configuration.Install.Installer.HelpText%2A?displayProperty=fullName> プロパティにヘルプ テキストが割り当てられている場合は、`myAssembly.exe` のインストーラー コンポーネントでサポートされるオプションの説明とリストも表示されます。  
+ InstallUtil.exe のコマンド構文とオプションの説明を表示するコマンドを次に示します。 インストーラーの <xref:System.Configuration.Install.Installer.HelpText%2A?displayProperty=nameWithType> プロパティにヘルプ テキストが割り当てられている場合は、`myAssembly.exe` のインストーラー コンポーネントでサポートされるオプションの説明とリストも表示されます。  
   
 ```  
 installutil /? myAssembly.exe  
@@ -177,7 +170,6 @@ installutil /LogFile=myLog.InstallLog myAssembly.exe /LogFile=myTestLog.InstallL
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Configuration.Install>   
- [ツール](../../../docs/framework/tools/index.md)   
+ <xref:System.Configuration.Install>  
+ [ツール](../../../docs/framework/tools/index.md)  
  [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
-

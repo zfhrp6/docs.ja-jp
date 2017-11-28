@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.translationtype: HT
-ms.sourcegitcommit: c58ed1b3c09f1e358d0b66f6cf7186821601fd69
 ms.openlocfilehash: c68e382450a763fd0521b7defdd79d8433e1acde
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/12/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="custom-templates-for-dotnet-new"></a>dotnet new のカスタム テンプレート
 
 [.NET Core SDK](https://www.microsoft.com/net/download/core) には、[`dotnet new` コマンド](dotnet-new.md)で使用するさまざまなテンプレートが既にインストールされています。 .NET Core 2.0 以降から、アプリ、サービス、ツール、クラス ライブラリなど、あらゆる種類のプロジェクトを対象に独自のテンプレートを作成できるようになりました。 構成ファイルなど、1 つまたは複数の独立ファイルを出力するテンプレートを作成することもできます。
@@ -89,7 +87,7 @@ dotnet new -l
 
 | 要素            | 型   | 説明 |
 | ------------------ | ------ | ----------- |
-| **\<authors>**     | string | パッケージ作成者の一覧。コンマで区切られています。nuget.org のプロファイル名と一致します。 作成者は nuget.org の NuGet ギャラリーに表示され、同じ作成者によるパッケージの相互参照に使用されます。 |
+| **\<authors>**     | string | パッケージ作成者の一覧。コンマで区切られています。nuget.org のプロファイル名と一致します。作成者は nuget.org の NuGet ギャラリーに表示され、同じ作成者によるパッケージの相互参照に使用されます。 |
 | **\<description>** | string | UI 画面用のパッケージの長い説明。 |
 | **\<id>**          | string | パッケージの識別子で、大文字と小文字が区別されます。nuget.org 全体で、あるいはパッケージが置かれるギャラリーで一意でなければなりません。 ID には、URL によっては無効なスペースや文字が含まれることがあります。また、一般的に、.NET の名前空間ルールに従います。 手引きについては、「[Choosing a unique package identifier and setting the version number](/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)」 (一意のパッケージ識別子を選択し、バージョン番号を設定する) をご覧ください。 |
 | **\<packageType>** | string | この要素を **\<metadata>** 要素の中の **\<packageTypes>** 要素内に置きます。 **\<packageType>** 要素の `name` 属性を `Template` に設定します。 |
@@ -164,4 +162,3 @@ dotnet new <TEMPLATE>
 [dotnet/dotnet-template-samples GitHub リポジトリ](https://github.com/dotnet/dotnet-template-samples)  
 [dotnet new の独自のテンプレートを作成する方法](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/)  
 [JSON Schema Store の *template.json* スキーマ](http://json.schemastore.org/template)  
-

@@ -1,34 +1,40 @@
 ---
-title: "方法 : 名前のスコープを定義する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アニメーション, ストーリーボード, 手続き型コードでの"
-  - "名前のスコープ, 定義"
-  - "ストーリーボード, アニメーション化 (手続き型コードでの)"
+title: "方法 : 名前のスコープを定義する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- name scope [WPF], defining
+- Storyboards [WPF], animating in procedural code
+- animation [WPF], Storyboards [WPF], in procedural code
 ms.assetid: 4f361925-6a08-40dc-8231-a61111c6b28b
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8d3199de53f93f07e36e7a6e0a02ed9e80b4d591
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 名前のスコープを定義する
-コードで <xref:System.Windows.Media.Animation.Storyboard> を使用してアニメーション化を行う場合は、<xref:System.Windows.NameScope> を作成し、その名前スコープを所有する要素にターゲット オブジェクトの名前を登録する必要があります。  次の例では、`myMainPanel` に対して <xref:System.Windows.NameScope> を作成します。  2 つのボタン `button1` と `button2` をパネルに追加し、その名前を登録します。  複数のアニメーションと <xref:System.Windows.Media.Animation.Storyboard> が作成されます。  アニメーションを開始するには、ストーリーボードの <xref:System.Windows.Media.Animation.Storyboard.Begin%2A> メソッドを使用します。  
+# <a name="how-to-define-a-name-scope"></a>方法 : 名前のスコープを定義する
+使用してアニメーション化<xref:System.Windows.Media.Animation.Storyboard>コードでは、作成する必要があります、<xref:System.Windows.NameScope>し、その名前のスコープを所有する要素を持つターゲット オブジェクトの名前を登録します。 次の例で、<xref:System.Windows.NameScope>に対して作成`myMainPanel`です。 2 つのボタン`button1`と`button2`パネル、および登録されている、名前に追加されます。 複数のアニメーションと<xref:System.Windows.Media.Animation.Storyboard>が作成されます。 ストーリー ボードの<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>アニメーションを開始するメソッドを使用します。  
   
- `button1`、`button2`、および `myMainPanel` はすべて同じ名前スコープを共有するため、いずれか 1 つを <xref:System.Windows.Media.Animation.Storyboard> <xref:System.Windows.Media.Animation.Storyboard.Begin%2A> メソッドで使用して、アニメーションを開始できます。  
+ `button1`、 `button2`、および`myMainPanel`すべて同じ名前のスコープを共有、それらのいずれかをと共に使用することができます、 <xref:System.Windows.Media.Animation.Storyboard> <xref:System.Windows.Media.Animation.Storyboard.Begin%2A>アニメーションを開始するメソッド。  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-csharp[StoryboardBeginAnimation_procedural_snip#NameScopeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/ScopeExample.cs#namescopeexample)]
  [!code-vb[StoryboardBeginAnimation_procedural_snip#NameScopeExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/scopeexample.vb#namescopeexample)]  
   
-## 参照  
- [ストーリーボードを使ってプロパティをアニメーション化する](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)   
+## <a name="see-also"></a>関連項目  
+ [ストーリーボードを使ってプロパティをアニメーション化する](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)

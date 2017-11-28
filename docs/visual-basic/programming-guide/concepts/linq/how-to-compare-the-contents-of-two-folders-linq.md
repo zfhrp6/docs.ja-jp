@@ -1,44 +1,36 @@
 ---
-title: "方法:&2; つのフォルダー (LINQ) (Visual Basic) の内容を比較 |Microsoft ドキュメント"
+title: "方法: 2 つのフォルダー (LINQ) (Visual Basic) の内容の比較"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 903c7e9a-f48d-4a07-a8a8-5450d2646efa
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1ce4f89c88fd856d3471e4f32c4f69d15e8ccb4c
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: a65b5f74e872cb4d2e459bc7ff866ca332706ef9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-compare-the-contents-of-two-folders-linq-visual-basic"></a>方法:&2; つのフォルダー (LINQ) (Visual Basic) の内容を比較します。
-この例では、2 つのファイル リストを比較する&3; つの方法を示します。  
+# <a name="how-to-compare-the-contents-of-two-folders-linq-visual-basic"></a>方法: 2 つのフォルダー (LINQ) (Visual Basic) の内容の比較
+この例では、2 つのファイル リストを比較する 3 つの方法を示します。  
   
--   2 つのファイルのリストかどうかを指定するブール値を照会すると同じです。  
+-   2 つのファイル リストが同一であるかどうかを指定するブール値をクエリする方法  
   
--   両方のフォルダー内にあるファイルを取得する共通部分にクエリを実行します。  
+-   両方のフォルダー内にあるファイルを取得するために、共通部分をクエリする方法  
   
--   違いについては、セットを&1; つのフォルダーにあるファイルを取得するクエリを実行します。  
+-   1 つのフォルダーにあり、もう 1 つのフォルダーにはないファイルを取得するために、差集合をクエリする方法  
   
     > [!NOTE]
-    >  次に示す方法は、任意の型のオブジェクトのシーケンスを比較する適合させることができます。  
+    >  ここに示す方法は、任意の型のオブジェクトのシーケンスを比較するために適用させることができます。  
   
- `FileComparer`ここに示すクラスが、標準クエリ演算子と共にカスタム比較子クラスを使用する方法を示します。 クラスは、実際のシナリオで使用するものではありません。 のみを使用します名前と長さ (各ファイルのバイト単位) 各フォルダーの内容と同じしているかどうかを確認します。 実際のシナリオより厳密に等しいかどうかチェックを実行するこの比較演算子を変更してください。  
+ ここに示す `FileComparer` クラスは、標準クエリ演算子と共に、カスタム比較演算子クラスを使用する方法を示します。 このクラスは、実際のシナリオで使用することは想定されていません。 各フォルダーの内容が同一であるかどうかを判断するために、各ファイルの名前と長さ (バイト) を使用するだけです。 実際のシナリオでは、この比較演算子を変更して、より厳密に等しいかどうかをチェックします。  
   
 ## <a name="example"></a>例  
   
@@ -131,8 +123,8 @@ End Module
 ```  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- .NET Framework version 3.5 またはそれ以上、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメントです。  
+ .NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll および System.Linq 名前空間の `Imports` ステートメントを参照設定します。  
   
 ## <a name="see-also"></a>関連項目  
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)   
+ [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
  [LINQ とファイル ディレクトリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
-ms.translationtype: HT
-ms.sourcegitcommit: ef6d1bf9a7153f7adf635d13b4dcfb7647ed2e33
 ms.openlocfilehash: d04a158db4f97a0e37f8a92149a3f237ee2e5434
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="delegates-and-lambdas"></a>デリゲートとラムダ
 
 デリゲートは、特定のメソッド シグネチャを指定する型を定義します。 このシグネチャを満たすメソッド (静的またはインスタンス) は、その型の変数に代入し、(適切な引数を使用して) 直接呼び出したり、別のメソッドに引数そのものとして渡してから呼び出すことができます。 次の例は、デリゲートの使い方を示しています。
@@ -157,4 +155,3 @@ public MainWindow()
 *   [デリゲート](https://msdn.microsoft.com/library/ms173171.aspx)
 *   [匿名関数](https://msdn.microsoft.com/library/bb882516.aspx)
 *   [ラムダ式](https://msdn.microsoft.com/library/bb397687.aspx)
-

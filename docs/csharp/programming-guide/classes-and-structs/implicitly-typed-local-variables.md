@@ -1,46 +1,28 @@
 ---
 title: "暗黙的に型指定されるローカル変数 (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 26a4460acf70ff3748f12d74442f0ca568a587b5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cc02c0f7ef5fbbbf3c60188426a8027f6a60fb89
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>暗黙的に型指定されるローカル変数 (C# プログラミング ガイド)
 ローカル変数は、明示的な型を指定しないで宣言できます。 `var` キーワードは、初期化ステートメントの右辺にある式から変数の型を推論するようにコンパイラに指示します。 推論される型は、組み込み型、匿名型、ユーザー定義型、または .NET Framework クラス ライブラリで定義されている型である可能性があります。 `var` で配列を初期化する方法の詳細については、「[暗黙的に型指定される配列](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md)」を参照してください。  
   
  ローカル変数を `var` で宣言するさまざまな方法を次の例に示します。  
   
- [!code-cs[csProgGuideLINQ#43](../../../csharp/programming-guide/arrays/codesnippet/CSharp/implicitly-typed-local-variables_1.cs)]  
+ [!code-csharp[csProgGuideLINQ#43](../../../csharp/programming-guide/arrays/codesnippet/CSharp/implicitly-typed-local-variables_1.cs)]  
   
  `var` キーワードは "バリアント" を意味するのではなく、変数の厳密でない型指定や遅延バインディングを示すものでもないことを理解することが重要です。 単に、最も適切な型をコンパイラが決定して割り当てることを意味します。  
   
@@ -73,7 +55,7 @@ ms.lasthandoff: 07/28/2017
   
  ソース コードの観点から見ると、匿名型には名前がありません。 そのため、クエリ変数が `var` で初期化された場合、返されたオブジェクトのシーケンスのプロパティにアクセスするための唯一の方法は、`foreach` ステートメント内の繰り返し変数の型として `var` を使用することです。  
   
- [!code-cs[csProgGuideLINQ#44](../../../csharp/programming-guide/arrays/codesnippet/CSharp/implicitly-typed-local-variables_2.cs)]  
+ [!code-csharp[csProgGuideLINQ#44](../../../csharp/programming-guide/arrays/codesnippet/CSharp/implicitly-typed-local-variables_2.cs)]  
   
 ## <a name="remarks"></a>コメント  
  暗黙的に型指定される変数の宣言には、次の制限が適用されます。  
@@ -92,20 +74,19 @@ ms.lasthandoff: 07/28/2017
   
  `var` キーワードは、変数の特定の型をキーボードで入力するのが面倒な場合、その型が明白な場合、型によってコードが読みやすくならない場合にも役立ちます。 このような理由で `var` が有用な例の 1 つとして、グループ化処理で使用されるような入れ子にされたジェネリック型があります。 次のクエリでは、クエリ変数の型は `IEnumerable<IGrouping<string, Student>>` です。 コードの作成者とそのコードを保守する担当者がこの点を理解している限り、簡略化するために暗黙的な型指定を使用しても問題はありません。  
   
- [!code-cs[cscsrefQueryKeywords#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/implicitly-typed-local-variables_3.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/implicitly-typed-local-variables_3.cs)]  
   
  ただし、`var` を使用すると、他の開発者がコードを理解しづらくなる可能性はあります。 このため、C# のドキュメントでは、通常、必要な場合にだけ `var` を使用しています。  
   
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [暗黙的に型指定される配列](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md)   
- [方法: クエリ式で暗黙的に型指定されるローカル変数および配列を使用する](../../../csharp/programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)   
- [匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)   
- [オブジェクト初期化子とコレクション初期化子](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)   
- [var](../../../csharp/language-reference/keywords/var.md)   
- [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)   
- [LINQ (統合言語クエリ)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)   
- [for](../../../csharp/language-reference/keywords/for.md)   
- [foreach、in](../../../csharp/language-reference/keywords/foreach-in.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [暗黙的に型指定される配列](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md)  
+ [方法: クエリ式で暗黙的に型指定されるローカル変数および配列を使用する](../../../csharp/programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)  
+ [匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)  
+ [オブジェクト初期化子とコレクション初期化子](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
+ [var](../../../csharp/language-reference/keywords/var.md)  
+ [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)  
+ [統合言語クエリ (LINQ)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
+ [for](../../../csharp/language-reference/keywords/for.md)  
+ [foreach、in](../../../csharp/language-reference/keywords/foreach-in.md)  
  [using ステートメント](../../../csharp/language-reference/keywords/using-statement.md)
-

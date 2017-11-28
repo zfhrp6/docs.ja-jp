@@ -5,24 +5,25 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 helpviewer_keywords:
 - reflection, Windows Store apps
 - .NET for Windows Store apps, TypeInfo class
 ms.assetid: 0d07090c-9b47-4ecc-81d1-29d539603c9b
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: 80429810a46438cdbf7cf2993e5f3b0779d300c1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: fd9f8dc3b17dee946155986fe9c66a4f4c4e1353
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="reflection-in-the-net-framework-for-windows-store-apps"></a>Windows ストア アプリのための .NET Framework のリフレクション
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降、.NET Framework には、[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリで使用される一連の使用のリフレクション型およびメンバーのセットが含まれます。 これらの型およびメンバーは、完全な .NET Framework だけでなく [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=225700) でも使用できます。 このドキュメントでは、これらと .NET Framework 4 以前のバージョンでの対応するものとの主な相違点について説明します。  
@@ -45,9 +46,9 @@ ms.lasthandoff: 07/28/2017
 ## <a name="example"></a>例  
  この例は、[!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] のリフレクション型とメンバーを使用して、<xref:System.Globalization.Calendar> 型のメソッドとプロパティを、継承されたメソッドとプロパティも含めて取得します。 このコードを実行するには、Reflection という名前のプロジェクトの `textblock1` という名前の [Windows.UI.Xaml.Controls.Textblock](http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) コントロールを含む [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] ページ用のコード ファイルにこのコードを貼り付けます。 別の名前のプロジェクトにこのコードを張り付ける場合は、名前空間の名前をプロジェクトに一致するように変更してください。  
   
- [!code-csharp[System.ReflectionWinStoreApp#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.reflectionwinstoreapp/cs/mainpage.xaml.cs#1)] [!code-vb[System.ReflectionWinStoreApp#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.reflectionwinstoreapp/vb/mainpage.xaml.vb#1)]  
+ [!code-csharp[System.ReflectionWinStoreApp#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.reflectionwinstoreapp/cs/mainpage.xaml.cs#1)]
+ [!code-vb[System.ReflectionWinStoreApp#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.reflectionwinstoreapp/vb/mainpage.xaml.vb#1)]  
   
 ## <a name="see-also"></a>関連項目  
- [リフレクション](../../../docs/framework/reflection-and-codedom/reflection.md)   
+ [リフレクション](../../../docs/framework/reflection-and-codedom/reflection.md)  
  [Windows ストア アプリ用 .NET – サポートされている API](http://go.microsoft.com/fwlink/?LinkID=225700)
-

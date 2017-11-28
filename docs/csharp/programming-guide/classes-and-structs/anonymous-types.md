@@ -1,39 +1,21 @@
 ---
 title: "匿名型 (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - anonymous types [C#]
 - C# Language, anonymous types
 ms.assetid: 59c9d7a4-3b0e-475e-b620-0ab86c088e9b
-caps.latest.revision: 28
+caps.latest.revision: "28"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 24ebf1c98e14eaf74572a6143ea6865d89735a6e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 80a0d3c99f7765dba1166fd9c5ecc3e7fbadc7a1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="anonymous-types-c-programming-guide"></a>匿名型 (C# プログラミング ガイド)
 匿名型を使用すると、あらかじめ明示的に型を定義することなく、一連の読み取り専用プロパティを単一のオブジェクトにカプセル化できるので便利です。 型の名前はコンパイラにより生成され、ソース コード レベルでは使用できません。 各プロパティの型はコンパイラにより推測されます。  
@@ -58,7 +40,7 @@ Console.WriteLine(v.Amount + v.Message);
   
  匿名型のメンバー名を指定しない場合、コンパイラは初期化に使用されるプロパティと同じ名前を匿名型メンバーに付けます。 前の例で示されているように、式を使用して初期化されるプロパティの名前を指定する必要があります。 次の例では、`Color` と `Price` が匿名型のプロパティの名前になっています。  
   
- [!code-cs[csRef30Features#81](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/anonymous-types_1.cs)]  
+ [!code-csharp[csRef30Features#81](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/anonymous-types_1.cs)]  
   
  通常、変数の初期化に匿名型を使用する場合は、[var](../../../csharp/language-reference/keywords/var.md) を使用することにより、変数を暗黙的に型指定したローカル変数として宣言します。 コンパイラだけが匿名型の基になる名前にアクセスできるため、変数宣言では型の名前を指定できません。 `var` の詳細については、「[暗黙的に型指定されたローカル変数](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md)」を参照してください。  
   
@@ -78,8 +60,7 @@ var anonArray = new[] { new { name = "apple", diam = 4 }, new { name = "grape", 
  匿名型の <xref:System.Object.Equals%2A> メソッドと <xref:System.Object.GetHashCode%2A> メソッドは、プロパティの `Equals` メソッドと `GetHashCode` メソッドとして定義されています。このため、同じ匿名型の 2 つのインスタンスは、すべてのプロパティが等しい場合のみ等しいとみなされます。  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [オブジェクト初期化子とコレクション初期化子](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)   
- [C# の LINQ の概要](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [オブジェクト初期化子とコレクション初期化子](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
+ [C# の LINQ の概要](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
  [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)
-

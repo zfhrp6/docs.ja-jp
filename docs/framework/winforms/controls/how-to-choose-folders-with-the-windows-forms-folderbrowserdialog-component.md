@@ -1,41 +1,46 @@
 ---
-title: "方法 : Windows フォーム FolderBrowserDialog コンポーネントを使用してフォルダーを選択する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ディレクトリ [Windows フォーム], 選択"
-  - "ディレクトリ [Windows フォーム], 選択"
-  - "FolderBrowserDialog コンポーネント [Windows フォーム], 選択 (ディレクトリを)"
-  - "フォルダー [Windows フォーム], 選択"
-  - "フォルダー [Windows フォーム], 選択"
+title: "方法: Windows フォーム FolderBrowserDialog コンポーネントを使用してフォルダーを選択する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- directories [Windows Forms], choosing
+- FolderBrowserDialog component [Windows Forms], choosing directories
+- folders [Windows Forms], selecting
+- folders [Windows Forms], choosing
+- directories [Windows Forms], selecting
 ms.assetid: 4593670e-7c7d-4661-b46b-4ffb63258adb
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0824fb70fa67628326af38ff7fb5e6c097a0378c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォーム FolderBrowserDialog コンポーネントを使用してフォルダーを選択する
-Windows アプリケーションでは、ユーザーにフォルダーの選択を求めることがよくあります。最も一般的なのは、ファイルを保存する場合です。  Windows フォームの <xref:System.Windows.Forms.FolderBrowserDialog> コンポーネントを使用すると、この処理を簡単に実現できます。  
+# <a name="how-to-choose-folders-with-the-windows-forms-folderbrowserdialog-component"></a>方法: Windows フォーム FolderBrowserDialog コンポーネントを使用してフォルダーを選択する
+多くの場合、作成した Windows アプリケーション内で、フォルダーを選択するようにユーザーに促す必要があります。とりわけ、一連のファイルを保存するように求める場合が多いです。 Windows フォーム<xref:System.Windows.Forms.FolderBrowserDialog>コンポーネントでは、このタスクを簡単に実行することができます。  
   
-### FolderBrowserDialog コンポーネントでフォルダーを選択するには  
+### <a name="to-choose-folders-with-the-folderbrowserdialog-component"></a>FolderBrowserDialog コンポーネントを使用してフォルダーを選択するには  
   
-1.  プロシージャで、<xref:System.Windows.Forms.FolderBrowserDialog> コンポーネントの <xref:System.Windows.Forms.Form.DialogResult%2A> プロパティを参照して、ダイアログ ボックスがどのように閉じられたかを確認し、<xref:System.Windows.Forms.FolderBrowserDialog> コンポーネントの <xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A> プロパティの値を取得します。  
+1.  プロシージャでは、確認、<xref:System.Windows.Forms.FolderBrowserDialog>コンポーネントの<xref:System.Windows.Forms.Form.DialogResult%2A> ダイアログ ボックスが閉じられました方法を表示し、値を取得するプロパティ、<xref:System.Windows.Forms.FolderBrowserDialog>コンポーネントの<xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A>プロパティです。  
   
-2.  ダイアログ ボックスのツリー ビューに表示される最上位のフォルダーを設定する必要がある場合は、<xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A> プロパティを設定します。このプロパティには、[SpecialFolder](frlrfSystemEnvironmentSpecialFolderClassTopic) 列挙型のメンバーを指定します。  
+2.  ダイアログ ボックスのツリー ビューに表示されるセットの最上位のフォルダーの必要がある場合は、設定、<xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A>プロパティのメンバー、<xref:System.Environment.SpecialFolder>列挙します。  
   
-3.  さらに、フォルダー ブラウザーのツリー ビューの上部に表示されるテキスト文字列を指定する <xref:System.Windows.Forms.FolderBrowserDialog.Description%2A> プロパティを設定できます。  
+3.  さらに、設定、<xref:System.Windows.Forms.FolderBrowserDialog.Description%2A>フォルダー ブラウザーのツリー ビューの上部にあるテキスト文字列を指定するには、プロパティが表示されます。  
   
-     <xref:System.Windows.Forms.FolderBrowserDialog> コンポーネントを使用してフォルダーを選択する方法を次に示します。この方法は、Visual Studio でのプロジェクトの作成時にプロジェクトの保存先フォルダーを選択する方法と同様です。  この例では、フォームの <xref:System.Windows.Forms.TextBox> コントロールにフォルダー名が表示されます。  エラーやその他の問題が発生したときにユーザーが選択内容を編集できるように、<xref:System.Windows.Forms.TextBox> コントロールなどの編集可能な領域にフォルダー名を表示することをお勧めします。  この例では、フォームに <xref:System.Windows.Forms.FolderBrowserDialog> コンポーネントと <xref:System.Windows.Forms.TextBox> コントロールがあると仮定しています。  
+     次の例で、<xref:System.Windows.Forms.FolderBrowserDialog>コンポーネントを使用して Visual Studio でプロジェクトを作成し、保存するフォルダーを選択するように求められますのようなフォルダーを選択します。 この例では、フォルダー名に表示されますが、<xref:System.Windows.Forms.TextBox>フォーム上のコントロールです。 編集可能な領域のなどの場所を配置することをお勧め、<xref:System.Windows.Forms.TextBox>を制御するユーザーがエラーまたはその他の問題が発生した場合、選択項目を編集できるようにします。 この例では、フォーム、<xref:System.Windows.Forms.FolderBrowserDialog>コンポーネントおよび<xref:System.Windows.Forms.TextBox>コントロール。  
   
     ```vb  
     Public Sub ChooseFolder()  
@@ -43,7 +48,6 @@ Windows アプリケーションでは、ユーザーにフォルダーの選択
             TextBox1.Text = FolderBrowserDialog1.SelectedPath  
         End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -54,7 +58,6 @@ Windows アプリケーションでは、ユーザーにフォルダーの選択
             textBox1.Text = folderBrowserDialog1.SelectedPath;  
         }  
     }  
-  
     ```  
   
     ```cpp  
@@ -69,11 +72,11 @@ Windows アプリケーションでは、ユーザーにフォルダーの選択
     ```  
   
     > [!IMPORTANT]
-    >  このクラスを使用するには、アセンブリに [FileIOPermissionAttribute.PathDiscoveryProperty](frlrfSystemSecurityPermissionsFileIOPermissionAttributeClassPathDiscoveryTopic) プロパティで権限レベルを与える必要があります。このプロパティは、<xref:System.Security.Permissions.FileIOPermissionAccess> 列挙型の一部です。  部分的に信頼できるコンテキストで動作している場合は、権限が不十分なためにプロセスが例外をスローすることがあります。  詳細については、「[コード アクセス セキュリティの基礎](../../../../docs/framework/misc/code-access-security-basics.md)」を参照してください。  
+    >  このクラスを使用するアセンブリが必要です、特権レベル許可によって、<xref:System.Security.Permissions.FileIOPermissionAttribute.PathDiscovery%2A>含まれているプロパティの<xref:System.Security.Permissions.FileIOPermissionAccess>列挙します。 部分的に信頼されたコンテキストで実行している場合、プロセスは、特権がないため例外をスローする可能性があります。 詳しくは、「[コード アクセス セキュリティの基礎](../../../../docs/framework/misc/code-access-security-basics.md)」をご覧ください。  
   
- ファイルを保存する方法については、「[方法 : SaveFileDialog コンポーネントを使用してファイルを保存する](../../../../docs/framework/winforms/controls/how-to-save-files-using-the-savefiledialog-component.md)」を参照してください。  
+ ファイルの保存方法については、「[方法: SaveFileDialog コンポーネントを使用してファイルを保存する](../../../../docs/framework/winforms/controls/how-to-save-files-using-the-savefiledialog-component.md)」を参照してください。  
   
-## 参照  
- <xref:System.Windows.Forms.FolderBrowserDialog>   
- [FolderBrowserDialog コンポーネントの概要 \(Windows フォーム\)](../../../../docs/framework/winforms/controls/folderbrowserdialog-component-overview-windows-forms.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.FolderBrowserDialog>  
+ [FolderBrowserDialog コンポーネントの概要 (Windows フォーム)](../../../../docs/framework/winforms/controls/folderbrowserdialog-component-overview-windows-forms.md)  
  [FolderBrowserDialog コンポーネント](../../../../docs/framework/winforms/controls/folderbrowserdialog-component-windows-forms.md)

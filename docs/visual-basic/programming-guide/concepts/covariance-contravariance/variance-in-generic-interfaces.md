@@ -1,62 +1,95 @@
 ---
-title: "ジェネリック インターフェイス (Visual Basic) の分散 |Microsoft ドキュメント"
+title: "ジェネリック インターフェイス (Visual Basic) の分散"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: cf4096d0-4bb3-45a9-9a6b-f01e29a60333
-caps.latest.revision: 3
-author: stevehoag
-ms.author: shoag
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c53c27bdb085213046553fc4b08f11336880a7c2
-ms.lasthandoff: 03/13/2017
-
+caps.latest.revision: "3"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: d05ccdc97efd5dd193bbbe0d15dd227ec71910d8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="variance-in-generic-interfaces-visual-basic"></a>ジェネリック インターフェイス (Visual Basic) の分散
-.NET framework 4 には、いくつかの既存のジェネリック インターフェイスの分散のサポートが導入されました。 分散のサポートにより、これらのインターフェイスを実装するクラスの暗黙的な変換です。 次のインターフェイスは、バリアントになりました。  
+.NET Framework 4 では、既存のいくつかのジェネリック インターフェイスに対して、分散のサポートが導入されています。 分散のサポートにより、これらのインターフェイスを実装するクラスの暗黙的な変換が可能になりました。 次のインターフェイスは、新たにバリアントになりました。  
   
--   <xref:System.Collections.Generic.IEnumerable%601>(T は共変)</xref:System.Collections.Generic.IEnumerable%601>  
+-   <xref:System.Collections.Generic.IEnumerable%601> (T は共変です)  
   
--   <xref:System.Collections.Generic.IEnumerator%601>(T は共変)</xref:System.Collections.Generic.IEnumerator%601>  
+-   <xref:System.Collections.Generic.IEnumerator%601> (T は共変です)  
   
--   <xref:System.Linq.IQueryable%601>(T は共変)</xref:System.Linq.IQueryable%601>  
+-   <xref:System.Linq.IQueryable%601> (T は共変です)  
   
--   <xref:System.Linq.IGrouping%602>(`TKey`と`TElement`は共変のみ)</xref:System.Linq.IGrouping%602>  
+-   <xref:System.Linq.IGrouping%602> (`TKey` と `TElement` は共変です)  
   
--   <xref:System.Collections.Generic.IComparer%601>(T は反変)</xref:System.Collections.Generic.IComparer%601>  
+-   <xref:System.Collections.Generic.IComparer%601> (T は反変です)  
   
--   <xref:System.Collections.Generic.IEqualityComparer%601>(T は反変)</xref:System.Collections.Generic.IEqualityComparer%601>  
+-   <xref:System.Collections.Generic.IEqualityComparer%601> (T は反変です)  
   
--   <xref:System.IComparable%601>(T は反変)</xref:System.IComparable%601>  
+-   <xref:System.IComparable%601> (T は反変です)  
   
- ジェネリックの共変性は、メソッドの戻り値のより強い派生型、インターフェイスのジェネリック型パラメーターによって定義されているよりもを許可します。 ジェネリックの共変性機能を示すためには、次の汎用インターフェイスを検討してください:`IEnumerable(Of Object)`と`IEnumerable(Of String)`です。 `IEnumerable(Of String)`インターフェイスを継承しない、`IEnumerable(Of Object)`インターフェイスです。 ただし、`String`型が継承、`Object`の種類と場合によっては相互にこれらのインターフェイスのオブジェクトを代入することもできます。 これにより、次のコード例を示します。  
+ 共変性により、メソッドの戻り値の型の派生を、インターフェイスのジェネリック型パラメーターで定義されている型よりも強くすることができます。 ここでは、共変性機能について説明するために、`IEnumerable(Of Object)` および `IEnumerable(Of String)` というジェネリック インターフェイスについて考えます。 `IEnumerable(Of String)` インターフェイスは、`IEnumerable(Of Object)` インターフェイスを継承しません。 ただし、`String` 型は `Object` 型を継承します。場合によっては、これらのインターフェイスのオブジェクトを、相互に割り当てる必要が生じることもあるでしょう。 これを次のコード例に示します。  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
- 以前のバージョンの .NET Framework では、このコードによりと Visual Basic でコンパイル エラーが発生`Option Strict On`します。 使用するようになりましたが、`strings`の代わりに`objects`ために、前の例で示すように、<xref:System.Collections.Generic.IEnumerable%601>インターフェイスは、共変</xref:System.Collections.Generic.IEnumerable%601>。  
+```vb  
+Dim strings As IEnumerable(Of String) = New List(Of String)  
+Dim objects As IEnumerable(Of Object) = strings  
+```  
   
- 反変性により、メソッドの引数の型がインターフェイスのジェネリック パラメーターで指定されているよりも弱い派生します。 反変性を示すためには、作成した前提としています、`BaseComparer`クラスのインスタンスを比較する、`BaseClass`クラスです。 `BaseComparer` クラスは、`IEqualityComparer(Of BaseClass)` インターフェイスを実装します。 <xref:System.Collections.Generic.IEqualityComparer%601>インターフェイスは、反変では現在使用すると、`BaseComparer`継承したクラスのインスタンスを比較する、`BaseClass`クラス</xref:System.Collections.Generic.IEqualityComparer%601> これにより、次のコード例を示します。  
+ .NET Framework の以前のバージョンでこのコードでの Visual Basic でのコンパイル エラー`Option Strict On`です。 今後は、<xref:System.Collections.Generic.IEnumerable%601> インターフェイスが共変になったので、上記の例のように、`objects` の代わりに `strings` を使用できるようになりました。  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
- 例については、次を参照してください。 [(Visual Basic) のジェネリック コレクションに対するインターフェイスを使用して分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-interfaces-for-generic-collections.md)します。  
+ 反変性により、メソッドの引数の型の派生を、インターフェイスのジェネリック パラメーターで指定されている型よりも弱くすることができます。 ここでは、反変性について説明するために、`BaseClass` クラスのインスタンスを比較するための `BaseComparer` クラスを作成した場合について考えます。 `BaseComparer` クラスは、`IEqualityComparer(Of BaseClass)` インターフェイスを実装します。 <xref:System.Collections.Generic.IEqualityComparer%601> インターフェイスが反変になったので、`BaseComparer` を使用して、`BaseClass` クラスを継承するクラスのインスタンスを比較することができます。 これを次のコード例に示します。  
   
- ジェネリック インターフェイスの分散は参照型のみサポートされます。 値型は、分散をサポートしていません。 たとえば、`IEnumerable(Of Integer)`に暗黙的に変換できない`IEnumerable(Of Object)`整数が値型によって表されるため、します。  
+```vb  
+' Simple hierarchy of classes.  
+Class BaseClass  
+End Class  
   
-<CodeContentPlaceHolder>2</CodeContentPlaceHolder>  
- バリアント インターフェイスを実装するクラスは引き続き不変を覚えておいてもできます。 たとえばが<xref:System.Collections.Generic.List%601>共変のインターフェイスを実装する<xref:System.Collections.Generic.IEnumerable%601>、暗黙的に変換することはできません`List(Of Object)`に`List(Of String)`</xref:System.Collections.Generic.IEnumerable%601></xref:System.Collections.Generic.List%601>。 これは、次のコード例に示します。  
+Class DerivedClass  
+    Inherits BaseClass  
+End Class  
+  
+' Comparer class.  
+Class BaseComparer  
+    Implements IEqualityComparer(Of BaseClass)  
+  
+    Public Function Equals1(ByVal x As BaseClass,  
+                            ByVal y As BaseClass) As Boolean _  
+                            Implements IEqualityComparer(Of BaseClass).Equals  
+        Return (x.Equals(y))  
+    End Function  
+  
+    Public Function GetHashCode1(ByVal obj As BaseClass) As Integer _  
+        Implements IEqualityComparer(Of BaseClass).GetHashCode  
+        Return obj.GetHashCode  
+    End Function  
+End Class  
+Sub Test()  
+    Dim baseComparer As IEqualityComparer(Of BaseClass) = New BaseComparer  
+    ' Implicit conversion of IEqualityComparer(Of BaseClass) to   
+    ' IEqualityComparer(Of DerivedClass).  
+    Dim childComparer As IEqualityComparer(Of DerivedClass) = baseComparer  
+End Sub  
+```  
+  
+ 例については、次を参照してください。 [(Visual Basic) のジェネリック コレクションに対するインターフェイスのを使用して分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-interfaces-for-generic-collections.md)です。  
+  
+ ジェネリック インターフェイスでの分散がサポートされるのは参照型だけです。 値型は変性をサポートしていません。 たとえば、整数は値型によって表されるため、`IEnumerable(Of Integer)` を暗黙的に `IEnumerable(Of Object)` に変換することはできません。  
+  
+```vb  
+Dim integers As IEnumerable(Of Integer) = New List(Of Integer)  
+' The following statement generates a compiler error  
+' with Option Strict On, because Integer is a value type.  
+' Dim objects As IEnumerable(Of Object) = integers  
+```  
+  
+ また、バリアント インターフェイスを実装するクラスは、現在でもインバリアントであることを忘れないようにしてください。 たとえば、<xref:System.Collections.Generic.List%601> が共変インターフェイス <xref:System.Collections.Generic.IEnumerable%601> を実装しても、`List(Of Object)` を `List(Of String)` に暗黙的に変換することはできません。 これを次のコード例に示します。  
   
 ```vb  
 ' The following statement generates a compiler error  
@@ -68,7 +101,7 @@ Dim listObjects As IEnumerable(Of Object) = New List(Of String)
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [(Visual Basic) のジェネリック コレクションに対するインターフェイスの分散の使用](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-interfaces-for-generic-collections.md)   
- [バリアント ジェネリック インターフェイス (Visual Basic) の作成](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/creating-variant-generic-interfaces.md)   
- [ジェネリック インターフェイス](http://msdn.microsoft.com/library/88bf5b04-d371-4edb-ba38-01ec7cabaacf)   
- [デリゲート (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)
+ [ジェネリック コレクションに対するインターフェイスでの分散の使用 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-interfaces-for-generic-collections.md)  
+ [バリアント ジェネリック インターフェイスの作成 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/creating-variant-generic-interfaces.md)  
+ [ジェネリック インターフェイス](../../../../standard/generics/interfaces.md)  
+ [デリゲートの分散 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)

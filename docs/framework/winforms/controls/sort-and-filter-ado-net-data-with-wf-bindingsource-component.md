@@ -1,66 +1,70 @@
 ---
-title: "方法 : Windows フォーム BindingSource コンポーネントで ADO.NET データを並べ替える/フィルター処理する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ADO.NET [Windows フォーム]"
-  - "BindingSource コンポーネント [Windows フォーム], 並べ替えとフィルター処理 (データを)"
-  - "データ [Windows フォーム], フィルター処理"
-  - "データ [Windows フォーム], 並べ替え"
-  - "データの並べ替え, ADO.NET"
-  - "フィルター処理 [Windows フォーム], ADO.NET"
-  - "並べ替え (データの)"
+title: "方法 : Windows フォーム BindingSource コンポーネントで ADO.NET データを並べ替える/フィルター処理する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- sorting data
+- data sorting [Windows Forms], ADO.NET
+- data [Windows Forms], filtering
+- BindingSource component [Windows Forms], sorting and filtering data
+- filtering [Windows Forms], ADO.NET
+- data [Windows Forms], sorting
+- ADO.NET [Windows Forms]
 ms.assetid: 6c206daf-d706-4602-9dbe-435343052063
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 46947e314394d56b5ef0439f33910bb493012db3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォーム BindingSource コンポーネントで ADO.NET データを並べ替える/フィルター処理する
-<xref:System.Windows.Forms.BindingSource.Sort%2A> プロパティと <xref:System.Windows.Forms.BindingSource.Filter%2A> プロパティを使用して、<xref:System.Windows.Forms.BindingSource> コントロールの並べ替え機能とフィルター機能を公開できます。  基になるデータ ソースが <xref:System.ComponentModel.IBindingList> のときは単純な並べ替えを適用できます。また、データ ソースが <xref:System.ComponentModel.IBindingListView> のときはフィルター処理と高度な並べ替えを適用できます。  <xref:System.Windows.Forms.BindingSource.Sort%2A> プロパティは、標準の [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 構文を必要とします。この構文では、データ ソース内のデータ列の名前を表す文字列に続けて、リストの並べ替えを昇順、降順のどちらで行うかを示す `ASC` または `DESC` を指定します。  高度な並べ替えや複数列の並べ替えを設定するには、コンマ \(区切り記号\) で各列を区切ります。  <xref:System.Windows.Forms.BindingSource.Filter%2A> プロパティには文字列式を設定します。  
+# <a name="how-to-sort-and-filter-adonet-data-with-the-windows-forms-bindingsource-component"></a>方法 : Windows フォーム BindingSource コンポーネントで ADO.NET データを並べ替える/フィルター処理する
+並べ替えやフィルタ リングの機能を公開することができます<xref:System.Windows.Forms.BindingSource>を介して制御、<xref:System.Windows.Forms.BindingSource.Sort%2A>と<xref:System.Windows.Forms.BindingSource.Filter%2A>プロパティです。 基になるデータ ソースが場合は、単純な並べ替えを適用することができます、 <xref:System.ComponentModel.IBindingList>、フィルターを適用し、高度なデータ ソースがときの並べ替えと、<xref:System.ComponentModel.IBindingListView>です。 <xref:System.Windows.Forms.BindingSource.Sort%2A>プロパティには標準[!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]構文: データ ソースのデータの列の名前を表す文字列が続く`ASC`または`DESC`一覧を昇順または降順で並べ替える必要があるかどうかを示すためにします。 高度な並べ替えまたは各列をコンマ区切り記号で区切って複数列の並べ替えを設定することができます。 <xref:System.Windows.Forms.BindingSource.Filter%2A>プロパティには文字列式を指定します。  
   
 > [!NOTE]
->  接続文字列内にパスワードなどの機密情報を格納すると、アプリケーションのセキュリティに影響を及ぼすことがあります。  データベースへのアクセスを制御する方法としては、Windows 認証 \(統合セキュリティとも呼ばれます\) を使用する方が安全です。  詳細については、「[接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)」を参照してください。  
+>  接続文字列内に機密情報 (パスワードなど) を格納すると、アプリケーションのセキュリティに影響を及ぼすことがあります。 データベースへのアクセスを制御する方法としては、Windows 認証 (統合セキュリティとも呼ばれます) を使用する方が安全です。 詳細については、「[接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)」を参照してください。  
   
-### BindingSource を使用してデータをフィルター処理するには  
+### <a name="to-filter-data-with-the-bindingsource"></a>BindingSource でデータをフィルター処理  
   
--   <xref:System.Windows.Forms.BindingSource.Filter%2A> プロパティを任意の式に設定します。  
+-   設定、<xref:System.Windows.Forms.BindingSource.Filter%2A>プロパティを使用する式。  
   
-     列名とその列に指定する値を次のコード例に示します。  
+     次のコード例では、式は、列名の後に、列に必要な値です。  
   
  [!code-csharp[System.Windows.Forms.DataConnectorFilterAndSort#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/CS/form1.cs#11)]
  [!code-vb[System.Windows.Forms.DataConnectorFilterAndSort#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/VB/form1.vb#11)]  
   
-### BindingSource を使用してデータを並べ替えるには  
+### <a name="to-sort-data-with-the-bindingsource"></a>BindingSource でデータを並べ替える  
   
-1.  <xref:System.Windows.Forms.BindingSource.Sort%2A> プロパティを設定します。任意の列名に続けて、昇順または降順を示す `ASC` または `DESC` を指定してください。  
+1.  設定、<xref:System.Windows.Forms.BindingSource.Sort%2A>プロパティを続けて使用する列名`ASC`または`DESC`昇順または降順を示すためにします。  
   
-2.  複数の列を指定するときは、コンマで区切ります。  
+2.  複数の列をコンマで区切ります。  
   
  [!code-csharp[System.Windows.Forms.DataConnectorFilterAndSort#12](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/CS/form1.cs#12)]
  [!code-vb[System.Windows.Forms.DataConnectorFilterAndSort#12](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/VB/form1.vb#12)]  
   
-## 使用例  
- Northwind サンプル データベースの顧客テーブルから <xref:System.Windows.Forms.DataGridView> コントロールにデータを読み込み、表示データのフィルター処理および並べ替えを行う方法を次のコード例に示します。  
+## <a name="example"></a>例  
+ 次のコード例に、Northwind サンプル データベースの Customers テーブルからデータを読み込む、<xref:System.Windows.Forms.DataGridView>制御、およびフィルターし、表示されるデータを並べ替えます。  
   
  [!code-csharp[System.Windows.Forms.DataConnectorFilterAndSort#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/CS/form1.cs#1)]
  [!code-vb[System.Windows.Forms.DataConnectorFilterAndSort#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/VB/form1.vb#1)]  
   
-## コードのコンパイル  
- この例を実行するには、`BindingSource1` という名前の <xref:System.Windows.Forms.BindingSource> および `dataGridView1` という名前の <xref:System.Windows.Forms.DataGridView> を含むフォームにコードを貼り付けます。  次に、フォームの <xref:System.Windows.Forms.Form.Load> イベントを処理し、Load イベント ハンドラー メソッド内で `InitializeSortedFilteredBindingSource` を呼び出します。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ この例を実行するコードを貼り付けます、フォームが含まれていますが、<xref:System.Windows.Forms.BindingSource>という名前`BindingSource1`と<xref:System.Windows.Forms.DataGridView>という`dataGridView1`です。 処理、 <xref:System.Windows.Forms.Form.Load> 、フォームの呼び出しのイベント`InitializeSortedFilteredBindingSource`load イベント ハンドラー メソッドにします。  
   
-## 参照  
- <xref:System.Windows.Forms.BindingSource.Sort%2A>   
- <xref:System.Windows.Forms.BindingSource.Filter%2A>   
- [方法 : サンプル データベースをインストールする](../Topic/How%20to:%20Install%20Sample%20Databases.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.BindingSource.Sort%2A>  
+ <xref:System.Windows.Forms.BindingSource.Filter%2A>  
+ [方法 : サンプル データベースをインストールする](http://msdn.microsoft.com/library/ed1291f6-604c-4972-ae22-0345c6dea12e)  
  [BindingSource コンポーネント](../../../../docs/framework/winforms/controls/bindingsource-component.md)

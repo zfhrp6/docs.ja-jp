@@ -1,29 +1,25 @@
 ---
-title: "方法: ファイル システム (Visual Basic の場合) から XML ツリーを設定 |Microsoft ドキュメント"
+title: "方法: ファイル システム (Visual Basic) から XML ツリーを設定します"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 34eec79e-7945-4ba8-9f74-d05bb8ec67f6
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c55210365651c468b75b943dc46e08726e1ec939
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 6046cf5837aa033f2efb72c7b45f9526bedf871c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-populate-an-xml-tree-from-the-file-system-visual-basic"></a>方法: ファイル システム (Visual Basic の場合) から XML ツリーを設定
-XML ツリーの一般的で便利な用途の&1; つに、名前と値の階層データ ストアとしての用途があります。 階層データを XML ツリーに設定し、そのツリーをクエリや変換の対象としたり、必要に応じてシリアル化したりすることができます。 この使用シナリオでは、名前空間や空白の扱いなど XML 固有のセマンティクスの多くは重要ではありません。 この場合は、XML ツリーをメモリ内の小さなシングル ユーザー階層データベースとして使用します。  
+# <a name="how-to-populate-an-xml-tree-from-the-file-system-visual-basic"></a>方法: ファイル システム (Visual Basic) から XML ツリーを設定します
+XML ツリーの一般的で便利な用途の 1 つに、名前と値の階層データ ストアとしての用途があります。 階層データを XML ツリーに設定し、そのツリーをクエリや変換の対象としたり、必要に応じてシリアル化したりすることができます。 この使用シナリオでは、名前空間や空白の扱いなど XML 固有のセマンティクスの多くは重要ではありません。 この場合は、XML ツリーをメモリ内の小さなシングル ユーザー階層データベースとして使用します。  
   
 ## <a name="example"></a>例  
  次の例では、再帰を使用してローカル ファイル システムから XML ツリーを設定します。 次に、ツリーに対してクエリを実行して、ツリー内にあるすべてのファイルの合計サイズを計算します。  

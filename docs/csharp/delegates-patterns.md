@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0ff8fdfd-6a11-4327-b061-0f2526f35b43
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 83214800fb997e9274cacfd1bae85ab07c4515a2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="common-patterns-for-delegates"></a>デリゲートの一般的なパターン
 
 [前へ](delegates-strongly-typed.md)
@@ -245,4 +243,3 @@ null 条件演算子 (`?.`) は、左辺オペランド (このケースでは `
 Logger クラスには、これまでの動作を大きく変えることなく何度でも、その機能を強化したり変更を加えたりすることができます。 あらゆるクラスに言えることですが、パブリック API の変更には、互換性に影響する変更のリスクが伴います。 しかし、ロガーと出力エンジンとの結合はデリゲートを介してのみ行われるので、他の型 (インターフェイス、基本クラスなど) が関係してくることはありません。 その結合度は最小限で済むのです。
 
 [次へ](events-overview.md)
-

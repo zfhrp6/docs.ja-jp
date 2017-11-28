@@ -1,138 +1,144 @@
 ---
-title: "バインディング宣言の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "バインド (データを), 宣言"
-  - "バインディング宣言"
-  - "データ バインディング, 宣言"
-  - "マークアップ拡張機能"
-  - "オブジェクト要素構文"
-  - "構文, オブジェクト要素"
+title: "バインディング宣言の概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- markup extensions [WPF]
+- data binding [WPF], declarations
+- object element syntax [WPF]
+- binding data [WPF], declarations
+- syntax [WPF], object elements
+- binding declarations [WPF]
 ms.assetid: b97fd626-4c0d-4761-872a-2bca5820da2c
-caps.latest.revision: 34
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 33
+caps.latest.revision: "34"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 28b139f6ea2aad41e4d733e8c622699f2474b3e6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# バインディング宣言の概要
-ここでは、バインディングを宣言するさまざまな方法について説明します。  
+# <a name="binding-declarations-overview"></a>バインディング宣言の概要
+このトピックでは、バインディングを宣言するさまざまな方法について説明します。  
   
-   
+ 
   
 <a name="Prereq"></a>   
-## 必要条件  
- このトピックを読む前に、マークアップ拡張機能の概念と使用方法を理解していることが重要です。  マークアップ拡張機能の詳細については、「[マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)」を参照してください。  
+## <a name="prerequisites"></a>必須コンポーネント  
+ このトピックを読む前に、マークアップ拡張機能の概念と使用方法について理解している必要があります。 マークアップ拡張機能の詳細については、 「[マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)」を参照してください。  
   
- ここでは、データ バインディングの概念については説明しません。  データ バインディングの概念については、「[データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
+ このトピックでは、データ バインディングの概念については説明しません。 データ バインディングの概念の詳細については、「[Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
   
 <a name="BindinginXAML"></a>   
-## XAML でバインディングを宣言する  
- ここでは、XAML でバインディングを宣言する方法について説明します。  
+## <a name="declaring-a-binding-in-xaml"></a>XAML でのバインディングの宣言  
+ このセクションでは、XAML でバインディングを宣言する方法について説明します。  
   
 <a name="MarkupExtensionSyntax"></a>   
-### マークアップ拡張機能の使用方法  
- <xref:System.Windows.Data.Binding> はマークアップ拡張機能です。  バインディング拡張を使用してバインディングを宣言する場合、その宣言は、`Binding` キーワードの後に一連の句をコンマ \(,\) で区切って並べたものになります。  バインディング宣言では、句は任意の順序で並べることができ、また、さまざまな組み合わせが可能です。  句は *名前*\=*値* という形のペアで、*名前*は <xref:System.Windows.Data.Binding> プロパティの名前、*値* はそのプロパティに設定する値です。  
+### <a name="markup-extension-usage"></a>マークアップ拡張機能の使用方法  
+ <xref:System.Windows.Data.Binding> はマークアップ拡張機能です。 バインディング拡張機能を使用してバインディングを宣言するとき、この宣言は、`Binding` キーワードに続く一連の句で構成され、コンマ (,) で区切られます。 バインディング宣言内の句の順序は任意で、多数の組み合わせが可能です。 句は*名前*=*値*場所のペアを*名前*の名前を指定、<xref:System.Windows.Data.Binding>プロパティおよび*値*はプロパティを設定する値。  
   
- バインディング宣言文字列をマークアップで作成する場合、それらの文字列はターゲット オブジェクトの特定の[依存関係プロパティ](GTMT)に関連付ける必要があります。  バインディング拡張を使用し、<xref:System.Windows.Data.Binding.Source%2A> プロパティおよび <xref:System.Windows.Data.Binding.Path%2A> プロパティを指定して、<xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=fullName> プロパティをバインドする方法を次の例に示します。  
+ マークアップでバインディング宣言文字列を作成する場合、この文字列はターゲット オブジェクトの特定の依存関係プロパティにアタッチする必要があります。 次の例は、バインドする方法を示しています、<xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType>プロパティを指定することをバインド拡張機能を使用して、<xref:System.Windows.Data.Binding.Source%2A>と<xref:System.Windows.Data.Binding.Path%2A>プロパティです。  
   
- [!code-xml[SimpleBinding#BDO1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#bdo1)]  
+ [!code-xaml[SimpleBinding#BDO1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#bdo1)]  
   
- <xref:System.Windows.Data.Binding> クラスのほとんどのプロパティは、この方法で指定できます。  バインディング拡張の詳細、およびバインディング拡張を使用して設定できない <xref:System.Windows.Data.Binding> プロパティのリストについては、「[バインドのマークアップ拡張機能](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)」の概要を参照してください。  
+ ほとんどのプロパティを指定することができます、<xref:System.Windows.Data.Binding>クラスのこのようにします。 バインディング拡張は、の一覧の場合と同様の詳細については<xref:System.Windows.Data.Binding>バインド拡張機能を使用して設定することはできませんのプロパティを参照してください、[バインディング マークアップ拡張](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)の概要です。  
   
 <a name="ObjectElementSyntax"></a>   
-### オブジェクト要素の構文  
- オブジェクト要素構文を使用しても、バインディング宣言を作成できます。  ほとんどの場合、マークアップ拡張機能とオブジェクト要素構文のどちらを使用した場合でも、特別な利点はありません。  ただし、設定するプロパティ値が型変換のない非文字列型である場合のように、目的のシナリオがマークアップ拡張機能でサポートされない場合には、オブジェクト要素構文を使用する必要があります。  
+### <a name="object-element-syntax"></a>オブジェクト要素構文  
+ オブジェクト要素構文は、バインディング宣言を作成する代替の方法です。 ほとんどの場合は、マークアップ拡張機能の使用とオブジェクト要素構文の使用のどちらにも特別な利点はありません。 ただし、マークアップ拡張機能がサポートしないシナリオでは (プロパティ値が文字列タイプではなく、このタイプの変換が存在しない場合)、オブジェクト要素構文を使用する必要があります。  
   
- オブジェクト要素構文とマークアップ拡張機能の両方の使用方法を次の例に示します。  
+ オブジェクト要素構文とマークアップ拡張機能の使用の両方の例を次に示します。  
   
- [!code-xml[BindConversionMarkup#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversionMarkup/CSharp/Page1.xaml#1)]  
+ [!code-xaml[BindConversionMarkup#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversionMarkup/CSharp/Page1.xaml#1)]  
   
- この例では、拡張構文を使用してバインディングを宣言することにより、<xref:System.Windows.Controls.TextBlock.Foreground%2A> プロパティをバインドしています。  <xref:System.Windows.Controls.TextBlock.Text%2A> プロパティのバインディング宣言では、オブジェクト要素構文を使用しています。  
+ 例では、バインド、<xref:System.Windows.Controls.TextBlock.Foreground%2A>拡張構文を使用してバインドを宣言するプロパティです。 バインディングの宣言、<xref:System.Windows.Controls.TextBlock.Text%2A>プロパティがオブジェクト要素の構文を使用します。  
   
- 各種の用語の詳細については、「[XAML 構文の詳細](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)」を参照してください。  
+ 別の用語の詳細については、「[XAML Syntax の詳細](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)」を参照してください。  
   
 <a name="MBandPB"></a>   
-### MultiBinding および PriorityBinding  
- <xref:System.Windows.Data.MultiBinding> および <xref:System.Windows.Data.PriorityBinding> は、XAML 拡張構文をサポートしません。  そのため、XAML で <xref:System.Windows.Data.MultiBinding> または <xref:System.Windows.Data.PriorityBinding> を宣言する場合は、オブジェクト要素構文を使用する必要があります。  
+### <a name="multibinding-and-prioritybinding"></a>MultiBinding と PriorityBinding  
+ <xref:System.Windows.Data.MultiBinding>および<xref:System.Windows.Data.PriorityBinding>XAML 拡張構文をサポートしていません。 宣言する場合はオブジェクト要素の構文を使用する必要がありますそのため、<xref:System.Windows.Data.MultiBinding>または<xref:System.Windows.Data.PriorityBinding>XAML でします。  
   
 <a name="BindinginCode"></a>   
-## コードでバインディングを作成する  
- バインディングを指定するもう一つの方法として、コード内で <xref:System.Windows.Data.Binding> オブジェクトのプロパティを直接設定する方法があります。  <xref:System.Windows.Data.Binding> オブジェクトを作成し、コードでプロパティを指定する方法を次の例に示します。  この例では、`TheConverter` は <xref:System.Windows.Data.IValueConverter> インターフェイスを実装するオブジェクトです。  
+## <a name="creating-a-binding-in-code"></a>コードでバインディングを作成する方法  
+ バインドを指定する別の方法は、プロパティを設定する上で直接、<xref:System.Windows.Data.Binding>コード内のオブジェクト。 次の例を作成する方法を示しています、<xref:System.Windows.Data.Binding>オブジェクトし、コードでプロパティを指定します。  この例では`TheConverter`を実装するオブジェクトには、<xref:System.Windows.Data.IValueConverter>インターフェイスです。  
   
  [!code-csharp[BindConversion#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#1)]
  [!code-vb[BindConversion#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#1)]  
 [!code-csharp[BindConversion#end1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#end1)]
 [!code-vb[BindConversion#end1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#end1)]  
   
- バインドする対象のオブジェクトが <xref:System.Windows.FrameworkElement> または <xref:System.Windows.FrameworkContentElement> の場合は、<xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=fullName> を使用する代わりに、オブジェクトで `SetBinding` メソッドを直接呼び出すことができます。  例については、「[コードでバインディングを作成する](../../../../docs/framework/wpf/data/how-to-create-a-binding-in-code.md)」を参照してください。  
+ バインドするオブジェクトがある場合、<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>呼び出すことができます、`SetBinding`メソッドを使用せずに直接オブジェクトを<xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=nameWithType>です。 例については、「[Create a Binding in Code](../../../../docs/framework/wpf/data/how-to-create-a-binding-in-code.md)」を参照してください。  
   
 <a name="Path_Syntax"></a>   
-## パス構文をバインドする  
- バインドするソースの値を指定するには、<xref:System.Windows.Data.Binding.Path%2A> プロパティを使用します。  
+## <a name="binding-path-syntax"></a>バインディング パス構文  
+ 使用して、<xref:System.Windows.Data.Binding.Path%2A>プロパティにバインドするソースの値を指定します。  
   
--   特に単純な使用例では、<xref:System.Windows.Data.Binding.Path%2A> プロパティ値は `Path=PropertyName` など、バインディングに使用するソース オブジェクトのプロパティの名前になります。  
+-   最も簡単なケースで、<xref:System.Windows.Data.Binding.Path%2A>プロパティの値などを使用して、バインディングのソース オブジェクトのプロパティの名前は、`Path=PropertyName`です。  
   
--   プロパティのサブプロパティは、[!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] 内の構文と同様の構文によって指定できます。  たとえば、`Path=ShoppingCart.Order` 句は、オブジェクトまたはプロパティ `ShoppingCart` のサブプロパティ `Order` へのバインディングを設定します。  
+-   プロパティのサブプロパティは、[!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] と同様の構文で指定できます。 たとえば、句 `Path=ShoppingCart.Order` は、バインディングをオブジェクトのサブプロパティ `Order` またはプロパティ `ShoppingCart` に設定します。  
   
--   [添付プロパティ](GTMT)にバインドするには、[添付プロパティ](GTMT)をかっこで囲みます。  たとえば、[添付プロパティ](GTMT) <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=fullName> にバインドする構文は、`Path=(DockPanel.Dock)` です。  
+-   添付プロパティにバインドするには、添付プロパティをかっこで囲みます。 例については、添付プロパティをバインドする<xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>、構文は`Path=(DockPanel.Dock)`します。  
   
--   プロパティのインデクサーは、インデクサーが適用されるプロパティ名の後に続く角かっこ内に指定できます。  たとえば、`Path=ShoppingCart[0]` 句は、プロパティの内部のインデックスのリテラル文字列 "0" の処理方法に対応するインデックスにバインディングを設定します。  入れ子になったインデクサーもサポートされています。  
+-   プロパティのインデクサーは、インデクサーが適用されているプロパティ名の後ろの角かっこ内に指定できます。 たとえば、句 `Path=ShoppingCart[0]` は、プロパティの内部インデックスがリテラル文字列「0」を処理する方法に対応するインデックスへのバインディングを設定します。 入れ子になったインデクサーもサポートします。  
   
--   インデクサーとサブプロパティは、`Path` 句に混在させることができます。たとえば、`Path=ShoppingCart.ShippingInfo[MailingAddress,Street]` のように使用できます。  
+-   `Path` 句ではインデクサーとサブプロパティを混在させることができます。例: `Path=ShoppingCart.ShippingInfo[MailingAddress,Street].`  
   
--   インデクサーの内側では、複数のインデクサー パラメーターをコンマ \(,\) で区切って指定できます。  各パラメーターの型は、かっこを使用して指定できます。  たとえば、`Path="[(sys:Int32)42,(sys:Int32)24]"` のように指定します。ここで、`sys` は `System` 名前空間にマップされます。  
+-   インデクサーの内側には、コンマ (,) で区切られた複数のインデクサー パラメーターを設定できます。 各パラメーターの型は、かっこで指定できます。 たとえば、ことが`Path="[(sys:Int32)42,(sys:Int32)24]"`ここで、`sys`にマップされて、`System`名前空間。  
   
--   ソースがコレクション ビューであるときは、現在の項目をスラッシュ \(\/\) で指定できます。  たとえば、`Path=/` 句は、ビュー内の現在の項目へのバインディングを設定します。  ソースがコレクションである場合、この構文は、既定のコレクション ビューの現在の項目を指定します。  
+-   ソース コレクション ビューがある場合は、スラッシュ (/) を現在の項目を指定できます。 たとえば、この句`Path=/`ビューの現在のアイテムにバインディングを設定します。 ソースがコレクションである場合は、この構文は、既定のコレクション ビューの現在の項目を指定します。  
   
--   プロパティ名とスラッシュを組み合わせて、コレクションである各プロパティを走査することができます。  たとえば、`Path=/Offices/ManagerName` は、それ自体がコレクションである `Offices` プロパティを含む、ソース コレクションの現在の項目を指定します。  その現在の項目は、`ManagerName` プロパティを含むオブジェクトです。  
+-   プロパティは、コレクションを走査するプロパティの名前とスラッシュを組み合わせることができます。 たとえば、`Path=/Offices/ManagerName`を含むソース コレクションの現在の項目を指定します、`Offices`コレクションであるプロパティ。 現在のアイテムが格納しているオブジェクト、`ManagerName`プロパティです。  
   
--   また、ピリオド \(.\) パスを使用して現在のソースにバインドすることもできます。  たとえば、`Text="{Binding}"` は `Text="{Binding Path=.}"` と同じ意味です。  
+-   必要に応じて、現在のソースにバインドする、ピリオド (.) のパスを使用できます。 たとえば、`Text="{Binding}"` は、`Text="{Binding Path=.}"` と同じです。  
   
-### エスケープ機構  
+### <a name="escaping-mechanism"></a>エスケープのしくみ  
   
--   インデクサー \(\[ \]\) 内では、キャレット文字 \(^\) は次の文字をエスケープします。  
+-   インデクサー ([ ]) 内では、キャレット文字 (^) は次の文字をエスケープします。  
   
--   XAML で <xref:System.Windows.Data.Binding.Path%2A> を指定する場合は、XML 言語定義で特別な意味を持つ特定の文字についても \(XML エンティティを使用して\) 次のようにエスケープする必要があります。  
+-   設定した場合<xref:System.Windows.Data.Binding.Path%2A>XAML では、する必要があります XML 言語の定義には特定の文字エスケープ (XML エンティティを使用)。  
   
     -   文字 "&" をエスケープするには、`&` を使用します。  
   
-    -   タグの終了を示す "\>" をエスケープするには、`>` を使用します。  
+    -   使用する`>`終了タグをエスケープする">"です。  
   
--   また、マークアップ拡張構文を使用して、属性内にバインディング全体を記述する場合には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] マークアップ拡張機能パーサーにとって特別な意味を持つ次の文字を \(バックスラッシュ \\ を使用して\) エスケープする必要があります。  
+-   さらに、マークアップ拡張構文を使用して属性のバインディング全体を記述する場合、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] マークアップ拡張機能パーサーで特別な意味を持つ文字を (円記号 \\ を使用して) エスケープする必要があります。  
   
-    -   バックスラッシュ \(\\\) は、それ自体がエスケープ文字です。  
+    -   円記号 (\\) はエスケープ文字そのものです。  
   
-    -   等号 \(\=\) は、プロパティ名とプロパティ値を区切ります。  
+    -   等号 (=) は、プロパティ名とプロパティの値を区切ります。  
   
-    -   コンマ \(,\) は、複数のプロパティを区切ります。  
+    -   コンマ (,) はプロパティを区切ります。  
   
-    -   右中かっこ \(}\) は、マークアップ拡張機能の終了を示します。  
+    -   右中かっこ (}) は、マークアップ拡張機能の終わりです。  
   
 <a name="Default"></a>   
-## 既定の動作  
- 宣言に指定がない場合の既定の動作は次のとおりです。  
+## <a name="default-behaviors"></a>既定の動作  
+ 既定の動作は、宣言で指定されていない場合には次のとおりです。  
   
--   [バインディング ソース](GTMT)値と[バインディング ターゲット](GTMT)値を相互に型変換する既定のコンバーターが作成されます。  型変換できない場合、既定のコンバーターは `null` を返します。  
+-   バインディング ソースの値とバインディング ターゲットの値の型変換を実行しようとする既定のコンバーターが作成されます。 変換を実行できない場合、既定のコンバーターは `null` を返します。  
   
--   <xref:System.Windows.Data.Binding.ConverterCulture%2A> を設定しない場合、バインディング エンジンでは、[バインディング ターゲット](GTMT) オブジェクトの `Language` プロパティが使用されます。  XAML では、このプロパティは既定で "en\-US" に設定されるか、明示的に設定されている場合はページのルート要素 \(または任意の要素\) から値を継承します。  
+-   設定しない場合<xref:System.Windows.Data.Binding.ConverterCulture%2A>、バインド エンジンを使用して、`Language`バインディング ターゲット オブジェクトのプロパティです。 XAML では、既定で "en-US" になるか、または明示的に設定されている場合にはページのルート要素 (または任意の要素) から値を継承します。  
   
--   バインディングに既にデータ コンテキストが存在し \(たとえば、親要素から継承したデータ コンテキストの場合\)、そのコンテキストから返される項目またはコレクションがすべてバインディングするために適切であり、パスを変更する必要もない場合には、バインディング宣言は、`{Binding}` のように、句を一切含めないで宣言することができます。これは、バインディングがコレクションに影響を与えるデータ スタイルに対してバインディングを指定する場合に多く用いられる方法です。  詳細については、「[バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)」の「オブジェクト全体をバインディング ソースとして使用する」セクションを参照してください。  
+-   バインディングに既にデータ コンテキスト (たとえば、親要素から継承したデータ コンテキスト) があり、そのコンテキストによって返される項目またはコンテキストが何であれ、それがさらにパスを変更せずにバインディングすることについて適切である限り、バインディング宣言は句を持つことができません。`{Binding}`これは、多くの場合、データのスタイルに対してバインディングを指定する方法で、バインディングはコレクションに基づいて動作します。 詳細については、「[バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)」の「バインディング ソースとして使用する全体オブジェクト」セクションを参照してください。  
   
--   既定の <xref:System.Windows.Data.Binding.Mode%2A> は、バインドされる[依存関係プロパティ](GTMT)に応じて、一方向と双方向のいずれかになります。  バインディングを目的どおりに動作させるために、バインディング モードを常に明示的に宣言できます。  一般に、ユーザーが編集できる <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=fullName> や <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A?displayProperty=fullName> などのコントロール プロパティは、既定で双方向のバインディングであり、それ以外のほとんどのプロパティは既定で一方向のバインディングになります。  
+-   既定値<xref:System.Windows.Data.Binding.Mode%2A>は一方向、バインドされている依存関係プロパティによっては双方向の間で変化します。 常にバインディング モードを明示的に宣言し、バインディングに目的の動作があることを確認できます。 一般に、ユーザーが編集できるコントロールのプロパティでなど<xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType>と<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A?displayProperty=nameWithType>、双方向のバインディングでは、既定であり、その他のほとんどのプロパティは既定で一方向のバインド。  
   
--   既定の <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> 値も、バインドされる[依存関係プロパティ](GTMT)に応じて、<xref:System.Windows.Data.UpdateSourceTrigger> と <xref:System.Windows.Data.UpdateSourceTrigger> のいずれかになります。  ほとんどの[依存関係プロパティ](GTMT)の既定値は <xref:System.Windows.Data.UpdateSourceTrigger> であるのに対し、<xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=fullName> プロパティの既定値は <xref:System.Windows.Data.UpdateSourceTrigger> です。  
+-   既定値<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>値によって異なります<xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>と<xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>も、バインドされた依存関係プロパティによって異なります。 ほとんどの依存関係プロパティの既定値は <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged> です。ただし、<xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> プロパティの既定値は <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus> です。  
   
-## 参照  
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)   
- [データ バインド](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)   
+## <a name="see-also"></a>関連項目  
+ [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [方法トピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)  
+ [データ バインディング](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
  [PropertyPath の XAML 構文](../../../../docs/framework/wpf/advanced/propertypath-xaml-syntax.md)

@@ -1,30 +1,21 @@
 ---
 title: "カスタム属性の作成 (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 500e1977-c6de-462d-abce-78a0eb1eda22
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 38bdedb352cc79f7a4cc3d08eb6138e7d994514b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8ae5084501a2dd60ae23c93bbdb52dcd44f3f3f7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="creating-custom-attributes-c"></a>カスタム属性の作成 (C#)
 属性クラスを定義することで、独自のカスタム属性を作成できます。属性クラスは、<xref:System.Attribute> の直接的または間接的な派生クラスです。これにより、メタデータの中で属性の定義をすばやく簡単に特定できます。 型にそれを記述したプログラマーの名前でタグを付けるとします。 `Author` というカスタム属性クラスを定義します。  
@@ -84,11 +75,10 @@ class SampleClass
 >  属性クラスにプロパティが含まれている場合、そのプロパティは読み取り/書き込み可能である必要があります。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Reflection>   
- [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)   
- [カスタム属性の記述](../../../../standard/attributes/writing-custom-attributes.md)   
- [リフレクション (C#)](../../../../csharp/programming-guide/concepts/reflection.md)   
- [属性 (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md)   
- [リフレクションを使用した属性へのアクセス (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)   
+ <xref:System.Reflection>  
+ [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)  
+ [カスタム属性の記述](../../../../standard/attributes/writing-custom-attributes.md)  
+ [リフレクション (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
+ [属性 (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md)  
+ [リフレクションを使用した属性へのアクセス (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)  
  [AttributeUsage (C#)](../../../../csharp/programming-guide/concepts/attributes/attributeusage.md)
-

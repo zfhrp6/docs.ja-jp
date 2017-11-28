@@ -8,27 +8,25 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- thread-safe collections, overview
+helpviewer_keywords: thread-safe collections, overview
 ms.assetid: 2e7ca21f-786c-4367-96be-0cf3f3dcc6bd
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: b5394cd2e9c9fa2b0cacb93ddf2cf05b33fabc71
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: b37d1d7ff75aebfcdf3e849931a5d2b3924d5d7a
-ms.openlocfilehash: 19ecc67b38e2eab52994fb278211c6d9ff67ae7e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="thread-safe-collections"></a>スレッド セーフなコレクション
-[!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] では、スレッド セーフかつスケーラブルなコレクション クラスをいくつか含む <xref:System.Collections.Concurrent?displayProperty=fullName> 名前空間が導入されています。 ユーザー コードで同期を追加することなく、複数のスレッドでこのようなコレクションの項目を安全かつ効率的に追加または削除できます。 新しいコードを記述するときに、コレクションが複数のスレッドに同時に書き込みを行う場合は、常に同時実行コレクション クラスを使用します。 共有コレクションの読み取りのみを行う場合は、<xref:System.Collections.Generic?displayProperty=fullName> 名前空間のクラスを使用できます。 .NET Framework 1.1 以前のランタイムを対象にする必要がない場合は、1.0 コレクション クラスを使用しないことをお勧めします。  
+[!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] では、スレッド セーフかつスケーラブルなコレクション クラスをいくつか含む <xref:System.Collections.Concurrent?displayProperty=nameWithType> 名前空間が導入されています。 ユーザー コードで同期を追加することなく、複数のスレッドでこのようなコレクションの項目を安全かつ効率的に追加または削除できます。 新しいコードを記述するときに、コレクションが複数のスレッドに同時に書き込みを行う場合は、常に同時実行コレクション クラスを使用します。 共有コレクションの読み取りのみを行う場合は、<xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間のクラスを使用できます。 .NET Framework 1.1 以前のランタイムを対象にする必要がない場合は、1.0 コレクション クラスを使用しないことをお勧めします。  
   
 ## <a name="thread-synchronization-in-the-net-framework-10-and-20-collections"></a>.NET Framework 1.0 と 2.0 のコレクションのスレッドの同期  
- .NET Framework 1.0 で導入されたコレクションは、<xref:System.Collections?displayProperty=fullName> 名前空間にあります。 一般的に使用される <xref:System.Collections.ArrayList> や <xref:System.Collections.Hashtable> を含むこのコレクションは、コレクションのスレッド セーフ ラッパーを返す `Synchronized` プロパティを通じてスレッド セーフを確保します。 このラッパーは、すべての追加操作または削除操作でコレクション全体をロックすることで機能します。 したがって、コレクションにアクセスしようとする各スレッドは、ロックを取得する順番を待機する必要があります。 これはスケーラブルではなく、大規模なコレクションの場合はパフォーマンスが大幅に低下するおそれがあります。 また、競合状態を完全に防ぐことはできません。 詳細については、MSDN Web サイトの「[Synchronization in Generic Collections](http://go.microsoft.com/fwlink/?LinkID=161130)」 (ジェネリック コレクションでの同期) を参照してください。  
+ .NET Framework 1.0 で導入されたコレクションは、<xref:System.Collections?displayProperty=nameWithType> 名前空間にあります。 一般的に使用される <xref:System.Collections.ArrayList> や <xref:System.Collections.Hashtable> を含むこのコレクションは、コレクションのスレッド セーフ ラッパーを返す `Synchronized` プロパティを通じてスレッド セーフを確保します。 このラッパーは、すべての追加操作または削除操作でコレクション全体をロックすることで機能します。 したがって、コレクションにアクセスしようとする各スレッドは、ロックを取得する順番を待機する必要があります。 これはスケーラブルではなく、大規模なコレクションの場合はパフォーマンスが大幅に低下するおそれがあります。 また、競合状態を完全に防ぐことはできません。 詳細については、MSDN Web サイトの「[Synchronization in Generic Collections](http://go.microsoft.com/fwlink/?LinkID=161130)」 (ジェネリック コレクションでの同期) を参照してください。  
   
- .NET Framework 2.0 で導入されたコレクション クラスは、<xref:System.Collections.Generic?displayProperty=fullName> 名前空間にあります。 これには、<xref:System.Collections.Generic.List%601>、<xref:System.Collections.Generic.Dictionary%602> などがあります。 これらのクラスを使用すると、.NET Framework 1.0 クラスと比較して、タイプ セーフおよびパフォーマンスが向上します。 ただし、.NET Framework 2.0 コレクション クラスではスレッドの同期は行われません。複数のスレッドで同時に項目を追加または削除する場合は、ユーザー コードですべての同期を行う必要があります。  
+ .NET Framework 2.0 で導入されたコレクション クラスは、<xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間にあります。 これには、<xref:System.Collections.Generic.List%601>、<xref:System.Collections.Generic.Dictionary%602> などがあります。 これらのクラスを使用すると、.NET Framework 1.0 クラスと比較して、タイプ セーフおよびパフォーマンスが向上します。 ただし、.NET Framework 2.0 コレクション クラスではスレッドの同期は行われません。複数のスレッドで同時に項目を追加または削除する場合は、ユーザー コードですべての同期を行う必要があります。  
   
  [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] の同時実行コレクション クラスを使用することをお勧めします。このクラスは、.NET Framework 2.0 コレクション クラスのタイプ セーフを確保するだけでなく、[!INCLUDE[net_v10_short](../../../../includes/net-v10-short-md.md)] コレクションよりも効率的で完全なスレッド セーフも確保します。  
   
@@ -40,7 +38,7 @@ ms.lasthandoff: 09/06/2017
 > [!NOTE]
 >  同時実行コレクション クラスでは <xref:System.Collections.ICollection> がサポートされるので、<xref:System.Collections.ICollection.IsSynchronized%2A> プロパティと <xref:System.Collections.ICollection.SyncRoot%2A> プロパティの実装が、これらのプロパティが無関係の場合でも提供されます。 `IsSynchronized` は常に `false` を返し、`SyncRoot` は常に `null` (Visual Basic の場合は `Nothing`) になります。  
   
- <xref:System.Collections.Concurrent?displayProperty=fullName> 名前空間に属するコレクション型を次の表に示します。  
+ <xref:System.Collections.Concurrent?displayProperty=nameWithType> 名前空間に属するコレクション型を次の表に示します。  
   
 |型|説明|  
 |----------|-----------------|  
@@ -64,5 +62,4 @@ ms.lasthandoff: 09/06/2017
 |[方法: ConcurrentBag を使用してオブジェクト プールを作成する](../../../../docs/standard/collections/thread-safe/how-to-create-an-object-pool.md)|新しいオブジェクトを頻繁に作成する代わりにオブジェクトを再利用できるシナリオで、同時実行バッグを使用してパフォーマンスを向上させる方法について説明します。|  
   
 ## <a name="reference"></a>参照  
- <xref:System.Collections.Concurrent?displayProperty=fullName>
-
+ <xref:System.Collections.Concurrent?displayProperty=nameWithType>

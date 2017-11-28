@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - Lc.exe
 - .licx file
@@ -25,16 +19,15 @@ helpviewer_keywords:
 - Windows Forms, control licenses
 - licensed controls [Windows Forms]
 ms.assetid: 2de803b8-495e-4982-b209-19a72aba0460
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
+ms.openlocfilehash: e0175b14f556a68f9c289d84d79ce10a6982ffb3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9f65212d9f62d090cd0c16e15b6678e21b00f235
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="lcexe-license-compiler"></a>Lc.exe (ライセンス コンパイラ)
 ライセンス コンパイラは、ライセンス情報を含むテキスト ファイルを読み込んで、バイナリ ファイルを生成します。このバイナリ ファイルは、リソースとして共通言語ランタイムの実行可能ファイルに埋め込むことができます。  
@@ -58,7 +51,7 @@ ms.lasthandoff: 07/28/2017
 |オプション|説明|  
 |------------|-----------------|  
 |**/complist:** *filename*|.licenses ファイルに組み込むライセンス付きコンポーネントの一覧を含むファイルの名前を指定します。 各コンポーネントを参照するにはフルネームを使用し、各行にコンポーネントを 1 つだけ指定します。<br /><br /> コマンド行を使用する場合は、プロジェクトに属するフォームごとに個別のファイルを指定できます。 Lc.exe は複数の入力ファイルを受け付けて、1 つの .licenses ファイルを生成します。|  
-|**/h**[**elp**]|このツールのコマンド構文とオプションを表示します。|  
+|**/h****[elp]**|このツールのコマンド構文とオプションを表示します。|  
 |**/i:** *module*|**/complist** ファイル内に一覧表示されたコンポーネントを含むモジュールを指定します。 複数のモジュールを指定するには、複数の **/i** フラグを使用します。|  
 |**/nologo**|Microsoft 著作権情報を表示しません。|  
 |**/outdir:** *path*|出力 .licenses ファイルを格納するディレクトリを指定します。|  
@@ -110,7 +103,6 @@ lc @response.rsp
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [ツール](../../../docs/framework/tools/index.md)   
- [Al.exe (アセンブリ リンカー)](../../../docs/framework/tools/al-exe-assembly-linker.md)   
+ [ツール](../../../docs/framework/tools/index.md)  
+ [Al.exe (アセンブリ リンカー)](../../../docs/framework/tools/al-exe-assembly-linker.md)  
  [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
-

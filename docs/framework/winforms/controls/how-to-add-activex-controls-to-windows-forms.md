@@ -1,52 +1,53 @@
 ---
-title: "方法 : Windows フォームに ActiveX コントロールを追加する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ActiveX コントロール [Windows フォーム], 追加"
-  - "フォーム, 追加 (ActiveX コントロールを)"
-  - "Windows フォーム コントロール, ActiveX コントロール"
+title: "方法 : Windows フォームに ActiveX コントロールを追加する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Forms controls, ActiveX controls
+- forms [Windows Forms], adding ActiveX controls
+- ActiveX controls [Windows Forms], adding
 ms.assetid: 54a61e5b-555e-4887-b41e-6244fed271eb
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: afee07f2f5009abb6cf8facc94b138f4ea2a11fd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームに ActiveX コントロールを追加する
-Windows フォーム デザイナーは、Windows フォーム コントロールをホストするために最適化されていますが、代わりに Windows フォームに ActiveX コントロールを配置することもできます。  
+# <a name="how-to-add-activex-controls-to-windows-forms"></a>方法 : Windows フォームに ActiveX コントロールを追加する
+Windows フォーム コントロールをホストするには、Windows フォーム デザイナーが最適化され、ときにも Windows フォームで ActiveX コントロールを配置することができます。  
   
 > [!CAUTION]
->  ActiveX コントロールを Windows フォームに追加した場合は、Windows フォームのパフォーマンスが制限されます。  
+>  ActiveX コントロールに追加されるときに、Windows フォームのパフォーマンスの制限があります。  
   
- フォームに ActiveX コントロールを追加する前に、ツールボックスに ActiveX コントロールを追加する必要があります。  詳細については、「[&#91;COM コンポーネント&#93; \(&#91;ツールボックスのカスタマイズ&#93; ダイアログ ボックス\)](http://msdn.microsoft.com/ja-jp/171333f3-f207-4e02-bbdc-17862556212c)」を参照してください。  
+ ActiveX コントロールをフォームに追加する前に、ツールボックスに追加する必要があります。 詳細については、次を参照してください。 [COM コンポーネント、ツールボックスのカスタマイズ ダイアログ ボックス](http://msdn.microsoft.com/en-us/171333f3-f207-4e02-bbdc-17862556212c)です。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-### Windows フォームに ActiveX コントロールを追加するには  
+### <a name="to-add-an-activex-control-to-your-windows-form"></a>Windows フォームに ActiveX コントロールを追加するには  
   
 -   ツールボックスでコントロールをダブルクリックします。  
   
-     [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] によって、プロジェクトのコントロールにすべての参照が追加されます。  Windows フォーム上で ActiveX コントロールを使用する場合の注意事項の詳細については、「[Windows フォームで ActiveX コントロールをホストする場合の考慮事項](../../../../docs/framework/winforms/controls/considerations-when-hosting-an-activex-control-on-a-windows-form.md)」を参照してください。  
+     [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]プロジェクトのコントロールへのすべての参照を追加します。 Windows フォームで ActiveX コントロールを使用する場合に留意すべきことに関する詳細については、次を参照してください。 [Windows フォームで ActiveX コントロールをホストしている場合の考慮事項](../../../../docs/framework/winforms/controls/considerations-when-hosting-an-activex-control-on-a-windows-form.md)です。  
   
     > [!NOTE]
-    >  Windows フォーム ActiveX コントロール インポーター \(AxImp.exe\) は、ActiveX ダイナミック リンク ライブラリのインポート時に、変則的な型のイベント引数を作成します。  AxImp.exe によって作成される引数は、`Invoke(object sender, DWebBrowserEvents2_ProgressChangeEventArgs e)` ではなく、実際には `Invoke(object sender, DWebBrowserEvents2_ProgressChangeEvent e)` のようになります。  この変則性によって、コードの正常な機能が妨げられないように注意してください。  詳細については、「[Windows フォーム ActiveX コントロール インポーター \(Aximp.exe\)](../../../../docs/framework/tools/aximp-exe-windows-forms-activex-control-importer.md)」を参照してください。  
+    >  Windows フォーム ActiveX コントロール インポーター (AxImp.exe) は、ActiveX のダイナミック リンク ライブラリのインポート時に予想よりも、別の種類のイベント引数を作成します。 AxImp.exe によって作成された引数は、次のような: `Invoke(object sender, DWebBrowserEvents2_ProgressChangeEvent e)`、`Invoke(object sender, DWebBrowserEvents2_ProgressChangeEventArgs e)`が必要です。 この不規則性は防止しませんコードが正常に注意してください。 詳細については、「 [Windows フォーム ActiveX コントロール インポーター (Aximp.exe)](../../../../docs/framework/tools/aximp-exe-windows-forms-activex-control-importer.md)です。  
   
-## 参照  
- [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)   
- [Controls and Programmable Objects Compared in Various Languages and Libraries](http://msdn.microsoft.com/ja-jp/021f2a1b-8247-4348-a5ad-e1d9ab23004b)   
- [方法 : Windows フォームにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)   
- [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)   
- [各 Windows フォーム コントロールのラベル設定とショートカットの作成](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)   
- [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)   
+## <a name="see-also"></a>関連項目  
+ [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)  
+ [各言語およびライブラリにおける、コントロールとプログラミング可能オブジェクトの比較](http://msdn.microsoft.com/en-us/021f2a1b-8247-4348-a5ad-e1d9ab23004b)  
+ [方法: Windows フォームにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)  
+ [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
+ [各 Windows フォーム コントロールのラベル設定とショートカットの作成](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  
+ [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
  [Windows フォーム コントロールの機能別一覧](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)

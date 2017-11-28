@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 609b0845-49e7-4864-957b-21ffe1b93bf2
-ms.translationtype: HT
-ms.sourcegitcommit: 2762cdc983465979a530192716c33de7044dd1ed
 ms.openlocfilehash: 6e614986dc91310dea40971987969e7433cb79e8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/04/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="packages-metapackages-and-frameworks"></a>パッケージ、メタパッケージ、フレームワーク
 
 .NET Core は、NuGet パッケージで作成されたプラットフォームです。 製品のエクスペリエンスには、粒度の細かいパッケージの定義から恩恵を受けるものもあれば、粒度の粗いパッケージの定義から恩恵を受けるものもあります。 この二重性に対応するために、製品は、粒度の細かいパッケージ セットとして配布され、俗に "メタパッケージ" と呼ばれるパッケージの種類を使用して粒度の粗いチャンク単位で記述されます。
@@ -149,4 +147,3 @@ ms.lasthandoff: 08/04/2017
 `Microsoft.NETCore.App` メタパッケージは、`netcoreapp` フレームワークを対象とします。 これは、約 60 のライブラリにアクセスできるようにします (約 40 個は `NETStandard.Library` パッケージによって提供され、さらに約 20 個の追加分)。 `netcoreapp` または互換性を持つフレームワーク (`netstandard` など) を対象とする追加のライブラリを参照することで、追加の API にアクセスできます。 
 
 `Microsoft.NETCore.App` によって提供される追加ライブラリの大部分も、依存関係がほかの `netstandard` ライブラリによって満足されるならば、`netstandard` を対象とします。 つまり、`netstandard` ライブラリは、それらのパッケージを依存関係として参照することもできます。 
-

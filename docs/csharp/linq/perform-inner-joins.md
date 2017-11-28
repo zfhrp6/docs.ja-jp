@@ -7,16 +7,14 @@ manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
 ms.assetid: 45bceed6-f549-4114-a9b1-b44feb497742
+ms.openlocfilehash: fdf75c0b7195742bdce70566ebb3880bb0565f31
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2b73b954dbb090484a320302a3af72509fccd9d3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="perform-inner-joins"></a>内部結合の実行
 
@@ -37,7 +35,7 @@ ms.lasthandoff: 07/28/2017
 ## <a name="simple-key-join-example"></a>簡単なキーの結合の例  
  次の例は、2 つのユーザー定義型オブジェクト、`Person` と `Pet` が含まれた 2 つのコレクションを作成します。 クエリでは、C# の `join` 句を使用して、`Person` オブジェクトを `Owner` がこの `Person` である `Pet` オブジェクトを照合します。 C# の `select` 句では、結果のオブジェクトの表示内容を定義します。 この例では、結果のオブジェクトは、飼い主の姓とペットの名前で構成される匿名型です。  
   
- [!code-cs[CsLINQProgJoining#1](../../../samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_1.cs)]  
+ [!code-csharp[CsLINQProgJoining#1](../../../samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_1.cs)]  
   
  `LastName` が "Huff" の `Person` オブジェクトは、`Pet.Owner` がその `Person` に等しい `Pet` オブジェクトがないため、結果セットに表示されません。  
   
@@ -48,7 +46,7 @@ ms.lasthandoff: 07/28/2017
   
  次の例は、`Employee` オブジェクトのリストと `Student` オブジェクトのリストを使用して、学生でもある社員を調べます。 これらの型の両方に、<xref:System.String> 型の `FirstName` プロパティと `LastName` プロパティがあります。 それぞれのリストの要素から結合キーを作成する関数が、各要素の `FirstName` プロパティと `LastName` プロパティで構成された匿名型を返します。 結合操作により、これらの複合キーが等しいかどうか比較され、それぞれのリストの氏名が一致するオブジェクトのペアが返されます。  
   
- [!code-cs[CsLINQProgJoining#2](../../../samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_2.cs)]  
+ [!code-csharp[CsLINQProgJoining#2](../../../samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_2.cs)]  
   
 ## <a name="example"></a>例  
   
@@ -61,7 +59,7 @@ ms.lasthandoff: 07/28/2017
   
  C# の 2 番目の `join` 句では、`Person` 型の `Owner` プロパティと動物の名前の最初の文字で構成される複合キーに基づいて、最初の結合で返された匿名型を、指定された犬のリストの `Dog` オブジェクトに関連付けます。 この操作で、一致するそれぞれのペアの `Cat.Name` プロパティと `Dog.Name` プロパティが含まれた匿名型のシーケンスが返されます。 これは内部結合であるため、2 番目のデータ ソースに一致するものが存在する、最初のデータ ソースのオブジェクトのみが返されます。  
   
- [!code-cs[CsLINQProgJoining#3](../../../samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_3.cs)]  
+ [!code-csharp[CsLINQProgJoining#3](../../../samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_3.cs)]  
   
 ## <a name="example"></a>例  
   
@@ -74,13 +72,12 @@ ms.lasthandoff: 07/28/2017
   
  `query1` の結果は、`into` 句のない `join` 句を使用して内部結合を実行することで得られた結果セットと同じです。 `query2` 変数は、これと同等のクエリを示しています。  
   
- [!code-cs[CsLINQProgJoining#4](../../../samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_4.cs)]  
+ [!code-csharp[CsLINQProgJoining#4](../../../samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_4.cs)]  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Linq.Enumerable.Join%2A>   
- <xref:System.Linq.Enumerable.GroupJoin%2A>   
- [グループ化結合の実行](perform-grouped-joins.md)   
- [左外部結合の実行](perform-left-outer-joins.md)   
- [匿名型](../programming-guide/classes-and-structs/anonymous-types.md)   
+ <xref:System.Linq.Enumerable.Join%2A>  
+ <xref:System.Linq.Enumerable.GroupJoin%2A>  
+ [グループ化結合の実行](perform-grouped-joins.md)  
+ [左外部結合の実行](perform-left-outer-joins.md)  
+ [匿名型](../programming-guide/classes-and-structs/anonymous-types.md)  
  
-

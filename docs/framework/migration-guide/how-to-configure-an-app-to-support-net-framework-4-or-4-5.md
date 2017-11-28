@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,16 +13,15 @@ helpviewer_keywords:
 - .NET Framework 4, configuring apps
 - .NET Framework 4.5, configuring apps
 ms.assetid: 63c6b9a8-0088-4077-9aa3-521ab7290f79
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: 95266f9f28d5054db3ea8552ebb45e5a83aba060
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 3fea03fd2b660368b72ad111effffe7a64e381f2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-configure-an-app-to-support-net-framework-4-or-45"></a>方法: .NET Framework 4 または 4.5 をサポートするアプリを構成する
 共通言語ランタイム (CLR) をホストするすべてのアプリでは、マネージ コードを実行するために CLR を開始または*アクティブ化*する必要があります。 通常、.NET Framework アプリはビルドされた CLR のバージョンで実行されますが、アプリケーション構成ファイル (app.config ファイルと呼ばれることもあります) を使用して、デスクトップ アプリのこの動作を変更できます。 ただし、アプリケーション構成ファイルを使用して Windows ストア アプリまたは Windows Phone アプリの既定のアクティベーション動作は変更できません。 この記事では、デスクトップ アプリを .NET Framework の別のバージョンで実行できるようにする方法を説明し、Version 4 または 4.5 を対象とする方法の例を示します。  
@@ -55,7 +53,7 @@ ms.lasthandoff: 07/28/2017
   
 1.  .NET Framework プロジェクトの構成ファイルを追加または検索します。 アプリの構成ファイルは、同じディレクトリにあり、アプリと同じ名前ですが、.config 拡張子があります。 たとえば、アプリが MyExecutable.exe という名前であれば、アプリケーション構成ファイルの名前は MyExecutable.exe.config です。  
   
-     構成ファイルを追加するには、Visual Studio のメニュー バーで **[プロジェクト]**、**[新しい項目の追加]** の順にクリックします。 左ペインで **[全般]** をクリックし、**[構成ファイル]** をクリックします。  構成ファイルに *appName*.exe.config という名前を付けます。 これらのメニューの選択は、Windows ストア アプリ プロジェクトまたは Windows phone アプリ プロジェクトでは使用できません。これらのプラットフォームのアクティベーション ポリシーを変更できないためです。  
+     構成ファイルを追加するには、Visual Studio のメニュー バーで **[プロジェクト]**、**[新しい項目の追加]** の順にクリックします。 左ペインで **[全般]** をクリックし、**[構成ファイル]** をクリックします。  構成ファイルに *appName*.exe.config という名前を付けます。これらのメニューの選択は、Windows ストア アプリ プロジェクトまたは Windows phone アプリ プロジェクトでは使用できません。これらのプラットフォームのアクティベーション ポリシーを変更できないためです。  
   
 2.  次のように、アプリケーション構成ファイルに [\<supportedRuntime>](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) 要素を追加します。  
   
@@ -92,6 +90,5 @@ ms.lasthandoff: 07/28/2017
  \* このエラー メッセージの詳細と回避方法については、「[.NET Framework 初期化エラー: ユーザー エクスペリエンスの管理](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [.NET Framework 1.1 からの移行](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md)   
+ [.NET Framework 1.1 からの移行](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md)  
  [移行ガイド](../../../docs/framework/migration-guide/index.md)
-

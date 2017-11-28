@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 7819424510fe33c775cefb195f78697aef8b512d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="net-guide"></a>.NET のガイド
 
 .NET ガイドでは、.NET に関する多くの情報を提供します。  .NET に関する知識に応じて、このガイドのさまざまなセクションを参照したり、他の .NET ドキュメントのセクションを参照したりすることができます。
@@ -68,4 +66,3 @@ ms.lasthandoff: 09/05/2017
 ## <a name="api-reference"></a>API リファレンス
 
 使用できる API の全容については、[.NET API リファレンス](../../api/index.md)に関するページを参照してください。
-

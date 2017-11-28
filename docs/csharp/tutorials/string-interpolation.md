@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: f8806f6b-3ac7-4ee6-9b3e-c524d5301ae9
+ms.openlocfilehash: ac19d4208da4f8ee6dd3e071ab70dbc41a0cd065
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: de8f77e44319731f87f00d227a5373a78bf40e32
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="string-interpolation-in-c"></a>C# における文字列補間 #
 
 文字列補間は、文字列内のプレースホルダーを文字列変数の値によって置き換える方法です。 C# 6 より前は、これは `System.String.Format` を使用して行われました。 それでも動作しますが、番号付きのプレースホルダーを使用するため読みにくく冗長になります。
@@ -46,23 +44,27 @@ dotnet new console
 
 このコマンドで、プロジェクト ファイル *interpolated.csproj* およびソース コード ファイル *Program.cs* とともに、必要最低限の .NET Core プロジェクトが作成されます。 `dotnet restore` を実行して、このプロジェクトのコンパイルに必要な依存関係を復元する必要があります。
 
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+
 プログラムを実行するには `dotnet run` を使用します。 コンソールに "Hello, World" という出力が表示されます。
+
+
 
 ## <a name="intro-to-string-interpolation"></a>文字列補間の概要
 
 `System.String.Format` を使用して、文字列で、その文字列に続くパラメーターで置き換えられる "プレースホルダー" を指定します。 たとえば、次のようになります。
 
-[!code-csharp[String.Format の例](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#StringFormatExample)]  
+[!code-csharp[String.Format example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#StringFormatExample)]  
 
 これにより "My name is Matt Groves" と出力されます。
 
 C# 6 では `String.Format` を使用する代わりに `$` 記号とともに付加して文字列で直接変数を使用することにより、補間文字列を定義します。 たとえば、次のようになります。
 
-[!code-csharp[補間の例](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationExample)]  
+[!code-csharp[Interpolation example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationExample)]  
 
 使用するのは変数のみとは限りません。 角かっこ内で任意の式を使用することができます。 たとえば、次のようになります。
 
-[!code-csharp[補間の式の例](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationExpressionExample)]  
+[!code-csharp[Interpolation expression example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationExpressionExample)]  
 
 この出力は以下のようになります。
 
@@ -80,7 +82,7 @@ This is line number 5
 
 たとえば、パディングと数値の書式設定を追加できます。
 
-[!code-csharp[補間の書式設定の例](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationFormattingExample)]  
+[!code-csharp[Interpolation formatting example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationFormattingExample)]  
 
 上記はこのような出力となります。
 
@@ -118,9 +120,8 @@ Console.WriteLine(localizeMe);
 
 たとえば、次のようになります。
 
-[!code-csharp[補間の国際化の例](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationInternationalizationExample)]  
+[!code-csharp[Interpolation internationalization example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationInternationalizationExample)]  
 
 ## <a name="conclusion"></a>まとめ 
 
 このチュートリアルでは、C# 6 の文字列補間機能の使用方法について説明しました。 これは基本的に、シンプルな `String.Format` ステートメントを書く簡潔な方法で、より高度な使い方をするには注意が必要です。
-

@@ -10,14 +10,12 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: fffc3400-aeb9-4c07-9fea-83bc8dbdcbf3
+ms.openlocfilehash: a8f70505d1bb043ab21f87edbb5aa2d9f18a7071
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 434b27f6c2d44c63b4ce4deee094ac6c322cf2b5
-ms.openlocfilehash: 62de584fe5d7f1029e73e4c8c5f9b428c567751a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="net-core-cli-tools-extensibility-model"></a>.NET Core CLI ツールの拡張モデル
 
 ここでは、.NET Core コマンド ライン インターフェイス (CLI) ツールを拡張する方法と、各方法を利用するシナリオについて説明します。
@@ -49,6 +47,8 @@ CLI ツールは、主に次の 3 つの方法で拡張できます。
 
 ### <a name="consuming-per-project-tools"></a>各プロジェクト ツールの利用
 これらのツールを利用するには、使用する各ツールの `<DotNetCliToolReference>` 要素をプロジェクト ファイルに追加する必要があります。 `<DotNetCliToolReference>` 要素の内部で、ツールが存在するパッケージを参照し、必要なバージョンを指定します。 [`dotnet restore`](dotnet-restore.md) を実行した後、ツールとその依存関係が復元されます。
+
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
 実行するためにプロジェクトのビルド出力を読み込む必要があるツールの場合、通常、別の依存関係がプロジェクト ファイル内の標準の依存関係に一覧されています。 CLI では、ビルド エンジンとして MSBuild を使用するため、ツールのこれらの部分はカスタム MSBuild の[ターゲット](/visualstudio/msbuild/msbuild-targets)および[タスク](/visualstudio/msbuild/msbuild-tasks)として記述することを推奨します。これは、ビルド プロセス全体に参加できるようになるためです。 さらに、出力ファイルの場所、現在ビルドされている構成といった、ビルドによって生成されるすべてのデータを簡単に取得できます。この情報はすべて、どのターゲットからも読み取り可能な一連の MSBuild プロパティになります。 このドキュメントでは、後ほど NuGet を使用してカスタム ターゲットを追加する方法を説明します。
 
@@ -165,4 +165,3 @@ echo "Hello World"
 macOS では、このスクリプトを `dotnet-hello` として保存し、その実行可能ビットを `chmod +x dotnet-hello` に設定します。 これで、コマンド `ln -s <full_path>/dotnet-hello /usr/local/bin/` を使用して、`/usr/local/bin` でこのスクリプトへのシンボリック リンクを作成できます。 これにより、`dotnet hello` 構文を使用して、コマンドを起動できるようになります。
 
 Windows では、このスクリプトを `dotnet-hello.cmd` として保存し、システム パス内の場所に格納できます (または、既にパス内にあるフォルダーに追加できます)。 その後、`dotnet hello` を使用するだけでこの例を実行できます。
-

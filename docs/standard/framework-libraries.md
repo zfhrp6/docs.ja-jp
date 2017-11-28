@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
+ms.openlocfilehash: 6851e7059ca60430e761cebed4fd5040a6a3ee08
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 934373d61407c8cc19b7d6424898a582880f9c21
-ms.openlocfilehash: 9c38237a8e729155c443298814f4c98bec61016b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="framework-libraries"></a>フレームワーク ライブラリ
 
 .NET には、基底クラス ライブラリ (コア セット) またはフレームワーク クラス ライブラリ (完全なセット) と呼ばれるクラス ライブラリの包括的な標準セットがあります。 これらのライブラリは、多くの汎用およびアプリ固有の型、アルゴリズムおよびユーティリティの機能の実装を提供します。 商用ライブラリとコミュニティ ライブラリはどちらもフレームワーク クラス ライブラリの上に構築され、コンピューティング タスクの広範なセット用に使いやすい市販ライブラリを提供します。
@@ -32,15 +30,15 @@ BCL は最も基本的な型およびユーティリティの機能を提供し�
 
 .NET には、すべてのプログラムで (さまざまな程度で) 使用されるプリミティブ型のセットが含まれています。 これらの型には、数値、文字列、バイト、および任意のオブジェクトなどのデータが含まれています。 C# 言語には、これらの型のキーワードが含まれています。 これらの型のサンプル セットを、一致する C# キーワードとともに以下に示します。
 
-* <xref:System.Object?displayProperty=fullName> ([object](../csharp/language-reference/keywords/object.md)): CLR 型システムの最も基本の基底クラス。 型階層のルートです。
-* <xref:System.Int16?displayProperty=fullName> ([short](../csharp/language-reference/keywords/short.md)): 16 ビットの符号付き整数型。 符号なしの <xref:System.UInt16> も存在します。
-* <xref:System.Int32?displayProperty=fullName> ([int](../csharp/language-reference/keywords/int.md)): 32 ビットの符号付き整数型。 符号なしの [UInt32](../csharp/language-reference/keywords/uint.md) も存在します。
-* <xref:System.Single?displayProperty=fullName> ([float](../csharp/language-reference/keywords/float.md)): 32 ビット浮動小数点型。
-* <xref:System.Decimal?displayProperty=fullName> ([decimal](../csharp/language-reference/keywords/decimal.md)): 128 ビットの 10 進数型。
-* <xref:System.Byte?displayProperty=fullName> ([byte](../csharp/language-reference/keywords/byte.md)): メモリのバイトを表す符号なし 8 ビット整数。
-* <xref:System.Boolean?displayProperty=fullName> ([bool](../csharp/language-reference/keywords/bool.md)): `true` または `false` を表すブール型。
-* <xref:System.Char?displayProperty=fullName> ([char](../csharp/language-reference/keywords/char.md)): Unicode 文字を表す 16 ビットの数値型。
-* <xref:System.String?displayProperty=fullName> ([string](../csharp/language-reference/keywords/string.md)): 一連の文字を表します。 `char[]` とは異なりますが、`string` で各 `char` にインデックスを付けることができます。
+* <xref:System.Object?displayProperty=nameWithType> ([object](../csharp/language-reference/keywords/object.md)): CLR 型システムの最も基本の基底クラス。 型階層のルートです。
+* <xref:System.Int16?displayProperty=nameWithType> ([short](../csharp/language-reference/keywords/short.md)): 16 ビットの符号付き整数型。 符号なしの <xref:System.UInt16> も存在します。
+* <xref:System.Int32?displayProperty=nameWithType> ([int](../csharp/language-reference/keywords/int.md)): 32 ビットの符号付き整数型。 符号なしの [UInt32](../csharp/language-reference/keywords/uint.md) も存在します。
+* <xref:System.Single?displayProperty=nameWithType> ([float](../csharp/language-reference/keywords/float.md)): 32 ビット浮動小数点型。
+* <xref:System.Decimal?displayProperty=nameWithType> ([decimal](../csharp/language-reference/keywords/decimal.md)): 128 ビットの 10 進数型。
+* <xref:System.Byte?displayProperty=nameWithType> ([byte](../csharp/language-reference/keywords/byte.md)): メモリのバイトを表す符号なし 8 ビット整数。
+* <xref:System.Boolean?displayProperty=nameWithType> ([bool](../csharp/language-reference/keywords/bool.md)): `true` または `false` を表すブール型。
+* <xref:System.Char?displayProperty=nameWithType> ([char](../csharp/language-reference/keywords/char.md)): Unicode 文字を表す 16 ビットの数値型。
+* <xref:System.String?displayProperty=nameWithType> ([string](../csharp/language-reference/keywords/string.md)): 一連の文字を表します。 `char[]` とは異なりますが、`string` で各 `char` にインデックスを付けることができます。
 
 ## <a name="data-structures"></a>データ構造
 
@@ -65,4 +63,3 @@ BCL は最も基本的な型およびユーティリティの機能を提供し�
 .NET で使用できる多くのアプリ モデルが、複数の企業から提供されています。
 
 *   [ASP.NET](http://asp.net): Web サイトとサービスを構築するための Web フレームワークを提供します。 Windows、Linux、macOS でサポートされます (ASP.NET のバージョンによって異なります)。
-

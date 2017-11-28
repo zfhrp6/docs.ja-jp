@@ -1,65 +1,63 @@
 ---
-title: "Single Data Type (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Single"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Single data type"
-  - "F literal type character"
-  - "trailing zeros"
-  - "real numbers"
-  - "literal type characters, F"
-  - "trailing 0 characters"
-  - "identifier type characters, !"
-  - "single-precision numbers"
-  - "! identifier type character"
-  - "0 characters, trailing"
-  - "data types [Visual Basic], assigning"
-  - "floating-point numbers, Single data type"
-  - "numbers, real"
-  - "zeros, trailing"
-  - "numbers, floating point"
+title: "単精度浮動小数点型 (Single) (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Single
+helpviewer_keywords:
+- Single data type
+- F literal type character [Visual Basic]
+- trailing zeros
+- real numbers
+- literal type characters [Visual Basic], F
+- trailing 0 characters [Visual Basic]
+- identifier type characters [Visual Basic], !
+- single-precision numbers
+- '! identifier type character'
+- 0 characters [Visual Basic], trailing
+- data types [Visual Basic], assigning
+- floating-point numbers [Visual Basic], Single data type
+- numbers [Visual Basic], real
+- zeros, trailing
+- numbers [Visual Basic], floating point
 ms.assetid: 224a2795-4cd5-496c-8f7a-a4f05a06d45d
-caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: c91dbdf73ed1e26393518001ec8651557e5b780f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Single Data Type (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-IEEE 32 ビット \(4 バイト\) の符号付き単精度浮動小数点数を格納します。負の値は \-3.4028235E\+38 ～ \-1.401298E\-45、正の値は 1.401298E\-45 ～ 3.4028235E\+38 の範囲の値をとります。  単精度の数値には、実数の近似値が格納されます。  
+# <a name="single-data-type-visual-basic"></a>単精度浮動小数点型 (Single) (Visual Basic)
+IEEE 32 ビット (4 バイト) の単精度浮動小数点数が 3.4028235 e + 38 までの値の範囲の符号付き - 1.401298E を通じて-1.401298E と負の値の 45-から 3.4028235 e + 38 正の値の 45。 単精度の数値は、実数の概算値を格納します。  
   
-## 解説  
- `Single` データ型は、倍精度浮動小数点型 \(`Double`\) ほどのデータ 幅を必要としない浮動小数点数を格納するために使用します。  場合によっては、共通言語ランタイムが `Single` 変数をメモリ内で間を空けないようにパックし、メモリの消費量を減らすことも可能です。  
+## <a name="remarks"></a>コメント  
+ 使用して、`Single`データ型の完全なデータの幅を必要としない浮動小数点値を含む`Double`です。 場合によっては、共通言語ランタイムがパックすることがあります、`Single`変数密接に関連しておよびメモリの消費量を保存します。  
   
  `Single` の既定値は 0 です。  
   
-## プログラミングのヒント  
+## <a name="programming-tips"></a>プログラミングのヒント  
   
--   **精度。**浮動小数点数を扱う場合、これらの値がメモリ内で常に正確に表現されているわけではないことに注意してください。  このため、値の比較や `Mod` 演算子など、特定の処理で予期しない結果が返される可能性があります。  詳細については、「[Troubleshooting Data Types](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)」を参照してください。  
+-   **有効桁数です。** 浮動小数点数を使用する場合は、ことが常に正確に表現でないメモリに留意してください。 これにより予期しない結果を比較値などの特定の操作から、`Mod`演算子。 詳細については、次を参照してください。[データ型のトラブルシューティング](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)です。  
   
--   **拡大変換。** `Single` データ型は `Double` に拡大変換されます。  これは、<xref:System.OverflowException?displayProperty=fullName> エラーを発生させることなく、`Single` を `Double` に変換できることを意味します。  
+-   **拡大します。** `Single`拡大変換後のデータ型`Double`です。 つまり、変換することができます`Single`に`Double`遭遇することがなく、<xref:System.OverflowException?displayProperty=nameWithType>エラーです。  
   
--   **後続のゼロ。**浮動小数点のデータ型には、後続のゼロの文字に対する内部表現がありません。  たとえば、4.2000 と 4.2 は区別されません。  したがって、浮動小数点数の値を表示または印刷するとき、後続のゼロの文字は出力されません。  
+-   **後続のゼロです。** 浮動小数点データ型には、末尾の 0 文字の任意の内部表現はありません。 たとえば、それらによって区別されません 4.2000 および 4.2 です。 その結果、後続の 0 文字では、表示または浮動小数点値を印刷するときに表示されません。  
   
--   **型宣言文字。**あるリテラルに型文字 `F` を付けると、そのリテラルは単精度浮動小数点型 \(`Single`\) に変換されます。  ある識別子に識別子の型文字 `!` を付けると、その識別子は整数型 \(`Single`\) に変換されます。  
+-   **型宣言文字。** あるリテラルにリテラルの型文字 `F` を付けると、そのリテラルは `Single` に変換されます。 ある識別子に識別子の型文字 `!` を付けると、その識別子は整数型 (`Single`) に変換されます。  
   
--   **Framework のデータ型。**.NET Framework において対応する型は、<xref:System.Single?displayProperty=fullName> 構造体です。  
+-   **Framework の型。** .NET Framework において対応する型は、<xref:System.Single?displayProperty=nameWithType> 構造体です。  
   
-## 参照  
- <xref:System.Single?displayProperty=fullName>   
- [Data Types](../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [Decimal Data Type](../../../visual-basic/language-reference/data-types/decimal-data-type.md)   
- [Double Data Type](../../../visual-basic/language-reference/data-types/double-data-type.md)   
- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)   
- [Efficient Use of Data Types](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)   
- [Troubleshooting Data Types](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Single?displayProperty=nameWithType>  
+ [データの種類](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Decimal データ型](../../../visual-basic/language-reference/data-types/decimal-data-type.md)  
+ [Double 型](../../../visual-basic/language-reference/data-types/double-data-type.md)  
+ [データ型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [データ型の有効な使用方法](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)  
+ [トラブルシューティング (データ型)](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)

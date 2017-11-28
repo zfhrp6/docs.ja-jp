@@ -1,36 +1,39 @@
 ---
-title: "方法 : JSON データをシリアル化および逆シリアル化する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : JSON データをシリアル化および逆シリアル化する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 88abc1fb-8196-4ee3-a23b-c6934144d1dd
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 14029250f3bc26ff8598e0b8d4ccce8e9fcca331
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : JSON データをシリアル化および逆シリアル化する
+# <a name="how-to-serialize-and-deserialize-json-data"></a>方法 : JSON データをシリアル化および逆シリアル化する
 JSON (JavaScript Object Notation) は、クライアント ブラウザーと AJAX 対応の Web サービスとの間で、少量のデータを高速に交換できる効率的なデータ エンコード形式です。  
   
- ここでは JSON でエンコードされたデータに .NET 型のオブジェクトをシリアル化し、逆シリアル化、JSON 形式でデータを使用して .NET 型のインスタンスを<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>します。 この例では、ユーザー定義された `Person` 型のシリアル化と逆シリアル化を示すためにデータ コントラクトを使用します。  
+ ここでは、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> を使用して .NET 型のオブジェクトを JSON エンコードされたデータにシリアル化し、この JSON 形式のデータを .NET 型のインスタンスに戻すために逆シリアル化する方法について説明します。 この例では、ユーザー定義された `Person` 型のシリアル化と逆シリアル化を示すためにデータ コントラクトを使用します。  
   
  AJAX 対応エンドポイントで公開されたサービス操作でデータ コントラクト型を使用する場合、JSON でのシリアル化および逆シリアル化は通常 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] によって自動的に処理されます。 ただし、特定の場合においては JSON データを直接処理する必要があります。このトピックでは、このようなシナリオについて説明します。  
   
 > [!NOTE]
 >  サーバー上で送信応答のシリアル化中にエラーが発生した場合、または応答操作がなんらかの理由で例外をスローした場合、エラーにより応答がクライアントに戻らないことがあります。  
   
- このトピックのに基づいて、 [JSON のシリアル化](../../../../docs/framework/wcf/samples/json-serialization.md)サンプルです。  
+ このトピックの内容がに基づいて、 [JSON のシリアル化](../../../../docs/framework/wcf/samples/json-serialization.md)サンプルです。  
   
 ### <a name="to-define-the-data-contract-for-a-person"></a>Person のデータ コントラクトを定義するには  
   
-1.  データ コントラクトを定義`Person`アタッチすることにより、 <xref:System.Runtime.Serialization.DataContractAttribute>クラスにし、 <xref:System.Runtime.Serialization.DataMemberAttribute>属性メンバーをシリアル化します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]データ コントラクトを参照してください[サービス コントラクトの設計](../../../../docs/framework/wcf/designing-service-contracts.md)します。  
+1.  クラスに `Person` をアタッチし、シリアル化するメンバーに <xref:System.Runtime.Serialization.DataContractAttribute> 属性をアタッチすることで、<xref:System.Runtime.Serialization.DataMemberAttribute> のデータ コントラクトを定義します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]データ コントラクトを参照してください[サービス コントラクトの設計](../../../../docs/framework/wcf/designing-service-contracts.md)です。  
   
     ```  
     [DataContract]  
@@ -54,14 +57,14 @@ JSON (JavaScript Object Notation) は、クライアント ブラウザーと AJ
     p.age = 42;  
     ```  
   
-2.  シリアル化、`Person`オブジェクトを使用してメモリ ストリームを<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>します。  
+2.  `Person` を使用して、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> オブジェクトをメモリ ストリームにシリアル化します。  
   
     ```  
     MemoryStream stream1 = new MemoryStream();  
     DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Person));  
     ```  
   
-3.  使用して、 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject%2A>に JSON データをストリームに書き込みます。  
+3.  JSON データをストリームに書き込むには、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject%2A> メソッドを使用します。  
   
     ```  
     ser.WriteObject(stream1, p);  
@@ -78,7 +81,7 @@ JSON (JavaScript Object Notation) は、クライアント ブラウザーと AJ
   
 ### <a name="to-deserialize-an-instance-of-type-person-from-json"></a>JSON から Person 型のインスタンスに逆シリアル化するには  
   
-1.  新しいインスタンスに、JSON エンコードされたデータを逆シリアル化`Person`を使用して、 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject%2A>のメソッド、 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>します。  
+1.  `Person` の <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject%2A> メソッドを使用して、JSON エンコードされたデータを <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> の新しいインスタンスに逆シリアル化します。  
   
     ```  
     stream1.Position = 0;  
@@ -125,7 +128,6 @@ public static User ReadToObject(string json)
     ms.Close();  
     return deserializedUser;  
 }  
-  
 ```  
   
 > [!NOTE]
@@ -147,5 +149,5 @@ public class TestDuplicateDataDerived : TestDuplicateDataBase
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [スタンドアロン JSON のシリアル化](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md)   
- [JSON およびその他のデータ転送形式をサポートします。](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md)
+ [スタンドアロン JSON のシリアル化](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md)  
+ [JSON などの他のデータ転送形式をサポートします。](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md)

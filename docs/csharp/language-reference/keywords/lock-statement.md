@@ -1,41 +1,22 @@
 ---
 title: "lock ステートメント (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - lock_CSharpKeyword
 - lock
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- lock keyword [C#]
+helpviewer_keywords: lock keyword [C#]
 ms.assetid: 656da1a4-707e-4ef6-9c6e-6d13b646af42
-caps.latest.revision: 43
+caps.latest.revision: "43"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: eb48c2b1554ad2817406eaef42b4cb336ea46862
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 00dcbb9feec11587265bf61667d91c2c1598065b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="lock-statement-c-reference"></a>lock ステートメント (C# リファレンス)
 `lock` キーワードは、ステートメント ブロックをクリティカル セクションとして指定します。このためには、特定のオブジェクトの相互排他ロックを取得し、ステートメントを実行して、ロックを解放します。 次の例では、`lock` ステートメントが使用されています。  
@@ -60,12 +41,12 @@ class Account
 }  
 ```  
   
- 詳細については、「[スレッドの同期](http://msdn.microsoft.com/library/413e1f28-a2c5-4eec-8338-aa43e7982ff4)」を参照してください。  
+ 詳細については、「[スレッドの同期](../../programming-guide/concepts/threading/thread-synchronization.md)」を参照してください。  
   
 ## <a name="remarks"></a>コメント  
  `lock` キーワードは、コードのクリティカル セクションに複数のスレッドが同時に進入することを防ぐ働きをします。 これから実行しようとしているコードがロックされている場合、別のスレッドは、そのオブジェクトが解放されるまで待機 (ブロック) 状態になります。  
   
- スレッド処理については、「[スレッド処理](http://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c)」を参照してください。  
+ スレッド処理については、「[スレッド処理](../../programming-guide/concepts/threading/index.md)」を参照してください。  
   
  `lock` キーワードは、ブロックの先頭で <xref:System.Threading.Monitor.Enter%2A> を呼び出し、ブロックの末尾で <xref:System.Threading.Monitor.Exit%2A> を呼び出します。 `lock` ステートメントの実行を待っているスレッドを <xref:System.Threading.Thread.Interrupt%2A> で中断すると、<xref:System.Threading.ThreadInterruptedException> がスローされます。  
   
@@ -84,26 +65,25 @@ class Account
 ## <a name="example"></a>例  
  次のサンプルでは、C# でロックされていないスレッドの簡単な使用例を示しています。  
   
- [!code-cs[csrefKeywordsFixedLock#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/lock-statement_1.cs)]  
+ [!code-csharp[csrefKeywordsFixedLock#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/lock-statement_1.cs)]  
   
 ## <a name="example"></a>例  
  次のサンプルでは、スレッドと `lock` を使用しています。 `lock` ステートメントが存在する限り、このステートメント ブロックはクリティカル セクションとなり、`balance` が負の数になることはありません。  
   
- [!code-cs[csrefKeywordsFixedLock#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/lock-statement_2.cs)]  
+ [!code-csharp[csrefKeywordsFixedLock#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/lock-statement_2.cs)]  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Reflection.MethodImplAttributes>   
- <xref:System.Threading.Mutex>   
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [スレッド処理](http://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [ステートメントのキーワード](../../../csharp/language-reference/keywords/statement-keywords.md)   
- @System.Threading.Monitor   
- [インタロックされた操作](../../../standard/threading/interlocked-operations.md)   
- [AutoResetEvent](../../../standard/threading/autoresetevent.md)   
- [スレッドの同期](http://msdn.microsoft.com/library/413e1f28-a2c5-4eec-8338-aa43e7982ff4)
-
+ <xref:System.Reflection.MethodImplAttributes>  
+ <xref:System.Threading.Mutex>  
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [スレッド化](../../programming-guide/concepts/threading/index.md)  
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
+ [ステートメントのキーワード](../../../csharp/language-reference/keywords/statement-keywords.md)  
+ <xref:System.Threading.Monitor>  
+ [インタロックされた操作](../../../standard/threading/interlocked-operations.md)  
+ [AutoResetEvent](../../../standard/threading/autoresetevent.md)  
+ [スレッドの同期](../../programming-guide/concepts/threading/thread-synchronization.md)

@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 6945bedf-5bf3-4955-8588-83fb87511b79
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 60179fb0435803c3235b75ba012e588c6f1b35d3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築
 
 Visual Studio for Mac では、.NET Core アプリケーション開発用の機能をすべて備えた統合開発環境 (IDE) が提供されます。 このトピックでは、再利用可能なライブラリと単体テストを含む .NET Core ソリューションの構築方法を示します。
@@ -80,7 +78,7 @@ Visual Studio for Mac では、.NET Core アプリケーション開発用の機
 
 1. テスト ライブラリを `WordCount` クラスで使用するには、`TextUtils` プロジェクトへの参照を追加します。 **[ソリューション]** サイドバーで、**TestLibrary** の下にある **[依存関係]** を右クリックします。 コンテキスト メニューから **[参照の編集]** を選択します。
 
-1. **[参照の編集]** ダイアログで、**[プロジェクト]** タブの **[TextUtils]** プロジェクトを選択します。 **[OK]** を選択します。
+1. **[参照の編集]** ダイアログで、**[プロジェクト]** タブの **[TextUtils]** プロジェクトを選択します。**[OK]** を選択します。
 
    ![[参照の編集] ダイアログ](./media/using-on-mac-vs-full-solution/vsmacfull07.png)
 
@@ -199,4 +197,3 @@ Visual Studio for Mac では、.NET Core アプリケーション開発用の機
 ## <a name="see-also"></a>関連項目
 
 [Visual Studio 2017 for Mac リリース ノート](https://www.visualstudio.com/news/releasenotes/vs2017-mac-relnotes)
-

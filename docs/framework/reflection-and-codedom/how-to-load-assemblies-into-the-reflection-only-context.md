@@ -5,10 +5,13 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
 helpviewer_keywords:
 - reflection, reflection-only loader context
 - assemblies [.NET Framework], loading for reflection
@@ -16,16 +19,15 @@ helpviewer_keywords:
 - assemblies [.NET Framework], reflection-only loader context
 - reflection-only loader context
 ms.assetid: 9818b660-52f5-423d-a9af-e75163aa7068
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: b1366107b7dca9b1a2128a91d4c9a66f72069e9a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9af4fa8068f25fd22eafe3ac27fbd7a4c7697c30
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-load-assemblies-into-the-reflection-only-context"></a>方法 : リフレクションのみのコンテキストにアセンブリを読み込む
 リフレクションのみの読み込みコンテキストでは、他のプラットフォームや .NET Framework の他のバージョン用にコンパイルされたアセンブリを検査できます。 このコンテキストに読み込まれたコードは検査のみ可能で、実行できません。 つまり、コンストラクターを実行できないので、オブジェクトは作成できません。 また、コードを実行できないため、依存関係は自動的には読み込まれません。 依存関係を検査する必要がある場合は、依存関係を独自に読み込む必要があります。  
@@ -41,7 +43,7 @@ ms.lasthandoff: 07/28/2017
   
 3.  アセンブリの <xref:System.Reflection.Assembly.ReflectionOnly%2A> プロパティを使用して、アセンブリをリフレクションのみのコンテキストに読み込むかどうかを決定します。  
   
-4.  アセンブリまたはアセンブリ内の型に属性が適用されている場合は、<xref:System.Reflection.CustomAttributeData> クラスを使用してこれらの属性を検査し、リフレクションのみのコンテキストでコードが実行されないようにします。 <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A?displayProperty=fullName> メソッドの適切なオーバーロードを使用して、アセンブリ、メンバー、モジュール、またはパラメーターに適用されている属性を表す <xref:System.Reflection.CustomAttributeData> オブジェクトを取得します。  
+4.  アセンブリまたはアセンブリ内の型に属性が適用されている場合は、<xref:System.Reflection.CustomAttributeData> クラスを使用してこれらの属性を検査し、リフレクションのみのコンテキストでコードが実行されないようにします。 <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A?displayProperty=nameWithType> メソッドの適切なオーバーロードを使用して、アセンブリ、メンバー、モジュール、またはパラメーターに適用されている属性を表す <xref:System.Reflection.CustomAttributeData> オブジェクトを取得します。  
   
     > [!NOTE]
     >  アセンブリまたはそのコンテンツに適用されている属性は、そのアセンブリで定義されている場合もあれば、リフレクションのみのコンテキストに読み込まれた別のアセンブリで定義されている場合もあります。 属性がどこに定義されているかを事前に確認する方法はありません。  
@@ -54,10 +56,11 @@ ms.lasthandoff: 07/28/2017
 > [!NOTE]
 >  コード例を簡素にするために、アセンブリがそれ自体を読み込んで検査します。 通常、同じアセンブリが実行コンテキストとリフレクションのみのコンテキストの両方に読み込まれることはありません。  
   
- [!code-cpp[CustomAttributeData#1](../../../samples/snippets/cpp/VS_Snippets_CLR/CustomAttributeData/CPP/source.cpp#1)] [!code-csharp[CustomAttributeData#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source.cs#1)] [!code-vb[CustomAttributeData#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]  
+ [!code-cpp[CustomAttributeData#1](../../../samples/snippets/cpp/VS_Snippets_CLR/CustomAttributeData/CPP/source.cpp#1)]
+ [!code-csharp[CustomAttributeData#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source.cs#1)]
+ [!code-vb[CustomAttributeData#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A>   
- <xref:System.Reflection.Assembly.ReflectionOnly%2A>   
+ <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A>  
+ <xref:System.Reflection.Assembly.ReflectionOnly%2A>  
  <xref:System.Reflection.CustomAttributeData>
-

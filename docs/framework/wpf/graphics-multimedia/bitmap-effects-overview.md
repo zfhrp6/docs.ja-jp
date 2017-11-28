@@ -1,78 +1,80 @@
 ---
-title: "ビットマップ効果の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ビットマップ効果"
+title: "ビットマップ効果の概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: bitmap effects [WPF]
 ms.assetid: 23cb338e-4b59-4b52-b294-96431f9c9568
-caps.latest.revision: 34
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 31
+caps.latest.revision: "34"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 76b767fd210deed536b4452dc6d7bb505f5bd3e7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ビットマップ効果の概要
-ビットマップ効果により、デザイナーおよび開発者は、描画された [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] コンテンツに視覚効果を適用できます。  たとえば、ビットマップ効果を使用すると、イメージまたはボタンに <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> 効果やぼかし効果を簡単に適用できます。  
+# <a name="bitmap-effects-overview"></a>ビットマップ効果の概要
+ビットマップ効果を使うと、設計者と開発者は、レンダリングされる [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] コンテンツに視覚効果を適用できます。 たとえば、ビットマップ効果を簡単に適用できます、<xref:System.Windows.Media.Effects.DropShadowBitmapEffect>特殊効果またはイメージやボタンをぼかし効果。  
   
 > [!IMPORTANT]
->  [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] 以降では、<xref:System.Windows.Media.Effects.BitmapEffect> クラスは使用されなくなりました。  <xref:System.Windows.Media.Effects.BitmapEffect> クラスを使用すると、廃止されていることを示す例外が返されます。  <xref:System.Windows.Media.Effects.BitmapEffect> クラスの代替としては <xref:System.Windows.Media.Effects.Effect> クラスを使用できます。  ほとんどの場合は、<xref:System.Windows.Media.Effects.Effect> クラスを使用した方が高速に処理できます。  
+>  [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]以降、<xref:System.Windows.Media.Effects.BitmapEffect>クラスが廃止されています。 使用しようとする場合、<xref:System.Windows.Media.Effects.BitmapEffect>クラス、古い形式の例外が表示されます。 旧式でない代わりに、<xref:System.Windows.Media.Effects.BitmapEffect>クラスは、<xref:System.Windows.Media.Effects.Effect>クラスです。 ほとんどの場合、<xref:System.Windows.Media.Effects.Effect>クラスは大幅に高速です。  
   
-   
+  
   
 <a name="wpf_effects"></a>   
-## WPF ビットマップ効果  
- ビットマップ効果 \(<xref:System.Windows.Media.Effects.BitmapEffect> オブジェクト\) は、単純なピクセル処理操作です。  ビットマップ効果は入力として <xref:System.Windows.Media.Imaging.BitmapSource> を取得し、ぼかしやドロップ シャドウなどの効果を適用した後で、新しい <xref:System.Windows.Media.Imaging.BitmapSource> を生成します。  各ビットマップ効果は、フィルタリング プロパティを制御できるプロパティ \(<xref:System.Windows.Media.Effects.BlurBitmapEffect> の <xref:System.Windows.Media.Effects.BlurBitmapEffect.Radius%2A> など\) を公開します。  
+## <a name="wpf-bitmap-effects"></a>WPF のビットマップ効果  
+ ビットマップ効果 (<xref:System.Windows.Media.Effects.BitmapEffect>オブジェクト) 処理操作は、単純なピクセルです。 ビットマップ効果の方が、<xref:System.Windows.Media.Imaging.BitmapSource>として、入力、新規生成<xref:System.Windows.Media.Imaging.BitmapSource>ぼかしまたはドロップ シャドウなどの効果を適用した後にします。 各ビットマップ効果など、フィルター処理のプロパティを制御できるプロパティを公開する<xref:System.Windows.Media.Effects.BlurBitmapEffect.Radius%2A>の<xref:System.Windows.Media.Effects.BlurBitmapEffect>します。  
   
- 特殊なケースとして、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、<xref:System.Windows.Controls.Button> や <xref:System.Windows.Controls.TextBox> などの使用中の <xref:System.Windows.Media.Visual> オブジェクトのプロパティとして効果を設定できます。  ピクセル処理が適用され、実行時に描画されます。  この場合、描画時に、<xref:System.Windows.Media.Visual> は等価の <xref:System.Windows.Media.Imaging.BitmapSource> に自動的に変換され、<xref:System.Windows.Media.Effects.BitmapEffect> の入力として供給されます。  出力により、<xref:System.Windows.Media.Visual> オブジェクトの既定のレンダリング動作が置き換えられます。  そのため、<xref:System.Windows.Media.Effects.BitmapEffect> オブジェクトはビジュアルがソフトウェアのみで描画されることを強制します。つまり、  効果の適用時には、ビジュアルに対してハードウェア アクセラレータは使用されません。  
+ 特殊なケースとしてに[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]、効果に対して設定できるプロパティとしてライブ<xref:System.Windows.Media.Visual>などのオブジェクト、<xref:System.Windows.Controls.Button>または<xref:System.Windows.Controls.TextBox>です。 ピクセル処理は、実行時に適用されてレンダリングされます。 、レンダリング時にこの例では、、<xref:System.Windows.Media.Visual>に自動的に変換がその<xref:System.Windows.Media.Imaging.BitmapSource>等価への入力として渡すと、<xref:System.Windows.Media.Effects.BitmapEffect>です。 出力の置換、<xref:System.Windows.Media.Visual>オブジェクトの既定のレンダリング動作します。 その理由は<xref:System.Windows.Media.Effects.BitmapEffect>オブジェクトが効果を適用するときに、ビジュアルにハードウェア アクセラレータのみつまりなしをソフトウェアに表示するビジュアルを強制します。  
   
--   <xref:System.Windows.Media.Effects.BlurBitmapEffect> は、焦点を外したように見えるオブジェクトをシミュレートします。  
+-   <xref:System.Windows.Media.Effects.BlurBitmapEffect>焦点の外に表示されるオブジェクトをシミュレートします。  
   
--   <xref:System.Windows.Media.Effects.OuterGlowBitmapEffect> は、オブジェクトの周囲に色のにじみを作成します。  
+-   <xref:System.Windows.Media.Effects.OuterGlowBitmapEffect>オブジェクトの周囲の色の付いた光輪を作成します。  
   
--   <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> は、オブジェクトの背後に影を作成します。  
+-   <xref:System.Windows.Media.Effects.DropShadowBitmapEffect>オブジェクトの内側に影が付きます。  
   
--   <xref:System.Windows.Media.Effects.BevelBitmapEffect> は、指定した曲線に従ってイメージの表面を浮き上がらせる傾斜面を作成します。  
+-   <xref:System.Windows.Media.Effects.BevelBitmapEffect>指定した曲線に従ってイメージの表面を浮き上がらせるベベルを作成します。  
   
--   <xref:System.Windows.Media.Effects.EmbossBitmapEffect> は <xref:System.Windows.Media.Visual> のバンプ マッピングを作成し、人工光源による奥行とテクスチャから得られる印象を生成します。  
-  
-> [!NOTE]
->  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] ビットマップ効果は、ソフトウェア モードで描画されます。  効果を適用するすべてのオブジェクトもソフトウェアで描画されます。  パフォーマンスが最も低下するのは、ビットマップ効果を大規模なビジュアルやビットマップ効果のアニメーション プロパティに適用した場合です。  ビットマップ効果をこのような方法で使用してはならないわけではありませんが、予期したとおりのエクスペリエンスをユーザーが体験することを保証するため、使用する場合は細心の注意を払い、徹底的にテストしてください。  
+-   <xref:System.Windows.Media.Effects.EmbossBitmapEffect>バンプ マッピングを作成、<xref:System.Windows.Media.Visual>人工光源から奥行きとテクスチャの印象にします。  
   
 > [!NOTE]
->  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] ビットマップ効果は、部分信頼では実行できません。  アプリケーションでビットマップ効果を使用するには、完全信頼のアクセス許可が必要です。  
+>  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] のビットマップ効果は、ソフトウェア モードでレンダリングされます。 効果を適用するオブジェクトも、ソフトウェアでレンダリングされます。 大きなビジュアルにビットマップ効果を使うとき、またはビットマップ効果のプロパティをアニメーション化するときに、パフォーマンスが最も低下します。 このような方法ではビットマップ効果をまったく使ってはならないということではありませんが、注意を払い、十分にテストを行って、ユーザー エクスペリエンスが期待どおりになることを確認する必要があります。  
+  
+> [!NOTE]
+>  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] のビットマップ効果は、部分信頼の実行をサポートしていません。 ビットマップ効果を使うには、アプリケーションが完全な信頼のアクセス許可を持つ必要があります。  
   
 <a name="applyeffects"></a>   
-## 効果を適用する方法  
- <xref:System.Windows.Media.Effects.BitmapEffect> は <xref:System.Windows.Media.Visual> のプロパティです。  したがって、<xref:System.Windows.Controls.Button>、<xref:System.Windows.Controls.Image>、<xref:System.Windows.Media.DrawingVisual>、<xref:System.Windows.UIElement> などのビジュアルに効果を適用するのは、プロパティを設定するのと同様に簡単です。  <xref:System.Windows.UIElement.BitmapEffect%2A> は 1 つの <xref:System.Windows.Media.Effects.BitmapEffect> オブジェクトに設定できます。また、<xref:System.Windows.Media.Effects.BitmapEffectGroup> オブジェクトを使用して、複数の効果を連結することもできます。  
+## <a name="how-to-apply-an-effect"></a>効果を適用する方法  
+ <xref:System.Windows.Media.Effects.BitmapEffect>プロパティは、<xref:System.Windows.Media.Visual>です。 このためなどをビジュアルに、その効果を適用する、 <xref:System.Windows.Controls.Button>、 <xref:System.Windows.Controls.Image>、 <xref:System.Windows.Media.DrawingVisual>、または<xref:System.Windows.UIElement>プロパティの設定と同じくらい簡単です。 <xref:System.Windows.UIElement.BitmapEffect%2A>1 つに設定することができます<xref:System.Windows.Media.Effects.BitmapEffect>を使用してオブジェクトまたは複数の効果をチェーンできる、<xref:System.Windows.Media.Effects.BitmapEffectGroup>オブジェクト。  
   
- [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] で <xref:System.Windows.Media.Effects.BitmapEffect> を適用する方法を次の例に示します。  
+ 次の例では、適用する方法、<xref:System.Windows.Media.Effects.BitmapEffect>で[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。  
   
- [!code-xml[EffectsGallery_snip#BlurSimpleExampleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EffectsGallery_snip/CSharp/blursimpleexample.xaml#blursimpleexampleinline)]  
+ [!code-xaml[EffectsGallery_snip#BlurSimpleExampleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EffectsGallery_snip/CSharp/blursimpleexample.xaml#blursimpleexampleinline)]  
   
- コードで <xref:System.Windows.Media.Effects.BitmapEffect> を適用する方法を次の例に示します。  
+ 次の例では、適用する方法、<xref:System.Windows.Media.Effects.BitmapEffect>のコードにします。  
   
  [!code-csharp[EffectsGallery_snip#CodeBehindBlurCodeBehindExampleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EffectsGallery_snip/CSharp/blurcodebehindexample.xaml.cs#codebehindblurcodebehindexampleinline)]  
   
 > [!NOTE]
->  <xref:System.Windows.Media.Effects.BitmapEffect> が <xref:System.Windows.Controls.DockPanel> や <xref:System.Windows.Controls.Canvas> などのレイアウト コンテナーに適用されると、効果は要素またはビジュアルのビジュアル ツリー \(すべての子要素を含む\) に適用されます。  
+>  ときに、<xref:System.Windows.Media.Effects.BitmapEffect>などで、レイアウト コンテナーに適用される<xref:System.Windows.Controls.DockPanel>または<xref:System.Windows.Controls.Canvas>、要素またはビジュアルを含むすべての子要素のビジュアル ツリーに効果を適用します。  
   
 <a name="customeffects"></a>   
-## カスタム効果の作成  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は、マネージ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションで使用できるカスタム効果を作成するために、アンマネージ インターフェイスも提供します。  カスタム ビットマップ効果の作成に関する追加リファレンス資料については、「[アンマネージ WPF ビットマップ効果](_wibe_lh)」を参照してください。  
+## <a name="creating-custom-effects"></a>カスタム効果の作成  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] では、マネージ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションで使うことができるカスタム効果を作成するためのアンマネージ インターフェイスも提供されています。 カスタム ビットマップ効果の作成に関する参考資料については、「[Unmanaged WPF Bitmap Effect](https://msdn.microsoft.com/library/ms735092.aspx)」(アンマネージ WPF ビットマップ効果) ドキュメントをご覧ください。  
   
-## 参照  
- <xref:System.Windows.Media.Effects.BitmapEffectGroup>   
- <xref:System.Windows.Media.Effects.BitmapEffectInput>   
- <xref:System.Windows.Media.Effects.BitmapEffectCollection>   
- [Unmanaged WPF Bitmap Effect](_wibe_lh)   
- [イメージングの概要](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)   
- [セキュリティ](../../../../docs/framework/wpf/security-wpf.md)   
- [WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Media.Effects.BitmapEffectGroup>  
+ <xref:System.Windows.Media.Effects.BitmapEffectInput>  
+ <xref:System.Windows.Media.Effects.BitmapEffectCollection>  
+ [アンマネージ WPF ビットマップ効果](https://msdn.microsoft.com/library/ms735092.aspx)  
+ [イメージングの概要](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
+ [セキュリティ](../../../../docs/framework/wpf/security-wpf.md)  
+ [WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
  [2D グラフィックスとイメージング](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)

@@ -1,33 +1,33 @@
 ---
-title: "方法 : コマンド ラインから Windows フォーム アプリケーションを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Windows フォーム, アプリケーション開発 (コマンド ラインからの)"
-  - "Windows フォーム, 作成 (基本フォームを)"
-  - "Windows フォーム, はじめに"
+title: "方法: コマンドラインから Windows フォーム アプリケーションを作成します。"
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.technology: dotnet-winforms
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Windows Forms, application development from command line
+- Windows Forms, getting started
+- Windows Forms, creating basic form
 ms.assetid: 45ad3f8b-1c26-4c9f-91a9-3bb0759a47a4
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e6ddb27f724e30071be339ac753cfd85599ccd86
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : コマンド ラインから Windows フォーム アプリケーションを作成する
-次の手順では、コマンドラインから Windows フォーム アプリケーションを作成して実行するために完了する必要のある基本的な手順について説明します。  Visual Studio では、これらの手順に対する広範なサポートが用意されています。  「[チュートリアル : 簡単な Windows フォームの作成](http://msdn.microsoft.com/library/z9w2f38k\(v=vs.110\))」も参照してください。  
+# <a name="how-to-create-a-windows-forms-application-from-the-command-line"></a>方法: コマンドラインから Windows フォーム アプリケーションを作成します。
+次の手順では、コマンドラインから Windows フォーム アプリケーションを作成して実行するために完了する必要のある基本的な手順について説明します。 Visual Studio では、これらの手順に対する広範なサポートが用意されています。  参照してください[チュートリアル: 簡単な Windows フォームの作成](http://msdn.microsoft.com/library/z9w2f38k\(v=vs.100\))です。  
   
-## プロシージャ  
+## <a name="procedure"></a>プロシージャ  
   
-#### フォームを作成するには  
+#### <a name="to-create-the-form"></a>フォームを作成するには  
   
 1.  空のコード ファイルに、次の import ステートメントまたは using ステートメントを入力します。  
   
@@ -57,26 +57,26 @@ caps.handback.revision: 10
      [!code-csharp[System.Windows.Forms.BasicForm#5](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BasicForm/CS/Form1.cs#5)]
      [!code-vb[System.Windows.Forms.BasicForm#5](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BasicForm/VB/Form1.vb#5)]  
   
-#### アプリケーションをコンパイルして実行するには  
+#### <a name="to-compile-and-run-the-application"></a>アプリケーションをコンパイルして実行するには  
   
 1.  .NET Framework コマンド プロンプトで、`Form1` クラスを作成したディレクトリに移動します。  
   
 2.  フォームをコンパイルします。  
   
-    -   C\# を使用している場合は、`csc form1.cs` と入力します。  
+    -   C# を使用している場合は、次のように入力します。`csc form1.cs`  
   
-         `または`  
+         `-or-`  
   
-    -   Visual Basic を使用している場合は、`vbc form1.vb /r:system.dll,system.drawing.dll,system.windows.forms.dll` と入力します。  
+    -   Visual Basic を使用している場合は、次のように入力します。`vbc form1.vb /r:system.dll,system.drawing.dll,system.windows.forms.dll`  
   
-3.  コマンド プロンプトで、`Form1.exe` と入力します。  
+3.  コマンド プロンプトで次のように入力します。`Form1.exe`  
   
-## コントロールの追加とイベントの処理  
- 前の手順は、コンパイルして実行する基本的な Windows フォームを作成する方法を示しました。  次の手順では、コントロールを作成してフォームに追加し、コントロールのイベントを処理する方法を示します。  Windows フォームに追加できるコントロールの詳細については、「[Windows フォーム コントロール](../../../docs/framework/winforms/controls/index.md)」を参照してください。  
+## <a name="adding-a-control-and-handling-an-event"></a>コントロールの追加とイベントの処理  
+ 前の手順は、コンパイルして実行する基本的な Windows フォームを作成する方法を示しました。 次の手順では、コントロールを作成してフォームに追加し、コントロールのイベントを処理する方法を示します。 Windows フォームに追加できるコントロールの詳細については、次を参照してください。 [Windows フォーム コントロール](../../../docs/framework/winforms/controls/index.md)です。  
   
- Windows フォーム アプリケーションを作成する方法を理解するだけでなく、イベント ベースのプログラミングとユーザー入力を処理する方法を理解する必要があります。  詳細については、「[Windows フォーム内でのイベント ハンドラーの作成](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)」および「[ユーザーの入力の処理](../../../docs/framework/winforms/controls/handling-user-input.md)」を参照してください。  
+ Windows フォーム アプリケーションを作成する方法を理解するだけでなく、イベント ベースのプログラミングとユーザー入力を処理する方法を理解する必要があります。 詳細については、次を参照してください[Windows フォームでのイベント ハンドラーの作成](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)、および[ユーザー入力の処理。](../../../docs/framework/winforms/controls/handling-user-input.md)  
   
-#### ボタン コントロールを宣言して、クリック イベントを処理するには  
+#### <a name="to-declare-a-button-control-and-handle-its-click-event"></a>ボタン コントロールを宣言して、クリック イベントを処理するには  
   
 1.  `button1` という名前のボタン コントロールを宣言します。  
   
@@ -107,19 +107,19 @@ caps.handback.revision: 10
   
 7.  前の手順で説明したように、アプリケーションをコンパイルして実行します。  
   
-## 使用例  
+## <a name="example"></a>例  
  次のコード例は、前の手順の完全な例です。  
   
  [!code-csharp[System.Windows.Forms.FormWithButton#1](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FormWithButton/CS/Form1.cs#1)]
  [!code-vb[System.Windows.Forms.FormWithButton#1](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FormWithButton/VB/Form1.vb#1)]  
   
-## コードのコンパイル  
+## <a name="compiling-the-code"></a>コードのコンパイル  
   
 -   コードをコンパイルするには、アプリケーションをコンパイルして実行する方法を説明した、前述の手順に従います。  
   
-## 参照  
- <xref:System.Windows.Forms.Form>   
- <xref:System.Windows.Forms.Control>   
- [Windows フォームの表示形式の変更](../../../docs/framework/winforms/changing-the-appearance-of-windows-forms.md)   
- [Windows フォーム アプリケーションの拡張](../../../docs/framework/winforms/advanced/index.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.Form>  
+ <xref:System.Windows.Forms.Control>  
+ [Windows フォームの表示形式の変更](../../../docs/framework/winforms/changing-the-appearance-of-windows-forms.md)  
+ [Windows フォーム アプリケーションの拡張](../../../docs/framework/winforms/advanced/index.md)  
  [Windows フォームについて](../../../docs/framework/winforms/getting-started-with-windows-forms.md)

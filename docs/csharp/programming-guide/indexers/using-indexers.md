@@ -1,38 +1,19 @@
 ---
 title: "インデクサーの使用 (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- indexers [C#], about indexers
+helpviewer_keywords: indexers [C#], about indexers
 ms.assetid: df70e1a2-3ce3-4aba-ad80-4b2f3538699f
-caps.latest.revision: 30
+caps.latest.revision: "30"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: d5c727edbbea116d858c6acf6b600f8fd9f43ee2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: ac8990fa2efb1a2ea24497a3a5de3649795c7b23
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="using-indexers-c-programming-guide"></a>インデクサーの使用 (C# プログラミング ガイド)
 インデクサーは構文を簡略化します。これを使用すると、[クラス](../../../csharp/language-reference/keywords/class.md)、[構造体](../../../csharp/language-reference/keywords/struct.md)、または[インターフェイス](../../../csharp/language-reference/keywords/interface.md)を作成でき、クライアント アプリケーションは配列と同じようにアクセスできます。 インデクサーは、内部コレクションまたは配列をカプセル化することが主な目的である型で最も多く実装されます。 たとえば、TempRecord という名前のクラスがあるとします。これは温度を華氏で表し、24 時間のうちに 10 回、異なる時刻に温度を記録します。 クラスには float 型の "temps" という名前の配列が含まれており、これは温度を表します。また、<xref:System.DateTime> も含まれており、これは温度が記録された日付を表します。 このクラスにインデクサーを実装することで、クライアントは、`float temp = tr.temps[4]` ではなく `float temp = tr[4]` として TempRecord インスタンスの温度にアクセスできます。 インデクサーはクライアント アプリケーションの構文を簡略化するだけでなく、クラスとその目的を、他の開発者たちにとってわかりやすい、より直感的なものにします。  
@@ -74,7 +55,7 @@ public int this [int index]   // Indexer declaration
  `Console.Write` ステートメントなどでインデクサーのアクセスが評価されると、[get](../../../csharp/language-reference/keywords/get.md) アクセサーが呼び出されることに注意してください。 したがって、`get` アクセサーが存在しない場合は、コンパイル時エラーが発生します。  
   
 ### <a name="code"></a>コード  
- [!code-cs[csProgGuideIndexers#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-indexers_1.cs)]  
+ [!code-csharp[csProgGuideIndexers#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-indexers_1.cs)]  
   
 ## <a name="indexing-using-other-values"></a>他の値を使用したインデックス作成  
  C# では、インデックス型は整数に制限されません。 たとえば、文字列をインデクサーで使用すると有効な場合があります。 このようなインデクサーは、コレクション内の文字列を検索し、適切な値を返すことによって実装される場合があります。 アクセサーはオーバーロードできるため、文字列と整数のバージョンは共存できます。  
@@ -85,7 +66,7 @@ public int this [int index]   // Indexer declaration
  この例では、曜日を格納するクラスが宣言されます。 `get` アクセサーは、曜日を示す文字列を受け取り、対応する整数を返すように宣言されます。 たとえば、Sunday の場合は 0、Monday の場合は 1 などのように返します。  
   
 ### <a name="code"></a>コード  
- [!code-cs[csProgGuideIndexers#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-indexers_2.cs)]  
+ [!code-csharp[csProgGuideIndexers#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-indexers_2.cs)]  
   
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  インデクサーのセキュリティと信頼性を改善するには、主に次の 2 つの方法があります。  
@@ -95,7 +76,6 @@ public int this [int index]   // Indexer declaration
 -   `get` および [set](../../../csharp/language-reference/keywords/set.md) アクセサーのアクセシビリティを設定し、適切な制限を指定します。 これは、`set` アクセサーの場合、特に重要です。 詳細については、「[アクセサーのアクセシビリティの制限](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [インデクサー](../../../csharp/programming-guide/indexers/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [インデクサー](../../../csharp/programming-guide/indexers/index.md)  
  [プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)
-

@@ -1,127 +1,130 @@
 ---
-title: "GridView の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "コントロール, ListView"
-  - "GridView 表示モード"
-  - "ListView コントロール, GridView 表示モード"
+title: "GridView の概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- GridView view mode [WPF]
+- ListView controls [WPF], GridView view mode
+- controls [WPF], ListView
 ms.assetid: b2d02267-32b3-40ce-8e9f-06972d8749d9
-caps.latest.revision: 26
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 25
+caps.latest.revision: "26"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 44574b5737873371f9a7bc9be2d851a8ae1e101b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# GridView の概要
-<xref:System.Windows.Controls.GridView> 表示モードは、<xref:System.Windows.Controls.ListView> コントロールの表示モードの 1 つです。  <xref:System.Windows.Controls.GridView> クラスおよびそのサポート クラスを使用すると、一般的にボタンを対話型列ヘッダーとして使用するテーブルに項目コレクションを表示することができます。  ここでは、<xref:System.Windows.Controls.GridView> クラスについて説明し、その使用方法を示します。  
+# <a name="gridview-overview"></a>GridView の概要
+<xref:System.Windows.Controls.GridView>表示モードのいずれかのビュー モードは、<xref:System.Windows.Controls.ListView>コントロール。 <xref:System.Windows.Controls.GridView>とユーザーの対話型の列見出しとして通常のボタンを使用するテーブル内の項目コレクションを表示するクラスとそのサポート クラスを有効にします。 このトピックでは、<xref:System.Windows.Controls.GridView>クラスし、その用途について説明します。  
   
-   
+  
   
 <a name="DefiningaListViewthatusesGridViewView"></a>   
-## GridView ビューとは  
- <xref:System.Windows.Controls.GridView> 表示モードでは、データ フィールドを列にバインドし、列ヘッダーを表示してフィールドを識別することによって、データ項目のリストを表示します。  既定の <xref:System.Windows.Controls.GridView> スタイルは、列ヘッダーとしてボタンを実装します。  列ヘッダーにボタンを使用すると、重要なユーザー操作機能を実装できます。たとえば、ユーザーは列ヘッダーをクリックして、特定の列のコンテンツに従って <xref:System.Windows.Controls.GridView> データを並べ替えることができます。  
+## <a name="what-is-a-gridview-view"></a>GridView のビューとは?  
+ <xref:System.Windows.Controls.GridView>ビュー モードでは、列のデータ フィールドのバインドとフィールドを識別する列ヘッダーを表示することによってデータ項目の一覧が表示されます。 既定値<xref:System.Windows.Controls.GridView>スタイルを列見出しとしてボタンを実装します。 列ヘッダーのボタンを使用して、重要なユーザー操作機能を実装することができます。ユーザーが並べ替えに列ヘッダーをクリックするなど、<xref:System.Windows.Controls.GridView>特定の列の内容に合わせてデータ。  
   
 > [!NOTE]
->  <xref:System.Windows.Controls.GridView> で列ヘッダーに使用されるボタン コントロールは、<xref:System.Windows.Controls.Primitives.ButtonBase> から派生します。  
+>  ボタン コントロールが<xref:System.Windows.Controls.GridView>、列ヘッダーの使用に由来<xref:System.Windows.Controls.Primitives.ButtonBase>です。  
   
- <xref:System.Windows.Controls.ListView> コンテンツの <xref:System.Windows.Controls.GridView> ビューを次の図に示します。  
+ 次の図は、<xref:System.Windows.Controls.GridView>の表示<xref:System.Windows.Controls.ListView>コンテンツ。  
   
  **ListView コンテンツの GridView ビュー**  
   
- ![スタイル設定された ListView](../../../../docs/framework/wpf/controls/media/styledlistview.png "StyledListView")  
+ ![スタイル化 ListView](../../../../docs/framework/wpf/controls/media/styledlistview.PNG "StyledListView")  
   
- <xref:System.Windows.Controls.GridView> の列は <xref:System.Windows.Controls.GridViewColumn> オブジェクトによって表されます。このオブジェクトのサイズは、コンテンツのサイズに自動的に設定されます。  必要に応じて、<xref:System.Windows.Controls.GridViewColumn> を特定の幅に明示的に設定できます。  列ヘッダー間のグリッパーをドラッグすることによって、列のサイズを変更できます。  また、列の追加、削除、置換、および並べ替え機能が <xref:System.Windows.Controls.GridView> に組み込まれているため、この機能を動的に実行することができます。  ただし、<xref:System.Windows.Controls.GridView> では、表示されるデータを直接更新することはできません。  
+ <xref:System.Windows.Controls.GridView>列がによって表される<xref:System.Windows.Controls.GridViewColumn>オブジェクトで、そのコンテンツを自動的にサイズことができます。 必要に応じて、明示的に設定できます、<xref:System.Windows.Controls.GridViewColumn>幅を指定します。 列のサイズは、列ヘッダー間のグリッパーをドラッグすることで変更できます。 ことができますも動的に追加、削除、置換、およびにこの機能が組み込まれているために、列を並べ替える<xref:System.Windows.Controls.GridView>です。 ただし、<xref:System.Windows.Controls.GridView>表示されるデータを直接更新することはできません。  
   
- 従業員データを表示する <xref:System.Windows.Controls.GridView> を定義する方法を次の例に示します。  この例では、<xref:System.Windows.Controls.ListView> で `EmployeeInfoDataSource` が <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> として定義されています。  <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> のプロパティ定義によって、<xref:System.Windows.Controls.GridViewColumn> のコンテンツが `EmployeeInfoDataSource` データ カテゴリにバインドされます。  
+ 次の例は、定義する方法を示します、<xref:System.Windows.Controls.GridView>従業員データを表示します。 この例では<xref:System.Windows.Controls.ListView>定義、`EmployeeInfoDataSource`として、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>です。 プロパティ定義<xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>バインド<xref:System.Windows.Controls.GridViewColumn>へのコンテンツ`EmployeeInfoDataSource`データのカテゴリ。  
   
- [!code-xml[ListViewCode#ListViewEmployee](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#listviewemployee)]  
+ [!code-xaml[ListViewCode#ListViewEmployee](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#listviewemployee)]  
   
- 前述の例で作成したテーブルを次の図に示します。  
+ 次の図は、前の例により作成されるテーブルを示しています。  
   
- **ItemsSource のデータを表示する GridView**  
+ **GridView、ItemsSource からデータを表示します。**  
   
- ![GridView 出力を含む ListView](../../../../docs/framework/wpf/controls/media/listviewgridview.png "ListViewGridView")  
+ ![GridView 出力を含む ListView](../../../../docs/framework/wpf/controls/media/listviewgridview.JPG "ListViewGridView")  
   
 <a name="GridViewLayoutandStyle"></a>   
-## GridView レイアウトおよびスタイル  
- <xref:System.Windows.Controls.GridViewColumn> の列のセルおよび列ヘッダーの幅は同じです。  既定では、各列の幅は、そのコンテンツに合わせて設定されます。  必要に応じて、列を固定幅に設定できます。  
+## <a name="gridview-layout-and-style"></a>GridView のレイアウトとスタイル  
+ 列のセルと列ヘッダーの<xref:System.Windows.Controls.GridViewColumn>同じ幅を持ちます。 既定では、各列の幅がコンテンツに合わせて調整されます。 列を固定幅に設定することもできます。  
   
- 関連するデータ コンテンツは、水平行に表示されます。  たとえば、前の図では、各従業員の氏名および ID 番号が水平行に示されているため、これらが 1 つのセットとして表示されています。  
+ 関連するデータのコンテンツは水平方向の行に表示されます。 たとえば前の図では、各従業員の姓と名と ID 番号が横一列に並ぶため 1 つのセットとして表示されています。  
   
 <a name="DefiningandStylingColumnsinaGridView"></a>   
-### GridView の列の定義およびスタイル設定  
- <xref:System.Windows.Controls.GridViewColumn> に表示するデータ フィールドを定義する場合は、<xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>、<xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>、または <xref:System.Windows.Controls.GridViewColumn.CellTemplateSelector%2A> プロパティを使用します。  <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> プロパティは、他の 2 つのテンプレート プロパティよりも優先されます。  
+### <a name="defining-and-styling-columns-in-a-gridview"></a>GridView の列の定義およびスタイル設定  
+ 表示するデータ フィールドを定義するときに、<xref:System.Windows.Controls.GridViewColumn>を使用して、 <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>、 <xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>、または<xref:System.Windows.Controls.GridViewColumn.CellTemplateSelector%2A>プロパティです。 <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>プロパティ テンプレートのプロパティのいずれかのよりも優先されます。  
   
- <xref:System.Windows.Controls.GridView> の列のコンテンツの配置を指定するには、<xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A> を定義します。  <xref:System.Windows.Controls.GridView> を使用して表示する <xref:System.Windows.Controls.ListView> のコンテンツには、<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A> および <xref:System.Windows.Controls.Control.VerticalContentAlignment%2A> プロパティを使用しないでください。  
+ 列のコンテンツの配置を指定する、 <xref:System.Windows.Controls.GridView>、定義、<xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>です。 使用しないでください、<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A>と<xref:System.Windows.Controls.Control.VerticalContentAlignment%2A>プロパティ<xref:System.Windows.Controls.ListView>を使用して表示されるコンテンツ、<xref:System.Windows.Controls.GridView>です。  
   
- 列ヘッダーのテンプレート プロパティとスタイル プロパティを指定するには、<xref:System.Windows.Controls.GridView>、<xref:System.Windows.Controls.GridViewColumn>、および <xref:System.Windows.Controls.GridViewColumnHeader> クラスを使用します。  詳細については、「[GridView の列ヘッダー スタイルおｙびテンプレートの概要](../../../../docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md)」を参照してください。  
+ 列ヘッダーのテンプレートとスタイルのプロパティを指定するには、使用、 <xref:System.Windows.Controls.GridView>、 <xref:System.Windows.Controls.GridViewColumn>、および<xref:System.Windows.Controls.GridViewColumnHeader>クラスです。 詳細については、[GridView の列ヘッダーのスタイルとテンプレートの概要](../../../../docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md)を参照してください。  
   
 <a name="AddingVisualElementstoaGridViewView"></a>   
-### GridView へのビジュアル要素の追加  
- <xref:System.Windows.Controls.CheckBox> コントロールや <xref:System.Windows.Controls.Button> コントロールなどのビジュアル要素を <xref:System.Windows.Controls.GridView> 表示モードに追加するには、テンプレートまたはスタイルを使用します。  
+### <a name="adding-visual-elements-to-a-gridview"></a>GridView への視覚的要素の追加  
+ などの視覚要素を追加する<xref:System.Windows.Controls.CheckBox>と<xref:System.Windows.Controls.Button>コントロールに、<xref:System.Windows.Controls.GridView>モードのビューで、テンプレートまたはスタイルを使用します。  
   
- ビジュアル要素をデータ項目として明示的に定義した場合、その要素は <xref:System.Windows.Controls.GridView> に一度しか表示できません。  この制限は、要素は親を 1 つしか持つことができず、[ビジュアル ツリー](GTMT)に一度しか表示されないために適用されます。  
+ 1 回だけを表示できるデータ項目として明示的に視覚的要素を定義する場合、<xref:System.Windows.Controls.GridView>です。 この制限が存在する理由は 1 つの要素は 1 つの親しか持てないためです。したがって視覚的要素をビジュアル ツリーに 1 回だけ表示できます。  
   
 <a name="StylingRowsinaGridViewView"></a>   
-### GridView の行のスタイル設定  
- <xref:System.Windows.Controls.GridViewRowPresenter> および <xref:System.Windows.Controls.GridViewHeaderRowPresenter> クラスを使用して、<xref:System.Windows.Controls.GridView> の行を書式設定して表示します。  <xref:System.Windows.Controls.GridView> 表示モードの行のスタイルを設定する方法の例については、「[GridView を実装する ListView で行のスタイルを設定する](../../../../docs/framework/wpf/controls/how-to-style-a-row-in-a-listview-that-implements-a-gridview.md)」を参照してください。  
+### <a name="styling-rows-in-a-gridview"></a>GridView での行のスタイル設定  
+ 使用して、<xref:System.Windows.Controls.GridViewRowPresenter>と<xref:System.Windows.Controls.GridViewHeaderRowPresenter>書式設定および行を表示するクラス、<xref:System.Windows.Controls.GridView>です。 スタイルの行に方法の例については、<xref:System.Windows.Controls.GridView>モードを表示しを参照してください[ListView を実装する GridView で行をスタイル](../../../../docs/framework/wpf/controls/how-to-style-a-row-in-a-listview-that-implements-a-gridview.md)です。  
   
 <a name="AlignmentIssuesWhenUsingItemContainerStyle"></a>   
-### ItemContainerStyle を使用する際の配置の問題  
- 列ヘッダーとセル間の配置の問題を回避するため、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> の項目の幅に影響を与えるプロパティを設定したりテンプレートを指定したりしないようにしてください。  たとえば、<xref:System.Windows.FrameworkElement.Margin%2A> プロパティを設定したり、<xref:System.Windows.Controls.ListView> コントロールで定義されている <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> に <xref:System.Windows.Controls.CheckBox> を追加する <xref:System.Windows.Controls.ControlTemplate> を指定したりしないでください。  代わりに、列の幅に影響を与えるプロパティおよびテンプレートを、<xref:System.Windows.Controls.GridView> 表示モードを定義するクラスで直接指定してください。  
+### <a name="alignment-issues-when-you-use-itemcontainerstyle"></a>ItemContainerStyle 使用時の配置問題  
+ 列ヘッダーとセルの配置の問題を防ぐためには、プロパティを設定またはしないテンプレート内のアイテムの幅に影響を指定する、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>です。 たとえば、設定しないでください、<xref:System.Windows.FrameworkElement.Margin%2A>プロパティかを指定、<xref:System.Windows.Controls.ControlTemplate>を追加、<xref:System.Windows.Controls.CheckBox>を<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>で定義されている、<xref:System.Windows.Controls.ListView>コントロール。 代わりに、指定のプロパティと列の幅を定義するクラスに影響を与えるテンプレート、<xref:System.Windows.Controls.GridView>表示モード。  
   
- たとえば、<xref:System.Windows.Controls.CheckBox> を <xref:System.Windows.Controls.GridView> 表示モードの行に追加するには、<xref:System.Windows.Controls.CheckBox> を <xref:System.Windows.DataTemplate> に追加して、<xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A> プロパティをその <xref:System.Windows.DataTemplate> に設定します。  
+ 例については、追加する、<xref:System.Windows.Controls.CheckBox>内の行に<xref:System.Windows.Controls.GridView>モードを表示、追加、<xref:System.Windows.Controls.CheckBox>を<xref:System.Windows.DataTemplate>、し、設定、<xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>にプロパティ<xref:System.Windows.DataTemplate>です。  
   
 <a name="InteractingwithaGridViewControl"></a>   
-## GridView でのユーザーの操作  
- アプリケーションで <xref:System.Windows.Controls.GridView> を使用する場合、ユーザーは <xref:System.Windows.Controls.GridView> の書式設定を操作および変更できます。  たとえば、ユーザーは列の並べ替え、列のサイズ変更、テーブルでの項目の選択、コンテンツのスクロールなどを実行できます。  また、ユーザーが列ヘッダー ボタンをクリックしたときに応答するイベント ハンドラーを定義することもできます。  イベント ハンドラーは、列のコンテンツに従って <xref:System.Windows.Controls.GridView> に表示されるデータを並べ替える操作などを実行できます。  
+## <a name="user-interactions-with-a-gridview"></a>ユーザーによる GridView の操作  
+ 使用すると、 <xref:System.Windows.Controls.GridView> 、アプリケーションでユーザーが対話および変更の書式設定、<xref:System.Windows.Controls.GridView>です。 たとえばユーザーは、列の順序の変更、列のサイズの変更、テーブルのアイテムの選択、コンテンツのスクロールを実行できます。 ユーザーが列ヘッダーのボタンをクリックしたときに応答するイベント ハンドラーを定義することもできます。 イベント ハンドラーに表示されるデータの並べ替えのように操作を実行できる、<xref:System.Windows.Controls.GridView>列の内容に従ってします。  
   
- <xref:System.Windows.Controls.GridView> を使用したユーザー操作のための機能の詳細を次に示します。  
+ 次の一覧でさらに詳しくを使用しての機能について説明します<xref:System.Windows.Controls.GridView>ユーザーの操作。  
   
--   **ドラッグ アンド ドロップを使用した列の並べ替え。**  
+-   **ドラッグ アンド ドロップで列の順序を変更する**  
   
-     ユーザーは、マウスが列ヘッダー上にあるときにその左ボタンを押してその列を新しい位置にドラッグすることで、<xref:System.Windows.Controls.GridView> の列を並べ替えることができます。  ユーザーが列ヘッダーをドラッグするとき、フローティング バージョンのヘッダーと、列を挿入する位置を示す黒い実線が表示されます。  
+     ユーザーが内の列を並べ替えることができます、<xref:System.Windows.Controls.GridView>が列見出しの上でマウスの左ボタンを押すと、新しい位置にその列をドラッグし、します。 ユーザーが列ヘッダーをドラッグしている間、そのヘッダーの浮動バージョンと、列を挿入する場所を示す黒い実線が表示されます。  
   
-     フローティング バージョンのヘッダーの既定のスタイルを変更する場合は、<xref:System.Windows.Controls.GridViewColumnHeader.Role%2A> プロパティが <xref:System.Windows.Controls.GridViewColumnHeaderRole> に設定されているときにトリガーされる <xref:System.Windows.Controls.GridViewColumnHeader> 型の <xref:System.Windows.Controls.ControlTemplate> を指定します。  詳細については、「[ドラッグされた GridView 列ヘッダーのスタイルを作成する](../../../../docs/framework/wpf/controls/how-to-create-a-style-for-a-dragged-gridview-column-header.md)」を参照してください。  
+     ヘッダーの浮動小数点バージョンの既定のスタイルを変更する場合は、指定、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.GridViewColumnHeader>となる型トリガーされたときに、<xref:System.Windows.Controls.GridViewColumnHeader.Role%2A>プロパティに設定されている<xref:System.Windows.Controls.GridViewColumnHeaderRole.Floating>です。 詳細については、[ドラッグした GridView 列ヘッダーのスタイルを作成する](../../../../docs/framework/wpf/controls/how-to-create-a-style-for-a-dragged-gridview-column-header.md)を参照してください。  
   
--   **コンテンツに合わせた列のサイズ変更。**  
+-   **内容に合わせて列のサイズを変更する**  
   
-     ユーザーは、列ヘッダーの右にあるグリッパーをダブルクリックして、列のサイズをそのコンテンツに合わせて変更することができます。  
+     ユーザーは列ヘッダーの右側にあるグリッパーをダブルクリックすると、内容に合わせて列のサイズを変更できます。  
   
     > [!NOTE]
-    >  <xref:System.Windows.Controls.GridViewColumn.Width%2A> プロパティを `Double.NaN` に設定して、同じ効果を得ることができます。  
+    >  設定することができます、<xref:System.Windows.Controls.GridViewColumn.Width%2A>プロパティを`Double.NaN`を同じ効果を生成します。  
   
--   **行項目の選択。**  
+-   **行の項目を選択する**  
   
-     ユーザーは、<xref:System.Windows.Controls.GridView> の 1 つ以上の項目を選択できます。  
+     内の 1 つまたは複数の項目を選択できる、<xref:System.Windows.Controls.GridView>です。  
   
-     選択された項目の <xref:System.Windows.Style> を変更する場合は、「[トリガーを使用して、ListView で選択された項目のスタイルを設定する](../../../../docs/framework/wpf/controls/how-to-use-triggers-to-style-selected-items-in-a-listview.md)」を参照してください。  
+     変更する場合、<xref:System.Windows.Style>のアイテムを選択し、次を参照してください。 [ListView で選択した項目のスタイルを使用してトリガー](../../../../docs/framework/wpf/controls/how-to-use-triggers-to-style-selected-items-in-a-listview.md)です。  
   
--   **最初に画面に表示されていないコンテンツを表示するためのスクロール。**  
+-   **スクロールして画面に表示されていない内容を表示する**  
   
-     <xref:System.Windows.Controls.GridView> のサイズがすべての項目を表示できる十分な大きさではない場合、ユーザーは、<xref:System.Windows.Controls.ScrollViewer> コントロールによって提供されるスクロール バーを使用して水平方向または垂直方向にスクロールできます。  特定の方向ですべてのコンテンツが表示可能な場合、<xref:System.Windows.Controls.Primitives.ScrollBar> は非表示になります。  列ヘッダーは垂直スクロール バーでスクロールされませんが、水平方向にはスクロールされます。  
+     場合のサイズ、<xref:System.Windows.Controls.GridView>がないのに十分な大きさのすべての項目を表示する、ユーザーが水平方向にスクロールまたは垂直方向にスクロール バーを使用すると、これによって提供される、<xref:System.Windows.Controls.ScrollViewer>コントロール。 A<xref:System.Windows.Controls.Primitives.ScrollBar>は、すべてのコンテンツが特定の方向に表示されている場合に表示されません。 列ヘッダーは、垂直スクロール バーでのスクロール操作ではなく水平方向のスクロール操作を行います。  
   
--   **列ヘッダー ボタンをクリックすることによる列の操作。**  
+-   **列ヘッダーのボタンをクリックして列を操作する**  
   
-     並べ替えアルゴリズムが提供されている場合、列ヘッダー ボタンをクリックすると、ユーザーは列に表示されるデータを並べ替えることができます。  
+     ユーザーは並べ替えアルゴリズムを指定しておけば、列ヘッダーのボタンをクリックして列に表示されているデータを並べ替えることができます。  
   
-     並べ替えアルゴリズムなどの機能を提供するには、列ヘッダー ボタンの <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントを処理します。  単一の列ヘッダーの <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントを処理するには、<xref:System.Windows.Controls.GridViewColumnHeader> に対してイベント ハンドラーを設定します。  すべての列ヘッダーの <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントを処理するイベント ハンドラーを設定するには、<xref:System.Windows.Controls.ListView> コントロールに対してハンドラーを設定します。  
+     処理することができます、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>並べ替えアルゴリズムなどの機能を提供するために列ヘッダーのボタンのイベントです。 処理するために、 <xref:System.Windows.Controls.Primitives.ButtonBase.Click> 、1 つの列ヘッダーのイベントにイベント ハンドラーを設定する、<xref:System.Windows.Controls.GridViewColumnHeader>です。 処理するイベント ハンドラーを設定する、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>すべての列ヘッダーのイベントのハンドラーを設定する、<xref:System.Windows.Controls.ListView>コントロール。  
   
 <a name="Obtaining_Other_Custom_Views"></a>   
-## その他のカスタム ビューの取得  
- <xref:System.Windows.Controls.ViewBase> 抽象クラスから派生した <xref:System.Windows.Controls.GridView> クラスは、<xref:System.Windows.Controls.ListView> クラスの使用可能な表示モードの一例です。  <xref:System.Windows.Controls.ViewBase> クラスから派生させて、<xref:System.Windows.Controls.ListView> のその他のカスタム ビューを作成できます。  カスタム表示モードの例については、「[ListView のカスタム表示モードを作成する](../../../../docs/framework/wpf/controls/how-to-create-a-custom-view-mode-for-a-listview.md)」を参照してください。  
+## <a name="obtaining-other-custom-views"></a>その他のカスタム ビューの取得  
+ <xref:System.Windows.Controls.GridView>から派生するクラス、<xref:System.Windows.Controls.ViewBase>抽象クラスでは 1 つの可能な表示モード、<xref:System.Windows.Controls.ListView>クラスです。 他のカスタム ビューを作成する<xref:System.Windows.Controls.ListView>から派生することによって、<xref:System.Windows.Controls.ViewBase>クラスです。 カスタム ビュー モードの例については、[ListView のカスタム ビュー モードを作成する](../../../../docs/framework/wpf/controls/how-to-create-a-custom-view-mode-for-a-listview.md)を参照してください。  
   
 <a name="GridViewSupportingClasses"></a>   
-## GridView のサポート クラス  
- 次のクラスは <xref:System.Windows.Controls.GridView> 表示モードをサポートします。  
+## <a name="gridview-supporting-classes"></a>GridViewサポート クラス  
+ 次のクラスのサポート、<xref:System.Windows.Controls.GridView>表示モード。  
   
 -   <xref:System.Windows.Controls.GridViewColumn>  
   
@@ -135,14 +138,14 @@ caps.handback.revision: 25
   
 -   <xref:System.Windows.Controls.GridViewColumnHeaderRole>  
   
-## 参照  
- <xref:System.Windows.Controls.ListView>   
- <xref:System.Windows.Controls.ListViewItem>   
- <xref:System.Windows.Controls.GridViewColumn>   
- <xref:System.Windows.Controls.GridViewColumnHeader>   
- <xref:System.Windows.Controls.GridViewRowPresenter>   
- <xref:System.Windows.Controls.GridViewHeaderRowPresenter>   
- <xref:System.Windows.Controls.ViewBase>   
- [ListView の概要](../../../../docs/framework/wpf/controls/listview-overview.md)   
- [ヘッダーがクリックされたときに GridView 列を並べ替える](../../../../docs/framework/wpf/controls/how-to-sort-a-gridview-column-when-a-header-is-clicked.md)   
- [方法のトピック](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Controls.ListView>  
+ <xref:System.Windows.Controls.ListViewItem>  
+ <xref:System.Windows.Controls.GridViewColumn>  
+ <xref:System.Windows.Controls.GridViewColumnHeader>  
+ <xref:System.Windows.Controls.GridViewRowPresenter>  
+ <xref:System.Windows.Controls.GridViewHeaderRowPresenter>  
+ <xref:System.Windows.Controls.ViewBase>  
+ [ListView の概要](../../../../docs/framework/wpf/controls/listview-overview.md)  
+ [ヘッダーがクリックされたときに GridView 列を並べ替える](../../../../docs/framework/wpf/controls/how-to-sort-a-gridview-column-when-a-header-is-clicked.md)  
+ [方法トピック](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)

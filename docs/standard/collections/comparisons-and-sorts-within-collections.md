@@ -8,6 +8,9 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 helpviewer_keywords:
 - sorting data, collections
 - IComparable.CompareTo method
@@ -15,16 +18,15 @@ helpviewer_keywords:
 - Equals method
 - collections [.NET Framework], comparisons
 ms.assetid: 5e4d3b45-97f0-423c-a65f-c492ed40e73b
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: bb7092a2eae8d950f3709ea4fde63f6c7d5b32b8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1033d7ec64641dd5904372bc05bd2076efe60d39
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/19/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>コレクション内での比較と並べ替え
 <xref:System.Collections> クラスは、削除する要素を検索するか、キーと値のペアの値を返すかに関係なく、コレクションの管理に関連するほぼすべての処理において比較を実行します。  
@@ -37,9 +39,9 @@ ms.lasthandoff: 09/19/2017
   
 -   T 型で <xref:System.IEquatable%601> ジェネリック インターフェイスが実装されている場合、等値比較子はそのインターフェイスの <xref:System.IEquatable%601.Equals%2A> メソッドです。  
   
--   T 型で <xref:System.IEquatable%601>が実装されていない場合、 <xref:System.Object.Equals%2A?displayProperty=fullName> が使用されます。  
+-   T 型で <xref:System.IEquatable%601>が実装されていない場合、 <xref:System.Object.Equals%2A?displayProperty=nameWithType> が使用されます。  
   
- また、ディクショナリ コレクションの一部のコンストラクター オーバーロードでは、 <xref:System.Collections.Generic.IEqualityComparer%601> 実装が受け取られ、これを使用してキーの等価性が比較されます。 例については、 <xref:System.Collections.Generic.Dictionary%602.%23ctor%2A?displayProperty=fullName> コンストラクターに関する説明を参照してください。  
+ また、ディクショナリ コレクションの一部のコンストラクター オーバーロードでは、 <xref:System.Collections.Generic.IEqualityComparer%601> 実装が受け取られ、これを使用してキーの等価性が比較されます。 例については、 <xref:System.Collections.Generic.Dictionary%602.%23ctor%2A?displayProperty=nameWithType> コンストラクターに関する説明を参照してください。  
   
 <a name="BKMK_Determiningsortorder"></a>   
 ## <a name="determining-sort-order"></a>並べ替え順序の決定  
@@ -47,13 +49,13 @@ ms.lasthandoff: 09/19/2017
   
  既定の比較子は、比較される 1 つ以上のオブジェクトに依存して **IComparable** インターフェイスを実装します。 リスト コレクションの値として使用されるか、またはディクショナリ コレクションのキーとして使用されるすべてのクラスで、 **IComparable** を実装することをお勧めします。 ジェネリック コレクションの場合、等価比較は次の基準に従って決定されます。  
   
--   T 型で <xref:System.IComparable%601?displayProperty=fullName> ジェネリック インターフェイスが実装されている場合、既定の比較子はそのインターフェイスの <xref:System.IComparable%601.CompareTo%28%600%29?displayProperty=fullName> メソッドです。  
+-   T 型で <xref:System.IComparable%601?displayProperty=nameWithType> ジェネリック インターフェイスが実装されている場合、既定の比較子はそのインターフェイスの <xref:System.IComparable%601.CompareTo%28%600%29?displayProperty=nameWithType> メソッドです。  
   
--   T 型で非ジェネリックの <xref:System.IComparable?displayProperty=fullName> インターフェイスが実装されている場合、既定の比較子はそのインターフェイスの <xref:System.IComparable.CompareTo%28System.Object%29?displayProperty=fullName> メソッドです。  
+-   T 型で非ジェネリックの <xref:System.IComparable?displayProperty=nameWithType> インターフェイスが実装されている場合、既定の比較子はそのインターフェイスの <xref:System.IComparable.CompareTo%28System.Object%29?displayProperty=nameWithType> メソッドです。  
   
 -   T 型でいずれのインターフェイスも実装されていない場合、既定の比較子は存在せず、比較子または比較デリゲートを明示的に指定する必要があります。  
   
- 明示的な比較を指定するために、一部のメソッドではパラメーターとして **IComparer** 実装を受け取ります。 たとえば、 <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=fullName> メソッドは <xref:System.Collections.Generic.IComparer%601?displayProperty=fullName> 実装を受け取ります。  
+ 明示的な比較を指定するために、一部のメソッドではパラメーターとして **IComparer** 実装を受け取ります。 たとえば、 <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> メソッドは <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> 実装を受け取ります。  
   
  システムの現在のカルチャ設定は、コレクション内の比較と並べ替えに影響を与える可能性があります。 既定では、 **Collections** クラスの比較と並べ替えはカルチャに依存します。 カルチャ設定を無視して一貫した比較と並べ替えの結果を得るには、 <xref:System.Globalization.CultureInfo.InvariantCulture%2A> を受け取るメンバー オーバーロードと共に <xref:System.Globalization.CultureInfo>を使用します。 詳細については、次のトピックを参照してください。 [Performing Culture-Insensitive String Operations in Collections](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-collections.md) および [Performing Culture-Insensitive String Operations in Arrays](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md).  
   
@@ -65,9 +67,8 @@ ms.lasthandoff: 09/19/2017
  [!code-vb[System.Collections.Generic.List.Sort#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.generic.list.sort/vb/module1.vb#1)]  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Collections.IComparer>   
- <xref:System.IEquatable%601>   
- <xref:System.Collections.Generic.IComparer%601>   
- <xref:System.IComparable>   
+ <xref:System.Collections.IComparer>  
+ <xref:System.IEquatable%601>  
+ <xref:System.Collections.Generic.IComparer%601>  
+ <xref:System.IComparable>  
  <xref:System.IComparable%601>
-

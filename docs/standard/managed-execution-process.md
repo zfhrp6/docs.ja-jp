@@ -16,16 +16,15 @@ helpviewer_keywords:
 - managed execution process
 - common language runtime, managed execution process
 ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: a47761acfabd3de77d65483d50fbe7a77f96e076
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cf4234f36745fdc13635ab2c6394f49aefabf7a8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="managed-execution-process"></a>マネージ実行プロセス
 <a name="introduction"></a> マネージ実行プロセスで実行される主な手順を次に示します。詳細については、後で説明します。  
@@ -50,7 +49,7 @@ ms.lasthandoff: 08/21/2017
 ## <a name="choosing-a-compiler"></a>コンパイラを選択します  
  共通言語ランタイム (CLR: Common Language Runtime) によって提供される機能を活用するには、Visual Basic、C#、Visual C++、F# などのランタイムに対応した言語コンパイラか、Eiffel、Perl、COBOL などのサードパーティのコンパイラを使用する必要があります。  
   
- 共通言語ランタイムは多言語実行環境であるため、さまざまなデータ型と言語機能をサポートしています。 使用する言語コンパイラによって、利用できる共通言語ランタイムの機能が決まり、その機能を使用してコードをデザインすることになります。 記述するコードの構文を決定するのは、共通言語ランタイムではなく、使用するコンパイラです。 作成したコンポーネントを他の言語で記述されたコンポーネントでも完全に使用できるようにするためには、そのコンポーネントからエクスポートされた型が、 [Language Independence and Language-Independent Components](../../docs/standard/language-independence-and-language-independent-components.md) (CLS) に規定されている言語機能だけを公開するようにする必要があります。 <xref:System.CLSCompliantAttribute> 属性を使用することにより、コードを確実に CLS に準拠させることができます。 詳細については、「[Language Independence and Language-Independent Components](../../docs/standard/language-independence-and-language-independent-components.md)」を参照してください。  
+ 共通言語ランタイムは多言語実行環境であるため、さまざまなデータ型と言語機能をサポートしています。 使用する言語コンパイラによって、利用できる共通言語ランタイムの機能が決まり、その機能を使用してコードをデザインすることになります。 記述するコードの構文を決定するのは、共通言語ランタイムではなく、使用するコンパイラです。 作成したコンポーネントを他の言語で記述されたコンポーネントでも完全に使用できるようにするためには、そのコンポーネントからエクスポートされた型が、 [Language Independence and Language-Independent Components](../../docs/standard/language-independence-and-language-independent-components.md) (CLS) に規定されている言語機能だけを公開するようにする必要があります。 <xref:System.CLSCompliantAttribute> 属性を使用することにより、コードを確実に CLS に準拠させることができます。 詳細については、「 [Language Independence and Language-Independent Components](../../docs/standard/language-independence-and-language-independent-components.md)」を参照してください。  
   
  [ページのトップへ](#introduction)  
   
@@ -116,13 +115,12 @@ ms.lasthandoff: 08/21/2017
  [ページのトップへ](#introduction)  
   
 ## <a name="see-also"></a>関連項目  
- [概要](../../docs/framework/get-started/overview.md)   
- [言語への非依存性、および言語非依存コンポーネント](../../docs/standard/language-independence-and-language-independent-components.md)   
- [メタデータと自己言及的なコンポーネント](../../docs/standard/metadata-and-self-describing-components.md)   
- [Ilasm.exe (IL アセンブラー)](../../docs/framework/tools/ilasm-exe-il-assembler.md)   
- [セキュリティ](../../docs/standard/security/index.md)   
- [アンマネージ コードとの相互運用](../../docs/framework/interop/index.md)   
- [配置](../../docs/framework/deployment/net-framework-applications.md)   
- [共通言語ランタイムのアセンブリ](../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)   
+ [概要](../../docs/framework/get-started/overview.md)  
+ [言語への非依存性、および言語非依存コンポーネント](../../docs/standard/language-independence-and-language-independent-components.md)  
+ [メタデータと自己言及的なコンポーネント](../../docs/standard/metadata-and-self-describing-components.md)  
+ [Ilasm.exe (IL アセンブラー)](../../docs/framework/tools/ilasm-exe-il-assembler.md)  
+ [セキュリティ](../../docs/standard/security/index.md)  
+ [アンマネージ コードとの相互運用](../../docs/framework/interop/index.md)  
+ [配置](../../docs/framework/deployment/net-framework-applications.md)  
+ [共通言語ランタイムのアセンブリ](../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  [アプリケーション ドメイン](../../docs/framework/app-domains/application-domains.md)
-

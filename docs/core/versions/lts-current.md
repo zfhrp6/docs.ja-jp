@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: fedc7025-f320-4cba-957b-ef74885f66de
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 254611ef05af22eea616fcfe3288239a744e0ccc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="net-core-support"></a>.NET Core サポート
 
 これは .NET Core サポートの一般的な説明です。
@@ -43,4 +41,3 @@ LTS リリースのサポート期間
 ### <a name="further-reading"></a>関連項目
 * [.NET Core サポート ライフサイクルのファクト シート](https://www.microsoft.com/net/core/support)
 * [現在サポートされているオペレーティング システムとバージョン](https://github.com/dotnet/core/blob/master/roadmap.md)
-

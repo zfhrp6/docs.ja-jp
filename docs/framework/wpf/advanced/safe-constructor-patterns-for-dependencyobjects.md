@@ -1,48 +1,51 @@
 ---
-title: "DependencyObject の安全なコンストラクター パターン | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "依存関係オブジェクトのコンストラクター パターン"
-  - "依存関係オブジェクト, コンストラクター パターン"
-  - "FXCop ツール"
+title: "DependencyObject の安全なコンストラクター パターン"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- constructor patterns for dependency objects [WPF]
+- dependency objects [WPF], constructor patterns
+- FXCop tool [WPF]
 ms.assetid: f704b81c-449a-47a4-ace1-9332e3cc6d60
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 43a38406a3c9cc171944448fce2fa2f70c483baa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DependencyObject の安全なコンストラクター パターン
-通常、クラスのコンストラクターでは、仮想メソッドやデリゲートなどのコールバックは呼び出しません。コンストラクターは派生クラスのコンストラクターの基底の初期化として呼び出されることがあるためです。  対象のオブジェクトの初期化が不完全な状態で仮想メソッドに入る可能性があります。  ただし、プロパティ システム自体は依存関係プロパティ システムの一部としてコールバックを呼び出し、内部的に公開します。  <xref:System.Windows.DependencyObject.SetValue%2A> の呼び出しによって依存関係プロパティの値を設定するような簡単な演算には、決定のどこかにコールバックが潜在的に含まれます。  この理由から、使用する型が基本クラスとして使われる場合に、コンストラクターの本文で依存関係プロパティの値を設定すると問題が起こる可能性があるため、注意する必要があります。  <xref:System.Windows.DependencyObject> コンストラクターを実装するときには、依存関係プロパティの状態および付随するコールバックに関する固有の問題を回避するための特定のパターンがあります。ここでは、そのパターンについて説明します。  
+# <a name="safe-constructor-patterns-for-dependencyobjects"></a>DependencyObject の安全なコンストラクター パターン
+一般的に、コンストラクターは派生クラスのコンストラクターの基底の初期化として呼び出されることがあるため、クラスのコンストラクターでは、仮想メソッドやデリゲートなどのコールバックを呼び出しません。 対象オブジェクトの初期化が不完全な状態で、仮想メソッドに入ることがあります。 ただし、プロパティ システム自体は、依存関係プロパティ システムの一部としてコールバックを呼び出し、内部的に公開します。 単純な操作と依存関係プロパティの値を設定した場合と<xref:System.Windows.DependencyObject.SetValue%2A>呼び出しには可能性がありますが含まれますコールバックには任意の場所を特定します。 このため、使用する型が基底クラスとして使われる場合に、コンストラクター本体内に依存関係プロパティ値を設定すると問題が発生する可能性があり、注意が必要です。 実装するための特定のパターンがある<xref:System.Windows.DependencyObject>」で説明されている依存関係プロパティの状態と固有のコールバックでは、特定の問題を回避するコンス トラクターです。  
   
-   
+ 
   
 <a name="Property_System_Virtual_Methods"></a>   
-## プロパティ システムの仮想メソッド  
- 依存関係プロパティの値を設定する <xref:System.Windows.DependencyObject.SetValue%2A> の呼び出しの計算中には、<xref:System.Windows.ValidateValueCallback>、<xref:System.Windows.PropertyChangedCallback>、<xref:System.Windows.CoerceValueCallback>、<xref:System.Windows.DependencyObject.OnPropertyChanged%2A> の各仮想メソッドまたはコールバックが潜在的に呼び出されます。  これらの仮想メソッドまたはコールバックは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のプロパティ システムと依存関係プロパティの汎用性を高めるうえで、それぞれ特定の目的を果たします。  これらの仮想メソッドを使用してプロパティ値の決定をカスタマイズする方法については、「[依存関係プロパティのコールバックと検証](../../../../docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)」を参照してください。  
+## <a name="property-system-virtual-methods"></a>プロパティ システムの仮想メソッド  
+ 次の仮想メソッドまたはコールバックの計算中に呼び出される可能性のある、<xref:System.Windows.DependencyObject.SetValue%2A>を依存関係プロパティの値を設定する呼び出し: <xref:System.Windows.ValidateValueCallback>、 <xref:System.Windows.PropertyChangedCallback>、 <xref:System.Windows.CoerceValueCallback>、<xref:System.Windows.DependencyObject.OnPropertyChanged%2A>です。 これらの仮想メソッドまたはコールバックは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のプロパティ システムと依存関係プロパティの汎用性を高めるうえで、それぞれ特定の目的を果たします。 これらの仮想メソッドを使用してプロパティ値の決定をカスタマイズする方法の詳細については、「[依存関係プロパティのコールバックと検証](../../../../docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)」を参照してください。  
   
-### FXCop のルール強制とプロパティ システムの仮想メソッドの比較  
- ビルド プロセスの一部として Microsoft ツールの FXCop を使用している場合、基本コンストラクターを呼び出す特定の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] フレームワーク クラスを派生させるとき、または派生クラスで独自の依存関係プロパティを実装するときに、FXCop の特定のルール違反が発生することがあります。  この違反に対する名前文字列は、次のとおりです。  
+### <a name="fxcop-rule-enforcement-vs-property-system-virtuals"></a>FXCop ルールの適用とプロパティ システムの仮想メソッドの比較  
+ ビルド プロセスの一部として Microsoft ツールの FXCop を使用している場合、基底コンストラクターを呼び出す特定の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] フレームワーク クラスを派生させるとき、派生クラスで独自の依存関係プロパティを実装するときに、FXCop の特定のルール違反が発生することがあります。 ルール違反に該当する名前文字列は次のとおりです。  
   
  `DoNotCallOverridableMethodsInConstructors`  
   
- このルールは、FXCop に設定されている既定のパブリック ルールの一部です。  このルールによって報告されるのは、依存関係プロパティ システムの仮想メソッドを最終的に呼び出す、依存関係プロパティ システム内のトレースです。  このルール違反は、このトピックで説明されている推奨コンストラクター パターンに従っている場合も表示され続けるため、FXCop のルール セット設定でこのルールを無効にするか抑制する必要があります。  
+ このルールは、FXCop に設定されている既定のパブリック ルールの一部です。 このルールによって報告されるのは、依存関係プロパティ システムの仮想メソッドを最終的に呼び出す、依存関係プロパティ システム内のトレースです。 このルール違反は、このトピックで説明されている推奨コンストラクター パターンに従っている場合も発生し続ける可能性があるため、FXCop のルール セット構成でこのルールを無効にするか抑制する必要があります。  
   
-### 既存のクラスの使用ではなくクラスの派生が大半の原因  
- このルールによって報告される問題は、コンストラクターで仮想メソッドを呼び出すように実装したクラスが派生される場合に発生します。  クラスをシールする場合、クラスが派生されないとわかっている場合、またはクラスが派生されないように強制する場合は、ここで説明する内容や FXCop のルールによって起こる問題は該当しません。  ただし、テンプレートや拡張可能なコントロール ライブラリのセットを作成する場合などのように、基本クラスとして使用されることを想定したクラスを作成する場合は、ここで説明されているコンストラクターの推奨パターンに従う必要があります。  
+### <a name="most-issues-come-from-deriving-classes-not-using-existing-classes"></a>既存のクラスの使用ではなくクラスの派生が大半の原因  
+ このルールによって報告される問題は、構築のシーケンスで仮想メソッドを呼び出すように実装したクラスが派生される場合に発生します。 クラスをシールする場合、クラスが派生されないとわかっている場合、クラスが派生されないように強制する場合は、ここで説明する内容や FXCop のルールによって起こる問題は該当しません。 ただし、テンプレートや拡張可能なコントロール ライブラリのセットを作成する場合などのように、基底クラスとしての使用を想定したクラスを作成する場合は、ここで説明されているコンストラクターの推奨パターンに従う必要があります。  
   
-### 既定のコンストラクターにおいて、コールバックによって要求されるすべての値の初期化の必要性  
- 任意のクラスのオーバーライドまたはコールバック \(「プロパティ システムの仮想メソッド」の一覧のコールバック\) によって使用されるすべてのインスタンス メンバーは、クラスの既定のコンストラクターで初期化する必要があります。これは、既定以外のコンストラクターのパラメーターによって値の一部に "実際の" 値が入る場合も同様です。  
+### <a name="default-constructors-must-initialize-all-values-requested-by-callbacks"></a>既定のコンストラクターにおいて、コールバックによって要求されるすべての値の初期化の必要性  
+ 任意のクラスの無視またはコールバック (「プロパティ システムの仮想メソッド」セクションの一覧にあるコールバック) によって使用されるすべてのインスタンス メンバーは、クラスの既定のコンストラクターで初期化する必要があります。これは、既定以外のコンストラクターのパラメーターによって値の一部に "実際の" 値が入る場合も同様です。  
   
- 次のコード例 \(および以降の例\) は、この規則に違反する擬似 C\# コードの例であり、問題を説明しています。  
+ 次のコード例 (および以降の例) は、この規則に違反する擬似 C# コードの例であり、問題を説明しています。  
   
 ```  
 public class MyClass : DependencyObject  
@@ -69,16 +72,16 @@ public class MyClass : DependencyObject
 }  
 ```  
   
- アプリケーション コードによって `new MyClass(objectvalue)` が呼び出されると、既定のコンストラクターと基本クラスのコンストラクターが呼び出されます。  次に、`Property1 = object1` が設定されると、対応する `MyClass` <xref:System.Windows.DependencyObject> の仮想メソッドの `OnPropertyChanged` が呼び出されます。  オーバーライドは、まだ初期化されていない `_myList` を参照します。  
+ アプリケーション コードによって `new MyClass(objectvalue)` が呼び出されると、既定のコンストラクターと基底クラスのコンストラクターが呼び出されます。 設定し、 `Property1 = object1`、仮想メソッドを呼び出している`OnPropertyChanged`で所有している`MyClass`<xref:System.Windows.DependencyObject>です。  無視では、まだ初期化されていない `_myList` が参照されます。  
   
- これらの問題を回避する方法の 1 つは、コールバックが他の依存関係プロパティだけを使用し、それぞれの使用する依存関係プロパティが、登録済みのメタデータの一部として確立された既定値を持つようにすることです。  
+ これらの問題を回避する方法の 1 つは、コールバックが他の依存関係プロパティのみを使用し、それぞれの使用する依存関係プロパティが、登録済みのメタデータの一部として確立された既定値を持つようにすることです。  
   
 <a name="Safe_Constructor_Patterns"></a>   
-## 安全なコンストラクター パターン  
- クラスが基本クラスとして使用される場合の不完全な初期化のリスクを回避するには、次のパターンに従います。  
+## <a name="safe-constructor-patterns"></a>安全なコンストラクター パターン  
+ クラスが基底クラスとして使用される場合に、不完全な初期化のリスクを回避するには、次のパターンに従ってください。  
   
-#### 基本の初期化を呼び出す既定のコンストラクター  
- 次の例では、これらのコンストラクターを実装して、基本の初期化を呼び出します。  
+#### <a name="default-constructors-calling-base-initialization"></a>基底クラスの初期化を呼び出す既定のコンストラクター  
+ 基底クラスの既定値を呼び出す次のコンストラクターを実装します。  
   
 ```  
 public MyClass : SomeBaseClass {  
@@ -89,8 +92,8 @@ public MyClass : SomeBaseClass {
 }  
 ```  
   
-#### 既定外の \(簡易\) コンストラクター \(すべての基本シグネチャと一致しない場合\)  
- これらのコンストラクターがパラメーターを使用して初期化の依存関係プロパティを設定する場合は、最初に初期化のための独自のクラスの既定のコンストラクターを呼び出し、次にパラメーターを使用して依存関係プロパティを設定します。  この場合、クラスによって定義された依存関係プロパティ、または基本クラスから継承された依存関係プロパティのどちらかを使用できますが、いずれの場合も次のパターンを使用します。  
+#### <a name="non-default-convenience-constructors-not-matching-any-base-signatures"></a>基底クラスのシグネチャと一致しない、既定以外の (簡易) コンストラクター  
+ これらのコンストラクターがパラメーターを使用して初期化の依存関係プロパティを設定する場合は、最初に初期化のための独自のクラスの既定のコンストラクターを呼び出し、次にパラメーターを使用して依存関係プロパティを設定します。 これらは、クラスによって定義された依存関係プロパティか、基底クラスから継承された依存関係プロパティのいずれかですが、いずれの場合も次のパターンが適用されます。  
   
 ```  
 public MyClass : SomeBaseClass {  
@@ -102,8 +105,8 @@ public MyClass : SomeBaseClass {
 }  
 ```  
   
-#### 既定外の \(簡易\) コンストラクター \(基本シグネチャと一致しない場合\)  
- 同じパラメーター化を使用して基本コンストラクターを呼び出す代わりに、独自のクラスの既定のコンストラクターを再び呼び出します。  基本初期化子を呼び出さないでください。代わりに、`this()` を呼び出す必要があります。  次に、渡されたパラメーターを関連するプロパティを設定する値として使用し、元のコンストラクターの動作を複製します。  特定のパラメーターを設定するプロパティを決定する場合は、元の基本コンストラクターのドキュメントを参考に使用します。  
+#### <a name="non-default-convenience-constructors-which-do-match-base-signatures"></a>基底クラスのシグネチャと一致する、既定以外の (簡易) コンストラクター  
+ 同じパラメーター化を使用して基底コンストラクターを呼び出す代わりに、独自のクラスの既定のコンストラクターをもう一度呼び出します。 基底初期化子を呼び出さないでください。代わりに `this()` を呼び出す必要があります。 次に、渡されたパラメーターを関連プロパティを設定する値として使用し、元のコンストラクターの動作を複製します。 特定のパラメーターを設定するプロパティを決定する場合は、参考として元の基底コンストラクターのドキュメントを使用します。  
   
 ```  
 public MyClass : SomeBaseClass {  
@@ -115,13 +118,13 @@ public MyClass : SomeBaseClass {
 }  
 ```  
   
-#### すべてのシグネチャを一致させる必要性  
- 基本型が複数のシグネチャを持つ場合は、すべての可能なシグネチャを、さらにプロパティを設定する前に、クラスの既定のコンストラクターを呼び出す推奨パターンを使用する独自のコンストラクターの実装に意図的に一致させる必要があります。  
+#### <a name="must-match-all-signatures"></a>すべてのシグネチャを一致させることが必要  
+ 基本データ型に複数のシグネチャがある場合は、追加のプロパティを設定する前に、クラスの既定のコンストラクターを呼び出す推奨パターンを使用する独自のコンストラクター実装で、考えられるすべてのシグネチャを意図的に一致させる必要があります。  
   
-#### SetValue による依存関係プロパティの設定  
- プロパティの設定の利便性のためにラッパーを持たないプロパティを設定し、<xref:System.Windows.DependencyObject.SetValue%2A> を使用して値を設定する場合は、同じパターンが適用されます。  コンストラクター パラメーターを介して渡される <xref:System.Windows.DependencyObject.SetValue%2A> の呼び出しもまた、初期化のためのクラスの既定のコンストラクターを呼び出します。  
+#### <a name="setting-dependency-properties-with-setvalue"></a>SetValue による依存関係プロパティの設定  
+ これらと同じパターンの適用に無効なプロパティの設定の利便性のため、ラッパーを持つ値を設定するプロパティを設定する場合は<xref:System.Windows.DependencyObject.SetValue%2A>します。 呼び出す<xref:System.Windows.DependencyObject.SetValue%2A>コンス トラクターのパラメーターをパススルーすることで、初期化のためのクラスの既定のコンス トラクターを呼び出すことがも必要があります。  
   
-## 参照  
- [カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)   
- [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)   
+## <a name="see-also"></a>関連項目  
+ [カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
+ [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
  [依存関係プロパティのセキュリティ](../../../../docs/framework/wpf/advanced/dependency-property-security.md)

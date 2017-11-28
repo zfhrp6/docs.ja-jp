@@ -11,29 +11,28 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: a0bb52de-d279-419d-8f23-4b12d1a3f36e
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: a387e02c9d754db6af7fa2d2ba5f2ea6d96d4301
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8eb6864213aa4420f7a4373b9abbf173880f035f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="mitigation-path-colon-checks"></a>軽減策: パスのコロン チェック
 [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] を対象とするアプリ以降では、以前はサポートされていなかったパスをサポートするために (長さと形式の両方について) 数多くの変更が加えられました。 具体的には、適切なドライブの区切り構文 (コロン) のチェックがより正しく行われるようになりました。  
   
 ## <a name="impact"></a>影響  
- これらの変更は、以前は <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=fullName> メソッドと <xref:System.IO.Path.GetPathRoot%2A?displayProperty=fullName> メソッドでサポートされていた一部の URI のパスをブロックします。  
+ これらの変更は、以前は <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=nameWithType> メソッドと <xref:System.IO.Path.GetPathRoot%2A?displayProperty=nameWithType> メソッドでサポートされていた一部の URI のパスをブロックします。  
   
 ## <a name="mitigation"></a>軽減策  
- <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=fullName> メソッドや <xref:System.IO.Path.GetPathRoot%2A?displayProperty=fullName> メソッドでサポートされなくなった、以前は受け入れられていたパスの問題を回避するには、次のようにします。  
+ <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=nameWithType> メソッドや <xref:System.IO.Path.GetPathRoot%2A?displayProperty=nameWithType> メソッドでサポートされなくなった、以前は受け入れられていたパスの問題を回避するには、次のようにします。  
   
 -   URL からスキームを手動で削除します。 たとえば、URL から `file://` を削除します。  
   
--   <xref:System.Uri> コンストラクターに URI を渡し、<xref:System.Uri.LocalPath%2A?displayProperty=fullName> プロパティの値を取得します。  
+-   <xref:System.Uri> コンストラクターに URI を渡し、<xref:System.Uri.LocalPath%2A?displayProperty=nameWithType> プロパティの値を取得します。  
   
 -   `Switch.System.IO.UseLegacyPathHandling`<xref:System.AppContext> を `true` に切り替えて、新しいパスの正規化を無効にします。  
   
@@ -45,4 +44,3 @@ ms.lasthandoff: 07/28/2017
   
 ## <a name="see-also"></a>関連項目  
  [変更の再ターゲット](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-2.md)
-

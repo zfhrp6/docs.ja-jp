@@ -1,28 +1,32 @@
 ---
-title: "方法 : フォント ファミリとフォントを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "フォント ファミリ, 構築"
-  - "フォント, 構築"
+title: "方法 : フォント ファミリとフォントを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- font families [Windows Forms], constructing
+- fonts [Windows Forms], constructing
 ms.assetid: d3a4a223-9492-4b54-9afd-db1c31c3cefd
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 066cf358e43dabb3b952b32ecec34ca77c6e8c38
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : フォント ファミリとフォントを作成する
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] では、スタイルは異なってもタイプフェイスが同じフォントを、フォント ファミリにグループ化しています。  たとえば、Arial フォント ファミリには次のフォントが含まれます。  
+# <a name="how-to-construct-font-families-and-fonts"></a>方法 : フォント ファミリとフォントを作成する
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]スタイルは異なっても同じ書体を使用するフォントのフォント ファミリにグループ化します。 たとえば、Arial フォント ファミリには、次のフォントが含まれています。  
   
 -   Arial 標準  
   
@@ -32,29 +36,29 @@ caps.handback.revision: 15
   
 -   Arial 太字斜体  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] は、標準、太字、斜体、太字斜体の 4 つのスタイルがファミリに含まれます。  "*narrow*" や "*rounded*" などの形容詞は、スタイルではなく、ファミリ名の一部と見なされます。  たとえば、Arial Narrow は、次のようなメンバーで構成されるフォント ファミリです。  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]フォームのファミリに 4 つのスタイルを使用します。 標準、太字、斜体、および太字斜体です。 などの形容詞*を絞り込む*と*丸め*スタイル; とは見なされません、ファミリ名の一部であるではなくです。 たとえば、次のメンバーのフォント ファミリはゴシックのように。  
   
--   Arial Narrow 標準  
+-   Arial ナロー標準  
   
--   Arial Narrow 太字  
+-   太字 arial ナロー  
   
--   Arial Narrow 斜体  
+-   Arial ナロー斜体  
   
--   Arial Narrow 太字斜体  
+-   Arial ナロー太字斜体  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] でテキストを描画するには、事前に <xref:System.Drawing.FontFamily> オブジェクトと <xref:System.Drawing.Font> オブジェクトを作成しておく必要があります。  <xref:System.Drawing.FontFamily> オブジェクトが Arial などのタイプフェイスを指定し、<xref:System.Drawing.Font> オブジェクトがサイズ、スタイル、および単位を指定します。  
+ テキストを描画する前に[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]、構築する必要があります、<xref:System.Drawing.FontFamily>オブジェクトおよび<xref:System.Drawing.Font>オブジェクト。 <xref:System.Drawing.FontFamily>オブジェクト (たとえば、Arial) 書体を指定して、<xref:System.Drawing.Font>オブジェクトは、サイズ、スタイル、および単位を指定します。  
   
-## 使用例  
- 標準スタイルの Arial フォントを 16 ピクセルのサイズで作成する例を次に示します。  次のコードでは、<xref:System.Drawing.Font.%23ctor%2A> コンストラクターに渡される最初の引数は <xref:System.Drawing.FontFamily> オブジェクトです。  2 番目の引数は、フォントのサイズを 4 番目の引数で識別される単位で指定します。  3 番目の引数は、スタイルを識別します。  
+## <a name="example"></a>例  
+ 次の例では、標準のスタイル、サイズが 16 ピクセルの Arial フォントを構築します。 次のコードでは、最初の引数が渡される、<xref:System.Drawing.Font.%23ctor%2A>コンス トラクターは、<xref:System.Drawing.FontFamily>オブジェクト。 2 番目の引数は、4 番目の引数によって識別される単位でフォントのサイズを指定します。 3 番目の引数は、スタイルを識別します。  
   
- <xref:System.Drawing.GraphicsUnit> は <xref:System.Drawing.GraphicsUnit> 列挙体のメンバーで、<xref:System.Drawing.FontStyle> は <xref:System.Drawing.FontStyle> 列挙体のメンバーです。  
+ <xref:System.Drawing.GraphicsUnit.Pixel>メンバーである、<xref:System.Drawing.GraphicsUnit>列挙型、および<xref:System.Drawing.FontStyle.Regular>のメンバーである、<xref:System.Drawing.FontStyle>列挙します。  
   
  [!code-csharp[System.Drawing.FontsAndText#61](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.FontsAndText/CS/Class1.cs#61)]
  [!code-vb[System.Drawing.FontsAndText#61](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.FontsAndText/VB/Class1.vb#61)]  
   
-## コードのコンパイル  
- 前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.PaintEventHandler> のパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ 前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.PaintEventArgs> のパラメーターである `e`<xref:System.Windows.Forms.PaintEventHandler> を必要とします。  
   
-## 参照  
- [フォントとテキストの使用](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)   
+## <a name="see-also"></a>関連項目  
+ [フォントとテキストの使用](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)  
  [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)

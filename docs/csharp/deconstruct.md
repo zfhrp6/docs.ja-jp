@@ -10,12 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
+ms.openlocfilehash: 2bb94b3f1f4966ed44b2a5d4f14dfeee29707059
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 863940512f33568ee10569da4712e7e646bc3ba7
-ms.openlocfilehash: ad0ed6568da073683545727ef47f6a223942c8d6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/12/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="deconstructing-tuples-and-other-types"></a>タプルとその他の型の分解 #
 
@@ -99,11 +98,10 @@ var (name, address, city, zip) = contact.GetAddressInfo();
 
 クラス、構造体、またはインターフェイスを作成していない場合でも、目的の値を返す `Deconstruct` [拡張メソッド](programming-guide/classes-and-structs/extension-methods.md)を 1 つまたは複数実装することで、このようなオブジェクトを分解することができます。 
 
-<xref:System.Reflection.PropertyInfo?displayProperty=fullName> クラスの `Deconstruct` 拡張メソッドを 2 つ定義する例を次に示します。 1 つ目の拡張メソッドは、型、静的かインスタンスか、読み取り専用かどうか、インデックスが作成されているかどうかなど、プロパティの特徴を示す値のセットを返します。 2 つ目の拡張メソッドは、プロパティのアクセシビリティを示します。 get アクセサーと set アクセサーのアクセシビリティは異なる可能性があるため、ブール値は、プロパティの get アクセサーと set アクセサーが異なるかどうか、また異なる場合はアクセシビリティが同じかどうかを示します。 アクセサーが 1 つのみの場合、または get アクセサーと set アクセサーのアクセシビリティが同じ場合、`access` 変数は、全体としてそのアクセシビリティのプロパティを示します。 それ以外の場合、get アクセサーと set アクセサーのアクセシビリティは `getAccess` 変数と `setAccess` 変数で示されます。
+<xref:System.Reflection.PropertyInfo?displayProperty=nameWithType> クラスの `Deconstruct` 拡張メソッドを 2 つ定義する例を次に示します。 1 つ目の拡張メソッドは、型、静的かインスタンスか、読み取り専用かどうか、インデックスが作成されているかどうかなど、プロパティの特徴を示す値のセットを返します。 2 つ目の拡張メソッドは、プロパティのアクセシビリティを示します。 get アクセサーと set アクセサーのアクセシビリティは異なる可能性があるため、ブール値は、プロパティの get アクセサーと set アクセサーが異なるかどうか、また異なる場合はアクセシビリティが同じかどうかを示します。 アクセサーが 1 つのみの場合、または get アクセサーと set アクセサーのアクセシビリティが同じ場合、`access` 変数は、全体としてそのアクセシビリティのプロパティを示します。 それ以外の場合、get アクセサーと set アクセサーのアクセシビリティは `getAccess` 変数と `setAccess` 変数で示されます。
 
 [!code-csharp[Extension-deconstruct](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-extension1.cs)]
  
 ## <a name="see-also"></a>関連項目
 [破棄](discards.md)   
 [タプル](tuples.md)  
-

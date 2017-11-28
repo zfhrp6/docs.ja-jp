@@ -1,39 +1,19 @@
 ---
 title: "等価比較 (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- object equality [C#]
+helpviewer_keywords: object equality [C#]
 ms.assetid: 10b865ea-4e7b-4127-9242-c9b8f57d9f04
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 199257b1fe371dea3e4ee1eedcf11f3bdce02366
+ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 948bbc1b5b8535cc31ea362497fa69a816b43edc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="equality-comparisons-c-programming-guide"></a>等価比較 (C# プログラミング ガイド)
 2 つの値が等しいかどうかを比較することが必要な場合があります。 そのような場合、*値が等価であること* (*等価性*と呼ばれる) をテストすることになります。等価性とは 2 つの変数に含まれる値が等しいことを意味します。 また、2 つの変数がメモリ内の同一の基になるオブジェクトを参照しているかどうかを確認する必要がある場合もあります。 このタイプの等価は、*参照の等価性*または*同一性*と呼ばれます。 ここでは、2 種類の等価について説明します。また、詳細について他のトピックへのリンクを示します。  
@@ -41,7 +21,7 @@ ms.lasthandoff: 07/28/2017
 ## <a name="reference-equality"></a>参照の等価性  
  参照の等価とは、2 つのオブジェクト参照が同一の基になるオブジェクトを参照していることを意味します。 次の例に示すように、これは簡単な代入によって生じます。  
   
- [!code-cs[csProgGuideStatements#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/equality-comparisons_1.cs)]  
+ [!code-csharp[csProgGuideStatements#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/equality-comparisons_1.cs)]  
   
  このコードでは、2 つのオブジェクトが作成されますが、代入ステートメント以降は、両方の参照が同一のオブジェクトを参照しています。 したがって、参照の等価性があります。 2 つの参照が同じオブジェクトを参照しているかどうかを判断するには、<xref:System.Object.ReferenceEquals%2A> メソッドを使用します。  
   
@@ -66,7 +46,7 @@ if( b == a)
  ただし、等価性を 1 つの型のすべてのフィールドに基づいて判断する必要はありません。 サブセットに基づいて判断できます。 所有していない型を比較する場合は、その型の等価性がどのように定義されるのかを明確に理解している必要があります。 独自のクラスおよび構造体で値が等しいかどうかを定義する方法の詳細については、「[方法: 型の値の等価性を定義する](../../../csharp/programming-guide/statements-expressions-operators/how-to-define-value-equality-for-a-type.md)」を参照してください。  
   
 ### <a name="value-equality-for-floating-point-values"></a>浮動小数点値での値の等価性  
- バイナリのコンピューター上での浮動小数点演算には誤差があるため、浮動小数点値 ([double](../../../csharp/language-reference/keywords/double.md) および [float](../../../csharp/language-reference/keywords/float.md)) の等価比較には問題があります。 詳細については、<xref:System.Double?displayProperty=fullName> のトピックの「解説」を参照してください。  
+ バイナリのコンピューター上での浮動小数点演算には誤差があるため、浮動小数点値 ([double](../../../csharp/language-reference/keywords/double.md) および [float](../../../csharp/language-reference/keywords/float.md)) の等価比較には問題があります。 詳細については、<xref:System.Double?displayProperty=nameWithType> のトピックの「解説」を参照してください。  
   
 ## <a name="related-topics"></a>関連トピック  
   
@@ -79,4 +59,3 @@ if( b == a)
   
 ## <a name="see-also"></a>関連項目  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)
-

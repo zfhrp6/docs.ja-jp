@@ -17,16 +17,15 @@ helpviewer_keywords:
 - numerics
 - BigInteger
 ms.assetid: dfebc18e-acde-4510-9fa7-9a0f4aa3bd11
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 6090f198815f1149e212c7a57b40187ded9264f4
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 087c1cc56abf2a00544e22023ce72fae670df369
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="numerics-in-the-net-framework"></a>.NET Framework における数値
 .NET Framework は、標準の数値整数と浮動小数点型のプリミティブをサポートしています。さらに、理論上の上限や下限のない整数型の <xref:System.Numerics.BigInteger>、複素数を表す型の <xref:System.Numerics.Complex>、<xref:System.Numerics> 名前空間の SIMD が有効なベクター型のセットもサポートしています。  
@@ -38,14 +37,14 @@ ms.lasthandoff: 08/21/2017
   
 |型|符号付き/符号なし|サイズ (バイト)|最小値|最大値|  
 |----------|----------------------|--------------------|-------------------|-------------------|  
-|<xref:System.Byte?displayProperty=fullName>|符号なし|1|0|255|  
-|<xref:System.Int16?displayProperty=fullName>|符号付き|2|-32,768|32,767|  
-|<xref:System.Int32?displayProperty=fullName>|符号付き|4|-2,147,483,648|2,147,483,647|  
-|<xref:System.Int64?displayProperty=fullName>|符号付き|8|-9,223,372,036,854,775,808|9,223,372,036,854,775,807|  
-|<xref:System.SByte?displayProperty=fullName>|符号付き|1|-128|127|  
-|<xref:System.UInt16?displayProperty=fullName>|符号なし|2|0|65,535|  
-|<xref:System.UInt32?displayProperty=fullName>|符号なし|4|0|4,294,967,295|  
-|<xref:System.UInt64?displayProperty=fullName>|符号なし|8|0|18,446,744,073,709,551,615|  
+|<xref:System.Byte?displayProperty=nameWithType>|符号なし|1|0|255|  
+|<xref:System.Int16?displayProperty=nameWithType>|符号付き|2|-32,768|32,767|  
+|<xref:System.Int32?displayProperty=nameWithType>|符号付き|4|-2,147,483,648|2,147,483,647|  
+|<xref:System.Int64?displayProperty=nameWithType>|符号付き|9|-9,223,372,036,854,775,808|9,223,372,036,854,775,807|  
+|<xref:System.SByte?displayProperty=nameWithType>|符号付き|1|-128|127|  
+|<xref:System.UInt16?displayProperty=nameWithType>|符号なし|2|0|65,535|  
+|<xref:System.UInt32?displayProperty=nameWithType>|符号なし|4|0|4,294,967,295|  
+|<xref:System.UInt64?displayProperty=nameWithType>|符号なし|9|0|18,446,744,073,709,551,615|  
   
  各整数型は、算術、比較、等価、明示的な変換、および暗黙的な変換の演算子の標準セットをサポートします。 各整数には、等価比較と相対比較、数値の文字列形式から整数への変換、および整数から文字列形式への変換を実行するメソッドも含まれています。 丸め処理や 2 つの整数のより小さいか大きい値の識別など、標準の演算子によって処理される上記以外の数値演算は、<xref:System.Math> クラスから使用可能です。 <xref:System.BitConverter> クラスを使用して、整数値の個々 のビットを操作することもできます。  
   
@@ -56,16 +55,16 @@ ms.lasthandoff: 08/21/2017
   
 |型|サイズ (バイト単位)|最小要件|最大|  
 |----------|-----------------------|-------------|-------------|  
-|<xref:System.Double?displayProperty=fullName>|8|-1.79769313486232e308|1.79769313486232e308|  
-|<xref:System.Single?displayProperty=fullName>|4|-3.402823e38|3.402823e38|  
-|<xref:System.Decimal?displayProperty=fullName>|16|-79,228,162,514,264,337,593,543,950,335|79,228,162,514,264,337,593,543,950,335|  
+|<xref:System.Double?displayProperty=nameWithType>|9|-1.79769313486232e308|1.79769313486232e308|  
+|<xref:System.Single?displayProperty=nameWithType>|4|-3.402823e38|3.402823e38|  
+|<xref:System.Decimal?displayProperty=nameWithType>|16|-79,228,162,514,264,337,593,543,950,335|79,228,162,514,264,337,593,543,950,335|  
   
- 各浮動小数点型は、算術、比較、等価、明示的な変換、および暗黙的な変換の演算子の標準セットをサポートします。 それぞれには、等価比較と相対比較、数値の文字列形式から浮動小数点数への変換、および浮動小数点数から文字列形式への変換を実行するメソッドも含まれています。 いくつかの追加の数学、代数、および三角関数の演算も、<xref:System.Math> クラスから使用可能です。 <xref:System.BitConverter> クラスを使用して、<xref:System.Double> および <xref:System.Single> の値の個々のビットを操作することもできます。 <xref:System.Decimal?displayProperty=fullName> 構造体には、10 進値の個々のビットを操作するための独自のメソッド (<xref:System.Decimal.GetBits%2A?displayProperty=fullName> と <xref:System.Decimal.%23ctor%28System.Int32%5B%5D%29?displayProperty=fullName>)、および追加の数学演算を実行するための独自のメソッド セットがあります。  
+ 各浮動小数点型は、算術、比較、等価、明示的な変換、および暗黙的な変換の演算子の標準セットをサポートします。 それぞれには、等価比較と相対比較、数値の文字列形式から浮動小数点数への変換、および浮動小数点数から文字列形式への変換を実行するメソッドも含まれています。 いくつかの追加の数学、代数、および三角関数の演算も、<xref:System.Math> クラスから使用可能です。 <xref:System.BitConverter> クラスを使用して、<xref:System.Double> および <xref:System.Single> の値の個々のビットを操作することもできます。 <xref:System.Decimal?displayProperty=nameWithType> 構造体には、10 進値の個々のビットを操作するための独自のメソッド (<xref:System.Decimal.GetBits%2A?displayProperty=nameWithType> と <xref:System.Decimal.%23ctor%28System.Int32%5B%5D%29?displayProperty=nameWithType>)、および追加の数学演算を実行するための独自のメソッド セットがあります。  
   
- <xref:System.Double> と <xref:System.Single> の型は、本来正確ではない値 (太陽系の 2 つの星の間の距離など)、および高い精度や小さな丸め誤差の検出が必要ではないアプリケーションでの使用が想定されています。 より高い精度が要求され、丸め誤差が許容されないケースでは、<xref:System.Decimal?displayProperty=fullName> の型を使用する必要があります。  
+ <xref:System.Double> と <xref:System.Single> の型は、本来正確ではない値 (太陽系の 2 つの星の間の距離など)、および高い精度や小さな丸め誤差の検出が必要ではないアプリケーションでの使用が想定されています。 より高い精度が要求され、丸め誤差が許容されないケースでは、<xref:System.Decimal?displayProperty=nameWithType> の型を使用する必要があります。  
   
 ## <a name="biginteger"></a>BigInteger  
- <xref:System.Numerics.BigInteger?displayProperty=fullName> は、理論的には値に上限や下限がない、サイズの大きい任意の整数を表す不変の型です。 <xref:System.Numerics.BigInteger> 型のメソッドは、他の整数型のメソッドとかなり類似しています。  
+ <xref:System.Numerics.BigInteger?displayProperty=nameWithType> は、理論的には値に上限や下限がない、サイズの大きい任意の整数を表す不変の型です。 <xref:System.Numerics.BigInteger> 型のメソッドは、他の整数型のメソッドとかなり類似しています。  
   
 ## <a name="complex"></a>複合  
  <xref:System.Numerics.Complex> 型は、複素数つまり実数部と虚数部のある数を表します。 これは、算術、比較、等価、明示的な変換、および暗黙的な変換の演算子の標準セットをサポートします。さらに数学、代数、および三角関数のメソッドもサポートします。  
@@ -87,4 +86,3 @@ ms.lasthandoff: 08/21/2017
   
 ## <a name="see-also"></a>関連項目  
  [アプリケーションの基本事項](../../docs/standard/application-essentials.md)
-

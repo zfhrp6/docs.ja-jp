@@ -1,89 +1,91 @@
 ---
-title: "TreeView のスタイルとテンプレート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ControlTemplate [WPF], TreeView"
-  - "パーツ [WPF], TreeView"
-  - "状態 [WPF], TreeView"
-  - "スタイル [WPF], TreeView"
-  - "テンプレート [WPF], TreeView"
-  - "TreeView [WPF], スタイルおよびテンプレート"
+title: "TreeView のスタイルとテンプレート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- ControlTemplate [WPF], TreeView
+- templates [WPF], TreeView
+- parts [WPF], TreeView
+- states [WPF], TreeView
+- styles [WPF], TreeView
+- TreeView [WPF], styles and templates
 ms.assetid: a49adb77-0202-4caa-b94a-8bb110d7fa9a
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 78e5faf7aab684f2a8760204079a26a61b9c3fda
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# TreeView のスタイルとテンプレート
-このトピックでは、<xref:System.Windows.Controls.TreeView> コントロールのスタイルおよびテンプレートについて説明します。  既定の <xref:System.Windows.Controls.ControlTemplate> に変更を加えることで、コントロールに独自の外観を設定できます。  詳細については、「[ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
+# <a name="treeview-styles-and-templates"></a>TreeView のスタイルとテンプレート
+このトピックは、のスタイルとテンプレートについて説明します、<xref:System.Windows.Controls.TreeView>コントロール。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 詳細については、「[Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
   
-## TreeView のパーツ  
- <xref:System.Windows.Controls.TreeView> コントロールには、名前付きのパーツは存在しません。  
+## <a name="treeview-parts"></a>TreeView のパーツ  
+ <xref:System.Windows.Controls.TreeView>コントロールには、その名前付きの部分はありません。  
   
- <xref:System.Windows.Controls.TreeView> の <xref:System.Windows.Controls.ControlTemplate> を作成するときに、テンプレートの <xref:System.Windows.Controls.ScrollViewer> 内に <xref:System.Windows.Controls.ItemsPresenter> が含まれる場合があります。  <xref:System.Windows.Controls.ItemsPresenter> により、<xref:System.Windows.Controls.TreeView> の各項目が表示されます。また、<xref:System.Windows.Controls.ScrollViewer> により、コントロール内でスクロールできるようになります。  <xref:System.Windows.Controls.ItemsPresenter> が <xref:System.Windows.Controls.ScrollViewer> の直接の子でない場合は、<xref:System.Windows.Controls.ItemsPresenter> に `ItemsPresenter` という名前を付ける必要があります。  
+ 作成するときに、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.TreeView>、テンプレートを含めることがあります、<xref:System.Windows.Controls.ItemsPresenter>内で、<xref:System.Windows.Controls.ScrollViewer>です。 (、<xref:System.Windows.Controls.ItemsPresenter>内の各項目を表示、 <xref:System.Windows.Controls.TreeView>;<xref:System.Windows.Controls.ScrollViewer>コントロール内でスクロールできるように) します。  場合、<xref:System.Windows.Controls.ItemsPresenter>の直接の子ではない、<xref:System.Windows.Controls.ScrollViewer>を付ける必要があります、<xref:System.Windows.Controls.ItemsPresenter>名、`ItemsPresenter`です。  
   
-## TreeView の状態  
- 次の表は、<xref:System.Windows.Controls.TreeView> コントロールの表示状態の一覧です。  
+## <a name="treeview-states"></a>TreeView の状態  
+ 次の表に、用ビジュアル状態、<xref:System.Windows.Controls.TreeView>コントロール。  
   
-||||  
+|VisualState 名|VisualStateGroup 名|説明|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|Valid|ValidationStates|このコントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `false` です。|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがありません。|  
+|有効|ValidationStates|コントロールを使用して、<xref:System.Windows.Controls.Validation>クラスおよび<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`false`します。|  
+|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスします。|  
+|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスがないです。|  
   
-## TreeViewItem のパーツ  
- 次の表は、<xref:System.Windows.Controls.TreeViewItem> コントロールの名前付きパーツの一覧です。  
+## <a name="treeviewitem-parts"></a>TreeViewItem のパーツ  
+ 次の表に、名前付きのパーツの<xref:System.Windows.Controls.TreeViewItem>コントロール。  
   
-|指定項目|種類|Description|  
-|----------|--------|-----------------|  
-|PART\_Header|<xref:System.Windows.FrameworkElement>|<xref:System.Windows.Controls.TreeView> コントロールのヘッダーの内容を格納しているビジュアル要素です。|  
+|パーツ|型|説明|  
+|----------|----------|-----------------|  
+|PART_Header|<xref:System.Windows.FrameworkElement>|視覚的要素をそのヘッダーのコンテンツを含む、<xref:System.Windows.Controls.TreeView>コントロール。|  
   
-## TreeViewItem の状態  
- 次の表は、<xref:System.Windows.Controls.TreeViewItem> コントロールの表示状態の一覧です。  
+## <a name="treeviewitem-states"></a>TreeViewItem の状態  
+ 次の表に、用ビジュアル状態<xref:System.Windows.Controls.TreeViewItem>コントロール。  
   
-|VisualState 名|VisualStateGroup 名|Description|  
-|-------------------|------------------------|-----------------|  
-|Normal|CommonStates|既定の状態です。|  
-|MouseOver|CommonStates|マウス ポインターは、<xref:System.Windows.Controls.TreeViewItem> の上に置かれています。|  
-|Disabled|CommonStates|<xref:System.Windows.Controls.TreeViewItem> が無効になっています。|  
-|Focused|FocusStates|<xref:System.Windows.Controls.TreeViewItem> にフォーカスがあります。|  
-|Unfocused|FocusStates|<xref:System.Windows.Controls.TreeViewItem> にフォーカスがありません。|  
-|Expanded|ExpansionStates|<xref:System.Windows.Controls.TreeViewItem> コントロールが展開されています。|  
-|Collapsed|ExpansionStates|<xref:System.Windows.Controls.TreeViewItem> コントロールが折りたたまれています。|  
-|HasItems|HasItemsStates|<xref:System.Windows.Controls.TreeViewItem> に項目が含まれています。|  
-|NoItems|HasItemsStates|<xref:System.Windows.Controls.TreeViewItem> に項目が含まれていません。|  
-|Selected|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> が選択されています。|  
-|SelectedInactive|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> が選択されていますが、アクティブではありません。|  
-|Unselected|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> が選択されていません。|  
-|Valid|ValidationStates|このコントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `false` です。|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがありません。|  
+|VisualState 名|VisualStateGroup 名|説明|  
+|----------------------|---------------------------|-----------------|  
+|標準|CommonStates|既定の状態です。|  
+|MouseOver|CommonStates|マウス ポインターを置いた、<xref:System.Windows.Controls.TreeViewItem>です。|  
+|無効|CommonStates|<xref:System.Windows.Controls.TreeViewItem>は無効になります。|  
+|フォーカスされている|FocusStates|<xref:System.Windows.Controls.TreeViewItem>にフォーカスがあります。|  
+|フォーカスされていない|FocusStates|<xref:System.Windows.Controls.TreeViewItem>がフォーカスされていません。|  
+|展開済み|ExpansionStates|<xref:System.Windows.Controls.TreeViewItem>コントロールが展開されています。|  
+|Collapsed|ExpansionStates|<xref:System.Windows.Controls.TreeViewItem>コントロールが折りたたまれています。|  
+|HasItems|HasItemsStates|<xref:System.Windows.Controls.TreeViewItem>項目があります。|  
+|項目|HasItemsStates|<xref:System.Windows.Controls.TreeViewItem>に項目がないです。|  
+|選択済み|SelectionStates|<xref:System.Windows.Controls.TreeViewItem>が選択されています。|  
+|SelectedInactive|SelectionStates|<xref:System.Windows.Controls.TreeViewItem>が選択したアクティブではありません。|  
+|未選択|SelectionStates|<xref:System.Windows.Controls.TreeViewItem>が選択されていません。|  
+|有効|ValidationStates|コントロールを使用して、<xref:System.Windows.Controls.Validation>クラスおよび<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`false`します。|  
+|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスします。|  
+|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスがないです。|  
   
-## TreeView ControlTemplate の例  
- <xref:System.Windows.Controls.TreeView> コントロールの <xref:System.Windows.Controls.ControlTemplate> およびその関連付けられた型を定義する方法を次の例に示します。  
+## <a name="treeview-controltemplate-example"></a>TreeView ControlTemplate の例  
+ 次の例は、定義する方法を示します、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.TreeView>コントロールとその関連する型。  
   
- [!code-xml[ControlTemplateExamples#TreeView](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/treeview.xaml#treeview)]  
+ [!code-xaml[ControlTemplateExamples#TreeView](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/treeview.xaml#treeview)]  
   
- 前の例では、次の 1 つ以上のリソースを使用しています。  
+ 前の例では、次のリソースの 1 つ以上を使用します。  
   
- [!code-xml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
+ [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- サンプル全体については、「[ControlTemplate を使用したスタイル設定のサンプル](http://go.microsoft.com/fwlink/?LinkID=160041)」を参照してください。.  
+ 完全なサンプルについては、[Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041)を参照してください。  
   
-## 参照  
- <xref:System.Windows.FrameworkElement.Style%2A>   
- <xref:System.Windows.Controls.ControlTemplate>   
- [コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)   
- [コントロールのカスタマイズ](../../../../docs/framework/wpf/controls/control-customization.md)   
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.FrameworkElement.Style%2A>  
+ <xref:System.Windows.Controls.ControlTemplate>  
+ [コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [コントロールのカスタマイズ](../../../../docs/framework/wpf/controls/control-customization.md)  
+ [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
  [ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

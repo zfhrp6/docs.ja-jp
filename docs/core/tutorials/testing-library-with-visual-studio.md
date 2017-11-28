@@ -10,14 +10,15 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 069ad711-3eaa-45c6-94d7-b40249cc8b99
+dev_langs:
+- csharp
+- vb
+ms.openlocfilehash: 7c884985873679b25831c15ef5c8b6370ecd6460
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
 ms.translationtype: HT
-ms.sourcegitcommit: 3a25c1c3b540bac8ef963a8bbf708b0700c3e9e2
-ms.openlocfilehash: 30e46ae97563add2bdf34948349cf2d6214d0de8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/19/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/21/2017
 ---
-
 # <a name="testing-a-class-library-with-net-core-in-visual-studio-2017"></a>Visual Studio 2017 の .NET Core を使用したクラス ライブラリのテスト
 
 「[Visual Studio 2017 での C# と .NET Core を使用したクラス ライブラリの構築](library-with-visual-studio.md)」または「[Visual Studio 2017 で Visual Basic と .NET Core を使用したクラス ライブラリの構築](vb-library-with-visual-studio.md)」では、<xref:System.String> クラスに拡張メソッドを追加する簡単なクラス ライブラリを作成しました。 ここでは、それが期待どおり動作するかを確認する単体テストを作成しましょう。 この単体テスト プロジェクトは、前のトピックで作成したソリューションに追加します。
@@ -27,9 +28,9 @@ ms.lasthandoff: 09/19/2017
 単体テスト プロジェクトを作成するには、次の操作を行います。
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
-1. **ソリューション エクスプローラー**で [**ClassLibraryProjects**] ソリューション ノードのコンテキスト メニューを開き、[**追加**] > [**新しいプロジェクト**] の順に選択します。
+1. **ソリューション エクスプローラー**で **[ClassLibraryProjects]** ソリューション ノードのコンテキスト メニューを開き、**[追加]** > **[新しいプロジェクト]** の順に選択します。
 
-1. [**新しいプロジェクトの追加**] ダイアログで、[**Visual C#**] ノードを選択します。 次に、[**.NET Core**] ノードを選び、[**単体テスト プロジェクト (.NET Core)**] プロジェクト テンプレートを選びます。 [**名前**] テキスト ボックスに、プロジェクト名として "StringLibraryTest" と入力します。 [**OK**] を選択し、単体テスト プロジェクトを作成します。
+1. **[新しいプロジェクトの追加]** ダイアログで、**[Visual C#]** ノードを選択します。 次に、**[.NET Core]** ノードを選び、**[単体テスト プロジェクト (.NET Core)]** プロジェクト テンプレートを選びます。 **[名前]** テキスト ボックスに、プロジェクト名として "StringLibraryTest" と入力します。 **[OK]** を選択し、単体テスト プロジェクトを作成します。
 
    ![[新しいプロジェクトの追加] ダイアログ](./media/testing-library-with-visual-studio/testproject.png)
 
@@ -48,17 +49,17 @@ ms.lasthandoff: 09/19/2017
 
    * [\[TestMethod\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testmethodattribute.aspx) 属性が適用され、単体テスト実行時に自動実行されるテスト メソッドとして `TestMethod1` が定義されます。
 
-1. **ソリューション エクスプローラー**で [**StringLibraryTest**] プロジェクトの [**依存関係**] ノードを右クリックし、コンテキスト メニューの [**参照の追加**] を選択します。
+1. **ソリューション エクスプローラー**で **[StringLibraryTest]** プロジェクトの **[依存関係]** ノードを右クリックし、コンテキスト メニューの **[参照の追加]** を選択します。
 
    ![StringLibraryTest の依存関係のコンテキスト メニュー](./media/testing-library-with-visual-studio/addreference.png)
 
-1. [**参照マネージャー**] ダイアログで、[**プロジェクト**] ノードを展開し、[**StringLibrary**] の横のボックスをオンにします。 `StringLibrary` アセンブリへの参照を追加すると、コンパイラで **StringLibrary** メソッドを見つけることができるようになります。 [**OK**] ボタンを選択します。 これによってクラス ライブラリ プロジェクト `StringLibrary` への参照が追加されます。
+1. **[参照マネージャー]** ダイアログで、**[プロジェクト]** ノードを展開し、**[StringLibrary]** の横のボックスをオンにします。 `StringLibrary` アセンブリへの参照を追加すると、コンパイラで **StringLibrary** メソッドを見つけることができるようになります。 **[OK]** ボタンを選択します。 これによってクラス ライブラリ プロジェクト `StringLibrary` への参照が追加されます。
 
    ![参照マネージャー](./media/testing-library-with-visual-studio/referencemanager.png)
 # <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic) 
-1. **ソリューション エクスプローラー**で [**ClassLibraryProjects**] ソリューション ノードのコンテキスト メニューを開き、[**追加**] > [**新しいプロジェクト**] の順に選択します。
+1. **ソリューション エクスプローラー**で **[ClassLibraryProjects]** ソリューション ノードのコンテキスト メニューを開き、**[追加]** > **[新しいプロジェクト]** の順に選択します。
 
-1. [**新しいプロジェクトの追加**] ダイアログで、[**Visual Basic**] ノードを選択します。 次に、[**.NET Core**] ノードを選び、[**単体テスト プロジェクト (.NET Core)**] プロジェクト テンプレートを選びます。 [**名前**] テキスト ボックスに、プロジェクト名として "StringLibraryTest" と入力します。 [**OK**] を選択し、単体テスト プロジェクトを作成します。
+1. **[新しいプロジェクトの追加]** ダイアログで、**[Visual Basic]** ノードを選択します。 次に、**[.NET Core]** ノードを選び、**[単体テスト プロジェクト (.NET Core)]** プロジェクト テンプレートを選びます。 **[名前]** テキスト ボックスに、プロジェクト名として "StringLibraryTest" と入力します。 **[OK]** を選択し、単体テスト プロジェクトを作成します。
 
    ![[新しいプロジェクトの追加] ダイアログ](./media/testing-library-with-visual-studio/vb-testproject.png)
 
@@ -77,11 +78,11 @@ ms.lasthandoff: 09/19/2017
 
    * [\[TestMethod\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testmethodattribute.aspx) 属性が適用され、単体テスト実行時に自動実行されるテスト メソッドとして `TestMethod1` が定義されます。
 
-1. **ソリューション エクスプローラー**で [**StringLibraryTest**] プロジェクトの [**依存関係**] ノードを右クリックし、コンテキスト メニューの [**参照の追加**] を選択します。
+1. **ソリューション エクスプローラー**で **[StringLibraryTest]** プロジェクトの **[依存関係]** ノードを右クリックし、コンテキスト メニューの **[参照の追加]** を選択します。
 
    ![StringLibraryTest の依存関係のコンテキスト メニュー](./media/testing-library-with-visual-studio/addreference.png)
 
-1. [**参照マネージャー**] ダイアログで、[**プロジェクト**] ノードを展開し、[**StringLibrary**] の横のボックスをオンにします。 `StringLibrary` アセンブリへの参照を追加すると、コンパイラで **StringLibrary** メソッドを見つけることができるようになります。 [**OK**] ボタンを選択します。 これによってクラス ライブラリ プロジェクト `StringLibrary` への参照が追加されます。
+1. **[参照マネージャー]** ダイアログで、**[プロジェクト]** ノードを展開し、**[StringLibrary]** の横のボックスをオンにします。 `StringLibrary` アセンブリへの参照を追加すると、コンパイラで **StringLibrary** メソッドを見つけることができるようになります。 **[OK]** ボタンを選択します。 これによってクラス ライブラリ プロジェクト `StringLibrary` への参照が追加されます。
 
    ![参照マネージャー](./media/testing-library-with-visual-studio/referencemanager.png)
 ---
@@ -103,7 +104,7 @@ Assert メソッド | 関数
 
 `StringLibrary.StartsWithUpper` メソッドのテストでは、大文字で始まる文字列を多く用意します。 これらの場合ではメソッドが `true` を返すと予測されるので、[Assert.IsTrue(Boolean, String)](https://msdn.microsoft.com/library/ms243754.aspx) メソッドを呼び出します。 同様に、大文字以外で始まる文字列を多く用意します。 これらの場合、メソッドは `false` を返すと予測されるので、[Assert.IsFalse(Boolean, String)](https://msdn.microsoft.com/library/ms243805.aspx) メソッドを呼び出します。
 
-ライブラリ メソッドは文字列を処理するので、[空の文字列 (`String.Empty`) ](xref:System.String.Empty) (文字がなく @System.String.Length が 0 である、有効な文字列)、および `null` 文字列 (初期化されていない文字列) を正しく処理するか確認します。 @System.String インスタンスで `StartsWithUpper` が例外メソッドとして呼び出される場合、それに `null` 文字列を渡すことはできません。 しかし、それを静的メソッドとして直接呼び出して、単一の @System.String 引数を渡すこともできます。
+ライブラリ メソッドは文字列を処理するので、[空の文字列 (`String.Empty`) ](xref:System.String.Empty) (文字がなく <xref:System.String.Length> が 0 である、有効な文字列)、および `null` 文字列 (初期化されていない文字列) を正しく処理するか確認します。 <xref:System.String> インスタンスで `StartsWithUpper` が例外メソッドとして呼び出される場合、それに `null` 文字列を渡すことはできません。 しかし、それを静的メソッドとして直接呼び出して、単一の <xref:System.String> 引数を渡すこともできます。
 
 メソッドを 3 つ定義します。これらのメソッドでは、文字列配列の各要素について[アサート](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.assert.aspx) メソッドが繰り返し呼び出されます。 テスト メソッドは最初のエラーが発生するとすぐに失敗するので、メソッドのオーバー ロードを呼び出して、メソッドの呼び出しで使用される文字列値を示す文字列を渡すようにします。
 
@@ -116,7 +117,7 @@ Assert メソッド | 関数
 
    `TestStartsWithUpper` メソッドでの大文字のテストには、ギリシャ語の大文字のアルファ (U+0391) とキリル文字の大文字 EM (U+041C) が含まれており、`TestDoesNotStartWithUpper` メソッドでの小文字のテストにはギリシャ語の小文字のアルファ (U+03B1) とキリル文字の小文字 Ghe (U+0433) が含まれています。
 
-1. メニュー バーで、[**ファイル**] > [**名前を付けて UnitTest1.cs を保存**] の順に選択します。 [**名前を付けてファイルを保存**] ダイアログで、[**保存**] ボタンの横にある矢印を選択して、[**エンコード付きで保存**] を選択します。
+1. メニュー バーで、**[ファイル]** > **[名前を付けて UnitTest1.cs を保存]** の順に選択します。 **[名前を付けてファイルを保存]** ダイアログで、**[保存]** ボタンの横にある矢印を選択して、**[エンコード付きで保存]** を選択します。
 
    ![[名前を付けて保存] ダイアログ](./media/testing-library-with-visual-studio/savefileas.png)
 # <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic) 
@@ -126,20 +127,20 @@ Assert メソッド | 関数
 
    `TestStartsWithUpper` メソッドでの大文字のテストには、ギリシャ語の大文字のアルファ (U+0391) とキリル文字の大文字 EM (U+041C) が含まれており、`TestDoesNotStartWithUpper` メソッドでの小文字のテストにはギリシャ語の小文字のアルファ (U+03B1) とキリル文字の小文字 Ghe (U+0433) が含まれています。
 
-1. メニュー バーで、[**ファイル**] > [**名前を付けて UnitTest1.vb を保存**] の順に選択します。 [**名前を付けてファイルを保存**] ダイアログで、[**保存**] ボタンの横にある矢印を選択して、[**エンコード付きで保存**] を選択します。
+1. メニュー バーで、**[ファイル]** > **[名前を付けて UnitTest1.vb を保存]** の順に選択します。 **[名前を付けてファイルを保存]** ダイアログで、**[保存]** ボタンの横にある矢印を選択して、**[エンコード付きで保存]** を選択します。
 
    ![[名前を付けて保存] ダイアログ](./media/testing-library-with-visual-studio/savefileas.png)
 ---
 
-1. [**保存の確認**] ダイアログで [**はい**] ボタンを選択してファイルを保存します。
+1. **[保存の確認]** ダイアログで **[はい]** ボタンを選択してファイルを保存します。
 
-1. [**保存オプションの詳細設定**] ダイアログの [**エンコード**] ドロップダウン リストから [**Unicode (UTF-8 シグネチャ付き) - コードページ 65001**] を選択し、[**OK**] の順に選択します。
+1. **[保存オプションの詳細設定]** ダイアログの **[エンコード]** ドロップダウン リストから **[Unicode (UTF-8 シグネチャ付き) - コードページ 65001]** を選択し、**[OK]** の順に選択します。
 
    ![[保存オプションの詳細設定] ダイアログ](./media/testing-library-with-visual-studio/advancedsaveoptions.png)
 
    UTF8 でエンコードされたファイルにソース コードを保存できなかった場合、ASCII ファイルとして保存される場合があります。 その場合は、ランタイムで ASCII 範囲外の UTF8 文字が正確にデコードされず、テスト結果が正確でなくなります。
 
-1. メニュー バーで [**テスト**] > [**実行**] > [**すべてのテスト**] を選択します。 [**テスト エクスプローラー**] ウィンドウが開き、テストが正常に実行されたことを示します。 3 つのテストが [**成功したテスト**] セクションに表示され、[**概要**] セクションにはテストの実行結果が表示されています。
+1. メニュー バーで **[テスト]** > **[実行]** > **[すべてのテスト]** を選択します。 **[テスト エクスプローラー]** ウィンドウが開き、テストが正常に実行されたことを示します。 3 つのテストが **[成功したテスト]** セクションに表示され、**[概要]** セクションにはテストの実行結果が表示されています。
 
    ![[テスト エクスプローラー] ウィンドウ](./media/testing-library-with-visual-studio/firsttest.png)
 
@@ -158,11 +159,11 @@ Assert メソッド | 関数
                       "1234", ".", ";", " " }
 
    ```
-1. [**テスト**] > [**実行**] > [**すべてのテスト**] をメニュー バーから選択してテストを実行します。 [**テスト エクスプローラー**] ウィンドウに、テストが 2 つ成功し、1 つ失敗したことが示されます。
+1. **[テスト]** > **[実行]** > **[すべてのテスト]** をメニュー バーから選択してテストを実行します。 **[テスト エクスプローラー]** ウィンドウに、テストが 2 つ成功し、1 つ失敗したことが示されます。
 
    ![[テスト エクスプローラー] ウィンドウ](./media/testing-library-with-visual-studio/failedtest.png)
 
-1. [**失敗したテスト**] セクションで、失敗したテスト `TestDoesNotStartWith` を選択します。 [**テスト エクスプローラー**] ウィンドウに、アサートによって生成されたメッセージ "Assert.IsFalse failed. Expected for 'Error': false; actual: True" が表示されます。 エラーのため、配列内の "Error" の後ろのすべての文字列はテストされませんでした。
+1. **[失敗したテスト]** セクションで、失敗したテスト `TestDoesNotStartWith` を選択します。 **[テスト エクスプローラー]** ウィンドウに、アサートによって生成されたメッセージ "Assert.IsFalse failed. Expected for 'Error': false; actual: True" が表示されます。 エラーのため、配列内の "Error" の後ろのすべての文字列はテストされませんでした。
 
    ![Is False アサーションの失敗を示す [テスト エクスプローラー] ウィンドウ](./media/testing-library-with-visual-studio/failedtestdetail.png)
 
@@ -178,11 +179,10 @@ Assert メソッド | 関数
 
    ![Visual Studio ツール バー](./media/testing-library-with-visual-studio/toolbar.png)
 
-1. **ソリューション エクスプローラー**で [**StringLibrary**] プロジェクトを右クリックし、コンテキスト メニューの [**ビルド**] を選択し、ライブラリを再コンパイルします。
+1. **ソリューション エクスプローラー**で **[StringLibrary]** プロジェクトを右クリックし、コンテキスト メニューの **[ビルド]** を選択し、ライブラリを再コンパイルします。
 
    ![StringLibrary のコンテキスト メニュー](./media/testing-library-with-visual-studio/buildlibrary.png)
 
-1. [**テスト**] > [**実行**] > [**すべてのテスト**] をメニュー バーから選択して単体テストを実行します。 テストが成功します。
+1. **[テスト]** > **[実行]** > **[すべてのテスト]** をメニュー バーから選択して単体テストを実行します。 テストが成功します。
 
 これでライブラリのテストが完了したので、次の手順では呼び出し元が使用できるようにします。 1 つまたは複数のアプリケーションとバンドルするか、NuGet パッケージとして配布することができます。 詳細については、「[Consuming a .NET Standard Class Library ](./consuming-library-with-visual-studio.md)」 (.NET Standard クラス ライブラリを使用する) を参照してください。
-

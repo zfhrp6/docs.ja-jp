@@ -1,117 +1,123 @@
 ---
-title: "チュートリアル: WPF での ActiveX コントロールのホスト | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ActiveX コントロール [WPF 相互運用性]"
-  - "ホスト (ActiveX コントロールを)"
+title: "チュートリアル: WPF での ActiveX コントロールのホスト"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ActiveX controls [WPF interoperability]
+- hosting ActiveX controls [WPF]
 ms.assetid: 1931d292-0dd1-434f-963c-dcda7638d75a
-caps.latest.revision: 30
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 30
+caps.latest.revision: "30"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 25944b3dd28c0bce2646c06ec424b54acc8b8a1e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル: WPF での ActiveX コントロールのホスト
-ブラウザーでの操作を改善するには、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ベースのアプリケーションで [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] コントロールを使用できます。  このチュートリアルでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ページ上のコントロールとして [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] をホストする方法を示します。  
+# <a name="walkthrough-hosting-an-activex-control-in-wpf"></a>チュートリアル: WPF での ActiveX コントロールのホスト
+ブラウザーでの強化された操作を有効にするを使用することができます[!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)]コントロールで、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]-ベースのアプリケーションです。 このチュートリアルでは、ホストする方法、[!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)]上のコントロールとして、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ページ。  
   
  このチュートリアルでは、以下のタスクを行います。  
   
 -   プロジェクトの作成。  
   
--   ActiveX コントロールの作成。  
+-   ActiveX コントロールを作成します。  
   
--   WPF ページでの ActiveX コントロールのホスティング。  
+-   WPF ページ上の ActiveX コントロールをホストします。  
   
- このチュートリアルを完了すると、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ベースのアプリケーションで [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] コントロールを使用する方法を理解できます。  
+ このチュートリアルを完了する際に、使用する方法を把握して、[!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)]コントロールで、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]-ベースのアプリケーションです。  
   
-## 必須コンポーネント  
+## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを実行するには、次のコンポーネントが必要です。  
   
--   [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] がインストールされているコンピューターにインストールされた [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)]。  
+-   [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)]コンピューターにインストールされている場所[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]がインストールされています。  
   
--   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)].  
+-   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)]。  
   
-## プロジェクトの作成  
+## <a name="creating-the-project"></a>プロジェクトの作成  
   
-#### プロジェクトを作成し、設定するには  
+#### <a name="to-create-and-set-up-the-project"></a>プロジェクトを作成し、設定するには  
   
-1.  `HostingAxInWpf` という名前の WPF アプリケーション プロジェクトを作成します。  
+1.  という名前の WPF アプリケーション プロジェクトを作成する`HostingAxInWpf`です。  
   
-2.  ソリューションに Windows フォーム コントロール ライブラリ プロジェクトを追加し、プロジェクトに `WmpAxLib` という名前を付けます。  
+2.  Windows フォーム コントロール ライブラリ プロジェクト、ソリューションを追加し、プロジェクトに名前を`WmpAxLib`です。  
   
-3.  WmpAxLib プロジェクトで、wmp.dll という名前の Windows Media Player アセンブリへの参照を追加します。  
+3.  プロジェクトで、WmpAxLib wmp.dll の名前は、Windows Media Player アセンブリへの参照を追加します。  
   
-4.  **\[ツールボックス\]** を開きます。  
+4.  開く、**ツールボックス**です。  
   
-5.  **ツールボックス**内を右クリックし、**\[アイテムの選択\]** をクリックします。  
+5.  右クリックし、**ツールボックス**、順にクリック**アイテムの選択**です。  
   
-6.  **\[COM コンポーネント\]** タブをクリックし、**\[Windows Media Player\]** コントロールを選択し、**\[OK\]** をクリックします。  
+6.  をクリックして、 **COM コンポーネント** タブで、 **Windows Media Player**を制御して、をクリックして**OK**です。  
   
-     Windows Media Player コントロールが**ツールボックス**に追加されます。  
+     Windows Media Player のコントロールに追加、**ツールボックス**です。  
   
-7.  ソリューション エクスプローラーで、**\[UserControl1\]** ファイルを右クリックし、**\[名前の変更\]** をクリックします。  
+7.  ソリューション エクスプ ローラーで右クリックし、 **UserControl1**ファイルを開き、をクリックして**の名前を変更**です。  
   
-8.  言語に応じて名前を `WmpAxControl.vb` または `WmpAxControl.cs` に変更します。  
+8.  名前を変更`WmpAxControl.vb`または`WmpAxControl.cs`、言語によって異なります。  
   
-9. 全ての参照名を変更するかを確認するメッセージが表示されたら、**\[はい\]** をクリックします。  
+9. すべての参照の名前を変更するメッセージが表示されたら、クリックして**はい**です。  
   
-## ActiveX コントロールの作成  
- コントロールがデザイン サーフェイスに追加されると、[!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] によって [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] コントロールの <xref:System.Windows.Forms.AxHost> ラッパー クラスが自動的に生成されます。  次の手順では、AxInterop.WMPLib.dll という名前の管理アセンブリが作成されます。  
+## <a name="creating-the-activex-control"></a>ActiveX コントロールを作成します。  
+ [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)]自動的に生成、<xref:System.Windows.Forms.AxHost>のラッパー クラス、[!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)]デザイン サーフェイスにコントロールを追加する場合を制御します。 次の手順では、AxInterop.WMPLib.dll をという名前のマネージ アセンブリを作成します。  
   
-#### ActiveX コントロールを作成するには  
+#### <a name="to-create-the-activex-control"></a>ActiveX コントロールを作成するには  
   
-1.  Windows フォーム デザイナーで、WmpAxControl.vb または WmpAxControl.cs を開きます。  
+1.  Windows フォーム デザイナーで WmpAxControl.vb またはに応じてを開きます。  
   
-2.  **ツールボックス**から Windows Media Player コントロールをデザイン サーフェイスに追加します。  
+2.  **ツールボックス**、デザイン画面に、Windows Media Player のコントロールを追加します。  
   
-3.  \[プロパティ\] ウィンドウで、Windows Media Player コントロールの <xref:System.Windows.Forms.Control.Dock%2A> プロパティの値を <xref:System.Windows.Forms.DockStyle> に設定します。  
+3.  [プロパティ] ウィンドウで、Windows Media Player のコントロールの値を設定<xref:System.Windows.Forms.Control.Dock%2A>プロパティを<xref:System.Windows.Forms.DockStyle.Fill>です。  
   
 4.  WmpAxLib コントロール ライブラリ プロジェクトをビルドします。  
   
-## WPF ページでの ActiveX コントロールのホスティング  
+## <a name="hosting-the-activex-control-on-a-wpf-page"></a>WPF ページ上の ActiveX コントロールをホストしています。  
   
-#### ActiveX コントロールをホストするには  
+#### <a name="to-host-the-activex-control"></a>ActiveX コントロールをホストするには  
   
-1.  HostingAxInWpf プロジェクトで、生成された [!INCLUDE[TLA2#tla_actx](../../../../includes/tla2sharptla-actx-md.md)] 相互運用アセンブリに参照を追加します。  
+1.  HostingAxInWpf プロジェクトで、生成されたへの参照を追加[!INCLUDE[TLA2#tla_actx](../../../../includes/tla2sharptla-actx-md.md)]相互運用機能アセンブリ。  
   
-     このアセンブリ名は AxInterop.WMPLib.dll で、Windows Media Player コントロールをインポートした時点で、WmpAxLib プロジェクトの Debug フォルダーに追加されています。  
+     このアセンブリは、AxInterop.WMPLib.dll の名前は、Windows Media Player のコントロールをインポートしたときに、WmpAxLib プロジェクトのデバッグ フォルダーに追加されました。  
   
-2.  WindowsFormsIntegration.dll という名前の WindowsFormsIntegration アセンブリに参照を追加します。  
+2.  WindowsFormsIntegration.dll と呼ばれる WindowsFormsIntegration アセンブリへの参照を追加します。  
   
-3.  System.Windows.Forms.dll という名前の [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] アセンブリに参照を追加します。  
+3.  参照を追加、 [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] System.Windows.Forms.dll をという名前のアセンブリ。  
   
 4.  WPF デザイナーで、MainWindow.xaml を開きます。  
   
-5.  <xref:System.Windows.Controls.Grid> 要素に `grid1` という名前を付けます。  
+5.  名前、<xref:System.Windows.Controls.Grid>要素`grid1`です。  
   
-     [!code-xml[HostingAxInWpf#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HostingAxInWpf/CSharp/HostingAxInWpf/window1.xaml#1)]  
+     [!code-xaml[HostingAxInWpf#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HostingAxInWpf/CSharp/HostingAxInWpf/window1.xaml#1)]  
   
-6.  デザイン ビューまたは XAML ビューで、<xref:System.Windows.Window> 要素を選択します。  
+6.  [デザイン] ビューまたは XAML ビューで、選択、<xref:System.Windows.Window>要素。  
   
-7.  プロパティ ウィンドウの **\[イベント\]** タブをクリックします。  
+7.  [プロパティ] ウィンドウ、**イベント**タブです。  
   
-8.  <xref:System.Windows.FrameworkElement.Loaded> イベントをダブルクリックします。  
+8.  ダブルクリックして、<xref:System.Windows.FrameworkElement.Loaded>イベント。  
   
-9. <xref:System.Windows.FrameworkElement.Loaded> イベントを処理するには、次のコードを挿入します。  
+9. 処理する次のコードを挿入、<xref:System.Windows.FrameworkElement.Loaded>イベント。  
   
-     このコードは、<xref:System.Windows.Forms.Integration.WindowsFormsHost> コントロールのインスタンスを作成し、`AxWindowsMediaPlayer` コントロールのインスタンスをその子として追加します。  
+     このコードのインスタンスを作成、<xref:System.Windows.Forms.Integration.WindowsFormsHost>を制御しのインスタンスを追加、`AxWindowsMediaPlayer`の子と同様に制御します。  
   
      [!code-csharp[HostingAxInWpf#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HostingAxInWpf/CSharp/HostingAxInWpf/window1.xaml.cs#11)]
      [!code-vb[HostingAxInWpf#11](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HostingAxInWpf/VisualBasic/HostingAxInWpf/window1.xaml.vb#11)]  
   
 10. F5 キーを押してアプリケーションをビルドし、実行します。  
   
-## 参照  
- <xref:System.Windows.Forms.Integration.ElementHost>   
- <xref:System.Windows.Forms.Integration.WindowsFormsHost>   
- [WPF デザイナー](http://msdn.microsoft.com/ja-jp/c6c65214-8411-4e16-b254-163ed4099c26)   
- [チュートリアル: WPF での Windows フォーム複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.Integration.ElementHost>  
+ <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
+ [WPF デザイナー](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)  
+ [チュートリアル: WPF での Windows フォーム複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)  
  [チュートリアル: Windows フォームでの WPF 複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)

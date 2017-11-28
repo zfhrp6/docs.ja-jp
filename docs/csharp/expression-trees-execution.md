@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 109e0ac5-2a9c-48b4-ac68-9b6219cdbccf
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 4ca87c8410a04e9198e9dd6c379760e7b6596585
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="executing-expression-trees"></a>式ツリーの実行
 
 [前へ -- 式ツリーをサポートするフレームワークの型](expression-classes.md)
@@ -130,4 +128,3 @@ private static Func<int, int> CreateBoundResource()
 式ツリーは、作成した任意の構成要素を実行するコードを表わしています。 コードをコンパイルして実行する環境が、式を作成する環境と一致している限り、すべてが期待どおりに動作します。 環境が一致していない場合、エラーが確実に予想されます。このエラーは、式ツリーを使用するコードを最初にテストする段階で発見されるはずです。
 
 [次へ -- 式の解釈](expression-trees-interpreting.md)
-

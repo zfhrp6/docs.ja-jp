@@ -1,41 +1,41 @@
 ---
-title: "DataGrid コントロール (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "データ [Windows フォーム], 表示 (Windows フォームに)"
-  - "データ グリッド"
-  - "DataGrid コントロール [Windows フォーム]"
-  - "データセット [Windows フォーム], 表示 (DataGrid コントロールで)"
-  - "データセット [Windows フォーム], ユーザー インターフェイス"
-  - "表示 (データを), フォーム上に"
+title: "DataGrid コントロール (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- datasets [Windows Forms], user interface
+- DataGrid control [Windows Forms]
+- datasets [Windows Forms], displaying in DataGrid control
+- displaying data [Windows Forms], on forms
+- data [Windows Forms], displaying on Windows Forms
 ms.assetid: 1d9d5683-43d2-42dd-b6c3-e43f4cf0de99
-caps.latest.revision: 20
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "20"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c60927451ad4350ef507f2e2a661bcfaab4ea788
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataGrid コントロール (Windows フォーム)
+# <a name="datagrid-control-windows-forms"></a>DataGrid コントロール (Windows フォーム)
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> コントロールは、`DataGrid` コントロールに代わると共に追加の機能を提供します。ただし、`DataGrid` コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。  
+>  <xref:System.Windows.Forms.DataGridView> コントロールは、`DataGrid` コントロールに代わると共に追加の機能を提供します。ただし、`DataGrid` コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。 詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。  
   
- Windows フォームの `DataGrid` コントロールはユーザー インターフェイスを [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] データセットに提供し、データを表形式で表示して、データ ソースを更新できるようにします。  
+ Windows フォームの `DataGrid` コントロールは、[!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] データセットへのユーザー インターフェイスを提供し、データを表形式で表示して、データ ソースを更新できるようにします。  
   
- `DataGrid` コントロールを有効なデータ ソースに対して設定すると、データの形式に基づいて列と行が作成されたコントロールが自動的に作成されます。  `DataGrid` コントロールを使用すると、1 つのテーブルまたは、複数のテーブル間の階層的なリレーションシップを表示できます。  
+ `DataGrid` コントロールを有効なデータ ソースに対して設定すると、データの形式に基づいて列と行が作成されたコントロールが自動的に作成されます。 `DataGrid` コントロールを使用すると、1 つのテーブルまたは、複数のテーブル間の階層的なリレーションシップを表示できます。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [DataGrid コントロールの概要](../../../../docs/framework/winforms/controls/datagrid-control-overview-windows-forms.md)  
- `DataGrid` コントロールの基本的な機能について説明します。  
+ `DataGrid` コントロールの基本機能について説明します。  
   
  [方法 : デザイナーを使って Windows フォーム DataGrid コントロールにテーブルと列を追加する](../../../../docs/framework/winforms/controls/add-tables-and-columns-to-wf-datagrid-control-using-the-designer.md)  
  デザイナーを使用して `DataGrid` コントロールにテーブルと列を追加する方法について説明します。  
@@ -52,10 +52,10 @@ caps.handback.revision: 18
  [方法 : Windows フォーム DataGrid コントロールに表示されるデータを実行時に変更する](../../../../docs/framework/winforms/controls/change-displayed-data-at-run-time-wf-datagrid-control.md)  
  `DataGrid` コントロール内でプログラムによってデータを変更する方法について説明します。  
   
- [方法 : デザイナーで Windows フォーム DataGrid コントロールを使用してマスター\/詳細リストを作成する](../../../../docs/framework/winforms/controls/create-master-details-lists-with-wf-datagrid-control-using-the-designer.md)  
+ [方法 : デザイナーで Windows フォーム DataGrid コントロールを使用してマスター/詳細リストを作成する](../../../../docs/framework/winforms/controls/create-master-details-lists-with-wf-datagrid-control-using-the-designer.md)  
  デザイナーを使用して、親子のリレーションシップで結合されている 2 つのテーブルを、2 つの `DataGrid` コントロールに個別に表示する方法について説明します。  
   
- [方法 : Windows フォーム DataGrid コントロールを使用してマスター\/詳細リストを作成する](../../../../docs/framework/winforms/controls/how-to-create-master-detail-lists-with-the-windows-forms-datagrid-control.md)  
+ 方法 : Windows フォーム DataGrid コントロールを使用してマスター/詳細リストを作成する  
  親子のリレーションシップで結合されている 2 つのテーブルを、2 つの `DataGrid` コントロールに個別に表示する方法について説明します。  
   
  [方法 : Windows フォーム DataGrid コントロールの列を削除するまたは非表示にする](../../../../docs/framework/winforms/controls/how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)  
@@ -71,22 +71,22 @@ caps.handback.revision: 18
  `DataGrid` コントロール内の移動に使用できるキーボード ショートカットの一覧を示します。  
   
  [方法 : Windows フォーム DataGrid コントロールのクリックに応答する](../../../../docs/framework/winforms/controls/how-to-respond-to-clicks-in-the-windows-forms-datagrid-control.md)  
- ユーザーがクリックした `DataGrid`コントロール内のセルを確認する方法を説明します。  
+ ユーザーがクリックした `DataGrid` コントロール内のセルを確認する方法を説明します。  
   
  [方法 : Windows フォームの DataGrid コントロールを使用して入力データを検証する](../../../../docs/framework/winforms/controls/how-to-validate-input-with-the-windows-forms-datagrid-control.md)  
  `DataGrid` コントロールにバインドされたデータセット内の入力データを検証する方法を説明します。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.Windows.Forms.DataGrid>  
- <xref:System.Windows.Forms.DataGrid> クラスの概要を説明します。  
+ 概要を示します、<xref:System.Windows.Forms.DataGrid>クラスです。  
   
  <xref:System.Windows.Forms.DataGrid.DataSource%2A>  
- このプロパティを使用して、データに <xref:System.Windows.Forms.DataGrid> コントロールをバインドする方法についての詳細を説明します。  
+ このプロパティを使用してバインドする方法の詳細を提供、<xref:System.Windows.Forms.DataGrid>コントロールをデータにします。  
   
-## 関連項目  
- [Windows フォームでのデータ バインド](../../../../docs/framework/winforms/windows-forms-data-binding.md)  
+## <a name="related-sections"></a>関連項目  
+ [Windows フォームでのデータ バインディング](../../../../docs/framework/winforms/windows-forms-data-binding.md)  
  Windows フォームのデータ結合に関するトピックへのリンクを示します。  
   
-## 参照  
- [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)   
+## <a name="see-also"></a>関連項目  
+ [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)  
  [Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)

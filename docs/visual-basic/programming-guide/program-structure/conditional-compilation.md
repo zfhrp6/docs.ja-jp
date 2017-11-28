@@ -1,83 +1,77 @@
 ---
-title: "Conditional Compilation in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "conditional compilation, about conditional compilation"
-  - "compilation, conditional"
+title: "Visual Basic での条件付きコンパイル"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- conditional compilation [Visual Basic], about conditional compilation
+- compilation [Visual Basic], conditional
 ms.assetid: 9c35e55e-7eee-44fb-a586-dad1f1884848
-caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 559380dc9baceb2fba4dca782e83f335f1bcd92d
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# Conditional Compilation in Visual Basic
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-条件付きコンパイルでは、プログラムの特定のコード ブロックだけを選択してコンパイルできます。プログラムの他の部分は無視されます。  
+# <a name="conditional-compilation-in-visual-basic"></a>Visual Basic での条件付きコンパイル
+*条件付きコンパイル*、他のユーザーは無視されます、特定のプログラムではコード ブロックは選択的にコンパイルします。  
   
- たとえば、同じプログラミング タスクに対する異なるアプローチについて速度を比較するデバッグ ステートメントを記述する場合や、アプリケーションを混合言語にローカライズする場合などがあります。  条件付きコンパイル ステートメントは、実行時ではなくコンパイル時に実行されます。  
+ たとえば、書き込むする可能性があるか、同じプログラミング タスクを別のアプローチの速度を比較するステートメントをデバッグすることが複数言語のアプリケーションをローカライズします。 条件付きコンパイル ステートメントは実行時ではなく、コンパイル時に実行するよう設計されています。  
   
- 条件に基づいてコンパイルするコードのブロックを指定するには `#If...Then...#Else` ディレクティブを使用します。  たとえば、同じソース コードからフランス語バージョンおよびドイツ語バージョンのアプリケーションを作成するには、定義済みの定数 `FrenchVersion` および `GermanVersion` を使用して、プラットフォーム固有のコードを `#If...Then` ステートメントの中に記述します。  この方法を次の例で示します。  
+ 条件付きでコンパイルされているコードのブロックを指定、`#If...Then...#Else`ディレクティブです。 たとえば、フランス語、ドイツ語を作成する同じから同じアプリケーションのバージョンのソース コード、プラットフォーム固有のコードのセグメントを埋め込む`#If...Then`定義済みの定数を使用して、ステートメント`FrenchVersion`と`GermanVersion`です。 次の例でどのようにします。  
   
  [!code-vb[VbVbalrConditionalComp#5](../../../visual-basic/language-reference/directives/codesnippet/VisualBasic/conditional-compilation_1.vb)]  
   
- コンパイル時に条件付きコンパイル定数 `FrenchVersion` の値を `True` に設定すると、フランス語バージョンの部分のコードがコンパイルされます。  定数 `GermanVersion` の値を `True` に設定すると、ドイツ語バージョンのコードがコンパイルされます。  どちらの値も `True` に設定しない場合は、最後の `Else` ブロックのコードが実行されます。  
+ 値を設定した場合、`FrenchVersion`に条件付きコンパイル定数`True`コンパイル時に、フランス語版の条件付きのコードがコンパイルされています。 値を設定した場合、`GermanVersion`に定数`True`コンパイラがドイツ語版を使用します。 どちらに設定されている場合`True`、最後にコード`Else`ブロックが実行されます。  
   
 > [!NOTE]
->  コードが現在の分岐の一部ではない場合、コードの編集時、および条件付きコンパイル ディレクティブの使用時に、オートコンプリートは機能しません。  
+>  オートコンプリートは、コードの編集時に機能しないと、コードが現在のブランチの一部ではない場合は、条件付きコンパイル ディレクティブを使用するには。  
   
-## 条件付きコンパイル定数の宣言  
- 条件付きコンパイル定数は、次の 3 つのいずれかで設定できます。  
+## <a name="declaring-conditional-compilation-constants"></a>条件付きコンパイル定数を宣言します。  
+ 3 つの方法のいずれかで条件付きコンパイル定数を設定できます。  
   
 -   **プロジェクト デザイナー**  
   
--   コマンド ライン \(コマンド ライン コンパイラを使用する場合\)  
+-   コマンド ライン コンパイラを使用するときに、コマンドラインで  
   
--   コード内  
+-   コードで  
   
- 条件付きコンパイル定数は特殊なスコープを持つため、標準のコードからアクセスすることはできません。  条件付きコンパイル定数のスコープは、定数の設定方法によって異なります。  次の表は、上記の 3 つの方法を使って宣言した定数のスコープを示しています。  
+ 条件付きコンパイル定数は、特殊なスコープを持ち、標準的なコードからアクセスできません。 条件付きコンパイル定数のスコープは、設定されている方法によって異なります。 次の表は、上記で説明した 3 つの方法のそれぞれを使用して宣言されている定数のスコープを一覧表示します。  
   
-|||  
-|-|-|  
-|定数の設定方法|定数のスコープ|  
-|**プロジェクト デザイナー**|プロジェクト内のすべてのファイルに対してパブリック|  
-|コマンド ライン|コマンド ライン コンパイラに渡されたすべてのファイルに対してパブリック|  
-|コード内の `#Const` ステートメント|宣言されたファイル内でプライベート|  
+|定数を設定する方法|定数のスコープ|  
+|---|---|  
+|**プロジェクト デザイナー**|プロジェクト内のすべてのファイルへの公開|  
+|コマンドライン|コマンド ライン コンパイラに渡されるすべてのファイルへの公開|  
+|`#Const`コード内のステートメント|プライベートに宣言されているファイル|  
   
-||  
-|-|  
 |プロジェクト デザイナーで定数を設定するには|  
-|-   実行可能ファイルを作成する前に、「[方法 : プロジェクト プロパティおよび構成設定を変更する](http://msdn.microsoft.com/ja-jp/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)」で説明されている手順に従って、**プロジェクト デザイナー**で定数を設定します。|  
+|---|  
+|実行可能ファイルを作成する前定数を設定、**プロジェクト デザイナー**で提供される手順に従って、[管理プロジェクトおよびソリューションのプロパティ](/visualstudio/ide/managing-project-and-solution-properties)です。|  
   
-||  
-|-|  
-|コマンド ラインで定数を設定するには|  
-|-   次のように、**\/d** スイッチを使って条件付きコンパイル定数を入力します。<br />     `vbc MyProj.vb /d:conFrenchVersion=–1:conANSI=0`<br />     **\/d** スイッチと最初の定数の間にスペースは必要ありません。  詳細については、「[\/define](../../../visual-basic/reference/command-line-compiler/define.md)」を参照してください。<br />     コマンド ラインで設定する定数の値は**プロジェクト デザイナー**で行った設定より優先されますが、プロジェクト デザイナーで行った設定は消去されません。  **プロジェクト デザイナー**で行った引数の設定は、以降のコンパイルでも有効です。<br />     コード自体に定数を記述する場合は、定数の宣言を行ったモジュール全体が定数のスコープになるため、配置場所に関する厳密な規則はありません。|  
+|コマンドラインで定数を設定するには|  
+|---|  
+|-を使用して、 **/d**スイッチを次の例のように、条件付きコンパイル定数を入力します。<br />     `vbc MyProj.vb /d:conFrenchVersion=–1:conANSI=0`<br />     間で必要な空き領域がない、 **/d**スイッチとの最初の定数です。 詳細については、次を参照してください。 [/define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)です。<br />     コマンド ラインの宣言で入力した宣言のオーバーライド、**プロジェクト デザイナー**は消去されません。 引数の設定**プロジェクト デザイナー**後続のコンパイルを有効になります。<br />     定数をそれ自体のコードを記述する場合はありません、配置に関する厳密な規則のスコープが宣言されているモジュール全体であるため。|  
   
-||  
-|-|  
-|コード内で定数を設定するには|  
-|-   定数を使用するモジュールの宣言ブロックに定数を配置します。  このように配置すると、コードが整理されてわかりやすくなります。|  
+|コード内の定数を設定するには|  
+|---|  
+|-定数を使用するモジュールの宣言ブロックに配置します。 これにより、整理したり読みやすく、コードを維持します。|  
   
-## 関連トピック  
+## <a name="related-topics"></a>関連トピック  
   
-|||  
-|-|-|  
-|Title|Description|  
-|[プログラム構造とコード規則](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)|読みやすく管理しやすいコードを作成するためのヒントを紹介します。|  
+|タイトル|説明|  
+|---|---|  
+|[プログラム構造とコード規則](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)|コードを容易に読み取りおよびメンテナンスについて説明します。|  
   
-## Reference  
- [\#Const Directive](../../../visual-basic/language-reference/directives/const-directive.md)  
+## <a name="reference"></a>参照  
+ [#Const ディレクティブ](../../../visual-basic/language-reference/directives/const-directive.md)  
   
- [\#If...Then...\#Else Directives](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
+ [#If...Then...#Else ディレクティブ](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
   
- [\/define](../../../visual-basic/reference/command-line-compiler/define.md)
+ [/define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)

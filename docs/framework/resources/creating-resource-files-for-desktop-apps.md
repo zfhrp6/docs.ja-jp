@@ -5,26 +5,27 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 helpviewer_keywords:
 - resource files, .resources files
 - .resources files
 - application resources, creating files
 - resource files, creating
 ms.assetid: 6c5ad891-66a0-4e7a-adcf-f41863ba6d8d
-caps.latest.revision: 25
+caps.latest.revision: "25"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 10f714f5793fff4d6081c9fc910159a02e34e53b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2afcde97f5056c23f8d6bc294e955b75b5f166fd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="creating-resource-files-for-desktop-apps"></a>デスクトップ アプリケーションに対するリソース ファイルの作成
 リソース ファイルにリソース (文字列、イメージ、オブジェクト データなど) を追加して、アプリケーションで簡単に使用できるようにすることが可能です。 .NET Framework では、次の 5 つの方法でリソース ファイルを作成できます。  
@@ -65,7 +66,7 @@ name2=value2
   
  .txt ファイルと .restext ファイルのリソース ファイル形式は同じです。 .restext ファイル拡張子は、テキスト ファイルがテキスト ベースのリソース ファイルであることをすぐに識別するために使用します。  
   
- 文字列リソースは、*name/value* のペアとして表示されます。ここで、*name* はリソースを識別する文字列です。*value* は、リソース取得メソッド (<xref:System.Resources.ResourceManager.GetString%2A?displayProperty=fullName> など) に *name* を渡すときに返されるリソース文字列です。 *name* と *value* は等号 (=) で区切る必要があります。 例:  
+ 文字列リソースは、*name/value* のペアとして表示されます。ここで、*name* はリソースを識別する文字列です。*value* は、リソース取得メソッド (<xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType> など) に *name* を渡すときに返されるリソース文字列です。 *name* と *value* は等号 (=) で区切る必要があります。 例:  
   
 ```  
 FileMenuName=File  
@@ -77,7 +78,7 @@ HelpMenuName=Help
 > [!CAUTION]
 >  パスワード、セキュリティの配慮が必要な情報、プライベートなデータなどの格納には、リソース ファイルを使用しないでください。  
   
- 空の文字列 (つまり、値が <xref:System.String.Empty?displayProperty=fullName> であるリソース) はテキスト ファイルで使用できます。 例:  
+ 空の文字列 (つまり、値が <xref:System.String.Empty?displayProperty=nameWithType> であるリソース) はテキスト ファイルで使用できます。 例:  
   
 ```  
 EmptyString=  
@@ -99,7 +100,7 @@ CancelButton=Cancel
   
  テキスト ファイルに *name* が重複して出現する場合、[リソース ファイル ジェネレーター (Resgen.exe)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) によって警告が表示され、2 番目の名前が無視されます。  
   
- *value* に改行文字を含めることはできませんが、C 言語形式のエスケープ文字で、改行を表す `\n` やタブを表す `\t` は使用できます。 エスケープする場合は、円記号を含めることができます (たとえば、"\\\\")。 空の文字列を使用することもできます。  
+ *value* に改行文字を含めることはできませんが、C 言語形式のエスケープ文字で、改行を表す `\n` やタブを表す `\t` は使用できます。エスケープする場合は、円記号を含めることができます (たとえば、"\\\\")。 空の文字列を使用することもできます。  
   
  リトル エンディアンまたはビッグ エンディアンのバイト順の UTF-8 エンコーディングまたは UTF-16 エンコーディングを使用して、テキスト ファイル形式でリソースを保存する必要があります。 ただし、.txt ファイルを .resources ファイルに変換する[リソース ファイル ジェネレーター (Resgen.exe)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) では、ファイルを既定では UTF-8 として扱います。 UTF-16 でエンコードされたファイルを Resgen.exe が認識できるようにする場合は、ファイルの先頭に Unicode バイト順マーク (U+FEFF) を置く必要があります。  
   
@@ -123,7 +124,8 @@ greeting=Hello, {0}!
   
  次の例は、.resources ファイルを使用してユーザーにメッセージを表示するコンソール アプリケーションのソース コードを示しています。  
   
- [!code-csharp[Conceptual.Resources.TextFiles#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.textfiles/cs/greeting.cs#1)] [!code-vb[Conceptual.Resources.TextFiles#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.textfiles/vb/greeting.vb#1)]  
+ [!code-csharp[Conceptual.Resources.TextFiles#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.textfiles/cs/greeting.cs#1)]
+ [!code-vb[Conceptual.Resources.TextFiles#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.textfiles/vb/greeting.vb#1)]  
   
  Visual Basic を使用している場合、ソース コード ファイル名が Greeting.vb であれば、埋め込みの .resources ファイルを含む実行可能ファイルを次のコマンドによって作成します。  
   
@@ -174,20 +176,21 @@ greeting=Hello, {0}!
   
 <a name="ResourcesFiles"></a>   
 ## <a name="resources-in-resources-files"></a>.resources ファイル内のリソース  
- <xref:System.Resources.ResourceWriter?displayProperty=fullName> クラスを使用すると、プログラムによってコードから直接、バイナリ リソース (.resources) ファイルを作成できます。 また、[リソース ファイル ジェネレーター (Resgen.exe)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) を使用して、テキスト ファイルまたは .resx ファイルから .resources ファイルを作成することもできます。 .resources ファイルには、文字列データに加えて、バイナリ データ (バイト配列) およびオブジェクト データを格納できます。 .resources ファイルをプログラムによって作成するには、次の手順が必要です。  
+ <xref:System.Resources.ResourceWriter?displayProperty=nameWithType> クラスを使用すると、プログラムによってコードから直接、バイナリ リソース (.resources) ファイルを作成できます。 また、[リソース ファイル ジェネレーター (Resgen.exe)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) を使用して、テキスト ファイルまたは .resx ファイルから .resources ファイルを作成することもできます。 .resources ファイルには、文字列データに加えて、バイナリ データ (バイト配列) およびオブジェクト データを格納できます。 .resources ファイルをプログラムによって作成するには、次の手順が必要です。  
   
 1.  一意のファイル名を付けて <xref:System.Resources.ResourceWriter> オブジェクトを作成します。 そのためには、ファイル名またはファイル ストリームを <xref:System.Resources.ResourceWriter> クラス コンストラクターに指定します。  
   
-2.  ファイルに追加する名前付きリソースごとに <xref:System.Resources.ResourceWriter.AddResource%2A?displayProperty=fullName> メソッドのオーバーロードの 1 つを呼び出します。 リソースには、文字列、オブジェクト、またはバイナリ データのコレクション (バイト配列) を指定できます。  
+2.  ファイルに追加する名前付きリソースごとに <xref:System.Resources.ResourceWriter.AddResource%2A?displayProperty=nameWithType> メソッドのオーバーロードの 1 つを呼び出します。 リソースには、文字列、オブジェクト、またはバイナリ データのコレクション (バイト配列) を指定できます。  
   
-3.  <xref:System.Resources.ResourceWriter.Close%2A?displayProperty=fullName> メソッドを呼び出してファイルにリソースを書き込み、<xref:System.Resources.ResourceWriter> オブジェクトを閉じます。  
+3.  <xref:System.Resources.ResourceWriter.Close%2A?displayProperty=nameWithType> メソッドを呼び出してファイルにリソースを書き込み、<xref:System.Resources.ResourceWriter> オブジェクトを閉じます。  
   
 > [!NOTE]
 >  パスワード、セキュリティの配慮が必要な情報、プライベートなデータなどの格納には、リソース ファイルを使用しないでください。  
   
  次の例では、6 つの文字列、1 つのアイコン、2 つのアプリケーション定義オブジェクト (2 つの `Automobile` オブジェクト) を格納する、CarResources.resources という名前の .resources ファイルをプログラムによって作成します。 この例で定義およびインスタンス化される `Automobile` クラスは、<xref:System.SerializableAttribute> 属性でタグ付けされます。これにより、バイナリのシリアル化フォーマッタによってクラスを永続化できます。  
   
- [!code-csharp[Conceptual.Resources.Resources#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.resources/cs/resources1.cs#1)] [!code-vb[Conceptual.Resources.Resources#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.resources/vb/resources1.vb#1)]  
+ [!code-csharp[Conceptual.Resources.Resources#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.resources/cs/resources1.cs#1)]
+ [!code-vb[Conceptual.Resources.Resources#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.resources/vb/resources1.vb#1)]  
   
  作成した .resources ファイルは、言語コンパイラの `/resource` スイッチを追加してランタイム実行可能ファイルまたはライブラリに埋め込むか、[アセンブリ リンカー (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) を使用してサテライト アセンブリに埋め込むことができます。  
   
@@ -200,7 +203,6 @@ greeting=Hello, {0}!
  コンパイル時に、Visual Studio ではまずプロジェクト内の .resx ファイルをバイナリ リソース (.resources) ファイルに変換して、プロジェクトの obj ディレクトリのサブディレクトリに格納します。 ローカライズされたリソースが格納されていないリソース ファイルは、プロジェクトで生成されたメイン アセンブリに埋め込みます。 ローカライズされたリソースがリソース ファイルに格納されている場合、Visual Studio では、各ローカライズ カルチャの個別のサテライト アセンブリにそのファイルを埋め込みます。 各サテライト アセンブリは、ローカライズ カルチャに対応する名前のディレクトリに格納します。 たとえば、ローカライズされた英語 (米国) リソースは、en-US サブディレクトリ内のサテライト アセンブリに格納されます。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Resources>   
- [デスクトップ アプリケーションのリソース](../../../docs/framework/resources/index.md)   
+ <xref:System.Resources>  
+ [デスクトップ アプリケーションのリソース](../../../docs/framework/resources/index.md)  
  [リソースのパッケージ化と配置](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)
-

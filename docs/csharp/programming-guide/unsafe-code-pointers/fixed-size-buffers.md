@@ -1,40 +1,22 @@
 ---
 title: "固定サイズ バッファー (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - fixed size buffers [C#]
 - unsafe buffers [C#]
 - unsafe code [C#], fixed size buffers
 ms.assetid: 6220d454-947c-4977-ac9d-9308c6ed5051
-caps.latest.revision: 31
+caps.latest.revision: "31"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 3f99c2c6d477fca988fcca77de5ca5c2f8addd4d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e1a3dcf953cb56fc3436fdd5e7ecb60478a12922
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="fixed-size-buffers-c-programming-guide"></a>固定サイズ バッファー (C# プログラミング ガイド)
 C# では、[fixed](../../../csharp/language-reference/keywords/fixed-statement.md) ステートメントを使って、データの構造体に固定サイズの配列を持ったバッファーを作成することができます。 これは既存のコード (他の言語で記述されたコード、既存の DLL、COM プロジェクトなど) を扱う場面で役立ちます。 この固定配列には、標準的な構造体メンバーで許容されている属性または修飾子であれば、何でも適用することができます。 ただし配列の型は `bool`、`byte`、`char`、`short`、`int`、`long`、`sbyte`、`ushort`、`uint`、`ulong`、`float`、`double` のいずれかに該当する必要があり、それが唯一の制限となります。  
@@ -50,11 +32,11 @@ private fixed char name[30];
   
  たとえば C# 2.0 未満では、以下の `struct` のサイズは 8 バイトとなります。 `pathName` 配列は、ヒープに割り当てられた配列の参照です。  
   
- [!code-cs[csProgGuidePointers#19](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/fixed-size-buffers_1.cs)]  
+ [!code-csharp[csProgGuidePointers#19](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/fixed-size-buffers_1.cs)]  
   
  C# 2.0 以降では、`struct` が埋め込み配列を保持できるようになりました。 以下の例の `fixedBuffer` 配列は固定サイズです。 配列の要素にアクセスするには、`fixed` ステートメントを使用して先頭要素へのポインターを確立します。 `fixed` ステートメントによって、`fixedBuffer` のインスタンスがメモリ内の特定の位置に固定されます。  
   
- [!code-cs[csProgGuidePointers#20](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/fixed-size-buffers_2.cs)]  
+ [!code-csharp[csProgGuidePointers#20](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/fixed-size-buffers_2.cs)]  
   
  要素数 128 の `char` 配列のサイズは 256 バイトです。 固定サイズの [char](../../../csharp/language-reference/keywords/char.md) 型バッファーは、エンコーディングに関係なく常に、1 文字あたり 2 バイトを消費します。 これは、char 型のバッファーが、`CharSet = CharSet.Auto` または `CharSet = CharSet.Ansi` で API メソッドや構造体にマーシャリングされたときにも当てはまります。 詳細については、「<xref:System.Runtime.InteropServices.CharSet>」を参照してください。  
   
@@ -74,8 +56,7 @@ private fixed char name[30];
 -   アンセーフ バッファーは、unsafe コンテキストで構造体のインスタンス フィールドとしてのみ使用できます。  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
- [fixed ステートメント](../../../csharp/language-reference/keywords/fixed-statement.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)  
+ [fixed ステートメント](../../../csharp/language-reference/keywords/fixed-statement.md)  
  [相互運用性](../../../csharp/programming-guide/interop/index.md)
-

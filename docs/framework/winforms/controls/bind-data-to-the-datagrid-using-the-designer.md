@@ -1,71 +1,72 @@
 ---
-title: "方法 : デザイナーを使用してデータを Windows フォーム DataGridView コントロールにバインドする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "データ ソース, バインド (Windows フォーム コントロールに)"
-  - "DataGridView コントロール [Windows フォーム], データ バインド"
-  - "Windows フォーム コントロール, バインド (データ ソースに)"
+title: "方法 : デザイナーを使用してデータを Windows フォーム DataGridView コントロールにバインドする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Forms controls, binding to a data source
+- data sources [Windows Forms], binding to Windows Forms controls
+- DataGridView control [Windows Forms], data binding
 ms.assetid: f4f46009-cec2-441b-8668-6b5af057558b
-caps.latest.revision: 23
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2a203aa20865a4180b4eb9a7b192fc3c9b73a2f7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : デザイナーを使用してデータを Windows フォーム DataGridView コントロールにバインドする
-デザイナーを使用して、データベース、ビジネス オブジェクト、Web サービスなど、さまざまなデータ ソースに <xref:System.Windows.Forms.DataGridView> コントロールを関連付けることができます。  デザイナーを使用してデータ ソースにコントロールをバインドすると、コントロールは、データ ソースを表す <xref:System.Windows.Forms.BindingSource> コンポーネントに自動的にバインドされます。  また、データ ソースが提供するスキーマ情報に合わせて、コントロール内に列が自動的に生成されます。  
+# <a name="how-to-bind-data-to-the-windows-forms-datagridview-control-using-the-designer"></a>方法 : デザイナーを使用してデータを Windows フォーム DataGridView コントロールにバインドする
+接続するデザイナーを使用することができます、<xref:System.Windows.Forms.DataGridView>データベース、ビジネス オブジェクト、または Web サービスなど、いくつかの異なる種類のデータ ソースへのコントロールです。 デザイナーを使用してデータ ソースにコントロールをバインドすると、自動的にコントロールを<xref:System.Windows.Forms.BindingSource>コンポーネントをデータ ソースを表します。 さらに、データ ソースによって提供されるスキーマ情報に対応するように、このコントロールの列が自動的に生成されます。  
   
- 生成された列は、必要に応じて変更できます。  たとえば、表示する必要がない列を削除したり、非表示にしたりできます。また、列を再配置したり列の種類を変更することもできます。  列の変更の詳細については、「参照」の各トピックを参照してください。  
+ 列が生成された後に、ニーズに合わせて列を変更できます。 たとえば、表示に関係のない列を削除または非表示にしたり、列の順序を変更したり、列の型を変更したりすることができます。 列の変更の詳細については、「関連項目」セクションの各トピックを参照してください。  
   
- また、複数の <xref:System.Windows.Forms.DataGridView> コントロールを関連するテーブルにバインドし、マスター\/詳細リレーションシップを構築することもできます。  この構成の場合、あるコントロールは親テーブルを表示し、別のコントロールは親テーブルの現在の行に関連する子テーブルの行のみを表示します。  詳細については、「[方法: 関連するデータを Windows フォーム アプリケーションに表示する](../Topic/How%20to:%20Display%20Related%20Data%20in%20a%20Windows%20Forms%20Application.md)」を参照してください。  
+ 複数をバインドすることもできます。<xref:System.Windows.Forms.DataGridView>マスター/詳細関係を作成する関連テーブルへのコントロールです。 この構成では、1 つのコントロールに親テーブルが表示され、別のコントロールには親テーブルの現在の行に関連する子テーブルの行のみが表示されます。 詳細については、「[方法: 関連するデータを Windows フォーム アプリケーションに表示する](http://msdn.microsoft.com/library/60b1f1ec-6257-42ab-83f0-06d54ed364fd)」を参照してください。  
   
- 次の手順では、マスター\/詳細リレーションシップに関する 1 つまたは 2 つの <xref:System.Windows.Forms.DataGridView> コントロールが含まれているフォームを持つ、**Windows アプリケーション** プロジェクトが必要です。  このようなプロジェクトの起動については、「[How to: Create a Windows Application Project](http://msdn.microsoft.com/ja-jp/b2f93fed-c635-4705-8d0e-cf079a264efa)」と「[方法 : Windows フォームにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)」を参照してください。  
+ 次の手順が必要です、 **Windows アプリケーション**を含むフォームを使用してプロジェクト、<xref:System.Windows.Forms.DataGridView>コントロールまたはマスター/詳細リレーションシップの 2 つのコントロールです。 このようなプロジェクトを開始する方法については、「[方法 : Windows アプリケーション プロジェクトを作成する](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)」と「[方法 : Windows フォームにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)」を参照してください。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-### コントロールをデータ ソースにバインドするには  
+### <a name="to-bind-the-control-to-a-data-source"></a>コントロールをデータ ソースにバインドするには  
   
-1.  <xref:System.Windows.Forms.DataGridView> コントロールの右上隅のスマート タグ グリフ \(![スマート タグ グリフ](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.png "VS\_WinFormSmtTagGlyph")\) をクリックします。  
+1.  スマート タグ グリフをクリックして (![スマート タグ グリフ](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) の右上隅で、<xref:System.Windows.Forms.DataGridView>コントロール。  
   
-2.  **\[データ ソースの選択\]** オプションのドロップダウン矢印をクリックします。  
+2.  **[データ ソースの選択]** オプションのドロップダウン矢印をクリックします。  
   
-3.  プロジェクトのデータ ソースがまだない場合は、**\[プロジェクト データ ソースの追加\]** をクリックし、ウィザードに示された手順に従います。  
+3.  プロジェクトにまだデータ ソースがない場合は、**[プロジェクト データ ソースの追加]** をクリックし、ウィザードに示される手順に従います。  
   
-     詳細については、「[データ ソース構成ウィザード](../Topic/Data%20Source%20Configuration%20Wizard.md)」を参照してください。  新しいデータ ソースが **\[データ ソースの選択\]** ボックスに表示されます。  新しいデータ ソースに 1 つのメンバー \(たとえば、1 つのデータベース テーブル\) だけが含まれる場合、コントロールはそのメンバーに自動的にバインドされます。  それ以外の場合は、次の手順に進みます。  
+     詳細については、「[データ ソース構成ウィザード](http://msdn.microsoft.com/library/c4df7de5-5da0-4064-940c-761dd6d9e28f)」を参照してください。 **[データ ソースの選択]** ドロップダウン ウィンドウに新しいデータ ソースが表示されます。 新しいデータ ソースに含まれるのが単一データベース テーブルなど、1 つのメンバーのみの場合、コントロールはそのメンバーに自動的にバインドされます。 それ以外の場合は、次の手順に進みます。  
   
-4.  **\[他のデータ ソース\]** ノードと **\[プロジェクト データ ソース\]** ノードが展開されていない場合は、展開します。次に、コントロールをバインドするデータ ソースを選択します。  
+4.  展開されていない場合は **[他のデータ ソース]** ノードと **[プロジェクト データ ソース]** ノードを展開し、コントロールをバインドするデータ ソースを選択します。  
   
-5.  データ ソースに複数のメンバーが含まれる場合 \(たとえば、複数のテーブルを含む <xref:System.Data.DataSet?displayProperty=fullName> を作成した場合\) は、データ ソースを展開し、バインド先となる特定のメンバーを選択します。  
+5.  データ ソースに複数のメンバーが含まれている場合などを作成した場合、<xref:System.Data.DataSet?displayProperty=nameWithType>複数のテーブルを格納している、データ ソースを展開し、バインドする特定のメンバーを選択します。  
   
-6.  マスター\/詳細リレーションシップを構築するには、2 つ目の <xref:System.Windows.Forms.DataGridView> コントロールの **\[データ ソースの選択\]** ドロップダウン ウィンドウで、親テーブル用に作成された <xref:System.Windows.Forms.BindingSource> を展開し、表示されるリストから関連する子テーブルを選択します。  
+6.  マスター/詳細関係を作成する、**データ ソースの選択**2 台目のドロップダウン ウィンドウ<xref:System.Windows.Forms.DataGridView>コントロール を展開し、<xref:System.Windows.Forms.BindingSource>親テーブルに対して作成され、一覧から関連する子テーブルを選択表示されます。  
   
     > [!NOTE]
-    >  プロジェクトにデータ ソースが既に含まれている場合、**\[データ ソース\]** ウィンドウを使用してデータ フォームを作成することもできます。  詳細については、「[ウィンドウ](../Topic/Data%20Sources%20Window.md)」を参照してください。  
+    >  プロジェクトにデータ ソースが既にある場合は、**[データソース]** ウィンドウを使用してデータ フォームを作成することもできます。 詳細については、「[[データ ソース] ウィンドウ](http://msdn.microsoft.com/library/0d20f699-cc95-45b3-8ecb-c7edf1f67992)」を参照してください。  
   
-## 参照  
- <xref:System.Windows.Forms.DataGridView>   
- <xref:System.Windows.Forms.BindingSource>   
- <xref:System.Windows.Forms.DataGridView.DataMember%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=fullName>   
- [方法 : データベース内のデータに接続する](../Topic/How%20to:%20Connect%20to%20Data%20in%20a%20Database.md)   
- [方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列を追加および削除する](../../../../docs/framework/winforms/controls/add-and-remove-columns-in-the-datagrid-using-the-designer.md)   
- [方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列の順序を変更する](../../../../docs/framework/winforms/controls/change-the-order-of-columns-in-the-datagrid-using-the-designer.md)   
- [方法 : デザイナーを使用して Windows フォーム DataGridView 列の種類を変更する](../../../../docs/framework/winforms/controls/change-the-type-of-a-wf-datagridview-column-using-the-designer.md)   
- [方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列を固定する](../../../../docs/framework/winforms/controls/freeze-columns-in-the-datagrid-using-the-designer.md)   
- [方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列を非表示にする](../../../../docs/framework/winforms/controls/hide-columns-in-the-datagrid-using-the-designer.md)   
- [方法 : デザイナーを使用して Windows フォームの DataGridView コントロールで列を読み取り専用にする](../../../../docs/framework/winforms/controls/make-columns-read-only-in-the-datagrid-using-the-designer.md)   
- [How to: Create a Windows Application Project](http://msdn.microsoft.com/ja-jp/b2f93fed-c635-4705-8d0e-cf079a264efa)   
- [方法 : Windows フォームにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)   
- [ウィンドウ](../Topic/Data%20Sources%20Window.md)   
- [方法: 関連するデータを Windows フォーム アプリケーションに表示する](../Topic/How%20to:%20Display%20Related%20Data%20in%20a%20Windows%20Forms%20Application.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.DataGridView>  
+ <xref:System.Windows.Forms.BindingSource>  
+ <xref:System.Windows.Forms.DataGridView.DataMember%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=nameWithType>  
+ [方法 : データベース内のデータに接続する](http://msdn.microsoft.com/library/6c56e54e-8834-4297-85aa-cc1a443ba556)  
+ [方法: デザイナーを使用して Windows フォーム DataGridView コントロールの列を追加および削除する](../../../../docs/framework/winforms/controls/add-and-remove-columns-in-the-datagrid-using-the-designer.md)  
+ [方法: デザイナーを使用して Windows フォーム DataGridView コントロールの列の順序を変更する](../../../../docs/framework/winforms/controls/change-the-order-of-columns-in-the-datagrid-using-the-designer.md)  
+ [方法: デザイナーを使用して Windows フォーム DataGridView 列の種類を変更する](../../../../docs/framework/winforms/controls/change-the-type-of-a-wf-datagridview-column-using-the-designer.md)  
+ [方法: デザイナーを使用して Windows フォーム DataGridView コントロールの列を固定する](../../../../docs/framework/winforms/controls/freeze-columns-in-the-datagrid-using-the-designer.md)  
+ [方法: デザイナーを使用して Windows フォーム DataGridView コントロールの列を非表示にする](../../../../docs/framework/winforms/controls/hide-columns-in-the-datagrid-using-the-designer.md)  
+ [方法: デザイナーを使用して Windows フォームの DataGridView コントロールで列を読み取り専用にする](../../../../docs/framework/winforms/controls/make-columns-read-only-in-the-datagrid-using-the-designer.md)  
+ [方法: Windows アプリケーション プロジェクトの作成](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)  
+ [方法: Windows フォームにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)  
+ [データ ソース ウィンドウ](http://msdn.microsoft.com/library/0d20f699-cc95-45b3-8ecb-c7edf1f67992)  
+ [方法: 関連するデータを Windows フォーム アプリケーションに表示する](http://msdn.microsoft.com/library/60b1f1ec-6257-42ab-83f0-06d54ed364fd)

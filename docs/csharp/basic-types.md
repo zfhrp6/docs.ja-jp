@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
+ms.openlocfilehash: 398a73f72a9a31c6b2a19a626f704f65564f4fbd
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
 ms.translationtype: HT
-ms.sourcegitcommit: b041fbec3ff22157d00af2447e76a7ce242007fc
-ms.openlocfilehash: 16c99ec5d1c120f1ab079940459cdb7716471353
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/14/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/21/2017
 ---
-
 # <a name="types-variables-and-values"></a>型、変数、および値  
 C# は、厳密に型指定された言語です。 すべての変数および定数は、値に評価されるすべての式がそうであるように、型を持ちます。 すべてのメソッド シグネチャで、各入力パラメーターの型と戻り値の型が指定されます。 .NET Framework クラス ライブラリでは、一連の組み込みの数値型が定義され、さらにファイル システム、ネットワーク接続、オブジェクトのコレクション、オブジェクトの配列、日付など、さまざまな論理構造を表すより複雑な型も定義されています。 一般的な C# プログラムでは、クラス ライブラリで定義されている型と、そのプログラムの問題領域に固有の概念をモデル化するユーザー定義の型が使用されます。  
   
@@ -64,7 +62,7 @@ C# には、整数、浮動小数点値、ブール式、テキスト文字、10
 カスタムの型を独自に作成するには、[struct](language-reference/keywords/class.md)、[class](language-reference/keywords/class.md)、[interface](language-reference/keywords/interface.md)、[enum](language-reference/keywords/enum.md) の各構成要素を使用します。 .NET Framework のクラス ライブラリ自体が、マイクロソフトによって提供された、ユーザーが独自のアプリケーションで使用できるカスタムの型のコレクションです。 既定では、クラス ライブラリで最も頻繁に使用される型は任意の C# プログラムで使用可能になっています。 その他の型は、その型が定義されているアセンブリへのプロジェクト参照を明示的に追加した場合にのみ使用可能になります。 コンパイラがアセンブリを参照できるようになると、そのアセンブリ内で宣言されている型の変数 (および定数) をソース コード内で宣言できるようになります。 
   
 ## <a name="generic-types"></a>ジェネリック型  
-クライアント コードが型のインスタンスを作成したときに提供される実際の型 (*具象型*) のプレースホルダーとして使用される 1 つ以上の*型パラメーター*で、型を宣言することもできます。 このような型は、*ジェネリック型*と呼ばれます。 たとえば、.NET Framework の型 @System.Collections.Generic.List%601 には、慣例により *T* という名前が与えられる 1 つの型パラメーターがあります。この型のインスタンスを作成するときには、たとえば文字列の場合なら、リストに含まれるオブジェクトの型を次のように指定します。  
+クライアント コードが型のインスタンスを作成したときに提供される実際の型 (*具象型*) のプレースホルダーとして使用される 1 つ以上の*型パラメーター*で、型を宣言することもできます。 このような型は、"*ジェネリック型*" と呼ばれます。 たとえば、.NET Framework の型 <xref:System.Collections.Generic.List%601> には、慣例により *T* という名前が与えられる 1 つの型パラメーターがあります。この型のインスタンスを作成するときには、たとえば文字列の場合なら、リストに含まれるオブジェクトの型を次のように指定します。  
   
 [!code-csharp[Generic types](../../samples/snippets/csharp/concepts/basic-types/generic-type.cs)] 
   
@@ -80,7 +78,7 @@ C# には、整数、浮動小数点値、ブール式、テキスト文字、10
 ## <a name="the-common-type-system"></a>共通型システム  
 .NET Framework で型システムを使用する場合は、次の 2 つの基本事項を理解しておく必要があります。  
   
--   継承の原則がサポートされています。 他の型から型を派生させることができます。派生元の型は "*基本型*" と呼ばれます。 派生した型は、基本型のメソッド、プロパティ、およびその他のメンバーを (若干の制限付きで) 継承します。 基本型もなんらかの他の型から派生できます。この場合、派生した型はその継承階層内の両方の基本型のメンバーを継承します。 @System.Int32 (C# のキーワード: `int`) などの組み込み数値型を含むすべての型は、最終的に @System.Object (C# のキーワード: `object`) という単一の基本型から派生します。 この一元化された型階層は、[共通型システム](../standard/common-type-system.md) (CTS) と呼ばれます。 C# での継承の詳細については、「[継承](programming-guide/classes-and-structs/inheritance.md)」を参照してください。  
+-   継承の原則がサポートされています。 他の型から型を派生させることができます。派生元の型は "*基本型*" と呼ばれます。 派生した型は、基本型のメソッド、プロパティ、およびその他のメンバーを (若干の制限付きで) 継承します。 基本型もなんらかの他の型から派生できます。この場合、派生した型はその継承階層内の両方の基本型のメンバーを継承します。 <xref:System.Int32> (C# のキーワード: `int`) などの組み込み数値型を含むすべての型は、最終的に <xref:System.Object> (C# のキーワード: `object`) という単一の基本型から派生します。 この一元化された型階層は、[共通型システム](../standard/common-type-system.md) (CTS) と呼ばれます。 C# での継承の詳細については、「[継承](programming-guide/classes-and-structs/inheritance.md)」を参照してください。  
   
 -   CTS の各型は、"*値型*" または "*参照型*" として定義されます。 これは、.NET Framework クラス ライブラリのすべてのカスタムの型や、ユーザーが独自に定義した型にも当てはまります。 [struct](language-reference/keywords/struct.md) キーワードを使用して定義した型は値型であり、すべての組み込み数値型が **structs** です。 値型の詳細については、「[Structs](structs.md)」を参照してください。 [class](language-reference/keywords/class.md) キーワードを使用して定義した型は参照型です。 参照型の詳細については、「[Classes](classes.md)」を参照してください。 参照型と値型では、コンパイル時の規則や実行時の動作が異なります。
  
@@ -88,4 +86,3 @@ C# には、整数、浮動小数点値、ブール式、テキスト文字、10
 ## <a name="see-also"></a>関連項目
 [構造体](structs.md)
 [クラス](classes.md)
-

@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3b1f5725-ac94-4f17-8e5f-244442438a4d
-ms.translationtype: HT
-ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
 ms.openlocfilehash: 9c2cc090dfd5405def0cd6ab9ec1771be4a332a5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="common-type-system--common-language-specification"></a>共通型システムと共通言語仕様
 
 これらの 2 つの用語は、.NET の世界で自由に使用されます。これらは実際には、.NET 実装で多言語開発を可能にし、そのしくみを理解するために重要です。
@@ -61,4 +59,3 @@ CMS のすべての機能の概要については、下の「[その他のリソ
 
 *   [共通型システム](https://msdn.microsoft.com/library/zcx1eb1e.aspx)
 *   [共通言語仕様](https://msdn.microsoft.com/library/12a7a7h3.aspx)
-

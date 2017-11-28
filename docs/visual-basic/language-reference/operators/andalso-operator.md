@@ -1,84 +1,80 @@
 ---
-title: "AndAlso Operator (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.AndAlso"
-  - "AndAlso"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "short-circuiting"
-  - "AndAlso operator"
-  - "operators [Visual Basic], short-circuiting"
-  - "operators [Visual Basic], conjunction"
-  - "short-circuit evaluation"
+title: "AndAlso 演算子 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.AndAlso
+- AndAlso
+helpviewer_keywords:
+- short-circuiting
+- AndAlso operator [Visual Basic]
+- operators [Visual Basic], short-circuiting
+- operators [Visual Basic], conjunction
+- short-circuit evaluation
 ms.assetid: bbc15191-b374-495b-9b8f-7b8c2f4388eb
-caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 5f92f4ed226c2923c3d95a7b80db3872b7ac33dc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# AndAlso Operator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-2 つの式の論理積を簡略的に求めます。  
+# <a name="andalso-operator-visual-basic"></a>AndAlso 演算子 (Visual Basic)
+ショート サーキットの 2 つの式に対して論理積を実行します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
 result = expression1 AndAlso expression2  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`result`|必ず指定します。  任意のブール型 \(`Boolean`\) の式を指定します。  結果は、2 つの式の比較結果を表すブール値になります。|  
-|`expression1`|必ず指定します。  任意のブール型 \(`Boolean`\) の式を指定します。|  
-|`expression2`|必ず指定します。  任意のブール型 \(`Boolean`\) の式を指定します。|  
+|用語|定義|  
+|---|---|  
+|`result`|必須です。 任意のブール型 (`Boolean`) の式を指定します。 結果は、`Boolean`の 2 つの式の比較の結果。|  
+|`expression1`|必須です。 任意のブール型 (`Boolean`) の式を指定します。|  
+|`expression2`|必須です。 任意のブール型 (`Boolean`) の式を指定します。|  
   
-## 解説  
- コンパイルされたコードで、1 つの式の結果によってはもう 1 つの式の評価を省略できる場合、そこで使用される論理演算子を*ショートサーキット*と呼びます。  最初に評価される式の結果によって演算の最終結果が決まる場合は、もう 1 つの式によって最終結果が変わることはないため、その式を評価する必要はありません。  省略される側の式が複雑な場合や、プロシージャの呼び出しを含む場合は、ショートサーキットによってパフォーマンスを向上できます。  
+## <a name="remarks"></a>コメント  
+ 論理演算があると言われます*ショート サーキット*場合は、コンパイルされたコードが別の式の結果に応じて、1 つの式の評価をバイパスできます。 最初に評価される式の結果には、操作の最終的な結果が判断した場合必要はありませんを 2 番目の式を評価するため、最終的な結果を変更することはできません。 ショート サーキットによりでバイパスされる式が複雑な場合、またはプロシージャの呼び出しが含まれる場合、パフォーマンスが向上します。  
   
- 両方の式の評価が `True` の場合、`result` は `True` になります。  次の表は、2 つの式の値と演算結果 `result` の値の対応を示しています。  
+ 場合に、両方の式が評価される`True`、`result`は`True`します。 次に示す方法`result`決定されます。  
   
-||||  
-|-|-|-|  
-|`expression1` の値|`expression2` の値|`result` の値|  
+|場合`expression1`は|および`expression2`は|値`result`は|  
+|---|---|---|  
 |`True`|`True`|`True`|  
 |`True`|`False`|`False`|  
-|`False`|\(評価しない\)|`False`|  
+|`False`|(評価されません)|`False`|  
   
-## データ型  
- `AndAlso` 演算子は、[Boolean Data Type](../../../visual-basic/language-reference/data-types/boolean-data-type.md) のみに対して定義されます。  Visual Basic は、各オペランドを必要に応じて `Boolean` に変換し、完全な `Boolean` に対して演算を実行します。  結果を数値型に割り当てる場合、Visual Basic は結果を `Boolean` からこのデータ型に変換します。  これにより、予期しない動作が起きることがあります。  たとえば、`5 AndAlso 12` の結果は、`Integer` に変換すると `–1` になります。  
+## <a name="data-types"></a>データの種類  
+ `AndAlso`に対してのみ演算子が定義されて、[ブールのデータ型](../../../visual-basic/language-reference/data-types/boolean-data-type.md)です。 各オペランドを必要に応じて変換`Boolean`での操作を実行して`Boolean`です。 数値型に結果を割り当てると、Visual Basic 変換から`Boolean`その型にします。 予期しない動作を引き起こすこれ可能性があります。 たとえば、`5 AndAlso 12`結果`–1`に変換される`Integer`です。  
   
-## オーバーロード  
- [And Operator](../../../visual-basic/language-reference/operators/and-operator.md) と [IsFalse Operator](../../../visual-basic/language-reference/operators/isfalse-operator.md) は*オーバーロード*できます。つまり、オペランドがそのクラスまたは構造体の型であれば、クラスまたは構造体がこの動作を再定義できます。  `And` および `IsFalse` 演算子をオーバーロードすると、`AndAlso` 演算子の動作に影響します。  `And` および `IsFalse` をオーバーロードしているクラスまたは構造体で `AndAlso` を使用している場合、再定義された動作を確認してください。  詳細については、「[Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+## <a name="overloading"></a>オーバーロード  
+ [And 演算子](../../../visual-basic/language-reference/operators/and-operator.md)と[IsFalse 演算子](../../../visual-basic/language-reference/operators/isfalse-operator.md)できます*オーバー ロードされた*、つまり、あるクラスまたは構造体できます動作を再定義オペランドの型が含まれますクラスまたは構造体。 オーバー ロード、`And`と`IsFalse`演算子の動作に影響、`AndAlso`演算子。 コードで使用する場合`AndAlso`クラスまたはオーバー ロードする構造体で`And`と`IsFalse`、再定義された動作を確認してください。 詳細については、次を参照してください。[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)です。  
   
-## 使用例  
- `AndAlso` 演算子を使って 2 つの式の論理積を求める例を次に示します。  結果は、結合された式全体が真かどうかを表すブール値です。  最初の式が `False` の場合、2 番目の式は評価されません。  
+## <a name="example"></a>例  
+ 次の例では、 `AndAlso` 2 つの式に対して論理積を実行する演算子です。 結果は、`Boolean`全体結合された式かどうかを表す値は true です。 最初の式が場合`False`、2 つ目は評価されません。  
   
  [!code-vb[VbVbalrOperators#24](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/andalso-operator_1.vb)]  
   
- 前の例では、`True`、`False`、`False` の結果を順に生成します。  `secondCheck` の計算では、最初の式が `False` であるため、2 番目の式は評価されません。  しかし、`thirdCheck` の計算では、2 番目の式が評価されます。  
+ 前の例の結果を生成する`True`、 `False`、および`False`、それぞれします。 計算に`secondCheck`、1 つ目が既にあるために、2 番目の式は評価されません`False`です。 計算に 2 番目の式を評価するただし、`thirdCheck`です。  
   
-## 使用例  
- 次の例では、配列の要素の中から指定された値を検索する `Function` プロシージャを示します。  配列が空の場合、また、配列の長さが限度を超えている場合、`While` ステートメントは配列の要素を検索値に対してテストしません。  
+## <a name="example"></a>例  
+ 次の例は、`Function`配列の要素間の特定の値を検索するプロシージャ。 配列が空の場合、または配列の長さを超えている場合、`While`ステートメントは、検索値に対して配列の要素をテストしません。  
   
  [!code-vb[VbVbalrOperators#25](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/andalso-operator_2.vb)]  
   
-## 参照  
- [Logical\/Bitwise Operators](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)   
- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)   
- [Operators Listed by Functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)   
- [And Operator](../../../visual-basic/language-reference/operators/and-operator.md)   
- [IsFalse Operator](../../../visual-basic/language-reference/operators/isfalse-operator.md)   
- [Logical and Bitwise Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+## <a name="see-also"></a>関連項目  
+ [論理/ビット演算子 (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)  
+ [Visual Basic における演算子の優先順位](../../../visual-basic/language-reference/operators/operator-precedence.md)  
+ [機能別の演算子一覧](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
+ [And 演算子](../../../visual-basic/language-reference/operators/and-operator.md)  
+ [IsFalse 演算子](../../../visual-basic/language-reference/operators/isfalse-operator.md)  
+ [Visual Basic における論理/ビット処理演算子](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

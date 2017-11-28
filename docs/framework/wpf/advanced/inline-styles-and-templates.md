@@ -1,47 +1,50 @@
 ---
-title: "インライン スタイルおよびテンプレート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "インライン スタイル"
-  - "インライン テンプレート"
-  - "スタイル, inline"
-  - "テンプレート, inline"
+title: "インライン スタイルおよびテンプレート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- inline templates [WPF]
+- styles [WPF], inline
+- templates [WPF], inline
+- inline styles [WPF]
 ms.assetid: 69a1a3f9-acb5-4e2c-9c43-2e376c055ac4
-caps.latest.revision: 5
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2acb455db8f8bdc5a95bfd2462b651cebbb692c3
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# インライン スタイルおよびテンプレート
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は、<xref:System.Windows.Style> オブジェクトとテンプレート オブジェクト \(<xref:System.Windows.FrameworkTemplate> サブクラス\) を、要素の外観をリソースで定義する方法として提供するので、これらのオブジェクトは複数回数使用できます。  このため、型 <xref:System.Windows.Style> および型 <xref:System.Windows.FrameworkTemplate> を取る [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の属性は、ほとんどの場合、新たにインラインで定義するのではなく、既存のスタイルとテンプレートへのリソース参照を作成します。  
+# <a name="inline-styles-and-templates"></a>インライン スタイルおよびテンプレート
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]提供<xref:System.Windows.Style>オブジェクトとテンプレートのオブジェクト (<xref:System.Windows.FrameworkTemplate>サブクラス)、リソースで要素の外観を定義する手段として使用できるように複数回です。 このため、属性で[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]型を受け取る<xref:System.Windows.Style>と<xref:System.Windows.FrameworkTemplate>新しいものをインラインで定義するのではなく、ほとんどの場合の既存のスタイルとテンプレートにリソース参照を作成します。  
   
-## インライン スタイルおよびテンプレートの制限  
- [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] では、スタイル プロパティとテンプレート プロパティを、技術的に次のいずれかの方法で設定できます。  属性構文を使用して、リソース内で定義されたスタイルを参照できます。たとえば、`<`*object*`Style="{StaticResource`*myResourceKey*`}" .../>` とします。  または、プロパティ要素構文を使用して、スタイル インラインを定義できます。次はその例です。  
+## <a name="limitations-of-inline-styles-and-templates"></a>インライン スタイルとテンプレートの制限事項  
+ [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]スタイルとテンプレートのプロパティは、2 つの方法のいずれかで技術的に設定できます。 たとえば、リソース内で定義されたスタイルを参照する属性の構文を使用できます`<`*オブジェクト*`Style="{StaticResource`*myResourceKey*`}" .../>`です。 または、スタイルをインラインのインスタンスを定義するプロパティ要素構文を使用することができます。  
   
- `<` *object* `>`  
+ `<`*object*`>`  
   
- `<` *object* `.Style>`  
+ `<`*object*`.Style>`  
   
  `<` `Style`  `.../>`  
   
- `</` *object* `.Style>`  
+ `</`*object*`.Style>`  
   
- `</` *object* `>`  
+ `</`*object*`>`  
   
- 属性の使用方法は、さらに一般的です。  インラインで定義され、リソースでは定義されないスタイルは、必然的に、含まれる要素のみに有効範囲が限定されます。また、リソース キーを持たないため、簡単には再利用できません。  一般に、リソースで定義されるスタイルは、汎用性と有用性が高く、コードでのプログラム ロジックとマークアップでのデザインを分離する一般的な [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] プログラミング モデルの方針により合っています。  
+ 属性の使用方法は、はるかに一般的です。 インラインで定義され、リソースではない定義でスタイルを含む要素のみを対象とするとは限りません、再使用できませんように簡単にリソース キーがあるないためです。 一般にリソース定義のスタイル汎用性と、有用であり、一般的な高く[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]プログラミング モデルの方針のマークアップでのデザイン コードでのプログラム ロジックを分離することです。  
   
- 通常、その場所でスタイルまたはテンプレートを使用するだけの場合でも、スタイルやテンプレートをインラインで設定する必要はありません。  ほとんどの要素は、スタイルまたはテンプレートを取ることができ、また、コンテンツ プロパティとコンテンツ モデルをサポートします。  スタイルまたはテンプレートで作成する論理ツリーを一度使用するだけの場合、マークアップで、同等の子要素によってコンテンツ プロパティを直接設定するだけの方がよりいっそう簡単です。  これは、スタイル機構とテンプレート機構を完全にバイパスします。  
+ 通常必要はありませんスタイルまたはテンプレートのインラインを設定する場合でも、その場所にそのスタイルまたはテンプレートを使用するだけです。 スタイルまたはテンプレートが実行できるほとんどの要素は、コンテンツのプロパティとコンテンツ モデルもサポートします。 論理ツリーをのみを使用している場合は、1 回スタイルまたはテンプレートで作成するは、さらに簡単に直接的なマークアップでの同等の子要素のコンテンツ プロパティを塗りつぶします。 これは、バイパス スタイルとテンプレート メカニズム完全します。  
   
- オブジェクトを返すマークアップ拡張機能によって有効となる他の構文も、スタイルおよびテンプレートには可能です。  考えられるシナリオを持つ 2 つの拡張機能として、[TemplateBinding](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md) と <xref:System.Windows.Data.Binding> があります。  
+ オブジェクトを返すマークアップ拡張機能を有効になっている他の構文もスタイルとテンプレートの考えられます。 可能なシナリオがあるこのような 2 つの拡張機能を含める[TemplateBinding](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md)と<xref:System.Windows.Data.Binding>です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)

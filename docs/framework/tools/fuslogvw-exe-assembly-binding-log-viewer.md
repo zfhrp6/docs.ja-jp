@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - failed assembly binds
 - Fuslogvw.exe
@@ -22,16 +16,15 @@ helpviewer_keywords:
 - locating assemblies
 - Assembly Binding Log Viewer
 ms.assetid: e32fa443-0778-4cc3-bf36-5c8ea297d296
-caps.latest.revision: 35
+caps.latest.revision: "35"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 1ad02ade9c9e60e53fa8fb91d9a38d6ec12bc2e5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 381464ecc911dedb0dd394ded7c29fe143423142
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe (アセンブリ バインディング ログ ビューアー)
 アセンブリ バインディング ログ ビューアーは、アセンブリ バインドの詳細を表示します。 この情報は、.NET Framework が実行時にアセンブリを見つけられない原因を診断する場合に役立ちます。 通常、このようなエラーは、アセンブリが間違った位置に配置されているか、無効になったネイティブ イメージが存在するか、バージョン番号またはカルチャの不一致が存在する場合に発生します。 通常、共通言語ランタイムによるアセンブリ検出エラーは、アプリケーション内で <xref:System.TypeLoadException> として示されます。  
@@ -51,18 +44,18 @@ fuslogvw
   
 ### <a name="to-change-the-log-location-view"></a>ログ位置ビューを変更するには  
   
-1.  [**Default**] を選択すると、すべてのアプリケーションの種類のバインド エラーが表示されます。 既定では、ログ エントリは wininet キャッシュのディスクのユーザーごとのディレクトリに格納されます。  
+1.  **[Default]** を選択すると、すべてのアプリケーションの種類のバインド エラーが表示されます。 既定では、ログ エントリは wininet キャッシュのディスクのユーザーごとのディレクトリに格納されます。  
   
-2.  [**Custom**] を選択すると、指定したカスタム ディレクトリのバインド エラーが表示されます。 [**ログ設定**] ダイアログの [カスタム ログのパス] を使用して、ランタイムがログを格納するカスタムの場所を有効なディレクトリ名に指定する必要があります。 このディレクトリはクリーンで、ランタイムが生成するファイルだけが含まれている必要があります。 このディレクトリに、ログに記録するエラーを生成する実行可能ファイルが含まれている場合は、その実行可能ファイルと同じ名前でディレクトリの作成が試行されるため、そのエラーはログに記録されません。 また、ログの位置から実行可能ファイルを実行しようとすると、失敗します。  
+2.  **[Custom]** を選択すると、指定したカスタム ディレクトリのバインド エラーが表示されます。 **ログ設定** ダイアログの カスタム ログのパス を使用して、ランタイムがログを格納するカスタムの場所を有効なディレクトリ名に指定する必要があります。 このディレクトリはクリーンで、ランタイムが生成するファイルだけが含まれている必要があります。 このディレクトリに、ログに記録するエラーを生成する実行可能ファイルが含まれている場合は、その実行可能ファイルと同じ名前でディレクトリの作成が試行されるため、そのエラーはログに記録されません。 また、ログの位置から実行可能ファイルを実行しようとすると、失敗します。  
   
     > [!NOTE]
-    >  カスタム バインド位置ではなく、既定のバインド位置を使用することをお勧めします。 ランタイムは wininet キャッシュに既定のバインド位置を格納するので、この位置は自動的に消去されます。 カスタム バインド位置を指定する場合は、この位置を削除する手段を独自に組み込む必要があります。  
+    >  カスタム バインド位置ではなく、既定のバインド位置を使用することをお勧めします。 ランタイムは wininet キャッシュに既定のバインド位置を格納するので、この位置は自動的に消去されます。カスタム バインド位置を指定する場合は、この位置を削除する手段を独自に組み込む必要があります。  
   
 ### <a name="to-view-details-about-a-specific-failure"></a>特定のエラーの詳細を表示するには  
   
 1.  ビューアーにエントリを表示するアプリケーション名を選択します。  
   
-2.  [**View Log**] をクリックします。 また、選択したエントリをダブルクリックすることもできます。  
+2.  **[View Log]** をクリックします。 また、選択したエントリをダブルクリックすることもできます。  
   
      選択したバインド エラーについて、次の詳細が表示されます。  
   
@@ -116,30 +109,30 @@ LOG: All probing URLs attempted and failed.
   
 1.  ビューアーでエントリを選択します。  
   
-2.  [**Delete Entry**] をクリックします。  
+2.  **[Delete Entry]** をクリックします。  
   
 ### <a name="to-delete-all-entries-from-the-log"></a>ログからすべてのエントリを削除するには  
   
--   [**Delete All**] をクリックします。  
+-   **[Delete All]** をクリックします。  
   
 ### <a name="to-refresh-the-user-interface"></a>ユーザー インターフェイスに最新の情報を表示するには  
   
--   [**最新の情報に更新**] をクリックします。 ビューアーの実行中に新しいログ エントリが自動的に検出されることはありません。 新しいログ エントリを表示するには、[**Refresh**] を使用する必要があります。  
+-   **[最新の情報に更新]** をクリックします。 ビューアーの実行中に新しいログ エントリが自動的に検出されることはありません。 新しいログ エントリを表示するには、**[Refresh]** を使用する必要があります。  
   
 ### <a name="to-change-the-log-settings"></a>ログ設定を変更するには、次の処理手順に従います。  
   
--   [**設定**] をクリックして [**ログ設定**] ダイアログ ボックスを表示します。  
+-   **[設定]** をクリックして **[ログ設定]** ダイアログ ボックスを表示します。  
   
 ### <a name="to-view-the-about-dialog"></a>[バージョン情報] ダイアログを表示するには  
   
--   [**バージョン情報**] をクリックします。  
+-   **[バージョン情報]** をクリックします。  
   
 ## <a name="binding-logs-for-native-images"></a>ネイティブ イメージのバインディング ログ  
  既定では、Fuslogvw.exe は通常のアセンブリ バインド要求をログに記録します。 代わりに、[ネイティブ イメージ ジェネレーター (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) を使用して作成されたネイティブ イメージのアセンブリ バインドをログに記録することもできます。  
   
 #### <a name="to-log-assembly-binds-for-native-images"></a>ネイティブ イメージのアセンブリ バインドをログに記録するには  
   
--   [**ログのカテゴリ**] グループで、[**ネイティブ イメージ**] をクリックします。  
+-   **[ログのカテゴリ]** グループで、**[ネイティブ イメージ]** をクリックします。  
   
  次のログは、アプリケーションのネイティブ イメージの作成時には存在しなかった依存関係が原因で発生したエラーを示しています。 実行時の依存関係が Ngen.exe を実行したときの依存関係と異なる場合、ネイティブ イメージへのバインドはできません。  
   
@@ -196,38 +189,38 @@ Discarding native image.
 ```  
   
 ## <a name="the-log-settings-dialog"></a>[ログ設定] ダイアログ  
- [**ログ設定**] ダイアログを使用すると、次のようなアクションを実行できます。  
+ **[ログ設定]** ダイアログを使用すると、次のようなアクションを実行できます。  
   
 #### <a name="to-disable-logging"></a>ログを無効にするには  
   
--   [**ログを無効にする**] をクリックします。  このオプションの既定値はオンです。  
+-   **[ログを無効にする]** をクリックします。  このオプションの既定値はオンです。  
   
 #### <a name="to-log-assembly-binds-in-exceptions"></a>アセンブリ バインドの例外をログに記録するには  
   
--   [**例外テキストに記録する**] をクリックします。 詳細度が最も低い fusion ログ情報だけが例外テキストに記録されます。 完全な情報を表示するには、その他の設定のいずれかを使用します。  
+-   **[例外テキストに記録する]** をクリックします。 詳細度が最も低い fusion ログ情報だけが例外テキストに記録されます。 完全な情報を表示するには、その他の設定のいずれかを使用します。  
   
      ドメインに中立的に読み込まれたアセンブリに関する「重要」メモを参照してください。  
   
 #### <a name="to-log-assembly-bind-failures"></a>アセンブリ バインドの失敗をログに記録するには  
   
--   [**バインドの失敗をディスクに記録する**] をクリックします。  
+-   **[バインドの失敗をディスクに記録する]** をクリックします。  
   
      ドメインに中立的に読み込まれたアセンブリに関する「重要」メモを参照してください。  
   
 #### <a name="to-log-all-assembly-binds"></a>すべてのアセンブリ バインドをログに記録するには  
   
--   [**すべてのバインドをディスクに記録する**] をクリックします。  
+-   **[すべてのバインドをディスクに記録する]** をクリックします。  
   
      ドメインに中立的に読み込まれたアセンブリに関する「重要」メモを参照してください。  
   
 > [!IMPORTANT]
->  アセンブリがドメインに中立的に読み込まれた場合 (<xref:System.AppDomainSetup.LoaderOptimization%2A> プロパティを <xref:System.LoaderOptimization.MultiDomain?displayProperty=fullName> または <xref:System.LoaderOptimization.MultiDomainHost?displayProperty=fullName> に設定した場合など)、ログが有効になっているとメモリがリークすることがあります。 これが起こるのは、ドメインに中立的なモジュールがアプリケーション ドメインに読み込まれているときにログ エントリが作成され、その後でアプリケーション ドメインがアンロードされた場合です。 このログ エントリは、プロセスが終了するまで解放されません。 一部のデバッガーは、自動的にログを有効にします。  
+>  アセンブリがドメインに中立的に読み込まれた場合 (<xref:System.AppDomainSetup.LoaderOptimization%2A> プロパティを <xref:System.LoaderOptimization.MultiDomain?displayProperty=nameWithType> または <xref:System.LoaderOptimization.MultiDomainHost?displayProperty=nameWithType> に設定した場合など)、ログが有効になっているとメモリがリークすることがあります。 これが起こるのは、ドメインに中立的なモジュールがアプリケーション ドメインに読み込まれているときにログ エントリが作成され、その後でアプリケーション ドメインがアンロードされた場合です。 このログ エントリは、プロセスが終了するまで解放されません。 一部のデバッガーは、自動的にログを有効にします。  
   
 #### <a name="to-enable-a-custom-log-path"></a>カスタムのログ パスを有効にするには  
   
-1.  [**カスタム ログを有効にする**] をクリックします。  
+1.  **[カスタム ログを有効にする]** をクリックします。  
   
-2.  [**カスタム ログのパス**] テキスト ボックスにパスを入力します。  
+2.  **[カスタム ログのパス]** テキスト ボックスにパスを入力します。  
   
 > [!NOTE]
 >  [アセンブリ バインディング ログ ビューアー (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) では、バインディング ログの格納に Internet Explorer (IE) のキャッシュを使用します。 IE キャッシュは時折破損することがあるため、[アセンブリ バインディング ログ ビューアー (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) の表示ウィンドウに新しいバインディング ログが表示されなくなることがあります。 IE キャッシュが破損した場合、.NET バインディング インフラストラクチャ (fusion) ではバインディング ログの読み書きができなくなります (この問題はカスタム ログ パスを使用している場合は発生しません)。破損を修復し、fusion でバインディング ログが再度表示されるようにするには、IE の [インターネット オプション] ダイアログで一時インターネット ファイルを削除して IE キャッシュを消去します。  
@@ -238,15 +231,14 @@ Discarding native image.
   
 1.  前の手順に従って、カスタム ログのパスを有効にします。 既定では、Windows アプリ コンテナー内で実行しているアプリでは、ハード ディスクへのアクセスが制限されます。 指定するディレクトリでは、アプリ コンテナー内のすべてのアプリに対する読み取り/書き込みアクセスが与えられます。  
   
-2.  [**没入型のログを有効にします**] チェック ボックスをオンにします。  
+2.  **[没入型のログを有効にします]** チェック ボックスをオンにします。  
   
     > [!NOTE]
     >  このチェック ボックスは、Windows 8 以降でのみ有効になります。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.TypeLoadException>   
- [ツール](../../../docs/framework/tools/index.md)   
- [グローバル アセンブリ キャッシュ](../../../docs/framework/app-domains/gac.md)   
- [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
+ <xref:System.TypeLoadException>  
+ [ツール](../../../docs/framework/tools/index.md)  
+ [グローバル アセンブリ キャッシュ](../../../docs/framework/app-domains/gac.md)  
+ [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
-

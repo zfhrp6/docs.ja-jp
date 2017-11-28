@@ -16,16 +16,15 @@ helpviewer_keywords:
 - Collections classes
 - grouping data in collections, selecting collection class
 ms.assetid: ba049f9a-ce87-4cc4-b319-3f75c8ddac8a
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: 64b50839a5500b671a4bd5dd92eec2f0db9787a1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: b37d1d7ff75aebfcdf3e849931a5d2b3924d5d7a
-ms.openlocfilehash: 01abb535567429780a8a0776aebecaf64307950d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="selecting-a-collection-class"></a>コレクション クラスの選択
 コレクション クラスは慎重に選択してください。 間違った型を使用すると、コレクションの使用が制限されることがあります。 一般に、.NET Framework バージョン 1.1 を特に対象としている場合を除いて、<xref:System.Collections> 名前空間にある型は使用しないでください。 タイプ セーフの強化や他の改善があるため、コレクションの汎用および同時実行バージョンをお勧めします。  
@@ -88,8 +87,7 @@ ms.lasthandoff: 09/06/2017
  PLINQ は、マルチコア コンピューターをより効率的に使用することにより、多くのシナリオでより高速にクエリを実行できる LINQ to Objects の並列実装を提供します。 詳細については、「[Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Collections>   
- <xref:System.Collections.Specialized>   
- <xref:System.Collections.Generic>   
+ <xref:System.Collections>  
+ <xref:System.Collections.Specialized>  
+ <xref:System.Collections.Generic>  
  [スレッドセーフなコレクション](../../../docs/standard/collections/thread-safe/index.md)
-

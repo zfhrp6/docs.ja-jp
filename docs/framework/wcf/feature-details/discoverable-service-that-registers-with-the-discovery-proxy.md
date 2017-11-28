@@ -1,23 +1,26 @@
 ---
-title: "探索プロキシで登録される探索可能なサービスの実装方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "探索プロキシで登録される探索可能なサービスの実装方法"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: eb275bc1-535b-44c8-b9f3-0b75e9aa473b
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e6633491ec3b01a4ca3494639e9537c9f6441da5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 探索プロキシで登録される探索可能なサービスの実装方法
-これは、探索プロキシの実装方法に関する&4; つのトピックのうちの&2; 番目のトピックです。 前のトピックで[方法: 探索プロキシの実装](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)、探索プロキシを実装します。 このトピックでは、アナウンス メッセージ ([!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] および `Hello`) を探索プロキシに送信する `Bye` サービスを作成します。この送信により、サービスが探索プロキシに登録または登録解除されます。  
+# <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>探索プロキシで登録される探索可能なサービスの実装方法
+これは、探索プロキシの実装方法に関する 4 つのトピックのうちの 2 番目のトピックです。 前のトピックで[する方法: 探索プロキシの実装](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)、探索プロキシを実装します。 このトピックでは、アナウンス メッセージ ([!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] および `Hello`) を探索プロキシに送信する `Bye` サービスを作成します。この送信により、サービスが探索プロキシに登録または登録解除されます。  
   
 ### <a name="to-define-the-service-contract"></a>サービス コントラクトを定義するには  
   
@@ -33,14 +36,14 @@ caps.handback.revision: 14
   
 4.  次の using ステートメントを追加します。  
   
-    ```  
+    ```csharp  
     using System;  
     using System.ServiceModel;  
     ```  
   
 5.  CalculatorService.cs でサービス コントラクトを定義します。  
   
-    ```  
+    ```csharp  
     // Define a service contract.  
         [ServiceContract(Namespace = "http://Microsoft.Samples.Discovery")]  
         public interface ICalculatorService  
@@ -54,12 +57,11 @@ caps.handback.revision: 14
             [OperationContract]  
             double Divide(double n1, double n2);  
         }  
-  
     ```  
   
 6.  また、CalculatorService.cs でサービス コントラクトを実装します。  
   
-    ```  
+    ```csharp  
     // Service class which implements the service contract.      
         public class CalculatorService : ICalculatorService  
         {  
@@ -95,7 +97,6 @@ caps.handback.revision: 14
                 return result;  
             }  
         }  
-  
     ```  
   
 ### <a name="to-host-the-service"></a>サービスをホストするには  
@@ -104,18 +105,16 @@ caps.handback.revision: 14
   
 2.  次の using ステートメントを追加します。  
   
-    ```  
+    ```csharp 
     using System;  
     using System.ServiceModel;  
     using System.ServiceModel.Description;  
     using System.ServiceModel.Discovery;  
-  
     ```  
   
 3.  `Main()` メソッド内に次のコードを追加します。  
   
-    ```  
-  
+    ```csharp  
     // Define the base address of the service  
     Uri baseAddress = new Uri("net.tcp://localhost:9002/CalculatorService/" + Guid.NewGuid().ToString());  
     // Define the endpoint address where announcement messages will be sent  
@@ -165,12 +164,12 @@ caps.handback.revision: 14
     }  
     ```  
   
- これで、探索サービスの実装が完了しました。 進んで[方法: 探索プロキシを使用して、サービスを検索するクライアント アプリケーションの実装](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)します。  
+ これで、探索サービスの実装が完了しました。 進む[する方法: 探索プロキシを使用してサービスを検索するクライアント アプリケーションの実装](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)です。  
   
 ## <a name="example"></a>例  
  このトピックで使用するコード全体の一覧を次に示します。  
   
-```  
+```csharp  
 // CalculatorService.cs  
 //----------------------------------------------------------------  
 // Copyright (c) Microsoft Corporation.  All rights reserved.  
@@ -231,10 +230,9 @@ namespace Microsoft.Samples.Discovery
         }  
     }  
 }  
-  
 ```  
   
-```  
+```csharp  
 // Program.cs  
 //----------------------------------------------------------------  
 // Copyright (c) Microsoft Corporation.  All rights reserved.  
@@ -295,10 +293,8 @@ namespace Microsoft.Samples.Discovery
     }  
 }  
 ```  
-  
-<!-- TODO: review snippet reference  [!CODE [Microsoft.Win32.RegistryKey#4](Microsoft.Win32.RegistryKey#4)]  -->  
-  
+
 ## <a name="see-also"></a>関連項目  
- [WCF Discovery](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)   
- [方法: 探索プロキシの実装](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)   
- [方法: 探索プロキシを使用して、サービスを検索するクライアント アプリケーションの実装](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)
+ [WCF Discovery](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)  
+ [方法: 探索プロキシの実装](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)  
+ [方法: 探索プロキシを使用してサービスを検索するクライアント アプリケーションの実装](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)

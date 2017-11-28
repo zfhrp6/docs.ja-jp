@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 6520323e-ff28-4c8a-ba80-e64a413199e6
+ms.openlocfilehash: 797bd4a7c160feda69a3190d9e364b166a51c703
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 934373d61407c8cc19b7d6424898a582880f9c21
-ms.openlocfilehash: 47e895274f6d400639878e0bd5c700e04b554ce5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="net-assembly-file-format"></a>.NET アセンブリ ファイルの形式
 
 .NET では、.NET プログラムの完全な記述と格納に使用するバイナリ ファイル形式として、"アセンブリ" が定義されています。 アセンブリは、プログラム自体と同様に従属ライブラリにも使用されます。 .NET プログラムは、適切な .NET 実装以外の成果物を必要とせずに、1 つ以上のアセンブリとして実行できます。 ネイティブの依存関係 (オペレーティング システム API を含む) は別の考慮事項であり、.NET アセンブリの形式には存在しません。ただし、この形式を使用して記述されることがあります (たとえば WinRT)。
@@ -40,5 +38,4 @@ ECMA 335 II.25.1 のランタイム ファイル形式の構造に基づくア�
 
 ## <a name="processing-the-assemblies"></a>アセンブリの処理
 
-アセンブリを処理するツールや API を記述することができます。 アセンブリ情報を使用して、実行時のプログラムによる決定、アセンブリの書き換え、エディターでの API IntelliSense の提供、ドキュメントの生成ができます。 <xref:System.Reflection?displayProperty=fullName> と [Mono.Cecil](http://www.mono-project.com/docs/tools+libraries/libraries/Mono.Cecil/) は、この目的によく使われるツールの好例です。
-
+アセンブリを処理するツールや API を記述することができます。 アセンブリ情報を使用して、実行時のプログラムによる決定、アセンブリの書き換え、エディターでの API IntelliSense の提供、ドキュメントの生成ができます。 <xref:System.Reflection?displayProperty=nameWithType> と [Mono.Cecil](http://www.mono-project.com/docs/tools+libraries/libraries/Mono.Cecil/) は、この目的によく使われるツールの好例です。

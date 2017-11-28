@@ -1,30 +1,21 @@
 ---
 title: "非同期の戻り値の型 (C#)"
 ms.custom: 
-ms.date: 2075-05-29
+ms.date: 05/29/2017
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: ddb2539c-c898-48c1-ad92-245e4a996df8
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 7aee1ebdf24a2ac564268e1f36d3aac707dea463
+ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9e7f31d4160d44668f4ddea5e1ca0eaa3037c5a5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="async-return-types-c"></a>非同期の戻り値の型 (C#)
 非同期メソッドには、次の戻り値の型があります。
@@ -35,7 +26,7 @@ ms.lasthandoff: 07/28/2017
 
 - `void`: イベント ハンドラーの場合。 
 
-- C# 7 以降、アクセス可能な `GetAwaiter` を持つ任意の型です。 <xref:System.Runtime.CompilerServices.ICriticalNotifyCompletion?displayProperty=fullName> メソッドによって返されるオブジェクトは、`GetAwaiter` インターフェイスを実装する必要があります。
+- C# 7 以降、アクセス可能な `GetAwaiter` を持つ任意の型です。 <xref:System.Runtime.CompilerServices.ICriticalNotifyCompletion?displayProperty=nameWithType> メソッドによって返されるオブジェクトは、`GetAwaiter` インターフェイスを実装する必要があります。
   
 非同期メソッドの詳細については、「[Async および Await を使用した非同期プログラミング (C#)](../../../../csharp/programming-guide/concepts/async/index.md)」を参照してください。  
   
@@ -46,7 +37,7 @@ ms.lasthandoff: 07/28/2017
   
 次の例では、`GetLeisureHours` 非同期メソッドには整数を返す `return` ステートメントが含まれます。 そのため、メソッド宣言では、戻り値の型を `Task<int>` と指定する必要があります。  <xref:System.Threading.Tasks.Task.FromResult%2A> 非同期メソッドは、文字列を返す操作を表すプレースホルダーです。
   
-[!code-cs[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns1.cs)]
+[!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns1.cs)]
 
 `GetLeisureHours` が `ShowTodaysInfo` メソッドの await 式の中から呼び出されると、await 式は `GetLeisureHours` メソッドから返されるタスクに格納されている整数値 (`leisureHours` の値) を取得します。 await 式の詳細については、「[await](../../../../csharp/language-reference/keywords/await.md)」を参照してください。  
   
@@ -55,14 +46,14 @@ ms.lasthandoff: 07/28/2017
 > [!IMPORTANT]
 >  <xref:System.Threading.Tasks.Task%601.Result%2A> プロパティは Blocking プロパティです。 タスクが終了する前にアクセスしようとすると、現在アクティブなスレッドは、タスクが完了して値が使用可能になるまで、ブロックされます。 多くの場合、プロパティに直接アクセスする代わりに、`await` を使用して値にアクセスする必要があります。 <br/> 前の例では、アプリケーションが終了する前に `ShowTodaysInfo` メソッドが実行を終了できるように、<xref:System.Threading.Tasks.Task%601.Result%2A> プロパティの値を取得してメイン スレッドをブロックしました。  
 
-[!code-cs[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns1a.cs#1)]
+[!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns1a.cs#1)]
   
 ##  <a name="BKMK_TaskReturnType"></a>Task 型  
 `return` ステートメントを含まない非同期メソッド、またはオペランドを返さない `return` ステートメントを含む非同期メソッドは、通常は <xref:System.Threading.Tasks.Task> の戻り値の型を指定します。 こうしたメソッドは、同期的に実行するように作成されている場合に `void` を返します。 非同期メソッドに戻り値の型 <xref:System.Threading.Tasks.Task> を使用した場合、呼び出し元のメソッドは `await` 演算子を使って、呼び出された async のメソッドが終了するまで、呼び出し元の完了を中断します。  
   
 次の例では、`WaitAndApologize` 非同期メソッドには `return` ステートメントが含まれていないため、メソッドは <xref:System.Threading.Tasks.Task> オブジェクトを返します。 これにより、`WaitAndApologize` を待機できます。 <xref:System.Threading.Tasks.Task> 型には戻り値がないため、`Result` プロパティを含みません。  
 
-[!code-cs[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns2.cs)]  
+[!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns2.cs)]  
   
 `WaitAndApologize` を待機するには、void を返す同期メソッドを呼び出す場合と同様に、await 式でなく、await ステートメントを使用します。 この場合、await 演算子の適用によって値は生成されません。  
   
@@ -70,7 +61,7 @@ ms.lasthandoff: 07/28/2017
   
 次のコードは、`WaitAndApologize` メソッドの呼び出しを、そのメソッドが返すタスクの待機から分離します。  
  
-[!code-cs[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns2a.cs#1)]  
+[!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns2a.cs#1)]  
  
 ##  <a name="BKMK_VoidReturnType"></a> Void 戻り値の型  
 `void` 戻り値の型は、`void` 戻り値の型が必要な非同期イベント ハンドラーで使用します。 値を返さないイベント ハンドラー以外のメソッドについては、<xref:System.Threading.Tasks.Task> を返す必要があります。これは、`void` を返す非同期メソッドを待機できないためです。 このようなメソッドの呼び出し元は、呼び出した非同期メソッドが完了するのを待たずに、完了まで継続できる必要があります。また呼び出し元は、非同期メソッドが生成する値または例外とは無関係である必要があります。  
@@ -81,7 +72,7 @@ void を返す非同期メソッドの呼び出し元は、メソッドがスロ
   
 次の例では、非同期のイベント ハンドラーを定義します。  
  
-[!code-cs[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns3.cs)]  
+[!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns3.cs)]  
  
 ## <a name="generalized-async-return-types-and-valuetaskt"></a>一般化された async の戻り値の型と ValueTask<T>
 
@@ -89,9 +80,9 @@ C# 7 以降、非同期メソッドで、アクセス可能な `GetAwaiter` メ�
  
 <xref:System.Threading.Tasks.Task> および <xref:System.Threading.Tasks.Task%601> は参照型であるため、特に厳密なループ処理で割り当てが発生すると、パフォーマンスが重要なパスのメモリ割り当てが、パフォーマンスに悪影響を及ぼすことがあります。 一般化された戻り値の型のサポートにより、参照型ではなく、軽量な値の型を返すことができ、追加のメモリ割り当てを回避することが可能です。 
 
-.NET には、一般化されたタスク戻り値の軽量な実装として、<xref:System.Threading.Tasks.ValueTask%601?displayProperty=fullName> 構造が用意されています。 <xref:System.Threading.Tasks.ValueTask%601?displayProperty=fullName> 型を使用するには、`System.Threading.Tasks.Extensions` NuGet パッケージをプロジェクトに追加する必要があります。 次の例では、<xref:System.Threading.Tasks.ValueTask%601> 構造を使用して、2 つのさいころを転がしたときの値を取得します。 
+.NET には、一般化されたタスク戻り値の軽量な実装として、<xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> 構造が用意されています。 <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> 型を使用するには、`System.Threading.Tasks.Extensions` NuGet パッケージをプロジェクトに追加する必要があります。 次の例では、<xref:System.Threading.Tasks.ValueTask%601> 構造を使用して、2 つのさいころを転がしたときの値を取得します。 
   
-[!code-cs[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-valuetask.cs)]
+[!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-valuetask.cs)]
 
 ## <a name="see-also"></a>関連項目  
 <xref:System.Threading.Tasks.Task.FromResult%2A>   
@@ -99,4 +90,3 @@ C# 7 以降、非同期メソッドで、アクセス可能な `GetAwaiter` メ�
 [非同期プログラムにおける制御フロー (C#)](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md)   
 [async](../../../../csharp/language-reference/keywords/async.md)   
 [await](../../../../csharp/language-reference/keywords/await.md)
-

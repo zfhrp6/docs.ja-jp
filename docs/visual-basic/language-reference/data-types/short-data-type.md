@@ -1,56 +1,75 @@
 ---
-title: "Short Data Type (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Short"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "numbers, whole"
-  - "whole numbers"
-  - "integral data types"
-  - "integer numbers"
-  - "numbers, integer"
-  - "integers, data types"
-  - "integers, types"
-  - "data types [Visual Basic], integral"
-  - "S literal type character"
-  - "Short data type"
-  - "literal type characters, S"
+title: "Short 型 (Visual Basic)"
+ms.date: 04/20/2017
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+author: rpetrusha
+ms.author: ronpet
+f1_keywords: vb.Short
+helpviewer_keywords:
+- numbers [Visual Basic], whole
+- whole numbers
+- integral data types [Visual Basic]
+- integer numbers
+- numbers [Visual Basic], integer
+- integers [Visual Basic], data types
+- integers [Visual Basic], types
+- data types [Visual Basic], integral
+- S literal type character [Visual Basic]
+- Short data type
+- literal type characters [Visual Basic], S
 ms.assetid: 65fcbcf3-a841-400e-885e-301497729a8b
-caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
+ms.openlocfilehash: fef948debed69cf9fb7b0e6bb65eb0ddbe497a92
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Short Data Type (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-\-32,768 から 32,767 までの符号付き 16 ビット \(2 バイト\) の整数を保持します。  
+# <a name="short-data-type-visual-basic"></a>Short データ型 (Visual Basic)
+符号付き 16 ビット (2 バイト) 整数-32,768 からの値の範囲は、32,767 までです。  
   
-## 解説  
- `Short` データ型は、整数型 \(`Integer`\) ほどのデータ 幅を必要としない整数値を格納するために使用します。  場合によっては、共通言語ランタイムが `Short` 変数をメモリ内で間を空けないようにパックし、メモリの消費量を減らすことも可能です。  
+## <a name="remarks"></a>コメント  
+ 使用して、`Short`データ型の完全なデータの幅を必要としない整数値を含む`Integer`です。 場合によっては、共通言語ランタイムがパックことができます、`Short`変数密接に関連しておよびメモリの消費量を保存します。  
   
  `Short` の既定値は 0 です。  
   
-## プログラミングのヒント  
+## <a name="literal-assignments"></a>リテラルの割り当て
+
+宣言して初期化することができます、`Short`変数の 10 進数リテラル、16 進数のリテラルに 8 進数のリテラルを割り当てまたは (Visual Basic 2017 以降)、バイナリ リテラルです。 整数リテラルが `Short` の範囲外にある場合 (つまり、<xref:System.Int16.MinValue?displayProperty=nameWithType> より小さいか、<xref:System.Int16.MaxValue?displayProperty=nameWithType> より大きい場合)、コンパイル エラーが発生します。
+
+次の例では、整数と等しい 16 進数、10 進数として表される 1,034 およびからバイナリ リテラルを暗黙的に変換[整数](integer-data-type.md)に`Short`値。
+
+[!code-vb[Short](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#Short)]
+
+> [!NOTE]
+> プレフィックスを使用する`&h`または`&H`、16 進数リテラル プレフィックスを表すために`&b`または`&B`バイナリ リテラル、およびプレフィックスを意味する`&o`または`&O`を 8 進数のリテラルを示すためにします。 10 進リテラルには、プレフィックスはありません。
+
+Visual Basic 2017 から始めて、使用することできますもアンダー スコア文字`_`、読みやすさを強化するために、桁区切り記号として次の例として示します。
+
+[!code-vb[Short](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#ShortS)]
+
+数値リテラルを含めることも、 `S` [文字入力](../../programming-guide\language-features\data-types/type-characters.md)を示すために、`Short`データ型は、次の例のようにします。
+
+```vb
+Dim number = &H0326S
+```
+
+## <a name="programming-tips"></a>プログラミングのヒント
+
+-   **拡大します。** `Short`拡大変換後のデータ型`Integer`、 `Long`、 `Decimal`、 `Single`、または`Double`です。 これは、`Short` エラーを発生させることなく、これらの型のいずれかに <xref:System.OverflowException?displayProperty=nameWithType> を変換できることを意味します。  
   
--   **拡大変換。** `Short` データ型は、`Integer`、`Long`、`Decimal`、`Single`、または `Double` に拡大変換されます。  これは、<xref:System.OverflowException?displayProperty=fullName> エラーを発生させることなく、これらの型のいずれかに `Short` を変換できることを意味します。  
+-   **型宣言文字。** あるリテラルにリテラルの型文字 `S` を付けると、そのリテラルは `Short` に変換されます。 `Short`識別子の型文字がありません。  
   
--   **型宣言文字。**あるリテラルにリテラルの型文字 `S` を付けると、そのリテラルは `Short` に変換されます。  `Short` には識別子の型文字はありません。  
+-   **Framework の型。** .NET Framework において対応する型は、<xref:System.Int16?displayProperty=nameWithType> 構造体です。  
   
--   **Framework のデータ型。**.NET Framework において対応する型は、<xref:System.Int16?displayProperty=fullName> 構造体です。  
-  
-## 参照  
- <xref:System.Int16?displayProperty=fullName>   
- [Data Types](../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)   
- [Integer Data Type](../../../visual-basic/language-reference/data-types/integer-data-type.md)   
- [Long Data Type](../../../visual-basic/language-reference/data-types/long-data-type.md)   
- [Efficient Use of Data Types](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+## <a name="see-also"></a>関連項目
+
+ <xref:System.Int16?displayProperty=nameWithType>  
+ [データの種類](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [データ型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [整数データ型](../../../visual-basic/language-reference/data-types/integer-data-type.md)  
+ [Long データ型](../../../visual-basic/language-reference/data-types/long-data-type.md)  
+ [データ型の有効な使用方法](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

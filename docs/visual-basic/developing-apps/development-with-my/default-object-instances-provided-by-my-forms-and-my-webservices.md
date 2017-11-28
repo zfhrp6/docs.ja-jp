@@ -1,39 +1,38 @@
 ---
-title: "Default Object Instances Provided by My.Forms and My.WebServices (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "My.WebServices object, developing applications"
-  - "My.Forms object, developing applications"
-  - "rapid application development (RAD), My.Forms"
-  - "rapid application development (RAD), My.WebServices"
+title: "My.Forms および My.WebServices が提供する既定のオブジェクト インスタンス (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- My.WebServices object [Visual Basic], developing applications
+- My.Forms object [Visual Basic], developing applications
+- rapid application development (RAD), My.Forms
+- rapid application development (RAD), My.WebServices
 ms.assetid: de930027-9108-4f0c-b97c-5e7db4d6ef79
-caps.latest.revision: 5
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 44265c3f6f38a001192a8d92f2fbb6edeaca21cb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Default Object Instances Provided by My.Forms and My.WebServices (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-[My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md) および [My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md) オブジェクトは、アプリケーションで使用されるフォーム、データ ソース、および XML Web サービスへのアクセスを提供します。  このアクセスは、これらの各オブジェクトがそれぞれの*既定インスタンス*のコレクションを提供することで実現します。  
+# <a name="default-object-instances-provided-by-myforms-and-mywebservices-visual-basic"></a>My.Forms および My.WebServices が提供する既定のオブジェクト インスタンス (Visual Basic)
+[My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md)と[My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md)オブジェクトは、フォーム、データ ソース、およびアプリケーションによって使用される XML Web サービスへのアクセスを提供します。 このように設定のコレクションを提供することによって*既定インスタンス*のこれらの各オブジェクトです。  
   
-## 既定インスタンス  
- 既定インスタンスとは、ランタイムが提供するクラスのインスタンスで、`Dim` ステートメントおよび `New` ステートメントを使用して宣言およびインスタンス化する必要はありません。  次の例は、`Form1` という名前の <xref:System.Windows.Forms.Form> クラスのインスタンスを宣言およびインスタンス化した方法と、`My.Forms` を通じてこの <xref:System.Windows.Forms.Form> クラスの既定インスタンスを取得できるようにする方法を具体的に示しています。  
+## <a name="default-instances"></a>既定のインスタンス  
+ 既定のインスタンスは、ランタイムによって提供されする必要がないクラスのインスタンスは、宣言およびインスタンスを使用して、`Dim`と`New`ステートメントです。 次の例は、どのようにする場合がありますが宣言およびインスタンスのインスタンス、<xref:System.Windows.Forms.Form>と呼ばれるクラス`Form1`、され、どのようにこれの既定のインスタンスを取得することが今すぐ<xref:System.Windows.Forms.Form>クラスを通じて`My.Forms`です。  
   
  [!code-vb[VbVbcnMy#5](../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/default-object-instances-provided-by-my-forms-and-my-webservices_1.vb)]  
   
  [!code-vb[VbVbcnMy#6](../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/default-object-instances-provided-by-my-forms-and-my-webservices_2.vb)]  
   
- `My.Forms` オブジェクトは、プロジェクト内に存在するすべての `Form` クラスの既定インスタンスのコレクションを返します。  同様に、`My.WebServices` は、アプリケーション内で参照を作成したすべての Web サービスのプロキシ クラスの既定インスタンスを提供します。  
+ `My.Forms`オブジェクトに対する既定のインスタンスのコレクションを返しますすべて`Form`プロジェクトに存在するクラス。 同様に、`My.WebServices`アプリケーションでへの参照を作成したすべての Web サービスのプロキシ クラスの既定のインスタンスを提供します。  
   
-## 参照  
- [My.Forms Object](../../../visual-basic/language-reference/objects/my-forms-object.md)   
- [My.WebServices Object](../../../visual-basic/language-reference/objects/my-webservices-object.md)   
- [How My Depends on Project Type](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)
+## <a name="see-also"></a>関連項目  
+ [My.Forms オブジェクト](../../../visual-basic/language-reference/objects/my-forms-object.md)  
+ [My.WebServices オブジェクト](../../../visual-basic/language-reference/objects/my-webservices-object.md)  
+ [プロジェクトの種類に応じた My の機能](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)

@@ -1,36 +1,34 @@
 ---
-title: "XML データ型から CLR 型へのマッピング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "XML データ型から CLR 型へのマッピング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: cabdfcad-f359-479b-b71c-8b2fad42ca49
-caps.latest.revision: 2
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 3b6e67d27de33e61f5d5190249e90ac48e1aaaec
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# XML データ型から CLR 型へのマッピング
-XML データ型と共通言語ランタイム \(CLR\) 型の既定のマッピングを次の表に示します。  
+# <a name="mapping-xml-data-types-to-clr-types"></a>XML データ型から CLR 型へのマッピング
+XML データ型と共通言語ランタイム (CLR) 型の既定のマッピングを次の表に示します。  
   
-## 次の表は、XML データ型から CLR 型への既定のマッピングを示しています。  
+## <a name="the-following-table-describes-the-default-mappings-of-an-xml-data-type-to-a-clr-type"></a>次の表は、XML データ型から CLR 型への既定のマッピングを示しています。  
   
 > [!NOTE]
->  `xs` および `xdt` のプレフィックスは、それぞれ http:\/\/www.w3.org\/2001\/XMLSchema および http:\/\/www.w3.org\/2003\/05\/xpath\-datatypes 名前空間 URI に対応します。  
+>  `xs` および `xdt` のプレフィックスは、それぞれ http://www.w3.org/2001/XMLSchema および http://www.w3.org/2003/05/xpath-datatypes 名前空間 URI に対応します。  
   
 |XML 型|CLR 型|  
-|-----------|-----------|  
+|--------------|--------------|  
 |`xs:anyURI`|<xref:System.Uri>|  
 |`xs:base64Binary`|`Byte[]`|  
 |`xs:boolean`|<xref:System.Boolean>|  
@@ -80,7 +78,7 @@ XML データ型と共通言語ランタイム \(CLR\) 型の既定のマッピ�
 |`xdt:untypedAtomic`|<xref:System.String>|  
 |`xdt:anyAtomicType`|<xref:System.Object>|  
 |`xs:anySimpleType`|<xref:System.String>|  
-|\[ドキュメント\] ノード|<xref:System.Xml.XPath.XPathNavigator>|  
+|[ドキュメント] ノード|<xref:System.Xml.XPath.XPathNavigator>|  
 |要素ノード|<xref:System.Xml.XPath.XPathNavigator>|  
 |属性ノード|<xref:System.Xml.XPath.XPathNavigator>|  
 |名前空間ノード|<xref:System.Xml.XPath.XPathNavigator>|  
@@ -88,5 +86,5 @@ XML データ型と共通言語ランタイム \(CLR\) 型の既定のマッピ�
 |コメント ノード|<xref:System.Xml.XPath.XPathNavigator>|  
 |処理命令ノード|<xref:System.Xml.XPath.XPathNavigator>|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [System.Xml クラスでの型のサポート](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)

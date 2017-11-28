@@ -10,14 +10,12 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: cb213625-cc60-438b-9b9e-49aed0e4a974
+ms.openlocfilehash: 6fbebf69b2772b4159841d13068e7b95a39bea92
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
 ms.translationtype: HT
-ms.sourcegitcommit: e0271ba3392ce8861dc916714af8c16d4581ce4f
-ms.openlocfilehash: 19744773d18f6ea43e4b4a7518405b60e6b53acf
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/21/2017
 ---
-
 # <a name="debug-your-hello-world-application-with-visual-studio-2017"></a>Visual Studio 2017 での Hello World アプリケーションのデバッグ
 
 ここまでは、[「Visual Studio 2017 での .NET Core を使用した C# Hello World アプリケーションの構築」](.\with-visual-studio.md) または[「Visual Studio 2017 での .NET Core を使用した Visual Basic Hello World アプリケーションの構築」](vb-with-visual-studio.md)の手順に従って、簡単なコンソール アプリケーションを作成して実行しました。 アプリケーションを記述してコンパイルしたら、テストを開始できます。 Visual Studio には、アプリケーションのテストおよびトラブルシューティングの際に使用できるデバッグ ツールの包括的なセットが含まれています。
@@ -65,13 +63,13 @@ ms.lasthandoff: 08/14/2017
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 1. **[イミディエイト ウィンドウ]** に「`date = new DateTime(2016,11,01,11,59,00)`」と入力して、Enter キーを押します。
 
-   **[イミディエイト ウィンドウ]** に、文字列変数の値と、@System.DateTime 値のプロパティが表示されます。 さらに、変数の値は **[自動変数]** ウィンドウおよび **[ローカル]** ウィンドウで更新されます。
+   **[イミディエイト ウィンドウ]** に、文字列変数の値と、<xref:System.DateTime> 値のプロパティが表示されます。 さらに、変数の値は **[自動変数]** ウィンドウおよび **[ローカル]** ウィンドウで更新されます。
 
    ![[自動変数] ウィンドウと [イミディエイト ウィンドウ]](./media/debugging-with-visual-studio/autosimmediate.png)
 # <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
 1. **[イミディエイト ウィンドウ]** に「`currentDate = new DateTime(2016,11,01,11,59,00)`」と入力して、Enter キーを押します。
 
-<!-- The **Immediate Window** displays the value of the string variable and the properties of the @System.DateTime value. In addition, the value of the variables is updated in the **Autos** and **Locals** windows.
+<!-- The **Immediate Window** displays the value of the string variable and the properties of the <xref:System.DateTime> value. In addition, the value of the variables is updated in the **Autos** and **Locals** windows.
 
    ![Autos window and Immediate Window](./media/debugging-with-visual-studio/vb-autosimmediate.png)
 -->
@@ -119,9 +117,9 @@ ms.lasthandoff: 08/14/2017
 
 1. コンソール ウィンドウで、名前の入力を求められたら、Enter キーを押します。
 
-1. `name` が `null` または <xref:System.String.Empty?displayProperty=fullName> のどちらかであるという指定した条件が満たされたため、ブレークポイントに到達すると、`Console.WriteLine` メソッドが実行される前に、プログラムの実行が停止します。
+1. `name` が `null` または <xref:System.String.Empty?displayProperty=nameWithType> のどちらかであるという指定した条件が満たされたため、ブレークポイントに到達すると、`Console.WriteLine` メソッドが実行される前に、プログラムの実行が停止します。
 
-1. **[ローカル]** ウィンドウを選ぶと、現在実行しているメソッドのローカル変数の値が表示されます。この場合は、プログラムの `Main` メソッドです。 `name` 変数の値が `""` または <xref:System.String.Empty?displayProperty=fullName> であることを調べます。
+1. **[ローカル]** ウィンドウを選ぶと、現在実行しているメソッドのローカル変数の値が表示されます。この場合は、プログラムの `Main` メソッドです。 `name` 変数の値が `""` または <xref:System.String.Empty?displayProperty=nameWithType> であることを調べます。
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 1. **[イミディエイト ウィンドウ]** に次のステートメントを入力して、値が空の文字列であることを確認します。 結果は `true` になります。
@@ -175,13 +173,13 @@ Visual Studio では、1 行ずつプログラムをステップ実行して、�
 
 1. **[デバッグ]** > **[ステップ イン]** を選ぶか、F11 キーを押します。 `name` の変数代入を含むステートメントが強調表示されます。 **[自動変数]** ウィンドウに `name` が `null` (C# の場合) または `Nothing` (Visual Basic の場合) であると表示され、コンソール ウィンドウに "What is your name?" という文字列が表示されます。
 
-1. このプロンプトが表示されたら、コンソール ウィンドウに文字列を入力して Enter キーを押します。 コンソールは応答しなくなり、入力した文字列はコンソール ウィンドウに表示されませんが、それでも <xref:System.Console.ReadLine%2A?displayProperty=fullName> メソッドにより入力はキャプチャされます。
+1. このプロンプトが表示されたら、コンソール ウィンドウに文字列を入力して Enter キーを押します。 コンソールは応答しなくなり、入力した文字列はコンソール ウィンドウに表示されませんが、それでも <xref:System.Console.ReadLine%2A?displayProperty=nameWithType> メソッドにより入力はキャプチャされます。
 
-1. **[デバッグ]** > **[ステップ イン]** を選ぶか、F11 キーを押します。 `date` (C#) または `currentDate` (Visual Basic) の変数代入を含むステートメントが強調表示されます。 **[自動変数]** ウィンドウには、<xref:System.DateTime.Now?displayProperty=fullName> プロパティの値および <xref:System.Console.ReadLine%2A?displayProperty=fullName> メソッドの呼び出しによって返された値が表示されます。 コンソール ウィンドウには、コンソールにより求められて入力した文字列も表示されます。
+1. **[デバッグ]** > **[ステップ イン]** を選ぶか、F11 キーを押します。 `date` (C#) または `currentDate` (Visual Basic) の変数代入を含むステートメントが強調表示されます。 **[自動変数]** ウィンドウには、<xref:System.DateTime.Now?displayProperty=nameWithType> プロパティの値および <xref:System.Console.ReadLine%2A?displayProperty=nameWithType> メソッドの呼び出しによって返された値が表示されます。 コンソール ウィンドウには、コンソールにより求められて入力した文字列も表示されます。
 
-1. **[デバッグ]** > **[ステップ イン]** を選ぶか、F11 キーを押します。 **[自動変数]** ウィンドウには、<xref:System.DateTime.Now?displayProperty=fullName> プロパティから代入された後の `date` 変数の値が表示されます。 コンソール ウィンドウに変更はありません。
+1. **[デバッグ]** > **[ステップ イン]** を選ぶか、F11 キーを押します。 **[自動変数]** ウィンドウには、<xref:System.DateTime.Now?displayProperty=nameWithType> プロパティから代入された後の `date` 変数の値が表示されます。 コンソール ウィンドウに変更はありません。
 
-1. **[デバッグ]** > **[ステップ イン]** を選ぶか、F11 キーを押します。 Visual Studio は、<xref:System.Console.WriteLine(System.String,System.Object,System.Object)?displayProperty=fullName> メソッドを呼び出します。 `date` の値 (または `currentDate`) と `name` の値が **[自動変数]** ウィンドウに表示され、コンソール ウィンドウに書式付き文字列が表示されます。
+1. **[デバッグ]** > **[ステップ イン]** を選ぶか、F11 キーを押します。 Visual Studio は、<xref:System.Console.WriteLine(System.String,System.Object,System.Object)?displayProperty=nameWithType> メソッドを呼び出します。 `date` の値 (または `currentDate`) と `name` の値が **[自動変数]** ウィンドウに表示され、コンソール ウィンドウに書式付き文字列が表示されます。
 
 1. **[デバッグ]** > **[ステップ アウト]** の順に選ぶか、Shift + F11 キーを押します。 これによりステップ バイ ステップの実行が停止します。 コンソール ウィンドウにメッセージが表示され、任意のキーを押すよう求められます。
 
@@ -198,4 +196,3 @@ Visual Studio では、1 行ずつプログラムをステップ実行して、�
 F5 キーを押すか、**[ビルド]** メニューの **[ソリューションのビルド]** を選ぶ、コンソール アプリケーションのリリース バージョンがコンパイルされます。 アプリケーションのデバッグ バージョンと同様に、テストできます。
 
 アプリケーションのデバッグが終了したら、次の手順ではアプリケーションを配置可能なバージョンにして発行します。 この方法については、「[Visual Studio 2017 を使用した Hello World アプリケーションの発行](./publishing-with-visual-studio.md)」をご覧ください。
-

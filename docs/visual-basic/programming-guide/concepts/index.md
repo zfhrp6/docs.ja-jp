@@ -1,27 +1,18 @@
 ---
 title: "プログラミングの概念 (Visual Basic)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: cc9cac84-61f6-476e-b8c7-9bae7749bd90
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: 775e4512a5ff31c7059961f6332c6bdc0dc5247a
-ms.openlocfilehash: 96c9ec0a5bd9f6b0b2a460e8be15b4f936432016
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/11/2017
-
+ms.openlocfilehash: c84b26f757ec852c9aefecab58eff9e631b95d15
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="programming-concepts-visual-basic"></a>プログラミングの概念 (Visual Basic)
 このセクションでは、Visual Basic 言語でのプログラミングの概念について説明します。  
@@ -49,4 +40,3 @@ ms.lasthandoff: 08/11/2017
 |||  
 |---|---|  
 |[パフォーマンスに関するヒント](../../../framework/performance/performance-tips.md) | アプリケーションのパフォーマンスの向上に役立つ基本的な規則について説明します。|
-

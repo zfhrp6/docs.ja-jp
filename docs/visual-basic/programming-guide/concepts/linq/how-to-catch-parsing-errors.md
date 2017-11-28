@@ -1,35 +1,27 @@
 ---
-title: "方法: 解析エラー (Visual Basic) をキャッチ |Microsoft ドキュメント"
+title: "方法: 解析エラー (Visual Basic) をキャッチ"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 22e9068e-ea58-447b-816e-cd1852c11787
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 0c4ba619d1f269352b3288f6cadf3b6f37a0dc2d
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 82b7c51aa8d0f9f64094211c56875e6595607c00
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-catch-parsing-errors-visual-basic"></a>方法: 解析エラー (Visual Basic) をキャッチ
 このトピックでは、形式が正しくないか無効な XML を検出する方法について説明します。  
   
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]<xref:System.Xml.XmlReader>。</xref:System.Xml.XmlReader>を使用して実装されます。 形式が正しくないか、無効な XML が渡された場合[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]、基になる<xref:System.Xml.XmlReader>クラスは例外をスローします</xref:System.Xml.XmlReader>。 さまざまな方法など、XML を解析する<xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=fullName>、例外をキャッチしませんアプリケーションで例外をキャッチし、ことができます。</xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=fullName> 。  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] は、<xref:System.Xml.XmlReader> を使用して実装されます。 形式が正しくない XML や無効な XML が [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] に渡されると、基になる <xref:System.Xml.XmlReader> クラスから例外がスローされます。 XML を解析するさまざまなメソッド (<xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType> など) はこの例外をキャッチしません。この例外は、アプリケーションでキャッチできます。  
   
  XML リテラルを使用する場合は、解析エラーを検出できないことに注意してください。 Visual Basic コンパイラは、形式が正しくないか無効な XML をキャッチします。  
   
@@ -56,7 +48,7 @@ End Try
 The 'Contacts' start tag on line 1 does not match the end tag of 'Contcts'. Line 5, position 13.  
 ```  
   
- 予期される例外について、 <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=fullName>、 <xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=fullName>、 <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>、および<xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=fullName>をスローするメソッドを参照してください、<xref:System.Xml.XmlReader>ドキュメント</xref:System.Xml.XmlReader></xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=fullName></xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName></xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=fullName></xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=fullName>。  
+ <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>、<xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=nameWithType>、<xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>、および <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType> メソッドによってスローされる例外の詳細については、<xref:System.Xml.XmlReader> のドキュメントを参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [(Visual Basic) の XML の解析](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

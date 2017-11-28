@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 815ac74c-4bd9-4a94-a87c-78288b27c0e2
-ms.translationtype: HT
-ms.sourcegitcommit: b041fbec3ff22157d00af2447e76a7ce242007fc
 ms.openlocfilehash: 9f6a70598f3a0c0e3f479a25171e1deb6abffa33
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/14/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="unit-testing-in-net-core-and-net-standard"></a>.NET Core と .NET Standard の単体テスト
 
 .NET Core は、アプリケーションの単体テストを従来よりも簡単に作成できるように、テストの容易性を考慮して設計されています。 この記事では、単体テスト (およびその他の種類のテストとの違い) について簡単に紹介します。 リンクされたリソースでは、テスト プロジェクトをソリューションに追加してから、コマンド ラインまたは Visual Studio を使用して単体テストを実行する方法を説明します。
@@ -52,4 +50,3 @@ ms.lasthandoff: 09/14/2017
 * Visual Studio を使用する場合は、[.NET Core での Live Unit Testing](/visualstudio/test/live-unit-testing) に関するページをご覧ください。
 * 選択的単体テストのフィルター処理の使用方法に関する詳細と例については、「[選択的単体テストの実行](selective-unit-tests.md)」のページ、または [Visual Studio を使用したテストの組み込みと除外](/visualstudio/test/live-unit-testing#including-and-excluding-test-projects-and-test-methods)に関するトピックをご覧ください。
 * XUnit チームは、書き込みが [.NET Core および Visual Studio で xUnit を使用する方法](http://xunit.github.io/docs/getting-started-dotnet-core.html)を示すチュートリアルを作成しました。
-

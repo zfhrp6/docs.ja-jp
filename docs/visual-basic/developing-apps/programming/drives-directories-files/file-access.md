@@ -1,51 +1,33 @@
 ---
 title: "Visual Basic におけるファイル アクセス"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - file access
-- files, input and output
+- files [Visual Basic], input and output
 - file access, Visual Basic
-- files, I/O
+- files [Visual Basic], I/O
 - file I/O classes
 - data [Visual Basic], accessing from files
-- files, accessing
+- files [Visual Basic], accessing
 - file access, using components
 - My.Computer.FileSystem object, accessing files
 - I/O [Visual Basic]
 - sequential access
 ms.assetid: 231533bf-d049-4345-befa-3fb78fe6517d
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 9929061feeccee31028056bc93f0f0a2f119eb4e
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 71e941bf33c3b1051c22c8170b327df9fae7d4b9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
 # <a name="file-access-with-visual-basic"></a>Visual Basic におけるファイル アクセス
 `My.Computer.FileSystem` オブジェクトには、ファイルとフォルダーを操作するツールが用意されています。 そのプロパティ、メソッド、イベントを使用すると、ファイルとフォルダーの作成、コピー、移動、調査、削除が可能になります。 `My.Computer.FileSystem` は、下位互換性のために [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] に用意されているレガシ関数 (`FileOpen`、`FileClose`、`Input`、`InputString`、`LineInput` など) よりもパフォーマンスが優れています。  
@@ -71,4 +53,3 @@ ms.lasthandoff: 07/28/2017
   
  [トラブルシューティング : テキスト ファイルの読み取りと書き込み](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)  
  テキスト ファイルの読み込みと書き込みで発生する一般的な問題を示し、それぞれの解決策を提案します。
-

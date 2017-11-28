@@ -1,29 +1,32 @@
 ---
-title: "方法 : WCF REST プログラミング モデルを使用して任意のデータを受け入れるサービスを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : WCF REST プログラミング モデルを使用して任意のデータを受け入れるサービスを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e566c15a-b600-4e4a-be3a-4af43e767dae
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9541c46d029aa9f4e27a459ffcb9f32a7718039b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : WCF REST プログラミング モデルを使用して任意のデータを受け入れるサービスを作成する
+# <a name="how-to-create-a-service-that-accepts-arbitrary-data-using-the-wcf-rest-programming-model"></a>方法 : WCF REST プログラミング モデルを使用して任意のデータを受け入れるサービスを作成する
 開発者は、データがサービス操作から返される流れを完全に制御する必要が生じることがあります。 たとえば、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではサポートされない形式のデータを、サービス操作から返す必要がある場合です。 このトピックでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST プログラミング モデルを使用して任意のデータを受信するサービスの作成方法について説明します。  
   
 ### <a name="to-implement-the-service-contract"></a>サービス コントラクトを実装するには  
   
-1.  サービス コントラクトを定義します。 任意のデータを受信する操作は、型のパラメーターを持つ必要があります<xref:System.IO.Stream>します。 さらに、このパラメーターは要求の本文に渡される唯一のパラメーターでなければなりません。 この例で説明されている操作では、filename パラメーターも使用できます。 このパラメーターは要求の URL に格納されて渡されます。 指定して、URL 内でパラメーターを渡すことを指定する、 <xref:System.UriTemplate>で、 <xref:System.ServiceModel.Web.WebInvokeAttribute>します。 この場合、このメソッドを呼び出すのに使用する URI は “UploadFile/Some-Filename” で終わります。 URI テンプレートの "{filename}" 部分は、操作に使用する filename パラメーターが操作の呼び出しに使用する URI に格納されて渡されるように指定します。  
+1.  サービス コントラクトを定義します。 任意のデータを受信する操作には、<xref:System.IO.Stream> 型のパラメーターが必要です。 さらに、このパラメーターは要求の本文に渡される唯一のパラメーターでなければなりません。 この例で説明されている操作では、filename パラメーターも使用できます。 このパラメーターは要求の URL に格納されて渡されます。 <xref:System.UriTemplate> で <xref:System.ServiceModel.Web.WebInvokeAttribute> を指定すると、パラメーターが URL に格納されて渡されるように指定できます。 この場合は、URI は、呼び出しに使用では、このメソッドは、「UploadFile/一部のファイル名」で終了します。 URI テンプレートの"{filename}"部分では、操作を呼び出すために使用する URI 内で操作の filename パラメーターが渡されることを指定します。  
   
-    ```  
+    ```csharp  
      [ServiceContract]  
     public interface IReceiveData  
     {  
@@ -32,9 +35,9 @@ caps.handback.revision: 8
     }  
     ```  
   
-2.  サービス コントラクトを実装します。 コントラクトには、ストリーム内の任意のデータのファイルを受け取る `UploadFile` というメソッドが&1; つだけあります。 操作では、ストリームを読み取り、読み取ったバイト数をカウントしてから、ファイル名と読み取ったバイト数を表示します。  
+2.  サービス コントラクトを実装します。 コントラクトには、ストリーム内の任意のデータのファイルを受け取る `UploadFile` というメソッドが 1 つだけあります。 操作では、ストリームを読み取り、読み取ったバイト数をカウントしてから、ファイル名と読み取ったバイト数を表示します。  
   
-    ```  
+    ```csharp  
     public class RawDataService : IReceiveData  
     {  
         public void UploadFile(string fileName, Stream fileContents)  
@@ -55,60 +58,58 @@ caps.handback.revision: 8
   
 1.  コンソール アプリケーションを作成し、サービスをホストします。  
   
-    ```  
+    ```csharp  
     class Program  
     {  
        static void Main(string[] args)  
        {  
        }  
     }  
-  
     ```  
   
 2.  変数を作成し、`Main` メソッド内のサービスに使用するベース アドレスを保持します。  
   
-    ```  
+    ```csharp  
     string baseAddress = "http://" + Environment.MachineName + ":8000/Service";  
     ```  
   
-3.  作成、 <xref:System.ServiceModel.ServiceHost>サービス クラスとベース アドレスを指定するサービスのインスタンス。  
+3.  サービスの <xref:System.ServiceModel.ServiceHost> インスタンスを作成して、サービス クラスとベース アドレスを指定します。  
   
-    ```  
+    ```csharp  
     ServiceHost host = new ServiceHost(typeof(RawDataService), new Uri(baseAddress));  
     ```  
   
-4.  コントラクトを指定するエンドポイントを追加<xref:System.ServiceModel.WebHttpBinding>、および<xref:System.ServiceModel.Description.WebHttpBehavior>します。  
+4.  コントラクト、<xref:System.ServiceModel.WebHttpBinding>、および <xref:System.ServiceModel.Description.WebHttpBehavior> を指定するエンドポイントを追加します。  
   
-    ```  
+    ```csharp  
     host.AddServiceEndpoint(typeof(IReceiveData), new WebHttpBinding(), "").Behaviors.Add(new WebHttpBehavior());  
     ```  
   
 5.  サービス ホストを開きます。 サービスは要求を受け取る準備ができました。  
   
-    ```  
+    ```csharp  
     host.Open();  
     Console.WriteLine("Host opened");  
     ```  
   
 ### <a name="to-call-the-service-programmatically"></a>プログラムによってサービスを呼び出すには  
   
-1.  作成、 <xref:System.Net.HttpWebRequest>サービスを呼び出すために使用する URI を使用します。 このコードでは、ベース アドレスは `“/UploadFile/Text”` と組み合わされています。 URI の `“UploadFile”` 部分で呼び出す操作を指定します。 URI の `“Test.txt”` 部分で `UploadFile` 操作に渡す filename パラメーターを指定します。 これらの項目の両方にマップ、 <xref:System.UriTemplate>操作コントラクトに適用します。  
+1.  サービスの呼び出しに使用する URI で <xref:System.Net.HttpWebRequest> を作成します。 このコードでは、ベース アドレスは `"/UploadFile/Text"` と組み合わされています。 URI の `"UploadFile"` 部分で呼び出す操作を指定します。 URI の `"Test.txt"` 部分で `UploadFile` 操作に渡す filename パラメーターを指定します。 これらの項目はいずれも操作コントラクトに適用された <xref:System.UriTemplate> にマップされます。  
   
-    ```  
+    ```csharp  
     HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(baseAddress + "/UploadFile/Test.txt");  
-  
     ```  
   
-2.  設定、<xref:System.Net.HttpWebRequest.Method%2A>のプロパティ、 <xref:System.Net.HttpWebRequest>に`POST`と<xref:System.Net.HttpWebRequest.ContentType%2A>プロパティを`“text/plain”`します。 この設定により、サービスはコードがデータを送信し、そのデータがプレーン テキストであることを認識します。  
+2.  <xref:System.Net.HttpWebRequest.Method%2A> の <xref:System.Net.HttpWebRequest> プロパティを `POST`、<xref:System.Net.HttpWebRequest.ContentType%2A> プロパティを `"text/plain"` にそれぞれ設定します。 この設定により、サービスはコードがデータを送信し、そのデータがプレーン テキストであることを認識します。  
   
-    ```  
+    ```csharp  
     req.Method = "POST";  
     req.ContentType = "text/plain";  
     ```  
   
-3.  呼び出す<xref:System.Net.HttpWebRequest.GetRequestStream%2A>要求ストリームを取得するには、送信、要求ストリームにそのデータを書き込みおよびストリームを閉じるにデータを作成します。  
+3.  <xref:System.Net.HttpWebRequest.GetRequestStream%2A> を呼び出すと、要求ストリームの取得や送信するデータの作成ができます。また、そのデータの要求ストリームに書き込んだり、ストリームを閉じることもできます。  
   
-    ```  
+    ```csharp  
     Stream reqStream = req.GetRequestStream();  
     byte[] fileToSend = new byte[12345];  
     for (int i = 0; i < fileToSend.Length; i++)  
@@ -119,24 +120,23 @@ caps.handback.revision: 8
     reqStream.Close();  
     ```  
   
-4.  呼び出して、サービスから応答を取得<xref:System.Net.HttpWebRequest.GetResponse%2A>し、応答データをコンソールに表示します。  
+4.  <xref:System.Net.HttpWebRequest.GetResponse%2A> を呼び出してサービスから応答を取得すると、応答データをコンソールに表示できます。  
   
-    ```  
+    ```csharp  
     HttpWebResponse resp = (HttpWebResponse)req.GetResponse();  
     Console.WriteLine("Client: Receive Response HTTP/{0} {1} {2}", resp.ProtocolVersion, (int)resp.StatusCode, resp.StatusDescription);  
-  
     ```  
   
 5.  サービス ホストを閉じます。  
   
-    ```  
+    ```csharp  
     host.Close();  
     ```  
   
 ## <a name="example"></a>例  
  この例で使用されているコードの完全な一覧を次に示します。  
   
-```  
+```csharp  
 using System;  
 using System.Collections.Generic;  
 using System.Text;  
@@ -197,16 +197,13 @@ namespace ReceiveRawData
         }  
     }  
 }  
-  
 ```  
-  
-<!-- TODO: review snippet reference  [!CODE [Microsoft.Win32.RegistryKey#4](Microsoft.Win32.RegistryKey#4)]  -->  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
   
 -   コードのコンパイル時には、System.ServiceModel.dll と System.ServiceModel.Web.dll を参照します。  
   
 ## <a name="see-also"></a>関連項目  
- [UriTemplate と UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)   
- [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)   
+ [UriTemplate と UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)  
+ [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
  [WCF Web HTTP プログラミング モデルの概要](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)

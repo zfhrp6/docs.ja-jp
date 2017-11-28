@@ -1,30 +1,21 @@
 ---
 title: "チュートリアル: Visual Studio でマネージ アセンブリからの型を埋め込む (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 55ed13c9-c5bb-4bc2-bcd8-0587eb568864
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: cbd95c71525a92714ab5758855964e323345b2e5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 7b003e76229a06883adc22f933f08663330f0c9d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="walkthrough-embedding-types-from-managed-assemblies-in-visual-studio-c"></a>チュートリアル: Visual Studio でマネージ アセンブリからの型を埋め込む (C#)
 厳密な名前を持つマネージ アセンブリから型情報を埋め込むと、アプリケーション内で型を疎結合して、バージョンに依存しないプログラムを実現できます。 つまり、各バージョン用の再コンパイルを必要とすることなく、マネージ ライブラリの複数のバージョンから型を使用するプログラムを記述できます。  
@@ -49,7 +40,7 @@ ms.lasthandoff: 07/28/2017
   
 -   定数は埋め込まれません。  
   
--   <xref:System.Collections.Generic.Dictionary%602?displayProperty=fullName> クラスでは、埋め込み型をキーとして利用できません。 埋め込み型をキーとしてサポートするために、独自のディクショナリ型を実装することは可能です。  
+-   <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> クラスでは、埋め込み型をキーとして利用できません。 埋め込み型をキーとしてサポートするために、独自のディクショナリ型を実装することは可能です。  
   
  このチュートリアルでは、次のタスクを行います。  
   
@@ -75,9 +66,9 @@ ms.lasthandoff: 07/28/2017
   
 3.  **ソリューション エクスプローラー**で、 Class1.cs ファイルを右クリックし、**[名前の変更]** をクリックします。 ファイルの名前を `ISampleInterface.cs` に変更し、Enter キーを押します。 ファイルの名前を変更すると、クラスの名前も `ISampleInterface` に変更されます。 このクラスは、クラスのパブリック インターフェイスを表します。  
   
-4.  TypeEquivalenceInterface プロジェクトを右クリックし、**[プロパティ]** をクリックします。 **[ビルド]** タブをクリックします。 開発用コンピューター上の有効な場所への出力パスを設定します (`C:\TypeEquivalenceSample` など)。 この場所は、このチュートリアルの後の手順でも使用されます。  
+4.  TypeEquivalenceInterface プロジェクトを右クリックし、**[プロパティ]** をクリックします。 **[ビルド]** タブをクリックします。開発用コンピューター上の有効な場所への出力パスを設定します (`C:\TypeEquivalenceSample` など)。 この場所は、このチュートリアルの後の手順でも使用されます。  
   
-5.  プロジェクト プロパティの編集を続けたまま、**[署名]** タブをクリックします。 **[アセンブリの署名]** オプションを選択します。 **[厳密な名前のキー ファイルを選択してください]** ボックスの一覧で **[<新規作成...>]** をクリックします。 **[キー ファイル名]** ボックスに、「`key.snk`」と入力します。 **[キーファイルをパスワードで保護する]** チェック ボックスをオフにします。 **[OK]** をクリックします。  
+5.  プロジェクト プロパティの編集を続けたまま、**[署名]** タブをクリックします。**[アセンブリの署名]** オプションを選択します。 **[厳密な名前のキー ファイルを選択してください]** ボックスの一覧で **[<新規作成...>]** をクリックします。 **[キー ファイル名]** ボックスに、「`key.snk`」と入力します。 **[キーファイルをパスワードで保護する]** チェック ボックスをオフにします。 **[OK]** をクリックします。  
   
 6.  ISampleInterface.cs ファイルを開きます。 ISampleInterface クラス ファイルに、ISampleInterface インターフェイスを作成するための次のコードを追加します。  
   
@@ -97,7 +88,7 @@ ms.lasthandoff: 07/28/2017
     }  
     ```  
   
-7.  **[ツール]** メニューの **[GUID の作成]**をクリックします。 **[GUID の作成]**ダイアログ ボックスで、**[レジストリ形式]** をクリックし、**[コピー]** をクリックします。 [ **終了**] をクリックします。  
+7.  **[ツール]** メニューの **[GUID の作成]**をクリックします。 **[GUID の作成]**ダイアログ ボックスで、**[レジストリ形式]** をクリックし、**[コピー]** をクリックします。 **[終了]** をクリックします。  
   
 8.  `Guid` 属性で、サンプルの GUID を削除し、**[GUID の作成]** ダイアログ ボックスからコピーした GUID を貼り付けます。 コピーした GUID から中かっこ ({}) を削除します。  
   
@@ -123,9 +114,9 @@ ms.lasthandoff: 07/28/2017
   
 3.  **ソリューション エクスプローラー**で、 Class1.cs ファイルを右クリックし、**[名前の変更]** をクリックします。 ファイルの名前を `SampleClass.cs` に変更し、Enter キーを押します。 ファイルの名前を変更すると、クラスの名前も `SampleClass` に変更されます。 このクラスが `ISampleInterface` インターフェイスを実装します。  
   
-4.  TypeEquivalenceRuntime プロジェクトを右クリックし、**[プロパティ]** をクリックします。 **[ビルド]** タブをクリックします。 出力パスを、TypeEquivalenceInterface プロジェクトで使用したのと同じ場所に設定します (たとえば、`C:\TypeEquivalenceSample`)。  
+4.  TypeEquivalenceRuntime プロジェクトを右クリックし、**[プロパティ]** をクリックします。 **[ビルド]** タブをクリックします。出力パスを、TypeEquivalenceInterface プロジェクトで使用したのと同じ場所に設定します (たとえば、`C:\TypeEquivalenceSample`)。  
   
-5.  プロジェクト プロパティの編集を続けたまま、**[署名]** タブをクリックします。 **[アセンブリの署名]** オプションを選択します。 **[厳密な名前のキー ファイルを選択してください]** ボックスの一覧で **[<新規作成...>]** をクリックします。 **[キー ファイル名]** ボックスに、「`key.snk`」と入力します。 **[キーファイルをパスワードで保護する]** チェック ボックスをオフにします。 **[OK]** をクリックします。  
+5.  プロジェクト プロパティの編集を続けたまま、**[署名]** タブをクリックします。**[アセンブリの署名]** オプションを選択します。 **[厳密な名前のキー ファイルを選択してください]** ボックスの一覧で **[<新規作成...>]** をクリックします。 **[キー ファイル名]** ボックスに、「`key.snk`」と入力します。 **[キーファイルをパスワードで保護する]** チェック ボックスをオフにします。 **[OK]** をクリックします。  
   
 6.  TypeEquivalenceRuntime プロジェクトを右クリックし、**[参照の追加]** をクリックします。 **[参照]** タブをクリックし、出力パスのフォルダーを参照します。 TypeEquivalenceInterface.dll ファイルを選択し、**[OK]** をクリックします。  
   
@@ -168,7 +159,7 @@ ms.lasthandoff: 07/28/2017
   
 2.  **[新しいプロジェクト]** ダイアログ ボックスの **[プロジェクトの種類]** ペインで、**[Windows]** が選択されていることを確認します。 **[テンプレート]** ペインの **[コンソール アプリケーション]** を選択します。 **[名前]** ボックスに `TypeEquivalenceClient` と入力して、**[OK]** をクリックします。 新しいプロジェクトが作成されます。  
   
-3.  TypeEquivalenceClient プロジェクトを右クリックし、**[プロパティ]** をクリックします。 **[ビルド]** タブをクリックします。 出力パスを、TypeEquivalenceInterface プロジェクトで使用したのと同じ場所に設定します (たとえば、`C:\TypeEquivalenceSample`)。  
+3.  TypeEquivalenceClient プロジェクトを右クリックし、**[プロパティ]** をクリックします。 **[ビルド]** タブをクリックします。出力パスを、TypeEquivalenceInterface プロジェクトで使用したのと同じ場所に設定します (たとえば、`C:\TypeEquivalenceSample`)。  
   
 4.  TypeEquivalenceClient プロジェクトを右クリックし、**[参照の追加]** をクリックします。 **[参照]** タブをクリックし、出力パスのフォルダーを参照します。 TypeEquivalenceInterface.dll ファイル (TypeEquivalenceRuntime.dll ではない) を選択し、**[OK]** をクリックします。  
   
@@ -210,7 +201,7 @@ ms.lasthandoff: 07/28/2017
   
 1.  Visual Studio で、**[ファイル]** メニューの **[開く]** をポイントし、**[プロジェクト/ソリューション]** をクリックします。  
   
-2.  **[プロジェクトを開く]** ダイアログ ボックスで、TypeEquivalenceInterface プロジェクトを右クリックし、**[プロパティ]** をクリックします。 **[アプリケーション]** タブをクリックします。 **[アセンブリ情報]** ボタンをクリックします。 **[アセンブリ バージョン]** と **[ファイル バージョン]** の値を `2.0.0.0` に変更します。  
+2.  **[プロジェクトを開く]** ダイアログ ボックスで、TypeEquivalenceInterface プロジェクトを右クリックし、**[プロパティ]** をクリックします。 **[アプリケーション]** タブをクリックします。**[アセンブリ情報]** ボタンをクリックします。 **[アセンブリ バージョン]** と **[ファイル バージョン]** の値を `2.0.0.0` に変更します。  
   
 3.  SampleInterface.cs ファイルを開きます。 ISampleInterface インターフェイスに、次のコード行を追加します。  
   
@@ -230,7 +221,7 @@ ms.lasthandoff: 07/28/2017
   
 1.  Visual Studio で、**[ファイル]** メニューの **[開く]** をポイントし、**[プロジェクト/ソリューション]** をクリックします。  
   
-2.  **[プロジェクトを開く]** ダイアログ ボックスで、TypeEquivalenceRuntime プロジェクトを右クリックし、**[プロパティ]** をクリックします。 **[アプリケーション]** タブをクリックします。 **[アセンブリ情報]** ボタンをクリックします。 **[アセンブリ バージョン]** と **[ファイル バージョン]** の値を `2.0.0.0` に変更します。  
+2.  **[プロジェクトを開く]** ダイアログ ボックスで、TypeEquivalenceRuntime プロジェクトを右クリックし、**[プロパティ]** をクリックします。 **[アプリケーション]** タブをクリックします。**[アセンブリ情報]** ボタンをクリックします。 **[アセンブリ バージョン]** と **[ファイル バージョン]** の値を `2.0.0.0` に変更します。  
   
 3.  SampleClass.cs ファイルを開きます。 SampleClass クラスに次のコード行を追加します。  
   
@@ -250,8 +241,7 @@ ms.lasthandoff: 07/28/2017
 6.  ファイル エクスプローラーで、出力パスのフォルダー (たとえば、C:\TypeEquivalenceSample) を開きます。 TypeEquivalenceClient.exe をダブルクリックして、プログラムを実行します。 プログラムでは、再コンパイルを行わなくても、新バージョンの TypeEquivalenceRuntime アセンブリが反映されます。  
   
 ## <a name="see-also"></a>関連項目  
- [-link (C# コンパイラ オプション)](../../../../csharp/language-reference/compiler-options/link-compiler-option.md)   
- [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)   
- [アセンブリを使用したプログラミング](../../../../framework/app-domains/programming-with-assemblies.md)   
+ [/link (C# コンパイラ オプション)](../../../../csharp/language-reference/compiler-options/link-compiler-option.md)  
+ [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)  
+ [アセンブリを使用したプログラミング](../../../../framework/app-domains/programming-with-assemblies.md)  
  [アセンブリとグローバル アセンブリ キャッシュ (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)
-

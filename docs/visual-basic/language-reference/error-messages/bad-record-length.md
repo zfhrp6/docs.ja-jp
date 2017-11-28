@@ -1,43 +1,41 @@
 ---
-title: "Bad record length | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID59"
-dev_langs: 
-  - "VB"
+title: "レコード長が正しくありません。"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID59
 ms.assetid: 0926a3a4-177b-4452-9b33-d8a01e24cc21
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 747d62cb41ef841b4486e0c7108c37a86929683e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Bad record length
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
+# <a name="bad-record-length"></a>レコード長が正しくありません。
 このエラーでは以下の原因が考えられます。  
   
--   `FileGet`、`FileGetObject`、`FilePut`、または `FilePutObject` の各ステートメントで指定されたレコード変数の長さと、対応する `FileOpen` ステートメントで指定された長さが異なります。  
+-   指定されたレコードの変数の長さ、 `FileGet`、 `FileGetObject`、`FilePut`または`FilePutObject`ステートメントは、対応する指定された長さによって異なります。`FileOpen`ステートメントです。  
   
--   `FilePut` ステートメントまたは `FilePutObject` ステートメント内の変数が、可変長文字列であるか、可変長文字列を含んでいます。  
+-   内の変数、`FilePut`または`FilePutObject`ステートメントまたは可変長文字列が含まれています。  
   
--   `FilePut` ステートメントまたは `FilePutObject` ステートメント内の変数が、`Variant` 型であるか、この型を含んでいます。  
+-   内の変数、`FilePut`または`FilePutObject`かが含まれています、`Variant`型です。  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  レコード変数の型を定義するユーザー定義型の固定長変数のサイズ合計が、`FileOpen` ステートメントの `Len` 句で指定された値と同じであることを確認します。  
+1.  レコードの変数の型を定義するユーザー定義型の固定長変数のサイズの合計と同じでは、値に記載されていることを確認、`FileOpen`ステートメントの`Len`句。  
   
-2.  `FilePut` ステートメントまたは `FilePutObject` ステートメント内の変数が可変長の文字列であるか、可変長文字列を含む場合は、その可変長文字列の長さが、`FileOpen` ステートメントの `Len` 句で指定されたレコード長よりも 2 文字以上短いことを確認します。  
+2.  場合内の変数、`FilePut`または`FilePutObject`可変長文字列は、少なくとも 2 文字で指定されたレコードの長さよりも短いかどうかを確認、ステートメントが可変長文字列が含まれていますか、`Len`の句、 `FileOpen`ステートメント。  
   
-3.  `FilePut` ステートメントまたは `FilePutObject` ステートメント内の変数が `Variant` 型であるか、この型を含む場合は、その可変長文字列の長さが、`FileOpen` ステートメントの `Len` 句で指定されたレコード長よりも 4 バイト以上短いことを確認します。  
+3.  場合内の変数、`FilePut`または`FilePutObject`かが含まれています、`Variant`可変長の文字列は、少なくとも 4 バイトで指定されたレコードの長さよりも短いかどうかを確認、`Len`の句、`FileOpen`ステートメントです。  
   
-## 参照  
- <xref:Microsoft.VisualBasic.FileSystem.FileGet%2A>   
- <xref:Microsoft.VisualBasic.FileSystem.FileGetObject%2A>   
- <xref:Microsoft.VisualBasic.FileSystem.FilePut%2A>   
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.FileSystem.FileGet%2A>  
+ <xref:Microsoft.VisualBasic.FileSystem.FileGetObject%2A>  
+ <xref:Microsoft.VisualBasic.FileSystem.FilePut%2A>  
  <xref:Microsoft.VisualBasic.FileSystem.FilePutObject%2A>

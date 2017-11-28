@@ -1,29 +1,32 @@
 ---
-title: "方法 : WSDL コントラクトと共にサービス モニカーを使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : WSDL コントラクトと共にサービス モニカーを使用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a88d9650-bb50-4f48-8c85-12f5ce98a83a
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9d98fb82984fec4acbb8b95d4bc4667468804ff9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : WSDL コントラクトと共にサービス モニカーを使用する
-完全に自己完結型である COM Interop クライアントの構築が必要になる場合があります。呼び出そうとするサービスで MEX エンドポイントが公開されておらず、WCF クライアントの DLL が COM interop に登録されていないこともあります。このような場合、サービスを記述した WSDL ファイルを作成し、そのファイルを WCF サービス モニカーに渡すことができます。ここでは、WCF WSDL モニカーを使用して、WCF の入門サンプルを呼び出す方法を説明します。  
+# <a name="how-to-use-a-service-moniker-with-wsdl-contracts"></a>方法 : WSDL コントラクトと共にサービス モニカーを使用する
+完全に自己完結型である COM Interop クライアントの構築が必要になる場合があります。 呼び出そうとするサービスで MEX エンドポイントが公開されておらず、WCF クライアントの DLL が COM interop に登録されていないこともあります。 このような場合、サービスを記述した WSDL ファイルを作成し、そのファイルを WCF サービス モニカーに渡すことができます。 ここでは、WCF WSDL モニカーを使用して、WCF の入門サンプルを呼び出す方法を説明します。  
   
-### WSDL サービス モニカーの使用  
+### <a name="using-the-wsdl-service-moniker"></a>WSDL サービス モニカーの使用  
   
 1.  入門サンプル ソリューションを開き、ビルドします。  
   
-2.  Internet Explorer を開いて http:\/\/localhost\/ServiceModelSamples\/Service.svc に移動し、サービスが動作していることを確認します。  
+2.  Internet Explorer を開いて http://localhost/ServiceModelSamples/Service.svc に移動し、サービスが動作していることを確認します。  
   
 3.  Service.cs ファイルで、次の属性を CalculatorService クラスに追加します。  
   
@@ -33,9 +36,9 @@ caps.handback.revision: 8
   
   
   
-5.  アプリケーションが読み取る WSDL ファイルを作成します。名前空間を手順 3. と 4. で追加したので、IE で http:\/\/localhost\/ServiceModelSamples\/Service.svc?wsdl を表示することによって、サービスの WSDL 記述全体を照会できます。次に、そのファイルをサービスの WSDL.xml として Internet Explorer で保存できます。手順 3. と 4. で名前空間を指定しなかった場合、上記の URL を照会したときに返される WSDL ドキュメントは、完全な WSDL ではありません。返される WSDL ドキュメントには、他の WSDL ドキュメントをインポートするためのインポート ステートメントが追加されています。各インポート ステートメントを実行し、サービスから返された WSDL とインポートした WSDL を組み合わせることによって、完全な WSDL ドキュメントを作成する必要があります。  
+5.  アプリケーションが読み取る WSDL ファイルを作成します。 名前空間を手順 3. と 4. で追加したので、IE で http://localhost/ServiceModelSamples/Service.svc?wsdl を表示することによって、サービスの WSDL 記述全体を照会できます。 次に、そのファイルをサービスの WSDL.xml として Internet Explorer で保存できます。 手順 3. と 4. で名前空間を指定しなかった場合、上記の URL を照会したときに返される WSDL ドキュメントは、完全な WSDL ではありません。 返される WSDL ドキュメントには、他の WSDL ドキュメントをインポートするためのインポート ステートメントが追加されています。 各インポート ステートメントを実行し、サービスから返された WSDL とインポートした WSDL を組み合わせることによって、完全な WSDL ドキュメントを作成する必要があります。  
   
-6.  Visual Basic 6.0 を開き、新しい標準 .exe ファイルを作成します。フォームにボタンを追加し、追加したボタンをダブルクリックして次のコードをクリック ハンドラーに追加します。  
+6.  Visual Basic 6.0 を開き、新しい標準 .exe ファイルを作成します。 フォームにボタンを追加し、追加したボタンをダブルクリックして次のコードをクリック ハンドラーに追加します。  
   
     ```  
     ' Open the WSDL contract file and read it all into the wsdlContract string.  
@@ -59,10 +62,10 @@ caps.handback.revision: 8
     ```  
   
     > [!NOTE]
-    >  モニカーの形式が正しくないか、`GetObject` を呼び出せない場合は、"構文が無効です" というメッセージが返されます。このエラーを受信した場合は、使用しているモニカーが正しく、サービスが使用可能であることを確認してください。  
+    >  モニカーの形式が正しくないか、`GetObject` を呼び出せない場合は、"構文が無効です" というメッセージが返されます。  このエラーが発生した場合は、使用しているモニカーが正しく、サービスが使用可能であることを確認してください。  
   
-7.  Visual Basic アプリケーションを実行します。メッセージ ボックスに、Subtract\(145, 76.54\) を呼び出した結果が表示されます。  
+7.  Visual Basic アプリケーションを実行します。 メッセージ ボックスに、Subtract(145, 76.54) を呼び出した結果が表示されます。  
   
-## 参照  
- [概要](../../../../docs/framework/wcf/samples/getting-started-sample.md)   
- [COM アプリケーションとの統合の概要](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications-overview.md)
+## <a name="see-also"></a>関連項目  
+ [はじめに](../../../../docs/framework/wcf/samples/getting-started-sample.md)  
+ [COM アプリケーションの概要との統合](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications-overview.md)

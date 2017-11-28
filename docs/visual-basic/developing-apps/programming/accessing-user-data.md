@@ -1,46 +1,28 @@
 ---
 title: "ユーザー データへのアクセス (Visual Basic)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- domain names, retrieving
+- domain names [Visual Basic], retrieving
 - data [Visual Basic], accessing user data
-- My.User object, tasks
-- user data, domain
-- user names, retrieving
-- user data, accessing
-- login names
+- My.User object [Visual Basic], tasks
+- user data [Visual Basic], domain
+- user names [Visual Basic], retrieving
+- user data [Visual Basic], accessing
+- login names [Visual Basic]
 - examples [Visual Basic], accessing user data
 ms.assetid: 32492a15-ee59-4a63-a1f1-9b24cc13140a
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 92c0b97059896e86d54069b637c9956cac9d10e8
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 396ae45d26551c3a44a8a8fa6334a744508734a7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
 # <a name="accessing-user-data-visual-basic"></a>ユーザー データへのアクセス (Visual Basic)
 このセクションには、`My.User` オブジェクトとそれで実行できるタスクに関するトピックが含まれています。  
@@ -57,4 +39,3 @@ ms.lasthandoff: 07/28/2017
   
 ## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.ApplicationServices.User>
-

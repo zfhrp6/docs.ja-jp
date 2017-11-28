@@ -1,62 +1,84 @@
 ---
-title: "UInteger Data Type | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.uinteger"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "numbers, whole"
-  - "UInteger data type"
-  - "literal type characters, UI"
-  - "whole numbers"
-  - "integral data types"
-  - "integer numbers"
-  - "numbers, integer"
-  - "integers, data types"
-  - "integers, types"
-  - "UI literal type characters"
-  - "data types [Visual Basic], integral"
+title: "UInteger 型"
+ms.date: 04/20/2017
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.uinteger
+helpviewer_keywords:
+- numbers [Visual Basic], whole
+- UInteger data type
+- literal type characters [Visual Basic], UI
+- whole numbers
+- integral data types [Visual Basic]
+- integer numbers
+- numbers [Visual Basic], integer
+- integers [Visual Basic], data types
+- integers [Visual Basic], types
+- UI literal type characters [Visual Basic]
+- data types [Visual Basic], integral
 ms.assetid: db7ddd34-4f23-46f5-84dd-8b0f83bb8729
-caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: rpetrusha
+ms.author: ronpet
+ms.openlocfilehash: 3f3852bd56d11c19e327e6c2f3e23cfb082a54e0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# UInteger Data Type
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
+# <a name="uinteger-data-type"></a>UInteger データ型
 
-0 から 4,294,967,295 までの符号なし 32 ビット \(4 バイト\) の整数です。  
+保持符号なし 32 ビット (4 バイト) 0 ~ 整数 4,294,967,295 です。  
   
-## 解説  
- `UInteger` データ型では、符号なしの最大値を最も効率的なデータ幅で表示します。  
+## <a name="remarks"></a>コメント
+
+ `UInteger`データ型は、最も効率的なデータの幅の最大の符号なしの値を提供します。  
   
  `UInteger` の既定値は 0 です。  
   
-## プログラミングのヒント  
- `UInteger` および `Integer` データ型は、32 ビット プロセッサで最良のパフォーマンスを発揮します。より小さな整数型 \(`UShort`、`Short`、`Byte`、`SByte`\) では、読み込み、格納、フェッチの際に、使用するビットは少なくて済みますが、より多くの時間がかかるためです。  
+## <a name="literal-assignments"></a>リテラルの割り当て
+
+宣言して初期化することができます、`UInteger`変数の 10 進数リテラル、16 進数のリテラルに 8 進数のリテラルを割り当てまたは (Visual Basic 2017 以降)、バイナリ リテラルです。 整数リテラルが `UInteger` の範囲外にある場合 (つまり、<xref:System.UInt32.MinValue?displayProperty=nameWithType> より小さいか、<xref:System.UInt32.MaxValue?displayProperty=nameWithType> より大きい場合)、コンパイル エラーが発生します。
+
+次の例では、整数 3,000,000,000 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、`UInteger` 値に割り当てられています。
   
--   **負の数。** `UInteger` 型は符号を持たないので、負の数を表現できません。  `UInteger` 型を評価する式で単項マイナス演算子 \(`-`\) を使用すると、Visual Basic では、最初に式が `Long` 型に変換されます。  
+[!code-vb[UInteger](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#UInt)]  
+
+> [!NOTE] 
+> プレフィックスを使用する`&h`または`&H`、16 進数リテラル プレフィックスを表すために`&b`または`&B`バイナリ リテラル、およびプレフィックスを意味する`&o`または`&O`を 8 進数のリテラルを示すためにします。 10 進リテラルには、プレフィックスはありません。
+
+Visual Basic 2017 から始めて、使用することできますもアンダー スコア文字`_`、読みやすさを強化するために、桁区切り記号として次の例として示します。
+
+[!code-vb[UInteger](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#UIntS)]  
+
+数値リテラルを含めることも、`UI`または`ui`[文字入力](../../programming-guide\language-features\data-types/type-characters.md)を示すために、`UInteger`データ型は、次の例のようにします。
+
+```vb
+Dim number = &H0FAC14D7ui
+```
+
+## <a name="programming-tips"></a>プログラミングのヒント
+
+ `UInteger`と`Integer`できないために、データ型が、32 ビットのプロセッサで最適なパフォーマンスを提供小さい整数型 (`UShort`、 `Short`、 `Byte`、および`SByte`) 少量のビットを使用する場合でも、時間がかかります読み込み、格納、およびフェッチします。  
   
--   **CLS への準拠。** `UInteger` データ型は、[言語への非依存性、および言語非依存コンポーネント](../Topic/Language%20Independence%20and%20Language-Independent%20Components.md) \(CLS: Common Language Specification\) の一部ではありません。したがって、CLS 準拠のコードでは、このデータ型を使用しているコンポーネントを使用できません。  
+-   **負の数。** `UInteger`符号なしの型は、負の数を表すことはできません。 単項マイナスを使用する場合 (`-`) 型に評価される式で演算子`UInteger`、Visual Basic の式を変換する`Long`最初。  
   
--   **相互運用の考慮事項。** たとえばオートメーション オブジェクトや COM オブジェクトなど、.NET Framework 用に作成されていないコンポーネントを使用する場合は、`uint` などの型のデータ幅 \(16 ビット\) が環境によって異なる場合があることに注意してください。  そのようなコンポーネントに 16 ビットの引数を渡す場合は、Visual Basic のマネージ コードで、`UInteger` 型ではなく `UShort` 型で宣言してください。  
+-   **CLS 準拠しています。** `UInteger`データ型がの一部、[共通言語仕様](http://www.ecma-international.org/publications/standards/Ecma-335.htm)(CLS)、CLS 準拠コードがそれを使用するコンポーネントを使用できないようにします。
   
--   **拡大変換。** `UInteger` データ型は、`Long`、`ULong`、`Decimal`、`Single`、および `Double` に拡大変換されます。  これは、<xref:System.OverflowException?displayProperty=fullName> エラーを発生させることなく、これらの型のいずれかに `UInteger` を変換できることを意味します。  
+-   **相互運用の考慮事項。** オートメーション オブジェクトや COM オブジェクトなど、.NET Framework 用に作成されていないコンポーネントとやり取りする場合などの型を注意して`uint`他の環境で別のデータ幅 (16 ビット) を持つことができます。 このようなコンポーネントに 16 ビットの引数を渡す場合として宣言`UShort`の代わりに`UInteger`マネージ コードを Visual Basic でします。  
   
--   **型宣言文字。** あるリテラルにリテラルの型文字 `UI` を付けると、そのリテラルは `UInteger` に変換されます。  `UInteger` には識別子の型文字はありません。  
+-   **拡大します。** `UInteger`拡大変換後のデータ型`Long`、 `ULong`、 `Decimal`、 `Single`、および`Double`です。 つまり、変換することができます`UInteger`影響を受けずにこれらの型のいずれかに、<xref:System.OverflowException?displayProperty=nameWithType>エラーです。  
   
--   **Framework のデータ型。** .NET Framework において対応する型は、<xref:System.UInt32?displayProperty=fullName> 構造体です。  
+-   **型宣言文字。** リテラルの型文字を付加`UI`リテラルにリテラルを`UInteger`データ型。 `UInteger`識別子の型文字がありません。  
   
-## 参照  
- <xref:System.UInt32>   
- [Data Types](../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)   
- [How to: Call a Windows Function that Takes Unsigned Types](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)   
- [Efficient Use of Data Types](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+-   **Framework の型。** .NET Framework において対応する型は、<xref:System.UInt32?displayProperty=nameWithType> 構造体です。  
+  
+## <a name="see-also"></a>関連項目  
+ <xref:System.UInt32>  
+ [データの種類](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [データ型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [方法 : 符号なしの型を使用する Windows の機能を呼び出す](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)  
+ [データ型の有効な使用方法](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

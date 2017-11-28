@@ -5,24 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - names [.NET Framework], assemblies
 - assemblies [.NET Framework], names
 ms.assetid: 8f8c2c90-f15d-400e-87e7-a757e4f04d0e
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 624cc6ad264f32b9a43917d9bae751f57b4421a8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 7029fb2b436c9ba49f2dfd3da07c5147222fbeaf
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="assembly-names"></a>アセンブリ名
 アセンブリの名前は、メタデータに保存され、アセンブリのスコープに重大な影響があり、アプリケーションによって使用されます。 厳密な名前のアセンブリには、アセンブリの名前、カルチャ、公開キー、バージョン番号を含む、完全修飾名があります。 これは、表示名として、また、<xref:System.Reflection.Assembly.FullName%2A> プロパティを使用して取得できる読み込まれたアセンブリに対して、頻繁に参照されます。  
@@ -34,7 +32,7 @@ myTypes, Version=1.0.1234.0, Culture=en-US, PublicKeyToken=b77a5c561934e089c, Pr
 ```  
   
 > [!NOTE]
->  プロセッサ アーキテクチャは、アセンブリのプロセッサ固有バージョンを許可するために、.NET Framework バージョン 2.0 のアセンブリ ID に追加されます。 ID のプロセッサ アーキテクチャ (たとえば、32 ビットおよび 64 ビットのプロセッサ固有バージョン) のみが異なる、アセンブリのバージョンを作成できます。 プロセッサ アーキテクチャは、厳密な名前には必要ありません。 詳細については、「<xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A?displayProperty=fullName>」を参照してください。  
+>  プロセッサ アーキテクチャは、アセンブリのプロセッサ固有バージョンを許可するために、.NET Framework バージョン 2.0 のアセンブリ ID に追加されます。 ID のプロセッサ アーキテクチャ (たとえば、32 ビットおよび 64 ビットのプロセッサ固有バージョン) のみが異なる、アセンブリのバージョンを作成できます。 プロセッサ アーキテクチャは、厳密な名前には必要ありません。 詳細については、「<xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A?displayProperty=nameWithType>」を参照してください。  
   
  この例の完全修飾名は、`myTypes` アセンブリには公開キー トークンを持つ厳密な名前があり、英語 (米国) のカルチャの値があり、1.0.1234.0 のバージョン番号があることを示しています。 そのプロセッサ アーキテクチャは "msil" です。つまり、オペレーティング システムやプロセッサに応じて、32 ビット コードまたは 64 ビット コードに Just-In-Time (JIT) でコンパイルされるということです。  
   
@@ -60,7 +58,7 @@ System.data, version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e08
 ## <a name="naming-application-components"></a>名前付けアプリケーション コンポーネント  
  アセンブリの ID を特定するときに、ランタイムではファイル名が考慮されません。 アセンブリ名、バージョン、カルチャ、厳密な名前で構成されるアセンブリ ID は、ランタイムに対して明確である必要があります。  
   
- たとえば、myAssembly.dll という名前のアセンブリを参照する myAssembly.exe という名前のアセンブリがある場合は、myAssembly.exe を実行すると、バインドが正しく行われます。 ただし、別のアプリケーションがメソッド <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=fullName> を使用して myAssembly.exe を実行する場合、ランタイムは myAssembly.exe が "myAssembly" へのバインドを要求するときに、"myAssembly" は既に読み込まれていると判断します。 この場合、myAssembly.dll が読み込まれることはありません。 myAssembly.exe には、要求された型が含まれていないため、<xref:System.TypeLoadException> が発生します。  
+ たとえば、myAssembly.dll という名前のアセンブリを参照する myAssembly.exe という名前のアセンブリがある場合は、myAssembly.exe を実行すると、バインドが正しく行われます。 ただし、別のアプリケーションがメソッド <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=nameWithType> を使用して myAssembly.exe を実行する場合、ランタイムは myAssembly.exe が "myAssembly" へのバインドを要求するときに、"myAssembly" は既に読み込まれていると判断します。 この場合、myAssembly.dll が読み込まれることはありません。 myAssembly.exe には、要求された型が含まれていないため、<xref:System.TypeLoadException> が発生します。  
   
  この問題を避けるには、アプリケーションを構成するアセンブリが、確実に同じアセンブリ名を持たないように、または異なるディレクトリに同じ名前を持つアセンブリを配置しないようにします。  
   
@@ -68,10 +66,9 @@ System.data, version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e08
 >  グローバル アセンブリ キャッシュに厳密な名前のアセンブリを配置した場合、アセンブリのファイル名は、アセンブリ名と一致する必要があります (.exe または .dll などのファイル名の拡張子を除く)。 たとえば、アセンブリのファイル名が myAssembly.dll である場合は、アセンブリ名は myAssembly である必要があります。 ルート アプリケーション ディレクトリにのみ展開されるプライベート アセンブリは、ファイル名とは異なるアセンブリ名を持つことができます。  
   
 ## <a name="see-also"></a>関連項目  
- [方法: アセンブリの完全修飾名を特定する](../../../docs/framework/app-domains/how-to-determine-assembly-fully-qualified-name.md)   
- [アセンブリの作成](../../../docs/framework/app-domains/create-assemblies.md)   
- [厳密な名前付きアセンブリ](../../../docs/framework/app-domains/strong-named-assemblies.md)   
- [グローバル アセンブリ キャッシュ](../../../docs/framework/app-domains/gac.md)   
- [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
+ [方法: アセンブリの完全修飾名を特定する](../../../docs/framework/app-domains/how-to-determine-assembly-fully-qualified-name.md)  
+ [アセンブリの作成](../../../docs/framework/app-domains/create-assemblies.md)  
+ [厳密な名前付きアセンブリ](../../../docs/framework/app-domains/strong-named-assemblies.md)  
+ [グローバル アセンブリ キャッシュ](../../../docs/framework/app-domains/gac.md)  
+ [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [アセンブリを使用したプログラミング](../../../docs/framework/app-domains/programming-with-assemblies.md)
-

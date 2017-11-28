@@ -1,24 +1,26 @@
 ---
-title: "置換後の文字列が長すぎます | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID746"
+title: "置換後の文字列が長すぎます"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID746
 ms.assetid: 398ff5eb-b580-456f-8f24-b7a8318e1193
-caps.latest.revision: 7
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 8eaef18e4b37e0bc3edc2c36ca9f6f0b0a8cec4c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 置換後の文字列が長すぎます
+# <a name="replacements-too-long"></a>置換後の文字列が長すぎます
 許容される長さを超える置換文字列を指定しました。  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
 1.  長さの制限については、コンポーネントのドキュメントを参照してください。  
   
-## 参照  
- [方法: 対話モードで検索する](http://msdn.microsoft.com/ja-jp/e9fdbfab-bd59-401a-92d3-7ce1652b243c)
+## <a name="see-also"></a>関連項目  
+ [方法: 対話モードで検索する](http://msdn.microsoft.com/en-us/e9fdbfab-bd59-401a-92d3-7ce1652b243c)

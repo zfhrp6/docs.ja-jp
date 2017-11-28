@@ -1,30 +1,21 @@
 ---
 title: "スレッドの同期 (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: e42b1be6-c93c-479f-a148-be0759f1a4e1
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 2b51775eac5221ec8c723d89323d1f4f542d2453
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: df4093d4bf777f904aa8ce376cd164ed822350a0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="thread-synchronization-c"></a>スレッドの同期 (C#)
 次のセクションでは、マルチスレッド アプリケーションでリソースへのアクセスを同期するために使用できる機能とクラスについて説明します。  
@@ -73,7 +64,7 @@ public class TestThreading
   
 -   [lock ステートメント](../../../../csharp/language-reference/keywords/lock-statement.md)  
   
--   @System.Threading.Monitor  
+-   <xref:System.Threading.Monitor>  
   
 ## <a name="monitors"></a>モニター  
  `lock` キーワードと同様、モニターも複数のスレッドによるコード ブロックの同時実行を防ぎます。 <xref:System.Threading.Monitor.Enter%2A> メソッドは 1 つのスレッドにのみ後続のステートメントに進むことを許可します。他のすべてのスレッドは、実行中のスレッドが <xref:System.Threading.Monitor.Exit%2A> を呼び出すまでブロックされます。 これは `lock` キーワードを使用した場合とまったく同じ結果になります。 例:  
@@ -107,7 +98,7 @@ finally
   
  同期イベントには、<xref:System.Threading.AutoResetEvent> と <xref:System.Threading.ManualResetEvent> の 2 種類があります。 この 2 つで唯一違うのは、<xref:System.Threading.AutoResetEvent> の場合、1 つのスレッドをアクティブにするたびに自動的にシグナル状態から非シグナル状態に変わるという点です。 逆に <xref:System.Threading.ManualResetEvent> では、そのシグナル状態で任意の数のスレッドをアクティブにでき、<xref:System.Threading.EventWaitHandle.Reset%2A> メソッドが呼び出された場合にのみ、非シグナル状態に戻ります。  
   
- <xref:System.Threading.WaitHandle.WaitOne%2A>、<xref:System.Threading.WaitHandle.WaitAny%2A>、<xref:System.Threading.WaitHandle.WaitAll%2A> などの待機メソッドのいずれかを呼び出すことによって、スレッドにイベントを待機させることができます。 <xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=fullName> は、単一のイベントがシグナル状態になるまでスレッドを待機させます。<xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=fullName> は、指定した 1 つ以上のイベントがシグナル状態になるまでスレッドをブロックします。<xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=fullName> は、指定したすべてのイベントがシグナル状態になるまでスレッドをブロックします。 イベントは、その <xref:System.Threading.EventWaitHandle.Set%2A> メソッドが呼び出されると、シグナル状態になります。  
+ <xref:System.Threading.WaitHandle.WaitOne%2A>、<xref:System.Threading.WaitHandle.WaitAny%2A>、<xref:System.Threading.WaitHandle.WaitAll%2A> などの待機メソッドのいずれかを呼び出すことによって、スレッドにイベントを待機させることができます。 <xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=nameWithType> は、単一のイベントがシグナル状態になるまでスレッドを待機させます。<xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType> は、指定した 1 つ以上のイベントがシグナル状態になるまでスレッドをブロックします。<xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=nameWithType> は、指定したすべてのイベントがシグナル状態になるまでスレッドをブロックします。 イベントは、その <xref:System.Threading.EventWaitHandle.Set%2A> メソッドが呼び出されると、シグナル状態になります。  
   
  次の例では、`Main` 関数によってスレッドが作成され開始されます。 新しいスレッドは <xref:System.Threading.WaitHandle.WaitOne%2A> メソッドを使用してイベントを待機します。 このスレッドは、`Main` 関数を実行しているプライマリ スレッドによってイベントがシグナル状態になるまで中断されます。 イベントがシグナル状態になると、この補助スレッドに制御が戻ります。 この場合は 1 つのスレッドだけをアクティブにするためにイベントを使用しているので、<xref:System.Threading.AutoResetEvent> クラスまたは <xref:System.Threading.ManualResetEvent> クラスのいずれも使用できます。  
   
@@ -160,27 +151,26 @@ class ThreadingExample
  スレッドの同期は、マルチスレッド アプリケーションにとって非常に大切ですが、`deadlock` を生じさせてしまう危険性が常にあります。つまり、複数のスレッドが互いに待機しあって、アプリケーションが中断してしまう状態になります。 デッドロックは、たとえるなら四方向が一時停止の交差点で停止した車どうしが、相手の車を先に行かせるよう互いに譲り合い、誰もが動けなくなっている状態に似ています。 デッドロックを防ぐことは重要です。その鍵となるのは、綿密なプランです。 コーディングを始める前にマルチスレッド アプリケーションを図式化すると、デッドロック状態を予想できることがよくあります。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Threading.Thread>   
- <xref:System.Threading.WaitHandle.WaitOne%2A>   
- <xref:System.Threading.WaitHandle.WaitAny%2A>   
- <xref:System.Threading.WaitHandle.WaitAll%2A>   
- <xref:System.Threading.Thread.Join%2A>   
- <xref:System.Threading.Thread.Start%2A>   
- <xref:System.Threading.Thread.Sleep%2A>   
- <xref:System.Threading.Monitor>   
- <xref:System.Threading.Mutex>   
- <xref:System.Threading.AutoResetEvent>   
- <xref:System.Threading.ManualResetEvent>   
- <xref:System.Threading.Interlocked>   
- <xref:System.Threading.WaitHandle>   
- <xref:System.Threading.EventWaitHandle>   
- <xref:System.Threading>   
- <xref:System.Threading.EventWaitHandle.Set%2A>   
- [マルチスレッド アプリケーション (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)   
- [lock ステートメント](../../../../csharp/language-reference/keywords/lock-statement.md)   
- [ミューテックス](../../../../standard/threading/mutexes.md)   
- @System.Threading.Monitor   
- [インタロックされた操作](../../../../standard/threading/interlocked-operations.md)   
- [AutoResetEvent](../../../../standard/threading/autoresetevent.md)   
+ <xref:System.Threading.Thread>  
+ <xref:System.Threading.WaitHandle.WaitOne%2A>  
+ <xref:System.Threading.WaitHandle.WaitAny%2A>  
+ <xref:System.Threading.WaitHandle.WaitAll%2A>  
+ <xref:System.Threading.Thread.Join%2A>  
+ <xref:System.Threading.Thread.Start%2A>  
+ <xref:System.Threading.Thread.Sleep%2A>  
+ <xref:System.Threading.Monitor>  
+ <xref:System.Threading.Mutex>  
+ <xref:System.Threading.AutoResetEvent>  
+ <xref:System.Threading.ManualResetEvent>  
+ <xref:System.Threading.Interlocked>  
+ <xref:System.Threading.WaitHandle>  
+ <xref:System.Threading.EventWaitHandle>  
+ <xref:System.Threading>  
+ <xref:System.Threading.EventWaitHandle.Set%2A>  
+ <xref:System.Threading.Monitor>  
+ [マルチスレッド アプリケーション (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)  
+ [lock ステートメント](../../../../csharp/language-reference/keywords/lock-statement.md)  
+ [ミューテックス](../../../../standard/threading/mutexes.md)  
+ [インタロックされた操作](../../../../standard/threading/interlocked-operations.md)  
+ [AutoResetEvent](../../../../standard/threading/autoresetevent.md)  
  [マルチスレッド処理のためのデータの同期](../../../../standard/threading/synchronizing-data-for-multithreading.md)
-

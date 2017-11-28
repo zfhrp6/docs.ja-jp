@@ -5,31 +5,24 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - command line, .NET Framework tools
 - .NET Framework, tools
 - tools [.NET Framework]
 - running .NET Framework tools
 ms.assetid: a2ca532d-91f7-426a-9303-417c2ee1247c
-caps.latest.revision: 65
+caps.latest.revision: "65"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: 777c78a1ee296fd92d48547aeb53a083afa95b28
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: bee585074a444e8df5d67e035d5e0b65d292f8ac
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="net-framework-tools"></a>.NET Framework ツール
 .NET Framework ツールを使用すると、.NET Framework に対応したアプリケーションやコンポーネントを簡単に作成、配置、および管理できます。  
@@ -149,4 +142,3 @@ ms.lasthandoff: 09/05/2017
   
  [Windows Communication Foundation ツール](../../../docs/framework/wcf/tools.md)  
  WCF (Windows Communication Foundation) アプリケーションの作成、配置、および管理を効率化するツールを含みます。
-

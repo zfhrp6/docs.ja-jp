@@ -7,12 +7,11 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
+ms.openlocfilehash: d66738593a1542affc956e08bbc38a3b2b1841b9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
-ms.openlocfilehash: f56b571e61f82132718ecf5890024c0f1c177227
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="net-core-command-line-interface-cli-tools"></a>.NET Core コマンドライン インターフェイス (CLI) ツール
 
@@ -122,6 +121,7 @@ dotnet build --output /build_output
 dotnet /build_output/my_app.dll
 ```
 
+
 ---
 
 ### <a name="driver"></a>ドライバー
@@ -150,5 +150,5 @@ Preview 2 ツールを使用して *project.json* ベースのプロジェクト
 
 ## <a name="see-also"></a>関連項目
 
- [dotnet/CLI GitHub リポジトリ](https://github.com/dotnet/cli/)   
- [.NET Core のインストール ガイド](https://aka.ms/dotnetcoregs)   
+ [dotnet/CLI GitHub リポジトリ](https://github.com/dotnet/cli/)  
+ [.NET Core のインストール ガイド](https://aka.ms/dotnetcoregs)  

@@ -7,25 +7,19 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - XML serialization, configuration
 - <add> element for <xmlSchemaImporterExtensions> element
 ms.assetid: c828a558-094b-441e-9065-790b87315fa0
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: 859e348359ed35e971baff8611fa4f676808f5a7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 766d04dd792534f0da33116ed959d81ff376e026
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ltaddgt-element-for-ltxmlschemaimporterextensionsgt"></a>&lt;xmlSchemaImporterExtensions&gt; の &lt;add&gt; 要素
 XSD 型を .NET Framework 型に対応付けるために、<xref:System.Xml.Serialization.XmlSchemaImporter> によって使用される型を追加します。 構成ファイルの詳細については、「[構成ファイル スキーマ](../../../docs/framework/configure-apps/file-schema/index.md)」を参照してください。  
@@ -76,7 +70,6 @@ XSD 型を .NET Framework 型に対応付けるために、<xref:System.Xml.Seri
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Xml.Serialization.XmlSchemaImporter>   
- [\<system.xml.serialization> 要素](../../../docs/standard/serialization/system-xml-serialization-element.md)   
+ <xref:System.Xml.Serialization.XmlSchemaImporter>  
+ [\<system.xml.serialization> 要素](../../../docs/standard/serialization/system-xml-serialization-element.md)  
  [\<schemaImporterExtensions> 要素](../../../docs/standard/serialization/schemaimporterextensions-element.md)
-

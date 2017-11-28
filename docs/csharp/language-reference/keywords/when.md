@@ -1,41 +1,22 @@
 ---
 title: "when (C# リファレンス)"
-ms.date: 2017-03-07
+ms.date: 03/07/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - when_CSharpKeyword
 - when
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- when keyword [C#]
+helpviewer_keywords: when keyword [C#]
 ms.assetid: dd543335-ae37-48ac-9560-bd5f047b9aea
-caps.latest.revision: 30
+caps.latest.revision: "30"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: f453d9f4b443d7adeeb0ab628b4ddad1a0116e49
+ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: ae869fa04d2dfb963694f258624c5cd594ff1184
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/18/2017
 ---
  # <a name="when-c-reference"></a>when (C# リファレンス)
 
@@ -53,9 +34,9 @@ catch ExceptionType [e] when (expr)
 ```
 *expr* の箇所には、ブール値に評価される式を指定します。 `true` が返された場合は、例外ハンドラーが実行されます。`false` の場合は実行されません。 
 
-次の例では、`when` キーワードを使用し、例外メッセージのテキストに応じて、@System.Net.HttpRequestException のハンドラーが条件付きで実行されるようにしています。
+次の例では、`when` キーワードを使用し、例外メッセージのテキストに応じて、<xref:System.Net.Http.HttpRequestException> のハンドラーが条件付きで実行されるようにしています。
 
- [!code-cs[when-with-catch](../../../../samples/snippets/csharp/language-reference/keywords/when/catch.cs)]  
+ [!code-csharp[when-with-catch](../../../../samples/snippets/csharp/language-reference/keywords/when/catch.cs)]  
   
 ## <a name="when-in-a-switch-statement"></a>`switch` ステートメントでの `when`
 
@@ -68,11 +49,10 @@ case (expr) when (when-condition):
 
 次の例では、`when` キーワードを使用して、面積が 0 の `Shape` オブジェクトに対するテストと、面積が 0 より大きい各種の `Shape` オブジェクトに対するテストを実行しています。 
 
- [!code-cs[when-with-case#1](../../../../samples/snippets/csharp/language-reference/keywords/when/when.cs#1)]  
+ [!code-csharp[when-with-case#1](../../../../samples/snippets/csharp/language-reference/keywords/when/when.cs#1)]  
 
 ## <a name="see-also"></a>関連項目 
   [switch ステートメント](switch.md)  
   [try/catch ステートメント](try-catch.md)  
   [try/catch/finally ステートメント](try-catch-finally.md) 
-
 

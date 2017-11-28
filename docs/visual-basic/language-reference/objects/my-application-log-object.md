@@ -1,57 +1,38 @@
 ---
-title: "My.Application.Log オブジェクト |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "My.Application.Log オブジェクト"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
-helpviewer_keywords:
-- My.Application.Log object
+helpviewer_keywords: My.Application.Log object
 ms.assetid: 296147f9-1109-4a55-9b5e-047f1ab9466c
-caps.latest.revision: 32
+caps.latest.revision: "32"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 314035393151e9126b1e6f13572e958f23632492
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 9ba367f3d5f5cb5505300b7f4a54d9b3d7c4422e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="myapplicationlog-object"></a>My.Application.Log オブジェクト
 イベントと例外の情報をアプリケーションのログ リスナーに書き込むためのプロパティとメソッドを提供します。  
   
 ## <a name="remarks"></a>コメント  
- メソッドとプロパティについては、`My.Application.Log`オブジェクト、 <xref:Microsoft.VisualBasic.Logging.Log>.</xref:Microsoft.VisualBasic.Logging.Log>を参照してください。  
+ `My.Application.Log` オブジェクトのメソッドとプロパティについては、「 <xref:Microsoft.VisualBasic.Logging.Log>」をご覧ください。  
   
- 詳細については、次を参照してください。[アプリケーションからの情報のログ記録](../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)します。  
+ 詳細については、次を参照してください。[アプリケーションからの情報のログ記録](../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)です。  
   
 > [!NOTE]
->  また、.NET Framework 内のクラスを使用すると、ご使用のアプリケーションの情報をログに記録できます。 詳細については、次を参照してください。[トレースとアプリケーションのインストルメント化](http://msdn.microsoft.com/library/773b6fc4-9013-4322-b728-5dec7a72e743)します。  
+>  また、.NET Framework 内のクラスを使用すると、ご使用のアプリケーションの情報をログに記録できます。 詳細については、「 [Tracing and Instrumenting Applications](../../../framework/debug-trace-profile/tracing-and-instrumenting-applications.md)」を参照してください。  
   
-## <a name="requirements"></a>要件  
- **Namespace:**<xref:Microsoft.VisualBasic.Logging></xref:Microsoft.VisualBasic.Logging>  
+## <a name="requirements"></a>必要条件  
+ **名前空間:** <xref:Microsoft.VisualBasic.Logging>  
   
- **クラス:**<xref:Microsoft.VisualBasic.Logging.Log></xref:Microsoft.VisualBasic.Logging.Log>  
+ **クラス:** <xref:Microsoft.VisualBasic.Logging.Log>  
   
- **アセンブリ:**[!INCLUDE[vbprvbruntime](../../../visual-basic/language-reference/objects/includes/vbprvbruntime_md.md)]  
+ **アセンブリ:** [!INCLUDE[vbprvbruntime](~/includes/vbprvbruntime-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  [My.Application オブジェクト](../../../visual-basic/language-reference/objects/my-application-object.md)

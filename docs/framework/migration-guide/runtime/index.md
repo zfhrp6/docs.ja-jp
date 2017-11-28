@@ -6,25 +6,21 @@ ms.technology:
 - dotnet-clr
 - app-compat
 ms.topic: article
-caps.latest.revision: 1
+caps.latest.revision: "1"
 ms.assetid: 2bc008db-ad60-4a01-8ccc-f4a3171b36f4
 author: conniey
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: d1cd354754f8f8c4083b8f1c0d4bd3b3dadd0752
+ms.sourcegitcommit: d0f7646d67db5809cf43ff1d27b399a4020e8ee2
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: 029cff70a8a3bcea011cded281e525234dcd7a6b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/25/2017
 ---
-
-# <a name="runtime-changes-in-the-net-framework--microsoft-docs"></a>".NET Framework におけるランタイムの変更点 | Microsoft ドキュメント"
+# <a name="runtime-changes-in-the-net-framework"></a>.NET Framework におけるランタイムの変更点
 
 [!include[introduction](../../../../includes/migration-guide/runtime/introduction.md)]
-
 ## <a name="usage"></a>使用方法
 現在ターゲットにしている .NET Framework を選択してから、移行する .NET Framework を選択します。
 
 [!include[versionselector](../../../../includes/migration-guide/runtime/versionselector.md)]
-

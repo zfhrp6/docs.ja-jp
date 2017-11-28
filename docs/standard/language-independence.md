@@ -6,18 +6,19 @@ author: dotnet-bot
 ms.author: dotnetcontent
 ms.date: 07/22/2016
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
+ms.openlocfilehash: ed48191ee397bb5f892a7afba6dfbfa2d06e1045
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
-ms.openlocfilehash: 3da0bc3c9abf28aeb588ec9277c4e0b503df4d8b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="language-independence-and-language-independent-components"></a>言語への非依存性、および言語非依存コンポーネント
 
 .NET は言語に依存しません。 つまり、開発者は、C#、F#、および Visual Basic などの .NET 実装を対象とする多くの言語の中のいずれかで開発できることを意味します。 .NET 実装用に開発されたクラス ライブラリの型とメンバーには、最初に記述された言語を知らなくてもアクセスできます。元の言語の規則に従う必要もありません。 コンポーネントを開発しているのであれば、コンポーネントの言語にかかわらず、すべての .NET アプリからそのコンポーネントにアクセスできます。
@@ -2952,5 +2953,4 @@ C# でコンパイルするには、コンパイラの名前を vbc から csc �
 ```
 csc example.cs /r:UtilityLib.dll
 ```
-
 

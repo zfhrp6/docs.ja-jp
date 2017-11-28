@@ -5,24 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - .NET Framework 4.5, migrating from 1.1
 - .NET Framework 1.1, migrating to .NET Framework 4.5
 ms.assetid: 7ead0cb3-3b19-414a-8417-a1c1fa198d9e
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 5757894a63ed556413147b8ef8c85c2d31ef11a5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="migrating-from-the-net-framework-11"></a>.NET Framework 1.1 からの移行
 [!INCLUDE[win7](../../../includes/win7-md.md)] 以降のバージョンの Windows オペレーティング システムでは、[!INCLUDE[net_v11_long](../../../includes/net-v11-long-md.md)] はサポートされません。 このため、 [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] を対象とするアプリケーションは変更を行わないと、 [!INCLUDE[win7](../../../includes/win7-md.md)] 以降のバージョンのオペレーティング システムでは実行できません。 このトピックでは、[!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] を対象とするアプリケーションを [!INCLUDE[win7](../../../includes/win7-md.md)] 以降のバージョンの Windows オペレーティング システムで実行するために必要な手順について説明します。 [!INCLUDE[net_v11_long](../../../includes/net-v11-long-md.md)] と [!INCLUDE[win8](../../../includes/win8-md.md)] に関する詳細については、「[Windows 8、Windows 8.1、または Windows 10 での .NET Framework 1.1 アプリの実行](../../../docs/framework/install/run-net-framework-1-1-apps.md)」を参照してください。  
@@ -75,4 +73,3 @@ ms.lasthandoff: 07/28/2017
  旧式の型およびメンバーの影響は、アプリケーションを再ターゲットする場合と再コンパイルする場合とでは若干異なります。 旧式の型およびメンバーを使用しても、その型およびメンバーをアセンブリから物理的に削除しない限り、再ターゲットしたアプリケーションには影響しません。 旧式の型およびメンバーを使用してアプリケーションを再コンパイルすると、通常はコンパイラ エラーではなく、コンパイラの警告が発生します。 ただし、場合によってはコンパイラ エラーが発生し、旧式の型またはメンバーを使用したコードをコンパイルできないことがあります。 その場合は、旧式の型またはメンバーを呼び出すソース コードを変更してからアプリケーションを再コンパイルする必要があります。 旧式の型およびメンバーの詳細については、「[.NET Framework クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)」を参照してください。  
   
  [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] のリリース以後に非推奨になった型およびメンバーの影響を評価するには、「[.NET Framework クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)」を参照してください。 [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)]、[!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)]、および [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] について、旧式の型およびメンバーの一覧を確認してください。
-

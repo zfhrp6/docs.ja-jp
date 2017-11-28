@@ -9,12 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 18cf7a4b-29f0-4b14-85b8-80af754aabd8
+ms.openlocfilehash: 1d8fb092b578602b5d4f791a3fd14f47dfae1ba6
+ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
 ms.translationtype: HT
-ms.sourcegitcommit: 4582cb0ee091526423cce3fc1d8243029f34f59c
-ms.openlocfilehash: 3f2ee35db5b77efcce629b6315060a723429b19c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/16/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="ref-returns-and-ref-locals"></a>ref 戻り値と ref ローカル変数
 
@@ -86,15 +85,14 @@ ref Person p = ref contacts.GetContactInformation("Brandie", "Best");
 
 次の例では、整数値の配列を格納する `NumberStore` クラスを定義しています。 `FindNumber` メソッドは、引数として渡された数値に等しいかそれより大きい最初の数値を参照渡しで返します。 引数に等しいかそれより大きい数値がない場合、メソッドはインデックス 0 の数値を返します。 
 
-[!CODE-cs[ref-returns](../../../../samples/snippets/csharp/programming-guide/ref-returns/ref-returns1.cs#1)]
+[!code-csharp[ref-returns](../../../../samples/snippets/csharp/programming-guide/ref-returns/ref-returns1.cs#1)]
 
 次の例では、`NumberStore.FindNumber` メソッドを呼び出して、16 に等しいかそれより大きい最初の値を取得します。 呼び出し元は、メソッドによって返された値を 2 倍にします。 この変更は、次の例の出力に示されているように、`NumberStore` インスタンスの配列要素の値に反映されます。
 
-[!CODE-cs[ref-returns](../../../../samples/snippets/csharp/programming-guide/ref-returns/ref-returns1.cs#2)]
+[!code-csharp[ref-returns](../../../../samples/snippets/csharp/programming-guide/ref-returns/ref-returns1.cs#2)]
 
 参照戻り値がサポートされていない場合、このような操作は通常、配列要素のインデックスと値を返すことによって実行されます。 呼び出し元はこのインデックスを使用して、別のメソッド呼び出しで値を変更できます。 一方、インデックスを変更して配列の他の値にアクセスし、変更することも可能です。  
  
 ## <a name="see-also"></a>関連項目
 
 [ref キーワード](../../language-reference/keywords/ref.md)
-

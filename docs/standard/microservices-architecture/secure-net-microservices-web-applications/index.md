@@ -8,12 +8,11 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
+ms.openlocfilehash: 147aa099e440f5e5eb1dd6450946274aef91033a
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: 0bc9fe2975dc1c72f6dbe551c4ec74d7d51e69af
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="securing-net-microservices-and-web-applications"></a>NET マイクロサービスおよび Web アプリケーションをセキュリティで保護する
 
@@ -120,7 +119,7 @@ else
 }
 ```
 
-Visual Studio で ASP.NET コードの Web アプリケーション プロジェクトを作成するときに、[**個人のユーザー アカウント**] 認証オプションを選択すると、図 11-3 に示すように、外部プロバイダーでサインインするために必要なすべてのコードがすでにプロジェクト内にあります。
+Visual Studio で ASP.NET コードの Web アプリケーション プロジェクトを作成するときに、**[個人のユーザー アカウント]** 認証オプションを選択すると、図 11-3 に示すように、外部プロバイダーでサインインするために必要なすべてのコードがすでにプロジェクト内にあります。
 
 ![https://msdnshared.blob.core.windows.net/media/2016/10/new-web-app.png](./media/image3.png)
 
@@ -255,4 +254,3 @@ JWT ベアラー認証ミドルウェアは、証明機関が利用できない�
 
 >[!div class="step-by-step"]
 [前へ] (../implement-resilient-applications/monitor-app-health.md) [次へ] (承認-net-microservices-web-applications.md)
-

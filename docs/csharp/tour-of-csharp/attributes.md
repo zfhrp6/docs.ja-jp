@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 753bcfe2-7ddd-4487-9513-ba70937fc8e9
+ms.openlocfilehash: 6878a408ef892ee47a03bfa04f736b9bf9671696
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5f290b2cb7074d0b442d5971e5e08a0f6cac55ac
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/21/2017
 ---
-
 # <a name="attributes"></a>属性
 
 C# プログラムにおける型、メンバー、およびその他のエンティティは、動作の特定の側面を制御する修飾子をサポートします。 たとえばメソッドのアクセシビリティは、`public`、`protected`、`internal`、および `private` 修飾子を使用して制御されます。 C# はこの機能を一般化し、宣言情報のユーザー定義型をプログラム エンティティに追加して実行時に取得できるようにします。 プログラムでは、***属性***を定義して使用することにより、この追加の宣言情報を指定します。
@@ -26,7 +24,7 @@ C# プログラムにおける型、メンバー、およびその他のエン�
 
 [!code-csharp[AttributeDefined](../../../samples/snippets/csharp/tour/attributes/Program.cs#L3-L20)]
 
-すべての属性クラスは、標準ライブラリによって提供される @System.Attribute 基底クラスから派生します。 属性は、関連付けられた宣言の直前に、名前を任意の変数とともに角かっこで囲んで与えることにより、適用できます。 属性の名前が `Attribute` 内で終わる場合、属性の参照時に、名前のその部分は省略可能です。 たとえば、`HelpAttribute` 属性は次のように使用できます。
+すべての属性クラスは、標準ライブラリによって提供される <xref:System.Attribute> 基底クラスから派生します。 属性は、関連付けられた宣言の直前に、名前を任意の変数とともに角かっこで囲んで与えることにより、適用できます。 属性の名前が `Attribute` 内で終わる場合、属性の参照時に、名前のその部分は省略可能です。 たとえば、`HelpAttribute` 属性は次のように使用できます。
 
 [!code-csharp[AttributeApplied](../../../samples/snippets/csharp/tour/attributes/Program.cs#L22-L28)]
 
@@ -36,4 +34,3 @@ C# プログラムにおける型、メンバー、およびその他のエン�
 
 >[!div class="step-by-step"]
 [前へ](delegates.md)
-

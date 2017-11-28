@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0fdc8629-2fdb-4a7c-a433-5b9d04eaf911
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 3026a0d853cb17dcf05d3b98d814044d743e48dc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="distinguishing-delegates-and-events"></a>デリゲートとイベントの識別
 
 [前へ](modern-events.md)
@@ -55,4 +53,3 @@ ms.lasthandoff: 07/28/2017
 ## <a name="evaluate-carefully"></a>慎重に評価する
 
 以上の考慮事項は絶対厳守の決まりではありません。 代わりに、特定の用途に最適な選択肢はどれかを決定する際の指南になります。 どちらも似ているため、両方を試作し、どちらが自然に動作するか検討するという方法もあります。 いずれも遅延バインディング シナリオを効率的に処理します。 自分の設計を最もよく伝える方を利用してください。
-

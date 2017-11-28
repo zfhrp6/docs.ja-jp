@@ -5,10 +5,12 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 helpviewer_keywords:
 - generics [.NET Framework], reflection emit
 - reflection emit, generic types
@@ -20,16 +22,15 @@ helpviewer_keywords:
 - types, generic
 - type parameters
 ms.assetid: f7180fc5-dd41-42d4-8a8e-1b34288e06de
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 99d8da622b23a98b8a48ad6fcdb82c270d24ed22
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: bc98ffad2f34be503f649f5331400f59689eea09
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="reflection-and-generic-types"></a>リフレクションとジェネリック型
 <a name="top"></a> リフレクションの観点から言えば、ジェネリック型は、それがジェネリック型定義である場合は型パラメーター セットが、構築された型である場合は型引数セットが関連付けられているという点で通常の型と異なります。 ジェネリック メソッドと通常のメソッドの違いも、それと同様です。  
@@ -71,7 +72,7 @@ ms.lasthandoff: 07/28/2017
  ジェネリック型の定義とジェネリック メソッドの定義は、インスタンス化可能な型の作成元となるテンプレートです。 <xref:System.Collections.Generic.Dictionary%602>など、.NET Framework クラス ライブラリのジェネリック型は、ジェネリック型の定義です  
   
 ### <a name="is-the-type-or-method-open-or-closed"></a>型またはメソッドがオープンかクローズか  
- すべての型パラメーター (すべての内包する型のすべての型パラメーターを含む) がインスタンス化可能な型に置き換えられている場合、ジェネリック型またはジェネリック メソッドはクローズであるといいます。 ジェネリック型のインスタンスを作成できるのは、それがクローズである場合だけです。 型がオープンである場合、 <xref:System.Type.ContainsGenericParameters%2A?displayProperty=fullName> プロパティは `true` を返します。 メソッドの場合、 <xref:System.Reflection.MethodInfo.ContainsGenericParameters%2A?displayProperty=fullName> メソッドで同じ機能が実行されます。  
+ すべての型パラメーター (すべての内包する型のすべての型パラメーターを含む) がインスタンス化可能な型に置き換えられている場合、ジェネリック型またはジェネリック メソッドはクローズであるといいます。 ジェネリック型のインスタンスを作成できるのは、それがクローズである場合だけです。 型がオープンである場合、 <xref:System.Type.ContainsGenericParameters%2A?displayProperty=nameWithType> プロパティは `true` を返します。 メソッドの場合、 <xref:System.Reflection.MethodInfo.ContainsGenericParameters%2A?displayProperty=nameWithType> メソッドで同じ機能が実行されます。  
   
  [ページのトップへ](#top)  
   
@@ -90,7 +91,7 @@ ms.lasthandoff: 07/28/2017
   
 <a name="examining_type_arguments"></a>   
 ## <a name="examining-type-arguments-and-type-parameters"></a>型引数と型パラメーターの確認  
- ジェネリック型の型パラメーターまたは型引数を表す <xref:System.Type.GetGenericArguments%2A?displayProperty=fullName> オブジェクトの配列を取得するには、 <xref:System.Type> メソッドを使用します。また、ジェネリック メソッドに対して同じ操作を実行するには、 <xref:System.Reflection.MethodInfo.GetGenericArguments%2A?displayProperty=fullName> メソッドを使用します。  
+ ジェネリック型の型パラメーターまたは型引数を表す <xref:System.Type.GetGenericArguments%2A?displayProperty=nameWithType> オブジェクトの配列を取得するには、 <xref:System.Type> メソッドを使用します。また、ジェネリック メソッドに対して同じ操作を実行するには、 <xref:System.Reflection.MethodInfo.GetGenericArguments%2A?displayProperty=nameWithType> メソッドを使用します。  
   
  <xref:System.Type> オブジェクトが型パラメーターを表していることがわかったら、リフレクションによって他の多くの詳細を確認できます 型パラメーターのソース、その位置、およびその制約を確認できます。  
   
@@ -138,16 +139,16 @@ generic<typename V, typename W> ref class D : B<int, V> {};
  <xref:System.Type.GenericParameterAttributes%2A> プロパティを使用すると、型パラメーターの変化 (共変性または反変性) と特殊な制約を示す <xref:System.Reflection.GenericParameterAttributes> 値を取得できます。  
   
 #### <a name="covariance-and-contravariance"></a>共変性と反変性  
- 型パラメーターが共変性と反変性のどちらであるかを判定するには、 <xref:System.Reflection.GenericParameterAttributes.VarianceMask?displayProperty=fullName> プロパティから返される <xref:System.Reflection.GenericParameterAttributes> 値に <xref:System.Type.GenericParameterAttributes%2A> マスクを適用します。 結果が <xref:System.Reflection.GenericParameterAttributes.None?displayProperty=fullName>の場合、型パラメーターはインバリアント (不変) です。 「 [共変性と反変性](../../../docs/standard/generics/covariance-and-contravariance.md)を参照してください。  
+ 型パラメーターが共変性と反変性のどちらであるかを判定するには、 <xref:System.Reflection.GenericParameterAttributes.VarianceMask?displayProperty=nameWithType> プロパティから返される <xref:System.Reflection.GenericParameterAttributes> 値に <xref:System.Type.GenericParameterAttributes%2A> マスクを適用します。 結果が <xref:System.Reflection.GenericParameterAttributes.None?displayProperty=nameWithType>の場合、型パラメーターはインバリアント (不変) です。 「 [共変性と反変性](../../../docs/standard/generics/covariance-and-contravariance.md)を参照してください。  
   
 #### <a name="special-constraints"></a>特殊な制約  
- 型パラメーターの特殊な制約を判定するには、 <xref:System.Reflection.GenericParameterAttributes.SpecialConstraintMask?displayProperty=fullName> プロパティから返される <xref:System.Reflection.GenericParameterAttributes> 値に <xref:System.Type.GenericParameterAttributes%2A> マスクを適用します。 結果が <xref:System.Reflection.GenericParameterAttributes.None?displayProperty=fullName>の場合、特殊な制約はありません。 型パラメーターに対する制約としては、参照型であること、null 非許容値型であること、既定のコンストラクターが存在すること、があります。  
+ 型パラメーターの特殊な制約を判定するには、 <xref:System.Reflection.GenericParameterAttributes.SpecialConstraintMask?displayProperty=nameWithType> プロパティから返される <xref:System.Reflection.GenericParameterAttributes> 値に <xref:System.Type.GenericParameterAttributes%2A> マスクを適用します。 結果が <xref:System.Reflection.GenericParameterAttributes.None?displayProperty=nameWithType>の場合、特殊な制約はありません。 型パラメーターに対する制約としては、参照型であること、null 非許容値型であること、既定のコンストラクターが存在すること、があります。  
   
  [ページのトップへ](#top)  
   
 <a name="invariants"></a>   
 ## <a name="invariants"></a>インバリアント  
- ジェネリック型のリフレクションで使用される一般的な用語に対するインバリアント条件を記載した表は、 <xref:System.Type.IsGenericType%2A?displayProperty=fullName>を参照してください。 ジェネリック メソッドに関連するその他の用語については、 <xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=fullName>を参照してください。  
+ ジェネリック型のリフレクションで使用される一般的な用語に対するインバリアント条件を記載した表は、 <xref:System.Type.IsGenericType%2A?displayProperty=nameWithType>を参照してください。 ジェネリック メソッドに関連するその他の用語については、 <xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=nameWithType>を参照してください。  
   
  [ページのトップへ](#top)  
   
@@ -160,4 +161,3 @@ generic<typename V, typename W> ref class D : B<int, V> {};
 |[ジェネリック](../../../docs/standard/generics/index.md)|ジェネリックの機能と .NET Framework におけるサポートについて説明します。|  
 |[方法: リフレクション出力を使用してジェネリック型を定義する](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)|リフレクション出力を使用して動的アセンブリにジェネリック型を生成する方法について説明します。|  
 |[型情報の表示](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)|<xref:System.Type> クラスについて説明します。また、<xref:System.Type> をさまざまなリフレクション クラスと共に使用して、コンストラクター、メソッド、フィールド、プロパティ、およびイベントについての情報を取得する方法を示すコード例を提供します。|
-

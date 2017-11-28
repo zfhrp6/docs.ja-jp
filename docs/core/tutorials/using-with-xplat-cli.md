@@ -10,14 +10,12 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 41632e63-d5c6-4427-a09e-51dc1116d45f
+ms.openlocfilehash: 19622cca1dd28d4d2248d69f1b4081c352a0c4f4
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 2762cdc983465979a530192716c33de7044dd1ed
-ms.openlocfilehash: 53894b7548b7bedfe3a980efd53a076c0e4efc7f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/04/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="getting-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要
 
 このトピックでは、.NET Core CLI ツールを利用し、自分のコンピューターでプラットフォームに依存しないアプリを開発する方法について説明します。
@@ -64,6 +62,8 @@ $ dotnet run
 
    次に、`Hello` という名前空間を定義します。 これを必要なものに変更できます。 `Program` という名前のクラスは、引数として文字列配列を使用する `Main` メソッドで、その名前空間内に定義されます。 この配列には、コンパイル済みプログラムの呼び出し時に渡される引数のリストが含まれます。 実際は、この配列は使用されません。プログラムはコンソールに "Hello World!" と 記述するだけです。 後に、この引数を利用するようにコードを変更します。
 
+   [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+
 2. `$ dotnet restore`
 
    [`dotnet restore`](../tools/dotnet-restore.md) は、[NuGet](https://www.nuget.org/) (.NET パッケージ マネージャー) を参照して依存関係のツリーを復元します。 NuGet は、*Hello.csproj* ファイルを分析し、ファイルに記載されている依存関係をダウンロードして (またはコンピューターのキャッシュから取得して)、*obj/project.assets.json* ファイルを書き込みます。  *project.assets.json* ファイルをコンパイルして実行できる必要があります。
@@ -94,7 +94,7 @@ $ dotnet run
 
 1. *Program.cs* ファイルの内容を次のコードで置き換えます。
 
-   [!code-csharp[フィボナッチ](../../../samples/core/console-apps/fibonacci-msbuild/Program.cs)]   
+   [!code-csharp[Fibonacci](../../../samples/core/console-apps/fibonacci-msbuild/Program.cs)]   
 
 2. [`dotnet build`](../tools/dotnet-build.md) を実行し、変更内容をコンパイルします。
 
@@ -129,11 +129,11 @@ $ dotnet run
 
 1. 次のコードを利用し、*FibonacciGenerator.cs* という名前の *Hello* ディレクトリ内に新しいファイルを追加します。
 
-   [!code-csharp[フィボナッチ ジェネレーター](../../../samples/core/console-apps/FibonacciBetterMsBuild/FibonacciGenerator.cs)]   
+   [!code-csharp[Fibonacci Generator](../../../samples/core/console-apps/FibonacciBetterMsBuild/FibonacciGenerator.cs)]   
 
 2. *Program.cs* ファイルの `Main` メソッドを変更し、次の例のように新しいクラスをインスタンス化し、そのメソッドを呼び出します。
 
-   [!code-csharp[新しい Program.cs](../../../samples/core/console-apps/FibonacciBetterMsBuild/Program.cs)]
+   [!code-csharp[New Program.cs](../../../samples/core/console-apps/FibonacciBetterMsBuild/Program.cs)]
 
 3. [`dotnet build`](../tools/dotnet-build.md) を実行し、変更内容をコンパイルします。
 
@@ -164,4 +164,3 @@ $ dotnet run
 ## <a name="see-also"></a>関連項目
 
 [.NET Core CLI ツールを使用したプロジェクトの整理およびテスト](testing-with-cli.md)
-

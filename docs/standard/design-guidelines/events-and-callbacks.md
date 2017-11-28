@@ -1,58 +1,56 @@
 ---
-title: "イベントとコールバック | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "機能拡張のイベント [.NET Framework]"
-  - "メソッド [.NET Framework], コールバック"
-  - "コールバック メソッド"
-  - "コールバック"
+title: "イベントとコールバック"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- events [.NET Framework], extensibility
+- methods [.NET Framework], callback
+- callback methods
+- callbacks
 ms.assetid: 48b55c60-495f-4089-9396-97f9122bba7c
-caps.latest.revision: 10
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 217e9eae3540e0a20afd0888d24803285d6352b4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# イベントとコールバック
-コールバックはするがデリゲートからユーザー コードにコールバックするためのフレームワーク機能拡張ポイントです。 これらのデリゲートは、メソッドのパラメーターを通じて通常フレームワークに渡されます。  
+# <a name="events-and-callbacks"></a>イベントとコールバック
+コールバックでは、フレームワークがデリゲートからのユーザー コードにコールバックする機能拡張ポイントです。 これらのデリゲートは、メソッドのパラメーターを通じて通常フレームワークに渡されます。  
   
- イベントは、コールバックのデリゲート \(イベント ハンドラー\) を提供するための便利で一貫した構文をサポートする特殊なケースです。 さらに、Visual Studio のステートメント入力候補および設計者は、イベント ベースの Api を使用してヘルプを提供します。 \(「[イベントのデザイン](../../../docs/standard/design-guidelines/event.md)」を参照\)。  
+ イベントは、デリゲート (イベント ハンドラー) を提供するための便利で一貫した構文をサポートするコールバックの特殊なケースです。 さらに、Visual Studio のステートメント入力候補およびデザイナーは、イベント ベースの Api を使用してヘルプを提供します。 (を参照してください[イベント デザイン](../../../docs/standard/design-guidelines/event.md))。  
   
- **✓ を検討してください** コールバックを使用して、フレームワークによって実行されるカスタム コードを提供できるようにします。  
+ **✓ を検討してください**コールバックを使用して、フレームワークによって実行されるカスタム コードを提供できるようにします。  
   
- **✓ を検討してください** イベントを使用したオブジェクト指向設計を理解することがなくても、フレームワークの動作をカスタマイズできるようにします。  
+ **✓ を検討してください**イベントを使用したオブジェクト指向設計を理解することがなくてもフレームワークの動作をカスタマイズできるようにします。  
   
- **✓ は** 、広い範囲の開発者になじみのある、ステートメント入力候補の Visual Studio に統合されているために、イベントを単純なコールバックよりも優先されます。  
+ **✓ しないで**幅広い開発者になじみのあるは、ステートメント入力候補の Visual Studio と統合されたために、イベントを単純なコールバックよりも優先されます。  
   
- **X 回避** パフォーマンスが重視される Api でコールバックを使用します。  
+ **避け x**パフォーマンス重視の Api でのコールバックを使用します。  
   
- **✓ は** 新しい `Func<...>`, 、`Action<...>`, 、または `Expression<...>` になったコールバック Api を定義するときに、カスタム デリゲートではなく型です。  
+ **✓ は**新しい`Func<...>`、 `Action<...>`、または`Expression<...>`コールバックで Api を定義するときに、カスタム デリゲートではなく型です。  
   
- `Func<...>` `Action<...>` 汎用デリゲートを表します。`Expression<...>` コンパイルして、後でも呼び出すことができますが、実行時にできる表します関数定義シリアル化およびリモート プロセスに渡されます。  
+ `Func<...>`および`Action<...>`汎用デリゲートを表します。 `Expression<...>`コンパイルと、その後もできますが、実行時に呼び出されることができますを表す関数定義シリアル化およびリモート プロセスに渡されます。  
   
- **✓ は** を測定し、使用するパフォーマンスの影響について理解する `Expression<...>`, 、使用する代わりに `Func<...>` と `Action<...>` デリゲート。  
+ **✓ しないで**を測定しを使用するパフォーマンスの影響について理解する`Expression<...>`、使用する代わりに`Func<...>`と`Action<...>`デリゲート。  
   
- `Expression<...>` ほとんどの場合と同じ論理的には種類が `Func<...>` と `Action<...>` デリゲート。 主な違いは、デリゲートがローカル処理のシナリオで使用するものであります。式は有益なリモート プロセスまたはコンピューターで式を評価するが適しています。  
+ `Expression<...>`型はほとんどの場合と論理的に等価に`Func<...>`と`Action<...>`デリゲート。 主な違いは、デリゲートがローカル処理のシナリオで使用するものでは、式がある場合と役に立つとリモート プロセスまたはコンピューターで式を評価することを意図しています。  
   
- **✓ は** デリゲートを呼び出すことによって任意のコードを実行するかを理解し、セキュリティ、正確性、および互換性の影響を与える可能性です。  
+ **✓ しないで**するデリゲートを呼び出すことによって実行している任意のコードを理解し、セキュリティ、正確性、および互換性への影響を与える可能性です。  
   
- *部分 © 2005年、2009 Microsoft Corporation します。 All rights reserved.*  
+ *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
   
- *翔泳社からのアクセス許可によって検出 [Framework デザイン ガイドライン: 規則が、表現方法と再利用可能な .NET ライブラリを 2 nd Edition パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) は Cwalina Brad エイブラムスによる、Microsoft Windows の開発シリーズの一部として Addison\-wesley Professional、2008 年 10 月 22 日を公開します。*  
+ *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## 参照  
- [機能拡張のデザイン](../../../docs/standard/design-guidelines/designing-for-extensibility.md)   
- [Framework デザイン ガイドライン](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a>関連項目  
+ [機能拡張のための設計](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
+ [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)

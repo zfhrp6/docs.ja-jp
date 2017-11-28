@@ -1,40 +1,20 @@
 ---
 title: "#<a name=\"if-c-reference\"></a>if (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- '#if'
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- '#if directive [C#]'
+f1_keywords: '#if'
+helpviewer_keywords: '#if directive [C#]'
 ms.assetid: 48cabbff-ca82-491f-a56a-eeccd528c7c2
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: e4e3b79f64f5190d48d7248726ecdf031ad685e6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: f70dac98d5731370ae961f795b08a71946867d9b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="if-c-reference"></a>#if (C# リファレンス)
 C# コンパイラでは、`#if` ディレクティブ、次いで [#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md) ディレクティブが検出されると、これらのディレクティブ間のコードがコンパイルされます (指定されたシンボルが定義されている場合に限る)。  C や C++ とは異なり、シンボルに数値を代入することはできません。C# の #if ステートメントはブール値であり、シンボルが定義済みかどうかのテストのみを行います。 次に例を示します。  
@@ -66,7 +46,8 @@ C# コンパイラでは、`#if` ディレクティブ、次いで [#endif](../.
   
 ```csharp
 // preprocessor_if.cs  
-#define DEBUG#define MYTEST  
+#define DEBUG
+#define MYTEST  
 using System;  
 public class MyClass   
 {  
@@ -85,9 +66,8 @@ public class MyClass
 }  
 ```  
   
- **DEBUG and MYTEST are defined**   
+ **DEBUG and MYTEST are defined**  
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [C# プリプロセッサ ディレクティブ](../../../csharp/language-reference/preprocessor-directives/index.md)
-

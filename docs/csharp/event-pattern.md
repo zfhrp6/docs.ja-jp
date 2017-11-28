@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 8a3133d6-4ef2-46f9-9c8d-a8ea8898e4c9
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 703b7b13a2175fb9c40ff707f333a1bf1530df8c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="standard-net-event-patterns"></a>標準的な .NET イベント パターン
 
 [前へ](events-overview.md)
@@ -262,4 +260,3 @@ lister.DirectoryChanged += (sender, eventArgs) =>
 次の項目では、.NET の最新のリリースで変更されたパターンを確認してください。
 
 [次へ](modern-events.md)
-
