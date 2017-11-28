@@ -10,144 +10,145 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 069ad711-3eaa-45c6-94d7-b40249cc8b99
+dev_langs:
+- csharp
+- vb
+ms.openlocfilehash: 7c884985873679b25831c15ef5c8b6370ecd6460
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
 ms.translationtype: HT
-ms.sourcegitcommit: 3a25c1c3b540bac8ef963a8bbf708b0700c3e9e2
-ms.openlocfilehash: 30e46ae97563add2bdf34948349cf2d6214d0de8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/19/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/21/2017
 ---
+# <a name="testing-a-class-library-with-net-core-in-visual-studio-2017"></a><span data-ttu-id="77998-104">Visual Studio 2017 の .NET Core を使用したクラス ライブラリのテスト</span><span class="sxs-lookup"><span data-stu-id="77998-104">Testing a class library with .NET Core in Visual Studio 2017</span></span>
 
-# <a name="testing-a-class-library-with-net-core-in-visual-studio-2017"></a>Visual Studio 2017 の .NET Core を使用したクラス ライブラリのテスト
+<span data-ttu-id="77998-105">「[Visual Studio 2017 での C# と .NET Core を使用したクラス ライブラリの構築](library-with-visual-studio.md)」または「[Visual Studio 2017 で Visual Basic と .NET Core を使用したクラス ライブラリの構築](vb-library-with-visual-studio.md)」では、<xref:System.String> クラスに拡張メソッドを追加する簡単なクラス ライブラリを作成しました。</span><span class="sxs-lookup"><span data-stu-id="77998-105">In [Building a class library with C# and .NET Core in Visual Studio 2017](library-with-visual-studio.md) or [Building a class library with Visual Basic and .NET Core in Visual Studio 2017](vb-library-with-visual-studio.md), you created a simple class library that adds an extension method to the <xref:System.String> class.</span></span> <span data-ttu-id="77998-106">ここでは、それが期待どおり動作するかを確認する単体テストを作成しましょう。</span><span class="sxs-lookup"><span data-stu-id="77998-106">Now, you'll create a unit test to make sure that it works as expected.</span></span> <span data-ttu-id="77998-107">この単体テスト プロジェクトは、前のトピックで作成したソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="77998-107">You'll add your unit test project to the solution you created in the previous topic.</span></span>
 
-「[Visual Studio 2017 での C# と .NET Core を使用したクラス ライブラリの構築](library-with-visual-studio.md)」または「[Visual Studio 2017 で Visual Basic と .NET Core を使用したクラス ライブラリの構築](vb-library-with-visual-studio.md)」では、<xref:System.String> クラスに拡張メソッドを追加する簡単なクラス ライブラリを作成しました。 ここでは、それが期待どおり動作するかを確認する単体テストを作成しましょう。 この単体テスト プロジェクトは、前のトピックで作成したソリューションに追加します。
+## <a name="creating-a-unit-test-project"></a><span data-ttu-id="77998-108">単体テスト プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="77998-108">Creating a unit test project</span></span>
 
-## <a name="creating-a-unit-test-project"></a>単体テスト プロジェクトの作成
+<span data-ttu-id="77998-109">単体テスト プロジェクトを作成するには、次の操作を行います。</span><span class="sxs-lookup"><span data-stu-id="77998-109">To create the unit test project, do the following:</span></span>
 
-単体テスト プロジェクトを作成するには、次の操作を行います。
+# <a name="ctabcsharp"></a>[<span data-ttu-id="77998-110">C#</span><span class="sxs-lookup"><span data-stu-id="77998-110">C#</span></span>](#tab/csharp)
+1. <span data-ttu-id="77998-111">**ソリューション エクスプローラー**で **[ClassLibraryProjects]** ソリューション ノードのコンテキスト メニューを開き、**[追加]** > **[新しいプロジェクト]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="77998-111">In **Solution Explorer**, open the context menu for the **ClassLibraryProjects** solution node and select **Add** > **New Project**.</span></span>
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
-1. **ソリューション エクスプローラー**で [**ClassLibraryProjects**] ソリューション ノードのコンテキスト メニューを開き、[**追加**] > [**新しいプロジェクト**] の順に選択します。
-
-1. [**新しいプロジェクトの追加**] ダイアログで、[**Visual C#**] ノードを選択します。 次に、[**.NET Core**] ノードを選び、[**単体テスト プロジェクト (.NET Core)**] プロジェクト テンプレートを選びます。 [**名前**] テキスト ボックスに、プロジェクト名として "StringLibraryTest" と入力します。 [**OK**] を選択し、単体テスト プロジェクトを作成します。
+1. <span data-ttu-id="77998-112">**[新しいプロジェクトの追加]** ダイアログで、**[Visual C#]** ノードを選択します。</span><span class="sxs-lookup"><span data-stu-id="77998-112">In the **Add New Project** dialog, select the **Visual C#** node.</span></span> <span data-ttu-id="77998-113">次に、**[.NET Core]** ノードを選び、**[単体テスト プロジェクト (.NET Core)]** プロジェクト テンプレートを選びます。</span><span class="sxs-lookup"><span data-stu-id="77998-113">Then select the **.NET Core** node followed by the **Unit Test Project (.NET Core)** project template.</span></span> <span data-ttu-id="77998-114">**[名前]** テキスト ボックスに、プロジェクト名として "StringLibraryTest" と入力します。</span><span class="sxs-lookup"><span data-stu-id="77998-114">In the **Name** text box, enter "StringLibraryTest" as the name of the project.</span></span> <span data-ttu-id="77998-115">**[OK]** を選択し、単体テスト プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="77998-115">Select **OK** to create the unit test project.</span></span>
 
    ![[新しいプロジェクトの追加] ダイアログ](./media/testing-library-with-visual-studio/testproject.png)
 
    > [!NOTE]  
-   > 単体テストプロジェクトに加え、Visual Studio を使用して .NET Core 用の xUnit テスト プロジェクトを作成することもできます。
+   > <span data-ttu-id="77998-117">単体テストプロジェクトに加え、Visual Studio を使用して .NET Core 用の xUnit テスト プロジェクトを作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="77998-117">In addition to a Unit Test project, you can also use Visual Studio to create an xUnit test project for .NET Core.</span></span>
 
-1. Visual Studio でプロジェクトが作成され、コード ウィンドウ内に *UnitTest1.cs* ファイルが開かれます。
+1. <span data-ttu-id="77998-118">Visual Studio でプロジェクトが作成され、コード ウィンドウ内に *UnitTest1.cs* ファイルが開かれます。</span><span class="sxs-lookup"><span data-stu-id="77998-118">Visual Studio creates the project and opens the *UnitTest1.cs* file in the code window.</span></span>
 
    ![既定の単体テスト プロジェクト UnitTest1 クラスおよび TestMethod1 メソッドを示す Visual Studio コード ウィンドウ](./media/testing-library-with-visual-studio/unittestwindow.png)
 
-   単体テストのテンプレートで作成されたソース コードにより、次の処理が行われます。
+   <span data-ttu-id="77998-120">単体テストのテンプレートで作成されたソース コードにより、次の処理が行われます。</span><span class="sxs-lookup"><span data-stu-id="77998-120">The source code created by the unit test template does the following:</span></span>
 
-   * 単体テストに使用する型を含む [Microsoft.VisualStudio.TestTools.UnitTesting](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.aspx) という名前空間がインポートされます。
+   * <span data-ttu-id="77998-121">単体テストに使用する型を含む [Microsoft.VisualStudio.TestTools.UnitTesting](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.aspx) という名前空間がインポートされます。</span><span class="sxs-lookup"><span data-stu-id="77998-121">It imports the [Microsoft.VisualStudio.TestTools.UnitTesting](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.aspx) namespace, which contains the types used for unit testing.</span></span>
 
-   * [\[TestClass\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testclassattribute.aspx) 属性が `UnitTest1` クラスに適用されます。 \[TestMethod\] 属性でタグ付けされたテスト クラス内の各テスト メソッドは、単体テスト実行時に自動実行されます。
+   * <span data-ttu-id="77998-122">[\[TestClass\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testclassattribute.aspx) 属性が `UnitTest1` クラスに適用されます。</span><span class="sxs-lookup"><span data-stu-id="77998-122">It applies the [\[TestClass\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testclassattribute.aspx) attribute to the `UnitTest1` class.</span></span> <span data-ttu-id="77998-123">\[TestMethod\] 属性でタグ付けされたテスト クラス内の各テスト メソッドは、単体テスト実行時に自動実行されます。</span><span class="sxs-lookup"><span data-stu-id="77998-123">Each test method in a test class tagged with the \[TestMethod\] attribute is executed automatically when the unit test is run.</span></span>
 
-   * [\[TestMethod\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testmethodattribute.aspx) 属性が適用され、単体テスト実行時に自動実行されるテスト メソッドとして `TestMethod1` が定義されます。
+   * <span data-ttu-id="77998-124">[\[TestMethod\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testmethodattribute.aspx) 属性が適用され、単体テスト実行時に自動実行されるテスト メソッドとして `TestMethod1` が定義されます。</span><span class="sxs-lookup"><span data-stu-id="77998-124">It applies the [\[TestMethod\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testmethodattribute.aspx) attribute to define `TestMethod1` as a test method for automatic execution when the unit test is run.</span></span>
 
-1. **ソリューション エクスプローラー**で [**StringLibraryTest**] プロジェクトの [**依存関係**] ノードを右クリックし、コンテキスト メニューの [**参照の追加**] を選択します。
+1. <span data-ttu-id="77998-125">**ソリューション エクスプローラー**で **[StringLibraryTest]** プロジェクトの **[依存関係]** ノードを右クリックし、コンテキスト メニューの **[参照の追加]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="77998-125">In **Solution Explorer**, right-click the **Dependencies** node of the **StringLibraryTest** project and select **Add Reference** from the context menu.</span></span>
 
    ![StringLibraryTest の依存関係のコンテキスト メニュー](./media/testing-library-with-visual-studio/addreference.png)
 
-1. [**参照マネージャー**] ダイアログで、[**プロジェクト**] ノードを展開し、[**StringLibrary**] の横のボックスをオンにします。 `StringLibrary` アセンブリへの参照を追加すると、コンパイラで **StringLibrary** メソッドを見つけることができるようになります。 [**OK**] ボタンを選択します。 これによってクラス ライブラリ プロジェクト `StringLibrary` への参照が追加されます。
+1. <span data-ttu-id="77998-127">**[参照マネージャー]** ダイアログで、**[プロジェクト]** ノードを展開し、**[StringLibrary]** の横のボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="77998-127">In the **Reference Manager** dialog, expand the **Projects** node and check the box next to **StringLibrary**.</span></span> <span data-ttu-id="77998-128">`StringLibrary` アセンブリへの参照を追加すると、コンパイラで **StringLibrary** メソッドを見つけることができるようになります。</span><span class="sxs-lookup"><span data-stu-id="77998-128">Adding a reference to the `StringLibrary` assembly allows the compiler to find **StringLibrary** methods.</span></span> <span data-ttu-id="77998-129">**[OK]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="77998-129">Select the **OK** button.</span></span> <span data-ttu-id="77998-130">これによってクラス ライブラリ プロジェクト `StringLibrary` への参照が追加されます。</span><span class="sxs-lookup"><span data-stu-id="77998-130">This adds a reference to your class library project, `StringLibrary`.</span></span>
 
    ![参照マネージャー](./media/testing-library-with-visual-studio/referencemanager.png)
-# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic) 
-1. **ソリューション エクスプローラー**で [**ClassLibraryProjects**] ソリューション ノードのコンテキスト メニューを開き、[**追加**] > [**新しいプロジェクト**] の順に選択します。
+# <a name="visual-basictabvisual-basic"></a>[<span data-ttu-id="77998-132">Visual Basic</span><span class="sxs-lookup"><span data-stu-id="77998-132">Visual Basic</span></span>](#tab/visual-basic) 
+1. <span data-ttu-id="77998-133">**ソリューション エクスプローラー**で **[ClassLibraryProjects]** ソリューション ノードのコンテキスト メニューを開き、**[追加]** > **[新しいプロジェクト]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="77998-133">In **Solution Explorer**, open the context menu for the **ClassLibraryProjects** solution node and select **Add** > **New Project**.</span></span>
 
-1. [**新しいプロジェクトの追加**] ダイアログで、[**Visual Basic**] ノードを選択します。 次に、[**.NET Core**] ノードを選び、[**単体テスト プロジェクト (.NET Core)**] プロジェクト テンプレートを選びます。 [**名前**] テキスト ボックスに、プロジェクト名として "StringLibraryTest" と入力します。 [**OK**] を選択し、単体テスト プロジェクトを作成します。
+1. <span data-ttu-id="77998-134">**[新しいプロジェクトの追加]** ダイアログで、**[Visual Basic]** ノードを選択します。</span><span class="sxs-lookup"><span data-stu-id="77998-134">In the **Add New Project** dialog, select the **Visual Basic** node.</span></span> <span data-ttu-id="77998-135">次に、**[.NET Core]** ノードを選び、**[単体テスト プロジェクト (.NET Core)]** プロジェクト テンプレートを選びます。</span><span class="sxs-lookup"><span data-stu-id="77998-135">Then select the **.NET Core** node followed by the **Unit Test Project (.NET Core)** project template.</span></span> <span data-ttu-id="77998-136">**[名前]** テキスト ボックスに、プロジェクト名として "StringLibraryTest" と入力します。</span><span class="sxs-lookup"><span data-stu-id="77998-136">In the **Name** text box, enter "StringLibraryTest" as the name of the project.</span></span> <span data-ttu-id="77998-137">**[OK]** を選択し、単体テスト プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="77998-137">Select **OK** to create the unit test project.</span></span>
 
    ![[新しいプロジェクトの追加] ダイアログ](./media/testing-library-with-visual-studio/vb-testproject.png)
 
    > [!NOTE]  
-   > 単体テストプロジェクトに加え、Visual Studio を使用して .NET Core 用の xUnit テスト プロジェクトを作成することもできます。
+   > <span data-ttu-id="77998-139">単体テストプロジェクトに加え、Visual Studio を使用して .NET Core 用の xUnit テスト プロジェクトを作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="77998-139">In addition to a Unit Test project, you can also use Visual Studio to create an xUnit test project for .NET Core.</span></span>
 
-1. Visual Studio でプロジェクトが作成され、コード ウィンドウ内に *UnitTest1.vb* ファイルが開かれます。
+1. <span data-ttu-id="77998-140">Visual Studio でプロジェクトが作成され、コード ウィンドウ内に *UnitTest1.vb* ファイルが開かれます。</span><span class="sxs-lookup"><span data-stu-id="77998-140">Visual Studio creates the project and opens the *UnitTest1.vb* file in the code window.</span></span>
 
    ![既定の単体テスト プロジェクト UnitTest1 クラスおよび TestMethod1 メソッドを示す Visual Studio コード ウィンドウ](./media/testing-library-with-visual-studio/vb-unittestwindow.png)
 
-   単体テストのテンプレートで作成されたソース コードにより、次の処理が行われます。
+   <span data-ttu-id="77998-142">単体テストのテンプレートで作成されたソース コードにより、次の処理が行われます。</span><span class="sxs-lookup"><span data-stu-id="77998-142">The source code created by the unit test template does the following:</span></span>
 
-   * 単体テストに使用する型を含む [Microsoft.VisualStudio.TestTools.UnitTesting](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.aspx) という名前空間がインポートされます。
+   * <span data-ttu-id="77998-143">単体テストに使用する型を含む [Microsoft.VisualStudio.TestTools.UnitTesting](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.aspx) という名前空間がインポートされます。</span><span class="sxs-lookup"><span data-stu-id="77998-143">It imports the [Microsoft.VisualStudio.TestTools.UnitTesting](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.aspx) namespace, which contains the types used for unit testing.</span></span>
 
-   * [\[TestClass\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testclassattribute.aspx) 属性が `UnitTest1` クラスに適用されます。 \[TestMethod\] 属性でタグ付けされたテスト クラス内の各テスト メソッドは、単体テスト実行時に自動実行されます。
+   * <span data-ttu-id="77998-144">[\[TestClass\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testclassattribute.aspx) 属性が `UnitTest1` クラスに適用されます。</span><span class="sxs-lookup"><span data-stu-id="77998-144">It applies the [\[TestClass\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testclassattribute.aspx) attribute to the `UnitTest1` class.</span></span> <span data-ttu-id="77998-145">\[TestMethod\] 属性でタグ付けされたテスト クラス内の各テスト メソッドは、単体テスト実行時に自動実行されます。</span><span class="sxs-lookup"><span data-stu-id="77998-145">Each test method in a test class tagged with the \[TestMethod\] attribute is executed automatically when the unit test is run.</span></span>
 
-   * [\[TestMethod\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testmethodattribute.aspx) 属性が適用され、単体テスト実行時に自動実行されるテスト メソッドとして `TestMethod1` が定義されます。
+   * <span data-ttu-id="77998-146">[\[TestMethod\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testmethodattribute.aspx) 属性が適用され、単体テスト実行時に自動実行されるテスト メソッドとして `TestMethod1` が定義されます。</span><span class="sxs-lookup"><span data-stu-id="77998-146">It applies the [\[TestMethod\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testmethodattribute.aspx) attribute to define `TestMethod1` as a test method for automatic execution when the unit test is run.</span></span>
 
-1. **ソリューション エクスプローラー**で [**StringLibraryTest**] プロジェクトの [**依存関係**] ノードを右クリックし、コンテキスト メニューの [**参照の追加**] を選択します。
+1. <span data-ttu-id="77998-147">**ソリューション エクスプローラー**で **[StringLibraryTest]** プロジェクトの **[依存関係]** ノードを右クリックし、コンテキスト メニューの **[参照の追加]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="77998-147">In **Solution Explorer**, right-click the **Dependencies** node of the **StringLibraryTest** project and select **Add Reference** from the context menu.</span></span>
 
    ![StringLibraryTest の依存関係のコンテキスト メニュー](./media/testing-library-with-visual-studio/addreference.png)
 
-1. [**参照マネージャー**] ダイアログで、[**プロジェクト**] ノードを展開し、[**StringLibrary**] の横のボックスをオンにします。 `StringLibrary` アセンブリへの参照を追加すると、コンパイラで **StringLibrary** メソッドを見つけることができるようになります。 [**OK**] ボタンを選択します。 これによってクラス ライブラリ プロジェクト `StringLibrary` への参照が追加されます。
+1. <span data-ttu-id="77998-149">**[参照マネージャー]** ダイアログで、**[プロジェクト]** ノードを展開し、**[StringLibrary]** の横のボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="77998-149">In the **Reference Manager** dialog, expand the **Projects** node and check the box next to **StringLibrary**.</span></span> <span data-ttu-id="77998-150">`StringLibrary` アセンブリへの参照を追加すると、コンパイラで **StringLibrary** メソッドを見つけることができるようになります。</span><span class="sxs-lookup"><span data-stu-id="77998-150">Adding a reference to the `StringLibrary` assembly allows the compiler to find **StringLibrary** methods.</span></span> <span data-ttu-id="77998-151">**[OK]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="77998-151">Select the **OK** button.</span></span> <span data-ttu-id="77998-152">これによってクラス ライブラリ プロジェクト `StringLibrary` への参照が追加されます。</span><span class="sxs-lookup"><span data-stu-id="77998-152">This adds a reference to your class library project, `StringLibrary`.</span></span>
 
    ![参照マネージャー](./media/testing-library-with-visual-studio/referencemanager.png)
 ---
 
-## <a name="adding-and-running-unit-test-methods"></a>単体テスト メソッドの追加と実行
+## <a name="adding-and-running-unit-test-methods"></a><span data-ttu-id="77998-154">単体テスト メソッドの追加と実行</span><span class="sxs-lookup"><span data-stu-id="77998-154">Adding and running unit test methods</span></span>
 
-Visual Studio で単体テストを実行すると、単体テスト クラス ([\[TestClass\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testclassattribute.aspx) 属性が適用されているクラス) 内の [\[TestMethod\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testmethodattribute.aspx) 属性でマークされた各メソッドが実行されます。 1 つのテスト メソッドは、最初のエラーが発生したとき、またはそのメソッドに含まれているすべてのテストが成功したときに終了します。
+<span data-ttu-id="77998-155">Visual Studio で単体テストを実行すると、単体テスト クラス ([\[TestClass\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testclassattribute.aspx) 属性が適用されているクラス) 内の [\[TestMethod\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testmethodattribute.aspx) 属性でマークされた各メソッドが実行されます。</span><span class="sxs-lookup"><span data-stu-id="77998-155">When Visual Studio runs a unit test, it executes each method marked with the [\[TestMethod\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testmethodattribute.aspx) attribute in a unit test class, the class to which the  [\[TestClass\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testclassattribute.aspx) attribute is applied.</span></span> <span data-ttu-id="77998-156">1 つのテスト メソッドは、最初のエラーが発生したとき、またはそのメソッドに含まれているすべてのテストが成功したときに終了します。</span><span class="sxs-lookup"><span data-stu-id="77998-156">A test method ends when the first failure is encountered or when all tests contained in the method have succeeded.</span></span>
 
-一般的なテストでは、[アサート](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.assert.aspx) クラスのメンバーを呼び出します。 多くのアサート メソッドは最低 2 つのパラメーターを含んでいます。1 つは予期されるテスト結果、もう 1 つは実際のテスト結果です。 頻繁に呼び出されるメソッドには、次の表のようなものがあります。
+<span data-ttu-id="77998-157">一般的なテストでは、[アサート](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.assert.aspx) クラスのメンバーを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="77998-157">The most common tests call members of the [Assert](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.assert.aspx) class.</span></span> <span data-ttu-id="77998-158">多くのアサート メソッドは最低 2 つのパラメーターを含んでいます。1 つは予期されるテスト結果、もう 1 つは実際のテスト結果です。</span><span class="sxs-lookup"><span data-stu-id="77998-158">Many assert methods include at least two parameters, one of which is the expected test result and the other of which is the actual test result.</span></span> <span data-ttu-id="77998-159">頻繁に呼び出されるメソッドには、次の表のようなものがあります。</span><span class="sxs-lookup"><span data-stu-id="77998-159">Some of its most frequently called methods are shown in the table below.</span></span>
 
-Assert メソッド | 関数
+<span data-ttu-id="77998-160">Assert メソッド</span><span class="sxs-lookup"><span data-stu-id="77998-160">Assert methods</span></span> | <span data-ttu-id="77998-161">関数</span><span class="sxs-lookup"><span data-stu-id="77998-161">Function</span></span>
 --- | ---
-`Assert.AreEqual` | 2 つの値または 2 つのオブジェクトが等しいことを確認します。 値またはオブジェクトが等しくない場合、アサートは失敗します。
-`Assert.AreSame` | 2 つのオブジェクト変数が同じオブジェクトを参照していることを確認します。 変数が別々のオブジェクトを参照している場合、アサートは失敗します。
-`Assert.IsFalse` | 条件が `false` であることを確認します。 条件が `true` の場合、アサートは失敗します。
-`Assert.IsNotNull` | オブジェクトが `null` でないことを確認します。 オブジェクトが `null` である場合、アサートは失敗します。
+`Assert.AreEqual` | <span data-ttu-id="77998-162">2 つの値または 2 つのオブジェクトが等しいことを確認します。</span><span class="sxs-lookup"><span data-stu-id="77998-162">Verifies that two values or objects are equal.</span></span> <span data-ttu-id="77998-163">値またはオブジェクトが等しくない場合、アサートは失敗します。</span><span class="sxs-lookup"><span data-stu-id="77998-163">The assert fails if the values or objects are not equal.</span></span>
+`Assert.AreSame` | <span data-ttu-id="77998-164">2 つのオブジェクト変数が同じオブジェクトを参照していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="77998-164">Verifies that two object variables refer to the same object.</span></span> <span data-ttu-id="77998-165">変数が別々のオブジェクトを参照している場合、アサートは失敗します。</span><span class="sxs-lookup"><span data-stu-id="77998-165">The assert fails if the variables refer to different objects.</span></span>
+`Assert.IsFalse` | <span data-ttu-id="77998-166">条件が `false` であることを確認します。</span><span class="sxs-lookup"><span data-stu-id="77998-166">Verifies that a condition is `false`.</span></span> <span data-ttu-id="77998-167">条件が `true` の場合、アサートは失敗します。</span><span class="sxs-lookup"><span data-stu-id="77998-167">The assert fails if the condition is `true`.</span></span>
+`Assert.IsNotNull` | <span data-ttu-id="77998-168">オブジェクトが `null` でないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="77998-168">Verifies that an object is not `null`.</span></span> <span data-ttu-id="77998-169">オブジェクトが `null` である場合、アサートは失敗します。</span><span class="sxs-lookup"><span data-stu-id="77998-169">The assert fails if the object is `null`.</span></span>
 
-テスト メソッドに [\[ExpectedException\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.expectedexceptionattribute.aspx) 属性を適用することもできます。 テスト メソッドがスローすることを期待されている例外の種類を示します。 指定した例外がスローされない場合、テストは失敗します。
+<span data-ttu-id="77998-170">テスト メソッドに [\[ExpectedException\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.expectedexceptionattribute.aspx) 属性を適用することもできます。</span><span class="sxs-lookup"><span data-stu-id="77998-170">You can also apply the [\[ExpectedException\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.expectedexceptionattribute.aspx) attribute to a test method.</span></span> <span data-ttu-id="77998-171">テスト メソッドがスローすることを期待されている例外の種類を示します。</span><span class="sxs-lookup"><span data-stu-id="77998-171">It indicates the type of exception a test method is expected to throw.</span></span> <span data-ttu-id="77998-172">指定した例外がスローされない場合、テストは失敗します。</span><span class="sxs-lookup"><span data-stu-id="77998-172">The test fails if the specified exception is not thrown.</span></span>
 
-`StringLibrary.StartsWithUpper` メソッドのテストでは、大文字で始まる文字列を多く用意します。 これらの場合ではメソッドが `true` を返すと予測されるので、[Assert.IsTrue(Boolean, String)](https://msdn.microsoft.com/library/ms243754.aspx) メソッドを呼び出します。 同様に、大文字以外で始まる文字列を多く用意します。 これらの場合、メソッドは `false` を返すと予測されるので、[Assert.IsFalse(Boolean, String)](https://msdn.microsoft.com/library/ms243805.aspx) メソッドを呼び出します。
+<span data-ttu-id="77998-173">`StringLibrary.StartsWithUpper` メソッドのテストでは、大文字で始まる文字列を多く用意します。</span><span class="sxs-lookup"><span data-stu-id="77998-173">In testing the `StringLibrary.StartsWithUpper` method, you want to provide a number of strings that begin with an uppercase character.</span></span> <span data-ttu-id="77998-174">これらの場合ではメソッドが `true` を返すと予測されるので、[Assert.IsTrue(Boolean, String)](https://msdn.microsoft.com/library/ms243754.aspx) メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="77998-174">You expect the method to return `true` in these cases, so you can call the [Assert.IsTrue(Boolean, String)](https://msdn.microsoft.com/library/ms243754.aspx) method.</span></span> <span data-ttu-id="77998-175">同様に、大文字以外で始まる文字列を多く用意します。</span><span class="sxs-lookup"><span data-stu-id="77998-175">Similarly, you want to provide a number of strings that begin with something other than an uppercase character.</span></span> <span data-ttu-id="77998-176">これらの場合、メソッドは `false` を返すと予測されるので、[Assert.IsFalse(Boolean, String)](https://msdn.microsoft.com/library/ms243805.aspx) メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="77998-176">You expect the method to return `false` in these cases, so you can call the [Assert.IsFalse(Boolean, String)](https://msdn.microsoft.com/library/ms243805.aspx) method.</span></span>
 
-ライブラリ メソッドは文字列を処理するので、[空の文字列 (`String.Empty`) ](xref:System.String.Empty) (文字がなく @System.String.Length が 0 である、有効な文字列)、および `null` 文字列 (初期化されていない文字列) を正しく処理するか確認します。 @System.String インスタンスで `StartsWithUpper` が例外メソッドとして呼び出される場合、それに `null` 文字列を渡すことはできません。 しかし、それを静的メソッドとして直接呼び出して、単一の @System.String 引数を渡すこともできます。
+<span data-ttu-id="77998-177">ライブラリ メソッドは文字列を処理するので、[空の文字列 (`String.Empty`) ](xref:System.String.Empty) (文字がなく <xref:System.String.Length> が 0 である、有効な文字列)、および `null` 文字列 (初期化されていない文字列) を正しく処理するか確認します。</span><span class="sxs-lookup"><span data-stu-id="77998-177">Since your library method handles strings, you also want to make sure that it successfully handles an [empty string (`String.Empty`)](xref:System.String.Empty), a valid string that has no characters and whose <xref:System.String.Length> is 0, and a `null` string that has not been initialized.</span></span> <span data-ttu-id="77998-178"><xref:System.String> インスタンスで `StartsWithUpper` が例外メソッドとして呼び出される場合、それに `null` 文字列を渡すことはできません。</span><span class="sxs-lookup"><span data-stu-id="77998-178">If `StartsWithUpper` is called as an extension method on a <xref:System.String> instance, it cannot be passed a `null` string.</span></span> <span data-ttu-id="77998-179">しかし、それを静的メソッドとして直接呼び出して、単一の <xref:System.String> 引数を渡すこともできます。</span><span class="sxs-lookup"><span data-stu-id="77998-179">However, you can also call it directly as a static method and pass a single <xref:System.String> argument.</span></span>
 
-メソッドを 3 つ定義します。これらのメソッドでは、文字列配列の各要素について[アサート](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.assert.aspx) メソッドが繰り返し呼び出されます。 テスト メソッドは最初のエラーが発生するとすぐに失敗するので、メソッドのオーバー ロードを呼び出して、メソッドの呼び出しで使用される文字列値を示す文字列を渡すようにします。
+<span data-ttu-id="77998-180">メソッドを 3 つ定義します。これらのメソッドでは、文字列配列の各要素について[アサート](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.assert.aspx) メソッドが繰り返し呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="77998-180">You'll define three methods, each of which calls its [Assert](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.assert.aspx) method repeatedly for each element in a string array.</span></span> <span data-ttu-id="77998-181">テスト メソッドは最初のエラーが発生するとすぐに失敗するので、メソッドのオーバー ロードを呼び出して、メソッドの呼び出しで使用される文字列値を示す文字列を渡すようにします。</span><span class="sxs-lookup"><span data-stu-id="77998-181">Because the test method fails as soon as it encounters the first failure, you'll call a method overload that allows you to pass a string that indicates the string value used in the method call.</span></span>
 
-テスト メソッドを作成するには
+<span data-ttu-id="77998-182">テスト メソッドを作成するには</span><span class="sxs-lookup"><span data-stu-id="77998-182">To create the test methods:</span></span>
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp) 
-1. *UnitTest1.cs* コード ウィンドウで、コードを次のコードに置き換えます。
+# <a name="ctabcsharp"></a>[<span data-ttu-id="77998-183">C#</span><span class="sxs-lookup"><span data-stu-id="77998-183">C#</span></span>](#tab/csharp) 
+1. <span data-ttu-id="77998-184">*UnitTest1.cs* コード ウィンドウで、コードを次のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="77998-184">In the *UnitTest1.cs* code window, replace the code with the following code:</span></span>
 
    [!CODE-csharp[Test#1](../../../samples/snippets/csharp/getting_started/with_visual_studio_2017/testlib1.cs)]
 
-   `TestStartsWithUpper` メソッドでの大文字のテストには、ギリシャ語の大文字のアルファ (U+0391) とキリル文字の大文字 EM (U+041C) が含まれており、`TestDoesNotStartWithUpper` メソッドでの小文字のテストにはギリシャ語の小文字のアルファ (U+03B1) とキリル文字の小文字 Ghe (U+0433) が含まれています。
+   <span data-ttu-id="77998-185">`TestStartsWithUpper` メソッドでの大文字のテストには、ギリシャ語の大文字のアルファ (U+0391) とキリル文字の大文字 EM (U+041C) が含まれており、`TestDoesNotStartWithUpper` メソッドでの小文字のテストにはギリシャ語の小文字のアルファ (U+03B1) とキリル文字の小文字 Ghe (U+0433) が含まれています。</span><span class="sxs-lookup"><span data-stu-id="77998-185">Note that your test of uppercase characters in the `TestStartsWithUpper` method includes the Greek capital letter alpha (U+0391) and the Cyrillic capital letter EM (U+041C), and the test of lowercase characters in the `TestDoesNotStartWithUpper` method includes the Greek small letter alpha (U+03B1) and the Cyrillic small letter Ghe (U+0433).</span></span>
 
-1. メニュー バーで、[**ファイル**] > [**名前を付けて UnitTest1.cs を保存**] の順に選択します。 [**名前を付けてファイルを保存**] ダイアログで、[**保存**] ボタンの横にある矢印を選択して、[**エンコード付きで保存**] を選択します。
+1. <span data-ttu-id="77998-186">メニュー バーで、**[ファイル]** > **[名前を付けて UnitTest1.cs を保存]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="77998-186">On the menu bar, select **File** > **Save UnitTest1.cs As**.</span></span> <span data-ttu-id="77998-187">**[名前を付けてファイルを保存]** ダイアログで、**[保存]** ボタンの横にある矢印を選択して、**[エンコード付きで保存]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="77998-187">In the **Save File As** dialog, select the arrow beside the **Save** button, and select **Save with Encoding**.</span></span>
 
    ![[名前を付けて保存] ダイアログ](./media/testing-library-with-visual-studio/savefileas.png)
-# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic) 
-1. *UnitTest1.vb* コード ウィンドウで、コードを次のコードに置き換えます。
+# <a name="visual-basictabvisual-basic"></a>[<span data-ttu-id="77998-189">Visual Basic</span><span class="sxs-lookup"><span data-stu-id="77998-189">Visual Basic</span></span>](#tab/visual-basic) 
+1. <span data-ttu-id="77998-190">*UnitTest1.vb* コード ウィンドウで、コードを次のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="77998-190">In the *UnitTest1.vb* code window, replace the code with the following code:</span></span>
 
     [!CODE-vb[Test#1](../../../samples/snippets/core/tutorials/vb-library-with-visual-studio/testlib.vb)]
 
-   `TestStartsWithUpper` メソッドでの大文字のテストには、ギリシャ語の大文字のアルファ (U+0391) とキリル文字の大文字 EM (U+041C) が含まれており、`TestDoesNotStartWithUpper` メソッドでの小文字のテストにはギリシャ語の小文字のアルファ (U+03B1) とキリル文字の小文字 Ghe (U+0433) が含まれています。
+   <span data-ttu-id="77998-191">`TestStartsWithUpper` メソッドでの大文字のテストには、ギリシャ語の大文字のアルファ (U+0391) とキリル文字の大文字 EM (U+041C) が含まれており、`TestDoesNotStartWithUpper` メソッドでの小文字のテストにはギリシャ語の小文字のアルファ (U+03B1) とキリル文字の小文字 Ghe (U+0433) が含まれています。</span><span class="sxs-lookup"><span data-stu-id="77998-191">Note that your test of uppercase characters in the `TestStartsWithUpper` method includes the Greek capital letter alpha (U+0391) and the Cyrillic capital letter EM (U+041C), and the test of lowercase characters in the `TestDoesNotStartWithUpper` method includes the Greek small letter alpha (U+03B1) and the Cyrillic small letter Ghe (U+0433).</span></span>
 
-1. メニュー バーで、[**ファイル**] > [**名前を付けて UnitTest1.vb を保存**] の順に選択します。 [**名前を付けてファイルを保存**] ダイアログで、[**保存**] ボタンの横にある矢印を選択して、[**エンコード付きで保存**] を選択します。
+1. <span data-ttu-id="77998-192">メニュー バーで、**[ファイル]** > **[名前を付けて UnitTest1.vb を保存]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="77998-192">On the menu bar, select **File** > **Save UnitTest1.vb As**.</span></span> <span data-ttu-id="77998-193">**[名前を付けてファイルを保存]** ダイアログで、**[保存]** ボタンの横にある矢印を選択して、**[エンコード付きで保存]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="77998-193">In the **Save File As** dialog, select the arrow beside the **Save** button, and select **Save with Encoding**.</span></span>
 
    ![[名前を付けて保存] ダイアログ](./media/testing-library-with-visual-studio/savefileas.png)
 ---
 
-1. [**保存の確認**] ダイアログで [**はい**] ボタンを選択してファイルを保存します。
+1. <span data-ttu-id="77998-195">**[保存の確認]** ダイアログで **[はい]** ボタンを選択してファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="77998-195">In the **Confirm Save As** dialog, select the **Yes** button to save the file.</span></span>
 
-1. [**保存オプションの詳細設定**] ダイアログの [**エンコード**] ドロップダウン リストから [**Unicode (UTF-8 シグネチャ付き) - コードページ 65001**] を選択し、[**OK**] の順に選択します。
+1. <span data-ttu-id="77998-196">**[保存オプションの詳細設定]** ダイアログの **[エンコード]** ドロップダウン リストから **[Unicode (UTF-8 シグネチャ付き) - コードページ 65001]** を選択し、**[OK]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="77998-196">In the **Advanced Save Options** dialog, select **Unicode (UTF-8 with signature) - Codepage 65001** from the **Encoding** drop-down list and select **OK**.</span></span>
 
    ![[保存オプションの詳細設定] ダイアログ](./media/testing-library-with-visual-studio/advancedsaveoptions.png)
 
-   UTF8 でエンコードされたファイルにソース コードを保存できなかった場合、ASCII ファイルとして保存される場合があります。 その場合は、ランタイムで ASCII 範囲外の UTF8 文字が正確にデコードされず、テスト結果が正確でなくなります。
+   <span data-ttu-id="77998-198">UTF8 でエンコードされたファイルにソース コードを保存できなかった場合、ASCII ファイルとして保存される場合があります。</span><span class="sxs-lookup"><span data-stu-id="77998-198">If you fail to save your source code as a UTF8-encoded file, Visual Studio may save it as an ASCII file.</span></span> <span data-ttu-id="77998-199">その場合は、ランタイムで ASCII 範囲外の UTF8 文字が正確にデコードされず、テスト結果が正確でなくなります。</span><span class="sxs-lookup"><span data-stu-id="77998-199">When that happens, the runtime doesn't accurately decode the UTF8 characters outside of the ASCII range, and the test results won't be accurate.</span></span>
 
-1. メニュー バーで [**テスト**] > [**実行**] > [**すべてのテスト**] を選択します。 [**テスト エクスプローラー**] ウィンドウが開き、テストが正常に実行されたことを示します。 3 つのテストが [**成功したテスト**] セクションに表示され、[**概要**] セクションにはテストの実行結果が表示されています。
+1. <span data-ttu-id="77998-200">メニュー バーで **[テスト]** > **[実行]** > **[すべてのテスト]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="77998-200">On the menu bar, select **Test** > **Run** > **All Tests**.</span></span> <span data-ttu-id="77998-201">**[テスト エクスプローラー]** ウィンドウが開き、テストが正常に実行されたことを示します。</span><span class="sxs-lookup"><span data-stu-id="77998-201">The **Test Explorer** window opens and shows that the tests ran successfully.</span></span> <span data-ttu-id="77998-202">3 つのテストが **[成功したテスト]** セクションに表示され、**[概要]** セクションにはテストの実行結果が表示されています。</span><span class="sxs-lookup"><span data-stu-id="77998-202">The three tests are listed in the **Passed Tests** section, and the **Summary** section reports the result of the test run.</span></span>
 
    ![[テスト エクスプローラー] ウィンドウ](./media/testing-library-with-visual-studio/firsttest.png)
 
-## <a name="handling-test-failures"></a>テスト エラーの処理
+## <a name="handling-test-failures"></a><span data-ttu-id="77998-204">テスト エラーの処理</span><span class="sxs-lookup"><span data-stu-id="77998-204">Handling test failures</span></span>
 
-テスト実行にはエラーがなかったので、少し変更を加えてテスト メソッドが 1 つ失敗するようにしてみましょう。
+<span data-ttu-id="77998-205">テスト実行にはエラーがなかったので、少し変更を加えてテスト メソッドが 1 つ失敗するようにしてみましょう。</span><span class="sxs-lookup"><span data-stu-id="77998-205">Your test run had no failures, but change it slightly so that one of the test methods fails:</span></span>
 
-1. `TestDoesNotStartWithUpper` メソッドの `words` 配列を変更し、文字列 "Error" を含めます。 ソリューションをビルドし、テストを実行するときに、Visual Studio では、自動的に開いているファイルが保存されるため、ファイルは保存する必要はありません。
+1. <span data-ttu-id="77998-206">`TestDoesNotStartWithUpper` メソッドの `words` 配列を変更し、文字列 "Error" を含めます。</span><span class="sxs-lookup"><span data-stu-id="77998-206">Modify the `words` array in the `TestDoesNotStartWithUpper` method to include the string "Error".</span></span> <span data-ttu-id="77998-207">ソリューションをビルドし、テストを実行するときに、Visual Studio では、自動的に開いているファイルが保存されるため、ファイルは保存する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="77998-207">You don't need to save the file because Visual Studio automatically saves open files when a solution is built to run tests.</span></span>
 
    ```csharp
    string[] words = { "alphabet", "Error", "zebra", "abc", "αυτοκινητοβιομηχανία", "государство",
@@ -158,31 +159,30 @@ Assert メソッド | 関数
                       "1234", ".", ";", " " }
 
    ```
-1. [**テスト**] > [**実行**] > [**すべてのテスト**] をメニュー バーから選択してテストを実行します。 [**テスト エクスプローラー**] ウィンドウに、テストが 2 つ成功し、1 つ失敗したことが示されます。
+1. <span data-ttu-id="77998-208">**[テスト]** > **[実行]** > **[すべてのテスト]** をメニュー バーから選択してテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="77998-208">Run the test by selecting **Test** > **Run** > **All Tests** from the menu bar.</span></span> <span data-ttu-id="77998-209">**[テスト エクスプローラー]** ウィンドウに、テストが 2 つ成功し、1 つ失敗したことが示されます。</span><span class="sxs-lookup"><span data-stu-id="77998-209">The **Test Explorer** window indicates that two tests succeeded and one failed.</span></span>
 
    ![[テスト エクスプローラー] ウィンドウ](./media/testing-library-with-visual-studio/failedtest.png)
 
-1. [**失敗したテスト**] セクションで、失敗したテスト `TestDoesNotStartWith` を選択します。 [**テスト エクスプローラー**] ウィンドウに、アサートによって生成されたメッセージ "Assert.IsFalse failed. Expected for 'Error': false; actual: True" が表示されます。 エラーのため、配列内の "Error" の後ろのすべての文字列はテストされませんでした。
+1. <span data-ttu-id="77998-211">**[失敗したテスト]** セクションで、失敗したテスト `TestDoesNotStartWith` を選択します。</span><span class="sxs-lookup"><span data-stu-id="77998-211">In the **Failed Tests** section, select the failed test, `TestDoesNotStartWith`.</span></span> <span data-ttu-id="77998-212">**[テスト エクスプローラー]** ウィンドウに、アサートによって生成されたメッセージ "Assert.IsFalse failed.</span><span class="sxs-lookup"><span data-stu-id="77998-212">The **Test Explorer** window displays the message produced by the assert: "Assert.IsFalse failed.</span></span> <span data-ttu-id="77998-213">Expected for 'Error': false; actual: True" が表示されます。</span><span class="sxs-lookup"><span data-stu-id="77998-213">Expected for 'Error': false; actual: True".</span></span> <span data-ttu-id="77998-214">エラーのため、配列内の "Error" の後ろのすべての文字列はテストされませんでした。</span><span class="sxs-lookup"><span data-stu-id="77998-214">Because of the failure, all strings in the array after "Error" were not tested.</span></span>
 
    ![Is False アサーションの失敗を示す [テスト エクスプローラー] ウィンドウ](./media/testing-library-with-visual-studio/failedtestdetail.png)
 
-1. 追加したコード (`"Error", `) を削除し、テストを再実行します。 テストは成功します。
+1. <span data-ttu-id="77998-216">追加したコード (`"Error", `) を削除し、テストを再実行します。</span><span class="sxs-lookup"><span data-stu-id="77998-216">Remove the code that you added (`"Error", `) and rerun the test.</span></span> <span data-ttu-id="77998-217">テストは成功します。</span><span class="sxs-lookup"><span data-stu-id="77998-217">The tests will pass.</span></span>
 
-## <a name="testing-the-release-version-of-the-library"></a>ライブラリのリリース バージョンのテスト
+## <a name="testing-the-release-version-of-the-library"></a><span data-ttu-id="77998-218">ライブラリのリリース バージョンのテスト</span><span class="sxs-lookup"><span data-stu-id="77998-218">Testing the Release version of the library</span></span>
 
-ここまで、ライブラリのデバッグ バージョンをテストしてきました。 すべてのテストが成功し、ライブラリを十分にテストしたので、さらにライブラリのリリース ビルドに対してテストを行います。 コンパイラの最適化などのさまざまな要因により、デバッグ ビルドとリリース ビルドとでは動作が異なる場合があります。
+<span data-ttu-id="77998-219">ここまで、ライブラリのデバッグ バージョンをテストしてきました。</span><span class="sxs-lookup"><span data-stu-id="77998-219">You've been running your tests against the Debug version of the library.</span></span> <span data-ttu-id="77998-220">すべてのテストが成功し、ライブラリを十分にテストしたので、さらにライブラリのリリース ビルドに対してテストを行います。</span><span class="sxs-lookup"><span data-stu-id="77998-220">Now that your tests have all passed and you've adequately tested your library, you should run the tests an additional time against the Release build of the library.</span></span> <span data-ttu-id="77998-221">コンパイラの最適化などのさまざまな要因により、デバッグ ビルドとリリース ビルドとでは動作が異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="77998-221">A number of factors, including compiler optimizations, can sometimes produce different behavior between Debug and Release builds.</span></span>
 
-リリース ビルドをテストするには、次の操作を行います。
+<span data-ttu-id="77998-222">リリース ビルドをテストするには、次の操作を行います。</span><span class="sxs-lookup"><span data-stu-id="77998-222">To test the Release build:</span></span>
 
-1. Visual Studio のツールバーで、ビルド構成を **[デバッグ]** から **[リリース]** に変更します。
+1. <span data-ttu-id="77998-223">Visual Studio のツールバーで、ビルド構成を **[デバッグ]** から **[リリース]** に変更します。</span><span class="sxs-lookup"><span data-stu-id="77998-223">In the Visual Studio toolbar, change the build configuration from **Debug** to **Release**.</span></span>
 
    ![Visual Studio ツール バー](./media/testing-library-with-visual-studio/toolbar.png)
 
-1. **ソリューション エクスプローラー**で [**StringLibrary**] プロジェクトを右クリックし、コンテキスト メニューの [**ビルド**] を選択し、ライブラリを再コンパイルします。
+1. <span data-ttu-id="77998-225">**ソリューション エクスプローラー**で **[StringLibrary]** プロジェクトを右クリックし、コンテキスト メニューの **[ビルド]** を選択し、ライブラリを再コンパイルします。</span><span class="sxs-lookup"><span data-stu-id="77998-225">In **Solution Explorer**, right-click the **StringLibrary** project and select **Build** from the context menu to recompile the library.</span></span>
 
    ![StringLibrary のコンテキスト メニュー](./media/testing-library-with-visual-studio/buildlibrary.png)
 
-1. [**テスト**] > [**実行**] > [**すべてのテスト**] をメニュー バーから選択して単体テストを実行します。 テストが成功します。
+1. <span data-ttu-id="77998-227">**[テスト]** > **[実行]** > **[すべてのテスト]** をメニュー バーから選択して単体テストを実行します。</span><span class="sxs-lookup"><span data-stu-id="77998-227">Run the unit tests by choosing **Test** > **Run** > **All Tests** from the menu bar.</span></span> <span data-ttu-id="77998-228">テストが成功します。</span><span class="sxs-lookup"><span data-stu-id="77998-228">The tests pass.</span></span>
 
-これでライブラリのテストが完了したので、次の手順では呼び出し元が使用できるようにします。 1 つまたは複数のアプリケーションとバンドルするか、NuGet パッケージとして配布することができます。 詳細については、「[Consuming a .NET Standard Class Library ](./consuming-library-with-visual-studio.md)」 (.NET Standard クラス ライブラリを使用する) を参照してください。
-
+<span data-ttu-id="77998-229">これでライブラリのテストが完了したので、次の手順では呼び出し元が使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="77998-229">Now that you've finished testing your library, the next step is to make it available to callers.</span></span> <span data-ttu-id="77998-230">1 つまたは複数のアプリケーションとバンドルするか、NuGet パッケージとして配布することができます。</span><span class="sxs-lookup"><span data-stu-id="77998-230">You can bundle it with one or more applications, or you can distribute it as a NuGet package.</span></span> <span data-ttu-id="77998-231">詳細については、「[Consuming a .NET Standard Class Library ](./consuming-library-with-visual-studio.md)」 (.NET Standard クラス ライブラリを使用する) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="77998-231">For more information, see [Consuming a .NET Standard Class Library](./consuming-library-with-visual-studio.md).</span></span>

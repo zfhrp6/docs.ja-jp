@@ -1,52 +1,42 @@
 ---
 title: "プログラミングの概念 (C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 3227afd5-4794-484b-b83b-0f1f94a0476b
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 9c82430ec58b81f37a33f4c246ea40f6da465af8
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8b914c6f820af1cd7de93fadc0d915261497f296
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="programming-concepts-c"></a>プログラミングの概念 (C#)
-このセクションでは、C# 言語でのプログラミングの概念について説明します。  
+# <a name="programming-concepts-c"></a><span data-ttu-id="b973e-102">プログラミングの概念 (C#)</span><span class="sxs-lookup"><span data-stu-id="b973e-102">Programming Concepts (C#)</span></span>
+<span data-ttu-id="b973e-103">このセクションでは、C# 言語でのプログラミングの概念について説明します。</span><span class="sxs-lookup"><span data-stu-id="b973e-103">This section explains programming concepts in the C# language.</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
+## <a name="in-this-section"></a><span data-ttu-id="b973e-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="b973e-104">In This Section</span></span>  
   
-|タイトル|説明|  
+|<span data-ttu-id="b973e-105">タイトル</span><span class="sxs-lookup"><span data-stu-id="b973e-105">Title</span></span>|<span data-ttu-id="b973e-106">説明</span><span class="sxs-lookup"><span data-stu-id="b973e-106">Description</span></span>|  
 |-----------|-----------------|  
-|[アセンブリとグローバル アセンブリ キャッシュ (C#)](../../../csharp/programming-guide/concepts/assemblies-gac/index.md)|アセンブリを作成および使用する方法について説明します。|  
-|[Async および Await を使用した非同期プログラミング (C#)](../../../csharp/programming-guide/concepts/async/index.md)|C# の [async](../../../csharp/language-reference/keywords/async.md) および [await](../../../csharp/language-reference/keywords/await.md) キーワードを使用して非同期ソリューションを記述する方法を説明します。 チュートリアルが含まれています。|  
-|[属性 (C#)](../../../csharp/programming-guide/concepts/attributes/index.md)|属性を使用して、型、フィールド、メソッド、プロパティなどのプログラミング要素に関する追加情報を指定する方法について説明します。|  
-|[呼び出し元情報 (C#)](../../../csharp/programming-guide/concepts/caller-information.md)|メソッドの呼び出し元に関する情報を取得する方法について説明します。 この情報には、ソース コードのファイル パスと行番号および呼び出し元のメンバー名が含まれます。|  
-|[コレクション (C#)](../../../csharp/programming-guide/concepts/collections.md)|.NET Framework で提供されているコレクションの種類のいくつかについて説明します。 単純なコレクションおよびキーと値のペアのコレクションを使用する方法を示します。|  
-|[共変性と反変性 (C#)](../../../csharp/programming-guide/concepts/covariance-contravariance/index.md)|インターフェイスやデリゲートでのジェネリック型パラメーターの暗黙の型変換を有効にする方法について説明します。|  
-|[式ツリー (C#)](../../../csharp/programming-guide/concepts/expression-trees/index.md)|式ツリーを使用して、実行可能コードの動的変更を有効にする方法について説明します。|  
-|[反復子 (C#)](../../../csharp/programming-guide/concepts/iterators.md)|コレクションのステップ実行に使用し、要素を一度に 1 つずつ返す、反復子について説明します。|  
-|[統合言語クエリ (LINQ) (C#)](../../../csharp/programming-guide/concepts/linq/index.md)|C# の言語構文の強力なクエリ機能と、リレーショナル データベース、XML ドキュメント、データセット、およびインメモリ コレクションを照会するためのモデルについて説明します。|  
-|[オブジェクト指向プログラミング (C#)](../../../csharp/programming-guide/concepts/object-oriented-programming.md)|カプセル化、継承、ポリモーフィズムなど、オブジェクト指向に関する一般的な概念について説明します。|  
-|[リフレクション (C#)](../../../csharp/programming-guide/concepts/reflection.md)|リフレクションを使用して、動的に型のインスタンスを作成する方法、作成したインスタンスを既存のオブジェクトにバインドする方法、または既存のオブジェクトから型を取得して、そのオブジェクトのメソッドを呼び出したり、フィールドやプロパティにアクセスしたりする方法について説明します。|  
-|[シリアル化 (C#)](../../../csharp/programming-guide/concepts/serialization/index.md)|バイナリ、XML、および SOAP のシリアル化の主要な概念について説明します。|  
-|[スレッド処理 (C#)](../../../csharp/programming-guide/concepts/threading/index.md)|.NET スレッド処理モデルの概要について説明し、複数のタスクを同時に実行するコードを記述してアプリケーションのパフォーマンスと応答性を向上させる方法を示します。|  
+|[<span data-ttu-id="b973e-107">アセンブリとグローバル アセンブリ キャッシュ (C#)</span><span class="sxs-lookup"><span data-stu-id="b973e-107">Assemblies and the Global Assembly Cache (C#)</span></span>](../../../csharp/programming-guide/concepts/assemblies-gac/index.md)|<span data-ttu-id="b973e-108">アセンブリを作成および使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b973e-108">Describes how to create and use assemblies.</span></span>|  
+|[<span data-ttu-id="b973e-109">Async および Await を使用した非同期プログラミング (C#)</span><span class="sxs-lookup"><span data-stu-id="b973e-109">Asynchronous Programming with async and await (C#)</span></span>](../../../csharp/programming-guide/concepts/async/index.md)|<span data-ttu-id="b973e-110">C# の [async](../../../csharp/language-reference/keywords/async.md) および [await](../../../csharp/language-reference/keywords/await.md) キーワードを使用して非同期ソリューションを記述する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="b973e-110">Describes how to write asynchronous solutions by using the [async](../../../csharp/language-reference/keywords/async.md) and [await](../../../csharp/language-reference/keywords/await.md) keywords in C#.</span></span> <span data-ttu-id="b973e-111">チュートリアルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="b973e-111">Includes a walkthrough.</span></span>|  
+|[<span data-ttu-id="b973e-112">属性 (C#)</span><span class="sxs-lookup"><span data-stu-id="b973e-112">Attributes (C#)</span></span>](../../../csharp/programming-guide/concepts/attributes/index.md)|<span data-ttu-id="b973e-113">属性を使用して、型、フィールド、メソッド、プロパティなどのプログラミング要素に関する追加情報を指定する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b973e-113">Discusses how to provide additional information about programming elements such as types, fields, methods, and properties by using attributes.</span></span>|  
+|[<span data-ttu-id="b973e-114">呼び出し元情報 (C#)</span><span class="sxs-lookup"><span data-stu-id="b973e-114">Caller Information (C#)</span></span>](../../../csharp/programming-guide/concepts/caller-information.md)|<span data-ttu-id="b973e-115">メソッドの呼び出し元に関する情報を取得する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b973e-115">Describes how to obtain information about the caller of a method.</span></span> <span data-ttu-id="b973e-116">この情報には、ソース コードのファイル パスと行番号および呼び出し元のメンバー名が含まれます。</span><span class="sxs-lookup"><span data-stu-id="b973e-116">This information includes the file path and the line number of the source code and the member name of the caller.</span></span>|  
+|[<span data-ttu-id="b973e-117">コレクション (C#)</span><span class="sxs-lookup"><span data-stu-id="b973e-117">Collections (C#)</span></span>](../../../csharp/programming-guide/concepts/collections.md)|<span data-ttu-id="b973e-118">.NET Framework で提供されているコレクションの種類のいくつかについて説明します。</span><span class="sxs-lookup"><span data-stu-id="b973e-118">Describes some of the types of collections provided by the .NET Framework.</span></span> <span data-ttu-id="b973e-119">単純なコレクションおよびキーと値のペアのコレクションを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b973e-119">Demonstrates how to use simple collections and collections of key/value pairs.</span></span>|  
+|[<span data-ttu-id="b973e-120">共変性と反変性 (C#)</span><span class="sxs-lookup"><span data-stu-id="b973e-120">Covariance and Contravariance (C#)</span></span>](../../../csharp/programming-guide/concepts/covariance-contravariance/index.md)|<span data-ttu-id="b973e-121">インターフェイスやデリゲートでのジェネリック型パラメーターの暗黙の型変換を有効にする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b973e-121">Shows how to enable implicit conversion of generic type parameters in interfaces and delegates.</span></span>|  
+|[<span data-ttu-id="b973e-122">式ツリー (C#)</span><span class="sxs-lookup"><span data-stu-id="b973e-122">Expression Trees (C#)</span></span>](../../../csharp/programming-guide/concepts/expression-trees/index.md)|<span data-ttu-id="b973e-123">式ツリーを使用して、実行可能コードの動的変更を有効にする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b973e-123">Explains how you can use expression trees to enable dynamic modification of executable code.</span></span>|  
+|[<span data-ttu-id="b973e-124">反復子 (C#)</span><span class="sxs-lookup"><span data-stu-id="b973e-124">Iterators (C#)</span></span>](../../../csharp/programming-guide/concepts/iterators.md)|<span data-ttu-id="b973e-125">コレクションのステップ実行に使用し、要素を一度に 1 つずつ返す、反復子について説明します。</span><span class="sxs-lookup"><span data-stu-id="b973e-125">Describes iterators, which are used to step through collections and return elements one at a time.</span></span>|  
+|[<span data-ttu-id="b973e-126">統合言語クエリ (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="b973e-126">Language-Integrated Query (LINQ) (C#)</span></span>](../../../csharp/programming-guide/concepts/linq/index.md)|<span data-ttu-id="b973e-127">C# の言語構文の強力なクエリ機能と、リレーショナル データベース、XML ドキュメント、データセット、およびインメモリ コレクションを照会するためのモデルについて説明します。</span><span class="sxs-lookup"><span data-stu-id="b973e-127">Discusses the powerful query capabilities in the language syntax of C#, and the model for querying relational databases, XML documents, datasets, and in-memory collections.</span></span>|  
+|[<span data-ttu-id="b973e-128">オブジェクト指向プログラミング (C#)</span><span class="sxs-lookup"><span data-stu-id="b973e-128">Object-Oriented Programming (C#)</span></span>](../../../csharp/programming-guide/concepts/object-oriented-programming.md)|<span data-ttu-id="b973e-129">カプセル化、継承、ポリモーフィズムなど、オブジェクト指向に関する一般的な概念について説明します。</span><span class="sxs-lookup"><span data-stu-id="b973e-129">Describes common object-oriented concepts, including encapsulation, inheritance, and polymorphism.</span></span>|  
+|[<span data-ttu-id="b973e-130">リフレクション (C#)</span><span class="sxs-lookup"><span data-stu-id="b973e-130">Reflection (C#)</span></span>](../../../csharp/programming-guide/concepts/reflection.md)|<span data-ttu-id="b973e-131">リフレクションを使用して、動的に型のインスタンスを作成する方法、作成したインスタンスを既存のオブジェクトにバインドする方法、または既存のオブジェクトから型を取得して、そのオブジェクトのメソッドを呼び出したり、フィールドやプロパティにアクセスしたりする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b973e-131">Explains how to use reflection to dynamically create an instance of a type, bind the type to an existing object, or get the type from an existing object and invoke its methods or access its fields and properties.</span></span>|  
+|[<span data-ttu-id="b973e-132">シリアル化 (C#)</span><span class="sxs-lookup"><span data-stu-id="b973e-132">Serialization (C# )</span></span>](../../../csharp/programming-guide/concepts/serialization/index.md)|<span data-ttu-id="b973e-133">バイナリ、XML、および SOAP のシリアル化の主要な概念について説明します。</span><span class="sxs-lookup"><span data-stu-id="b973e-133">Describes key concepts in binary, XML, and SOAP serialization.</span></span>|  
+|[<span data-ttu-id="b973e-134">スレッド処理 (C#)</span><span class="sxs-lookup"><span data-stu-id="b973e-134">Threading (C#)</span></span>](../../../csharp/programming-guide/concepts/threading/index.md)|<span data-ttu-id="b973e-135">.NET スレッド処理モデルの概要について説明し、複数のタスクを同時に実行するコードを記述してアプリケーションのパフォーマンスと応答性を向上させる方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b973e-135">Provides an overview of the .NET threading model and shows how to write code that performs multiple tasks at the same time to improve the performance and responsiveness of your applications.</span></span>|  
   
-## <a name="related-sections"></a>関連項目  
+## <a name="related-sections"></a><span data-ttu-id="b973e-136">関連項目</span><span class="sxs-lookup"><span data-stu-id="b973e-136">Related Sections</span></span>  
   
 |||  
 |---|---|  
-|[パフォーマンスに関するヒント](https://msdn.microsoft.com/library/ms173196(VS.110).aspx) | アプリケーションのパフォーマンスの向上に役立つ基本的な規則について説明します。|
-
+|<span data-ttu-id="b973e-137">[パフォーマンスに関するヒント](https://msdn.microsoft.com/library/ms173196(VS.110).aspx)</span><span class="sxs-lookup"><span data-stu-id="b973e-137">[Performance Tips](https://msdn.microsoft.com/library/ms173196(VS.110).aspx)</span></span> | <span data-ttu-id="b973e-138">アプリケーションのパフォーマンスの向上に役立つ基本的な規則について説明します。</span><span class="sxs-lookup"><span data-stu-id="b973e-138">Discusses several basic rules that may help you increase the performance of your application.</span></span>|

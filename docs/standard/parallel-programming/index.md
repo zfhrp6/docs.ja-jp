@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework の並列プログラミング"
+title: ".NET での並列プログラミング"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -8,39 +8,36 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- parallel programming
+helpviewer_keywords: parallel programming
 ms.assetid: 4d83c690-ad2d-489e-a2e0-b85b898a672d
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: e061508b6b74e81b79ab7d53b0277afd38072635
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a3509229efc57b1f6b1244671df65b2f21964e65
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="parallel-programming-in-the-net-framework"></a>.NET Framework の並列プログラミング
-多くのパーソナル コンピューターとワークステーションには、複数スレッドの同時実行を可能にする 2 つまたは 4 つのコア (CPU) があります。 近い将来、コンピューターは、これよりはるかに多くのコアを搭載すると予想されています。 現在および将来のハードウェアを活用するには、コードを並列化して複数のプロセッサに負荷を分散します。 以前は、並列化には低水準のスレッドおよびロックの操作が必要でした。 [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] および [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] では、新しいランタイム、新しいクラス ライブラリの型、および新しい診断ツールを提供することで、並列プログラミングのサポートを強化しています。 これらの機能により並行開発が簡素化され、スレッドやスレッド プールを直接操作することなく、効率的で詳細な、拡張性のある並列コードを自然な表現方法で記述できるようになります。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] の並列プログラミング アーキテクチャの高度な概要を次の図に示します。  
+# <a name="parallel-programming-in-net"></a><span data-ttu-id="deca9-102">.NET での並列プログラミング</span><span class="sxs-lookup"><span data-stu-id="deca9-102">Parallel Programming in .NET</span></span>
+<span data-ttu-id="deca9-103">多くのパーソナル コンピューターとワークステーションには、複数スレッドの同時実行を可能にする 2 つまたは 4 つのコア (CPU) があります。</span><span class="sxs-lookup"><span data-stu-id="deca9-103">Many personal computers and workstations have two or four cores (that is, CPUs) that enable multiple threads to be executed simultaneously.</span></span> <span data-ttu-id="deca9-104">近い将来、コンピューターは、これよりはるかに多くのコアを搭載すると予想されています。</span><span class="sxs-lookup"><span data-stu-id="deca9-104">Computers in the near future are expected to have significantly more cores.</span></span> <span data-ttu-id="deca9-105">現在および将来のハードウェアを活用するには、コードを並列化して複数のプロセッサに負荷を分散します。</span><span class="sxs-lookup"><span data-stu-id="deca9-105">To take advantage of the hardware of today and tomorrow, you can parallelize your code to distribute work across multiple processors.</span></span> <span data-ttu-id="deca9-106">以前は、並列化には低水準のスレッドおよびロックの操作が必要でした。</span><span class="sxs-lookup"><span data-stu-id="deca9-106">In the past, parallelization required low-level manipulation of threads and locks.</span></span> [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)]<span data-ttu-id="deca9-107"> および [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] では、新しいランタイム、新しいクラス ライブラリの型、および新しい診断ツールを提供することで、並列プログラミングのサポートを強化しています。</span><span class="sxs-lookup"><span data-stu-id="deca9-107"> and the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] enhance support for parallel programming by providing a new runtime, new class library types, and new diagnostic tools.</span></span> <span data-ttu-id="deca9-108">これらの機能により並行開発が簡素化され、スレッドやスレッド プールを直接操作することなく、効率的で詳細な、拡張性のある並列コードを自然な表現方法で記述できるようになります。</span><span class="sxs-lookup"><span data-stu-id="deca9-108">These features simplify parallel development so that you can write efficient, fine-grained, and scalable parallel code in a natural idiom without having to work directly with threads or the thread pool.</span></span> <span data-ttu-id="deca9-109">[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] の並列プログラミング アーキテクチャの高度な概要を次の図に示します。</span><span class="sxs-lookup"><span data-stu-id="deca9-109">The following illustration provides a high-level overview of the parallel programming architecture in the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].</span></span>  
   
- ![.NET 並列プログラミング アーキテクチャ](../../../docs/standard/parallel-programming/media/tpl-architecture.png "TPL_Architecture")  
+ <span data-ttu-id="deca9-110">![.NET 並列プログラミング アーキテクチャ](../../../docs/standard/parallel-programming/media/tpl-architecture.png "TPL_Architecture")</span><span class="sxs-lookup"><span data-stu-id="deca9-110">![.NET Parallel Programming Architecture](../../../docs/standard/parallel-programming/media/tpl-architecture.png "TPL_Architecture")</span></span>  
   
-## <a name="related-topics"></a>関連トピック  
+## <a name="related-topics"></a><span data-ttu-id="deca9-111">関連トピック</span><span class="sxs-lookup"><span data-stu-id="deca9-111">Related Topics</span></span>  
   
-|テクノロジ|説明|  
+|<span data-ttu-id="deca9-112">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="deca9-112">Technology</span></span>|<span data-ttu-id="deca9-113">説明</span><span class="sxs-lookup"><span data-stu-id="deca9-113">Description</span></span>|  
 |----------------|-----------------|  
-|[タスク並列ライブラリ (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)|並列バージョンの <xref:System.Threading.Tasks.Parallel?displayProperty=fullName> ループおよび `For` ループを含む `ForEach` クラスに関するドキュメントと、非同期操作の推奨される表現方法を表す <xref:System.Threading.Tasks.Task?displayProperty=fullName> クラスに関するドキュメントが用意されています。|  
-|[Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)|さまざまなシナリオでパフォーマンスを大幅に向上させる、LINQ to Objects の並列実装です。|  
-|[並列プログラミングのデータ構造](../../../docs/standard/parallel-programming/data-structures-for-parallel-programming.md)|スレッド セーフなコレクション クラス、軽量な同期型、および限定的な初期化の種類に関するドキュメントへのリンクを示します。|  
-|[並列診断ツール](../../../docs/standard/parallel-programming/parallel-diagnostic-tools.md)|Visual Studio デバッガーのタスク ウィンドウと並列スタック ウィンドウに関するドキュメントと、デバッグおよび並列コードのパフォーマンスの調整に使用できる [!INCLUDE[vsprvsts](../../../includes/vsprvsts-md.md)] プロファイラーの一連のビューで構成される [同時実行ビジュアライザー](/visualstudio/profiling/concurrency-visualizer) に関するドキュメントへのリンクを示します。|  
-|[PLINQ および TPL 用のカスタム パーティショナー](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)|パーティションのしくみと、既定のパーティションの設定方法または新しいパーティションの作成方法について説明します。|  
-|[タスク スケジューラ](http://msdn.microsoft.com/library/638f8ea5-21db-47a2-a934-86e1e961bf65)|スケジューラのしくみと既定のスケジューラの構成方法について説明します。|  
-|[PLINQ および TPL のラムダ式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)|C# および Visual Basic のラムダ式について簡単に説明し、PLINQ およびタスク並列ライブラリでラムダ式を使用する方法を示します。|  
-|[関連項目](../../../docs/standard/parallel-programming/for-further-reading-parallel-programming.md)|.NET Framework での並列プログラミングに関する追加のドキュメントとサンプル リソースへのリンクを示します。|  
+|[<span data-ttu-id="deca9-114">タスク並列ライブラリ (TPL)</span><span class="sxs-lookup"><span data-stu-id="deca9-114">Task Parallel Library (TPL)</span></span>](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)|<span data-ttu-id="deca9-115">並列バージョンの <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> ループおよび `For` ループを含む `ForEach` クラスに関するドキュメントと、非同期操作の推奨される表現方法を表す <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> クラスに関するドキュメントが用意されています。</span><span class="sxs-lookup"><span data-stu-id="deca9-115">Provides documentation for the <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> class, which includes parallel versions of `For` and `ForEach` loops, and also for the <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> class, which represents the preferred way to express asynchronous operations.</span></span>|  
+|[<span data-ttu-id="deca9-116">Parallel LINQ (PLINQ)</span><span class="sxs-lookup"><span data-stu-id="deca9-116">Parallel LINQ (PLINQ)</span></span>](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)|<span data-ttu-id="deca9-117">さまざまなシナリオでパフォーマンスを大幅に向上させる、LINQ to Objects の並列実装です。</span><span class="sxs-lookup"><span data-stu-id="deca9-117">A parallel implementation of LINQ to Objects that significantly improves performance in many scenarios.</span></span>|  
+|[<span data-ttu-id="deca9-118">並列プログラミングのデータ構造</span><span class="sxs-lookup"><span data-stu-id="deca9-118">Data Structures for Parallel Programming</span></span>](../../../docs/standard/parallel-programming/data-structures-for-parallel-programming.md)|<span data-ttu-id="deca9-119">スレッド セーフなコレクション クラス、軽量な同期型、および限定的な初期化の種類に関するドキュメントへのリンクを示します。</span><span class="sxs-lookup"><span data-stu-id="deca9-119">Provides links to documentation for thread-safe collection classes, lightweight synchronization types, and types for lazy initialization.</span></span>|  
+|[<span data-ttu-id="deca9-120">並列診断ツール</span><span class="sxs-lookup"><span data-stu-id="deca9-120">Parallel Diagnostic Tools</span></span>](../../../docs/standard/parallel-programming/parallel-diagnostic-tools.md)|<span data-ttu-id="deca9-121">Visual Studio デバッガーのタスク ウィンドウと並列スタック ウィンドウに関するドキュメントと、デバッグおよび並列コードのパフォーマンスの調整に使用できる [!INCLUDE[vsprvsts](../../../includes/vsprvsts-md.md)] プロファイラーの一連のビューで構成される [同時実行ビジュアライザー](/visualstudio/profiling/concurrency-visualizer) に関するドキュメントへのリンクを示します。</span><span class="sxs-lookup"><span data-stu-id="deca9-121">Provides links to documentation for Visual Studio debugger windows for tasks and parallel stacks, and the [Concurrency Visualizer](/visualstudio/profiling/concurrency-visualizer), which consists of a set of views in the [!INCLUDE[vsprvsts](../../../includes/vsprvsts-md.md)] Profiler that you can use to debug and to tune the performance of parallel code.</span></span>|  
+|[<span data-ttu-id="deca9-122">PLINQ および TPL 用のカスタム パーティショナー</span><span class="sxs-lookup"><span data-stu-id="deca9-122">Custom Partitioners for PLINQ and TPL</span></span>](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)|<span data-ttu-id="deca9-123">パーティションのしくみと、既定のパーティションの設定方法または新しいパーティションの作成方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="deca9-123">Describes how partitioners work and how to configure the default partitioners or create a new partitioner.</span></span>|  
+|[<span data-ttu-id="deca9-124">タスク スケジューラ</span><span class="sxs-lookup"><span data-stu-id="deca9-124">Task Schedulers</span></span>](http://msdn.microsoft.com/library/638f8ea5-21db-47a2-a934-86e1e961bf65)|<span data-ttu-id="deca9-125">スケジューラのしくみと既定のスケジューラの構成方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="deca9-125">Describes how schedulers work and how the default schedulers may be configured.</span></span>|  
+|[<span data-ttu-id="deca9-126">PLINQ および TPL のラムダ式</span><span class="sxs-lookup"><span data-stu-id="deca9-126">Lambda Expressions in PLINQ and TPL</span></span>](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)|<span data-ttu-id="deca9-127">C# および Visual Basic のラムダ式について簡単に説明し、PLINQ およびタスク並列ライブラリでラムダ式を使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="deca9-127">Provides a brief overview of lambda expressions in C# and Visual Basic, and shows how they are used in PLINQ and the Task Parallel Library.</span></span>|  
+|[<span data-ttu-id="deca9-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="deca9-128">For Further Reading</span></span>](../../../docs/standard/parallel-programming/for-further-reading-parallel-programming.md)|<span data-ttu-id="deca9-129">.NET Framework での並列プログラミングに関する追加のドキュメントとサンプル リソースへのリンクを示します。</span><span class="sxs-lookup"><span data-stu-id="deca9-129">Provides links to additional documentation and sample resources for parallel programming in the .NET Framework.</span></span>|  
   
-## <a name="see-also"></a>関連項目  
- [並列プログラミングのパターン: .NET Framework 4 での並列パターンの理解と適用](http://go.microsoft.com/fwlink/?LinkID=185142)   
- [.NET Framework による並列プログラミングのサンプル](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)
-
+## <a name="see-also"></a><span data-ttu-id="deca9-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="deca9-130">See Also</span></span>  
+ [<span data-ttu-id="deca9-131">Patterns for Parallel Programming: Understanding and Applying Parallel Patterns with the .NET Framework 4 (並列プログラミングのパターン: .NET Framework 4 での並列パターンの理解と適用)</span><span class="sxs-lookup"><span data-stu-id="deca9-131">Patterns for Parallel Programming: Understanding and Applying Parallel Patterns with the .NET Framework 4</span></span>](http://go.microsoft.com/fwlink/?LinkID=185142)  
+ [<span data-ttu-id="deca9-132">.NET Framework による並列プログラミングのサンプル</span><span class="sxs-lookup"><span data-stu-id="deca9-132">Samples for Parallel Programming with the .NET Framework</span></span>](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)

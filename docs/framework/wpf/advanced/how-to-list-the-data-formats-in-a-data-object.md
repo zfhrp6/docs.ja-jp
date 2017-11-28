@@ -1,46 +1,52 @@
 ---
-title: "方法 : データ オブジェクト内のデータ形式の一覧を表示する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "データ形式 [WPF], リスト"
-  - "DataFormats クラス [WPF]"
-  - "ドラッグ アンド ドロップ [WPF], 一覧表示 (データ形式を)"
+title: "方法 : データ オブジェクト内のデータ形式の一覧を表示する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- drag-and-drop [WPF], listing data formats
+- DataFormats class [WPF]
+- data formats [WPF], listing
 ms.assetid: 18e7ba4b-ccef-4815-ae2d-3a32891010c0
-caps.latest.revision: 5
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9ef5657aefdf1c229b4f1749881cce1148435a8d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : データ オブジェクト内のデータ形式の一覧を表示する
-<xref:System.Windows.DataObject.GetFormats%2A> メソッドのオーバーロードを使用して、データ オブジェクトで使用可能な各データ形式を示す文字列の配列を取得する方法を次の例に示します。  
+# <a name="how-to-list-the-data-formats-in-a-data-object"></a><span data-ttu-id="4ee0c-102">方法 : データ オブジェクト内のデータ形式の一覧を表示する</span><span class="sxs-lookup"><span data-stu-id="4ee0c-102">How to: List the Data Formats in a Data Object</span></span>
+<span data-ttu-id="4ee0c-103">次の例を使用する方法を示して、<xref:System.Windows.DataObject.GetFormats%2A>メソッドのオーバー ロードは、各データ オブジェクトで使用可能なデータ形式を示す文字列の配列を取得します。</span><span class="sxs-lookup"><span data-stu-id="4ee0c-103">The following examples show how to use the <xref:System.Windows.DataObject.GetFormats%2A> method overloads get an array of strings denoting each data format that is available in a data object.</span></span>  
   
-## 例  
+## <a name="example"></a><span data-ttu-id="4ee0c-104">例</span><span class="sxs-lookup"><span data-stu-id="4ee0c-104">Example</span></span>  
   
-### Description  
- <xref:System.Windows.DataObject.GetFormats%2A> オーバーロードを使用して、データ オブジェクトで使用可能なすべてのデータ形式 \(ネイティブおよび自動変換可能の両方\) を示す一連の文字列を取得するコード例を次に示します。  
+### <a name="description"></a><span data-ttu-id="4ee0c-105">説明</span><span class="sxs-lookup"><span data-stu-id="4ee0c-105">Description</span></span>  
+ <span data-ttu-id="4ee0c-106">次のコード例を使用して、 <xref:System.Windows.DataObject.GetFormats%2A> (ネイティブおよび自動変換可能) は、データ オブジェクトで使用可能なすべてのデータ形式を示す文字列の配列を取得するオーバー ロードします。</span><span class="sxs-lookup"><span data-stu-id="4ee0c-106">The following example code uses the <xref:System.Windows.DataObject.GetFormats%2A> overload to get an array of strings denoting all data formats available in a data object (both native and auto-convertible).</span></span>  
   
-### コード  
+### <a name="code"></a><span data-ttu-id="4ee0c-107">コード</span><span class="sxs-lookup"><span data-stu-id="4ee0c-107">Code</span></span>  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_GetAllDataFormats](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_getalldataformats)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_GetAllDataFormats](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_getalldataformats)]  
   
-## 例  
+## <a name="example"></a><span data-ttu-id="4ee0c-108">例</span><span class="sxs-lookup"><span data-stu-id="4ee0c-108">Example</span></span>  
   
-### Description  
- <xref:System.Windows.DataObject.GetFormats%2A> オーバーロードを使用して、データ オブジェクトで使用できるデータ形式のみを示す一連の文字列を取得するコード例を次に示します \(自動変換可能なデータ形式はフィルター処理されます\)。  
+### <a name="description"></a><span data-ttu-id="4ee0c-109">説明</span><span class="sxs-lookup"><span data-stu-id="4ee0c-109">Description</span></span>  
+ <span data-ttu-id="4ee0c-110">次のコード例を使用して、<xref:System.Windows.DataObject.GetFormats%2A>データ オブジェクト (自動変換可能データの形式がフィルター選択) で使用可能なデータ形式のみを示す文字列の配列を取得するオーバー ロードします。</span><span class="sxs-lookup"><span data-stu-id="4ee0c-110">The following example code uses the <xref:System.Windows.DataObject.GetFormats%2A> overload to get an array of strings denoting only data formats available in a data object (auto-convertible data formats are filtered).</span></span>  
   
-### コード  
+### <a name="code"></a><span data-ttu-id="4ee0c-111">コード</span><span class="sxs-lookup"><span data-stu-id="4ee0c-111">Code</span></span>  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_GetAllDataFormats_NativeOnly](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_getalldataformats_nativeonly)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_GetAllDataFormats_NativeOnly](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_getalldataformats_nativeonly)]  
   
-## 参照  
- <xref:System.Windows.IDataObject>   
- [ドラッグ アンド ドロップの概要](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)
+## <a name="see-also"></a><span data-ttu-id="4ee0c-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="4ee0c-112">See Also</span></span>  
+ <xref:System.Windows.IDataObject>  
+ [<span data-ttu-id="4ee0c-113">ドラッグ アンド ドロップの概要</span><span class="sxs-lookup"><span data-stu-id="4ee0c-113">Drag and Drop Overview</span></span>](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)

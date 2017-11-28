@@ -1,150 +1,156 @@
 ---
-title: "チュートリアル : ElementHost コントロールを使用したプロパティの割り当て | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ElementHost コントロール, 割り当て (プロパティを)"
-  - "割り当て (プロパティを)"
+title: "チュートリアル : ElementHost コントロールを使用したプロパティの割り当て"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- mapping properties [WPF]
+- ElementHost control [WPF], mapping properties
 ms.assetid: bccd6e0d-2272-4924-9107-ff8ed58b88aa
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: dae954012d15431d2019d3d9cbe61747a8646d4b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル : ElementHost コントロールを使用したプロパティの割り当て
-このチュートリアルでは、<xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A> プロパティを使用して、ホストされている [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 要素の対応するプロパティに [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] プロパティを割り当てる方法を示します。  
+# <a name="walkthrough-mapping-properties-using-the-elementhost-control"></a><span data-ttu-id="4a621-102">チュートリアル : ElementHost コントロールを使用したプロパティの割り当て</span><span class="sxs-lookup"><span data-stu-id="4a621-102">Walkthrough: Mapping Properties Using the ElementHost Control</span></span>
+<span data-ttu-id="4a621-103">このチュートリアルで使用する方法、<xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A>プロパティにマップする[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]、ホスト型に対応するプロパティをプロパティ[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]要素。</span><span class="sxs-lookup"><span data-stu-id="4a621-103">This walkthrough shows you how to use the <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A> property to map [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] properties to corresponding properties on a hosted [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] element.</span></span>  
   
- このチュートリアルでは、以下のタスクを行います。  
+ <span data-ttu-id="4a621-104">このチュートリアルでは、以下のタスクを行います。</span><span class="sxs-lookup"><span data-stu-id="4a621-104">Tasks illustrated in this walkthrough include:</span></span>  
   
--   プロジェクトの作成。  
+-   <span data-ttu-id="4a621-105">プロジェクトの作成。</span><span class="sxs-lookup"><span data-stu-id="4a621-105">Creating the project.</span></span>  
   
--   新しいプロパティ マッピングの定義。  
+-   <span data-ttu-id="4a621-106">新しいプロパティ マッピングを定義します。</span><span class="sxs-lookup"><span data-stu-id="4a621-106">Defining a new property mapping.</span></span>  
   
--   既定のプロパティ マッピングの削除。  
+-   <span data-ttu-id="4a621-107">プロパティの既定のマッピングを削除しています。</span><span class="sxs-lookup"><span data-stu-id="4a621-107">Removing a default property mapping.</span></span>  
   
--   既定のプロパティ マッピングの拡張。  
+-   <span data-ttu-id="4a621-108">プロパティの既定のマッピングを拡張します。</span><span class="sxs-lookup"><span data-stu-id="4a621-108">Extending a default property mapping.</span></span>  
   
- このチュートリアルで示すタスクの完全なコード一覧については、[ElementHost コントロールを使用したプロパティの割り当てのサンプル](http://go.microsoft.com/fwlink/?LinkID=160018)を参照してください。  
+ <span data-ttu-id="4a621-109">このチュートリアルでタスクの完全なコードについては、次を参照してください。 [ElementHost コントロールのサンプルを使用してプロパティをマッピング](http://go.microsoft.com/fwlink/?LinkID=160018)です。</span><span class="sxs-lookup"><span data-stu-id="4a621-109">For a complete code listing of the tasks illustrated in this walkthrough, see [Mapping Properties Using the ElementHost Control Sample](http://go.microsoft.com/fwlink/?LinkID=160018).</span></span>  
   
- 終了すると、ホストされている要素の対応する [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティに [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] プロパティを割り当てることができるようになります。  
+ <span data-ttu-id="4a621-110">完了したらにマップできる、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]を対応するプロパティ[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ホストされている要素のプロパティです。</span><span class="sxs-lookup"><span data-stu-id="4a621-110">When you are finished, you will be able to map [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] properties to corresponding [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] properties on a hosted element.</span></span>  
   
-## 必須コンポーネント  
- このチュートリアルを実行するには、次のコンポーネントが必要です。  
+## <a name="prerequisites"></a><span data-ttu-id="4a621-111">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="4a621-111">Prerequisites</span></span>  
+ <span data-ttu-id="4a621-112">このチュートリアルを実行するには、次のコンポーネントが必要です。</span><span class="sxs-lookup"><span data-stu-id="4a621-112">You need the following components to complete this walkthrough:</span></span>  
   
--   [!INCLUDE[vs_orcas_long](../../../../includes/vs-orcas-long-md.md)].  
+-   [!INCLUDE[vs_orcas_long](../../../../includes/vs-orcas-long-md.md)]<span data-ttu-id="4a621-113">。</span><span class="sxs-lookup"><span data-stu-id="4a621-113">.</span></span>  
   
-## プロジェクトの作成  
+## <a name="creating-the-project"></a><span data-ttu-id="4a621-114">プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="4a621-114">Creating the Project</span></span>  
   
-#### プロジェクトを作成するには  
+#### <a name="to-create-the-project"></a><span data-ttu-id="4a621-115">プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="4a621-115">To create the project</span></span>  
   
-1.  `PropertyMappingWithElementHost` という名前の [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] アプリケーション プロジェクトを作成します。  詳細については、「[How to: Create a Windows Application Project](http://msdn.microsoft.com/ja-jp/b2f93fed-c635-4705-8d0e-cf079a264efa)」を参照してください。  
+1.  <span data-ttu-id="4a621-116">作成、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]という名前のアプリケーション プロジェクト`PropertyMappingWithElementHost`です。</span><span class="sxs-lookup"><span data-stu-id="4a621-116">Create a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] application project named `PropertyMappingWithElementHost`.</span></span> <span data-ttu-id="4a621-117">詳細については、「 [How to: Create a Windows Application Project](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4a621-117">For more information, see [How to: Create a Windows Application Project](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa).</span></span>  
   
-2.  ソリューション エクスプローラーで、次の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アセンブリへの参照を追加します。  
+2.  <span data-ttu-id="4a621-118">ソリューション エクスプ ローラーで、次の参照を追加[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アセンブリ。</span><span class="sxs-lookup"><span data-stu-id="4a621-118">In Solution Explorer, add references to the following [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] assemblies.</span></span>  
   
-    -   PresentationCore  
+    -   <span data-ttu-id="4a621-119">PresentationCore</span><span class="sxs-lookup"><span data-stu-id="4a621-119">PresentationCore</span></span>  
   
-    -   PresentationFramework  
+    -   <span data-ttu-id="4a621-120">PresentationFramework</span><span class="sxs-lookup"><span data-stu-id="4a621-120">PresentationFramework</span></span>  
   
-    -   WindowsBase  
+    -   <span data-ttu-id="4a621-121">WindowsBase</span><span class="sxs-lookup"><span data-stu-id="4a621-121">WindowsBase</span></span>  
   
-    -   WindowsFormsIntegration  
+    -   <span data-ttu-id="4a621-122">WindowsFormsIntegration</span><span class="sxs-lookup"><span data-stu-id="4a621-122">WindowsFormsIntegration</span></span>  
   
-3.  次のコードを `Form1` コード ファイルの先頭にコピーします。  
+3.  <span data-ttu-id="4a621-123">先頭に次のコードをコピー、`Form1`コード ファイル。</span><span class="sxs-lookup"><span data-stu-id="4a621-123">Copy the following code into the top of the `Form1` code file.</span></span>  
   
      [!code-csharp[PropertyMappingWithElementHost#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithElementHost/CSharp/PropertyMappingWithElementHost/Form1.cs#10)]
      [!code-vb[PropertyMappingWithElementHost#10](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithElementHost/VisualBasic/PropertyMappingWithElementHost/Form1.vb#10)]  
   
-4.  Windows フォーム デザイナーで `Form1` を開きます。  フォームをダブルクリックして <xref:System.Windows.Forms.Form.Load> イベントのイベント ハンドラーを追加します。  
+4.  <span data-ttu-id="4a621-124">Windows フォーム デザイナーで `Form1` を開きます。</span><span class="sxs-lookup"><span data-stu-id="4a621-124">Open `Form1` in the Windows Forms Designer.</span></span> <span data-ttu-id="4a621-125">イベント ハンドラーの追加フォームをダブルクリックして、<xref:System.Windows.Forms.Form.Load>イベント。</span><span class="sxs-lookup"><span data-stu-id="4a621-125">Double-click the form to add an event handler for the <xref:System.Windows.Forms.Form.Load> event.</span></span>  
   
-5.  Windows フォーム デザイナーに戻り、フォームの <xref:System.Windows.Forms.Control.Resize> イベントのイベント ハンドラーを追加します。  詳細については、「[How to: Create Event Handlers Using the Designer](http://msdn.microsoft.com/ja-jp/8461e9b8-14e8-406f-936e-3726732b23d2)」を参照してください。  
+5.  <span data-ttu-id="4a621-126">Windows フォーム デザイナーに戻るし、フォームのイベント ハンドラーを追加<xref:System.Windows.Forms.Control.Resize>イベント。</span><span class="sxs-lookup"><span data-stu-id="4a621-126">Return to the Windows Forms Designer and add an event handler for the form's <xref:System.Windows.Forms.Control.Resize> event.</span></span> <span data-ttu-id="4a621-127">詳細については、次を参照してください。[する方法: イベント ハンドラーを使用して作成デザイナー](http://msdn.microsoft.com/en-us/8461e9b8-14e8-406f-936e-3726732b23d2)です。</span><span class="sxs-lookup"><span data-stu-id="4a621-127">For more information, see [How to: Create Event Handlers Using the Designer](http://msdn.microsoft.com/en-us/8461e9b8-14e8-406f-936e-3726732b23d2).</span></span>  
   
-6.  `Form1` クラス内に、<xref:System.Windows.Forms.Integration.ElementHost> フィールドを宣言します。  
+6.  <span data-ttu-id="4a621-128">宣言、<xref:System.Windows.Forms.Integration.ElementHost>フィールドで、`Form1`クラスです。</span><span class="sxs-lookup"><span data-stu-id="4a621-128">Declare an <xref:System.Windows.Forms.Integration.ElementHost> field in the `Form1` class.</span></span>  
   
      [!code-csharp[PropertyMappingWithElementHost#16](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithElementHost/CSharp/PropertyMappingWithElementHost/Form1.cs#16)]
      [!code-vb[PropertyMappingWithElementHost#16](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithElementHost/VisualBasic/PropertyMappingWithElementHost/Form1.vb#16)]  
   
-## 新しいプロパティ割り当ての定義  
- <xref:System.Windows.Forms.Integration.ElementHost> コントロールには、既定のプロパティ割り当てがいくつか用意されています。  新しいプロパティ割り当てを追加するには、<xref:System.Windows.Forms.Integration.ElementHost> コントロールの <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A> で <xref:System.Windows.Forms.Integration.PropertyMap.Add%2A> メソッドを呼び出します。  
+## <a name="defining-new-property-mappings"></a><span data-ttu-id="4a621-129">新しいプロパティのマッピングを定義します。</span><span class="sxs-lookup"><span data-stu-id="4a621-129">Defining New Property Mappings</span></span>  
+ <span data-ttu-id="4a621-130"><xref:System.Windows.Forms.Integration.ElementHost>コントロールにより、いくつかの既定値がプロパティのマッピングを提供します。</span><span class="sxs-lookup"><span data-stu-id="4a621-130">The <xref:System.Windows.Forms.Integration.ElementHost> control provides several default property mappings.</span></span> <span data-ttu-id="4a621-131">呼び出して新しいプロパティ マッピングを追加する、<xref:System.Windows.Forms.Integration.PropertyMap.Add%2A>メソッドを<xref:System.Windows.Forms.Integration.ElementHost>コントロールの<xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A>します。</span><span class="sxs-lookup"><span data-stu-id="4a621-131">You add a new property mapping by calling the <xref:System.Windows.Forms.Integration.PropertyMap.Add%2A> method on the <xref:System.Windows.Forms.Integration.ElementHost> control's <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A>.</span></span>  
   
-#### 新しいプロパティ割り当てを定義するには  
+#### <a name="to-define-new-property-mappings"></a><span data-ttu-id="4a621-132">新しいプロパティのマッピングを定義するには</span><span class="sxs-lookup"><span data-stu-id="4a621-132">To define new property mappings</span></span>  
   
-1.  `Form1` クラスの定義に次のコードをコピーします。  
+1.  <span data-ttu-id="4a621-133">定義に次のコードをコピー、`Form1`クラスです。</span><span class="sxs-lookup"><span data-stu-id="4a621-133">Copy the following code into the definition for the `Form1` class.</span></span>  
   
      [!code-csharp[PropertyMappingWithElementHost#12](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithElementHost/CSharp/PropertyMappingWithElementHost/Form1.cs#12)]
      [!code-vb[PropertyMappingWithElementHost#12](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithElementHost/VisualBasic/PropertyMappingWithElementHost/Form1.vb#12)]  
   
-     `AddMarginMapping` メソッドは、<xref:System.Windows.Forms.Control.Margin%2A> プロパティの新しいマッピングを追加します。  
+     <span data-ttu-id="4a621-134">`AddMarginMapping`メソッドは、新しいマッピングを追加、<xref:System.Windows.Forms.Control.Margin%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="4a621-134">The `AddMarginMapping` method adds a new mapping for the <xref:System.Windows.Forms.Control.Margin%2A> property.</span></span>  
   
-     `OnMarginChange` メソッドは、<xref:System.Windows.Forms.Control.Margin%2A> プロパティを [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の <xref:System.Windows.FrameworkElement.Margin%2A> プロパティに変換します。  
+     <span data-ttu-id="4a621-135">`OnMarginChange`メソッドは、変換、<xref:System.Windows.Forms.Control.Margin%2A>プロパティを[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.FrameworkElement.Margin%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="4a621-135">The `OnMarginChange` method translates the <xref:System.Windows.Forms.Control.Margin%2A> property to the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.FrameworkElement.Margin%2A> property.</span></span>  
   
-2.  `Form1` クラスの定義に次のコードをコピーします。  
+2.  <span data-ttu-id="4a621-136">定義に次のコードをコピー、`Form1`クラスです。</span><span class="sxs-lookup"><span data-stu-id="4a621-136">Copy the following code into the definition for the `Form1` class.</span></span>  
   
      [!code-csharp[PropertyMappingWithElementHost#14](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithElementHost/CSharp/PropertyMappingWithElementHost/Form1.cs#14)]
      [!code-vb[PropertyMappingWithElementHost#14](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithElementHost/VisualBasic/PropertyMappingWithElementHost/Form1.vb#14)]  
   
-     `AddRegionMapping` メソッドは、<xref:System.Windows.Forms.Control.Region%2A> プロパティの新しいマッピングを追加します。  
+     <span data-ttu-id="4a621-137">`AddRegionMapping`メソッドは、新しいマッピングを追加、<xref:System.Windows.Forms.Control.Region%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="4a621-137">The `AddRegionMapping` method adds a new mapping for the <xref:System.Windows.Forms.Control.Region%2A> property.</span></span>  
   
-     `OnRegionChange` メソッドは、<xref:System.Windows.Forms.Control.Region%2A> プロパティを [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の <xref:System.Windows.UIElement.Clip%2A> プロパティに変換します。  
+     <span data-ttu-id="4a621-138">`OnRegionChange`メソッドは、変換、<xref:System.Windows.Forms.Control.Region%2A>プロパティを[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.UIElement.Clip%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="4a621-138">The `OnRegionChange` method translates the <xref:System.Windows.Forms.Control.Region%2A> property to the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.UIElement.Clip%2A> property.</span></span>  
   
-     `Form1_Resize` メソッドは、フォームの <xref:System.Windows.Forms.Control.Resize> イベントを処理し、ホストされている要素に合わせてクリッピング領域のサイズを設定します。  
+     <span data-ttu-id="4a621-139">`Form1_Resize`メソッドは、処理、フォームの<xref:System.Windows.Forms.Control.Resize>イベントし、ホストされている要素に合わせてクリッピング領域のサイズを設定します。</span><span class="sxs-lookup"><span data-stu-id="4a621-139">The `Form1_Resize` method handles the form's <xref:System.Windows.Forms.Control.Resize> event and sizes the clipping region to fit the hosted element.</span></span>  
   
-## 既定のプロパティ マッピングの削除  
- 既定のプロパティ割り当てを削除するには、<xref:System.Windows.Forms.Integration.ElementHost> コントロールの <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A> で <xref:System.Windows.Forms.Integration.PropertyMap.Remove%2A> メソッドを呼び出します。  
+## <a name="removing-a-default-property-mapping"></a><span data-ttu-id="4a621-140">プロパティの既定のマッピングを削除します。</span><span class="sxs-lookup"><span data-stu-id="4a621-140">Removing a Default Property Mapping</span></span>  
+ <span data-ttu-id="4a621-141">プロパティの既定のマッピングを削除する、<xref:System.Windows.Forms.Integration.PropertyMap.Remove%2A>メソッドを<xref:System.Windows.Forms.Integration.ElementHost>コントロールの<xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A>します。</span><span class="sxs-lookup"><span data-stu-id="4a621-141">Remove a default property mapping by calling the <xref:System.Windows.Forms.Integration.PropertyMap.Remove%2A> method on the <xref:System.Windows.Forms.Integration.ElementHost> control's <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A>.</span></span>  
   
-#### 既定のプロパティ マッピングを削除するには  
+#### <a name="to-remove-a-default-property-mapping"></a><span data-ttu-id="4a621-142">プロパティの既定のマッピングを削除するには</span><span class="sxs-lookup"><span data-stu-id="4a621-142">To remove a default property mapping</span></span>  
   
--   `Form1` クラスの定義に次のコードをコピーします。  
+-   <span data-ttu-id="4a621-143">定義に次のコードをコピー、`Form1`クラスです。</span><span class="sxs-lookup"><span data-stu-id="4a621-143">Copy the following code into the definition for the `Form1` class.</span></span>  
   
      [!code-csharp[PropertyMappingWithElementHost#13](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithElementHost/CSharp/PropertyMappingWithElementHost/Form1.cs#13)]
      [!code-vb[PropertyMappingWithElementHost#13](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithElementHost/VisualBasic/PropertyMappingWithElementHost/Form1.vb#13)]  
   
-     `RemoveCursorMapping` メソッドは、<xref:System.Windows.Forms.Control.Cursor%2A> プロパティの既定のマッピングを削除します。  
+     <span data-ttu-id="4a621-144">`RemoveCursorMapping`メソッドの既定のマッピングを削除する、<xref:System.Windows.Forms.Control.Cursor%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="4a621-144">The `RemoveCursorMapping` method deletes the default mapping for the <xref:System.Windows.Forms.Control.Cursor%2A> property.</span></span>  
   
-## 既定のプロパティ マッピングの拡張  
- 既定のプロパティ マッピングを使用したり、それをユーザー独自のマッピングで拡張することもできます。  
+## <a name="extending-a-default-property-mapping"></a><span data-ttu-id="4a621-145">プロパティの既定のマッピングを拡張します。</span><span class="sxs-lookup"><span data-stu-id="4a621-145">Extending a Default Property Mapping</span></span>  
+ <span data-ttu-id="4a621-146">プロパティの既定のマッピングを使用しても、独自のマッピングに付加して拡張できます。</span><span class="sxs-lookup"><span data-stu-id="4a621-146">You can use a default property mapping and also extend it with your own mapping.</span></span>  
   
-#### 既定のプロパティ マッピングを拡張するには  
+#### <a name="to-extend-a-default-property-mapping"></a><span data-ttu-id="4a621-147">プロパティの既定のマッピングを拡張するには</span><span class="sxs-lookup"><span data-stu-id="4a621-147">To extend a default property mapping</span></span>  
   
--   `Form1` クラスの定義に次のコードをコピーします。  
+-   <span data-ttu-id="4a621-148">定義に次のコードをコピー、`Form1`クラスです。</span><span class="sxs-lookup"><span data-stu-id="4a621-148">Copy the following code into the definition for the `Form1` class.</span></span>  
   
      [!code-csharp[PropertyMappingWithElementHost#15](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithElementHost/CSharp/PropertyMappingWithElementHost/Form1.cs#15)]
      [!code-vb[PropertyMappingWithElementHost#15](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithElementHost/VisualBasic/PropertyMappingWithElementHost/Form1.vb#15)]  
   
-     `ExtendBackColorMapping` メソッドは、カスタム プロパティ トランスレータを既存の <xref:System.Windows.Forms.Control.BackColor%2A> プロパティ マッピングに追加します。  
+     <span data-ttu-id="4a621-149">`ExtendBackColorMapping`メソッドでは、カスタム プロパティ トランスレーターを追加すると、既存<xref:System.Windows.Forms.Control.BackColor%2A>プロパティ マッピングします。</span><span class="sxs-lookup"><span data-stu-id="4a621-149">The `ExtendBackColorMapping` method adds a custom property translator to the existing <xref:System.Windows.Forms.Control.BackColor%2A> property mapping.</span></span>  
   
-     `OnBackColorChange` メソッドは、特定のイメージをホストされているコントロールの <xref:System.Windows.Controls.Control.Background%2A> プロパティに割り当てます。  `OnBackColorChange` メソッドは、既定のプロパティ マッピングの適用後に呼び出されます。  
+     <span data-ttu-id="4a621-150">`OnBackColorChange`メソッドは、ホストされるコントロールの特定のイメージを割り当てます<xref:System.Windows.Controls.Control.Background%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="4a621-150">The `OnBackColorChange` method assigns a specific image to the hosted control's <xref:System.Windows.Controls.Control.Background%2A> property.</span></span> <span data-ttu-id="4a621-151">`OnBackColorChange`既定のプロパティ マッピングが適用された後にメソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="4a621-151">The `OnBackColorChange` method is called after the default property mapping is applied.</span></span>  
   
-## プロパティ マッピングの初期化  
+## <a name="initializing-your-property-mappings"></a><span data-ttu-id="4a621-152">プロパティ マッピングの初期化</span><span class="sxs-lookup"><span data-stu-id="4a621-152">Initializing Your Property Mappings</span></span>  
   
-#### プロパティ マッピングを初期化するには  
+#### <a name="to-initialize-your-property-mappings"></a><span data-ttu-id="4a621-153">プロパティ マッピングを初期化するには</span><span class="sxs-lookup"><span data-stu-id="4a621-153">To initialize your property mappings</span></span>  
   
-1.  `Form1` クラスの定義に次のコードをコピーします。  
+1.  <span data-ttu-id="4a621-154">定義に次のコードをコピー、`Form1`クラスです。</span><span class="sxs-lookup"><span data-stu-id="4a621-154">Copy the following code into the definition for the `Form1` class.</span></span>  
   
      [!code-csharp[PropertyMappingWithElementHost#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithElementHost/CSharp/PropertyMappingWithElementHost/Form1.cs#11)]
      [!code-vb[PropertyMappingWithElementHost#11](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithElementHost/VisualBasic/PropertyMappingWithElementHost/Form1.vb#11)]  
   
-     `Form1_Load` メソッドは <xref:System.Windows.Forms.Form.Load> イベントを処理し、次の初期化を実行します。  
+     <span data-ttu-id="4a621-155">`Form1_Load`メソッド ハンドル、<xref:System.Windows.Forms.Form.Load>イベントと、次の初期化を実行します。</span><span class="sxs-lookup"><span data-stu-id="4a621-155">The `Form1_Load` method handles the <xref:System.Windows.Forms.Form.Load> event and performs the following initialization.</span></span>  
   
-    -   [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.Button> 要素を作成します。  
+    -   <span data-ttu-id="4a621-156">作成、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.Button>要素。</span><span class="sxs-lookup"><span data-stu-id="4a621-156">Creates a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.Button> element.</span></span>  
   
-    -   このチュートリアルで定義したメソッドを呼び出して、プロパティ マッピングを設定します。  
+    -   <span data-ttu-id="4a621-157">プロパティ マッピングをセットアップするチュートリアルの前半で定義されているメソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="4a621-157">Calls the methods you defined earlier in the walkthrough to set up the property mappings.</span></span>  
   
-    -   マップされたプロパティに初期値を割り当てます。  
+    -   <span data-ttu-id="4a621-158">マップされているプロパティに初期値を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="4a621-158">Assigns initial values to the mapped properties.</span></span>  
   
-2.  F5 キーを押してアプリケーションをビルドし、実行します。  
+2.  <span data-ttu-id="4a621-159">F5 キーを押してアプリケーションをビルドし、実行します。</span><span class="sxs-lookup"><span data-stu-id="4a621-159">Press F5 to build and run the application.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.Integration.WindowsFormsHost>   
- [Windows フォームと WPF プロパティの割り当て](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)   
- [WPF デザイナー](http://msdn.microsoft.com/ja-jp/c6c65214-8411-4e16-b254-163ed4099c26)   
- [チュートリアル: Windows フォームでの WPF 複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="4a621-160">関連項目</span><span class="sxs-lookup"><span data-stu-id="4a621-160">See Also</span></span>  
+ <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
+ [<span data-ttu-id="4a621-161">Windows フォームと WPF プロパティの割り当て</span><span class="sxs-lookup"><span data-stu-id="4a621-161">Windows Forms and WPF Property Mapping</span></span>](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)  
+ [<span data-ttu-id="4a621-162">WPF デザイナー</span><span class="sxs-lookup"><span data-stu-id="4a621-162">WPF Designer</span></span>](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)  
+ [<span data-ttu-id="4a621-163">チュートリアル: Windows フォームでの WPF 複合コントロールのホスト</span><span class="sxs-lookup"><span data-stu-id="4a621-163">Walkthrough: Hosting a WPF Composite Control in Windows Forms</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)

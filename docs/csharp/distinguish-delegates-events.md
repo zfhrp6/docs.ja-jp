@@ -10,49 +10,46 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0fdc8629-2fdb-4a7c-a433-5b9d04eaf911
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 3026a0d853cb17dcf05d3b98d814044d743e48dc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
+# <a name="distinguishing-delegates-and-events"></a><span data-ttu-id="6fd97-104">デリゲートとイベントの識別</span><span class="sxs-lookup"><span data-stu-id="6fd97-104">Distinguishing Delegates and Events</span></span>
 
-# <a name="distinguishing-delegates-and-events"></a>デリゲートとイベントの識別
+[<span data-ttu-id="6fd97-105">前へ</span><span class="sxs-lookup"><span data-stu-id="6fd97-105">Previous</span></span>](modern-events.md)
 
-[前へ](modern-events.md)
+<span data-ttu-id="6fd97-106">.NET Core プラットフォームを初めて利用する開発者は、`delegates` に基づく設計と `events` に基づく設計のどちらにするか迷うことがあります。</span><span class="sxs-lookup"><span data-stu-id="6fd97-106">Developers that are new to the .NET Core platform often struggle when deciding between a design based on `delegates` and a design based on `events`.</span></span> <span data-ttu-id="6fd97-107">これは難しい問題です。この 2 つの言語機能は非常に似ているためです。</span><span class="sxs-lookup"><span data-stu-id="6fd97-107">This is a difficult concept, because the two language features are very similar.</span></span> <span data-ttu-id="6fd97-108">さらに言えば、イベントはデリゲートの言語サポートを利用して構築されています。</span><span class="sxs-lookup"><span data-stu-id="6fd97-108">Events are even built using the language support for delegates.</span></span> 
 
-.NET Core プラットフォームを初めて利用する開発者は、`delegates` に基づく設計と `events` に基づく設計のどちらにするか迷うことがあります。 これは難しい問題です。この 2 つの言語機能は非常に似ているためです。 さらに言えば、イベントはデリゲートの言語サポートを利用して構築されています。 
+<span data-ttu-id="6fd97-109">いずれも遅延バインディングのシナリオを提供します。実行時にのみ認識されるメソッドを呼び出すことでコンポーネントが通信するシナリオが可能になります。</span><span class="sxs-lookup"><span data-stu-id="6fd97-109">They both offer a late binding scenario: they enable scenarios where a component communicates by calling a method that is only known at runtime.</span></span> <span data-ttu-id="6fd97-110">いずれもシングルとマルチのサブスクライバー メソッドに対応しています。</span><span class="sxs-lookup"><span data-stu-id="6fd97-110">They both support single and multiple subscriber methods.</span></span> <span data-ttu-id="6fd97-111">これはシングルキャストまたはマルチキャスト サポートと呼ばれることがあります。</span><span class="sxs-lookup"><span data-stu-id="6fd97-111">You may find this referred to as singlecast and multicast support.</span></span> <span data-ttu-id="6fd97-112">いずれも、ハンドラーの追加と削除に同じような構文を利用しています。</span><span class="sxs-lookup"><span data-stu-id="6fd97-112">They both support similar syntax for adding and removing handlers.</span></span> <span data-ttu-id="6fd97-113">最後になりますが、イベントを発生させ、デリゲートを呼び出すとき、まったく同じメソッド呼び出し構文が使用されます。</span><span class="sxs-lookup"><span data-stu-id="6fd97-113">Finally, raising an event and calling a delegate use exactly the same method call syntax.</span></span> <span data-ttu-id="6fd97-114">いずれも、`?.` 演算子で使用する同じ `Invoke()` メソッド構文をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="6fd97-114">They even both support the same `Invoke()` method syntax for use with the `?.` operator.</span></span>
 
-いずれも遅延バインディングのシナリオを提供します。実行時にのみ認識されるメソッドを呼び出すことでコンポーネントが通信するシナリオが可能になります。 いずれもシングルとマルチのサブスクライバー メソッドに対応しています。 これはシングルキャストまたはマルチキャスト サポートと呼ばれることがあります。 いずれも、ハンドラーの追加と削除に同じような構文を利用しています。 最後になりますが、イベントを発生させ、デリゲートを呼び出すとき、まったく同じメソッド呼び出し構文が使用されます。 いずれも、`?.` 演算子で使用する同じ `Invoke()` メソッド構文をサポートしています。
+<span data-ttu-id="6fd97-115">このような類似点があるため、どちらを使用するか決定することは簡単ではありません。</span><span class="sxs-lookup"><span data-stu-id="6fd97-115">With all those similarities, it is easy to have trouble determining when to use which.</span></span>
 
-このような類似点があるため、どちらを使用するか決定することは簡単ではありません。
+## <a name="listening-to-events-is-optional"></a><span data-ttu-id="6fd97-116">イベントの待機は任意です</span><span class="sxs-lookup"><span data-stu-id="6fd97-116">Listening to Events is Optional</span></span>
 
-## <a name="listening-to-events-is-optional"></a>イベントの待機は任意です
+<span data-ttu-id="6fd97-117">使用する言語機能を決定するときに考慮するべき最も重要なことは、サブスクライバーをアタッチする必要があるのかどうかです。</span><span class="sxs-lookup"><span data-stu-id="6fd97-117">The most important consideration in determining which language feature to use is whether or not there must be an attached subscriber.</span></span> <span data-ttu-id="6fd97-118">サブスクライバーが提供するコードをコードが呼び出す必要がある場合、デリゲートに基づくデザインを使用してください。</span><span class="sxs-lookup"><span data-stu-id="6fd97-118">If your code must call the code supplied by the subscriber, you should use a design based on delegates.</span></span> <span data-ttu-id="6fd97-119">サブスクライバーを呼び出さなくてもすべての作業をコードで完了できる場合、イベントに基づくデザインを使用してください。</span><span class="sxs-lookup"><span data-stu-id="6fd97-119">If your code can complete all its work without calling any subscribers, you should use a design based on events.</span></span> 
 
-使用する言語機能を決定するときに考慮するべき最も重要なことは、サブスクライバーをアタッチする必要があるのかどうかです。 サブスクライバーが提供するコードをコードが呼び出す必要がある場合、デリゲートに基づくデザインを使用してください。 サブスクライバーを呼び出さなくてもすべての作業をコードで完了できる場合、イベントに基づくデザインを使用してください。 
+<span data-ttu-id="6fd97-120">このセクションで作成されたサンプルを考察してください。</span><span class="sxs-lookup"><span data-stu-id="6fd97-120">Consider the examples built during this section.</span></span> <span data-ttu-id="6fd97-121">`List.Sort()` を利用して作成したコードには、要素を適切に並べ替える目的で、比較関数を与える必要があります。</span><span class="sxs-lookup"><span data-stu-id="6fd97-121">The code you built using `List.Sort()` must be given a comparer function in order to properly sort the elements.</span></span> <span data-ttu-id="6fd97-122">LINQ クエリには、返す要素を決定する目的で、デリゲートを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6fd97-122">LINQ queries must be supplied with delegates in order to determine what elements to return.</span></span> <span data-ttu-id="6fd97-123">いずれもデリゲートで作成したデザインを使用しています。</span><span class="sxs-lookup"><span data-stu-id="6fd97-123">Both used a design built with delegates.</span></span>
 
-このセクションで作成されたサンプルを考察してください。 `List.Sort()` を利用して作成したコードには、要素を適切に並べ替える目的で、比較関数を与える必要があります。 LINQ クエリには、返す要素を決定する目的で、デリゲートを指定する必要があります。 いずれもデリゲートで作成したデザインを使用しています。
+<span data-ttu-id="6fd97-124">`Progress` イベントを考察してください。</span><span class="sxs-lookup"><span data-stu-id="6fd97-124">Consider the `Progress` event.</span></span> <span data-ttu-id="6fd97-125">これはタスクの進行状況を報告します。</span><span class="sxs-lookup"><span data-stu-id="6fd97-125">It reports progress on a task.</span></span>
+<span data-ttu-id="6fd97-126">リスナーの有無に関係なく、このタスクは続行します。</span><span class="sxs-lookup"><span data-stu-id="6fd97-126">The task continues to proceed whether or not there are any listeners.</span></span>
+<span data-ttu-id="6fd97-127">`FileSearcher` は別の例です。</span><span class="sxs-lookup"><span data-stu-id="6fd97-127">The `FileSearcher` is another example.</span></span> <span data-ttu-id="6fd97-128">イベント サブスクライバーがアタッチされていませんが、要求されたすべてのファイルを検索します。</span><span class="sxs-lookup"><span data-stu-id="6fd97-128">It would still search and find all the files that were sought, even with no event subscribers attached.</span></span>
+<span data-ttu-id="6fd97-129">サブスクライバーがイベントを待ち受けていなくても、UX コントロールは正しく動作します。</span><span class="sxs-lookup"><span data-stu-id="6fd97-129">UX controls still work correctly, even when there are no subscribers listening to the events.</span></span> <span data-ttu-id="6fd97-130">いずれもイベントに基づくデザインを使用しています。</span><span class="sxs-lookup"><span data-stu-id="6fd97-130">They both use designs based on events.</span></span>
 
-`Progress` イベントを考察してください。 これはタスクの進行状況を報告します。
-リスナーの有無に関係なく、このタスクは続行します。
-`FileSearcher` は別の例です。 イベント サブスクライバーがアタッチされていませんが、要求されたすべてのファイルを検索します。
-サブスクライバーがイベントを待ち受けていなくても、UX コントロールは正しく動作します。 いずれもイベントに基づくデザインを使用しています。
+## <a name="return-values-require-delegates"></a><span data-ttu-id="6fd97-131">戻り値でデリゲートが必要になる</span><span class="sxs-lookup"><span data-stu-id="6fd97-131">Return Values Require Delegates</span></span>
 
-## <a name="return-values-require-delegates"></a>戻り値でデリゲートが必要になる
+<span data-ttu-id="6fd97-132">別の考慮事項として、デリゲート メソッドのために必要なメソッド プロトタイプがあります。</span><span class="sxs-lookup"><span data-stu-id="6fd97-132">Another consideration is the method prototype you would want for your delegate method.</span></span> <span data-ttu-id="6fd97-133">ご覧のとおり、イベントに使用されるデリゲートにはすべて戻り値の型 void が与えられます。</span><span class="sxs-lookup"><span data-stu-id="6fd97-133">As you've seen, the delegates used for events all have a void return type.</span></span> <span data-ttu-id="6fd97-134">また、イベント引数オブジェクトのプロパティを変更することでイベント ソースに情報を戻すイベント ハンドラーを作成する表現形式があります。</span><span class="sxs-lookup"><span data-stu-id="6fd97-134">You've also seen that there are idioms to create event handlers that do pass information back to event sources through modifying properties of the event argument object.</span></span> <span data-ttu-id="6fd97-135">そのような表現形式は実際に機能しますが、メソッドから値を返すことと同じように自然ではありません。</span><span class="sxs-lookup"><span data-stu-id="6fd97-135">While these idioms do work, they are not as natural as returning a value from a method.</span></span>
 
-別の考慮事項として、デリゲート メソッドのために必要なメソッド プロトタイプがあります。 ご覧のとおり、イベントに使用されるデリゲートにはすべて戻り値の型 void が与えられます。 また、イベント引数オブジェクトのプロパティを変更することでイベント ソースに情報を戻すイベント ハンドラーを作成する表現形式があります。 そのような表現形式は実際に機能しますが、メソッドから値を返すことと同じように自然ではありません。
+<span data-ttu-id="6fd97-136">多くの場合、これらの 2 つのヒューリスティックが存在します。デリゲート メソッドが値を返す場合、何らかの形式でアルゴリズムに影響を与える可能性があります。</span><span class="sxs-lookup"><span data-stu-id="6fd97-136">Notice that these two heuristics may often both be present: If your delegate method returns a value, it will likely impact the algorithm in some way.</span></span>
 
-多くの場合、これらの 2 つのヒューリスティックが存在します。デリゲート メソッドが値を返す場合、何らかの形式でアルゴリズムに影響を与える可能性があります。
+## <a name="event-listeners-often-have-longer-lifetimes"></a><span data-ttu-id="6fd97-137">イベント リスナーの有効期間が頻繁に長くなる</span><span class="sxs-lookup"><span data-stu-id="6fd97-137">Event Listeners Often Have Longer Lifetimes</span></span> 
 
-## <a name="event-listeners-often-have-longer-lifetimes"></a>イベント リスナーの有効期間が頻繁に長くなる 
+<span data-ttu-id="6fd97-138">これは少々弱い根拠です。</span><span class="sxs-lookup"><span data-stu-id="6fd97-138">This is a slightly weaker justification.</span></span> <span data-ttu-id="6fd97-139">しかしながら、イベント ソースが長期間にわたりイベントを発生させるとき、イベント基準の設計の方が自然であることがあります。</span><span class="sxs-lookup"><span data-stu-id="6fd97-139">However, you may find that event-based designs are more natural when the event source will be raising events over a long period of time.</span></span> <span data-ttu-id="6fd97-140">このような例は、さまざまなシステムの UX コントロールで確認できます。</span><span class="sxs-lookup"><span data-stu-id="6fd97-140">You can see examples of this for UX controls on many systems.</span></span> <span data-ttu-id="6fd97-141">イベントを受信登録すると、イベント ソースはプログラムの有効期間にわたりイベントを発生させることがあります。</span><span class="sxs-lookup"><span data-stu-id="6fd97-141">Once you subscribe to an event, the event source may raise events throughout the lifetime of the program.</span></span>
+<span data-ttu-id="6fd97-142">(不要になったらイベントの受信登録を解除できます。)</span><span class="sxs-lookup"><span data-stu-id="6fd97-142">(You can unsubscribe from events when you no longer need them.)</span></span>
 
-これは少々弱い根拠です。 しかしながら、イベント ソースが長期間にわたりイベントを発生させるとき、イベント基準の設計の方が自然であることがあります。 このような例は、さまざまなシステムの UX コントロールで確認できます。 イベントを受信登録すると、イベント ソースはプログラムの有効期間にわたりイベントを発生させることがあります。
-(不要になったらイベントの受信登録を解除できます。)
+<span data-ttu-id="6fd97-143">さまざまなデリゲート基準デザインと比較してみてください。デリゲート基準デザインの場合、デリゲートはメソッドの引数として使用され、そのメソッドが戻った後、デリゲートは使用されません。</span><span class="sxs-lookup"><span data-stu-id="6fd97-143">Contrast that with many delegate-based designs, where a delegate is used as an argument to a method, and the delegate is not used after that method returns.</span></span>
 
-さまざまなデリゲート基準デザインと比較してみてください。デリゲート基準デザインの場合、デリゲートはメソッドの引数として使用され、そのメソッドが戻った後、デリゲートは使用されません。
+## <a name="evaluate-carefully"></a><span data-ttu-id="6fd97-144">慎重に評価する</span><span class="sxs-lookup"><span data-stu-id="6fd97-144">Evaluate Carefully</span></span>
 
-## <a name="evaluate-carefully"></a>慎重に評価する
-
-以上の考慮事項は絶対厳守の決まりではありません。 代わりに、特定の用途に最適な選択肢はどれかを決定する際の指南になります。 どちらも似ているため、両方を試作し、どちらが自然に動作するか検討するという方法もあります。 いずれも遅延バインディング シナリオを効率的に処理します。 自分の設計を最もよく伝える方を利用してください。
-
+<span data-ttu-id="6fd97-145">以上の考慮事項は絶対厳守の決まりではありません。</span><span class="sxs-lookup"><span data-stu-id="6fd97-145">The above considerations are not hard and fast rules.</span></span> <span data-ttu-id="6fd97-146">代わりに、特定の用途に最適な選択肢はどれかを決定する際の指南になります。</span><span class="sxs-lookup"><span data-stu-id="6fd97-146">Instead, they represent guidance that can help you decide which choice is best for your particular usage.</span></span> <span data-ttu-id="6fd97-147">どちらも似ているため、両方を試作し、どちらが自然に動作するか検討するという方法もあります。</span><span class="sxs-lookup"><span data-stu-id="6fd97-147">Because they are similar, you can even prototype both, and consider which would be more natural to work with.</span></span> <span data-ttu-id="6fd97-148">いずれも遅延バインディング シナリオを効率的に処理します。</span><span class="sxs-lookup"><span data-stu-id="6fd97-148">They both handle late binding scenarios well.</span></span> <span data-ttu-id="6fd97-149">自分の設計を最もよく伝える方を利用してください。</span><span class="sxs-lookup"><span data-stu-id="6fd97-149">Use the one that communicates your design the best.</span></span>

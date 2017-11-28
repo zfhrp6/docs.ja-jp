@@ -9,19 +9,17 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 13d01272-bbf8-456c-a97a-560001d1a7f2
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: af832d04d2cba530a93710a90701ab119a66deef
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
+# <a name="running-selective-unit-tests"></a><span data-ttu-id="56700-104">選択的単体テストの実行</span><span class="sxs-lookup"><span data-stu-id="56700-104">Running selective unit tests</span></span>
 
-# <a name="running-selective-unit-tests"></a>選択的単体テストの実行
+<span data-ttu-id="56700-105">次の例では、`dotnet test` を使用します。</span><span class="sxs-lookup"><span data-stu-id="56700-105">The following examples use `dotnet test`.</span></span> <span data-ttu-id="56700-106">`vstest.console.exe` を使用している場合は、`--filter ` を `--testcasefilter:` に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="56700-106">If you're using `vstest.console.exe`, replace `--filter ` with `--testcasefilter:`.</span></span>
 
-次の例では、`dotnet test` を使用します。 `vstest.console.exe` を使用している場合は、`--filter ` を `--testcasefilter:` に置き換えます。
-
-## <a name="mstest"></a>MSTest
+## <a name="mstest"></a><span data-ttu-id="56700-107">MSTest</span><span class="sxs-lookup"><span data-stu-id="56700-107">MSTest</span></span>
 
 ```csharp
 namespace MSTestNamespace
@@ -47,24 +45,24 @@ namespace MSTestNamespace
 }
 ```
 
-| 式 | 結果 |
+| <span data-ttu-id="56700-108">式</span><span class="sxs-lookup"><span data-stu-id="56700-108">Expression</span></span> | <span data-ttu-id="56700-109">結果</span><span class="sxs-lookup"><span data-stu-id="56700-109">Result</span></span> |
 | ---------- | ------ |
-| `dotnet test --filter Method` | `FullyQualifiedName` に `Method` が含まれるテストを実行します。 `vstest 15.1+` で使用できます。 |
-| `dotnet test --filter Name~TestMethod1` | 名前に `TestMethod1` が含まれるテストを実行します。 |
-| `dotnet test --filter ClassName=MSTestNamespace.UnitTestClass1` | クラス `MSTestNamespace.UnitTestClass1` 内にあるテストを実行します。<br>**注:** `ClassName` 値には名前空間があるため、`ClassName=UnitTestClass1` は機能しません。 |
-| `dotnet test --filter FullyQualifiedName!=MSTestNamespace.UnitTestClass1.TestMethod1` | `MSTestNamespace.UnitTestClass1.TestMethod1` 以外のテストをすべて実行します。 |
-| `dotnet test --filter TestCategory=CategoryA` | `[TestCategory("CategoryA")]` の注釈が付けられているテストを実行します。 |
-| `dotnet test --filter Priority=3` | `[Priority(3)]` の注釈が付けられているテストを実行します。<br>**注:** `Priority~3` は文字列ではないため、無効な値です。 |
+| `dotnet test --filter Method` | <span data-ttu-id="56700-110">`FullyQualifiedName` に `Method` が含まれるテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-110">Runs tests whose `FullyQualifiedName` contains `Method`.</span></span> <span data-ttu-id="56700-111">`vstest 15.1+` で使用できます。</span><span class="sxs-lookup"><span data-stu-id="56700-111">Available in `vstest 15.1+`.</span></span> |
+| `dotnet test --filter Name~TestMethod1` | <span data-ttu-id="56700-112">名前に `TestMethod1` が含まれるテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-112">Runs tests whose name contains `TestMethod1`.</span></span> |
+| `dotnet test --filter ClassName=MSTestNamespace.UnitTestClass1` | <span data-ttu-id="56700-113">クラス `MSTestNamespace.UnitTestClass1` 内にあるテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-113">Runs tests which are in class `MSTestNamespace.UnitTestClass1`.</span></span><br><span data-ttu-id="56700-114">**注:** `ClassName` 値には名前空間があるため、`ClassName=UnitTestClass1` は機能しません。</span><span class="sxs-lookup"><span data-stu-id="56700-114">**Note:** The `ClassName` value should have a namespace, so `ClassName=UnitTestClass1` won't work.</span></span> |
+| `dotnet test --filter FullyQualifiedName!=MSTestNamespace.UnitTestClass1.TestMethod1` | <span data-ttu-id="56700-115">`MSTestNamespace.UnitTestClass1.TestMethod1` 以外のテストをすべて実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-115">Runs all tests except `MSTestNamespace.UnitTestClass1.TestMethod1`.</span></span> |
+| `dotnet test --filter TestCategory=CategoryA` | <span data-ttu-id="56700-116">`[TestCategory("CategoryA")]` の注釈が付けられているテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-116">Runs tests which are annotated with `[TestCategory("CategoryA")]`.</span></span> |
+| `dotnet test --filter Priority=3` | <span data-ttu-id="56700-117">`[Priority(3)]` の注釈が付けられているテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-117">Runs tests which are annotated with `[Priority(3)]`.</span></span><br><span data-ttu-id="56700-118">**注:** `Priority~3` は文字列ではないため、無効な値です。</span><span class="sxs-lookup"><span data-stu-id="56700-118">**Note:** `Priority~3` is an invalid value, as it isn't a string.</span></span> |
 
-**条件演算子| と &amp; の使用**
+<span data-ttu-id="56700-119">**条件演算子| と &amp; の使用**</span><span class="sxs-lookup"><span data-stu-id="56700-119">**Using conditional operators | and &amp;**</span></span>
 
-| 式 | 結果 |
+| <span data-ttu-id="56700-120">式</span><span class="sxs-lookup"><span data-stu-id="56700-120">Expression</span></span> | <span data-ttu-id="56700-121">結果</span><span class="sxs-lookup"><span data-stu-id="56700-121">Result</span></span> |
 | ---------- | ------ |
-| <code>dotnet test --filter "FullyQualifiedName~UnitTestClass1&#124;TestCategory=CategoryA"</code> | `FullyQualifiedName` に `UnitTestClass1` がある、**または** `TestCategory` が `CategoryA` のテストを実行します。 |
-| `dotnet test --filter "FullyQualifiedName~UnitTestClass1&TestCategory=CategoryA"` | `FullyQualifiedName` に `UnitTestClass1` がある、**および** `TestCategory` が `CategoryA` のテストを実行します。 |
-| <code>dotnet test --filter "(FullyQualifiedName~UnitTestClass1&TestCategory=CategoryA)&#124;Priority=1"</code> | `UnitTestClass1` を含む `FullyQualifiedName` **および** `TestCategory` が `CategoryA`、**または** `Priority` が 1 かのいずれかのテストを実行します。 |
+| <code>dotnet test --filter "FullyQualifiedName~UnitTestClass1&#124;TestCategory=CategoryA"</code> | <span data-ttu-id="56700-122">`FullyQualifiedName` に `UnitTestClass1` がある、**または** `TestCategory` が `CategoryA` のテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-122">Runs tests which have `UnitTestClass1` in `FullyQualifiedName` **or** `TestCategory` is `CategoryA`.</span></span> |
+| `dotnet test --filter "FullyQualifiedName~UnitTestClass1&TestCategory=CategoryA"` | <span data-ttu-id="56700-123">`FullyQualifiedName` に `UnitTestClass1` がある、**および** `TestCategory` が `CategoryA` のテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-123">Runs tests which have `UnitTestClass1` in `FullyQualifiedName` **and** `TestCategory` is `CategoryA`.</span></span> |
+| <code>dotnet test --filter "(FullyQualifiedName~UnitTestClass1&TestCategory=CategoryA)&#124;Priority=1"</code> | <span data-ttu-id="56700-124">`UnitTestClass1` を含む `FullyQualifiedName` **および** `TestCategory` が `CategoryA`、**または** `Priority` が 1 かのいずれかのテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-124">Runs tests which have either `FullyQualifiedName` containing `UnitTestClass1` **and** `TestCategory` is `CategoryA` **or** `Priority` is 1.</span></span> |
 
-## <a name="xunit"></a>xUnit
+## <a name="xunit"></a><span data-ttu-id="56700-125">xUnit</span><span class="sxs-lookup"><span data-stu-id="56700-125">xUnit</span></span>
 
 ```csharp
 namespace XUnitNamespace
@@ -88,24 +86,23 @@ namespace XUnitNamespace
 }
 ```
 
-| 式 | 結果 |
+| <span data-ttu-id="56700-126">式</span><span class="sxs-lookup"><span data-stu-id="56700-126">Expression</span></span> | <span data-ttu-id="56700-127">結果</span><span class="sxs-lookup"><span data-stu-id="56700-127">Result</span></span> |
 | ---------- | ------ |
-| `dotnet test --filter DisplayName=XUnitNamespace.TestClass1.Test1` | `XUnitNamespace.TestClass1.Test1` という 1 つのテストのみを実行します。 |
-| `dotnet test --filter FullyQualifiedName!=XUnitNamespace.TestClass1.Test1` | `XUnitNamespace.TestClass1.Test1` 以外のテストをすべて実行します。 |
-| `dotnet test --filter DisplayName~TestClass1` | 表示名に `TestClass1` が含まれるテストを実行します。 |
+| `dotnet test --filter DisplayName=XUnitNamespace.TestClass1.Test1` | <span data-ttu-id="56700-128">`XUnitNamespace.TestClass1.Test1` という 1 つのテストのみを実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-128">Runs only one test, `XUnitNamespace.TestClass1.Test1`.</span></span> |
+| `dotnet test --filter FullyQualifiedName!=XUnitNamespace.TestClass1.Test1` | <span data-ttu-id="56700-129">`XUnitNamespace.TestClass1.Test1` 以外のテストをすべて実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-129">Runs all tests except `XUnitNamespace.TestClass1.Test1`.</span></span> |
+| `dotnet test --filter DisplayName~TestClass1` | <span data-ttu-id="56700-130">表示名に `TestClass1` が含まれるテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-130">Runs tests whose display name contains `TestClass1`.</span></span> |
 
-コード例では、特性をキー `Category` や `Priority` で定義すると、フィルター処理に使用できます。
+<span data-ttu-id="56700-131">コード例では、特性をキー `Category` や `Priority` で定義すると、フィルター処理に使用できます。</span><span class="sxs-lookup"><span data-stu-id="56700-131">In the code example, the defined traits with keys `Category` and `Priority` can be used for filtering.</span></span>
 
-| 式 | 結果 |
+| <span data-ttu-id="56700-132">式</span><span class="sxs-lookup"><span data-stu-id="56700-132">Expression</span></span> | <span data-ttu-id="56700-133">結果</span><span class="sxs-lookup"><span data-stu-id="56700-133">Result</span></span> |
 | ---------- | ------ |
-| `dotnet test --filter XUnit` | `FullyQualifiedName` に `XUnit` が含まれるテストを実行します。  `vstest 15.1+` で使用できます。 |
-| `dotnet test --filter Category=bvt` | `[Trait("Category", "bvt")]` があるテストを実行します。 |
+| `dotnet test --filter XUnit` | <span data-ttu-id="56700-134">`FullyQualifiedName` に `XUnit` が含まれるテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-134">Runs tests whose `FullyQualifiedName` contains `XUnit`.</span></span>  <span data-ttu-id="56700-135">`vstest 15.1+` で使用できます。</span><span class="sxs-lookup"><span data-stu-id="56700-135">Available in `vstest 15.1+`.</span></span> |
+| `dotnet test --filter Category=bvt` | <span data-ttu-id="56700-136">`[Trait("Category", "bvt")]` があるテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-136">Runs tests which have `[Trait("Category", "bvt")]`.</span></span> |
 
-**条件演算子| と &amp; の使用**
+<span data-ttu-id="56700-137">**条件演算子| と &amp; の使用**</span><span class="sxs-lookup"><span data-stu-id="56700-137">**Using conditional operators | and &amp;**</span></span>
 
-| 式 | 結果 |
+| <span data-ttu-id="56700-138">式</span><span class="sxs-lookup"><span data-stu-id="56700-138">Expression</span></span> | <span data-ttu-id="56700-139">結果</span><span class="sxs-lookup"><span data-stu-id="56700-139">Result</span></span> |
 | ---------- | ------ |
-| <code>dotnet test --filter "FullyQualifiedName~TestClass1&#124;Category=Nightly"</code> | `FullyQualifiedName` に `TestClass1` がある、**または** `Category` が `Nightly` のテストを実行します。 |
-| `dotnet test --filter "FullyQualifiedName~TestClass1&Category=Nightly"` | `FullyQualifiedName` に `TestClass1` がある、**および** `Category` が `Nightly` のテストを実行します。 |
-| <code>dotnet test --filter "(FullyQualifiedName~TestClass1&Category=Nightly)&#124;Priority=1"</code> | `TestClass1` を含む `FullyQualifiedName` **および** `Category` が `CategoryA`、**または** `Priority` が 1 かのいずれかのテストを実行します。 |
-
+| <code>dotnet test --filter "FullyQualifiedName~TestClass1&#124;Category=Nightly"</code> | <span data-ttu-id="56700-140">`FullyQualifiedName` に `TestClass1` がある、**または** `Category` が `Nightly` のテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-140">Runs tests which has `TestClass1` in `FullyQualifiedName` **or** `Category` is `Nightly`.</span></span> |
+| `dotnet test --filter "FullyQualifiedName~TestClass1&Category=Nightly"` | <span data-ttu-id="56700-141">`FullyQualifiedName` に `TestClass1` がある、**および** `Category` が `Nightly` のテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-141">Runs tests which has `TestClass1` in `FullyQualifiedName` **and** `Category` is `Nightly`.</span></span> |
+| <code>dotnet test --filter "(FullyQualifiedName~TestClass1&Category=Nightly)&#124;Priority=1"</code> | <span data-ttu-id="56700-142">`TestClass1` を含む `FullyQualifiedName` **および** `Category` が `CategoryA`、**または** `Priority` が 1 かのいずれかのテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="56700-142">Runs tests which have either `FullyQualifiedName` containing `TestClass1` **and** `Category` is `CategoryA` **or** `Priority` is 1.</span></span> |

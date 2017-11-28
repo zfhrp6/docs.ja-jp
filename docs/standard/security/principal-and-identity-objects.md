@@ -1,60 +1,58 @@
 ---
-title: "プリンシパル オブジェクトと ID オブジェクト | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "GenericIdentity オブジェクト"
-  - "GenericPrincipal オブジェクト"
-  - "ID オブジェクト, ID オブジェクトの概要"
-  - "プリンシパル オブジェクト, プリンシパル オブジェクトの概要"
-  - "セキュリティ [.NET Framework], ID オブジェクト"
-  - "セキュリティ [.NET Framework], プリンシパル"
-  - "WindowsIdentity オブジェクト"
-  - "WindowsPrincipal オブジェクト"
+title: "プリンシパル オブジェクトと ID オブジェクト"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WindowsIdentity objects
+- GenericIdentity objects
+- GenericPrincipal objects
+- identity objects, about identity objects
+- security [.NET Framework], identity objects
+- principal objects, about principal objects
+- security [.NET Framework], principals
+- WindowsPrincipal objects
 ms.assetid: aa5930ad-f3d7-40aa-b6f6-c6edcd5c64f7
-caps.latest.revision: 9
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "9"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: ce3c5ce3d79a36320eee6b7312518d2559509127
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# プリンシパル オブジェクトと ID オブジェクト
-マネージ コードは、[Identity](frlrfSystemSecurityPrincipalIIdentityClassTopic) オブジェクトへの参照が含まれる [Principal](frlrfSystemSecurityPrincipalIPrincipalClassTopic) オブジェクトを通じて、プリンシパルの ID またはロールを検出できます。  ID オブジェクトとプリンシパル オブジェクトは、ユーザー アカウントとグループ アカウントなど、よく知られた概念にたとえることができます。  ほとんどのネットワーク環境では、ユーザー アカウントは人またはプログラムを表し、グループ アカウントはユーザーの特定のカテゴリとユーザーの所有する権限を表します。  これと同様に、.NET Framework の ID オブジェクトはユーザーを表し、ロールはメンバーシップとセキュリティ コンテキストを表します。  .NET Framework のプリンシパル オブジェクトは、ID オブジェクトとロールの両方をカプセル化します。.NET Framework アプリケーションは、ID に基づいて、またはより一般的にはロール メンバーシップに基づいて、プリンシパルに権限を与えます。  
+# <a name="principal-and-identity-objects"></a><span data-ttu-id="87ed5-102">プリンシパル オブジェクトと ID オブジェクト</span><span class="sxs-lookup"><span data-stu-id="87ed5-102">Principal and Identity Objects</span></span>
+<span data-ttu-id="87ed5-103">マネージ コードには、id またはを通じてプリンシパルの役割を検出できる、<xref:System.Security.Principal.IPrincipal>への参照を含むオブジェクトを<xref:System.Security.Principal.IIdentity>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="87ed5-103">Managed code can discover the identity or the role of a principal through a <xref:System.Security.Principal.IPrincipal> object, which contains a reference to an <xref:System.Security.Principal.IIdentity> object.</span></span> <span data-ttu-id="87ed5-104">ID オブジェクトとプリンシパル オブジェクトは、ユーザーとグループ アカウントのようななじみのある概念と比較するとわかりやすいでしょう。</span><span class="sxs-lookup"><span data-stu-id="87ed5-104">It might be helpful to compare identity and principal objects to familiar concepts like user and group accounts.</span></span> <span data-ttu-id="87ed5-105">ほとんどのネットワーク環境で、ユーザー アカウントは人またはプログラムを表し、グループ アカウントは特定のカテゴリのユーザーやそのユーザーが所有する権限を表します。</span><span class="sxs-lookup"><span data-stu-id="87ed5-105">In most network environments, user accounts represent people or programs, while group accounts represent certain categories of users and the rights they possess.</span></span> <span data-ttu-id="87ed5-106">同様に、.NET Framework の ID オブジェクトはユーザーを表し、ロールはメンバーシップやセキュリティ コンテキストを表します。</span><span class="sxs-lookup"><span data-stu-id="87ed5-106">Similarly, .NET Framework identity objects represent users, while roles represent memberships and security contexts.</span></span> <span data-ttu-id="87ed5-107">.NET Framework で、プリンシパル オブジェクトは、ID オブジェクトとロールの両方をカプセル化します。</span><span class="sxs-lookup"><span data-stu-id="87ed5-107">In the .NET Framework, the principal object encapsulates both an identity object and a role.</span></span> <span data-ttu-id="87ed5-108">.NET Framework アプリケーションは、ID または一般的にはロール メンバーシップに基づいてプリンシパルに権限を付与します。</span><span class="sxs-lookup"><span data-stu-id="87ed5-108">.NET Framework applications grant rights to the principal based on its identity or, more commonly, its role membership.</span></span>  
   
-## ID オブジェクト  
- ID オブジェクトは、検証するユーザーまたはエンティティについての情報をカプセル化します。  ID オブジェクトには、その最も基本的なレベルに名前と認証の種類が含まれます。  名前は、ユーザー名または Windows アカウント名です。認証の種類は、サポートされるログオン プロトコル \(Kerberos V5 など\) またはカスタム値です。  .NET Framework は、カスタムのログオン手順のほとんどで使用できる <xref:System.Security.Principal.GenericIdentity> オブジェクトと、アプリケーションで Windows 認証を利用するときに使用できる、より特化した <xref:System.Security.Principal.WindowsIdentity> オブジェクトを定義します。  また、カスタム ユーザー情報をカプセル化する独自の ID クラスを定義できます。  
+## <a name="identity-objects"></a><span data-ttu-id="87ed5-109">ID オブジェクト</span><span class="sxs-lookup"><span data-stu-id="87ed5-109">Identity Objects</span></span>  
+ <span data-ttu-id="87ed5-110">ID オブジェクトは、検証対象のユーザーまたはエンティティに関する情報をカプセル化します。</span><span class="sxs-lookup"><span data-stu-id="87ed5-110">The identity object encapsulates information about the user or entity being validated.</span></span> <span data-ttu-id="87ed5-111">ID オブジェクトの最も基本的なレベルには名前と認証の種類が含まれます。</span><span class="sxs-lookup"><span data-stu-id="87ed5-111">At their most basic level, identity objects contain a name and an authentication type.</span></span> <span data-ttu-id="87ed5-112">名前はユーザー名または Windows アカウント名、認証の種類は、サポートされるログオン プロトコル (Kerberos V5 など) かカスタム値になります。</span><span class="sxs-lookup"><span data-stu-id="87ed5-112">The name can either be a user's name or the name of a Windows account, while the authentication type can be either a supported logon protocol, such as Kerberos V5, or a custom value.</span></span> <span data-ttu-id="87ed5-113">.NET Framework を定義、<xref:System.Security.Principal.GenericIdentity>のほとんどのカスタム ログオン シナリオや、特殊化されて使用できるオブジェクト<xref:System.Security.Principal.WindowsIdentity>Windows 認証に依存するアプリケーションで、使用するときに使用できるオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="87ed5-113">The .NET Framework defines a <xref:System.Security.Principal.GenericIdentity> object that can be used for most custom logon scenarios and a more specialized <xref:System.Security.Principal.WindowsIdentity> object that can be used when you want your application to rely on Windows authentication.</span></span> <span data-ttu-id="87ed5-114">また、カスタム ユーザー情報をカプセル化する独自の ID クラスを定義することもできます。</span><span class="sxs-lookup"><span data-stu-id="87ed5-114">Additionally, you can define your own identity class that encapsulates custom user information.</span></span>  
   
- <xref:System.Security.Principal.IIdentity> インターフェイスは、名前と認証の種類 \(Kerberos V5 や NTLM など\) にアクセスするためのプロパティを定義します。  すべての **Identity** クラスは、**IIdentity** インターフェイスを実装します。  **Identity** オブジェクトと、スレッドが現在実行されている Windows NT プロセス トークンとの間に必要とされる関係はありません。  ただし、**Identity** オブジェクトが **WindowsIdentity** オブジェクトである場合は、ID が Windows NT セキュリティ トークンを表すものと想定されます。  
+ <span data-ttu-id="87ed5-115"><xref:System.Security.Principal.IIdentity>インターフェイスは、名前と Kerberos V5 または NTLM など、認証の種類にアクセスするためのプロパティを定義します。</span><span class="sxs-lookup"><span data-stu-id="87ed5-115">The <xref:System.Security.Principal.IIdentity> interface defines properties for accessing a name and an authentication type, such as Kerberos V5 or NTLM.</span></span> <span data-ttu-id="87ed5-116">すべての **Identity** クラスでは **IIdentity** インターフェイスが実装されます。</span><span class="sxs-lookup"><span data-stu-id="87ed5-116">All **Identity** classes implement the **IIdentity** interface.</span></span> <span data-ttu-id="87ed5-117">**ID** オブジェクトと、スレッドが現在実行している Windows NT プロセス トークンの間に関係は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="87ed5-117">There is no required relationship between an **Identity** object and the Windows NT process token under which a thread is currently executing.</span></span> <span data-ttu-id="87ed5-118">ただし、**ID** オブジェクトが **WindowsIdentity** オブジェクトである場合、ID は Windows NT セキュリティ トークンを表すと見なされます。</span><span class="sxs-lookup"><span data-stu-id="87ed5-118">However, if the **Identity** object is a **WindowsIdentity** object, the identity is assumed to represent a Windows NT security token.</span></span>  
   
-## プリンシパル オブジェクト  
- プリンシパル オブジェクトは、コードが実行されているセキュリティ コンテキストを表します。  ロール ベース セキュリティを実装するアプリケーションは、プリンシパル オブジェクトに関連付けられたロールに基づいて権限を与えます。  ID オブジェクトと同様に、.NET Framework には <xref:System.Security.Principal.GenericPrincipal> オブジェクトと <xref:System.Security.Principal.WindowsPrincipal> オブジェクトが用意されています。  独自のカスタム プリンシパル クラスを定義することもできます。  
+## <a name="principal-objects"></a><span data-ttu-id="87ed5-119">プリンシパル オブジェクト</span><span class="sxs-lookup"><span data-stu-id="87ed5-119">Principal Objects</span></span>  
+ <span data-ttu-id="87ed5-120">プリンシパル オブジェクトは、コードが実行されているセキュリティ コンテキストを表します。</span><span class="sxs-lookup"><span data-stu-id="87ed5-120">The principal object represents the security context under which code is running.</span></span> <span data-ttu-id="87ed5-121">ロールベースのセキュリティを実装するアプリケーションは、プリンシパル オブジェクトに関連付けられたロールに基づいて権限を付与します。</span><span class="sxs-lookup"><span data-stu-id="87ed5-121">Applications that implement role-based security grant rights based on the role associated with a principal object.</span></span> <span data-ttu-id="87ed5-122">Id オブジェクトと同様に、.NET Framework には、<xref:System.Security.Principal.GenericPrincipal>オブジェクトおよび<xref:System.Security.Principal.WindowsPrincipal>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="87ed5-122">Similar to identity objects, the .NET Framework provides a <xref:System.Security.Principal.GenericPrincipal> object and a <xref:System.Security.Principal.WindowsPrincipal> object.</span></span> <span data-ttu-id="87ed5-123">独自のカスタム プリンシパル クラスを定義することもできます。</span><span class="sxs-lookup"><span data-stu-id="87ed5-123">You can also define your own custom principal classes.</span></span>  
   
- <xref:System.Security.Principal.IPrincipal> インターフェイスは、関連付けられた **Identity** オブジェクトにアクセスするためのプロパティと、**Principal** オブジェクトによって識別されるユーザーが特定のロールのメンバーかどうかを調べるためのメソッドを定義します。  すべての **Principal** クラスは、**IPrincipal** インターフェイス、およびその他の必要なプロパティとメソッドを実装します。  たとえば、共通言語ランタイムには **WindowsPrincipal** クラスが用意されています。このクラスは、Windows NT グループ メンバーシップまたは Windows 2000 グループ メンバーシップをロールに割り当てるための追加機能を実装します。  
+ <span data-ttu-id="87ed5-124"><xref:System.Security.Principal.IPrincipal>インターフェイスへのアクセスに関連するプロパティを定義する**Identity**オブジェクトで、ユーザーが識別されるかどうかを決定するためのメソッドだけでなく、**プリンシパル**オブジェクトのメンバーである、指定されたロールです。</span><span class="sxs-lookup"><span data-stu-id="87ed5-124">The <xref:System.Security.Principal.IPrincipal> interface defines a property for accessing an associated **Identity** object as well as a method for determining whether the user identified by the **Principal** object is a member of a given role.</span></span> <span data-ttu-id="87ed5-125">すべての**プリンシパル** クラスは、**IPrincipal** インターフェイスの他に、必要なその他のプロパティとメソッドを実装しています。</span><span class="sxs-lookup"><span data-stu-id="87ed5-125">All **Principal** classes implement the **IPrincipal** interface as well as any additional properties and methods that are necessary.</span></span> <span data-ttu-id="87ed5-126">たとえば、共通言語ランタイムでは **WindowsPrincipal** クラスが提供されますが、これは Windows NT または Windows 2000 グループ メンバーシップをロールにマッピングする追加機能を実装します。</span><span class="sxs-lookup"><span data-stu-id="87ed5-126">For example, the common language runtime provides the **WindowsPrincipal** class, which implements additional functionality for mapping Windows NT or Windows 2000 group membership to roles.</span></span>  
   
- **Principal** オブジェクトは、アプリケーション ドメイン \(<xref:System.AppDomain>\) 内の呼び出しコンテキスト \(<xref:System.Runtime.Remoting.Messaging.CallContext>\) オブジェクトにバインドされています。  新しい **AppDomain** ごとに既定の呼び出しコンテキストが作成されるため、**Principal** オブジェクトを承認するために使用できる呼び出しコンテキストが必ず存在します。  新しいスレッドが作成されると、そのスレッドに対して **CallContext** オブジェクトも作成されます。  **Principal** オブジェクトの参照は、作成元スレッドから新しいスレッドの **CallContext** に自動的にコピーされます。  スレッドの作成元に属す **Principal** オブジェクトを特定できない場合、ランタイムは **Principal** オブジェクトと **Identity** オブジェクトを作成するための既定のポリシーに従います。  
+ <span data-ttu-id="87ed5-127">A**プリンシパル**オブジェクトが呼び出しコンテキストにバインド (<xref:System.Runtime.Remoting.Messaging.CallContext>) アプリケーション ドメイン内のオブジェクト (<xref:System.AppDomain>)。</span><span class="sxs-lookup"><span data-stu-id="87ed5-127">A **Principal** object is bound to a call context (<xref:System.Runtime.Remoting.Messaging.CallContext>) object within an application domain (<xref:System.AppDomain>).</span></span> <span data-ttu-id="87ed5-128">常に既定の呼び出しコンテキストはそれぞれ新しい **AppDomain** を使用して作成されるため、**プリンシパル** オブジェクトを受け入れる呼び出しコンテキストが常に存在します。</span><span class="sxs-lookup"><span data-stu-id="87ed5-128">A default call context is always created with each new **AppDomain**, so there is always a call context available to accept the **Principal** object.</span></span> <span data-ttu-id="87ed5-129">新しいスレッドが作成されるとき、そのスレッドの **CallContext** オブジェクトも作成されます。</span><span class="sxs-lookup"><span data-stu-id="87ed5-129">When a new thread is created, a **CallContext** object is also created for the thread.</span></span> <span data-ttu-id="87ed5-130">**プリンシパル** オブジェクトの参照は、作成スレッドから新しいスレッドの **CallContext** に自動的にコピーされます。</span><span class="sxs-lookup"><span data-stu-id="87ed5-130">The **Principal** object reference is automatically copied from the creating thread to the new thread's **CallContext**.</span></span> <span data-ttu-id="87ed5-131">スレッドの作成者に所属する**プリンシパル** オブジェクトをランタイムが判別できない場合は、**プリンシパル** オブジェクトと **ID** オブジェクトの作成で既定のポリシーに従います。</span><span class="sxs-lookup"><span data-stu-id="87ed5-131">If the runtime cannot determine which **Principal** object belongs to the creator of the thread, it follows the default policy for **Principal** and **Identity** object creation.</span></span>  
   
- アプリケーション ドメインに固有の設定可能なポリシーは、新しいアプリケーション ドメインに関連付ける **Principal** オブジェクトの種類を決定するための規則を定義します。  セキュリティ ポリシーによって許可される場合、ランタイムは、現在の実行スレッドに関連付けられたオペレーティング システム トークンを反映する **Principal** オブジェクトと **Identity** オブジェクトを作成できます。  ランタイムは、既定では、認証されていないユーザーを表す **Principal** オブジェクトと **Identity** オブジェクトを使用します。  ランタイムは、既定の **Principal** オブジェクトと **Identity** オブジェクトを、これらのオブジェクトにコードがアクセスを試みるまで作成しません。  
+ <span data-ttu-id="87ed5-132">構成可能なアプリケーション ドメイン固有のポリシーによって、新しいアプリケーション ドメインに関連付ける**プリンシパル** オブジェクトの種類を決める規則が定義されます。</span><span class="sxs-lookup"><span data-stu-id="87ed5-132">A configurable application domain-specific policy defines the rules for deciding what type of **Principal** object to associate with a new application domain.</span></span> <span data-ttu-id="87ed5-133">セキュリティ ポリシーによって許可される場合、ランタイムは、現在の実行スレッドに関連するオペレーティング システム トークンを反映する**プリンシパル** オブジェクトと **ID** オブジェクトを作成できます。</span><span class="sxs-lookup"><span data-stu-id="87ed5-133">Where security policy permits, the runtime can create **Principal** and **Identity** objects that reflect the operating system token associated with the current thread of execution.</span></span> <span data-ttu-id="87ed5-134">ランタイムは既定では、認証されていないユーザーを表す**プリンシパル** オブジェクトと **ID** オブジェクトを使用します。</span><span class="sxs-lookup"><span data-stu-id="87ed5-134">By default, the runtime uses **Principal** and **Identity** objects that represent unauthenticated users.</span></span> <span data-ttu-id="87ed5-135">このような既定の**プリンシパル** オブジェクトと **ID** オブジェクトは、コードがアクセスを試行するまでランタイムによって作成されることはありません。</span><span class="sxs-lookup"><span data-stu-id="87ed5-135">The runtime does not create these default **Principal** and **Identity** objects until the code attempts to access them.</span></span>  
   
- アプリケーション ドメインを作成する信頼されるコードは、既定の **Principal** オブジェクトと **Identity** オブジェクトの構築を制御するアプリケーション ドメイン ポリシーを設定できます。  アプリケーション ドメイン固有のポリシーは、そのアプリケーション ドメイン内のすべての実行スレッドに適用されます。  アンマネージの信頼される側のホストには、本来このポリシーを設定する能力がありますが、このポリシーを設定するマネージ コードは、ドメイン ポリシーを制御するための <xref:System.Security.Permissions.SecurityPermission?displayProperty=fullName> を持っている必要があります。  
+ <span data-ttu-id="87ed5-136">信頼されるコードが、アプリケーション ドメインを作成して、アプリケーション ドメイン ポリシーを作成できます。このポリシーによって、既定の**プリンシパル** オブジェクトと **ID** オブジェクトのコンストラクトが制御されます。</span><span class="sxs-lookup"><span data-stu-id="87ed5-136">Trusted code that creates an application domain can set the application domain policy that controls construction of the default **Principal** and **Identity** objects.</span></span> <span data-ttu-id="87ed5-137">このアプリケーション ドメイン固有ポリシーは、そのアプリケーション ドメインのすべての実行スレッドに適用されます。</span><span class="sxs-lookup"><span data-stu-id="87ed5-137">This application domain-specific policy applies to all execution threads in that application domain.</span></span> <span data-ttu-id="87ed5-138">管理されていない、信頼されたホストは本質的に、このポリシーを設定する権限を持ちますが、このポリシー設定を管理対象のコードが必要、<xref:System.Security.Permissions.SecurityPermission?displayProperty=nameWithType>ドメイン ポリシーを制御するためです。</span><span class="sxs-lookup"><span data-stu-id="87ed5-138">An unmanaged, trusted host inherently has the ability to set this policy, but managed code that sets this policy must have the <xref:System.Security.Permissions.SecurityPermission?displayProperty=nameWithType> for controlling domain policy.</span></span>  
   
- 同じプロセス内 \(つまり同じコンピューター上\) の他のアプリケーション ドメインに **Principal** オブジェクトを転送する場合、リモート処理インフラストラクチャは、呼び出し元のコンテキストに関連付けられた **Principal** オブジェクトへの参照を、呼び出される側のコンテキストにコピーします。  
+ <span data-ttu-id="87ed5-139">**プリンシパル** オブジェクトを同じプロセス内 (つまり同じコンピューター上の) アプリケーション ドメイン間で送信するとき、リモート処理インフラストラクチャが、呼び出し元のコンテキストに関連する**プリンシパル** オブジェクトへの参照を呼び出し先のコンテキストにコピーします。</span><span class="sxs-lookup"><span data-stu-id="87ed5-139">When transmitting a **Principal** object across application domains but within the same process (and therefore on the same computer), the remoting infrastructure copies a reference to the **Principal** object associated with the caller's context to the callee's context.</span></span>  
   
-## 参照  
- [方法 : WindowsPrincipal プロジェクトを作成する](../../../docs/standard/security/how-to-create-a-windowsprincipal-object.md)   
- [方法 : GenericPrincipal オブジェクトと GenericIdentity オブジェクトを作成する](../../../docs/standard/security/how-to-create-genericprincipal-and-genericidentity-objects.md)   
- [プリンシパル オブジェクトの置き換え](../../../docs/standard/security/replacing-a-principal-object.md)   
- [偽装と復帰](../../../docs/standard/security/impersonating-and-reverting.md)   
- [ロール ベース セキュリティ](../../../docs/standard/security/role-based-security.md)   
- [セキュリティの基本概念](../../../docs/standard/security/key-security-concepts.md)
+## <a name="see-also"></a><span data-ttu-id="87ed5-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="87ed5-140">See Also</span></span>  
+ [<span data-ttu-id="87ed5-141">方法: WindowsPrincipal オブジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="87ed5-141">How to: Create a WindowsPrincipal Object</span></span>](../../../docs/standard/security/how-to-create-a-windowsprincipal-object.md)  
+ [<span data-ttu-id="87ed5-142">方法: GenericPrincipal オブジェクトと GenericIdentity オブジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="87ed5-142">How to: Create GenericPrincipal and GenericIdentity Objects</span></span>](../../../docs/standard/security/how-to-create-genericprincipal-and-genericidentity-objects.md)  
+ [<span data-ttu-id="87ed5-143">プリンシパル オブジェクトの置き換え</span><span class="sxs-lookup"><span data-stu-id="87ed5-143">Replacing a Principal Object</span></span>](../../../docs/standard/security/replacing-a-principal-object.md)  
+ [<span data-ttu-id="87ed5-144">偽装と復帰</span><span class="sxs-lookup"><span data-stu-id="87ed5-144">Impersonating and Reverting</span></span>](../../../docs/standard/security/impersonating-and-reverting.md)  
+ [<span data-ttu-id="87ed5-145">ロール ベースのセキュリティ</span><span class="sxs-lookup"><span data-stu-id="87ed5-145">Role-Based Security</span></span>](../../../docs/standard/security/role-based-security.md)  
+ [<span data-ttu-id="87ed5-146">セキュリティの基本概念</span><span class="sxs-lookup"><span data-stu-id="87ed5-146">Key Security Concepts</span></span>](../../../docs/standard/security/key-security-concepts.md)

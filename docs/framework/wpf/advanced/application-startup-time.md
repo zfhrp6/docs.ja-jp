@@ -1,96 +1,99 @@
 ---
-title: "アプリケーションの起動時間 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アプリケーションの起動 [WPF]"
-  - "パフォーマンス [WPF], 起動時間"
-  - "スプラッシュ スクリーン [WPF], 起動時間"
-  - "起動時間 [WPF]"
-  - "WPF, 起動時間"
+title: "アプリケーションの起動時間"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- splash screen [WPF], startup time
+- WPF [WPF], startup time
+- startup time [WPF]
+- application startup [WPF]
+- performance [WPF], startup time
 ms.assetid: f0ec58d8-626f-4d8a-9873-c20f95e08b96
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e1e39bf6db28290b7cba600ea1d2012c58633587
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# アプリケーションの起動時間
-WPF アプリケーションの起動に必要な時間は、大幅に変動する可能性があります。  このトピックでは、Windows Presentation Foundation \(WPF\) アプリケーションの認識される起動時間と実際の起動時間を短縮する方法について説明します。  
+# <a name="application-startup-time"></a><span data-ttu-id="df489-102">アプリケーションの起動時間</span><span class="sxs-lookup"><span data-stu-id="df489-102">Application Startup Time</span></span>
+<span data-ttu-id="df489-103">WPF アプリケーションの起動に必要な時間には、かなりばらつきがあります。</span><span class="sxs-lookup"><span data-stu-id="df489-103">The amount of time that is required for a WPF application to start can vary greatly.</span></span> <span data-ttu-id="df489-104">このトピックでは、Windows Presentation Foundation (WPF) アプリケーションの認識される起動時間と実際の起動時間を短縮する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="df489-104">This topic describes various techniques for reducing the perceived and actual startup time for a Windows Presentation Foundation (WPF) application.</span></span>  
   
-## コールド スタートとウォーム スタートについて  
- コールド スタートは、システムの再起動後にアプリケーションを初めて起動するとき、またはアプリケーションを起動して閉じた後、時間をおいて再び起動するときに発生します。  アプリケーションが起動するときに、必要なページ \(コード、静的データ、レジストリなど\) が Windows メモリ マネージャーのスタンバイ リストに存在しない場合、ページ フォールトが発生します。  これらのページをメモリに読み込むには、ディスクにアクセスする必要があります。  
+## <a name="understanding-cold-startup-and-warm-startup"></a><span data-ttu-id="df489-105">コールド スタートとウォーム スタートについて</span><span class="sxs-lookup"><span data-stu-id="df489-105">Understanding Cold Startup and Warm Startup</span></span>  
+ <span data-ttu-id="df489-106">コールド スタートは、システムの再起動後にアプリケーションを初めて起動するとき、またはアプリケーションを起動して閉じた後、時間をおいて再び起動するときに発生します。</span><span class="sxs-lookup"><span data-stu-id="df489-106">Cold startup occurs when your application starts for the first time after a system reboot, or when you start your application, close it, and then start it again after a long period of time.</span></span> <span data-ttu-id="df489-107">アプリケーションが起動するときに、必要なページ (コード、静的データ、レジストリなど) が Windows メモリ マネージャーのスタンバイ リストに存在しない場合、ページ フォールトが発生します。</span><span class="sxs-lookup"><span data-stu-id="df489-107">When an application starts, if the required pages (code, static data, registry, etc) are not present in the Windows memory manager's standby list, page faults occur.</span></span> <span data-ttu-id="df489-108">そのページをメモリに読み込むには、ディスクにアクセスする必要があります。</span><span class="sxs-lookup"><span data-stu-id="df489-108">Disk access is required to bring the pages into memory.</span></span>  
   
- ウォーム スタートは、主要な共通言語ランタイム \(CLR: Common Language Runtime\) コンポーネント用のページのほとんどが、既にメモリに読み込まれているときに発生し、貴重なディスク アクセス時間が節約されます。  このため、マネージ アプリケーションを再度実行すると、初回よりも短い時間で起動します。  
+ <span data-ttu-id="df489-109">ウォーム スタートは、主要な共通言語ランタイム (CLR) コンポーネント用のページのほとんどが、既にメモリに読み込まれているときに発生し、貴重なディスク アクセス タイムを節約できます。</span><span class="sxs-lookup"><span data-stu-id="df489-109">Warm startup occurs when most of the pages for the main common language runtime (CLR) components are already loaded in memory, which saves expensive disk access time.</span></span> <span data-ttu-id="df489-110">このため、マネージ アプリケーションを再度実行すると、初回よりも短い時間で起動します。</span><span class="sxs-lookup"><span data-stu-id="df489-110">That is why a managed application starts faster when it runs a second time.</span></span>  
   
-## スプラッシュ スクリーンの実装  
- アプリケーションの起動から最初の UI が表示されるまでにかなりの時間がかかることが避けられない場合は、*スプラッシュ スクリーン*を使用することで、認識される起動時間を最適化します。  この方法により、ユーザーがアプリケーションを起動すると、すぐにイメージが表示されます。  アプリケーションが最初の UI を表示する準備が整うと、スプラッシュ スクリーンはフェード アウトします。  [!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)] 以降、<xref:System.Windows.SplashScreen> クラスを使用して、スプラッシュ スクリーンを実装できます。  詳細については、「[スプラッシュ スクリーンを WPF アプリケーションに追加する](../../../../docs/framework/wpf/app-development/how-to-add-a-splash-screen-to-a-wpf-application.md)」を参照してください。  
+## <a name="implement-a-splash-screen"></a><span data-ttu-id="df489-111">スプラッシュ スクリーンの実装</span><span class="sxs-lookup"><span data-stu-id="df489-111">Implement a Splash Screen</span></span>  
+ <span data-ttu-id="df489-112">アプリケーションを起動してから最初の UI が表示されるまでに、どうしても多大な時間がかかる場合は、"*スプラッシュ スクリーン*" を使用して、認識される起動時間を最適化します。</span><span class="sxs-lookup"><span data-stu-id="df489-112">In cases where there is a significant, unavoidable delay between starting an application and displaying the first UI, optimize the perceived startup time by using a *splash screen*.</span></span> <span data-ttu-id="df489-113">この方法により、ユーザーがアプリケーションを起動すると、すぐにイメージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="df489-113">This approach displays an image almost immediately after the user starts the application.</span></span> <span data-ttu-id="df489-114">アプリケーションが最初の UI を表示する準備が整うと、スプラッシュ スクリーンはフェード アウトします。</span><span class="sxs-lookup"><span data-stu-id="df489-114">When the application is ready to display its first UI, the splash screen fades.</span></span> <span data-ttu-id="df489-115">以降では、 [!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)]、使用することができます、<xref:System.Windows.SplashScreen>スプラッシュ スクリーンを実装するクラス。</span><span class="sxs-lookup"><span data-stu-id="df489-115">Starting in the [!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)], you can use the <xref:System.Windows.SplashScreen> class to implement a splash screen.</span></span> <span data-ttu-id="df489-116">詳細については、[WPF アプリケーションへのスプラッシュ スクリーンの追加](../../../../docs/framework/wpf/app-development/how-to-add-a-splash-screen-to-a-wpf-application.md)に関するページをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="df489-116">For more information, see [Add a Splash Screen to a WPF Application](../../../../docs/framework/wpf/app-development/how-to-add-a-splash-screen-to-a-wpf-application.md).</span></span>  
   
- ネイティブな Win32 グラフィックスを使用することで、独自のスプラッシュ スクリーンを実装することもできます。  独自の実装は、<xref:System.Windows.Application.Run%2A> メソッドが呼び出される前に表示します。  
+ <span data-ttu-id="df489-117">ネイティブな Win32 グラフィックスを使用して、独自のスプラッシュ スクリーンを実装することもできます。</span><span class="sxs-lookup"><span data-stu-id="df489-117">You can also implement your own splash screen by using native Win32 graphics.</span></span> <span data-ttu-id="df489-118">表示する前に、実装、<xref:System.Windows.Application.Run%2A>メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="df489-118">Display your implementation before the <xref:System.Windows.Application.Run%2A> method is called.</span></span>  
   
-## 起動コードの分析  
- コールド スタートに時間がかかる理由を特定します。  ディスク I\/O が原因である可能性がありますが、常にそうとは限りません。  通常は、ネットワーク、Web サービス、ディスクなどの外部リソースの使用を最小限に抑えてください。  
+## <a name="analyze-the-startup-code"></a><span data-ttu-id="df489-119">スタートアップ コードの分析</span><span class="sxs-lookup"><span data-stu-id="df489-119">Analyze the Startup Code</span></span>  
+ <span data-ttu-id="df489-120">コールド スタートに時間がかかる理由を特定します。</span><span class="sxs-lookup"><span data-stu-id="df489-120">Determine the reason for a slow cold startup.</span></span> <span data-ttu-id="df489-121">ディスク I/O が原因である可能性がありますが、常にそうとは限りません。</span><span class="sxs-lookup"><span data-stu-id="df489-121">Disk I/O may be responsible, but this is not always the case.</span></span> <span data-ttu-id="df489-122">通常、ネットワーク、Web サービス、ディスクなどの外部リソースの使用は最小限に抑えてください。</span><span class="sxs-lookup"><span data-stu-id="df489-122">In general, you should minimize the use of external resources, such as network, Web services, or disk.</span></span>  
   
- テストを始める前に、実行中のアプリケーションやサービスが、マネージ コードまたは WPF コードを使用していないことを確認してください。  
+ <span data-ttu-id="df489-123">テストを始める前に、実行中のアプリケーションやサービスが、マネージ コードまたは WPF コードを使用していないことを確認してください。</span><span class="sxs-lookup"><span data-stu-id="df489-123">Before you test, verify that no other running applications or services use managed code or WPF code.</span></span>  
   
- 再起動したら、直ちに WPF アプリケーションを起動し、表示されるまでの時間を計測します。  この後、同じアプリケーションを複数回起動し \(ウォーム スタート\)、各回の起動時間が初回よりも短ければ、コールド スタートの問題の原因は I\/O であると判断できます。  
+ <span data-ttu-id="df489-124">再起動の直後に WPF アプリケーションを起動し、表示されるまでの時間を計測します。</span><span class="sxs-lookup"><span data-stu-id="df489-124">Start your WPF application immediately after a reboot, and determine how long it takes to display.</span></span> <span data-ttu-id="df489-125">その後アプリケーションを何回か起動し (ウォーム スタート)、各回の起動時間が初回よりも短ければ、コールド スタートの問題の原因は I/O であると判断できます。</span><span class="sxs-lookup"><span data-stu-id="df489-125">If all subsequent launches of your application (warm startup) are much faster, your cold startup issue is most likely caused by I/O.</span></span>  
   
- アプリケーションのコールド スタートの問題に I\/O が無関係である場合は、アプリケーションが長時間かかる初期化や計算を実行しているか、イベントの完了を待機しているか、起動時に大量の JIT コンパイルを必要としている可能性があります。  以下のセクションでは、これらの状況のいくつかについてさらに詳しく説明します。  
+ <span data-ttu-id="df489-126">アプリケーションのコールド スタートの問題に I/O が無関係である場合は、アプリケーションが長時間かかる初期化や計算を実行しているか、イベントの完了を待機しているか、起動時に大量の JIT コンパイルを必要としている可能性があります。</span><span class="sxs-lookup"><span data-stu-id="df489-126">If your application's cold startup issue is not related to I/O, it is likely that your application performs some lengthy initialization or computation, waits for some event to complete, or requires a lot of JIT compilation at startup.</span></span> <span data-ttu-id="df489-127">以下のセクションでは、こうした状況のいくつかについてさらに詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="df489-127">The following sections describe some of these situations in more detail.</span></span>  
   
-## モジュールの読み込みの最適化  
- プロセス エクスプローラー \(Procexp.exe\) や Tlist.exe などのツールを使用して、アプリケーションが読み込むモジュールを調べます。  `Tlist <pid>` コマンドは、プロセスによって読み込まれるすべてのモジュールを表示します。  
+## <a name="optimize-module-loading"></a><span data-ttu-id="df489-128">モジュールの読み込みの最適化</span><span class="sxs-lookup"><span data-stu-id="df489-128">Optimize Module Loading</span></span>  
+ <span data-ttu-id="df489-129">プロセス エクスプローラー (Procexp.exe)、Tlist.exe などのツールを使用して、アプリケーションがどのモジュールを読み込むかを調べます。</span><span class="sxs-lookup"><span data-stu-id="df489-129">Use tools such as Process Explorer (Procexp.exe) and Tlist.exe to determine which modules your application loads.</span></span> <span data-ttu-id="df489-130">`Tlist <pid>` コマンドを実行すると、プロセスによって読み込まれるすべてのモジュールが表示されます。</span><span class="sxs-lookup"><span data-stu-id="df489-130">The command `Tlist <pid>` shows all the modules that are loaded by a process.</span></span>  
   
- たとえば、Web に接続しないにもかかわらず System.Web.dll が読み込まれている場合は、アプリケーション内にこのアセンブリを参照するモジュールが含まれています。  この参照が本当に必要かどうかを検討します。  
+ <span data-ttu-id="df489-131">たとえば、Web に接続しないにもかかわらず System.Web.dll が読み込まれている場合は、アプリケーション内にこのアセンブリを参照するモジュールが含まれています。</span><span class="sxs-lookup"><span data-stu-id="df489-131">For example, if you are not connecting to the Web and you see that System.Web.dll is loaded, then there is a module in your application that references this assembly.</span></span> <span data-ttu-id="df489-132">この参照が本当に必要かどうかを検討してください。</span><span class="sxs-lookup"><span data-stu-id="df489-132">Check to make sure that the reference is necessary.</span></span>  
   
- アプリケーションに複数のモジュールがある場合は、それらをマージして単一のモジュールにします。  この方法により、CLR によるアセンブリ読み込みのオーバーヘッドが減少します。  アセンブリ数の減少は、CLR が管理する状態も減少することも意味します。  
+ <span data-ttu-id="df489-133">アプリケーションに複数のモジュールがある場合は、それをマージして単一のモジュールにします。</span><span class="sxs-lookup"><span data-stu-id="df489-133">If your application has multiple modules, merge them into a single module.</span></span> <span data-ttu-id="df489-134">この方法により、CLR によるアセンブリ読み込みのオーバーヘッドが減少します。</span><span class="sxs-lookup"><span data-stu-id="df489-134">This approach requires less CLR assembly-loading overhead.</span></span> <span data-ttu-id="df489-135">アセンブリ数が減少すると、CLR の管理対象となる状態も少なくなります。</span><span class="sxs-lookup"><span data-stu-id="df489-135">Fewer assemblies also mean that the CLR maintains less state.</span></span>  
   
-## 初期化処理の延期  
- メイン アプリケーション ウィンドウが表示されるまで初期化コードの実行を延期することを考慮します。  
+## <a name="defer-initialization-operations"></a><span data-ttu-id="df489-136">初期化処理の延期</span><span class="sxs-lookup"><span data-stu-id="df489-136">Defer Initialization Operations</span></span>  
+ <span data-ttu-id="df489-137">メイン アプリケーション ウィンドウが表示されるまで、初期化コードの実行を延期することを検討します。</span><span class="sxs-lookup"><span data-stu-id="df489-137">Consider postponing initialization code until after the main application window is rendered.</span></span>  
   
- 初期化はクラス コンストラクター内で実行される場合があり、初期化コードが他のクラスを参照している場合は、多数のクラス コンストラクターが次々に実行される可能性があることに注意してください。  
+ <span data-ttu-id="df489-138">初期化はクラス コンストラクター内で実行される場合があり、初期化コードが他のクラスを参照していと、多数のクラス コンストラクターが次々に実行される可能性があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="df489-138">Be aware that initialization may be performed inside a class constructor, and if the initialization code references other classes, it can cause a cascading effect in which many class constructors are executed.</span></span>  
   
-## アプリケーションの構成の回避  
- アプリケーションの構成を回避することを考慮します。  たとえば、アプリケーションの構成要件が単純であるときに、非常に短時間で起動する必要がある場合は、起動時間を短縮する方法として、構成の代わりにレジストリ エントリまたは単純な INI ファイルを使用できます。  
+## <a name="avoid-application-configuration"></a><span data-ttu-id="df489-139">アプリケーション構成の回避</span><span class="sxs-lookup"><span data-stu-id="df489-139">Avoid Application Configuration</span></span>  
+ <span data-ttu-id="df489-140">アプリケーション構成を回避することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="df489-140">Consider avoiding application configuration.</span></span> <span data-ttu-id="df489-141">たとえば、アプリケーションの構成要件がシンプルで、起動時間の目標が非常に厳しい場合は、構成の代わりに、レジストリ エントリまたはシンプルな INI ファイルを使って起動時間を短縮できます。</span><span class="sxs-lookup"><span data-stu-id="df489-141">For example, if an application has simple configuration requirements and has strict startup time goals, registry entries or a simple INI file may be a faster startup alternative.</span></span>  
   
-## GAC の活用  
- アセンブリがグローバル アセンブリ キャッシュ \(GAC: Global Assembly Cache\) にインストールされていない場合、厳密な名前付きアセンブリのハッシュ検証と Ngen イメージ検証 \(コンピューター上のネイティブ イメージを使用できる場合\) が原因で遅延が発生します。  厳密な名前の検証は、GAC にインストールされているアセンブリに対してはスキップされます。  詳細については、「[Gacutil.exe \(グローバル アセンブリ キャッシュ ツール\)](../../../../docs/framework/tools/gacutil-exe-gac-tool.md)」を参照してください。  
+## <a name="utilize-the-gac"></a><span data-ttu-id="df489-142">GAC の活用</span><span class="sxs-lookup"><span data-stu-id="df489-142">Utilize the GAC</span></span>  
+ <span data-ttu-id="df489-143">アセンブリがグローバル アセンブリ キャッシュ (GAC) にインストールされていない場合、厳密な名前付きアセンブリのハッシュ検証と NGen イメージ検証 (コンピューター上でそのアセンブリのネイティブ イメージを使用できる場合) が原因で遅延が発生します。</span><span class="sxs-lookup"><span data-stu-id="df489-143">If an assembly is not installed in the Global Assembly Cache (GAC), there are delays caused by hash verification of strong-named assemblies and by Ngen image validation if a native image for that assembly is available on the computer.</span></span> <span data-ttu-id="df489-144">厳密な名前の検証は、GAC にインストールされているアセンブリに対してはスキップされます。</span><span class="sxs-lookup"><span data-stu-id="df489-144">Strong-name verification is skipped for all assemblies installed in the GAC.</span></span> <span data-ttu-id="df489-145">詳細については、「[Gacutil.exe (グローバル アセンブリ キャッシュ ツール)](../../../../docs/framework/tools/gacutil-exe-gac-tool.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df489-145">For more information, see [Gacutil.exe (Global Assembly Cache Tool)](../../../../docs/framework/tools/gacutil-exe-gac-tool.md).</span></span>  
   
-## Ngen.exe の使用  
- アプリケーションでのネイティブ イメージ ジェネレーター \(Ngen.exe\) の使用を考慮します。  Ngen.exe の使用は、CPU 消費が減少する代わりにディスク アクセスが増えることを意味します。これは、Ngen.exe によって生成されるネイティブ イメージの方が、MSIL イメージよりも容量が大きい場合が多いためです。  
+## <a name="use-ngenexe"></a><span data-ttu-id="df489-146">Ngen.exe の使用</span><span class="sxs-lookup"><span data-stu-id="df489-146">Use Ngen.exe</span></span>  
+ <span data-ttu-id="df489-147">アプリケーションでネイティブ イメージ ジェネレーター (Ngen.exe) を使用することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="df489-147">Consider using the Native Image Generator (Ngen.exe) on your application.</span></span> <span data-ttu-id="df489-148">Ngen.exe を使用すると、CPU 消費は減少しますが、Ngen.exe によって生成されるネイティブ イメージの方が MSIL イメージよりも大きいことが多いため、ディスク アクセスが増えます。</span><span class="sxs-lookup"><span data-stu-id="df489-148">Using Ngen.exe means trading CPU consumption for more disk access because the native image generated by Ngen.exe is likely to be larger than the MSIL image.</span></span>  
   
- ウォーム スタートの起動時間を短縮するには、アプリケーションで Ngen.exe を常に使用します。これは、アプリケーション コードの JIT コンパイルにかかる CPU コストを回避するためです。  
+ <span data-ttu-id="df489-149">ウォーム スタートの起動時間を短縮するには、アプリケーションでは必ず Ngen exe を使用します。これにより、アプリケーション コードの JIT コンパイルにかかる CPU コストを回避できます。</span><span class="sxs-lookup"><span data-stu-id="df489-149">To improve the warm startup time, you should always use Ngen.exe on your application, because this avoids the CPU cost of JIT compilation of the application code.</span></span>  
   
- コールド スタートの場合も、Ngen.exe を使用すると有効なことがあります。  これは、JIT コンパイラ \(mscorjit.dll\) を読み込む必要がないためです。  
+ <span data-ttu-id="df489-150">コールド スタートでも、Ngen.exe を使用すると有効なことがあります。</span><span class="sxs-lookup"><span data-stu-id="df489-150">In some cold startup scenarios, using Ngen.exe can also be helpful.</span></span> <span data-ttu-id="df489-151">これは、JIT コンパイラ (mscorjit.dll) を読み込む必要がないためです。</span><span class="sxs-lookup"><span data-stu-id="df489-151">This is because the JIT compiler (mscorjit.dll) does not have to be loaded.</span></span>  
   
- Ngen と JIT モジュールを併用すると、最悪の影響が生じる可能性があります。  これは、mscorjit.dll を読み込む必要があることに加え、JIT コンパイラがアプリケーション コードを処理するためにアセンブリのメタデータを読み込む際に、Ngen イメージ内の多数のページにアクセスする必要があるためです。  
+ <span data-ttu-id="df489-152">NGen と JIT モジュールを併用すると、最悪の影響がもたらされる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="df489-152">Having both Ngen and JIT modules can have the worst effect.</span></span> <span data-ttu-id="df489-153">mscorjit.dll を読み込む必要があるほか、JIT コンパイラは、アプリケーション コードを処理するとき、アセンブリのメタデータを読み込む際に NGen イメージ内の多数のページにアクセスする必要があるためです。</span><span class="sxs-lookup"><span data-stu-id="df489-153">This is because mscorjit.dll must be loaded, and when the JIT compiler works on your code, many pages in the Ngen images must be accessed when the JIT compiler reads the assemblies' metadata.</span></span>  
   
-### Ngen と ClickOnce  
- アプリケーションの配置方法も、読み込み時間に影響する可能性があります。  [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] によるアプリケーションの配置では、Ngen のサポートはありません。  アプリケーションで Ngen.exe を使用する場合は、Windows インストーラーなどの他の配置機構を使用する必要があります。  
+### <a name="ngen-and-clickonce"></a><span data-ttu-id="df489-154">NGen と ClickOnce</span><span class="sxs-lookup"><span data-stu-id="df489-154">Ngen and ClickOnce</span></span>  
+ <span data-ttu-id="df489-155">アプリケーションの配置方法が、読み込み時間に影響することもあります。</span><span class="sxs-lookup"><span data-stu-id="df489-155">The way you plan to deploy your application can also make a difference in load time.</span></span> [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)]<span data-ttu-id="df489-156"> によるアプリケーションの配置では、NGen がサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="df489-156"> application deployment does not support Ngen.</span></span> <span data-ttu-id="df489-157">アプリケーションで Ngen.exe を使用する場合は、Windows インストーラーなど、他の配置機構を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df489-157">If you decide to use Ngen.exe for your application, you will have to use another deployment mechanism, such as Windows Installer.</span></span>  
   
- 詳細については、「[Ngen.exe \(ネイティブ イメージ ジェネレーター\)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md)」を参照してください。  
+ <span data-ttu-id="df489-158">詳細については、「[Ngen.exe (ネイティブ イメージ ジェネレーター)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df489-158">For more information, see [Ngen.exe (Native Image Generator)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md).</span></span>  
   
-### ベース変更と DLL アドレスの衝突  
- Ngen.exe を使用する場合は、ネイティブ イメージがメモリに読み込まれる際にベース変更が発生する可能性があることに注意してください。  希望するベース アドレスに DLL を読み込もうとしたときに、そのアドレス範囲が既に割り当て済みであるために DLL を読み込めない場合、Windows ローダーは、その DLL を別のアドレスに読み込みます。これは時間がかかる処理になる可能性があります。  
+### <a name="rebasing-and-dll-address-collisions"></a><span data-ttu-id="df489-159">ベース変更と DLL アドレスの競合</span><span class="sxs-lookup"><span data-stu-id="df489-159">Rebasing and DLL Address Collisions</span></span>  
+ <span data-ttu-id="df489-160">Ngen.exe を使用する場合は、ネイティブ イメージがメモリに読み込まれる際にベース変更が発生する可能性があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="df489-160">If you use Ngen.exe, be aware that rebasing can occur when the native images are loaded in memory.</span></span> <span data-ttu-id="df489-161">希望のベース アドレスのアドレス範囲が既に割り当て済みであることが原因で、そのベース アドレスに DLL を読み込めない場合、Windows ローダーは、その DLL を別のアドレスに読み込みますが、これには時間がかかることがあります。</span><span class="sxs-lookup"><span data-stu-id="df489-161">If a DLL is not loaded at its preferred base address because that address range is already allocated, the Windows loader will load it at another address, which can be a time-consuming operation.</span></span>  
   
- 仮想アドレス ダンプ \(Vadump.exe\) ツールを使用して、すべてのページがプライベートであるモジュールが存在するかどうかを調べることができます。  これに該当する場合、そのモジュールは、別のアドレスにベース変更されている可能性があります。  したがって、それらのページは共有できません。  
+ <span data-ttu-id="df489-162">仮想アドレス ダンプ (Vadump.exe) ツールを使用すると、すべてのページがプライベートであるモジュールが存在するかどうかを調べることができます。</span><span class="sxs-lookup"><span data-stu-id="df489-162">You can use the Virtual Address Dump (Vadump.exe) tool to check if there are modules in which all the pages are private.</span></span> <span data-ttu-id="df489-163">存在する場合、そのモジュールは、別のアドレスにベース変更されている可能性があります。</span><span class="sxs-lookup"><span data-stu-id="df489-163">If this is the case, the module may have been rebased to a different address.</span></span> <span data-ttu-id="df489-164">したがって、そのページは共有できません。</span><span class="sxs-lookup"><span data-stu-id="df489-164">Therefore, its pages cannot be shared.</span></span>  
   
- ベース アドレスを設定する方法の詳細については、「[Ngen.exe \(ネイティブ イメージ ジェネレーター\)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md)」を参照してください。  
+ <span data-ttu-id="df489-165">ベース アドレスを設定する方法の詳細については、「[Ngen.exe (ネイティブ イメージ ジェネレーター)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df489-165">For more information about how to set the base address, see [Ngen.exe (Native Image Generator)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md).</span></span>  
   
-## Authenticode の最適化  
- Authenticode 検証によって起動時間は長くなります。  Authenticode 署名があるアセンブリは、証明機関 \(CA: Certification Authority\) を使用して検証する必要があります。  この検証では、最新の証明書失効リストをダウンロードするためにネットワークに複数回接続する必要があるので、時間がかかる可能性があります。  検証では、信頼できるルートに至るパス上の証明書がすべて有効であることも確認します。  これにより、アセンブリの読み込み中に、数秒間の遅延が発生します。  
+## <a name="optimize-authenticode"></a><span data-ttu-id="df489-166">Authenticode の最適化</span><span class="sxs-lookup"><span data-stu-id="df489-166">Optimize Authenticode</span></span>  
+ <span data-ttu-id="df489-167">Authenticode 検証によって起動時間は長くなります。</span><span class="sxs-lookup"><span data-stu-id="df489-167">Authenticode verification adds to the startup time.</span></span> <span data-ttu-id="df489-168">Authenticode 署名があるアセンブリは、証明機関 (CA: Certification Authority) を使用して検証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df489-168">Authenticode-signed assemblies have to be verified with the certification authority (CA).</span></span> <span data-ttu-id="df489-169">この検証では、最新の証明書失効リストをダウンロードするためにネットワークに複数回接続する必要があるので、時間がかかる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="df489-169">This verification can be time consuming, because it can require connecting to the network several times to download current certificate revocation lists.</span></span> <span data-ttu-id="df489-170">また、信頼できるルートへのパスに、有効な証明書すべてが存在することも確認します。</span><span class="sxs-lookup"><span data-stu-id="df489-170">It also makes sure that there is a full chain of valid certificates on the path to a trusted root.</span></span> <span data-ttu-id="df489-171">これにより、アセンブリの読み込み中に、数秒間の遅延が発生する場合があります。</span><span class="sxs-lookup"><span data-stu-id="df489-171">This can translate to several seconds of delay while the assembly is being loaded.</span></span>  
   
- CA 証明書をクライアント コンピューターにインストールするか、可能な場合は Authenticode を使用しないことを考慮します。  アプリケーションが発行者の証拠を必要としないことが明らかな場合は、署名を検証する手間をかける必要はありません。  
+ <span data-ttu-id="df489-172">CA 証明書をクライアント コンピューターにインストールするか、可能な場合は Authenticode の使用を避けることを検討してください。</span><span class="sxs-lookup"><span data-stu-id="df489-172">Consider installing the CA certificate on the client computer, or avoid using Authenticode when it is possible.</span></span> <span data-ttu-id="df489-173">アプリケーションが発行者の証拠を必要としないことがわかっている場合は、署名を検証する手間をかける必要はありません。</span><span class="sxs-lookup"><span data-stu-id="df489-173">If you know that your application does not need the publisher evidence, you do not have to pay the cost of signature verification.</span></span>  
   
- [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] 以降、Authenticode 検証のバイパスを可能にする構成オプションが用意されています。  これを行うには、次の設定を app.exe.config ファイルに追加します。  
+ <span data-ttu-id="df489-174">[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] 以降、Authenticode 検証のバイパスを可能にする構成オプションが用意されています。</span><span class="sxs-lookup"><span data-stu-id="df489-174">Starting in [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)], there is a configuration option that allows the Authenticode verification to be bypassed.</span></span> <span data-ttu-id="df489-175">これを行うには、次の設定を app.exe.config ファイルに追加します。</span><span class="sxs-lookup"><span data-stu-id="df489-175">To do this, add the following setting to the app.exe.config file:</span></span>  
   
-```  
+```xml  
 <configuration>  
     <runtime>  
         <generatePublisherEvidence enabled="false"/>   
@@ -98,42 +101,42 @@ WPF アプリケーションの起動に必要な時間は、大幅に変動す�
 </configuration>  
 ```  
   
- 詳細については、「[\<generatePublisherEvidence\> 要素](../../../../docs/framework/configure-apps/file-schema/runtime/generatepublisherevidence-element.md)」を参照してください。  
+ <span data-ttu-id="df489-176">詳細については、「[\<generatePublisherEvidence> 要素](../../../../docs/framework/configure-apps/file-schema/runtime/generatepublisherevidence-element.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df489-176">For more information, see [\<generatePublisherEvidence> Element](../../../../docs/framework/configure-apps/file-schema/runtime/generatepublisherevidence-element.md).</span></span>  
   
-## Windows Vista でのパフォーマンスの比較  
- Windows Vista のメモリ マネージャーには、SuperFetch というテクノロジが組み込まれています。  SuperFetch は、時間の経過に伴うメモリ使用パターンを分析して、特定のユーザーに適したメモリの内容を決定し、  その内容を常に維持するように動作します。  
+## <a name="compare-performance-on-windows-vista"></a><span data-ttu-id="df489-177">Windows Vista でのパフォーマンスの比較</span><span class="sxs-lookup"><span data-stu-id="df489-177">Compare Performance on Windows Vista</span></span>  
+ <span data-ttu-id="df489-178">Windows Vista のメモリ マネージャーには、SuperFetch というテクノロジが組み込まれています。</span><span class="sxs-lookup"><span data-stu-id="df489-178">The memory manager in Windows Vista has a technology called SuperFetch.</span></span> <span data-ttu-id="df489-179">SuperFetch は、一定期間内のメモリ使用パターンを分析して、そのユーザーに適したメモリの内容を判断します。</span><span class="sxs-lookup"><span data-stu-id="df489-179">SuperFetch analyzes memory usage patterns over time to determine the optimal memory content for a specific user.</span></span> <span data-ttu-id="df489-180">そして、その内容が維持されるよう継続的に動作します。</span><span class="sxs-lookup"><span data-stu-id="df489-180">It works continuously to maintain that content at all times.</span></span>  
   
- これは、Windows XP で使用されているプリフェッチ手法とは異なります。プリフェッチでは、使用パターンを分析せずに、データをメモリにプリロードします。  ユーザーが WPF アプリケーションを Windows Vista で頻繁に使用する場合、時間の経過と共に、アプリケーションのコールド スタートの起動時間が短縮される可能性があります。  
+ <span data-ttu-id="df489-181">これは、Windows XP で使用されているプリフェッチ手法とは異なります。プリフェッチでは、使用パターンを分析せずに、データをメモリにプリロードします。</span><span class="sxs-lookup"><span data-stu-id="df489-181">This approach differs from the pre-fetch technique used in Windows XP, which preloads data into memory without analyzing usage patterns.</span></span> <span data-ttu-id="df489-182">ユーザーが WPF アプリケーションを Windows Vista で頻繁に使用すると、アプリケーションのコールド スタートの起動時間は次第に短くなる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="df489-182">Over time, if the user uses your WPF application frequently on Windows Vista, the cold startup time of your application may improve.</span></span>  
   
-## AppDomains の効率的な使用  
- 可能な場合はアセンブリをドメイン中立コード領域に読み込み、ネイティブ イメージが存在するのであれば、アプリケーションで作成されるすべての AppDomains でそのネイティブ イメージが使用されるようにします。  
+## <a name="use-appdomains-efficiently"></a><span data-ttu-id="df489-183">AppDomains の効率的な使用</span><span class="sxs-lookup"><span data-stu-id="df489-183">Use AppDomains Efficiently</span></span>  
+ <span data-ttu-id="df489-184">可能な場合はアセンブリをドメイン中立コード領域に読み込み、アプリケーションで作成されるすべての AppDomains でネイティブ イメージが使用されるようにします (ネイティブ イメージが存在する場合)。</span><span class="sxs-lookup"><span data-stu-id="df489-184">If possible, load assemblies into a domain-neutral code area to make sure that the native image, if one exists, is used in all AppDomains created in the application.</span></span>  
   
- 最大限のパフォーマンスを得るには、ドメイン間呼び出しを減らしてドメイン間通信を効率化します。  可能であれば、引数のない呼び出し、または引数がプリミティブ型である呼び出しを使用します。  
+ <span data-ttu-id="df489-185">パフォーマンスを最大限に高めるには、ドメイン間呼び出しを減らしてドメイン間の通信を効率化します。</span><span class="sxs-lookup"><span data-stu-id="df489-185">For the best performance, enforce efficient cross-domain communication by reducing cross-domain calls.</span></span> <span data-ttu-id="df489-186">可能な場合は、引数のない呼び出し、または引数がプリミティブ型である呼び出しを使用します。</span><span class="sxs-lookup"><span data-stu-id="df489-186">When possible, use calls without arguments or with primitive type arguments.</span></span>  
   
-## NeutralResourcesLanguage 属性の使用  
- <xref:System.Resources.NeutralResourcesLanguageAttribute> を使用して、<xref:System.Resources.ResourceManager> のニュートラル カルチャを指定します。  この方法を使用すると、アセンブリのルックアップの失敗が回避されます。  
+## <a name="use-the-neutralresourceslanguage-attribute"></a><span data-ttu-id="df489-187">NeutralResourcesLanguage 属性の使用</span><span class="sxs-lookup"><span data-stu-id="df489-187">Use the NeutralResourcesLanguage Attribute</span></span>  
+ <span data-ttu-id="df489-188">使用して、<xref:System.Resources.NeutralResourcesLanguageAttribute>のニュートラル カルチャを指定する、<xref:System.Resources.ResourceManager>です。</span><span class="sxs-lookup"><span data-stu-id="df489-188">Use the <xref:System.Resources.NeutralResourcesLanguageAttribute> to specify the neutral culture for the <xref:System.Resources.ResourceManager>.</span></span> <span data-ttu-id="df489-189">この方法を使用すると、アセンブリのルックアップの失敗が回避されます。</span><span class="sxs-lookup"><span data-stu-id="df489-189">This approach avoids unsuccessful assembly lookups.</span></span>  
   
-## シリアル化での BinaryFormatter クラスの使用  
- シリアル化を使用する必要がある場合は、<xref:System.Xml.Serialization.XmlSerializer> クラスの代わりに <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> クラスを使用します。  <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> クラスは、mscorlib.dll アセンブリの基本クラス ライブラリ \(BCL: Base Class Library\) に実装されます。  <xref:System.Xml.Serialization.XmlSerializer> は System.Xml.dll アセンブリに実装されますが、追加の DLL が読み込まれる場合があります。  
+## <a name="use-the-binaryformatter-class-for-serialization"></a><span data-ttu-id="df489-190">シリアル化での BinaryFormatter クラスの使用</span><span class="sxs-lookup"><span data-stu-id="df489-190">Use the BinaryFormatter Class for Serialization</span></span>  
+ <span data-ttu-id="df489-191">シリアル化を使用する必要がある場合を使用して、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>クラスの代わりに、<xref:System.Xml.Serialization.XmlSerializer>クラスです。</span><span class="sxs-lookup"><span data-stu-id="df489-191">If you must use serialization, use the <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> class instead of the <xref:System.Xml.Serialization.XmlSerializer> class.</span></span> <span data-ttu-id="df489-192"><xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>クラスには、mscorlib.dll アセンブリの基本クラス ライブラリ (BCL) が実装されています。</span><span class="sxs-lookup"><span data-stu-id="df489-192">The <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> class is implemented in the Base Class Library (BCL) in the mscorlib.dll assembly.</span></span> <span data-ttu-id="df489-193"><xref:System.Xml.Serialization.XmlSerializer>別の DLL を読み込む可能性のある System.Xml.dll アセンブリに実装します。</span><span class="sxs-lookup"><span data-stu-id="df489-193">The <xref:System.Xml.Serialization.XmlSerializer> is implemented in the System.Xml.dll assembly, which might be an additional DLL to load.</span></span>  
   
- <xref:System.Xml.Serialization.XmlSerializer> クラスを使用する必要がある場合は、シリアル化アセンブリを事前に生成することで、パフォーマンスを向上させることができます。  
+ <span data-ttu-id="df489-194">使用する場合、<xref:System.Xml.Serialization.XmlSerializer>クラス、シリアル化アセンブリを事前に生成する場合より優れたパフォーマンスを達成できます。</span><span class="sxs-lookup"><span data-stu-id="df489-194">If you must use the <xref:System.Xml.Serialization.XmlSerializer> class, you can achieve better performance if you pre-generate the serialization assembly.</span></span>  
   
-## 起動後に更新プログラムをチェックする ClickOnce の構成  
- アプリケーションで [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] を使用する場合は、アプリケーションの起動後に配置サイトの更新プログラムをチェックするように [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] を構成することで、ネットワーク アクセスを回避します。  
+## <a name="configure-clickonce-to-check-for-updates-after-startup"></a><span data-ttu-id="df489-195">起動後に更新プログラムをチェックする ClickOnce の構成</span><span class="sxs-lookup"><span data-stu-id="df489-195">Configure ClickOnce to Check for Updates After Startup</span></span>  
+ <span data-ttu-id="df489-196">アプリケーションで [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] を使用する場合は、アプリケーションの起動後に配置サイトの更新プログラムをチェックするように [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] を構成することで、ネットワーク アクセスを回避します。</span><span class="sxs-lookup"><span data-stu-id="df489-196">If your application uses [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)], avoid network access on startup by configuring [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] to check the deployment site for updates after the application starts.</span></span>  
   
- XAML ブラウザー アプリケーション \(XBAP: XAML Browser Application\) モデルを使用する場合、[!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] は、XBAP が既に [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] のキャッシュに存在する場合でも、配置サイトの更新プログラムのチェックが行われることに注意してください。  詳細については、「[ClickOnce のセキュリティと配置](../Topic/ClickOnce%20Security%20and%20Deployment.md)」を参照してください。  
+ <span data-ttu-id="df489-197">XAML ブラウザー アプリケーション (XBAP) モデルを使用する場合、[!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] は、XBAP が既に [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] キャッシュに存在する場合でも、配置サイトの更新プログラムのチェックが行われることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="df489-197">If you use the XAML browser application (XBAP) model, keep in mind that [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] checks the deployment site for updates even if the XBAP is already in the [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] cache.</span></span> <span data-ttu-id="df489-198">詳細については、「 [ClickOnce Security and Deployment](/visualstudio/deployment/clickonce-security-and-deployment)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df489-198">For more information, see [ClickOnce Security and Deployment](/visualstudio/deployment/clickonce-security-and-deployment).</span></span>  
   
-## PresentationFontCache サービスの自動起動の構成  
- 再起動後に最初に実行される WPF アプリケーションは PresentationFontCache サービスです。  このサービスは、システム フォントをキャッシュしてフォント アクセスを高速化することで、全体のパフォーマンスを向上させます。  このサービスの起動にはオーバーヘッドが伴うので、一部の制御された環境では、システムの再起動時にこのサービスを自動起動するように構成することを考慮します。  
+## <a name="configure-the-presentationfontcache-service-to-start-automatically"></a><span data-ttu-id="df489-199">PresentationFontCache サービスの自動起動の構成</span><span class="sxs-lookup"><span data-stu-id="df489-199">Configure the PresentationFontCache Service to Start Automatically</span></span>  
+ <span data-ttu-id="df489-200">再起動後に最初に実行される WPF アプリケーションは PresentationFontCache サービスです。</span><span class="sxs-lookup"><span data-stu-id="df489-200">The first WPF application to run after a reboot is the PresentationFontCache service.</span></span> <span data-ttu-id="df489-201">このサービスは、システム フォントをキャッシュし、フォント アクセスを高速化して、パフォーマンス全体を向上させます。</span><span class="sxs-lookup"><span data-stu-id="df489-201">The service caches the system fonts, improves font access, and improves overall performance.</span></span> <span data-ttu-id="df489-202">このサービスの起動にはオーバーヘッドが伴うため、一部の制御された環境では、システムの再起動時にこのサービスを自動起動するように構成することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="df489-202">There is an overhead in starting the service, and in some controlled environments, consider configuring the service to start automatically when the system reboots.</span></span>  
   
-## データ バインディングのプログラムによる設定  
- XAML を使用してメイン ウィンドウの <xref:System.Windows.FrameworkElement.DataContext%2A> を宣言によって設定する代わりに、<xref:System.Windows.Application.OnActivated%2A> メソッドでプログラムによって設定することを考慮します。  
+## <a name="set-data-binding-programmatically"></a><span data-ttu-id="df489-203">データ バインディングのプログラムによる設定</span><span class="sxs-lookup"><span data-stu-id="df489-203">Set Data Binding Programmatically</span></span>  
+ <span data-ttu-id="df489-204">XAML を使用して設定するのではなく、<xref:System.Windows.FrameworkElement.DataContext%2A>宣言によって、メイン ウィンドウのプログラムで設定することを検討してください、<xref:System.Windows.Application.OnActivated%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="df489-204">Instead of using XAML to set the <xref:System.Windows.FrameworkElement.DataContext%2A> declaratively for the main window, consider setting it programmatically in the <xref:System.Windows.Application.OnActivated%2A> method.</span></span>  
   
-## 参照  
- <xref:System.Windows.SplashScreen>   
- <xref:System.AppDomain>   
- <xref:System.Resources.NeutralResourcesLanguageAttribute>   
- <xref:System.Resources.ResourceManager>   
- [スプラッシュ スクリーンを WPF アプリケーションに追加する](../../../../docs/framework/wpf/app-development/how-to-add-a-splash-screen-to-a-wpf-application.md)   
- [Ngen.exe \(ネイティブ イメージ ジェネレーター\)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md)   
- [\<generatePublisherEvidence\> 要素](../../../../docs/framework/configure-apps/file-schema/runtime/generatepublisherevidence-element.md)
+## <a name="see-also"></a><span data-ttu-id="df489-205">関連項目</span><span class="sxs-lookup"><span data-stu-id="df489-205">See Also</span></span>  
+ <xref:System.Windows.SplashScreen>  
+ <xref:System.AppDomain>  
+ <xref:System.Resources.NeutralResourcesLanguageAttribute>  
+ <xref:System.Resources.ResourceManager>  
+ [<span data-ttu-id="df489-206">スプラッシュ スクリーンを WPF アプリケーションに追加する</span><span class="sxs-lookup"><span data-stu-id="df489-206">Add a Splash Screen to a WPF Application</span></span>](../../../../docs/framework/wpf/app-development/how-to-add-a-splash-screen-to-a-wpf-application.md)  
+ [<span data-ttu-id="df489-207">Ngen.exe (ネイティブ イメージ ジェネレーター)</span><span class="sxs-lookup"><span data-stu-id="df489-207">Ngen.exe (Native Image Generator)</span></span>](../../../../docs/framework/tools/ngen-exe-native-image-generator.md)  
+ [<span data-ttu-id="df489-208">\<generatePublisherEvidence> 要素</span><span class="sxs-lookup"><span data-stu-id="df489-208">\<generatePublisherEvidence> Element</span></span>](../../../../docs/framework/configure-apps/file-schema/runtime/generatepublisherevidence-element.md)

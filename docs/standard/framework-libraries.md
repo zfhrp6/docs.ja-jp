@@ -10,59 +10,56 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
+ms.openlocfilehash: 6851e7059ca60430e761cebed4fd5040a6a3ee08
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 934373d61407c8cc19b7d6424898a582880f9c21
-ms.openlocfilehash: 9c38237a8e729155c443298814f4c98bec61016b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
+# <a name="framework-libraries"></a><span data-ttu-id="03420-104">フレームワーク ライブラリ</span><span class="sxs-lookup"><span data-stu-id="03420-104">Framework Libraries</span></span>
 
-# <a name="framework-libraries"></a>フレームワーク ライブラリ
+<span data-ttu-id="03420-105">.NET には、基底クラス ライブラリ (コア セット) またはフレームワーク クラス ライブラリ (完全なセット) と呼ばれるクラス ライブラリの包括的な標準セットがあります。</span><span class="sxs-lookup"><span data-stu-id="03420-105">.NET has an expansive standard set of class libraries, referred to as either the base class libraries (core set) or framework class libraries (complete set).</span></span> <span data-ttu-id="03420-106">これらのライブラリは、多くの汎用およびアプリ固有の型、アルゴリズムおよびユーティリティの機能の実装を提供します。</span><span class="sxs-lookup"><span data-stu-id="03420-106">These libraries provide implementations for many general and app-specific types, algorithms and utility functionality.</span></span> <span data-ttu-id="03420-107">商用ライブラリとコミュニティ ライブラリはどちらもフレームワーク クラス ライブラリの上に構築され、コンピューティング タスクの広範なセット用に使いやすい市販ライブラリを提供します。</span><span class="sxs-lookup"><span data-stu-id="03420-107">Both commercial and community libraries build on top of the framework class libraries, providing easy to use off-the-shelf libraries for a wide set of computing tasks.</span></span>
 
-.NET には、基底クラス ライブラリ (コア セット) またはフレームワーク クラス ライブラリ (完全なセット) と呼ばれるクラス ライブラリの包括的な標準セットがあります。 これらのライブラリは、多くの汎用およびアプリ固有の型、アルゴリズムおよびユーティリティの機能の実装を提供します。 商用ライブラリとコミュニティ ライブラリはどちらもフレームワーク クラス ライブラリの上に構築され、コンピューティング タスクの広範なセット用に使いやすい市販ライブラリを提供します。
+<span data-ttu-id="03420-108">これらのライブラリのサブセットには、各 .NET 実装が提供されます。</span><span class="sxs-lookup"><span data-stu-id="03420-108">A subset of these libraries are provided with each .NET implementation.</span></span> <span data-ttu-id="03420-109">基底クラス ライブラリ (BCL) API には、任意の .NET 実装が想定されています。これは、開発者がそれらを必要としていることと、よく使われるライブラリでそれらを実行する必要があるという 2 つの理由からです。</span><span class="sxs-lookup"><span data-stu-id="03420-109">Base Class Library (BCL) APIs are expected with any .NET implementation, both because developers will want them and because popular libraries will need them to run.</span></span> <span data-ttu-id="03420-110">ASP.NET などの BCL 上のアプリ固有のライブラリは、すべての .NET 実装で使用できません。</span><span class="sxs-lookup"><span data-stu-id="03420-110">App-specific libraries above the BCL, such as ASP.NET, will not be available on all .NET implementations.</span></span>
 
-これらのライブラリのサブセットには、各 .NET 実装が提供されます。 基底クラス ライブラリ (BCL) API には、任意の .NET 実装が想定されています。これは、開発者がそれらを必要としていることと、よく使われるライブラリでそれらを実行する必要があるという 2 つの理由からです。 ASP.NET などの BCL 上のアプリ固有のライブラリは、すべての .NET 実装で使用できません。
+## <a name="base-class-libraries"></a><span data-ttu-id="03420-111">基底クラス ライブラリ</span><span class="sxs-lookup"><span data-stu-id="03420-111">Base Class Libraries</span></span>
 
-## <a name="base-class-libraries"></a>基底クラス ライブラリ
+<span data-ttu-id="03420-112">BCL は最も基本的な型およびユーティリティの機能を提供し、他のすべての .NET クラス ライブラリの基本となります。</span><span class="sxs-lookup"><span data-stu-id="03420-112">The BCL provides the most foundational types and utility functionality and are the base of all other .NET class libraries.</span></span> <span data-ttu-id="03420-113">これらは、任意のワークロードに偏ることなく、非常に汎用的な実装を提供することを目的としています。</span><span class="sxs-lookup"><span data-stu-id="03420-113">They aim to provide very general implementations without any bias to any workload.</span></span> <span data-ttu-id="03420-114">アプリは、高スループットよりも低待機時間、低い CPU 使用率よりも低いメモリ使用率のように、特定のポリシーを選ぶ場合があるため、パフォーマンスは常に重要な考慮事項です。</span><span class="sxs-lookup"><span data-stu-id="03420-114">Performance is always an important consideration, since apps might prefer a particular policy, such as low-latency to high-throughput or low-memory to low-CPU usage.</span></span> <span data-ttu-id="03420-115">これらのライブラリは、一般に、高パフォーマンスになることを意図しており、これらさまざまなパフォーマンス上の問題に応じて、妥協案を採用します。</span><span class="sxs-lookup"><span data-stu-id="03420-115">These libraries are intended to be high-performance generally, and take a middle-ground approach according to these various performance concerns.</span></span> <span data-ttu-id="03420-116">ほとんどのアプリでは、この方法は成功しています。</span><span class="sxs-lookup"><span data-stu-id="03420-116">For most apps, this approach has been quite successful.</span></span>
 
-BCL は最も基本的な型およびユーティリティの機能を提供し、他のすべての .NET クラス ライブラリの基本となります。 これらは、任意のワークロードに偏ることなく、非常に汎用的な実装を提供することを目的としています。 アプリは、高スループットよりも低待機時間、低い CPU 使用率よりも低いメモリ使用率のように、特定のポリシーを選ぶ場合があるため、パフォーマンスは常に重要な考慮事項です。 これらのライブラリは、一般に、高パフォーマンスになることを意図しており、これらさまざまなパフォーマンス上の問題に応じて、妥協案を採用します。 ほとんどのアプリでは、この方法は成功しています。
+## <a name="primitive-types"></a><span data-ttu-id="03420-117">プリミティブ型</span><span class="sxs-lookup"><span data-stu-id="03420-117">Primitive Types</span></span>
 
-## <a name="primitive-types"></a>プリミティブ型
+<span data-ttu-id="03420-118">.NET には、すべてのプログラムで (さまざまな程度で) 使用されるプリミティブ型のセットが含まれています。</span><span class="sxs-lookup"><span data-stu-id="03420-118">.NET includes a set of primitive types, which are used (to varying degrees) in all programs.</span></span> <span data-ttu-id="03420-119">これらの型には、数値、文字列、バイト、および任意のオブジェクトなどのデータが含まれています。</span><span class="sxs-lookup"><span data-stu-id="03420-119">These types contain data, such as numbers, strings, bytes and arbitrary objects.</span></span> <span data-ttu-id="03420-120">C# 言語には、これらの型のキーワードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="03420-120">The C# language includes keywords for these types.</span></span> <span data-ttu-id="03420-121">これらの型のサンプル セットを、一致する C# キーワードとともに以下に示します。</span><span class="sxs-lookup"><span data-stu-id="03420-121">A sample set of these types is listed below, with the matching C# keywords.</span></span>
 
-.NET には、すべてのプログラムで (さまざまな程度で) 使用されるプリミティブ型のセットが含まれています。 これらの型には、数値、文字列、バイト、および任意のオブジェクトなどのデータが含まれています。 C# 言語には、これらの型のキーワードが含まれています。 これらの型のサンプル セットを、一致する C# キーワードとともに以下に示します。
+* <span data-ttu-id="03420-122"><xref:System.Object?displayProperty=nameWithType> ([object](../csharp/language-reference/keywords/object.md)): CLR 型システムの最も基本の基底クラス。</span><span class="sxs-lookup"><span data-stu-id="03420-122"><xref:System.Object?displayProperty=nameWithType> ([object](../csharp/language-reference/keywords/object.md)) - The ultimate base class in the CLR type system.</span></span> <span data-ttu-id="03420-123">型階層のルートです。</span><span class="sxs-lookup"><span data-stu-id="03420-123">It is the root of the type hierarchy.</span></span>
+* <span data-ttu-id="03420-124"><xref:System.Int16?displayProperty=nameWithType> ([short](../csharp/language-reference/keywords/short.md)): 16 ビットの符号付き整数型。</span><span class="sxs-lookup"><span data-stu-id="03420-124"><xref:System.Int16?displayProperty=nameWithType> ([short](../csharp/language-reference/keywords/short.md)) - A 16-bit signed integer type.</span></span> <span data-ttu-id="03420-125">符号なしの <xref:System.UInt16> も存在します。</span><span class="sxs-lookup"><span data-stu-id="03420-125">The unsigned <xref:System.UInt16> also exists.</span></span>
+* <span data-ttu-id="03420-126"><xref:System.Int32?displayProperty=nameWithType> ([int](../csharp/language-reference/keywords/int.md)): 32 ビットの符号付き整数型。</span><span class="sxs-lookup"><span data-stu-id="03420-126"><xref:System.Int32?displayProperty=nameWithType> ([int](../csharp/language-reference/keywords/int.md)) - A 32-bit signed integer type.</span></span> <span data-ttu-id="03420-127">符号なしの [UInt32](../csharp/language-reference/keywords/uint.md) も存在します。</span><span class="sxs-lookup"><span data-stu-id="03420-127">The unsigned [UInt32](../csharp/language-reference/keywords/uint.md) also exists.</span></span>
+* <span data-ttu-id="03420-128"><xref:System.Single?displayProperty=nameWithType> ([float](../csharp/language-reference/keywords/float.md)): 32 ビット浮動小数点型。</span><span class="sxs-lookup"><span data-stu-id="03420-128"><xref:System.Single?displayProperty=nameWithType> ([float](../csharp/language-reference/keywords/float.md)) - A 32-bit floating-point type.</span></span>
+* <span data-ttu-id="03420-129"><xref:System.Decimal?displayProperty=nameWithType> ([decimal](../csharp/language-reference/keywords/decimal.md)): 128 ビットの 10 進数型。</span><span class="sxs-lookup"><span data-stu-id="03420-129"><xref:System.Decimal?displayProperty=nameWithType> ([decimal](../csharp/language-reference/keywords/decimal.md)) - A 128-bit decimal type.</span></span>
+* <span data-ttu-id="03420-130"><xref:System.Byte?displayProperty=nameWithType> ([byte](../csharp/language-reference/keywords/byte.md)): メモリのバイトを表す符号なし 8 ビット整数。</span><span class="sxs-lookup"><span data-stu-id="03420-130"><xref:System.Byte?displayProperty=nameWithType> ([byte](../csharp/language-reference/keywords/byte.md)) - An unsigned 8-bit integer that represents a byte of memory.</span></span>
+* <span data-ttu-id="03420-131"><xref:System.Boolean?displayProperty=nameWithType> ([bool](../csharp/language-reference/keywords/bool.md)): `true` または `false` を表すブール型。</span><span class="sxs-lookup"><span data-stu-id="03420-131"><xref:System.Boolean?displayProperty=nameWithType> ([bool](../csharp/language-reference/keywords/bool.md)) - A boolean type that represents `true` or `false`.</span></span>
+* <span data-ttu-id="03420-132"><xref:System.Char?displayProperty=nameWithType> ([char](../csharp/language-reference/keywords/char.md)): Unicode 文字を表す 16 ビットの数値型。</span><span class="sxs-lookup"><span data-stu-id="03420-132"><xref:System.Char?displayProperty=nameWithType> ([char](../csharp/language-reference/keywords/char.md)) - A 16-bit numeric type that represents a Unicode character.</span></span>
+* <span data-ttu-id="03420-133"><xref:System.String?displayProperty=nameWithType> ([string](../csharp/language-reference/keywords/string.md)): 一連の文字を表します。</span><span class="sxs-lookup"><span data-stu-id="03420-133"><xref:System.String?displayProperty=nameWithType> ([string](../csharp/language-reference/keywords/string.md)) - Represents a series of characters.</span></span> <span data-ttu-id="03420-134">`char[]` とは異なりますが、`string` で各 `char` にインデックスを付けることができます。</span><span class="sxs-lookup"><span data-stu-id="03420-134">Different than a `char[]`, but enables indexing into each individual `char` in the `string`.</span></span>
 
-* <xref:System.Object?displayProperty=fullName> ([object](../csharp/language-reference/keywords/object.md)): CLR 型システムの最も基本の基底クラス。 型階層のルートです。
-* <xref:System.Int16?displayProperty=fullName> ([short](../csharp/language-reference/keywords/short.md)): 16 ビットの符号付き整数型。 符号なしの <xref:System.UInt16> も存在します。
-* <xref:System.Int32?displayProperty=fullName> ([int](../csharp/language-reference/keywords/int.md)): 32 ビットの符号付き整数型。 符号なしの [UInt32](../csharp/language-reference/keywords/uint.md) も存在します。
-* <xref:System.Single?displayProperty=fullName> ([float](../csharp/language-reference/keywords/float.md)): 32 ビット浮動小数点型。
-* <xref:System.Decimal?displayProperty=fullName> ([decimal](../csharp/language-reference/keywords/decimal.md)): 128 ビットの 10 進数型。
-* <xref:System.Byte?displayProperty=fullName> ([byte](../csharp/language-reference/keywords/byte.md)): メモリのバイトを表す符号なし 8 ビット整数。
-* <xref:System.Boolean?displayProperty=fullName> ([bool](../csharp/language-reference/keywords/bool.md)): `true` または `false` を表すブール型。
-* <xref:System.Char?displayProperty=fullName> ([char](../csharp/language-reference/keywords/char.md)): Unicode 文字を表す 16 ビットの数値型。
-* <xref:System.String?displayProperty=fullName> ([string](../csharp/language-reference/keywords/string.md)): 一連の文字を表します。 `char[]` とは異なりますが、`string` で各 `char` にインデックスを付けることができます。
+## <a name="data-structures"></a><span data-ttu-id="03420-135">データ構造</span><span class="sxs-lookup"><span data-stu-id="03420-135">Data Structures</span></span>
 
-## <a name="data-structures"></a>データ構造
+<span data-ttu-id="03420-136">.NET には、ほとんどの .NET アプリの主力となるデータ構造体のセットが含まれています。</span><span class="sxs-lookup"><span data-stu-id="03420-136">.NET includes a set of data structures that are the workhorses of almost any .NET apps.</span></span> <span data-ttu-id="03420-137">これらはほとんどがコレクションですが、その他の型も含まれています。</span><span class="sxs-lookup"><span data-stu-id="03420-137">These are mostly collections, but also include other types.</span></span>
 
-.NET には、ほとんどの .NET アプリの主力となるデータ構造体のセットが含まれています。 これらはほとんどがコレクションですが、その他の型も含まれています。
+*   <span data-ttu-id="03420-138"><xref:System.Array>: インデックスを使用してアクセスできる、厳密に型指定されたオブジェクトの配列を表します。</span><span class="sxs-lookup"><span data-stu-id="03420-138"><xref:System.Array> - Represents an array of strongly types objects that can be accessed by index.</span></span> <span data-ttu-id="03420-139">その構造ごとの固定サイズがあります。</span><span class="sxs-lookup"><span data-stu-id="03420-139">Has a fixed size, per its construction.</span></span>
+*   <span data-ttu-id="03420-140"><xref:System.Collections.Generic.List%601>: インデックスを使用してアクセスできる、厳密に型指定されたオブジェクトのリストを表します。</span><span class="sxs-lookup"><span data-stu-id="03420-140"><xref:System.Collections.Generic.List%601> - Represents a strongly typed list of objects that can be accessed by index.</span></span> <span data-ttu-id="03420-141">必要に応じてサイズを自動調整します。</span><span class="sxs-lookup"><span data-stu-id="03420-141">Is automatically resized as needed.</span></span>
+*   <span data-ttu-id="03420-142"><xref:System.Collections.Generic.Dictionary%602>: キーによってインデックスが作成される値のコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="03420-142"><xref:System.Collections.Generic.Dictionary%602> - Represents a collection of values that are indexed by a key.</span></span> <span data-ttu-id="03420-143">値は、キーを使用してアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="03420-143">Values can be accessed via key.</span></span> <span data-ttu-id="03420-144">必要に応じてサイズを自動調整します。</span><span class="sxs-lookup"><span data-stu-id="03420-144">Is automatically resized as needed.</span></span>
+*   <span data-ttu-id="03420-145"><xref:System.Uri>: URI (Uniform Resource Identifier) のオブジェクト表現を可能にし、URI の一部へ簡単にアクセスできるようにします。</span><span class="sxs-lookup"><span data-stu-id="03420-145"><xref:System.Uri> - Provides an object representation of a uniform resource identifier (URI) and easy access to the parts of the URI.</span></span>
+*   <span data-ttu-id="03420-146"><xref:System.DateTime>: 通常、日付や時刻として表現される瞬間を表します。</span><span class="sxs-lookup"><span data-stu-id="03420-146"><xref:System.DateTime> - Represents an instant in time, typically expressed as a date and time of day.</span></span>
 
-*   <xref:System.Array>: インデックスを使用してアクセスできる、厳密に型指定されたオブジェクトの配列を表します。 その構造ごとの固定サイズがあります。
-*   <xref:System.Collections.Generic.List%601>: インデックスを使用してアクセスできる、厳密に型指定されたオブジェクトのリストを表します。 必要に応じてサイズを自動調整します。
-*   <xref:System.Collections.Generic.Dictionary%602>: キーによってインデックスが作成される値のコレクションを表します。 値は、キーを使用してアクセスできます。 必要に応じてサイズを自動調整します。
-*   <xref:System.Uri>: URI (Uniform Resource Identifier) のオブジェクト表現を可能にし、URI の一部へ簡単にアクセスできるようにします。
-*   <xref:System.DateTime>: 通常、日付や時刻として表現される瞬間を表します。
+## <a name="utility-apis"></a><span data-ttu-id="03420-147">ユーティリティ API</span><span class="sxs-lookup"><span data-stu-id="03420-147">Utility APIs</span></span>
 
-## <a name="utility-apis"></a>ユーティリティ API
+<span data-ttu-id="03420-148">.NET には多くの重要なタスクの機能を提供するユーティリティ API のセットが含まれています。</span><span class="sxs-lookup"><span data-stu-id="03420-148">.NET includes a set of utility APIs that provide functionality for many important tasks.</span></span>
 
-.NET には多くの重要なタスクの機能を提供するユーティリティ API のセットが含まれています。
+*   <span data-ttu-id="03420-149"><xref:System.Net.Http.HttpClient>: URI で識別されるリソースに HTTP 要求を送信し、そのリソースから HTTP 応答を受信するための基底クラスを提供する API です。</span><span class="sxs-lookup"><span data-stu-id="03420-149"><xref:System.Net.Http.HttpClient> - An API for sending HTTP requests and receiving HTTP responses from a resource identified by a URI.</span></span>
+*   <span data-ttu-id="03420-150"><xref:System.Xml.Linq.XDocument>: LINQ を使用して XML ドキュメントのロードと照会をするための API です。</span><span class="sxs-lookup"><span data-stu-id="03420-150"><xref:System.Xml.Linq.XDocument> - An API for loading, and querying XML documents with LINQ.</span></span>
+*   <span data-ttu-id="03420-151"><xref:System.IO.StreamReader>: ファイル (<xref:System.IO.StringWriter>) を読み取るための API です。ファイルの書き込みに使用できます。</span><span class="sxs-lookup"><span data-stu-id="03420-151"><xref:System.IO.StreamReader> - An API for reading files (<xref:System.IO.StringWriter>) Can be used to write files.</span></span>
 
-*   <xref:System.Net.Http.HttpClient>: URI で識別されるリソースに HTTP 要求を送信し、そのリソースから HTTP 応答を受信するための基底クラスを提供する API です。
-*   <xref:System.Xml.Linq.XDocument>: LINQ を使用して XML ドキュメントのロードと照会をするための API です。
-*   <xref:System.IO.StreamReader>: ファイル (<xref:System.IO.StringWriter>) を読み取るための API です。ファイルの書き込みに使用できます。
+## <a name="app-model-apis"></a><span data-ttu-id="03420-152">アプリ モデル API</span><span class="sxs-lookup"><span data-stu-id="03420-152">App-Model APIs</span></span>
 
-## <a name="app-model-apis"></a>アプリ モデル API
+<span data-ttu-id="03420-153">.NET で使用できる多くのアプリ モデルが、複数の企業から提供されています。</span><span class="sxs-lookup"><span data-stu-id="03420-153">There are many app-models that can be used with .NET, provided by several companies.</span></span>
 
-.NET で使用できる多くのアプリ モデルが、複数の企業から提供されています。
-
-*   [ASP.NET](http://asp.net): Web サイトとサービスを構築するための Web フレームワークを提供します。 Windows、Linux、macOS でサポートされます (ASP.NET のバージョンによって異なります)。
-
+*   <span data-ttu-id="03420-154">[ASP.NET](http://asp.net): Web サイトとサービスを構築するための Web フレームワークを提供します。</span><span class="sxs-lookup"><span data-stu-id="03420-154">[ASP.NET](http://asp.net) - Provides a web framework for building Web sites and services.</span></span> <span data-ttu-id="03420-155">Windows、Linux、macOS でサポートされます (ASP.NET のバージョンによって異なります)。</span><span class="sxs-lookup"><span data-stu-id="03420-155">Supported on Windows, Linux and macOS (depends on ASP.NET version).</span></span>

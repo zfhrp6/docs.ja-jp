@@ -1,55 +1,58 @@
 ---
-title: "方法 : Windows フォーム上のオブジェクトをレイヤー化する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "コントロール [Windows フォーム], レイヤー化"
-  - "コントロール [Windows フォーム], 配置"
-  - "Windows フォーム コントロール, レイヤー化"
-  - "z オーダー"
-  - "z オーダー"
+title: "方法 : Windows フォーム上のオブジェクトをレイヤー化する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- Windows Forms controls, layering
+- controls [Windows Forms], layering
+- z order
+- controls [Windows Forms], positioning
+- z-order
 ms.assetid: 1acc4281-2976-4715-86f4-bda68134baaf
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bda4cb3641ff890646614af35d38ff13621cc16b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォーム上のオブジェクトをレイヤー化する
-複雑なユーザー インターフェイスを作成したり、マルチ ドキュメント インターフェイス \(MDI\) フォームを使用したりする場合は、コントロールと子フォームをレイヤー化する必要が生じることがよくあります。  グループのコンテキストで、コントロールとウィンドウを移動および制御するには、コントロールの z オーダーを操作します。  *Z オーダー*は、コントロールの視覚的な階層構造であり、フォームの z 軸 \(奥行\) に沿ってフォームに描かれます。  z オーダーのウィンドウは、ほかのすべてのウィンドウの上に重ねて、一番上に表示されます。  ほかのすべてのウィンドウは、z オーダーのウィンドウの下に重ねて表示されます。  
+# <a name="how-to-layer-objects-on-windows-forms"></a><span data-ttu-id="10e35-102">方法 : Windows フォーム上のオブジェクトをレイヤー化する</span><span class="sxs-lookup"><span data-stu-id="10e35-102">How to: Layer Objects on Windows Forms</span></span>
+<span data-ttu-id="10e35-103">複雑なユーザー インターフェイスを作成またはマルチ ドキュメント インターフェイス (MDI) フォームを操作するときに多くの場合のコントロールと複雑なユーザー インターフェイス (UI) を作成する子フォームをレイヤーにします。</span><span class="sxs-lookup"><span data-stu-id="10e35-103">When you create a complex user interface, or work with a multiple document interface (MDI) form, you will often want to layer both controls and child forms to create more complex user interfaces (UI).</span></span> <span data-ttu-id="10e35-104">移動し、コントロールと windows グループのコンテキスト内での追跡を z オーダーを操作できます。</span><span class="sxs-lookup"><span data-stu-id="10e35-104">To move and keep track of controls and windows within the context of a group, you manipulate their z-order.</span></span> <span data-ttu-id="10e35-105">*Z オーダー* (深度) のフォームの z 軸に沿ってフォーム上のコントロールのビジュアルの重ね順がします。</span><span class="sxs-lookup"><span data-stu-id="10e35-105">*Z-order* is the visual layering of controls on a form along the form's z-axis (depth).</span></span> <span data-ttu-id="10e35-106">Z オーダーの上部にあるウィンドウには、他のすべてのウィンドウが重複しています。</span><span class="sxs-lookup"><span data-stu-id="10e35-106">The window at the top of the z-order overlaps all other windows.</span></span> <span data-ttu-id="10e35-107">その他のすべての windows では、z オーダーの下部にあるウィンドウと重複します。</span><span class="sxs-lookup"><span data-stu-id="10e35-107">All other windows overlap the window at the bottom of the z-order.</span></span>  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  <span data-ttu-id="10e35-108">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="10e35-108">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="10e35-109">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="10e35-109">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="10e35-110">詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="10e35-110">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### デザイン時にコントロールをレイヤー化するには  
+### <a name="to-layer-controls-at-design-time"></a><span data-ttu-id="10e35-111">デザイン時にコントロールをレイヤーに</span><span class="sxs-lookup"><span data-stu-id="10e35-111">To layer controls at design time</span></span>  
   
-1.  レイヤー化するコントロールを選択します。  
+1.  <span data-ttu-id="10e35-112">レイヤーにするコントロールを選択します。</span><span class="sxs-lookup"><span data-stu-id="10e35-112">Select a control that you want to layer.</span></span>  
   
-2.  **\[書式\]** メニューの **\[順序\]** をポイントし、**\[最前面へ移動\]** または **\[最背面へ移動\]** をクリックします。  
+2.  <span data-ttu-id="10e35-113">**形式** メニューのをポイント**順序**、クリックして**前面へ移動**または**最背面へ移動**です。</span><span class="sxs-lookup"><span data-stu-id="10e35-113">On the **Format** menu, point to **Order**, and then click **Bring To Front** or **Send To Back**.</span></span>  
   
-### プログラムによってコントロールをレイヤー化するには  
+### <a name="to-layer-controls-programmatically"></a><span data-ttu-id="10e35-114">コントロールをプログラムでレイヤーを</span><span class="sxs-lookup"><span data-stu-id="10e35-114">To layer controls programmatically</span></span>  
   
--   <xref:System.Windows.Forms.Control.BringToFront%2A> メソッドおよび <xref:System.Windows.Forms.Control.SendToBack%2A> メソッドを使用して、コントロールの z オーダーを操作します。  
+-   <span data-ttu-id="10e35-115">使用して、<xref:System.Windows.Forms.Control.BringToFront%2A>と<xref:System.Windows.Forms.Control.SendToBack%2A>コントロールの z オーダーを操作するメソッド。</span><span class="sxs-lookup"><span data-stu-id="10e35-115">Use the <xref:System.Windows.Forms.Control.BringToFront%2A> and <xref:System.Windows.Forms.Control.SendToBack%2A> methods to manipulate the z-order of the controls.</span></span>  
   
-     たとえば、<xref:System.Windows.Forms.TextBox> コントロール `txtFirstName` が別のコントロールの下に表示されている場合は、次のコードを使用して、一番上に表示します。  
+     <span data-ttu-id="10e35-116">たとえば場合、<xref:System.Windows.Forms.TextBox>コントロール、`txtFirstName`はすぐ下に別制御したい場合一番上にある、次のコードを使用します。</span><span class="sxs-lookup"><span data-stu-id="10e35-116">For example, if a <xref:System.Windows.Forms.TextBox> control, `txtFirstName`, is underneath another control and you want to have it on top, use the following code:</span></span>  
   
     ```vb  
     txtFirstName.BringToFront()  
-  
     ```  
   
     ```csharp  
     txtFirstName.BringToFront();  
-  
     ```  
   
     ```cpp  
@@ -57,11 +60,11 @@ caps.handback.revision: 14
     ```  
   
 > [!NOTE]
->  Windows フォームでは、*コントロール コンテインメント*をサポートしています。  コントロール コンテインメントとは、コンテナーであるコントロールに、さまざまなコントロールが配置されている状態です。たとえば、<xref:System.Windows.Forms.GroupBox> コントロールには、さまざまな <xref:System.Windows.Forms.RadioButton> コントロールが含まれています。  このとき、コンテナーであるコントロールでコントロールをレイヤー化できます。  グループ ボックスを移動すると、中に含まれているコントロールも移動されます。  
+>  <span data-ttu-id="10e35-117">Windows フォームをサポートしている*コントロール コンテインメント*です。</span><span class="sxs-lookup"><span data-stu-id="10e35-117">Windows Forms supports *control containment*.</span></span> <span data-ttu-id="10e35-118">コントロール コンテインメントの数などのコンテナー コントロール内のコントロールの数に配置する<xref:System.Windows.Forms.RadioButton>内で制御、<xref:System.Windows.Forms.GroupBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="10e35-118">Control containment involves placing a number of controls within a containing control, such as a number of <xref:System.Windows.Forms.RadioButton> controls within a <xref:System.Windows.Forms.GroupBox> control.</span></span> <span data-ttu-id="10e35-119">コントロールを格納しているコントロール内で、階層化することができます。</span><span class="sxs-lookup"><span data-stu-id="10e35-119">You can then layer the controls within the containing control.</span></span> <span data-ttu-id="10e35-120">グループ化するボックスを移動すると、その内部に格納されているためにも、コントロールが移動します。</span><span class="sxs-lookup"><span data-stu-id="10e35-120">Moving the group box moves the controls as well, because they are contained inside it.</span></span>  
   
-## 参照  
- [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)   
- [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)   
- [各 Windows フォーム コントロールのラベル設定とショートカットの作成](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)   
- [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)   
- [Windows フォーム コントロールの機能別一覧](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)
+## <a name="see-also"></a><span data-ttu-id="10e35-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="10e35-121">See Also</span></span>  
+ [<span data-ttu-id="10e35-122">Windows フォーム コントロール</span><span class="sxs-lookup"><span data-stu-id="10e35-122">Windows Forms Controls</span></span>](../../../../docs/framework/winforms/controls/index.md)  
+ [<span data-ttu-id="10e35-123">Windows フォームでのコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="10e35-123">Arranging Controls on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
+ [<span data-ttu-id="10e35-124">各 Windows フォーム コントロールのラベル設定とショートカットの作成</span><span class="sxs-lookup"><span data-stu-id="10e35-124">Labeling Individual Windows Forms Controls and Providing Shortcuts to Them</span></span>](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  
+ [<span data-ttu-id="10e35-125">Windows フォームで使用するコントロール</span><span class="sxs-lookup"><span data-stu-id="10e35-125">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [<span data-ttu-id="10e35-126">Windows フォーム コントロールの機能別一覧</span><span class="sxs-lookup"><span data-stu-id="10e35-126">Windows Forms Controls by Function</span></span>](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)

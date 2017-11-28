@@ -1,73 +1,72 @@
 ---
-title: "チュートリアル : Visual C# による Windows フォーム コントロールからの継承 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "カスタム コントロール [Windows フォーム], 継承"
-  - "継承, control"
-  - "継承, カスタム コントロール"
-  - "継承, チュートリアル"
-  - "Windows フォーム コントロール, 継承"
+title: "チュートリアル : Visual C# による Windows フォーム コントロールからの継承"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- inheritance [Windows Forms], custom controls
+- inheritance [Windows Forms], control
+- Windows Forms controls, inheritance
+- inheritance [Windows Forms], walkthroughs
+- custom controls [Windows Forms], inheritance
 ms.assetid: 09476da0-8d4c-4a4c-b969-649519dfb438
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 668dd3624d06f916b23ec16dd8268d2bae4ffcf7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル : Visual C# による Windows フォーム コントロールからの継承
-[!INCLUDE[csprcslong](../../../../includes/csprcslong-md.md)] では、*継承*によって強力なカスタム コントロールを作成できます。  継承を使用すると、標準の Windows フォーム コントロールの固有の機能をすべて保持しながら、カスタム機能も組み込んだコントロールを作成できます。  このチュートリアルでは、`ValueButton` という名前の簡単な継承コントロールを作成します。  このボタンは、標準の Windows フォーム <xref:System.Windows.Forms.Button> コントロールの機能を継承し、`ButtonValue` というカスタム プロパティを公開します。  
+# <a name="walkthrough-inheriting-from-a-windows-forms-control-with-visual-c"></a><span data-ttu-id="7aee3-102">チュートリアル : Visual C# による Windows フォーム コントロールからの継承</span><span class="sxs-lookup"><span data-stu-id="7aee3-102">Walkthrough: Inheriting from a Windows Forms Control with Visual C#</span></span> #
+<span data-ttu-id="7aee3-103">[!INCLUDE[csprcslong](../../../../includes/csprcslong-md.md)] では、*継承*によって強力なカスタム コントロールを作成できます。</span><span class="sxs-lookup"><span data-stu-id="7aee3-103">With [!INCLUDE[csprcslong](../../../../includes/csprcslong-md.md)], you can create powerful custom controls through *inheritance*.</span></span> <span data-ttu-id="7aee3-104">継承を使用すると、標準の Windows フォーム コントロールの固有の機能をすべて保持しながら、カスタム機能も組み込んだコントロールを作成できます。</span><span class="sxs-lookup"><span data-stu-id="7aee3-104">Through inheritance you are able to create controls that retain all of the inherent functionality of standard Windows Forms controls but also incorporate custom functionality.</span></span> <span data-ttu-id="7aee3-105">このチュートリアルでは、`ValueButton` という単純な継承されたコントロールを作成します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-105">In this walkthrough, you will create a simple inherited control called `ValueButton`.</span></span> <span data-ttu-id="7aee3-106">このボタンは、標準の Windows フォームの機能を継承<xref:System.Windows.Forms.Button>制御、およびと呼ばれるカスタム プロパティを公開`ButtonValue`です。</span><span class="sxs-lookup"><span data-stu-id="7aee3-106">This button will inherit functionality from the standard Windows Forms <xref:System.Windows.Forms.Button> control, and will expose a custom property called `ButtonValue`.</span></span>  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  <span data-ttu-id="7aee3-107">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="7aee3-107">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="7aee3-108">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-108">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="7aee3-109">詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7aee3-109">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-## プロジェクトの作成  
- 新しいプロジェクトを作成するときには、その名前を指定することにより、ルート名前空間、アセンブリ名、およびプロジェクト名を設定し、既定のコンポーネントが正しい名前空間に含まれるようにします。  
+## <a name="creating-the-project"></a><span data-ttu-id="7aee3-110">プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="7aee3-110">Creating the Project</span></span>  
+ <span data-ttu-id="7aee3-111">新しいプロジェクトを作成するときは、ルート名前空間、アセンブリ名、プロジェクト名を設定し、既定のコンポーネントが適切な名前空間に含まれるようにするために、プロジェクトの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-111">When you create a new project, you specify its name in order to set the root namespace, assembly name, and project name, and to ensure that the default component will be in the correct namespace.</span></span>  
   
-#### ValueButtonLib コントロール ライブラリおよび ValueButton コントロールを作成するには  
+#### <a name="to-create-the-valuebuttonlib-control-library-and-the-valuebutton-control"></a><span data-ttu-id="7aee3-112">ValueButtonLib コントロール ライブラリと ValueButton コントロールを作成するには</span><span class="sxs-lookup"><span data-stu-id="7aee3-112">To create the ValueButtonLib control library and the ValueButton control</span></span>  
   
-1.  **\[ファイル\]** メニューの **\[新規作成\]** をポイントし、**\[プロジェクト\]** をクリックして **\[新しいプロジェクト\]** ダイアログ ボックスを開きます。  
+1.  <span data-ttu-id="7aee3-113">**[ファイル]** メニューの **[新規作成]** をポイントし、**[プロジェクト]** をクリックして **[新しいプロジェクト]** ダイアログ ボックスを開きます。</span><span class="sxs-lookup"><span data-stu-id="7aee3-113">On the **File** menu, point to **New** and then click **Project** to open the **New Project** dialog box.</span></span>  
   
-2.  \[[!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] プロジェクト\] ボックスの一覧の **\[Windows フォーム コントロール ライブラリ\]** プロジェクト テンプレートを選択し、**\[プロジェクト名\]** ボックスに「`ValueButtonLib`」と入力します。  
+2.  <span data-ttu-id="7aee3-114">[!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] プロジェクトの一覧で **[Windows フォーム コントロール ライブラリ]** プロジェクト テンプレートを選択し、**[名前]** ボックスに「`ValueButtonLib`」と入力します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-114">Select the **Windows Forms Control Library** project template from the list of [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] Projects, and type `ValueButtonLib` in the **Name** box.</span></span>  
   
-     プロジェクト名 `ValueButtonLib` は、既定でルート名前空間にも割り当てられます。  ルート名前空間は、アセンブリ内のコンポーネント名の修飾に使用されます。  たとえば、`ValueButton` という名前のコンポーネントが 2 つのアセンブリに含まれる場合は、`ValueButtonLib.ValueButton` という形で目的の `ValueButton` コンポーネントを指定できます。  詳細については、「[名前空間](../Topic/Namespaces%20\(C%23%20Programming%20Guide\).md)」を参照してください。  
+     <span data-ttu-id="7aee3-115">プロジェクト名 `ValueButtonLib` は、既定でルート名前空間にも割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="7aee3-115">The project name, `ValueButtonLib`, is also assigned to the root namespace by default.</span></span> <span data-ttu-id="7aee3-116">ルート名前空間は、アセンブリ内のコンポーネント名の修飾に使用されます。</span><span class="sxs-lookup"><span data-stu-id="7aee3-116">The root namespace is used to qualify the names of components in the assembly.</span></span> <span data-ttu-id="7aee3-117">たとえば、`ValueButton` という名前のコンポーネントが 2 つのアセンブリに含まれている場合、`ValueButtonLib.ValueButton` を使用して目的の `ValueButton` コンポーネントを指定できます。</span><span class="sxs-lookup"><span data-stu-id="7aee3-117">For example, if two assemblies provide components named `ValueButton`, you can specify your `ValueButton` component using `ValueButtonLib.ValueButton`.</span></span> <span data-ttu-id="7aee3-118">詳細については、「[名前空間](../../../csharp/programming-guide/namespaces/index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7aee3-118">For more information, see [Namespaces](../../../csharp/programming-guide/namespaces/index.md).</span></span>  
   
-3.  **ソリューション エクスプローラー**で、**\[UserControl1.cs\]** を右クリックし、ショートカット メニューの **\[名前の変更\]** をクリックします。  ファイル名を「`ValueButton.cs`」に変更します。  コード要素 "`UserControl1`" へのすべての参照の名前を変更するかどうかを確認するダイアログ ボックスが表示されたら、**\[はい\]** をクリックします。  
+3.  <span data-ttu-id="7aee3-119">**ソリューション エクスプローラー**で、**[UserControl1.cs]** を右クリックし、ショートカット メニューの **[名前の変更]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-119">In **Solution Explorer**, right-click **UserControl1.cs**, then choose **Rename** from the shortcut menu.</span></span> <span data-ttu-id="7aee3-120">ファイル名を `ValueButton.cs` に変更します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-120">Change the file name to `ValueButton.cs`.</span></span> <span data-ttu-id="7aee3-121">コード要素 "`UserControl1`" へのすべての参照の名前を変更するかどうかをたずねられたら、**[はい]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-121">Click the **Yes** button when you are asked if you want to rename all references to the code element '`UserControl1`'.</span></span>  
   
-4.  **ソリューション エクスプローラー**で **\[ValueButton.cs\]** を右クリックし、**\[コードの表示\]** をクリックします。  
+4.  <span data-ttu-id="7aee3-122">**ソリューション エクスプローラー**で、**[ValueButton.cs]** を右クリックし、**[コードの表示]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-122">In **Solution Explorer**, right-click **ValueButton.cs** and select **View Code**.</span></span>  
   
-5.  `class` ステートメント行 `public partial class ValueButton` を見つけ、このコントロールの継承元である種類を <xref:System.Windows.Forms.UserControl> から <xref:System.Windows.Forms.Button> に変更します。  これによって、継承されたコントロールは <xref:System.Windows.Forms.Button> コントロールのすべての機能を継承できます。  
+5.  <span data-ttu-id="7aee3-123">検索、`class`明細行`public partial class ValueButton`、このコントロールから継承する型を変更および<xref:System.Windows.Forms.UserControl>に<xref:System.Windows.Forms.Button>です。</span><span class="sxs-lookup"><span data-stu-id="7aee3-123">Locate the `class` statement line, `public partial class ValueButton`, and change the type from which this control inherits from <xref:System.Windows.Forms.UserControl> to <xref:System.Windows.Forms.Button>.</span></span> <span data-ttu-id="7aee3-124">これにより、継承されたコントロールのすべての機能を継承する、<xref:System.Windows.Forms.Button>コントロール。</span><span class="sxs-lookup"><span data-stu-id="7aee3-124">This allows your inherited control to inherit all the functionality of the <xref:System.Windows.Forms.Button> control.</span></span>  
   
-6.  **ソリューション エクスプローラー**で、**\[ValueButton.cs\]** ノードを開き、**ValueButton.Designer.cs** というデザイナー生成のコード ファイルを表示します。  **コード エディター**でこのファイルを開きます。  
+6.  <span data-ttu-id="7aee3-125">**ソリューション エクスプローラー**で、**[ValueButton.cs]** ノードを開いて、デザイナーによって生成されたコード ファイル (**ValueButton.Designer.cs**) を表示します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-125">In **Solution Explorer**, open the **ValueButton.cs** node to display the designer-generated code file, **ValueButton.Designer.cs**.</span></span> <span data-ttu-id="7aee3-126">このファイルを**コード エディター**で開きます。</span><span class="sxs-lookup"><span data-stu-id="7aee3-126">Open this file in the **Code Editor**.</span></span>  
   
-7.  `InitializeComponent` メソッドを見つけ、<xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A> プロパティを割り当てる行を削除します。  このプロパティは、<xref:System.Windows.Forms.Button> コントロールには存在しません。  
+7.  <span data-ttu-id="7aee3-127">検索、`InitializeComponent`メソッドおよび削除を代入する行、<xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="7aee3-127">Locate the `InitializeComponent` method and remove the line that assigns the <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A> property.</span></span> <span data-ttu-id="7aee3-128">このプロパティに存在しません、<xref:System.Windows.Forms.Button>コントロール。</span><span class="sxs-lookup"><span data-stu-id="7aee3-128">This property does not exist in the <xref:System.Windows.Forms.Button> control.</span></span>  
   
-8.  **\[ファイル\]** メニューの **\[すべてを保存\]** をクリックしてプロジェクトを保存します。  
+8.  <span data-ttu-id="7aee3-129">**[ファイル]** メニューの **[すべて保存]** をクリックして、プロジェクトを保存します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-129">From the **File** menu, choose **Save All** to save the project.</span></span>  
   
     > [!NOTE]
-    >  ビジュアルなデザイナーは使用できなくなりました。  <xref:System.Windows.Forms.Button> コントロールは独自の描画を実行するため、デザイナーでは表示を変更できません。  ビジュアル表示は、コードで変更しない限り、継承元のクラス \(つまり、<xref:System.Windows.Forms.Button>\) とまったく同じです。  UI 要素のないコンポーネントをデザイン サーフェイスに追加することはできます。  
+    >  <span data-ttu-id="7aee3-130">ビジュアル デザイナーは使用できなくなっています。</span><span class="sxs-lookup"><span data-stu-id="7aee3-130">A visual designer is no longer available.</span></span> <span data-ttu-id="7aee3-131"><xref:System.Windows.Forms.Button>コントロールは独自の描画、デザイナーでその外観を変更することができません。</span><span class="sxs-lookup"><span data-stu-id="7aee3-131">Because the <xref:System.Windows.Forms.Button> control does its own painting, you are unable to modify its appearance in the designer.</span></span> <span data-ttu-id="7aee3-132">ビジュアル表現は同じでなければから継承するクラスと (つまり、 <xref:System.Windows.Forms.Button>) コードで変更しない限り、します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-132">Its visual representation will be exactly the same as that of the class it inherits from (that is, <xref:System.Windows.Forms.Button>) unless modified in the code.</span></span> <span data-ttu-id="7aee3-133">UI 要素のないコンポーネントをデザイン サーフェイスに追加することは可能です。</span><span class="sxs-lookup"><span data-stu-id="7aee3-133">You can still add components, which have no UI elements, to the design surface.</span></span>  
   
-## 継承したコントロールへのプロパティの追加  
- 継承した Windows フォーム コントロールの可能な用途の 1 つとして、標準の Windows フォーム コントロールと同じ外観と操作性を持ちながらカスタム プロパティを公開するコントロールを作成できます。  ここでは、コントロールに `ButtonValue` という名前のプロパティを追加します。  
+## <a name="adding-a-property-to-your-inherited-control"></a><span data-ttu-id="7aee3-134">継承されたコントロールへのプロパティの追加</span><span class="sxs-lookup"><span data-stu-id="7aee3-134">Adding a Property to Your Inherited Control</span></span>  
+ <span data-ttu-id="7aee3-135">継承された Windows フォーム コントロールの考えられる用途の 1 つとして、外観は標準の Windows フォーム コントロールと同じでありながら、カスタム プロパティを公開するコントロールの作成があります。</span><span class="sxs-lookup"><span data-stu-id="7aee3-135">One possible use of inherited Windows Forms controls is the creation of controls that are identical in look and feel of standard Windows Forms controls, but expose custom properties.</span></span> <span data-ttu-id="7aee3-136">このセクションでは、`ButtonValue` というプロパティをコントロールに追加します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-136">In this section, you will add a property called `ButtonValue` to your control.</span></span>  
   
-#### Value プロパティを追加するには  
+#### <a name="to-add-the-value-property"></a><span data-ttu-id="7aee3-137">Value プロパティを追加するには</span><span class="sxs-lookup"><span data-stu-id="7aee3-137">To add the Value property</span></span>  
   
-1.  **ソリューション エクスプローラー**で、**\[ValueButton.cs\]** を右クリックし、ショートカット メニューの **\[コードの表示\]** をクリックします。  
+1.  <span data-ttu-id="7aee3-138">**ソリューション エクスプローラー**で、**[ValueButton.cs]** を右クリックし、ショートカット メニューの **[コードの表示]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-138">In **Solution Explorer**, right-click **ValueButton.cs**, and then click **View Code** from the shortcut menu.</span></span>  
   
-2.  `class` ステートメントを探します。  始まりの中かっこ \(`{`\) の直後に、次のコードを入力します。  
+2.  <span data-ttu-id="7aee3-139">`class` ステートメントを見つけます。</span><span class="sxs-lookup"><span data-stu-id="7aee3-139">Locate the `class` statement.</span></span> <span data-ttu-id="7aee3-140">`{` の直後に次のコードを入力します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-140">Immediately after the `{`, type the following code:</span></span>  
   
-     \[C\#\]  
-  
-    ```  
+    ```csharp  
     // Creates the private variable that will store the value of your   
     // property.  
     private int varValue;  
@@ -87,75 +86,73 @@ caps.handback.revision: 17
     }  
     ```  
   
-     このコードは、`ButtonValue` プロパティの格納方法と取得方法を設定します。  `get` ステートメントは、返された値をプライベート変数 `varValue` に格納されている値に設定します。`set` ステートメントは、`value` キーワードを使用してプライベート変数の値を設定します。  
+     <span data-ttu-id="7aee3-141">このコードでは、`ButtonValue` プロパティを格納し、取得するメソッドを設定しています。</span><span class="sxs-lookup"><span data-stu-id="7aee3-141">This code sets the methods by which the `ButtonValue` property is stored and retrieved.</span></span> <span data-ttu-id="7aee3-142">`get` ステートメントは、返された値を `varValue` プライベート変数に格納されている値に設定します。`set` ステートメントは、`value` キーワードを使用してプライベート変数の値を設定します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-142">The `get` statement sets the value returned to the value that is stored in the private variable `varValue`, and the `set` statement sets the value of the private variable by use of the `value` keyword.</span></span>  
   
-3.  **\[ファイル\]** メニューの **\[すべてを保存\]** をクリックしてプロジェクトを保存します。  
+3.  <span data-ttu-id="7aee3-143">**[ファイル]** メニューの **[すべて保存]** をクリックして、プロジェクトを保存します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-143">From the **File** menu, choose **Save All** to save the project.</span></span>  
   
-## コントロールのテスト  
- コントロールはスタンドアロン プロジェクトではないため、コンテナーでホストする必要があります。  コントロールをテストするには、コントロールを実行するテスト プロジェクトを指定する必要があります。  また、コントロールをビルド \(コンパイル\) してテスト プロジェクトからもアクセスできるようにする必要があります。  ここでは、コントロールを作成し、Windows フォームでそのコントロールをテストします。  
+## <a name="testing-your-control"></a><span data-ttu-id="7aee3-144">コントロールのテスト</span><span class="sxs-lookup"><span data-stu-id="7aee3-144">Testing Your Control</span></span>  
+ <span data-ttu-id="7aee3-145">コントロールはスタンドアロン プロジェクトではないため、コンテナー内でホストする必要があります。</span><span class="sxs-lookup"><span data-stu-id="7aee3-145">Controls are not stand-alone projects; they must be hosted in a container.</span></span> <span data-ttu-id="7aee3-146">コントロールをテストするには、コントロールを実行するテスト プロジェクトを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7aee3-146">In order to test your control, you must provide a test project for it to run in.</span></span> <span data-ttu-id="7aee3-147">また、コントロールをビルド (コンパイル) して、テスト プロジェクトからアクセスできるようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="7aee3-147">You must also make your control accessible to the test project by building (compiling) it.</span></span> <span data-ttu-id="7aee3-148">このセクションでは、コントロールをビルドし、Windows フォームでテストします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-148">In this section, you will build your control and test it in a Windows Form.</span></span>  
   
-#### コントロールをビルドするには  
+#### <a name="to-build-your-control"></a><span data-ttu-id="7aee3-149">コントロールをビルドするには</span><span class="sxs-lookup"><span data-stu-id="7aee3-149">To build your control</span></span>  
   
-1.  **\[ビルド\]** メニューの **\[ソリューションのビルド\]** をクリックします。  
+1.  <span data-ttu-id="7aee3-150">**[ビルド]** メニューの **[ソリューションのビルド]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-150">On the **Build** menu, click **Build Solution**.</span></span>  
   
-     ビルドは、コンパイル エラーも警告もなしに完了します。  
+     <span data-ttu-id="7aee3-151">コンパイル エラーも警告も発生せずに、ビルドが正常に完了します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-151">The build should be successful with no compiler errors or warnings.</span></span>  
   
-#### テスト プロジェクトを作成するには  
+#### <a name="to-create-a-test-project"></a><span data-ttu-id="7aee3-152">テスト プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="7aee3-152">To create a test project</span></span>  
   
-1.  **\[ファイル\]** メニューの **\[追加\]** をポイントし、**\[新しいプロジェクト\]** をクリックして **\[新しいプロジェクトの追加\]** ダイアログ ボックスを表示します。  
+1.  <span data-ttu-id="7aee3-153">**[ファイル]** メニューの **[追加]** をポイントし、**[新しいプロジェクト]** をクリックして **[新しいプロジェクトの追加]** ダイアログ ボックスを開きます。</span><span class="sxs-lookup"><span data-stu-id="7aee3-153">On the **File** menu, point to **Add** and then click **New Project** to open the **Add New Project** dialog box.</span></span>  
   
-2.  **\[Visual C\#\]** ノードの下の **\[Windows\]** ノードを選択し、**\[Windows フォーム アプリケーション\]** をクリックします。  
+2.  <span data-ttu-id="7aee3-154">**[Visual C#]** ノードの下の **[Windows]** ノードを選択し、**[Windows フォーム アプリケーション]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-154">Select the **Windows** node, beneath the **Visual C#** node, and click **Windows Forms Application**.</span></span>  
   
-3.  **\[プロジェクト名\]** ボックスに「`Test`」と入力します。  
+3.  <span data-ttu-id="7aee3-155">**[名前]** ボックスに「`Test`」と入力します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-155">In the **Name** box, type `Test`.</span></span>  
   
-4.  **ソリューション エクスプローラー**で、テスト プロジェクトの **\[参照設定\]** ノードを右クリックし、ショートカット メニューの **\[参照の追加\]** をクリックして **\[参照の追加\]** ダイアログ ボックスを表示します。  
+4.  <span data-ttu-id="7aee3-156">**ソリューション エクスプローラー**で、テスト プロジェクトの **[参照設定]** ノードを右クリックし、ショートカット メニューの **[参照の追加]** をクリックして **[参照の追加]** ダイアログ ボックスを表示します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-156">In **Solution Explorer**, right-click the **References** node for your test project, then select **Add Reference** from the shortcut menu to display the **Add Reference** dialog box.</span></span>  
   
-5.  **\[プロジェクト\]** タブをクリックします。  `ValueButtonLib` プロジェクトが **\[プロジェクト名\]** の下に表示されます。  プロジェクトをダブルクリックしてテスト プロジェクトへの参照を追加します。  
+5.  <span data-ttu-id="7aee3-157">**[プロジェクト]** というラベルのタブをクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-157">Click the tab labeled **Projects**.</span></span> <span data-ttu-id="7aee3-158">**[プロジェクト名]** に `ValueButtonLib` プロジェクトが表示されます。</span><span class="sxs-lookup"><span data-stu-id="7aee3-158">Your `ValueButtonLib` project will be listed under **Project Name**.</span></span> <span data-ttu-id="7aee3-159">プロジェクトをダブルクリックして、テスト プロジェクトへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-159">Double-click the project to add the reference to the test project.</span></span>  
   
-6.  **ソリューション エクスプローラー**で、**\[Test\]** を右クリックし、**\[ビルド\]** をクリックします。  
+6.  <span data-ttu-id="7aee3-160">**ソリューション エクスプローラー**で、**[Test]** を右クリックし、**[ビルド]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-160">In **Solution Explorer,** right-click **Test** and select **Build**.</span></span>  
   
-#### フォームにコントロールを追加するには  
+#### <a name="to-add-your-control-to-the-form"></a><span data-ttu-id="7aee3-161">コントロールをフォームに追加するには</span><span class="sxs-lookup"><span data-stu-id="7aee3-161">To add your control to the form</span></span>  
   
-1.  **ソリューション エクスプローラー**で、**\[Form1.cs\]** を右クリックし、ショートカット メニューの **\[デザイナーの表示\]** をクリックします。  
+1.  <span data-ttu-id="7aee3-162">**ソリューション エクスプローラー**で、**[Form1.cs]** を右クリックし、ショートカット メニューの **[デザイナーの表示]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-162">In **Solution Explorer**, right-click **Form1.cs** and choose **View Designer** from the shortcut menu.</span></span>  
   
-2.  **ツールボックス**の **\[ValueButtonLib コンポーネント\]** をクリックします。  **\[ValueButton\]** をダブルクリックします。  
+2.  <span data-ttu-id="7aee3-163">**ツールボックス**の **[ValueButtonLib コンポーネント]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-163">In the **Toolbox**, click **ValueButtonLib Components**.</span></span> <span data-ttu-id="7aee3-164">**[ValueButton]** をダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-164">Double-click **ValueButton**.</span></span>  
   
-     **ValueButton** がフォームに表示されます。  
+     <span data-ttu-id="7aee3-165">**ValueButton** がフォームに表示されます。</span><span class="sxs-lookup"><span data-stu-id="7aee3-165">A **ValueButton** appears on the form.</span></span>  
   
-3.  **\[ValueButton\]** を右クリックし、ショートカット メニューの **\[プロパティ\]** をクリックします。  
+3.  <span data-ttu-id="7aee3-166">**[ValueButton]** を右クリックし、ショートカット メニューの **[プロパティ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-166">Right-click the **ValueButton** and select **Properties** from the shortcut menu.</span></span>  
   
-4.  **\[プロパティ\]** ウィンドウで、このコントロールのプロパティを調べます。  標準のボタンによって公開されるのと同じプロパティの他に、追加のプロパティ `ButtonValue` が含まれています。  
+4.  <span data-ttu-id="7aee3-167">**[プロパティ]** ウィンドウで、このコントロールのプロパティを調べます。</span><span class="sxs-lookup"><span data-stu-id="7aee3-167">In the **Properties** window, examine the properties of this control.</span></span> <span data-ttu-id="7aee3-168">プロパティは、追加のプロパティである `ButtonValue` がある点を除き、標準ボタンで公開されるプロパティと同じです。</span><span class="sxs-lookup"><span data-stu-id="7aee3-168">Note that they are identical to the properties exposed by a standard button, except that there is an additional property, `ButtonValue`.</span></span>  
   
-5.  `ButtonValue` プロパティを `5` に設定します。  
+5.  <span data-ttu-id="7aee3-169">`ButtonValue` プロパティを `5` に設定します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-169">Set the `ButtonValue` property to `5`.</span></span>  
   
-6.  **ツールボックス**の **\[すべての Windows フォーム\]** タブで、**\[Label\]** をダブルクリックしてフォームに <xref:System.Windows.Forms.Label> コントロールを追加します。  
+6.  <span data-ttu-id="7aee3-170">**すべての Windows フォーム**のタブ、**ツールボックス**をダブルクリックして**ラベル**を追加する、<xref:System.Windows.Forms.Label>をフォームにコントロールです。</span><span class="sxs-lookup"><span data-stu-id="7aee3-170">In the **All Windows Forms** tab of the **Toolbox**, double-click **Label** to add a <xref:System.Windows.Forms.Label> control to your form.</span></span>  
   
-7.  ラベルをフォームの中央に配置し直します。  
+7.  <span data-ttu-id="7aee3-171">ラベルをフォームの中央に配置し直します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-171">Relocate the label to the center of the form.</span></span>  
   
-8.  `valueButton1` をダブルクリックします。  
+8.  <span data-ttu-id="7aee3-172">`valueButton1` をダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-172">Double-click `valueButton1`.</span></span>  
   
-     **コード エディター**が開き、`valueButton1_Click` イベントが表示されます。  
+     <span data-ttu-id="7aee3-173">**コード エディター**が開き、`valueButton1_Click` イベントが表示されます。</span><span class="sxs-lookup"><span data-stu-id="7aee3-173">The **Code Editor** opens to the `valueButton1_Click` event.</span></span>  
   
-9. 次のコード行を挿入します。  
+9. <span data-ttu-id="7aee3-174">次のコード行を挿入します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-174">Insert the following line of code.</span></span>  
   
-     \[C\#\]  
-  
-    ```  
+    ```csharp  
     label1.Text = valueButton1.ButtonValue.ToString();  
     ```  
   
-10. **ソリューション エクスプローラー**で、**\[Test\]** を右クリックし、ショートカット メニューの **\[スタートアップ プロジェクトに設定\]** をクリックします。  
+10. <span data-ttu-id="7aee3-175">**ソリューション エクスプローラー**で、**[Test]** を右クリックし、ショートカット メニューの **[スタートアップ プロジェクトに設定]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-175">In **Solution Explorer**, right-click **Test**, and choose **Set as Startup Project** from the shortcut menu.</span></span>  
   
-11. **\[デバッグ\]** メニューの **\[デバッグ開始\]** をクリックします。  
+11. <span data-ttu-id="7aee3-176">**[デバッグ]** メニューの **[デバッグの開始]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-176">From the **Debug** menu, select **Start Debugging**.</span></span>  
   
-     `Form1` が表示されます。  
+     <span data-ttu-id="7aee3-177">`Form1` が表示されます。</span><span class="sxs-lookup"><span data-stu-id="7aee3-177">`Form1` appears.</span></span>  
   
-12. \[`valueButton1`\] をクリックします。  
+12. <span data-ttu-id="7aee3-178">[`valueButton1`] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aee3-178">Click `valueButton1`.</span></span>  
   
-     `label1` に数字 "5" が表示され、継承したコントロールの `ButtonValue` プロパティが `valueButton1_Click` メソッドを介して `label1` に渡されたことを示します。  このようにして、`ValueButton` コントロールは標準の Windows フォーム ボタンの機能をすべて継承しながら、追加のカスタム プロパティを公開します。  
+     <span data-ttu-id="7aee3-179">`label1` に数字の "5" が表示されます。これは、継承されたコントロールの `ButtonValue` プロパティが、`valueButton1_Click` メソッドによって `label1` に渡されたことを示しています。</span><span class="sxs-lookup"><span data-stu-id="7aee3-179">The numeral '5' is displayed in `label1`, demonstrating that the `ButtonValue` property of your inherited control has been passed to `label1` through the `valueButton1_Click` method.</span></span> <span data-ttu-id="7aee3-180">このようにして、`ValueButton` コントロールは標準の Windows フォーム ボタンの機能をすべて継承しながら、追加のカスタム プロパティを公開します。</span><span class="sxs-lookup"><span data-stu-id="7aee3-180">Thus your `ValueButton` control inherits all the functionality of the standard Windows Forms button, but exposes an additional, custom property.</span></span>  
   
-## 参照  
- [コンポーネントによるプログラミング](../Topic/Programming%20with%20Components.md)   
- [Component Authoring Walkthroughs](../Topic/Component%20Authoring%20Walkthroughs.md)   
- [方法: \[ツールボックス アイテムの選択\] ダイアログ ボックスにコントロールを表示する](../../../../docs/framework/winforms/controls/how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)   
- [チュートリアル : Visual C\# による複合コントロールの作成](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp.md)
+## <a name="see-also"></a><span data-ttu-id="7aee3-181">関連項目</span><span class="sxs-lookup"><span data-stu-id="7aee3-181">See Also</span></span>  
+ [<span data-ttu-id="7aee3-182">コンポーネントによるプログラミング</span><span class="sxs-lookup"><span data-stu-id="7aee3-182">Programming with Components</span></span>](http://msdn.microsoft.com/library/d4d4fcb4-e0b8-46b3-b679-7ee0026eb9e3)  
+ [<span data-ttu-id="7aee3-183">コンポーネント作成のチュートリアル</span><span class="sxs-lookup"><span data-stu-id="7aee3-183">Component Authoring Walkthroughs</span></span>](http://msdn.microsoft.com/library/c414cca9-2489-4208-8b38-954586d91c13)  
+ <span data-ttu-id="7aee3-184">[方法: [ツールボックス アイテムの選択] ダイアログ ボックスにコントロールを表示する](../../../../docs/framework/winforms/controls/how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)</span><span class="sxs-lookup"><span data-stu-id="7aee3-184">[How to: Display a Control in the Choose Toolbox Items Dialog Box](../../../../docs/framework/winforms/controls/how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)</span></span>  
+ [<span data-ttu-id="7aee3-185">チュートリアル: Visual C# による複合コントロールの作成</span><span class="sxs-lookup"><span data-stu-id="7aee3-185">Walkthrough: Authoring a Composite Control with Visual C#</span></span>](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp.md)

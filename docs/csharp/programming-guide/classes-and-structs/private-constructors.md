@@ -1,66 +1,47 @@
 ---
 title: "プライベート コンストラクター (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - C# language, private constructors
 - private constructors [C#]
 ms.assetid: 29eeaa7d-8d81-453c-94b9-0e2800172621
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 79660cd4545fff43ac3dd6ab797fd20c0f882e05
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1ccd3db5f95e3a237bb37d9e09c34f415fcfd752
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="private-constructors-c-programming-guide"></a>プライベート コンストラクター (C# プログラミング ガイド)
-プライベート コンストラクターは、特別なインスタンス コンストラクターです。 通常は、静的メンバーだけを含むクラスで使用されます。 クラスに 1 つ以上のプライベート コンストラクターがあり、パブリック コンストラクターがない場合、他のクラス (入れ子になったクラスを除く) は、このクラスのインスタンスを作成できません。 例:  
+# <a name="private-constructors-c-programming-guide"></a><span data-ttu-id="fc7a2-102">プライベート コンストラクター (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="fc7a2-102">Private Constructors (C# Programming Guide)</span></span>
+<span data-ttu-id="fc7a2-103">プライベート コンストラクターは、特別なインスタンス コンストラクターです。</span><span class="sxs-lookup"><span data-stu-id="fc7a2-103">A private constructor is a special instance constructor.</span></span> <span data-ttu-id="fc7a2-104">通常は、静的メンバーだけを含むクラスで使用されます。</span><span class="sxs-lookup"><span data-stu-id="fc7a2-104">It is generally used in classes that contain static members only.</span></span> <span data-ttu-id="fc7a2-105">クラスに 1 つ以上のプライベート コンストラクターがあり、パブリック コンストラクターがない場合、他のクラス (入れ子になったクラスを除く) は、このクラスのインスタンスを作成できません。</span><span class="sxs-lookup"><span data-stu-id="fc7a2-105">If a class has one or more private constructors and no public constructors, other classes (except nested classes) cannot create instances of this class.</span></span> <span data-ttu-id="fc7a2-106">例:</span><span class="sxs-lookup"><span data-stu-id="fc7a2-106">For example:</span></span>  
   
- [!code-cs[csProgGuideObjects#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/private-constructors_1.cs)]  
+ [!code-csharp[csProgGuideObjects#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/private-constructors_1.cs)]  
   
- 空のコンストラクターを宣言すると、既定コンストラクターの自動生成は行われません。 コンストラクターにアクセス修飾子を指定しない場合でも、コンストラクターは既定でプライベートになります。 しかし、通常は、[プライベート](../../../csharp/language-reference/keywords/private.md)修飾子を明示的に使用して、クラスをインスタンス化できないことを明確に示します。  
+ <span data-ttu-id="fc7a2-107">空のコンストラクターを宣言すると、既定コンストラクターの自動生成は行われません。</span><span class="sxs-lookup"><span data-stu-id="fc7a2-107">The declaration of the empty constructor prevents the automatic generation of a default constructor.</span></span> <span data-ttu-id="fc7a2-108">コンストラクターにアクセス修飾子を指定しない場合でも、コンストラクターは既定でプライベートになります。</span><span class="sxs-lookup"><span data-stu-id="fc7a2-108">Note that if you do not use an access modifier with the constructor it will still be private by default.</span></span> <span data-ttu-id="fc7a2-109">しかし、通常は、[プライベート](../../../csharp/language-reference/keywords/private.md)修飾子を明示的に使用して、クラスをインスタンス化できないことを明確に示します。</span><span class="sxs-lookup"><span data-stu-id="fc7a2-109">However, the [private](../../../csharp/language-reference/keywords/private.md) modifier is usually used explicitly to make it clear that the class cannot be instantiated.</span></span>  
   
- プライベート コンストラクターは、<xref:System.Math> クラスなどのインスタンス フィールドやメソッドが存在しない場合や、クラスのインスタンスを取得するためにメソッドが呼び出される場合に、クラスのインスタンスが作成されないようにするために使用します。 クラス内のすべてのメソッドが静的な場合は、クラス全体を静的にすることを検討してください。 詳細については、「[静的クラスと静的クラス メンバー](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)」を参照してください。  
+ <span data-ttu-id="fc7a2-110">プライベート コンストラクターは、<xref:System.Math> クラスなどのインスタンス フィールドやメソッドが存在しない場合や、クラスのインスタンスを取得するためにメソッドが呼び出される場合に、クラスのインスタンスが作成されないようにするために使用します。</span><span class="sxs-lookup"><span data-stu-id="fc7a2-110">Private constructors are used to prevent creating instances of a class when there are no instance fields or methods, such as the <xref:System.Math> class, or when a method is called to obtain an instance of a class.</span></span> <span data-ttu-id="fc7a2-111">クラス内のすべてのメソッドが静的な場合は、クラス全体を静的にすることを検討してください。</span><span class="sxs-lookup"><span data-stu-id="fc7a2-111">If all the methods in the class are static, consider making the complete class static.</span></span> <span data-ttu-id="fc7a2-112">詳細については、「[静的クラスと静的クラス メンバー](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="fc7a2-112">For more information see [Static Classes and Static Class Members](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).</span></span>  
   
-## <a name="example"></a>例  
- 次に示すのは、プライベート コンストラクターを使用するクラスの例です。  
+## <a name="example"></a><span data-ttu-id="fc7a2-113">例</span><span class="sxs-lookup"><span data-stu-id="fc7a2-113">Example</span></span>  
+ <span data-ttu-id="fc7a2-114">次に示すのは、プライベート コンストラクターを使用するクラスの例です。</span><span class="sxs-lookup"><span data-stu-id="fc7a2-114">The following is an example of a class using a private constructor.</span></span>  
   
- [!code-cs[csProgGuideObjects#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/private-constructors_2.cs)]  
+ [!code-csharp[csProgGuideObjects#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/private-constructors_2.cs)]  
   
- この例で、次のステートメントをコメント解除すると、保護レベルのためにコンストラクターにアクセスできなくなり、エラーが発生します。  
+ <span data-ttu-id="fc7a2-115">この例で、次のステートメントをコメント解除すると、保護レベルのためにコンストラクターにアクセスできなくなり、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="fc7a2-115">Notice that if you uncomment the following statement from the example, it will generate an error because the constructor is inaccessible because of its protection level:</span></span>  
   
- [!code-cs[csProgGuideObjects#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/private-constructors_3.cs)]  
+ [!code-csharp[csProgGuideObjects#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/private-constructors_3.cs)]  
   
-## <a name="c-language-specification"></a>C# 言語仕様  
+## <a name="c-language-specification"></a><span data-ttu-id="fc7a2-116">C# 言語仕様</span><span class="sxs-lookup"><span data-stu-id="fc7a2-116">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)   
- [コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)   
- [ファイナライザー](../../../csharp/programming-guide/classes-and-structs/destructors.md)   
- [private](../../../csharp/language-reference/keywords/private.md)   
- [public](../../../csharp/language-reference/keywords/public.md)
-
+## <a name="see-also"></a><span data-ttu-id="fc7a2-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="fc7a2-117">See Also</span></span>  
+ [<span data-ttu-id="fc7a2-118">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="fc7a2-118">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="fc7a2-119">クラスと構造体</span><span class="sxs-lookup"><span data-stu-id="fc7a2-119">Classes and Structs</span></span>](../../../csharp/programming-guide/classes-and-structs/index.md)  
+ [<span data-ttu-id="fc7a2-120">コンストラクター</span><span class="sxs-lookup"><span data-stu-id="fc7a2-120">Constructors</span></span>](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
+ [<span data-ttu-id="fc7a2-121">ファイナライザー</span><span class="sxs-lookup"><span data-stu-id="fc7a2-121">Finalizers</span></span>](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
+ [<span data-ttu-id="fc7a2-122">private</span><span class="sxs-lookup"><span data-stu-id="fc7a2-122">private</span></span>](../../../csharp/language-reference/keywords/private.md)  
+ [<span data-ttu-id="fc7a2-123">public</span><span class="sxs-lookup"><span data-stu-id="fc7a2-123">public</span></span>](../../../csharp/language-reference/keywords/public.md)

@@ -1,107 +1,113 @@
 ---
-title: "方法 : 特定の日付から曜日を抽出する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "書式指定 [.NET Framework]、日付"
-  - "DateTime.DayOfWeek プロパティ"
-  - "DateTime.ToString メソッド"
-  - "日付 [.NET Framework], 週の情報を取得する"
-  - "DateTimeOffset.DayOfWeek プロパティ"
-  - "日付 [.NET Framework], 曜日"
-  - "Weekday 関数"
-  - "曜日 [.NET Framework]"
-  - "抽出 (曜日を)"
-  - "曜日の名前"
-  - "WeekdayName 関数"
-  - "数値 [.NET Framework], 曜日"
-  - "書式指定 [.NET Framework], 時刻"
-  - "DateTimeOffset.ToString メソッド"
-  - "曜日の正式名"
+title: "方法 : 特定の日付から曜日を抽出する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- formatting [.NET Framework], dates
+- DateTime.DayOfWeek property
+- DateTime.ToString method
+- dates [.NET Framework], retrieving week information
+- DateTimeOffset.DayOfWeek property
+- dates [.NET Framework], day of week
+- Weekday function
+- day of week [.NET Framework]
+- extracting day of week
+- weekday names
+- WeekdayName function
+- numbers [.NET Framework], day of week
+- formatting [.NET Framework], time
+- DateTimeOffset.ToString method
+- full weekday names
 ms.assetid: 1c9bef76-5634-46cf-b91c-9b9eb72091d7
-caps.latest.revision: 12
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 3accb01eb8c5edb8b3e245020b43c5a94a8bb4cd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 特定の日付から曜日を抽出する
-.NET Framework では、特定の日付が週の何日目であるかを容易に判別でき、また特定の日付のローカライズされた曜日名を表示できます。 特定の日付に対応する曜日を示す列挙値は、<xref:System.DateTime.DayOfWeek%2A> または <xref:System.DateTimeOffset.DayOfWeek%2A> プロパティから取得できます。 対照的に、曜日名の取得は、書式指定メソッド （日付と時刻の値の `ToString` メソッドや <xref:System.String.Format%2A?displayProperty=fullName> メソッドなど） を呼び出して実行できる書式指定操作です。 このトピックでは、このような書式指定操作を実行する方法について説明します。  
+# <a name="how-to-extract-the-day-of-the-week-from-a-specific-date"></a><span data-ttu-id="6fd8e-102">方法 : 特定の日付から曜日を抽出する</span><span class="sxs-lookup"><span data-stu-id="6fd8e-102">How to: Extract the Day of the Week from a Specific Date</span></span>
+<span data-ttu-id="6fd8e-103">.NET Framework では、特定の日付が週の何日目であるかを容易に判別でき、また特定の日付のローカライズされた曜日名を表示できます。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-103">The .NET Framework makes it easy to determine the ordinal day of the week for a particular date, and to display the localized weekday name for a particular date.</span></span> <span data-ttu-id="6fd8e-104">特定の日付に対応する曜日を示す列挙値は、<xref:System.DateTime.DayOfWeek%2A> または <xref:System.DateTimeOffset.DayOfWeek%2A> プロパティから取得できます。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-104">An enumerated value that indicates the day of the week corresponding to a particular date is available from the <xref:System.DateTime.DayOfWeek%2A> or <xref:System.DateTimeOffset.DayOfWeek%2A> property.</span></span> <span data-ttu-id="6fd8e-105">対照的に、曜日名の取得は、書式指定メソッド （日付と時刻の値の `ToString` メソッドや <xref:System.String.Format%2A?displayProperty=nameWithType> メソッドなど） を呼び出して実行できる書式指定操作です。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-105">In contrast, retrieving the weekday name is a formatting operation that can be performed by calling a formatting method, such as a date and time value's `ToString` method or the <xref:System.String.Format%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="6fd8e-106">このトピックでは、このような書式指定操作を実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-106">This topic shows how to perform these formatting operations.</span></span>  
   
-### 特定の日付から曜日を示す番号を抽出するには  
+### <a name="to-extract-a-number-indicating-the-day-of-the-week-from-a-specific-date"></a><span data-ttu-id="6fd8e-107">特定の日付から曜日を示す番号を抽出するには</span><span class="sxs-lookup"><span data-stu-id="6fd8e-107">To extract a number indicating the day of the week from a specific date</span></span>  
   
-1.  文字列形式の日付を処理している場合には、静的 <xref:System.DateTime> または <xref:System.DateTimeOffset> メソッドを使用して、その日付を<xref:System.DateTime.Parse%2A?displayProperty=fullName> 値または <xref:System.DateTimeOffset.Parse%2A?displayProperty=fullName> 値に変換します。  
+1.  <span data-ttu-id="6fd8e-108">文字列形式の日付を処理している場合には、静的 <xref:System.DateTime> または <xref:System.DateTimeOffset> メソッドを使用して、その日付を<xref:System.DateTime.Parse%2A?displayProperty=nameWithType> 値または <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType> 値に変換します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-108">If you are working with the string representation of a date, convert it to a <xref:System.DateTime> or a <xref:System.DateTimeOffset> value by using the static <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> or <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType> method.</span></span>  
   
-2.  <xref:System.DateTime.DayOfWeek%2A?displayProperty=fullName> プロパティまたは <xref:System.DateTimeOffset.DayOfWeek%2A?displayProperty=fullName> プロパティを使用して、曜日を示す <xref:System.DayOfWeek> 値を取得します。  
+2.  <span data-ttu-id="6fd8e-109"><xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> プロパティまたは <xref:System.DateTimeOffset.DayOfWeek%2A?displayProperty=nameWithType> プロパティを使用して、曜日を示す <xref:System.DayOfWeek> 値を取得します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-109">Use the <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> or <xref:System.DateTimeOffset.DayOfWeek%2A?displayProperty=nameWithType> property to retrieve a <xref:System.DayOfWeek> value that indicates the day of the week.</span></span>  
   
-3.  必要に応じて、<xref:System.DayOfWeek> 値を整数にキャスト （C\#） または変換 （Visual Basic） します。  
+3.  <span data-ttu-id="6fd8e-110">必要に応じて、<xref:System.DayOfWeek> 値を整数にキャスト （C#） または変換 （Visual Basic） します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-110">If necessary, cast (in C#) or convert (in Visual Basic) the <xref:System.DayOfWeek> value to an integer.</span></span>  
   
- 次の例は、特定の日付の曜日を表す整数を表示します。  
+ <span data-ttu-id="6fd8e-111">次の例は、特定の日付の曜日を表す整数を表示します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-111">The following example displays an integer that represents the day of the week of a specific date.</span></span>  
   
  [!code-csharp[Formatting.Howto.WeekdayName#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/weekdaynumber7.cs#7)]
  [!code-vb[Formatting.Howto.WeekdayName#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/weekdaynumber7.vb#7)]  
   
-### 特定の日付から曜日の省略名を抽出するには  
+### <a name="to-extract-the-abbreviated-weekday-name-from-a-specific-date"></a><span data-ttu-id="6fd8e-112">特定の日付から曜日の省略名を抽出するには</span><span class="sxs-lookup"><span data-stu-id="6fd8e-112">To extract the abbreviated weekday name from a specific date</span></span>  
   
-1.  文字列形式の日付を処理している場合には、静的 <xref:System.DateTime> または <xref:System.DateTimeOffset> メソッドを使用して、その日付を<xref:System.DateTime.Parse%2A?displayProperty=fullName> 値または <xref:System.DateTimeOffset.Parse%2A?displayProperty=fullName> 値に変換します。  
+1.  <span data-ttu-id="6fd8e-113">文字列形式の日付を処理している場合には、静的 <xref:System.DateTime> または <xref:System.DateTimeOffset> メソッドを使用して、その日付を<xref:System.DateTime.Parse%2A?displayProperty=nameWithType> 値または <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType> 値に変換します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-113">If you are working with the string representation of a date, convert it to a <xref:System.DateTime> or a <xref:System.DateTimeOffset> value by using the static <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> or <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType> method.</span></span>  
   
-2.  次の手順で現在のカルチャまたは特定のカルチャの曜日の省略名を抽出できます。  
+2.  <span data-ttu-id="6fd8e-114">次の手順で現在のカルチャまたは特定のカルチャの曜日の省略名を抽出できます。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-114">You can extract the abbreviated weekday name of the current culture or of a specific culture:</span></span>  
   
-    1.  現在のカルチャの曜日の省略名を抽出するには、日付と時刻の値の <xref:System.DateTime.ToString%28System.String%29?displayProperty=fullName> インスタンス メソッドまたは <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=fullName> インスタンス メソッドを呼び出し、`format` パラメーターとして文字列 "ddd" を渡します。 次の例に、<xref:System.DateTime.ToString%28System.String%29> メソッドの呼び出しを示します。  
+    1.  <span data-ttu-id="6fd8e-115">現在のカルチャの曜日の省略名を抽出するには、日付と時刻の値の <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> インスタンス メソッドまたは <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> インスタンス メソッドを呼び出し、`format` パラメーターとして文字列 "ddd" を渡します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-115">To extract the abbreviated weekday name for the current culture, call the date and time value's <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> or <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> instance method, and pass the string "ddd" as the `format` parameter.</span></span> <span data-ttu-id="6fd8e-116">次の例に、<xref:System.DateTime.ToString%28System.String%29> メソッドの呼び出しを示します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-116">The following example illustrates the call to the <xref:System.DateTime.ToString%28System.String%29> method.</span></span>  
   
          [!code-csharp[Formatting.Howto.WeekdayName#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/abbrname1.cs#1)]
          [!code-vb[Formatting.Howto.WeekdayName#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/abbrname1.vb#1)]  
   
-    2.  特定のカルチャの曜日の省略名を抽出するには、日付と時刻の値の <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=fullName> インスタンス メソッドまたは <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=fullName> インスタンス メソッドを呼び出します。`format` パラメーターとして文字列 "ddd" を渡します。 曜日名を取得するカルチャを表す <xref:System.Globalization.CultureInfo> または <xref:System.Globalization.DateTimeFormatInfo> オブジェクトのいずれかを`provider` パラメーターとして渡します。 次のコードは、fr\-FR カルチャを表す <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> オブジェクトを使用した <xref:System.Globalization.CultureInfo> メソッドの呼び出しを示します。  
+    2.  <span data-ttu-id="6fd8e-117">特定のカルチャの曜日の省略名を抽出するには、日付と時刻の値の <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> インスタンス メソッドまたは <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> インスタンス メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-117">To extract the abbreviated weekday name for a specific culture, call the date and time value’s <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> or <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> instance method.</span></span> <span data-ttu-id="6fd8e-118">`format` パラメーターとして文字列 "ddd" を渡します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-118">Pass the string "ddd" as the `format` parameter.</span></span> <span data-ttu-id="6fd8e-119">曜日名を取得するカルチャを表す <xref:System.Globalization.CultureInfo> または <xref:System.Globalization.DateTimeFormatInfo> オブジェクトのいずれかを`provider` パラメーターとして渡します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-119">Pass either a <xref:System.Globalization.CultureInfo> or a <xref:System.Globalization.DateTimeFormatInfo> object that represents the culture whose weekday name you want to retrieve as the `provider` parameter.</span></span> <span data-ttu-id="6fd8e-120">次のコードは、fr-FR カルチャを表す <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> オブジェクトを使用した <xref:System.Globalization.CultureInfo> メソッドの呼び出しを示します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-120">The following code illustrates a call to the <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> method using a <xref:System.Globalization.CultureInfo> object that represents the fr-FR culture.</span></span>  
   
          [!code-csharp[Formatting.Howto.WeekdayName#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/abbrname2.cs#2)]
          [!code-vb[Formatting.Howto.WeekdayName#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/abbrname2.vb#2)]  
   
-### 特定の日付から曜日の正式な名前を抽出するには  
+### <a name="to-extract-the-full-weekday-name-from-a-specific-date"></a><span data-ttu-id="6fd8e-121">特定の日付から曜日の正式な名前を抽出するには</span><span class="sxs-lookup"><span data-stu-id="6fd8e-121">To extract the full weekday name from a specific date</span></span>  
   
-1.  文字列形式の日付を処理している場合には、静的 <xref:System.DateTime> または <xref:System.DateTimeOffset> メソッドを使用して、その日付を<xref:System.DateTime.Parse%2A?displayProperty=fullName> 値または <xref:System.DateTimeOffset.Parse%2A?displayProperty=fullName> 値に変換します。  
+1.  <span data-ttu-id="6fd8e-122">文字列形式の日付を処理している場合には、静的 <xref:System.DateTime> または <xref:System.DateTimeOffset> メソッドを使用して、その日付を<xref:System.DateTime.Parse%2A?displayProperty=nameWithType> 値または <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType> 値に変換します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-122">If you are working with the string representation of a date, convert it to a <xref:System.DateTime> or a <xref:System.DateTimeOffset> value by using the static <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> or <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType> method.</span></span>  
   
-2.  現在のカルチャまたは特定のカルチャでの曜日の正式な名前を抽出できます。  
+2.  <span data-ttu-id="6fd8e-123">現在のカルチャまたは特定のカルチャでの曜日の正式な名前を抽出できます。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-123">You can extract the full weekday name of the current culture or of a specific culture:</span></span>  
   
-    1.  現在のカルチャの曜日名を抽出するには、日付と時刻の値の <xref:System.DateTime.ToString%28System.String%29?displayProperty=fullName> インスタンス メソッドまたは <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=fullName> インスタンス メソッドを呼び出し、`format` パラメーターとして文字列 "dddd" を渡します。 次の例に、<xref:System.DateTime.ToString%28System.String%29> メソッドの呼び出しを示します。  
+    1.  <span data-ttu-id="6fd8e-124">現在のカルチャの曜日名を抽出するには、日付と時刻の値の <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> インスタンス メソッドまたは <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> インスタンス メソッドを呼び出し、`format` パラメーターとして文字列 "dddd" を渡します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-124">To extract the weekday name for the current culture, call the date and time value’s <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> or <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> instance method, and pass the string "dddd" as the `format` parameter.</span></span> <span data-ttu-id="6fd8e-125">次の例に、<xref:System.DateTime.ToString%28System.String%29> メソッドの呼び出しを示します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-125">The following example illustrates the call to the <xref:System.DateTime.ToString%28System.String%29> method.</span></span>  
   
          [!code-csharp[Formatting.Howto.WeekdayName#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/fullname4.cs#4)]
          [!code-vb[Formatting.Howto.WeekdayName#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/fullname4.vb#4)]  
   
-    2.  特定のカルチャの曜日名を抽出するには、日付と時刻の値の <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=fullName> インスタンス メソッドまたは <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=fullName> インスタンス メソッドを呼び出します。`format` パラメーターとして文字列 "dddd" を渡します。 曜日名を取得するカルチャを表す <xref:System.Globalization.CultureInfo> または <xref:System.Globalization.DateTimeFormatInfo> オブジェクトのいずれかを`provider` パラメーターとして渡します。 次のコードは、es\-ES カルチャを表す <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> オブジェクトを使用した <xref:System.Globalization.CultureInfo> メソッドの呼び出しを示します。  
+    2.  <span data-ttu-id="6fd8e-126">特定のカルチャの曜日名を抽出するには、日付と時刻の値の <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> インスタンス メソッドまたは <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> インスタンス メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-126">To extract the weekday name for a specific culture, call the date and time value’s <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> or <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> instance method.</span></span> <span data-ttu-id="6fd8e-127">`format` パラメーターとして文字列 "dddd" を渡します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-127">Pass the string "dddd" as the `format` parameter.</span></span> <span data-ttu-id="6fd8e-128">曜日名を取得するカルチャを表す <xref:System.Globalization.CultureInfo> または <xref:System.Globalization.DateTimeFormatInfo> オブジェクトのいずれかを`provider` パラメーターとして渡します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-128">Pass either a <xref:System.Globalization.CultureInfo> or a <xref:System.Globalization.DateTimeFormatInfo> object that represents the culture whose weekday name you want to retrieve as the `provider` parameter.</span></span> <span data-ttu-id="6fd8e-129">次のコードは、es-ES カルチャを表す <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> オブジェクトを使用した <xref:System.Globalization.CultureInfo> メソッドの呼び出しを示します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-129">The following code illustrates a call to the <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> method using a <xref:System.Globalization.CultureInfo> object that represents the es-ES culture.</span></span>  
   
          [!code-csharp[Formatting.Howto.WeekdayName#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/fullname5.cs#5)]
          [!code-vb[Formatting.Howto.WeekdayName#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/fullname5.vb#5)]  
   
-## 使用例  
- この例は、<xref:System.DateTime.DayOfWeek%2A?displayProperty=fullName> プロパティと<xref:System.DateTimeOffset.DayOfWeek%2A?displayProperty=fullName> プロパティ、および<xref:System.DateTime.ToString%2A?displayProperty=fullName> メソッドと <xref:System.DateTimeOffset.ToString%2A?displayProperty=fullName> メソッドを呼び出し、特定の日付の曜日を表す番号、曜日の省略名、および正式な名前を取得します。  
+## <a name="example"></a><span data-ttu-id="6fd8e-130">例</span><span class="sxs-lookup"><span data-stu-id="6fd8e-130">Example</span></span>  
+ <span data-ttu-id="6fd8e-131">この例は、<xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> プロパティと<xref:System.DateTimeOffset.DayOfWeek%2A?displayProperty=nameWithType> プロパティ、および<xref:System.DateTime.ToString%2A?displayProperty=nameWithType> メソッドと <xref:System.DateTimeOffset.ToString%2A?displayProperty=nameWithType> メソッドを呼び出し、特定の日付の曜日を表す番号、曜日の省略名、および正式な名前を取得します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-131">The example illustrates calls to the <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> and <xref:System.DateTimeOffset.DayOfWeek%2A?displayProperty=nameWithType> properties and the <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> and <xref:System.DateTimeOffset.ToString%2A?displayProperty=nameWithType> methods to retrieve the number that represents the day of the week, the abbreviated weekday name, and the full weekday name for a particular date.</span></span>  
   
  [!code-csharp[Formatting.Howto.WeekdayName#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/example6.cs#6)]
  [!code-vb[Formatting.Howto.WeekdayName#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/example6.vb#6)]  
   
- それぞれの言語には、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] の機能と重複する機能または補足する機能が存在していることがあります。 たとえば Visual Basic には次の 2 つの関数があります。  
+ <span data-ttu-id="6fd8e-132">それぞれの言語には、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] の機能と重複する機能または補足する機能が存在していることがあります。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-132">Individual languages may provide functionality that duplicates or supplements the functionality provided by the [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].</span></span> <span data-ttu-id="6fd8e-133">たとえば Visual Basic には次の 2 つの関数があります。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-133">For example, Visual Basic includes two such functions:</span></span>  
   
--   `Weekday`: 特定の日付の曜日を示す番号を返します。 この関数では週の初日の序数値が 1 ですが、<xref:System.DateTime.DayOfWeek%2A?displayProperty=fullName> プロパティでは週の初日の序数値はゼロです。  
+-   <span data-ttu-id="6fd8e-134">`Weekday`: 特定の日付の曜日を示す番号を返します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-134">`Weekday`, which returns a number that indicates the day of the week of a particular date.</span></span> <span data-ttu-id="6fd8e-135">この関数では週の初日の序数値が 1 ですが、<xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> プロパティでは週の初日の序数値はゼロです。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-135">It considers the ordinal value of the first day of the week to be one, whereas the <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> property considers it to be zero.</span></span>  
   
--   `WeekdayName`: 現在のカルチャで、特定の曜日番号に対応する曜日名を返します。  
+-   <span data-ttu-id="6fd8e-136">`WeekdayName`: 現在のカルチャで、特定の曜日番号に対応する曜日名を返します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-136">`WeekdayName`, which returns the name of the week in the current culture that corresponds to a particular weekday number.</span></span>  
   
- 次の例は、Visual Basic の `Weekday` 関数と `WeekdayName` 関数の使い方を示します。  
+ <span data-ttu-id="6fd8e-137">次の例は、Visual Basic の `Weekday` 関数と `WeekdayName` 関数の使い方を示します。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-137">The following example illustrates the use of the Visual Basic `Weekday` and `WeekdayName` functions.</span></span>  
   
  [!code-vb[Formatting.HowTo.WeekdayName#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/example9.vb#9)]  
   
- また、特定の日付の曜日名を取得するには <xref:System.DateTime.DayOfWeek%2A?displayProperty=fullName> プロパティから返される値も使用できます。 このためには、プロパティから返された <xref:System.Enum.ToString%2A> 値に対して <xref:System.DayOfWeek> メソッドを呼び出す操作だけが必要です。 ただしこの手法では、次の例に示すように、現在のカルチャでのローカライズされた曜日名は作成されません。  
+ <span data-ttu-id="6fd8e-138">また、特定の日付の曜日名を取得するには <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> プロパティから返される値も使用できます。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-138">You can also use the value returned by the <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> property to retrieve the weekday name of a particular date.</span></span> <span data-ttu-id="6fd8e-139">このためには、プロパティから返された <xref:System.Enum.ToString%2A> 値に対して <xref:System.DayOfWeek> メソッドを呼び出す操作だけが必要です。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-139">This requires only a call to the <xref:System.Enum.ToString%2A> method on the <xref:System.DayOfWeek> value returned by the property.</span></span> <span data-ttu-id="6fd8e-140">ただしこの手法では、次の例に示すように、現在のカルチャでのローカライズされた曜日名は作成されません。</span><span class="sxs-lookup"><span data-stu-id="6fd8e-140">However, this technique does not produce a localized weekday name for the current culture, as the following example illustrates.</span></span>  
   
  [!code-csharp[Formatting.HowTo.WeekdayName#8](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/Howto1.cs#8)]
  [!code-vb[Formatting.HowTo.WeekdayName#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/Howto1.vb#8)]  
   
-## 参照  
- [書式設定操作の実行](../../../docs/standard/base-types/performing-formatting-operations.md)   
- [標準の日時書式指定文字列](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)   
- [カスタム日時書式指定文字列](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+## <a name="see-also"></a><span data-ttu-id="6fd8e-141">関連項目</span><span class="sxs-lookup"><span data-stu-id="6fd8e-141">See Also</span></span>  
+ [<span data-ttu-id="6fd8e-142">書式設定操作の実行</span><span class="sxs-lookup"><span data-stu-id="6fd8e-142">Performing Formatting Operations</span></span>](../../../docs/standard/base-types/performing-formatting-operations.md)  
+ [<span data-ttu-id="6fd8e-143">Standard Date and Time Format Strings</span><span class="sxs-lookup"><span data-stu-id="6fd8e-143">Standard Date and Time Format Strings</span></span>](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)  
+ [<span data-ttu-id="6fd8e-144">Custom Date and Time Format Strings</span><span class="sxs-lookup"><span data-stu-id="6fd8e-144">Custom Date and Time Format Strings</span></span>](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)

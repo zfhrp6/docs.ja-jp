@@ -1,98 +1,79 @@
 ---
 title: "C# チュートリアル"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - walkthroughs [C#]
 - walkthroughs [Visual Studio], Visual C#
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
-caps.latest.revision: 28
+caps.latest.revision: "28"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: cba6852f129e0c62a7ece97f18b6f67c423c608c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0e49290852ccdc83ab7879366102602f0ca3f99b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="c-walkthroughs"></a>C# チュートリアル
-チュートリアルでは、製品や特定の機能領域について学習を開始するのに適した一般的なシナリオについて詳細な手順を示します。  
+# <a name="c-walkthroughs"></a><span data-ttu-id="43c9a-102">C# チュートリアル</span><span class="sxs-lookup"><span data-stu-id="43c9a-102">C# Walkthroughs</span></span>
+<span data-ttu-id="43c9a-103">チュートリアルでは、製品や特定の機能領域について学習を開始するのに適した一般的なシナリオについて詳細な手順を示します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-103">Walkthroughs give step-by-step instructions for common scenarios, which makes them a good place to start learning about the product or a particular feature area.</span></span>  
   
- このセクションには、C# プログラミングのチュートリアルへのリンクが含まれています。  
+ <span data-ttu-id="43c9a-104">このセクションには、C# プログラミングのチュートリアルへのリンクが含まれています。</span><span class="sxs-lookup"><span data-stu-id="43c9a-104">This section contains links to C# programming walkthroughs.</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
+## <a name="in-this-section"></a><span data-ttu-id="43c9a-105">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="43c9a-105">In This Section</span></span>  
 
- [Async と Await を使用した Web へのアクセス](./programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
- [async](../csharp/language-reference/keywords/async.md) と [await](../csharp/language-reference/keywords/await.md) を使用して非同期ソリューションを作成する方法を示します。  
+ [<span data-ttu-id="43c9a-106">Async と Await を使用した Web へのアクセス</span><span class="sxs-lookup"><span data-stu-id="43c9a-106">Accessing the Web by Using Async and Await</span></span>](./programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
+ <span data-ttu-id="43c9a-107">[async](../csharp/language-reference/keywords/async.md) と [await](../csharp/language-reference/keywords/await.md) を使用して非同期ソリューションを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-107">Shows how to create an asynchronous solution by using [async](../csharp/language-reference/keywords/async.md) and [await](../csharp/language-reference/keywords/await.md).</span></span>  
   
- [Creating a Windows Runtime Component in C# or Visual Basic and Calling it from JavaScript](https://msdn.microsoft.com/library/windows/apps/hh779077.aspx) (C# および Visual Basic での Windows ランタイム コンポーネントの作成および JavaScript による呼び出し)  
- [!INCLUDE[wrt](~/includes/wrt-md.md)] 型を作成し、[!INCLUDE[wrt](~/includes/wrt-md.md)] コンポーネントにパッケージ化して、その後、JavaScript を使用して Windows 用に作成された [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリからコンポーネントを呼び出す方法を示します。  
+ <span data-ttu-id="43c9a-108">[Creating a Windows Runtime Component in C# or Visual Basic and Calling it from JavaScript](https://msdn.microsoft.com/library/windows/apps/hh779077.aspx) (C# および Visual Basic での Windows ランタイム コンポーネントの作成および JavaScript による呼び出し)</span><span class="sxs-lookup"><span data-stu-id="43c9a-108">[Creating a Windows Runtime Component in C# or Visual Basic and Calling it from JavaScript](https://msdn.microsoft.com/library/windows/apps/hh779077.aspx)</span></span>  
+ <span data-ttu-id="43c9a-109">[!INCLUDE[wrt](~/includes/wrt-md.md)] 型を作成し、[!INCLUDE[wrt](~/includes/wrt-md.md)] コンポーネントにパッケージ化して、その後、JavaScript を使用して Windows 用に作成された [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリからコンポーネントを呼び出す方法を示します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-109">Shows how to create a [!INCLUDE[wrt](~/includes/wrt-md.md)] type, package it in a [!INCLUDE[wrt](~/includes/wrt-md.md)] component, and then call the component from a [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] app that's built for Windows by using JavaScript.</span></span>  
   
- [Office のプログラミング (C# および Visual Basic)](../csharp/programming-guide/interop/walkthrough-office-programming.md)  
- C# および Visual Basic を使用して、Excel ブックや Word 文書を作成する方法を示します。  
+ [<span data-ttu-id="43c9a-110">Office のプログラミング (C# および Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="43c9a-110">Office Programming (C# and Visual Basic)</span></span>](../csharp/programming-guide/interop/walkthrough-office-programming.md)  
+ <span data-ttu-id="43c9a-111">C# および Visual Basic を使用して、Excel ブックや Word 文書を作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-111">Shows how to create an Excel workbook and a Word document by using C# and Visual Basic.</span></span>  
   
- [動的オブジェクトの作成と使用 (C# および Visual Basic)](../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)  
- テキスト ファイルの内容を動的に公開するカスタム オブジェクトを作成する方法、および `IronPython` ライブラリを使用するプロジェクトを作成する方法を示します。  
+ [<span data-ttu-id="43c9a-112">動的オブジェクトの作成と使用 (C# および Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="43c9a-112">Creating and Using Dynamic Objects (C# and Visual Basic)</span></span>](../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)  
+ <span data-ttu-id="43c9a-113">テキスト ファイルの内容を動的に公開するカスタム オブジェクトを作成する方法、および `IronPython` ライブラリを使用するプロジェクトを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-113">Shows how to create a custom object that dynamically exposes the contents of a text file, and how to create a project that uses the `IronPython` library.</span></span>  
    
- [Visual C# による複合コントロールの作成](https://msdn.microsoft.com/library/a6h7e207.aspx)  
- 簡単な複合コントロールを作成し、継承によってその機能を拡張する例を示します。  
+ [<span data-ttu-id="43c9a-114">Visual C# による複合コントロールの作成</span><span class="sxs-lookup"><span data-stu-id="43c9a-114">Authoring a Composite Control with Visual C#</span></span>](https://msdn.microsoft.com/library/a6h7e207.aspx)  
+ <span data-ttu-id="43c9a-115">簡単な複合コントロールを作成し、継承によってその機能を拡張する例を示します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-115">Demonstrates creating a simple composite control and extending its functionality through inheritance.</span></span>  
   
- [Visual Studio のデザイン時機能を活用した Windows フォーム コントロールの作成](https://msdn.microsoft.com/library/35ea88wb.aspx)  
- カスタム コントロールのカスタム デザイナーを作成する方法を示します。  
+ [<span data-ttu-id="43c9a-116">Visual Studio のデザイン時機能を活用した Windows フォーム コントロールの作成</span><span class="sxs-lookup"><span data-stu-id="43c9a-116">Creating a Windows Forms Control that Takes Advantage of Visual Studio Design-Time Features</span></span>](https://msdn.microsoft.com/library/35ea88wb.aspx)  
+ <span data-ttu-id="43c9a-117">カスタム コントロールのカスタム デザイナーを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-117">Illustrates how to create a custom designer for a custom control.</span></span>  
   
- [Visual C# による Windows フォーム コントロールからの継承](https://msdn.microsoft.com/library/5h0k2e6x.aspx)  
- 単純な継承されたボタン コントロールを作成する例を示します。 このボタンは、標準 Windows フォーム ボタンから機能を継承し、カスタム メンバーを公開します。  
+ [<span data-ttu-id="43c9a-118">Visual C# による Windows フォーム コントロールからの継承</span><span class="sxs-lookup"><span data-stu-id="43c9a-118">Inheriting from a Windows Forms Control with Visual C#</span></span>](https://msdn.microsoft.com/library/5h0k2e6x.aspx)  
+ <span data-ttu-id="43c9a-119">単純な継承されたボタン コントロールを作成する例を示します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-119">Demonstrates creating a simple inherited button control.</span></span> <span data-ttu-id="43c9a-120">このボタンは、標準 Windows フォーム ボタンから機能を継承し、カスタム メンバーを公開します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-120">This button inherits functionality from the standard Windows Forms button and exposes a custom member.</span></span>  
   
- [カスタム Windows フォーム コントロールのデザイン時のデバッグ](https://msdn.microsoft.com/library/5ytx0z24.aspx)  
- カスタム コントロールのデザイン時動作をデバッグする方法について説明します。
+ [<span data-ttu-id="43c9a-121">カスタム Windows フォーム コントロールのデザイン時のデバッグ</span><span class="sxs-lookup"><span data-stu-id="43c9a-121">Debugging Custom Windows Forms Controls at Design Time</span></span>](https://msdn.microsoft.com/library/5ytx0z24.aspx)  
+ <span data-ttu-id="43c9a-122">カスタム コントロールのデザイン時動作をデバッグする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-122">Describes how to debug the design-time behavior of your custom control.</span></span>
 
- [Windows フォーム コントロールのスマート タグを使用した共通タスクの実行](https://msdn.microsoft.com/library/xhz359sc.aspx)  
- `TabControl` でのタブの追加や削除、コントロールの親コントロールへのドッキング、`SplitContainer` コントロールの方向の変更など、よく実行されるタスクの例を示します。  
+ [<span data-ttu-id="43c9a-123">Windows フォーム コントロールのスマート タグを使用した共通タスクの実行</span><span class="sxs-lookup"><span data-stu-id="43c9a-123">Performing Common Tasks Using Smart Tags on Windows Forms Controls</span></span>](https://msdn.microsoft.com/library/xhz359sc.aspx)  
+ <span data-ttu-id="43c9a-124">`TabControl` でのタブの追加や削除、コントロールの親コントロールへのドッキング、`SplitContainer` コントロールの方向の変更など、よく実行されるタスクの例を示します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-124">Demonstrates some of the commonly performed tasks such as adding or removing a tab on a `TabControl`, docking a control to its parent, and changing the orientation of a `SplitContainer` control.</span></span>  
   
- [C# でのクエリの作成 (LINQ)](../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
- [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ式の記述に使用される C# 言語機能を示します。  
+ [<span data-ttu-id="43c9a-125">C# でのクエリの作成 (LINQ)</span><span class="sxs-lookup"><span data-stu-id="43c9a-125">Writing Queries in C# (LINQ)</span></span>](../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
+ <span data-ttu-id="43c9a-126">[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ式の記述に使用される C# 言語機能を示します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-126">Demonstrates the C# language features that are used to write [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query expressions.</span></span>  
   
- [データの操作 (C#) (LINQ to SQL)](https://msdn.microsoft.com/library/bb386927.aspx)  
- データベース内のデータの追加、変更、および削除の [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] のシナリオについて説明します。  
+ [<span data-ttu-id="43c9a-127">データの操作 (C#) (LINQ to SQL)</span><span class="sxs-lookup"><span data-stu-id="43c9a-127">Manipulating Data (C#) (LINQ to SQL)</span></span>](https://msdn.microsoft.com/library/bb386927.aspx)  
+ <span data-ttu-id="43c9a-128">データベース内のデータの追加、変更、および削除の [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] のシナリオについて説明します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-128">Describes a [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] scenario for adding, modifying, and deleting data in a database.</span></span>  
   
- [簡単なオブジェクト モデルとクエリ (C#) (LINQ to SQL)](https://msdn.microsoft.com/library/bb386940.aspx)  
- エンティティ クラスとエンティティ クラスをフィルター処理する簡単なクエリを作成する方法について説明します。  
+ [<span data-ttu-id="43c9a-129">簡単なオブジェクト モデルとクエリ (C#) (LINQ to SQL)</span><span class="sxs-lookup"><span data-stu-id="43c9a-129">Simple Object Model and Query (C#) (LINQ to SQL)</span></span>](https://msdn.microsoft.com/library/bb386940.aspx)  
+ <span data-ttu-id="43c9a-130">エンティティ クラスとエンティティ クラスをフィルター処理する簡単なクエリを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-130">Demonstrates how to create an entity class and a simple query to filter the entity class.</span></span>  
   
- [ストアド プロシージャのみを使用する (C#) (LINQ to SQL)](https://msdn.microsoft.com/library/bb399407.aspx)  
- ストアド プロシージャのみを実行してデータにアクセスする LINQ to SQL を使用する方法を示します。  
+ [<span data-ttu-id="43c9a-131">ストアド プロシージャのみを使用する (C#) (LINQ to SQL)</span><span class="sxs-lookup"><span data-stu-id="43c9a-131">Using Only Stored Procedures (C#) (LINQ to SQL)</span></span>](https://msdn.microsoft.com/library/bb399407.aspx)  
+ <span data-ttu-id="43c9a-132">ストアド プロシージャのみを実行してデータにアクセスする LINQ to SQL を使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-132">Demonstrates how to use LINQ to SQL to access data by executing only stored procedures.</span></span>  
   
- [リレーションシップ間でのクエリの実行 (C#) (LINQ to SQL)](https://msdn.microsoft.com/library/bb386951.aspx)  
- データベース内の外部キーのリレーションシップを表す [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] の関連付けの使用の例を示します。  
+ [<span data-ttu-id="43c9a-133">リレーションシップ間でのクエリの実行 (C#) (LINQ to SQL)</span><span class="sxs-lookup"><span data-stu-id="43c9a-133">Querying Across Relationships (C#) (LINQ to SQL)</span></span>](https://msdn.microsoft.com/library/bb386951.aspx)  
+ <span data-ttu-id="43c9a-134">データベース内の外部キーのリレーションシップを表す [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] の関連付けの使用の例を示します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-134">Demonstrates the use of [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] associations to represent foreign-key relationships in a database.</span></span>  
 
- [C# でビジュアライザーを記述する](/visualstudio/debugger/walkthrough-writing-a-visualizer-in-csharp)  
- C# を使用して簡単なビジュアライザーを作成する方法を説明します。  
+ [<span data-ttu-id="43c9a-135">C# でビジュアライザーを記述する</span><span class="sxs-lookup"><span data-stu-id="43c9a-135">Writing a Visualizer in C#</span></span>](/visualstudio/debugger/walkthrough-writing-a-visualizer-in-csharp)  
+ <span data-ttu-id="43c9a-136">C# を使用して簡単なビジュアライザーを作成する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-136">Shows how to write a simple visualizer by using C#.</span></span>  
   
-## <a name="related-sections"></a>関連項目  
- [配置のサンプルとチュートリアル](/visualstudio/deployment/clickonce-deployment-samples-and-walkthroughs)  
- 一般的な配置シナリオの詳細な例を示します。  
+## <a name="related-sections"></a><span data-ttu-id="43c9a-137">関連項目</span><span class="sxs-lookup"><span data-stu-id="43c9a-137">Related Sections</span></span>  
+ [<span data-ttu-id="43c9a-138">配置のサンプルとチュートリアル</span><span class="sxs-lookup"><span data-stu-id="43c9a-138">Deployment Samples and Walkthroughs</span></span>](/visualstudio/deployment/clickonce-deployment-samples-and-walkthroughs)  
+ <span data-ttu-id="43c9a-139">一般的な配置シナリオの詳細な例を示します。</span><span class="sxs-lookup"><span data-stu-id="43c9a-139">Provides step-by-step examples of common deployment scenarios.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../csharp/programming-guide/index.md)   
- [Visual Studio のサンプル](/visualstudio/ide/visual-studio-samples)
-
+## <a name="see-also"></a><span data-ttu-id="43c9a-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="43c9a-140">See Also</span></span>  
+ [<span data-ttu-id="43c9a-141">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="43c9a-141">C# Programming Guide</span></span>](../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="43c9a-142">Visual Studio のサンプル</span><span class="sxs-lookup"><span data-stu-id="43c9a-142">Visual Studio Samples</span></span>](/visualstudio/ide/visual-studio-samples)

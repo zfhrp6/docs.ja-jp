@@ -1,152 +1,130 @@
 ---
-title: "不透明マスクの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ブラシ, 不透明マスク"
-  - "マスク, 不透明"
-  - "不透明, マスク"
+title: "不透明度マスクの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- brushes [WPF], opacity masks
+- masks [WPF], opacity
+- opacity [WPF], masks
 ms.assetid: 22367fab-5f59-4583-abfd-db2bf86eaef7
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6cd077d1e24fa50dc42a2169b45fe38930cc76c6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 不透明マスクの概要
-不透明マスクを使用すると、要素またはビジュアルの一部分を透明または部分的に透明にすることができます。  不透明マスクを作成するには、要素または <xref:System.Windows.Media.Visual> の <xref:System.Windows.UIElement.OpacityMask%2A> プロパティに <xref:System.Windows.Media.Brush> を適用します。  ブラシは要素またはビジュアルにマップされ、各ブラシのピクセルの不透明度の値を使用して、要素またはビジュアルの対応する各ピクセルの不透明度が決定されます。  
-  
- このトピックは、次のセクションで構成されています。  
-  
-<a name="autoTopLevelSectionsOUTLINE0"></a>   
--   [必要条件](#prereqs)  
-  
--   [不透明マスクを用いた視覚効果の作成](#opacitymasks)  
-  
--   [不透明マスクの作成](#creatingopacitymasks)  
-  
--   [不透明マスクとしてのグラデーションの使用](#creatingopacitymaskswithgradients)  
-  
--   [不透明マスクでのグラデーションの終了位置の指定](#specifyinggradientcolors)  
-  
--   [不透明マスクとしてのイメージの使用](#usingimageasopacitymask)  
-  
--   [描画から不透明マスクを作成](#drawingbrushasopacitymask)  
-  
--   [関連トピック](#seeAlsoToggle)  
+# <a name="opacity-masks-overview"></a><span data-ttu-id="44fc6-102">不透明度マスクの概要</span><span class="sxs-lookup"><span data-stu-id="44fc6-102">Opacity Masks Overview</span></span>
+<span data-ttu-id="44fc6-103">不透明度マスクを使用すると、要素またはビジュアルの一部を透明にするか、部分的に透明にすることができます。</span><span class="sxs-lookup"><span data-stu-id="44fc6-103">Opacity masks enable you to make portions of an element or visual either transparent or partially transparent.</span></span> <span data-ttu-id="44fc6-104">不透明度マスクを作成するに適用する、<xref:System.Windows.Media.Brush>を<xref:System.Windows.UIElement.OpacityMask%2A>要素のプロパティまたは<xref:System.Windows.Media.Visual>です。</span><span class="sxs-lookup"><span data-stu-id="44fc6-104">To create an opacity mask, you apply a <xref:System.Windows.Media.Brush> to the <xref:System.Windows.UIElement.OpacityMask%2A> property of an element or <xref:System.Windows.Media.Visual>.</span></span>  <span data-ttu-id="44fc6-105">ブラシが要素またはビジュアルにマップされ、ブラシの各ピクセルの不透明度値を使用して、要素またはビジュアルの対応する各ピクセルの不透明度が決まります。</span><span class="sxs-lookup"><span data-stu-id="44fc6-105">The brush is mapped to the element or visual, and the opacity value of each brush pixel is used to determine the resulting opacity of each corresponding pixel of the element or visual.</span></span>  
   
 <a name="prereqs"></a>   
-## 必要条件  
- この概要では、<xref:System.Windows.Media.Brush> オブジェクトに精通していることを前提にしています。  ブラシの使用の概要については、「[純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)」を参照してください。  <xref:System.Windows.Media.ImageBrush> と <xref:System.Windows.Media.DrawingBrush> の詳細については、「[イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)」を参照してください。  
+## <a name="prerequisites"></a><span data-ttu-id="44fc6-106">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="44fc6-106">Prerequisites</span></span>  
+ <span data-ttu-id="44fc6-107">この概要は、について熟知している前提としています。<xref:System.Windows.Media.Brush>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="44fc6-107">This overview assumes that you are familiar with <xref:System.Windows.Media.Brush> objects.</span></span> <span data-ttu-id="44fc6-108">ブラシの使用方法の概要については、「[純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="44fc6-108">For an introduction to using brushes, see [Painting with Solid Colors and Gradients Overview](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md).</span></span> <span data-ttu-id="44fc6-109">について<xref:System.Windows.Media.ImageBrush>と<xref:System.Windows.Media.DrawingBrush>を参照してください[イメージ、図形、およびビジュアルの描画](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)です。</span><span class="sxs-lookup"><span data-stu-id="44fc6-109">For information about <xref:System.Windows.Media.ImageBrush> and <xref:System.Windows.Media.DrawingBrush>, see [Painting with Images, Drawings, and Visuals](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).</span></span>  
   
 <a name="opacitymasks"></a>   
-## 不透明マスクを用いた視覚効果の作成  
- 不透明マスクは、そのコンテンツを要素またはビジュアルにマップすることによって機能します。  さらに、ブラシの各ピクセルの[アルファ チャネル](GTMT)を使用して、要素またはビジュアルの対応するピクセルの不透明度を決定します。ブラシの実際の色は無視されます。  ブラシの指定された部分が透明の場合、要素またはビジュアルの対応する部分は透明になります。  ブラシの指定された部分が不透明の場合、要素またはビジュアルの対応する部分の不透明度は変更されません。  不透明マスクによって指定される不透明度は、要素またはビジュアル内に含まれている不透明度の設定と結合されます。  たとえば、不透明度 25% の要素に、完全に不透明から完全に透明まで遷移する不透明マスクが適用された場合、要素は 25% の不透明度から完全な透明まで遷移します。  
+## <a name="creating-visual-effects-with-opacity-masks"></a><span data-ttu-id="44fc6-110">不透明度マスクを使用した視覚効果の作成</span><span class="sxs-lookup"><span data-stu-id="44fc6-110">Creating Visual Effects with Opacity Masks</span></span>  
+ <span data-ttu-id="44fc6-111">不透明度マスクは、要素またはビジュアルにその内容をマッピングすることによって機能します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-111">An opacity mask works by mapping its contents to the element or visual.</span></span> <span data-ttu-id="44fc6-112">各ブラシのピクセルのアルファ チャネルを使用して、要素またはビジュアルの対応するピクセルの最終的な不透明度が決定され、ブラシの実際の色は無視されます。</span><span class="sxs-lookup"><span data-stu-id="44fc6-112">The alpha channel of each of the brush's pixels are then used to determine the resulting opacity of the element or visual's corresponding pixels; the actual color of the brush is ignored.</span></span> <span data-ttu-id="44fc6-113">ブラシの特定の部分が透明な場合、要素またはビジュアルの対応する部分は透明になります。</span><span class="sxs-lookup"><span data-stu-id="44fc6-113">If a given portion of the brush is transparent, the corresponding portion of the element or visual becomes transparent.</span></span> <span data-ttu-id="44fc6-114">ブラシの特定の部分が不透明な場合、要素またはビジュアルの対応する部分は変化しません。</span><span class="sxs-lookup"><span data-stu-id="44fc6-114">If a given portion of the brush is opaque, the opacity of the corresponding portion of the element or visual is unchanged.</span></span> <span data-ttu-id="44fc6-115">不透明度マスクによって指定された不透明度は、要素またはビジュアルに指定されている不透明度の設定と組み合わされます。</span><span class="sxs-lookup"><span data-stu-id="44fc6-115">The opacity specified by the opacity mask is combined with any opacity settings present in the element or visual.</span></span> <span data-ttu-id="44fc6-116">たとえば、要素の不透明度が 25% であるときに、完全に不透明な状態から完全に透明な状態に遷移する不透明度マスクが適用された場合、要素は、25% の不透明度から完全に透明な状態に遷移します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-116">For example, if an element is 25 percent opaque and an opacity mask is applied that transitions from fully opaque to fully transparent, the result is an element that transitions from 25 percent opacity to fully transparent.</span></span>  
   
 > [!NOTE]
->  この概要では、イメージ要素で不透明マスクを使用する例を示していますが、不透明マスクはパネルやコントロールなどの任意の要素または <xref:System.Windows.Media.Visual> に適用できます。  
+>  <span data-ttu-id="44fc6-117">不透明度マスクは任意の要素に適用できますが、この概要の例では、イメージ要素上の不透明度マスクの使用法を示します、または<xref:System.Windows.Media.Visual>(パネル、コントロールなど)。</span><span class="sxs-lookup"><span data-stu-id="44fc6-117">Although the examples in this overview demonstrate the use of opacity masks on image elements, an opacity mask may be applied to any element or <xref:System.Windows.Media.Visual>, including panels and controls.</span></span>  
   
- 不透明マスクを使用すると、ビューから消えるイメージまたはボタンを作成する、要素にテクスチャを追加する、あるいはグラデーションを組み合わせてガラスのような表面を生成するなど、人の目をひく視覚効果を作成できます。  不透明マスクの使用方法を次の図に示します。  格子模様の背景はマスクの透過部分を表しています。  
+ <span data-ttu-id="44fc6-118">不透明度マスクは、徐々に消えていくイメージやボタンの作成、要素へのテクスチャの追加、グラデーションと組み合わせたガラスのような表面の生成などの注意を引き付ける視覚効果を作成するために使用します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-118">Opacity masks are used to create interesting visual effects, such as to create images or buttons that fade from view, to add textures to elements, or to combine gradients to produce glass-like surfaces.</span></span> <span data-ttu-id="44fc6-119">次の図は、不透明度マスクの使用例を示しています。</span><span class="sxs-lookup"><span data-stu-id="44fc6-119">The following illustration demonstrates the use of an opacity mask.</span></span> <span data-ttu-id="44fc6-120">チェックの背景を使用して、マスクの透明な部分を表示しています。</span><span class="sxs-lookup"><span data-stu-id="44fc6-120">A checkered background is used to show the transparent portions of the mask.</span></span>  
   
- ![LinearGradientBrush 不透明マスクを持つオブジェクト](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-opacitymask-imageexample.png "wcpsdk\_graphicsmm\_opacitymask\_imageexample")  
-不透明マスクの例  
+ <span data-ttu-id="44fc6-121">![LinearGradientBrush 不透明マスクを持つオブジェクト](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-opacitymask-imageexample.png "wcpsdk_graphicsmm_opacitymask_imageexample")</span><span class="sxs-lookup"><span data-stu-id="44fc6-121">![Object with a LinearGradientBrush opacity mask](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-opacitymask-imageexample.png "wcpsdk_graphicsmm_opacitymask_imageexample")</span></span>  
+<span data-ttu-id="44fc6-122">不透明度マスクの例</span><span class="sxs-lookup"><span data-stu-id="44fc6-122">Opacity masking example</span></span>  
   
 <a name="creatingopacitymasks"></a>   
-## 不透明マスクの作成  
- 不透明マスクを作成するには、<xref:System.Windows.Media.Brush> を作成し、要素またはビジュアルの <xref:System.Windows.UIElement.OpacityMask%2A> プロパティに適用します。  任意の種類の <xref:System.Windows.Media.Brush> を不透明マスクとして使用できます。  
+## <a name="creating-an-opacity-mask"></a><span data-ttu-id="44fc6-123">不透明度マスクの作成</span><span class="sxs-lookup"><span data-stu-id="44fc6-123">Creating an Opacity Mask</span></span>  
+ <span data-ttu-id="44fc6-124">作成する不透明度マスクを作成するには<xref:System.Windows.Media.Brush>に適用、<xref:System.Windows.UIElement.OpacityMask%2A>要素またはビジュアルのプロパティです。</span><span class="sxs-lookup"><span data-stu-id="44fc6-124">To create an opacity mask, you create a <xref:System.Windows.Media.Brush> and apply it to the <xref:System.Windows.UIElement.OpacityMask%2A> property of an element or visual.</span></span> <span data-ttu-id="44fc6-125">任意の型を使用する<xref:System.Windows.Media.Brush>不透明マスクとして。</span><span class="sxs-lookup"><span data-stu-id="44fc6-125">You can use any type of <xref:System.Windows.Media.Brush> as an opacity mask.</span></span>  
   
--   <xref:System.Windows.Media.LinearGradientBrush>、<xref:System.Windows.Media.RadialGradientBrush> : 要素またはビジュアルをビューから消すために使用します。  
+-   <span data-ttu-id="44fc6-126"><xref:System.Windows.Media.LinearGradientBrush>、 <xref:System.Windows.Media.RadialGradientBrush>: 要素またはビューから visual フェードさせるために使用します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-126"><xref:System.Windows.Media.LinearGradientBrush>, <xref:System.Windows.Media.RadialGradientBrush>: Used to make an element or visual fade from view.</span></span>  
   
-     次の例は、不透明マスクとして使用された <xref:System.Windows.Media.LinearGradientBrush> を示しています。  
+     <span data-ttu-id="44fc6-127">次の図は、<xref:System.Windows.Media.LinearGradientBrush>不透明度マスクとして使用します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-127">The following image shows a <xref:System.Windows.Media.LinearGradientBrush> used as an opacity mask.</span></span>  
   
-     ![LinearGradientBrush 不透明マスクを持つオブジェクト](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-brushes-lineagradientopacitymasksingle.png "wcpsdk\_graphicsmm\_brushes\_lineagradientopacitymasksingle")  
-LinearGradientBrush 不透明マスクの例  
+     <span data-ttu-id="44fc6-128">![LinearGradientBrush 不透明マスクを持つオブジェクト](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-brushes-lineagradientopacitymasksingle.jpg "wcpsdk_graphicsmm_brushes_lineagradientopacitymasksingle")</span><span class="sxs-lookup"><span data-stu-id="44fc6-128">![An object with an LinearGradientBrush opacity mask](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-brushes-lineagradientopacitymasksingle.jpg "wcpsdk_graphicsmm_brushes_lineagradientopacitymasksingle")</span></span>  
+<span data-ttu-id="44fc6-129">LinearGradientBrush 不透明度マスクの例</span><span class="sxs-lookup"><span data-stu-id="44fc6-129">LinearGradientBrush Opacity Masking Example</span></span>  
   
--   <xref:System.Windows.Media.ImageBrush> : ぼかし、またはぎざぎざのエッジ効果を作成するために使用します。  
+-   <span data-ttu-id="44fc6-130"><xref:System.Windows.Media.ImageBrush>: テクスチャとソフトまたは破損のエッジの効果を作成するために使用します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-130"><xref:System.Windows.Media.ImageBrush>: Used to create texture and soft or torn edge effects.</span></span>  
   
-     次の例は、不透明マスクとして使用された <xref:System.Windows.Media.ImageBrush> を示しています。  
+     <span data-ttu-id="44fc6-131">次の図は、<xref:System.Windows.Media.ImageBrush>不透明度マスクとして使用します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-131">The following image shows an <xref:System.Windows.Media.ImageBrush> used as an opacity mask.</span></span>  
   
-     ![ImageBrush 不透明マスクを持つオブジェクト](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-brushes-imageasopacitymasksingle.png "wcpsdk\_graphicsmm\_brushes\_imageasopacitymasksingle")  
-LinearGradientBrush 不透明マスクの例  
+     <span data-ttu-id="44fc6-132">![ImageBrush 不透明マスクを持つオブジェクト](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-brushes-imageasopacitymasksingle.jpg "wcpsdk_graphicsmm_brushes_imageasopacitymasksingle")</span><span class="sxs-lookup"><span data-stu-id="44fc6-132">![Object that has an ImageBrush opacity mask](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-brushes-imageasopacitymasksingle.jpg "wcpsdk_graphicsmm_brushes_imageasopacitymasksingle")</span></span>  
+<span data-ttu-id="44fc6-133">LinearGradientBrush 不透明度マスクの例</span><span class="sxs-lookup"><span data-stu-id="44fc6-133">LinearGradientBrush opacity masking example</span></span>  
   
--   <xref:System.Windows.Media.DrawingBrush> : 図形、イメージ、およびグラデーションのパターンから複雑な不透明マスクを作成する場合に使用します。  
+-   <span data-ttu-id="44fc6-134"><xref:System.Windows.Media.DrawingBrush>: 図形、画像、およびグラデーションのパターンから複雑な不透明マスクを作成するために使用します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-134"><xref:System.Windows.Media.DrawingBrush>: Used to create complex opacity masks from patterns of shapes, images, and gradients.</span></span>  
   
-     次の例は、不透明マスクとして使用された <xref:System.Windows.Media.DrawingBrush> を示しています。  
+     <span data-ttu-id="44fc6-135">次の図は、<xref:System.Windows.Media.DrawingBrush>不透明度マスクとして使用します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-135">The following image shows a <xref:System.Windows.Media.DrawingBrush> used as an opacity mask.</span></span>  
   
-     ![DrawingBrush 不透明マスクを持つオブジェクト](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-drawingbrushasopacitymask-single.png "wcpsdk\_drawingbrushasopacitymask\_single")  
-DrawingBrush 不透明マスクの例  
+     <span data-ttu-id="44fc6-136">![DrawingBrush 不透明マスクを持つオブジェクト](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-drawingbrushasopacitymask-single.jpg "wcpsdk_drawingbrushasopacitymask_single")</span><span class="sxs-lookup"><span data-stu-id="44fc6-136">![Object with a DrawingBrush opacity mask](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-drawingbrushasopacitymask-single.jpg "wcpsdk_drawingbrushasopacitymask_single")</span></span>  
+<span data-ttu-id="44fc6-137">DrawingBrush 不透明度マスクの例</span><span class="sxs-lookup"><span data-stu-id="44fc6-137">DrawingBrush opacity masking example</span></span>  
   
- グラデーション ブラシ \(<xref:System.Windows.Media.LinearGradientBrush> および <xref:System.Windows.Media.RadialGradientBrush>\) は、不透明マスクとして使用するのに特に適しています。  <xref:System.Windows.Media.SolidColorBrush> は均一な色で領域を塗りつぶすため、不透明マスクには適していません。<xref:System.Windows.Media.SolidColorBrush> を使用することは、要素またはビジュアルの <xref:System.Windows.UIElement.OpacityMask%2A> プロパティを設定することと同じです。  
+ <span data-ttu-id="44fc6-138">グラデーション ブラシ (<xref:System.Windows.Media.LinearGradientBrush>と<xref:System.Windows.Media.RadialGradientBrush>)、不透明度マスクとして使用するため特に適しています。</span><span class="sxs-lookup"><span data-stu-id="44fc6-138">The gradient brushes (<xref:System.Windows.Media.LinearGradientBrush> and <xref:System.Windows.Media.RadialGradientBrush>) are particularly well-suited for use as an opacity mask.</span></span> <span data-ttu-id="44fc6-139"><xref:System.Windows.Media.SolidColorBrush>低下の不透明度を行える、均一な色で領域がいっぱいになったマスク; を使用して、<xref:System.Windows.Media.SolidColorBrush>要素またはビジュアルの設定と同じには、<xref:System.Windows.UIElement.OpacityMask%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="44fc6-139">Because a <xref:System.Windows.Media.SolidColorBrush> fills an area with a uniform color, they make poor opacity masks; using a <xref:System.Windows.Media.SolidColorBrush> is equivalent to setting the element's or visual's <xref:System.Windows.UIElement.OpacityMask%2A> property.</span></span>  
   
 <a name="creatingopacitymaskswithgradients"></a>   
-## 不透明マスクとしてのグラデーションの使用  
- グラデーションの塗りつぶしを作成するには、グラデーションの複数の終了位置を指定します。  グラデーションの各終了位置には、色および位置の記述が含まれます \(グラデーションの作成および使用の詳細については、「[純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)」を参照してください\)。  このプロセスは、グラデーションを不透明マスクとして使用する場合も同様ですが、不透明マスクのグラデーションの場合は色をブレンドするのではなく、アルファ チャネル値をブレンドします。  したがって、グラデーションのコンテンツの実際の色は無視されます。それぞれの色のアルファ チャネルまたは不透明度だけが意味を持ちます。  例を次に示します。  
+## <a name="using-a-gradient-as-an-opacity-mask"></a><span data-ttu-id="44fc6-140">不透明度マスクとしてのグラデーションの使用</span><span class="sxs-lookup"><span data-stu-id="44fc6-140">Using a Gradient as an Opacity Mask</span></span>  
+ <span data-ttu-id="44fc6-141">グラデーション塗りつぶしを作成するには、2 つ以上のグラデーションの分岐点を指定します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-141">To create a gradient fill, you specify two or more gradient stops.</span></span> <span data-ttu-id="44fc6-142">各グラデーションの分岐点には、カラーと位置を記述します (グラデーションの作成と使用の詳細については、「[純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)」を参照してください)。</span><span class="sxs-lookup"><span data-stu-id="44fc6-142">Each gradient stop contains describes a color and a position (see [Painting with Solid Colors and Gradients Overview](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md) for more information about creating and using gradients).</span></span> <span data-ttu-id="44fc6-143">プロセスは、グラデーションを不透明度マスクとして使用するときと同じですが、不透明度マスクのグラデーションでは、カラーをブレンドするのではなく、アルファ チャネル値をブレンドします。</span><span class="sxs-lookup"><span data-stu-id="44fc6-143">The process is the same when using a gradient as an opacity mask, except that, instead of blending colors, the opacity mask gradient blends alpha channel values.</span></span> <span data-ttu-id="44fc6-144">したがって、グラデーションのコンテンツの実際の色は問題になりません。重要なのは、それぞれのカラーのアルファ チャネル (不透明度) です。</span><span class="sxs-lookup"><span data-stu-id="44fc6-144">So the actual color of the gradient's contents do not matter; only the alpha channel, or opacity, of each color matters.</span></span> <span data-ttu-id="44fc6-145">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-145">The following is an example.</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#LinearGradientOpacityMaskonImage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/GradientBrushExample.xaml#lineargradientopacitymaskonimage)]  -->
- <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#LinearGradientOpacityMaskonImage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/GradientBrushExample.xaml#lineargradientopacitymaskonimage)]  -->  
+ [!code-xaml[OpacityMasksSnippet#LinearGradientOpacityMaskonImage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksSnippet/CS/GradientBrushExample.xaml#lineargradientopacitymaskonimage)]  
   
 <a name="specifyinggradientcolors"></a>   
-## 不透明マスクでのグラデーションの終了位置の指定  
- 前の例では、システム定義色の <xref:System.Windows.Media.Colors.Black%2A> がグラデーションの開始色として使用されています。  <xref:System.Windows.Media.Colors.Transparent%2A> を除き、<xref:System.Windows.Media.Colors> クラスのすべての色は完全に不透明であるため、これらを使用するとグラデーションの不透明マスクの開始色を簡単に定義できます。  
+## <a name="specifying-gradient-stops-for-an-opacity-mask"></a><span data-ttu-id="44fc6-146">不透明度マスクのグラデーションの分岐点の指定</span><span class="sxs-lookup"><span data-stu-id="44fc6-146">Specifying Gradient Stops for an Opacity Mask</span></span>  
+ <span data-ttu-id="44fc6-147">前の例では、システム定義色<xref:System.Windows.Media.Colors.Black%2A>グラデーションの開始色として使用されます。</span><span class="sxs-lookup"><span data-stu-id="44fc6-147">In the previous example, the system-defined color <xref:System.Windows.Media.Colors.Black%2A> is used as the starting color of the gradient.</span></span> <span data-ttu-id="44fc6-148">の色のすべて、<xref:System.Windows.Media.Colors>クラスを除く<xref:System.Windows.Media.Colors.Transparent%2A>が完全に不透明で、単にグラデーションの不透明度マスクの開始色を定義できます。</span><span class="sxs-lookup"><span data-stu-id="44fc6-148">Because all of the colors in the <xref:System.Windows.Media.Colors> class, except <xref:System.Windows.Media.Colors.Transparent%2A>, are fully opaque, they can be used to simply define a starting color for a gradient opacity mask.</span></span>  
   
- 不透明マスクを定義する際にアルファ値をさらに細かく制御するために、マークアップ内で [!INCLUDE[TLA#tla_argb](../../../../includes/tlasharptla-argb-md.md)] の 16 進数表記を使用したり、<xref:System.Windows.Media.Color.FromScRgb%2A?displayProperty=fullName> メソッドを使用して、色のアルファ チャネルを指定できます。  
+ <span data-ttu-id="44fc6-149">不透明度マスクを定義するときのアルファ値の詳細に制御を使用する色のアルファ チャネルを指定できます[!INCLUDE[TLA#tla_argb](../../../../includes/tlasharptla-argb-md.md)]16 進数表記マークアップまたはを使用して、<xref:System.Windows.Media.Color.FromScRgb%2A?displayProperty=nameWithType>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="44fc6-149">For additional control over alpha values when defining an opacity mask, you can specify the alpha channel of colors using [!INCLUDE[TLA#tla_argb](../../../../includes/tlasharptla-argb-md.md)] hexadecimal notation in markup or using the <xref:System.Windows.Media.Color.FromScRgb%2A?displayProperty=nameWithType> method.</span></span>  
   
 <a name="argbsyntax"></a>   
-### "XAML" での色の透過度の指定  
- [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] では、[!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] 16 進数表記を使用して、個別の色の透過度を指定します。  [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] の 16 進数表記では次の構文が使用されます。  
+### <a name="specifying-color-opacity-in-xaml"></a><span data-ttu-id="44fc6-150">"XAML" でのカラーの不透明度の指定</span><span class="sxs-lookup"><span data-stu-id="44fc6-150">Specifying Color Opacity in "XAML"</span></span>  
+ <span data-ttu-id="44fc6-151">[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] では、[!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] の 16 進表記を使用して、個々の色の不透明度を指定します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-151">In [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], you use  [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] hexadecimal notation to specify the opacity of individual colors.</span></span> [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)]<span data-ttu-id="44fc6-152"> の 16 進表記では、次の構文を使用します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-152"> hexadecimal notation uses the following syntax:</span></span>  
   
- `#`**aa** *rrggbb*  
+ <span data-ttu-id="44fc6-153">`#` **aa** *rrggbb*</span><span class="sxs-lookup"><span data-stu-id="44fc6-153">`#` **aa** *rrggbb*</span></span>  
   
- この構文の *aa* は、色の不透明度を指定する 2 桁の 16 進数の値を表します。  *rr*、*gg*、*bb* はそれぞれ、赤、緑、青の各色の量を指定する 2 桁の 16 進数を表します。  16 進数の各桁には、0 から 9、または A から F の値を指定できます。  0 が最小値で、F が最大値になります。  00 のアルファ値は、完全に透明な色の指定、FF のアルファ値は、完全に不透明な色の指定を表します。  次の例に、16 進数の [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] 表記を使用した 2 種類の色の指定方法を示します。  1 つ目には完全に不透明な色を指定し、2 つ目には完全に透明な色を指定しています。  
+ <span data-ttu-id="44fc6-154">前の行の *aa* は、カラーの不透明度を指定するために使用する 2 桁の 16 進値を表します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-154">The *aa* in the previous line represents a two-digit hexadecimal value used to specify the opacity of the color.</span></span> <span data-ttu-id="44fc6-155">*rr*、*gg*、および *bb* は、それぞれ、カラーの赤、緑、および青の量を指定するために使用される 2 桁の 16 進値を表します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-155">The *rr*, *gg*, and *bb* each represent a two digit hexadecimal value used to specify the amount of red, green, and blue in the color.</span></span> <span data-ttu-id="44fc6-156">各 16 進数には、0 ～ 9 または A ～ F の値を指定できます。</span><span class="sxs-lookup"><span data-stu-id="44fc6-156">Each hexadecimal digit may have a value from 0-9 or A-F.</span></span> <span data-ttu-id="44fc6-157">0 は最小値であり、F は最大値です。</span><span class="sxs-lookup"><span data-stu-id="44fc6-157">0 is the smallest value, and F is the greatest.</span></span> <span data-ttu-id="44fc6-158">アルファ値 00 は完全に透明なカラーを指定し、アルファ値 FF は完全に不透明なカラーを指定します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-158">An alpha value of 00 specifies a color that is completely transparent, while an alpha value of FF creates a color that is fully opaque.</span></span>  <span data-ttu-id="44fc6-159">次の例では、[!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] の 16 進表記を使用して、2 つのカラーを指定しています。</span><span class="sxs-lookup"><span data-stu-id="44fc6-159">In the following example, hexadecimal [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] notation is used to specify two colors.</span></span> <span data-ttu-id="44fc6-160">1 つ目のカラーは完全に透明であり、2 つ目のカラーは完全に不透明です。</span><span class="sxs-lookup"><span data-stu-id="44fc6-160">The first is fully opaque, while the second is completely transparent.</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#AARRGGBBValueonOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/GradientBrushExample.xaml#aarrggbbvalueonopacitymask)]  -->
- <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#AARRGGBBValueonOpacityMask](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/GradientBrushExample.xaml#aarrggbbvalueonopacitymask)]  -->  
+ [!code-xaml[OpacityMasksSnippet#AARRGGBBValueonOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksSnippet/CS/GradientBrushExample.xaml#aarrggbbvalueonopacitymask)]  
   
 <a name="usingimageasopacitymask"></a>   
-## 不透明マスクとしてのイメージの使用  
- イメージも不透明マスクとして使用できます。  例を次に示します。  格子模様の背景はマスクの透過部分を表しています。  
+## <a name="using-an-image-as-an-opacity-mask"></a><span data-ttu-id="44fc6-161">不透明度マスクとしてのイメージの使用</span><span class="sxs-lookup"><span data-stu-id="44fc6-161">Using an Image as an Opacity Mask</span></span>  
+ <span data-ttu-id="44fc6-162">不透明度マスクとしてイメージを使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="44fc6-162">Images can also be used as an opacity mask.</span></span> <span data-ttu-id="44fc6-163">次のイメージは一例を示しています。</span><span class="sxs-lookup"><span data-stu-id="44fc6-163">The following image shows an example.</span></span> <span data-ttu-id="44fc6-164">チェックの背景を使用して、マスクの透明な部分を表示しています。</span><span class="sxs-lookup"><span data-stu-id="44fc6-164">A checkered background is used to show the transparent portions of the mask.</span></span>  
   
- ![ImageBrush 不透明マスクを持つオブジェクト](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-imageasopacitymask.png "wcpsdk\_graphicsmm\_imageasopacitymask")  
-不透明マスクの例  
+ <span data-ttu-id="44fc6-165">![ImageBrush 不透明マスクを持つオブジェクト](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-imageasopacitymask.png "wcpsdk_graphicsmm_imageasopacitymask")</span><span class="sxs-lookup"><span data-stu-id="44fc6-165">![An object with an ImageBrush opacity mask](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-imageasopacitymask.png "wcpsdk_graphicsmm_imageasopacitymask")</span></span>  
+<span data-ttu-id="44fc6-166">不透明度マスクの例</span><span class="sxs-lookup"><span data-stu-id="44fc6-166">Opacity masking example</span></span>  
   
- イメージを不透明マスクとして使用するには、イメージを格納する <xref:System.Windows.Media.ImageBrush> を使用します。  不透明マスクとして使用するイメージを作成する場合は、複数の透過性レベルをサポートしている[!INCLUDE[TLA#tla_png](../../../../includes/tlasharptla-png-md.md)] などの形式でイメージを保存してください。  前の図を作成するために使用するコード例を次に示します。  
+ <span data-ttu-id="44fc6-167">不透明度マスクとしてイメージを使用する、<xref:System.Windows.Media.ImageBrush>画像を保存します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-167">To use an image as an opacity mask, use an <xref:System.Windows.Media.ImageBrush> to contain the image.</span></span> <span data-ttu-id="44fc6-168">不透明度マスクとして使用するイメージを作成したら、複数のレベルの透過性をサポートする形式 ([!INCLUDE[TLA#tla_png](../../../../includes/tlasharptla-png-md.md)]など) で保存します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-168">When creating an image to be used as an opacity mask, save the image in a format that supports multiple levels of transparency, such as [!INCLUDE[TLA#tla_png](../../../../includes/tlasharptla-png-md.md)].</span></span> <span data-ttu-id="44fc6-169">次の例は、前の図を作成するために使用するコード例を示しています。</span><span class="sxs-lookup"><span data-stu-id="44fc6-169">The following example shows the code used to create the previous illustration.</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#UIElementOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/ImageBrushExample.xaml#uielementopacitymask)]  -->
- <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#UIElementOpacityMask](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/ImageBrushExample.xaml#uielementopacitymask)]  -->  
+ [!code-xaml[OpacityMasksSnippet#UIElementOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksSnippet/CS/ImageBrushExample.xaml#uielementopacitymask)]  
   
 <a name="tilingimageopacitymask"></a>   
-### 不透明マスクとしての並べて表示されたイメージの使用  
- 次の例では、同じイメージを別の <xref:System.Windows.Media.ImageBrush> で使用していますが、ブラシを並べて表示する機能を使用して、50 x 50 ピクセルのイメージのタイルを生成しています。  
+### <a name="using-a-tiled-image-as-an-opacity-mask"></a><span data-ttu-id="44fc6-170">不透明度マスクとしてタイル イメージを使用する</span><span class="sxs-lookup"><span data-stu-id="44fc6-170">Using a Tiled Image as an Opacity Mask</span></span>  
+ <span data-ttu-id="44fc6-171">次の例では、同じイメージを別の使用<xref:System.Windows.Media.ImageBrush>がブラシの並べて表示機能は、イメージ 50 ピクセルの四角形のタイルを生成するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="44fc6-171">In the following example, the same image is used with another <xref:System.Windows.Media.ImageBrush>, but the brush's tiling features are used to produce tiles of the image 50 pixels square.</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#TiledImageasOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/ImageBrushExample.xaml#tiledimageasopacitymask)]  -->
- <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#TiledImageasOpacityMask](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/ImageBrushExample.xaml#tiledimageasopacitymask)]  -->  
+ [!code-xaml[OpacityMasksSnippet#TiledImageasOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksSnippet/CS/ImageBrushExample.xaml#tiledimageasopacitymask)]  
   
 <a name="drawingbrushasopacitymask"></a>   
-## 描画から不透明マスクを作成  
- 描画を不透明マスクとして使用できます。  描画内に含まれる図形は、グラデーション、純色、イメージ、または他の描画を使用して塗りつぶすことができます。  次の例は、不透明マスクとして使用された描画を示しています。  格子模様の背景はマスクの透過部分を表しています。  
+## <a name="creating-an-opacity-mask-from-a-drawing"></a><span data-ttu-id="44fc6-172">描画からの不透明度マスクの作成</span><span class="sxs-lookup"><span data-stu-id="44fc6-172">Creating an Opacity Mask from a Drawing</span></span>  
+ <span data-ttu-id="44fc6-173">不透明度マスクとして描画を使用できます。</span><span class="sxs-lookup"><span data-stu-id="44fc6-173">Drawings can be used an opacity mask.</span></span> <span data-ttu-id="44fc6-174">描画内の図形自体を、グラデーション、純色、イメージ、または他の描画で塗りつぶすことができます。</span><span class="sxs-lookup"><span data-stu-id="44fc6-174">The shapes contained within the drawing can themselves be filled with gradients, solid colors, images, or even other drawings.</span></span> <span data-ttu-id="44fc6-175">次のイメージは、不透明度マスクとして使用される描画の例です。</span><span class="sxs-lookup"><span data-stu-id="44fc6-175">The following image shows an example of a drawing used as an opacity mask.</span></span> <span data-ttu-id="44fc6-176">チェックの背景を使用して、マスクの透明な部分を表示しています。</span><span class="sxs-lookup"><span data-stu-id="44fc6-176">A checkered background is used to show the transparent portions of the mask.</span></span>  
   
- ![DrawingBrush 不透明マスクを持つオブジェクト](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-drawingbrushasopacitymask.png "wcpsdk\_drawingbrushasopacitymask")  
-DrawingBrush 不透明マスクの例  
+ <span data-ttu-id="44fc6-177">![DrawingBrush 不透明マスクを持つオブジェクト](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-drawingbrushasopacitymask.png "wcpsdk_drawingbrushasopacitymask")</span><span class="sxs-lookup"><span data-stu-id="44fc6-177">![An object with a DrawingBrush opacity mask](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-drawingbrushasopacitymask.png "wcpsdk_drawingbrushasopacitymask")</span></span>  
+<span data-ttu-id="44fc6-178">DrawingBrush 不透明度マスクの例</span><span class="sxs-lookup"><span data-stu-id="44fc6-178">DrawingBrush opacity masking example</span></span>  
   
- 描画を不透明マスクとして使用するには、描画を格納する <xref:System.Windows.Media.DrawingBrush> を使用します。  前の図を作成するために使用するコード例を次に示します。  
+ <span data-ttu-id="44fc6-179">不透明度マスクとして描画を使用する、<xref:System.Windows.Media.DrawingBrush>図面を格納します。</span><span class="sxs-lookup"><span data-stu-id="44fc6-179">To use a drawing as an opacity mask, use a <xref:System.Windows.Media.DrawingBrush> to contain the drawing.</span></span> <span data-ttu-id="44fc6-180">次の例は、前の図を作成するために使用するコード例を示しています。</span><span class="sxs-lookup"><span data-stu-id="44fc6-180">The following example shows the code used to create the previous illustration:</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#OpacityMaskfromDrawing](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/DrawingBrushExample.xaml#opacitymaskfromdrawing)]  -->
- <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#OpacityMaskfromDrawing](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/DrawingBrushExample.xaml#opacitymaskfromdrawing)]  -->  
+ [!code-xaml[OpacityMasksSnippet#OpacityMaskfromDrawing](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksSnippet/CS/DrawingBrushExample.xaml#opacitymaskfromdrawing)]  
   
 <a name="tileddrawingbrush"></a>   
-### 不透明マスクとしての並べて表示された描画の使用  
- <xref:System.Windows.Media.ImageBrush> と同様に、<xref:System.Windows.Media.DrawingBrush> によって描画を並べることができます。  次の例では、描画ブラシを使用して、並べて表示された不透明マスクを作成しています。  
+### <a name="using-a-tiled-drawing-as-an-opacity-mask"></a><span data-ttu-id="44fc6-181">不透明度マスクとしてタイル描画を使用する</span><span class="sxs-lookup"><span data-stu-id="44fc6-181">Using a Tiled Drawing as an Opacity Mask</span></span>  
+ <span data-ttu-id="44fc6-182">同様に、 <xref:System.Windows.Media.ImageBrush>、<xref:System.Windows.Media.DrawingBrush>その図面をタイルに行われたことができます。</span><span class="sxs-lookup"><span data-stu-id="44fc6-182">Like the <xref:System.Windows.Media.ImageBrush>, the <xref:System.Windows.Media.DrawingBrush> can be made to tile its drawing.</span></span> <span data-ttu-id="44fc6-183">次の例では、描画ブラシを使用して、タイル表示される不透明マスクを作成できます。</span><span class="sxs-lookup"><span data-stu-id="44fc6-183">In the following example, a drawing brush is used to create a tiled opacity mask.</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#TiledDrawingasOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/DrawingBrushExample.xaml#tileddrawingasopacitymask)]  -->
- <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#TiledDrawingasOpacityMask](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/DrawingBrushExample.xaml#tileddrawingasopacitymask)]  -->  
+ [!code-xaml[OpacityMasksSnippet#TiledDrawingasOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksSnippet/CS/DrawingBrushExample.xaml#tileddrawingasopacitymask)]  
   
-## 参照  
- [イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)   
- [純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)
+## <a name="see-also"></a><span data-ttu-id="44fc6-184">関連項目</span><span class="sxs-lookup"><span data-stu-id="44fc6-184">See Also</span></span>  
+ [<span data-ttu-id="44fc6-185">イメージ、描画、およびビジュアルによる塗りつぶし</span><span class="sxs-lookup"><span data-stu-id="44fc6-185">Painting with Images, Drawings, and Visuals</span></span>](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)  
+ [<span data-ttu-id="44fc6-186">純色およびグラデーションによる塗りつぶしの概要</span><span class="sxs-lookup"><span data-stu-id="44fc6-186">Painting with Solid Colors and Gradients Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)

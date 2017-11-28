@@ -2,7 +2,7 @@
 ## [演算子で実行される一般的なタスク](common-tasks-performed-with-visual-basic-operators.md)
 ## [算術演算子](arithmetic-operators.md)
 ## [比較演算子](comparison-operators.md)
-## [方法:&2; つのオブジェクトが等しいかどうかをテストする](how-to-test-whether-two-objects-are-the-same.md)
+## [方法: 2 つのオブジェクトが等しいかどうかをテストする](how-to-test-whether-two-objects-are-the-same.md)
 ## [方法 : 文字列がパターンに一致するかを調べる](how-to-match-a-string-against-a-pattern.md)
 ## [連結演算子](concatenation-operators.md)
 ## [論理演算子とビット処理演算子](logical-and-bitwise-operators.md)

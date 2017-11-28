@@ -1,63 +1,64 @@
 ---
-title: "方法 : Windows フォームにコントロールをロックする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "コントロール [Windows フォーム], locking"
-  - "Windows フォーム コントロール, locking"
+title: "方法 : Windows フォームにコントロールをロックする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Forms controls, locking
+- controls [Windows Forms], locking
 ms.assetid: 94efe0d2-c14e-4d14-b903-63ea9b07e290
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 30808d2102a1be41381f0e07c9f0f37bfb4a5a56
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームにコントロールをロックする
-Windows アプリケーションのユーザー インターフェイス \(UI\) をデザインする場合、コントロールを正しく配置した後、他のプロパティを設定するときに誤って移動やサイズ変更をしないようにコントロールをロックできます。  
+# <a name="how-to-lock-controls-to-windows-forms"></a><span data-ttu-id="e3e65-102">方法 : Windows フォームにコントロールをロックする</span><span class="sxs-lookup"><span data-stu-id="e3e65-102">How to: Lock Controls to Windows Forms</span></span>
+<span data-ttu-id="e3e65-103">Windows アプリケーションのユーザー インターフェイス (UI) を設計するときは、正しく配置を誤って移動や、その他のプロパティを設定するときのサイズを変更しないように後に、コントロールをロックできます。</span><span class="sxs-lookup"><span data-stu-id="e3e65-103">When you design the user interface (UI) of your Windows application, you can lock the controls once they are positioned correctly, so that you do not inadvertently move or resize them when setting other properties.</span></span>  
   
- また、フォームのすべてのコントロールを一度にロック、またはロック解除することもできます。フォームに数多くのコントロールがある場合は、一度にロックすると便利です。コントロールのロックを個々に解除することもできます。  フォームの任意の位置にコントロールを配置した後、誤って移動しないようにすべてのコントロールを適切な位置にロックします。  
+ <span data-ttu-id="e3e65-104">さらに、ロックして、フォームを一度に多くのコントロールをフォームは、上のすべてのコントロールをロック解除することができますか、個々 のコントロールのロックを解除することができます。</span><span class="sxs-lookup"><span data-stu-id="e3e65-104">Additionally, you can lock and unlock all the controls on the form at once, which is helpful for forms with many controls, or you can unlock individual controls.</span></span> <span data-ttu-id="e3e65-105">配置した後のすべてのコントロール、好きな場所、フォームに、ロックがすべて適用誤って移動しないようにします。</span><span class="sxs-lookup"><span data-stu-id="e3e65-105">Once you have placed all the controls where you want them on the form, lock them all in place to prevent erroneous movement.</span></span>  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  <span data-ttu-id="e3e65-106">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="e3e65-106">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="e3e65-107">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="e3e65-107">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="e3e65-108">詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e3e65-108">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### コントロールをロックするには  
+### <a name="to-lock-a-control"></a><span data-ttu-id="e3e65-109">コントロールをロックするには</span><span class="sxs-lookup"><span data-stu-id="e3e65-109">To lock a control</span></span>  
   
-1.  **\[プロパティ\]** ウィンドウの **\[更新しない\]** プロパティをクリックし、`true` を選択します。  名前をダブルクリックすると、プロパティの設定値が切り替わります。  
+1.  <span data-ttu-id="e3e65-110">**プロパティ**ウィンドウで、をクリックして、**ロック**プロパティを選択`true`です。</span><span class="sxs-lookup"><span data-stu-id="e3e65-110">In the **Properties** window, click the **Locked** property and select `true`.</span></span> <span data-ttu-id="e3e65-111">(名前をダブルクリックするとは、プロパティの設定を切り替えます。)</span><span class="sxs-lookup"><span data-stu-id="e3e65-111">(Double-clicking the name toggles the property setting.)</span></span>  
   
-     または、コントロールを右クリックし、**\[コントロールのロック\]** をクリックします。  
-  
-    > [!NOTE]
-    >  コントロールをロックすると、デザイン サーフェイス上でコントロールをドラッグしてサイズや位置を変更できなくなります。  ただし、**\[プロパティ\]** ウィンドウで設定したりコードを書き換えたりすることで、コントロールのサイズや位置を変更できます。  
-  
-### フォームのすべてのコントロールをロックするには  
-  
-1.  **\[書式\]** メニューの **\[コントロールのロック\]** をクリックします。  
+     <span data-ttu-id="e3e65-112">また、コントロールを右クリックして選択**ロック コントロール**です。</span><span class="sxs-lookup"><span data-stu-id="e3e65-112">Alternatively, right-click the control and choose **Lock Controls**.</span></span>  
   
     > [!NOTE]
-    >  フォームはコントロールであるため、\[コントロールのロック\] によってフォームのサイズもロックされます。  
+    >  <span data-ttu-id="e3e65-113">コントロールのロックが原因でデザイン画面で、新しいサイズまたは場所にドラッグされているからです。</span><span class="sxs-lookup"><span data-stu-id="e3e65-113">Locking controls prevents them from being dragged to a new size or location on the design surface.</span></span> <span data-ttu-id="e3e65-114">ただし、することができます、サイズや位置を変更ことで、コントロールの**プロパティ**ウィンドウまたはコード。</span><span class="sxs-lookup"><span data-stu-id="e3e65-114">However, you can still change the size or location of controls by means of the **Properties** window or in code.</span></span>  
   
-### フォームのすべてのコントロールのロックを解除するには  
+### <a name="to-lock-all-the-controls-on-a-form"></a><span data-ttu-id="e3e65-115">フォーム上のすべてのコントロールをロックするには</span><span class="sxs-lookup"><span data-stu-id="e3e65-115">To lock all the controls on a form</span></span>  
   
-1.  **\[書式\]** メニューの **\[コントロールのロック\]** をクリックします。  
+1.  <span data-ttu-id="e3e65-116">**形式**] メニューの [選択**ロック コントロール**です。</span><span class="sxs-lookup"><span data-stu-id="e3e65-116">From the **Format** menu, choose **Lock Controls**.</span></span>  
   
-     フォーム上でロックされているコントロールはすべてロックが解除されます。  
+    > [!NOTE]
+    >  <span data-ttu-id="e3e65-117">このコマンドでは、フォームがコントロールであるため、フォームのサイズがロックされます。</span><span class="sxs-lookup"><span data-stu-id="e3e65-117">This command locks the form's size as well, because a form is a control.</span></span>  
   
-### コントロールのロックを個別に解除するには  
+### <a name="to-unlock-all-locked-controls-on-a-form"></a><span data-ttu-id="e3e65-118">フォーム上のコントロールがロックされているすべてのロックを解除するには</span><span class="sxs-lookup"><span data-stu-id="e3e65-118">To unlock all locked controls on a form</span></span>  
   
-1.  **\[プロパティ\]** ウィンドウの **\[更新しない\]** プロパティをクリックし、`false` を選択します。  名前をダブルクリックすると、プロパティの設定値が切り替わります。  
+1.  <span data-ttu-id="e3e65-119">**形式**] メニューの [選択**ロック コントロール**です。</span><span class="sxs-lookup"><span data-stu-id="e3e65-119">From the **Format** menu, choose **Lock Controls**.</span></span>  
   
-## 参照  
- [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)   
- [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)   
- [各 Windows フォーム コントロールのラベル設定とショートカットの作成](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)   
- [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)   
- [Windows フォーム コントロールの機能別一覧](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)
+     <span data-ttu-id="e3e65-120">フォーム上のすべてのロックされているコントロールを今すぐはロックを解除します。</span><span class="sxs-lookup"><span data-stu-id="e3e65-120">All previously locked controls on the form are now unlocked.</span></span>  
+  
+### <a name="to-unlock-locked-controls-individually"></a><span data-ttu-id="e3e65-121">ロックを解除するには、コントロールを個別にロック</span><span class="sxs-lookup"><span data-stu-id="e3e65-121">To unlock locked controls individually</span></span>  
+  
+1.  <span data-ttu-id="e3e65-122">**プロパティ**ウィンドウで、をクリックして、**ロック**プロパティを選択`false`です。</span><span class="sxs-lookup"><span data-stu-id="e3e65-122">In the **Properties** window, click the **Locked** property and select `false`.</span></span> <span data-ttu-id="e3e65-123">(名前をダブルクリックするとは、プロパティの設定を切り替えます。)</span><span class="sxs-lookup"><span data-stu-id="e3e65-123">(Double-clicking the name toggles the property setting.)</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="e3e65-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="e3e65-124">See Also</span></span>  
+ [<span data-ttu-id="e3e65-125">Windows フォーム コントロール</span><span class="sxs-lookup"><span data-stu-id="e3e65-125">Windows Forms Controls</span></span>](../../../../docs/framework/winforms/controls/index.md)  
+ [<span data-ttu-id="e3e65-126">Windows フォームでのコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="e3e65-126">Arranging Controls on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
+ [<span data-ttu-id="e3e65-127">各 Windows フォーム コントロールのラベル設定とショートカットの作成</span><span class="sxs-lookup"><span data-stu-id="e3e65-127">Labeling Individual Windows Forms Controls and Providing Shortcuts to Them</span></span>](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  
+ [<span data-ttu-id="e3e65-128">Windows フォームで使用するコントロール</span><span class="sxs-lookup"><span data-stu-id="e3e65-128">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [<span data-ttu-id="e3e65-129">Windows フォーム コントロールの機能別一覧</span><span class="sxs-lookup"><span data-stu-id="e3e65-129">Windows Forms Controls by Function</span></span>](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)

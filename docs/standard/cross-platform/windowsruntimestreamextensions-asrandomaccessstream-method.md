@@ -1,75 +1,79 @@
 ---
-title: "WindowsRuntimeStreamExtensions.AsRandomAccessStream(System.IO.Stream) メソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "System.IO.WindowsRuntimeStreamExtensions.AsRandomAccessStream"
-apilocation: 
-  - "System.Runtime.WindowsRuntime.dll"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "WindowsRuntimeStreamExtensions.AsRandomAccessStream(System.IO.Stream) メソッド"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+api_name: System.IO.WindowsRuntimeStreamExtensions.AsRandomAccessStream
+api_location: System.Runtime.WindowsRuntime.dll
 ms.assetid: dcc72283-caed-49ee-b45d-ccaf94e97129
-caps.latest.revision: 12
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: be93ddc0f3bf0a5079f31bfa0ff5caa882342c37
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WindowsRuntimeStreamExtensions.AsRandomAccessStream(System.IO.Stream) メソッド
-\[.NET Framework 4.5.1 以上でサポート\]  
+# <a name="windowsruntimestreamextensionsasrandomaccessstreamsystemiostream-method"></a><span data-ttu-id="71e5e-102">WindowsRuntimeStreamExtensions.AsRandomAccessStream(System.IO.Stream) メソッド</span><span class="sxs-lookup"><span data-stu-id="71e5e-102">WindowsRuntimeStreamExtensions.AsRandomAccessStream(System.IO.Stream) Method</span></span>
+<span data-ttu-id="71e5e-103">[.NET Framework 4.5.1 以降のバージョンでサポート]</span><span class="sxs-lookup"><span data-stu-id="71e5e-103">[Supported in the .NET Framework 4.5.1 and later versions]</span></span>  
   
- 特定のストリームをランダム アクセス ストリームに変換します。  
+ <span data-ttu-id="71e5e-104">特定のストリームをランダム アクセス ストリームに変換します。</span><span class="sxs-lookup"><span data-stu-id="71e5e-104">Converts the specified stream to a random access stream.</span></span>  
   
- **名前空間**: <xref:System.IO?displayProperty=fullName>   
- **アセンブリ**: System.Runtime.WindowsRuntime \(System.Runtime.WindowsRuntime.dll 内\)  
+ <span data-ttu-id="71e5e-105">**Namespace:**<xref:System.IO?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="71e5e-105">**Namespace:** <xref:System.IO?displayProperty=nameWithType></span></span>  
+ <span data-ttu-id="71e5e-106">**アセンブリ:** System.Runtime.WindowsRuntime (system.runtime.windowsruntime.dll 内)</span><span class="sxs-lookup"><span data-stu-id="71e5e-106">**Assembly:** System.Runtime.WindowsRuntime (in System.Runtime.WindowsRuntime.dll)</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="71e5e-107">構文</span><span class="sxs-lookup"><span data-stu-id="71e5e-107">Syntax</span></span>  
   
 ```csharp  
-[CLSCompliantAttribute(false)] public static  IRandomAccessStream AsRandomAccessStream(Stream stream)   
+[CLSCompliantAttribute(false)]  
+public static  IRandomAccessStream AsRandomAccessStream(Stream stream)  
 ```  
   
 ```vb  
-'Declaration <ExtensionAttribute> _ <CLSCompliantAttribute(False)> _ Public Shared Function AsRandomAccessStream ( _         stream As Stream) As IRandomAccessStream   
+'Declaration  
+<ExtensionAttribute> _  
+<CLSCompliantAttribute(False)> _  
+Public Shared Function AsRandomAccessStream ( _  
+        stream As Stream) As IRandomAccessStream  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a><span data-ttu-id="71e5e-108">パラメーター</span><span class="sxs-lookup"><span data-stu-id="71e5e-108">Parameters</span></span>  
  `stream`  
   
- 型: <xref:System.IO.Stream?displayProperty=fullName>   
- 変換するストリーム。  
+ <span data-ttu-id="71e5e-109">型: <xref:System.IO.Stream?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="71e5e-109">Type: <xref:System.IO.Stream?displayProperty=nameWithType></span></span>  
+<span data-ttu-id="71e5e-110">変換するストリーム。</span><span class="sxs-lookup"><span data-stu-id="71e5e-110">The stream to convert.</span></span>  
   
-## 戻り値  
- 型: [Windows.Storage.Streams.RandomAccessStream](http://msdn.microsoft.com/library/windows/apps/windows.storage.streams.randomaccessstream.aspx)   
- 変換されたストリームを表す [!INCLUDE[wrt](../../../includes/wrt-md.md)] ランダム アクセス、ストリーム。  
+## <a name="return-value"></a><span data-ttu-id="71e5e-111">戻り値</span><span class="sxs-lookup"><span data-stu-id="71e5e-111">Return Value</span></span>  
+ <span data-ttu-id="71e5e-112">型: [Windows.Storage.Streams.RandomAccessStream](http://msdn.microsoft.com/library/windows/apps/windows.storage.streams.randomaccessstream.aspx)</span><span class="sxs-lookup"><span data-stu-id="71e5e-112">Type: [Windows.Storage.Streams.RandomAccessStream](http://msdn.microsoft.com/library/windows/apps/windows.storage.streams.randomaccessstream.aspx)</span></span>  
+<span data-ttu-id="71e5e-113">A[!INCLUDE[wrt](../../../includes/wrt-md.md)]ランダム アクセス ストリームは、変換されたストリームを表します。</span><span class="sxs-lookup"><span data-stu-id="71e5e-113">A [!INCLUDE[wrt](../../../includes/wrt-md.md)] random access stream, which represents the converted stream.</span></span>  
   
-## 例外  
+## <a name="exceptions"></a><span data-ttu-id="71e5e-114">例外</span><span class="sxs-lookup"><span data-stu-id="71e5e-114">Exceptions</span></span>  
   
-|例外|状態|  
-|--------|--------|  
-|<xref:System.NotSupportedException>|変換するストリームがシークをサポートしていません。|  
+|<span data-ttu-id="71e5e-115">例外</span><span class="sxs-lookup"><span data-stu-id="71e5e-115">Exception</span></span>|<span data-ttu-id="71e5e-116">状態</span><span class="sxs-lookup"><span data-stu-id="71e5e-116">Condition</span></span>|  
+|---------------|---------------|  
+|<xref:System.NotSupportedException>|<span data-ttu-id="71e5e-117">変換するストリームがシークをサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="71e5e-117">The stream to convert does not support seeking.</span></span>|  
   
-## 解説  
- この拡張メソッドは、Windows ストア アプリを開発する場合のみに使用できます。  このメソッドは、Windows ストア アプリのストリームを使用する便利な方法を提供します。  変換する .NET Framework ストリームはシークをサポートする必要があります。  詳細については、<xref:System.IO.Stream.Seek%2A?displayProperty=fullName> メソッドを参照してください。  
+## <a name="remarks"></a><span data-ttu-id="71e5e-118">解説</span><span class="sxs-lookup"><span data-stu-id="71e5e-118">Remarks</span></span>  
+ <span data-ttu-id="71e5e-119">この拡張メソッドは、Windows ストア アプリを開発する場合のみに使用できます。</span><span class="sxs-lookup"><span data-stu-id="71e5e-119">This extension method is available only when you develop Windows Store apps.</span></span> <span data-ttu-id="71e5e-120">このメソッドは、Windows ストア アプリのストリームを使用する便利な方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="71e5e-120">This method provides a convenient way of working with streams in Windows Store apps.</span></span> <span data-ttu-id="71e5e-121">変換する .NET Framework ストリームはシークをサポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="71e5e-121">The .NET Framework stream you want to convert must support seeking.</span></span> <span data-ttu-id="71e5e-122">詳細については、<xref:System.IO.Stream.Seek%2A?displayProperty=nameWithType> メソッドを参照してください。</span><span class="sxs-lookup"><span data-stu-id="71e5e-122">For more information, see the <xref:System.IO.Stream.Seek%2A?displayProperty=nameWithType> method.</span></span>  
   
 > [!IMPORTANT]
->  この API は .NET Framework 4.5.1 以上ではサポートされますが、Version 4.5 ではサポートされません。  
+>  <span data-ttu-id="71e5e-123">この API は .NET Framework 4.5.1 以上ではサポートされますが、Version 4.5 ではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="71e5e-123">This API is supported in the .NET Framework 4.5.1 and later versions, but not in version 4.5.</span></span>  
   
-## バージョン情報  
- **Windows ストア アプリ用 .NET**  
+## <a name="version-information"></a><span data-ttu-id="71e5e-124">バージョン情報</span><span class="sxs-lookup"><span data-stu-id="71e5e-124">Version Information</span></span>  
+ <span data-ttu-id="71e5e-125">**Windows ストア アプリ用 .NET**</span><span class="sxs-lookup"><span data-stu-id="71e5e-125">**.NET for Windows Store apps**</span></span>  
   
- Windows 8.1 でサポート  
+ <span data-ttu-id="71e5e-126">Windows 8.1 でサポート</span><span class="sxs-lookup"><span data-stu-id="71e5e-126">Supported in: Windows 8.1</span></span>  
   
-## 参照  
- <xref:System.IO.WindowsRuntimeStreamExtensions>   
- [方法: .NET Framework ストリームと Windows ランタイム ストリームの間で変換を行う](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md)
+## <a name="see-also"></a><span data-ttu-id="71e5e-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="71e5e-127">See Also</span></span>  
+ <!--zz <xref:System.IO.WindowsRuntimeStreamExtensions>--> `System.IO.WindowsRuntimeStreamExtensions`  
+ [<span data-ttu-id="71e5e-128">方法: .NET Framework ストリームと Windows ランタイム ストリームの間で変換を行う</span><span class="sxs-lookup"><span data-stu-id="71e5e-128">How to: Convert Between .NET Framework Streams and Windows Runtime Streams</span></span>](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md)

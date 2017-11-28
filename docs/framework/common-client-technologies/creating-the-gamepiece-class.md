@@ -5,113 +5,110 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 37a27a86-ac1c-47be-b477-cb4b819459d3
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
+ms.openlocfilehash: 989883034b30c3ec67f5441c5512418643546519
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 7ac9884766812cd635b5a70c028cf15c19838511
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="creating-the-gamepiece-class"></a>GamePiece クラスの作成
-**GamePiece** クラスは、Microsoft XNA ゲーム ピースのイメージの読み込み、ゲーム ピースに関係するマウスの状態の追跡、マウスのキャプチャ、操作と慣性の処理の実行、およびゲーム ピースがビュー ポートの限度に達したときの跳ね返り機能の提供に必要な機能をすべてカプセル化します。  
+# <a name="creating-the-gamepiece-class"></a><span data-ttu-id="c10d0-102">GamePiece クラスの作成</span><span class="sxs-lookup"><span data-stu-id="c10d0-102">Creating the GamePiece Class</span></span>
+<span data-ttu-id="c10d0-103">**GamePiece** クラスは、Microsoft XNA ゲーム ピースのイメージの読み込み、ゲーム ピースに関係するマウスの状態の追跡、マウスのキャプチャ、操作と慣性の処理の実行、およびゲーム ピースがビュー ポートの限度に達したときの跳ね返り機能の提供に必要な機能をすべてカプセル化します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-103">The **GamePiece** class encapsulates all the functionality required to load a Microsoft XNA game piece image, track the state of the mouse in relation to the game piece, capture the mouse, provide manipulation and inertia processing, and provide bouncing capability when the game piece reaches the limits of the view port.</span></span>  
   
-## <a name="private-members"></a>プライベート メンバー  
- **GamePiece** クラスの上部で、いくつかのプライベート メンバーが宣言されます。  
+## <a name="private-members"></a><span data-ttu-id="c10d0-104">プライベート メンバー</span><span class="sxs-lookup"><span data-stu-id="c10d0-104">Private Members</span></span>  
+ <span data-ttu-id="c10d0-105">**GamePiece** クラスの上部で、いくつかのプライベート メンバーが宣言されます。</span><span class="sxs-lookup"><span data-stu-id="c10d0-105">At the top of the **GamePiece** class, several private members are declared.</span></span>  
   
  [!code-csharp[ManipulationXNA#_GamePiece_PrivateMembers](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiece.cs#_gamepiece_privatemembers)]  
   
-## <a name="public-properties"></a>パブリック プロパティ  
- これらの 3 つのプライベート メンバーは、パブリック プロパティを介して公開されます。 **Scale** と **PieceColor** プロパティを使用すると、アプリケーションはピースのサイズと色をそれぞれ指定することができます。 **Bounds** プロパティを公開すると、あるピースが別のピースを重ねて配置する場合など、あるピース自体をレンダリングするために別のピースの境界を使用できるようになります。 次のコードは、パブリック プロパティの宣言を示します。  
+## <a name="public-properties"></a><span data-ttu-id="c10d0-106">パブリック プロパティ</span><span class="sxs-lookup"><span data-stu-id="c10d0-106">Public Properties</span></span>  
+ <span data-ttu-id="c10d0-107">これらの 3 つのプライベート メンバーは、パブリック プロパティを介して公開されます。</span><span class="sxs-lookup"><span data-stu-id="c10d0-107">Three of these private members are exposed through public properties.</span></span> <span data-ttu-id="c10d0-108">**Scale** と **PieceColor** プロパティを使用すると、アプリケーションはピースのサイズと色をそれぞれ指定することができます。</span><span class="sxs-lookup"><span data-stu-id="c10d0-108">The **Scale** and **PieceColor** properties enable the application to specify the scale and the color of the piece, respectively.</span></span> <span data-ttu-id="c10d0-109">**Bounds** プロパティを公開すると、あるピースが別のピースを重ねて配置する場合など、あるピース自体をレンダリングするために別のピースの境界を使用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="c10d0-109">The **Bounds** property is exposed to enable one piece to use the bounds of another to render itself, such as when one piece should overlay another.</span></span> <span data-ttu-id="c10d0-110">次のコードは、パブリック プロパティの宣言を示します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-110">The following code shows the declaration of the public properties.</span></span>  
   
  [!code-csharp[ManipulationXNA#_GamePiece_PublicProperties](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiece.cs#_gamepiece_publicproperties)]  
   
-## <a name="class-constructor"></a>クラスのコンストラクター  
- **GamePiece** クラスのコンストラクターは、次のパラメーターを受け入れます。  
+## <a name="class-constructor"></a><span data-ttu-id="c10d0-111">クラスのコンストラクター</span><span class="sxs-lookup"><span data-stu-id="c10d0-111">Class Constructor</span></span>  
+ <span data-ttu-id="c10d0-112">**GamePiece** クラスのコンストラクターは、次のパラメーターを受け入れます。</span><span class="sxs-lookup"><span data-stu-id="c10d0-112">The constructor for the **GamePiece** class accepts the following parameters:</span></span>  
   
--   [SpriteBatch](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.aspx) 型。 ここで渡される参照は、プライベート メンバー `spriteBatch` に割り当てられ、ゲーム ピースが自身をレンダリングするときに [SpriteBatch.Draw](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.draw.aspx) メソッドにアクセスするために使用されます。 さらに、[GraphicsDevice](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.graphicsdevice.aspx) プロパティは、ゲーム ピースに関連付けられた [Texture](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.texture.aspx) オブジェクトの作成や、ゲーム ピースがウィンドウの境界に達したことを検知してピースが跳ね返るようにするための、ビュー ポートのサイズの取得にも使用されます。  
+-   <span data-ttu-id="c10d0-113">[SpriteBatch](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.aspx) 型。</span><span class="sxs-lookup"><span data-stu-id="c10d0-113">A [SpriteBatch](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.aspx) type.</span></span> <span data-ttu-id="c10d0-114">ここで渡される参照は、プライベート メンバー `spriteBatch` に割り当てられ、ゲーム ピースが自身をレンダリングするときに [SpriteBatch.Draw](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.draw.aspx) メソッドにアクセスするために使用されます。</span><span class="sxs-lookup"><span data-stu-id="c10d0-114">The reference passed here is assigned to the private member `spriteBatch`, and is used to access the [SpriteBatch.Draw](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.draw.aspx) method when the game piece renders itself.</span></span> <span data-ttu-id="c10d0-115">さらに、[GraphicsDevice](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.graphicsdevice.aspx) プロパティは、ゲーム ピースに関連付けられた [Texture](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.texture.aspx) オブジェクトの作成や、ゲーム ピースがウィンドウの境界に達したことを検知してピースが跳ね返るようにするための、ビュー ポートのサイズの取得にも使用されます。</span><span class="sxs-lookup"><span data-stu-id="c10d0-115">In addition, the [GraphicsDevice](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.graphicsdevice.aspx) property is used to create the [Texture](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.texture.aspx) object associated with the game piece, and to obtain the size of the view port in order to detect when the game piece encounters a window boundary so that the piece can bounce.</span></span>  
   
--   ゲーム ピースに使用するイメージのファイル名を指定する文字列。  
+-   <span data-ttu-id="c10d0-116">ゲーム ピースに使用するイメージのファイル名を指定する文字列。</span><span class="sxs-lookup"><span data-stu-id="c10d0-116">A string that specifies the file name of the image to use for the game piece.</span></span>  
   
- また、コンストラクターは、<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D> オブジェクトと <xref:System.Windows.Input.Manipulations.InertiaProcessor2D> オブジェクトを作成し、それらのイベントのイベント ハンドラーを確立します。  
+ <span data-ttu-id="c10d0-117">また、コンストラクターは、<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D> オブジェクトと <xref:System.Windows.Input.Manipulations.InertiaProcessor2D> オブジェクトを作成し、それらのイベントのイベント ハンドラーを確立します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-117">The constructor also creates a <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D> object and an <xref:System.Windows.Input.Manipulations.InertiaProcessor2D> object, and establishes event handlers for their events.</span></span>  
   
- 次のコードは、**GamePiece** クラスのコンストラクターを示します。  
+ <span data-ttu-id="c10d0-118">次のコードは、**GamePiece** クラスのコンストラクターを示します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-118">The following code shows the constructor for the **GamePiece** class.</span></span>  
   
  [!code-csharp[ManipulationXNA#_GamePiece_Constructor](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiece.cs#_gamepiece_constructor)]  
   
-## <a name="capturing-mouse-input"></a>マウスの入力のキャプチャ  
- **UpdateFromMouse** メソッドは、マウスがゲーム ピースの境界内にある間にマウス ボタンが押されたときに検出するとともに、マウス ボタンが離されたときに検出する役割を務めます。  
+## <a name="capturing-mouse-input"></a><span data-ttu-id="c10d0-119">マウスの入力のキャプチャ</span><span class="sxs-lookup"><span data-stu-id="c10d0-119">Capturing Mouse Input</span></span>  
+ <span data-ttu-id="c10d0-120">**UpdateFromMouse** メソッドは、マウスがゲーム ピースの境界内にある間にマウス ボタンが押されたときに検出するとともに、マウス ボタンが離されたときに検出する役割を務めます。</span><span class="sxs-lookup"><span data-stu-id="c10d0-120">The **UpdateFromMouse** method is responsible for detecting when a mouse button is pressed while the mouse is within the boundaries of the game piece, and for detecting when the mouse button has been released.</span></span>  
   
- (マウスがピースの境界内にある間に) マウスの左ボタンを押すと、このメソッドはフラグを設定して、ゲーム ピースがマウスをキャプチャして、操作の処理を開始することを示します。  
+ <span data-ttu-id="c10d0-121">(マウスがピースの境界内にある間に) マウスの左ボタンを押すと、このメソッドはフラグを設定して、ゲーム ピースがマウスをキャプチャして、操作の処理を開始することを示します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-121">When the left mouse button is pressed (while the mouse is inside the piece boundaries), this method sets a flag to indicate that this game piece has captured the mouse, and begins manipulation processing.</span></span>  
   
- 操作の処理は、<xref:System.Windows.Input.Manipulations.Manipulator2D> オブジェクトの配列を作成し、それを <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D> オブジェクトに渡して開始します。 これにより、操作プロセッサがマニピュレーター (この場合は 1 つのマニピュレーター) を評価し、操作イベントを発生させます。  
+ <span data-ttu-id="c10d0-122">操作の処理は、<xref:System.Windows.Input.Manipulations.Manipulator2D> オブジェクトの配列を作成し、それを <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D> オブジェクトに渡して開始します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-122">Manipulation processing is started by creating an array of <xref:System.Windows.Input.Manipulations.Manipulator2D> objects and passing them to the <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D> object.</span></span> <span data-ttu-id="c10d0-123">これにより、操作プロセッサがマニピュレーター (この場合は 1 つのマニピュレーター) を評価し、操作イベントを発生させます。</span><span class="sxs-lookup"><span data-stu-id="c10d0-123">This causes the manipulation processor to evaluate the manipulators (in this case a single manipulator), and raise manipulation events.</span></span>  
   
- さらに、ドラッグが発生するポイントが保存されます。 これは後の <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta> イベントのときに、ゲーム ピースがドラッグ ポイントの背後の線に向かって移動するようにデルタ変換値を調整するために使用します。  
+ <span data-ttu-id="c10d0-124">さらに、ドラッグが発生するポイントが保存されます。</span><span class="sxs-lookup"><span data-stu-id="c10d0-124">In addition, the point at which the drag is occurring is saved.</span></span> <span data-ttu-id="c10d0-125">これは後の <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta> イベントのときに、ゲーム ピースがドラッグ ポイントの背後の線に向かって移動するようにデルタ変換値を調整するために使用します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-125">This is used later during the <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta> event to adjust the delta translation values so that the game piece swings into line behind the drag point.</span></span>  
   
- 最後に、このメソッドは、マウスのキャプチャの状態を返します。 これにより、[GamePieceCollection](../../../docs/framework/common-client-technologies/creating-the-gamepiececollection-class.md) オブジェクトは、複数のゲーム ピースがある場合にキャプチャを管理できるようになります。  
+ <span data-ttu-id="c10d0-126">最後に、このメソッドは、マウスのキャプチャの状態を返します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-126">Finally, this method returns the state of the mouse capture.</span></span> <span data-ttu-id="c10d0-127">これにより、[GamePieceCollection](../../../docs/framework/common-client-technologies/creating-the-gamepiececollection-class.md) オブジェクトは、複数のゲーム ピースがある場合にキャプチャを管理できるようになります。</span><span class="sxs-lookup"><span data-stu-id="c10d0-127">This enables the [GamePieceCollection](../../../docs/framework/common-client-technologies/creating-the-gamepiececollection-class.md) object to manage capturing when there are multiple game pieces.</span></span>  
   
- 次のコードは、**UpdateFromMouse** メソッドを示しています。  
+ <span data-ttu-id="c10d0-128">次のコードは、**UpdateFromMouse** メソッドを示しています。</span><span class="sxs-lookup"><span data-stu-id="c10d0-128">The following code shows the **UpdateFromMouse** method.</span></span>  
   
  [!code-csharp[ManipulationXNA#_GamePiece_UpdateFromMouse](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiece.cs#_gamepiece_updatefrommouse)]  
   
-## <a name="processing-manipulations"></a>操作の処理  
- 操作の開始時に、<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Started> イベントが発生します。 このイベントのハンドラーは、慣性の処理が発生している場合は停止し、*processInertia* フラグを `false` に設定します。  
+## <a name="processing-manipulations"></a><span data-ttu-id="c10d0-129">操作の処理</span><span class="sxs-lookup"><span data-stu-id="c10d0-129">Processing Manipulations</span></span>  
+ <span data-ttu-id="c10d0-130">操作の開始時に、<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Started> イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-130">When manipulation begins, the <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Started> event is raised.</span></span> <span data-ttu-id="c10d0-131">このイベントのハンドラーは、慣性の処理が発生している場合は停止し、*processInertia* フラグを `false` に設定します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-131">The handler for this event stops inertia processing if it is occurring, and sets the *processInertia* flag to `false`.</span></span>  
   
  [!code-csharp[ManipulationXNA#_GamePiece_OnManipulationStarted](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiece.cs#_gamepiece_onmanipulationstarted)]  
   
- 操作に関連している値が変化するため、<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta> イベントが発生します。 このイベントのハンドラーは、ゲーム ピースの位置と回転の値を変更するイベント引数に渡されるデルタ値を使用します。  
+ <span data-ttu-id="c10d0-132">操作に関連している値が変化するため、<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta> イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-132">As the values associated with the manipulation change, the <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta> event is raised.</span></span> <span data-ttu-id="c10d0-133">このイベントのハンドラーは、ゲーム ピースの位置と回転の値を変更するイベント引数に渡されるデルタ値を使用します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-133">The handler for this event uses the delta values passed in the event arguments to make changes to the position and rotation values of the game piece.</span></span>  
   
  [!code-csharp[ManipulationXNA#_GamePiece_OnManipulationDelta](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiece.cs#_gamepiece_onmanipulationdelta)]  
   
- 操作に関連するすべてのマニピュレーター (この場合は 1 つのマニピュレーター) が削除されると、操作プロセッサは <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Completed> イベントを生成します。 このイベントのハンドラーは、慣性プロセッサの初期速度をイベント引数によって報告された初期速度に設定して慣性の処理を開始するとともに、*processInertia* フラグを `true` に設定します。  
+ <span data-ttu-id="c10d0-134">操作に関連するすべてのマニピュレーター (この場合は 1 つのマニピュレーター) が削除されると、操作プロセッサは <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Completed> イベントを生成します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-134">When all of the manipulators (in this case, a single manipulator) that are associated with a manipulation are removed, the manipulation processor raises the <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Completed> event.</span></span> <span data-ttu-id="c10d0-135">このイベントのハンドラーは、慣性プロセッサの初期速度をイベント引数によって報告された初期速度に設定して慣性の処理を開始するとともに、*processInertia* フラグを `true` に設定します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-135">The handler for this event begins inertia processing by setting the initial velocities of the inertia processor to those reported by the event arguments, and sets the *processInertia* flag to `true`.</span></span>  
   
  [!code-csharp[ManipulationXNA#_GamePiece_OnManipulationCompleted](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiece.cs#_gamepiece_onmanipulationcompleted)]  
   
-## <a name="processing-inertia"></a>慣性の処理  
- 慣性の処理では、角速度と直線速度、位置 (変換) 座標、および回転の新しい値を推定します。<xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Delta> イベントが発生します。 このイベントのハンドラーは、ゲーム ピースの位置と回転を変更するイベント引数に渡されるデルタ値を使用します。  
+## <a name="processing-inertia"></a><span data-ttu-id="c10d0-136">慣性の処理</span><span class="sxs-lookup"><span data-stu-id="c10d0-136">Processing Inertia</span></span>  
+ <span data-ttu-id="c10d0-137">慣性の処理では、角速度と直線速度、位置 (変換) 座標、および回転の新しい値を推定します。<xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Delta> イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-137">As inertia processing extrapolates new values for angular and linear velocities, position (translation) coordinates, and rotation, the <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Delta> event is raised.</span></span> <span data-ttu-id="c10d0-138">このイベントのハンドラーは、ゲーム ピースの位置と回転を変更するイベント引数に渡されるデルタ値を使用します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-138">The handler for this event uses the delta values passed in the event arguments to modify the position and rotation of the game piece.</span></span>  
   
- 新しい座標によって、ゲーム ピースがビュー ポートの境界を越えてしまった場合、慣性の処理の速度が元に戻ります。 これにより、ゲーム ピースが接したビュー ポートの境界から跳ね返ります。  
+ <span data-ttu-id="c10d0-139">新しい座標によって、ゲーム ピースがビュー ポートの境界を越えてしまった場合、慣性の処理の速度が元に戻ります。</span><span class="sxs-lookup"><span data-stu-id="c10d0-139">If the new coordinates result in the game piece moving beyond the view port boundaries, the velocity of the inertia processing is reversed.</span></span> <span data-ttu-id="c10d0-140">これにより、ゲーム ピースが接したビュー ポートの境界から跳ね返ります。</span><span class="sxs-lookup"><span data-stu-id="c10d0-140">This causes the game piece to bounce off the view port boundary that it has encountered.</span></span>  
   
- 推定が実行している間は、<xref:System.Windows.Input.Manipulations.InertiaProcessor2D> オブジェクトのプロパティを変更できません。 そのため、X または Y の速度を元に戻す場合、イベント ハンドラーは、最初に <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Complete%2A> メソッドを呼び出して慣性を停止します。 続いて、新しい初期速度値を、(スポンジ動作向けに調整された) 現在の速度値に割り当てます。また、*processInertia* フラグを `true` に設定します。  
+ <span data-ttu-id="c10d0-141">推定が実行している間は、<xref:System.Windows.Input.Manipulations.InertiaProcessor2D> オブジェクトのプロパティを変更できません。</span><span class="sxs-lookup"><span data-stu-id="c10d0-141">You cannot change the properties of an <xref:System.Windows.Input.Manipulations.InertiaProcessor2D> object while it is running extrapolation.</span></span> <span data-ttu-id="c10d0-142">そのため、X または Y の速度を元に戻す場合、イベント ハンドラーは、最初に <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Complete%2A> メソッドを呼び出して慣性を停止します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-142">Therefore, when reversing the X or Y velocity, the event handler first stops inertia by calling the <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Complete%2A> method.</span></span> <span data-ttu-id="c10d0-143">続いて、新しい初期速度値を、(スポンジ動作向けに調整された) 現在の速度値に割り当てます。また、*processInertia* フラグを `true` に設定します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-143">It then assigns the new initial velocity values to be the current velocity values (adjusted for sponge behavior), and sets the *processInertia* flag to `true`.</span></span>  
   
- 次のコードは、<xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Delta> イベントのイベント ハンドラーを示しています。  
+ <span data-ttu-id="c10d0-144">次のコードは、<xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Delta> イベントのイベント ハンドラーを示しています。</span><span class="sxs-lookup"><span data-stu-id="c10d0-144">The following code shows the event handler for the <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Delta> event.</span></span>  
   
  [!code-csharp[ManipulationXNA#_GamePiece_OnInertiaDelta](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiece.cs#_gamepiece_oninertiadelta)]  
   
- 慣性の処理が完了すると、慣性プロセッサは <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Completed> イベントを発生させます。 このイベントのハンドラーは、*processInertia* フラグを `false` に設定します。  
+ <span data-ttu-id="c10d0-145">慣性の処理が完了すると、慣性プロセッサは <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Completed> イベントを発生させます。</span><span class="sxs-lookup"><span data-stu-id="c10d0-145">When inertia processing is complete, the inertia processor raises the <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Completed> event.</span></span> <span data-ttu-id="c10d0-146">このイベントのハンドラーは、*processInertia* フラグを `false` に設定します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-146">The handler for this event sets the *processInertia* flag to `false`.</span></span>  
   
  [!code-csharp[ManipulationXNA#_GamePiece_OnInertiaCompleted](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiece.cs#_gamepiece_oninertiacompleted)]  
   
- これまでに提示したロジックで、実際に慣性の推定が発生するものはありません。 これは、**ProcessInertia** メソッドで実現されます。 このメソッドは、ゲームの更新ループ ([Game.Update](http://msdn.microsoft.com/library/microsoft.xna.framework.game.update.aspx) メソッド) から繰り返し呼び出され、*processInertia* フラグが `true` に設定されていることを確認します。設定されている場合は <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Process%2A> メソッドを呼び出します。 このメソッドを呼び出すと、推定が発生して、<xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Delta> イベントが発生します。  
+ <span data-ttu-id="c10d0-147">これまでに提示したロジックで、実際に慣性の推定が発生するものはありません。</span><span class="sxs-lookup"><span data-stu-id="c10d0-147">None of the logic presented so far actually causes inertia extrapolation to occur.</span></span> <span data-ttu-id="c10d0-148">これは、**ProcessInertia** メソッドで実現されます。</span><span class="sxs-lookup"><span data-stu-id="c10d0-148">This is accomplished in the **ProcessInertia** method.</span></span> <span data-ttu-id="c10d0-149">このメソッドは、ゲームの更新ループ ([Game.Update](http://msdn.microsoft.com/library/microsoft.xna.framework.game.update.aspx) メソッド) から繰り返し呼び出され、*processInertia* フラグが `true` に設定されていることを確認します。設定されている場合は <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Process%2A> メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-149">This method, which is called repeatedly from the game update loop (the [Game.Update](http://msdn.microsoft.com/library/microsoft.xna.framework.game.update.aspx) method) checks to see if the *processInertia* flag is set to `true`, and if so, calls the <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Process%2A> method.</span></span> <span data-ttu-id="c10d0-150">このメソッドを呼び出すと、推定が発生して、<xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Delta> イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-150">Calling this method causes extrapolation to occur, and raises the <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Delta> event.</span></span>  
   
  [!code-csharp[ManipulationXNA#_GamePiece_ProcessInertia](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiece.cs#_gamepiece_processinertia)]  
   
- いずれかの描画メソッドのオーバーロードが呼び出されるまで、ゲーム ピースは実際に表示されません。 このメソッドの最初のオーバー ロードは、ゲームの描画ループから繰り返し呼び出されます ([Game.Draw](http://msdn.microsoft.com/library/microsoft.xna.framework.game.draw.aspx) メソッド)。 これにより、現在の位置、回転、およびスケール ファクターでゲーム ピースが表示されます。  
+ <span data-ttu-id="c10d0-151">いずれかの描画メソッドのオーバーロードが呼び出されるまで、ゲーム ピースは実際に表示されません。</span><span class="sxs-lookup"><span data-stu-id="c10d0-151">The game piece is not actually rendered until one of the Draw method overloads is called.</span></span> <span data-ttu-id="c10d0-152">このメソッドの最初のオーバー ロードは、ゲームの描画ループから繰り返し呼び出されます ([Game.Draw](http://msdn.microsoft.com/library/microsoft.xna.framework.game.draw.aspx) メソッド)。</span><span class="sxs-lookup"><span data-stu-id="c10d0-152">The first overload of this method is called repeatedly from the game draw loop (the [Game.Draw](http://msdn.microsoft.com/library/microsoft.xna.framework.game.draw.aspx) method).</span></span> <span data-ttu-id="c10d0-153">これにより、現在の位置、回転、およびスケール ファクターでゲーム ピースが表示されます。</span><span class="sxs-lookup"><span data-stu-id="c10d0-153">This renders the game piece with the current position, rotation, and scale factors.</span></span>  
   
  [!code-csharp[ManipulationXNA#_GamePiece_Draw](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiece.cs#_gamepiece_draw)]  
   
-## <a name="additional-properties"></a>その他のプロパティ  
- **GamePiece** クラスによって 3 つのプライベート プロパティが使用されます。  
+## <a name="additional-properties"></a><span data-ttu-id="c10d0-154">その他のプロパティ</span><span class="sxs-lookup"><span data-stu-id="c10d0-154">Additional Properties</span></span>  
+ <span data-ttu-id="c10d0-155">**GamePiece** クラスによって 3 つのプライベート プロパティが使用されます。</span><span class="sxs-lookup"><span data-stu-id="c10d0-155">Three private properties are used by the **GamePiece** class.</span></span>  
   
-1.  **Timestamp** – 操作と慣性プロセッサが使用するタイムスタンプ値を取得します。  
+1.  <span data-ttu-id="c10d0-156">**Timestamp** – 操作と慣性プロセッサが使用するタイムスタンプ値を取得します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-156">**Timestamp** – Gets a timestamp value to be used by the manipulation and inertia processors.</span></span>  
   
-2.  **X** – ゲーム ピースの X 座標を取得または設定します。 設定すると、ヒット テストや、操作プロセッサのピボット位置に使用する境界を調整します。  
+2.  <span data-ttu-id="c10d0-157">**X** – ゲーム ピースの X 座標を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-157">**X** – Gets or sets the X coordinate of the game piece.</span></span> <span data-ttu-id="c10d0-158">設定すると、ヒット テストや、操作プロセッサのピボット位置に使用する境界を調整します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-158">When setting, adjusts the bounds used for hit testing and the pivot location of the manipulation processor.</span></span>  
   
-3.  **Y** – ゲーム ピースの Y 座標を取得または設定します。 設定すると、ヒット テストや、操作プロセッサのピボット位置に使用する境界を調整します。  
+3.  <span data-ttu-id="c10d0-159">**Y** – ゲーム ピースの Y 座標を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-159">**Y** – Gets or sets the Y coordinate of the game piece.</span></span> <span data-ttu-id="c10d0-160">設定すると、ヒット テストや、操作プロセッサのピボット位置に使用する境界を調整します。</span><span class="sxs-lookup"><span data-stu-id="c10d0-160">When setting, adjusts the bounds used for hit testing and the pivot location of the manipulation processor.</span></span>  
   
  [!code-csharp[ManipulationXNA#_GamePiece_PrivateProperties](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiece.cs#_gamepiece_privateproperties)]  
   
-## <a name="see-also"></a>関連項目  
- [操作と慣性](../../../docs/framework/common-client-technologies/manipulations-and-inertia.md)   
- [XNA アプリケーションでの操作と慣性の使用](../../../docs/framework/common-client-technologies/use-manipulations-and-inertia-in-an-xna-application.md)   
- [GamePieceCollection クラスの作成](../../../docs/framework/common-client-technologies/creating-the-gamepiececollection-class.md)   
- [Game1 クラスの作成](../../../docs/framework/common-client-technologies/creating-the-game1-class.md)
-
+## <a name="see-also"></a><span data-ttu-id="c10d0-161">関連項目</span><span class="sxs-lookup"><span data-stu-id="c10d0-161">See Also</span></span>  
+ [<span data-ttu-id="c10d0-162">操作と慣性</span><span class="sxs-lookup"><span data-stu-id="c10d0-162">Manipulations and Inertia</span></span>](../../../docs/framework/common-client-technologies/manipulations-and-inertia.md)  
+ [<span data-ttu-id="c10d0-163">XNA アプリケーションでの操作と慣性の使用</span><span class="sxs-lookup"><span data-stu-id="c10d0-163">Using Manipulations and Inertia in an XNA Application</span></span>](../../../docs/framework/common-client-technologies/use-manipulations-and-inertia-in-an-xna-application.md)  
+ [<span data-ttu-id="c10d0-164">GamePieceCollection クラスの作成</span><span class="sxs-lookup"><span data-stu-id="c10d0-164">Creating the GamePieceCollection Class</span></span>](../../../docs/framework/common-client-technologies/creating-the-gamepiececollection-class.md)  
+ [<span data-ttu-id="c10d0-165">Game1 クラスの作成</span><span class="sxs-lookup"><span data-stu-id="c10d0-165">Creating the Game1 Class</span></span>](../../../docs/framework/common-client-technologies/creating-the-game1-class.md)

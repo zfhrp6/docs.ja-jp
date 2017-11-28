@@ -1,77 +1,80 @@
 ---
-title: "TemplateBinding のマークアップ拡張機能 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "TemplateBinding"
-  - "TemplateBindingExtension"
-helpviewer_keywords: 
-  - "TemplateBinding のマークアップ拡張機能"
-  - "XAML, TemplateBinding マークアップ拡張機能"
+title: "TemplateBinding のマークアップ拡張機能"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- TemplateBinding
+- TemplateBindingExtension
+helpviewer_keywords:
+- XAML [WPF], TemplateBinding markup extension
+- TemplateBinding markup extensions [WPF]
 ms.assetid: 1d25bbfc-dbc2-499d-9f12-419d23d4ac6a
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5ab8645de78a79f4bd47fa436699af002db99b9b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# TemplateBinding のマークアップ拡張機能
-コントロール テンプレート内のプロパティの値を、template 宣言されたコントロールの別のプロパティの値にリンクします。  
+# <a name="templatebinding-markup-extension"></a><span data-ttu-id="a4cf3-102">TemplateBinding のマークアップ拡張機能</span><span class="sxs-lookup"><span data-stu-id="a4cf3-102">TemplateBinding Markup Extension</span></span>
+<span data-ttu-id="a4cf3-103">コントロール テンプレート内のプロパティの値を、template 宣言されたコントロールの別のプロパティの値にリンクします。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-103">Links the value of a property in a control template to be the value of another property on the templated control.</span></span>  
   
-## XAML 属性の使用方法  
+## <a name="xaml-attribute-usage"></a><span data-ttu-id="a4cf3-104">XAML 属性の使用方法</span><span class="sxs-lookup"><span data-stu-id="a4cf3-104">XAML Attribute Usage</span></span>  
   
-```  
-<object property="{TemplateBinding sourceProperty}" .../>  
-```  
-  
-## XAML 属性の使用方法 \(テンプレートまたはスタイルの Setter プロパティの場合\)  
-  
-```  
-<Setter Property="propertyName" Value="{TemplateBinding sourceProperty}" .../>  
+```xml  
+<object property="{TemplateBinding sourceProperty}" .../>  
 ```  
   
-## XAML 値  
+## <a name="xaml-attribute-usage-for-setter-property-in-template-or-style"></a><span data-ttu-id="a4cf3-105">XAML 属性の使用方法 (テンプレートまたはスタイルの Setter プロパティの場合)</span><span class="sxs-lookup"><span data-stu-id="a4cf3-105">XAML Attribute Usage (for Setter property in template or style)</span></span>  
+  
+```xml  
+<Setter Property="propertyName" Value="{TemplateBinding sourceProperty}" .../>  
+```  
+  
+## <a name="xaml-values"></a><span data-ttu-id="a4cf3-106">XAML 値</span><span class="sxs-lookup"><span data-stu-id="a4cf3-106">XAML Values</span></span>  
   
 |||  
 |-|-|  
-|`propertyName`|Setter 構文で設定されるプロパティの <xref:System.Windows.DependencyProperty.Name%2A?displayProperty=fullName>。|  
-|`sourceProperty`|template 宣言された型に存在する、<xref:System.Windows.DependencyProperty.Name%2A?displayProperty=fullName> によって指定された別の依存関係プロパティ。<br /><br /> または<br /><br /> template 宣言された対象の型とは異なる型で定義されている "ドットダウン" プロパティ名。  これは、実際には <xref:System.Windows.PropertyPath> です。  「[PropertyPath の XAML 構文](../../../../docs/framework/wpf/advanced/propertypath-xaml-syntax.md)」を参照してください。|  
+|`propertyName`|<span data-ttu-id="a4cf3-107">Setter 構文で設定されるプロパティの <xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType>。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-107"><xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType> of the property being set in the setter syntax.</span></span>|  
+|`sourceProperty`|<span data-ttu-id="a4cf3-108">template 宣言された型に存在する、<xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType> によって指定された別の依存関係プロパティ。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-108">Another dependency property that exists on the type being templated, specified by its <xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType>.</span></span><br /><br /> <span data-ttu-id="a4cf3-109">または</span><span class="sxs-lookup"><span data-stu-id="a4cf3-109">- or -</span></span><br /><br /> <span data-ttu-id="a4cf3-110">template 宣言された対象の型とは異なる型で定義されている "ドットダウン" プロパティ名。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-110">A "dotted-down" property name that is defined by a different type than the target type being templated.</span></span> <span data-ttu-id="a4cf3-111">これは、実際には <xref:System.Windows.PropertyPath> です。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-111">This is actually a <xref:System.Windows.PropertyPath>.</span></span> <span data-ttu-id="a4cf3-112">参照してください[PropertyPath XAML 構文](../../../../docs/framework/wpf/advanced/propertypath-xaml-syntax.md)です。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-112">See [PropertyPath XAML Syntax](../../../../docs/framework/wpf/advanced/propertypath-xaml-syntax.md).</span></span>|  
   
-## 解説  
- `TemplateBinding` は、テンプレート シナリオに合わせて最適化された形態の[バインディング](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)であり、`{Binding RelativeSource={RelativeSource TemplatedParent}}` を使用して構築された `Binding` に類似します。  関連するプロパティが既定で双方向のバインディングの場合でも、`TemplateBinding` は常に一方向のバインディングです。  関連する両方のプロパティは、依存関係プロパティである必要があります。  
+## <a name="remarks"></a><span data-ttu-id="a4cf3-113">コメント</span><span class="sxs-lookup"><span data-stu-id="a4cf3-113">Remarks</span></span>  
+ <span data-ttu-id="a4cf3-114">A`TemplateBinding`の最適化された形式は、[バインド](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)テンプレートのシナリオでに似ています、`Binding`で構築された`{Binding RelativeSource={RelativeSource TemplatedParent}}`です。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-114">A `TemplateBinding` is an optimized form of a [Binding](../../../../docs/framework/wpf/advanced/binding-markup-extension.md) for template scenarios, analogous to a `Binding` constructed with `{Binding RelativeSource={RelativeSource TemplatedParent}}`.</span></span> <span data-ttu-id="a4cf3-115">関連するプロパティが既定で双方向のバインディングの場合でも、`TemplateBinding` は常に一方向のバインディングです。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-115">A `TemplateBinding` is always a one-way binding, even if properties involved default to two-way binding.</span></span> <span data-ttu-id="a4cf3-116">関連する両方のプロパティは、依存関係プロパティである必要があります。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-116">Both properties involved must be dependency properties.</span></span>  
   
- [RelativeSource](../../../../docs/framework/wpf/advanced/relativesource-markupextension.md) もマークアップ拡張機能の 1 つであり、テンプレート内で相対プロパティ バインディングを実行するために、`TemplateBinding` と組み合わせて使用されたり、TemplateBinding の代わりに使用されることがあります。  
+ <span data-ttu-id="a4cf3-117">[RelativeSource](../../../../docs/framework/wpf/advanced/relativesource-markupextension.md)はと共に、またはの代わりに使用する他のマークアップ拡張機能は、`TemplateBinding`テンプレート内の相対プロパティ バインディングを実行するためにします。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-117">[RelativeSource](../../../../docs/framework/wpf/advanced/relativesource-markupextension.md) is another markup extension that is sometimes used in conjunction with or instead of `TemplateBinding` in order to perform relative property binding within a template.</span></span>  
   
- ここでは説明されていないコントロール テンプレートの概念については、「[コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)」を参照してください。  
+ <span data-ttu-id="a4cf3-118">コントロール テンプレートを説明する概念としてはここでは含まれていません。詳細については、次を参照してください。[コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)です。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-118">Describing control templates as a concept is not covered here; for more information, see [Control Styles and Templates](../../../../docs/framework/wpf/controls/control-styles-and-templates.md).</span></span>  
   
- 属性構文は、このマークアップ拡張機能で使用される最も一般的な構文です。  `TemplateBinding` 識別子文字列の後に設定される文字列トークンは、基になる <xref:System.Windows.TemplateBindingExtension> 拡張クラスの <xref:System.Windows.TemplateBindingExtension.Property%2A> 値として割り当てられます。  
+ <span data-ttu-id="a4cf3-119">属性構文は、このマークアップ拡張機能で使用される最も一般的な構文です。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-119">Attribute syntax is the most common syntax used with this markup extension.</span></span> <span data-ttu-id="a4cf3-120">`TemplateBinding` 識別子文字列の後に設定される文字列トークンは、基になる <xref:System.Windows.TemplateBindingExtension.Property%2A> 拡張クラスの <xref:System.Windows.TemplateBindingExtension> 値として割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-120">The string token provided after the `TemplateBinding` identifier string is assigned as the <xref:System.Windows.TemplateBindingExtension.Property%2A> value of the underlying <xref:System.Windows.TemplateBindingExtension> extension class.</span></span>  
   
- オブジェクト要素構文を使用することもできますが、現実的な用途がないためここでは触れません。  `TemplateBinding` は、評価された式を使用して setter 内で値を埋め込むために使用され、`TemplateBinding` を使用する場合、TemplateBinding が `<Setter.Property>` プロパティ要素構文を埋め込むためのオブジェクト要素構文は、必要以上に詳細です。  
+ <span data-ttu-id="a4cf3-121">オブジェクト要素構文を使用することもできますが、現実的な用途がないためここでは触れません。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-121">Object element syntax is possible, but it is not shown because it has no realistic application.</span></span> <span data-ttu-id="a4cf3-122">`TemplateBinding` は、評価された式を使用して setter 内で値を埋め込むために使用され、`TemplateBinding` を使用する場合、TemplateBinding が `<Setter.Property>` プロパティ要素構文を埋め込むためのオブジェクト要素構文は、必要以上に詳細です。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-122">`TemplateBinding` is used to fill values within setters, using evaluated expressions, and using object element syntax for `TemplateBinding` to fill `<Setter.Property>` property element syntax is unnecessarily verbose.</span></span>  
   
- `TemplateBinding` は、<xref:System.Windows.TemplateBindingExtension.Property%2A> プロパティをプロパティおよび値のペアとして指定する詳細出力属性使用でも使用できます。  
+ <span data-ttu-id="a4cf3-123">`TemplateBinding` は、<xref:System.Windows.TemplateBindingExtension.Property%2A> プロパティをプロパティおよび値のペアとして指定する詳細出力属性使用でも使用できます。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-123">`TemplateBinding` can also be used in a verbose attribute usage that specifies the <xref:System.Windows.TemplateBindingExtension.Property%2A> property as a property=value pair:</span></span>  
   
+```xml  
+<object property="{TemplateBinding Property=sourceProperty}" .../>  
 ```  
-<object property="{TemplateBinding Property=sourceProperty}" .../>  
-```  
   
- 詳細出力の使用は、複数の設定可能プロパティを持つ拡張機能や、一部のプロパティがオプションである場合に役立ちます。  `TemplateBinding` には、必須の設定可能プロパティが 1 つしか存在しないため、このような詳細出力の使用は一般的ではありません。  
+ <span data-ttu-id="a4cf3-124">詳細出力の使用は、複数の設定可能プロパティを持つ拡張機能や、一部のプロパティがオプションである場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-124">The verbose usage is often useful for extensions that have more than one settable property, or if some properties are optional.</span></span> <span data-ttu-id="a4cf3-125">`TemplateBinding` には、必須の設定可能プロパティが 1 つしか存在しないため、このような詳細出力の使用は一般的ではありません。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-125">Because `TemplateBinding` has only one settable property, which is required, this verbose usage is not typical.</span></span>  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] XAML プロセッサ実装では、このマークアップ拡張機能の処理は、<xref:System.Windows.TemplateBindingExtension> クラスによって定義されます。  
+ <span data-ttu-id="a4cf3-126">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] XAML プロセッサの実装でこのマークアップ拡張機能の処理が定義されている、<xref:System.Windows.TemplateBindingExtension>クラスです。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-126">In the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] XAML processor implementation, the handling for this markup extension is defined by the <xref:System.Windows.TemplateBindingExtension> class.</span></span>  
   
- `TemplateBinding` はマークアップ拡張機能です。  一般にマークアップ拡張機能を実装するのは、属性値をリテラル値やハンドラー名以外にエスケープする要件が存在し、その要件の適用範囲がグローバルで、特定の型やプロパティに型コンバーターを適用するだけにとどまらない場合です。  XAML のすべてのマークアップ拡張機能では、それぞれの属性構文で `{` と `}` の 2 つの記号を使用します。これは規約であり、これに従って XAML プロセッサは、マークアップ拡張機能で属性を処理する必要があることを認識します。  詳細については、「[マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)」を参照してください。  
+ <span data-ttu-id="a4cf3-127">`TemplateBinding` はマークアップ拡張機能です。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-127">`TemplateBinding` is a markup extension.</span></span> <span data-ttu-id="a4cf3-128">一般にマークアップ拡張機能を実装するのは、属性値をリテラル値やハンドラー名以外にエスケープする要件が存在し、その要件の適用範囲がグローバルで、特定の型やプロパティに型コンバーターを適用するだけにとどまらない場合です。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-128">Markup extensions are typically implemented when there is a requirement to escape attribute values to be other than literal values or handler names, and the requirement is more global than just putting type converters on certain types or properties.</span></span> <span data-ttu-id="a4cf3-129">XAML の使用中のすべてのマークアップ拡張機能、`{`と`}`マークアップ拡張機能が、属性を処理する必要がありますを XAML プロセッサが認識する規則は、それぞれの属性構文内の文字です。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-129">All markup extensions in XAML use the `{` and `}` characters in their attribute syntax, which is the convention by which a XAML processor recognizes that a markup extension must process the attribute.</span></span> <span data-ttu-id="a4cf3-130">詳細については、次を参照してください。[マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)です。</span><span class="sxs-lookup"><span data-stu-id="a4cf3-130">For more information, see [Markup Extensions and WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).</span></span>  
   
-## 参照  
- <xref:System.Windows.Style>   
- <xref:System.Windows.Controls.ControlTemplate>   
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [XAML の概要 \(WPF\)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)   
- [マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)   
- [RelativeSource のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/relativesource-markupextension.md)   
- [バインドのマークアップ拡張機能](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)
+## <a name="see-also"></a><span data-ttu-id="a4cf3-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="a4cf3-131">See Also</span></span>  
+ <xref:System.Windows.Style>  
+ <xref:System.Windows.Controls.ControlTemplate>  
+ [<span data-ttu-id="a4cf3-132">スタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="a4cf3-132">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [<span data-ttu-id="a4cf3-133">XAML の概要 (WPF)</span><span class="sxs-lookup"><span data-stu-id="a4cf3-133">XAML Overview (WPF)</span></span>](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
+ [<span data-ttu-id="a4cf3-134">マークアップ拡張機能と WPF XAML</span><span class="sxs-lookup"><span data-stu-id="a4cf3-134">Markup Extensions and WPF XAML</span></span>](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)  
+ [<span data-ttu-id="a4cf3-135">RelativeSource のマークアップ拡張機能</span><span class="sxs-lookup"><span data-stu-id="a4cf3-135">RelativeSource MarkupExtension</span></span>](../../../../docs/framework/wpf/advanced/relativesource-markupextension.md)  
+ [<span data-ttu-id="a4cf3-136">バインドのマークアップ拡張機能</span><span class="sxs-lookup"><span data-stu-id="a4cf3-136">Binding Markup Extension</span></span>](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)

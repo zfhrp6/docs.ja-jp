@@ -1,39 +1,42 @@
 ---
-title: "方法 : FocusVisualStyle をコントロールに適用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "FocusVisualStyle プロパティ"
-  - "プロパティ, FocusVisualStyle"
+title: "方法 : FocusVisualStyle をコントロールに適用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- properties [WPF], FocusVisualStyle
+- FocusVisualStyle property [WPF]
 ms.assetid: 363de99e-8ecc-438c-ac4a-f9147432ebd6
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f614e244293d08cd836edaf82496ca9e7b51423e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : FocusVisualStyle をコントロールに適用する
-この例では、<xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> プロパティを使用して、フォーカス表示スタイルをリソース内で作成し、このスタイルをコントロールに適用する方法を示しています。  
+# <a name="how-to-apply-a-focusvisualstyle-to-a-control"></a><span data-ttu-id="002ae-102">方法 : FocusVisualStyle をコントロールに適用する</span><span class="sxs-lookup"><span data-stu-id="002ae-102">How to: Apply a FocusVisualStyle to a Control</span></span>
+<span data-ttu-id="002ae-103">この例は、リソースにフォーカス visual スタイルを作成して、コントロールにスタイルを適用する方法を示しますを使用して、<xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="002ae-103">This example shows you how to create a focus visual style in resources and apply the style to a control, using the <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> property.</span></span>  
   
-## 使用例  
- 次の例では、コントロールが [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] 内でキーボードのフォーカスを受け取ったときにのみ適用される追加のコントロール複合を作成するスタイルを定義しています。  これを行うには、<xref:System.Windows.Controls.ControlTemplate> を使用してスタイルを定義し、<xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> プロパティを設定する際に、そのスタイルをリソースとして参照します。  
+## <a name="example"></a><span data-ttu-id="002ae-104">例</span><span class="sxs-lookup"><span data-stu-id="002ae-104">Example</span></span>  
+ <span data-ttu-id="002ae-105">次の例は、そのコントロールがキーボードでのフォーカスされたときにのみ適用する追加コントロールの複合を作成するスタイルを定義、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="002ae-105">The following example defines a style that creates additional control compositing that only applies when that control is keyboard focused in the [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)].</span></span> <span data-ttu-id="002ae-106">設定されたスタイルを定義することによってこれは、 <xref:System.Windows.Controls.ControlTemplate>、参照をリソースとしてのスタイルを設定するときに、<xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>プロパティ。</span><span class="sxs-lookup"><span data-stu-id="002ae-106">This is accomplished by defining a style with a <xref:System.Windows.Controls.ControlTemplate>, then referencing that style as a resource when setting the <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> property.</span></span>  
   
- 境界線に似た外部四角形を四角形領域の外側に配置します。  他の部分を変更しない限り、スタイルのサイズ指定には、フォーカス表示スタイルが適用される四角形コントロールの <xref:System.Windows.FrameworkElement.ActualHeight%2A> および <xref:System.Windows.FrameworkElement.ActualWidth%2A> が使用されます。  次の例では、<xref:System.Windows.FrameworkElement.Margin%2A>\> に負の値を設定して、フォーカスされたコントロールの少し外側に境界線を表示しています。  
+ <span data-ttu-id="002ae-107">境界線に似た外部四角形は四角形の領域の外側に配置します。</span><span class="sxs-lookup"><span data-stu-id="002ae-107">An external rectangle resembling a border is placed outside of the rectangular area.</span></span> <span data-ttu-id="002ae-108">スタイルのサイジングを使用して、それ以外の場合は変更しない限り、<xref:System.Windows.FrameworkElement.ActualHeight%2A>と<xref:System.Windows.FrameworkElement.ActualWidth%2A>四角形のコントロールがフォーカス visual スタイルが適用されるのです。</span><span class="sxs-lookup"><span data-stu-id="002ae-108">Unless otherwise modified, the sizing of the style uses the <xref:System.Windows.FrameworkElement.ActualHeight%2A> and <xref:System.Windows.FrameworkElement.ActualWidth%2A> of the rectangular control where the focus visual style is applied.</span></span> <span data-ttu-id="002ae-109">この例に負の値の設定、<xref:System.Windows.FrameworkElement.Margin%2A>フォーカスされたコントロールの外に若干表示枠を作成します。</span><span class="sxs-lookup"><span data-stu-id="002ae-109">This example sets negative values for the <xref:System.Windows.FrameworkElement.Margin%2A> to make the border appear slightly outside the focused control.</span></span>  
   
- [!code-xml[FEFocusVisualStyle#XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FEFocusVisualStyle/CS/page1.xaml#xaml)]  
+ [!code-xaml[FEFocusVisualStyle#XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FEFocusVisualStyle/CS/page1.xaml#xaml)]  
   
- <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> は、明示的なスタイルまたはテーマ スタイルに由来するコントロール テンプレート スタイルに付け加えるスタイルです。コントロールの主なスタイルは、<xref:System.Windows.Controls.ControlTemplate> を使用し、このスタイルを <xref:System.Windows.FrameworkElement.Style%2A> プロパティに設定することにより作成できます。  
+ <span data-ttu-id="002ae-110">A<xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>に付属している任意のコントロール テンプレート スタイル加法から、明示的なスタイルまたはテーマ スタイル; コントロールの主なスタイルも作成できますを使用して、<xref:System.Windows.Controls.ControlTemplate>にそのスタイルを設定して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="002ae-110">A <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> is additive to any control template style that comes either from an explicit style or a theme style; the primary style for a control can still be created by using a <xref:System.Windows.Controls.ControlTemplate> and setting that style to the <xref:System.Windows.FrameworkElement.Style%2A> property.</span></span>  
   
- フォーカス表示スタイルは、フォーカス可能な要素ごとに別のスタイルを使用するのではなく、テーマまたは UI 全体で一貫して同じスタイルを使用する必要があります。  詳細については、「[コントロールのフォーカスのスタイルと FocusVisualStyle](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)」を参照してください。  
+ <span data-ttu-id="002ae-111">Visual スタイルは、テーマ、または、UI の間で一貫して使用する必要がありますフォーカス フォーカス可能な要素ごとに別の名前を使用するのではなくです。</span><span class="sxs-lookup"><span data-stu-id="002ae-111">Focus visual styles should be used consistently across a theme or a UI, rather than using a different one for each focusable element.</span></span> <span data-ttu-id="002ae-112">詳細については、「[コントロール、および FocusVisualStyle でフォーカスのスタイルは](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)します。</span><span class="sxs-lookup"><span data-stu-id="002ae-112">For details, see [Styling for Focus in Controls, and FocusVisualStyle](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md).</span></span>  
   
-## 参照  
- <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>   
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [コントロールのフォーカスのスタイルと FocusVisualStyle](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)
+## <a name="see-also"></a><span data-ttu-id="002ae-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="002ae-113">See Also</span></span>  
+ <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>  
+ [<span data-ttu-id="002ae-114">スタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="002ae-114">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [<span data-ttu-id="002ae-115">コントロールのフォーカスのスタイルと FocusVisualStyle</span><span class="sxs-lookup"><span data-stu-id="002ae-115">Styling for Focus in Controls, and FocusVisualStyle</span></span>](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)

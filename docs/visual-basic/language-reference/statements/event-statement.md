@@ -1,58 +1,41 @@
 ---
-title: "Event ステートメント |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "Event ステートメント"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.Event
 - vb.Custom
-dev_langs:
-- VB
 helpviewer_keywords:
-- Event statement
-- declaring events, syntax
-- Public keyword, Event statements
-- Custom keyword
-- declarations, events
+- Event statement [Visual Basic]
+- declaring events [Visual Basic], syntax
+- Public keyword [Visual Basic], Event statements
+- Custom keyword [Visual Basic]
+- declarations [Visual Basic], events
 - event keyword [Visual Basic]
-- WithEvents keyword, Event statements
+- WithEvents keyword [Visual Basic], Event statements
 - events [Visual Basic], declaring
-- ByVal keyword, Event statements
+- ByVal keyword [Visual Basic], Event statements
 - events [Visual Basic], custom
-- ByRef keyword, Event statements
+- ByRef keyword [Visual Basic], Event statements
 - declaring user-defined events
 ms.assetid: 306ff8ed-74dd-4b6a-bd2f-e91b17474042
-caps.latest.revision: 33
+caps.latest.revision: "33"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b0ea8074f996622df3cd88a7e87fc1156b63dcaf
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: b863ed5c8aca3332f4af3d759789eec153a79aed
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="event-statement"></a>Event ステートメント
-ユーザー定義イベントを宣言します。  
+# <a name="event-statement"></a><span data-ttu-id="5d720-102">Event ステートメント</span><span class="sxs-lookup"><span data-stu-id="5d720-102">Event Statement</span></span>
+<span data-ttu-id="5d720-103">ユーザー定義イベントを宣言します。</span><span class="sxs-lookup"><span data-stu-id="5d720-103">Declares a user-defined event.</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="5d720-104">構文</span><span class="sxs-lookup"><span data-stu-id="5d720-104">Syntax</span></span>  
   
 ```  
 [ <attrlist> ] [ accessmodifier ] _  
@@ -78,78 +61,78 @@ ms.lasthandoff: 03/13/2017
 End Event  
 ```  
   
-## <a name="parts"></a>指定項目  
+## <a name="parts"></a><span data-ttu-id="5d720-105">指定項目</span><span class="sxs-lookup"><span data-stu-id="5d720-105">Parts</span></span>  
   
-|パーツ|説明|  
+|<span data-ttu-id="5d720-106">パーツ</span><span class="sxs-lookup"><span data-stu-id="5d720-106">Part</span></span>|<span data-ttu-id="5d720-107">説明</span><span class="sxs-lookup"><span data-stu-id="5d720-107">Description</span></span>|  
 |---|---|  
-|`attrlist`|省略可能です。 このイベントに適用される属性の一覧です。 複数の属性を指定するときは、コンマで区切ります。 囲む必要があります、[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこで ("`<`「と」`>`") です。|  
-|`accessmodifier`|省略可能です。 どのようなコードからイベントにアクセスできるのかを指定します。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md): 宣言された要素にアクセスできる任意のコードがアクセスできます。<br />-   [保護されている](../../../visual-basic/language-reference/modifiers/protected.md)— のみ、クラスまたは派生クラス内のコードでアクセスできます。<br />-   [フレンド](../../../visual-basic/language-reference/modifiers/friend.md)— のみ同じアセンブリ内のコードでアクセスできます。<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md): 宣言された要素のコードからのみアクセスできます。<br /><br /> `Protected Friend` と指定すると、イベントのクラス、その派生クラス、または同じアセンブリ内のコードからアクセスできます。|  
-|`Shared`|省略可能です。 このイベントがクラスまたは構造体の特定のインスタンスに関連付けられないことを指定します。|  
-|`Shadows`|省略可能です。 このイベントが、基本クラスにある、同じ名前を持つプログラミング要素、またはオーバーロードされる要素のセットを宣言し直して隠ぺいすることを示します。 宣言された要素は、他の任意の種類の要素でシャドウできます。<br /><br /> シャドウされた要素は、その要素をシャドウする派生クラスからは使用できません。ただし、シャドウする要素がアクセスできない要素の場合は例外です。 たとえば、`Private` 要素が基本クラスの要素をシャドウすると、`Private` 要素へのアクセス許可を持たないコードは、代わりに基本クラスにアクセスします。|  
-|`eventname`|必須です。 イベントの名前です。変数の標準的な名前付け規則に従って名前を付けます。|  
-|`parameterlist`|省略可能です。 このイベントのパラメーターを表すローカル変数のリストです。 囲む必要があります、[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)かっこ内に示します。|  
-|`Implements`|省略可能です。 このイベントがインターフェイスのイベントを実装することを示します。|  
-|`implementslist`|`Implements` を指定する場合は、必ず指定します。 実装される `Sub` プロシージャのリストです。 複数のプロシージャを指定するときは、コンマで区切ります。<br /><br /> *implementedprocedure* [、 *implementedprocedure* ...]<br /><br /> `implementedprocedure` の構文と指定項目は次のとおりです。<br /><br /> `interface`.`definedname`<br /><br /> -   `interface`必要です。 このプロシージャの包含クラスまたは包含構造体が実装しているインターフェイスの名前です。<br />-   `Definedname`必要です。 `interface` の中でプロシージャを定義するために使用する名前。 これは、`name` (定義されているプロシージャを実装するためにこのプロシージャが使用している名前) と同じである必要はありません。|  
-|`Custom`|必須です。 `Custom` として宣言されたイベントでは、`AddHandler`、`RemoveHandler`、および `RaiseEvent` の各カスタム アクセサーを定義する必要があります。|  
-|`delegatename`|省略可能です。 イベント ハンドラーの署名を指定するデリゲートの名前。|  
-|`AddHandler`|必須です。 `AddHandler` アクセサーを宣言します。ここでは、イベント ハンドラーが追加されたとき実行するステートメントを、`AddHandler` ステートメントを使って明示的に指定するか、`Handles` 句を使って暗黙的に指定します。|  
-|`End AddHandler`|必須です。 `AddHandler` ブロックを終了します。|  
-|`value`|必須です。 パラメーター名です。|  
-|`RemoveHandler`|必須です。 `RemoveHandler` アクセサーを宣言します。ここでは、イベント ハンドラーが削除されたときに実行するステートメントを、`RemoveHandler` ステートメントを使って指定します。|  
-|`End RemoveHandler`|必須です。 `RemoveHandler` ブロックを終了します。|  
-|`RaiseEvent`|必須です。 `RaiseEvent` アクセサーを宣言します。ここでは、イベントが発生したときに実行するステートメントを、`RaiseEvent` ステートメントを使って指定します。 通常は、`AddHandler` アクセサーと `RemoveHandler` アクセサーによって管理されるデリゲートのリストが呼び出されます。|  
-|`End RaiseEvent`|必須です。 `RaiseEvent` ブロックを終了します。|  
-|`delegatesignature`|必須です。 `delegatename` デリゲートに必要なパラメーターと一致するパラメーターのリストです。 囲む必要があります、[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)かっこ内に示します。|  
-|`statements`|省略可能です。 `AddHandler`、`RemoveHandler`、および `RaiseEvent` の各メソッドの本体が含まれるステートメントです。|  
-|`End Event`|必須です。 `Event` ブロックを終了します。|  
+|`attrlist`|<span data-ttu-id="5d720-108">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="5d720-108">Optional.</span></span> <span data-ttu-id="5d720-109">このイベントに適用される属性の一覧です。</span><span class="sxs-lookup"><span data-stu-id="5d720-109">List of attributes that apply to this event.</span></span> <span data-ttu-id="5d720-110">複数の属性を指定するときは、コンマで区切ります。</span><span class="sxs-lookup"><span data-stu-id="5d720-110">Multiple attributes are separated by commas.</span></span> <span data-ttu-id="5d720-111">囲む必要があります、[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこ ("`<`「と」`>`") です。</span><span class="sxs-lookup"><span data-stu-id="5d720-111">You must enclose the [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md) in angle brackets ("`<`" and "`>`").</span></span>|  
+|`accessmodifier`|<span data-ttu-id="5d720-112">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="5d720-112">Optional.</span></span> <span data-ttu-id="5d720-113">どのようなコードからイベントにアクセスできるのかを指定します。</span><span class="sxs-lookup"><span data-stu-id="5d720-113">Specifies what code can access the event.</span></span> <span data-ttu-id="5d720-114">次のいずれかの値を指定します。</span><span class="sxs-lookup"><span data-stu-id="5d720-114">Can be one of the following:</span></span><br /><br /> <span data-ttu-id="5d720-115">-   [パブリック](../../../visual-basic/language-reference/modifiers/public.md): 宣言された要素にアクセスできる任意のコードがアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="5d720-115">-   [Public](../../../visual-basic/language-reference/modifiers/public.md)—any code that can access the element that declares it can access it.</span></span><br /><span data-ttu-id="5d720-116">-   [保護されている](../../../visual-basic/language-reference/modifiers/protected.md)— のみがそのクラスまたは派生クラス内でコードがアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="5d720-116">-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)—only code within its class or a derived class can access it.</span></span><br /><span data-ttu-id="5d720-117">-   [フレンド](../../../visual-basic/language-reference/modifiers/friend.md)— のみ同じアセンブリ内のコードがアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="5d720-117">-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)—only code in the same assembly can access it.</span></span><br /><span data-ttu-id="5d720-118">-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md): 宣言された要素のコードからのみアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="5d720-118">-   [Private](../../../visual-basic/language-reference/modifiers/private.md)—only code in the element that declares it can access it.</span></span><br /><br /> <span data-ttu-id="5d720-119">`Protected Friend` と指定すると、イベントのクラス、その派生クラス、または同じアセンブリ内のコードからアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="5d720-119">You can specify `Protected Friend` to enable access from code in the event's class, a derived class, or the same assembly.</span></span>|  
+|`Shared`|<span data-ttu-id="5d720-120">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="5d720-120">Optional.</span></span> <span data-ttu-id="5d720-121">このイベントがクラスまたは構造体の特定のインスタンスに関連付けられないことを指定します。</span><span class="sxs-lookup"><span data-stu-id="5d720-121">Specifies that this event is not associated with a specific instance of a class or structure.</span></span>|  
+|`Shadows`|<span data-ttu-id="5d720-122">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="5d720-122">Optional.</span></span> <span data-ttu-id="5d720-123">このイベントが、基本クラスにある、同じ名前を持つプログラミング要素、またはオーバーロードされる要素のセットを宣言し直して隠ぺいすることを示します。</span><span class="sxs-lookup"><span data-stu-id="5d720-123">Indicates that this event redeclares and hides an identically named programming element, or set of overloaded elements, in a base class.</span></span> <span data-ttu-id="5d720-124">宣言された要素は、他の任意の種類の要素でシャドウできます。</span><span class="sxs-lookup"><span data-stu-id="5d720-124">You can shadow any kind of declared element with any other kind.</span></span><br /><br /> <span data-ttu-id="5d720-125">シャドウされた要素は、その要素をシャドウする派生クラスからは使用できません。ただし、シャドウする要素がアクセスできない要素の場合は例外です。</span><span class="sxs-lookup"><span data-stu-id="5d720-125">A shadowed element is unavailable from within the derived class that shadows it, except from where the shadowing element is inaccessible.</span></span> <span data-ttu-id="5d720-126">たとえば、`Private` 要素が基本クラスの要素をシャドウすると、`Private` 要素へのアクセス許可を持たないコードは、代わりに基本クラスにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="5d720-126">For example, if a `Private` element shadows a base-class element, code that does not have permission to access the `Private` element accesses the base-class element instead.</span></span>|  
+|`eventname`|<span data-ttu-id="5d720-127">必須です。</span><span class="sxs-lookup"><span data-stu-id="5d720-127">Required.</span></span> <span data-ttu-id="5d720-128">イベントの名前です。変数の標準的な名前付け規則に従って名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="5d720-128">Name of the event; follows standard variable naming conventions.</span></span>|  
+|`parameterlist`|<span data-ttu-id="5d720-129">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="5d720-129">Optional.</span></span> <span data-ttu-id="5d720-130">このイベントのパラメーターを表すローカル変数のリストです。</span><span class="sxs-lookup"><span data-stu-id="5d720-130">List of local variables that represent the parameters of this event.</span></span> <span data-ttu-id="5d720-131">囲む必要があります、[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)かっこ内に示します。</span><span class="sxs-lookup"><span data-stu-id="5d720-131">You must enclose the [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md) in parentheses.</span></span>|  
+|`Implements`|<span data-ttu-id="5d720-132">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="5d720-132">Optional.</span></span> <span data-ttu-id="5d720-133">このイベントがインターフェイスのイベントを実装することを示します。</span><span class="sxs-lookup"><span data-stu-id="5d720-133">Indicates that this event implements an event of an interface.</span></span>|  
+|`implementslist`|<span data-ttu-id="5d720-134">`Implements` を指定する場合は、必ず指定します。</span><span class="sxs-lookup"><span data-stu-id="5d720-134">Required if `Implements` is supplied.</span></span> <span data-ttu-id="5d720-135">実装される `Sub` プロシージャのリストです。</span><span class="sxs-lookup"><span data-stu-id="5d720-135">List of `Sub` procedures being implemented.</span></span> <span data-ttu-id="5d720-136">複数のプロシージャを指定するときは、コンマで区切ります。</span><span class="sxs-lookup"><span data-stu-id="5d720-136">Multiple procedures are separated by commas:</span></span><br /><br /> <span data-ttu-id="5d720-137">*implementedprocedure* [、 *implementedprocedure* ...]</span><span class="sxs-lookup"><span data-stu-id="5d720-137">*implementedprocedure* [ , *implementedprocedure* ... ]</span></span><br /><br /> <span data-ttu-id="5d720-138">`implementedprocedure` の構文と指定項目は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="5d720-138">Each `implementedprocedure` has the following syntax and parts:</span></span><br /><br /> <span data-ttu-id="5d720-139">`interface`.`definedname`</span><span class="sxs-lookup"><span data-stu-id="5d720-139">`interface`.`definedname`</span></span><br /><br /> <span data-ttu-id="5d720-140">-   `interface`必須。</span><span class="sxs-lookup"><span data-stu-id="5d720-140">-   `interface` - Required.</span></span> <span data-ttu-id="5d720-141">このプロシージャの包含クラスまたは包含構造体が実装しているインターフェイスの名前です。</span><span class="sxs-lookup"><span data-stu-id="5d720-141">Name of an interface that this procedure's containing class or structure is implementing.</span></span><br /><span data-ttu-id="5d720-142">-   `Definedname`必須。</span><span class="sxs-lookup"><span data-stu-id="5d720-142">-   `Definedname` - Required.</span></span> <span data-ttu-id="5d720-143">`interface` の中でプロシージャを定義するために使用する名前。</span><span class="sxs-lookup"><span data-stu-id="5d720-143">Name by which the procedure is defined in `interface`.</span></span> <span data-ttu-id="5d720-144">これは、`name` (定義されているプロシージャを実装するためにこのプロシージャが使用している名前) と同じである必要はありません。</span><span class="sxs-lookup"><span data-stu-id="5d720-144">This does not have to be the same as `name`, the name that this procedure is using to implement the defined procedure.</span></span>|  
+|`Custom`|<span data-ttu-id="5d720-145">必須です。</span><span class="sxs-lookup"><span data-stu-id="5d720-145">Required.</span></span> <span data-ttu-id="5d720-146">`Custom` として宣言されたイベントでは、`AddHandler`、`RemoveHandler`、および `RaiseEvent` の各カスタム アクセサーを定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5d720-146">Events declared as `Custom` must define custom `AddHandler`, `RemoveHandler`, and `RaiseEvent` accessors.</span></span>|  
+|`delegatename`|<span data-ttu-id="5d720-147">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="5d720-147">Optional.</span></span> <span data-ttu-id="5d720-148">イベント ハンドラーの署名を指定するデリゲートの名前。</span><span class="sxs-lookup"><span data-stu-id="5d720-148">The name of a delegate that specifies the event-handler signature.</span></span>|  
+|`AddHandler`|<span data-ttu-id="5d720-149">必須です。</span><span class="sxs-lookup"><span data-stu-id="5d720-149">Required.</span></span> <span data-ttu-id="5d720-150">`AddHandler` アクセサーを宣言します。ここでは、イベント ハンドラーが追加されたとき実行するステートメントを、`AddHandler` ステートメントを使って明示的に指定するか、`Handles` 句を使って暗黙的に指定します。</span><span class="sxs-lookup"><span data-stu-id="5d720-150">Declares an `AddHandler` accessor, which specifies the statements to execute when an event handler is added, either explicitly by using the `AddHandler` statement or implicitly by using the `Handles` clause.</span></span>|  
+|`End AddHandler`|<span data-ttu-id="5d720-151">必須です。</span><span class="sxs-lookup"><span data-stu-id="5d720-151">Required.</span></span> <span data-ttu-id="5d720-152">`AddHandler` ブロックを終了します。</span><span class="sxs-lookup"><span data-stu-id="5d720-152">Terminates the `AddHandler` block.</span></span>|  
+|`value`|<span data-ttu-id="5d720-153">必須です。</span><span class="sxs-lookup"><span data-stu-id="5d720-153">Required.</span></span> <span data-ttu-id="5d720-154">パラメーター名です。</span><span class="sxs-lookup"><span data-stu-id="5d720-154">Parameter name.</span></span>|  
+|`RemoveHandler`|<span data-ttu-id="5d720-155">必須です。</span><span class="sxs-lookup"><span data-stu-id="5d720-155">Required.</span></span> <span data-ttu-id="5d720-156">`RemoveHandler` アクセサーを宣言します。ここでは、イベント ハンドラーが削除されたときに実行するステートメントを、`RemoveHandler` ステートメントを使って指定します。</span><span class="sxs-lookup"><span data-stu-id="5d720-156">Declares a `RemoveHandler` accessor, which specifies the statements to execute when an event handler is removed using the `RemoveHandler` statement.</span></span>|  
+|`End RemoveHandler`|<span data-ttu-id="5d720-157">必須です。</span><span class="sxs-lookup"><span data-stu-id="5d720-157">Required.</span></span> <span data-ttu-id="5d720-158">`RemoveHandler` ブロックを終了します。</span><span class="sxs-lookup"><span data-stu-id="5d720-158">Terminates the `RemoveHandler` block.</span></span>|  
+|`RaiseEvent`|<span data-ttu-id="5d720-159">必須です。</span><span class="sxs-lookup"><span data-stu-id="5d720-159">Required.</span></span> <span data-ttu-id="5d720-160">`RaiseEvent` アクセサーを宣言します。ここでは、イベントが発生したときに実行するステートメントを、`RaiseEvent` ステートメントを使って指定します。</span><span class="sxs-lookup"><span data-stu-id="5d720-160">Declares a `RaiseEvent` accessor, which specifies the statements to execute when the event is raised using the `RaiseEvent` statement.</span></span> <span data-ttu-id="5d720-161">通常は、`AddHandler` アクセサーと `RemoveHandler` アクセサーによって管理されるデリゲートのリストが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="5d720-161">Typically, this invokes a list of delegates maintained by the `AddHandler` and `RemoveHandler` accessors.</span></span>|  
+|`End RaiseEvent`|<span data-ttu-id="5d720-162">必須です。</span><span class="sxs-lookup"><span data-stu-id="5d720-162">Required.</span></span> <span data-ttu-id="5d720-163">`RaiseEvent` ブロックを終了します。</span><span class="sxs-lookup"><span data-stu-id="5d720-163">Terminates the `RaiseEvent` block.</span></span>|  
+|`delegatesignature`|<span data-ttu-id="5d720-164">必須です。</span><span class="sxs-lookup"><span data-stu-id="5d720-164">Required.</span></span> <span data-ttu-id="5d720-165">`delegatename` デリゲートに必要なパラメーターと一致するパラメーターのリストです。</span><span class="sxs-lookup"><span data-stu-id="5d720-165">List of parameters that matches the parameters required by the `delegatename` delegate.</span></span> <span data-ttu-id="5d720-166">囲む必要があります、[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)かっこ内に示します。</span><span class="sxs-lookup"><span data-stu-id="5d720-166">You must enclose the [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md) in parentheses.</span></span>|  
+|`statements`|<span data-ttu-id="5d720-167">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="5d720-167">Optional.</span></span> <span data-ttu-id="5d720-168">`AddHandler`、`RemoveHandler`、および `RaiseEvent` の各メソッドの本体が含まれるステートメントです。</span><span class="sxs-lookup"><span data-stu-id="5d720-168">Statements that contain the bodies of the `AddHandler`, `RemoveHandler`, and `RaiseEvent` methods.</span></span>|  
+|`End Event`|<span data-ttu-id="5d720-169">必須です。</span><span class="sxs-lookup"><span data-stu-id="5d720-169">Required.</span></span> <span data-ttu-id="5d720-170">`Event` ブロックを終了します。</span><span class="sxs-lookup"><span data-stu-id="5d720-170">Terminates the `Event` block.</span></span>|  
   
-## <a name="remarks"></a>コメント  
- 宣言したイベントは、`RaiseEvent` ステートメントを使って発生させます。 通常、イベントの宣言と発生は、次のように行われます。  
+## <a name="remarks"></a><span data-ttu-id="5d720-171">コメント</span><span class="sxs-lookup"><span data-stu-id="5d720-171">Remarks</span></span>  
+ <span data-ttu-id="5d720-172">宣言したイベントは、`RaiseEvent` ステートメントを使って発生させます。</span><span class="sxs-lookup"><span data-stu-id="5d720-172">Once the event has been declared, use the `RaiseEvent` statement to raise the event.</span></span> <span data-ttu-id="5d720-173">通常、イベントの宣言と発生は、次のように行われます。</span><span class="sxs-lookup"><span data-stu-id="5d720-173">A typical event might be declared and raised as shown in the following fragments:</span></span>  
   
- [!code-vb[VbVbalrEvents&#13;](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/event-statement_1.vb)]  
-  
-> [!NOTE]
->  イベントの引数は、プロシージャの引数と同様に宣言できます。ただし、イベントに対して名前付き引数、`ParamArray` 引数、または `Optional` 引数を指定することはできません。 イベントは値を返しません。  
-  
- イベントを処理するためには、`Handles` ステートメントまたは `AddHandler` ステートメントを使用して、イベントをイベント ハンドラー サブルーチンに関連付ける必要があります。 サブルーチンとイベントの署名が一致する必要があります。 共有イベントを処理するには、`AddHandler` ステートメントを使う必要があります。  
-  
- `Event` は、モジュール レベルでのみ使用できます。 つまり、*宣言コンテキスト*イベントは、クラス、構造体、モジュール、またはインターフェイスである必要があり、ソース ファイル、名前空間、プロシージャ、またはブロックすることはできません。 詳細については、次を参照してください。[宣言コンテキストとアクセス レベルの既定の](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)です。  
-  
- ほとんどの状況で、このトピックの「構文」のセクションにある最初の構文を使ってイベントを宣言できますが、 一部のシナリオでは、イベントの動作をより詳細に制御することが必要になります。 このトピックの「構文」セクションの最後には、`Custom` キーワードを使用した構文があります。これを使用すると、カスタム イベントを定義してイベントを詳細に制御できます。 カスタム イベントでは、コードでイベント ハンドラーを追加または削除するときに、つまりコードでイベントを生成するときに、何が起こるかを正確に指定します。 例については、次を参照してください。[方法: 節約メモリにカスタム イベントを宣言](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)と[方法: 宣言カスタム イベントをしないようにブロック](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)します。  
-  
-## <a name="example"></a>例  
- 次の例では、イベントを使用して 10 秒から 0 秒までカウント ダウンします。 このコードは、イベント関連のいくつかのメソッド、プロパティ、およびステートメントの例を示しています。 `RaiseEvent` ステートメントの使用例も含まれています。  
-  
- イベントを発生させるクラスをイベント ソース、イベントを処理するメソッドをイベント ハンドラーと呼びます。 イベント ソースでは、生成されるイベントに対して複数のイベント ハンドラーを設定できます。 クラスでイベントが発生すると、そのイベントは、オブジェクトのインスタンスに対するイベントを処理するために選択されたすべてのクラスで発生します。  
-  
- また、この例では、ボタン (`Button1`) とテキスト ボックス (`TextBox1`) を含んだフォーム (`Form1`) も使用しています。 ボタンをクリックすると、1 つ目のテキスト ボックスに 10 秒から 0 秒までのカウントダウンが表示されます。 カウントダウンが終わると (10 秒が経過すると)、1 つ目のテキスト ボックスに "Done" と表示されます。  
-  
- `Form1` のコードでは、フォームの初期状態と終了状態を指定しています。 イベント発生時に実行されるコードも含まれています。  
-  
- この例を使用するには、新しい Windows フォーム プロジェクトを開きます。 次に、`Button1` という名前のボタンと `TextBox1` という名前のテキスト ボックスを、`Form1` という名前のメイン フォームに追加します。 フォームを右クリックし、をクリックし、**コードの表示**コード エディターを開きます。  
-  
- `Form1` クラスの宣言セクションに、`WithEvents` 変数を追加します。  
-  
- [!code-vb[VbVbalrEvents&#14;](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/event-statement_2.vb)]  
-  
- `Form1` のコードに次のコードを追加します。 `Form_Load` や `Button_Click` など、重複して存在する可能性のあるプロシージャを置き換えます。  
-  
- [!code-vb[VbVbalrEvents&#15;](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/event-statement_3.vb)]  
-  
- 前の例を実行し、というボタンをクリックし、f5 キーを押して**開始**します。 最初のテキスト ボックスで、秒のカウント ダウンが開始されます。 カウントダウンが終わると (10 秒が経過すると)、1 つ目のテキスト ボックスに "Done" と表示されます。  
+ [!code-vb[VbVbalrEvents#13](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/event-statement_1.vb)]  
   
 > [!NOTE]
->  `My.Application.DoEvents` メソッドがイベントを処理する方法は、フォームと同じではありません。 フォームでイベントを直接処理するには、マルチスレッドを使用します。 詳細については、次を参照してください。[スレッド](http://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c)します。  
+>  <span data-ttu-id="5d720-174">イベントの引数は、プロシージャの引数と同様に宣言できます。ただし、イベントに対して名前付き引数、`ParamArray` 引数、または `Optional` 引数を指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="5d720-174">You can declare event arguments just as you do arguments of procedures, with the following exceptions: events cannot have named arguments, `ParamArray` arguments, or `Optional` arguments.</span></span> <span data-ttu-id="5d720-175">イベントは値を返しません。</span><span class="sxs-lookup"><span data-stu-id="5d720-175">Events do not have return values.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [RaiseEvent ステートメント](../../../visual-basic/language-reference/statements/raiseevent-statement.md)   
- [Implements ステートメント](../../../visual-basic/language-reference/statements/implements-statement.md)   
- [イベント](../../../visual-basic/programming-guide/language-features/events/index.md)   
- [AddHandler ステートメント](../../../visual-basic/language-reference/statements/addhandler-statement.md)   
- [RemoveHandler ステートメント](../../../visual-basic/language-reference/statements/removehandler-statement.md)   
- [ハンドル](../../../visual-basic/language-reference/statements/handles-clause.md)   
- [Delegate ステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md)   
- [方法: メモリを節約するためにカスタム イベントを宣言します。](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)   
- [方法: ブロックされないようにするカスタム イベントを宣言します。](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)   
- [共有](../../../visual-basic/language-reference/modifiers/shared.md)   
- [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)
+ <span data-ttu-id="5d720-176">イベントを処理するためには、`Handles` ステートメントまたは `AddHandler` ステートメントを使用して、イベントをイベント ハンドラー サブルーチンに関連付ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="5d720-176">To handle an event, you must associate it with an event handler subroutine using either the `Handles` or `AddHandler` statement.</span></span> <span data-ttu-id="5d720-177">サブルーチンとイベントの署名が一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5d720-177">The signatures of the subroutine and the event must match.</span></span> <span data-ttu-id="5d720-178">共有イベントを処理するには、`AddHandler` ステートメントを使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="5d720-178">To handle a shared event, you must use the `AddHandler` statement.</span></span>  
+  
+ <span data-ttu-id="5d720-179">`Event` は、モジュール レベルでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="5d720-179">You can use `Event` only at module level.</span></span> <span data-ttu-id="5d720-180">つまり、*宣言コンテキスト*イベント クラス、構造体、モジュール、またはインターフェイスである必要があり、ソース ファイル、名前空間、プロシージャ、またはブロックすることはできません。</span><span class="sxs-lookup"><span data-stu-id="5d720-180">This means the *declaration context* for an event must be a class, structure, module, or interface, and cannot be a source file, namespace, procedure, or block.</span></span> <span data-ttu-id="5d720-181">詳細については、「[宣言コンテキストと既定のアクセス レベル](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5d720-181">For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).</span></span>  
+  
+ <span data-ttu-id="5d720-182">ほとんどの状況で、このトピックの「構文」のセクションにある最初の構文を使ってイベントを宣言できますが、</span><span class="sxs-lookup"><span data-stu-id="5d720-182">In most circumstances, you can use the first syntax in the Syntax section of this topic for declaring events.</span></span> <span data-ttu-id="5d720-183">一部のシナリオでは、イベントの動作をより詳細に制御することが必要になります。</span><span class="sxs-lookup"><span data-stu-id="5d720-183">However, some scenarios require that you have more control over the detailed behavior of the event.</span></span> <span data-ttu-id="5d720-184">このトピックの「構文」セクションの最後には、`Custom` キーワードを使用した構文があります。これを使用すると、カスタム イベントを定義してイベントを詳細に制御できます。</span><span class="sxs-lookup"><span data-stu-id="5d720-184">The last syntax in the Syntax section of this topic, which uses the `Custom` keyword, provides that control by enabling you to define custom events.</span></span> <span data-ttu-id="5d720-185">カスタム イベントでは、コードでイベント ハンドラーを追加または削除するときに、つまりコードでイベントを生成するときに、何が起こるかを正確に指定します。</span><span class="sxs-lookup"><span data-stu-id="5d720-185">In a custom event, you specify exactly what occurs when code adds or removes an event handler to or from the event, or when code raises the event.</span></span> <span data-ttu-id="5d720-186">例については、次を参照してください。[する方法: 節約メモリにカスタム イベントを宣言](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)と[する方法: 宣言カスタム イベントにしてブロックを回避](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)です。</span><span class="sxs-lookup"><span data-stu-id="5d720-186">For examples, see [How to: Declare Custom Events To Conserve Memory](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md) and [How to: Declare Custom Events To Avoid Blocking](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md).</span></span>  
+  
+## <a name="example"></a><span data-ttu-id="5d720-187">例</span><span class="sxs-lookup"><span data-stu-id="5d720-187">Example</span></span>  
+ <span data-ttu-id="5d720-188">次の例では、イベントを使用して 10 秒から 0 秒までカウント ダウンします。</span><span class="sxs-lookup"><span data-stu-id="5d720-188">The following example uses events to count down seconds from 10 to 0.</span></span> <span data-ttu-id="5d720-189">このコードは、イベント関連のいくつかのメソッド、プロパティ、およびステートメントの例を示しています。</span><span class="sxs-lookup"><span data-stu-id="5d720-189">The code illustrates several of the event-related methods, properties, and statements.</span></span> <span data-ttu-id="5d720-190">`RaiseEvent` ステートメントの使用例も含まれています。</span><span class="sxs-lookup"><span data-stu-id="5d720-190">This includes the `RaiseEvent` statement.</span></span>  
+  
+ <span data-ttu-id="5d720-191">イベントを発生させるクラスをイベント ソース、イベントを処理するメソッドをイベント ハンドラーと呼びます。</span><span class="sxs-lookup"><span data-stu-id="5d720-191">The class that raises an event is the event source, and the methods that process the event are the event handlers.</span></span> <span data-ttu-id="5d720-192">イベント ソースでは、生成されるイベントに対して複数のイベント ハンドラーを設定できます。</span><span class="sxs-lookup"><span data-stu-id="5d720-192">An event source can have multiple handlers for the events it generates.</span></span> <span data-ttu-id="5d720-193">クラスでイベントが発生すると、そのイベントは、オブジェクトのインスタンスに対するイベントを処理するために選択されたすべてのクラスで発生します。</span><span class="sxs-lookup"><span data-stu-id="5d720-193">When the class raises the event, that event is raised on every class that has elected to handle events for that instance of the object.</span></span>  
+  
+ <span data-ttu-id="5d720-194">また、この例では、ボタン (`Button1`) とテキスト ボックス (`TextBox1`) を含んだフォーム (`Form1`) も使用しています。</span><span class="sxs-lookup"><span data-stu-id="5d720-194">The example also uses a form (`Form1`) with a button (`Button1`) and a text box (`TextBox1`).</span></span> <span data-ttu-id="5d720-195">ボタンをクリックすると、1 つ目のテキスト ボックスに 10 秒から 0 秒までのカウントダウンが表示されます。</span><span class="sxs-lookup"><span data-stu-id="5d720-195">When you click the button, the first text box displays a countdown from 10 to 0 seconds.</span></span> <span data-ttu-id="5d720-196">カウントダウンが終わると (10 秒が経過すると)、1 つ目のテキスト ボックスに "Done" と表示されます。</span><span class="sxs-lookup"><span data-stu-id="5d720-196">When the full time (10 seconds) has elapsed, the first text box displays "Done".</span></span>  
+  
+ <span data-ttu-id="5d720-197">`Form1` のコードでは、フォームの初期状態と終了状態を指定しています。</span><span class="sxs-lookup"><span data-stu-id="5d720-197">The code for `Form1` specifies the initial and terminal states of the form.</span></span> <span data-ttu-id="5d720-198">イベント発生時に実行されるコードも含まれています。</span><span class="sxs-lookup"><span data-stu-id="5d720-198">It also contains the code executed when events are raised.</span></span>  
+  
+ <span data-ttu-id="5d720-199">この例を使用するには、新しい Windows フォーム プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="5d720-199">To use this example, open a new Windows Forms project.</span></span> <span data-ttu-id="5d720-200">次に、`Button1` という名前のボタンと `TextBox1` という名前のテキスト ボックスを、`Form1` という名前のメイン フォームに追加します。</span><span class="sxs-lookup"><span data-stu-id="5d720-200">Then add a button named `Button1` and a text box named `TextBox1` to the main form, named `Form1`.</span></span> <span data-ttu-id="5d720-201">フォームを右クリックし、をクリックし、**コードの表示**コード エディターを開きます。</span><span class="sxs-lookup"><span data-stu-id="5d720-201">Then right-click the form and click **View Code** to open the code editor.</span></span>  
+  
+ <span data-ttu-id="5d720-202">`Form1` クラスの宣言セクションに、`WithEvents` 変数を追加します。</span><span class="sxs-lookup"><span data-stu-id="5d720-202">Add a `WithEvents` variable to the declarations section of the `Form1` class:</span></span>  
+  
+ [!code-vb[VbVbalrEvents#14](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/event-statement_2.vb)]  
+  
+ <span data-ttu-id="5d720-203">`Form1` のコードに次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="5d720-203">Add the following code to the code for `Form1`.</span></span> <span data-ttu-id="5d720-204">`Form_Load` や `Button_Click` など、重複して存在する可能性のあるプロシージャを置き換えます。</span><span class="sxs-lookup"><span data-stu-id="5d720-204">Replace any duplicate procedures that may exist, such as `Form_Load` or `Button_Click`.</span></span>  
+  
+ [!code-vb[VbVbalrEvents#15](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/event-statement_3.vb)]  
+  
+ <span data-ttu-id="5d720-205">前の例を実行し、ボタンをクリックして f5 キーを押して**開始**です。</span><span class="sxs-lookup"><span data-stu-id="5d720-205">Press F5 to run the previous example, and click the button labeled **Start**.</span></span> <span data-ttu-id="5d720-206">最初のテキスト ボックスで、秒のカウント ダウンが開始されます。</span><span class="sxs-lookup"><span data-stu-id="5d720-206">The first text box starts to count down the seconds.</span></span> <span data-ttu-id="5d720-207">カウントダウンが終わると (10 秒が経過すると)、1 つ目のテキスト ボックスに "Done" と表示されます。</span><span class="sxs-lookup"><span data-stu-id="5d720-207">When the full time (10 seconds) has elapsed, the first text box displays "Done".</span></span>  
+  
+> [!NOTE]
+>  <span data-ttu-id="5d720-208">`My.Application.DoEvents` メソッドがイベントを処理する方法は、フォームと同じではありません。</span><span class="sxs-lookup"><span data-stu-id="5d720-208">The `My.Application.DoEvents` method does not process events in the same way the form does.</span></span> <span data-ttu-id="5d720-209">フォームでイベントを直接処理するには、マルチスレッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="5d720-209">To enable the form to handle the events directly, you can use multithreading.</span></span> <span data-ttu-id="5d720-210">詳細については、次を参照してください。[スレッド](http://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c)です。</span><span class="sxs-lookup"><span data-stu-id="5d720-210">For more information, see [Threading](http://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c).</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="5d720-211">関連項目</span><span class="sxs-lookup"><span data-stu-id="5d720-211">See Also</span></span>  
+ [<span data-ttu-id="5d720-212">RaiseEvent ステートメント</span><span class="sxs-lookup"><span data-stu-id="5d720-212">RaiseEvent Statement</span></span>](../../../visual-basic/language-reference/statements/raiseevent-statement.md)  
+ [<span data-ttu-id="5d720-213">Implements ステートメント</span><span class="sxs-lookup"><span data-stu-id="5d720-213">Implements Statement</span></span>](../../../visual-basic/language-reference/statements/implements-statement.md)  
+ [<span data-ttu-id="5d720-214">イベント</span><span class="sxs-lookup"><span data-stu-id="5d720-214">Events</span></span>](../../../visual-basic/programming-guide/language-features/events/index.md)  
+ [<span data-ttu-id="5d720-215">AddHandler ステートメント</span><span class="sxs-lookup"><span data-stu-id="5d720-215">AddHandler Statement</span></span>](../../../visual-basic/language-reference/statements/addhandler-statement.md)  
+ [<span data-ttu-id="5d720-216">RemoveHandler ステートメント</span><span class="sxs-lookup"><span data-stu-id="5d720-216">RemoveHandler Statement</span></span>](../../../visual-basic/language-reference/statements/removehandler-statement.md)  
+ [<span data-ttu-id="5d720-217">Handles</span><span class="sxs-lookup"><span data-stu-id="5d720-217">Handles</span></span>](../../../visual-basic/language-reference/statements/handles-clause.md)  
+ [<span data-ttu-id="5d720-218">Delegate ステートメント</span><span class="sxs-lookup"><span data-stu-id="5d720-218">Delegate Statement</span></span>](../../../visual-basic/language-reference/statements/delegate-statement.md)  
+ [<span data-ttu-id="5d720-219">方法: カスタム イベントを宣言してメモリを節約する</span><span class="sxs-lookup"><span data-stu-id="5d720-219">How to: Declare Custom Events To Conserve Memory</span></span>](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)  
+ [<span data-ttu-id="5d720-220">方法: カスタム イベントを宣言してブロックを回避する</span><span class="sxs-lookup"><span data-stu-id="5d720-220">How to: Declare Custom Events To Avoid Blocking</span></span>](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)  
+ [<span data-ttu-id="5d720-221">Shared</span><span class="sxs-lookup"><span data-stu-id="5d720-221">Shared</span></span>](../../../visual-basic/language-reference/modifiers/shared.md)  
+ [<span data-ttu-id="5d720-222">Shadows</span><span class="sxs-lookup"><span data-stu-id="5d720-222">Shadows</span></span>](../../../visual-basic/language-reference/modifiers/shadows.md)

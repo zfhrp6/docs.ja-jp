@@ -1,49 +1,55 @@
 ---
-title: "方法 : CompositionTarget を使用したフレームの間隔ごとの描画 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "CompositionTarget オブジェクト, 描画 (フレームごとに)"
-  - "描画 (CompositionTarget オブジェクトを使用してフレームごとに)"
+title: "方法 : CompositionTarget を使用したフレームの間隔ごとの描画"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- CompositionTarget objects [WPF], rendering per frame
+- rendering per frame using CompositionTarget objects [WPF]
 ms.assetid: 701246cd-66b7-4d69-ada9-17b3b433d95d
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7616a418b9f2f6b175b925e4385322c42546e9bc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : CompositionTarget を使用したフレームの間隔ごとの描画
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のアニメーション エンジンには、フレームベースのアニメーションを作成するためのさまざまな機能が用意されています。  ただし、フレームベースの描画をさらにきめ細かく制御することが必要となるアプリケーション シナリオがあります。  <xref:System.Windows.Media.CompositionTarget> オブジェクトを使用すると、フレームごとのコールバックに基づいてカスタム アニメーションを作成できます。  
+# <a name="how-to-render-on-a-per-frame-interval-using-compositiontarget"></a><span data-ttu-id="a71e6-102">方法 : CompositionTarget を使用したフレームの間隔ごとの描画</span><span class="sxs-lookup"><span data-stu-id="a71e6-102">How to: Render on a Per Frame Interval Using CompositionTarget</span></span>
+<span data-ttu-id="a71e6-103">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のアニメーション エンジンには、フレームベースのアニメーションを作成するためのさまざまな機能が用意されています。</span><span class="sxs-lookup"><span data-stu-id="a71e6-103">The [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animation engine provides many features for creating frame-based animation.</span></span> <span data-ttu-id="a71e6-104">ただし、フレームベースの描画をさらにきめ細かく制御することが必要となるアプリケーション シナリオがあります。</span><span class="sxs-lookup"><span data-stu-id="a71e6-104">However, there are application scenarios in which you need finer-grained control over rendering on a per frame basis.</span></span> <span data-ttu-id="a71e6-105"><xref:System.Windows.Media.CompositionTarget>オブジェクトは、フレームごとのコールバックに基づくカスタム アニメーションを作成する機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="a71e6-105">The <xref:System.Windows.Media.CompositionTarget> object provides the ability to create custom animations based on a per-frame callback.</span></span>  
   
- <xref:System.Windows.Media.CompositionTarget> は、アプリケーションが描画される表示サーフェイスを表す静的クラスです。  アプリケーションのシーンが描画されるたびに <xref:System.Windows.Media.CompositionTarget.Rendering> イベントが発生します。  レンダリング フレーム レートは、1 秒あたりのシーンの描画回数です。  
+ <span data-ttu-id="a71e6-106"><xref:System.Windows.Media.CompositionTarget>アプリケーションが描画される画面の表面を表す静的クラスです。</span><span class="sxs-lookup"><span data-stu-id="a71e6-106"><xref:System.Windows.Media.CompositionTarget> is a static class which represents the display surface on which your application is being drawn.</span></span> <span data-ttu-id="a71e6-107"><xref:System.Windows.Media.CompositionTarget.Rendering>イベントはアプリケーションのシーンは描画たびに発生します。</span><span class="sxs-lookup"><span data-stu-id="a71e6-107">The <xref:System.Windows.Media.CompositionTarget.Rendering> event is raised each time the application's scene is drawn.</span></span> <span data-ttu-id="a71e6-108">レンダリング フレーム レートは、1 秒あたりのシーンの描画回数です。</span><span class="sxs-lookup"><span data-stu-id="a71e6-108">The rendering frame rate is the number of times the scene is drawn per second.</span></span>  
   
 > [!NOTE]
->  <xref:System.Windows.Media.CompositionTarget> を使用したコード サンプル全体については、「[Using the CompositionTarget Sample \(CompositionTarget のサンプルの使用\)](http://go.microsoft.com/fwlink/?LinkID=160045)」を参照してください。  
+>  <span data-ttu-id="a71e6-109">完全なコード サンプルを使用して、<xref:System.Windows.Media.CompositionTarget>を参照してください[CompositionTarget サンプルを使用して](http://go.microsoft.com/fwlink/?LinkID=160045)です。</span><span class="sxs-lookup"><span data-stu-id="a71e6-109">For a complete code sample using <xref:System.Windows.Media.CompositionTarget>, see [Using the CompositionTarget Sample](http://go.microsoft.com/fwlink/?LinkID=160045).</span></span>  
   
-## 使用例  
- <xref:System.Windows.Media.CompositionTarget.Rendering> イベントは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の描画プロセス中に発生します。  静的 <xref:System.Windows.Media.CompositionTarget.Rendering> メソッドに対する <xref:System.EventHandler> デリゲートを <xref:System.Windows.Media.CompositionTarget> に登録する方法を次の例に示します。  
+## <a name="example"></a><span data-ttu-id="a71e6-110">例</span><span class="sxs-lookup"><span data-stu-id="a71e6-110">Example</span></span>  
+ <span data-ttu-id="a71e6-111"><xref:System.Windows.Media.CompositionTarget.Rendering>中にイベントが発生した、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]レンダリング処理します。</span><span class="sxs-lookup"><span data-stu-id="a71e6-111">The <xref:System.Windows.Media.CompositionTarget.Rendering> event fires during the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rendering process.</span></span> <span data-ttu-id="a71e6-112">次の例は、登録する方法を示しています、 <xref:System.EventHandler> 、静的なデリゲート<xref:System.Windows.Media.CompositionTarget.Rendering>メソッド<xref:System.Windows.Media.CompositionTarget>です。</span><span class="sxs-lookup"><span data-stu-id="a71e6-112">The following example shows how you register an <xref:System.EventHandler> delegate to the static <xref:System.Windows.Media.CompositionTarget.Rendering> method on <xref:System.Windows.Media.CompositionTarget>.</span></span>  
   
  [!code-csharp[CompositionTargetSample#CompositionTarget1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CompositionTargetSample/CSharp/Window1.xaml.cs#compositiontarget1)]
  [!code-vb[CompositionTargetSample#CompositionTarget1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CompositionTargetSample/visualbasic/window1.xaml.vb#compositiontarget1)]  
   
- 独自の描画イベント ハンドラー メソッドを使用して、描画のカスタム コンテンツを作成できます。  このイベント ハンドラー メソッドは、フレームごとに 1 回呼び出されます。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] が[ビジュアル ツリー](GTMT)の永続化されたレンダリング データを合成シーン グラフにマーシャリングするたびに、イベント ハンドラー メソッドが呼び出されます。  さらに、[ビジュアル ツリー](GTMT)に対する変更によって合成シーン グラフが強制的に更新される場合も、イベント ハンドラー メソッドが呼び出されます。  イベント ハンドラー メソッドは、レイアウトが計算された後に呼び出されます。  ただし、イベント ハンドラー メソッド内でレイアウトを変更できます。つまり、そのレイアウトは、描画する前にもう一度計算されることになります。  
+ <span data-ttu-id="a71e6-113">独自の描画イベント ハンドラー メソッドを使用して、描画のカスタム コンテンツを作成できます。</span><span class="sxs-lookup"><span data-stu-id="a71e6-113">You can use your rendering event handler method to create custom drawing content.</span></span> <span data-ttu-id="a71e6-114">このイベント ハンドラー メソッドは、フレームごとに 1 回呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="a71e6-114">This event handler method gets called once per frame.</span></span> <span data-ttu-id="a71e6-115">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] がビジュアル ツリーの永続化されたレンダリング データを合成シーン グラフにマーシャリングするたびに、イベント ハンドラー メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="a71e6-115">Each time that [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] marshals the persisted rendering data in the visual tree across to the composition scene graph, your event handler method is called.</span></span> <span data-ttu-id="a71e6-116">さらに、ビジュアル ツリーに対する変更によって合成シーン グラフが強制的に更新される場合も、イベント ハンドラー メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="a71e6-116">In addition, if changes to the visual tree force updates to the composition scene graph, your event handler method is also called.</span></span> <span data-ttu-id="a71e6-117">イベント ハンドラー メソッドは、レイアウトが計算された後に呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="a71e6-117">Note that your event handler method is called after layout has been computed.</span></span> <span data-ttu-id="a71e6-118">ただし、イベント ハンドラー メソッド内でレイアウトを変更できます。つまり、そのレイアウトは、描画する前にもう一度計算されることになります。</span><span class="sxs-lookup"><span data-stu-id="a71e6-118">However, you can modify layout in your event handler method, which means that layout will be computed once more before rendering.</span></span>  
   
- <xref:System.Windows.Media.CompositionTarget> イベント ハンドラー メソッドでカスタム描画を指定する方法を次の例に示します。  この場合、<xref:System.Windows.Controls.Canvas> の背景色は、マウスの座標位置に基づくカラー値で描画されます。  <xref:System.Windows.Controls.Canvas> 内でマウスを移動すると、その背景色が変わります。  また、現在の経過時間および描画されたフレームの合計数に基づいて、平均フレーム レートが計算されます。  
+ <span data-ttu-id="a71e6-119">次の例はどのように使用できるカスタム描画、<xref:System.Windows.Media.CompositionTarget>イベント ハンドラー メソッドです。</span><span class="sxs-lookup"><span data-stu-id="a71e6-119">The following example shows how you can provide custom drawing in a <xref:System.Windows.Media.CompositionTarget> event handler method.</span></span> <span data-ttu-id="a71e6-120">この場合の背景色、<xref:System.Windows.Controls.Canvas>マウスの座標位置に基づく色の値で描画します。</span><span class="sxs-lookup"><span data-stu-id="a71e6-120">In this case, the background color of the <xref:System.Windows.Controls.Canvas> is drawn with a color value based on the coordinate position of the mouse.</span></span> <span data-ttu-id="a71e6-121">内でマウスを移動する場合、 <xref:System.Windows.Controls.Canvas>、その背景の色を変更します。</span><span class="sxs-lookup"><span data-stu-id="a71e6-121">If you move the mouse inside the <xref:System.Windows.Controls.Canvas>, its background color changes.</span></span> <span data-ttu-id="a71e6-122">また、現在の経過時間および描画されたフレームの合計数に基づいて、平均フレーム レートが計算されます。</span><span class="sxs-lookup"><span data-stu-id="a71e6-122">In addition, the average frame rate is calculated, based on the current elapsed time and the total number of rendered frames.</span></span>  
   
  [!code-csharp[CompositionTargetSample#CompositionTarget2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CompositionTargetSample/CSharp/Window1.xaml.cs#compositiontarget2)]
  [!code-vb[CompositionTargetSample#CompositionTarget2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CompositionTargetSample/visualbasic/window1.xaml.vb#compositiontarget2)]  
   
- カスタム描画は、コンピューターごとに異なる速度で実行される場合があります。  これは、カスタム描画がフレーム レートに依存するためです。  実行しているシステムとそのシステムの負荷に応じて、<xref:System.Windows.Media.CompositionTarget.Rendering> イベントが 1 秒あたりに呼び出される回数が異なる場合があります。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションを実行するデバイスのグラフィックス ハードウェアの機能およびパフォーマンスの決定については、「[グラフィックスの描画層](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md)」を参照してください。  
+ <span data-ttu-id="a71e6-123">カスタム描画は、コンピューターごとに異なる速度で実行される場合があります。</span><span class="sxs-lookup"><span data-stu-id="a71e6-123">You may discover that your custom drawing runs at different speeds on different computers.</span></span> <span data-ttu-id="a71e6-124">これは、カスタム描画がフレーム レートに依存するためです。</span><span class="sxs-lookup"><span data-stu-id="a71e6-124">This is because your custom drawing is not frame-rate independent.</span></span> <span data-ttu-id="a71e6-125">実行しているシステムとそのシステムのワークロードに応じて、<xref:System.Windows.Media.CompositionTarget.Rendering>異なる回数 1 秒あたりのイベントを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="a71e6-125">Depending on the system you are running and the workload of that system, the <xref:System.Windows.Media.CompositionTarget.Rendering> event may be called a different number of times per second.</span></span> <span data-ttu-id="a71e6-126">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションを実行するデバイスのグラフィックス ハードウェアの機能およびパフォーマンスの決定については、「[グラフィックスの描画層](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a71e6-126">For information on determining the graphics hardware capability and performance for a device that runs a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application, see [Graphics Rendering Tiers](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md).</span></span>  
   
- イベントの発生中の描画 <xref:System.EventHandler> デリゲートの追加または削除は、イベントが終了するまで遅延します。  これは、<xref:System.MulticastDelegate> ベースのイベントが共通言語ランタイム \(CLR\) で処理される方法と一貫性があります。  また、描画イベントが特定の順序で呼び出されるかどうかは保証されません。  特定の順序に依存する複数の <xref:System.EventHandler> デリゲートがある場合、単一の <xref:System.Windows.Media.CompositionTarget.Rendering> イベントを登録し、手動でデリゲートを正しい順序で多重化する必要があります。  
+ <span data-ttu-id="a71e6-127">追加または削除を表示する<xref:System.EventHandler>デリゲートがイベントを発生させるときに、イベントの終了後まで遅延されますを発生させます。</span><span class="sxs-lookup"><span data-stu-id="a71e6-127">Adding or removing a rendering <xref:System.EventHandler> delegate while the event is firing will be delayed until after the event is finished firing.</span></span> <span data-ttu-id="a71e6-128">これは、方法と一致<xref:System.MulticastDelegate>-ベースのイベントは、共通言語ランタイム (CLR) を処理します。</span><span class="sxs-lookup"><span data-stu-id="a71e6-128">This is consistent with how <xref:System.MulticastDelegate>-based events are handled in the Common Language Runtime (CLR).</span></span> <span data-ttu-id="a71e6-129">また、描画イベントが特定の順序で呼び出されるかどうかは保証されません。</span><span class="sxs-lookup"><span data-stu-id="a71e6-129">Also note that rendering events are not guaranteed to be called in any particular order.</span></span> <span data-ttu-id="a71e6-130">複数ある場合<xref:System.EventHandler>デリゲートを特定の順序に依存する、1 つを登録する必要があります<xref:System.Windows.Media.CompositionTarget.Rendering>イベントおよびマルチプレクシング正しい内のデリゲートでは、自分で注文します。</span><span class="sxs-lookup"><span data-stu-id="a71e6-130">If you have multiple <xref:System.EventHandler> delegates that rely on a particular order, you should register a single <xref:System.Windows.Media.CompositionTarget.Rendering> event and multiplex the delegates in the correct order yourself.</span></span>  
   
-## 参照  
- <xref:System.Windows.Media.CompositionTarget>   
- [WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+## <a name="see-also"></a><span data-ttu-id="a71e6-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="a71e6-131">See Also</span></span>  
+ <xref:System.Windows.Media.CompositionTarget>  
+ [<span data-ttu-id="a71e6-132">WPF グラフィックス レンダリングの概要</span><span class="sxs-lookup"><span data-stu-id="a71e6-132">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)

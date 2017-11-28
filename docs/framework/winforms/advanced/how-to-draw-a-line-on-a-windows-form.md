@@ -1,46 +1,49 @@
 ---
-title: "方法 : Windows フォームに直線を描画する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Graphics.DrawLine"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "描画 (線を)"
-  - "描画, 線"
-  - "例 [Windows フォーム], 描画 (フォームに直線を)"
-  - "線, 描画"
+title: "方法 : Windows フォームに直線を描画する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+f1_keywords: Graphics.DrawLine
+helpviewer_keywords:
+- examples [Windows Forms], drawing lines on forms
+- drawing [Windows Forms], lines
+- lines [Windows Forms], drawing
+- drawing lines
 ms.assetid: 55c1dbeb-75d0-430c-9814-a24b8971ad8c
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 984cdaca14c354ca78118412911c69c282ddd1bc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームに直線を描画する
-この例は、フォームに直線を描画します。  通常、フォームに描画するときは、この例に示すように、フォームの <xref:System.Windows.Forms.Control.Paint> イベントを処理し、<xref:System.Windows.Forms.PaintEventArgs> の <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> プロパティを使用して描画を実行します。  
+# <a name="how-to-draw-a-line-on-a-windows-form"></a><span data-ttu-id="17086-102">方法 : Windows フォームに直線を描画する</span><span class="sxs-lookup"><span data-stu-id="17086-102">How to: Draw a Line on a Windows Form</span></span>
+<span data-ttu-id="17086-103">この例では、フォームに直線を描画します。</span><span class="sxs-lookup"><span data-stu-id="17086-103">This example draws a line on a form.</span></span> <span data-ttu-id="17086-104">通常、フォームに描画するときに処理するフォームの<xref:System.Windows.Forms.Control.Paint>イベント描画を使用して実行し、<xref:System.Windows.Forms.PaintEventArgs.Graphics%2A>のプロパティ、<xref:System.Windows.Forms.PaintEventArgs>この例で示すように、</span><span class="sxs-lookup"><span data-stu-id="17086-104">Typically, when you draw on a form, you handle the form’s  <xref:System.Windows.Forms.Control.Paint> event and perform the drawing using the <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> property of the <xref:System.Windows.Forms.PaintEventArgs>, as shown in this example</span></span>  
   
-## 使用例  
+## <a name="example"></a><span data-ttu-id="17086-105">例</span><span class="sxs-lookup"><span data-stu-id="17086-105">Example</span></span>  
  [!code-csharp[System.Drawing.UsingAPen#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingAPen/CS/Class1.cs#11)]
  [!code-vb[System.Drawing.UsingAPen#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingAPen/VB/Class1.vb#11)]  
   
-## コードのコンパイル  
- 前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  
+## <a name="compiling-the-code"></a><span data-ttu-id="17086-106">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="17086-106">Compiling the Code</span></span>  
+ <span data-ttu-id="17086-107">前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.PaintEventArgs> イベント ハンドラーのパラメーターである `e`<xref:System.Windows.Forms.Control.Paint> を必要とします。</span><span class="sxs-lookup"><span data-stu-id="17086-107">The preceding example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs>`e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span>  
   
-## 信頼性の高いプログラミング  
- システム リソースを消費するオブジェクト \(<xref:System.Drawing.Pen> オブジェクトなど\) では、必ず <xref:System.IDisposable.Dispose%2A> を呼び出す必要があります。  
+## <a name="robust-programming"></a><span data-ttu-id="17086-108">信頼性の高いプログラミング</span><span class="sxs-lookup"><span data-stu-id="17086-108">Robust Programming</span></span>  
+ <span data-ttu-id="17086-109">常に呼び出す必要があります<xref:System.IDisposable.Dispose%2A>など、システム リソースを消費するすべてのオブジェクトに対する<xref:System.Drawing.Pen>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="17086-109">You should always call <xref:System.IDisposable.Dispose%2A> on any objects that consume system resources, such as <xref:System.Drawing.Pen> objects.</span></span>  
   
-## 参照  
- <xref:System.Drawing.Graphics.DrawLine%2A>   
- <xref:System.Windows.Forms.Control.OnPaint%2A>   
- [グラフィックス プログラミングについて](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)   
- [ペンを使用した直線と図形の描画](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)   
- [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="17086-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="17086-110">See Also</span></span>  
+ <xref:System.Drawing.Graphics.DrawLine%2A>  
+ <xref:System.Windows.Forms.Control.OnPaint%2A>  
+ [<span data-ttu-id="17086-111">グラフィックス プログラミングについて</span><span class="sxs-lookup"><span data-stu-id="17086-111">Getting Started with Graphics Programming</span></span>](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)  
+ [<span data-ttu-id="17086-112">ペンを使用した直線と図形の描画</span><span class="sxs-lookup"><span data-stu-id="17086-112">Using a Pen to Draw Lines and Shapes</span></span>](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)  
+ [<span data-ttu-id="17086-113">Windows フォームにおけるグラフィックスと描画</span><span class="sxs-lookup"><span data-stu-id="17086-113">Graphics and Drawing in Windows Forms</span></span>](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)

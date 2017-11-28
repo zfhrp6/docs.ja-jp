@@ -1,89 +1,91 @@
 ---
-title: "TreeView のスタイルとテンプレート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ControlTemplate [WPF], TreeView"
-  - "パーツ [WPF], TreeView"
-  - "状態 [WPF], TreeView"
-  - "スタイル [WPF], TreeView"
-  - "テンプレート [WPF], TreeView"
-  - "TreeView [WPF], スタイルおよびテンプレート"
+title: "TreeView のスタイルとテンプレート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- ControlTemplate [WPF], TreeView
+- templates [WPF], TreeView
+- parts [WPF], TreeView
+- states [WPF], TreeView
+- styles [WPF], TreeView
+- TreeView [WPF], styles and templates
 ms.assetid: a49adb77-0202-4caa-b94a-8bb110d7fa9a
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 78e5faf7aab684f2a8760204079a26a61b9c3fda
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# TreeView のスタイルとテンプレート
-このトピックでは、<xref:System.Windows.Controls.TreeView> コントロールのスタイルおよびテンプレートについて説明します。  既定の <xref:System.Windows.Controls.ControlTemplate> に変更を加えることで、コントロールに独自の外観を設定できます。  詳細については、「[ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
+# <a name="treeview-styles-and-templates"></a><span data-ttu-id="d6502-102">TreeView のスタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="d6502-102">TreeView Styles and Templates</span></span>
+<span data-ttu-id="d6502-103">このトピックは、のスタイルとテンプレートについて説明します、<xref:System.Windows.Controls.TreeView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="d6502-103">This topic describes the styles and templates for the <xref:System.Windows.Controls.TreeView> control.</span></span> <span data-ttu-id="d6502-104">既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。</span><span class="sxs-lookup"><span data-stu-id="d6502-104">You can modify the default <xref:System.Windows.Controls.ControlTemplate> to give the control a unique appearance.</span></span> <span data-ttu-id="d6502-105">詳細については、「[Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d6502-105">For more information, see [Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).</span></span>  
   
-## TreeView のパーツ  
- <xref:System.Windows.Controls.TreeView> コントロールには、名前付きのパーツは存在しません。  
+## <a name="treeview-parts"></a><span data-ttu-id="d6502-106">TreeView のパーツ</span><span class="sxs-lookup"><span data-stu-id="d6502-106">TreeView Parts</span></span>  
+ <span data-ttu-id="d6502-107"><xref:System.Windows.Controls.TreeView>コントロールには、その名前付きの部分はありません。</span><span class="sxs-lookup"><span data-stu-id="d6502-107">The <xref:System.Windows.Controls.TreeView> control does not have any named parts.</span></span>  
   
- <xref:System.Windows.Controls.TreeView> の <xref:System.Windows.Controls.ControlTemplate> を作成するときに、テンプレートの <xref:System.Windows.Controls.ScrollViewer> 内に <xref:System.Windows.Controls.ItemsPresenter> が含まれる場合があります。  <xref:System.Windows.Controls.ItemsPresenter> により、<xref:System.Windows.Controls.TreeView> の各項目が表示されます。また、<xref:System.Windows.Controls.ScrollViewer> により、コントロール内でスクロールできるようになります。  <xref:System.Windows.Controls.ItemsPresenter> が <xref:System.Windows.Controls.ScrollViewer> の直接の子でない場合は、<xref:System.Windows.Controls.ItemsPresenter> に `ItemsPresenter` という名前を付ける必要があります。  
+ <span data-ttu-id="d6502-108">作成するときに、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.TreeView>、テンプレートを含めることがあります、<xref:System.Windows.Controls.ItemsPresenter>内で、<xref:System.Windows.Controls.ScrollViewer>です。</span><span class="sxs-lookup"><span data-stu-id="d6502-108">When you create a <xref:System.Windows.Controls.ControlTemplate> for an <xref:System.Windows.Controls.TreeView>, your template might contain a <xref:System.Windows.Controls.ItemsPresenter> within a <xref:System.Windows.Controls.ScrollViewer>.</span></span> <span data-ttu-id="d6502-109">(、<xref:System.Windows.Controls.ItemsPresenter>内の各項目を表示、 <xref:System.Windows.Controls.TreeView>;<xref:System.Windows.Controls.ScrollViewer>コントロール内でスクロールできるように) します。</span><span class="sxs-lookup"><span data-stu-id="d6502-109">(The <xref:System.Windows.Controls.ItemsPresenter> displays each item in the <xref:System.Windows.Controls.TreeView>; the <xref:System.Windows.Controls.ScrollViewer> enables scrolling within the control).</span></span>  <span data-ttu-id="d6502-110">場合、<xref:System.Windows.Controls.ItemsPresenter>の直接の子ではない、<xref:System.Windows.Controls.ScrollViewer>を付ける必要があります、<xref:System.Windows.Controls.ItemsPresenter>名、`ItemsPresenter`です。</span><span class="sxs-lookup"><span data-stu-id="d6502-110">If the <xref:System.Windows.Controls.ItemsPresenter> is not the direct child of the <xref:System.Windows.Controls.ScrollViewer>, you must give the <xref:System.Windows.Controls.ItemsPresenter> the name, `ItemsPresenter`.</span></span>  
   
-## TreeView の状態  
- 次の表は、<xref:System.Windows.Controls.TreeView> コントロールの表示状態の一覧です。  
+## <a name="treeview-states"></a><span data-ttu-id="d6502-111">TreeView の状態</span><span class="sxs-lookup"><span data-stu-id="d6502-111">TreeView States</span></span>  
+ <span data-ttu-id="d6502-112">次の表に、用ビジュアル状態、<xref:System.Windows.Controls.TreeView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="d6502-112">The following table lists the visual states for the <xref:System.Windows.Controls.TreeView> control.</span></span>  
   
-||||  
+|<span data-ttu-id="d6502-113">VisualState 名</span><span class="sxs-lookup"><span data-stu-id="d6502-113">VisualState Name</span></span>|<span data-ttu-id="d6502-114">VisualStateGroup 名</span><span class="sxs-lookup"><span data-stu-id="d6502-114">VisualStateGroup Name</span></span>|<span data-ttu-id="d6502-115">説明</span><span class="sxs-lookup"><span data-stu-id="d6502-115">Description</span></span>|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|Valid|ValidationStates|このコントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `false` です。|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがありません。|  
+|<span data-ttu-id="d6502-116">有効</span><span class="sxs-lookup"><span data-stu-id="d6502-116">Valid</span></span>|<span data-ttu-id="d6502-117">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="d6502-117">ValidationStates</span></span>|<span data-ttu-id="d6502-118">コントロールを使用して、<xref:System.Windows.Controls.Validation>クラスおよび<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`false`します。</span><span class="sxs-lookup"><span data-stu-id="d6502-118">The control uses the <xref:System.Windows.Controls.Validation> class and the <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `false`.</span></span>|  
+|<span data-ttu-id="d6502-119">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="d6502-119">InvalidFocused</span></span>|<span data-ttu-id="d6502-120">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="d6502-120">ValidationStates</span></span>|<span data-ttu-id="d6502-121"><xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスします。</span><span class="sxs-lookup"><span data-stu-id="d6502-121">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control has focus.</span></span>|  
+|<span data-ttu-id="d6502-122">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="d6502-122">InvalidUnfocused</span></span>|<span data-ttu-id="d6502-123">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="d6502-123">ValidationStates</span></span>|<span data-ttu-id="d6502-124"><xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスがないです。</span><span class="sxs-lookup"><span data-stu-id="d6502-124">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control does not have focus.</span></span>|  
   
-## TreeViewItem のパーツ  
- 次の表は、<xref:System.Windows.Controls.TreeViewItem> コントロールの名前付きパーツの一覧です。  
+## <a name="treeviewitem-parts"></a><span data-ttu-id="d6502-125">TreeViewItem のパーツ</span><span class="sxs-lookup"><span data-stu-id="d6502-125">TreeViewItem Parts</span></span>  
+ <span data-ttu-id="d6502-126">次の表に、名前付きのパーツの<xref:System.Windows.Controls.TreeViewItem>コントロール。</span><span class="sxs-lookup"><span data-stu-id="d6502-126">The following table lists the named parts for the <xref:System.Windows.Controls.TreeViewItem> control.</span></span>  
   
-|指定項目|種類|Description|  
-|----------|--------|-----------------|  
-|PART\_Header|<xref:System.Windows.FrameworkElement>|<xref:System.Windows.Controls.TreeView> コントロールのヘッダーの内容を格納しているビジュアル要素です。|  
+|<span data-ttu-id="d6502-127">パーツ</span><span class="sxs-lookup"><span data-stu-id="d6502-127">Part</span></span>|<span data-ttu-id="d6502-128">型</span><span class="sxs-lookup"><span data-stu-id="d6502-128">Type</span></span>|<span data-ttu-id="d6502-129">説明</span><span class="sxs-lookup"><span data-stu-id="d6502-129">Description</span></span>|  
+|----------|----------|-----------------|  
+|<span data-ttu-id="d6502-130">PART_Header</span><span class="sxs-lookup"><span data-stu-id="d6502-130">PART_Header</span></span>|<xref:System.Windows.FrameworkElement>|<span data-ttu-id="d6502-131">視覚的要素をそのヘッダーのコンテンツを含む、<xref:System.Windows.Controls.TreeView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="d6502-131">A visual element that contains that header content of the <xref:System.Windows.Controls.TreeView> control.</span></span>|  
   
-## TreeViewItem の状態  
- 次の表は、<xref:System.Windows.Controls.TreeViewItem> コントロールの表示状態の一覧です。  
+## <a name="treeviewitem-states"></a><span data-ttu-id="d6502-132">TreeViewItem の状態</span><span class="sxs-lookup"><span data-stu-id="d6502-132">TreeViewItem States</span></span>  
+ <span data-ttu-id="d6502-133">次の表に、用ビジュアル状態<xref:System.Windows.Controls.TreeViewItem>コントロール。</span><span class="sxs-lookup"><span data-stu-id="d6502-133">The following table lists the visual states for <xref:System.Windows.Controls.TreeViewItem> control.</span></span>  
   
-|VisualState 名|VisualStateGroup 名|Description|  
-|-------------------|------------------------|-----------------|  
-|Normal|CommonStates|既定の状態です。|  
-|MouseOver|CommonStates|マウス ポインターは、<xref:System.Windows.Controls.TreeViewItem> の上に置かれています。|  
-|Disabled|CommonStates|<xref:System.Windows.Controls.TreeViewItem> が無効になっています。|  
-|Focused|FocusStates|<xref:System.Windows.Controls.TreeViewItem> にフォーカスがあります。|  
-|Unfocused|FocusStates|<xref:System.Windows.Controls.TreeViewItem> にフォーカスがありません。|  
-|Expanded|ExpansionStates|<xref:System.Windows.Controls.TreeViewItem> コントロールが展開されています。|  
-|Collapsed|ExpansionStates|<xref:System.Windows.Controls.TreeViewItem> コントロールが折りたたまれています。|  
-|HasItems|HasItemsStates|<xref:System.Windows.Controls.TreeViewItem> に項目が含まれています。|  
-|NoItems|HasItemsStates|<xref:System.Windows.Controls.TreeViewItem> に項目が含まれていません。|  
-|Selected|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> が選択されています。|  
-|SelectedInactive|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> が選択されていますが、アクティブではありません。|  
-|Unselected|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> が選択されていません。|  
-|Valid|ValidationStates|このコントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `false` です。|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがありません。|  
+|<span data-ttu-id="d6502-134">VisualState 名</span><span class="sxs-lookup"><span data-stu-id="d6502-134">VisualState Name</span></span>|<span data-ttu-id="d6502-135">VisualStateGroup 名</span><span class="sxs-lookup"><span data-stu-id="d6502-135">VisualStateGroup Name</span></span>|<span data-ttu-id="d6502-136">説明</span><span class="sxs-lookup"><span data-stu-id="d6502-136">Description</span></span>|  
+|----------------------|---------------------------|-----------------|  
+|<span data-ttu-id="d6502-137">標準</span><span class="sxs-lookup"><span data-stu-id="d6502-137">Normal</span></span>|<span data-ttu-id="d6502-138">CommonStates</span><span class="sxs-lookup"><span data-stu-id="d6502-138">CommonStates</span></span>|<span data-ttu-id="d6502-139">既定の状態です。</span><span class="sxs-lookup"><span data-stu-id="d6502-139">The default state.</span></span>|  
+|<span data-ttu-id="d6502-140">MouseOver</span><span class="sxs-lookup"><span data-stu-id="d6502-140">MouseOver</span></span>|<span data-ttu-id="d6502-141">CommonStates</span><span class="sxs-lookup"><span data-stu-id="d6502-141">CommonStates</span></span>|<span data-ttu-id="d6502-142">マウス ポインターを置いた、<xref:System.Windows.Controls.TreeViewItem>です。</span><span class="sxs-lookup"><span data-stu-id="d6502-142">The mouse pointer is positioned over the <xref:System.Windows.Controls.TreeViewItem>.</span></span>|  
+|<span data-ttu-id="d6502-143">無効</span><span class="sxs-lookup"><span data-stu-id="d6502-143">Disabled</span></span>|<span data-ttu-id="d6502-144">CommonStates</span><span class="sxs-lookup"><span data-stu-id="d6502-144">CommonStates</span></span>|<span data-ttu-id="d6502-145"><xref:System.Windows.Controls.TreeViewItem>は無効になります。</span><span class="sxs-lookup"><span data-stu-id="d6502-145">The <xref:System.Windows.Controls.TreeViewItem> is disabled.</span></span>|  
+|<span data-ttu-id="d6502-146">フォーカスされている</span><span class="sxs-lookup"><span data-stu-id="d6502-146">Focused</span></span>|<span data-ttu-id="d6502-147">FocusStates</span><span class="sxs-lookup"><span data-stu-id="d6502-147">FocusStates</span></span>|<span data-ttu-id="d6502-148"><xref:System.Windows.Controls.TreeViewItem>にフォーカスがあります。</span><span class="sxs-lookup"><span data-stu-id="d6502-148">The <xref:System.Windows.Controls.TreeViewItem> has focus.</span></span>|  
+|<span data-ttu-id="d6502-149">フォーカスされていない</span><span class="sxs-lookup"><span data-stu-id="d6502-149">Unfocused</span></span>|<span data-ttu-id="d6502-150">FocusStates</span><span class="sxs-lookup"><span data-stu-id="d6502-150">FocusStates</span></span>|<span data-ttu-id="d6502-151"><xref:System.Windows.Controls.TreeViewItem>がフォーカスされていません。</span><span class="sxs-lookup"><span data-stu-id="d6502-151">The <xref:System.Windows.Controls.TreeViewItem> does not have focus.</span></span>|  
+|<span data-ttu-id="d6502-152">展開済み</span><span class="sxs-lookup"><span data-stu-id="d6502-152">Expanded</span></span>|<span data-ttu-id="d6502-153">ExpansionStates</span><span class="sxs-lookup"><span data-stu-id="d6502-153">ExpansionStates</span></span>|<span data-ttu-id="d6502-154"><xref:System.Windows.Controls.TreeViewItem>コントロールが展開されています。</span><span class="sxs-lookup"><span data-stu-id="d6502-154">The <xref:System.Windows.Controls.TreeViewItem> control is expanded.</span></span>|  
+|<span data-ttu-id="d6502-155">Collapsed</span><span class="sxs-lookup"><span data-stu-id="d6502-155">Collapsed</span></span>|<span data-ttu-id="d6502-156">ExpansionStates</span><span class="sxs-lookup"><span data-stu-id="d6502-156">ExpansionStates</span></span>|<span data-ttu-id="d6502-157"><xref:System.Windows.Controls.TreeViewItem>コントロールが折りたたまれています。</span><span class="sxs-lookup"><span data-stu-id="d6502-157">The <xref:System.Windows.Controls.TreeViewItem> control is collapsed.</span></span>|  
+|<span data-ttu-id="d6502-158">HasItems</span><span class="sxs-lookup"><span data-stu-id="d6502-158">HasItems</span></span>|<span data-ttu-id="d6502-159">HasItemsStates</span><span class="sxs-lookup"><span data-stu-id="d6502-159">HasItemsStates</span></span>|<span data-ttu-id="d6502-160"><xref:System.Windows.Controls.TreeViewItem>項目があります。</span><span class="sxs-lookup"><span data-stu-id="d6502-160">The <xref:System.Windows.Controls.TreeViewItem> has items.</span></span>|  
+|<span data-ttu-id="d6502-161">項目</span><span class="sxs-lookup"><span data-stu-id="d6502-161">NoItems</span></span>|<span data-ttu-id="d6502-162">HasItemsStates</span><span class="sxs-lookup"><span data-stu-id="d6502-162">HasItemsStates</span></span>|<span data-ttu-id="d6502-163"><xref:System.Windows.Controls.TreeViewItem>に項目がないです。</span><span class="sxs-lookup"><span data-stu-id="d6502-163">The <xref:System.Windows.Controls.TreeViewItem> does not have items.</span></span>|  
+|<span data-ttu-id="d6502-164">選択済み</span><span class="sxs-lookup"><span data-stu-id="d6502-164">Selected</span></span>|<span data-ttu-id="d6502-165">SelectionStates</span><span class="sxs-lookup"><span data-stu-id="d6502-165">SelectionStates</span></span>|<span data-ttu-id="d6502-166"><xref:System.Windows.Controls.TreeViewItem>が選択されています。</span><span class="sxs-lookup"><span data-stu-id="d6502-166">The <xref:System.Windows.Controls.TreeViewItem> is selected.</span></span>|  
+|<span data-ttu-id="d6502-167">SelectedInactive</span><span class="sxs-lookup"><span data-stu-id="d6502-167">SelectedInactive</span></span>|<span data-ttu-id="d6502-168">SelectionStates</span><span class="sxs-lookup"><span data-stu-id="d6502-168">SelectionStates</span></span>|<span data-ttu-id="d6502-169"><xref:System.Windows.Controls.TreeViewItem>が選択したアクティブではありません。</span><span class="sxs-lookup"><span data-stu-id="d6502-169">The <xref:System.Windows.Controls.TreeViewItem> is selected but not active.</span></span>|  
+|<span data-ttu-id="d6502-170">未選択</span><span class="sxs-lookup"><span data-stu-id="d6502-170">Unselected</span></span>|<span data-ttu-id="d6502-171">SelectionStates</span><span class="sxs-lookup"><span data-stu-id="d6502-171">SelectionStates</span></span>|<span data-ttu-id="d6502-172"><xref:System.Windows.Controls.TreeViewItem>が選択されていません。</span><span class="sxs-lookup"><span data-stu-id="d6502-172">The <xref:System.Windows.Controls.TreeViewItem> is not selected.</span></span>|  
+|<span data-ttu-id="d6502-173">有効</span><span class="sxs-lookup"><span data-stu-id="d6502-173">Valid</span></span>|<span data-ttu-id="d6502-174">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="d6502-174">ValidationStates</span></span>|<span data-ttu-id="d6502-175">コントロールを使用して、<xref:System.Windows.Controls.Validation>クラスおよび<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`false`します。</span><span class="sxs-lookup"><span data-stu-id="d6502-175">The control uses the <xref:System.Windows.Controls.Validation> class and the <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `false`.</span></span>|  
+|<span data-ttu-id="d6502-176">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="d6502-176">InvalidFocused</span></span>|<span data-ttu-id="d6502-177">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="d6502-177">ValidationStates</span></span>|<span data-ttu-id="d6502-178"><xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスします。</span><span class="sxs-lookup"><span data-stu-id="d6502-178">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control has focus.</span></span>|  
+|<span data-ttu-id="d6502-179">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="d6502-179">InvalidUnfocused</span></span>|<span data-ttu-id="d6502-180">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="d6502-180">ValidationStates</span></span>|<span data-ttu-id="d6502-181"><xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスがないです。</span><span class="sxs-lookup"><span data-stu-id="d6502-181">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control does not have focus.</span></span>|  
   
-## TreeView ControlTemplate の例  
- <xref:System.Windows.Controls.TreeView> コントロールの <xref:System.Windows.Controls.ControlTemplate> およびその関連付けられた型を定義する方法を次の例に示します。  
+## <a name="treeview-controltemplate-example"></a><span data-ttu-id="d6502-182">TreeView ControlTemplate の例</span><span class="sxs-lookup"><span data-stu-id="d6502-182">TreeView ControlTemplate Example</span></span>  
+ <span data-ttu-id="d6502-183">次の例は、定義する方法を示します、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.TreeView>コントロールとその関連する型。</span><span class="sxs-lookup"><span data-stu-id="d6502-183">The following example shows how to define a <xref:System.Windows.Controls.ControlTemplate> for the <xref:System.Windows.Controls.TreeView> control and its associated types.</span></span>  
   
- [!code-xml[ControlTemplateExamples#TreeView](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/treeview.xaml#treeview)]  
+ [!code-xaml[ControlTemplateExamples#TreeView](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/treeview.xaml#treeview)]  
   
- 前の例では、次の 1 つ以上のリソースを使用しています。  
+ <span data-ttu-id="d6502-184">前の例では、次のリソースの 1 つ以上を使用します。</span><span class="sxs-lookup"><span data-stu-id="d6502-184">The preceding example uses one or more of the following resources.</span></span>  
   
- [!code-xml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
+ [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- サンプル全体については、「[ControlTemplate を使用したスタイル設定のサンプル](http://go.microsoft.com/fwlink/?LinkID=160041)」を参照してください。.  
+ <span data-ttu-id="d6502-185">完全なサンプルについては、[Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d6502-185">For the complete sample, see [Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041).</span></span>  
   
-## 参照  
- <xref:System.Windows.FrameworkElement.Style%2A>   
- <xref:System.Windows.Controls.ControlTemplate>   
- [コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)   
- [コントロールのカスタマイズ](../../../../docs/framework/wpf/controls/control-customization.md)   
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
+## <a name="see-also"></a><span data-ttu-id="d6502-186">関連項目</span><span class="sxs-lookup"><span data-stu-id="d6502-186">See Also</span></span>  
+ <xref:System.Windows.FrameworkElement.Style%2A>  
+ <xref:System.Windows.Controls.ControlTemplate>  
+ [<span data-ttu-id="d6502-187">コントロールのスタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="d6502-187">Control Styles and Templates</span></span>](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [<span data-ttu-id="d6502-188">コントロールのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="d6502-188">Control Customization</span></span>](../../../../docs/framework/wpf/controls/control-customization.md)  
+ [<span data-ttu-id="d6502-189">スタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="d6502-189">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [<span data-ttu-id="d6502-190">ControlTemplate の作成による既存のコントロールの外観のカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="d6502-190">Customizing the Appearance of an Existing Control by Creating a ControlTemplate</span></span>](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

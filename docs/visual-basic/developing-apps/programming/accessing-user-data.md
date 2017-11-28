@@ -1,60 +1,41 @@
 ---
 title: "ユーザー データへのアクセス (Visual Basic)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- domain names, retrieving
+- domain names [Visual Basic], retrieving
 - data [Visual Basic], accessing user data
-- My.User object, tasks
-- user data, domain
-- user names, retrieving
-- user data, accessing
-- login names
+- My.User object [Visual Basic], tasks
+- user data [Visual Basic], domain
+- user names [Visual Basic], retrieving
+- user data [Visual Basic], accessing
+- login names [Visual Basic]
 - examples [Visual Basic], accessing user data
 ms.assetid: 32492a15-ee59-4a63-a1f1-9b24cc13140a
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 92c0b97059896e86d54069b637c9956cac9d10e8
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 396ae45d26551c3a44a8a8fa6334a744508734a7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# <a name="accessing-user-data-visual-basic"></a>ユーザー データへのアクセス (Visual Basic)
-このセクションには、`My.User` オブジェクトとそれで実行できるタスクに関するトピックが含まれています。  
+# <a name="accessing-user-data-visual-basic"></a><span data-ttu-id="4b346-102">ユーザー データへのアクセス (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4b346-102">Accessing User Data (Visual Basic)</span></span>
+<span data-ttu-id="4b346-103">このセクションには、`My.User` オブジェクトとそれで実行できるタスクに関するトピックが含まれています。</span><span class="sxs-lookup"><span data-stu-id="4b346-103">This section contains topics dealing with the `My.User` object and tasks that you can accomplish with it.</span></span>  
   
- `My.User` オブジェクトを利用すれば、<xref:System.Security.Principal.IPrincipal> インターフェイスを実装するオブジェクトを返すことで、ログオン ユーザーに関する情報にアクセスできます。  
+ <span data-ttu-id="4b346-104">`My.User` オブジェクトを利用すれば、<xref:System.Security.Principal.IPrincipal> インターフェイスを実装するオブジェクトを返すことで、ログオン ユーザーに関する情報にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="4b346-104">The `My.User` object provides access to information about the logged-on user by returning an object that implements the <xref:System.Security.Principal.IPrincipal> interface.</span></span>  
   
-## <a name="tasks"></a>タスク  
+## <a name="tasks"></a><span data-ttu-id="4b346-105">タスク</span><span class="sxs-lookup"><span data-stu-id="4b346-105">Tasks</span></span>  
   
-|目的|参照トピック|  
+|<span data-ttu-id="4b346-106">目的</span><span class="sxs-lookup"><span data-stu-id="4b346-106">To</span></span>|<span data-ttu-id="4b346-107">参照トピック</span><span class="sxs-lookup"><span data-stu-id="4b346-107">See</span></span>|  
 |--------|---------|  
-|ユーザーのログイン名を取得する|<xref:Microsoft.VisualBasic.ApplicationServices.User.Name%2A>|  
-|アプリケーションで Windows 認証が使用される場合、ユーザーのドメイン名を取得する|<xref:Microsoft.VisualBasic.ApplicationServices.User.CurrentPrincipal>|  
-|ユーザーの役割を判断する|<xref:Microsoft.VisualBasic.ApplicationServices.User.IsInRole%2A>|  
+|<span data-ttu-id="4b346-108">ユーザーのログイン名を取得する</span><span class="sxs-lookup"><span data-stu-id="4b346-108">Get the user's login name</span></span>|<xref:Microsoft.VisualBasic.ApplicationServices.User.Name%2A>|  
+|<span data-ttu-id="4b346-109">アプリケーションで Windows 認証が使用される場合、ユーザーのドメイン名を取得する</span><span class="sxs-lookup"><span data-stu-id="4b346-109">Get the user's domain name, if the application uses Windows authentication</span></span>|<xref:Microsoft.VisualBasic.ApplicationServices.User.CurrentPrincipal>|  
+|<span data-ttu-id="4b346-110">ユーザーの役割を判断する</span><span class="sxs-lookup"><span data-stu-id="4b346-110">Determine the user's role</span></span>|<xref:Microsoft.VisualBasic.ApplicationServices.User.IsInRole%2A>|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a><span data-ttu-id="4b346-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="4b346-111">See Also</span></span>  
  <xref:Microsoft.VisualBasic.ApplicationServices.User>
-

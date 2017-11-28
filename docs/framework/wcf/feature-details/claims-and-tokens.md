@@ -1,79 +1,81 @@
 ---
-title: "クレームとトークン | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "クレーム [WCF], トークン"
+title: "クレームとトークン"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: claims [WCF], and tokens
 ms.assetid: eff167f3-33f8-483d-a950-aa3e9f97a189
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 5df0845a341dc557627210c7f84fc59b4fadfd10
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# クレームとトークン
-ここでは、サポートされている既定のトークンから [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] によって作成されるさまざまなクレームの種類について説明します。  
+# <a name="claims-and-tokens"></a><span data-ttu-id="7f141-102">クレームとトークン</span><span class="sxs-lookup"><span data-stu-id="7f141-102">Claims and Tokens</span></span>
+<span data-ttu-id="7f141-103">ここでは、サポートされている既定のトークンから [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] によって作成されるさまざまなクレームの種類について説明します。</span><span class="sxs-lookup"><span data-stu-id="7f141-103">This topic describes the various claim types that [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] creates from the default tokens that it supports.</span></span>  
   
- クライアント資格情報のクレームは、<xref:System.IdentityModel.Claims.ClaimSet> クラスと <xref:System.IdentityModel.Claims.Claim> クラスを使用して確認できます。  `ClaimSet` には、`Claim` オブジェクトのコレクションが格納されます。  各 `Claim` には、次の重要なメンバーがあります。  
+ <span data-ttu-id="7f141-104">クライアント資格情報のクレームは、<xref:System.IdentityModel.Claims.ClaimSet> クラスと <xref:System.IdentityModel.Claims.Claim> クラスを使用して確認できます。</span><span class="sxs-lookup"><span data-stu-id="7f141-104">You can examine the claims of a client credential by using the <xref:System.IdentityModel.Claims.ClaimSet> and <xref:System.IdentityModel.Claims.Claim> classes.</span></span> <span data-ttu-id="7f141-105">`ClaimSet` には、`Claim` オブジェクトのコレクションが格納されます。</span><span class="sxs-lookup"><span data-stu-id="7f141-105">The `ClaimSet` contains a collection of `Claim` objects.</span></span> <span data-ttu-id="7f141-106">各 `Claim` には、次の重要なメンバーがあります。</span><span class="sxs-lookup"><span data-stu-id="7f141-106">Each `Claim` has the following important members:</span></span>  
   
--   <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> プロパティは、作成されるクレームの種類を指定する URI \(Uniform Resource Identifier\) を返します。  たとえば、クレームの種類が証明書の拇印の場合、その URI は http:schemas.microsoft.com\/ws\/20005\/05\/identity\/claims\/thumprint です。  
+-   <span data-ttu-id="7f141-107"><xref:System.IdentityModel.Claims.Claim.ClaimType%2A> プロパティは、作成されるクレームの種類を指定する URI (Uniform Resource Identifier) を返します。</span><span class="sxs-lookup"><span data-stu-id="7f141-107">The <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> property returns a Uniform Resource Identifier (URI) that specifies the type of claim being made.</span></span> <span data-ttu-id="7f141-108">たとえば、クレームの種類が証明書の拇印の場合、その URI は http:schemas.microsoft.com/ws/20005/05/identity/claims/thumprint です。</span><span class="sxs-lookup"><span data-stu-id="7f141-108">For example, a claim type may be a thumbprint of a certificate, in which case the URI is http:schemas.microsoft.com/ws/20005/05/identity/claims/thumprint.</span></span>  
   
--   <xref:System.IdentityModel.Claims.Claim.Right%2A> プロパティは、クレームの権限を指定する URI を返します。  定義済みの権限は、<xref:System.IdentityModel.Claims.Rights> クラスにあります \(<xref:System.IdentityModel.Claims.Rights.Identity%2A>、<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>\)。  
+-   <span data-ttu-id="7f141-109"><xref:System.IdentityModel.Claims.Claim.Right%2A> プロパティは、クレームの権限を指定する URI を返します。</span><span class="sxs-lookup"><span data-stu-id="7f141-109">The <xref:System.IdentityModel.Claims.Claim.Right%2A> property returns a URI that specifies the right of the claim.</span></span> <span data-ttu-id="7f141-110">定義済みの権限は、<xref:System.IdentityModel.Claims.Rights> クラスにあります (<xref:System.IdentityModel.Claims.Rights.Identity%2A>、<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>)。</span><span class="sxs-lookup"><span data-stu-id="7f141-110">Predefined rights are found in the <xref:System.IdentityModel.Claims.Rights> class (<xref:System.IdentityModel.Claims.Rights.Identity%2A>,  <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>).</span></span>  
   
--   <xref:System.IdentityModel.Claims.Claim.Resource%2A> プロパティは、クレームに関連付けられているリソースを返します。  
+-   <span data-ttu-id="7f141-111"><xref:System.IdentityModel.Claims.Claim.Resource%2A> プロパティは、クレームに関連付けられているリソースを返します。</span><span class="sxs-lookup"><span data-stu-id="7f141-111">The <xref:System.IdentityModel.Claims.Claim.Resource%2A> property returns the resource associated with the claim.</span></span>  
   
- 各 <xref:System.IdentityModel.Claims.ClaimSet> には、<xref:System.IdentityModel.Claims.ClaimSet.Issuer%2A> プロパティがあり、それぞれ `Issuer` の <xref:System.IdentityModel.Claims.ClaimSet> を表します。  
+ <span data-ttu-id="7f141-112">各 <xref:System.IdentityModel.Claims.ClaimSet> には、<xref:System.IdentityModel.Claims.ClaimSet.Issuer%2A> プロパティがあり、それぞれ <xref:System.IdentityModel.Claims.ClaimSet> の `Issuer` を表します。</span><span class="sxs-lookup"><span data-stu-id="7f141-112">Each <xref:System.IdentityModel.Claims.ClaimSet> also has an <xref:System.IdentityModel.Claims.ClaimSet.Issuer%2A> property, which represents the <xref:System.IdentityModel.Claims.ClaimSet> of the `Issuer`.</span></span>  
   
-## Windows アカウント  
- クライアント資格情報が Windows ユーザー アカウントにマップされる場合、<xref:System.IdentityModel.Claims.ClaimSet> は次の値を格納します。  
+## <a name="windows-accounts"></a><span data-ttu-id="7f141-113">Windows アカウント</span><span class="sxs-lookup"><span data-stu-id="7f141-113">Windows Accounts</span></span>  
+ <span data-ttu-id="7f141-114">クライアント資格情報が Windows ユーザー アカウントにマップされる場合、<xref:System.IdentityModel.Claims.ClaimSet> は次の値を格納します。</span><span class="sxs-lookup"><span data-stu-id="7f141-114">Where a client credential maps to a Windows user account, the resulting <xref:System.IdentityModel.Claims.ClaimSet> has the following values:</span></span>  
   
--   `Issuer` は、<xref:System.IdentityModel.Claims.ClaimSet> クラスの静的 Windows プロパティによって返される値です。  
+-   <span data-ttu-id="7f141-115">`Issuer` は、<xref:System.IdentityModel.Claims.ClaimSet> クラスの静的 Windows プロパティによって返される値です。</span><span class="sxs-lookup"><span data-stu-id="7f141-115">The `Issuer` is the value returned by the static Windows property of the <xref:System.IdentityModel.Claims.ClaimSet> class.</span></span>  
   
--   コレクションには次のクレームがあります。  
+-   <span data-ttu-id="7f141-116">コレクションには次のクレームがあります。</span><span class="sxs-lookup"><span data-stu-id="7f141-116">The claims in the collection are:</span></span>  
   
-    -   <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> 値がセキュリティ識別子 \(SID\)、<xref:System.IdentityModel.Claims.Claim.Right%2A> プロパティ値が `Identity` で、<xref:System.IdentityModel.Claims.Claim.Resource%2A> が実際の SID 値を返す <xref:System.IdentityModel.Claims.Claim>。  SID は、ドメイン コントローラーによって各ユーザーに発行される一意の値です。  SID は、Windows セキュリティとの対話でユーザーを識別するために使用されます。  
+    -   <span data-ttu-id="7f141-117"><xref:System.IdentityModel.Claims.Claim> 値がセキュリティ識別子 (SID)、<xref:System.IdentityModel.Claims.Claim.ClaimType%2A> プロパティ値が <xref:System.IdentityModel.Claims.Claim.Right%2A> で、`Identity` が実際の SID 値を返す <xref:System.IdentityModel.Claims.Claim.Resource%2A>。</span><span class="sxs-lookup"><span data-stu-id="7f141-117">A <xref:System.IdentityModel.Claims.Claim> with a <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> value of security identifier (SID), a <xref:System.IdentityModel.Claims.Claim.Right%2A> property value of `Identity`, and a <xref:System.IdentityModel.Claims.Claim.Resource%2A> that returns the actual SID value.</span></span> <span data-ttu-id="7f141-118">SID は、ドメイン コントローラーによって各ユーザーに発行される一意の値です。</span><span class="sxs-lookup"><span data-stu-id="7f141-118">A SID is a unique value the domain controller issues to every user.</span></span> <span data-ttu-id="7f141-119">SID は、Windows セキュリティとの対話でユーザーを識別するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="7f141-119">The SID is used to identify the user in interactions with Windows security.</span></span>  
   
-    -   <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> 値 が SID、<xref:System.IdentityModel.Claims.Claim.Right%2A> が `PossessProperty` で、<xref:System.IdentityModel.Claims.Claim.Resource%2A> が SID 値の <xref:System.IdentityModel.Claims.Claim>。  
+    -   <span data-ttu-id="7f141-120"><xref:System.IdentityModel.Claims.Claim> 値 が SID、<xref:System.IdentityModel.Claims.Claim.ClaimType%2A> が <xref:System.IdentityModel.Claims.Claim.Right%2A> で、`PossessProperty` が SID 値の <xref:System.IdentityModel.Claims.Claim.Resource%2A>。</span><span class="sxs-lookup"><span data-stu-id="7f141-120">A <xref:System.IdentityModel.Claims.Claim> with a <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> value of SID, a <xref:System.IdentityModel.Claims.Claim.Right%2A> of `PossessProperty`, and a <xref:System.IdentityModel.Claims.Claim.Resource%2A> of the SID value.</span></span>  
   
-    -   <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> が <xref:System.IdentityModel.Claims.ClaimTypes.Name%2A>、<xref:System.IdentityModel.Claims.Claim.Right%2A> が `PossessProperty` で、<xref:System.IdentityModel.Claims.Claim.Resource%2A> がユーザー名 \(たとえば、"MYMACHINE\\Bob"\) を含んだ文字列である <xref:System.IdentityModel.Claims.Claim>。  
+    -   <span data-ttu-id="7f141-121"><xref:System.IdentityModel.Claims.Claim> が <xref:System.IdentityModel.Claims.Claim.ClaimType%2A>、<xref:System.IdentityModel.Claims.ClaimTypes.Name%2A> が <xref:System.IdentityModel.Claims.Claim.Right%2A> で、`PossessProperty` がユーザー名 (たとえば、"MYMACHINE\Bob") を含んだ文字列である <xref:System.IdentityModel.Claims.Claim.Resource%2A>。</span><span class="sxs-lookup"><span data-stu-id="7f141-121">A <xref:System.IdentityModel.Claims.Claim> with a <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> of <xref:System.IdentityModel.Claims.ClaimTypes.Name%2A>, a <xref:System.IdentityModel.Claims.Claim.Right%2A> of `PossessProperty` and a <xref:System.IdentityModel.Claims.Claim.Resource%2A> of string containing the user name (for example, "MYMACHINE\Bob").</span></span>  
   
-    -   ユーザーが属するさまざまなグループの <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> が指定された追加の SID クレーム。  
+    -   <span data-ttu-id="7f141-122">ユーザーが属するさまざまなグループの <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> が指定された追加の SID クレーム。</span><span class="sxs-lookup"><span data-stu-id="7f141-122">Additional SID claims with <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> for the various groups the user belongs to.</span></span>  
   
-## 証明書  
- クライアント資格情報が証明書の場合、<xref:System.IdentityModel.Claims.ClaimSet> は次の値を格納します。  
+## <a name="certificates"></a><span data-ttu-id="7f141-123">証明書</span><span class="sxs-lookup"><span data-stu-id="7f141-123">Certificates</span></span>  
+ <span data-ttu-id="7f141-124">クライアント資格情報が証明書の場合、<xref:System.IdentityModel.Claims.ClaimSet> は次の値を格納します。</span><span class="sxs-lookup"><span data-stu-id="7f141-124">Where the client credential is a certificate, the resulting <xref:System.IdentityModel.Claims.ClaimSet> has the following values:</span></span>  
   
--   自己発行証明書の場合、`Issuer` は <xref:System.IdentityModel.Claims.ClaimSet> です。  <xref:System.IdentityModel.Claims.ClaimSet> は、<xref:System.IdentityModel.Claims.ClaimTypes.Thumbprint%2A> に設定された <xref:System.IdentityModel.Claims.Claim.ClaimType%2A>、`Identity` に設定された <xref:System.IdentityModel.Claims.Claim.Right%2A>、および証明書の拇印を含んだ <xref:System.Byte> 配列である <xref:System.IdentityModel.Claims.Claim.Resource%2A> 値を返します。  
+-   <span data-ttu-id="7f141-125">自己発行証明書の場合、`Issuer` は <xref:System.IdentityModel.Claims.ClaimSet> です。</span><span class="sxs-lookup"><span data-stu-id="7f141-125">For self-issued certificates, the `Issuer` is the <xref:System.IdentityModel.Claims.ClaimSet> itself.</span></span> <span data-ttu-id="7f141-126"><xref:System.IdentityModel.Claims.ClaimSet> は、<xref:System.IdentityModel.Claims.Claim.ClaimType%2A> に設定された <xref:System.IdentityModel.Claims.ClaimTypes.Thumbprint%2A>、<xref:System.IdentityModel.Claims.Claim.Right%2A> に設定された `Identity`、および証明書の拇印を含んだ <xref:System.IdentityModel.Claims.Claim.Resource%2A> 配列である <xref:System.Byte> 値を返します。</span><span class="sxs-lookup"><span data-stu-id="7f141-126">The <xref:System.IdentityModel.Claims.ClaimSet> returns a <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> of <xref:System.IdentityModel.Claims.ClaimTypes.Thumbprint%2A>, a <xref:System.IdentityModel.Claims.Claim.Right%2A> of `Identity`, and a <xref:System.IdentityModel.Claims.Claim.Resource%2A> value that is a <xref:System.Byte> array containing the thumbprint of the certificate.</span></span>  
   
--   証明機関によって発行された証明書の場合、発行者は、証明機関の証明書を表す `ClaimSet` です。  
+-   <span data-ttu-id="7f141-127">証明機関によって発行された証明書の場合、発行者は、証明機関の証明書を表す `ClaimSet` です。</span><span class="sxs-lookup"><span data-stu-id="7f141-127">For a certificate issued by a certification authority, the issuer is the `ClaimSet` representing the certification authority’s certificate.</span></span>  
   
--   コレクションの `Claims` には次のものが含まれます。  
+-   <span data-ttu-id="7f141-128">コレクションの `Claims` には次のものが含まれます。</span><span class="sxs-lookup"><span data-stu-id="7f141-128">The `Claims` in the collection include:</span></span>  
   
-    -   `ClaimType` が Thumbprint、`Right` が PossessProperty で、`Resource` が証明書の拇印を含んだバイト配列である `Claim`。  
+    -   <span data-ttu-id="7f141-129">`Claim` が Thumbprint、`ClaimType` が PossessProperty で、`Right` が証明書の拇印を含んだバイト配列である `Resource`。</span><span class="sxs-lookup"><span data-stu-id="7f141-129">A `Claim` with a `ClaimType` of Thumbprint, a `Right` of PossessProperty, and a `Resource` that is a byte array containing the thumbprint of the certificate</span></span>  
   
-    -   証明書のさまざまなプロパティを表す X500DistinguishedName、Dns、Name、Upn、Rsa などの複数の種類の追加の PossessProperty クレーム。  Rsa クレームのリソースは、証明書に関連付けられた公開キーです。**メモ** クライアント資格情報の種類が、サービスによって Windows アカウントにマップされる証明書の場合、2 つの `ClaimSet` オブジェクトが生成されます。  最初のオブジェクトには、Windows アカウントに関するすべてのクレームが入り、2 番目のオブジェクトには、証明書に関するすべてのクレームが入ります。  
+    -   <span data-ttu-id="7f141-130">証明書のさまざまなプロパティを表す X500DistinguishedName、Dns、Name、Upn、Rsa などの複数の種類の追加の PossessProperty クレーム。</span><span class="sxs-lookup"><span data-stu-id="7f141-130">Additional PossessProperty claims of various types, including X500DistinguishedName, Dns, Name, Upn, and Rsa, represent various properties of the certificate.</span></span> <span data-ttu-id="7f141-131">Rsa クレームのリソースは、証明書に関連付けられている公開キーです。**注**クライアント資格情報の種類が Windows をサービスにマップする証明書をアカウント、2 つ`ClaimSet`オブジェクトが生成されます。</span><span class="sxs-lookup"><span data-stu-id="7f141-131">The resource for the Rsa claim is the public key associated with the certificate.**Note** Where the client credential type is a certificate that the service maps to a Windows account, two `ClaimSet` objects are generated.</span></span> <span data-ttu-id="7f141-132">最初のオブジェクトには、Windows アカウントに関するすべてのクレームが入り、2 番目のオブジェクトには、証明書に関するすべてのクレームが入ります。</span><span class="sxs-lookup"><span data-stu-id="7f141-132">The first contains all the claims related to the Windows account and the second contains all the claims related to the certificate.</span></span>  
   
-## ユーザー名\/パスワード  
- クライアント資格情報が、Windows アカウントにマップされないユーザー名とパスワード \(または同等のもの\) の場合、`ClaimSet` は、`ClaimSet` クラスの静的 <xref:System.IdentityModel.Claims.ClaimSet.System%2A> プロパティによって発行されます。  `ClaimSet` は、リソースがクライアントによって提供されるユーザー名である <xref:System.IdentityModel.Claims.ClaimTypes.Name%2A> 型の `Identity` クレームを格納します。  対応するクレームには、`PossessProperty` の`Right` があります。  
+## <a name="user-namepassword"></a><span data-ttu-id="7f141-133">ユーザー名/パスワード</span><span class="sxs-lookup"><span data-stu-id="7f141-133">User Name/Password</span></span>  
+ <span data-ttu-id="7f141-134">クライアント資格情報が、Windows アカウントにマップされないユーザー名とパスワード (または同等のもの) の場合、`ClaimSet` は、<xref:System.IdentityModel.Claims.ClaimSet.System%2A> クラスの静的 `ClaimSet` プロパティによって発行されます。</span><span class="sxs-lookup"><span data-stu-id="7f141-134">Where the client credential is a user name/password (or equivalent) that does not map to a Windows account, the resulting `ClaimSet` is issued by the static <xref:System.IdentityModel.Claims.ClaimSet.System%2A> property of the `ClaimSet` class.</span></span> <span data-ttu-id="7f141-135">`ClaimSet`が含まれています、`Identity`要求の種類の<xref:System.IdentityModel.Claims.ClaimTypes.Name%2A>リソースがクライアントのユーザー名を提供します。</span><span class="sxs-lookup"><span data-stu-id="7f141-135">The `ClaimSet` contains an `Identity` claim of type <xref:System.IdentityModel.Claims.ClaimTypes.Name%2A> whose resource is the user name the client provides.</span></span> <span data-ttu-id="7f141-136">対応するクレームには、`Right` の`PossessProperty` があります。</span><span class="sxs-lookup"><span data-stu-id="7f141-136">A corresponding claim has a `Right` of `PossessProperty`.</span></span>  
   
-## RSA キー  
- 証明書に関連付けられていない RSA キーが使用される場合、`ClaimSet` は、自己発行され、リソースが RSA キーである <xref:System.IdentityModel.Claims.ClaimTypes.Rsa%2A> 型の `Identity` クレームを格納します。  対応するクレームには、`PossessProperty` の `Right` があります。  
+## <a name="rsa-keys"></a><span data-ttu-id="7f141-137">RSA キー</span><span class="sxs-lookup"><span data-stu-id="7f141-137">RSA Keys</span></span>  
+ <span data-ttu-id="7f141-138">証明書に関連付けられていない RSA キーを使用すると、場所、結果として得られる`ClaimSet`は、自己発行し、が含まれています、`Identity`要求の種類の<xref:System.IdentityModel.Claims.ClaimTypes.Rsa%2A>リソースが RSA キーです。</span><span class="sxs-lookup"><span data-stu-id="7f141-138">Where an RSA key not associated with a certificate is used, the resulting `ClaimSet` is self-issued and contains an `Identity` claim of type <xref:System.IdentityModel.Claims.ClaimTypes.Rsa%2A> whose resource is the RSA key.</span></span> <span data-ttu-id="7f141-139">対応するクレームには、`Right` の`PossessProperty` があります。</span><span class="sxs-lookup"><span data-stu-id="7f141-139">A corresponding claim has a `Right` of `PossessProperty`.</span></span>  
   
-## SAML  
- クライアントが SAML \(Security Assertions Markup Language\) トークンを使用して認証する場合、`ClaimSet` は、SAML トークンを署名したエンティティ \(通常は、SAML トークンを発行したセキュリティ トークン サービス \(STS\) の証明書\) によって発行されます。  `ClaimSet` は、SAML トークンに含まれているとおりのさまざまなクレームを格納します。  SAML トークンが、名前が `null` 以外の `SamlSubject` を含んでいる場合、型が <xref:System.IdentityModel.Claims.ClaimTypes.NameIdentifier%2A> で、リソース型が <xref:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource> の `Identity` クレームが作成されます。  
+## <a name="saml"></a><span data-ttu-id="7f141-140">SAML</span><span class="sxs-lookup"><span data-stu-id="7f141-140">SAML</span></span>  
+ <span data-ttu-id="7f141-141">クライアントが SAML (Security Assertions Markup Language) トークンを使用して認証する場合、`ClaimSet` は、SAML トークンを署名したエンティティ (通常は、SAML トークンを発行したセキュリティ トークン サービス (STS) の証明書) によって発行されます。</span><span class="sxs-lookup"><span data-stu-id="7f141-141">Where the client authenticates with a Security Assertions Markup Language (SAML) token, the resulting `ClaimSet` is issued by the entity that signed the SAML token, often the certificate of the security token service (STS) that issued the SAML token.</span></span> <span data-ttu-id="7f141-142">`ClaimSet` は、SAML トークンに含まれているとおりのさまざまなクレームを格納します。</span><span class="sxs-lookup"><span data-stu-id="7f141-142">The `ClaimSet` contains various claims as found in the SAML token.</span></span> <span data-ttu-id="7f141-143">SAML トークンが、名前が `SamlSubject` 以外の `null` を含んでいる場合、型が `Identity` で、リソース型が <xref:System.IdentityModel.Claims.ClaimTypes.NameIdentifier%2A> の <xref:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource> クレームが作成されます。</span><span class="sxs-lookup"><span data-stu-id="7f141-143">If the SAML token contains a `SamlSubject` with a non-`null` name, then an `Identity` claim with a type of <xref:System.IdentityModel.Claims.ClaimTypes.NameIdentifier%2A> and a resource type of <xref:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource> are created.</span></span>  
   
-## Identity クレームと ServiceSecurityContext.IsAnonymous  
- クライアント資格情報から生成された `ClaimSet` オブジェクトが、`Right` が `Identity` のクレームを格納していない場合、<xref:System.ServiceModel.ServiceSecurityContext.IsAnonymous%2A> プロパティは `true` を返します。  このようなクレームが 1 つ以上ある場合、`IsAnonymous` プロパティは `false` を返します。  
+## <a name="identity-claims-and-servicesecuritycontextisanonymous"></a><span data-ttu-id="7f141-144">Identity クレームと ServiceSecurityContext.IsAnonymous</span><span class="sxs-lookup"><span data-stu-id="7f141-144">Identity Claims and ServiceSecurityContext.IsAnonymous</span></span>  
+ <span data-ttu-id="7f141-145">None の場合、`ClaimSet`クライアントの資格情報の結果オブジェクトはクレームを格納、`Right`の`Identity,`、<xref:System.ServiceModel.ServiceSecurityContext.IsAnonymous%2A>プロパティから返される`true`です。</span><span class="sxs-lookup"><span data-stu-id="7f141-145">If none of the `ClaimSet` objects resulting from the client credentials contain a claim with a `Right` of `Identity,` then the <xref:System.ServiceModel.ServiceSecurityContext.IsAnonymous%2A> property returns `true`.</span></span> <span data-ttu-id="7f141-146">このようなクレームが 1 つ以上ある場合、`IsAnonymous` プロパティは `false` を返します。</span><span class="sxs-lookup"><span data-stu-id="7f141-146">If one or more such claims are present, the `IsAnonymous` property returns `false`.</span></span>  
   
-## 参照  
- <xref:System.IdentityModel.Claims.ClaimSet>   
- <xref:System.IdentityModel.Claims.Claim>   
- <xref:System.IdentityModel.Claims.Rights>   
- <xref:System.IdentityModel.Claims.ClaimTypes>   
- [ID モデルを使用したクレームと承認の管理](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
+## <a name="see-also"></a><span data-ttu-id="7f141-147">関連項目</span><span class="sxs-lookup"><span data-stu-id="7f141-147">See Also</span></span>  
+ <xref:System.IdentityModel.Claims.ClaimSet>  
+ <xref:System.IdentityModel.Claims.Claim>  
+ <xref:System.IdentityModel.Claims.Rights>  
+ <xref:System.IdentityModel.Claims.ClaimTypes>  
+ [<span data-ttu-id="7f141-148">クレームと Id モデルによる承認の管理</span><span class="sxs-lookup"><span data-stu-id="7f141-148">Managing Claims and Authorization with the Identity Model</span></span>](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)

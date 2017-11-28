@@ -1,49 +1,53 @@
 ---
-title: "方法 : PathGeometry で LineSegment を作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "PathGeometry クラス"
-  - "PathGeometry クラス"
-  - "直線セグメントを作成します。"
-  - "グラフィックス [WPF] 直線セグメント"
+title: "方法 : PathGeometry で LineSegment を作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- line segments [WPF], creating
+- graphics [WPF], line segments
 ms.assetid: 0155ed47-a20d-49a7-a306-186d8e07fbc4
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: aa7ea915afa2dc80e19d270abb86ec12a39d5865
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : PathGeometry で LineSegment を作成する
-この例では、直線セグメントを作成する方法を示します。 直線セグメントを作成するには、使用、 <xref:System.Windows.Media.PathGeometry>、 <xref:System.Windows.Media.PathFigure>、および<xref:System.Windows.Media.LineSegment>クラスです。  
+# <a name="how-to-create-a-linesegment-in-a-pathgeometry"></a><span data-ttu-id="e4686-102">方法 : PathGeometry で LineSegment を作成する</span><span class="sxs-lookup"><span data-stu-id="e4686-102">How to: Create a LineSegment in a PathGeometry</span></span>
+<span data-ttu-id="e4686-103">この例では、線分を作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e4686-103">This example shows how to create a line segment.</span></span> <span data-ttu-id="e4686-104">直線セグメントを作成するには、使用、 <xref:System.Windows.Media.PathGeometry>、 <xref:System.Windows.Media.PathFigure>、および<xref:System.Windows.Media.LineSegment>クラスです。</span><span class="sxs-lookup"><span data-stu-id="e4686-104">To create a line segment, use the <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>, and <xref:System.Windows.Media.LineSegment> classes.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、描画、 <xref:System.Windows.Media.LineSegment>から (10, 50) を (200, 70)。 次の図は、その結果<xref:System.Windows.Media.LineSegment>; 座標系を表示するグリッドの背景色が追加されました。  
+## <a name="example"></a><span data-ttu-id="e4686-105">例</span><span class="sxs-lookup"><span data-stu-id="e4686-105">Example</span></span>  
+ <span data-ttu-id="e4686-106">次の例では、描画、<xref:System.Windows.Media.LineSegment>から (10, 50) に (200, 70)。</span><span class="sxs-lookup"><span data-stu-id="e4686-106">The following examples draw a <xref:System.Windows.Media.LineSegment> from (10, 50) to (200, 70).</span></span> <span data-ttu-id="e4686-107">次の図は、結果として得られる<xref:System.Windows.Media.LineSegment>; 座標系を表示するグリッドの背景色が追加されました。</span><span class="sxs-lookup"><span data-stu-id="e4686-107">The following illustration shows the resulting <xref:System.Windows.Media.LineSegment>; a grid background was added to show the coordinate system.</span></span>  
   
- ![PathFigure 内の LineSegment](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-pathgeometrylinesegment.png "graphicsmm_pathgeometrylinesegment")  
-(10,50) から (200,70) に描画 LineSegment  
+ <span data-ttu-id="e4686-108">![PathFigure 内の LineSegment](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-pathgeometrylinesegment.png "graphicsmm_pathgeometrylinesegment")</span><span class="sxs-lookup"><span data-stu-id="e4686-108">![A LineSegment in a PathFigure](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-pathgeometrylinesegment.png "graphicsmm_pathgeometrylinesegment")</span></span>  
+<span data-ttu-id="e4686-109">(10,50) から (200,70) まで描画された LineSegment</span><span class="sxs-lookup"><span data-stu-id="e4686-109">A LineSegment drawn from (10,50) to (200,70)</span></span>  
   
- [xaml]  
+ <span data-ttu-id="e4686-110">[xaml]</span><span class="sxs-lookup"><span data-stu-id="e4686-110">[xaml]</span></span>  
   
- [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]パスを記述する属性の構文を使用することがあります。  
+ <span data-ttu-id="e4686-111">[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] では、属性構文を使用してパスを記述できます。</span><span class="sxs-lookup"><span data-stu-id="e4686-111">In [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], you may use attribute syntax to describe a path.</span></span>  
   
 ```xaml  
 <Path Stroke="Black" StrokeThickness="1"    
   Data="M 10,50 L 200,70" />  
 ```  
   
- [xaml]  
+ <span data-ttu-id="e4686-112">[xaml]</span><span class="sxs-lookup"><span data-stu-id="e4686-112">[xaml]</span></span>  
   
- (この属性の構文が実際に作成するメモ、 <xref:System.Windows.Media.StreamGeometry>、軽量なバージョンの<xref:System.Windows.Media.PathGeometry>します。 詳細については、次を参照してください、[パス マークアップ構文](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md)ページです。)。  
+ <span data-ttu-id="e4686-113">(この属性の構文が実際に作成するメモ、 <xref:System.Windows.Media.StreamGeometry>、軽量バージョンの<xref:System.Windows.Media.PathGeometry>です。</span><span class="sxs-lookup"><span data-stu-id="e4686-113">(Note that this attribute syntax actually creates a <xref:System.Windows.Media.StreamGeometry>, a lighter-weight version of a <xref:System.Windows.Media.PathGeometry>.</span></span> <span data-ttu-id="e4686-114">詳細については、「[パス マークアップ構文](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md)」のページを参照してください。)</span><span class="sxs-lookup"><span data-stu-id="e4686-114">For more information, see the [Path Markup Syntax](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md) page.)</span></span>  
   
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]、オブジェクト要素構文を使用して、直線セグメントを描画することもできます。 次は、前のと同じ[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]例です。  
+ <span data-ttu-id="e4686-115">[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] では、オブジェクト要素構文を使用して線分を描画することもできます。</span><span class="sxs-lookup"><span data-stu-id="e4686-115">In [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], you may also draw a line segment by using object element syntax.</span></span> <span data-ttu-id="e4686-116">次の例は、前の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の例と同じです。</span><span class="sxs-lookup"><span data-stu-id="e4686-116">The following is equivalent to the previous [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] example.</span></span>  
   
 ```xaml  
 <Path Stroke="Black" StrokeThickness="1">  
@@ -105,11 +109,11 @@ Dim myPathFigure As New PathFigure()
             myPath.Data = myPathGeometry  
 ```  
   
- この例はより大きなサンプルの一部完全なサンプルを参照してください、[ジオメトリ サンプル](http://go.microsoft.com/fwlink/?LinkID=159989)します。  
+ <span data-ttu-id="e4686-117">この例は、より大きなサンプルの一部です。完全なサンプルについては、「[ジオメトリのサンプル](http://go.microsoft.com/fwlink/?LinkID=159989)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e4686-117">This example is part of larger sample; for the complete sample, see the [Geometries Sample](http://go.microsoft.com/fwlink/?LinkID=159989).</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Windows.Media.PathFigure>   
- <xref:System.Windows.Media.PathGeometry>   
- <xref:System.Windows.Media.GeometryDrawing>   
- <xref:System.Windows.Shapes.Path>   
- [ジオメトリの概要](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)
+## <a name="see-also"></a><span data-ttu-id="e4686-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="e4686-118">See Also</span></span>  
+ <xref:System.Windows.Media.PathFigure>  
+ <xref:System.Windows.Media.PathGeometry>  
+ <xref:System.Windows.Media.GeometryDrawing>  
+ <xref:System.Windows.Shapes.Path>  
+ [<span data-ttu-id="e4686-119">ジオメトリの概要</span><span class="sxs-lookup"><span data-stu-id="e4686-119">Geometry Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)

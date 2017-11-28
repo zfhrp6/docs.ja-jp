@@ -1,44 +1,49 @@
 ---
-title: "方法 : Windows フォームの TextBox コントロールを使用してパスワード テキスト ボックスを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "パスワード ボックス, 作成"
-  - "PasswordChar プロパティ (テキスト ボックスの)"
-  - "パスワード, 入力マスク"
-  - "パスワード, パスワード テキスト ボックス"
-  - "TextBox コントロール [Windows フォーム], 入力 (パスワードを)"
+title: "方法 : Windows フォームの TextBox コントロールを使用してパスワード テキスト ボックスを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- TextBox control [Windows Forms], entering passwords
+- password boxes [Windows Forms], creating
+- PasswordChar property in text boxes
+- passwords [Windows Forms], input mask
+- passwords [Windows Forms], password text box
 ms.assetid: d105d6b9-3d50-44cd-80d8-2c0e2f486727
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: caf5cef9e23134715101545902e32e72d63c0aac
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームの TextBox コントロールを使用してパスワード テキスト ボックスを作成する
-Windows フォーム テキスト ボックスの 1 つであるパスワード ボックスには、文字列を入力したときにプレースホルダー文字が表示されます。  
+# <a name="how-to-create-a-password-text-box-with-the-windows-forms-textbox-control"></a><span data-ttu-id="b2dc5-102">方法 : Windows フォームの TextBox コントロールを使用してパスワード テキスト ボックスを作成する</span><span class="sxs-lookup"><span data-stu-id="b2dc5-102">How to: Create a Password Text Box with the Windows Forms TextBox Control</span></span>
+<span data-ttu-id="b2dc5-103">パスワード ボックスは、ユーザーが入力文字列中に、プレース ホルダー文字を表示する Windows フォームのテキスト ボックスです。</span><span class="sxs-lookup"><span data-stu-id="b2dc5-103">A password box is a Windows Forms text box that displays placeholder characters while a user types a string.</span></span>  
   
-### パスワード テキスト ボックスを作成するには  
+### <a name="to-create-a-password-text-box"></a><span data-ttu-id="b2dc5-104">パスワード テキスト ボックスを作成するには</span><span class="sxs-lookup"><span data-stu-id="b2dc5-104">To create a password text box</span></span>  
   
-1.  <xref:System.Windows.Forms.TextBox> コントロールの <xref:System.Windows.Forms.TextBox.PasswordChar%2A> プロパティに特定の文字を設定します。  
+1.  <span data-ttu-id="b2dc5-105">設定、<xref:System.Windows.Forms.TextBox.PasswordChar%2A>のプロパティ、<xref:System.Windows.Forms.TextBox>特定の文字をコントロールします。</span><span class="sxs-lookup"><span data-stu-id="b2dc5-105">Set the <xref:System.Windows.Forms.TextBox.PasswordChar%2A> property of the <xref:System.Windows.Forms.TextBox> control to a specific character.</span></span>  
   
-     <xref:System.Windows.Forms.TextBox.PasswordChar%2A> プロパティでは、テキスト ボックスに表示する文字を指定します。  たとえば、パスワード ボックスにアスタリスク \(\*\) を表示する場合は、\[プロパティ\] ウィンドウで、<xref:System.Windows.Forms.TextBox.PasswordChar%2A> プロパティに \* を指定します。  テキスト ボックスに入力した文字に関係なく、アスタリスクが表示されます。  
+     <span data-ttu-id="b2dc5-106"><xref:System.Windows.Forms.TextBox.PasswordChar%2A>プロパティは、テキスト ボックスに表示される文字を指定します。</span><span class="sxs-lookup"><span data-stu-id="b2dc5-106">The <xref:System.Windows.Forms.TextBox.PasswordChar%2A> property specifies the character displayed in the text box.</span></span> <span data-ttu-id="b2dc5-107">たとえば、[パスワード] ボックスに表示されるアスタリスクを実行する場合に、指定 * の<xref:System.Windows.Forms.TextBox.PasswordChar%2A>プロパティ ウィンドウでプロパティです。</span><span class="sxs-lookup"><span data-stu-id="b2dc5-107">For example, if you want asterisks displayed in the password box, specify * for the <xref:System.Windows.Forms.TextBox.PasswordChar%2A> property in the Properties window.</span></span> <span data-ttu-id="b2dc5-108">次に、どのような文字をテキスト ボックスにユーザーを入力するに関係なく、アスタリスクが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b2dc5-108">Then, regardless of what character a user types in the text box, an asterisk is displayed.</span></span>  
   
-2.  \(省略可能\) <xref:System.Windows.Forms.TextBoxBase.MaxLength%2A> プロパティを設定します。  このプロパティでは、テキスト ボックスに入力できる文字数を指定します。  最大長を超えるとビープ音がなり、テキスト ボックスにそれ以上文字を入力できなくなります。  パスワードに最大長を設定するとハッカーがパスワードを推測しやすくなるため、このプロパティは必ずしも設定する必要はありません。  
+2.  <span data-ttu-id="b2dc5-109">(省略可能)設定、<xref:System.Windows.Forms.TextBoxBase.MaxLength%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="b2dc5-109">(Optional) Set the <xref:System.Windows.Forms.TextBoxBase.MaxLength%2A> property.</span></span> <span data-ttu-id="b2dc5-110">プロパティは、テキスト ボックスに入力できる文字数を決定します。</span><span class="sxs-lookup"><span data-stu-id="b2dc5-110">The property determines how many characters can be typed in the text box.</span></span> <span data-ttu-id="b2dc5-111">最大長を超えた場合、システムのビープ音が鳴るし、テキスト ボックスで、複数の文字は使用できません。</span><span class="sxs-lookup"><span data-stu-id="b2dc5-111">If the maximum length is exceeded, the system emits a beep and the text box does not accept any more characters.</span></span> <span data-ttu-id="b2dc5-112">これを行うように使用すると、パスワードを推測しようとしているハッカーのパスワードの最大の長さがありますの希望しない場合がありますに注意してください。</span><span class="sxs-lookup"><span data-stu-id="b2dc5-112">Note that you may not wish to do this as the maximum length of a password may be of use to hackers who are trying to guess the password.</span></span>  
   
-     次のコード例では、14 文字までの文字列を入力でき、文字列の代わりにアスタリスクが表示されるテキスト ボックスを初期化します。  `InitializeMyControl` の手順では自動的に実装します ; これを呼び出す必要があります。  
+     <span data-ttu-id="b2dc5-113">次のコード例では、14 文字以内の文字列をそのまま使用し、文字列の代わりにアスタリスクが表示するテキスト ボックスを初期化する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b2dc5-113">The following code example shows how to initialize a text box that will accept a string up to 14 characters long and display asterisks in place of the string.</span></span> <span data-ttu-id="b2dc5-114">`InitializeMyControl`プロシージャが自動的に実行されません。 呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="b2dc5-114">The `InitializeMyControl` procedure will not execute automatically; it must be called.</span></span>  
   
     > [!IMPORTANT]
-    >  テキスト ボックスで <xref:System.Windows.Forms.TextBox.PasswordChar%2A> プロパティを使用すると、ユーザーがパスワードを入力するときに他の人に見られないようにできます。  このセキュリティ対策では、アプリケーションのロジックによって許可される可能性があるパスワードの保存や伝送を防止することはできません。  入力されたテキストはどのような方法でも暗号化されていないため、他の機密データと同様に扱う必要があります。  パスワードは、表示はされませんが、書式なしテキストの文字列として扱われています。ただし、他に追加のセキュリティ対策を講じている場合は除きます。  
+    >  <span data-ttu-id="b2dc5-115">使用して、<xref:System.Windows.Forms.TextBox.PasswordChar%2A>プロパティ テキスト ボックスに確保できますを他のユーザーはデータを入力するユーザーを確認する場合は、ユーザーのパスワードを確認できません。</span><span class="sxs-lookup"><span data-stu-id="b2dc5-115">Using the <xref:System.Windows.Forms.TextBox.PasswordChar%2A> property on a text box can help ensure that other people will not be able to determine a user's password if they observe the user entering it.</span></span> <span data-ttu-id="b2dc5-116">このセキュリティ対策には、あらゆる種類の記憶域または、アプリケーション ロジックによって発生するパスワードの送信は説明しません。</span><span class="sxs-lookup"><span data-stu-id="b2dc5-116">This security measure does not cover any sort of storage or transmission of the password that can occur due to your application logic.</span></span> <span data-ttu-id="b2dc5-117">任意の方法で入力したテキストは暗号化されないために、他の機密データと同様に扱う必要があります。</span><span class="sxs-lookup"><span data-stu-id="b2dc5-117">Because the text entered is not encrypted in any way, you should treat it as you would any other confidential data.</span></span> <span data-ttu-id="b2dc5-118">このよう表示されない場合でもパスワード中として扱われますプレーン テキスト文字列 (いくつか追加のセキュリティ対策を実装している) 場合。</span><span class="sxs-lookup"><span data-stu-id="b2dc5-118">Even though it does not appear as such, the password is still being treated as a plain-text string (unless you have implemented some additional security measure).</span></span>  
   
     ```vb  
     Private Sub InitializeMyControl()  
@@ -49,7 +54,6 @@ Windows フォーム テキスト ボックスの 1 つであるパスワード 
        ' The control will allow no more than 14 characters.  
        TextBox1.MaxLength = 14  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -62,7 +66,6 @@ Windows フォーム テキスト ボックスの 1 つであるパスワード 
        // The control will allow no more than 14 characters.  
        textBox1.MaxLength = 14;  
     }  
-  
     ```  
   
     ```cpp  
@@ -78,12 +81,12 @@ Windows フォーム テキスト ボックスの 1 つであるパスワード 
        }  
     ```  
   
-## 参照  
- <xref:System.Windows.Forms.TextBox>   
- [TextBox コントロールの概要](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)   
- [方法 : Windows フォーム TextBox コントロールでのカーソル位置を制御する](../../../../docs/framework/winforms/controls/how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)   
- [方法 : 読み取り専用テキスト ボックスを作成する](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)   
- [方法 : 文字列に引用符を挿入する](../../../../docs/framework/winforms/controls/how-to-put-quotation-marks-in-a-string-windows-forms.md)   
- [方法 : Windows フォーム TextBox コントロールでテキストを選択する](../../../../docs/framework/winforms/controls/how-to-select-text-in-the-windows-forms-textbox-control.md)   
- [方法 : Windows フォーム TextBox コントロールで複数行を表示する](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)   
- [TextBox コントロール](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="b2dc5-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="b2dc5-119">See Also</span></span>  
+ <xref:System.Windows.Forms.TextBox>  
+ [<span data-ttu-id="b2dc5-120">TextBox コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="b2dc5-120">TextBox Control Overview</span></span>](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)  
+ [<span data-ttu-id="b2dc5-121">方法: Windows フォーム TextBox コントロールでのカーソル位置を制御する</span><span class="sxs-lookup"><span data-stu-id="b2dc5-121">How to: Control the Insertion Point in a Windows Forms TextBox Control</span></span>](../../../../docs/framework/winforms/controls/how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)  
+ [<span data-ttu-id="b2dc5-122">方法: 読み取り専用テキスト ボックスを作成する</span><span class="sxs-lookup"><span data-stu-id="b2dc5-122">How to: Create a Read-Only Text Box</span></span>](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)  
+ [<span data-ttu-id="b2dc5-123">方法: 文字列に引用符を挿入する</span><span class="sxs-lookup"><span data-stu-id="b2dc5-123">How to: Put Quotation Marks in a String</span></span>](../../../../docs/framework/winforms/controls/how-to-put-quotation-marks-in-a-string-windows-forms.md)  
+ [<span data-ttu-id="b2dc5-124">方法: Windows フォーム TextBox コントロールでテキストを選択する</span><span class="sxs-lookup"><span data-stu-id="b2dc5-124">How to: Select Text in the Windows Forms TextBox Control</span></span>](../../../../docs/framework/winforms/controls/how-to-select-text-in-the-windows-forms-textbox-control.md)  
+ [<span data-ttu-id="b2dc5-125">方法: Windows フォーム TextBox コントロールで複数行を表示する</span><span class="sxs-lookup"><span data-stu-id="b2dc5-125">How to: View Multiple Lines in the Windows Forms TextBox Control</span></span>](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)  
+ [<span data-ttu-id="b2dc5-126">TextBox コントロール</span><span class="sxs-lookup"><span data-stu-id="b2dc5-126">TextBox Control</span></span>](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)

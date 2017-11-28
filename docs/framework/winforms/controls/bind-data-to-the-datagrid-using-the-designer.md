@@ -1,71 +1,72 @@
 ---
-title: "方法 : デザイナーを使用してデータを Windows フォーム DataGridView コントロールにバインドする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "データ ソース, バインド (Windows フォーム コントロールに)"
-  - "DataGridView コントロール [Windows フォーム], データ バインド"
-  - "Windows フォーム コントロール, バインド (データ ソースに)"
+title: "方法 : デザイナーを使用してデータを Windows フォーム DataGridView コントロールにバインドする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Forms controls, binding to a data source
+- data sources [Windows Forms], binding to Windows Forms controls
+- DataGridView control [Windows Forms], data binding
 ms.assetid: f4f46009-cec2-441b-8668-6b5af057558b
-caps.latest.revision: 23
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2a203aa20865a4180b4eb9a7b192fc3c9b73a2f7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : デザイナーを使用してデータを Windows フォーム DataGridView コントロールにバインドする
-デザイナーを使用して、データベース、ビジネス オブジェクト、Web サービスなど、さまざまなデータ ソースに <xref:System.Windows.Forms.DataGridView> コントロールを関連付けることができます。  デザイナーを使用してデータ ソースにコントロールをバインドすると、コントロールは、データ ソースを表す <xref:System.Windows.Forms.BindingSource> コンポーネントに自動的にバインドされます。  また、データ ソースが提供するスキーマ情報に合わせて、コントロール内に列が自動的に生成されます。  
+# <a name="how-to-bind-data-to-the-windows-forms-datagridview-control-using-the-designer"></a><span data-ttu-id="03247-102">方法 : デザイナーを使用してデータを Windows フォーム DataGridView コントロールにバインドする</span><span class="sxs-lookup"><span data-stu-id="03247-102">How to: Bind Data to the Windows Forms DataGridView Control Using the Designer</span></span>
+<span data-ttu-id="03247-103">接続するデザイナーを使用することができます、<xref:System.Windows.Forms.DataGridView>データベース、ビジネス オブジェクト、または Web サービスなど、いくつかの異なる種類のデータ ソースへのコントロールです。</span><span class="sxs-lookup"><span data-stu-id="03247-103">You can use the designer to connect a <xref:System.Windows.Forms.DataGridView> control to data sources of several different varieties, including databases, business objects, or Web services.</span></span> <span data-ttu-id="03247-104">デザイナーを使用してデータ ソースにコントロールをバインドすると、自動的にコントロールを<xref:System.Windows.Forms.BindingSource>コンポーネントをデータ ソースを表します。</span><span class="sxs-lookup"><span data-stu-id="03247-104">When you bind the control to a data source using the designer, the control is automatically bound to a <xref:System.Windows.Forms.BindingSource> component that represents the data source.</span></span> <span data-ttu-id="03247-105">さらに、データ ソースによって提供されるスキーマ情報に対応するように、このコントロールの列が自動的に生成されます。</span><span class="sxs-lookup"><span data-stu-id="03247-105">Additionally, columns are automatically generated in the control to match the schema information provided by the data source.</span></span>  
   
- 生成された列は、必要に応じて変更できます。  たとえば、表示する必要がない列を削除したり、非表示にしたりできます。また、列を再配置したり列の種類を変更することもできます。  列の変更の詳細については、「参照」の各トピックを参照してください。  
+ <span data-ttu-id="03247-106">列が生成された後に、ニーズに合わせて列を変更できます。</span><span class="sxs-lookup"><span data-stu-id="03247-106">After columns have been generated, you can modify them to meet your needs.</span></span> <span data-ttu-id="03247-107">たとえば、表示に関係のない列を削除または非表示にしたり、列の順序を変更したり、列の型を変更したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="03247-107">For example, you can remove or hide columns you are not interested in displaying, you can rearrange the columns, or you can modify the column types.</span></span> <span data-ttu-id="03247-108">列の変更の詳細については、「関連項目」セクションの各トピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="03247-108">For more information about modifying columns, see the topics listed in the See Also section.</span></span>  
   
- また、複数の <xref:System.Windows.Forms.DataGridView> コントロールを関連するテーブルにバインドし、マスター\/詳細リレーションシップを構築することもできます。  この構成の場合、あるコントロールは親テーブルを表示し、別のコントロールは親テーブルの現在の行に関連する子テーブルの行のみを表示します。  詳細については、「[方法: 関連するデータを Windows フォーム アプリケーションに表示する](../Topic/How%20to:%20Display%20Related%20Data%20in%20a%20Windows%20Forms%20Application.md)」を参照してください。  
+ <span data-ttu-id="03247-109">複数をバインドすることもできます。<xref:System.Windows.Forms.DataGridView>マスター/詳細関係を作成する関連テーブルへのコントロールです。</span><span class="sxs-lookup"><span data-stu-id="03247-109">You can also bind multiple <xref:System.Windows.Forms.DataGridView> controls to related tables to create master/detail relationships.</span></span> <span data-ttu-id="03247-110">この構成では、1 つのコントロールに親テーブルが表示され、別のコントロールには親テーブルの現在の行に関連する子テーブルの行のみが表示されます。</span><span class="sxs-lookup"><span data-stu-id="03247-110">In this configuration, one control displays a parent table and another control displays only those rows from a child table that are related to the current row in the parent table.</span></span> <span data-ttu-id="03247-111">詳細については、「[方法: 関連するデータを Windows フォーム アプリケーションに表示する](http://msdn.microsoft.com/library/60b1f1ec-6257-42ab-83f0-06d54ed364fd)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="03247-111">For more information, see [How to: Display Related Data in a Windows Forms Application](http://msdn.microsoft.com/library/60b1f1ec-6257-42ab-83f0-06d54ed364fd).</span></span>  
   
- 次の手順では、マスター\/詳細リレーションシップに関する 1 つまたは 2 つの <xref:System.Windows.Forms.DataGridView> コントロールが含まれているフォームを持つ、**Windows アプリケーション** プロジェクトが必要です。  このようなプロジェクトの起動については、「[How to: Create a Windows Application Project](http://msdn.microsoft.com/ja-jp/b2f93fed-c635-4705-8d0e-cf079a264efa)」と「[方法 : Windows フォームにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)」を参照してください。  
+ <span data-ttu-id="03247-112">次の手順が必要です、 **Windows アプリケーション**を含むフォームを使用してプロジェクト、<xref:System.Windows.Forms.DataGridView>コントロールまたはマスター/詳細リレーションシップの 2 つのコントロールです。</span><span class="sxs-lookup"><span data-stu-id="03247-112">The following procedure requires a **Windows Application** project with a form that contains a <xref:System.Windows.Forms.DataGridView> control or two controls for a master/detail relationship.</span></span> <span data-ttu-id="03247-113">このようなプロジェクトを開始する方法については、「[方法 : Windows アプリケーション プロジェクトを作成する](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)」と「[方法 : Windows フォームにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="03247-113">For information about starting such a project, see [How to: Create a Windows Application Project](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa) and [How to: Add Controls to Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md).</span></span>  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  <span data-ttu-id="03247-114">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="03247-114">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="03247-115">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="03247-115">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="03247-116">詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="03247-116">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### コントロールをデータ ソースにバインドするには  
+### <a name="to-bind-the-control-to-a-data-source"></a><span data-ttu-id="03247-117">コントロールをデータ ソースにバインドするには</span><span class="sxs-lookup"><span data-stu-id="03247-117">To bind the control to a data source</span></span>  
   
-1.  <xref:System.Windows.Forms.DataGridView> コントロールの右上隅のスマート タグ グリフ \(![スマート タグ グリフ](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.png "VS\_WinFormSmtTagGlyph")\) をクリックします。  
+1.  <span data-ttu-id="03247-118">スマート タグ グリフをクリックして (![スマート タグ グリフ](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) の右上隅で、<xref:System.Windows.Forms.DataGridView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="03247-118">Click the smart tag glyph (![Smart Tag Glyph](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) on the upper-right corner of the <xref:System.Windows.Forms.DataGridView> control.</span></span>  
   
-2.  **\[データ ソースの選択\]** オプションのドロップダウン矢印をクリックします。  
+2.  <span data-ttu-id="03247-119">**[データ ソースの選択]** オプションのドロップダウン矢印をクリックします。</span><span class="sxs-lookup"><span data-stu-id="03247-119">Click the drop-down arrow for the **Choose Data Source** option.</span></span>  
   
-3.  プロジェクトのデータ ソースがまだない場合は、**\[プロジェクト データ ソースの追加\]** をクリックし、ウィザードに示された手順に従います。  
+3.  <span data-ttu-id="03247-120">プロジェクトにまだデータ ソースがない場合は、**[プロジェクト データ ソースの追加]** をクリックし、ウィザードに示される手順に従います。</span><span class="sxs-lookup"><span data-stu-id="03247-120">If your project does not already have a data source, click **Add Project Data Source** and follow the steps indicated by the wizard.</span></span>  
   
-     詳細については、「[データ ソース構成ウィザード](../Topic/Data%20Source%20Configuration%20Wizard.md)」を参照してください。  新しいデータ ソースが **\[データ ソースの選択\]** ボックスに表示されます。  新しいデータ ソースに 1 つのメンバー \(たとえば、1 つのデータベース テーブル\) だけが含まれる場合、コントロールはそのメンバーに自動的にバインドされます。  それ以外の場合は、次の手順に進みます。  
+     <span data-ttu-id="03247-121">詳細については、「[データ ソース構成ウィザード](http://msdn.microsoft.com/library/c4df7de5-5da0-4064-940c-761dd6d9e28f)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="03247-121">For more information, see [Data Source Configuration Wizard](http://msdn.microsoft.com/library/c4df7de5-5da0-4064-940c-761dd6d9e28f).</span></span> <span data-ttu-id="03247-122">**[データ ソースの選択]** ドロップダウン ウィンドウに新しいデータ ソースが表示されます。</span><span class="sxs-lookup"><span data-stu-id="03247-122">Your new data source will appear in the **Choose Data Source** drop-down window.</span></span> <span data-ttu-id="03247-123">新しいデータ ソースに含まれるのが単一データベース テーブルなど、1 つのメンバーのみの場合、コントロールはそのメンバーに自動的にバインドされます。</span><span class="sxs-lookup"><span data-stu-id="03247-123">If your new data source contains only one member, such as a single database table, the control will automatically bind to that member.</span></span> <span data-ttu-id="03247-124">それ以外の場合は、次の手順に進みます。</span><span class="sxs-lookup"><span data-stu-id="03247-124">Otherwise, continue to the next step.</span></span>  
   
-4.  **\[他のデータ ソース\]** ノードと **\[プロジェクト データ ソース\]** ノードが展開されていない場合は、展開します。次に、コントロールをバインドするデータ ソースを選択します。  
+4.  <span data-ttu-id="03247-125">展開されていない場合は **[他のデータ ソース]** ノードと **[プロジェクト データ ソース]** ノードを展開し、コントロールをバインドするデータ ソースを選択します。</span><span class="sxs-lookup"><span data-stu-id="03247-125">Expand the **Other Data Sources** and **Project Data Sources** nodes if they are not already expanded, and then select the data source to bind the control to.</span></span>  
   
-5.  データ ソースに複数のメンバーが含まれる場合 \(たとえば、複数のテーブルを含む <xref:System.Data.DataSet?displayProperty=fullName> を作成した場合\) は、データ ソースを展開し、バインド先となる特定のメンバーを選択します。  
+5.  <span data-ttu-id="03247-126">データ ソースに複数のメンバーが含まれている場合などを作成した場合、<xref:System.Data.DataSet?displayProperty=nameWithType>複数のテーブルを格納している、データ ソースを展開し、バインドする特定のメンバーを選択します。</span><span class="sxs-lookup"><span data-stu-id="03247-126">If your data source contains more than one member, such as if you have created a <xref:System.Data.DataSet?displayProperty=nameWithType> that contains multiple tables, expand the data source, and then select the specific member to bind to.</span></span>  
   
-6.  マスター\/詳細リレーションシップを構築するには、2 つ目の <xref:System.Windows.Forms.DataGridView> コントロールの **\[データ ソースの選択\]** ドロップダウン ウィンドウで、親テーブル用に作成された <xref:System.Windows.Forms.BindingSource> を展開し、表示されるリストから関連する子テーブルを選択します。  
+6.  <span data-ttu-id="03247-127">マスター/詳細関係を作成する、**データ ソースの選択**2 台目のドロップダウン ウィンドウ<xref:System.Windows.Forms.DataGridView>コントロール を展開し、<xref:System.Windows.Forms.BindingSource>親テーブルに対して作成され、一覧から関連する子テーブルを選択表示されます。</span><span class="sxs-lookup"><span data-stu-id="03247-127">To create a master/detail relationship, in the **Choose Data Source** drop-down window for a second <xref:System.Windows.Forms.DataGridView> control, expand the <xref:System.Windows.Forms.BindingSource> created for the parent table, and then select the related child table from the list shown.</span></span>  
   
     > [!NOTE]
-    >  プロジェクトにデータ ソースが既に含まれている場合、**\[データ ソース\]** ウィンドウを使用してデータ フォームを作成することもできます。  詳細については、「[ウィンドウ](../Topic/Data%20Sources%20Window.md)」を参照してください。  
+    >  <span data-ttu-id="03247-128">プロジェクトにデータ ソースが既にある場合は、**[データソース]** ウィンドウを使用してデータ フォームを作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="03247-128">If your project already has a data source, you can also use the **Data Sources** window to create a data form.</span></span> <span data-ttu-id="03247-129">詳細については、「[[データ ソース] ウィンドウ](http://msdn.microsoft.com/library/0d20f699-cc95-45b3-8ecb-c7edf1f67992)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="03247-129">For more information, see [Data Sources Window](http://msdn.microsoft.com/library/0d20f699-cc95-45b3-8ecb-c7edf1f67992).</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.DataGridView>   
- <xref:System.Windows.Forms.BindingSource>   
- <xref:System.Windows.Forms.DataGridView.DataMember%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=fullName>   
- [方法 : データベース内のデータに接続する](../Topic/How%20to:%20Connect%20to%20Data%20in%20a%20Database.md)   
- [方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列を追加および削除する](../../../../docs/framework/winforms/controls/add-and-remove-columns-in-the-datagrid-using-the-designer.md)   
- [方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列の順序を変更する](../../../../docs/framework/winforms/controls/change-the-order-of-columns-in-the-datagrid-using-the-designer.md)   
- [方法 : デザイナーを使用して Windows フォーム DataGridView 列の種類を変更する](../../../../docs/framework/winforms/controls/change-the-type-of-a-wf-datagridview-column-using-the-designer.md)   
- [方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列を固定する](../../../../docs/framework/winforms/controls/freeze-columns-in-the-datagrid-using-the-designer.md)   
- [方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列を非表示にする](../../../../docs/framework/winforms/controls/hide-columns-in-the-datagrid-using-the-designer.md)   
- [方法 : デザイナーを使用して Windows フォームの DataGridView コントロールで列を読み取り専用にする](../../../../docs/framework/winforms/controls/make-columns-read-only-in-the-datagrid-using-the-designer.md)   
- [How to: Create a Windows Application Project](http://msdn.microsoft.com/ja-jp/b2f93fed-c635-4705-8d0e-cf079a264efa)   
- [方法 : Windows フォームにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)   
- [ウィンドウ](../Topic/Data%20Sources%20Window.md)   
- [方法: 関連するデータを Windows フォーム アプリケーションに表示する](../Topic/How%20to:%20Display%20Related%20Data%20in%20a%20Windows%20Forms%20Application.md)
+## <a name="see-also"></a><span data-ttu-id="03247-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="03247-130">See Also</span></span>  
+ <xref:System.Windows.Forms.DataGridView>  
+ <xref:System.Windows.Forms.BindingSource>  
+ <xref:System.Windows.Forms.DataGridView.DataMember%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="03247-131">方法 : データベース内のデータに接続する</span><span class="sxs-lookup"><span data-stu-id="03247-131">How to: Connect to Data in a Database</span></span>](http://msdn.microsoft.com/library/6c56e54e-8834-4297-85aa-cc1a443ba556)  
+ [<span data-ttu-id="03247-132">方法: デザイナーを使用して Windows フォーム DataGridView コントロールの列を追加および削除する</span><span class="sxs-lookup"><span data-stu-id="03247-132">How to: Add and Remove Columns in the Windows Forms DataGridView Control Using the Designer</span></span>](../../../../docs/framework/winforms/controls/add-and-remove-columns-in-the-datagrid-using-the-designer.md)  
+ [<span data-ttu-id="03247-133">方法: デザイナーを使用して Windows フォーム DataGridView コントロールの列の順序を変更する</span><span class="sxs-lookup"><span data-stu-id="03247-133">How to: Change the Order of Columns in the Windows Forms DataGridView Control Using the Designer</span></span>](../../../../docs/framework/winforms/controls/change-the-order-of-columns-in-the-datagrid-using-the-designer.md)  
+ [<span data-ttu-id="03247-134">方法: デザイナーを使用して Windows フォーム DataGridView 列の種類を変更する</span><span class="sxs-lookup"><span data-stu-id="03247-134">How to: Change the Type of a Windows Forms DataGridView Column Using the Designer</span></span>](../../../../docs/framework/winforms/controls/change-the-type-of-a-wf-datagridview-column-using-the-designer.md)  
+ [<span data-ttu-id="03247-135">方法: デザイナーを使用して Windows フォーム DataGridView コントロールの列を固定する</span><span class="sxs-lookup"><span data-stu-id="03247-135">How to: Freeze Columns in the Windows Forms DataGridView Control Using the Designer</span></span>](../../../../docs/framework/winforms/controls/freeze-columns-in-the-datagrid-using-the-designer.md)  
+ [<span data-ttu-id="03247-136">方法: デザイナーを使用して Windows フォーム DataGridView コントロールの列を非表示にする</span><span class="sxs-lookup"><span data-stu-id="03247-136">How to: Hide Columns in the Windows Forms DataGridView Control Using the Designer</span></span>](../../../../docs/framework/winforms/controls/hide-columns-in-the-datagrid-using-the-designer.md)  
+ [<span data-ttu-id="03247-137">方法: デザイナーを使用して Windows フォームの DataGridView コントロールで列を読み取り専用にする</span><span class="sxs-lookup"><span data-stu-id="03247-137">How to: Make Columns Read-Only in the Windows Forms DataGridView Control Using the Designer</span></span>](../../../../docs/framework/winforms/controls/make-columns-read-only-in-the-datagrid-using-the-designer.md)  
+ [<span data-ttu-id="03247-138">方法: Windows アプリケーション プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="03247-138">How to: Create a Windows Application Project</span></span>](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)  
+ [<span data-ttu-id="03247-139">方法: Windows フォームにコントロールを追加する</span><span class="sxs-lookup"><span data-stu-id="03247-139">How to: Add Controls to Windows Forms</span></span>](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)  
+ [<span data-ttu-id="03247-140">データ ソース ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="03247-140">Data Sources Window</span></span>](http://msdn.microsoft.com/library/0d20f699-cc95-45b3-8ecb-c7edf1f67992)  
+ [<span data-ttu-id="03247-141">方法: 関連するデータを Windows フォーム アプリケーションに表示する</span><span class="sxs-lookup"><span data-stu-id="03247-141">How to: Display Related Data in a Windows Forms Application</span></span>](http://msdn.microsoft.com/library/60b1f1ec-6257-42ab-83f0-06d54ed364fd)

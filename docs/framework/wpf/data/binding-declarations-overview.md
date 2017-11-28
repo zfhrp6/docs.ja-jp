@@ -1,138 +1,144 @@
 ---
-title: "バインディング宣言の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "バインド (データを), 宣言"
-  - "バインディング宣言"
-  - "データ バインディング, 宣言"
-  - "マークアップ拡張機能"
-  - "オブジェクト要素構文"
-  - "構文, オブジェクト要素"
+title: "バインディング宣言の概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- markup extensions [WPF]
+- data binding [WPF], declarations
+- object element syntax [WPF]
+- binding data [WPF], declarations
+- syntax [WPF], object elements
+- binding declarations [WPF]
 ms.assetid: b97fd626-4c0d-4761-872a-2bca5820da2c
-caps.latest.revision: 34
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 33
+caps.latest.revision: "34"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 28b139f6ea2aad41e4d733e8c622699f2474b3e6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# バインディング宣言の概要
-ここでは、バインディングを宣言するさまざまな方法について説明します。  
+# <a name="binding-declarations-overview"></a><span data-ttu-id="ef5b4-102">バインディング宣言の概要</span><span class="sxs-lookup"><span data-stu-id="ef5b4-102">Binding Declarations Overview</span></span>
+<span data-ttu-id="ef5b4-103">このトピックでは、バインディングを宣言するさまざまな方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-103">This topic discusses the different ways you can declare a binding.</span></span>  
   
-   
+ 
   
 <a name="Prereq"></a>   
-## 必要条件  
- このトピックを読む前に、マークアップ拡張機能の概念と使用方法を理解していることが重要です。  マークアップ拡張機能の詳細については、「[マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)」を参照してください。  
+## <a name="prerequisites"></a><span data-ttu-id="ef5b4-104">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="ef5b4-104">Prerequisites</span></span>  
+ <span data-ttu-id="ef5b4-105">このトピックを読む前に、マークアップ拡張機能の概念と使用方法について理解している必要があります。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-105">Before reading this topic, it is important that you are familiar with the concept and usage of markup extensions.</span></span> <span data-ttu-id="ef5b4-106">マークアップ拡張機能の詳細については、 「[マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-106">For more information about markup extensions, see [Markup Extensions and WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).</span></span>  
   
- ここでは、データ バインディングの概念については説明しません。  データ バインディングの概念については、「[データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
+ <span data-ttu-id="ef5b4-107">このトピックでは、データ バインディングの概念については説明しません。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-107">This topic does not cover data binding concepts.</span></span> <span data-ttu-id="ef5b4-108">データ バインディングの概念の詳細については、「[Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-108">For a discussion of data binding concepts, see [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md).</span></span>  
   
 <a name="BindinginXAML"></a>   
-## XAML でバインディングを宣言する  
- ここでは、XAML でバインディングを宣言する方法について説明します。  
+## <a name="declaring-a-binding-in-xaml"></a><span data-ttu-id="ef5b4-109">XAML でのバインディングの宣言</span><span class="sxs-lookup"><span data-stu-id="ef5b4-109">Declaring a Binding in XAML</span></span>  
+ <span data-ttu-id="ef5b4-110">このセクションでは、XAML でバインディングを宣言する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-110">This section discusses how to declare a binding in XAML.</span></span>  
   
 <a name="MarkupExtensionSyntax"></a>   
-### マークアップ拡張機能の使用方法  
- <xref:System.Windows.Data.Binding> はマークアップ拡張機能です。  バインディング拡張を使用してバインディングを宣言する場合、その宣言は、`Binding` キーワードの後に一連の句をコンマ \(,\) で区切って並べたものになります。  バインディング宣言では、句は任意の順序で並べることができ、また、さまざまな組み合わせが可能です。  句は *名前*\=*値* という形のペアで、*名前*は <xref:System.Windows.Data.Binding> プロパティの名前、*値* はそのプロパティに設定する値です。  
+### <a name="markup-extension-usage"></a><span data-ttu-id="ef5b4-111">マークアップ拡張機能の使用方法</span><span class="sxs-lookup"><span data-stu-id="ef5b4-111">Markup Extension Usage</span></span>  
+ <span data-ttu-id="ef5b4-112"><xref:System.Windows.Data.Binding> はマークアップ拡張機能です。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-112"><xref:System.Windows.Data.Binding> is a markup extension.</span></span> <span data-ttu-id="ef5b4-113">バインディング拡張機能を使用してバインディングを宣言するとき、この宣言は、`Binding` キーワードに続く一連の句で構成され、コンマ (,) で区切られます。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-113">When you use the binding extension to declare a binding, the declaration consists of a series of clauses following the `Binding` keyword and separated by commas (,).</span></span> <span data-ttu-id="ef5b4-114">バインディング宣言内の句の順序は任意で、多数の組み合わせが可能です。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-114">The clauses in the binding declaration can be in any order and there are many possible combinations.</span></span> <span data-ttu-id="ef5b4-115">句は*名前*=*値*場所のペアを*名前*の名前を指定、<xref:System.Windows.Data.Binding>プロパティおよび*値*はプロパティを設定する値。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-115">The clauses are *Name*=*Value* pairs where *Name* is the name of the <xref:System.Windows.Data.Binding> property and *Value* is the value you are setting for the property.</span></span>  
   
- バインディング宣言文字列をマークアップで作成する場合、それらの文字列はターゲット オブジェクトの特定の[依存関係プロパティ](GTMT)に関連付ける必要があります。  バインディング拡張を使用し、<xref:System.Windows.Data.Binding.Source%2A> プロパティおよび <xref:System.Windows.Data.Binding.Path%2A> プロパティを指定して、<xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=fullName> プロパティをバインドする方法を次の例に示します。  
+ <span data-ttu-id="ef5b4-116">マークアップでバインディング宣言文字列を作成する場合、この文字列はターゲット オブジェクトの特定の依存関係プロパティにアタッチする必要があります。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-116">When creating binding declaration strings in markup, they must be attached to the specific dependency property of a target object.</span></span> <span data-ttu-id="ef5b4-117">次の例は、バインドする方法を示しています、<xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType>プロパティを指定することをバインド拡張機能を使用して、<xref:System.Windows.Data.Binding.Source%2A>と<xref:System.Windows.Data.Binding.Path%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-117">The following example shows how to bind the <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> property using the binding extension, specifying the <xref:System.Windows.Data.Binding.Source%2A> and <xref:System.Windows.Data.Binding.Path%2A> properties.</span></span>  
   
- [!code-xml[SimpleBinding#BDO1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#bdo1)]  
+ [!code-xaml[SimpleBinding#BDO1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#bdo1)]  
   
- <xref:System.Windows.Data.Binding> クラスのほとんどのプロパティは、この方法で指定できます。  バインディング拡張の詳細、およびバインディング拡張を使用して設定できない <xref:System.Windows.Data.Binding> プロパティのリストについては、「[バインドのマークアップ拡張機能](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)」の概要を参照してください。  
+ <span data-ttu-id="ef5b4-118">ほとんどのプロパティを指定することができます、<xref:System.Windows.Data.Binding>クラスのこのようにします。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-118">You can specify most of the properties of the <xref:System.Windows.Data.Binding> class this way.</span></span> <span data-ttu-id="ef5b4-119">バインディング拡張は、の一覧の場合と同様の詳細については<xref:System.Windows.Data.Binding>バインド拡張機能を使用して設定することはできませんのプロパティを参照してください、[バインディング マークアップ拡張](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)の概要です。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-119">For more information about the binding extension as well as for a list of <xref:System.Windows.Data.Binding> properties that cannot be set using the binding extension, see the [Binding Markup Extension](../../../../docs/framework/wpf/advanced/binding-markup-extension.md) overview.</span></span>  
   
 <a name="ObjectElementSyntax"></a>   
-### オブジェクト要素の構文  
- オブジェクト要素構文を使用しても、バインディング宣言を作成できます。  ほとんどの場合、マークアップ拡張機能とオブジェクト要素構文のどちらを使用した場合でも、特別な利点はありません。  ただし、設定するプロパティ値が型変換のない非文字列型である場合のように、目的のシナリオがマークアップ拡張機能でサポートされない場合には、オブジェクト要素構文を使用する必要があります。  
+### <a name="object-element-syntax"></a><span data-ttu-id="ef5b4-120">オブジェクト要素構文</span><span class="sxs-lookup"><span data-stu-id="ef5b4-120">Object Element Syntax</span></span>  
+ <span data-ttu-id="ef5b4-121">オブジェクト要素構文は、バインディング宣言を作成する代替の方法です。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-121">Object element syntax is an alternative to creating the binding declaration.</span></span> <span data-ttu-id="ef5b4-122">ほとんどの場合は、マークアップ拡張機能の使用とオブジェクト要素構文の使用のどちらにも特別な利点はありません。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-122">In most cases, there is no particular advantage to using either the markup extension or the object element syntax.</span></span> <span data-ttu-id="ef5b4-123">ただし、マークアップ拡張機能がサポートしないシナリオでは (プロパティ値が文字列タイプではなく、このタイプの変換が存在しない場合)、オブジェクト要素構文を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-123">However, in cases which the markup extension does not support your scenario, such as when your property value is of a non-string type for which no type conversion exists, you need to use the object element syntax.</span></span>  
   
- オブジェクト要素構文とマークアップ拡張機能の両方の使用方法を次の例に示します。  
+ <span data-ttu-id="ef5b4-124">オブジェクト要素構文とマークアップ拡張機能の使用の両方の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-124">The following is an example of both the object element syntax and the markup extension usage:</span></span>  
   
- [!code-xml[BindConversionMarkup#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversionMarkup/CSharp/Page1.xaml#1)]  
+ [!code-xaml[BindConversionMarkup#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversionMarkup/CSharp/Page1.xaml#1)]  
   
- この例では、拡張構文を使用してバインディングを宣言することにより、<xref:System.Windows.Controls.TextBlock.Foreground%2A> プロパティをバインドしています。  <xref:System.Windows.Controls.TextBlock.Text%2A> プロパティのバインディング宣言では、オブジェクト要素構文を使用しています。  
+ <span data-ttu-id="ef5b4-125">例では、バインド、<xref:System.Windows.Controls.TextBlock.Foreground%2A>拡張構文を使用してバインドを宣言するプロパティです。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-125">The example binds the <xref:System.Windows.Controls.TextBlock.Foreground%2A> property by declaring a binding using the extension syntax.</span></span> <span data-ttu-id="ef5b4-126">バインディングの宣言、<xref:System.Windows.Controls.TextBlock.Text%2A>プロパティがオブジェクト要素の構文を使用します。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-126">The binding declaration for the <xref:System.Windows.Controls.TextBlock.Text%2A> property uses the object element syntax.</span></span>  
   
- 各種の用語の詳細については、「[XAML 構文の詳細](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)」を参照してください。  
+ <span data-ttu-id="ef5b4-127">別の用語の詳細については、「[XAML Syntax の詳細](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-127">For more information about the different terms, see [XAML Syntax In Detail](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md).</span></span>  
   
 <a name="MBandPB"></a>   
-### MultiBinding および PriorityBinding  
- <xref:System.Windows.Data.MultiBinding> および <xref:System.Windows.Data.PriorityBinding> は、XAML 拡張構文をサポートしません。  そのため、XAML で <xref:System.Windows.Data.MultiBinding> または <xref:System.Windows.Data.PriorityBinding> を宣言する場合は、オブジェクト要素構文を使用する必要があります。  
+### <a name="multibinding-and-prioritybinding"></a><span data-ttu-id="ef5b4-128">MultiBinding と PriorityBinding</span><span class="sxs-lookup"><span data-stu-id="ef5b4-128">MultiBinding and PriorityBinding</span></span>  
+ <span data-ttu-id="ef5b4-129"><xref:System.Windows.Data.MultiBinding>および<xref:System.Windows.Data.PriorityBinding>XAML 拡張構文をサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-129"><xref:System.Windows.Data.MultiBinding> and <xref:System.Windows.Data.PriorityBinding> do not support the XAML extension syntax.</span></span> <span data-ttu-id="ef5b4-130">宣言する場合はオブジェクト要素の構文を使用する必要がありますそのため、<xref:System.Windows.Data.MultiBinding>または<xref:System.Windows.Data.PriorityBinding>XAML でします。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-130">Therefore, you must use the object element syntax if you are declaring a <xref:System.Windows.Data.MultiBinding> or a <xref:System.Windows.Data.PriorityBinding> in XAML.</span></span>  
   
 <a name="BindinginCode"></a>   
-## コードでバインディングを作成する  
- バインディングを指定するもう一つの方法として、コード内で <xref:System.Windows.Data.Binding> オブジェクトのプロパティを直接設定する方法があります。  <xref:System.Windows.Data.Binding> オブジェクトを作成し、コードでプロパティを指定する方法を次の例に示します。  この例では、`TheConverter` は <xref:System.Windows.Data.IValueConverter> インターフェイスを実装するオブジェクトです。  
+## <a name="creating-a-binding-in-code"></a><span data-ttu-id="ef5b4-131">コードでバインディングを作成する方法</span><span class="sxs-lookup"><span data-stu-id="ef5b4-131">Creating a Binding in Code</span></span>  
+ <span data-ttu-id="ef5b4-132">バインドを指定する別の方法は、プロパティを設定する上で直接、<xref:System.Windows.Data.Binding>コード内のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-132">Another way to specify a binding is to set properties directly on a <xref:System.Windows.Data.Binding> object in code.</span></span> <span data-ttu-id="ef5b4-133">次の例を作成する方法を示しています、<xref:System.Windows.Data.Binding>オブジェクトし、コードでプロパティを指定します。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-133">The following example shows how to create a <xref:System.Windows.Data.Binding> object and specify the properties in code.</span></span>  <span data-ttu-id="ef5b4-134">この例では`TheConverter`を実装するオブジェクトには、<xref:System.Windows.Data.IValueConverter>インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-134">In this example, `TheConverter` is an object that implements the <xref:System.Windows.Data.IValueConverter> interface.</span></span>  
   
  [!code-csharp[BindConversion#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#1)]
  [!code-vb[BindConversion#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#1)]  
 [!code-csharp[BindConversion#end1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#end1)]
 [!code-vb[BindConversion#end1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#end1)]  
   
- バインドする対象のオブジェクトが <xref:System.Windows.FrameworkElement> または <xref:System.Windows.FrameworkContentElement> の場合は、<xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=fullName> を使用する代わりに、オブジェクトで `SetBinding` メソッドを直接呼び出すことができます。  例については、「[コードでバインディングを作成する](../../../../docs/framework/wpf/data/how-to-create-a-binding-in-code.md)」を参照してください。  
+ <span data-ttu-id="ef5b4-135">バインドするオブジェクトがある場合、<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>呼び出すことができます、`SetBinding`メソッドを使用せずに直接オブジェクトを<xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-135">If the object you are binding is a <xref:System.Windows.FrameworkElement> or a <xref:System.Windows.FrameworkContentElement> you can call the `SetBinding` method on your object directly instead of using <xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=nameWithType>.</span></span> <span data-ttu-id="ef5b4-136">例については、「[Create a Binding in Code](../../../../docs/framework/wpf/data/how-to-create-a-binding-in-code.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-136">For an example, see [Create a Binding in Code](../../../../docs/framework/wpf/data/how-to-create-a-binding-in-code.md).</span></span>  
   
 <a name="Path_Syntax"></a>   
-## パス構文をバインドする  
- バインドするソースの値を指定するには、<xref:System.Windows.Data.Binding.Path%2A> プロパティを使用します。  
+## <a name="binding-path-syntax"></a><span data-ttu-id="ef5b4-137">バインディング パス構文</span><span class="sxs-lookup"><span data-stu-id="ef5b4-137">Binding Path Syntax</span></span>  
+ <span data-ttu-id="ef5b4-138">使用して、<xref:System.Windows.Data.Binding.Path%2A>プロパティにバインドするソースの値を指定します。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-138">Use the <xref:System.Windows.Data.Binding.Path%2A> property to specify the source value you want to bind to:</span></span>  
   
--   特に単純な使用例では、<xref:System.Windows.Data.Binding.Path%2A> プロパティ値は `Path=PropertyName` など、バインディングに使用するソース オブジェクトのプロパティの名前になります。  
+-   <span data-ttu-id="ef5b4-139">最も簡単なケースで、<xref:System.Windows.Data.Binding.Path%2A>プロパティの値などを使用して、バインディングのソース オブジェクトのプロパティの名前は、`Path=PropertyName`です。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-139">In the simplest case, the <xref:System.Windows.Data.Binding.Path%2A> property value is the name of the property of the source object to use for the binding, such as `Path=PropertyName`.</span></span>  
   
--   プロパティのサブプロパティは、[!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] 内の構文と同様の構文によって指定できます。  たとえば、`Path=ShoppingCart.Order` 句は、オブジェクトまたはプロパティ `ShoppingCart` のサブプロパティ `Order` へのバインディングを設定します。  
+-   <span data-ttu-id="ef5b4-140">プロパティのサブプロパティは、[!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] と同様の構文で指定できます。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-140">Subproperties of a property can be specified by a similar syntax as in [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)].</span></span> <span data-ttu-id="ef5b4-141">たとえば、句 `Path=ShoppingCart.Order` は、バインディングをオブジェクトのサブプロパティ `Order` またはプロパティ `ShoppingCart` に設定します。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-141">For instance, the clause `Path=ShoppingCart.Order` sets the binding to the subproperty `Order` of the object or property `ShoppingCart`.</span></span>  
   
--   [添付プロパティ](GTMT)にバインドするには、[添付プロパティ](GTMT)をかっこで囲みます。  たとえば、[添付プロパティ](GTMT) <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=fullName> にバインドする構文は、`Path=(DockPanel.Dock)` です。  
+-   <span data-ttu-id="ef5b4-142">添付プロパティにバインドするには、添付プロパティをかっこで囲みます。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-142">To bind to an attached property, place parentheses around the attached property.</span></span> <span data-ttu-id="ef5b4-143">例については、添付プロパティをバインドする<xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>、構文は`Path=(DockPanel.Dock)`します。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-143">For example, to bind to the attached property <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>, the syntax is `Path=(DockPanel.Dock)`.</span></span>  
   
--   プロパティのインデクサーは、インデクサーが適用されるプロパティ名の後に続く角かっこ内に指定できます。  たとえば、`Path=ShoppingCart[0]` 句は、プロパティの内部のインデックスのリテラル文字列 "0" の処理方法に対応するインデックスにバインディングを設定します。  入れ子になったインデクサーもサポートされています。  
+-   <span data-ttu-id="ef5b4-144">プロパティのインデクサーは、インデクサーが適用されているプロパティ名の後ろの角かっこ内に指定できます。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-144">Indexers of a property can be specified within square brackets following the property name where the indexer is applied.</span></span> <span data-ttu-id="ef5b4-145">たとえば、句 `Path=ShoppingCart[0]` は、プロパティの内部インデックスがリテラル文字列「0」を処理する方法に対応するインデックスへのバインディングを設定します。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-145">For instance, the clause `Path=ShoppingCart[0]` sets the binding to the index that corresponds to how your property's internal indexing handles the literal string "0".</span></span> <span data-ttu-id="ef5b4-146">入れ子になったインデクサーもサポートします。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-146">Nested indexers are also supported.</span></span>  
   
--   インデクサーとサブプロパティは、`Path` 句に混在させることができます。たとえば、`Path=ShoppingCart.ShippingInfo[MailingAddress,Street]` のように使用できます。  
+-   <span data-ttu-id="ef5b4-147">`Path` 句ではインデクサーとサブプロパティを混在させることができます。例: `Path=ShoppingCart.ShippingInfo[MailingAddress,Street].`</span><span class="sxs-lookup"><span data-stu-id="ef5b4-147">Indexers and subproperties can be mixed in a `Path` clause; for example, `Path=ShoppingCart.ShippingInfo[MailingAddress,Street].`</span></span>  
   
--   インデクサーの内側では、複数のインデクサー パラメーターをコンマ \(,\) で区切って指定できます。  各パラメーターの型は、かっこを使用して指定できます。  たとえば、`Path="[(sys:Int32)42,(sys:Int32)24]"` のように指定します。ここで、`sys` は `System` 名前空間にマップされます。  
+-   <span data-ttu-id="ef5b4-148">インデクサーの内側には、コンマ (,) で区切られた複数のインデクサー パラメーターを設定できます。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-148">Inside indexers you can have multiple indexer parameters separated by commas (,).</span></span> <span data-ttu-id="ef5b4-149">各パラメーターの型は、かっこで指定できます。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-149">The type of each parameter can be specified with parentheses.</span></span> <span data-ttu-id="ef5b4-150">たとえば、ことが`Path="[(sys:Int32)42,(sys:Int32)24]"`ここで、`sys`にマップされて、`System`名前空間。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-150">For example, you can have `Path="[(sys:Int32)42,(sys:Int32)24]"`, where `sys` is mapped to the `System` namespace.</span></span>  
   
--   ソースがコレクション ビューであるときは、現在の項目をスラッシュ \(\/\) で指定できます。  たとえば、`Path=/` 句は、ビュー内の現在の項目へのバインディングを設定します。  ソースがコレクションである場合、この構文は、既定のコレクション ビューの現在の項目を指定します。  
+-   <span data-ttu-id="ef5b4-151">ソース コレクション ビューがある場合は、スラッシュ (/) を現在の項目を指定できます。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-151">When the source is a collection view, the current item can be specified with a slash (/).</span></span> <span data-ttu-id="ef5b4-152">たとえば、この句`Path=/`ビューの現在のアイテムにバインディングを設定します。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-152">For example, the clause `Path=/` sets the binding to the current item in the view.</span></span> <span data-ttu-id="ef5b4-153">ソースがコレクションである場合は、この構文は、既定のコレクション ビューの現在の項目を指定します。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-153">When the source is a collection, this syntax specifies the current item of the default collection view.</span></span>  
   
--   プロパティ名とスラッシュを組み合わせて、コレクションである各プロパティを走査することができます。  たとえば、`Path=/Offices/ManagerName` は、それ自体がコレクションである `Offices` プロパティを含む、ソース コレクションの現在の項目を指定します。  その現在の項目は、`ManagerName` プロパティを含むオブジェクトです。  
+-   <span data-ttu-id="ef5b4-154">プロパティは、コレクションを走査するプロパティの名前とスラッシュを組み合わせることができます。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-154">Property names and slashes can be combined to traverse properties that are collections.</span></span> <span data-ttu-id="ef5b4-155">たとえば、`Path=/Offices/ManagerName`を含むソース コレクションの現在の項目を指定します、`Offices`コレクションであるプロパティ。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-155">For example, `Path=/Offices/ManagerName` specifies the current item of the source collection, which contains an `Offices` property that is also a collection.</span></span> <span data-ttu-id="ef5b4-156">現在のアイテムが格納しているオブジェクト、`ManagerName`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-156">Its current item is an object that contains a `ManagerName` property.</span></span>  
   
--   また、ピリオド \(.\) パスを使用して現在のソースにバインドすることもできます。  たとえば、`Text="{Binding}"` は `Text="{Binding Path=.}"` と同じ意味です。  
+-   <span data-ttu-id="ef5b4-157">必要に応じて、現在のソースにバインドする、ピリオド (.) のパスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-157">Optionally, a period (.) path can be used to bind to the current source.</span></span> <span data-ttu-id="ef5b4-158">たとえば、`Text="{Binding}"` は、`Text="{Binding Path=.}"` と同じです。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-158">For example, `Text="{Binding}"` is equivalent to `Text="{Binding Path=.}"`.</span></span>  
   
-### エスケープ機構  
+### <a name="escaping-mechanism"></a><span data-ttu-id="ef5b4-159">エスケープのしくみ</span><span class="sxs-lookup"><span data-stu-id="ef5b4-159">Escaping Mechanism</span></span>  
   
--   インデクサー \(\[ \]\) 内では、キャレット文字 \(^\) は次の文字をエスケープします。  
+-   <span data-ttu-id="ef5b4-160">インデクサー ([ ]) 内では、キャレット文字 (^) は次の文字をエスケープします。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-160">Inside indexers ([ ]), the caret character (^) escapes the next character.</span></span>  
   
--   XAML で <xref:System.Windows.Data.Binding.Path%2A> を指定する場合は、XML 言語定義で特別な意味を持つ特定の文字についても \(XML エンティティを使用して\) 次のようにエスケープする必要があります。  
+-   <span data-ttu-id="ef5b4-161">設定した場合<xref:System.Windows.Data.Binding.Path%2A>XAML では、する必要があります XML 言語の定義には特定の文字エスケープ (XML エンティティを使用)。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-161">If you set <xref:System.Windows.Data.Binding.Path%2A> in XAML, you also need to escape (using XML entities) certain characters that are special to the XML language definition:</span></span>  
   
-    -   文字 "&" をエスケープするには、`&` を使用します。  
+    -   <span data-ttu-id="ef5b4-162">文字 "&" をエスケープするには、`&` を使用します。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-162">Use `&` to escape the character "&".</span></span>  
   
-    -   タグの終了を示す "\>" をエスケープするには、`>` を使用します。  
+    -   <span data-ttu-id="ef5b4-163">使用する`>`終了タグをエスケープする">"です。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-163">Use `>` to escape the end tag ">".</span></span>  
   
--   また、マークアップ拡張構文を使用して、属性内にバインディング全体を記述する場合には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] マークアップ拡張機能パーサーにとって特別な意味を持つ次の文字を \(バックスラッシュ \\ を使用して\) エスケープする必要があります。  
+-   <span data-ttu-id="ef5b4-164">さらに、マークアップ拡張構文を使用して属性のバインディング全体を記述する場合、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] マークアップ拡張機能パーサーで特別な意味を持つ文字を (円記号 \\ を使用して) エスケープする必要があります。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-164">Additionally, if you describe the entire binding in an attribute using the markup extension syntax, you need to escape (using backslash \\) characters that are special to the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] markup extension parser:</span></span>  
   
-    -   バックスラッシュ \(\\\) は、それ自体がエスケープ文字です。  
+    -   <span data-ttu-id="ef5b4-165">円記号 (\\) はエスケープ文字そのものです。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-165">Backslash (\\) is the escape character itself.</span></span>  
   
-    -   等号 \(\=\) は、プロパティ名とプロパティ値を区切ります。  
+    -   <span data-ttu-id="ef5b4-166">等号 (=) は、プロパティ名とプロパティの値を区切ります。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-166">The equal sign (=) separates property name from property value.</span></span>  
   
-    -   コンマ \(,\) は、複数のプロパティを区切ります。  
+    -   <span data-ttu-id="ef5b4-167">コンマ (,) はプロパティを区切ります。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-167">Comma (,) separates properties.</span></span>  
   
-    -   右中かっこ \(}\) は、マークアップ拡張機能の終了を示します。  
+    -   <span data-ttu-id="ef5b4-168">右中かっこ (}) は、マークアップ拡張機能の終わりです。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-168">The right curly brace (}) is the end of a markup extension.</span></span>  
   
 <a name="Default"></a>   
-## 既定の動作  
- 宣言に指定がない場合の既定の動作は次のとおりです。  
+## <a name="default-behaviors"></a><span data-ttu-id="ef5b4-169">既定の動作</span><span class="sxs-lookup"><span data-stu-id="ef5b4-169">Default Behaviors</span></span>  
+ <span data-ttu-id="ef5b4-170">既定の動作は、宣言で指定されていない場合には次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-170">The default behavior is as follows if not specified in the declaration.</span></span>  
   
--   [バインディング ソース](GTMT)値と[バインディング ターゲット](GTMT)値を相互に型変換する既定のコンバーターが作成されます。  型変換できない場合、既定のコンバーターは `null` を返します。  
+-   <span data-ttu-id="ef5b4-171">バインディング ソースの値とバインディング ターゲットの値の型変換を実行しようとする既定のコンバーターが作成されます。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-171">A default converter is created that tries to do a type conversion between the binding source value and the binding target value.</span></span> <span data-ttu-id="ef5b4-172">変換を実行できない場合、既定のコンバーターは `null` を返します。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-172">If a conversion cannot be made, the default converter returns `null`.</span></span>  
   
--   <xref:System.Windows.Data.Binding.ConverterCulture%2A> を設定しない場合、バインディング エンジンでは、[バインディング ターゲット](GTMT) オブジェクトの `Language` プロパティが使用されます。  XAML では、このプロパティは既定で "en\-US" に設定されるか、明示的に設定されている場合はページのルート要素 \(または任意の要素\) から値を継承します。  
+-   <span data-ttu-id="ef5b4-173">設定しない場合<xref:System.Windows.Data.Binding.ConverterCulture%2A>、バインド エンジンを使用して、`Language`バインディング ターゲット オブジェクトのプロパティです。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-173">If you do not set <xref:System.Windows.Data.Binding.ConverterCulture%2A>, the binding engine uses the `Language` property of the binding target object.</span></span> <span data-ttu-id="ef5b4-174">XAML では、既定で "en-US" になるか、または明示的に設定されている場合にはページのルート要素 (または任意の要素) から値を継承します。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-174">In XAML, this defaults to "en-US" or inherits the value from the root element (or any element) of the page, if one has been explicitly set.</span></span>  
   
--   バインディングに既にデータ コンテキストが存在し \(たとえば、親要素から継承したデータ コンテキストの場合\)、そのコンテキストから返される項目またはコレクションがすべてバインディングするために適切であり、パスを変更する必要もない場合には、バインディング宣言は、`{Binding}` のように、句を一切含めないで宣言することができます。これは、バインディングがコレクションに影響を与えるデータ スタイルに対してバインディングを指定する場合に多く用いられる方法です。  詳細については、「[バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)」の「オブジェクト全体をバインディング ソースとして使用する」セクションを参照してください。  
+-   <span data-ttu-id="ef5b4-175">バインディングに既にデータ コンテキスト (たとえば、親要素から継承したデータ コンテキスト) があり、そのコンテキストによって返される項目またはコンテキストが何であれ、それがさらにパスを変更せずにバインディングすることについて適切である限り、バインディング宣言は句を持つことができません。`{Binding}`これは、多くの場合、データのスタイルに対してバインディングを指定する方法で、バインディングはコレクションに基づいて動作します。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-175">As long as the binding already has a data context (for instance, the inherited data context coming from a parent element), and whatever item or collection being returned by that context is appropriate for binding without requiring further path modification, a binding declaration can have no clauses at all: `{Binding}` This is often the way a binding is specified for data styling, where the binding acts upon a collection.</span></span> <span data-ttu-id="ef5b4-176">詳細については、「[バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)」の「バインディング ソースとして使用する全体オブジェクト」セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-176">For more information, see the "Entire Objects Used as a Binding Source" section in the [Binding Sources Overview](../../../../docs/framework/wpf/data/binding-sources-overview.md).</span></span>  
   
--   既定の <xref:System.Windows.Data.Binding.Mode%2A> は、バインドされる[依存関係プロパティ](GTMT)に応じて、一方向と双方向のいずれかになります。  バインディングを目的どおりに動作させるために、バインディング モードを常に明示的に宣言できます。  一般に、ユーザーが編集できる <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=fullName> や <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A?displayProperty=fullName> などのコントロール プロパティは、既定で双方向のバインディングであり、それ以外のほとんどのプロパティは既定で一方向のバインディングになります。  
+-   <span data-ttu-id="ef5b4-177">既定値<xref:System.Windows.Data.Binding.Mode%2A>は一方向、バインドされている依存関係プロパティによっては双方向の間で変化します。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-177">The default <xref:System.Windows.Data.Binding.Mode%2A> varies between one-way and two-way depending on the dependency property that is being bound.</span></span> <span data-ttu-id="ef5b4-178">常にバインディング モードを明示的に宣言し、バインディングに目的の動作があることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-178">You can always declare the binding mode explicitly to ensure that your binding has the desired behavior.</span></span> <span data-ttu-id="ef5b4-179">一般に、ユーザーが編集できるコントロールのプロパティでなど<xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType>と<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A?displayProperty=nameWithType>、双方向のバインディングでは、既定であり、その他のほとんどのプロパティは既定で一方向のバインド。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-179">In general, user-editable control properties, such as <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> and <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A?displayProperty=nameWithType>, default to two-way bindings, whereas most other properties default to one-way bindings.</span></span>  
   
--   既定の <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> 値も、バインドされる[依存関係プロパティ](GTMT)に応じて、<xref:System.Windows.Data.UpdateSourceTrigger> と <xref:System.Windows.Data.UpdateSourceTrigger> のいずれかになります。  ほとんどの[依存関係プロパティ](GTMT)の既定値は <xref:System.Windows.Data.UpdateSourceTrigger> であるのに対し、<xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=fullName> プロパティの既定値は <xref:System.Windows.Data.UpdateSourceTrigger> です。  
+-   <span data-ttu-id="ef5b4-180">既定値<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>値によって異なります<xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>と<xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>も、バインドされた依存関係プロパティによって異なります。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-180">The default <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> value varies between <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged> and <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus> depending on the bound dependency property as well.</span></span> <span data-ttu-id="ef5b4-181">ほとんどの依存関係プロパティの既定値は <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged> です。ただし、<xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> プロパティの既定値は <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus> です。</span><span class="sxs-lookup"><span data-stu-id="ef5b4-181">The default value for most dependency properties is <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>, while the <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> property has a default value of <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>.</span></span>  
   
-## 参照  
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)   
- [データ バインド](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)   
- [PropertyPath の XAML 構文](../../../../docs/framework/wpf/advanced/propertypath-xaml-syntax.md)
+## <a name="see-also"></a><span data-ttu-id="ef5b4-182">関連項目</span><span class="sxs-lookup"><span data-stu-id="ef5b4-182">See Also</span></span>  
+ [<span data-ttu-id="ef5b4-183">データ バインディングの概要</span><span class="sxs-lookup"><span data-stu-id="ef5b4-183">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [<span data-ttu-id="ef5b4-184">方法トピック</span><span class="sxs-lookup"><span data-stu-id="ef5b4-184">How-to Topics</span></span>](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)  
+ [<span data-ttu-id="ef5b4-185">データ バインディング</span><span class="sxs-lookup"><span data-stu-id="ef5b4-185">Data Binding</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
+ [<span data-ttu-id="ef5b4-186">PropertyPath の XAML 構文</span><span class="sxs-lookup"><span data-stu-id="ef5b4-186">PropertyPath XAML Syntax</span></span>](../../../../docs/framework/wpf/advanced/propertypath-xaml-syntax.md)

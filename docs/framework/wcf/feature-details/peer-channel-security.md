@@ -1,46 +1,49 @@
 ---
-title: "ピア チャネルのセキュリティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ピア チャネルのセキュリティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 2c59b164-3729-44f0-a967-f247c42de662
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: afe4252a56802ff2796f947afa31a5871f29223e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ピア チャネルのセキュリティ
-ピア チャネルは、マルチパーティ メッセージングに基づく各種分散アプリケーションを実現します。例として、インターネット規模のコンテンツ配布 \(信頼されたソースによるコンテンツ \(メディアやソフトウェア更新プログラムなど\) 配布\)、友人グループによる音楽や写真の交換、同僚チームによるドキュメントの共同編集などが挙げられます。これらのシナリオでは、それぞれに一意のセキュリティ モデルが必要です。ピア チャネル セキュリティ モデルは、このようなシナリオに対処するようにデザインされており、さまざまな ID モデル、認証モデル、および承認モデルの各ニーズに対応する堅牢なセキュリティ モデルを提供します。  
+# <a name="peer-channel-security"></a><span data-ttu-id="89720-102">ピア チャネルのセキュリティ</span><span class="sxs-lookup"><span data-stu-id="89720-102">Peer Channel Security</span></span>
+<span data-ttu-id="89720-103">ピア チャネルは、マルチパーティ メッセージングに基づく各種分散アプリケーションを実現します。</span><span class="sxs-lookup"><span data-stu-id="89720-103">Peer Channel enables a variety of distributed application types that depend on multiparty messaging.</span></span> <span data-ttu-id="89720-104">例として、インターネット規模のコンテンツ配布 (信頼されたソースによるコンテンツ (メディアやソフトウェア更新プログラムなど) 配布)、友人グループによる音楽や写真の交換、同僚チームによるドキュメントの共同編集などが挙げられます。</span><span class="sxs-lookup"><span data-stu-id="89720-104">Some examples include Internet-scale content distribution, where a trusted source distributes content (such as media or software updates), a group of friends exchange music and photos, or a team of colleagues collaboratively edit a document.</span></span> <span data-ttu-id="89720-105">これらのシナリオでは、それぞれに一意のセキュリティ モデルが必要です。</span><span class="sxs-lookup"><span data-stu-id="89720-105">Each of these scenarios requires a unique security model.</span></span> <span data-ttu-id="89720-106">ピア チャネル セキュリティ モデルは、このようなシナリオに対処するようにデザインされており、さまざまな ID モデル、認証モデル、および承認モデルの各ニーズに対応する堅牢なセキュリティ モデルを提供します。</span><span class="sxs-lookup"><span data-stu-id="89720-106">The Peer Channel security model is designed to address these scenarios and provides a sound security model for the respective needs of different identity, authentication, and authorization models.</span></span>  
   
-## セキュリティ シナリオ  
- コンテンツ配布シナリオでは、コンテンツの各受信者がコンテンツ ソースを識別する必要があります。配布を行うというシナリオの性質上、メッセージの処理または途中受信を行う中継局を確認および信頼することは必ずしも可能ではありません。信頼できない中継局によるメッセージ改ざんの脅威を効果的に軽減するには、アプリケーションで送信時にメッセージをセキュリティで保護することにより、改ざんの試みを容易に検出できるようにします。この場合、コンテンツの機密度に応じて、暗号化が必要な場合があります。  
+## <a name="security-scenarios"></a><span data-ttu-id="89720-107">セキュリティ シナリオ</span><span class="sxs-lookup"><span data-stu-id="89720-107">Security Scenarios</span></span>  
+ <span data-ttu-id="89720-108">コンテンツ配布シナリオでは、コンテンツの各受信者がコンテンツ ソースを識別する必要があります。</span><span class="sxs-lookup"><span data-stu-id="89720-108">A content-distribution scenario requires that each content recipient identify the content source.</span></span> <span data-ttu-id="89720-109">配布を行うというシナリオの性質上、メッセージの処理または途中受信を行う中継局を確認および信頼することは必ずしも可能ではありません。</span><span class="sxs-lookup"><span data-stu-id="89720-109">Due to the distributed nature of the scenario, it is not always possible to know and trust the intermediaries that process or intercept messages.</span></span> <span data-ttu-id="89720-110">信頼できない中継局によるメッセージ改ざんの脅威を効果的に軽減するには、アプリケーションで送信時にメッセージをセキュリティで保護することにより、改ざんの試みを容易に検出できるようにします。</span><span class="sxs-lookup"><span data-stu-id="89720-110">To effectively mitigate the threat that an untrusted intermediary might tamper with the messages, applications can secure the message at the sender so that any tampering attempts are easily detected.</span></span> <span data-ttu-id="89720-111">この場合、コンテンツの機密度に応じて、暗号化が必要な場合があります。</span><span class="sxs-lookup"><span data-stu-id="89720-111">In this case, depending on the confidentiality of the content, encryption can be necessary.</span></span>  
   
- グループによるドキュメント編集のようなコラボレーション シナリオでは、多くの場合、セッションに参加する各メンバーを個別に識別し、認証する必要があります。これは、セッションをセキュリティで保護するには、ユーザー グループを定義し、これらのグループを認証するメカニズムが必要であるということを意味しています。さらに、アプリケーションでは、メッセージ レベルの認証によって各メッセージのトレースを行う必要が生じる場合があります。この種のアプリケーションでは、より強固なセキュリティ スキームを実現するためにパフォーマンスが犠牲となることがあります。  
+ <span data-ttu-id="89720-112">グループによるドキュメント編集のようなコラボレーション シナリオでは、多くの場合、セッションに参加する各メンバーを個別に識別し、認証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="89720-112">Collaboration scenarios like group document collaboration often require that each member participating in the session be individually identified and authenticated.</span></span> <span data-ttu-id="89720-113">これは、セッションをセキュリティで保護するには、ユーザー グループを定義し、これらのグループを認証するメカニズムが必要であるということを意味しています。</span><span class="sxs-lookup"><span data-stu-id="89720-113">This means that a mechanism to define user groups and authenticate against those groups is necessary to have a secured session.</span></span> <span data-ttu-id="89720-114">さらに、アプリケーションでは、メッセージ レベルの認証によって各メッセージのトレースを行う必要が生じる場合があります。</span><span class="sxs-lookup"><span data-stu-id="89720-114">Moreover, applications might require tracing each message by authentication at the message level.</span></span> <span data-ttu-id="89720-115">この種のアプリケーションでは、より強固なセキュリティ スキームを実現するためにパフォーマンスが犠牲となることがあります。</span><span class="sxs-lookup"><span data-stu-id="89720-115">In these types of applications, performance can be sacrificed for a stronger security scheme.</span></span>  
   
- 非公式のグループにおける通信セッションでは、グループ内での秘密の共有など、形式張らないセキュリティ モデルが必要になることがあります。この種のアプリケーションでは、強力な認証方法を使用したり、否認防止手段を提供したりするよりも、セキュリティ モデルの確立と構成が容易であることの方が重要となります。このようなシナリオでは、通信レイヤーをセキュリティで保護すると同時にメッセージの認証も可能にする、パスワード ベースの認証機構が役立ちます。パスワード ベースのセキュリティは、ピア チャネルの既定の設定です。  
+ <span data-ttu-id="89720-116">非公式のグループにおける通信セッションでは、グループ内での秘密の共有など、形式張らないセキュリティ モデルが必要になることがあります。</span><span class="sxs-lookup"><span data-stu-id="89720-116">A communication session among a group of casual users can require informal security models, like knowledge of a common secret among the group.</span></span> <span data-ttu-id="89720-117">この種のアプリケーションでは、強力な認証方法を使用したり、否認防止手段を提供したりするよりも、セキュリティ モデルの確立と構成が容易であることの方が重要となります。</span><span class="sxs-lookup"><span data-stu-id="89720-117">For these types of applications, having a security model that is convenient to establish and configure is more important than having the strongest form of authentication or providing nonrepudiation measures.</span></span> <span data-ttu-id="89720-118">このようなシナリオでは、通信レイヤーをセキュリティで保護すると同時にメッセージの認証も可能にする、パスワード ベースの認証機構が役立ちます。</span><span class="sxs-lookup"><span data-stu-id="89720-118">For these scenarios, a password-based authentication mechanism helps to secure the communication layer while still allowing for message authentication.</span></span> <span data-ttu-id="89720-119">パスワード ベースのセキュリティは、ピア チャネルの既定の設定です。</span><span class="sxs-lookup"><span data-stu-id="89720-119">Password-based security is the default setting for Peer Channel.</span></span>  
   
-## トークンの種類  
- ピア チャネルでは、トークンの種類として、強力な識別手段である X.509 証明書だけを認識します。X.509 証明書は、実装可能な認証および承認の種類に基づいて強力な ID モデルを提供します。証明書を使用することで、機密性と整合性を容易に実現することができます。ただし、X.509 証明書は使用と展開が困難な場合があります。  
+## <a name="token-types"></a><span data-ttu-id="89720-120">トークン型</span><span class="sxs-lookup"><span data-stu-id="89720-120">Token Types</span></span>  
+ <span data-ttu-id="89720-121">ピア チャネルでは、トークンの種類として、強力な識別手段である X.509 証明書だけを認識します。X.509 証明書は、実装可能な認証および承認の種類に基づいて強力な ID モデルを提供します。</span><span class="sxs-lookup"><span data-stu-id="89720-121">Peer Channel recognizes a single token type for strong identification, X.509 certificates, which provide a strong identity model based on the type of authentication and authorization that can be implemented.</span></span> <span data-ttu-id="89720-122">証明書を使用することで、機密性と整合性を容易に実現することができます。</span><span class="sxs-lookup"><span data-stu-id="89720-122">Confidentiality and integrity are easily provided using certificates.</span></span> <span data-ttu-id="89720-123">ただし、X.509 証明書は使用と展開が困難な場合があります。</span><span class="sxs-lookup"><span data-stu-id="89720-123">However, X.509 certificates can be difficult to use and deploy.</span></span>  
   
- ピア チャネルでは、パスワードを使用した簡単なアプリケーションもサポートしています。これらのアプリケーションでは、指定したパスワードに基づいて単純なピア グループをセットアップできます。この場合、グループの所有者がパスワードを決定してメンバーに通知します。各メンバーは、セッションに参加するためにこのパスワードを使用して事前にサインインする必要があります。パスワードは、セッションへのエントリを許可する目的でのみ使用できます。パスワードを使用して、メッセージの認証を行うことはできません。これは、ピア グループで共有する共通鍵トークンをソース認証に使用することは困難かつ不適切であるためです。  
+ <span data-ttu-id="89720-124">ピア チャネルでは、パスワードを使用した簡単なアプリケーションもサポートしています。</span><span class="sxs-lookup"><span data-stu-id="89720-124">Peer Channel also provides support for simple applications through the use of passwords.</span></span> <span data-ttu-id="89720-125">これらのアプリケーションでは、指定したパスワードに基づいて単純なピア グループをセットアップできます。</span><span class="sxs-lookup"><span data-stu-id="89720-125">Applications can choose to set up quick and simple peer groups based on a supplied password.</span></span> <span data-ttu-id="89720-126">この場合、グループの所有者がパスワードを決定してメンバーに通知します。</span><span class="sxs-lookup"><span data-stu-id="89720-126">In this case, a group owner decides and communicates the password to members.</span></span> <span data-ttu-id="89720-127">各メンバーは、セッションに参加するためにこのパスワードを使用して事前にサインインする必要があります。</span><span class="sxs-lookup"><span data-stu-id="89720-127">Each member must sign in using this password before they can join the session.</span></span> <span data-ttu-id="89720-128">パスワードは、セッションへのエントリを許可する目的でのみ使用できます。パスワードを使用して、メッセージの認証を行うことはできません。</span><span class="sxs-lookup"><span data-stu-id="89720-128">Passwords can be used only to allow entry to the session; they cannot be used to perform message authentication.</span></span> <span data-ttu-id="89720-129">これは、ピア グループで共有する共通鍵トークンをソース認証に使用することは困難かつ不適切であるためです。</span><span class="sxs-lookup"><span data-stu-id="89720-129">This is because a symmetric token that a group of peers share is difficult and inappropriate to use for source authentication.</span></span>  
   
-## セキュリティ モデル  
- ピア チャネルは、ピア間の個々のリンクをセキュリティで保護する機能を提供します。これは、\(アプリケーションの観点から\) セキュリティ保護されていないリンク上でメッセージがフローすることはないことを意味します。内部的には、各リンク \(2 つのピア間のトランスポート チャネル\) は トランスポート層セキュリティ \(TLS\) を使用してセキュリティ保護されます。つまり、送信者がメッセージを作成し、送信すると、このメッセージは、セキュリティで保護されたトランスポートを介して、メッセージにアクセスする直近のピアに送信されます。次に、このピアが、セキュリティで保護された接続を介して直近のピアにメッセージを送信することになります。このセキュリティはトランスポート レベルでのみ動作し、メッセージのセキュリティ モデルには依存しません。  
+## <a name="security-model"></a><span data-ttu-id="89720-130">セキュリティ モデル</span><span class="sxs-lookup"><span data-stu-id="89720-130">Security Model</span></span>  
+ <span data-ttu-id="89720-131">ピア チャネルは、ピア間の個々のリンクをセキュリティで保護する機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="89720-131">Peer Channel provides the ability to secure the individual links between peers.</span></span> <span data-ttu-id="89720-132">これは、(アプリケーションの観点から) セキュリティ保護されていないリンク上でメッセージがフローすることはないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="89720-132">This means that a message never flows on an unsecured link (from the application perspective).</span></span> <span data-ttu-id="89720-133">内部的には、各リンク (2 つのピア間のトランスポート チャネル) は トランスポート層セキュリティ (TLS) を使用してセキュリティ保護されます。</span><span class="sxs-lookup"><span data-stu-id="89720-133">Internally, each link (a transport channel between two peers) is secured using Transport Layer Security (TLS).</span></span> <span data-ttu-id="89720-134">つまり、送信者がメッセージを作成し、送信すると、このメッセージは、セキュリティで保護されたトランスポートを介して、メッセージにアクセスする直近のピアに送信されます。次に、このピアが、セキュリティで保護された接続を介して直近のピアにメッセージを送信することになります。</span><span class="sxs-lookup"><span data-stu-id="89720-134">This means that when a sender composes and sends a message, it is sent over secure transport to each of its immediate peers, who access the message, and in turn send the message to their immediate peers over secure connections.</span></span> <span data-ttu-id="89720-135">このセキュリティはトランスポート レベルでのみ動作し、メッセージのセキュリティ モデルには依存しません。</span><span class="sxs-lookup"><span data-stu-id="89720-135">This security only works at the transport level and is independent of the message security models.</span></span>  
   
- ピア チャネルでは、使用するトランスポート セキュリティとは別に、メッセージをセキュリティ保護する方法も用意されています。このモデルでは、メッセージはソースのセキュリティ トークンを使用してソースで保護されます。ただし、現在サポートされているのは X.509 証明書だけです。セキュリティ保護されたメッセージは、ピア ネットワーク経由で送信されます。各受信ピアは、ソースの信頼性を確認できます。メッセージはセキュリティで保護されているため、中継局がメッセージを改ざんすることはできません。  
+ <span data-ttu-id="89720-136">ピア チャネルでは、使用するトランスポート セキュリティとは別に、メッセージをセキュリティ保護する方法も用意されています。</span><span class="sxs-lookup"><span data-stu-id="89720-136">Peer Channel also provides a way to secure messages independently of the transport security used.</span></span> <span data-ttu-id="89720-137">このモデルでは、メッセージはソースのセキュリティ トークンを使用してソースで保護されます。ただし、現在サポートされているのは X.509 証明書だけです。</span><span class="sxs-lookup"><span data-stu-id="89720-137">In this model, the message is secured at the source using the source’s security token, although currently only X.509 certificates are supported.</span></span> <span data-ttu-id="89720-138">セキュリティ保護されたメッセージは、ピア ネットワーク経由で送信されます。</span><span class="sxs-lookup"><span data-stu-id="89720-138">The secured message is then transmitted over the peer network.</span></span> <span data-ttu-id="89720-139">各受信ピアは、ソースの信頼性を確認できます。</span><span class="sxs-lookup"><span data-stu-id="89720-139">Each receiving peer can verify the authenticity of the source.</span></span> <span data-ttu-id="89720-140">メッセージはセキュリティで保護されているため、中継局がメッセージを改ざんすることはできません。</span><span class="sxs-lookup"><span data-stu-id="89720-140">Note that the message is secured so that intermediaries cannot tamper with it.</span></span>  
   
- 機密性を実現するために、アプリケーションでは強力なグループ メンバーシップ スキームを持つトランスポート セキュリティを採用して、メッセージへの権限のないアクセスを禁止できます。  
+ <span data-ttu-id="89720-141">機密性を実現するために、アプリケーションでは強力なグループ メンバーシップ スキームを持つトランスポート セキュリティを採用して、メッセージへの権限のないアクセスを禁止できます。</span><span class="sxs-lookup"><span data-stu-id="89720-141">To achieve confidentiality, applications can employ transport security with strong group membership schemes to prevent unauthorized access to the message.</span></span>  
   
- ピア チャネルでは、サポートされているトークンの種類のいずれかをアプリケーションで選択する限り、特定の ID モデルを必要としません。これらの ID と認証決定のライフサイクルは、アプリケーションにより完全に支配されます。  
+ <span data-ttu-id="89720-142">ピア チャネルでは、サポートされているトークンの種類のいずれかをアプリケーションで選択する限り、特定の ID モデルを必要としません。</span><span class="sxs-lookup"><span data-stu-id="89720-142">Peer Channel does not require a specific identity model as long as the application chooses one of the supported token types.</span></span> <span data-ttu-id="89720-143">これらの ID と認証決定のライフサイクルは、アプリケーションにより完全に支配されます。</span><span class="sxs-lookup"><span data-stu-id="89720-143">Applications completely own the life cycle of these identities and authentication decisions.</span></span>  
   
-## 参照  
- [セキュリティによるピア チャネル アプリケーションの保護](../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)   
- [ピア チャネルの概要](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)   
- [ピア チャネル アプリケーションの構築](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+## <a name="see-also"></a><span data-ttu-id="89720-144">関連項目</span><span class="sxs-lookup"><span data-stu-id="89720-144">See Also</span></span>  
+ [<span data-ttu-id="89720-145">ピア チャネル アプリケーションのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="89720-145">Securing Peer Channel Applications</span></span>](../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)  
+ [<span data-ttu-id="89720-146">ピア チャネルの概要</span><span class="sxs-lookup"><span data-stu-id="89720-146">Peer Channel Concepts</span></span>](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)  
+ [<span data-ttu-id="89720-147">ピア チャネル アプリケーションの構築</span><span class="sxs-lookup"><span data-stu-id="89720-147">Building a Peer Channel Application</span></span>](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)

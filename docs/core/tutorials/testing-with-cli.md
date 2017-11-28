@@ -10,21 +10,19 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 52ff1be3-d92e-4477-9c84-8c1771e87ab5
+ms.openlocfilehash: 62c81bf070a435f6105c313ae95340a5504233df
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1a0a0554b28600821fb15f64d31c6bce74a17136
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/19/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
+# <a name="organizing-and-testing-projects-with-the-net-core-command-line"></a><span data-ttu-id="80f6c-104">.NET Core コマンド ラインを使用したプロジェクトの整理およびテスト</span><span class="sxs-lookup"><span data-stu-id="80f6c-104">Organizing and testing projects with the .NET Core command line</span></span>
 
-# <a name="organizing-and-testing-projects-with-the-net-core-command-line"></a>.NET Core コマンド ラインを使用したプロジェクトの整理およびテスト
+<span data-ttu-id="80f6c-105">このチュートリアルでは、「[Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要](using-with-xplat-cli.md)」に従って、簡単なコンソール アプリの作成より高度でよく構成されたアプリケーションの開発を行います。</span><span class="sxs-lookup"><span data-stu-id="80f6c-105">This tutorial follows [Getting started with .NET Core on Windows/Linux/macOS using the command line](using-with-xplat-cli.md), taking you beyond the creation of a simple console app to develop advanced and well-organized applications.</span></span> <span data-ttu-id="80f6c-106">フォルダーを使用してコードを整理する方法に続き、このチュートリアルでは [xUnit](https://xunit.github.io/) テスト フレームワークでコンソール アプリケーションを拡張する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-106">After showing you how to use folders to organize your code, this tutorial shows you how to extend a console application with the [xUnit](https://xunit.github.io/) testing framework.</span></span>
 
-このチュートリアルでは、「[Windows/Linux/macOS の .NET Core でのコマンド ラインの使用に関する概要](using-with-xplat-cli.md)」に従って、簡単なコンソール アプリの作成より高度でよく構成されたアプリケーションの開発を行います。 フォルダーを使用してコードを整理する方法に続き、このチュートリアルでは [xUnit](https://xunit.github.io/) テスト フレームワークでコンソール アプリケーションを拡張する方法を示します。
+## <a name="using-folders-to-organize-code"></a><span data-ttu-id="80f6c-107">フォルダーを使用してコードを整理する</span><span class="sxs-lookup"><span data-stu-id="80f6c-107">Using folders to organize code</span></span>
 
-## <a name="using-folders-to-organize-code"></a>フォルダーを使用してコードを整理する
-
-コンソール アプリに新しいタイプを導入する場合、そのタイプを含むファイルをアプリに追加することができます。 たとえば、`AccountInformation` および `MonthlyReportRecords` タイプを含むファイルをプロジェクトに追加した場合、以下のように、プロジェクト ファイルの構造はフラットで移動しやすいものになります。
+<span data-ttu-id="80f6c-108">コンソール アプリに新しいタイプを導入する場合、そのタイプを含むファイルをアプリに追加することができます。</span><span class="sxs-lookup"><span data-stu-id="80f6c-108">If you want to introduce new types into a console app, you can do so by adding files containing the types to the app.</span></span> <span data-ttu-id="80f6c-109">たとえば、`AccountInformation` および `MonthlyReportRecords` タイプを含むファイルをプロジェクトに追加した場合、以下のように、プロジェクト ファイルの構造はフラットで移動しやすいものになります。</span><span class="sxs-lookup"><span data-stu-id="80f6c-109">For example if you add files containing `AccountInformation` and `MonthlyReportRecords` types to your project, the project file structure is flat and easy to navigate:</span></span>
 
 ```
 /MyProject
@@ -34,9 +32,9 @@ ms.lasthandoff: 09/19/2017
 |__Program.cs
 ```
 
-ただし、これはプロジェクトのサイズが比較的小さい場合にのみ適しています。 プロジェクトに 20 個のタイプを追加した場合はどうなるかというと、 プロジェクトのルート ディレクトリが乱雑になり、その多くのファイルの移動や維持が容易でなくなることは明らかです。
+<span data-ttu-id="80f6c-110">ただし、これはプロジェクトのサイズが比較的小さい場合にのみ適しています。</span><span class="sxs-lookup"><span data-stu-id="80f6c-110">However, this only works well when the size of your project is relatively small.</span></span> <span data-ttu-id="80f6c-111">プロジェクトに 20 個のタイプを追加した場合はどうなるかというと、</span><span class="sxs-lookup"><span data-stu-id="80f6c-111">Can you imagine what will happen if you add 20 types to the project?</span></span> <span data-ttu-id="80f6c-112">プロジェクトのルート ディレクトリが乱雑になり、その多くのファイルの移動や維持が容易でなくなることは明らかです。</span><span class="sxs-lookup"><span data-stu-id="80f6c-112">The project definitely wouldn't be easy to navigate and maintain with that many files littering the project's root directory.</span></span>
 
-このようなプロジェクトを整理するには、新しいフォルダーを作成し、*Models* という名前を付けてタイプ ファイルを保持します。 以下のように、*Models* フォルダーにタイプ ファイルを配置します。
+<span data-ttu-id="80f6c-113">このようなプロジェクトを整理するには、新しいフォルダーを作成し、*Models* という名前を付けてタイプ ファイルを保持します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-113">To organize the project, create a new folder and name it *Models* to hold the type files.</span></span> <span data-ttu-id="80f6c-114">以下のように、*Models* フォルダーにタイプ ファイルを配置します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-114">Place the type files into the *Models* folder:</span></span>
 
 ```
 /MyProject
@@ -47,17 +45,17 @@ ms.lasthandoff: 09/19/2017
 |__Program.cs
 ```
 
-論理的にファイルをフォルダーにグループ化するプロジェクトでは、移動や維持が容易になります。 次のセクションでは、フォルダーと単体テストを使用してさらに複雑なサンプルを作成します。
+<span data-ttu-id="80f6c-115">論理的にファイルをフォルダーにグループ化するプロジェクトでは、移動や維持が容易になります。</span><span class="sxs-lookup"><span data-stu-id="80f6c-115">Projects that logically group files into folders are easy to navigate and maintain.</span></span> <span data-ttu-id="80f6c-116">次のセクションでは、フォルダーと単体テストを使用してさらに複雑なサンプルを作成します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-116">In the next section, you create a more complex sample with folders and unit testing.</span></span>
 
-## <a name="organizing-and-testing-using-the-newtypes-pets-sample"></a>NewTypes ペット サンプルを使用した整理とテスト
+## <a name="organizing-and-testing-using-the-newtypes-pets-sample"></a><span data-ttu-id="80f6c-117">NewTypes ペット サンプルを使用した整理とテスト</span><span class="sxs-lookup"><span data-stu-id="80f6c-117">Organizing and testing using the NewTypes Pets Sample</span></span>
 
-### <a name="building-the-sample"></a>サンプルのビルド
+### <a name="building-the-sample"></a><span data-ttu-id="80f6c-118">サンプルのビルド</span><span class="sxs-lookup"><span data-stu-id="80f6c-118">Building the sample</span></span>
 
-以下の手順では、[NewTypes ペット サンプル](https://github.com/dotnet/docs/tree/master/samples/core/console-apps/NewTypesMsBuild)に従うことも、独自のファイルとフォルダーを作成することもできます。 タイプは、後でタイプをさらに追加することができるフォルダー構造に論理的に整理されます。また、テストも、後でテストをさらに追加できるフォルダーに論理的に配置されます。
+<span data-ttu-id="80f6c-119">以下の手順では、[NewTypes ペット サンプル](https://github.com/dotnet/docs/tree/master/samples/core/console-apps/NewTypesMsBuild)に従うことも、独自のファイルとフォルダーを作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="80f6c-119">For the following steps, you can either follow along using the [NewTypes Pets Sample](https://github.com/dotnet/docs/tree/master/samples/core/console-apps/NewTypesMsBuild) or create your own files and folders.</span></span> <span data-ttu-id="80f6c-120">タイプは、後でタイプをさらに追加することができるフォルダー構造に論理的に整理されます。また、テストも、後でテストをさらに追加できるフォルダーに論理的に配置されます。</span><span class="sxs-lookup"><span data-stu-id="80f6c-120">The types are logically organized into a folder structure that permits the addition of more types later, and tests are also logically placed in folders permitting the addition of more tests later.</span></span>
 
-サンプルには `Dog` と `Cat` という 2 つのタイプが含まれています。このサンプルでは `IPet` という共通インターフェイスを実装します。 `NewTypes` プロジェクトの目標は、*Pets* フォルダーにペット関連のタイプを整理することです。 別のタイプ セット (*WildAnimals* など) が後で追加された場合、それらは *Pets* フォルダーと同じ場所にある *NewTypes* フォルダーに配置されます。 *WildAnimals* フォルダーには、`Squirrel` や `Rabbit` タイプなど、ペットではない動物のタイプを含めることができます。 このようにタイプを追加すれば、プロジェクトはよく構成された状態に保たれます。 
+<span data-ttu-id="80f6c-121">サンプルには `Dog` と `Cat` という 2 つのタイプが含まれています。このサンプルでは `IPet` という共通インターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-121">The sample contains two types, `Dog` and `Cat`, and has them implement a common interface, `IPet`.</span></span> <span data-ttu-id="80f6c-122">`NewTypes` プロジェクトの目標は、*Pets* フォルダーにペット関連のタイプを整理することです。</span><span class="sxs-lookup"><span data-stu-id="80f6c-122">For the `NewTypes` project, your goal is to organize the pet-related types into a *Pets* folder.</span></span> <span data-ttu-id="80f6c-123">別のタイプ セット (*WildAnimals* など) が後で追加された場合、それらは *Pets* フォルダーと同じ場所にある *NewTypes* フォルダーに配置されます。</span><span class="sxs-lookup"><span data-stu-id="80f6c-123">If another set of types is added later, *WildAnimals* for example, they're placed in the *NewTypes* folder alongside the *Pets* folder.</span></span> <span data-ttu-id="80f6c-124">*WildAnimals* フォルダーには、`Squirrel` や `Rabbit` タイプなど、ペットではない動物のタイプを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="80f6c-124">The *WildAnimals* folder may contain types for animals that aren't pets, such as `Squirrel` and `Rabbit` types.</span></span> <span data-ttu-id="80f6c-125">このようにタイプを追加すれば、プロジェクトはよく構成された状態に保たれます。</span><span class="sxs-lookup"><span data-stu-id="80f6c-125">In this way as types are added, the project remains well organized.</span></span> 
 
-以下のようなファイル コンテンツのフォルダー構造を作成します。
+<span data-ttu-id="80f6c-126">以下のようなファイル コンテンツのフォルダー構造を作成します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-126">Create the following folder structure with file content indicated:</span></span>
 
 ```
 /NewTypes
@@ -71,55 +69,54 @@ ms.lasthandoff: 09/19/2017
       |__NewTypes.csproj
 ```
 
-*IPet.cs*:
+<span data-ttu-id="80f6c-127">*IPet.cs*:</span><span class="sxs-lookup"><span data-stu-id="80f6c-127">*IPet.cs*:</span></span>
 
 [!code-csharp[IPet interface](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Pets/IPet.cs)]
 
-*Dog.cs*:
+<span data-ttu-id="80f6c-128">*Dog.cs*:</span><span class="sxs-lookup"><span data-stu-id="80f6c-128">*Dog.cs*:</span></span>
 
 [!code-csharp[Dog class](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Pets/Dog.cs)]
 
-*Cat.cs*:
+<span data-ttu-id="80f6c-129">*Cat.cs*:</span><span class="sxs-lookup"><span data-stu-id="80f6c-129">*Cat.cs*:</span></span>
 
 [!code-csharp[Cat class](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Pets/Cat.cs)]
 
-*Program.cs*:
+<span data-ttu-id="80f6c-130">*Program.cs*:</span><span class="sxs-lookup"><span data-stu-id="80f6c-130">*Program.cs*:</span></span>
 
 [!code-csharp[Main](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Program.cs)]
 
-*NewTypes.csproj*:
+<span data-ttu-id="80f6c-131">*NewTypes.csproj*:</span><span class="sxs-lookup"><span data-stu-id="80f6c-131">*NewTypes.csproj*:</span></span>
 
 [!code-xml[NewTypes csproj](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/NewTypes.csproj)]
 
-次のコマンドを実行します。
+<span data-ttu-id="80f6c-132">次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-132">Execute the following commands:</span></span>
 
 ```console
-dotnet restore
 dotnet run
 ```
 
-次の出力を取得します。
+<span data-ttu-id="80f6c-133">次の出力を取得します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-133">Obtain the following output:</span></span>
 
 ```console
 Woof!
 Meow!
 ```
 
-省略可能な演習: このプロジェクトを拡張し、`Bird` などの新しいペット タイプを追加することができます。 その場合、鳥の `TalkToOwner` メソッドで所有者に `Tweet!` を与えるようにします。 再度アプリを実行します。 出力には `Tweet!` が含まれます。
+<span data-ttu-id="80f6c-134">省略可能な演習: このプロジェクトを拡張し、`Bird` などの新しいペット タイプを追加することができます。</span><span class="sxs-lookup"><span data-stu-id="80f6c-134">Optional exercise: You can add a new pet type, such as a `Bird`, by extending this project.</span></span> <span data-ttu-id="80f6c-135">その場合、鳥の `TalkToOwner` メソッドで所有者に `Tweet!` を与えるようにします。</span><span class="sxs-lookup"><span data-stu-id="80f6c-135">Make the bird's `TalkToOwner` method give a `Tweet!` to the owner.</span></span> <span data-ttu-id="80f6c-136">再度アプリを実行します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-136">Run the app again.</span></span> <span data-ttu-id="80f6c-137">出力には `Tweet!` が含まれます。</span><span class="sxs-lookup"><span data-stu-id="80f6c-137">The output will include `Tweet!`</span></span>
 
-### <a name="testing-the-sample"></a>サンプルのテスト
+### <a name="testing-the-sample"></a><span data-ttu-id="80f6c-138">サンプルのテスト</span><span class="sxs-lookup"><span data-stu-id="80f6c-138">Testing the sample</span></span>
 
-これで、`NewTypes` プロジェクトの準備ができました。フォルダーにはペット関連のタイプが保持されており、プロジェクトは整理された状態です。 次は、テスト プロジェクトを作成し、[xUnit](https://xunit.github.io/) テスト フレームワークを使用してテストの作成を開始します。 単体テストでは、ペット タイプの動作を自動的にチェックして、正しく動作していることを確認することができます。
+<span data-ttu-id="80f6c-139">これで、`NewTypes` プロジェクトの準備ができました。フォルダーにはペット関連のタイプが保持されており、プロジェクトは整理された状態です。</span><span class="sxs-lookup"><span data-stu-id="80f6c-139">The `NewTypes` project is in place, and you've organized it by keeping the pets-related types in a folder.</span></span> <span data-ttu-id="80f6c-140">次は、テスト プロジェクトを作成し、[xUnit](https://xunit.github.io/) テスト フレームワークを使用してテストの作成を開始します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-140">Next, create your test project and start writing tests with the [xUnit](https://xunit.github.io/) test framework.</span></span> <span data-ttu-id="80f6c-141">単体テストでは、ペット タイプの動作を自動的にチェックして、正しく動作していることを確認することができます。</span><span class="sxs-lookup"><span data-stu-id="80f6c-141">Unit testing allows you to automatically check the bevahior of your pet types to confirm that they're operating properly.</span></span>
 
-*test* フォルダーを作成します。この中に *NewTypesTests* フォルダーが含まれます。 *NewTypesTests* フォルダーのコマンド プロンプトから、`dotnet new xunit` を実行します。 これで、*NewTypesTests.csproj* と *UnitTest1.cs* という 2 つのファイルが生成されます。
+<span data-ttu-id="80f6c-142">*test* フォルダーを作成します。この中に *NewTypesTests* フォルダーが含まれます。</span><span class="sxs-lookup"><span data-stu-id="80f6c-142">Create a *test* folder with a *NewTypesTests* folder within it.</span></span> <span data-ttu-id="80f6c-143">*NewTypesTests* フォルダーのコマンド プロンプトから、`dotnet new xunit` を実行します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-143">At a command prompt from the *NewTypesTests* folder, execute `dotnet new xunit`.</span></span> <span data-ttu-id="80f6c-144">これで、*NewTypesTests.csproj* と *UnitTest1.cs* という 2 つのファイルが生成されます。</span><span class="sxs-lookup"><span data-stu-id="80f6c-144">This produces two files: *NewTypesTests.csproj* and *UnitTest1.cs*.</span></span>
 
-現在、テスト プロジェクトでは `NewTypes` のタイプをテストすることはできません。`NewTypes` プロジェクトへのプロジェクト参照が必要になります。 プロジェクト参照を追加するには、以下の [`dotnet add reference`](../tools/dotnet-add-reference.md) コマンドを使用します。
+<span data-ttu-id="80f6c-145">現在、テスト プロジェクトでは `NewTypes` のタイプをテストすることはできません。`NewTypes` プロジェクトへのプロジェクト参照が必要になります。</span><span class="sxs-lookup"><span data-stu-id="80f6c-145">The test project cannot currently test the types in `NewTypes` and requires a project reference to the `NewTypes` project.</span></span> <span data-ttu-id="80f6c-146">プロジェクト参照を追加するには、以下の [`dotnet add reference`](../tools/dotnet-add-reference.md) コマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-146">To add a project reference, use the [`dotnet add reference`](../tools/dotnet-add-reference.md) command:</span></span>
 
 ```
 dotnet add reference ../../src/NewTypes/NewTypes.csproj
 ```
 
-次のように、*NewTypesTests.csproj* ファイルに `<ItemGroup>` ノードを追加して、プロジェクト参照を手動で追加することもできます。
+<span data-ttu-id="80f6c-147">次のように、*NewTypesTests.csproj* ファイルに `<ItemGroup>` ノードを追加して、プロジェクト参照を手動で追加することもできます。</span><span class="sxs-lookup"><span data-stu-id="80f6c-147">You also have the option of manually adding the project reference by adding an `<ItemGroup>` node to the *NewTypesTests.csproj* file:</span></span>
 
 ```xml
 <ItemGroup>
@@ -127,18 +124,18 @@ dotnet add reference ../../src/NewTypes/NewTypes.csproj
 </ItemGroup>
 ```
 
-*NewTypesTests.csproj*:
+<span data-ttu-id="80f6c-148">*NewTypesTests.csproj*:</span><span class="sxs-lookup"><span data-stu-id="80f6c-148">*NewTypesTests.csproj*:</span></span>
 
 [!code-xml[NewTypesTests csproj](../../../samples/core/console-apps/NewTypesMsBuild/test/NewTypesTests/NewTypesTests.csproj)]
 
-*NewTypesTests.csproj* ファイルには以下のものが含まれます。
+<span data-ttu-id="80f6c-149">*NewTypesTests.csproj* ファイルには以下のものが含まれます。</span><span class="sxs-lookup"><span data-stu-id="80f6c-149">The *NewTypesTests.csproj* file contains the following:</span></span>
 
-* `Microsoft.NET.Test.Sdk` (.NET テスト インフラストラクチャ) へのパッケージ参照
-* `xunit` (xUnit テスト フレームワーク) へのパッケージ参照
-* `xunit.runner.visualstudio` (テスト ランナー) へのパッケージ参照
-* `NewTypes` (テスト対象コード) へのプロジェクト参照
+* <span data-ttu-id="80f6c-150">`Microsoft.NET.Test.Sdk` (.NET テスト インフラストラクチャ) へのパッケージ参照</span><span class="sxs-lookup"><span data-stu-id="80f6c-150">Package reference to `Microsoft.NET.Test.Sdk`, the .NET testing infrastructure</span></span>
+* <span data-ttu-id="80f6c-151">`xunit` (xUnit テスト フレームワーク) へのパッケージ参照</span><span class="sxs-lookup"><span data-stu-id="80f6c-151">Package reference to `xunit`, the xUnit testing framework</span></span>
+* <span data-ttu-id="80f6c-152">`xunit.runner.visualstudio` (テスト ランナー) へのパッケージ参照</span><span class="sxs-lookup"><span data-stu-id="80f6c-152">Package reference to `xunit.runner.visualstudio`, the test runner</span></span>
+* <span data-ttu-id="80f6c-153">`NewTypes` (テスト対象コード) へのプロジェクト参照</span><span class="sxs-lookup"><span data-stu-id="80f6c-153">Project reference to `NewTypes`, the code to test</span></span>
 
-*UnitTest1.cs* の名前を *PetTests.cs* に変更し、ファイル内のコードを以下の内容と置き換えます。
+<span data-ttu-id="80f6c-154">*UnitTest1.cs* の名前を *PetTests.cs* に変更し、ファイル内のコードを以下の内容と置き換えます。</span><span class="sxs-lookup"><span data-stu-id="80f6c-154">Change the name of *UnitTest1.cs* to *PetTests.cs* and replace the code in the file with the following:</span></span>
 
 ```csharp
 using System;
@@ -167,12 +164,12 @@ public class PetTests
 }
 ```
 
-省略可能な演習: 所有者に `Tweet!` を与える前述の `Bird` タイプを追加した場合は、テスト メソッドを *PetTests.cs* ファイル `BirdTalkToOwnerReturnsTweet` に追加し、`Bird` タイプに対して `TalkToOwner` メソッドが正しく動作することを確認します。
+<span data-ttu-id="80f6c-155">省略可能な演習: 所有者に `Tweet!` を与える前述の `Bird` タイプを追加した場合は、テスト メソッドを *PetTests.cs* ファイル `BirdTalkToOwnerReturnsTweet` に追加し、`Bird` タイプに対して `TalkToOwner` メソッドが正しく動作することを確認します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-155">Optional exercise: If you added a `Bird` type earlier that yields a `Tweet!` to the owner, add a test method to the *PetTests.cs* file, `BirdTalkToOwnerReturnsTweet`, to check that the `TalkToOwner` method works correctly for the `Bird` type.</span></span>
 
 > [!NOTE]
-> `expected` と `actual` の値は等しくなることが予想されますが、`Assert.NotEqual` チェックの初期アサーションでは*等しくない* と指定します。 通常、テストのロジックを確認するために、最初は一度失敗するテストを作成します。 これは、テスト駆動型設計 (TDD) の手法において重要な手順です。 テストに失敗したことを確認したら、アサーションを調整してテストに成功できるようにします。
+> <span data-ttu-id="80f6c-156">`expected` と `actual` の値は等しくなることが予想されますが、`Assert.NotEqual` チェックの初期アサーションでは*等しくない* と指定します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-156">Although you expect that the `expected` and `actual` values are equal, the initial assertions with the `Assert.NotEqual` checks specify that they are *not equal*.</span></span> <span data-ttu-id="80f6c-157">通常、テストのロジックを確認するために、最初は一度失敗するテストを作成します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-157">Always initially create your tests to fail once in order to check the logic of the tests.</span></span> <span data-ttu-id="80f6c-158">これは、テスト駆動型設計 (TDD) の手法において重要な手順です。</span><span class="sxs-lookup"><span data-stu-id="80f6c-158">This is an important step in test-driven design (TDD) methodology.</span></span> <span data-ttu-id="80f6c-159">テストに失敗したことを確認したら、アサーションを調整してテストに成功できるようにします。</span><span class="sxs-lookup"><span data-stu-id="80f6c-159">After you confirm the tests fail, you adjust the assertions to allow them to pass.</span></span>
 
-完全なプロジェクト構造を次に示します。
+<span data-ttu-id="80f6c-160">完全なプロジェクト構造を次に示します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-160">The following shows the complete project structure:</span></span>
 
 ```
 /NewTypes
@@ -190,9 +187,12 @@ public class PetTests
       |__NewTypesTests.csproj
 ```
 
-*test/NewTypesTests* ディレクトリから開始します。 [`dotnet restore`](../tools/dotnet-restore.md) コマンドを使用して、テスト プロジェクトを復元します。 [`dotnet test`](../tools/dotnet-test.md) コマンドを使用して、テストを実行します。 このコマンドは、プロジェクト ファイルで指定されたテスト ランナーを開始します。
+<span data-ttu-id="80f6c-161">*test/NewTypesTests* ディレクトリから開始します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-161">Start in the *test/NewTypesTests* directory.</span></span> <span data-ttu-id="80f6c-162">[`dotnet restore`](../tools/dotnet-restore.md) コマンドを使用して、テスト プロジェクトを復元します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-162">Restore the test project with the [`dotnet restore`](../tools/dotnet-restore.md) command.</span></span> <span data-ttu-id="80f6c-163">[`dotnet test`](../tools/dotnet-test.md) コマンドを使用して、テストを実行します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-163">Run the tests with the [`dotnet test`](../tools/dotnet-test.md) command.</span></span> <span data-ttu-id="80f6c-164">このコマンドは、プロジェクト ファイルで指定されたテスト ランナーを開始します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-164">This command starts the test runner specified in the project file.</span></span>
+
+ [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+
  
-予想どおり、テストは失敗し、コンソールには次の出力が表示されます。
+<span data-ttu-id="80f6c-165">予想どおり、テストは失敗し、コンソールには次の出力が表示されます。</span><span class="sxs-lookup"><span data-stu-id="80f6c-165">As expected, testing fails, and the console displays the following output:</span></span>
  
 ```
 Test run for C:\NewTypesMsBuild\test\NewTypesTests\bin\Debug\netcoreapp1.1\NewTypesTests.dll(.NETCoreApp,Version=v1.1)
@@ -236,11 +236,11 @@ Test Run Failed.
 Test execution time: 2.1371 Seconds
 ```
 
-テストのアサーションを `Assert.NotEqual` から `Assert.Equal` に変更します。
+<span data-ttu-id="80f6c-166">テストのアサーションを `Assert.NotEqual` から `Assert.Equal` に変更します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-166">Change the assertions of your tests from `Assert.NotEqual` to `Assert.Equal`:</span></span>
 
 [!code-csharp[PetTests class](../../../samples/core/console-apps/NewTypesMsBuild/test/NewTypesTests/PetTests.cs)]
 
-`dotnet test` を使用してテストを再実行し、次の出力を取得します。
+<span data-ttu-id="80f6c-167">`dotnet test` を使用してテストを再実行し、次の出力を取得します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-167">Re-run the tests with the `dotnet test` command and obtain the following output:</span></span>
 
 ```
 Microsoft (R) Test Execution Command Line Tool Version 15.0.0.0
@@ -257,7 +257,7 @@ Test Run Successful.
 Test execution time: 1.6634 Seconds
 ```
 
-テストに成功します。 ペット タイプのメソッドは、所有者との対話中に正しい値を返します。
+<span data-ttu-id="80f6c-168">テストに成功します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-168">Testing passes.</span></span> <span data-ttu-id="80f6c-169">ペット タイプのメソッドは、所有者との対話中に正しい値を返します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-169">The pet types' methods return the correct values when talking to the owner.</span></span>
 
-これで、xUnit を使用してプロジェクトを整理し、テストする方法を習得できました。 次は、これらの方法を独自のプロジェクトに適用します。 *コーディングを楽しんでください。*
+<span data-ttu-id="80f6c-170">これで、xUnit を使用してプロジェクトを整理し、テストする方法を習得できました。</span><span class="sxs-lookup"><span data-stu-id="80f6c-170">You've learned techniques for organizing and testing projects using xUnit.</span></span> <span data-ttu-id="80f6c-171">次は、これらの方法を独自のプロジェクトに適用します。</span><span class="sxs-lookup"><span data-stu-id="80f6c-171">Go forward with these techniques applying them in your own projects.</span></span> <span data-ttu-id="80f6c-172">*コーディングを楽しんでください。*</span><span class="sxs-lookup"><span data-stu-id="80f6c-172">*Happy coding!*</span></span>
 

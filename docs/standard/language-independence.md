@@ -6,80 +6,81 @@ author: dotnet-bot
 ms.author: dotnetcontent
 ms.date: 07/22/2016
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
+ms.openlocfilehash: ed48191ee397bb5f892a7afba6dfbfa2d06e1045
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
-ms.openlocfilehash: 3da0bc3c9abf28aeb588ec9277c4e0b503df4d8b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
+# <a name="language-independence-and-language-independent-components"></a><span data-ttu-id="b85f9-104">言語への非依存性、および言語非依存コンポーネント</span><span class="sxs-lookup"><span data-stu-id="b85f9-104">Language independence and language-independent components</span></span>
 
-# <a name="language-independence-and-language-independent-components"></a>言語への非依存性、および言語非依存コンポーネント
-
-.NET は言語に依存しません。 つまり、開発者は、C#、F#、および Visual Basic などの .NET 実装を対象とする多くの言語の中のいずれかで開発できることを意味します。 .NET 実装用に開発されたクラス ライブラリの型とメンバーには、最初に記述された言語を知らなくてもアクセスできます。元の言語の規則に従う必要もありません。 コンポーネントを開発しているのであれば、コンポーネントの言語にかかわらず、すべての .NET アプリからそのコンポーネントにアクセスできます。
-
-> [!NOTE]
-> この記事の最初の部分では、言語に依存しないコンポーネント、つまり、どの言語で記述されたアプリからでも使用できるコンポーネントの作成について説明します。 また、複数の言語で記述されたソース コードから 1 つのコンポーネントまたはアプリを作成することもできます。この記事の 2 番目のパートにある「[言語間の相互運用性](#cross-language-interoperability)」を参照してください。 
-
-任意の言語で記述された他のオブジェクトと完全に対話するには、すべての言語に共通の機能だけを呼び出し側に公開するようにオブジェクトを実装する必要があります。 この共通の機能セットは、生成されたアセンブリに適用される規則のセットである、共通言語仕様 (CLS: Common Language Specification) によって定義されます。 共通言語仕様は、「[Standard ECMA-335: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm)」(標準の ECMA-335: 共通言語基盤) の第 1 部の第 7 ～ 11 項で定義されています。 
-
-コンポーネントが共通言語仕様に準拠している場合は、CLS に準拠することが保証され、CLS をサポートするすべてのプログラミング言語で記述されたアセンブリのコードからアクセスできます。 コンパイル時にコンポーネントが共通言語仕様に準拠しているかどうかを確認するには、[CLSCompliantAttribute](xref:System.CLSCompliantAttribute) 属性をソース コードに適用します。 詳細については、「[CLSCompliantAttribute 属性](#the-clscompliantattribute-attribute)」を参照してください。
-
-この記事の内容:
-
-* [CLS 準拠の規則](#cls-compliance-rules)
-
-    * [型および型メンバーのシグネチャ](#types-and-type-member-signatures)
-
-    * [名前付け規則](#naming-conventions)
-    
-    * [型変換](#type-conversion)
-    
-    * [配列](#arrays)
-    
-    * [インターフェイス](#interfaces)
-    
-    * [列挙型](#enumerations)
-    
-    * [一般的な型メンバー](#type-members-in-general)
-    
-    * [メンバーのアクセシビリティ](#member-accessibility)
-    
-    * [ジェネリック型とメンバー](#generic-types-and-members)
-    
-    * [コンストラクター](#constructors)
-    
-    * [プロパティ](#properties)
-    
-    * [イベント](#events)
-    
-    * [オーバーロード](#overloads)
-    
-    * [例外](#exceptions)
-    
-    * [属性](#attributes)
-    
-* [CLSCompliantAttribute 属性](#the-clscompliantattribute-attribute)
-
-* [言語間の相互運用性](#cross-language-interoperability)
-
-## <a name="cls-compliance-rules"></a>CLS 準拠の規則
-
-ここでは、CLS に準拠したコンポーネントを作成するための規則について説明します。 規則の一覧については、「[ECMA-335 Standard: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm)」(標準の ECMA-335: 共通言語基盤) の第 1 部の第 11 項を参照してください。
+<span data-ttu-id="b85f9-105">.NET は言語に依存しません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-105">.NET is language independent.</span></span> <span data-ttu-id="b85f9-106">つまり、開発者は、C#、F#、および Visual Basic などの .NET 実装を対象とする多くの言語の中のいずれかで開発できることを意味します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-106">This means that, as a developer, you can develop in one of the many languages that target .NET implementations, such as C#, F#, and Visual Basic.</span></span> <span data-ttu-id="b85f9-107">.NET 実装用に開発されたクラス ライブラリの型とメンバーには、最初に記述された言語を知らなくてもアクセスできます。元の言語の規則に従う必要もありません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-107">You can access the types and members of class libraries developed for .NET implementations without having to know the language in which they were originally written and without having to follow any of the original language's conventions.</span></span> <span data-ttu-id="b85f9-108">コンポーネントを開発しているのであれば、コンポーネントの言語にかかわらず、すべての .NET アプリからそのコンポーネントにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-108">If you are a component developer, your component can be accessed by any .NET app regardless of its language.</span></span>
 
 > [!NOTE]
-> 共通言語仕様では、コンシューマー (プログラムによって CLS 準拠のコンポーネントにアクセスする開発者)、フレームワーク (言語コンパイラを使用して CLS 準拠のライブラリを作成する開発者)、およびエクステンダー (CLS 準拠のコンポーネントを作成する言語コンパイラ、コード パーサーなどのツールを作成する開発者) に適用する、CLS 準拠の各規則について説明します。 ここでは、フレームワークに適用するときの規則に焦点を当てます。 エクステンダーに適用する一部の規則は、[Reflection.Emit](xref:System.Reflection.Emit) を使用して作成されたアセンブリに適用されることもあります。 
+> <span data-ttu-id="b85f9-109">この記事の最初の部分では、言語に依存しないコンポーネント、つまり、どの言語で記述されたアプリからでも使用できるコンポーネントの作成について説明します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-109">This first part of this article discusses creating language-independent components - that is, components that can be consumed by apps that are written in any language.</span></span> <span data-ttu-id="b85f9-110">また、複数の言語で記述されたソース コードから 1 つのコンポーネントまたはアプリを作成することもできます。この記事の 2 番目のパートにある「[言語間の相互運用性](#cross-language-interoperability)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b85f9-110">You can also create a single component or app from source code written in multiple languages; see [Cross-Language Interoperability](#cross-language-interoperability) in the second part of this article.</span></span> 
 
-言語に依存しないコンポーネントをデザインするには、コンポーネントのパブリック インターフェイスに CLS 準拠の規則を適用するだけです。 プライベートな実装は仕様に準拠する必要はありません。 
+<span data-ttu-id="b85f9-111">任意の言語で記述された他のオブジェクトと完全に対話するには、すべての言語に共通の機能だけを呼び出し側に公開するようにオブジェクトを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-111">To fully interact with other objects written in any language, objects must expose to callers only those features that are common to all languages.</span></span> <span data-ttu-id="b85f9-112">この共通の機能セットは、生成されたアセンブリに適用される規則のセットである、共通言語仕様 (CLS: Common Language Specification) によって定義されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-112">This common set of features is defined by the Common Language Specification (CLS), which is a set of rules that apply to generated assemblies.</span></span> <span data-ttu-id="b85f9-113">共通言語仕様は、「[Standard ECMA-335: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm)」(標準の ECMA-335: 共通言語基盤) の第 1 部の第 7 ～ 11 項で定義されています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-113">The Common Language Specification is defined in Partition I, Clauses 7 through 11 of the [ECMA-335 Standard: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm).</span></span> 
+
+<span data-ttu-id="b85f9-114">コンポーネントが共通言語仕様に準拠している場合は、CLS に準拠することが保証され、CLS をサポートするすべてのプログラミング言語で記述されたアセンブリのコードからアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-114">If your component conforms to the Common Language Specification, it is guaranteed to be CLS-compliant and can be accessed from code in assemblies written in any programming language that supports the CLS.</span></span> <span data-ttu-id="b85f9-115">コンパイル時にコンポーネントが共通言語仕様に準拠しているかどうかを確認するには、[CLSCompliantAttribute](xref:System.CLSCompliantAttribute) 属性をソース コードに適用します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-115">You can determine whether your component conforms to the Common Language Specification at compile time by applying the [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) attribute to your source code.</span></span> <span data-ttu-id="b85f9-116">詳細については、「[CLSCompliantAttribute 属性](#the-clscompliantattribute-attribute)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b85f9-116">For more information, see The [CLSCompliantAttribute attribute](#the-clscompliantattribute-attribute).</span></span>
+
+<span data-ttu-id="b85f9-117">この記事の内容:</span><span class="sxs-lookup"><span data-stu-id="b85f9-117">In this article:</span></span>
+
+* [<span data-ttu-id="b85f9-118">CLS 準拠の規則</span><span class="sxs-lookup"><span data-stu-id="b85f9-118">CLS compliance rules</span></span>](#cls-compliance-rules)
+
+    * [<span data-ttu-id="b85f9-119">型および型メンバーのシグネチャ</span><span class="sxs-lookup"><span data-stu-id="b85f9-119">Types and type member signatures</span></span>](#types-and-type-member-signatures)
+
+    * [<span data-ttu-id="b85f9-120">名前付け規則</span><span class="sxs-lookup"><span data-stu-id="b85f9-120">Naming conventions</span></span>](#naming-conventions)
+    
+    * [<span data-ttu-id="b85f9-121">型変換</span><span class="sxs-lookup"><span data-stu-id="b85f9-121">Type conversion</span></span>](#type-conversion)
+    
+    * [<span data-ttu-id="b85f9-122">配列</span><span class="sxs-lookup"><span data-stu-id="b85f9-122">Arrays</span></span>](#arrays)
+    
+    * [<span data-ttu-id="b85f9-123">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="b85f9-123">Interfaces</span></span>](#interfaces)
+    
+    * [<span data-ttu-id="b85f9-124">列挙型</span><span class="sxs-lookup"><span data-stu-id="b85f9-124">Enumerations</span></span>](#enumerations)
+    
+    * [<span data-ttu-id="b85f9-125">一般的な型メンバー</span><span class="sxs-lookup"><span data-stu-id="b85f9-125">Type members in general</span></span>](#type-members-in-general)
+    
+    * [<span data-ttu-id="b85f9-126">メンバーのアクセシビリティ</span><span class="sxs-lookup"><span data-stu-id="b85f9-126">Member accessibility</span></span>](#member-accessibility)
+    
+    * [<span data-ttu-id="b85f9-127">ジェネリック型とメンバー</span><span class="sxs-lookup"><span data-stu-id="b85f9-127">Generic types and members</span></span>](#generic-types-and-members)
+    
+    * [<span data-ttu-id="b85f9-128">コンストラクター</span><span class="sxs-lookup"><span data-stu-id="b85f9-128">Constructors</span></span>](#constructors)
+    
+    * [<span data-ttu-id="b85f9-129">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b85f9-129">Properties</span></span>](#properties)
+    
+    * [<span data-ttu-id="b85f9-130">イベント</span><span class="sxs-lookup"><span data-stu-id="b85f9-130">Events</span></span>](#events)
+    
+    * [<span data-ttu-id="b85f9-131">オーバーロード</span><span class="sxs-lookup"><span data-stu-id="b85f9-131">Overloads</span></span>](#overloads)
+    
+    * [<span data-ttu-id="b85f9-132">例外</span><span class="sxs-lookup"><span data-stu-id="b85f9-132">Exceptions</span></span>](#exceptions)
+    
+    * [<span data-ttu-id="b85f9-133">属性</span><span class="sxs-lookup"><span data-stu-id="b85f9-133">Attributes</span></span>](#attributes)
+    
+* [<span data-ttu-id="b85f9-134">CLSCompliantAttribute 属性</span><span class="sxs-lookup"><span data-stu-id="b85f9-134">CLSCompliantAttribute attribute</span></span>](#the-clscompliantattribute-attribute)
+
+* [<span data-ttu-id="b85f9-135">言語間の相互運用性</span><span class="sxs-lookup"><span data-stu-id="b85f9-135">Cross-Language Interoperability</span></span>](#cross-language-interoperability)
+
+## <a name="cls-compliance-rules"></a><span data-ttu-id="b85f9-136">CLS 準拠の規則</span><span class="sxs-lookup"><span data-stu-id="b85f9-136">CLS compliance rules</span></span>
+
+<span data-ttu-id="b85f9-137">ここでは、CLS に準拠したコンポーネントを作成するための規則について説明します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-137">This section discusses the rules for creating a CLS-compliant component.</span></span> <span data-ttu-id="b85f9-138">規則の一覧については、「[ECMA-335 Standard: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm)」(標準の ECMA-335: 共通言語基盤) の第 1 部の第 11 項を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b85f9-138">For a complete list of rules, see Partition I, Clause 11 of the [ECMA-335 Standard: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm).</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="b85f9-139">共通言語仕様では、コンシューマー (プログラムによって CLS 準拠のコンポーネントにアクセスする開発者)、フレームワーク (言語コンパイラを使用して CLS 準拠のライブラリを作成する開発者)、およびエクステンダー (CLS 準拠のコンポーネントを作成する言語コンパイラ、コード パーサーなどのツールを作成する開発者) に適用する、CLS 準拠の各規則について説明します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-139">The Common Language Specification discusses each rule for CLS compliance as it applies to consumers (developers who are programmatically accessing a component that is CLS-compliant), frameworks (developers who are using a language compiler to create CLS-compliant libraries), and extenders (developers who are creating a tool such as a language compiler or a code parser that creates CLS-compliant components).</span></span> <span data-ttu-id="b85f9-140">ここでは、フレームワークに適用するときの規則に焦点を当てます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-140">This article focuses on the rules as they apply to frameworks.</span></span> <span data-ttu-id="b85f9-141">エクステンダーに適用する一部の規則は、[Reflection.Emit](xref:System.Reflection.Emit) を使用して作成されたアセンブリに適用されることもあります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-141">Note, though, that some of the rules that apply to extenders may also apply to assemblies that are created using [Reflection.Emit](xref:System.Reflection.Emit).</span></span> 
+
+<span data-ttu-id="b85f9-142">言語に依存しないコンポーネントをデザインするには、コンポーネントのパブリック インターフェイスに CLS 準拠の規則を適用するだけです。</span><span class="sxs-lookup"><span data-stu-id="b85f9-142">To design a component that is language independent, you only need to apply the rules for CLS compliance to your component's public interface.</span></span> <span data-ttu-id="b85f9-143">プライベートな実装は仕様に準拠する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-143">Your private implementation does not have to conform to the specification.</span></span> 
 
 > [!IMPORTANT]
-> CLS 準拠の規則は、コンポーネントのパブリック インターフェイスにのみ適用されます。プライベート実装には適用されません。 
+> <span data-ttu-id="b85f9-144">CLS 準拠の規則は、コンポーネントのパブリック インターフェイスにのみ適用されます。プライベート実装には適用されません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-144">The rules for CLS compliance apply only to a component's public interface, not to its private implementation.</span></span> 
 
-たとえば、[Byte](xref:System.Byte) 以外の符号なし整数は CLS に準拠していません。 次の例の `Person` クラスは型 [UInt16](xref:System.UInt16) の `Age` プロパティを公開するので、次のコードではコンパイラの警告が表示されます。
+<span data-ttu-id="b85f9-145">たとえば、[Byte](xref:System.Byte) 以外の符号なし整数は CLS に準拠していません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-145">For example, unsigned integers other than [Byte](xref:System.Byte) are not CLS-compliant.</span></span> <span data-ttu-id="b85f9-146">次の例の `Person` クラスは型 [UInt16](xref:System.UInt16) の `Age` プロパティを公開するので、次のコードではコンパイラの警告が表示されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-146">Because the `Person` class in the following example exposes an `Age` property of type [UInt16](xref:System.UInt16), the following code displays a compiler warning.</span></span>
 
 ```csharp
 using System;
@@ -116,7 +117,7 @@ End Class
 '                                ~~~
 ```
 
-Person クラスを CLS 準拠にするには、`Age` プロパティの型を `UInt16` から、CLS 準拠の 16 ビット符号付き整数である [Int16](xref:System.Int16) に変更します。 プライベート `personAge` フィールドの型を変更する必要はありません。 
+<span data-ttu-id="b85f9-147">Person クラスを CLS 準拠にするには、`Age` プロパティの型を `UInt16` から、CLS 準拠の 16 ビット符号付き整数である [Int16](xref:System.Int16) に変更します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-147">You can make the Person class CLS-compliant by changing the type of `Age` property from `UInt16` to [Int16](xref:System.Int16), which is a CLS-compliant, 16-bit signed integer.</span></span> <span data-ttu-id="b85f9-148">プライベート `personAge` フィールドの型を変更する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-148">You do not have to change the type of the private `personAge` field.</span></span> 
 
 ```csharp
 using System;
@@ -146,71 +147,71 @@ Public Class Person
 End Class
 ```
 
-ライブラリのパブリック インターフェイスは、次の要素で構成されます。
+<span data-ttu-id="b85f9-149">ライブラリのパブリック インターフェイスは、次の要素で構成されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-149">A library's public interface consists of the following:</span></span>
 
-* パブリック クラスの定義。
+* <span data-ttu-id="b85f9-150">パブリック クラスの定義。</span><span class="sxs-lookup"><span data-stu-id="b85f9-150">Definitions of public classes.</span></span>
 
-* パブリック クラスのパブリック メンバーの定義、および派生クラスからアクセスできるメンバー (つまり、protected メンバー) の定義。 
+* <span data-ttu-id="b85f9-151">パブリック クラスのパブリック メンバーの定義、および派生クラスからアクセスできるメンバー (つまり、protected メンバー) の定義。</span><span class="sxs-lookup"><span data-stu-id="b85f9-151">Definitions of the public members of public classes, and definitions of members accessible to derived classes (that is, protected members).</span></span> 
 
-* パブリック クラスのパブリック メソッドのパラメーターおよび戻り値の型、派生クラスからアクセスできるメソッドのパラメーターおよび戻り値の型。 
+* <span data-ttu-id="b85f9-152">パブリック クラスのパブリック メソッドのパラメーターおよび戻り値の型、派生クラスからアクセスできるメソッドのパラメーターおよび戻り値の型。</span><span class="sxs-lookup"><span data-stu-id="b85f9-152">Parameters and return types of public methods of public classes, and parameters and return types of methods accessible to derived classes.</span></span> 
 
-CLS 準拠の規則を次の表に示します。 この規則は、「[ECMA-335 Standard: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm)」(標準の ECMA-335: 共通言語基盤) からの引用で、Ecma International が 2012 年の著作権を保有しています。 これらの規則の詳細については、以降のセクションを参照してください。 
+<span data-ttu-id="b85f9-153">CLS 準拠の規則を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-153">The rules for CLS compliance are listed in the following table.</span></span> <span data-ttu-id="b85f9-154">この規則は、「[ECMA-335 Standard: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm)」(標準の ECMA-335: 共通言語基盤) からの引用で、Ecma International が 2012 年の著作権を保有しています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-154">The text of the rules is taken verbatim from the [ECMA-335 Standard: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm), which is Copyright 2012 by Ecma International.</span></span> <span data-ttu-id="b85f9-155">これらの規則の詳細については、以降のセクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="b85f9-155">More detailed information about these rules is found in the following sections.</span></span> 
 
-カテゴリ | 参照トピック | ルール | 規則番号
+<span data-ttu-id="b85f9-156">カテゴリ</span><span class="sxs-lookup"><span data-stu-id="b85f9-156">Category</span></span> | <span data-ttu-id="b85f9-157">参照トピック</span><span class="sxs-lookup"><span data-stu-id="b85f9-157">See</span></span> | <span data-ttu-id="b85f9-158">ルール</span><span class="sxs-lookup"><span data-stu-id="b85f9-158">Rule</span></span> | <span data-ttu-id="b85f9-159">規則番号</span><span class="sxs-lookup"><span data-stu-id="b85f9-159">Rule Number</span></span>
 -------- | --- | ---- | -----------
-ユーザー補助 | [メンバーのアクセシビリティ](#member-accessibility) | 継承されたメソッドをオーバーライドする場合、アクセシビリティは変更してはいけない。ただし、別のアセンブリから継承されたメソッドをアクセシビリティ `family-or-assembly` でオーバーライドする場合は除く。 この場合、アクセシビリティは `family` にすること。 | 10
-ユーザー補助 | [メンバーのアクセシビリティ](#member-accessibility) | 型およびメンバーの可視性およびアクセシビリティについて、メンバーのシグネチャに指定されている型は、そのメンバーが可視でアクセス可能な場合、必ず可視でアクセス可能でなければいけない。 たとえば、アセンブリ外部から参照できるパブリックなメソッドには、アセンブリ内部でだけ可視である型が引数として含まれていてはいけない。 メンバーのシグネチャに使用されているジェネリック型のインスタンスを構成する型の可視性およびアクセシビリティは、メンバーが可視でアクセス可能の場合、必ず可視でアクセス可能でなければいけない。 たとえば、アセンブリ外部から参照できるメンバーのシグネチャに指定されているジェネリック型のインスタンスに、アセンブリ内部でだけ可視である型の汎用引数が含まれていてはいけない。 | 12
-配列 | [配列](#arrays) | 配列は、要素が CLS 準拠型で、すべての次元でインデックス番号が 0 から始まらなければならない。 項目が配列の場合、オーバーロードどうしを区別するには配列要素の型を必要とする。 オーバーロードが 2 つ以上の配列型に基づく場合、要素型は名前付きの型でなければいけない。 | 16
-属性 | [属性](#attributes) | 属性は型 [System.Attribute](xref:System.Attribute) であるか、それから継承する型である必要がある。 | 41
-属性 | [属性](#attributes) | CLS ではカスタム属性のエンコーディングのサブセットのみ使用できる。 これらのエンコーディングに表示される型 (第 4 部を参照) は、[System.Type](xref:System.Type)、[System.String](xref:System.String)、[System.Char](xref:System.Char)、[System.Boolean](xref:System.Boolean)、[System.Byte](xref:System.Byte)、[System.Int16](xref:System.Int16)、[System.Int32](xref:System.Int32)、[System.Int64](xref:System.Int64), [System.Single](xref:System.Single)、[System.Double](xref:System.Double)、および CLS 準拠の基底の整数型に基づく列挙型のみである。 | 34
-属性 | [属性](#attributes) | CLS では、公開参照される必須の修飾子 (`modreq`、第 2 部を参照) は使用できない。ただし、認識しないオプションの修飾子 (`modopt`、第 2 部を参照) は使用できる。 | 35
-コンストラクター | [コンストラクター](#constructors) | オブジェクト コンストラクターでは、継承しているインスタンス データへのアクセスが発生する前に、基底クラスのインスタンス コンストラクターを呼び出さなければいけない (コンストラクターが不要である値型は除く)。  | 21
-コンストラクター | [コンストラクター](#constructors) | オブジェクト コンストラクターがオブジェクトの作成時以外で呼び出されてはならず、またオブジェクトが 2 度初期化されてもいけない。 | 22
-列挙型 | [列挙型](#enumerations) | enum の基になる型は組み込みの CLS 整数型、フィールド名は "value__" であり、そのフィールドには `RTSpecialName` のマークが付けられる。 |  7
-列挙型 | [列挙型](#enumerations) | enum には 2 種類あり、[System.FlagsAttribute](xref:System.FlagsAttribute) カスタム属性 (第 4 部のライブラリを参照) の有無で区別する。 片方は名前付き整数値を表し、もう片方は名前付きビット フラグを表す。名前付きビット フラグは、それを組み合わせて名前のない値を生成できる。 `enum` の値は、指定した値に限定されない。 |  9
-列挙型 | [列挙型](#enumerations) | enum のリテラルな静的フィールドの型は、その enum 自体の型である。 |  9
-イベント | [イベント](#events) | イベントを実装するメソッドは、メタデータ内で `SpecialName` のマークが付けられる。 |29
-イベント | [イベント](#events) | イベントとイベントのアクセサーのアクセシビリティは同一である。 |30
-イベント | [イベント](#events) | イベントの `add` メソッドおよび `remove` メソッドは、どちらもあってもなくてもよい。 |31
-イベント | [イベント](#events) | `add` メソッドおよび `remove` メソッドは、それぞれパラメーターを 1 つ使用する。このパラメーターの型がイベントの型を規定する。また、パラメーターの型は [System.Delegate](xref:System.Delegate) の派生でなければいけない。 |32
-イベント | [イベント](#events) | イベントは、特定の名前付けパターンに従わなくてはいけない。 CLS 規則 29 で触れられている SpecialName 属性は、適切な名前比較で無視され、識別子規則に従わなければいけない。  |33
-例外 | [例外](#exceptions) | スローできるオブジェクト型は、[System.Exception](xref:System.Exception)、またはそれを継承する型である。 ただし、CLS 準拠のメソッドで他の型の例外のスローをブロックする必要はない。 | 40
-全般 | [CLS 準拠の規則](#cls-compliance-rules) | CLS 規則は、型の構成部分のうち、その型を定義しているアセンブリの外部からアクセスまたは参照できる部分にのみ適用される。 | 1
-全般 | [CLS 準拠の規則](#cls-compliance-rules) | CLS 非準拠型のメンバーを CLS 準拠と指定しない。 | 2
-ジェネリック | [ジェネリック型とメンバー](#generic-types-and-members) | 入れ子になった型は、少なくともその外側の型と同じ数のジェネリック パラメーターを持つ。 入れ子にされた型のジェネリック パラメーターは、それを囲む型のジェネリック パラメーターと、位置によって対応します。  | 42
-ジェネリック | [ジェネリック型とメンバー](#generic-types-and-members) | ジェネリック型の名前は、入れ子にされない型で宣言される型パラメーターの数をエンコードする必要がある。入れ子にされる場合は、上記の規則に従って、型に新しく組み込まれる型パラメーターの数をエンコードする必要がある。 | 43
-ジェネリック | [ジェネリック型とメンバー](#generic-types-and-members) | ジェネリック型は必要な制約を再宣言して、基本型またはインターフェイスの制約がジェネリック型の制約で確実に満たされるようにする必要がある。 | 44
-ジェネリック | [ジェネリック型とメンバー](#generic-types-and-members) | ジェネリック パラメーターの制約として使用される型は CLS に準拠する必要がある。 | 45
-ジェネリック | [ジェネリック型とメンバー](#generic-types-and-members) | インスタンス化されたジェネリック型のメンバー (入れ子になった型も含む) の可視性およびアクセシビリティは、ジェネリック型の全体の宣言ではなく、特定のインスタンス化に対してスコープが設定される必要がある。 この場合でも、CLS 規則 12 の可視性規則とアクセシビリティ規則は同様に適用される。 | 46
-ジェネリック | [ジェネリック型とメンバー](#generic-types-and-members) | 抽象メソッドまたは仮想ジェネリック メソッドごとに、既定の具体的な実装がある。 | 47
-インターフェイス | [インターフェイス](#interfaces) | CLS 準拠のインターフェイスでは、CLS に準拠しないメソッドを実装するために、これらを定義する必要はない。 | 18
-インターフェイス | [インターフェイス](#interfaces) | CLS 準拠インターフェイスでは、静的メソッドを定義してはいけない。また、フィールドも定義してはいけない。 | 19
-メンバー | [一般的な型メンバー](#type-members-in-general) | グローバルで静的な (static) フィールドとメソッドは CLS 準拠ではありません。 | 36
-メンバー | -- | 静的リテラル値の指定には、フィールド初期化メタデータを使用する。 CLS 準拠のリテラルには、そのリテラルと同じ型 (または、そのリテラルが `enum` の場合は基本型) の値がフィールド初期化メタデータに指定されている必要がある。 | 13
-メンバー | [一般的な型メンバー](#type-members-in-general) | vararg 制約は CLS の一部ではなく、CLS でサポートする呼び出し規則だけが標準のマネージ呼び出し規則である。 | 15
-名前付け規則 | [名前付け規則](#naming-conventions) | アセンブリは、識別子の頭文字および構成文字として使用できる文字セットを規定する Unicode Standard 3.0 の『Technical Report 15』の「Annex 7」に従う必要がある。詳細については、「[Unicode Normalization Forms](http://www.unicode.org/unicode/reports/tr15/tr15-18.html)」(Unicode 正規化形式) を参照。 識別子は、Unicode 正規形 C に定義されている標準形式で記述する必要がある。CLS で 2 つの識別子が同じと見なされるのは、小文字マッピング (Unicode のロケール非依存で 1 対 1 の小文字による対応付け) が同じ場合である。 つまり、CLS で 2 つの識別子が異なる場合、大文字小文字の違いだけではない。 ただし、継承された定義をオーバーライドする場合、CLI では元の宣言と厳密に同じエンコーディングの使用が求められる。 | 4
-オーバーロード | [名前付け規則](#naming-conventions) | CLS 準拠のスコープに導入されるすべての名前は、完全に独立した種類である必要があります。ただし、名前が同じでオーバーロードによって解決できる場合を除きます。 CTS では 1 つの型でメソッドとフィールドに同じ名前を使用できるが、CLS では使用できない。 | 5
-オーバーロード | [名前付け規則](#naming-conventions) | フィールドおよび入れ子になった型について、CTS ではシグネチャでの区別が可能だが、CLS では識別子の比較だけで区別できる必要がある。 CLS 規則 39 の指定を除き、識別子の比較により名前が同じであるメソッド、プロパティ、およびイベントでは、相違点は戻り値の型だけに限定されない。 | 6
-オーバーロード | [オーバーロード](#overloads) | プロパティおよびメソッドのみオーバーロードできる。 | 37
-オーバーロード | [オーバーロード](#overloads) |プロパティおよびメソッドは、パラメーターの数値と型にのみ基づいてオーバーロードできる。ただし、戻り値の型に基づいてオーバーロードできる変換演算子の `op_Implicit` と o`op_Explicit` は例外である。 | 38
-オーバーロード | -- | 型で宣言された複数の CLS 準拠のメソッドに同じ名前が指定されている場合、特定の一連の型のインスタンス化において、これらのメソッドのパラメーターと戻り値の型は同じである。また、これらの型のインスタンス化で、すべてのメソッドをセマンティクス レベルで等価にする必要がある。 | 48
-プロパティ | [プロパティ](#properties) | プロパティの getter メソッドおよび setter メソッドを実装するメソッドは、メタデータで `SpecialName` とマークする。 | 24
-プロパティ | [プロパティ](#properties) | プロパティ アクセサーはすべて静的、すべて仮想、またはすべてインスタンスになる。 | 26
-プロパティ | [プロパティ](#properties) | プロパティの型は、getter の戻り値の型であり、かつ setter の最後の引数の型でなければいけない。 プロパティのパラメーターの型は、getter へのパラメーターの型であり、かつ setter の最後のパラメーター以外のすべての型でなければいけない。 すべての型は CLS 準拠でなければならない。また、マネージ ポインターであってはいけない (つまり、参照渡しではいけない)。 | 27
-プロパティ | [プロパティ](#properties) | プロパティは、特定の名前付けパターンに従わなくてはいけない。 CLS 規則 24 で触れられている `SpecialName` 属性は、適切な名前比較で無視され、識別子規則に従わなければいけない。 プロパティには getter メソッド、setter メソッド、またはこの両方が必ずなければいけない。 | 28
-型変換 | [型変換](#type-conversion) | op_Implicit または op_Explicit が指定されている場合は、強制変換のための別の方法を用意する必要がある。 | 39
-種類 | [型および型メンバーのシグネチャ](#types-and-type-member-signatures) | ボックス化された値型は CLS 準拠ではない。 | 3
-種類 | [型および型メンバーのシグネチャ](#types-and-type-member-signatures) | シグネチャに出現するすべての型は CLS 準拠でなければいけない。 ジェネリック型のインスタンスを構成するすべての型は CLS 準拠でなければいけない。 | 11
-種類 | [型および型メンバーのシグネチャ](#types-and-type-member-signatures) | 型指定された参照は CLS 準拠ではありません。 | 14
-種類 | [型および型メンバーのシグネチャ](#types-and-type-member-signatures) | アンマネージ ポインター型は CLS 準拠ではない。 | 17
-種類 | [型および型メンバーのシグネチャ](#types-and-type-member-signatures) | CLS 準拠のクラス、値型、およびインターフェイスでは、CLS に準拠しないメンバーの実装は不要である。 | 20
-種類 | [型および型メンバーのシグネチャ](#types-and-type-member-signatures) | [System.Object](xref:System.Object) は CLS 準拠である。 これ以外のあらゆる CLS 準拠クラスは CLS 準拠クラスの継承でなければならない。 | 23
+<span data-ttu-id="b85f9-160">ユーザー補助</span><span class="sxs-lookup"><span data-stu-id="b85f9-160">Accessibility</span></span> | [<span data-ttu-id="b85f9-161">メンバーのアクセシビリティ</span><span class="sxs-lookup"><span data-stu-id="b85f9-161">Member accessibility</span></span>](#member-accessibility) | <span data-ttu-id="b85f9-162">継承されたメソッドをオーバーライドする場合、アクセシビリティは変更してはいけない。ただし、別のアセンブリから継承されたメソッドをアクセシビリティ `family-or-assembly` でオーバーライドする場合は除く。</span><span class="sxs-lookup"><span data-stu-id="b85f9-162">Accessibility shall not be changed when overriding inherited methods, except when overriding a method inherited from a different assembly with accessibility `family-or-assembly`.</span></span> <span data-ttu-id="b85f9-163">この場合、アクセシビリティは `family` にすること。</span><span class="sxs-lookup"><span data-stu-id="b85f9-163">In this case, the override shall have accessibility `family`.</span></span> | <span data-ttu-id="b85f9-164">10</span><span class="sxs-lookup"><span data-stu-id="b85f9-164">10</span></span>
+<span data-ttu-id="b85f9-165">ユーザー補助</span><span class="sxs-lookup"><span data-stu-id="b85f9-165">Accessibility</span></span> | [<span data-ttu-id="b85f9-166">メンバーのアクセシビリティ</span><span class="sxs-lookup"><span data-stu-id="b85f9-166">Member accessibility</span></span>](#member-accessibility) | <span data-ttu-id="b85f9-167">型およびメンバーの可視性およびアクセシビリティについて、メンバーのシグネチャに指定されている型は、そのメンバーが可視でアクセス可能な場合、必ず可視でアクセス可能でなければいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-167">The visibility and accessibility of types and members shall be such that types in the signature of any member shall be visible and accessible whenever the member itself is visible and accessible.</span></span> <span data-ttu-id="b85f9-168">たとえば、アセンブリ外部から参照できるパブリックなメソッドには、アセンブリ内部でだけ可視である型が引数として含まれていてはいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-168">For example, a public method that is visible outside its assembly shall not have an argument whose type is visible only within the assembly.</span></span> <span data-ttu-id="b85f9-169">メンバーのシグネチャに使用されているジェネリック型のインスタンスを構成する型の可視性およびアクセシビリティは、メンバーが可視でアクセス可能の場合、必ず可視でアクセス可能でなければいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-169">The visibility and accessibility of types composing an instantiated generic type used in the signature of any member shall be visible and accessible whenever the member itself is visible and accessible.</span></span> <span data-ttu-id="b85f9-170">たとえば、アセンブリ外部から参照できるメンバーのシグネチャに指定されているジェネリック型のインスタンスに、アセンブリ内部でだけ可視である型の汎用引数が含まれていてはいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-170">For example, an instantiated generic type present in the signature of a member that is visible outside its assembly shall not have a generic argument whose type is visible only within the assembly.</span></span> | <span data-ttu-id="b85f9-171">12</span><span class="sxs-lookup"><span data-stu-id="b85f9-171">12</span></span>
+<span data-ttu-id="b85f9-172">配列</span><span class="sxs-lookup"><span data-stu-id="b85f9-172">Arrays</span></span> | [<span data-ttu-id="b85f9-173">配列</span><span class="sxs-lookup"><span data-stu-id="b85f9-173">Arrays</span></span>](#arrays) | <span data-ttu-id="b85f9-174">配列は、要素が CLS 準拠型で、すべての次元でインデックス番号が 0 から始まらなければならない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-174">Arrays shall have elements with a CLS-compliant type, and all dimensions of the array shall have lower bounds of zero.</span></span> <span data-ttu-id="b85f9-175">項目が配列の場合、オーバーロードどうしを区別するには配列要素の型を必要とする。</span><span class="sxs-lookup"><span data-stu-id="b85f9-175">Only the fact that an item is an array and the element type of the array shall be required to distinguish between overloads.</span></span> <span data-ttu-id="b85f9-176">オーバーロードが 2 つ以上の配列型に基づく場合、要素型は名前付きの型でなければいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-176">When overloading is based on two or more array types the element types shall be named types.</span></span> | <span data-ttu-id="b85f9-177">16</span><span class="sxs-lookup"><span data-stu-id="b85f9-177">16</span></span>
+<span data-ttu-id="b85f9-178">属性</span><span class="sxs-lookup"><span data-stu-id="b85f9-178">Attributes</span></span> | [<span data-ttu-id="b85f9-179">属性</span><span class="sxs-lookup"><span data-stu-id="b85f9-179">Attributes</span></span>](#attributes) | <span data-ttu-id="b85f9-180">属性は型 [System.Attribute](xref:System.Attribute) であるか、それから継承する型である必要がある。</span><span class="sxs-lookup"><span data-stu-id="b85f9-180">Attributes shall be of type [System.Attribute](xref:System.Attribute), or a type inheriting from it.</span></span> | <span data-ttu-id="b85f9-181">41</span><span class="sxs-lookup"><span data-stu-id="b85f9-181">41</span></span>
+<span data-ttu-id="b85f9-182">属性</span><span class="sxs-lookup"><span data-stu-id="b85f9-182">Attributes</span></span> | [<span data-ttu-id="b85f9-183">属性</span><span class="sxs-lookup"><span data-stu-id="b85f9-183">Attributes</span></span>](#attributes) | <span data-ttu-id="b85f9-184">CLS ではカスタム属性のエンコーディングのサブセットのみ使用できる。</span><span class="sxs-lookup"><span data-stu-id="b85f9-184">The CLS only allows a subset of the encodings of custom attributes.</span></span> <span data-ttu-id="b85f9-185">これらのエンコーディングに表示される型 (第 4 部を参照) は、[System.Type](xref:System.Type)、[System.String](xref:System.String)、[System.Char](xref:System.Char)、[System.Boolean](xref:System.Boolean)、[System.Byte](xref:System.Byte)、[System.Int16](xref:System.Int16)、[System.Int32](xref:System.Int32)、[System.Int64](xref:System.Int64), [System.Single](xref:System.Single)、[System.Double](xref:System.Double)、および CLS 準拠の基底の整数型に基づく列挙型のみである。</span><span class="sxs-lookup"><span data-stu-id="b85f9-185">The only types that shall appear in these encodings are (see Partition IV): [System.Type](xref:System.Type), [System.String](xref:System.String), [System.Char](xref:System.Char), [System.Boolean](xref:System.Boolean), [System.Byte](xref:System.Byte), [System.Int16](xref:System.Int16), [System.Int32](xref:System.Int32), [System.Int64](xref:System.Int64), [System.Single](xref:System.Single), [System.Double](xref:System.Double), and any enumeration type based on a CLS-compliant base integer type.</span></span> | <span data-ttu-id="b85f9-186">34</span><span class="sxs-lookup"><span data-stu-id="b85f9-186">34</span></span>
+<span data-ttu-id="b85f9-187">属性</span><span class="sxs-lookup"><span data-stu-id="b85f9-187">Attributes</span></span> | [<span data-ttu-id="b85f9-188">属性</span><span class="sxs-lookup"><span data-stu-id="b85f9-188">Attributes</span></span>](#attributes) | <span data-ttu-id="b85f9-189">CLS では、公開参照される必須の修飾子 (`modreq`、第 2 部を参照) は使用できない。ただし、認識しないオプションの修飾子 (`modopt`、第 2 部を参照) は使用できる。</span><span class="sxs-lookup"><span data-stu-id="b85f9-189">The CLS does not allow publicly visible required modifiers (`modreq`, see Partition II), but does allow optional modifiers (`modopt`, see Partition II) it does not understand.</span></span> | <span data-ttu-id="b85f9-190">35</span><span class="sxs-lookup"><span data-stu-id="b85f9-190">35</span></span>
+<span data-ttu-id="b85f9-191">コンストラクター</span><span class="sxs-lookup"><span data-stu-id="b85f9-191">Constructors</span></span> | [<span data-ttu-id="b85f9-192">コンストラクター</span><span class="sxs-lookup"><span data-stu-id="b85f9-192">Constructors</span></span>](#constructors) | <span data-ttu-id="b85f9-193">オブジェクト コンストラクターでは、継承しているインスタンス データへのアクセスが発生する前に、基底クラスのインスタンス コンストラクターを呼び出さなければいけない</span><span class="sxs-lookup"><span data-stu-id="b85f9-193">An object constructor shall call some instance constructor of its base class before any access occurs to inherited instance data.</span></span> <span data-ttu-id="b85f9-194">(コンストラクターが不要である値型は除く)。</span><span class="sxs-lookup"><span data-stu-id="b85f9-194">(This does not apply to value types, which need not have constructors.)</span></span>  | <span data-ttu-id="b85f9-195">21</span><span class="sxs-lookup"><span data-stu-id="b85f9-195">21</span></span>
+<span data-ttu-id="b85f9-196">コンストラクター</span><span class="sxs-lookup"><span data-stu-id="b85f9-196">Constructors</span></span> | [<span data-ttu-id="b85f9-197">コンストラクター</span><span class="sxs-lookup"><span data-stu-id="b85f9-197">Constructors</span></span>](#constructors) | <span data-ttu-id="b85f9-198">オブジェクト コンストラクターがオブジェクトの作成時以外で呼び出されてはならず、またオブジェクトが 2 度初期化されてもいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-198">An object constructor shall not be called except as part of the creation of an object, and an object shall not be initialized twice.</span></span> | <span data-ttu-id="b85f9-199">22</span><span class="sxs-lookup"><span data-stu-id="b85f9-199">22</span></span>
+<span data-ttu-id="b85f9-200">列挙型</span><span class="sxs-lookup"><span data-stu-id="b85f9-200">Enumerations</span></span> | [<span data-ttu-id="b85f9-201">列挙型</span><span class="sxs-lookup"><span data-stu-id="b85f9-201">Enumerations</span></span>](#enumerations) | <span data-ttu-id="b85f9-202">enum の基になる型は組み込みの CLS 整数型、フィールド名は "value__" であり、そのフィールドには `RTSpecialName` のマークが付けられる。</span><span class="sxs-lookup"><span data-stu-id="b85f9-202">The underlying type of an enum shall be a built-in CLS integer type, the name of the field shall be "value__", and that field shall be marked `RTSpecialName`.</span></span> |  <span data-ttu-id="b85f9-203">7</span><span class="sxs-lookup"><span data-stu-id="b85f9-203">7</span></span>
+<span data-ttu-id="b85f9-204">列挙型</span><span class="sxs-lookup"><span data-stu-id="b85f9-204">Enumerations</span></span> | [<span data-ttu-id="b85f9-205">列挙型</span><span class="sxs-lookup"><span data-stu-id="b85f9-205">Enumerations</span></span>](#enumerations) | <span data-ttu-id="b85f9-206">enum には 2 種類あり、[System.FlagsAttribute](xref:System.FlagsAttribute) カスタム属性 (第 4 部のライブラリを参照) の有無で区別する。</span><span class="sxs-lookup"><span data-stu-id="b85f9-206">There are two distinct kinds of enums, indicated by the presence or absence of the [System.FlagsAttribute](xref:System.FlagsAttribute) (see Partition IV Library) custom attribute.</span></span> <span data-ttu-id="b85f9-207">片方は名前付き整数値を表し、もう片方は名前付きビット フラグを表す。名前付きビット フラグは、それを組み合わせて名前のない値を生成できる。</span><span class="sxs-lookup"><span data-stu-id="b85f9-207">One represents named integer values; the other represents named bit flags that can be combined to generate an unnamed value.</span></span> <span data-ttu-id="b85f9-208">`enum` の値は、指定した値に限定されない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-208">The value of an `enum` is not limited to the specified values.</span></span> |  <span data-ttu-id="b85f9-209">9</span><span class="sxs-lookup"><span data-stu-id="b85f9-209">8</span></span>
+<span data-ttu-id="b85f9-210">列挙型</span><span class="sxs-lookup"><span data-stu-id="b85f9-210">Enumerations</span></span> | [<span data-ttu-id="b85f9-211">列挙型</span><span class="sxs-lookup"><span data-stu-id="b85f9-211">Enumerations</span></span>](#enumerations) | <span data-ttu-id="b85f9-212">enum のリテラルな静的フィールドの型は、その enum 自体の型である。</span><span class="sxs-lookup"><span data-stu-id="b85f9-212">Literal static fields of an enum shall have the type of the enum itself.</span></span> |  <span data-ttu-id="b85f9-213">9</span><span class="sxs-lookup"><span data-stu-id="b85f9-213">9</span></span>
+<span data-ttu-id="b85f9-214">イベント</span><span class="sxs-lookup"><span data-stu-id="b85f9-214">Events</span></span> | [<span data-ttu-id="b85f9-215">イベント</span><span class="sxs-lookup"><span data-stu-id="b85f9-215">Events</span></span>](#events) | <span data-ttu-id="b85f9-216">イベントを実装するメソッドは、メタデータ内で `SpecialName` のマークが付けられる。</span><span class="sxs-lookup"><span data-stu-id="b85f9-216">The methods that implement an event shall be marked `SpecialName` in the metadata.</span></span> |<span data-ttu-id="b85f9-217">29</span><span class="sxs-lookup"><span data-stu-id="b85f9-217">29</span></span>
+<span data-ttu-id="b85f9-218">イベント</span><span class="sxs-lookup"><span data-stu-id="b85f9-218">Events</span></span> | [<span data-ttu-id="b85f9-219">イベント</span><span class="sxs-lookup"><span data-stu-id="b85f9-219">Events</span></span>](#events) | <span data-ttu-id="b85f9-220">イベントとイベントのアクセサーのアクセシビリティは同一である。</span><span class="sxs-lookup"><span data-stu-id="b85f9-220">The accessibility of an event and of its accessors shall be identical.</span></span> |<span data-ttu-id="b85f9-221">30</span><span class="sxs-lookup"><span data-stu-id="b85f9-221">30</span></span>
+<span data-ttu-id="b85f9-222">イベント</span><span class="sxs-lookup"><span data-stu-id="b85f9-222">Events</span></span> | [<span data-ttu-id="b85f9-223">イベント</span><span class="sxs-lookup"><span data-stu-id="b85f9-223">Events</span></span>](#events) | <span data-ttu-id="b85f9-224">イベントの `add` メソッドおよび `remove` メソッドは、どちらもあってもなくてもよい。</span><span class="sxs-lookup"><span data-stu-id="b85f9-224">The `add` and `remove` methods for an event shall both either be present or absent.</span></span> |<span data-ttu-id="b85f9-225">31</span><span class="sxs-lookup"><span data-stu-id="b85f9-225">31</span></span>
+<span data-ttu-id="b85f9-226">イベント</span><span class="sxs-lookup"><span data-stu-id="b85f9-226">Events</span></span> | [<span data-ttu-id="b85f9-227">イベント</span><span class="sxs-lookup"><span data-stu-id="b85f9-227">Events</span></span>](#events) | <span data-ttu-id="b85f9-228">`add` メソッドおよび `remove` メソッドは、それぞれパラメーターを 1 つ使用する。このパラメーターの型がイベントの型を規定する。また、パラメーターの型は [System.Delegate](xref:System.Delegate) の派生でなければいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-228">The `add` and `remove` methods for an event shall each take one parameter whose type defines the type of the event and that shall be derived from [System.Delegate](xref:System.Delegate).</span></span> |<span data-ttu-id="b85f9-229">32</span><span class="sxs-lookup"><span data-stu-id="b85f9-229">32</span></span>
+<span data-ttu-id="b85f9-230">イベント</span><span class="sxs-lookup"><span data-stu-id="b85f9-230">Events</span></span> | [<span data-ttu-id="b85f9-231">イベント</span><span class="sxs-lookup"><span data-stu-id="b85f9-231">Events</span></span>](#events) | <span data-ttu-id="b85f9-232">イベントは、特定の名前付けパターンに従わなくてはいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-232">Events shall adhere to a specific naming pattern.</span></span> <span data-ttu-id="b85f9-233">CLS 規則 29 で触れられている SpecialName 属性は、適切な名前比較で無視され、識別子規則に従わなければいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-233">The SpecialName attribute referred to in CLS rule 29 shall be ignored in appropriate name comparisons and shall adhere to identifier rules.</span></span>  |<span data-ttu-id="b85f9-234">33</span><span class="sxs-lookup"><span data-stu-id="b85f9-234">33</span></span>
+<span data-ttu-id="b85f9-235">例外</span><span class="sxs-lookup"><span data-stu-id="b85f9-235">Exceptions</span></span> | [<span data-ttu-id="b85f9-236">例外</span><span class="sxs-lookup"><span data-stu-id="b85f9-236">Exceptions</span></span>](#exceptions) | <span data-ttu-id="b85f9-237">スローできるオブジェクト型は、[System.Exception](xref:System.Exception)、またはそれを継承する型である。</span><span class="sxs-lookup"><span data-stu-id="b85f9-237">Objects that are thrown shall be of type [System.Exception](xref:System.Exception) or a type inheriting from it.</span></span> <span data-ttu-id="b85f9-238">ただし、CLS 準拠のメソッドで他の型の例外のスローをブロックする必要はない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-238">Nonetheless, CLS-compliant methods are not required to block the propagation of other types of exceptions.</span></span> | <span data-ttu-id="b85f9-239">40</span><span class="sxs-lookup"><span data-stu-id="b85f9-239">40</span></span>
+<span data-ttu-id="b85f9-240">全般</span><span class="sxs-lookup"><span data-stu-id="b85f9-240">General</span></span> | [<span data-ttu-id="b85f9-241">CLS 準拠の規則</span><span class="sxs-lookup"><span data-stu-id="b85f9-241">CLS compliance rules</span></span>](#cls-compliance-rules) | <span data-ttu-id="b85f9-242">CLS 規則は、型の構成部分のうち、その型を定義しているアセンブリの外部からアクセスまたは参照できる部分にのみ適用される。</span><span class="sxs-lookup"><span data-stu-id="b85f9-242">CLS rules apply only to those parts of a type that are accessible or visible outsideof the defining assembly.</span></span> | <span data-ttu-id="b85f9-243">1</span><span class="sxs-lookup"><span data-stu-id="b85f9-243">1</span></span>
+<span data-ttu-id="b85f9-244">全般</span><span class="sxs-lookup"><span data-stu-id="b85f9-244">General</span></span> | [<span data-ttu-id="b85f9-245">CLS 準拠の規則</span><span class="sxs-lookup"><span data-stu-id="b85f9-245">CLS compliance rules</span></span>](#cls-compliance-rules) | <span data-ttu-id="b85f9-246">CLS 非準拠型のメンバーを CLS 準拠と指定しない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-246">Members of non-CLS compliant types shall not be marked CLS-compliant.</span></span> | <span data-ttu-id="b85f9-247">2</span><span class="sxs-lookup"><span data-stu-id="b85f9-247">2</span></span>
+<span data-ttu-id="b85f9-248">ジェネリック</span><span class="sxs-lookup"><span data-stu-id="b85f9-248">Generics</span></span> | [<span data-ttu-id="b85f9-249">ジェネリック型とメンバー</span><span class="sxs-lookup"><span data-stu-id="b85f9-249">Generic types and members</span></span>](#generic-types-and-members) | <span data-ttu-id="b85f9-250">入れ子になった型は、少なくともその外側の型と同じ数のジェネリック パラメーターを持つ。</span><span class="sxs-lookup"><span data-stu-id="b85f9-250">Nested types shall have at least as many generic parameters as the enclosing type.</span></span> <span data-ttu-id="b85f9-251">入れ子にされた型のジェネリック パラメーターは、それを囲む型のジェネリック パラメーターと、位置によって対応します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-251">Generic parameters in a nested type correspond by position to the generic parameters in its enclosing type.</span></span>  | <span data-ttu-id="b85f9-252">42</span><span class="sxs-lookup"><span data-stu-id="b85f9-252">42</span></span>
+<span data-ttu-id="b85f9-253">ジェネリック</span><span class="sxs-lookup"><span data-stu-id="b85f9-253">Generics</span></span> | [<span data-ttu-id="b85f9-254">ジェネリック型とメンバー</span><span class="sxs-lookup"><span data-stu-id="b85f9-254">Generic types and members</span></span>](#generic-types-and-members) | <span data-ttu-id="b85f9-255">ジェネリック型の名前は、入れ子にされない型で宣言される型パラメーターの数をエンコードする必要がある。入れ子にされる場合は、上記の規則に従って、型に新しく組み込まれる型パラメーターの数をエンコードする必要がある。</span><span class="sxs-lookup"><span data-stu-id="b85f9-255">The name of a generic type shall encode the number of type parameters declared on the non-nested type, or newly introduced to the type if nested, according to the rules defined above.</span></span> | <span data-ttu-id="b85f9-256">43</span><span class="sxs-lookup"><span data-stu-id="b85f9-256">43</span></span>
+<span data-ttu-id="b85f9-257">ジェネリック</span><span class="sxs-lookup"><span data-stu-id="b85f9-257">Generics</span></span> | [<span data-ttu-id="b85f9-258">ジェネリック型とメンバー</span><span class="sxs-lookup"><span data-stu-id="b85f9-258">Generic types and members</span></span>](#generic-types-and-members) | <span data-ttu-id="b85f9-259">ジェネリック型は必要な制約を再宣言して、基本型またはインターフェイスの制約がジェネリック型の制約で確実に満たされるようにする必要がある。</span><span class="sxs-lookup"><span data-stu-id="b85f9-259">A generic type shall redeclare sufficient constraints to guarantee that any constraints on the base type, or interfaces would be satisfied by the generic type constraints.</span></span> | <span data-ttu-id="b85f9-260">44</span><span class="sxs-lookup"><span data-stu-id="b85f9-260">44</span></span>
+<span data-ttu-id="b85f9-261">ジェネリック</span><span class="sxs-lookup"><span data-stu-id="b85f9-261">Generics</span></span> | [<span data-ttu-id="b85f9-262">ジェネリック型とメンバー</span><span class="sxs-lookup"><span data-stu-id="b85f9-262">Generic types and members</span></span>](#generic-types-and-members) | <span data-ttu-id="b85f9-263">ジェネリック パラメーターの制約として使用される型は CLS に準拠する必要がある。</span><span class="sxs-lookup"><span data-stu-id="b85f9-263">Types used as constraints on generic parameters shall themselves be CLS-compliant.</span></span> | <span data-ttu-id="b85f9-264">45</span><span class="sxs-lookup"><span data-stu-id="b85f9-264">45</span></span>
+<span data-ttu-id="b85f9-265">ジェネリック</span><span class="sxs-lookup"><span data-stu-id="b85f9-265">Generics</span></span> | [<span data-ttu-id="b85f9-266">ジェネリック型とメンバー</span><span class="sxs-lookup"><span data-stu-id="b85f9-266">Generic types and members</span></span>](#generic-types-and-members) | <span data-ttu-id="b85f9-267">インスタンス化されたジェネリック型のメンバー (入れ子になった型も含む) の可視性およびアクセシビリティは、ジェネリック型の全体の宣言ではなく、特定のインスタンス化に対してスコープが設定される必要がある。</span><span class="sxs-lookup"><span data-stu-id="b85f9-267">The visibility and accessibility of members (including nested types) in an instantiated generic type shall be considered to be scoped to the specific instantiation rather than the generic type declaration as a whole.</span></span> <span data-ttu-id="b85f9-268">この場合でも、CLS 規則 12 の可視性規則とアクセシビリティ規則は同様に適用される。</span><span class="sxs-lookup"><span data-stu-id="b85f9-268">Assuming this, the visibility and accessibility rules of CLS rule 12 still apply.</span></span> | <span data-ttu-id="b85f9-269">46</span><span class="sxs-lookup"><span data-stu-id="b85f9-269">46</span></span>
+<span data-ttu-id="b85f9-270">ジェネリック</span><span class="sxs-lookup"><span data-stu-id="b85f9-270">Generics</span></span> | [<span data-ttu-id="b85f9-271">ジェネリック型とメンバー</span><span class="sxs-lookup"><span data-stu-id="b85f9-271">Generic types and members</span></span>](#generic-types-and-members) | <span data-ttu-id="b85f9-272">抽象メソッドまたは仮想ジェネリック メソッドごとに、既定の具体的な実装がある。</span><span class="sxs-lookup"><span data-stu-id="b85f9-272">For each abstract or virtual generic method, there shall be a default concrete (nonabstract) implementation</span></span> | <span data-ttu-id="b85f9-273">47</span><span class="sxs-lookup"><span data-stu-id="b85f9-273">47</span></span>
+<span data-ttu-id="b85f9-274">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="b85f9-274">Interfaces</span></span> | [<span data-ttu-id="b85f9-275">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="b85f9-275">Interfaces</span></span>](#interfaces) | <span data-ttu-id="b85f9-276">CLS 準拠のインターフェイスでは、CLS に準拠しないメソッドを実装するために、これらを定義する必要はない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-276">CLS-compliant interfaces shall not require the definition of non-CLS compliantmethods in order to implement them.</span></span> | <span data-ttu-id="b85f9-277">18</span><span class="sxs-lookup"><span data-stu-id="b85f9-277">18</span></span>
+<span data-ttu-id="b85f9-278">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="b85f9-278">Interfaces</span></span> | [<span data-ttu-id="b85f9-279">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="b85f9-279">Interfaces</span></span>](#interfaces) | <span data-ttu-id="b85f9-280">CLS 準拠インターフェイスでは、静的メソッドを定義してはいけない。また、フィールドも定義してはいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-280">CLS-compliant interfaces shall not define static methods, nor shall they define fields.</span></span> | <span data-ttu-id="b85f9-281">19</span><span class="sxs-lookup"><span data-stu-id="b85f9-281">19</span></span>
+<span data-ttu-id="b85f9-282">メンバー</span><span class="sxs-lookup"><span data-stu-id="b85f9-282">Members</span></span> | [<span data-ttu-id="b85f9-283">一般的な型メンバー</span><span class="sxs-lookup"><span data-stu-id="b85f9-283">Type members in general</span></span>](#type-members-in-general) | <span data-ttu-id="b85f9-284">グローバルで静的な (static) フィールドとメソッドは CLS 準拠ではありません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-284">Global static fields and methods are not CLS-compliant.</span></span> | <span data-ttu-id="b85f9-285">36</span><span class="sxs-lookup"><span data-stu-id="b85f9-285">36</span></span>
+<span data-ttu-id="b85f9-286">メンバー</span><span class="sxs-lookup"><span data-stu-id="b85f9-286">Members</span></span> | -- | <span data-ttu-id="b85f9-287">静的リテラル値の指定には、フィールド初期化メタデータを使用する。</span><span class="sxs-lookup"><span data-stu-id="b85f9-287">The value of a literal static is specified through the use of field initialization metadata.</span></span> <span data-ttu-id="b85f9-288">CLS 準拠のリテラルには、そのリテラルと同じ型 (または、そのリテラルが `enum` の場合は基本型) の値がフィールド初期化メタデータに指定されている必要がある。</span><span class="sxs-lookup"><span data-stu-id="b85f9-288">A CLS-compliant literal must have a value specified in field initialization metadata that is of exactly the same type as the literal (or of the underlying type, if that literal is an `enum`).</span></span> | <span data-ttu-id="b85f9-289">13</span><span class="sxs-lookup"><span data-stu-id="b85f9-289">13</span></span>
+<span data-ttu-id="b85f9-290">メンバー</span><span class="sxs-lookup"><span data-stu-id="b85f9-290">Members</span></span> | [<span data-ttu-id="b85f9-291">一般的な型メンバー</span><span class="sxs-lookup"><span data-stu-id="b85f9-291">Type members in general</span></span>](#type-members-in-general) | <span data-ttu-id="b85f9-292">vararg 制約は CLS の一部ではなく、CLS でサポートする呼び出し規則だけが標準のマネージ呼び出し規則である。</span><span class="sxs-lookup"><span data-stu-id="b85f9-292">The vararg constraint is not part of the CLS, and the only calling convention supported by the CLS is the standard managed calling convention.</span></span> | <span data-ttu-id="b85f9-293">15</span><span class="sxs-lookup"><span data-stu-id="b85f9-293">15</span></span>
+<span data-ttu-id="b85f9-294">名前付け規則</span><span class="sxs-lookup"><span data-stu-id="b85f9-294">Naming conventions</span></span> | [<span data-ttu-id="b85f9-295">名前付け規則</span><span class="sxs-lookup"><span data-stu-id="b85f9-295">Naming conventions</span></span>](#naming-conventions) | <span data-ttu-id="b85f9-296">アセンブリは、識別子の頭文字および構成文字として使用できる文字セットを規定する Unicode Standard 3.0 の『Technical Report 15』の「Annex 7」に従う必要がある。詳細については、「[Unicode Normalization Forms](http://www.unicode.org/unicode/reports/tr15/tr15-18.html)」(Unicode 正規化形式) を参照。</span><span class="sxs-lookup"><span data-stu-id="b85f9-296">Assemblies shall follow Annex 7 of Technical Report 15 of the Unicode Standard3.0 governing the set of characters permitted to start and be included in identifiers, available online at [Unicode Normalization Forms](http://www.unicode.org/unicode/reports/tr15/tr15-18.html).</span></span> <span data-ttu-id="b85f9-297">識別子は、Unicode 正規形 C に定義されている標準形式で記述する必要がある。CLS で 2 つの識別子が同じと見なされるのは、小文字マッピング (Unicode のロケール非依存で 1 対 1 の小文字による対応付け) が同じ場合である。</span><span class="sxs-lookup"><span data-stu-id="b85f9-297">Identifiers shall be in the canonical format defined by Unicode Normalization Form C. For CLS purposes, two identifiersare the same if their lowercase mappings (as specified by the Unicode locale-insensitive, one-to-one lowercase mappings) are the same.</span></span> <span data-ttu-id="b85f9-298">つまり、CLS で 2 つの識別子が異なる場合、大文字小文字の違いだけではない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-298">That is, for two identifiers to be considered different under the CLS they shall differ in more than simply their case.</span></span> <span data-ttu-id="b85f9-299">ただし、継承された定義をオーバーライドする場合、CLI では元の宣言と厳密に同じエンコーディングの使用が求められる。</span><span class="sxs-lookup"><span data-stu-id="b85f9-299">However, in order to override an inherited definition the CLI requires the precise encoding of the original declaration be used.</span></span> | <span data-ttu-id="b85f9-300">4</span><span class="sxs-lookup"><span data-stu-id="b85f9-300">4</span></span>
+<span data-ttu-id="b85f9-301">オーバーロード</span><span class="sxs-lookup"><span data-stu-id="b85f9-301">Overloading</span></span> | [<span data-ttu-id="b85f9-302">名前付け規則</span><span class="sxs-lookup"><span data-stu-id="b85f9-302">Naming conventions</span></span>](#naming-conventions) | <span data-ttu-id="b85f9-303">CLS 準拠のスコープに導入されるすべての名前は、完全に独立した種類である必要があります。ただし、名前が同じでオーバーロードによって解決できる場合を除きます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-303">All names introduced in a CLS-compliant scope shall be distinct independent of kind, except where the names are identical and resolved via overloading.</span></span> <span data-ttu-id="b85f9-304">CTS では 1 つの型でメソッドとフィールドに同じ名前を使用できるが、CLS では使用できない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-304">That is, while the CTS allows a single type to use the same name for a method and a field, the CLS does not.</span></span> | <span data-ttu-id="b85f9-305">5</span><span class="sxs-lookup"><span data-stu-id="b85f9-305">5</span></span>
+<span data-ttu-id="b85f9-306">オーバーロード</span><span class="sxs-lookup"><span data-stu-id="b85f9-306">Overloading</span></span> | [<span data-ttu-id="b85f9-307">名前付け規則</span><span class="sxs-lookup"><span data-stu-id="b85f9-307">Naming conventions</span></span>](#naming-conventions) | <span data-ttu-id="b85f9-308">フィールドおよび入れ子になった型について、CTS ではシグネチャでの区別が可能だが、CLS では識別子の比較だけで区別できる必要がある。</span><span class="sxs-lookup"><span data-stu-id="b85f9-308">Fields and nested types shall be distinct by identifier comparison alone, eventhough the CTS allows distinct signatures to be distinguished.</span></span> <span data-ttu-id="b85f9-309">CLS 規則 39 の指定を除き、識別子の比較により名前が同じであるメソッド、プロパティ、およびイベントでは、相違点は戻り値の型だけに限定されない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-309">Methods, properties, and events that have the same name (by identifier comparison) shall differ by more than just the return type,except as specified in CLS Rule 39</span></span> | <span data-ttu-id="b85f9-310">6</span><span class="sxs-lookup"><span data-stu-id="b85f9-310">6</span></span>
+<span data-ttu-id="b85f9-311">オーバーロード</span><span class="sxs-lookup"><span data-stu-id="b85f9-311">Overloading</span></span> | [<span data-ttu-id="b85f9-312">オーバーロード</span><span class="sxs-lookup"><span data-stu-id="b85f9-312">Overloads</span></span>](#overloads) | <span data-ttu-id="b85f9-313">プロパティおよびメソッドのみオーバーロードできる。</span><span class="sxs-lookup"><span data-stu-id="b85f9-313">Only properties and methods can be overloaded.</span></span> | <span data-ttu-id="b85f9-314">37</span><span class="sxs-lookup"><span data-stu-id="b85f9-314">37</span></span>
+<span data-ttu-id="b85f9-315">オーバーロード</span><span class="sxs-lookup"><span data-stu-id="b85f9-315">Overloading</span></span> | [<span data-ttu-id="b85f9-316">オーバーロード</span><span class="sxs-lookup"><span data-stu-id="b85f9-316">Overloads</span></span>](#overloads) |<span data-ttu-id="b85f9-317">プロパティおよびメソッドは、パラメーターの数値と型にのみ基づいてオーバーロードできる。ただし、戻り値の型に基づいてオーバーロードできる変換演算子の `op_Implicit` と o`op_Explicit` は例外である。</span><span class="sxs-lookup"><span data-stu-id="b85f9-317">Properties and methods can be overloaded based only on the number and types of their parameters, except the conversion operators named `op_Implicit` and `op_Explicit`, which can also be overloaded based on their return type.</span></span> | <span data-ttu-id="b85f9-318">38</span><span class="sxs-lookup"><span data-stu-id="b85f9-318">38</span></span>
+<span data-ttu-id="b85f9-319">オーバーロード</span><span class="sxs-lookup"><span data-stu-id="b85f9-319">Overloading</span></span> | -- | <span data-ttu-id="b85f9-320">型で宣言された複数の CLS 準拠のメソッドに同じ名前が指定されている場合、特定の一連の型のインスタンス化において、これらのメソッドのパラメーターと戻り値の型は同じである。また、これらの型のインスタンス化で、すべてのメソッドをセマンティクス レベルで等価にする必要がある。</span><span class="sxs-lookup"><span data-stu-id="b85f9-320">If two or more CLS-compliant methods declared in a type have the same nameand, for a specific set of type instantiations, they have the same parameter and return types, then all these methods shall be semantically equivalent at those type instantiations.</span></span> | <span data-ttu-id="b85f9-321">48</span><span class="sxs-lookup"><span data-stu-id="b85f9-321">48</span></span>
+<span data-ttu-id="b85f9-322">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b85f9-322">Properties</span></span> | [<span data-ttu-id="b85f9-323">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b85f9-323">Properties</span></span>](#properties) | <span data-ttu-id="b85f9-324">プロパティの getter メソッドおよび setter メソッドを実装するメソッドは、メタデータで `SpecialName` とマークする。</span><span class="sxs-lookup"><span data-stu-id="b85f9-324">The methods that implement the getter and setter methods of a property shall be marked `SpecialName` in the metadata.</span></span> | <span data-ttu-id="b85f9-325">24</span><span class="sxs-lookup"><span data-stu-id="b85f9-325">24</span></span>
+<span data-ttu-id="b85f9-326">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b85f9-326">Properties</span></span> | [<span data-ttu-id="b85f9-327">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b85f9-327">Properties</span></span>](#properties) | <span data-ttu-id="b85f9-328">プロパティ アクセサーはすべて静的、すべて仮想、またはすべてインスタンスになる。</span><span class="sxs-lookup"><span data-stu-id="b85f9-328">A property’s accessors shall all be static, all be virtual, or all be instance.</span></span> | <span data-ttu-id="b85f9-329">26</span><span class="sxs-lookup"><span data-stu-id="b85f9-329">26</span></span>
+<span data-ttu-id="b85f9-330">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b85f9-330">Properties</span></span> | [<span data-ttu-id="b85f9-331">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b85f9-331">Properties</span></span>](#properties) | <span data-ttu-id="b85f9-332">プロパティの型は、getter の戻り値の型であり、かつ setter の最後の引数の型でなければいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-332">The type of a property shall be the return type of the getter and the type of the last argument of the setter.</span></span> <span data-ttu-id="b85f9-333">プロパティのパラメーターの型は、getter へのパラメーターの型であり、かつ setter の最後のパラメーター以外のすべての型でなければいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-333">The types of the parameters of the property shall be the types of the parameters to the getter and the types of all but the final parameter of the setter.</span></span> <span data-ttu-id="b85f9-334">すべての型は CLS 準拠でなければならない。また、マネージ ポインターであってはいけない (つまり、参照渡しではいけない)。</span><span class="sxs-lookup"><span data-stu-id="b85f9-334">All of these types shall be CLS-compliant, and shall not be managed pointers (that is, shall not be passed by reference).</span></span> | <span data-ttu-id="b85f9-335">27</span><span class="sxs-lookup"><span data-stu-id="b85f9-335">27</span></span>
+<span data-ttu-id="b85f9-336">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b85f9-336">Properties</span></span> | [<span data-ttu-id="b85f9-337">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b85f9-337">Properties</span></span>](#properties) | <span data-ttu-id="b85f9-338">プロパティは、特定の名前付けパターンに従わなくてはいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-338">Properties shall adhere to a specific naming pattern.</span></span> <span data-ttu-id="b85f9-339">CLS 規則 24 で触れられている `SpecialName` 属性は、適切な名前比較で無視され、識別子規則に従わなければいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-339">The `SpecialName` attribute referred to in CLS rule 24 shall be ignored in appropriate name comparisons and shall adhere to identifier rules.</span></span> <span data-ttu-id="b85f9-340">プロパティには getter メソッド、setter メソッド、またはこの両方が必ずなければいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-340">A property shall have a getter method, a setter method, or both.</span></span> | <span data-ttu-id="b85f9-341">28</span><span class="sxs-lookup"><span data-stu-id="b85f9-341">28</span></span>
+<span data-ttu-id="b85f9-342">型変換</span><span class="sxs-lookup"><span data-stu-id="b85f9-342">Type conversion</span></span> | [<span data-ttu-id="b85f9-343">型変換</span><span class="sxs-lookup"><span data-stu-id="b85f9-343">Type conversion</span></span>](#type-conversion) | <span data-ttu-id="b85f9-344">op_Implicit または op_Explicit が指定されている場合は、強制変換のための別の方法を用意する必要がある。</span><span class="sxs-lookup"><span data-stu-id="b85f9-344">If either op_Implicit or op_Explicit is provided, an alternate means of providing the coercion shall be provided.</span></span> | <span data-ttu-id="b85f9-345">39</span><span class="sxs-lookup"><span data-stu-id="b85f9-345">39</span></span>
+<span data-ttu-id="b85f9-346">種類</span><span class="sxs-lookup"><span data-stu-id="b85f9-346">Types</span></span> | [<span data-ttu-id="b85f9-347">型および型メンバーのシグネチャ</span><span class="sxs-lookup"><span data-stu-id="b85f9-347">Types and type member signatures</span></span>](#types-and-type-member-signatures) | <span data-ttu-id="b85f9-348">ボックス化された値型は CLS 準拠ではない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-348">Boxed value types are not CLS-compliant.</span></span> | <span data-ttu-id="b85f9-349">3</span><span class="sxs-lookup"><span data-stu-id="b85f9-349">3</span></span>
+<span data-ttu-id="b85f9-350">種類</span><span class="sxs-lookup"><span data-stu-id="b85f9-350">Types</span></span> | [<span data-ttu-id="b85f9-351">型および型メンバーのシグネチャ</span><span class="sxs-lookup"><span data-stu-id="b85f9-351">Types and type member signatures</span></span>](#types-and-type-member-signatures) | <span data-ttu-id="b85f9-352">シグネチャに出現するすべての型は CLS 準拠でなければいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-352">All types appearing in a signature shall be CLS-compliant.</span></span> <span data-ttu-id="b85f9-353">ジェネリック型のインスタンスを構成するすべての型は CLS 準拠でなければいけない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-353">All types composing an instantiated generic type shall be CLS-compliant.</span></span> | <span data-ttu-id="b85f9-354">11</span><span class="sxs-lookup"><span data-stu-id="b85f9-354">11</span></span>
+<span data-ttu-id="b85f9-355">種類</span><span class="sxs-lookup"><span data-stu-id="b85f9-355">Types</span></span> | [<span data-ttu-id="b85f9-356">型および型メンバーのシグネチャ</span><span class="sxs-lookup"><span data-stu-id="b85f9-356">Types and type member signatures</span></span>](#types-and-type-member-signatures) | <span data-ttu-id="b85f9-357">型指定された参照は CLS 準拠ではありません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-357">Typed references are not CLS-compliant.</span></span> | <span data-ttu-id="b85f9-358">14</span><span class="sxs-lookup"><span data-stu-id="b85f9-358">14</span></span>
+<span data-ttu-id="b85f9-359">種類</span><span class="sxs-lookup"><span data-stu-id="b85f9-359">Types</span></span> | [<span data-ttu-id="b85f9-360">型および型メンバーのシグネチャ</span><span class="sxs-lookup"><span data-stu-id="b85f9-360">Types and type member signatures</span></span>](#types-and-type-member-signatures) | <span data-ttu-id="b85f9-361">アンマネージ ポインター型は CLS 準拠ではない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-361">Unmanaged pointer types are not CLS-compliant.</span></span> | <span data-ttu-id="b85f9-362">17</span><span class="sxs-lookup"><span data-stu-id="b85f9-362">17</span></span>
+<span data-ttu-id="b85f9-363">種類</span><span class="sxs-lookup"><span data-stu-id="b85f9-363">Types</span></span> | [<span data-ttu-id="b85f9-364">型および型メンバーのシグネチャ</span><span class="sxs-lookup"><span data-stu-id="b85f9-364">Types and type member signatures</span></span>](#types-and-type-member-signatures) | <span data-ttu-id="b85f9-365">CLS 準拠のクラス、値型、およびインターフェイスでは、CLS に準拠しないメンバーの実装は不要である。</span><span class="sxs-lookup"><span data-stu-id="b85f9-365">CLS-compliant classes, value types, and interfaces shall not require the implementation of non-CLS-compliant members</span></span> | <span data-ttu-id="b85f9-366">20</span><span class="sxs-lookup"><span data-stu-id="b85f9-366">20</span></span>
+<span data-ttu-id="b85f9-367">種類</span><span class="sxs-lookup"><span data-stu-id="b85f9-367">Types</span></span> | [<span data-ttu-id="b85f9-368">型および型メンバーのシグネチャ</span><span class="sxs-lookup"><span data-stu-id="b85f9-368">Types and type member signatures</span></span>](#types-and-type-member-signatures) | <span data-ttu-id="b85f9-369">[System.Object](xref:System.Object) は CLS 準拠である。</span><span class="sxs-lookup"><span data-stu-id="b85f9-369">[System.Object](xref:System.Object) is CLS-compliant.</span></span> <span data-ttu-id="b85f9-370">これ以外のあらゆる CLS 準拠クラスは CLS 準拠クラスの継承でなければならない。</span><span class="sxs-lookup"><span data-stu-id="b85f9-370">Any other CLS-compliant class shall inherit from a CLS-compliant class.</span></span> | <span data-ttu-id="b85f9-371">23</span><span class="sxs-lookup"><span data-stu-id="b85f9-371">23</span></span>
 
-### <a name="types-and-type-member-signatures"></a>型および型メンバーのシグネチャ
+### <a name="types-and-type-member-signatures"></a><span data-ttu-id="b85f9-372">型および型メンバーのシグネチャ</span><span class="sxs-lookup"><span data-stu-id="b85f9-372">Types and type member signatures</span></span>
 
-[System.Object](xref:System.Object) 型は CLS に準拠しており、.NET Framework 型システムのすべてのオブジェクト型の基本型です。 .NET Framework の継承は暗黙的また明示的に行われます。たとえば、[String](xref:System.String) クラスは `Object` クラスから暗黙的に継承します。また、[CultureNotFoundException](xref:System.Globalization.CultureNotFoundException) クラスは、[ArgumentException](xref:System.ArgumentException) クラスから明示的に継承し、これは [Exception](xref:System.Exception) クラスから明示的に継承します。 派生型を CLS 準拠にするには、その基本型も CLS に準拠している必要があります。 
+<span data-ttu-id="b85f9-373">[System.Object](xref:System.Object) 型は CLS に準拠しており、.NET Framework 型システムのすべてのオブジェクト型の基本型です。</span><span class="sxs-lookup"><span data-stu-id="b85f9-373">The [System.Object](xref:System.Object) type is CLS-compliant and is the base type of all object types in the .NET Framework type system.</span></span> <span data-ttu-id="b85f9-374">.NET Framework の継承は暗黙的また明示的に行われます。たとえば、[String](xref:System.String) クラスは `Object` クラスから暗黙的に継承します。また、[CultureNotFoundException](xref:System.Globalization.CultureNotFoundException) クラスは、[ArgumentException](xref:System.ArgumentException) クラスから明示的に継承し、これは [Exception](xref:System.Exception) クラスから明示的に継承します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-374">Inheritance in the .NET Framework is either implicit (for example, the [String](xref:System.String) class implicitly inherits from the `Object` class) or explicit (for example, the [CultureNotFoundException](xref:System.Globalization.CultureNotFoundException) class explicitly inherits from the [ArgumentException](xref:System.ArgumentException) class, which explicitly inherits from the [Exception](xref:System.Exception) class.</span></span> <span data-ttu-id="b85f9-375">派生型を CLS 準拠にするには、その基本型も CLS に準拠している必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-375">For a derived type to be CLS compliant, its base type must also be CLS-compliant.</span></span> 
 
-次の例は、基本型が CLS に準拠していない派生型を示しています。 これは、符号なし 32 ビット整数をカウンターとして使用する `Counter` 基底クラスを定義します。 クラスには、符号なし整数をラップすることでカウンター機能が用意されます。このため、クラスは CLS 非準拠としてマークされます。 結果として、派生クラス `NonZeroCounter` も CLS に準拠しなくなります。 
+<span data-ttu-id="b85f9-376">次の例は、基本型が CLS に準拠していない派生型を示しています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-376">The following example shows a derived type whose base type is not CLS-compliant.</span></span> <span data-ttu-id="b85f9-377">これは、符号なし 32 ビット整数をカウンターとして使用する `Counter` 基底クラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-377">It defines a base `Counter` class that uses an unsigned 32-bit integer as a counter.</span></span> <span data-ttu-id="b85f9-378">クラスには、符号なし整数をラップすることでカウンター機能が用意されます。このため、クラスは CLS 非準拠としてマークされます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-378">Because the class provides counter functionality by wrapping an unsigned integer, the class is marked as non-CLS-compliant.</span></span> <span data-ttu-id="b85f9-379">結果として、派生クラス `NonZeroCounter` も CLS に準拠しなくなります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-379">As a result, a derived class, `NonZeroCounter`, is also not CLS-compliant.</span></span> 
 
 ```csharp
 using System;
@@ -311,43 +312,43 @@ End Class
 '                 ~~~~~~~~~~~~~~
 ```
 
-メソッドの戻り値の型、プロパティ型を含め、メンバー シグネチャに表示されるすべての型が CLS に準拠する必要があります。 さらに、ジェネリック型の場合は、次の要件もあります。 
+<span data-ttu-id="b85f9-380">メソッドの戻り値の型、プロパティ型を含め、メンバー シグネチャに表示されるすべての型が CLS に準拠する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-380">All types that appear in member signatures, including a method's return type or a property type, must be CLS-compliant.</span></span> <span data-ttu-id="b85f9-381">さらに、ジェネリック型の場合は、次の要件もあります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-381">In addition, for generic types:</span></span> 
 
-* ジェネリック型のインスタンスを構成するすべての型が、CLS に準拠する必要があります。
+* <span data-ttu-id="b85f9-382">ジェネリック型のインスタンスを構成するすべての型が、CLS に準拠する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-382">All types that compose an instantiated generic type must be CLS-compliant.</span></span>
 
-* ジェネリック パラメーターで制約として使用されるすべての型が、CLS に準拠する必要があります。 
+* <span data-ttu-id="b85f9-383">ジェネリック パラメーターで制約として使用されるすべての型が、CLS に準拠する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-383">All types used as constraints on generic parameters must be CLS-compliant.</span></span> 
 
-.NET [共通型システム](common-type-system.md)には、共通言語ランタイムが直接サポートする組み込み型がいくつか含まれ、アセンブリのメタデータで特別にエンコードされています。 これらの組み込み型のうち、次の表に示す型は CLS に準拠しています。 
+<span data-ttu-id="b85f9-384">.NET [共通型システム](common-type-system.md)には、共通言語ランタイムが直接サポートする組み込み型がいくつか含まれ、アセンブリのメタデータで特別にエンコードされています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-384">The .NET [common type system](common-type-system.md) includes a number of built-in types that are supported directly by the common language runtime and are specially encoded in an assembly's metadata.</span></span> <span data-ttu-id="b85f9-385">これらの組み込み型のうち、次の表に示す型は CLS に準拠しています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-385">Of these intrinsic types, the types listed in the following table are CLS-compliant.</span></span> 
 
 
-CLS 準拠型 | 説明
+<span data-ttu-id="b85f9-386">CLS 準拠型</span><span class="sxs-lookup"><span data-stu-id="b85f9-386">CLS-compliant type</span></span> | <span data-ttu-id="b85f9-387">説明</span><span class="sxs-lookup"><span data-stu-id="b85f9-387">Description</span></span>
 ------------------ | -----------
-[Byte](xref:System.Byte) | 8 ビット符号なし整数 
-[Int16](xref:System.Int16) | 16 ビット符号付き整数 
-[Int32](xref:System.Int32) | 32 ビット符号付き整数 
-[Int64](xref:System.Int64) | 64 ビット符号付き整数
-[Single](xref:System.Single) | 単精度浮動小数点数値
-[Double](xref:System.Double) | 倍精度浮動小数点数値
-[Boolean](xref:System.Boolean) | true または false 値型 
-[Char](xref:System.Char) | UTF-16 でエンコードされたコード単位
-[Decimal](xref:System.Decimal) | 10 進浮動小数点数以外
-[IntPtr](xref:System.IntPtr) | プラットフォーム定義サイズのポインターまたはハンドル
-[String](xref:System.String) | 0 個以上の Char オブジェクトのコレクション 
+[<span data-ttu-id="b85f9-388">Byte</span><span class="sxs-lookup"><span data-stu-id="b85f9-388">Byte</span></span>](xref:System.Byte) | <span data-ttu-id="b85f9-389">8 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="b85f9-389">8-bit unsigned integer</span></span> 
+[<span data-ttu-id="b85f9-390">Int16</span><span class="sxs-lookup"><span data-stu-id="b85f9-390">Int16</span></span>](xref:System.Int16) | <span data-ttu-id="b85f9-391">16 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="b85f9-391">16-bit signed integer</span></span> 
+[<span data-ttu-id="b85f9-392">Int32</span><span class="sxs-lookup"><span data-stu-id="b85f9-392">Int32</span></span>](xref:System.Int32) | <span data-ttu-id="b85f9-393">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="b85f9-393">32-bit signed integer</span></span> 
+[<span data-ttu-id="b85f9-394">Int64</span><span class="sxs-lookup"><span data-stu-id="b85f9-394">Int64</span></span>](xref:System.Int64) | <span data-ttu-id="b85f9-395">64 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="b85f9-395">64-bit signed integer</span></span>
+[<span data-ttu-id="b85f9-396">Single</span><span class="sxs-lookup"><span data-stu-id="b85f9-396">Single</span></span>](xref:System.Single) | <span data-ttu-id="b85f9-397">単精度浮動小数点数値</span><span class="sxs-lookup"><span data-stu-id="b85f9-397">Single-precision floating-point value</span></span>
+[<span data-ttu-id="b85f9-398">Double</span><span class="sxs-lookup"><span data-stu-id="b85f9-398">Double</span></span>](xref:System.Double) | <span data-ttu-id="b85f9-399">倍精度浮動小数点数値</span><span class="sxs-lookup"><span data-stu-id="b85f9-399">Double-precision floating-point value</span></span>
+[<span data-ttu-id="b85f9-400">Boolean</span><span class="sxs-lookup"><span data-stu-id="b85f9-400">Boolean</span></span>](xref:System.Boolean) | <span data-ttu-id="b85f9-401">true または false 値型</span><span class="sxs-lookup"><span data-stu-id="b85f9-401">true or false value type</span></span> 
+[<span data-ttu-id="b85f9-402">Char</span><span class="sxs-lookup"><span data-stu-id="b85f9-402">Char</span></span>](xref:System.Char) | <span data-ttu-id="b85f9-403">UTF-16 でエンコードされたコード単位</span><span class="sxs-lookup"><span data-stu-id="b85f9-403">UTF-16 encoded code unit</span></span>
+[<span data-ttu-id="b85f9-404">Decimal</span><span class="sxs-lookup"><span data-stu-id="b85f9-404">Decimal</span></span>](xref:System.Decimal) | <span data-ttu-id="b85f9-405">10 進浮動小数点数以外</span><span class="sxs-lookup"><span data-stu-id="b85f9-405">Non-floating-point decimal number</span></span>
+[<span data-ttu-id="b85f9-406">IntPtr</span><span class="sxs-lookup"><span data-stu-id="b85f9-406">IntPtr</span></span>](xref:System.IntPtr) | <span data-ttu-id="b85f9-407">プラットフォーム定義サイズのポインターまたはハンドル</span><span class="sxs-lookup"><span data-stu-id="b85f9-407">Pointer or handle of a platform-defined size</span></span>
+[<span data-ttu-id="b85f9-408">String</span><span class="sxs-lookup"><span data-stu-id="b85f9-408">String</span></span>](xref:System.String) | <span data-ttu-id="b85f9-409">0 個以上の Char オブジェクトのコレクション</span><span class="sxs-lookup"><span data-stu-id="b85f9-409">Collection of zero, one, or more Char objects</span></span> 
  
-次の表に示す組み込み型は CLS に準拠していません。
+<span data-ttu-id="b85f9-410">次の表に示す組み込み型は CLS に準拠していません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-410">The intrinsic types listed in the following table are not CLS-Compliant.</span></span>
 
 
-非準拠型 | 説明 | CLS に準拠する代替
+<span data-ttu-id="b85f9-411">非準拠型</span><span class="sxs-lookup"><span data-stu-id="b85f9-411">Non-compliant type</span></span> | <span data-ttu-id="b85f9-412">説明</span><span class="sxs-lookup"><span data-stu-id="b85f9-412">Description</span></span> | <span data-ttu-id="b85f9-413">CLS に準拠する代替</span><span class="sxs-lookup"><span data-stu-id="b85f9-413">CLS-compliant alternative</span></span>
 ------------------ | ----------- | -------------------------
-[SByte](xref:System.SByte) | 8 ビット符号付き整数データ型 | [Int16](xref:System.Int16)
-[UInt16](xref:System.UInt16) | 16 ビット符号なし整数 | [Int32](xref:System.Int32)
-[UInt32](xref:System.UInt32) | 32 ビット符号なし整数 | [Int64](xref:System.Int64)
-[UInt64](xref:System.UInt64) | 64 ビット符号なし整数 | [Int64](xref:System.Int64) (オーバーフローの可能性あり)、[BigInteger](xref:System.Numerics.BigInteger)、または [Double](xref:System.Double)
-[UIntPtr](xref:System.UIntPtr) | 符号なしポインターまたはハンドル | [IntPtr](xref:System.IntPtr)
+[<span data-ttu-id="b85f9-414">SByte</span><span class="sxs-lookup"><span data-stu-id="b85f9-414">SByte</span></span>](xref:System.SByte) | <span data-ttu-id="b85f9-415">8 ビット符号付き整数データ型</span><span class="sxs-lookup"><span data-stu-id="b85f9-415">8-bit signed integer data type</span></span> | [<span data-ttu-id="b85f9-416">Int16</span><span class="sxs-lookup"><span data-stu-id="b85f9-416">Int16</span></span>](xref:System.Int16)
+[<span data-ttu-id="b85f9-417">UInt16</span><span class="sxs-lookup"><span data-stu-id="b85f9-417">UInt16</span></span>](xref:System.UInt16) | <span data-ttu-id="b85f9-418">16 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="b85f9-418">16-bit unsigned integer</span></span> | [<span data-ttu-id="b85f9-419">Int32</span><span class="sxs-lookup"><span data-stu-id="b85f9-419">Int32</span></span>](xref:System.Int32)
+[<span data-ttu-id="b85f9-420">UInt32</span><span class="sxs-lookup"><span data-stu-id="b85f9-420">UInt32</span></span>](xref:System.UInt32) | <span data-ttu-id="b85f9-421">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="b85f9-421">32-bit unsigned integer</span></span> | [<span data-ttu-id="b85f9-422">Int64</span><span class="sxs-lookup"><span data-stu-id="b85f9-422">Int64</span></span>](xref:System.Int64)
+[<span data-ttu-id="b85f9-423">UInt64</span><span class="sxs-lookup"><span data-stu-id="b85f9-423">UInt64</span></span>](xref:System.UInt64) | <span data-ttu-id="b85f9-424">64 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="b85f9-424">64-bit unsigned integer</span></span> | <span data-ttu-id="b85f9-425">[Int64](xref:System.Int64) (オーバーフローの可能性あり)、[BigInteger](xref:System.Numerics.BigInteger)、または [Double](xref:System.Double)</span><span class="sxs-lookup"><span data-stu-id="b85f9-425">[Int64](xref:System.Int64) (may overflow), [BigInteger](xref:System.Numerics.BigInteger), or [Double](xref:System.Double)</span></span>
+[<span data-ttu-id="b85f9-426">UIntPtr</span><span class="sxs-lookup"><span data-stu-id="b85f9-426">UIntPtr</span></span>](xref:System.UIntPtr) | <span data-ttu-id="b85f9-427">符号なしポインターまたはハンドル</span><span class="sxs-lookup"><span data-stu-id="b85f9-427">Unsigned pointer or handle</span></span> | [<span data-ttu-id="b85f9-428">IntPtr</span><span class="sxs-lookup"><span data-stu-id="b85f9-428">IntPtr</span></span>](xref:System.IntPtr)
  
- .NET Framework のクラス ライブラリまたはその他のクラス ライブラリには、CLS に準拠していない他の型が含まれる場合があります。次に例を示します。 
+ <span data-ttu-id="b85f9-429">.NET Framework のクラス ライブラリまたはその他のクラス ライブラリには、CLS に準拠していない他の型が含まれる場合があります。次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-429">The .NET Framework Class Library or any other class library may include other types that aren't CLS-compliant; for example:</span></span> 
  
- * ボックス化された値型。 次の C# コード例では、`Value` という名前の型 `int`* のパブリック プロパティを持つクラスを作成します。 `int`* はボックス化された値型であるため、コンパイラは CLS 非準拠としてフラグを設定します。
+ * <span data-ttu-id="b85f9-430">ボックス化された値型。</span><span class="sxs-lookup"><span data-stu-id="b85f9-430">Boxed value types.</span></span> <span data-ttu-id="b85f9-431">次の C# コード例では、`Value` という名前の型 `int`* のパブリック プロパティを持つクラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-431">The following C# example creates a class that has a public property of type `int`* named `Value`.</span></span> <span data-ttu-id="b85f9-432">`int`* はボックス化された値型であるため、コンパイラは CLS 非準拠としてフラグを設定します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-432">Because an `int`* is a boxed value type, the compiler flags it as non-CLS-compliant.</span></span>
 
   ```csharp
   using System;
@@ -371,11 +372,11 @@ CLS 準拠型 | 説明
   //        warning CS3003: Type of 'TestClass.Value' is not CLS-compliant
   ```
 
-* 型指定された参照。オブジェクトへの参照および型への参照を含む特別なコンストラクトです。
+* <span data-ttu-id="b85f9-433">型指定された参照。オブジェクトへの参照および型への参照を含む特別なコンストラクトです。</span><span class="sxs-lookup"><span data-stu-id="b85f9-433">Typed references, which are special constructs that contain a reference to an object and a reference to a type.</span></span>
 
-型が CLS に準拠していない場合は、*isCompliant* パラメータの値が `false` に指定された [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) 属性をそれに適用する必要があります。 詳細については、「[CLSCompliantAttribute 属性](#the-clscompliantattribute-attribute)」を参照してください。  
+<span data-ttu-id="b85f9-434">型が CLS に準拠していない場合は、*isCompliant* パラメータの値が `false` に指定された [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) 属性をそれに適用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-434">If a type is not CLS-compliant, you should apply the [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) attribute with an *isCompliant* parameter with a value of `false` to it.</span></span> <span data-ttu-id="b85f9-435">詳細については、「[CLSCompliantAttribute 属性](#the-clscompliantattribute-attribute)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b85f9-435">For more information, see the [CLSCompliantAttribute attribute](#the-clscompliantattribute-attribute) section.</span></span>  
 
-次の例は、メソッド シグネチャとジェネリック型のインスタンス化で発生する CLS 準拠の問題を示しています。 ここでは、`InvoiceItem` クラスを、型 [UInt32](xref:System.UInt32) のプロパティ、型 [Nullable(Of UInt32)](xref:System.Nullable%601) のプロパティ、および型 `UInt32` と `Nullable(Of UInt32)` のパラメーターが指定されたコンストラクターで定義します。 この例をコンパイルしようとすると、4 つのコンパイラの警告が表示されます。
+<span data-ttu-id="b85f9-436">次の例は、メソッド シグネチャとジェネリック型のインスタンス化で発生する CLS 準拠の問題を示しています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-436">The following example illustrates the problem of CLS compliance in a method signature and in generic type instantiation.</span></span> <span data-ttu-id="b85f9-437">ここでは、`InvoiceItem` クラスを、型 [UInt32](xref:System.UInt32) のプロパティ、型 [Nullable(Of UInt32)](xref:System.Nullable%601) のプロパティ、および型 `UInt32` と `Nullable(Of UInt32)` のパラメーターが指定されたコンストラクターで定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-437">It defines an `InvoiceItem` class with a property of type [UInt32](xref:System.UInt32), a property of type [Nullable(Of UInt32)](xref:System.Nullable%601), and a constructor with parameters of type `UInt32` and `Nullable(Of UInt32)`.</span></span> <span data-ttu-id="b85f9-438">この例をコンパイルしようとすると、4 つのコンパイラの警告が表示されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-438">You get four compiler warnings when you try to compile this example.</span></span>
 
 ```csharp
 using System;
@@ -463,7 +464,7 @@ End Class
 '       Public Property InvoiceId As UInteger
 ```
 
-コンパイラの警告が表示されないようにするには、`InvoiceItem` パブリック インターフェイスの CLS 非準拠型を準拠型に置き換えます。
+<span data-ttu-id="b85f9-439">コンパイラの警告が表示されないようにするには、`InvoiceItem` パブリック インターフェイスの CLS 非準拠型を準拠型に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-439">To eliminate the compiler warnings, replace the non-CLS-compliant types in the `InvoiceItem` public interface with compliant types:</span></span>
 
 ```csharp
 using System;
@@ -539,7 +540,7 @@ Public Class InvoiceItem
 End Class
 ```
 
-ここで示した特定の型以外にも、CLS に準拠していないカテゴリはいくつかあります。 たとえば、アンマネージ ポインター型やアンマネージ関数ポインター型などです。 次の例では、整数へのポインターを使用して整数の配列を作成するので、コンパイラの警告が生成されます。 
+<span data-ttu-id="b85f9-440">ここで示した特定の型以外にも、CLS に準拠していないカテゴリはいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-440">In addition to the specific types listed, some categories of types are not CLS compliant.</span></span> <span data-ttu-id="b85f9-441">たとえば、アンマネージ ポインター型やアンマネージ関数ポインター型などです。</span><span class="sxs-lookup"><span data-stu-id="b85f9-441">These include unmanaged pointer types and function pointer types.</span></span> <span data-ttu-id="b85f9-442">次の例では、整数へのポインターを使用して整数の配列を作成するので、コンパイラの警告が生成されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-442">The following example generates a compiler warning because it uses a pointer to an integer to create an array of integers.</span></span> 
 
 ```csharp
 using System;
@@ -587,11 +588,11 @@ public class ArrayHelper
 //    UnmanagedPtr1.cs(8,57): warning CS3001: Argument type 'int*' is not CLS-compliant
 ```
 
-CLS 準拠の抽象クラス (つまり、C# で `abstract` とマークされたクラス) については、そのクラスのすべてのメンバーも CLS に準拠にする必要があります。 
+<span data-ttu-id="b85f9-443">CLS 準拠の抽象クラス (つまり、C# で `abstract` とマークされたクラス) については、そのクラスのすべてのメンバーも CLS に準拠にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-443">For CLS-compliant abstract classes (that is, classes marked as `abstract` in C#), all members of the class must also be CLS-compliant.</span></span> 
 
-### <a name="naming-conventions"></a>名前付け規則
+### <a name="naming-conventions"></a><span data-ttu-id="b85f9-444">名前付け規則</span><span class="sxs-lookup"><span data-stu-id="b85f9-444">Naming conventions</span></span>
 
-一部のプログラミング言語は大文字と小文字が区別されるので、識別子 (名前空間、型、メンバーの名前など) は、大文字と小文字が違うだけで相違します。 2 つの識別子が同じと見なされるのは、小文字マッピングが同じ場合です。 次の C# コード例では、2 つのパブリック クラス、`Person` および `person` を定義します。 このクラスは大文字と小文字のみが異なるので、コンパイラは CLS 非準拠としてフラグを設定します。 
+<span data-ttu-id="b85f9-445">一部のプログラミング言語は大文字と小文字が区別されるので、識別子 (名前空間、型、メンバーの名前など) は、大文字と小文字が違うだけで相違します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-445">Because some programming languages are case-insensitive, identifiers (such as the names of namespaces, types, and members) must differ by more than case.</span></span> <span data-ttu-id="b85f9-446">2 つの識別子が同じと見なされるのは、小文字マッピングが同じ場合です。</span><span class="sxs-lookup"><span data-stu-id="b85f9-446">Two identifiers are considered equivalent if their lowercase mappings are the same.</span></span> <span data-ttu-id="b85f9-447">次の C# コード例では、2 つのパブリック クラス、`Person` および `person` を定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-447">The following C# example defines two public classes, `Person` and `person`.</span></span> <span data-ttu-id="b85f9-448">このクラスは大文字と小文字のみが異なるので、コンパイラは CLS 非準拠としてフラグを設定します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-448">Because they differ only by case, the C# compiler flags them as not CLS-compliant.</span></span> 
 
 ```csharp
 using System;
@@ -613,13 +614,13 @@ public class person
 //    Naming1.cs(6,14): (Location of symbol related to previous warning)
 ```
 
-名前空間、型、メンバーの名前など、プログラミング言語の識別子は [Unicode Standard 3.0 の Technical Report 15 の Annex 7](http://www.unicode.org/reports/tr15/tr15-18.html) に準拠する必要があります。 これによって、次のことが起こります。
+<span data-ttu-id="b85f9-449">名前空間、型、メンバーの名前など、プログラミング言語の識別子は [Unicode Standard 3.0 の Technical Report 15 の Annex 7](http://www.unicode.org/reports/tr15/tr15-18.html) に準拠する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-449">Programming language identifiers, such as the names of namespaces, types, and members, must conform to the [Unicode Standard 3.0, Technical Report 15, Annex 7](http://www.unicode.org/reports/tr15/tr15-18.html).</span></span> <span data-ttu-id="b85f9-450">これによって、次のことが起こります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-450">This means that:</span></span>
 
-* 識別子の最初の文字は Unicode の大文字と小文字、大文字と小文字の組み合わせ、修飾子文字、その他の文字、または文字数の番号を指定できます。 Unicode 文字のカテゴリの詳細については、「[System.Globalization.UnicodeCategory](xref:System.Globalization.UnicodeCategory) 列挙体」を参照してください。 
+* <span data-ttu-id="b85f9-451">識別子の最初の文字は Unicode の大文字と小文字、大文字と小文字の組み合わせ、修飾子文字、その他の文字、または文字数の番号を指定できます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-451">The first character of an identifier can be any Unicode uppercase letter, lowercase letter, title case letter, modifier letter, other letter, or letter number.</span></span> <span data-ttu-id="b85f9-452">Unicode 文字のカテゴリの詳細については、「[System.Globalization.UnicodeCategory](xref:System.Globalization.UnicodeCategory) 列挙体」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b85f9-452">For information on Unicode character categories, see the [System.Globalization.UnicodeCategory](xref:System.Globalization.UnicodeCategory) enumeration.</span></span> 
 
-* 2 文字目以降には、最初の文字で使用できる文字のほかに、非空白記号、空白結合記号、10 進数、接続符号、書式指定コードを使用できます。 
+* <span data-ttu-id="b85f9-453">2 文字目以降には、最初の文字で使用できる文字のほかに、非空白記号、空白結合記号、10 進数、接続符号、書式指定コードを使用できます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-453">Subsequent characters can be from any of the categories as the first character, and can also include non-spacing marks, spacing combining marks, decimal numbers, connector punctuations, and formatting codes.</span></span> 
 
-識別子を比較する場合は、その前に書式設定コードを除外してから、識別子を Unicode 正規形 C に変換する必要があります。これは 1 つの文字を、UTF-16 でエンコードされた複数のコード単位で表すことができるからです。 同じコード単位を Unicode 正規形 C で生成する文字シーケンスは CLS に準拠していません。 次の例では、オングストローム文字 (U+212B) である `Å` という名前のプロパティを定義し、次に、上に丸が付く LATIN の大文字 A (U+00C5) である `Å` という名前のプロパティを定義します。 C# コンパイラは、ソース コードを CLS 非準拠としてフラグします。
+<span data-ttu-id="b85f9-454">識別子を比較する場合は、その前に書式設定コードを除外してから、識別子を Unicode 正規形 C に変換する必要があります。これは 1 つの文字を、UTF-16 でエンコードされた複数のコード単位で表すことができるからです。</span><span class="sxs-lookup"><span data-stu-id="b85f9-454">Before you compare identifiers, you should filter out formatting codes and convert the identifiers to Unicode Normalization Form C, because a single character can be represented by multiple UTF-16-encoded code units.</span></span> <span data-ttu-id="b85f9-455">同じコード単位を Unicode 正規形 C で生成する文字シーケンスは CLS に準拠していません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-455">Character sequences that produce the same code units in Unicode Normalization Form C are not CLS-compliant.</span></span> <span data-ttu-id="b85f9-456">次の例では、オングストローム文字 (U+212B) である `Å` という名前のプロパティを定義し、次に、上に丸が付く LATIN の大文字 A (U+00C5) である `Å` という名前のプロパティを定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-456">The following example defines a property named `Å`, which consists of the character ANGSTROM SIGN (U+212B), and a second property named `Å` which consists of the character LATIN CAPITAL LETTER A WITH RING ABOVE (U+00C5).</span></span> <span data-ttu-id="b85f9-457">C# コンパイラは、ソース コードを CLS 非準拠としてフラグします。</span><span class="sxs-lookup"><span data-stu-id="b85f9-457">The C# compiler flags the source code as non-CLS-compliant.</span></span>
 
 ```csharp
 public class Size
@@ -683,13 +684,13 @@ End Class
 '                       ~
 ```
 
-特定のスコープ内のメンバー名 (アセンブリ内の名前空間、名前空間内の型、型内のメンバーなど) は一意である必要があります。ただし、オーバーロードによって解決される名前は除きます。 この要件は、共通型システムの要件よりも厳格です。共通型システムでは、スコープ内のメンバーは種類が異なっていれば、たとえば、種類がメソッドのメンバーとフィールドのメンバーは、同じ名前を持つことができます。 特に、型メンバーの場合は次の要件もあります。 
+<span data-ttu-id="b85f9-458">特定のスコープ内のメンバー名 (アセンブリ内の名前空間、名前空間内の型、型内のメンバーなど) は一意である必要があります。ただし、オーバーロードによって解決される名前は除きます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-458">Member names within a particular scope (such as the namespaces within an assembly, the types within a namespace, or the members within a type) must be unique except for names that are resolved through overloading.</span></span> <span data-ttu-id="b85f9-459">この要件は、共通型システムの要件よりも厳格です。共通型システムでは、スコープ内のメンバーは種類が異なっていれば、たとえば、種類がメソッドのメンバーとフィールドのメンバーは、同じ名前を持つことができます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-459">This requirement is more stringent than that of the common type system, which allows multiple members within a scope to have identical names as long as they are different kinds of members (for example, one is a method and one is a field).</span></span> <span data-ttu-id="b85f9-460">特に、型メンバーの場合は次の要件もあります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-460">In particular, for type members:</span></span> 
 
-* フィールドと入れ子になった型は名前でのみ識別されます。 
+* <span data-ttu-id="b85f9-461">フィールドと入れ子になった型は名前でのみ識別されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-461">Fields and nested types are distinguished by name alone.</span></span> 
 
-* 名前が同じメソッド、プロパティ、およびイベントは、戻り値の型以外で区別できるようにする必要があります。 
+* <span data-ttu-id="b85f9-462">名前が同じメソッド、プロパティ、およびイベントは、戻り値の型以外で区別できるようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-462">Methods, properties, and events that have the same name must differ by more than just return type.</span></span> 
 
-次の例は、メンバー名がスコープ内で一意でなければならない要件を示しています。 ここでは、`Converter` という名前の 4 つのメンバーを含む `Conversion` という名前のクラスを定義します。 3 つがメソッドで、1 つはプロパティです。 `Int64` パラメーターを含むメソッドには一意の名前が付けられますが、`Int32` パラメーターが指定された 2 つのメソッドには一意の名前は付けられません。これは戻り値がメンバーのシグネチャの一部と見なされないからです。 また、`Conversion` プロパティもこの要件に違反しています。プロパティの名前は、オーバーロードされたメソッドと同じにできないからです。 
+<span data-ttu-id="b85f9-463">次の例は、メンバー名がスコープ内で一意でなければならない要件を示しています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-463">The following example illustrates the requirement that member names must be unique within their scope.</span></span> <span data-ttu-id="b85f9-464">ここでは、`Converter` という名前の 4 つのメンバーを含む `Conversion` という名前のクラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-464">It defines a class named `Converter` that includes four members named `Conversion`.</span></span> <span data-ttu-id="b85f9-465">3 つがメソッドで、1 つはプロパティです。</span><span class="sxs-lookup"><span data-stu-id="b85f9-465">Three are methods, and one is a property.</span></span> <span data-ttu-id="b85f9-466">`Int64` パラメーターを含むメソッドには一意の名前が付けられますが、`Int32` パラメーターが指定された 2 つのメソッドには一意の名前は付けられません。これは戻り値がメンバーのシグネチャの一部と見なされないからです。</span><span class="sxs-lookup"><span data-stu-id="b85f9-466">The method that includes an `Int64` parameter is uniquely named, but the two methods with an `Int32` parameter are not, because return value is not considered a part of a member's signature.</span></span> <span data-ttu-id="b85f9-467">また、`Conversion` プロパティもこの要件に違反しています。プロパティの名前は、オーバーロードされたメソッドと同じにできないからです。</span><span class="sxs-lookup"><span data-stu-id="b85f9-467">The `Conversion` property also violates this requirement, because properties cannot have the same name as overloaded methods.</span></span> 
 
 ```csharp
 using System;
@@ -763,7 +764,7 @@ End Class
 '                                ~~~~~~~~~~
 ```
 
-個々の言語に一意のキーワードが含まれるので、共通言語ランタイムを対象にする言語も、キーワードと一致する識別子 (型名など) を参照するための機構を用意する必要があります。 たとえば、`case` は、C# と Visual Basic のキーワードです。 ただし、次の Visual Basic コード例では、左右の中かっこを使用して、`case` キーワードと `case` という名前のクラスを明確に区別できます。 それ以外の場合は、エラー メッセージ "キーワードは、識別子として有効ではありません" が表示され、コンパイルできません。 
+<span data-ttu-id="b85f9-468">個々の言語に一意のキーワードが含まれるので、共通言語ランタイムを対象にする言語も、キーワードと一致する識別子 (型名など) を参照するための機構を用意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-468">Individual languages include unique keywords, so languages that target the common language runtime must also provide some mechanism for referencing identifiers (such as type names) that coincide with keywords.</span></span> <span data-ttu-id="b85f9-469">たとえば、`case` は、C# と Visual Basic のキーワードです。</span><span class="sxs-lookup"><span data-stu-id="b85f9-469">For example, `case` is a keyword in both C# and Visual Basic.</span></span> <span data-ttu-id="b85f9-470">ただし、次の Visual Basic コード例では、左右の中かっこを使用して、`case` キーワードと `case` という名前のクラスを明確に区別できます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-470">However, the following Visual Basic example is able to disambiguate a class named `case` from the `case` keyword by using opening and closing braces.</span></span> <span data-ttu-id="b85f9-471">それ以外の場合は、エラー メッセージ "キーワードは、識別子として有効ではありません" が表示され、コンパイルできません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-471">Otherwise, the example would produce the error message, "Keyword is not valid as an identifier," and fail to compile.</span></span> 
 
 ```vb
 Public Class [case]
@@ -783,7 +784,7 @@ Public Class [case]
 End Class
 ```
 
-次の C# コード例では、@ シンボルを使用して `case` クラスをインスタンス化することで、識別子と言語キーワードを区別できます。 これがないと、C# コンパイラによって 2 つのエラー メッセージ "型が必要です" および "'case' は無効です" が表示されます。 
+<span data-ttu-id="b85f9-472">次の C# コード例では、@ シンボルを使用して `case` クラスをインスタンス化することで、識別子と言語キーワードを区別できます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-472">The following C# example is able to instantiate the `case` class by using the @ symbol to disambiguate the identifier from the language keyword.</span></span> <span data-ttu-id="b85f9-473">これがないと、C# コンパイラによって 2 つのエラー メッセージ "型が必要です" および "'case' は無効です" が表示されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-473">Without it, the C# compiler would display two error messages, "Type expected" and "Invalid expression term 'case'."</span></span> 
 
 ```csharp
 using System;
@@ -798,17 +799,17 @@ public class Example
 }
 ```
 
-### <a name="type-conversion"></a>型変換
+### <a name="type-conversion"></a><span data-ttu-id="b85f9-474">型変換</span><span class="sxs-lookup"><span data-stu-id="b85f9-474">Type conversion</span></span>
 
-共通言語仕様では、次の 2 つの変換演算子が定義されます。
+<span data-ttu-id="b85f9-475">共通言語仕様では、次の 2 つの変換演算子が定義されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-475">The Common Language Specification defines two conversion operators:</span></span>
 
-* `op_Implicit`。データまたは精度の損失につながらない拡大変換に使用されます。 たとえば、[Decimal](xref:System.Decimal) 構造体には、整数型の値と [Char](xref:System.Char) 値を `Decimal` 値に変換できるように、オーバーロードされた `op_Implicit` 演算子が含まれます。 
+* <span data-ttu-id="b85f9-476">`op_Implicit`。データまたは精度の損失につながらない拡大変換に使用されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-476">`op_Implicit`, which is used for widening conversions that do not result in loss of data or precision.</span></span> <span data-ttu-id="b85f9-477">たとえば、[Decimal](xref:System.Decimal) 構造体には、整数型の値と [Char](xref:System.Char) 値を `Decimal` 値に変換できるように、オーバーロードされた `op_Implicit` 演算子が含まれます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-477">For example, the [Decimal](xref:System.Decimal) structure includes an overloaded `op_Implicit` operator to convert values of integral types and [Char](xref:System.Char) values to `Decimal` values.</span></span> 
 
-* `op_Explicit`。絶対値 (狭い範囲の値に変換される値) または精度の損失につながる可能性がある縮小変換に使用されます。 たとえば、`Decimal` 構造体には、[Double](xref:System.Double) 値と [Single](xref:System.Single) 値を `Decimal` に変換し、`Decimal` 値を整数値、`Double`、`Single`、および `Char` に変換できるように、オーバーロードされた `op_Explicit` 演算子が含まれます。 
+* <span data-ttu-id="b85f9-478">`op_Explicit`。絶対値 (狭い範囲の値に変換される値) または精度の損失につながる可能性がある縮小変換に使用されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-478">`op_Explicit`, which is used for narrowing conversions that can result in loss of magnitude (a value is converted to a value that has a smaller range) or precision.</span></span> <span data-ttu-id="b85f9-479">たとえば、`Decimal` 構造体には、[Double](xref:System.Double) 値と [Single](xref:System.Single) 値を `Decimal` に変換し、`Decimal` 値を整数値、`Double`、`Single`、および `Char` に変換できるように、オーバーロードされた `op_Explicit` 演算子が含まれます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-479">For example, the `Decimal` structure includes an overloaded `op_Explicit` operator to convert [Double](xref:System.Double) and [Single](xref:System.Single) values to `Decimal` and to convert `Decimal` values to integral values, `Double`, `Single`, and `Char`.</span></span> 
 
-ただし、すべての言語で、演算子のオーバーロードまたはカスタム演算子の定義がサポートされているわけではありません。 これらの変換演算子を実装する場合は、他の方法で変換を実行する方法も用意する必要があります。 ここでは、`From`Xxx メソッドおよび`To`Xxx メソッドを用意することをお勧めします。 
+<span data-ttu-id="b85f9-480">ただし、すべての言語で、演算子のオーバーロードまたはカスタム演算子の定義がサポートされているわけではありません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-480">However, not all languages support operator overloading or the definition of custom operators.</span></span> <span data-ttu-id="b85f9-481">これらの変換演算子を実装する場合は、他の方法で変換を実行する方法も用意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-481">If you choose to implement these conversion operators, you should also provide an alternate way to perform the conversion.</span></span> <span data-ttu-id="b85f9-482">ここでは、`From`Xxx メソッドおよび`To`Xxx メソッドを用意することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b85f9-482">We recommend that you provide `From`Xxx and `To`Xxx methods.</span></span> 
 
-次の例では、CLS に準拠する暗黙的な変換と明示的な変換を定義します。 ここでは、符号付き倍精度浮動小数点数を表す `UDouble` クラスを作成します。 暗黙的な変換については、`UDouble` から `Double`、明示的な変換については、`UDouble` から `Single`、`Double` から `UDouble`、および `Single` から `UDouble` への例を示しています。 また、暗黙的な変換演算子の代替として `ToDouble` メソッドを、明示的な変換演算子の代替として `ToSingle`、`FromDouble`、`FromSingle` の各メソッドを定義します。 
+<span data-ttu-id="b85f9-483">次の例では、CLS に準拠する暗黙的な変換と明示的な変換を定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-483">The following example defines CLS-compliant implicit and explicit conversions.</span></span> <span data-ttu-id="b85f9-484">ここでは、符号付き倍精度浮動小数点数を表す `UDouble` クラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-484">It creates a `UDouble` class that represents an signed double-precision, floating-point number.</span></span> <span data-ttu-id="b85f9-485">暗黙的な変換については、`UDouble` から `Double`、明示的な変換については、`UDouble` から `Single`、`Double` から `UDouble`、および `Single` から `UDouble` への例を示しています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-485">It provides for implicit conversions from `UDouble` to `Double` and for explicit conversions from `UDouble` to `Single`, `Double` to `UDouble`, and `Single` to `UDouble`.</span></span> <span data-ttu-id="b85f9-486">また、暗黙的な変換演算子の代替として `ToDouble` メソッドを、明示的な変換演算子の代替として `ToSingle`、`FromDouble`、`FromSingle` の各メソッドを定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-486">It also defines a `ToDouble` method as an alternative to the implicit conversion operator and the `ToSingle`, `FromDouble`, and `FromSingle` methods as alternatives to the explicit conversion operators.</span></span> 
 
 ```csharp
 using System;
@@ -951,11 +952,11 @@ Public Structure UDouble
 End Structure
 ```
 
-### <a name="arrays"></a>配列
+### <a name="arrays"></a><span data-ttu-id="b85f9-487">配列</span><span class="sxs-lookup"><span data-stu-id="b85f9-487">Arrays</span></span>
 
-CLS 準拠の配列は、次の規則に従います。 
+<span data-ttu-id="b85f9-488">CLS 準拠の配列は、次の規則に従います。</span><span class="sxs-lookup"><span data-stu-id="b85f9-488">CLS-compliant arrays conform to the following rules:</span></span> 
 
-* 配列の次元の下限値は 0 にする必要があります。 次の例では、下限が 1 の CLS 非準拠の配列を作成します。 [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) 属性の有無に関係なく、コンパイラでは、`Numbers.GetTenPrimes` メソッドによって返される配列が CLS に準拠していないことは検出されません。 
+* <span data-ttu-id="b85f9-489">配列の次元の下限値は 0 にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-489">All dimensions of an array must have a lower bound of zero.</span></span> <span data-ttu-id="b85f9-490">次の例では、下限が 1 の CLS 非準拠の配列を作成します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-490">The following example creates a non-CLS-compliant array with a lower bound of one.</span></span> <span data-ttu-id="b85f9-491">[CLSCompliantAttribute](xref:System.CLSCompliantAttribute) 属性の有無に関係なく、コンパイラでは、`Numbers.GetTenPrimes` メソッドによって返される配列が CLS に準拠していないことは検出されません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-491">Note that, despite the presence of the [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) attribute, the compiler does not detect that the array returned by the `Numbers.GetTenPrimes` method is not CLS-compliant.</span></span> 
 
   ```csharp
   [assembly: CLSCompliant(true)]
@@ -1002,7 +1003,7 @@ CLS 準拠の配列は、次の規則に従います。
   End Class
   ```
 
-* すべての配列の要素が、CLS 準拠の型で構成されている必要があります。 次の例では、CLS 非準拠の配列を返す 2 つのメソッドを定義します。 最初のメソッドは、[UInt32](xref:System.UInt32) 値の配列を返します。 2 番目のメソッドは [Int32](xref:System.Int32) 値と `UInt32` 値を含む[Object](xref:System.Object) 配列を返します。 最初の配列は `UInt32` 型であるため、コンパイラによって非準拠として識別されますが、2 番目の配列に CLS 非準拠の要素が含まれていることは認識されません。 
+* <span data-ttu-id="b85f9-492">すべての配列の要素が、CLS 準拠の型で構成されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-492">All array elements must consist of CLS-compliant types.</span></span> <span data-ttu-id="b85f9-493">次の例では、CLS 非準拠の配列を返す 2 つのメソッドを定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-493">The following example defines two methods that return non-CLS-compliant arrays.</span></span> <span data-ttu-id="b85f9-494">最初のメソッドは、[UInt32](xref:System.UInt32) 値の配列を返します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-494">The first returns an array of [UInt32](xref:System.UInt32) values.</span></span> <span data-ttu-id="b85f9-495">2 番目のメソッドは [Int32](xref:System.Int32) 値と `UInt32` 値を含む[Object](xref:System.Object) 配列を返します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-495">The second returns an [Object](xref:System.Object) array that includes [Int32](xref:System.Int32) and `UInt32` values.</span></span> <span data-ttu-id="b85f9-496">最初の配列は `UInt32` 型であるため、コンパイラによって非準拠として識別されますが、2 番目の配列に CLS 非準拠の要素が含まれていることは認識されません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-496">Although the compiler identifies the first array as non-compliant because of its `UInt32` type, it fails to recognize that the second array includes non-CLS-compliant elements.</span></span> 
 
   ```csharp
   using System;
@@ -1044,7 +1045,7 @@ CLS 準拠の配列は、次の規則に従います。
   '    warning BC40027: Return type of function 'GetTenPrimes' is not CLS-compliant.
   ```                             
 
-* 配列パラメーターを持つメソッドのオーバーロードの解決は、配列であるという事実とその要素型に基づきます。 したがって、次のオーバーロードされた `GetSquares` メソッドの定義は CLS に準拠しています。 
+* <span data-ttu-id="b85f9-497">配列パラメーターを持つメソッドのオーバーロードの解決は、配列であるという事実とその要素型に基づきます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-497">Overload resolution for methods that have array parameters is based on the fact that they are arrays and on their element type.</span></span> <span data-ttu-id="b85f9-498">したがって、次のオーバーロードされた `GetSquares` メソッドの定義は CLS に準拠しています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-498">For this reason, the following definition of an overloaded `GetSquares` method is CLS-compliant.</span></span> 
 
   ```csharp
   using System;
@@ -1112,15 +1113,15 @@ CLS 準拠の配列は、次の規則に従います。
   End Module
   ```
 
-### <a name="interfaces"></a>インターフェイス
+### <a name="interfaces"></a><span data-ttu-id="b85f9-499">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="b85f9-499">Interfaces</span></span>
 
-CLS 準拠のインターフェイスでは、プロパティ、イベント、および仮想メソッド (実装のないメソッド) を定義できます。 次の項目は、このインターフェイスには指定できません。 
+<span data-ttu-id="b85f9-500">CLS 準拠のインターフェイスでは、プロパティ、イベント、および仮想メソッド (実装のないメソッド) を定義できます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-500">CLS-compliant interfaces can define properties, events, and virtual methods (methods with no implementation).</span></span> <span data-ttu-id="b85f9-501">次の項目は、このインターフェイスには指定できません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-501">A CLS-compliant interface cannot have any of the following:</span></span> 
 
-* 静的メソッドまたは静的フィールド。 インターフェイスで静的メンバーを定義すると、C# コンパイラでコンパイラ エラーが発生します。 
+* <span data-ttu-id="b85f9-502">静的メソッドまたは静的フィールド。</span><span class="sxs-lookup"><span data-stu-id="b85f9-502">Static methods or static fields.</span></span> <span data-ttu-id="b85f9-503">インターフェイスで静的メンバーを定義すると、C# コンパイラでコンパイラ エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-503">The C# compiler generatse compiler errors if you define a static member in an interface.</span></span> 
 
-* フィールド。 インターフェイスでフィールドを定義すると、C# コンパイラでコンパイラ エラーが発生します。
+* <span data-ttu-id="b85f9-504">フィールド。</span><span class="sxs-lookup"><span data-stu-id="b85f9-504">Fields.</span></span> <span data-ttu-id="b85f9-505">インターフェイスでフィールドを定義すると、C# コンパイラでコンパイラ エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-505">The C# acompiler generates compiler errors if you define a field in an interface.</span></span>
 
-* CLS に準拠していないメソッド。 たとえば、次のインターフェイス定義には、CLS 非準拠とマークされているメソッド、`INumber.GetUnsigned` が含まれています。 この例では、コンパイラの警告が生成されます。 
+* <span data-ttu-id="b85f9-506">CLS に準拠していないメソッド。</span><span class="sxs-lookup"><span data-stu-id="b85f9-506">Methods that are not CLS-compliant.</span></span> <span data-ttu-id="b85f9-507">たとえば、次のインターフェイス定義には、CLS 非準拠とマークされているメソッド、`INumber.GetUnsigned` が含まれています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-507">For example, the following interface definition includes a method, `INumber.GetUnsigned`, that is marked as non-CLS-compliant.</span></span> <span data-ttu-id="b85f9-508">この例では、コンパイラの警告が生成されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-508">This example generates a compiler warning.</span></span> 
 
   ```csharp
   using System;
@@ -1152,9 +1153,9 @@ CLS 準拠のインターフェイスでは、プロパティ、イベント、�
     '                                      ~~~~~~~~~~~
   ```
 
-  この規則のため、CLS に準拠している型は、CLS に準拠していないメンバーを実装する必要はありません。 CLS 準拠のフレームワークによって、CLS に非準拠のインターフェイスを実装するクラスが公開されている場合、そのフレームワークには、CLS 非準拠のすべてのメンバーの具象実装も用意する必要があります。 
+  <span data-ttu-id="b85f9-509">この規則のため、CLS に準拠している型は、CLS に準拠していないメンバーを実装する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-509">Because of this rule, CLS-compliant types are not required to implement non-CLS-compliant members.</span></span> <span data-ttu-id="b85f9-510">CLS 準拠のフレームワークによって、CLS に非準拠のインターフェイスを実装するクラスが公開されている場合、そのフレームワークには、CLS 非準拠のすべてのメンバーの具象実装も用意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-510">If a CLS-compliant framework does expose a class that implements a non-CLS compliant interface, it should also provide concrete implementations of all non-CLS-compliant members.</span></span> 
 
-CLS 準拠の言語コンパイラでは、クラスによって、複数のインターフェイスにある同じ名前およびシグネチャを持つメンバーを個別に実装できるようにすることも必要です。 C# は明示的なインターフェイス実装をサポートしており、同じ名前を持つメソッドを別々に実装できます。 次の例は、明示的なインターフェイス実装として `Temperature` インターフェイスおよび `ICelsius` インターフェイスを実装する `IFahrenheit` クラスを定義することで、このシナリオを示しています。 
+<span data-ttu-id="b85f9-511">CLS 準拠の言語コンパイラでは、クラスによって、複数のインターフェイスにある同じ名前およびシグネチャを持つメンバーを個別に実装できるようにすることも必要です。</span><span class="sxs-lookup"><span data-stu-id="b85f9-511">CLS-compliant language compilers must also allow a class to provide separate implementations of members that have the same name and signature in multiple interfaces.</span></span> <span data-ttu-id="b85f9-512">C# は明示的なインターフェイス実装をサポートしており、同じ名前を持つメソッドを別々に実装できます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-512">C# supports explicit interface implementations to provide different implementations of identically named methods.</span></span> <span data-ttu-id="b85f9-513">次の例は、明示的なインターフェイス実装として `Temperature` インターフェイスおよび `ICelsius` インターフェイスを実装する `IFahrenheit` クラスを定義することで、このシナリオを示しています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-513">The following example illustrates this scenario by defining a `Temperature` class that implements the `ICelsius` and `IFahrenheit` interfaces as explicit interface implementations.</span></span> 
 
 ```csharp
 using System;
@@ -1253,11 +1254,11 @@ End Module
 '       Temperature in Fahrenheit: 212.0 degrees
 ```
 
-### <a name="enumerations"></a>列挙体
+### <a name="enumerations"></a><span data-ttu-id="b85f9-514">列挙体</span><span class="sxs-lookup"><span data-stu-id="b85f9-514">Enumerations</span></span>
 
-CLS 準拠の列挙型は、次の規則に従う必要があります。 
+<span data-ttu-id="b85f9-515">CLS 準拠の列挙型は、次の規則に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-515">CLS-compliant enumerations must follow these rules:</span></span> 
 
-* 列挙体の基になる型は、組み込みの CLS 準拠の整数 ([Byte](xref:System.Byte)、[Int16](xref:System.Int16)、[Int32](xref:System.Int32)、または [Int64](xref:System.Int64)) である必要があります。 たとえば、次のコードでは、基になる型が [UInt32](xref:System.UInt32) の列挙体を定義しようとしますが、コンパイラの警告が生成されます。 
+* <span data-ttu-id="b85f9-516">列挙体の基になる型は、組み込みの CLS 準拠の整数 ([Byte](xref:System.Byte)、[Int16](xref:System.Int16)、[Int32](xref:System.Int32)、または [Int64](xref:System.Int64)) である必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-516">The underlying type of the enumeration must be an intrinsic CLS-compliant integer ([Byte](xref:System.Byte), [Int16](xref:System.Int16), [Int32](xref:System.Int32), or [Int64](xref:System.Int64)).</span></span> <span data-ttu-id="b85f9-517">たとえば、次のコードでは、基になる型が [UInt32](xref:System.UInt32) の列挙体を定義しようとしますが、コンパイラの警告が生成されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-517">For example, the following code tries to define an enumeration whose underlying type is [UInt32](xref:System.UInt32) and generates a compiler warning.</span></span> 
 
     ```csharp
     using System;
@@ -1307,31 +1308,31 @@ CLS 準拠の列挙型は、次の規則に従う必要があります。
     '                ~~~~
     ```
 
-* 列挙型には、`Value__` 属性でマークされた `FieldAttributes.RTSpecialName` という名前の単一インスタンス フィールドが必要です。 これにより、フィールド値を暗黙的に参照できます。 
+* <span data-ttu-id="b85f9-518">列挙型には、`Value__` 属性でマークされた `FieldAttributes.RTSpecialName` という名前の単一インスタンス フィールドが必要です。</span><span class="sxs-lookup"><span data-stu-id="b85f9-518">An enumeration type must have a single instance field named `Value__` that is marked with the `FieldAttributes.RTSpecialName` attribute.</span></span> <span data-ttu-id="b85f9-519">これにより、フィールド値を暗黙的に参照できます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-519">This enables you to reference the field value implicitly.</span></span> 
 
-* 列挙体には、その列挙体自体の型と同じ型を持つリテラルな静的フィールドが含まれます。 たとえば、`State` および `State.On` の値を持つ `State.Off` 列挙体を定義すると、`State.On` と `State.Off` は両方ともリテラルな静的フィールドで、その型は `State` です。 
+* <span data-ttu-id="b85f9-520">列挙体には、その列挙体自体の型と同じ型を持つリテラルな静的フィールドが含まれます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-520">An enumeration includes literal static fields whose types match the type of the enumeration itself.</span></span> <span data-ttu-id="b85f9-521">たとえば、`State` および `State.On` の値を持つ `State.Off` 列挙体を定義すると、`State.On` と `State.Off` は両方ともリテラルな静的フィールドで、その型は `State` です。</span><span class="sxs-lookup"><span data-stu-id="b85f9-521">For example, if you define a `State` enumeration with values of `State.On` and `State.Off`, `State.On` and `State.Off` are both literal static fields whose type is `State`.</span></span> 
 
-* 列挙体は 2 種類あります。 
+* <span data-ttu-id="b85f9-522">列挙体は 2 種類あります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-522">There are two kinds of enumerations:</span></span> 
     
-    * 同時に指定できない一連の名前付き整数値を表す列挙体。 この列挙体の型は、[System.FlagsAttribute](xref:System.FlagsAttribute) カスタム属性が存在しないことによって示されます。
+    * <span data-ttu-id="b85f9-523">同時に指定できない一連の名前付き整数値を表す列挙体。</span><span class="sxs-lookup"><span data-stu-id="b85f9-523">An enumeration that represents a set of mutually exclusive, named integer values.</span></span> <span data-ttu-id="b85f9-524">この列挙体の型は、[System.FlagsAttribute](xref:System.FlagsAttribute) カスタム属性が存在しないことによって示されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-524">This type of enumeration is indicated by the absence of the [System.FlagsAttribute](xref:System.FlagsAttribute) custom attribute.</span></span>
     
-    * 名前のない値を生成するために結合できる一連のビット フラグを表す列挙体。 この列挙体の型は、 [System.FlagsAttribute](xref:System.FlagsAttribute) カスタム属性が存在することによって示されます。
+    * <span data-ttu-id="b85f9-525">名前のない値を生成するために結合できる一連のビット フラグを表す列挙体。</span><span class="sxs-lookup"><span data-stu-id="b85f9-525">An enumeration that represents a set of bit flags that can combine to generate an unnamed value.</span></span> <span data-ttu-id="b85f9-526">この列挙体の型は、 [System.FlagsAttribute](xref:System.FlagsAttribute) カスタム属性が存在することによって示されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-526">This type of enumeration is indicated by the presence of the [System.FlagsAttribute](xref:System.FlagsAttribute) custom attribute.</span></span>
     
- 詳細については、[Enum](xref:System.Enum) 構造体のドキュメントを参照してください。 
+ <span data-ttu-id="b85f9-527">詳細については、[Enum](xref:System.Enum) 構造体のドキュメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="b85f9-527">For more information, see the documentation for the [Enum](xref:System.Enum) structure.</span></span> 
 
-* 列挙体の値は、その列挙体の指定された値に限定されません。 つまり、列挙体の値の範囲は、その列挙体の基になる値の範囲です。 `Enum.IsDefined` メソッドを使用すると、指定された値が列挙体のメンバーかどうかを確認できます。 
+* <span data-ttu-id="b85f9-528">列挙体の値は、その列挙体の指定された値に限定されません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-528">The value of an enumeration is not limited to the range of its specified values.</span></span> <span data-ttu-id="b85f9-529">つまり、列挙体の値の範囲は、その列挙体の基になる値の範囲です。</span><span class="sxs-lookup"><span data-stu-id="b85f9-529">In other words, the range of values in an enumeration is the range of its underlying value.</span></span> <span data-ttu-id="b85f9-530">`Enum.IsDefined` メソッドを使用すると、指定された値が列挙体のメンバーかどうかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-530">You can use the `Enum.IsDefined` method to determine whether a specified value is a member of an enumeration.</span></span> 
 
-### <a name="type-members-in-general"></a>一般的な型メンバー
+### <a name="type-members-in-general"></a><span data-ttu-id="b85f9-531">一般的な型メンバー</span><span class="sxs-lookup"><span data-stu-id="b85f9-531">Type members in general</span></span>
 
-共通言語仕様では、すべてのフィールドとメソッドに、特定のクラスのメンバーとしてアクセスする必要があります。 したがって、グローバルな静的フィールドおよび静的メソッド (つまり、型とは別に定義された静的フィールドまたは静的メソッド) は CLS に準拠していません。 グローバル フィールドまたはグローバル メソッドをソース コードに追加しようとすると、C# コンパイラでコンパイラ エラーが発生します。 
+<span data-ttu-id="b85f9-532">共通言語仕様では、すべてのフィールドとメソッドに、特定のクラスのメンバーとしてアクセスする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-532">The Common Language Specification requires all fields and methods to be accessed as members of a particular class.</span></span> <span data-ttu-id="b85f9-533">したがって、グローバルな静的フィールドおよび静的メソッド (つまり、型とは別に定義された静的フィールドまたは静的メソッド) は CLS に準拠していません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-533">Therefore, global static fields and methods (that is, static fields or methods that are defined apart from a type) are not CLS-compliant.</span></span> <span data-ttu-id="b85f9-534">グローバル フィールドまたはグローバル メソッドをソース コードに追加しようとすると、C# コンパイラでコンパイラ エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-534">If you try to include a global field or method in your source code, the C# compiler generates a compiler error.</span></span> 
 
-共通言語仕様では、標準のマネージ呼び出し規則のみがサポートされます。 アンマネージ呼び出し規約と、`varargs` キーワードでマークされた可変個引数リストを持つメソッドはサポートされません。 標準のマネージ呼び出し規則と互換性がある可変個引数リストについては、[ParamArrayAttribute](xref:System.ParamArrayAttribute) 属性、または `params` キーワード (C# の場合)、`ParamArray` キーワード (Visual Basic の場合) などの個々の言語の実装を使用します。 
+<span data-ttu-id="b85f9-535">共通言語仕様では、標準のマネージ呼び出し規則のみがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-535">The Common Language Specification supports only the standard managed calling convention.</span></span> <span data-ttu-id="b85f9-536">アンマネージ呼び出し規約と、`varargs` キーワードでマークされた可変個引数リストを持つメソッドはサポートされません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-536">It doesn't support unmanaged calling conventions and methods with variable argument lists marked with the `varargs` keyword.</span></span> <span data-ttu-id="b85f9-537">標準のマネージ呼び出し規則と互換性がある可変個引数リストについては、[ParamArrayAttribute](xref:System.ParamArrayAttribute) 属性、または `params` キーワード (C# の場合)、`ParamArray` キーワード (Visual Basic の場合) などの個々の言語の実装を使用します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-537">For variable argument lists that are compatible with the standard managed calling convention, use the [ParamArrayAttribute](xref:System.ParamArrayAttribute) attribute or the individual language's implementation, such as the `params` keyword in C# and the `ParamArray` keyword in Visual Basic.</span></span> 
 
-### <a name="member-accessibility"></a>メンバーのアクセシビリティ
+### <a name="member-accessibility"></a><span data-ttu-id="b85f9-538">メンバーのアクセシビリティ</span><span class="sxs-lookup"><span data-stu-id="b85f9-538">Member accessibility</span></span>
 
-継承されたメンバーをオーバーライドしても、そのメンバーのアクセシビリティは変更できません。 たとえば、基底クラスのパブリック メソッドは、派生クラスのプライベート メソッドではオーバーライドできません。 ただし例外が 1 つあります。あるアセンブリ内にある、別のアセンブリの型でオーバーライドされた `protected internal` メンバー (C# の場合) または `Protected Friend` メンバー (Visual Basic の場合) です。  この場合、オーバーライドのアクセシビリティは `Protected` です。 
+<span data-ttu-id="b85f9-539">継承されたメンバーをオーバーライドしても、そのメンバーのアクセシビリティは変更できません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-539">Overriding an inherited member cannot change the accessibility of that member.</span></span> <span data-ttu-id="b85f9-540">たとえば、基底クラスのパブリック メソッドは、派生クラスのプライベート メソッドではオーバーライドできません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-540">For example, a public method in a base class cannot be overridden by a private method in a derived class.</span></span> <span data-ttu-id="b85f9-541">ただし例外が 1 つあります。あるアセンブリ内にある、別のアセンブリの型でオーバーライドされた `protected internal` メンバー (C# の場合) または `Protected Friend` メンバー (Visual Basic の場合) です。</span><span class="sxs-lookup"><span data-stu-id="b85f9-541">There is one exception: a `protected internal` (in C#) or `Protected Friend` (in Visual Basic) member in one assembly that is overridden by a type in a different assembly.</span></span>  <span data-ttu-id="b85f9-542">この場合、オーバーライドのアクセシビリティは `Protected` です。</span><span class="sxs-lookup"><span data-stu-id="b85f9-542">In that case, the accessibility of the override is `Protected`.</span></span> 
 
-次の例は、[CLSCompliantAttribute](xref:System.CLSCompliantAttribute) 属性が `true` に設定されており、`Animal` の派生クラス `Person` が、`Species` プロパティのアクセシビリティをパブリックからプライベートに変更しようとするときに発生するエラーを示しています。 アクセシビリティがパブリックに変更されると、コンパイルが正常に行われます。 
+<span data-ttu-id="b85f9-543">次の例は、[CLSCompliantAttribute](xref:System.CLSCompliantAttribute) 属性が `true` に設定されており、`Animal` の派生クラス `Person` が、`Species` プロパティのアクセシビリティをパブリックからプライベートに変更しようとするときに発生するエラーを示しています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-543">The following example illustrates the error that is generated when the [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) attribute is set to `true`, and `Person`, which is a class derived from `Animal`, tries to change the accessibility of the `Species` property from public to private.</span></span> <span data-ttu-id="b85f9-544">アクセシビリティがパブリックに変更されると、コンパイルが正常に行われます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-544">The example compiles successfully if its accessibility is changed to public.</span></span> 
 
 ```csharp
 using System;
@@ -1457,7 +1458,7 @@ End Module
 '         Private Overrides ReadOnly Property Species As String
 ```
 
-メンバーにアクセスできる場合は必ず、そのメンバーのシグネチャの型にアクセスできなければなりません。 たとえば、これは、パブリック メンバーには、型がプライベート、プロテクト、または内部のパラメーターを含められないことを意味します。 次の例は、`StringWrapper` クラス コンストラクターが、文字列値のラップ方法を決定する内部 `StringOperationType` 列挙値を公開した場合に発生するコンパイラ エラーを示しています。 
+<span data-ttu-id="b85f9-545">メンバーにアクセスできる場合は必ず、そのメンバーのシグネチャの型にアクセスできなければなりません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-545">Types in the signature of a member must be accessible whenever that member is accessible.</span></span> <span data-ttu-id="b85f9-546">たとえば、これは、パブリック メンバーには、型がプライベート、プロテクト、または内部のパラメーターを含められないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-546">For example, this means that a public member cannot include a parameter whose type is private, protected, or internal.</span></span> <span data-ttu-id="b85f9-547">次の例は、`StringWrapper` クラス コンストラクターが、文字列値のラップ方法を決定する内部 `StringOperationType` 列挙値を公開した場合に発生するコンパイラ エラーを示しています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-547">The following example illustrates the compiler error that results when a `StringWrapper` class constructor exposes an internal `StringOperationType` enumeration value that determines how a string value should be wrapped.</span></span> 
 
 ```csharp
 using System;
@@ -1525,11 +1526,11 @@ End Enum
 '                              ~~~~~~~~~~~~~~~~~~~
 ```
 
-### <a name="generic-types-and-members"></a>ジェネリック型とメンバー
+### <a name="generic-types-and-members"></a><span data-ttu-id="b85f9-548">ジェネリック型とメンバー</span><span class="sxs-lookup"><span data-stu-id="b85f9-548">Generic types and members</span></span>
 
-入れ子になった型には、少なくともその外側の型と同じ数のジェネリック パラメーターが必要です。 このジェネリック パラメーターは、外側の型のジェネリック パラメーターに位置によって対応します。 ジェネリック型に新しいジェネリック パラメーターを含めることもできます。 
+<span data-ttu-id="b85f9-549">入れ子になった型には、少なくともその外側の型と同じ数のジェネリック パラメーターが必要です。</span><span class="sxs-lookup"><span data-stu-id="b85f9-549">Nested types always have at least as many generic parameters as their enclosing type.</span></span> <span data-ttu-id="b85f9-550">このジェネリック パラメーターは、外側の型のジェネリック パラメーターに位置によって対応します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-550">These correspond by position to the generic parameters in the enclosing type.</span></span> <span data-ttu-id="b85f9-551">ジェネリック型に新しいジェネリック パラメーターを含めることもできます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-551">The generic type can also include new generic parameters.</span></span> 
 
-外側の型のジェネリック型パラメーターと、その入れ子になった型の関係は、個別の言語構文によって非表示になっていることがあります。 次の例では、入れ子になった 2 つのクラス、`Outer<T>` および `Inner1A` が、ジェネリック型 `Inner1B<U>` に含まれます。 各クラスが `Object.ToString` から継承した `ToString` メソッドへの呼び出しは、入れ子になった各クラスに、その外側のクラスの型パラメーターが含まれていることを示しています。 
+<span data-ttu-id="b85f9-552">外側の型のジェネリック型パラメーターと、その入れ子になった型の関係は、個別の言語構文によって非表示になっていることがあります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-552">The relationship between the generic type parameters of a containing type and its nested types may be hidden by the syntax of individual languages.</span></span> <span data-ttu-id="b85f9-553">次の例では、入れ子になった 2 つのクラス、`Outer<T>` および `Inner1A` が、ジェネリック型 `Inner1B<U>` に含まれます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-553">In the following example, a generic type `Outer<T>` contains two nested classes, `Inner1A` and `Inner1B<U>`.</span></span> <span data-ttu-id="b85f9-554">各クラスが `Object.ToString` から継承した `ToString` メソッドへの呼び出しは、入れ子になった各クラスに、その外側のクラスの型パラメーターが含まれていることを示しています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-554">The calls to the `ToString` method, which each class inherits from `Object.ToString`, show that each nested class includes the type parameters of its containing class.</span></span> 
 
 ```csharp
 using System;
@@ -1626,9 +1627,9 @@ End Module
 '       Outer`1+Inner1B`1[System.String,System.Int32]
 ```
 
-ジェネリック型の名前は、*name*'*n* の形でエンコードされます。ここで、*name* は型の名前、*`* は文字リテラル、*n* は型で宣言されたパラメーターの数 (入れ子になったジェネリック型の場合は新しく導入された型パラメーターの数) です。 ジェネリック型の名前のエンコーディングは、主に、リフレクションを使用してライブラリ内の CLS 準拠のジェネリック型にアクセスする開発者が使用します。 
+<span data-ttu-id="b85f9-555">ジェネリック型の名前は、*name*'*n* の形でエンコードされます。ここで、*name* は型の名前、*\`* は文字リテラル、*n* は型で宣言されたパラメーターの数 (入れ子になったジェネリック型の場合は新しく導入された型パラメーターの数) です。</span><span class="sxs-lookup"><span data-stu-id="b85f9-555">Generic type names are encoded in the form *name*'*n*, where *name* is the type name, *\`* is a character literal, and *n* is the number of parameters declared on the type, or, for nested generic types, the number of newly introduced type parameters.</span></span> <span data-ttu-id="b85f9-556">ジェネリック型の名前のエンコーディングは、主に、リフレクションを使用してライブラリ内の CLS 準拠のジェネリック型にアクセスする開発者が使用します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-556">This encoding of generic type names is primarily of interest to developers who use reflection to access CLS-complaint generic types in a library.</span></span> 
 
-制約がジェネリック型に適用される場合は、制約として使用されるすべての型も CLS に準拠している必要があります。 次の例では、CLS に準拠していない `BaseClass` という名前のクラスと、型パラメーターが `BaseCollection` から派生しなければならない `BaseClass` という名前のジェネリック クラスを定義します。 ただし、`BaseClass` が CLS に準拠していないので、コンパイラによって警告が生成されます。 
+<span data-ttu-id="b85f9-557">制約がジェネリック型に適用される場合は、制約として使用されるすべての型も CLS に準拠している必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-557">If constraints are applied to a generic type, any types used as constraints must also be CLS-compliant.</span></span> <span data-ttu-id="b85f9-558">次の例では、CLS に準拠していない `BaseClass` という名前のクラスと、型パラメーターが `BaseCollection` から派生しなければならない `BaseClass` という名前のジェネリック クラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-558">The following example defines a class named `BaseClass` that is not CLS-compliant and a generic class named `BaseCollection` whose type parameter must derive from `BaseClass`.</span></span> <span data-ttu-id="b85f9-559">ただし、`BaseClass` が CLS に準拠していないので、コンパイラによって警告が生成されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-559">But because `BaseClass` is not CLS-compliant, the compiler emits a warning.</span></span> 
 
 ```csharp
 using System;
@@ -1662,7 +1663,7 @@ End Class
 '                                        ~~~~~~~~~
 ```
 
-ジェネリック型がジェネリック基本型から派生している場合、そのジェネリック型は、基本型に対する制約も必ず満たすように制約を再宣言する必要があります。 次の例では、任意の数値型を表すことができる `Number<T>` を定義します。 また、浮動小数点値を表す `FloatingPoint<T>` クラスも定義します。 ただし、ソース コードはコンパイルされません。`Number<T>` (T は値型) の制約は `FloatingPoint<T>` に適用されないからです。
+<span data-ttu-id="b85f9-560">ジェネリック型がジェネリック基本型から派生している場合、そのジェネリック型は、基本型に対する制約も必ず満たすように制約を再宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-560">If a generic type is derived from a generic base type, it must redeclare any constraints so that it can guarantee that constraints on the base type are also satisfied.</span></span> <span data-ttu-id="b85f9-561">次の例では、任意の数値型を表すことができる `Number<T>` を定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-561">The following example defines a `Number<T>` that can represent any numeric type.</span></span> <span data-ttu-id="b85f9-562">また、浮動小数点値を表す `FloatingPoint<T>` クラスも定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-562">It also defines a `FloatingPoint<T>` class that represents a floating point value.</span></span> <span data-ttu-id="b85f9-563">ただし、ソース コードはコンパイルされません。`Number<T>` (T は値型) の制約は `FloatingPoint<T>` に適用されないからです。</span><span class="sxs-lookup"><span data-stu-id="b85f9-563">However, the source code fails to compile, because it does not apply the constraint on `Number<T>` (that T must be a value type) to `FloatingPoint<T>`.</span></span>
 
 ```csharp
 using System;
@@ -1763,7 +1764,7 @@ End Class
 '                                                          ~
 ```
 
-制約が `FloatingPoint<T>` クラスに追加されると、コンパイルが正常に行われます。
+<span data-ttu-id="b85f9-564">制約が `FloatingPoint<T>` クラスに追加されると、コンパイルが正常に行われます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-564">The example compiles successfully if the constraint is added to the `FloatingPoint<T>` class.</span></span>
 
 ```csharp
 using System;
@@ -1856,9 +1857,9 @@ Public Class FloatingPoint(Of T As Structure) : Inherits Number(Of T)
 End Class
 ```
 
-共通言語仕様では、入れ子になった型とプロテクト メンバーに対して従来のインスタンス化ごとのモデルが適用されます。 オープン ジェネリック型では、フィールドまたはメンバーのシグネチャに、入れ子になったプロテクト ジェネリック型の特定のインスタンス化が含まれている場合、これらのフィールドやメンバーは公開できません。 ジェネリックの基底クラスやインターフェイスについて特定のインスタンス化を拡張する非ジェネリック型では、フィールドまたはメンバーのシグネチャに、入れ子になったプロテクト ジェネリック型の別のインスタンス化が含まれている場合、これらのフィールドやメンバーは公開できません。
+<span data-ttu-id="b85f9-565">共通言語仕様では、入れ子になった型とプロテクト メンバーに対して従来のインスタンス化ごとのモデルが適用されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-565">The Common Language Specification imposes a conservative per-instantiation model for nested types and protected members.</span></span> <span data-ttu-id="b85f9-566">オープン ジェネリック型では、フィールドまたはメンバーのシグネチャに、入れ子になったプロテクト ジェネリック型の特定のインスタンス化が含まれている場合、これらのフィールドやメンバーは公開できません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-566">Open generic types cannot expose fields or members with signatures that contain a specific instantiation of a nested, protected generic type.</span></span> <span data-ttu-id="b85f9-567">ジェネリックの基底クラスやインターフェイスについて特定のインスタンス化を拡張する非ジェネリック型では、フィールドまたはメンバーのシグネチャに、入れ子になったプロテクト ジェネリック型の別のインスタンス化が含まれている場合、これらのフィールドやメンバーは公開できません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-567">Non-generic types that extend a specific instantiation of a generic base class or interface cannot expose fields or members with signatures that contain a different instantiation of a nested, protected generic type.</span></span>
 
-次の例では、ジェネリック型 `C1<T>` およびプロテクト クラス `C1<T>.N` を定義しています。 `C1<T>` には、2 つのメソッド `M1` と `M2` があります。 ただし、`M1` は、`C1<int>.N` オブジェクトを `C1<T>` から返そうとするので、CLS に準拠していません。 2 番目の `C2` クラスは、`C1<long>` から派生しています。 これには、`M3` と `M4` の 2 つのメソッドがあります。 `M3`は、`C1<int>.N` オブジェクトを `C1<long>` のサブクラスから返そうとするので、CLS に準拠していません。 言語コンパイラはさらに制限されている可能性があります。 この例では、Visual Basic で `M4` をコンパイルしようとするとエラーが表示されます。 
+<span data-ttu-id="b85f9-568">次の例では、ジェネリック型 `C1<T>` およびプロテクト クラス `C1<T>.N` を定義しています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-568">The following example defines a generic type, `C1<T>`, and a protected class, `C1<T>.N`.</span></span> <span data-ttu-id="b85f9-569">`C1<T>` には、2 つのメソッド `M1` と `M2` があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-569">`C1<T>` has two methods, `M1` and `M2`.</span></span> <span data-ttu-id="b85f9-570">ただし、`M1` は、`C1<int>.N` オブジェクトを `C1<T>` から返そうとするので、CLS に準拠していません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-570">However, `M1` is not CLS-compliant because it tries to return a `C1<int>.N` object from `C1<T>`.</span></span> <span data-ttu-id="b85f9-571">2 番目の `C2` クラスは、`C1<long>` から派生しています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-571">A second class, `C2`, is derived from `C1<long>`.</span></span> <span data-ttu-id="b85f9-572">これには、`M3` と `M4` の 2 つのメソッドがあります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-572">It has two methods, `M3` and `M4`.</span></span> <span data-ttu-id="b85f9-573">`M3`は、`C1<int>.N` オブジェクトを `C1<long>` のサブクラスから返そうとするので、CLS に準拠していません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-573">`M3` is not CLS-compliant because it tries to return a `C1<int>.N` object from a subclass of `C1<long>`.</span></span> <span data-ttu-id="b85f9-574">言語コンパイラはさらに制限されている可能性があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-574">Note that language compilers can be even more restrictive.</span></span> <span data-ttu-id="b85f9-575">この例では、Visual Basic で `M4` をコンパイルしようとするとエラーが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-575">In this example, Visual Basic displays an error when it tries to compile `M4`.</span></span> 
 
 ```csharp
 using System;
@@ -1931,13 +1932,13 @@ End Class
 '                             ~~~~~~~~~~~~~
 ```
 
-### <a name="constructors"></a>コンストラクター
+### <a name="constructors"></a><span data-ttu-id="b85f9-576">コンストラクター</span><span class="sxs-lookup"><span data-stu-id="b85f9-576">Constructors</span></span>
 
-CLS 準拠のクラスと構造体のコンストラクターは、次の規則に従う必要があります。 
+<span data-ttu-id="b85f9-577">CLS 準拠のクラスと構造体のコンストラクターは、次の規則に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-577">Constructors in CLS-compliant classes and structures must follow these rules:</span></span> 
 
-* 派生クラスのコンストラクターは、継承されたインスタンス データにアクセスする前に、基底クラスのインスタンス コンストラクターを呼び出す必要があります。 これは、基底クラスのコンストラクターは派生クラスには継承されないからです。 この規則は、直接継承をサポートしない構造体に適用されません。 
+* <span data-ttu-id="b85f9-578">派生クラスのコンストラクターは、継承されたインスタンス データにアクセスする前に、基底クラスのインスタンス コンストラクターを呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-578">A constructor of a derived class must call the instance constructor of its base class before it accesses inherited instance data.</span></span> <span data-ttu-id="b85f9-579">これは、基底クラスのコンストラクターは派生クラスには継承されないからです。</span><span class="sxs-lookup"><span data-stu-id="b85f9-579">This requirement is due to the fact that base class constructors are not inherited by their derived classes.</span></span> <span data-ttu-id="b85f9-580">この規則は、直接継承をサポートしない構造体に適用されません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-580">This rule does not apply to structures, which do not support direct inheritance.</span></span> 
 
-  次の例に示すように、コンパイラは、通常、CLS 準拠とは別にこの規則を適用します。 これにより、`Doctor` クラスから派生した `Person` クラスが作成されますが、`Doctor` クラスでは、継承されたインスタンス フィールドを初期化するための `Person` クラス コンストラクターは呼び出されません。 
+  <span data-ttu-id="b85f9-581">次の例に示すように、コンパイラは、通常、CLS 準拠とは別にこの規則を適用します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-581">Typically, compilers enforce this rule independently of CLS compliance, as the following example shows.</span></span> <span data-ttu-id="b85f9-582">これにより、`Doctor` クラスから派生した `Person` クラスが作成されますが、`Doctor` クラスでは、継承されたインスタンス フィールドを初期化するための `Person` クラス コンストラクターは呼び出されません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-582">It creates a `Doctor` class that is derived from a `Person` class, but the `Doctor` class fails to call the `Person` class constructor to initialize inherited instance fields.</span></span> 
 
     ```csharp
     using System;
@@ -2056,34 +2057,34 @@ CLS 準拠のクラスと構造体のコンストラクターは、次の規則�
     '                  ~~~
     ````
     
-* オブジェクト作成以外の目的で、オブジェクト コンストラクターを呼び出すことはできません。 また、オブジェクトを 2 度初期化することもできません。 たとえば、これは `Object.MemberwiseClone` でコンストラクターを呼び出す必要はないことを意味します。  
+* <span data-ttu-id="b85f9-583">オブジェクト作成以外の目的で、オブジェクト コンストラクターを呼び出すことはできません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-583">An object constructor cannot be called except to create an object.</span></span> <span data-ttu-id="b85f9-584">また、オブジェクトを 2 度初期化することもできません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-584">In addition, an object cannot be initialized twice.</span></span> <span data-ttu-id="b85f9-585">たとえば、これは `Object.MemberwiseClone` でコンストラクターを呼び出す必要はないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-585">For example, this means that `Object.MemberwiseClone` must not call constructors.</span></span>  
 
-### <a name="properties"></a>プロパティ
+### <a name="properties"></a><span data-ttu-id="b85f9-586">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b85f9-586">Properties</span></span>
 
-CLS 準拠型のプロパティは、次の規則に従う必要があります。
+<span data-ttu-id="b85f9-587">CLS 準拠型のプロパティは、次の規則に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-587">Properties in CLS-compliant types must follow these rules:</span></span>
 
-* プロパティには setter、getter、またはこの両方が必ず必要です。 アセンブリでは、これらは特殊なメソッドとして実装されます。つまり、アセンブリのメタデータで "SpecialName" とマークされた個別のメソッドとして (getter は `get`\_*propertyname*、setter は `set*\_*propertyname*) marked as ` という名前で) 表示されます。 C# コンパイラでは、この規則が自動的に適用されます。[CLSCompliantAttribute](xref:System.CLSCompliantAttribute) 属性を適用する必要はありません。 
+* <span data-ttu-id="b85f9-588">プロパティには setter、getter、またはこの両方が必ず必要です。</span><span class="sxs-lookup"><span data-stu-id="b85f9-588">A property must have a setter, a getter, or both.</span></span> <span data-ttu-id="b85f9-589">アセンブリでは、これらは特殊なメソッドとして実装されます。つまり、アセンブリのメタデータで "SpecialName" とマークされた個別のメソッドとして (getter は `get`\_*propertyname*、setter は `set*\_*propertyname*) marked as ` という名前で) 表示されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-589">In an assembly, these are implemented as special methods, which means that they will appear as separate methods (the getter is named `get`\_*propertyname* and the setter is `set*\_*propertyname*) marked as `SpecialName\` in the assembly's metadata.</span></span> <span data-ttu-id="b85f9-590">C# コンパイラでは、この規則が自動的に適用されます。[CLSCompliantAttribute](xref:System.CLSCompliantAttribute) 属性を適用する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-590">The C# compiler enforces this rule automatically without the need to apply the [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) attribute.</span></span> 
 
-* プロパティの型は、プロパティ get アクセス操作子、および set アクセス操作子の最後の引数の戻り値の型です。 これらの型は CLS に準拠している必要があり、引数を参照によってプロパティに割り当てることはできません (つまり、マネージ ポインターにできません)。 
+* <span data-ttu-id="b85f9-591">プロパティの型は、プロパティ get アクセス操作子、および set アクセス操作子の最後の引数の戻り値の型です。</span><span class="sxs-lookup"><span data-stu-id="b85f9-591">A property's type is the return type of the property getter and the last argument of the setter.</span></span> <span data-ttu-id="b85f9-592">これらの型は CLS に準拠している必要があり、引数を参照によってプロパティに割り当てることはできません (つまり、マネージ ポインターにできません)。</span><span class="sxs-lookup"><span data-stu-id="b85f9-592">These types must be CLS compliant, and arguments cannot be assigned to the property by reference (that is, they cannot be managed pointers).</span></span> 
 
-* プロパティに get アクセス操作子と set アクセス操作子の両方がある場合は、両方が仮想、両方が静的、または両方がインスタンスである必要があります。 C# コンパイラは、プロパティ定義構文によって、この規則を自動的に適用します。 
+* <span data-ttu-id="b85f9-593">プロパティに get アクセス操作子と set アクセス操作子の両方がある場合は、両方が仮想、両方が静的、または両方がインスタンスである必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-593">If a property has both a getter and a setter, they must both be virtual, both static, or both instance.</span></span> <span data-ttu-id="b85f9-594">C# コンパイラは、プロパティ定義構文によって、この規則を自動的に適用します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-594">The C# compiler automatically enforces this rule through property definition syntax.</span></span> 
 
-### <a name="events"></a>イベント
+### <a name="events"></a><span data-ttu-id="b85f9-595">イベント</span><span class="sxs-lookup"><span data-stu-id="b85f9-595">Events</span></span>
 
-イベントは、名前と型によって定義されます。 イベントの型は、イベントの表示に使用されるデリゲートです。 たとえば、`DbConnection.StateChange` イベントは `StateChangeEventHandler` 型です。 イベント自体のほか、イベント名に基づく名前の 3 つのメソッドがイベントの実装を提供し、アセンブリのメタデータで `SpecialName` としてマークされています。 
+<span data-ttu-id="b85f9-596">イベントは、名前と型によって定義されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-596">An event is defined by its name and its type.</span></span> <span data-ttu-id="b85f9-597">イベントの型は、イベントの表示に使用されるデリゲートです。</span><span class="sxs-lookup"><span data-stu-id="b85f9-597">The event type is a delegate that is used to indicate the event.</span></span> <span data-ttu-id="b85f9-598">たとえば、`DbConnection.StateChange` イベントは `StateChangeEventHandler` 型です。</span><span class="sxs-lookup"><span data-stu-id="b85f9-598">For example, the `DbConnection.StateChange` event is of type `StateChangeEventHandler`.</span></span> <span data-ttu-id="b85f9-599">イベント自体のほか、イベント名に基づく名前の 3 つのメソッドがイベントの実装を提供し、アセンブリのメタデータで `SpecialName` としてマークされています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-599">In addition to the event itself, three methods with names based on the event name provide the event's implementation and are marked as `SpecialName` in the assembly's metadata:</span></span> 
 
-* イベント ハンドラーを追加するメソッド (`add`_*EventName*)。 たとえば、`DbConnection.StateChange` イベントのイベント サブスクリプション メソッドの名前は `add_StateChange` です。 
+* <span data-ttu-id="b85f9-600">イベント ハンドラーを追加するメソッド (`add`_*EventName*)。</span><span class="sxs-lookup"><span data-stu-id="b85f9-600">A method for adding an event handler, named `add`_*EventName*.</span></span> <span data-ttu-id="b85f9-601">たとえば、`DbConnection.StateChange` イベントのイベント サブスクリプション メソッドの名前は `add_StateChange` です。</span><span class="sxs-lookup"><span data-stu-id="b85f9-601">For example, the event subscription method for the `DbConnection.StateChange` event is named `add_StateChange`.</span></span> 
 
-* イベント ハンドラーを削除するメソッド (`remove`_*EventName*)。 たとえば、`DbConnection.StateChange` イベントの削除メソッドの名前は `remove_StateChange` です。
+* <span data-ttu-id="b85f9-602">イベント ハンドラーを削除するメソッド (`remove`_*EventName*)。</span><span class="sxs-lookup"><span data-stu-id="b85f9-602">A method for removing an event handler, named `remove`_*EventName*.</span></span> <span data-ttu-id="b85f9-603">たとえば、`DbConnection.StateChange` イベントの削除メソッドの名前は `remove_StateChange` です。</span><span class="sxs-lookup"><span data-stu-id="b85f9-603">For example, the removal method for the `DbConnection.StateChange` event is named `remove_StateChange`.</span></span>
 
-* イベントが発生したことを示すメソッド (`raise`_*EventName*)。 
+* <span data-ttu-id="b85f9-604">イベントが発生したことを示すメソッド (`raise`_*EventName*)。</span><span class="sxs-lookup"><span data-stu-id="b85f9-604">A method for indicating that the event has occurred, named `raise`_*EventName*.</span></span> 
 
 > [!NOTE]
-> イベントに関する共通言語仕様の規則は、ほとんどが言語コンパイラによって実装され、コンポーネント開発者が意識せずに使用できます。 
+> <span data-ttu-id="b85f9-605">イベントに関する共通言語仕様の規則は、ほとんどが言語コンパイラによって実装され、コンポーネント開発者が意識せずに使用できます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-605">Most of the Common Language Specification's rules regarding events are implemented by language compilers and are transparent to component developers.</span></span> 
 
-イベントの追加、削除、発生の各メソッドには同じアクセシビリティが必要です。 また、すべてが、静的メソッド、インスタンス メソッド、仮想メソッドのいずれかでなければなりません。 イベントを追加および削除するメソッドには、イベント デリゲート型の型を持つパラメーターが 1 つあります。 追加メソッドおよび削除メソッドは両方とも存在するか、両方存在しないかのいずれかでなければなりません。 
+<span data-ttu-id="b85f9-606">イベントの追加、削除、発生の各メソッドには同じアクセシビリティが必要です。</span><span class="sxs-lookup"><span data-stu-id="b85f9-606">The methods for adding, removing, and raising the event must have the same accessibility.</span></span> <span data-ttu-id="b85f9-607">また、すべてが、静的メソッド、インスタンス メソッド、仮想メソッドのいずれかでなければなりません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-607">They must also all be static, instance, or virtual.</span></span> <span data-ttu-id="b85f9-608">イベントを追加および削除するメソッドには、イベント デリゲート型の型を持つパラメーターが 1 つあります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-608">The methods for adding and removing an event have one parameter whose type is the event delegate type.</span></span> <span data-ttu-id="b85f9-609">追加メソッドおよび削除メソッドは両方とも存在するか、両方存在しないかのいずれかでなければなりません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-609">The add and remove methods must both be present or both be absent.</span></span> 
 
-次の例では、2 つのポイントの気温の差がしきい値と等しいか、それを超えた場合に `Temperature` イベントを発生させる、`TemperatureChanged` という名前の CLS 準拠クラスを定義します。 `Temperature` クラスは、イベント ハンドラーを選択的に実行できるように、`raise_TemperatureChanged` メソッドを明示的に定義します。
+<span data-ttu-id="b85f9-610">次の例では、2 つのポイントの気温の差がしきい値と等しいか、それを超えた場合に `Temperature` イベントを発生させる、`TemperatureChanged` という名前の CLS 準拠クラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-610">The following example defines a CLS-compliant class named `Temperature` that raises a `TemperatureChanged` event if the change in temperature between two readings equals or exceeds a threshold value.</span></span> <span data-ttu-id="b85f9-611">`Temperature` クラスは、イベント ハンドラーを選択的に実行できるように、`raise_TemperatureChanged` メソッドを明示的に定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-611">The `Temperature` class explicitly defines a `raise_TemperatureChanged` method so that it can selectively execute event handlers.</span></span>
 
 ```csharp
 using System;
@@ -2346,22 +2347,22 @@ Public Class Example
 End Class
 ```
 
-### <a name="overloads"></a>Overloads
+### <a name="overloads"></a><span data-ttu-id="b85f9-612">Overloads</span><span class="sxs-lookup"><span data-stu-id="b85f9-612">Overloads</span></span>
 
-共通言語仕様では、次の要件がオーバーロード メンバーに適用されます。 
+<span data-ttu-id="b85f9-613">共通言語仕様では、次の要件がオーバーロード メンバーに適用されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-613">The Common Language Specification imposes the following requirements on overloaded members:</span></span> 
 
-* メンバーは、パラメーターの数および型に基づいてオーバーロードできます。 オーバーロードを区別するときに、呼び出し規約、戻り値の型、メソッドまたはそのパラメーターに適用されているカスタム修飾子、およびパラメーターが値渡しか参照渡しかは考慮されません。 例については、「[名前付け規則](#naming-conventions)」で、名前がスコープ内で一意であることを要求する要件のコードを参照してください。 
+* <span data-ttu-id="b85f9-614">メンバーは、パラメーターの数および型に基づいてオーバーロードできます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-614">Members can be overloaded based on the number of parameters and the type of any parameter.</span></span> <span data-ttu-id="b85f9-615">オーバーロードを区別するときに、呼び出し規約、戻り値の型、メソッドまたはそのパラメーターに適用されているカスタム修飾子、およびパラメーターが値渡しか参照渡しかは考慮されません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-615">Calling convention, return type, custom modifiers applied to the method or its parameter, and whether parameters are passed by value or by reference are not considered when differentiating between overloads.</span></span> <span data-ttu-id="b85f9-616">例については、「[名前付け規則](#naming-conventions)」で、名前がスコープ内で一意であることを要求する要件のコードを参照してください。</span><span class="sxs-lookup"><span data-stu-id="b85f9-616">For an example, see the code for the requirement that names must be unique within a scope in the [Naming conventions](#naming-conventions) section.</span></span> 
 
-* プロパティおよびメソッドのみオーバーロードできる。 フィールドとイベントはオーバーロードできません。 
+* <span data-ttu-id="b85f9-617">プロパティおよびメソッドのみオーバーロードできる。</span><span class="sxs-lookup"><span data-stu-id="b85f9-617">Only properties and methods can be overloaded.</span></span> <span data-ttu-id="b85f9-618">フィールドとイベントはオーバーロードできません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-618">Fields and events cannot be overloaded.</span></span> 
 
-* ジェネリック メソッドは、ジェネリック パラメーターの数に基づいてオーバーロードできます。 
+* <span data-ttu-id="b85f9-619">ジェネリック メソッドは、ジェネリック パラメーターの数に基づいてオーバーロードできます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-619">Generic methods can be overloaded based on the number of their generic parameters.</span></span> 
 
 > [!NOTE]
->`op_Explicit` 演算子および `op_Implicit` 演算子にはこの規則が適用されず、戻り値は、オーバーロード解決のためのメソッド シグネチャの一部として見なされません。 この 2 つの演算子は、そのパラメーターと戻り値の両方に基づいてオーバーロードできます。 
+><span data-ttu-id="b85f9-620">`op_Explicit` 演算子および `op_Implicit` 演算子にはこの規則が適用されず、戻り値は、オーバーロード解決のためのメソッド シグネチャの一部として見なされません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-620">The `op_Explicit` and `op_Implicit` operators are exceptions to the rule that return value is not considered part of a method signature for overload resolution.</span></span> <span data-ttu-id="b85f9-621">この 2 つの演算子は、そのパラメーターと戻り値の両方に基づいてオーバーロードできます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-621">These two operators can be overloaded based on both their parameters and their return value.</span></span> 
 
-### <a name="exceptions"></a>例外
+### <a name="exceptions"></a><span data-ttu-id="b85f9-622">例外</span><span class="sxs-lookup"><span data-stu-id="b85f9-622">Exceptions</span></span>
 
-例外オブジェクトは [System.Exception](xref:System.Exception)、または `System.Exception` の別の派生型から派生する必要があります。 次の例は、`ErrorClass` というカスタム クラスを例外処理に使用したときに発生するコンパイラ エラーを示しています。
+<span data-ttu-id="b85f9-623">例外オブジェクトは [System.Exception](xref:System.Exception)、または `System.Exception` の別の派生型から派生する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-623">Exception objects must derive from [System.Exception](xref:System.Exception) or from another type derived from `System.Exception`.</span></span> <span data-ttu-id="b85f9-624">次の例は、`ErrorClass` というカスタム クラスを例外処理に使用したときに発生するコンパイラ エラーを示しています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-624">The following example illustrates the compiler error that results when a custom class named `ErrorClass` is used for exception handling.</span></span>
 
 ```csharp
 using System;
@@ -2438,7 +2439,7 @@ End Module
 '             ~~~~~~~~~~~~~~
 ```
 
-このエラーを修正するには、`ErrorClass` から継承するように `System.Exception` クラスを指定する必要があります。 また、Message プロパティはオーバーライドする必要があります。 次の例では、このエラーを修正して CLS 準拠の `ErrorClass` クラスを定義します。  
+<span data-ttu-id="b85f9-625">このエラーを修正するには、`ErrorClass` から継承するように `System.Exception` クラスを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-625">To correct this error, the `ErrorClass` class must inherit from `System.Exception`.</span></span> <span data-ttu-id="b85f9-626">また、Message プロパティはオーバーライドする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-626">In addition, the Message property must be overridden.</span></span> <span data-ttu-id="b85f9-627">次の例では、このエラーを修正して CLS 準拠の `ErrorClass` クラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-627">The following example corrects these errors to define an `ErrorClass` class that is CLS-compliant.</span></span>  
 
 ```csharp
 using System;
@@ -2507,11 +2508,11 @@ Public Module StringUtilities
 End Module
 ```
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a><span data-ttu-id="b85f9-628">属性</span><span class="sxs-lookup"><span data-stu-id="b85f9-628">Attributes</span></span>
 
-.NET Framework アセンブリでは、カスタム属性に拡張可能機構が用意されており、そのカスタム属性を格納し、アセンブリ、型、メンバー、メソッド パラメーターなどのプログラミング オブジェクトに関するメタデータを取得します。 カスタム属性は [System.Attribute](xref:System.Attribute)、または `System.Attribute` の派生型から派生する必要があります。
+<span data-ttu-id="b85f9-629">.NET Framework アセンブリでは、カスタム属性に拡張可能機構が用意されており、そのカスタム属性を格納し、アセンブリ、型、メンバー、メソッド パラメーターなどのプログラミング オブジェクトに関するメタデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-629">In.NET Framework assemblies, custom attributes provide an extensible mechanism for storing custom attributes and retrieving metadata about programming objects, such as assemblies, types, members, and method parameters.</span></span> <span data-ttu-id="b85f9-630">カスタム属性は [System.Attribute](xref:System.Attribute)、または `System.Attribute` の派生型から派生する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-630">Custom attributes must derive from [System.Attribute](xref:System.Attribute) or from a type derived from `System.Attribute`.</span></span>
 
-規則に違反する例を次に示します。 この例では、`NumericAttribute` から派生していない `System.Attribute` クラスを定義します。 コンパイラ エラーは、CLS 非準拠の属性が適用されている場合にのみ発生します。クラスが定義されているときではありません。 
+<span data-ttu-id="b85f9-631">規則に違反する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-631">The following example violates this rule.</span></span> <span data-ttu-id="b85f9-632">この例では、`NumericAttribute` から派生していない `System.Attribute` クラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-632">It defines a `NumericAttribute` class that does not derive from `System.Attribute`.</span></span> <span data-ttu-id="b85f9-633">コンパイラ エラーは、CLS 非準拠の属性が適用されている場合にのみ発生します。クラスが定義されているときではありません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-633">Note that a compiler error results only when the non-CLS-compliant attribute is applied, not when the class is defined.</span></span> 
 
 ```csharp
 using System;
@@ -2572,31 +2573,31 @@ End Structure
 '     ~~~~~~~~~~~~~
 ```
 
-CLS 準拠の属性のコンストラクターまたはプロパティは、次の型のみを公開できます。
+<span data-ttu-id="b85f9-634">CLS 準拠の属性のコンストラクターまたはプロパティは、次の型のみを公開できます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-634">The constructor or the properties of a CLS-compliant attribute can expose only the following types:</span></span>
 
-* [Boolean](xref:System.Boolean)
+* [<span data-ttu-id="b85f9-635">Boolean</span><span class="sxs-lookup"><span data-stu-id="b85f9-635">Boolean</span></span>](xref:System.Boolean)
 
-* [Byte](xref:System.Byte)
+* [<span data-ttu-id="b85f9-636">Byte</span><span class="sxs-lookup"><span data-stu-id="b85f9-636">Byte</span></span>](xref:System.Byte)
 
-* [Char](xref:System.Char)
+* [<span data-ttu-id="b85f9-637">Char</span><span class="sxs-lookup"><span data-stu-id="b85f9-637">Char</span></span>](xref:System.Char)
 
-* [Double](xref:System.Double)
+* [<span data-ttu-id="b85f9-638">Double</span><span class="sxs-lookup"><span data-stu-id="b85f9-638">Double</span></span>](xref:System.Double)
 
-* [Int16](xref:System.Int16)
+* [<span data-ttu-id="b85f9-639">Int16</span><span class="sxs-lookup"><span data-stu-id="b85f9-639">Int16</span></span>](xref:System.Int16)
 
-* [Int32](xref:System.Int32)
+* [<span data-ttu-id="b85f9-640">Int32</span><span class="sxs-lookup"><span data-stu-id="b85f9-640">Int32</span></span>](xref:System.Int32)
 
-* [Int64](xref:System.Int64)
+* [<span data-ttu-id="b85f9-641">Int64</span><span class="sxs-lookup"><span data-stu-id="b85f9-641">Int64</span></span>](xref:System.Int64)
 
-* [Single](xref:System.Single)
+* [<span data-ttu-id="b85f9-642">Single</span><span class="sxs-lookup"><span data-stu-id="b85f9-642">Single</span></span>](xref:System.Single)
 
-* [String](xref:System.String)
+* [<span data-ttu-id="b85f9-643">String</span><span class="sxs-lookup"><span data-stu-id="b85f9-643">String</span></span>](xref:System.String)
 
-* [Type](xref:System.Type)
+* [<span data-ttu-id="b85f9-644">Type</span><span class="sxs-lookup"><span data-stu-id="b85f9-644">Type</span></span>](xref:System.Type)
 
-* 基になる型が `Byte`、`Int16`、`Int32`、または `Int64` である列挙体の型。 
+* <span data-ttu-id="b85f9-645">基になる型が `Byte`、`Int16`、`Int32`、または `Int64` である列挙体の型。</span><span class="sxs-lookup"><span data-stu-id="b85f9-645">Any enumeration type whose underlying type is `Byte`, `Int16`, `Int32`, or `Int64`.</span></span> 
 
-次の例では、[Attribute](xref:System.Attribute) から派生する `DescriptionAttribute` クラスを定義します。 クラス コンストラクターには型 `Descriptor` のパラメーターがあるので、クラスは CLS に準拠していません。 C# コンパイラが警告を生成しますが、コンパイルは成功することに注意してください。 
+<span data-ttu-id="b85f9-646">次の例では、[Attribute](xref:System.Attribute) から派生する `DescriptionAttribute` クラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-646">The following example defines a `DescriptionAttribute` class that derives from [Attribute](xref:System.Attribute).</span></span> <span data-ttu-id="b85f9-647">クラス コンストラクターには型 `Descriptor` のパラメーターがあるので、クラスは CLS に準拠していません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-647">The class constructor has a parameter of type `Descriptor`, so the class is not CLS-compliant.</span></span> <span data-ttu-id="b85f9-648">C# コンパイラが警告を生成しますが、コンパイルは成功することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="b85f9-648">Note that the C# compiler emits a warning but compiles successfully.</span></span> 
 
 ```csharp
 using System;
@@ -2658,42 +2659,42 @@ Public Class DescriptionAttribute : Inherits Attribute
 End Class
 ```
 
-## <a name="the-clscompliantattribute-attribute"></a>CLSCompliantAttribute 属性
+## <a name="the-clscompliantattribute-attribute"></a><span data-ttu-id="b85f9-649">CLSCompliantAttribute 属性</span><span class="sxs-lookup"><span data-stu-id="b85f9-649">The CLSCompliantAttribute attribute</span></span>
 
-[CLSCompliantAttribute](xref:System.CLSCompliantAttribute) 属性は、プログラム要素が共通言語仕様でコンパイルされているかどうかを示すために使用されます。 `CLSCompliantAttribute.CLSCompliantAttribute(Boolean)` コンストラクターには、プログラム要素が CLS に準拠しているかどうかを示す 1 つの必須パラメーター、*isCompliant* が含まれます。 
+<span data-ttu-id="b85f9-650">[CLSCompliantAttribute](xref:System.CLSCompliantAttribute) 属性は、プログラム要素が共通言語仕様でコンパイルされているかどうかを示すために使用されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-650">The [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) attribute is used to indicate whether a program element complies with the Common Language Specification.</span></span> <span data-ttu-id="b85f9-651">`CLSCompliantAttribute.CLSCompliantAttribute(Boolean)` コンストラクターには、プログラム要素が CLS に準拠しているかどうかを示す 1 つの必須パラメーター、*isCompliant* が含まれます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-651">The `CLSCompliantAttribute.CLSCompliantAttribute(Boolean)` constructor includes a single required parameter, *isCompliant*, that indicates whether the program element is CLS-compliant.</span></span> 
 
-コンパイル時に、CLS 準拠が前提とされる非準拠要素が検出され、警告が出力されます。 非準拠として明示的に宣言された型またはメンバーに対しては、警告は出力されません。 
+<span data-ttu-id="b85f9-652">コンパイル時に、CLS 準拠が前提とされる非準拠要素が検出され、警告が出力されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-652">At compile time, the compiler detects non-compliant elements that are presumed to be CLS-compliant and emits a warning.</span></span> <span data-ttu-id="b85f9-653">非準拠として明示的に宣言された型またはメンバーに対しては、警告は出力されません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-653">The compiler does not emit warnings for types or members that are explicitly declared to be non-compliant.</span></span> 
 
-コンポーネント開発者は、次の 2 とおりの目的で `CLSCompliantAttribute` 属性を使用できます。 
+<span data-ttu-id="b85f9-654">コンポーネント開発者は、次の 2 とおりの目的で `CLSCompliantAttribute` 属性を使用できます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-654">Component developers can use the `CLSCompliantAttribute` attribute in two ways:</span></span> 
 
-* コンポーネントによって公開されたパブリック インターフェイスの CLS 準拠部分と CLS 非準拠部分を定義する。 この属性を使用して特定のプログラム要素を CLS 準拠としてマークすると、.NET Framework を対象とするすべてのツールおよび言語から、これらの要素に必ずアクセスできるようになります。 
+* <span data-ttu-id="b85f9-655">コンポーネントによって公開されたパブリック インターフェイスの CLS 準拠部分と CLS 非準拠部分を定義する。</span><span class="sxs-lookup"><span data-stu-id="b85f9-655">To define the parts of the public interface exposed by a component that are CLS-compliant and the parts that are not CLS-compliant.</span></span> <span data-ttu-id="b85f9-656">この属性を使用して特定のプログラム要素を CLS 準拠としてマークすると、.NET Framework を対象とするすべてのツールおよび言語から、これらの要素に必ずアクセスできるようになります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-656">When the attribute is used to mark particular program elements as CLS-compliant, its use guarantees that those elements are accessible from all languages and tools that target the .NET Framework.</span></span> 
 
-* コンポーネント ライブラリのパブリック インターフェイスが CLS に準拠するプログラム要素のみを公開するように保証する。 要素が CLS 非準拠の場合は、通常、警告が表示されます。
+* <span data-ttu-id="b85f9-657">コンポーネント ライブラリのパブリック インターフェイスが CLS に準拠するプログラム要素のみを公開するように保証する。</span><span class="sxs-lookup"><span data-stu-id="b85f9-657">To ensure that the component library's public interface exposes only program elements that are CLS-compliant.</span></span> <span data-ttu-id="b85f9-658">要素が CLS 非準拠の場合は、通常、警告が表示されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-658">If elements are not CLS-compliant, compilers will generally issue a warning.</span></span>
 
 > [!WARNING]
-> 言語コンパイラでは、`CLSCompliantAttribute` 属性が使用されているかどうかに関係なく、CLS 準拠の規則が適用される場合があります。 たとえば、インターフェイスに `*static` メンバーを定義すると CLS の規則に違反します。 ただし、インターフェイスに `*static` メンバーを定義した場合、C# コンパイラはエラー メッセージを表示し、アプリのコンパイルに失敗します。
+> <span data-ttu-id="b85f9-659">言語コンパイラでは、`CLSCompliantAttribute` 属性が使用されているかどうかに関係なく、CLS 準拠の規則が適用される場合があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-659">In some cases, language compilers enforce CLS-compliant rules regardless of whether the `CLSCompliantAttribute` attribute is used.</span></span> <span data-ttu-id="b85f9-660">たとえば、インターフェイスに `*static` メンバーを定義すると CLS の規則に違反します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-660">For example, defining a `*static` member in an interface violates a CLS rule.</span></span> <span data-ttu-id="b85f9-661">ただし、インターフェイスに `*static` メンバーを定義した場合、C# コンパイラはエラー メッセージを表示し、アプリのコンパイルに失敗します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-661">However, if you define a `*static` member in an interface, the C# compiler displays an error message and fails to compile the app.</span></span>
 
-`CLSCompliantAttribute` 属性は、値 `AttributeTargets.All` が指定された [AttributeUsageAttribute](xref:System.AttributeUsageAttribute) 属性でマークされます。 この値を使用すると、`CLSCompliantAttribute` 属性を、アセンブリ、モジュール、型 (クラス、構造体、列挙体、インターフェイス、およびデリゲート)、型パラメーター (コンストラクター、メソッド、プロパティ、フィールド、およびイベント)、パラメーター、ジェネリック パラメーター、戻り値など、すべてのプログラム要素に適用できます。 ただし、実際は、アセンブリ、型、および型メンバーだけに属性を適用することをお勧めします。 そうしないと、属性は、コンパイラによってライブラリのパブリック インターフェイスで非準拠パラメーター、ジェネリック パラメーター、または戻り値が検出されたときに必ず無視され、コンパイラ警告が引き続き生成されます。  
+<span data-ttu-id="b85f9-662">`CLSCompliantAttribute` 属性は、値 `AttributeTargets.All` が指定された [AttributeUsageAttribute](xref:System.AttributeUsageAttribute) 属性でマークされます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-662">The `CLSCompliantAttribute` attribute is marked with an [AttributeUsageAttribute](xref:System.AttributeUsageAttribute) attribute that has a value of `AttributeTargets.All`.</span></span> <span data-ttu-id="b85f9-663">この値を使用すると、`CLSCompliantAttribute` 属性を、アセンブリ、モジュール、型 (クラス、構造体、列挙体、インターフェイス、およびデリゲート)、型パラメーター (コンストラクター、メソッド、プロパティ、フィールド、およびイベント)、パラメーター、ジェネリック パラメーター、戻り値など、すべてのプログラム要素に適用できます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-663">This value allows you to apply the `CLSCompliantAttribute` attribute to any program element, including assemblies, modules, types (classes, structures, enumerations, interfaces, and delegates), type members (constructors, methods, properties, fields, and events), parameters, generic parameters, and return values.</span></span> <span data-ttu-id="b85f9-664">ただし、実際は、アセンブリ、型、および型メンバーだけに属性を適用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b85f9-664">However, in practice, you should apply the attribute only to assemblies, types, and type members.</span></span> <span data-ttu-id="b85f9-665">そうしないと、属性は、コンパイラによってライブラリのパブリック インターフェイスで非準拠パラメーター、ジェネリック パラメーター、または戻り値が検出されたときに必ず無視され、コンパイラ警告が引き続き生成されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-665">Otherwise, compilers ignore the attribute and continue to generate compiler warnings whenever they encounter a non-compliant parameter, generic parameter, or return value in your library's public interface.</span></span>  
 
-`CLSCompliantAttribute` 属性の値は、内包型プログラム要素によって継承されます。 たとえば、アセンブリが CLS 準拠としてマークされている場合は、その型も CLS に準拠します。 型が CLS 準拠としてマークされている場合は、その入れ子になった型とメンバーも CLS に準拠します。 
+<span data-ttu-id="b85f9-666">`CLSCompliantAttribute` 属性の値は、内包型プログラム要素によって継承されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-666">The value of the `CLSCompliantAttribute` attribute is inherited by contained program elements.</span></span> <span data-ttu-id="b85f9-667">たとえば、アセンブリが CLS 準拠としてマークされている場合は、その型も CLS に準拠します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-667">For example, if an assembly is marked as CLS-compliant, its types are also CLS-compliant.</span></span> <span data-ttu-id="b85f9-668">型が CLS 準拠としてマークされている場合は、その入れ子になった型とメンバーも CLS に準拠します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-668">If a type is marked as CLS-compliant, its nested types and members are also CLS-compliant.</span></span> 
 
-継承された準拠状況を明示的にオーバーライドするには、`CLSCompliantAttribute` 属性を、格納されているプログラム要素に適用します。 たとえば、*isCompliant* 値が `false` に指定された `CLSCompliantAttribute` 属性を使用すると、準拠アセンブリで非準拠型を定義できます。また、*isComplian* 値が `true` に指定された属性を使用すると、非準拠アセンブリで準拠型を定義できます。 準拠型で非準拠メンバーを定義することもできます。 ただし、非準拠型は準拠メンバーを持つことができないので、*isCompliant* 値が `true` に指定された属性では非準拠型から継承をオーバーライドできません。 
+<span data-ttu-id="b85f9-669">継承された準拠状況を明示的にオーバーライドするには、`CLSCompliantAttribute` 属性を、格納されているプログラム要素に適用します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-669">You can explicitly override the inherited compliance by applying the `CLSCompliantAttribute` attribute to a contained program element.</span></span> <span data-ttu-id="b85f9-670">たとえば、*isCompliant* 値が `false` に指定された `CLSCompliantAttribute` 属性を使用すると、準拠アセンブリで非準拠型を定義できます。また、*isComplian* 値が `true` に指定された属性を使用すると、非準拠アセンブリで準拠型を定義できます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-670">For example, you can use the `CLSCompliantAttribute` attribute with an *isCompliant* value of `false` to define a non-compliant type in a compliant assembly, and you can use the attribute with an *isComplian* value of `true` to define a compliant type in a non-compliant assembly.</span></span> <span data-ttu-id="b85f9-671">準拠型で非準拠メンバーを定義することもできます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-671">You can also define non-compliant members in a compliant type.</span></span> <span data-ttu-id="b85f9-672">ただし、非準拠型は準拠メンバーを持つことができないので、*isCompliant* 値が `true` に指定された属性では非準拠型から継承をオーバーライドできません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-672">However, a non-compliant type cannot have compliant members, so you cannot use the attribute with an *isCompliant* value of `true` to override inheritance from a non-compliant type.</span></span> 
 
-コンポーネントを開発するときは必ず、`CLSCompliantAttribute` 属性を使用して、アセンブリ、その型、およびそのメンバーが CLS に準拠しているかどうかを指定することをお勧めします。 
+<span data-ttu-id="b85f9-673">コンポーネントを開発するときは必ず、`CLSCompliantAttribute` 属性を使用して、アセンブリ、その型、およびそのメンバーが CLS に準拠しているかどうかを指定することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b85f9-673">When you are developing components, you should always use the `CLSCompliantAttribute` attribute to indicate whether your assembly, its types, and its members are CLS-compliant.</span></span> 
 
-CLS 準拠のコンポーネントを作成するには: 
+<span data-ttu-id="b85f9-674">CLS 準拠のコンポーネントを作成するには:</span><span class="sxs-lookup"><span data-stu-id="b85f9-674">To create CLS-compliant components:</span></span> 
 
-1. `CLSCompliantAttribute` を使用して、CLS 準拠としてアセンブリをマークします。
+1. <span data-ttu-id="b85f9-675">`CLSCompliantAttribute` を使用して、CLS 準拠としてアセンブリをマークします。</span><span class="sxs-lookup"><span data-stu-id="b85f9-675">Use the `CLSCompliantAttribute` to mark you assembly as CLS-compliant.</span></span>
 
-2. アセンブリ内の CLS に準拠していない公開された型を、非準拠としてマークします。 
+2. <span data-ttu-id="b85f9-676">アセンブリ内の CLS に準拠していない公開された型を、非準拠としてマークします。</span><span class="sxs-lookup"><span data-stu-id="b85f9-676">Mark any publicly exposed types in the assembly that are not CLS-compliant as non-compliant.</span></span> 
 
-3. CLS 準拠の型の公開されたメンバーを、非準拠としてマークします。 
+3. <span data-ttu-id="b85f9-677">CLS 準拠の型の公開されたメンバーを、非準拠としてマークします。</span><span class="sxs-lookup"><span data-stu-id="b85f9-677">Mark any publicly exposed members in CLS-compliant types as non-compliant.</span></span> 
 
-4. CLS 非準拠メンバーの CLS 準拠の代替を指定します。 
+4. <span data-ttu-id="b85f9-678">CLS 非準拠メンバーの CLS 準拠の代替を指定します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-678">Provide a CLS-compliant alternative for non-CLS-compliant members.</span></span> 
 
-非準拠の型とメンバーすべてを正常にマークした場合、非準拠の警告は出力されません。 ただし、どのメンバーが CLS に準拠していないかを提示し、CLS 準拠の代替を製品ドキュメントに示すことをお勧めします。 
+<span data-ttu-id="b85f9-679">非準拠の型とメンバーすべてを正常にマークした場合、非準拠の警告は出力されません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-679">If you've successfully marked all your non-compliant types and members, your compiler should not emit any non-compliance warnings.</span></span> <span data-ttu-id="b85f9-680">ただし、どのメンバーが CLS に準拠していないかを提示し、CLS 準拠の代替を製品ドキュメントに示すことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b85f9-680">However, you should indicate which members are not CLS-compliant and list their CLS-compliant alternatives in your product documentation.</span></span> 
 
-次の例では、`CLSCompliantAttribute` 属性を使用して、CLS 準拠のアセンブリと、2 つの CLS 非準拠のメンバーを持つ型、`CharacterUtilities` を定義します。 両メンバーとも `CLSCompliant(false)` 属性でタグ付けされているので、警告は生成されません。 また、クラスには、両方のメソッド用の CLS 準拠の代替も用意されています。 通常、CLS 準拠の代替を用意するには、2 つのオーバーロードを `ToUTF16` メソッドに追加するだけです。 ただし、戻り値に基づいてメソッドをオーバーロードできないので、CLS 準拠のメソッドの名前は、非準拠のメソッドの名前とは異なります。  
+<span data-ttu-id="b85f9-681">次の例では、`CLSCompliantAttribute` 属性を使用して、CLS 準拠のアセンブリと、2 つの CLS 非準拠のメンバーを持つ型、`CharacterUtilities` を定義します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-681">The following example uses the `CLSCompliantAttribute` attribute to define a CLS-compliant assembly and a type, `CharacterUtilities`, that has two non-CLS-compliant members.</span></span> <span data-ttu-id="b85f9-682">両メンバーとも `CLSCompliant(false)` 属性でタグ付けされているので、警告は生成されません。</span><span class="sxs-lookup"><span data-stu-id="b85f9-682">Because both members are tagged with the `CLSCompliant(false)` attribute, the compiler produces no warnings.</span></span> <span data-ttu-id="b85f9-683">また、クラスには、両方のメソッド用の CLS 準拠の代替も用意されています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-683">The class also provides a CLS-compliant alternative for both methods.</span></span> <span data-ttu-id="b85f9-684">通常、CLS 準拠の代替を用意するには、2 つのオーバーロードを `ToUTF16` メソッドに追加するだけです。</span><span class="sxs-lookup"><span data-stu-id="b85f9-684">Ordinarily, we would just add two overloads to the `ToUTF16` method to provide CLS-compliant alternatives.</span></span> <span data-ttu-id="b85f9-685">ただし、戻り値に基づいてメソッドをオーバーロードできないので、CLS 準拠のメソッドの名前は、非準拠のメソッドの名前とは異なります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-685">However, because methods cannot be overloaded based on return value, the names of the CLS-compliant methods are different from the names of the non-compliant methods.</span></span>  
 
 ```csharp
 using System;
@@ -2814,13 +2815,13 @@ Public Class CharacterUtilities
 End Class
 ```
 
-ライブラリではなくアプリを開発している場合 (つまり、他のアプリ開発者が使用できる型またはメンバーを公開しない場合)、アプリが使用するプログラム要素は、そのプログラム要素が使用する言語でサポートされていない場合に CLS に準拠する必要があります。 この場合、CLS 非準拠の要素を使用しようとすると、言語コンパイラによってエラーが生成されます。 
+<span data-ttu-id="b85f9-686">ライブラリではなくアプリを開発している場合 (つまり、他のアプリ開発者が使用できる型またはメンバーを公開しない場合)、アプリが使用するプログラム要素は、そのプログラム要素が使用する言語でサポートされていない場合に CLS に準拠する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-686">If you are developing an app rather than a library (that is, if you aren't exposing types or members that can be consumed by other app developers), the CLS compliance of the program elements that your app consumes are of interest only if your language does not support them.</span></span> <span data-ttu-id="b85f9-687">この場合、CLS 非準拠の要素を使用しようとすると、言語コンパイラによってエラーが生成されます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-687">In that case, your language compiler will generate an error when you try to use a non-CLS-compliant element.</span></span> 
 
-## <a name="cross-language-interoperability"></a>言語間の相互運用性
+## <a name="cross-language-interoperability"></a><span data-ttu-id="b85f9-688">言語間の相互運用性</span><span class="sxs-lookup"><span data-stu-id="b85f9-688">Cross-Language Interoperability</span></span>
 
-言語に依存しないということは、いくつか意味があります。 1 つには、ある言語で記述された型を、別の言語で記述されたアプリからシームレスに使用できることを意味します。 また、複数の言語で記述されたコードを 1 つの .NET .NET Framework アセンブリにまとめることもできます。ここでは、この点について焦点を当てて説明します。 
+<span data-ttu-id="b85f9-689">言語に依存しないということは、いくつか意味があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-689">Language independence has a number of possible meanings.</span></span> <span data-ttu-id="b85f9-690">1 つには、ある言語で記述された型を、別の言語で記述されたアプリからシームレスに使用できることを意味します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-690">One meaning involves seamlessly consuming types written in one language from an app written in another language.</span></span> <span data-ttu-id="b85f9-691">また、複数の言語で記述されたコードを 1 つの .NET .NET Framework アセンブリにまとめることもできます。ここでは、この点について焦点を当てて説明します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-691">A second meaning, which is the focus of this article, involves combining code written in multiple languages into a single .NET Framework assembly.</span></span> 
 
-次の例では、`NumericLib` および `StringLib` という 2 つのクラスを含む Utilities.dll という名前のクラス ライブラリを作成して言語間の相互運用性を示します。 `NumericLib` クラスは C# で記述され、`StringLib` クラスは Visual Basic で記述されています。 以下は `StringUtil.vb` のソース コードで、`StringLib` クラスに `ToTitleCase` という単一のメンバーが含まれます。
+<span data-ttu-id="b85f9-692">次の例では、`NumericLib` および `StringLib` という 2 つのクラスを含む Utilities.dll という名前のクラス ライブラリを作成して言語間の相互運用性を示します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-692">The following example illustrates cross-language interoperability by creating a class library named Utilities.dll that includes two classes, `NumericLib` and `StringLib`.</span></span> <span data-ttu-id="b85f9-693">`NumericLib` クラスは C# で記述され、`StringLib` クラスは Visual Basic で記述されています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-693">The `NumericLib` class is written in C#, and the `StringLib` class is written in Visual Basic.</span></span> <span data-ttu-id="b85f9-694">以下は `StringUtil.vb` のソース コードで、`StringLib` クラスに `ToTitleCase` という単一のメンバーが含まれます。</span><span class="sxs-lookup"><span data-stu-id="b85f9-694">Here's the source code for `StringUtil.vb`, which includes a single member, `ToTitleCase`, in its `StringLib` class.</span></span>
 
 ```vb
 Imports System.Collections.Generic
@@ -2857,7 +2858,7 @@ Public Module StringLib
 End Module
 ```
 
-以下は NumberUtil.cs のソース コードで、`NumericLib` および `IsEven` という 2 つのメンバーを持つ `NearZero` クラスを定義しています。
+<span data-ttu-id="b85f9-695">以下は NumberUtil.cs のソース コードで、`NumericLib` および `IsEven` という 2 つのメンバーを持つ `NearZero` クラスを定義しています。</span><span class="sxs-lookup"><span data-stu-id="b85f9-695">Here's the source code for NumberUtil.cs, which defines a `NumericLib` class that has two members, `IsEven` and `NearZero`.</span></span>
 
 ```csharp
 using System;
@@ -2887,25 +2888,25 @@ public static class NumericLib
 }
 ```
 
-単一のアセンブリに 2 つのクラスをパッケージ化するには、モジュールにコンパイルする必要があります。 Visual Basic のソース コード ファイルをモジュールにコンパイルするには、次のコマンドを使用します。 
+<span data-ttu-id="b85f9-696">単一のアセンブリに 2 つのクラスをパッケージ化するには、モジュールにコンパイルする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b85f9-696">To package the two classes in a single assembly, you must compile them into modules.</span></span> <span data-ttu-id="b85f9-697">Visual Basic のソース コード ファイルをモジュールにコンパイルするには、次のコマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-697">To compile the Visual Basic source code file into a module, use this command:</span></span> 
 
 ```
 vbc /t:module StringUtil.vb 
 ```
 
-C# のソース コード ファイルをモジュールにコンパイルするには、次のコマンドを使用します。
+<span data-ttu-id="b85f9-698">C# のソース コード ファイルをモジュールにコンパイルするには、次のコマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-698">To compile the C# source code file into a module, use this command:</span></span>
 
 ```
 csc /t:module NumberUtil.cs
 ```
 
-次に、リンク ツール (Link.exe) を使用して 2 つのモジュールをアセンブリにコンパイルします。 
+<span data-ttu-id="b85f9-699">次に、リンク ツール (Link.exe) を使用して 2 つのモジュールをアセンブリにコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="b85f9-699">You then use the Link tool (Link.exe) to compile the two modules into an assembly:</span></span> 
 
 ```
 link numberutil.netmodule stringutil.netmodule /out:UtilityLib.dll /dll
 ```
 
-次の例では、その後 `NumericLib.NearZero` メソッドおよび `StringLib.ToTitleCase` メソッドを呼び出します。 Visual Basic コードと C# コードは、両方のクラスのメソッドにアクセスできることに注意してください。
+<span data-ttu-id="b85f9-700">次の例では、その後 `NumericLib.NearZero` メソッドおよび `StringLib.ToTitleCase` メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-700">The following example then calls the `NumericLib.NearZero` and `StringLib.ToTitleCase` methods.</span></span> <span data-ttu-id="b85f9-701">Visual Basic コードと C# コードは、両方のクラスのメソッドにアクセスできることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="b85f9-701">Note that both the Visual Basic code and the C# code are able to access the methods in both classes.</span></span>
 
 ```csharp
 using System;
@@ -2941,16 +2942,15 @@ End Module
 '       War and Peace
 ```
 
-Visual Basic コードをコンパイルするには、次のコマンドを使用します。
+<span data-ttu-id="b85f9-702">Visual Basic コードをコンパイルするには、次のコマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-702">To compile the Visual Basic code, use this command:</span></span>
 
 ```
 vbc example.vb /r:UtilityLib.dll
 ```
 
-C# でコンパイルするには、コンパイラの名前を vbc から csc に変更し、ファイル拡張子を .vb から .cs に変更します。
+<span data-ttu-id="b85f9-703">C# でコンパイルするには、コンパイラの名前を vbc から csc に変更し、ファイル拡張子を .vb から .cs に変更します。</span><span class="sxs-lookup"><span data-stu-id="b85f9-703">To compile with C#, change the name of the compiler from vbc to csc, and change the file extension from .vb to .cs:</span></span>
 
 ```
 csc example.cs /r:UtilityLib.dll
 ```
-
 

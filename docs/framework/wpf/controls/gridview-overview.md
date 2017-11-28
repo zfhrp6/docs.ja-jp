@@ -1,127 +1,130 @@
 ---
-title: "GridView の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "コントロール, ListView"
-  - "GridView 表示モード"
-  - "ListView コントロール, GridView 表示モード"
+title: "GridView の概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- GridView view mode [WPF]
+- ListView controls [WPF], GridView view mode
+- controls [WPF], ListView
 ms.assetid: b2d02267-32b3-40ce-8e9f-06972d8749d9
-caps.latest.revision: 26
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 25
+caps.latest.revision: "26"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 44574b5737873371f9a7bc9be2d851a8ae1e101b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# GridView の概要
-<xref:System.Windows.Controls.GridView> 表示モードは、<xref:System.Windows.Controls.ListView> コントロールの表示モードの 1 つです。  <xref:System.Windows.Controls.GridView> クラスおよびそのサポート クラスを使用すると、一般的にボタンを対話型列ヘッダーとして使用するテーブルに項目コレクションを表示することができます。  ここでは、<xref:System.Windows.Controls.GridView> クラスについて説明し、その使用方法を示します。  
+# <a name="gridview-overview"></a><span data-ttu-id="6a50c-102">GridView の概要</span><span class="sxs-lookup"><span data-stu-id="6a50c-102">GridView Overview</span></span>
+<span data-ttu-id="6a50c-103"><xref:System.Windows.Controls.GridView>表示モードのいずれかのビュー モードは、<xref:System.Windows.Controls.ListView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6a50c-103"><xref:System.Windows.Controls.GridView> view mode is one of the view modes for a <xref:System.Windows.Controls.ListView> control.</span></span> <span data-ttu-id="6a50c-104"><xref:System.Windows.Controls.GridView>とユーザーの対話型の列見出しとして通常のボタンを使用するテーブル内の項目コレクションを表示するクラスとそのサポート クラスを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6a50c-104">The <xref:System.Windows.Controls.GridView> class and its supporting classes enable you and your users to view item collections in a table that typically uses buttons as interactive column headers.</span></span> <span data-ttu-id="6a50c-105">このトピックでは、<xref:System.Windows.Controls.GridView>クラスし、その用途について説明します。</span><span class="sxs-lookup"><span data-stu-id="6a50c-105">This topic introduces the <xref:System.Windows.Controls.GridView> class and outlines its use.</span></span>  
   
-   
+  
   
 <a name="DefiningaListViewthatusesGridViewView"></a>   
-## GridView ビューとは  
- <xref:System.Windows.Controls.GridView> 表示モードでは、データ フィールドを列にバインドし、列ヘッダーを表示してフィールドを識別することによって、データ項目のリストを表示します。  既定の <xref:System.Windows.Controls.GridView> スタイルは、列ヘッダーとしてボタンを実装します。  列ヘッダーにボタンを使用すると、重要なユーザー操作機能を実装できます。たとえば、ユーザーは列ヘッダーをクリックして、特定の列のコンテンツに従って <xref:System.Windows.Controls.GridView> データを並べ替えることができます。  
+## <a name="what-is-a-gridview-view"></a><span data-ttu-id="6a50c-106">GridView のビューとは?</span><span class="sxs-lookup"><span data-stu-id="6a50c-106">What Is a GridView View?</span></span>  
+ <span data-ttu-id="6a50c-107"><xref:System.Windows.Controls.GridView>ビュー モードでは、列のデータ フィールドのバインドとフィールドを識別する列ヘッダーを表示することによってデータ項目の一覧が表示されます。</span><span class="sxs-lookup"><span data-stu-id="6a50c-107">The <xref:System.Windows.Controls.GridView> view mode displays a list of data items by binding data fields to columns and by displaying a column header to identify the field.</span></span> <span data-ttu-id="6a50c-108">既定値<xref:System.Windows.Controls.GridView>スタイルを列見出しとしてボタンを実装します。</span><span class="sxs-lookup"><span data-stu-id="6a50c-108">The default <xref:System.Windows.Controls.GridView> style implements buttons as column headers.</span></span> <span data-ttu-id="6a50c-109">列ヘッダーのボタンを使用して、重要なユーザー操作機能を実装することができます。ユーザーが並べ替えに列ヘッダーをクリックするなど、<xref:System.Windows.Controls.GridView>特定の列の内容に合わせてデータ。</span><span class="sxs-lookup"><span data-stu-id="6a50c-109">By using buttons for column headers, you can implement important user interaction capabilities; for example, users can click the column header to sort <xref:System.Windows.Controls.GridView> data according to the contents of a specific column.</span></span>  
   
 > [!NOTE]
->  <xref:System.Windows.Controls.GridView> で列ヘッダーに使用されるボタン コントロールは、<xref:System.Windows.Controls.Primitives.ButtonBase> から派生します。  
+>  <span data-ttu-id="6a50c-110">ボタン コントロールが<xref:System.Windows.Controls.GridView>、列ヘッダーの使用に由来<xref:System.Windows.Controls.Primitives.ButtonBase>です。</span><span class="sxs-lookup"><span data-stu-id="6a50c-110">The button controls that <xref:System.Windows.Controls.GridView> uses for column headers are derived from <xref:System.Windows.Controls.Primitives.ButtonBase>.</span></span>  
   
- <xref:System.Windows.Controls.ListView> コンテンツの <xref:System.Windows.Controls.GridView> ビューを次の図に示します。  
+ <span data-ttu-id="6a50c-111">次の図は、<xref:System.Windows.Controls.GridView>の表示<xref:System.Windows.Controls.ListView>コンテンツ。</span><span class="sxs-lookup"><span data-stu-id="6a50c-111">The following illustration shows a <xref:System.Windows.Controls.GridView> view of <xref:System.Windows.Controls.ListView> content.</span></span>  
   
- **ListView コンテンツの GridView ビュー**  
+ <span data-ttu-id="6a50c-112">**ListView コンテンツの GridView ビュー**</span><span class="sxs-lookup"><span data-stu-id="6a50c-112">**GridView view of ListView content**</span></span>  
   
- ![スタイル設定された ListView](../../../../docs/framework/wpf/controls/media/styledlistview.png "StyledListView")  
+ <span data-ttu-id="6a50c-113">![スタイル化 ListView](../../../../docs/framework/wpf/controls/media/styledlistview.PNG "StyledListView")</span><span class="sxs-lookup"><span data-stu-id="6a50c-113">![Styled ListView](../../../../docs/framework/wpf/controls/media/styledlistview.PNG "StyledListView")</span></span>  
   
- <xref:System.Windows.Controls.GridView> の列は <xref:System.Windows.Controls.GridViewColumn> オブジェクトによって表されます。このオブジェクトのサイズは、コンテンツのサイズに自動的に設定されます。  必要に応じて、<xref:System.Windows.Controls.GridViewColumn> を特定の幅に明示的に設定できます。  列ヘッダー間のグリッパーをドラッグすることによって、列のサイズを変更できます。  また、列の追加、削除、置換、および並べ替え機能が <xref:System.Windows.Controls.GridView> に組み込まれているため、この機能を動的に実行することができます。  ただし、<xref:System.Windows.Controls.GridView> では、表示されるデータを直接更新することはできません。  
+ <span data-ttu-id="6a50c-114"><xref:System.Windows.Controls.GridView>列がによって表される<xref:System.Windows.Controls.GridViewColumn>オブジェクトで、そのコンテンツを自動的にサイズことができます。</span><span class="sxs-lookup"><span data-stu-id="6a50c-114"><xref:System.Windows.Controls.GridView> columns are represented by <xref:System.Windows.Controls.GridViewColumn> objects, which can automatically size to their content.</span></span> <span data-ttu-id="6a50c-115">必要に応じて、明示的に設定できます、<xref:System.Windows.Controls.GridViewColumn>幅を指定します。</span><span class="sxs-lookup"><span data-stu-id="6a50c-115">Optionally, you can explicitly set a <xref:System.Windows.Controls.GridViewColumn> to a specific width.</span></span> <span data-ttu-id="6a50c-116">列のサイズは、列ヘッダー間のグリッパーをドラッグすることで変更できます。</span><span class="sxs-lookup"><span data-stu-id="6a50c-116">You can resize columns by dragging the gripper between column headers.</span></span> <span data-ttu-id="6a50c-117">ことができますも動的に追加、削除、置換、およびにこの機能が組み込まれているために、列を並べ替える<xref:System.Windows.Controls.GridView>です。</span><span class="sxs-lookup"><span data-stu-id="6a50c-117">You can also dynamically add, remove, replace, and reorder columns because this functionality is built into <xref:System.Windows.Controls.GridView>.</span></span> <span data-ttu-id="6a50c-118">ただし、<xref:System.Windows.Controls.GridView>表示されるデータを直接更新することはできません。</span><span class="sxs-lookup"><span data-stu-id="6a50c-118">However, <xref:System.Windows.Controls.GridView> cannot directly update the data that it displays.</span></span>  
   
- 従業員データを表示する <xref:System.Windows.Controls.GridView> を定義する方法を次の例に示します。  この例では、<xref:System.Windows.Controls.ListView> で `EmployeeInfoDataSource` が <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> として定義されています。  <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> のプロパティ定義によって、<xref:System.Windows.Controls.GridViewColumn> のコンテンツが `EmployeeInfoDataSource` データ カテゴリにバインドされます。  
+ <span data-ttu-id="6a50c-119">次の例は、定義する方法を示します、<xref:System.Windows.Controls.GridView>従業員データを表示します。</span><span class="sxs-lookup"><span data-stu-id="6a50c-119">The following example shows how to define a <xref:System.Windows.Controls.GridView> that displays employee data.</span></span> <span data-ttu-id="6a50c-120">この例では<xref:System.Windows.Controls.ListView>定義、`EmployeeInfoDataSource`として、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>です。</span><span class="sxs-lookup"><span data-stu-id="6a50c-120">In this example, <xref:System.Windows.Controls.ListView> defines the `EmployeeInfoDataSource` as the <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>.</span></span> <span data-ttu-id="6a50c-121">プロパティ定義<xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>バインド<xref:System.Windows.Controls.GridViewColumn>へのコンテンツ`EmployeeInfoDataSource`データのカテゴリ。</span><span class="sxs-lookup"><span data-stu-id="6a50c-121">The property definitions of <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> bind <xref:System.Windows.Controls.GridViewColumn> content to `EmployeeInfoDataSource` data categories.</span></span>  
   
- [!code-xml[ListViewCode#ListViewEmployee](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#listviewemployee)]  
+ [!code-xaml[ListViewCode#ListViewEmployee](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#listviewemployee)]  
   
- 前述の例で作成したテーブルを次の図に示します。  
+ <span data-ttu-id="6a50c-122">次の図は、前の例により作成されるテーブルを示しています。</span><span class="sxs-lookup"><span data-stu-id="6a50c-122">The following illustration shows the table that the previous example creates.</span></span>  
   
- **ItemsSource のデータを表示する GridView**  
+ <span data-ttu-id="6a50c-123">**GridView、ItemsSource からデータを表示します。**</span><span class="sxs-lookup"><span data-stu-id="6a50c-123">**GridView that displays data from an ItemsSource**</span></span>  
   
- ![GridView 出力を含む ListView](../../../../docs/framework/wpf/controls/media/listviewgridview.png "ListViewGridView")  
+ <span data-ttu-id="6a50c-124">![GridView 出力を含む ListView](../../../../docs/framework/wpf/controls/media/listviewgridview.JPG "ListViewGridView")</span><span class="sxs-lookup"><span data-stu-id="6a50c-124">![ListView with GridView output](../../../../docs/framework/wpf/controls/media/listviewgridview.JPG "ListViewGridView")</span></span>  
   
 <a name="GridViewLayoutandStyle"></a>   
-## GridView レイアウトおよびスタイル  
- <xref:System.Windows.Controls.GridViewColumn> の列のセルおよび列ヘッダーの幅は同じです。  既定では、各列の幅は、そのコンテンツに合わせて設定されます。  必要に応じて、列を固定幅に設定できます。  
+## <a name="gridview-layout-and-style"></a><span data-ttu-id="6a50c-125">GridView のレイアウトとスタイル</span><span class="sxs-lookup"><span data-stu-id="6a50c-125">GridView Layout and Style</span></span>  
+ <span data-ttu-id="6a50c-126">列のセルと列ヘッダーの<xref:System.Windows.Controls.GridViewColumn>同じ幅を持ちます。</span><span class="sxs-lookup"><span data-stu-id="6a50c-126">The column cells and the column header of a <xref:System.Windows.Controls.GridViewColumn> have the same width.</span></span> <span data-ttu-id="6a50c-127">既定では、各列の幅がコンテンツに合わせて調整されます。</span><span class="sxs-lookup"><span data-stu-id="6a50c-127">By default, each column sizes its width to fit its content.</span></span> <span data-ttu-id="6a50c-128">列を固定幅に設定することもできます。</span><span class="sxs-lookup"><span data-stu-id="6a50c-128">Optionally, you can set a column to a fixed width.</span></span>  
   
- 関連するデータ コンテンツは、水平行に表示されます。  たとえば、前の図では、各従業員の氏名および ID 番号が水平行に示されているため、これらが 1 つのセットとして表示されています。  
+ <span data-ttu-id="6a50c-129">関連するデータのコンテンツは水平方向の行に表示されます。</span><span class="sxs-lookup"><span data-stu-id="6a50c-129">Related data content displays in horizontal rows.</span></span> <span data-ttu-id="6a50c-130">たとえば前の図では、各従業員の姓と名と ID 番号が横一列に並ぶため 1 つのセットとして表示されています。</span><span class="sxs-lookup"><span data-stu-id="6a50c-130">For example, in the previous illustration, each employee's last name, first name, and ID number are displayed as a set because they appear in a horizontal row.</span></span>  
   
 <a name="DefiningandStylingColumnsinaGridView"></a>   
-### GridView の列の定義およびスタイル設定  
- <xref:System.Windows.Controls.GridViewColumn> に表示するデータ フィールドを定義する場合は、<xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>、<xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>、または <xref:System.Windows.Controls.GridViewColumn.CellTemplateSelector%2A> プロパティを使用します。  <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> プロパティは、他の 2 つのテンプレート プロパティよりも優先されます。  
+### <a name="defining-and-styling-columns-in-a-gridview"></a><span data-ttu-id="6a50c-131">GridView の列の定義およびスタイル設定</span><span class="sxs-lookup"><span data-stu-id="6a50c-131">Defining and Styling Columns in a GridView</span></span>  
+ <span data-ttu-id="6a50c-132">表示するデータ フィールドを定義するときに、<xref:System.Windows.Controls.GridViewColumn>を使用して、 <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>、 <xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>、または<xref:System.Windows.Controls.GridViewColumn.CellTemplateSelector%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="6a50c-132">When defining the data field to display in a <xref:System.Windows.Controls.GridViewColumn>, use the <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>, <xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>, or <xref:System.Windows.Controls.GridViewColumn.CellTemplateSelector%2A> properties.</span></span> <span data-ttu-id="6a50c-133"><xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>プロパティ テンプレートのプロパティのいずれかのよりも優先されます。</span><span class="sxs-lookup"><span data-stu-id="6a50c-133">The <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> property takes precedence over either of the template properties.</span></span>  
   
- <xref:System.Windows.Controls.GridView> の列のコンテンツの配置を指定するには、<xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A> を定義します。  <xref:System.Windows.Controls.GridView> を使用して表示する <xref:System.Windows.Controls.ListView> のコンテンツには、<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A> および <xref:System.Windows.Controls.Control.VerticalContentAlignment%2A> プロパティを使用しないでください。  
+ <span data-ttu-id="6a50c-134">列のコンテンツの配置を指定する、 <xref:System.Windows.Controls.GridView>、定義、<xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>です。</span><span class="sxs-lookup"><span data-stu-id="6a50c-134">To specify the alignment of content in a column of a <xref:System.Windows.Controls.GridView>, define a <xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>.</span></span> <span data-ttu-id="6a50c-135">使用しないでください、<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A>と<xref:System.Windows.Controls.Control.VerticalContentAlignment%2A>プロパティ<xref:System.Windows.Controls.ListView>を使用して表示されるコンテンツ、<xref:System.Windows.Controls.GridView>です。</span><span class="sxs-lookup"><span data-stu-id="6a50c-135">Do not use the <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A> and <xref:System.Windows.Controls.Control.VerticalContentAlignment%2A> properties for <xref:System.Windows.Controls.ListView> content that is displayed by using a <xref:System.Windows.Controls.GridView>.</span></span>  
   
- 列ヘッダーのテンプレート プロパティとスタイル プロパティを指定するには、<xref:System.Windows.Controls.GridView>、<xref:System.Windows.Controls.GridViewColumn>、および <xref:System.Windows.Controls.GridViewColumnHeader> クラスを使用します。  詳細については、「[GridView の列ヘッダー スタイルおｙびテンプレートの概要](../../../../docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md)」を参照してください。  
+ <span data-ttu-id="6a50c-136">列ヘッダーのテンプレートとスタイルのプロパティを指定するには、使用、 <xref:System.Windows.Controls.GridView>、 <xref:System.Windows.Controls.GridViewColumn>、および<xref:System.Windows.Controls.GridViewColumnHeader>クラスです。</span><span class="sxs-lookup"><span data-stu-id="6a50c-136">To specify template and style properties for column headers, use the <xref:System.Windows.Controls.GridView>, <xref:System.Windows.Controls.GridViewColumn>, and <xref:System.Windows.Controls.GridViewColumnHeader> classes.</span></span> <span data-ttu-id="6a50c-137">詳細については、[GridView の列ヘッダーのスタイルとテンプレートの概要](../../../../docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6a50c-137">For more information, see [GridView Column Header Styles and Templates Overview](../../../../docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md).</span></span>  
   
 <a name="AddingVisualElementstoaGridViewView"></a>   
-### GridView へのビジュアル要素の追加  
- <xref:System.Windows.Controls.CheckBox> コントロールや <xref:System.Windows.Controls.Button> コントロールなどのビジュアル要素を <xref:System.Windows.Controls.GridView> 表示モードに追加するには、テンプレートまたはスタイルを使用します。  
+### <a name="adding-visual-elements-to-a-gridview"></a><span data-ttu-id="6a50c-138">GridView への視覚的要素の追加</span><span class="sxs-lookup"><span data-stu-id="6a50c-138">Adding Visual Elements to a GridView</span></span>  
+ <span data-ttu-id="6a50c-139">などの視覚要素を追加する<xref:System.Windows.Controls.CheckBox>と<xref:System.Windows.Controls.Button>コントロールに、<xref:System.Windows.Controls.GridView>モードのビューで、テンプレートまたはスタイルを使用します。</span><span class="sxs-lookup"><span data-stu-id="6a50c-139">To add visual elements, such as <xref:System.Windows.Controls.CheckBox> and <xref:System.Windows.Controls.Button> controls, to a <xref:System.Windows.Controls.GridView> view mode, use templates or styles.</span></span>  
   
- ビジュアル要素をデータ項目として明示的に定義した場合、その要素は <xref:System.Windows.Controls.GridView> に一度しか表示できません。  この制限は、要素は親を 1 つしか持つことができず、[ビジュアル ツリー](GTMT)に一度しか表示されないために適用されます。  
+ <span data-ttu-id="6a50c-140">1 回だけを表示できるデータ項目として明示的に視覚的要素を定義する場合、<xref:System.Windows.Controls.GridView>です。</span><span class="sxs-lookup"><span data-stu-id="6a50c-140">If you explicitly define a visual element as a data item, it can appear only one time in a <xref:System.Windows.Controls.GridView>.</span></span> <span data-ttu-id="6a50c-141">この制限が存在する理由は 1 つの要素は 1 つの親しか持てないためです。したがって視覚的要素をビジュアル ツリーに 1 回だけ表示できます。</span><span class="sxs-lookup"><span data-stu-id="6a50c-141">This limitation exists because an element can have only one parent and therefore, can appear only one time in the visual tree.</span></span>  
   
 <a name="StylingRowsinaGridViewView"></a>   
-### GridView の行のスタイル設定  
- <xref:System.Windows.Controls.GridViewRowPresenter> および <xref:System.Windows.Controls.GridViewHeaderRowPresenter> クラスを使用して、<xref:System.Windows.Controls.GridView> の行を書式設定して表示します。  <xref:System.Windows.Controls.GridView> 表示モードの行のスタイルを設定する方法の例については、「[GridView を実装する ListView で行のスタイルを設定する](../../../../docs/framework/wpf/controls/how-to-style-a-row-in-a-listview-that-implements-a-gridview.md)」を参照してください。  
+### <a name="styling-rows-in-a-gridview"></a><span data-ttu-id="6a50c-142">GridView での行のスタイル設定</span><span class="sxs-lookup"><span data-stu-id="6a50c-142">Styling Rows in a GridView</span></span>  
+ <span data-ttu-id="6a50c-143">使用して、<xref:System.Windows.Controls.GridViewRowPresenter>と<xref:System.Windows.Controls.GridViewHeaderRowPresenter>書式設定および行を表示するクラス、<xref:System.Windows.Controls.GridView>です。</span><span class="sxs-lookup"><span data-stu-id="6a50c-143">Use the <xref:System.Windows.Controls.GridViewRowPresenter> and <xref:System.Windows.Controls.GridViewHeaderRowPresenter> classes to format and display the rows of a <xref:System.Windows.Controls.GridView>.</span></span> <span data-ttu-id="6a50c-144">スタイルの行に方法の例については、<xref:System.Windows.Controls.GridView>モードを表示しを参照してください[ListView を実装する GridView で行をスタイル](../../../../docs/framework/wpf/controls/how-to-style-a-row-in-a-listview-that-implements-a-gridview.md)です。</span><span class="sxs-lookup"><span data-stu-id="6a50c-144">For an example of how to style rows in a <xref:System.Windows.Controls.GridView> view mode, see [Style a Row in a ListView That Implements a GridView](../../../../docs/framework/wpf/controls/how-to-style-a-row-in-a-listview-that-implements-a-gridview.md).</span></span>  
   
 <a name="AlignmentIssuesWhenUsingItemContainerStyle"></a>   
-### ItemContainerStyle を使用する際の配置の問題  
- 列ヘッダーとセル間の配置の問題を回避するため、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> の項目の幅に影響を与えるプロパティを設定したりテンプレートを指定したりしないようにしてください。  たとえば、<xref:System.Windows.FrameworkElement.Margin%2A> プロパティを設定したり、<xref:System.Windows.Controls.ListView> コントロールで定義されている <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> に <xref:System.Windows.Controls.CheckBox> を追加する <xref:System.Windows.Controls.ControlTemplate> を指定したりしないでください。  代わりに、列の幅に影響を与えるプロパティおよびテンプレートを、<xref:System.Windows.Controls.GridView> 表示モードを定義するクラスで直接指定してください。  
+### <a name="alignment-issues-when-you-use-itemcontainerstyle"></a><span data-ttu-id="6a50c-145">ItemContainerStyle 使用時の配置問題</span><span class="sxs-lookup"><span data-stu-id="6a50c-145">Alignment Issues When You Use ItemContainerStyle</span></span>  
+ <span data-ttu-id="6a50c-146">列ヘッダーとセルの配置の問題を防ぐためには、プロパティを設定またはしないテンプレート内のアイテムの幅に影響を指定する、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>です。</span><span class="sxs-lookup"><span data-stu-id="6a50c-146">To prevent alignment issues between column headers and cells, do not set a property or specify a template that affects the width of an item in an <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>.</span></span> <span data-ttu-id="6a50c-147">たとえば、設定しないでください、<xref:System.Windows.FrameworkElement.Margin%2A>プロパティかを指定、<xref:System.Windows.Controls.ControlTemplate>を追加、<xref:System.Windows.Controls.CheckBox>を<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>で定義されている、<xref:System.Windows.Controls.ListView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6a50c-147">For example, do not set the <xref:System.Windows.FrameworkElement.Margin%2A> property or specify a <xref:System.Windows.Controls.ControlTemplate> that adds a <xref:System.Windows.Controls.CheckBox> to an <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> that is defined on a <xref:System.Windows.Controls.ListView> control.</span></span> <span data-ttu-id="6a50c-148">代わりに、指定のプロパティと列の幅を定義するクラスに影響を与えるテンプレート、<xref:System.Windows.Controls.GridView>表示モード。</span><span class="sxs-lookup"><span data-stu-id="6a50c-148">Instead, specify the properties and templates that affect column width directly on classes that define a <xref:System.Windows.Controls.GridView> view mode.</span></span>  
   
- たとえば、<xref:System.Windows.Controls.CheckBox> を <xref:System.Windows.Controls.GridView> 表示モードの行に追加するには、<xref:System.Windows.Controls.CheckBox> を <xref:System.Windows.DataTemplate> に追加して、<xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A> プロパティをその <xref:System.Windows.DataTemplate> に設定します。  
+ <span data-ttu-id="6a50c-149">例については、追加する、<xref:System.Windows.Controls.CheckBox>内の行に<xref:System.Windows.Controls.GridView>モードを表示、追加、<xref:System.Windows.Controls.CheckBox>を<xref:System.Windows.DataTemplate>、し、設定、<xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>にプロパティ<xref:System.Windows.DataTemplate>です。</span><span class="sxs-lookup"><span data-stu-id="6a50c-149">For example, to add a <xref:System.Windows.Controls.CheckBox> to the rows in <xref:System.Windows.Controls.GridView> view mode, add the <xref:System.Windows.Controls.CheckBox> to a <xref:System.Windows.DataTemplate>, and then set the <xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A> property to that <xref:System.Windows.DataTemplate>.</span></span>  
   
 <a name="InteractingwithaGridViewControl"></a>   
-## GridView でのユーザーの操作  
- アプリケーションで <xref:System.Windows.Controls.GridView> を使用する場合、ユーザーは <xref:System.Windows.Controls.GridView> の書式設定を操作および変更できます。  たとえば、ユーザーは列の並べ替え、列のサイズ変更、テーブルでの項目の選択、コンテンツのスクロールなどを実行できます。  また、ユーザーが列ヘッダー ボタンをクリックしたときに応答するイベント ハンドラーを定義することもできます。  イベント ハンドラーは、列のコンテンツに従って <xref:System.Windows.Controls.GridView> に表示されるデータを並べ替える操作などを実行できます。  
+## <a name="user-interactions-with-a-gridview"></a><span data-ttu-id="6a50c-150">ユーザーによる GridView の操作</span><span class="sxs-lookup"><span data-stu-id="6a50c-150">User Interactions with a GridView</span></span>  
+ <span data-ttu-id="6a50c-151">使用すると、 <xref:System.Windows.Controls.GridView> 、アプリケーションでユーザーが対話および変更の書式設定、<xref:System.Windows.Controls.GridView>です。</span><span class="sxs-lookup"><span data-stu-id="6a50c-151">When you use a <xref:System.Windows.Controls.GridView> in your application, users can interact with and modify the formatting of the <xref:System.Windows.Controls.GridView>.</span></span> <span data-ttu-id="6a50c-152">たとえばユーザーは、列の順序の変更、列のサイズの変更、テーブルのアイテムの選択、コンテンツのスクロールを実行できます。</span><span class="sxs-lookup"><span data-stu-id="6a50c-152">For example, users can reorder columns, resize a column, select items in a table, and scroll through content.</span></span> <span data-ttu-id="6a50c-153">ユーザーが列ヘッダーのボタンをクリックしたときに応答するイベント ハンドラーを定義することもできます。</span><span class="sxs-lookup"><span data-stu-id="6a50c-153">You can also define an event handler that responds when a user clicks the column header button.</span></span> <span data-ttu-id="6a50c-154">イベント ハンドラーに表示されるデータの並べ替えのように操作を実行できる、<xref:System.Windows.Controls.GridView>列の内容に従ってします。</span><span class="sxs-lookup"><span data-stu-id="6a50c-154">The event handler can perform operations like sorting the data that is displayed in the <xref:System.Windows.Controls.GridView> according to the contents of a column.</span></span>  
   
- <xref:System.Windows.Controls.GridView> を使用したユーザー操作のための機能の詳細を次に示します。  
+ <span data-ttu-id="6a50c-155">次の一覧でさらに詳しくを使用しての機能について説明します<xref:System.Windows.Controls.GridView>ユーザーの操作。</span><span class="sxs-lookup"><span data-stu-id="6a50c-155">The following list discusses in more detail the capabilities of using <xref:System.Windows.Controls.GridView> for user interaction:</span></span>  
   
--   **ドラッグ アンド ドロップを使用した列の並べ替え。**  
+-   <span data-ttu-id="6a50c-156">**ドラッグ アンド ドロップで列の順序を変更する**</span><span class="sxs-lookup"><span data-stu-id="6a50c-156">**Reorder columns by using the drag-and-drop method.**</span></span>  
   
-     ユーザーは、マウスが列ヘッダー上にあるときにその左ボタンを押してその列を新しい位置にドラッグすることで、<xref:System.Windows.Controls.GridView> の列を並べ替えることができます。  ユーザーが列ヘッダーをドラッグするとき、フローティング バージョンのヘッダーと、列を挿入する位置を示す黒い実線が表示されます。  
+     <span data-ttu-id="6a50c-157">ユーザーが内の列を並べ替えることができます、<xref:System.Windows.Controls.GridView>が列見出しの上でマウスの左ボタンを押すと、新しい位置にその列をドラッグし、します。</span><span class="sxs-lookup"><span data-stu-id="6a50c-157">Users can reorder columns in a <xref:System.Windows.Controls.GridView> by pressing the left mouse button while it is over a column header and then dragging that column to a new position.</span></span> <span data-ttu-id="6a50c-158">ユーザーが列ヘッダーをドラッグしている間、そのヘッダーの浮動バージョンと、列を挿入する場所を示す黒い実線が表示されます。</span><span class="sxs-lookup"><span data-stu-id="6a50c-158">While the user drags the column header, a floating version of the header is displayed as well as a solid black line that shows where to insert the column.</span></span>  
   
-     フローティング バージョンのヘッダーの既定のスタイルを変更する場合は、<xref:System.Windows.Controls.GridViewColumnHeader.Role%2A> プロパティが <xref:System.Windows.Controls.GridViewColumnHeaderRole> に設定されているときにトリガーされる <xref:System.Windows.Controls.GridViewColumnHeader> 型の <xref:System.Windows.Controls.ControlTemplate> を指定します。  詳細については、「[ドラッグされた GridView 列ヘッダーのスタイルを作成する](../../../../docs/framework/wpf/controls/how-to-create-a-style-for-a-dragged-gridview-column-header.md)」を参照してください。  
+     <span data-ttu-id="6a50c-159">ヘッダーの浮動小数点バージョンの既定のスタイルを変更する場合は、指定、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.GridViewColumnHeader>となる型トリガーされたときに、<xref:System.Windows.Controls.GridViewColumnHeader.Role%2A>プロパティに設定されている<xref:System.Windows.Controls.GridViewColumnHeaderRole.Floating>です。</span><span class="sxs-lookup"><span data-stu-id="6a50c-159">If you want to modify the default style for the floating version of a header, specify a <xref:System.Windows.Controls.ControlTemplate> for a <xref:System.Windows.Controls.GridViewColumnHeader> type that is triggered when the <xref:System.Windows.Controls.GridViewColumnHeader.Role%2A> property is set to <xref:System.Windows.Controls.GridViewColumnHeaderRole.Floating>.</span></span> <span data-ttu-id="6a50c-160">詳細については、[ドラッグした GridView 列ヘッダーのスタイルを作成する](../../../../docs/framework/wpf/controls/how-to-create-a-style-for-a-dragged-gridview-column-header.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6a50c-160">For more information, see [Create a Style for a Dragged GridView Column Header](../../../../docs/framework/wpf/controls/how-to-create-a-style-for-a-dragged-gridview-column-header.md).</span></span>  
   
--   **コンテンツに合わせた列のサイズ変更。**  
+-   <span data-ttu-id="6a50c-161">**内容に合わせて列のサイズを変更する**</span><span class="sxs-lookup"><span data-stu-id="6a50c-161">**Resize a column to its content.**</span></span>  
   
-     ユーザーは、列ヘッダーの右にあるグリッパーをダブルクリックして、列のサイズをそのコンテンツに合わせて変更することができます。  
+     <span data-ttu-id="6a50c-162">ユーザーは列ヘッダーの右側にあるグリッパーをダブルクリックすると、内容に合わせて列のサイズを変更できます。</span><span class="sxs-lookup"><span data-stu-id="6a50c-162">Users can double-click the gripper to the right of a column header in order to resize a column to fit its content.</span></span>  
   
     > [!NOTE]
-    >  <xref:System.Windows.Controls.GridViewColumn.Width%2A> プロパティを `Double.NaN` に設定して、同じ効果を得ることができます。  
+    >  <span data-ttu-id="6a50c-163">設定することができます、<xref:System.Windows.Controls.GridViewColumn.Width%2A>プロパティを`Double.NaN`を同じ効果を生成します。</span><span class="sxs-lookup"><span data-stu-id="6a50c-163">You can set the <xref:System.Windows.Controls.GridViewColumn.Width%2A> property to `Double.NaN` to produce the same effect.</span></span>  
   
--   **行項目の選択。**  
+-   <span data-ttu-id="6a50c-164">**行の項目を選択する**</span><span class="sxs-lookup"><span data-stu-id="6a50c-164">**Select row items.**</span></span>  
   
-     ユーザーは、<xref:System.Windows.Controls.GridView> の 1 つ以上の項目を選択できます。  
+     <span data-ttu-id="6a50c-165">内の 1 つまたは複数の項目を選択できる、<xref:System.Windows.Controls.GridView>です。</span><span class="sxs-lookup"><span data-stu-id="6a50c-165">Users can select one or more items in a <xref:System.Windows.Controls.GridView>.</span></span>  
   
-     選択された項目の <xref:System.Windows.Style> を変更する場合は、「[トリガーを使用して、ListView で選択された項目のスタイルを設定する](../../../../docs/framework/wpf/controls/how-to-use-triggers-to-style-selected-items-in-a-listview.md)」を参照してください。  
+     <span data-ttu-id="6a50c-166">変更する場合、<xref:System.Windows.Style>のアイテムを選択し、次を参照してください。 [ListView で選択した項目のスタイルを使用してトリガー](../../../../docs/framework/wpf/controls/how-to-use-triggers-to-style-selected-items-in-a-listview.md)です。</span><span class="sxs-lookup"><span data-stu-id="6a50c-166">If you want to change the <xref:System.Windows.Style> of a selected item, see [Use Triggers to Style Selected Items in a ListView](../../../../docs/framework/wpf/controls/how-to-use-triggers-to-style-selected-items-in-a-listview.md).</span></span>  
   
--   **最初に画面に表示されていないコンテンツを表示するためのスクロール。**  
+-   <span data-ttu-id="6a50c-167">**スクロールして画面に表示されていない内容を表示する**</span><span class="sxs-lookup"><span data-stu-id="6a50c-167">**Scroll to view content that is not initially visible on the screen.**</span></span>  
   
-     <xref:System.Windows.Controls.GridView> のサイズがすべての項目を表示できる十分な大きさではない場合、ユーザーは、<xref:System.Windows.Controls.ScrollViewer> コントロールによって提供されるスクロール バーを使用して水平方向または垂直方向にスクロールできます。  特定の方向ですべてのコンテンツが表示可能な場合、<xref:System.Windows.Controls.Primitives.ScrollBar> は非表示になります。  列ヘッダーは垂直スクロール バーでスクロールされませんが、水平方向にはスクロールされます。  
+     <span data-ttu-id="6a50c-168">場合のサイズ、<xref:System.Windows.Controls.GridView>がないのに十分な大きさのすべての項目を表示する、ユーザーが水平方向にスクロールまたは垂直方向にスクロール バーを使用すると、これによって提供される、<xref:System.Windows.Controls.ScrollViewer>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6a50c-168">If the size of the <xref:System.Windows.Controls.GridView> is not large enough to display all the items, users can scroll horizontally or vertically by using scrollbars, which are provided by a <xref:System.Windows.Controls.ScrollViewer> control.</span></span> <span data-ttu-id="6a50c-169">A<xref:System.Windows.Controls.Primitives.ScrollBar>は、すべてのコンテンツが特定の方向に表示されている場合に表示されません。</span><span class="sxs-lookup"><span data-stu-id="6a50c-169">A <xref:System.Windows.Controls.Primitives.ScrollBar> is hidden if all the content is visible in a specific direction.</span></span> <span data-ttu-id="6a50c-170">列ヘッダーは、垂直スクロール バーでのスクロール操作ではなく水平方向のスクロール操作を行います。</span><span class="sxs-lookup"><span data-stu-id="6a50c-170">Column headers do not scroll with a vertical scroll bar, but do scroll horizontally.</span></span>  
   
--   **列ヘッダー ボタンをクリックすることによる列の操作。**  
+-   <span data-ttu-id="6a50c-171">**列ヘッダーのボタンをクリックして列を操作する**</span><span class="sxs-lookup"><span data-stu-id="6a50c-171">**Interact with columns by clicking the column header buttons.**</span></span>  
   
-     並べ替えアルゴリズムが提供されている場合、列ヘッダー ボタンをクリックすると、ユーザーは列に表示されるデータを並べ替えることができます。  
+     <span data-ttu-id="6a50c-172">ユーザーは並べ替えアルゴリズムを指定しておけば、列ヘッダーのボタンをクリックして列に表示されているデータを並べ替えることができます。</span><span class="sxs-lookup"><span data-stu-id="6a50c-172">When users click a column header button, they can sort the data that is displayed in the column if you have provided a sorting algorithm.</span></span>  
   
-     並べ替えアルゴリズムなどの機能を提供するには、列ヘッダー ボタンの <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントを処理します。  単一の列ヘッダーの <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントを処理するには、<xref:System.Windows.Controls.GridViewColumnHeader> に対してイベント ハンドラーを設定します。  すべての列ヘッダーの <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントを処理するイベント ハンドラーを設定するには、<xref:System.Windows.Controls.ListView> コントロールに対してハンドラーを設定します。  
+     <span data-ttu-id="6a50c-173">処理することができます、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>並べ替えアルゴリズムなどの機能を提供するために列ヘッダーのボタンのイベントです。</span><span class="sxs-lookup"><span data-stu-id="6a50c-173">You can handle the <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event for column header buttons in order to provide functionality like a sorting algorithm.</span></span> <span data-ttu-id="6a50c-174">処理するために、 <xref:System.Windows.Controls.Primitives.ButtonBase.Click> 、1 つの列ヘッダーのイベントにイベント ハンドラーを設定する、<xref:System.Windows.Controls.GridViewColumnHeader>です。</span><span class="sxs-lookup"><span data-stu-id="6a50c-174">To handle the <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event for a single column header, set an event handler on the <xref:System.Windows.Controls.GridViewColumnHeader>.</span></span> <span data-ttu-id="6a50c-175">処理するイベント ハンドラーを設定する、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>すべての列ヘッダーのイベントのハンドラーを設定する、<xref:System.Windows.Controls.ListView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6a50c-175">To set an event handler that handles the <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event for all column headers, set the handler on the <xref:System.Windows.Controls.ListView> control.</span></span>  
   
 <a name="Obtaining_Other_Custom_Views"></a>   
-## その他のカスタム ビューの取得  
- <xref:System.Windows.Controls.ViewBase> 抽象クラスから派生した <xref:System.Windows.Controls.GridView> クラスは、<xref:System.Windows.Controls.ListView> クラスの使用可能な表示モードの一例です。  <xref:System.Windows.Controls.ViewBase> クラスから派生させて、<xref:System.Windows.Controls.ListView> のその他のカスタム ビューを作成できます。  カスタム表示モードの例については、「[ListView のカスタム表示モードを作成する](../../../../docs/framework/wpf/controls/how-to-create-a-custom-view-mode-for-a-listview.md)」を参照してください。  
+## <a name="obtaining-other-custom-views"></a><span data-ttu-id="6a50c-176">その他のカスタム ビューの取得</span><span class="sxs-lookup"><span data-stu-id="6a50c-176">Obtaining Other Custom Views</span></span>  
+ <span data-ttu-id="6a50c-177"><xref:System.Windows.Controls.GridView>から派生するクラス、<xref:System.Windows.Controls.ViewBase>抽象クラスでは 1 つの可能な表示モード、<xref:System.Windows.Controls.ListView>クラスです。</span><span class="sxs-lookup"><span data-stu-id="6a50c-177">The <xref:System.Windows.Controls.GridView> class, which is derived from the <xref:System.Windows.Controls.ViewBase> abstract class, is just one of the possible view modes for the <xref:System.Windows.Controls.ListView> class.</span></span> <span data-ttu-id="6a50c-178">他のカスタム ビューを作成する<xref:System.Windows.Controls.ListView>から派生することによって、<xref:System.Windows.Controls.ViewBase>クラスです。</span><span class="sxs-lookup"><span data-stu-id="6a50c-178">You can create other custom views for <xref:System.Windows.Controls.ListView> by deriving from the <xref:System.Windows.Controls.ViewBase> class.</span></span> <span data-ttu-id="6a50c-179">カスタム ビュー モードの例については、[ListView のカスタム ビュー モードを作成する](../../../../docs/framework/wpf/controls/how-to-create-a-custom-view-mode-for-a-listview.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6a50c-179">For an example of a custom view mode, see [Create a Custom View Mode for a ListView](../../../../docs/framework/wpf/controls/how-to-create-a-custom-view-mode-for-a-listview.md).</span></span>  
   
 <a name="GridViewSupportingClasses"></a>   
-## GridView のサポート クラス  
- 次のクラスは <xref:System.Windows.Controls.GridView> 表示モードをサポートします。  
+## <a name="gridview-supporting-classes"></a><span data-ttu-id="6a50c-180">GridViewサポート クラス</span><span class="sxs-lookup"><span data-stu-id="6a50c-180">GridView Supporting Classes</span></span>  
+ <span data-ttu-id="6a50c-181">次のクラスのサポート、<xref:System.Windows.Controls.GridView>表示モード。</span><span class="sxs-lookup"><span data-stu-id="6a50c-181">The following classes support the <xref:System.Windows.Controls.GridView> view mode.</span></span>  
   
 -   <xref:System.Windows.Controls.GridViewColumn>  
   
@@ -135,14 +138,14 @@ caps.handback.revision: 25
   
 -   <xref:System.Windows.Controls.GridViewColumnHeaderRole>  
   
-## 参照  
- <xref:System.Windows.Controls.ListView>   
- <xref:System.Windows.Controls.ListViewItem>   
- <xref:System.Windows.Controls.GridViewColumn>   
- <xref:System.Windows.Controls.GridViewColumnHeader>   
- <xref:System.Windows.Controls.GridViewRowPresenter>   
- <xref:System.Windows.Controls.GridViewHeaderRowPresenter>   
- <xref:System.Windows.Controls.ViewBase>   
- [ListView の概要](../../../../docs/framework/wpf/controls/listview-overview.md)   
- [ヘッダーがクリックされたときに GridView 列を並べ替える](../../../../docs/framework/wpf/controls/how-to-sort-a-gridview-column-when-a-header-is-clicked.md)   
- [方法のトピック](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="6a50c-182">関連項目</span><span class="sxs-lookup"><span data-stu-id="6a50c-182">See Also</span></span>  
+ <xref:System.Windows.Controls.ListView>  
+ <xref:System.Windows.Controls.ListViewItem>  
+ <xref:System.Windows.Controls.GridViewColumn>  
+ <xref:System.Windows.Controls.GridViewColumnHeader>  
+ <xref:System.Windows.Controls.GridViewRowPresenter>  
+ <xref:System.Windows.Controls.GridViewHeaderRowPresenter>  
+ <xref:System.Windows.Controls.ViewBase>  
+ [<span data-ttu-id="6a50c-183">ListView の概要</span><span class="sxs-lookup"><span data-stu-id="6a50c-183">ListView Overview</span></span>](../../../../docs/framework/wpf/controls/listview-overview.md)  
+ [<span data-ttu-id="6a50c-184">ヘッダーがクリックされたときに GridView 列を並べ替える</span><span class="sxs-lookup"><span data-stu-id="6a50c-184">Sort a GridView Column When a Header Is Clicked</span></span>](../../../../docs/framework/wpf/controls/how-to-sort-a-gridview-column-when-a-header-is-clicked.md)  
+ [<span data-ttu-id="6a50c-185">方法トピック</span><span class="sxs-lookup"><span data-stu-id="6a50c-185">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)

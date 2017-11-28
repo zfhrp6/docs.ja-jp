@@ -9,85 +9,82 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 1feadf3d-3cfc-41dd-abb5-a4fc303a7b53
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 1d972489536e929c8694bd6a4cab31c9f2d624a8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
+# <a name="migrating-net-core-projects-to-the-csproj-format"></a><span data-ttu-id="4a2a6-104">.NET Core プロジェクトから .csproj 形式への移行</span><span class="sxs-lookup"><span data-stu-id="4a2a6-104">Migrating .NET Core projects to the .csproj format</span></span>
 
-# <a name="migrating-net-core-projects-to-the-csproj-format"></a>.NET Core プロジェクトから .csproj 形式への移行
+<span data-ttu-id="4a2a6-105">このドキュメントでは、.NET Core プロジェクトの移行シナリオについて説明します。次の 3 つの移行シナリオを取り上げます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-105">This document will cover migration scenarios for .NET Core projects and will go over the following three migration scenarios:</span></span>
 
-このドキュメントでは、.NET Core プロジェクトの移行シナリオについて説明します。次の 3 つの移行シナリオを取り上げます。
+1. [<span data-ttu-id="4a2a6-106">有効な最新スキーマの *project.json* から *csproj* への移行</span><span class="sxs-lookup"><span data-stu-id="4a2a6-106">Migration from a valid latest schema of *project.json* to *csproj*</span></span>](#migration-from-projectjson-to-csproj)
+2. [<span data-ttu-id="4a2a6-107">DNX から csproj への移行</span><span class="sxs-lookup"><span data-stu-id="4a2a6-107">Migration from DNX to csproj</span></span>](#migration-from-dnx-to-csproj)
+3. [<span data-ttu-id="4a2a6-108">RC3 と以前の .NET Core csproj プロジェクトから最終形式への移行</span><span class="sxs-lookup"><span data-stu-id="4a2a6-108">Migration from RC3 and previous .NET Core csproj projects to the final format</span></span>](#migration-from-earlier-net-core-csproj-formats-to-rtm-csproj)
 
-1. [有効な最新スキーマの *project.json* から *csproj* への移行](#migration-from-projectjson-to-csproj)
-2. [DNX から csproj への移行](#migration-from-dnx-to-csproj)
-3. [RC3 と以前の .NET Core csproj プロジェクトから最終形式への移行](#migration-from-earlier-net-core-csproj-formats-to-rtm-csproj)
+## <a name="migration-from-projectjson-to-csproj"></a><span data-ttu-id="4a2a6-109">project.json から csproj への移行</span><span class="sxs-lookup"><span data-stu-id="4a2a6-109">Migration from project.json to csproj</span></span>
+<span data-ttu-id="4a2a6-110">*project.json* から *.csproj* への移行は、次のいずれかの方法で実行できます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-110">Migration from *project.json* to *.csproj* can be done using one of the following methods:</span></span>
 
-## <a name="migration-from-projectjson-to-csproj"></a>project.json から csproj への移行
-*project.json* から *.csproj* への移行は、次のいずれかの方法で実行できます。
-
-- [Visual Studio 2017](#visual-studio-2017)
-- [dotnet 移行コマンドライン ツール](#dotnet-migrate)
+- [<span data-ttu-id="4a2a6-111">Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="4a2a6-111">Visual Studio 2017</span></span>](#visual-studio-2017)
+- [<span data-ttu-id="4a2a6-112">dotnet 移行コマンドライン ツール</span><span class="sxs-lookup"><span data-stu-id="4a2a6-112">dotnet migrate command-line tool</span></span>](#dotnet-migrate)
  
-いずれの方法も、同じ基本エンジンを使用してプロジェクトを移行するので、両方の結果は同じです。 ほとんどの場合、2 つの方法のいずれかを使用して *project.json* を *csproj* に移行するだけで完了します。プロジェクト ファイルをさらに手動で編集する必要はありません。 結果の *.csproj* ファイルには、格納しているディレクトリ名と同じ名前が付けられます。
+<span data-ttu-id="4a2a6-113">いずれの方法も、同じ基本エンジンを使用してプロジェクトを移行するので、両方の結果は同じです。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-113">Both methods use the same underlying engine to migrate the projects, so the results will be the same for both.</span></span> <span data-ttu-id="4a2a6-114">ほとんどの場合、2 つの方法のいずれかを使用して *project.json* を *csproj* に移行するだけで完了します。プロジェクト ファイルをさらに手動で編集する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-114">In most cases, using one of these two ways to migrate the *project.json* to *csproj* is the only thing that is needed and no further manual editing of the project file is necessary.</span></span> <span data-ttu-id="4a2a6-115">結果の *.csproj* ファイルには、格納しているディレクトリ名と同じ名前が付けられます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-115">The resulting *.csproj* file will be named the same as the containing directory name.</span></span>
 
-### <a name="visual-studio-2017"></a>Visual Studio 2017
+### <a name="visual-studio-2017"></a><span data-ttu-id="4a2a6-116">Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="4a2a6-116">Visual Studio 2017</span></span>
 
-*.xproj* ファイルまたは *.xproj* ファイルを参照するソリューションを開くと、**[一方向のアップグレード]** ダイアログが表示されます。 このダイアログには、移行されるプロジェクトが表示されます。 ソリューション ファイルを開くと、ソリューション ファイルに指定されているすべてのプロジェクトが表示されます。 移行されるプロジェクトの一覧を確認し、**[OK]** を選択します。
+<span data-ttu-id="4a2a6-117">*.xproj* ファイルまたは *.xproj* ファイルを参照するソリューションを開くと、**[一方向のアップグレード]** ダイアログが表示されます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-117">When you open a *.xproj* file or a solution file which references *.xproj* files, the **One-way upgrade** dialog appears.</span></span> <span data-ttu-id="4a2a6-118">このダイアログには、移行されるプロジェクトが表示されます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-118">The dialog displays the projects to be migrated.</span></span> <span data-ttu-id="4a2a6-119">ソリューション ファイルを開くと、ソリューション ファイルに指定されているすべてのプロジェクトが表示されます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-119">If you open a solution file, all the projects specified in the solution file will be listed.</span></span> <span data-ttu-id="4a2a6-120">移行されるプロジェクトの一覧を確認し、**[OK]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-120">Review the list of projects to be migrated and select **OK**.</span></span>
 
 ![移行されるプロジェクトの一覧が表示された [一方向のアップグレード] ダイアログ](media/one-way-upgrade.jpg)
 
-Visual Studio では、選択したプロジェクトが自動的に移行されます。 すべてのプロジェクトを選択していない状態でソリューションを移行すると、同じダイアログが開き、そのソリューションの残りのプロジェクトをアップグレードすることを確認するメッセージが表示されます。 プロジェクトが移行されたら、**ソリューション エクスプローラー** ウィンドウでプロジェクトを右クリックして、**[編集 \<プロジェクト名.csproj]** を選択し、そのコンテンツを表示して変更することができます。
+<span data-ttu-id="4a2a6-122">Visual Studio では、選択したプロジェクトが自動的に移行されます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-122">Visual Studio will migrate the projects chosen automatically.</span></span> <span data-ttu-id="4a2a6-123">すべてのプロジェクトを選択していない状態でソリューションを移行すると、同じダイアログが開き、そのソリューションの残りのプロジェクトをアップグレードすることを確認するメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-123">When migrating a solution, if you don't choose all projects, the same dialog will appear asking you to upgrade the remaining projects from that solution.</span></span> <span data-ttu-id="4a2a6-124">プロジェクトが移行されたら、**ソリューション エクスプローラー** ウィンドウでプロジェクトを右クリックして、**[編集 \<プロジェクト名.csproj]** を選択し、そのコンテンツを表示して変更することができます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-124">After the project is migrated, you can see and modify its contents by right-clicking the project in the **Solution Explorer** window and selecting **Edit \<project name>.csproj**.</span></span>
 
-移行されたファイル (*project.json*、*global.json*、*.xproj*、およびソリューション ファイル) は *Backup* フォルダーに移動されます。 移行されるソリューション ファイルは Visual Studio 2017 にアップグレードされ、以前のバージョンの Visual Studio ではそのソリューション ファイルを開くことができなくなります。 移行レポートを含む *UpgradeLog.htm* というファイルも保存され、自動的に開かれます。
+<span data-ttu-id="4a2a6-125">移行されたファイル (*project.json*、*global.json*、*.xproj*、およびソリューション ファイル) は *Backup* フォルダーに移動されます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-125">Files that were migrated (*project.json*, *global.json*, *.xproj* and solution file) will be moved to a *Backup* folder.</span></span> <span data-ttu-id="4a2a6-126">移行されるソリューション ファイルは Visual Studio 2017 にアップグレードされ、以前のバージョンの Visual Studio ではそのソリューション ファイルを開くことができなくなります。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-126">The solution file that is migrated will be upgraded to Visual Studio 2017 and you won't be able to open that solution file in previous versions of Visual Studio.</span></span> <span data-ttu-id="4a2a6-127">移行レポートを含む *UpgradeLog.htm* というファイルも保存され、自動的に開かれます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-127">A file named *UpgradeLog.htm* is also saved and automatically opened that contains a migration report.</span></span>
 
 > [!IMPORTANT]
-> 新しいツールは Visual Studio 2015 で使用できないので、Visual Studio 2015 を使用してプロジェクトを移行できません。
+> <span data-ttu-id="4a2a6-128">新しいツールは Visual Studio 2015 で使用できないので、Visual Studio 2015 を使用してプロジェクトを移行できません。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-128">The new tooling is not available in Visual Studio 2015, so you cannot migrate your projects using that version of Visual Studio.</span></span>
 
-### <a name="dotnet-migrate"></a>dotnet の移行
+### <a name="dotnet-migrate"></a><span data-ttu-id="4a2a6-129">dotnet の移行</span><span class="sxs-lookup"><span data-stu-id="4a2a6-129">dotnet migrate</span></span>
 
-コマンドラインのシナリオでは、[`dotnet migrate`](../tools/dotnet-migrate.md) コマンドを使用できます。 検出されたものに応じて、プロジェクト、ソリューション、または一連のフォルダーの順に移行されます。 プロジェクトを移行すると、プロジェクトとそのすべての依存ファイルが移行されます。
+<span data-ttu-id="4a2a6-130">コマンドラインのシナリオでは、[`dotnet migrate`](../tools/dotnet-migrate.md) コマンドを使用できます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-130">In the command-line scenario, you can use the [`dotnet migrate`](../tools/dotnet-migrate.md) command.</span></span> <span data-ttu-id="4a2a6-131">検出されたものに応じて、プロジェクト、ソリューション、または一連のフォルダーの順に移行されます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-131">It will migrate a project, a solution or a set of folders in that order, depending on which ones were found.</span></span> <span data-ttu-id="4a2a6-132">プロジェクトを移行すると、プロジェクトとそのすべての依存ファイルが移行されます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-132">When you migrate a project, the project and all its dependencies are migrated.</span></span>
 
-移行されたファイル (*project.json*、*global.json*、および *.xproj*) は *Backup* フォルダーに移動されます。
-
-> [!NOTE]
-> Visual Studio コードを使用している場合、`dotnet migrate` コマンドを実行しても、`tasks.json` などの Visual Studio コード固有のファイルは変更されません。 これらのファイルは手動で変更する必要があります。 これは、Project Ryder などのエディターや、Visual Studio ではない統合開発環境 (IDE) を使用している場合にも該当します。 
-
-project.json および csproj 形式の比較については、「[project.json プロパティと csproj プロパティの間のマッピング](../tools/project-json-to-csproj.md)」を参照してください。
-
-### <a name="common-issues"></a>一般的な問題
-
-- "No executable found matching command dotnet-migrate" (コマンド dotnet-migrate と一致する実行ファイルが見つかりません) というエラーが発生する場合:
-
-`dotnet --version` を実行して使用しているバージョンを確認します。 [`dotnet migrate`](../tools/dotnet-migrate.md) には、.NET Core CLI RC3 以降が必要です。
-カレント ディレクトリまたは親ディレクトリに *global.json* ファイルがあり、`sdk` バージョンが古いバージョンに設定されている場合にこのエラーが発生します。
-
-## <a name="migration-from-dnx-to-csproj"></a>DNX から csproj への移行
-.NET Core 開発にまだ DNX を使用している場合、移行プロセスは次の 2 段階で実行する必要があります。
-
-1. [既存の DNX 移行ガイダンス](from-dnx.md)を使用して DNX から project-json 対応の CLI に移行します。
-2. 前のセクションの手順に従って、*project.json* から *.csproj* に移行します。  
+<span data-ttu-id="4a2a6-133">移行されたファイル (*project.json*、*global.json*、および *.xproj*) は *Backup* フォルダーに移動されます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-133">Files that were migrated (*project.json*, *global.json* and *.xproj*) will be moved to a *backup* folder.</span></span>
 
 > [!NOTE]
-> Preview 1 リリースの .NET Core CLI で、DNX は公式に非推奨になりました。 
+> <span data-ttu-id="4a2a6-134">Visual Studio コードを使用している場合、`dotnet migrate` コマンドを実行しても、`tasks.json` などの Visual Studio コード固有のファイルは変更されません。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-134">If you are using Visual Studio Code, the `dotnet migrate` command will not modify Visual Studio Code-specific files such as `tasks.json`.</span></span> <span data-ttu-id="4a2a6-135">これらのファイルは手動で変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-135">These files need to be changed manually.</span></span> <span data-ttu-id="4a2a6-136">これは、Project Ryder などのエディターや、Visual Studio ではない統合開発環境 (IDE) を使用している場合にも該当します。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-136">This is also true if you are using Project Ryder or any editor or Integrated Development Environment (IDE) other than Visual Studio.</span></span> 
 
-## <a name="migration-from-earlier-net-core-csproj-formats-to-rtm-csproj"></a>以前の .NET Core csproj 形式から RTM csproj への移行
-.NET Core csproj 形式は、ツールの新しいプレリリース バージョンごとに変化し、進化しています。 以前のバージョンの csproj から最新バージョンにプロジェクト ファイルを移行するツールはないため、プロジェクト ファイルを手動で編集する必要があります。 実際の手順は、移行するプロジェクト ファイルのバージョンによって異なります。 バージョン間で加えられた変更内容に基づいて、考慮する必要があるガイダンスの一部を次に示します。
+<span data-ttu-id="4a2a6-137">project.json および csproj 形式の比較については、「[project.json プロパティと csproj プロパティの間のマッピング](../tools/project-json-to-csproj.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-137">See [A mapping between project.json and csproj properties](../tools/project-json-to-csproj.md) for a comparison of project.json and csproj formats.</span></span>
 
-* `<Project>` 要素からツールのバージョン プロパティを削除します (存在する場合)。 
-* `<Project>` 要素から XML 名前空間 (`xmlns`) を削除します。
-* 存在しない場合は、`<Project>` 要素に `Sdk` 属性を追加し、`Microsoft.NET.Sdk` または `Microsoft.NET.Sdk.Web` に設定します。 この属性は、プロジェクトが SDK を使用することを指定するために使用します。 `Microsoft.NET.Sdk.Web` は Web アプリに使用されます。
-* プロジェクトの一番上と一番下から `<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />` および `<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />` ステートメントを削除します。 これらの import ステートメントは SDK で暗黙的に指定されているので、プロジェクトに含める必要はありません。 
-* プロジェクトに `Microsoft.NETCore.App` または `NETStandard.Library` `<PackageReference>` アイテムがある場合は削除することをお勧めします。 これらのパッケージ参照は、[SDK で暗黙的に指定されています](https://aka.ms/sdkimplicitrefs)。 
-* `Microsoft.NET.Sdk` `<PackageReference>` 要素がある場合は削除します。 SDK の参照は、`<Project>` 要素の `Sdk` 属性によって行われます。 
-* [SDK で暗黙的に指定](../tools/csproj.md#default-compilation-includes-in-net-core-projects)されている [glob](https://en.wikipedia.org/wiki/Glob_(programming)) を削除します。 プロジェクトにこれらの glob を残すと、コンパイル アイテムが重複するため、ビルド時にエラーが発生します。 
+### <a name="common-issues"></a><span data-ttu-id="4a2a6-138">一般的な問題</span><span class="sxs-lookup"><span data-stu-id="4a2a6-138">Common issues</span></span>
 
-これらの手順を実行すると、RTM .NET Core csproj 形式と完全に互換性のあるプロジェクトになります。 
+- <span data-ttu-id="4a2a6-139">"No executable found matching command dotnet-migrate" (コマンド dotnet-migrate と一致する実行ファイルが見つかりません) というエラーが発生する場合:</span><span class="sxs-lookup"><span data-stu-id="4a2a6-139">If you get an error: "No executable found matching command dotnet-migrate":</span></span>
 
-古い csproj 形式から新しい形式に移行する前と後の例については、.NET ブログの記事「[Updating Visual Studio 2017 RC – .NET Core Tooling improvements](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements/)」 (Visual Studio 2017 RC の更新 - .NET Core ツールの改善) を参照してください。
+<span data-ttu-id="4a2a6-140">`dotnet --version` を実行して使用しているバージョンを確認します。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-140">Run `dotnet --version` to see which version you are using.</span></span> <span data-ttu-id="4a2a6-141">[`dotnet migrate`](../tools/dotnet-migrate.md) には、.NET Core CLI RC3 以降が必要です。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-141">[`dotnet migrate`](../tools/dotnet-migrate.md) requires .NET Core CLI RC3 or higher.</span></span>
+<span data-ttu-id="4a2a6-142">カレント ディレクトリまたは親ディレクトリに *global.json* ファイルがあり、`sdk` バージョンが古いバージョンに設定されている場合にこのエラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-142">You’ll get this error if you have a *global.json* file in the current or parent directory and the `sdk` version is set to an older version.</span></span>
 
-## <a name="see-also"></a>関連項目
-[Visual Studio プロジェクトのポート、移行、アップグレード](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects)
+## <a name="migration-from-dnx-to-csproj"></a><span data-ttu-id="4a2a6-143">DNX から csproj への移行</span><span class="sxs-lookup"><span data-stu-id="4a2a6-143">Migration from DNX to csproj</span></span>
+<span data-ttu-id="4a2a6-144">.NET Core 開発にまだ DNX を使用している場合、移行プロセスは次の 2 段階で実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-144">If you are still using DNX for .NET Core development, your migration process should be done in two stages:</span></span>
 
+1. <span data-ttu-id="4a2a6-145">[既存の DNX 移行ガイダンス](from-dnx.md)を使用して DNX から project-json 対応の CLI に移行します。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-145">Use the [existing DNX migration guidance](from-dnx.md) to migrate from DNX to project-json enabled CLI.</span></span>
+2. <span data-ttu-id="4a2a6-146">前のセクションの手順に従って、*project.json* から *.csproj* に移行します。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-146">Follow the steps from the previous section to migrate from *project.json* to *.csproj*.</span></span>  
+
+> [!NOTE]
+> <span data-ttu-id="4a2a6-147">Preview 1 リリースの .NET Core CLI で、DNX は公式に非推奨になりました。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-147">DNX has become officially deprecated during the Preview 1 release of the .NET Core CLI.</span></span> 
+
+## <a name="migration-from-earlier-net-core-csproj-formats-to-rtm-csproj"></a><span data-ttu-id="4a2a6-148">以前の .NET Core csproj 形式から RTM csproj への移行</span><span class="sxs-lookup"><span data-stu-id="4a2a6-148">Migration from earlier .NET Core csproj formats to RTM csproj</span></span>
+<span data-ttu-id="4a2a6-149">.NET Core csproj 形式は、ツールの新しいプレリリース バージョンごとに変化し、進化しています。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-149">The .NET Core csproj format has been changing and evolving with each new pre-release version of the tooling.</span></span> <span data-ttu-id="4a2a6-150">以前のバージョンの csproj から最新バージョンにプロジェクト ファイルを移行するツールはないため、プロジェクト ファイルを手動で編集する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-150">There is no tool that will migrate your project file from earlier versions of csproj to the latest, so you need to manually edit the project file.</span></span> <span data-ttu-id="4a2a6-151">実際の手順は、移行するプロジェクト ファイルのバージョンによって異なります。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-151">The actual steps depend on the version of the project file you are migrating.</span></span> <span data-ttu-id="4a2a6-152">バージョン間で加えられた変更内容に基づいて、考慮する必要があるガイダンスの一部を次に示します。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-152">The following is some guidance to consider based on the changes that happened between versions:</span></span>
+
+* <span data-ttu-id="4a2a6-153">`<Project>` 要素からツールのバージョン プロパティを削除します (存在する場合)。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-153">Remove the tools version property from the `<Project>` element, if it exists.</span></span> 
+* <span data-ttu-id="4a2a6-154">`<Project>` 要素から XML 名前空間 (`xmlns`) を削除します。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-154">Remove the XML namespace (`xmlns`) from the `<Project>` element.</span></span>
+* <span data-ttu-id="4a2a6-155">存在しない場合は、`<Project>` 要素に `Sdk` 属性を追加し、`Microsoft.NET.Sdk` または `Microsoft.NET.Sdk.Web` に設定します。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-155">If it doesn't exist, add the `Sdk` attribute to the `<Project>` element and set it to `Microsoft.NET.Sdk` or `Microsoft.NET.Sdk.Web`.</span></span> <span data-ttu-id="4a2a6-156">この属性は、プロジェクトが SDK を使用することを指定するために使用します。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-156">This attribute specifies that the project uses the SDK to be used.</span></span> <span data-ttu-id="4a2a6-157">`Microsoft.NET.Sdk.Web` は Web アプリに使用されます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-157">`Microsoft.NET.Sdk.Web` is used for web apps.</span></span>
+* <span data-ttu-id="4a2a6-158">プロジェクトの一番上と一番下から `<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />` および `<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />` ステートメントを削除します。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-158">Remove the `<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />` and `<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />` statements from the top and bottom of the project.</span></span> <span data-ttu-id="4a2a6-159">これらの import ステートメントは SDK で暗黙的に指定されているので、プロジェクトに含める必要はありません。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-159">These import statements are implied by the SDK, so there is no need for them to be in the project.</span></span> 
+* <span data-ttu-id="4a2a6-160">プロジェクトに `Microsoft.NETCore.App` または `NETStandard.Library` `<PackageReference>` アイテムがある場合は削除することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-160">If you have `Microsoft.NETCore.App` or `NETStandard.Library` `<PackageReference>` items in your project, you should remove them.</span></span> <span data-ttu-id="4a2a6-161">これらのパッケージ参照は、[SDK で暗黙的に指定されています](https://aka.ms/sdkimplicitrefs)。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-161">These package references are [implied by the SDK](https://aka.ms/sdkimplicitrefs).</span></span> 
+* <span data-ttu-id="4a2a6-162">`Microsoft.NET.Sdk` `<PackageReference>` 要素がある場合は削除します。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-162">Remove the `Microsoft.NET.Sdk` `<PackageReference>` element, if it exists.</span></span> <span data-ttu-id="4a2a6-163">SDK の参照は、`<Project>` 要素の `Sdk` 属性によって行われます。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-163">The SDK reference comes through the `Sdk` attribute on the `<Project>` element.</span></span> 
+* <span data-ttu-id="4a2a6-164">[SDK で暗黙的に指定](../tools/csproj.md#default-compilation-includes-in-net-core-projects)されている [glob](https://en.wikipedia.org/wiki/Glob_(programming)) を削除します。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-164">Remove the [globs](https://en.wikipedia.org/wiki/Glob_(programming)) that are [implied by the SDK](../tools/csproj.md#default-compilation-includes-in-net-core-projects).</span></span> <span data-ttu-id="4a2a6-165">プロジェクトにこれらの glob を残すと、コンパイル アイテムが重複するため、ビルド時にエラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-165">Leaving these globs in your project will cause an error on build because compile items will be duplicated.</span></span> 
+
+<span data-ttu-id="4a2a6-166">これらの手順を実行すると、RTM .NET Core csproj 形式と完全に互換性のあるプロジェクトになります。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-166">After these steps your project should be fully compatible with the RTM .NET Core csproj format.</span></span> 
+
+<span data-ttu-id="4a2a6-167">古い csproj 形式から新しい形式に移行する前と後の例については、.NET ブログの記事「[Updating Visual Studio 2017 RC – .NET Core Tooling improvements](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements/)」 (Visual Studio 2017 RC の更新 - .NET Core ツールの改善) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4a2a6-167">For examples of before and after the migration from old csproj format to the new one, see the [Updating Visual Studio 2017 RC – .NET Core Tooling improvements](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements/) article on the .NET blog.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="4a2a6-168">関連項目</span><span class="sxs-lookup"><span data-stu-id="4a2a6-168">See also</span></span>
+[<span data-ttu-id="4a2a6-169">Visual Studio プロジェクトのポート、移行、アップグレード</span><span class="sxs-lookup"><span data-stu-id="4a2a6-169">Port, Migrate, and Upgrade Visual Studio Projects</span></span>](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects)

@@ -1,46 +1,27 @@
 ---
 title: "unsafe (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - unsafe_CSharpKeyword
 - unsafe
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- unsafe keyword [C#]
+helpviewer_keywords: unsafe keyword [C#]
 ms.assetid: 7e818009-1c6e-4b9e-b769-3728a01586a0
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 1fffbe36e39d279b2364b178188381a403c8ff86
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: ceba9e518caf6618cf2f457b930ce08f18273d8c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="unsafe-c-reference"></a>unsafe (C# リファレンス)
-`unsafe` キーワードは、ポインターに関連するすべての操作に必要な、unsafe コンテキストを示します。 詳しくは、「[アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)」をご覧ください。  
+# <a name="unsafe-c-reference"></a><span data-ttu-id="26f9f-102">unsafe (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="26f9f-102">unsafe (C# Reference)</span></span>
+<span data-ttu-id="26f9f-103">`unsafe` キーワードは、ポインターに関連するすべての操作に必要な、unsafe コンテキストを示します。</span><span class="sxs-lookup"><span data-stu-id="26f9f-103">The `unsafe` keyword denotes an unsafe context, which is required for any operation involving pointers.</span></span> <span data-ttu-id="26f9f-104">詳しくは、「[アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="26f9f-104">For more information, see [Unsafe Code and Pointers](../../../csharp/programming-guide/unsafe-code-pointers/index.md).</span></span>  
   
- `unsafe` 修飾子は、型またはメンバーの宣言で使用できます。 そのため、型やメンバーの全体的なテキスト範囲が unsafe コンテキストと見なされます。 たとえば、次に示すのは、`unsafe` 修飾子を使用して宣言されたメソッドです。  
+ <span data-ttu-id="26f9f-105">`unsafe` 修飾子は、型またはメンバーの宣言で使用できます。</span><span class="sxs-lookup"><span data-stu-id="26f9f-105">You can use the `unsafe` modifier in the declaration of a type or a member.</span></span> <span data-ttu-id="26f9f-106">そのため、型やメンバーの全体的なテキスト範囲が unsafe コンテキストと見なされます。</span><span class="sxs-lookup"><span data-stu-id="26f9f-106">The entire textual extent of the type or member is therefore considered an unsafe context.</span></span> <span data-ttu-id="26f9f-107">たとえば、次に示すのは、`unsafe` 修飾子を使用して宣言されたメソッドです。</span><span class="sxs-lookup"><span data-stu-id="26f9f-107">For example, the following is a method declared with the `unsafe` modifier:</span></span>  
   
 ```  
       unsafe static void FastCopy(byte[] src, byte[] dst, int count)  
@@ -49,13 +30,13 @@ ms.lasthandoff: 09/25/2017
 }  
 ```  
   
- unsafe コンテキストのスコープはパラメーター リストからメソッドの末尾までなので、ポインターはパラメーター リストでも使用できます。  
+ <span data-ttu-id="26f9f-108">unsafe コンテキストのスコープはパラメーター リストからメソッドの末尾までなので、ポインターはパラメーター リストでも使用できます。</span><span class="sxs-lookup"><span data-stu-id="26f9f-108">The scope of the unsafe context extends from the parameter list to the end of the method, so pointers can also be used in the parameter list:</span></span>  
   
 ```  
 unsafe static void FastCopy ( byte* ps, byte* pd, int count ) {...}  
 ```  
   
- また、unsafe ブロックを使用して、そのブロック内で unsafe コードを使用できるようにすることもできます。 例:  
+ <span data-ttu-id="26f9f-109">また、unsafe ブロックを使用して、そのブロック内で unsafe コードを使用できるようにすることもできます。</span><span class="sxs-lookup"><span data-stu-id="26f9f-109">You can also use an unsafe block to enable the use of an unsafe code inside this block.</span></span> <span data-ttu-id="26f9f-110">例:</span><span class="sxs-lookup"><span data-stu-id="26f9f-110">For example:</span></span>  
   
 ```  
       unsafe  
@@ -64,19 +45,18 @@ unsafe static void FastCopy ( byte* ps, byte* pd, int count ) {...}
 }  
 ```  
   
- unsafe コードをコンパイルするには、 [/unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md) コンパイラ オプションを指定する必要があります。 unsafe コードは、共通言語ランタイムでは検証できません。  
+ <span data-ttu-id="26f9f-111">unsafe コードをコンパイルするには、 [/unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md) コンパイラ オプションを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="26f9f-111">To compile unsafe code, you must specify the [/unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md) compiler option.</span></span> <span data-ttu-id="26f9f-112">unsafe コードは、共通言語ランタイムでは検証できません。</span><span class="sxs-lookup"><span data-stu-id="26f9f-112">Unsafe code is not verifiable by the common language runtime.</span></span>  
   
-## <a name="example"></a>例  
- [!code-cs[csrefKeywordsModifiers#22](../../../csharp/language-reference/keywords/codesnippet/CSharp/unsafe_1.cs)]  
+## <a name="example"></a><span data-ttu-id="26f9f-113">例</span><span class="sxs-lookup"><span data-stu-id="26f9f-113">Example</span></span>  
+ [!code-csharp[csrefKeywordsModifiers#22](../../../csharp/language-reference/keywords/codesnippet/CSharp/unsafe_1.cs)]  
   
-## <a name="c-language-specification"></a>C# 言語仕様  
+## <a name="c-language-specification"></a><span data-ttu-id="26f9f-114">C# 言語仕様</span><span class="sxs-lookup"><span data-stu-id="26f9f-114">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [fixed ステートメント](../../../csharp/language-reference/keywords/fixed-statement.md)   
- [アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
- [固定サイズ バッファー](../../../csharp/programming-guide/unsafe-code-pointers/fixed-size-buffers.md)
-
+## <a name="see-also"></a><span data-ttu-id="26f9f-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="26f9f-115">See Also</span></span>  
+ [<span data-ttu-id="26f9f-116">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="26f9f-116">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="26f9f-117">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="26f9f-117">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="26f9f-118">C# のキーワード</span><span class="sxs-lookup"><span data-stu-id="26f9f-118">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)  
+ [<span data-ttu-id="26f9f-119">fixed ステートメント</span><span class="sxs-lookup"><span data-stu-id="26f9f-119">fixed Statement</span></span>](../../../csharp/language-reference/keywords/fixed-statement.md)  
+ [<span data-ttu-id="26f9f-120">アンセーフ コードとポインター</span><span class="sxs-lookup"><span data-stu-id="26f9f-120">Unsafe Code and Pointers</span></span>](../../../csharp/programming-guide/unsafe-code-pointers/index.md)  
+ [<span data-ttu-id="26f9f-121">固定サイズ バッファー</span><span class="sxs-lookup"><span data-stu-id="26f9f-121">Fixed Size Buffers</span></span>](../../../csharp/programming-guide/unsafe-code-pointers/fixed-size-buffers.md)

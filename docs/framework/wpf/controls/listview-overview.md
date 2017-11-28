@@ -1,98 +1,103 @@
 ---
-title: "ListView の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "コントロール, ListView"
-  - "ListView コントロール [WPF], ListView コントロールの概要"
+title: "ListView の概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- controls [WPF], ListView
+- ListView controls [WPF], about ListView control
 ms.assetid: 989e12b0-260e-4570-95c6-489284003ce2
-caps.latest.revision: 25
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 24
+caps.latest.revision: "25"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e0886e387b6de34673cd4990ef8b61e08674b531
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ListView の概要
-<xref:System.Windows.Controls.ListView> コントロールは、一連のデータ項目を異なるレイアウトまたはビューで表示するためのインフラストラクチャを提供します。  たとえば、データ項目をテーブルで表示し、さらに列の並べ替えも行う場合です。  
+# <a name="listview-overview"></a><span data-ttu-id="a4184-102">ListView の概要</span><span class="sxs-lookup"><span data-stu-id="a4184-102">ListView Overview</span></span>
+<span data-ttu-id="a4184-103"><xref:System.Windows.Controls.ListView>コントロールには、さまざまなレイアウトまたはビューにデータ項目のセットを表示するためのインフラストラクチャが用意されています。</span><span class="sxs-lookup"><span data-stu-id="a4184-103">The <xref:System.Windows.Controls.ListView> control provides the infrastructure to display a set of data items in different layouts or views.</span></span> <span data-ttu-id="a4184-104">たとえば、ユーザーは、テーブルにデータ項目を表示し、その列を並べ替えできます。</span><span class="sxs-lookup"><span data-stu-id="a4184-104">For example, a user may want to display data items in a table and also to sort its columns.</span></span>  
   
-   
   
 <a name="WhatisaListView"></a>   
-## ListView とは  
- <xref:System.Windows.Controls.ListView> コントロールは、<xref:System.Windows.Controls.ListBox> から派生した <xref:System.Windows.Controls.ItemsControl> です。  通常、その項目はデータ コレクションのメンバーであり、<xref:System.Windows.Controls.ListViewItem> オブジェクトとして表されます。  <xref:System.Windows.Controls.ListViewItem> は <xref:System.Windows.Controls.ContentControl> であり、格納できる子要素は 1 つだけです。  ただし、その子要素はどのようなビジュアル要素でもかまいません。  
+## <a name="what-is-a-listview"></a><span data-ttu-id="a4184-105">ListView とは</span><span class="sxs-lookup"><span data-stu-id="a4184-105">What Is a ListView?</span></span>  
+ <span data-ttu-id="a4184-106"><xref:System.Windows.Controls.ListView>コントロールは、<xref:System.Windows.Controls.ItemsControl>から派生する<xref:System.Windows.Controls.ListBox>です。</span><span class="sxs-lookup"><span data-stu-id="a4184-106">The <xref:System.Windows.Controls.ListView> control is an <xref:System.Windows.Controls.ItemsControl> that is derived from <xref:System.Windows.Controls.ListBox>.</span></span> <span data-ttu-id="a4184-107">通常、その項目はデータ コレクションのメンバーでありとして表される<xref:System.Windows.Controls.ListViewItem>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a4184-107">Typically, its items are members of a data collection and are represented as <xref:System.Windows.Controls.ListViewItem> objects.</span></span> <span data-ttu-id="a4184-108">A<xref:System.Windows.Controls.ListViewItem>は、<xref:System.Windows.Controls.ContentControl>単一の子要素のみを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="a4184-108">A <xref:System.Windows.Controls.ListViewItem> is a <xref:System.Windows.Controls.ContentControl> and can contain only a single child element.</span></span> <span data-ttu-id="a4184-109">ただし、その子要素は、任意のビジュアル要素にできます。</span><span class="sxs-lookup"><span data-stu-id="a4184-109">However, that child element can be any visual element.</span></span>  
   
 <a name="DefiningaListViewView"></a>   
-## ListView の表示モードの定義  
- <xref:System.Windows.Controls.ListView> コントロールのコンテンツの表示モードを指定するには、<xref:System.Windows.Controls.ListView.View%2A> プロパティを設定します。  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] に用意されている表示モードの 1 つに <xref:System.Windows.Controls.GridView> があります。このモードでは、カスタマイズ可能な列を持つテーブルにデータ項目のコレクションが表示されます。  
+## <a name="defining-a-view-mode-for-a-listview"></a><span data-ttu-id="a4184-110">ListView の表示モードの定義</span><span class="sxs-lookup"><span data-stu-id="a4184-110">Defining a View Mode for a ListView</span></span>  
+ <span data-ttu-id="a4184-111">コンテンツの表示モードを指定する、<xref:System.Windows.Controls.ListView>コントロールを設定する、<xref:System.Windows.Controls.ListView.View%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="a4184-111">To specify a view mode for the content of a <xref:System.Windows.Controls.ListView> control, you set the <xref:System.Windows.Controls.ListView.View%2A> property.</span></span> <span data-ttu-id="a4184-112">1 つのビュー モードを[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]提供は<xref:System.Windows.Controls.GridView>、カスタマイズ可能な列を持つテーブルのデータ項目のコレクションが表示されます。</span><span class="sxs-lookup"><span data-stu-id="a4184-112">One view mode that [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] provides is <xref:System.Windows.Controls.GridView>, which displays a collection of data items in a table that has customizable columns.</span></span>  
   
- 従業員情報を表示する <xref:System.Windows.Controls.ListView> コントロールの <xref:System.Windows.Controls.GridView> を定義する方法を次の例に示します。  
+ <span data-ttu-id="a4184-113">次の例は、定義する方法を示します、<xref:System.Windows.Controls.GridView>の<xref:System.Windows.Controls.ListView>従業員情報を表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="a4184-113">The following example shows how to define a <xref:System.Windows.Controls.GridView> for a <xref:System.Windows.Controls.ListView> control that displays employee information.</span></span>  
   
- [!code-xml[ListViewCode#ListViewEmployee](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#listviewemployee)]  
+ [!code-xaml[ListViewCode#ListViewEmployee](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#listviewemployee)]  
   
- 次の図は、前の例でデータがどのように表示されるのかを示したものです。  
+ <span data-ttu-id="a4184-114">次の図は、前の例でのデータの表示方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="a4184-114">The following illustration shows how the data appears for the previous example.</span></span>  
   
- ![GridView 出力を含む ListView](../../../../docs/framework/wpf/controls/media/listviewgridview.png "ListViewGridView")  
+ <span data-ttu-id="a4184-115">![GridView 出力を含む ListView](../../../../docs/framework/wpf/controls/media/listviewgridview.JPG "ListViewGridView")</span><span class="sxs-lookup"><span data-stu-id="a4184-115">![ListView with GridView output](../../../../docs/framework/wpf/controls/media/listviewgridview.JPG "ListViewGridView")</span></span>  
   
- <xref:System.Windows.Controls.ViewBase> クラスを継承するクラスを定義することで、カスタム表示モードを作成できます。  <xref:System.Windows.Controls.ViewBase> クラスは、カスタム ビューを作成するために必要なインフラストラクチャを提供します。  カスタム ビューの作成方法の詳細については、「[ListView のカスタム表示モードを作成する](../../../../docs/framework/wpf/controls/how-to-create-a-custom-view-mode-for-a-listview.md)」を参照してください。  
+ <span data-ttu-id="a4184-116">継承するクラスを定義することで、カスタム ビュー モードを作成することができます、<xref:System.Windows.Controls.ViewBase>クラスです。</span><span class="sxs-lookup"><span data-stu-id="a4184-116">You can create a custom view mode by defining a class that inherits from the <xref:System.Windows.Controls.ViewBase> class.</span></span> <span data-ttu-id="a4184-117"><xref:System.Windows.Controls.ViewBase>クラスには、カスタム ビューを作成する必要のあるインフラストラクチャが用意されています。</span><span class="sxs-lookup"><span data-stu-id="a4184-117">The <xref:System.Windows.Controls.ViewBase> class provides the infrastructure that you need to create a custom view.</span></span> <span data-ttu-id="a4184-118">カスタム ビューを作成する方法の詳細については、[ Create a Custom View Mode for a ListView ](../../../../docs/framework/wpf/controls/how-to-create-a-custom-view-mode-for-a-listview.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a4184-118">For more information about how to create a custom view, see [Create a Custom View Mode for a ListView](../../../../docs/framework/wpf/controls/how-to-create-a-custom-view-mode-for-a-listview.md).</span></span>  
   
 <a name="BindingDatatoaListView"></a>   
-## ListView へのデータのバインド  
- <xref:System.Windows.Controls.ItemsControl.Items%2A> プロパティと <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> プロパティを使用して、<xref:System.Windows.Controls.ListView> コントロールの項目を指定します。  次の例では、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> プロパティを `EmployeeInfoDataSource` という名前のデータ コレクションに設定します。  
+## <a name="binding-data-to-a-listview"></a><span data-ttu-id="a4184-119">ListView へのデータ バインディング</span><span class="sxs-lookup"><span data-stu-id="a4184-119">Binding Data to a ListView</span></span>  
+ <span data-ttu-id="a4184-120">使用して、<xref:System.Windows.Controls.ItemsControl.Items%2A>と<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>の項目を指定するプロパティ、<xref:System.Windows.Controls.ListView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="a4184-120">Use the <xref:System.Windows.Controls.ItemsControl.Items%2A> and <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> properties to specify items for a <xref:System.Windows.Controls.ListView> control.</span></span> <span data-ttu-id="a4184-121">次の例のセット、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>プロパティと呼ばれるデータの収集を`EmployeeInfoDataSource`です。</span><span class="sxs-lookup"><span data-stu-id="a4184-121">The following example sets the <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> property to a data collection that is called `EmployeeInfoDataSource`.</span></span>  
   
- [!code-xml[ListViewCode#ItemsSource](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#itemssource)]  
+ [!code-xaml[ListViewCode#ItemsSource](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#itemssource)]  
   
- <xref:System.Windows.Controls.GridView> では、<xref:System.Windows.Controls.GridViewColumn> オブジェクトが指定したデータ フィールドにバインドされます。  次の例では、<xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> プロパティに <xref:System.Windows.Data.Binding> を指定することで、<xref:System.Windows.Controls.GridViewColumn> オブジェクトをデータ フィールドにバインドします。  
+ <span data-ttu-id="a4184-122"><xref:System.Windows.Controls.GridView>、<xref:System.Windows.Controls.GridViewColumn>オブジェクトが指定されたデータ フィールドにバインドします。</span><span class="sxs-lookup"><span data-stu-id="a4184-122">In a <xref:System.Windows.Controls.GridView>, <xref:System.Windows.Controls.GridViewColumn> objects bind to specified data fields.</span></span> <span data-ttu-id="a4184-123">次の例ではバインド、<xref:System.Windows.Controls.GridViewColumn>オブジェクトを指定して、データ フィールドに、<xref:System.Windows.Data.Binding>の<xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="a4184-123">The following example binds a <xref:System.Windows.Controls.GridViewColumn> object to a data field by specifying a <xref:System.Windows.Data.Binding> for the <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> property.</span></span>  
   
  [!code-csharp[ListViewCode#GridViewColumnProperties](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml.cs#gridviewcolumnproperties)]
  [!code-vb[ListViewCode#GridViewColumnProperties](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ListViewCode/visualbasic/window1.xaml.vb#gridviewcolumnproperties)]
- [!code-xml[ListViewCode#GridViewColumnProperties](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#gridviewcolumnproperties)]  
+ [!code-xaml[ListViewCode#GridViewColumnProperties](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#gridviewcolumnproperties)]  
   
- また、列のセルにスタイルを設定するために使用する <xref:System.Windows.DataTemplate> 定義の一部として、<xref:System.Windows.Data.Binding> を指定することもできます。  次の例では、<xref:System.Windows.ResourceKey> で識別される <xref:System.Windows.DataTemplate> で、<xref:System.Windows.Controls.GridViewColumn> に <xref:System.Windows.Data.Binding> を設定します。  この例では、<xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> を定義していないことに注意してください。これを定義すると、<xref:System.Windows.DataTemplate> によって指定されているバインディングがオーバーライドされます。  
+ <span data-ttu-id="a4184-124">指定することも、<xref:System.Windows.Data.Binding>の一部として、<xref:System.Windows.DataTemplate>定義列のセルのスタイルを設定するために使用します。</span><span class="sxs-lookup"><span data-stu-id="a4184-124">You can also specify a <xref:System.Windows.Data.Binding> as part of a <xref:System.Windows.DataTemplate> definition that you use to style the cells in a column.</span></span> <span data-ttu-id="a4184-125">次の例で、<xref:System.Windows.DataTemplate>で識別される、<xref:System.Windows.ResourceKey>設定、<xref:System.Windows.Data.Binding>の<xref:System.Windows.Controls.GridViewColumn>です。</span><span class="sxs-lookup"><span data-stu-id="a4184-125">In the following example, the <xref:System.Windows.DataTemplate> that is identified with a <xref:System.Windows.ResourceKey> sets the <xref:System.Windows.Data.Binding> for a <xref:System.Windows.Controls.GridViewColumn>.</span></span> <span data-ttu-id="a4184-126">注この例が定義されていない、<xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>これには、バインディングで指定されているためより優先されるため<xref:System.Windows.DataTemplate>です。</span><span class="sxs-lookup"><span data-stu-id="a4184-126">Note that this example does not define the <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> because doing so overrides the binding that is specified by <xref:System.Windows.DataTemplate>.</span></span>  
   
- [!code-xml[ListViewTemplate#GridViewCellTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewcelltemplate)]  
+ [!code-xaml[ListViewTemplate#GridViewCellTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewcelltemplate)]  
   
- [!code-xml[ListViewTemplate#CellTemplateProperty](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#celltemplateproperty)]  
+ [!code-xaml[ListViewTemplate#CellTemplateProperty](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#celltemplateproperty)]  
   
 <a name="StylingaListView"></a>   
-## GridView を実装する ListView へのスタイルの設定  
- <xref:System.Windows.Controls.ListView> コントロールに含まれる <xref:System.Windows.Controls.ListViewItem> オブジェクトは、表示されるデータ項目を表します。  次のプロパティを使用して、データ項目のコンテンツとスタイルを定義できます。  
+## <a name="styling-a-listview-that-implements-a-gridview"></a><span data-ttu-id="a4184-127">GridView を実装する ListView のスタイル設定</span><span class="sxs-lookup"><span data-stu-id="a4184-127">Styling a ListView That Implements a GridView</span></span>  
+ <span data-ttu-id="a4184-128"><xref:System.Windows.Controls.ListView>コントロールに含まれる<xref:System.Windows.Controls.ListViewItem>、表示されるデータ項目を表すオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a4184-128">The <xref:System.Windows.Controls.ListView> control contains <xref:System.Windows.Controls.ListViewItem> objects, which represent the data items that are displayed.</span></span> <span data-ttu-id="a4184-129">次のプロパティを使用して、データ項目の内容とスタイルを定義できます。</span><span class="sxs-lookup"><span data-stu-id="a4184-129">You can use the following properties to define the content and style of data items:</span></span>  
   
--   <xref:System.Windows.Controls.ListView> コントロールでは、<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>、<xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A>、および <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> プロパティを使用します。  
+-   <span data-ttu-id="a4184-130"><xref:System.Windows.Controls.ListView>コントロールを使用して、 <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>、 <xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A>、および<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="a4184-130">On the <xref:System.Windows.Controls.ListView> control, use the <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>, <xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A>, and <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> properties.</span></span>  
   
--   <xref:System.Windows.Controls.ListViewItem> コントロールでは、<xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> および <xref:System.Windows.Controls.ContentControl.ContentTemplateSelector%2A> プロパティを使用します。  
+-   <span data-ttu-id="a4184-131"><xref:System.Windows.Controls.ListViewItem>コントロールを使用して、<xref:System.Windows.Controls.ContentControl.ContentTemplate%2A>と<xref:System.Windows.Controls.ContentControl.ContentTemplateSelector%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="a4184-131">On the <xref:System.Windows.Controls.ListViewItem> control, use the <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> and <xref:System.Windows.Controls.ContentControl.ContentTemplateSelector%2A> properties.</span></span>  
   
- <xref:System.Windows.Controls.GridView> におけるセル間の配置の問題を回避するため、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> を使用して <xref:System.Windows.Controls.ListView> の項目の幅に影響を与えるプロパティやコンテンツを設定または追加しないようにしてください。  たとえば、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> で <xref:System.Windows.FrameworkElement.Margin%2A> プロパティを設定すると、配置の問題が発生する可能性があります。  <xref:System.Windows.Controls.GridView> 内の項目の幅に影響を与えるプロパティやコンテンツを指定または定義するには、<xref:System.Windows.Controls.GridView> クラスのプロパティ、およびそれに関連するクラス \(<xref:System.Windows.Controls.GridViewColumn> など\) を使用してください。  
+ <span data-ttu-id="a4184-132">セル間の配置の問題を回避する、 <xref:System.Windows.Controls.GridView>、使用しない、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>プロパティを設定したり、アイテムの幅に影響するコンテンツを追加、<xref:System.Windows.Controls.ListView>です。</span><span class="sxs-lookup"><span data-stu-id="a4184-132">To avoid alignment issues between cells in a <xref:System.Windows.Controls.GridView>, do not use the <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> to set properties or add content that affects the width of an item in a <xref:System.Windows.Controls.ListView>.</span></span> <span data-ttu-id="a4184-133">たとえば、配置の問題発生する可能性が設定するときに、<xref:System.Windows.FrameworkElement.Margin%2A>プロパティに、 <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>。</span><span class="sxs-lookup"><span data-stu-id="a4184-133">For example, an alignment issue can occur when you set the <xref:System.Windows.FrameworkElement.Margin%2A> property in the <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>.</span></span> <span data-ttu-id="a4184-134">プロパティを指定するか、内のアイテムの幅に影響するコンテンツを定義する、<xref:System.Windows.Controls.GridView>のプロパティを使用して、<xref:System.Windows.Controls.GridView>クラスとその関連クラスなど<xref:System.Windows.Controls.GridViewColumn>です。</span><span class="sxs-lookup"><span data-stu-id="a4184-134">To specify properties or define content that affects the width of items in a <xref:System.Windows.Controls.GridView>, use the properties of the <xref:System.Windows.Controls.GridView> class and its related classes, such as <xref:System.Windows.Controls.GridViewColumn>.</span></span>  
   
- <xref:System.Windows.Controls.GridView> およびそのサポート クラスの使用方法について、詳しくは「[GridView の概要](../../../../docs/framework/wpf/controls/gridview-overview.md)」を参照してください。  
+ <span data-ttu-id="a4184-135">使用する方法の詳細についての<xref:System.Windows.Controls.GridView>し、そのサポート クラスを参照してください[GridView 概要](../../../../docs/framework/wpf/controls/gridview-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="a4184-135">For more information about how to use <xref:System.Windows.Controls.GridView> and its supporting classes, see [GridView Overview](../../../../docs/framework/wpf/controls/gridview-overview.md).</span></span>  
   
- <xref:System.Windows.Controls.ListView> コントロールの <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> を定義し、さらに <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> も定義する場合、<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> が正しく動作するには、スタイルに <xref:System.Windows.Controls.ContentPresenter> を含める必要があります。  
+ <span data-ttu-id="a4184-136">定義した場合、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>の<xref:System.Windows.Controls.ListView>制御および定義、 <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>、含める必要があります、<xref:System.Windows.Controls.ContentPresenter>の順序でスタイルで、<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>正常に動作します。</span><span class="sxs-lookup"><span data-stu-id="a4184-136">If you define an <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> for a <xref:System.Windows.Controls.ListView> control and also define an <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>, you must include a <xref:System.Windows.Controls.ContentPresenter> in the style in order for the <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> to work correctly.</span></span>  
   
- <xref:System.Windows.Controls.GridView> を使用して表示する <xref:System.Windows.Controls.ListView> のコンテンツには、<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A> および <xref:System.Windows.Controls.Control.VerticalContentAlignment%2A> プロパティを使用しないでください。  <xref:System.Windows.Controls.GridView> の列のコンテンツの配置を指定するには、<xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A> を定義します。  
+ <span data-ttu-id="a4184-137">使用しないでください、<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A>と<xref:System.Windows.Controls.Control.VerticalContentAlignment%2A>プロパティ<xref:System.Windows.Controls.ListView>を使用して表示されるコンテンツ、<xref:System.Windows.Controls.GridView>です。</span><span class="sxs-lookup"><span data-stu-id="a4184-137">Do not use the <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A> and <xref:System.Windows.Controls.Control.VerticalContentAlignment%2A> properties for <xref:System.Windows.Controls.ListView> content that is displayed by using a <xref:System.Windows.Controls.GridView>.</span></span> <span data-ttu-id="a4184-138">列のコンテンツの配置を指定する、 <xref:System.Windows.Controls.GridView>、定義、<xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>です。</span><span class="sxs-lookup"><span data-stu-id="a4184-138">To specify the alignment of content in a column of a <xref:System.Windows.Controls.GridView>, define a <xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>.</span></span>  
   
 <a name="UsingtheSameViewMoreThanOnce"></a>   
-## 同じ表示モードの共有  
- 2 つの <xref:System.Windows.Controls.ListView> コントロールが同じ表示モードを同時に共有することはできません。  複数の <xref:System.Windows.Controls.ListView> コントロールで同じ表示モードを使用しようとすると、例外が発生します。  
+## <a name="sharing-the-same-view-mode"></a><span data-ttu-id="a4184-139">同じ表示モードの共有</span><span class="sxs-lookup"><span data-stu-id="a4184-139">Sharing the Same View Mode</span></span>  
+ <span data-ttu-id="a4184-140">2 つ<xref:System.Windows.Controls.ListView>コントロールは、同時に同じ表示モードを共有することはできません。</span><span class="sxs-lookup"><span data-stu-id="a4184-140">Two <xref:System.Windows.Controls.ListView> controls cannot share the same view mode at the same time.</span></span> <span data-ttu-id="a4184-141">1 つ以上に同じ表示モードを使用しようとする場合<xref:System.Windows.Controls.ListView>制御、例外が発生します。</span><span class="sxs-lookup"><span data-stu-id="a4184-141">If you try to use the same view mode with more than one <xref:System.Windows.Controls.ListView> control, an exception occurs.</span></span>  
   
- 複数の <xref:System.Windows.Controls.ListView> で同時に使用できる表示モードを指定するには、テンプレートまたはスタイルを使用します。  <xref:System.Windows.FrameworkElement.Resources%2A> としてビューを定義する方法の例については、[複数のビューを持つ ListView のサンプル](http://go.microsoft.com/fwlink/?LinkID=160013)を参照してください。  
+ <span data-ttu-id="a4184-142">1 つ以上同時に使用できる表示モードを指定する<xref:System.Windows.Controls.ListView>、テンプレートまたはスタイルを使用します。</span><span class="sxs-lookup"><span data-stu-id="a4184-142">To specify a view mode that can be simultaneously used by more than one <xref:System.Windows.Controls.ListView>, use templates or styles.</span></span> <span data-ttu-id="a4184-143">ビューを定義する方法の例については<xref:System.Windows.FrameworkElement.Resources%2A>を参照してください[複数のビューのサンプルを含む ListView](http://go.microsoft.com/fwlink/?LinkID=160013)です。</span><span class="sxs-lookup"><span data-stu-id="a4184-143">For an example of how to define views as <xref:System.Windows.FrameworkElement.Resources%2A>, see [ListView with Multiple Views Sample](http://go.microsoft.com/fwlink/?LinkID=160013).</span></span>  
   
 <a name="CreatingaCustomView"></a>   
-## カスタム表示モードの作成  
- <xref:System.Windows.Controls.GridView> のようなカスタマイズされたビューは、<xref:System.Windows.Controls.ViewBase> 抽象クラスから派生します。この抽象クラスは、<xref:System.Windows.Controls.ListViewItem> オブジェクトとして表されるデータ項目を表示するためのツールを提供します。  
+## <a name="creating-a-custom-view-mode"></a><span data-ttu-id="a4184-144">カスタム表示モードの作成</span><span class="sxs-lookup"><span data-stu-id="a4184-144">Creating a Custom View Mode</span></span>  
+ <span data-ttu-id="a4184-145">表示と同様にカスタマイズされた<xref:System.Windows.Controls.GridView>から派生した、<xref:System.Windows.Controls.ViewBase>として表されるデータ項目を表示するためのツールを提供するクラスを抽象化<xref:System.Windows.Controls.ListViewItem>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a4184-145">Customized views like <xref:System.Windows.Controls.GridView> are derived from the <xref:System.Windows.Controls.ViewBase> abstract class, which provides the tools to display data items that are represented as <xref:System.Windows.Controls.ListViewItem> objects.</span></span>  
   
- カスタム表示モードの例については、[複数のビューを持つ ListView のサンプル](http://go.microsoft.com/fwlink/?LinkID=160013)を参照してください。  
+ <span data-ttu-id="a4184-146">カスタム表示モードの例は、[ListView with Multiple Views Sample](http://go.microsoft.com/fwlink/?LinkID=160013)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a4184-146">For an example of a custom view mode, see [ListView with Multiple Views Sample](http://go.microsoft.com/fwlink/?LinkID=160013).</span></span>  
   
-## 参照  
- <xref:System.Windows.Controls.GridView>   
- <xref:System.Windows.Controls.ListView>   
- <xref:System.Windows.Controls.ListViewItem>   
- <xref:System.Windows.Data.Binding>   
- [GridView の概要](../../../../docs/framework/wpf/controls/gridview-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)   
- [コントロール](../../../../docs/framework/wpf/advanced/optimizing-performance-controls.md)
+## <a name="see-also"></a><span data-ttu-id="a4184-147">関連項目</span><span class="sxs-lookup"><span data-stu-id="a4184-147">See Also</span></span>  
+ <xref:System.Windows.Controls.GridView>  
+ <xref:System.Windows.Controls.ListView>  
+ <xref:System.Windows.Controls.ListViewItem>  
+ <xref:System.Windows.Data.Binding>  
+ [<span data-ttu-id="a4184-148">GridView の概要</span><span class="sxs-lookup"><span data-stu-id="a4184-148">GridView Overview</span></span>](../../../../docs/framework/wpf/controls/gridview-overview.md)  
+ [<span data-ttu-id="a4184-149">方法トピック</span><span class="sxs-lookup"><span data-stu-id="a4184-149">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)  
+ [<span data-ttu-id="a4184-150">コントロール</span><span class="sxs-lookup"><span data-stu-id="a4184-150">Controls</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-controls.md)

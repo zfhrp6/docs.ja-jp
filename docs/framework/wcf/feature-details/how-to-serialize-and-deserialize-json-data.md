@@ -1,36 +1,39 @@
 ---
-title: "方法 : JSON データをシリアル化および逆シリアル化する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : JSON データをシリアル化および逆シリアル化する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 88abc1fb-8196-4ee3-a23b-c6934144d1dd
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 14029250f3bc26ff8598e0b8d4ccce8e9fcca331
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : JSON データをシリアル化および逆シリアル化する
-JSON (JavaScript Object Notation) は、クライアント ブラウザーと AJAX 対応の Web サービスとの間で、少量のデータを高速に交換できる効率的なデータ エンコード形式です。  
+# <a name="how-to-serialize-and-deserialize-json-data"></a><span data-ttu-id="062b7-102">方法 : JSON データをシリアル化および逆シリアル化する</span><span class="sxs-lookup"><span data-stu-id="062b7-102">How to: Serialize and Deserialize JSON Data</span></span>
+<span data-ttu-id="062b7-103">JSON (JavaScript Object Notation) は、クライアント ブラウザーと AJAX 対応の Web サービスとの間で、少量のデータを高速に交換できる効率的なデータ エンコード形式です。</span><span class="sxs-lookup"><span data-stu-id="062b7-103">JSON (JavaScript Object Notation) is an efficient data encoding format that enables fast exchanges of small amounts of data between client browsers and AJAX-enabled Web services.</span></span>  
   
- ここでは JSON でエンコードされたデータに .NET 型のオブジェクトをシリアル化し、逆シリアル化、JSON 形式でデータを使用して .NET 型のインスタンスを<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>します。 この例では、ユーザー定義された `Person` 型のシリアル化と逆シリアル化を示すためにデータ コントラクトを使用します。  
+ <span data-ttu-id="062b7-104">ここでは、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> を使用して .NET 型のオブジェクトを JSON エンコードされたデータにシリアル化し、この JSON 形式のデータを .NET 型のインスタンスに戻すために逆シリアル化する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="062b7-104">This topic demonstrates how to serialize .NET type objects into JSON-encoded data and then deserialize data in the JSON format back into instances of .NET types using the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.</span></span> <span data-ttu-id="062b7-105">この例では、ユーザー定義された `Person` 型のシリアル化と逆シリアル化を示すためにデータ コントラクトを使用します。</span><span class="sxs-lookup"><span data-stu-id="062b7-105">This example uses a data contract to demonstrate serialization and deserialization of a user-defined `Person` type.</span></span>  
   
- AJAX 対応エンドポイントで公開されたサービス操作でデータ コントラクト型を使用する場合、JSON でのシリアル化および逆シリアル化は通常 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] によって自動的に処理されます。 ただし、特定の場合においては JSON データを直接処理する必要があります。このトピックでは、このようなシナリオについて説明します。  
+ <span data-ttu-id="062b7-106">AJAX 対応エンドポイントで公開されたサービス操作でデータ コントラクト型を使用する場合、JSON でのシリアル化および逆シリアル化は通常 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] によって自動的に処理されます。</span><span class="sxs-lookup"><span data-stu-id="062b7-106">Normally, JSON serialization and deserialization is handled automatically by [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] when you use data contract types in service operations that are exposed over AJAX-enabled endpoints.</span></span> <span data-ttu-id="062b7-107">ただし、特定の場合においては JSON データを直接処理する必要があります。このトピックでは、このようなシナリオについて説明します。</span><span class="sxs-lookup"><span data-stu-id="062b7-107">However, in some cases you may need to work with JSON data directly - this is the scenario that this topic demonstrates.</span></span>  
   
 > [!NOTE]
->  サーバー上で送信応答のシリアル化中にエラーが発生した場合、または応答操作がなんらかの理由で例外をスローした場合、エラーにより応答がクライアントに戻らないことがあります。  
+>  <span data-ttu-id="062b7-108">サーバー上で送信応答のシリアル化中にエラーが発生した場合、または応答操作がなんらかの理由で例外をスローした場合、エラーにより応答がクライアントに戻らないことがあります。</span><span class="sxs-lookup"><span data-stu-id="062b7-108">If an error occurs during serialization of an outgoing reply on the server or the reply operation throws an exception for some other reason, it may not get returned to the client as a fault.</span></span>  
   
- このトピックのに基づいて、 [JSON のシリアル化](../../../../docs/framework/wcf/samples/json-serialization.md)サンプルです。  
+ <span data-ttu-id="062b7-109">このトピックの内容がに基づいて、 [JSON のシリアル化](../../../../docs/framework/wcf/samples/json-serialization.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="062b7-109">This topic is based on the [JSON Serialization](../../../../docs/framework/wcf/samples/json-serialization.md) sample.</span></span>  
   
-### <a name="to-define-the-data-contract-for-a-person"></a>Person のデータ コントラクトを定義するには  
+### <a name="to-define-the-data-contract-for-a-person"></a><span data-ttu-id="062b7-110">Person のデータ コントラクトを定義するには</span><span class="sxs-lookup"><span data-stu-id="062b7-110">To define the data contract for a Person</span></span>  
   
-1.  データ コントラクトを定義`Person`アタッチすることにより、 <xref:System.Runtime.Serialization.DataContractAttribute>クラスにし、 <xref:System.Runtime.Serialization.DataMemberAttribute>属性メンバーをシリアル化します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]データ コントラクトを参照してください[サービス コントラクトの設計](../../../../docs/framework/wcf/designing-service-contracts.md)します。  
+1.  <span data-ttu-id="062b7-111">クラスに `Person` をアタッチし、シリアル化するメンバーに <xref:System.Runtime.Serialization.DataContractAttribute> 属性をアタッチすることで、<xref:System.Runtime.Serialization.DataMemberAttribute> のデータ コントラクトを定義します。</span><span class="sxs-lookup"><span data-stu-id="062b7-111">Define the data contract for `Person` by attaching the <xref:System.Runtime.Serialization.DataContractAttribute> to the class and <xref:System.Runtime.Serialization.DataMemberAttribute> attribute to the members you want to serialize.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="062b7-112">データ コントラクトを参照してください[サービス コントラクトの設計](../../../../docs/framework/wcf/designing-service-contracts.md)です。</span><span class="sxs-lookup"><span data-stu-id="062b7-112"> data contracts, see [Designing Service Contracts](../../../../docs/framework/wcf/designing-service-contracts.md).</span></span>  
   
     ```  
     [DataContract]  
@@ -44,9 +47,9 @@ JSON (JavaScript Object Notation) は、クライアント ブラウザーと AJ
         }  
     ```  
   
-### <a name="to-serialize-an-instance-of-type-person-to-json"></a>Person 型のインスタンスを JSON にシリアル化するには  
+### <a name="to-serialize-an-instance-of-type-person-to-json"></a><span data-ttu-id="062b7-113">Person 型のインスタンスを JSON にシリアル化するには</span><span class="sxs-lookup"><span data-stu-id="062b7-113">To serialize an instance of type Person to JSON</span></span>  
   
-1.  `Person` 型のインスタンスを作成します。  
+1.  <span data-ttu-id="062b7-114">`Person` 型のインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="062b7-114">Create an instance of the `Person` type.</span></span>  
   
     ```  
     Person p = new Person();  
@@ -54,20 +57,20 @@ JSON (JavaScript Object Notation) は、クライアント ブラウザーと AJ
     p.age = 42;  
     ```  
   
-2.  シリアル化、`Person`オブジェクトを使用してメモリ ストリームを<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>します。  
+2.  <span data-ttu-id="062b7-115">`Person` を使用して、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> オブジェクトをメモリ ストリームにシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="062b7-115">Serialize the `Person` object to a memory stream using the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.</span></span>  
   
     ```  
     MemoryStream stream1 = new MemoryStream();  
     DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Person));  
     ```  
   
-3.  使用して、 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject%2A>に JSON データをストリームに書き込みます。  
+3.  <span data-ttu-id="062b7-116">JSON データをストリームに書き込むには、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject%2A> メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="062b7-116">Use the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject%2A> method to write JSON data to the stream.</span></span>  
   
     ```  
     ser.WriteObject(stream1, p);  
     ```  
   
-4.  JSON の出力を表示します。  
+4.  <span data-ttu-id="062b7-117">JSON の出力を表示します。</span><span class="sxs-lookup"><span data-stu-id="062b7-117">Show the JSON output.</span></span>  
   
     ```  
     stream1.Position = 0;  
@@ -76,16 +79,16 @@ JSON (JavaScript Object Notation) は、クライアント ブラウザーと AJ
     Console.WriteLine(sr.ReadToEnd());  
     ```  
   
-### <a name="to-deserialize-an-instance-of-type-person-from-json"></a>JSON から Person 型のインスタンスに逆シリアル化するには  
+### <a name="to-deserialize-an-instance-of-type-person-from-json"></a><span data-ttu-id="062b7-118">JSON から Person 型のインスタンスに逆シリアル化するには</span><span class="sxs-lookup"><span data-stu-id="062b7-118">To deserialize an instance of type Person from JSON</span></span>  
   
-1.  新しいインスタンスに、JSON エンコードされたデータを逆シリアル化`Person`を使用して、 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject%2A>のメソッド、 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>します。  
+1.  <span data-ttu-id="062b7-119">`Person` の <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject%2A> メソッドを使用して、JSON エンコードされたデータを <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> の新しいインスタンスに逆シリアル化します。</span><span class="sxs-lookup"><span data-stu-id="062b7-119">Deserialize the JSON-encoded data into a new instance of `Person` by using the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject%2A> method of the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.</span></span>  
   
     ```  
     stream1.Position = 0;  
     Person p2 = (Person)ser.ReadObject(stream1);  
     ```  
   
-2.  結果を表示します。  
+2.  <span data-ttu-id="062b7-120">結果を表示します。</span><span class="sxs-lookup"><span data-stu-id="062b7-120">Show the results.</span></span>  
   
     ```  
     Console.Write("Deserialized back, got name=");  
@@ -94,7 +97,7 @@ JSON (JavaScript Object Notation) は、クライアント ブラウザーと AJ
     Console.WriteLine(p2.age);  
     ```  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="062b7-121">例</span><span class="sxs-lookup"><span data-stu-id="062b7-121">Example</span></span>  
   
 ```  
 // Create a User object and serialize it to a JSON stream.  
@@ -125,11 +128,10 @@ public static User ReadToObject(string json)
     ms.Close();  
     return deserializedUser;  
 }  
-  
 ```  
   
 > [!NOTE]
->  JSON シリアライザーは、次のサンプル コードに示すように、データ コントラクターの複数のメンバーが同じ名前である場合、シリアル化例外をスローします。  
+>  <span data-ttu-id="062b7-122">JSON シリアライザーは、次のサンプル コードに示すように、データ コントラクターの複数のメンバーが同じ名前である場合、シリアル化例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="062b7-122">The JSON serializer throws a serialization exception for data contracts that have multiple members with the same name, as shown in the following sample code.</span></span>  
   
 ```  
 [DataContract]  
@@ -146,6 +148,6 @@ public class TestDuplicateDataDerived : TestDuplicateDataBase
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [スタンドアロン JSON のシリアル化](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md)   
- [JSON およびその他のデータ転送形式をサポートします。](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md)
+## <a name="see-also"></a><span data-ttu-id="062b7-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="062b7-123">See Also</span></span>  
+ [<span data-ttu-id="062b7-124">スタンドアロン JSON のシリアル化</span><span class="sxs-lookup"><span data-stu-id="062b7-124">Stand-Alone JSON Serialization</span></span>](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md)  
+ [<span data-ttu-id="062b7-125">JSON などの他のデータ転送形式をサポートします。</span><span class="sxs-lookup"><span data-stu-id="062b7-125">Support for JSON and Other Data Transfer Formats</span></span>](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md)

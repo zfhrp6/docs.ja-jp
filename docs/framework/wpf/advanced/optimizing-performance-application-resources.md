@@ -1,61 +1,64 @@
 ---
-title: "パフォーマンスの最適化 : アプリケーション リソース | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アプリケーション リソース, パフォーマンス"
-  - "ブラシ, パフォーマンス"
-  - "リソース, パフォーマンス"
-  - "共有 (コピーせずにブラシを)"
-  - "共有 (リソースを)"
-  - "静的リソース"
+title: "パフォーマンスの最適化 : アプリケーション リソース"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- application resources [WPF], performance
+- resources [WPF], performance
+- static resources [WPF]
+- sharing resources [WPF]
+- brushes [WPF], performance
+- sharing brushes without copying [WPF]
 ms.assetid: 62b88488-c08e-4804-b7de-a1c34fbe929c
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8ac462f3b49788fd909f9d9f4fc785db74704ff6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# パフォーマンスの最適化 : アプリケーション リソース
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、アプリケーション リソースを共有して、同じような種類の要素の間で外観や動作の一貫性を維持することができます。  このトピックでは、アプリケーションのパフォーマンス向上に役立つリソース関連の推奨事項について説明します。  
+# <a name="optimizing-performance-application-resources"></a><span data-ttu-id="4495a-102">パフォーマンスの最適化 : アプリケーション リソース</span><span class="sxs-lookup"><span data-stu-id="4495a-102">Optimizing Performance: Application Resources</span></span>
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="4495a-103">同様に型指定された要素の間で一貫した外観や動作をサポートできるように、アプリケーションのリソースを共有できます。</span><span class="sxs-lookup"><span data-stu-id="4495a-103"> allows you to share application resources so that you can support a consistent look or behavior across similar-typed elements.</span></span> <span data-ttu-id="4495a-104">このトピックでは、アプリケーションのパフォーマンスが向上するのに役立つこの領域で、いくつかの推奨事項を説明します。</span><span class="sxs-lookup"><span data-stu-id="4495a-104">This topic provides a few recommendations in this area that can help you improve the performance of your applications.</span></span>  
   
- リソースの詳細については、「[XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)」を参照してください。  
+ <span data-ttu-id="4495a-105">リソースについて詳しくは、「[XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4495a-105">For more information on resources, see [XAML Resources](../../../../docs/framework/wpf/advanced/xaml-resources.md).</span></span>  
   
-## リソースの共有  
- アプリケーションでカスタム コントロールを使用していて、<xref:System.Windows.ResourceDictionary> \(または XAML Resources ノード\) でリソースを定義している場合は、<xref:System.Windows.Application> オブジェクトまたは <xref:System.Windows.Window> オブジェクトのレベルで定義するか、カスタム コントロールの既定のテーマで定義することをお勧めします。  カスタム コントロールの <xref:System.Windows.ResourceDictionary> でリソースを定義すると、そのコントロールのすべてのインスタンスにパフォーマンスの影響が及びます。  たとえば、負荷の高いブラシ操作がカスタム コントロールとその多くのインスタンスのリソース定義の一部として定義されていると、アプリケーションの作業セットが大幅に増大します。  
+## <a name="sharing-resources"></a><span data-ttu-id="4495a-106">リソースの共有</span><span class="sxs-lookup"><span data-stu-id="4495a-106">Sharing resources</span></span>  
+ <span data-ttu-id="4495a-107">アプリケーションがカスタム コントロールを使用して、内のリソースを定義するかどうか、 <xref:System.Windows.ResourceDictionary> (または XAML リソース ノード)、いずれかを定義することで、リソースをお勧め、<xref:System.Windows.Application>または<xref:System.Windows.Window>オブジェクト レベル、またはの既定のテーマで定義しますカスタム コントロールです。</span><span class="sxs-lookup"><span data-stu-id="4495a-107">If your application uses custom controls and defines resources in a <xref:System.Windows.ResourceDictionary> (or XAML Resources node), it is recommended that you either define the resources at the <xref:System.Windows.Application> or <xref:System.Windows.Window> object level, or define them in the default theme for the custom controls.</span></span> <span data-ttu-id="4495a-108">カスタム コントロールのリソースを定義する<xref:System.Windows.ResourceDictionary>では、そのコントロールのすべてのインスタンス、パフォーマンスに影響します。</span><span class="sxs-lookup"><span data-stu-id="4495a-108">Defining resources in a custom control's <xref:System.Windows.ResourceDictionary> imposes a performance impact for every instance of that control.</span></span> <span data-ttu-id="4495a-109">たとえば、カスタム コントロールのリソース定義の一部と、カスタム コントロールの多くのインスタンスとして定義されている負荷の高いブラシ操作がある場合は、アプリケーションのワーキング セットが大幅に増加されます。</span><span class="sxs-lookup"><span data-stu-id="4495a-109">For example, if you have performance-intensive brush operations defined as part of the resource definition of a custom control and many instances of the custom control, the application's working set will increase significantly.</span></span>  
   
- これを実際の例で考えてみましょう。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] を使用してトランプ ゲームを開発するとします。  ほとんどのトランプ ゲームでは、それぞれ異なる面を持つ 52 枚のカードが必要です。  そのためにカード カスタム コントロールを実装することにして、そのリソースで 52 のブラシを定義します \(各ブラシはそれぞれカードの面を表します\)。  メイン アプリケーションでは、最初にこのカード カスタム コントロールの 52 のインスタンスを作成します。  カード カスタム コントロールの各インスタンスでは、それぞれ <xref:System.Windows.Media.Brush> オブジェクトの 52 のインスタンスが生成されます。その結果、全部で 52 × 52 の <xref:System.Windows.Media.Brush> オブジェクトがアプリケーションに存在することになります。  ブラシをカード カスタム コントロールのリソースから <xref:System.Windows.Application> オブジェクトまたは <xref:System.Windows.Window> オブジェクトのレベルに移動するか、カスタム コントロールの既定のテーマで定義すると、カード コントロールの 52 のインスタンスの間で 52 のブラシが共有されるようになるため、アプリケーションの作業セットが縮小されます。  
+ <span data-ttu-id="4495a-110">このポイントを示すためには、次のことを検討してください。</span><span class="sxs-lookup"><span data-stu-id="4495a-110">To illustrate this point, consider the following.</span></span> <span data-ttu-id="4495a-111">たとえば、カード ゲームを使用して、開発している[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="4495a-111">Let's say you are developing a card game using [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span></span> <span data-ttu-id="4495a-112">ほとんどのカード ゲーム、それぞれ異なる面と 52 カードが必要です。</span><span class="sxs-lookup"><span data-stu-id="4495a-112">For most card games, you need 52 cards with 52 different faces.</span></span> <span data-ttu-id="4495a-113">カードのカスタム コントロールを実装することし、カードのカスタム コントロールのリソースで (各を表すカードの面) 52 ブラシを定義します。</span><span class="sxs-lookup"><span data-stu-id="4495a-113">You decide to implement a card custom control and you define 52 brushes (each representing a card face) in the resources of your card custom control.</span></span> <span data-ttu-id="4495a-114">メイン アプリケーションでは、最初にこのカードのカスタム コントロールの 52 インスタンスを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4495a-114">In your main application, you initially create 52 instances of this card custom control.</span></span> <span data-ttu-id="4495a-115">カードのカスタム コントロールの各インスタンスの 52 のインスタンスが生成されます<xref:System.Windows.Media.Brush>オブジェクトで、により、合計で 52 * 52<xref:System.Windows.Media.Brush>アプリケーション内のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="4495a-115">Each instance of the card custom control generates 52 instances of <xref:System.Windows.Media.Brush> objects, which gives you a total of 52 * 52 <xref:System.Windows.Media.Brush> objects in your application.</span></span> <span data-ttu-id="4495a-116">リソースが不足、カード カスタム コントロールにブラシを移動することによって、<xref:System.Windows.Application>または<xref:System.Windows.Window>オブジェクト レベル、または、カスタム コントロールの既定のテーマでの定義 52 ブラシを共有しているようになりましたので、アプリケーションのワーキング セットを縮小します。カード コントロールの 52 のインスタンス。</span><span class="sxs-lookup"><span data-stu-id="4495a-116">By moving the brushes out of the card custom control resources to the <xref:System.Windows.Application> or <xref:System.Windows.Window> object level, or defining them in the default theme for the custom control, you reduce the working set of the application, since you are now sharing the 52 brushes among 52 instances of the card control.</span></span>  
   
-## ブラシはコピーせずに共有する  
- 同じ <xref:System.Windows.Media.Brush> オブジェクトを使用する複数の要素がある場合は、ブラシを [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] でインラインで定義するのではなく、リソースとして定義して参照するようにします。  この方法を使用すると、1 つのインスタンスを作成してそれを再利用することができます。一方、ブラシを [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] でインラインで定義した場合は、各要素に対して新しいインスタンスが作成されます。  
+## <a name="sharing-a-brush-without-copying"></a><span data-ttu-id="4495a-117">コピーすることがなく、ブラシの共有</span><span class="sxs-lookup"><span data-stu-id="4495a-117">Sharing a Brush without Copying</span></span>  
+ <span data-ttu-id="4495a-118">同じを使用して複数の要素があれば<xref:System.Windows.Media.Brush>オブジェクト、リソースとしてブラシを定義しではなく、ブラシでインラインでの定義を参照[!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="4495a-118">If you have multiple elements using the same <xref:System.Windows.Media.Brush> object, define the brush as a resource and reference it, rather than defining the brush inline in [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)].</span></span> <span data-ttu-id="4495a-119">このメソッドは 1 つのインスタンスが作成され、再利用できるよう、ブラシにインラインで定義する一方[!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)]の各要素の新しいインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="4495a-119">This method will create one instance and reuse it, whereas defining brushes inline in [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] creates a new instance for each element.</span></span>  
   
- この例を次のマークアップ サンプルに示します。  
+ <span data-ttu-id="4495a-120">次のマークアップの例は、この点を示しています。</span><span class="sxs-lookup"><span data-stu-id="4495a-120">The following markup sample illustrates this point:</span></span>  
   
- [!code-xml[Performance#PerformanceSnippet7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/BrushResource.xaml#performancesnippet7)]  
+ [!code-xaml[Performance#PerformanceSnippet7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/BrushResource.xaml#performancesnippet7)]  
   
-## 可能な限り静的リソースを使用する  
- 静的リソースは、既に定義されたリソースに対する参照を検索することによって、任意の XAML プロパティ属性の値を指定します。  そのリソースに関する検索動作は、コンパイル時の検索に似ています。  
+## <a name="use-static-resources-when-possible"></a><span data-ttu-id="4495a-121">可能な場合は、静的なリソースを使用します。</span><span class="sxs-lookup"><span data-stu-id="4495a-121">Use Static Resources when Possible</span></span>  
+ <span data-ttu-id="4495a-122">静的リソースでは、定義済みのリソースへの参照を参照して、任意の XAML プロパティ属性の値を提供します。</span><span class="sxs-lookup"><span data-stu-id="4495a-122">A static resource provides a value for any XAML property attribute by looking up a reference to an already defined resource.</span></span> <span data-ttu-id="4495a-123">そのリソースに対する検索の動作は、コンパイル時の検索に似ています。</span><span class="sxs-lookup"><span data-stu-id="4495a-123">Lookup behavior for that resource is analogous to compile-time lookup.</span></span>  
   
- 一方、動的リソースは、初期コンパイル中に一時的な式を作成し、それによって、要求されたリソース値がオブジェクトを構成するために実際に必要になるまで、リソースに関する検索を遅延します。  そのリソースに関する検索動作は、実行時検索に似ています。これはパフォーマンスに影響します。  アプリケーションでは可能な限り静的リソースを使用し、動的リソースを使用するのは必要な場合だけにしてください。  
+ <span data-ttu-id="4495a-124">動的リソースは、その一方で、最初のコンパイル中に一時的な式を作成、検索を遅延リソースに対して要求されたリソースの値が実際にオブジェクトを構築するために必要になるまでです。</span><span class="sxs-lookup"><span data-stu-id="4495a-124">A dynamic resource, on the other hand, will create a temporary expression during the initial compilation and thus defer lookup for resources until the requested resource value is actually required in order to construct an object.</span></span> <span data-ttu-id="4495a-125">そのリソースに対する検索の動作は、パフォーマンスに影響は、実行時の検索に似ています。</span><span class="sxs-lookup"><span data-stu-id="4495a-125">Lookup behavior for that resource is analogous to run-time lookup, which imposes a performance impact.</span></span> <span data-ttu-id="4495a-126">必要な場合にのみ、動的なリソースを使用して、アプリケーションで可能な限り、静的なリソースを使用します。</span><span class="sxs-lookup"><span data-stu-id="4495a-126">Use static resources whenever possible in your application, using dynamic resources only when necessary.</span></span>  
   
- 次のマークアップ サンプルでは、この両方の種類のリソースが使用されています。  
+ <span data-ttu-id="4495a-127">次のマークアップの例は、両方の種類のリソースの使用を示しています。</span><span class="sxs-lookup"><span data-stu-id="4495a-127">The following markup sample shows the use of both types of resources:</span></span>  
   
- [!code-xml[Performance#PerformanceSnippet8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/DynamicResource.xaml#performancesnippet8)]  
+ [!code-xaml[Performance#PerformanceSnippet8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/DynamicResource.xaml#performancesnippet8)]  
   
-## 参照  
- [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)   
- [アプリケーション パフォーマンスの計画](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)   
- [ハードウェアの活用](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)   
- [レイアウトとデザイン](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)   
- [2D グラフィックスとイメージング](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)   
- [オブジェクトの動作](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)   
- [テキスト](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)   
- [データ バインド](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)   
- [パフォーマンスに関するその他の推奨事項](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)
+## <a name="see-also"></a><span data-ttu-id="4495a-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="4495a-128">See Also</span></span>  
+ [<span data-ttu-id="4495a-129">WPF アプリケーションのパフォーマンスの最適化</span><span class="sxs-lookup"><span data-stu-id="4495a-129">Optimizing WPF Application Performance</span></span>](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
+ [<span data-ttu-id="4495a-130">アプリケーション パフォーマンスの計画</span><span class="sxs-lookup"><span data-stu-id="4495a-130">Planning for Application Performance</span></span>](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)  
+ [<span data-ttu-id="4495a-131">ハードウェアの活用</span><span class="sxs-lookup"><span data-stu-id="4495a-131">Taking Advantage of Hardware</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)  
+ [<span data-ttu-id="4495a-132">レイアウトとデザイン</span><span class="sxs-lookup"><span data-stu-id="4495a-132">Layout and Design</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)  
+ [<span data-ttu-id="4495a-133">2D グラフィックスとイメージング</span><span class="sxs-lookup"><span data-stu-id="4495a-133">2D Graphics and Imaging</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
+ [<span data-ttu-id="4495a-134">オブジェクトの動作</span><span class="sxs-lookup"><span data-stu-id="4495a-134">Object Behavior</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)  
+ <span data-ttu-id="4495a-135">[[テキスト]](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)</span><span class="sxs-lookup"><span data-stu-id="4495a-135">[Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)</span></span>  
+ [<span data-ttu-id="4495a-136">データ バインディング</span><span class="sxs-lookup"><span data-stu-id="4495a-136">Data Binding</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
+ [<span data-ttu-id="4495a-137">パフォーマンスに関するその他の推奨事項</span><span class="sxs-lookup"><span data-stu-id="4495a-137">Other Performance Recommendations</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)

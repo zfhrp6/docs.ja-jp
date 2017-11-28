@@ -1,48 +1,55 @@
 ---
-title: "アプリケーションでのフォントのパッケージング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アプリケーション, パッケージ化 (フォントを)"
-  - "フォント, パッケージ化 (アプリケーションで)"
-  - "パッケージ化 (アプリケーションでフォントを)"
-  - "タイポグラフィ, パッケージ化 (アプリケーションでフォントを)"
+title: "アプリケーションでのフォントのパッケージング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- applications [WPF], packaging fonts with
+- fonts [WPF], packaging with applications
+- typography [WPF], packaging fonts with applications
+- packaging fonts with applications [WPF]
 ms.assetid: db15ee48-4d24-49f5-8b9d-a64460865286
-caps.latest.revision: 29
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 25
+caps.latest.revision: "29"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f60668f1bdac6607383b2ddf5c5ab1e41e31862b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# アプリケーションでのフォントのパッケージング
-ここでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションでフォントをパッケージ化する方法の概要について説明します。  
+# <a name="packaging-fonts-with-applications"></a><span data-ttu-id="a11e5-102">アプリケーションでのフォントのパッケージング</span><span class="sxs-lookup"><span data-stu-id="a11e5-102">Packaging Fonts with Applications</span></span>
+<span data-ttu-id="a11e5-103">このトピックでは、パッケージで使用するフォントの方法の概要、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="a11e5-103">This topic provides an overview of how to package fonts with your [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] application.</span></span>  
   
 > [!NOTE]
->  多くの種類のソフトウェアと同様に、フォント ファイルは、販売されるのではなくライセンスされます。  フォントの使用を管理するライセンスはベンダーによって異なりますが、[!INCLUDE[TLA#tla_ms#initcap](../../../../includes/tlasharptla-mssharpinitcap-md.md)] がアプリケーションや [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] で提供しているフォントをカバーするライセンスも含めて、通常、ほとんどのライセンスは、フォントをアプリケーションに埋め込んだり、別の方法で再頒布したりすることを許可していません。  したがって、アプリケーションに埋め込む、または別の方法で再頒布するフォントについて、必要なライセンス権限を取得することは、開発者であるユーザーの責任で行ってください。  
+>  <span data-ttu-id="a11e5-104">多くの種類のソフトウェアと同様に、フォント ファイルは、販売されるのではなくライセンスされます。</span><span class="sxs-lookup"><span data-stu-id="a11e5-104">As with most types of software, font files are licensed, rather than sold.</span></span> <span data-ttu-id="a11e5-105">フォントの使用を管理するライセンス異なるベンダーが、一般にフォントをカバーするものを含め、ほとんどのライセンス[!INCLUDE[TLA#tla_ms#initcap](../../../../includes/tlasharptla-mssharpinitcap-md.md)]アプリケーションに提供し、[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]フォントをアプリケーション内で埋め込みまたはそれ以外の場合に許可しません。再配布します。</span><span class="sxs-lookup"><span data-stu-id="a11e5-105">Licenses that govern the use of fonts vary from vendor to vendor but in general most licenses, including those covering the fonts [!INCLUDE[TLA#tla_ms#initcap](../../../../includes/tlasharptla-mssharpinitcap-md.md)] supplies with applications and [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)], do not allow the fonts to be embedded within applications or otherwise redistributed.</span></span> <span data-ttu-id="a11e5-106">したがって、開発者としては、フォントをアプリケーション内に埋め込む場合や別の方法でフォントを再頒布する場合、それらフォントに必要なライセンス権限を取得する責任があります。</span><span class="sxs-lookup"><span data-stu-id="a11e5-106">Therefore, as a developer it is your responsibility to ensure that you have the required license rights for any font you embed within an application or otherwise redistribute.</span></span>  
   
-   
+
   
 <a name="introduction_to_packaging_fonts"></a>   
-## フォントのパッケージングの概要  
- ユーザー インターフェイスのテキストやその他の種類のテキスト ベースのコンテンツを表示するために、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のリソースとしてフォントを簡単にパッケージ化できます。  フォントは、アプリケーションのアセンブリ ファイルと別にすることも、アセンブリ ファイル内に埋め込むこともできます。  また、アプリケーションで参照できる、リソース専用のフォント ライブラリを作成することもできます。  
+## <a name="introduction-to-packaging-fonts"></a><span data-ttu-id="a11e5-107">フォントのパッケージングの概要</span><span class="sxs-lookup"><span data-stu-id="a11e5-107">Introduction to Packaging Fonts</span></span>  
+ <span data-ttu-id="a11e5-108">簡単にパッケージ化して、フォント内でリソースとして、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ベースのアプリケーションにユーザー インターフェイス テキストとその他の種類のテキストを表示するコンテンツ。</span><span class="sxs-lookup"><span data-stu-id="a11e5-108">You can easily package fonts as resources within your [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications to display user interface text and other types of text based content.</span></span> <span data-ttu-id="a11e5-109">フォントは、アプリケーションのアセンブリ ファイルと別にすることも、その中に埋め込むこともできます。</span><span class="sxs-lookup"><span data-stu-id="a11e5-109">The fonts can be separate from or embedded within the application's assembly files.</span></span> <span data-ttu-id="a11e5-110">アプリケーションから参照できる、リソース専用のフォント ライブラリを作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="a11e5-110">You can also create a resource-only font library, which your application can reference.</span></span>  
   
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] および [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] フォントには、各フォントにおけるフォント埋め込みのライセンス権限を示す、型フラグ fsType が含まれています。  ただし、この型フラグはドキュメントに格納された埋め込みフォントのみを参照し、アプリケーションに埋め込まれたフォントは参照しません。  フォントの埋め込み権限を取得するには、<xref:System.Windows.Media.GlyphTypeface> オブジェクトを作成し、その <xref:System.Windows.Media.GlyphTypeface.EmbeddingRights%2A> プロパティを参照します。  fsType フラグの詳細については、[OpenType 仕様](http://www.microsoft.com/typography/otspec/os2.htm)の「OS\/2 and Windows Metrics」を参照してください。  
+ [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]<span data-ttu-id="a11e5-111">および[!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)]フォントにライセンスを埋め込むフォントのフォントの権限を示すすれば、型フラグが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a11e5-111"> and [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] fonts contain a type flag, fsType, that indicates font embedding licensing rights for the font.</span></span> <span data-ttu-id="a11e5-112">しかし、この型フラグはドキュメントに格納された埋め込みフォントのみを参照し、アプリケーションに埋め込まれたフォントは参照しません。</span><span class="sxs-lookup"><span data-stu-id="a11e5-112">However, this type flag only refers to embedded fonts stored in a document–it does not refer to fonts embedded in an application.</span></span> <span data-ttu-id="a11e5-113">作成することで、フォントの権利を埋め込むフォントを取得することができます、<xref:System.Windows.Media.GlyphTypeface>オブジェクトおよび参照するその<xref:System.Windows.Media.GlyphTypeface.EmbeddingRights%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="a11e5-113">You can retrieve the font embedding rights for a font by creating a <xref:System.Windows.Media.GlyphTypeface> object and referencing its <xref:System.Windows.Media.GlyphTypeface.EmbeddingRights%2A> property.</span></span> <span data-ttu-id="a11e5-114">「OS/2 および Windows メトリック」セクションを参照してください、 [OpenType 仕様](http://www.microsoft.com/typography/otspec/os2.htm)すればフラグについての詳細。</span><span class="sxs-lookup"><span data-stu-id="a11e5-114">Refer to the "OS/2 and Windows Metrics" section of the [OpenType Specification](http://www.microsoft.com/typography/otspec/os2.htm) for more information on the fsType flag.</span></span>  
   
- 特定のフォント ベンダーまたはカスタム作業のフォント ベンダーを探す際に役立つ連絡先情報については、[Microsoft の文字体裁](http://www.microsoft.com/typography/links/)の Web サイトを参照してください。  
+ <span data-ttu-id="a11e5-115">[Microsoft タイポグラフィ](http://www.microsoft.com/typography/links/)Web サイトには、特定のフォントの仕入先を検索またはカスタムの作業のフォントの製造元を検索するのに役立つ連絡先の情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="a11e5-115">The [Microsoft Typography](http://www.microsoft.com/typography/links/) Web site includes contact information that can help you locate a particular font vendor or find a font vendor for custom work.</span></span>  
   
 <a name="adding_fonts_as_content_items"></a>   
-## コンテンツ項目としてのフォントの追加  
- フォントは、アプリケーションのアセンブリ ファイルとは別のプロジェクト コンテンツ項目としてアプリケーションに追加できます。  つまり、コンテンツ項目はアセンブリ内にリソースとして埋め込まれません。  コンテンツ項目を定義する方法を次のプロジェクト ファイル例に示します。  
+## <a name="adding-fonts-as-content-items"></a><span data-ttu-id="a11e5-116">コンテンツ項目としてのフォントの追加</span><span class="sxs-lookup"><span data-stu-id="a11e5-116">Adding Fonts as Content Items</span></span>  
+ <span data-ttu-id="a11e5-117">フォントは、アプリケーションのアセンブリ ファイルとは別のプロジェクト コンテンツ項目としてアプリケーションに追加できます。</span><span class="sxs-lookup"><span data-stu-id="a11e5-117">You can add fonts to your application as project content items that are separate from the application's assembly files.</span></span> <span data-ttu-id="a11e5-118">つまり、コンテンツ項目はアセンブリ内にリソースとして埋め込まれません。</span><span class="sxs-lookup"><span data-stu-id="a11e5-118">This means that content items are not embedded as resources within an assembly.</span></span> <span data-ttu-id="a11e5-119">コンテンツ項目を定義する方法を次のプロジェクト ファイル例に示します。</span><span class="sxs-lookup"><span data-stu-id="a11e5-119">The following project file example shows how to define content items.</span></span>  
   
-```  
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
+```xml  
+<Project DefaultTargets="Build"  
+                xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
   <!-- Other project build settings ... -->  
   
   <ItemGroup>  
@@ -52,9 +59,9 @@ caps.handback.revision: 25
 </Project>  
 ```  
   
- アプリケーションが実行時にフォントを使用できるようにするには、アプリケーションの展開ディレクトリでフォントをアクセス可能にする必要があります。  アプリケーションのプロジェクト ファイルの `<CopyToOutputDirectory>` 要素を使用すると、ビルド プロセスでアプリケーション展開ディレクトリにフォントを自動的にコピーできます。  展開ディレクトリにフォントをコピーする方法を次のプロジェクト ファイル例に示します。  
+ <span data-ttu-id="a11e5-120">アプリケーションが実行時にフォントを使用できるようにするには、アプリケーションの展開ディレクトリでフォントをアクセス可能にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="a11e5-120">In order to ensure that the application can use the fonts at run time, the fonts must be accessible in the application's deployment directory.</span></span> <span data-ttu-id="a11e5-121">`<CopyToOutputDirectory>`アプリケーションのプロジェクト ファイル内の要素では、ビルド処理中に、フォントをアプリケーションの配置ディレクトリに自動的にコピーすることができます。</span><span class="sxs-lookup"><span data-stu-id="a11e5-121">The `<CopyToOutputDirectory>` element in the application's project file allows you to automatically copy the fonts to the application deployment directory during the build process.</span></span> <span data-ttu-id="a11e5-122">展開ディレクトリにフォントをコピーする方法を次のプロジェクト ファイル例に示します。</span><span class="sxs-lookup"><span data-stu-id="a11e5-122">The following project file example shows how to copy fonts to the deployment directory.</span></span>  
   
-```  
+```xml  
 <ItemGroup>  
   <Content Include="Peric.ttf">  
     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>  
@@ -65,16 +72,17 @@ caps.handback.revision: 25
 </ItemGroup>  
 ```  
   
- 次のコード例は、アプリケーションのフォントをコンテンツ項目として参照する方法を示しています。参照されるコンテンツ項目は、アプリケーションのアセンブリ ファイルと同じディレクトリ内に存在する必要があります。  
+ <span data-ttu-id="a11e5-123">次のコード例は、アプリケーションのフォントをコンテンツ項目として参照する方法を示しています。参照されるコンテンツ項目は、アプリケーションのアセンブリ ファイルと同じディレクトリ内に存在する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a11e5-123">The following code example shows how to reference the application's font as a content item—the referenced content item must be in the same directory as the application's assembly files.</span></span>  
   
- [!code-xml[FontSnippets#FontPackageSnippet8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml#fontpackagesnippet8)]  
+ [!code-xaml[FontSnippets#FontPackageSnippet8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml#fontpackagesnippet8)]  
   
 <a name="adding_fonts_as_resource_items"></a>   
-## リソース項目としてのフォントの追加  
- フォントは、アプリケーションのアセンブリ ファイルに埋め込まれたプロジェクト リソース項目としてアプリケーションに追加できます。  リソース用に個別のサブディレクトリを使用して、アプリケーションのプロジェクト ファイルを編成できます。  個別のサブディレクトリ内のリソース項目としてフォントを定義する方法を次のプロジェクト ファイル例に示します。  
+## <a name="adding-fonts-as-resource-items"></a><span data-ttu-id="a11e5-124">リソース項目としてのフォントの追加</span><span class="sxs-lookup"><span data-stu-id="a11e5-124">Adding Fonts as Resource Items</span></span>  
+ <span data-ttu-id="a11e5-125">フォントは、アプリケーションのアセンブリ ファイルに埋め込まれたプロジェクト リソース項目としてアプリケーションに追加できます。</span><span class="sxs-lookup"><span data-stu-id="a11e5-125">You can add fonts to your application as project resource items that are embedded within the application's assembly files.</span></span> <span data-ttu-id="a11e5-126">リソース用として別のサブディレクトリを使用することは、アプリケーションのプロジェクト ファイルの整理に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="a11e5-126">Using a separate subdirectory for resources helps to organize the application's project files.</span></span> <span data-ttu-id="a11e5-127">フォントを別サブディレクトリ内のリソース項目として定義する方法を、次のプロジェクト ファイル例に示します。</span><span class="sxs-lookup"><span data-stu-id="a11e5-127">The following project file example shows how to define fonts as resource items in a separate subdirectory.</span></span>  
   
-```  
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
+```xml  
+<Project DefaultTargets="Build"  
+                xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
   <!-- Other project build settings ... -->  
   
   <ItemGroup>  
@@ -85,27 +93,27 @@ caps.handback.revision: 25
 ```  
   
 > [!NOTE]
->  アプリケーションにリソースとしてフォントを追加する場合は、アプリケーションのプロジェクト ファイルに `<EmbeddedResource>` 要素ではなく、`<Resource>` 要素を設定していることを確認してください。  ビルド アクションで `<EmbeddedResource>` 要素はサポートされません。  
+>  <span data-ttu-id="a11e5-128">アプリケーションにリソースとしてフォントを追加するときを設定することを確認してください、`<Resource>`要素、および not、`<EmbeddedResource>`アプリケーションのプロジェクト ファイル内の要素。</span><span class="sxs-lookup"><span data-stu-id="a11e5-128">When you add fonts as resources to your application, make sure you are setting the `<Resource>` element, and not the `<EmbeddedResource>` element in your application's project file.</span></span> <span data-ttu-id="a11e5-129">`<EmbeddedResource>`ビルド アクションの要素がサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="a11e5-129">The `<EmbeddedResource>` element for the build action is not supported.</span></span>  
   
- アプリケーションのフォント リソースを参照する方法を次のマークアップ例に示します。  
+ <span data-ttu-id="a11e5-130">アプリケーションのフォント リソースを参照する方法を次のマークアップ例に示します。</span><span class="sxs-lookup"><span data-stu-id="a11e5-130">The following markup example shows how to reference the application's font resources.</span></span>  
   
- [!code-xml[FontSnippets#FontPackageSnippet1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml#fontpackagesnippet1)]  
+ [!code-xaml[FontSnippets#FontPackageSnippet1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml#fontpackagesnippet1)]  
   
-### コードからのフォント リソース項目の参照  
- コードからフォント リソース項目を参照するには、基本[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] と、フォントの場所の参照との 2 つの部分で構成される、フォント リソース参照を指定する必要があります。  これらの値は、<xref:System.Windows.Media.FontFamily.%23ctor%2A> メソッドのパラメーターして使用されます。  プロジェクトの `resources` というサブディレクトリにある、アプリケーションのフォント リソースを参照する方法を次のコード例に示します。  
+### <a name="referencing-font-resource-items-from-code"></a><span data-ttu-id="a11e5-131">コードからのフォント リソース項目の参照</span><span class="sxs-lookup"><span data-stu-id="a11e5-131">Referencing Font Resource Items from Code</span></span>  
+ <span data-ttu-id="a11e5-132">コードからフォント リソース項目を参照するためには、2 つの部分のフォント リソースへの参照を指定する必要があります。 基本[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]; とフォントの場所の参照。</span><span class="sxs-lookup"><span data-stu-id="a11e5-132">In order to reference font resource items from code, you must supply a two-part font resource reference: the base [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]; and the font location reference.</span></span> <span data-ttu-id="a11e5-133">これらの値がのパラメーターとして使用される、<xref:System.Windows.Media.FontFamily.%23ctor%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="a11e5-133">These values are used as the parameters for the <xref:System.Windows.Media.FontFamily.%23ctor%2A> method.</span></span> <span data-ttu-id="a11e5-134">次のコード例と呼ばれるプロジェクトのサブディレクトリに、アプリケーションのフォントのリソースを参照する方法を示しています。`resources`です。</span><span class="sxs-lookup"><span data-stu-id="a11e5-134">The following code example shows how to reference the application's font resources in the project subdirectory called `resources`.</span></span>  
   
  [!code-csharp[FontSnippets#FontPackageSnippet2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml.cs#fontpackagesnippet2)]
  [!code-vb[FontSnippets#FontPackageSnippet2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontpackagesnippets.xaml.vb#fontpackagesnippet2)]  
   
- 基本[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] には、フォント リソースが存在する、アプリケーションのサブディレクトリを含めることができます。  この場合、フォントの場所の参照でディレクトリを指定する必要はありませんが、先頭に "`./`" を付けて、基本[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] で指定するディレクトリと同じディレクトリ内のフォント リソースであることを示す必要があります。  次のコード例は、フォント リソース項目を参照する別の方法を示しています。これは前のコード例と同等です。  
+ <span data-ttu-id="a11e5-135">基本[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]フォント リソースが存在する、アプリケーションのサブディレクトリを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="a11e5-135">The base [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] can include the application subdirectory where the font resource resides.</span></span> <span data-ttu-id="a11e5-136">この場合、フォントの場所の参照は、ディレクトリを指定する必要はありませんが、先頭を含める必要があります"`./`"、フォント リソースを示しますが、ベースで指定された同じディレクトリに[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="a11e5-136">In this case, the font location reference would not need to specify a directory, but would have to include a leading "`./`", which indicates the font resource is in the same directory specified by the base [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)].</span></span> <span data-ttu-id="a11e5-137">次のコード例は、フォント リソース項目を参照する別の方法を示しています。これは前のコード例と同等です。</span><span class="sxs-lookup"><span data-stu-id="a11e5-137">The following code example shows an alternate way of referencing the font resource item—it is equivalent to the previous code example.</span></span>  
   
  [!code-csharp[FontSnippets#FontPackageSnippet5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml.cs#fontpackagesnippet5)]
  [!code-vb[FontSnippets#FontPackageSnippet5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontpackagesnippets.xaml.vb#fontpackagesnippet5)]  
   
-### 同じアプリケーション サブディレクトリからのフォントの参照  
- アプリケーションのコンテンツとリソース ファイルは、アプリケーション プロジェクトのユーザー定義の同じサブディレクトリに配置できます。  同じサブディレクトリで定義されたコンテンツ ページとフォント リソースを次のプロジェクト ファイル例に示します。  
+### <a name="referencing-fonts-from-the-same-application-subdirectory"></a><span data-ttu-id="a11e5-138">同じアプリケーション サブディレクトリからのフォントの参照</span><span class="sxs-lookup"><span data-stu-id="a11e5-138">Referencing Fonts from the Same Application Subdirectory</span></span>  
+ <span data-ttu-id="a11e5-139">アプリケーションのコンテンツとリソース ファイルは、アプリケーション プロジェクトのユーザー定義の同じサブディレクトリに配置できます。</span><span class="sxs-lookup"><span data-stu-id="a11e5-139">You can place both application content and resource files within the same user-defined subdirectory of your application project.</span></span> <span data-ttu-id="a11e5-140">同じサブディレクトリで定義されたコンテンツ ページとフォント リソースを次のプロジェクト ファイル例に示します。</span><span class="sxs-lookup"><span data-stu-id="a11e5-140">The following project file example shows a content page and font resources defined in the same subdirectory.</span></span>  
   
-```  
+```xml  
 <ItemGroup>  
   <Page Include="pages\HomePage.xaml" />  
 </ItemGroup>  
@@ -115,29 +123,29 @@ caps.handback.revision: 25
 </ItemGroup>  
 ```  
   
- アプリケーションのコンテンツとフォントが同じディレクトリにあるため、フォント参照はアプリケーションのコンテンツに関連しています。  フォントがアプリケーションと同じディレクトリにある場合に、アプリケーションのフォント リソースを参照する方法を次の例に示します。  
+ <span data-ttu-id="a11e5-141">アプリケーション コンテンツとフォントが同じサブディレクトリ内にあるので、フォント参照はアプリケーション コンテンツから見た相対参照となります。</span><span class="sxs-lookup"><span data-stu-id="a11e5-141">Since the application content and font are in the same subdirectory, the font reference is relative to the application content.</span></span> <span data-ttu-id="a11e5-142">次の例では、フォントがアプリケーションと同じディレクトリ内にある場合にアプリケーションのフォント リソースを参照する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a11e5-142">The following examples show how to reference the application's font resource when the font is in the same directory as the application.</span></span>  
   
- [!code-xml[FontSnippets#FontPackageSnippet3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/pages/HomePage.xaml#fontpackagesnippet3)]  
+ [!code-xaml[FontSnippets#FontPackageSnippet3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/pages/HomePage.xaml#fontpackagesnippet3)]  
   
  [!code-csharp[FontSnippets#FontPackageSnippet4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/pages/HomePage.xaml.cs#fontpackagesnippet4)]
  [!code-vb[FontSnippets#FontPackageSnippet4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/pages/homepage.xaml.vb#fontpackagesnippet4)]  
   
-### アプリケーションでのフォントの列挙  
- アプリケーション内のリソース項目としてフォントを列挙するには、<xref:System.Windows.Media.Fonts.GetFontFamilies%2A> または <xref:System.Windows.Media.Fonts.GetTypefaces%2A> メソッドを使用します。  次の例は、<xref:System.Windows.Media.Fonts.GetFontFamilies%2A> メソッドを使用して、アプリケーション フォントの場所から <xref:System.Windows.Media.FontFamily> のコレクションを返す方法を示しています。  ここでは、アプリケーションに "resources" という名前のサブディレクトリが含まれています。  
+### <a name="enumerating-fonts-in-an-application"></a><span data-ttu-id="a11e5-143">アプリケーションでのフォントの列挙</span><span class="sxs-lookup"><span data-stu-id="a11e5-143">Enumerating Fonts in an Application</span></span>  
+ <span data-ttu-id="a11e5-144">フォントを列挙する、アプリケーション内のリソース項目として、いずれかの操作を使用して、<xref:System.Windows.Media.Fonts.GetFontFamilies%2A>または<xref:System.Windows.Media.Fonts.GetTypefaces%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="a11e5-144">To enumerate fonts as resource items in your application, use either the <xref:System.Windows.Media.Fonts.GetFontFamilies%2A> or <xref:System.Windows.Media.Fonts.GetTypefaces%2A> method.</span></span> <span data-ttu-id="a11e5-145">次の例を使用する方法を示しています、<xref:System.Windows.Media.Fonts.GetFontFamilies%2A>のコレクションを返すメソッドを<xref:System.Windows.Media.FontFamily>アプリケーション フォントの場所からのオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a11e5-145">The following example shows how to use the <xref:System.Windows.Media.Fonts.GetFontFamilies%2A> method to return the collection of <xref:System.Windows.Media.FontFamily> objects from the application font location.</span></span> <span data-ttu-id="a11e5-146">ここでは、アプリケーションに "resources" という名前のサブディレクトリが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a11e5-146">In this case, the application contains a subdirectory named "resources".</span></span>  
   
  [!code-csharp[FontSnippets#FontsSnippet3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontssnippet3)]
  [!code-vb[FontSnippets#FontsSnippet3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontssnippet3)]  
   
- 次の例は、<xref:System.Windows.Media.Fonts.GetTypefaces%2A> メソッドを使用して、アプリケーション フォントの場所から <xref:System.Windows.Media.Typeface> のコレクションを返す方法を示しています。  ここでは、アプリケーションに "resources" という名前のサブディレクトリが含まれています。  
+ <span data-ttu-id="a11e5-147">次の例を使用する方法を示しています、<xref:System.Windows.Media.Fonts.GetTypefaces%2A>のコレクションを返すメソッドを<xref:System.Windows.Media.Typeface>アプリケーション フォントの場所からのオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a11e5-147">The following example shows how to use the <xref:System.Windows.Media.Fonts.GetTypefaces%2A> method to return the collection of <xref:System.Windows.Media.Typeface> objects from the application font location.</span></span> <span data-ttu-id="a11e5-148">ここでは、アプリケーションに "resources" という名前のサブディレクトリが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a11e5-148">In this case, the application contains a subdirectory named "resources".</span></span>  
   
  [!code-csharp[FontSnippets#FontsSnippet7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontssnippet7)]
  [!code-vb[FontSnippets#FontsSnippet7](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontssnippet7)]  
   
 <a name="creating_a_font_resource_library"></a>   
-## フォント リソース ライブラリの作成  
- フォントのみを含むリソース専用ライブラリを作成できます。この種類のライブラリ プロジェクトにはコードは含まれません。  リソース専用ライブラリの作成は、リソースを使用するアプリケーション コードからリソースを切り離すための一般的な手法です。  また、これにより、複数のアプリケーション プロジェクトでこのライブラリ アセンブリを組み込むことができます。  リソース専用ライブラリ プロジェクトの主要部分を次のプロジェクト ファイル例に示します。  
+## <a name="creating-a-font-resource-library"></a><span data-ttu-id="a11e5-149">フォント リソース ライブラリの作成</span><span class="sxs-lookup"><span data-stu-id="a11e5-149">Creating a Font Resource Library</span></span>  
+ <span data-ttu-id="a11e5-150">フォントのみを含むリソース専用ライブラリを作成できます。この種類のライブラリ プロジェクトにはコードは含まれません。</span><span class="sxs-lookup"><span data-stu-id="a11e5-150">You can create a resource-only library that contains only fonts—no code is part of this type of library project.</span></span> <span data-ttu-id="a11e5-151">リソース専用ライブラリの作成は、リソースを使用するアプリケーション コードからリソースを切り離すための一般的な手法です。</span><span class="sxs-lookup"><span data-stu-id="a11e5-151">Creating a resource-only library is a common technique for decoupling resources from the application code that uses them.</span></span> <span data-ttu-id="a11e5-152">また、これにより、複数のアプリケーション プロジェクトでこのライブラリ アセンブリを組み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="a11e5-152">This also allows the library assembly to be included with multiple application projects.</span></span> <span data-ttu-id="a11e5-153">次のプロジェクト ファイル例に、リソース専用ライブラリ プロジェクトの主要部分を示します。</span><span class="sxs-lookup"><span data-stu-id="a11e5-153">The following project file example shows the key portions of a resource-only library project.</span></span>  
   
-```  
+```xml  
 <PropertyGroup>  
   <AssemblyName>FontLibrary</AssemblyName>  
   <OutputType>library</OutputType>  
@@ -150,34 +158,34 @@ caps.handback.revision: 25
 </ItemGroup  
 ```  
   
-### リソース ライブラリ内のフォントの参照  
- アプリケーションからリソース ファイル内のフォントを参照するには、フォント参照の前にライブラリ アセンブリの名前を付加する必要があります。  ここでは、フォント リソース アセンブリは "FontLibrary" です。  アセンブリ名をアセンブリ内の参照と区切るために、';' 文字を使用します。  キーワード "Component" の後にフォント名への参照を続けて追加すると、フォント ライブラリのリソースへの完全参照が完成します。  リソース ライブラリ アセンブリ内のフォントを参照する方法を次のコード例に示します。  
+### <a name="referencing-a-font-in-a-resource-library"></a><span data-ttu-id="a11e5-154">リソース ライブラリ内のフォントの参照</span><span class="sxs-lookup"><span data-stu-id="a11e5-154">Referencing a Font in a Resource Library</span></span>  
+ <span data-ttu-id="a11e5-155">アプリケーションからリソース ライブラリ内のフォントを参照するには、フォント参照の前にライブラリ アセンブリの名前を付加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a11e5-155">To reference a font in a resource library from your application, you must prefix the font reference with the name of the library assembly.</span></span> <span data-ttu-id="a11e5-156">ここでは、フォント リソース アセンブリは "FontLibrary" です。</span><span class="sxs-lookup"><span data-stu-id="a11e5-156">In this case, the font resource assembly is "FontLibrary".</span></span> <span data-ttu-id="a11e5-157">アセンブリ名をアセンブリ内の参照と区切るために、';' 文字を使用します。</span><span class="sxs-lookup"><span data-stu-id="a11e5-157">To separate the assembly name from the reference within the assembly, use a ';' character.</span></span> <span data-ttu-id="a11e5-158">キーワード "Component" の後にフォント名への参照を続けて追加すると、フォント ライブラリのリソースへの完全参照が完成します。</span><span class="sxs-lookup"><span data-stu-id="a11e5-158">Adding the "Component" keyword followed by the reference to the font name completes the full reference to the font library's resource.</span></span> <span data-ttu-id="a11e5-159">次のコード例では、リソース ライブラリ アセンブリ内のフォントを参照する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a11e5-159">The following code example shows how to reference a font in a resource library assembly.</span></span>  
   
- [!code-xml[OpenTypeFontsSample#OpenTypeFontsSample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontsSample/CS/Kootenay.xaml#opentypefontssample1)]  
+ [!code-xaml[OpenTypeFontsSample#OpenTypeFontsSample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontsSample/CS/Kootenay.xaml#opentypefontssample1)]  
   
 > [!NOTE]
->  この SDK には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションで使用できる一連の [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] フォントがサンプルとして用意されています。  フォントは、リソース専用ライブラリで定義されています。  詳細については、「[OpenType フォント パックのサンプル](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md)」を参照してください。  
+>  <span data-ttu-id="a11e5-160">この SDK には、サンプルのセットが含まれています。[!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]とともに使用できるフォント[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="a11e5-160">This SDK contains a set of sample [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonts that you can use with [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications.</span></span> <span data-ttu-id="a11e5-161">フォントはリソース専用ライブラリで定義されています。</span><span class="sxs-lookup"><span data-stu-id="a11e5-161">The fonts are defined in a resource-only library.</span></span> <span data-ttu-id="a11e5-162">詳細については、「[OpenType フォント パックのサンプル](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a11e5-162">For more information, see [Sample OpenType Font Pack](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md).</span></span>  
   
 <a name="limitations_on_font_usage"></a>   
-## フォントの使用に関する制限事項  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションでのフォントのパッケージングおよび使用に関するいくつかの制限事項を次に示します。  
+## <a name="limitations-on-font-usage"></a><span data-ttu-id="a11e5-163">フォントの使用に関する制限事項</span><span class="sxs-lookup"><span data-stu-id="a11e5-163">Limitations on Font Usage</span></span>  
+ <span data-ttu-id="a11e5-164">次のリストは、パッケージおよび内のフォントの使用に関するいくつかの制限を説明[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーション。</span><span class="sxs-lookup"><span data-stu-id="a11e5-164">The following list describes several limitations on the packaging and use of fonts in [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications:</span></span>  
   
--   **フォント埋め込みアクセス許可情報** : [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションは、フォント埋め込みアクセス許可情報をチェックまたは強制しません。  詳細については、「[フォントのパッケージングの概要](#introduction_to_packaging_fonts)」を参照してください。  
+-   <span data-ttu-id="a11e5-165">**フォント埋め込みアクセス許可ビット:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションはフォント埋め込みアクセス許可ビットのチェックも確認もしません。</span><span class="sxs-lookup"><span data-stu-id="a11e5-165">**Font embedding permission bits:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications do not check or enforce any font embedding permission bits.</span></span> <span data-ttu-id="a11e5-166">参照してください、[パッケージングの概要フォント](#introduction_to_packaging_fonts)詳細についてはします。</span><span class="sxs-lookup"><span data-stu-id="a11e5-166">See the [Introduction_to_Packing Fonts](#introduction_to_packaging_fonts) section for more information.</span></span>  
   
--   **フォントの起点サイト** : [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションでは、http または ftp の [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] へのフォント参照は許可されていません。  
+-   <span data-ttu-id="a11e5-167">**配信元のフォントのサイト:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションは、http または ftp にフォントへの参照を許可しない[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="a11e5-167">**Site of origin fonts:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications do not allow a font reference to an http or ftp [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)].</span></span>  
   
--   **pack: 表記を使用した絶対 URI** : [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションでは、フォントへの絶対 [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] 参照の一部として "pack:" を使用してプログラムで <xref:System.Windows.Media.FontFamily> オブジェクトを作成することはできません。  たとえば、`"pack://application:,,,/resources/#Pericles Light"` は無効なフォント参照です。  
+-   <span data-ttu-id="a11e5-168">**パックを使用して絶対 URI: 表記:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーション作成することはできません、<xref:System.Windows.Media.FontFamily>オブジェクトを使用してプログラムで"pack:"、絶対パスの一部として[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]フォントへの参照。</span><span class="sxs-lookup"><span data-stu-id="a11e5-168">**Absolute URI using the pack: notation:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications do not allow you to create a <xref:System.Windows.Media.FontFamily> object programmatically using "pack:" as part of the absolute [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] reference to a font.</span></span> <span data-ttu-id="a11e5-169">たとえば、`"pack://application:,,,/resources/#Pericles Light"`無効なフォント参照します。</span><span class="sxs-lookup"><span data-stu-id="a11e5-169">For example, `"pack://application:,,,/resources/#Pericles Light"` is an invalid font reference.</span></span>  
   
--   **自動フォント埋め込み** : デザイン時に、アプリケーションのフォントの使用を検索したり、アプリケーションのリソースにフォントを自動的に埋め込んだりすることはサポートされていません。  
+-   <span data-ttu-id="a11e5-170">**自動フォント埋め込み:** デザイン時に、アプリケーションのフォントの使用を検索したり、アプリケーションのリソースにフォントを自動的に埋め込んだりすることはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="a11e5-170">**Automatic font embedding:** During design time, there is no support for searching an application's use of fonts and automatically embedding the fonts in the application's resources.</span></span>  
   
--   **フォント サブセット** : [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションでは、固定ドキュメント以外でフォント サブセットの作成はサポートされていません。  
+-   <span data-ttu-id="a11e5-171">**フォント サブセット:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションでは、固定ドキュメント以外でフォント サブセットの作成はサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="a11e5-171">**Font subsets:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications do not support the creation of font subsets for non-fixed documents.</span></span>  
   
--   正しくない参照がある場合、アプリケーションは使用可能なフォントの使用に戻ります。  
+-   <span data-ttu-id="a11e5-172">正しくない参照がある場合、アプリケーションは使用可能なフォントの使用に戻ります。</span><span class="sxs-lookup"><span data-stu-id="a11e5-172">In cases where there is an incorrect reference, the application falls back to using an available font.</span></span>  
   
-## 参照  
- <xref:System.Windows.Documents.Typography>   
- <xref:System.Windows.Media.FontFamily>   
- [Microsoft Typography: Links, News, and Contacts \(Microsoft タイポグラフィ: リンク、ニュース、連絡先\)](http://www.microsoft.com/typography/links/)   
- [OpenType Specification \(OpenType の仕様\)](http://www.microsoft.com/typography/otspec/)   
- [OpenType フォントの機能](../../../../docs/framework/wpf/advanced/opentype-font-features.md)   
- [OpenType フォント パックのサンプル](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md)
+## <a name="see-also"></a><span data-ttu-id="a11e5-173">関連項目</span><span class="sxs-lookup"><span data-stu-id="a11e5-173">See Also</span></span>  
+ <xref:System.Windows.Documents.Typography>  
+ <xref:System.Windows.Media.FontFamily>  
+ [<span data-ttu-id="a11e5-174">Microsoft の文字体裁: リンク、ニュース、および連絡先</span><span class="sxs-lookup"><span data-stu-id="a11e5-174">Microsoft Typography: Links, News, and Contacts</span></span>](http://www.microsoft.com/typography/links/)  
+ [<span data-ttu-id="a11e5-175">OpenType の仕様</span><span class="sxs-lookup"><span data-stu-id="a11e5-175">OpenType Specification</span></span>](http://www.microsoft.com/typography/otspec/)  
+ [<span data-ttu-id="a11e5-176">OpenType フォントの機能</span><span class="sxs-lookup"><span data-stu-id="a11e5-176">OpenType Font Features</span></span>](../../../../docs/framework/wpf/advanced/opentype-font-features.md)  
+ [<span data-ttu-id="a11e5-177">OpenType フォント パックのサンプル</span><span class="sxs-lookup"><span data-stu-id="a11e5-177">Sample OpenType Font Pack</span></span>](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md)

@@ -1,64 +1,62 @@
 ---
-title: "Framework デザイン ガイドライン | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - ".NET Framework クラス ライブラリのライブラリ"
-  - "クラス ライブラリ デザイン ガイドライン [.NET Framework]"
-  - "クラス ライブラリ デザインのガイドライン [.NET Framework]"
+title: "フレームワーク デザインのガイドライン"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- libraries, .NET Framework class library
+- class library design guidelines [.NET Framework], about
+- class library design guidelines [.NET Framework]
 ms.assetid: 5fbcaf4f-ea2a-4d20-b0d6-e61dee202b4b
-caps.latest.revision: 14
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: a812207fb58e6c87c263966081060d02f8038963
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Framework デザイン ガイドライン
-このセクションでは、ライブラリを拡張し、.NET Framework と対話するをデザインのガイドラインを示します。 目標は、ライブラリの設計者が開発に使用するプログラミング言語とは独立統一されたプログラミング モデルを提供することにより、API の一貫性と使いやすさをことを確認のためです。 .NET Framework を拡張するクラスやコンポーネントを開発する際に、これらのデザイン ガイドラインに従うことをお勧めします。 一貫性のないライブラリ デザイン悪影響を及ぼす開発者の生産性に影響することはお導入します。  
+# <a name="framework-design-guidelines"></a><span data-ttu-id="84f0b-102">フレームワーク デザインのガイドライン</span><span class="sxs-lookup"><span data-stu-id="84f0b-102">Framework Design Guidelines</span></span>
+<span data-ttu-id="84f0b-103">このセクションでは、ライブラリを拡張し、.NET Framework との対話をデザインするためのガイドラインを示します。</span><span class="sxs-lookup"><span data-stu-id="84f0b-103">This section provides guidelines for designing libraries that extend and interact with the .NET Framework.</span></span> <span data-ttu-id="84f0b-104">目標は、ライブラリのデザイナーが開発に使用するプログラミング言語に関係なく、統一されたプログラミング モデルを提供することで API の一貫性と使いやすさを確認するためです。</span><span class="sxs-lookup"><span data-stu-id="84f0b-104">The goal is to help library designers ensure API consistency and ease of use by providing a unified programming model that is independent of the programming language used for development.</span></span> <span data-ttu-id="84f0b-105">クラスと、.NET Framework を拡張するコンポーネントを開発する際に、これらのデザイン ガイドラインに従うことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="84f0b-105">We recommend that you follow these design guidelines when developing classes and components that extend the .NET Framework.</span></span> <span data-ttu-id="84f0b-106">一貫性のないライブラリ デザインが悪影響を及ぼす開発者の生産性に影響し、導入を行わないましょう。</span><span class="sxs-lookup"><span data-stu-id="84f0b-106">Inconsistent library design adversely affects developer productivity and discourages adoption.</span></span>  
   
- ガイドラインは、条件付け簡単な推奨方法として構成 `Do`, 、`Consider`, 、`Avoid`, 、および `Do not`です。 次のガイドラインは、さまざまなソリューション間のトレードオフを理解するクラス ライブラリのデザイナーを支援するものです。 優れたライブラリ デザインではこれらのデザイン ガイドラインに違反することが必要とする状況である可能性があります。 このような場合はまれと、明確で有利な決定の理由は、重要です。  
+ <span data-ttu-id="84f0b-107">ガイドラインは、語句で始まる簡単な推奨事項として編成`Do`、 `Consider`、 `Avoid`、および`Do not`です。</span><span class="sxs-lookup"><span data-stu-id="84f0b-107">The guidelines are organized as simple recommendations prefixed with the terms `Do`, `Consider`, `Avoid`, and `Do not`.</span></span> <span data-ttu-id="84f0b-108">次のガイドラインについては、クラス ライブラリのデザイナーのさまざまなソリューション間のトレードオフを理解するためものです。</span><span class="sxs-lookup"><span data-stu-id="84f0b-108">These guidelines are intended to help class library designers understand the trade-offs between different solutions.</span></span> <span data-ttu-id="84f0b-109">適切なライブラリ デザインではこれらのデザイン ガイドラインに違反することが必要な状況である可能性があります。</span><span class="sxs-lookup"><span data-stu-id="84f0b-109">There might be situations where good library design requires that you violate these design guidelines.</span></span> <span data-ttu-id="84f0b-110">このような場合はまれで、意思決定の理由を明確かつ説得力のあることが重要です。</span><span class="sxs-lookup"><span data-stu-id="84f0b-110">Such cases should be rare, and it is important that you have a clear and compelling reason for your decision.</span></span>  
   
- 次のガイドラインがの著書から抜粋した *Framework デザイン ガイドライン: 規則が、表現方法と再利用可能な .NET ライブラリ \(第 2 版\) 用のパターン*, は Cwalina、Brad エイブラムスによるします。  
+ <span data-ttu-id="84f0b-111">次のガイドラインは、ブックからの抜粋です*Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン*は Cwalina Brad Abrams では、します。</span><span class="sxs-lookup"><span data-stu-id="84f0b-111">These guidelines are excerpted from the book *Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition*, by Krzysztof Cwalina and Brad Abrams.</span></span>  
   
-## このセクションの内容  
- [名前付けのガイドライン](../../../docs/standard/design-guidelines/naming-guidelines.md)  
- アセンブリ、名前空間、型、およびクラス ライブラリ内のメンバーの名前付けのガイドラインを提供します。  
+## <a name="in-this-section"></a><span data-ttu-id="84f0b-112">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="84f0b-112">In This Section</span></span>  
+ [<span data-ttu-id="84f0b-113">名前付けのガイドライン</span><span class="sxs-lookup"><span data-stu-id="84f0b-113">Naming Guidelines</span></span>](../../../docs/standard/design-guidelines/naming-guidelines.md)  
+ <span data-ttu-id="84f0b-114">アセンブリ、名前空間、型、およびクラス ライブラリ内のメンバーの名前付けのガイドラインを提供します。</span><span class="sxs-lookup"><span data-stu-id="84f0b-114">Provides guidelines for naming assemblies, namespaces, types, and members in class libraries.</span></span>  
   
- [型デザインのガイドライン](../../../docs/standard/design-guidelines/type.md)  
- 静的な抽象クラス、インターフェイス、列挙体、構造体、およびその他の種類を使用するためのガイドラインを提供します。  
+ [<span data-ttu-id="84f0b-115">型のデザインのガイドライン</span><span class="sxs-lookup"><span data-stu-id="84f0b-115">Type Design Guidelines</span></span>](../../../docs/standard/design-guidelines/type.md)  
+ <span data-ttu-id="84f0b-116">静的な抽象クラス、インターフェイス、列挙型、構造体、およびその他の種類を使用するためのガイドラインを提供します。</span><span class="sxs-lookup"><span data-stu-id="84f0b-116">Provides guidelines for using static and abstract classes, interfaces, enumerations, structures, and other types.</span></span>  
   
- [メンバー デザインのガイドライン](../../../docs/standard/design-guidelines/member.md)  
- 設計とプロパティ、メソッド、コンス トラクター、フィールド、イベント、演算子、およびパラメーターの使用に関するガイドラインを提供します。  
+ [<span data-ttu-id="84f0b-117">メンバーのデザイン ガイドライン</span><span class="sxs-lookup"><span data-stu-id="84f0b-117">Member Design Guidelines</span></span>](../../../docs/standard/design-guidelines/member.md)  
+ <span data-ttu-id="84f0b-118">デザインおよびプロパティ、メソッド、コンス トラクター、フィールド、イベント、演算子、およびパラメーターを使用するためのガイドラインを提供します。</span><span class="sxs-lookup"><span data-stu-id="84f0b-118">Provides guidelines for designing and using properties, methods, constructors, fields, events, operators, and parameters.</span></span>  
   
- [機能拡張のデザイン](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
- イベントや仮想メンバーは、コールバック関数を使用して、サブクラス化などの機能拡張機構について説明し、フレームワークの要件に最適なメカニズムを選択する方法を説明します。  
+ [<span data-ttu-id="84f0b-119">機能拡張のための設計</span><span class="sxs-lookup"><span data-stu-id="84f0b-119">Designing for Extensibility</span></span>](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
+ <span data-ttu-id="84f0b-120">イベント、仮想メンバー、およびコールバック関数を使用して、サブクラスなどの機能拡張機構について説明し、フレームワークの要件に最適なメカニズムを選択する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="84f0b-120">Discusses extensibility mechanisms such as subclassing, using events, virtual members, and callbacks, and explains how to choose the mechanisms that best meet your framework's requirements.</span></span>  
   
- [例外のデザイン ガイドライン](../../../docs/standard/design-guidelines/exceptions.md)  
- デザイン、スロー、および例外をキャッチの設計ガイドラインについて説明します。  
+ [<span data-ttu-id="84f0b-121">例外のデザイン ガイドライン</span><span class="sxs-lookup"><span data-stu-id="84f0b-121">Design Guidelines for Exceptions</span></span>](../../../docs/standard/design-guidelines/exceptions.md)  
+ <span data-ttu-id="84f0b-122">デザイン、スロー、および例外のキャッチのデザイン ガイドラインをについて説明します。</span><span class="sxs-lookup"><span data-stu-id="84f0b-122">Describes design guidelines for designing, throwing, and catching exceptions.</span></span>  
   
- [使用方法のガイドライン](../../../docs/standard/design-guidelines/usage-guidelines.md)  
- 配列、属性、およびコレクションなどの一般的な型を使用して、シリアル化のサポート、等値演算子のオーバー ロードするためのガイドラインについて説明します。  
+ [<span data-ttu-id="84f0b-123">使用方法のガイドライン</span><span class="sxs-lookup"><span data-stu-id="84f0b-123">Usage Guidelines</span></span>](../../../docs/standard/design-guidelines/usage-guidelines.md)  
+ <span data-ttu-id="84f0b-124">配列、属性、およびコレクションなどの一般的な型を使用して、シリアル化のサポート、等値演算子のオーバー ロードに関するガイドラインについて説明します。</span><span class="sxs-lookup"><span data-stu-id="84f0b-124">Describes guidelines for using common types such as arrays, attributes, and collections, supporting serialization, and overloading equality operators.</span></span>  
   
- [一般的な設計パターン](../../../docs/standard/design-guidelines/common-design-patterns.md)  
- 選択して、依存関係プロパティと、dispose パターンを実装するためのガイドラインを提供します。  
+ [<span data-ttu-id="84f0b-125">一般的なデザイン パターン</span><span class="sxs-lookup"><span data-stu-id="84f0b-125">Common Design Patterns</span></span>](../../../docs/standard/design-guidelines/common-design-patterns.md)  
+ <span data-ttu-id="84f0b-126">選択して、依存関係プロパティと、dispose パターンの実装のガイドラインを提供します。</span><span class="sxs-lookup"><span data-stu-id="84f0b-126">Provides guidelines for choosing and implementing dependency properties and the dispose pattern.</span></span>  
   
- *部分 © 2005年、2009 Microsoft Corporation します。 All rights reserved.*  
+ <span data-ttu-id="84f0b-127">*部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*</span><span class="sxs-lookup"><span data-stu-id="84f0b-127">*Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*</span></span>  
   
- *翔泳社からのアクセス許可によって検出 [Framework デザイン ガイドライン: 規則が、表現方法と再利用可能な .NET ライブラリを 2 nd Edition パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) は Cwalina Brad エイブラムスによる、Microsoft Windows の開発シリーズの一部として Addison\-wesley Professional、2008 年 10 月 22 日を公開します。*  
+ <span data-ttu-id="84f0b-128">*ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*</span><span class="sxs-lookup"><span data-stu-id="84f0b-128">*Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*</span></span>  
   
-## 参照  
- [概要](../../../docs/framework/get-started/overview.md)   
- [.NET Framework のロードマップ](http://msdn.microsoft.com/ja-jp/0b46b7c6-9163-4f99-8e58-0d1ee7da8c67)   
- [開発ガイド](../../../docs/framework/development-guide.md)
+## <a name="see-also"></a><span data-ttu-id="84f0b-129">関連項目</span><span class="sxs-lookup"><span data-stu-id="84f0b-129">See Also</span></span>  
+ [<span data-ttu-id="84f0b-130">概要</span><span class="sxs-lookup"><span data-stu-id="84f0b-130">Overview</span></span>](../../../docs/framework/get-started/overview.md)  
+ [<span data-ttu-id="84f0b-131">.NET Framework のロードマップ</span><span class="sxs-lookup"><span data-stu-id="84f0b-131">Roadmap for the .NET Framework</span></span>](http://msdn.microsoft.com/en-us/0b46b7c6-9163-4f99-8e58-0d1ee7da8c67)  
+ [<span data-ttu-id="84f0b-132">開発ガイド</span><span class="sxs-lookup"><span data-stu-id="84f0b-132">Development Guide</span></span>](../../../docs/framework/development-guide.md)

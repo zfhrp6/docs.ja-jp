@@ -1,25 +1,27 @@
 ---
-title: "&#39;StrConv.LinguisticCasing&#39; には、&#39;StrConv.LowerCase&#39; または &#39;StrConv.UpperCase&#39; が必要です。 | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrLinguisticRequirements"
+title: "&#39;です。StrConv.LinguisticCasing &#39;必要です (& a) #39 です。StrConv.LowerCase &#39;または &#39;です。StrConv.UpperCase &#39;"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrLinguisticRequirements
 ms.assetid: 99cdb11d-9488-460b-84fb-a27f43da8be4
-caps.latest.revision: 7
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 742457b7de5797d965e134e7d1da594856c2a4df
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &#39;StrConv.LinguisticCasing&#39; には、&#39;StrConv.LowerCase&#39; または &#39;StrConv.UpperCase&#39; が必要です。
-`StrConv.LinguisticCasing` を使用しようとしましたが、これは `StrConv.LowerCase` または `StrConv.UpperCase` と組み合わせた場合にのみ有効です。  
+# <a name="39strconvlinguisticcasing39-requires-39strconvlowercase39-or-39strconvuppercase39"></a><span data-ttu-id="ee939-102">&#39;です。StrConv.LinguisticCasing &#39;必要です (& a) #39 です。StrConv.LowerCase &#39;または &#39;です。StrConv.UpperCase &#39;</span><span class="sxs-lookup"><span data-stu-id="ee939-102">&#39;StrConv.LinguisticCasing&#39; requires &#39;StrConv.LowerCase&#39; or &#39;StrConv.UpperCase&#39;</span></span>
+<span data-ttu-id="ee939-103">`StrConv.LinguisticCasing`を使用しようとしましたが、これは `StrConv.LowerCase` または `StrConv.UpperCase`と組み合わせた場合にのみ有効です。</span><span class="sxs-lookup"><span data-stu-id="ee939-103">You have attempted to use `StrConv.LinguisticCasing`, which is only valid in combination with `StrConv.LowerCase` or `StrConv.UpperCase`.</span></span>  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="ee939-104">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="ee939-104">To correct this error</span></span>  
   
-1.  `StrConv.LinguisticCasing` と共に、`StrConv.LowerCase` または `StrConv.UpperCase` を使用します。  
+1.  <span data-ttu-id="ee939-105">`StrConv.LowerCase` と共に、 `StrConv.UpperCase` または `StrConv.LinguisticCasing`を使用します。</span><span class="sxs-lookup"><span data-stu-id="ee939-105">Use `StrConv.LowerCase` or `StrConv.UpperCase` in conjunction with `StrConv.LinguisticCasing`.</span></span>  
   
-## 参照  
- [ビルド内にありません: StrConv 関数](http://msdn.microsoft.com/ja-jp/31ceb44b-005b-455f-b344-9dd06efbf660)   
- [StrConv Constant Changes in Visual Basic .NET](http://msdn.microsoft.com/ja-jp/7a8c2781-2716-40dd-90c1-96c1548516e2)
+## <a name="see-also"></a><span data-ttu-id="ee939-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="ee939-106">See Also</span></span>  
+ [<span data-ttu-id="ee939-107">ビルド内にありません: StrConv 関数</span><span class="sxs-lookup"><span data-stu-id="ee939-107">NOT IN BUILD: StrConv Function</span></span>](http://msdn.microsoft.com/en-us/31ceb44b-005b-455f-b344-9dd06efbf660)  
+ [<span data-ttu-id="ee939-108">Visual Basic .NET で StrConv 一定を変更します。</span><span class="sxs-lookup"><span data-stu-id="ee939-108">StrConv Constant Changes in Visual Basic .NET</span></span>](http://msdn.microsoft.com/en-us/7a8c2781-2716-40dd-90c1-96c1548516e2)

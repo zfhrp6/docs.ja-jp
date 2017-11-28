@@ -1,89 +1,70 @@
 ---
 title: "Null 許容型 (C# プログラミング ガイド)"
-ms.date: 2017-05-15
+ms.date: 05/15/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - nullable types [C#]
 - C# language, nullable types
 - types [C#], nullable
 ms.assetid: e473cb01-28ca-42be-9cea-f717055d72c6
-caps.latest.revision: 44
+caps.latest.revision: "44"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: af7de7ea0be5368371e4bb174f6313e98f93ac4b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 81117b1419c2a9c3babd6a7429052e2b23e08a70
-ms.openlocfilehash: 6d99bffc74cbcce04d725b8f225a4a4b175973be
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="nullable-types-c-programming-guide"></a>Null 許容型 (C# プログラミング ガイド)
-Null 許容型は、<xref:System.Nullable%601?displayProperty=nameWithType> 構造体のインスタンスです。 Null 許容型は、基になる値型の適切な範囲の値だけでなく、`null` 値も表すことができます。 たとえば、`Nullable<Int32>` ("Null 許容の Int32" と読みます) には、-2147483648 ～ 2147483647 の範囲の任意の値または `null` 値を割り当てることができます。 `Nullable<bool>` には、[true](../../../csharp/language-reference/keywords/true.md)、[false](../../../csharp/language-reference/keywords/false.md)、または [null](../../../csharp/language-reference/keywords/null.md) の値を割り当てることができます。 数値型と Boolean 型に `null` を割り当てる機能は、値が割り当てられていない可能性がある要素を含むデータベースとその他のデータ型を処理するときに特に役に立ちます。 たとえば、データベースの Boolean フィールドには、値 `true` または `false` が格納されている可能性がありますが、未定義である可能性もあります。 
+# <a name="nullable-types-c-programming-guide"></a><span data-ttu-id="aa306-102">Null 許容型 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="aa306-102">Nullable Types (C# Programming Guide)</span></span>
+<span data-ttu-id="aa306-103">Null 許容型は、<xref:System.Nullable%601?displayProperty=nameWithType> 構造体のインスタンスです。</span><span class="sxs-lookup"><span data-stu-id="aa306-103">Nullable types are instances of the <xref:System.Nullable%601?displayProperty=nameWithType> struct.</span></span> <span data-ttu-id="aa306-104">Null 許容型は、基になる値型の適切な範囲の値だけでなく、`null` 値も表すことができます。</span><span class="sxs-lookup"><span data-stu-id="aa306-104">A nullable type can represent the correct range of values for its underlying value type, plus an additional `null` value.</span></span> <span data-ttu-id="aa306-105">たとえば、`Nullable<Int32>` ("Null 許容の Int32" と読みます) には、-2147483648 ～ 2147483647 の範囲の任意の値または `null` 値を割り当てることができます。</span><span class="sxs-lookup"><span data-stu-id="aa306-105">For example, a `Nullable<Int32>`, pronounced "Nullable of Int32," can be assigned any value from -2147483648 to 2147483647, or it can be assigned the `null` value.</span></span> <span data-ttu-id="aa306-106">`Nullable<bool>` には、[true](../../../csharp/language-reference/keywords/true.md)、[false](../../../csharp/language-reference/keywords/false.md)、または [null](../../../csharp/language-reference/keywords/null.md) の値を割り当てることができます。</span><span class="sxs-lookup"><span data-stu-id="aa306-106">A `Nullable<bool>` can be assigned the values [true](../../../csharp/language-reference/keywords/true.md), [false](../../../csharp/language-reference/keywords/false.md), or [null](../../../csharp/language-reference/keywords/null.md).</span></span> <span data-ttu-id="aa306-107">数値型と Boolean 型に `null` を割り当てる機能は、値が割り当てられていない可能性がある要素を含むデータベースとその他のデータ型を処理するときに特に役に立ちます。</span><span class="sxs-lookup"><span data-stu-id="aa306-107">The ability to assign `null` to numeric and Boolean types is especially useful when you are dealing with databases and other data types that contain elements that may not be assigned a value.</span></span> <span data-ttu-id="aa306-108">たとえば、データベースの Boolean フィールドには、値 `true` または `false` が格納されている可能性がありますが、未定義である可能性もあります。</span><span class="sxs-lookup"><span data-stu-id="aa306-108">For example, a Boolean field in a database can store the values `true` or `false`, or it may be undefined.</span></span> 
   
-[!code-cs[nullable-types](../../../../samples/snippets/csharp/programming-guide/nullable-types/nullable-ex1.cs)]  
+[!code-csharp[nullable-types](../../../../samples/snippets/csharp/programming-guide/nullable-types/nullable-ex1.cs)]  
   
-その他の例については、「[Null 許容型の使用](../../../csharp/programming-guide/nullable-types/using-nullable-types.md)」を参照してください  
+<span data-ttu-id="aa306-109">その他の例については、「[Null 許容型の使用](../../../csharp/programming-guide/nullable-types/using-nullable-types.md)」を参照してください</span><span class="sxs-lookup"><span data-stu-id="aa306-109">For more examples, see [Using Nullable Types](../../../csharp/programming-guide/nullable-types/using-nullable-types.md)</span></span>  
   
-## <a name="nullable-types-overview"></a>Null 許容型の概要  
- Null 許容型には次の特性があります。  
+## <a name="nullable-types-overview"></a><span data-ttu-id="aa306-110">Null 許容型の概要</span><span class="sxs-lookup"><span data-stu-id="aa306-110">Nullable Types Overview</span></span>  
+ <span data-ttu-id="aa306-111">Null 許容型には次の特性があります。</span><span class="sxs-lookup"><span data-stu-id="aa306-111">Nullable types have the following characteristics:</span></span>  
   
--   Null 許容型は、`null`値を割り当てることができる、値型の変数を表します。 参照型に基づいた Null 許容型は作成できません  (参照型は既に `null` 値をサポートしています)。  
+-   <span data-ttu-id="aa306-112">Null 許容型は、`null`値を割り当てることができる、値型の変数を表します。</span><span class="sxs-lookup"><span data-stu-id="aa306-112">Nullable types represent value-type variables that can be assigned the value of `null`.</span></span> <span data-ttu-id="aa306-113">参照型に基づいた Null 許容型は作成できません </span><span class="sxs-lookup"><span data-stu-id="aa306-113">You cannot create a nullable type based on a reference type.</span></span> <span data-ttu-id="aa306-114">(参照型は既に `null` 値をサポートしています)。</span><span class="sxs-lookup"><span data-stu-id="aa306-114">(Reference types already support the `null` value.)</span></span>  
   
--   構文 `T?` は、<xref:System.Nullable%601> の省略表現です。ここで、`T` は値型です。 この 2 つの形式は同義であり、どちらでも使用できます。  
+-   <span data-ttu-id="aa306-115">構文 `T?` は、<xref:System.Nullable%601> の省略表現です。ここで、`T` は値型です。</span><span class="sxs-lookup"><span data-stu-id="aa306-115">The syntax `T?` is shorthand for <xref:System.Nullable%601>, where `T` is a value type.</span></span> <span data-ttu-id="aa306-116">この 2 つの形式は同義であり、どちらでも使用できます。</span><span class="sxs-lookup"><span data-stu-id="aa306-116">The two forms are interchangeable.</span></span>  
   
--   Null 許容型に値を割り当てる方法は、通常の値型の場合と同じです。たとえば、`int? x = 10;` や `double? d = 4.108` と指定します。 Null 許容型には、値 `null` も割り当てることができます。たとえば、`int? x = null.` と指定します。  
+-   <span data-ttu-id="aa306-117">Null 許容型に値を割り当てる方法は、通常の値型の場合と同じです。たとえば、`int? x = 10;` や `double? d = 4.108` と指定します。</span><span class="sxs-lookup"><span data-stu-id="aa306-117">Assign a value to a nullable type just as you would for an ordinary value type, for example `int? x = 10;` or `double? d = 4.108`.</span></span> <span data-ttu-id="aa306-118">Null 許容型には、値 `null` も割り当てることができます。たとえば、`int? x = null.` と指定します。</span><span class="sxs-lookup"><span data-stu-id="aa306-118">A nullable type can also be assigned the value `null`: `int? x = null.`</span></span>  
   
--   割り当てられた値、または値が `null` の場合に基になる型の既定値を返すには、<xref:System.Nullable%601.GetValueOrDefault%2A?displayProperty=nameWithType> メソッドを使用します。たとえば、`int j = x.GetValueOrDefault();` と指定します。  
+-   <span data-ttu-id="aa306-119">割り当てられた値、または値が `null` の場合に基になる型の既定値を返すには、<xref:System.Nullable%601.GetValueOrDefault%2A?displayProperty=nameWithType> メソッドを使用します。たとえば、`int j = x.GetValueOrDefault();` と指定します。</span><span class="sxs-lookup"><span data-stu-id="aa306-119">Use the <xref:System.Nullable%601.GetValueOrDefault%2A?displayProperty=nameWithType> method to return either the assigned value, or the default value for the underlying type if the value is `null`, for example `int j = x.GetValueOrDefault();`</span></span>  
   
--   null かどうかを確認して値を取得するには、<xref:System.Nullable%601.HasValue%2A> と <xref:System.Nullable%601.Value%2A> の読み取り専用プロパティを使用します。たとえば、`if(x.HasValue) j = x.Value;` と指定します。  
+-   <span data-ttu-id="aa306-120">null かどうかを確認して値を取得するには、<xref:System.Nullable%601.HasValue%2A> と <xref:System.Nullable%601.Value%2A> の読み取り専用プロパティを使用します。たとえば、`if(x.HasValue) j = x.Value;` と指定します。</span><span class="sxs-lookup"><span data-stu-id="aa306-120">Use the <xref:System.Nullable%601.HasValue%2A> and <xref:System.Nullable%601.Value%2A> read-only properties to test for null and retrieve the value, as shown in the following example: `if(x.HasValue) j = x.Value;`</span></span>  
   
-    -   `HasValue` プロパティは、変数に値が含まれる場合は `true` を返し、`null` の場合は `false` を返します。  
+    -   <span data-ttu-id="aa306-121">`HasValue` プロパティは、変数に値が含まれる場合は `true` を返し、`null` の場合は `false` を返します。</span><span class="sxs-lookup"><span data-stu-id="aa306-121">The `HasValue` property returns `true` if the variable contains a value, or `false` if it is `null`.</span></span>  
   
-    -   `Value` プロパティは、値が割り当てられていれば、その値を返します。 それ以外の場合は、<xref:System.InvalidOperationException?displayProperty=nameWithType> がスローされます。  
+    -   <span data-ttu-id="aa306-122">`Value` プロパティは、値が割り当てられていれば、その値を返します。</span><span class="sxs-lookup"><span data-stu-id="aa306-122">The `Value` property returns a value if one is assigned.</span></span> <span data-ttu-id="aa306-123">それ以外の場合は、<xref:System.InvalidOperationException?displayProperty=nameWithType> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="aa306-123">Otherwise, a <xref:System.InvalidOperationException?displayProperty=nameWithType> is thrown.</span></span>  
   
-    -   `HasValue` の既定値は `false` です。 `Value`プロパティには既定値はありません。  
+    -   <span data-ttu-id="aa306-124">`HasValue` の既定値は `false` です。</span><span class="sxs-lookup"><span data-stu-id="aa306-124">The default value for `HasValue` is `false`.</span></span> <span data-ttu-id="aa306-125">`Value`プロパティには既定値はありません。</span><span class="sxs-lookup"><span data-stu-id="aa306-125">The `Value` property has no default value.</span></span>  
   
-    -   Null 許容型では `==` 演算子と `!=` 演算子も使用できます。たとえば、`if (x != null) y = x;` のように指定します。  
+    -   <span data-ttu-id="aa306-126">Null 許容型では `==` 演算子と `!=` 演算子も使用できます。たとえば、`if (x != null) y = x;` のように指定します。</span><span class="sxs-lookup"><span data-stu-id="aa306-126">You can also use the `==` and `!=` operators with a nullable type, as shown in the following example: `if (x != null) y = x;`</span></span>  
   
--   現在の値が `null` である Null 許容型が Null 許容型以外の型に割り当てられるときに適用される既定値を割り当てるには、`??` 演算子を使用します。たとえば、`int? x = null; int y = x ?? -1;` と指定します。  
+-   <span data-ttu-id="aa306-127">現在の値が `null` である Null 許容型が Null 許容型以外の型に割り当てられるときに適用される既定値を割り当てるには、`??` 演算子を使用します。たとえば、`int? x = null; int y = x ?? -1;` と指定します。</span><span class="sxs-lookup"><span data-stu-id="aa306-127">Use the `??` operator to assign a default value that will be applied when a nullable type whose current value is `null` is assigned to a non-nullable type, for example `int? x = null; int y = x ?? -1;`</span></span>  
   
--   入れ子になった Null 許容型は許可されません。 次の行はコンパイルされません。`Nullable<Nullable<int>> n;`  
+-   <span data-ttu-id="aa306-128">入れ子になった Null 許容型は許可されません。</span><span class="sxs-lookup"><span data-stu-id="aa306-128">Nested nullable types are not allowed.</span></span> <span data-ttu-id="aa306-129">次の行はコンパイルされません。`Nullable<Nullable<int>> n;`</span><span class="sxs-lookup"><span data-stu-id="aa306-129">The following line will not compile: `Nullable<Nullable<int>> n;`</span></span>  
   
-## <a name="related-sections"></a>関連項目  
- 詳細情報  
+## <a name="related-sections"></a><span data-ttu-id="aa306-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="aa306-130">Related Sections</span></span>  
+ <span data-ttu-id="aa306-131">詳細情報</span><span class="sxs-lookup"><span data-stu-id="aa306-131">For more information:</span></span>  
   
--   [Null 許容型の使用](../../../csharp/programming-guide/nullable-types/using-nullable-types.md)  
+-   [<span data-ttu-id="aa306-132">Null 許容型の使用</span><span class="sxs-lookup"><span data-stu-id="aa306-132">Using Nullable Types</span></span>](../../../csharp/programming-guide/nullable-types/using-nullable-types.md)  
   
--   [Null 許容型のボックス化](../../../csharp/programming-guide/nullable-types/boxing-nullable-types.md)  
+-   [<span data-ttu-id="aa306-133">Null 許容型のボックス化</span><span class="sxs-lookup"><span data-stu-id="aa306-133">Boxing Nullable Types</span></span>](../../../csharp/programming-guide/nullable-types/boxing-nullable-types.md)  
   
--   [??演算子](../../../csharp/language-reference/operators/null-conditional-operator.md)  
+-   [<span data-ttu-id="aa306-134">??演算子</span><span class="sxs-lookup"><span data-stu-id="aa306-134">?? Operator</span></span>](../../../csharp/language-reference/operators/null-conditional-operator.md)  
   
-## <a name="c-language-specification"></a>C# 言語仕様  
+## <a name="c-language-specification"></a><span data-ttu-id="aa306-135">C# 言語仕様</span><span class="sxs-lookup"><span data-stu-id="aa306-135">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Nullable>   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C#](../../../csharp/index.md)   
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [What Exactly Does 'Lifted' mean? ('Lifted' の正確な意味)](http://go.microsoft.com/fwlink/?LinkId=112382)
-
+## <a name="see-also"></a><span data-ttu-id="aa306-136">関連項目</span><span class="sxs-lookup"><span data-stu-id="aa306-136">See Also</span></span>  
+ <xref:System.Nullable>  
+ [<span data-ttu-id="aa306-137">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="aa306-137">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="aa306-138">C#</span><span class="sxs-lookup"><span data-stu-id="aa306-138">C#</span></span>](../../../csharp/index.md)  
+ [<span data-ttu-id="aa306-139">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="aa306-139">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="aa306-140">What Exactly Does 'Lifted' mean? ('Lifted' の正確な意味)</span><span class="sxs-lookup"><span data-stu-id="aa306-140">What exactly does 'lifted' mean?</span></span>](http://go.microsoft.com/fwlink/?LinkId=112382)

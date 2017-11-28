@@ -1,29 +1,32 @@
 ---
-title: "方法 : WCF REST プログラミング モデルを使用して任意のデータを受け入れるサービスを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : WCF REST プログラミング モデルを使用して任意のデータを受け入れるサービスを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e566c15a-b600-4e4a-be3a-4af43e767dae
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9541c46d029aa9f4e27a459ffcb9f32a7718039b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : WCF REST プログラミング モデルを使用して任意のデータを受け入れるサービスを作成する
-開発者は、データがサービス操作から返される流れを完全に制御する必要が生じることがあります。 たとえば、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではサポートされない形式のデータを、サービス操作から返す必要がある場合です。 このトピックでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST プログラミング モデルを使用して任意のデータを受信するサービスの作成方法について説明します。  
+# <a name="how-to-create-a-service-that-accepts-arbitrary-data-using-the-wcf-rest-programming-model"></a><span data-ttu-id="3704d-102">方法 : WCF REST プログラミング モデルを使用して任意のデータを受け入れるサービスを作成する</span><span class="sxs-lookup"><span data-stu-id="3704d-102">How to: Create a Service That Accepts Arbitrary Data using the WCF REST Programming Model</span></span>
+<span data-ttu-id="3704d-103">開発者は、データがサービス操作から返される流れを完全に制御する必要が生じることがあります。</span><span class="sxs-lookup"><span data-stu-id="3704d-103">Sometimes developers must have full control of how data is returned from a service operation.</span></span> <span data-ttu-id="3704d-104">たとえば、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではサポートされない形式のデータを、サービス操作から返す必要がある場合です。</span><span class="sxs-lookup"><span data-stu-id="3704d-104">This is the case when a service operation must return data in a format not supported by[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span> <span data-ttu-id="3704d-105">このトピックでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST プログラミング モデルを使用して任意のデータを受信するサービスの作成方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="3704d-105">This topic discusses using the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST Programming Model to create a service that receives arbitrary data.</span></span>  
   
-### <a name="to-implement-the-service-contract"></a>サービス コントラクトを実装するには  
+### <a name="to-implement-the-service-contract"></a><span data-ttu-id="3704d-106">サービス コントラクトを実装するには</span><span class="sxs-lookup"><span data-stu-id="3704d-106">To implement the service contract</span></span>  
   
-1.  サービス コントラクトを定義します。 任意のデータを受信する操作は、型のパラメーターを持つ必要があります<xref:System.IO.Stream>します。 さらに、このパラメーターは要求の本文に渡される唯一のパラメーターでなければなりません。 この例で説明されている操作では、filename パラメーターも使用できます。 このパラメーターは要求の URL に格納されて渡されます。 指定して、URL 内でパラメーターを渡すことを指定する、 <xref:System.UriTemplate>で、 <xref:System.ServiceModel.Web.WebInvokeAttribute>します。 この場合、このメソッドを呼び出すのに使用する URI は “UploadFile/Some-Filename” で終わります。 URI テンプレートの "{filename}" 部分は、操作に使用する filename パラメーターが操作の呼び出しに使用する URI に格納されて渡されるように指定します。  
+1.  <span data-ttu-id="3704d-107">サービス コントラクトを定義します。</span><span class="sxs-lookup"><span data-stu-id="3704d-107">Define the service contract.</span></span> <span data-ttu-id="3704d-108">任意のデータを受信する操作には、<xref:System.IO.Stream> 型のパラメーターが必要です。</span><span class="sxs-lookup"><span data-stu-id="3704d-108">The operation that receives the arbitrary data must have a parameter of type <xref:System.IO.Stream>.</span></span> <span data-ttu-id="3704d-109">さらに、このパラメーターは要求の本文に渡される唯一のパラメーターでなければなりません。</span><span class="sxs-lookup"><span data-stu-id="3704d-109">In addition, this parameter must be the only parameter passed in the body of the request.</span></span> <span data-ttu-id="3704d-110">この例で説明されている操作では、filename パラメーターも使用できます。</span><span class="sxs-lookup"><span data-stu-id="3704d-110">The operation described in this example also takes a filename parameter.</span></span> <span data-ttu-id="3704d-111">このパラメーターは要求の URL に格納されて渡されます。</span><span class="sxs-lookup"><span data-stu-id="3704d-111">This parameter is passed within the URL of the request.</span></span> <span data-ttu-id="3704d-112"><xref:System.UriTemplate> で <xref:System.ServiceModel.Web.WebInvokeAttribute> を指定すると、パラメーターが URL に格納されて渡されるように指定できます。</span><span class="sxs-lookup"><span data-stu-id="3704d-112">You can specify that a parameter is passed within the URL by specifying a <xref:System.UriTemplate> in the <xref:System.ServiceModel.Web.WebInvokeAttribute>.</span></span> <span data-ttu-id="3704d-113">この場合は、URI は、呼び出しに使用では、このメソッドは、「UploadFile/一部のファイル名」で終了します。</span><span class="sxs-lookup"><span data-stu-id="3704d-113">In this case the URI used to call this method ends in "UploadFile/Some-Filename".</span></span> <span data-ttu-id="3704d-114">URI テンプレートの"{filename}"部分では、操作を呼び出すために使用する URI 内で操作の filename パラメーターが渡されることを指定します。</span><span class="sxs-lookup"><span data-stu-id="3704d-114">The "{filename}" portion of the URI template specifies that the filename parameter for the operation is passed within the URI used to call the operation.</span></span>  
   
-    ```  
+    ```csharp  
      [ServiceContract]  
     public interface IReceiveData  
     {  
@@ -32,9 +35,9 @@ caps.handback.revision: 8
     }  
     ```  
   
-2.  サービス コントラクトを実装します。 コントラクトには、ストリーム内の任意のデータのファイルを受け取る `UploadFile` というメソッドが&1; つだけあります。 操作では、ストリームを読み取り、読み取ったバイト数をカウントしてから、ファイル名と読み取ったバイト数を表示します。  
+2.  <span data-ttu-id="3704d-115">サービス コントラクトを実装します。</span><span class="sxs-lookup"><span data-stu-id="3704d-115">Implement the service contract.</span></span> <span data-ttu-id="3704d-116">コントラクトには、ストリーム内の任意のデータのファイルを受け取る `UploadFile` というメソッドが 1 つだけあります。</span><span class="sxs-lookup"><span data-stu-id="3704d-116">The contract has only one method, `UploadFile` that receives a file of arbitrary data in a stream.</span></span> <span data-ttu-id="3704d-117">操作では、ストリームを読み取り、読み取ったバイト数をカウントしてから、ファイル名と読み取ったバイト数を表示します。</span><span class="sxs-lookup"><span data-stu-id="3704d-117">The operation reads the stream counting the number of bytes read and then displays the filename and the number of bytes read.</span></span>  
   
-    ```  
+    ```csharp  
     public class RawDataService : IReceiveData  
     {  
         public void UploadFile(string fileName, Stream fileContents)  
@@ -51,64 +54,62 @@ caps.handback.revision: 8
     }  
     ```  
   
-### <a name="to-host-the-service"></a>サービスをホストするには  
+### <a name="to-host-the-service"></a><span data-ttu-id="3704d-118">サービスをホストするには</span><span class="sxs-lookup"><span data-stu-id="3704d-118">To host the service</span></span>  
   
-1.  コンソール アプリケーションを作成し、サービスをホストします。  
+1.  <span data-ttu-id="3704d-119">コンソール アプリケーションを作成し、サービスをホストします。</span><span class="sxs-lookup"><span data-stu-id="3704d-119">Create a console application to host the service.</span></span>  
   
-    ```  
+    ```csharp  
     class Program  
     {  
        static void Main(string[] args)  
        {  
        }  
     }  
-  
     ```  
   
-2.  変数を作成し、`Main` メソッド内のサービスに使用するベース アドレスを保持します。  
+2.  <span data-ttu-id="3704d-120">変数を作成し、`Main` メソッド内のサービスに使用するベース アドレスを保持します。</span><span class="sxs-lookup"><span data-stu-id="3704d-120">Create a variable to hold the base address for the service within the `Main` method.</span></span>  
   
-    ```  
+    ```csharp  
     string baseAddress = "http://" + Environment.MachineName + ":8000/Service";  
     ```  
   
-3.  作成、 <xref:System.ServiceModel.ServiceHost>サービス クラスとベース アドレスを指定するサービスのインスタンス。  
+3.  <span data-ttu-id="3704d-121">サービスの <xref:System.ServiceModel.ServiceHost> インスタンスを作成して、サービス クラスとベース アドレスを指定します。</span><span class="sxs-lookup"><span data-stu-id="3704d-121">Create a <xref:System.ServiceModel.ServiceHost> instance for the service that specifies the service class and the base address.</span></span>  
   
-    ```  
+    ```csharp  
     ServiceHost host = new ServiceHost(typeof(RawDataService), new Uri(baseAddress));  
     ```  
   
-4.  コントラクトを指定するエンドポイントを追加<xref:System.ServiceModel.WebHttpBinding>、および<xref:System.ServiceModel.Description.WebHttpBehavior>します。  
+4.  <span data-ttu-id="3704d-122">コントラクト、<xref:System.ServiceModel.WebHttpBinding>、および <xref:System.ServiceModel.Description.WebHttpBehavior> を指定するエンドポイントを追加します。</span><span class="sxs-lookup"><span data-stu-id="3704d-122">Add an endpoint that specifies the contract, <xref:System.ServiceModel.WebHttpBinding>, and <xref:System.ServiceModel.Description.WebHttpBehavior>.</span></span>  
   
-    ```  
+    ```csharp  
     host.AddServiceEndpoint(typeof(IReceiveData), new WebHttpBinding(), "").Behaviors.Add(new WebHttpBehavior());  
     ```  
   
-5.  サービス ホストを開きます。 サービスは要求を受け取る準備ができました。  
+5.  <span data-ttu-id="3704d-123">サービス ホストを開きます。</span><span class="sxs-lookup"><span data-stu-id="3704d-123">Open the service host.</span></span> <span data-ttu-id="3704d-124">サービスは要求を受け取る準備ができました。</span><span class="sxs-lookup"><span data-stu-id="3704d-124">The service is now ready to receive requests.</span></span>  
   
-    ```  
+    ```csharp  
     host.Open();  
     Console.WriteLine("Host opened");  
     ```  
   
-### <a name="to-call-the-service-programmatically"></a>プログラムによってサービスを呼び出すには  
+### <a name="to-call-the-service-programmatically"></a><span data-ttu-id="3704d-125">プログラムによってサービスを呼び出すには</span><span class="sxs-lookup"><span data-stu-id="3704d-125">To call the service programmatically</span></span>  
   
-1.  作成、 <xref:System.Net.HttpWebRequest>サービスを呼び出すために使用する URI を使用します。 このコードでは、ベース アドレスは `“/UploadFile/Text”` と組み合わされています。 URI の `“UploadFile”` 部分で呼び出す操作を指定します。 URI の `“Test.txt”` 部分で `UploadFile` 操作に渡す filename パラメーターを指定します。 これらの項目の両方にマップ、 <xref:System.UriTemplate>操作コントラクトに適用します。  
+1.  <span data-ttu-id="3704d-126">サービスの呼び出しに使用する URI で <xref:System.Net.HttpWebRequest> を作成します。</span><span class="sxs-lookup"><span data-stu-id="3704d-126">Create a <xref:System.Net.HttpWebRequest> with the URI used to call the service.</span></span> <span data-ttu-id="3704d-127">このコードでは、ベース アドレスは `"/UploadFile/Text"` と組み合わされています。</span><span class="sxs-lookup"><span data-stu-id="3704d-127">In this code, the base address is combined with `"/UploadFile/Text"`.</span></span> <span data-ttu-id="3704d-128">URI の `"UploadFile"` 部分で呼び出す操作を指定します。</span><span class="sxs-lookup"><span data-stu-id="3704d-128">The `"UploadFile"` portion of the URI specifies the operation to call.</span></span> <span data-ttu-id="3704d-129">URI の `"Test.txt"` 部分で `UploadFile` 操作に渡す filename パラメーターを指定します。</span><span class="sxs-lookup"><span data-stu-id="3704d-129">The `"Test.txt"` portion of the URI specifies the filename parameter to pass to the `UploadFile` operation.</span></span> <span data-ttu-id="3704d-130">これらの項目はいずれも操作コントラクトに適用された <xref:System.UriTemplate> にマップされます。</span><span class="sxs-lookup"><span data-stu-id="3704d-130">Both of these items map to the <xref:System.UriTemplate> applied to the operation contract.</span></span>  
   
-    ```  
+    ```csharp  
     HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(baseAddress + "/UploadFile/Test.txt");  
-  
     ```  
   
-2.  設定、<xref:System.Net.HttpWebRequest.Method%2A>のプロパティ、 <xref:System.Net.HttpWebRequest>に`POST`と<xref:System.Net.HttpWebRequest.ContentType%2A>プロパティを`“text/plain”`します。 この設定により、サービスはコードがデータを送信し、そのデータがプレーン テキストであることを認識します。  
+2.  <span data-ttu-id="3704d-131"><xref:System.Net.HttpWebRequest.Method%2A> の <xref:System.Net.HttpWebRequest> プロパティを `POST`、<xref:System.Net.HttpWebRequest.ContentType%2A> プロパティを `"text/plain"` にそれぞれ設定します。</span><span class="sxs-lookup"><span data-stu-id="3704d-131">Set the <xref:System.Net.HttpWebRequest.Method%2A> property of the <xref:System.Net.HttpWebRequest> to `POST` and the <xref:System.Net.HttpWebRequest.ContentType%2A> property to `"text/plain"`.</span></span> <span data-ttu-id="3704d-132">この設定により、サービスはコードがデータを送信し、そのデータがプレーン テキストであることを認識します。</span><span class="sxs-lookup"><span data-stu-id="3704d-132">This tells the service that the code is sending data and that data is in plain text.</span></span>  
   
-    ```  
+    ```csharp  
     req.Method = "POST";  
     req.ContentType = "text/plain";  
     ```  
   
-3.  呼び出す<xref:System.Net.HttpWebRequest.GetRequestStream%2A>要求ストリームを取得するには、送信、要求ストリームにそのデータを書き込みおよびストリームを閉じるにデータを作成します。  
+3.  <span data-ttu-id="3704d-133"><xref:System.Net.HttpWebRequest.GetRequestStream%2A> を呼び出すと、要求ストリームの取得や送信するデータの作成ができます。また、そのデータの要求ストリームに書き込んだり、ストリームを閉じることもできます。</span><span class="sxs-lookup"><span data-stu-id="3704d-133">Call <xref:System.Net.HttpWebRequest.GetRequestStream%2A> to get the request stream, create the data to send, write that data to the request stream, and close the stream.</span></span>  
   
-    ```  
+    ```csharp  
     Stream reqStream = req.GetRequestStream();  
     byte[] fileToSend = new byte[12345];  
     for (int i = 0; i < fileToSend.Length; i++)  
@@ -119,24 +120,23 @@ caps.handback.revision: 8
     reqStream.Close();  
     ```  
   
-4.  呼び出して、サービスから応答を取得<xref:System.Net.HttpWebRequest.GetResponse%2A>し、応答データをコンソールに表示します。  
+4.  <span data-ttu-id="3704d-134"><xref:System.Net.HttpWebRequest.GetResponse%2A> を呼び出してサービスから応答を取得すると、応答データをコンソールに表示できます。</span><span class="sxs-lookup"><span data-stu-id="3704d-134">Get the response from the service by calling <xref:System.Net.HttpWebRequest.GetResponse%2A> and display the response data to the console.</span></span>  
   
-    ```  
+    ```csharp  
     HttpWebResponse resp = (HttpWebResponse)req.GetResponse();  
     Console.WriteLine("Client: Receive Response HTTP/{0} {1} {2}", resp.ProtocolVersion, (int)resp.StatusCode, resp.StatusDescription);  
-  
     ```  
   
-5.  サービス ホストを閉じます。  
+5.  <span data-ttu-id="3704d-135">サービス ホストを閉じます。</span><span class="sxs-lookup"><span data-stu-id="3704d-135">Close the service host.</span></span>  
   
-    ```  
+    ```csharp  
     host.Close();  
     ```  
   
-## <a name="example"></a>例  
- この例で使用されているコードの完全な一覧を次に示します。  
+## <a name="example"></a><span data-ttu-id="3704d-136">例</span><span class="sxs-lookup"><span data-stu-id="3704d-136">Example</span></span>  
+ <span data-ttu-id="3704d-137">この例で使用されているコードの完全な一覧を次に示します。</span><span class="sxs-lookup"><span data-stu-id="3704d-137">The following is a complete listing of the code for this example.</span></span>  
   
-```  
+```csharp  
 using System;  
 using System.Collections.Generic;  
 using System.Text;  
@@ -197,16 +197,13 @@ namespace ReceiveRawData
         }  
     }  
 }  
-  
 ```  
   
-<!-- TODO: review snippet reference  [!CODE [Microsoft.Win32.RegistryKey#4](Microsoft.Win32.RegistryKey#4)]  -->  
+## <a name="compiling-the-code"></a><span data-ttu-id="3704d-138">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="3704d-138">Compiling the Code</span></span>  
   
-## <a name="compiling-the-code"></a>コードのコンパイル  
+-   <span data-ttu-id="3704d-139">コードのコンパイル時には、System.ServiceModel.dll と System.ServiceModel.Web.dll を参照します。</span><span class="sxs-lookup"><span data-stu-id="3704d-139">When compiling the code reference System.ServiceModel.dll and System.ServiceModel.Web.dll</span></span>  
   
--   コードのコンパイル時には、System.ServiceModel.dll と System.ServiceModel.Web.dll を参照します。  
-  
-## <a name="see-also"></a>関連項目  
- [UriTemplate と UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)   
- [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)   
- [WCF Web HTTP プログラミング モデルの概要](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
+## <a name="see-also"></a><span data-ttu-id="3704d-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="3704d-140">See Also</span></span>  
+ [<span data-ttu-id="3704d-141">UriTemplate と UriTemplateTable</span><span class="sxs-lookup"><span data-stu-id="3704d-141">UriTemplate and UriTemplateTable</span></span>](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)  
+ [<span data-ttu-id="3704d-142">WCF Web HTTP プログラミング モデル</span><span class="sxs-lookup"><span data-stu-id="3704d-142">WCF Web HTTP Programming Model</span></span>](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
+ [<span data-ttu-id="3704d-143">WCF Web HTTP プログラミング モデルの概要</span><span class="sxs-lookup"><span data-stu-id="3704d-143">WCF Web HTTP Programming Model Overview</span></span>](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)

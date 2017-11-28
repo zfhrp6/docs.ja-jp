@@ -1,56 +1,62 @@
 ---
-title: "方法 : XAML でデータをバインディング可能にする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "バインド (データを), データを利用可能にする"
-  - "データ バインディング, データをバインディング可能にする"
+title: "方法 : XAML でデータをバインディング可能にする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- data binding [WPF], making data available for binding
+- binding data [WPF], making data available for
 ms.assetid: 7103c2e8-0e31-4a13-bf12-ca382221a8d5
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d734a7f17f8843ff284ac0854ac41d4a5b9f5584
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : XAML でデータをバインディング可能にする
-ここでは、アプリケーションでの必要に応じて、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] でデータをバインディング可能にするさまざまな方法について説明します。  
+# <a name="how-to-make-data-available-for-binding-in-xaml"></a><span data-ttu-id="b5fef-102">方法 : XAML でデータをバインディング可能にする</span><span class="sxs-lookup"><span data-stu-id="b5fef-102">How to: Make Data Available for Binding in XAML</span></span>
+<span data-ttu-id="b5fef-103">このトピックで使用できるようにデータのバインドでさまざまな方法について説明します[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]アプリケーションのニーズに応じて、します。</span><span class="sxs-lookup"><span data-stu-id="b5fef-103">This topic discusses the different ways you can make data available for binding in [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], depending on the needs of your application.</span></span>  
   
-## 使用例  
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] から[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] オブジェクトにバインドする場合、そのオブジェクトをバインディング可能にする方法の 1 つは、それをリソースとして定義し、`x:Key` を指定することです。  次の例では、`PersonName` という名前の文字列プロパティを持つ `Person` オブジェクトがあります。  この `Person` オブジェクトは、`SDKSample` という名前空間で定義されます。  
+## <a name="example"></a><span data-ttu-id="b5fef-104">例</span><span class="sxs-lookup"><span data-stu-id="b5fef-104">Example</span></span>  
+ <span data-ttu-id="b5fef-105">ある場合、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]オブジェクトにバインドするには[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]、使用できるように、オブジェクトのバインディングでは、リソースとして定義し、1 つの方法、`x:Key`です。</span><span class="sxs-lookup"><span data-stu-id="b5fef-105">If you have a [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] object you would like to bind to from [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], one way you can make the object available for binding is to define it as a resource and give it an `x:Key`.</span></span> <span data-ttu-id="b5fef-106">次の例で必要がある、`Person`という名前の文字列プロパティを持つオブジェクト`PersonName`です。</span><span class="sxs-lookup"><span data-stu-id="b5fef-106">In the following example, you have a `Person` object with a string property named `PersonName`.</span></span> <span data-ttu-id="b5fef-107">`Person`オブジェクトがという名前空間で定義されている`SDKSample`です。</span><span class="sxs-lookup"><span data-stu-id="b5fef-107">The `Person` object is defined in the namespace called `SDKSample`.</span></span>  
   
- [!code-xml[SimpleBinding#Instantiation](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#instantiation)]  
-[!code-xml[SimpleBinding#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#2)]  
+ [!code-xaml[SimpleBinding#Instantiation](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#instantiation)]  
+[!code-xaml[SimpleBinding#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#2)]  
   
- その後、次の例に示すように、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] でそのオブジェクトにバインドします。  
+ <span data-ttu-id="b5fef-108">内のオブジェクトにバインドすることができますし、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]の次の例に示すようにします。</span><span class="sxs-lookup"><span data-stu-id="b5fef-108">You can then bind to the object in [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], as shown in the following example.</span></span>  
   
- [!code-xml[SimpleBinding#BDO1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#bdo1)]  
+ [!code-xaml[SimpleBinding#BDO1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#bdo1)]  
   
- または、次の例に示すように、<xref:System.Windows.Data.ObjectDataProvider> クラスを使用することもできます。  
+ <span data-ttu-id="b5fef-109">また、使用することができます、<xref:System.Windows.Data.ObjectDataProvider>クラスは、次の例のようにします。</span><span class="sxs-lookup"><span data-stu-id="b5fef-109">Alternatively, you can use the <xref:System.Windows.Data.ObjectDataProvider> class, as in the following example.</span></span>  
   
- [!code-xml[SimpleBinding#ODPCP](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleBinding/VisualBasic/Page1.xaml#odpcp)]  
+ [!code-xaml[SimpleBinding#ODPCP](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleBinding/VisualBasic/Page1.xaml#odpcp)]  
   
- 同じようにバインディングを定義します。  
+ <span data-ttu-id="b5fef-110">バインディングを定義すると同じ方法。</span><span class="sxs-lookup"><span data-stu-id="b5fef-110">You define the binding the same way:</span></span>  
   
- [!code-xml[SimpleBinding#BDO1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#bdo1)]  
+ [!code-xaml[SimpleBinding#BDO1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#bdo1)]  
   
- ここに示す例では、結果は同じになります。`Joe` というテキスト コンテンツを持つ <xref:System.Windows.Controls.TextBlock> が得られます。  これに対し、<xref:System.Windows.Data.ObjectDataProvider> クラスは、メソッドの結果にバインドするなどの機能を提供します。  <xref:System.Windows.Data.ObjectDataProvider> クラスが提供する機能が必要な場合は、そちらを使用してください。  
+ <span data-ttu-id="b5fef-111">結果では、この例では、同じ: がある、<xref:System.Windows.Controls.TextBlock>テキスト コンテンツ付き`Joe`します。</span><span class="sxs-lookup"><span data-stu-id="b5fef-111">In this particular example, the result is the same: you have a <xref:System.Windows.Controls.TextBlock> with the text content `Joe`.</span></span> <span data-ttu-id="b5fef-112">ただし、<xref:System.Windows.Data.ObjectDataProvider>クラス、メソッドの結果にバインドする機能などの機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="b5fef-112">However, the <xref:System.Windows.Data.ObjectDataProvider> class provides functionality such as the ability to bind to the result of a method.</span></span> <span data-ttu-id="b5fef-113">使用することができます、<xref:System.Windows.Data.ObjectDataProvider>クラスの場合は、機能を提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b5fef-113">You can choose to use the <xref:System.Windows.Data.ObjectDataProvider> class if you need the functionality it provides.</span></span>  
   
- ただし、既に作成されているオブジェクトにバインドする場合は、次の例に示すように、コード内で `DataContext` を設定する必要があります。  
+ <span data-ttu-id="b5fef-114">ただし、既に作成されているオブジェクトにバインドする場合は、設定する必要が、`DataContext`コードでは、次の例のようにします。</span><span class="sxs-lookup"><span data-stu-id="b5fef-114">However, if you are binding to an object that has already been created, you need to set the `DataContext` in code, as in the following example.</span></span>  
   
  [!code-csharp[ADODataSet#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ADODataSet/CSharp/Window1.xaml.cs#1)]
  [!code-vb[ADODataSet#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ADODataSet/VisualBasic/Window1.xaml.vb#1)]  
   
- <xref:System.Windows.Data.XmlDataProvider> クラスを使用して、バインディングで使用する [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] データにアクセスするには、「[XMLDataProvider と XPath クエリを使用して XML データにバインドする](../../../../docs/framework/wpf/data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md)」を参照してください。  <xref:System.Windows.Data.ObjectDataProvider> クラスを使用して、バインディングで使用する [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] データにアクセスするには、「[XDocument、XElement、または LINQ for XML クエリの結果にバインドする](../../../../docs/framework/wpf/data/how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md)」を参照してください。  
+ <span data-ttu-id="b5fef-115">アクセスする[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]データを使用してバインディングを<xref:System.Windows.Data.XmlDataProvider>クラスを参照してください[XMLDataProvider および XPath クエリを使用して XML データにバインド](../../../../docs/framework/wpf/data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md)です。</span><span class="sxs-lookup"><span data-stu-id="b5fef-115">To access [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data for binding using the <xref:System.Windows.Data.XmlDataProvider> class, see [Bind to XML Data Using an XMLDataProvider and XPath Queries](../../../../docs/framework/wpf/data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).</span></span> <span data-ttu-id="b5fef-116">アクセスする[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]データを使用してバインディングを<xref:System.Windows.Data.ObjectDataProvider>クラスを参照してください[XDocument、XElement、または LINQ に XML クエリの結果のバインド](../../../../docs/framework/wpf/data/how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md)です。</span><span class="sxs-lookup"><span data-stu-id="b5fef-116">To access [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data for binding using the <xref:System.Windows.Data.ObjectDataProvider> class, see [Bind to XDocument, XElement, or LINQ for XML Query Results](../../../../docs/framework/wpf/data/how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md).</span></span>  
   
- バインド先とするデータを指定するさまざまな方法については、「[バインディング ソースを指定する](../../../../docs/framework/wpf/data/how-to-specify-the-binding-source.md)」を参照してください。  バインド先として指定できるデータの型、またはバインディング用に独自の[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] オブジェクトを実装する方法については、「[バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)」を参照してください。  
+ <span data-ttu-id="b5fef-117">バインドするデータを指定するさまざまな方法について、次を参照してください。[バインディング ソースを指定](../../../../docs/framework/wpf/data/how-to-specify-the-binding-source.md)です。</span><span class="sxs-lookup"><span data-stu-id="b5fef-117">For information about the different ways you can specify the data you are binding to, see [Specify the Binding Source](../../../../docs/framework/wpf/data/how-to-specify-the-binding-source.md).</span></span> <span data-ttu-id="b5fef-118">どのような種類のデータにバインドすることができます、または独自に実装する方法について[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]、バインディングのオブジェクトを参照してください[バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="b5fef-118">For information about what types of data you can bind to or how to implement your own [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objects for binding, see [Binding Sources Overview](../../../../docs/framework/wpf/data/binding-sources-overview.md).</span></span>  
   
-## 参照  
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="b5fef-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="b5fef-119">See Also</span></span>  
+ [<span data-ttu-id="b5fef-120">データ バインディングの概要</span><span class="sxs-lookup"><span data-stu-id="b5fef-120">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [<span data-ttu-id="b5fef-121">方法トピック</span><span class="sxs-lookup"><span data-stu-id="b5fef-121">How-to Topics</span></span>](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

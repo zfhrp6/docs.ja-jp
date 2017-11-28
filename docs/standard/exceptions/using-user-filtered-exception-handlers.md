@@ -1,30 +1,33 @@
 ---
-title: "ユーザー フィルター例外ハンドラーの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "例外, ユーザー フィルター"
-  - "ユーザー フィルター例外"
+title: "ユーザー フィルター例外ハンドラーの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- user-filtered exceptions
+- exceptions, user-filtered
 ms.assetid: aa80d155-060d-41b4-a636-1ceb424afee8
-caps.latest.revision: 10
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "10"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: a71a722063448fb0d568f4bfb4f71d4e01c57454
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ユーザー フィルター例外ハンドラーの使用
-現在 Visual Basic では、ユーザー フィルター例外をサポートしています。  ユーザー フィルター例外ハンドラーは、独自に定義された例外の条件に基づいて例外をキャッチおよび処理します。  これらのハンドラーでは、**Catch** ステートメントを **When** キーワードと一緒に使用します。  
+# <a name="using-user-filtered-exception-handlers"></a><span data-ttu-id="c6c4f-102">ユーザー フィルター例外ハンドラーの使用</span><span class="sxs-lookup"><span data-stu-id="c6c4f-102">Using User-Filtered Exception Handlers</span></span>
+<span data-ttu-id="c6c4f-103">現在 Visual Basic では、ユーザー フィルター例外をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="c6c4f-103">Currently, Visual Basic supports user-filtered exceptions.</span></span> <span data-ttu-id="c6c4f-104">ユーザー フィルター例外ハンドラーは、ユーザーが例外に対して定義した要件に基づいて、例外をキャッチして処理します。</span><span class="sxs-lookup"><span data-stu-id="c6c4f-104">User-filtered exception handlers catch and handle exceptions based on requirements you define for the exception.</span></span> <span data-ttu-id="c6c4f-105">これらのハンドラーでは、**Catch** ステートメントを **When** キーワードと一緒に使用します。</span><span class="sxs-lookup"><span data-stu-id="c6c4f-105">These handlers use the **Catch** statement with the **When** keyword.</span></span>  
   
- 特定の例外オブジェクトが複数のエラーに対応するときにこの手法を使用すると便利です。  通常、このような例外オブジェクトには、エラーに関連付けられた特定のエラー コードが格納されているプロパティがあります。  **Catch** 句で処理する特定のエラーだけを選択するには、エラー コード プロパティを使用した式を作成します。  
+ <span data-ttu-id="c6c4f-106">この手法は、特定の例外オブジェクトが複数のエラーに対応する場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="c6c4f-106">This technique is useful when a particular exception object corresponds to multiple errors.</span></span> <span data-ttu-id="c6c4f-107">その場合、オブジェクトには通常、エラーに関連付けられた特定のエラー コードが格納されているプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="c6c4f-107">In this case, the object typically has a property that contains the specific error code associated with the error.</span></span> <span data-ttu-id="c6c4f-108">エラー コード プロパティを式で使用すると、その **Catch** 句で処理する特定のエラーだけを選択することができます。</span><span class="sxs-lookup"><span data-stu-id="c6c4f-108">You can use the error code property in the expression to select only the particular error you want to handle in that **Catch** clause.</span></span>  
   
- `When` キーワードが指定された **Catch** ステートメントを次の Visual Basic コード例に示します。  
+ <span data-ttu-id="c6c4f-109">**Catch/When** ステートメントを使用した Visual Basic コードの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c6c4f-109">The following Visual Basic example illustrates the **Catch/When** statement.</span></span>  
   
 ```  
 Try  
@@ -34,12 +37,12 @@ Try
 End Try  
 ```  
   
- ユーザー フィルター句の式が制限されることはありません。  ユーザー フィルター式の実行中に例外が発生すると、その例外は破棄され、そのフィルター式は false と評価されたと見なされます。  この場合、共通言語ランタイムでは、現在の例外に対応するハンドラーの検索が継続されます。  
+ <span data-ttu-id="c6c4f-110">ユーザー フィルター句の式が制限されることはありません。</span><span class="sxs-lookup"><span data-stu-id="c6c4f-110">The expression of the user-filtered clause is not restricted in any way.</span></span> <span data-ttu-id="c6c4f-111">ユーザー フィルター式の実行中に例外が発生した場合、その例外は破棄され、フィルター式は false と評価されたものと見なされます。</span><span class="sxs-lookup"><span data-stu-id="c6c4f-111">If an exception occurs during execution of the user-filtered expression, that exception is discarded and the filter expression is considered to have evaluated to false.</span></span> <span data-ttu-id="c6c4f-112">その場合、共通言語ランタイムは、現在の例外に対応するハンドラーの検索を継続します。</span><span class="sxs-lookup"><span data-stu-id="c6c4f-112">In this case, the common language runtime continues the search for a handler for the current exception.</span></span>  
   
-## 特定の例外とユーザー フィルター句の組み合わせ  
- catch ステートメントには、特定の例外とユーザー フィルター句の両方を記述できます。  ランタイムでは、特定の例外が最初にテストされます。  特定の例外がテストを通過すると、次にユーザー フィルターが実行されます。  汎用フィルターには、クラス フィルターで宣言されている変数への参照を含めることができます。  2 つのフィルター句の順序は一定であり、変更できないことに注意してください。  
+## <a name="combining-the-specific-exception-and-the-user-filtered-clauses"></a><span data-ttu-id="c6c4f-113">特定の例外とユーザー フィルター句の組み合わせ</span><span class="sxs-lookup"><span data-stu-id="c6c4f-113">Combining the Specific Exception and the User-Filtered Clauses</span></span>  
+ <span data-ttu-id="c6c4f-114">catch ステートメントには、特定の例外とユーザー フィルター句の両方を記述できます。</span><span class="sxs-lookup"><span data-stu-id="c6c4f-114">A catch statement can contain both the specific exception and the user-filtered clauses.</span></span> <span data-ttu-id="c6c4f-115">ランタイムは、最初に特定の例外をテストします。</span><span class="sxs-lookup"><span data-stu-id="c6c4f-115">The runtime tests the specific exception first.</span></span> <span data-ttu-id="c6c4f-116">特定の例外がテストを通過すると、ランタイムはユーザー フィルターを実行します。</span><span class="sxs-lookup"><span data-stu-id="c6c4f-116">If the specific exception succeeds, the runtime executes the user filter.</span></span> <span data-ttu-id="c6c4f-117">汎用フィルターには、クラス フィルターで宣言されている変数への参照を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="c6c4f-117">The generic filter can contain a reference to the variable declared in the class filter.</span></span> <span data-ttu-id="c6c4f-118">なお、2 つのフィルター句の順序をが逆にすることはできません。</span><span class="sxs-lookup"><span data-stu-id="c6c4f-118">Note that the order of the two filter clauses cannot be reversed.</span></span>  
   
- `ClassLoadException` という例外が指定された **Catch** ステートメントと、**When** キーワードを使用したユーザー フィルター句の Visual Basic コード例を次に示します。  
+ <span data-ttu-id="c6c4f-119">次に示すのは、`ClassLoadException` という例外が指定された **Catch** ステートメントと、**When** キーワードを使用したユーザー フィルター句がある Visual Basic コードの例です。</span><span class="sxs-lookup"><span data-stu-id="c6c4f-119">The following Visual Basic example shows the specific exception `ClassLoadException` in the **Catch** statement as well as the user-filtered clause using the **When** keyword.</span></span>  
   
 ```  
 Try  
@@ -48,9 +51,6 @@ Try
       'Catch statements.  
 End Try  
 ```  
-  
-## 参照  
- [方法 : Try ブロックと Catch ブロックを使用して例外をキャッチする](../../../docs/standard/exceptions/how-to-use-the-try-catch-block-to-catch-exceptions.md)   
- [方法 : catch ブロックで特定の例外を使用する](../../../docs/standard/exceptions/how-to-use-specific-exceptions-in-a-catch-block.md)   
- [例外の推奨事項](../../../docs/standard/exceptions/best-practices-for-exceptions.md)   
- [例外処理の基本事項](../../../docs/standard/exceptions/exception-handling-fundamentals.md)
+
+## <a name="see-also"></a><span data-ttu-id="c6c4f-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="c6c4f-120">See Also</span></span>
+[<span data-ttu-id="c6c4f-121">例外</span><span class="sxs-lookup"><span data-stu-id="c6c4f-121">Exceptions</span></span>](index.md)

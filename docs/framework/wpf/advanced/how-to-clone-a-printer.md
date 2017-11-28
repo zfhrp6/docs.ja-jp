@@ -1,69 +1,75 @@
 ---
-title: "方法 : プリンターを複製する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "複製 (印刷キューを)"
-  - "複製 (プリンターを)"
-  - "印刷キュー"
-  - "印刷キュー, クローンの作成"
-  - "プリンター, クローンの作成"
+title: "方法 : プリンターを複製する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- print queues [WPF]
+- cloning printers [WPF]
+- printers [WPF], cloning
+- print queues [WPF], cloning
+- cloning print queues [WPF]
 ms.assetid: dd6997c9-fe04-40f8-88a6-92e3ac0889eb
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 303cb9c1c5b6521839987a56cdc008eac0559cf1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : プリンターを複製する
-ほとんどの企業は、ある時点で、同じモデルのプリンターを複数購入します。  通常、これらのプリンターはすべて、ほぼ同一の構成設定でインストールされます。  プリンターを個別にインストールすると、時間がかかったりエラーが発生したりすることがあります。  [!INCLUDE[TLA#tla_avalonwinfx](../../../../includes/tlasharptla-avalonwinfx-md.md)] で公開されている <xref:System.Printing.IndexedProperties?displayProperty=fullName> 名前空間と <xref:System.Printing.PrintServer.InstallPrintQueue%2A> クラスを使用すると、既存の印刷キューから複製した任意の数の追加印刷キューを直ちにインストールすることができます。  
+# <a name="how-to-clone-a-printer"></a><span data-ttu-id="2ed95-102">方法 : プリンターを複製する</span><span class="sxs-lookup"><span data-stu-id="2ed95-102">How to: Clone a Printer</span></span>
+<span data-ttu-id="2ed95-103">ほとんどの企業が、ある時点で、購入、同じモデルの複数のプリンターです。</span><span class="sxs-lookup"><span data-stu-id="2ed95-103">Most businesses will, at some point, buy multiple printers of the same model.</span></span> <span data-ttu-id="2ed95-104">通常、これらはすべてほぼ同一の構成の設定でインストールします。</span><span class="sxs-lookup"><span data-stu-id="2ed95-104">Typically, these are all installed with virtually identical configuration settings.</span></span> <span data-ttu-id="2ed95-105">各プリンターのインストールとできる時間がかかる場合、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="2ed95-105">Installing each printer can be time-consuming and error prone.</span></span> <span data-ttu-id="2ed95-106"><xref:System.Printing.IndexedProperties?displayProperty=nameWithType>名前空間および<xref:System.Printing.PrintServer.InstallPrintQueue%2A>で公開されているクラス[!INCLUDE[TLA#tla_avalonwinfx](../../../../includes/tlasharptla-avalonwinfx-md.md)]を即座に既存の印刷キューから任意の数の複製されたその他の印刷キューをインストールできるようになります。</span><span class="sxs-lookup"><span data-stu-id="2ed95-106">The <xref:System.Printing.IndexedProperties?displayProperty=nameWithType> namespace and the <xref:System.Printing.PrintServer.InstallPrintQueue%2A> class that are exposed with [!INCLUDE[TLA#tla_avalonwinfx](../../../../includes/tlasharptla-avalonwinfx-md.md)] makes it possible to instantly install any number of additional print queues that are cloned from an existing print queue.</span></span>  
   
-## 使用例  
- 次の例の 2 番目の印刷キューは、既存の印刷キューから複製したものです。  2 番目の印刷キューと最初の印刷キューの違いは、名前、場所、ポート、および共有状態だけです。  主な実行手順は次のとおりです。  
+## <a name="example"></a><span data-ttu-id="2ed95-107">例</span><span class="sxs-lookup"><span data-stu-id="2ed95-107">Example</span></span>  
+ <span data-ttu-id="2ed95-108">次の例では、2 番目の印刷キューは既存の印刷キューから複製されました。</span><span class="sxs-lookup"><span data-stu-id="2ed95-108">In the example below, a second print queue is cloned from an existing print queue.</span></span> <span data-ttu-id="2ed95-109">最初の異なる 2 つ目の名前、場所、ポート、および共有状態でのみです。</span><span class="sxs-lookup"><span data-stu-id="2ed95-109">The second differs from the first only in its name, location, port, and shared status.</span></span> <span data-ttu-id="2ed95-110">これを行うための主な手順は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="2ed95-110">The major steps for doing this are as follows.</span></span>  
   
-1.  複製する既存のプリンターの <xref:System.Printing.PrintQueue> オブジェクトを作成します。  
+1.  <span data-ttu-id="2ed95-111">作成、<xref:System.Printing.PrintQueue>を複製する予定の既存のプリンターのオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="2ed95-111">Create a <xref:System.Printing.PrintQueue> object for the existing printer that is going to be cloned.</span></span>  
   
-2.  <xref:System.Printing.PrintQueue> の <xref:System.Printing.PrintSystemObject.PropertiesCollection%2A> から <xref:System.Printing.IndexedProperties.PrintPropertyDictionary> を作成します。  このディクショナリの各エントリの <xref:System.Collections.DictionaryEntry.Value%2A> プロパティは、<xref:System.Printing.IndexedProperties.PrintProperty> から派生した型の 1 つのオブジェクトです。  このディクショナリのエントリの値を設定するには、2 つの方法があります。  
+2.  <span data-ttu-id="2ed95-112">作成、<xref:System.Printing.IndexedProperties.PrintPropertyDictionary>から、<xref:System.Printing.PrintSystemObject.PropertiesCollection%2A>の<xref:System.Printing.PrintQueue>です。</span><span class="sxs-lookup"><span data-stu-id="2ed95-112">Create a <xref:System.Printing.IndexedProperties.PrintPropertyDictionary> from the <xref:System.Printing.PrintSystemObject.PropertiesCollection%2A> of the <xref:System.Printing.PrintQueue>.</span></span> <span data-ttu-id="2ed95-113"><xref:System.Collections.DictionaryEntry.Value%2A>このディクショナリ内の各エントリのプロパティから派生した型の 1 つのオブジェクトである<xref:System.Printing.IndexedProperties.PrintProperty>です。</span><span class="sxs-lookup"><span data-stu-id="2ed95-113">The <xref:System.Collections.DictionaryEntry.Value%2A> property of each entry in this dictionary is an object of one of the types derived from <xref:System.Printing.IndexedProperties.PrintProperty>.</span></span> <span data-ttu-id="2ed95-114">これにはこのディクショナリ内のエントリの値を設定する 2 つの方法があります。</span><span class="sxs-lookup"><span data-stu-id="2ed95-114">There are two ways to set the value of an entry in this dictionary.</span></span>  
   
-    -   ディクショナリの **Remove** メソッドと <xref:System.Printing.IndexedProperties.PrintPropertyDictionary.Add%2A> メソッドを使用してエントリを削除し、目的の値を追加し直します。  
+    -   <span data-ttu-id="2ed95-115">ディクショナリの使用**削除**と<xref:System.Printing.IndexedProperties.PrintPropertyDictionary.Add%2A>エントリを削除してから再び、目的の値に追加する方法です。</span><span class="sxs-lookup"><span data-stu-id="2ed95-115">Use the dictionary's **Remove** and <xref:System.Printing.IndexedProperties.PrintPropertyDictionary.Add%2A> methods to remove the entry and then re-add it with the desired value.</span></span>  
   
-    -   ディクショナリの <xref:System.Printing.IndexedProperties.PrintPropertyDictionary.SetProperty%2A> メソッドを使用します。  
+    -   <span data-ttu-id="2ed95-116">ディクショナリの使用<xref:System.Printing.IndexedProperties.PrintPropertyDictionary.SetProperty%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="2ed95-116">Use the dictionary's <xref:System.Printing.IndexedProperties.PrintPropertyDictionary.SetProperty%2A> method.</span></span>  
   
-     両方の方法を次の例に示します。  
+     <span data-ttu-id="2ed95-117">次の例では、両方の方法を示します。</span><span class="sxs-lookup"><span data-stu-id="2ed95-117">The example below illustrates both ways.</span></span>  
   
-3.  <xref:System.Printing.IndexedProperties.PrintBooleanProperty> オブジェクトを作成し、その <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> を "IsShared" に、<xref:System.Printing.IndexedProperties.PrintBooleanProperty.Value%2A> を `true` にそれぞれ設定します。  
+3.  <span data-ttu-id="2ed95-118">作成、<xref:System.Printing.IndexedProperties.PrintBooleanProperty>オブジェクトし、設定、 <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> 「とき」に、その<xref:System.Printing.IndexedProperties.PrintBooleanProperty.Value%2A>に`true`。</span><span class="sxs-lookup"><span data-stu-id="2ed95-118">Create a <xref:System.Printing.IndexedProperties.PrintBooleanProperty> object and set its <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> to "IsShared" and its <xref:System.Printing.IndexedProperties.PrintBooleanProperty.Value%2A> to `true`.</span></span>  
   
-4.  <xref:System.Printing.IndexedProperties.PrintBooleanProperty> オブジェクトを <xref:System.Printing.IndexedProperties.PrintPropertyDictionary> の "IsShared" エントリの値として使用します。  
+4.  <span data-ttu-id="2ed95-119">使用して、<xref:System.Printing.IndexedProperties.PrintBooleanProperty>オブジェクトの値を<xref:System.Printing.IndexedProperties.PrintPropertyDictionary>の「とき」エントリです。</span><span class="sxs-lookup"><span data-stu-id="2ed95-119">Use the <xref:System.Printing.IndexedProperties.PrintBooleanProperty> object to be the value of the <xref:System.Printing.IndexedProperties.PrintPropertyDictionary>'s "IsShared" entry.</span></span>  
   
-5.  <xref:System.Printing.IndexedProperties.PrintStringProperty> オブジェクトを作成し、その <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> を "ShareName" に、<xref:System.Printing.IndexedProperties.PrintStringProperty.Value%2A> を適切な <xref:System.String> にそれぞれ設定します。  
+5.  <span data-ttu-id="2ed95-120">作成、<xref:System.Printing.IndexedProperties.PrintStringProperty>オブジェクトし、設定、 <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> "ShareName"に、その<xref:System.Printing.IndexedProperties.PrintStringProperty.Value%2A>に適切な<xref:System.String>。</span><span class="sxs-lookup"><span data-stu-id="2ed95-120">Create a <xref:System.Printing.IndexedProperties.PrintStringProperty> object and set its <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> to "ShareName" and its <xref:System.Printing.IndexedProperties.PrintStringProperty.Value%2A> to an appropriate <xref:System.String>.</span></span>  
   
-6.  <xref:System.Printing.IndexedProperties.PrintStringProperty> オブジェクトを <xref:System.Printing.IndexedProperties.PrintPropertyDictionary> の "ShareName" エントリの値として使用します。  
+6.  <span data-ttu-id="2ed95-121">使用して、<xref:System.Printing.IndexedProperties.PrintStringProperty>オブジェクトの値を<xref:System.Printing.IndexedProperties.PrintPropertyDictionary>の"ShareName"エントリです。</span><span class="sxs-lookup"><span data-stu-id="2ed95-121">Use the <xref:System.Printing.IndexedProperties.PrintStringProperty> object to be the value of the <xref:System.Printing.IndexedProperties.PrintPropertyDictionary>'s "ShareName" entry.</span></span>  
   
-7.  <xref:System.Printing.IndexedProperties.PrintStringProperty> オブジェクトをもう 1 つ作成し、その <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> を "Location" に、<xref:System.Printing.IndexedProperties.PrintStringProperty.Value%2A> を適切な <xref:System.String> にそれぞれ設定します。  
+7.  <span data-ttu-id="2ed95-122">新しいインスタンスを作成<xref:System.Printing.IndexedProperties.PrintStringProperty>オブジェクトし、設定、 <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> "Location"とその<xref:System.Printing.IndexedProperties.PrintStringProperty.Value%2A>に適切な<xref:System.String>します。</span><span class="sxs-lookup"><span data-stu-id="2ed95-122">Create another <xref:System.Printing.IndexedProperties.PrintStringProperty> object and set its <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> to "Location" and its <xref:System.Printing.IndexedProperties.PrintStringProperty.Value%2A> to an appropriate <xref:System.String>.</span></span>  
   
-8.  2 番目の <xref:System.Printing.IndexedProperties.PrintStringProperty> オブジェクトを <xref:System.Printing.IndexedProperties.PrintPropertyDictionary> の "Location" エントリの値として使用します。  
+8.  <span data-ttu-id="2ed95-123">もう 1 つを使用して<xref:System.Printing.IndexedProperties.PrintStringProperty>オブジェクトの値を<xref:System.Printing.IndexedProperties.PrintPropertyDictionary>の「場所」のエントリ。</span><span class="sxs-lookup"><span data-stu-id="2ed95-123">Use the second <xref:System.Printing.IndexedProperties.PrintStringProperty> object to be the value of the <xref:System.Printing.IndexedProperties.PrintPropertyDictionary>'s "Location" entry.</span></span>  
   
-9. <xref:System.String> の配列を作成します。  各項目は、サーバー上のポートの名前です。  
+9. <span data-ttu-id="2ed95-124">配列を作成する<xref:System.String>s。</span><span class="sxs-lookup"><span data-stu-id="2ed95-124">Create an array of <xref:System.String>s.</span></span> <span data-ttu-id="2ed95-125">各項目は、サーバー上のポートの名前です。</span><span class="sxs-lookup"><span data-stu-id="2ed95-125">Each item is the name of a port on the server.</span></span>  
   
-10. <xref:System.Printing.PrintServer.InstallPrintQueue%2A> を使用して、新しいプリンターを新しい値でインストールします。  
+10. <span data-ttu-id="2ed95-126">使用して<xref:System.Printing.PrintServer.InstallPrintQueue%2A>を新しい値で、新しいプリンターをインストールします。</span><span class="sxs-lookup"><span data-stu-id="2ed95-126">Use <xref:System.Printing.PrintServer.InstallPrintQueue%2A> to install the new printer with the new values.</span></span>  
   
- 次に例を示します。  
+ <span data-ttu-id="2ed95-127">例を下回っています。</span><span class="sxs-lookup"><span data-stu-id="2ed95-127">An example is below.</span></span>  
   
  [!code-csharp[ClonePrinter#ClonePrinter](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ClonePrinter/CSharp/Program.cs#cloneprinter)]
  [!code-vb[ClonePrinter#ClonePrinter](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ClonePrinter/visualbasic/program.vb#cloneprinter)]  
   
-## 参照  
- <xref:System.Printing.IndexedProperties>   
- <xref:System.Printing.IndexedProperties.PrintPropertyDictionary>   
- <xref:System.Printing.LocalPrintServer>   
- <xref:System.Printing.PrintQueue>   
- <xref:System.Collections.DictionaryEntry>   
- [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)   
- [印刷の概要](../../../../docs/framework/wpf/advanced/printing-overview.md)
+## <a name="see-also"></a><span data-ttu-id="2ed95-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="2ed95-128">See Also</span></span>  
+ <xref:System.Printing.IndexedProperties>  
+ <xref:System.Printing.IndexedProperties.PrintPropertyDictionary>  
+ <xref:System.Printing.LocalPrintServer>  
+ <xref:System.Printing.PrintQueue>  
+ <xref:System.Collections.DictionaryEntry>  
+ [<span data-ttu-id="2ed95-129">WPF のドキュメント</span><span class="sxs-lookup"><span data-stu-id="2ed95-129">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [<span data-ttu-id="2ed95-130">印刷の概要</span><span class="sxs-lookup"><span data-stu-id="2ed95-130">Printing Overview</span></span>](../../../../docs/framework/wpf/advanced/printing-overview.md)

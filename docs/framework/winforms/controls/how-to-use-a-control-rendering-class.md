@@ -1,43 +1,48 @@
 ---
-title: "方法 : コントロールの描画クラスを使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "プロフェッショナルな外観, 描画 (Windows フォーム コントロールの)"
-  - "視覚スタイル, 描画 (Windows フォーム コントロールの)"
-  - "ビジュアル テーマ, 適用 (Windows フォーム コントロールに)"
+title: "方法 : コントロールの描画クラスを使用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- professional appearance [Windows Forms], rendering Windows Forms controls
+- visual themes [Windows Forms], applying to Windows Forms controls
+- visual styles [Windows Forms], rendering Windows Forms controls
 ms.assetid: c0125e34-cd74-4c35-818c-3e40f462b0a3
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9ff10cd12889750e3d32fcfce080d472f40bb9c2
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : コントロールの描画クラスを使用する
-<xref:System.Windows.Forms.ComboBoxRenderer> クラスを使用してコンボ ボックス コントロールのドロップダウン矢印を表示する方法を次の例に示します。  この例は単純なカスタム コントロールの <xref:System.Windows.Forms.Control.OnPaint%2A> メソッドで構成されています。  <xref:System.Windows.Forms.ComboBoxRenderer.IsSupported%2A?displayProperty=fullName> プロパティを使用して、アプリケーション ウィンドウのクライアント領域で visual スタイルを有効にするかどうかを指定します。  visual スタイルをアクティブにすると、<xref:System.Windows.Forms.ComboBoxRenderer.DrawDropDownButton%2A?displayProperty=fullName> メソッドは、visual スタイルを使用してドロップダウン矢印を表示します。アクティブでない場合、<xref:System.Windows.Forms.ControlPaint.DrawComboButton%2A?displayProperty=fullName> メソッドは従来の Windows スタイルでドロップダウン矢印を表示します。  
+# <a name="how-to-use-a-control-rendering-class"></a><span data-ttu-id="b8496-102">方法 : コントロールの描画クラスを使用する</span><span class="sxs-lookup"><span data-stu-id="b8496-102">How to: Use a Control Rendering Class</span></span>
+<span data-ttu-id="b8496-103">この例で使用する方法、<xref:System.Windows.Forms.ComboBoxRenderer>をコンボ ボックスの矢印ボックス コントロールをレンダリングします。</span><span class="sxs-lookup"><span data-stu-id="b8496-103">This example demonstrates how to use the <xref:System.Windows.Forms.ComboBoxRenderer> class to render the drop-down arrow of a combo box control.</span></span> <span data-ttu-id="b8496-104">例から成る、<xref:System.Windows.Forms.Control.OnPaint%2A>単純なカスタム コントロールのメソッドです。</span><span class="sxs-lookup"><span data-stu-id="b8496-104">The example consists of the <xref:System.Windows.Forms.Control.OnPaint%2A> method of a simple custom control.</span></span> <span data-ttu-id="b8496-105"><xref:System.Windows.Forms.ComboBoxRenderer.IsSupported%2A?displayProperty=nameWithType>プロパティを使用して、アプリケーション ウィンドウのクライアント領域で visual スタイルが有効かどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="b8496-105">The <xref:System.Windows.Forms.ComboBoxRenderer.IsSupported%2A?displayProperty=nameWithType> property is used to determine whether visual styles are enabled in the client area of application windows.</span></span> <span data-ttu-id="b8496-106">Visual スタイルが、アクティブな場合、<xref:System.Windows.Forms.ComboBoxRenderer.DrawDropDownButton%2A?displayProperty=nameWithType>メソッドは、visual スタイル; で、ドロップダウン矢印をレンダリングするそれ以外の場合、<xref:System.Windows.Forms.ControlPaint.DrawComboButton%2A?displayProperty=nameWithType>メソッドは従来の Windows スタイルでのドロップダウン矢印を表示します。</span><span class="sxs-lookup"><span data-stu-id="b8496-106">If visual styles are active, then the <xref:System.Windows.Forms.ComboBoxRenderer.DrawDropDownButton%2A?displayProperty=nameWithType> method will render the drop-down arrow with visual styles; otherwise, the <xref:System.Windows.Forms.ControlPaint.DrawComboButton%2A?displayProperty=nameWithType> method will render the drop-down arrow in the classic Windows style.</span></span>  
   
-## 使用例  
+## <a name="example"></a><span data-ttu-id="b8496-107">例</span><span class="sxs-lookup"><span data-stu-id="b8496-107">Example</span></span>  
  [!code-cpp[System.Windows.Forms_ControlRenderer#10](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms_ControlRenderer/cpp/form1.cpp#10)]
  [!code-csharp[System.Windows.Forms_ControlRenderer#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms_ControlRenderer/CS/form1.cs#10)]
  [!code-vb[System.Windows.Forms_ControlRenderer#10](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms_ControlRenderer/VB/form1.vb#10)]  
   
-## コードのコンパイル  
- この例には、次の項目が必要です。  
+## <a name="compiling-the-code"></a><span data-ttu-id="b8496-108">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="b8496-108">Compiling the Code</span></span>  
+ <span data-ttu-id="b8496-109">この例で必要な要素は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="b8496-109">This example requires:</span></span>  
   
--   <xref:System.Windows.Forms.Control> クラスから派生したカスタム コントロール。  
+-   <span data-ttu-id="b8496-110">派生したカスタム コントロール、<xref:System.Windows.Forms.Control>クラスです。</span><span class="sxs-lookup"><span data-stu-id="b8496-110">A custom control derived from the <xref:System.Windows.Forms.Control> class.</span></span>  
   
--   カスタム コントロールをホストする <xref:System.Windows.Forms.Form>。  
+-   <span data-ttu-id="b8496-111">A<xref:System.Windows.Forms.Form>カスタム コントロールをホストします。</span><span class="sxs-lookup"><span data-stu-id="b8496-111">A <xref:System.Windows.Forms.Form> that hosts the custom control.</span></span>  
   
--   <xref:System?displayProperty=fullName>、<xref:System.Drawing?displayProperty=fullName>、<xref:System.Windows.Forms?displayProperty=fullName>、および <xref:System.Windows.Forms.VisualStyles?displayProperty=fullName> の各名前空間への参照。  
+-   <span data-ttu-id="b8496-112">参照、 <xref:System?displayProperty=nameWithType>、 <xref:System.Drawing?displayProperty=nameWithType>、 <xref:System.Windows.Forms?displayProperty=nameWithType>、および<xref:System.Windows.Forms.VisualStyles?displayProperty=nameWithType>名前空間。</span><span class="sxs-lookup"><span data-stu-id="b8496-112">References to the <xref:System?displayProperty=nameWithType>, <xref:System.Drawing?displayProperty=nameWithType>, <xref:System.Windows.Forms?displayProperty=nameWithType>, and <xref:System.Windows.Forms.VisualStyles?displayProperty=nameWithType> namespaces.</span></span>  
   
-## 参照  
- [visual スタイルが使用されているコントロールのレンダリング](../../../../docs/framework/winforms/controls/rendering-controls-with-visual-styles.md)
+## <a name="see-also"></a><span data-ttu-id="b8496-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="b8496-113">See Also</span></span>  
+ [<span data-ttu-id="b8496-114">visual スタイルが使用されているコントロールのレンダリング</span><span class="sxs-lookup"><span data-stu-id="b8496-114">Rendering Controls with Visual Styles</span></span>](../../../../docs/framework/winforms/controls/rendering-controls-with-visual-styles.md)

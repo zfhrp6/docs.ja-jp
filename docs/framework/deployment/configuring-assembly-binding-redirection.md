@@ -5,39 +5,32 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: d266cbd8-bf91-41d1-baf0-afbc481a741f
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: ff3f56b08aa3d6c7cb05bafd98d26f4700fa4e5a
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6cd1e2d621d133f80a2f6e650ae6aed94e6bbe33
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="configuring-assembly-binding-redirection"></a>アセンブリ バインディングのリダイレクトの構成
-既定では、アプリケーションは、アプリケーションのコンパイルに使用したランタイム バージョンと共に出荷された .NET Framework アセンブリのセットを使用します。 アプリケーション構成ファイルで .NET Framework アセンブリの特定のバージョンのアセンブリ バインディング参照をリダイレクトするには [\<assemblyBinding>](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) 要素の **appliesTo** 属性を使用できます。 このオプションの属性は、.NET Framework のバージョン番号を使用して、どのバージョンに適用するのかを示します。 **appliesTo** 属性が指定されていない場合、**\<assemblyBinding>** 要素は、.NET Framework のすべてのバージョンに適用されます。  
+# <a name="configuring-assembly-binding-redirection"></a><span data-ttu-id="3dbc6-102">アセンブリ バインディングのリダイレクトの構成</span><span class="sxs-lookup"><span data-stu-id="3dbc6-102">Configuring Assembly Binding Redirection</span></span>
+<span data-ttu-id="3dbc6-103">既定では、アプリケーションは、アプリケーションのコンパイルに使用したランタイム バージョンと共に出荷された .NET Framework アセンブリのセットを使用します。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-103">By default, applications use the set of .NET Framework assemblies that shipped with the runtime version used to compile the application.</span></span> <span data-ttu-id="3dbc6-104">アプリケーション構成ファイルで .NET Framework アセンブリの特定のバージョンのアセンブリ バインディング参照をリダイレクトするには [\<assemblyBinding>](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) 要素の **appliesTo** 属性を使用できます。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-104">You can use the **appliesTo** attribute on the [\<assemblyBinding>](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) element in an application configuration file to redirect assembly binding references to a specific version of the .NET Framework assemblies.</span></span> <span data-ttu-id="3dbc6-105">このオプションの属性は、.NET Framework のバージョン番号を使用して、どのバージョンに適用するのかを示します。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-105">This optional attribute uses a .NET Framework version number to indicate which version it applies to.</span></span> <span data-ttu-id="3dbc6-106">**appliesTo** 属性が指定されていない場合、**\<assemblyBinding>** 要素は、.NET Framework のすべてのバージョンに適用されます。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-106">If no **appliesTo** attribute is specified, the **\<assemblyBinding>** element applies to all versions of the .NET Framework.</span></span>  
   
- **appliesTo** 属性は .NET Framework Version 1.1 で導入されたものであり、.NET Framework Version 1.0 では無視されます。 これは **appliesTo** 属性が指定されている場合でも、.NET Framework version 1.0 を使用している場合 **\<assemblyBinding>** のすべての要素が適用されることを意味します。  
+ <span data-ttu-id="3dbc6-107">**appliesTo** 属性は .NET Framework Version 1.1 で導入されたものであり、.NET Framework Version 1.0 では無視されます。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-107">The **appliesTo** attribute was introduced in the .NET Framework version 1.1; it is ignored by the .NET Framework version 1.0.</span></span> <span data-ttu-id="3dbc6-108">これは **appliesTo** 属性が指定されている場合でも、.NET Framework version 1.0 を使用している場合 **\<assemblyBinding>** のすべての要素が適用されることを意味します。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-108">This means that all **\<assemblyBinding>** elements are applied when using the .NET Framework version 1.0, even if an **appliesTo** attribute is specified.</span></span>  
   
 > [!NOTE]
->  **appliesTo** 属性は、アセンブリ バインディングのリダイレクトをランタイムの特定のバージョンに制限するために使用します。  
+>  <span data-ttu-id="3dbc6-109">**appliesTo** 属性は、アセンブリ バインディングのリダイレクトをランタイムの特定のバージョンに制限するために使用します。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-109">Use the **appliesTo** attribute to limit assembly binding redirection to a specific version of the runtime.</span></span>  
   
- たとえば、.NET Framework Version 1.0 アセンブリのアセンブリ バインディングをリダイレクトするには、アプリケーション構成ファイルに次の XML コードを追加します。  
+ <span data-ttu-id="3dbc6-110">たとえば、.NET Framework Version 1.0 アセンブリのアセンブリ バインディングをリダイレクトするには、アプリケーション構成ファイルに次の XML コードを追加します。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-110">For example, to redirect assembly binding for a .NET Framework version 1.0 assembly, you would include the following XML code in your application configuration file.</span></span>  
   
 ```xml  
 <runtime>  
@@ -49,9 +42,9 @@ ms.lasthandoff: 07/28/2017
 </runtime>  
 ```  
   
- **\<assemblyBinding>** 要素は、順番が区別されます。 最初に .NET Framework Version 1.0 のアセンブリのアセンブリ バインディング リダイレクト情報を入力し、その次に .NET Framework Version 1.1 のアセンブリのアセンブリ バインディング リダイレクト情報を入力します。 最後に、 **appliesTo** 属性を使用せず、すべてのバージョンの .NET Framework に適用される .NET Framework アセンブリ リダイレクトのアセンブリ バインディング リダイレクト情報を入力します。 リダイレクトで矛盾が発生した場合は、構成ファイル内で最初に一致したリダイレクト ステートメントが使用されます。  
+ <span data-ttu-id="3dbc6-111">**\<assemblyBinding>** 要素は、順番が区別されます。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-111">The **\<assemblyBinding>** elements are order-sensitive.</span></span> <span data-ttu-id="3dbc6-112">最初に .NET Framework Version 1.0 のアセンブリのアセンブリ バインディング リダイレクト情報を入力し、その次に .NET Framework Version 1.1 のアセンブリのアセンブリ バインディング リダイレクト情報を入力します。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-112">You should enter assembly binding redirection information for any .NET Framework version 1.0 assemblies first, followed by assembly binding redirection information for any .NET Framework version 1.1 assemblies.</span></span> <span data-ttu-id="3dbc6-113">最後に、 **appliesTo** 属性を使用せず、すべてのバージョンの .NET Framework に適用される .NET Framework アセンブリ リダイレクトのアセンブリ バインディング リダイレクト情報を入力します。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-113">Finally, enter assembly binding redirection information for any .NET Framework assembly redirection that does not use the **appliesTo** attribute and therefore applies to all versions of the .NET Framework.</span></span> <span data-ttu-id="3dbc6-114">リダイレクトで矛盾が発生した場合は、構成ファイル内で最初に一致したリダイレクト ステートメントが使用されます。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-114">In case of a conflict in redirection, the first matching redirection statement in the configuration file is used.</span></span>  
   
- たとえば、ある参照を .NET Framework Version 1.0 のアセンブリにリダイレクトし、別の参照を .NET Framework Version 1.1 のアセンブリにリダイレクトするには、次の擬似コードに示すパターンを使用します。  
+ <span data-ttu-id="3dbc6-115">たとえば、ある参照を .NET Framework Version 1.0 のアセンブリにリダイレクトし、別の参照を .NET Framework Version 1.1 のアセンブリにリダイレクトするには、次の擬似コードに示すパターンを使用します。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-115">For example, to redirect one reference to a .NET Framework version 1.0 assembly and another reference to a .NET Framework version 1.1 assembly, you would use the pattern shown in the following pseudocode.</span></span>  
   
 ```xml  
 <assemblyBinding xmlns="..." appliesTo="v1.0.3705">   
@@ -67,11 +60,10 @@ ms.lasthandoff: 07/28/2017
 </assemblyBinding>  
 ```  
   
-## <a name="debugging-configuration-file-errors"></a>構成ファイル エラーのデバッグ  
- ランタイムは、アプリケーション ドメインが作成されるときに構成ファイルを一度解析し、コードをアプリケーション ドメインに読み込みます。 共通言語ランタイムは、エントリを無視することによって構成ファイルに含まれるエラーを処理します。 構成ファイルに不正な XML が含まれる場合、ランタイムは構成ファイル全体を無視します。 無効な XML に対しては、無効なセクションだけを無視します。  
+## <a name="debugging-configuration-file-errors"></a><span data-ttu-id="3dbc6-116">構成ファイル エラーのデバッグ</span><span class="sxs-lookup"><span data-stu-id="3dbc6-116">Debugging Configuration File Errors</span></span>  
+ <span data-ttu-id="3dbc6-117">ランタイムは、アプリケーション ドメインが作成されるときに構成ファイルを一度解析し、コードをアプリケーション ドメインに読み込みます。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-117">The runtime parses configuration files once when an application domain is created, and loads code into that application domain.</span></span> <span data-ttu-id="3dbc6-118">共通言語ランタイムは、エントリを無視することによって構成ファイルに含まれるエラーを処理します。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-118">The common language runtime handles errors in a configuration file by ignoring the entry.</span></span> <span data-ttu-id="3dbc6-119">構成ファイルに不正な XML が含まれる場合、ランタイムは構成ファイル全体を無視します。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-119">The runtime ignores the entire configuration file if it contains malformed XML.</span></span> <span data-ttu-id="3dbc6-120">無効な XML に対しては、無効なセクションだけを無視します。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-120">For invalid XML, only the invalid sections are ignored.</span></span>  
   
- アセンブリ バインディングのリダイレクトが発生しているかどうかを調べることによって、構成ファイルが使用されているかどうかを判断できます。 [アセンブリ バインディング ログ ビューアー (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) を使用して、読み込まれたアセンブリを調べます。 すべてのアセンブリ バインドを見るには、レジストリで **ForceLog** のエントリを設定する必要があります。  
+ <span data-ttu-id="3dbc6-121">アセンブリ バインディングのリダイレクトが発生しているかどうかを調べることによって、構成ファイルが使用されているかどうかを判断できます。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-121">You can determine whether a configuration file is being used by determining whether assembly binding redirects are occurring.</span></span> <span data-ttu-id="3dbc6-122">[アセンブリ バインディング ログ ビューアー (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) を使用して、読み込まれたアセンブリを調べます。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-122">Use the [Assembly Binding Log Viewer (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) to see which assemblies are being loaded.</span></span> <span data-ttu-id="3dbc6-123">すべてのアセンブリ バインドを見るには、レジストリで **ForceLog** のエントリを設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3dbc6-123">To see all assembly binds, you must set an entry for **ForceLog** in the registry.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [方法: 自動バインディング リダイレクトを有効/無効にする](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)
-
+## <a name="see-also"></a><span data-ttu-id="3dbc6-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="3dbc6-124">See Also</span></span>  
+ [<span data-ttu-id="3dbc6-125">方法: 自動バインディング リダイレクトを有効/無効にする</span><span class="sxs-lookup"><span data-stu-id="3dbc6-125">How to: Enable and Disable Automatic Binding Redirection</span></span>](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)

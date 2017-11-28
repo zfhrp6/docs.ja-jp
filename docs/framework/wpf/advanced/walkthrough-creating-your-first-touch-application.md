@@ -1,93 +1,99 @@
 ---
-title: "チュートリアル: 初めてのタッチ アプリケーションの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "作成 (タッチスクリーン アプリケーションを) [WPF]"
-  - "作成 (タッチを検知するアプリケーションを) [WPF]"
-  - "タッチスクリーン アプリケーション [WPF], 作成"
-  - "タッチを検知するアプリケーション [WPF], 作成"
+title: "チュートリアル: 初めてのタッチ アプリケーションの作成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- creating a touch-sensitive application [WPF]
+- touchscreen applications [WPF], creating
+- touch-sensitive applications [WPF], creating
+- creating a touchscreen application [WPF]
 ms.assetid: d69e602e-9a25-4e24-950b-e89eaa2a906b
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ee85a5d8764fc27205cf09e1af43069b25096ef1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル: 初めてのタッチ アプリケーションの作成
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、タッチに応答するアプリケーションを作成できます。  たとえば、タッチスクリーンなどのタッチを検知するデバイスで 1 本または複数本の指を使用してアプリケーションを操作できます。このチュートリアルでは、タッチすることで単一のオブジェクトを移動、サイズ変更または回転させることのできるアプリケーションを作成します。  
+# <a name="walkthrough-creating-your-first-touch-application"></a><span data-ttu-id="3552c-102">チュートリアル: 初めてのタッチ アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="3552c-102">Walkthrough: Creating Your First Touch Application</span></span>
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="3552c-103">タッチに応答するアプリケーションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="3552c-103"> enables applications to respond to touch.</span></span> <span data-ttu-id="3552c-104">たとえば、1 つを使用して、アプリケーションと対話できます。 または多くを指でタッチ スクリーンがこのチュートリアルにより、ユーザーに移動するアプリケーションを作成するなどのタッチ依存型デバイスのサイズ変更、またはタッチを使用して、1 つのオブジェクトを回転します。</span><span class="sxs-lookup"><span data-stu-id="3552c-104">For example, you can interact with an application by using one or more fingers on a touch-sensitive device, such as a touchscreen This walkthrough creates an application that enables the user to move, resize, or rotate a single object by using touch.</span></span>  
   
-## 必要条件  
- このチュートリアルを実行するには、次のコンポーネントが必要です。  
+## <a name="prerequisites"></a><span data-ttu-id="3552c-105">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="3552c-105">Prerequisites</span></span>  
+ <span data-ttu-id="3552c-106">このチュートリアルを実行するには、次のコンポーネントが必要です。</span><span class="sxs-lookup"><span data-stu-id="3552c-106">You need the following components to complete this walkthrough:</span></span>  
   
--   [!INCLUDE[vs_dev10_ext](../../../../includes/vs-dev10-ext-md.md)].  
+-   [!INCLUDE[vs_dev10_ext](../../../../includes/vs-dev10-ext-md.md)]<span data-ttu-id="3552c-107">。</span><span class="sxs-lookup"><span data-stu-id="3552c-107">.</span></span>  
   
--   Windows 7。  
+-   <span data-ttu-id="3552c-108">Windows 7。</span><span class="sxs-lookup"><span data-stu-id="3552c-108">Windows 7.</span></span>  
   
--   Windows タッチをサポートする、タッチスクリーンなどのタッチ入力ができるデバイス。  
+-   <span data-ttu-id="3552c-109">Windows タッチをサポートするタッチ スクリーンなど、タッチ入力を受け付けるデバイス。</span><span class="sxs-lookup"><span data-stu-id="3552c-109">A device that accepts touch input, such as a touchscreen, that supports Windows Touch.</span></span>  
   
- また、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でのアプリケーションの作成において、特にイベントのサブスクライブ方法と処理方法に関する基礎知識があることが必要です。  詳細については、「[チュートリアル: WPF の概要](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)」を参照してください。  
+ <span data-ttu-id="3552c-110">さらでアプリケーションを作成する方法の基本的な知識を持つ必要があります[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]にサブスクライブし、イベントを処理する方法に特にです。</span><span class="sxs-lookup"><span data-stu-id="3552c-110">Additionally, you should have a basic understanding of how to create an application in [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], especially how to subscribe to and handle an event.</span></span> <span data-ttu-id="3552c-111">詳細については、次を参照してください。[チュートリアル: 最初の WPF デスクトップ アプリケーション](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)です。</span><span class="sxs-lookup"><span data-stu-id="3552c-111">For more information, see [Walkthrough: My first WPF desktop application](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).</span></span>  
   
-## アプリケーションの作成  
+## <a name="creating-the-application"></a><span data-ttu-id="3552c-112">アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="3552c-112">Creating the Application</span></span>  
   
-#### アプリケーションを作成するには  
+#### <a name="to-create-the-application"></a><span data-ttu-id="3552c-113">アプリケーションを作成するには</span><span class="sxs-lookup"><span data-stu-id="3552c-113">To create the application</span></span>  
   
-1.  Visual Basic または Visual C\# で、「`BasicManipulation`」という名前の新しい WPF アプリケーション プロジェクトを作成します。  詳細については、「[方法 : 新しい WPF アプリケーション プロジェクトを作成する](http://msdn.microsoft.com/ja-jp/1f6aea7a-33e1-4d3f-8555-1daa42e95d82)」を参照してください。  
+1.  <span data-ttu-id="3552c-114">Visual Basic または Visual c# のという名前の新しい WPF アプリケーション プロジェクトを作成する`BasicManipulation`です。</span><span class="sxs-lookup"><span data-stu-id="3552c-114">Create a new WPF Application project in Visual Basic or Visual C# named `BasicManipulation`.</span></span> <span data-ttu-id="3552c-115">詳細については、次を参照してください。[する方法: 新しい WPF アプリケーション プロジェクトを作成する](http://msdn.microsoft.com/en-us/1f6aea7a-33e1-4d3f-8555-1daa42e95d82)です。</span><span class="sxs-lookup"><span data-stu-id="3552c-115">For more information, see [How to: Create a New WPF Application Project](http://msdn.microsoft.com/en-us/1f6aea7a-33e1-4d3f-8555-1daa42e95d82).</span></span>  
   
-2.  MainWindow.xaml の内容を次の XAML に置き換えます。  
+2.  <span data-ttu-id="3552c-116">MainWindow.xaml の内容を次の XAML に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="3552c-116">Replace the contents of MainWindow.xaml with the following XAML.</span></span>  
   
-     マークアップにより、<xref:System.Windows.Controls.Canvas> 上に赤い <xref:System.Windows.Shapes.Rectangle> を含む単純なアプリケーションが作成されます。  <xref:System.Windows.Shapes.Rectangle> の <xref:System.Windows.UIElement.IsManipulationEnabled%2A> プロパティは、操作イベントを受け取ることができるように true に設定されます。  アプリケーションは、<xref:System.Windows.UIElement.ManipulationStarting> イベント、<xref:System.Windows.UIElement.ManipulationDelta> イベントおよび <xref:System.Windows.UIElement.ManipulationInertiaStarting> イベントをサブスクライブします。  これらのイベントには、ユーザーが操作したときに <xref:System.Windows.Shapes.Rectangle> を移動するためのロジックが含まれています。  
+     <span data-ttu-id="3552c-117">このマークアップを含む赤い簡単なアプリケーションを作成する<xref:System.Windows.Shapes.Rectangle>上、<xref:System.Windows.Controls.Canvas>です。</span><span class="sxs-lookup"><span data-stu-id="3552c-117">This markup creates a simple application that contains a red <xref:System.Windows.Shapes.Rectangle> on a <xref:System.Windows.Controls.Canvas>.</span></span> <span data-ttu-id="3552c-118"><xref:System.Windows.UIElement.IsManipulationEnabled%2A>のプロパティ、<xref:System.Windows.Shapes.Rectangle>操作イベントを受信するために true に設定されています。</span><span class="sxs-lookup"><span data-stu-id="3552c-118">The <xref:System.Windows.UIElement.IsManipulationEnabled%2A> property of the <xref:System.Windows.Shapes.Rectangle> is set to true so that it will receive manipulation events.</span></span> <span data-ttu-id="3552c-119">サブスクライブするアプリケーション、 <xref:System.Windows.UIElement.ManipulationStarting>、 <xref:System.Windows.UIElement.ManipulationDelta>、および<xref:System.Windows.UIElement.ManipulationInertiaStarting>イベント。</span><span class="sxs-lookup"><span data-stu-id="3552c-119">The application subscribes to the <xref:System.Windows.UIElement.ManipulationStarting>, <xref:System.Windows.UIElement.ManipulationDelta>, and <xref:System.Windows.UIElement.ManipulationInertiaStarting> events.</span></span> <span data-ttu-id="3552c-120">これらのイベントに移動するためのロジックが含まれて、<xref:System.Windows.Shapes.Rectangle>ユーザーからの操作をすることです。</span><span class="sxs-lookup"><span data-stu-id="3552c-120">These events contain the logic to move the <xref:System.Windows.Shapes.Rectangle> when the user manipulates it.</span></span>  
   
-     [!code-xml[BasicManipulation#UI](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml#ui)]  
+     [!code-xaml[BasicManipulation#UI](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml#ui)]  
   
-3.  Visual Basic を使用している場合は、MainWindow.xaml の最初の行で、`x:Class="BasicManipulation.MainWindow"` を `x:Class="MainWindow"` で置換します。  
+3.  <span data-ttu-id="3552c-121">Visual Basic で MainWindow.xaml の最初の行を使用している場合は置き換えます`x:Class="BasicManipulation.MainWindow"`で`x:Class="MainWindow"`です。</span><span class="sxs-lookup"><span data-stu-id="3552c-121">If you are using Visual Basic, in the first line of MainWindow.xaml, replace `x:Class="BasicManipulation.MainWindow"` with `x:Class="MainWindow"`.</span></span>  
   
-4.  `MainWindow` クラスに、次の <xref:System.Windows.UIElement.ManipulationStarting> イベント ハンドラーを追加します。  
+4.  <span data-ttu-id="3552c-122">`MainWindow`クラス、次の追加<xref:System.Windows.UIElement.ManipulationStarting>イベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="3552c-122">In the `MainWindow` class, add the following <xref:System.Windows.UIElement.ManipulationStarting> event handler.</span></span>  
   
-     <xref:System.Windows.UIElement.ManipulationStarting> イベントは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] がタッチ入力によるオブジェクト操作の開始を検知すると発生します。  コードでは、<xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer%2A> プロパティを設定することで、操作の位置が <xref:System.Windows.Window> と相対するように指定します。  
+     <span data-ttu-id="3552c-123"><xref:System.Windows.UIElement.ManipulationStarting>イベントが発生したときに[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]そのタッチを検出したオブジェクトを操作する入力を開始します。</span><span class="sxs-lookup"><span data-stu-id="3552c-123">The <xref:System.Windows.UIElement.ManipulationStarting> event occurs when [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] detects that touch input begins to manipulate an object.</span></span> <span data-ttu-id="3552c-124">コードでは、操作の位置が基準にする必要がありますを指定します、<xref:System.Windows.Window>を設定して、<xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="3552c-124">The code specifies that the position of the manipulation should be relative to the <xref:System.Windows.Window> by setting the <xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer%2A> property.</span></span>  
   
      [!code-csharp[BasicManipulation#ManipulationStarting](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationstarting)]
      [!code-vb[BasicManipulation#ManipulationStarting](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationstarting)]  
   
-5.  `MainWindow` クラスに、次の <xref:System.Windows.Input.ManipulationDelta> イベント ハンドラーを追加します。  
+5.  <span data-ttu-id="3552c-125">`MainWindow`クラス、次の追加<xref:System.Windows.Input.ManipulationDelta>イベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="3552c-125">In the `MainWindow` class, add the following <xref:System.Windows.Input.ManipulationDelta> event handler.</span></span>  
   
-     <xref:System.Windows.Input.ManipulationDelta> イベントは、タッチ入力の位置が変更されると発生し、一度の操作中に複数回発生することがあります。  イベントは、指を離した後にも発生します。  たとえば、ユーザーが画面上で指をドラッグすると、<xref:System.Windows.Input.ManipulationDelta> イベントは指が移動するたびに複数回発生します。  ユーザーが指を画面から離すと、<xref:System.Windows.Input.ManipulationDelta> イベントは慣性をシミュレートするために発生し続けます。  
+     <span data-ttu-id="3552c-126"><xref:System.Windows.Input.ManipulationDelta>イベント、タッチ入力の位置を変更および操作中に複数回発生する可能性がときに発生します。</span><span class="sxs-lookup"><span data-stu-id="3552c-126">The <xref:System.Windows.Input.ManipulationDelta> event occurs when the touch input changes position and can occur multiple times during a manipulation.</span></span> <span data-ttu-id="3552c-127">イベントは、指が発生した後にも発生することができます。</span><span class="sxs-lookup"><span data-stu-id="3552c-127">The event can also occur after a finger is raised.</span></span> <span data-ttu-id="3552c-128">たとえば、ユーザーが、画面上で指をドラッグする場合、<xref:System.Windows.Input.ManipulationDelta>イベントは、複数回を指移動するときに発生します。</span><span class="sxs-lookup"><span data-stu-id="3552c-128">For example, if the user drags a finger across a screen, the <xref:System.Windows.Input.ManipulationDelta> event occurs multiple times as the finger moves.</span></span> <span data-ttu-id="3552c-129">ユーザーが画面で、指を発生させた、<xref:System.Windows.Input.ManipulationDelta>慣性をシミュレートするためにイベントが発生し続けます。</span><span class="sxs-lookup"><span data-stu-id="3552c-129">When the user raises a finger from the screen, the <xref:System.Windows.Input.ManipulationDelta> event keeps occurring to simulate inertia.</span></span>  
   
-     コードでは、ユーザーのタッチ入力に沿って移動するために、<xref:System.Windows.Shapes.Rectangle> の <xref:System.Windows.UIElement.RenderTransform%2A> に <xref:System.Windows.Input.ManipulationDeltaEventArgs.DeltaManipulation%2A> を適用します。  また、慣性処理中にイベントが発生したときに、<xref:System.Windows.Shapes.Rectangle> が <xref:System.Windows.Window> の境界の外側にあるかどうかもチェックします。  境界の外側にある場合、アプリケーションは <xref:System.Windows.Input.ManipulationDeltaEventArgs.Complete%2A?displayProperty=fullName> メソッドを呼び出して操作を終了します。  
+     <span data-ttu-id="3552c-130">コードが適用されます、<xref:System.Windows.Input.ManipulationDeltaEventArgs.DeltaManipulation%2A>を<xref:System.Windows.UIElement.RenderTransform%2A>の<xref:System.Windows.Shapes.Rectangle>ユーザーは、タッチを移動すると移動する入力します。</span><span class="sxs-lookup"><span data-stu-id="3552c-130">The code applies the <xref:System.Windows.Input.ManipulationDeltaEventArgs.DeltaManipulation%2A> to the <xref:System.Windows.UIElement.RenderTransform%2A> of the <xref:System.Windows.Shapes.Rectangle> to move it as the user moves the touch input.</span></span> <span data-ttu-id="3552c-131">またを確認するかどうか、<xref:System.Windows.Shapes.Rectangle>の境界外または、<xref:System.Windows.Window>慣性中に、イベントの発生します。</span><span class="sxs-lookup"><span data-stu-id="3552c-131">It also checks whether the <xref:System.Windows.Shapes.Rectangle> is outside the bounds of the <xref:System.Windows.Window> when the event occurs during inertia.</span></span> <span data-ttu-id="3552c-132">そのため、アプリケーションを呼び出す場合、<xref:System.Windows.Input.ManipulationDeltaEventArgs.Complete%2A?displayProperty=nameWithType>メソッドを操作を終了します。</span><span class="sxs-lookup"><span data-stu-id="3552c-132">If so, the application calls the <xref:System.Windows.Input.ManipulationDeltaEventArgs.Complete%2A?displayProperty=nameWithType> method to end the manipulation.</span></span>  
   
      [!code-csharp[BasicManipulation#ManipulationDelta](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationdelta)]
      [!code-vb[BasicManipulation#ManipulationDelta](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationdelta)]  
   
-6.  `MainWindow` クラスに、次の <xref:System.Windows.UIElement.ManipulationInertiaStarting> イベント ハンドラーを追加します。  
+6.  <span data-ttu-id="3552c-133">`MainWindow`クラス、次の追加<xref:System.Windows.UIElement.ManipulationInertiaStarting>イベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="3552c-133">In the `MainWindow` class, add the following <xref:System.Windows.UIElement.ManipulationInertiaStarting> event handler.</span></span>  
   
-     ユーザーが画面からすべての指を離すと、<xref:System.Windows.UIElement.ManipulationInertiaStarting> イベントが発生します。  コードにより、四角形の移動、拡大および回転に対する初期の速度と減速度が設定されます。  
+     <span data-ttu-id="3552c-134"><xref:System.Windows.UIElement.ManipulationInertiaStarting>イベント、ユーザーが画面からのすべての指を発生させるときに発生します。</span><span class="sxs-lookup"><span data-stu-id="3552c-134">The <xref:System.Windows.UIElement.ManipulationInertiaStarting> event occurs when the user raises all fingers from the screen.</span></span> <span data-ttu-id="3552c-135">コードでは、初期速度と、移動、拡張、および四角形の回転の減速を設定します。</span><span class="sxs-lookup"><span data-stu-id="3552c-135">The code sets the initial velocity and deceleration for the movement, expansion, and rotation of the rectangle.</span></span>  
   
      [!code-csharp[BasicManipulation#ManipulationInertiaStarting](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationinertiastarting)]
      [!code-vb[BasicManipulation#ManipulationInertiaStarting](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationinertiastarting)]  
   
-7.  プロジェクトをビルドして実行します。  
+7.  <span data-ttu-id="3552c-136">プロジェクトをビルドして実行します。</span><span class="sxs-lookup"><span data-stu-id="3552c-136">Build and run the project.</span></span>  
   
-     ウィンドウ内に赤い正方形が表示されます。  
+     <span data-ttu-id="3552c-137">ウィンドウに表示される赤い四角形が表示されます。</span><span class="sxs-lookup"><span data-stu-id="3552c-137">You should see a red square appear in the window.</span></span>  
   
-## アプリケーションのテスト  
- アプリケーションをテストするには、次の操作を試します。  一度に複数の操作を試すことができます。  
+## <a name="testing-the-application"></a><span data-ttu-id="3552c-138">アプリケーションのテスト</span><span class="sxs-lookup"><span data-stu-id="3552c-138">Testing the Application</span></span>  
+ <span data-ttu-id="3552c-139">アプリケーションをテストするには、次の操作を再試行してください。</span><span class="sxs-lookup"><span data-stu-id="3552c-139">To test the application, try the following manipulations.</span></span> <span data-ttu-id="3552c-140">複数の次のいずれか、同時に実行できることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="3552c-140">Note that you can do more than one of the following at the same time.</span></span>  
   
--   <xref:System.Windows.Shapes.Rectangle> を移動するには、<xref:System.Windows.Shapes.Rectangle> の上に 1 本の指を置き、画面上でその指を動かします。  
+-   <span data-ttu-id="3552c-141">移動する、 <xref:System.Windows.Shapes.Rectangle>、に指を置き、<xref:System.Windows.Shapes.Rectangle>し、画面上で指を移動します。</span><span class="sxs-lookup"><span data-stu-id="3552c-141">To move the <xref:System.Windows.Shapes.Rectangle>, put a finger on the <xref:System.Windows.Shapes.Rectangle> and move the finger across the screen.</span></span>  
   
--   <xref:System.Windows.Shapes.Rectangle> のサイズを変更するには、<xref:System.Windows.Shapes.Rectangle> 上に 2 本の指を置き、指どうしの距離を互いに近づけるか離します。  
+-   <span data-ttu-id="3552c-142">サイズを変更する、 <xref:System.Windows.Shapes.Rectangle>、2 本の指の電源を入れます、<xref:System.Windows.Shapes.Rectangle>して近い一緒にまたは遠く互いとは別に、指を移動します。</span><span class="sxs-lookup"><span data-stu-id="3552c-142">To resize the <xref:System.Windows.Shapes.Rectangle>, put two fingers on the <xref:System.Windows.Shapes.Rectangle> and move the fingers closer together or farther apart from each other.</span></span>  
   
--   <xref:System.Windows.Shapes.Rectangle> を回転させるには、<xref:System.Windows.Shapes.Rectangle> 上に 2 本の指を置き、互いの周りで指を回します。  
+-   <span data-ttu-id="3552c-143">回転する、 <xref:System.Windows.Shapes.Rectangle>、2 本の指の電源を入れます、<xref:System.Windows.Shapes.Rectangle>指が互いの周りの回転とします。</span><span class="sxs-lookup"><span data-stu-id="3552c-143">To rotate the <xref:System.Windows.Shapes.Rectangle>, put two fingers on the <xref:System.Windows.Shapes.Rectangle> and rotate the fingers around each other.</span></span>  
   
- 慣性を発生させるには、直前の操作を実行したときに画面からすばやく指を離します。  <xref:System.Windows.Shapes.Rectangle> は、停止するまでの数秒間、移動、サイズ変更または回転を続けます。  
+ <span data-ttu-id="3552c-144">慣性の直前の操作を実行するとは、指を画面からすばやくを発生させます。</span><span class="sxs-lookup"><span data-stu-id="3552c-144">To cause inertia, quickly raise your fingers from the screen as you perform the previous manipulations.</span></span> <span data-ttu-id="3552c-145"><xref:System.Windows.Shapes.Rectangle>移動、サイズ変更、または停止する前に、数秒回転し続けます。</span><span class="sxs-lookup"><span data-stu-id="3552c-145">The <xref:System.Windows.Shapes.Rectangle> will continue to move, resize, or rotate for a few seconds before it stops.</span></span>  
   
-## 参照  
- <xref:System.Windows.UIElement.ManipulationStarting?displayProperty=fullName>   
- <xref:System.Windows.UIElement.ManipulationDelta?displayProperty=fullName>   
- <xref:System.Windows.UIElement.ManipulationInertiaStarting?displayProperty=fullName>
+## <a name="see-also"></a><span data-ttu-id="3552c-146">関連項目</span><span class="sxs-lookup"><span data-stu-id="3552c-146">See Also</span></span>  
+ <xref:System.Windows.UIElement.ManipulationStarting?displayProperty=nameWithType>  
+ <xref:System.Windows.UIElement.ManipulationDelta?displayProperty=nameWithType>  
+ <xref:System.Windows.UIElement.ManipulationInertiaStarting?displayProperty=nameWithType>

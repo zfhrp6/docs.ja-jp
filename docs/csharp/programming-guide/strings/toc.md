@@ -7,5 +7,3 @@
 ## [方法: 正規表現を使用して文字列を検索する](how-to-search-strings-using-regular-expressions.md)
 ## [方法: 文字列が数値を表しているかどうかを確認する](how-to-determine-whether-a-string-represents-a-numeric-value.md)
 ## [方法: 文字列を DateTime に変換する](how-to-convert-a-string-to-a-datetime.md)
-## [方法: レガシ エンコーディングと Unicode の間で変換を行う](how-to-convert-between-legacy-encodings-and-unicode.md)
-## [方法: RTF をプレーンテキストに変換する](how-to-convert-rtf-to-plain-text.md)

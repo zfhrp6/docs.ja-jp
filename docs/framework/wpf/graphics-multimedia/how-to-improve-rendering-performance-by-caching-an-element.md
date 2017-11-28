@@ -1,37 +1,40 @@
 ---
-title: "方法: 要素をキャッシュしてレンダリングのパフォーマンスを向上させる | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "BitmapCache [WPF], 向上 (レンダリングのパフォーマンスを)"
-  - "CacheMode [WPF], 向上 (レンダリングのパフォーマンスを)"
-  - "パフォーマンス [WPF], キャッシュ (要素を)"
-  - "レンダリングのパフォーマンス [WPF], キャッシュ (要素を)"
-  - "UIElement [WPF], キャッシュ"
+title: "方法: 要素をキャッシュしてレンダリングのパフォーマンスを向上させる"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- rendering performance [WPF], caching an element
+- BitmapCache [WPF], improving rendering performance
+- CacheMode [WPF], improving rendering performance
+- performance [WPF], caching an element
+- UIElement [WPF], caching
 ms.assetid: 4739c1fc-60ba-4c46-aba6-f6c1a2688f19
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d754d0ed2f3951c39b3eaeae097589adf3510f5b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法: 要素をキャッシュしてレンダリングのパフォーマンスを向上させる
-複合 <xref:System.Windows.UIElement> のレンダリングのパフォーマンスを向上させるには、<xref:System.Windows.Media.BitmapCache> クラスを使用します。  要素をキャッシュするには、<xref:System.Windows.Media.BitmapCache> クラスの新しいインスタンスを作成し、そのインスタンスを要素の <xref:System.Windows.UIElement.CacheMode%2A> プロパティに割り当てます。  <xref:System.Windows.Media.BitmapCache> は、<xref:System.Windows.Media.BitmapCacheBrush> で効率的に再利用できます。  
+# <a name="how-to-improve-rendering-performance-by-caching-an-element"></a><span data-ttu-id="34751-102">方法: 要素をキャッシュしてレンダリングのパフォーマンスを向上させる</span><span class="sxs-lookup"><span data-stu-id="34751-102">How to: Improve Rendering Performance by Caching an Element</span></span>
+<span data-ttu-id="34751-103">使用して、<xref:System.Windows.Media.BitmapCache>の複雑なレンダリング パフォーマンスを向上させるためにクラス<xref:System.Windows.UIElement>です。</span><span class="sxs-lookup"><span data-stu-id="34751-103">Use the <xref:System.Windows.Media.BitmapCache> class to improve rendering performance of a complex <xref:System.Windows.UIElement>.</span></span> <span data-ttu-id="34751-104">要素をキャッシュするには、新しいインスタンスを作成、<xref:System.Windows.Media.BitmapCache>クラスし、要素に割り当てる<xref:System.Windows.UIElement.CacheMode%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="34751-104">To cache an element, create a new instance of the <xref:System.Windows.Media.BitmapCache> class and assign it to the element's <xref:System.Windows.UIElement.CacheMode%2A> property.</span></span> <span data-ttu-id="34751-105">再利用することができます、<xref:System.Windows.Media.BitmapCache>が効率的な<xref:System.Windows.Media.BitmapCacheBrush>します。</span><span class="sxs-lookup"><span data-stu-id="34751-105">You can reuse a <xref:System.Windows.Media.BitmapCache> efficiently in a <xref:System.Windows.Media.BitmapCacheBrush>.</span></span>  
   
-## 使用例  
- 次のコード例では、複合要素を作成し、それをビットマップとしてキャッシュして、要素をアニメーションするときのパフォーマンスを向上させる方法を示します。  要素は、多くの頂点を持つ図形ジオメトリを保持するキャンバスです。  既定値を持つ <xref:System.Windows.Media.BitmapCache> がキャンバスの <xref:System.Windows.UIElement.CacheMode%2A> に割り当てられ、キャッシュされたビットマップのスムーズなスケーリングがアニメーションで表示されます。  
+## <a name="example"></a><span data-ttu-id="34751-106">例</span><span class="sxs-lookup"><span data-stu-id="34751-106">Example</span></span>  
+ <span data-ttu-id="34751-107">次のコード例では、複合型の要素を作成し、パフォーマンスを向上させるときは、要素をアニメーション、ビットマップとしてキャッシュする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="34751-107">The following code example shows how to create a complex element and cache it as a bitmap, which improves performance when the element is animated.</span></span> <span data-ttu-id="34751-108">要素は、頂点の数を持つ図形ジオメトリを保持するキャンバスです。</span><span class="sxs-lookup"><span data-stu-id="34751-108">The element is a canvas that holds shape geometries with many vertices.</span></span> <span data-ttu-id="34751-109">A<xref:System.Windows.Media.BitmapCache>に既定値は値が割り当てられている、<xref:System.Windows.UIElement.CacheMode%2A>キャンバスのし、アニメーションは、キャッシュされたビットマップのスムーズな拡張を示しています。</span><span class="sxs-lookup"><span data-stu-id="34751-109">A <xref:System.Windows.Media.BitmapCache> with default values is assigned to the <xref:System.Windows.UIElement.CacheMode%2A> of the canvas, and an animation shows the smooth scaling of the cached bitmap.</span></span>  
   
- [!code-xml[System.Windows.Media.BitmapCache#_BitmapCacheXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/system.windows.media.bitmapcache/cs/window1.xaml#_bitmapcachexaml)]  
+ [!code-xaml[System.Windows.Media.BitmapCache#_BitmapCacheXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/system.windows.media.bitmapcache/cs/window1.xaml#_bitmapcachexaml)]  
   
-## 参照  
- <xref:System.Windows.Media.BitmapCache>   
- <xref:System.Windows.Media.BitmapCacheBrush>   
- <xref:System.Windows.UIElement.CacheMode%2A>   
- [方法: キャッシュされた要素をブラシとして使用する](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-cached-element-as-a-brush.md)
+## <a name="see-also"></a><span data-ttu-id="34751-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="34751-110">See Also</span></span>  
+ <xref:System.Windows.Media.BitmapCache>  
+ <xref:System.Windows.Media.BitmapCacheBrush>  
+ <xref:System.Windows.UIElement.CacheMode%2A>  
+ [<span data-ttu-id="34751-111">方法: キャッシュされた要素をブラシとして使用する</span><span class="sxs-lookup"><span data-stu-id="34751-111">How to: Use a Cached Element as a Brush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-cached-element-as-a-brush.md)

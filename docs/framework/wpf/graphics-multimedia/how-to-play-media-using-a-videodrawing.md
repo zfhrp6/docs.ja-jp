@@ -1,47 +1,47 @@
 ---
-title: "方法 : VideoDrawing を使用してメディアを再生する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "クラス, MediaPlayer"
-  - "クラス, VideoDrawing"
-  - "MediaPlayer クラス"
-  - "再生 (メディアの)"
-  - "VideoDrawing クラス"
+title: "方法 : VideoDrawing を使用してメディアを再生する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- playback of media [WPF]
+- classes [WPF], MediaPlayer
 ms.assetid: 165d47ed-22ce-4ded-aa6a-aa9b7467de87
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2753db8e06c8c1b50c6e5cee17330d421e88511f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : VideoDrawing を使用してメディアを再生する
-オーディオ ファイルまたはビデオ ファイルを再生するには、<xref:System.Windows.Media.VideoDrawing> と <xref:System.Windows.Media.MediaPlayer> を使用します。  メディアを読み込んで再生するには、2 つの方法があります。  1 つ目の方法は、<xref:System.Windows.Media.MediaPlayer> および <xref:System.Windows.Media.VideoDrawing> を単独で使用するもので、2 つ目の方法は、独自の <xref:System.Windows.Media.MediaTimeline> を作成して <xref:System.Windows.Media.MediaPlayer> および <xref:System.Windows.Media.VideoDrawing> と共に使用するものです。  
+# <a name="how-to-play-media-using-a-videodrawing"></a><span data-ttu-id="cd11d-102">方法 : VideoDrawing を使用してメディアを再生する</span><span class="sxs-lookup"><span data-stu-id="cd11d-102">How to: Play Media using a VideoDrawing</span></span>
+<span data-ttu-id="cd11d-103">使用するオーディオまたはビデオ ファイルを再生するには<xref:System.Windows.Media.VideoDrawing>と<xref:System.Windows.Media.MediaPlayer>です。</span><span class="sxs-lookup"><span data-stu-id="cd11d-103">To play an audio or video file, you use a <xref:System.Windows.Media.VideoDrawing> and a <xref:System.Windows.Media.MediaPlayer>.</span></span> <span data-ttu-id="cd11d-104">メディアを読み込んで再生するには、2 つの方法があります。</span><span class="sxs-lookup"><span data-stu-id="cd11d-104">There are two ways to load and play media.</span></span> <span data-ttu-id="cd11d-105">最初を使用して、<xref:System.Windows.Media.MediaPlayer>と<xref:System.Windows.Media.VideoDrawing>自体、および 2 番目で方法は、独自に作成する<xref:System.Windows.Media.MediaTimeline>で使用する、<xref:System.Windows.Media.MediaPlayer>と<xref:System.Windows.Media.VideoDrawing>です。</span><span class="sxs-lookup"><span data-stu-id="cd11d-105">The first is to use a <xref:System.Windows.Media.MediaPlayer> and a <xref:System.Windows.Media.VideoDrawing> by themselves, and the second way is to create your own <xref:System.Windows.Media.MediaTimeline> to use with the <xref:System.Windows.Media.MediaPlayer> and <xref:System.Windows.Media.VideoDrawing>.</span></span>  
   
 > [!NOTE]
->  アプリケーションでメディアを配布する場合は、メディア ファイルをイメージと同じようにプロジェクト リソースとして使用することはできません。  代わりにプロジェクト ファイルでメディアの種類を `Content` に設定し、`CopyToOutputDirectory` を `PreserveNewest` または `Always` に設定する必要があります。  
+>  <span data-ttu-id="cd11d-106">アプリケーションでメディアを配布するときは、イメージのようにプロジェクト リソースとしてメディア ファイルを使うことはできません。</span><span class="sxs-lookup"><span data-stu-id="cd11d-106">When distributing media with your application, you cannot use a media file as a project resource, like you would an image.</span></span> <span data-ttu-id="cd11d-107">プロジェクト ファイルで、メディアの種類を `Content` に設定し、`CopyToOutputDirectory` を `PreserveNewest` または `Always` に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cd11d-107">In your project file, you must instead set the media type to `Content` and set `CopyToOutputDirectory` to `PreserveNewest` or `Always`.</span></span>  
   
-## 使用例  
- <xref:System.Windows.Media.VideoDrawing> および <xref:System.Windows.Media.MediaPlayer> を使用してビデオ ファイルを 1 回再生する例を次に示します。  
+## <a name="example"></a><span data-ttu-id="cd11d-108">例</span><span class="sxs-lookup"><span data-stu-id="cd11d-108">Example</span></span>  
+ <span data-ttu-id="cd11d-109">次の例では、<xref:System.Windows.Media.VideoDrawing>と<xref:System.Windows.Media.MediaPlayer>を 1 回、ビデオ ファイルを再生します。</span><span class="sxs-lookup"><span data-stu-id="cd11d-109">The following example uses a <xref:System.Windows.Media.VideoDrawing> and a <xref:System.Windows.Media.MediaPlayer> to play a video file once.</span></span>  
   
  [!code-csharp[DrawingMiscSnippets_snip#VideoDrawingExampleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/VideoDrawingExample.cs#videodrawingexampleinline)]  
   
- メディアのタイミングをさらに細かく制御するには、<xref:System.Windows.Media.MediaPlayer> オブジェクトおよび <xref:System.Windows.Media.VideoDrawing> オブジェクトと共に <xref:System.Windows.Media.MediaTimeline> を使用します。  <xref:System.Windows.Media.MediaTimeline> を使用すると、ビデオを繰り返すかどうかを指定できます。  
+ <span data-ttu-id="cd11d-110">使用して、メディア上で別のタイミングを制御する、<xref:System.Windows.Media.MediaTimeline>で、<xref:System.Windows.Media.MediaPlayer>と<xref:System.Windows.Media.VideoDrawing>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="cd11d-110">To gain additional timing control over the media, use a <xref:System.Windows.Media.MediaTimeline> with the <xref:System.Windows.Media.MediaPlayer> and <xref:System.Windows.Media.VideoDrawing> objects.</span></span> <span data-ttu-id="cd11d-111"><xref:System.Windows.Media.MediaTimeline>ビデオを繰り返す必要があるかどうかを指定することができます。</span><span class="sxs-lookup"><span data-stu-id="cd11d-111">The <xref:System.Windows.Media.MediaTimeline> enables you to specify whether the video should repeat.</span></span>  
   
-## 使用例  
- <xref:System.Windows.Media.MediaTimeline> を <xref:System.Windows.Media.MediaPlayer> および <xref:System.Windows.Media.VideoDrawing> オブジェクトと共に使用してビデオを繰り返し再生する例を次に示します。  
+## <a name="example"></a><span data-ttu-id="cd11d-112">例</span><span class="sxs-lookup"><span data-stu-id="cd11d-112">Example</span></span>  
+ <span data-ttu-id="cd11d-113">次の例では、<xref:System.Windows.Media.MediaTimeline>で、<xref:System.Windows.Media.MediaPlayer>と<xref:System.Windows.Media.VideoDrawing>ビデオを繰り返し再生するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="cd11d-113">The following example uses a <xref:System.Windows.Media.MediaTimeline> with the <xref:System.Windows.Media.MediaPlayer> and <xref:System.Windows.Media.VideoDrawing> objects to play a video repeatedly.</span></span>  
   
  [!code-csharp[DrawingMiscSnippets_snip#RepeatingVideoDrawingExampleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/VideoDrawingExample.cs#repeatingvideodrawingexampleinline)]  
   
- <xref:System.Windows.Media.MediaTimeline> を使用するときは、<xref:System.Windows.Media.MediaPlayer> の対話型メソッドを使用するのではなく、<xref:System.Windows.Media.MediaClock> の <xref:System.Windows.Media.Animation.Clock.Controller%2A> プロパティから返される対話型の <xref:System.Windows.Media.Animation.ClockController> を使用してメディアの再生を制御することに注意してください。  
+ <span data-ttu-id="cd11d-114">なお、使用すると、 <xref:System.Windows.Media.MediaTimeline>、対話型を使用する<xref:System.Windows.Media.Animation.ClockController>から返される、<xref:System.Windows.Media.Animation.Clock.Controller%2A>のプロパティ、<xref:System.Windows.Media.MediaClock>の対話的な方法ではなくメディア再生を制御する<xref:System.Windows.Media.MediaPlayer>です。</span><span class="sxs-lookup"><span data-stu-id="cd11d-114">Note that, when you use a <xref:System.Windows.Media.MediaTimeline>, you use the interactive <xref:System.Windows.Media.Animation.ClockController> returned from the <xref:System.Windows.Media.Animation.Clock.Controller%2A> property of the <xref:System.Windows.Media.MediaClock> to control media playback instead of the interactive methods of <xref:System.Windows.Media.MediaPlayer>.</span></span>  
   
-## 参照  
- <xref:System.Windows.Media.VideoDrawing>   
- [Drawing オブジェクトの概要](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)
+## <a name="see-also"></a><span data-ttu-id="cd11d-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="cd11d-115">See Also</span></span>  
+ <xref:System.Windows.Media.VideoDrawing>  
+ [<span data-ttu-id="cd11d-116">Drawing オブジェクトの概要</span><span class="sxs-lookup"><span data-stu-id="cd11d-116">Drawing Objects Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)

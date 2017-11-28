@@ -1,43 +1,47 @@
 ---
-title: "方法 : 1 本のベジエ スプラインを描画する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ベジエ スプライン, 描画"
-  - "描画, ベジエ スプライン"
+title: "方法: 描画単一 B &#233; ベジエ スプライン"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Bezier splines [Windows Forms], drawing
+- drawing [Windows Forms], Bezier splines
 ms.assetid: f4f3fe30-f0a6-4743-ac91-11310cebea9f
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0ebdba9e01824cc764a6ab759da049add180ba83
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 1 本のベジエ スプラインを描画する
-ベジエ スプラインは、開始点、2 つの制御点、および終了点の 4 つの点によって定義されます。  
+# <a name="how-to-draw-a-single-b233zier-spline"></a><span data-ttu-id="dd3fb-102">方法: 描画単一 B &#233; ベジエ スプライン</span><span class="sxs-lookup"><span data-stu-id="dd3fb-102">How to: Draw a Single B&#233;zier Spline</span></span>
+<span data-ttu-id="dd3fb-103">ベジエ スプラインを 4 つの点によって定義されます: 開始時点、2 つの制御ポイント、およびエンドポイント。</span><span class="sxs-lookup"><span data-stu-id="dd3fb-103">A Bézier spline is defined by four points: a start point, two control points, and an endpoint.</span></span>  
   
-## 使用例  
- 開始点が \(10, 100\) で終了点が \(200, 100\) のベジエ スプラインを描画する例を次に示します。  制御点は \(100, 10\) および \(150, 150\) です。  
+## <a name="example"></a><span data-ttu-id="dd3fb-104">例</span><span class="sxs-lookup"><span data-stu-id="dd3fb-104">Example</span></span>  
+ <span data-ttu-id="dd3fb-105">次の例では、(10, 100) の始点と終点 (200, 100) のベジエ スプラインを描画します。</span><span class="sxs-lookup"><span data-stu-id="dd3fb-105">The following example draws a Bézier spline with start point (10, 100) and endpoint (200, 100).</span></span> <span data-ttu-id="dd3fb-106">コントロールは (100, 10) と (150、150) をポイントします。</span><span class="sxs-lookup"><span data-stu-id="dd3fb-106">The control points are (100, 10) and (150, 150).</span></span>  
   
- 生成されたベジエ スプラインとその開始点、制御点、および終了点を、次の図に示します。  また、この図では、スプラインの外側の枠である、4 つの点を直線で結んで形成される多角形も示しています。  
+ <span data-ttu-id="dd3fb-107">次の図は、その始点、コントロール ポイント、およびエンドポイントと共に結果として得られるベジエ スプラインを示します。</span><span class="sxs-lookup"><span data-stu-id="dd3fb-107">The following illustration shows the resulting Bézier spline along with its start point, control points, and endpoint.</span></span> <span data-ttu-id="dd3fb-108">図には、直線で 4 つのポイントを接続することで形成される多角形スプラインの凸包です。</span><span class="sxs-lookup"><span data-stu-id="dd3fb-108">The illustration also shows the spline's convex hull, which is a polygon formed by connecting the four points with straight lines.</span></span>  
   
- ![ベジエ スプライン](../../../../docs/framework/winforms/advanced/media/bezierspline1.png "BezierSpline1")  
+ <span data-ttu-id="dd3fb-109">![ベジエ スプライン](../../../../docs/framework/winforms/advanced/media/bezierspline1.png "BezierSpline1")</span><span class="sxs-lookup"><span data-stu-id="dd3fb-109">![Bezier Spline](../../../../docs/framework/winforms/advanced/media/bezierspline1.png "BezierSpline1")</span></span>  
   
  [!code-csharp[System.Drawing.ConstructingDrawingCurves#31](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingCurves/CS/Class1.cs#31)]
  [!code-vb[System.Drawing.ConstructingDrawingCurves#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingCurves/VB/Class1.vb#31)]  
   
-## コードのコンパイル  
- 前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  
+## <a name="compiling-the-code"></a><span data-ttu-id="dd3fb-110">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="dd3fb-110">Compiling the Code</span></span>  
+ <span data-ttu-id="dd3fb-111">前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。</span><span class="sxs-lookup"><span data-stu-id="dd3fb-111">The preceding example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs> `e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span>  
   
-## 参照  
- <xref:System.Drawing.Graphics.DrawBezier%2A>   
- [GDI\+ でのベジエ スプライン](../../../../docs/framework/winforms/advanced/bezier-splines-in-gdi.md)   
- [方法 : 一連のベジエ スプラインを描画する](../../../../docs/framework/winforms/advanced/how-to-draw-a-sequence-of-bezier-splines.md)
+## <a name="see-also"></a><span data-ttu-id="dd3fb-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="dd3fb-112">See Also</span></span>  
+ <xref:System.Drawing.Graphics.DrawBezier%2A>  
+ [<span data-ttu-id="dd3fb-113">GDI+ でのベジエ スプライン</span><span class="sxs-lookup"><span data-stu-id="dd3fb-113">Bézier Splines in GDI+</span></span>](../../../../docs/framework/winforms/advanced/bezier-splines-in-gdi.md)  
+ [<span data-ttu-id="dd3fb-114">方法: 一連のベジエ スプラインを描画する</span><span class="sxs-lookup"><span data-stu-id="dd3fb-114">How to: Draw a Sequence of Bézier Splines</span></span>](../../../../docs/framework/winforms/advanced/how-to-draw-a-sequence-of-bezier-splines.md)

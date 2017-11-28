@@ -1,38 +1,44 @@
 ---
-title: "方法 : ScrollViewer のコンテンツ スクロール メソッドを使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "IScrollInfo インターフェイス"
-  - "スクロール メソッド"
-  - "ScrollViewer コントロール, スクロール メソッド"
+title: "方法 : ScrollViewer のコンテンツ スクロール メソッドを使用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- IScrollInfo interface [WPF]
+- scrolling methods [WPF]
+- ScrollViewer control [WPF], scrolling methods
 ms.assetid: 4708cc65-6510-45f8-82e6-30b0d3e30045
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: dc9b79ae9b8078bbdc4c41fb0c952237f86fcac8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : ScrollViewer のコンテンツ スクロール メソッドを使用する
-この例では、<xref:System.Windows.Controls.ScrollViewer> 要素のスクロール メソッドを使用する方法を示します。  これらのメソッドを使用すると、<xref:System.Windows.Controls.ScrollViewer> に表示されたコンテンツを行単位またはページ単位のインクリメント方式でスクロールできます。  
+# <a name="how-to-use-the-content-scrolling-methods-of-scrollviewer"></a><span data-ttu-id="22437-102">方法 : ScrollViewer のコンテンツ スクロール メソッドを使用する</span><span class="sxs-lookup"><span data-stu-id="22437-102">How to: Use the Content-Scrolling Methods of ScrollViewer</span></span>
+<span data-ttu-id="22437-103">この例のスクロール メソッドを使用する方法を示しています、<xref:System.Windows.Controls.ScrollViewer>要素。</span><span class="sxs-lookup"><span data-stu-id="22437-103">This example shows how to use the scrolling methods of the <xref:System.Windows.Controls.ScrollViewer> element.</span></span> <span data-ttu-id="22437-104">これらのメソッドは、増分、コンテンツの行またはページのいずれかのスクロールを提供する<xref:System.Windows.Controls.ScrollViewer>です。</span><span class="sxs-lookup"><span data-stu-id="22437-104">These methods provide incremental scrolling of content, either by line or by page, in a <xref:System.Windows.Controls.ScrollViewer>.</span></span>  
   
-## 使用例  
- 次の例では、<xref:System.Windows.Controls.TextBlock> 子要素をホストする `sv1` という名前の <xref:System.Windows.Controls.ScrollViewer> を作成します。  <xref:System.Windows.Controls.TextBlock> は親である <xref:System.Windows.Controls.ScrollViewer> を超えているため、スクロール バーが表示され、スクロールできるようになっています。  また、さまざまなスクロール メソッドを表す <xref:System.Windows.Controls.Button> 要素が、別の <xref:System.Windows.Controls.StackPanel> の左側にドッキングされます。  [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ファイル内の各 <xref:System.Windows.Controls.Button> は、<xref:System.Windows.Controls.ScrollViewer> でのスクロール動作を制御する関連カスタム メソッドを呼び出します。  
+## <a name="example"></a><span data-ttu-id="22437-105">例</span><span class="sxs-lookup"><span data-stu-id="22437-105">Example</span></span>  
+ <span data-ttu-id="22437-106">次の例を作成、<xref:System.Windows.Controls.ScrollViewer>という`sv1`、子ホスト<xref:System.Windows.Controls.TextBlock>要素。</span><span class="sxs-lookup"><span data-stu-id="22437-106">The following example creates a <xref:System.Windows.Controls.ScrollViewer> named `sv1`, which hosts a child <xref:System.Windows.Controls.TextBlock> element.</span></span> <span data-ttu-id="22437-107"><xref:System.Windows.Controls.TextBlock>が親よりも大きい<xref:System.Windows.Controls.ScrollViewer>、スクロールを有効にするためにスクロール バーが表示されます。</span><span class="sxs-lookup"><span data-stu-id="22437-107">Because the <xref:System.Windows.Controls.TextBlock> is larger than the parent <xref:System.Windows.Controls.ScrollViewer>, scroll bars appear in order to enable scrolling.</span></span> <span data-ttu-id="22437-108"><xref:System.Windows.Controls.Button>スクロールのさまざまな方法を表す要素は別個の左側にドッキングされて<xref:System.Windows.Controls.StackPanel>です。</span><span class="sxs-lookup"><span data-stu-id="22437-108"><xref:System.Windows.Controls.Button> elements that represent the various scrolling methods are docked on the left in a separate <xref:System.Windows.Controls.StackPanel>.</span></span> <span data-ttu-id="22437-109">各<xref:System.Windows.Controls.Button>で、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ファイルがでスクロール動作を制御する関連のカスタム メソッドを呼び出して<xref:System.Windows.Controls.ScrollViewer>です。</span><span class="sxs-lookup"><span data-stu-id="22437-109">Each <xref:System.Windows.Controls.Button> in the [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] file calls a related custom method that controls scrolling behavior in <xref:System.Windows.Controls.ScrollViewer>.</span></span>  
   
- [!code-xml[ScrollViewerMethods#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ScrollViewerMethods/CSharp/Window1.xaml#1)]  
+ [!code-xaml[ScrollViewerMethods#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ScrollViewerMethods/CSharp/Window1.xaml#1)]  
   
- 次の例では、<xref:System.Windows.Controls.ScrollViewer.LineUp%2A> メソッドと <xref:System.Windows.Controls.ScrollViewer.LineDown%2A> メソッドを使用しています。  
+ <span data-ttu-id="22437-110">次の例では、<xref:System.Windows.Controls.ScrollViewer.LineUp%2A>と<xref:System.Windows.Controls.ScrollViewer.LineDown%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="22437-110">The following example uses the <xref:System.Windows.Controls.ScrollViewer.LineUp%2A> and <xref:System.Windows.Controls.ScrollViewer.LineDown%2A> methods.</span></span>  
   
  [!code-csharp[ScrollViewerMethods#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ScrollViewerMethods/CSharp/Window1.xaml.cs#2)]
  [!code-vb[ScrollViewerMethods#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ScrollViewerMethods/VisualBasic/Window1.xaml.vb#2)]  
   
-## 参照  
- <xref:System.Windows.Controls.ScrollViewer>   
+## <a name="see-also"></a><span data-ttu-id="22437-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="22437-111">See Also</span></span>  
+ <xref:System.Windows.Controls.ScrollViewer>  
  <xref:System.Windows.Controls.StackPanel>

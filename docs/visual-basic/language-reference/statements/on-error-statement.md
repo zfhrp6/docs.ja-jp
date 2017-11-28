@@ -1,139 +1,136 @@
 ---
-title: "On Error Statement (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.OnError"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Visual Basic code, control flow"
-  - "Resume Next statement"
-  - "errors [Visual Basic], trapping"
-  - "error handling, On Error statement"
-  - "Next statement, On Error"
-  - "control flow, branching"
-  - "Error keyword"
-  - "execution, conditional"
-  - "Resume statement, and On Error statement"
-  - "Error statement, and On Error statement"
-  - "GoTo statement, and On Error statement"
-  - "branching, on error"
-  - "conditional statements, On Error"
-  - "On Error statement, syntax"
-  - "On keyword"
-  - "run-time errors, handling"
-  - "On Error statement"
+title: "On Error ステートメント (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.OnError
+helpviewer_keywords:
+- Visual Basic code, control flow
+- Resume Next statement [Visual Basic]
+- errors [Visual Basic], trapping
+- error handling, On Error statement
+- Next statement [Visual Basic], On Error
+- control flow [Visual Basic], branching
+- Error keyword [Visual Basic]
+- execution [Visual Basic], conditional
+- Resume statement [Visual Basic], and On Error statement
+- Error statement [Visual Basic], and On Error statement
+- GoTo statement [Visual Basic], and On Error statement
+- branching [Visual Basic], on error
+- conditional statements [Visual Basic], On Error
+- On Error statement [Visual Basic], syntax
+- On keyword [Visual Basic]
+- run-time errors [Visual Basic], handling
+- On Error statement [Visual Basic]
 ms.assetid: ff947930-fb84-40cf-bd66-1ea219561d5c
-caps.latest.revision: 22
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: e1039359145902bffe3f91aa654a43790d16b887
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# On Error Statement (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-エラー処理ルーチンを有効にして、プロシージャ内でルーチンの場所を指定します。また、エラー処理ルーチンを無効にする場合にも使用できます。  
+# <a name="on-error-statement-visual-basic"></a><span data-ttu-id="d7b3e-102">On Error ステートメント (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d7b3e-102">On Error Statement (Visual Basic)</span></span>
+<span data-ttu-id="d7b3e-103">エラー処理ルーチンを有効にし、プロシージャ内のルーチンの場所を指定しますエラー処理ルーチンを無効にも使用できます。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-103">Enables an error-handling routine and specifies the location of the routine within a procedure; can also be used to disable an error-handling routine.</span></span>  
   
- `On Error` ステートメントを使用しないと、発生するすべてのランタイム エラーが致命的なエラーになります。つまり、エラー メッセージが表示され、実行が停止します。  
+ <span data-ttu-id="d7b3e-104">なし、`On Error`ステートメントでは、発生するすべての実行時エラーが致命的な: エラー メッセージが表示され、実行が停止します。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-104">Without an `On Error` statement, any run-time error that occurs is fatal: an error message is displayed, and execution stops.</span></span>  
   
- 可能であればコードで例外処理を使用することをお勧めします\)非構造化例外処理と `On Error` のステートメントを使用する必要がありません。  詳細については、「[Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)」を参照してください。  
+ <span data-ttu-id="d7b3e-105">可能な限り、ことをお勧め非構造化例外処理を使用するのではなく、処理、コードの構造化例外を使用して、`On Error`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-105">Whenever possible, we suggest you use structured exception handling in your code, rather than using unstructured exception handling and the `On Error` statement.</span></span> <span data-ttu-id="d7b3e-106">詳しくは、「[Try...Catch...Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-106">For more information, see [Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).</span></span>  
   
 > [!NOTE]
->  [Error Statement](../../../visual-basic/language-reference/statements/error-statement.md)では `Error` キーワードも使用されます。これは、下位互換性のためにサポートされています。  
+>  <span data-ttu-id="d7b3e-107">`Error`キーワードでも使用、 [Error ステートメント](../../../visual-basic/language-reference/statements/error-statement.md)、旧バージョンとの互換性のためサポートされています。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-107">The `Error` keyword is also used in the [Error Statement](../../../visual-basic/language-reference/statements/error-statement.md), which is supported for backward compatibility.</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="d7b3e-108">構文</span><span class="sxs-lookup"><span data-stu-id="d7b3e-108">Syntax</span></span>  
   
 ```  
 On Error { GoTo [ line | 0 | -1 ] | Resume Next }  
 ```  
   
-## 指定項目  
+## <a name="parts"></a><span data-ttu-id="d7b3e-109">指定項目</span><span class="sxs-lookup"><span data-stu-id="d7b3e-109">Parts</span></span>  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`GoTo` `line`|必須の `line` 引数で指定した行から始まるエラー処理ルーチンを有効にします。  引数 `line` には、任意の行ラベルまたは行番号を指定します。  ランタイム エラーが発生すると、指定した行に制御が分岐され、エラー ハンドラーがアクティブになります。  `On Error` ステートメントと同じプロシージャ内の行を指定する必要があります。それ以外の行を指定すると、コンパイル エラーが発生します。|  
-|`GoTo` 0|現在のプロシージャで有効になっていたエラー ハンドラーを無効にし、`Nothing` にリセットされます。|  
-|`GoTo` \-1|現在のプロシージャで有効になっていた例外を無効にし、`Nothing` にリセットされます。|  
-|`Resume Next`|ランタイム エラーが発生すると、エラーが発生したステートメントの直後のステートメントに制御が移り、そのステートメントから実行が継続されます。  オブジェクトにアクセスするときは、`On Error GoTo` ではなくこの形式を使用します。|  
+|<span data-ttu-id="d7b3e-110">用語</span><span class="sxs-lookup"><span data-stu-id="d7b3e-110">Term</span></span>|<span data-ttu-id="d7b3e-111">定義</span><span class="sxs-lookup"><span data-stu-id="d7b3e-111">Definition</span></span>|  
+|---|---|  
+|<span data-ttu-id="d7b3e-112">`GoTo``line`</span><span class="sxs-lookup"><span data-stu-id="d7b3e-112">`GoTo` `line`</span></span>|<span data-ttu-id="d7b3e-113">要求で指定した行から開始するエラー処理ルーチンを有効に`line`引数。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-113">Enables the error-handling routine that starts at the line specified in the required `line` argument.</span></span> <span data-ttu-id="d7b3e-114">`line`引数が任意の行ラベルまたは行番号。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-114">The `line` argument is any line label or line number.</span></span> <span data-ttu-id="d7b3e-115">実行時エラーが発生した場合は、エラー ハンドラーをアクティブにする際、指定した行に分岐を制御します。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-115">If a run-time error occurs, control branches to the specified line, making the error handler active.</span></span> <span data-ttu-id="d7b3e-116">指定した行と同じ手順である必要があります、`On Error`ステートメント、またはコンパイル時エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-116">The specified line must be in the same procedure as the `On Error` statement, or a compile-time error will occur.</span></span>|  
+|<span data-ttu-id="d7b3e-117">`GoTo` 0</span><span class="sxs-lookup"><span data-stu-id="d7b3e-117">`GoTo` 0</span></span>|<span data-ttu-id="d7b3e-118">現在のプロシージャで有効になっているエラー ハンドラーが無効になり、リセット`Nothing`です。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-118">Disables enabled error handler in the current procedure and resets it to `Nothing`.</span></span>|  
+|<span data-ttu-id="d7b3e-119">`GoTo` -1</span><span class="sxs-lookup"><span data-stu-id="d7b3e-119">`GoTo` -1</span></span>|<span data-ttu-id="d7b3e-120">現在のプロシージャで有効になっている例外を無効にしをリセット`Nothing`です。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-120">Disables enabled exception in the current procedure and resets it to `Nothing`.</span></span>|  
+|`Resume Next`|<span data-ttu-id="d7b3e-121">実行時エラーが発生したときに、エラーが発生し、そのポイントから実行が継続ステートメントの直後のステートメントに制御が移動を指定します。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-121">Specifies that when a run-time error occurs, control goes to the statement immediately following the statement where the error occurred, and execution continues from that point.</span></span> <span data-ttu-id="d7b3e-122">このフォームを使用してなく`On Error GoTo`オブジェクトにアクセスするときにします。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-122">Use this form rather than `On Error GoTo` when accessing objects.</span></span>|  
   
-## 解説  
-  
-> [!NOTE]
->  ここでは構造化されていない例外処理とステートメントの `On Error` を使用するよりも構造化例外処理を使用することをお勧めします。  詳細については、「[Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)」を参照してください。  
-  
- "有効な" エラー ハンドラーとは、`On Error` ステートメントによって有効化されているものを指します。  "アクティブな" エラー ハンドラーとは、エラー処理を行っている最中の有効なハンドラーのことを指します。  
-  
- エラー ハンドラーがアクティブな間 \(エラーの発生から、`Resume`、`Exit Sub`、`Exit Function`、または `Exit Property` の各ステートメントまで\) にエラーが発生した場合は、現在のプロシージャのエラー ハンドラーはエラーを処理できません。  制御は呼び出しプロシージャに戻ります。  
-  
- 呼び出しプロシージャに有効なエラー ハンドラーがある場合は、そのハンドラーがアクティブになり、エラーを処理します。  呼び出しプロシージャのエラー ハンドラーもアクティブである場合は、有効であってもアクティブではないエラー ハンドラーが見つかるまで、元の呼び出しプロシージャに制御が順次戻されます。  有効であってもアクティブではないエラー ハンドラーが見つからない場合は、実際にエラーが起こった位置で致命的なエラーが発生します。  
-  
- エラー ハンドラーが呼び出しプロシージャに制御を戻すたびに、そのプロシージャが現在のプロシージャになります。  いずれかのプロシージャのエラー ハンドラーによってエラーが処理された後は、`Resume`ステートメントで指定された位置から現在のプロシージャの実行が再開されます。  
+## <a name="remarks"></a><span data-ttu-id="d7b3e-123">コメント</span><span class="sxs-lookup"><span data-stu-id="d7b3e-123">Remarks</span></span>  
   
 > [!NOTE]
->  エラー処理ルーチンは、`Sub` プロシージャまたは `Function` プロシージャではありません。  行ラベルまたは行番号でマークされたコードのセクションです。  
+>  <span data-ttu-id="d7b3e-124">非構造化例外処理を使用するのではなく、可能な限り、コードに構造化例外処理を使用することをお勧めおよび`On Error`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-124">We recommend that you use structured exception handling in your code whenever possible, rather than using unstructured exception handling and the `On Error` statement.</span></span> <span data-ttu-id="d7b3e-125">詳しくは、「[Try...Catch...Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-125">For more information, see [Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).</span></span>  
   
-## Number プロパティ  
- エラー処理ルーチンは、`Err` オブジェクトの `Number` プロパティの値に基づいて、エラーの原因を判断します。  このルーチンでは、他のエラーが発生する前、またはエラーを引き起こす可能性のあるプロシージャが呼び出される前に、`Err` オブジェクトの関連するプロパティ値をテストまたは保存する必要があります。  `Err` オブジェクトのプロパティ値には、直前に発生したエラーが反映されます。  `Err.Number` に関連付けられているエラー メッセージは `Err.Description` に格納されます。  
+ <span data-ttu-id="d7b3e-126">"Enabled"のエラー ハンドラーは 1 つで有効になっている、`On Error`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-126">An "enabled" error handler is one that is turned on by an `On Error` statement.</span></span> <span data-ttu-id="d7b3e-127">"アクティブな"エラー ハンドラーは、有効になっているハンドラーのエラーの処理中であります。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-127">An "active" error handler is an enabled handler that is in the process of handling an error.</span></span>  
   
-## Throw ステートメント  
- `Err.Raise` メソッドによってエラーを発生させたときは、`Exception` プロパティが <xref:System.Exception> クラスの新しいインスタンスに設定されます。  派生した例外型の例外を発生させるには、`Throw` ステートメントを使用します。  **Throw** ステートメントは、スローする例外インスタンスを指定する 1 つのパラメーターを持っています。  これらの機能を既存の例外処理サポートで使用する方法を次に示します。  
+ <span data-ttu-id="d7b3e-128">エラー ハンドラーがアクティブな間にエラーが発生したかどうか (エラーの発生間と`Resume`、 `Exit Sub`、 `Exit Function`、または`Exit Property`ステートメント)、現在のプロシージャのエラー ハンドラーは、エラーを処理できません。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-128">If an error occurs while an error handler is active (between the occurrence of the error and a `Resume`, `Exit Sub`, `Exit Function`, or `Exit Property` statement), the current procedure's error handler cannot handle the error.</span></span> <span data-ttu-id="d7b3e-129">コントロールは、呼び出し元のプロシージャを返します。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-129">Control returns to the calling procedure.</span></span>  
+  
+ <span data-ttu-id="d7b3e-130">呼び出し元のプロシージャに、有効なエラー ハンドラーがある場合、エラー処理でアクティブ化されます。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-130">If the calling procedure has an enabled error handler, it is activated to handle the error.</span></span> <span data-ttu-id="d7b3e-131">呼び出し元のプロシージャのエラー ハンドラーもアクティブである場合、有効であっても、非アクティブなエラー ハンドラーが見つかるまでに元の呼び出しプロシージャを介して返さ制御が渡されます。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-131">If the calling procedure's error handler is also active, control passes back through previous calling procedures until an enabled, but inactive, error handler is found.</span></span> <span data-ttu-id="d7b3e-132">このようなエラー ハンドラーが見つからない場合は、エラーが、実際に発生した時点で致命的です。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-132">If no such error handler is found, the error is fatal at the point at which it actually occurred.</span></span>  
+  
+ <span data-ttu-id="d7b3e-133">エラー ハンドラーは、呼び出し元のプロシージャにコントロールを通過するたびにそのプロシージャには、現在のプロシージャになります。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-133">Each time the error handler passes control back to a calling procedure, that procedure becomes the current procedure.</span></span> <span data-ttu-id="d7b3e-134">指定された位置から現在のプロシージャの実行が再開されるエラーは、すべてのプロシージャのエラー ハンドラーによって処理されたが後、`Resume`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-134">Once an error is handled by an error handler in any procedure, execution resumes in the current procedure at the point designated by the `Resume` statement.</span></span>  
+  
+> [!NOTE]
+>  <span data-ttu-id="d7b3e-135">エラー処理ルーチンは、`Sub`プロシージャまたは`Function`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-135">An error-handling routine is not a `Sub` procedure or a `Function` procedure.</span></span> <span data-ttu-id="d7b3e-136">これは、行ラベルまたは行番号でマークされたコードのセクションです。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-136">It is a section of code marked by a line label or a line number.</span></span>  
+  
+## <a name="number-property"></a><span data-ttu-id="d7b3e-137">Number プロパティ</span><span class="sxs-lookup"><span data-stu-id="d7b3e-137">Number Property</span></span>  
+ <span data-ttu-id="d7b3e-138">エラー処理ルーチンがの値を使用して、`Number`のプロパティ、`Err`エラーの原因を特定するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-138">Error-handling routines rely on the value in the `Number` property of the `Err` object to determine the cause of the error.</span></span> <span data-ttu-id="d7b3e-139">ルーチンのテストまたはに関連するプロパティ値を保存する必要があります、`Err`他のエラーが発生する可能性がまたは、エラーが呼び出される可能性がある手順の前に、事前にします。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-139">The routine should test or save relevant property values in the `Err` object before any other error can occur or before a procedure that might cause an error is called.</span></span> <span data-ttu-id="d7b3e-140">プロパティの値を`Err`オブジェクトは、最新のエラーのみを反映します。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-140">The property values in the `Err` object reflect only the most recent error.</span></span> <span data-ttu-id="d7b3e-141">エラー メッセージに関連付けられている`Err.Number`に含まれる`Err.Description`です。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-141">The error message associated with `Err.Number` is contained in `Err.Description`.</span></span>  
+  
+## <a name="throw-statement"></a><span data-ttu-id="d7b3e-142">Throw ステートメント</span><span class="sxs-lookup"><span data-stu-id="d7b3e-142">Throw Statement</span></span>  
+ <span data-ttu-id="d7b3e-143">発生したエラー、`Err.Raise`メソッドのセット、`Exception`プロパティの新しく作成されたインスタンスを<xref:System.Exception>クラスです。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-143">An error that is raised with the `Err.Raise` method sets the `Exception` property to a newly created instance of the <xref:System.Exception> class.</span></span> <span data-ttu-id="d7b3e-144">派生した例外の種類の例外の発生をサポートするために、`Throw`ステートメントは、言語でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-144">In order to support the raising of exceptions of derived exception types, a `Throw` statement is supported in the language.</span></span> <span data-ttu-id="d7b3e-145">これは、スローされる例外のインスタンスである単一パラメーターを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-145">This takes a single parameter that is the exception instance to be thrown.</span></span> <span data-ttu-id="d7b3e-146">次の例では、既存の例外処理のサポートでこれらの機能を使用する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-146">The following example shows how these features can be used with the existing exception handling support:</span></span>  
   
  [!code-vb[VbVbalrErrorHandling#17](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/on-error-statement_1.vb)]  
   
- `On Error GoTo` ステートメントは、例外クラスに関係なく、すべてのエラーをトラップするという点に注意してください。  
+ <span data-ttu-id="d7b3e-147">注意して、`On Error GoTo`ステートメントは、例外クラスに関係なく、すべてのエラーをトラップします。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-147">Notice that the `On Error GoTo` statement traps all errors, regardless of the exception class.</span></span>  
   
-## On Error Resume Next  
- `On Error Resume Next` ステートメントは、ランタイム エラーを発生させたステートメントの直後にあるステートメント、または、`On Error Resume Next` ステートメントが入っているプロシージャから最後に呼び出しを行ったステートメントの直後のステートメントを使用して、実行を継続させます。  これにより、ランタイム エラーが発生しても処理を続けることができます。  プロシージャ内の別の場所に制御を移さなくても、エラー処理ルーチンをエラーが発生する可能性がある場所に配置できます。  `On Error Resume Next` ステートメントは、別のプロシージャが呼び出されると非アクティブになるため、実行時にインライン エラー処理が必要な場合は、呼び出しルーチンごとに `On Error Resume Next` ステートメントを実行する必要があります。  
+## <a name="on-error-resume-next"></a><span data-ttu-id="d7b3e-148">On Error Resume Next</span><span class="sxs-lookup"><span data-stu-id="d7b3e-148">On Error Resume Next</span></span>  
+ <span data-ttu-id="d7b3e-149">`On Error Resume Next`実行をすぐに実行時エラーの原因となったステートメントを次のステートメントから続行するか、最新直後のステートメントを含むプロシージャの外に呼び出し、`On Error Resume Next`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-149">`On Error Resume Next` causes execution to continue with the statement immediately following the statement that caused the run-time error, or with the statement immediately following the most recent call out of the procedure containing the `On Error Resume Next` statement.</span></span> <span data-ttu-id="d7b3e-150">このステートメントは、実行時エラーに関係なく、引き続き実行できます。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-150">This statement allows execution to continue despite a run-time error.</span></span> <span data-ttu-id="d7b3e-151">プロシージャ内の別の場所に制御を転送するのではなく、エラーが発生すると、エラー処理ルーチンを配置することができます。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-151">You can place the error-handling routine where the error would occur rather than transferring control to another location within the procedure.</span></span> <span data-ttu-id="d7b3e-152">`On Error Resume Next`ステートメントになり、非アクティブな別のプロシージャが呼び出されたときに実行する必要があります、`On Error Resume Next`インライン内でエラー処理ルーチンをする場合、各ステートメントがルーチンを呼び出すとします。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-152">An `On Error Resume Next` statement becomes inactive when another procedure is called, so you should execute an `On Error Resume Next` statement in each called routine if you want inline error handling within that routine.</span></span>  
   
 > [!NOTE]
->  他のオブジェクトへのアクセス中に生成されたエラーを処理する場合は、`On Error GoTo` よりも `On Error Resume Next` 構成要素の方が適しています。  オブジェクトと対話した後に毎回 `Err` を調べれば、そのコードがどのオブジェクトにアクセスしたかが明らかになります。  どのオブジェクトが `Err.Number` にエラー コードを設定したかと、どのオブジェクトが最初にエラーを生成したかについても確認できます \(このオブジェクトは `Err.Source` で指定されます\)。  
+>  <span data-ttu-id="d7b3e-153">`On Error Resume Next`コンストラクトことをお勧めする`On Error GoTo`他のオブジェクトへのアクセス中にエラーを処理するときにします。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-153">The `On Error Resume Next` construct may be preferable to `On Error GoTo` when handling errors generated during access to other objects.</span></span> <span data-ttu-id="d7b3e-154">チェック`Err`オブジェクトと対話をコードによってアクセスされたオブジェクトがあいまいさを削除した後です。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-154">Checking `Err` after each interaction with an object removes ambiguity about which object was accessed by the code.</span></span> <span data-ttu-id="d7b3e-155">確認するオブジェクトのエラー コードを配置する`Err.Number`、どのオブジェクトが最初に、エラーを生成および (で指定されたオブジェクト`Err.Source`)。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-155">You can be sure which object placed the error code in `Err.Number`, as well as which object originally generated the error (the object specified in `Err.Source`).</span></span>  
   
-## On Error GoTo 0  
- `On Error GoTo 0` は、現在のプロシージャ内のエラー処理を無効にします。  このステートメントは、プロシージャに番号 0 の行があったとしても、その行をエラー処理コードの開始位置にするわけではありません。  `On Error GoTo 0` ステートメントを指定しなくても、エラー ハンドラーはプロシージャが終了すると自動的に無効になります。  
+## <a name="on-error-goto-0"></a><span data-ttu-id="d7b3e-156">On Error GoTo 0</span><span class="sxs-lookup"><span data-stu-id="d7b3e-156">On Error GoTo 0</span></span>  
+ <span data-ttu-id="d7b3e-157">`On Error GoTo 0`現在のプロシージャでのエラー処理を無効にします。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-157">`On Error GoTo 0` disables error handling in the current procedure.</span></span> <span data-ttu-id="d7b3e-158">0 行目の手順には、番号 0 の行が含まれている場合でも、エラー処理コードの先頭として指定しません。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-158">It doesn't specify line 0 as the start of the error-handling code, even if the procedure contains a line numbered 0.</span></span> <span data-ttu-id="d7b3e-159">なし、`On Error GoTo 0`プロシージャが終了したときに、ステートメントでは、エラー ハンドラーが自動的に無効にします。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-159">Without an `On Error GoTo 0` statement, an error handler is automatically disabled when a procedure is exited.</span></span>  
   
-## On Error GoTo \-1  
- `On Error GoTo -1` は、現在のプロシージャ内の例外を無効にします。  このステートメントは、プロシージャに番号 \-1 の行があったとしても、その行をエラー処理コードの開始位置にするわけではありません。  `On Error GoTo -1` ステートメントを指定しなくても、例外はプロシージャが終了すると自動的に無効になります。  
+## <a name="on-error-goto--1"></a><span data-ttu-id="d7b3e-160">On Error GoTo-1</span><span class="sxs-lookup"><span data-stu-id="d7b3e-160">On Error GoTo -1</span></span>  
+ <span data-ttu-id="d7b3e-161">`On Error GoTo -1`現在のプロシージャに、例外を無効にします。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-161">`On Error GoTo -1` disables the exception in the current procedure.</span></span> <span data-ttu-id="d7b3e-162">指定しません行-1、エラー処理コードの先頭としてプロシージャには、-1 を番号の行が含まれている場合でもです。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-162">It does not specify line -1 as the start of the error-handling code, even if the procedure contains a line numbered -1.</span></span> <span data-ttu-id="d7b3e-163">なし、`On Error GoTo -1`プロシージャが終了したときに、ステートメントでは、例外が自動的に無効にします。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-163">Without an `On Error GoTo -1` statement, an exception is automatically disabled when a procedure is exited.</span></span>  
   
- エラーが発生しないときにエラー処理コードが実行されないようにするには、次のコード例のように、エラー処理ルーチンの直前に `Exit Sub`、`Exit Function`、または `Exit Property` ステートメントを指定します。  
+ <span data-ttu-id="d7b3e-164">エラー処理コードのエラーが発生していないときに実行を回避するのには、配置、 `Exit Sub`、 `Exit Function`、または`Exit Property`直前に次のフラグメントのように、エラー処理ルーチン ステートメント。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-164">To prevent error-handling code from running when no error has occurred, place an `Exit Sub`, `Exit Function`, or `Exit Property` statement immediately before the error-handling routine, as in the following fragment:</span></span>  
   
  [!code-vb[VbVbalrErrorHandling#18](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/on-error-statement_2.vb)]  
   
- この例では、エラー処理コードが `Exit Sub` ステートメントに続く形で `End Sub` ステートメントよりも前に置かれ、プロシージャのフローからは分離されています。  エラー処理コードは、プロシージャ内の任意の場所に指定できます。  
+ <span data-ttu-id="d7b3e-165">ここでは、エラー処理コードに依存、`Exit Sub`ステートメント続き、`End Sub`ステートメント、プロシージャのフローから分離します。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-165">Here, the error-handling code follows the `Exit Sub` statement and precedes the `End Sub` statement to separate it from the procedure flow.</span></span> <span data-ttu-id="d7b3e-166">プロシージャで任意の場所エラー処理コードを配置することができます。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-166">You can place error-handling code anywhere in a procedure.</span></span>  
   
-## トラップされないエラー  
- オブジェクトを実行可能ファイルとして実行している場合、オブジェクト内のトラップされないエラーはコントローラー アプリケーションに戻されます。  開発環境では、トラップされないエラーがコントローラー アプリケーションに戻されるのは、適切なオプションが設定されている場合だけです。  デバッグ時に設定するオプションの説明、そのオプションの設定方法、およびホストがクラスを作成できるかどうかについては、ホスト アプリケーションのドキュメントを参照してください。  
+## <a name="untrapped-errors"></a><span data-ttu-id="d7b3e-167">エラーをトラップしません。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-167">Untrapped Errors</span></span>  
+ <span data-ttu-id="d7b3e-168">オブジェクトでトラップされないエラーは、オブジェクトが、実行可能ファイルとして実行されているときに、制御のアプリケーションに返されます。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-168">Untrapped errors in objects are returned to the controlling application when the object is running as an executable file.</span></span> <span data-ttu-id="d7b3e-169">開発環境内でエラーをトラップしないが、適切なオプションが設定されている場合にのみ、制御側のアプリケーションに返されます。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-169">Within the development environment, untrapped errors are returned to the controlling application only if the proper options are set.</span></span> <span data-ttu-id="d7b3e-170">詳細についてはデバッグ中に設定、これらを設定する方法、およびホストがクラスを作成するかどうかをオプションにする、ホスト アプリケーションのマニュアルを参照してください。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-170">See your host application's documentation for a description of which options should be set during debugging, how to set them, and whether the host can create classes.</span></span>  
   
- 他のオブジェクトにアクセスするオブジェクトを作成する場合は、アクセス先のオブジェクトが戻す未処理のエラーを処理する必要があります。  このオブジェクト内でエラーを処理できない場合は、`Err.Number` 内のエラー コードをこのオブジェクトの独自のエラーのいずれかに割り当てて、もう 1 レベル上の呼び出し元に渡します。  独自のエラーを指定するには、独自のエラー コードを `VbObjectError` 定数に追加する必要があります。  たとえば、独自のエラー コードが 1052 の場合は、次のように割り当てます。  
+ <span data-ttu-id="d7b3e-171">その他のオブジェクトにアクセスするオブジェクトを作成する場合戻す未処理のエラーを処理しようとする必要があります。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-171">If you create an object that accesses other objects, you should try to handle any unhandled errors they pass back.</span></span> <span data-ttu-id="d7b3e-172">場合はエラー コードをマップすることはできません、`Err.Number`独自のエラーとし、パスのいずれかには、オブジェクトの呼び出し元に戻します。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-172">If you cannot, map the error codes in `Err.Number` to one of your own errors and then pass them back to the caller of your object.</span></span> <span data-ttu-id="d7b3e-173">エラー コードを追加して、エラーを指定する必要があります、`VbObjectError`定数。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-173">You should specify your error by adding your error code to the `VbObjectError` constant.</span></span> <span data-ttu-id="d7b3e-174">たとえば、独自のエラー コードが 1052 の場合は、それに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-174">For example, if your error code is 1052, assign it as follows:</span></span>  
   
  [!code-vb[VbVbalrErrorHandling#19](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/on-error-statement_3.vb)]  
   
 > [!CAUTION]
->  Windows ダイナミック リンク ライブラリ \(DLL: Dynamic Link Library\) の呼び出し中にシステム エラーが起こった場合は例外が発生しないため、Visual Basic エラー トラッピングではトラッピングされません。  DLL 関数を呼び出すときは、API の仕様に従ってそれぞれの戻り値を調べ、処理が正しく実行されたかどうかを確認する必要があります。エラーの場合には、`Err` オブジェクトの `LastDLLError` プロパティの値を調べます。  
+>  <span data-ttu-id="d7b3e-175">Windows ダイナミック リンク ライブラリ (Dll) への呼び出し中にシステム エラーは、例外を発生させません、Visual Basic エラー トラップをトラップすることはできません。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-175">System errors during calls to Windows dynamic-link libraries (DLLs) do not raise exceptions and cannot be trapped with Visual Basic error trapping.</span></span> <span data-ttu-id="d7b3e-176">DLL 関数を呼び出すときにの成功または失敗 (、API 仕様に従って)、それぞれの戻り値をチェックする必要があります、障害発生時値を確認し、`Err`オブジェクトの`LastDLLError`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-176">When calling DLL functions, you should check each return value for success or failure (according to the API specifications), and in the event of a failure, check the value in the `Err` object's `LastDLLError` property.</span></span>  
   
-## 使用例  
- この例では、`On Error GoTo` ステートメントを使用して、プロシージャ内のエラー処理ルーチンの場所を指定します。  ゼロによる除算が行われると、エラー番号 6 が生成されます。  このエラーがエラー処理ルーチンで処理された後、エラーが発生したステートメントに制御が戻ります。  `On Error GoTo 0` ステートメントはエラー トラッピングを無効にします。  その後で、`On Error Resume Next` ステートメントを使用してエラー トラッピングを遅延させ、次のステートメントによって生成されたエラーのコンテキストが確認できるようにします。  `Err.Clear` は、エラーを処理した後に `Err` オブジェクトのプロパティをクリアするために使用されます。  
+## <a name="example"></a><span data-ttu-id="d7b3e-177">例</span><span class="sxs-lookup"><span data-stu-id="d7b3e-177">Example</span></span>  
+ <span data-ttu-id="d7b3e-178">この例を使用して、`On Error GoTo`ステートメント、プロシージャ内のエラー処理ルーチンの場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-178">This example first uses the `On Error GoTo` statement to specify the location of an error-handling routine within a procedure.</span></span> <span data-ttu-id="d7b3e-179">例では、0 で除算しようとするはエラー番号 6 を生成します。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-179">In the example, an attempt to divide by zero generates error number 6.</span></span> <span data-ttu-id="d7b3e-180">エラー処理ルーチンで、エラーが処理され、エラーが発生したステートメントに制御が返されます。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-180">The error is handled in the error-handling routine, and control is then returned to the statement that caused the error.</span></span> <span data-ttu-id="d7b3e-181">`On Error GoTo 0`ステートメントがエラー トラップをオフにします。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-181">The `On Error GoTo 0` statement turns off error trapping.</span></span> <span data-ttu-id="d7b3e-182">続いて、`On Error Resume Next`エラー トラップできるように、次のステートメントによって生成されたエラーのコンテキストを特定の認識することができますを延期するステートメントを使用します。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-182">Then the `On Error Resume Next` statement is used to defer error trapping so that the context for the error generated by the next statement can be known for certain.</span></span> <span data-ttu-id="d7b3e-183">なお`Err.Clear`をクリアするために使用、`Err`エラーが処理された後、オブジェクトのプロパティです。</span><span class="sxs-lookup"><span data-stu-id="d7b3e-183">Note that `Err.Clear` is used to clear the `Err` object's properties after the error is handled.</span></span>  
   
  [!code-vb[VbVbalrErrorHandling#20](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/on-error-statement_4.vb)]  
   
-## 必要条件  
- **名前空間**: [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
+## <a name="requirements"></a><span data-ttu-id="d7b3e-184">要件</span><span class="sxs-lookup"><span data-stu-id="d7b3e-184">Requirements</span></span>  
+ <span data-ttu-id="d7b3e-185">**Namespace:** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)</span><span class="sxs-lookup"><span data-stu-id="d7b3e-185">**Namespace:** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)</span></span>  
   
- **アセンブリ**: Visual Basic ランタイム ライブラリ \(Microsoft.VisualBasic.dll 内\)  
+ <span data-ttu-id="d7b3e-186">**アセンブリ:** Visual Basic Runtime Library (Microsoft.VisualBasic.dll)</span><span class="sxs-lookup"><span data-stu-id="d7b3e-186">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>  
   
-## 参照  
- <xref:Microsoft.VisualBasic.Information.Err%2A>   
- <xref:Microsoft.VisualBasic.ErrObject.Number%2A>   
- <xref:Microsoft.VisualBasic.ErrObject.Description%2A>   
- <xref:Microsoft.VisualBasic.ErrObject.LastDllError%2A>   
- [End Statement](../../../visual-basic/language-reference/statements/end-statement.md)   
- [Exit Statement](../../../visual-basic/language-reference/statements/exit-statement.md)   
- [Resume Statement](../../../visual-basic/language-reference/statements/resume-statement.md)   
- [Error Messages](../../../visual-basic/language-reference/error-messages/index.md)   
- [Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+## <a name="see-also"></a><span data-ttu-id="d7b3e-187">関連項目</span><span class="sxs-lookup"><span data-stu-id="d7b3e-187">See Also</span></span>  
+ <xref:Microsoft.VisualBasic.Information.Err%2A>  
+ <xref:Microsoft.VisualBasic.ErrObject.Number%2A>  
+ <xref:Microsoft.VisualBasic.ErrObject.Description%2A>  
+ <xref:Microsoft.VisualBasic.ErrObject.LastDllError%2A>  
+ [<span data-ttu-id="d7b3e-188">End ステートメント</span><span class="sxs-lookup"><span data-stu-id="d7b3e-188">End Statement</span></span>](../../../visual-basic/language-reference/statements/end-statement.md)  
+ [<span data-ttu-id="d7b3e-189">Exit ステートメント</span><span class="sxs-lookup"><span data-stu-id="d7b3e-189">Exit Statement</span></span>](../../../visual-basic/language-reference/statements/exit-statement.md)  
+ [<span data-ttu-id="d7b3e-190">Resume ステートメント</span><span class="sxs-lookup"><span data-stu-id="d7b3e-190">Resume Statement</span></span>](../../../visual-basic/language-reference/statements/resume-statement.md)  
+ [<span data-ttu-id="d7b3e-191">エラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="d7b3e-191">Error Messages</span></span>](../../../visual-basic/language-reference/error-messages/index.md)  
+ [<span data-ttu-id="d7b3e-192">Try...Catch...Finally ステートメント</span><span class="sxs-lookup"><span data-stu-id="d7b3e-192">Try...Catch...Finally Statement</span></span>](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)

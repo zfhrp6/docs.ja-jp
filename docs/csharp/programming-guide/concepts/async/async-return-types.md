@@ -1,102 +1,92 @@
 ---
 title: "非同期の戻り値の型 (C#)"
 ms.custom: 
-ms.date: 2075-05-29
+ms.date: 05/29/2017
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: ddb2539c-c898-48c1-ad92-245e4a996df8
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 7aee1ebdf24a2ac564268e1f36d3aac707dea463
+ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9e7f31d4160d44668f4ddea5e1ca0eaa3037c5a5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/18/2017
 ---
-# <a name="async-return-types-c"></a>非同期の戻り値の型 (C#)
-非同期メソッドには、次の戻り値の型があります。
+# <a name="async-return-types-c"></a><span data-ttu-id="f1ce9-102">非同期の戻り値の型 (C#)</span><span class="sxs-lookup"><span data-stu-id="f1ce9-102">Async Return Types (C#)</span></span>
+<span data-ttu-id="f1ce9-103">非同期メソッドには、次の戻り値の型があります。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-103">Async methods can have the following return types:</span></span>
 
-- <xref:System.Threading.Tasks.Task%601>: 値を返す非同期メソッドの場合。 
+- <span data-ttu-id="f1ce9-104"><xref:System.Threading.Tasks.Task%601>: 値を返す非同期メソッドの場合。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-104"><xref:System.Threading.Tasks.Task%601>, for an async method that returns a value.</span></span> 
  
--  <xref:System.Threading.Tasks.Task>: 操作を実行し、値を返さない非同期メソッドの場合。
+-  <span data-ttu-id="f1ce9-105"><xref:System.Threading.Tasks.Task>: 操作を実行し、値を返さない非同期メソッドの場合。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-105"><xref:System.Threading.Tasks.Task>, for an async method that performs an operation but returns no value.</span></span>
 
-- `void`: イベント ハンドラーの場合。 
+- <span data-ttu-id="f1ce9-106">`void`: イベント ハンドラーの場合。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-106">`void`, for an event handler.</span></span> 
 
-- C# 7 以降、アクセス可能な `GetAwaiter` を持つ任意の型です。 <xref:System.Runtime.CompilerServices.ICriticalNotifyCompletion?displayProperty=fullName> メソッドによって返されるオブジェクトは、`GetAwaiter` インターフェイスを実装する必要があります。
+- <span data-ttu-id="f1ce9-107">C# 7 以降、アクセス可能な `GetAwaiter` を持つ任意の型です。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-107">Starting with C# 7, any type that has an accessible `GetAwaiter` method.</span></span> <span data-ttu-id="f1ce9-108"><xref:System.Runtime.CompilerServices.ICriticalNotifyCompletion?displayProperty=nameWithType> メソッドによって返されるオブジェクトは、`GetAwaiter` インターフェイスを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-108">The object returned by the `GetAwaiter` method must implement the <xref:System.Runtime.CompilerServices.ICriticalNotifyCompletion?displayProperty=nameWithType> interface.</span></span>
   
-非同期メソッドの詳細については、「[Async および Await を使用した非同期プログラミング (C#)](../../../../csharp/programming-guide/concepts/async/index.md)」を参照してください。  
+<span data-ttu-id="f1ce9-109">非同期メソッドの詳細については、「[Async および Await を使用した非同期プログラミング (C#)](../../../../csharp/programming-guide/concepts/async/index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-109">For more information about async methods, see [Asynchronous Programming with async and await (C#)](../../../../csharp/programming-guide/concepts/async/index.md).</span></span>  
   
-それぞれの戻り値の型は、次のセクションの 1 つで確認でき、トピックの最後で 3 種類のすべてを使用する例を参照できます。  
+<span data-ttu-id="f1ce9-110">それぞれの戻り値の型は、次のセクションの 1 つで確認でき、トピックの最後で 3 種類のすべてを使用する例を参照できます。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-110">Each return type is examined in one of the following sections, and you can find a full example that uses all three types at the end of the topic.</span></span>  
   
-##  <a name="BKMK_TaskTReturnType"></a>Task(T) 型  
-`TResult` 型のオペランドを持つ [return](../../../../csharp/language-reference/keywords/return.md) (C#) ステートメントを含む非同期メソッドには、<xref:System.Threading.Tasks.Task%601> 戻り値の型が使用されます。  
+##  <span data-ttu-id="f1ce9-111"><a name="BKMK_TaskTReturnType"></a>Task(T) 型</span><span class="sxs-lookup"><span data-stu-id="f1ce9-111"><a name="BKMK_TaskTReturnType"></a> Task(T) Return Type</span></span>  
+<span data-ttu-id="f1ce9-112">`TResult` 型のオペランドを持つ [return](../../../../csharp/language-reference/keywords/return.md) (C#) ステートメントを含む非同期メソッドには、<xref:System.Threading.Tasks.Task%601> 戻り値の型が使用されます。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-112">The <xref:System.Threading.Tasks.Task%601> return type is used for an async method that contains a [return](../../../../csharp/language-reference/keywords/return.md) (C#) statement in which the operand has type `TResult`.</span></span>  
   
-次の例では、`GetLeisureHours` 非同期メソッドには整数を返す `return` ステートメントが含まれます。 そのため、メソッド宣言では、戻り値の型を `Task<int>` と指定する必要があります。  <xref:System.Threading.Tasks.Task.FromResult%2A> 非同期メソッドは、文字列を返す操作を表すプレースホルダーです。
+<span data-ttu-id="f1ce9-113">次の例では、`GetLeisureHours` 非同期メソッドには整数を返す `return` ステートメントが含まれます。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-113">In the following example, the `GetLeisureHours` async method contains a `return` statement that returns an integer.</span></span> <span data-ttu-id="f1ce9-114">そのため、メソッド宣言では、戻り値の型を `Task<int>` と指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-114">Therefore, the method declaration must specify a return type of `Task<int>`.</span></span>  <span data-ttu-id="f1ce9-115"><xref:System.Threading.Tasks.Task.FromResult%2A> 非同期メソッドは、文字列を返す操作を表すプレースホルダーです。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-115">The <xref:System.Threading.Tasks.Task.FromResult%2A> async method is a placeholder for an operation that returns a string.</span></span>
   
-[!code-cs[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns1.cs)]
+[!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns1.cs)]
 
-`GetLeisureHours` が `ShowTodaysInfo` メソッドの await 式の中から呼び出されると、await 式は `GetLeisureHours` メソッドから返されるタスクに格納されている整数値 (`leisureHours` の値) を取得します。 await 式の詳細については、「[await](../../../../csharp/language-reference/keywords/await.md)」を参照してください。  
+<span data-ttu-id="f1ce9-116">`GetLeisureHours` が `ShowTodaysInfo` メソッドの await 式の中から呼び出されると、await 式は `GetLeisureHours` メソッドから返されるタスクに格納されている整数値 (`leisureHours` の値) を取得します。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-116">When `GetLeisureHours` is called from within an await expression in the `ShowTodaysInfo` method, the await expression retrieves the integer value (the value of `leisureHours`) that's stored in the task returned by the `GetLeisureHours` method.</span></span> <span data-ttu-id="f1ce9-117">await 式の詳細については、「[await](../../../../csharp/language-reference/keywords/await.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-117">For more information about await expressions, see [await](../../../../csharp/language-reference/keywords/await.md).</span></span>  
   
-次のコードに示すように、`GetLeisureHours` の呼び出しと、`await` の適用を分離すると、この仕組みをよく理解できます。 メソッドの宣言から予想されるように、直ちに待機しない `TaskOfT_MethodAsync` メソッドの呼び出しは、`Task<int>` を返します。 タスクは、この例の `integerTask` 変数に割り当てられます。 `integerTask` は <xref:System.Threading.Tasks.Task%601> であるため、<xref:System.Threading.Tasks.Task%601.Result> 型の `TResult` プロパティが含まれています。 この場合、TResult が整数型を表します。 `await` が `integerTask` に適用されると、`integerTask` の <xref:System.Threading.Tasks.Task%601.Result%2A> プロパティの内容が await 式の評価となります。 この値は `result2` 変数に割り当てられます。  
+<span data-ttu-id="f1ce9-118">次のコードに示すように、`GetLeisureHours` の呼び出しと、`await` の適用を分離すると、この仕組みをよく理解できます。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-118">You can better understand how this happens by separating the call to `GetLeisureHours` from the application of `await`, as the following code shows.</span></span> <span data-ttu-id="f1ce9-119">メソッドの宣言から予想されるように、直ちに待機しない `TaskOfT_MethodAsync` メソッドの呼び出しは、`Task<int>` を返します。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-119">A call to method `TaskOfT_MethodAsync` that isn't immediately awaited returns a `Task<int>`, as you would expect from the declaration of the method.</span></span> <span data-ttu-id="f1ce9-120">タスクは、この例の `integerTask` 変数に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-120">The task is assigned to the `integerTask` variable in the example.</span></span> <span data-ttu-id="f1ce9-121">`integerTask` は <xref:System.Threading.Tasks.Task%601> であるため、<xref:System.Threading.Tasks.Task%601.Result> 型の `TResult` プロパティが含まれています。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-121">Because `integerTask` is a <xref:System.Threading.Tasks.Task%601>, it contains a <xref:System.Threading.Tasks.Task%601.Result> property of type `TResult`.</span></span> <span data-ttu-id="f1ce9-122">この場合、TResult が整数型を表します。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-122">In this case, TResult represents an integer type.</span></span> <span data-ttu-id="f1ce9-123">`await` が `integerTask` に適用されると、`integerTask` の <xref:System.Threading.Tasks.Task%601.Result%2A> プロパティの内容が await 式の評価となります。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-123">When `await` is applied to `integerTask`, the await expression evaluates to the contents of the <xref:System.Threading.Tasks.Task%601.Result%2A> property of `integerTask`.</span></span> <span data-ttu-id="f1ce9-124">この値は `result2` 変数に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-124">The value is assigned to the `result2` variable.</span></span>  
   
 > [!IMPORTANT]
->  <xref:System.Threading.Tasks.Task%601.Result%2A> プロパティは Blocking プロパティです。 タスクが終了する前にアクセスしようとすると、現在アクティブなスレッドは、タスクが完了して値が使用可能になるまで、ブロックされます。 多くの場合、プロパティに直接アクセスする代わりに、`await` を使用して値にアクセスする必要があります。 <br/> 前の例では、アプリケーションが終了する前に `ShowTodaysInfo` メソッドが実行を終了できるように、<xref:System.Threading.Tasks.Task%601.Result%2A> プロパティの値を取得してメイン スレッドをブロックしました。  
+>  <span data-ttu-id="f1ce9-125"><xref:System.Threading.Tasks.Task%601.Result%2A> プロパティは Blocking プロパティです。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-125">The <xref:System.Threading.Tasks.Task%601.Result%2A> property is a blocking property.</span></span> <span data-ttu-id="f1ce9-126">タスクが終了する前にアクセスしようとすると、現在アクティブなスレッドは、タスクが完了して値が使用可能になるまで、ブロックされます。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-126">If you try to access it before its task is finished, the thread that's currently active is blocked until the task completes and the value is available.</span></span> <span data-ttu-id="f1ce9-127">多くの場合、プロパティに直接アクセスする代わりに、`await` を使用して値にアクセスする必要があります。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-127">In most cases, you should access the value by using `await` instead of accessing the property directly.</span></span> <br/> <span data-ttu-id="f1ce9-128">前の例では、アプリケーションが終了する前に `ShowTodaysInfo` メソッドが実行を終了できるように、<xref:System.Threading.Tasks.Task%601.Result%2A> プロパティの値を取得してメイン スレッドをブロックしました。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-128">The previous example retrieved the value of the <xref:System.Threading.Tasks.Task%601.Result%2A> property to block the main thread so that the `ShowTodaysInfo` method could finish execution before the application ended.</span></span>  
 
-[!code-cs[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns1a.cs#1)]
+[!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns1a.cs#1)]
   
-##  <a name="BKMK_TaskReturnType"></a>Task 型  
-`return` ステートメントを含まない非同期メソッド、またはオペランドを返さない `return` ステートメントを含む非同期メソッドは、通常は <xref:System.Threading.Tasks.Task> の戻り値の型を指定します。 こうしたメソッドは、同期的に実行するように作成されている場合に `void` を返します。 非同期メソッドに戻り値の型 <xref:System.Threading.Tasks.Task> を使用した場合、呼び出し元のメソッドは `await` 演算子を使って、呼び出された async のメソッドが終了するまで、呼び出し元の完了を中断します。  
+##  <span data-ttu-id="f1ce9-129"><a name="BKMK_TaskReturnType"></a>Task 型</span><span class="sxs-lookup"><span data-stu-id="f1ce9-129"><a name="BKMK_TaskReturnType"></a> Task Return Type</span></span>  
+<span data-ttu-id="f1ce9-130">`return` ステートメントを含まない非同期メソッド、またはオペランドを返さない `return` ステートメントを含む非同期メソッドは、通常は <xref:System.Threading.Tasks.Task> の戻り値の型を指定します。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-130">Async methods that don't contain a `return` statement or that contain a `return` statement that doesn't return an operand usually have a return type of <xref:System.Threading.Tasks.Task>.</span></span> <span data-ttu-id="f1ce9-131">こうしたメソッドは、同期的に実行するように作成されている場合に `void` を返します。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-131">Such methods return `void` if they run synchronously.</span></span> <span data-ttu-id="f1ce9-132">非同期メソッドに戻り値の型 <xref:System.Threading.Tasks.Task> を使用した場合、呼び出し元のメソッドは `await` 演算子を使って、呼び出された async のメソッドが終了するまで、呼び出し元の完了を中断します。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-132">If you use a <xref:System.Threading.Tasks.Task> return type for an async method, a calling method can use an `await` operator to suspend the caller's completion until the called async method has finished.</span></span>  
   
-次の例では、`WaitAndApologize` 非同期メソッドには `return` ステートメントが含まれていないため、メソッドは <xref:System.Threading.Tasks.Task> オブジェクトを返します。 これにより、`WaitAndApologize` を待機できます。 <xref:System.Threading.Tasks.Task> 型には戻り値がないため、`Result` プロパティを含みません。  
+<span data-ttu-id="f1ce9-133">次の例では、`WaitAndApologize` 非同期メソッドには `return` ステートメントが含まれていないため、メソッドは <xref:System.Threading.Tasks.Task> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-133">In the following example, the `WaitAndApologize` async method doesn't contain a `return` statement, so the method returns a <xref:System.Threading.Tasks.Task> object.</span></span> <span data-ttu-id="f1ce9-134">これにより、`WaitAndApologize` を待機できます。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-134">This enables `WaitAndApologize` to be awaited.</span></span> <span data-ttu-id="f1ce9-135"><xref:System.Threading.Tasks.Task> 型には戻り値がないため、`Result` プロパティを含みません。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-135">Note that the <xref:System.Threading.Tasks.Task> type doesn't include a `Result` property because it has no return value.</span></span>  
 
-[!code-cs[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns2.cs)]  
+[!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns2.cs)]  
   
-`WaitAndApologize` を待機するには、void を返す同期メソッドを呼び出す場合と同様に、await 式でなく、await ステートメントを使用します。 この場合、await 演算子の適用によって値は生成されません。  
+<span data-ttu-id="f1ce9-136">`WaitAndApologize` を待機するには、void を返す同期メソッドを呼び出す場合と同様に、await 式でなく、await ステートメントを使用します。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-136">`WaitAndApologize` is awaited by using an await statement instead of an await expression, similar to the calling statement for a synchronous void-returning method.</span></span> <span data-ttu-id="f1ce9-137">この場合、await 演算子の適用によって値は生成されません。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-137">The application of an await operator in this case doesn't produce a value.</span></span>  
   
-前の <xref:System.Threading.Tasks.Task%601> の例のように、次のコードに示すとおり、`Task_MethodAsync` の呼び出しを await 演算子の適用から分離することができます。 ただし `Task` は `Result` プロパティを持たないこと、また await 演算子が `Task` に適用されるときに値は生成されないことに注意します。  
+<span data-ttu-id="f1ce9-138">前の <xref:System.Threading.Tasks.Task%601> の例のように、次のコードに示すとおり、`Task_MethodAsync` の呼び出しを await 演算子の適用から分離することができます。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-138">As in the previous <xref:System.Threading.Tasks.Task%601> example, you can separate the call to `Task_MethodAsync` from the application of an await operator, as the following code shows.</span></span> <span data-ttu-id="f1ce9-139">ただし `Task` は `Result` プロパティを持たないこと、また await 演算子が `Task` に適用されるときに値は生成されないことに注意します。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-139">However, remember that a `Task` doesn't have a `Result` property, and that no value is produced when an await operator is applied to a `Task`.</span></span>  
   
-次のコードは、`WaitAndApologize` メソッドの呼び出しを、そのメソッドが返すタスクの待機から分離します。  
+<span data-ttu-id="f1ce9-140">次のコードは、`WaitAndApologize` メソッドの呼び出しを、そのメソッドが返すタスクの待機から分離します。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-140">The following code separates calling the `WaitAndApologize` method from awaiting the task that the method returns.</span></span>  
  
-[!code-cs[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns2a.cs#1)]  
+[!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns2a.cs#1)]  
  
-##  <a name="BKMK_VoidReturnType"></a> Void 戻り値の型  
-`void` 戻り値の型は、`void` 戻り値の型が必要な非同期イベント ハンドラーで使用します。 値を返さないイベント ハンドラー以外のメソッドについては、<xref:System.Threading.Tasks.Task> を返す必要があります。これは、`void` を返す非同期メソッドを待機できないためです。 このようなメソッドの呼び出し元は、呼び出した非同期メソッドが完了するのを待たずに、完了まで継続できる必要があります。また呼び出し元は、非同期メソッドが生成する値または例外とは無関係である必要があります。  
+##  <span data-ttu-id="f1ce9-141"><a name="BKMK_VoidReturnType"></a> Void 戻り値の型</span><span class="sxs-lookup"><span data-stu-id="f1ce9-141"><a name="BKMK_VoidReturnType"></a> Void return type</span></span>  
+<span data-ttu-id="f1ce9-142">`void` 戻り値の型は、`void` 戻り値の型が必要な非同期イベント ハンドラーで使用します。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-142">You use the `void` return type in asynchronous event handlers, which require a `void` return type.</span></span> <span data-ttu-id="f1ce9-143">値を返さないイベント ハンドラー以外のメソッドについては、<xref:System.Threading.Tasks.Task> を返す必要があります。これは、`void` を返す非同期メソッドを待機できないためです。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-143">For methods other than event handlers don't return a value, you should return a <xref:System.Threading.Tasks.Task> instead, because an async method that returns `void` can't be awaited.</span></span> <span data-ttu-id="f1ce9-144">このようなメソッドの呼び出し元は、呼び出した非同期メソッドが完了するのを待たずに、完了まで継続できる必要があります。また呼び出し元は、非同期メソッドが生成する値または例外とは無関係である必要があります。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-144">Any caller of such a method must be able to continue to completion without waiting for the called async method to finish, and the caller must be independent of any values or exceptions that the async method generates.</span></span>  
   
-void を返す非同期メソッドの呼び出し元は、メソッドがスローする例外をキャッチすることはできません。そのようなハンドルされない例外によって、アプリケーションが失敗する可能性が高くなります。 <xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601> を返す非同期メソッドで例外が発生すると、例外は返されたタスクに格納され、タスクが待機するときに再スローされます。 したがって、例外を生成する場合がある非同期メソッドは <xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601> の戻り値の型を持つこと、またメソッドの呼び出しが待機することを確認します。  
+<span data-ttu-id="f1ce9-145">void を返す非同期メソッドの呼び出し元は、メソッドがスローする例外をキャッチすることはできません。そのようなハンドルされない例外によって、アプリケーションが失敗する可能性が高くなります。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-145">The caller of a void-returning async method can't catch exceptions that are thrown from the method, and such unhandled exceptions are likely to cause your application to fail.</span></span> <span data-ttu-id="f1ce9-146"><xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601> を返す非同期メソッドで例外が発生すると、例外は返されたタスクに格納され、タスクが待機するときに再スローされます。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-146">If an exception occurs in an async method that returns a <xref:System.Threading.Tasks.Task> or <xref:System.Threading.Tasks.Task%601>, the exception is stored in the returned task and is rethrown when the task is awaited.</span></span> <span data-ttu-id="f1ce9-147">したがって、例外を生成する場合がある非同期メソッドは <xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601> の戻り値の型を持つこと、またメソッドの呼び出しが待機することを確認します。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-147">Therefore, make sure that any async method that can produce an exception has a return type of <xref:System.Threading.Tasks.Task> or <xref:System.Threading.Tasks.Task%601> and that calls to the method are awaited.</span></span>  
   
-非同期のメソッドで例外をキャッチする方法の詳細については、「[try-catch](../../../../csharp/language-reference/keywords/try-catch.md)」を参照してください。  
+<span data-ttu-id="f1ce9-148">非同期のメソッドで例外をキャッチする方法の詳細については、「[try-catch](../../../../csharp/language-reference/keywords/try-catch.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-148">For more information about how to catch exceptions in async methods, see [try-catch](../../../../csharp/language-reference/keywords/try-catch.md) .</span></span>  
   
-次の例では、非同期のイベント ハンドラーを定義します。  
+<span data-ttu-id="f1ce9-149">次の例では、非同期のイベント ハンドラーを定義します。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-149">The following eample defines an async event handler.</span></span>  
  
-[!code-cs[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns3.cs)]  
+[!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns3.cs)]  
  
-## <a name="generalized-async-return-types-and-valuetaskt"></a>一般化された async の戻り値の型と ValueTask<T>
+## <a name="generalized-async-return-types-and-valuetaskt"></a><span data-ttu-id="f1ce9-150">一般化された async の戻り値の型と ValueTask<T></span><span class="sxs-lookup"><span data-stu-id="f1ce9-150">Generalized async return types and ValueTask<T></span></span>
 
-C# 7 以降、非同期メソッドで、アクセス可能な `GetAwaiter` メソッドを持つ任意の型を返すことができます。
+<span data-ttu-id="f1ce9-151">C# 7 以降、非同期メソッドで、アクセス可能な `GetAwaiter` メソッドを持つ任意の型を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-151">Starting with C# 7, an async method can return any type that has an accessible `GetAwaiter` method.</span></span>
  
-<xref:System.Threading.Tasks.Task> および <xref:System.Threading.Tasks.Task%601> は参照型であるため、特に厳密なループ処理で割り当てが発生すると、パフォーマンスが重要なパスのメモリ割り当てが、パフォーマンスに悪影響を及ぼすことがあります。 一般化された戻り値の型のサポートにより、参照型ではなく、軽量な値の型を返すことができ、追加のメモリ割り当てを回避することが可能です。 
+<span data-ttu-id="f1ce9-152"><xref:System.Threading.Tasks.Task> および <xref:System.Threading.Tasks.Task%601> は参照型であるため、特に厳密なループ処理で割り当てが発生すると、パフォーマンスが重要なパスのメモリ割り当てが、パフォーマンスに悪影響を及ぼすことがあります。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-152">Because <xref:System.Threading.Tasks.Task> and <xref:System.Threading.Tasks.Task%601> are reference types, memory allocation in performance-critical paths, particularly when allocations occur in tight loops, can adversely affect performance.</span></span> <span data-ttu-id="f1ce9-153">一般化された戻り値の型のサポートにより、参照型ではなく、軽量な値の型を返すことができ、追加のメモリ割り当てを回避することが可能です。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-153">Support for generalized return types means that you can return a lightweight value type instead of a reference type to avoid additional memory allocations.</span></span> 
 
-.NET には、一般化されたタスク戻り値の軽量な実装として、<xref:System.Threading.Tasks.ValueTask%601?displayProperty=fullName> 構造が用意されています。 <xref:System.Threading.Tasks.ValueTask%601?displayProperty=fullName> 型を使用するには、`System.Threading.Tasks.Extensions` NuGet パッケージをプロジェクトに追加する必要があります。 次の例では、<xref:System.Threading.Tasks.ValueTask%601> 構造を使用して、2 つのさいころを転がしたときの値を取得します。 
+<span data-ttu-id="f1ce9-154">.NET には、一般化されたタスク戻り値の軽量な実装として、<xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> 構造が用意されています。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-154">.NET provides the <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> structure as a light-weight implementation of a generalized task-returning value.</span></span> <span data-ttu-id="f1ce9-155"><xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> 型を使用するには、`System.Threading.Tasks.Extensions` NuGet パッケージをプロジェクトに追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-155">To use the <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> type, you must add the `System.Threading.Tasks.Extensions` NuGet package to your project.</span></span> <span data-ttu-id="f1ce9-156">次の例では、<xref:System.Threading.Tasks.ValueTask%601> 構造を使用して、2 つのさいころを転がしたときの値を取得します。</span><span class="sxs-lookup"><span data-stu-id="f1ce9-156">The following example uses the <xref:System.Threading.Tasks.ValueTask%601> structure to retrieve the value of two dice rolls.</span></span> 
   
-[!code-cs[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-valuetask.cs)]
+[!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-valuetask.cs)]
 
-## <a name="see-also"></a>関連項目  
-<xref:System.Threading.Tasks.Task.FromResult%2A>   
-[チュートリアル: Async と Await を使用した Web へのアクセス (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)   
-[非同期プログラムにおける制御フロー (C#)](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md)   
-[async](../../../../csharp/language-reference/keywords/async.md)   
-[await](../../../../csharp/language-reference/keywords/await.md)
-
+## <a name="see-also"></a><span data-ttu-id="f1ce9-157">関連項目</span><span class="sxs-lookup"><span data-stu-id="f1ce9-157">See also</span></span>  
+<span data-ttu-id="f1ce9-158"><xref:System.Threading.Tasks.Task.FromResult%2A></span><span class="sxs-lookup"><span data-stu-id="f1ce9-158"><xref:System.Threading.Tasks.Task.FromResult%2A></span></span>   
+<span data-ttu-id="f1ce9-159">[チュートリアル: Async と Await を使用した Web へのアクセス (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md) </span><span class="sxs-lookup"><span data-stu-id="f1ce9-159">[Walkthrough: Accessing the Web by Using async and await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md) </span></span>  
+<span data-ttu-id="f1ce9-160">[非同期プログラムにおける制御フロー (C#)](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md) </span><span class="sxs-lookup"><span data-stu-id="f1ce9-160">[Control Flow in Async Programs (C#)](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md) </span></span>  
+<span data-ttu-id="f1ce9-161">[async](../../../../csharp/language-reference/keywords/async.md) </span><span class="sxs-lookup"><span data-stu-id="f1ce9-161">[async](../../../../csharp/language-reference/keywords/async.md) </span></span>  
+[<span data-ttu-id="f1ce9-162">await</span><span class="sxs-lookup"><span data-stu-id="f1ce9-162">await</span></span>](../../../../csharp/language-reference/keywords/await.md)

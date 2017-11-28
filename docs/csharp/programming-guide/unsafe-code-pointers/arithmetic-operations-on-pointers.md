@@ -1,72 +1,52 @@
 ---
 title: "ポインターに対する算術演算 (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- pointers [C#], arithmetic operations
+helpviewer_keywords: pointers [C#], arithmetic operations
 ms.assetid: d4f0b623-827e-45ce-8649-cfcebc8692aa
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 54c439aab8b6cd34a796db8d31f9eabeefddf9f8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d40d44f8be590a909ff059b0fa84efb598fcf263
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="arithmetic-operations-on-pointers-c-programming-guide"></a>ポインターに対する算術演算 (C# プログラミング ガイド)
-このトピックでは、算術演算子 `+` と ** - ** を使用したポインター操作について説明します。  
+# <a name="arithmetic-operations-on-pointers-c-programming-guide"></a><span data-ttu-id="a35a8-102">ポインターに対する算術演算 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="a35a8-102">Arithmetic Operations on Pointers (C# Programming Guide)</span></span>
+<span data-ttu-id="a35a8-103">このトピックでは、算術演算子 `+` と  **-**  を使用したポインター操作について説明します。</span><span class="sxs-lookup"><span data-stu-id="a35a8-103">This topic discusses using the arithmetic operators `+` and **-** to manipulate pointers.</span></span>  
   
 > [!NOTE]
->  void ポインターには、算術演算を実行できません。  
+>  <span data-ttu-id="a35a8-104">void ポインターには、算術演算を実行できません。</span><span class="sxs-lookup"><span data-stu-id="a35a8-104">You cannot perform any arithmetic operations on void pointers.</span></span>  
   
-## <a name="adding-and-subtracting-numeric-values-to-or-from-pointers"></a>ポインターに対する数値の加算と減算  
- 型が [int](../../../csharp/language-reference/keywords/int.md)、[uint](../../../csharp/language-reference/keywords/uint.md)、[long](../../../csharp/language-reference/keywords/long.md)、[ulong](../../../csharp/language-reference/keywords/ulong.md) のいずれかである値 `n` は、`void*` 型以外のあらゆるポインター `p` に加算できます。 結果の `p+n` は `n * sizeof(p) to the address of p` を加算した結果を表すポインターです。 同様に、`p-n` は `p` のアドレスから `n * sizeof(p)` を減算した結果を表すポインターです。  
+## <a name="adding-and-subtracting-numeric-values-to-or-from-pointers"></a><span data-ttu-id="a35a8-105">ポインターに対する数値の加算と減算</span><span class="sxs-lookup"><span data-stu-id="a35a8-105">Adding and Subtracting Numeric Values to or From Pointers</span></span>  
+ <span data-ttu-id="a35a8-106">型が [int](../../../csharp/language-reference/keywords/int.md)、[uint](../../../csharp/language-reference/keywords/uint.md)、[long](../../../csharp/language-reference/keywords/long.md)、[ulong](../../../csharp/language-reference/keywords/ulong.md) のいずれかである値 `n` は、`void*` 型以外のあらゆるポインター `p` に加算できます。</span><span class="sxs-lookup"><span data-stu-id="a35a8-106">You can add a value `n` of type [int](../../../csharp/language-reference/keywords/int.md), [uint](../../../csharp/language-reference/keywords/uint.md), [long](../../../csharp/language-reference/keywords/long.md), or [ulong](../../../csharp/language-reference/keywords/ulong.md) to a pointer, `p`,of any type except `void*`.</span></span> <span data-ttu-id="a35a8-107">結果の `p+n` は `n * sizeof(p) to the address of p` を加算した結果を表すポインターです。</span><span class="sxs-lookup"><span data-stu-id="a35a8-107">The result `p+n` is the pointer resulting from adding `n * sizeof(p) to the address of p`.</span></span> <span data-ttu-id="a35a8-108">同様に、`p-n` は `p` のアドレスから `n * sizeof(p)` を減算した結果を表すポインターです。</span><span class="sxs-lookup"><span data-stu-id="a35a8-108">Similarly, `p-n` is the pointer resulting from subtracting `n * sizeof(p)` from the address of `p`.</span></span>  
   
-## <a name="subtracting-pointers"></a>ポインターの減算  
- 同じ型のポインターを減算することもできます。 結果は常に `long` 型になります。 たとえば場合、`p1` と `p2` が `pointer-type*` 型のポインターである場合、式 `p1-p2` の結果は次のようになります。  
+## <a name="subtracting-pointers"></a><span data-ttu-id="a35a8-109">ポインターの減算</span><span class="sxs-lookup"><span data-stu-id="a35a8-109">Subtracting Pointers</span></span>  
+ <span data-ttu-id="a35a8-110">同じ型のポインターを減算することもできます。</span><span class="sxs-lookup"><span data-stu-id="a35a8-110">You can also subtract pointers of the same type.</span></span> <span data-ttu-id="a35a8-111">結果は常に `long` 型になります。</span><span class="sxs-lookup"><span data-stu-id="a35a8-111">The result is always of the type `long`.</span></span> <span data-ttu-id="a35a8-112">たとえば場合、`p1` と `p2` が `pointer-type*` 型のポインターである場合、式 `p1-p2` の結果は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="a35a8-112">For example, if `p1` and `p2` are pointers of the type `pointer-type*`, then the expression `p1-p2` results in:</span></span>  
   
  `((long)p1 - (long)p2)/sizeof(pointer_type)`  
   
- 算術演算がポインターのドメインをオーバーフローしても、例外は生成されません。生じる結果は実装によって異なります。  
+ <span data-ttu-id="a35a8-113">算術演算がポインターのドメインをオーバーフローしても、例外は生成されません。生じる結果は実装によって異なります。</span><span class="sxs-lookup"><span data-stu-id="a35a8-113">No exceptions are generated when the arithmetic operation overflows the domain of the pointer, and the result depends on the implementation.</span></span>  
   
-## <a name="example"></a>例  
- [!code-cs[csProgGuidePointers#14](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/arithmetic-operations-on-pointers_1.cs)]  
+## <a name="example"></a><span data-ttu-id="a35a8-114">例</span><span class="sxs-lookup"><span data-stu-id="a35a8-114">Example</span></span>  
+ [!code-csharp[csProgGuidePointers#14](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/arithmetic-operations-on-pointers_1.cs)]  
   
- [!code-cs[csProgGuidePointers#15](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/arithmetic-operations-on-pointers_2.cs)]  
+ [!code-csharp[csProgGuidePointers#15](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/arithmetic-operations-on-pointers_2.cs)]  
   
-## <a name="c-language-specification"></a>C# 言語仕様  
+## <a name="c-language-specification"></a><span data-ttu-id="a35a8-115">C# 言語仕様</span><span class="sxs-lookup"><span data-stu-id="a35a8-115">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
- [ポインター式](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)   
- [C# 演算子](../../../csharp/language-reference/operators/index.md)   
- [ポインターの操作](../../../csharp/programming-guide/unsafe-code-pointers/manipulating-pointers.md)   
- [ポインター型](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)   
- [型](../../../csharp/language-reference/keywords/types.md)   
- [unsafe](../../../csharp/language-reference/keywords/unsafe.md)   
- [fixed ステートメント](../../../csharp/language-reference/keywords/fixed-statement.md)   
- [stackalloc](../../../csharp/language-reference/keywords/stackalloc.md)
-
+## <a name="see-also"></a><span data-ttu-id="a35a8-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="a35a8-116">See Also</span></span>  
+ [<span data-ttu-id="a35a8-117">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="a35a8-117">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="a35a8-118">アンセーフ コードとポインター</span><span class="sxs-lookup"><span data-stu-id="a35a8-118">Unsafe Code and Pointers</span></span>](../../../csharp/programming-guide/unsafe-code-pointers/index.md)  
+ [<span data-ttu-id="a35a8-119">ポインター式</span><span class="sxs-lookup"><span data-stu-id="a35a8-119">Pointer Expressions</span></span>](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)  
+ [<span data-ttu-id="a35a8-120">C# 演算子</span><span class="sxs-lookup"><span data-stu-id="a35a8-120">C# Operators</span></span>](../../../csharp/language-reference/operators/index.md)  
+ [<span data-ttu-id="a35a8-121">ポインターの操作</span><span class="sxs-lookup"><span data-stu-id="a35a8-121">Manipulating Pointers</span></span>](../../../csharp/programming-guide/unsafe-code-pointers/manipulating-pointers.md)  
+ [<span data-ttu-id="a35a8-122">ポインター型</span><span class="sxs-lookup"><span data-stu-id="a35a8-122">Pointer types</span></span>](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)  
+ [<span data-ttu-id="a35a8-123">型</span><span class="sxs-lookup"><span data-stu-id="a35a8-123">Types</span></span>](../../../csharp/language-reference/keywords/types.md)  
+ [<span data-ttu-id="a35a8-124">unsafe</span><span class="sxs-lookup"><span data-stu-id="a35a8-124">unsafe</span></span>](../../../csharp/language-reference/keywords/unsafe.md)  
+ [<span data-ttu-id="a35a8-125">fixed ステートメント</span><span class="sxs-lookup"><span data-stu-id="a35a8-125">fixed Statement</span></span>](../../../csharp/language-reference/keywords/fixed-statement.md)  
+ [<span data-ttu-id="a35a8-126">stackalloc</span><span class="sxs-lookup"><span data-stu-id="a35a8-126">stackalloc</span></span>](../../../csharp/language-reference/keywords/stackalloc.md)

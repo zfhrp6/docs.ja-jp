@@ -1,61 +1,41 @@
 ---
 title: "true 演算子 (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- true operator [C#]
+helpviewer_keywords: true operator [C#]
 ms.assetid: acaba817-5da5-4364-b3b2-2e5c75ec1839
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 96ab7679862959f3c99e31beac0bd5514228bd8d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c74fdc8091013ce7793c0591fc17ece80fd6d76d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="true-operator-c-reference"></a>true 演算子 (C# リファレンス)
-オペランドが true である場合は [ブール](../../../csharp/language-reference/keywords/bool.md)値 `true` を返します。それ以外の場合は `false` を返します。  
+# <a name="true-operator-c-reference"></a><span data-ttu-id="6697d-102">true 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="6697d-102">true Operator (C# Reference)</span></span>
+<span data-ttu-id="6697d-103">オペランドが true である場合は [ブール](../../../csharp/language-reference/keywords/bool.md)値 `true` を返します。それ以外の場合は `false` を返します。</span><span class="sxs-lookup"><span data-stu-id="6697d-103">Returns the [bool](../../../csharp/language-reference/keywords/bool.md) value `true` to indicate that an operand is true and returns `false` otherwise.</span></span>  
   
- C# 2.0 より前のバージョンでは、`true` 演算子と `false` 演算子は、`SqlBool` などの型と互換性のあるユーザー定義の null 非許容の値型を作成するために使用されていました。 ただし、現在は null 許容の値型が組み込まれているため、可能な場合には、`true` 演算子と `false` 演算子のオーバーロードではなく、null 許容の値型を使用してください。 詳細については、「[null 許容型](../../../csharp/programming-guide/nullable-types/index.md)」を参照してください。  
+ <span data-ttu-id="6697d-104">C# 2.0 より前のバージョンでは、`true` 演算子と `false` 演算子は、`SqlBool` などの型と互換性のあるユーザー定義の null 非許容の値型を作成するために使用されていました。</span><span class="sxs-lookup"><span data-stu-id="6697d-104">Prior to C# 2.0, the `true` and `false` operators were used to create user-defined nullable value types that were compatible with types such as `SqlBool`.</span></span> <span data-ttu-id="6697d-105">ただし、現在は null 許容の値型が組み込まれているため、可能な場合には、`true` 演算子と `false` 演算子のオーバーロードではなく、null 許容の値型を使用してください。</span><span class="sxs-lookup"><span data-stu-id="6697d-105">However, the language now provides built-in support for nullable value types, and whenever possible you should use those instead of overloading the `true` and `false` operators.</span></span> <span data-ttu-id="6697d-106">詳細については、「[null 許容型](../../../csharp/programming-guide/nullable-types/index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6697d-106">For more information, see [Nullable Types](../../../csharp/programming-guide/nullable-types/index.md).</span></span>  
   
- null 許容のブール値では、必ずしも式 `a != b` と `!(a == b)` は同じではありません。これは、一方または両方の値が null になる可能性があるためです。 式内の null 値を正しく識別するには、`true` 演算子と `false` 演算子の両方を個別にオーバーロードする必要があります。 次の例は、`true` 演算子と `false` 演算子をオーバーロードして使用する方法を示しています。  
+ <span data-ttu-id="6697d-107">null 許容のブール値では、必ずしも式 `a != b` と `!(a == b)` は同じではありません。これは、一方または両方の値が null になる可能性があるためです。</span><span class="sxs-lookup"><span data-stu-id="6697d-107">With nullable Booleans, the expression `a != b` is not necessarily equal to `!(a == b)` because one or both of the values might be null.</span></span> <span data-ttu-id="6697d-108">式内の null 値を正しく識別するには、`true` 演算子と `false` 演算子の両方を個別にオーバーロードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="6697d-108">You need to overload both the `true` and `false` operators separately to correctly identify the null values in the expression.</span></span> <span data-ttu-id="6697d-109">次の例は、`true` 演算子と `false` 演算子をオーバーロードして使用する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="6697d-109">The following example shows how to overload and use the `true` and `false` operators.</span></span>  
   
- [!code-cs[csrefKeywordsOperator#16](../../../csharp/language-reference/keywords/codesnippet/CSharp/true-operator_1.cs)]  
+ [!code-csharp[csrefKeywordsOperator#16](../../../csharp/language-reference/keywords/codesnippet/CSharp/true-operator_1.cs)]  
   
- `true` 演算子と `false` 演算子をオーバーロードする型は、[if](../../../csharp/language-reference/keywords/if-else.md)、[do](../../../csharp/language-reference/keywords/do.md)、[while](../../../csharp/language-reference/keywords/while.md)、[for](../../../csharp/language-reference/keywords/for.md) ステートメント内の制御式と、[条件式](../../../csharp/language-reference/operators/conditional-operator.md)で使用できます。  
+ <span data-ttu-id="6697d-110">`true` 演算子と `false` 演算子をオーバーロードする型は、[if](../../../csharp/language-reference/keywords/if-else.md)、[do](../../../csharp/language-reference/keywords/do.md)、[while](../../../csharp/language-reference/keywords/while.md)、[for](../../../csharp/language-reference/keywords/for.md) ステートメント内の制御式と、[条件式](../../../csharp/language-reference/operators/conditional-operator.md)で使用できます。</span><span class="sxs-lookup"><span data-stu-id="6697d-110">A type that overloads the `true` and `false` operators can be used for the controlling expression in [if](../../../csharp/language-reference/keywords/if-else.md), [do](../../../csharp/language-reference/keywords/do.md), [while](../../../csharp/language-reference/keywords/while.md), and [for](../../../csharp/language-reference/keywords/for.md) statements and in [conditional expressions](../../../csharp/language-reference/operators/conditional-operator.md).</span></span>  
   
- 型で `true` 演算子を定義する場合は [false](../../../csharp/language-reference/keywords/false.md) 演算子も定義する必要があります。  
+ <span data-ttu-id="6697d-111">型で `true` 演算子を定義する場合は [false](../../../csharp/language-reference/keywords/false.md) 演算子も定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6697d-111">If a type defines operator `true`, it must also define operator [false](../../../csharp/language-reference/keywords/false.md).</span></span>  
   
- 型では、条件付き論理演算子 ([&&](../../../csharp/language-reference/operators/conditional-and-operator.md) と [&#124;&#124;](../../../csharp/language-reference/operators/conditional-or-operator.md)) を直接オーバーロードすることはできませんが、通常の論理演算子と演算子 `true` および `false` をオーバーロードすることで同等の効果を実現できます。  
+ <span data-ttu-id="6697d-112">型では、条件付き論理演算子 ([&&](../../../csharp/language-reference/operators/conditional-and-operator.md) と [&#124;&#124;](../../../csharp/language-reference/operators/conditional-or-operator.md)) を直接オーバーロードすることはできませんが、通常の論理演算子と演算子 `true` および `false` をオーバーロードすることで同等の効果を実現できます。</span><span class="sxs-lookup"><span data-stu-id="6697d-112">A type cannot directly overload the conditional logical operators ([&&](../../../csharp/language-reference/operators/conditional-and-operator.md) and [&#124;&#124;](../../../csharp/language-reference/operators/conditional-or-operator.md)), but an equivalent effect can be achieved by overloading the regular logical operators and operators `true` and `false`.</span></span>  
   
-## <a name="c-language-specification"></a>C# 言語仕様  
+## <a name="c-language-specification"></a><span data-ttu-id="6697d-113">C# 言語仕様</span><span class="sxs-lookup"><span data-stu-id="6697d-113">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [C# 演算子](../../../csharp/language-reference/operators/index.md)   
- [false](../../../csharp/language-reference/keywords/false.md)
-
+## <a name="see-also"></a><span data-ttu-id="6697d-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="6697d-114">See Also</span></span>  
+ [<span data-ttu-id="6697d-115">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="6697d-115">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="6697d-116">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="6697d-116">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="6697d-117">C# のキーワード</span><span class="sxs-lookup"><span data-stu-id="6697d-117">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)  
+ [<span data-ttu-id="6697d-118">C# 演算子</span><span class="sxs-lookup"><span data-stu-id="6697d-118">C# Operators</span></span>](../../../csharp/language-reference/operators/index.md)  
+ [<span data-ttu-id="6697d-119">false</span><span class="sxs-lookup"><span data-stu-id="6697d-119">false</span></span>](../../../csharp/language-reference/keywords/false.md)

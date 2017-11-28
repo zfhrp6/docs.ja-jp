@@ -1,61 +1,53 @@
 ---
-title: "LINQ とファイル ディレクトリ (Visual Basic) |Microsoft ドキュメント"
+title: "LINQ とファイルのディレクトリ (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 159fd5c3-3926-4071-ae78-d8e423287eb7
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5536ae95b42cdaddda2c4cae97a114681e94b0ab
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 470ad8e783eb05cc56949982b2d2d79d5aaefdc2
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="linq-and-file-directories-visual-basic"></a>LINQ とファイル ディレクトリ (Visual Basic)
-多くのファイル システム操作はクエリでは基本的にはであり、LINQ アプローチによく適しているためです。  
+# <a name="linq-and-file-directories-visual-basic"></a><span data-ttu-id="58c83-102">LINQ とファイルのディレクトリ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="58c83-102">LINQ and File Directories (Visual Basic)</span></span>
+<span data-ttu-id="58c83-103">多くのファイル システム操作は基本的にクエリであるため、LINQ での使用に最適です。</span><span class="sxs-lookup"><span data-stu-id="58c83-103">Many file system operations are essentially queries and are therefore well-suited to the LINQ approach.</span></span>  
   
- このセクションでクエリが非破壊的なことに注意してください。 元のファイルまたはフォルダーの内容を変更するのには使用されません。 クエリが副次的な影響を引き起こさないことルールに従います。 一般に、ソース データを変更するコード (を実行するなどのクエリを作成/更新/delete 演算子) おく必要がある別のデータを単にクエリを実行するコードです。  
+ <span data-ttu-id="58c83-104">ここで示すクエリは破壊的ではないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="58c83-104">Note that the queries in this section are non-destructive.</span></span> <span data-ttu-id="58c83-105">元のファイルやフォルダーの内容が変更されることはありません。</span><span class="sxs-lookup"><span data-stu-id="58c83-105">They are not used to change the contents of the original files or folders.</span></span> <span data-ttu-id="58c83-106">これは、クエリは副作用を引き起こすべきではないという規則に従っています。</span><span class="sxs-lookup"><span data-stu-id="58c83-106">This follows the rule that queries should not cause any side-effects.</span></span> <span data-ttu-id="58c83-107">一般に、参照元データを変更するコード (create、update、または delete の各演算子を実行するクエリなど) は、単にデータを照会するだけのコードとは分離する必要があります。</span><span class="sxs-lookup"><span data-stu-id="58c83-107">In general, any code (including queries that perform create / update / delete operators) that modifies source data should be kept separate from the code that just queries the data.</span></span>  
   
- このセクションでは、以下のトピックについて説明します。  
+ <span data-ttu-id="58c83-108">このセクションでは、以下のトピックについて説明します。</span><span class="sxs-lookup"><span data-stu-id="58c83-108">This section contains the following topics:</span></span>  
   
- [方法: 指定された属性または名前 (Visual Basic) のファイルをクエリ](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md)  
- 1 つ以上のプロパティを確認するには、ファイルを検索する方法を示しています、<xref:System.IO.FileInfo>オブジェクト</xref:System.IO.FileInfo>。  
+ [<span data-ttu-id="58c83-109">方法: クエリのファイルで指定された属性または名前 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="58c83-109">How to: Query for Files with a Specified Attribute or Name (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md)  
+ <span data-ttu-id="58c83-110"><xref:System.IO.FileInfo> オブジェクトで 1 つ以上のプロパティを調べ、ファイルを検索する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="58c83-110">Shows how to search for files by examining one or more properties of its <xref:System.IO.FileInfo> object.</span></span>  
   
- [方法: 拡張機能 (LINQ) (Visual Basic) でファイルをグループ化](../../../../visual-basic/programming-guide/concepts/linq/how-to-group-files-by-extension-linq.md)  
- グループを返す方法を示しています<xref:System.IO.FileInfo>オブジェクトに基づいて、ファイル名拡張子</xref:System.IO.FileInfo>。  
+ [<span data-ttu-id="58c83-111">方法: 拡張機能 (LINQ) (Visual Basic) でファイルをグループ化</span><span class="sxs-lookup"><span data-stu-id="58c83-111">How to: Group Files by Extension (LINQ) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/how-to-group-files-by-extension-linq.md)  
+ <span data-ttu-id="58c83-112">ファイル名拡張子に基づいて、<xref:System.IO.FileInfo> オブジェクトのグループを返す方法を示します。</span><span class="sxs-lookup"><span data-stu-id="58c83-112">Shows how to return groups of <xref:System.IO.FileInfo> object based on their file name extension.</span></span>  
   
- [方法: 一連のフォルダー (LINQ) (Visual Basic) のバイト数の合計数を問い合わせる](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders.md)  
- 指定したディレクトリ ツリー内のすべてのファイルの合計バイト数を返す方法を示します。  
+ [<span data-ttu-id="58c83-113">方法: 一連のフォルダー (LINQ) (Visual Basic) のバイト数の合計数をクエリ</span><span class="sxs-lookup"><span data-stu-id="58c83-113">How to: Query for the Total Number of Bytes in a Set of Folders (LINQ) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders.md)  
+ <span data-ttu-id="58c83-114">指定したディレクトリ ツリー内のすべてのファイルの合計バイト数を返す方法を示します。</span><span class="sxs-lookup"><span data-stu-id="58c83-114">Shows how to return the total number of bytes in all the files in a specified directory tree.</span></span>  
   
- [方法:&2; つのフォルダー (LINQ) (Visual Basic) の内容を比較](../../../../visual-basic/programming-guide/concepts/linq/how-to-compare-the-contents-of-two-folders-linq.md)s  
- 2 つの指定したフォルダーに存在するすべてのファイルとファイルをすべて&1; つのフォルダーに存在するを返す方法を示します。  
+ <span data-ttu-id="58c83-115">[方法: 2 つのフォルダー (LINQ) (Visual Basic) の内容を比較](../../../../visual-basic/programming-guide/concepts/linq/how-to-compare-the-contents-of-two-folders-linq.md)s</span><span class="sxs-lookup"><span data-stu-id="58c83-115">[How to: Compare the Contents of Two Folders (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-compare-the-contents-of-two-folders-linq.md)s</span></span>  
+ <span data-ttu-id="58c83-116">指定した 2 つのフォルダーに存在するファイルをすべて返す方法と、一方のフォルダーにのみ存在し、もう一方には存在しないファイルをすべて返す方法を示します。</span><span class="sxs-lookup"><span data-stu-id="58c83-116">Shows how to return all the files that are present in two specified folders, and also all the files that are present in one folder but not the other.</span></span>  
   
- [方法: ファイルまたはディレクトリ ツリー (LINQ) (Visual Basic) 内のファイル サイズの大きい照会](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree.md)  
- ディレクトリ ツリーで、最大値または最小のファイルまたはファイルの指定した数を返す方法を示します。  
+ [<span data-ttu-id="58c83-117">方法: ファイルまたはディレクトリ ツリー (LINQ) (Visual Basic) 内のファイル サイズの大きいクエリ</span><span class="sxs-lookup"><span data-stu-id="58c83-117">How to: Query for the Largest File or Files in a Directory Tree (LINQ) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree.md)  
+ <span data-ttu-id="58c83-118">ディレクトリ ツリーで、最もサイズの大きいファイルまたは最もサイズの小さいファイル、あるいは指定した数のファイルを返す方法を示します。</span><span class="sxs-lookup"><span data-stu-id="58c83-118">Shows how to return the largest or smallest file, or a specified number of files, in a directory tree.</span></span>  
   
- [方法: ディレクトリ ツリー (LINQ) (Visual Basic) で重複するファイルのクエリ](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)  
- 指定したディレクトリ ツリー内で複数の場所で発生するすべてのファイル名のグループ化する方法を示します。 カスタムの比較演算子に基づいてさらに複雑な比較を実行する方法も示します。  
+ [<span data-ttu-id="58c83-119">方法: ディレクトリ ツリー (LINQ) (Visual Basic) で重複するファイルのクエリ</span><span class="sxs-lookup"><span data-stu-id="58c83-119">How to: Query for Duplicate Files in a Directory Tree (LINQ) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)  
+ <span data-ttu-id="58c83-120">指定したディレクトリ ツリーの複数の場所に出現するすべてのファイル名をグループ化する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="58c83-120">Shows how to group for all file names that occur in more than one location in a specified directory tree.</span></span> <span data-ttu-id="58c83-121">また、カスタム比較演算子に基づいて、より複雑な比較を実行する方法も示します。</span><span class="sxs-lookup"><span data-stu-id="58c83-121">Also shows how to perform more complex comparisons based on a custom comparer.</span></span>  
   
- [方法: クエリ (LINQ) (Visual Basic) のフォルダー内のファイルの内容](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-the-contents-of-files-in-a-folder-linq.md)  
- ツリー内のフォルダーを反復処理を各ファイルを開き、ファイルの内容を照会する方法を示します。  
+ [<span data-ttu-id="58c83-122">方法: クエリ (LINQ) (Visual Basic) のフォルダー内のファイルの内容</span><span class="sxs-lookup"><span data-stu-id="58c83-122">How to: Query the Contents of Files in a Folder (LINQ) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-the-contents-of-files-in-a-folder-linq.md)  
+ <span data-ttu-id="58c83-123">ツリー内のフォルダーを反復処理し、各ファイルを開き、ファイルの内容を照会する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="58c83-123">Shows how to iterate through folders in a tree, open each file, and query the file's contents.</span></span>  
   
-## <a name="comments"></a>コメント  
- 何らかの複雑性は正確にファイル システムの内容を表すし、例外が適切に処理するデータ ソースの作成に必要です。 このセクションの例のスナップショット コレクションの作成<xref:System.IO.FileInfo>指定したルート フォルダーの下のすべてのファイルとそのすべてのサブフォルダーを表すオブジェクト</xref:System.IO.FileInfo>。 それぞれの実際の状態<xref:System.IO.FileInfo>を開始し、クエリの実行を終了するときまでの間に変更することがあります</xref:System.IO.FileInfo>。 一覧を作成するなど、<xref:System.IO.FileInfo>データ ソースとして使用するオブジェクト</xref:System.IO.FileInfo>。 アクセスしようとする場合、`Length`クエリでは、プロパティ、<xref:System.IO.FileInfo>の値を更新するファイル システムにアクセスしようとして、オブジェクト`Length`</xref:System.IO.FileInfo>。 ファイルが存在しない場合、表示、 <xref:System.IO.FileNotFoundException>、クエリでもないクエリを実行するファイル システム直接</xref:System.IO.FileNotFoundException>。 このセクションの一部のクエリでは、特定の場合にこれらの特定の例外を使用する別のメソッドを使用します。 <xref:System.IO.FileSystemWatcher>。</xref:System.IO.FileSystemWatcher>を使用して動的に更新されるデータ ソースを保持することもできます。  
+## <a name="comments"></a><span data-ttu-id="58c83-124">コメント</span><span class="sxs-lookup"><span data-stu-id="58c83-124">Comments</span></span>  
+ <span data-ttu-id="58c83-125">ファイル システムの内容を正確に表し、例外を適切に処理するデータ ソースを作成する手順は複雑になります。</span><span class="sxs-lookup"><span data-stu-id="58c83-125">There is some complexity involved in creating a data source that accurately represents the contents of the file system and handles exceptions gracefully.</span></span> <span data-ttu-id="58c83-126">ここに示す例では、指定したルート フォルダーおよびすべてのサブフォルダーの下にある、すべてのファイルを表す <xref:System.IO.FileInfo> オブジェクトのスナップショット コレクションを作成します。</span><span class="sxs-lookup"><span data-stu-id="58c83-126">The examples in this section create a snapshot collection of <xref:System.IO.FileInfo> objects that represents all the files under a specified root folder and all its subfolders.</span></span> <span data-ttu-id="58c83-127">各 <xref:System.IO.FileInfo> の実際の状態は、クエリの実行の開始時点から終了時点までの間に変化する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="58c83-127">The actual state of each <xref:System.IO.FileInfo> may change in the time between when you begin and end executing a query.</span></span> <span data-ttu-id="58c83-128">たとえば、データ ソースとして使用する <xref:System.IO.FileInfo> オブジェクトの一覧を作成したとします。</span><span class="sxs-lookup"><span data-stu-id="58c83-128">For example, you can create a list of <xref:System.IO.FileInfo> objects to use as a data source.</span></span> <span data-ttu-id="58c83-129">クエリで `Length` プロパティにアクセスしようとすると、<xref:System.IO.FileInfo> オブジェクトがファイル システムにアクセスして `Length` の値を更新しようとします。</span><span class="sxs-lookup"><span data-stu-id="58c83-129">If you try to access the `Length` property in a query, the <xref:System.IO.FileInfo> object will try to access the file system to update the value of `Length`.</span></span> <span data-ttu-id="58c83-130">ファイルがもう存在しない場合は、ファイル システムを直接照会していなくても、クエリから <xref:System.IO.FileNotFoundException> が返されます。</span><span class="sxs-lookup"><span data-stu-id="58c83-130">If the file no longer exists, you will get a <xref:System.IO.FileNotFoundException> in your query, even though you are not querying the file system directly.</span></span> <span data-ttu-id="58c83-131">ここで示すクエリの中には、状況により、このような特定の例外を処理する個別のメソッドを使用しているものがあります。</span><span class="sxs-lookup"><span data-stu-id="58c83-131">Some queries in this section use a separate method that consumes these particular exceptions in certain cases.</span></span> <span data-ttu-id="58c83-132">別の方法として、<xref:System.IO.FileSystemWatcher> を使用して、データ ソースを動的に更新して常に最新の状態に保つこともできます。</span><span class="sxs-lookup"><span data-stu-id="58c83-132">Another option is to keep your data source updated dynamically by using the <xref:System.IO.FileSystemWatcher>.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+## <a name="see-also"></a><span data-ttu-id="58c83-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="58c83-133">See Also</span></span>  
+ [<span data-ttu-id="58c83-134">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="58c83-134">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)

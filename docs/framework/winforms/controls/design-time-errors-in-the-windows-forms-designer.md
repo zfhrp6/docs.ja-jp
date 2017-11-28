@@ -1,68 +1,69 @@
 ---
-title: "Windows フォーム デザイナーでのデザイン時エラー | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "DTELErrorList"
-  - "WhyDTELPage"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "デザイン時エラー [Windows フォーム デザイナー]"
-  - "エラー [Windows フォーム デザイナー]"
+title: "Windows フォーム デザイナーでのデザイン時エラー"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- DTELErrorList
+- WhyDTELPage
+helpviewer_keywords:
+- errors [Windows Forms Designer]
+- design-time errors [Windows Forms Designer]
 ms.assetid: ad408380-825a-46d8-9a4a-531b130b88ce
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 819b624e2abac09aea804311d661f78e2a1f5a7c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォーム デザイナーでのデザイン時エラー
-ここでは、Microsoft Visual Studio で Windows フォーム デザイナーの読み込みに失敗したときに表示される、デザイン時エラー一覧の意味と使用方法について説明します。  このエラー一覧の表示を、デザイナーのバグと解釈しないでください。この一覧は、コード内のエラーの修正を支援するために表示されます。  
+# <a name="design-time-errors-in-the-windows-forms-designer"></a><span data-ttu-id="8c910-102">Windows フォーム デザイナーでのデザイン時エラー</span><span class="sxs-lookup"><span data-stu-id="8c910-102">Design-Time Errors in the Windows Forms Designer</span></span>
+<span data-ttu-id="8c910-103">このトピックでは、Windows フォーム デザイナーで読み込みに失敗したときに場合に Microsoft Visual Studio に表示されるデザイン時のエラー リストの意味と使用法について説明します。</span><span class="sxs-lookup"><span data-stu-id="8c910-103">This topic explains the meaning and use of the design-time error list that appears in Microsoft Visual Studio when the Windows Forms Designer fails to load.</span></span> <span data-ttu-id="8c910-104">このエラー リストが表示された場合、デザイナーのバグであると解釈するのではなく、コード内のエラーを修正するための参考情報であると考えてください。</span><span class="sxs-lookup"><span data-stu-id="8c910-104">If this error list appears, you should not interpret it as a bug in the designer, but as an aid to correcting errors in your code.</span></span>  
   
- このエラー一覧の基本を理解し、エラーの詳細と推奨する解決方法の説明を表示することで、アプリケーションのデバッグを容易にすることができます。  
+ <span data-ttu-id="8c910-105">エラーに関する詳細情報と考えられる解決策が提示されるので、このエラー リストの基本を理解することによって、アプリケーションのデバッグに役立てることができます。</span><span class="sxs-lookup"><span data-stu-id="8c910-105">A basic understanding of this error list will help you debug your applications by providing detailed information about the errors and suggesting possible solutions.</span></span>  
   
-## デザイン時エラー一覧インターフェイス  
- Windows フォーム デザイナーが読み込みに失敗すると、デザイナーにエラー一覧が表示されます。  エラーは、カテゴリ別にグループ化されます。  たとえば、宣言されていない変数のインスタンスが 4 つあった場合、それらは、同じエラー カテゴリにグループ化されます。  各エラー カテゴリには、そのエラーの概要を示す短い説明が含まれます。  
+## <a name="the-design-time-error-list-interface"></a><span data-ttu-id="8c910-106">デザイン時のエラー リスト インターフェイス</span><span class="sxs-lookup"><span data-stu-id="8c910-106">The Design-Time Error List Interface</span></span>  
+ <span data-ttu-id="8c910-107">Windows フォーム デザイナーで読み込めない場合、デザイナーにエラー リストが表示されます。</span><span class="sxs-lookup"><span data-stu-id="8c910-107">If the Windows Forms Designer fails to load, an error list will appear in the designer.</span></span> <span data-ttu-id="8c910-108">エラーは複数のカテゴリに分類されています。</span><span class="sxs-lookup"><span data-stu-id="8c910-108">The errors are grouped into categories.</span></span> <span data-ttu-id="8c910-109">たとえば、宣言されていない変数の 4 つのインスタンスがある場合、それらは同じエラー カテゴリに分類されます。</span><span class="sxs-lookup"><span data-stu-id="8c910-109">For example, if you have four instances of undeclared variables, these will be grouped into the same error category.</span></span> <span data-ttu-id="8c910-110">各エラー カテゴリには、エラーの概要を示す簡単な説明が含まれます。</span><span class="sxs-lookup"><span data-stu-id="8c910-110">Each error category includes a brief description that summarizes the error.</span></span>  
   
- エラー カテゴリは、エラー カテゴリ見出しをクリックするか、展開\/縮小シェブロンをクリックすることで、展開または縮小できます。  エラー カテゴリを展開すると、次の追加ヘルプが表示されます。  
+ <span data-ttu-id="8c910-111">エラー カテゴリの見出しをクリックするか、展開/折りたたみシェブロンをクリックすることで、エラー カテゴリを展開したり、折りたたんだりできます。</span><span class="sxs-lookup"><span data-stu-id="8c910-111">You can expand or collapse an error category by either clicking on the error category heading or by clicking the expand/collapse chevron.</span></span> <span data-ttu-id="8c910-112">エラー カテゴリを展開すると、次の追加のヘルプが表示されます。</span><span class="sxs-lookup"><span data-stu-id="8c910-112">When you expand an error category, the following additional help is displayed:</span></span>  
   
--   このエラーのインスタンス。  
+-   <span data-ttu-id="8c910-113">このエラーのインスタンス。</span><span class="sxs-lookup"><span data-stu-id="8c910-113">Instances of this error.</span></span>  
   
--   このエラーのヘルプ。  
+-   <span data-ttu-id="8c910-114">このエラーのヘルプ。</span><span class="sxs-lookup"><span data-stu-id="8c910-114">Help with this error.</span></span>  
   
--   このエラーに関するフォーラム ポスト。  
+-   <span data-ttu-id="8c910-115">このエラーに関するフォーラムの投稿。</span><span class="sxs-lookup"><span data-stu-id="8c910-115">Forum posts about this error.</span></span>  
   
-### このエラーのインスタンス。  
- 追加ヘルプには、現在のプロジェクトで発生したすべてのエラー インスタンスが一覧表示されます。  多くのエラーは、エラーの発生場所を示す次の形式の情報を含みます。*\[プロジェクト名\]* *\[フォーム名\]* 行 : *\[行番号\]* 列 : *\[列番号\]*.  **\[コードに移動\]** リンクをクリックすると、コード内のエラーの発生場所にジャンプします。  
+### <a name="instances-of-this-error"></a><span data-ttu-id="8c910-116">このエラーのインスタンス</span><span class="sxs-lookup"><span data-stu-id="8c910-116">Instances of This Error</span></span>  
+ <span data-ttu-id="8c910-117">追加のヘルプには、現在のプロジェクトにおけるエラーのすべてのインスタンスが一覧表示されます。</span><span class="sxs-lookup"><span data-stu-id="8c910-117">The additional help list all instances of the error in your current project.</span></span> <span data-ttu-id="8c910-118">多くのエラーには、次の形式の正確な場所が含まれます: *[プロジェクト名]* *[フォーム名]* 行:*[行番号]* 列:*[列番号]*。</span><span class="sxs-lookup"><span data-stu-id="8c910-118">Many errors include an exact location in the following format: *[Project Name]* *[Form Name]* Line:*[Line Number]* Column:*[Column Number]*.</span></span> <span data-ttu-id="8c910-119">**[コードに移動]** リンクを使用して、エラーが発生したコード内の場所に移動できます。</span><span class="sxs-lookup"><span data-stu-id="8c910-119">The **Go to code** link takes you to the location in your code where the error occurs.</span></span>  
   
- エラーに呼び出し履歴が関連付けられている場合は、**\[コール スタックの表示\]** リンクをクリックすると、エラーがさらに展開され、呼び出し履歴が表示されます。  履歴を調べることで、有用なデバッグ情報を得ることができます。  たとえば、エラーが発生する前に呼び出されていた関数を追跡できます。  呼び出し履歴は選択可能なので、コピーして保存することができます。  
+ <span data-ttu-id="8c910-120">呼び出し履歴がエラーに関連付けられている場合、**[コール スタックの表示]** リンクをクリックすると、エラーがさらに展開され、呼び出し履歴が表示されます。</span><span class="sxs-lookup"><span data-stu-id="8c910-120">If a call stack is associated with the error, you can click the **Show Call Stack** link, which further expands the error to show the call stack.</span></span> <span data-ttu-id="8c910-121">履歴を調べると、有用なデバッグ情報を得られる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="8c910-121">Examining the stack can provide valuable debugging information.</span></span> <span data-ttu-id="8c910-122">たとえば、エラーが発生する前に呼び出された関数を追跡できます。</span><span class="sxs-lookup"><span data-stu-id="8c910-122">For example, you can track the functions that were called before the error occurred.</span></span> <span data-ttu-id="8c910-123">呼び出し履歴を選択して、コピーおよび保存できます。</span><span class="sxs-lookup"><span data-stu-id="8c910-123">The call stack is selectable so that you can copy and save it.</span></span>  
   
 > [!NOTE]
->  Visual Basic では、デザイン時エラー一覧に複数のエラーは表示されませんが、同じエラーの複数のインスタンスが表示される場合があります。  Visual C\+\+ では、エラーに \[コードに移動\] リンク\/行番号リンクは含まれません。  
+>  <span data-ttu-id="8c910-124">Visual Basic では、デザイン時エラー リストには複数のエラーは表示されませんが、同じエラーの複数のインスタンスが表示される場合があります。</span><span class="sxs-lookup"><span data-stu-id="8c910-124">In Visual Basic, the design-time error list does not display more than one error, but it may display multiple instances of the same error.</span></span> <span data-ttu-id="8c910-125">Visual C++ では、エラーに goto コード リンク/行番号リンクはありません。</span><span class="sxs-lookup"><span data-stu-id="8c910-125">In Visual C++, the errors do not have goto code links/line number links.</span></span>  
   
-### このエラーのヘルプ  
- エラーに関連付けられている MSDN ヘルプ トピックがある場合は、そのヘルプ トピックへのリンクが追加ヘルプに含まれます。  このリンクをクリックすると、関連付けられているヘルプ トピックが Visual Studio に表示されます。  
+### <a name="help-with-this-error"></a><span data-ttu-id="8c910-126">このエラーのヘルプ</span><span class="sxs-lookup"><span data-stu-id="8c910-126">Help with This Error</span></span>  
+ <span data-ttu-id="8c910-127">エラーには、関連する MSDN ヘルプ トピックへのリンクが含まれており、追加のヘルプにはヘルプ トピックへのリンクが含まれています。</span><span class="sxs-lookup"><span data-stu-id="8c910-127">If the error contains a link to an associated MSDN help topic, the additional help will include a link to the help topic.</span></span> <span data-ttu-id="8c910-128">リンクをクリックすると、関連するヘルプ トピックが Visual Studio に表示されます。</span><span class="sxs-lookup"><span data-stu-id="8c910-128">When you click the link, the associated help topic appears in Visual Studio.</span></span>  
   
-### このエラーに関するフォーラム ポスト  
- 追加ヘルプは、エラーに関連する MSDN フォーラム ポストへのリンクを含みます。  フォーラムは、エラー メッセージの文字列に基づいて検索されます。  また、次のフォーラムを検索することもできます。  
+### <a name="forum-posts-about-this-error"></a><span data-ttu-id="8c910-129">このエラーに関するフォーラムの投稿</span><span class="sxs-lookup"><span data-stu-id="8c910-129">Forum posts about this error</span></span>  
+ <span data-ttu-id="8c910-130">追加のヘルプには、エラーに関連する MSDN フォーラムの投稿へのリンクが含まれています。</span><span class="sxs-lookup"><span data-stu-id="8c910-130">The additional help will include a link to MSDN forum posts related to the error.</span></span> <span data-ttu-id="8c910-131">フォーラムは、エラー メッセージの文字列に基づいて検索されます。</span><span class="sxs-lookup"><span data-stu-id="8c910-131">The forums are searched based on the string of the error message.</span></span> <span data-ttu-id="8c910-132">次のフォーラムを検索することもできます。</span><span class="sxs-lookup"><span data-stu-id="8c910-132">You can also try searching the following forums:</span></span>  
   
--   [Windows Forms Designer Forum \(Windows フォーム デザイナー フォーラム\)](http://go.microsoft.com/fwlink/?LinkId=203524)  
+-   [<span data-ttu-id="8c910-133">Windows フォーム デザイナーのフォーラム</span><span class="sxs-lookup"><span data-stu-id="8c910-133">Windows Forms Designer Forum</span></span>](http://go.microsoft.com/fwlink/?LinkId=203524)  
   
--   [Windows Forms Forums \(Windows フォーム フォーラム\)](http://go.microsoft.com/fwlink/?LinkId=203523)  
+-   [<span data-ttu-id="8c910-134">Windows フォームのフォーラム</span><span class="sxs-lookup"><span data-stu-id="8c910-134">Windows Forms Forums</span></span>](http://go.microsoft.com/fwlink/?LinkId=203523)  
   
-### 無視と続行  
- エラー状態を無視して、デザイナーの読み込みを続行することを選択できます。  この操作を選択すると、予期しない動作が発生する場合があります。  たとえば、デザイン画面にコントロールが表示されない場合があります。  
+### <a name="ignore-and-continue"></a><span data-ttu-id="8c910-135">無視して続行する</span><span class="sxs-lookup"><span data-stu-id="8c910-135">Ignore and Continue</span></span>  
+ <span data-ttu-id="8c910-136">エラー状態を無視して、デザイナーの読み込みを続行することもできます。</span><span class="sxs-lookup"><span data-stu-id="8c910-136">You can choose to ignore the error condition and continue loading the designer.</span></span> <span data-ttu-id="8c910-137">この操作を選択すると、予期しない動作が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="8c910-137">Choosing this action may result in unexpected behavior.</span></span> <span data-ttu-id="8c910-138">たとえば、デザイン サーフェイスにコントロールが表示されない場合があります。</span><span class="sxs-lookup"><span data-stu-id="8c910-138">For example, controls may not appear on the design surface.</span></span>  
   
-## 参照  
- [Troubleshooting Design\-Time Development](../Topic/Troubleshooting%20Design-Time%20Development.md)   
- [コントロールとコンポーネントの作成時のトラブルシューティング](../../../../docs/framework/winforms/controls/troubleshooting-control-and-component-authoring.md)   
- [デザイン時の Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)   
- [Windows Forms Designer Error Messages](http://msdn.microsoft.com/ja-jp/cf610bf4-5fe4-471c-bce7-6a05ece07bd2)
+## <a name="see-also"></a><span data-ttu-id="8c910-139">関連項目</span><span class="sxs-lookup"><span data-stu-id="8c910-139">See Also</span></span>  
+ [<span data-ttu-id="8c910-140">デザイン時の開発のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="8c910-140">Troubleshooting Design-Time Development</span></span>](http://msdn.microsoft.com/library/e048d08e-fa7c-4be8-b238-4abaa199a0a6)  
+ [<span data-ttu-id="8c910-141">コントロールとコンポーネントの作成時のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="8c910-141">Troubleshooting Control and Component Authoring</span></span>](../../../../docs/framework/winforms/controls/troubleshooting-control-and-component-authoring.md)  
+ [<span data-ttu-id="8c910-142">デザイン時の Windows フォーム コントロールの開発</span><span class="sxs-lookup"><span data-stu-id="8c910-142">Developing Windows Forms Controls at Design Time</span></span>](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)  
+ [<span data-ttu-id="8c910-143">Windows フォーム デザイナーのエラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="8c910-143">Windows Forms Designer Error Messages</span></span>](http://msdn.microsoft.com/en-us/cf610bf4-5fe4-471c-bce7-6a05ece07bd2)

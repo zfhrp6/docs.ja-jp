@@ -1,107 +1,108 @@
 ---
-title: "Windows フォームでのユーザー入力の検証 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ユーザー入力, 検証 (Windows フォームで)"
-  - "検証 (ユーザー入力の), Windows フォーム"
-  - "検証, Windows フォームのユーザー入力"
-  - "Windows フォーム, 検証 (ユーザー入力の)"
+title: "Windows フォームでのユーザー入力の検証"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Forms, validating user input
+- validation [Windows Forms], Windows Forms user input
+- user input [Windows Forms], validating in Windows Forms
+- validating user input [Windows Forms], Windows Forms
 ms.assetid: 4ec07681-1dee-4bf9-be5e-718f635a33a1
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 48a28db24731f9aa248bb149c9f19a57cf76bbf1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォームでのユーザー入力の検証
-ユーザーがアプリケーションにデータを入力する場合、アプリケーションがそのデータを使用する前に、データが有効であるかどうかの検証が必要になることがあります。  たとえば、テキスト フィールドの長さがゼロでないこと、フィールドの形式が電話番号や他の形式のデータとして適していること、または、文字列に、データベースのセキュリティに危険を与える可能性がある安全でない文字が含まれていないことを確認したりします。  Windows フォームは、アプリケーションでの入力を検証するさまざまな方法を提供します。  
+# <a name="user-input-validation-in-windows-forms"></a><span data-ttu-id="18cf0-102">Windows フォームでのユーザー入力の検証</span><span class="sxs-lookup"><span data-stu-id="18cf0-102">User Input Validation in Windows Forms</span></span>
+<span data-ttu-id="18cf0-103">ユーザーがアプリケーションにデータを入力する場合、アプリケーションがそれを使用する前に、データが有効であることを確認します。</span><span class="sxs-lookup"><span data-stu-id="18cf0-103">When users enter data into your application, you may want to verify that the data is valid before your application uses it.</span></span> <span data-ttu-id="18cf0-104">特定のテキスト フィールドにならないこと長さがゼロでフィールドが、電話番号などの適切な形式のデータの型として書式設定されること、または文字列がデータベースのセキュリティを侵害するために使用できる任意の安全でない文字を含まないことを要求することがあります。</span><span class="sxs-lookup"><span data-stu-id="18cf0-104">You may require that certain text fields not be zero-length, that a field be formatted as a telephone number or other type of well-formed data, or that a string not contain any unsafe characters that could be used to compromise the security of a database.</span></span> <span data-ttu-id="18cf0-105">Windows フォームでは、アプリケーションで入力を検証するためのいくつかの方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="18cf0-105">Windows Forms provides several ways for you to validate input in your application.</span></span>  
   
-## MaskedTextBox コントロールによる検証  
- 電話番号や部品番号のように特定の形式でユーザーがデータを入力する必要がある場合は、<xref:System.Windows.Forms.MaskedTextBox> コントロールを使用することで、これを簡単に、かつ最小限のコードで実現できます。  *マスク*は、テキスト ボックス内の所定の位置に入力できる文字を指定する、マスキング言語の文字から成る文字列です。  コントロールは、ユーザーに対して一連のプロンプトを表示します。  数字が要求される場所に文字を入力しようとするなど、ユーザーが正しくないエントリを入力すると、コントロールは自動的に入力を拒否します。  
+## <a name="validation-with-the-maskedtextbox-control"></a><span data-ttu-id="18cf0-106">MaskedTextBox コントロールによる検証</span><span class="sxs-lookup"><span data-stu-id="18cf0-106">Validation with the MaskedTextBox Control</span></span>  
+ <span data-ttu-id="18cf0-107">ユーザーに電話番号または部品番号など、適切に定義された形式でデータを入力する必要がある場合は、これを行う迅速に、最小限のコードを使用して、<xref:System.Windows.Forms.MaskedTextBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="18cf0-107">If you need to require users to enter data in a well-defined format, such as a telephone number or a part number, you can accomplish this quickly and with minimal code by using the <xref:System.Windows.Forms.MaskedTextBox> control.</span></span> <span data-ttu-id="18cf0-108">A*マスク*所定の位置でテキスト ボックスに入力できる文字を指定するマスク言語の文字から成る文字列です。</span><span class="sxs-lookup"><span data-stu-id="18cf0-108">A *mask* is a string made up of characters from a masking language that specifies which characters can be entered at any given position in the text box.</span></span> <span data-ttu-id="18cf0-109">コントロールには、ユーザーに一連のプロンプトが表示されます。</span><span class="sxs-lookup"><span data-stu-id="18cf0-109">The control displays a set of prompts to the user.</span></span> <span data-ttu-id="18cf0-110">ユーザーが間違って入力した場合、たとえば、1 桁の数字が必要な場合、文字を入力、コントロールは、入力を自動的に拒否します。</span><span class="sxs-lookup"><span data-stu-id="18cf0-110">If the user types an incorrect entry, for example, the user types a letter when a digit is required, the control will automatically reject the input.</span></span>  
   
- <xref:System.Windows.Forms.MaskedTextBox> で使用されるマスク言語は非常に柔軟性があり、  必須文字、オプション文字、ハイフンやかっこなどのリテラル文字、通貨記号、および日付の区切り記号を指定できます。  コントロールは、データ ソースとバインドしている場合にも適切に動作します。  データ バインディングに対して <xref:System.Windows.Forms.Binding.Format> イベントを使用すると、受信データをマスクに合わせて再設定できます。<xref:System.Windows.Forms.Binding.Parse> イベントを使用すると、データ フィールドの指定に合わせて送信データを再設定できます。  
+ <span data-ttu-id="18cf0-111">によって使用される、マスク言語<xref:System.Windows.Forms.MaskedTextBox>は非常に柔軟です。</span><span class="sxs-lookup"><span data-stu-id="18cf0-111">The masking language that is used by <xref:System.Windows.Forms.MaskedTextBox> is very flexible.</span></span> <span data-ttu-id="18cf0-112">必要となる文字、省略可能な文字、リテラル文字、ハイフン、かっこなど、通貨記号、および日付の区切り記号を指定できます。</span><span class="sxs-lookup"><span data-stu-id="18cf0-112">It allows you to specify required characters, optional characters, literal characters, such as hyphens and parentheses, currency characters, and date separators.</span></span> <span data-ttu-id="18cf0-113">コントロールも、データ ソースにバインドした場合でも機能します。</span><span class="sxs-lookup"><span data-stu-id="18cf0-113">The control also works well when bound to a data source.</span></span> <span data-ttu-id="18cf0-114"><xref:System.Windows.Forms.Binding.Format>のデータ バインディング イベントを使用して、マスクに準拠する受信データの書式を変更することができます、<xref:System.Windows.Forms.Binding.Parse>イベントを送信したデータ フィールドの仕様に準拠するデータを書式設定を使用できます。</span><span class="sxs-lookup"><span data-stu-id="18cf0-114">The <xref:System.Windows.Forms.Binding.Format> event on a data binding can be used to reformat incoming data to comply with the mask, and the <xref:System.Windows.Forms.Binding.Parse> event can be used to reformat outgoing data to comply with the specifications of the data field.</span></span>  
   
- 詳細については、「[MaskedTextBox コントロール](../../../docs/framework/winforms/controls/maskedtextbox-control-windows-forms.md)」を参照してください。  
+ <span data-ttu-id="18cf0-115">詳細については、次を参照してください。 [MaskedTextBox コントロール](../../../docs/framework/winforms/controls/maskedtextbox-control-windows-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="18cf0-115">For more information, see [MaskedTextBox Control](../../../docs/framework/winforms/controls/maskedtextbox-control-windows-forms.md).</span></span>  
   
-## イベント ドリブン検証  
- プログラムで検証を完全に制御する場合、または、複雑な検証チェックを実行する必要がある場合は、大部分の Windows フォーム コントロールに組み込まれている検証イベントを使用します。  自由形式のユーザー入力を受け取る各コントロールは <xref:System.Windows.Forms.Control.Validating> イベントを備えており、、コントロールがデータ検証を要求するとこのイベントが発生します。  <xref:System.Windows.Forms.Control.Validating> イベント処理メソッドを使用すると、ユーザーの入力をさまざまな方法で検証できます。  たとえば、郵便番号を入力するテキスト ボックスがある場合、次のような方法で検証を実行できます。  
+## <a name="event-driven-validation"></a><span data-ttu-id="18cf0-116">イベント ドリブンの検証</span><span class="sxs-lookup"><span data-stu-id="18cf0-116">Event-Driven Validation</span></span>  
+ <span data-ttu-id="18cf0-117">表示する場合、検証を完全にプログラムで制御や複雑な検証チェックを実行する必要があります、ほとんどの Windows フォーム コントロールに組み込まれている検証イベントを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="18cf0-117">If you want full programmatic control over validation, or need to perform complex validation checks, you should use the validation events built into most Windows Forms controls.</span></span> <span data-ttu-id="18cf0-118">各コントロールを自由にユーザー入力を受け付けるには、<xref:System.Windows.Forms.Control.Validating>コントロール データの検証に必要なときに発生するイベントです。</span><span class="sxs-lookup"><span data-stu-id="18cf0-118">Each control that accepts free-form user input has a <xref:System.Windows.Forms.Control.Validating> event that will occur whenever the control requires data validation.</span></span> <span data-ttu-id="18cf0-119"><xref:System.Windows.Forms.Control.Validating>イベント処理メソッドでは、ユーザーのいくつかの方法で入力を検証できます。</span><span class="sxs-lookup"><span data-stu-id="18cf0-119">In the <xref:System.Windows.Forms.Control.Validating> event-handling method, you can validate user input in several ways.</span></span> <span data-ttu-id="18cf0-120">たとえば、郵便番号コードを含める必要があるテキスト ボックスがある場合は、次の方法で検証を実行できます。</span><span class="sxs-lookup"><span data-stu-id="18cf0-120">For example, if you have a text box that must contain a postal code, you can perform the validation in the following ways:</span></span>  
   
--   そこに特定のグループに属する郵便番号を入力する必要がある場合、入力値に対して文字列比較を実行し、ユーザーの入力データを検証できます。  たとえば、{10001, 10002, 10003} という集合に含まれる郵便番号を入力する必要がある場合、文字列比較を使用してデータを検証できます。  
+-   <span data-ttu-id="18cf0-121">郵便番号は、郵便番号の特定のグループに属している必要がある場合、は、ユーザーが入力データを検証する入力文字列の比較を実行できます。</span><span class="sxs-lookup"><span data-stu-id="18cf0-121">If the postal code must belong to a specific group of zip codes, you can perform a string comparison on the input to validate the data entered by the user.</span></span> <span data-ttu-id="18cf0-122">たとえば、郵便番号は、セット {10001、10002、10003} にする必要がある場合、は、データの検証に文字列比較を使用できます。</span><span class="sxs-lookup"><span data-stu-id="18cf0-122">For example, if the postal code must be in the set {10001, 10002, 10003}, then you can use a string comparison to validate the data.</span></span>  
   
--   特定の形式で郵便番号を入力する必要がある場合は、正規表現を使用してユーザーの入力データを検証できます。  たとえば、`#####` または `#####-####` という形式を検証する場合、正規表現 `^(\d{5})(-\d{4})?$` を使用できます。  `A#A #A#` という形式を検証するには、正規表現 `[A-Z]\d[A-Z] \d[A-Z]\d` を使用できます。  正規表現の詳細については、「[.NET Framework の正規表現](../../../docs/standard/base-types/regular-expressions.md)」および「[正規表現の例](../../../docs/standard/base-types/regular-expression-examples.md)」を参照してください。  
+-   <span data-ttu-id="18cf0-123">特定の形式である必要があります、郵便番号場合は、ユーザーが入力データを検証する正規表現を使用できます。</span><span class="sxs-lookup"><span data-stu-id="18cf0-123">If the postal code must be in a specific form you can use regular expressions to validate the data entered by the user.</span></span> <span data-ttu-id="18cf0-124">たとえば、フォームを検証する`#####`または`#####-####`、正規表現を使用する`^(\d{5})(-\d{4})?$`です。</span><span class="sxs-lookup"><span data-stu-id="18cf0-124">For example, to validate the form `#####` or `#####-####`, you can use the regular expression `^(\d{5})(-\d{4})?$`.</span></span> <span data-ttu-id="18cf0-125">フォームを検証する`A#A #A#`、正規表現を使用する`[A-Z]\d[A-Z] \d[A-Z]\d`です。</span><span class="sxs-lookup"><span data-stu-id="18cf0-125">To validate the form `A#A #A#`, you can use the regular expression `[A-Z]\d[A-Z] \d[A-Z]\d`.</span></span> <span data-ttu-id="18cf0-126">正規表現の詳細については、次を参照してください。 [.NET Framework 正規表現](../../../docs/standard/base-types/regular-expressions.md)と[正規表現の例](../../../docs/standard/base-types/regular-expression-examples.md)です。</span><span class="sxs-lookup"><span data-stu-id="18cf0-126">For more information about regular expressions, see [.NET Framework Regular Expressions](../../../docs/standard/base-types/regular-expressions.md) and [Regular Expression Examples](../../../docs/standard/base-types/regular-expression-examples.md).</span></span>  
   
--   有効なアメリカ合衆国郵便番号を入力する必要がある場合、郵便番号の Web サービスを呼び出して、ユーザーの入力データを検証することもできます。  
+-   <span data-ttu-id="18cf0-127">郵便番号は、有効な米国の郵便である必要がある場合、は、ユーザーが入力データを検証する郵便番号 Web サービスを呼び出す可能性があります。</span><span class="sxs-lookup"><span data-stu-id="18cf0-127">If the postal code must be a valid United States Zip code, you could call a Zip code Web service to validate the data entered by the user.</span></span>  
   
- <xref:System.Windows.Forms.Control.Validating> イベントには、<xref:System.ComponentModel.CancelEventArgs> 型のオブジェクトを提供します。  コントロールのデータが有効でないと判断した場合は、このオブジェクトの <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> プロパティを `true` に設定することによって、<xref:System.Windows.Forms.Control.Validating> イベントをキャンセルできます。  <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> プロパティが設定されない場合は、そのコントロールの検証が正常終了したものと見なされ、<xref:System.Windows.Forms.Control.Validated> イベントが発生します。  
+ <span data-ttu-id="18cf0-128"><xref:System.Windows.Forms.Control.Validating>イベントが指定された型のオブジェクト<xref:System.ComponentModel.CancelEventArgs>です。</span><span class="sxs-lookup"><span data-stu-id="18cf0-128">The <xref:System.Windows.Forms.Control.Validating> event is supplied an object of type <xref:System.ComponentModel.CancelEventArgs>.</span></span> <span data-ttu-id="18cf0-129">取り消すことができますが、コントロールのデータが無効であると判断した場合、<xref:System.Windows.Forms.Control.Validating>するには、このオブジェクトのイベント<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。</span><span class="sxs-lookup"><span data-stu-id="18cf0-129">If you determine that the control's data is not valid, you can cancel the <xref:System.Windows.Forms.Control.Validating> event by setting this object's <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> property to `true`.</span></span> <span data-ttu-id="18cf0-130">設定しない場合、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティ、Windows フォームは、そのコントロールが正常に検証するいると仮定させて、<xref:System.Windows.Forms.Control.Validated>イベント。</span><span class="sxs-lookup"><span data-stu-id="18cf0-130">If you do not set the <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> property, Windows Forms will assume that validation succeeded for that control, and raise the <xref:System.Windows.Forms.Control.Validated> event.</span></span>  
   
- <xref:System.Windows.Controls.TextBox> で電子メール アドレスを検証するコード例については、<xref:System.Windows.Forms.Control.Validating> のトピックを参照してください。  
+ <span data-ttu-id="18cf0-131">内の電子メール アドレスを検証するコード例については、<xref:System.Windows.Controls.TextBox>を参照してください<xref:System.Windows.Forms.Control.Validating>です。</span><span class="sxs-lookup"><span data-stu-id="18cf0-131">For a code example that validates an e-mail address in a <xref:System.Windows.Controls.TextBox>, see <xref:System.Windows.Forms.Control.Validating>.</span></span>  
   
-### データ バインディングおよびイベント ドリブン検証  
- コントロールがデータベース テーブルなどのデータ ソースにバインドされている場合、検証は非常に効果的です。  検証を使用すると、コントロールのデータがデータ ソースに適した形式であることや、安全でない可能性がある引用符やバック スラッシュなどの特殊文字を含まないことを確認できます。  
+### <a name="data-binding-and-event-driven-validation"></a><span data-ttu-id="18cf0-132">データ バインディングとイベント ドリブンの検証</span><span class="sxs-lookup"><span data-stu-id="18cf0-132">Data Binding and Event-Driven Validation</span></span>  
+ <span data-ttu-id="18cf0-133">検証は、データベース テーブルなどのデータ ソースにコントロールがバインドされているときに非常に便利です。</span><span class="sxs-lookup"><span data-stu-id="18cf0-133">Validation is very useful when you have bound your controls to a data source, such as a database table.</span></span> <span data-ttu-id="18cf0-134">確認することができます、検証を使用して、コントロールのデータがデータ ソースで必要な形式を満たす、そのことにはない引用符などの特殊文字を含めるとできない可能性がありますセーフであります。</span><span class="sxs-lookup"><span data-stu-id="18cf0-134">By using validation, you can make sure that your control's data satisfies the format required by the data source, and that it does not contain any special characters such as quotation marks and back slashes that might be unsafe.</span></span>  
   
- データ バインディングを使用すると、コントロール内のデータは、<xref:System.Windows.Forms.Control.Validating> イベントの実行中、データ ソースと同期します。  <xref:System.Windows.Forms.Control.Validating> イベントをキャンセルすると、データはデータ ソースと同期しません。  
+ <span data-ttu-id="18cf0-135">実行中に、データ ソースとに、コントロール内のデータが同期されているデータ バインディングを使用するとき、<xref:System.Windows.Forms.Control.Validating>イベント。</span><span class="sxs-lookup"><span data-stu-id="18cf0-135">When you use data binding, the data in your control is synchronized with the data source during execution of the <xref:System.Windows.Forms.Control.Validating> event.</span></span> <span data-ttu-id="18cf0-136">キャンセルすると、<xref:System.Windows.Forms.Control.Validating>イベント、データは、データ ソースと同期されません。</span><span class="sxs-lookup"><span data-stu-id="18cf0-136">If you cancel the <xref:System.Windows.Forms.Control.Validating> event, the data will not be synchronized with the data source.</span></span>  
   
 > [!IMPORTANT]
->  <xref:System.Windows.Forms.Control.Validating> イベントの後に実行するカスタム検証の場合は、データ バインディングに影響しません。  たとえば、<xref:System.Windows.Forms.Control.Validated> イベント内にデータ バインディングをキャンセルするコードがある場合でも、データ バインディングは発生します。  この場合、<xref:System.Windows.Forms.Control.Validated> イベント内で検証を実行するには、コントロールの **\[データ ソース更新モード\]** プロパティ \(**\[\(Databindings\)\]**\\**\[\(詳細\)\]** の下\) を **\[OnValidation\]** から **\[Never\]** に変更し、検証コードに *Control*`.DataBindings["`*\<YOURFIELD\>*`"].WriteValue()` を追加します。  
+>  <span data-ttu-id="18cf0-137">カスタム検証が行われたことがある場合、<xref:System.Windows.Forms.Control.Validating>イベントには、データ バインディングで影響しません。</span><span class="sxs-lookup"><span data-stu-id="18cf0-137">If you have custom validation that takes place after the <xref:System.Windows.Forms.Control.Validating> event, it will not affect the data binding.</span></span> <span data-ttu-id="18cf0-138">コードがある場合など、<xref:System.Windows.Forms.Control.Validated>データ バインディングをキャンセルしようとするイベント、データ バインディングは行われます。</span><span class="sxs-lookup"><span data-stu-id="18cf0-138">For example, if you have code in a <xref:System.Windows.Forms.Control.Validated> event that attempts to cancel the data binding, the data binding will still occur.</span></span> <span data-ttu-id="18cf0-139">検証を実行するのには、この場合で、<xref:System.Windows.Forms.Control.Validated>イベント、管理の変更**データ ソース更新モード**プロパティ (**(Databindings) の下にある**\\**(詳細)**) から**OnValidation**に**Never**、し、追加*コントロール*`.DataBindings["`*\<YOURFIELD >* `"].WriteValue()`検証コードにします。</span><span class="sxs-lookup"><span data-stu-id="18cf0-139">In this case, to perform validation in the <xref:System.Windows.Forms.Control.Validated> event, change the control's **Data Source Update Mode** property (**under (Databindings)**\\**(Advanced)**) from **OnValidation** to **Never**, and add *Control*`.DataBindings["`*\<YOURFIELD>*`"].WriteValue()` to your validation code.</span></span>  
   
-### 暗黙の検証と明示的な検証  
- では、コントロールのデータはいつ検証を受けるのでしょうか。  その答えは、開発者しだいです。  アプリケーションの必要性に応じて、暗黙の検証と明示的な検証のいずれかを使用できます。  
+### <a name="implicit-and-explicit-validation"></a><span data-ttu-id="18cf0-140">暗黙的および明示的な検証</span><span class="sxs-lookup"><span data-stu-id="18cf0-140">Implicit and Explicit Validation</span></span>  
+ <span data-ttu-id="18cf0-141">これはいつコントロールのデータ取得検証しますか。</span><span class="sxs-lookup"><span data-stu-id="18cf0-141">So when does a control's data get validated?</span></span> <span data-ttu-id="18cf0-142">これは、ユーザー、開発者の責任です。</span><span class="sxs-lookup"><span data-stu-id="18cf0-142">This is up to you, the developer.</span></span> <span data-ttu-id="18cf0-143">アプリケーションのニーズに応じて、暗黙的または明示的な検証を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="18cf0-143">You can use either implicit or explicit validation, depending on the needs of your application.</span></span>  
   
-#### 暗黙の検証  
- 暗黙の検証は、ユーザーがデータを入力するたびに検証する方法です。  キーの押下を読み取って、コントロールに入力されるデータを検証することもできますが、さらに一般的な方法としては、ユーザーがあるコントロールから次へ入力フォーカスを移動したときにデータを検証できます。  この方法は、入力中のデータについて、ユーザーに対して直ちにフィードバックを返す場合に有効です。  
+#### <a name="implicit-validation"></a><span data-ttu-id="18cf0-144">暗黙の検証</span><span class="sxs-lookup"><span data-stu-id="18cf0-144">Implicit Validation</span></span>  
+ <span data-ttu-id="18cf0-145">暗黙的な検証方法は、ユーザーが入力するようにデータを検証します。</span><span class="sxs-lookup"><span data-stu-id="18cf0-145">The implicit validation approach validates data as the user enters it.</span></span> <span data-ttu-id="18cf0-146">ユーザーが 1 つのコントロールから入力フォーカスを受け取るし、次に移動するたびに通常以上のようが押されたキーを読み取ることによってコントロールにデータを入力すると、データを検証することができます。</span><span class="sxs-lookup"><span data-stu-id="18cf0-146">You can validate the data as the data is entered in a control by reading the keys as they are pressed, or more commonly whenever the user takes the input focus away from one control and moves to the next.</span></span> <span data-ttu-id="18cf0-147">この方法は、作業しているように、データに関するユーザーの直接のフィードバックを付与するときに便利です。</span><span class="sxs-lookup"><span data-stu-id="18cf0-147">This approach is useful when you want to give the user immediate feedback about the data as they are working.</span></span>  
   
- あるコントロールに対する暗黙の検証を使用する場合、そのコントロールの <xref:System.Windows.Forms.ContainerControl.AutoValidate%2A> プロパティを `true` に設定します。  <xref:System.Windows.Forms.Control.Validating> イベントをキャンセルした場合、コントロールの動作は <xref:System.Windows.Forms.ContainerControl.AutoValidate%2A> に割り当てた値によって決定されます。  <xref:System.Windows.Forms.AutoValidate> を割り当てた場合は、イベントをキャンセルしても、<xref:System.Windows.Forms.Control.Validated> イベントが発生しません。  ユーザーが有効なデータを入力するまで、入力フォーカスは現在のコントロールから移動しません。  <xref:System.Windows.Forms.AutoValidate> を割り当てた場合は、イベントをキャンセルしても <xref:System.Windows.Forms.Control.Validated> イベントは発生せず、フォーカスはそのまま次のコントロールに移ります。  
+ <span data-ttu-id="18cf0-148">コントロールの暗黙的な検証を使用する場合は、そのコントロールを設定する必要があります<xref:System.Windows.Forms.ContainerControl.AutoValidate%2A>プロパティを`true`です。</span><span class="sxs-lookup"><span data-stu-id="18cf0-148">If you want to use implicit validation for a control, you must set that control's <xref:System.Windows.Forms.ContainerControl.AutoValidate%2A> property to `true`.</span></span> <span data-ttu-id="18cf0-149">キャンセルすると、<xref:System.Windows.Forms.Control.Validating>イベント、コントロールの動作に割り当てられている値によって決定されます<xref:System.Windows.Forms.ContainerControl.AutoValidate%2A>です。</span><span class="sxs-lookup"><span data-stu-id="18cf0-149">If you cancel the <xref:System.Windows.Forms.Control.Validating> event, the behavior of the control will be determined by what value that you assigned to <xref:System.Windows.Forms.ContainerControl.AutoValidate%2A>.</span></span> <span data-ttu-id="18cf0-150">割り当てた場合<xref:System.Windows.Forms.AutoValidate.EnablePreventFocusChange>、イベントをキャンセルすると、<xref:System.Windows.Forms.Control.Validated>イベントが発生するされません。</span><span class="sxs-lookup"><span data-stu-id="18cf0-150">If you assigned <xref:System.Windows.Forms.AutoValidate.EnablePreventFocusChange>, canceling the event will cause the <xref:System.Windows.Forms.Control.Validated> event not to occur.</span></span> <span data-ttu-id="18cf0-151">ユーザーは、有効な入力をデータを変更するまでは、入力フォーカスが現在のコントロール上に残ります。</span><span class="sxs-lookup"><span data-stu-id="18cf0-151">Input focus will remain on the current control until the user changes the data to a valid input.</span></span> <span data-ttu-id="18cf0-152">割り当てた場合<xref:System.Windows.Forms.AutoValidate.EnableAllowFocusChange>、<xref:System.Windows.Forms.Control.Validated>イベントは、イベントをキャンセルするが、次のコントロールにフォーカスを移動も発生しません。</span><span class="sxs-lookup"><span data-stu-id="18cf0-152">If you assigned <xref:System.Windows.Forms.AutoValidate.EnableAllowFocusChange>, the <xref:System.Windows.Forms.Control.Validated> event will not occur when you cancel the event, but focus will still change to the next control.</span></span>  
   
- <xref:System.Windows.Forms.ContainerControl.AutoValidate%2A> プロパティに <xref:System.Windows.Forms.AutoValidate> を割り当てると、暗黙の検証がまったく行われません。  コントロールを検証するには、明示的な検証を使用する必要があります。  
+ <span data-ttu-id="18cf0-153">割り当てる<xref:System.Windows.Forms.AutoValidate.Disable>を<xref:System.Windows.Forms.ContainerControl.AutoValidate%2A>プロパティの暗黙的な検証はまったく行われません。</span><span class="sxs-lookup"><span data-stu-id="18cf0-153">Assigning <xref:System.Windows.Forms.AutoValidate.Disable> to the <xref:System.Windows.Forms.ContainerControl.AutoValidate%2A> property prevents implicit validation altogether.</span></span> <span data-ttu-id="18cf0-154">コントロールを検証するには、明示的な検証を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="18cf0-154">To validate your controls, you will have to use explicit validation.</span></span>  
   
-#### 明示的な検証  
- 明示的な検証は、データを 1 回で検証する方法です。  あるユーザー アクションが発生したとき \(\[保存\] ボタンや \[次へ\] リンクをクリックするなど\) に、データを検証することができます。  そのユーザー アクションが発生したときに明示的な検証をトリガーするには、次のいずれかを実行します。  
+#### <a name="explicit-validation"></a><span data-ttu-id="18cf0-155">明示的な検証</span><span class="sxs-lookup"><span data-stu-id="18cf0-155">Explicit Validation</span></span>  
+ <span data-ttu-id="18cf0-156">明示的な検証方法は、一度に 1 つのデータを検証します。</span><span class="sxs-lookup"><span data-stu-id="18cf0-156">The explicit validation approach validates data at one time.</span></span> <span data-ttu-id="18cf0-157">[保存] ボタンまたは [次へ] のリンクのクリックしてなどのユーザー アクションへの応答内のデータを検証することができます。</span><span class="sxs-lookup"><span data-stu-id="18cf0-157">You can validate the data in response to a user action, such as clicking a Save button or a Next link.</span></span> <span data-ttu-id="18cf0-158">ユーザー アクションが発生したときに、明示的な検証をトリガーするには、次の方法のいずれか。</span><span class="sxs-lookup"><span data-stu-id="18cf0-158">When the user action occurs, you can trigger explicit validation in one of the following ways:</span></span>  
   
--   <xref:System.Windows.Forms.ContainerControl.Validate%2A> を呼び出して、最後のコントロールがフォーカスを失ったことを確認します。  
+-   <span data-ttu-id="18cf0-159">呼び出す<xref:System.Windows.Forms.ContainerControl.Validate%2A>フォーカスが失われた最後のコントロールを検証します。</span><span class="sxs-lookup"><span data-stu-id="18cf0-159">Call <xref:System.Windows.Forms.ContainerControl.Validate%2A> to validate the last control to have lost focus.</span></span>  
   
--   <xref:System.Windows.Forms.ContainerControl.ValidateChildren%2A> を呼び出して、フォーム コントロールまたはコンテナー コントロールのすべての子コントロールを検証します。  
+-   <span data-ttu-id="18cf0-160">呼び出す<xref:System.Windows.Forms.ContainerControl.ValidateChildren%2A>フォームまたはコンテナー コントロール内のすべての子コントロールを検証します。</span><span class="sxs-lookup"><span data-stu-id="18cf0-160">Call <xref:System.Windows.Forms.ContainerControl.ValidateChildren%2A> to validate all child controls in a form or container control.</span></span>  
   
--   カスタム メソッドを呼び出して、コントロールのデータを手動で検証します。  
+-   <span data-ttu-id="18cf0-161">コントロール内のデータを手動で検証するカスタム メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="18cf0-161">Call a custom method to validate the data in the controls manually.</span></span>  
   
-#### Windows フォーム コントロールにおける既定の暗黙の検証動作  
- Windows フォーム コントロールの <xref:System.Windows.Forms.ContainerControl.AutoValidate%2A> プロパティの既定値は、種類によってそれぞれ異なります。  最も一般的なコントロールとその既定値を次の表に示します。  
+#### <a name="default-implicit-validation-behavior-for-windows-forms-controls"></a><span data-ttu-id="18cf0-162">暗黙的な検証デフォルトでは、Windows フォーム コントロール</span><span class="sxs-lookup"><span data-stu-id="18cf0-162">Default Implicit Validation Behavior for Windows Forms Controls</span></span>  
+ <span data-ttu-id="18cf0-163">別の Windows フォーム コントロールごとに異なる既定があるその<xref:System.Windows.Forms.ContainerControl.AutoValidate%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="18cf0-163">Different Windows Forms controls have different defaults for their <xref:System.Windows.Forms.ContainerControl.AutoValidate%2A> property.</span></span> <span data-ttu-id="18cf0-164">次の表は、最も一般的なコントロールとその既定値を示します。</span><span class="sxs-lookup"><span data-stu-id="18cf0-164">The following table shows the most common controls and their defaults.</span></span>  
   
-|Control|既定の検証動作|  
-|-------------|-------------|  
-|<xref:System.Windows.Forms.ContainerControl>|<xref:System.Windows.Forms.AutoValidate>|  
-|<xref:System.Windows.Forms.Form>|<xref:System.Windows.Forms.AutoValidate>|  
-|<xref:System.Windows.Forms.PropertyGrid>|Visual Studio の中でプロパティは公開されない|  
-|<xref:System.Windows.Forms.ToolStripContainer>|Visual Studio の中でプロパティは公開されない|  
-|<xref:System.Windows.Forms.SplitContainer>|<xref:System.Windows.Forms.AutoValidate>|  
-|<xref:System.Windows.Forms.UserControl>|<xref:System.Windows.Forms.AutoValidate>|  
+|<span data-ttu-id="18cf0-165">コントロール</span><span class="sxs-lookup"><span data-stu-id="18cf0-165">Control</span></span>|<span data-ttu-id="18cf0-166">既定の検証動作</span><span class="sxs-lookup"><span data-stu-id="18cf0-166">Default Validation Behavior</span></span>|  
+|-------------|---------------------------------|  
+|<xref:System.Windows.Forms.ContainerControl>|<xref:System.Windows.Forms.AutoValidate.Inherit>|  
+|<xref:System.Windows.Forms.Form>|<xref:System.Windows.Forms.AutoValidate.EnableAllowFocusChange>|  
+|<xref:System.Windows.Forms.PropertyGrid>|<span data-ttu-id="18cf0-167">Visual Studio で公開されていないプロパティ</span><span class="sxs-lookup"><span data-stu-id="18cf0-167">Property not exposed in Visual Studio</span></span>|  
+|<xref:System.Windows.Forms.ToolStripContainer>|<span data-ttu-id="18cf0-168">Visual Studio で公開されていないプロパティ</span><span class="sxs-lookup"><span data-stu-id="18cf0-168">Property not exposed in Visual Studio</span></span>|  
+|<xref:System.Windows.Forms.SplitContainer>|<xref:System.Windows.Forms.AutoValidate.Inherit>|  
+|<xref:System.Windows.Forms.UserControl>|<xref:System.Windows.Forms.AutoValidate.EnableAllowFocusChange>|  
   
-## フォームを閉じて検証をオーバーライドする  
- データが無効なためにフォーカスがコントロールに維持される場合、次のような通常の方法でフォームを閉じようとしても、親フォームを閉じることができません。  
+## <a name="closing-the-form-and-overriding-validation"></a><span data-ttu-id="18cf0-169">フォームを閉じると、検証のオーバーライド</span><span class="sxs-lookup"><span data-stu-id="18cf0-169">Closing the Form and Overriding Validation</span></span>  
+ <span data-ttu-id="18cf0-170">コントロールが含まれているデータが正しくないために、フォーカスを管理しているときに、通常の方法のいずれかで、親フォームを閉じることはできません。</span><span class="sxs-lookup"><span data-stu-id="18cf0-170">When a control maintains focus because the data it contains is invalid, it is impossible to close the parent form in one of the usual ways:</span></span>  
   
--   **\[閉じる\]** をクリックする。  
+-   <span data-ttu-id="18cf0-171">クリックして、**閉じる**ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="18cf0-171">By clicking the **Close** button.</span></span>  
   
--   **\[システム\]** メニューの **\[閉じる\]** をクリックする。  
+-   <span data-ttu-id="18cf0-172">選択して**閉じる**で、**システム**メニュー。</span><span class="sxs-lookup"><span data-stu-id="18cf0-172">By selecting **Close** in the **System** menu.</span></span>  
   
--   プログラムで <xref:System.Windows.Forms.Form.Close%2A> メソッドを呼び出す。  
+-   <span data-ttu-id="18cf0-173">呼び出して、<xref:System.Windows.Forms.Form.Close%2A>メソッド プログラムでします。</span><span class="sxs-lookup"><span data-stu-id="18cf0-173">By calling the <xref:System.Windows.Forms.Form.Close%2A> method programmatically.</span></span>  
   
- ただし、場合によっては、コントロール内の値が有効かどうかにかかわらず、ユーザーがフォームを閉じることができるようにする必要があります。  フォームの <xref:System.Windows.Forms.Form.Closing> イベントのハンドラーを作成することにより、検証をオーバーライドして、無効なデータを含んでいるフォームを閉じることができます。  このイベント内で、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A> プロパティを `false` に設定します。  これにより、フォームが強制的に閉じられます。  詳細および使用例については、「<xref:System.Windows.Forms.Form.Closing?displayProperty=fullName>」を参照してください。  
+ <span data-ttu-id="18cf0-174">ただし、場合によっては、ユーザーがコントロール内の値が有効かどうかに関係なく、フォームを閉じますできるようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="18cf0-174">However, in some cases, you might want to let the user close the form regardless of whether the values in the controls are valid.</span></span> <span data-ttu-id="18cf0-175">検証をオーバーライドして、フォームのハンドラーを作成することで無効なデータをまだ含まれているフォームを閉じます<xref:System.Windows.Forms.Form.Closing>イベント。</span><span class="sxs-lookup"><span data-stu-id="18cf0-175">You can override validation and close a form that still contains invalid data by creating a handler for the form's <xref:System.Windows.Forms.Form.Closing> event.</span></span> <span data-ttu-id="18cf0-176">このイベントでは、設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`false`です。</span><span class="sxs-lookup"><span data-stu-id="18cf0-176">In the event, set the <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> property to `false`.</span></span> <span data-ttu-id="18cf0-177">これにより、フォームを閉じます。</span><span class="sxs-lookup"><span data-stu-id="18cf0-177">This forces the form to close.</span></span> <span data-ttu-id="18cf0-178">使用例を含む詳細については、「<xref:System.Windows.Forms.Form.Closing?displayProperty=nameWithType>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="18cf0-178">For more information and an example, see <xref:System.Windows.Forms.Form.Closing?displayProperty=nameWithType>.</span></span>  
   
 > [!NOTE]
->  フォームをこのように強制的に閉じると、そのフォームのコントロール内の保存されていないデータはすべて失われます。  また、モーダル フォームは、閉じられるときにコントロールの内容を検証しません。  コントロールの検証を使用してフォーカスをコントロールにロックすることはできますが、フォームを閉じるときの動作を考慮する必要はありません。  
+>  <span data-ttu-id="18cf0-179">フォームを閉じるには、この方法を強制すると、既に保存されていないするフォームのコントロール内のデータは失われます。</span><span class="sxs-lookup"><span data-stu-id="18cf0-179">If you force the form to close in this manner, any data in the form's controls that has not already been saved is lost.</span></span> <span data-ttu-id="18cf0-180">さらに、モーダル フォームは、閉じられるときにコントロールの内容を検証しません。</span><span class="sxs-lookup"><span data-stu-id="18cf0-180">In addition, modal forms do not validate the contents of controls when they are closed.</span></span> <span data-ttu-id="18cf0-181">コントロールにフォーカスをロックするコントロールの検証を使用することもできますが、フォームを閉じると関連付けられた動作について考慮する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="18cf0-181">You can still use control validation to lock focus to a control, but you do not have to be concerned about the behavior associated with closing the form.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.Control.Validating?displayProperty=fullName>   
- <xref:System.Windows.Forms.Form.Closing?displayProperty=fullName>   
- <xref:System.ComponentModel.CancelEventArgs?displayProperty=fullName>   
- [MaskedTextBox コントロール](../../../docs/framework/winforms/controls/maskedtextbox-control-windows-forms.md)   
- [正規表現の例](../../../docs/standard/base-types/regular-expression-examples.md)
+## <a name="see-also"></a><span data-ttu-id="18cf0-182">関連項目</span><span class="sxs-lookup"><span data-stu-id="18cf0-182">See Also</span></span>  
+ <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.Form.Closing?displayProperty=nameWithType>  
+ <xref:System.ComponentModel.CancelEventArgs?displayProperty=nameWithType>  
+ [<span data-ttu-id="18cf0-183">MaskedTextBox コントロール</span><span class="sxs-lookup"><span data-stu-id="18cf0-183">MaskedTextBox Control</span></span>](../../../docs/framework/winforms/controls/maskedtextbox-control-windows-forms.md)  
+ [<span data-ttu-id="18cf0-184">正規表現の例</span><span class="sxs-lookup"><span data-stu-id="18cf0-184">Regular Expression Examples</span></span>](../../../docs/standard/base-types/regular-expression-examples.md)

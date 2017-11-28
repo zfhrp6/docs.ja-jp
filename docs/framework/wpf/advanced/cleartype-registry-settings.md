@@ -1,127 +1,129 @@
 ---
-title: "ClearType レジストリの設定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ClearType, レジストリ設定"
-  - "タイポグラフィ, ClearType レジストリの設定"
+title: "ClearType レジストリの設定"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- ClearType [WPF], registry settings
+- typography [WPF], ClearType registry settings
 ms.assetid: 56f314bb-b30b-4f67-8492-8b8a9fa432ae
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fc4411c8141579150cde1bda2e46d7d2abe42e9c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ClearType レジストリの設定
-ここでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションで使用される [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] レジストリ設定の概要について説明します。  
+# <a name="cleartype-registry-settings"></a><span data-ttu-id="c4fef-102">ClearType レジストリの設定</span><span class="sxs-lookup"><span data-stu-id="c4fef-102">ClearType Registry Settings</span></span>
+<span data-ttu-id="c4fef-103">このトピックの概要を説明する、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)]によって使用されているレジストリ設定[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="c4fef-103">This topic provides an overview of the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)][!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] registry settings that are used by [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications.</span></span>  
   
-   
   
 <a name="overview"></a>   
-## テクノロジの概要  
- ディスプレイ デバイスにテキストをレンダリングする [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションは、[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] 機能を使用して読みやすさを拡張します。  [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] は、ラップトップや Pocket PC の画面、フラット パネル モニターなど、既存の LCD \(液晶ディスプレイ\) でのテキストの読みやすさを向上させるために [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] が開発したソフトウェア テクノロジです。  [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] は、LCD 画面の各ピクセル内の個々の垂直カラー ストライプ要素にアクセスすることによって機能します。  [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] の詳細については、「[ClearType の概要](../../../../docs/framework/wpf/advanced/cleartype-overview.md)」を参照してください。  
+## <a name="technology-overview"></a><span data-ttu-id="c4fef-104">テクノロジの概要</span><span class="sxs-lookup"><span data-stu-id="c4fef-104">Technology Overview</span></span>  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="c4fef-105">ディスプレイ デバイスを使用するテキストを表示するアプリケーション[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]機能強化された閲覧エクスペリエンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="c4fef-105"> applications that render text to a display device use [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] features to provide an enhanced reading experience.</span></span> [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]<span data-ttu-id="c4fef-106"> は、ラップトップや Pocket PC の画面、フラット パネル モニターなど、既存の LCD (液晶ディスプレイ) でのテキストの読みやすさを向上させるために [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] が開発したソフトウェア テクノロジです。</span><span class="sxs-lookup"><span data-stu-id="c4fef-106"> is a software technology developed by [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] that improves the readability of text on existing LCDs (Liquid Crystal Displays), such as laptop screens, Pocket PC screens and flat panel monitors.</span></span> [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]<span data-ttu-id="c4fef-107"> は、LCD 画面の各ピクセル内の個々の垂直カラー ストライプ要素にアクセスすることによって機能します。</span><span class="sxs-lookup"><span data-stu-id="c4fef-107"> works by accessing the individual vertical color stripe elements in every pixel of an LCD screen.</span></span> <span data-ttu-id="c4fef-108">詳細については[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]を参照してください[ClearType 概要](../../../../docs/framework/wpf/advanced/cleartype-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="c4fef-108">For more information on [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)], see [ClearType Overview](../../../../docs/framework/wpf/advanced/cleartype-overview.md).</span></span>  
   
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] でレンダリングされるテキストの表示は、表示先のディスプレイ デバイスによって大きく異なります。  たとえば、一般的な赤、緑、青 \([!INCLUDE[TLA#tla_rgb](../../../../includes/tlasharptla-rgb-md.md)]\) の順ではなく青、緑、赤の順でカラー ストライプ要素を実装するモニターもわずかに存在します。  
+ <span data-ttu-id="c4fef-109">表示されるテキストを[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]さまざまな表示のデバイスで表示したときに大幅に異なる表示されることができます。</span><span class="sxs-lookup"><span data-stu-id="c4fef-109">Text that is rendered with [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] can appear significantly different when viewed on various display devices.</span></span> <span data-ttu-id="c4fef-110">たとえば、モニターの数が少ない実装青、緑、赤の順序でカラー ストライプ要素ではなく、一般的な赤、緑、青 ( [!INCLUDE[TLA#tla_rgb](../../../../includes/tlasharptla-rgb-md.md)]) 順序。</span><span class="sxs-lookup"><span data-stu-id="c4fef-110">For example, a small number of monitors implement the color stripe elements in blue, green, red order rather than the more common red, green, blue (    [!INCLUDE[TLA#tla_rgb](../../../../includes/tlasharptla-rgb-md.md)]) order.</span></span>  
   
- また、[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] でレンダリングされるテキストの表示は、各個人の色の感度レベルによっても大きく異なります。  他の人よりも色のわずかな違いを見分ける能力に長けている人もいます。  
+ <span data-ttu-id="c4fef-111">表示されるテキストを[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]色の感度のレベルで表示したときに大幅に異なるも表示できます。</span><span class="sxs-lookup"><span data-stu-id="c4fef-111">Text that is rendered with [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] can also appear significantly different when viewed by individuals with varying levels of color sensitivity.</span></span> <span data-ttu-id="c4fef-112">他の人よりも色のわずかな違いを見分ける能力に長けている人もいます。</span><span class="sxs-lookup"><span data-stu-id="c4fef-112">Some individuals can detect slight differences in color better than others.</span></span>  
   
- それぞれの場合において、各個人が最も読みやすい表示を実現するために、[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] 機能を変更する必要があります。  
+ <span data-ttu-id="c4fef-113">このような場合は、の各[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]機能が最もごとに読みを提供するために変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c4fef-113">In each of these cases, [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] features need to be modified in order to provide the best reading experience for each individual.</span></span>  
   
 <a name="registry_settings"></a>   
-## レジストリ設定  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] の機能を制御するための 4 つのレジストリ設定が用意されています。  
+## <a name="registry-settings"></a><span data-ttu-id="c4fef-114">レジストリ設定</span><span class="sxs-lookup"><span data-stu-id="c4fef-114">Registry Settings</span></span>  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="c4fef-115">制御するための 4 つのレジストリ設定の指定[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]機能。</span><span class="sxs-lookup"><span data-stu-id="c4fef-115"> specifies four registry settings for controlling [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] features:</span></span>  
   
-|設定|Description|  
-|--------|-----------------|  
-|[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] レベル|[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] の色の鮮明度を示します。|  
-|ガンマ レベル|ディスプレイ デバイスのピクセル カラー コンポーネントのレベルを示します。|  
-|ピクセル構造|ディスプレイ デバイスのピクセルの配置を示します。|  
-|テキストのコントラスト レベル|表示されるテキストのコントラストのレベルを示します。|  
+|<span data-ttu-id="c4fef-116">設定</span><span class="sxs-lookup"><span data-stu-id="c4fef-116">Setting</span></span>|<span data-ttu-id="c4fef-117">説明</span><span class="sxs-lookup"><span data-stu-id="c4fef-117">Description</span></span>|  
+|-------------|-----------------|  
+|[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]<span data-ttu-id="c4fef-118"> レベル</span><span class="sxs-lookup"><span data-stu-id="c4fef-118"> level</span></span>|<span data-ttu-id="c4fef-119">レベルを示します[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]わかりやすくするための色します。</span><span class="sxs-lookup"><span data-stu-id="c4fef-119">Describes the level of [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] color clarity.</span></span>|  
+|<span data-ttu-id="c4fef-120">ガンマ レベル</span><span class="sxs-lookup"><span data-stu-id="c4fef-120">Gamma level</span></span>|<span data-ttu-id="c4fef-121">ディスプレイ デバイスのピクセル カラー コンポーネントのレベルを示します。</span><span class="sxs-lookup"><span data-stu-id="c4fef-121">Describes the level of the pixel color component for a display device.</span></span>|  
+|<span data-ttu-id="c4fef-122">ピクセル構造</span><span class="sxs-lookup"><span data-stu-id="c4fef-122">Pixel structure</span></span>|<span data-ttu-id="c4fef-123">ディスプレイ デバイスのピクセルの配置を示します。</span><span class="sxs-lookup"><span data-stu-id="c4fef-123">Describes the arrangement of pixels for a display device.</span></span>|  
+|<span data-ttu-id="c4fef-124">テキストのコントラスト レベル</span><span class="sxs-lookup"><span data-stu-id="c4fef-124">Text contrast level</span></span>|<span data-ttu-id="c4fef-125">表示されるテキストのコントラストのレベルを示します。</span><span class="sxs-lookup"><span data-stu-id="c4fef-125">Describes the level of contrast for displayed text.</span></span>|  
   
- これらの設定には、所定の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] レジストリ設定の参照方法を認識している外部構成ユーティリティを使用してアクセスできます。  また、これらの設定は、[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] レジストリ エディターを使用して値に直接アクセスして作成または変更することもできます。  
+ <span data-ttu-id="c4fef-126">これらの設定は、識別されたを参照する方法を知っている外部構成ユーティリティによってアクセスできる[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)][!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]レジストリ設定します。</span><span class="sxs-lookup"><span data-stu-id="c4fef-126">These settings can be accessed by an external configuration utility that knows how to reference the identified [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)][!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] registry settings.</span></span> <span data-ttu-id="c4fef-127">これらの設定は、[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] レジストリ エディターを使用して値に直接アクセスして作成または変更することもできます。</span><span class="sxs-lookup"><span data-stu-id="c4fef-127">These settings can also be created or modified by accessing the values directly by using the [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] Registry Editor.</span></span>  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] レジストリ設定が設定されていない場合 \(既定の状態\)、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションは、フォント スムージング設定について [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] システム パラメーター情報に照会します。  
+ <span data-ttu-id="c4fef-128">場合、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]レジストリ設定されていません (既定の状態) である、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーション クエリ、[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]フォント スムージング設定のシステム パラメーターの情報です。</span><span class="sxs-lookup"><span data-stu-id="c4fef-128">If the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)][!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] registry settings are not set (which is the default state), the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application queries the [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] system parameters information for font smoothing settings.</span></span>  
   
 > [!NOTE]
->  ディスプレイ デバイス名の列挙については、`SystemParametersInfo` [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] 関数を参照してください。  
+>  <span data-ttu-id="c4fef-129">デバイスの表示名を列挙する方法の詳細については、次を参照してください。、 `SystemParametersInfo` [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]関数。</span><span class="sxs-lookup"><span data-stu-id="c4fef-129">For information on enumerating display device names, see the `SystemParametersInfo`[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] function.</span></span>  
   
 <a name="ClearType_level"></a>   
-## ClearType レベル  
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] レベルを設定すると、個人の色の感度および知覚に基づいてテキストのレンダリングを調整できます。人によっては、最高レベルの [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] を使用するテキストのレンダリングでは最も読みやすい表示が実現されない場合があります。  
+## <a name="cleartype-level"></a><span data-ttu-id="c4fef-130">ClearType レベル</span><span class="sxs-lookup"><span data-stu-id="c4fef-130">ClearType Level</span></span>  
+ <span data-ttu-id="c4fef-131">[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]レベルでは、色と小文字の区別と、1 つの認識に基づいてテキストのレンダリングを調整することができます。</span><span class="sxs-lookup"><span data-stu-id="c4fef-131">The [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] level allows you to adjust the rendering of text based on the color sensitivity and perception of an individual.</span></span> <span data-ttu-id="c4fef-132">一部のユーザーでは、テキストのレンダリングを使用する[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]最上位のレベルは生成されませんが最も読みです。</span><span class="sxs-lookup"><span data-stu-id="c4fef-132">For some individuals, the rendering of text that uses [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] at its highest level does not produce the best reading experience.</span></span>  
   
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] レベルは、0 ～ 100 の範囲の整数値です。  既定のレベルは 100 です。これは、[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] でディスプレイ デバイスの最大限のカラー ストライプ要素が使用されることを意味します。  ただし、[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] レベルが 0 の場合、テキストはグレースケールでレンダリングされます。  [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] レベルを 0 ～ 100 の間に設定することで、個人の色の感度に適した中間レベルを実現できます。  
+ <span data-ttu-id="c4fef-133">[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]レベルは、0 から 100 の範囲の整数値。</span><span class="sxs-lookup"><span data-stu-id="c4fef-133">The [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] level is an integer value that ranges from 0 to 100.</span></span> <span data-ttu-id="c4fef-134">既定のレベルは 100、つまり[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]ディスプレイ デバイスのカラー ストライプ要素の最大の機能を使用しています。</span><span class="sxs-lookup"><span data-stu-id="c4fef-134">The default level is 100, which means [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] uses the maximum capability of the color stripe elements of the display device.</span></span> <span data-ttu-id="c4fef-135">ただし、[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]レベル 0 は、[グレースケール] としてテキストを描画します。</span><span class="sxs-lookup"><span data-stu-id="c4fef-135">However, a [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] level of 0 renders text as gray scale.</span></span> <span data-ttu-id="c4fef-136">設定して、[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]レベル 0 ~ 100 の任意の場所を作成できます中間レベルが適切に個々 の色の感度をします。</span><span class="sxs-lookup"><span data-stu-id="c4fef-136">By setting the [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] level somewhere between 0 and 100, you can create an intermediate level that is suitable to an individual's color sensitivity.</span></span>  
   
-### レジストリ設定  
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] レベルのレジストリ設定は、特定のディスプレイ デバイス名に対応する個別のユーザー設定の場所にあります。  
+### <a name="registry-setting"></a><span data-ttu-id="c4fef-137">レジストリ設定</span><span class="sxs-lookup"><span data-stu-id="c4fef-137">Registry Setting</span></span>  
+ <span data-ttu-id="c4fef-138">レジストリ設定の場所、[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]レベルは、特定のディスプレイ デバイス名に対応する個々 のユーザー設定。</span><span class="sxs-lookup"><span data-stu-id="c4fef-138">The registry setting location for the [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] level is an individual user setting that corresponds to a specific display device name:</span></span>  
   
  `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\<displayName>`  
   
- ユーザのディスプレイ デバイス名ごとに `ClearTypeLevel` の DWORD 値が定義されます。  次のスクリーンショットは、[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] レベルのレジストリ エディターの設定を示しています。  
+ <span data-ttu-id="c4fef-139">各デバイス名で、ユーザーの`ClearTypeLevel`DWORD 値を定義します。</span><span class="sxs-lookup"><span data-stu-id="c4fef-139">For each display device name for a user, a `ClearTypeLevel` DWORD value is defined.</span></span> <span data-ttu-id="c4fef-140">次のスクリーン ショットのレジストリ エディターの設定を示しています、[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]レベル。</span><span class="sxs-lookup"><span data-stu-id="c4fef-140">The following screenshot shows the Registry Editor setting for the [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] level.</span></span>  
   
- ![レジストリ エディターの ClearType 設定](../../../../docs/framework/wpf/advanced/media/cleartyperegistry01.png "ClearTypeRegistry01")  
+ <span data-ttu-id="c4fef-141">![レジストリ エディターの ClearType 設定](../../../../docs/framework/wpf/advanced/media/cleartyperegistry01.png "ClearTypeRegistry01")</span><span class="sxs-lookup"><span data-stu-id="c4fef-141">![ClearType settings in the Registry Editor](../../../../docs/framework/wpf/advanced/media/cleartyperegistry01.png "ClearTypeRegistry01")</span></span>  
   
 > [!NOTE]
->  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションでは、[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] を使用する場合と使用しない場合のいずれかのモードでテキストがレンダリングされます。  [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] を使用しないテキストのレンダリングは、グレースケール レンダリングと呼ばれます。  
+>  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="c4fef-142">アプリケーションとそうでないか 2 つのモードのいずれかのテキストのレンダリング[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="c4fef-142"> applications render text in one of either two modes, with and without [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)].</span></span> <span data-ttu-id="c4fef-143">なしのテキストを表示する際に[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]グレースケールのレンダリングと呼びます。</span><span class="sxs-lookup"><span data-stu-id="c4fef-143">When text is rendered without [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)], it is referred to as gray scale rendering.</span></span>  
   
 <a name="gamma_level"></a>   
-## ガンマ レベル  
- ガンマ レベルとは、ピクセル値とルミナンス間の非線形リレーションシップのことです。  ガンマ レベル設定は、ディスプレイ デバイスの物理特性に対応する必要があります。対応していない場合、レンダリング出力にゆがみが発生する場合があります。  たとえば、テキストの表示が広すぎたり細すぎたりする場合や、色縁がグリフの縦線の端に表示される場合などがあります。  
+## <a name="gamma-level"></a><span data-ttu-id="c4fef-144">ガンマ レベル</span><span class="sxs-lookup"><span data-stu-id="c4fef-144">Gamma Level</span></span>  
+ <span data-ttu-id="c4fef-145">ガンマ レベルとは、ピクセル値と輝度間の非線形リレーションシップのことです。</span><span class="sxs-lookup"><span data-stu-id="c4fef-145">The gamma level refers to the nonlinear relationship between a pixel value and luminance.</span></span> <span data-ttu-id="c4fef-146">ガンマ レベル設定は、ディスプレイ デバイスの物理特性に対応する必要があります。対応していない場合、レンダリング出力にゆがみが発生する場合があります。</span><span class="sxs-lookup"><span data-stu-id="c4fef-146">The gamma level setting should correspond to the physical characteristics of the display device; otherwise, distortions in rendered output may occur.</span></span> <span data-ttu-id="c4fef-147">たとえば、テキストの表示が広すぎたり狭すぎたりする場合や、色縁がグリフの縦線の端に表示される場合などがあります。</span><span class="sxs-lookup"><span data-stu-id="c4fef-147">For example, test may appear too wide or too narrow, or color fringes may appear on the edges of vertical stems of glyphs.</span></span>  
   
- ガンマ レベルは、1000 ～ 2200 の範囲の整数値です。  既定のレベルは 1900 です。  
+ <span data-ttu-id="c4fef-148">ガンマ レベルは、1000 から 2200 の範囲の整数値です。</span><span class="sxs-lookup"><span data-stu-id="c4fef-148">The gamma level is an integer value that ranges from 1000 to 2200.</span></span> <span data-ttu-id="c4fef-149">既定のレベルは 1900 です。</span><span class="sxs-lookup"><span data-stu-id="c4fef-149">The default level is 1900.</span></span>  
   
-### レジストリ設定  
- ガンマ レベルのレジストリ設定は、特定のディスプレイ デバイス名に対応するローカル マシン設定の場所にあります。  
+### <a name="registry-setting"></a><span data-ttu-id="c4fef-150">レジストリ設定</span><span class="sxs-lookup"><span data-stu-id="c4fef-150">Registry Setting</span></span>  
+ <span data-ttu-id="c4fef-151">ガンマ レベルのレジストリ設定は、特定のディスプレイ デバイス名に対応するローカル マシン設定の場所にあります。</span><span class="sxs-lookup"><span data-stu-id="c4fef-151">The registry setting location for the gamma level is a local machine setting that corresponds to a specific display device name:</span></span>  
   
  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Avalon.Graphics\<displayName>`  
   
- ユーザのディスプレイ デバイス名ごとに `GammaLevel` の DWORD 値が定義されます。  次のスクリーンショットは、ガンマ レベルのレジストリ エディターの設定を示しています。  
+ <span data-ttu-id="c4fef-152">各デバイス名で、ユーザーの`GammaLevel`DWORD 値を定義します。</span><span class="sxs-lookup"><span data-stu-id="c4fef-152">For each display device name for a user, a `GammaLevel` DWORD value is defined.</span></span> <span data-ttu-id="c4fef-153">次のスクリーンショットは、ガンマ レベルのレジストリ エディターの設定を示しています。</span><span class="sxs-lookup"><span data-stu-id="c4fef-153">The following screenshot shows the Registry Editor setting for the gamma level.</span></span>  
   
- ![レジストリ エディターの ClearType 設定](../../../../docs/framework/wpf/advanced/media/cleartyperegistry02.png "ClearTypeRegistry02")  
+ <span data-ttu-id="c4fef-154">![レジストリ エディターの ClearType 設定](../../../../docs/framework/wpf/advanced/media/cleartyperegistry02.png "ClearTypeRegistry02")</span><span class="sxs-lookup"><span data-stu-id="c4fef-154">![ClearType settings in the Registry Editor](../../../../docs/framework/wpf/advanced/media/cleartyperegistry02.png "ClearTypeRegistry02")</span></span>  
   
 <a name="pixel_structure"></a>   
-## ピクセル構造  
- ピクセル構造は、ディスプレイ デバイスを構成するピクセルの種類を示します。  ピクセル構造は、次の 3 種類のいずれかとして定義されます。  
+## <a name="pixel-structure"></a><span data-ttu-id="c4fef-155">ピクセル構造</span><span class="sxs-lookup"><span data-stu-id="c4fef-155">Pixel Structure</span></span>  
+ <span data-ttu-id="c4fef-156">ピクセル構造は、ディスプレイ デバイスを構成するピクセルの種類を示します。</span><span class="sxs-lookup"><span data-stu-id="c4fef-156">The pixel structure describes the type of pixels that make up a display device.</span></span> <span data-ttu-id="c4fef-157">ピクセル構造は、次の 3 種類のいずれかとして定義されます。</span><span class="sxs-lookup"><span data-stu-id="c4fef-157">The pixel structure is defined as one of three types:</span></span>  
   
-|種類|値|Description|  
-|--------|-------|-----------------|  
-|フラット|0|ディスプレイ デバイスにピクセル構造がありません。  つまり、各色の光源がピクセル領域に均等に拡散しています。これは、グレースケール レンダリングと呼ばれます。  標準のディスプレイ デバイスはこのようにして機能します。  [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] はレンダリングされたテキストに適用されません。|  
-|RGB|1|ディスプレイ デバイスのピクセルは、赤、緑、青の順の 3 つのストライプで構成されます。  [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] がレンダリングされたテキストに適用されます。|  
-|BGR|2|ディスプレイ デバイスのピクセルは、青、緑、赤の順の 3 つのストライプで構成されます。  [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] がレンダリングされたテキストに適用されます。  順序が RGB の場合の逆であることに注目してください。|  
+|<span data-ttu-id="c4fef-158">型</span><span class="sxs-lookup"><span data-stu-id="c4fef-158">Type</span></span>|<span data-ttu-id="c4fef-159">値</span><span class="sxs-lookup"><span data-stu-id="c4fef-159">Value</span></span>|<span data-ttu-id="c4fef-160">説明</span><span class="sxs-lookup"><span data-stu-id="c4fef-160">Description</span></span>|  
+|----------|-----------|-----------------|  
+|<span data-ttu-id="c4fef-161">フラット</span><span class="sxs-lookup"><span data-stu-id="c4fef-161">Flat</span></span>|<span data-ttu-id="c4fef-162">0</span><span class="sxs-lookup"><span data-stu-id="c4fef-162">0</span></span>|<span data-ttu-id="c4fef-163">ディスプレイ デバイスにピクセル構造がありません。</span><span class="sxs-lookup"><span data-stu-id="c4fef-163">The display device has no pixel structure.</span></span> <span data-ttu-id="c4fef-164">つまり、各色の光源がピクセル領域に均等に拡散しています。これは、グレースケール レンダリングと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="c4fef-164">This means that light sources for each color are spread equally on the pixel area—this is referred to as gray scale rendering.</span></span> <span data-ttu-id="c4fef-165">標準のディスプレイ デバイスはこのようにして機能します。</span><span class="sxs-lookup"><span data-stu-id="c4fef-165">This is how a standard display device works.</span></span> [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]<span data-ttu-id="c4fef-166"> はレンダリングされたテキストに適用されません。</span><span class="sxs-lookup"><span data-stu-id="c4fef-166"> is never applied to the rendered text.</span></span>|  
+|<span data-ttu-id="c4fef-167">RGB</span><span class="sxs-lookup"><span data-stu-id="c4fef-167">RGB</span></span>|<span data-ttu-id="c4fef-168">1</span><span class="sxs-lookup"><span data-stu-id="c4fef-168">1</span></span>|<span data-ttu-id="c4fef-169">ディスプレイ デバイスのピクセルは、赤、緑、青の順の 3 つのストライプで構成されます。</span><span class="sxs-lookup"><span data-stu-id="c4fef-169">The display device has pixels that consist of three stripes in the following order: red, green, and blue.</span></span> [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]<span data-ttu-id="c4fef-170"> がレンダリングされたテキストに適用されます。</span><span class="sxs-lookup"><span data-stu-id="c4fef-170"> is applied to the rendered text.</span></span>|  
+|<span data-ttu-id="c4fef-171">BGR</span><span class="sxs-lookup"><span data-stu-id="c4fef-171">BGR</span></span>|<span data-ttu-id="c4fef-172">2</span><span class="sxs-lookup"><span data-stu-id="c4fef-172">2</span></span>|<span data-ttu-id="c4fef-173">ディスプレイ デバイスのピクセルは、青、緑、赤の順の 3 つのストライプで構成されます。</span><span class="sxs-lookup"><span data-stu-id="c4fef-173">The display device has pixels that consist of three stripes in the following order: blue, green, and red.</span></span> [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]<span data-ttu-id="c4fef-174"> がレンダリングされたテキストに適用されます。</span><span class="sxs-lookup"><span data-stu-id="c4fef-174"> is applied to the rendered text.</span></span> <span data-ttu-id="c4fef-175">順序が RGB の場合の逆であることに注目してください。</span><span class="sxs-lookup"><span data-stu-id="c4fef-175">Notice how the order is inverted from the RGB type.</span></span>|  
   
- ピクセル構造は、0 ～ 2 の範囲の整数値に対応します。  既定のレベルは 0 です。これは、フラット ピクセル構造を表します。  
+ <span data-ttu-id="c4fef-176">ピクセル構造は、0 から 2 の範囲の整数値に対応します。</span><span class="sxs-lookup"><span data-stu-id="c4fef-176">The pixel structure corresponds to an integer value that ranges from 0 to 2.</span></span> <span data-ttu-id="c4fef-177">既定のレベルは 0 です。これは、フラット ピクセル構造を表します。</span><span class="sxs-lookup"><span data-stu-id="c4fef-177">The default level is 0, which represents a flat pixel structure.</span></span>  
   
 > [!NOTE]
->  ディスプレイ デバイス名の列挙については、`EnumDisplayDevices` [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] 関数を参照してください。  
+>  <span data-ttu-id="c4fef-178">デバイスの表示名を列挙する方法の詳細については、次を参照してください。、 `EnumDisplayDevices` [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]関数。</span><span class="sxs-lookup"><span data-stu-id="c4fef-178">For information on enumerating display device names, see the `EnumDisplayDevices`[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] function.</span></span>  
   
-### レジストリ設定  
- ピクセル構造のレジストリ設定は、特定のディスプレイ デバイス名に対応するローカル マシン設定の場所にあります。  
+### <a name="registry-setting"></a><span data-ttu-id="c4fef-179">レジストリ設定</span><span class="sxs-lookup"><span data-stu-id="c4fef-179">Registry Setting</span></span>  
+ <span data-ttu-id="c4fef-180">ピクセル構造のレジストリ設定は、特定のディスプレイ デバイス名に対応するローカル マシン設定の場所にあります。</span><span class="sxs-lookup"><span data-stu-id="c4fef-180">The registry setting location for the pixel structure is a local machine setting that corresponds to a specific display device name:</span></span>  
   
  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Avalon.Graphics\<displayName>`  
   
- ユーザのディスプレイ デバイス名ごとに `PixelStructure` の DWORD 値が定義されます。  次のスクリーンショットは、ピクセル構造のレジストリ エディターの設定を示しています。  
+ <span data-ttu-id="c4fef-181">各デバイス名で、ユーザーの`PixelStructure`DWORD 値を定義します。</span><span class="sxs-lookup"><span data-stu-id="c4fef-181">For each display device name for a user, a `PixelStructure` DWORD value is defined.</span></span> <span data-ttu-id="c4fef-182">次のスクリーンショットは、ピクセル構造のレジストリ エディターの設定を示しています。</span><span class="sxs-lookup"><span data-stu-id="c4fef-182">The following screenshot shows the Registry Editor setting for the pixel structure.</span></span>  
   
- ![レジストリ エディターの ClearType 設定](../../../../docs/framework/wpf/advanced/media/cleartyperegistry02.png "ClearTypeRegistry02")  
+ <span data-ttu-id="c4fef-183">![レジストリ エディターの ClearType 設定](../../../../docs/framework/wpf/advanced/media/cleartyperegistry02.png "ClearTypeRegistry02")</span><span class="sxs-lookup"><span data-stu-id="c4fef-183">![ClearType settings in the Registry Editor](../../../../docs/framework/wpf/advanced/media/cleartyperegistry02.png "ClearTypeRegistry02")</span></span>  
   
 <a name="text_contrast_level"></a>   
-## テキストのコントラスト レベル  
- テキストのコントラスト レベルを設定すると、グリフの縦線の幅に基づいてテキストのレンダリングを調整できます。  テキストのコントラスト レベルは、0 ～ 6 の範囲の整数値です。整数値を大きくすると、縦線の幅が広くなります。  既定のレベルは 1 です。  
+## <a name="text-contrast-level"></a><span data-ttu-id="c4fef-184">テキストのコントラスト レベル</span><span class="sxs-lookup"><span data-stu-id="c4fef-184">Text Contrast Level</span></span>  
+ <span data-ttu-id="c4fef-185">テキストのコントラスト レベルを設定すると、グリフの縦線の幅に基づいてテキストのレンダリングを調整できます。</span><span class="sxs-lookup"><span data-stu-id="c4fef-185">The text contrast level allows you to adjust the rendering of text based on the stem widths of glyphs.</span></span> <span data-ttu-id="c4fef-186">テキストのコントラスト レベルは 0 から 6 の範囲の整数値です。整数値を大きくすると、縦線の幅が広くなります。</span><span class="sxs-lookup"><span data-stu-id="c4fef-186">The text contrast level is an integer value that ranges from 0 to 6—the larger the integer value, the wider the stem.</span></span> <span data-ttu-id="c4fef-187">既定のレベルは 1 です。</span><span class="sxs-lookup"><span data-stu-id="c4fef-187">The default level is 1.</span></span>  
   
-### レジストリ設定  
- テキストのコントラスト レベルのレジストリ設定は、特定のディスプレイ デバイス名に対応する個別のユーザー設定の場所にあります。  
+### <a name="registry-setting"></a><span data-ttu-id="c4fef-188">レジストリ設定</span><span class="sxs-lookup"><span data-stu-id="c4fef-188">Registry Setting</span></span>  
+ <span data-ttu-id="c4fef-189">テキストのコントラスト レベルのレジストリ設定は、特定のディスプレイ デバイス名に対応する個々のユーザー設定の場所にあります。</span><span class="sxs-lookup"><span data-stu-id="c4fef-189">The registry setting location for the text contrast level is an individual user setting that corresponds to a specific display device name:</span></span>  
   
  `HKEY_CURRENT_USER\Software\Microsoft\Avalon.Graphics\<displayName>`  
   
- ユーザのディスプレイ デバイス名ごとに `TextContrastLevel` の DWORD 値が定義されます。  次のスクリーンショットは、テキストのコントラスト レベルのレジストリ エディターの設定を示しています。  
+ <span data-ttu-id="c4fef-190">各デバイス名で、ユーザーの`TextContrastLevel`DWORD 値を定義します。</span><span class="sxs-lookup"><span data-stu-id="c4fef-190">For each display device name for a user, a `TextContrastLevel` DWORD value is defined.</span></span> <span data-ttu-id="c4fef-191">次のスクリーンショットは、テキストのコントラスト レベルのレジストリ エディターの設定を示しています。</span><span class="sxs-lookup"><span data-stu-id="c4fef-191">The following screenshot shows the Registry Editor setting for the text contrast level.</span></span>  
   
- ![レジストリ エディターの ClearType 設定](../../../../docs/framework/wpf/advanced/media/cleartyperegistry01.png "ClearTypeRegistry01")  
+ <span data-ttu-id="c4fef-192">![レジストリ エディターの ClearType 設定](../../../../docs/framework/wpf/advanced/media/cleartyperegistry01.png "ClearTypeRegistry01")</span><span class="sxs-lookup"><span data-stu-id="c4fef-192">![ClearType settings in the Registry Editor](../../../../docs/framework/wpf/advanced/media/cleartyperegistry01.png "ClearTypeRegistry01")</span></span>  
   
-## 参照  
- [ClearType の概要](../../../../docs/framework/wpf/advanced/cleartype-overview.md)   
- [ClearType アンチエイリアシング](_win32_ClearType_Antialiasing)
+## <a name="see-also"></a><span data-ttu-id="c4fef-193">関連項目</span><span class="sxs-lookup"><span data-stu-id="c4fef-193">See Also</span></span>  
+ [<span data-ttu-id="c4fef-194">ClearType の概要</span><span class="sxs-lookup"><span data-stu-id="c4fef-194">ClearType Overview</span></span>](../../../../docs/framework/wpf/advanced/cleartype-overview.md)  
+ <span data-ttu-id="c4fef-195">[ClearType アンチエイリアシング](https://msdn.microsoft.com/library/dd183433(v=vs.85).aspx)</span><span class="sxs-lookup"><span data-stu-id="c4fef-195">[ClearType Antialiasing](https://msdn.microsoft.com/library/dd183433(v=vs.85).aspx)</span></span>

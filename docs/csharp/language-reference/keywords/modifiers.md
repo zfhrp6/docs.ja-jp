@@ -1,63 +1,44 @@
 ---
 title: "修飾子 (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - keywords [C#], modifiers
 - modifiers [C#]
 ms.assetid: c96691dd-b357-49ec-b5ae-03ca214fadfb
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 31bdfb74c5803e0108aab5b7733ea7b725f7ef3c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9e2e7e5e3907ac9bb66676e749ddd55a8ac4836c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="modifiers-c-reference"></a>修飾子 (C# リファレンス)
-修飾子は、型および型メンバーの宣言を修飾するために使用されます。 ここでは、C# の修飾子について説明します。  
+# <a name="modifiers-c-reference"></a><span data-ttu-id="f9b3d-102">修飾子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="f9b3d-102">Modifiers (C# Reference)</span></span>
+<span data-ttu-id="f9b3d-103">修飾子は、型および型メンバーの宣言を修飾するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-103">Modifiers are used to modify declarations of types and type members.</span></span> <span data-ttu-id="f9b3d-104">ここでは、C# の修飾子について説明します。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-104">This section introduces the C# modifiers.</span></span>  
   
-|修飾子|目的|  
+|<span data-ttu-id="f9b3d-105">修飾子</span><span class="sxs-lookup"><span data-stu-id="f9b3d-105">Modifier</span></span>|<span data-ttu-id="f9b3d-106">目的</span><span class="sxs-lookup"><span data-stu-id="f9b3d-106">Purpose</span></span>|  
 |--------------|-------------|  
-|[アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)<br /><br /> -   [public](../../../csharp/language-reference/keywords/public.md)<br />-   [private](../../../csharp/language-reference/keywords/private.md)<br />-   [internal](../../../csharp/language-reference/keywords/internal.md)<br />-   [protected](../../../csharp/language-reference/keywords/protected.md)|型および型のメンバーで宣言されたアクセシビリティを指定します。|  
-|[abstract](../../../csharp/language-reference/keywords/abstract.md)|クラスが、他のクラスの基本クラスになるためだけのものであることを示します。|  
-|[async](../../../csharp/language-reference/keywords/async.md)|修飾されたメソッド、ラムダ式、または匿名メソッドが非同期であることを示します。|  
-|[const](../../../csharp/language-reference/keywords/const.md)|フィールドまたはローカル変数の値が変更されないことを指定します。|  
-|[event](../../../csharp/language-reference/keywords/event.md)|イベントを宣言します。|  
-|[extern](../../../csharp/language-reference/keywords/extern.md)|メソッドが外部で実装されることを示します。|  
-|[new](../../../csharp/language-reference/keywords/new.md)|基底クラスから継承されたメンバーを明示的に隠ぺいします。|  
-|[override](../../../csharp/language-reference/keywords/override.md)|基本クラスから継承された仮想メンバーの新しい実装を提供します。|  
-|[partial](../../../csharp/language-reference/keywords/partial-type.md)|同一アセンブリに部分クラス、部分構造体、または部分メソッドを定義します。|  
-|[readonly](../../../csharp/language-reference/keywords/readonly.md)|フィールドを宣言します。このフィールドは、宣言の一部として、または同じクラスのコンストラクター内でだけ、値の代入ができます。|  
-|[sealed](../../../csharp/language-reference/keywords/sealed.md)|クラスの継承ができないことを指定します。|  
-|[static](../../../csharp/language-reference/keywords/static.md)|特定のオブジェクトではなく、型自体に所属するメンバーを宣言します。|  
-|[unsafe](../../../csharp/language-reference/keywords/unsafe.md)|安全ではないコンテキストを宣言します。|  
-|[virtual](../../../csharp/language-reference/keywords/virtual.md)|メソッドまたはアクセサーを宣言します。これらの実装は、派生クラスでオーバーライドするメンバーによって変更できます。|  
-|[volatile](../../../csharp/language-reference/keywords/volatile.md)|オペレーティング システム、ハードウェア、現在実行中のスレッドなどによって、フィールドがプログラム中で変更される場合があることを示します。|  
+|[<span data-ttu-id="f9b3d-107">アクセス修飾子</span><span class="sxs-lookup"><span data-stu-id="f9b3d-107">Access Modifiers</span></span>](../../../csharp/language-reference/keywords/access-modifiers.md)<br /><br /> <span data-ttu-id="f9b3d-108">-   [public](../../../csharp/language-reference/keywords/public.md)</span><span class="sxs-lookup"><span data-stu-id="f9b3d-108">-   [public](../../../csharp/language-reference/keywords/public.md)</span></span><br /><span data-ttu-id="f9b3d-109">-   [private](../../../csharp/language-reference/keywords/private.md)</span><span class="sxs-lookup"><span data-stu-id="f9b3d-109">-   [private](../../../csharp/language-reference/keywords/private.md)</span></span><br /><span data-ttu-id="f9b3d-110">-   [internal](../../../csharp/language-reference/keywords/internal.md)</span><span class="sxs-lookup"><span data-stu-id="f9b3d-110">-   [internal](../../../csharp/language-reference/keywords/internal.md)</span></span><br /><span data-ttu-id="f9b3d-111">-   [protected](../../../csharp/language-reference/keywords/protected.md)</span><span class="sxs-lookup"><span data-stu-id="f9b3d-111">-   [protected](../../../csharp/language-reference/keywords/protected.md)</span></span>|<span data-ttu-id="f9b3d-112">型および型のメンバーで宣言されたアクセシビリティを指定します。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-112">Specifies the declared accessibility of types and type members.</span></span>|  
+|[<span data-ttu-id="f9b3d-113">abstract</span><span class="sxs-lookup"><span data-stu-id="f9b3d-113">abstract</span></span>](../../../csharp/language-reference/keywords/abstract.md)|<span data-ttu-id="f9b3d-114">クラスが、他のクラスの基本クラスになるためだけのものであることを示します。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-114">Indicates that a class is intended only to be a base class of other classes.</span></span>|  
+|[<span data-ttu-id="f9b3d-115">async</span><span class="sxs-lookup"><span data-stu-id="f9b3d-115">async</span></span>](../../../csharp/language-reference/keywords/async.md)|<span data-ttu-id="f9b3d-116">修飾されたメソッド、ラムダ式、または匿名メソッドが非同期であることを示します。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-116">Indicates that the modified method, lambda expression, or anonymous method is asynchronous.</span></span>|  
+|[<span data-ttu-id="f9b3d-117">const</span><span class="sxs-lookup"><span data-stu-id="f9b3d-117">const</span></span>](../../../csharp/language-reference/keywords/const.md)|<span data-ttu-id="f9b3d-118">フィールドまたはローカル変数の値が変更されないことを指定します。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-118">Specifies that the value of the field or the local variable cannot be modified.</span></span>|  
+|[<span data-ttu-id="f9b3d-119">event</span><span class="sxs-lookup"><span data-stu-id="f9b3d-119">event</span></span>](../../../csharp/language-reference/keywords/event.md)|<span data-ttu-id="f9b3d-120">イベントを宣言します。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-120">Declares an event.</span></span>|  
+|[<span data-ttu-id="f9b3d-121">extern</span><span class="sxs-lookup"><span data-stu-id="f9b3d-121">extern</span></span>](../../../csharp/language-reference/keywords/extern.md)|<span data-ttu-id="f9b3d-122">メソッドが外部で実装されることを示します。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-122">Indicates that the method is implemented externally.</span></span>|  
+|[<span data-ttu-id="f9b3d-123">new</span><span class="sxs-lookup"><span data-stu-id="f9b3d-123">new</span></span>](../../../csharp/language-reference/keywords/new.md)|<span data-ttu-id="f9b3d-124">基底クラスから継承されたメンバーを明示的に隠ぺいします。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-124">Explicitly hides a member inherited from a base class.</span></span>|  
+|[<span data-ttu-id="f9b3d-125">override</span><span class="sxs-lookup"><span data-stu-id="f9b3d-125">override</span></span>](../../../csharp/language-reference/keywords/override.md)|<span data-ttu-id="f9b3d-126">基本クラスから継承された仮想メンバーの新しい実装を提供します。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-126">Provides a new implementation of a virtual member inherited from a base class.</span></span>|  
+|[<span data-ttu-id="f9b3d-127">partial</span><span class="sxs-lookup"><span data-stu-id="f9b3d-127">partial</span></span>](../../../csharp/language-reference/keywords/partial-type.md)|<span data-ttu-id="f9b3d-128">同一アセンブリに部分クラス、部分構造体、または部分メソッドを定義します。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-128">Defines partial classes, structs and methods throughout the same assembly.</span></span>|  
+|[<span data-ttu-id="f9b3d-129">readonly</span><span class="sxs-lookup"><span data-stu-id="f9b3d-129">readonly</span></span>](../../../csharp/language-reference/keywords/readonly.md)|<span data-ttu-id="f9b3d-130">フィールドを宣言します。このフィールドは、宣言の一部として、または同じクラスのコンストラクター内でだけ、値の代入ができます。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-130">Declares a field that can only be assigned values as part of the declaration or in a constructor in the same class.</span></span>|  
+|[<span data-ttu-id="f9b3d-131">sealed</span><span class="sxs-lookup"><span data-stu-id="f9b3d-131">sealed</span></span>](../../../csharp/language-reference/keywords/sealed.md)|<span data-ttu-id="f9b3d-132">クラスの継承ができないことを指定します。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-132">Specifies that a class cannot be inherited.</span></span>|  
+|[<span data-ttu-id="f9b3d-133">static</span><span class="sxs-lookup"><span data-stu-id="f9b3d-133">static</span></span>](../../../csharp/language-reference/keywords/static.md)|<span data-ttu-id="f9b3d-134">特定のオブジェクトではなく、型自体に所属するメンバーを宣言します。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-134">Declares a member that belongs to the type itself instead of to a specific object.</span></span>|  
+|[<span data-ttu-id="f9b3d-135">unsafe</span><span class="sxs-lookup"><span data-stu-id="f9b3d-135">unsafe</span></span>](../../../csharp/language-reference/keywords/unsafe.md)|<span data-ttu-id="f9b3d-136">安全ではないコンテキストを宣言します。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-136">Declares an unsafe context.</span></span>|  
+|[<span data-ttu-id="f9b3d-137">virtual</span><span class="sxs-lookup"><span data-stu-id="f9b3d-137">virtual</span></span>](../../../csharp/language-reference/keywords/virtual.md)|<span data-ttu-id="f9b3d-138">メソッドまたはアクセサーを宣言します。これらの実装は、派生クラスでオーバーライドするメンバーによって変更できます。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-138">Declares a method or an accessor whose implementation can be changed by an overriding member in a derived class.</span></span>|  
+|[<span data-ttu-id="f9b3d-139">volatile</span><span class="sxs-lookup"><span data-stu-id="f9b3d-139">volatile</span></span>](../../../csharp/language-reference/keywords/volatile.md)|<span data-ttu-id="f9b3d-140">オペレーティング システム、ハードウェア、現在実行中のスレッドなどによって、フィールドがプログラム中で変更される場合があることを示します。</span><span class="sxs-lookup"><span data-stu-id="f9b3d-140">Indicates that a field can be modified in the program by something such as the operating system, the hardware, or a concurrently executing thread.</span></span>|  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)
-
+## <a name="see-also"></a><span data-ttu-id="f9b3d-141">関連項目</span><span class="sxs-lookup"><span data-stu-id="f9b3d-141">See Also</span></span>  
+ [<span data-ttu-id="f9b3d-142">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="f9b3d-142">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="f9b3d-143">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="f9b3d-143">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="f9b3d-144">C# のキーワード</span><span class="sxs-lookup"><span data-stu-id="f9b3d-144">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)

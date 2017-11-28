@@ -5,41 +5,42 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- cpp
 helpviewer_keywords:
 - assemblies [.NET Framework], type forwarding
 - type forwarding
 ms.assetid: 51f8ffa3-c253-4201-a3d3-c4fad85ae097
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 18e580a67d5a983d61ab3c0b71cfc7d294468010
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 113ff6decccc190c6638fa04745af425c55c6c0b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="type-forwarding-in-the-common-language-runtime"></a>共通言語ランタイムでの型の転送
-型の転送を使用すると、別のアセンブリに型を移動する際に、元のアセンブリを使用するアプリケーションを再コンパイルする必要がありません。  
+# <a name="type-forwarding-in-the-common-language-runtime"></a><span data-ttu-id="ab0fc-102">共通言語ランタイムでの型の転送</span><span class="sxs-lookup"><span data-stu-id="ab0fc-102">Type Forwarding in the Common Language Runtime</span></span>
+<span data-ttu-id="ab0fc-103">型の転送を使用すると、別のアセンブリに型を移動する際に、元のアセンブリを使用するアプリケーションを再コンパイルする必要がありません。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-103">Type forwarding allows you to move a type to another assembly without having to recompile applications that use the original assembly.</span></span>  
   
- たとえば、`Utility.dll` というアセンブリ内の `Example` クラスをアプリケーションが使用しているとします。 その場合、`Utility.dll` の開発者がアセンブリをリファクタリングすることになった際には、その過程で `Example` クラスが別のアセンブリに移動される可能性があります。 `Utility.dll` の旧バージョンが `Utility.dll` の新バージョンとそのコンパニオン アセンブリに置き換えられると、`Example` クラスを使用するアプリケーションは、新しいバージョンの `Utility.dll` で `Example` クラスを見つけられないために失敗します。  
+ <span data-ttu-id="ab0fc-104">たとえば、`Utility.dll` というアセンブリ内の `Example` クラスをアプリケーションが使用しているとします。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-104">For example, suppose an application uses the `Example` class in an assembly named `Utility.dll`.</span></span> <span data-ttu-id="ab0fc-105">その場合、`Utility.dll` の開発者がアセンブリをリファクタリングすることになった際には、その過程で `Example` クラスが別のアセンブリに移動される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-105">The developers of `Utility.dll` might decide to refactor the assembly, and in the process they might move the `Example` class to another assembly.</span></span> <span data-ttu-id="ab0fc-106">`Utility.dll` の旧バージョンが `Utility.dll` の新バージョンとそのコンパニオン アセンブリに置き換えられると、`Example` クラスを使用するアプリケーションは、新しいバージョンの `Utility.dll` で `Example` クラスを見つけられないために失敗します。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-106">If the old version of `Utility.dll` is replaced by the new version of `Utility.dll` and its companion assembly, the application that uses the `Example` class fails because it cannot locate the `Example` class in the new version of `Utility.dll`.</span></span>  
   
- `Utility.dll` の開発者は、<xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> 属性を使用して、`Example` クラスの要求を転送することで、この問題を回避できます。 この属性が新バージョンの `Utility.dll` に適用されている場合、`Example` クラスに対する要求は、現在このクラスを含んでいるアセンブリに転送されます。 既存のアプリケーションは、再コンパイルを必要とすることなく正常に機能し続けます。  
+ <span data-ttu-id="ab0fc-107">`Utility.dll` の開発者は、<xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> 属性を使用して、`Example` クラスの要求を転送することで、この問題を回避できます。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-107">The developers of `Utility.dll` can avoid this by forwarding requests for the `Example` class, using the <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> attribute.</span></span> <span data-ttu-id="ab0fc-108">この属性が新バージョンの `Utility.dll` に適用されている場合、`Example` クラスに対する要求は、現在このクラスを含んでいるアセンブリに転送されます。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-108">If the attribute has been applied to the new version of `Utility.dll`, requests for the `Example` class are forwarded to the assembly that now contains the class.</span></span> <span data-ttu-id="ab0fc-109">既存のアプリケーションは、再コンパイルを必要とすることなく正常に機能し続けます。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-109">The existing application continues to function normally, without recompilation.</span></span>  
   
 > [!NOTE]
->  .NET Framework Version 2.0 では、Visual Basic で記述されたアセンブリから型を転送することはできません。 ただし、Visual Basic で記述されたアプリケーションで、転送された型を使用することはできます。 つまり、アプリケーションで使用しているアセンブリが C# または C++ でコーディングされていれば、そのアセンブリの型が別のアセンブリに転送されても、転送された型をVisual Basic アプリケーションで使用できます。  
+>  <span data-ttu-id="ab0fc-110">.NET Framework Version 2.0 では、Visual Basic で記述されたアセンブリから型を転送することはできません。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-110">In the .NET Framework version 2.0, you cannot forward types from assemblies written in Visual Basic.</span></span> <span data-ttu-id="ab0fc-111">ただし、Visual Basic で記述されたアプリケーションで、転送された型を使用することはできます。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-111">However, an application written in Visual Basic can consume forwarded types.</span></span> <span data-ttu-id="ab0fc-112">つまり、アプリケーションで使用しているアセンブリが C# または C++ でコーディングされていれば、そのアセンブリの型が別のアセンブリに転送されても、転送された型をVisual Basic アプリケーションで使用できます。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-112">That is, if the application uses an assembly coded in C# or C++, and a type from that assembly is forwarded to another assembly, the Visual Basic application can use the forwarded type.</span></span>  
   
-## <a name="forwarding-types"></a>型の転送  
- 型の転送は 4 つの手順で行います。  
+## <a name="forwarding-types"></a><span data-ttu-id="ab0fc-113">型の転送</span><span class="sxs-lookup"><span data-stu-id="ab0fc-113">Forwarding Types</span></span>  
+ <span data-ttu-id="ab0fc-114">型の転送は 4 つの手順で行います。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-114">There are four steps to forwarding a type:</span></span>  
   
-1.  型のソース コードを、元のアセンブリから転送先のアセンブリに移動します。  
+1.  <span data-ttu-id="ab0fc-115">型のソース コードを、元のアセンブリから転送先のアセンブリに移動します。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-115">Move the source code for the type from the original assembly to the destination assembly.</span></span>  
   
-2.  配置に使用される型のアセンブリで、移動された型の <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> を追加します。 次のコードは、移動された `Example` という型の属性を示しています。  
+2.  <span data-ttu-id="ab0fc-116">配置に使用される型のアセンブリで、移動された型の <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> を追加します。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-116">In the assembly where the type used to be located, add a <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> for the type that was moved.</span></span> <span data-ttu-id="ab0fc-117">次のコードは、移動された `Example` という型の属性を示しています。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-117">The following code shows the attribute for a type named `Example` that was moved.</span></span>  
   
     ```csharp  
     [assembly:TypeForwardedToAttribute(typeof(Example))]  
@@ -49,12 +50,11 @@ ms.lasthandoff: 07/28/2017
     [assembly:TypeForwardedToAttribute(Example::typeid)]  
     ```  
   
-3.  型の現在の場所であるアセンブリをコンパイルします。  
+3.  <span data-ttu-id="ab0fc-118">型の現在の場所であるアセンブリをコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-118">Compile the assembly that now contains the type.</span></span>  
   
-4.  型の現在の場所であるアセンブリへの参照を指定して、型の元の場所であるアセンブリを再コンパイルします。 たとえば、C# ファイルをコマンド ラインからコンパイルする場合は、[/reference (C# コンパイラ オプション)](~/docs/csharp/language-reference/compiler-options/reference-compiler-option.md) オプションを使用して、型の現在の場所であるアセンブリを指定します。 C++ では、ソース ファイルで [#using](http://msdn.microsoft.com/library/870b15e5-f361-40a8-ba1c-c57d75c8809a) ディレクティブを使用して、型の現在の場所であるアセンブリを指定します。  
+4.  <span data-ttu-id="ab0fc-119">型の現在の場所であるアセンブリへの参照を指定して、型の元の場所であるアセンブリを再コンパイルします。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-119">Recompile the assembly where the type used to be located, with a reference to the assembly that now contains the type.</span></span> <span data-ttu-id="ab0fc-120">たとえば、C# ファイルをコマンド ラインからコンパイルする場合は、[/reference (C# コンパイラ オプション)](~/docs/csharp/language-reference/compiler-options/reference-compiler-option.md) オプションを使用して、型の現在の場所であるアセンブリを指定します。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-120">For example, if you are compiling a C# file from the command line, use the [/reference (C# Compiler Options)](~/docs/csharp/language-reference/compiler-options/reference-compiler-option.md) option to specify the assembly that contains the type.</span></span> <span data-ttu-id="ab0fc-121">C++ では、ソース ファイルで [#using](http://msdn.microsoft.com/library/870b15e5-f361-40a8-ba1c-c57d75c8809a) ディレクティブを使用して、型の現在の場所であるアセンブリを指定します。</span><span class="sxs-lookup"><span data-stu-id="ab0fc-121">In C++, use the [#using](http://msdn.microsoft.com/library/870b15e5-f361-40a8-ba1c-c57d75c8809a) directive in the source file to specify the assembly that contains the type.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute>   
- [型の転送 (C++/CLI)](/cpp/windows/type-forwarding-cpp-cli)   
- [#using ディレクティブ](http://msdn.microsoft.com/library/870b15e5-f361-40a8-ba1c-c57d75c8809a)
-
+## <a name="see-also"></a><span data-ttu-id="ab0fc-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="ab0fc-122">See Also</span></span>  
+ <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute>  
+ [<span data-ttu-id="ab0fc-123">型の転送 (C++/CLI)</span><span class="sxs-lookup"><span data-stu-id="ab0fc-123">Type Forwarding (C++/CLI)</span></span>](/cpp/windows/type-forwarding-cpp-cli)  
+ [<span data-ttu-id="ab0fc-124">#using ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="ab0fc-124">#using Directive</span></span>](http://msdn.microsoft.com/library/870b15e5-f361-40a8-ba1c-c57d75c8809a)

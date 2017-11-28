@@ -1,37 +1,39 @@
 ---
-title: "Parallel Diagnostic Tools | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "parallel programming, debugging and profiling tools"
+title: "並列診断ツール"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: parallel programming, debugging and profiling tools
 ms.assetid: 38f7302a-ddf6-4179-ba19-f49e00395b9f
-caps.latest.revision: 6
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: ad6875d4937ab0ee68dcb9c6d6f51d079851cdc5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Parallel Diagnostic Tools
-[!INCLUDE[vs_dev10_ext](../../../includes/vs-dev10-ext-md.md)] には、マルチスレッド アプリケーションのデバッグとプロファイリングを行うための広範なサポートが用意されています。  
+# <a name="parallel-diagnostic-tools"></a><span data-ttu-id="e0bae-102">並列診断ツール</span><span class="sxs-lookup"><span data-stu-id="e0bae-102">Parallel Diagnostic Tools</span></span>
+[!INCLUDE[vs_dev10_ext](../../../includes/vs-dev10-ext-md.md)]<span data-ttu-id="e0bae-103"> は、マルチ スレッド アプリケーションのデバッグおよびプロファイリングを広範にサポートします。</span><span class="sxs-lookup"><span data-stu-id="e0bae-103"> provides extensive support for debugging and profiling multi-threaded applications.</span></span>  
   
-## デバッグ  
- Visual Studio デバッガーは、並列アプリケーションをデバッグするための新しいウィンドウを追加します。  詳細については、次のトピックを参照してください。  
+## <a name="debugging"></a><span data-ttu-id="e0bae-104">デバッグ</span><span class="sxs-lookup"><span data-stu-id="e0bae-104">Debugging</span></span>  
+ <span data-ttu-id="e0bae-105">Visual Studio デバッガーに、並列アプリケーションをデバッグするための新しいウィンドウが追加されました。</span><span class="sxs-lookup"><span data-stu-id="e0bae-105">The Visual Studio debugger adds new windows for debugging parallel applications.</span></span> <span data-ttu-id="e0bae-106">詳細については、次のトピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="e0bae-106">For more information, see the following topics:</span></span>  
   
--   [\[並列スタック\] ウィンドウの使用](../Topic/Using%20the%20Parallel%20Stacks%20Window.md)  
+-   <span data-ttu-id="e0bae-107">[[並列スタック] ウィンドウの使用](/visualstudio/debugger/using-the-parallel-stacks-window)</span><span class="sxs-lookup"><span data-stu-id="e0bae-107">[Using the Parallel Stacks Window](/visualstudio/debugger/using-the-parallel-stacks-window)</span></span>  
   
--   [\[タスク\] ウィンドウの使用](../Topic/Using%20the%20Tasks%20Window.md)  
+-   <span data-ttu-id="e0bae-108">[[タスク] ウィンドウの使用](/visualstudio/debugger/using-the-tasks-window)</span><span class="sxs-lookup"><span data-stu-id="e0bae-108">[Using the Tasks Window](/visualstudio/debugger/using-the-tasks-window)</span></span>  
   
--   [チュートリアル: 並行アプリケーションのデバッグ](../Topic/Walkthrough:%20Debugging%20a%20Parallel%20Application.md).  
+-   <span data-ttu-id="e0bae-109">[チュートリアル: 並行アプリケーションのデバッグ](/visualstudio/debugger/walkthrough-debugging-a-parallel-application)</span><span class="sxs-lookup"><span data-stu-id="e0bae-109">[Walkthrough: Debugging a Parallel Application](/visualstudio/debugger/walkthrough-debugging-a-parallel-application).</span></span>  
   
-## プロファイル  
- 同時実行ビジュアライザー レポート ビューを使用すると、並列プログラムのスレッドが相互にやり取りする方法、およびシステム上の他のプロセスのスレッドとやり取りする方法を視覚化できます。  詳細については、「[同時実行ビジュアライザー](../Topic/Concurrency%20Visualizer.md)」を参照してください。  
+## <a name="profiling"></a><span data-ttu-id="e0bae-110">プロファイル</span><span class="sxs-lookup"><span data-stu-id="e0bae-110">Profiling</span></span>  
+ <span data-ttu-id="e0bae-111">同時実行ビジュアライザーのレポート ビューを使用すると、並列プログラム内のスレッドどうし、または同じシステム上の他のプロセスのスレッドとのやり取りを視覚化することができます。</span><span class="sxs-lookup"><span data-stu-id="e0bae-111">The Concurrency Visualizer report views enable you to visualize how the threads in a parallel program interact with each other and with threads from other processes on the system.</span></span> <span data-ttu-id="e0bae-112">詳細については、「[同時実行ビジュアライザー](/visualstudio/profiling/concurrency-visualizer)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e0bae-112">For more information, see [Concurrency Visualizer](/visualstudio/profiling/concurrency-visualizer).</span></span>  
   
-## 参照  
- [Parallel Programming](../../../docs/standard/parallel-programming/index.md)
+## <a name="see-also"></a><span data-ttu-id="e0bae-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="e0bae-113">See Also</span></span>  
+ [<span data-ttu-id="e0bae-114">並列プログラミング</span><span class="sxs-lookup"><span data-stu-id="e0bae-114">Parallel Programming</span></span>](../../../docs/standard/parallel-programming/index.md)

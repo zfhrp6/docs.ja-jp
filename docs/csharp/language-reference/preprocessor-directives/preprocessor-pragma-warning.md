@@ -1,62 +1,41 @@
 ---
 title: "#<a name=\"pragma-warning-c-reference\"></a>pragma warning (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- '#pragma warning'
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- '#pragma warning [C#]'
+f1_keywords: '#pragma warning'
+helpviewer_keywords: '#pragma warning [C#]'
 ms.assetid: 723493d5-9753-4cec-babb-54e2b8eb36b6
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 5330b448dc2b328992b2d29699557d20df56dee4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 75c11acfd096d36c96ceb9e9c5c0d16e47e58fa1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="pragma-warning-c-reference"></a>#pragma 警告 (C# リファレンス)
-`#pragma warning` を使用すると、特定の警告を有効または無効にすることができます。  
+# <a name="pragma-warning-c-reference"></a><span data-ttu-id="363b1-102">#pragma 警告 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="363b1-102">#pragma warning (C# Reference)</span></span>
+<span data-ttu-id="363b1-103">`#pragma warning` を使用すると、特定の警告を有効または無効にすることができます。</span><span class="sxs-lookup"><span data-stu-id="363b1-103">`#pragma warning` can enable or disable certain warnings.</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="363b1-104">構文</span><span class="sxs-lookup"><span data-stu-id="363b1-104">Syntax</span></span>  
   
 ```csharp
 #pragma warning disable warning-list  
 #pragma warning restore warning-list  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a><span data-ttu-id="363b1-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="363b1-105">Parameters</span></span>  
  `warning-list`  
- 警告番号のコンマ区切りのリスト。 "CS" というプレフィックスは省略可能です。  
+ <span data-ttu-id="363b1-106">警告番号のコンマ区切りのリスト。</span><span class="sxs-lookup"><span data-stu-id="363b1-106">A comma-separated list of warning numbers.</span></span> <span data-ttu-id="363b1-107">"CS" というプレフィックスは省略可能です。</span><span class="sxs-lookup"><span data-stu-id="363b1-107">The "CS" prefix is optional.</span></span>  
   
- 警告番号が指定されていないと、`disable` はすべての警告を無効にし、`restore` はすべての警告を有効にします。  
+ <span data-ttu-id="363b1-108">警告番号が指定されていないと、`disable` はすべての警告を無効にし、`restore` はすべての警告を有効にします。</span><span class="sxs-lookup"><span data-stu-id="363b1-108">When no warning numbers are specified, `disable` disables all warnings and `restore` enables all warnings.</span></span>  
   
 > [!NOTE]
->  Visual Studio で警告番号を調べるには、プロジェクトをビルドし、**[出力]** ウィンドウで警告番号を探してください。  
+>  <span data-ttu-id="363b1-109">Visual Studio で警告番号を調べるには、プロジェクトをビルドし、**[出力]** ウィンドウで警告番号を探してください。</span><span class="sxs-lookup"><span data-stu-id="363b1-109">To find warning numbers in Visual Studio, build your project and then look for the warning numbers in the **Output** window.</span></span>  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="363b1-110">例</span><span class="sxs-lookup"><span data-stu-id="363b1-110">Example</span></span>  
   
 ```csharp
 // pragma_warning.cs  
@@ -82,9 +61,8 @@ public class D
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# プリプロセッサ ディレクティブ](../../../csharp/language-reference/preprocessor-directives/index.md)   
- [C# コンパイラ エラー](../../../csharp/language-reference/compiler-messages/index.md)
-
+## <a name="see-also"></a><span data-ttu-id="363b1-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="363b1-111">See Also</span></span>  
+ [<span data-ttu-id="363b1-112">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="363b1-112">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="363b1-113">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="363b1-113">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="363b1-114">C# プリプロセッサ ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="363b1-114">C# Preprocessor Directives</span></span>](../../../csharp/language-reference/preprocessor-directives/index.md)  
+ [<span data-ttu-id="363b1-115">C# コンパイラ エラー</span><span class="sxs-lookup"><span data-stu-id="363b1-115">C# Compiler Errors</span></span>](../../../csharp/language-reference/compiler-messages/index.md)

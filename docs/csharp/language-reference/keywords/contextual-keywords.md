@@ -1,63 +1,43 @@
 ---
 title: "コンテキスト キーワード (C# リファレンス)"
-ms.date: 2017-03-07
+ms.date: 03/07/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- contextual keywords [C#]
+helpviewer_keywords: contextual keywords [C#]
 ms.assetid: 7c76bc29-a754-4389-b0ab-f6b441018298
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: a6268e09b8063f95aa11fc1563f0b5b5d5d96a08
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 57209c7554e7fb53ef946ad9a78a088a3dd49453
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="contextual-keywords-c-reference"></a>コンテキスト キーワード (C# リファレンス)
-コンテキスト キーワードを使用して、コード内で特定の意味を付与することができます。ただし C# ではコンテキスト キーワードは予約語ではありません。 このセクションでは、次のコンテキスト キーワードを紹介します。  
+# <a name="contextual-keywords-c-reference"></a><span data-ttu-id="bdddb-102">コンテキスト キーワード (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="bdddb-102">Contextual Keywords (C# Reference)</span></span>
+<span data-ttu-id="bdddb-103">コンテキスト キーワードを使用して、コード内で特定の意味を付与することができます。ただし C# ではコンテキスト キーワードは予約語ではありません。</span><span class="sxs-lookup"><span data-stu-id="bdddb-103">A contextual keyword is used to provide a specific meaning in the code, but it is not a reserved word in C#.</span></span> <span data-ttu-id="bdddb-104">このセクションでは、次のコンテキスト キーワードを紹介します。</span><span class="sxs-lookup"><span data-stu-id="bdddb-104">The following contextual keywords are introduced in this section:</span></span>  
   
-|キーワード|説明|  
+|<span data-ttu-id="bdddb-105">キーワード</span><span class="sxs-lookup"><span data-stu-id="bdddb-105">Keyword</span></span>|<span data-ttu-id="bdddb-106">説明</span><span class="sxs-lookup"><span data-stu-id="bdddb-106">Description</span></span>|  
 |-------------|-----------------|  
-|[add](../../../csharp/language-reference/keywords/add.md)|クライアント コードがイベントをサブスクライブするときに呼び出されるカスタム イベント アクセサーを定義します。|  
-|[async](../../../csharp/language-reference/keywords/async.md)|修飾されたメソッド、ラムダ式、または匿名メソッドが非同期であることを示します。|  
-|[await](../../../csharp/language-reference/keywords/await.md)|待機中のタスクが完了するまで非同期のメソッドを中断します。|  
-|[dynamic](../../../csharp/language-reference/keywords/dynamic.md)|コンパイル時の型チェックをバイパスする処理を可能にする参照型を定義します。|  
-|[get](../../../csharp/language-reference/keywords/get.md)|プロパティまたはインデクサーのアクセサー メソッドを定義します。|  
-|[global](../../../csharp/language-reference/keywords/global.md)|既定のグローバル名前空間を指定します。指定しない場合、無名のグローバル名前空間になります。|  
-|[partial](../../../csharp/language-reference/keywords/partial-type.md)|同一コンパイル ユニットに部分クラス、部分構造体、または部分インターフェイスを定義します。|  
-|[remove](../../../csharp/language-reference/keywords/remove.md)|クライアント コードがイベントのサブスクライブを解除するときに呼び出されるカスタム イベント アクセサーを定義します。|  
-|[set](../../../csharp/language-reference/keywords/set.md)|プロパティまたはインデクサーのアクセサー メソッドを定義します。|  
-|[value](../../../csharp/language-reference/keywords/value.md)|アクセサーを設定したり、イベント ハンドラーを追加または削除したりするために使用されます。|  
-|[var](../../../csharp/language-reference/keywords/var.md)|メソッド スコープで宣言された変数の型をコンパイラで判断できるようにします。|  
-|[when](when.md)|`catch` ブロックまたは `switch` ステートメントの `case` ラベルのフィルター条件を指定します。|
-|[where](../../../csharp/language-reference/keywords/where-generic-type-constraint.md)|ジェネリック宣言に制約を追加します  (「[where](../../../csharp/language-reference/keywords/where-clause.md)」も参照してください)。|  
-|[yield](../../../csharp/language-reference/keywords/yield.md)|反復子ブロックで使用され、列挙子オブジェクトに値を返すか、反復処理の終了を通知します。|  
+|[<span data-ttu-id="bdddb-107">add</span><span class="sxs-lookup"><span data-stu-id="bdddb-107">add</span></span>](../../../csharp/language-reference/keywords/add.md)|<span data-ttu-id="bdddb-108">クライアント コードがイベントをサブスクライブするときに呼び出されるカスタム イベント アクセサーを定義します。</span><span class="sxs-lookup"><span data-stu-id="bdddb-108">Defines a custom event accessor that is invoked when client code subscribes to the event.</span></span>|  
+|[<span data-ttu-id="bdddb-109">async</span><span class="sxs-lookup"><span data-stu-id="bdddb-109">async</span></span>](../../../csharp/language-reference/keywords/async.md)|<span data-ttu-id="bdddb-110">修飾されたメソッド、ラムダ式、または匿名メソッドが非同期であることを示します。</span><span class="sxs-lookup"><span data-stu-id="bdddb-110">Indicates that the modified method, lambda expression, or anonymous method is asynchronous.</span></span>|  
+|[<span data-ttu-id="bdddb-111">await</span><span class="sxs-lookup"><span data-stu-id="bdddb-111">await</span></span>](../../../csharp/language-reference/keywords/await.md)|<span data-ttu-id="bdddb-112">待機中のタスクが完了するまで非同期のメソッドを中断します。</span><span class="sxs-lookup"><span data-stu-id="bdddb-112">Suspends an async method until an awaited task is completed.</span></span>|  
+|[<span data-ttu-id="bdddb-113">dynamic</span><span class="sxs-lookup"><span data-stu-id="bdddb-113">dynamic</span></span>](../../../csharp/language-reference/keywords/dynamic.md)|<span data-ttu-id="bdddb-114">コンパイル時の型チェックをバイパスする処理を可能にする参照型を定義します。</span><span class="sxs-lookup"><span data-stu-id="bdddb-114">Defines a reference type that enables operations in which it occurs to bypass compile-time type checking.</span></span>|  
+|[<span data-ttu-id="bdddb-115">get</span><span class="sxs-lookup"><span data-stu-id="bdddb-115">get</span></span>](../../../csharp/language-reference/keywords/get.md)|<span data-ttu-id="bdddb-116">プロパティまたはインデクサーのアクセサー メソッドを定義します。</span><span class="sxs-lookup"><span data-stu-id="bdddb-116">Defines an accessor method for a property or an indexer.</span></span>|  
+|[<span data-ttu-id="bdddb-117">global</span><span class="sxs-lookup"><span data-stu-id="bdddb-117">global</span></span>](../../../csharp/language-reference/keywords/global.md)|<span data-ttu-id="bdddb-118">既定のグローバル名前空間を指定します。指定しない場合、無名のグローバル名前空間になります。</span><span class="sxs-lookup"><span data-stu-id="bdddb-118">Specifies the default global namespace, which is otherwise unnamed.</span></span>|  
+|[<span data-ttu-id="bdddb-119">partial</span><span class="sxs-lookup"><span data-stu-id="bdddb-119">partial</span></span>](../../../csharp/language-reference/keywords/partial-type.md)|<span data-ttu-id="bdddb-120">同一コンパイル ユニットに部分クラス、部分構造体、または部分インターフェイスを定義します。</span><span class="sxs-lookup"><span data-stu-id="bdddb-120">Defines partial classes, structs, and interfaces throughout the same compilation unit.</span></span>|  
+|[<span data-ttu-id="bdddb-121">remove</span><span class="sxs-lookup"><span data-stu-id="bdddb-121">remove</span></span>](../../../csharp/language-reference/keywords/remove.md)|<span data-ttu-id="bdddb-122">クライアント コードがイベントのサブスクライブを解除するときに呼び出されるカスタム イベント アクセサーを定義します。</span><span class="sxs-lookup"><span data-stu-id="bdddb-122">Defines a custom event accessor that is invoked when client code unsubscribes from the event.</span></span>|  
+|[<span data-ttu-id="bdddb-123">set</span><span class="sxs-lookup"><span data-stu-id="bdddb-123">set</span></span>](../../../csharp/language-reference/keywords/set.md)|<span data-ttu-id="bdddb-124">プロパティまたはインデクサーのアクセサー メソッドを定義します。</span><span class="sxs-lookup"><span data-stu-id="bdddb-124">Defines an accessor method for a property or an indexer.</span></span>|  
+|[<span data-ttu-id="bdddb-125">value</span><span class="sxs-lookup"><span data-stu-id="bdddb-125">value</span></span>](../../../csharp/language-reference/keywords/value.md)|<span data-ttu-id="bdddb-126">アクセサーを設定したり、イベント ハンドラーを追加または削除したりするために使用されます。</span><span class="sxs-lookup"><span data-stu-id="bdddb-126">Used to set accessors and to add or remove event handlers.</span></span>|  
+|[<span data-ttu-id="bdddb-127">var</span><span class="sxs-lookup"><span data-stu-id="bdddb-127">var</span></span>](../../../csharp/language-reference/keywords/var.md)|<span data-ttu-id="bdddb-128">メソッド スコープで宣言された変数の型をコンパイラで判断できるようにします。</span><span class="sxs-lookup"><span data-stu-id="bdddb-128">Enables the type of a variable declared at method scope to be determined by the compiler.</span></span>|  
+|[<span data-ttu-id="bdddb-129">when</span><span class="sxs-lookup"><span data-stu-id="bdddb-129">when</span></span>](when.md)|<span data-ttu-id="bdddb-130">`catch` ブロックまたは `switch` ステートメントの `case` ラベルのフィルター条件を指定します。</span><span class="sxs-lookup"><span data-stu-id="bdddb-130">Specifies a filter condition for a `catch` block or the `case` label of a `switch` statement.</span></span>|
+|[<span data-ttu-id="bdddb-131">where</span><span class="sxs-lookup"><span data-stu-id="bdddb-131">where</span></span>](../../../csharp/language-reference/keywords/where-generic-type-constraint.md)|<span data-ttu-id="bdddb-132">ジェネリック宣言に制約を追加します </span><span class="sxs-lookup"><span data-stu-id="bdddb-132">Adds constraints to a generic declaration.</span></span> <span data-ttu-id="bdddb-133">(「[where](../../../csharp/language-reference/keywords/where-clause.md)」も参照してください)。</span><span class="sxs-lookup"><span data-stu-id="bdddb-133">(See also [where](../../../csharp/language-reference/keywords/where-clause.md)).</span></span>|  
+|[<span data-ttu-id="bdddb-134">yield</span><span class="sxs-lookup"><span data-stu-id="bdddb-134">yield</span></span>](../../../csharp/language-reference/keywords/yield.md)|<span data-ttu-id="bdddb-135">反復子ブロックで使用され、列挙子オブジェクトに値を返すか、反復処理の終了を通知します。</span><span class="sxs-lookup"><span data-stu-id="bdddb-135">Used in an iterator block to return a value to the enumerator object or to signal the end of iteration.</span></span>|  
   
- C# 3.0 で導入されたすべてのクエリ キーワードもコンテキスト キーワードです。 詳細については「[クエリ キーワード (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)」を参照してください。  
+ <span data-ttu-id="bdddb-136">C# 3.0 で導入されたすべてのクエリ キーワードもコンテキスト キーワードです。</span><span class="sxs-lookup"><span data-stu-id="bdddb-136">All query keywords introduced in C# 3.0 are also contextual.</span></span> <span data-ttu-id="bdddb-137">詳細については「[クエリ キーワード (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="bdddb-137">For more information, see [Query Keywords (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md).</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)
-
+## <a name="see-also"></a><span data-ttu-id="bdddb-138">関連項目</span><span class="sxs-lookup"><span data-stu-id="bdddb-138">See Also</span></span>  
+ [<span data-ttu-id="bdddb-139">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="bdddb-139">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="bdddb-140">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="bdddb-140">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="bdddb-141">C# のキーワード</span><span class="sxs-lookup"><span data-stu-id="bdddb-141">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)

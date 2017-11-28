@@ -1,83 +1,89 @@
 ---
-title: "方法 : TileBrush の水平方向および垂直方向の配置を設定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "エイリアスの使用, TileBrush"
-  - "水平方向の配置 (TileBrush の)"
-  - "TileBrush, 配置"
-  - "垂直方向の配置 (TileBrush の)"
+title: "方法 : TileBrush の水平方向および垂直方向の配置を設定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- TileBrush [WPF], alignment of
+- vertical alignment of TileBrushes [WPF]
+- aligning [WPF], TileBrushes
+- horizontal alignment of Tilebrushes [WPF]
 ms.assetid: 65ae89bd-9246-4c9e-bde4-2fb991d4060d
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3c581bb167c020e9e4f0de26b0e17e7a1d70704e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : TileBrush の水平方向および垂直方向の配置を設定する
-この例では、タイル内にあるコンテンツの水平方向の配置と垂直方向の配置を制御する方法を示します。  <xref:System.Windows.Media.TileBrush> の水平方向および垂直方向の配置を制御するには、その <xref:System.Windows.Media.TileBrush.AlignmentX%2A> プロパティと <xref:System.Windows.Media.TileBrush.AlignmentY%2A> プロパティを使用します。  
+# <a name="how-to-set-the-horizontal-and-vertical-alignment-of-a-tilebrush"></a><span data-ttu-id="9c8c7-102">方法 : TileBrush の水平方向および垂直方向の配置を設定する</span><span class="sxs-lookup"><span data-stu-id="9c8c7-102">How to: Set the Horizontal and Vertical Alignment of a TileBrush</span></span>
+<span data-ttu-id="9c8c7-103">この例は、タイル内の内容の水平方向および垂直の配置を制御する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-103">This example shows how to control the horizontal and vertical alignment of content in a tile.</span></span> <span data-ttu-id="9c8c7-104">水平方向および垂直方向の配置を制御する、<xref:System.Windows.Media.TileBrush>を使用してその<xref:System.Windows.Media.TileBrush.AlignmentX%2A>と<xref:System.Windows.Media.TileBrush.AlignmentY%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-104">To control the horizontal and vertical alignment of a <xref:System.Windows.Media.TileBrush>, use its <xref:System.Windows.Media.TileBrush.AlignmentX%2A> and <xref:System.Windows.Media.TileBrush.AlignmentY%2A> properties.</span></span>  
   
- 次のいずれかの条件に当てはまる場合は、<xref:System.Windows.Media.TileBrush> の <xref:System.Windows.Media.TileBrush.AlignmentX%2A> プロパティと <xref:System.Windows.Media.TileBrush.AlignmentY%2A> プロパティが使用されます。  
+ <span data-ttu-id="9c8c7-105"><xref:System.Windows.Media.TileBrush.AlignmentX%2A>と<xref:System.Windows.Media.TileBrush.AlignmentY%2A>のプロパティ、<xref:System.Windows.Media.TileBrush>使用は、次の条件のいずれかが true の場合。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-105">The <xref:System.Windows.Media.TileBrush.AlignmentX%2A> and <xref:System.Windows.Media.TileBrush.AlignmentY%2A> properties of a <xref:System.Windows.Media.TileBrush> are used when either of the following conditions is true:</span></span>  
   
--   <xref:System.Windows.Media.TileBrush.Stretch%2A> プロパティが <xref:System.Windows.Media.Stretch> または <xref:System.Windows.Media.Stretch> で、<xref:System.Windows.Media.TileBrush.Viewbox%2A> および <xref:System.Windows.Media.TileBrush.Viewport%2A> の[縦横比](GTMT)が異なる場合。  
+-   <span data-ttu-id="9c8c7-106"><xref:System.Windows.Media.TileBrush.Stretch%2A>プロパティは<xref:System.Windows.Media.Stretch.Uniform>または<xref:System.Windows.Media.Stretch.UniformToFill>と<xref:System.Windows.Media.TileBrush.Viewbox%2A>と<xref:System.Windows.Media.TileBrush.Viewport%2A>別の縦横比があります。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-106">The <xref:System.Windows.Media.TileBrush.Stretch%2A> property is <xref:System.Windows.Media.Stretch.Uniform> or <xref:System.Windows.Media.Stretch.UniformToFill> and the <xref:System.Windows.Media.TileBrush.Viewbox%2A> and <xref:System.Windows.Media.TileBrush.Viewport%2A> have different aspect ratios.</span></span>  
   
--   <xref:System.Windows.Media.TileBrush.Stretch%2A> プロパティが <xref:System.Windows.Media.Stretch> で、<xref:System.Windows.Media.TileBrush.Viewbox%2A> および <xref:System.Windows.Media.TileBrush.Viewport%2A> のサイズが異なる場合。  
+-   <span data-ttu-id="9c8c7-107"><xref:System.Windows.Media.TileBrush.Stretch%2A>プロパティは<xref:System.Windows.Media.Stretch.None>と<xref:System.Windows.Media.TileBrush.Viewbox%2A>と<xref:System.Windows.Media.TileBrush.Viewport%2A>サイズが異なる。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-107">The <xref:System.Windows.Media.TileBrush.Stretch%2A> property is <xref:System.Windows.Media.Stretch.None> and the <xref:System.Windows.Media.TileBrush.Viewbox%2A> and <xref:System.Windows.Media.TileBrush.Viewport%2A> are different sizes.</span></span>  
   
-## 使用例  
- <xref:System.Windows.Media.TileBrush> の一種である <xref:System.Windows.Media.DrawingBrush> のコンテンツをタイルの左上隅に配置する例を次に示します。  コンテンツの配置のため、この例では、<xref:System.Windows.Media.DrawingBrush> の <xref:System.Windows.Media.TileBrush.AlignmentX%2A> プロパティを <xref:System.Windows.Media.AlignmentX>、<xref:System.Windows.Media.TileBrush.AlignmentY%2A> プロパティを <xref:System.Windows.Media.AlignmentY> に設定しています。  この例を実行すると、次の出力が生成されます。  
+## <a name="example"></a><span data-ttu-id="9c8c7-108">例</span><span class="sxs-lookup"><span data-stu-id="9c8c7-108">Example</span></span>  
+ <span data-ttu-id="9c8c7-109">次の例の内容、<xref:System.Windows.Media.DrawingBrush>の型である<xref:System.Windows.Media.TileBrush>、そのタイルの左上隅にします。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-109">The following example aligns the content of a <xref:System.Windows.Media.DrawingBrush>, which is a type of <xref:System.Windows.Media.TileBrush>, to the upper-left corner of its tile.</span></span> <span data-ttu-id="9c8c7-110">例のセット、コンテンツに合わせて、<xref:System.Windows.Media.TileBrush.AlignmentX%2A>のプロパティ、<xref:System.Windows.Media.DrawingBrush>に<xref:System.Windows.Media.AlignmentX.Left>と<xref:System.Windows.Media.TileBrush.AlignmentY%2A>プロパティを<xref:System.Windows.Media.AlignmentY.Top>です。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-110">To align the content, the example sets the <xref:System.Windows.Media.TileBrush.AlignmentX%2A> property of the <xref:System.Windows.Media.DrawingBrush> to <xref:System.Windows.Media.AlignmentX.Left> and the <xref:System.Windows.Media.TileBrush.AlignmentY%2A> property to <xref:System.Windows.Media.AlignmentY.Top>.</span></span> <span data-ttu-id="9c8c7-111">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-111">This example produces the following output.</span></span>  
   
- ![左上に配置された TileBrush](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexampletopleft.png "graphicsmm\_TileBrushAlignmentExampleTopLeft")  
-コンテンツを左上隅に配置した TileBrush  
+ <span data-ttu-id="9c8c7-112">![上部 &#45;された TileBrush; 左揃え](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexampletopleft.png "graphicsmm_TileBrushAlignmentExampleTopLeft")</span><span class="sxs-lookup"><span data-stu-id="9c8c7-112">![A TileBrush with top&#45;left alignment](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexampletopleft.png "graphicsmm_TileBrushAlignmentExampleTopLeft")</span></span>  
+<span data-ttu-id="9c8c7-113">内容が左上隅に配置された TileBrush</span><span class="sxs-lookup"><span data-stu-id="9c8c7-113">TileBrush with content aligned to the upper-left corner</span></span>  
   
  [!code-csharp[brushoverviewexamples_snip#TileBrushTopLeftAlignmentInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/TileBrushAlignmentExample.cs#tilebrushtopleftalignmentinline)]
  [!code-vb[brushoverviewexamples_snip#TileBrushTopLeftAlignmentInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_snip/visualbasic/tilebrushalignmentexample.vb#tilebrushtopleftalignmentinline)]
- [!code-xml[brushoverviewexamples_snip#TileBrushTopLeftAlignmentInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushtopleftalignmentinline)]  
+ [!code-xaml[brushoverviewexamples_snip#TileBrushTopLeftAlignmentInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushtopleftalignmentinline)]  
   
-## 使用例  
- 次の例では、<xref:System.Windows.Media.TileBrush.AlignmentX%2A> プロパティを <xref:System.Windows.Media.AlignmentX>、<xref:System.Windows.Media.TileBrush.AlignmentY%2A> プロパティを <xref:System.Windows.Media.AlignmentY> に設定して、<xref:System.Windows.Media.DrawingBrush> のコンテンツをタイルの右下隅に配置します。  この例の出力は、次のようになります。  
+## <a name="example"></a><span data-ttu-id="9c8c7-114">例</span><span class="sxs-lookup"><span data-stu-id="9c8c7-114">Example</span></span>  
+ <span data-ttu-id="9c8c7-115">次の例の内容、<xref:System.Windows.Media.DrawingBrush>を設定して、タイルの右下隅に、<xref:System.Windows.Media.TileBrush.AlignmentX%2A>プロパティを<xref:System.Windows.Media.AlignmentX.Right>と<xref:System.Windows.Media.TileBrush.AlignmentY%2A>プロパティを<xref:System.Windows.Media.AlignmentY.Bottom>です。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-115">The next example aligns the content of a <xref:System.Windows.Media.DrawingBrush> to the lower-right corner of its tile by setting the <xref:System.Windows.Media.TileBrush.AlignmentX%2A> property to <xref:System.Windows.Media.AlignmentX.Right> and the <xref:System.Windows.Media.TileBrush.AlignmentY%2A> property to <xref:System.Windows.Media.AlignmentY.Bottom>.</span></span> <span data-ttu-id="9c8c7-116">この例では次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-116">The example produces the following output.</span></span>  
   
- ![右下に配置された TileBrush](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexamplebottomright.png "graphicsmm\_TileBrushAlignmentExampleBottomRight")  
-コンテンツを右下隅に配置した TileBrush  
+ <span data-ttu-id="9c8c7-117">![下部にある &#45;された TileBrush; 右揃え](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexamplebottomright.png "graphicsmm_TileBrushAlignmentExampleBottomRight")</span><span class="sxs-lookup"><span data-stu-id="9c8c7-117">![A TileBrush with bottom&#45;right alignment](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexamplebottomright.png "graphicsmm_TileBrushAlignmentExampleBottomRight")</span></span>  
+<span data-ttu-id="9c8c7-118">内容が右下隅に配置された TileBrush</span><span class="sxs-lookup"><span data-stu-id="9c8c7-118">TileBrush with content aligned to the lower-right corner</span></span>  
   
  [!code-csharp[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/TileBrushAlignmentExample.cs#tilebrushbottomrightalignmentinline)]
  [!code-vb[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_snip/visualbasic/tilebrushalignmentexample.vb#tilebrushbottomrightalignmentinline)]
- [!code-xml[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushbottomrightalignmentinline)]  
+ [!code-xaml[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushbottomrightalignmentinline)]  
   
-## 使用例  
- 次の例では、<xref:System.Windows.Media.TileBrush.AlignmentX%2A> プロパティを <xref:System.Windows.Media.AlignmentX>、<xref:System.Windows.Media.TileBrush.AlignmentY%2A> プロパティを <xref:System.Windows.Media.AlignmentY> に設定して、<xref:System.Windows.Media.DrawingBrush> のコンテンツをタイルの左上隅に配置します。  さらに、<xref:System.Windows.Media.DrawingBrush> の <xref:System.Windows.Media.TileBrush.Viewport%2A> および <xref:System.Windows.Media.TileBrush.TileMode%2A> を設定して、タイル パターンを生成します。  この例の出力は、次のようになります。  
+## <a name="example"></a><span data-ttu-id="9c8c7-119">例</span><span class="sxs-lookup"><span data-stu-id="9c8c7-119">Example</span></span>  
+ <span data-ttu-id="9c8c7-120">次の例の内容、<xref:System.Windows.Media.DrawingBrush>を設定して、タイルの左上隅に、<xref:System.Windows.Media.TileBrush.AlignmentX%2A>プロパティを<xref:System.Windows.Media.AlignmentX.Left>と<xref:System.Windows.Media.TileBrush.AlignmentY%2A>プロパティを<xref:System.Windows.Media.AlignmentY.Top>です。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-120">The next example aligns the content of a <xref:System.Windows.Media.DrawingBrush> to the upper-left corner of its tile by setting the <xref:System.Windows.Media.TileBrush.AlignmentX%2A> property to <xref:System.Windows.Media.AlignmentX.Left> and the <xref:System.Windows.Media.TileBrush.AlignmentY%2A> property to <xref:System.Windows.Media.AlignmentY.Top>.</span></span> <span data-ttu-id="9c8c7-121">また、設定、<xref:System.Windows.Media.TileBrush.Viewport%2A>と<xref:System.Windows.Media.TileBrush.TileMode%2A>の<xref:System.Windows.Media.DrawingBrush>タイル パターンを生成するためにします。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-121">It also sets the <xref:System.Windows.Media.TileBrush.Viewport%2A> and <xref:System.Windows.Media.TileBrush.TileMode%2A> of the <xref:System.Windows.Media.DrawingBrush> to produce a tile pattern.</span></span> <span data-ttu-id="9c8c7-122">この例では次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-122">The example produces the following output.</span></span>  
   
- ![左上に並べて配置された TileBrush](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexampletoplefttiled.png "graphicsmm\_TileBrushAlignmentExampleTopLeftTiled")  
-基本タイルの左上部分にコンテンツを配置したタイル パターン  
+ <span data-ttu-id="9c8c7-123">![上部 &#45;が並べて表示された TileBrush; 左揃え](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexampletoplefttiled.png "graphicsmm_TileBrushAlignmentExampleTopLeftTiled")</span><span class="sxs-lookup"><span data-stu-id="9c8c7-123">![A tiled TileBrush with top&#45;left alignment](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexampletoplefttiled.png "graphicsmm_TileBrushAlignmentExampleTopLeftTiled")</span></span>  
+<span data-ttu-id="9c8c7-124">基本タイルの左上に内容が配置されたタイル パターン</span><span class="sxs-lookup"><span data-stu-id="9c8c7-124">Tile pattern with content aligned to upper-left in base tile</span></span>  
   
- この図では、コンテンツがどのように配置されるかを確認できるように、基本タイルを強調表示しています。  <xref:System.Windows.Media.DrawingBrush> のコンテンツが基本タイルの水平方向を完全に埋めているため、<xref:System.Windows.Media.TileBrush.AlignmentX%2A> の設定は影響を及ぼさないことに注意してください。  
+ <span data-ttu-id="9c8c7-125">図では、内容がどのように配置されているかをわかりやすくするために、基本タイルが強調されています。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-125">The illustration highlights abase tile so that you can see how its content is aligned.</span></span> <span data-ttu-id="9c8c7-126">注意して、<xref:System.Windows.Media.TileBrush.AlignmentX%2A>設定には効果がないため、コンテンツの<xref:System.Windows.Media.DrawingBrush>基本タイルが水平方向に完全にいっぱいです。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-126">Notice that the <xref:System.Windows.Media.TileBrush.AlignmentX%2A> setting has no effect because the content of the <xref:System.Windows.Media.DrawingBrush> completely fills the base tile horizontally.</span></span>  
   
  [!code-csharp[brushoverviewexamples_snip#TileBrushTopLeftAlignmentTiledInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/TileBrushAlignmentExample.cs#tilebrushtopleftalignmenttiledinline)]
  [!code-vb[brushoverviewexamples_snip#TileBrushTopLeftAlignmentTiledInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_snip/visualbasic/tilebrushalignmentexample.vb#tilebrushtopleftalignmenttiledinline)]
- [!code-xml[brushoverviewexamples_snip#TileBrushTopLeftAlignmentTiledInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushtopleftalignmenttiledinline)]  
+ [!code-xaml[brushoverviewexamples_snip#TileBrushTopLeftAlignmentTiledInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushtopleftalignmenttiledinline)]  
   
-## 使用例  
- 最後の例では、<xref:System.Windows.Media.TileBrush.AlignmentX%2A> プロパティを <xref:System.Windows.Media.AlignmentX>、<xref:System.Windows.Media.TileBrush.AlignmentY%2A> プロパティを <xref:System.Windows.Media.AlignmentY> に設定して、並べて表示された <xref:System.Windows.Media.DrawingBrush> のコンテンツを基本タイルの右下に配置します。  この例の出力は、次のようになります。  
+## <a name="example"></a><span data-ttu-id="9c8c7-127">例</span><span class="sxs-lookup"><span data-stu-id="9c8c7-127">Example</span></span>  
+ <span data-ttu-id="9c8c7-128">最後の例は、タイルのコンテンツを揃えます<xref:System.Windows.Media.DrawingBrush>を設定して基本タイルの右下に、<xref:System.Windows.Media.TileBrush.AlignmentX%2A>プロパティを<xref:System.Windows.Media.AlignmentX.Right>と<xref:System.Windows.Media.TileBrush.AlignmentY%2A>プロパティを<xref:System.Windows.Media.AlignmentY.Bottom>です。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-128">The final example aligns the content of a tiled <xref:System.Windows.Media.DrawingBrush> to the lower-right of its base tile by setting the <xref:System.Windows.Media.TileBrush.AlignmentX%2A> property to <xref:System.Windows.Media.AlignmentX.Right> and the <xref:System.Windows.Media.TileBrush.AlignmentY%2A> property to <xref:System.Windows.Media.AlignmentY.Bottom>.</span></span> <span data-ttu-id="9c8c7-129">この例では次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-129">The example produces the following output.</span></span>  
   
- ![右下に並べて配置された TileBrush](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexamplebottomrighttiled.png "graphicsmm\_TileBrushAlignmentExampleBottomRightTiled")  
-基本タイルの右下部分にコンテンツを配置したタイル パターン  
+ <span data-ttu-id="9c8c7-130">![A の下部にある &#45;TileBrush を並べて表示以外の場合は右揃え](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexamplebottomrighttiled.png "graphicsmm_TileBrushAlignmentExampleBottomRightTiled")</span><span class="sxs-lookup"><span data-stu-id="9c8c7-130">![A tiled TileBrush with bottom&#45;right alignment](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexamplebottomrighttiled.png "graphicsmm_TileBrushAlignmentExampleBottomRightTiled")</span></span>  
+<span data-ttu-id="9c8c7-131">基本タイルの右上に内容が配置されたタイル パターン</span><span class="sxs-lookup"><span data-stu-id="9c8c7-131">Tile pattern with content aligned to lower-right in base tile</span></span>  
   
- ここでも、<xref:System.Windows.Media.DrawingBrush> のコンテンツが基本タイルの水平方向を完全に埋めているため、<xref:System.Windows.Media.TileBrush.AlignmentX%2A> の設定は影響を及ぼしません。  
+ <span data-ttu-id="9c8c7-132">もう一度、<xref:System.Windows.Media.TileBrush.AlignmentX%2A>設定には効果がないため、コンテンツの<xref:System.Windows.Media.DrawingBrush>基本タイルが水平方向に完全にいっぱいです。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-132">Again, the <xref:System.Windows.Media.TileBrush.AlignmentX%2A> setting has no effect because the content of the <xref:System.Windows.Media.DrawingBrush> completely fills the base tile horizontally.</span></span>  
   
  [!code-csharp[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/TileBrushAlignmentExample.cs#tilebrushbottomrightalignmentinline)]
  [!code-vb[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_snip/visualbasic/tilebrushalignmentexample.vb#tilebrushbottomrightalignmentinline)]
- [!code-xml[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushbottomrightalignmentinline)]  
+ [!code-xaml[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushbottomrightalignmentinline)]  
   
- ここでは、<xref:System.Windows.Media.DrawingBrush> オブジェクトを例に取って <xref:System.Windows.Media.TileBrush.AlignmentX%2A> プロパティと <xref:System.Windows.Media.TileBrush.AlignmentY%2A> プロパティの使用方法を示しています。  これらのプロパティは、<xref:System.Windows.Media.DrawingBrush>、<xref:System.Windows.Media.ImageBrush>、<xref:System.Windows.Media.VisualBrush> のすべてのタイル ブラシでまったく同じように動作します。  タイル ブラシの詳細については、「[イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)」を参照してください。  
+ <span data-ttu-id="9c8c7-133">例を使用して<xref:System.Windows.Media.DrawingBrush>を示すためにオブジェクト方法、<xref:System.Windows.Media.TileBrush.AlignmentX%2A>と<xref:System.Windows.Media.TileBrush.AlignmentY%2A>プロパティが使用されます。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-133">The examples use <xref:System.Windows.Media.DrawingBrush> objects to demonstrate how the <xref:System.Windows.Media.TileBrush.AlignmentX%2A> and <xref:System.Windows.Media.TileBrush.AlignmentY%2A> properties are used.</span></span> <span data-ttu-id="9c8c7-134">これらのプロパティがすべてのタイル ブラシの動作は同じです: <xref:System.Windows.Media.DrawingBrush>、 <xref:System.Windows.Media.ImageBrush>、および<xref:System.Windows.Media.VisualBrush>です。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-134">These properties behave identically for all the tile brushes: <xref:System.Windows.Media.DrawingBrush>, <xref:System.Windows.Media.ImageBrush>, and <xref:System.Windows.Media.VisualBrush>.</span></span> <span data-ttu-id="9c8c7-135">タイル ブラシの詳細については、「[イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9c8c7-135">For more information about tile brushes, see [Painting with Images, Drawings, and Visuals](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).</span></span>  
   
-## 参照  
- <xref:System.Windows.Media.DrawingBrush>   
- <xref:System.Windows.Media.ImageBrush>   
- <xref:System.Windows.Media.VisualBrush>   
- [イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+## <a name="see-also"></a><span data-ttu-id="9c8c7-136">関連項目</span><span class="sxs-lookup"><span data-stu-id="9c8c7-136">See Also</span></span>  
+ <xref:System.Windows.Media.DrawingBrush>  
+ <xref:System.Windows.Media.ImageBrush>  
+ <xref:System.Windows.Media.VisualBrush>  
+ [<span data-ttu-id="9c8c7-137">イメージ、描画、およびビジュアルによる塗りつぶし</span><span class="sxs-lookup"><span data-stu-id="9c8c7-137">Painting with Images, Drawings, and Visuals</span></span>](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)

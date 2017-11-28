@@ -1,107 +1,106 @@
 ---
-title: "Data Type Summary (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Boolean data type, supported types in Visual Basic"
-  - "storage, order of storage"
-  - "data types [Visual Basic], Visual Basic"
-  - "Single data type, supported types in Visual Basic"
-  - "notation, scientific"
-  - "memory requirements, data types"
-  - "user-defined data types, Visual Basic"
-  - "Date data type, Visual Basic"
-  - "Visual Basic, data types"
-  - "storage, allocation"
-  - "Integer data type, Visual Basic data types"
-  - "storage, space"
-  - "Variant data types, supported types in Visual Basic"
-  - "Char data type, Visual Basic data types"
-  - "intrinsic data types"
-  - "memory consumption, data types"
-  - "single-precision numbers"
-  - "data types [Visual Basic], order of storage"
-  - "Long data type, supported types in Visual Basic"
-  - "String data type, Visual Basic data types"
-  - "storage order, data types"
-  - "StructLayoutAttribute class, Visual Basic data type storage"
-  - "scientific notation"
-  - "Double data type, Visual Basic data types"
-  - "Byte data type, Visual Basic data types"
-  - "Object data type, supported types in Visual Basic"
-  - "data types [Visual Basic], storage allocation"
-  - "double-precision numbers"
-  - "data types [Visual Basic], summary"
-  - "dates [Visual Basic], data types"
-  - "strings [Visual Basic], data types"
-  - "memory consumption"
-  - "storage order, controlling in Visual Basic"
-  - "data types [Visual Basic], memory requirements"
+title: "データ型の概要 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- Boolean data type [Visual Basic], supported types in Visual Basic
+- storage [Visual Basic], order of storage
+- data types [Visual Basic], Visual Basic
+- Single data type [Visual Basic], supported types in Visual Basic
+- notation [Visual Basic], scientific
+- memory requirements, data types
+- user-defined data types [Visual Basic], Visual Basic
+- Date data type [Visual Basic], Visual Basic
+- Visual Basic, data types
+- storage [Visual Basic], allocation
+- Integer data type [Visual Basic], Visual Basic data types
+- storage [Visual Basic], space
+- Variant data types [Visual Basic], supported types in Visual Basic
+- Char data type [Visual Basic], Visual Basic data types
+- intrinsic data types [Visual Basic]
+- memory consumption [Visual Basic], data types
+- single-precision numbers
+- data types [Visual Basic], order of storage
+- Long data type [Visual Basic], supported types in Visual Basic
+- String data type [Visual Basic], Visual Basic data types
+- storage order, data types
+- StructLayoutAttribute class, Visual Basic data type storage
+- scientific notation
+- Double data type [Visual Basic], Visual Basic data types
+- Byte data type [Visual Basic], Visual Basic data types
+- Object data type [Visual Basic], supported types in Visual Basic
+- data types [Visual Basic], storage allocation
+- double-precision numbers
+- data types [Visual Basic], summary
+- dates [Visual Basic], data types
+- strings [Visual Basic], data types
+- memory consumption
+- storage order, controlling in Visual Basic
+- data types [Visual Basic], memory requirements
 ms.assetid: e975cdb6-64d8-4a4a-ae27-f3b3ed198ae0
-caps.latest.revision: 22
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: f69a112718eed7bb7baaff9bdffd110865c21081
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Data Type Summary (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-Visual Basic のデータ型の一覧を次の表に示します。それぞれのデータ型について、サポートされている共通言語ランタイムの型、ストレージ割り当ての公称サイズ、および値の範囲を示しています。  
+# <a name="data-type-summary-visual-basic"></a><span data-ttu-id="05c1f-102">データ型の概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="05c1f-102">Data Type Summary (Visual Basic)</span></span>
+<span data-ttu-id="05c1f-103">次の表は、Visual Basic データ型、サポートする共通言語ランタイムの型、その公称記憶域割り当て、およびその値の範囲を示します。</span><span class="sxs-lookup"><span data-stu-id="05c1f-103">The following table shows the Visual Basic data types, their supporting common language runtime types, their nominal storage allocation, and their value ranges.</span></span>  
   
-|Visual Basic のデータ型|共通言語ランタイムの型構造|ストレージ割り当ての公称サイズ|値の範囲|  
-|------------------------|-------------------|---------------------|----------|  
-|[Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|<xref:System.Boolean>|実装するプラットフォームに依存|`True` または `False`|  
-|[Byte](../../../visual-basic/language-reference/data-types/byte-data-type.md)|<xref:System.Byte>|1 バイト|0 ～ 255 \(符号なし\)|  
-|[Char](../../../visual-basic/language-reference/data-types/char-data-type.md) \(文字型、1 文字\)|<xref:System.Char>|2 バイト|0 ～ 65535 \(符号なし\)|  
-|[日付](../../../visual-basic/language-reference/data-types/date-data-type.md)|<xref:System.DateTime>|8 バイト|0001 年 1 月 1 日 0:00:00 \(午前 0 時\) ～ 9999 年 12 月 31 日 11:59:59 PM|  
-|[Decimal \(10 進数型\)](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|<xref:System.Decimal>|16 バイト|0 ～ \+\/\-79,228,162,514,264,337,593,543,950,335 \(\+\/\-7.9...E\+28\) <sup>†</sup> \(小数点なし\)、0 ～ \+\/\-7.9228162514264337593543950335 \(小数点以下 28 桁\)<br /><br /> 0 以外の最小数は \+\/\-0.0000000000000000000000000001 \(\+\/\-1E\-28\) <sup>†</sup>|  
-|[Double](../../../visual-basic/language-reference/data-types/double-data-type.md) \(倍精度浮動小数点数型\)|<xref:System.Double>|8 バイト|\-1.79769313486231570E\+308 ～ \-4.94065645841246544E\-324 <sup>†</sup> \(負の値\)<br /><br /> 4.94065645841246544E\-324 ～ 1.79769313486231570E\+308 <sup>†</sup> \(正の値\)|  
-|[Integer \(整数型\)](../../../visual-basic/language-reference/data-types/integer-data-type.md)|<xref:System.Int32>|4 バイト|\-2,147,483,648 ～ 2,147,483,647 \(符号付き\)|  
-|[Long](../../../visual-basic/language-reference/data-types/long-data-type.md) \(長整数型\)|<xref:System.Int64>|8 バイト|\-9,223,372,036,854,775,808 ～ 9,223,372,036,854,775,807 \(9.2...E\+18 <sup>†</sup>\) \(符号付き\)|  
-|[Object](../../../visual-basic/language-reference/data-types/object-data-type.md)|<xref:System.Object> \(クラス\)|32 ビット プラットフォームでは 4 バイト<br /><br /> 64 ビット プラットフォームでは 8 バイト|オブジェクト型 \(`Object`\) の変数には任意の型を格納できます。|  
-|[SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|<xref:System.SByte>|1 バイト|\-128 ～ 127 \(符号付き\)|  
-|[Short](../../../visual-basic/language-reference/data-types/short-data-type.md) \(短整数型\)|<xref:System.Int16>|2 バイト|\-32,768 ～ 32,767 \(符号付き\)|  
-|[Single](../../../visual-basic/language-reference/data-types/single-data-type.md) \(単精度浮動小数点数\)|<xref:System.Single>|4 バイト|\-3.4028235E\+38 ～ \-1.401298E\-45 <sup>†</sup> \(負の値\)<br /><br /> 1.401298E\-45 ～ 3.4028235E\+38 <sup>†</sup> \(正の値\)|  
-|[String](../../../visual-basic/language-reference/data-types/string-data-type.md) \(可変長\)|<xref:System.String> \(クラス\)|実装するプラットフォームに依存|0 個 ～ 約 20 億個の Unicode 文字|  
-|[UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|<xref:System.UInt32>|4 バイト|0 ～ 4,294,967,295 \(符号なし\)|  
-|[ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md)|<xref:System.UInt64>|8 バイト|0 ～ 18,446,744,073,709,551,615 \(1.8...E\+19 <sup>†</sup>\) \(符号なし\)|  
-|[ユーザー定義型](../../../visual-basic/language-reference/data-types/user-defined-data-type.md) \(構造体\)|\(<xref:System.ValueType> から継承\)|実装するプラットフォームに依存|構造体の各メンバーの範囲はデータ型によって決まり、他のメンバーの範囲とは関係しません。|  
-|[UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md)|<xref:System.UInt16>|2 バイト|0 ～ 65,535 \(符号なし\)|  
+|<span data-ttu-id="05c1f-104">Visual Basic の型</span><span class="sxs-lookup"><span data-stu-id="05c1f-104">Visual Basic type</span></span>|<span data-ttu-id="05c1f-105">共通言語ランタイム型の構造</span><span class="sxs-lookup"><span data-stu-id="05c1f-105">Common language runtime type structure</span></span>|<span data-ttu-id="05c1f-106">公称記憶域の割り当て</span><span class="sxs-lookup"><span data-stu-id="05c1f-106">Nominal storage allocation</span></span>|<span data-ttu-id="05c1f-107">値の範囲</span><span class="sxs-lookup"><span data-stu-id="05c1f-107">Value range</span></span>|  
+|-----------------------|--------------------------------------------|--------------------------------|-----------------|  
+|[<span data-ttu-id="05c1f-108">Boolean</span><span class="sxs-lookup"><span data-stu-id="05c1f-108">Boolean</span></span>](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|<xref:System.Boolean>|<span data-ttu-id="05c1f-109">プラットフォームの実装によって異なります</span><span class="sxs-lookup"><span data-stu-id="05c1f-109">Depends on implementing platform</span></span>|<span data-ttu-id="05c1f-110">`True` または `False`</span><span class="sxs-lookup"><span data-stu-id="05c1f-110">`True` or `False`</span></span>|  
+|[<span data-ttu-id="05c1f-111">Byte</span><span class="sxs-lookup"><span data-stu-id="05c1f-111">Byte</span></span>](../../../visual-basic/language-reference/data-types/byte-data-type.md)|<xref:System.Byte>|<span data-ttu-id="05c1f-112">1 バイト</span><span class="sxs-lookup"><span data-stu-id="05c1f-112">1 byte</span></span>|<span data-ttu-id="05c1f-113">0 ~ 255 (符号なし)</span><span class="sxs-lookup"><span data-stu-id="05c1f-113">0 through 255 (unsigned)</span></span>|  
+|<span data-ttu-id="05c1f-114">[Char](../../../visual-basic/language-reference/data-types/char-data-type.md) (単一の文字)</span><span class="sxs-lookup"><span data-stu-id="05c1f-114">[Char](../../../visual-basic/language-reference/data-types/char-data-type.md) (single character)</span></span>|<xref:System.Char>|<span data-ttu-id="05c1f-115">2 バイト</span><span class="sxs-lookup"><span data-stu-id="05c1f-115">2 bytes</span></span>|<span data-ttu-id="05c1f-116">0 ~ 65535 (符号なし)</span><span class="sxs-lookup"><span data-stu-id="05c1f-116">0 through 65535 (unsigned)</span></span>|  
+|[<span data-ttu-id="05c1f-117">Date</span><span class="sxs-lookup"><span data-stu-id="05c1f-117">Date</span></span>](../../../visual-basic/language-reference/data-types/date-data-type.md)|<xref:System.DateTime>|<span data-ttu-id="05c1f-118">8 バイト</span><span class="sxs-lookup"><span data-stu-id="05c1f-118">8 bytes</span></span>|<span data-ttu-id="05c1f-119">0:00:00 (深夜) から 9999 年 12 月 31 日の 11時 59分: 59 PM 0001 年 1 月 1 日</span><span class="sxs-lookup"><span data-stu-id="05c1f-119">0:00:00 (midnight) on January 1, 0001 through 11:59:59 PM on December 31, 9999</span></span>|  
+|[<span data-ttu-id="05c1f-120">Decimal</span><span class="sxs-lookup"><span data-stu-id="05c1f-120">Decimal</span></span>](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|<xref:System.Decimal>|<span data-ttu-id="05c1f-121">16 バイト</span><span class="sxs-lookup"><span data-stu-id="05c1f-121">16 bytes</span></span>|<span data-ttu-id="05c1f-122">79,228,162,514,264,337,593,543,950,335 +/-0 ~ (7.9... +/-E + 28) <sup>†</sup>なしで、小数点以下の桁数の右側の桁数が 28 数値 +/-0 ~; 10 進数のポイント</span><span class="sxs-lookup"><span data-stu-id="05c1f-122">0 through +/-79,228,162,514,264,337,593,543,950,335 (+/-7.9...E+28) <sup>†</sup> with no decimal point; 0 through +/-7.9228162514264337593543950335 with 28 places to the right of the decimal;</span></span><br /><br /> <span data-ttu-id="05c1f-123">0 以外の最小数は、(1 e ~ 28) +/-+/-0.0000000000000000000000000001 <sup>†</sup></span><span class="sxs-lookup"><span data-stu-id="05c1f-123">smallest nonzero number is +/-0.0000000000000000000000000001 (+/-1E-28) <sup>†</sup></span></span>|  
+|<span data-ttu-id="05c1f-124">[二重](../../../visual-basic/language-reference/data-types/double-data-type.md)(倍精度浮動小数点数)</span><span class="sxs-lookup"><span data-stu-id="05c1f-124">[Double](../../../visual-basic/language-reference/data-types/double-data-type.md) (double-precision floating-point)</span></span>|<xref:System.Double>|<span data-ttu-id="05c1f-125">8 バイト</span><span class="sxs-lookup"><span data-stu-id="05c1f-125">8 bytes</span></span>|<span data-ttu-id="05c1f-126">-- を 4.94065645841246544E-324 <sup>†</sup>負の値です。</span><span class="sxs-lookup"><span data-stu-id="05c1f-126">-1.79769313486231570E+308 through -4.94065645841246544E-324 <sup>†</sup> for negative values;</span></span><br /><br /> <span data-ttu-id="05c1f-127">4.94065645841246544E-324 1.79769313486231570 e + 308 ~ <sup>†</sup>正の値</span><span class="sxs-lookup"><span data-stu-id="05c1f-127">4.94065645841246544E-324 through 1.79769313486231570E+308 <sup>†</sup> for positive values</span></span>|  
+|[<span data-ttu-id="05c1f-128">Integer</span><span class="sxs-lookup"><span data-stu-id="05c1f-128">Integer</span></span>](../../../visual-basic/language-reference/data-types/integer-data-type.md)|<xref:System.Int32>|<span data-ttu-id="05c1f-129">4 バイト</span><span class="sxs-lookup"><span data-stu-id="05c1f-129">4 bytes</span></span>|<span data-ttu-id="05c1f-130">-2,147, 483,648 ~ 2,147, 483,647 (署名)</span><span class="sxs-lookup"><span data-stu-id="05c1f-130">-2,147,483,648 through 2,147,483,647 (signed)</span></span>|  
+|<span data-ttu-id="05c1f-131">[長い](../../../visual-basic/language-reference/data-types/long-data-type.md)(長整数)</span><span class="sxs-lookup"><span data-stu-id="05c1f-131">[Long](../../../visual-basic/language-reference/data-types/long-data-type.md) (long integer)</span></span>|<xref:System.Int64>|<span data-ttu-id="05c1f-132">8 バイト</span><span class="sxs-lookup"><span data-stu-id="05c1f-132">8 bytes</span></span>|<span data-ttu-id="05c1f-133">9,223,372,036,854,775,807 を通じて-9,223,372,036,854,775,808 (9.2... E + 18 <sup>†</sup>) (署名)</span><span class="sxs-lookup"><span data-stu-id="05c1f-133">-9,223,372,036,854,775,808 through 9,223,372,036,854,775,807 (9.2...E+18 <sup>†</sup>) (signed)</span></span>|  
+|[<span data-ttu-id="05c1f-134">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="05c1f-134">Object</span></span>](../../../visual-basic/language-reference/data-types/object-data-type.md)|<span data-ttu-id="05c1f-135"><xref:System.Object>(クラス)</span><span class="sxs-lookup"><span data-stu-id="05c1f-135"><xref:System.Object> (class)</span></span>|<span data-ttu-id="05c1f-136">32 ビット プラットフォームでは 4 バイト</span><span class="sxs-lookup"><span data-stu-id="05c1f-136">4 bytes on 32-bit platform</span></span><br /><br /> <span data-ttu-id="05c1f-137">64 ビット プラットフォームでは 8 バイト</span><span class="sxs-lookup"><span data-stu-id="05c1f-137">8 bytes on 64-bit platform</span></span>|<span data-ttu-id="05c1f-138">型の変数に格納できる任意の型`Object`</span><span class="sxs-lookup"><span data-stu-id="05c1f-138">Any type can be stored in a variable of type `Object`</span></span>|  
+|[<span data-ttu-id="05c1f-139">SByte</span><span class="sxs-lookup"><span data-stu-id="05c1f-139">SByte</span></span>](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|<xref:System.SByte>|<span data-ttu-id="05c1f-140">1 バイト</span><span class="sxs-lookup"><span data-stu-id="05c1f-140">1 byte</span></span>|<span data-ttu-id="05c1f-141">-128 ~ 127 (署名)</span><span class="sxs-lookup"><span data-stu-id="05c1f-141">-128 through 127 (signed)</span></span>|  
+|<span data-ttu-id="05c1f-142">[短い](../../../visual-basic/language-reference/data-types/short-data-type.md)(短整数型)</span><span class="sxs-lookup"><span data-stu-id="05c1f-142">[Short](../../../visual-basic/language-reference/data-types/short-data-type.md) (short integer)</span></span>|<xref:System.Int16>|<span data-ttu-id="05c1f-143">2 バイト</span><span class="sxs-lookup"><span data-stu-id="05c1f-143">2 bytes</span></span>|<span data-ttu-id="05c1f-144">-32,768 ~ 32,767 (署名)</span><span class="sxs-lookup"><span data-stu-id="05c1f-144">-32,768 through 32,767 (signed)</span></span>|  
+|<span data-ttu-id="05c1f-145">[1 つ](../../../visual-basic/language-reference/data-types/single-data-type.md)(単精度浮動小数点数)</span><span class="sxs-lookup"><span data-stu-id="05c1f-145">[Single](../../../visual-basic/language-reference/data-types/single-data-type.md) (single-precision floating-point)</span></span>|<xref:System.Single>|<span data-ttu-id="05c1f-146">4 バイト</span><span class="sxs-lookup"><span data-stu-id="05c1f-146">4 bytes</span></span>|<span data-ttu-id="05c1f-147">-3.4028235 e + 38 ~ - 1.401298E-45 <sup>†</sup>負の値です。</span><span class="sxs-lookup"><span data-stu-id="05c1f-147">-3.4028235E+38 through -1.401298E-45 <sup>†</sup> for negative values;</span></span><br /><br /> <span data-ttu-id="05c1f-148">1.401298E-45 3.4028235 e + 38 ~ <sup>†</sup>正の値</span><span class="sxs-lookup"><span data-stu-id="05c1f-148">1.401298E-45 through 3.4028235E+38 <sup>†</sup> for positive values</span></span>|  
+|<span data-ttu-id="05c1f-149">[文字列](../../../visual-basic/language-reference/data-types/string-data-type.md)(可変長)</span><span class="sxs-lookup"><span data-stu-id="05c1f-149">[String](../../../visual-basic/language-reference/data-types/string-data-type.md) (variable-length)</span></span>|<span data-ttu-id="05c1f-150"><xref:System.String>(クラス)</span><span class="sxs-lookup"><span data-stu-id="05c1f-150"><xref:System.String> (class)</span></span>|<span data-ttu-id="05c1f-151">プラットフォームの実装によって異なります</span><span class="sxs-lookup"><span data-stu-id="05c1f-151">Depends on implementing platform</span></span>|<span data-ttu-id="05c1f-152">約 20億 Unicode 文字に 0</span><span class="sxs-lookup"><span data-stu-id="05c1f-152">0 to approximately 2 billion Unicode characters</span></span>|  
+|[<span data-ttu-id="05c1f-153">UInteger</span><span class="sxs-lookup"><span data-stu-id="05c1f-153">UInteger</span></span>](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|<xref:System.UInt32>|<span data-ttu-id="05c1f-154">4 バイト</span><span class="sxs-lookup"><span data-stu-id="05c1f-154">4 bytes</span></span>|<span data-ttu-id="05c1f-155">0 ~ 4,294,967,295 (符号なし)</span><span class="sxs-lookup"><span data-stu-id="05c1f-155">0 through 4,294,967,295 (unsigned)</span></span>|  
+|[<span data-ttu-id="05c1f-156">ULong</span><span class="sxs-lookup"><span data-stu-id="05c1f-156">ULong</span></span>](../../../visual-basic/language-reference/data-types/ulong-data-type.md)|<xref:System.UInt64>|<span data-ttu-id="05c1f-157">8 バイト</span><span class="sxs-lookup"><span data-stu-id="05c1f-157">8 bytes</span></span>|<span data-ttu-id="05c1f-158">0 ~ 18,446,744,073,709,551,615 (1.8... E + 19 <sup>†</sup>) (符号なし)</span><span class="sxs-lookup"><span data-stu-id="05c1f-158">0 through 18,446,744,073,709,551,615 (1.8...E+19 <sup>†</sup>) (unsigned)</span></span>|  
+|<span data-ttu-id="05c1f-159">[ユーザー定義](../../../visual-basic/language-reference/data-types/user-defined-data-type.md)(構造)</span><span class="sxs-lookup"><span data-stu-id="05c1f-159">[User-Defined](../../../visual-basic/language-reference/data-types/user-defined-data-type.md) (structure)</span></span>|<span data-ttu-id="05c1f-160">(から継承<xref:System.ValueType>)</span><span class="sxs-lookup"><span data-stu-id="05c1f-160">(inherits from <xref:System.ValueType>)</span></span>|<span data-ttu-id="05c1f-161">プラットフォームの実装によって異なります</span><span class="sxs-lookup"><span data-stu-id="05c1f-161">Depends on implementing platform</span></span>|<span data-ttu-id="05c1f-162">構造体の各メンバーにによって決まり、そのデータ型と他のメンバーの範囲に依存しない範囲</span><span class="sxs-lookup"><span data-stu-id="05c1f-162">Each member of the structure has a range determined by its data type and independent of the ranges of the other members</span></span>|  
+|[<span data-ttu-id="05c1f-163">UShort</span><span class="sxs-lookup"><span data-stu-id="05c1f-163">UShort</span></span>](../../../visual-basic/language-reference/data-types/ushort-data-type.md)|<xref:System.UInt16>|<span data-ttu-id="05c1f-164">2 バイト</span><span class="sxs-lookup"><span data-stu-id="05c1f-164">2 bytes</span></span>|<span data-ttu-id="05c1f-165">0 ~ 65,535 (符号なし)</span><span class="sxs-lookup"><span data-stu-id="05c1f-165">0 through 65,535 (unsigned)</span></span>|  
   
- <sup>†</sup> *指数表記*では、"E" は 10 のべき乗を表します。  つまり、3.56E\+2 は 3.56 x 10<sup>2</sup> または 356 を表し、3.56E\-2 は 3.56 \/ 10<sup>2</sup> または 0.0356 を表します。  
+ <span data-ttu-id="05c1f-166"><sup>†</sup>で*科学的表記法*、"E"が 10 の累乗を指します。</span><span class="sxs-lookup"><span data-stu-id="05c1f-166"><sup>†</sup> In *scientific notation*, "E" refers to a power of 10.</span></span> <span data-ttu-id="05c1f-167">つまり、3.56 e + 2 は 3.56 x 10 ように<sup>2</sup>または 356 を表し、3.56-2 は 3.56/10<sup>2</sup> 0.0356 またはします。</span><span class="sxs-lookup"><span data-stu-id="05c1f-167">So 3.56E+2 signifies 3.56 x 10<sup>2</sup> or 356, and 3.56E-2 signifies 3.56 / 10<sup>2</sup> or 0.0356.</span></span>  
   
 > [!NOTE]
->  テキストを含む文字列の場合は、<xref:Microsoft.VisualBasic.Strings.StrConv%2A> 関数を使用してテキスト形式を変換できます。  
+>  <span data-ttu-id="05c1f-168">テキストを含む文字列を使用して、<xref:Microsoft.VisualBasic.Strings.StrConv%2A>を 1 つのテキスト形式から変換する関数。</span><span class="sxs-lookup"><span data-stu-id="05c1f-168">For strings containing text, use the <xref:Microsoft.VisualBasic.Strings.StrConv%2A> function to convert from one text format to another.</span></span>  
   
- データ型を指定するだけでなく申告のステートメント、型文字を使用してなるプログラミング要素のデータ型を強制できます。  「[Type Characters](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)」を参照してください。  
+ <span data-ttu-id="05c1f-169">を、宣言ステートメントでのデータ型を指定するだけでなく、型文字を使用してプログラミング要素のデータ型を強制できます。</span><span class="sxs-lookup"><span data-stu-id="05c1f-169">In addition to specifying a data type in a declaration statement, you can force the data type of some programming elements by using a type character.</span></span> <span data-ttu-id="05c1f-170">参照してください[文字を入力して](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)です。</span><span class="sxs-lookup"><span data-stu-id="05c1f-170">See [Type Characters](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md).</span></span>  
   
-## メモリの使用量  
- 基本データ型を宣言する場合、そのメモリの使用量がストレージ割り当ての公称サイズと同じであると仮定するのは安全ではありません。  これは、次の考慮事項によるものです。  
+## <a name="memory-consumption"></a><span data-ttu-id="05c1f-171">メモリの使用量</span><span class="sxs-lookup"><span data-stu-id="05c1f-171">Memory Consumption</span></span>  
+ <span data-ttu-id="05c1f-172">基本データ型を宣言する場合は、そのメモリ消費量がの公称記憶域の割り当てと同じであると仮定する安全ではありません。</span><span class="sxs-lookup"><span data-stu-id="05c1f-172">When you declare an elementary data type, it is not safe to assume that its memory consumption is the same as its nominal storage allocation.</span></span> <span data-ttu-id="05c1f-173">次の考慮事項のため次に示します。</span><span class="sxs-lookup"><span data-stu-id="05c1f-173">This is due to the following considerations:</span></span>  
   
--   **ストレージの割り当て。**共通言語ランタイムは、アプリケーションが実行されるプラットフォームの現在の特性に基づいてストレージを割り当てます。  メモリがほぼ満杯である場合、宣言された要素を可能な限り 1 つにまとめます。  その他の場合、メモリ アドレスを自然なハードウェアの境界まで配置し、パフォーマンスを最適化します。  
+-   <span data-ttu-id="05c1f-174">**記憶域の割り当て。**</span><span class="sxs-lookup"><span data-stu-id="05c1f-174">**Storage Assignment.**</span></span> <span data-ttu-id="05c1f-175">共通言語ランタイムは、アプリケーションが実行されているプラットフォームの現在の特性に基づく記憶域を割り当てることができます。</span><span class="sxs-lookup"><span data-stu-id="05c1f-175">The common language runtime can assign storage based on the current characteristics of the platform on which your application is executing.</span></span> <span data-ttu-id="05c1f-176">メモリがほぼいっぱいの場合は、近くで、宣言された要素をできるだけ一緒にパックこと可能性があります。</span><span class="sxs-lookup"><span data-stu-id="05c1f-176">If memory is nearly full, it might pack your declared elements as closely together as possible.</span></span> <span data-ttu-id="05c1f-177">それ以外の場合に、パフォーマンスを最適化するために自然なハードウェアの境界をメモリ アドレスを満たしている可能性があります。</span><span class="sxs-lookup"><span data-stu-id="05c1f-177">In other cases it might align their memory addresses to natural hardware boundaries to optimize performance.</span></span>  
   
--   **プラットフォームの幅。**ストレージ割り当ては、64 ビット プラットフォームの場合と 32 ビット プラットフォームの場合とで異なります。  
+-   <span data-ttu-id="05c1f-178">**プラットフォームの幅。**</span><span class="sxs-lookup"><span data-stu-id="05c1f-178">**Platform Width.**</span></span> <span data-ttu-id="05c1f-179">64 ビット プラットフォーム上で記憶域の割り当ては、32 ビット プラットフォームでの割り当てと異なります。</span><span class="sxs-lookup"><span data-stu-id="05c1f-179">Storage assignment on a 64-bit platform is different from assignment on a 32-bit platform.</span></span>  
   
-### 複合データ型  
- 構造体や配列などの複合データ型の各メンバーに対しても、同じことが当てはまります。  単に型のメンバーのストレージ割り当ての公称サイズを合計するだけでは不十分です。  さらに、次のような考慮事項もあります。  
+### <a name="composite-data-types"></a><span data-ttu-id="05c1f-180">複合データ型</span><span class="sxs-lookup"><span data-stu-id="05c1f-180">Composite Data Types</span></span>  
+ <span data-ttu-id="05c1f-181">同じ考慮事項は、構造体や配列などの複合データ型の各メンバーに適用されます。</span><span class="sxs-lookup"><span data-stu-id="05c1f-181">The same considerations apply to each member of a composite data type, such as a structure or an array.</span></span> <span data-ttu-id="05c1f-182">単に型のメンバーの公称記憶域の割り当てを一緒に追加することに依存することはできません。</span><span class="sxs-lookup"><span data-stu-id="05c1f-182">You cannot rely on simply adding together the nominal storage allocations of the type's members.</span></span> <span data-ttu-id="05c1f-183">さらに、これには、次のよう、その他の考慮事項があります。</span><span class="sxs-lookup"><span data-stu-id="05c1f-183">Furthermore, there are other considerations, such as the following:</span></span>  
   
--   **オーバーヘッド。**一部の複合型には、別のメモリ要件もあります。  たとえば配列は、配列それ自体に対してと、各次元に対して、それぞれ別個のメモリを使用します。  32 ビット プラットフォームでは、現在このオーバーヘッドは 12 バイトに加えて各次元について 8 バイトです。  64 ビットでは、この要件が 2 倍になります。  
+-   <span data-ttu-id="05c1f-184">**オーバーヘッドです。**</span><span class="sxs-lookup"><span data-stu-id="05c1f-184">**Overhead.**</span></span> <span data-ttu-id="05c1f-185">一部の複合型では、追加のメモリ要件があります。</span><span class="sxs-lookup"><span data-stu-id="05c1f-185">Some composite types have additional memory requirements.</span></span> <span data-ttu-id="05c1f-186">たとえば、配列は配列自体および各ディメンションに余分なメモリを使用します。</span><span class="sxs-lookup"><span data-stu-id="05c1f-186">For example, an array uses extra memory for the array itself and also for each dimension.</span></span> <span data-ttu-id="05c1f-187">32 ビット プラットフォームでは、このオーバーヘッドは現在、12 バイト + ディメンションごとに 8 バイトです。</span><span class="sxs-lookup"><span data-stu-id="05c1f-187">On a 32-bit platform, this overhead is currently 12 bytes plus 8 bytes for each dimension.</span></span> <span data-ttu-id="05c1f-188">64 ビット プラットフォーム上でこの要件は 2 倍になります。</span><span class="sxs-lookup"><span data-stu-id="05c1f-188">On a 64-bit platform this requirement is doubled.</span></span>  
   
--   **ストレージのレイアウト。**さらに、メモリ内に格納される順序が宣言の順序と同じであると仮定するのも安全ではありません。  2 バイトまたは 4 バイトの境界など、バイトの配置を仮定することもできません。  クラスまたは構造体を定義するときに、そのメンバーのストレージのレイアウトを制御する必要がある場合、<xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性をそのクラスまたは構造体に割り当てます。  
+-   <span data-ttu-id="05c1f-189">**記憶域のレイアウトです。**</span><span class="sxs-lookup"><span data-stu-id="05c1f-189">**Storage Layout.**</span></span> <span data-ttu-id="05c1f-190">メモリ内に格納される順序は、宣言の順序と同じ安全に想定することはできません。</span><span class="sxs-lookup"><span data-stu-id="05c1f-190">You cannot safely assume that the order of storage in memory is the same as your order of declaration.</span></span> <span data-ttu-id="05c1f-191">2 バイトまたは 4 バイト境界などのバイトのアラインメントについて想定することもできません。</span><span class="sxs-lookup"><span data-stu-id="05c1f-191">You cannot even make assumptions about byte alignment, such as a 2-byte or 4-byte boundary.</span></span> <span data-ttu-id="05c1f-192">クラスまたは構造体を定義してそのメンバーのストレージ レイアウトを制御する必要があります、適用することができる場合、<xref:System.Runtime.InteropServices.StructLayoutAttribute>属性をクラスまたは構造体。</span><span class="sxs-lookup"><span data-stu-id="05c1f-192">If you are defining a class or structure and you need to control the storage layout of its members, you can apply the <xref:System.Runtime.InteropServices.StructLayoutAttribute> attribute to the class or structure.</span></span>  
   
-### オブジェクトのオーバーヘッド  
- 基本データ型または複合データ型を参照するオブジェクト型 \(`Object`\) は、データ型に含まれるデータのほかに、さらに 4 バイトを使用します。  
+### <a name="object-overhead"></a><span data-ttu-id="05c1f-193">オブジェクトのオーバーヘッド</span><span class="sxs-lookup"><span data-stu-id="05c1f-193">Object Overhead</span></span>  
+ <span data-ttu-id="05c1f-194">`Object`を参照する、基本または複合データ型を使用してデータ型に含まれているデータだけでなく 4 バイト。</span><span class="sxs-lookup"><span data-stu-id="05c1f-194">An `Object` referring to any elementary or composite data type uses 4 bytes in addition to the data contained in the data type.</span></span>  
   
-## 参照  
- <xref:Microsoft.VisualBasic.Strings.StrConv%2A>   
- <xref:System.Runtime.InteropServices.StructLayoutAttribute>   
- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)   
- [Type Characters](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)   
- [Efficient Use of Data Types](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+## <a name="see-also"></a><span data-ttu-id="05c1f-195">関連項目</span><span class="sxs-lookup"><span data-stu-id="05c1f-195">See Also</span></span>  
+ <xref:Microsoft.VisualBasic.Strings.StrConv%2A>  
+ <xref:System.Runtime.InteropServices.StructLayoutAttribute>  
+ [<span data-ttu-id="05c1f-196">データ型変換関数</span><span class="sxs-lookup"><span data-stu-id="05c1f-196">Type Conversion Functions</span></span>](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [<span data-ttu-id="05c1f-197">変換の概要</span><span class="sxs-lookup"><span data-stu-id="05c1f-197">Conversion Summary</span></span>](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [<span data-ttu-id="05c1f-198">型文字</span><span class="sxs-lookup"><span data-stu-id="05c1f-198">Type Characters</span></span>](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)  
+ [<span data-ttu-id="05c1f-199">データ型の有効な使用方法</span><span class="sxs-lookup"><span data-stu-id="05c1f-199">Efficient Use of Data Types</span></span>](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

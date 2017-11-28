@@ -1,40 +1,44 @@
 ---
-title: "方法 : Windows フォーム ListView コントロールに列を追加する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "列 [Windows フォーム], 追加 (ListView コントロールに)"
-  - "リスト ビュー, 追加 (列を)"
-  - "ListView コントロール [Windows フォーム], 追加 (列ヘッダーを)"
+title: "方法 : Windows フォーム ListView コントロールに列を追加する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ListView control [Windows Forms], adding column headers
+- columns [Windows Forms], adding to ListView controls
+- list views [Windows Forms], adding columns
 ms.assetid: 79174274-12ee-4a5d-80db-6ec02976d010
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c8df87e62e8c19ee6e30ffdbc2a4e473b444f538
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォーム ListView コントロールに列を追加する
-詳細ビューの <xref:System.Windows.Forms.ListView> コントロールでは、各リスト項目に対して複数の列を表示できます。  複数の列を使用することにより、リストの各項目に関して何種類かの情報を表示できます。  たとえば、ファイル リストに、ファイル名、ファイルの種類、サイズ、およびファイルの最終更新日を表示できます。  作成後に列に情報を設定する方法の詳細については、「[方法 : Windows フォーム ListView コントロールの列にサブ項目を表示する](../../../../docs/framework/winforms/controls/how-to-display-subitems-in-columns-with-the-windows-forms-listview-control.md)」を参照してください。  
+# <a name="how-to-add-columns-to-the-windows-forms-listview-control"></a><span data-ttu-id="27ea7-102">方法 : Windows フォーム ListView コントロールに列を追加する</span><span class="sxs-lookup"><span data-stu-id="27ea7-102">How to: Add Columns to the Windows Forms ListView Control</span></span>
+<span data-ttu-id="27ea7-103">詳細ビューで、<xref:System.Windows.Forms.ListView>コントロールは、各リスト項目の複数の列を表示できます。</span><span class="sxs-lookup"><span data-stu-id="27ea7-103">In the Details view, the <xref:System.Windows.Forms.ListView> control can display multiple columns for each list item.</span></span> <span data-ttu-id="27ea7-104">列を使用すると、いくつかの種類の各リスト項目に関する情報をユーザーに表示します。</span><span class="sxs-lookup"><span data-stu-id="27ea7-104">You can use the columns to display to the user several types of information about each list item.</span></span> <span data-ttu-id="27ea7-105">たとえば、ファイルのリストには、ファイル名、ファイルの種類、サイズ、およびファイルの最終更新日を表示できます。</span><span class="sxs-lookup"><span data-stu-id="27ea7-105">For example, a list of files could display the file name, file type, size, and date the file was last modified.</span></span> <span data-ttu-id="27ea7-106">作成した後、列の設定方法の詳細については、次を参照してください。[する方法: Windows フォーム ListView コントロールでの列にサブ項目を表示](../../../../docs/framework/winforms/controls/how-to-display-subitems-in-columns-with-the-windows-forms-listview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="27ea7-106">For information about populating the columns after they are created, see [How to: Display Subitems in Columns with the Windows Forms ListView Control](../../../../docs/framework/winforms/controls/how-to-display-subitems-in-columns-with-the-windows-forms-listview-control.md).</span></span>  
   
-### プログラムによって列を追加するには  
+### <a name="to-add-columns-programmatically"></a><span data-ttu-id="27ea7-107">列をプログラムで追加するには</span><span class="sxs-lookup"><span data-stu-id="27ea7-107">To add columns programmatically</span></span>  
   
-1.  コントロールの <xref:System.Windows.Forms.ListView.View%2A> プロパティを <xref:System.Windows.Forms.View> に設定します。  
+1.  <span data-ttu-id="27ea7-108">コントロールの設定<xref:System.Windows.Forms.ListView.View%2A>プロパティを<xref:System.Windows.Forms.View.Details>です。</span><span class="sxs-lookup"><span data-stu-id="27ea7-108">Set the control's <xref:System.Windows.Forms.ListView.View%2A> property to <xref:System.Windows.Forms.View.Details>.</span></span>  
   
-2.  リスト ビューの <xref:System.Windows.Forms.ListView.Columns%2A> プロパティの <xref:System.Windows.Forms.ListView.ColumnHeaderCollection.Add%2A> メソッドを使用します。  
+2.  <span data-ttu-id="27ea7-109">使用して、<xref:System.Windows.Forms.ListView.ColumnHeaderCollection.Add%2A>メソッドのリスト ビューの<xref:System.Windows.Forms.ListView.Columns%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="27ea7-109">Use the <xref:System.Windows.Forms.ListView.ColumnHeaderCollection.Add%2A> method of the list view's <xref:System.Windows.Forms.ListView.Columns%2A> property.</span></span>  
   
      [!code-csharp[System.Windows.Forms.ListViewLegacyTopics#31](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewLegacyTopics/CS/Class1.cs#31)]
      [!code-vb[System.Windows.Forms.ListViewLegacyTopics#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewLegacyTopics/VB/Class1.vb#31)]  
   
-## 参照  
- <xref:System.Windows.Forms.ListView>   
- [ListView コントロール](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)   
- [ListView コントロールの概要](../../../../docs/framework/winforms/controls/listview-control-overview-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="27ea7-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="27ea7-110">See Also</span></span>  
+ <xref:System.Windows.Forms.ListView>  
+ [<span data-ttu-id="27ea7-111">ListView コントロール</span><span class="sxs-lookup"><span data-stu-id="27ea7-111">ListView Control</span></span>](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)  
+ [<span data-ttu-id="27ea7-112">ListView コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="27ea7-112">ListView Control Overview</span></span>](../../../../docs/framework/winforms/controls/listview-control-overview-windows-forms.md)

@@ -1,52 +1,55 @@
 ---
-title: "方法 : バインディングの方向を指定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "バインディングの方向"
-  - "データ バインディング, 方向 (バインディングの)"
-  - "方向 (バインディングの)"
+title: "方法 : バインディングの方向を指定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- direction of binding [WPF]
+- binding direction [WPF]
+- data binding [WPF], direction of binding
 ms.assetid: 37334478-028b-4514-86c9-1420709f4818
-caps.latest.revision: 21
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bdcda02a61f0114bfbbe5d5c411cb397cddcf683
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : バインディングの方向を指定する
-この例では、バインディングで[バインディング ターゲット](GTMT) \(ターゲット\) プロパティのみを更新するか、[バインディング ソース](GTMT) \(ソース\) プロパティのみを更新するか、またはターゲット プロパティとソース プロパティの両方を更新するかを指定する方法を示します。  
+# <a name="how-to-specify-the-direction-of-the-binding"></a><span data-ttu-id="fde3e-102">方法 : バインディングの方向を指定する</span><span class="sxs-lookup"><span data-stu-id="fde3e-102">How to: Specify the Direction of the Binding</span></span>
+<span data-ttu-id="fde3e-103">この例では、バインドの更新先 (バインディング ターゲット (ターゲット) のプロパティのみ、バインディング ソース (ソース) のプロパティのみ、またはターゲットのプロパティとソースのプロパティの両方) を指定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="fde3e-103">This example shows how to specify whether the binding updates only the binding target (target) property, the binding source (source) property, or both the target property and the source property.</span></span>  
   
-## 使用例  
- <xref:System.Windows.Data.Binding.Mode%2A> プロパティを使用して、バインディングの方向を指定します。  バインディングの更新で使用可能なオプションを次の列挙値の一覧に示します。  
+## <a name="example"></a><span data-ttu-id="fde3e-104">例</span><span class="sxs-lookup"><span data-stu-id="fde3e-104">Example</span></span>  
+ <span data-ttu-id="fde3e-105">使用する、<xref:System.Windows.Data.Binding.Mode%2A>プロパティのバインドの方向を指定します。</span><span class="sxs-lookup"><span data-stu-id="fde3e-105">You use the <xref:System.Windows.Data.Binding.Mode%2A> property to specify the direction of the binding.</span></span> <span data-ttu-id="fde3e-106">次の列挙リストは、バインドの更新で使用できるオプションを示しています。</span><span class="sxs-lookup"><span data-stu-id="fde3e-106">The following enumeration list shows the available options for binding updates:</span></span>  
   
--   <xref:System.Windows.Data.BindingMode> は、ソース プロパティまたはターゲット プロパティのいずれかが変更されると、ターゲット プロパティまたはソース プロパティを更新します。  
+-   <span data-ttu-id="fde3e-107"><xref:System.Windows.Data.BindingMode.TwoWay>対象となるプロパティまたは基になるプロパティのいずれかが変更されるたびに、対象となるプロパティまたはプロパティを更新します。</span><span class="sxs-lookup"><span data-stu-id="fde3e-107"><xref:System.Windows.Data.BindingMode.TwoWay> updates the target property or the property whenever either the target property or the source property changes.</span></span>  
   
--   <xref:System.Windows.Data.BindingMode> は、ソース プロパティが変更されたときに、ターゲット プロパティのみを更新します。  
+-   <span data-ttu-id="fde3e-108"><xref:System.Windows.Data.BindingMode.OneWay>基になるプロパティが変更されたときにのみ、ターゲット プロパティを更新します。</span><span class="sxs-lookup"><span data-stu-id="fde3e-108"><xref:System.Windows.Data.BindingMode.OneWay> updates the target property only when the source property changes.</span></span>  
   
--   <xref:System.Windows.Data.BindingMode> は、アプリケーションの起動時または <xref:System.Windows.FrameworkElement.DataContext%2A> の変更時に、ターゲット プロパティのみを更新します。  
+-   <span data-ttu-id="fde3e-109"><xref:System.Windows.Data.BindingMode.OneTime>アプリケーションの起動時にのみ、またはターゲット プロパティが更新、<xref:System.Windows.FrameworkElement.DataContext%2A>で変更が行われます。</span><span class="sxs-lookup"><span data-stu-id="fde3e-109"><xref:System.Windows.Data.BindingMode.OneTime> updates the target property only when the application starts or when the <xref:System.Windows.FrameworkElement.DataContext%2A> undergoes a change.</span></span>  
   
--   <xref:System.Windows.Data.BindingMode> は、ターゲット プロパティが変更されると、ソース プロパティを更新します。  
+-   <span data-ttu-id="fde3e-110"><xref:System.Windows.Data.BindingMode.OneWayToSource>ターゲット プロパティが変更されたときに、基になるプロパティを更新します。</span><span class="sxs-lookup"><span data-stu-id="fde3e-110"><xref:System.Windows.Data.BindingMode.OneWayToSource> updates the source property when the target property changes.</span></span>  
   
--   <xref:System.Windows.Data.BindingMode> を指定すると、ターゲット プロパティの <xref:System.Windows.Data.Binding.Mode%2A> の既定値が使用されます。  
+-   <span data-ttu-id="fde3e-111"><xref:System.Windows.Data.BindingMode.Default>により、既定<xref:System.Windows.Data.Binding.Mode%2A>使用するターゲット プロパティの値。</span><span class="sxs-lookup"><span data-stu-id="fde3e-111"><xref:System.Windows.Data.BindingMode.Default> causes the default <xref:System.Windows.Data.Binding.Mode%2A> value of target property to be used.</span></span>  
   
- 詳細については、<xref:System.Windows.Data.BindingMode> 列挙体の解説を参照してください。  
+ <span data-ttu-id="fde3e-112">詳細については、<xref:System.Windows.Data.BindingMode> 列挙型のページをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="fde3e-112">For more information, see the <xref:System.Windows.Data.BindingMode> enumeration.</span></span>  
   
- <xref:System.Windows.Data.Binding.Mode%2A> プロパティを設定する方法を次の例に示します。  
+ <span data-ttu-id="fde3e-113"><xref:System.Windows.Data.Binding.Mode%2A> プロパティを設定する方法を次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="fde3e-113">The following example shows how to set the <xref:System.Windows.Data.Binding.Mode%2A> property.</span></span>  
   
- [!code-xml[DirectionalBinding#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DirectionalBinding/CSharp/Page1.xaml#4)]  
+ [!code-xaml[DirectionalBinding#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DirectionalBinding/CSharp/Page1.xaml#4)]  
   
- ソースの変更を検出するには \(<xref:System.Windows.Data.BindingMode> および <xref:System.Windows.Data.BindingMode> バインディングの場合\)、ソースで <xref:System.ComponentModel.INotifyPropertyChanged> などの適切なプロパティの変更通知機構を実装する必要があります。  <xref:System.ComponentModel.INotifyPropertyChanged> の実装の例については、「[プロパティの変更通知を実装する](../../../../docs/framework/wpf/data/how-to-implement-property-change-notification.md)」を参照してください。  
+ <span data-ttu-id="fde3e-114">ソースの変更を検出するために (に適用できる<xref:System.Windows.Data.BindingMode.OneWay>と<xref:System.Windows.Data.BindingMode.TwoWay>バインド)、ソースがなど、適切なプロパティの変更通知のメカニズムを実装する必要があります<xref:System.ComponentModel.INotifyPropertyChanged>です。</span><span class="sxs-lookup"><span data-stu-id="fde3e-114">To detect source changes (applicable to <xref:System.Windows.Data.BindingMode.OneWay> and <xref:System.Windows.Data.BindingMode.TwoWay> bindings), the source must implement a suitable property change notification mechanism such as <xref:System.ComponentModel.INotifyPropertyChanged>.</span></span> <span data-ttu-id="fde3e-115">参照してください[実装プロパティの変更通知](../../../../docs/framework/wpf/data/how-to-implement-property-change-notification.md)の例については、<xref:System.ComponentModel.INotifyPropertyChanged>実装します。</span><span class="sxs-lookup"><span data-stu-id="fde3e-115">See [Implement Property Change Notification](../../../../docs/framework/wpf/data/how-to-implement-property-change-notification.md) for an example of an <xref:System.ComponentModel.INotifyPropertyChanged> implementation.</span></span>  
   
- <xref:System.Windows.Data.BindingMode> または <xref:System.Windows.Data.BindingMode> のバインディングでは、<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> プロパティを設定することにより、ソースの更新のタイミングを制御できます。  詳細については、<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> を参照してください。  
+ <span data-ttu-id="fde3e-116"><xref:System.Windows.Data.BindingMode.TwoWay>または<xref:System.Windows.Data.BindingMode.OneWayToSource>バインドを設定して、ソースの更新のタイミングを制御することができます、<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="fde3e-116">For <xref:System.Windows.Data.BindingMode.TwoWay> or <xref:System.Windows.Data.BindingMode.OneWayToSource> bindings, you can control the timing of the source updates by setting the <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> property.</span></span> <span data-ttu-id="fde3e-117">詳細については、「<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="fde3e-117">See <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> for more information.</span></span>  
   
-## 参照  
- <xref:System.Windows.Data.Binding>   
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="fde3e-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="fde3e-118">See Also</span></span>  
+ <xref:System.Windows.Data.Binding>  
+ [<span data-ttu-id="fde3e-119">データ バインディングの概要</span><span class="sxs-lookup"><span data-stu-id="fde3e-119">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [<span data-ttu-id="fde3e-120">方法トピック</span><span class="sxs-lookup"><span data-stu-id="fde3e-120">How-to Topics</span></span>](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

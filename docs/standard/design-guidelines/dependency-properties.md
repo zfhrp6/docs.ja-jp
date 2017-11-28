@@ -1,56 +1,54 @@
 ---
-title: "依存関係プロパティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "依存関係プロパティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 212cfb1e-cec4-4047-94a6-47209b387f6f
-caps.latest.revision: 4
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 21e2026e7ce0f2dcf1ffc9a328b1bb9630cd8fbf
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 依存関係プロパティ
-依存関係プロパティ \(DP\) は、たとえば、型の変数 \(フィールド\) に格納することではなくプロパティ ストア内の値を格納する標準プロパティです。  
+# <a name="dependency-properties"></a><span data-ttu-id="44912-102">依存関係プロパティ</span><span class="sxs-lookup"><span data-stu-id="44912-102">Dependency Properties</span></span>
+<span data-ttu-id="44912-103">依存関係プロパティ (DP) は、たとえば (フィールド) の型の変数に保存することではなく、プロパティ ストア内の値を格納する標準プロパティです。</span><span class="sxs-lookup"><span data-stu-id="44912-103">A dependency property (DP) is a regular property that stores its value in a property store instead of storing it in a type variable (field), for example.</span></span>  
   
- 割り当てられた依存プロパティは、オブジェクトとそのコンテナーの間のリレーションシップを記述する「プロパティ」を表す、Get および Set の静的メソッドとしてモデル化された依存関係プロパティの種類 \(の位置など、 `Button` 上のオブジェクト、 `Panel` コンテナー\) です。  
+ <span data-ttu-id="44912-104">割り当てられた依存プロパティはオブジェクトとそのコンテナーの間のリレーションシップを記述する「プロパティ」を表す、Get および Set の静的メソッドとしてモデル化された依存関係プロパティの種類 (の位置など、`Button`上のオブジェクト、 `Panel`コンテナー) です。</span><span class="sxs-lookup"><span data-stu-id="44912-104">An attached dependency property is a kind of dependency property modeled as static Get and Set methods representing "properties" describing relationships between objects and their containers (e.g., the position of a `Button` object on a `Panel` container).</span></span>  
   
- **✓ は** プロパティをスタイル設定、トリガー、データ バインディング、アニメーション、動的リソース、および継承などの WPF 機能をサポートする必要がある場合は、依存関係プロパティを提供します。  
+ <span data-ttu-id="44912-105">**✓ しないで**プロパティ スタイル設定、トリガー、データ バインディング、アニメーション、動的なリソース、および継承などの WPF 機能をサポートする必要がある場合は、依存関係プロパティを提供します。</span><span class="sxs-lookup"><span data-stu-id="44912-105">**✓ DO** provide the dependency properties, if you need the properties to support WPF features such as styling, triggers, data binding, animations, dynamic resources, and inheritance.</span></span>  
   
-## 依存関係プロパティのデザイン  
- **✓ は** から継承 <xref:System.Windows.DependencyObject>, 、または依存関係プロパティを実装する場合、そのサブタイプのいずれかです。 種類は、プロパティ ストアの非常に効率的な実装を提供し、自動的に WPF データ バインドをサポートします。  
+## <a name="dependency-property-design"></a><span data-ttu-id="44912-106">依存関係プロパティのデザイン</span><span class="sxs-lookup"><span data-stu-id="44912-106">Dependency Property Design</span></span>  
+ <span data-ttu-id="44912-107">**✓ しないで**から継承<xref:System.Windows.DependencyObject>、または依存関係プロパティを実装する場合、そのサブタイプのいずれか。</span><span class="sxs-lookup"><span data-stu-id="44912-107">**✓ DO** inherit from <xref:System.Windows.DependencyObject>, or one of its subtypes, when implementing dependency properties.</span></span> <span data-ttu-id="44912-108">種類は、プロパティ ストアの非常に効率的な実装を提供し、自動的に WPF データ バインディングをサポートします。</span><span class="sxs-lookup"><span data-stu-id="44912-108">The type provides a very efficient implementation of a property store and automatically supports WPF data binding.</span></span>  
   
- **✓ は** は、通常の CLR プロパティとパブリック静的な読み取り専用フィールドのインスタンスを格納する指定 <xref:System.Windows.DependencyProperty?displayProperty=fullName> 各依存関係プロパティ。  
+ <span data-ttu-id="44912-109">**✓ しないで**正規の CLR プロパティとパブリックな静的読み取り専用フィールドのインスタンスを格納する提供<xref:System.Windows.DependencyProperty?displayProperty=nameWithType>各依存関係プロパティです。</span><span class="sxs-lookup"><span data-stu-id="44912-109">**✓ DO** provide a regular CLR property and public static read-only field storing an instance of <xref:System.Windows.DependencyProperty?displayProperty=nameWithType> for each dependency property.</span></span>  
   
- **✓ は** インスタンス メソッドを呼び出すことによって依存関係プロパティを実装する <xref:System.Windows.DependencyObject.GetValue%2A?displayProperty=fullName> と <xref:System.Windows.DependencyObject.SetValue%2A?displayProperty=fullName>です。  
+ <span data-ttu-id="44912-110">**✓ しないで**依存関係プロパティを実装するインスタンス メソッドを呼び出すことによって<xref:System.Windows.DependencyObject.GetValue%2A?displayProperty=nameWithType>と<xref:System.Windows.DependencyObject.SetValue%2A?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="44912-110">**✓ DO** implement dependency properties by calling instance methods <xref:System.Windows.DependencyObject.GetValue%2A?displayProperty=nameWithType> and <xref:System.Windows.DependencyObject.SetValue%2A?displayProperty=nameWithType>.</span></span>  
   
- **✓ は** "Property"を使用してプロパティの名前をアスタリスクの依存関係プロパティの静的フィールドの名前  
+ <span data-ttu-id="44912-111">**✓ しないで**"Property"のプロパティの名前をアスタリスクの依存関係プロパティの静的フィールドの名前</span><span class="sxs-lookup"><span data-stu-id="44912-111">**✓ DO** name the dependency property static field by suffixing the name of the property with "Property."</span></span>  
   
- **X のしないで** 代わりにメタデータの設定は、コード内の依存関係プロパティの既定値を明示的に設定します。  
+ <span data-ttu-id="44912-112">**X しないで**コード内の依存関係プロパティの既定値を明示的に設定を代わりにメタデータの設定です。</span><span class="sxs-lookup"><span data-stu-id="44912-112">**X DO NOT** set default values of dependency properties explicitly in code; set them in metadata instead.</span></span>  
   
- プロパティの既定値を明示的に設定すると、スタイルなどのなんらかの暗黙的な方法で設定されているからそのプロパティをできない場合があります。  
+ <span data-ttu-id="44912-113">プロパティの既定値を明示的に設定するから、スタイルなどのいくつかの暗黙的な方法で設定されているそのプロパティをできない場合があります。</span><span class="sxs-lookup"><span data-stu-id="44912-113">If you set a property default explicitly, you might prevent that property from being set by some implicit means, such as a styling.</span></span>  
   
- **X のしないで** 静的フィールドにアクセスする標準的なコード以外のプロパティ アクセサーにコードを追加します。  
+ <span data-ttu-id="44912-114">**X しないで**静的フィールドにアクセスする標準コード以外のプロパティ アクセサーにコードを配置します。</span><span class="sxs-lookup"><span data-stu-id="44912-114">**X DO NOT** put code in the property accessors other than the standard code to access the static field.</span></span>  
   
- 静的フィールドを直接使用することはありませんとコードが実行プロパティ、スタイルなどの暗黙的な方法でスタイル処理のためです。  
+ <span data-ttu-id="44912-115">静的フィールドを直接使用するコードはありませんは実行、スタイルなどの暗黙的な方法で、プロパティが設定されている場合のスタイルを設定するためです。</span><span class="sxs-lookup"><span data-stu-id="44912-115">That code won’t execute if the property is set by implicit means, such as a styling, because styling uses the static field directly.</span></span>  
   
- **X のしないで** 依存関係プロパティを使用してセキュリティで保護されたデータを格納します。 でもプライベート依存関係プロパティは、パブリックにアクセスできます。  
+ <span data-ttu-id="44912-116">**X しないで**依存関係プロパティを使用してセキュリティで保護されたデータを格納します。</span><span class="sxs-lookup"><span data-stu-id="44912-116">**X DO NOT** use dependency properties to store secure data.</span></span> <span data-ttu-id="44912-117">さらにプライベート依存関係プロパティをパブリックにアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="44912-117">Even private dependency properties can be accessed publicly.</span></span>  
   
-## 接続されている依存関係プロパティのデザイン  
- 前のセクションで説明されている依存関係プロパティは宣言型の組み込みのプロパティを表しますたとえば、 `Text` プロパティは、プロパティの `TextButton`, 、それを宣言します。 特殊な依存関係プロパティは、接続されている依存関係プロパティです。  
+## <a name="attached-dependency-property-design"></a><span data-ttu-id="44912-118">接続されている依存関係プロパティのデザイン</span><span class="sxs-lookup"><span data-stu-id="44912-118">Attached Dependency Property Design</span></span>  
+ <span data-ttu-id="44912-119">前のセクションで説明されている依存関係プロパティの宣言する型の組み込みのプロパティを表しますたとえば、`Text`プロパティは、プロパティの`TextButton`を宣言しています。</span><span class="sxs-lookup"><span data-stu-id="44912-119">Dependency properties described in the preceding section represent intrinsic properties of the declaring type; for example, the `Text` property is a property of `TextButton`, which declares it.</span></span> <span data-ttu-id="44912-120">依存関係プロパティの特別な種類は、接続されている依存関係プロパティです。</span><span class="sxs-lookup"><span data-stu-id="44912-120">A special kind of dependency property is the attached dependency property.</span></span>  
   
- 添付プロパティの典型的な例は、 <xref:System.Windows.Controls.Grid.Column%2A?displayProperty=fullName> プロパティです。 プロパティ ボタン \(いないグリッドの\) 列の位置を表すは、「その」ボタンをグリッドで、グリッドで、ボタンが含まれている場合にのみ該当します。  
+ <span data-ttu-id="44912-121">添付プロパティの典型的な例は、<xref:System.Windows.Controls.Grid.Column%2A?displayProperty=nameWithType>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="44912-121">A classic example of an attached property is the <xref:System.Windows.Controls.Grid.Column%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="44912-122">プロパティ ボタン (いないグリッドの) 列の位置を表すは"にアタッチされて"ボタン グリッドで、グリッドで、ボタンが含まれている場合にのみ関連します。</span><span class="sxs-lookup"><span data-stu-id="44912-122">The property represents Button’s (not Grid’s) column position, but it is only relevant if the Button is contained in a Grid, and so it's "attached" to Buttons by Grids.</span></span>  
   
 ```  
 <Grid>  
@@ -64,7 +62,7 @@ caps.handback.revision: 4
 </Grid>  
 ```  
   
- 添付プロパティの定義は、アクセサーが静的の Get と Set メソッドで表されること以外に、通常の依存関係プロパティのほとんどの場合ようになります。  
+ <span data-ttu-id="44912-123">添付プロパティの定義は、アクセサーが静的の Get および Set メソッドによって表される点を除いて、ほとんどの場合と同様に、通常の依存関係プロパティの検索します。</span><span class="sxs-lookup"><span data-stu-id="44912-123">The definition of an attached property looks mostly like that of a regular dependency property, except that the accessors are represented by static Get and Set methods:</span></span>  
   
 ```  
 public class Grid {  
@@ -86,27 +84,27 @@ public class Grid {
 }  
 ```  
   
-## 依存関係プロパティの検証  
- プロパティは、多くの場合、検証と呼ばれるものを実装します。 プロパティの値を変更しようとは、検証ロジックを実行します。  
+## <a name="dependency-property-validation"></a><span data-ttu-id="44912-124">依存関係プロパティの検証</span><span class="sxs-lookup"><span data-stu-id="44912-124">Dependency Property Validation</span></span>  
+ <span data-ttu-id="44912-125">プロパティは、多くの場合、検証と呼ばれるものを実装します。</span><span class="sxs-lookup"><span data-stu-id="44912-125">Properties often implement what is called validation.</span></span> <span data-ttu-id="44912-126">プロパティの値を変更する試みが行われたときに検証ロジックを実行します。</span><span class="sxs-lookup"><span data-stu-id="44912-126">Validation logic executes when an attempt is made to change the value of a property.</span></span>  
   
- 残念なことに依存関係プロパティ アクセサーの場合は、任意の検証コードを含めることはできません。 代わりに、依存関係プロパティの検証ロジックは、プロパティの登録時に指定する必要があります。  
+ <span data-ttu-id="44912-127">残念なことに依存関係プロパティのアクセサーでは、任意の検証コードを含めることはできません。</span><span class="sxs-lookup"><span data-stu-id="44912-127">Unfortunately dependency property accessors cannot contain arbitrary validation code.</span></span> <span data-ttu-id="44912-128">代わりに、依存関係プロパティの検証ロジックは、プロパティの登録中に指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="44912-128">Instead, dependency property validation logic needs to be specified during property registration.</span></span>  
   
- **X のしないで** プロパティのアクセサーの依存関係プロパティの検証ロジックを配置します。 代わりに、検証コールバックを渡す `DependencyProperty.Register` メソッドです。  
+ <span data-ttu-id="44912-129">**X しないで**プロパティのアクセサーの依存関係プロパティの検証ロジックを配置します。</span><span class="sxs-lookup"><span data-stu-id="44912-129">**X DO NOT** put dependency property validation logic in the property’s accessors.</span></span> <span data-ttu-id="44912-130">代わりに、検証コールバックを渡す`DependencyProperty.Register`メソッドです。</span><span class="sxs-lookup"><span data-stu-id="44912-130">Instead, pass a validation callback to `DependencyProperty.Register` method.</span></span>  
   
-## 依存関係プロパティの変更通知  
- **X のしないで** 依存関係プロパティのアクセサーで変更通知のロジックを実装します。 依存関係プロパティには、変更通知のコールバックを指定する必要がある組み込みの変更通知機能があり、 <xref:System.Windows.PropertyMetadata>です。  
+## <a name="dependency-property-change-notifications"></a><span data-ttu-id="44912-131">依存関係プロパティの変更通知</span><span class="sxs-lookup"><span data-stu-id="44912-131">Dependency Property Change Notifications</span></span>  
+ <span data-ttu-id="44912-132">**X しないで**依存関係プロパティのアクセサーでの変更通知のロジックを実装します。</span><span class="sxs-lookup"><span data-stu-id="44912-132">**X DO NOT** implement change notification logic in dependency property accessors.</span></span> <span data-ttu-id="44912-133">依存関係プロパティを変更通知のコールバックを指定することによって処理するために使用する必要があります組み込みの変更通知機能があり、<xref:System.Windows.PropertyMetadata>です。</span><span class="sxs-lookup"><span data-stu-id="44912-133">Dependency properties have a built-in change notifications feature that must be used by supplying a change notification callback to the <xref:System.Windows.PropertyMetadata>.</span></span>  
   
-## 依存関係プロパティの値の強制型変換  
- プロパティ ストアが実際に変更される前に、set アクセス操作子、プロパティ set アクセス操作子に渡された値が変更されたときにプロパティの強制型変換が行われます。  
+## <a name="dependency-property-value-coercion"></a><span data-ttu-id="44912-134">依存関係プロパティの値の強制</span><span class="sxs-lookup"><span data-stu-id="44912-134">Dependency Property Value Coercion</span></span>  
+ <span data-ttu-id="44912-135">プロパティの強制変換は、プロパティ ストアが実際に変更する前に、set アクセス操作子がプロパティ set アクセス操作子に渡された値が変更されたときに行われます。</span><span class="sxs-lookup"><span data-stu-id="44912-135">Property coercion takes place when the value given to a property setter is modified by the setter before the property store is actually modified.</span></span>  
   
- **X のしないで** 依存関係プロパティのアクセサーに強制変換ロジックを実装します。  
+ <span data-ttu-id="44912-136">**X しないで**依存関係プロパティのアクセサーに強制変換ロジックを実装します。</span><span class="sxs-lookup"><span data-stu-id="44912-136">**X DO NOT** implement coercion logic in dependency property accessors.</span></span>  
   
- 依存関係プロパティが、組み込みの強制型変換機能を持っているし、強制型変換のコールバックを指定することで使用できます、 `PropertyMetadata`です。  
+ <span data-ttu-id="44912-137">依存関係プロパティが、ビルトインの強制変換機能を持っているし、強制型変換のコールバックを指定することによって使用できます、`PropertyMetadata`です。</span><span class="sxs-lookup"><span data-stu-id="44912-137">Dependency properties have a built-in coercion feature, and it can be used by supplying a coercion callback to the `PropertyMetadata`.</span></span>  
   
- *部分 © 2005年、2009 Microsoft Corporation します。 All rights reserved.*  
+ <span data-ttu-id="44912-138">*部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*</span><span class="sxs-lookup"><span data-stu-id="44912-138">*Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*</span></span>  
   
- *翔泳社からのアクセス許可によって検出 [Framework デザイン ガイドライン: 規則が、表現方法と再利用可能な .NET ライブラリを 2 nd Edition パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) は Cwalina Brad エイブラムスによる、Microsoft Windows の開発シリーズの一部として Addison\-wesley Professional、2008 年 10 月 22 日を公開します。*  
+ <span data-ttu-id="44912-139">*ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*</span><span class="sxs-lookup"><span data-stu-id="44912-139">*Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*</span></span>  
   
-## 参照  
- [Framework デザイン ガイドライン](../../../docs/standard/design-guidelines/index.md)   
- [一般的な設計パターン](../../../docs/standard/design-guidelines/common-design-patterns.md)
+## <a name="see-also"></a><span data-ttu-id="44912-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="44912-140">See Also</span></span>  
+ [<span data-ttu-id="44912-141">フレームワーク デザインのガイドライン</span><span class="sxs-lookup"><span data-stu-id="44912-141">Framework Design Guidelines</span></span>](../../../docs/standard/design-guidelines/index.md)  
+ [<span data-ttu-id="44912-142">一般的なデザイン パターン</span><span class="sxs-lookup"><span data-stu-id="44912-142">Common Design Patterns</span></span>](../../../docs/standard/design-guidelines/common-design-patterns.md)
