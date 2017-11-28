@@ -1,27 +1,30 @@
 ---
-title: "ピア ノード | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ピア ノード"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0732b314-6006-4ec6-999d-ec9476c9e5bb
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 89450b76ceb22faf8663ce84298d2b47477c05d0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ピア ノード
-PeerNode はピア チャネル メッシュ内の単一エンドポイントです。アプリケーションは、複数のピア ノードを使用して、異なるメッシュに参加できます。たとえば、1 つのピアツーピア チャット アプリケーションを、高校生時代の友人とのチャット用のメッシュと、会社の同僚とのチャット用のメッシュという 2 つの独立したメッシュの一部とすることができます。  
+# <a name="peer-nodes"></a><span data-ttu-id="30aad-102">ピア ノード</span><span class="sxs-lookup"><span data-stu-id="30aad-102">Peer Nodes</span></span>
+<span data-ttu-id="30aad-103">PeerNode はピア チャネル メッシュ内の単一エンドポイントです。</span><span class="sxs-lookup"><span data-stu-id="30aad-103">A PeerNode is a single endpoint in a Peer Channel mesh.</span></span> <span data-ttu-id="30aad-104">アプリケーションは、複数のピア ノードを使用して、異なるメッシュに参加できます。</span><span class="sxs-lookup"><span data-stu-id="30aad-104">An application can have multiple peer nodes that participate in different meshes.</span></span> <span data-ttu-id="30aad-105">たとえば、1 つのピアツーピア チャット アプリケーションを、高校生時代の友人とのチャット用のメッシュと、会社の同僚とのチャット用のメッシュという 2 つの独立したメッシュの一部とすることができます。</span><span class="sxs-lookup"><span data-stu-id="30aad-105">For instance, a peer-to-peer chat application can be part of two separate meshes: one mesh for chatting with high school friends; and another for chatting with work colleagues.</span></span>  
   
-## 参照  
+## <a name="reference"></a><span data-ttu-id="30aad-106">参照</span><span class="sxs-lookup"><span data-stu-id="30aad-106">Reference</span></span>  
  <xref:System.ServiceModel.PeerNode>  
   
-## 参照  
- [ピア メッシュ](../../../../docs/framework/wcf/feature-details/peer-meshes.md)   
- [ピア チャネルの概要](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)
+## <a name="see-also"></a><span data-ttu-id="30aad-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="30aad-107">See Also</span></span>  
+ [<span data-ttu-id="30aad-108">ピア メッシュ</span><span class="sxs-lookup"><span data-stu-id="30aad-108">Peer Meshes</span></span>](../../../../docs/framework/wcf/feature-details/peer-meshes.md)  
+ [<span data-ttu-id="30aad-109">ピア チャネルの概要</span><span class="sxs-lookup"><span data-stu-id="30aad-109">Peer Channel Concepts</span></span>](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)

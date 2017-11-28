@@ -1,33 +1,36 @@
 ---
-title: "FailedToTraceEventWithException | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: FailedToTraceEventWithException
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b605b2b8-acd6-4762-8269-b025758a2404
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d3767c5cd4cfe1afadf7ab99e75c9ffeb19c8579
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# FailedToTraceEventWithException
-ID : 105  
+# <a name="failedtotraceeventwithexception"></a><span data-ttu-id="31ba3-102">FailedToTraceEventWithException</span><span class="sxs-lookup"><span data-stu-id="31ba3-102">FailedToTraceEventWithException</span></span>
+<span data-ttu-id="31ba3-103">ID : 105</span><span class="sxs-lookup"><span data-stu-id="31ba3-103">Id: 105</span></span>  
   
- 重大度 : エラー  
+ <span data-ttu-id="31ba3-104">重大度 : エラー</span><span class="sxs-lookup"><span data-stu-id="31ba3-104">Severity: Error</span></span>  
   
- カテゴリ : トレース  
+ <span data-ttu-id="31ba3-105">カテゴリ : トレース</span><span class="sxs-lookup"><span data-stu-id="31ba3-105">Category: Tracing</span></span>  
   
-## 説明  
- イベント \(1 つまたは複数\) はトレースされませんでした。  
+## <a name="description"></a><span data-ttu-id="31ba3-106">説明</span><span class="sxs-lookup"><span data-stu-id="31ba3-106">Description</span></span>  
+ <span data-ttu-id="31ba3-107">イベント (1 つまたは複数) はトレースされませんでした。</span><span class="sxs-lookup"><span data-stu-id="31ba3-107">An event or events were not traced.</span></span>  
   
- イベントには、元のイベント文字列、例外、プロセス名、およびプロセス ID が表示されます。  
+ <span data-ttu-id="31ba3-108">イベントには、元のイベント文字列、例外、プロセス名、およびプロセス ID が表示されます。</span><span class="sxs-lookup"><span data-stu-id="31ba3-108">The event lists the original event string, exception, process name and process ID.</span></span>  
   
-## 参照  
- [イベント ログ](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)   
- [イベント一覧](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a><span data-ttu-id="31ba3-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="31ba3-109">See Also</span></span>  
+ [<span data-ttu-id="31ba3-110">イベントのログ記録</span><span class="sxs-lookup"><span data-stu-id="31ba3-110">Event Logging</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [<span data-ttu-id="31ba3-111">イベントの一般的なリファレンス</span><span class="sxs-lookup"><span data-stu-id="31ba3-111">Events General Reference</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

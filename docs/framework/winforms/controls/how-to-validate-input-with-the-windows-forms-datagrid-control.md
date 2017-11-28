@@ -1,40 +1,44 @@
 ---
-title: "方法 : Windows フォームの DataGrid コントロールを使用して入力データを検証する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "DataGrid コントロール [Windows フォーム], 例"
-  - "DataGrid コントロール [Windows フォーム], 検証 (入力を)"
-  - "例 [Windows フォーム], DataGrid コントロール"
-  - "ユーザー入力, 検証"
-  - "検証, ユーザー入力"
+title: "方法 : Windows フォームの DataGrid コントロールを使用して入力データを検証する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DataGrid control [Windows Forms], examples
+- user input [Windows Forms], validating
+- examples [Windows Forms], DataGrid control
+- DataGrid control [Windows Forms], validating input
+- validation [Windows Forms], user input
 ms.assetid: f1e9c3a0-d0a1-4893-a615-b4b0db046c63
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f5e0c366f71f602be2bb1508a6abb00d3d0c83ea
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームの DataGrid コントロールを使用して入力データを検証する
+# <a name="how-to-validate-input-with-the-windows-forms-datagrid-control"></a><span data-ttu-id="cf000-102">方法 : Windows フォームの DataGrid コントロールを使用して入力データを検証する</span><span class="sxs-lookup"><span data-stu-id="cf000-102">How to: Validate Input with the Windows Forms DataGrid Control</span></span>
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGrid> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.DataGrid> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。  
+>  <span data-ttu-id="cf000-103"><xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGrid> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.DataGrid> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。</span><span class="sxs-lookup"><span data-stu-id="cf000-103">The <xref:System.Windows.Forms.DataGridView> control replaces and adds functionality to the <xref:System.Windows.Forms.DataGrid> control; however, the <xref:System.Windows.Forms.DataGrid> control is retained for both backward compatibility and future use, if you choose.</span></span> <span data-ttu-id="cf000-104">詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cf000-104">For more information, see [Differences Between the Windows Forms DataGridView and DataGrid Controls](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).</span></span>  
   
- Windows フォームの <xref:System.Windows.Forms.DataGrid> コントロールで使用できる入力データの検証には 2 種類の方法があります。  ユーザーが適切でないデータ型 \(たとえば整数型のセルに文字列\) を入力した場合、その入力された無効な値は既存の有効な値に置き換えられます。  このような入力データの検証は自動的に行われ、カスタマイズはできません。  
+ <span data-ttu-id="cf000-105">入力の検証の 2 種類がある Windows フォームの使用可能な<xref:System.Windows.Forms.DataGrid>コントロール。</span><span class="sxs-lookup"><span data-stu-id="cf000-105">There are two types of input validation available for the Windows Forms <xref:System.Windows.Forms.DataGrid> control.</span></span> <span data-ttu-id="cf000-106">ユーザーがセル、たとえば、整数型に文字列のないデータ型の値を入力する場合、新しい値が無効ですが、古い値に置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="cf000-106">If the user attempts to enter a value that is of an unacceptable data type for the cell, for example a string into an integer, the new invalid value is replaced with the old value.</span></span> <span data-ttu-id="cf000-107">この種類の入力の検証は自動的に行われ、カスタマイズすることはできません。</span><span class="sxs-lookup"><span data-stu-id="cf000-107">This kind of input validation is done automatically and cannot be customized.</span></span>  
   
- もう一方の入力データの検証は、不適切なデータをすべて拒否する場合に使用できます。たとえば 1 以上の値が必要なフィールドに 0 を入力しようとする場合や、適切でない文字列を入力しようとする場合にそのデータを拒否します。  <xref:System.Data.DataTable.ColumnChanging> イベントまたは <xref:System.Data.DataTable.RowChanging> イベントに対してイベント ハンドラーを記述することにより、データセット内で実施できます。  次に示す例では、<xref:System.Data.DataTable.ColumnChanging> イベントを使用しています。"Product" 列では特に不適切な値が許可されないためです。  <xref:System.Data.DataTable.RowChanging> イベントを使用すると、"End Date" 列の値が同一行の "Start Date" 列の値より後であることを確認できます。  
+ <span data-ttu-id="cf000-108">データすべて 0 の値より大きいか等しい 1、または不適切な文字列にする必要があるフィールドに例を拒否するのには、入力の検証の他の種類を使用できます。</span><span class="sxs-lookup"><span data-stu-id="cf000-108">The other type of input validation can be used to reject any unacceptable data, for example a 0 value in a field that must be greater than or equal to 1, or an inappropriate string.</span></span> <span data-ttu-id="cf000-109">これは、データセット内のイベント ハンドラーを記述して、<xref:System.Data.DataTable.ColumnChanging>または<xref:System.Data.DataTable.RowChanging>イベント。</span><span class="sxs-lookup"><span data-stu-id="cf000-109">This is done in the dataset by writing an event handler for the <xref:System.Data.DataTable.ColumnChanging> or <xref:System.Data.DataTable.RowChanging> event.</span></span> <span data-ttu-id="cf000-110">使用して次の例、<xref:System.Data.DataTable.ColumnChanging>イベント不正な値が"Product"列を具体的には許可されていないためです。</span><span class="sxs-lookup"><span data-stu-id="cf000-110">The example below uses the <xref:System.Data.DataTable.ColumnChanging> event because the unacceptable value is disallowed for the "Product" column in particular.</span></span> <span data-ttu-id="cf000-111">使用する場合があります、<xref:System.Data.DataTable.RowChanging>確認「終了日」列の値が同じ行の「開始日」の列より後のイベントです。</span><span class="sxs-lookup"><span data-stu-id="cf000-111">You might use the <xref:System.Data.DataTable.RowChanging> event for checking that the value of an "End Date" column is later than the "Start Date" column in the same row.</span></span>  
   
-### ユーザー入力データを検証するには  
+### <a name="to-validate-user-input"></a><span data-ttu-id="cf000-112">ユーザー入力を検証するには</span><span class="sxs-lookup"><span data-stu-id="cf000-112">To validate user input</span></span>  
   
-1.  適切なテーブルに対して <xref:System.Data.DataTable.ColumnChanging> イベントを処理するコードを記述します。  不適切な入力が検出された場合は、<xref:System.Data.DataRow> オブジェクトの <xref:System.Data.DataRow.SetColumnError%2A> メソッドを呼び出します。  
+1.  <span data-ttu-id="cf000-113">処理するコードを記述、<xref:System.Data.DataTable.ColumnChanging>適切なテーブルのイベントです。</span><span class="sxs-lookup"><span data-stu-id="cf000-113">Write code to handle the <xref:System.Data.DataTable.ColumnChanging> event for the appropriate table.</span></span> <span data-ttu-id="cf000-114">不適切な入力が検出されると、呼び出し、<xref:System.Data.DataRow.SetColumnError%2A>のメソッド、<xref:System.Data.DataRow>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="cf000-114">When inappropriate input is detected, call the <xref:System.Data.DataRow.SetColumnError%2A> method of the <xref:System.Data.DataRow> object.</span></span>  
   
     ```vb  
     Private Sub Customers_ColumnChanging(ByVal sender As Object, _  
@@ -51,7 +55,6 @@ caps.handback.revision: 14
           End If  
        End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -70,19 +73,17 @@ caps.handback.revision: 14
           }  
        }  
     }  
-  
     ```  
   
-2.  イベントにイベント ハンドラーを接続します。  
+2.  <span data-ttu-id="cf000-115">イベント ハンドラーをイベントに接続します。</span><span class="sxs-lookup"><span data-stu-id="cf000-115">Connect the event handler to the event.</span></span>  
   
-     フォームの <xref:System.Windows.Forms.Form.Load> イベントまたはコンストラクターに、次のコードを記述します。  
+     <span data-ttu-id="cf000-116">フォームのコード内で、次の場所<xref:System.Windows.Forms.Form.Load>イベントまたはそのコンス トラクターです。</span><span class="sxs-lookup"><span data-stu-id="cf000-116">Place the following code within either the form's <xref:System.Windows.Forms.Form.Load> event or its constructor.</span></span>  
   
     ```vb  
     ' Assumes the grid is bound to a dataset called customersDataSet1  
     ' with a table called Customers.  
     ' Put this code in the form's Load event or its constructor.  
     AddHandler customersDataSet1.Tables("Customers").ColumnChanging, AddressOf Customers_ColumnChanging  
-  
     ```  
   
     ```csharp  
@@ -90,11 +91,10 @@ caps.handback.revision: 14
     // with a table called Customers.  
     // Put this code in the form's Load event or its constructor.  
     customersDataSet1.Tables["Customers"].ColumnChanging += new DataColumnChangeEventHandler(this.Customers_ColumnChanging);  
-  
     ```  
   
-## 参照  
- <xref:System.Windows.Forms.DataGrid>   
- <xref:System.Data.DataTable.ColumnChanging>   
- <xref:System.Data.DataRow.SetColumnError%2A>   
- [DataGrid コントロール](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="cf000-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="cf000-117">See Also</span></span>  
+ <xref:System.Windows.Forms.DataGrid>  
+ <xref:System.Data.DataTable.ColumnChanging>  
+ <xref:System.Data.DataRow.SetColumnError%2A>  
+ [<span data-ttu-id="cf000-118">DataGrid コントロール</span><span class="sxs-lookup"><span data-stu-id="cf000-118">DataGrid Control</span></span>](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)

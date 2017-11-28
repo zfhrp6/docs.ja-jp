@@ -1,71 +1,74 @@
 ---
-title: "クライアントの UI オートメーション イベント | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "UI オートメーション クライアントのイベント"
-  - "イベント、UI オートメーション クライアント"
+title: "クライアントの UI オートメーション イベント"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- UI Automation, events for clients
+- events, UI Automation clients
 ms.assetid: b909e388-3f24-4997-b6d4-bd9c35c2dc27
-caps.latest.revision: 32
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 32
+caps.latest.revision: "32"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: 1dfb4c1acd12b58d5c4f032ebe0ad8c56fc0db87
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# クライアントの UI オートメーション イベント
+# <a name="ui-automation-events-for-clients"></a><span data-ttu-id="64d39-102">クライアントの UI オートメーション イベント</span><span class="sxs-lookup"><span data-stu-id="64d39-102">UI Automation Events for Clients</span></span>
 > [!NOTE]
->  このドキュメントが目的とする、管理を使用する .NET Framework 開発者[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]で定義されたクラス、 <xref:System.Windows.Automation>名前空間。 最新情報について[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]を参照してください[Windows Automation API: UI 自動化](http://go.microsoft.com/fwlink/?LinkID=156746)します。  
+>  <span data-ttu-id="64d39-103">このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="64d39-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="64d39-104">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI Automation (Windows のオートメーション API: UI オートメーション)](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="64d39-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- このトピックについて説明する方法[!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]イベントは、UI オートメーション クライアントによって使用されます。  
+ <span data-ttu-id="64d39-105">このトピックについて説明する方法[!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]イベントは、UI オートメーション クライアントで使用されます。</span><span class="sxs-lookup"><span data-stu-id="64d39-105">This topic describes how [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] events are used by UI Automation clients.</span></span>  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]クライアントは、関心のあるイベントを定期受信できます。 この機能は、すべてをポーリングし続ける必要がある、パフォーマンスを改善、[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]すべてについては、構造体、または状態が変更されたかどうか、システム内の要素。  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]<span data-ttu-id="64d39-106">クライアントは、関心のあるイベントにサブスクライブできます。</span><span class="sxs-lookup"><span data-stu-id="64d39-106"> allows clients to subscribe to events of interest.</span></span> <span data-ttu-id="64d39-107">この機能は、常にすべてをポーリングする必要がなくなるによってパフォーマンスを向上させる、[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]任意の情報、構造体、または状態が変更されたかどうかに、システム内の要素。</span><span class="sxs-lookup"><span data-stu-id="64d39-107">This capability improves performance by eliminating the need to continually poll all the [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] elements in the system to see if any information, structure, or state has changed.</span></span>  
   
- また、定義されたスコープ内のイベントだけをリッスンできるため、効率性も向上します。 たとえば、クライアントをリッスンできますフォーカス変更イベントをすべて[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]ツリーで、または&1; つだけの要素とその子孫の要素。  
+ <span data-ttu-id="64d39-108">また、定義されたスコープ内のイベントだけをリッスンできるため、効率性も向上します。</span><span class="sxs-lookup"><span data-stu-id="64d39-108">Efficiency is also improved by the ability to listen for events only within a defined scope.</span></span> <span data-ttu-id="64d39-109">すべてのフォーカス変更イベントに、クライアントがリッスンなど[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]ツリーで、または 1 つだけの要素とその子孫の要素。</span><span class="sxs-lookup"><span data-stu-id="64d39-109">For example, a client can listen for focus change events on all [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] elements in the tree, or on just one element and its descendants.</span></span>  
   
 > [!NOTE]
->  使用できるすべてのイベントを発生すると想定しないで、[!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]プロバイダー。 たとえば、すべてのプロパティの変更が発生するの標準のプロキシ プロバイダーによって発生させるイベントを[!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]と[!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)]コントロールです。  
+>  <span data-ttu-id="64d39-110">によってすべての可能なイベントが発生したこととは仮定しないで、[!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]プロバイダー。</span><span class="sxs-lookup"><span data-stu-id="64d39-110">Do not assume that all possible events are raised by a [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] provider.</span></span> <span data-ttu-id="64d39-111">たとえば、すべてのプロパティの変更の標準プロキシ プロバイダーによって発生させるイベントを[!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]と[!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)]コントロール。</span><span class="sxs-lookup"><span data-stu-id="64d39-111">For example, not all property changes cause events to be raised by the standard proxy providers for [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] and [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] controls.</span></span>  
   
- 広い視野の[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]イベントを参照してください[UI オートメーション イベントの概要](../../../docs/framework/ui-automation/ui-automation-events-overview.md)します。  
+ <span data-ttu-id="64d39-112">広い視野を[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]イベントを参照してください[UI オートメーション イベントの概要](../../../docs/framework/ui-automation/ui-automation-events-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="64d39-112">For a broader view of [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] events, see [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md).</span></span>  
   
 <a name="Subscribing_to_Events"></a>   
-## <a name="subscribing-to-events"></a>イベントのサブスクライブ  
- クライアント アプリケーションは特定の種類のイベントをサブスクライブするために、次のいずれかのメソッドを使用してイベント ハンドラーを登録します。  
+## <a name="subscribing-to-events"></a><span data-ttu-id="64d39-113">イベントのサブスクライブ</span><span class="sxs-lookup"><span data-stu-id="64d39-113">Subscribing to Events</span></span>  
+ <span data-ttu-id="64d39-114">クライアント アプリケーションは特定の種類のイベントをサブスクライブするために、次のいずれかのメソッドを使用してイベント ハンドラーを登録します。</span><span class="sxs-lookup"><span data-stu-id="64d39-114">Client applications subscribe to events of a particular kind by registering an event handler, using one of the following methods.</span></span>  
   
-|メソッド|イベントの種類|イベント引数の種類|デリゲート型|  
+|<span data-ttu-id="64d39-115">メソッド</span><span class="sxs-lookup"><span data-stu-id="64d39-115">Method</span></span>|<span data-ttu-id="64d39-116">イベントの種類</span><span class="sxs-lookup"><span data-stu-id="64d39-116">Event Type</span></span>|<span data-ttu-id="64d39-117">イベント引数の種類</span><span class="sxs-lookup"><span data-stu-id="64d39-117">Event Arguments Type</span></span>|<span data-ttu-id="64d39-118">デリゲート型</span><span class="sxs-lookup"><span data-stu-id="64d39-118">Delegate Type</span></span>|  
 |------------|----------------|--------------------------|-------------------|  
-|<xref:System.Windows.Automation.Automation.AddAutomationFocusChangedEventHandler%2A>|フォーカスの変更|<xref:System.Windows.Automation.AutomationFocusChangedEventArgs>|<xref:System.Windows.Automation.AutomationFocusChangedEventHandler>|  
-|<xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A>|プロパティの変更|<xref:System.Windows.Automation.AutomationPropertyChangedEventArgs>|<xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>|  
-|<xref:System.Windows.Automation.Automation.AddStructureChangedEventHandler%2A>|構造の変更|<xref:System.Windows.Automation.StructureChangedEventArgs>|<xref:System.Windows.Automation.StructureChangedEventHandler>|  
-|<xref:System.Windows.Automation.Automation.AddAutomationEventHandler%2A>|識別されるその他のすべてのイベント、 <xref:System.Windows.Automation.AutomationEvent>|<xref:System.Windows.Automation.AutomationEventArgs>または<xref:System.Windows.Automation.WindowClosedEventArgs>|<xref:System.Windows.Automation.AutomationEventHandler>|  
+|<xref:System.Windows.Automation.Automation.AddAutomationFocusChangedEventHandler%2A>|<span data-ttu-id="64d39-119">フォーカスの変更</span><span class="sxs-lookup"><span data-stu-id="64d39-119">Focus change</span></span>|<xref:System.Windows.Automation.AutomationFocusChangedEventArgs>|<xref:System.Windows.Automation.AutomationFocusChangedEventHandler>|  
+|<xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A>|<span data-ttu-id="64d39-120">プロパティの変更</span><span class="sxs-lookup"><span data-stu-id="64d39-120">Property change</span></span>|<xref:System.Windows.Automation.AutomationPropertyChangedEventArgs>|<xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>|  
+|<xref:System.Windows.Automation.Automation.AddStructureChangedEventHandler%2A>|<span data-ttu-id="64d39-121">構造の変更</span><span class="sxs-lookup"><span data-stu-id="64d39-121">Structure change</span></span>|<xref:System.Windows.Automation.StructureChangedEventArgs>|<xref:System.Windows.Automation.StructureChangedEventHandler>|  
+|<xref:System.Windows.Automation.Automation.AddAutomationEventHandler%2A>|<span data-ttu-id="64d39-122">によって識別されるその他のすべてのイベント、<xref:System.Windows.Automation.AutomationEvent></span><span class="sxs-lookup"><span data-stu-id="64d39-122">All other events, identified by an <xref:System.Windows.Automation.AutomationEvent></span></span>|<span data-ttu-id="64d39-123"><xref:System.Windows.Automation.AutomationEventArgs> または <xref:System.Windows.Automation.WindowClosedEventArgs></span><span class="sxs-lookup"><span data-stu-id="64d39-123"><xref:System.Windows.Automation.AutomationEventArgs> or <xref:System.Windows.Automation.WindowClosedEventArgs></span></span>|<xref:System.Windows.Automation.AutomationEventHandler>|  
   
- メソッドを呼び出す前に、イベントを処理するデリゲート メソッドを作成する必要があります。 必要に応じて、単一のメソッドでさまざまな種類のイベントを処理し、そのメソッドを複数の呼び出しで表中のメソッドの&1; つに渡すことができます。 たとえば、1 つ<xref:System.Windows.Automation.AutomationEventHandler>異なるによると、さまざまなイベントを処理するを設定することができます、 <xref:System.Windows.Automation.AutomationEventArgs.EventId%2A>します。  
+ <span data-ttu-id="64d39-124">メソッドを呼び出す前に、イベントを処理するデリゲート メソッドを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="64d39-124">Before calling the method, you must create a delegate method to handle the event.</span></span> <span data-ttu-id="64d39-125">必要に応じて、単一のメソッドでさまざまな種類のイベントを処理し、そのメソッドを複数の呼び出しで表中のメソッドの 1 つに渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="64d39-125">If you prefer, you can handle different kinds of events in a single method, and pass this method in multiple calls to one of the methods in the table.</span></span> <span data-ttu-id="64d39-126">たとえば、1 つ<xref:System.Windows.Automation.AutomationEventHandler>異なるによると、さまざまなイベントを処理するを設定することができます、<xref:System.Windows.Automation.AutomationEventArgs.EventId%2A>です。</span><span class="sxs-lookup"><span data-stu-id="64d39-126">For example, a single <xref:System.Windows.Automation.AutomationEventHandler> can be set up to handle various events differently according to the <xref:System.Windows.Automation.AutomationEventArgs.EventId%2A>.</span></span>  
   
 > [!NOTE]
->  ウィンドウを閉じるイベントを処理する、イベント ハンドラーに渡される引数の型をキャスト<xref:System.Windows.Automation.WindowClosedEventArgs>します。 [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]ウィンドウの要素が無効になって、使用することはできません、`sender`情報を取得するパラメーターを使用して<xref:System.Windows.Automation.WindowClosedEventArgs.GetRuntimeId%2A>代わりにします。  
+>  <span data-ttu-id="64d39-127">ウィンドウを閉じるイベントを処理すると、イベント ハンドラーに渡される引数の型をキャスト<xref:System.Windows.Automation.WindowClosedEventArgs>です。</span><span class="sxs-lookup"><span data-stu-id="64d39-127">To process window-closed events, cast the argument type that is passed to the event handler as <xref:System.Windows.Automation.WindowClosedEventArgs>.</span></span> <span data-ttu-id="64d39-128">[!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]ウィンドウの要素が有効ではなく、使用することはできません、`sender`情報を取得するパラメーターを使用して<xref:System.Windows.Automation.WindowClosedEventArgs.GetRuntimeId%2A>代わりにします。</span><span class="sxs-lookup"><span data-stu-id="64d39-128">Because the [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] element for the window is no longer valid, you cannot use the `sender` parameter to retrieve information; use <xref:System.Windows.Automation.WindowClosedEventArgs.GetRuntimeId%2A> instead.</span></span>  
   
 > [!CAUTION]
->  アプリケーションが独自のイベントを受け取った場合[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]、アプリケーションを使用しないでください[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]スレッドまたは登録を解除する、イベントを定期受信します。 使用すると、予期しない動作を招く可能性があります。 詳細については、次を参照してください。 [UI オートメーション スレッド処理の問題](../../../docs/framework/ui-automation/ui-automation-threading-issues.md)します。  
+>  <span data-ttu-id="64d39-129">アプリケーションがそれ自体からイベントを受け取った場合[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]、アプリケーションを使用しないでください[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]イベントをサブスクライブまたはアンサブスク ライブするのにはスレッドです。</span><span class="sxs-lookup"><span data-stu-id="64d39-129">If your application might receive events from its own [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)], do not use your application's [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] thread to subscribe to events, or to unsubscribe.</span></span> <span data-ttu-id="64d39-130">使用すると、予期しない動作を招く可能性があります。</span><span class="sxs-lookup"><span data-stu-id="64d39-130">Doing so might lead to unpredictable behavior.</span></span> <span data-ttu-id="64d39-131">詳細については、「 [UI Automation Threading Issues](../../../docs/framework/ui-automation/ui-automation-threading-issues.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="64d39-131">For more information, see [UI Automation Threading Issues](../../../docs/framework/ui-automation/ui-automation-threading-issues.md).</span></span>  
   
- シャット ダウン、または[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]イベントは、アプリケーションにとって重要な不要になった、UI オートメーション クライアントは、次の方法のいずれかを呼び出す必要があります。  
+ <span data-ttu-id="64d39-132">シャット ダウン時、または[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]イベントがアプリケーションに関心のあるは不要になった、UI オートメーション クライアントは、次のメソッドのいずれかを呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="64d39-132">On shutdown, or when [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] events are no longer of interest to the application, UI Automation clients should call one of the following methods.</span></span>  
   
-|メソッド|説明|  
+|<span data-ttu-id="64d39-133">メソッド</span><span class="sxs-lookup"><span data-stu-id="64d39-133">Method</span></span>|<span data-ttu-id="64d39-134">説明</span><span class="sxs-lookup"><span data-stu-id="64d39-134">Description</span></span>|  
 |------------|-----------------|  
-|<xref:System.Windows.Automation.Automation.RemoveAutomationEventHandler%2A>|使用して登録されたイベント ハンドラーの登録を解除<xref:System.Windows.Automation.Automation.AddAutomationEventHandler%2A>します。|  
-|<xref:System.Windows.Automation.Automation.RemoveAutomationFocusChangedEventHandler%2A>|使用して登録されたイベント ハンドラーの登録を解除<xref:System.Windows.Automation.Automation.AddAutomationFocusChangedEventHandler%2A>します。|  
-|<xref:System.Windows.Automation.Automation.RemoveAutomationPropertyChangedEventHandler%2A>|使用して登録されたイベント ハンドラーの登録を解除<xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A>します。|  
-|<xref:System.Windows.Automation.Automation.RemoveAllEventHandlers%2A>|登録済みのすべてのイベント ハンドラーの登録を解除します。|  
+|<xref:System.Windows.Automation.Automation.RemoveAutomationEventHandler%2A>|<span data-ttu-id="64d39-135">使用して登録されたイベント ハンドラーの登録解除<xref:System.Windows.Automation.Automation.AddAutomationEventHandler%2A>です。</span><span class="sxs-lookup"><span data-stu-id="64d39-135">Unregisters an event handler that was registered by using <xref:System.Windows.Automation.Automation.AddAutomationEventHandler%2A>.</span></span>|  
+|<xref:System.Windows.Automation.Automation.RemoveAutomationFocusChangedEventHandler%2A>|<span data-ttu-id="64d39-136">使用して登録されたイベント ハンドラーの登録解除<xref:System.Windows.Automation.Automation.AddAutomationFocusChangedEventHandler%2A>です。</span><span class="sxs-lookup"><span data-stu-id="64d39-136">Unregisters an event handler that was registered by using <xref:System.Windows.Automation.Automation.AddAutomationFocusChangedEventHandler%2A>.</span></span>|  
+|<xref:System.Windows.Automation.Automation.RemoveAutomationPropertyChangedEventHandler%2A>|<span data-ttu-id="64d39-137">使用して登録されたイベント ハンドラーの登録解除<xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A>です。</span><span class="sxs-lookup"><span data-stu-id="64d39-137">Unregisters an event handler that was registered by using <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A>.</span></span>|  
+|<xref:System.Windows.Automation.Automation.RemoveAllEventHandlers%2A>|<span data-ttu-id="64d39-138">登録済みのすべてのイベント ハンドラーの登録を解除します。</span><span class="sxs-lookup"><span data-stu-id="64d39-138">Unregisters all registered event handlers.</span></span>|  
   
- コード例は、「 [UI オートメーション イベントをサブスクライブ](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)します。  
+ <span data-ttu-id="64d39-139">コード例を参照してください[の UI オートメーション イベントをサブスクライブ](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)です。</span><span class="sxs-lookup"><span data-stu-id="64d39-139">For example code, see [Subscribe to UI Automation Events](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md).</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [UI オートメーション イベントを購読します。](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)   
- [UI オートメーション イベントの概要](../../../docs/framework/ui-automation/ui-automation-events-overview.md)   
- [UI オートメーション プロパティの概要](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)   
- [TrackFocus サンプル](http://msdn.microsoft.com/ja-jp/4a91c0af-6bb5-4d38-a743-cf136f268fc9)
+## <a name="see-also"></a><span data-ttu-id="64d39-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="64d39-140">See Also</span></span>  
+ [<span data-ttu-id="64d39-141">UI オートメーション イベントにサブスクライブします。</span><span class="sxs-lookup"><span data-stu-id="64d39-141">Subscribe to UI Automation Events</span></span>](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)  
+ [<span data-ttu-id="64d39-142">UI オートメーション イベントの概要</span><span class="sxs-lookup"><span data-stu-id="64d39-142">UI Automation Events Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-events-overview.md)  
+ [<span data-ttu-id="64d39-143">UI オートメーション プロパティの概要</span><span class="sxs-lookup"><span data-stu-id="64d39-143">UI Automation Properties Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)  
+ [<span data-ttu-id="64d39-144">TrackFocus サンプル</span><span class="sxs-lookup"><span data-stu-id="64d39-144">TrackFocus Sample</span></span>](http://msdn.microsoft.com/en-us/4a91c0af-6bb5-4d38-a743-cf136f268fc9)

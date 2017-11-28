@@ -1,106 +1,102 @@
 ---
-title: "方法 : Windows フォーム内の ToolStrip 項目の間隔と配置を変更する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "例 [Windows フォーム], ツール バー"
-  - "ツール バー [Windows フォーム], 配置 (項目を)"
-  - "ToolStrip コントロール [Windows フォーム], 配置 (項目を)"
+title: "方法 : Windows フォーム内の ToolStrip 項目の間隔と配置を変更する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ToolStrip control [Windows Forms], aligning items
+- examples [Windows Forms], toolbars
+- toolbars [Windows Forms], aligning items
 ms.assetid: cd483466-0f49-43df-addf-e2b5fcd64027
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 42ae53e143942201359baebdfa8929647e7e35cd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォーム内の ToolStrip 項目の間隔と配置を変更する
-<xref:System.Windows.Forms.ToolStrip> コントロールは、サイズ調整、<xref:System.Windows.Forms.ToolStripItem> コントロールの間隔、<xref:System.Windows.Forms.ToolStrip> 上へのコントロールの配置、および <xref:System.Windows.Forms.ToolStrip> に相対的なコントロールの間隔などのレイアウト機能を完全にサポートします。  
+# <a name="how-to-change-the-spacing-and-alignment-of-toolstrip-items-in-windows-forms"></a><span data-ttu-id="50830-102">方法 : Windows フォーム内の ToolStrip 項目の間隔と配置を変更する</span><span class="sxs-lookup"><span data-stu-id="50830-102">How to: Change the Spacing and Alignment of ToolStrip Items in Windows Forms</span></span>
+<span data-ttu-id="50830-103"><xref:System.Windows.Forms.ToolStrip>コントロールがサイズ変更の間隔などのレイアウト機能を完全にサポート<xref:System.Windows.Forms.ToolStripItem>互いを基準として、コントロールの配置のコントロールに対して、<xref:System.Windows.Forms.ToolStrip>とを基準とするコントロールの間の間隔、<xref:System.Windows.Forms.ToolStrip>です。</span><span class="sxs-lookup"><span data-stu-id="50830-103">The <xref:System.Windows.Forms.ToolStrip> control fully supports layout features such as sizing, the spacing of <xref:System.Windows.Forms.ToolStripItem> controls relative to each other, the arrangement of controls on the <xref:System.Windows.Forms.ToolStrip>, and the spacing of controls relative to the <xref:System.Windows.Forms.ToolStrip>.</span></span>  
   
- <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> プロパティの既定値は `true` であるため、<xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> プロパティを `false` に設定しない限り、コントロールのサイズは自動的に調整されます。  
+ <span data-ttu-id="50830-104">の既定値、<xref:System.Windows.Forms.ToolStripItem.AutoSize%2A>プロパティは`true`、コントロールはサイズが自動的に設定しない限り、<xref:System.Windows.Forms.ToolStripItem.AutoSize%2A>プロパティを`false`です。</span><span class="sxs-lookup"><span data-stu-id="50830-104">Because the default value of the <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> property is `true`, controls are sized automatically unless you set the <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> property to `false`.</span></span>  
   
-### ToolStripItem のサイズを手動で調整するには  
+### <a name="to-manually-size-a-toolstripitem"></a><span data-ttu-id="50830-105">ToolStripItem を手動で調整するには</span><span class="sxs-lookup"><span data-stu-id="50830-105">To manually size a ToolStripItem</span></span>  
   
-1.  関連するコントロールの <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> プロパティを `false` に設定します。  
+1.  <span data-ttu-id="50830-106">設定、<xref:System.Windows.Forms.ToolStripItem.AutoSize%2A>プロパティを`false`関連付けられたコントロール。</span><span class="sxs-lookup"><span data-stu-id="50830-106">Set the <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> property to `false` for the associated control.</span></span>  
   
     ```vb  
     ToolStripButton1.AutoSize = False  
-  
     ```  
   
     ```csharp  
     toolStripButton1.AutoSize = false;  
-  
     ```  
   
-2.  関連する <xref:System.Windows.Forms.ToolStripItem> の <xref:System.Windows.Forms.ToolStripItem.Size%2A> プロパティを任意の値に設定します。  
+2.  <span data-ttu-id="50830-107">設定、<xref:System.Windows.Forms.ToolStripItem.Size%2A>プロパティに関連付けられた希望どおり<xref:System.Windows.Forms.ToolStripItem>です。</span><span class="sxs-lookup"><span data-stu-id="50830-107">Set the <xref:System.Windows.Forms.ToolStripItem.Size%2A> property the way you want for the associated <xref:System.Windows.Forms.ToolStripItem>.</span></span>  
   
-### ToolStripItem の間隔を設定するには  
+### <a name="to-set-the-spacing-of-a-toolstripitem"></a><span data-ttu-id="50830-108">ToolStripItem の間隔を設定するには</span><span class="sxs-lookup"><span data-stu-id="50830-108">To set the spacing of a ToolStripItem</span></span>  
   
-1.  関連するコントロールの <xref:System.Windows.Forms.ToolStripItem.Margin%2A> プロパティに任意の値 \(ピクセル単位\) を挿入します。  
+1.  <span data-ttu-id="50830-109">ピクセル単位で、目的の値を挿入、<xref:System.Windows.Forms.ToolStripItem.Margin%2A>関連付けられたコントロールのプロパティです。</span><span class="sxs-lookup"><span data-stu-id="50830-109">Insert the desired values, in pixels, into the <xref:System.Windows.Forms.ToolStripItem.Margin%2A> property of the associated control.</span></span>  
   
-     <xref:System.Windows.Forms.ToolStripItem.Margin%2A> プロパティの値で、項目と隣接する項目の間隔 \(順に左、上、右、および下\) を指定します。  
+     <span data-ttu-id="50830-110">値、<xref:System.Windows.Forms.ToolStripItem.Margin%2A>プロパティは、この順序で、項目と隣接するアイテムの間隔を指定します。 左、上、右、および下です。</span><span class="sxs-lookup"><span data-stu-id="50830-110">The values of the <xref:System.Windows.Forms.ToolStripItem.Margin%2A> property specify the spacing between the item and adjacent items in this order: Left, Top, Right, and Bottom.</span></span>  
   
     ```vb  
     ToolStripTextBox1.Margin = New System.Windows.Forms.Padding _  
         (3, 0, 3, 0)  
-  
     ```  
   
     ```csharp  
     toolStripTextBox1.Margin = new System.Windows.Forms.Padding   
         (3, 0, 3, 0);  
-  
     ```  
   
-### ToolStripItem を ToolStrip の右側に配置するには  
+### <a name="to-align-a-toolstripitem-to-the-right-side-of-the-toolstrip"></a><span data-ttu-id="50830-111">コマンド バーの右側に ToolStripItem を配置するには</span><span class="sxs-lookup"><span data-stu-id="50830-111">To align a ToolStripItem to the right side of the ToolStrip</span></span>  
   
-1.  関連するコントロールの <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> プロパティを <xref:System.Windows.Forms.ToolStripItemAlignment> に設定します。  既定では、<xref:System.Windows.Forms.ToolStripItem.Alignment%2A> は <xref:System.Windows.Forms.ToolStripItemAlignment> に設定され、コントロールは <xref:System.Windows.Forms.ToolStrip> の左側に配置されます。  
+1.  <span data-ttu-id="50830-112">設定、<xref:System.Windows.Forms.ToolStripItem.Alignment%2A>プロパティを<xref:System.Windows.Forms.ToolStripItemAlignment.Right>関連付けられたコントロール。</span><span class="sxs-lookup"><span data-stu-id="50830-112">Set the <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> property to <xref:System.Windows.Forms.ToolStripItemAlignment.Right> for the associated control.</span></span> <span data-ttu-id="50830-113">既定では、<xref:System.Windows.Forms.ToolStripItem.Alignment%2A>に設定されている<xref:System.Windows.Forms.ToolStripItemAlignment.Left>の左側にコントロールを配置する、<xref:System.Windows.Forms.ToolStrip>です。</span><span class="sxs-lookup"><span data-stu-id="50830-113">By default, <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> is set to <xref:System.Windows.Forms.ToolStripItemAlignment.Left>, which aligns controls to the left side of the <xref:System.Windows.Forms.ToolStrip>.</span></span>  
   
     ```vb  
     ToolStripSplitButton1.Alignment = _  
         System.Windows.Forms.ToolStripItemAlignment.Right  
-  
     ```  
   
     ```csharp  
     toolStripSplitButton1.Alignment =   
         System.Windows.Forms.ToolStripItemAlignment.Right;  
-  
     ```  
   
-### ToolStrip 上の ToolStrip 項目を並べ替えるには  
+### <a name="to-arrange-toolstrip-items-on-the-toolstrip"></a><span data-ttu-id="50830-114">ToolStrip の ToolStrip 項目を整理するには</span><span class="sxs-lookup"><span data-stu-id="50830-114">To arrange ToolStrip items on the ToolStrip</span></span>  
   
--   <xref:System.Windows.Forms.ToolStrip.LayoutStyle%2A> プロパティを任意の <xref:System.Windows.Forms.ToolStripLayoutStyle> の値に設定します。  
+-   <span data-ttu-id="50830-115">設定、<xref:System.Windows.Forms.ToolStrip.LayoutStyle%2A>プロパティの値を<xref:System.Windows.Forms.ToolStripLayoutStyle>します。</span><span class="sxs-lookup"><span data-stu-id="50830-115">Set the <xref:System.Windows.Forms.ToolStrip.LayoutStyle%2A> property to the value of <xref:System.Windows.Forms.ToolStripLayoutStyle> that you want.</span></span>  
   
     ```vb  
     ToolStripDropDown1.LayoutStyle = _  
         System.Windows.Forms.ToolStripLayoutStyle.Flow  
-  
     ```  
   
     ```csharp  
     toolStripDropDown1.LayoutStyle =   
         System.Windows.Forms.ToolStripLayoutStyle.Flow;  
-  
     ```  
   
-## 参照  
- <xref:System.Windows.Forms.ToolStrip>   
- <xref:System.Windows.Forms.Control.Layout>   
- <xref:System.Windows.Forms.ToolStrip.LayoutCompleted>   
- <xref:System.Windows.Forms.ToolStrip.LayoutSettings%2A>   
- <xref:System.Windows.Forms.ToolStripItem.TextImageRelation%2A>   
- <xref:System.Windows.Forms.ToolStripItem.Placement%2A>   
- <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A>   
- [ToolStrip コントロールの概要](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)   
- [ToolStrip コントロールのアーキテクチャ](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)   
- [ToolStrip テクノロジの概要](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)
+## <a name="see-also"></a><span data-ttu-id="50830-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="50830-116">See Also</span></span>  
+ <xref:System.Windows.Forms.ToolStrip>  
+ <xref:System.Windows.Forms.Control.Layout>  
+ <xref:System.Windows.Forms.ToolStrip.LayoutCompleted>  
+ <xref:System.Windows.Forms.ToolStrip.LayoutSettings%2A>  
+ <xref:System.Windows.Forms.ToolStripItem.TextImageRelation%2A>  
+ <xref:System.Windows.Forms.ToolStripItem.Placement%2A>  
+ <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A>  
+ [<span data-ttu-id="50830-117">ToolStrip コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="50830-117">ToolStrip Control Overview</span></span>](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)  
+ [<span data-ttu-id="50830-118">ToolStrip コントロールのアーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="50830-118">ToolStrip Control Architecture</span></span>](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)  
+ [<span data-ttu-id="50830-119">ToolStrip テクノロジの概要</span><span class="sxs-lookup"><span data-stu-id="50830-119">ToolStrip Technology Summary</span></span>](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)

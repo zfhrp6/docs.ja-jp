@@ -1,28 +1,32 @@
 ---
-title: "追跡を使用した WF データの抽出 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "追跡を使用した WF データの抽出"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e30c68f5-8c6a-495a-bd20-667a4364c68e
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: bbc9d72a55bd0affdccae9b735355c7e30c5d933
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 追跡を使用した WF データの抽出
-このサンプルでは、ワークフロー追跡を使用して、アクティビティからワークフロー変数と引数を抽出する方法を示します。また、追跡レコードへの注釈の追加、およびカスタム追跡レコード内のデータ ペイロードの抽出の例も示します。このサンプルでは、ワークフローからデータを抽出するために Event Tracing for Windows \(ETW\) 追跡参加要素を使用します。  
+# <a name="extract-wf-data-using-tracking"></a><span data-ttu-id="f5fbe-102">追跡を使用した WF データの抽出</span><span class="sxs-lookup"><span data-stu-id="f5fbe-102">Extract WF Data using Tracking</span></span>
+<span data-ttu-id="f5fbe-103">このサンプルでは、ワークフロー追跡を使用して、アクティビティからワークフロー変数と引数を抽出する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-103">This sample demonstrates how to use workflow tracking to extract workflow variables and arguments from activities.</span></span> <span data-ttu-id="f5fbe-104">また、追跡レコードへの注釈の追加、およびカスタム追跡レコード内のデータ ペイロードの抽出の例も示します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-104">It also shows the addition of annotations to tracking records and the extraction of data payload within custom tracking records.</span></span> <span data-ttu-id="f5fbe-105">このサンプルでは、ワークフローからデータを抽出するために Event Tracing for Windows (ETW) 追跡参加要素を使用します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-105">The sample uses the Event Tracing for Windows (ETW) tracking participant to extract data from the workflow.</span></span>  
   
-## サンプルの詳細  
- [!INCLUDE[wf](../../../../includes/wf-md.md)] には、ワークフロー インスタンスの実行を視覚的に示す追跡機能が用意されています。追跡ランタイムでは、ワークフローの実行中にワークフロー追跡レコードが出力されます。このワークフロー追跡レコードと共に、ワークフロー インスタンス内のデータをワークフローから抽出することができます。追跡レコードから抽出できるデータの種類の詳細を以下に示します。  
+## <a name="sample-details"></a><span data-ttu-id="f5fbe-106">サンプルの詳細</span><span class="sxs-lookup"><span data-stu-id="f5fbe-106">Sample Details</span></span>  
+ [!INCLUDE[wf](../../../../includes/wf-md.md)]<span data-ttu-id="f5fbe-107"> には、ワークフロー インスタンスの実行を視覚的に示す追跡機能が用意されています。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-107"> provides tracking to gain visibility into the execution of a workflow instance.</span></span> <span data-ttu-id="f5fbe-108">追跡ランタイムでは、ワークフローの実行中にワークフロー追跡レコードが出力されます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-108">The tracking runtime emits workflow tracking records during the execution of the workflow.</span></span> <span data-ttu-id="f5fbe-109">このワークフロー追跡レコードと共に、ワークフロー インスタンス内のデータをワークフローから抽出することができます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-109">Along with the workflow tracking records, data within the workflow instance can be extracted from the workflow.</span></span> <span data-ttu-id="f5fbe-110">追跡レコードから抽出できるデータの種類の詳細を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-110">The following list details the types of data that can be extracted from tracking records:</span></span>  
   
-1.  アクティビティ内のワークフロー変数とアクティビティの実行時の追跡レコード。  
+1.  <span data-ttu-id="f5fbe-111">アクティビティ内のワークフロー変数とアクティビティの実行時の追跡レコード。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-111">Workflow variables within an activity and tracking records during activity execution.</span></span>  
   
-     ワークフロー変数を抽出するには、抽出する変数をプロファイルで指定します。抽出する変数は、`ActivityStateQueries` でのみ指定できます。アクティビティからワークフロー変数を抽出するために使用する追跡プロファイルのコード例を次に示します。  
+     <span data-ttu-id="f5fbe-112">ワークフロー変数を抽出するには、抽出する変数をプロファイルで指定します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-112">To extract workflow variables, the variables to be extracted are specified in a profile.</span></span> <span data-ttu-id="f5fbe-113">抽出する変数は、`ActivityStateQueries` でのみ指定できます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-113">Variables to be extracted can only be specified with `ActivityStateQueries`.</span></span> <span data-ttu-id="f5fbe-114">アクティビティからワークフロー変数を抽出するために使用する追跡プロファイルのコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-114">The following code example demonstrates a tracking profile used to extract the workflow variable from an activity.</span></span>  
   
     ```xml  
     <activityStateQuery activityName="StockPriceService">  
@@ -35,9 +39,9 @@ caps.handback.revision: 14
     </activityStateQuery>  
     ```  
   
-2.  アクティビティ引数とアクティビティ状態の追跡レコード。  
+2.  <span data-ttu-id="f5fbe-115">アクティビティ引数とアクティビティ状態の追跡レコード。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-115">Activity arguments and activity state tracking records.</span></span>  
   
-     引数は、アクティビティとのデータ フローの方法を定義します。抽出する引数は、<xref:System.Activities.Tracking.ActivityStateQuery> を使用して指定します。`Value` 引数を抽出する追跡プロファイルのコード例を次に示します。  
+     <span data-ttu-id="f5fbe-116">引数は、アクティビティとのデータ フローの方法を定義します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-116">Arguments define the way data flows in or out of an activity.</span></span> <span data-ttu-id="f5fbe-117">抽出する引数は、<xref:System.Activities.Tracking.ActivityStateQuery> を使用して指定します。`Value` 引数を抽出する追跡プロファイルのコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-117">Arguments to be extracted are specified using an <xref:System.Activities.Tracking.ActivityStateQuery>.The following code example is a tracking profile that extracts the `Value` argument.</span></span>  
   
     ```xml  
     <activityStateQuery activityName="GetStockPrice">  
@@ -50,9 +54,9 @@ caps.handback.revision: 14
     </activityStateQuery>  
     ```  
   
-3.  注釈は、出力される追跡レコードに追加できるキーと値のペアです。  
+3.  <span data-ttu-id="f5fbe-118">注釈は、出力される追跡レコードに追加できるキーと値のペアです。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-118">Annotations are key/value pairs that can be added to any tracking record that is emitted.</span></span>  
   
-     注釈は、追跡レコードのタグ付け機構として機能します。追跡プロファイルを通して追跡レコードに追加され、どの種類のワークフロー追跡クエリにも追加できます。追跡レコードに注釈を追加する方法を示す追跡プロファイルのコード例を次に示します。  
+     <span data-ttu-id="f5fbe-119">注釈は、追跡レコードのタグ付け機構として機能します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-119">Annotations serve as a tagging mechanism for tracking records.</span></span> <span data-ttu-id="f5fbe-120">追跡プロファイルを通して追跡レコードに追加され、</span><span class="sxs-lookup"><span data-stu-id="f5fbe-120">Annotations are added to tracking records through a tracking profile.</span></span> <span data-ttu-id="f5fbe-121">どの種類のワークフロー追跡クエリにも追加できます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-121">Annotations can be added to any type of a workflow tracking query.</span></span> <span data-ttu-id="f5fbe-122">追跡レコードに注釈を追加する方法を示す追跡プロファイルのコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-122">The following code example is a tracking profile that shows how an annotation can be added to a tracking record.</span></span>  
   
     ```xml  
     <workflowInstanceQuery>  
@@ -65,17 +69,17 @@ caps.handback.revision: 14
     </workflowInstanceQuery>  
     ```  
   
-4.  カスタム追跡レコードは、ユーザー定義のアクティビティから出力されます。  
+4.  <span data-ttu-id="f5fbe-123">カスタム追跡レコードは、ユーザー定義のアクティビティから出力されます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-123">Custom tracking records are emitted from user-defined activities.</span></span>  
   
-     カスタム追跡レコードは、対象のアクティビティ内で定義されたペイロード データを伝達できます。追跡プロファイルでカスタム追跡レコードを定期受信すると、追跡レコード内のペイロードを抽出することができます。カスタム追跡レコードを抽出するには、カスタムの <xref:System.Activities.Tracking.TrackingQuery> を使用します。カスタム追跡レコードをそのペイロードと共に抽出する追跡プロファイルのコード例を次に示します。  
+     <span data-ttu-id="f5fbe-124">カスタム追跡レコードは、対象のアクティビティ内で定義されたペイロード データを伝達できます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-124">Custom tracking records can carry payload data defined within this activity.</span></span> <span data-ttu-id="f5fbe-125">追跡プロファイルでカスタム追跡レコードを定期受信すると、追跡レコード内のペイロードを抽出することができます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-125">Subscribing for custom tracking records in a tracking profile allows the extraction of the payload within the tracking record.</span></span> <span data-ttu-id="f5fbe-126">カスタム追跡レコードを抽出するには、カスタムの <xref:System.Activities.Tracking.TrackingQuery> を使用します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-126">The custom tracking records can be extracted with custom a <xref:System.Activities.Tracking.TrackingQuery>.</span></span> <span data-ttu-id="f5fbe-127">カスタム追跡レコードをそのペイロードと共に抽出する追跡プロファイルのコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-127">The following code example is a tracking profile that extracts a custom tracking record along with its payload.</span></span>  
   
-    ```  
+    ```xml  
     <customTrackingQuery name="QuoteLookupEvent" activityName="GetStockPrice"/>  
     ```  
   
- このサンプルでは、Web.config で指定されたプロファイルを使用して、変数、引数、およびカスタム レコードを抽出し、注釈を追加する例を示しています。サンプルのワークフロー サービスでは、`<etwTracking>` 動作要素を追加して追跡を有効にしています。`ExtractWorkflowVariables` 追跡プロファイルの追跡を有効にするコード例を次に示します。  
+ <span data-ttu-id="f5fbe-128">このサンプルでは、Web.config で指定されたプロファイルを使用して、変数、引数、およびカスタム レコードを抽出し、注釈を追加する例を示しています。サンプルのワークフロー サービスでは、`<etwTracking>` 動作要素を追加して追跡を有効にしています。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-128">The sample demonstrates the extraction of a variables, arguments, custom records and adding annotations using a profile specified in a Web.config. Tracking is enabled on the sample workflow service by adding an `<etwTracking>` behavior element.</span></span> <span data-ttu-id="f5fbe-129">`ExtractWorkflowVariables` 追跡プロファイルの追跡を有効にするコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-129">The following code example enables tracking for the `ExtractWorkflowVariables` tracking profile.</span></span>  
   
-```  
+```xml  
 <serviceBehaviors>  
      <behavior>  
                <etwTracking profileName="ExtractWorkflowVariables"/>  
@@ -83,82 +87,82 @@ caps.handback.revision: 14
 </serviceBehaviors>  
 ```  
   
-#### このサンプルを使用するには  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="f5fbe-130">このサンプルを使用するには</span><span class="sxs-lookup"><span data-stu-id="f5fbe-130">To use this sample</span></span>  
   
-1.  [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] を使用して、WFStockPriceApplication.sln ソリューション ファイルを開きます。  
+1.  <span data-ttu-id="f5fbe-131">[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] を使用して、WFStockPriceApplication.sln ソリューション ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-131">Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the WFStockPriceApplication.sln solution file.</span></span>  
   
-2.  ソリューションをビルドするには、Ctrl キーと Shift キーを押しながら B キーを押します。  
+2.  <span data-ttu-id="f5fbe-132">ソリューションをビルドするには、Ctrl キーと Shift キーを押しながら B キーを押します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-132">To build the solution, press CTRL+SHIFT+B.</span></span>  
   
-3.  ソリューションを実行するには、F5 キーを押します。  
+3.  <span data-ttu-id="f5fbe-133">ソリューションを実行するには、F5 キーを押します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-133">To run the solution, press F5.</span></span>  
   
-     ブラウザー ウィンドウが開き、アプリケーションのディレクトリの一覧が示されます。  
+     <span data-ttu-id="f5fbe-134">ブラウザー ウィンドウが開き、アプリケーションのディレクトリの一覧が示されます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-134">The browser window opens and shows the directory listing for the application.</span></span>  
   
-4.  ブラウザーで、StockPriceService.xamlx をクリックします。  
+4.  <span data-ttu-id="f5fbe-135">ブラウザーで、StockPriceService.xamlx をクリックします。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-135">In the browser, click StockPriceService.xamlx.</span></span>  
   
-5.  ブラウザーに、\[StockPriceService\] ページが表示され、ローカル サービスの WSDL アドレスが示されます。このアドレスをコピーします。  
+5.  <span data-ttu-id="f5fbe-136">ブラウザーに、[StockPriceService] ページが表示され、ローカル サービスの WSDL アドレスが示されます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-136">The browser displays the StockPriceService page, which contains the local service WSDL address.</span></span> <span data-ttu-id="f5fbe-137">このアドレスをコピーします。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-137">Copy this address.</span></span>  
   
-     ローカル サービスの WSDL アドレスの例を次に示します。`http://localhost:53797/StockPriceService.xamlx?wsdl`  
+     <span data-ttu-id="f5fbe-138">ローカル サービスの WSDL アドレスの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-138">The following example shows a local service WSDL address.</span></span> `http://localhost:53797/StockPriceService.xamlx?wsdl`  
   
-6.  サービスを呼び出す前に、イベント ビューアーを起動し、ワークフロー サービスから生成された追跡イベントをイベント ログでリッスンしていることを確認します。  
+6.  <span data-ttu-id="f5fbe-139">サービスを呼び出す前に、イベント ビューアーを起動し、ワークフロー サービスから生成された追跡イベントをイベント ログでリッスンしていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-139">Before invoking the service, start Event Viewer and ensure that the event log is listening for tracking events emitted from the workflow service.</span></span>  
   
-7.  **\[スタート\]** メニューから、**\[管理ツール\]**、**\[イベント ビューアー\]** の順に選択します。  
+7.  <span data-ttu-id="f5fbe-140">**開始**メニューの **管理ツール**し**イベント ビューアー**です。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-140">From the **Start** menu, select **Administrative Tools** and then **Event Viewer**.</span></span>  
   
-8.  イベント ビューアーのツリー ビューで、**\[イベント ビューアー\]**、**\[アプリケーションとサービス ログ\]** の順に選択して **\[Microsoft\]** に移動します。**\[Microsoft\]** を右クリックし、**\[表示\]**、**\[分析およびデバッグ ログの表示\]** の順にクリックします。  
+8.  <span data-ttu-id="f5fbe-141">イベント ビューアーのツリー ビューに移動**イベント ビューアー**、 **Applications and Services Logs**、および**Microsoft**です。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-141">In the tree view in Event Viewer, navigate to **Event Viewer**, **Applications and Services Logs**, and **Microsoft**.</span></span> <span data-ttu-id="f5fbe-142">右クリック**Microsoft**選択**ビュー**し**分析およびデバッグ ログ**です。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-142">Right-click **Microsoft** and select **View** and then **Show Analytic and Debug Logs**.</span></span>  
   
-     **\[分析およびデバッグ ログの表示\]** オプションがオンになっていることを確認します。  
+     <span data-ttu-id="f5fbe-143">いることを確認、 **分析およびデバッグ ログ**オプションはオンにします。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-143">Ensure that the **Show Analytic and Debug Logs** option is checked.</span></span>  
   
-9. イベント ビューアーのツリー ビューで、**\[イベント ビューアー\]**、**\[アプリケーションとサービス ログ\]**、**\[Microsoft\]**、**\[Windows\]** の順に選択して **\[アプリケーション サーバー \- アプリケーション\]** に移動します。**\[分析\]** を右クリックし、**\[ログを有効にする\]** を選択します。  
+9. <span data-ttu-id="f5fbe-144">イベント ビューアーのツリー ビューに移動**イベント ビューアー**、 **Applications and Services Logs**、 **Microsoft**、 **Windows**、 **アプリケーション サーバー-アプリケーション**です。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-144">In the tree view in Event Viewer, navigate to **Event Viewer**, **Applications and Services Logs**, **Microsoft**, **Windows**, **Application Server-Applications**.</span></span> <span data-ttu-id="f5fbe-145">右クリック**分析**選択**ログの有効化**です。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-145">Right-click **Analytic** and select **Enable Log**.</span></span>  
   
-10. [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)] を使用して、WCF テスト クライアントを開きます。  
+10. <span data-ttu-id="f5fbe-146">[!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)] を使用して、WCF テスト クライアントを開きます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-146">Using [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)], open the WCF test client.</span></span>  
   
-     WCF テスト クライアント \(WcfTestClient.exe\) は \<[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] のインストール フォルダー\>\\Common7\\IDE\\ フォルダーにあります。  
+     <span data-ttu-id="f5fbe-147">WCF テスト クライアント (WcfTestClient.exe) にあります、 \< [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)]インストール フォルダー > \Common7\IDE\ フォルダーです。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-147">The WCF test client (WcfTestClient.exe) is located in the \<[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] installation folder>\Common7\IDE\ folder.</span></span>  
   
-     [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] の既定のインストール フォルダーは C:\\Program Files\\Microsoft Visual Studio 10.0 です。  
+     <span data-ttu-id="f5fbe-148">[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] の既定のインストール フォルダーは C:\Program Files\Microsoft Visual Studio 10.0 です。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-148">The default [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] installation folder is C:\Program Files\Microsoft Visual Studio 10.0.</span></span>  
   
-11. WCF テスト クライアントで、**\[ファイル\]** メニューの **\[サービスの追加\]** をクリックします。  
+11. <span data-ttu-id="f5fbe-149">WCF テスト クライアントで、次のように選択します。**サービスの追加**から、**ファイル**メニュー。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-149">In WCF test client, select **Add Service** from the **File** menu.</span></span>  
   
-     前の手順でコピーしたローカル サービスの WSDL アドレスを入力ボックスに追加します。  
+     <span data-ttu-id="f5fbe-150">前の手順でコピーしたローカル サービスの WSDL アドレスを入力ボックスに追加します。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-150">Add the local service WSDL address you copied earlier in the input box.</span></span>  
   
-12. WCF テスト クライアントで、`GetStockPrice` をダブルクリックします。  
+12. <span data-ttu-id="f5fbe-151">WCF テスト クライアントで、`GetStockPrice` をダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-151">In WCF test client, double-click `GetStockPrice`.</span></span>  
   
-     `GetStockPrice` メソッドが開きます。この要求はパラメーターを 1 つ受け取ります。値 **Contoso** を使用します。  
+     <span data-ttu-id="f5fbe-152">`GetStockPrice` メソッドが開きます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-152">This opens the `GetStockPrice` method.</span></span> <span data-ttu-id="f5fbe-153">この要求はパラメーターを 1 つ受け取ります。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-153">The request accepts one parameter.</span></span> <span data-ttu-id="f5fbe-154">値を使用して**Contoso**です。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-154">Use the value **Contoso**.</span></span>  
   
-13. **\[起動\]** をクリックします。  
+13. <span data-ttu-id="f5fbe-155">をクリックして**呼び出す**です。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-155">Click **Invoke**.</span></span>  
   
-14. イベント ビューアーに戻り、**\[イベント ビューアー\]**、**\[アプリケーションとサービス ログ\]**、**\[Microsoft\]**、**\[Windows\]** の順に選択して **\[アプリケーション サーバー \- アプリケーション\]** に移動します。**\[分析\]** を右クリックし、**\[更新\]** を選択します。ワークフロー イベントのイベント ID の範囲は 100 ～ 199 です。  
+14. <span data-ttu-id="f5fbe-156">イベント ビューアーに戻りに移動**イベント ビューアー**、 **Applications and Services Logs**、 **Microsoft**、 **Windows**、 **アプリケーション サーバー-アプリケーション**です。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-156">Switch back to Event Viewer and navigate to **Event Viewer**, **Applications and Services Logs**, **Microsoft**, **Windows**, **Application Server-Applications**.</span></span> <span data-ttu-id="f5fbe-157">右クリック**分析**選択**更新**です。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-157">Right-click **Analytic** and select **Refresh**.</span></span> <span data-ttu-id="f5fbe-158">ワークフロー イベントのイベント ID の範囲は 100 ～ 199 です。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-158">The workflow events are in the event ID ranges 100-199.</span></span>  
   
-     イベントには、イベント ビューアーで表示できる注釈、変数、引数、およびカスタム追跡レコードが含まれます。  
+     <span data-ttu-id="f5fbe-159">イベントには、イベント ビューアーで表示できる注釈、変数、引数、およびカスタム追跡レコードが含まれます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-159">The events contain the annotations, variables, arguments and custom tracking records that can be viewed in the event viewer.</span></span>  
   
-## イベント ビューアーでのクリーンアップ  
- イベント ログの分析チャネルは、次の手順に従ってイベント ビューアーでクリーンアップできます。  
+## <a name="cleaning-up-in-the-event-viewer"></a><span data-ttu-id="f5fbe-160">イベント ビューアーでのクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="f5fbe-160">Cleaning up in the Event Viewer</span></span>  
+ <span data-ttu-id="f5fbe-161">イベント ログの分析チャネルは、次の手順に従ってイベント ビューアーでクリーンアップできます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-161">The analytic channel in the event log can be cleaned up in the Event Viewer by doing the following.</span></span>  
   
-#### クリーンアップするには \(省略可能\)  
+#### <a name="to-clean-up-optional"></a><span data-ttu-id="f5fbe-162">クリーンアップするには (省略可能)</span><span class="sxs-lookup"><span data-stu-id="f5fbe-162">To clean up (Optional)</span></span>  
   
-1.  イベント ビューアーを開きます。  
+1.  <span data-ttu-id="f5fbe-163">イベント ビューアーを開きます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-163">Open Event Viewer.</span></span>  
   
-2.  **\[イベント ビューアー\]**、**\[アプリケーションとサービス ログ\]**、**\[Microsoft\]**、**\[Windows\]** の順に選択して **\[アプリケーション サーバー \- アプリケーション\]** に移動します。**\[分析\]** を右クリックし、**\[ログの無効化\]** を選択します。  
+2.  <span data-ttu-id="f5fbe-164">移動**イベント ビューアー**、 **Applications and Services Logs**、 **Microsoft**、 **Windows**、**アプリケーションサーバー アプリケーション**です。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-164">Navigate to **Event Viewer**, **Applications and Services Logs**, **Microsoft**, **Windows**, **Application Server-Applications**.</span></span> <span data-ttu-id="f5fbe-165">右クリック**分析**選択**ログの無効化**です。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-165">Right-click **Analytic** and select **Disable Log**.</span></span>  
   
-3.  **\[イベント ビューアー\]**、**\[アプリケーションとサービス ログ\]**、**\[Microsoft\]**、**\[Windows\]** の順に選択して **\[アプリケーション サーバー \- アプリケーション\]** に移動します。**\[分析\]** を右クリックし、**\[ログのクリア\]** を選択します。  
+3.  <span data-ttu-id="f5fbe-166">移動**イベント ビューアー**、 **Applications and Services Logs**、 **Microsoft**、 **Windows**、**アプリケーションサーバー アプリケーション**です。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-166">Navigate to **Event Viewer**, **Applications and Services Logs**, **Microsoft**, **Windows**, **Application Server-Applications**.</span></span> <span data-ttu-id="f5fbe-167">右クリック**分析**選択**ログの消去**です。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-167">Right-click **Analytic** and select **Clear Log**.</span></span>  
   
-     **\[クリア\]** オプションを選択してイベントをクリアします。  
+     <span data-ttu-id="f5fbe-168">選択、**オフ**イベントをクリアするにはオプションです。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-168">Choose the **Clear** option to clear the events.</span></span>  
   
-## 既知の問題  
+## <a name="known-issue"></a><span data-ttu-id="f5fbe-169">既知の問題</span><span class="sxs-lookup"><span data-stu-id="f5fbe-169">Known Issue</span></span>  
   
 > [!NOTE]
->  イベント ビューアーの既知の問題により、ETW イベントをデコードできない場合があります。その場合、次のようなエラー メッセージが表示されます。  
+>  <span data-ttu-id="f5fbe-170">イベント ビューアーの既知の問題により、ETW イベントをデコードできない場合があります。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-170">There is a known issue in the Event Viewer where it may fail to decode ETW events.</span></span> <span data-ttu-id="f5fbe-171">その場合、次のようなエラー メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-171">You may see an error message that looks like the following.</span></span>  
 >   
->  `ソース "Microsoft-Windows-Application Server-Applications" からのイベント ID <id> の説明が見つかりません。このイベントを発生させるコンポーネントがローカル コンピューターにインストールされていないか、インストールが壊れています。ローカル コンピューターにコンポーネントをインストールするか、コンポーネントを修復してください。`  
+>  `The description for Event ID <id> from source Microsoft-Windows-Application Server-Applications cannot be found. Either the component that raises this event is not installed on your local computer or the installation is corrupted. You can install or repair the component on the local computer.`  
 >   
->  このエラーが発生した場合は、操作ウィンドウで **\[最新の情報に更新\]** をクリックしてください。これにより、イベントが正常にデコードされます。  
+>  <span data-ttu-id="f5fbe-172">このエラーが発生した場合はクリックして**更新**[操作] ウィンドウ。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-172">If you encounter this error, click **Refresh** in the actions pane.</span></span> <span data-ttu-id="f5fbe-173">これにより、イベントが正常にデコードされます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-173">The event should now decode properly.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="f5fbe-174">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-174">The samples may already be installed on your computer.</span></span> <span data-ttu-id="f5fbe-175">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-175">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="f5fbe-176">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-176">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="f5fbe-177">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="f5fbe-177">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\ExtractWfData`  
   
-## 参照  
- [AppFabric の監視のサンプル](http://go.microsoft.com/fwlink/?LinkId=193959)
+## <a name="see-also"></a><span data-ttu-id="f5fbe-178">関連項目</span><span class="sxs-lookup"><span data-stu-id="f5fbe-178">See Also</span></span>  
+ [<span data-ttu-id="f5fbe-179">AppFabric の監視のサンプル</span><span class="sxs-lookup"><span data-stu-id="f5fbe-179">AppFabric Monitoring Samples</span></span>](http://go.microsoft.com/fwlink/?LinkId=193959)

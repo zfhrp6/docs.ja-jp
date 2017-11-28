@@ -1,72 +1,73 @@
 ---
-title: "方法 : Windows フォームにコントロールを固定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Anchor プロパティ, 有効化 (サイズ変更可能なフォーム)"
-  - "コントロール [Windows フォーム], 固定"
-  - "コントロール [Windows フォーム], 配置"
-  - "フォーム, サイズ変更"
-  - "サイズ変更 (フォームを)"
-  - "画面の解像度とコントロールの表示"
-  - "Windows フォーム コントロール, 画面の解像度"
-  - "Windows フォーム コントロール, サイズ"
-  - "Windows フォーム, サイズ変更"
+title: "方法 : Windows フォームにコントロールを固定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Anchor property [Windows Forms], enabling resizable forms
+- Windows Forms controls, screen resolutions
+- resizing forms [Windows Forms]
+- Windows Forms controls, size
+- screen resolution and control display
+- controls [Windows Forms], anchoring
+- forms [Windows Forms], resizing
+- Windows Forms, resizing
+- controls [Windows Forms], positioning
 ms.assetid: 59ea914f-fbd3-427a-80fe-decd02f7ae6d
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4c6f7cc527c7409ffecab2ac67386d0f819cce3e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームにコントロールを固定する
-実行時にユーザーがサイズ変更できるフォームをデザインする場合は、フォームのコントロールが適切にサイズ変更され、再配置されるようにする必要があります。  フォームでコントロールのサイズを動的に変更するには、Windows フォーム コントロールの <xref:System.Windows.Forms.Control.Anchor%2A> プロパティを使用します。  <xref:System.Windows.Forms.Control.Anchor%2A> プロパティでは、コントロールの固定位置を定義します。  コントロールをフォームに固定し、フォームをサイズ変更する場合は、コントロールと固定位置の距離が保持されます。  たとえば、フォームの左端、右端、および下端に固定している <xref:System.Windows.Forms.TextBox> コントロールがあるとします。フォームをサイズ変更すると、<xref:System.Windows.Forms.TextBox> コントロールは水平方向にサイズ変更され、フォームの左右の端からの距離が保持されます。  また、フォームの下端からの距離が常に保持されるように、コントロール自体が垂直方向に再配置されます。  コントロールを固定せず、フォームをサイズ変更しない場合は、フォームの端からのコントロールの位置が変更されます。  
+# <a name="how-to-anchor-controls-on-windows-forms"></a><span data-ttu-id="dab77-102">方法 : Windows フォームにコントロールを固定する</span><span class="sxs-lookup"><span data-stu-id="dab77-102">How to: Anchor Controls on Windows Forms</span></span>
+<span data-ttu-id="dab77-103">実行時にサイズを変更できるユーザーをフォームをデザインする場合、フォーム上のコントロールがサイズし、位置を正しくです。</span><span class="sxs-lookup"><span data-stu-id="dab77-103">If you are designing a form that the user can resize at run time, the controls on your form should resize and reposition properly.</span></span> <span data-ttu-id="dab77-104">使用することができますが、フォームを動的にコントロールのサイズを変更するには、 <xref:System.Windows.Forms.Control.Anchor%2A> Windows フォーム コントロールのプロパティです。</span><span class="sxs-lookup"><span data-stu-id="dab77-104">To resize controls dynamically with the form, you can use the <xref:System.Windows.Forms.Control.Anchor%2A> property of Windows Forms controls.</span></span> <span data-ttu-id="dab77-105"><xref:System.Windows.Forms.Control.Anchor%2A>プロパティがコントロールの固定位置を定義します。</span><span class="sxs-lookup"><span data-stu-id="dab77-105">The <xref:System.Windows.Forms.Control.Anchor%2A> property defines an anchor position for the control.</span></span> <span data-ttu-id="dab77-106">フォームにコントロールを固定すると、フォームのサイズが、コントロールは、コントロールと、アンカー位置の間の距離を保持します。</span><span class="sxs-lookup"><span data-stu-id="dab77-106">When a control is anchored to a form and the form is resized, the control maintains the distance between the control and the anchor positions.</span></span> <span data-ttu-id="dab77-107">ある場合など、<xref:System.Windows.Forms.TextBox>フォームのサイズを変更、左、右、およびフォームの下端が固定されるコントロール、<xref:System.Windows.Forms.TextBox>フォームの横の右側と左側からの距離が維持されるため、水平方向にサイズ変更を制御します。</span><span class="sxs-lookup"><span data-stu-id="dab77-107">For example, if you have a <xref:System.Windows.Forms.TextBox> control that is anchored to the left, right, and bottom edges of the form, as the form is resized, the <xref:System.Windows.Forms.TextBox> control resizes horizontally so that it maintains the same distance from the right and left sides of the form.</span></span> <span data-ttu-id="dab77-108">さらに、コントロール配置自体垂直方向にその場所は、フォームの下部エッジからの距離では常にできるようにします。</span><span class="sxs-lookup"><span data-stu-id="dab77-108">In addition, the control positions itself vertically so that its location is always the same distance from the bottom edge of the form.</span></span> <span data-ttu-id="dab77-109">コントロールが固定されていないと、フォームのサイズが、フォームの端を基準としたコントロールの位置が変更されました。</span><span class="sxs-lookup"><span data-stu-id="dab77-109">If a control is not anchored and the form is resized, the position of the control relative to the edges of the form is changed.</span></span>  
   
- <xref:System.Windows.Forms.Control.Anchor%2A> プロパティは <xref:System.Windows.Forms.Control.AutoSize%2A> プロパティとやり取りします。  詳細については、「[AutoSize プロパティの概要](../../../../docs/framework/winforms/controls/autosize-property-overview.md)」を参照してください。  
+ <span data-ttu-id="dab77-110"><xref:System.Windows.Forms.Control.Anchor%2A>プロパティの対話、<xref:System.Windows.Forms.Control.AutoSize%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="dab77-110">The <xref:System.Windows.Forms.Control.Anchor%2A> property interacts with the <xref:System.Windows.Forms.Control.AutoSize%2A> property.</span></span> <span data-ttu-id="dab77-111">詳細については、次を参照してください。 [AutoSize プロパティの概要](../../../../docs/framework/winforms/controls/autosize-property-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="dab77-111">For more information, see [AutoSize Property Overview](../../../../docs/framework/winforms/controls/autosize-property-overview.md).</span></span>  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  <span data-ttu-id="dab77-112">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="dab77-112">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="dab77-113">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="dab77-113">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="dab77-114">詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="dab77-114">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### フォームにコントロールを固定するには  
+### <a name="to-anchor-a-control-on-a-form"></a><span data-ttu-id="dab77-115">フォーム上のコントロールを固定するには</span><span class="sxs-lookup"><span data-stu-id="dab77-115">To anchor a control on a form</span></span>  
   
-1.  固定するコントロールを選択します。  
+1.  <span data-ttu-id="dab77-116">固定するコントロールを選択します。</span><span class="sxs-lookup"><span data-stu-id="dab77-116">Select the control you want to anchor.</span></span>  
   
     > [!NOTE]
-    >  複数のコントロールを同時に固定できます。これを行うには、Ctrl キーを押しながら各コントロールをクリックして選択し、以降の手順を実行します。  
+    >  <span data-ttu-id="dab77-117">CTRL キーを押し、して選択し、各コントロールをクリックし、この手順の残りの部分で同時に複数のコントロールを固定できます。</span><span class="sxs-lookup"><span data-stu-id="dab77-117">You can anchor multiple controls simultaneously by pressing the CTRL key, clicking each control to select it, and then following the rest of this procedure.</span></span>  
   
-2.  **\[プロパティ\]** ウィンドウで、<xref:System.Windows.Forms.Control.Anchor%2A> プロパティの右にある矢印をクリックします。  
+2.  <span data-ttu-id="dab77-118">**プロパティ** ウィンドウの右側の矢印をクリックして、<xref:System.Windows.Forms.Control.Anchor%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="dab77-118">In the **Properties** window, click the arrow to the right of the <xref:System.Windows.Forms.Control.Anchor%2A> property.</span></span>  
   
-     エディターにクロスが表示されます。  
+     <span data-ttu-id="dab77-119">クロス エディターが表示されます。</span><span class="sxs-lookup"><span data-stu-id="dab77-119">An editor is displayed that shows a cross.</span></span>  
   
-3.  アンカーを設定するには、クロスの上、下、左、右のいずれかの部分をクリックします。  
+3.  <span data-ttu-id="dab77-120">アンカーを設定するには、左上、右、またはクロスの下部のセクションをクリックします。</span><span class="sxs-lookup"><span data-stu-id="dab77-120">To set an anchor, click the top, left, right, or bottom section of the cross.</span></span>  
   
-     既定では、コントロールが上と左に固定されます。  
+     <span data-ttu-id="dab77-121">コントロール、ページのトップへと左に固定既定です。</span><span class="sxs-lookup"><span data-stu-id="dab77-121">Controls are anchored to the top and left by default.</span></span>  
   
-4.  アンカー設定を無効にするには、クロスの該当するアームをクリックします。  
+4.  <span data-ttu-id="dab77-122">固定されているコントロールの辺をクリアするには、その arm クロスをクリックします。</span><span class="sxs-lookup"><span data-stu-id="dab77-122">To clear a side of the control that has been anchored, click that arm of the cross.</span></span>  
   
-5.  <xref:System.Windows.Forms.Control.Anchor%2A> プロパティ エディターを閉じるには、<xref:System.Windows.Forms.Control.Anchor%2A> プロパティ名をもう一度クリックします。  
+5.  <span data-ttu-id="dab77-123">閉じるには、<xref:System.Windows.Forms.Control.Anchor%2A>プロパティ エディターをクリックして、<xref:System.Windows.Forms.Control.Anchor%2A>プロパティ名をもう一度です。</span><span class="sxs-lookup"><span data-stu-id="dab77-123">To close the <xref:System.Windows.Forms.Control.Anchor%2A> property editor, click the <xref:System.Windows.Forms.Control.Anchor%2A> property name again.</span></span>  
   
- 実行時にフォームが表示されると、フォームの端からの距離を保持するために、コントロールのサイズが変更されます。  固定された端からの距離は、Windows フォーム デザイナーでコントロールを配置したときに定義した距離と常に等しくなります。  
+ <span data-ttu-id="dab77-124">実行時に、フォームが表示されたら、フォームの端からの距離を保持するコントロールのサイズを変更します。</span><span class="sxs-lookup"><span data-stu-id="dab77-124">When your form is displayed at run time, the control resizes to remain positioned at the same distance from the edge of the form.</span></span> <span data-ttu-id="dab77-125">アンカーのエッジからの距離。 常に同じ距離は、Windows フォーム デザイナーでコントロールが配置されているときに定義されています。</span><span class="sxs-lookup"><span data-stu-id="dab77-125">The distance from the anchored edge always remains the same as the distance defined when the control is positioned in the Windows Forms Designer.</span></span>  
   
 > [!NOTE]
->  <xref:System.Windows.Forms.ComboBox> コントロールなどの特定のコントロールでは、高さが制限されています。  フォームまたはコンテナーの下端にコントロールを固定する場合、制限された高さよりコントロールを高くすることはできません。  
+>  <span data-ttu-id="dab77-126">などの特定のコントロール、<xref:System.Windows.Forms.ComboBox>の高さに制限されている、制御します。</span><span class="sxs-lookup"><span data-stu-id="dab77-126">Certain controls, such as the <xref:System.Windows.Forms.ComboBox> control, have a limit to their height.</span></span> <span data-ttu-id="dab77-127">フォームまたはコンテナーの最下位にコントロールを固定強制的にコントロールを制限された高さを高くことはできません。</span><span class="sxs-lookup"><span data-stu-id="dab77-127">Anchoring the control to the bottom of its form or container cannot force the control to exceed its height limit.</span></span>  
   
- 継承したコントロールを固定できるようにするには、`Protected` にする必要があります。  コントロールのアクセス レベルを変更するには、**\[プロパティ\]** ウィンドウで `Modifiers` プロパティを設定します。  
+ <span data-ttu-id="dab77-128">継承されたコントロールがある必要があります`Protected`固定できるようにします。</span><span class="sxs-lookup"><span data-stu-id="dab77-128">Inherited controls must be `Protected` to be able to be anchored.</span></span> <span data-ttu-id="dab77-129">コントロールのアクセス レベルを変更するには、次のように設定します。 その`Modifiers`プロパティに、**プロパティ**ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="dab77-129">To change the access level of a control, set its `Modifiers` property in the **Properties** window.</span></span>  
   
-## 参照  
- [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)   
- [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)   
- [AutoSize プロパティの概要](../../../../docs/framework/winforms/controls/autosize-property-overview.md)   
- [方法 : Windows フォーム上のコントロールをドッキングする](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)   
- [チュートリアル : FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)   
- [チュートリアル : TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)   
- [チュートリアル : Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト](../../../../docs/framework/winforms/controls/windows-forms-controls-padding-autosize.md)
+## <a name="see-also"></a><span data-ttu-id="dab77-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="dab77-130">See Also</span></span>  
+ [<span data-ttu-id="dab77-131">Windows フォーム コントロール</span><span class="sxs-lookup"><span data-stu-id="dab77-131">Windows Forms Controls</span></span>](../../../../docs/framework/winforms/controls/index.md)  
+ [<span data-ttu-id="dab77-132">Windows フォームでのコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="dab77-132">Arranging Controls on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
+ [<span data-ttu-id="dab77-133">AutoSize プロパティの概要</span><span class="sxs-lookup"><span data-stu-id="dab77-133">AutoSize Property Overview</span></span>](../../../../docs/framework/winforms/controls/autosize-property-overview.md)  
+ [<span data-ttu-id="dab77-134">方法: Windows フォーム上のコントロールをドッキングする</span><span class="sxs-lookup"><span data-stu-id="dab77-134">How to: Dock Controls on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)  
+ [<span data-ttu-id="dab77-135">チュートリアル: FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="dab77-135">Walkthrough: Arranging Controls on Windows Forms Using a FlowLayoutPanel</span></span>](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)  
+ [<span data-ttu-id="dab77-136">チュートリアル: TableLayoutPanel を使用した Windows フォーム上のコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="dab77-136">Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel</span></span>](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)  
+ [<span data-ttu-id="dab77-137">チュートリアル: Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト</span><span class="sxs-lookup"><span data-stu-id="dab77-137">Walkthrough: Laying Out Windows Forms Controls with Padding, Margins, and the AutoSize Property</span></span>](../../../../docs/framework/winforms/controls/windows-forms-controls-padding-autosize.md)

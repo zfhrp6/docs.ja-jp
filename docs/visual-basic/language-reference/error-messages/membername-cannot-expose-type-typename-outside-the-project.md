@@ -1,31 +1,29 @@
 ---
-title: "&#39;&lt;membername&gt;&#39; cannot expose type &#39;&lt;typename&gt;&#39; outside the project through &lt;containertype&gt; &#39;&lt;containertypename&gt;&#39; | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc30909"
-  - "vbc30909"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30909"
+title: "&#39;です。&lt;membername&gt;&#39; の種類 &#39; に公開できません&lt;。typename&gt;&#39; 経由でプロジェクトの外部&lt;コンテナー&gt; &#39;&lt;containertypename&gt;&#39;です。"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc30909
+- vbc30909
+helpviewer_keywords: BC30909
 ms.assetid: ffa7395d-e182-4087-8ce8-079810fdae54
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: fd64c815286a5ffec111bcf1f68674a8e3558403
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &#39;&lt;membername&gt;&#39; cannot expose type &#39;&lt;typename&gt;&#39; outside the project through &lt;containertype&gt; &#39;&lt;containertypename&gt;&#39;
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-変数、プロシージャ パラメーター、または関数の戻り値がコンテナー外部に公開されていますが、これらの要素はコンテナー外部に公開してはならない型として宣言されています。  
+# <a name="39ltmembernamegt39-cannot-expose-type-39lttypenamegt39-outside-the-project-through-ltcontainertypegt-39ltcontainertypenamegt39"></a><span data-ttu-id="cac15-102">&#39;です。&lt;membername&gt;&#39; の種類 &#39; に公開できません&lt;。typename&gt;&#39; 経由でプロジェクトの外部&lt;コンテナー&gt; &#39;&lt;containertypename&gt;&#39;です。</span><span class="sxs-lookup"><span data-stu-id="cac15-102">&#39;&lt;membername&gt;&#39; cannot expose type &#39;&lt;typename&gt;&#39; outside the project through &lt;containertype&gt; &#39;&lt;containertypename&gt;&#39;</span></span>
+<span data-ttu-id="cac15-103">変数、プロシージャのパラメーター、または関数の戻り値は、そのコンテナーでは、外部に公開されるが、コンテナーの外部公開してはならないを型として宣言されています。</span><span class="sxs-lookup"><span data-stu-id="cac15-103">A variable, procedure parameter, or function return is exposed outside its container, but it is declared as a type that must not be exposed outside the container.</span></span>  
   
- 次のスケルトン コードは、このエラーが発生する状況の例を示しています。  
+ <span data-ttu-id="cac15-104">次のスケルトン コードは、このエラーが発生する状況を示しています。</span><span class="sxs-lookup"><span data-stu-id="cac15-104">The following skeleton code shows a situation that generates this error.</span></span>  
   
 ```  
 Private Class privateClass  
@@ -35,13 +33,13 @@ Public Class mainClass
 End Class  
 ```  
   
- 型を `Protected`、`Friend`、`Protected Friend`、または `Private` として宣言したときは、その宣言コンテキストの外側でのアクセスを制限することを意図しています。  このような型を、それよりもアクセス レベルの緩い変数のデータ型として使用することは、この目的に反します。  上記のスケルトン コードでは、`exposedVar` を `Public` として宣言しており、`privateClass` をコンテキスト外のコードに公開しようとしています。  
+ <span data-ttu-id="cac15-105">宣言されている型`Protected`、 `Friend`、 `Protected Friend`、または`Private`宣言コンテキストの外部アクセスを制限するためのものでは、します。</span><span class="sxs-lookup"><span data-stu-id="cac15-105">A type that is declared `Protected`, `Friend`, `Protected Friend`, or `Private` is intended to have limited access outside its declaration context.</span></span> <span data-ttu-id="cac15-106">データとして使用する制限の少ない方のアクセス権を持つ変数の型に反しますこの目的。</span><span class="sxs-lookup"><span data-stu-id="cac15-106">Using it as the data type of a variable with less restricted access would defeat this purpose.</span></span> <span data-ttu-id="cac15-107">上記のスケルトン コード`exposedVar`は`Public`公開と`privateClass`へのアクセス権のないコードにします。</span><span class="sxs-lookup"><span data-stu-id="cac15-107">In the preceding skeleton code, `exposedVar` is `Public` and would expose `privateClass` to code that should not have access to it.</span></span>  
   
- **Error ID:** BC30909  
+ <span data-ttu-id="cac15-108">**エラー ID:** BC30909</span><span class="sxs-lookup"><span data-stu-id="cac15-108">**Error ID:** BC30909</span></span>  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="cac15-109">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="cac15-109">To correct this error</span></span>  
   
--   変数、プロシージャ パラメーター、または関数の戻り値のアクセス レベルを変更して、少なくとも、そのデータ型のアクセス レベルと同じ厳しさにします。  
+-   <span data-ttu-id="cac15-110">変数、プロシージャのパラメーター、または関数のアクセス レベルの変更は、少なくとも最小限にそのデータ型のアクセス レベルに戻ります。</span><span class="sxs-lookup"><span data-stu-id="cac15-110">Change the access level of the variable, procedure parameter, or function return to be at least as restrictive as the access level of its data type.</span></span>  
   
-## 参照  
- [Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+## <a name="see-also"></a><span data-ttu-id="cac15-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="cac15-111">See Also</span></span>  
+ [<span data-ttu-id="cac15-112">Visual Basic でのアクセス レベル</span><span class="sxs-lookup"><span data-stu-id="cac15-112">Access levels in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)

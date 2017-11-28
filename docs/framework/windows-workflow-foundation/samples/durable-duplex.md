@@ -1,28 +1,32 @@
 ---
-title: "永続的な二重 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "永続的な二重"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4e76d1a1-f3d8-4a0f-8746-4a322cdff6eb
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 5426272f574619f8d7cf163d13e9b37cb23bf31f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 永続的な二重
-このサンプルでは、[!INCLUDE[wf](../../../../includes/wf-md.md)] のメッセージング アクティビティを使用して、永続的な双方向メッセージ交換を設定および構成する方法を示します。永続的な双方向メッセージ交換は、長期間行われる双方向メッセージ交換です。メッセージ交換の有効期間は、通信チャネルの有効期間およびサービス インスタンスのメモリ内有効期間よりも長い場合があります。  
+# <a name="durable-duplex"></a><span data-ttu-id="e7f9c-102">永続的な二重</span><span class="sxs-lookup"><span data-stu-id="e7f9c-102">Durable Duplex</span></span>
+<span data-ttu-id="e7f9c-103">このサンプルでは、[!INCLUDE[wf](../../../../includes/wf-md.md)] のメッセージング アクティビティを使用して、永続的な双方向メッセージ交換を設定および構成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-103">This sample demonstrates how to set up and configure durable duplex message exchange using the messaging activities in [!INCLUDE[wf](../../../../includes/wf-md.md)].</span></span> <span data-ttu-id="e7f9c-104">永続的な双方向メッセージ交換は、長期間行われる双方向メッセージ交換です。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-104">A durable duplex message exchange is a two-way message exchange that takes place over a long period of time.</span></span> <span data-ttu-id="e7f9c-105">メッセージ交換の有効期間は、通信チャネルの有効期間およびサービス インスタンスのメモリ内有効期間よりも長い場合があります。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-105">The lifetime of the message exchange may be longer than the lifetime of the communication channel and the in-memory lifetime of the service instances.</span></span>  
   
-## サンプルの詳細  
- このサンプルでは、[!INCLUDE[wf2](../../../../includes/wf2-md.md)] を使用して実装された 2 つの [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスで、永続的な双方向メッセージ交換を構成します。永続的な双方向メッセージ交換は、MSMQ を介して送信されて [.NET コンテキスト交換](http://go.microsoft.com/fwlink/?LinkID=166059)を使用して関連付けられる 2 つの一方向メッセージで構成されます。これらのメッセージは、<xref:System.ServiceModel.Activities.Send> メッセージング アクティビティと <xref:System.ServiceModel.Activities.Receive> メッセージング アクティビティを使用して送信されます。.NET コンテキスト交換は、送信メッセージに対してコールバック アドレスを指定するために使用します。どちらのサービスも Windows プロセス アクティブ化サービス \(WAS\) を使用してホストされ、サービス インスタンスの永続化を有効にするように構成されます。  
+## <a name="sample-details"></a><span data-ttu-id="e7f9c-106">サンプルの詳細</span><span class="sxs-lookup"><span data-stu-id="e7f9c-106">Sample Details</span></span>  
+ <span data-ttu-id="e7f9c-107">このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用して実装された 2 つの [!INCLUDE[wf2](../../../../includes/wf2-md.md)] サービスで、永続的な双方向メッセージ交換を構成します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-107">In this sample, two [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] services implemented using [!INCLUDE[wf2](../../../../includes/wf2-md.md)] are configured to have a durable duplex message exchange.</span></span> <span data-ttu-id="e7f9c-108">永続的な双方向メッセージ交換が MSMQ 経由で送信され、関連するを使用して 2 つの一方向のメッセージから構成される[.NET コンテキスト交換](http://go.microsoft.com/fwlink/?LinkID=166059)です。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-108">The durable duplex message exchange is composed from two one-way messages sent over MSMQ and correlated using [.NET Context Exchange](http://go.microsoft.com/fwlink/?LinkID=166059).</span></span> <span data-ttu-id="e7f9c-109">これらのメッセージは、<xref:System.ServiceModel.Activities.Send> メッセージング アクティビティと <xref:System.ServiceModel.Activities.Receive> メッセージング アクティビティを使用して送信されます。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-109">The messages are sent using the <xref:System.ServiceModel.Activities.Send> and <xref:System.ServiceModel.Activities.Receive> messaging activities.</span></span> <span data-ttu-id="e7f9c-110">.NET コンテキスト交換は、送信メッセージに対してコールバック アドレスを指定するために使用します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-110">.NET Context Exchange is use to specify the callback address on the sent messages.</span></span> <span data-ttu-id="e7f9c-111">どちらのサービスも Windows プロセス アクティブ化サービス (WAS) を使用してホストされ、サービス インスタンスの永続化を有効にするように構成されます。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-111">Both services are hosted using Windows Process Activation Services (WAS) and are configured to enable persistence of the services instances.</span></span>  
   
- 1 つ目のサービス \(Service1.xamlx\) は、処理を実行する送信サービス \(Service2.xamlx\) に要求を送信します。処理が完了したら、Service2.xamlx は、処理が完了したことを示す通知を Service1.xamlx に送り返します。ワークフロー コンソール アプリケーションによって、サービスがリッスンするキューが設定され、Service1.xamlx をアクティブ化するために最初の開始メッセージが送信されます。Service1.xamlx は、要求した処理が完了したことを示す通知を Service2.xamlx から受け取ったら、結果を XML ファイルに保存します。コールバック メッセージを待機している間、Service1.xamlx は既定の <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior> を使用してインスタンスの状態を永続化します。Service2.xamlx は、Service1.xamlx によって要求された処理を完了する一環としてインスタンスの状態を永続化します。  
+ <span data-ttu-id="e7f9c-112">1 つ目のサービス (Service1.xamlx) は、処理を実行する送信サービス (Service2.xamlx) に要求を送信します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-112">The first service (Service1.xamlx) sends a request to the send service (Service2.xamlx) to do some work.</span></span> <span data-ttu-id="e7f9c-113">処理が完了したら、Service2.xamlx は、処理が完了したことを示す通知を Service1.xamlx に送り返します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-113">Once the work is completed, Service2.xamlx sends a notification back to Service1.xamlx to indicate that the work has been completed.</span></span> <span data-ttu-id="e7f9c-114">ワークフロー コンソール アプリケーションによって、サービスがリッスンするキューが設定され、Service1.xamlx をアクティブ化するために最初の開始メッセージが送信されます。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-114">A workflow console application sets up the queues that the services are listening on and sends the initial Start message to activate Service1.xamlx.</span></span> <span data-ttu-id="e7f9c-115">Service1.xamlx は、要求した処理が完了したことを示す通知を Service2.xamlx から受け取ったら、結果を XML ファイルに保存します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-115">Once Service1.xamlx receives the notification from Service2.xamlx that the requested work has been completed, Service1.xamlx saves the result to an XML file.</span></span> <span data-ttu-id="e7f9c-116">コールバック メッセージを待機している間、Service1.xamlx は既定の <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior> を使用してインスタンスの状態を永続化します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-116">While waiting for the callback message, Service1.xamlx persists its instance state using the default <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior>.</span></span> <span data-ttu-id="e7f9c-117">Service2.xamlx は、Service1.xamlx によって要求された処理を完了する一環としてインスタンスの状態を永続化します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-117">Service2.xamlx persists its instance state as part of completing the work requested by Service1.xamlx.</span></span>  
   
- MSMQ を介して .NET コンテキスト交換を使用するようにサービスを構成するために、<xref:System.ServiceModel.Channels.ContextBindingElement> と <xref:System.ServiceModel.Channels.MsmqTransportBindingElement> から成るカスタム バインディングを使用するように両方のサービスが構成されます。<xref:System.ServiceModel.Channels.ContextBindingElement> ではコールバック アドレスが指定され、カスタム バインディングを使用して送信されるすべてのメッセージのコールバック コンテキスト ヘッダーに含まれます。カスタム バインディングを定義するコード例を次に示します。  
+ <span data-ttu-id="e7f9c-118">MSMQ を介して .NET コンテキスト交換を使用するようにサービスを構成するために、<xref:System.ServiceModel.Channels.ContextBindingElement> と <xref:System.ServiceModel.Channels.MsmqTransportBindingElement> から成るカスタム バインディングを使用するように両方のサービスが構成されます。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-118">To configure the services to use .NET Context Exchange over MSMQ, both services are configured to use a custom binding that consists of the <xref:System.ServiceModel.Channels.ContextBindingElement> and the <xref:System.ServiceModel.Channels.MsmqTransportBindingElement>.</span></span> <span data-ttu-id="e7f9c-119"><xref:System.ServiceModel.Channels.ContextBindingElement> ではコールバック アドレスが指定され、カスタム バインディングを使用して送信されるすべてのメッセージのコールバック コンテキスト ヘッダーに含まれます。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-119">A callback address is specified with the <xref:System.ServiceModel.Channels.ContextBindingElement> and is included in a callback context header with all messages sent using a custom binding.</span></span> <span data-ttu-id="e7f9c-120">カスタム バインディングを定義するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-120">The following code example defines the custom binding.</span></span>  
   
 ```xml  
 <configuration>  
@@ -41,16 +45,15 @@ caps.handback.revision: 10
           …  
      </system.serviceModel>  
 </configuration>  
-  
 ```  
   
 > [!NOTE]
->  このサンプルで使用するバインディングはセキュリティで保護されていません。アプリケーションを配置するときに、アプリケーションのセキュリティ要件に基づいてバインディングを構成する必要があります。  
+>  <span data-ttu-id="e7f9c-121">このサンプルで使用するバインディングはセキュリティで保護されていません。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-121">The binding used by this sample is not secure.</span></span> <span data-ttu-id="e7f9c-122">アプリケーションを配置するときに、アプリケーションのセキュリティ要件に基づいてバインディングを構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-122">When deploying your application you should configure your binding based on the security requirements of your application.</span></span>  
   
 > [!NOTE]
->  このサンプルで使用するキューはトランザクション キューではありません。トランザクション キューを使用して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージ交換を設定する方法を示したサンプルについては、「[MSMQ アクティベーション](../../../../docs/framework/wcf/samples/msmq-activation.md)」のサンプルを参照してください。  
+>  <span data-ttu-id="e7f9c-123">このサンプルで使用するキューはトランザクション キューではありません。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-123">The queues used in this sample are not transactional.</span></span> <span data-ttu-id="e7f9c-124">セットアップする方法を示すサンプルについて[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]トランザクション キューを使用して交換のメッセージを参照してください、 [MSMQ アクティブ化](../../../../docs/framework/wcf/samples/msmq-activation.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-124">For a sample that shows how to set up [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] message exchanges using transaction queues, see the [MSMQ Activation](../../../../docs/framework/wcf/samples/msmq-activation.md) sample.</span></span>  
   
- Service1.xamlx によって Service2.xamlx に送信されるメッセージは、Service2.xamlx のアドレスと前に定義したカスタム バインディングを使用して構成されるクライアント エンドポイントを使用して送信されます。Service2.xamlx から Service1.xamlx へのコールバックは、アドレスが明示的に構成されていないクライアント エンドポイントを使用して送信されます。アドレスは、Service1.xamlx によって送信されるコールバック コンテキストから取得されます。クライアント エンドポイントを定義するコード例を次に示します。  
+ <span data-ttu-id="e7f9c-125">Service1.xamlx によって Service2.xamlx に送信されるメッセージは、Service2.xamlx のアドレスと前に定義したカスタム バインドを使用して構成されるクライアント エンドポイントを使用して送信されます。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-125">The message sent by Service1.xamlx to Service2.xamlx is sent using a client endpoint configured with the address of Service2.xamlx and the custom binding defined previously.</span></span> <span data-ttu-id="e7f9c-126">Service2.xamlx から Service1.xamlx へのコールバックは、アドレスが明示的に構成されていないクライアント エンドポイントを使用して送信されます。アドレスは、Service1.xamlx によって送信されるコールバック コンテキストから取得されます。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-126">The callback from Service2.xamlx to Service1.xamlx is sent using a client endpoint with no explicitly configured address because the address is taken from the callback context sent by Service1.xamlx.</span></span> <span data-ttu-id="e7f9c-127">クライアント エンドポイントを定義するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-127">The following code example defines the client endpoints.</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -64,12 +67,11 @@ caps.handback.revision: 10
           …  
      </system.serviceModel>  
 </configuration>  
-  
 ```  
   
- このカスタム バインディングを使用するように net.msmq ベース アドレスの既定のプロトコル マッピングを変更することで、このカスタム バインディングを使用するエンドポイントを公開するコード例を次に示します。  
+ <span data-ttu-id="e7f9c-128">このカスタム バインディングを使用するように net.msmq ベース アドレスの既定のプロトコル マッピングを変更することで、このカスタム バインディングを使用するエンドポイントを公開するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-128">The following code example exposes endpoints using this custom binding by changing the default protocol mapping for net.msmq base addresses to use this custom binding.</span></span>  
   
-```  
+```xml  
 <configuration>  
      <system.serviceModel>  
           <protocolMapping>  
@@ -78,10 +80,9 @@ caps.handback.revision: 10
           …  
      </system.serviceModel>  
 </configuration>  
-  
 ```  
   
- <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior> の動作を両方のサービスに追加して永続性データベースの接続文字列を指定することで、両方のサービスの永続化を有効にするコード例を次に示します。  
+ <span data-ttu-id="e7f9c-129"><xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior> の動作を両方のサービスに追加して永続性データベースの接続文字列を指定することで、両方のサービスの永続化を有効にするコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-129">The following code example enables persistence for both services by adding the <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior> behavior to both services and specifying the connection string for the persistence database.</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -99,97 +100,96 @@ caps.handback.revision: 10
           </behaviors>  
      </system.serviceModel>  
 </configuration>  
-  
 ```  
   
-## システム要件  
- このサンプルには、次のコンポーネントが必要です。  
+## <a name="system-requirements"></a><span data-ttu-id="e7f9c-130">システム要件</span><span class="sxs-lookup"><span data-stu-id="e7f9c-130">System Requirements</span></span>  
+ <span data-ttu-id="e7f9c-131">このサンプルには、次のコンポーネントが必要です。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-131">This sample requires the following components.</span></span>  
   
-1.  インターネット インフォメーション サービス。  
+1.  <span data-ttu-id="e7f9c-132">インターネット インフォメーション サービス。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-132">Internet Information Services.</span></span>  
   
-2.  \[Internet Information Services\] \-\> \[IIS 6 と互換性のある管理\] \-\> \[IIS メタベースおよび IIS 6 構成との互換性\]。  
+2.  <span data-ttu-id="e7f9c-133">[Internet Information Services] -> [IIS 6 と互換性のある管理] -> [IIS メタベースおよび IIS 6 構成との互換性]。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-133">Internet Information Services -> IIS 6.0 Management Compatibility -> IIS Metabase and IIS 6.0 configuration compatibility.</span></span>  
   
-3.  \[World Wide Web サービス\] \-\> \[アプリケーション開発機能\] \-\> \[ASP.NET\]。  
+3.  <span data-ttu-id="e7f9c-134">[World Wide Web サービス] -> [アプリケーション開発機能] -> [ASP.NET]。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-134">World Wide Web Services -> Application Development Features -> ASP.NET.</span></span>  
   
-4.  Microsoft メッセージ キュー \(MSMQ\) サーバー。  
+4.  <span data-ttu-id="e7f9c-135">Microsoft メッセージ キュー (MSMQ) サーバー。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-135">Microsoft Message Queues (MSMQ) Server.</span></span>  
   
-#### このサンプルを使用するには  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="e7f9c-136">このサンプルを使用するには</span><span class="sxs-lookup"><span data-stu-id="e7f9c-136">To use this sample</span></span>  
   
-1.  永続性データベースと結果ディレクトリを設定します。  
+1.  <span data-ttu-id="e7f9c-137">永続性データベースと結果ディレクトリを設定します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-137">Set up the persistence database and the results directory.</span></span>  
   
-    1.  [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] コマンド プロンプトを開きます。  
+    1.  <span data-ttu-id="e7f9c-138">[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] のコマンド プロンプトを開きます。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-138">Open a [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] command prompt.</span></span>  
   
-    2.  このサンプルのフォルダーに移動して Setup.cmd を実行します。  
+    2.  <span data-ttu-id="e7f9c-139">このサンプルのフォルダーに移動して Setup.cmd を実行します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-139">Navigate to the folder for this sample and run Setup.cmd.</span></span>  
   
-2.  仮想アプリケーションを設定します。  
+2.  <span data-ttu-id="e7f9c-140">仮想アプリケーションを設定します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-140">Set up the virtual application.</span></span>  
   
-    1.  [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] コマンド プロンプトから次のコマンドを実行し、ASP.NET を登録します。  
+    1.  <span data-ttu-id="e7f9c-141">[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] コマンド プロンプトから次のコマンドを実行し、ASP.NET を登録します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-141">From a [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] command prompt, register ASP.NET by running the following command.</span></span>  
   
         ```  
         aspnet_regiis -i  
         ```  
   
-    2.  [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] を右クリックして **\[管理者として実行\]** をクリックし、管理者のアクセス許可で [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] を実行します。  
+    2.  <span data-ttu-id="e7f9c-142">実行[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)]を右クリックして、管理者権限を持つ[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)]を選択して**管理者として実行**です。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-142">Run [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] with administrator permissions by right-clicking [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] and selecting **Run as administrator**.</span></span>  
   
-    3.  [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] を使用して、DurableDuplex.sln ファイルを開きます。  
+    3.  <span data-ttu-id="e7f9c-143">[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] を使用して、DurableDuplex.sln ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-143">Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the DurableDuplex.sln file.</span></span>  
   
-3.  サービス キューを設定します。  
+3.  <span data-ttu-id="e7f9c-144">サービス キューを設定します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-144">Set up the service queues.</span></span>  
   
-    1.  DurableDuplex クライアントを実行するために、F5 キーを押します。  
+    1.  <span data-ttu-id="e7f9c-145">DurableDuplex クライアントを実行するために、F5 キーを押します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-145">To run the DurableDuplex client, press F5.</span></span>  
   
-    2.  コマンド プロンプトから `Compmgmt.msc` を実行して、**\[コンピューターの管理\]** コンソールを開きます。  
+    2.  <span data-ttu-id="e7f9c-146">開く、**コンピューターの管理**コンソールを実行して`Compmgmt.msc`コマンド プロンプトからです。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-146">Open the **Computer Management** console by running `Compmgmt.msc` from a command prompt.</span></span>  
   
-    3.  **\[サービスとアプリケーション\]**、**\[メッセージ キュー\]**、**\[専用キュー\]** の順に展開します。  
+    3.  <span data-ttu-id="e7f9c-147">展開**サービスとアプリケーション**、**メッセージ キュー**です。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-147">Expand **Service and Applications**, **Message Queuing**.</span></span> <span data-ttu-id="e7f9c-148">**専用キュー**です。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-148">**Private Queues**.</span></span>  
   
-    4.  durableduplex\/service1.xamlx キューと durableduplex\/service2.xamlx キューを右クリックし、**\[プロパティ\]** をクリックします。  
+    4.  <span data-ttu-id="e7f9c-149">Durableduplex/service1.xamlx キューと durableduplex/service2.xamlx キューを右クリックし **プロパティ**です。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-149">Right-click the durableduplex/service1.xamlx and durableduplex/service2.xamlx queues and select **Properties**.</span></span>  
   
-    5.  **\[セキュリティ\]** タブをクリックし、両方のキューで Everyone グループに対して **\[メッセージの受信\]**、**\[メッセージのピーク\]**、および **\[メッセージの送信\]** アクセス許可を与えます。  
+    5.  <span data-ttu-id="e7f9c-150">選択、**セキュリティ**でき、タブ**Everyone メッセージの受信**、**メッセージのピーク**と**メッセージの送信**両方のキューのアクセス許可。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-150">Select the **Security** tab and allow **Everyone Receive Message**, **Peek Message** and **Send Message** permissions for both queues.</span></span>  
   
-    6.  インターネット インフォメーション サービス \(IIS\) マネージャーを開きます。  
+    6.  <span data-ttu-id="e7f9c-151">インターネット インフォメーション サービス (IIS) マネージャーを開きます。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-151">Open Internet Information Services (IIS) Manager.</span></span>  
   
-    7.  **\[サーバー\]**、**\[サイト\]**、**\[既定の Web サイト\]**、**\[private\]**、**\[永続的な二重\]** の順に参照し、**\[詳細オプション\]** をクリックします。  
+    7.  <span data-ttu-id="e7f9c-152">参照**サーバー**、**サイト**、**既定の Web サイト**、**プライベート**、**永続的な二重**を選択**Advanced Options**です。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-152">Browse to **Server**, **Sites**, **Default Web site**, **private**, **Durable Duplex** and select **Advanced Options**.</span></span>  
   
-    8.  **\[有効なプロトコル\]** を **http,net.msmq** に変更します。  
+    8.  <span data-ttu-id="e7f9c-153">変更、**有効なプロトコル**に**http, net.msmq**です。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-153">Change the **Enabled Protocols** to **http,net.msmq**.</span></span>  
   
-4.  サンプルを実行します。  
+4.  <span data-ttu-id="e7f9c-154">サンプルを実行します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-154">Run the sample.</span></span>  
   
-    1.  http:\/\/localhost\/private\/durableduplex\/service1.xamlx および http:\/\/localhost\/private\/durableduplex\/service2.xamlx を参照し、両方のサービスが実行されていることを確認します。  
+    1.  <span data-ttu-id="e7f9c-155">http://localhost/private/durableduplex/service1.xamlx および http://localhost/private/durableduplex/service2.xamlx を参照し、両方のサービスが実行されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-155">Browse to http://localhost/private/durableduplex/service1.xamlx and http://localhost/private/durableduplex/service2.xamlx to ensure that both services are running.</span></span>  
   
-    2.  F5 キーを押して DurableDuplexClient を実行します。  
+    2.  <span data-ttu-id="e7f9c-156">F5 キーを押して DurableDuplexClient を実行します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-156">Press F5 to run DurableDuplexClient.</span></span>  
   
-         永続的な双方向メッセージ交換が完了したら、メッセージ交換の結果を示す result.xml ファイルが C:\\Inbox フォルダーに保存されます。  
+         <span data-ttu-id="e7f9c-157">永続的な双方向メッセージ交換が完了したら、メッセージ交換の結果を示す result.xml ファイルが C:\Inbox フォルダーに保存されます。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-157">When the durable duplex message exchange completes a result.xml file is saved to the C:\Inbox folder and contains the result of the message exchange.</span></span>  
   
-#### クリーンアップするには \(省略可能\)  
+#### <a name="to-cleanup-optional"></a><span data-ttu-id="e7f9c-158">クリーンアップするには (省略可能)</span><span class="sxs-lookup"><span data-stu-id="e7f9c-158">To cleanup (Optional)</span></span>  
   
-1.  Cleanup.cmd を実行します。  
+1.  <span data-ttu-id="e7f9c-159">Cleanup.cmd を実行します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-159">Run Cleanup.cmd.</span></span>  
   
-    1.  [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] コマンド プロンプトを開きます。  
+    1.  <span data-ttu-id="e7f9c-160">[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] のコマンド プロンプトを開きます。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-160">Open a [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] command prompt.</span></span>  
   
-    2.  このサンプルのフォルダーに移動して Cleanup.cmd を実行します。  
+    2.  <span data-ttu-id="e7f9c-161">このサンプルのフォルダーに移動して Cleanup.cmd を実行します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-161">Navigate to the folder for this sample and run Cleanup.cmd.</span></span>  
   
-2.  サービスの仮想アプリケーションを削除します。  
+2.  <span data-ttu-id="e7f9c-162">サービスの仮想アプリケーションを削除します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-162">Remove the virtual application for the services.</span></span>  
   
-    1.  コマンド プロンプトから `Inetmgr.exe` を実行して、インターネット インフォメーション サービス \(IIS\) マネージャーを開きます。  
+    1.  <span data-ttu-id="e7f9c-163">実行して、インターネット インフォメーション サービス (IIS) マネージャーを開く`Inetmgr.exe`コマンド プロンプトからです。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-163">Open the Internet Information Services (IIS) Manager by running `Inetmgr.exe` from a command prompt.</span></span>  
   
-    2.  既定の Web サイトを参照して、**private** 仮想ディレクトリを削除します。  
+    2.  <span data-ttu-id="e7f9c-164">既定の Web サイトを参照し、削除、**プライベート**仮想ディレクトリです。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-164">Browse to the default Web site and remove the **private** virtual directory.</span></span>  
   
-3.  このサンプルに対して設定されているキューを削除します。  
+3.  <span data-ttu-id="e7f9c-165">このサンプルに対して設定されているキューを削除します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-165">Remove the queues set up for this sample.</span></span>  
   
-    1.  コマンド プロンプトから `Compmgmt.msc` を実行して、\[コンピューターの管理\] コンソールを開きます。  
+    1.  <span data-ttu-id="e7f9c-166">実行して、コンピューターの管理コンソールを開きます`Compmgmt.msc`コマンド プロンプトからです。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-166">Open the Computer Management console by running `Compmgmt.msc` from a command prompt.</span></span>  
   
-    2.  **\[サービスとアプリケーション\]**、**\[メッセージ キュー\]**、**\[専用キュー\]** の順に展開します。  
+    2.  <span data-ttu-id="e7f9c-167">展開**サービスとアプリケーション**、**メッセージ キュー**、**専用キュー**です。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-167">Expand **Service and Applications**, **Message Queuing**, **Private Queues**.</span></span>  
   
-    3.  durableduplex\/service1.xamlx キューと durableduplex\/service2.xamlx キューを削除します。  
+    3.  <span data-ttu-id="e7f9c-168">durableduplex/service1.xamlx キューと durableduplex/service2.xamlx キューを削除します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-168">Delete the durableduplex/service1.xamlx and durableduplex/service2.xamlx queues.</span></span>  
   
-4.  C:\\Inbox ディレクトリを削除します。  
+4.  <span data-ttu-id="e7f9c-169">C:\Inbox ディレクトリを削除します。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-169">Remove the C:\Inbox directory.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="e7f9c-170">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-170">The samples may already be installed on your machine.</span></span> <span data-ttu-id="e7f9c-171">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-171">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="e7f9c-172">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-172">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="e7f9c-173">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="e7f9c-173">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\DurableDuplex`  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="e7f9c-174">関連項目</span><span class="sxs-lookup"><span data-stu-id="e7f9c-174">See Also</span></span>

@@ -1,59 +1,62 @@
 ---
-title: "方法: Windows サービスを続行する (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ServiceController.Continue"
-helpviewer_keywords: 
-  - "一時停止 (Windows サービス アプリケーションを)"
-  - "Windows サービス アプリケーション, 一時中断"
+title: "方法: Windows サービスを続行する (Visual Basic)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: vb
+f1_keywords: ServiceController.Continue
+helpviewer_keywords:
+- Windows Service applications, pausing
+- pausing Windows Service applications
 ms.assetid: e5d13760-4c83-4b0d-abef-39852677cd7a
-caps.latest.revision: 16
-author: "ghogen"
-ms.author: "ghogen"
-manager: "douge"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: ghogen
+ms.author: ghogen
+manager: douge
+ms.openlocfilehash: 28dbbf2376416a340ad7853c026b2f763f695dcb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法: Windows サービスを続行する (Visual Basic)
-次に示すのは、<xref:System.ServiceProcess.ServiceController> コンポーネントを使用して、ローカル コンピューターの IIS Admin サービスを続行する例です。  
+# <a name="how-to-continue-a-windows-service-visual-basic"></a><span data-ttu-id="9f3c0-102">方法: Windows サービスを続行する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9f3c0-102">How to: Continue a Windows Service (Visual Basic)</span></span>
+<span data-ttu-id="9f3c0-103">この例では、<xref:System.ServiceProcess.ServiceController>コンポーネントをローカル コンピューターで、IIS Admin サービスを続行します。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-103">This example uses the <xref:System.ServiceProcess.ServiceController> component to continue the IIS Admin service on the local computer.</span></span>  
   
-## 使用例  
+## <a name="example"></a><span data-ttu-id="9f3c0-104">例</span><span class="sxs-lookup"><span data-stu-id="9f3c0-104">Example</span></span>  
  [!code-vb[VbRadconService#11](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#11)]  
 [!code-vb[VbRadconService#13](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#13)]  
   
- このコードの例は、IntelliSense コード スニペットとしても利用できます。  コード スニペット ピッカーでは、このコードは、**\[Windows オペレーティング システム\] \> \[Windows サービス\]** にあります。  詳細については、「[コード スニペット](../Topic/Code%20Snippets.md)」を参照してください。  
+ <span data-ttu-id="9f3c0-105">このコード例は、IntelliSense コード スニペットとしても利用できます。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-105">This code example is also available as an IntelliSense code snippet.</span></span> <span data-ttu-id="9f3c0-106">配置されているコード スニペット ピッカーで**Windows オペレーティング システム > Windows サービス**です。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-106">In the code snippet picker, it is located in **Windows Operating System > Windows Services**.</span></span> <span data-ttu-id="9f3c0-107">詳細については、「[Code Snippets](/visualstudio/ide/code-snippets)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-107">For more information, see [Code Snippets](/visualstudio/ide/code-snippets).</span></span>  
   
-## コードのコンパイル  
- この例には、次の項目が必要です。  
+## <a name="compiling-the-code"></a><span data-ttu-id="9f3c0-108">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="9f3c0-108">Compiling the Code</span></span>  
+ <span data-ttu-id="9f3c0-109">この例で必要な要素は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-109">This example requires:</span></span>  
   
--   System.serviceprocess.dll に対するプロジェクト参照。  
+-   <span data-ttu-id="9f3c0-110">System.serviceprocess.dll へのプロジェクト参照。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-110">A project reference to System.serviceprocess.dll.</span></span>  
   
--   <xref:System.ServiceProcess> 名前空間のメンバーに対するアクセス。  コード内でメンバー名を完全修飾していない場合は、`Imports` ステートメントを追加します。  詳細については、「[Imports Statement \(.NET Namespace and Type\)](../../../ocs/visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)」を参照してください。  
+-   <span data-ttu-id="9f3c0-111"><xref:System.ServiceProcess> 名前空間のメンバーへのアクセス許可。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-111">Access to the members of the <xref:System.ServiceProcess> namespace.</span></span> <span data-ttu-id="9f3c0-112">コード内でメンバー名を完全修飾していない場合は、`Imports` ステートメントを追加します。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-112">Add an `Imports` statement if you are not fully qualifying member names in your code.</span></span> <span data-ttu-id="9f3c0-113">詳細については、「[Imports ステートメント (.NET 名前空間および型)](~/docs/visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-113">For more information, see [Imports Statement (.NET Namespace and Type)](~/docs/visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).</span></span>  
   
-## 信頼性の高いプログラミング  
- <xref:System.ServiceProcess.ServiceController> クラスの <xref:System.ServiceProcess.ServiceController.MachineName%2A> プロパティは、既定ではローカル コンピューターに設定されています。  他のコンピューターの Windows サービスを参照するには、<xref:System.ServiceProcess.ServiceController.MachineName%2A> プロパティを目的のコンピューター名に変更します。  
+## <a name="robust-programming"></a><span data-ttu-id="9f3c0-114">信頼性の高いプログラミング</span><span class="sxs-lookup"><span data-stu-id="9f3c0-114">Robust Programming</span></span>  
+ <span data-ttu-id="9f3c0-115"><xref:System.ServiceProcess.ServiceController.MachineName%2A>のプロパティ、<xref:System.ServiceProcess.ServiceController>クラスは既定では、ローカル コンピューターです。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-115">The <xref:System.ServiceProcess.ServiceController.MachineName%2A> property of the <xref:System.ServiceProcess.ServiceController> class is the local computer by default.</span></span> <span data-ttu-id="9f3c0-116">別のコンピューターで Windows サービスを参照するには、変更、<xref:System.ServiceProcess.ServiceController.MachineName%2A>プロパティをそのコンピューターの名前にします。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-116">To reference Windows services on another computer, change the <xref:System.ServiceProcess.ServiceController.MachineName%2A> property to the name of that computer.</span></span>  
   
- サービス コントローラーのステータスが <xref:System.ServiceProcess.ServiceControllerStatus> になるまでは、そのサービスに対して <xref:System.ServiceProcess.ServiceController.Continue%2A> メソッドを呼び出すことはできません。  
+ <span data-ttu-id="9f3c0-117">呼び出すことはできません、<xref:System.ServiceProcess.ServiceController.Continue%2A>サービス コント ローラーの状態になるまで、サービスに対してメソッド<xref:System.ServiceProcess.ServiceControllerStatus.Paused>です。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-117">You cannot call the <xref:System.ServiceProcess.ServiceController.Continue%2A> method on a service until the service controller status is <xref:System.ServiceProcess.ServiceControllerStatus.Paused>.</span></span>  
   
- 次の条件を満たす場合は、例外が発生する可能性があります。  
+ <span data-ttu-id="9f3c0-118">次の条件を満たす場合は、例外が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-118">The following conditions may cause an exception:</span></span>  
   
--   サービスを再開できない場合  \(<xref:System.InvalidOperationException>\)  
+-   <span data-ttu-id="9f3c0-119">サービスを再開することはできません。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-119">The service cannot be resumed.</span></span> <span data-ttu-id="9f3c0-120">(<xref:System.InvalidOperationException>)</span><span class="sxs-lookup"><span data-stu-id="9f3c0-120">(<xref:System.InvalidOperationException>)</span></span>  
   
--   システム API へのアクセスでエラーが発生した場合  \(<xref:System.ComponentModel.Win32Exception>\)  
+-   <span data-ttu-id="9f3c0-121">システム API にアクセス中にエラーが発生しました。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-121">An error occurred when accessing a system API.</span></span> <span data-ttu-id="9f3c0-122">(<xref:System.ComponentModel.Win32Exception>)</span><span class="sxs-lookup"><span data-stu-id="9f3c0-122">(<xref:System.ComponentModel.Win32Exception>)</span></span>  
   
-## .NET Framework セキュリティ  
- <xref:System.ServiceProcess.ServiceControllerPermissionAccess> 列挙体を使用して <xref:System.ServiceProcess.ServiceControllerPermission> クラスでアクセス許可を設定することにより、使用するコンピューターのサービスに対する制御を制限できます。  
+## <a name="net-framework-security"></a><span data-ttu-id="9f3c0-123">.NET Framework セキュリティ</span><span class="sxs-lookup"><span data-stu-id="9f3c0-123">.NET Framework Security</span></span>  
+ <span data-ttu-id="9f3c0-124">使用して、コンピューター上のサービスのコントロールを制限できる、<xref:System.ServiceProcess.ServiceControllerPermissionAccess>列挙型のアクセス許可設定を<xref:System.ServiceProcess.ServiceControllerPermission>クラスです。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-124">Control of services on the computer may be restricted by using the <xref:System.ServiceProcess.ServiceControllerPermissionAccess> enumeration to set permissions in the <xref:System.ServiceProcess.ServiceControllerPermission> class.</span></span>  
   
- <xref:System.Security.Permissions.PermissionState> 列挙体を使用して <xref:System.Security.Permissions.SecurityPermission> クラスでアクセス許可を設定することにより、サービス情報へのアクセスを制限できます。  
+ <span data-ttu-id="9f3c0-125">使用してサービスの情報へのアクセスを制限することがあります、<xref:System.Security.Permissions.PermissionState>列挙型のアクセス許可設定を<xref:System.Security.Permissions.SecurityPermission>クラスです。</span><span class="sxs-lookup"><span data-stu-id="9f3c0-125">Access to service information may be restricted by using the <xref:System.Security.Permissions.PermissionState> enumeration to set permissions in the <xref:System.Security.Permissions.SecurityPermission> class.</span></span>  
   
-## 参照  
- <xref:System.ServiceProcess.ServiceController>   
- <xref:System.ServiceProcess.ServiceControllerStatus>   
- [方法: Windows サービスを一時中断する \(Visual Basic\)](../../../docs/framework/windows-services/how-to-pause-a-windows-service-visual-basic.md)
+## <a name="see-also"></a><span data-ttu-id="9f3c0-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="9f3c0-126">See Also</span></span>  
+ <xref:System.ServiceProcess.ServiceController>  
+ <xref:System.ServiceProcess.ServiceControllerStatus>  
+ [<span data-ttu-id="9f3c0-127">方法: Windows サービス (Visual Basic) を一時停止</span><span class="sxs-lookup"><span data-stu-id="9f3c0-127">How to: Pause a Windows Service (Visual Basic)</span></span>](../../../docs/framework/windows-services/how-to-pause-a-windows-service-visual-basic.md)

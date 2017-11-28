@@ -1,41 +1,44 @@
 ---
-title: "カスタム バインディングを介したメタデータの公開と取得 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "カスタム バインディングを介したメタデータの公開と取得"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 904e11b4-d90e-45c6-9ee5-c3472c90008c
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 83aba5cc938b926285f78efd1ab8d62493ad59d7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# カスタム バインディングを介したメタデータの公開と取得
-<xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=fullName> は、サービスにメタデータ エンドポイントを追加するためのサポートを提供します。これらのメタデータ エンドポイントは、`?wsdl` クエリ文字列を持つ URL での HTTP GET 要求、および WS\-MetadataExchange \(MEX\) 仕様で定義された WS\-Transfer GET 要求に応答できます。MEX エンドポイントは、<xref:System.ServiceModel.Description.IMetadataExchange?displayProperty=fullName> コントラクトを実装します。  
+# <a name="publishing-and-retrieving-metadata-over-a-custom-binding"></a><span data-ttu-id="49e62-102">カスタム バインディングを介したメタデータの公開と取得</span><span class="sxs-lookup"><span data-stu-id="49e62-102">Publishing and Retrieving Metadata Over a Custom Binding</span></span>
+<span data-ttu-id="49e62-103"><xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> は、サービスにメタデータ エンドポイントを追加するためのサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="49e62-103">The <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> provides support for adding metadata endpoint to a service.</span></span> <span data-ttu-id="49e62-104">これらのメタデータ エンドポイントがある URL に HTTP GET 要求に応答できる、 `?wsdl` querystring および Ws-metadataexchange (MEX) 仕様で定義された Ws-transfer GET 要求にします。</span><span class="sxs-lookup"><span data-stu-id="49e62-104">These metadata endpoints can respond to HTTP GET requests at a URL that has a `?wsdl` querystring and to WS-Transfer GET requests as defined in the WS-MetadataExchange (MEX) specification.</span></span> <span data-ttu-id="49e62-105">MEX エンドポイントは、<xref:System.ServiceModel.Description.IMetadataExchange?displayProperty=nameWithType> コントラクトを実装します。</span><span class="sxs-lookup"><span data-stu-id="49e62-105">MEX endpoints implement the <xref:System.ServiceModel.Description.IMetadataExchange?displayProperty=nameWithType> contract.</span></span>  
   
-## カスタム バインディングを介したメタデータの公開  
- HTTP GET メタデータ エンドポイントと HTTPS GET メタデータ エンドポイントを有効にするには、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A?displayProperty=fullName> プロパティまたは <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A?displayProperty=fullName> プロパティを `true` に設定します。これらのエンドポイントのバインディングは構成できません。  
+## <a name="publishing-metadata-over-a-custom-binding"></a><span data-ttu-id="49e62-106">カスタム バインディングを介したメタデータの公開</span><span class="sxs-lookup"><span data-stu-id="49e62-106">Publishing Metadata Over a Custom Binding</span></span>  
+ <span data-ttu-id="49e62-107">HTTP GET メタデータ エンドポイントと HTTPS GET メタデータ エンドポイントを有効にするには、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A?displayProperty=nameWithType> プロパティまたは <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A?displayProperty=nameWithType> プロパティを `true` に設定します。</span><span class="sxs-lookup"><span data-stu-id="49e62-107">The HTTP GET metadata endpoints and HTTPS GET metadata endpoints are enabled by setting the <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A?displayProperty=nameWithType> or <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A?displayProperty=nameWithType> properties to `true`.</span></span> <span data-ttu-id="49e62-108">これらのエンドポイントのバインディングは構成できません。</span><span class="sxs-lookup"><span data-stu-id="49e62-108">The bindings for these endpoints cannot be configured.</span></span>  
   
- ただし、<xref:System.ServiceModel.Description.IMetadataExchange> コントラクトは、カスタム バインディングを使用するエンドポイントを含むすべてのエンドポイントで使用できます。これは、<xref:System.ServiceModel.Description.IMetadataExchange> エンドポイントは他のすべての [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービス エンドポイントと同じであるためです。システム指定のバインディングの構成を変更する方法または <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=fullName> の構成方法を理解している場合は、<xref:System.ServiceModel.Description.IMetadataExchange> エンドポイントで使用されるバインディングを構成できます。  
+ <span data-ttu-id="49e62-109">ただし、<xref:System.ServiceModel.Description.IMetadataExchange> コントラクトは、カスタム バインディングを使用するエンドポイントを含むすべてのエンドポイントで使用できます。これは、<xref:System.ServiceModel.Description.IMetadataExchange> エンドポイントは他のすべての [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービス エンドポイントと同じであるためです。</span><span class="sxs-lookup"><span data-stu-id="49e62-109">The <xref:System.ServiceModel.Description.IMetadataExchange> contract, however, can be used with any endpoint, including those that use custom bindings, because <xref:System.ServiceModel.Description.IMetadataExchange> endpoints are identical to any other [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service endpoint.</span></span> <span data-ttu-id="49e62-110">システム指定のバインディングの構成を変更する方法または <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> の構成方法を理解している場合は、<xref:System.ServiceModel.Description.IMetadataExchange> エンドポイントで使用されるバインディングを構成できます。</span><span class="sxs-lookup"><span data-stu-id="49e62-110">If you know how to modify the configuration of a system-provided binding, or you know how to configure a <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType>, then you can configure a binding for use with an <xref:System.ServiceModel.Description.IMetadataExchange> endpoint.</span></span>  
   
-## カスタム バインディングを介したメタデータの取得  
- メタデータは、標準の HTTP 要求または HTTPS GET 要求を使用して HTTP Get および HTTPS Get メタデータ エンドポイントから取得できます。  
+## <a name="retrieving-metadata-over-a-custom-binding"></a><span data-ttu-id="49e62-111">カスタム バインディングを介したメタデータの取得</span><span class="sxs-lookup"><span data-stu-id="49e62-111">Retrieving Metadata Over a Custom Binding</span></span>  
+ <span data-ttu-id="49e62-112">メタデータは、標準の HTTP 要求または HTTPS GET 要求を使用して HTTP Get および HTTPS Get メタデータ エンドポイントから取得できます。</span><span class="sxs-lookup"><span data-stu-id="49e62-112">Metadata can be retrieved from HTTP Get and HTTPS Get metadata endpoints using standard HTTP or HTTPS GET requests.</span></span>  
   
- MEX メタデータ エンドポイントからメタデータを取得するには、通常、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされている標準の MEX バインディングのいずれかを使用できます。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<xref:System.ServiceModel.Description.MetadataExchangeBindings?displayProperty=fullName>.<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> 型および Svcutil.exe ツールでは、指定したメタデータ エンドポイントのアドレスに基づいて、標準の MEX バインディングの 1 つが自動的に選択されます。  
+ <span data-ttu-id="49e62-113">MEX メタデータ エンドポイントからメタデータを取得するには、通常、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされている標準の MEX バインディングのいずれかを使用できます。</span><span class="sxs-lookup"><span data-stu-id="49e62-113">To retrieve metadata from a MEX metadata endpoint you can generally use one of the standard MEX bindings supported by [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="49e62-114">「<xref:System.ServiceModel.Description.MetadataExchangeBindings?displayProperty=nameWithType>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="49e62-114"> <xref:System.ServiceModel.Description.MetadataExchangeBindings?displayProperty=nameWithType>.</span></span> <span data-ttu-id="49e62-115"><xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> 型および Svcutil.exe ツールでは、指定したメタデータ エンドポイントのアドレスに基づいて、標準の MEX バインディングの 1 つが自動的に選択されます。</span><span class="sxs-lookup"><span data-stu-id="49e62-115">The <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> type and the Svcutil.exe tool automatically select one of these standard MEX bindings based on the address of the specified metadata endpoint.</span></span>  
   
- MEX メタデータ エンドポイントで標準の MEX バインディングとは異なるバインディングを使用する場合は、コードを使用するか、<xref:System.ServiceModel.Description.IMetadataExchange> クライアント エンドポイント構成を提供することにより、<xref:System.ServiceModel.Description.MetadataExchangeClient> で使用されるバインディングを構成できます。Svcutil.exe ツールは、構成ファイルから、メタデータ エンドポイント アドレスの URI スキームと同じ名前を持つ <xref:System.ServiceModel.Description.IMetadataExchange> クライアント エンドポイント構成を自動的に読み込みます。  
+ <span data-ttu-id="49e62-116">MEX メタデータ エンドポイントで標準の MEX バインディングとは異なるバインディングを使用する場合は、コードを使用するか、<xref:System.ServiceModel.Description.MetadataExchangeClient> クライアント エンドポイント構成を提供することにより、<xref:System.ServiceModel.Description.IMetadataExchange> で使用されるバインディングを構成できます。</span><span class="sxs-lookup"><span data-stu-id="49e62-116">If a MEX metadata endpoint uses a different binding than one of the standard MEX bindings, you can configure the binding used by the <xref:System.ServiceModel.Description.MetadataExchangeClient> using code or by providing an <xref:System.ServiceModel.Description.IMetadataExchange> client endpoint configuration.</span></span> <span data-ttu-id="49e62-117">Svcutil.exe ツールは、構成ファイルから、メタデータ エンドポイント アドレスの URI スキームと同じ名前を持つ <xref:System.ServiceModel.Description.IMetadataExchange> クライアント エンドポイント構成を自動的に読み込みます。</span><span class="sxs-lookup"><span data-stu-id="49e62-117">The Svcutil.exe tool automatically loads from its configuration file an <xref:System.ServiceModel.Description.IMetadataExchange> client endpoint configuration that has the same name as the URI scheme for the metadata endpoint address.</span></span>  
   
-## セキュリティ  
- カスタム バインディングを介してメタデータを公開する場合、メタデータに必要なセキュリティ サポートをそのカスタム バインディングが提供することを確認してください。たとえば、情報の漏えいを防止し、メタデータを取得するための権限がクライアントにあることを確認するには、認証および暗号化を要求するように <xref:System.ServiceModel.Description.IMetadataExchange> エンドポイントを構成することによってメタデータとアプリケーションのセキュリティを強化します。サンプルの[カスタム セキュア メタデータ エンドポイント](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md)は、このシナリオを示しています。  
+## <a name="security"></a><span data-ttu-id="49e62-118">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="49e62-118">Security</span></span>  
+ <span data-ttu-id="49e62-119">カスタム バインディングを介してメタデータを公開する場合、メタデータに必要なセキュリティ サポートをそのカスタム バインディングが提供することを確認してください。</span><span class="sxs-lookup"><span data-stu-id="49e62-119">When publishing metadata over a custom binding, ensure that the binding provides the security support that your metadata requires.</span></span> <span data-ttu-id="49e62-120">たとえば、情報の漏えいを防止し、メタデータを取得するための権限がクライアントにあることを確認するには、認証および暗号化を要求するように <xref:System.ServiceModel.Description.IMetadataExchange> エンドポイントを構成することによってメタデータとアプリケーションのセキュリティを強化します。</span><span class="sxs-lookup"><span data-stu-id="49e62-120">For example, to prevent information disclosure and ensure your client has the right to obtain the metadata, you can make your metadata and your application more secure by configuring your <xref:System.ServiceModel.Description.IMetadataExchange> endpoint to require authentication and encryption.</span></span> <span data-ttu-id="49e62-121">サンプル[カスタム セキュリティで保護されたメタデータ エンドポイント](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md)このシナリオを示します。</span><span class="sxs-lookup"><span data-stu-id="49e62-121">The sample [Custom Secure Metadata Endpoint](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) demonstrates this scenario.</span></span>  
   
-## 参照  
- [サービスのセキュリティ保護](../../../../docs/framework/wcf/securing-services.md)   
- [WS\-MetadataExchange のバインディング](../../../../docs/framework/wcf/extending/ws-metadataexchange-bindings.md)   
- [方法 : カスタム WS\-Metadata Exchange バインディングを構成する](../../../../docs/framework/wcf/extending/how-to-configure-a-custom-ws-metadata-exchange-binding.md)   
- [方法: MEX 以外のバインディングを介してメタデータを取得する](../../../../docs/framework/wcf/extending/how-to-retrieve-metadata-over-a-non-mex-binding.md)
+## <a name="see-also"></a><span data-ttu-id="49e62-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="49e62-122">See Also</span></span>  
+ [<span data-ttu-id="49e62-123">サービスのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="49e62-123">Securing Services</span></span>](../../../../docs/framework/wcf/securing-services.md)  
+ [<span data-ttu-id="49e62-124">Ws-metadataexchange のバインディング</span><span class="sxs-lookup"><span data-stu-id="49e62-124">WS-MetadataExchange Bindings</span></span>](../../../../docs/framework/wcf/extending/ws-metadataexchange-bindings.md)  
+ [<span data-ttu-id="49e62-125">方法: 構成、カスタム Ws-metadata Exchange バインディング</span><span class="sxs-lookup"><span data-stu-id="49e62-125">How to: Configure a Custom WS-Metadata Exchange Binding</span></span>](../../../../docs/framework/wcf/extending/how-to-configure-a-custom-ws-metadata-exchange-binding.md)  
+ [<span data-ttu-id="49e62-126">方法: を介してメタデータを取得する MEX 以外のバインディング</span><span class="sxs-lookup"><span data-stu-id="49e62-126">How to: Retrieve Metadata Over a non-MEX Binding</span></span>](../../../../docs/framework/wcf/extending/how-to-retrieve-metadata-over-a-non-mex-binding.md)

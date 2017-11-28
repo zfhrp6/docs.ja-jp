@@ -1,30 +1,37 @@
 ---
-title: "方法 : ビットマップにメタデータを書き込む | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ビットマップ, 書き込み (メタデータを)"
-  - "イメージ メタデータ"
-  - "メタデータ, イメージ"
-  - "メタデータ, 書き込み (ビットマップに)"
+title: "方法 : ビットマップにメタデータを書き込む"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- image metadata [WPF]
+- metadata [WPF], writing to a bitmap
+- metadata [WPF], in images
+- bitmaps [WPF], writing metadata to
 ms.assetid: 68f0dc4b-c0fe-43be-94f2-9d7399378fb3
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4bd345981e81cc2fec120ba0f33c32e5c8217109
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : ビットマップにメタデータを書き込む
-メタデータ照会言語を使用してビットマップにメタデータを書き込む方法を次の例に示します。  
+# <a name="how-to-write-metadata-to-a-bitmap"></a><span data-ttu-id="42870-102">方法 : ビットマップにメタデータを書き込む</span><span class="sxs-lookup"><span data-stu-id="42870-102">How to: Write Metadata to a Bitmap</span></span>
+<span data-ttu-id="42870-103">この例では、メタデータ クエリ言語を使用してビットマップにメタデータを記述する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="42870-103">This example shows how to write metadata to a bitmap using the metadata query language.</span></span>  
   
-## 使用例  
+## <a name="example"></a><span data-ttu-id="42870-104">例</span><span class="sxs-lookup"><span data-stu-id="42870-104">Example</span></span>  
  [!code-cpp[BitmapMetadata#SetQuery](../../../../samples/snippets/cpp/VS_Snippets_Wpf/BitMapMetadata/CPP/BitmapMetadata.cpp#setquery)]
  [!code-csharp[BitmapMetadata#SetQuery](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BitMapMetadata/CSharp/BitmapMetadata.cs#setquery)]
  [!code-vb[BitmapMetadata#SetQuery](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BitMapMetadata/VB/BitmapMetadata.vb#setquery)]

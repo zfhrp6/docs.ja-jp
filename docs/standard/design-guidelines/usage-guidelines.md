@@ -1,46 +1,43 @@
 ---
-title: "使用方法のガイドライン | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "クラス ライブラリ デザインのガイドライン [.NET Framework] の使用に関するガイドライン"
+title: "使用方法のガイドライン"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: class library design guidelines [.NET Framework], usage guidelines
 ms.assetid: 42215ffa-a099-4a26-b14e-fb2bdb6f95b7
-caps.latest.revision: 9
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: df0d1c5f8bff9d4cb546378f281a44c696246553
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 使用方法のガイドライン
-このセクションには、パブリックにアクセスできる Api で一般的な種類の使用に関するガイドラインが含まれています。 組み込みフレームワーク型 \(シリアル化属性など\) および一般的な演算子のオーバー ロードの直接の使用状況を処理します。  
+# <a name="usage-guidelines"></a><span data-ttu-id="9c058-102">使用方法のガイドライン</span><span class="sxs-lookup"><span data-stu-id="9c058-102">Usage Guidelines</span></span>
+<span data-ttu-id="9c058-103">このセクションには、パブリックにアクセスできる Api の一般的な種類の使用に関するガイドラインが含まれています。</span><span class="sxs-lookup"><span data-stu-id="9c058-103">This section contains guidelines for using common types in publicly accessible APIs.</span></span> <span data-ttu-id="9c058-104">組み込みフレームワーク型 (シリアル化属性など) および一般的な演算子をオーバー ロードの直接の使用状況を処理します。</span><span class="sxs-lookup"><span data-stu-id="9c058-104">It deals with direct usage of built-in Framework types (e.g., serialization attributes) and overloading common operators.</span></span>  
   
- <xref:System.IDisposable?displayProperty=fullName> インターフェイスは、このセクションで説明されていないは、後ほど、 [Dispose パターン](../../../docs/standard/design-guidelines/dispose-pattern.md) セクションです。  
+ <span data-ttu-id="9c058-105"><xref:System.IDisposable?displayProperty=nameWithType>インターフェイスは、このセクションでは説明しませんが、については、 [Dispose パターン](../../../docs/standard/design-guidelines/dispose-pattern.md)セクションです。</span><span class="sxs-lookup"><span data-stu-id="9c058-105">The <xref:System.IDisposable?displayProperty=nameWithType> interface is not covered in this section, but is discussed in the [Dispose Pattern](../../../docs/standard/design-guidelines/dispose-pattern.md) section.</span></span>  
   
 > [!NOTE]
->  組み込みの .NET Framework 型のガイドラインと他の一般的な方法に関する追加情報には、次のリファレンス トピックを参照してください: <xref:System.DateTime?displayProperty=fullName>, 、<xref:System.DateTimeOffset?displayProperty=fullName>, 、<xref:System.ICloneable?displayProperty=fullName>, 、<xref:System.IComparable%601?displayProperty=fullName>, 、<xref:System.IEquatable%601?displayProperty=fullName>, 、<xref:System.Nullable%601?displayProperty=fullName>, 、<xref:System.Object?displayProperty=fullName>, 、<xref:System.Uri?displayProperty=fullName>です。  
+>  <span data-ttu-id="9c058-106">ガイドラインとその他の一般的なに関する追加情報、組み込みの .NET Framework 型を参照してください、次の参照トピック: <xref:System.DateTime?displayProperty=nameWithType>、 <xref:System.DateTimeOffset?displayProperty=nameWithType>、 <xref:System.ICloneable?displayProperty=nameWithType>、 <xref:System.IComparable%601?displayProperty=nameWithType>、 <xref:System.IEquatable%601?displayProperty=nameWithType>、 <xref:System.Nullable%601?displayProperty=nameWithType>、 <xref:System.Object?displayProperty=nameWithType>, <xref:System.Uri?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="9c058-106">For guidelines and additional information about about other common, built-in .NET Framework types, see the reference topics for the following: <xref:System.DateTime?displayProperty=nameWithType>, <xref:System.DateTimeOffset?displayProperty=nameWithType>, <xref:System.ICloneable?displayProperty=nameWithType>, <xref:System.IComparable%601?displayProperty=nameWithType>, <xref:System.IEquatable%601?displayProperty=nameWithType>, <xref:System.Nullable%601?displayProperty=nameWithType>, <xref:System.Object?displayProperty=nameWithType>, <xref:System.Uri?displayProperty=nameWithType>.</span></span>  
   
-## このセクションの内容  
- [配列](../../../docs/standard/design-guidelines/arrays.md)  
- [属性](../../../docs/standard/design-guidelines/属性.md)  
- [コレクション クラス](../../../amples/snippets/cpp/VS_Snippets_Misc/cx_collections/cpp/collections.vcxproj)  
- [シリアル化](../../../docs/standard/design-guidelines/シリアル化.md)  
- [System.Xml の使用法](../../../docs/standard/design-guidelines/system-xml-usage.md)  
- [等値演算子](../../../docs/standard/design-guidelines/equality-operators.md)  
- *部分 © 2005年、2009 Microsoft Corporation します。 All rights reserved.*  
+## <a name="in-this-section"></a><span data-ttu-id="9c058-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="9c058-107">In This Section</span></span>  
+ [<span data-ttu-id="9c058-108">配列</span><span class="sxs-lookup"><span data-stu-id="9c058-108">Arrays</span></span>](../../../docs/standard/design-guidelines/arrays.md)  
+ [<span data-ttu-id="9c058-109">属性</span><span class="sxs-lookup"><span data-stu-id="9c058-109">Attributes</span></span>](../../../docs/standard/design-guidelines/attributes.md)  
+ [<span data-ttu-id="9c058-110">コレクション</span><span class="sxs-lookup"><span data-stu-id="9c058-110">Collections</span></span>](/cpp/mfc/collections)  
+ [<span data-ttu-id="9c058-111">シリアル化</span><span class="sxs-lookup"><span data-stu-id="9c058-111">Serialization</span></span>](../../../docs/standard/design-guidelines/serialization.md)  
+ [<span data-ttu-id="9c058-112">System.xml の各使用率</span><span class="sxs-lookup"><span data-stu-id="9c058-112">System.Xml Usage</span></span>](../../../docs/standard/design-guidelines/system-xml-usage.md)  
+ [<span data-ttu-id="9c058-113">等値演算子</span><span class="sxs-lookup"><span data-stu-id="9c058-113">Equality Operators</span></span>](../../../docs/standard/design-guidelines/equality-operators.md)  
+ <span data-ttu-id="9c058-114">*部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*</span><span class="sxs-lookup"><span data-stu-id="9c058-114">*Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*</span></span>  
   
- *翔泳社からのアクセス許可によって検出 [Framework デザイン ガイドライン: 規則が、表現方法と再利用可能な .NET ライブラリを 2 nd Edition パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) は Cwalina Brad エイブラムスによる、Microsoft Windows の開発シリーズの一部として Addison\-wesley Professional、2008 年 10 月 22 日を公開します。*  
+ <span data-ttu-id="9c058-115">*ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*</span><span class="sxs-lookup"><span data-stu-id="9c058-115">*Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*</span></span>  
   
-## 参照  
- [Framework デザイン ガイドライン](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a><span data-ttu-id="9c058-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="9c058-116">See Also</span></span>  
+ [<span data-ttu-id="9c058-117">フレームワーク デザインのガイドライン</span><span class="sxs-lookup"><span data-stu-id="9c058-117">Framework Design Guidelines</span></span>](../../../docs/standard/design-guidelines/index.md)

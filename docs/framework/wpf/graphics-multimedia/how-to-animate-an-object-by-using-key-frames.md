@@ -1,52 +1,55 @@
 ---
-title: "方法 : キー フレームを使用してオブジェクトをアニメーション化する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アニメーション, オブジェクトをキー フレームで"
-  - "キー フレーム, アニメーション化 (オブジェクトを)"
+title: "方法 : キー フレームを使用してオブジェクトをアニメーション化する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- animation [WPF], objects with key frames
+- key frames [WPF], animating objects with
 ms.assetid: b1f15ba9-cac7-4cea-8699-5c6b55c05c5e
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 71feb0ecef7a6356c95b843fbc2657ad2e4a7996
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : キー フレームを使用してオブジェクトをアニメーション化する
-この例では、<xref:System.Windows.Controls.Page> コントロールの <xref:System.Windows.Controls.Page.Background%2A> プロパティであるオブジェクトを、キー フレームを使用してアニメーション化する方法について説明します。  
+# <a name="how-to-animate-an-object-by-using-key-frames"></a><span data-ttu-id="9726b-102">方法 : キー フレームを使用してオブジェクトをアニメーション化する</span><span class="sxs-lookup"><span data-stu-id="9726b-102">How to: Animate an Object by Using Key Frames</span></span>
+<span data-ttu-id="9726b-103">この例は、この例ではオブジェクトをアニメーション化する方法を示しています、<xref:System.Windows.Controls.Page.Background%2A>のプロパティ、<xref:System.Windows.Controls.Page>キー フレームを使用して、制御します。</span><span class="sxs-lookup"><span data-stu-id="9726b-103">This example shows how to animate an object, which in this example is the <xref:System.Windows.Controls.Page.Background%2A> property of a <xref:System.Windows.Controls.Page> control, by using key frames.</span></span>  
   
-## 使用例  
- 次の例では、<xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> クラスを使用して、<xref:System.Windows.Controls.Page> コントロールの <xref:System.Windows.Controls.Page.Background%2A> プロパティの色の変更をアニメーション化します。  この例のアニメーションは、別の背景ブラシに定期的に変化します。  このアニメーションは、<xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> クラスを使用して 3 つの異なるキー フレームを作成します。  次の方法でキー フレームを使用します。  
+## <a name="example"></a><span data-ttu-id="9726b-104">例</span><span class="sxs-lookup"><span data-stu-id="9726b-104">Example</span></span>  
+ <span data-ttu-id="9726b-105">次の例では、<xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames>を変更して、色をアニメーション化するクラス、<xref:System.Windows.Controls.Page.Background%2A>のプロパティ、<xref:System.Windows.Controls.Page>コントロール。</span><span class="sxs-lookup"><span data-stu-id="9726b-105">The following example uses the <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> class to animate color changes for the <xref:System.Windows.Controls.Page.Background%2A> property of a <xref:System.Windows.Controls.Page> control.</span></span> <span data-ttu-id="9726b-106">この例のアニメーションは、一定の間隔で別の背景ブラシを変更します。</span><span class="sxs-lookup"><span data-stu-id="9726b-106">The example animation changes to a different background brush at regular intervals.</span></span> <span data-ttu-id="9726b-107">このアニメーションで使用される、 <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> 3 つの異なるキー フレームを作成するクラス。</span><span class="sxs-lookup"><span data-stu-id="9726b-107">This animation uses the <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> class to create three different key frames.</span></span> <span data-ttu-id="9726b-108">アニメーションでは、キー フレームを使用して、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="9726b-108">The animation uses key frames in the following manner:</span></span>  
   
-1.  最初の 1 秒間の終わりに、<xref:System.Windows.Media.LinearGradientBrush> クラスのインスタンスをアニメーション化します。  このセクションでは、線形グラデーションを背景色に適用して、その色を黄色からオレンジ、赤へと変化させます。  
+1.  <span data-ttu-id="9726b-109">最初の 2 つ目の最後に、アニメーションのインスタンス、<xref:System.Windows.Media.LinearGradientBrush>クラスです。</span><span class="sxs-lookup"><span data-stu-id="9726b-109">At the end of the first second, animates an instance of the <xref:System.Windows.Media.LinearGradientBrush> class.</span></span> <span data-ttu-id="9726b-110">例では、このセクションでは、赤にオレンジ色に色が黄色から移行できるように、背景色に線形グラデーションが適用されます。</span><span class="sxs-lookup"><span data-stu-id="9726b-110">This section of the example applies a linear gradient to the background color so that the color transitions from yellow to orange to red.</span></span>  
   
-2.  2 秒目の終わりに、<xref:System.Windows.Media.RadialGradientBrush> クラスのインスタンスをアニメーション化します。  このセクションでは、放射状グラデーションを背景色に適用して、その色を白から青、黒へと変化させます。  
+2.  <span data-ttu-id="9726b-111">次の 2 つ目の最後に、アニメーションのインスタンス、<xref:System.Windows.Media.RadialGradientBrush>クラスです。</span><span class="sxs-lookup"><span data-stu-id="9726b-111">At the end of the next second, animates an instance of the <xref:System.Windows.Media.RadialGradientBrush> class.</span></span> <span data-ttu-id="9726b-112">例では、このセクションでは、色が白を黒に青から移行できるように、背景色に放射状グラデーションが適用されます。</span><span class="sxs-lookup"><span data-stu-id="9726b-112">This section of the example applies a radial gradient to the background color so that the color transitions from white to blue to black.</span></span>  
   
-3.  3 秒目の終わりに、<xref:System.Windows.Media.DrawingBrush> クラスのインスタンスをアニメーション化します。  このセクションでは、背景に市松模様を適用します。  
+3.  <span data-ttu-id="9726b-113">3 番目の 2 つ目の最後に、アニメーションのインスタンス、<xref:System.Windows.Media.DrawingBrush>クラスです。</span><span class="sxs-lookup"><span data-stu-id="9726b-113">At the end of the third second, animates an instance of the <xref:System.Windows.Media.DrawingBrush> class.</span></span> <span data-ttu-id="9726b-114">例では、このセクションでは、バック グラウンドに、チェッカー ボード パターンを適用します。</span><span class="sxs-lookup"><span data-stu-id="9726b-114">This section of the example applies a checkerboard pattern to the background.</span></span>  
   
-4.  アニメーションが再度始まり、無制限に繰り返します。  
+4.  <span data-ttu-id="9726b-115">アニメーションは、もう一度が開始され、無限に繰り返されます。</span><span class="sxs-lookup"><span data-stu-id="9726b-115">The animation begins again and repeats indefinitely.</span></span>  
   
 > [!NOTE]
->  <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> は、<xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> クラスで使用できるキー フレームの唯一の型です。  <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> のようなキー フレームは、値の突然の変化を作成するので、この例での色の変化は突然起こります。  
+>  <span data-ttu-id="9726b-116"><xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame>使用できるキー フレームの唯一の種類には、<xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames>クラスです。</span><span class="sxs-lookup"><span data-stu-id="9726b-116"><xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> is the only type of key frame that you can use with the <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> class.</span></span> <span data-ttu-id="9726b-117">キー フレームのような<xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame>急激な変化で作成、値は、この例では色の変更が突然発生します。</span><span class="sxs-lookup"><span data-stu-id="9726b-117">Key frames like <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> create sudden changes in values, that is, the color changes in this example occur suddenly.</span></span>  
   
- [!code-xml[keyframes_snip#ObjectAnimationUsingKeyFramesWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/ObjectAnimationUsingKeyFramesExample.xaml#objectanimationusingkeyframeswholepage)]  
+ [!code-xaml[keyframes_snip#ObjectAnimationUsingKeyFramesWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/ObjectAnimationUsingKeyFramesExample.xaml#objectanimationusingkeyframeswholepage)]  
   
- サンプル全体については、[キー フレーム アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=160012)を参照してください。  
+ <span data-ttu-id="9726b-118">サンプル全体については、「[キーフレーム アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=160012)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9726b-118">For the complete sample, see [KeyFrame Animation Sample](http://go.microsoft.com/fwlink/?LinkID=160012).</span></span>  
   
-## 参照  
- <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames>   
- <xref:System.Windows.Controls.Page.Background%2A>   
- <xref:System.Windows.Controls.Page>   
- <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame>   
- <xref:System.Windows.Media.LinearGradientBrush>   
- <xref:System.Windows.Media.RadialGradientBrush>   
- <xref:System.Windows.Media.DrawingBrush>   
- [キー フレーム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)   
- [キー フレームに関する「方法」トピック](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="9726b-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="9726b-119">See Also</span></span>  
+ <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames>  
+ <xref:System.Windows.Controls.Page.Background%2A>  
+ <xref:System.Windows.Controls.Page>  
+ <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame>  
+ <xref:System.Windows.Media.LinearGradientBrush>  
+ <xref:System.Windows.Media.RadialGradientBrush>  
+ <xref:System.Windows.Media.DrawingBrush>  
+ [<span data-ttu-id="9726b-120">キー フレーム アニメーションの概要</span><span class="sxs-lookup"><span data-stu-id="9726b-120">Key-Frame Animations Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)  
+ [<span data-ttu-id="9726b-121">キー フレームに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="9726b-121">Key-Frame How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)

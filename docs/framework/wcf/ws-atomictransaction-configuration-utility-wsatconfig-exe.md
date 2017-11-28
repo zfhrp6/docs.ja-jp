@@ -1,62 +1,64 @@
 ---
-title: "WS-AtomicTransaction 構成ユーティリティ (wsatConfig.exe) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WS-AtomicTransaction 構成ユーティリティ (wsatConfig.exe)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1c56cf98-3963-46d5-a4e1-482deae58c58
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c84a0ddd05de3a28a6c38bc63151c8cec35bdd2e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WS-AtomicTransaction 構成ユーティリティ (wsatConfig.exe)
-WS\-AtomicTransaction 構成ユーティリティは、基本的な WS\-AtomicTransaction サポート設定を構成するために使用されます。  
+# <a name="ws-atomictransaction-configuration-utility-wsatconfigexe"></a><span data-ttu-id="67ff6-102">WS-AtomicTransaction 構成ユーティリティ (wsatConfig.exe)</span><span class="sxs-lookup"><span data-stu-id="67ff6-102">WS-AtomicTransaction Configuration Utility (wsatConfig.exe)</span></span>
+<span data-ttu-id="67ff6-103">WS-AtomicTransaction 構成ユーティリティは、基本的な WS-AtomicTransaction サポート設定を構成するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="67ff6-103">The WS-AtomicTransaction Configuration Utility is used to configure basic WS-AtomicTransaction support settings.</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="67ff6-104">構文</span><span class="sxs-lookup"><span data-stu-id="67ff6-104">Syntax</span></span>  
   
 ```  
-  
 wsatConfig [Options]  
 ```  
   
-## 解説  
- このコマンド ライン ツールを使用して、基本的な WS\-AtomicTransaction 設定をローカル マシンでのみ構成できます。設定をローカル コンピューターとリモート コンピューターの両方で構成する必要がある場合は、「[WS\-AtomicTransaction サポートの構成](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)」で説明されている手順に従って、MMC スナップインを使用する必要があります。  
+## <a name="remarks"></a><span data-ttu-id="67ff6-105">コメント</span><span class="sxs-lookup"><span data-stu-id="67ff6-105">Remarks</span></span>  
+ <span data-ttu-id="67ff6-106">このコマンド ライン ツールを使用して、基本的な WS-AtomicTransaction 設定をローカル マシンでのみ構成できます。</span><span class="sxs-lookup"><span data-stu-id="67ff6-106">This command line tool can be used to configure basic WS-AT settings in a local machine only.</span></span> <span data-ttu-id="67ff6-107">」の説明に従って、MMC スナップインを使用する必要があります、ローカルとリモート コンピューターの両方で設定を構成する必要[Ws-atomic Transaction サポートの構成](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)です。</span><span class="sxs-lookup"><span data-stu-id="67ff6-107">If you have to configure settings on both local and remote machines, you should use the MMC snap-in as described in [Configuring WS-Atomic Transaction Support](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md).</span></span>  
   
- コマンド ライン ツールは、Windows SDK の次のインストール場所にあります。  
+ <span data-ttu-id="67ff6-108">コマンド ライン ツールは、Windows SDK の次のインストール場所にあります。</span><span class="sxs-lookup"><span data-stu-id="67ff6-108">The command line tool can be found in the Windows SDK installation location, specifically,</span></span>  
   
- %SystemRoot%\\Microsoft.Net\\Framework\\v3.0\\Windows Communication Foundation\\wsatConfig.exe  
+ <span data-ttu-id="67ff6-109">%SystemRoot%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation\wsatConfig.exe</span><span class="sxs-lookup"><span data-stu-id="67ff6-109">%SystemRoot%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation\wsatConfig.exe</span></span>  
   
- [!INCLUDE[wxp](../../../includes/wxp-md.md)] または [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] を実行している場合は、更新プログラムをダウンロードしてから、WsatConfig.exe を実行する必要があります。この更新プログラムの詳細については、「[Commerce Server 2007 用の更新プログラム \(KB912817\)](http://go.microsoft.com/fwlink/?LinkId=95340)」および「[Availability of Windows XP COM\+ Hotfix Rollup Package 13](http://go.microsoft.com/fwlink/?LinkId=95341)」を参照してください。  
+ <span data-ttu-id="67ff6-110">[!INCLUDE[wxp](../../../includes/wxp-md.md)] または [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] を実行している場合は、更新プログラムをダウンロードしてから、WsatConfig.exe を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="67ff6-110">If you are running [!INCLUDE[wxp](../../../includes/wxp-md.md)] or [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], you must download an update before running WsatConfig.exe.</span></span> <span data-ttu-id="67ff6-111">この更新プログラムの詳細については、次を参照してください。 [Commerce Server 2007 (KB912817) の更新](http://go.microsoft.com/fwlink/?LinkId=95340)と[可用性の Windows XP COM + の修正プログラム ロールアップ パッケージ 13](http://go.microsoft.com/fwlink/?LinkId=95341)です。</span><span class="sxs-lookup"><span data-stu-id="67ff6-111">For more information about this update, see [Update for Commerce Server 2007 (KB912817)](http://go.microsoft.com/fwlink/?LinkId=95340) and [Availability of Windows XP COM+ Hotfix Rollup Package 13](http://go.microsoft.com/fwlink/?LinkId=95341).</span></span>  
   
- 次の表は、WS\-AtomicTransaction 構成ユーティリティ \(wsatConfig.exe\) で使用できるオプションを示します。  
+ <span data-ttu-id="67ff6-112">次の表は、WS-AtomicTransaction 構成ユーティリティ (wsatConfig.exe) で使用できるオプションを示します。</span><span class="sxs-lookup"><span data-stu-id="67ff6-112">The following table shows the options that can be used with WS-AtomicTransaction Configuration Utility (wsatConfig.exe).</span></span>  
   
 > [!NOTE]
->  選択したポートに SSL 証明書を設定すると、そのポートに関連付けられたオリジナルの SSL 証明書が上書きされます。  
+>  <span data-ttu-id="67ff6-113">選択したポートに SSL 証明書を設定すると、そのポートに関連付けられたオリジナルの SSL 証明書が上書きされます。</span><span class="sxs-lookup"><span data-stu-id="67ff6-113">When you set an SSL certificate for a selected port, you overwrite the original SSL certificate associated with that port if one exists.</span></span>  
   
-|オプション|説明|  
-|-----------|--------|  
-|\-accounts:\<account,\>|WS\-AtomicTransaction に追加できるアカウントをコンマで区切って指定します。これらのアカウントの有効性の確認は行われません。|  
-|\-accountsCerts:\<thumb\>&#124;"Issuer\\SubjectName",\>|WS\-AtomicTransaction に追加できる証明書をコンマで区切って指定します。証明書は、サムプリントまたは Issuer\\SubjectName ペアで示されます。空の場合は、サブジェクト名に {EMPTY} を使用します。|  
-|\-endpointCert:\<machine&#124;\<thumb\>&#124;"Issuer\\SubjectName"\>|コンピューターの証明書を使用するか、サムプリントまたは Issuer\\SubjectName ペアで指定される別のローカル エンドポイントの証明書を使用します。空の場合は、サブジェクト名に {EMPTY} を使用します。|  
-|\-maxTimeout:\<sec\>|最大タイムアウトを秒単位で指定します。有効な値は 0 ～ 3600 の範囲です。|  
-|\-network:\<enable&#124;disable\>|WS\-AtomicTransaction ネットワーク サポートを有効または無効にします。|  
-|\-port:\<portNum\>|WS\-AtomicTransaction の HTTPS ポートを設定します。<br /><br /> このツールを実行する前にファイアウォールが既に有効な場合、ポートは例外の一覧に自動的に登録されます。このツールを実行する前にファイアウォールが無効な場合は、ファイアウォールに関する追加の構成はありません。<br /><br /> WS\-AT の構成後にファイアウォールを有効にする場合は、このツールを再度実行し、このパラメーターを使用してポート番号を指定する必要があります。WS\-AT の構成後にファイアウォールを無効にする場合は、入力を追加しないで WS\-AT の動作を続行します。|  
-|\-timeout:\<sec\>|既定のタイムアウトを秒単位で指定します。有効な値は 1 ～ 3600 の範囲です。|  
-|\-traceActivity:\<enable&#124;disable\>|アクティビティ イベントのトレースを有効または無効にします。|  
-|\-traceLevel:\<Off&#124;Error&#124;Critical&#124;Warning&#124;Information&#124;Verbose&#124;All\>}|トレース レベルを指定します。|  
-|\-tracePII:\<enable&#124;disable\>|個人を特定できる情報のトレースを有効または無効にします。|  
-|\-traceProp:\<enable&#124;disable\>|伝達イベントのトレースを有効または無効にします。|  
-|\-restart|MSDTC を再起動して変更を直ちに反映します。これが指定されていない場合、変更は、MSDTC が再起動されたときに有効になります。|  
-|\-show|現在の WS\-AtomicTransaction プロトコル設定を表示します。|  
-|\-virtualServer:\<virtualServer\>|DTC リソース クラスター名を指定します。|  
+|<span data-ttu-id="67ff6-114">オプション</span><span class="sxs-lookup"><span data-stu-id="67ff6-114">Options</span></span>|<span data-ttu-id="67ff6-115">説明</span><span class="sxs-lookup"><span data-stu-id="67ff6-115">Description</span></span>|  
+|-------------|-----------------|  
+|<span data-ttu-id="67ff6-116">-アカウント:\<アカウント ></span><span class="sxs-lookup"><span data-stu-id="67ff6-116">-accounts:\<account,></span></span>|<span data-ttu-id="67ff6-117">WS-AtomicTransaction に追加できるアカウントをコンマで区切って指定します。</span><span class="sxs-lookup"><span data-stu-id="67ff6-117">Specifies a comma-separated list of accounts that can participate in WS-AtomicTransaction.</span></span> <span data-ttu-id="67ff6-118">これらのアカウントの有効性の確認は行われません。</span><span class="sxs-lookup"><span data-stu-id="67ff6-118">The validity of these accounts is not checked.</span></span>|  
+|<span data-ttu-id="67ff6-119">-accountsCerts:\<thumb > &#124;"Issuer \subjectname"></span><span class="sxs-lookup"><span data-stu-id="67ff6-119">-accountsCerts:\<thumb>&#124;"Issuer\SubjectName",></span></span>|<span data-ttu-id="67ff6-120">WS-AtomicTransaction に追加できる証明書をコンマで区切って指定します。</span><span class="sxs-lookup"><span data-stu-id="67ff6-120">Specifies a comma-separated list of certificates that can participate in WS-AtomicTransaction.</span></span> <span data-ttu-id="67ff6-121">証明書は、サムプリントまたは Issuer\SubjectName ペアで示されます。</span><span class="sxs-lookup"><span data-stu-id="67ff6-121">The certificates are indicated by thumbprint or by the Issuer\SubjectName pair.</span></span> <span data-ttu-id="67ff6-122">空の場合は、サブジェクト名に {EMPTY} を使用します。</span><span class="sxs-lookup"><span data-stu-id="67ff6-122">Use {EMPTY} for subject name if it is empty.</span></span>|  
+|<span data-ttu-id="67ff6-123">-endpointCert: < マシン &#124;です。\<thumb > &#124;"Issuer \subjectname"></span><span class="sxs-lookup"><span data-stu-id="67ff6-123">-endpointCert:<machine&#124;\<thumb>&#124;"Issuer\SubjectName"></span></span>|<span data-ttu-id="67ff6-124">コンピューターの証明書を使用するか、サムプリントまたは Issuer\SubjectName ペアで指定される別のローカル エンドポイントの証明書を使用します。</span><span class="sxs-lookup"><span data-stu-id="67ff6-124">Uses the machine certificate or another local endpoint certificate specified by thumbprint or Issuer\SubjectName pair.</span></span> <span data-ttu-id="67ff6-125">空の場合は、サブジェクト名に {EMPTY} を使用します。</span><span class="sxs-lookup"><span data-stu-id="67ff6-125">Uses {EMPTY} for the subject name if it is empty.</span></span>|  
+|<span data-ttu-id="67ff6-126">-maxTimeout:\<sec ></span><span class="sxs-lookup"><span data-stu-id="67ff6-126">-maxTimeout:\<sec></span></span>|<span data-ttu-id="67ff6-127">最大タイムアウトを秒単位で指定します。</span><span class="sxs-lookup"><span data-stu-id="67ff6-127">Specifies the maximum timeout in seconds.</span></span> <span data-ttu-id="67ff6-128">有効な値は、0、3,600 です。</span><span class="sxs-lookup"><span data-stu-id="67ff6-128">Valid values are from 0 to 3600.</span></span>|  
+|<span data-ttu-id="67ff6-129">-ネットワーク:\<有効にする (&) #124 です無効にします >。</span><span class="sxs-lookup"><span data-stu-id="67ff6-129">-network:\<enable&#124;disable></span></span>|<span data-ttu-id="67ff6-130">WS-AtomicTransaction ネットワーク サポートを有効または無効にします。</span><span class="sxs-lookup"><span data-stu-id="67ff6-130">Enables or disables the WS-AtomicTransaction network support.</span></span>|  
+|<span data-ttu-id="67ff6-131">-ポート:\<させる ></span><span class="sxs-lookup"><span data-stu-id="67ff6-131">-port:\<portNum></span></span>|<span data-ttu-id="67ff6-132">WS-AtomicTransaction の HTTPS ポートを設定します。</span><span class="sxs-lookup"><span data-stu-id="67ff6-132">Sets the HTTPS port for WS-AtomicTransaction.</span></span><br /><br /> <span data-ttu-id="67ff6-133">このツールを実行する前にファイアウォールが既に有効な場合、ポートは例外の一覧に自動的に登録されます。</span><span class="sxs-lookup"><span data-stu-id="67ff6-133">If you have already enabled firewall before running this tool, the port is automatically registered in the exception list.</span></span> <span data-ttu-id="67ff6-134">このツールを実行する前にファイアウォールが無効な場合は、ファイアウォールに関する追加の構成はありません。</span><span class="sxs-lookup"><span data-stu-id="67ff6-134">If firewall is disabled before running this tool, nothing additional is configured regarding the firewall.</span></span><br /><br /> <span data-ttu-id="67ff6-135">WS-AT の構成後にファイアウォールを有効にする場合は、このツールを再度実行し、このパラメーターを使用してポート番号を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="67ff6-135">If you enable firewall after configuring WS-AT, you have to run this tool again and supply the port number using this parameter.</span></span> <span data-ttu-id="67ff6-136">WS-AT の構成後にファイアウォールを無効にする場合は、入力を追加しないで WS-AT の動作を続行します。</span><span class="sxs-lookup"><span data-stu-id="67ff6-136">If you disable firewall after configuring, WS-AT continues to work without additional input.</span></span>|  
+|<span data-ttu-id="67ff6-137">タイムアウト:\<sec ></span><span class="sxs-lookup"><span data-stu-id="67ff6-137">-timeout:\<sec></span></span>|<span data-ttu-id="67ff6-138">既定のタイムアウトを秒単位で指定します。</span><span class="sxs-lookup"><span data-stu-id="67ff6-138">Specifies the default timeout in seconds.</span></span> <span data-ttu-id="67ff6-139">有効な値は 1 ～ 3600 の範囲です。</span><span class="sxs-lookup"><span data-stu-id="67ff6-139">Valid values are from 1 to 3600.</span></span>|  
+|<span data-ttu-id="67ff6-140">-traceActivity:\<有効にする (&) #124 です無効にします >。</span><span class="sxs-lookup"><span data-stu-id="67ff6-140">-traceActivity:\<enable&#124;disable></span></span>|<span data-ttu-id="67ff6-141">アクティビティ イベントのトレースを有効または無効にします。</span><span class="sxs-lookup"><span data-stu-id="67ff6-141">Enables or disables the tracing of activity events.</span></span>|  
+|<span data-ttu-id="67ff6-142">-tracelevel:\<オフ &#124;です。エラー &#124;です。重要な &#124;です。警告 &#124; 情報 &#124;です。Verbose &#124;です。すべて >}</span><span class="sxs-lookup"><span data-stu-id="67ff6-142">-traceLevel:\<Off&#124;Error&#124;Critical&#124;Warning&#124;Information&#124; Verbose&#124;All>}</span></span>|<span data-ttu-id="67ff6-143">トレース レベルを指定します。</span><span class="sxs-lookup"><span data-stu-id="67ff6-143">Specifies the trace level.</span></span>|  
+|<span data-ttu-id="67ff6-144">-tracePII:\<有効にする (&) #124 です無効にします >。</span><span class="sxs-lookup"><span data-stu-id="67ff6-144">-tracePII:\<enable&#124;disable></span></span>|<span data-ttu-id="67ff6-145">個人を特定できる情報のトレースを有効または無効にします。</span><span class="sxs-lookup"><span data-stu-id="67ff6-145">Enables or disables the tracing of personally identifiable information.</span></span>|  
+|<span data-ttu-id="67ff6-146">-traceProp:\<有効にする (&) #124 です無効にします >。</span><span class="sxs-lookup"><span data-stu-id="67ff6-146">-traceProp:\<enable&#124;disable></span></span>|<span data-ttu-id="67ff6-147">伝達イベントのトレースを有効または無効にします。</span><span class="sxs-lookup"><span data-stu-id="67ff6-147">Enables or disables the tracing of propagation events.</span></span>|  
+|<span data-ttu-id="67ff6-148">-restart</span><span class="sxs-lookup"><span data-stu-id="67ff6-148">-restart</span></span>|<span data-ttu-id="67ff6-149">MSDTC を再起動して変更を直ちに反映します。</span><span class="sxs-lookup"><span data-stu-id="67ff6-149">Restarts MSDTC to activate changes immediately.</span></span> <span data-ttu-id="67ff6-150">これが指定されていない場合、変更は、MSDTC が再起動されたときに有効になります。</span><span class="sxs-lookup"><span data-stu-id="67ff6-150">If this is not specified, the changes take effect when MSDTC is restarted.</span></span>|  
+|<span data-ttu-id="67ff6-151">-show</span><span class="sxs-lookup"><span data-stu-id="67ff6-151">-show</span></span>|<span data-ttu-id="67ff6-152">現在の WS-AtomicTransaction プロトコル設定を表示します。</span><span class="sxs-lookup"><span data-stu-id="67ff6-152">Displays the current WS-AtomicTransaction protocol settings.</span></span>|  
+|<span data-ttu-id="67ff6-153">-virtualServer:\<virtualServer ></span><span class="sxs-lookup"><span data-stu-id="67ff6-153">-virtualServer:\<virtualServer></span></span>|<span data-ttu-id="67ff6-154">DTC リソース クラスター名を指定します。</span><span class="sxs-lookup"><span data-stu-id="67ff6-154">Specifies the DTC resource cluster name.</span></span>|  
   
-## 参照  
- [WS\-AtomicTransaction の使用](../../../docs/framework/wcf/feature-details/using-ws-atomictransaction.md)   
- [WS\-AtomicTransaction サポートの構成](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)
+## <a name="see-also"></a><span data-ttu-id="67ff6-155">関連項目</span><span class="sxs-lookup"><span data-stu-id="67ff6-155">See Also</span></span>  
+ [<span data-ttu-id="67ff6-156">Ws-atomictransaction の使用</span><span class="sxs-lookup"><span data-stu-id="67ff6-156">Using WS-AtomicTransaction</span></span>](../../../docs/framework/wcf/feature-details/using-ws-atomictransaction.md)  
+ [<span data-ttu-id="67ff6-157">Ws-atomic Transaction サポートを構成します。</span><span class="sxs-lookup"><span data-stu-id="67ff6-157">Configuring WS-Atomic Transaction Support</span></span>](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)

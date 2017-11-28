@@ -1,84 +1,87 @@
 ---
-title: "UI Automation Support for the HeaderItem Control Type | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "UI Automation, Header Item control type"
-  - "Header Item control type"
-  - "control types, Header Item"
+title: "UI オートメーションによる HeaderItem コントロール型のサポート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- UI Automation, Header Item control type
+- Header Item control type
+- control types, Header Item
 ms.assetid: 09ce1310-ee31-493c-a71e-010bafc42fcf
-caps.latest.revision: 20
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: 20933ea80fb23a379da55ec2a126e0f020090b05
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# UI Automation Support for the HeaderItem Control Type
+# <a name="ui-automation-support-for-the-headeritem-control-type"></a><span data-ttu-id="cab9b-102">UI オートメーションによる HeaderItem コントロール型のサポート</span><span class="sxs-lookup"><span data-stu-id="cab9b-102">UI Automation Support for the HeaderItem Control Type</span></span>
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の最新情報については、「[Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
+>  <span data-ttu-id="cab9b-103">このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="cab9b-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="cab9b-104">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cab9b-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- このトピックでは、HeaderItem コントロール型の [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] サポートについて説明します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] でのコントロール型とは、コントロールが <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> プロパティを使用するために満たす必要がある一連の条件のことです。 条件には、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティの値、およびコントロール パターンに関する特定のガイドラインが含まれます。  
+ <span data-ttu-id="cab9b-105">このトピックでは、HeaderItem コントロール型の [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] サポートについて説明します。</span><span class="sxs-lookup"><span data-stu-id="cab9b-105">This topic provides information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] support for the HeaderItem control type.</span></span> <span data-ttu-id="cab9b-106">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]でのコントロール型とは、コントロールが <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> プロパティを使用するために満たす必要がある一連の条件のことです。</span><span class="sxs-lookup"><span data-stu-id="cab9b-106">In [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], a control type is a set of conditions that a control must meet in order to use the <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> property.</span></span> <span data-ttu-id="cab9b-107">条件には、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティの値、およびコントロール パターンに関する特定のガイドラインが含まれます。</span><span class="sxs-lookup"><span data-stu-id="cab9b-107">The conditions include specific guidelines for [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree structure, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] property values and control patterns.</span></span>  
   
- HeaderItem コントロール型は、情報の行または列のビジュアル ラベルを提供します。  
+ <span data-ttu-id="cab9b-108">HeaderItem コントロール型は、情報の行または列のビジュアル ラベルを提供します。</span><span class="sxs-lookup"><span data-stu-id="cab9b-108">The HeaderItem control type provides a visual label for a row or column of information.</span></span>  
   
- HeaderItem コントロール型を実装するコントロールの例には、ヘッダー項目コントロールがあります。 以降のセクションに記載する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 要件は、[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、[!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]、または [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] であるかどうかに関わらず、すべてのヘッダー コントロールに適用されます。  
+ <span data-ttu-id="cab9b-109">HeaderItem コントロール型を実装するコントロールの例には、ヘッダー項目コントロールがあります。</span><span class="sxs-lookup"><span data-stu-id="cab9b-109">Header item controls are examples of controls that implement the HeaderItem control type.</span></span> <span data-ttu-id="cab9b-110">以降のセクションに記載する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 要件は、 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、 [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]、または [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]であるかどうかに関わらず、すべてのヘッダー コントロールに適用されます。</span><span class="sxs-lookup"><span data-stu-id="cab9b-110">The [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requirements in the following sections apply to all header controls, whether [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], or [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].</span></span>  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
-## 必須の UI オートメーション ツリー構造  
- 次の表に、コントロール ビューと、ヘッダー項目コントロールに関連する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコンテンツ ビューを示し、それぞれのビューに含められる内容について説明します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーの詳細については、「[UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)」を参照してください。  
+## <a name="required-ui-automation-tree-structure"></a><span data-ttu-id="cab9b-111">必須の UI オートメーション ツリー構造</span><span class="sxs-lookup"><span data-stu-id="cab9b-111">Required UI Automation Tree Structure</span></span>  
+ <span data-ttu-id="cab9b-112">次の表に、コントロール ビューと、ヘッダー項目コントロールに関連する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコンテンツ ビューを示し、それぞれのビューに含められる内容について説明します。</span><span class="sxs-lookup"><span data-stu-id="cab9b-112">The following table depicts the control view and the content view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree that pertains to header item controls and describes what can be contained in each view.</span></span> <span data-ttu-id="cab9b-113">詳細については、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]ツリーを参照してください[UI オートメーション ツリーの概要](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="cab9b-113">For more information on the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree, see [UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).</span></span>  
   
-|コントロール ビュー|コンテンツ ビュー|  
-|----------------|---------------|  
-|HeaderItem|なし|  
+|<span data-ttu-id="cab9b-114">コントロール ビュー</span><span class="sxs-lookup"><span data-stu-id="cab9b-114">Control View</span></span>|<span data-ttu-id="cab9b-115">コンテンツ ビュー</span><span class="sxs-lookup"><span data-stu-id="cab9b-115">Content View</span></span>|  
+|------------------|------------------|  
+|<span data-ttu-id="cab9b-116">HeaderItem</span><span class="sxs-lookup"><span data-stu-id="cab9b-116">HeaderItem</span></span>|<span data-ttu-id="cab9b-117">なし</span><span class="sxs-lookup"><span data-stu-id="cab9b-117">None</span></span>|  
   
 <a name="Required_UI_Automation_Properties"></a>   
-## 必須の UI オートメーション プロパティ  
- 次の表に、ヘッダー項目コントロールに特に関連する値または定義を持つ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティを示します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティの詳細については、「[UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)」を参照してください。  
+## <a name="required-ui-automation-properties"></a><span data-ttu-id="cab9b-118">必須の UI オートメーション プロパティ</span><span class="sxs-lookup"><span data-stu-id="cab9b-118">Required UI Automation Properties</span></span>  
+ <span data-ttu-id="cab9b-119">次の表に、ヘッダー項目コントロールに特に関連する値または定義を持つ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティを示します。</span><span class="sxs-lookup"><span data-stu-id="cab9b-119">The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties whose value or definition is especially relevant to header item controls.</span></span> <span data-ttu-id="cab9b-120">詳細については[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]プロパティを参照してください[クライアントの UI オートメーション プロパティ](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)です。</span><span class="sxs-lookup"><span data-stu-id="cab9b-120">For more information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties, see [UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).</span></span>  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティ|値|ノート|  
-|---------------------------------------------------------------------------------|-------|---------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|「ノート」を参照。|このプロパティの値は、アプリケーションのすべてのコントロールで一意である必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|「ノート」を参照。|コントロール全体を格納する最も外側の四角形。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|「ノート」を参照。|四角形領域が存在する場合にサポートされます。 四角形領域の内側にクリック不可能な点が存在し、特別なヒット テストを実行する場合は、クリック可能な点をオーバーライドして提供します。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|「ノート」を参照。|コントロールがキーボード フォーカスを受け取ることができる場合は、このプロパティをサポートする必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|「ノート」を参照。|ヘッダー項目コントロールは、常に自己ラベル付けを行います。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|`Null`。|ヘッダー項目コントロールに静的ラベルはありません。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|HeaderItem|この値は、すべての [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] フレームワークで同じです。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|「ヘッダー項目」|HeaderItem コントロール型のローカライズされた文字列。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|False|ヘッダー項目コントロールは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコンテンツ ビューに組み込まれません。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|ヘッダー項目コントロールは、常に [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコンテンツ ビューに組み込まれます。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ItemStatusProperty>|「ノート」を参照。|このプロパティは、ヘッダー項目による並べ替え順序の情報を提供します。|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]<span data-ttu-id="cab9b-121"> プロパティ</span><span class="sxs-lookup"><span data-stu-id="cab9b-121"> Property</span></span>|<span data-ttu-id="cab9b-122">値</span><span class="sxs-lookup"><span data-stu-id="cab9b-122">Value</span></span>|<span data-ttu-id="cab9b-123">ノート</span><span class="sxs-lookup"><span data-stu-id="cab9b-123">Notes</span></span>|  
+|------------------------------------------------------------------------------------|-----------|-----------|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|<span data-ttu-id="cab9b-124">ノートを参照してください。</span><span class="sxs-lookup"><span data-stu-id="cab9b-124">See notes.</span></span>|<span data-ttu-id="cab9b-125">このプロパティの値は、アプリケーションのすべてのコントロールで一意である必要があります。</span><span class="sxs-lookup"><span data-stu-id="cab9b-125">The value of this property needs to be unique across all controls in an application.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|<span data-ttu-id="cab9b-126">「ノート」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="cab9b-126">See notes.</span></span>|<span data-ttu-id="cab9b-127">コントロール全体を格納する最も外側の四角形。</span><span class="sxs-lookup"><span data-stu-id="cab9b-127">The outermost rectangle that contains the whole control.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|<span data-ttu-id="cab9b-128">「ノート」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="cab9b-128">See notes.</span></span>|<span data-ttu-id="cab9b-129">四角形領域が存在する場合にサポートされます。</span><span class="sxs-lookup"><span data-stu-id="cab9b-129">Supported if there is a bounding rectangle.</span></span> <span data-ttu-id="cab9b-130">四角形領域内にクリック不可能な点が存在し、特別なヒット テストを実行する場合は、オーバーライドしてクリック可能な点を提供します。</span><span class="sxs-lookup"><span data-stu-id="cab9b-130">If not every point within the bounding rectangle is clickable, and you perform specialized hit testing, then override and provide a clickable point.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|<span data-ttu-id="cab9b-131">「ノート」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="cab9b-131">See notes.</span></span>|<span data-ttu-id="cab9b-132">コントロールがキーボード フォーカスを受け取ることができる場合は、このプロパティをサポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="cab9b-132">If the control can receive keyboard focus, it must support this property.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|<span data-ttu-id="cab9b-133">「ノート」を参照。</span><span class="sxs-lookup"><span data-stu-id="cab9b-133">See notes.</span></span>|<span data-ttu-id="cab9b-134">ヘッダー項目コントロールは、常に自己ラベル付けを行います。</span><span class="sxs-lookup"><span data-stu-id="cab9b-134">The header item control is always self-labeling.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|<span data-ttu-id="cab9b-135">`Null`。</span><span class="sxs-lookup"><span data-stu-id="cab9b-135">`Null`.</span></span>|<span data-ttu-id="cab9b-136">ヘッダー項目コントロールに静的ラベルはありません。</span><span class="sxs-lookup"><span data-stu-id="cab9b-136">Header item controls do not have a static label.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|<span data-ttu-id="cab9b-137">HeaderItem</span><span class="sxs-lookup"><span data-stu-id="cab9b-137">HeaderItem</span></span>|<span data-ttu-id="cab9b-138">この値は、すべての [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] フレームワークで同じです。</span><span class="sxs-lookup"><span data-stu-id="cab9b-138">This value is the same for all [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] frameworks.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|<span data-ttu-id="cab9b-139">「ヘッダー項目」</span><span class="sxs-lookup"><span data-stu-id="cab9b-139">"header item"</span></span>|<span data-ttu-id="cab9b-140">HeaderItem コントロール型のローカライズされた文字列。</span><span class="sxs-lookup"><span data-stu-id="cab9b-140">Localized string for the HeaderItem control type.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|<span data-ttu-id="cab9b-141">False</span><span class="sxs-lookup"><span data-stu-id="cab9b-141">False</span></span>|<span data-ttu-id="cab9b-142">ヘッダー項目コントロールは、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコンテンツ ビューに組み込まれません。</span><span class="sxs-lookup"><span data-stu-id="cab9b-142">The header item control is not included in the content view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|<span data-ttu-id="cab9b-143">True</span><span class="sxs-lookup"><span data-stu-id="cab9b-143">True</span></span>|<span data-ttu-id="cab9b-144">ヘッダー項目コントロールは、常に [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコンテンツ ビューに組み込まれます。</span><span class="sxs-lookup"><span data-stu-id="cab9b-144">The header item control is always included in the control view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ItemStatusProperty>|<span data-ttu-id="cab9b-145">「ノート」を参照。</span><span class="sxs-lookup"><span data-stu-id="cab9b-145">See notes.</span></span>|<span data-ttu-id="cab9b-146">このプロパティは、ヘッダー項目による並べ替え順序の情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="cab9b-146">This property provides information for sort orders by the header item.</span></span>|  
   
 <a name="Required_UI_Automation_Control_Patterns"></a>   
-## 必須の UI オートメーション コントロール パターン  
- 次の表に、すべてのヘッダー項目コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] コントロール パターンを示します。 コントロール パターンの詳細については、「[UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)」を参照してください。  
+## <a name="required-ui-automation-control-patterns"></a><span data-ttu-id="cab9b-147">必須の UI オートメーション コントロール パターン</span><span class="sxs-lookup"><span data-stu-id="cab9b-147">Required UI Automation Control Patterns</span></span>  
+ <span data-ttu-id="cab9b-148">次の表に、すべてのヘッダー項目コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] コントロール パターンを示します。</span><span class="sxs-lookup"><span data-stu-id="cab9b-148">The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] control patterns required to be supported by all header item controls.</span></span> <span data-ttu-id="cab9b-149">コントロール パターンの詳細については、「 [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cab9b-149">For more information on control patterns, see [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).</span></span>  
   
-|コントロール パターン|Support|ノート|  
-|-----------------|-------------|---------|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider>|状況に依存|ヘッダー項目コントロールのサイズを変更できる場合は、このコントロール パターンを実装します。|  
-|<xref:System.Windows.Automation.Provider.IInvokeProvider>|状況に依存|ヘッダー項目コントロールをクリックしてデータを並べ替えることができる場合は、このコントロール パターンを実装します。|  
+|<span data-ttu-id="cab9b-150">コントロール パターン</span><span class="sxs-lookup"><span data-stu-id="cab9b-150">Control Pattern</span></span>|<span data-ttu-id="cab9b-151">Support</span><span class="sxs-lookup"><span data-stu-id="cab9b-151">Support</span></span>|<span data-ttu-id="cab9b-152">ノート</span><span class="sxs-lookup"><span data-stu-id="cab9b-152">Notes</span></span>|  
+|---------------------|-------------|-----------|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider>|<span data-ttu-id="cab9b-153">状況に依存</span><span class="sxs-lookup"><span data-stu-id="cab9b-153">Depends</span></span>|<span data-ttu-id="cab9b-154">ヘッダー項目コントロールのサイズを変更できる場合は、このコントロール パターンを実装します。</span><span class="sxs-lookup"><span data-stu-id="cab9b-154">Implement this control pattern if the header item control can be resized.</span></span>|  
+|<xref:System.Windows.Automation.Provider.IInvokeProvider>|<span data-ttu-id="cab9b-155">状況に依存</span><span class="sxs-lookup"><span data-stu-id="cab9b-155">Depends</span></span>|<span data-ttu-id="cab9b-156">ヘッダー項目コントロールをクリックしてデータを並べ替えることができる場合は、このコントロール パターンを実装します。</span><span class="sxs-lookup"><span data-stu-id="cab9b-156">Implement this control pattern if the header item control can be clicked to sort the data.</span></span>|  
   
 <a name="Required_UI_Automation_Events"></a>   
-## 必須の UI オートメーション イベント  
- 次の表に、すべてのヘッダー項目コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベントを示します。 イベントの詳細については、「[UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md)」を参照してください。  
+## <a name="required-ui-automation-events"></a><span data-ttu-id="cab9b-157">必須の UI オートメーション イベント</span><span class="sxs-lookup"><span data-stu-id="cab9b-157">Required UI Automation Events</span></span>  
+ <span data-ttu-id="cab9b-158">次の表に、すべてのヘッダー項目コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベントを示します。</span><span class="sxs-lookup"><span data-stu-id="cab9b-158">The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] events required to be supported by all header item controls.</span></span> <span data-ttu-id="cab9b-159">イベントの詳細については、「 [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cab9b-159">For more information on events, see [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md).</span></span>  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベント|Support|ノート|  
-|--------------------------------------------------------------------------------|-------------|---------|  
-|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|状況に依存|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必要|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必要|なし|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]<span data-ttu-id="cab9b-160"> イベント</span><span class="sxs-lookup"><span data-stu-id="cab9b-160"> Event</span></span>|<span data-ttu-id="cab9b-161">Support</span><span class="sxs-lookup"><span data-stu-id="cab9b-161">Support</span></span>|<span data-ttu-id="cab9b-162">ノート</span><span class="sxs-lookup"><span data-stu-id="cab9b-162">Notes</span></span>|  
+|---------------------------------------------------------------------------------|-------------|-----------|  
+|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|<span data-ttu-id="cab9b-163">状況に依存</span><span class="sxs-lookup"><span data-stu-id="cab9b-163">Depends</span></span>|<span data-ttu-id="cab9b-164">なし</span><span class="sxs-lookup"><span data-stu-id="cab9b-164">None</span></span>|  
+|<span data-ttu-id="cab9b-165"><xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="cab9b-165"><xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> property-changed event.</span></span>|<span data-ttu-id="cab9b-166">必要</span><span class="sxs-lookup"><span data-stu-id="cab9b-166">Required</span></span>|<span data-ttu-id="cab9b-167">なし</span><span class="sxs-lookup"><span data-stu-id="cab9b-167">None</span></span>|  
+|<span data-ttu-id="cab9b-168"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="cab9b-168"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> property-changed event.</span></span>|<span data-ttu-id="cab9b-169">必要</span><span class="sxs-lookup"><span data-stu-id="cab9b-169">Required</span></span>|<span data-ttu-id="cab9b-170">なし</span><span class="sxs-lookup"><span data-stu-id="cab9b-170">None</span></span>|  
+|<span data-ttu-id="cab9b-171"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="cab9b-171"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> property-changed event.</span></span>|<span data-ttu-id="cab9b-172">必要</span><span class="sxs-lookup"><span data-stu-id="cab9b-172">Required</span></span>|<span data-ttu-id="cab9b-173">なし</span><span class="sxs-lookup"><span data-stu-id="cab9b-173">None</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|<span data-ttu-id="cab9b-174">必須</span><span class="sxs-lookup"><span data-stu-id="cab9b-174">Required</span></span>|<span data-ttu-id="cab9b-175">なし</span><span class="sxs-lookup"><span data-stu-id="cab9b-175">None</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|<span data-ttu-id="cab9b-176">必須</span><span class="sxs-lookup"><span data-stu-id="cab9b-176">Required</span></span>|<span data-ttu-id="cab9b-177">なし</span><span class="sxs-lookup"><span data-stu-id="cab9b-177">None</span></span>|  
   
-## 参照  
- <xref:System.Windows.Automation.ControlType.HeaderItem>   
- [UI Automation Control Types Overview](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)   
- [UI Automation Overview](../../../docs/framework/ui-automation/ui-automation-overview.md)
+## <a name="see-also"></a><span data-ttu-id="cab9b-178">関連項目</span><span class="sxs-lookup"><span data-stu-id="cab9b-178">See Also</span></span>  
+ <xref:System.Windows.Automation.ControlType.HeaderItem>  
+ [<span data-ttu-id="cab9b-179">UI オートメーション コントロール型の概要</span><span class="sxs-lookup"><span data-stu-id="cab9b-179">UI Automation Control Types Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)  
+ [<span data-ttu-id="cab9b-180">UI オートメーションの概要</span><span class="sxs-lookup"><span data-stu-id="cab9b-180">UI Automation Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-overview.md)

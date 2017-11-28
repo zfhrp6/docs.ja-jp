@@ -1,96 +1,92 @@
 ---
-title: "方法 : Windows フォーム内の ToolStrip テキストとイメージの外観を変更する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "例 [Windows フォーム], ツール バー"
-  - "ツール バー [Windows フォーム], 外観"
-  - "ツール バー [Windows フォーム], イメージ"
-  - "ツール バー [Windows フォーム], テキスト"
-  - "ToolStrip コントロール [Windows フォーム], 外観"
-  - "ToolStrip コントロール [Windows フォーム], イメージ"
-  - "ToolStrip コントロール [Windows フォーム], テキスト"
+title: "方法 : Windows フォーム内の ToolStrip テキストとイメージの外観を変更する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ToolStrip control [Windows Forms], appearance
+- toolbars [Windows Forms], images
+- examples [Windows Forms], toolbars
+- toolbars [Windows Forms], appearance
+- ToolStrip control [Windows Forms], images
+- ToolStrip control [Windows Forms], text
+- toolbars [Windows Forms], text
 ms.assetid: d62dc9d1-2edd-4dfa-aed7-1335d6e13d86
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1d926ce74db9723b6248dbb123513ca38d4adb1d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォーム内の ToolStrip テキストとイメージの外観を変更する
-テキストとイメージを <xref:System.Windows.Forms.ToolStripItem> に表示するかどうか、また、テキスト、イメージ、および <xref:System.Windows.Forms.ToolStrip> の相対位置を制御できます。  
+# <a name="how-to-change-the-appearance-of-toolstrip-text-and-images-in-windows-forms"></a><span data-ttu-id="abd2f-102">方法 : Windows フォーム内の ToolStrip テキストとイメージの外観を変更する</span><span class="sxs-lookup"><span data-stu-id="abd2f-102">How to: Change the Appearance of ToolStrip Text and Images in Windows Forms</span></span>
+<span data-ttu-id="abd2f-103">テキストとイメージを表示するかどうかを制御することができます、<xref:System.Windows.Forms.ToolStripItem>互いを基準としての配置方法と、<xref:System.Windows.Forms.ToolStrip>です。</span><span class="sxs-lookup"><span data-stu-id="abd2f-103">You can control whether text and images are displayed on a <xref:System.Windows.Forms.ToolStripItem> and how they are aligned relative to each other and the <xref:System.Windows.Forms.ToolStrip>.</span></span>  
   
-### ToolStripItem に表示するものを定義するには  
+### <a name="to-define-what-is-displayed-on-a-toolstripitem"></a><span data-ttu-id="abd2f-104">ToolStripItem 上に表示される内容を定義するには</span><span class="sxs-lookup"><span data-stu-id="abd2f-104">To define what is displayed on a ToolStripItem</span></span>  
   
--   <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> プロパティに目的の値を設定します。  設定できる値は、`Image`、`ImageAndText`、`None`、および `Text` です。  既定値は、`ImageAndText` です。  
+-   <span data-ttu-id="abd2f-105">設定、<xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A>プロパティを目的の値にします。</span><span class="sxs-lookup"><span data-stu-id="abd2f-105">Set the <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> property to the desired value.</span></span> <span data-ttu-id="abd2f-106">表示される値は`Image`、 `ImageAndText`、 `None`、および`Text`です。</span><span class="sxs-lookup"><span data-stu-id="abd2f-106">The possibilities are `Image`, `ImageAndText`, `None`, and `Text`.</span></span> <span data-ttu-id="abd2f-107">既定値は、`ImageAndText` です。</span><span class="sxs-lookup"><span data-stu-id="abd2f-107">The default is `ImageAndText`.</span></span>  
   
     ```vb  
     ToolStripButton2.DisplayStyle = _  
         System.Windows.Forms.ToolStripItemDisplayStyle.Image  
-  
     ```  
   
     ```csharp  
     toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;  
-  
     ```  
   
-### ToolStripItem 上でテキストを揃えるには  
+### <a name="to-align-text-on-a-toolstripitem"></a><span data-ttu-id="abd2f-108">ToolStripItem 上のテキストを整列するには</span><span class="sxs-lookup"><span data-stu-id="abd2f-108">To align text on a ToolStripItem</span></span>  
   
--   <xref:System.Windows.Forms.ToolStripItem.TextAlign%2A> プロパティに目的の値を設定します。  設定できる値は、Top、Middle、Bottom と Left、Center、Right の組み合わせです。  既定値は、`MiddleCenter` です。  
+-   <span data-ttu-id="abd2f-109">設定、<xref:System.Windows.Forms.ToolStripItem.TextAlign%2A>プロパティを目的の値にします。</span><span class="sxs-lookup"><span data-stu-id="abd2f-109">Set the <xref:System.Windows.Forms.ToolStripItem.TextAlign%2A> property to the desired value.</span></span> <span data-ttu-id="abd2f-110">表示される値は top、中間色、および左、中央、右と一番下の任意の組み合わせです。</span><span class="sxs-lookup"><span data-stu-id="abd2f-110">The possibilities are any combination of top, middle, and bottom with left, center, and right.</span></span> <span data-ttu-id="abd2f-111">既定値は、`MiddleCenter` です。</span><span class="sxs-lookup"><span data-stu-id="abd2f-111">The default is `MiddleCenter`.</span></span>  
   
     ```vb  
     ToolStripSplitButton1.TextAlign = _  
         System.Drawing.ContentAlignment.MiddleRight  
-  
     ```  
   
     ```csharp  
     toolStripSplitButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;  
-  
     ```  
   
-### ToolStripItem 上でイメージを揃えるには  
+### <a name="to-align-an-image-on-a-toolstripitem"></a><span data-ttu-id="abd2f-112">ToolStripItem 上の画像を整列するには</span><span class="sxs-lookup"><span data-stu-id="abd2f-112">To align an image on a ToolStripItem</span></span>  
   
--   <xref:System.Windows.Forms.ToolStripItem.ImageAlign%2A> プロパティに目的の値を設定します。  設定できる値は、Top、Middle、Bottom と Left、Center、Right の組み合わせです。  既定値は、`MiddleLeft` です。  
+-   <span data-ttu-id="abd2f-113">設定、<xref:System.Windows.Forms.ToolStripItem.ImageAlign%2A>プロパティを目的の値にします。</span><span class="sxs-lookup"><span data-stu-id="abd2f-113">Set the <xref:System.Windows.Forms.ToolStripItem.ImageAlign%2A> property to the desired value.</span></span> <span data-ttu-id="abd2f-114">表示される値は top、中間色、および左、中央、右と一番下の任意の組み合わせです。</span><span class="sxs-lookup"><span data-stu-id="abd2f-114">The possibilities are any combination of top, middle, and bottom with left, center, and right.</span></span> <span data-ttu-id="abd2f-115">既定値は、`MiddleLeft` です。</span><span class="sxs-lookup"><span data-stu-id="abd2f-115">The default is `MiddleLeft`.</span></span>  
   
     ```vb  
     ToolStripSplitButton1.ImageAlign = _  
         System.Drawing.ContentAlignment.MiddleRight  
-  
     ```  
   
     ```csharp  
     toolStripSplitButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;  
-  
     ```  
   
-### ToolStripItem のテキストとイメージの相対的な表示位置を定義するには  
+### <a name="to-define-how-toolstripitem-text-and-images-are-displayed-relative-to-each-other"></a><span data-ttu-id="abd2f-116">互いを基準として ToolStripItem テキストとイメージを表示する方法を定義するには</span><span class="sxs-lookup"><span data-stu-id="abd2f-116">To define how ToolStripItem text and images are displayed relative to each other</span></span>  
   
--   <xref:System.Windows.Forms.ToolStripItem.TextImageRelation%2A> プロパティに目的の値を設定します。  設定できる値は、`ImageAboveText`、`ImageBeforeText`、`Overlay`、`TextAboveImage`、および `TextBeforeImage` です。  既定値は、`ImageBeforeText` です。  
+-   <span data-ttu-id="abd2f-117">設定、<xref:System.Windows.Forms.ToolStripItem.TextImageRelation%2A>プロパティを目的の値にします。</span><span class="sxs-lookup"><span data-stu-id="abd2f-117">Set the <xref:System.Windows.Forms.ToolStripItem.TextImageRelation%2A> property to the desired value.</span></span> <span data-ttu-id="abd2f-118">表示される値は`ImageAboveText`、 `ImageBeforeText`、 `Overlay`、 `TextAboveImage`、および`TextBeforeImage`です。</span><span class="sxs-lookup"><span data-stu-id="abd2f-118">The possibilities are `ImageAboveText`, `ImageBeforeText`, `Overlay`, `TextAboveImage`, and `TextBeforeImage`.</span></span> <span data-ttu-id="abd2f-119">既定値は、`ImageBeforeText` です。</span><span class="sxs-lookup"><span data-stu-id="abd2f-119">The default is `ImageBeforeText`.</span></span>  
   
     ```vb  
     ToolStripButton1.TextImageRelation = _  
         System.Windows.Forms.TextImageRelation.ImageAboveText  
-  
     ```  
   
     ```csharp  
     toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;  
-  
     ```  
   
-## 参照  
- <xref:System.Windows.Forms.ToolStrip>   
- [ToolStrip コントロールの概要](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)   
- [ToolStrip コントロールのアーキテクチャ](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)   
- [ToolStrip テクノロジの概要](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)
+## <a name="see-also"></a><span data-ttu-id="abd2f-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="abd2f-120">See Also</span></span>  
+ <xref:System.Windows.Forms.ToolStrip>  
+ [<span data-ttu-id="abd2f-121">ToolStrip コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="abd2f-121">ToolStrip Control Overview</span></span>](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)  
+ [<span data-ttu-id="abd2f-122">ToolStrip コントロールのアーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="abd2f-122">ToolStrip Control Architecture</span></span>](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)  
+ [<span data-ttu-id="abd2f-123">ToolStrip テクノロジの概要</span><span class="sxs-lookup"><span data-stu-id="abd2f-123">ToolStrip Technology Summary</span></span>](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)

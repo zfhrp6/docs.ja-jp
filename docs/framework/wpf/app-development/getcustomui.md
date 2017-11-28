@@ -1,57 +1,58 @@
 ---
-title: "GetCustomUI | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "カスタム エラー メッセージ [WPF]"
-  - "GetCustomUI メソッド"
+title: GetCustomUI
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: custom error messages [WPF]
 ms.assetid: e55180fc-35bb-4f80-a136-772b5eb3e4e5
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3f3c101ad13df9b99a2d872bac8783baed8b4b9a
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# GetCustomUI
-実装されている場合、ホストから進行状況とエラーのカスタム メッセージを取得するために PresentationHost.exe によって呼び出されます。  
+# <a name="getcustomui"></a><span data-ttu-id="bee00-102">GetCustomUI</span><span class="sxs-lookup"><span data-stu-id="bee00-102">GetCustomUI</span></span>
+<span data-ttu-id="bee00-103">実装されている場合に、ホストからカスタムの進行状況とエラー メッセージを取得する PresentationHost.exe によって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="bee00-103">Called by PresentationHost.exe to get custom progress and error messages from the host, if implemented.</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="bee00-104">構文</span><span class="sxs-lookup"><span data-stu-id="bee00-104">Syntax</span></span>  
   
 ```  
 HRESULT GetCustomUI( [out] BSTR* pwzProgressAssemblyName, [out] BSTR* pwzProgressClassName, [out] BSTR* pwzErrorAssemblyName, [out] BSTR* pwzErrorClassName );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a><span data-ttu-id="bee00-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="bee00-105">Parameters</span></span>  
  `pwzProgressAssemblyName`  
   
- \[out\] ホストから提供される、進行状況のユーザー インターフェイスを格納するアセンブリへのポインター。  
+ <span data-ttu-id="bee00-106">[out]進行中のホストが指定したユーザー インターフェイスが含まれるアセンブリへのポインター。</span><span class="sxs-lookup"><span data-stu-id="bee00-106">[out] A pointer to the assembly that contains the host-supplied progress user interface.</span></span>  
   
  `pwzProgressClassName`  
   
- \[out\] ホストから提供される、進行状況のユーザー インターフェイスのクラス名。<xref:System.Windows.Controls.Page> を持つ [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] ファイルは、このクラスのトップ レベルの要素にすることをお勧めします。  このクラスは、`pwzProgressAssemblyName` で指定されたアセンブリにあります。  
+ <span data-ttu-id="bee00-107">[out]可能であれば、実行中のホストが指定したユーザー インターフェイスであるクラスの名前、[!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)]ファイルと<xref:System.Windows.Controls.Page>は、最上位要素です。</span><span class="sxs-lookup"><span data-stu-id="bee00-107">[out] The name of the class that is the host-supplied progress user interface, preferably a [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] file with <xref:System.Windows.Controls.Page> is its top-level element.</span></span> <span data-ttu-id="bee00-108">このクラスがで指定されているアセンブリに存在`pwzProgressAssemblyName`です。</span><span class="sxs-lookup"><span data-stu-id="bee00-108">This class resides in the assembly that is specified by `pwzProgressAssemblyName`.</span></span>  
   
  `pwzErrorAssemblyName`  
   
- \[out\] ホストから提供される、エラーのユーザー インターフェイスを格納するアセンブリへのポインター。  
+ <span data-ttu-id="bee00-109">[out]ホストが指定したエラーのユーザー インターフェイスが含まれるアセンブリへのポインター。</span><span class="sxs-lookup"><span data-stu-id="bee00-109">[out] A pointer to the assembly that contains the host-supplied error user interface.</span></span>  
   
  `pwzErrorClassName`  
   
- \[out\] ホストから提供される、エラーのユーザー インターフェイスのクラス名。<xref:System.Windows.Controls.Page> を持つ XAML ファイルは、このクラスのトップ レベルの要素にすることをお勧めします。  このクラスは、`pwzErrorAssemblyName` で指定されたアセンブリにあります。  
+ <span data-ttu-id="bee00-110">[out]ホストが指定したエラーのユーザーであるクラスの名前のインターフェイス、可能であればの XAML ファイル<xref:System.Windows.Controls.Page>は、最上位要素です。</span><span class="sxs-lookup"><span data-stu-id="bee00-110">[out] The name of the class that is the host-supplied error user interface, preferably a XAML file with <xref:System.Windows.Controls.Page> is its top-level element.</span></span> <span data-ttu-id="bee00-111">このクラスがで指定されているアセンブリに存在`pwzErrorAssemblyName`です。</span><span class="sxs-lookup"><span data-stu-id="bee00-111">This class resides in the assembly that is specified by `pwzErrorAssemblyName`.</span></span>  
   
-## プロパティ値\/戻り値  
- HRESULT : 無視されます。  
+## <a name="property-valuereturn-value"></a><span data-ttu-id="bee00-112">プロパティ値/戻り値</span><span class="sxs-lookup"><span data-stu-id="bee00-112">Property Value/Return Value</span></span>  
+ <span data-ttu-id="bee00-113">HRESULT: 無視されます。</span><span class="sxs-lookup"><span data-stu-id="bee00-113">HRESULT: Ignored.</span></span>  
   
-## 解説  
- ホスト アプリケーションは、PresentationHost.exe の既定のユーザー インターフェイスが準拠できない特定のテーマを持つ場合があります。  このような場合は、ホスト アプリケーションに [GetCustomUI](../../../../docs/framework/wpf/app-development/getcustomui.md) を実装して、PresentationHost.exe に進行状況とエラーのユーザー インターフェイスを返すことができます。  PresentationHost.exe は常に、既定のユーザー インターフェイスを使用する前に [GetCustomUI](../../../../docs/framework/wpf/app-development/getcustomui.md) を呼び出します。  
+## <a name="remarks"></a><span data-ttu-id="bee00-114">コメント</span><span class="sxs-lookup"><span data-stu-id="bee00-114">Remarks</span></span>  
+ <span data-ttu-id="bee00-115">ホスト アプリケーションに PresentationHost.exe の既定のユーザー インターフェイスが準拠していない特定のテーマがあります。</span><span class="sxs-lookup"><span data-stu-id="bee00-115">A host application may have a specific theme that PresentationHost.exe’s default user interfaces may not conform to.</span></span> <span data-ttu-id="bee00-116">大文字と小文字の場合は、ホスト アプリケーションを実装できます[ある GetCustomUI](../../../../docs/framework/wpf/app-development/getcustomui.md) PresentationHost.exe に、ユーザー インターフェイスで進行状況とエラーが返される。</span><span class="sxs-lookup"><span data-stu-id="bee00-116">If this is the case, the host application can implement [GetCustomUI](../../../../docs/framework/wpf/app-development/getcustomui.md) to return progress and error user interfaces to PresentationHost.exe.</span></span> <span data-ttu-id="bee00-117">PresentationHost.exe が常に呼び出す[ある GetCustomUI](../../../../docs/framework/wpf/app-development/getcustomui.md)の既定のユーザー インターフェイスを使用する前にします。</span><span class="sxs-lookup"><span data-stu-id="bee00-117">PresentationHost.exe will always call [GetCustomUI](../../../../docs/framework/wpf/app-development/getcustomui.md) before using its default user interfaces.</span></span>  
   
- この関数は、PresentationHost の初期化中に 1 回呼び出されます。  
+ <span data-ttu-id="bee00-118">この関数は PresentationHost の初期化中に 1 回呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="bee00-118">This function is called once during PresentationHost’s initialization.</span></span>  
   
-## 参照  
- [IWpfHostSupport](../../../../docs/framework/wpf/app-development/iwpfhostsupport.md)
+## <a name="see-also"></a><span data-ttu-id="bee00-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="bee00-119">See Also</span></span>  
+ [<span data-ttu-id="bee00-120">IWpfHostSupport</span><span class="sxs-lookup"><span data-stu-id="bee00-120">IWpfHostSupport</span></span>](../../../../docs/framework/wpf/app-development/iwpfhostsupport.md)

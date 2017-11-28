@@ -1,52 +1,58 @@
 ---
-title: "オブジェクト ツリーに存在しないオブジェクト要素の初期化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "要素, 初期化"
-  - "初期化 (要素を)"
-  - "論理ツリー"
-  - "ビジュアル ツリー"
+title: "オブジェクト ツリーに存在しないオブジェクト要素の初期化"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- logical tree [WPF]
+- visual tree [WPF]
+- elements [WPF], initializing
+- initializing elements [WPF]
 ms.assetid: 7b8dfc9b-46ac-4ce8-b7bb-035734d688b7
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1a2a4dd10b664dc349b0c413d7abac03280f8fb8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# オブジェクト ツリーに存在しないオブジェクト要素の初期化
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] における初期化処理を委託されるプロセスの中には、その要素が[論理ツリー](GTMT)または[ビジュアル ツリー](GTMT)のいずれかに接続されていることを前提とするものがあります。  ここでは、どちらのツリーにも接続されていない要素を初期化するために必要となる可能性のある手順について説明します。  
+# <a name="initialization-for-object-elements-not-in-an-object-tree"></a><span data-ttu-id="8795d-102">オブジェクト ツリーに存在しないオブジェクト要素の初期化</span><span class="sxs-lookup"><span data-stu-id="8795d-102">Initialization for Object Elements Not in an Object Tree</span></span>
+<span data-ttu-id="8795d-103">[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] の初期化処理では、プロセスに処理を委任することがあり、そのプロセスは、一般的にその要素が論理ツリーまたはビジュアル ツリーのいずれかに接続されていることを前提としています。</span><span class="sxs-lookup"><span data-stu-id="8795d-103">Some aspects of [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] initialization are deferred to processes that typically rely on that element being connected to either the logical tree or visual tree.</span></span> <span data-ttu-id="8795d-104">このトピックでは、どちらのツリーにも接続されていない要素を初期化するために必要となる場合がある手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="8795d-104">This topic describes the steps that may be necessary in order to initialize an element that is not connected to either tree.</span></span>  
   
-   
+ 
   
-## 要素と論理ツリー  
- コード内で [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] クラスのインスタンスを作成するときは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] クラスのオブジェクト初期化処理の一部が、クラス コンストラクターの呼び出し時に実行されるコードから意図的に除外されていることに注意してください。  特に、コントロール クラスの場合は、コントロールの視覚的表現の大部分が、コンストラクターではなく  コントロールのテンプレートによって定義されます。  このテンプレートのソースにはさまざまなものがありますが、ほとんどの場合はテーマ スタイルから取得されます。  テンプレートは、実質的には遅延バインディングです。必要なテンプレートがコントロールに結び付けられるのは、そのコントロールがレイアウト可能になったときです。  コントロールがレイアウト可能になるのは、ルートでレンダリング サーフェイスに接続される論理ツリーに結び付けられたときです。  このルート レベル要素によって、論理ツリーで定義されているすべての子要素のレンダリングが行われます。  
+## <a name="elements-and-the-logical-tree"></a><span data-ttu-id="8795d-105">要素と論理ツリー</span><span class="sxs-lookup"><span data-stu-id="8795d-105">Elements and the Logical Tree</span></span>  
+ <span data-ttu-id="8795d-106">コード内で [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] クラスのインスタンスを作成するときは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] クラスのオブジェクト初期化処理の一部が、クラス コンストラクターの呼び出し時に実行されるコードから意図的に除外されていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="8795d-106">When you create an instance of a [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] class in code, you should be aware that several aspects of object initialization for a [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] class are deliberately not a part of the code that is executed when calling the class constructor.</span></span> <span data-ttu-id="8795d-107">特に、コントロール クラスの場合は、コントロールの視覚的表現のほとんどが、コンストラクターでは定義されません。</span><span class="sxs-lookup"><span data-stu-id="8795d-107">Particularly for a control class, most of the visual representation of that control is not defined by the constructor.</span></span> <span data-ttu-id="8795d-108">代わりに、視覚的表現は、コントロールのテンプレートによって定義されます。</span><span class="sxs-lookup"><span data-stu-id="8795d-108">Instead, the visual representation is defined by the control's template.</span></span> <span data-ttu-id="8795d-109">このテンプレートのソースには、さまざまなものがありますが、ほとんどの場合は、テーマ スタイルから取得されます。</span><span class="sxs-lookup"><span data-stu-id="8795d-109">The template potentially comes from a variety of sources, but most often the template is obtained from theme styles.</span></span> <span data-ttu-id="8795d-110">テンプレートは、実質的には遅延バインディングです。そのコントロールがレイアウト可能になるまで、必要なテンプレートはコントロールに適用されません。</span><span class="sxs-lookup"><span data-stu-id="8795d-110">Templates are effectively late-binding; the necessary template is not attached to the control in question until the control is ready for layout.</span></span> <span data-ttu-id="8795d-111">コントロールは、ルートでレンダリングするための表面に接続される論理ツリーに適用されるまで、レイアウトが可能になりません。</span><span class="sxs-lookup"><span data-stu-id="8795d-111">And the control is not ready for layout until it is attached to a logical tree that connects to a rendering surface at the root.</span></span> <span data-ttu-id="8795d-112">このルート レベル要素によって、論理ツリーで定義されているすべての子要素のレンダリングが開始されます。</span><span class="sxs-lookup"><span data-stu-id="8795d-112">It is that root-level element that initiates the rendering of all of its child elements as defined in the logical tree.</span></span>  
   
- このプロセスには、ビジュアル ツリーも関与します。  テンプレートによってビジュアル ツリーに組み込まれる要素も、接続されなければ完全にはインスタンス化されません。  
+ <span data-ttu-id="8795d-113">このプロセスには、ビジュアル ツリーも関与します。</span><span class="sxs-lookup"><span data-stu-id="8795d-113">The visual tree also participates in this process.</span></span> <span data-ttu-id="8795d-114">テンプレートによってビジュアル ツリーに組み込まれる要素も、接続されるまでは完全にインスタンス化されません。</span><span class="sxs-lookup"><span data-stu-id="8795d-114">Elements that are part of the visual tree through the templates are also not fully instantiated until connected.</span></span>  
   
- この動作の影響で、要素の視覚的特性がすべて揃っていることを前提とする操作には追加の手順が必要になります。  既に構築されているがまだツリーに関連付けられていないクラスの視覚的特性を取得する場合などがそうです。  たとえば、<xref:System.Windows.Media.Imaging.RenderTargetBitmap> に対して <xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A> を呼び出すときに、渡そうとしているビジュアルがツリーに接続されていない要素である場合は、追加の初期化手順が実行されるまでその要素の視覚的特性は揃いません。  
+ <span data-ttu-id="8795d-115">この動作の影響で、要素の視覚的特性がすべて揃っていることを前提とする特定の操作には、追加の手順が必要になります。</span><span class="sxs-lookup"><span data-stu-id="8795d-115">The consequences of this behavior are that certain operations that rely on the completed visual characteristics of an element require additional steps.</span></span> <span data-ttu-id="8795d-116">構築されているが、まだツリーに適用されていないクラスの視覚的特性を取得しようとする場合などが、その例です。</span><span class="sxs-lookup"><span data-stu-id="8795d-116">An example is if you are attempting to get the visual characteristics of a class that was constructed but not yet attached to a tree.</span></span> <span data-ttu-id="8795d-117">インスタンスを呼び出したい場合<xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A>上、<xref:System.Windows.Media.Imaging.RenderTargetBitmap>を渡しているビジュアルがツリーに接続されていない要素とその要素が追加の初期化手順を完了するまで、視覚的に完了します。</span><span class="sxs-lookup"><span data-stu-id="8795d-117">For instance, if you want to call <xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A> on a <xref:System.Windows.Media.Imaging.RenderTargetBitmap> and the visual you are passing is an element not connected to a tree, that element is not visually complete until additional initialization steps are completed.</span></span>  
   
-### BeginInit と EndInit を使用して要素を初期化する  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のさまざまなクラスに、<xref:System.ComponentModel.ISupportInitialize> インターフェイスが実装されています。  このインターフェイスの <xref:System.ComponentModel.ISupportInitialize.BeginInit%2A> メソッドと <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> メソッドを使用して、コード内の初期化手順 \(たとえばレンダリングに影響を与えるプロパティ値の設定\) の部分を示します。  シーケンス内で <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> が呼び出された後に、レイアウト システムは要素を処理し、暗黙的なスタイルの検索を開始します。  
+### <a name="using-begininit-and-endinit-to-initialize-the-element"></a><span data-ttu-id="8795d-118">BeginInit と EndInit を使用して要素を初期化する</span><span class="sxs-lookup"><span data-stu-id="8795d-118">Using BeginInit and EndInit to Initialize the Element</span></span>  
+ <span data-ttu-id="8795d-119">さまざまなクラスに[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]実装、<xref:System.ComponentModel.ISupportInitialize>インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="8795d-119">Various classes in [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implement the <xref:System.ComponentModel.ISupportInitialize> interface.</span></span> <span data-ttu-id="8795d-120">使用する、<xref:System.ComponentModel.ISupportInitialize.BeginInit%2A>と<xref:System.ComponentModel.ISupportInitialize.EndInit%2A>(プロパティの設定値はその影響レンダリング) として初期化の手順を含むコード内の領域を表すためにインターフェイスのメソッドです。</span><span class="sxs-lookup"><span data-stu-id="8795d-120">You use the <xref:System.ComponentModel.ISupportInitialize.BeginInit%2A> and <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> methods of the interface to denote a region in your code that contains initialization steps (such as setting property values that affect rendering).</span></span> <span data-ttu-id="8795d-121">後に<xref:System.ComponentModel.ISupportInitialize.EndInit%2A>が呼び出されたシーケンスでレイアウト システムは、要素を処理し、検索暗黙的なスタイルを開始します。</span><span class="sxs-lookup"><span data-stu-id="8795d-121">After <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> is called in the sequence, the layout system can process the element and start looking for an implicit style.</span></span>  
   
- プロパティ設定対象の要素が <xref:System.Windows.FrameworkElement> または <xref:System.Windows.FrameworkContentElement> 派生クラスである場合は、<xref:System.ComponentModel.ISupportInitialize> にキャストする代わりに、クラス バージョンの <xref:System.Windows.FrameworkElement.BeginInit%2A> と <xref:System.Windows.FrameworkElement.EndInit%2A> を呼び出します。  
+ <span data-ttu-id="8795d-122">要素のプロパティを設定している場合は、<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>のバージョンのクラスを呼び出すことができますし、派生クラスに<xref:System.Windows.FrameworkElement.BeginInit%2A>と<xref:System.Windows.FrameworkElement.EndInit%2A>へのキャストではなく<xref:System.ComponentModel.ISupportInitialize>です。</span><span class="sxs-lookup"><span data-stu-id="8795d-122">If the element you are setting properties on is a <xref:System.Windows.FrameworkElement> or <xref:System.Windows.FrameworkContentElement> derived class, then you can call the class versions of <xref:System.Windows.FrameworkElement.BeginInit%2A> and <xref:System.Windows.FrameworkElement.EndInit%2A> rather than casting to <xref:System.ComponentModel.ISupportInitialize>.</span></span>  
   
-### サンプル コード  
- 次のコンソール アプリケーションのサンプル コードでは、Loose [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ファイルのレンダリング [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] および <xref:System.Windows.Markup.XamlReader.Load%28System.IO.Stream%29?displayProperty=fullName> を使用して、<xref:System.Windows.FrameworkElement.BeginInit%2A> と <xref:System.Windows.FrameworkElement.EndInit%2A> の正しい配置方法を示します。これらのメソッドは、レンダリングに影響を与えるプロパティを調整する他の [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] 呼び出しを囲むように配置します。  
+### <a name="sample-code"></a><span data-ttu-id="8795d-123">サンプル コード</span><span class="sxs-lookup"><span data-stu-id="8795d-123">Sample Code</span></span>  
+ <span data-ttu-id="8795d-124">次の例はコンソール アプリケーションのレンダリングを使用するためのサンプル コード[!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]と<xref:System.Windows.Markup.XamlReader.Load%28System.IO.Stream%29?displayProperty=nameWithType>、loose の[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]の適切な位置を示すためにファイル<xref:System.Windows.FrameworkElement.BeginInit%2A>と<xref:System.Windows.FrameworkElement.EndInit%2A>他の周り[!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)]呼び出しレンダリングに影響するプロパティを調整するとします。</span><span class="sxs-lookup"><span data-stu-id="8795d-124">The following example is sample code for a console application that uses rendering [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] and <xref:System.Windows.Markup.XamlReader.Load%28System.IO.Stream%29?displayProperty=nameWithType> of a loose [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] file to illustrate the proper placement of <xref:System.Windows.FrameworkElement.BeginInit%2A> and <xref:System.Windows.FrameworkElement.EndInit%2A> around other [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] calls that adjust properties that affect rendering.</span></span>  
   
- この例では、Main 関数のみを示します。  関数 `Rasterize` および `Save` \(この例には示していません\) は、イメージ処理および入出力を扱うユーティリティ関数です。  
+ <span data-ttu-id="8795d-125">この例では、main 関数のみを示します。</span><span class="sxs-lookup"><span data-stu-id="8795d-125">The example illustrates the main function only.</span></span> <span data-ttu-id="8795d-126">関数 `Rasterize` および `Save` (この例には示していません) は、イメージ処理および入出力を扱うユーティリティ関数です。</span><span class="sxs-lookup"><span data-stu-id="8795d-126">The functions `Rasterize` and `Save` (not shown) are utility functions that take care of image processing and IO.</span></span>  
   
  [!code-csharp[InitializeElements#Main](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InitializeElements/CSharp/initializeelements.cs#main)]
  [!code-vb[InitializeElements#Main](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InitializeElements/VisualBasic/initializeelements.vb#main)]  
   
-## 参照  
- [WPF のツリー](../../../../docs/framework/wpf/advanced/trees-in-wpf.md)   
- [WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)   
- [XAML の概要 \(WPF\)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+## <a name="see-also"></a><span data-ttu-id="8795d-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="8795d-127">See Also</span></span>  
+ [<span data-ttu-id="8795d-128">WPF のツリー</span><span class="sxs-lookup"><span data-stu-id="8795d-128">Trees in WPF</span></span>](../../../../docs/framework/wpf/advanced/trees-in-wpf.md)  
+ [<span data-ttu-id="8795d-129">WPF グラフィックス レンダリングの概要</span><span class="sxs-lookup"><span data-stu-id="8795d-129">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
+ [<span data-ttu-id="8795d-130">XAML の概要 (WPF)</span><span class="sxs-lookup"><span data-stu-id="8795d-130">XAML Overview (WPF)</span></span>](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

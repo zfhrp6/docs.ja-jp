@@ -1,71 +1,69 @@
 ---
-title: "セキュリティとユーザー入力 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "コード セキュリティ, ユーザー入力"
-  - "安全なコーディング, ユーザー入力"
-  - "セキュリティ [.NET Framework], ユーザー入力"
-  - "ユーザー入力, セキュリティ"
+title: "セキュリティとユーザー入力"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- security [.NET Framework], user input
+- user input, security
+- secure coding, user input
+- code security, user input
 ms.assetid: 9141076a-96c9-4b01-93de-366bb1d858bc
-caps.latest.revision: 7
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "7"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 804b91cdda1316bc0a3081c8353493faf8869b4f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# セキュリティとユーザー入力
-さまざまな種類の入力 \(Web 要求または URL からのデータ、Microsoft Windows フォーム アプリケーションを制御する入力など\) で得られるユーザー データは、他のデータを呼び出すときのパラメーターとして直接使用されることがあり、コードに悪影響を与える可能性があります。  この状況は、悪意のあるコードが異常なパラメーターを使用してコードを呼び出すことに類似しているため、同様の対策が必要です。  ユーザー入力を安全にすることは、実際には非常に難しいことです。信頼できない可能性があるデータの存在を追跡するためのスタック フレームがないからです。  
+# <a name="security-and-user-input"></a><span data-ttu-id="70348-102">セキュリティとユーザー入力</span><span class="sxs-lookup"><span data-stu-id="70348-102">Security and User Input</span></span>
+<span data-ttu-id="70348-103">ユーザー データにはあらゆる種類の入力 (Web 要求または URL からのデータや、Microsoft Windows Forms アプリケーションのコントロールへの入力など) がありますが、これはコードに悪影響を及ぼすことがあります。このようなデータはパラメーターとして直接使用され、他のコードを呼び出す場合が多いためです。</span><span class="sxs-lookup"><span data-stu-id="70348-103">User data, which is any kind of input (data from a Web request or URL, input to controls of a Microsoft Windows Forms application, and so on), can adversely influence code because often that data is used directly as parameters to call other code.</span></span> <span data-ttu-id="70348-104">この状況は、悪意のあるコードが不明なパラメーターを使用してコードを呼び出すことと似ており、同じ予防策をとる必要があります。</span><span class="sxs-lookup"><span data-stu-id="70348-104">This situation is analogous to malicious code calling your code with strange parameters, and the same precautions should be taken.</span></span> <span data-ttu-id="70348-105">実際には、ユーザー入力の安全性を保つ方が困難です。潜在的に信頼されていないデータの存在をトレースするスタック フレームがないためです。</span><span class="sxs-lookup"><span data-stu-id="70348-105">User input is actually harder to make safe because there is no stack frame to trace the presence of the potentially untrusted data.</span></span>  
   
- これらは、セキュリティとは無関係に見えるコード内に存在しながら、他のコードを通じて悪意のあるデータを通してしまうため、最も微妙で最も見つけるのが難しいセキュリティ バグと言えます。  これらのバグを探すには、さまざまな種類の入力データを追跡し、可能な値の範囲を推測し、さらにこのデータを見ているコードがこれらのすべてのケースを処理できるのかを考慮します。  値の範囲をチェックし、コードが処理できないデータを拒否することによって、これらのバグを修正できます。  
+ <span data-ttu-id="70348-106">これらは最も微小で見つけにくいセキュリティ バグです。セキュリティとは無関係に見えるコードに存在すことができ、他のコードに悪いデータを送り出すゲートウェイだからです。</span><span class="sxs-lookup"><span data-stu-id="70348-106">These are among the subtlest and hardest security bugs to find because, although they can exist in code that is seemingly unrelated to security, they are a gateway to pass bad data through to other code.</span></span> <span data-ttu-id="70348-107">このようなバグを探し出すには、あらゆる種類の入力データを追跡し、可能性のある値の範囲を想像し、そのデータを扱うコードがすべてのケースを処理できるかどうかを検討します。</span><span class="sxs-lookup"><span data-stu-id="70348-107">To look for these bugs, follow any kind of input data, imagine what the range of possible values might be, and consider whether the code seeing this data can handle all those cases.</span></span> <span data-ttu-id="70348-108">これらのバグは、範囲チェックを使用して、コードで処理できない入力を拒否することで修正できます。</span><span class="sxs-lookup"><span data-stu-id="70348-108">You can fix these bugs through range checking and rejecting any input the code cannot handle.</span></span>  
   
- ユーザー データに関して、考慮が必要な点を以下に示します。  
+ <span data-ttu-id="70348-109">ユーザー データに関連する重要な注意事項を次に示します。</span><span class="sxs-lookup"><span data-stu-id="70348-109">Some important considerations involving user data include the following:</span></span>  
   
--   サーバー応答内のどのユーザー データも、クライアント上のサーバー側のコンテキストで実行されます。  Web サーバーがユーザー データを受け取り、返される Web ページに挿入するように、サーバーからたとえば **\<script\>** タグを含めて、実行される可能性があります。  
+-   <span data-ttu-id="70348-110">サーバー応答内のすべてのユーザー データは、クライアント上でサーバーのサイトのコンテキストで実行されます。</span><span class="sxs-lookup"><span data-stu-id="70348-110">Any user data in a server response runs in the context of the server's site on the client.</span></span> <span data-ttu-id="70348-111">ご使用の Web サーバーがユーザー データを受け取り、返す Web ページにそのデータを挿入する場合、たとえば、そのデータが **\<script>** タグを組み込んで、サーバーからのように実行する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="70348-111">If your Web server takes user data and inserts it into the returned Web page, it might, for example, include a **\<script>** tag and run as if from the server.</span></span>  
   
--   クライアントは任意の URL を要求できるため、注意が必要です。  
+-   <span data-ttu-id="70348-112">クライアントはすべての URL を要求できることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="70348-112">Remember that the client can request any URL.</span></span>  
   
--   次のような異常なパスまたは不正なパスについて考慮します。  
+-   <span data-ttu-id="70348-113">巧妙なパスまたは無効なパスに注意してください。</span><span class="sxs-lookup"><span data-stu-id="70348-113">Consider tricky or invalid paths:</span></span>  
   
-    -   。\\、非常に長いパス。  
+    -   <span data-ttu-id="70348-114">..\、極端に長いパス。</span><span class="sxs-lookup"><span data-stu-id="70348-114">..\ , extremely long paths.</span></span>  
   
-    -   ワイルドカード文字 \(\*\) の使用。  
+    -   <span data-ttu-id="70348-115">ワイルドカード文字 (*) の使用。</span><span class="sxs-lookup"><span data-stu-id="70348-115">Use of wild card characters (*).</span></span>  
   
-    -   トークンの拡張 \(%token%\)。  
+    -   <span data-ttu-id="70348-116">トークンの展開 (%token%)。</span><span class="sxs-lookup"><span data-stu-id="70348-116">Token expansion (%token%).</span></span>  
   
-    -   特殊な意味を持つ異常な形式のパス。  
+    -   <span data-ttu-id="70348-117">特別な意味を持つ変わった形式のパス。</span><span class="sxs-lookup"><span data-stu-id="70348-117">Strange forms of paths with special meaning.</span></span>  
   
-    -   代替ファイル システム ストリーム名。たとえば、`filename::$DATA` など。  
+    -   <span data-ttu-id="70348-118">代替ファイル システム ストリーム名、`filename::$DATA` など。</span><span class="sxs-lookup"><span data-stu-id="70348-118">Alternate file system stream names such as `filename::$DATA`.</span></span>  
   
-    -   `longfilename` に対する `longfi~1` などのファイル名の短縮バージョン。  
+    -   <span data-ttu-id="70348-119">ファイル名の短縮バージョン、`longfilename`に対して `longfi~1` など。</span><span class="sxs-lookup"><span data-stu-id="70348-119">Short versions of file names such as `longfi~1` for `longfilename`.</span></span>  
   
--   Eval\(userdata\) は任意のことを実行できるため、注意が必要です。  
+-   <span data-ttu-id="70348-120">Eval(userdata) は何でも実行できることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="70348-120">Remember that Eval(userdata) can do anything.</span></span>  
   
--   いくつかのユーザー データを持つ名前への遅延バインディングには注意が必要です。  
+-   <span data-ttu-id="70348-121">ユーザー データを含む名前の遅延バインディングを警戒してください。</span><span class="sxs-lookup"><span data-stu-id="70348-121">Be wary of late binding to a name that includes some user data.</span></span>  
   
--   Web データを処理する場合は、許可するさまざまなエスケープの形式について考慮します。次のような形式があります。  
+-   <span data-ttu-id="70348-122">Web データを扱う場合は、許容されるさまざまな形式のエスケープを検討してください。</span><span class="sxs-lookup"><span data-stu-id="70348-122">If you are dealing with Web data, consider the various forms of escapes that are permissible, including:</span></span>  
   
-    -   16 進エスケープ \(%nn\)。  
+    -   <span data-ttu-id="70348-123">16 進数エスケープ (%nn)。</span><span class="sxs-lookup"><span data-stu-id="70348-123">Hexadecimal escapes (%nn).</span></span>  
   
-    -   Unicode エスケープ \(%nnn\)。  
+    -   <span data-ttu-id="70348-124">Unicode エスケープ (%nnn)。</span><span class="sxs-lookup"><span data-stu-id="70348-124">Unicode escapes (%nnn).</span></span>  
   
-    -   Overlong UTF\-8 エスケープ \(%nn%nn\)。  
+    -   <span data-ttu-id="70348-125">オーバーロング UTF-8 エスケープ (%nn%nn)。</span><span class="sxs-lookup"><span data-stu-id="70348-125">Overlong UTF-8 escapes (%nn%nn).</span></span>  
   
-    -   二重エスケープ \(%nn が %mmnn になります。%mm は '%' のエスケープです\)。  
+    -   <span data-ttu-id="70348-126">ダブル エスケープ (%nn が %mmnn になります。%mm は '%' のエスケープです)。</span><span class="sxs-lookup"><span data-stu-id="70348-126">Double escapes (%nn becomes %mmnn, where %mm is the escape for '%').</span></span>  
   
--   複数の標準形式が含まれるユーザー名には注意が必要です。  たとえば、Microsoft Windows 2000 では、MYDOMAIN\\*username* 形式または *username*@mydomain.example.com 形式のいずれかを使用します。  
+-   <span data-ttu-id="70348-127">標準形式が複数あるユーザー名に注意してください。</span><span class="sxs-lookup"><span data-stu-id="70348-127">Be wary of user names that might have more than one canonical format.</span></span> <span data-ttu-id="70348-128">たとえば、よく使用するのは MYDOMAIN\\*username* 形式または *username*@mydomain.example.com 形式です。</span><span class="sxs-lookup"><span data-stu-id="70348-128">For example, you can often use either the MYDOMAIN\\*username* form or the *username*@mydomain.example.com form.</span></span>  
   
-## 参照  
- [安全なコーディングのガイドライン](../../../docs/standard/security/secure-coding-guidelines.md)
+## <a name="see-also"></a><span data-ttu-id="70348-129">関連項目</span><span class="sxs-lookup"><span data-stu-id="70348-129">See Also</span></span>  
+ [<span data-ttu-id="70348-130">安全なコーディングのガイドライン</span><span class="sxs-lookup"><span data-stu-id="70348-130">Secure Coding Guidelines</span></span>](../../../docs/standard/security/secure-coding-guidelines.md)

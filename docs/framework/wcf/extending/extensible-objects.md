@@ -1,32 +1,34 @@
 ---
-title: "拡張可能オブジェクト | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "拡張可能オブジェクト [WCF]"
+title: "拡張可能オブジェクト"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: extensible objects [WCF]
 ms.assetid: bc88cefc-31fb-428e-9447-6d20a7d452af
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 24482f97f5869def79ce2a24d33b3f9345d1c7c3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 拡張可能オブジェクト
-拡張可能オブジェクト パターンは、既存のランタイム クラスに新しい機能を付加して拡張したり、オブジェクトに新しい状態を追加するために使用します。  このようなオブジェクトを実際に拡張することにより、処理の段階に応じて、共通の拡張可能オブジェクトに定義された共有の状態や機能にアクセスすることができます。  
+# <a name="extensible-objects"></a><span data-ttu-id="4cc6f-102">拡張可能オブジェクト</span><span class="sxs-lookup"><span data-stu-id="4cc6f-102">Extensible Objects</span></span>
+<span data-ttu-id="4cc6f-103">拡張可能オブジェクト パターンは、既存のランタイム クラスに新しい機能を付加して拡張したり、オブジェクトに新しい状態を追加するために使用します。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-103">The extensible object pattern is used to either extend existing runtime classes with new functionality or to add new state to an object.</span></span> <span data-ttu-id="4cc6f-104">このようなオブジェクトを実際に拡張することにより、処理の段階に応じて、共通の拡張可能オブジェクトに定義された共有の状態や機能にアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-104">Extensions, attached to one of the extensible objects, enable behaviors at very different stages in processing to access shared state and functionality attached to a common extensible object that they can access.</span></span>  
   
-## IExtensibleObject\<T\> パターン  
- 拡張可能オブジェクト パターンには、<xref:System.ServiceModel.IExtensibleObject%601>、<xref:System.ServiceModel.IExtension%601>、および <xref:System.ServiceModel.IExtensionCollection%601> の 3 つのインターフェイスがあります。  
+## <a name="the-iextensibleobjectt-pattern"></a><span data-ttu-id="4cc6f-105">IExtensibleObject\<T > パターン</span><span class="sxs-lookup"><span data-stu-id="4cc6f-105">The IExtensibleObject\<T> Pattern</span></span>  
+ <span data-ttu-id="4cc6f-106">拡張可能オブジェクト パターンには、<xref:System.ServiceModel.IExtensibleObject%601>、<xref:System.ServiceModel.IExtension%601>、および <xref:System.ServiceModel.IExtensionCollection%601> の 3 つのインターフェイスがあります。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-106">There are three interfaces in the extensible object pattern: <xref:System.ServiceModel.IExtensibleObject%601>, <xref:System.ServiceModel.IExtension%601>, and <xref:System.ServiceModel.IExtensionCollection%601>.</span></span>  
   
- <xref:System.ServiceModel.IExtensibleObject%601> インターフェイスを実装することにより、<xref:System.ServiceModel.IExtension%601> オブジェクトの機能をカスタマイズできます。  
+ <span data-ttu-id="4cc6f-107"><xref:System.ServiceModel.IExtensibleObject%601> インターフェイスを実装することにより、<xref:System.ServiceModel.IExtension%601> オブジェクトの機能をカスタマイズできます。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-107">The <xref:System.ServiceModel.IExtensibleObject%601> interface is implemented by types that allow <xref:System.ServiceModel.IExtension%601> objects to customize their functionality.</span></span>  
   
- 拡張可能オブジェクトを使用すると、<xref:System.ServiceModel.IExtension%601> オブジェクトの動的な集約が可能になります。  <xref:System.ServiceModel.IExtension%601> オブジェクトには、次のインターフェイスが実装されています。  
+ <span data-ttu-id="4cc6f-108">拡張可能オブジェクトを使用すると、<xref:System.ServiceModel.IExtension%601> オブジェクトの動的な集約が可能になります。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-108">Extensible objects allow dynamic aggregation of <xref:System.ServiceModel.IExtension%601> objects.</span></span> <span data-ttu-id="4cc6f-109"><xref:System.ServiceModel.IExtension%601> オブジェクトには、次のインターフェイスが実装されています。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-109"><xref:System.ServiceModel.IExtension%601> objects are characterized by the following interface:</span></span>  
   
 ```  
 public interface IExtension<T>  
@@ -37,40 +39,42 @@ where T : IExtensibleObject<T>
 }  
 ```  
   
- この型制約は、<xref:System.ServiceModel.IExtensibleObject%601> であるクラスに対してしか拡張を定義できないことを保証します。  <xref:System.ServiceModel.IExtension%601.Attach%2A> と <xref:System.ServiceModel.IExtension%601.Detach%2A> は、集約や集約解除に関する通知を提供します。  
+ <span data-ttu-id="4cc6f-110">この型制約は、<xref:System.ServiceModel.IExtensibleObject%601> であるクラスに対してしか拡張を定義できないことを保証します。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-110">The type restriction guarantees that extensions can only be defined for classes that are <xref:System.ServiceModel.IExtensibleObject%601>.</span></span> <span data-ttu-id="4cc6f-111"><xref:System.ServiceModel.IExtension%601.Attach%2A> と <xref:System.ServiceModel.IExtension%601.Detach%2A> は、集約や集約解除に関する通知を提供します。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-111"><xref:System.ServiceModel.IExtension%601.Attach%2A> and <xref:System.ServiceModel.IExtension%601.Detach%2A> provide notification of aggregation or disaggregation.</span></span>  
   
- 所有者が追加や削除を行う際の制限を組み込むことも可能です。  たとえば、削除は全面的に禁止する、所有者や拡張がある状態であれば拡張の追加や削除を禁止する、同時に複数の所有者に追加することを禁止する、1 つ削除したら 1 つだけ追加を許可する、などの制約を指定することができます。  
+ <span data-ttu-id="4cc6f-112">所有者が追加や削除を行う際の制限を組み込むことも可能です。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-112">It is valid for implementations to restrict when they may be added and removed from an owner.</span></span> <span data-ttu-id="4cc6f-113">たとえば、削除は全面的に禁止する、所有者や拡張がある状態であれば拡張の追加や削除を禁止する、同時に複数の所有者に追加することを禁止する、1 つ削除したら 1 つだけ追加を許可する、などの制約を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-113">For example, you can disallow removal entirely, disallowing adding or removing extensions when the owner or extension are in a certain state, disallow adding to multiple owners concurrently, or allow only a single addition followed by a single remove.</span></span>  
   
- <xref:System.ServiceModel.IExtension%601> を実装しても、他の標準のマネージ インターフェイスとやりとりできるとは限りません。  特に、所有者オブジェクトの <xref:System.IDisposable.Dispose%2A?displayProperty=fullName> メソッドは、自分自身の拡張を解除しないのが普通です。  
+ <span data-ttu-id="4cc6f-114"><xref:System.ServiceModel.IExtension%601> を実装しても、他の標準のマネージ インターフェイスとやりとりできるとは限りません。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-114"><xref:System.ServiceModel.IExtension%601> does not imply any interactions with other standard managed interfaces.</span></span> <span data-ttu-id="4cc6f-115">特に、所有者オブジェクトの <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> メソッドは、自分自身の拡張を解除しないのが普通です。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-115">Specifically, the <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> method on the owner object does not normally detach its extensions.</span></span>  
   
- 拡張がコレクションに追加される場合には、直前に <xref:System.ServiceModel.IExtension%601.Attach%2A> が呼び出されます。また、コレクションから拡張を削除すると、その直後に <xref:System.ServiceModel.IExtension%601.Detach%2A> が呼び出されます。したがって、同期が適切であれば、拡張が有効なのは <xref:System.ServiceModel.IExtension%601.Attach%2A> から <xref:System.ServiceModel.IExtension%601.Detach%2A> の間ということになります。  
+ <span data-ttu-id="4cc6f-116">拡張機能は、このコレクションに追加されたときに<xref:System.ServiceModel.IExtension%601.Attach%2A>コレクションに入る前と呼びます。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-116">When an extension is added to the collection, <xref:System.ServiceModel.IExtension%601.Attach%2A> is called before it goes into the collection.</span></span> <span data-ttu-id="4cc6f-117">拡張機能は、コレクションから削除されたときに<xref:System.ServiceModel.IExtension%601.Detach%2A>は、削除された後に呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-117">When an extension is removed from the collection, <xref:System.ServiceModel.IExtension%601.Detach%2A> is called after it is removed.</span></span> <span data-ttu-id="4cc6f-118">(該当する同期されている場合) ことを意味の拡張機能にのみ、その中にコレクション内で見つかったにカウントできるこの間隔は<xref:System.ServiceModel.IExtension%601.Attach%2A>と<xref:System.ServiceModel.IExtension%601.Detach%2A>です。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-118">This means (assuming appropriate synchronization) an extension can count on only being found in the collection while it is between <xref:System.ServiceModel.IExtension%601.Attach%2A> and <xref:System.ServiceModel.IExtension%601.Detach%2A>.</span></span>  
   
- <xref:System.ServiceModel.IExtensionCollection%601.FindAll%2A> や <xref:System.ServiceModel.IExtensionCollection%601.Find%2A> に渡すオブジェクトは、<xref:System.ServiceModel.IExtension%601> である必要はなく、任意のオブジェクトを渡すことができますが、返される拡張は <xref:System.ServiceModel.IExtension%601> です。  
+ <span data-ttu-id="4cc6f-119"><xref:System.ServiceModel.IExtensionCollection%601.FindAll%60%601%2A> や <xref:System.ServiceModel.IExtensionCollection%601.Find%60%601%2A> に渡すオブジェクトは、<xref:System.ServiceModel.IExtension%601> である必要はなく、任意のオブジェクトを渡すことができますが、返される拡張は <xref:System.ServiceModel.IExtension%601> です。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-119">The object passed to <xref:System.ServiceModel.IExtensionCollection%601.FindAll%60%601%2A> or <xref:System.ServiceModel.IExtensionCollection%601.Find%60%601%2A> need not be <xref:System.ServiceModel.IExtension%601> (for example, you can pass any object), but the returned extension is an <xref:System.ServiceModel.IExtension%601>.</span></span>  
   
- コレクション内のどの拡張も <xref:System.ServiceModel.IExtension%601> でなければ、<xref:System.ServiceModel.IExtensionCollection%601.Find%2A> は null を返し、<xref:System.ServiceModel.IExtensionCollection%601.FindAll%2A> は空のコレクションを返します。<xref:System.ServiceModel.IExtension%601> を実装した拡張が複数あれば、<xref:System.ServiceModel.IExtensionCollection%601.Find%2A> はそのうちのいずれか 1 つを返します。  <xref:System.ServiceModel.IExtensionCollection%601.FindAll%2A> から返される値はスナップショットです。  
+ <span data-ttu-id="4cc6f-120">コレクション内の拡張機能がない場合、 <xref:System.ServiceModel.IExtension%601>、<xref:System.ServiceModel.IExtensionCollection%601.Find%60%601%2A>は null を返しますと<xref:System.ServiceModel.IExtensionCollection%601.FindAll%60%601%2A>空のコレクションを返します。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-120">If no extension in the collection is an <xref:System.ServiceModel.IExtension%601>, <xref:System.ServiceModel.IExtensionCollection%601.Find%60%601%2A> returns null, and <xref:System.ServiceModel.IExtensionCollection%601.FindAll%60%601%2A> returns an empty collection.</span></span> <span data-ttu-id="4cc6f-121">複数の拡張機能を実装する場合<xref:System.ServiceModel.IExtension%601>、<xref:System.ServiceModel.IExtensionCollection%601.Find%60%601%2A>それらのいずれかを返します。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-121">If multiple extensions implement <xref:System.ServiceModel.IExtension%601>, <xref:System.ServiceModel.IExtensionCollection%601.Find%60%601%2A> returns one of them.</span></span> <span data-ttu-id="4cc6f-122"><xref:System.ServiceModel.IExtensionCollection%601.FindAll%60%601%2A> から返される値はスナップショットです。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-122">The value returned from <xref:System.ServiceModel.IExtensionCollection%601.FindAll%60%601%2A> is a snapshot.</span></span>  
   
- 主な使い方として、次の 2 つのシナリオが考えられます。  1 つ目のシナリオでは、型ベースのディクショナリとして <xref:System.ServiceModel.IExtensibleObject%601.Extensions%2A> プロパティを使用し、オブジェクトに状態を追加します。これは、別のコンポーネントが型に基づいて検索できます。  
+ <span data-ttu-id="4cc6f-123">主な使い方として、次の 2 つのシナリオが考えられます。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-123">There are two main scenarios.</span></span> <span data-ttu-id="4cc6f-124">1 つ目のシナリオでは、型ベースのディクショナリとして <xref:System.ServiceModel.IExtensibleObject%601.Extensions%2A> プロパティを使用し、オブジェクトに状態を追加します。これは、別のコンポーネントが型に基づいて検索できます。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-124">The first scenario uses the <xref:System.ServiceModel.IExtensibleObject%601.Extensions%2A> property as a type-based dictionary to insert state on an object to enable another component to look it up using the type.</span></span>  
   
- 2 つ目のシナリオでは、<xref:System.ServiceModel.IExtension%601.Attach%2A> プロパティおよび <xref:System.ServiceModel.IExtension%601.Detach%2A> プロパティを使用し、イベントへの登録や、状態の遷移の監視など、カスタムの動作にオブジェクトを参加させます。  
+ <span data-ttu-id="4cc6f-125">2 つ目のシナリオでは、<xref:System.ServiceModel.IExtension%601.Attach%2A> プロパティおよび <xref:System.ServiceModel.IExtension%601.Detach%2A> プロパティを使用し、イベントへの登録や、状態の遷移の監視など、カスタムの動作にオブジェクトを参加させます。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-125">The second scenario uses the <xref:System.ServiceModel.IExtension%601.Attach%2A> and <xref:System.ServiceModel.IExtension%601.Detach%2A> properties to enable an object to participate in custom behavior, such as registering for events, watching state transitions, and so on.</span></span>  
   
- <xref:System.ServiceModel.IExtensionCollection%601> インターフェイスは、型を基準にした <xref:System.ServiceModel.IExtension%601> の取得を可能にする <xref:System.ServiceModel.IExtension%601> オブジェクトのコレクションです。  <xref:System.ServiceModel.IExtensionCollection%601.Find%2A?displayProperty=fullName> は、指定された型の <xref:System.ServiceModel.IExtension%601> オブジェクトのうち、最も新しく追加されたものを返します。  
+ <span data-ttu-id="4cc6f-126"><xref:System.ServiceModel.IExtensionCollection%601> インターフェイスは、型を基準にした <xref:System.ServiceModel.IExtension%601> の取得を可能にする <xref:System.ServiceModel.IExtension%601> オブジェクトのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-126">The <xref:System.ServiceModel.IExtensionCollection%601> interface is a collection of the <xref:System.ServiceModel.IExtension%601> objects that allow for retrieving the <xref:System.ServiceModel.IExtension%601> by its type.</span></span> <span data-ttu-id="4cc6f-127"><xref:System.ServiceModel.IExtensionCollection%601.Find%60%601%2A?displayProperty=nameWithType> は、指定された型の <xref:System.ServiceModel.IExtension%601> オブジェクトのうち、最も新しく追加されたものを返します。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-127"><xref:System.ServiceModel.IExtensionCollection%601.Find%60%601%2A?displayProperty=nameWithType> returns the most recently added object that is an <xref:System.ServiceModel.IExtension%601> of that type.</span></span>  
   
-### Windows Communication Foundation の拡張可能オブジェクト  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には次の 4 つの拡張可能オブジェクトが組み込まれています。  
+### <a name="extensible-objects-in-windows-communication-foundation"></a><span data-ttu-id="4cc6f-128">Windows Communication Foundation の拡張可能オブジェクト</span><span class="sxs-lookup"><span data-stu-id="4cc6f-128">Extensible Objects in Windows Communication Foundation</span></span>  
+ <span data-ttu-id="4cc6f-129">[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には次の 4 つの拡張可能オブジェクトが組み込まれています。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-129">There are four extensible objects in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]:</span></span>  
   
--   <xref:System.ServiceModel.ServiceHostBase> : サービス ホストの基本クラスです。  <xref:System.ServiceModel.ServiceHostBase> 自身の動作を拡張するほか、各サービスの状態を保存しておくための拡張が可能です。  
+-   <span data-ttu-id="4cc6f-130"><xref:System.ServiceModel.ServiceHostBase> : サービス ホストの基本クラスです。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-130"><xref:System.ServiceModel.ServiceHostBase> – This is the base class for the service’s host.</span></span>  <span data-ttu-id="4cc6f-131"><xref:System.ServiceModel.ServiceHostBase> 自身の動作を拡張するほか、各サービスの状態を保存しておくための拡張が可能です。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-131">Extensions of this class can be used to extend the behavior of the <xref:System.ServiceModel.ServiceHostBase> itself or to store the state for each service.</span></span>  
   
--   <xref:System.ServiceModel.InstanceContext> : サービスのランタイムを使用して、サービスの型のインスタンスと接続するためのクラスです。  このクラスは、インスタンスに関する情報のほか、<xref:System.ServiceModel.InstanceContext> に含まれる <xref:System.ServiceModel.ServiceHostBase> への参照を保持します。  <xref:System.ServiceModel.InstanceContext> 自身の動作を拡張するほか、各サービスの状態を保存しておくための拡張が可能です。  
+-   <span data-ttu-id="4cc6f-132"><xref:System.ServiceModel.InstanceContext> : サービスのランタイムを使用して、サービスの型のインスタンスと接続するためのクラスです。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-132"><xref:System.ServiceModel.InstanceContext> – This class connects an instance of the service’s type with the service runtime.</span></span>  <span data-ttu-id="4cc6f-133">このクラスは、インスタンスに関する情報のほか、<xref:System.ServiceModel.InstanceContext> に含まれる <xref:System.ServiceModel.ServiceHostBase> への参照を保持します。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-133">It contains information about the instance as well as a reference to the <xref:System.ServiceModel.InstanceContext>'s containing <xref:System.ServiceModel.ServiceHostBase>.</span></span> <span data-ttu-id="4cc6f-134"><xref:System.ServiceModel.InstanceContext> 自身の動作を拡張するほか、各サービスの状態を保存しておくための拡張が可能です。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-134">Extensions of this class can be used to extend the behavior of the <xref:System.ServiceModel.InstanceContext> or to store the state for each service.</span></span>  
   
--   <xref:System.ServiceModel.OperationContext> : 操作ごとにランタイムが収集した操作情報を表すクラスです。  具体的には、受け取ったメッセージのヘッダーやプロパティ、受け取ったセキュリティ ID などの情報があります。  <xref:System.ServiceModel.OperationContext> 自身の動作を拡張するほか、各操作の状態を保存しておくための拡張が可能です。  
+-   <span data-ttu-id="4cc6f-135"><xref:System.ServiceModel.OperationContext> : 操作ごとにランタイムが収集した操作情報を表すクラスです。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-135"><xref:System.ServiceModel.OperationContext> – This class represents the operation information that the runtime gathers for each operation.</span></span>  <span data-ttu-id="4cc6f-136">具体的には、受け取ったメッセージのヘッダーやプロパティ、受け取ったセキュリティ ID などの情報があります。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-136">This includes information such as the incoming message headers, the incoming message properties, the incoming security identity, and other information.</span></span>  <span data-ttu-id="4cc6f-137"><xref:System.ServiceModel.OperationContext> 自身の動作を拡張するほか、各操作の状態を保存しておくための拡張が可能です。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-137">Extensions of this class can either extend the behavior of <xref:System.ServiceModel.OperationContext> or store the state for each operation.</span></span>  
   
--   <xref:System.ServiceModel.IContextChannel> : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ランタイムで構築されたチャネルやプロキシの状態を個々に検査できるようにするためのインターフェイスです。  <xref:System.ServiceModel.IClientChannel> 自身の動作を拡張するほか、各チャネルの状態を保存しておくための拡張が可能です。  
+-   <span data-ttu-id="4cc6f-138"><xref:System.ServiceModel.IContextChannel> : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ランタイムで構築されたチャネルやプロキシの状態を個々に検査できるようにするためのインターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-138"><xref:System.ServiceModel.IContextChannel> – This interface allows for the inspection of each state for the channels and proxies built by the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] runtime.</span></span>  <span data-ttu-id="4cc6f-139"><xref:System.ServiceModel.IClientChannel> 自身の動作を拡張するほか、各チャネルの状態を保存しておくための拡張が可能です。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-139">Extensions of this class can either extend the behavior of <xref:System.ServiceModel.IClientChannel> or can use it to store the state for each channel.</span></span>  
   
- <xref:System.ServiceModel.InstanceContext> オブジェクトの状態を追跡するという、簡単な拡張の使い方を例示したコードを次に示します。  
+-  
+  
+ <span data-ttu-id="4cc6f-140"><xref:System.ServiceModel.InstanceContext> オブジェクトの状態を追跡するという、簡単な拡張の使い方を例示したコードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="4cc6f-140">The following code example shows the use of a simple extension to track <xref:System.ServiceModel.InstanceContext> objects.</span></span>  
   
  [!code-csharp[IInstanceContextInitializer#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/iinstancecontextinitializer/cs/initializer.cs#1)]  
   
-## 参照  
- <xref:System.ServiceModel.IExtensibleObject%601>   
- <xref:System.ServiceModel.IExtension%601>   
+## <a name="see-also"></a><span data-ttu-id="4cc6f-141">関連項目</span><span class="sxs-lookup"><span data-stu-id="4cc6f-141">See Also</span></span>  
+ <xref:System.ServiceModel.IExtensibleObject%601>  
+ <xref:System.ServiceModel.IExtension%601>  
  <xref:System.ServiceModel.IExtensionCollection%601>

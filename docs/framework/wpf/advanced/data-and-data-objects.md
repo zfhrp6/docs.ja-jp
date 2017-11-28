@@ -1,101 +1,107 @@
 ---
-title: "データとデータ オブジェクト | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "データ転送 [WPF], ドラッグ アンド ドロップ"
-  - "DataFormats クラス [WPF]"
-  - "DataObject クラス [WPF]"
+title: "データとデータ オブジェクト"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- data transfer [WPF], drag-and-drop
+- DataFormats class [WPF]
+- DataObject class [WPF]
 ms.assetid: 5967d557-1867-420f-a524-ae3af78402da
-caps.latest.revision: 5
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fc5d5f8c2090f6abaa1157db2a92d2e689d7f216
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# データとデータ オブジェクト
-ドラッグ アンド ドロップ操作の一部として転送されるデータは、データ オブジェクトに格納されます。  概念上、データ オブジェクトは、次の項目の 1 つ以上のペアで構成されます。  
+# <a name="data-and-data-objects"></a><span data-ttu-id="33e49-102">データとデータ オブジェクト</span><span class="sxs-lookup"><span data-stu-id="33e49-102">Data and Data Objects</span></span>
+<span data-ttu-id="33e49-103">ドラッグ アンド ドロップ操作の一部として転送されるデータは、データ オブジェクトに格納されます。</span><span class="sxs-lookup"><span data-stu-id="33e49-103">Data that is transferred as part of a drag-and-drop operation is stored in a data object.</span></span>  <span data-ttu-id="33e49-104">概念的には、データ オブジェクトは、1 つ以上の次のペアで構成されます。</span><span class="sxs-lookup"><span data-stu-id="33e49-104">Conceptually, a data object consists of one or more of the following pairs:</span></span>  
   
--   実際のデータを格納する <xref:System.Object>。  
+-   <span data-ttu-id="33e49-105"><xref:System.Object>実際のデータを格納しています。</span><span class="sxs-lookup"><span data-stu-id="33e49-105">An <xref:System.Object> that contains the actual data.</span></span>  
   
--   対応するデータ形式の識別子。  
+-   <span data-ttu-id="33e49-106">対応するデータ形式の識別子。</span><span class="sxs-lookup"><span data-stu-id="33e49-106">A corresponding data format identifier.</span></span>  
   
- データ自体は、基本 <xref:System.Object> として表すことができる任意の項目で構成できます。  対応するデータ形式は、データの形式に関するヒントを提供する文字列または <xref:System.Type> です。  データ オブジェクトは、データとデータ形式の複数ペアのホストをサポートします。これにより、単一のデータ オブジェクトでデータを複数の形式で提供できます。  
+ <span data-ttu-id="33e49-107">データ自体をベースとして表すことができるもので構成できます<xref:System.Object>です。</span><span class="sxs-lookup"><span data-stu-id="33e49-107">The data itself can consist of anything that can be represented as a base <xref:System.Object>.</span></span>  <span data-ttu-id="33e49-108">対応するデータ形式は、文字列または<xref:System.Type>では、データの書式設定についてのヒントを提供します。</span><span class="sxs-lookup"><span data-stu-id="33e49-108">The corresponding data format is a string or <xref:System.Type> that provides a hint about what format the data is in.</span></span>  <span data-ttu-id="33e49-109">複数のデータ/データ形式のペア; をホストしているデータ オブジェクトのサポートこれにより、複数の形式でデータを提供する 1 つのデータ オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="33e49-109">Data objects support hosting multiple data/data format pairs; this enables a single data object to provide data in multiple formats.</span></span>  
   
 <a name="Data_and_Data_Objects"></a>   
-## データ オブジェクト  
- すべてのデータ オブジェクトで、<xref:System.Windows.IDataObject> インターフェイスを実装する必要があります。このインターフェイスは、データ転送を可能にし、容易にする次の標準メソッド セットを提供します。  
+## <a name="data-objects"></a><span data-ttu-id="33e49-110">データ オブジェクト</span><span class="sxs-lookup"><span data-stu-id="33e49-110">Data Objects</span></span>  
+ <span data-ttu-id="33e49-111">すべてのデータ オブジェクトを実装する必要があります、<xref:System.Windows.IDataObject>次の標準セットを有効にして、データ転送を容易にするメソッドを提供するインターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="33e49-111">All data objects must implement the <xref:System.Windows.IDataObject> interface, which provides the following standard set of methods that enable and facilitate data transfer.</span></span>  
   
-|メソッド|概要|  
-|----------|--------|  
-|<xref:System.Windows.IDataObject.GetData%2A>|データ オブジェクトを指定したデータ形式で取得します。|  
-|<xref:System.Windows.IDataObject.GetDataPresent%2A>|データが指定した形式で使用可能かどうか、または指定した形式に変換可能かどうかをチェックします。|  
-|<xref:System.Windows.IDataObject.GetFormats%2A>|このデータ オブジェクトのデータが格納されているか、または変換可能である形式のリストを返します。|  
-|<xref:System.Windows.IDataObject.SetData%2A>|指定したデータをこのデータ オブジェクトに格納します。|  
+|<span data-ttu-id="33e49-112">メソッド</span><span class="sxs-lookup"><span data-stu-id="33e49-112">Method</span></span>|<span data-ttu-id="33e49-113">概要</span><span class="sxs-lookup"><span data-stu-id="33e49-113">Summary</span></span>|  
+|------------|-------------|  
+|<xref:System.Windows.IDataObject.GetData%2A>|<span data-ttu-id="33e49-114">指定したデータ形式のデータ オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="33e49-114">Retrieves a data object in a specified data format.</span></span>|  
+|<xref:System.Windows.IDataObject.GetDataPresent%2A>|<span data-ttu-id="33e49-115">データで使用可能でまたは指定された形式に変換できるかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="33e49-115">Checks to see whether the data is available in, or can be converted to, a specified format.</span></span>|  
+|<xref:System.Windows.IDataObject.GetFormats%2A>|<span data-ttu-id="33e49-116">このデータ オブジェクトのデータでは、またはに変換できる形式の一覧を返します。</span><span class="sxs-lookup"><span data-stu-id="33e49-116">Returns a list of formats that the data in this data object is stored in, or can be converted to.</span></span>|  
+|<xref:System.Windows.IDataObject.SetData%2A>|<span data-ttu-id="33e49-117">このデータ オブジェクトに指定されたデータを格納します。</span><span class="sxs-lookup"><span data-stu-id="33e49-117">Stores the specified data in this data object.</span></span>|  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、<xref:System.Windows.DataObject> クラスの <xref:System.Windows.IDataObject> の基本実装を提供します。  多くの一般的なデータ転送シナリオでは、標準の <xref:System.Windows.DataObject> クラスで十分です。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="33e49-118">基本実装を提供<xref:System.Windows.IDataObject>で、<xref:System.Windows.DataObject>クラスです。</span><span class="sxs-lookup"><span data-stu-id="33e49-118"> provides a basic implementation of <xref:System.Windows.IDataObject> in the <xref:System.Windows.DataObject> class.</span></span> <span data-ttu-id="33e49-119">ストック<xref:System.Windows.DataObject>クラスは多くの一般的なデータ転送のシナリオのための十分なです。</span><span class="sxs-lookup"><span data-stu-id="33e49-119">The stock <xref:System.Windows.DataObject> class is sufficient for many common data transfer scenarios.</span></span>  
   
- ビットマップ、CSV、ファイル、HTML、RTF、文字列、テキスト、オーディオなど、複数の定義済みの形式があります。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] で提供される定義済みのデータ形式については、<xref:System.Windows.DataFormats> クラスのリファレンス トピックを参照してください。  
+ <span data-ttu-id="33e49-120">ビットマップ、CSV、ファイル、HTML、RTF、文字列、テキスト、およびオーディオなど、いくつかの定義済みの形式があります。</span><span class="sxs-lookup"><span data-stu-id="33e49-120">There are several pre-defined formats, such as bitmap, CSV, file, HTML, RTF, string, text, and audio.</span></span> <span data-ttu-id="33e49-121">提供される定義済みのデータ形式については[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]を参照してください、<xref:System.Windows.DataFormats>クラスのリファレンス トピックです。</span><span class="sxs-lookup"><span data-stu-id="33e49-121">For information about pre-defined data formats provided with [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], see the <xref:System.Windows.DataFormats> class reference topic.</span></span>  
   
- 一般的に、データ オブジェクトには、データの抽出時にある形式で格納されているデータを別の形式に自動的に変換する機能が含まれています。この機能は自動変換と呼ばれます。  データ オブジェクトで使用できるデータ形式を照会するときに、<xref:System.Windows.DataObject.GetFormats%28System.Boolean%29> メソッドまたは <xref:System.Windows.DataObject.GetDataPresent%28System.String%2CSystem.Boolean%29> メソッドを呼び出して `autoConvert` パラメーターを `false` に指定することで、自動変換可能なデータ形式をネイティブ データ形式からフィルター処理することができます。  <xref:System.Windows.DataObject.SetData%28System.String%2CSystem.Object%2CSystem.Boolean%29> メソッドを使用してデータをデータ オブジェクトに追加する場合、`autoConvert` パラメーターを `false` に設定してデータの自動変換を禁止することができます。  
+ <span data-ttu-id="33e49-122">通常、データ オブジェクトでは、データの抽出中に 1 つの形式を別の形式で格納されているデータを自動的に変換するための機能この機能は、"自動変換"と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="33e49-122">Data objects commonly include a facility for automatically converting data stored in one format to a different format while extracting data; this facility is referred to as auto-convert.</span></span> <span data-ttu-id="33e49-123">データ形式のデータ オブジェクトで使用可能な場合、クエリを実行するときに自動変換可能なデータ形式をフィルター処理するネイティブ データ形式から呼び出し、<xref:System.Windows.DataObject.GetFormats%28System.Boolean%29>または<xref:System.Windows.DataObject.GetDataPresent%28System.String%2CSystem.Boolean%29>メソッドを指定して、`autoConvert`パラメーターとして`false`です。</span><span class="sxs-lookup"><span data-stu-id="33e49-123">When querying for the data formats available in a data object, auto-convertible data formats can be filtered from native data formats by calling the <xref:System.Windows.DataObject.GetFormats%28System.Boolean%29> or <xref:System.Windows.DataObject.GetDataPresent%28System.String%2CSystem.Boolean%29> method and specifying the `autoConvert` parameter as `false`.</span></span>  <span data-ttu-id="33e49-124">データを使用して、データ オブジェクトに追加するときに、<xref:System.Windows.DataObject.SetData%28System.String%2CSystem.Object%2CSystem.Boolean%29>を設定して、メソッドのデータの自動変換を禁止することができます、`autoConvert`パラメーターを`false`です。</span><span class="sxs-lookup"><span data-stu-id="33e49-124">When adding data to a data object with the <xref:System.Windows.DataObject.SetData%28System.String%2CSystem.Object%2CSystem.Boolean%29> method, auto-conversion of data can be prohibited by setting the `autoConvert` parameter to `false`.</span></span>  
   
 <a name="Working_with_Data_Objects"></a>   
-## データ オブジェクトの操作  
- ここでは、データ オブジェクトを作成および操作する一般的な手法について説明します。  
+## <a name="working-with-data-objects"></a><span data-ttu-id="33e49-125">データ オブジェクトの操作</span><span class="sxs-lookup"><span data-stu-id="33e49-125">Working with Data Objects</span></span>  
+ <span data-ttu-id="33e49-126">このセクションでは、データ オブジェクトの作成と操作の一般的な手法について説明します。</span><span class="sxs-lookup"><span data-stu-id="33e49-126">This section describes common techniques for creating and working with data objects.</span></span>  
   
-### 新しいデータ オブジェクトの作成  
- <xref:System.Windows.DataObject> クラスは、新しい <xref:System.Windows.DataObject> インスタンスに単一のデータとデータ形式のペアを容易に設定できるようにするいくつかのオーバーロードされたコンストラクターを提供します。  
+### <a name="creating-new-data-objects"></a><span data-ttu-id="33e49-127">新しいデータ オブジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="33e49-127">Creating New Data Objects</span></span>  
+ <span data-ttu-id="33e49-128"><xref:System.Windows.DataObject>クラスには、新しい設定を容易にするいくつかのオーバー ロードされたコンス トラクターが用意されています<xref:System.Windows.DataObject>1 つのデータ/データ形式のペアを持つインスタンス。</span><span class="sxs-lookup"><span data-stu-id="33e49-128">The <xref:System.Windows.DataObject> class provides several overloaded constructors that facilitate populating a new <xref:System.Windows.DataObject> instance with a single data/data format pair.</span></span>  
   
- 新しいデータ オブジェクトを作成し、オーバーロードされたこのコンストラクター <xref:System.Windows.DataObject.%23ctor%2A> \(<xref:System.Windows.DataObject.%23ctor%28System.String%2CSystem.Object%29>\) のいずれかを使用して、文字列と指定したデータ形式でデータ オブジェクトを初期化するコード例を次に示します。  ここでは、データ形式は文字列によって指定されます。<xref:System.Windows.DataFormats> クラスは、事前定義されている一連の型文字列を提供します。  既定では、格納されるデータの自動変換が有効です。  
+ <span data-ttu-id="33e49-129">次のコード例は、新しいデータ オブジェクトを作成し、オーバー ロードされたコンス トラクターのいずれかを使用して<xref:System.Windows.DataObject.%23ctor%2A>(<xref:System.Windows.DataObject.%23ctor(System.String,System.Object)>) 文字列と指定したデータ形式でデータ オブジェクトを初期化します。</span><span class="sxs-lookup"><span data-stu-id="33e49-129">The following example code creates a new data object and uses one of the overloaded constructors <xref:System.Windows.DataObject.%23ctor%2A>(<xref:System.Windows.DataObject.%23ctor(System.String,System.Object)>) to initialize the data object with a string and a specified data format.</span></span>  <span data-ttu-id="33e49-130">データの形式が文字列で指定されたこのケースでは、<xref:System.Windows.DataFormats>クラスには、事前に定義された型の文字列のセットが用意されています。</span><span class="sxs-lookup"><span data-stu-id="33e49-130">In this case, the data format is specified by a string; the <xref:System.Windows.DataFormats> class provides a set of pre-defined type strings.</span></span> <span data-ttu-id="33e49-131">既定では、格納されたデータの自動変換を許可します。</span><span class="sxs-lookup"><span data-stu-id="33e49-131">Auto-conversion of the stored data is allowed by default.</span></span>  
   
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_TypeString](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_typestring)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_TypeString](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_typestring)]  
   
- データ オブジェクトを作成するコードの例については、「[データ オブジェクトを作成する](../../../../docs/framework/wpf/advanced/how-to-create-a-data-object.md)」を参照してください。  
+ <span data-ttu-id="33e49-132">データ オブジェクトを作成するコードの例については、次を参照してください。[データ オブジェクトを作成](../../../../docs/framework/wpf/advanced/how-to-create-a-data-object.md)です。</span><span class="sxs-lookup"><span data-stu-id="33e49-132">For more examples of code that creates a data object, see [Create a Data Object](../../../../docs/framework/wpf/advanced/how-to-create-a-data-object.md).</span></span>  
   
-### 複数の形式のデータの格納  
- 単一のデータ オブジェクトに複数の形式でデータを格納できます。  単一のデータ オブジェクト内で複数のデータ形式を戦略的に使用すると、単一のデータ形式のみを表す場合よりも、データ オブジェクトを幅広いドロップ ターゲットで使用できる可能性が高くなります。  通常、ドラッグ ソースは潜在的なドロップ ターゲットで使用できるデータ形式に依存しない必要があることに注意してください。  
+### <a name="storing-data-in-multiple-formats"></a><span data-ttu-id="33e49-133">複数の形式でデータを格納します。</span><span class="sxs-lookup"><span data-stu-id="33e49-133">Storing Data in Multiple Formats</span></span>  
+ <span data-ttu-id="33e49-134">単一のデータ オブジェクトは、複数の形式でデータを格納することです。</span><span class="sxs-lookup"><span data-stu-id="33e49-134">A single data object is able to store data in multiple formats.</span></span>   <span data-ttu-id="33e49-135">1 つのデータ オブジェクト内の複数のデータ形式を戦略的に使用可能性のあるにより、データ オブジェクトのドロップ ターゲットをよりも多様なで使用できるだけの場合、1 つのデータ形式を表すことができます。</span><span class="sxs-lookup"><span data-stu-id="33e49-135">Strategic use of multiple data formats within a single data object potentially makes the data object consumable by a wider variety of drop targets than if only a single data format could be represented.</span></span>  <span data-ttu-id="33e49-136">なお、一般に、ドラッグ ソースがドロップ ターゲットを潜在的なデータ形式に依存しない必要があります。</span><span class="sxs-lookup"><span data-stu-id="33e49-136">Note that, in general, a drag source must be agnostic about the data formats that are consumable by potential drop targets.</span></span>  
   
- 次の例は、<xref:System.Windows.DataObject.SetData%28System.String%2CSystem.Object%29> メソッドを使用してデータを複数の形式のデータ オブジェクトに追加する方法を示しています。  
+ <span data-ttu-id="33e49-137">次の例を使用する方法を示しています、<xref:System.Windows.DataObject.SetData%28System.String%2CSystem.Object%29>複数の形式でデータ オブジェクトにデータを追加します。</span><span class="sxs-lookup"><span data-stu-id="33e49-137">The following example shows how to use the <xref:System.Windows.DataObject.SetData%28System.String%2CSystem.Object%29> method to add data to a data object in multiple formats.</span></span>  
   
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_StoreMultipleFormats](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_storemultipleformats)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_StoreMultipleFormats](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_storemultipleformats)]  
   
-### データ オブジェクトで使用可能な形式の照会  
- 単一のデータ オブジェクトに任意の数のデータ形式を含めることができるため、データ オブジェクトには、使用可能なデータ形式のリストを取得する機能が含まれています。  
+### <a name="querying-a-data-object-for-available-formats"></a><span data-ttu-id="33e49-138">使用可能な形式のデータ オブジェクトを照会します。</span><span class="sxs-lookup"><span data-stu-id="33e49-138">Querying a Data Object for Available Formats</span></span>  
+ <span data-ttu-id="33e49-139">単一のデータ オブジェクトには、データ形式の任意の数が含まれていることができます、ために、データ オブジェクトには、使用可能なデータ形式の一覧を取得するための機能が含まれます。</span><span class="sxs-lookup"><span data-stu-id="33e49-139">Because a single data object can contain an arbitrary number of data formats, data objects include facilities for retrieving a list of available data formats.</span></span>  
   
- <xref:System.Windows.DataObject.GetFormats%2A> オーバーロードを使用して、データ オブジェクトで使用可能なすべてのデータ形式 \(ネイティブおよび自動変換の両方で使用可能\) を示す一連の文字列を取得するコード例を次に示します。  
+ <span data-ttu-id="33e49-140">次のコード例を使用して、 <xref:System.Windows.DataObject.GetFormats%2A> (ネイティブおよび自動変換によって) データ オブジェクトで使用可能なすべてのデータ形式を示す文字列の配列を取得するオーバー ロードします。</span><span class="sxs-lookup"><span data-stu-id="33e49-140">The following example code uses the <xref:System.Windows.DataObject.GetFormats%2A> overload to get an array of strings denoting all data formats available in a data object (both native and by auto-convert).</span></span>  
   
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_GetAllDataFormats](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_getalldataformats)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_GetAllDataFormats](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_getalldataformats)]  
   
- データ オブジェクトで使用可能なデータ形式を照会するコードの例については、「[データ オブジェクト内のデータ形式の一覧を表示する](../../../../docs/framework/wpf/advanced/how-to-list-the-data-formats-in-a-data-object.md)」を参照してください。  特定のデータ形式が存在するかどうかをデータ オブジェクトに照会する例については、「[データ形式がデータ オブジェクトに存在するかどうかを判別する](../../../../docs/framework/wpf/advanced/how-to-determine-if-a-data-format-is-present-in-a-data-object.md)」を参照してください。  
+ <span data-ttu-id="33e49-141">使用可能なデータ形式のデータ オブジェクトのクエリを実行するコードの例については、次を参照してください。[データ オブジェクト内のデータ形式を一覧表示](../../../../docs/framework/wpf/advanced/how-to-list-the-data-formats-in-a-data-object.md)です。</span><span class="sxs-lookup"><span data-stu-id="33e49-141">For more examples of code that queries a data object for available data formats, see [List the Data Formats in a Data Object](../../../../docs/framework/wpf/advanced/how-to-list-the-data-formats-in-a-data-object.md).</span></span>  <span data-ttu-id="33e49-142">特定のデータ形式が存在するためのデータ オブジェクトを照会する例については、次を参照してください。[データ形式が存在かどうかを判断データ オブジェクトで](../../../../docs/framework/wpf/advanced/how-to-determine-if-a-data-format-is-present-in-a-data-object.md)です。</span><span class="sxs-lookup"><span data-stu-id="33e49-142">For examples of querying a data object for the presence of a particular data format, see [Determine if a Data Format is Present in a Data Object](../../../../docs/framework/wpf/advanced/how-to-determine-if-a-data-format-is-present-in-a-data-object.md).</span></span>  
   
-### データ オブジェクトからのデータの取得  
- データ オブジェクトから特定の形式のデータを取得するには、単に <xref:System.Windows.DataObject.GetData%2A> メソッドのいずれかを呼び出して目的のデータ形式を指定します。  <xref:System.Windows.DataObject.GetDataPresent%2A> メソッドのいずれかを使用すると、特定のデータ形式が存在するかどうかを確認できます。  <xref:System.Windows.DataObject.GetData%2A> は、<xref:System.Object> 内のデータを返します。データ形式に応じて、このオブジェクトを型固有のコンテナーにキャストできます。  
+### <a name="retrieving-data-from-a-data-object"></a><span data-ttu-id="33e49-143">データ オブジェクトからのデータの取得</span><span class="sxs-lookup"><span data-stu-id="33e49-143">Retrieving Data from a Data Object</span></span>  
+ <span data-ttu-id="33e49-144">いずれかの呼び出しでは、特定の形式でデータ オブジェクトからデータを取得するだけで、<xref:System.Windows.DataObject.GetData%2A>メソッドと目的のデータ形式を指定します。</span><span class="sxs-lookup"><span data-stu-id="33e49-144">Retrieving data from a data object in a particular format simply involves calling one of the <xref:System.Windows.DataObject.GetData%2A> methods and specifying the desired data format.</span></span>  <span data-ttu-id="33e49-145">1 つ、<xref:System.Windows.DataObject.GetDataPresent%2A>特定のデータ形式の存在をチェックするメソッドを使用できます。</span><span class="sxs-lookup"><span data-stu-id="33e49-145">One of the <xref:System.Windows.DataObject.GetDataPresent%2A> methods can be used to check for the presence of a particular data format.</span></span>  <span data-ttu-id="33e49-146"><xref:System.Windows.DataObject.GetData%2A>内のデータを返します、<xref:System.Object>以外の場合は、データ形式によってこのオブジェクトは、型固有のコンテナーにキャストすることができます。</span><span class="sxs-lookup"><span data-stu-id="33e49-146"><xref:System.Windows.DataObject.GetData%2A> returns the data in an <xref:System.Object>; depending on the data format, this object can be cast to a type-specific container.</span></span>  
   
- <xref:System.Windows.DataObject.GetDataPresent%28System.String%29> オーバーロードを使用して、指定したデータ形式が \(ネイティブで、または自動変換により\) 使用可能かどうかを確認するコード例を次に示します。  指定した形式が使用可能な場合は、<xref:System.Windows.DataObject.GetData%28System.String%29> メソッドを使用してデータを取得します。  
+ <span data-ttu-id="33e49-147">次のコード例を使用して、<xref:System.Windows.DataObject.GetDataPresent%28System.String%29>のオーバー ロードを確認して、指定したデータ形式が使用可能なかどうか (ネイティブまたは自動変換)。</span><span class="sxs-lookup"><span data-stu-id="33e49-147">The following example code uses the <xref:System.Windows.DataObject.GetDataPresent%28System.String%29> overload to check if a specified data format is available (native or by auto-convert).</span></span> <span data-ttu-id="33e49-148">例を使用してデータを取得する場合は、指定した書式を使用できる、<xref:System.Windows.DataObject.GetData%28System.String%29>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="33e49-148">If the specified format is available, the example retrieves the data by using the <xref:System.Windows.DataObject.GetData%28System.String%29> method.</span></span>  
   
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_GetSpecificDataFormat](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_getspecificdataformat)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_GetSpecificDataFormat](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_getspecificdataformat)]  
   
- データ オブジェクトからデータを取得するコードの例については、「[特定のデータ形式でデータを取得する](../../../../docs/framework/wpf/advanced/how-to-retrieve-data-in-a-particular-data-format.md)」を参照してください。  
+ <span data-ttu-id="33e49-149">データ オブジェクトからデータを取得するコードの例については、次を参照してください。 [、特定のデータ形式でデータの取得](../../../../docs/framework/wpf/advanced/how-to-retrieve-data-in-a-particular-data-format.md)です。</span><span class="sxs-lookup"><span data-stu-id="33e49-149">For more examples of code that retrieves data from a data object, see [Retrieve Data in a Particular Data Format](../../../../docs/framework/wpf/advanced/how-to-retrieve-data-in-a-particular-data-format.md).</span></span>  
   
-### データ オブジェクトからのデータの削除  
- データは、データ オブジェクトから直接削除できません。  データ オブジェクトからデータを事実上削除するには、次の手順に従います。  
+### <a name="removing-data-from-a-data-object"></a><span data-ttu-id="33e49-150">データ オブジェクトからデータを削除します。</span><span class="sxs-lookup"><span data-stu-id="33e49-150">Removing Data From a Data Object</span></span>  
+ <span data-ttu-id="33e49-151">データは、データ オブジェクトから直接削除できません。</span><span class="sxs-lookup"><span data-stu-id="33e49-151">Data cannot be directly removed from a data object.</span></span>  <span data-ttu-id="33e49-152">効果的にデータ オブジェクトからデータを削除するには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="33e49-152">To effectively remove data from a data object, follow these steps:</span></span>  
   
-1.  保持するデータのみを含む新しいデータ オブジェクトを作成します。  
+1.  <span data-ttu-id="33e49-153">保持するデータのみを格納する新しいデータ オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="33e49-153">Create a new data object that will contain only the data you want to retain.</span></span>  
   
-2.  古いデータ オブジェクトから新しいデータ オブジェクトに目的のデータを "コピー" します。  データをコピーするには、<xref:System.Windows.DataObject.GetData%2A> メソッドのいずれかを使用して未処理データを含む <xref:System.Object> を取得し、<xref:System.Windows.DataObject.SetData%2A> メソッドのいずれかを使用してデータを新しいデータ オブジェクトに追加します。  
+2.  <span data-ttu-id="33e49-154">""、必要なデータ old data オブジェクトから、新しいデータをオブジェクトにコピーします。</span><span class="sxs-lookup"><span data-stu-id="33e49-154">"Copy" the desired data from the old data object to the new data object.</span></span>  <span data-ttu-id="33e49-155">データをコピーするには、いずれかを使用、<xref:System.Windows.DataObject.GetData%2A>を取得するメソッド、<xref:System.Object>を生のデータを格納し、いずれかの<xref:System.Windows.DataObject.SetData%2A>新しいデータ オブジェクトにデータを追加する方法です。</span><span class="sxs-lookup"><span data-stu-id="33e49-155">To copy the data, use one of the <xref:System.Windows.DataObject.GetData%2A> methods to retrieve an <xref:System.Object> that contains the raw data, and then use one of the <xref:System.Windows.DataObject.SetData%2A> methods to add the data to the new data object.</span></span>  
   
-3.  古いデータ オブジェクトを新しいデータ オブジェクトに置き換えます。  
+3.  <span data-ttu-id="33e49-156">古いデータ オブジェクトを新しいものに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="33e49-156">Replace the old data object with the new one.</span></span>  
   
 > [!NOTE]
->  <xref:System.Windows.DataObject.SetData%2A> メソッドは、データ オブジェクトへのデータの追加のみを行います。データとデータ形式が前回の呼び出しとまったく同じ場合でも、データの置換は行いません。  同じデータとデータ形式に対して <xref:System.Windows.DataObject.SetData%2A> を 2 回呼び出すと、そのデータとデータ形式がデータ オブジェクトに 2 回存在することになります。
+>  <span data-ttu-id="33e49-157"><xref:System.Windows.DataObject.SetData%2A>メソッドは、データ オブジェクトをデータを追加するだけは、データとデータ形式が正確に前の呼び出しと同じ場合でも、データの置換は行いません。</span><span class="sxs-lookup"><span data-stu-id="33e49-157">The <xref:System.Windows.DataObject.SetData%2A> methods only add data to a data object; they do not replace data, even if the data and data format are exactly the same as a previous call.</span></span> <span data-ttu-id="33e49-158">呼び出す<xref:System.Windows.DataObject.SetData%2A>と同じデータに対して 2 回形式がデータ オブジェクトに 2 回含まれているデータ/データの形式で発生します。</span><span class="sxs-lookup"><span data-stu-id="33e49-158">Calling <xref:System.Windows.DataObject.SetData%2A> twice for the same data and data format will result in the data/data format being present twice in the data object.</span></span>

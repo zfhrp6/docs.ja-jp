@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -15,125 +14,123 @@ helpviewer_keywords:
 - ETW, CLR keywords
 - ETW, CLR levels
 ms.assetid: fdf5856d-516b-4042-849d-911c4518a6cb
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 62f39bb54fab247e7a9291026d3dcebd6e390ab5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 7f5dcdd969619526c52a9ae44014030a9f0c6dc5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="clr-etw-keywords-and-levels"></a>CLR ETW キーワードおよびレベル
-<a name="top"></a> Windows (ETW) イベントのイベント トレースは、カテゴリとレベルによってフィルター処理できます。 イベントの [CLR ETW キーワード](#keywords) は、イベントをカテゴリ別にフィルタ処理できます。これらはランタイム プロバイダーとランダウン プロバイダー用に組み合わせて使用します。 [イベント レベル](#levels) は、フラグによって識別されます。  
+# <a name="clr-etw-keywords-and-levels"></a><span data-ttu-id="6b6cf-102">CLR ETW キーワードおよびレベル</span><span class="sxs-lookup"><span data-stu-id="6b6cf-102">CLR ETW Keywords and Levels</span></span>
+<span data-ttu-id="6b6cf-103"><a name="top"></a> Windows (ETW) イベントのイベント トレースは、カテゴリとレベルによってフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-103"><a name="top"></a> Event tracing for Windows (ETW) events can be filtered by category and level.</span></span> <span data-ttu-id="6b6cf-104">イベントの [CLR ETW キーワード](#keywords) は、イベントをカテゴリ別にフィルタ処理できます。これらはランタイム プロバイダーとランダウン プロバイダー用に組み合わせて使用します。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-104">Event [CLR ETW Keywords](#keywords) enable the filtering of events by category; they are used in combinations for the runtime and rundown providers.</span></span> <span data-ttu-id="6b6cf-105">[イベント レベル](#levels) は、フラグによって識別されます。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-105">The [event levels](#levels) are identified by flags.</span></span>  
   
 <a name="keywords"></a>   
-## <a name="clr-etw-keywords"></a>CLR ETW キーワード  
- キーワードは、組み合わせて値を生成できるフラグです。 実際には、コマンド ライン ユーティリティを呼び出す際に、キーワード名ではなくキーワードの 16 進数の値を使用します。  
+## <a name="clr-etw-keywords"></a><span data-ttu-id="6b6cf-106">CLR ETW キーワード</span><span class="sxs-lookup"><span data-stu-id="6b6cf-106">CLR ETW Keywords</span></span>  
+ <span data-ttu-id="6b6cf-107">キーワードは、組み合わせて値を生成できるフラグです。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-107">The keywords are flags that can be combined to generate values.</span></span> <span data-ttu-id="6b6cf-108">実際には、コマンド ライン ユーティリティを呼び出す際に、キーワード名ではなくキーワードの 16 進数の値を使用します。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-108">In practice, you use the hexadecimal values of the keywords instead of the keyword names when you call the command-line utilities.</span></span>  
   
- これらのキーワードの説明を次の表に示します。  
+ <span data-ttu-id="6b6cf-109">これらのキーワードの説明を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-109">The keywords are described in the following tables:</span></span>  
   
--   [CLR ETW ランタイム キーワード](#runtime)  
+-   [<span data-ttu-id="6b6cf-110">CLR ETW ランタイム キーワード</span><span class="sxs-lookup"><span data-stu-id="6b6cf-110">CLR ETW runtime keywords</span></span>](#runtime)  
   
--   [CLR ETW ランダウン キーワード](#rundown)  
+-   [<span data-ttu-id="6b6cf-111">CLR ETW ランダウン キーワード</span><span class="sxs-lookup"><span data-stu-id="6b6cf-111">CLR ETW rundown keywords</span></span>](#rundown)  
   
--   [ランタイム プロバイダーのシンボル解決のキーワードの組み合わせ](#runtime_combo)  
+-   [<span data-ttu-id="6b6cf-112">ランタイム プロバイダーのシンボル解決のキーワードの組み合わせ</span><span class="sxs-lookup"><span data-stu-id="6b6cf-112">Keyword combinations for symbol resolution for the runtime provider</span></span>](#runtime_combo)  
   
--   [ランダウン プロバイダーのシンボル解決のキーワードの組み合わせ](#rundown_combo)  
+-   [<span data-ttu-id="6b6cf-113">ランダウン プロバイダーのシンボル解決のキーワードの組み合わせ</span><span class="sxs-lookup"><span data-stu-id="6b6cf-113">Keyword combinations for symbol resolution for the rundown provider</span></span>](#rundown_combo)  
   
 <a name="runtime"></a>   
-### <a name="clr-etw-runtime-keywords"></a>CLR ETW ランタイム キーワード  
- CLR ETW のランタイム キーワード、その値、およびその用途を次の表に示します。  
+### <a name="clr-etw-runtime-keywords"></a><span data-ttu-id="6b6cf-114">CLR ETW ランタイム キーワード</span><span class="sxs-lookup"><span data-stu-id="6b6cf-114">CLR ETW Runtime Keywords</span></span>  
+ <span data-ttu-id="6b6cf-115">CLR ETW のランタイム キーワード、その値、およびその用途を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-115">The following table lists the CLR ETW runtime keywords, their values, and what they are used for.</span></span>  
   
-|ランタイム キーワード名|値|目的|  
+|<span data-ttu-id="6b6cf-116">ランタイム キーワード名</span><span class="sxs-lookup"><span data-stu-id="6b6cf-116">Runtime keyword name</span></span>|<span data-ttu-id="6b6cf-117">値</span><span class="sxs-lookup"><span data-stu-id="6b6cf-117">Value</span></span>|<span data-ttu-id="6b6cf-118">目的</span><span class="sxs-lookup"><span data-stu-id="6b6cf-118">Purpose</span></span>|  
 |--------------------------|-----------|-------------|  
-|`GCKeyword`|0x00000001|[ガベージ コレクション イベント](../../../docs/framework/performance/garbage-collection-etw-events.md)のコレクションを有効にします。|  
-|`LoaderKeyword`|0x00000008|[ローダー イベント](../../../docs/framework/performance/loader-etw-events.md)のコレクションを有効にします。|  
-|`JITKeyword`|0x00000010|[Just-In-Time (JIT) イベント](../../../docs/framework/performance/jit-tracing-etw-events.md)のコレクションを可能にします。|  
-|`NGenKeyword`|0x00000020|ネイティブ イメージ メソッド (ネイティブ イメージ ジェネレーター、Ngen.exe によって処理されるメソッド) のイベントの収集を可能にします。 `StartEnumerationKeyword` と `EndEnumerationKeyword`で使用します。 このキーワードには高いオーバーヘッドが設定されています。 読み込まれたすべての NGen モジュールの中すべてのメソッドに対してイベントを生成します。 可能であれば、このキーワードを使用する代わりに、プロファイリング ツールによって生成されたプログラム データベース (PDB) を使用して、NGen モジュールからメソッドに関する情報を取得することをお勧めします。 この表で後述する `OverrideAndSuppressNGenEventsKeyword` も参照してください。|  
-|`StartEnumerationKeyword`|0x00000040|ランタイム内のすべてのメソッドの列挙を有効にします。 `NGenKeyword`と組み合わせて使用します。|  
-|`EndEnumerationKeyword`|0x00000080|ランタイム内の破棄されたすべてのメソッドの列挙を有効にします。 `JITKeyword` と `NGenKeyword`を組み合わせて使用します。|  
-|`SecurityKeyword`|0x00000400|[セキュリティ イベント](../../../docs/framework/performance/security-etw-events.md)のコレクションを有効にします。|  
-|`AppDomainResourceManagementKeyword`|0x00000800|アプリケーション ドメイン レベルでのリソース監視イベントのコレクションを有効にします。|  
-|`JITTracingKeyword`|0x00001000|[JIT トレース イベント](../../../docs/framework/performance/jit-tracing-etw-events.md)のコレクションを有効にします。|  
-|`InteropKeyword`|0x00002000|[相互運用イベント](../../../docs/framework/performance/interop-etw-events.md)のコレクションを有効にします。|  
-|`ContentionKeyword`|0x00004000|[競合イベント](../../../docs/framework/performance/contention-etw-events.md)のコレクションを有効にします。|  
-|`ExceptionKeyword`|0x00008000|[例外イベント](../../../docs/framework/performance/exception-thrown-v1-etw-event.md)のコレクションを有効にします。|  
-|`ThreadingKeyword`|0x00010000|[スレッド プール イベント](../../../docs/framework/performance/thread-pool-etw-events.md)のコレクションを有効にします。|  
-|`OverrideAndSuppressNGenEventsKeyword`|0x00040000|([!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降で使用可能。)高いオーバーヘッドの `NGenKeyword` キーワードを非表示にし、NGen モジュール内にあるメソッドのイベントが生成されないようにします。 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降、プロファイル ツールは `OverrideAndSuppressNGenEventsKeyword` と `NGenKeyword` を一緒に使用して、NGen モジュール内のメソッドのイベントの生成を抑制します。 これにより、プロファイル ツールはより効率的な NGen PDB を使用して NGen モジュール内のメソッドに関する情報を取得できます。 .NET Framework 4 以前のバージョンの CLR では、NGen PDB の作成はサポートされていません。 これらのバージョンにおいて、CLR は `OverrideAndSuppressNGenEventsKeyword` を認識せず、 `NGenKeyword` を処理して NGen モジュール内のメソッドのイベントを生成します。|  
-|`PerfTrackKeyWord`|0x2000000|`ModuleLoad` イベントおよび `ModuleRange` イベントのコレクションを有効にします。|  
-|`StackKeyword`|0x40000000|CLR [スタック トレース イベント](../../../docs/framework/performance/stack-etw-event.md)のコレクションを有効にします。|  
+|`GCKeyword`|<span data-ttu-id="6b6cf-119">0x00000001</span><span class="sxs-lookup"><span data-stu-id="6b6cf-119">0x00000001</span></span>|<span data-ttu-id="6b6cf-120">[ガベージ コレクション イベント](../../../docs/framework/performance/garbage-collection-etw-events.md)のコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-120">Enables the collection of [garbage collection events](../../../docs/framework/performance/garbage-collection-etw-events.md).</span></span>|  
+|`LoaderKeyword`|<span data-ttu-id="6b6cf-121">0x00000008</span><span class="sxs-lookup"><span data-stu-id="6b6cf-121">0x00000008</span></span>|<span data-ttu-id="6b6cf-122">[ローダー イベント](../../../docs/framework/performance/loader-etw-events.md)のコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-122">Enables the collection of [loader events](../../../docs/framework/performance/loader-etw-events.md).</span></span>|  
+|`JITKeyword`|<span data-ttu-id="6b6cf-123">0x00000010</span><span class="sxs-lookup"><span data-stu-id="6b6cf-123">0x00000010</span></span>|<span data-ttu-id="6b6cf-124">[Just-In-Time (JIT) イベント](../../../docs/framework/performance/jit-tracing-etw-events.md)のコレクションを可能にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-124">Enables the collection of [just-in-time (JIT) events](../../../docs/framework/performance/jit-tracing-etw-events.md).</span></span>|  
+|`NGenKeyword`|<span data-ttu-id="6b6cf-125">0x00000020</span><span class="sxs-lookup"><span data-stu-id="6b6cf-125">0x00000020</span></span>|<span data-ttu-id="6b6cf-126">ネイティブ イメージ メソッド (ネイティブ イメージ ジェネレーター、Ngen.exe によって処理されるメソッド) のイベントの収集を可能にします。 `StartEnumerationKeyword` と `EndEnumerationKeyword`で使用します。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-126">Enables the collection of events for native image methods (methods processed by the Native Image Generator, Ngen.exe); used with `StartEnumerationKeyword` and `EndEnumerationKeyword`.</span></span> <span data-ttu-id="6b6cf-127">このキーワードには高いオーバーヘッドが設定されています。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-127">This keyword has high overhead.</span></span> <span data-ttu-id="6b6cf-128">読み込まれたすべての NGen モジュールの中すべてのメソッドに対してイベントを生成します。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-128">It generates events for every method inside every loaded NGen module.</span></span> <span data-ttu-id="6b6cf-129">可能であれば、このキーワードを使用する代わりに、プロファイリング ツールによって生成されたプログラム データベース (PDB) を使用して、NGen モジュールからメソッドに関する情報を取得することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-129">Whenever possible, instead of using this keyword, we recommend that you use the program databases (PDBs) generated by profiling tools to retrieve information about methods from NGen modules.</span></span> <span data-ttu-id="6b6cf-130">この表で後述する `OverrideAndSuppressNGenEventsKeyword` も参照してください。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-130">See also `OverrideAndSuppressNGenEventsKeyword` later in this table.</span></span>|  
+|`StartEnumerationKeyword`|<span data-ttu-id="6b6cf-131">0x00000040</span><span class="sxs-lookup"><span data-stu-id="6b6cf-131">0x00000040</span></span>|<span data-ttu-id="6b6cf-132">ランタイム内のすべてのメソッドの列挙を有効にします。 `NGenKeyword`と組み合わせて使用します。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-132">Enables the enumeration of all the methods in the runtime; used in conjunction with `NGenKeyword`.</span></span>|  
+|`EndEnumerationKeyword`|<span data-ttu-id="6b6cf-133">0x00000080</span><span class="sxs-lookup"><span data-stu-id="6b6cf-133">0x00000080</span></span>|<span data-ttu-id="6b6cf-134">ランタイム内の破棄されたすべてのメソッドの列挙を有効にします。 `JITKeyword` と `NGenKeyword`を組み合わせて使用します。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-134">Enables the enumeration of all the methods destroyed in the runtime; used in conjunction with `JITKeyword` and `NGenKeyword`.</span></span>|  
+|`SecurityKeyword`|<span data-ttu-id="6b6cf-135">0x00000400</span><span class="sxs-lookup"><span data-stu-id="6b6cf-135">0x00000400</span></span>|<span data-ttu-id="6b6cf-136">[セキュリティ イベント](../../../docs/framework/performance/security-etw-events.md)のコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-136">Enables the collection of [security events](../../../docs/framework/performance/security-etw-events.md).</span></span>|  
+|`AppDomainResourceManagementKeyword`|<span data-ttu-id="6b6cf-137">0x00000800</span><span class="sxs-lookup"><span data-stu-id="6b6cf-137">0x00000800</span></span>|<span data-ttu-id="6b6cf-138">アプリケーション ドメイン レベルでのリソース監視イベントのコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-138">Enables the collection of resource monitoring events at an application domain level.</span></span>|  
+|`JITTracingKeyword`|<span data-ttu-id="6b6cf-139">0x00001000</span><span class="sxs-lookup"><span data-stu-id="6b6cf-139">0x00001000</span></span>|<span data-ttu-id="6b6cf-140">[JIT トレース イベント](../../../docs/framework/performance/jit-tracing-etw-events.md)のコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-140">Enables the collection of [JIT tracing events](../../../docs/framework/performance/jit-tracing-etw-events.md).</span></span>|  
+|`InteropKeyword`|<span data-ttu-id="6b6cf-141">0x00002000</span><span class="sxs-lookup"><span data-stu-id="6b6cf-141">0x00002000</span></span>|<span data-ttu-id="6b6cf-142">[相互運用イベント](../../../docs/framework/performance/interop-etw-events.md)のコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-142">Enables the collection of [interop events](../../../docs/framework/performance/interop-etw-events.md).</span></span>|  
+|`ContentionKeyword`|<span data-ttu-id="6b6cf-143">0x00004000</span><span class="sxs-lookup"><span data-stu-id="6b6cf-143">0x00004000</span></span>|<span data-ttu-id="6b6cf-144">[競合イベント](../../../docs/framework/performance/contention-etw-events.md)のコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-144">Enables the collection of [contention events](../../../docs/framework/performance/contention-etw-events.md).</span></span>|  
+|`ExceptionKeyword`|<span data-ttu-id="6b6cf-145">0x00008000</span><span class="sxs-lookup"><span data-stu-id="6b6cf-145">0x00008000</span></span>|<span data-ttu-id="6b6cf-146">[例外イベント](../../../docs/framework/performance/exception-thrown-v1-etw-event.md)のコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-146">Enables the collection of [exception events](../../../docs/framework/performance/exception-thrown-v1-etw-event.md).</span></span>|  
+|`ThreadingKeyword`|<span data-ttu-id="6b6cf-147">0x00010000</span><span class="sxs-lookup"><span data-stu-id="6b6cf-147">0x00010000</span></span>|<span data-ttu-id="6b6cf-148">[スレッド プール イベント](../../../docs/framework/performance/thread-pool-etw-events.md)のコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-148">Enables the collection of [thread pool events](../../../docs/framework/performance/thread-pool-etw-events.md).</span></span>|  
+|`OverrideAndSuppressNGenEventsKeyword`|<span data-ttu-id="6b6cf-149">0x00040000</span><span class="sxs-lookup"><span data-stu-id="6b6cf-149">0x00040000</span></span>|<span data-ttu-id="6b6cf-150">([!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降で使用可能。)高いオーバーヘッドの `NGenKeyword` キーワードを非表示にし、NGen モジュール内にあるメソッドのイベントが生成されないようにします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-150">(Available in the  [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] and later.) Suppresses the high-overhead `NGenKeyword` keyword and prevents the generation of events for methods that are inside NGen modules.</span></span> <span data-ttu-id="6b6cf-151">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降、プロファイル ツールは `OverrideAndSuppressNGenEventsKeyword` と `NGenKeyword` を一緒に使用して、NGen モジュール内のメソッドのイベントの生成を抑制します。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-151">Starting with the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], profiling tools should use `OverrideAndSuppressNGenEventsKeyword` and `NGenKeyword` together to suppress the generation of events for methods in NGen modules.</span></span> <span data-ttu-id="6b6cf-152">これにより、プロファイル ツールはより効率的な NGen PDB を使用して NGen モジュール内のメソッドに関する情報を取得できます。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-152">This enables the profiling tool to use the more efficient NGen PDBs to get information about methods in NGen modules.</span></span> <span data-ttu-id="6b6cf-153">.NET Framework 4 以前のバージョンの CLR では、NGen PDB の作成はサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-153">The CLR in the .NET Framework 4 and earlier versions does not support the creation of NGen PDBs.</span></span> <span data-ttu-id="6b6cf-154">これらのバージョンにおいて、CLR は `OverrideAndSuppressNGenEventsKeyword` を認識せず、 `NGenKeyword` を処理して NGen モジュール内のメソッドのイベントを生成します。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-154">In these earlier versions, the CLR will not recognize `OverrideAndSuppressNGenEventsKeyword` and will process `NGenKeyword` to generate events for methods in NGen modules.</span></span>|  
+|`PerfTrackKeyWord`|<span data-ttu-id="6b6cf-155">0x2000000</span><span class="sxs-lookup"><span data-stu-id="6b6cf-155">0x2000000</span></span>|<span data-ttu-id="6b6cf-156">`ModuleLoad` イベントおよび `ModuleRange` イベントのコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-156">Enables the collection of the `ModuleLoad` and `ModuleRange` events.</span></span>|  
+|`StackKeyword`|<span data-ttu-id="6b6cf-157">0x40000000</span><span class="sxs-lookup"><span data-stu-id="6b6cf-157">0x40000000</span></span>|<span data-ttu-id="6b6cf-158">CLR [スタック トレース イベント](../../../docs/framework/performance/stack-etw-event.md)のコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-158">Enables the collection of CLR [stack trace events](../../../docs/framework/performance/stack-etw-event.md).</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="6b6cf-159">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="6b6cf-159">Back to top</span></span>](#top)  
   
 <a name="rundown"></a>   
-### <a name="clr-etw-rundown-keywords"></a>CLR ETW ランダウン キーワード  
- CLR ETW ランダウン キーワード、その値、およびその用途を次の表に示します。  
+### <a name="clr-etw-rundown-keywords"></a><span data-ttu-id="6b6cf-160">CLR ETW ランダウン キーワード</span><span class="sxs-lookup"><span data-stu-id="6b6cf-160">CLR ETW Rundown Keywords</span></span>  
+ <span data-ttu-id="6b6cf-161">CLR ETW ランダウン キーワード、その値、およびその用途を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-161">The following table lists the CLR ETW rundown keywords, their values, and what they are used for.</span></span>  
   
-|ランダウン キーワード名|値|目的|  
+|<span data-ttu-id="6b6cf-162">ランダウン キーワード名</span><span class="sxs-lookup"><span data-stu-id="6b6cf-162">Rundown keyword name</span></span>|<span data-ttu-id="6b6cf-163">値</span><span class="sxs-lookup"><span data-stu-id="6b6cf-163">Value</span></span>|<span data-ttu-id="6b6cf-164">目的</span><span class="sxs-lookup"><span data-stu-id="6b6cf-164">Purpose</span></span>|  
 |--------------------------|-----------|-------------|  
-|`LoaderRundownKeyword`|0x00000008|`StartRundownKeyword` および `EndRundownKeyword`と一緒に使用する場合のローダー イベントのコレクションを有効にします。|  
-|`JitRundownKeyword`|0x00000010|`DCStart` および `DCEnd` と一緒に使用する場合の、メソッド `StartRundownKeyword` と JIT コンパイルされたメソッドの `EndRundownKeyword`イベントのコレクションを有効にします。|  
-|`NGenRundownKeyword`|0x00000020|`DCStart` および `DCEnd` と一緒に使用する場合の、メソッド `StartRundownKeyword` と NGen ネイティブ イメージ メソッドの `EndRundownKeyword`イベントのコレクションを有効にします。 このキーワードには高いオーバーヘッドが設定されています。 読み込まれたすべての NGen モジュールの中すべてのメソッドに対してイベントを生成します。 可能であれば、このキーワードを使用する代わりに、プロファイリング ツールによって生成されたプログラム データベース (PDB) を使用して、NGen モジュールからメソッドに関する情報を取得することをお勧めします。 この表で後述する `OverrideAndSuppressNGenEventsRundownKeyword` も参照してください。|  
-|`StartRundownKeyword`|0x00000040|開始ランダウン中のシステム状態の列挙を有効にします。|  
-|`EndRundownKeyword`|0x00000100|終了ランダウン中のシステム状態の列挙を有効にします。|  
-|`AppDomainResourceManagementRundownKeyword`|0x00000800|<xref:System.AppDomain> または `StartRundownKeyword` と一緒に使用した場合の、 `EndRundownKeyword`レベルでのリソース監視のイベントのコレクションを有効にします。|  
-|`ThreadingKeyword`|0x00010000|スレッド プール イベントのコレクションを有効にします。|  
-|`OverrideAndSuppressNGenEventsRundownKeyword`|0x00040000|([!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降で使用可能。)高いオーバーヘッドの `NGenRundownKeyword` キーワードを非表示にし、NGen モジュール内にあるメソッドのイベントが生成されないようにします。 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降、プロファイル ツールは `OverrideAndSuppressNGenEventsRundownKeyword` と `NGenRundownKeyword` を一緒に使用して、NGen モジュール内のメソッドのイベントの生成を抑制します。 これにより、プロファイル ツールはより効率的な NGen PDB を使用して NGen モジュール内のメソッドに関する情報を取得できます。 .NET Framework 4 以前のバージョンの CLR では、NGen PDB の作成はサポートされていません。 これらのバージョンにおいて、CLR は `OverrideAndSuppressNGenEventsRundownKeyword` を認識せず、 `NGenRundownKeyword` を処理して NGen モジュール内のメソッドのイベントを生成します。|  
-|`PerfTrackKeyWord`|0x2000000|`ModuleDCStart`、 `ModuleDCEnd`、 `ModuleRangeDCStart`、および `ModuleRangeDCEnd` の各イベントのコレクションを有効にします。|  
+|`LoaderRundownKeyword`|<span data-ttu-id="6b6cf-165">0x00000008</span><span class="sxs-lookup"><span data-stu-id="6b6cf-165">0x00000008</span></span>|<span data-ttu-id="6b6cf-166">`StartRundownKeyword` および `EndRundownKeyword`と一緒に使用する場合のローダー イベントのコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-166">Enables the collection of loader events when used with `StartRundownKeyword` and `EndRundownKeyword`.</span></span>|  
+|`JitRundownKeyword`|<span data-ttu-id="6b6cf-167">0x00000010</span><span class="sxs-lookup"><span data-stu-id="6b6cf-167">0x00000010</span></span>|<span data-ttu-id="6b6cf-168">`DCStart` および `DCEnd` と一緒に使用する場合の、メソッド `StartRundownKeyword` と JIT コンパイルされたメソッドの `EndRundownKeyword`イベントのコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-168">Enables the collection of method `DCStart` and `DCEnd` events for JIT-compiled methods when used with `StartRundownKeyword` and `EndRundownKeyword`.</span></span>|  
+|`NGenRundownKeyword`|<span data-ttu-id="6b6cf-169">0x00000020</span><span class="sxs-lookup"><span data-stu-id="6b6cf-169">0x00000020</span></span>|<span data-ttu-id="6b6cf-170">`DCStart` および `DCEnd` と一緒に使用する場合の、メソッド `StartRundownKeyword` と NGen ネイティブ イメージ メソッドの `EndRundownKeyword`イベントのコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-170">Enables the collection of method `DCStart` and `DCEnd` events for NGen native image methods when used with `StartRundownKeyword` and `EndRundownKeyword`.</span></span> <span data-ttu-id="6b6cf-171">このキーワードには高いオーバーヘッドが設定されています。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-171">This keyword has high overhead.</span></span> <span data-ttu-id="6b6cf-172">読み込まれたすべての NGen モジュールの中すべてのメソッドに対してイベントを生成します。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-172">It generates events for every method inside every loaded NGen module.</span></span> <span data-ttu-id="6b6cf-173">可能であれば、このキーワードを使用する代わりに、プロファイリング ツールによって生成されたプログラム データベース (PDB) を使用して、NGen モジュールからメソッドに関する情報を取得することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-173">Whenever possible, instead of using this keyword, we recommend that you use the program databases (PDBs) generated by profiling tools to retrieve information about methods from NGen modules.</span></span> <span data-ttu-id="6b6cf-174">この表で後述する `OverrideAndSuppressNGenEventsRundownKeyword` も参照してください。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-174">See also `OverrideAndSuppressNGenEventsRundownKeyword` later in this table.</span></span>|  
+|`StartRundownKeyword`|<span data-ttu-id="6b6cf-175">0x00000040</span><span class="sxs-lookup"><span data-stu-id="6b6cf-175">0x00000040</span></span>|<span data-ttu-id="6b6cf-176">開始ランダウン中のシステム状態の列挙を有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-176">Enables the enumeration of system state during a start rundown.</span></span>|  
+|`EndRundownKeyword`|<span data-ttu-id="6b6cf-177">0x00000100</span><span class="sxs-lookup"><span data-stu-id="6b6cf-177">0x00000100</span></span>|<span data-ttu-id="6b6cf-178">終了ランダウン中のシステム状態の列挙を有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-178">Enables the enumeration of system state during an end rundown.</span></span>|  
+|`AppDomainResourceManagementRundownKeyword`|<span data-ttu-id="6b6cf-179">0x00000800</span><span class="sxs-lookup"><span data-stu-id="6b6cf-179">0x00000800</span></span>|<span data-ttu-id="6b6cf-180"><xref:System.AppDomain> または `StartRundownKeyword` と一緒に使用した場合の、 `EndRundownKeyword`レベルでのリソース監視のイベントのコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-180">Enables the collection of events for resource monitoring at an <xref:System.AppDomain> level when used with `StartRundownKeyword` or `EndRundownKeyword`.</span></span>|  
+|`ThreadingKeyword`|<span data-ttu-id="6b6cf-181">0x00010000</span><span class="sxs-lookup"><span data-stu-id="6b6cf-181">0x00010000</span></span>|<span data-ttu-id="6b6cf-182">スレッド プール イベントのコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-182">Enables the collection of thread pool events.</span></span>|  
+|`OverrideAndSuppressNGenEventsRundownKeyword`|<span data-ttu-id="6b6cf-183">0x00040000</span><span class="sxs-lookup"><span data-stu-id="6b6cf-183">0x00040000</span></span>|<span data-ttu-id="6b6cf-184">([!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降で使用可能。)高いオーバーヘッドの `NGenRundownKeyword` キーワードを非表示にし、NGen モジュール内にあるメソッドのイベントが生成されないようにします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-184">(Available in the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] and later.) Suppresses the high-overhead `NGenRundownKeyword` keyword and prevents the generation of events for methods that are inside NGen modules.</span></span> <span data-ttu-id="6b6cf-185">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降、プロファイル ツールは `OverrideAndSuppressNGenEventsRundownKeyword` と `NGenRundownKeyword` を一緒に使用して、NGen モジュール内のメソッドのイベントの生成を抑制します。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-185">Starting with the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], profiling tools should use `OverrideAndSuppressNGenEventsRundownKeyword` and `NGenRundownKeyword` together to suppress the generation of events for methods in NGen modules.</span></span> <span data-ttu-id="6b6cf-186">これにより、プロファイル ツールはより効率的な NGen PDB を使用して NGen モジュール内のメソッドに関する情報を取得できます。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-186">This enables the profiling tool to use the more efficient NGen PDBs to get information about methods in NGen modules.</span></span> <span data-ttu-id="6b6cf-187">.NET Framework 4 以前のバージョンの CLR では、NGen PDB の作成はサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-187">The CLR in the .NET Framework 4 and earlier versions does not support the creation of NGen PDBs.</span></span> <span data-ttu-id="6b6cf-188">これらのバージョンにおいて、CLR は `OverrideAndSuppressNGenEventsRundownKeyword` を認識せず、 `NGenRundownKeyword` を処理して NGen モジュール内のメソッドのイベントを生成します。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-188">In these earlier versions, the CLR will not recognize `OverrideAndSuppressNGenEventsRundownKeyword` and will process `NGenRundownKeyword` to generate events for methods in NGen modules.</span></span>|  
+|`PerfTrackKeyWord`|<span data-ttu-id="6b6cf-189">0x2000000</span><span class="sxs-lookup"><span data-stu-id="6b6cf-189">0x2000000</span></span>|<span data-ttu-id="6b6cf-190">`ModuleDCStart`、 `ModuleDCEnd`、 `ModuleRangeDCStart`、および `ModuleRangeDCEnd` の各イベントのコレクションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-190">Enables the collection of the `ModuleDCStart`, `ModuleDCEnd`, `ModuleRangeDCStart`, and `ModuleRangeDCEnd` events.</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="6b6cf-191">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="6b6cf-191">Back to top</span></span>](#top)  
   
 <a name="runtime_combo"></a>   
-### <a name="keyword-combinations-for-symbol-resolution-for-the-runtime-provider"></a>ランタイム プロバイダーのシンボル解決のキーワードの組み合わせ  
+### <a name="keyword-combinations-for-symbol-resolution-for-the-runtime-provider"></a><span data-ttu-id="6b6cf-192">ランタイム プロバイダーのシンボル解決のキーワードの組み合わせ</span><span class="sxs-lookup"><span data-stu-id="6b6cf-192">Keyword Combinations for Symbol Resolution for the Runtime Provider</span></span>  
   
-|キーワードとフラグ|アプリケーション ドメイン、アセンブリ、モジュールのロード/アンロード イベント|メソッドのロード/アンロード イベント (動的イベントを除く)|動的メソッドのロード/破棄イベント|  
+|<span data-ttu-id="6b6cf-193">キーワードとフラグ</span><span class="sxs-lookup"><span data-stu-id="6b6cf-193">Keywords and flags</span></span>|<span data-ttu-id="6b6cf-194">アプリケーション ドメイン、アセンブリ、モジュールのロード/アンロード イベント</span><span class="sxs-lookup"><span data-stu-id="6b6cf-194">Application domain, assembly, module load/unload events</span></span>|<span data-ttu-id="6b6cf-195">メソッドのロード/アンロード イベント (動的イベントを除く)</span><span class="sxs-lookup"><span data-stu-id="6b6cf-195">Method load/unload events (except dynamic events)</span></span>|<span data-ttu-id="6b6cf-196">動的メソッドのロード/破棄イベント</span><span class="sxs-lookup"><span data-stu-id="6b6cf-196">Dynamic method load/destroy events</span></span>|  
 |------------------------|--------------------------------------------------------------|----------------------------------------------------------|-----------------------------------------|  
-|`LoaderKeyword`|イベントをロードおよびアンロードします。|なし。|なし。|  
-|`JITKeyword`<br /><br /> (+ `StartEnumerationKeyword` は何も追加しません)|なし。|イベントをロードします。|イベントをロードおよびアンロードします。|  
-|`JITKeyword` +<br /><br /> `EndEnumerationKeyword`|なし。|イベントをロードおよびアンロードします。|イベントをロードおよびアンロードします。|  
-|`NGenKeyword`|なし。|なし。|該当なし。|  
-|`NGenKeyword` +<br /><br /> `StartEnumerationKeyword`|なし。|イベントをロードします。|該当なし。|  
-|`NGenKeyword` +<br /><br /> `EndEnumerationKeyword`|なし。|イベントをアンロードします。|該当なし。|  
+|`LoaderKeyword`|<span data-ttu-id="6b6cf-197">イベントをロードおよびアンロードします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-197">Load and unload events.</span></span>|<span data-ttu-id="6b6cf-198">なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-198">None.</span></span>|<span data-ttu-id="6b6cf-199">なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-199">None.</span></span>|  
+|`JITKeyword`<br /><br /> <span data-ttu-id="6b6cf-200">(+ `StartEnumerationKeyword` は何も追加しません)</span><span class="sxs-lookup"><span data-stu-id="6b6cf-200">(+ `StartEnumerationKeyword` does not add anything)</span></span>|<span data-ttu-id="6b6cf-201">なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-201">None.</span></span>|<span data-ttu-id="6b6cf-202">イベントをロードします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-202">Load events.</span></span>|<span data-ttu-id="6b6cf-203">イベントをロードおよびアンロードします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-203">Load and unload events.</span></span>|  
+|`JITKeyword` +<br /><br /> `EndEnumerationKeyword`|<span data-ttu-id="6b6cf-204">なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-204">None.</span></span>|<span data-ttu-id="6b6cf-205">イベントをロードおよびアンロードします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-205">Load and unload events.</span></span>|<span data-ttu-id="6b6cf-206">イベントをロードおよびアンロードします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-206">Load and unload events.</span></span>|  
+|`NGenKeyword`|<span data-ttu-id="6b6cf-207">なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-207">None.</span></span>|<span data-ttu-id="6b6cf-208">なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-208">None.</span></span>|<span data-ttu-id="6b6cf-209">該当なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-209">Not applicable.</span></span>|  
+|`NGenKeyword` +<br /><br /> `StartEnumerationKeyword`|<span data-ttu-id="6b6cf-210">なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-210">None.</span></span>|<span data-ttu-id="6b6cf-211">イベントをロードします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-211">Load events.</span></span>|<span data-ttu-id="6b6cf-212">該当なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-212">Not applicable.</span></span>|  
+|`NGenKeyword` +<br /><br /> `EndEnumerationKeyword`|<span data-ttu-id="6b6cf-213">なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-213">None.</span></span>|<span data-ttu-id="6b6cf-214">イベントをアンロードします。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-214">Unload events.</span></span>|<span data-ttu-id="6b6cf-215">該当なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-215">Not applicable.</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="6b6cf-216">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="6b6cf-216">Back to top</span></span>](#top)  
   
 <a name="rundown_combo"></a>   
-### <a name="keyword-combinations-for-symbol-resolution-for-the-rundown-provider"></a>ランダウン プロバイダーのシンボル解決のキーワードの組み合わせ  
+### <a name="keyword-combinations-for-symbol-resolution-for-the-rundown-provider"></a><span data-ttu-id="6b6cf-217">ランダウン プロバイダーのシンボル解決のキーワードの組み合わせ</span><span class="sxs-lookup"><span data-stu-id="6b6cf-217">Keyword Combinations for Symbol Resolution for the Rundown Provider</span></span>  
   
-|キーワードとフラグ|アプリケーション ドメイン、アセンブリ、モジュールの DCStart/DCEnd イベント|メソッドの DCStart/DCEnd イベント (イベントの動的メソッドを含む)|  
+|<span data-ttu-id="6b6cf-218">キーワードとフラグ</span><span class="sxs-lookup"><span data-stu-id="6b6cf-218">Keywords and flags</span></span>|<span data-ttu-id="6b6cf-219">アプリケーション ドメイン、アセンブリ、モジュールの DCStart/DCEnd イベント</span><span class="sxs-lookup"><span data-stu-id="6b6cf-219">Application domain, assembly, module DCStart/DCEnd events</span></span>|<span data-ttu-id="6b6cf-220">メソッドの DCStart/DCEnd イベント (イベントの動的メソッドを含む)</span><span class="sxs-lookup"><span data-stu-id="6b6cf-220">Method DCStart/DCEnd events (including dynamic method events)</span></span>|  
 |------------------------|----------------------------------------------------------------|----------------------------------------------------------------------|  
-|`LoaderRundownKeyword` +<br /><br /> `StartRundownKeyword`|`DCStart` イベント。|なし。|  
-|`LoaderRundownKeyword` +<br /><br /> `EndRundownKeyword`|`DCEnd` イベント。|なし。|  
-|`JITKeyword` +<br /><br /> `StartRundownKeyword`|なし。|`DCStart` イベント。|  
-|`JITKeyword` +<br /><br /> `EndRundownKeyword`|なし。|`DCEnd` イベント。|  
-|`NGenKeyword` +<br /><br /> `StartRundownKeyword`|なし。|`DCStart` イベント。|  
-|`NGenKeyword` +<br /><br /> `EndRundownKeyword`|なし。|`DCEnd` イベント。|  
+|`LoaderRundownKeyword` +<br /><br /> `StartRundownKeyword`|<span data-ttu-id="6b6cf-221">`DCStart` イベント。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-221">`DCStart` events.</span></span>|<span data-ttu-id="6b6cf-222">なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-222">None.</span></span>|  
+|`LoaderRundownKeyword` +<br /><br /> `EndRundownKeyword`|<span data-ttu-id="6b6cf-223">`DCEnd` イベント。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-223">`DCEnd` events.</span></span>|<span data-ttu-id="6b6cf-224">なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-224">None.</span></span>|  
+|`JITKeyword` +<br /><br /> `StartRundownKeyword`|<span data-ttu-id="6b6cf-225">なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-225">None.</span></span>|<span data-ttu-id="6b6cf-226">`DCStart` イベント。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-226">`DCStart` events.</span></span>|  
+|`JITKeyword` +<br /><br /> `EndRundownKeyword`|<span data-ttu-id="6b6cf-227">なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-227">None.</span></span>|<span data-ttu-id="6b6cf-228">`DCEnd` イベント。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-228">`DCEnd` events.</span></span>|  
+|`NGenKeyword` +<br /><br /> `StartRundownKeyword`|<span data-ttu-id="6b6cf-229">なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-229">None.</span></span>|<span data-ttu-id="6b6cf-230">`DCStart` イベント。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-230">`DCStart` events.</span></span>|  
+|`NGenKeyword` +<br /><br /> `EndRundownKeyword`|<span data-ttu-id="6b6cf-231">なし。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-231">None.</span></span>|<span data-ttu-id="6b6cf-232">`DCEnd` イベント。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-232">`DCEnd` events.</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="6b6cf-233">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="6b6cf-233">Back to top</span></span>](#top)  
   
 <a name="levels"></a>   
-## <a name="etw-event-levels"></a>ETW イベントのレベル  
- ETW イベントはレベルでフィルター処理することもできます。 レベルが 0x5 に設定されている場合 0x5 以下を含むすべてのレベルのイベント (キーワードによって有効になったカテゴリに属するイベント) が発生します。 レベルが 0x2 に設定されている場合、レベル 0x2 以下に属するイベントのみが発生します。  
+## <a name="etw-event-levels"></a><span data-ttu-id="6b6cf-234">ETW イベントのレベル</span><span class="sxs-lookup"><span data-stu-id="6b6cf-234">ETW Event Levels</span></span>  
+ <span data-ttu-id="6b6cf-235">ETW イベントはレベルでフィルター処理することもできます。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-235">ETW events can also be filtered by level.</span></span> <span data-ttu-id="6b6cf-236">レベルが 0x5 に設定されている場合 0x5 以下を含むすべてのレベルのイベント (キーワードによって有効になったカテゴリに属するイベント) が発生します。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-236">If the level is set at 0x5, events of all levels, including 0x5 and below (which are events that belong to categories enabled through keywords) are raised.</span></span> <span data-ttu-id="6b6cf-237">レベルが 0x2 に設定されている場合、レベル 0x2 以下に属するイベントのみが発生します。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-237">If the level is set at 0x2, only events that belong to level 0x2 and below are raised.</span></span>  
   
- 各レベルには次のような意味があります。  
+ <span data-ttu-id="6b6cf-238">各レベルには次のような意味があります。</span><span class="sxs-lookup"><span data-stu-id="6b6cf-238">The levels have the following meanings:</span></span>  
   
- 0x5 - 詳細  
+ <span data-ttu-id="6b6cf-239">0x5 - 詳細</span><span class="sxs-lookup"><span data-stu-id="6b6cf-239">0x5 - Verbose</span></span>  
   
- 0x4 - 情報  
+ <span data-ttu-id="6b6cf-240">0x4 - 情報</span><span class="sxs-lookup"><span data-stu-id="6b6cf-240">0x4 - Informational</span></span>  
   
- 0x3 - 警告  
+ <span data-ttu-id="6b6cf-241">0x3 - 警告</span><span class="sxs-lookup"><span data-stu-id="6b6cf-241">0x3 - Warning</span></span>  
   
- 0x2 - エラー  
+ <span data-ttu-id="6b6cf-242">0x2 - エラー</span><span class="sxs-lookup"><span data-stu-id="6b6cf-242">0x2 - Error</span></span>  
   
- 0x1 - 重大  
+ <span data-ttu-id="6b6cf-243">0x1 - 重大</span><span class="sxs-lookup"><span data-stu-id="6b6cf-243">0x1 - Critical</span></span>  
   
- 0x0 - LogAlways  
+ <span data-ttu-id="6b6cf-244">0x0 - LogAlways</span><span class="sxs-lookup"><span data-stu-id="6b6cf-244">0x0 - LogAlways</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [CLR ETW プロバイダー](../../../docs/framework/performance/clr-etw-providers.md)   
- [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)   
- [共通言語ランタイムの ETW イベント](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)
-
+## <a name="see-also"></a><span data-ttu-id="6b6cf-245">関連項目</span><span class="sxs-lookup"><span data-stu-id="6b6cf-245">See Also</span></span>  
+ [<span data-ttu-id="6b6cf-246">CLR ETW プロバイダー</span><span class="sxs-lookup"><span data-stu-id="6b6cf-246">CLR ETW Providers</span></span>](../../../docs/framework/performance/clr-etw-providers.md)  
+ [<span data-ttu-id="6b6cf-247">CLR ETW イベント</span><span class="sxs-lookup"><span data-stu-id="6b6cf-247">CLR ETW Events</span></span>](../../../docs/framework/performance/clr-etw-events.md)  
+ [<span data-ttu-id="6b6cf-248">共通言語ランタイムの ETW イベント</span><span class="sxs-lookup"><span data-stu-id="6b6cf-248">ETW Events in the Common Language Runtime</span></span>](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)

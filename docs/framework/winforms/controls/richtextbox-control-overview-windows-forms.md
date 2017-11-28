@@ -1,39 +1,39 @@
 ---
-title: "RichTextBox コントロールの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "RichTextBox"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "RichTextBox コントロール [Windows フォーム], RichTextBox コントロールの概要"
-  - "テキスト ボックス, テキスト ボックスの概要"
+title: "RichTextBox コントロールの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: RichTextBox
+helpviewer_keywords:
+- RichTextBox control [Windows Forms], about RichTextBox control
+- text boxes [Windows Forms], about text boxes
 ms.assetid: 95081194-3dd4-4b84-9545-dd373e491eca
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4278f569a789ca6e8466e0b8e71557446b63955e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# RichTextBox コントロールの概要 (Windows フォーム)
-Windows フォームの <xref:System.Windows.Forms.RichTextBox> コントロールは、書式付きテキストの表示、入力、および操作を行うために使用されます。  <xref:System.Windows.Forms.RichTextBox> コントロールは、<xref:System.Windows.Forms.TextBox> コントロールのすべての機能を備えている他、フォント、色、およびリンクを表示したり、ファイルからテキストや埋め込みイメージを読み込んだり、指定した文字を検索したりできます。  通常、<xref:System.Windows.Forms.RichTextBox> コントロールは、Microsoft Word などのワード プロセッシング アプリケーションと同様のテキスト操作および表示機能を提供します。  <xref:System.Windows.Forms.TextBox> コントロールと同様に、<xref:System.Windows.Forms.RichTextBox> コントロールはスクロール バーを表示できます。ただし、<xref:System.Windows.Forms.TextBox> コントロールとは異なり、既定の設定では必要に応じて垂直スクロール バーと水平スクロール バーの両方が表示され、追加のスクロール バー設定もあります。  
+# <a name="richtextbox-control-overview-windows-forms"></a><span data-ttu-id="0c55a-102">RichTextBox コントロールの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="0c55a-102">RichTextBox Control Overview (Windows Forms)</span></span>
+<span data-ttu-id="0c55a-103">Windows フォーム<xref:System.Windows.Forms.RichTextBox>コントロールを表示、入力すると、および書式設定を含むテキストを操作するために使用します。</span><span class="sxs-lookup"><span data-stu-id="0c55a-103">The Windows Forms <xref:System.Windows.Forms.RichTextBox> control is used for displaying, entering, and manipulating text with formatting.</span></span> <span data-ttu-id="0c55a-104"><xref:System.Windows.Forms.RichTextBox>コントロールはすべて、<xref:System.Windows.Forms.TextBox>コントロールは、できますが、ことができますフォント、色、およびリンクの表示以外の場合は、ファイルからテキストと埋め込み画像を読み込む、指定した文字を検索します。</span><span class="sxs-lookup"><span data-stu-id="0c55a-104">The <xref:System.Windows.Forms.RichTextBox> control does everything the <xref:System.Windows.Forms.TextBox> control does, but it can also display fonts, colors, and links; load text and embedded images from a file; and find specified characters.</span></span> <span data-ttu-id="0c55a-105"><xref:System.Windows.Forms.RichTextBox>通常、コントロールはテキストの操作を提供し、Microsoft Word などのワード プロセッシング アプリケーションと同様の機能の表示に使用します。</span><span class="sxs-lookup"><span data-stu-id="0c55a-105">The <xref:System.Windows.Forms.RichTextBox> control is typically used to provide text manipulation and display features similar to word processing applications such as Microsoft Word.</span></span> <span data-ttu-id="0c55a-106">同様に、<xref:System.Windows.Forms.TextBox>コントロール、<xref:System.Windows.Forms.RichTextBox>コントロールがスクロール バーを表示できるとは異なり、<xref:System.Windows.Forms.TextBox>コントロール、その既定値は、必要に応じて、水平線と垂直スクロール バーを表示して、追加のスクロール バーの設定があります。</span><span class="sxs-lookup"><span data-stu-id="0c55a-106">Like the <xref:System.Windows.Forms.TextBox> control, the <xref:System.Windows.Forms.RichTextBox> control can display scroll bars; but unlike the <xref:System.Windows.Forms.TextBox> control, its default setting is to display both horizontal and vertical scrollbars as needed, and it has additional scrollbar settings.</span></span>  
   
-## RichTextBox コントロールの操作  
- <xref:System.Windows.Forms.TextBox> コントロールと同様に、表示されるテキストは <xref:System.Windows.Forms.RichTextBox.Text%2A> プロパティによって設定されます。  <xref:System.Windows.Forms.RichTextBox> コントロールには、テキストの書式を指定する多くのプロパティがあります。  各プロパティの詳細については、「[方法 : Windows フォームの RichTextBox コントロールのフォント属性を設定する](../../../../docs/framework/winforms/controls/how-to-set-font-attributes-for-the-windows-forms-richtextbox-control.md)」と「[方法 : Windows フォームの RichTextBox コントロールを使用してインデント、ぶら下げインデント、および箇条書き段落を設定する](../../../../docs/framework/winforms/controls/set-indents-hanging-indents-bulleted-paragraphs-with-wf-richtextbox.md)」を参照してください。  ファイルを操作するために、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A> メソッドおよび <xref:System.Windows.Forms.RichTextBox.SaveFile%2A> メソッドを使用すると、プレーンテキスト、Unicode プレーンテキスト、リッチ テキスト形式 \(RTF\) などの複数のファイル形式を表示し、書き込むことができます。  使用できるファイル形式の一覧については、「[RichTextBoxStreamType 列挙](frlrfSystemWindowsFormsRichTextBoxStreamTypeClassTopic)」を参照してください。  <xref:System.Windows.Forms.RichTextBox.Find%2A> メソッドを使用すると、テキストの文字列や特定の文字を検索できます。  
+## <a name="working-with-the-richtextbox-control"></a><span data-ttu-id="0c55a-107">RichTextBox コントロールの操作</span><span class="sxs-lookup"><span data-stu-id="0c55a-107">Working with the RichTextBox Control</span></span>  
+ <span data-ttu-id="0c55a-108">同様、<xref:System.Windows.Forms.TextBox>コントロール表示されるテキストが設定されて、<xref:System.Windows.Forms.RichTextBox.Text%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="0c55a-108">As with the <xref:System.Windows.Forms.TextBox> control, the text displayed is set by the <xref:System.Windows.Forms.RichTextBox.Text%2A> property.</span></span> <span data-ttu-id="0c55a-109"><xref:System.Windows.Forms.RichTextBox>コントロール テキストの書式設定を多数のプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="0c55a-109">The <xref:System.Windows.Forms.RichTextBox> control has numerous properties to format text.</span></span> <span data-ttu-id="0c55a-110">これらのプロパティの詳細については、「[How to: Set Font Attributes for the Windows Forms RichTextBox Control (方法: Windows フォームの RichTextBox コントロールのフォント属性を設定)](../../../../docs/framework/winforms/controls/how-to-set-font-attributes-for-the-windows-forms-richtextbox-control.md)」と「[How to: Set Indents, Hanging Indents, and Bulleted Paragraphs with the Windows Forms RichTextBox Control (方法: Windows フォームの RichTextBox コントロールを使用したインデント、ぶら下げインデント、および箇条書き段落の設定)](../../../../docs/framework/winforms/controls/set-indents-hanging-indents-bulleted-paragraphs-with-wf-richtextbox.md)」参照してください。</span><span class="sxs-lookup"><span data-stu-id="0c55a-110">For details on these properties, see [How to: Set Font Attributes for the Windows Forms RichTextBox Control](../../../../docs/framework/winforms/controls/how-to-set-font-attributes-for-the-windows-forms-richtextbox-control.md) and [How to: Set Indents, Hanging Indents, and Bulleted Paragraphs with the Windows Forms RichTextBox Control](../../../../docs/framework/winforms/controls/set-indents-hanging-indents-bulleted-paragraphs-with-wf-richtextbox.md).</span></span> <span data-ttu-id="0c55a-111">ファイルを操作するため、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>と<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>メソッドの表示し、プレーン テキスト、Unicode プレーン テキスト、およびリッチ テキスト形式 (RTF) を含む複数のファイル形式を書き込むことができます。</span><span class="sxs-lookup"><span data-stu-id="0c55a-111">To manipulate files, the <xref:System.Windows.Forms.RichTextBox.LoadFile%2A> and <xref:System.Windows.Forms.RichTextBox.SaveFile%2A> methods can display and write multiple file formats including plain text, Unicode plain text, and Rich Text Format (RTF).</span></span> <span data-ttu-id="0c55a-112">可能性のあるファイル形式が表示されます<xref:System.Windows.Forms.RichTextBoxStreamType>です。</span><span class="sxs-lookup"><span data-stu-id="0c55a-112">The possible file formats are listed in <xref:System.Windows.Forms.RichTextBoxStreamType>.</span></span> <span data-ttu-id="0c55a-113">使用することができます、<xref:System.Windows.Forms.RichTextBox.Find%2A>テキストまたは特定の文字の文字列を検索するメソッド。</span><span class="sxs-lookup"><span data-stu-id="0c55a-113">You can use the <xref:System.Windows.Forms.RichTextBox.Find%2A> method to find strings of text or specific characters.</span></span>  
   
- また、<xref:System.Windows.Forms.RichTextBox.DetectUrls%2A> プロパティを `true` に設定し、<xref:System.Windows.Forms.RichTextBox.LinkClicked> イベントを処理するコードを記述することで、Web スタイルのリンクに <xref:System.Windows.Forms.RichTextBox> コントロールを使用することもできます。  詳細については、「[方法 : Windows フォームの RichTextBox コントロールを使用して Web スタイルのリンクを表示する](../../../../docs/framework/winforms/controls/how-to-display-web-style-links-with-the-windows-forms-richtextbox-control.md)」を参照してください。  コントロール内のテキストの一部またはすべてをユーザーが操作できないようにするには、<xref:System.Windows.Forms.RichTextBox.SelectionProtected%2A> プロパティを `true` に設定します。  
+ <span data-ttu-id="0c55a-114">使用することも、<xref:System.Windows.Forms.RichTextBox>を設定して Web スタイルのリンクの制御、<xref:System.Windows.Forms.RichTextBox.DetectUrls%2A>プロパティを`true`を処理するコードを記述し、<xref:System.Windows.Forms.RichTextBox.LinkClicked>イベント。</span><span class="sxs-lookup"><span data-stu-id="0c55a-114">You can also use a <xref:System.Windows.Forms.RichTextBox> control for Web-style links by setting the <xref:System.Windows.Forms.RichTextBox.DetectUrls%2A> property to `true` and writing code to handle the <xref:System.Windows.Forms.RichTextBox.LinkClicked> event.</span></span> <span data-ttu-id="0c55a-115">詳細については、「[How to: Display Web-Style Links with the Windows Forms RichTextBox Control (方法: Windows フォームの RichTextBox コントロールを使用して Web スタイルのリンクを表示する)](../../../../docs/framework/winforms/controls/how-to-display-web-style-links-with-the-windows-forms-richtextbox-control.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0c55a-115">For more information, see [How to: Display Web-Style Links with the Windows Forms RichTextBox Control](../../../../docs/framework/winforms/controls/how-to-display-web-style-links-with-the-windows-forms-richtextbox-control.md).</span></span> <span data-ttu-id="0c55a-116">コントロール内のテキストの一部またはすべての操作を設定してから、ユーザーを防ぐことができます、<xref:System.Windows.Forms.RichTextBox.SelectionProtected%2A>プロパティを`true`です。</span><span class="sxs-lookup"><span data-stu-id="0c55a-116">You can prevent the user from manipulating some or all of the text in the control by setting the <xref:System.Windows.Forms.RichTextBox.SelectionProtected%2A> property to `true`.</span></span>  
   
- <xref:System.Windows.Forms.RichTextBox> コントロール内のほとんどの編集操作は、<xref:System.Windows.Forms.TextBoxBase.Undo%2A> メソッドおよび <xref:System.Windows.Forms.RichTextBox.Redo%2A> メソッドを呼び出すと、元に戻したりやり直したりできます。  <xref:System.Windows.Forms.RichTextBox.CanRedo%2A> メソッドを使用すると、ユーザーが最後に元に戻した動作をコントロールに再び適用できるかどうかを決定できます。  
+ <span data-ttu-id="0c55a-117">元に戻したりでのほとんどの編集操作をやり直すことができます、<xref:System.Windows.Forms.RichTextBox>コントロールを呼び出して、<xref:System.Windows.Forms.TextBoxBase.Undo%2A>と<xref:System.Windows.Forms.RichTextBox.Redo%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="0c55a-117">You can undo and redo most edit operations in a <xref:System.Windows.Forms.RichTextBox> control by calling the <xref:System.Windows.Forms.TextBoxBase.Undo%2A> and <xref:System.Windows.Forms.RichTextBox.Redo%2A> methods.</span></span> <span data-ttu-id="0c55a-118"><xref:System.Windows.Forms.RichTextBox.CanRedo%2A>メソッドでは、コントロールにユーザーを元に戻した最後の操作を再適用することができるかどうかを判断することができます。</span><span class="sxs-lookup"><span data-stu-id="0c55a-118">The <xref:System.Windows.Forms.RichTextBox.CanRedo%2A> method enables you to determine whether the last operation the user has undone can be reapplied to the control.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.RichTextBox>   
- [RichTextBox コントロール](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)   
- [TextBox コントロールの概要](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="0c55a-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="0c55a-119">See Also</span></span>  
+ <xref:System.Windows.Forms.RichTextBox>  
+ [<span data-ttu-id="0c55a-120">RichTextBox コントロール</span><span class="sxs-lookup"><span data-stu-id="0c55a-120">RichTextBox Control</span></span>](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)  
+ [<span data-ttu-id="0c55a-121">TextBox コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="0c55a-121">TextBox Control Overview</span></span>](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)

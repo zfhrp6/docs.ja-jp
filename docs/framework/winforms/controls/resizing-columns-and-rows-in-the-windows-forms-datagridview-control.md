@@ -1,53 +1,54 @@
 ---
-title: "Windows フォーム DataGridView コントロール内の列と行のサイズ変更 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "列 [Windows フォーム], サイズ変更 (グリッドの)"
-  - "データ グリッド, サイズ変更 (列と行を)"
-  - "DataGridView コントロール [Windows フォーム], サイズ変更 (行と列を)"
+title: "Windows フォーム DataGridView コントロール内の列と行のサイズ変更"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- DataGridView control [Windows Forms], sizing rows and columns
+- columns [Windows Forms], resizing in grids
+- data grids [Windows Forms], resizing columns and rows
 ms.assetid: 7532764d-e5c1-4943-a08b-6377a722d3b6
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3621b05f1faae671d93106f50dfef1311959e48e
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# Windows フォーム DataGridView コントロール内の列と行のサイズ変更
-`DataGridView` コントロールには、列と行のサイズ変更の動作をカスタマイズするさまざまな機能が用意されています。  通常、`DataGridView` のセルは、内容に基づくサイズ変更を行いません。  セルのサイズよりも大きい表示値は、一部だけが表示されます。  文字列として表示可能な内容は、ツールヒント内に表示されます。  
+# <a name="resizing-columns-and-rows-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="e7ee7-102">Windows フォーム DataGridView コントロール内の列と行のサイズ変更</span><span class="sxs-lookup"><span data-stu-id="e7ee7-102">Resizing Columns and Rows in the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="e7ee7-103">`DataGridView`コントロールには、その列と行のサイズ変更動作をカスタマイズするためのさまざまなオプションが用意されています。</span><span class="sxs-lookup"><span data-stu-id="e7ee7-103">The `DataGridView` control provides numerous options for customizing the sizing behavior of its columns and rows.</span></span> <span data-ttu-id="e7ee7-104">通常、`DataGridView`セル サイズを変更しないでその内容を基にします。</span><span class="sxs-lookup"><span data-stu-id="e7ee7-104">Typically, `DataGridView` cells do not resize based on their contents.</span></span> <span data-ttu-id="e7ee7-105">代わりに、それらはクリップ表示値があるセルよりも大きいです。</span><span class="sxs-lookup"><span data-stu-id="e7ee7-105">Instead, they clip any display value that is larger than the cell.</span></span> <span data-ttu-id="e7ee7-106">コンテンツは、文字列として表示されることができます、セルにより、ツールヒントに表示します。</span><span class="sxs-lookup"><span data-stu-id="e7ee7-106">If the content can be displayed as a string, the cell displays it in a ToolTip.</span></span>  
   
- 既定では、行、列、およびヘッダーの区分線をユーザーがマウスでドラッグすることにより、より多くの情報を表示できるようになっています。  また、ユーザーが区分線をダブルクリックすると、関連する行、列、またはヘッダーのサイズは、内容に応じて自動的にサイズ変更されます。  
+ <span data-ttu-id="e7ee7-107">既定では、ユーザーは、行、列、および詳細情報を表示するには、マウスでのヘッダー区分線をドラッグできます。</span><span class="sxs-lookup"><span data-stu-id="e7ee7-107">By default, users can drag row, column, and header dividers with the mouse to show more information.</span></span> <span data-ttu-id="e7ee7-108">ユーザーは、サイズが自動的にその内容に基づいて関連付けられている行、列、またはヘッダーのバンドの区分線をダブルクリックすることもできます。</span><span class="sxs-lookup"><span data-stu-id="e7ee7-108">Users can also double-click a divider to automatically resize the associated row, column, or header band based on its contents.</span></span>  
   
- `DataGridView` コントロールには、このようなすべてのユーザー操作をカスタマイズしたり無効にしたりするためのプロパティ、メソッド、およびイベントがあります。  また、プログラムによって、行、列、およびヘッダーのサイズを内容に基づいて変更したり、内容が変更されるたびに自動的にサイズ変更されるように設定したりすることもできます。  列の設定によって、使用できるコントロールの幅が指定した比率で自動的に分割されるようにもできます。  
+ <span data-ttu-id="e7ee7-109">`DataGridView`コントロールには、プロパティ、メソッド、およびカスタマイズしたり、これらすべてのユーザー向け動作を無効にするようにイベントが用意されています。</span><span class="sxs-lookup"><span data-stu-id="e7ee7-109">The `DataGridView` control provides properties, methods, and events that enable you to customize or disable all of these user-directed behaviors.</span></span> <span data-ttu-id="e7ee7-110">さらに、プログラムでサイズを変更する行、列、およびその内容に合わせてヘッダーまたはサイズが自動的に自身の内容が変更されるたびにそれらを構成できます。</span><span class="sxs-lookup"><span data-stu-id="e7ee7-110">Additionally, you can programmatically resize rows, columns, and headers to fit their contents, or you can configure them to automatically resize themselves whenever their contents change.</span></span> <span data-ttu-id="e7ee7-111">指定した比率で、コントロールの使用可能な幅を自動的に分割する列を構成することもできます。</span><span class="sxs-lookup"><span data-stu-id="e7ee7-111">You can also configure columns to automatically divide the available width of the control in proportions that you specify.</span></span>  
   
-## このセクションの内容  
- [Windows フォーム DataGridView コントロールのサイズ変更オプション](../../../../docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md)  
- 行、列、およびヘッダーのサイズ変更の機能について説明します。  また、サイズ変更関連のプロパティとメソッドの詳細を示し、一般的な使用シナリオを説明します。  
+## <a name="in-this-section"></a><span data-ttu-id="e7ee7-112">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="e7ee7-112">In This Section</span></span>  
+ [<span data-ttu-id="e7ee7-113">Windows フォーム DataGridView コントロールのサイズ変更オプション</span><span class="sxs-lookup"><span data-stu-id="e7ee7-113">Sizing Options in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md)  
+ <span data-ttu-id="e7ee7-114">サイズ変更行、列、およびヘッダーのオプションについて説明します。</span><span class="sxs-lookup"><span data-stu-id="e7ee7-114">Describes the options for sizing rows, columns, and headers.</span></span> <span data-ttu-id="e7ee7-115">また、サイズ変更に関連するプロパティやメソッドの詳細を提供し、一般的な使用シナリオについて説明します。</span><span class="sxs-lookup"><span data-stu-id="e7ee7-115">Also provides details on sizing-related properties and methods, and describes common usage scenarios.</span></span>  
   
- [Windows フォーム DataGridView コントロールの列フィル モード](../../../../docs/framework/winforms/controls/column-fill-mode-in-the-windows-forms-datagridview-control.md)  
- 列フィル モードについて詳しく説明し、列フィル モードおよびその他のモードを試すために使用できるデモ用のコードを示します。  
+ [<span data-ttu-id="e7ee7-116">Windows フォーム DataGridView コントロールの列フィル モード</span><span class="sxs-lookup"><span data-stu-id="e7ee7-116">Column Fill Mode in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/column-fill-mode-in-the-windows-forms-datagridview-control.md)  
+ <span data-ttu-id="e7ee7-117">列フィル モードの詳細、および列フィル モードおよびその他のモードを実験に使用できるデモ用のコードを説明します。</span><span class="sxs-lookup"><span data-stu-id="e7ee7-117">Describes column fill mode in detail, and provides demonstration code that you can use to experiment with column fill mode and other modes.</span></span>  
   
- [方法 : Windows フォーム DataGridView コントロールのサイズ変更モードを設定する](../../../../docs/framework/winforms/controls/how-to-set-the-sizing-modes-of-the-windows-forms-datagridview-control.md)  
- 一般的な用途でのサイズ変更モードの設定方法について説明します。  
+ [<span data-ttu-id="e7ee7-118">方法: Windows フォーム DataGridView コントロールのサイズ変更モードを設定する</span><span class="sxs-lookup"><span data-stu-id="e7ee7-118">How to: Set the Sizing Modes of the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-set-the-sizing-modes-of-the-windows-forms-datagridview-control.md)  
+ <span data-ttu-id="e7ee7-119">一般的な用途のサイズ変更モードを構成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e7ee7-119">Describes how to configure the sizing modes for common purposes.</span></span>  
   
- [方法 : Windows フォームの DataGridView コントロールの内容に合わせてセルのサイズをプログラムで変更する](../../../../docs/framework/winforms/controls/programmatically-resize-cells-to-fit-content-in-the-datagrid.md)  
- プログラミングによるサイズ変更を試すために使用できるデモ用のコードを示します。  
+ [<span data-ttu-id="e7ee7-120">方法: Windows フォームの DataGridView コントロールの内容に合わせてセルのサイズをプログラムで変更する</span><span class="sxs-lookup"><span data-stu-id="e7ee7-120">How to: Programmatically Resize Cells to Fit Content in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/programmatically-resize-cells-to-fit-content-in-the-datagrid.md)  
+ <span data-ttu-id="e7ee7-121">プログラムによるサイズ変更をテストに使用できるデモ用のコードを提供します。</span><span class="sxs-lookup"><span data-stu-id="e7ee7-121">Provides demonstration code that you can use to experiment with programmatic resizing.</span></span>  
   
- [方法 : Windows フォームの DataGridView コントロールの内容変更時にセルのサイズを自動的に変更する](../../../../docs/framework/winforms/controls/automatically-resize-cells-when-content-changes-in-the-datagrid.md)  
- 自動サイズ変更モードを試すために使用できるデモ用のコードを示します。  
+ [<span data-ttu-id="e7ee7-122">方法: Windows フォームの DataGridView コントロールの内容変更時にセルのサイズを自動的に変更する</span><span class="sxs-lookup"><span data-stu-id="e7ee7-122">How to: Automatically Resize Cells When Content Changes in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/automatically-resize-cells-when-content-changes-in-the-datagrid.md)  
+ <span data-ttu-id="e7ee7-123">自動サイズ変更モードを実験に使用できるデモ用のコードを提供します。</span><span class="sxs-lookup"><span data-stu-id="e7ee7-123">Provides demonstration code that you can use to experiment with automatic sizing modes.</span></span>  
   
-## 関連項目  
+## <a name="reference"></a><span data-ttu-id="e7ee7-124">参照</span><span class="sxs-lookup"><span data-stu-id="e7ee7-124">Reference</span></span>  
  <xref:System.Windows.Forms.DataGridView>  
- <xref:System.Windows.Forms.DataGridView> コントロールの参照ドキュメントを提供します。  
+ <span data-ttu-id="e7ee7-125"><xref:System.Windows.Forms.DataGridView> コントロールのリファレンス ドキュメントを提供します。</span><span class="sxs-lookup"><span data-stu-id="e7ee7-125">Provides reference documentation for the <xref:System.Windows.Forms.DataGridView> control.</span></span>  
   
-## 参照  
- [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="e7ee7-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="e7ee7-126">See Also</span></span>  
+ [<span data-ttu-id="e7ee7-127">DataGridView コントロール</span><span class="sxs-lookup"><span data-stu-id="e7ee7-127">DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)

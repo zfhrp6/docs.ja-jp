@@ -1,41 +1,41 @@
 ---
-title: "ContextMenu コンポーネントの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ContextMenu"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "コンテキスト メニュー, ContextMenu コンポーネント"
-  - "ContextMenu コンポーネント [Windows フォーム], ContextMenu コンポーネントの概要"
-  - "ショートカット メニュー, ContextMenu コンポーネント"
+title: "ContextMenu コンポーネントの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: ContextMenu
+helpviewer_keywords:
+- ContextMenu component [Windows Forms], about ContextMenu component
+- context menus [Windows Forms], ContextMenu component
+- shortcut menus [Windows Forms], ContextMenu component
 ms.assetid: 49d6398f-d3c4-4679-84fa-1de07b68b05e
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f6c2542ca7ee27bec96bb5010bcdb2fcd7416f72
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ContextMenu コンポーネントの概要 (Windows フォーム)
+# <a name="contextmenu-component-overview-windows-forms"></a><span data-ttu-id="77de1-102">ContextMenu コンポーネントの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="77de1-102">ContextMenu Component Overview (Windows Forms)</span></span>
 > [!IMPORTANT]
->  <xref:System.Windows.Forms.MenuStrip> と <xref:System.Windows.Forms.ContextMenuStrip> は、以前のバージョンの <xref:System.Windows.Forms.MainMenu> コントロールおよび <xref:System.Windows.Forms.ContextMenu> コントロールに代わると共に追加の機能を提供しますが、<xref:System.Windows.Forms.MainMenu> および <xref:System.Windows.Forms.ContextMenu> は、下位互換性を保つ目的および将来使用する目的で、必要に応じて保持できます。  
+>  <span data-ttu-id="77de1-103"><xref:System.Windows.Forms.MenuStrip>と<xref:System.Windows.Forms.ContextMenuStrip>交換し、する機能を追加、<xref:System.Windows.Forms.MainMenu>と<xref:System.Windows.Forms.ContextMenu>以前のバージョンでのコントロール<xref:System.Windows.Forms.MainMenu>と<xref:System.Windows.Forms.ContextMenu>を選択した場合、旧バージョンとの互換性と将来の使用の両方に保持されます。</span><span class="sxs-lookup"><span data-stu-id="77de1-103">Although <xref:System.Windows.Forms.MenuStrip> and <xref:System.Windows.Forms.ContextMenuStrip> replace and add functionality to the <xref:System.Windows.Forms.MainMenu> and <xref:System.Windows.Forms.ContextMenu> controls of previous versions, <xref:System.Windows.Forms.MainMenu> and <xref:System.Windows.Forms.ContextMenu> are retained for both backward compatibility and future use if you choose.</span></span>  
   
- Windows フォームの <xref:System.Windows.Forms.ContextMenu> コンポーネントには、選択したオブジェクトに関連付けられたコマンドのうち、頻繁に使用されるコマンドを簡単に実行するためのメニューが用意されています。  ショートカット メニューの項目は、多くの場合、アプリケーションの他の場所に表示されるメイン メニューの項目のサブセットです。  ユーザーは、通常、マウスを右クリックしてショートカット メニューにアクセスします。  Windows フォームでは、ショートカット メニューはコントロールに関連付けられています。  
+ <span data-ttu-id="77de1-104">Windows フォームで<xref:System.Windows.Forms.ContextMenu>コンポーネント、選択したオブジェクトに関連付けられている頻繁に使用されるコマンドを簡単にアクセスできるショートカット メニューをユーザーに提供できます。</span><span class="sxs-lookup"><span data-stu-id="77de1-104">With the Windows Forms <xref:System.Windows.Forms.ContextMenu> component, you can provide users with an easily accessible shortcut menu of frequently used commands that are associated with the selected object.</span></span> <span data-ttu-id="77de1-105">ショートカット メニューの項目は、多くの場合、アプリケーションでの場所に表示されるメイン メニューの項目のサブセットです。</span><span class="sxs-lookup"><span data-stu-id="77de1-105">The items in a shortcut menu are frequently a subset of the items from main menus that appear elsewhere in the application.</span></span> <span data-ttu-id="77de1-106">ユーザーは、マウスを右クリックしてショートカット メニューを通常アクセスできます。</span><span class="sxs-lookup"><span data-stu-id="77de1-106">A user can typically access a shortcut menu by right-clicking the mouse.</span></span> <span data-ttu-id="77de1-107">Windows フォームでは、ショートカット メニューは、コントロールに関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="77de1-107">On Windows Forms, shortcut menus are associated with controls.</span></span>  
   
-## 主要なプロパティ  
- ショートカット メニューをコントロールに関連付けるには、コントロールの <xref:System.Windows.Forms.Control.ContextMenu%2A> プロパティに <xref:System.Windows.Forms.ContextMenu> コンポーネントを設定します。  1 つのショートカット メニューを複数のコントロールに関連付けることができますが、各コントロールに設定できるショートカット メニューは 1 つだけです。  
+## <a name="key-properties"></a><span data-ttu-id="77de1-108">主要プロパティ</span><span class="sxs-lookup"><span data-stu-id="77de1-108">Key Properties</span></span>  
+ <span data-ttu-id="77de1-109">コントロールにするには、コントロールのショートカット メニューを関連付けることができます<xref:System.Windows.Forms.Control.ContextMenu%2A>プロパティを<xref:System.Windows.Forms.ContextMenu>コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="77de1-109">You can associate a shortcut menu with a control by setting the control's <xref:System.Windows.Forms.Control.ContextMenu%2A> property to the <xref:System.Windows.Forms.ContextMenu> component.</span></span> <span data-ttu-id="77de1-110">1 つのショートカット メニューは、複数のコントロールを関連付けることができますが、各コントロールが 1 つだけのショートカット メニューを持つことができます。</span><span class="sxs-lookup"><span data-stu-id="77de1-110">A single shortcut menu can be associated with multiple controls, but each control can have only one shortcut menu.</span></span>  
   
- <xref:System.Windows.Forms.ContextMenu> コンポーネントの主要なプロパティは、<xref:System.Windows.Forms.Menu.MenuItems%2A> プロパティです。  メニュー項目を作成するには、プログラムで <xref:System.Windows.Forms.MenuItem> オブジェクトを作成し、これらのオブジェクトをショートカット メニューの <xref:System.Windows.Forms.Menu.MenuItemCollection> に追加します。  ショートカット メニューの項目は、通常、他のメニューを基に作成するため、他のメニュー項目をコピーしてショートカット メニューに追加するのが一般的な方法です。  
+ <span data-ttu-id="77de1-111">キー プロパティ、<xref:System.Windows.Forms.ContextMenu>コンポーネントは、<xref:System.Windows.Forms.Menu.MenuItems%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="77de1-111">The key property of the <xref:System.Windows.Forms.ContextMenu> component is the <xref:System.Windows.Forms.Menu.MenuItems%2A> property.</span></span> <span data-ttu-id="77de1-112">メニュー項目を追加するにはプログラムで作成することで<xref:System.Windows.Forms.MenuItem>オブジェクトとに追加すること、<xref:System.Windows.Forms.Menu.MenuItemCollection>のショートカット メニュー。</span><span class="sxs-lookup"><span data-stu-id="77de1-112">You can add menu items by programmatically creating <xref:System.Windows.Forms.MenuItem> objects and adding them to the <xref:System.Windows.Forms.Menu.MenuItemCollection> of the shortcut menu.</span></span> <span data-ttu-id="77de1-113">ショートカット メニューの項目は通常、その他のメニューから描画、ためにをコピーしてショートカット メニューに項目を最も頻繁に追加します。</span><span class="sxs-lookup"><span data-stu-id="77de1-113">Because the items in a shortcut menu are usually drawn from other menus, you will most frequently add items to a shortcut menu by copying them.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.ContextMenu>   
- <xref:System.Windows.Forms.MenuStrip>   
+## <a name="see-also"></a><span data-ttu-id="77de1-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="77de1-114">See Also</span></span>  
+ <xref:System.Windows.Forms.ContextMenu>  
+ <xref:System.Windows.Forms.MenuStrip>  
  <xref:System.Windows.Forms.ContextMenuStrip>

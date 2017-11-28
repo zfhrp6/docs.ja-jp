@@ -1,31 +1,33 @@
 ---
-title: "IEnumRAWINPUTDEVIC:Reset | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Reset メソッド"
+title: IEnumRAWINPUTDEVIC:Reset
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: Reset method [WPF]
 ms.assetid: 6f3255f0-90e0-4736-b184-c1d3b8387bd3
-caps.latest.revision: 5
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6a94cdaa7296ff6d45aff5f895e2b8cab3286480
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# IEnumRAWINPUTDEVIC:Reset
-列挙体シーケンスを先頭にリセットします。  
+# <a name="ienumrawinputdevicreset"></a><span data-ttu-id="6ed9b-102">IEnumRAWINPUTDEVIC:Reset</span><span class="sxs-lookup"><span data-stu-id="6ed9b-102">IEnumRAWINPUTDEVIC:Reset</span></span>
+<span data-ttu-id="6ed9b-103">列挙のシーケンスを最初にリセットします。</span><span class="sxs-lookup"><span data-stu-id="6ed9b-103">Resets the enumeration sequence to the beginning.</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="6ed9b-104">構文</span><span class="sxs-lookup"><span data-stu-id="6ed9b-104">Syntax</span></span>  
   
 ```  
 HRESULT Reset();  
 ```  
   
-## プロパティ値\/戻り値  
- HRESULT : S\_OK。
+## <a name="property-valuereturn-value"></a><span data-ttu-id="6ed9b-105">プロパティ値/戻り値</span><span class="sxs-lookup"><span data-stu-id="6ed9b-105">Property Value/Return Value</span></span>  
+ <span data-ttu-id="6ed9b-106">HRESULT: S_OK です。</span><span class="sxs-lookup"><span data-stu-id="6ed9b-106">HRESULT: S_OK.</span></span>

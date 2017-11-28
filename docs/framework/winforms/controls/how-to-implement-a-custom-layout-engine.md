@@ -1,37 +1,41 @@
 ---
-title: "方法 : カスタム レイアウト エンジンを実装する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "FlowLayoutPanel コントロール [Windows フォーム], レイアウト エンジン"
-  - "レイアウト エンジン, カスタム"
-  - "レイアウト エンジン, 実装"
-  - "LayoutEngine クラス"
-  - "TableLayoutPanel コントロール [Windows フォーム], レイアウト エンジン"
+title: "方法 : カスタム レイアウト エンジンを実装する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- layout engines [Windows Forms], custom
+- TableLayoutPanel control [Windows Forms], layout engine
+- layout engines [Windows Forms], implementing
+- FlowLayoutPanel control [Windows Forms], layout engine
 ms.assetid: f91aa91c-29f4-4089-95ca-5d48b774b00e
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a98916555b09e4228908f6b18af765000cdce574
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : カスタム レイアウト エンジンを実装する
-単純なフロー レイアウトを実行するカスタム レイアウト エンジンを作成する方法を次のコード例に示します。  このコード例では、`DemoFlowPanel` という名前のパネル コントロールを実装します。このパネル コントロールは <xref:System.Windows.Forms.Control.LayoutEngine%2A> プロパティをオーバーライドして `DemoFlowLayout` クラスのインスタンスを提供します。  
+# <a name="how-to-implement-a-custom-layout-engine"></a><span data-ttu-id="a9b3e-102">方法 : カスタム レイアウト エンジンを実装する</span><span class="sxs-lookup"><span data-stu-id="a9b3e-102">How to: Implement a Custom Layout Engine</span></span>
+<span data-ttu-id="a9b3e-103">次のコード例では、単純なフロー レイアウトを実行するカスタム レイアウト エンジンを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a9b3e-103">The following code example demonstrates how to create a custom layout engine that performs a simple flow layout.</span></span> <span data-ttu-id="a9b3e-104">名前付きパネル コントロールを実装する`DemoFlowPanel`が優先、<xref:System.Windows.Forms.Control.LayoutEngine%2A>のインスタンスを提供するプロパティ、`DemoFlowLayout`クラスです。</span><span class="sxs-lookup"><span data-stu-id="a9b3e-104">It implements a panel control named `DemoFlowPanel`, which overrides the <xref:System.Windows.Forms.Control.LayoutEngine%2A> property to provide an instance of the `DemoFlowLayout` class.</span></span>  
   
-## 使用例  
+## <a name="example"></a><span data-ttu-id="a9b3e-105">例</span><span class="sxs-lookup"><span data-stu-id="a9b3e-105">Example</span></span>  
  [!code-cpp[System.Windows.Forms.Layout.LayoutEngine#1](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Layout.LayoutEngine/cpp/DemoFlowLayout.cpp#1)]
  [!code-csharp[System.Windows.Forms.Layout.LayoutEngine#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Layout.LayoutEngine/CS/DemoFlowLayout.cs#1)]
  [!code-vb[System.Windows.Forms.Layout.LayoutEngine#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Layout.LayoutEngine/VB/DemoFlowLayout.vb#1)]  
   
-## 参照  
- <xref:System.Windows.Forms.Layout.LayoutEngine>   
- <xref:System.Windows.Forms.Control.LayoutEngine%2A?displayProperty=fullName>
+## <a name="see-also"></a><span data-ttu-id="a9b3e-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="a9b3e-106">See Also</span></span>  
+ <xref:System.Windows.Forms.Layout.LayoutEngine>  
+ <xref:System.Windows.Forms.Control.LayoutEngine%2A?displayProperty=nameWithType>

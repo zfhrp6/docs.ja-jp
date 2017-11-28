@@ -1,65 +1,74 @@
 ---
-title: "&lt;basicHttpBinding&gt; の &lt;message&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;basicHttpBinding&gt; の &lt;message&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 51cdd329-6461-471a-8747-56c2299b61e5
-caps.latest.revision: 23
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 014e7d5ca9d6bc379edb82a71d52dccb73fa23f0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;basicHttpBinding&gt; の &lt;message&gt;
-[\<basicHttpBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)のメッセージ レベル セキュリティの設定を定義します。  
+# <a name="ltmessagegt-of-ltbasichttpbindinggt"></a><span data-ttu-id="1dedf-102">&lt;basicHttpBinding&gt; の &lt;message&gt;</span><span class="sxs-lookup"><span data-stu-id="1dedf-102">&lt;message&gt; of &lt;basicHttpBinding&gt;</span></span>
+<span data-ttu-id="1dedf-103">メッセージ レベルのセキュリティの設定を定義、 [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="1dedf-103">Defines the settings for message-level security of the [\<basicHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).</span></span>  
   
-## 構文  
+ <span data-ttu-id="1dedf-104">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="1dedf-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="1dedf-105">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="1dedf-105">\<bindings></span></span>  
+<span data-ttu-id="1dedf-106">\<basicHttpBinding ></span><span class="sxs-lookup"><span data-stu-id="1dedf-106">\<basicHttpBinding></span></span>  
+<span data-ttu-id="1dedf-107">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="1dedf-107">\<binding></span></span>  
+<span data-ttu-id="1dedf-108">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="1dedf-108">\<security></span></span>  
+<span data-ttu-id="1dedf-109">\<メッセージ ></span><span class="sxs-lookup"><span data-stu-id="1dedf-109">\<message></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="1dedf-110">構文</span><span class="sxs-lookup"><span data-stu-id="1dedf-110">Syntax</span></span>  
   
+```xml  
 <message   
    algorithmSuite="Basic128/Basic192/Basic256/Basic128Rsa15/Basic256Rsa15/TripleDes/TripleDesRsa15/Basic128Sha256/Basic192Sha256/TripleDesSha256/Basic128Sha256Rsa15/Basic192Sha256Rsa15/Basic256Sha256Rsa15/TripleDesSha256Rsa15"  
       clientCredentialType="UserName/Certificate"/>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="1dedf-111">属性および要素</span><span class="sxs-lookup"><span data-stu-id="1dedf-111">Attributes and Elements</span></span>  
+ <span data-ttu-id="1dedf-112">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="1dedf-112">The following sections describe attributes, child elements, and parent elements</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="1dedf-113">属性</span><span class="sxs-lookup"><span data-stu-id="1dedf-113">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|algorithmSuite|メッセージの暗号化とキー ラップ アルゴリズムを設定します。  この属性は、アルゴリズムとキー サイズを指定する <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> 型です。  これらのアルゴリズムは、Security Policy Language \(WS\-SecurityPolicy\) の仕様で指定されているアルゴリズムに対応付けられています。<br /><br /> 既定値は `Basic256` です。|  
-|clientCredentialType|メッセージ ベースのセキュリティを使用してクライアント認証を実行するときに使用される資格情報の種類を指定します。  既定値は、`UserName` です。|  
+|<span data-ttu-id="1dedf-114">属性</span><span class="sxs-lookup"><span data-stu-id="1dedf-114">Attribute</span></span>|<span data-ttu-id="1dedf-115">説明</span><span class="sxs-lookup"><span data-stu-id="1dedf-115">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="1dedf-116">algorithmSuite</span><span class="sxs-lookup"><span data-stu-id="1dedf-116">algorithmSuite</span></span>|<span data-ttu-id="1dedf-117">メッセージの暗号化とキー ラップ アルゴリズムを設定します。</span><span class="sxs-lookup"><span data-stu-id="1dedf-117">Sets the message encryption and key-wrap algorithms.</span></span> <span data-ttu-id="1dedf-118">この属性は、アルゴリズムとキー サイズを指定する <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> 型です。</span><span class="sxs-lookup"><span data-stu-id="1dedf-118">This attribute is of type <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>, which specifies the algorithms and the key sizes.</span></span> <span data-ttu-id="1dedf-119">これらのアルゴリズムは、Security Policy Language (WS-SecurityPolicy) の仕様で指定されているアルゴリズムに対応付けられています。</span><span class="sxs-lookup"><span data-stu-id="1dedf-119">These algorithms map to those specified in the Security Policy Language (WS-SecurityPolicy) specification.</span></span><br /><br /> <span data-ttu-id="1dedf-120">既定値は `Basic256` です。</span><span class="sxs-lookup"><span data-stu-id="1dedf-120">The default value is `Basic256`.</span></span>|  
+|<span data-ttu-id="1dedf-121">clientCredentialType</span><span class="sxs-lookup"><span data-stu-id="1dedf-121">clientCredentialType</span></span>|<span data-ttu-id="1dedf-122">メッセージ ベースのセキュリティを使用してクライアント認証を実行するときに使用される資格情報の種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="1dedf-122">Specifies the type of credential to be used when performing client authentication using message-based security.</span></span> <span data-ttu-id="1dedf-123">既定値は、`UserName` です。</span><span class="sxs-lookup"><span data-stu-id="1dedf-123">The default is `UserName`.</span></span>|  
   
-## clientCredentialType 属性  
+## <a name="clientcredentialtype-attribute"></a><span data-ttu-id="1dedf-124">clientCredentialType 属性</span><span class="sxs-lookup"><span data-stu-id="1dedf-124">clientCredentialType Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|UserName|-   UserName 資格情報を使用してクライアントをサーバーに認証するように要求します。  この資格情報は、[\<clientCredentials\>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)を使用して指定する必要があります。<br />-   [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は、パスワード ダイジェストの送信、またはパスワードを使用したキーの派生、およびメッセージ セキュリティでのそのようなキーの使用をサポートしません。  そのため、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] では UserName 資格情報を使用する場合は、トランスポートが強制的にセキュリティで保護されます。  `basicHttpBinding` の場合は、SSL チャネルの設定が必要です。|  
-|証明書|証明書を使用してクライアントをサーバーに認証するように要求します。  この場合のクライアント資格情報は、[\<clientCredentials\>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)および [\<clientCertificate\>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md)を使用して指定する必要があります。  さらに、メッセージのセキュリティ モードを使用する場合は、クライアントにサービス証明書を準備する必要があります。  この場合のサービス資格情報は、<xref:System.ServiceModel.Description.ClientCredentials> クラスまたは `ClientCredentials` 動作要素を使用し、[\<serviceCertificate\>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)を使用してサービス証明書を指定して、指定する必要があります。|  
+|<span data-ttu-id="1dedf-125">値</span><span class="sxs-lookup"><span data-stu-id="1dedf-125">Value</span></span>|<span data-ttu-id="1dedf-126">説明</span><span class="sxs-lookup"><span data-stu-id="1dedf-126">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="1dedf-127">UserName</span><span class="sxs-lookup"><span data-stu-id="1dedf-127">UserName</span></span>|<span data-ttu-id="1dedf-128">-UserName 資格情報を使用してサーバーにクライアントの認証が必要です。</span><span class="sxs-lookup"><span data-stu-id="1dedf-128">-   Requires the client be authenticated to the server with a UserName credential.</span></span> <span data-ttu-id="1dedf-129">この資格情報を使用して指定する必要があります、 [ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)です。</span><span class="sxs-lookup"><span data-stu-id="1dedf-129">This credential needs to be specified using the [\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md).</span></span><br /><span data-ttu-id="1dedf-130">-   [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]パスワード ダイジェストの送信、またはパスワードを使用して、そのようなキーを使用して、メッセージ セキュリティのためのキーの派生はサポートしません。</span><span class="sxs-lookup"><span data-stu-id="1dedf-130">-   [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] does not support sending a password digest or deriving keys using passwords and using such keys for message security.</span></span> <span data-ttu-id="1dedf-131">そのため、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] では UserName 資格情報を使用する場合は、トランスポートが強制的にセキュリティで保護されます。</span><span class="sxs-lookup"><span data-stu-id="1dedf-131">Therefore, [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] enforces that the transport be secured when using UserName credentials.</span></span> <span data-ttu-id="1dedf-132">`basicHttpBinding` の場合は、SSL チャネルの設定が必要です。</span><span class="sxs-lookup"><span data-stu-id="1dedf-132">For the `basicHttpBinding`, this requires setting up an SSL channel.</span></span>|  
+|<span data-ttu-id="1dedf-133">証明書</span><span class="sxs-lookup"><span data-stu-id="1dedf-133">Certificate</span></span>|<span data-ttu-id="1dedf-134">証明書を使用してクライアントをサーバーに認証するように要求します。</span><span class="sxs-lookup"><span data-stu-id="1dedf-134">Requires that the client be authenticated to the server using a certificate.</span></span> <span data-ttu-id="1dedf-135">ここではクライアントの資格情報を使用して指定する必要があります[ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)と[ \<clientCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md)です。</span><span class="sxs-lookup"><span data-stu-id="1dedf-135">The client credential in this case needs to be specified using [\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) and the [\<clientCertificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md).</span></span> <span data-ttu-id="1dedf-136">さらに、メッセージのセキュリティ モードを使用する場合は、クライアントにサービス証明書を準備する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1dedf-136">In addition, when using message security mode, the client needs to be provisioned with the service certificate.</span></span> <span data-ttu-id="1dedf-137">ここではサービスの資格情報を使用して指定する必要があります<xref:System.ServiceModel.Description.ClientCredentials>クラスまたは`ClientCredentials`動作要素をサービスを指定することを使用して証明書、 [ \<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)です。</span><span class="sxs-lookup"><span data-stu-id="1dedf-137">The service credential in this case needs to be specified using <xref:System.ServiceModel.Description.ClientCredentials> class or `ClientCredentials` behavior element and specifying the service certificate using the [\<serviceCertificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).</span></span>|  
   
-### 子要素  
- なし  
+### <a name="child-elements"></a><span data-ttu-id="1dedf-138">子要素</span><span class="sxs-lookup"><span data-stu-id="1dedf-138">Child Elements</span></span>  
+ <span data-ttu-id="1dedf-139">なし</span><span class="sxs-lookup"><span data-stu-id="1dedf-139">None</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="1dedf-140">親要素</span><span class="sxs-lookup"><span data-stu-id="1dedf-140">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<security\>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)|[\<basicHttpBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)のセキュリティ機能を定義します。|  
+|<span data-ttu-id="1dedf-141">要素</span><span class="sxs-lookup"><span data-stu-id="1dedf-141">Element</span></span>|<span data-ttu-id="1dedf-142">説明</span><span class="sxs-lookup"><span data-stu-id="1dedf-142">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="1dedf-143">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="1dedf-143">\<security></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)|<span data-ttu-id="1dedf-144">セキュリティ機能を定義、 [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="1dedf-144">Defines the security capabilities for the [\<basicHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).</span></span>|  
   
-## 使用例  
- このサンプルでは、basicHttpBinding とメッセージ セキュリティを使用するアプリケーションを実装する方法を示します。  サービスの次の構成例では、エンドポイント定義によって basicHttpBinding が指定され、`Binding1` という名前のバインディング構成が参照されます。  サービスがクライアントに対してサービス自体を認証するために使用する証明書は、`serviceCredentials` 要素の下にある構成ファイルの `behaviors` セクションで設定されます。  クライアントがサービスに対してクライアント自体を認証するために使用する証明書に適用される検証モードも、`clientCertificate` 要素の下にある `behaviors` セクションで設定されます。  
+## <a name="example"></a><span data-ttu-id="1dedf-145">例</span><span class="sxs-lookup"><span data-stu-id="1dedf-145">Example</span></span>  
+ <span data-ttu-id="1dedf-146">このサンプルでは、basicHttpBinding とメッセージ セキュリティを使用するアプリケーションを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="1dedf-146">This sample demonstrates how to implement an application that uses the basicHttpBinding and message security.</span></span> <span data-ttu-id="1dedf-147">サービスの次の構成例では、エンドポイント定義によって basicHttpBinding が指定され、`Binding1` という名前のバインディング構成が参照されます。</span><span class="sxs-lookup"><span data-stu-id="1dedf-147">In the following configuration example for a service, the endpoint definition specifies the basicHttpBinding and references a binding configuration named `Binding1`.</span></span> <span data-ttu-id="1dedf-148">サービスがクライアントに対してサービス自体を認証するために使用する証明書は、`behaviors` 要素の下にある構成ファイルの `serviceCredentials` セクションで設定されます。</span><span class="sxs-lookup"><span data-stu-id="1dedf-148">The certificate that the service uses to authenticate itself to the client is set in the `behaviors` section of the configuration file under the `serviceCredentials` element.</span></span> <span data-ttu-id="1dedf-149">クライアントがサービスに対してクライアント自体を認証するために使用する証明書に適用される検証モードも、`behaviors` 要素の下にある `clientCertificate` セクションで設定されます。</span><span class="sxs-lookup"><span data-stu-id="1dedf-149">The validation mode that applies to the certificate that the client uses to authenticate itself to the service is also set in the `behaviors` section under the `clientCertificate` element.</span></span>  
   
- 同じバインディングとセキュリティの詳細が、クライアントの構成ファイルで指定されます。  
+ <span data-ttu-id="1dedf-150">同じバインディングとセキュリティの詳細が、クライアントの構成ファイルで指定されます。</span><span class="sxs-lookup"><span data-stu-id="1dedf-150">The same binding and security details are specified in the client configuration file.</span></span>  
   
-```  
+```xml  
 <system.serviceModel>  
     <services>  
       <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
@@ -126,13 +135,13 @@ caps.handback.revision: 23
 </system.serviceModel>  
 ```  
   
-## 参照  
- <xref:System.ServiceModel.BasicHttpMessageSecurity>   
- <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement.Message%2A>   
- <xref:System.ServiceModel.BasicHttpSecurity.Message%2A>   
- <xref:System.ServiceModel.Configuration.BasicHttpMessageSecurityElement>   
- [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [バインディング](../../../../../docs/framework/wcf/bindings.md)   
- [システムが提供するバインディングの構成](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/ja-jp/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
- [\<binding\>](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a><span data-ttu-id="1dedf-151">関連項目</span><span class="sxs-lookup"><span data-stu-id="1dedf-151">See Also</span></span>  
+ <xref:System.ServiceModel.BasicHttpMessageSecurity>  
+ <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement.Message%2A>  
+ <xref:System.ServiceModel.BasicHttpSecurity.Message%2A>  
+ <xref:System.ServiceModel.Configuration.BasicHttpMessageSecurityElement>  
+ [<span data-ttu-id="1dedf-152">サービスとクライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="1dedf-152">Securing Services and Clients</span></span>](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [<span data-ttu-id="1dedf-153">バインディング</span><span class="sxs-lookup"><span data-stu-id="1dedf-153">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="1dedf-154">システム指定のバインディングを構成します。</span><span class="sxs-lookup"><span data-stu-id="1dedf-154">Configuring System-Provided Bindings</span></span>](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [<span data-ttu-id="1dedf-155">バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには</span><span class="sxs-lookup"><span data-stu-id="1dedf-155">Using Bindings to Configure Windows Communication Foundation Services and Clients</span></span>](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [<span data-ttu-id="1dedf-156">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="1dedf-156">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)

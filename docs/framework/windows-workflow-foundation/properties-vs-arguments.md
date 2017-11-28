@@ -1,27 +1,31 @@
 ---
-title: "プロパティと引数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "プロパティとします。引数"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 14651389-4a49-4cbb-9ddf-c83fdc155df1
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9b3f06cf91591a373550f876f7b2111159067ba3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# プロパティと引数
-データをアクティビティに渡すために使用可能なオプションはいくつかあります。<xref:System.Activities.InArgument> を使用する以外に、標準の CLR プロパティまたはパブリック <xref:System.Activities.ActivityAction> プロパティを使用してデータを受け取るアクティビティを開発できます。このトピックでは適切なメソッド型の選択方法について説明します。  
+# <a name="properties-vs-arguments"></a><span data-ttu-id="eaefd-102">プロパティとします。引数</span><span class="sxs-lookup"><span data-stu-id="eaefd-102">Properties vs. Arguments</span></span>
+<span data-ttu-id="eaefd-103">データをアクティビティに渡すために使用可能なオプションはいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="eaefd-103">There are several options available for passing data into an activity.</span></span> <span data-ttu-id="eaefd-104"><xref:System.Activities.InArgument> を使用する以外に、標準の CLR プロパティまたはパブリック <xref:System.Activities.ActivityAction> プロパティを使用してデータを受け取るアクティビティを開発できます。</span><span class="sxs-lookup"><span data-stu-id="eaefd-104">In addition to using <xref:System.Activities.InArgument>, activities can also be developed that receive data using either standard CLR Properties or public <xref:System.Activities.ActivityAction> properties.</span></span> <span data-ttu-id="eaefd-105">このトピックでは適切なメソッド型の選択方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="eaefd-105">This topic discusses how to select the appropriate method type.</span></span>  
   
-## CLR プロパティの使用  
- データをアクティビティに渡す場合、CLR プロパティ \(Get および Set ルーチンを使用してデータを公開するパブリック メソッド\) は最も制限が大きいオプションです。ソリューションをコンパイルする際、CLR プロパティに渡すパラメーターの値がわかっている必要があります。この値はワークフローのすべてのインスタンスで同一です。このように、CLR プロパティに渡された値はコードで定義された定数に似ています。この値はアクティビティの有効期間を通じて変更されず、アクティビティの異なるインスタンスのために変更できません。<xref:System.Activities.Expressions.InvokeMethod%601.MethodName%2A> はアクティビティによって公開される CLR プロパティの一つです。アクティビティが呼び出すメソッドの名前は、実行時の要件に基づいて変更できず、アクティビティのすべてのインスタンスで同じです。  
+## <a name="using-clr-properties"></a><span data-ttu-id="eaefd-106">CLR プロパティの使用</span><span class="sxs-lookup"><span data-stu-id="eaefd-106">Using CLR Properties</span></span>  
+ <span data-ttu-id="eaefd-107">データをアクティビティに渡す場合、CLR プロパティ (Get および Set ルーチンを使用してデータを公開するパブリック メソッド) は最も制限が大きいオプションです。</span><span class="sxs-lookup"><span data-stu-id="eaefd-107">When passing data into an activity, CLR properties (that is, public methods that use Get and Set routines to expose data) are the option that has the most restrictions.</span></span> <span data-ttu-id="eaefd-108">ソリューションをコンパイルする際、CLR プロパティに渡すパラメーターの値がわかっている必要があります。この値はワークフローのすべてのインスタンスで同一です。</span><span class="sxs-lookup"><span data-stu-id="eaefd-108">The value of a parameter passed into a CLR property must be known when the solution is compiled; this value will be the same for every instance of the workflow.</span></span> <span data-ttu-id="eaefd-109">このように、CLR プロパティに渡された値はコードで定義された定数に似ています。この値はアクティビティの有効期間を通じて変更されず、アクティビティの異なるインスタンスのために変更できません。</span><span class="sxs-lookup"><span data-stu-id="eaefd-109">In this way, a value passed into a CLR property is similar to a constant defined in code; this value can’t change for the life of the activity, and can’t be changed for different instances of the activity.</span></span> <span data-ttu-id="eaefd-110"><xref:System.Activities.Expressions.InvokeMethod%601.MethodName%2A> はアクティビティによって公開される CLR プロパティの 1 つです。アクティビティが呼び出すメソッドの名前は、実行時の要件に基づいて変更できず、アクティビティのすべてのインスタンスで同じです。</span><span class="sxs-lookup"><span data-stu-id="eaefd-110"><xref:System.Activities.Expressions.InvokeMethod%601.MethodName%2A> is an example of a CLR property exposed by an activity; the method name that the activity calls can’t be changed based on runtime conditions, and will be the same for every instance of the activity.</span></span>  
   
-## 引数の使用  
- 引数は、データがアクティビティの有効期間内だけに一度評価されるとき使用する必要があります。つまり、値はアクティビティの有効期間中に変化しません。しかし値はアクティビティの異なるインスタンスごとに異なります。<xref:System.Activities.Statements.If.Condition%2A> は一度評価された値の例です。そのため引数として定義されます。<xref:System.Activities.Statements.WriteLine.Text%2A> は引数として定義すべきメソッドの別の例です。これはアクティビティの実行中に一回のみ評価されますが、アクティビティの異なるインスタンスごとに異なることができます。  
+## <a name="using-arguments"></a><span data-ttu-id="eaefd-111">引数の使用</span><span class="sxs-lookup"><span data-stu-id="eaefd-111">Using Arguments</span></span>  
+ <span data-ttu-id="eaefd-112">引数は、データがアクティビティの有効期間内に 1 回だけ評価されるときに使用する必要があります。つまり、値はアクティビティの有効期間中に変化しません。しかし値はアクティビティの異なるインスタンスごとに異なります。</span><span class="sxs-lookup"><span data-stu-id="eaefd-112">Arguments should be used when data is only evaluated once during the lifetime of the activity; that is, its value will not change during the lifetime of the activity, but the value can be different for different instances of the activity.</span></span> <span data-ttu-id="eaefd-113"><xref:System.Activities.Statements.If.Condition%2A> は 1 回評価された値の例です。そのため引数として定義されます。</span><span class="sxs-lookup"><span data-stu-id="eaefd-113"><xref:System.Activities.Statements.If.Condition%2A> is an example of a value that gets evaluated once; therefore it is defined as an argument.</span></span> <span data-ttu-id="eaefd-114"><xref:System.Activities.Statements.WriteLine.Text%2A> は引数として定義すべきメソッドの別の例です。これはアクティビティの実行中に 1 回のみ評価されますが、アクティビティの異なるインスタンスごとに異なることができます。</span><span class="sxs-lookup"><span data-stu-id="eaefd-114"><xref:System.Activities.Statements.WriteLine.Text%2A> is another example of a method that should be defined as an argument, since it is only evaluated once during the activity’s execution, but it can be different for different instances of the activity.</span></span>  
   
-## ActivityAction の使用  
- アクティビティの実行の有効期間中にデータを複数回評価する必要がある場合は <xref:System.Activities.ActivityAction> を使用してください。たとえば、<xref:System.Activities.Statements.While.Condition%2A> プロパティは <xref:System.Activities.Statements.While> ループを反復するたびに評価されます。この目的で <xref:System.Activities.InArgument> を使用した場合、引数は反復のたびに再評価されず、常に同じ結果を返すため、ループは終了しません。
+## <a name="using-activityaction"></a><span data-ttu-id="eaefd-115">ActivityAction の使用</span><span class="sxs-lookup"><span data-stu-id="eaefd-115">Using ActivityAction</span></span>  
+ <span data-ttu-id="eaefd-116">アクティビティの実行の有効期間中にデータを複数回評価する必要がある場合は <xref:System.Activities.ActivityAction> を使用してください。</span><span class="sxs-lookup"><span data-stu-id="eaefd-116">When data needs to be evaluated multiple times during the lifetime of an activity’s execution, an <xref:System.Activities.ActivityAction> should be used.</span></span> <span data-ttu-id="eaefd-117">たとえば、<xref:System.Activities.Statements.While.Condition%2A> プロパティは <xref:System.Activities.Statements.While> ループを反復するたびに評価されます。</span><span class="sxs-lookup"><span data-stu-id="eaefd-117">For example, the <xref:System.Activities.Statements.While.Condition%2A> property is evaluated for each iteration of the <xref:System.Activities.Statements.While> loop.</span></span> <span data-ttu-id="eaefd-118">この目的で <xref:System.Activities.InArgument> を使用した場合、引数は反復のたびに再評価されず、常に同じ結果を返すため、ループは終了しません。</span><span class="sxs-lookup"><span data-stu-id="eaefd-118">If an <xref:System.Activities.InArgument> were used for this purpose, the loop would never exit, since the argument would not be reevaluated for each iteration, and would always return the same result.</span></span>

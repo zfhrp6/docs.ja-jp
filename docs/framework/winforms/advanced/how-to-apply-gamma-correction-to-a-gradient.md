@@ -1,42 +1,46 @@
 ---
-title: "方法 : グラデーションに対してガンマ補正を適用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "グラデーション ブラシ, ガンマ補正"
-  - "グラデーション, ガンマ補正"
+title: "方法 : グラデーションに対してガンマ補正を適用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- gradient brushes [Windows Forms], gamma correction
+- gradients [Windows Forms], gamma correction
 ms.assetid: da4690e7-5fac-4fd2-b3f0-5cb35c165b92
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2721a45381f2d0befe82d6d0db2630f3eae08d51
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : グラデーションに対してガンマ補正を適用する
-線形グラデーション ブラシの <xref:System.Drawing.Drawing2D.LinearGradientBrush.GammaCorrection%2A> プロパティを `true` に設定することによって、そのブラシに対するガンマ補正を有効化できます。  <xref:System.Drawing.Drawing2D.LinearGradientBrush.GammaCorrection%2A> プロパティを `false` に設定すると、ガンマ補正は無効化されます。  既定では、ガンマ補正は無効になっています。  
+# <a name="how-to-apply-gamma-correction-to-a-gradient"></a><span data-ttu-id="9f58e-102">方法 : グラデーションに対してガンマ補正を適用する</span><span class="sxs-lookup"><span data-stu-id="9f58e-102">How to: Apply Gamma Correction to a Gradient</span></span>
+<span data-ttu-id="9f58e-103">ブラシの設定を線形グラデーション ブラシのガンマ補正を有効にする<xref:System.Drawing.Drawing2D.LinearGradientBrush.GammaCorrection%2A>プロパティを`true`です。</span><span class="sxs-lookup"><span data-stu-id="9f58e-103">You can enable gamma correction for a linear gradient brush by setting the brush's <xref:System.Drawing.Drawing2D.LinearGradientBrush.GammaCorrection%2A> property to `true`.</span></span> <span data-ttu-id="9f58e-104">ガンマ補正を無効に設定できます、<xref:System.Drawing.Drawing2D.LinearGradientBrush.GammaCorrection%2A>プロパティを`false`です。</span><span class="sxs-lookup"><span data-stu-id="9f58e-104">You can disable gamma correction by setting the <xref:System.Drawing.Drawing2D.LinearGradientBrush.GammaCorrection%2A> property to `false`.</span></span> <span data-ttu-id="9f58e-105">既定では、ガンマ補正が無効です。</span><span class="sxs-lookup"><span data-stu-id="9f58e-105">Gamma correction is disabled by default.</span></span>  
   
-## 使用例  
- 線形グラデーション ブラシを作成し、そのブラシを使用して 2 つの四角形を塗りつぶす例を示します。  最初の四角形はガンマ補正を適用せずに塗りつぶされ、2 番目の四角形はガンマ補正を適用して塗りつぶされます。  
+## <a name="example"></a><span data-ttu-id="9f58e-106">例</span><span class="sxs-lookup"><span data-stu-id="9f58e-106">Example</span></span>  
+ <span data-ttu-id="9f58e-107">この例では、線形グラデーション ブラシを作成し、そのブラシを使用して 2 つの四角形を入力します。</span><span class="sxs-lookup"><span data-stu-id="9f58e-107">The example creates a linear gradient brush and uses that brush to fill two rectangles.</span></span> <span data-ttu-id="9f58e-108">最初の四角形はガンマ補正を適用せず、ガンマ補正と 2 つ目の四角形が格納されます。</span><span class="sxs-lookup"><span data-stu-id="9f58e-108">The first rectangle is filled without gamma correction, and the second rectangle is filled with gamma correction.</span></span>  
   
- 2 つの塗りつぶされた四角形を次の図に示します。  ガンマ補正が適用されていない上の四角形は、中央の部分が暗くなっています。  ガンマ補正が適用されている下の四角形は、輝度がより均等化されているように見えます。  
+ <span data-ttu-id="9f58e-109">次の図は、次の 2 つの塗りつぶされた四角形を示します。</span><span class="sxs-lookup"><span data-stu-id="9f58e-109">The following illustration shows the two filled rectangles.</span></span> <span data-ttu-id="9f58e-110">ガンマ補正を持たない場合、最上位の四角形は、中央で淡色表示します。</span><span class="sxs-lookup"><span data-stu-id="9f58e-110">The top rectangle, which does not have gamma correction, appears dark in the middle.</span></span> <span data-ttu-id="9f58e-111">複数の uniform 濃度ガンマ補正は、下の四角形が表示されます。</span><span class="sxs-lookup"><span data-stu-id="9f58e-111">The bottom rectangle, which has gamma correction, appears to have more uniform intensity.</span></span>  
   
- ![グラデーション](../../../../docs/framework/winforms/advanced/media/gammagradient1.png "gammagradient1")  
+ <span data-ttu-id="9f58e-112">![グラデーション](../../../../docs/framework/winforms/advanced/media/gammagradient1.png "gammagradient1")</span><span class="sxs-lookup"><span data-stu-id="9f58e-112">![Gradient](../../../../docs/framework/winforms/advanced/media/gammagradient1.png "gammagradient1")</span></span>  
   
  [!code-csharp[System.Drawing.UsingaGradientBrush#31](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#31)]
  [!code-vb[System.Drawing.UsingaGradientBrush#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#31)]  
   
-## コードのコンパイル  
- 前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  
+## <a name="compiling-the-code"></a><span data-ttu-id="9f58e-113">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="9f58e-113">Compiling the Code</span></span>  
+ <span data-ttu-id="9f58e-114">前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。</span><span class="sxs-lookup"><span data-stu-id="9f58e-114">The preceding example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs> `e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span>  
   
-## 参照  
- <xref:System.Drawing.Drawing2D.LinearGradientBrush>   
- [グラデーション ブラシを使用した図形の塗りつぶし](../../../../docs/framework/winforms/advanced/using-a-gradient-brush-to-fill-shapes.md)
+## <a name="see-also"></a><span data-ttu-id="9f58e-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="9f58e-115">See Also</span></span>  
+ <xref:System.Drawing.Drawing2D.LinearGradientBrush>  
+ [<span data-ttu-id="9f58e-116">グラデーション ブラシを使用した図形の塗りつぶし</span><span class="sxs-lookup"><span data-stu-id="9f58e-116">Using a Gradient Brush to Fill Shapes</span></span>](../../../../docs/framework/winforms/advanced/using-a-gradient-brush-to-fill-shapes.md)

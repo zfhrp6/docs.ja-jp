@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.ComIntegration.ComIntegrationInvokedMethod | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.ComIntegration.ComIntegrationInvokedMethod
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 87e91962-93a8-4e06-8ee7-8470c26dfa7f
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9be4ea5f6ac0cf2b6ae3de18f29c5c8116059f26
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.ComIntegration.ComIntegrationInvokedMethod
-System.ServiceModel.ComIntegration.ComIntegrationInvokedMethod  
+# <a name="systemservicemodelcomintegrationcomintegrationinvokedmethod"></a><span data-ttu-id="27edc-102">System.ServiceModel.ComIntegration.ComIntegrationInvokedMethod</span><span class="sxs-lookup"><span data-stu-id="27edc-102">System.ServiceModel.ComIntegration.ComIntegrationInvokedMethod</span></span>
+<span data-ttu-id="27edc-103">System.ServiceModel.ComIntegration.ComIntegrationInvokedMethod</span><span class="sxs-lookup"><span data-stu-id="27edc-103">System.ServiceModel.ComIntegration.ComIntegrationInvokedMethod</span></span>  
   
-## 説明  
- ComPlus : 呼び出されたメソッド。  
+## <a name="description"></a><span data-ttu-id="27edc-104">説明</span><span class="sxs-lookup"><span data-stu-id="27edc-104">Description</span></span>  
+ <span data-ttu-id="27edc-105">ComPlus : 呼び出されたメソッド。</span><span class="sxs-lookup"><span data-stu-id="27edc-105">ComPlus: Invoked method.</span></span>  
   
-## 参照  
- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
- [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="27edc-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="27edc-106">See Also</span></span>  
+ [<span data-ttu-id="27edc-107">トレース</span><span class="sxs-lookup"><span data-stu-id="27edc-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="27edc-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="27edc-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="27edc-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="27edc-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

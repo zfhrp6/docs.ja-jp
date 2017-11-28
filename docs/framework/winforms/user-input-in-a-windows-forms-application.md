@@ -1,45 +1,45 @@
 ---
-title: "Windows フォーム アプリケーションにおけるユーザー入力 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Windows フォーム, ユーザー入力"
+title: "Windows フォーム アプリケーションにおけるユーザー入力"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: Windows Forms, user input
 ms.assetid: 9d61fa96-70f7-4754-885a-49a4a6316bdb
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fb6f832b77404b57ab22e4ac472e7707f0e10dd5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォーム アプリケーションにおけるユーザー入力
-Windows フォームでのユーザー入力は、Windows メッセージの形式でアプリケーションに送られます。  これらのメッセージは、オーバーライドできる一連のメソッドにより、アプリケーション、フォーム、コントロールの各レベルで処理されます。  これらのメソッドがマウス メッセージやキーボード メッセージを受け取るとイベントが発生し、このイベントを処理することで、マウス入力やキーボード入力に関する情報を取得できます。  多くの場合、Windows フォーム アプリケーションは、これらのイベントを処理するだけですべてのユーザー入力を処理できますが、  アプリケーションによっては、アプリケーション、フォーム、またはコントロールよりも前に特定のメッセージを受け取ることができるように、メッセージを処理するメソッドのいずれかをオーバーライドする必要がある場合もあります。  
+# <a name="user-input-in-a-windows-forms-application"></a><span data-ttu-id="a7127-102">Windows フォーム アプリケーションにおけるユーザー入力</span><span class="sxs-lookup"><span data-stu-id="a7127-102">User Input in a Windows Forms Application</span></span>
+<span data-ttu-id="a7127-103">Windows フォームでは、ユーザー入力が Windows メッセージの形式でアプリケーションに送信されます。</span><span class="sxs-lookup"><span data-stu-id="a7127-103">In Windows Forms, user input is sent to applications in the form of Windows messages.</span></span> <span data-ttu-id="a7127-104">一連のオーバーライド可能なメソッドは、アプリケーションでは、フォーム、これらのメッセージを処理し、レベルを制御します。</span><span class="sxs-lookup"><span data-stu-id="a7127-104">A series of overridable methods process these messages at the application, form, and control level.</span></span> <span data-ttu-id="a7127-105">これらのメソッドは、マウスとキーボードのメッセージを受信するときに、マウスの情報を取得またはキーボード入力を処理できるイベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="a7127-105">When these methods receive mouse and keyboard messages, they raise events that can be handled to get information about the mouse or keyboard input.</span></span> <span data-ttu-id="a7127-106">多くの場合、Windows フォーム アプリケーションはこれらのイベントを処理するだけですべてのユーザー入力を処理することになります。</span><span class="sxs-lookup"><span data-stu-id="a7127-106">In many cases, Windows Forms applications will be able to process all user input simply by handling these events.</span></span> <span data-ttu-id="a7127-107">それ以外の場合、アプリケーションは、アプリケーション、フォーム、またはコントロールによって受信される前に、特定のメッセージを傍受するためにメッセージを処理する方法の 1 つをオーバーライドする必要があります。</span><span class="sxs-lookup"><span data-stu-id="a7127-107">In other cases, an application may need to override one of the methods that process messages in order to intercept a particular message before it is received by the application, form, or control.</span></span>  
   
-## マウス イベントとキーボード イベント  
- すべての Windows フォーム コントロールは、マウス入力とキーボード入力に関連するイベント セットを継承します。  たとえば、コントロールは、<xref:System.Windows.Forms.Control.KeyPress> イベントを処理して、押されたキーの文字コードを判別したり、<xref:System.Windows.Forms.Control.MouseClick> イベントを処理して、マウス クリックの位置を特定したりできます。  マウス イベントとキーボード イベントの詳細については、「[キーボード イベントの使用](../../../docs/framework/winforms/using-keyboard-events.md)」および「[Windows フォームにおけるマウス イベント](../../../docs/framework/winforms/mouse-events-in-windows-forms.md)」を参照してください。  
+## <a name="mouse-and-keyboard-events"></a><span data-ttu-id="a7127-108">マウスとキーボード イベント</span><span class="sxs-lookup"><span data-stu-id="a7127-108">Mouse and Keyboard Events</span></span>  
+ <span data-ttu-id="a7127-109">すべての Windows フォーム コントロールは、マウスおよびキーボード入力に関連するイベントのセットを継承します。</span><span class="sxs-lookup"><span data-stu-id="a7127-109">All Windows Forms controls inherit a set of events related to mouse and keyboard input.</span></span> <span data-ttu-id="a7127-110">たとえば、コントロールで処理する、<xref:System.Windows.Forms.Control.KeyPress>イベントが押されたキーの文字コードを確認するか、コントロールが処理できる、<xref:System.Windows.Forms.Control.MouseClick>にマウスの位置をクリックします。</span><span class="sxs-lookup"><span data-stu-id="a7127-110">For example, a control can handle the <xref:System.Windows.Forms.Control.KeyPress> event to determine the character code of a key that was pressed, or a control can handle the <xref:System.Windows.Forms.Control.MouseClick> event to determine the location of a mouse click.</span></span> <span data-ttu-id="a7127-111">マウスとキーボード イベントの詳細については、次を参照してください。[キーボード イベントを使用した](../../../docs/framework/winforms/using-keyboard-events.md)と[Windows フォームにおけるマウス イベント](../../../docs/framework/winforms/mouse-events-in-windows-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="a7127-111">For more information on the mouse and keyboard events, see [Using Keyboard Events](../../../docs/framework/winforms/using-keyboard-events.md) and [Mouse Events in Windows Forms](../../../docs/framework/winforms/mouse-events-in-windows-forms.md).</span></span>  
   
-## ユーザー入力メッセージを処理するメソッド  
- フォームとコントロールは、<xref:System.Windows.Forms.IMessageFilter> インターフェイスと、メッセージ キュー内のさまざまな位置で Windows メッセージを処理する、オーバーライドできる一連のメソッドにアクセスできます。  これらのメソッドはすべて、Windows メッセージの下位の詳細情報をカプセル化する <xref:System.Windows.Forms.Message> パラメーターを使用します。  これらのメソッドを実装またはオーバーライドしてメッセージを調べてから、メッセージを使用したり、メッセージ キュー内の次のコンシューマーにメッセージを渡したりできます。  Windows フォームですべての Windows メッセージを処理するメソッドを次の表に示します。  
+## <a name="methods-that-process-user-input-messages"></a><span data-ttu-id="a7127-112">ユーザーの入力メッセージを処理するメソッド</span><span class="sxs-lookup"><span data-stu-id="a7127-112">Methods that Process User Input Messages</span></span>  
+ <span data-ttu-id="a7127-113">フォームとコントロールへのアクセスがある、<xref:System.Windows.Forms.IMessageFilter>インターフェイスと一連のメッセージ キューでさまざまなポイントで Windows メッセージを処理するメソッドをオーバーライド可能です。</span><span class="sxs-lookup"><span data-stu-id="a7127-113">Forms and controls have access to the <xref:System.Windows.Forms.IMessageFilter> interface and a set of overridable methods that process Windows messages at different points in the message queue.</span></span> <span data-ttu-id="a7127-114">これらのメソッドがすべて、<xref:System.Windows.Forms.Message>パラメーターで、Windows メッセージの低レベルの詳細をカプセル化します。</span><span class="sxs-lookup"><span data-stu-id="a7127-114">These methods all have a <xref:System.Windows.Forms.Message> parameter, which encapsulates the low-level details of Windows messages.</span></span> <span data-ttu-id="a7127-115">実装したり、メッセージを確認し、メッセージが処理またはメッセージ キューでは、次のコンシューマーに渡すこれらのメソッドをオーバーライドすることができます。</span><span class="sxs-lookup"><span data-stu-id="a7127-115">You can implement or override these methods to examine the message and then either consume the message or pass it on to the next consumer in the message queue.</span></span> <span data-ttu-id="a7127-116">次の表は、Windows フォーム内のすべての Windows メッセージを処理するメソッドを表示します。</span><span class="sxs-lookup"><span data-stu-id="a7127-116">The following table presents the methods that process all Windows messages in Windows Forms.</span></span>  
   
-|メソッド|説明|  
-|----------|--------|  
-|<xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A>|キューに追加された \(またはポストされた\) Windows メッセージをアプリケーション レベルで受け取ります。|  
-|<xref:System.Windows.Forms.Control.PreProcessMessage%2A>|Windows メッセージが処理される前に、フォーム レベルまたはコントロール レベルでメッセージを受け取ります。|  
-|<xref:System.Windows.Forms.Control.WndProc%2A>|Windows メッセージをフォーム レベルまたはコントロール レベルで処理します。|  
-|<xref:System.Windows.Forms.Control.DefWndProc%2A>|Windows メッセージの既定の処理をフォーム レベルまたはコントロール レベルで実行します。  ウィンドウの最小限の機能を提供します。|  
-|<xref:System.Windows.Forms.Control.OnNotifyMessage%2A>|メッセージが処理された後に、フォーム レベルまたはコントロール レベルでメッセージを受け取ります。  このメソッドが呼び出されるようにするには、<xref:System.Windows.Forms.ControlStyles> スタイル ビットを設定する必要があります。|  
+|<span data-ttu-id="a7127-117">メソッド</span><span class="sxs-lookup"><span data-stu-id="a7127-117">Method</span></span>|<span data-ttu-id="a7127-118">メモ</span><span class="sxs-lookup"><span data-stu-id="a7127-118">Notes</span></span>|  
+|------------|-----------|  
+|<xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A>|<span data-ttu-id="a7127-119">このメソッドは、アプリケーション レベル (ポストされたとも呼ばれます) の Windows メッセージをキューに置かれたを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="a7127-119">This method intercepts queued (also known as posted) Windows messages at the application level.</span></span>|  
+|<xref:System.Windows.Forms.Control.PreProcessMessage%2A>|<span data-ttu-id="a7127-120">このメソッドが処理される前に、フォームとコントロールのレベルでの Windows メッセージを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="a7127-120">This method intercepts Windows messages at the form and control level before they have been processed.</span></span>|  
+|<xref:System.Windows.Forms.Control.WndProc%2A>|<span data-ttu-id="a7127-121">このメソッドは、フォームとコントロールのレベルでの Windows メッセージを処理します。</span><span class="sxs-lookup"><span data-stu-id="a7127-121">This method processes Windows messages at the form and control level.</span></span>|  
+|<xref:System.Windows.Forms.Control.DefWndProc%2A>|<span data-ttu-id="a7127-122">このメソッドは、フォームとコントロールのレベルでの Windows メッセージの既定の処理を実行します。</span><span class="sxs-lookup"><span data-stu-id="a7127-122">This method performs the default processing of Windows messages at the form and control level.</span></span> <span data-ttu-id="a7127-123">これは、ウィンドウの最小限の機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="a7127-123">This provides the minimal functionality of a window.</span></span>|  
+|<xref:System.Windows.Forms.Control.OnNotifyMessage%2A>|<span data-ttu-id="a7127-124">このメソッドは、処理された後に、フォームとコントロールのレベルでメッセージを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="a7127-124">This method intercepts messages at the form and control level, after they have been processed.</span></span> <span data-ttu-id="a7127-125"><xref:System.Windows.Forms.ControlStyles.EnableNotifyMessage>このメソッドが呼び出されるのスタイル ビットが設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a7127-125">The <xref:System.Windows.Forms.ControlStyles.EnableNotifyMessage> style bit must be set for this method to be called.</span></span>|  
   
- キーボード メッセージとマウス メッセージは、これらのメッセージの種類に固有の、オーバーライドできる追加のメソッドによっても処理されます。  詳細については、「[キーボード入力のしくみ](../../../docs/framework/winforms/how-keyboard-input-works.md)」および「[Windows フォームにおけるマウス入力のしくみ](../../../docs/framework/winforms/how-mouse-input-works-in-windows-forms.md)」を参照してください。  
+ <span data-ttu-id="a7127-126">キーボードとマウスのメッセージは、追加のメッセージの種類に固有のオーバーライド可能なメソッドのセットでも処理されます。</span><span class="sxs-lookup"><span data-stu-id="a7127-126">Keyboard and mouse messages are also processed by an additional set of overridable methods that are specific to those types of messages.</span></span> <span data-ttu-id="a7127-127">詳細については、次を参照してください。[キーボード入力のしくみ](../../../docs/framework/winforms/how-keyboard-input-works.md)と[マウス入力のしくみ Windows フォームで](../../../docs/framework/winforms/how-mouse-input-works-in-windows-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="a7127-127">For more information, see [How Keyboard Input Works](../../../docs/framework/winforms/how-keyboard-input-works.md) and [How Mouse Input Works in Windows Forms](../../../docs/framework/winforms/how-mouse-input-works-in-windows-forms.md).</span></span>  
   
-## 参照  
- [Windows フォームでのユーザー入力](../../../docs/framework/winforms/user-input-in-windows-forms.md)   
- [Windows フォーム アプリケーションにおけるキーボード入力](../../../docs/framework/winforms/keyboard-input-in-a-windows-forms-application.md)   
- [Windows フォーム アプリケーションにおけるマウス入力](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)
+## <a name="see-also"></a><span data-ttu-id="a7127-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="a7127-128">See Also</span></span>  
+ [<span data-ttu-id="a7127-129">Windows フォームでのユーザー入力</span><span class="sxs-lookup"><span data-stu-id="a7127-129">User Input in Windows Forms</span></span>](../../../docs/framework/winforms/user-input-in-windows-forms.md)  
+ [<span data-ttu-id="a7127-130">Windows フォーム アプリケーションにおけるキーボード入力</span><span class="sxs-lookup"><span data-stu-id="a7127-130">Keyboard Input in a Windows Forms Application</span></span>](../../../docs/framework/winforms/keyboard-input-in-a-windows-forms-application.md)  
+ [<span data-ttu-id="a7127-131">Windows フォーム アプリケーションにおけるマウス入力</span><span class="sxs-lookup"><span data-stu-id="a7127-131">Mouse Input in a Windows Forms Application</span></span>](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)

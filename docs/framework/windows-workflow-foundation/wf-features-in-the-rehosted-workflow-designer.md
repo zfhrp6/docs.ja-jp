@@ -1,150 +1,154 @@
 ---
-title: "再ホストされたワークフロー デザイナーにおける Workflow Foundation 4.5 の新機能のサポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "再ホストされたワークフロー デザイナーにおける Workflow Foundation 4.5 の新機能のサポート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1a4a4038-d8e6-41dd-99ea-93bd76286772
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 346dc5f06fd5f655426d8f41164a9a2f24acdb5b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 再ホストされたワークフロー デザイナーにおける Workflow Foundation 4.5 の新機能のサポート
-[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] の [!INCLUDE[wf](../../../includes/wf-md.md)] には、ワークフロー デザイナー エクスペリエンスの拡張機能を含む、多くの新機能が導入されています。このトピックでは、このような新機能のうち、再ホストされたデザイナーでサポートされている機能と現時点ではサポートされていない機能について詳しく説明します。  
+# <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a><span data-ttu-id="99d2f-102">再ホストされたワークフロー デザイナーにおける Workflow Foundation 4.5 の新機能のサポート</span><span class="sxs-lookup"><span data-stu-id="99d2f-102">Support for New Workflow Foundation 4.5 Features in the Rehosted Workflow Designer</span></span>
+[!INCLUDE[wf](../../../includes/wf-md.md)]<span data-ttu-id="99d2f-103"> の [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] には、ワークフロー デザイナー エクスペリエンスの拡張機能を含む、多くの新機能が導入されています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-103"> in [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] introduced many new features, including several enhancements to the workflow designer experience.</span></span> <span data-ttu-id="99d2f-104">このトピックでは、このような新機能のうち、再ホストされたデザイナーでサポートされている機能と現時点ではサポートされていない機能について詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="99d2f-104">This topic details which of these features are supported in the rehosted designer, and which ones are currently not supported.</span></span>  
   
 > [!NOTE]
->  [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] で導入された、デザイナーのホスト変更とは関連のない新機能を含む、[!INCLUDE[wf](../../../includes/wf-md.md)] のすべての新機能の一覧については、「[.NET 4.5 での Windows Workflow Foundation の新機能](../../../docs/framework/windows-workflow-foundation//whats-new-in-wf-in-dotnet.md)」を参照してください。  
+>  <span data-ttu-id="99d2f-105">新しいすべての一覧については[!INCLUDE[wf](../../../includes/wf-md.md)]で導入された機能[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]を含めているデザイナーのホスト変更に関連する、次を参照してください。 [.NET 4.5 での Windows Workflow Foundation の新](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md)です。</span><span class="sxs-lookup"><span data-stu-id="99d2f-105">For a list of all of the new [!INCLUDE[wf](../../../includes/wf-md.md)] features introduced in [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], including those that are unrelated to designer rehosting, see [What's New in Windows Workflow Foundation in .NET 4.5](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md).</span></span>  
   
-## アクティビティ  
- 組み込みのアクティビティ ライブラリには、既存のアクティビティ用の新しいアクティビティと新しい機能が含まれています。これらの新しいアクティビティはすべて、再ホストされたデザイナーでサポートされています。これらの新しいアクティビティの詳細については、「[.NET 4.5 での Windows Workflow Foundation の新機能](../../../docs/framework/windows-workflow-foundation//whats-new-in-wf-in-dotnet.md)」の「[アクティビティ](../../../docs/framework/windows-workflow-foundation//whats-new-in-wf-in-dotnet.md#BKMK_NewActivities)」を参照してください。  
+## <a name="activities"></a><span data-ttu-id="99d2f-106">アクティビティ</span><span class="sxs-lookup"><span data-stu-id="99d2f-106">Activities</span></span>  
+ <span data-ttu-id="99d2f-107">組み込みのアクティビティ ライブラリには、既存のアクティビティ用の新しいアクティビティと新しい機能が含まれています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-107">The built-in activity library contains new activities and new features for existing activities.</span></span> <span data-ttu-id="99d2f-108">これらの新しいアクティビティはすべて、再ホストされたデザイナーでサポートされています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-108">All of these new activities are supported in the rehosted designer.</span></span> <span data-ttu-id="99d2f-109">これらの新しいアクティビティの詳細については、次を参照してください。、[アクティビティ](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_NewActivities)のセクション[.NET 4.5 での Windows Workflow Foundation の新](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md)です。</span><span class="sxs-lookup"><span data-stu-id="99d2f-109">For more information on these new activities, see the [Activities](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_NewActivities) section of [What's New in Windows Workflow Foundation in .NET 4.5](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md).</span></span>  
   
-## C\# の式  
- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] より前のバージョンでは、ワークフロー内のすべての式を Visual Basic のみで記述できました。[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、Visual Basic の式は Visual Basic で作成されたプロジェクトでのみ使用されます。Visual C\# プロジェクトでは、式に C\# が使用されるようになりました。[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] でワークフローを作成する場合、文法強調表示や Intellisense などの機能を備えた、フル機能の C\# 式エディターが用意されています。以前のバージョンで作成された、Visual Basic の式を使用する C\# ワークフロー プロジェクトは引き続き動作します。  
-  
-> [!WARNING]
->  C\# の式は、再ホストされたデザイナーではサポートされていません。  
-  
-## デザイナーの新機能  
-  
-### デザイナーでの検索  
- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] で導入された[クイック検索](../../../docs/framework/windows-workflow-foundation//whats-new-in-wf-in-dotnet.md#BKMK_QuickFind)機能と[[フォルダーを指定して検索]](../../../docs/framework/windows-workflow-foundation//whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles)機能は、再ホストされたデザイナーではサポートされていません。`Toolbox` による検索は、再ホストされたデザイナーでもサポートされています。これらの機能の詳細については、「[デザイナーでの検索](../../../docs/framework/windows-workflow-foundation//whats-new-in-wf-in-dotnet.md#BKMK_DesignerSearch)」を参照してください。  
+## <a name="c-expressions"></a><span data-ttu-id="99d2f-110">C# の式</span><span class="sxs-lookup"><span data-stu-id="99d2f-110">C# Expressions</span></span>  
+ <span data-ttu-id="99d2f-111">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] より前のバージョンでは、ワークフロー内のすべての式を Visual Basic のみで記述できました。</span><span class="sxs-lookup"><span data-stu-id="99d2f-111">Prior to [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], all expressions in workflows could only be written in Visual Basic.</span></span> <span data-ttu-id="99d2f-112">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、Visual Basic の式は Visual Basic で作成されたプロジェクトでのみ使用されます。</span><span class="sxs-lookup"><span data-stu-id="99d2f-112">In [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], Visual Basic expressions are only used for projects created using Visual Basic.</span></span> <span data-ttu-id="99d2f-113">Visual C# プロジェクトでは、式に C# が使用されるようになりました。</span><span class="sxs-lookup"><span data-stu-id="99d2f-113">Visual C# projects now use C# for expressions.</span></span> <span data-ttu-id="99d2f-114">[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] でワークフローを作成する場合、文法強調表示や Intellisense などの機能を備えた、フル機能の C# 式エディターが用意されています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-114">When authoring workflows in [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)], a fully functional C# expression editor is provided which capabilities such as grammar highlighting and intellisense.</span></span> <span data-ttu-id="99d2f-115">以前のバージョンで作成された、Visual Basic の式を使用する C# ワークフロー プロジェクトは引き続き動作します。</span><span class="sxs-lookup"><span data-stu-id="99d2f-115">C# workflow projects created in previous versions that use Visual Basic expressions will continue to work.</span></span>  
   
 > [!WARNING]
->  [クイック検索](../../../docs/framework/windows-workflow-foundation//whats-new-in-wf-in-dotnet.md#BKMK_QuickFind)と[[フォルダーを指定して検索]](../../../docs/framework/windows-workflow-foundation//whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles)は、再ホストされたデザイナーではサポートされていません。  
+>  <span data-ttu-id="99d2f-116">C# の式は、再ホストされたデザイナーではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="99d2f-116">C# expressions are not supported in the rehosted designer.</span></span>  
   
-### 変数デザイナーと引数デザイナーのコンテキスト メニューの \[削除\]  
- [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] では、変数および引数を削除できるのは、デザイナーでキーボードを使用した場合のみでした。[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降では、コンテキスト メニューを使用して変数および引数を削除できます。この機能は、再ホストされたデザイナーでサポートされています。  
+## <a name="new-designer-capabilities"></a><span data-ttu-id="99d2f-117">デザイナーの新機能</span><span class="sxs-lookup"><span data-stu-id="99d2f-117">New Designer Capabilities</span></span>  
   
- 変数デザイナーと引数デザイナーのコンテキスト メニューを次のスクリーンショットに示しています。  
-  
- ![変数&#47;引数デザイナーのコンテキスト メニュー](../../../docs/framework/windows-workflow-foundation//media/designercontextmenu.png "DesignerContextMenu")  
-  
-### ブロックの自動挿入シーケンス  
- ワークフローまたは特定のコンテナー アクティビティ \(<xref:System.Activities.Statements.NoPersistScope> など\) には Body アクティビティを 1 つしか含めることができないため、2 つ目のアクティビティを追加するには、開発者が最初のアクティビティを削除し、<xref:System.Activities.Statements.Sequence> アクティビティを追加してから、シーケンス アクティビティに両方のアクティビティを追加する必要がありました。[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降では、デザイナー画面に 2 つ目のアクティビティを追加すると、`Sequence` アクティビティが自動的に作成され、両方のアクティビティがラップされます。この機能は、再ホストされたデザイナーでサポートされています。  
-  
- 次のスクリーンショットは、`NoPersistScope` の `Body` 内の `WriteLine` アクティビティを示しています。  
-  
- ![ドロップ位置の自動囲い込み](../../../docs/framework/windows-workflow-foundation//media/autosurround1.png "AutoSurround1")  
-  
- 次のスクリーンショットは、2 つ目の `WriteLine` を 1 つ目の下にドロップしたときに `Body` 内に自動的に作成された `Sequence` アクティビティを示しています。  
-  
- ![自動的に作成された Sequence アクティビティ](../../../docs/framework/windows-workflow-foundation//media/autosurround2.png "AutoSurround2")  
-  
-### パン モード  
- デザイナーで大規模なワークフロー内をより簡単に移動するには、パン モードを有効にすると、開発者は、スクロール バーを使用する必要なく、ワークフローの表示される部分をクリックおよびドラッグして移動できるようになります。パン モードをアクティブ化するボタンは、デザイナーの右下隅にあります。この機能は、再ホストされたデザイナーでサポートされています。  
-  
- 次のスクリーンショットは、ワークフロー デザイナーの右下隅にあるパン ボタンを示しています。  
-  
- ![ワークフロー デザイナーの &#91;パン&#93; ボタン](../../../docs/framework/windows-workflow-foundation//media/panbutton.png "PanButton")  
-  
- マウスの中央ボタンまたは Space キーを使用して、ワークフロー デザイナーをパンすることもできます。  
-  
-### 複数選択  
- 複数のアクティビティを同時に選択できます。これを行うには、複数のアクティビティを囲むようにドラッグするか \(パン モードが無効な場合\)、Ctrl キーを押したまま目的のアクティビティを 1 つずつクリックします。この機能は、再ホストされたデザイナーでサポートされています。  
-  
- 選択した複数のアクティビティは、デザイナー内でドラッグ アンド ドロップすることも、コンテキスト メニューを使用して操作することもできます。  
-  
-### ワークフロー項目のアウトライン表示  
- 階層ワークフローを移動しやすくするため、ワークフローのコンポーネントはツリー スタイルのアウトライン表示で示されます。アウトライン表示は、**\[ドキュメント アウトライン\]** ビューに表示されます。このビューを [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] で開くには、上部のメニューから **\[表示\]**、**\[その他のウィンドウ\]**、**\[ドキュメント アウトライン\]** の順に選択するか、Ctrl キーを押しながら W キーと U キーを押します。アウトライン表示でノードをクリックすると、ワークフロー デザイナーの対応するアクティビティに移動し、アウトライン表示が更新されて、デザイナーで選択されているアクティビティが表示されます。この機能は、再ホストされたデザイナーでサポートされています。  
-  
- 「[チュートリアル入門](../../../docs/framework/windows-workflow-foundation//getting-started-tutorial.md)」の完成したワークフローの次のスクリーンショットは、シーケンシャル ワークフローを含むアウトライン表示を示しています。  
-  
- ![ワークフロー デザイナーのアウトライン ビュー](../../../docs/framework/windows-workflow-foundation//media/outlineviewinworkflowdesigner.jpg "OutlineViewinWorkflowDesigner")  
-  
-### シェル バーおよびヘッダー項目の可視性の詳細な制御  
- 再ホストされたデザイナーでは、標準 UI コントロールの中に、特定のワークフローにとって意味がないものもあれば、無効になっているものもあります。[!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] では、このカスタマイズがデザイナーの下部のシェル バーのみでサポートされています。[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、デザイナーの上部にあるシェルのヘッダー項目の表示は、適切な <xref:System.Activities.Presentation.View.ShellHeaderItemsVisibility> 値で <xref:System.Activities.Presentation.View.DesignerView.WorkflowShellHeaderItemsVisibility%2A> を設定することにより調整できます。  
-  
-### フローチャートおよびステート マシンのワークフローの自動接続と自動挿入  
- [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] では、フローチャート ワークフロー内のノード間の接続は手動で追加する必要がありました。[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、フローチャート ノードとステート マシン ノードに自動接続ポイントがあり、これらのポイントは、アクティビティをツールボックスからデザイナー画面上にドラッグすると表示されます。アクティビティをこれらのポイントのうち 1 つにドロップすると、アクティビティが必要な接続と共に自動的に追加されます。  
-  
- 次のスクリーンショットは、アクティビティがツールボックスからドラッグされるときに表示されるアタッチ ポイントを示します。  
-  
- ![フローチャートの開始ノードに自動接続ポイントが示されている](../../../docs/framework/windows-workflow-foundation//media/autoconnect1.png "Autoconnect1")  
-  
- アクティビティは、フローチャート ノードと状態の間の接続にドラッグすることで、その他 2 つのノード間にノードを自動挿入することもできます。次のスクリーンショットは、アクティビティをツールボックスからドラッグ アンド ドロップできる、強調表示された接続線を示しています。  
-  
- ![アクティビティをドロップするための自動挿入ハンドル](../../../docs/framework/windows-workflow-foundation//media/autoinsert.png "Autoinsert")  
-  
- 自動接続と自動挿入は、再ホストされたデザイナーでサポートされています。  
-  
-### デザイナー注釈  
- より大規模なワークフローの開発を容易にするため、デザイン プロセスを追跡できるよう注釈の追加がサポートされるようになりました。注釈は、アクティビティ、状態、フローチャート ノード、変数、および引数に追加できます。次のスクリーンショットは、デザイナーに注釈を追加するためのコンテキスト メニューを示しています。  
-  
- ![注釈コンテキスト メニュー](../../../docs/framework/windows-workflow-foundation//media/annotationdialog.png "annotationdialog")  
-  
- デザイナー注釈は、再ホストされたデザイナーでサポートされています。  
-  
-### デザイナーでの ActivityDelegate オブジェクトの定義と使用  
- [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] のアクティビティでは、<xref:System.Activities.ActivityDelegate> オブジェクトを使用して、ワークフローの他の部分がワークフローの実行と対話できる実行ポイントを公開していましたが、通常、これらの実行ポイントを使用するには相当な量のコードが必要でした。このリリースでは、開発者はワークフロー デザイナーを使用してアクティビティ デリゲートを定義および使用できます。詳細については、「[ワークフロー デザイナーでアクティビティ デリゲートを定義および使用する方法](../Topic/How%20to:%20Define%20and%20consume%20activity%20delegates%20in%20the%20Workflow%20Designer.md)」を参照してください。  
-  
- アクティビティ デリゲートは、再ホストされたデザイナーでサポートされています。  
-  
-### ビルド時の検証  
- [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] では、ワークフローの検証エラーが、ワークフロー プロジェクトのビルド中のビルド エラーとして数えられていませんでした。つまり、ワークフローの検証エラーが発生した場合でも、ワークフロー プロジェクトのビルドは成功している可能性があります。[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、ワークフローの検証エラーが発生するとビルドは失敗します。  
+### <a name="designer-search"></a><span data-ttu-id="99d2f-118">デザイナーでの検索</span><span class="sxs-lookup"><span data-stu-id="99d2f-118">Designer Search</span></span>  
+ <span data-ttu-id="99d2f-119">[クイック検索](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_QuickFind)と[ファイル内の検索](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles)で導入された機能[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]再ホストされたデザイナーでサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="99d2f-119">The [Quick Find](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_QuickFind) and [Find in Files](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles) features introduced with [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] are not supported in the rehosted designer.</span></span> <span data-ttu-id="99d2f-120">`Toolbox` による検索は、再ホストされたデザイナーでもサポートされています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-120">The `Toolbox` search is supported in the rehosted designer.</span></span> <span data-ttu-id="99d2f-121">これらの機能の詳細については、次を参照してください。[デザイナーでの検索](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_DesignerSearch)です。</span><span class="sxs-lookup"><span data-stu-id="99d2f-121">For more information on these features, see [Designer Search](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_DesignerSearch).</span></span>  
   
 > [!WARNING]
->  ビルド時の検証は、再ホストされたデザイナーではサポートされていません。  
+>  <span data-ttu-id="99d2f-122">[クイック検索](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_QuickFind)と[ファイル内の検索](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles)再ホストされたデザイナーでサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="99d2f-122">[Quick Find](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_QuickFind) and [Find in Files](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles) are not supported in the rehosted designer.</span></span>  
   
-### デザイン時バックグラウンド検証  
- [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] では、ワークフローがフォアグラウンド プロセスとして検証されていました。これにより、複雑な検証プロセスや時間のかかる検証プロセスでは UI が応答を停止する可能性がありました。現在、ワークフローの検証はバックグラウンド スレッドで実行されるため、UI がブロックされることはありません。  
+### <a name="delete-context-menu-item-in-variable-and-argument-designer"></a><span data-ttu-id="99d2f-123">変数デザイナーと引数デザイナーのコンテキスト メニューの [削除]</span><span class="sxs-lookup"><span data-stu-id="99d2f-123">Delete context menu item in variable and argument designer</span></span>  
+ <span data-ttu-id="99d2f-124">[!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] では、変数および引数を削除できるのは、デザイナーでキーボードを使用した場合のみでした。</span><span class="sxs-lookup"><span data-stu-id="99d2f-124">In [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], variables and arguments could only be deleted in the designer using the keyboard.</span></span> <span data-ttu-id="99d2f-125">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降では、コンテキスト メニューを使用して変数および引数を削除できます。</span><span class="sxs-lookup"><span data-stu-id="99d2f-125">Starting with [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], variables and arguments can be deleted using the context menu.</span></span> <span data-ttu-id="99d2f-126">この機能は、再ホストされたデザイナーでサポートされています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-126">This feature is supported in the rehosted designer.</span></span>  
   
- デザイン時バックグラウンド検証は、再ホストされたデザイナーでサポートされています。  
+ <span data-ttu-id="99d2f-127">変数デザイナーと引数デザイナーのコンテキスト メニューを次のスクリーンショットに示しています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-127">The following screenshot shows the variable and argument designer context menu.</span></span>  
   
-### XAML ファイル内で別々の場所にあるビューステート  
- [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] では、ワークフローのビューステート情報は、多くの異なる場所にある XAML ファイルに保存されていました。これは、XAML を直接読み取ったり、ビューステート情報を削除するコードを記述したりする開発者にとっては不便です。[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、XAML ファイルのビューステート情報は XAML ファイル内の個別の要素としてシリアル化されています。そのため、開発者は、簡単に、アクティビティのビューステート情報を探して編集したり、ビューステートを削除したりできます。  
+ <span data-ttu-id="99d2f-128">![変数/引数デザイナーのコンテキスト メニュー](../../../docs/framework/windows-workflow-foundation/media/designercontextmenu.png "DesignerContextMenu")</span><span class="sxs-lookup"><span data-stu-id="99d2f-128">![Variable and Argument Designer Context Menu](../../../docs/framework/windows-workflow-foundation/media/designercontextmenu.png "DesignerContextMenu")</span></span>  
   
- この機能は、再ホストされたワークフロー デザイナーでサポートされています。  
+### <a name="auto-surround-with-sequence"></a><span data-ttu-id="99d2f-129">ブロックの自動挿入シーケンス</span><span class="sxs-lookup"><span data-stu-id="99d2f-129">Auto-surround with Sequence</span></span>  
+ <span data-ttu-id="99d2f-130">ワークフローまたは特定のコンテナー アクティビティ (<xref:System.Activities.Statements.NoPersistScope> など) には Body アクティビティを 1 つしか含めることができないため、2 つ目のアクティビティを追加するには、開発者が最初のアクティビティを削除し、<xref:System.Activities.Statements.Sequence> アクティビティを追加してから、シーケンス アクティビティに両方のアクティビティを追加する必要がありました。</span><span class="sxs-lookup"><span data-stu-id="99d2f-130">Since a workflow or certain container activities (such as <xref:System.Activities.Statements.NoPersistScope>) can only contain a single body activity, adding a second activity required the developer to delete the first activity, add a <xref:System.Activities.Statements.Sequence> activity, and then add both activities to the sequence activity.</span></span> <span data-ttu-id="99d2f-131">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降では、デザイナー画面に 2 つ目のアクティビティを追加すると、`Sequence` アクティビティが自動的に作成され、両方のアクティビティがラップされます。</span><span class="sxs-lookup"><span data-stu-id="99d2f-131">Starting with [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], when adding a second activity to the designer surface, a `Sequence` activity will be automatically created to wrap both activities.</span></span> <span data-ttu-id="99d2f-132">この機能は、再ホストされたデザイナーでサポートされています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-132">This feature is supported in the rehosted designer.</span></span>  
   
-### 再ホストされたデザイナーでの Workflow 4.5 機能のオプトイン  
- 下位互換性を維持するために、再ホストされたデザイナーでは、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] に含まれる新機能の一部が既定で有効になっていません。これは、再ホストされたデザイナーを使用する既存のアプリケーションが、最新バージョンに更新することで壊れないようにするためです。再ホストされたデザイナーで新機能を有効にするには、<xref:System.Activities.Presentation.DesignerConfigurationService.TargetFrameworkName%2A> を ".Net Framework 4.5" に設定するか、<xref:System.Activities.Presentation.DesignerConfigurationService> の各メンバーを設定して各機能を有効にします。  
+ <span data-ttu-id="99d2f-133">次のスクリーンショットは、`WriteLine` の `Body` 内の `NoPersistScope` アクティビティを示しています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-133">The following screenshot shows a `WriteLine` activity in the `Body` of a `NoPersistScope`.</span></span>  
   
-## 新しいワークフロー開発モデル  
- このリリースには、フローチャートおよびシーケンシャル ワークフロー開発モデルに加えて、ステート マシンのワークフロー、およびコントラクト優先ワークフロー サービスが含まれています。  
+ <span data-ttu-id="99d2f-134">![自動 &#45; 格納場所サラウンド](../../../docs/framework/windows-workflow-foundation/media/autosurround1.png "AutoSurround1")</span><span class="sxs-lookup"><span data-stu-id="99d2f-134">![Auto&#45;surround drop location](../../../docs/framework/windows-workflow-foundation/media/autosurround1.png "AutoSurround1")</span></span>  
   
-### ステート マシンのワークフロー  
- ステート マシンのワークフローは、.NET Framework 4.0.1 の一部として [Microsoft .NET Framework 4 Platform Update 1](http://go.microsoft.com/fwlink/?LinkID=215092) で導入されました。この更新プログラムには、開発者がステート マシンのワークフローを作成できるようにする、いくつかの新しいクラスとアクティビティが含まれていました。これらのクラスおよびアクティビティは [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 用に更新されました。更新プログラムには次のものが含まれています。  
+ <span data-ttu-id="99d2f-135">次のスクリーンショットは、2 つ目の `Sequence` を 1 つ目の下にドロップしたときに `Body` 内に自動的に作成された `WriteLine` アクティビティを示しています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-135">The following screenshot shows the automatically created `Sequence` activity in the `Body` when a second `WriteLine` is dropped below the first.</span></span>  
   
-1.  状態にブレークポイントを設定する機能。  
+ <span data-ttu-id="99d2f-136">![自動的に作成された sequence アクティビティ](../../../docs/framework/windows-workflow-foundation/media/autosurround2.png "AutoSurround2")</span><span class="sxs-lookup"><span data-stu-id="99d2f-136">![Automatically created sequence activity](../../../docs/framework/windows-workflow-foundation/media/autosurround2.png "AutoSurround2")</span></span>  
   
-2.  ワークフロー デザイナーで遷移をコピーして貼り付ける機能。  
+### <a name="pan-mode"></a><span data-ttu-id="99d2f-137">パン モード</span><span class="sxs-lookup"><span data-stu-id="99d2f-137">Pan Mode</span></span>  
+ <span data-ttu-id="99d2f-138">デザイナーで大規模なワークフロー内をより簡単に移動するには、パン モードを有効にすると、開発者は、スクロール バーを使用する必要なく、ワークフローの表示される部分をクリックおよびドラッグして移動できるようになります。</span><span class="sxs-lookup"><span data-stu-id="99d2f-138">To more easily navigate a large workflow in the designer, pan mode can be enabled, allowing the developer to click and drag to move the visible portion of the workflow, rather than needing to use the scroll bars.</span></span> <span data-ttu-id="99d2f-139">パン モードをアクティブ化するボタンは、デザイナーの右下隅にあります。</span><span class="sxs-lookup"><span data-stu-id="99d2f-139">The button to activate pan mode is in the lower right corner of the designer.</span></span> <span data-ttu-id="99d2f-140">この機能は、再ホストされたデザイナーでサポートされています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-140">This feature is supported in the rehosted designer.</span></span>  
   
-3.  トリガーを共有する遷移の作成に対するデザイナーのサポート。  
+ <span data-ttu-id="99d2f-141">次のスクリーンショットは、ワークフロー デザイナーの右下隅にあるパン ボタンを示しています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-141">The following screenshot shows the pan button which is located at the bottom right corner of the workflow designer.</span></span>  
   
-4.  ステート マシンのワークフロー作成に使用するアクティビティ \(<xref:System.Activities.Statements.StateMachine><xref:System.Activities.Statements.State>、<xref:System.Activities.Statements.Transition> など\)。  
+ <span data-ttu-id="99d2f-142">![ワークフロー デザイナーで [パン] ボタン](../../../docs/framework/windows-workflow-foundation/media/panbutton.png "PanButton")</span><span class="sxs-lookup"><span data-stu-id="99d2f-142">![Pan button in workflow designer](../../../docs/framework/windows-workflow-foundation/media/panbutton.png "PanButton")</span></span>  
   
- 次のスクリーン ショットは、「[チュートリアル入門](../../../docs/framework/windows-workflow-foundation//getting-started-tutorial.md)」の「[方法: ステート マシン ワークフローを作成する](../../../docs/framework/windows-workflow-foundation//how-to-create-a-state-machine-workflow.md)」の手順で完成したステート マシンのワークフローを示しています。  
+ <span data-ttu-id="99d2f-143">マウスの中央ボタンまたは Space キーを使用して、ワークフロー デザイナーをパンすることもできます。</span><span class="sxs-lookup"><span data-stu-id="99d2f-143">The middle mouse button or space bar can also be used to pan the workflow designer.</span></span>  
   
- ![完成したステート マシン ワークフロー](../../../docs/framework/windows-workflow-foundation//media/wfstatemachinegettingstartedtutorialcomplete.JPG "WFStateMachineGettingStartedTutorialComplete")  
+### <a name="multi-select"></a><span data-ttu-id="99d2f-144">複数選択</span><span class="sxs-lookup"><span data-stu-id="99d2f-144">Multi-select</span></span>  
+ <span data-ttu-id="99d2f-145">複数のアクティビティを同時に選択できます。これを行うには、複数のアクティビティを囲むようにドラッグするか (パン モードが無効な場合)、Ctrl キーを押したまま目的のアクティビティを 1 つずつクリックします。</span><span class="sxs-lookup"><span data-stu-id="99d2f-145">Multiple activities can be selected at one time, either by dragging a rectangle around them (when pan mode is not enabled), or by holding down Ctrl and click on the desired activities one by one.</span></span> <span data-ttu-id="99d2f-146">この機能は、再ホストされたデザイナーでサポートされています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-146">This feature is supported in the rehosted designer.</span></span>  
   
- ステート マシンのワークフローの作成方法の詳細については、「[ステート マシン ワークフロー](../../../docs/framework/windows-workflow-foundation//state-machine-workflows.md)」を参照してください。ステート マシンのワークフローは、再ホストされたデザイナーでサポートされています。  
+ <span data-ttu-id="99d2f-147">選択した複数のアクティビティは、デザイナー内でドラッグ アンド ドロップすることも、コンテキスト メニューを使用して操作することもできます。</span><span class="sxs-lookup"><span data-stu-id="99d2f-147">Multiple activity selections can also be dragged and dropped within the designer, and can also be interacted with using the context menu.</span></span>  
   
-### コントラクト優先ワークフローの開発  
- コントラクト優先ワークフローの開発ツールにより、開発者はコード優先のコントラクトを設計することができ、その後、[!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] で数回クリックするだけで、各操作を表すアクティビティ テンプレートをツールボックス内に自動的に生成できます。これらのアクティビティは、コントラクトで定義された操作を実装するワークフローを作成するために使用されます。ワークフロー デザイナーは、ワークフロー サービスを検証し、これらの操作が実装され、ワークフローの署名がコントラクトの署名と一致することを確認します。また、開発者は、ワークフロー サービスを、実装済みコントラクトのコレクションと関連付けることもできます。コントラクト優先ワークフロー サービスの開発の詳細については、「[既存のサービス コントラクトを使用するワークフロー サービスを作成する方法](../../../docs/framework/windows-workflow-foundation//how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md)」を参照してください。  
+### <a name="outline-view-of-workflow-items"></a><span data-ttu-id="99d2f-148">ワークフロー項目のアウトライン表示</span><span class="sxs-lookup"><span data-stu-id="99d2f-148">Outline view of workflow items</span></span>  
+ <span data-ttu-id="99d2f-149">階層ワークフローを移動しやすくするため、ワークフローのコンポーネントはツリー スタイルのアウトライン表示で示されます。</span><span class="sxs-lookup"><span data-stu-id="99d2f-149">In order to make hierarchical workflows easier to navigate, components of a workflow are shown in a tree-style outline view.</span></span> <span data-ttu-id="99d2f-150">アウトライン表示で、 **ドキュメント アウトライン**ビュー。</span><span class="sxs-lookup"><span data-stu-id="99d2f-150">The outline view is displayed in the **Document Outline** view.</span></span> <span data-ttu-id="99d2f-151">開くにはこのビューで[!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)]、上部のメニューから選択**ビュー**、**その他のウィンドウ**、 **ドキュメント アウトライン**、または Ctrl W キーと u ですキーを押します。</span><span class="sxs-lookup"><span data-stu-id="99d2f-151">To open this view in [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)], from the top menu, select **View**, **Other Windows**, **Document Outline**, or press Ctrl W,U.</span></span> <span data-ttu-id="99d2f-152">アウトライン表示でノードをクリックすると、ワークフロー デザイナーの対応するアクティビティに移動し、アウトライン表示が更新されて、デザイナーで選択されているアクティビティが表示されます。</span><span class="sxs-lookup"><span data-stu-id="99d2f-152">Clicking on a node in outline view will navigate to the corresponding activity in the workflow designer, and the outline view will be updated to show activities that are selected in the designer.</span></span> <span data-ttu-id="99d2f-153">この機能は、再ホストされたデザイナーでサポートされています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-153">This feature is supported in the rehosted designer.</span></span>  
+  
+ <span data-ttu-id="99d2f-154">完了済みワークフローからの次のスクリーン ショット、[チュートリアル入門](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md)シーケンシャル ワークフローにより、アウトライン表示を示しています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-154">The following screenshot of the completed workflow from the [Getting Started Tutorial](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md) shows the outline view with a sequential workflow.</span></span>  
+  
+ <span data-ttu-id="99d2f-155">![ワークフロー デザイナーでビューをアウトライン](../../../docs/framework/windows-workflow-foundation/media/outlineviewinworkflowdesigner.jpg "OutlineViewinWorkflowDesigner")</span><span class="sxs-lookup"><span data-stu-id="99d2f-155">![Outline View in Workflow Designer](../../../docs/framework/windows-workflow-foundation/media/outlineviewinworkflowdesigner.jpg "OutlineViewinWorkflowDesigner")</span></span>  
+  
+### <a name="more-control-of-visibility-of-shell-bar-and-header-items"></a><span data-ttu-id="99d2f-156">シェル バーおよびヘッダー項目の可視性の詳細な制御</span><span class="sxs-lookup"><span data-stu-id="99d2f-156">More control of visibility of shell bar and header items</span></span>  
+ <span data-ttu-id="99d2f-157">再ホストされたデザイナーでは、標準 UI コントロールの中に、特定のワークフローにとって意味がないものもあれば、無効になっているものもあります。</span><span class="sxs-lookup"><span data-stu-id="99d2f-157">In a rehosted designer, some of the standard UI controls may not have meaning for a given workflow, and may be turned off.</span></span> <span data-ttu-id="99d2f-158">[!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] では、このカスタマイズがデザイナーの下部のシェル バーのみでサポートされています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-158">In [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], this customization is only supported by the shell bar at the bottom of the designer.</span></span> <span data-ttu-id="99d2f-159">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、デザイナーの上部にあるシェルのヘッダー項目の表示は、適切な <xref:System.Activities.Presentation.View.DesignerView.WorkflowShellHeaderItemsVisibility%2A> 値で <xref:System.Activities.Presentation.View.ShellHeaderItemsVisibility> を設定することにより調整できます。</span><span class="sxs-lookup"><span data-stu-id="99d2f-159">In [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], the visibility of shell header items at the top of the designer can be adjusted by setting <xref:System.Activities.Presentation.View.DesignerView.WorkflowShellHeaderItemsVisibility%2A> with the appropriate <xref:System.Activities.Presentation.View.ShellHeaderItemsVisibility> value.</span></span>  
+  
+### <a name="auto-connect-and-auto-insert-in-flowchart-and-state-machine-workflows"></a><span data-ttu-id="99d2f-160">フローチャートおよびステート マシンのワークフローの自動接続と自動挿入</span><span class="sxs-lookup"><span data-stu-id="99d2f-160">Auto-connect and auto-insert in Flowchart and State Machine workflows</span></span>  
+ <span data-ttu-id="99d2f-161">[!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] では、フローチャート ワークフロー内のノード間の接続は手動で追加する必要がありました。</span><span class="sxs-lookup"><span data-stu-id="99d2f-161">In [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], connections between nodes in a Flowchart workflow had to be added manually.</span></span> <span data-ttu-id="99d2f-162">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、フローチャート ノードとステート マシン ノードに自動接続ポイントがあり、これらのポイントは、アクティビティをツールボックスからデザイナー画面上にドラッグすると表示されます。</span><span class="sxs-lookup"><span data-stu-id="99d2f-162">In [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], Flowchart and State Machine nodes have auto-connect points that become visible when an activity is dragged from the toolbox onto the designer surface.</span></span> <span data-ttu-id="99d2f-163">アクティビティをこれらのポイントのうち 1 つにドロップすると、アクティビティが必要な接続と共に自動的に追加されます。</span><span class="sxs-lookup"><span data-stu-id="99d2f-163">Dropping an activity on one of these points automatically adds the activity along with the necessary connection.</span></span>  
+  
+ <span data-ttu-id="99d2f-164">次のスクリーンショットは、アクティビティがツールボックスからドラッグされるときに表示されるアタッチ ポイントを示します。</span><span class="sxs-lookup"><span data-stu-id="99d2f-164">The following screenshot shows the attachment points that become visible when an activity is dragged from the toolbox.</span></span>  
+  
+ <span data-ttu-id="99d2f-165">![自動接続ポイントを示すフローチャートの開始ノード](../../../docs/framework/windows-workflow-foundation/media/autoconnect1.png "Autoconnect1")</span><span class="sxs-lookup"><span data-stu-id="99d2f-165">![Flowchart start node showing autoconnect points](../../../docs/framework/windows-workflow-foundation/media/autoconnect1.png "Autoconnect1")</span></span>  
+  
+ <span data-ttu-id="99d2f-166">アクティビティは、フローチャート ノードと状態の間の接続にドラッグすることで、その他 2 つのノード間にノードを自動挿入することもできます。</span><span class="sxs-lookup"><span data-stu-id="99d2f-166">Activities can also be dragged onto connections between flowchart nodes and states to auto-insert the node between two other nodes.</span></span> <span data-ttu-id="99d2f-167">次のスクリーンショットは、アクティビティをツールボックスからドラッグ アンド ドロップできる、強調表示された接続線を示しています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-167">The following screenshot shows the highlighted connecting line where activities can be dragged from the toolbox and dropped.</span></span>  
+  
+ <span data-ttu-id="99d2f-168">![自動 &#45; 処理のアクティビティをドロップする insert](../../../docs/framework/windows-workflow-foundation/media/autoinsert.png "自動")</span><span class="sxs-lookup"><span data-stu-id="99d2f-168">![Auto&#45;insert handle for dropping activities](../../../docs/framework/windows-workflow-foundation/media/autoinsert.png "Autoinsert")</span></span>  
+  
+ <span data-ttu-id="99d2f-169">自動接続と自動挿入は、再ホストされたデザイナーでサポートされています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-169">Auto-connect and auto-insert are supported in the rehosted designer.</span></span>  
+  
+### <a name="designer-annotations"></a><span data-ttu-id="99d2f-170">デザイナー注釈</span><span class="sxs-lookup"><span data-stu-id="99d2f-170">Designer Annotations</span></span>  
+ <span data-ttu-id="99d2f-171">より大規模なワークフローの開発を容易にするため、デザイン プロセスを追跡できるよう注釈の追加がサポートされるようになりました。</span><span class="sxs-lookup"><span data-stu-id="99d2f-171">To facilitate developing larger workflows, the designer now supports adding annotations to help keep track of the design process.</span></span> <span data-ttu-id="99d2f-172">注釈は、アクティビティ、状態、フローチャート ノード、変数、および引数に追加できます。</span><span class="sxs-lookup"><span data-stu-id="99d2f-172">Annotation can be added to activities, states, flowchart nodes, variables and arguments.</span></span> <span data-ttu-id="99d2f-173">次のスクリーンショットは、デザイナーに注釈を追加するためのコンテキスト メニューを示しています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-173">The following screenshot shows the context menu used to add annotations to the designer.</span></span>  
+  
+ <span data-ttu-id="99d2f-174">![注釈コンテキスト メニュー](../../../docs/framework/windows-workflow-foundation/media/annotationdialog.png "annotationdialog")</span><span class="sxs-lookup"><span data-stu-id="99d2f-174">![Annotation context menu](../../../docs/framework/windows-workflow-foundation/media/annotationdialog.png "annotationdialog")</span></span>  
+  
+ <span data-ttu-id="99d2f-175">デザイナー注釈は、再ホストされたデザイナーでサポートされています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-175">Designer annotations are supported in the rehosted designer.</span></span>  
+  
+### <a name="define-and-consume-activitydelegate-objects-in-the-designer"></a><span data-ttu-id="99d2f-176">デザイナーでの ActivityDelegate オブジェクトの定義と使用</span><span class="sxs-lookup"><span data-stu-id="99d2f-176">Define and consume ActivityDelegate objects in the designer</span></span>  
+ <span data-ttu-id="99d2f-177">[!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] のアクティビティでは、<xref:System.Activities.ActivityDelegate> オブジェクトを使用して、ワークフローの他の部分がワークフローの実行と対話できる実行ポイントを公開していましたが、通常、これらの実行ポイントを使用するには相当な量のコードが必要でした。</span><span class="sxs-lookup"><span data-stu-id="99d2f-177">Activities in [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] used <xref:System.Activities.ActivityDelegate> objects to expose execution points where other parts of the workflow could interact with a workflow's execution, but using these execution points usually required a fair amount of code.</span></span> <span data-ttu-id="99d2f-178">このリリースでは、開発者はワークフロー デザイナーを使用してアクティビティ デリゲートを定義および使用できます。</span><span class="sxs-lookup"><span data-stu-id="99d2f-178">In this release, developers can define and consume activity delegates using the workflow designer.</span></span> <span data-ttu-id="99d2f-179">詳細については、次を参照してください。[する方法: 定義およびワークフロー デザイナーでアクティビティ デリゲートを使用する](/visualstudio/workflow-designer/how-to-define-and-consume-activity-delegates-in-the-workflow-designer)です。</span><span class="sxs-lookup"><span data-stu-id="99d2f-179">For more information, see [How to: Define and consume activity delegates in the Workflow Designer](/visualstudio/workflow-designer/how-to-define-and-consume-activity-delegates-in-the-workflow-designer).</span></span>  
+  
+ <span data-ttu-id="99d2f-180">アクティビティ デリゲートは、再ホストされたデザイナーでサポートされています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-180">Activity delegates are supported in the rehosted designer.</span></span>  
+  
+### <a name="build-time-validation"></a><span data-ttu-id="99d2f-181">ビルド時の検証</span><span class="sxs-lookup"><span data-stu-id="99d2f-181">Build-time validation</span></span>  
+ <span data-ttu-id="99d2f-182">[!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] では、ワークフローの検証エラーが、ワークフロー プロジェクトのビルド中のビルド エラーとして数えられていませんでした。</span><span class="sxs-lookup"><span data-stu-id="99d2f-182">In [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], workflow validation errors weren’t counted as build errors during the build of a workflow project.</span></span> <span data-ttu-id="99d2f-183">つまり、ワークフローの検証エラーが発生した場合でも、ワークフロー プロジェクトのビルドは成功している可能性があります。</span><span class="sxs-lookup"><span data-stu-id="99d2f-183">This meant that building a workflow project could succeed even when there were workflow validation errors.</span></span> <span data-ttu-id="99d2f-184">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、ワークフローの検証エラーが発生するとビルドは失敗します。</span><span class="sxs-lookup"><span data-stu-id="99d2f-184">In [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], workflow validation errors cause the build to fail.</span></span>  
   
 > [!WARNING]
->  コントラクト優先ワークフローの開発は、ワークフロー デザイナーではサポートされていません。
+>  <span data-ttu-id="99d2f-185">ビルド時の検証は、再ホストされたデザイナーではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="99d2f-185">Build-time validation is not supported in the rehosted designer.</span></span>  
+  
+### <a name="design-time-background-validation"></a><span data-ttu-id="99d2f-186">デザイン時バックグラウンド検証</span><span class="sxs-lookup"><span data-stu-id="99d2f-186">Design-time background validation</span></span>  
+ <span data-ttu-id="99d2f-187">[!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] では、ワークフローがフォアグラウンド プロセスとして検証されていました。これにより、複雑な検証プロセスや時間のかかる検証プロセスでは UI が応答を停止する可能性がありました。</span><span class="sxs-lookup"><span data-stu-id="99d2f-187">In [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], workflows were validated as a foreground process, which could potentially hang the UI during complex or time-consuming validation processes.</span></span> <span data-ttu-id="99d2f-188">現在、ワークフローの検証はバックグラウンド スレッドで実行されるため、UI がブロックされることはありません。</span><span class="sxs-lookup"><span data-stu-id="99d2f-188">Workflow validation now takes place on a background thread, so that the UI is not blocked.</span></span>  
+  
+ <span data-ttu-id="99d2f-189">デザイン時バックグラウンド検証は、再ホストされたデザイナーでサポートされています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-189">Design-time background validation is supported in the rehosted designer.</span></span>  
+  
+### <a name="view-state-located-in-a-separate-location-in-xaml-files"></a><span data-ttu-id="99d2f-190">XAML ファイル内で別々の場所にあるビューステート</span><span class="sxs-lookup"><span data-stu-id="99d2f-190">View state located in a separate location in XAML files</span></span>  
+ <span data-ttu-id="99d2f-191">[!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] では、ワークフローのビューステート情報は、多くの異なる場所にある XAML ファイルに保存されていました。</span><span class="sxs-lookup"><span data-stu-id="99d2f-191">In [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], the view state information for a workflow is stored across the XAML file in many different locations.</span></span> <span data-ttu-id="99d2f-192">これは、XAML を直接読み取ったり、ビューステート情報を削除するコードを記述したりする開発者にとっては不便です。</span><span class="sxs-lookup"><span data-stu-id="99d2f-192">This is inconvenient for developers who want to read XAML directly, or write code to remove the view state information.</span></span> <span data-ttu-id="99d2f-193">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、XAML ファイルのビュー状態情報は、XAML ファイル内の個別の要素としてシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="99d2f-193">In [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], the view state information in the XAML file is serialized as a separate element in the XAML file.</span></span>  <span data-ttu-id="99d2f-194">開発者ことが簡単を探し、アクティビティ、ビュー状態情報を編集ビュー ステートを完全に削除します。</span><span class="sxs-lookup"><span data-stu-id="99d2f-194">Developers can easily locate and edit the view state information of an activity, or remove the view state altogether.</span></span>  
+  
+ <span data-ttu-id="99d2f-195">この機能は、再ホストされたワークフロー デザイナーでサポートされています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-195">This feature is supported in the rehosted workflow designer.</span></span>  
+  
+### <a name="opt-in-for-workflow-45-features-in-rehosted-designer"></a><span data-ttu-id="99d2f-196">再ホストされたデザイナーでの Workflow 4.5 機能のオプトイン</span><span class="sxs-lookup"><span data-stu-id="99d2f-196">Opt-in for Workflow 4.5 features in rehosted designer</span></span>  
+ <span data-ttu-id="99d2f-197">下位互換性を維持するために、再ホストされたデザイナーでは、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] に含まれる新機能の一部が既定で有効になっていません。</span><span class="sxs-lookup"><span data-stu-id="99d2f-197">To preserve backward compatibility, some new features included in [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] are not enabled by default in the rehosted designer.</span></span> <span data-ttu-id="99d2f-198">これは、再ホストされたデザイナーを使用する既存のアプリケーションが、最新バージョンに更新することで壊れないようにするためです。</span><span class="sxs-lookup"><span data-stu-id="99d2f-198">This is to ensure that existing applications that use the rehosted designer are not broken by updating to the latest version.</span></span> <span data-ttu-id="99d2f-199">再ホストされたデザイナーで新機能を有効にするには、<xref:System.Activities.Presentation.DesignerConfigurationService.TargetFrameworkName%2A> を ".Net Framework 4.5" に設定するか、<xref:System.Activities.Presentation.DesignerConfigurationService> の各メンバーを設定して各機能を有効にします。</span><span class="sxs-lookup"><span data-stu-id="99d2f-199">To enable new features in the rehosted designer, either set <xref:System.Activities.Presentation.DesignerConfigurationService.TargetFrameworkName%2A> to ".Net Framework 4.5", or set individual members of <xref:System.Activities.Presentation.DesignerConfigurationService> to enable individual features.</span></span>  
+  
+## <a name="new-workflow-development-models"></a><span data-ttu-id="99d2f-200">新しいワークフロー開発モデル</span><span class="sxs-lookup"><span data-stu-id="99d2f-200">New Workflow Development Models</span></span>  
+ <span data-ttu-id="99d2f-201">このリリースには、フローチャートおよびシーケンシャル ワークフロー開発モデルに加えて、ステート マシンのワークフロー、およびコントラクト優先ワークフロー サービスが含まれています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-201">In addition to flowchart and sequential workflow development models, this release includes State Machine workflows, and contract-first workflow services.</span></span>  
+  
+### <a name="state-machine-workflows"></a><span data-ttu-id="99d2f-202">ステート マシンのワークフロー</span><span class="sxs-lookup"><span data-stu-id="99d2f-202">State machine workflows</span></span>  
+ <span data-ttu-id="99d2f-203">ステート マシン ワークフローは、.NET Framework 4.0.1 の一部として導入された、 [Microsoft .NET Framework 4 Platform Update 1](http://go.microsoft.com/fwlink/?LinkID=215092)です。</span><span class="sxs-lookup"><span data-stu-id="99d2f-203">State machine workflows were introduced as part of the .NET Framework 4.0.1 in the [Microsoft .NET Framework 4 Platform Update 1](http://go.microsoft.com/fwlink/?LinkID=215092).</span></span> <span data-ttu-id="99d2f-204">この更新プログラムには、開発者がステート マシンのワークフローを作成できるようにする、いくつかの新しいクラスとアクティビティが含まれていました。</span><span class="sxs-lookup"><span data-stu-id="99d2f-204">This update included several new classes and activities which allowed developers to create state machine workflows.</span></span> <span data-ttu-id="99d2f-205">これらのクラスおよびアクティビティは [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 用に更新されました。</span><span class="sxs-lookup"><span data-stu-id="99d2f-205">These classes and activities have been updated for [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].</span></span> <span data-ttu-id="99d2f-206">更新プログラムには次のものが含まれています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-206">Updates include:</span></span>  
+  
+1.  <span data-ttu-id="99d2f-207">状態にブレークポイントを設定する機能。</span><span class="sxs-lookup"><span data-stu-id="99d2f-207">The ability to set breakpoints on states</span></span>  
+  
+2.  <span data-ttu-id="99d2f-208">ワークフロー デザイナーで遷移をコピーして貼り付ける機能。</span><span class="sxs-lookup"><span data-stu-id="99d2f-208">The ability to copy and paste transitions in the workflow designer</span></span>  
+  
+3.  <span data-ttu-id="99d2f-209">トリガーを共有する遷移の作成に対するデザイナーのサポート。</span><span class="sxs-lookup"><span data-stu-id="99d2f-209">Designer support for shared trigger transition creation</span></span>  
+  
+4.  <span data-ttu-id="99d2f-210">ステート マシンのワークフロー作成に使用するアクティビティ (<xref:System.Activities.Statements.StateMachine><xref:System.Activities.Statements.State>、<xref:System.Activities.Statements.Transition> など)。</span><span class="sxs-lookup"><span data-stu-id="99d2f-210">Activities used to create State Machine workflows, including: <xref:System.Activities.Statements.StateMachine>, <xref:System.Activities.Statements.State>, and <xref:System.Activities.Statements.Transition></span></span>  
+  
+ <span data-ttu-id="99d2f-211">次のスクリーン ショットから完成したステート マシン ワークフローを示しています、[チュートリアル入門](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md)ステップ[する方法: ステート マシン ワークフローを作成する](../../../docs/framework/windows-workflow-foundation/how-to-create-a-state-machine-workflow.md)です。</span><span class="sxs-lookup"><span data-stu-id="99d2f-211">The following screenshot shows the completed state machine workflow from the [Getting Started Tutorial](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md) step [How to: Create a State Machine Workflow](../../../docs/framework/windows-workflow-foundation/how-to-create-a-state-machine-workflow.md).</span></span>  
+  
+ <span data-ttu-id="99d2f-212">![完成したステート マシン ワークフロー](../../../docs/framework/windows-workflow-foundation/media/wfstatemachinegettingstartedtutorialcomplete.JPG "WFStateMachineGettingStartedTutorialComplete")</span><span class="sxs-lookup"><span data-stu-id="99d2f-212">![Completed State Machine Workflow](../../../docs/framework/windows-workflow-foundation/media/wfstatemachinegettingstartedtutorialcomplete.JPG "WFStateMachineGettingStartedTutorialComplete")</span></span>  
+  
+ <span data-ttu-id="99d2f-213">ステート マシン ワークフローを作成する方法の詳細については、次を参照してください。[ステート マシン ワークフロー](../../../docs/framework/windows-workflow-foundation/state-machine-workflows.md)です。</span><span class="sxs-lookup"><span data-stu-id="99d2f-213">For more information on creating state machine workflows, see [State Machine Workflows](../../../docs/framework/windows-workflow-foundation/state-machine-workflows.md).</span></span> <span data-ttu-id="99d2f-214">ステート マシンのワークフローは、再ホストされたデザイナーでサポートされています。</span><span class="sxs-lookup"><span data-stu-id="99d2f-214">State machine workflows are supported in the rehosted designer.</span></span>  
+  
+### <a name="contract-first-workflow-development"></a><span data-ttu-id="99d2f-215">コントラクト優先ワークフローの開発</span><span class="sxs-lookup"><span data-stu-id="99d2f-215">Contract-first workflow development</span></span>  
+ <span data-ttu-id="99d2f-216">コントラクト優先ワークフローの開発ツールにより、開発者はコード優先のコントラクトを設計することができ、その後、[!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] で数回クリックするだけで、各操作を表すアクティビティ テンプレートをツールボックス内に自動的に生成できます。</span><span class="sxs-lookup"><span data-stu-id="99d2f-216">The contract-first workflow development tool allows the developer to design a contract in code first, then, with a few clicks in [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)], automatically generate an activity template in the toolbox representing each operation.</span></span> <span data-ttu-id="99d2f-217">これらのアクティビティは、コントラクトで定義された操作を実装するワークフローを作成するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="99d2f-217">These activities are then used to create a workflow that implements the operations defined by the contract.</span></span> <span data-ttu-id="99d2f-218">ワークフロー デザイナーは、ワークフロー サービスを検証し、これらの操作が実装され、ワークフローの署名がコントラクトの署名と一致することを確認します。</span><span class="sxs-lookup"><span data-stu-id="99d2f-218">The workflow designer will validate the workflow service to ensure that these operations are implemented and the signature of the workflow matches the contract signature.</span></span> <span data-ttu-id="99d2f-219">また、開発者は、ワークフロー サービスを、実装済みコントラクトのコレクションと関連付けることもできます。</span><span class="sxs-lookup"><span data-stu-id="99d2f-219">The developer can also associate a workflow service with a collection of implemented contracts.</span></span> <span data-ttu-id="99d2f-220">コントラクト優先ワークフロー サービスの開発の詳細については、次を参照してください。[する方法: 既存のサービス コントラクトを使用するワークフロー サービスを作成する](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md)です。</span><span class="sxs-lookup"><span data-stu-id="99d2f-220">For more information on contract-first workflow service development, see [How to: Create a workflow service that consumes an existing service contract](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md).</span></span>  
+  
+> [!WARNING]
+>  <span data-ttu-id="99d2f-221">コントラクト優先ワークフローの開発は、ワークフロー デザイナーではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="99d2f-221">Contract-first workflow development is not supported in the workflow designer.</span></span>

@@ -1,50 +1,53 @@
 ---
-title: "方法 : Windows フォームの MonthCalendar コントロールにおいて複数の月を表示する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "予定表, 書式指定 (表示を)"
-  - "予定表, 複数の月"
-  - "例 [Windows フォーム], 予定表コントロール"
-  - "MonthCalendar コントロール [Windows フォーム], 書式指定 (表示を)"
+title: "方法 : Windows フォームの MonthCalendar コントロールにおいて複数の月を表示する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- calendars [Windows Forms], formatting display
+- examples [Windows Forms], calendar controls
+- calendars [Windows Forms], multiple months
+- MonthCalendar control [Windows Forms], formatting display
 ms.assetid: d197caa2-38a5-4cb4-acc3-562130c2ace3
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 63cf236f93fa3352e536c71000f6bb110abf02fa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームの MonthCalendar コントロールにおいて複数の月を表示する
-Windows フォームの <xref:System.Windows.Forms.MonthCalendar> コントロールでは、最大 12 か月まで一度に表示できます。  既定では 1 つの月だけが表示されますが、表示する月の数と、コントロール内の各月の配置をこのコントロールで指定することもできます。  予定表の大きさを変更すると、コントロールのサイズが変更されます。したがって、新しい大きさに対して十分な領域がフォーム上にあることを確認してください。  
+# <a name="how-to-display-more-than-one-month-in-the-windows-forms-monthcalendar-control"></a><span data-ttu-id="c7d49-102">方法 : Windows フォームの MonthCalendar コントロールにおいて複数の月を表示する</span><span class="sxs-lookup"><span data-stu-id="c7d49-102">How to: Display More than One Month in the Windows Forms MonthCalendar Control</span></span>
+<span data-ttu-id="c7d49-103">Windows フォーム<xref:System.Windows.Forms.MonthCalendar>コントロールは、一度に最大 12 か月間を表示することができます。</span><span class="sxs-lookup"><span data-stu-id="c7d49-103">The Windows Forms <xref:System.Windows.Forms.MonthCalendar> control can display up to 12 months at a time.</span></span> <span data-ttu-id="c7d49-104">既定では、コントロールには、1 か月のみが表示されますが、月の数が表示され、コントロール内の配置方法を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="c7d49-104">By default, the control displays only one month, but you can specify how many months are displayed and how they are arranged within the control.</span></span> <span data-ttu-id="c7d49-105">カレンダーの次元を変更すると、コントロールのサイズ変更されるため、必ず新しいディメンションのフォームに十分な空き領域があります。</span><span class="sxs-lookup"><span data-stu-id="c7d49-105">When you change the calendar dimensions, the control is resized, so be sure there is enough room on the form for the new dimensions.</span></span>  
   
-### 複数の月を表示するには  
+### <a name="to-display-multiple-months"></a><span data-ttu-id="c7d49-106">複数の月を表示するには</span><span class="sxs-lookup"><span data-stu-id="c7d49-106">To display multiple months</span></span>  
   
--   <xref:System.Windows.Forms.MonthCalendar.CalendarDimensions%2A> プロパティに横方向および縦方向に表示する月の数を設定します。  
+-   <span data-ttu-id="c7d49-107">設定、<xref:System.Windows.Forms.MonthCalendar.CalendarDimensions%2A>プロパティを水平方向および垂直方向に表示する月の数。</span><span class="sxs-lookup"><span data-stu-id="c7d49-107">Set the <xref:System.Windows.Forms.MonthCalendar.CalendarDimensions%2A> property to the number of months to display horizontally and vertically.</span></span>  
   
     ```vb  
     MonthCalendar1.CalendarDimensions = New System.Drawing.Size (3,2)  
-  
     ```  
   
     ```csharp  
     monthCalendar1.CalendarDimensions = new System.Drawing.Size (3,2);  
-  
     ```  
   
     ```cpp  
     monthCalendar1->CalendarDimensions = System::Drawing::Size (3,2);  
     ```  
   
-## 参照  
- [MonthCalendar コントロール](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)   
- [方法 : Windows フォームの MonthCalendar コントロールで日付の範囲を選択する](../../../../docs/framework/winforms/controls/how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control.md)   
- [方法 : Windows フォームの MonthCalendar コントロールの外観を変更する](../../../../docs/framework/winforms/controls/how-to-change-monthcalendar-control-appearance.md)
+## <a name="see-also"></a><span data-ttu-id="c7d49-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="c7d49-108">See Also</span></span>  
+ [<span data-ttu-id="c7d49-109">MonthCalendar コントロール</span><span class="sxs-lookup"><span data-stu-id="c7d49-109">MonthCalendar Control</span></span>](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)  
+ [<span data-ttu-id="c7d49-110">方法: Windows フォームの MonthCalendar コントロールで日付の範囲を選択する</span><span class="sxs-lookup"><span data-stu-id="c7d49-110">How to: Select a Range of Dates in the Windows Forms MonthCalendar Control</span></span>](../../../../docs/framework/winforms/controls/how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control.md)  
+ [<span data-ttu-id="c7d49-111">方法: Windows フォームの MonthCalendar コントロールの外観を変更する</span><span class="sxs-lookup"><span data-stu-id="c7d49-111">How to: Change the Windows Forms MonthCalendar Control's Appearance</span></span>](../../../../docs/framework/winforms/controls/how-to-change-monthcalendar-control-appearance.md)

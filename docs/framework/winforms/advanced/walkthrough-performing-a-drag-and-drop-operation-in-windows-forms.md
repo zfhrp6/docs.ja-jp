@@ -1,48 +1,51 @@
 ---
-title: "チュートリアル : Windows フォームにおけるドラッグ アンド ドロップ操作の実行 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ドラッグ アンド ドロップ, Windows フォーム"
-  - "Windows フォーム, ドラッグ アンド ドロップ操作"
+title: "チュートリアル: Windows フォームにおけるドラッグ アンド ドロップ操作の実行"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Windows Forms, drag and drop operations
+- drag and drop [Windows Forms], Windows Forms
 ms.assetid: eb66f6bf-4a7d-4c2d-b276-40fefb2d3b6c
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fe2b54123e117f21f3bda7bc78bc9c5b45fc9ae3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル : Windows フォームにおけるドラッグ アンド ドロップ操作の実行
-Windows ベースのアプリケーション内でドラッグ アンド ドロップ操作を実行するには、<xref:System.Windows.Forms.Control.DragEnter>、<xref:System.Windows.Forms.Control.DragLeave>、<xref:System.Windows.Forms.Control.DragDrop> などの一連のイベントを処理する必要があります。  これらのイベントのイベント引数で提供される情報を使用することにより、ドラッグ アンド ドロップ操作を簡単に実現できます。  
+# <a name="walkthrough-performing-a-drag-and-drop-operation-in-windows-forms"></a><span data-ttu-id="1e331-102">チュートリアル: Windows フォームにおけるドラッグ アンド ドロップ操作の実行</span><span class="sxs-lookup"><span data-stu-id="1e331-102">Walkthrough: Performing a Drag-and-Drop Operation in Windows Forms</span></span>
+<span data-ttu-id="1e331-103">Windows ベースのアプリケーション内でドラッグ アンド ドロップ操作を実行する必要がありますを処理する、一連のイベント、特に、 <xref:System.Windows.Forms.Control.DragEnter>、 <xref:System.Windows.Forms.Control.DragLeave>、および<xref:System.Windows.Forms.Control.DragDrop>イベント。</span><span class="sxs-lookup"><span data-stu-id="1e331-103">To perform drag-and-drop operations within Windows-based applications you must handle a series of events, most notably the <xref:System.Windows.Forms.Control.DragEnter>, <xref:System.Windows.Forms.Control.DragLeave>, and <xref:System.Windows.Forms.Control.DragDrop> events.</span></span> <span data-ttu-id="1e331-104">情報の操作、使用可能なイベントのこれらのイベントの引数、ドラッグ アンド ドロップ操作を簡単に実現できます。</span><span class="sxs-lookup"><span data-stu-id="1e331-104">By working with the information available in the event arguments of these events, you can easily facilitate drag-and-drop operations.</span></span>  
   
-## データのドラッグ  
- すべてのドラッグ アンド ドロップ操作は、ドラッグから始まります。  ドラッグが開始されたときにデータを収集できるようにする機能は、<xref:System.Windows.Forms.Control.DoDragDrop%2A> メソッドに実装されています。  
+## <a name="dragging-data"></a><span data-ttu-id="1e331-105">データのドラッグ</span><span class="sxs-lookup"><span data-stu-id="1e331-105">Dragging Data</span></span>  
+ <span data-ttu-id="1e331-106">すべてのドラッグ アンド ドロップ操作では、ドラッグから始まります。</span><span class="sxs-lookup"><span data-stu-id="1e331-106">All drag-and-drop operations begin with dragging.</span></span> <span data-ttu-id="1e331-107">ドラッグの開始時に収集するデータを有効にする機能は実装、<xref:System.Windows.Forms.Control.DoDragDrop%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="1e331-107">The functionality to enable data to be collected when dragging begins is implemented in the <xref:System.Windows.Forms.Control.DoDragDrop%2A> method.</span></span>  
   
- 次の例では、最も直観的な <xref:System.Windows.Forms.Control.MouseDown> イベントを使用してドラッグ操作を開始しています。これは、ほとんどのドラッグ アンド ドロップ操作は、マウス ボタンが押されることによって開始されるためです。  ただし、ドラッグ アンド ドロップの手順は任意のイベントを使用して開始できます。  
+ <span data-ttu-id="1e331-108">次の例で、<xref:System.Windows.Forms.Control.MouseDown>イベントが最も簡単なになっているために、ドラッグ操作を開始するため (ドラッグ アンド ドロップ操作のほとんどは、マウス ボタンが押されているで始まります)。</span><span class="sxs-lookup"><span data-stu-id="1e331-108">In the following example, the <xref:System.Windows.Forms.Control.MouseDown> event is used to start the drag operation because it is the most intuitive (most drag-and-drop actions begin with the mouse button being depressed).</span></span> <span data-ttu-id="1e331-109">ただし、ドラッグ アンド ドロップ手順を開始するすべてのイベントを使用できることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="1e331-109">However, remember that any event could be used to initiate a drag-and-drop procedure.</span></span>  
   
 > [!NOTE]
->  ドラッグに関するカスタム イベントのあるコントロールもあります。  たとえば、<xref:System.Windows.Forms.ListView> コントロールと <xref:System.Windows.Forms.TreeView> コントロールには、<xref:System.Windows.Forms.TreeView.ItemDrag> イベントがあります。  
+>  <span data-ttu-id="1e331-110">特定のコントロールでは、ドラッグに固有のカスタム イベントがあります。</span><span class="sxs-lookup"><span data-stu-id="1e331-110">Certain controls have custom drag-specific events.</span></span> <span data-ttu-id="1e331-111"><xref:System.Windows.Forms.ListView>と<xref:System.Windows.Forms.TreeView>コントロール、たとえば、ある、<xref:System.Windows.Forms.TreeView.ItemDrag>イベント。</span><span class="sxs-lookup"><span data-stu-id="1e331-111">The <xref:System.Windows.Forms.ListView> and <xref:System.Windows.Forms.TreeView> controls, for example, have an <xref:System.Windows.Forms.TreeView.ItemDrag> event.</span></span>  
   
-#### ドラッグ操作を開始するには  
+#### <a name="to-start-a-drag-operation"></a><span data-ttu-id="1e331-112">ドラッグ操作を開始するには</span><span class="sxs-lookup"><span data-stu-id="1e331-112">To start a drag operation</span></span>  
   
-1.  ドラッグが  開始されるコントロールの <xref:System.Windows.Forms.Control.MouseDown> のイベントでドラッグされるデータを設定するに `DoDragDrop` のメソッドを使用して実行できる処理のドラッグがあります。  詳細については、「<xref:System.Windows.Forms.DragEventArgs.Data%2A>」および「<xref:System.Windows.Forms.DragEventArgs.AllowedEffect%2A>」を参照してください。  
+1.  <span data-ttu-id="1e331-113"><xref:System.Windows.Forms.Control.MouseDown> 、ドラッグを開始する場所を使用するコントロールのイベントを`DoDragDrop`ドラッグされるデータを設定するメソッドとドラッグ許可の結果が設定されます。</span><span class="sxs-lookup"><span data-stu-id="1e331-113">In the <xref:System.Windows.Forms.Control.MouseDown> event for the control where the drag will begin, use the `DoDragDrop` method to set the data to be dragged and the allowed effect dragging will have.</span></span> <span data-ttu-id="1e331-114">詳細については、<xref:System.Windows.Forms.DragEventArgs.Data%2A> および <xref:System.Windows.Forms.DragEventArgs.AllowedEffect%2A> を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1e331-114">For more information, see <xref:System.Windows.Forms.DragEventArgs.Data%2A> and <xref:System.Windows.Forms.DragEventArgs.AllowedEffect%2A>.</span></span>  
   
-     ドラッグ操作を開始する方法の例を次に示します。  ドラッグが開始されるコントロールは <xref:System.Windows.Forms.Button> コントロール、ドラッグされるデータは、<xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Text%2A> プロパティを表す文字列、実行できる処理はコピーまたは移動のいずれかです。  
+     <span data-ttu-id="1e331-115">次の例では、ドラッグ操作を開始する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="1e331-115">The following example shows how to initiate a drag operation.</span></span> <span data-ttu-id="1e331-116">コントロールのドラッグが開始されるは、<xref:System.Windows.Forms.Button>コントロール、ドラッグされるデータは、文字列を表す、<xref:System.Windows.Forms.Control.Text%2A>のプロパティ、<xref:System.Windows.Forms.Button>制御、および許可された効果をコピーまたは移動します。</span><span class="sxs-lookup"><span data-stu-id="1e331-116">The control where the drag begins is a <xref:System.Windows.Forms.Button> control, the data being dragged is the string representing the <xref:System.Windows.Forms.Control.Text%2A> property of the <xref:System.Windows.Forms.Button> control, and the allowed effects are either copying or moving.</span></span>  
   
     ```vb  
     Private Sub Button1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button1.MouseDown  
        Button1.DoDragDrop(Button1.Text, DragDropEffects.Copy Or DragDropEffects.Move)  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -52,22 +55,21 @@ Windows ベースのアプリケーション内でドラッグ アンド ドロ�
        button1.DoDragDrop(button1.Text, DragDropEffects.Copy |   
           DragDropEffects.Move);  
     }  
-  
     ```  
   
     > [!NOTE]
-    >  `DoDragDrop` メソッドでは、任意のデータをパラメーターとして使用できます。上の例では、<xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Text%2A> プロパティがドラッグの開始位置 \(<xref:System.Windows.Forms.Button> コントロール\) に関連するため、値をハードコーディングしたり、データセットからデータを取得したりせずに、このプロパティを使用しています。  Windows ベースのアプリケーションにドラッグ アンド ドロップ操作を組み込む場合には、この点を考慮してください。  
+    >  <span data-ttu-id="1e331-117">すべてのデータをパラメーターとして使用できます、`DoDragDrop`メソッド以外の場合は、上記の例では、<xref:System.Windows.Forms.Control.Text%2A>のプロパティ、 <xref:System.Windows.Forms.Button> (ではなく、値をハードコーディングまたはデータセットからデータを取得する) にコントロールが使用されたに関連するプロパティがあるため、ドラッグされている場所 (、<xref:System.Windows.Forms.Button>コントロール)。</span><span class="sxs-lookup"><span data-stu-id="1e331-117">Any data can be used as a parameter in the `DoDragDrop` method; in the example above, the <xref:System.Windows.Forms.Control.Text%2A> property of the <xref:System.Windows.Forms.Button> control was used (rather than hard-coding a value or retrieving data from a dataset) because the property was related to the location being dragged from (the <xref:System.Windows.Forms.Button> control).</span></span> <span data-ttu-id="1e331-118">ドラッグ アンド ドロップ操作を Windows ベースのアプリケーションに組み込む場合に、この点に留意してください。</span><span class="sxs-lookup"><span data-stu-id="1e331-118">Keep this in mind as you incorporate drag-and-drop operations into your Windows-based applications.</span></span>  
   
- ドラッグ操作が行われている間、<xref:System.Windows.Forms.Control.QueryContinueDrag> イベントを処理できます。これは、ドラッグ操作を続けてよいかどうかシステムの "許可を得る" イベントです。  このメソッドを処理するときは、たとえば、カーソルが置かれたときに <xref:System.Windows.Forms.TreeView> コントロールの <xref:System.Windows.Forms.TreeNode> を展開するなど、ドラッグ操作に影響するメソッドを呼び出すのにも適しています。  
+ <span data-ttu-id="1e331-119">ドラッグ操作が有効な状態を処理できます、 <xref:System.Windows.Forms.Control.QueryContinueDrag> 「アクセス許可を要求する」イベントのドラッグ操作を続行するシステムです。</span><span class="sxs-lookup"><span data-stu-id="1e331-119">While a drag operation is in effect, you can handle the <xref:System.Windows.Forms.Control.QueryContinueDrag> event, which "asks permission" of the system to continue the drag operation.</span></span> <span data-ttu-id="1e331-120">このメソッドを処理する場合も、適切なポイントを展開するなど、ドラッグ操作に影響があるメソッドを呼び出すには<xref:System.Windows.Forms.TreeNode>で、<xref:System.Windows.Forms.TreeView>上にカーソルを合わせるとを制御します。</span><span class="sxs-lookup"><span data-stu-id="1e331-120">When handling this method, it is also the appropriate point for you to call methods that will have an effect on the drag operation, such as expanding a <xref:System.Windows.Forms.TreeNode> in a <xref:System.Windows.Forms.TreeView> control when the cursor hovers over it.</span></span>  
   
-## データのドロップ  
- Windows フォームまたはコントロール上の場所からデータのドラッグを開始したら、それをどこかにドロップする必要があります。  データをドロップできるように正しく設定されているフォームまたはコントロールの領域をカーソルが横切ると、カーソルの形が変わります。  <xref:System.Windows.Forms.Control.AllowDrop%2A> プロパティを設定し、<xref:System.Windows.Forms.Control.DragEnter> イベントと <xref:System.Windows.Forms.Control.DragDrop> イベントを処理することにより、Windows フォームまたはコントロール内の任意の領域で、ドロップされたデータを受け入れることができます。  
+## <a name="dropping-data"></a><span data-ttu-id="1e331-121">データを削除します。</span><span class="sxs-lookup"><span data-stu-id="1e331-121">Dropping Data</span></span>  
+ <span data-ttu-id="1e331-122">データの場所から Windows フォームまたはコントロールのドラッグを開始した後は必然的にする任意の場所にドロップします。</span><span class="sxs-lookup"><span data-stu-id="1e331-122">Once you have begun dragging data from a location on a Windows Form or control, you will naturally want to drop it somewhere.</span></span> <span data-ttu-id="1e331-123">カーソルは、フォームまたはデータを削除するが正しく構成されているコントロールの領域を超えたときに変更されます。</span><span class="sxs-lookup"><span data-stu-id="1e331-123">The cursor will change when it crosses an area of a form or control that is correctly configured for dropping data.</span></span> <span data-ttu-id="1e331-124">設定して削除されたデータを受け入れるように Windows フォームまたはコントロール内の任意の領域ができる、<xref:System.Windows.Forms.Control.AllowDrop%2A>プロパティと処理、<xref:System.Windows.Forms.Control.DragEnter>と<xref:System.Windows.Forms.Control.DragDrop>イベント。</span><span class="sxs-lookup"><span data-stu-id="1e331-124">Any area within a Windows Form or control can be made to accept dropped data by setting the <xref:System.Windows.Forms.Control.AllowDrop%2A> property and handling the <xref:System.Windows.Forms.Control.DragEnter> and <xref:System.Windows.Forms.Control.DragDrop> events.</span></span>  
   
-#### ドロップを実行するには  
+#### <a name="to-perform-a-drop"></a><span data-ttu-id="1e331-125">Drop を実行するには</span><span class="sxs-lookup"><span data-stu-id="1e331-125">To perform a drop</span></span>  
   
-1.  <xref:System.Windows.Forms.Control.AllowDrop%2A> プロパティを true に設定します。  
+1.  <span data-ttu-id="1e331-126">設定、<xref:System.Windows.Forms.Control.AllowDrop%2A>プロパティを true にします。</span><span class="sxs-lookup"><span data-stu-id="1e331-126">Set the <xref:System.Windows.Forms.Control.AllowDrop%2A> property to true.</span></span>  
   
-2.  ドロップ先のコントロールの `DragEnter` イベントで、ドラッグされるデータが適切な型 \(この場合、<xref:System.Windows.Forms.Control.Text%2A>\) であることを確認します。  次に、コードでは、ドロップしたときの効果を <xref:System.Windows.Forms.DragDropEffects> 列挙定数の値に設定します。  詳細については、「<xref:System.Windows.Forms.DragEventArgs.Effect%2A>」を参照してください。  
+2.  <span data-ttu-id="1e331-127">`DragEnter`ドラッグされるデータが適切な型を確実に削除が行われる、コントロールのイベントを (この場合、 <xref:System.Windows.Forms.Control.Text%2A>)。</span><span class="sxs-lookup"><span data-stu-id="1e331-127">In the `DragEnter` event for the control where the drop will occur, ensure that the data being dragged is of an acceptable type (in this case, <xref:System.Windows.Forms.Control.Text%2A>).</span></span> <span data-ttu-id="1e331-128">コード内の値にドロップが発生したときに発生する効果を設定し、<xref:System.Windows.Forms.DragDropEffects>列挙します。</span><span class="sxs-lookup"><span data-stu-id="1e331-128">The code then sets the effect that will happen when the drop occurs to a value in the <xref:System.Windows.Forms.DragDropEffects> enumeration.</span></span> <span data-ttu-id="1e331-129">詳細については、「<xref:System.Windows.Forms.DragEventArgs.Effect%2A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1e331-129">For more information, see <xref:System.Windows.Forms.DragEventArgs.Effect%2A>.</span></span>  
   
     ```vb  
     Private Sub TextBox1_DragEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles TextBox1.DragEnter  
@@ -77,7 +79,6 @@ Windows ベースのアプリケーション内でドラッグ アンド ドロ�
          e.Effect = DragDropEffects.None  
        End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -89,21 +90,19 @@ Windows ベースのアプリケーション内でドラッグ アンド ドロ�
        else  
           e.Effect = DragDropEffects.None;  
     }  
-  
     ```  
   
     > [!NOTE]
-    >  <xref:System.Windows.Forms.DataObject.SetData%2A> メソッドの <xref:System.Object> パラメーターとして独自のオブジェクトを指定することで、固有の <xref:System.Windows.Forms.DataFormats> を定義できます。  その場合は、指定するオブジェクトがシリアル化できるオブジェクトであることを確認してください。  詳細については、「[ISerializable インターフェイス](frlrfSystemRuntimeSerializationISerializableClassTopic)」を参照してください。  
+    >  <span data-ttu-id="1e331-130">独自に定義することができます<xref:System.Windows.Forms.DataFormats>オブジェクトとして指定することによって、<xref:System.Object>のパラメーター、<xref:System.Windows.Forms.DataObject.SetData%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="1e331-130">You can define your own <xref:System.Windows.Forms.DataFormats> by specifying your own object as the <xref:System.Object> parameter of the <xref:System.Windows.Forms.DataObject.SetData%2A> method.</span></span> <span data-ttu-id="1e331-131">必要があります、これには、実施する際に指定されたオブジェクトがシリアル化可能であります。</span><span class="sxs-lookup"><span data-stu-id="1e331-131">Be sure, when doing this, that the object specified is serializable.</span></span> <span data-ttu-id="1e331-132">詳細については、「<xref:System.Runtime.Serialization.ISerializable>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1e331-132">For more information, see <xref:System.Runtime.Serialization.ISerializable>.</span></span>  
   
-3.  ドロップ先のコントロールの <xref:System.Windows.Forms.Control.DragDrop> イベントで、<xref:System.Windows.Forms.DataObject.GetData%2A> メソッドを使用して、ドラッグされるデータを取得します。  詳細については、「[DtaObject.Data プロパティ](frlrfSystemSecurityCryptographyXmlDataObjectClassDataTopic)」を参照してください。  
+3.  <span data-ttu-id="1e331-133"><xref:System.Windows.Forms.Control.DragDrop>を使用して、削除が行われる、コントロールのイベントを<xref:System.Windows.Forms.DataObject.GetData%2A>ドラッグされるデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="1e331-133">In the <xref:System.Windows.Forms.Control.DragDrop> event for the control where the drop will occur, use the <xref:System.Windows.Forms.DataObject.GetData%2A> method to retrieve the data being dragged.</span></span> <span data-ttu-id="1e331-134">詳細については、「<xref:System.Security.Cryptography.Xml.DataObject.Data%2A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1e331-134">For more information, see <xref:System.Security.Cryptography.Xml.DataObject.Data%2A>.</span></span>  
   
-     次の例では、データがドロップされるドラッグ先のコントロールは <xref:System.Windows.Forms.TextBox> コントロールです。  コードでは、<xref:System.Windows.Forms.TextBox> コントロールの <xref:System.Windows.Forms.Control.Text%2A> プロパティをドラッグされたデータと同じ内容に設定します。  
+     <span data-ttu-id="1e331-135">次の例で、<xref:System.Windows.Forms.TextBox>コントロールは、(、削除が行われる) にドラッグされているコントロール。</span><span class="sxs-lookup"><span data-stu-id="1e331-135">In the example below, a <xref:System.Windows.Forms.TextBox> control is the control being dragged to (where the drop will occur).</span></span> <span data-ttu-id="1e331-136">コード セット、<xref:System.Windows.Forms.Control.Text%2A>のプロパティ、<xref:System.Windows.Forms.TextBox>ドラッグされるデータと等しいを制御します。</span><span class="sxs-lookup"><span data-stu-id="1e331-136">The code sets the <xref:System.Windows.Forms.Control.Text%2A> property of the <xref:System.Windows.Forms.TextBox> control equal to the data being dragged.</span></span>  
   
     ```vb  
     Private Sub TextBox1_DragDrop(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles TextBox1.DragDrop  
        TextBox1.Text = e.Data.GetData(DataFormats.Text).ToString  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -112,13 +111,12 @@ Windows ベースのアプリケーション内でドラッグ アンド ドロ�
     {  
        textBox1.Text = e.Data.GetData(DataFormats.Text).ToString();  
     }  
-  
     ```  
   
     > [!NOTE]
-    >  さらに、<xref:System.Windows.Forms.DragEventArgs.KeyState%2A> プロパティを使用して、ドラッグ アンド ドロップ操作中に押されたキーに応じて特定の効果が得られるようにできます。たとえば一般的に、Ctrl キーを押しながらドラッグしたデータはコピーされます。  
+    >  <span data-ttu-id="1e331-137">さらに、使用できますが、<xref:System.Windows.Forms.DragEventArgs.KeyState%2A>プロパティ、キーによって、ドラッグ アンド ドロップ操作中に押されているように、特定の効果の発生 (たとえば、これは、CTRL キーが押されたときに、ドラッグしたデータをコピーする標準的な)。</span><span class="sxs-lookup"><span data-stu-id="1e331-137">Additionally, you can work with the <xref:System.Windows.Forms.DragEventArgs.KeyState%2A> property, so that, depending on keys depressed during the drag-and-drop operation, certain effects occur (for example, it is standard to copy the dragged data when the CTRL key is pressed).</span></span>  
   
-## 参照  
- [方法 : クリップボードにデータを追加する](../../../../docs/framework/winforms/advanced/how-to-add-data-to-the-clipboard.md)   
- [方法 : クリップボードからデータを取得する](../../../../docs/framework/winforms/advanced/how-to-retrieve-data-from-the-clipboard.md)   
- [ドラッグ アンド ドロップ操作とクリップボードのサポート](../../../../docs/framework/winforms/advanced/drag-and-drop-operations-and-clipboard-support.md)
+## <a name="see-also"></a><span data-ttu-id="1e331-138">関連項目</span><span class="sxs-lookup"><span data-stu-id="1e331-138">See Also</span></span>  
+ [<span data-ttu-id="1e331-139">方法: クリップボードにデータを追加する</span><span class="sxs-lookup"><span data-stu-id="1e331-139">How to: Add Data to the Clipboard</span></span>](../../../../docs/framework/winforms/advanced/how-to-add-data-to-the-clipboard.md)  
+ [<span data-ttu-id="1e331-140">方法: クリップボードからデータを取得する</span><span class="sxs-lookup"><span data-stu-id="1e331-140">How to: Retrieve Data from the Clipboard</span></span>](../../../../docs/framework/winforms/advanced/how-to-retrieve-data-from-the-clipboard.md)  
+ [<span data-ttu-id="1e331-141">ドラッグ アンド ドロップ操作とクリップボードのサポート</span><span class="sxs-lookup"><span data-stu-id="1e331-141">Drag-and-Drop Operations and Clipboard Support</span></span>](../../../../docs/framework/winforms/advanced/drag-and-drop-operations-and-clipboard-support.md)

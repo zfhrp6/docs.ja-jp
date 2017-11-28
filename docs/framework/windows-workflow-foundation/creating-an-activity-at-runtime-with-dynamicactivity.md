@@ -1,44 +1,48 @@
 ---
-title: "実行時における DynamicActivity を使用したアクティビティの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "実行時における DynamicActivity を使用したアクティビティの作成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1af85cc6-912d-449e-90c5-c5db3eca5ace
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c984d235521a86c9657630d7ace3341c68f806ec
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 実行時における DynamicActivity を使用したアクティビティの作成
-<xref:System.Activities.DynamicActivity> は、パブリック コンストラクターを持つ、具体的なシール クラスです。<xref:System.Activities.DynamicActivity> は、実行時にアクティビティ DOM を使用してアクティビティの機能を構築するために使用できます。  
+# <a name="creating-an-activity-at-runtime-with-dynamicactivity"></a><span data-ttu-id="b50da-102">実行時における DynamicActivity を使用したアクティビティの作成</span><span class="sxs-lookup"><span data-stu-id="b50da-102">Creating an Activity at Runtime with DynamicActivity</span></span>
+<span data-ttu-id="b50da-103"><xref:System.Activities.DynamicActivity> は、パブリック コンストラクターを持つ、具体的なシール クラスです。</span><span class="sxs-lookup"><span data-stu-id="b50da-103"><xref:System.Activities.DynamicActivity> is a concrete, sealed class with a public constructor.</span></span> <span data-ttu-id="b50da-104"><xref:System.Activities.DynamicActivity> は、実行時にアクティビティ DOM を使用してアクティビティの機能を構築するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="b50da-104"><xref:System.Activities.DynamicActivity> can be used to assemble activity functionality at runtime using an activity DOM.</span></span>  
   
-## DynamicActivity の機能  
- <xref:System.Activities.DynamicActivity> は、実行プロパティ、引数、変数にアクセスできますが、子アクティビティのスケジュール設定や追跡などのランタイム サービスにはアクセスできません。  
+## <a name="dynamicactivity-features"></a><span data-ttu-id="b50da-105">DynamicActivity の機能</span><span class="sxs-lookup"><span data-stu-id="b50da-105">DynamicActivity Features</span></span>  
+ <span data-ttu-id="b50da-106"><xref:System.Activities.DynamicActivity> は、実行プロパティ、引数、変数にアクセスできますが、子アクティビティのスケジュール設定や追跡などのランタイム サービスにはアクセスできません。</span><span class="sxs-lookup"><span data-stu-id="b50da-106"><xref:System.Activities.DynamicActivity> has access to execution properties, arguments and variables, but no access to run-time services such as scheduling child activities or tracking.</span></span>  
   
- 最上位のプロパティは、ワークフローの <xref:System.Activities.Argument> オブジェクトを使用して設定できます。命令型コードでは、これらの引数は新しい型で CLR プロパティを使用して作成されます。XAML では `x:Class` タグおよび `x:Member` タグを使用して、これらの引数が宣言されます。  
+ <span data-ttu-id="b50da-107">最上位のプロパティは、ワークフローの <xref:System.Activities.Argument> オブジェクトを使用して設定できます。</span><span class="sxs-lookup"><span data-stu-id="b50da-107">Top-level properties can be set using workflow <xref:System.Activities.Argument> objects.</span></span> <span data-ttu-id="b50da-108">命令型コードでは、これらの引数は新しい型で CLR プロパティを使用して作成されます。</span><span class="sxs-lookup"><span data-stu-id="b50da-108">In imperative code, these arguments are created using CLR properties on a new type.</span></span> <span data-ttu-id="b50da-109">XAML では `x:Class` タグおよび `x:Member` タグを使用して、これらの引数が宣言されます。</span><span class="sxs-lookup"><span data-stu-id="b50da-109">In XAML, they are declared using `x:Class` and `x:Member` tags.</span></span>  
   
- <xref:System.Activities.DynamicActivity> を使用して構築されたアクティビティは、<xref:System.ComponentModel.ICustomTypeDescriptor> を使用してデザイナーとやり取りします。デザイナーで作成されたアクティビティは、次の手順に示すように、<xref:System.Activities.XamlIntegration.ActivityXamlServices.Load%2A> を使用して動的に読み込むことができます。  
+ <span data-ttu-id="b50da-110"><xref:System.Activities.DynamicActivity> を使用して構築されたアクティビティは、<xref:System.ComponentModel.ICustomTypeDescriptor> を使用してデザイナーとやり取りします。</span><span class="sxs-lookup"><span data-stu-id="b50da-110">Activities constructed using <xref:System.Activities.DynamicActivity> interface with the designer using <xref:System.ComponentModel.ICustomTypeDescriptor>.</span></span> <span data-ttu-id="b50da-111">デザイナーで作成されたアクティビティは、次の手順に示すように、<xref:System.Activities.XamlIntegration.ActivityXamlServices.Load%2A> を使用して動的に読み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="b50da-111">Activities created in the designer can be loaded dynamically using <xref:System.Activities.XamlIntegration.ActivityXamlServices.Load%2A>, as demonstrated in the following procedure.</span></span>  
   
-#### 命令型コードを使用して実行時にアクティビティを作成するには  
+#### <a name="to-create-an-activity-at-runtime-using-imperative-code"></a><span data-ttu-id="b50da-112">命令型コードを使用して実行時にアクティビティを作成するには</span><span class="sxs-lookup"><span data-stu-id="b50da-112">To create an activity at runtime using imperative code</span></span>  
   
-1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を開きます。  
+1.  <span data-ttu-id="b50da-113">[!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を開きます。</span><span class="sxs-lookup"><span data-stu-id="b50da-113">Open[!INCLUDE[vs2010](../../../includes/vs2010-md.md)].</span></span>  
   
-2.  **\[ファイル\]**、**\[新規作成\]**、**\[プロジェクト\]** の順に選択します。**\[プロジェクトの種類\]** ウィンドウの **\[Visual C\#\]** の下にある **\[Workflow 4.0\]** を選択し、v2010 ノードを選択します。**\[テンプレート\]** ウィンドウで **\[シーケンシャル ワークフロー コンソール アプリケーション\]** をクリックします。新しいプロジェクトに DynamicActivitySample という名前を付けます。  
+2.  <span data-ttu-id="b50da-114">選択**ファイル**、**新しい**、**プロジェクト**です。</span><span class="sxs-lookup"><span data-stu-id="b50da-114">Select **File**, **New**, **Project**.</span></span> <span data-ttu-id="b50da-115">選択**Workflow 4.0**  **Visual c#**で、**プロジェクトの種類**ウィンドウ、および選択、 **v2010**ノード。</span><span class="sxs-lookup"><span data-stu-id="b50da-115">Select **Workflow 4.0** under **Visual C#** in the **Project Types** window, and select the **v2010** node.</span></span> <span data-ttu-id="b50da-116">選択**シーケンシャル ワークフロー コンソール アプリケーション**で、**テンプレート**ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="b50da-116">Select **Sequential Workflow Console Application** in the **Templates** window.</span></span> <span data-ttu-id="b50da-117">新しいプロジェクトに DynamicActivitySample という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="b50da-117">Name the new project DynamicActivitySample.</span></span>  
   
-3.  HelloActivity プロジェクトの Workflow1.xaml を右クリックし、**\[削除\]** をクリックします。  
+3.  <span data-ttu-id="b50da-118">HelloActivity プロジェクトの Workflow1.xaml を右クリックし **削除**です。</span><span class="sxs-lookup"><span data-stu-id="b50da-118">Right-click Workflow1.xaml in the HelloActivity project and select **Delete**.</span></span>  
   
-4.  Program.cs を開きます。次のディレクティブをファイルの先頭に追加します。  
+4.  <span data-ttu-id="b50da-119">Program.cs を開きます。</span><span class="sxs-lookup"><span data-stu-id="b50da-119">Open Program.cs.</span></span> <span data-ttu-id="b50da-120">次のディレクティブをファイルの先頭に追加します。</span><span class="sxs-lookup"><span data-stu-id="b50da-120">Add the following directive to the top of the file.</span></span>  
   
     ```  
     using System.Collections.Generic;  
     ```  
   
-5.  1 つの <xref:System.Activities.Statements.WriteLine> アクティビティを含む <xref:System.Activities.Statements.Sequence> アクティビティを作成する次のコードで `Main` メソッドの内容を置き換え、新しい動的アクティビティの <xref:System.Activities.DynamicActivity.Implementation%2A> プロパティに割り当てます。  
+5.  <span data-ttu-id="b50da-121">1 つの `Main` アクティビティを含む <xref:System.Activities.Statements.Sequence> アクティビティを作成する次のコードで <xref:System.Activities.Statements.WriteLine> メソッドの内容を置き換え、新しい動的アクティビティの <xref:System.Activities.DynamicActivity.Implementation%2A> プロパティに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="b50da-121">Replace the contents of the `Main` method with the following code, which creates a <xref:System.Activities.Statements.Sequence> activity that contains a single <xref:System.Activities.Statements.WriteLine> activity and assigns it to the <xref:System.Activities.DynamicActivity.Implementation%2A> property of a new dynamic activity.</span></span>  
   
     ```csharp  
     //Define the input argument for the activity  
@@ -69,28 +73,27 @@ caps.handback.revision: 9
     //Execute the activity with a parameter dictionary  
                 WorkflowInvoker.Invoke(dynamicWorkflow, new Dictionary<string, object> { { "Text", "Hello World!" } });  
                 Console.ReadLine();  
-  
     ```  
   
-6.  アプリケーションを実行します。コンソール ウィンドウに、テキスト "Hello World\!" が表示されます。  
+6.  <span data-ttu-id="b50da-122">アプリケーションを実行します。</span><span class="sxs-lookup"><span data-stu-id="b50da-122">Execute the application.</span></span> <span data-ttu-id="b50da-123">コンソール ウィンドウにテキスト"Hello World!"</span><span class="sxs-lookup"><span data-stu-id="b50da-123">A console window with the text "Hello World!"</span></span> <span data-ttu-id="b50da-124">表示されます。</span><span class="sxs-lookup"><span data-stu-id="b50da-124">displays.</span></span>  
   
-#### XAML を使用して実行時にアクティビティを作成するには  
+#### <a name="to-create-an-activity-at-runtime-using-xaml"></a><span data-ttu-id="b50da-125">XAML を使用して実行時にアクティビティを作成するには</span><span class="sxs-lookup"><span data-stu-id="b50da-125">To create an activity at runtime using XAML</span></span>  
   
-1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を開きます。  
+1.  <span data-ttu-id="b50da-126">[!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を開きます。</span><span class="sxs-lookup"><span data-stu-id="b50da-126">Open [!INCLUDE[vs2010](../../../includes/vs2010-md.md)].</span></span>  
   
-2.  **\[ファイル\]**、**\[新規作成\]**、**\[プロジェクト\]** の順に選択します。**\[プロジェクトの種類\]** ウィンドウの **\[Visual C\#\]** の下にある **\[Workflow 4.0\]** を選択し、v2010 ノードを選択します。**\[テンプレート\]** ウィンドウで **\[ワークフロー コンソール アプリケーション\]** をクリックします。新しいプロジェクトに DynamicActivitySample という名前を付けます。  
+2.  <span data-ttu-id="b50da-127">選択**ファイル**、**新しい**、**プロジェクト**です。</span><span class="sxs-lookup"><span data-stu-id="b50da-127">Select **File**, **New**, **Project**.</span></span> <span data-ttu-id="b50da-128">選択**Workflow 4.0**  **Visual c#**で、**プロジェクトの種類**ウィンドウ、および選択、 **v2010**ノード。</span><span class="sxs-lookup"><span data-stu-id="b50da-128">Select **Workflow 4.0** under **Visual C#** in the **Project Types** window, and select the **v2010** node.</span></span> <span data-ttu-id="b50da-129">選択**ワークフロー コンソール アプリケーション**で、**テンプレート**ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="b50da-129">Select  **Workflow Console Application** in the **Templates** window.</span></span> <span data-ttu-id="b50da-130">新しいプロジェクトに DynamicActivitySample という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="b50da-130">Name the new project DynamicActivitySample.</span></span>  
   
-3.  HelloActivity プロジェクトの Workflow1.xaml を開きます。デザイナーの下部にある **\[引数\]** オプションをクリックします。`String` 型の `TextToWrite` という新しい `In` 引数を作成します。  
+3.  <span data-ttu-id="b50da-131">HelloActivity プロジェクトの Workflow1.xaml を開きます。</span><span class="sxs-lookup"><span data-stu-id="b50da-131">Open Workflow1.xaml in the HelloActivity project.</span></span> <span data-ttu-id="b50da-132">クリックして、**引数**デザイナーの下部にあるオプション。</span><span class="sxs-lookup"><span data-stu-id="b50da-132">Click the **Arguments** option at the bottom of the designer.</span></span> <span data-ttu-id="b50da-133">`In` 型の `TextToWrite` という新しい `String` 引数を作成します。</span><span class="sxs-lookup"><span data-stu-id="b50da-133">Create a new `In` argument called `TextToWrite` of type `String`.</span></span>  
   
-4.  WriteLine アクティビティを、ツールボックスの **\[プリミティブ\]** セクションからデザイナー サーフェイスにドラッグします。値 `TextToWrite` をアクティビティの **\[テキスト\]** プロパティに割り当てます。  
+4.  <span data-ttu-id="b50da-134">ドラッグ、 **WriteLine**からアクティビティを**プリミティブ**デザイナー画面には、ツールボックスのセクションです。</span><span class="sxs-lookup"><span data-stu-id="b50da-134">Drag a **WriteLine** activity from the **Primitives** section of the toolbox onto the designer surface.</span></span> <span data-ttu-id="b50da-135">値を割り当てる`TextToWrite`を**テキスト**アクティビティのプロパティです。</span><span class="sxs-lookup"><span data-stu-id="b50da-135">Assign the value `TextToWrite` to the **Text** property of the activity.</span></span>  
   
-5.  Program.cs を開きます。次のディレクティブをファイルの先頭に追加します。  
+5.  <span data-ttu-id="b50da-136">Program.cs を開きます。</span><span class="sxs-lookup"><span data-stu-id="b50da-136">Open Program.cs.</span></span> <span data-ttu-id="b50da-137">次のディレクティブをファイルの先頭に追加します。</span><span class="sxs-lookup"><span data-stu-id="b50da-137">Add the following directive to the top of the file.</span></span>  
   
     ```  
     using System.Activities.XamlIntegration;  
     ```  
   
-6.  `Main` メソッドの内容を次のコードに置き換えます。  
+6.  <span data-ttu-id="b50da-138">`Main` メソッドの内容を次のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="b50da-138">Replace the contents of the `Main` method with the following code.</span></span>  
   
     ```  
     Activity act2 = ActivityXamlServices.Load(@"Workflow1.xaml");  
@@ -98,10 +101,10 @@ caps.handback.revision: 9
     Console.ReadLine();  
     ```  
   
-7.  アプリケーションを実行します。コンソール ウィンドウに、テキスト "Hello World\!" が表示されます。  
+7.  <span data-ttu-id="b50da-139">アプリケーションを実行します。</span><span class="sxs-lookup"><span data-stu-id="b50da-139">Execute the application.</span></span> <span data-ttu-id="b50da-140">コンソール ウィンドウにテキスト"Hello World!"</span><span class="sxs-lookup"><span data-stu-id="b50da-140">A console window with the text "Hello World!"</span></span> <span data-ttu-id="b50da-141">表示されます。</span><span class="sxs-lookup"><span data-stu-id="b50da-141">appears.</span></span>  
   
-8.  ソリューション エクスプローラーで、Workflow1.xaml ファイルを右クリックし、**\[コードの表示\]** をクリックします。アクティビティ クラスが `x:Class` を使用して作成され、プロパティが `x:Property` を使用して作成されています。  
+8.  <span data-ttu-id="b50da-142">Workflow1.xaml ファイルを右クリックし、**ソリューション エクスプ ローラー**選択**コードの表示**です。</span><span class="sxs-lookup"><span data-stu-id="b50da-142">Right-click the Workflow1.xaml file in the **Solution Explorer** and select **View Code**.</span></span> <span data-ttu-id="b50da-143">アクティビティ クラスが `x:Class` を使用して作成され、プロパティが `x:Property` を使用して作成されています。</span><span class="sxs-lookup"><span data-stu-id="b50da-143">Note that the activity class is created with `x:Class` and the property is created with `x:Property`.</span></span>  
   
-## 参照  
- [命令型コードを使用してワークフロー、アクティビティ、および式を作成する方法](../../../docs/framework/windows-workflow-foundation//authoring-workflows-activities-and-expressions-using-imperative-code.md)   
- [DynamicActivity の作成](../../../docs/framework/windows-workflow-foundation/samples/dynamicactivity-creation.md)
+## <a name="see-also"></a><span data-ttu-id="b50da-144">関連項目</span><span class="sxs-lookup"><span data-stu-id="b50da-144">See Also</span></span>  
+ [<span data-ttu-id="b50da-145">命令型コードを使用してワークフロー、アクティビティ、および式を作成する方法</span><span class="sxs-lookup"><span data-stu-id="b50da-145">Authoring Workflows, Activities, and Expressions Using Imperative Code</span></span>](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)  
+ [<span data-ttu-id="b50da-146">DynamicActivity の作成</span><span class="sxs-lookup"><span data-stu-id="b50da-146">DynamicActivity Creation</span></span>](../../../docs/framework/windows-workflow-foundation/samples/dynamicactivity-creation.md)

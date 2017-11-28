@@ -1,75 +1,77 @@
 ---
-title: "&lt;appDomainManagerType&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<appDomainManagerType> 要素"
-  - "appDomainManagerType 要素"
+title: "&lt;appDomainManagerType&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- appDomainManagerType element
+- <appDomainManagerType> element
 ms.assetid: ae8d5a7e-e7f7-47f7-98d9-455cc243a322
-caps.latest.revision: 7
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 56d68efe176540ba82ec7b86f35678905ebc970b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;appDomainManagerType&gt; 要素
-既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーとして機能する型を指定します。  
+# <a name="ltappdomainmanagertypegt-element"></a><span data-ttu-id="9c506-102">&lt;appDomainManagerType&gt;要素</span><span class="sxs-lookup"><span data-stu-id="9c506-102">&lt;appDomainManagerType&gt; Element</span></span>
+<span data-ttu-id="9c506-103">既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーの役割を果たす種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="9c506-103">Specifies the type that serves as the application domain manager for the default application domain.</span></span>  
   
-## 構文  
+ <span data-ttu-id="9c506-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="9c506-104">\<configuration></span></span>  
+<span data-ttu-id="9c506-105">\<ランタイム ></span><span class="sxs-lookup"><span data-stu-id="9c506-105">\<runtime></span></span>  
+<span data-ttu-id="9c506-106">\<appDomainManagerType ></span><span class="sxs-lookup"><span data-stu-id="9c506-106">\<appDomainManagerType></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="9c506-107">構文</span><span class="sxs-lookup"><span data-stu-id="9c506-107">Syntax</span></span>  
+  
+```xml  
 <appDomainManagerAssembly   
    value="type name" />  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="9c506-108">属性および要素</span><span class="sxs-lookup"><span data-stu-id="9c506-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="9c506-109">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="9c506-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="9c506-110">属性</span><span class="sxs-lookup"><span data-stu-id="9c506-110">Attributes</span></span>  
   
-|Attribute|説明|  
-|---------------|--------|  
-|`value`|必須の属性です。  プロセスの既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーとして機能する型の名前を、名前空間を含めて指定します。|  
+|<span data-ttu-id="9c506-111">属性</span><span class="sxs-lookup"><span data-stu-id="9c506-111">Attribute</span></span>|<span data-ttu-id="9c506-112">説明</span><span class="sxs-lookup"><span data-stu-id="9c506-112">Description</span></span>|  
+|---------------|-----------------|  
+|`value`|<span data-ttu-id="9c506-113">必須の属性です。</span><span class="sxs-lookup"><span data-stu-id="9c506-113">Required attribute.</span></span> <span data-ttu-id="9c506-114">プロセスの既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーとして機能する名前空間を含む、型の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="9c506-114">Specifies the name of the type, including the namespace, that serves as the application domain manager for the default application domain in the process.</span></span>|  
   
-### 子要素  
- なし。  
+### <a name="child-elements"></a><span data-ttu-id="9c506-115">子要素</span><span class="sxs-lookup"><span data-stu-id="9c506-115">Child Elements</span></span>  
+ <span data-ttu-id="9c506-116">なし。</span><span class="sxs-lookup"><span data-stu-id="9c506-116">None.</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="9c506-117">親要素</span><span class="sxs-lookup"><span data-stu-id="9c506-117">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
-|`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
+|<span data-ttu-id="9c506-118">要素</span><span class="sxs-lookup"><span data-stu-id="9c506-118">Element</span></span>|<span data-ttu-id="9c506-119">説明</span><span class="sxs-lookup"><span data-stu-id="9c506-119">Description</span></span>|  
+|-------------|-----------------|  
+|`configuration`|<span data-ttu-id="9c506-120">共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。</span><span class="sxs-lookup"><span data-stu-id="9c506-120">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`runtime`|<span data-ttu-id="9c506-121">アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="9c506-121">Contains information about assembly binding and garbage collection.</span></span>|  
   
-## 解説  
- アプリケーション ドメイン マネージャーの型を指定するには、この要素と [\<appDomainManagerAssembly\>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md) 要素の両方を指定する必要があります。  これらの要素のどちらかが指定されていない場合、もう一方の要素は無視されます。  
+## <a name="remarks"></a><span data-ttu-id="9c506-122">コメント</span><span class="sxs-lookup"><span data-stu-id="9c506-122">Remarks</span></span>  
+ <span data-ttu-id="9c506-123">アプリケーション ドメイン マネージャーの種類を指定するには、この両方の要素を指定する必要があります、 [ \<appDomainManagerAssembly >](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md)要素。</span><span class="sxs-lookup"><span data-stu-id="9c506-123">To specify the type of the application domain manager, you must specify both this element and the [\<appDomainManagerAssembly>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md) element.</span></span> <span data-ttu-id="9c506-124">これらの要素のいずれかが指定されていない場合、その他は無視されます。</span><span class="sxs-lookup"><span data-stu-id="9c506-124">If either of these elements is not specified, the other is ignored.</span></span>  
   
- 既定のアプリケーション ドメインが読み込まれるとき、<xref:System.TypeLoadException> は指定された型が [\<appDomainManagerAssembly\>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md) 要素で指定されたアセンブリにあるスローされます; とプロセスは起動しません。  
+ <span data-ttu-id="9c506-125">既定のアプリケーション ドメインが読み込まれるときに<xref:System.TypeLoadException>で指定されたアセンブリでは、指定した型が存在しない場合にスローされますが、 [ \<appDomainManagerAssembly >](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md)要素であるとプロセスが失敗する起動します。</span><span class="sxs-lookup"><span data-stu-id="9c506-125">When the default application domain is loaded, <xref:System.TypeLoadException> is thrown if the specified type does not exist in the assembly that is specified by the [\<appDomainManagerAssembly>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md) element; and the process fails to start.</span></span>  
   
- 既定のアプリケーション ドメインに対するアプリケーション ドメイン マネージャーの型を指定すると、既定のアプリケーション ドメインから作成される他のアプリケーション ドメインにも、そのアプリケーション ドメイン マネージャーの型が継承されます。  新しいアプリケーション ドメインに対して別のアプリケーション ドメイン マネージャーの型を指定するには、<xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=fullName> プロパティと <xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=fullName> プロパティを使用します。  
+ <span data-ttu-id="9c506-126">既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーの種類を指定すると、既定のアプリケーション ドメインから作成された他のアプリケーション ドメインは、アプリケーション ドメイン マネージャーの型を継承します。</span><span class="sxs-lookup"><span data-stu-id="9c506-126">When you specify the application domain manager type for the default application domain, other application domains created from the default application domain inherit the application domain manager type.</span></span> <span data-ttu-id="9c506-127">使用して、<xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=nameWithType>と<xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=nameWithType>プロパティを新しいアプリケーション ドメインの別のアプリケーション ドメイン マネージャーの種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="9c506-127">Use the <xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=nameWithType> and <xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=nameWithType> properties to specify a different application domain manager type for a new application domain.</span></span>  
   
- アプリケーション ドメイン マネージャーの型を指定する場合は、アプリケーションに完全信頼が必要です \(たとえば、デスクトップ上で実行されるアプリケーションは完全に信頼されています\)。アプリケーションに完全信頼がない場合は、<xref:System.TypeLoadException> がスローされます。  
+ <span data-ttu-id="9c506-128">アプリケーション ドメイン マネージャーの種類を指定するには、アプリケーションに完全な信頼が必要です。</span><span class="sxs-lookup"><span data-stu-id="9c506-128">Specifying the application domain manager type requires the application to have full trust.</span></span> <span data-ttu-id="9c506-129">(たとえば、デスクトップで実行されているアプリケーションが完全な信頼。)アプリケーションには、完全な信頼がない場合、<xref:System.TypeLoadException>がスローされます。</span><span class="sxs-lookup"><span data-stu-id="9c506-129">(For example, an application running on the desktop has full trust.) If the application does not have full trust, a <xref:System.TypeLoadException> is thrown.</span></span>  
   
- 型と名前空間の形式は、<xref:System.Type.FullName%2A?displayProperty=fullName> プロパティで使用される形式と同じです。  
+ <span data-ttu-id="9c506-130">名前空間と型の形式は、同じ形式に使用される、<xref:System.Type.FullName%2A?displayProperty=nameWithType>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="9c506-130">The format of the type and namespace is the same format that is used for the <xref:System.Type.FullName%2A?displayProperty=nameWithType> property.</span></span>  
   
- この構成要素は、[!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] 以降でのみ使用できます。  
+ <span data-ttu-id="9c506-131">この構成要素はでのみ使用できますが、[!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)]およびそれ以降。</span><span class="sxs-lookup"><span data-stu-id="9c506-131">This configuration element is available only in the [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] and later.</span></span>  
   
-## 使用例  
- 次の例は、プロセスの既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーとして、`AdMgrExample` アセンブリ内の `MyMgr` 型を指定する方法を示しています。  
+## <a name="example"></a><span data-ttu-id="9c506-132">例</span><span class="sxs-lookup"><span data-stu-id="9c506-132">Example</span></span>  
+ <span data-ttu-id="9c506-133">次の例は、プロセスの既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーを指定する方法を示しています、`MyMgr`に入力、`AdMgrExample`アセンブリ。</span><span class="sxs-lookup"><span data-stu-id="9c506-133">The following example shows how to specify that the application domain manager for the default application domain of a process is the `MyMgr` type in the `AdMgrExample` assembly.</span></span>  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <appDomainManagerType value="MyMgr" />  
@@ -79,10 +81,10 @@ caps.handback.revision: 7
 </configuration>  
 ```  
   
-## 参照  
- <xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=fullName>   
- <xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=fullName>   
- [\<appDomainManagerAssembly\> 要素](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md)   
- [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [SetAppDomainManagerType メソッド](../Topic/ICLRControl::SetAppDomainManagerType%20Method.md)
+## <a name="see-also"></a><span data-ttu-id="9c506-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="9c506-134">See Also</span></span>  
+ <xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=nameWithType>  
+ <xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="9c506-135">\<appDomainManagerAssembly > 要素</span><span class="sxs-lookup"><span data-stu-id="9c506-135">\<appDomainManagerAssembly> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md)  
+ [<span data-ttu-id="9c506-136">ランタイム設定スキーマ</span><span class="sxs-lookup"><span data-stu-id="9c506-136">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [<span data-ttu-id="9c506-137">構成ファイル スキーマ</span><span class="sxs-lookup"><span data-stu-id="9c506-137">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [<span data-ttu-id="9c506-138">SetAppDomainManagerType メソッド</span><span class="sxs-lookup"><span data-stu-id="9c506-138">SetAppDomainManagerType Method</span></span>](../../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-setappdomainmanagertype-method.md)

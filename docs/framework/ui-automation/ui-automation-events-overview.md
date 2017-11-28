@@ -1,52 +1,55 @@
 ---
-title: "UI Automation Events Overview | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "UI Automation, providers"
-  - "UI Automation, events"
-  - "clients, UI Automation"
-  - "events, UI Automation"
-  - "providers, UI Automation"
-  - "UI Automation, clients"
+title: "UI オートメーション イベントの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- UI Automation, providers
+- UI Automation, events
+- clients, UI Automation
+- events, UI Automation
+- providers, UI Automation
+- UI Automation, clients
 ms.assetid: 69eebd8b-39ed-40e7-93cc-4457c4caf746
-caps.latest.revision: 22
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: 9634c686d23503dcb4deae171f0023055c41ce2d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# UI Automation Events Overview
+# <a name="ui-automation-events-overview"></a><span data-ttu-id="03446-102">UI オートメーション イベントの概要</span><span class="sxs-lookup"><span data-stu-id="03446-102">UI Automation Events Overview</span></span>
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「[Windows Automation API: UI Automation \(Windows のオートメーション API: UI オートメーション\)](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
+>  <span data-ttu-id="03446-103">このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="03446-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="03446-104">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI Automation (Windows のオートメーション API: UI オートメーション)](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="03446-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] イベント通知は、スクリーン リーダーやスクリーン拡大鏡などの支援技術にとっての重要な機能です。 これらの UI オートメーション クライアントは、[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] で何かが発生したときに UI オートメーション プロバイダーが発生させるイベントを追跡し、その情報を使用してエンド ユーザーに通知します。  
+ [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]<span data-ttu-id="03446-105"> イベント通知は、スクリーン リーダーやスクリーン拡大鏡などの支援技術にとっての重要な機能です。</span><span class="sxs-lookup"><span data-stu-id="03446-105"> event notification is a key feature for assistive technologies such as screen readers and screen magnifiers.</span></span> <span data-ttu-id="03446-106">これらの UI オートメーション クライアントは、 [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] で何かが発生したときに UI オートメーション プロバイダーが発生させるイベントを追跡し、その情報を使用してエンド ユーザーに通知します。</span><span class="sxs-lookup"><span data-stu-id="03446-106">These UI Automation clients track events that are raised by UI Automation providers when something happens in the [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] and use the information to notify end users.</span></span>  
   
- これらのイベントにサブスクライブしているクライアントがあるか、それともイベントをリッスンするクライアントがなく、サブスクライブしているクライアントがまったくないかに応じて、プロバイダー アプリケーションが選択的にイベントを発生させることで効率が向上します。  
+ <span data-ttu-id="03446-107">これらのイベントにサブスクライブしているクライアントがあるか、それともイベントをリッスンするクライアントがなく、サブスクライブしているクライアントがまったくないかに応じて、プロバイダー アプリケーションが選択的にイベントを発生させることで効率が向上します。</span><span class="sxs-lookup"><span data-stu-id="03446-107">Efficiency is improved by allowing provider applications to raise events selectively, depending on whether any clients are subscribed to those events, or not at all, if no clients are listening for any events.</span></span>  
   
 <a name="Types_of_Events"></a>   
-## イベントの種類  
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベントは次のカテゴリに分けられます。  
+## <a name="types-of-events"></a><span data-ttu-id="03446-108">イベントの種類</span><span class="sxs-lookup"><span data-stu-id="03446-108">Types of Events</span></span>  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]<span data-ttu-id="03446-109"> イベントは次のカテゴリに分けられます。</span><span class="sxs-lookup"><span data-stu-id="03446-109"> events fall into the following categories.</span></span>  
   
-|イベント|説明|  
-|----------|--------|  
-|プロパティの変更|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 要素のプロパティまたはコントロール パターンが変更された場合に発生します。 たとえば、クライアントがアプリケーションのチェック ボックス コントロールの監視を必要とする場合に、<xref:System.Windows.Automation.TogglePattern.TogglePatternInformation.ToggleState%2A> プロパティ上のプロパティの変更イベントをリッスンするよう登録できます。 チェック ボックス コントロールがオンまたはオフになったときに、プロバイダーがイベントを発生させ、クライアントが必要なアクションを実行できます。|  
-|要素のアクション|[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] の変更がエンド ユーザーまたはプログラムによるアクティビティに起因する場合に発生します。たとえば、ボタンがクリックされたり、<xref:System.Windows.Automation.InvokePattern> を通じて呼び出される場合です。|  
-|構造の変更|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーの構造が変更された場合に発生します。 構造が変更されるのは、デスクトップ上で新しい [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] 項目が表示または非表示にされるか、削除された場合です。|  
-|グローバル デスクトップの変更|ある要素から別の要素にフォーカスが移った場合やウィンドウが閉じられた場合など、クライアントにグローバルに関連するアクションが起こった場合に発生します。|  
+|<span data-ttu-id="03446-110">イベント</span><span class="sxs-lookup"><span data-stu-id="03446-110">Event</span></span>|<span data-ttu-id="03446-111">説明</span><span class="sxs-lookup"><span data-stu-id="03446-111">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="03446-112">プロパティの変更</span><span class="sxs-lookup"><span data-stu-id="03446-112">Property change</span></span>|<span data-ttu-id="03446-113">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 要素のプロパティまたはコントロール パターンが変更された場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="03446-113">Raised when a property on an [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] element or control pattern changes.</span></span> <span data-ttu-id="03446-114">たとえば、クライアントがアプリケーションのチェック ボックス コントロールの監視を必要とする場合に、 <xref:System.Windows.Automation.TogglePattern.TogglePatternInformation.ToggleState%2A> プロパティ上のプロパティの変更イベントをリッスンするよう登録できます。</span><span class="sxs-lookup"><span data-stu-id="03446-114">For example, if a client needs to monitor an application's check box control, it can register to listen for a property change event on the <xref:System.Windows.Automation.TogglePattern.TogglePatternInformation.ToggleState%2A> property.</span></span> <span data-ttu-id="03446-115">チェック ボックス コントロールがオンまたはオフになったときに、プロバイダーがイベントを発生させ、クライアントが必要なアクションを実行できます。</span><span class="sxs-lookup"><span data-stu-id="03446-115">When the check box control is checked or unchecked, the provider raises the event and the client can act as necessary.</span></span>|  
+|<span data-ttu-id="03446-116">要素のアクション</span><span class="sxs-lookup"><span data-stu-id="03446-116">Element action</span></span>|<span data-ttu-id="03446-117">[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] の変更がエンド ユーザーまたはプログラムによるアクティビティに起因する場合に発生します。たとえば、ボタンがクリックされたり、 <xref:System.Windows.Automation.InvokePattern>を通じて呼び出される場合です。</span><span class="sxs-lookup"><span data-stu-id="03446-117">Raised when a change in the [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] results from end user or programmatic activity; for example, when a button is clicked or invoked through <xref:System.Windows.Automation.InvokePattern>.</span></span>|  
+|<span data-ttu-id="03446-118">構造の変更</span><span class="sxs-lookup"><span data-stu-id="03446-118">Structure change</span></span>|<span data-ttu-id="03446-119">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーの構造が変更された場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="03446-119">Raised when the structure of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree changes.</span></span> <span data-ttu-id="03446-120">構造が変更されるのは、デスクトップ上で新しい [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] 項目が表示または非表示にされるか、削除された場合です。</span><span class="sxs-lookup"><span data-stu-id="03446-120">The structure changes when new [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] items become visible, hidden, or removed on the desktop.</span></span>|  
+|<span data-ttu-id="03446-121">グローバル デスクトップの変更</span><span class="sxs-lookup"><span data-stu-id="03446-121">Global desktop change</span></span>|<span data-ttu-id="03446-122">ある要素から別の要素にフォーカスが移った場合やウィンドウが閉じられた場合など、クライアントにグローバルに関連するアクションが起こった場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="03446-122">Raised when actions of global interest to the client occur, such as when the focus shifts from one element to another, or when a window closes.</span></span>|  
   
- イベントによっては、必ずしも UI の状態が変更されたことを意味しません。 たとえば、ユーザーが Tab キーを押して、テキスト入力フィールドに移動し、フィールドを更新するボタンをクリックした場合、ユーザーが実際にテキストを変更していない場合でも `TextChangedEvent` が発生します。 イベントを処理する際、クライアント アプリケーションがアクションを起こす前に、実際に変更が行われたかどうかのチェックが必要となる場合があります。  
+ <span data-ttu-id="03446-123">イベントによっては、必ずしも UI の状態が変更されたことを意味しません。</span><span class="sxs-lookup"><span data-stu-id="03446-123">Some events do not necessarily mean that the state of the UI has changed.</span></span> <span data-ttu-id="03446-124">たとえば、ユーザーが Tab キーを押して、テキスト入力フィールドに移動し、フィールドを更新するボタンをクリックした場合、ユーザーが実際にテキストを変更していない場合でも `TextChangedEvent` が発生します。</span><span class="sxs-lookup"><span data-stu-id="03446-124">For example, if the user tabs to a text entry field and then clicks a button to update the field, a `TextChangedEvent` is raised even if the user did not actually change the text.</span></span> <span data-ttu-id="03446-125">イベントを処理する際、クライアント アプリケーションがアクションを起こす前に、実際に変更が行われたかどうかのチェックが必要となる場合があります。</span><span class="sxs-lookup"><span data-stu-id="03446-125">When processing an event, it may be necessary for a client application to check whether anything has actually changed before taking action.</span></span>  
   
- 次のイベントは、UI の状態が変更されていない場合でも発生する可能性があります。  
+ <span data-ttu-id="03446-126">次のイベントは、UI の状態が変更されていない場合でも発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="03446-126">The following events may be raised even when the state of the UI has not changed.</span></span>  
   
--   `AutomationPropertyChangedEvent` \(変更されたプロパティによって変わります\)  
+-   <span data-ttu-id="03446-127">`AutomationPropertyChangedEvent` (変更されたプロパティによって変わります)</span><span class="sxs-lookup"><span data-stu-id="03446-127">`AutomationPropertyChangedEvent` (depending on the property that has changed)</span></span>  
   
 -   `ElementSelectedEvent`  
   
@@ -55,40 +58,40 @@ caps.handback.revision: 22
 -   `TextChangedEvent`  
   
 <a name="UI_Automation_Event_Identifiers"></a>   
-## UI オートメーション イベント識別子  
- [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] イベントは、<xref:System.Windows.Automation.AutomationEvent> オブジェクトによって識別されます。<xref:System.Windows.Automation.AutomationIdentifier.Id%2A> プロパティには、イベントの種類を一意に識別する値が含まれます。  
+## <a name="ui-automation-event-identifiers"></a><span data-ttu-id="03446-128">UI オートメーション イベント識別子</span><span class="sxs-lookup"><span data-stu-id="03446-128">UI Automation Event Identifiers</span></span>  
+ [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]<span data-ttu-id="03446-129"> イベントは、 <xref:System.Windows.Automation.AutomationEvent> オブジェクトによって識別されます。</span><span class="sxs-lookup"><span data-stu-id="03446-129"> events are identified by <xref:System.Windows.Automation.AutomationEvent> objects.</span></span> <span data-ttu-id="03446-130"><xref:System.Windows.Automation.AutomationIdentifier.Id%2A> プロパティには、イベントの種類を一意に識別する値が含まれます。</span><span class="sxs-lookup"><span data-stu-id="03446-130">The <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> property contains a value that uniquely identifies the kind of event.</span></span>  
   
- <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> に指定できる値と、イベント引数に使用する種類を次の表に示します。 クライアントとプロバイダーが使用する識別子は、異なるクラスで同じ名前のフィールドです。  
+ <span data-ttu-id="03446-131"><xref:System.Windows.Automation.AutomationIdentifier.Id%2A> に指定できる値と、イベント引数に使用する種類を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="03446-131">The possible values for <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> are given in the following table, along with the type used for event arguments.</span></span> <span data-ttu-id="03446-132">クライアントとプロバイダーが使用する識別子は、異なるクラスで同じ名前のフィールドです。</span><span class="sxs-lookup"><span data-stu-id="03446-132">Note that the identifiers used by clients and providers are identically named fields from different classes.</span></span>  
   
-|クライアント識別子|プロバイダー識別子|イベント引数の種類|  
-|---------------|---------------|---------------|  
-|<xref:System.Windows.Automation.AutomationElement.AsyncContentLoadedEvent?displayProperty=fullName>|<xref:System.Windows.Automation.AutomationElementIdentifiers.AsyncContentLoadedEvent?displayProperty=fullName>|<xref:System.Windows.Automation.AsyncContentLoadedEventArgs>|  
-|<xref:System.Windows.Automation.SelectionItemPattern.ElementAddedToSelectionEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.SelectionItemPattern.ElementRemovedFromSelectionEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.SelectionItemPattern.ElementSelectedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.SelectionPattern.InvalidatedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.InvokePattern.InvokedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.AutomationElement.LayoutInvalidatedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.AutomationElement.MenuClosedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.AutomationElement.MenuOpenedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.TextPattern.TextChangedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.TextPattern.TextSelectionChangedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.AutomationElement.ToolTipClosedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.AutomationElement.ToolTipOpenedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent?displayProperty=fullName>|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.AutomationElementIdentifiers.LayoutInvalidatedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.AutomationElementIdentifiers.MenuClosedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.AutomationElementIdentifiers.MenuOpenedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.TextPatternIdentifiers.TextChangedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.TextPatternIdentifiers.TextSelectionChangedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.AutomationElementIdentifiers.ToolTipClosedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.AutomationElementIdentifiers.ToolTipOpenedEvent?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.WindowPatternIdentifiers.WindowOpenedEvent?displayProperty=fullName>|<xref:System.Windows.Automation.AutomationEventArgs>|  
-|<xref:System.Windows.Automation.AutomationElement.AutomationFocusChangedEvent?displayProperty=fullName>|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent?displayProperty=fullName>|<xref:System.Windows.Automation.AutomationFocusChangedEventArgs>|  
-|<xref:System.Windows.Automation.AutomationElement.AutomationPropertyChangedEvent?displayProperty=fullName>|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationPropertyChangedEvent?displayProperty=fullName>|<xref:System.Windows.Automation.AutomationPropertyChangedEventArgs>|  
-|<xref:System.Windows.Automation.AutomationElement.StructureChangedEvent?displayProperty=fullName>|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent?displayProperty=fullName>|<xref:System.Windows.Automation.StructureChangedEventArgs>|  
-|<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent?displayProperty=fullName>|<xref:System.Windows.Automation.WindowPatternIdentifiers.WindowClosedEvent?displayProperty=fullName>|<xref:System.Windows.Automation.WindowClosedEventArgs>|  
+|<span data-ttu-id="03446-133">クライアント識別子</span><span class="sxs-lookup"><span data-stu-id="03446-133">Client Identifier</span></span>|<span data-ttu-id="03446-134">プロバイダー識別子</span><span class="sxs-lookup"><span data-stu-id="03446-134">Provider identifier</span></span>|<span data-ttu-id="03446-135">イベント引数の種類</span><span class="sxs-lookup"><span data-stu-id="03446-135">Event Arguments Type</span></span>|  
+|-----------------------|-------------------------|--------------------------|  
+|<xref:System.Windows.Automation.AutomationElement.AsyncContentLoadedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.AutomationElementIdentifiers.AsyncContentLoadedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.AsyncContentLoadedEventArgs>|  
+|<xref:System.Windows.Automation.SelectionItemPattern.ElementAddedToSelectionEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.SelectionItemPattern.ElementRemovedFromSelectionEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.SelectionItemPattern.ElementSelectedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.SelectionPattern.InvalidatedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.InvokePattern.InvokedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElement.LayoutInvalidatedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElement.MenuClosedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElement.MenuOpenedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.TextPattern.TextChangedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.TextPattern.TextSelectionChangedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElement.ToolTipClosedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElement.ToolTipOpenedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElementIdentifiers.LayoutInvalidatedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElementIdentifiers.MenuClosedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElementIdentifiers.MenuOpenedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.TextPatternIdentifiers.TextChangedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.TextPatternIdentifiers.TextSelectionChangedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElementIdentifiers.ToolTipClosedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.AutomationElementIdentifiers.ToolTipOpenedEvent?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.WindowPatternIdentifiers.WindowOpenedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.AutomationEventArgs>|  
+|<xref:System.Windows.Automation.AutomationElement.AutomationFocusChangedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.AutomationFocusChangedEventArgs>|  
+|<xref:System.Windows.Automation.AutomationElement.AutomationPropertyChangedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationPropertyChangedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.AutomationPropertyChangedEventArgs>|  
+|<xref:System.Windows.Automation.AutomationElement.StructureChangedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.StructureChangedEventArgs>|  
+|<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.WindowPatternIdentifiers.WindowClosedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.WindowClosedEventArgs>|  
   
 <a name="UI_Automation_Event_Arguments"></a>   
-## UI オートメーション イベント引数  
- 次のクラスは、イベント引数をカプセル化します。  
+## <a name="ui-automation-event-arguments"></a><span data-ttu-id="03446-136">UI オートメーション イベント引数</span><span class="sxs-lookup"><span data-stu-id="03446-136">UI Automation Event Arguments</span></span>  
+ <span data-ttu-id="03446-137">次のクラスは、イベント引数をカプセル化します。</span><span class="sxs-lookup"><span data-stu-id="03446-137">The following classes encapsulate event arguments.</span></span>  
   
-|クラス|説明|  
-|---------|--------|  
-|<xref:System.Windows.Automation.AsyncContentLoadedEventArgs>|読み込みが完了した割合など、コンテンツの非同期読み込みに関する情報を含んでいます。|  
-|<xref:System.Windows.Automation.AutomationEventArgs>|追加データを必要としない単純なイベントに関する情報を含んでいます。|  
-|<xref:System.Windows.Automation.AutomationFocusChangedEventArgs>|ある要素から別の要素への入力フォーカスの変化に関する情報を含んでいます。 この種類のイベントは、プロバイダーではなく、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] システムによって発生します。|  
-|<xref:System.Windows.Automation.AutomationPropertyChangedEventArgs>|要素のプロパティ値またはコントロール パターンの変更に関する情報を含んでいます。|  
-|<xref:System.Windows.Automation.StructureChangedEventArgs>|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーの変更に関する情報を含んでいます。|  
-|<xref:System.Windows.Automation.WindowClosedEventArgs>|ウィンドウ クローズに関する情報を含んでいます。|  
+|<span data-ttu-id="03446-138">クラス</span><span class="sxs-lookup"><span data-stu-id="03446-138">Class</span></span>|<span data-ttu-id="03446-139">説明</span><span class="sxs-lookup"><span data-stu-id="03446-139">Description</span></span>|  
+|-----------|-----------------|  
+|<xref:System.Windows.Automation.AsyncContentLoadedEventArgs>|<span data-ttu-id="03446-140">読み込みが完了した割合など、コンテンツの非同期読み込みに関する情報を含んでいます。</span><span class="sxs-lookup"><span data-stu-id="03446-140">Contains information about the asynchronous loading of content, including the percentage of loading completed.</span></span>|  
+|<xref:System.Windows.Automation.AutomationEventArgs>|<span data-ttu-id="03446-141">追加データを必要としない単純なイベントに関する情報を含んでいます。</span><span class="sxs-lookup"><span data-stu-id="03446-141">Contains information about a simple event that requires no extra data.</span></span>|  
+|<xref:System.Windows.Automation.AutomationFocusChangedEventArgs>|<span data-ttu-id="03446-142">ある要素から別の要素への入力フォーカスの変化に関する情報を含んでいます。</span><span class="sxs-lookup"><span data-stu-id="03446-142">Contains information about a change in input focus from one element to another.</span></span> <span data-ttu-id="03446-143">この種類のイベントは、プロバイダーではなく、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] システムによって発生します。</span><span class="sxs-lookup"><span data-stu-id="03446-143">Events of this type are raised by the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] system, not by providers.</span></span>|  
+|<xref:System.Windows.Automation.AutomationPropertyChangedEventArgs>|<span data-ttu-id="03446-144">要素のプロパティ値またはコントロール パターンの変更に関する情報を含んでいます。</span><span class="sxs-lookup"><span data-stu-id="03446-144">Contains information about a change in a property value of an element or control pattern.</span></span>|  
+|<xref:System.Windows.Automation.StructureChangedEventArgs>|<span data-ttu-id="03446-145">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーの変更に関する情報を含んでいます。</span><span class="sxs-lookup"><span data-stu-id="03446-145">Contains information about a change in the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree.</span></span>|  
+|<xref:System.Windows.Automation.WindowClosedEventArgs>|<span data-ttu-id="03446-146">ウィンドウ クローズに関する情報を含んでいます。</span><span class="sxs-lookup"><span data-stu-id="03446-146">Contains information about a window closing.</span></span>|  
   
- すべてのイベント引数クラスには、<xref:System.Windows.Automation.AutomationEventArgs.EventId%2A> メンバーが含まれます。 この識別子は <xref:System.Windows.Automation.AutomationEvent> にカプセル化されます。  
+ <span data-ttu-id="03446-147">すべてのイベント引数クラスには、 <xref:System.Windows.Automation.AutomationEventArgs.EventId%2A> メンバーが含まれます。</span><span class="sxs-lookup"><span data-stu-id="03446-147">All the event argument classes contain an <xref:System.Windows.Automation.AutomationEventArgs.EventId%2A> member.</span></span> <span data-ttu-id="03446-148">この識別子は <xref:System.Windows.Automation.AutomationEvent>にカプセル化されます。</span><span class="sxs-lookup"><span data-stu-id="03446-148">This identifier is encapsulated in an <xref:System.Windows.Automation.AutomationEvent>.</span></span>  
   
- イベントを識別するために使用する <xref:System.Windows.Automation.AutomationEvent> オブジェクトは、<xref:System.Windows.Automation.AutomationElementIdentifiers> およびコントロール パターン識別子クラス \(<xref:System.Windows.Automation.DockPatternIdentifiers> など\) のフィールドからプロバイダーによって取得されます。 等価のフィールドが、<xref:System.Windows.Automation.AutomationElement> およびコントロール パターン クラス \(<xref:System.Windows.Automation.DockPattern> など\) のフィールドからクライアント アプリケーションによって取得されます。  
+ <span data-ttu-id="03446-149">イベントを識別するために使用する <xref:System.Windows.Automation.AutomationEvent> オブジェクトは、 <xref:System.Windows.Automation.AutomationElementIdentifiers> およびコントロール パターン識別子クラス ( <xref:System.Windows.Automation.DockPatternIdentifiers>など) のフィールドからプロバイダーによって取得されます。</span><span class="sxs-lookup"><span data-stu-id="03446-149">The <xref:System.Windows.Automation.AutomationEvent> objects used to identify events are obtained by providers from fields in <xref:System.Windows.Automation.AutomationElementIdentifiers> and control pattern identifier classes such as <xref:System.Windows.Automation.DockPatternIdentifiers>.</span></span> <span data-ttu-id="03446-150">等価のフィールドが、 <xref:System.Windows.Automation.AutomationElement> およびコントロール パターン クラス ( <xref:System.Windows.Automation.DockPattern>など) のフィールドからクライアント アプリケーションによって取得されます。</span><span class="sxs-lookup"><span data-stu-id="03446-150">The equivalent fields are obtained by client applications from fields in <xref:System.Windows.Automation.AutomationElement> and control pattern classes such as <xref:System.Windows.Automation.DockPattern>.</span></span>  
   
- イベント識別子の一覧については、「[UI Automation Events for Clients](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)」を参照してください。  
+ <span data-ttu-id="03446-151">イベント識別子の一覧については、「 [UI Automation Events for Clients](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="03446-151">For a list of event identifiers, see [UI Automation Events for Clients](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md).</span></span>  
   
-## 参照  
- [UI Automation Events for Clients](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)   
- [Server\-Side UI Automation Provider Implementation](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)   
- [Subscribe to UI Automation Events](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)
+## <a name="see-also"></a><span data-ttu-id="03446-152">関連項目</span><span class="sxs-lookup"><span data-stu-id="03446-152">See Also</span></span>  
+ [<span data-ttu-id="03446-153">クライアントの UI オートメーション イベント</span><span class="sxs-lookup"><span data-stu-id="03446-153">UI Automation Events for Clients</span></span>](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)  
+ [<span data-ttu-id="03446-154">サーバー側 UI オートメーション プロバイダーの実装</span><span class="sxs-lookup"><span data-stu-id="03446-154">Server-Side UI Automation Provider Implementation</span></span>](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)  
+ [<span data-ttu-id="03446-155">UI オートメーション イベントにサブスクライブします。</span><span class="sxs-lookup"><span data-stu-id="03446-155">Subscribe to UI Automation Events</span></span>](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)

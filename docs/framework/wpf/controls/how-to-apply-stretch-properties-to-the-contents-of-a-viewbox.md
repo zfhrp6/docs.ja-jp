@@ -1,40 +1,46 @@
 ---
-title: "方法 : Viewbox のコンテンツに Stretch プロパティを適用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "コントロール, Viewbox"
-  - "Stretch プロパティ"
-  - "StretchDirection プロパティ"
-  - "Viewbox コントロール"
+title: "方法 : Viewbox のコンテンツに Stretch プロパティを適用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- StretchDirection properties [WPF]
+- Stretch properties [WPF]
+- controls [WPF], Viewbox
+- Viewbox control [WPF]
 ms.assetid: b9c22ef4-bce4-4300-9e0c-8260b7db83cc
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f6e93c744a8d7c294556e80f0ac4bf1f973ea5c1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Viewbox のコンテンツに Stretch プロパティを適用する
-## 使用例  
- この例では、<xref:System.Windows.Controls.Viewbox> の <xref:System.Windows.Controls.Viewbox.StretchDirection%2A> プロパティの値と <xref:System.Windows.Controls.Viewbox.Stretch%2A> プロパティの値を変更する方法を示します。  
+# <a name="how-to-apply-stretch-properties-to-the-contents-of-a-viewbox"></a><span data-ttu-id="fc29c-102">方法 : Viewbox のコンテンツに Stretch プロパティを適用する</span><span class="sxs-lookup"><span data-stu-id="fc29c-102">How to: Apply Stretch Properties to the Contents of a Viewbox</span></span>
+## <a name="example"></a><span data-ttu-id="fc29c-103">例</span><span class="sxs-lookup"><span data-stu-id="fc29c-103">Example</span></span>  
+ <span data-ttu-id="fc29c-104">この例の値を変更する方法を示しています、<xref:System.Windows.Controls.Viewbox.StretchDirection%2A>と<xref:System.Windows.Controls.Viewbox.Stretch%2A>のプロパティ、<xref:System.Windows.Controls.Viewbox>です。</span><span class="sxs-lookup"><span data-stu-id="fc29c-104">This example shows how to change the value of the <xref:System.Windows.Controls.Viewbox.StretchDirection%2A> and <xref:System.Windows.Controls.Viewbox.Stretch%2A> properties of a <xref:System.Windows.Controls.Viewbox>.</span></span>  
   
- 最初の例では、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] を使用して <xref:System.Windows.Controls.Viewbox> 要素を定義します。  ここでは、400 の <xref:System.Windows.FrameworkElement.MaxWidth%2A> と 400 の <xref:System.Windows.FrameworkElement.MaxHeight%2A> を割り当てます。  この例では、<xref:System.Windows.Controls.Image> 要素を <xref:System.Windows.Controls.Viewbox> 内に入れ子にします。  <xref:System.Windows.Controls.Viewbox.Stretch%2A> 列挙体と <xref:System.Windows.Controls.StretchDirection> 列挙体のプロパティ値に対応する <xref:System.Windows.Controls.Button> 要素は、入れ子になった <xref:System.Windows.Controls.Image> の伸縮動作を操作します。  
+ <span data-ttu-id="fc29c-105">最初の例では[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]を定義する、<xref:System.Windows.Controls.Viewbox>要素。</span><span class="sxs-lookup"><span data-stu-id="fc29c-105">The first example uses [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] to define a <xref:System.Windows.Controls.Viewbox> element.</span></span> <span data-ttu-id="fc29c-106">割り当てます、<xref:System.Windows.FrameworkElement.MaxWidth%2A>と<xref:System.Windows.FrameworkElement.MaxHeight%2A>400 です。</span><span class="sxs-lookup"><span data-stu-id="fc29c-106">It assigns a <xref:System.Windows.FrameworkElement.MaxWidth%2A> and <xref:System.Windows.FrameworkElement.MaxHeight%2A> of 400.</span></span> <span data-ttu-id="fc29c-107">例の入れ子、<xref:System.Windows.Controls.Image>内の要素、<xref:System.Windows.Controls.Viewbox>です。</span><span class="sxs-lookup"><span data-stu-id="fc29c-107">The example nests an <xref:System.Windows.Controls.Image> element within the <xref:System.Windows.Controls.Viewbox>.</span></span> <span data-ttu-id="fc29c-108"><xref:System.Windows.Controls.Button>プロパティの値に対応する要素、<xref:System.Windows.Controls.Viewbox.Stretch%2A>と<xref:System.Windows.Controls.StretchDirection>列挙体は、入れ子になったの伸縮動作を操作<xref:System.Windows.Controls.Image>です。</span><span class="sxs-lookup"><span data-stu-id="fc29c-108"><xref:System.Windows.Controls.Button> elements that correspond to the property values for the <xref:System.Windows.Controls.Viewbox.Stretch%2A> and <xref:System.Windows.Controls.StretchDirection> enumerations manipulate the stretching behavior of the nested <xref:System.Windows.Controls.Image>.</span></span>  
   
- [!code-xml[viewboxStretchLayoutSamp#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/viewboxStretchLayoutSamp/CSharp/Window1.xaml#1)]  
+ [!code-xaml[viewboxStretchLayoutSamp#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/viewboxStretchLayoutSamp/CSharp/Window1.xaml#1)]  
   
- 次の分離コード ファイルは、前の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の例で定義した <xref:System.Windows.Controls.Button> の <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントを処理します。  
+ <span data-ttu-id="fc29c-109">次のコード ビハインド ファイル ハンドル、 <xref:System.Windows.Controls.Button> <xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベントを以前[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]の例を定義します。</span><span class="sxs-lookup"><span data-stu-id="fc29c-109">The following code-behind file handles the <xref:System.Windows.Controls.Button> <xref:System.Windows.Controls.Primitives.ButtonBase.Click> events that the previous [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] example defines.</span></span>  
   
  [!code-csharp[viewboxStretchLayoutSamp#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/viewboxStretchLayoutSamp/CSharp/Window1.xaml.cs#2)]
  [!code-vb[viewboxStretchLayoutSamp#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/viewboxStretchLayoutSamp/VisualBasic/Window1.xaml.vb#2)]  
   
-## 参照  
- <xref:System.Windows.Controls.Viewbox>   
- <xref:System.Windows.Media.Stretch>   
+## <a name="see-also"></a><span data-ttu-id="fc29c-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="fc29c-110">See Also</span></span>  
+ <xref:System.Windows.Controls.Viewbox>  
+ <xref:System.Windows.Media.Stretch>  
  <xref:System.Windows.Controls.StretchDirection>

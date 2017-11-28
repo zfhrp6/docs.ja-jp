@@ -1,25 +1,28 @@
 ---
-title: "ServiceDebugBehavior | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: ServiceDebugBehavior
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a5ec9061-1e95-43fb-b0d9-dbd0a7bc3c44
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 2d6b866c90e3e6c6e72dc75f230bcf7b4e03a6bb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ServiceDebugBehavior
-ServiceDebugBehavior  
+# <a name="servicedebugbehavior"></a><span data-ttu-id="16bef-102">ServiceDebugBehavior</span><span class="sxs-lookup"><span data-stu-id="16bef-102">ServiceDebugBehavior</span></span>
+<span data-ttu-id="16bef-103">ServiceDebugBehavior</span><span class="sxs-lookup"><span data-stu-id="16bef-103">ServiceDebugBehavior</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="16bef-104">構文</span><span class="sxs-lookup"><span data-stu-id="16bef-104">Syntax</span></span>  
   
 ```  
 class ServiceDebugBehavior : Behavior  
@@ -32,52 +35,52 @@ class ServiceDebugBehavior : Behavior
 };  
 ```  
   
-## メソッド  
- ServiceDebugBehavior クラスで定義されるメソッドはありません。  
+## <a name="methods"></a><span data-ttu-id="16bef-105">メソッド</span><span class="sxs-lookup"><span data-stu-id="16bef-105">Methods</span></span>  
+ <span data-ttu-id="16bef-106">ServiceDebugBehavior クラスで定義されるメソッドはありません。</span><span class="sxs-lookup"><span data-stu-id="16bef-106">The ServiceDebugBehavior class does not define any methods.</span></span>  
   
-## プロパティ  
- ServiceDebugBehavior クラスには、次のプロパティがあります。  
+## <a name="properties"></a><span data-ttu-id="16bef-107">プロパティ</span><span class="sxs-lookup"><span data-stu-id="16bef-107">Properties</span></span>  
+ <span data-ttu-id="16bef-108">ServiceDebugBehavior クラスには、次のプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="16bef-108">The ServiceDebugBehavior class has the following properties:</span></span>  
   
-### HttpHelpPageEnabled  
- データ型 : boolean  
+### <a name="httphelppageenabled"></a><span data-ttu-id="16bef-109">HttpHelpPageEnabled</span><span class="sxs-lookup"><span data-stu-id="16bef-109">HttpHelpPageEnabled</span></span>  
+ <span data-ttu-id="16bef-110">データ型 : boolean</span><span class="sxs-lookup"><span data-stu-id="16bef-110">Data type: boolean</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="16bef-111">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="16bef-111">Access type: Read-only</span></span>  
   
- `HttpGetUrl` 属性によって制御されるアドレスで、サービスが WSDL を公開するかどうかを制御します。  
+ <span data-ttu-id="16bef-112">`HttpGetUrl` 属性によって制御されるアドレスで、サービスが WSDL を公開するかどうかを制御します。</span><span class="sxs-lookup"><span data-stu-id="16bef-112">Controls whether the service publishes its WSDL at the address controlled by the `HttpGetUrl` attribute.</span></span>  
   
-### HttpHelpPageUrl  
- データ型 : 文字列  
+### <a name="httphelppageurl"></a><span data-ttu-id="16bef-113">HttpHelpPageUrl</span><span class="sxs-lookup"><span data-stu-id="16bef-113">HttpHelpPageUrl</span></span>  
+ <span data-ttu-id="16bef-114">データ型: string</span><span class="sxs-lookup"><span data-stu-id="16bef-114">Data type: string</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="16bef-115">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="16bef-115">Access type: Read-only</span></span>  
   
- HTTP を使用した取得のために、サービス WSDL が公開される場所を設定します。  
+ <span data-ttu-id="16bef-116">HTTP を使用した取得のために、サービス WSDL が公開される場所を設定します。</span><span class="sxs-lookup"><span data-stu-id="16bef-116">Sets the location at which the service WSDL is published for retrieval using HTTP.</span></span>  
   
-### HttpsHelpPageEnabled  
- データ型 : boolean  
+### <a name="httpshelppageenabled"></a><span data-ttu-id="16bef-117">HttpsHelpPageEnabled</span><span class="sxs-lookup"><span data-stu-id="16bef-117">HttpsHelpPageEnabled</span></span>  
+ <span data-ttu-id="16bef-118">データ型 : boolean</span><span class="sxs-lookup"><span data-stu-id="16bef-118">Data type: boolean</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="16bef-119">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="16bef-119">Access type: Read-only</span></span>  
   
- `HttpsGetUrl` 属性によって制御されるアドレスで、サービスが HTTPS を介して WSDL を公開するかどうかを制御します。  
+ <span data-ttu-id="16bef-120">`HttpsGetUrl` 属性によって制御されるアドレスで、サービスが HTTPS を介して WSDL を公開するかどうかを制御します。</span><span class="sxs-lookup"><span data-stu-id="16bef-120">Controls whether the service publishes its WSDL over HTTPS at the address controlled by the `HttpsGetUrl` attribute.</span></span>  
   
-### HttpsHelpPageUrl  
- データ型 : string  
+### <a name="httpshelppageurl"></a><span data-ttu-id="16bef-121">HttpsHelpPageUrl</span><span class="sxs-lookup"><span data-stu-id="16bef-121">HttpsHelpPageUrl</span></span>  
+ <span data-ttu-id="16bef-122">データ型: string</span><span class="sxs-lookup"><span data-stu-id="16bef-122">Data type: string</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="16bef-123">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="16bef-123">Access type: Read-only</span></span>  
   
- HTTPS を使用した取得のために、サービス WSDL が公開される場所を設定します。  
+ <span data-ttu-id="16bef-124">HTTPS を使用した取得のために、サービス WSDL が公開される場所を設定します。</span><span class="sxs-lookup"><span data-stu-id="16bef-124">Sets the location at which the service WSDL is published for retrieval using HTTPS.</span></span>  
   
-### IncludeExceptionDetailInFaults  
- データ型 : boolean  
+### <a name="includeexceptiondetailinfaults"></a><span data-ttu-id="16bef-125">IncludeExceptionDetailInFaults</span><span class="sxs-lookup"><span data-stu-id="16bef-125">IncludeExceptionDetailInFaults</span></span>  
+ <span data-ttu-id="16bef-126">データ型 : boolean</span><span class="sxs-lookup"><span data-stu-id="16bef-126">Data type: boolean</span></span>  
   
- アクセスの種類 : 読み取り専用  
+ <span data-ttu-id="16bef-127">アクセスの種類 : 読み取り専用</span><span class="sxs-lookup"><span data-stu-id="16bef-127">Access type: Read-only</span></span>  
   
- デバッグの目的でクライアントに返される SOAP エラーの詳細に、マネージ例外情報を含めるかどうかを指定します。  
+ <span data-ttu-id="16bef-128">デバッグの目的でクライアントに返される SOAP エラーの詳細に、マネージ例外情報を含めるかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="16bef-128">Specifies whether to include managed exception information in the detail of SOAP faults returned to the clients for debugging purposes.</span></span>  
   
-## 要件  
+## <a name="requirements"></a><span data-ttu-id="16bef-129">要件</span><span class="sxs-lookup"><span data-stu-id="16bef-129">Requirements</span></span>  
   
-|MOF|Servicemodel.mof にて宣言済み。|  
-|---------|------------------------------|  
-|名前空間|root\\ServiceModel で定義|  
+|<span data-ttu-id="16bef-130">MOF</span><span class="sxs-lookup"><span data-stu-id="16bef-130">MOF</span></span>|<span data-ttu-id="16bef-131">Servicemodel.mof にて宣言済み。</span><span class="sxs-lookup"><span data-stu-id="16bef-131">Declared in Servicemodel.mof.</span></span>|  
+|---------|-----------------------------------|  
+|<span data-ttu-id="16bef-132">Namespace</span><span class="sxs-lookup"><span data-stu-id="16bef-132">Namespace</span></span>|<span data-ttu-id="16bef-133">root\ServiceModel で定義</span><span class="sxs-lookup"><span data-stu-id="16bef-133">Defined in root\ServiceModel</span></span>|  
   
-## 参照  
+## <a name="see-also"></a><span data-ttu-id="16bef-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="16bef-134">See Also</span></span>  
  <xref:System.ServiceModel.Description.ServiceDebugBehavior>

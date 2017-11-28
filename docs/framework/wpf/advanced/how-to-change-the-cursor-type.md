@@ -1,40 +1,46 @@
 ---
-title: "方法 : カーソルの種類を変更する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "カーソル (マウス ポインター)"
-  - "マウス ポインター (カーソル), カーソルの種類"
+title: "方法 : カーソルの種類を変更する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- mouse pointer [WPF], cursor type
+- cursor (mouse pointer)
 ms.assetid: 08c945a7-8ab0-4320-acf3-0b4955a344c2
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 41cd8c9cd647c7efbc4e6cf13517ed638245e51c
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : カーソルの種類を変更する
-特定の要素およびアプリケーションに対してマウス ポインターの <xref:System.Windows.Input.Cursor> を変更する方法を次の例に示します。  
+# <a name="how-to-change-the-cursor-type"></a><span data-ttu-id="f665a-102">方法 : カーソルの種類を変更する</span><span class="sxs-lookup"><span data-stu-id="f665a-102">How to: Change the Cursor Type</span></span>
+<span data-ttu-id="f665a-103">この例を変更する方法を示しています、<xref:System.Windows.Input.Cursor>とアプリケーションの特定の要素にマウス ポインターのです。</span><span class="sxs-lookup"><span data-stu-id="f665a-103">This example shows how to change the <xref:System.Windows.Input.Cursor> of the mouse pointer for a specific element and for the application.</span></span>  
   
- この例は、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] ファイルと分離コード ファイルで構成されています。  
+ <span data-ttu-id="f665a-104">この例は、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]ファイルとファイルに隠れているコード。</span><span class="sxs-lookup"><span data-stu-id="f665a-104">This example consists of a [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] file and a code behind file.</span></span>  
   
-## 使用例  
- この例で作成されるユーザー インターフェイスは、目的の <xref:System.Windows.Input.Cursor> を選択するための <xref:System.Windows.Controls.ComboBox>、カーソルの変更を単一の要素のみまたはアプリケーション全体のどちらに適用するかを決定する一組の <xref:System.Windows.Controls.RadioButton> オブジェクト、および新しいカーソルの適用対象の要素である <xref:System.Windows.Controls.Border> で構成されます。  
+## <a name="example"></a><span data-ttu-id="f665a-105">例</span><span class="sxs-lookup"><span data-stu-id="f665a-105">Example</span></span>  
+ <span data-ttu-id="f665a-106">ユーザー インターフェイスを作成するから構成される、<xref:System.Windows.Controls.ComboBox>目的を選択する<xref:System.Windows.Input.Cursor>、1 組の<xref:System.Windows.Controls.RadioButton>カーソルの変更は 1 つの要素のみに適用されますか、アプリケーション全体に適用されるかを確認するオブジェクトと<xref:System.Windows.Controls.Border>これは、新しいカーソルに適用される要素です。</span><span class="sxs-lookup"><span data-stu-id="f665a-106">The user interface is created, which consists of a <xref:System.Windows.Controls.ComboBox> to select the desired <xref:System.Windows.Input.Cursor>, a pair of <xref:System.Windows.Controls.RadioButton> objects to determine if the cursor change applies to only a single element or applies to the entire application, and a <xref:System.Windows.Controls.Border> which is the element that the new cursor is applied to.</span></span>  
   
- [!code-xml[cursors#ChangeCursorsXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/cursors/CSharp/Window1.xaml#changecursorsxaml)]  
+ [!code-xaml[cursors#ChangeCursorsXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/cursors/CSharp/Window1.xaml#changecursorsxaml)]  
   
- 次の分離コードでは、<xref:System.Windows.Controls.ComboBox> でカーソルの種類を変更すると呼び出される <xref:System.Windows.Controls.Primitives.Selector.SelectionChanged> イベント ハンドラーを作成します。  switch ステートメントは、カーソル名でフィルター処理を行って、*DisplayArea* という名前の <xref:System.Windows.Controls.Border> の <xref:System.Windows.FrameworkElement.Cursor%2A> プロパティを設定します。  
+ <span data-ttu-id="f665a-107">次のコードを作成、<xref:System.Windows.Controls.Primitives.Selector.SelectionChanged>カーソルの種類を変更したときに呼び出されるイベント ハンドラー、<xref:System.Windows.Controls.ComboBox>です。</span><span class="sxs-lookup"><span data-stu-id="f665a-107">The following code behind creates a <xref:System.Windows.Controls.Primitives.Selector.SelectionChanged> event handler which is called when the cursor type is changed in the <xref:System.Windows.Controls.ComboBox>.</span></span>  <span data-ttu-id="f665a-108">Switch ステートメントがカーソルの名前とセットに基づくフィルター処理、<xref:System.Windows.FrameworkElement.Cursor%2A>プロパティを<xref:System.Windows.Controls.Border>6af159e2-19d6-4116-a30d-8f9a970621e5 *DisplayArea*です。</span><span class="sxs-lookup"><span data-stu-id="f665a-108">A switch statement filters on the cursor name and sets the <xref:System.Windows.FrameworkElement.Cursor%2A> property on the <xref:System.Windows.Controls.Border> which is named *DisplayArea*.</span></span>  
   
- カーソルの変更の適用対象が "Entire Application \(アプリケーション全体\)" に設定されている場合は、<xref:System.Windows.Input.Mouse.OverrideCursor%2A> プロパティが、<xref:System.Windows.Controls.Border> コントロールの <xref:System.Windows.FrameworkElement.Cursor%2A> プロパティに設定されます。  これにより、カーソルの変更がアプリケーション全体に適用されます。  
+ <span data-ttu-id="f665a-109">カーソルの変更は、"全体 Application"に設定されている場合、<xref:System.Windows.Input.Mouse.OverrideCursor%2A>プロパティに設定されている、<xref:System.Windows.FrameworkElement.Cursor%2A>のプロパティ、<xref:System.Windows.Controls.Border>コントロール。</span><span class="sxs-lookup"><span data-stu-id="f665a-109">If the cursor change is set to "Entire Application", the <xref:System.Windows.Input.Mouse.OverrideCursor%2A> property is set to the <xref:System.Windows.FrameworkElement.Cursor%2A> property of the <xref:System.Windows.Controls.Border> control.</span></span>  <span data-ttu-id="f665a-110">これにより、アプリケーション全体を変更するカーソル。</span><span class="sxs-lookup"><span data-stu-id="f665a-110">This forces the cursor to change for the whole application.</span></span>  
   
  [!code-csharp[cursors#ChangeCursorsSample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/cursors/CSharp/Window1.xaml.cs#changecursorssample)]
  [!code-vb[cursors#ChangeCursorsSample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/cursors/VisualBasic/Window1.xaml.vb#changecursorssample)]  
   
-## 参照  
- [入力の概要](../../../../docs/framework/wpf/advanced/input-overview.md)
+## <a name="see-also"></a><span data-ttu-id="f665a-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="f665a-111">See Also</span></span>  
+ [<span data-ttu-id="f665a-112">入力の概要</span><span class="sxs-lookup"><span data-stu-id="f665a-112">Input Overview</span></span>](../../../../docs/framework/wpf/advanced/input-overview.md)

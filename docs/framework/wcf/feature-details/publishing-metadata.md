@@ -1,47 +1,49 @@
 ---
-title: "メタデータの公開 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "メタデータ [WCF], 公開"
+title: "メタデータの公開"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: meatadata [WCF], publishing
 ms.assetid: 3a56831a-cabc-45c0-bd02-12e2e9bd7313
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1e0cf48d429282c692557fd66bc6ef1295e6a531
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# メタデータの公開
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスは 1 つ以上のメタデータ エンドポイントを公開することにより、メタデータを公開します。サービス メタデータを公開すると、そのメタデータで WS\-MetadataExchange \(MEX\) や HTTP\/GET 要求などの標準化プロトコルを使用できるようになります。メタデータのエンドポイントはアドレス、バインディング、コントラクトを持つ他のサービス エンドポイントに類似し、それらは構成か命令コードを使用してサービス ホストに追加することができます。  
+# <a name="publishing-metadata"></a><span data-ttu-id="32e9f-102">メタデータの公開</span><span class="sxs-lookup"><span data-stu-id="32e9f-102">Publishing Metadata</span></span>
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="32e9f-103"> サービスは 1 つ以上のメタデータ エンドポイントを公開することにより、メタデータを公開します。</span><span class="sxs-lookup"><span data-stu-id="32e9f-103"> services publish metadata by publishing one or more metadata endpoints.</span></span> <span data-ttu-id="32e9f-104">サービス メタデータを公開すると、そのメタデータで WS-MetadataExchange (MEX) や HTTP/GET 要求などの標準化プロトコルを使用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="32e9f-104">Publishing service metadata makes the metadata available using standardized protocols, such as WS-MetadataExchange (MEX) and HTTP/GET requests.</span></span> <span data-ttu-id="32e9f-105">メタデータのエンドポイントはアドレス、バインディング、コントラクトを持つ他のサービス エンドポイントに類似し、それらは構成か命令コードを使用してサービス ホストに追加することができます。</span><span class="sxs-lookup"><span data-stu-id="32e9f-105">Metadata endpoints are similar to other service endpoints in that they have an address, a binding, and a contract, and they can be added to a service host through configuration or imperative code.</span></span>  
   
-## メタデータ エンドポイントを公開する  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのメタデータ エンドポイントを公開するには、最初に <xref:System.ServiceModel.Description.ServiceMetadataBehavior> のサービスの動作をサービスに追加しておく必要があります。<xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=fullName> インスタンスを追加すると、サービスからメタデータ エンドポイントを公開できます。<xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=fullName> サービス動作を追加すると、MEX プロトコルをサポートするメタデータ エンドポイント、または HTTP\/GET 要求に応答するメタデータ エンドポイントを公開できます。  
+## <a name="publishing-metadata-endpoints"></a><span data-ttu-id="32e9f-106">メタデータ エンドポイントを公開する</span><span class="sxs-lookup"><span data-stu-id="32e9f-106">Publishing Metadata Endpoints</span></span>  
+ <span data-ttu-id="32e9f-107">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのメタデータ エンドポイントを公開するには、最初に <xref:System.ServiceModel.Description.ServiceMetadataBehavior> のサービスの動作をサービスに追加しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="32e9f-107">To publish metadata endpoints for a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service, you first must add the <xref:System.ServiceModel.Description.ServiceMetadataBehavior> service behavior to the service.</span></span> <span data-ttu-id="32e9f-108"><xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> インスタンスを追加すると、サービスからメタデータ エンドポイントを公開できます。</span><span class="sxs-lookup"><span data-stu-id="32e9f-108">Adding a <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> instance allows your service to expose metadata endpoints.</span></span> <span data-ttu-id="32e9f-109"><xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> サービス動作を追加すると、MEX プロトコルをサポートするメタデータ エンドポイント、または HTTP/GET 要求に応答するメタデータ エンドポイントを公開できます。</span><span class="sxs-lookup"><span data-stu-id="32e9f-109">Once you add the <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> service behavior, you can then expose metadata endpoints that support the MEX protocol or that respond to HTTP/GET requests.</span></span>  
   
- <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=fullName> は <xref:System.ServiceModel.Description.WsdlExporter> を使用して、サービス内のすべてのサービス エンドポイント用のメタデータをエクスポートします。サービスからメタデータをエクスポートする方法[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[メタデータのエクスポートとインポート](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)」を参照してください。  
+ <span data-ttu-id="32e9f-110"><xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> は <xref:System.ServiceModel.Description.WsdlExporter> を使用して、サービス内のすべてのサービス エンドポイント用のメタデータをエクスポートします。</span><span class="sxs-lookup"><span data-stu-id="32e9f-110">The <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> uses a <xref:System.ServiceModel.Description.WsdlExporter> to export metadata for all service endpoints in your service.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="32e9f-111">サービスからメタデータをエクスポートするを参照してください[エクスポートおよびインポートするメタデータ](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)です。</span><span class="sxs-lookup"><span data-stu-id="32e9f-111"> exporting metadata from a service, see [Exporting and Importing Metadata](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md).</span></span>  
   
- <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=fullName> は、<xref:System.ServiceModel.Description.ServiceMetadataExtension> インスタンスをサービス ホストへの拡張として追加します。<xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=fullName> により、メタデータ公開プロトコルを実装することができます。また、<xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=fullName> を使用して、<xref:System.ServiceModel.Description.ServiceMetadataExtension.Metadata%2A?displayProperty=fullName> プロパティにアクセスすることにより、実行時にサービスのメタデータを取得できます。  
+ <span data-ttu-id="32e9f-112"><xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> は、<xref:System.ServiceModel.Description.ServiceMetadataExtension> インスタンスをサービス ホストへの拡張として追加します。</span><span class="sxs-lookup"><span data-stu-id="32e9f-112">The <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> adds a <xref:System.ServiceModel.Description.ServiceMetadataExtension> instance as an extension to your service host.</span></span> <span data-ttu-id="32e9f-113"><xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> により、メタデータ公開プロトコルを実装することができます。</span><span class="sxs-lookup"><span data-stu-id="32e9f-113">The <xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> provides the implementation for the metadata publishing protocols.</span></span> <span data-ttu-id="32e9f-114">また、<xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> を使用して、<xref:System.ServiceModel.Description.ServiceMetadataExtension.Metadata%2A?displayProperty=nameWithType> プロパティにアクセスすることにより、実行時にサービスのメタデータを取得できます。</span><span class="sxs-lookup"><span data-stu-id="32e9f-114">You can also use the <xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> to get the service's metadata at runtime by accessing the <xref:System.ServiceModel.Description.ServiceMetadataExtension.Metadata%2A?displayProperty=nameWithType> property.</span></span>  
   
-### MEX メタデータ エンドポイント  
- MEX プロトコルを使用するメタデータ エンドポイントを追加するには、`IMetadataExchange` サービス コントラクトを使用するサービス エンドポイントをサービス ホストに追加します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] プログラミング モデルの一部として使用できるこのサービス コントラクト名を持つ <xref:System.ServiceModel.Description.IMetadataExchange> インターフェイスが用意されます。WS\-MetadataExchange のエンドポイント、つまり MEX エンドポイントは、<xref:System.ServiceModel.Description.MetadataExchangeBindings> クラスで静的ファクトリ メソッドが公開する 4 つの既定のバインディングの 1 つを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ツール \(Svcutil.exe など\) によって使用される既定のバインディングを照合できます。また、独自のカスタム バインディングを使用して MEX メタデータ エンドポイントを構成することもできます。  
+### <a name="mex-metadata-endpoints"></a><span data-ttu-id="32e9f-115">MEX メタデータ エンドポイント</span><span class="sxs-lookup"><span data-stu-id="32e9f-115">MEX Metadata Endpoints</span></span>  
+ <span data-ttu-id="32e9f-116">MEX プロトコルを使用するメタデータ エンドポイントを追加するには、`IMetadataExchange` サービス コントラクトを使用するサービス エンドポイントをサービス ホストに追加します。</span><span class="sxs-lookup"><span data-stu-id="32e9f-116">To add metadata endpoints that use the MEX protocol, add service endpoints to your service host that use the `IMetadataExchange` service contract.</span></span> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="32e9f-117"> には、<xref:System.ServiceModel.Description.IMetadataExchange> プログラミング モデルの一部として使用できるこのサービス コントラクト名を持つ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インターフェイスが用意されます。</span><span class="sxs-lookup"><span data-stu-id="32e9f-117"> includes an <xref:System.ServiceModel.Description.IMetadataExchange> interface with this service contract name that you can use as part of the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] programming model.</span></span> <span data-ttu-id="32e9f-118">WS-MetadataExchange のエンドポイント、つまり MEX エンドポイントは、<xref:System.ServiceModel.Description.MetadataExchangeBindings> クラスで静的ファクトリ メソッドが公開する 4 つの既定のバインディングの 1 つを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ツール (Svcutil.exe など) によって使用される既定のバインディングを照合できます。</span><span class="sxs-lookup"><span data-stu-id="32e9f-118">WS-MetadataExchange endpoints, or MEX endpoints, can use one of the four default bindings that the static factory methods expose on the <xref:System.ServiceModel.Description.MetadataExchangeBindings> class to match the default bindings used by [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] tools such as Svcutil.exe.</span></span> <span data-ttu-id="32e9f-119">また、独自のカスタム バインディングを使用して MEX メタデータ エンドポイントを構成することもできます。</span><span class="sxs-lookup"><span data-stu-id="32e9f-119">You can also configure MEX metadata endpoints using your own custom binding.</span></span>  
   
-### HTTP GET メタデータ エンドポイント  
- HTTP\/GET 要求に応答するメタデータ エンドポイントをサービスに追加するには、<xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=fullName> の <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> プロパティを `true` に設定します。また、<xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=fullName> の <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> プロパティを `true` に設定することで、HTTPS を使用するメタデータ エンドポイントを構成することもできます。  
+### <a name="http-get-metadata-endpoints"></a><span data-ttu-id="32e9f-120">HTTP GET メタデータ エンドポイント</span><span class="sxs-lookup"><span data-stu-id="32e9f-120">HTTP GET Metadata Endpoints</span></span>  
+ <span data-ttu-id="32e9f-121">HTTP/GET 要求に応答するメタデータ エンドポイントをサービスに追加するには、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> の <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> プロパティを `true` に設定します。</span><span class="sxs-lookup"><span data-stu-id="32e9f-121">To add a metadata endpoint to your service that responds to HTTP/GET requests, set the <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> property on the <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> to `true`.</span></span> <span data-ttu-id="32e9f-122">また、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> の <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> プロパティを `true` に設定することで、HTTPS を使用するメタデータ エンドポイントを構成することもできます。</span><span class="sxs-lookup"><span data-stu-id="32e9f-122">You can also configure a metadata endpoint that uses HTTPS by setting the <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> property on the <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> to `true`.</span></span>  
   
-## このセクションの内容  
- [方法 : 構成ファイルを使用してサービスのメタデータを公開する](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを構成してメタデータを公開し、クライアントが `?wsdl` クエリ文字列を使用した WS\-MetadataExchange または HTTP\/GET 要求によりメタデータを取得できるようにする方法を示します。  
+## <a name="in-this-section"></a><span data-ttu-id="32e9f-123">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="32e9f-123">In This Section</span></span>  
+ [<span data-ttu-id="32e9f-124">方法: 構成ファイルを使用して、サービスのメタデータを公開</span><span class="sxs-lookup"><span data-stu-id="32e9f-124">How to: Publish Metadata for a Service Using a Configuration File</span></span>](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)  
+ <span data-ttu-id="32e9f-125">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを構成してメタデータを公開し、`?wsdl` クエリ文字列を使用した WS-MetadataExchange または HTTP/GET 要求によりメタデータをクライアントが取得できるようにする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="32e9f-125">Demonstrates how to configure a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service to publish metadata so that clients can retrieve the metadata using a WS-MetadataExchange or an HTTP/GET request using the `?wsdl` query string.</span></span>  
   
- [方法 : コードを使用してサービスのメタデータを公開する](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)  
- コードを使用して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのメタデータの公開を有効にして、クライアントが `?wsdl` クエリ文字列を使用した WS\-MetadataExchange または HTTP\/GET 要求によりメタデータを取得できるようにする方法を示します。  
+ [<span data-ttu-id="32e9f-126">方法: コードを使用して、サービスのメタデータを公開</span><span class="sxs-lookup"><span data-stu-id="32e9f-126">How to: Publish Metadata for a Service Using Code</span></span>](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)  
+ <span data-ttu-id="32e9f-127">コードを使用して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのメタデータの公開を有効にして、クライアントが `?wsdl` クエリ文字列を使用した WS-MetadataExchange または HTTP/GET 要求によりメタデータを取得できるようにする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="32e9f-127">Demonstrates how to enable metadata publishing for a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service in code so that clients can retrieve the metadata using a WS-MetadataExchange or an HTTP/GET request using the `?wsdl` query string.</span></span>  
   
-## リファレンス  
+## <a name="reference"></a><span data-ttu-id="32e9f-128">参照</span><span class="sxs-lookup"><span data-stu-id="32e9f-128">Reference</span></span>  
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior>  
   
  <xref:System.ServiceModel.Description.IMetadataExchange>  
@@ -50,5 +52,5 @@ caps.handback.revision: 10
   
  <xref:System.ServiceModel.Description.MetadataExchangeBindings>  
   
-## 参照  
- [メタデータのエクスポートとインポート](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)
+## <a name="see-also"></a><span data-ttu-id="32e9f-129">関連項目</span><span class="sxs-lookup"><span data-stu-id="32e9f-129">See Also</span></span>  
+ [<span data-ttu-id="32e9f-130">エクスポートして、メタデータのインポート</span><span class="sxs-lookup"><span data-stu-id="32e9f-130">Exporting and Importing Metadata</span></span>](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)

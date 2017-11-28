@@ -1,64 +1,67 @@
 ---
-title: "フォーム ポスト | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "フォーム ポスト"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: fa6f84f9-2e07-4e3c-92d0-a245308b7dff
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 55e19679bfd24d26e5a918f425fb2a821059a91e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# フォーム ポスト
-このサンプルでは、WCF REST プログラミング モデルを拡張して新しい受信要求形式をサポートする方法を示します。  このサンプルには、要求を HTML フォーム ポストから [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 型に逆シリアル化できるフォーマッタの実装も含まれています。  また、このサンプルでは T4 テンプレートを使用して、ユーザーが WCF REST サービスにポストバックできる HTML フォームを提供する HTML ページを返します。  
+# <a name="form-post"></a><span data-ttu-id="0480d-102">フォーム ポスト</span><span class="sxs-lookup"><span data-stu-id="0480d-102">Form Post</span></span>
+<span data-ttu-id="0480d-103">このサンプルでは、WCF REST プログラミング モデルを拡張して新しい受信要求形式をサポートする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="0480d-103">This sample demonstrates how to extend the WCF REST programming model to support new incoming request formats.</span></span> <span data-ttu-id="0480d-104">このサンプルには、要求を HTML フォーム ポストから [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 型に逆シリアル化できるフォーマッタの実装も含まれています。</span><span class="sxs-lookup"><span data-stu-id="0480d-104">The sample also includes an implementation of a formatter that can deserialize a request from an HTML form post into a [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] type.</span></span> <span data-ttu-id="0480d-105">また、このサンプルでは T4 テンプレートを使用して、ユーザーが WCF REST サービスにポストバックできる HTML フォームを提供する HTML ページを返します。</span><span class="sxs-lookup"><span data-stu-id="0480d-105">In addition, the sample uses a T4 Template to return an HTML page, which provides the HTML form that users can post back to the WCF REST service.</span></span>  
   
-## 使用例  
+## <a name="demonstrates"></a><span data-ttu-id="0480d-106">使用例</span><span class="sxs-lookup"><span data-stu-id="0480d-106">Demonstrates</span></span>  
   
--   受信要求形式のサポートの拡張。  
+-   <span data-ttu-id="0480d-107">受信要求形式のサポートの拡張。</span><span class="sxs-lookup"><span data-stu-id="0480d-107">Extending support for incoming request formats.</span></span>  
   
--   T4 テンプレートの統合。  
+-   <span data-ttu-id="0480d-108">T4 テンプレートの統合。</span><span class="sxs-lookup"><span data-stu-id="0480d-108">Integrating T4 templates.</span></span>  
   
-## 説明  
- このサンプルは、2 つのプロジェクトで構成されます。  1 つ目のプロジェクトは、HTML フォーム ポストを [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 型に逆シリアル化できるカスタム要求フォーマッタを含む HtmlFormProcessing ライブラリです。  2 つ目のプロジェクトは、HtmlFormProcessing ライブラリのカスタム要求フォーマッタを使用するように基本的なリソース サービス サンプルを拡張するコンソール アプリケーションです。  
+## <a name="discussion"></a><span data-ttu-id="0480d-109">説明</span><span class="sxs-lookup"><span data-stu-id="0480d-109">Discussion</span></span>  
+ <span data-ttu-id="0480d-110">このサンプルは、2 つのプロジェクトで構成されます。</span><span class="sxs-lookup"><span data-stu-id="0480d-110">This sample consists of two projects.</span></span> <span data-ttu-id="0480d-111">1 つ目のプロジェクトは、HTML フォーム ポストを [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 型に逆シリアル化できるカスタム要求フォーマッタを含む HtmlFormProcessing ライブラリです。</span><span class="sxs-lookup"><span data-stu-id="0480d-111">One project is the HtmlFormProcessing library that includes a custom request formatter that can deserialize HTML form posts into [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] types.</span></span> <span data-ttu-id="0480d-112">2 つ目のプロジェクトは、HtmlFormProcessing ライブラリのカスタム要求フォーマッタを使用するように基本的なリソース サービス サンプルを拡張するコンソール アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="0480d-112">The second project is a console application that extends the Basic Resource Service sample to use the custom request formatter of the HtmlFormProcessing library.</span></span>  
   
- HTML フォーム ポストを逆シリアル化できるカスタム フォーマッタ \(HtmlFormRequestDispatchFormatter\) は、<xref:System.ServiceModel.Dispatcher.QueryStringConverter> を使用して文字列から変換できる [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 型と、QueryStringConverter を使用して文字列から変換できるメンバーのみを持つ <xref:System.Runtime.Serialization.DataContractAttribute> でマークされた型の両方を受け入れます。  
+ <span data-ttu-id="0480d-113">HTML フォーム ポストを逆シリアル化できるカスタム フォーマッタ (HtmlFormRequestDispatchFormatter) は、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] を使用して文字列から変換できる <xref:System.ServiceModel.Dispatcher.QueryStringConverter> 型と、QueryStringConverter を使用して文字列から変換できるメンバーのみを持つ <xref:System.Runtime.Serialization.DataContractAttribute> でマークされた型の両方を受け入れます。</span><span class="sxs-lookup"><span data-stu-id="0480d-113">The custom formatter that can deserialize HTML form posts (HtmlFormRequestDispatchFormatter) accepts both [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] types that can be converted from a string using the <xref:System.ServiceModel.Dispatcher.QueryStringConverter> and types marked with <xref:System.Runtime.Serialization.DataContractAttribute> that only have members that can be converted from a string using the QueryStringConverter.</span></span>  
   
- HtmlFormProcessing ライブラリ プロジェクトには、他のカスタム要求フォーマッタを作成するために使用できる抽象基本クラス `RequestBodyDispatchFormatter` も含まれています。  `RequestBodyDispatchFormatter` から派生させると、開発者は、基本クラスで URI テンプレート パラメーターを操作のメソッド パラメーターにマップできるようにする要求本文の逆シリアル化ロジックに集中できます。  また、HtmlFormProcessing ライブラリ プロジェクトには、<xref:System.ServiceModel.Description.WebHttpBehavior> から派生させて既定の要求フォーマッタをカスタム要求フォーマッタに置き換える方法を示す `HtmlFormProcessingBehavior` クラスもあります。  
+ <span data-ttu-id="0480d-114">HtmlFormProcessing ライブラリ プロジェクトには、他のカスタム要求フォーマッタを作成するために使用できる抽象基本クラス `RequestBodyDispatchFormatter` も含まれています。</span><span class="sxs-lookup"><span data-stu-id="0480d-114">The HtmlFormProcessing library project also includes an abstract base class, `RequestBodyDispatchFormatter`, which can be used to create other custom request formatters.</span></span> <span data-ttu-id="0480d-115">`RequestBodyDispatchFormatter` から派生させると、開発者は、基本クラスで URI テンプレート パラメーターを操作のメソッド パラメーターにマップできるようにする要求本文の逆シリアル化ロジックに集中できます。</span><span class="sxs-lookup"><span data-stu-id="0480d-115">Deriving from the `RequestBodyDispatchFormatter` allows a developer to focus on the request body deserialization logic, which allows the base class to map the URI template parameters to the operation’s method parameters.</span></span> <span data-ttu-id="0480d-116">また、HtmlFormProcessing ライブラリ プロジェクトには、`HtmlFormProcessingBehavior` から派生させて既定の要求フォーマッタをカスタム要求フォーマッタに置き換える方法を示す <xref:System.ServiceModel.Description.WebHttpBehavior> クラスもあります。</span><span class="sxs-lookup"><span data-stu-id="0480d-116">Also in the HtmlFormProcessing library project is the `HtmlFormProcessingBehavior` class, which demonstrates how to derive from the <xref:System.ServiceModel.Description.WebHttpBehavior> to replace the default request formatter with a custom request formatter.</span></span>  
   
- このコンソール アプリケーション プロジェクトでは、「[基本的なリソース サービス](../../../../docs/framework/wcf/samples/basic-resource-service.md)」のサンプルを拡張します。  基本的なリソース サービス サンプルは、WCF REST プログラミング モデルを使用してリソースを公開する方法を示しています。  基本的なリソース サービス サンプルでは、コレクション内の顧客を作成、取得、更新、および削除できるように、顧客コレクション リソースが公開されています。  基本的なリソース サービス サンプルでは、ネイティブでサポートされる XML と JSON の 2 つの受信要求形式のみが使用されます。  
+ <span data-ttu-id="0480d-117">このコンソール アプリケーション プロジェクトの拡張、[基本的なリソース サービス](../../../../docs/framework/wcf/samples/basic-resource-service.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="0480d-117">This console application project extends the [Basic Resource Service](../../../../docs/framework/wcf/samples/basic-resource-service.md) sample.</span></span> <span data-ttu-id="0480d-118">基本的なリソース サービス サンプルは、WCF REST プログラミング モデルを使用してリソースを公開する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="0480d-118">The Basic Resource Service sample demonstrates how to expose a resource in a manner that uses the WCF REST programming model.</span></span> <span data-ttu-id="0480d-119">基本的なリソース サービス サンプルでは、コレクション内の顧客を作成、取得、更新、および削除できるように、顧客コレクション リソースが公開されています。</span><span class="sxs-lookup"><span data-stu-id="0480d-119">In the Basic Resource Service sample, a customer collection resource is exposed such that customers in the collection can be created, retrieved, updated and deleted.</span></span> <span data-ttu-id="0480d-120">基本的なリソース サービス サンプルでは、ネイティブでサポートされる XML と JSON の 2 つの受信要求形式のみが使用されます。</span><span class="sxs-lookup"><span data-stu-id="0480d-120">The Basic Resource Service sample only uses the two natively supported incoming request formats, XML and JSON.</span></span>  
   
- このフォーム ポスト サンプルのコンソール アプリケーションでは、HtmlFormProcessing ライブラリのカスタム フォーマッタが使用されるので、ユーザーはブラウザーを使用して HTML フォーム ポストから要求を送信することで顧客を作成できます。  また、このサンプルでは、サービスにポストバックされるフォームを含む HTML ページを返す操作も追加します。  この HTML ページは、事前に処理された T4 テンプレートを使用して生成されます。この T4 テンプレートは .tt ファイルと自動生成された .cs ファイルで構成されます。  開発者は、.tt ファイルを使用して変数と制御構造を含むテンプレート フォームで応答を作成できます。  [!INCLUDE[crabout](../../../../includes/crabout-md.md)] T4、「[コード生成と T4 テキスト テンプレート](http://go.microsoft.com/fwlink/?LinkId=178139)」を参照してください。  
+ <span data-ttu-id="0480d-121">このフォーム ポスト サンプルのコンソール アプリケーションでは、HtmlFormProcessing ライブラリのカスタム フォーマッタが使用されるので、ユーザーはブラウザーを使用して HTML フォーム ポストから要求を送信することで顧客を作成できます。</span><span class="sxs-lookup"><span data-stu-id="0480d-121">The console application in this Form Post sample utilizes the custom formatter in the HtmlFormProcessing library, which allows users to create customers by sending a request from an HTML form post using a browser.</span></span> <span data-ttu-id="0480d-122">また、このサンプルでは、サービスにポストバックされるフォームを含む HTML ページを返す操作も追加します。</span><span class="sxs-lookup"><span data-stu-id="0480d-122">It also adds an operation that returns an HTML page, which includes the form to be posted back to the service.</span></span> <span data-ttu-id="0480d-123">この HTML ページは、事前に処理された T4 テンプレートを使用して生成されます。この T4 テンプレートは .tt ファイルと自動生成された .cs ファイルで構成されます。</span><span class="sxs-lookup"><span data-stu-id="0480d-123">This HTML page is generated using a preprocessed T4 template, which consists of a .tt file and an auto-generated .cs file.</span></span> <span data-ttu-id="0480d-124">開発者は、.tt ファイルを使用して変数と制御構造を含むテンプレート フォームで応答を作成できます。</span><span class="sxs-lookup"><span data-stu-id="0480d-124">The .tt file allows a developer to write a response in a template form that contains variables and control structures.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="0480d-125">T4 を参照してください[を使用してテキスト テンプレートで成果物を生成する](http://go.microsoft.com/fwlink/?LinkId=178139)です。</span><span class="sxs-lookup"><span data-stu-id="0480d-125"> T4, see [Generating Artifacts By Using Text Templates](http://go.microsoft.com/fwlink/?LinkId=178139).</span></span>  
   
-#### サンプルを実行するには  
+#### <a name="to-run-the-sample"></a><span data-ttu-id="0480d-126">サンプルを実行するには</span><span class="sxs-lookup"><span data-stu-id="0480d-126">To run the sample</span></span>  
   
-1.  フォーム ポスト サンプルのソリューションを開きます。  サンプルを正しく実行するには、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を起動するときに、管理者として実行する必要があります。  管理者として実行するには、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] アイコンを右クリックし、コンテキスト メニューの \[管理者として実行\] をクリックします。  
+1.  <span data-ttu-id="0480d-127">フォーム ポスト サンプルのソリューションを開きます。</span><span class="sxs-lookup"><span data-stu-id="0480d-127">Open the solution for the Form Post Sample.</span></span> <span data-ttu-id="0480d-128">サンプルを正しく実行するには、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を起動するときに、管理者として実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0480d-128">When launching [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], you must run as an administrator to execute the sample successfully.</span></span> <span data-ttu-id="0480d-129">これには、右クリックし、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]アイコンをクリックしてコンテキスト メニューから [管理者として実行] を選択します。</span><span class="sxs-lookup"><span data-stu-id="0480d-129">Do this by right-clicking the [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] icon and choosing "Run as Administrator" from the context menu.</span></span>  
   
-2.  Ctrl キーと Shift キーを押しながら B キーを押してソリューションをビルドし、Ctrl キーを押しながら F5 キーを押してコンソール アプリケーションの FormPost プロジェクトを実行します。  
+2.  <span data-ttu-id="0480d-130">Ctrl キーと Shift キーを押しながら B キーを押してソリューションをビルドし、Ctrl キーを押しながら F5 キーを押してコンソール アプリケーションの FormPost プロジェクトを実行します。</span><span class="sxs-lookup"><span data-stu-id="0480d-130">Press CTRL+SHIFT+B to build the solution and then press CTRL+F5 to run the console application FormPost project.</span></span>  
   
-3.  コンソール ウィンドウが表示されて、実行中のサービスの URI および実行中のサービスの HTML ヘルプ ページの URI が示されます。  
+3.  <span data-ttu-id="0480d-131">コンソール ウィンドウが表示されて、実行中のサービスの URI および実行中のサービスの HTML ヘルプ ページの URI が示されます。</span><span class="sxs-lookup"><span data-stu-id="0480d-131">The console window appears and provides the URI of the running service and the URI of the HTML help page for the running service.</span></span>  
   
-4.  サンプルが実行されると、クライアントは現在のアクティビティのステータス \(顧客を追加しているのか、顧客を更新しているのか、顧客を削除しているのか、または現在の顧客の一覧をサービスから取得しているのか\) をコンソール ウィンドウに書き込みます。  
+4.  <span data-ttu-id="0480d-132">サンプルが実行されると、クライアントは現在のアクティビティのステータス (顧客を追加しているのか、顧客を更新しているのか、顧客を削除しているのか、または現在の顧客の一覧をサービスから取得しているのか) をコンソール ウィンドウに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="0480d-132">As the sample runs, the client writes the status of the current activity, whether it be adding a customer, updating a customer, deleting a customer or getting a list of current customers from the service to the console window.</span></span>  
   
-5.  顧客フォームの URI を参照するように求められます。  ブラウザーを開き、指定された URI を参照します。  顧客の名前と住所を入力し、**\[送信\]** ボタンをクリックします。  
+5.  <span data-ttu-id="0480d-133">顧客フォームの URI を参照するように求められます。</span><span class="sxs-lookup"><span data-stu-id="0480d-133">You are then prompted to browse to the URI of the customer form.</span></span> <span data-ttu-id="0480d-134">ブラウザーを開き、指定された URI を参照します。</span><span class="sxs-lookup"><span data-stu-id="0480d-134">Open a browser and browse to the given URI.</span></span> <span data-ttu-id="0480d-135">クリックして、顧客のアドレスと名前を入力、**送信**ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="0480d-135">Type in a name and address for the customer and click the **Submit** button.</span></span>  
   
-6.  コンソール ウィンドウでサンプルの実行を続けるには、任意のキーを押します。  
+6.  <span data-ttu-id="0480d-136">コンソール ウィンドウでサンプルの実行を続けるには、任意のキーを押します。</span><span class="sxs-lookup"><span data-stu-id="0480d-136">Press any key for the console window to continue running the sample.</span></span>  
   
-7.  サンプルが完了すると、ブラウザーを使用して作成した顧客が最終的な顧客の一覧に追加されたことがわかります。  
+7.  <span data-ttu-id="0480d-137">サンプルが完了すると、ブラウザーを使用して作成した顧客が最終的な顧客の一覧に追加されたことがわかります。</span><span class="sxs-lookup"><span data-stu-id="0480d-137">As the sample completes, notice that the customer you created using the browser is included in the final list of customers.</span></span>  
   
-8.  任意のキーを押して、サンプルを終了します。  
+8.  <span data-ttu-id="0480d-138">任意のキーを押して、サンプルを終了します。</span><span class="sxs-lookup"><span data-stu-id="0480d-138">Press any key to terminate the sample.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。  続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="0480d-139">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="0480d-139">The samples may already be installed on your machine.</span></span> <span data-ttu-id="0480d-140">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="0480d-140">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。  このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="0480d-141">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="0480d-141">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="0480d-142">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="0480d-142">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Web\FormPost`
