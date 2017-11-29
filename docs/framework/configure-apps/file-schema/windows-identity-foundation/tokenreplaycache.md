@@ -1,67 +1,76 @@
 ---
-title: "&lt;tokenReplayCache&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;tokenReplayCache&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1572ab23-6933-41b5-bfb4-0c4548145500
-caps.latest.revision: 8
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 7
+caps.latest.revision: "8"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: e43e79416ddb8862cbc6e52d9d449a02b123af83
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;tokenReplayCache&gt;
-サービスまたはセキュリティ トークン ハンドラーのコレクションを再生のトークン キャッシュを登録します。  
+# <a name="lttokenreplaycachegt"></a>&lt;tokenReplayCache&gt;
+トークン リプレイ キャッシュ サービスまたはセキュリティ トークン ハンドラー コレクションに登録します。  
   
-## 構文  
+ \<system.identityModel >  
+\<identityConfiguration >  
+\<キャッシュ >  
+\<tokenReplayCache >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <caches>  
-      <tokenReplayCache type=xs:string>  
-      </tokenReplayCache>  
-    </caches>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <caches>  
+      <tokenReplayCache type=xs:string>  
+      </tokenReplayCache>  
+    </caches>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|属性|Description|  
-|--------|-----------------|  
-|type|派生した型は<xref:System.IdentityModel.Tokens.TokenReplayCache>クラス。  ユーザー設定を指定する方法の詳細については`type`を参照してください[Custom Type References](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md#BKMK_CustomTypeReferences)。|  
+|属性|説明|  
+|---------------|-----------------|  
+|型|派生する型、<xref:System.IdentityModel.Tokens.TokenReplayCache>クラスです。 詳細については、ユーザー設定を指定する方法についての`type`、[カスタム型の参照] を参照してください。
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
-|要素|Description|  
-|--------|-----------------|  
-|[\<キャッシュ\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|サービス、セキュリティ トークン ハンドラーのコレクションを使用して、キャッシュを登録します。|  
+|要素|説明|  
+|-------------|-----------------|  
+|[\<キャッシュ >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|サービスまたはセキュリティ トークン ハンドラーのコレクションによって使用されるキャッシュに登録します。|  
   
-## 解説  
- トークンの再実行キャッシュを使用すると、再生されたトークンを検出します。  トークンのリプレイ検出を有効にして、 [\<tokenReplayDetection\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md)要素は、また、最大有効期間トークンを指定します。  
+## <a name="remarks"></a>コメント  
+ トークン リプレイ キャッシュを使用して、再生されたトークンを検出できます。 トークン リプレイ検出が有効になって、 [ \<tokenReplayDetection >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md)もトークンの最大有効期限を指定する要素。  
   
-## 使用例  
- 次の XML は、再生されたトークンを検出するためには、カスタムのキャッシュの構成を示しています。  
+## <a name="example"></a>例  
+ 次の XML では、再生されたトークンを検出するためのカスタム キャッシュの構成を示します。  
   
-```  
+```xml  
 <caches>  
   <tokenReplayCache type="MyCacheLibrary.MyTokenReplayCache, MyCacheLibrary">  
   </tokenReplayCache>  
 </caches>  
 ```  
   
-## 参照  
- <xref:System.IdentityModel.Tokens.TokenReplayCache>   
- [\<tokenReplayDetection\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.IdentityModel.Tokens.TokenReplayCache>  
+ [\<tokenReplayDetection >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md)

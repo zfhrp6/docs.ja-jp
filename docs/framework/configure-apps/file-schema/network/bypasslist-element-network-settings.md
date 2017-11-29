@@ -1,77 +1,79 @@
 ---
-title: "&lt;bypasslist&gt; 要素 (ネットワーク設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#bypasslist"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/bypasslist"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<bypasslist> 要素"
-  - "bypasslist 要素"
+title: "&lt;bypasslist&gt;要素 (ネットワーク設定)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#bypasslist
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/bypasslist
+helpviewer_keywords:
+- bypasslist element
+- <bypasslist> element
 ms.assetid: 124446b7-abb1-4e5e-a492-b64398f268f1
-caps.latest.revision: 17
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 3d349f14535de806e0b130ef64b58333e63f1b86
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;bypasslist&gt; 要素 (ネットワーク設定)
-プロキシを使用しないアドレスを記述する一連の正規表現を提供します。  
+# <a name="ltbypasslistgt-element-network-settings"></a>&lt;bypasslist&gt;要素 (ネットワーク設定)
+プロキシを使用しないアドレスを記述する正規表現のセットを提供します。  
   
-## 構文  
+ \<configuration>  
+\<system.net >  
+\<defaultProxy >  
+\<bypasslist >  
   
-```  
+## <a name="syntax"></a>構文  
   
-      <bypasslist>   
+```xml  
+<bypasslist>   
 </bypasslist>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
  なし。  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
   
 |**要素**|**説明**|  
-|------------|------------|  
-|[add](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-bypasslist-network-settings.md)|IP アドレスまたは DNS 名をプロキシ バイパス リストに追加します。|  
-|[clear](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-bypasslist-network-settings.md)|すべてのエントリをバイパス リストから削除します。|  
-|[remove](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-bypasslist-network-settings.md)|IP アドレスまたは DNS 名をプロキシ バイパス リストから削除します。|  
+|-----------------|---------------------|  
+|[add](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-bypasslist-network-settings.md)|プロキシ バイ パス一覧に IP アドレスまたは DNS 名を追加します。|  
+|[clear](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-bypasslist-network-settings.md)|バイパス リストをクリアします。|  
+|[remove](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-bypasslist-network-settings.md)|プロキシ バイ パス一覧から IP アドレスまたは DNS 名を削除します。|  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |**要素**|**説明**|  
-|------------|------------|  
-|[defaultProxy](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|ハイパーテキスト転送プロトコル \(HTTP: Hypertext Transfer Protocol\) プロキシ サーバーを構成します。|  
+|-----------------|---------------------|  
+|[defaultProxy](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|ハイパーテキスト転送プロトコル (HTTP: Hypertext Transfer Protocol) プロキシ サーバーを構成します。|  
   
-## 解説  
- バイパス リストには、<xref:System.Net.WebRequest> インスタンスがプロキシ サーバーを経由せずに直接アクセスする URI を記述する正規表現が格納されます。  
+## <a name="remarks"></a>コメント  
+ バイパス リストを含む Uri を表す正規表現を<xref:System.Net.WebRequest>インスタンスは、プロキシ サーバーを直接の代わりにアクセスします。  
   
- この要素に正規表現を指定する場合は注意が必要です。  たとえば、"\[a\-z\]\+\\.contoso\\.com" という正規表現は、contoso.com ドメインの各ホストに一致しますが、contoso.com.cpandl.com ドメインの各ホストとも一致します。  contoso.com ドメインのホストとだけ一致させるためには、アンカーとして "$" を使用し、"\[a\-z\]\+\\.contoso\\.com$" のように記述します。  
+ この要素に正規表現を指定する場合は、注意を使用してください。 正規表現"[a ~ z] +\\.contoso\\.com"contoso.com ドメイン内の任意のホストと一致する contoso.com.cpandl.com ドメイン内のどのホストにも一致します。 Contoso.com ドメイン内のホストのみを一致するには、アンカー (「$」) を使用します。"[a ~ z] +\\.contoso\\.com$"です。  
   
- 正規表現の詳細については、「[.NET Framework の正規表現](../../../../../docs/standard/base-types/regular-expressions.md)」を参照してください。  
+ 正規表現の詳細についてを参照してください。[.NET framework 正規表現](../../../../../docs/standard/base-types/regular-expressions.md)です。  
   
-## 構成ファイル  
- この要素は、アプリケーション構成ファイルまたはマシン構成ファイル \(Machine.config\) で使用できます。  
+## <a name="configuration-files"></a>構成ファイル  
+ この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
   
-## 使用例  
- 2 つのアドレスをバイパス リストに追加するコード例を次に示します。  第 1 の例では、contoso.com ドメインにあるすべてのサーバーでプロキシをバイパスします。第 2 の例では、IP アドレスが 192.168 で始まるすべてのサーバーでプロキシをバイパスします。  
+## <a name="example"></a>例  
+ 次の例では、バイパス リストに 2 つのアドレスを追加します。 1 つ目は、contoso.com ドメイン内のすべてのサーバーでプロキシをバイパスします。2 番目は、すべてのサーバーの IP アドレスを持つ開始 192.168.*.* でプロキシをバイパスします。  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <defaultProxy>  
@@ -84,6 +86,6 @@ caps.handback.revision: 17
 </configuration>  
 ```  
   
-## 参照  
- <xref:System.Net.WebProxy?displayProperty=fullName>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Net.WebProxy?displayProperty=nameWithType>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

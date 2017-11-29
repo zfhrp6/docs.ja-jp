@@ -1,74 +1,76 @@
 ---
-title: "&lt;sharedListeners&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#sharedListeners"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sharedListeners"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<sharedListeners> 要素"
-  - "リスナー"
-  - "共有リスナー"
-  - "sharedListeners 要素"
-  - "トレース リスナー, <sharedListeners> 要素"
+title: "&lt;sharedListeners&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#sharedListeners
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sharedListeners
+helpviewer_keywords:
+- <sharedListeners> element
+- listeners
+- shared listeners
+- trace listeners, <sharedListeners> element
+- sharedListeners element
 ms.assetid: de200534-19dd-4156-86cf-c50521802c4c
-caps.latest.revision: 10
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 7ab96ad43248517dca99bff176be7edfab8d3ced
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;sharedListeners&gt; 要素
-任意の source 要素または trace 要素が参照できるリスナーを含みます。既定では、これらのリスナーはトレースを受け取りません。また、実行時にこれらのリスナーを取得することはできません。  共有リスナーとして識別されたリスナーは、ソースまたはトレースに名前で追加できます。  
+# <a name="ltsharedlistenersgt-element"></a>&lt;sharedListeners&gt;要素
+任意の source 要素または trace 要素が参照できるリスナーを含みます。  これらのリスナーは、既定では、トレースを受け取りません、実行時にこれらのリスナーを取得することはできません。 共有リスナーとして識別されたリスナーは、名前でソースまたはカスタム トレースに追加できます。  
   
-## 構文  
+ \<configuration>  
+\<system.diagnostics >  
+\<sharedListeners >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <sharedListeners>   
   <add>...</add>  
 </sharedListeners>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
  なし。  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<add\>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-listeners-for-trace.md)|`sharedListeners` コレクションにリスナーを追加します。|  
+|-------------|-----------------|  
+|[\<add>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-listeners-for-trace.md)|`sharedListeners` コレクションにリスナーを追加します。|  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
+|-------------|-----------------|  
 |`Configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`system.diagnostics`|ASP.NET 構成セクションのルート要素を指定します。|  
   
-## 解説  
- リスナーを共有リスナーのコレクションに追加しても、アクティブなリスナーにはなりません。  リスナーをさらにその trace 要素の `Listeners` コレクションに追加することによって、トレース ソースまたはトレースに追加する必要があります。  .NET Framework のリスナー クラスは、<xref:System.Diagnostics.TraceListener> クラスの派生クラスです。  
+## <a name="remarks"></a>コメント  
+ リスナーを共有リスナー コレクションに追加することはありませんが、アクティブなリスナー。 これは、必要がありますによって引き続き追加できますをトレース ソースまたはトレースに追加すること、 `Listeners` trace 要素のコレクション。 .NET Framework のリスナー クラスから派生して、<xref:System.Diagnostics.TraceListener>クラスです。  
   
- この要素は、マシン構成ファイル \(Machine.config\) およびアプリケーション構成ファイルで使用できます。  
+ この要素は、マシン構成ファイル (Machine.config) と、アプリケーション構成ファイルで使用できます。  
   
-## 使用例  
- `<sharedListeners>` 要素を使用して、リスナー `console` を<xref:System.Diagnostics.TraceSource> クラスと <xref:System.Diagnostics.Trace> クラスの `Listeners` コレクションに追加する方法を次の例に示します。  コンソール トレース リスナーは、<xref:System.Diagnostics.TraceSource> または <xref:System.Diagnostics.Trace> の呼び出しを通じて、トレース情報をコンソールに書き込みます。  
+## <a name="example"></a>例  
+ 次の例を使用する方法を示しています、`<sharedListeners>`リスナーを追加する要素`console`を`Listeners`両方のコレクション、<xref:System.Diagnostics.TraceSource>と<xref:System.Diagnostics.Trace>クラスです。 コンソールのトレース リスナーは、いずれかを呼び出すことで、コンソールにトレース情報を書き込みます<xref:System.Diagnostics.TraceSource>または<xref:System.Diagnostics.Trace>です。  
   
-```  
+```xml  
 <configuration>  
   <system.diagnostics>  
     <sharedListeners>  
@@ -96,7 +98,7 @@ caps.handback.revision: 10
 </configuration></system.diagnostics>   
 ```  
   
-## 参照  
- <xref:System.Diagnostics.TraceListener>   
- [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)   
- [Trace Listeners](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Diagnostics.TraceListener>  
+ [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
+ [トレース リスナー](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

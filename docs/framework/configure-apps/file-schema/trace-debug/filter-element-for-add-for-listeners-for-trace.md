@@ -1,75 +1,79 @@
 ---
-title: "&lt;trace&gt; の &lt;listeners&gt; の &lt;add&gt; の &lt;filter&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/add/filter"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<filter> 要素 (<trace> の <listeners> の <add>)"
-  - "filter 要素 (<trace> の <listeners> の <add>)"
-  - "initializeData 属性"
+title: "&lt;フィルター&gt;要素&lt;追加&gt;の&lt;リスナー&gt;の&lt;トレース&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/add/filter
+helpviewer_keywords:
+- initializeData attribute
+- filter element for <add> for <listeners> for <trace>
+- <filter> element for <add> for <listeners> for <trace>
 ms.assetid: eb9c18f5-dfa8-47c5-b91b-e4b93e76e1cc
-caps.latest.revision: 9
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 3d1cf912e5a07e7514a6b032ff511923ae93c5f1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;trace&gt; の &lt;listeners&gt; の &lt;add&gt; の &lt;filter&gt; 要素
-トレース用の `Listeners` コレクションのリスナーにフィルターに追加します。  
+# <a name="ltfiltergt-element-for-ltaddgt-for-ltlistenersgt-for-lttracegt"></a>&lt;フィルター&gt;要素&lt;追加&gt;の&lt;リスナー&gt;の&lt;トレース&gt;
+リスナーにフィルターを追加、`Listeners`トレースのコレクション。  
   
-## 構文  
+ \<configuration>  
+\<system.diagnostics >  
+\<トレース >  
+\<リスナー >  
+\<add>  
+\<フィルター >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <filter   
   type="traceFilterClassName"   
   initializeData="data" />  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|Attribute|説明|  
-|---------------|--------|  
-|`type`|必須の属性です。<br /><br /> <xref:System.Diagnostics.TraceFilter> クラスを継承するフィルターの型を指定します。  指定する型の <xref:System.Type.FullName%2A> プロパティに対応する型の名前空間修飾名を使用するか、<xref:System.Type.AssemblyQualifiedName%2A> プロパティに対応する、アセンブリ情報を含む完全修飾型名を使用できます。  完全修飾型名については、「[完全修飾型名の指定](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)」を参照してください。|  
-|`initializeData`|省略可能な属性。<br /><br /> 指定したフィルター クラスのコンストラクターに渡す文字列。|  
+|属性|説明|  
+|---------------|-----------------|  
+|`type`|必須の属性です。<br /><br /> 継承する必要がありますフィルターの種類を指定します、<xref:System.Diagnostics.TraceFilter>クラスです。 を、型に対応する型の名前空間で修飾された名前を使用する<xref:System.Type.FullName%2A>プロパティを使用するかに対応するアセンブリ情報を含め、完全修飾型名、<xref:System.Type.AssemblyQualifiedName%2A>プロパティです。 完全修飾型名については、次を参照してください。[完全修飾型名の指定](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)です。|  
+|`initializeData`|省略可能な属性です。<br /><br /> 指定したフィルター クラスのコンス トラクターに渡された文字列。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
+|-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`system.diagnostics`|メッセージを収集、格納、およびルーティングするトレース リスナーとトレース スイッチを設定するレベルを指定します。|  
 |`trace`|トレース メッセージを収集、格納、およびルーティングするリスナーを保持します。|  
-|`listeners`|メッセージを収集、格納、およびルーティングするリスナーを保持します。  リスナーは、トレース出力を適切なターゲットに転送します。|  
+|`listeners`|収集、保管、およびメッセージをルーティングするリスナーが含まれています。 リスナーでは、適切なターゲットのトレースを出力します。|  
 |`add`|`Listeners` コレクションにリスナーを追加します。|  
   
-## 解説  
- `<filter>` 要素は、[\<sharedListeners\>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sharedlisteners-element.md) で定義されているリスナーの名前だけでなく、リスナーの型を指定するトレース リスナーの `<add>` 要素に含まれている必要があります。  リスナーが [\<sharedListeners\>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sharedlisteners-element.md) で定義されている場合は、そのリスナーのフィルターをその要素内で定義する必要があります。  
+## <a name="remarks"></a>コメント  
+ `<filter>`で要素を含める必要があります、`<add>`リスナーの種類を指定する、トレース リスナーの要素で定義されているリスナーの名前だけでなく、 [ \<sharedListeners >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sharedlisteners-element.md)です。 リスナーがで定義されている場合、 [ \<sharedListeners >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sharedlisteners-element.md)、その要素には、そのリスナーのフィルターを定義する必要があります。  
   
- この要素は、マシン構成ファイル \(Machine.config\) およびアプリケーション構成ファイルで使用できます。  
+ この要素は、マシン構成ファイル (Machine.config) と、アプリケーション構成ファイルで使用できます。  
   
-## 使用例  
- `<filter>`  要素を使用して、トレースのための `Listeners` コレクション内のリスナー `console` にフィルターを追加する方法を次の例に示します。フィルター イベント レベルは、`Error` として指定します。  
+## <a name="example"></a>例  
+ 次の例を使用する方法を示しています、`<filter>`リスナーにフィルターを追加する要素`console`で、`Listeners`としてフィルター イベント レベルを指定して、トレース`Error`です。  
   
-```  
+```xml  
 <configuration>  
   <system.diagnostics>  
     <trace autoflush="false" indentsize="4">  
@@ -86,9 +90,9 @@ caps.handback.revision: 9
 </configuration>  
 ```  
   
-## 参照  
- <xref:System.Diagnostics.Trace>   
- <xref:System.Diagnostics.TraceListener>   
- <xref:System.Diagnostics.TraceListener.Filter%2A?displayProperty=fullName>   
- <xref:System.Diagnostics.TraceFilter>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Diagnostics.Trace>  
+ <xref:System.Diagnostics.TraceListener>  
+ <xref:System.Diagnostics.TraceListener.Filter%2A?displayProperty=nameWithType>  
+ <xref:System.Diagnostics.TraceFilter>  
  [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

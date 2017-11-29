@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -16,23 +15,22 @@ helpviewer_keywords:
 - .NET Native
 - C# and native compilation
 ms.assetid: 47cd5648-9469-4b1d-804c-43cc04384045
-caps.latest.revision: 27
+caps.latest.revision: "27"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 76645ae43ce6754ffdf505729ec1198785a71561
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/18/2017
-
+ms.openlocfilehash: a79744d99571fa1428da1fade8f63c4c80ae7b6c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="compiling-apps-with-net-native"></a>.NET ネイティブによるアプリのコンパイル
-[!INCLUDE[net_native](../../../includes/net-native-md.md)] は、Windows アプリをビルドして配置するためのプリコンパイル テクノロジで、 [!INCLUDE[vs_dev14](../../../includes/vs-dev14-md.md)]に含まれています。 マネージ コード (C# または Visual Basic) で記述された、.NET Framework および Windows 10 を対象とするアプリのリリース バージョンを自動的にネイティブ コードにコンパイルします。  
+[!INCLUDE[net_native](../../../includes/net-native-md.md)]Visual Studio 2015 およびそれ以降のバージョンに含まれているプリコンパイル テクノロジを構築および Windows アプリを展開するためです。 マネージ コード (C# または Visual Basic) で記述された、.NET Framework および Windows 10 を対象とするアプリのリリース バージョンを自動的にネイティブ コードにコンパイルします。  
   
  通常、.NET Framework を対象とするアプリは中間言語 (IL) にコンパイルされます。 実行時に、Just-In-Time (JIT) コンパイラによって IL がネイティブ コードに変換されます。 これに対し、 [!INCLUDE[net_native](../../../includes/net-native-md.md)] は、Windows アプリを直接ネイティブ コードにコンパイルします。 開発者にとって、これは次のことを意味します。  
   
--   アプリは、ネイティブ コードの優れたパフォーマンスを提供します。  
+-   ネイティブ コードのパフォーマンスをアプリに機能します。 通常、パフォーマンスは IL に最初にコンパイルされ、JIT コンパイラによるネイティブ コードにコンパイルし、コードをより上位になります。 
   
 -   引き続き C# または Visual Basic でプログラムを作成できます。  
   
@@ -40,19 +38,22 @@ ms.lasthandoff: 09/18/2017
   
  アプリのユーザーにとっては、 [!INCLUDE[net_native](../../../includes/net-native-md.md)] には次のような利点があります。  
   
--   実行時間の短縮  
+-   ほとんどのアプリとシナリオの実行時間が短縮します。
   
--   常に迅速に起動  
+-   ほとんどのアプリとシナリオのスタートアップに時間が高速化します。 
   
--   配置と更新コストの削減  
+-   配置と更新コストが低い。  
   
--   アプリのメモリ使用量の最適化  
-  
- ただし、 [!INCLUDE[net_native](../../../includes/net-native-md.md)] では、ネイティブ コードへのコンパイル以上の操作が行われます。 .NET Framework アプリのビルド方法と実行方法が変更されます。 特に次の点に注意してください。  
+-   アプリのメモリ使用量を最適化します。  
+
+> [!IMPORTANT]
+> ほとんどのアプリとのシナリオでは、.NET ネイティブではスタートアップに時間が大幅に高速と IL をまたは NGEN イメージにコンパイルされたアプリを比較した場合にパフォーマンスが優れています。 ただし、結果は異なる場合があります。 アプリが .NET ネイティブのパフォーマンス向上の恩恵を受けていることを確認するには、.NET ネイティブ以外のバージョンのアプリのパフォーマンスを比較する必要があります。 詳細については、次を参照してください。[パフォーマンス セッションの概要](https:/docs.microsoft.com/visualstudio/profiling/performance-session-overview)です。
+ 
+ただし、 [!INCLUDE[net_native](../../../includes/net-native-md.md)] では、ネイティブ コードへのコンパイル以上の操作が行われます。 .NET Framework アプリのビルド方法と実行方法が変更されます。 特に次の点に注意してください。  
   
 -   プリコンパイル時に、.NET Framework の必要な部分がアプリに静的にリンクされます。 これにより、アプリは .NET Framework のアプリ ローカルのライブラリを使用して実行でき、コンパイラはグローバル分析を実行してパフォーマンスを向上させることができます。 その結果、.NET Framework の更新後であっても、アプリは常に高速に起動します。  
   
--   [!INCLUDE[net_native](../../../includes/net-native-md.md)] ランタイムは静的プリコンパイル用に最適化されているため、優れたパフォーマンスを提供できます。 同時に、開発者に役立つ主要なリフレクション機能もあります。  
+-   [!INCLUDE[net_native](../../../includes/net-native-md.md)]ランタイムは静的プリコンパイル用に最適化されたおよびほとんどの場合に、優れたパフォーマンスを提供します。 同時に、開発者に役立つ主要なリフレクション機能もあります。  
   
 -   [!INCLUDE[net_native](../../../includes/net-native-md.md)] は、静的プリコンパイル シナリオ用に最適化されている、C++ コンパイラと同じバックエンドを使用します。  
   
@@ -90,4 +91,3 @@ ms.lasthandoff: 09/18/2017
   
 ## <a name="see-also"></a>関連項目  
  [.NET ネイティブに関する FAQ](http://msdn.microsoft.com/vstudio/dn642499.aspx)
-

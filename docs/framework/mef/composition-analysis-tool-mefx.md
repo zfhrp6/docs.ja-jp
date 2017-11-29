@@ -1,41 +1,44 @@
 ---
-title: "コンポジション分析ツール (Mefx) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "コンポジション分析ツール [MEF]"
-  - "MEF, コンポジション分析ツール"
-  - "Mefx [MEF], コンポジション分析ツール"
+title: "コンポジション分析ツール (Mefx)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Composition Analysis Tool [MEF]
+- MEF, Composition Analysis Tool
+- Mefx [MEF], Composition Analysis Tool
 ms.assetid: c48a7f93-83bb-4a06-aea0-d8e7bd1502ad
-caps.latest.revision: 8
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 740ba87fd247e05b1bc32e3732819514ba2806ae
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# コンポジション分析ツール (Mefx)
-合成分析ツール \(Mefx\) は、Managed Extensibility Framework \(MEF\) のパートが含まれたライブラリ \(.dll\) ファイルとアプリケーション \(.exe\) ファイルを分析するコマンド ライン アプリケーションです。 Mefx の主な目的は、開発者が煩雑なトレース コードをアプリケーション自体に追加することなく、MEF アプリケーションの合成エラーを診断できるようにすることです。 また、Mefx は、サード パーティが提供するライブラリのパートについて理解する際にも役立ちます ここでは、Mefx の使用方法について説明し、構文のリファレンスを示します。  
+# <a name="composition-analysis-tool-mefx"></a>コンポジション分析ツール (Mefx)
+合成分析ツール (Mefx) は、Managed Extensibility Framework (MEF) のパートが含まれたライブラリ (.dll) ファイルとアプリケーション (.exe) ファイルを分析するコマンド ライン アプリケーションです。 Mefx の主な目的は、開発者が煩雑なトレース コードをアプリケーション自体に追加することなく、MEF アプリケーションの合成エラーを診断できるようにすることです。 また、Mefx は、サード パーティが提供するライブラリのパートについて理解する際にも役立ちます ここでは、Mefx の使用方法について説明し、構文のリファレンスを示します。  
   
 <a name="getting_mefx"></a>   
-## Mefx の入手  
- Mefx は、Codeplex の [Managed Extensibility Framework](http://go.microsoft.com/fwlink/?LinkID=187078) で入手できます。 ツールをダウンロードして解凍してください。  
+## <a name="getting-mefx"></a>Mefx の入手  
+ Mefx は、github で利用可能な[Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef/releases/tag/4.0)です。 ツールをダウンロードして解凍してください。  
   
 <a name="basic_syntax"></a>   
-## 基本構文  
+## <a name="basic-syntax"></a>基本構文  
  Mefx は、次の形式でコマンド ラインから起動します。  
   
 ```  
 mefx [files and directories] [action] [options]  
 ```  
   
- 引数の最初のセットでは、分析対象のパートの読み込み元となるファイルとディレクトリを指定します。`/file:` スイッチを使用してファイルを指定し、`/directory:` スイッチを使用してディレクトリを指定します。 次の例に示すように、複数のファイルまたはディレクトリを指定できます。  
+ 引数の最初のセットでは、分析対象のパートの読み込み元となるファイルとディレクトリを指定します。 `/file:` スイッチを使用してファイルを指定し、 `/directory:` スイッチを使用してディレクトリを指定します。 次の例に示すように、複数のファイルまたはディレクトリを指定できます。  
   
 ```  
 mefx /file:MyAddIn.dll /directory:Program\AddIns [action...]  
@@ -47,7 +50,7 @@ mefx /file:MyAddIn.dll /directory:Program\AddIns [action...]
  ファイルとディレクトリを指定した後、コマンドと、そのコマンドのオプションを指定する必要があります。  
   
 <a name="listing_available_parts"></a>   
-## 使用可能なパートの一覧を表示する  
+## <a name="listing-available-parts"></a>使用可能なパートの一覧を表示する  
  `/parts` アクションを使用すると、読み込んだファイルで宣言されているすべてのパートの一覧が表示されます。 結果は、パート名の単純なリストです。  
   
 ```  
@@ -56,7 +59,7 @@ MyAddIn.AddIn
 MyAddIn.MemberPart  
 ```  
   
- パートの詳細を参照する場合は、`/verbose` オプションを使用します。 利用可能なすべてのパートの詳細が出力されます。 1 つのパートに関する詳細情報を入手する場合は、`/parts` アクションではなく `/type` アクションを使用します。  
+ パートの詳細を参照する場合は、 `/verbose` オプションを使用します。 利用可能なすべてのパートの詳細が出力されます。 1 つのパートに関する詳細情報を入手する場合は、 `/type` アクションではなく `/parts`アクションを使用します。  
   
 ```  
 mefx /file:MyAddIn.dll /type:MyAddIn.AddIn /verbose  
@@ -65,8 +68,8 @@ mefx /file:MyAddIn.dll /type:MyAddIn.AddIn /verbose
 ```  
   
 <a name="listing_imports_and_exports"></a>   
-## インポートとエクスポートの一覧表示  
- `/imports` アクションと `/exports` アクションでは、インポートされたすべてのパートと、エクスポートされたすべてのパートがそれぞれ一覧表示されます。`/importers` アクションまたは `/exporters` アクションを使用して、特定の型をインポートまたはエクスポートするパートを一覧表示することもできます。  
+## <a name="listing-imports-and-exports"></a>インポートとエクスポートの一覧表示  
+ `/imports` アクションと `/exports` アクションでは、インポートされたすべてのパートと、エクスポートされたすべてのパートがそれぞれ一覧表示されます。 `/importers` アクションまたは `/exporters` アクションを使用して、特定の型をインポートまたはエクスポートするパートを一覧表示することもできます。  
   
 ```  
 mefx /file:MyAddIn.dll /importers:MyAddin.MemberPart  
@@ -76,10 +79,10 @@ MyAddin.AddIn
  これらのアクションに `/verbose` オプションを適用することもできます。  
   
 <a name="finding_rejected_parts"></a>   
-## 拒否されたパートの検索  
- 使用可能なパートを読み込んだ後、Mefx は MEF 合成エンジンを使用してそれらのパートを合成します。 正常に構成できないパートのことを、*拒否された*パートと呼びます。 拒否されたすべてのパートの一覧を表示するには、`/rejected` アクションを使用します。  
+## <a name="finding-rejected-parts"></a>拒否されたパートの検索  
+ 使用可能なパートを読み込んだ後、Mefx は MEF 合成エンジンを使用してそれらのパートを合成します。 正常に構成できないパートのことを、 *拒否された*パートと呼びます。 拒否されたすべてのパートの一覧を表示するには、 `/rejected` アクションを使用します。  
   
- `/rejected` アクションで `/verbose` オプションを使用すると、拒否されたパートに関する詳細情報が出力されます。 次の例では、`ClassLibrary1` という DLL に `AddIn` パートが含まれています。このパートは、`MemberPart` パートと `ChainOne` パートをインポートします。`ChainOne` は `ChainTwo` をインポートしますが、`ChainTwo` が存在しません。 そのため、`ChainOne` が拒否され、この拒否が原因で `AddIn` も拒否されることになります。  
+ `/verbose` アクションで `/rejected` オプションを使用すると、拒否されたパートに関する詳細情報が出力されます。 次の例では、 `ClassLibrary1` という DLL に `AddIn` パートが含まれています。このパートは、 `MemberPart` パートと `ChainOne` パートをインポートします。 `ChainOne` は `ChainTwo`をインポートしますが、 `ChainTwo` が存在しません。 そのため、 `ChainOne` が拒否され、この拒否が原因で `AddIn` も拒否されることになります。  
   
 ```  
 mefx /file:ClassLibrary1.dll /rejected /verbose  
@@ -110,22 +113,22 @@ from: ClassLibrary1.ChainOne from: AssemblyCatalog (Assembly="ClassLibrary1, Ver
    at Microsoft.ComponentModel.Composition.Diagnostics.CompositionInfo.AnalyzeImportDefinition(ExportProvider host, IEnumerable`1 availableParts, ImportDefinition id)  
 ```  
   
- `[Exception]` と `[Unsuitable]` の結果に、有用な情報が含まれています。`[Exception]` の結果には、パートが拒否された理由に関する情報が示されています。`[Unsuitable]` の結果には、他の点では一致するパートを使用してインポートを満たせなかった理由が示されています。ここでは、インポートが見つからないために、パートそのものが拒否されたということが分かります。  
+ `[Exception]` と `[Unsuitable]` の結果に、有用な情報が含まれています。 `[Exception]` の結果には、パートが拒否された理由に関する情報が示されています。 `[Unsuitable]` の結果には、他の点では一致するパートを使用してインポートを満たせなかった理由が示されています。ここでは、インポートが見つからないために、パートそのものが拒否されたということが分かります。  
   
 <a name="analyzing_primary_causes"></a>   
-## 主要な原因を分析する  
- 長い依存関係チェーンで複数のパートがリンクされている場合、最下位付近のパートに関係する問題によって、チェーン全体が拒否されることがあります。 エラーの根本原因が必ずしも明らかであるとは限らないため、このような問題は診断が難しい場合があります。 問題解決に役立てるために、`/causes` アクションを使用できます。このアクションでは、拒否の連鎖の根本原因を見つけることを試みます。  
+## <a name="analyzing-primary-causes"></a>主要な原因を分析する  
+ 長い依存関係チェーンで複数のパートがリンクされている場合、最下位付近のパートに関係する問題によって、チェーン全体が拒否されることがあります。 エラーの根本原因が必ずしも明らかであるとは限らないため、このような問題は診断が難しい場合があります。 問題解決に役立てるために、 `/causes` アクションを使用できます。このアクションでは、拒否の連鎖の根本原因を見つけることを試みます。  
   
- 前の例で `/causes` アクションを使用すると、`ChainOne` に関する情報だけが示されます。このパートのインポートが満たされなかったことが、`AddIn` が拒否された根本原因であるためです。`/causes` アクションは、通常のオプションと `/verbose` オプションの両方で使用できます。  
+ 前の例で `/causes` アクションを使用すると、 `ChainOne`に関する情報だけが示されます。このパートのインポートが満たされなかったことが、 `AddIn`が拒否された根本原因であるためです。 `/causes` アクションは、通常のオプションと `/verbose` オプションの両方で使用できます。  
   
 > [!NOTE]
 >  ほとんどの場合、連鎖するエラーの根本原因を Mefx で診断できます。 ただし、パートがプログラムによってコンテナーに追加される場合、階層コンテナーが関係している場合、またはカスタムの `ExportProvider` 実装が関係している場合には、Mefx によって原因を診断することができません これらの状況では一般にエラーの診断が難しいため、できるだけ避けることをお勧めします。  
   
 <a name="white_lists"></a>   
-## ホワイト リスト  
- `/whitelist` オプションでは、拒否されることが予想されるパートの一覧を示すテキスト ファイルを指定できます。 予期されない拒否にはフラグが設定されます。 これは、一部の依存関係が見つからない不完全なライブラリまたはサブライブラリを分析する際に役立ちます。`/whitelist` オプションは、`/rejected` アクションまたは `/causes` アクションに適用できます。  
+## <a name="white-lists"></a>ホワイト リスト  
+ `/whitelist` オプションでは、拒否されることが予想されるパートの一覧を示すテキスト ファイルを指定できます。 予期されない拒否にはフラグが設定されます。 これは、一部の依存関係が見つからない不完全なライブラリまたはサブライブラリを分析する際に役立ちます。 `/whitelist` オプションは、 `/rejected` アクションまたは `/causes` アクションに適用できます。  
   
- "ClassLibrary1.ChainOne" というテキストが含まれた test.txt という名前のファイルがあるとします。 前の例で、`/rejected` アクションに `/whitelist` オプションを指定して実行すると、次の出力が生成されます。  
+ "ClassLibrary1.ChainOne" というテキストが含まれた test.txt という名前のファイルがあるとします。 前の例で、 `/rejected` アクションに `/whitelist` オプションを指定して実行すると、次の出力が生成されます。  
   
 ```  
 mefx /file:ClassLibrary1.dll /rejected /whitelist:test.txt  

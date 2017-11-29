@@ -1,27 +1,37 @@
 ---
-title: "&lt;webHttpBinding&gt; の &lt;transport&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;webHttpBinding&gt; の &lt;transport&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f150fb19-7de1-44af-81f4-86cad881cd05
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 44397edf2d2c5e2f99a255789452b08d91484b81
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;webHttpBinding&gt; の &lt;transport&gt;
+# <a name="lttransportgt-of-ltwebhttpbindinggt"></a>&lt;webHttpBinding&gt; の &lt;transport&gt;
 HTTP 要求を受信するように構成されたサービス エンドポイントのトランスポート レベルのセキュリティ設定を定義します。  
   
-## 構文  
+ \<システムです。ServiceModel >  
+\<バインド >  
+\<webHttpBinding >  
+\<バインド >  
+\<セキュリティ >  
+\<トランスポート >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <webHttpBinding>  
     <binding>  
         <security  
@@ -39,25 +49,25 @@ HTTP 要求を受信するように構成されたサービス エンドポイ�
 </WebHttpBinding>  
 ```  
   
-## 型  
+## <a name="type"></a>型  
  <xref:System.ServiceModel.HttpTransportSecurity>  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
 |属性|説明|  
-|--------|--------|  
-|`clientCredentialType`|サービスに対するクライアントの認証に使用される資格情報を指定します。  この属性は <xref:System.ServiceModel.HttpClientCredentialType> 型です。|  
-|`proxyCredentialType`|ドメイン プロキシに対するクライアントの認証に使用される資格情報を指定します。  この属性は <xref:System.ServiceModel.HttpProxyCredentialType> 型です。|  
-|`realm`|ダイジェストまたは基本認証の認証レルムを指定する文字列。  既定値は空の文字列です。<br /><br /> 認証レルムでは、少なくとも、認証を実行するホストの名前を指定します。  アクセス権のあるユーザーのコレクションも指定できます。  ユーザーは、認証レルムを照会して、複数のユーザー名およびパスワードの候補のうち、どれを使用できるかを確認することができます。|  
-|`policyEnforcement`|この列挙体は、<xref:System.Security.Authentication.ExtendedProtectionPolicy> を適用するタイミングを指定します。<br /><br /> 1.  Never – ポリシーが適用されることはありません \(拡張保護は無効になります\)。<br />2.  WhenSupported – ポリシーが適用されるのは、クライアントが拡張保護をサポートしている場合のみです。<br />3.  Always – ポリシーは常に適用されます。  拡張保護をサポートしていないクライアントは認証に失敗します。|  
+|---------------|-----------------|  
+|`clientCredentialType`|サービスに対するクライアントの認証に使用される資格情報を指定します。 この属性は <xref:System.ServiceModel.HttpClientCredentialType> 型です。|  
+|`proxyCredentialType`|ドメイン プロキシに対するクライアントの認証に使用される資格情報を指定します。 この属性は <xref:System.ServiceModel.HttpProxyCredentialType> 型です。|  
+|`realm`|ダイジェストまたは基本認証の認証レルムを指定する文字列。 既定値は空の文字列です。<br /><br /> 認証レルムでは、少なくとも、認証を実行するホストの名前を指定します。 アクセス権のあるユーザーのコレクションも指定できます。 ユーザーは、認証レルムを照会して、複数のユーザー名およびパスワードの候補のうち、どれを使用できるかを確認することができます。|  
+|`policyEnforcement`|この列挙体は、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> を適用するタイミングを指定します。<br /><br /> 1.Never – ポリシーが適用されることはありません (拡張保護は無効になります)。<br />2.WhenSupported – ポリシーが適用されるのは、クライアントが拡張保護をサポートしている場合のみです。<br />3.Always – ポリシーは常に適用されます。 拡張保護をサポートしていないクライアントは認証に失敗します。|  
   
-## clientCredentialType 属性  
+## <a name="clientcredentialtype-attribute"></a>clientCredentialType 属性  
   
 |値|説明|  
-|-------|--------|  
+|-----------|-----------------|  
 |`None`|セキュリティを無効にします。|  
 |`Basic`|基本認証を使用します。|  
 |`Certificate`|X.509 証明書を使用して、クライアントを認証します。|  
@@ -65,33 +75,33 @@ HTTP 要求を受信するように構成されたサービス エンドポイ�
 |`Ntlm`|Windows ドメインのフォールバックとして NTLM 認証を使用します。|  
 |`Windows`|統合 Windows 認証を使用します。|  
   
-## proxyCredentialType 属性  
+## <a name="proxycredentialtype-attribute"></a>proxyCredentialType 属性  
   
 |値|説明|  
-|-------|--------|  
+|-----------|-----------------|  
 |`None`|セキュリティを無効にします。|  
 |`Basic`|基本認証を使用します。|  
 |`Digest`|ダイジェスト認証を使用します。|  
 |`Ntlm`|Windows ドメインのフォールバックとして NTLM を使用します。|  
 |`Windows`|統合 Windows 認証を使用します。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<security\>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-webhttpbinding.md)|[\<wsHttpBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) 要素のセキュリティ機能を表します。|  
+|-------------|-----------------|  
+|[\<セキュリティ >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-webhttpbinding.md)|セキュリティ機能を表す、 [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)要素。|  
   
-## 参照  
- <xref:System.ServiceModel.HttpTransportSecurity>   
- <xref:System.ServiceModel.Configuration.WebHttpSecurityElement.Transport%2A>   
- <xref:System.ServiceModel.WebHttpSecurity.Transport%2A>   
- <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>   
- [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [バインディング](../../../../../docs/framework/wcf/bindings.md)   
- [システムが提供するバインディングの構成](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/ja-jp/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
- [\<binding\>](../../../../../docs/framework/misc/binding.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.ServiceModel.HttpTransportSecurity>  
+ <xref:System.ServiceModel.Configuration.WebHttpSecurityElement.Transport%2A>  
+ <xref:System.ServiceModel.WebHttpSecurity.Transport%2A>  
+ <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>  
+ [サービスとクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [バインディング](../../../../../docs/framework/wcf/bindings.md)  
+ [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<バインド >](../../../../../docs/framework/misc/binding.md)  
  [WCF Web HTTP プログラミング モデル](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

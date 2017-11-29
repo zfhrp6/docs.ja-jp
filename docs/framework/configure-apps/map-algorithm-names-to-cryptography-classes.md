@@ -1,54 +1,52 @@
 ---
-title: "暗号化クラスへのアルゴリズム名の割り当て | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "暗号アルゴリズム"
-  - "暗号化, 割り当て (アルゴリズム名の)"
-  - "割り当て (アルゴリズム名の)"
-  - "名前 [.NET Framework], アルゴリズムの割り当て"
+title: "暗号化クラスへのアルゴリズム名の割り当て"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- mapping algorithm names
+- cryptography, mapping algorithm names
+- cryptographic algorithms
+- names [.NET Framework], algorithm mapping
 ms.assetid: 01327c69-c5e1-4ef6-b73f-0a58351f0492
-caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 10
+caps.latest.revision: "11"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: e59b2551545b8b70bcb54a5d43d041c44579b786
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 暗号化クラスへのアルゴリズム名の割り当て
-開発者は、[!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] を使用して、次の 4 とおりの方法で暗号オブジェクトを作成できます。  
+# <a name="mapping-algorithm-names-to-cryptography-classes"></a>暗号化クラスへのアルゴリズム名の割り当て
+次の 4 つの方法を開発者が、暗号化を使用してオブジェクトを作成することができますが、 [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]:  
   
--   **new** 演算子を使用してオブジェクトを作成する。  
+-   使用してオブジェクトを作成、**新しい**演算子。  
   
--   アルゴリズムの抽象クラスの **Create** メソッドを呼び出して、特定の暗号化アルゴリズムを実装するオブジェクトを作成する。  
+-   呼び出して、特定の暗号化アルゴリズムを実装するオブジェクトを作成、**作成**該当するアルゴリズムの抽象クラスのメソッドです。  
   
--   [System.Security.Cryptography.CryptoConfig.CreateFromName](frlrfSystemSecurityCryptographyCryptoConfigClassCreateFromNameTopic) メソッドを呼び出して、特定の暗号化アルゴリズムを実装するオブジェクトを作成する。  
+-   呼び出して、特定の暗号化アルゴリズムを実装するオブジェクトを作成、<xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType>メソッドです。  
   
--   暗号化アルゴリズムの抽象クラス \(<xref:System.Security.Cryptography.SymmetricAlgorithm> など\) の **Create** メソッドを呼び出して、その種類の暗号化アルゴリズム \(対称ブロック暗号法など\) のクラスを実装するオブジェクトを作成する。  
+-   呼び出して、暗号アルゴリズム (対称ブロック暗号) などのクラスを実装するオブジェクトを作成、**作成**アルゴリズムの種類の抽象クラスのメソッド (など<xref:System.Security.Cryptography.SymmetricAlgorithm>)。  
   
- たとえば、開発者が、バイト セットの SHA1 ハッシュを計算すると仮定します。  <xref:System.Security.Cryptography> 名前空間には、SHA1 アルゴリズムの 2 つの実装が含まれています。1 つは純粋なマネージ実装であり、もう 1 つは CryptoAPI をラップする実装です。  開発者は、**new** 演算子を呼び出すことにより、特定の SHA1 実装 \([SHA1Managed クラス](frlrfSystemSecurityCryptographySHA1ManagedClassTopic)など\) をインスタンス化できます。  しかし、そのクラスが SHA1 ハッシュ アルゴリズムを実装していれば共通言語ランタイムがどのクラスを読み込むかは問題でない場合、開発者は [System.Security.Cryptography.SHA1.Create](frlrfSystemSecurityCryptographySHA1ClassCreateTopic) メソッドを呼び出してオブジェクトを作成できます。  このメソッドは、SHA1 ハッシュ アルゴリズムの実装を返す **System.Security.Cryptography.CryptoConfig.CreateFromName\("System.Security.Cryptography.SHA1"\)** を呼び出します。  
+ たとえば、開発者が、一連のバイトの SHA1 ハッシュを計算します。 <xref:System.Security.Cryptography>名前空間には、SHA1 アルゴリズム、1 つの純粋なマネージ実装および CryptoAPI をラップする 1 つの 2 つの実装が含まれています。 開発者は、特定の SHA1 実装のインスタンスを作成するを選択できます (など、 <xref:System.Security.Cryptography.SHA1Managed>) を呼び出して、**新しい**演算子。 ただし場合は、共通言語ランタイム クラスには SHA1 ハッシュ アルゴリズムを実装している限りをロードするクラスもかまいませんが、開発者は、オブジェクトを作成できますを呼び出して、<xref:System.Security.Cryptography.SHA1.Create%2A?displayProperty=nameWithType>メソッドです。 このメソッドを呼び出す**System.Security.Cryptography.CryptoConfig.CreateFromName("System.Security.Cryptography.SHA1")**、SHA1 ハッシュ アルゴリズムの実装を返す必要があります。  
   
- 暗号構成には、既定として、.NET Framework に付属しているアルゴリズムのための短い名前が含まれているため、開発者は **System.Security.Cryptography.CryptoConfig.CreateFromName\("SHA1"\)** を呼び出すこともできます。  
+ 開発者が呼び出すことができますも**System.Security.Cryptography.CryptoConfig.CreateFromName("SHA1")**のため、既定では、暗号化の構成には、.NET Framework に付属しているアルゴリズムの短い名前が含まれます。  
   
- どのハッシュ アルゴリズムを使用するかは問題でない場合、開発者はハッシュ変換を実装するオブジェクトを返す [System.Security.Cryptography.HashAlgorithm.Create](frlrfSystemSecurityCryptographyHashAlgorithmClassCreateTopic) メソッドを呼び出すことができます。  
+ ハッシュ アルゴリズムを使用する必要はない場合、開発者が呼び出すことができます、<xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType>ハッシュの変換を実装するオブジェクトを返すメソッド。  
   
-## 構成ファイル内でのアルゴリズム名の割り当て  
- 既定では、ランタイムは 4 つのシナリオのいずれの場合にも、[System.Security.Cryptography.SHA1CryptoServiceProvider クラス](frlrfSystemSecurityCryptographySHA1CryptoServiceProviderClassTopic) オブジェクトを返します。  コンピューター管理者は、後の 2 つのシナリオのメソッドが返すオブジェクトの型を変更できます。  オブジェクトの型を変換するには、マシン構成ファイル \(Machine.config\) 内で、使用するクラスにアルゴリズムの表示名を割り当てる必要があります。  
+## <a name="mapping-algorithm-names-in-configuration-files"></a>構成ファイル内のアルゴリズム名の割り当てください。  
+ 既定では、ランタイムが返されます、 <xref:System.Security.Cryptography.SHA1CryptoServiceProvider> 4 つのシナリオのオブジェクト。 ただし、コンピューターの管理者は、最後の 2 つのシナリオで、メソッドが返すオブジェクトの種類を変更できます。 これを行うには、マシン構成ファイル (Machine.config) で使用するクラスにアルゴリズムの表示名をマップする必要があります。  
   
- **System.Security.Cryptography.SHA1.Create**、**System.Security.CryptoConfig.CreateFromName\("SHA1"\)**、および **System.Security.Cryptography.HashAlgorithm.Create** が `MySHA1HashClass` オブジェクトを返すようにランタイムを設定する方法の例を次に示します。  
+ 次の例は、ランタイムを構成する方法を示していますように**System.Security.Cryptography.SHA1.Create**、 **System.Security.CryptoConfig.CreateFromName("SHA1")**、および**。System.Security.Cryptography.HashAlgorithm.Create**を返す、`MySHA1HashClass`オブジェクト。  
   
-```  
+```xml  
 <configuration>  
    <!-- Other configuration settings. -->  
    <mscorlib>  
@@ -70,15 +68,15 @@ caps.handback.revision: 10
 </configuration>  
 ```  
   
- [\<cryptoClass\> 要素](../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md) に属性名を指定できます。上の例では、属性 `MySHA1Hash`を指定します\)。  **\<cryptoClass\>** 要素の属性の値は、共通言語ランタイム クラスを検索するために使用する文字列です。  「[完全限定型名の指定](../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)」に指定されている要件を満たす任意の文字列を使用できます。  
+ 内の属性の名前を指定することができます、 [< cryptoClass\>要素](../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md)(前の例で、属性は名前`MySHA1Hash`)。 内の属性の値、  **\<cryptoClass >**要素は、共通言語ランタイムを使用して、クラスを検索する文字列。 指定された要件を満たす任意の文字列を使用する[完全修飾型名の指定](../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)です。  
   
- 同一のクラスに複数のアルゴリズム名を割り当てることができます。  [\<nameEntry\> 要素](../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) は 1 個のわかりやすいアルゴリズムにクラス名を割り当てます。  **name** 属性は、**System.Security.Cryptography.CryptoConfig.CreateFromName** メソッドを呼び出すときに使用する文字列または <xref:System.Security.Cryptography> 名前空間の抽象暗号化クラスです。  **class** 属性の値は **\<cryptoClass\>** 要素内の属性の名前です。  
+ 複数のアルゴリズム名は、同じクラスにマップできます。 [ \<NameEntry > 要素](../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md)クラスを 1 つのアルゴリズムの表示名にマップします。 **名前**属性が指定できるを呼び出すときに使用される文字列、 **System.Security.Cryptography.CryptoConfig.CreateFromName**メソッド、または、で抽象暗号化クラスの名前<xref:System.Security.Cryptography>名前空間。 値、**クラス**属性は、属性の名前、  **\<cryptoClass >**要素。  
   
 > [!NOTE]
->  [System.Security.Cryptography.SHA1.Create](frlrfSystemSecurityCryptographySHA1ClassCreateTopic) メソッドまたは **Security.CryptoConfig.CreateFromName\("SHA1"\)** メソッドを呼び出すことにより SHA1 アルゴリズムを取得できます。  それぞれのメソッドで保証されるのは、SHA1 アルゴリズムを実装するオブジェクトを返すことだけです。  構成ファイル内の同じクラスに、アルゴリズムのそれぞれの表示名を割り当てる必要はありません。  
+>  呼び出して、SHA1 アルゴリズムを取得することができます、<xref:System.Security.Cryptography.SHA1.Create%2A?displayProperty=nameWithType>または**Security.CryptoConfig.CreateFromName("SHA1")**メソッドです。 各メソッドは、SHA1 アルゴリズムを実装するオブジェクトが返されることにのみ保証されます。 各アルゴリズムの名前を構成ファイルで同じクラスにマップする必要はありません。  
   
- 既定の名前の一覧およびそれらの名前を割り当てるクラスについては、「[CryptoConfig クラス](frlrfSystemSecurityCryptographyCryptoConfigClassTopic)」を参照してください。  
+ 既定の名前とそれらに対応付けるクラスの一覧は、次を参照してください。<xref:System.Security.Cryptography.CryptoConfig>です。  
   
-## 参照  
- [暗号サービス](../../../docs/standard/security/cryptographic-services.md)   
+## <a name="see-also"></a>関連項目  
+ [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)  
  [暗号化クラスの設定](../../../docs/framework/configure-apps/configure-cryptography-classes.md)

@@ -1,25 +1,28 @@
 ---
-title: "TcpTransportBindingElement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: TcpTransportBindingElement
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 33bbc1e5-44e4-4ee3-b7b5-801dc78956e4
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 180e954661319cb32edfd3180418fe9b1571ea5c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# TcpTransportBindingElement
+# <a name="tcptransportbindingelement"></a>TcpTransportBindingElement
 TcpTransportBindingElement  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class TcpTransportBindingElement : ConnectionOrientedTransportBindingElement  
@@ -31,45 +34,45 @@ class TcpTransportBindingElement : ConnectionOrientedTransportBindingElement
 };  
 ```  
   
-## メソッド  
+## <a name="methods"></a>メソッド  
  TcpTransportBindingElement クラスは、メソッドを一切定義しません。  
   
-## プロパティ  
+## <a name="properties"></a>プロパティ  
  TcpTransportBindingElement クラスには、次のプロパティがあります。  
   
-### ConnectionPoolSettings  
+### <a name="connectionpoolsettings"></a>ConnectionPoolSettings  
  データ型 : TcpConnectionPoolSettings  
   
  アクセスの種類 : 読み取り専用  
   
  接続プールの設定。  
   
-### ListenBacklog  
+### <a name="listenbacklog"></a>ListenBacklog  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  保留可能なキュー内の接続要求の最大数です。  
   
-### PortSharingEnabled  
+### <a name="portsharingenabled"></a>PortSharingEnabled  
  データ型 : boolean  
   
  アクセスの種類 : 読み取り専用  
   
  TCP ポート共有をこの接続で有効にするかどうかを指定するブール値です。  
   
-### TeredoEnabled  
+### <a name="teredoenabled"></a>TeredoEnabled  
  データ型 : boolean  
   
  アクセスの種類 : 読み取り専用  
   
- Teredo \(ファイアウォールの内側にあるクライアントをアドレス指定するためのテクノロジ\) を有効にするかどうかを指定するブール値です。  
+ Teredo (ファイアウォールの内側にあるクライアントをアドレス指定するためのテクノロジ) を有効にするかどうかを指定するブール値です。  
   
-## 要件  
+## <a name="requirements"></a>要件  
   
-|MOF|Servicemodel.mof にて宣言済み|  
-|---------|-----------------------------|  
-|名前空間|root\\ServiceModel で定義|  
+|MOF|Servicemodel.mof にて宣言済み。|  
+|---------|-----------------------------------|  
+|Namespace|root\ServiceModel で定義|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels.TcpTransportBindingElement>

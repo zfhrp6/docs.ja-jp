@@ -1,29 +1,35 @@
 ---
-title: "クエリ結果のページング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "クエリ結果のページング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: fa360c46-e5f8-411e-a711-46997771133d
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: b4a51eec840b74d04aaab97226191b2ed30d8826
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# クエリ結果のページング
-クエリ結果のページングとは、クエリ結果をデータの小さなサブセット、つまりページに分けて返すプロセスです。  クエリ結果のページングは、結果を管理しやすい小さな単位でユーザーに表示するために行われる一般的な処理です。  
+# <a name="paging-through-a-query-result"></a>クエリ結果のページング
+クエリ結果のページングとは、クエリ結果をデータの小さなサブセット、つまりページに分けて返すプロセスです。 クエリ結果のページングは、結果を管理しやすい小さな単位でユーザーに表示するために行われる一般的な処理です。  
   
- **DataAdapter** には、**Fill** メソッドのオーバーロードを通じて 1 ページ分のデータだけを返す機能が用意されています。  しかしこれは大きなクエリ結果のページングには適していません。**DataAdapter** が目的の <xref:System.Data.DataTable> または <xref:System.Data.DataSet> に、要求されたレコードだけを格納する一方で、クエリ全体を返すためのリソースが使用されるためです。  クエリ全体を返す必要があるリソースを使用せずにデータ ソースから 1 ページ分のデータを返すには、必要な行だけ返すように限定する抽出条件をクエリに追加します。  
+ **DataAdapter**のオーバー ロードによって、データのページのみを返すための機能を提供、**塗りつぶし**メソッドです。 ただし、このできない可能性がありますので、大規模なクエリ結果のページングに最適な選択肢ですが、 **DataAdapter**塗りつぶしますターゲット<xref:System.Data.DataTable>または<xref:System.Data.DataSet>のみ、要求されたレコードを返すリソースで、クエリ全体が引き続き使用されます。 クエリ全体を返す必要があるリソースを使用せずにデータ ソースから 1 ページ分のデータを返すには、必要な行だけ返すように限定する抽出条件をクエリに追加します。  
   
- **Fill** メソッドを使用して 1 ページ分のデータを返すには、データ ページの先頭レコードを指定する **startRecord** パラメーターおよびデータ ページのレコード数を指定する **maxRecords** パラメーターを指定します。  
+ 使用する、**塗りつぶし**、データのページを返す方法を指定する、 **startRecord**最初のレコードのデータのページで、パラメーター、および**maxRecords**の数のパラメーターデータのページのレコードです。  
   
- **Fill** メソッドを使用してクエリ結果の最初のページ \(ページ サイズ : 5 つのレコード\) を返す方法を次のコード サンプルに示します。  
+ 次のコード例を使用する方法を示しています、**塗りつぶし**ページ サイズが 5 つのレコードは、クエリ結果の最初のページを返すメソッドをします。  
   
 ```vb  
 Dim currentIndex As Integer = 0  
@@ -50,7 +56,7 @@ DataSet dataSet = new DataSet();
 adapter.Fill(dataSet, currentIndex, pageSize, "Orders");  
 ```  
   
- 上記の例では、**DataSet** に 5 つのレコードだけが格納されますが、**Orders** テーブル全体が返されます。  **DataSet** にこれと同じ 5 つのレコードを格納し、5 つのレコードだけを返すには、次のコード サンプルに示すように SQL ステートメントで TOP 句と WHERE 句を使用します。  
+ 前の例で、**データセット**で 5 つのレコードが全体が入力のみ**Orders**テーブルが返されます。 入力する、**データセット**これら同じ 5 つのレコードが 5 つのレコードだけを返すは、TOP を使用して、次のコード例のように、SQL ステートメントの WHERE 句です。  
   
 ```vb  
 Dim pageSize As Integer = 5  
@@ -87,7 +93,7 @@ string lastRecord =
   dataSet.Tables["Orders"].Rows[pageSize - 1]["OrderID"].ToString();  
 ```  
   
- **startRecord** パラメーターおよび **maxRecords** パラメーターを受け取る **Fill** メソッドのオーバーロードを使用して次のレコード ページを返すには、現在のレコード インデックスをページ サイズの分だけインクリメントし、テーブルにレコード ページを格納します。  **DataSet** に 1 ページ分のレコードだけを追加する場合でも、データベース サーバーはクエリ結果全体を返すことに注意してください。  次のデータ ページを格納する前にテーブル行をクリアするコード サンプルを次に示します。  データベース サーバーとのやり取りを減らすために、ローカルのキャッシュに、返された一定数の行を保存することもできます。  
+ オーバー ロードを使用してレコードの次のページを返す、**塗りつぶし**を受け取るメソッド、 **startRecord**と**maxRecords**パラメーター、インクリメントでは、現在のレコード インデックスページ サイズと塗りつぶしテーブル。 レコードの 1 つだけのページに追加される場合でも、データベース サーバーがクエリ全体結果を返すことに注意してください、**データセット**です。 次のデータ ページを格納する前にテーブル行をクリアするコード サンプルを次に示します。 データベース サーバーとのやり取りを減らすために、ローカルのキャッシュに、返された一定数の行を保存することもできます。  
   
 ```vb  
 currentIndex = currentIndex + pageSize  
@@ -105,7 +111,7 @@ dataSet.Tables["Orders"].Rows.Clear();
 adapter.Fill(dataSet, currentIndex, pageSize, "Orders");  
 ```  
   
- データベース サーバーによってクエリ全体を返さずに次のレコード ページを返すには、SELECT ステートメントに限定的な抽出条件を指定します。  上の例では最後に返されたレコードが保存されますが、次のコード サンプルに示すようにそのレコードを WHERE 句で使用するとクエリの開始点を指定できます。  
+ データベース サーバーによってクエリ全体を返さずに次のレコード ページを返すには、SELECT ステートメントに限定的な抽出条件を指定します。 上の例では最後に返されたレコードが保存されますが、次のコード サンプルに示すようにそのレコードを WHERE 句で使用するとクエリの開始点を指定できます。  
   
 ```vb  
 orderSQL = "SELECT TOP " & pageSize & _  
@@ -127,6 +133,6 @@ dataSet.Tables["Orders"].Rows.Clear();
 adapter.Fill(dataSet, "Orders");  
 ```  
   
-## 参照  
- [DataAdapter と DataReader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [Dataadapter と Datareader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,101 +1,103 @@
 ---
-title: "非同期プログラミング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "非同期プログラミング"
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.technology: dotnet-ado
+ms.topic: article
 ms.assetid: 85da7447-7125-426e-aa5f-438a290d1f77
-caps.latest.revision: 30
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 30
+caps.latest.revision: "30"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: fb500b203555c9174727cd4e9f69eeb5f1df87db
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 非同期プログラミング
-このトピックでは、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] で導入された非同期プログラミング機能をサポートするための拡張機能など、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] Data Provider for [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] \(SqlClient\) における非同期プログラミングのサポートについて説明します。  
+# <a name="asynchronous-programming"></a>非同期プログラミング
+
+このトピックでは、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] で導入された非同期プログラミング機能をサポートするための拡張機能など、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] Data Provider for [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] (SqlClient) における非同期プログラミングのサポートについて説明します。  
   
-## 従来の非同期プログラミング  
+## <a name="legacy-asynchronous-programming"></a>従来の非同期プログラミング  
  [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] より前のバージョンでは、SqlClient による非同期プログラミングは、次のメソッドと `Asynchronous Processing=true` 接続プロパティを使用して行われていました。  
   
-1.  <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A?displayProperty=fullName>  
+1.  <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A?displayProperty=nameWithType>  
   
-2.  <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A?displayProperty=fullName>  
+2.  <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A?displayProperty=nameWithType>  
   
-3.  <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A?displayProperty=fullName>  
+3.  <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A?displayProperty=nameWithType>  
   
  この機能は [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] の SqlClient に残っています。  
   
  [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] 以降、これらのメソッドでは、接続文字列に `Asynchronous Processing=true` が必要なくなりました。  
   
-## [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] で追加された非同期プログラミング機能  
+## <a name="asynchronous-programming-features-added-in-includenetv45includesnet-v45-mdmd"></a>[!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] で追加された非同期プログラミング機能  
  新しい非同期プログラミング機能を使用すると、コードを簡単に非同期にすることができます。  
   
  [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] で導入された非同期プログラミング機能の詳細については、次の Web サイトを参照してください。  
   
--   [Async および Await を使用した非同期プログラミング](http://go.microsoft.com/fwlink/?LinkId=220765)  
-  
--   [.Net 4.5 での SqlDataReader の新しい非同期メソッドの使用 \(パート 1\)](http://blogs.msdn.com/b/adonet/archive/2012/04/20/using-sqldatareader-s-new-async-methods-in-net-4-5-beta.aspx)  
-  
--   [.Net 4.5 での SqlDataReader の新しい非同期メソッドの使用 \(パート 2\)](http://blogs.msdn.com/b/adonet/archive/2012/07/15/using-sqldatareader-s-new-async-methods-in-net-4-5-beta-part-2-examples.aspx)  
-  
- ユーザー インターフェイスが応答しない場合やサーバーのパフォーマンスが向上しない場合は、コードをさらに非同期にする必要がある可能性があります。  非同期コードの記述には、従来、非同期操作の完了後に発生するロジックを表すコールバック \(または継続とも呼ばれます\) のインストールが伴っていました。  これにより、同期コードと比較して、非同期コードの構造は複雑になります。  
+- [非同期プログラミング (C#)](../../../csharp/async.md)
+
+- [Async および Await を使用した非同期プログラミング (Visual Basic)](../../../visual-basic/programming-guide/concepts/async/index.md)
+
+- [.Net 4.5 (パート 1) での SqlDataReader の新しい非同期メソッドの使用](https://blogs.msdn.microsoft.com/adonet/2012/04/20/using-sqldatareaders-new-async-methods-in-net-4-5/)
+
+- [.Net 4.5 (パート 2) での SqlDataReader の新しい非同期メソッドの使用](https://blogs.msdn.microsoft.com/adonet/2012/07/15/using-sqldatareaders-new-async-methods-in-net-4-5-part-2-examples/)
+ 
+ ユーザー インターフェイスが応答しない場合やサーバーのパフォーマンスが向上しない場合は、コードをさらに非同期にする必要がある可能性があります。  非同期コードの記述には、従来、非同期操作の完了後に発生するロジックを表すコールバック (または継続とも呼ばれます) のインストールが伴っていました。 これにより、同期コードと比較して、非同期コードの構造は複雑になります。  
   
  現在は、コールバックを使用したり、コードを複数のメソッドやラムダ式で分割したりせずに、非同期メソッドを呼び出すことができるようになりました。  
   
- `async` 修飾子はメソッドが非同期であることを示します。  `async` メソッドを呼び出すと、タスクが返されます。  タスクに対して `await` ステートメントを呼び出すと、現在のメソッドはすぐに終了します。  タスクが終了すると、同じメソッド内で実行が再開されます。  
+ `async` 修飾子はメソッドが非同期であることを示します。 `async` メソッドを呼び出すと、タスクが返されます。 ときに、`await`演算子は、タスクに適用、現在のメソッドはすぐに終了します。 タスクが終了すると、同じメソッド内で実行が再開されます。
   
 > [!WARNING]
 >  非同期呼び出しは、アプリケーションで `Context Connection` 接続文字列キーワードも使用されている場合はサポートされません。  
   
- `async` メソッドを呼び出すと、追加のスレッドは割り当てられません。  既存の I\/O 完了スレッドが最後に簡単に使用される可能性があります。  
+ `async` メソッドを呼び出すと、追加のスレッドは割り当てられません。 既存の I/O 完了スレッドが最後に簡単に使用される可能性があります。  
   
  非同期プログラミングをサポートするために [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] に追加されたメソッドは次のとおりです。  
   
--   <xref:System.Data.Common.DbConnection.OpenAsync%2A?displayProperty=fullName>  
+-   <xref:System.Data.Common.DbConnection.OpenAsync%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Common.DbCommand.ExecuteDbDataReaderAsync%2A?displayProperty=fullName>  
+-   <xref:System.Data.Common.DbCommand.ExecuteDbDataReaderAsync%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Common.DbCommand.ExecuteNonQueryAsync%2A?displayProperty=fullName>  
+-   <xref:System.Data.Common.DbCommand.ExecuteNonQueryAsync%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Common.DbCommand.ExecuteReaderAsync%2A?displayProperty=fullName>  
+-   <xref:System.Data.Common.DbCommand.ExecuteReaderAsync%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Common.DbCommand.ExecuteScalarAsync%2A?displayProperty=fullName>  
+-   <xref:System.Data.Common.DbCommand.ExecuteScalarAsync%2A?displayProperty=nameWithType>  
   
 -   <xref:System.Data.Common.DbDataReader.GetFieldValueAsync%2A>  
   
 -   <xref:System.Data.Common.DbDataReader.IsDBNullAsync%2A>  
   
--   <xref:System.Data.Common.DbDataReader.NextResultAsync%2A?displayProperty=fullName>  
+-   <xref:System.Data.Common.DbDataReader.NextResultAsync%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Common.DbDataReader.ReadAsync%2A?displayProperty=fullName>  
+-   <xref:System.Data.Common.DbDataReader.ReadAsync%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.SqlClient.SqlConnection.OpenAsync%2A?displayProperty=fullName>  
+-   <xref:System.Data.SqlClient.SqlConnection.OpenAsync%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.SqlClient.SqlCommand.ExecuteNonQueryAsync%2A?displayProperty=fullName>  
+-   <xref:System.Data.SqlClient.SqlCommand.ExecuteNonQueryAsync%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.SqlClient.SqlCommand.ExecuteReaderAsync%2A?displayProperty=fullName>  
+-   <xref:System.Data.SqlClient.SqlCommand.ExecuteReaderAsync%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.SqlClient.SqlCommand.ExecuteScalarAsync%2A?displayProperty=fullName>  
+-   <xref:System.Data.SqlClient.SqlCommand.ExecuteScalarAsync%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.SqlClient.SqlCommand.ExecuteXmlReaderAsync%2A?displayProperty=fullName>  
+-   <xref:System.Data.SqlClient.SqlCommand.ExecuteXmlReaderAsync%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.SqlClient.SqlDataReader.NextResultAsync%2A?displayProperty=fullName>  
+-   <xref:System.Data.SqlClient.SqlDataReader.NextResultAsync%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.SqlClient.SqlDataReader.ReadAsync%2A?displayProperty=fullName>  
+-   <xref:System.Data.SqlClient.SqlDataReader.ReadAsync%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync%2A?displayProperty=fullName>  
+-   <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync%2A?displayProperty=nameWithType>  
   
- その他の非同期メンバーが、[SqlClient ストリーミング サポート](../../../../docs/framework/data/adonet/sqlclient-streaming-support.md)を行うように追加されました。  
+ その他の非同期メンバーがサポートするために追加された[SqlClient ストリーミング サポート](../../../../docs/framework/data/adonet/sqlclient-streaming-support.md)です。  
   
-### 同期から非同期接続を開く  
- 既存のアプリケーションをアップグレードして、新しい非同期機能を使用できます。  たとえば、同期接続アルゴリズムを使用したアプリケーションで、データベースに接続するたびに UI スレッドをブロックし、接続すると、ユーザーがサインインしたことを他のユーザーに通知するストアド プロシージャが呼び出されるとします。  
+### <a name="synchronous-to-asynchronous-connection-open"></a>同期から非同期接続を開く  
+ 既存のアプリケーションをアップグレードして、新しい非同期機能を使用できます。 たとえば、同期接続アルゴリズムを使用したアプリケーションで、データベースに接続するたびに UI スレッドをブロックし、接続すると、ユーザーがサインインしたことを他のユーザーに通知するストアド プロシージャが呼び出されるとします。  
   
-```  
+```csharp
 using SqlConnection conn = new SqlConnection("…");  
 {  
    conn.Open();  
@@ -104,42 +106,41 @@ using SqlConnection conn = new SqlConnection("…");
       cmd.ExecuteNonQuery();  
    }  
 }  
-  
 ```  
   
  新しい非同期機能を使用するように変換した場合、プログラムは次のようになります。  
   
-```  
+```csharp
 using System;  
 using System.Data.SqlClient;  
 using System.Threading.Tasks;  
   
 class A {  
   
-   static async Task<int> Method(SqlConnection conn, SqlCommand cmd) {  
-      await conn.OpenAsync();  
-      await cmd.ExecuteNonQueryAsync();  
-      return 1;  
-   }  
+   static async Task<int> Method(SqlConnection conn, SqlCommand cmd) {  
+      await conn.OpenAsync();  
+      await cmd.ExecuteNonQueryAsync();  
+      return 1;  
+   }  
   
-   public static void Main() {  
-      using (SqlConnection conn = new SqlConnection("Data Source=(local); Initial Catalog=NorthWind; Integrated Security=SSPI")) {  
-         SqlCommand command = new SqlCommand("select top 2 * from orders", conn);  
+   public static void Main() {  
+      using (SqlConnection conn = new SqlConnection("Data Source=(local); Initial Catalog=NorthWind; Integrated Security=SSPI")) {  
+         SqlCommand command = new SqlCommand("select top 2 * from orders", conn);  
   
-         int result = A.Method(conn, command).Result;  
+         int result = A.Method(conn, command).Result;  
   
-         SqlDataReader reader = command.ExecuteReader();  
+         SqlDataReader reader = command.ExecuteReader();  
          while (reader.Read())  
             Console.WriteLine(String.Format("{0}", reader[0]));  
-      }  
-   }  
+      }  
+   }  
 }  
 ```  
   
-### 既存アプリケーションに新しい非同期機能を追加する \(古いパターンと新しいパターンが混在\)  
- 既存の非同期ロジックを変更せずに、新しい非同期機能 \(SqlConnection::OpenAsync\) を追加することもできます。  たとえば、現在、次のアルゴリズムを使用するアプリケーションがあるとします。  
+### <a name="adding-the-new-asynchronous-feature-in-an-existing-application-mixing-old-and-new-patterns"></a>既存アプリケーションに新しい非同期機能を追加する (古いパターンと新しいパターンが混在)  
+ 既存の非同期ロジックを変更せずに、新しい非同期機能 (SqlConnection::OpenAsync) を追加することもできます。 たとえば、現在、次のアルゴリズムを使用するアプリケーションがあるとします。  
   
-```  
+```csharp
 AsyncCallback productList = new AsyncCallback(ProductList);  
 SqlConnection conn = new SqlConnection("…");  
 conn.Open();  
@@ -149,37 +150,37 @@ IAsyncResult ia = cmd.BeginExecuteReader(productList, cmd);
   
  既存のアルゴリズムを大幅に変更せずに、新しい非同期パターンの使用を開始できます。  
   
-```  
+```csharp
 using System;  
 using System.Data.SqlClient;  
 using System.Threading.Tasks;  
   
 class A {  
-   static void ProductList(IAsyncResult result) { }  
+   static void ProductList(IAsyncResult result) { }  
   
-   public static void Main() {  
-      // AsyncCallback productList = new AsyncCallback(ProductList);  
-      // SqlConnection conn = new SqlConnection("Data Source=(local); Initial Catalog=NorthWind; Integrated Security=SSPI");  
-      // conn.Open();  
-      // SqlCommand cmd = new SqlCommand("select top 2 * from orders", conn);  
-      // IAsyncResult ia = cmd.BeginExecuteReader(productList, cmd);  
+   public static void Main() {  
+      // AsyncCallback productList = new AsyncCallback(ProductList);  
+      // SqlConnection conn = new SqlConnection("Data Source=(local); Initial Catalog=NorthWind; Integrated Security=SSPI");  
+      // conn.Open();  
+      // SqlCommand cmd = new SqlCommand("select top 2 * from orders", conn);  
+      // IAsyncResult ia = cmd.BeginExecuteReader(productList, cmd);  
   
-      AsyncCallback productList = new AsyncCallback(ProductList);  
-      SqlConnection conn = new SqlConnection("Data Source=(local); Initial Catalog=NorthWind; Integrated Security=SSPI");  
-      conn.OpenAsync().ContinueWith((task) => {  
-         SqlCommand cmd = new SqlCommand("select top 2 * from orders", conn);  
-         IAsyncResult ia = cmd.BeginExecuteReader(productList, cmd);  
-      }, TaskContinuationOptions.OnlyOnRanToCompletion);  
-   }  
+      AsyncCallback productList = new AsyncCallback(ProductList);  
+      SqlConnection conn = new SqlConnection("Data Source=(local); Initial Catalog=NorthWind; Integrated Security=SSPI");  
+      conn.OpenAsync().ContinueWith((task) => {  
+         SqlCommand cmd = new SqlCommand("select top 2 * from orders", conn);  
+         IAsyncResult ia = cmd.BeginExecuteReader(productList, cmd);  
+      }, TaskContinuationOptions.OnlyOnRanToCompletion);  
+   }  
 }  
 ```  
   
-### 基本プロバイダー モデルと新しい非同期機能を使用する  
- 異なるデータベースに接続してクエリを実行できるツールを作成することが必要になる場合があります。  基本プロバイダー モデルと新しい非同期機能を使用できます。  
+### <a name="using-the-base-provider-model-and-the-new-asynchronous-feature"></a>基本プロバイダー モデルと新しい非同期機能を使用する  
+ 異なるデータベースに接続してクエリを実行できるツールを作成することが必要になる場合があります。 基本プロバイダー モデルと新しい非同期機能を使用できます。  
   
- 分散トランザクションを使用するには、サーバー上で Microsoft Distributed Transaction Controller \(MSDTC\) サービスを有効にする必要があります。  MSDTC を有効にする方法の詳細については、「[Web サーバーで MSDTC を有効にする方法](http://msdn.microsoft.com/library/dd327979.aspx)」を参照してください。  
+ 分散トランザクションを使用するには、サーバー上で Microsoft Distributed Transaction Controller (MSDTC) サービスを有効にする必要があります。 MSDTC を有効にする方法については、次を参照してください。 [Web サーバーで MSDTC を有効にする方法](http://msdn.microsoft.com/library/dd327979.aspx)です。  
   
-```  
+```csharp
 using System;  
 using System.Data.Common;  
 using System.Data.SqlClient;  
@@ -222,9 +223,9 @@ class A {
 }  
 ```  
   
-### SQL トランザクションと新しい非同期機能を使用する  
+### <a name="using-sql-transactions-and-the-new-asynchronous-feature"></a>SQL トランザクションと新しい非同期機能を使用する  
   
-```  
+```csharp
 using System;  
 using System.Data.SqlClient;  
 using System.Threading.Tasks;  
@@ -286,13 +287,12 @@ class Program {
       }  
    }  
 }  
-  
 ```  
   
-### SQL トランザクションと新しい非同期機能を使用する  
- エンタープライズ アプリケーションでは、複数のデータベース サーバー間のトランザクションを有効にするために、一部のシナリオで分散トランザクションの追加が必要になる場合があります。  次のように、System.Transactions 名前空間を使用して分散トランザクションを登録できます。  
+### <a name="using-sql-transactions-and-the-new-asynchronous-feature"></a>SQL トランザクションと新しい非同期機能を使用する  
+ エンタープライズ アプリケーションでは、複数のデータベース サーバー間のトランザクションを有効にするために、一部のシナリオで分散トランザクションの追加が必要になる場合があります。 次のように、System.Transactions 名前空間を使用して分散トランザクションを登録できます。  
   
-```  
+```csharp
 using System;  
 using System.Data.SqlClient;  
 using System.Threading.Tasks;  
@@ -348,13 +348,12 @@ class Program {
       }  
    }  
 }  
-  
 ```  
   
-### 非同期操作を取り消す  
+### <a name="cancelling-an-asynchronous-operation"></a>非同期操作を取り消す  
  <xref:System.Threading.CancellationToken> を使用して、非同期要求を取り消すことができます。  
   
-```  
+```csharp
 using System;  
 using System.Data.SqlClient;  
 using System.Threading;  
@@ -391,10 +390,10 @@ namespace Samples {
 }  
 ```  
   
-### SqlBulkCopy を使用した非同期操作  
- 非同期機能は、<xref:System.Data.SqlClient.SqlBulkCopy?displayProperty=fullName> を使用して、<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync%2A?displayProperty=fullName> にも追加されました。  
+### <a name="asynchronous-operations-with-sqlbulkcopy"></a>SqlBulkCopy を使用した非同期操作  
+ 非同期機能は、<xref:System.Data.SqlClient.SqlBulkCopy?displayProperty=nameWithType> を使用して、<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync%2A?displayProperty=nameWithType> にも追加されました。  
   
-```  
+```csharp
 using System;  
 using System.Collections.Generic;  
 using System.Data;  
@@ -633,13 +632,13 @@ namespace SqlBulkCopyAsyncCodeSample {
 }  
 ```  
   
-## MARS を使用して複数のコマンドを非同期的に使用する  
- この例では、**AdventureWorks** データベースとの接続を 1 つ開きます。  <xref:System.Data.SqlClient.SqlCommand> オブジェクトを使用して、<xref:System.Data.SqlClient.SqlDataReader> が作成されます。  リーダーが使用されると、2 番目の <xref:System.Data.SqlClient.SqlDataReader> リーダーが開かれます。このとき、最初の <xref:System.Data.SqlClient.SqlDataReader> から取得したデータが 2 番目のリーダーの WHERE 句に入力されます。  
+## <a name="asynchronously-using-multiple-commands-with-mars"></a>MARS を使用して複数のコマンドを非同期的に使用する  
+ 例では、接続を 1 つを開き、 **AdventureWorks**データベース。 <xref:System.Data.SqlClient.SqlCommand> オブジェクトを使用して、<xref:System.Data.SqlClient.SqlDataReader> が作成されます。 リーダーが使用されると、2 番目の <xref:System.Data.SqlClient.SqlDataReader> リーダーが開かれます。このとき、最初の <xref:System.Data.SqlClient.SqlDataReader> から取得したデータが 2 番目のリーダーの WHERE 句に入力されます。  
   
 > [!NOTE]
->  次の例では、 **に含まれるサンプルの [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]AdventureWorks** データベースを使用します。  サンプル コードの接続文字列は、データベースがローカルのコンピューターにインストールされて利用可能な状態になっていることを前提としています。  必要に応じて、お使いの環境に合わせて接続文字列を変更してください。  
+>  次の例は、サンプル**AdventureWorks**データベースに含まれている[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]です。 サンプル コードの接続文字列は、データベースがローカルのコンピューターにインストールされて利用可能な状態になっていることを前提としています。 必要に応じて、お使いの環境に合わせて接続文字列を変更してください。  
   
-```  
+```csharp
 using System;  
 using System.Data;  
 using System.Data.SqlClient;  
@@ -703,15 +702,15 @@ class Class1 {
 }  
 ```  
   
-## MARS を使用してデータの読み取りと更新を非同期的に行う  
- MARS を使用すると、複数の保留中の操作について、読み取り操作と DML \(データ操作言語\) 操作の両方で 1 つの接続を使用することができます。  この機能により、アプリケーションで接続ビジー エラーを処理する必要がなくなります。  さらに、MARS ではサーバー側カーソルのユーザーを置き換えることができます。通常、この処理は多くのリソースを消費します。  最後に、複数の操作を単一の接続で実行できるので、同じトランザクション コンテキストを共有することにより、システムのストアド プロシージャである **sp\_getbindtoken** と **sp\_bindsession** を使用する必要がなくなります。  
+## <a name="asynchronously-reading-and-updating-data-with-mars"></a>MARS を使用してデータの読み取りと更新を非同期的に行う  
+ MARS を使用すると、複数の保留中の操作について、読み取り操作と DML (データ操作言語) 操作の両方で 1 つの接続を使用することができます。 この機能により、アプリケーションで接続ビジー エラーを処理する必要がなくなります。 さらに、MARS ではサーバー側カーソルのユーザーを置き換えることができます。通常、この処理は多くのリソースを消費します。 最後に、複数の操作は、単一の接続で実行できる、ために共有することを使用する必要がなくなるため、同じトランザクション コンテキスト**sp_getbindtoken**と**sp_bindsession**格納されているシステムプロシージャです。  
   
- 次のコンソール アプリケーションでは、2 つの <xref:System.Data.SqlClient.SqlDataReader> オブジェクトを 3 つの <xref:System.Data.SqlClient.SqlCommand> オブジェクトと使用する方法、および 1 つの <xref:System.Data.SqlClient.SqlConnection> オブジェクトを MARS を有効にして使用する方法について示します。  最初のコマンド オブジェクトでは、格付けが 5 のベンダーの一覧を取得します。  2 番目のコマンド オブジェクトでは、<xref:System.Data.SqlClient.SqlDataReader> から提供されるベンダー ID を使用して特定のベンダーのすべての製品について 2 番目の <xref:System.Data.SqlClient.SqlDataReader> を読み取ります。  各製品のレコードは、2 番目の <xref:System.Data.SqlClient.SqlDataReader> によってアクセスされます。  計算が実行され、新規 **OnOrderQty** を判定します。  3 番目のコマンド オブジェクトでは、**ProductVendor** テーブルを新しい値で更新します。  このプロセスはすべて単一のトランザクションで行われ、最後にロールバックされます。  
+ 次のコンソール アプリケーションでは、2 つの <xref:System.Data.SqlClient.SqlDataReader> オブジェクトを 3 つの <xref:System.Data.SqlClient.SqlCommand> オブジェクトと使用する方法、および 1 つの <xref:System.Data.SqlClient.SqlConnection> オブジェクトを MARS を有効にして使用する方法について示します。 最初のコマンド オブジェクトでは、格付けが 5 のベンダーの一覧を取得します。 2 番目のコマンド オブジェクトでは、<xref:System.Data.SqlClient.SqlDataReader> から提供されるベンダー ID を使用して特定のベンダーのすべての製品について 2 番目の <xref:System.Data.SqlClient.SqlDataReader> を読み取ります。 各製品のレコードは、2 番目の <xref:System.Data.SqlClient.SqlDataReader> によってアクセスされます。 どのような新しいを決定する計算を実行**OnOrderQty**する必要があります。 更新する 3 番目のコマンド オブジェクトを使用して、 **ProductVendor**新しい値を持つテーブルです。 このプロセスはすべて単一のトランザクションで行われ、最後にロールバックされます。  
   
 > [!NOTE]
->  次の例では、 **に含まれるサンプルの [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]AdventureWorks** データベースを使用します。  サンプル コードの接続文字列は、データベースがローカルのコンピューターにインストールされて利用可能な状態になっていることを前提としています。  必要に応じて、お使いの環境に合わせて接続文字列を変更してください。  
+>  次の例は、サンプル**AdventureWorks**データベースに含まれている[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]です。 サンプル コードの接続文字列は、データベースがローカルのコンピューターにインストールされて利用可能な状態になっていることを前提としています。 必要に応じて、お使いの環境に合わせて接続文字列を変更してください。  
   
-```  
+```csharp
 using System;  
 using System.Collections.Generic;  
 using System.Text;  
@@ -819,5 +818,5 @@ class Program {
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)

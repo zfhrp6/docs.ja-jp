@@ -1,27 +1,33 @@
 ---
-title: "DataRelation の入れ子化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DataRelation の入れ子化"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 9530f9c9-dd98-4b93-8cdb-40d7f1e8d0ab
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: db7df753bf6066d3a89c46a82b66e47281076f95
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataRelation の入れ子化
-データのリレーショナル表現では、各テーブルに含まれている行が、列または列セットを使用して相互に関連付けられています。  ADO.NET の <xref:System.Data.DataSet> では、テーブル間のリレーションシップは <xref:System.Data.DataRelation> を使用して実装されます。  **DataRelation** を作成すると、親子の列のリレーションシップはこのリレーションだけをとおして管理されます。  テーブルと列はそれぞれ別個のエンティティです。  XML のデータ階層表現では、子要素が入れ子の状態で含まれている親要素によって親子のリレーションシップが表現されます。  
+# <a name="nesting-datarelations"></a>DataRelation の入れ子化
+データのリレーショナル表現では、各テーブルに含まれている行が、列または列セットを使用して相互に関連付けられています。 ADO.NET の <xref:System.Data.DataSet> では、テーブル間のリレーションシップは <xref:System.Data.DataRelation> を使用して実装されます。 作成するときに、 **DataRelation**列の親子リレーションシップは、このリレーションだけをとおして管理されます。 テーブルと列はそれぞれ別個のエンティティです。 XML のデータ階層表現では、子要素が入れ子の状態で含まれている親要素によって親子のリレーションシップが表現されます。  
   
- 子オブジェクトの入れ子を実現するため、**DataSet** が <xref:System.Xml.XmlDataDocument> と同期されるか、または **WriteXml** を使用して XML データとして書き込まれるときに、**DataRelation** が **Nested** プロパティを公開します。  **DataRelation** の **Nested** プロパティを **true** に設定すると、XML データとして書き込まれるとき、または **XmlDataDocument** と同期されるときに、このリレーションにおける子の行が親の列の中で入れ子になります。  **DataRelation** の **Nested** プロパティは既定では **false** に設定されています。  
+ 子オブジェクトの入れ子を容易にするときに、**データセット**と同期されて、<xref:System.Xml.XmlDataDocument>またはを使用して XML データとして書き込まれた**WriteXml**、 **DataRelation**公開、**入れ子になった**プロパティです。 設定、**入れ子になった**のプロパティ、 **DataRelation**に**true**子を XML データとして書き込まれるときに、親の列は入れ子にするリレーションシップの行と、または同期されている、 **XmlDataDocument**です。 **入れ子になった**のプロパティ、 **DataRelation**は**false**既定でします。  
   
- たとえば、次のような **DataSet** があるとします。  
+ たとえば、次**データセット**です。  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -63,11 +69,11 @@ DataRelation customerOrders = dataSet.Relations.Add(
   dataSet.Tables["Orders"].Columns["CustomerID"]);  
 ```  
   
- この **DataSet** では **DataRelation** オブジェクトの **Nested** プロパティが **true** に設定されていないため、**DataSet** が XML データとして表されるときに、子オブジェクトは親要素の中で入れ子になりません。  関連する **DataSet** を含んだ **DataSet** の XML 表現を変換するとき、データ リレーションが入れ子になっていないと、パフォーマンスが低下する場合があります。  データ リレーションシップは入れ子にすることをお勧めします。  入れ子にするには、**Nested** プロパティを **true** に設定します。  次に、トップダウン階層形式の XPath クエリ式を使用してデータを検索、変換するコードを XSLT スタイル シートに記述します。  
+ **入れ子になった**のプロパティ、 **DataRelation**オブジェクトに設定されていない**true**この**データセット**、子オブジェクトが入れ子になっていません。親要素内でときにこの**データセット**は XML データとして表されます。 XML 表現を変換する、**データセット**を格納している関連**データセット**入れ子でないデータの関係を使用できるパフォーマンスが低下します。 データ リレーションシップは入れ子にすることをお勧めします。 これを行うには、設定、**入れ子になった**プロパティを**true**です。 次に、トップダウン階層形式の XPath クエリ式を使用してデータを検索、変換するコードを XSLT スタイル シートに記述します。  
   
- **DataSet** に対して **WriteXml** を呼び出した結果を次のコード サンプルに示します。  
+ 次のコード例は、呼び出しの結果を示しています。 **WriteXml**上、**データセット**です。  
   
-```  
+```xml  
 <CustomerOrders>  
   <Customers>  
     <CustomerID>ALFKI</CustomerID>  
@@ -95,7 +101,7 @@ DataRelation customerOrders = dataSet.Relations.Add(
 </CustomerOrders>  
 ```  
   
- **Customers** 要素と **Orders** 要素が兄弟要素として示されています。  **Orders** 要素を該当する親要素の子として表すには、**DataRelation** の **Nested** プロパティを **true** に設定し、次のコードを追加する必要があります。  
+ 注意してください、**顧客**要素および**Orders**要素が兄弟要素として表示されます。 必要な場合、 **Orders** 、それぞれの親要素の子として表示する要素、**入れ子になった**のプロパティ、 **DataRelation** に設定する必要があります**true**しするには、次を追加します。  
   
 ```vb  
 customerOrders.Nested = True  
@@ -105,9 +111,9 @@ customerOrders.Nested = True
 customerOrders.Nested = true;  
 ```  
   
- 上記のコードを追加した結果の出力を次のコードに示します。この例では、**Orders** 要素がそれぞれ該当する親要素の中で入れ子になっています。  
+ 次のコードは、結果の出力は、のようになりますで、 **Orders**要素は、該当する親要素内で入れ子になっています。  
   
-```  
+```xml  
 <CustomerOrders>  
   <Customers>  
     <CustomerID>ALFKI</CustomerID>  
@@ -135,8 +141,8 @@ customerOrders.Nested = true;
 </CustomerOrders>  
 ```  
   
-## 参照  
- [DataSet での XML の使用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)   
- [DataRelation の追加](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-datarelations.md)   
- [DataSets、DataTables、および DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [DataSet での XML の使用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
+ [DataRelation の追加](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-datarelations.md)  
+ [DataSet、DataTable、および DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

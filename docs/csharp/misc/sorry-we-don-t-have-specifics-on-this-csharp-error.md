@@ -1,9 +1,8 @@
 ---
-title: "申し訳ありませんが詳細情報この c# エラーに関する |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "申し訳ありませんが、お don &#39; この c# エラーに関する詳細が含まれていたり"
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - CS1583
@@ -178,7 +177,6 @@ f1_keywords:
 - CS1912
 - CS0743
 - CS2016
-- CS4009
 - CS0315
 - CS1609
 - CS1102
@@ -875,54 +873,46 @@ f1_keywords:
 - CS0057
 - CS0589
 - CS0656
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- errors [C#], additional information
+- CS8038
+- CS8132
+- CS8136
+- CS8137
+- CS8139
+- CS8156
+- CS8168
+- CS8172
+- CS8179
+helpviewer_keywords: errors [C#], additional information
 ms.assetid: 48320e4a-6e17-45a6-9966-88c6ec89bd2f
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d1f8fb48a1f3b64d7e11a0ef57d1ef1d23ef9ae5
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 312bcc963e2e444bb5125124a0cb690126c0a770
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a>申し訳ありません。 が、この c# エラーに関する詳細はありません。
-申し訳ありませんが、このエラーに関する特定の情報はありません。 Web でエラー番号とメッセージ テキストを検索して情報を探すことができます。 または、次のフォーラムのいずれかを使用して他の開発者に尋ねることができます。  
+# <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a>申し訳ありませんが、お don &#39; この c# エラーに関する詳細が含まれていたり
+申し訳ありませんが、このエラーに関する特定の情報はありません。 Web でエラー番号とメッセージ テキストを検索して情報を探すことができます。 または、次のフォーラムのいずれかを使用している他の開発者を依頼することができます。  
   
- [Visual c# 言語](http://go.microsoft.com/fwlink/?LinkId=146921)  
- [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] 言語の構文やコンパイラに関する質問や議論のためのフォーラムです。  
+ [Visual C# 言語](http://go.microsoft.com/fwlink/?LinkId=146921)  
+ [!INCLUDE[csprcs](~/includes/csprcs-md.md)] 言語の構文やコンパイラに関する質問や議論のためのフォーラムです。  
   
- [Visual c# IDE](http://go.microsoft.com/fwlink/?LinkId=146922)  
- [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] 環境で作業する方法について質問するためのフォーラムです。  
+ [Visual C# IDE](http://go.microsoft.com/fwlink/?LinkId=146922)  
+ [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 環境で作業する方法について質問するためのフォーラムです。  
   
- [Visual c# 全般](http://go.microsoft.com/fwlink/?LinkId=146920)  
- 他のフォーラムで取り上げていない [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] に関する質問や議論のためのフォーラムです。  
+ [Visual C# 全般](http://go.microsoft.com/fwlink/?LinkId=146920)  
+ 他のフォーラムで取り上げていない [!INCLUDE[csprcs](~/includes/csprcs-md.md)] に関する質問や議論のためのフォーラムです。  
   
  [StackOverflow](http://stackoverflow.com/questions/tagged/c%23)  
- [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] に関する質問や問題のためのフォーラムです。  
+ [!INCLUDE[csprcs](~/includes/csprcs-md.md)] に関する質問や問題のためのフォーラムです。  
   
  関連項目:  
- [Visual c# プログラマのための他のリソース](../../csharp/getting-started/additional-resources.md)  
+ [Visual C# プログラマのための追加リソース](../../csharp/getting-started/additional-resources.md)  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../csharp/programming-guide/index.md)   
- [C# リファレンス](../../csharp/language-reference/index.md)   
- [ご意見](https://docs.microsoft.com/visualstudio/ide/talk-to-us)   
- [ご意見](https://docs.microsoft.com/visualstudio/ide/talk-to-us)
+ [C# プログラミング ガイド](../../csharp/programming-guide/index.md)  
+ [C# リファレンス](../../csharp/language-reference/index.md)  
+ [ご意見](/visualstudio/ide/talk-to-us)  
+ [ご意見](/visualstudio/ide/talk-to-us)

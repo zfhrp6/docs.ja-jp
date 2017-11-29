@@ -1,80 +1,82 @@
 ---
-title: "webRequestModules の &lt;remove&gt; 要素 (ネットワーク設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/webRequestModules/remove"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#remove"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<remove> 要素, webRequestModules"
-  - "<webRequestModules>, remove 要素"
-  - "remove 要素, webRequestModules"
-  - "webRequestModules, remove 要素"
+title: "&lt;削除&gt;webRequestModules (ネットワーク設定) の要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/webRequestModules/remove
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#remove
+helpviewer_keywords:
+- remove element, webRequestModules
+- webRequestModules, remove element
+- <remove> element, webRequestModules
+- <webRequestModules>, remove element
 ms.assetid: dd84d2fe-2f4f-457a-9d3c-441d0d21cc10
-caps.latest.revision: 13
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 43f0d30f8c18c4755f31d0c851c773207bc15b78
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# webRequestModules の &lt;remove&gt; 要素 (ネットワーク設定)
-カスタム Web 要求モジュールをアプリケーションから削除します。  
+# <a name="ltremovegt-element-for-webrequestmodules-network-settings"></a>&lt;削除&gt;webRequestModules (ネットワーク設定) の要素
+アプリケーションからカスタム Web 要求のモジュールを削除します。  
   
-## 構文  
+ \<configuration>  
+\<system.net >  
+\<webRequestModules >  
+\<削除 >  
   
-```  
+## <a name="syntax"></a>構文  
   
-      <remove   
-  name = "URI prefix"   
+```xml  
+<remove   
+  prefix="URI prefix"   
 />  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|**Attribute**|**説明**|  
-|-------------------|------------|  
-|`name`|この Web 要求モジュールで処理される要求の URI プレフィックス。|  
+|**属性**|**説明**|  
+|-------------------|---------------------|  
+|`prefix`|この Web 要求モジュールによって処理される要求の URI プレフィックス。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |**要素**|**説明**|  
-|------------|------------|  
-|[webRequestModules](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|ネットワーク ホストからの情報を要求するために使用するモジュールを指定します。|  
+|-----------------|---------------------|  
+|[webRequestModules](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|使用してネットワークのホストから情報を要求するモジュールを指定します。|  
   
-## 解説  
- `remove` 要素では、指定された URI プレフィックスに対する登録済み Web 要求モジュールを削除します。  
+## <a name="remarks"></a>コメント  
+ `remove`要素が指定した URI プレフィックスの登録済みの Web 要求のモジュールを削除します。  
   
- `prefix` 属性の値は、"http" や "http:\/\/www.contoso.com" のように、有効な URI の先行文字である必要があります。  
+ 値、`prefix`属性が有効な URI: たとえば、"http"または"http://www.contoso.com"の先頭の文字にする必要があります。  
   
-## 構成ファイル  
- この要素は、アプリケーション構成ファイルまたはマシン構成ファイル \(Machine.config\) で使用できます。  
+## <a name="configuration-files"></a>構成ファイル  
+ この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
   
-## 使用例  
- HTTP 用の既存の Web 要求モジュールを削除し、www.contoso.com に対する HTTP 要求用の新規カスタム Web 要求モジュールを登録するコード例を次に示します。  
+## <a name="example"></a>例  
+ 次の例では、HTTP の場合、既存の Web 要求のモジュールを削除し、www.contoso.com への HTTP 要求のカスタム Web 要求の新しいモジュールを登録します。  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <webRequestModules>  
-      <remove prefix = "http">  
+      <remove prefix="http">  
       <add prefix="http"  
            type="System.Net.HttpRequestCreator, System, Version=2.0.3600.0,  
            Culture=neutral, PublicKeyToken=b77a5c561934e089"  
@@ -84,6 +86,6 @@ caps.handback.revision: 13
 </configuration>  
 ```  
   
-## 参照  
- <xref:System.Net.WebRequest>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Net.WebRequest>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

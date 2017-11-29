@@ -1,66 +1,72 @@
 ---
-title: "DataReader によるデータの取得 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DataReader によるデータの取得"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 97afc121-fb8b-465b-bab3-6d844420badb
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 0b66ca2fbcc760598b771b4c02a46acc3c9c1d4e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataReader によるデータの取得
-**DataReader** を使用してデータを取得するには、データ ソースから行を取得するために **Command.ExecuteReader** を呼び出して、**Command** オブジェクトのインスタンスを作成し、次に **DataReader** を作成する必要があります。  **DataReader** を使用する例を次に示します。ここで、`reader` は有効な DataReader を、`command` は有効な Command オブジェクトを表します。  
+# <a name="retrieving-data-using-a-datareader"></a>DataReader によるデータの取得
+使用してデータの取得、 **DataReader**のインスタンスを作成、**コマンド**オブジェクト作成し、作成、 **DataReader**を呼び出して**Command.ExecuteReader**データ ソースから行を取得します。 使用して次の例を示しています、 **DataReader**場所`reader`は有効な datareader および`command`有効なコマンド オブジェクトを表します。  
   
 ```  
 reader = command.ExecuteReader();  
 ```  
   
- クエリの結果から行を取得するには、**DataReader** オブジェクトの **Read** メソッドを使用します。  返された行の各列にアクセスするには、その列の名前または序数参照を **DataReader** に渡します。  一方で **DataReader** は、最適のパフォーマンスが得られるように、ネイティブのデータ型を使用して列の値にアクセスするための一連のメソッド \(**GetDateTime**、**GetDouble**、**GetGuid**、**GetInt32** など\) も提供します。  データ プロバイダー固有の **DataReaders** の型指定されたアクセサー メソッドの一覧については、「<xref:System.Data.OleDb.OleDbDataReader>」および「<xref:System.Data.SqlClient.SqlDataReader>」を参照してください。  基になるデータ型がわかっている場合、型指定されたアクセサー メソッドを使用すると、列の値を取得するときに必要な型変換の量が少なくなります。  
+ 使用する、**読み取り**のメソッド、 **DataReader**クエリの結果から行を取得するオブジェクト。 返される行の各列をアクセスするには、名前または列の序数参照を渡すことによって、 **DataReader**です。 ただし、最適なパフォーマンスを**DataReader**一連の列の値に、ネイティブ データ型にアクセスできるようにするメソッドを提供 (**GetDateTime**、 **GetDouble**、 **GetGuid**、 **GetInt32**など)。 データ プロバイダーに固有の型指定されたアクセサー メソッドの一覧については**DataReaders**を参照してください<xref:System.Data.OleDb.OleDbDataReader>と<xref:System.Data.SqlClient.SqlDataReader>です。 基になるデータ型がわかっている場合、型指定されたアクセサー メソッドを使用すると、列の値を取得するときに必要な型変換の量が少なくなります。  
   
 > [!NOTE]
->  .NET Framework の Windows Server 2003 リリースには、**DataReader** の追加のプロパティである、**HasRows** が含まれているため、これを使用すると、読み取る前に **DataReader** が結果を返したかどうかを確認できます。  
+>  .NET Framework の Windows Server 2003 リリースには、その他のプロパティが含まれています、 **DataReader**、 **HasRows**を使用するかどうかを**DataReader**がそこから読み取る前に結果を返した。  
   
- 次に、**DataReader** オブジェクトを反復処理して各行から 2 つの列を返すコード サンプルを示します。  
+ 次のコード例を反復処理する**DataReader**オブジェクト、およびそれぞれの行から 2 つの列を返します。  
   
  [!code-csharp[DataWorks SqlClient.HasRows#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.HasRows/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.HasRows#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.HasRows/VB/source.vb#1)]  
   
- **DataReader** はバッファリングされないデータ ストリームを提供して、手続きロジックがデータ ソースからの結果を順番に効率的に処理できるようにします。  **DataReader** はデータをメモリにキャッシュしないため、大量のデータを取得する場合に適しています。  
+ **DataReader**は効率的にデータ ソースからの結果を順番に処理する手続き型のロジックを可能にするデータのバッファリングされていないストリームを提供します。 **DataReader**データがメモリにキャッシュされていないために、大量のデータを取得するときにお勧めします。  
   
-## DataReader の終了  
- **DataReader** を使い終えたら、**Close** メソッドを呼び出す必要があります。  
+## <a name="closing-the-datareader"></a>DataReader の終了  
+ 常に呼び出す必要があります、**閉じる**メソッドを使用してが完了したら、 **DataReader**オブジェクト。  
   
- **Command** に出力パラメーターや戻り値が含まれていても、**DataReader** が終了するまでは使用できません。  
+ 場合、**コマンド**出力を含むパラメーターまたは戻り値の場合が使用できなくまで、 **DataReader**が閉じられます。  
   
- **DataReader** が開いている間、**Connection** はその **DataReader** によって排他的に使用されています。  元の **DataReader** が終了するまでは、その **Connection** に対してはどのコマンドも実行できません。別の **DataReader** を作成することもできません。  
+ 注意してください、 **DataReader**が開いている場合、**接続**によって排他的に使用されて**DataReader**です。 ためのコマンドを実行することはできません、**接続**、別の作成を含む**DataReader**、オリジナルまで**DataReader**が閉じられます。  
   
 > [!NOTE]
->  クラスの **Finalize** メソッド内で **Connection**、**DataReader**、またはその他のマネージ オブジェクトの **Close** または **Dispose** を呼び出さないでください。  終了処理では、クラスに直接所有されているアンマネージ リソースだけを解放してください。  クラスがアンマネージ リソースを所有していない場合は、クラス定義に **Finalize** メソッドを含めないでください。  詳細については、「[Garbage Collection](../../../../docs/standard/garbage-collection/index.md)」を参照してください。  
+>  呼び出す必要はありません**閉じる**または**Dispose**上、**接続**、 **DataReader**、またはその他のマネージ オブジェクトで、 **Finalize**クラスのメソッドです。 終了処理では、クラスに直接所有されているアンマネージ リソースだけを解放してください。 クラスがアンマネージ リソースを所有していない場合は含まれません、 **Finalize**メソッド、クラス定義にします。 詳細については、次を参照してください。[ガベージ コレクション](../../../../docs/standard/garbage-collection/index.md)です。  
   
-## NextResult による複数の結果セットの取得  
- 複数の結果セットが返された場合は、**DataReader** は **NextResult** メソッドを提供してその結果セットを順に反復処理します。  <xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A> メソッドを使用して、2 つの SELECT ステートメントの結果を処理する <xref:System.Data.SqlClient.SqlDataReader> の例を次に示します。  
+## <a name="retrieving-multiple-result-sets-using-nextresult"></a>NextResult による複数の結果セットの取得  
+ 複数の結果セットが返される場合は、 **DataReader**提供、 **NextResult**の順序で結果を反復処理するメソッドを設定します。 <xref:System.Data.SqlClient.SqlDataReader> メソッドを使用して、2 つの SELECT ステートメントの結果を処理する <xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A> の例を次に示します。  
   
  [!code-csharp[DataWorks SqlClient.NextResult#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.NextResult/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.NextResult#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.NextResult/VB/source.vb#1)]  
   
-## DataReader からのスキーマ情報の取得  
- **DataReader** が開いている間に **GetSchemaTable** メソッドを使用して、現在の結果セットについてのスキーマ情報を取得できます。  **GetSchemaTable** は、現在の結果セットのスキーマ情報を含む行と列が設定されている <xref:System.Data.DataTable> オブジェクトを返します。  **DataTable** には結果セットの列ごとに 1 行が設定されます。  スキーマ テーブル行の各列が、結果セットで返される列の 1 つのプロパティに割り当てられます。**ColumnName** はそのプロパティの名前であり、列の値はプロパティの値です。  **DataReader** のスキーマ情報を出力するコード サンプルを次に示します。  
+## <a name="getting-schema-information-from-the-datareader"></a>DataReader からのスキーマ情報の取得  
+ 中に、 **DataReader**は開くことができますを取得する、現在使用して結果セットに関するスキーマ情報、 **GetSchemaTable**メソッドです。 **GetSchemaTable**を返します、<xref:System.Data.DataTable>オブジェクトの現在の結果セットのスキーマ情報が含まれている行と列に設定されます。 **DataTable**結果セットの列ごとに 1 つの行が含まれています。 スキーマ テーブル行の各列に返される列のプロパティにマップ結果セットの場所、 **ColumnName**プロパティの名前は、列の値は、プロパティの値。 次のコード例は、のスキーマ情報を書き込みます**DataReader**です。  
   
  [!code-csharp[DataWorks SqlClient.GetSchemaTable#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.GetSchemaTable/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.GetSchemaTable#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.GetSchemaTable/VB/source.vb#1)]  
   
-## OLE DB のチャプターの使用  
- 階層構造の行セット、つまりチャプター \(OLE DB では **DBTYPE\_HCHAPTER** 型、ADO では **adChapter** 型\) は <xref:System.Data.OleDb.OleDbDataReader> を使用して取得できます。  チャプターを含むクエリが **DataReader** として返されるとき、チャプターはその **DataReader** の列として返され、**DataReader** オブジェクトとして公開されます。  
+## <a name="working-with-ole-db-chapters"></a>OLE DB のチャプターの使用  
+ 階層的な行セット、つまりチャプター (OLE DB 型**DBTYPE_HCHAPTER**、ADO 型**adChapter**) を使用して取得できます、<xref:System.Data.OleDb.OleDbDataReader>です。 チャプターを含むクエリとして返される場合、 **DataReader**、チャプターを内の列として返されます**DataReader**として公開されると、 **DataReader**オブジェクト。  
   
- ADO.NET の **DataSet** を使用することで、テーブル間の親子のリレーションシップを使用して階層構造の行セットを表現することもできます。  詳細については、「[DataSets、DataTables、および DataViews](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)」を参照してください。  
+ ADO.NET**データセット**テーブル間の親子リレーションシップを使用して階層的な行セットを表すも使用できます。 詳細については、次を参照してください。[データセット、Datatable、および Dataview](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)です。  
   
  MSDataShape プロバイダーを使用して、顧客リストの顧客別オーダーのチャプター列を生成するコード サンプルを次に示します。  
   
@@ -128,14 +134,14 @@ custReader.Close();
 }  
 ```  
   
-## Oracle REF CURSOR による結果の取得  
- .NET Framework Data Provider for Oracle は、クエリ結果を返すために、Oracle REF CURSOR の使用をサポートしています。  Oracle REF CURSOR は <xref:System.Data.OracleClient.OracleDataReader> として返されます。  
+## <a name="returning-results-with-oracle-ref-cursors"></a>Oracle REF CURSOR による結果の取得  
+ .NET Framework Data Provider for Oracle は、クエリ結果を返すために、Oracle REF CURSOR の使用をサポートしています。 Oracle REF CURSOR は <xref:System.Data.OracleClient.OracleDataReader> として返されます。  
   
- Oracle REF CURSOR を表す **OracleDataReader** オブジェクトは、<xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A> メソッドで取得できます。また、<xref:System.Data.DataSet> にデータを格納するために使用する <xref:System.Data.OracleClient.OracleDataAdapter> の **SelectCommand** として、1 つ以上の Oracle REF CURSOR を返す <xref:System.Data.OracleClient.OracleCommand> を指定することもできます。  
+ 取得することができます、 **OracleDataReader**を使用して、Oracle REF CURSOR を表すオブジェクト、<xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A>メソッド、およびするを指定できますも、<xref:System.Data.OracleClient.OracleCommand>として 1 つまたは複数の Oracle REF Cursor を返す、 **SelectCommand**の<xref:System.Data.OracleClient.OracleDataAdapter>塗りつぶしに使用される、<xref:System.Data.DataSet>です。  
   
- Oracle データ ソースから返された REF CURSOR にアクセスするには、クエリ用の **OracleCommand** を作成し、その **Parameters** コレクションに、REF CURSOR を参照する出力パラメーターを追加します。  パラメーターの名前は、クエリの REF CURSOR パラメーターの名前と一致させる必要があります。  パラメーターの型を **OracleType.Cursor** に設定します。  **OracleCommand** の **ExecuteReader** メソッドは REF CURSOR に対する **OracleDataReader** を返します。  
+ Oracle データ ソースから返された REF CURSOR にアクセスするには、作成、 **OracleCommand**クエリ用に REF カーソルを参照する出力パラメーターを追加し、**パラメーター** のコレクション**OracleCommand**です。 パラメーターの名前は、クエリの REF CURSOR パラメーターの名前と一致させる必要があります。 パラメーターの型を設定**OracleType.Cursor**です。 **ExecuteReader**のメソッド、 **OracleCommand**が返されます、 **OracleDataReader** REF CURSOR のです。  
   
- **OracleCommand** が複数の REF CURSOR を返す場合は、複数の出力パラメーターを追加してください。  **OracleCommand.ExecuteReader** メソッドを呼び出して、それぞれの REF CURSOR にアクセスできます。  **ExecuteReader** を呼び出すと、最初の REF CURSOR を参照する **OracleDataReader** が返されます。  次に **OracleDataReader.NextResult** メソッドを呼び出すと、後続の REF CURSOR にアクセスできます。  **OracleCommand.Parameters** コレクションのパラメーターが REF CURSOR 出力パラメーターと名前が一致していても、**OracleDataReader** は、**Parameters** コレクションに追加された順に出力パラメーターにアクセスします。  
+ 場合、 **OracleCommand**複数の REF CURSOR を返す複数の出力パラメーターを追加します。 それぞれの REF Cursor を呼び出すことによってアクセスできる、 **OracleCommand.ExecuteReader**メソッドです。 呼び出し**ExecuteReader**を返します、 **OracleDataReader**最初 REF カーソルを参照します。 呼び出すことができますし、 **OracleDataReader.NextResult**後続の REF Cursor にアクセスするメソッド。 ただしでは、パラメーター、 **OracleCommand.Parameters**コレクション一致 REF CURSOR 出力パラメーターを名前で、 **OracleDataReader** に追加された順序でそれらにアクセスします。**パラメーター**コレクション。  
   
  たとえば、次のような Oracle パッケージとパッケージ本体があるとします。  
   
@@ -157,7 +163,7 @@ CREATE OR REPLACE PACKAGE BODY CURSPKG AS
 END CURSPKG;   
 ```  
   
- **OracleType.Cursor** 型の 2 つのパラメーターを **Parameters** コレクションに追加して、上の Oracle パッケージから REF CURSOR を返す **OracleCommand** を作成するコードを次に示します。  
+ 次のコードを作成、 **OracleCommand**型の 2 つのパラメーターを追加することで、上の Oracle パッケージから REF Cursor を返す**OracleType.Cursor**を**パラメーター**コレクション。  
   
 ```vb  
 Dim cursCmd As OracleCommand = New OracleCommand("CURSPKG.OPEN_TWO_CURSORS", oraConn)  
@@ -171,7 +177,7 @@ cursCmd.Parameters.Add("EMPCURSOR", OracleType.Cursor).Direction = ParameterDire
 cursCmd.Parameters.Add("DEPTCURSOR", OracleType.Cursor).Direction = ParameterDirection.Output;  
 ```  
   
- **OracleDataReader** の **Read** メソッドと **NextResult** メソッドを使用して、上のコマンドの結果を返すコードを次に示します。  REF CURSOR パラメーターは順番に返されます。  
+ 次のコードは、前のコマンドを使用して、結果を返します、**読み取り**と**NextResult**のメソッド、 **OracleDataReader**です。 REF CURSOR パラメーターは順番に返されます。  
   
 ```vb  
 oraConn.Open()  
@@ -227,10 +233,10 @@ reader.Close();
 oraConn.Close();  
 ```  
   
- 上のコマンドを使用して、Oracle パッケージの結果を **DataSet** に設定する例を次に示します。  
+ 次の例では、前のコマンドを使用して、事前設定、**データセット**Oracle パッケージの結果。  
   
 > [!NOTE]
->  **OverflowException** が発生しないようにするために、**DataRow** に値を格納する前に Oracle の NUMBER 型から有効な .NET Framework のデータ型への変換も行うことをお勧めします。  **FillError** イベントを使用して、**OverflowException** が発生したかどうかを確認できます。  **FillError** イベントの詳細については、「[DataAdapter のイベント処理](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)」を参照してください。  
+>  避けるために、 **OverflowException**は有効な .NET Framework 型の値を格納する前に Oracle の NUMBER 型から変換を処理することをお勧め、 **DataRow**です。 使用することができます、 **FillError**イベントかどうかを**OverflowException**が発生しました。 詳細については、 **FillError**イベントを参照してください[DataAdapter イベントの処理](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)です。  
   
 ```vb  
 Dim ds As DataSet = New DataSet()  
@@ -252,9 +258,9 @@ adapter.TableMappings.Add("Table1", "Departments");
 adapter.Fill(ds);  
 ```  
   
-## 参照  
- [Working with DataReaders](http://msdn.microsoft.com/ja-jp/126a966a-d08d-4d22-a19f-f432908b2b54)   
- [DataAdapter と DataReader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)   
- [コマンドとパラメーター](../../../../docs/framework/data/adonet/commands-and-parameters.md)   
- [データベース スキーマ情報の取得](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [Datareader の操作](http://msdn.microsoft.com/en-us/126a966a-d08d-4d22-a19f-f432908b2b54)  
+ [Dataadapter と Datareader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [コマンドおよびパラメーター](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
+ [データベース スキーマ情報の取得](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)
