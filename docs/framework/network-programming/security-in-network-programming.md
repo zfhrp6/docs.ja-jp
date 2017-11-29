@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - sending data, Internet security
 - protocols, Internet security
@@ -23,31 +18,29 @@ helpviewer_keywords:
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
 ms.assetid: afb07899-2707-49ab-a57f-e0caf20d0171
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c8adacd11aa256cd5d807cc92ec1a9c3c154ad77
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 0908dd50c870c26284c1ef90d8433122b00e7be1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="security-in-network-programming"></a>ネットワーク プログラミングにおけるセキュリティ
-.NET Framework の <xref:System.Net> 名前空間クラスには、代表的なインターネット アプリケーション認証機構および .NET Framework コード アクセス許可のサポートが組み込まれています。  
+# <a name="security-in-network-programming"></a><span data-ttu-id="d1382-102">ネットワーク プログラミングにおけるセキュリティ</span><span class="sxs-lookup"><span data-stu-id="d1382-102">Security in Network Programming</span></span>
+<span data-ttu-id="d1382-103">.NET Framework の <xref:System.Net> 名前空間クラスには、代表的なインターネット アプリケーション認証機構および .NET Framework コード アクセス許可のサポートが組み込まれています。</span><span class="sxs-lookup"><span data-stu-id="d1382-103">The .NET Framework <xref:System.Net> namespace classes provide built-in support for popular Internet application authentication mechanisms and for .NET Framework code access permissions.</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [Secure Sockets Layer の使用](../../../docs/framework/network-programming/using-secure-sockets-layer.md)  
- SSL (Secure Sockets Layer) 接続を使用する方法について説明します。  
+## <a name="in-this-section"></a><span data-ttu-id="d1382-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="d1382-104">In This Section</span></span>  
+ [<span data-ttu-id="d1382-105">Secure Sockets Layer の使用</span><span class="sxs-lookup"><span data-stu-id="d1382-105">Using Secure Sockets Layer</span></span>](../../../docs/framework/network-programming/using-secure-sockets-layer.md)  
+ <span data-ttu-id="d1382-106">SSL (Secure Sockets Layer) 接続を使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d1382-106">Describes how to use Secure Sockets Layer (SSL) connections.</span></span>  
   
- [インターネット認証](../../../docs/framework/network-programming/internet-authentication.md)  
- HTTP 認証メソッドを使用して HTTP サーバーへの認証された接続を確立する方法について説明します。  
+ [<span data-ttu-id="d1382-107">インターネット認証</span><span class="sxs-lookup"><span data-stu-id="d1382-107">Internet Authentication</span></span>](../../../docs/framework/network-programming/internet-authentication.md)  
+ <span data-ttu-id="d1382-108">HTTP 認証メソッドを使用して HTTP サーバーへの認証された接続を確立する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d1382-108">Describes how to use HTTP authentication methods to establish authenticated connections to HTTP servers.</span></span>  
   
- [Web およびソケットのアクセス許可](../../../docs/framework/network-programming/web-and-socket-permissions.md)  
- インターネット接続を使用するアプリケーションにコード アクセス セキュリティを設定する方法について説明します。  
+ [<span data-ttu-id="d1382-109">Web およびソケットのアクセス許可</span><span class="sxs-lookup"><span data-stu-id="d1382-109">Web and Socket Permissions</span></span>](../../../docs/framework/network-programming/web-and-socket-permissions.md)  
+ <span data-ttu-id="d1382-110">インターネット接続を使用するアプリケーションにコード アクセス セキュリティを設定する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d1382-110">Describes how to set code access security for applications that use Internet connections.</span></span>  
   
-## <a name="related-sections"></a>関連項目  
- [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)  
- <xref:System.Net> および <xref:System.Net.Sockets> 名前空間のクラスについて説明します。
-
+## <a name="related-sections"></a><span data-ttu-id="d1382-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="d1382-111">Related Sections</span></span>  
+ [<span data-ttu-id="d1382-112">.NET Framework のネットワーク プログラミング</span><span class="sxs-lookup"><span data-stu-id="d1382-112">Network Programming in the .NET Framework</span></span>](../../../docs/framework/network-programming/index.md)  
+ <span data-ttu-id="d1382-113"><xref:System.Net> および <xref:System.Net.Sockets> 名前空間のクラスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d1382-113">Introduces the classes in the <xref:System.Net> and <xref:System.Net.Sockets> namespaces.</span></span>

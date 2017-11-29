@@ -1,44 +1,47 @@
 ---
-title: "承認ポリシー | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "承認ポリシー"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1db325ec-85be-47d0-8b6e-3ba2fdf3dda0
-caps.latest.revision: 38
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 38
+caps.latest.revision: "38"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 50998acedf3b462e17c57d784dfc1ebe6fff38b9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 承認ポリシー
-このサンプルでは、カスタム クレーム承認ポリシーと、関連するカスタム サービス承認マネージャーを実装する方法を示します。この方法は、サービスがクレームに基づくアクセス チェックをサービス操作に行う場合や、アクセス チェックを行う前に呼び出し元に特定の権限を与える場合に便利です。このサンプルでは、クレームの追加プロセスと、完了したクレーム セットに対してアクセス チェックを行うプロセスの両方を示します。クライアント\/サーバー間のすべてのアプリケーション メッセージは署名され、暗号化されます。`wsHttpBinding` バインディングを使用する際の既定では、クライアントによって提供されるユーザー名とパスワードが、有効な Windows NT アカウントへのログオンに使用されます。このサンプルでは、カスタム <xref:System.IdentityModel.Selectors.UsernamePasswordValidator> を使用してクライアントを認証する方法を示します。さらにこのサンプルでは、クライアントが X.509 証明書を使用してサービスを認証する方法を示します。また、<xref:System.IdentityModel.Policy.IAuthorizationPolicy> と <xref:System.ServiceModel.ServiceAuthorizationManager> の実装も示します。これらの間では、特定のユーザーに対するサービスの特定のメソッドへのアクセスが許可されます。このサンプルは、「[メッセージ セキュリティ ユーザー名](../../../../docs/framework/wcf/samples/message-security-user-name.md)」に基づいていますが、<xref:System.ServiceModel.ServiceAuthorizationManager> が呼び出される前にクレームの変換を実行する方法を示します。  
+# <a name="authorization-policy"></a><span data-ttu-id="df209-102">承認ポリシー</span><span class="sxs-lookup"><span data-stu-id="df209-102">Authorization Policy</span></span>
+<span data-ttu-id="df209-103">このサンプルでは、カスタム クレーム承認ポリシーと、関連するカスタム サービス承認マネージャーを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="df209-103">This sample demonstrates how to implement a custom claim authorization policy and an associated custom service authorization manager.</span></span> <span data-ttu-id="df209-104">この方法は、サービスがクレームに基づくアクセス チェックをサービス操作に行う場合や、アクセス チェックを行う前に呼び出し元に特定の権限を与える場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="df209-104">This is useful when the service makes claim-based access checks to service operations and prior to the access checks, grants the caller certain rights.</span></span> <span data-ttu-id="df209-105">このサンプルでは、クレームの追加プロセスと、完了したクレーム セットに対してアクセス チェックを行うプロセスの両方を示します。</span><span class="sxs-lookup"><span data-stu-id="df209-105">This sample shows both the process of adding claims as well as the process for doing an access check against the finalized set of claims.</span></span> <span data-ttu-id="df209-106">クライアント/サーバー間のすべてのアプリケーション メッセージは署名され、暗号化されます。</span><span class="sxs-lookup"><span data-stu-id="df209-106">All application messages between the client and server are signed and encrypted.</span></span> <span data-ttu-id="df209-107">`wsHttpBinding` バインディングを使用する際の既定では、クライアントによって提供されるユーザー名とパスワードが、有効な Windows NT アカウントへのログオンに使用されます。</span><span class="sxs-lookup"><span data-stu-id="df209-107">By default with the `wsHttpBinding` binding, a username and password supplied by the client are used to logon to a valid Windows NT account.</span></span> <span data-ttu-id="df209-108">このサンプルは、カスタムを利用する方法を示します<!--zz <xref:System.IdentityModel.Selectors.UsernamePasswordValidator>-->`System.IdentityModel.Selectors.UsernamePasswordValidator`クライアントを認証します。</span><span class="sxs-lookup"><span data-stu-id="df209-108">This sample demonstrates how to utilize a custom <!--zz <xref:System.IdentityModel.Selectors.UsernamePasswordValidator>--> `System.IdentityModel.Selectors.UsernamePasswordValidator` to authenticate the client.</span></span> <span data-ttu-id="df209-109">さらにこのサンプルでは、クライアントが X.509 証明書を使用してサービスを認証する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="df209-109">In addition this sample shows the client authenticating to the service using an X.509 certificate.</span></span> <span data-ttu-id="df209-110">また、<xref:System.IdentityModel.Policy.IAuthorizationPolicy> と <xref:System.ServiceModel.ServiceAuthorizationManager> の実装も示します。これらの間では、特定のユーザーに対するサービスの特定のメソッドへのアクセスが許可されます。</span><span class="sxs-lookup"><span data-stu-id="df209-110">This sample shows an implementation of <xref:System.IdentityModel.Policy.IAuthorizationPolicy> and <xref:System.ServiceModel.ServiceAuthorizationManager>, which between them grant access to specific methods of the service for specific users.</span></span> <span data-ttu-id="df209-111">このサンプルがに基づいて、[メッセージ セキュリティ ユーザー名](../../../../docs/framework/wcf/samples/message-security-user-name.md)より前のバージョンの信頼性情報の変換を実行する方法を示しますが、<xref:System.ServiceModel.ServiceAuthorizationManager>呼び出されています。</span><span class="sxs-lookup"><span data-stu-id="df209-111">This sample is based on the [Message Security User Name](../../../../docs/framework/wcf/samples/message-security-user-name.md), but demonstrates how to perform a claim transformation prior to the <xref:System.ServiceModel.ServiceAuthorizationManager> being called.</span></span>  
   
 > [!NOTE]
->  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
+>  <span data-ttu-id="df209-112">このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df209-112">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- このサンプルで示す処理の概要は次のとおりです。  
+ <span data-ttu-id="df209-113">このサンプルで示す処理の概要は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="df209-113">In summary, this sample demonstrates how:</span></span>  
   
--   クライアントはユーザー名とパスワードを使用して認証される。  
+-   <span data-ttu-id="df209-114">クライアントはユーザー名とパスワードを使用して認証される。</span><span class="sxs-lookup"><span data-stu-id="df209-114">The client can be authenticated using a user name-password.</span></span>  
   
--   クライアントは X.509 証明書を使用して認証される。  
+-   <span data-ttu-id="df209-115">クライアントは X.509 証明書を使用して認証される。</span><span class="sxs-lookup"><span data-stu-id="df209-115">The client can be authenticated using an X.509 certificate.</span></span>  
   
--   サーバーはクライアント資格情報をカスタム `UsernamePassword` 検証と照合する。  
+-   <span data-ttu-id="df209-116">サーバーはクライアント資格情報をカスタム `UsernamePassword` 検証と照合する。</span><span class="sxs-lookup"><span data-stu-id="df209-116">The server validates the client credentials against a custom `UsernamePassword` validator.</span></span>  
   
--   サーバーがそのサーバーの X.509 証明書を使用して認証される。  
+-   <span data-ttu-id="df209-117">サーバーがそのサーバーの X.509 証明書を使用して認証される。</span><span class="sxs-lookup"><span data-stu-id="df209-117">The server is authenticated using the server's X.509 certificate.</span></span>  
   
--   サーバーが <xref:System.ServiceModel.ServiceAuthorizationManager> を使用して、サービス内の特定メソッドへのアクセスを制御する。  
+-   <span data-ttu-id="df209-118">サーバーが <xref:System.ServiceModel.ServiceAuthorizationManager> を使用して、サービス内の特定メソッドへのアクセスを制御する。</span><span class="sxs-lookup"><span data-stu-id="df209-118">The server can use <xref:System.ServiceModel.ServiceAuthorizationManager> to control access to certain methods in the service.</span></span>  
   
--   <xref:System.IdentityModel.Policy.IAuthorizationPolicy> の実装方法。  
+-   <span data-ttu-id="df209-119"><xref:System.IdentityModel.Policy.IAuthorizationPolicy> の実装方法。</span><span class="sxs-lookup"><span data-stu-id="df209-119">How to implement <xref:System.IdentityModel.Policy.IAuthorizationPolicy>.</span></span>  
   
- サービスは、そのサービスとの通信に使用する 2 つのエンドポイントを公開します。エンドポイントは構成ファイル App.config で定義します。各エンドポイントは、アドレス、バインディング、およびコントラクトがそれぞれ 1 つずつで構成されます。1 つのバインディングの構成には、WS\-Security とクライアントのユーザー名認証を使用する、標準の `wsHttpBinding` バインディングが使用されます。もう 1 つのバインディングの構成には、WS\-Security とクライアント証明書による認証を使用する、標準の `wsHttpBinding` バインディングが使用されます。[\<behavior\>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)により、サービス認証にユーザーの資格情報を使用することが指定されます。サーバー証明書の `SubjectName` プロパティには、[\<serviceCertificate\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) の `findValue` 属性と同じ値が指定されている必要があります。  
+ <span data-ttu-id="df209-120">サービスは、そのサービスとの通信に使用する 2 つのエンドポイントを公開します。エンドポイントは構成ファイル App.config で定義します。各エンドポイントは、アドレス、バインディング、およびコントラクトがそれぞれ 1 つずつで構成されます。</span><span class="sxs-lookup"><span data-stu-id="df209-120">The service exposes two endpoints for communicating with the service, defined using the configuration file App.config. Each endpoint consists of an address, a binding, and a contract.</span></span> <span data-ttu-id="df209-121">1 つのバインディングの構成には、WS-Security とクライアントのユーザー名認証を使用する、標準の `wsHttpBinding` バインディングが使用されます。</span><span class="sxs-lookup"><span data-stu-id="df209-121">One binding is configured with a standard `wsHttpBinding` binding that uses WS-Security and client username authentication.</span></span> <span data-ttu-id="df209-122">もう 1 つのバインディングの構成には、WS-Security とクライアント証明書による認証を使用する、標準の `wsHttpBinding` バインディングが使用されます。</span><span class="sxs-lookup"><span data-stu-id="df209-122">The other binding is configured with a standard `wsHttpBinding` binding that uses WS-Security and client certificate authentication.</span></span> <span data-ttu-id="df209-123">[\<動作 >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)ユーザーの資格情報がサービスの認証に使用することを指定します。</span><span class="sxs-lookup"><span data-stu-id="df209-123">The [\<behavior>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) specifies that the user credentials are to be used for service authentication.</span></span> <span data-ttu-id="df209-124">サーバー証明書が同じ値を含める必要があります、`SubjectName`プロパティとして、`findValue`属性、 [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)です。</span><span class="sxs-lookup"><span data-stu-id="df209-124">The server certificate must contain the same value for the `SubjectName` property as the `findValue` attribute in the [\<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).</span></span>  
   
-```  
+```xml  
 <system.serviceModel>  
   <services>  
     <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
@@ -121,12 +124,11 @@ caps.handback.revision: 38
   </behaviors>  
   
 </system.serviceModel>  
-  
 ```  
   
- 各クライアント エンドポイント構成は、構成名、サービス エンドポイントの絶対アドレス、バインディング、およびコントラクトで構成されます。クライアント バインディングは、この場合に [\<security\>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)で指定されている適切なセキュリティ モードと、[\<message\>](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md)で指定されている `clientCredentialType` で構成されます。  
+ <span data-ttu-id="df209-125">各クライアント エンドポイント構成は、構成名、サービス エンドポイントの絶対アドレス、バインディング、およびコントラクトで構成されます。</span><span class="sxs-lookup"><span data-stu-id="df209-125">Each client endpoint configuration consists of a configuration name, an absolute address for the service endpoint, the binding, and the contract.</span></span> <span data-ttu-id="df209-126">指定された適切なセキュリティ モード クライアント バインディングは構成されるこの場合、 [\<セキュリティ >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)と`clientCredentialType`で指定されたとおり、 [\<メッセージ >](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md).</span><span class="sxs-lookup"><span data-stu-id="df209-126">The client binding is configured with the appropriate security mode as specified in this case in the [\<security>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md) and `clientCredentialType` as specified in the [\<message>](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md).</span></span>  
   
-```  
+```xml  
 <system.serviceModel>  
   
     <client>  
@@ -190,10 +192,9 @@ caps.handback.revision: 38
     </behaviors>  
   
   </system.serviceModel>  
-  
 ```  
   
- ユーザー名に基づくエンドポイントには、使用するユーザー名とパスワードがクライアント実装で設定されます。  
+ <span data-ttu-id="df209-127">ユーザー名に基づくエンドポイントには、使用するユーザー名とパスワードがクライアント実装で設定されます。</span><span class="sxs-lookup"><span data-stu-id="df209-127">For the user name-based endpoint, the client implementation sets the user name and password to use.</span></span>  
   
 ```  
 // Create a client with Username endpoint configuration  
@@ -217,10 +218,9 @@ catch (Exception e)
 }  
   
 client1.Close();  
-  
 ```  
   
- 証明書に基づくエンドポイントには、使用するクライアント証明書がクライアント実装で設定されます。  
+ <span data-ttu-id="df209-128">証明書に基づくエンドポイントには、使用するクライアント証明書がクライアント実装で設定されます。</span><span class="sxs-lookup"><span data-stu-id="df209-128">For the certificate-based endpoint, the client implementation sets the client certificate to use.</span></span>  
   
 ```  
 // Create a client with Certificate endpoint configuration  
@@ -243,10 +243,9 @@ catch (Exception e)
 }  
   
 client2.Close();  
-  
 ```  
   
- このサンプルでは、カスタム <xref:System.IdentityModel.Selectors.UsernamePasswordValidator> を使用してユーザー名とパスワードを検証します。サンプルは、<xref:System.IdentityModel.Selectors.UserNamePasswordValidator> から派生する `MyCustomUserNamePasswordValidator` を実装しています。<xref:System.IdentityModel.Selectors.UsernamePasswordValidator> の詳細については、ドキュメントを参照してください。<xref:System.IdentityModel.Selectors.UsernamePasswordValidator> との統合を示すため、カスタム検証のこのサンプルでは次のコード例に示すように、<xref:System.IdentityModel.Selectors.UsernamePasswordValidator.Validate%2A> メソッドを実装して、ユーザー名がパスワードと一致するユーザー名とパスワードの組み合わせを許可します。  
+ <span data-ttu-id="df209-129">このサンプルでは、カスタム <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> を使用してユーザー名とパスワードを検証します。</span><span class="sxs-lookup"><span data-stu-id="df209-129">This sample uses a custom <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> to validate user names and passwords.</span></span> <span data-ttu-id="df209-130">サンプルは、`MyCustomUserNamePasswordValidator` から派生する <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> を実装しています。</span><span class="sxs-lookup"><span data-stu-id="df209-130">The sample implements `MyCustomUserNamePasswordValidator`, derived from <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>.</span></span> <span data-ttu-id="df209-131"><xref:System.IdentityModel.Selectors.UserNamePasswordValidator> の詳細については、ドキュメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="df209-131">See the documentation about <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> for more information.</span></span> <span data-ttu-id="df209-132"><xref:System.IdentityModel.Selectors.UserNamePasswordValidator> との統合を示すため、カスタム検証のこのサンプルでは次のコード例に示すように、<xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> メソッドを実装して、ユーザー名がパスワードと一致するユーザー名とパスワードの組み合わせを許可します。</span><span class="sxs-lookup"><span data-stu-id="df209-132">For the purposes of demonstrating the integration with the <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>, this custom validator sample implements the <xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> method to accept user name/password pairs where the user name matches the password as shown in the following code.</span></span>  
   
 ```  
 public class MyCustomUserNamePasswordValidator : UserNamePasswordValidator  
@@ -269,19 +268,18 @@ public class MyCustomUserNamePasswordValidator : UserNamePasswordValidator
     }  
   }  
 }  
-  
 ```  
   
- サービス コードに検証を実装した場合、使用する検証インスタンスをサービス ホストに通知する必要があります。これは次のコードで実行されます。  
+ <span data-ttu-id="df209-133">サービス コードに検証を実装した場合、使用する検証インスタンスをサービス ホストに通知する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df209-133">Once the validator is implemented in service code, the service host must be informed about the validator instance to use.</span></span> <span data-ttu-id="df209-134">これは次のコードで実行されます。</span><span class="sxs-lookup"><span data-stu-id="df209-134">This is done using the following code.</span></span>  
   
 ```  
 Servicehost.Credentials.UserNameAuthentication.UserNamePasswordValidationMode = UserNamePasswordValidationMode.Custom;  
 serviceHost.Credentials.UserNameAuthentication.CustomUserNamePasswordValidator = new MyCustomUserNamePasswordValidatorProvider();  
 ```  
   
- または、構成で同じことを実現できます。  
+ <span data-ttu-id="df209-135">または、構成で同じことを実現できます。</span><span class="sxs-lookup"><span data-stu-id="df209-135">Or you can do the same thing in configuration.</span></span>  
   
-```  
+```xml  
 <behavior ...>  
     <serviceCredentials>  
       <!--   
@@ -293,9 +291,9 @@ serviceHost.Credentials.UserNameAuthentication.CustomUserNamePasswordValidator =
 </behavior>  
 ```  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、アクセス チェックの実行を目的とした、クレームに基づく豊富なモデルがあります。<xref:System.ServiceModel.ServiceAuthorizationManager> オブジェクトを使用するとアクセス チェックが実行され、クライアントに関連付けられたクレームがサービス メソッドへのアクセスに必要な要件を満たすかどうかが判断されます。  
+ [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="df209-136"> には、アクセス チェックの実行を目的とした、クレームに基づく豊富なモデルがあります。</span><span class="sxs-lookup"><span data-stu-id="df209-136"> provides a rich claims-based model for performing access checks.</span></span> <span data-ttu-id="df209-137"><xref:System.ServiceModel.ServiceAuthorizationManager> オブジェクトを使用するとアクセス チェックが実行され、クライアントに関連付けられたクレームがサービス メソッドへのアクセスに必要な要件を満たすかどうかが判断されます。</span><span class="sxs-lookup"><span data-stu-id="df209-137">The <xref:System.ServiceModel.ServiceAuthorizationManager> object is used to perform the access check and determine whether the claims associated with the client satisfy the requirements necessary to access the service method.</span></span>  
   
- このサンプルでは、デモンストレーションの目的で <xref:System.ServiceModel.ServiceAuthorizationManager> の実装を示します。この実装は <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> メソッドを実装し、呼び出しが許可されている操作のアクション URI を値として持つ種類のクレーム \(http:\/\/example.com\/claims\/allowedoperation\) に基づいて、メソッドへのユーザーのアクセスを許可します。  
+ <span data-ttu-id="df209-138">このサンプルでは、デモンストレーションの目的で <xref:System.ServiceModel.ServiceAuthorizationManager> の実装を示します。この実装は <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> メソッドを実装し、呼び出しが許可されている操作のアクション URI を値として持つ種類のクレーム (http://example.com/claims/allowedoperation) に基づいて、メソッドへのユーザーのアクセスを許可します。</span><span class="sxs-lookup"><span data-stu-id="df209-138">For the purposes of demonstration, this sample shows an implementation of <xref:System.ServiceModel.ServiceAuthorizationManager> that implements the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> method to allow a user's access to methods based on claims of type http://example.com/claims/allowedoperation whose value is the Action URI of the operation that is allowed to be called.</span></span>  
   
 ```  
 public class MyServiceAuthorizationManager : ServiceAuthorizationManager  
@@ -319,22 +317,20 @@ public class MyServiceAuthorizationManager : ServiceAuthorizationManager
     return false;                   
   }  
 }  
-  
 ```  
   
- カスタム <xref:System.ServiceModel.ServiceAuthorizationManager> を実装した場合、使用する <xref:System.ServiceModel.ServiceAuthorizationManager> をサービス ホストに通知する必要があります。これを行うコードは次のようになります。  
+ <span data-ttu-id="df209-139">カスタム <xref:System.ServiceModel.ServiceAuthorizationManager> を実装した場合、使用する <xref:System.ServiceModel.ServiceAuthorizationManager> をサービス ホストに通知する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df209-139">Once the custom <xref:System.ServiceModel.ServiceAuthorizationManager> is implemented, the service host must be informed about the <xref:System.ServiceModel.ServiceAuthorizationManager> to use.</span></span> <span data-ttu-id="df209-140">これを行うコードは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="df209-140">This is done as shown in the following code.</span></span>  
   
-```  
+```xml  
 <behavior ...>  
     ...  
     <serviceAuthorization serviceAuthorizationManagerType="Microsoft.ServiceModel.Samples.MyServiceAuthorizationManager, service">  
         ...  
     </serviceAuthorization>  
 </behavior>  
-  
 ```  
   
- 実装する主要な <xref:System.IdentityModel.Policy.IAuthorizationPolicy> メソッドは、<xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> メソッドです。  
+ <span data-ttu-id="df209-141">実装する主要な <xref:System.IdentityModel.Policy.IAuthorizationPolicy> メソッドは、<xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> メソッドです。</span><span class="sxs-lookup"><span data-stu-id="df209-141">The primary <xref:System.IdentityModel.Policy.IAuthorizationPolicy> method to implement is the <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> method.</span></span>  
   
 ```  
 public class MyAuthorizationPolicy : IAuthorizationPolicy  
@@ -390,29 +386,28 @@ public class MyAuthorizationPolicy : IAuthorizationPolicy
 }  
 ```  
   
- 前のコードでは、<xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> メソッドが、処理に影響を与える新しいクレームが追加されていないことをチェックして特定のクレームを追加する方法を示しています。許可されるクレームは `GetAllowedOpList` メソッドから取得されます。このメソッドが実装されると、ユーザーによる実行が許可されている特定の操作リストが返されます。承認ポリシーは、特定の操作にアクセスするためのクレームを追加します。このポリシーは、アクセス チェックの決定を実行する <xref:System.ServiceModel.ServiceAuthorizationManager> によって後で使用されます。  
+ <span data-ttu-id="df209-142">前のコードでは、<xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> メソッドが、処理に影響を与える新しいクレームが追加されていないことをチェックして特定のクレームを追加する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="df209-142">The previous code shows how the <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> method checks that no new claims have been added that affect the processing and adds specific claims.</span></span> <span data-ttu-id="df209-143">許可されるクレームは `GetAllowedOpList` メソッドから取得されます。このメソッドが実装されると、ユーザーによる実行が許可されている特定の操作リストが返されます。</span><span class="sxs-lookup"><span data-stu-id="df209-143">The claims that are allowed are obtained from the `GetAllowedOpList` method, which is implemented to return a specific list of operations that the user is allowed to perform.</span></span> <span data-ttu-id="df209-144">承認ポリシーは、特定の操作にアクセスするためのクレームを追加します。</span><span class="sxs-lookup"><span data-stu-id="df209-144">The authorization policy adds claims for accessing the particular operation.</span></span> <span data-ttu-id="df209-145">このポリシーは、アクセス チェックの決定を実行する <xref:System.ServiceModel.ServiceAuthorizationManager> によって後で使用されます。</span><span class="sxs-lookup"><span data-stu-id="df209-145">This is later used by the <xref:System.ServiceModel.ServiceAuthorizationManager> to perform access check decisions.</span></span>  
   
- カスタム <xref:System.IdentityModel.Policy.IAuthorizationPolicy> を実装した場合、使用する承認ポリシーをサービス ホストに通知する必要があります。  
+ <span data-ttu-id="df209-146">カスタム <xref:System.IdentityModel.Policy.IAuthorizationPolicy> を実装した場合、使用する承認ポリシーをサービス ホストに通知する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df209-146">Once the custom <xref:System.IdentityModel.Policy.IAuthorizationPolicy> is implemented, the service host must be informed about the authorization policies to use.</span></span>  
   
-```  
+```xml  
 <serviceAuthorization ...>  
        <authorizationPolicies>   
             <add policyType='Microsoft.ServiceModel.Samples.CustomAuthorizationPolicy.MyAuthorizationPolicy, PolicyLibrary' />  
        </authorizationPolicies>   
 </serviceAuthorization>  
-  
 ```  
   
- このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。クライアントでは Add、Subtract、および Multiple メソッドは正常に呼び出されますが、Divide メソッドを呼び出そうとすると、"アクセスが拒否されました" のメッセージが発生します。クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
+ <span data-ttu-id="df209-147">このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="df209-147">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="df209-148">クライアントでは Add、Subtract、および Multiple メソッドは正常に呼び出されますが、Divide メソッドを呼び出そうとすると、"アクセスが拒否されました" のメッセージが発生します。</span><span class="sxs-lookup"><span data-stu-id="df209-148">The client successfully calls the Add, Subtract and Multiple methods and gets an "Access is denied" message when trying to call the Divide method.</span></span> <span data-ttu-id="df209-149">クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="df209-149">Press ENTER in the client window to shut down the client.</span></span>  
   
-## セットアップ バッチ ファイル  
- このサンプルに用意されている Setup.bat バッチ ファイルを使用すると、適切な証明書を使用してサーバーを構成し、サーバー証明書ベースのセキュリティを必要とする自己ホスト型アプリケーションを実行できるようになります。  
+## <a name="setup-batch-file"></a><span data-ttu-id="df209-150">セットアップ バッチ ファイル</span><span class="sxs-lookup"><span data-stu-id="df209-150">Setup Batch File</span></span>  
+ <span data-ttu-id="df209-151">このサンプルに用意されている Setup.bat バッチ ファイルを使用すると、適切な証明書を使用してサーバーを構成し、サーバー証明書ベースのセキュリティを必要とする自己ホスト型アプリケーションを実行できるようになります。</span><span class="sxs-lookup"><span data-stu-id="df209-151">The Setup.bat batch file included with this sample allows you to configure the server with relevant certificates to run a self-hosted application that requires server certificate-based security.</span></span>  
   
- 次に、バッチ ファイルのセクションのうち、該当する構成で実行するために変更が必要となる部分を示します。  
+ <span data-ttu-id="df209-152">次に、バッチ ファイルのセクションのうち、該当する構成で実行するために変更が必要となる部分を示します。</span><span class="sxs-lookup"><span data-stu-id="df209-152">The following provides a brief overview of the different sections of the batch files so that they can be modified to run in the appropriate configuration:</span></span>  
   
--   サーバー証明書の作成。  
+-   <span data-ttu-id="df209-153">サーバー証明書の作成。</span><span class="sxs-lookup"><span data-stu-id="df209-153">Creating the server certificate.</span></span>  
   
-     Setup.bat バッチ ファイルの次の行は、使用するサーバー証明書を作成します。%SERVER\_NAME% 変数はサーバー名を指定します。この変数を変更して、使用するサーバー名を指定します。既定値は、localhost です。  
+     <span data-ttu-id="df209-154">Setup.bat バッチ ファイルの次の行は、使用するサーバー証明書を作成します。</span><span class="sxs-lookup"><span data-stu-id="df209-154">The following lines from the Setup.bat batch file create the server certificate to be used.</span></span> <span data-ttu-id="df209-155">%SERVER_NAME% 変数はサーバー名を指定します。</span><span class="sxs-lookup"><span data-stu-id="df209-155">The %SERVER_NAME% variable specifies the server name.</span></span> <span data-ttu-id="df209-156">この変数を変更して、使用するサーバー名を指定します。</span><span class="sxs-lookup"><span data-stu-id="df209-156">Change this variable to specify your own server name.</span></span> <span data-ttu-id="df209-157">既定値は、localhost です。</span><span class="sxs-lookup"><span data-stu-id="df209-157">The default value is localhost.</span></span>  
   
     ```  
     echo ************  
@@ -422,98 +417,96 @@ public class MyAuthorizationPolicy : IAuthorizationPolicy
     echo making server cert  
     echo ************  
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
-  
     ```  
   
--   サーバー証明書のクライアントの信頼された証明書ストアへのインストール。  
+-   <span data-ttu-id="df209-158">サーバー証明書のクライアントの信頼された証明書ストアへのインストール。</span><span class="sxs-lookup"><span data-stu-id="df209-158">Installing the server certificate into client's trusted certificate store.</span></span>  
   
-     Setup.bat バッチ ファイルの次の行は、サーバー証明書をクライアントの信頼されたユーザーのストアにコピーします。この手順が必要なのは、Makecert.exe によって生成される証明書がクライアント システムにより暗黙には信頼されないからです。マイクロソフト発行の証明書など、クライアントの信頼されたルート証明書に基づいた証明書が既にある場合は、クライアント証明書ストアにサーバー証明書を配置するこの手順は不要です。  
+     <span data-ttu-id="df209-159">Setup.bat バッチ ファイルの次の行は、サーバー証明書をクライアントの信頼されたユーザーのストアにコピーします。</span><span class="sxs-lookup"><span data-stu-id="df209-159">The following lines in the Setup.bat batch file copy the server certificate into the client trusted people store.</span></span> <span data-ttu-id="df209-160">この手順が必要なのは、Makecert.exe によって生成される証明書がクライアント システムにより暗黙には信頼されないからです。</span><span class="sxs-lookup"><span data-stu-id="df209-160">This step is required because certificates that are generated by Makecert.exe are not implicitly trusted by the client system.</span></span> <span data-ttu-id="df209-161">マイクロソフト発行の証明書など、クライアントの信頼されたルート証明書に基づいた証明書が既にある場合は、クライアント証明書ストアにサーバー証明書を配置するこの手順は不要です。</span><span class="sxs-lookup"><span data-stu-id="df209-161">If you already have a certificate that is rooted in a client trusted root certificate—for example, a Microsoft issued certificate—this step of populating the client certificate store with the server certificate is not required.</span></span>  
   
     ```  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
     ```  
   
--   クライアント証明書の作成。  
+-   <span data-ttu-id="df209-162">クライアント証明書の作成。</span><span class="sxs-lookup"><span data-stu-id="df209-162">Creating the client certificate.</span></span>  
   
-     Setup.bat バッチ ファイルの次の行は、使用するクライアント証明書を作成します。%USER\_NAME% 変数はユーザー名を指定します。この値は "test1" に設定されます。`IAuthorizationPolicy` によってこの名前が検索されたためです。%USER\_NAME% の値を変更した場合は、`IAuthorizationPolicy.Evaluate` メソッド内の対応する値を変更する必要があります。  
+     <span data-ttu-id="df209-163">Setup.bat バッチ ファイルの次の行は、使用するクライアント証明書を作成します。</span><span class="sxs-lookup"><span data-stu-id="df209-163">The following lines from the Setup.bat batch file create the client certificate to be used.</span></span> <span data-ttu-id="df209-164">%USER_NAME% 変数はユーザー名を指定します。</span><span class="sxs-lookup"><span data-stu-id="df209-164">The %USER_NAME% variable specifies the server name.</span></span> <span data-ttu-id="df209-165">この値は "test1" に設定されます。`IAuthorizationPolicy` によってこの名前が検索されたためです。</span><span class="sxs-lookup"><span data-stu-id="df209-165">This value is set to "test1" because this is the name the `IAuthorizationPolicy` looks for.</span></span> <span data-ttu-id="df209-166">%USER_NAME% の値を変更した場合は、`IAuthorizationPolicy.Evaluate` メソッド内の対応する値を変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df209-166">If you change the value of %USER_NAME% you must change the corresponding value in the `IAuthorizationPolicy.Evaluate` method.</span></span>  
   
-     証明書は、CurrentUser ストアの場所の My \(Personal\) ストアに保存されます。  
+     <span data-ttu-id="df209-167">証明書は、CurrentUser ストアの場所の My (Personal) ストアに保存されます。</span><span class="sxs-lookup"><span data-stu-id="df209-167">The certificate is stored in My (Personal) store under the CurrentUser store location.</span></span>  
   
     ```  
     echo ************  
     echo making client cert  
     echo ************  
     makecert.exe -sr CurrentUser -ss MY -a sha1 -n CN=%CLIENT_NAME% -sky exchange -pe  
-  
     ```  
   
--   クライアント証明書のサーバーの信頼された証明書ストアへのインストール。  
+-   <span data-ttu-id="df209-168">クライアント証明書のサーバーの信頼された証明書ストアへのインストール。</span><span class="sxs-lookup"><span data-stu-id="df209-168">Installing the client certificate into server's trusted certificate store.</span></span>  
   
-     Setup.bat バッチ ファイルの次の行は、クライアント証明書を信頼されたユーザーのストアにコピーします。この手順が必要なのは、Makecert.exe によって生成される証明書がサーバー システムにより暗黙には信頼されないからです。マイクロソフト発行の証明書など、信頼されたルート証明書に基づく証明書が既にある場合は、サーバー証明書ストアにクライアント証明書を配置するこの手順は不要です。  
+     <span data-ttu-id="df209-169">Setup.bat バッチ ファイルの次の行は、クライアント証明書を信頼されたユーザーのストアにコピーします。</span><span class="sxs-lookup"><span data-stu-id="df209-169">The following lines in the Setup.bat batch file copy the client certificate into the trusted people store.</span></span> <span data-ttu-id="df209-170">この手順が必要なのは、Makecert.exe によって生成される証明書がサーバー システムにより暗黙には信頼されないからです。</span><span class="sxs-lookup"><span data-stu-id="df209-170">This step is required because certificates that are generated by Makecert.exe are not implicitly trusted by the server system.</span></span> <span data-ttu-id="df209-171">マイクロソフト発行の証明書など、信頼されたルート証明書に基づく証明書が既にある場合は、サーバー証明書ストアにクライアント証明書を配置するこの手順は不要です。</span><span class="sxs-lookup"><span data-stu-id="df209-171">If you already have a certificate that is rooted in a trusted root certificate—for example, a Microsoft issued certificate—this step of populating the server certificate store with the client certificate is not required.</span></span>  
   
     ```  
     certmgr.exe -add -r CurrentUser -s My -c -n %CLIENT_NAME% -r LocalMachine -s TrustedPeople  
     ```  
   
-#### サンプルをセットアップしてビルドするには  
+#### <a name="to-set-up-and-build-the-sample"></a><span data-ttu-id="df209-172">サンプルをセットアップしてビルドするには</span><span class="sxs-lookup"><span data-stu-id="df209-172">To set up and build the sample</span></span>  
   
-1.  ソリューションをビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+1.  <span data-ttu-id="df209-173">指示に従って、ソリューションをビルドする[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="df209-173">To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-2.  サンプルを単一コンピューター構成で実行するか、複数コンピューター構成で実行するかに応じて、次の手順に従います。  
+2.  <span data-ttu-id="df209-174">サンプルを単一コンピューター構成で実行するか、複数コンピューター構成で実行するかに応じて、次の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="df209-174">To run the sample in a single- or cross-computer configuration, use the following instructions.</span></span>  
   
 > [!NOTE]
->  Svcutil.exe を使用してこのサンプルの構成を再生成した場合は、クライアント コードに一致するように、クライアント構成内のエンドポイント名を変更してください。  
+>  <span data-ttu-id="df209-175">Svcutil.exe を使用してこのサンプルの構成を再生成した場合は、クライアント コードに一致するように、クライアント構成内のエンドポイント名を変更してください。</span><span class="sxs-lookup"><span data-stu-id="df209-175">If you use Svcutil.exe to regenerate the configuration for this sample, be sure to modify the endpoint name in the client configuration to match the client code.</span></span>  
   
-#### サンプルを同じコンピューターで実行するには  
+#### <a name="to-run-the-sample-on-the-same-computer"></a><span data-ttu-id="df209-176">サンプルを同じコンピューターで実行するには</span><span class="sxs-lookup"><span data-stu-id="df209-176">To run the sample on the same computer</span></span>  
   
-1.  管理特権で [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプト ウィンドウを開き、サンプルのインストール フォルダーから Setup.bat を実行します。これにより、サンプルの実行に必要なすべての証明書がインストールされます。  
+1.  <span data-ttu-id="df209-177">管理特権で [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプト ウィンドウを開き、サンプルのインストール フォルダーから Setup.bat を実行します。</span><span class="sxs-lookup"><span data-stu-id="df209-177">Open a [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] Command Prompt window with administrator privileges and run Setup.bat from the sample install folder.</span></span> <span data-ttu-id="df209-178">これにより、サンプルの実行に必要なすべての証明書がインストールされます。</span><span class="sxs-lookup"><span data-stu-id="df209-178">This installs all the certificates required for running the sample.</span></span>  
   
     > [!NOTE]
-    >  Setup.bat バッチ ファイルは、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトから実行します。[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプト内で設定された PATH 環境変数は、Setup.bat スクリプトで必要な実行可能ファイルが格納されているディレクトリを指しています。  
+    >  <span data-ttu-id="df209-179">Setup.bat バッチ ファイルは、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトから実行します。</span><span class="sxs-lookup"><span data-stu-id="df209-179">The Setup.bat batch file is designed to be run from a [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] Command Prompt.</span></span> <span data-ttu-id="df209-180">[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプト内で設定された PATH 環境変数は、Setup.bat スクリプトで必要な実行可能ファイルが格納されているディレクトリを指しています。</span><span class="sxs-lookup"><span data-stu-id="df209-180">The PATH environment variable set within the [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] Command Prompt points to the directory that contains executables required by the Setup.bat script.</span></span>  
   
-2.  管理特権を使用して Visual Studio コマンド プロンプトを開き、サンプルのインストール フォルダーから Setup.bat を実行します。これにより、サンプルの実行に必要なすべての証明書がインストールされます。  
+2.  <span data-ttu-id="df209-181">管理特権を使用して Visual Studio コマンド プロンプトを開き、サンプルのインストール フォルダーから Setup.bat を実行します。</span><span class="sxs-lookup"><span data-stu-id="df209-181">Run Setup.bat in a Visual Studio command prompt opened with administrator privileges from the sample install folder.</span></span> <span data-ttu-id="df209-182">これにより、サンプルの実行に必要なすべての証明書がインストールされます。</span><span class="sxs-lookup"><span data-stu-id="df209-182">This installs all the certificates required for running the sample.</span></span>  
   
-3.  Service.exe を service\\bin で起動します。  
+3.  <span data-ttu-id="df209-183">Service.exe を service\bin で起動します。</span><span class="sxs-lookup"><span data-stu-id="df209-183">Launch Service.exe from service\bin.</span></span>  
   
-4.  Client.exe を \\client\\bin で起動します。クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。  
+4.  <span data-ttu-id="df209-184">Client.exe を \client\bin で起動します。</span><span class="sxs-lookup"><span data-stu-id="df209-184">Launch Client.exe from \client\bin.</span></span> <span data-ttu-id="df209-185">クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。</span><span class="sxs-lookup"><span data-stu-id="df209-185">Client activity is displayed on the client console application.</span></span>  
   
-5.  クライアントとサービス間で通信できない場合は、「[Troubleshooting Tips](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
+5.  <span data-ttu-id="df209-186">クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df209-186">If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).</span></span>  
   
-#### サンプルを複数のコンピューターで実行するには  
+#### <a name="to-run-the-sample-across-computers"></a><span data-ttu-id="df209-187">サンプルを複数のコンピューターで実行するには</span><span class="sxs-lookup"><span data-stu-id="df209-187">To run the sample across computers</span></span>  
   
-1.  サービス コンピューターにディレクトリを作成します。  
+1.  <span data-ttu-id="df209-188">サービス コンピューターにディレクトリを作成します。</span><span class="sxs-lookup"><span data-stu-id="df209-188">Create a directory on the service computer.</span></span>  
   
-2.  \\service\\bin のサービス プログラム ファイルを、サービス コンピューターのディレクトリにコピーします。Setup.bat、Cleanup.bat、GetComputerName.vbs、ImportClientCert.bat の各ファイルもサービス コンピューターにコピーします。  
+2.  <span data-ttu-id="df209-189">\service\bin のサービス プログラム ファイルを、サービス コンピューターのディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="df209-189">Copy the service program files from \service\bin to the directory on the service computer.</span></span> <span data-ttu-id="df209-190">Setup.bat、Cleanup.bat、GetComputerName.vbs、ImportClientCert.bat の各ファイルもサービス コンピューターにコピーします。</span><span class="sxs-lookup"><span data-stu-id="df209-190">Also copy the Setup.bat, Cleanup.bat, GetComputerName.vbs and ImportClientCert.bat files to the service computer.</span></span>  
   
-3.  クライアント コンピューターにクライアント バイナリ用のディレクトリを作成します。  
+3.  <span data-ttu-id="df209-191">クライアント コンピューターにクライアント バイナリ用のディレクトリを作成します。</span><span class="sxs-lookup"><span data-stu-id="df209-191">Create a directory on the client computerfor the client binaries.</span></span>  
   
-4.  クライアント プログラム ファイルを、クライアント コンピューターに作成したクライアント ディレクトリにコピーします。Setup.bat、Cleanup.bat、ImportServiceCert.bat の各ファイルもクライアントにコピーします。  
+4.  <span data-ttu-id="df209-192">クライアント プログラム ファイルを、クライアント コンピューターに作成したクライアント ディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="df209-192">Copy the client program files to the client directory on the client computer.</span></span> <span data-ttu-id="df209-193">Setup.bat、Cleanup.bat、ImportServiceCert.bat の各ファイルもクライアントにコピーします。</span><span class="sxs-lookup"><span data-stu-id="df209-193">Also copy the Setup.bat, Cleanup.bat, and ImportServiceCert.bat files to the client.</span></span>  
   
-5.  サーバー上で管理特権を使用して Visual Studio コマンド プロンプトを開き、`setup.bat service` を実行します。`setup.bat` に `service` 引数を指定して実行すると、コンピューターの完全修飾ドメイン名を使用してサービス証明書が作成され、Service.cer というファイルにエクスポートされます。  
+5.  <span data-ttu-id="df209-194">サーバー上で管理特権を使用して Visual Studio コマンド プロンプトを開き、`setup.bat service` を実行します。</span><span class="sxs-lookup"><span data-stu-id="df209-194">On the server, run `setup.bat service` in a Visual Studio command prompt opened with administrator privileges.</span></span> <span data-ttu-id="df209-195">実行している`setup.bat`で、`service`引数サービス証明書を指定のエクスポートの完全修飾ドメイン名、サービス証明書を作成 Service.cer というファイルにします。</span><span class="sxs-lookup"><span data-stu-id="df209-195">Running `setup.bat` with the `service` argument creates a service certificate with the fully-qualified domain name of the computerand exports the service certificate to a file named Service.cer.</span></span>  
   
-6.  Service.exe.config を編集して、新しい証明書名 \([\<serviceCertificate\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) の `findValue` 属性\) を反映します。これは、コンピューターの完全修飾ドメイン名と同じです。さらに、\<service\>\/\<baseAddresses\> 要素で、コンピューター名を localhost からサービス コンピューターの完全修飾名に変更します。  
+6.  <span data-ttu-id="df209-196">新しい証明書名を反映するように Service.exe.config を編集 (で、`findValue`属性、 [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) は、コンピューターの完全修飾ドメイン名と同じです。</span><span class="sxs-lookup"><span data-stu-id="df209-196">Edit Service.exe.config to reflect the new certificate name (in the `findValue` attribute in the [\<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) which is the same as the fully-qualified domain name of the computer.</span></span> <span data-ttu-id="df209-197">コンピューター名を変更しても、\<サービス >/\<baseAddresses > 要素を localhost からサービス コンピューターの完全修飾名。</span><span class="sxs-lookup"><span data-stu-id="df209-197">Also change the computername in the \<service>/\<baseAddresses> element from localhost to the fully-qualified name of your service computer.</span></span>  
   
-7.  Service.cer ファイルを、サービス ディレクトリからクライアント コンピューターのクライアント ディレクトリにコピーします。  
+7.  <span data-ttu-id="df209-198">Service.cer ファイルを、サービス ディレクトリからクライアント コンピューターのクライアント ディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="df209-198">Copy the Service.cer file from the service directory to the client directory on the client computer.</span></span>  
   
-8.  クライアント上で、管理特権を使用して Visual Studio コマンド プロンプトを開き、`setup.bat client` を実行します。`setup.bat` に `client` 引数を指定して実行すると、test1 というクライアント証明書が作成され、Client.cer というファイルにエクスポートされます。  
+8.  <span data-ttu-id="df209-199">クライアント上で、管理特権を使用して Visual Studio コマンド プロンプトを開き、`setup.bat client` を実行します。</span><span class="sxs-lookup"><span data-stu-id="df209-199">On the client, run `setup.bat client` in a Visual Studio command prompt opened with administrator privileges.</span></span> <span data-ttu-id="df209-200">実行している`setup.bat`で、`client`引数は、test1 というクライアント証明書を作成し、クライアント証明書が Client.cer というファイルにエクスポートします。</span><span class="sxs-lookup"><span data-stu-id="df209-200">Running `setup.bat` with the `client` argument creates a client certificate named test1 and exports the client certificate to a file named Client.cer.</span></span>  
   
-9. クライアント コンピューターの Client.exe.config ファイルで、エンドポイントのアドレス値をサービスの新しいアドレスに合わせます。そのためには、localhost をサーバーの完全修飾ドメイン名に置き換えます。  
+9. <span data-ttu-id="df209-201">クライアント コンピューターの Client.exe.config ファイルで、エンドポイントのアドレス値をサービスの新しいアドレスに合わせます。</span><span class="sxs-lookup"><span data-stu-id="df209-201">In the Client.exe.config file on the client computer, change the address value of the endpoint to match the new address of your service.</span></span> <span data-ttu-id="df209-202">そのためには、localhost をサーバーの完全修飾ドメイン名に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="df209-202">Do this by replacing localhost with the fully-qualified domain name of the server.</span></span>  
   
-10. Client.cer ファイルを、クライアント ディレクトリからサーバーのサービス ディレクトリにコピーします。  
+10. <span data-ttu-id="df209-203">Client.cer ファイルを、クライアント ディレクトリからサーバーのサービス ディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="df209-203">Copy the Client.cer file from the client directory to the service directory on the server.</span></span>  
   
-11. クライアント上で、管理特権を使用して Visual Studio コマンド プロンプトを開き、ImportServiceCert.bat を実行します。これにより、サービス証明書が Service.cer ファイルから CurrentUser \- TrustedPeople ストアにインポートされます。  
+11. <span data-ttu-id="df209-204">クライアント上で、管理特権を使用して Visual Studio コマンド プロンプトを開き、ImportServiceCert.bat を実行します。</span><span class="sxs-lookup"><span data-stu-id="df209-204">On the client, run ImportServiceCert.bat in a Visual Studio command prompt opened with administrator privileges.</span></span> <span data-ttu-id="df209-205">これにより、サービス証明書が Service.cer ファイルから CurrentUser - TrustedPeople ストアにインポートされます。</span><span class="sxs-lookup"><span data-stu-id="df209-205">This imports the service certificate from the Service.cer file into the CurrentUser - TrustedPeople store.</span></span>  
   
-12. サーバー上で、管理特権を使用して Visual Studio コマンド プロンプトを開き、ImportClientCert.bat を実行します。これにより、クライアント証明書が Client.cer ファイルから LocalMachine \- TrustedPeople ストアにインポートされます。  
+12. <span data-ttu-id="df209-206">サーバー上で、管理特権を使用して Visual Studio コマンド プロンプトを開き、ImportClientCert.bat を実行します。</span><span class="sxs-lookup"><span data-stu-id="df209-206">On the server, run ImportClientCert.bat in a Visual Studio command prompt opened with administrator privileges.</span></span> <span data-ttu-id="df209-207">これにより、クライアント証明書が Client.cer ファイルから LocalMachine - TrustedPeople ストアにインポートされます。</span><span class="sxs-lookup"><span data-stu-id="df209-207">This imports the client certificate from the Client.cer file into the LocalMachine - TrustedPeople store.</span></span>  
   
-13. サーバー コンピューターで、コマンド プロンプト ウィンドウから Service.exe を起動します。  
+13. <span data-ttu-id="df209-208">サーバー コンピューターで、コマンド プロンプト ウィンドウから Service.exe を起動します。</span><span class="sxs-lookup"><span data-stu-id="df209-208">On the server computer, launch Service.exe from the command prompt window.</span></span>  
   
-14. クライアント コンピューターで、コマンド プロンプト ウィンドウから Client.exe を起動します。クライアントとサービス間で通信できない場合は、「[Troubleshooting Tips](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
+14. <span data-ttu-id="df209-209">クライアント コンピューターで、コマンド プロンプト ウィンドウから Client.exe を起動します。</span><span class="sxs-lookup"><span data-stu-id="df209-209">On the client computer, launch Client.exe from a command prompt window.</span></span> <span data-ttu-id="df209-210">クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df209-210">If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).</span></span>  
   
-#### サンプルの実行後にクリーンアップするには  
+#### <a name="to-clean-up-after-the-sample"></a><span data-ttu-id="df209-211">サンプルの実行後にクリーンアップするには</span><span class="sxs-lookup"><span data-stu-id="df209-211">To clean up after the sample</span></span>  
   
-1.  サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。これにより、証明書ストアからサーバー証明書とクライアント証明書が削除されます。  
+1.  <span data-ttu-id="df209-212">サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。</span><span class="sxs-lookup"><span data-stu-id="df209-212">Run Cleanup.bat in the samples folder once you have finished running the sample.</span></span> <span data-ttu-id="df209-213">これにより、証明書ストアからサーバー証明書とクライアント証明書が削除されます。</span><span class="sxs-lookup"><span data-stu-id="df209-213">This removes the server and client certificates from the certificate store.</span></span>  
   
 > [!NOTE]
->  このサンプルを複数のコンピューターで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。複数のコンピューターで証明書を使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルを実行した場合は、CurrentUser \- TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。  
+>  <span data-ttu-id="df209-214">このサンプルを複数のコンピューターで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。</span><span class="sxs-lookup"><span data-stu-id="df209-214">This script does not remove service certificates on a client when running this sample across computers.</span></span> <span data-ttu-id="df209-215">複数のコンピューターで証明書を使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルを実行した場合は、CurrentUser - TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。</span><span class="sxs-lookup"><span data-stu-id="df209-215">If you have run [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] samples that use certificates across computers, be sure to clear the service certificates that have been installed in the CurrentUser - TrustedPeople store.</span></span> <span data-ttu-id="df209-216">削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。</span><span class="sxs-lookup"><span data-stu-id="df209-216">To do this, use the following command: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` For example: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.</span></span>  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="df209-217">関連項目</span><span class="sxs-lookup"><span data-stu-id="df209-217">See Also</span></span>

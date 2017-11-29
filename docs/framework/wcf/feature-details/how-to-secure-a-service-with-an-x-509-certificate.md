@@ -1,78 +1,84 @@
 ---
-title: "方法 : X.509 証明書を使用してサービスをセキュリティで保護する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : X.509 証明書を使用してサービスをセキュリティで保護する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 2d06c2aa-d0d7-4e5e-ad7e-77416aa1c10b
-caps.latest.revision: 8
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: ec2800d2b6a910f75366e323b7580afe08de2acb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : X.509 証明書を使用してサービスをセキュリティで保護する
-X.509 証明書を使用してサービスをセキュリティ保護することは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の大半のバインディングで使用される基本的な手法です。ここでは、X.509 証明書を使用して自己ホスト サービスを構成する手順を示します。  
+# <a name="how-to-secure-a-service-with-an-x509-certificate"></a><span data-ttu-id="059ac-102">方法 : X.509 証明書を使用してサービスをセキュリティで保護する</span><span class="sxs-lookup"><span data-stu-id="059ac-102">How to: Secure a Service with an X.509 Certificate</span></span>
+<span data-ttu-id="059ac-103">X.509 証明書を使用してサービスをセキュリティ保護することは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の大半のバインディングで使用される基本的な手法です。</span><span class="sxs-lookup"><span data-stu-id="059ac-103">Securing a service with an X.509 certificate is a basic technique that most bindings in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] use.</span></span> <span data-ttu-id="059ac-104">ここでは、X.509 証明書を使用して自己ホスト サービスを構成する手順を示します。</span><span class="sxs-lookup"><span data-stu-id="059ac-104">This topic walks through the steps of configuring a self-hosted service with an X.509 certificate.</span></span>  
   
- サーバーの認証に使用できる有効な証明書があることが前提条件になります。この証明書は、信頼された証明機関によってサーバーに対して発行される必要があります。証明書が有効でない場合、サービスの使用を試みるすべてのクライアントがサービスを信頼しなくなるため、接続が作成されません。証明書の使用[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)」を参照してください。  
+ <span data-ttu-id="059ac-105">サーバーの認証に使用できる有効な証明書があることが前提条件になります。</span><span class="sxs-lookup"><span data-stu-id="059ac-105">A prerequisite is a valid certificate that can be used to authenticate the server.</span></span> <span data-ttu-id="059ac-106">この証明書は、信頼された証明機関によってサーバーに対して発行される必要があります。</span><span class="sxs-lookup"><span data-stu-id="059ac-106">The certificate must be issued to the server by a trusted certificate authority.</span></span> <span data-ttu-id="059ac-107">証明書が無効な場合、サービスの使用を試みるすべてのクライアントがサービスを信頼しなくなるため、接続が作成されません。</span><span class="sxs-lookup"><span data-stu-id="059ac-107">If the certificate is not valid, any client trying to use the service will not trust the service, and consequently no connection will be made.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="059ac-108">証明書を使用して、参照してください[証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。</span><span class="sxs-lookup"><span data-stu-id="059ac-108"> using certificates, see [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span></span>  
   
-### コードにより証明書を使用してサービスを構成するには  
+### <a name="to-configure-a-service-with-a-certificate-using-code"></a><span data-ttu-id="059ac-109">コードにより証明書を使用してサービスを構成するには</span><span class="sxs-lookup"><span data-stu-id="059ac-109">To configure a service with a certificate using code</span></span>  
   
-1.  サービス コントラクトを作成し、サービスを実装します。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][サービスの設計と実装](../../../../docs/framework/wcf/designing-and-implementing-services.md).  
+1.  <span data-ttu-id="059ac-110">サービス コントラクトを作成し、サービスを実装します。</span><span class="sxs-lookup"><span data-stu-id="059ac-110">Create the service contract and the implemented service.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="059ac-111">[サービスの実装の設計と](../../../../docs/framework/wcf/designing-and-implementing-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="059ac-111"> [Designing and Implementing Services](../../../../docs/framework/wcf/designing-and-implementing-services.md).</span></span>  
   
-2.  次のコードに示すように、<xref:System.ServiceModel.WSHttpBinding> クラスのインスタンスを作成し、そのセキュリティ モードを <xref:System.ServiceModel.SecurityMode> に設定します。  
+2.  <span data-ttu-id="059ac-112">次のコードに示すように、<xref:System.ServiceModel.WSHttpBinding> クラスのインスタンスを作成し、そのセキュリティ モードを <xref:System.ServiceModel.SecurityMode.Message> に設定します。</span><span class="sxs-lookup"><span data-stu-id="059ac-112">Create an instance of the <xref:System.ServiceModel.WSHttpBinding> class and set its security mode to <xref:System.ServiceModel.SecurityMode.Message>, as shown in the following code.</span></span>  
   
      [!code-csharp[C_SecureWithCertificate#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#1)]
      [!code-vb[C_SecureWithCertificate#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#1)]  
   
-3.  次のコードに示すように、2 つの <xref:System.Type> 変数を作成し、それぞれコントラクト型と実装されたコントラクトに割り当てます。  
+3.  <span data-ttu-id="059ac-113">次のコードに示すように、2 つの <xref:System.Type> 変数を作成し、それぞれコントラクト型と実装されたコントラクトに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="059ac-113">Create two <xref:System.Type> variables, one each for the contract type and the implemented contract, as shown in the following code.</span></span>  
   
      [!code-csharp[C_SecureWithCertificate#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#2)]
      [!code-vb[C_SecureWithCertificate#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#2)]  
   
-4.  サービスのベース アドレス用に <xref:System.Uri> クラスのインスタンスを作成します。`WSHttpBinding` では HTTP トランスポートを使用するため、URI \(Uniform Resource Identifier\) がこのスキーマで開始されている必要があります。そうでない場合、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、サービスが開かれたときに例外をスローします。  
+4.  <span data-ttu-id="059ac-114">サービスのベース アドレス用に <xref:System.Uri> クラスのインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="059ac-114">Create an instance of the <xref:System.Uri> class for the base address of the service.</span></span> <span data-ttu-id="059ac-115">`WSHttpBinding` では HTTP トランスポートを使用するため、URI (Uniform Resource Identifier) がこのスキーマで開始されている必要があります。そうでない場合、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、サービスが開かれたときに例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="059ac-115">Because the `WSHttpBinding` uses the HTTP transport, the Uniform Resource Identifier (URI) must begin with that schema, or [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] will throw an exception when the service is opened.</span></span>  
   
      [!code-csharp[C_SecureWithCertificate#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#3)]
      [!code-vb[C_SecureWithCertificate#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#3)]  
   
-5.  実装したコントラクト型変数と URI を使用して <xref:System.ServiceModel.ServiceHost> クラスの新しいインスタンスを作成します。  
+5.  <span data-ttu-id="059ac-116">実装したコントラクト型変数と URI を使用して <xref:System.ServiceModel.ServiceHost> クラスの新しいインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="059ac-116">Create a new instance of the <xref:System.ServiceModel.ServiceHost> class with the implemented contract type variable and the URI.</span></span>  
   
      [!code-csharp[C_SecureWithCertificate#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#4)]
      [!code-vb[C_SecureWithCertificate#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#4)]  
   
-6.  <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A> メソッドを使用して、サービスに <xref:System.ServiceModel.Description.ServiceEndpoint> を追加します。次のコードに示すように、コントラクト、バインディング、およびエンドポイント アドレスをコンストラクターに渡します。  
+6.  <span data-ttu-id="059ac-117"><xref:System.ServiceModel.Description.ServiceEndpoint> メソッドを使用して、サービスに <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A> を追加します。</span><span class="sxs-lookup"><span data-stu-id="059ac-117">Add a <xref:System.ServiceModel.Description.ServiceEndpoint> to the service using the <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A> method.</span></span> <span data-ttu-id="059ac-118">次のコードに示すように、コントラクト、バインディング、およびエンドポイント アドレスをコンストラクターに渡します。</span><span class="sxs-lookup"><span data-stu-id="059ac-118">Pass the contract, binding, and an endpoint address to the constructor, as shown in the following code.</span></span>  
   
      [!code-csharp[C_SecureWithCertificate#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#5)]
      [!code-vb[C_SecureWithCertificate#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#5)]  
   
-7.  省略可能。サービスからメタデータを取得するには、新しい <xref:System.ServiceModel.Description.ServiceMetadataBehavior> オブジェクトを作成し、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> プロパティを `true` に設定します。  
+7.  <span data-ttu-id="059ac-119">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="059ac-119">Optional.</span></span> <span data-ttu-id="059ac-120">サービスからメタデータを取得するには、新しい <xref:System.ServiceModel.Description.ServiceMetadataBehavior> オブジェクトを作成し、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> プロパティを `true` に設定します。</span><span class="sxs-lookup"><span data-stu-id="059ac-120">To retrieve metadata from the service, create a new <xref:System.ServiceModel.Description.ServiceMetadataBehavior> object and set the <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> property to `true`.</span></span>  
   
      [!code-csharp[C_SecureWithCertificate#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#6)]
      [!code-vb[C_SecureWithCertificate#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#6)]  
   
-8.  <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential> クラスの <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential.SetCertificate%2A> メソッドを使用して、有効な証明書をサービスに追加します。このメソッドでは、いくつかある方法の 1 つを使用して証明書を見つけます。この例では、<xref:System.Security.Cryptography.X509Certificates.X509FindType> 列挙体を使用します。この列挙体では、提供された値が証明書の発行先のエンティティの名前であることを指定します。  
+8.  <span data-ttu-id="059ac-121"><xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential.SetCertificate%2A> クラスの <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential> メソッドを使用して、有効な証明書をサービスに追加します。</span><span class="sxs-lookup"><span data-stu-id="059ac-121">Use the <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential.SetCertificate%2A> method of the <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential> class to add the valid certificate to the service.</span></span> <span data-ttu-id="059ac-122">このメソッドでは、いくつかある方法の 1 つを使用して証明書を見つけます。</span><span class="sxs-lookup"><span data-stu-id="059ac-122">The method can use one of several methods to find a certificate.</span></span> <span data-ttu-id="059ac-123">この例では、<xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectName> 列挙体を使用します。</span><span class="sxs-lookup"><span data-stu-id="059ac-123">This example uses the <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectName> enumeration.</span></span> <span data-ttu-id="059ac-124">この列挙体では、提供された値が証明書の発行先のエンティティの名前であることを指定します。</span><span class="sxs-lookup"><span data-stu-id="059ac-124">The enumeration specifies that the supplied value is the name of the entity that the certificate was issued to.</span></span>  
   
      [!code-csharp[C_SecureWithCertificate#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#7)]
      [!code-vb[C_SecureWithCertificate#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#7)]  
   
-9. <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> メソッドを呼び出して、サービスのリッスンを開始します。コンソール アプリケーションを作成する場合は、<xref:System.Console.ReadLine%2A> メソッドを呼び出して、サービスをリッスン状態に保持します。  
+9. <span data-ttu-id="059ac-125"><xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> メソッドを呼び出して、サービスのリッスンを開始します。</span><span class="sxs-lookup"><span data-stu-id="059ac-125">Call the <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> method to start the service listening.</span></span> <span data-ttu-id="059ac-126">コンソール アプリケーションを作成する場合は、<xref:System.Console.ReadLine%2A> メソッドを呼び出して、サービスをリッスン状態に保持します。</span><span class="sxs-lookup"><span data-stu-id="059ac-126">If you are creating a console application, call the <xref:System.Console.ReadLine%2A> method to keep the service in the listening state.</span></span>  
   
      [!code-csharp[C_SecureWithCertificate#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#8)]
      [!code-vb[C_SecureWithCertificate#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#8)]  
   
-## 使用例  
- 次の例では、<xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential.SetCertificate%2A> メソッドを使用して、X.509 証明書でサービスを構成します。  
+## <a name="example"></a><span data-ttu-id="059ac-127">例</span><span class="sxs-lookup"><span data-stu-id="059ac-127">Example</span></span>  
+ <span data-ttu-id="059ac-128">次の例では、<xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential.SetCertificate%2A> メソッドを使用して、X.509 証明書でサービスを構成します。</span><span class="sxs-lookup"><span data-stu-id="059ac-128">The following example uses the <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential.SetCertificate%2A> method to configure a service with an X.509 certificate.</span></span>  
   
  [!code-csharp[C_SecureWithCertificate#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#9)]
  [!code-vb[C_SecureWithCertificate#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#9)]  
   
-## コードのコンパイル  
- コードのコンパイルには次の名前空間が必要です。  
+## <a name="compiling-the-code"></a><span data-ttu-id="059ac-129">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="059ac-129">Compiling the Code</span></span>  
+ <span data-ttu-id="059ac-130">コードのコンパイルには次の名前空間が必要です。</span><span class="sxs-lookup"><span data-stu-id="059ac-130">The following namespaces are required to compile the code:</span></span>  
   
 -   <xref:System>  
   
@@ -86,5 +92,5 @@ X.509 証明書を使用してサービスをセキュリティ保護するこ�
   
 -   <xref:System.Runtime.Serialization>  
   
-## 参照  
- [証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+## <a name="see-also"></a><span data-ttu-id="059ac-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="059ac-131">See Also</span></span>  
+ [<span data-ttu-id="059ac-132">証明書の使用</span><span class="sxs-lookup"><span data-stu-id="059ac-132">Working with Certificates</span></span>](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

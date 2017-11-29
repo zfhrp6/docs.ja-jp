@@ -1,63 +1,66 @@
 ---
-title: "メッセージ セキュリティにおけるアクティビティ トレース | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "メッセージ セキュリティにおけるアクティビティ トレース"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 68862534-3b2e-4270-b097-8121b12a2c97
-caps.latest.revision: 7
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 60156e284c55d765de417fe891185d1aba720816
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# メッセージ セキュリティにおけるアクティビティ トレース
-ここでは、次の 3 つの段階で発生するセキュリティ処理のアクティビティ トレースについて説明します。  
+# <a name="activity-tracing-in-message-security"></a><span data-ttu-id="20d1a-102">メッセージ セキュリティにおけるアクティビティ トレース</span><span class="sxs-lookup"><span data-stu-id="20d1a-102">Activity Tracing in Message Security</span></span>
+<span data-ttu-id="20d1a-103">ここでは、次の 3 つの段階で発生するセキュリティ処理のアクティビティ トレースについて説明します。</span><span class="sxs-lookup"><span data-stu-id="20d1a-103">This topic describes activity tracing for security processing, which happens in the following three phases.</span></span>  
   
--   ネゴシエーション\/SCT 交換。トランスポート層 \(バイナリデータ交換を使用した場合\) またはメッセージ層 \(SOAP メッセージ交換を使用した場合\) で発生する可能性があります。  
+-   <span data-ttu-id="20d1a-104">ネゴシエーション/SCT 交換。</span><span class="sxs-lookup"><span data-stu-id="20d1a-104">Negotiation/SCT exchange.</span></span> <span data-ttu-id="20d1a-105">トランスポート層 (バイナリデータ交換を使用した場合) またはメッセージ層 (SOAP メッセージ交換を使用した場合) で発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="20d1a-105">This can happen at the transport later (through binary data exchange) or message layer (through SOAP message exchanges).</span></span>  
   
--   メッセージの暗号化と復号化、および署名の検証と認証。トレースは、アンビエント アクティビティ \(通常、"プロセス アクション"\) に表示されます。  
+-   <span data-ttu-id="20d1a-106">メッセージの暗号化と復号化、および署名の検証と認証。</span><span class="sxs-lookup"><span data-stu-id="20d1a-106">Message encryption/decryption, with signature verification and authentication.</span></span> <span data-ttu-id="20d1a-107">トレースは、アンビエント アクティビティ (通常、"プロセス アクション") に表示されます。</span><span class="sxs-lookup"><span data-stu-id="20d1a-107">Traces appear in the ambient activity, typically "Process Action."</span></span>  
   
--   承認と検証。ローカルで、またはエンドポイント間の通信中に発生する可能性があります。  
+-   <span data-ttu-id="20d1a-108">承認と検証。</span><span class="sxs-lookup"><span data-stu-id="20d1a-108">Authorization and verification.</span></span> <span data-ttu-id="20d1a-109">ローカルで、またはエンドポイント間の通信中に発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="20d1a-109">This can happen locally or when communicating between endpoints.</span></span>  
   
-## ネゴシエーション\/SCT 交換  
- ネゴシエーション\/SCT 交換段階では、"セキュリティで保護されたセッションの設定" および "セキュリティで保護されたセッションを閉じる" という 2 種類のアクティビティがクライアント側で作成されます。"セキュリティで保護されたセッションの設定" は RST\/RSTR\/SCT メッセージ交換のトレースを含み、"セキュリティで保護されたセッションを閉じる" は "キャンセル" メッセージのトレースを含みます。  
+## <a name="negotiationsct-exchange"></a><span data-ttu-id="20d1a-110">ネゴシエーション/SCT 交換</span><span class="sxs-lookup"><span data-stu-id="20d1a-110">Negotiation/SCT exchange</span></span>  
+ <span data-ttu-id="20d1a-111">ネゴシエーション/SCT 交換段階では、"セキュリティで保護されたセッションの設定" および "セキュリティで保護されたセッションを閉じる" という 2 種類のアクティビティがクライアント側で作成されます。</span><span class="sxs-lookup"><span data-stu-id="20d1a-111">In the negotiation/SCT exchange phase, two activity types are created on the client: "Set up Secure Session" and "Close Secure Session."</span></span> <span data-ttu-id="20d1a-112">"セキュリティで保護されたセッションの設定" は RST/RSTR/SCT メッセージ交換のトレースを含み、"セキュリティで保護されたセッションを閉じる" は "キャンセル" メッセージのトレースを含みます。</span><span class="sxs-lookup"><span data-stu-id="20d1a-112">"Set up Secure Session" encompasses traces for the RST/RSTR/SCT message exchanges, while "Close Secure Session" includes traces for the Cancel message.</span></span>  
   
- サーバーでは、RST\/RSTR\/SCT の各要求\/応答がそのアクティビティに表示されます。サーバーとクライアントの両方に `propagateActivity`\=`true` が設定されている場合、サーバーの各アクティビティは同じ ID を持ち、サービス トレース ビューアーでは "セキュリティで保護されたセッションの設定" にまとめて表示されます。  
+ <span data-ttu-id="20d1a-113">サーバーでは、RST/RSTR/SCT の各要求/応答がそのアクティビティに表示されます。</span><span class="sxs-lookup"><span data-stu-id="20d1a-113">On the server, each request/reply for the RST/RSTR/SCT appears in its own activity.</span></span> <span data-ttu-id="20d1a-114">場合`propagateActivity` = `true`でサーバーとクライアントの両方で、サーバー上でアクティビティが同じ ID を持つし、「セットアップ セキュリティで保護されたセッション」サービス トレース ビューアーで表示したときにまとめて表示されます。</span><span class="sxs-lookup"><span data-stu-id="20d1a-114">If `propagateActivity`=`true` on both the server and client, activities on the server have the same ID, and appear together in the "Setup Secure Session" when viewed through Service Trace Viewer.</span></span>  
   
- このアクティビティ トレース モデルは、ユーザー名\/パスワード認証、証明書認証、および NTLM 認証に対して有効です。  
+ <span data-ttu-id="20d1a-115">このアクティビティ トレース モデルは、ユーザー名/パスワード認証、証明書認証、および NTLM 認証に対して有効です。</span><span class="sxs-lookup"><span data-stu-id="20d1a-115">This activity tracing model is valid for user name/password authentication, certificate authentication, and NTLM authentication.</span></span>  
   
- ネゴシエーションと SCT 交換のアクティビティとトレースを次の表に示します。  
+ <span data-ttu-id="20d1a-116">ネゴシエーションと SCT 交換のアクティビティとトレースを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="20d1a-116">The following table lists the activities and traces for negotiation and SCT exchange.</span></span>  
   
-||ネゴシエーション\/SCT 交換の発生タイミング|アクティビティ|トレース|  
-|-|------------------------------|-------------|----------|  
-|セキュリティで保護されたトランスポート<br /><br /> \(HTTPS、SSL\)|最初のメッセージを受信したとき。|トレースは、アンビエント アクティビティで出力されます。|-   交換トレース<br />-   セキュリティ保護されたチャネルの確立。<br />-   共有シークレットの取得。|  
-|セキュリティで保護されたメッセージ層<br /><br /> \(WSHTTP\)|最初のメッセージを受信したとき。|クライアント側 :<br /><br /> -   RST\/RSTR\/SCT の各要求\/応答に対する最初のメッセージの "プロセス アクション" で発生した "セキュリティで保護されたセッションの設定"。<br />-   "プロキシ アクティビティを閉じる" で発生した "交換のキャンセル" に対する "セキュリティで保護されたセッションを閉じる"。このアクティビティは、セキュリティで保護されたセッションが閉じられるタイミングにより、他のアンビエント アクティビティで発生する可能性があります。<br /><br /> サーバー側 :<br /><br /> -   サーバーでの RST\/SCT\/キャンセルの各要求\/応答に対して 1 つの "プロセス アクション" アクティビティ。`propagateActivity`\=`true` の場合、RST\/RSTR\/SCT アクティビティは "セキュリティで保護されたセッションの設定" とマージされ、"キャンセル" はクライアントからの "閉じる" アクティビティとマージされます。<br /><br /> "セキュリティで保護されたセッションの設定" には 2 つの段階があります。<br /><br /> 1.  認証ネゴシエーション。クライアントが既に適切な資格情報を持つ場合は、省略可能です。この段階は、セキュリティで保護されたトランスポート、またはメッセージ交換を通じて行われます。後者の場合、1 つまたは 2 つの RST\/RSTR 交換が発生する可能性があります。これらの交換では、トレースは、従来の設計どおり、新しい要求\/応答アクティビティで出力されます。<br />2.  セキュリティで保護されたセッションの確立 \(SCT\)。この段階では、1 つの RST\/RSTR 交換が発生します。前述のように、これには同じアンビエント アクティビティが含まれます。|-   交換トレース<br />-   セキュリティ保護されたチャネルの確立。<br />-   共有シークレットの取得。|  
-  
-> [!NOTE]
->  混在セキュリティ モードでは、ネゴシエーション認証はバイナリ交換で発生しますが、SCT はメッセージ交換で発生します。純粋なトランスポート モードでは、ネゴシエーションは追加のアクティビティを持たないトランスポートでのみ発生します。  
-  
-## メッセージの暗号化と復号化  
- メッセージの暗号化と復号化および署名認証のアクティビティとトレースを次の表に示します。  
-  
-||セキュリティで保護されたトランスポート<br /><br /> \(HTTPS、SSL\) およびセキュリティで保護されたメッセージ層<br /><br /> \(WSHTTP\)|  
-|-|--------------------------------------------------------------------------------|  
-|メッセージの暗号化\/復号化、および署名認証の発生タイミング|メッセージを受信したとき。|  
-|アクティビティ|トレースは、クライアントとサーバーの ProcessAction アクティビティで出力されます。|  
-|トレース|-   sendSecurityHeader \(送信側\):<br />-   メッセージの署名<br />-   要求データの暗号化<br />-   receiveSecurityHeader \(受信側\):<br />-   署名の検証<br />-   応答データの復号化<br />-   認証|  
+||<span data-ttu-id="20d1a-117">ネゴシエーション/SCT 交換の発生タイミング</span><span class="sxs-lookup"><span data-stu-id="20d1a-117">Time when Negotiation/SCT exchange happens</span></span>|<span data-ttu-id="20d1a-118">アクティビティ</span><span class="sxs-lookup"><span data-stu-id="20d1a-118">Activities</span></span>|<span data-ttu-id="20d1a-119">トレース</span><span class="sxs-lookup"><span data-stu-id="20d1a-119">Traces</span></span>|  
+|-|-------------------------------------------------|----------------|------------|  
+|<span data-ttu-id="20d1a-120">セキュリティで保護されたトランスポート</span><span class="sxs-lookup"><span data-stu-id="20d1a-120">Secure Transport</span></span><br /><br /> <span data-ttu-id="20d1a-121">(HTTPS、SSL)</span><span class="sxs-lookup"><span data-stu-id="20d1a-121">(HTTPS, SSL)</span></span>|<span data-ttu-id="20d1a-122">最初のメッセージを受信したとき。</span><span class="sxs-lookup"><span data-stu-id="20d1a-122">On first message received.</span></span>|<span data-ttu-id="20d1a-123">トレースは、アンビエント アクティビティで出力されます。</span><span class="sxs-lookup"><span data-stu-id="20d1a-123">Traces are emitted in the ambient activity.</span></span>|<span data-ttu-id="20d1a-124">交換トレース</span><span class="sxs-lookup"><span data-stu-id="20d1a-124">-   Exchange traces</span></span><br /><span data-ttu-id="20d1a-125">セキュリティで保護されたチャネルの確立。</span><span class="sxs-lookup"><span data-stu-id="20d1a-125">-   Secure channel established</span></span><br /><span data-ttu-id="20d1a-126">-共有シークレットの取得します。</span><span class="sxs-lookup"><span data-stu-id="20d1a-126">-   Share secrets obtained.</span></span>|  
+|<span data-ttu-id="20d1a-127">セキュリティで保護されたメッセージ層</span><span class="sxs-lookup"><span data-stu-id="20d1a-127">Secure Message Layer</span></span><br /><br /> <span data-ttu-id="20d1a-128">(WSHTTP)</span><span class="sxs-lookup"><span data-stu-id="20d1a-128">(WSHTTP)</span></span>|<span data-ttu-id="20d1a-129">最初のメッセージを受信したとき。</span><span class="sxs-lookup"><span data-stu-id="20d1a-129">On first message received.</span></span>|<span data-ttu-id="20d1a-130">クライアント側 :</span><span class="sxs-lookup"><span data-stu-id="20d1a-130">On the client:</span></span><br /><br /> <span data-ttu-id="20d1a-131">-「セットアップ セキュリティで保護されたセッション」最初のメッセージの「プロセス アクション」外ごとに RST、RSTR、/SCT の要求/応答です。</span><span class="sxs-lookup"><span data-stu-id="20d1a-131">-   "Setup Secure Session" out of "Process Action" of that first message, for each request/reply for RST/RSTR/SCT.</span></span><br /><span data-ttu-id="20d1a-132">-"、「プロキシ アクティビティを閉じる」から、[キャンセル] exchange に対するセキュリティで保護されたセッションを閉じる"。</span><span class="sxs-lookup"><span data-stu-id="20d1a-132">-   "Close Secure Session" for the CANCEL exchange, out of the "Close Proxy activity."</span></span> <span data-ttu-id="20d1a-133">このアクティビティは、セキュリティで保護されたセッションが閉じられるタイミングにより、他のアンビエント アクティビティで発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="20d1a-133">This activity may happen out of some other ambient activity, depending on when the secure session is closed.</span></span><br /><br /> <span data-ttu-id="20d1a-134">サーバー側 :</span><span class="sxs-lookup"><span data-stu-id="20d1a-134">On the server:</span></span><br /><br /> <span data-ttu-id="20d1a-135">の各要求/応答 RST/SCT/キャンセルのサーバー上 1 つの「プロセス アクション」アクティビティ。</span><span class="sxs-lookup"><span data-stu-id="20d1a-135">-   One "Process Action" activity for each request/reply for RST/SCT/Cancel on the server.</span></span> <span data-ttu-id="20d1a-136">場合`propagateActivity` = `true`RST、RSTR、//SCT アクティビティとマージされます「セキュリティ セッションの設定」で [キャンセル] は、クライアントからの「閉じる」アクティビティ。</span><span class="sxs-lookup"><span data-stu-id="20d1a-136">If `propagateActivity`=`true`, RST/RSTR/SCT activities are merged with "Set up Security Session", and Cancel is merged with the "Close" activity from the client.</span></span><br /><br /> <span data-ttu-id="20d1a-137">"セキュリティで保護されたセッションの設定" には 2 つの段階があります。</span><span class="sxs-lookup"><span data-stu-id="20d1a-137">There are two stages for "Set up Secure Session":</span></span><br /><br /> <span data-ttu-id="20d1a-138">1.認証ネゴシエーション。</span><span class="sxs-lookup"><span data-stu-id="20d1a-138">1.  Authentication negotiation.</span></span> <span data-ttu-id="20d1a-139">クライアントが既に適切な資格情報を持つ場合は、省略可能です。</span><span class="sxs-lookup"><span data-stu-id="20d1a-139">This is optional if the client already has the proper credentials.</span></span> <span data-ttu-id="20d1a-140">この段階は、セキュリティで保護されたトランスポート、またはメッセージ交換を通じて行われます。</span><span class="sxs-lookup"><span data-stu-id="20d1a-140">This phase can be done through secure transport, or through message exchanges.</span></span> <span data-ttu-id="20d1a-141">後者の場合、1 つまたは 2 つの RST/RSTR 交換が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="20d1a-141">In the latter case, 1 or 2 RST/RSTR exchanges can happen.</span></span> <span data-ttu-id="20d1a-142">これらの交換では、トレースは、従来の設計どおり、新しい要求/応答アクティビティで出力されます。</span><span class="sxs-lookup"><span data-stu-id="20d1a-142">For these exchanges, traces are emitted in new request/reply activities as previously designed.</span></span><br /><span data-ttu-id="20d1a-143">2.セキュリティで保護されたセッションの確立 (SCT)。この段階では、1 つの RST/RSTR 交換が発生します。</span><span class="sxs-lookup"><span data-stu-id="20d1a-143">2.  Secure session establishment (SCT), in which one RST/RSTR exchange happens here.</span></span> <span data-ttu-id="20d1a-144">前述のように、これには同じアンビエント アクティビティが含まれます。</span><span class="sxs-lookup"><span data-stu-id="20d1a-144">This has the same ambient activities as described previously.</span></span>|<span data-ttu-id="20d1a-145">交換トレース</span><span class="sxs-lookup"><span data-stu-id="20d1a-145">-   Exchange traces</span></span><br /><span data-ttu-id="20d1a-146">セキュリティで保護されたチャネルの確立。</span><span class="sxs-lookup"><span data-stu-id="20d1a-146">-   Secure channel established</span></span><br /><span data-ttu-id="20d1a-147">-共有シークレットの取得します。</span><span class="sxs-lookup"><span data-stu-id="20d1a-147">-   Share secrets obtained.</span></span>|  
   
 > [!NOTE]
->  純粋なトランスポート モードでは、メッセージの暗号化\/復号化は追加のアクティビティを持たないトランスポートでのみ発生します。  
+>  <span data-ttu-id="20d1a-148">混在セキュリティ モードでは、ネゴシエーション認証はバイナリ交換で発生しますが、SCT はメッセージ交換で発生します。</span><span class="sxs-lookup"><span data-stu-id="20d1a-148">In mixed security mode, negotiation authentication happens in binary exchanges, but SCT happens in message exchange.</span></span> <span data-ttu-id="20d1a-149">純粋なトランスポート モードでは、ネゴシエーションは追加のアクティビティを持たないトランスポートでのみ発生します。</span><span class="sxs-lookup"><span data-stu-id="20d1a-149">In pure transport mode, negotiation happens only in transport with no additional activities.</span></span>  
   
-## 承認と検証  
- 承認のアクティビティとトレースを次の表に示します。  
+## <a name="message-encryption-and-decryption"></a><span data-ttu-id="20d1a-150">メッセージの暗号化と復号化</span><span class="sxs-lookup"><span data-stu-id="20d1a-150">Message Encryption and Decryption</span></span>  
+ <span data-ttu-id="20d1a-151">メッセージの暗号化と復号化および署名認証のアクティビティとトレースを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="20d1a-151">The following table lists the activities and traces for message encryption/decryption, as well as signature authentication.</span></span>  
   
-||承認の発生タイミング|アクティビティ|トレース|  
-|-|----------------|-------------|----------|  
-|ローカル \(既定\)|サーバーでメッセージが複号化された後|トレースは、サーバーの ProcessAction アクティビティで出力されます。|ユーザーの承認。|  
-|Remote|サーバーでメッセージが複号化された後|トレースは、ProcessAction アクティビティによって呼び出された新しいアクティビティで出力されます。|ユーザーの承認。|
+||<span data-ttu-id="20d1a-152">セキュリティで保護されたトランスポート</span><span class="sxs-lookup"><span data-stu-id="20d1a-152">Secure Transport</span></span><br /><br /> <span data-ttu-id="20d1a-153">(HTTPS、SSL) およびセキュリティで保護されたメッセージ層 </span><span class="sxs-lookup"><span data-stu-id="20d1a-153">(HTTPS, SSL) and Secure Message Layer</span></span><br /><br /> <span data-ttu-id="20d1a-154">(WSHTTP)</span><span class="sxs-lookup"><span data-stu-id="20d1a-154">(WSHTTP)</span></span>|  
+|-|---------------------------------------------------------------------------------|  
+|<span data-ttu-id="20d1a-155">メッセージの暗号化/復号化、および署名認証の発生タイミング</span><span class="sxs-lookup"><span data-stu-id="20d1a-155">Time when message encryption/decryption, as well as signature authentication happens</span></span>|<span data-ttu-id="20d1a-156">メッセージを受信したとき。</span><span class="sxs-lookup"><span data-stu-id="20d1a-156">On message received</span></span>|  
+|<span data-ttu-id="20d1a-157">アクティビティ</span><span class="sxs-lookup"><span data-stu-id="20d1a-157">Activities</span></span>|<span data-ttu-id="20d1a-158">トレースは、クライアントとサーバーの ProcessAction アクティビティで出力されます。</span><span class="sxs-lookup"><span data-stu-id="20d1a-158">Traces are emitted in the ProcessAction activity on the client and server.</span></span>|  
+|<span data-ttu-id="20d1a-159">トレース</span><span class="sxs-lookup"><span data-stu-id="20d1a-159">Traces</span></span>|<span data-ttu-id="20d1a-160">-sendSecurityHeader (送信側)。</span><span class="sxs-lookup"><span data-stu-id="20d1a-160">-   sendSecurityHeader (sender):</span></span><br /><span data-ttu-id="20d1a-161">サインオン メッセージ</span><span class="sxs-lookup"><span data-stu-id="20d1a-161">-   Sign message</span></span><br /><span data-ttu-id="20d1a-162">-要求データを暗号化します。</span><span class="sxs-lookup"><span data-stu-id="20d1a-162">-   Encrypt request data</span></span><br /><span data-ttu-id="20d1a-163">-receiveSecurityHeader (受信側)。</span><span class="sxs-lookup"><span data-stu-id="20d1a-163">-   receiveSecurityHeader (receiver):</span></span><br /><span data-ttu-id="20d1a-164">-署名を確認します。</span><span class="sxs-lookup"><span data-stu-id="20d1a-164">-   Verify signature</span></span><br /><span data-ttu-id="20d1a-165">-応答データを復号化します。</span><span class="sxs-lookup"><span data-stu-id="20d1a-165">-   Decrypt response data</span></span><br /><span data-ttu-id="20d1a-166">-認証</span><span class="sxs-lookup"><span data-stu-id="20d1a-166">-   Authentication</span></span>|  
+  
+> [!NOTE]
+>  <span data-ttu-id="20d1a-167">純粋なトランスポート モードでは、メッセージの暗号化/復号化は追加のアクティビティを持たないトランスポートでのみ発生します。</span><span class="sxs-lookup"><span data-stu-id="20d1a-167">In pure transport mode, message encryption/decryption happens only in transport with no additional activities.</span></span>  
+  
+## <a name="authorization-and-verification"></a><span data-ttu-id="20d1a-168">承認と検証</span><span class="sxs-lookup"><span data-stu-id="20d1a-168">Authorization and Verification</span></span>  
+ <span data-ttu-id="20d1a-169">承認のアクティビティとトレースを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="20d1a-169">The following table lists the activities and traces for authorization.</span></span>  
+  
+||<span data-ttu-id="20d1a-170">承認の発生タイミング</span><span class="sxs-lookup"><span data-stu-id="20d1a-170">Time when authorization happens</span></span>|<span data-ttu-id="20d1a-171">アクティビティ</span><span class="sxs-lookup"><span data-stu-id="20d1a-171">Activities</span></span>|<span data-ttu-id="20d1a-172">トレース</span><span class="sxs-lookup"><span data-stu-id="20d1a-172">Traces</span></span>|  
+|-|-------------------------------------|----------------|------------|  
+|<span data-ttu-id="20d1a-173">ローカル (既定)</span><span class="sxs-lookup"><span data-stu-id="20d1a-173">Local (default)</span></span>|<span data-ttu-id="20d1a-174">サーバーでメッセージが複号化された後</span><span class="sxs-lookup"><span data-stu-id="20d1a-174">After the message is decrypted on the server</span></span>|<span data-ttu-id="20d1a-175">トレースは、サーバーの ProcessAction アクティビティで出力されます。</span><span class="sxs-lookup"><span data-stu-id="20d1a-175">Traces are emitted in the ProcessAction activity at the server.</span></span>|<span data-ttu-id="20d1a-176">ユーザーの承認。</span><span class="sxs-lookup"><span data-stu-id="20d1a-176">User authorized.</span></span>|  
+|<span data-ttu-id="20d1a-177">リモート</span><span class="sxs-lookup"><span data-stu-id="20d1a-177">Remote</span></span>|<span data-ttu-id="20d1a-178">サーバーでメッセージが複号化された後</span><span class="sxs-lookup"><span data-stu-id="20d1a-178">After the message is decrypted on the server</span></span>|<span data-ttu-id="20d1a-179">トレースは、ProcessAction アクティビティによって呼び出された新しいアクティビティで出力されます。</span><span class="sxs-lookup"><span data-stu-id="20d1a-179">Traces are emitted in a new activity invoked by the ProcessAction activity.</span></span>|<span data-ttu-id="20d1a-180">ユーザーの承認。</span><span class="sxs-lookup"><span data-stu-id="20d1a-180">User authorized.</span></span>|

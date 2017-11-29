@@ -1,51 +1,54 @@
 ---
-title: "分析トレースの動的な有効化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "分析トレースの動的な有効化"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 58b63cfc-307a-427d-b69d-9917ff9f44ac
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d86186d3f979d4ec02cb728befb7127edfd07aaf
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 分析トレースの動的な有効化
-Windows オペレーティング システムに付属のツールでは、ETW \(Event Tracing for Windows\) を使用して、トレースを動的に有効化または無効化できます。 すべての [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスについては、アプリケーションの Web.config ファイルを変更したり、サービスを再起動したりせずに、分析トレースを動的に有効化および無効化できます。 このため、トレース イベントを生成するアプリケーションに影響が生じません。  
+# <a name="dynamically-enabling-analytic-tracing"></a><span data-ttu-id="5ef9d-102">分析トレースの動的な有効化</span><span class="sxs-lookup"><span data-stu-id="5ef9d-102">Dynamically Enabling Analytic Tracing</span></span>
+<span data-ttu-id="5ef9d-103">Windows オペレーティング システムに付属のツールでは、ETW (Event Tracing for Windows) を使用して、トレースを動的に有効化または無効化できます。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-103">Using tools that ship with the Windows operating system, you can enable or disable tracing dynamically using Event Tracing for Windows (ETW).</span></span> <span data-ttu-id="5ef9d-104">すべての [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスについては、アプリケーションの Web.config ファイルを変更したり、サービスを再起動したりせずに、分析トレースを動的に有効化および無効化できます。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-104">For all [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] services, analytic tracing can be enabled and disabled dynamically without modifying the application’s Web.config file or restarting the service.</span></span> <span data-ttu-id="5ef9d-105">このため、トレース イベントを生成するアプリケーションに影響が生じません。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-105">This allows the application that emits the trace events to remain undisturbed.</span></span>  
   
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] のトレース オプションも同様に構成できます。 たとえば、アプリケーションに影響を与えずに、重大度レベルを **Error** から **Information** に変更できます。 これは、次のツールで実行できます。  
+ [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]<span data-ttu-id="5ef9d-106"> のトレース オプションも同様に構成できます。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-106"> tracing options can be configured in a similar way.</span></span> <span data-ttu-id="5ef9d-107">たとえば、アプリケーションに影響を与えずに、重大度レベルを **Error** から **Information** に変更できます。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-107">For example, you can change the severity level from **Error** to **Information** without disturbing the application.</span></span> <span data-ttu-id="5ef9d-108">これは、次のツールで実行できます。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-108">This can be done using the following tools:</span></span>  
   
--   **Logman**: トレース データを構成、制御、および照会するためのコマンド ライン ツールです。[!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][logman create trace](http://go.microsoft.com/fwlink/?LinkId=165426)」と「[logman update trace](http://go.microsoft.com/fwlink/?LinkId=165427)」を参照してください。  
+-   <span data-ttu-id="5ef9d-109">**Logman** : トレース データを構成、制御、および照会するためのコマンド ライン ツールです。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-109">**Logman** – A command line tool for configuring, controlling, and querying tracing data.</span></span> [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)]<span data-ttu-id="5ef9d-110">[Logman Create Trace](http://go.microsoft.com/fwlink/?LinkId=165426)と[Logman Update Trace](http://go.microsoft.com/fwlink/?LinkId=165427)です。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-110"> [Logman Create Trace](http://go.microsoft.com/fwlink/?LinkId=165426) and [Logman Update Trace](http://go.microsoft.com/fwlink/?LinkId=165427).</span></span>  
   
--   **EventViewer**: トレース結果を表示するための、Windows のグラフィカル管理ツールです。[!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][WCF サービスと Event Tracing for Windows](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md)」および「[イベント ビューアー](http://go.microsoft.com/fwlink/?LinkId=165428)」を参照してください。  
+-   <span data-ttu-id="5ef9d-111">**EventViewer** : トレース結果を表示するための、Windows のグラフィカル管理ツールです。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-111">**EventViewer** - Windows graphical management tool for viewing the results of tracing.</span></span> [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)]<span data-ttu-id="5ef9d-112">[WCF サービスと Event Tracing for Windows](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md)と[イベント ビューアー](http://go.microsoft.com/fwlink/?LinkId=165428)です。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-112"> [WCF Services and Event Tracing for Windows](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md) and [Event Viewer](http://go.microsoft.com/fwlink/?LinkId=165428).</span></span>  
   
--   **Perfmon**: カウンターを使用して、トレース カウンターおよびパフォーマンス トレースの効果を監視する、Windows のグラフィカル管理ツールです。[!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][データ コレクター セットを手動で作成する](http://go.microsoft.com/fwlink/?LinkId=165429)」を参照してください。  
+-   <span data-ttu-id="5ef9d-113">**Perfmon** : カウンターを使用して、トレース カウンターおよびパフォーマンス トレースの効果を監視する、Windows のグラフィカル管理ツールです。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-113">**Perfmon** – Windows graphical management tool that uses counters to monitor tracing counters and the effects of tracing on performance.</span></span> [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)]<span data-ttu-id="5ef9d-114">[データ コレクター セットを手動で作成](http://go.microsoft.com/fwlink/?LinkId=165429)です。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-114"> [Create a Data Collector Set Manually](http://go.microsoft.com/fwlink/?LinkId=165429).</span></span>  
   
-### キーワード  
- <xref:System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup.Diagnostics%2A> クラスを使用するときには、通常、.NET Framework トレース メッセージが重大度レベル \(エラー、警告、情報など\) でフィルターされます。 ETW は、重大度レベルの概念をサポートしますが、キーワードを使用して、新しい柔軟なフィルター機構も追加されています。 キーワードは任意のテキスト値で、これによって、トレース イベントでそのイベントの意味に関する追加のコンテキストが提供されます。  
+### <a name="keywords"></a><span data-ttu-id="5ef9d-115">キーワード</span><span class="sxs-lookup"><span data-stu-id="5ef9d-115">Keywords</span></span>  
+ <span data-ttu-id="5ef9d-116"><xref:System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup.Diagnostics%2A> クラスを使用するときには、通常、.NET Framework トレース メッセージが重大度レベル (エラー、警告、情報など) でフィルターされます。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-116">When using the <xref:System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup.Diagnostics%2A> class, .NET Framework trace messages are generally filtered by the severity level (for example, Error, Warning, and Information).</span></span> <span data-ttu-id="5ef9d-117">ETW は、重大度レベルの概念をサポートしますが、キーワードを使用して、新しい柔軟なフィルター機構も追加されています。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-117">ETW supports the severity level concept, but introduces a new, flexible filter mechanism using keywords.</span></span> <span data-ttu-id="5ef9d-118">キーワードは任意のテキスト値で、これによって、トレース イベントでそのイベントの意味に関する追加のコンテキストが提供されます。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-118">Keywords are arbitrary textual values that let tracing events provide additional context about what that event means.</span></span>  
   
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] の分析トレースでは、各トレース イベントに 2 種類のキーワードがあります。 まず、各イベントには 1 つ以上のシナリオ キーワードがあります。 これらのキーワードは、そのイベントがサポートするシナリオを示します。 次の表に示すように、特定の目的に対応する 3 つのシナリオ キーワードがあります。 キーワードを使用したフィルター処理は、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスに影響を与えずに動的に変更できます。 このため、現在のトレース シナリオおよび収集するトレース情報の量を動的に変更できます。 たとえば、`HealthMonitoring` を `Troubleshooting` に変更し、トレース イベントの詳細度を上げることができます。  
+ <span data-ttu-id="5ef9d-119">[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] の分析トレースでは、各トレース イベントに 2 種類のキーワードがあります。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-119">For [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] analytic tracing, each trace event has two types of keywords.</span></span> <span data-ttu-id="5ef9d-120">まず、各イベントには 1 つ以上のシナリオ キーワードがあります。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-120">First, each event has one or more scenario keywords.</span></span> <span data-ttu-id="5ef9d-121">これらのキーワードは、そのイベントがサポートするシナリオを示します。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-121">These keywords denote the scenarios that this event is intended to support.</span></span> <span data-ttu-id="5ef9d-122">次の表に示すように、特定の目的に対応する 3 つのシナリオ キーワードがあります。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-122">There are three scenario keywords, each designed for a specific purpose as shown in the following table.</span></span> <span data-ttu-id="5ef9d-123">キーワードを使用したフィルター処理は、 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスに影響を与えずに動的に変更できます。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-123">Filtering using keywords can be changed dynamically without disturbing the [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] service.</span></span> <span data-ttu-id="5ef9d-124">このため、現在のトレース シナリオおよび収集するトレース情報の量を動的に変更できます。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-124">That means that you can dynamically change your current tracing scenario and the amount of tracing information you gather.</span></span> <span data-ttu-id="5ef9d-125">たとえば、 `HealthMonitoring` を `Troubleshooting` に変更し、トレース イベントの詳細度を上げることができます。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-125">For example, you can change `HealthMonitoring` to `Troubleshooting` and increase Tracing Event granularity.</span></span>  
   
-|キーワード|説明|  
-|-----------|--------|  
-|`HealthMonitoring`|サービスのアクティビティを監視できる、軽量の、最小限のトレース。|  
-|`EndToEndMonitoring`|メッセージ フロー トレースのサポートに使用するイベント。|  
-|`Troubleshooting`|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] の拡張ポイントに関連するより詳細なイベント。|  
+|<span data-ttu-id="5ef9d-126">キーワード</span><span class="sxs-lookup"><span data-stu-id="5ef9d-126">Keyword</span></span>|<span data-ttu-id="5ef9d-127">説明</span><span class="sxs-lookup"><span data-stu-id="5ef9d-127">Description</span></span>|  
+|-------------|-----------------|  
+|`HealthMonitoring`|<span data-ttu-id="5ef9d-128">サービスのアクティビティを監視できる、軽量の、最小限のトレース。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-128">Very lightweight, minimal tracing that lets you monitor your service’s activity.</span></span>|  
+|`EndToEndMonitoring`|<span data-ttu-id="5ef9d-129">メッセージ フロー トレースのサポートに使用するイベント。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-129">Events used to support message flow tracing.</span></span>|  
+|`Troubleshooting`|<span data-ttu-id="5ef9d-130">[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]の拡張ポイントに関連するより詳細なイベント。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-130">More granular events around the extensibility points of [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)].</span></span>|  
   
- キーワードの 2 番目のグループは、[!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] のどのコンポーネントがイベントを生成するかを定義します。  
+ <span data-ttu-id="5ef9d-131">キーワードの 2 番目のグループは、 [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] のどのコンポーネントがイベントを生成するかを定義します。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-131">The second group of keywords define which component of the [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] emitted the event.</span></span>  
   
-|キーワード|説明|  
-|-----------|--------|  
-|`UserEvents`|[!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] ではなく、ユーザー コードが生成するイベント。|  
-|`ServiceModel`|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] ランタイムが生成するイベント。|  
-|`ServiceHost`|サービス ホストが生成するイベント。|  
-|`WCFMessageLogging`|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] メッセージ ログ イベント。|  
+|<span data-ttu-id="5ef9d-132">キーワード</span><span class="sxs-lookup"><span data-stu-id="5ef9d-132">Keyword</span></span>|<span data-ttu-id="5ef9d-133">説明</span><span class="sxs-lookup"><span data-stu-id="5ef9d-133">Description</span></span>|  
+|-------------|-----------------|  
+|`UserEvents`|<span data-ttu-id="5ef9d-134">[!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)]ではなく、ユーザー コードが生成するイベント。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-134">Events emitted by the user code and not the [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)].</span></span>|  
+|`ServiceModel`|<span data-ttu-id="5ef9d-135">[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] ランタイムが生成するイベント。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-135">Events emitted by the [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] runtime.</span></span>|  
+|`ServiceHost`|<span data-ttu-id="5ef9d-136">サービス ホストが生成するイベント。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-136">Events emitted by the service host.</span></span>|  
+|`WCFMessageLogging`|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]<span data-ttu-id="5ef9d-137"> メッセージ ログ イベント。</span><span class="sxs-lookup"><span data-stu-id="5ef9d-137"> message logging events.</span></span>|  
   
-## 参照  
- [WCF サービスと Event Tracing for Windows](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md)
+## <a name="see-also"></a><span data-ttu-id="5ef9d-138">関連項目</span><span class="sxs-lookup"><span data-stu-id="5ef9d-138">See Also</span></span>  
+ [<span data-ttu-id="5ef9d-139">WCF サービスと Event Tracing for Windows</span><span class="sxs-lookup"><span data-stu-id="5ef9d-139">WCF Services and Event Tracing for Windows</span></span>](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md)

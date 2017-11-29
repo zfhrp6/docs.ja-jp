@@ -1,25 +1,28 @@
 ---
-title: "FileName で指定されたファイルは FileEncoding で指定されたエンコーディングを使用していません | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
+title: "FileName で指定されたファイルは FileEncoding で指定されたエンコーディングを使用していません"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
 ms.assetid: 2129f8df-96cd-4c2e-a4ca-f08a49f07d3f
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: dfa6525a029f60fbe821e18f9d9a9cbb61d14432
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# FileName で指定されたファイルは FileEncoding で指定されたエンコーディングを使用していません
-ファイルからの読み取りが試行されましたが、ファイルは指定したエンコーディングを使用していません。  
+# <a name="file-specified-by-filename-does-not-use-the-encoding-specified-by-fileencoding"></a><span data-ttu-id="1e4aa-102">FileName で指定されたファイルは FileEncoding で指定されたエンコーディングを使用していません</span><span class="sxs-lookup"><span data-stu-id="1e4aa-102">File specified by FileName does not use the encoding specified by FileEncoding</span></span>
+<span data-ttu-id="1e4aa-103">ファイルからの読み取りが試行されましたが、ファイルは指定したエンコーディングを使用していません。</span><span class="sxs-lookup"><span data-stu-id="1e4aa-103">An attempt has been made to read from a file, but the specified encoding is not used by the file.</span></span>  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="1e4aa-104">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="1e4aa-104">To correct this error</span></span>  
   
--   正しいファイルのエンコーディングを指定していることを確認します。  
+-   <span data-ttu-id="1e4aa-105">正しいファイルのエンコーディングを指定していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="1e4aa-105">Check to make sure you are supplying the correct file encoding.</span></span>  
   
-## 参照  
- [My.Computer.FileSystem.ReadAllText メソッド](http://msdn.microsoft.com/ja-jp/3a7ac8be-fb1d-4087-bc65-167d6754d57f)   
- [My.Computer.FileSystem Object](../../visual-basic/language-reference/objects/my-computer-filesystem-object.md)   
- [File Encodings](../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)   
- [How to: Read from Text Files](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)
+## <a name="see-also"></a><span data-ttu-id="1e4aa-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="1e4aa-106">See Also</span></span>  
+ [<span data-ttu-id="1e4aa-107">My.Computer.FileSystem.ReadAllText メソッド</span><span class="sxs-lookup"><span data-stu-id="1e4aa-107">My.Computer.FileSystem.ReadAllText Method</span></span>](http://msdn.microsoft.com/en-us/3a7ac8be-fb1d-4087-bc65-167d6754d57f)  
+ [<span data-ttu-id="1e4aa-108">My.Computer.FileSystem オブジェクト</span><span class="sxs-lookup"><span data-stu-id="1e4aa-108">My.Computer.FileSystem Object</span></span>](../../visual-basic/language-reference/objects/my-computer-filesystem-object.md)  
+ [<span data-ttu-id="1e4aa-109">ファイル エンコーディング</span><span class="sxs-lookup"><span data-stu-id="1e4aa-109">File Encodings</span></span>](../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)  
+ [<span data-ttu-id="1e4aa-110">方法: テキスト ファイルからデータを読み取る</span><span class="sxs-lookup"><span data-stu-id="1e4aa-110">How to: Read from Text Files</span></span>](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)

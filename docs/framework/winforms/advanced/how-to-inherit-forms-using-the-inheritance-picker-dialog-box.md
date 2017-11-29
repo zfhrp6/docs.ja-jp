@@ -1,72 +1,73 @@
 ---
-title: "方法 : [継承ピッカー] ダイアログ ボックスを使用してフォームを継承する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "継承、フォーム"
-  - "[継承ピッカー] ダイアログ ボックス"
-  - "継承されたフォーム、作成"
+title: "方法 : [継承ピッカー] ダイアログ ボックスを使用してフォームを継承する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- inheritance [Windows Forms], forms
+- Inheritance Picker dialog box
+- inherited forms [Windows Forms], creating
 ms.assetid: 969b4c04-12aa-4297-93a2-0ae747447823
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 50521591af6f77b98e52aa4a847216f63186d78b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : [継承ピッカー] ダイアログ ボックスを使用してフォームを継承する
-フォームまたはその他のオブジェクトを継承する最も簡単な方法は、**\[継承ピッカー\]** ダイアログ ボックスを使用することです。  これを使用して、その他のソリューションで作成済みのコードまたはユーザー インターフェイス \(UI\) を利用できます。  
+# <a name="how-to-inherit-forms-using-the-inheritance-picker-dialog-box"></a><span data-ttu-id="9d03a-102">方法 : [継承ピッカー] ダイアログ ボックスを使用してフォームを継承する</span><span class="sxs-lookup"><span data-stu-id="9d03a-102">How to: Inherit Forms Using the Inheritance Picker Dialog Box</span></span>
+<span data-ttu-id="9d03a-103">フォームまたは他のオブジェクトを継承する最も簡単な方法は、**[継承ピッカー]** ダイアログ ボックスを使用することです。</span><span class="sxs-lookup"><span data-stu-id="9d03a-103">The easiest way to inherit a form or other object is to use the **Inheritance Picker** dialog box.</span></span> <span data-ttu-id="9d03a-104">これを使用して、その他のソリューションで作成済みのコードまたはユーザー インターフェイス (UI) を利用できます。</span><span class="sxs-lookup"><span data-stu-id="9d03a-104">With it, you can take advantage of code or user interfaces (UI) you have already created in other solutions.</span></span>  
   
 > [!NOTE]
->  **\[継承ピッカー\]** ダイアログ ボックスを持つフォームを継承するには、このフォームを含むプロジェクトが、実行可能ファイルまたは DLL に組み込まれている必要があります。  プロジェクトを作成するには、**\[ビルド\]** メニューから **\[ソリューションのビルド\]** を選択します。  
+>  <span data-ttu-id="9d03a-105">**[継承ピッカー]** ダイアログ ボックスを使用してフォームを継承するには、そのフォームを含むプロジェクトが、実行可能ファイルまたは DLL に組み込まれている必要があります。</span><span class="sxs-lookup"><span data-stu-id="9d03a-105">In order to inherit from a form with the **Inheritance Picker** dialog box, the project containing that form must have been built into an executable file or DLL.</span></span> <span data-ttu-id="9d03a-106">プロジェクトをビルドするには、**[ビルド]** メニューの **[ソリューションのビルド]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="9d03a-106">To build the project, choose **Build Solution** from the **Build** menu.</span></span>  
 >   
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  <span data-ttu-id="9d03a-107">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="9d03a-107">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="9d03a-108">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9d03a-108">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="9d03a-109">詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9d03a-109">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### 継承ピッカーを使用して既存のフォームから継承された Windows フォームを作成するには  
+### <a name="to-create-a-windows-form-inherited-from-an-existing-form-by-using-the-inheritance-picker"></a><span data-ttu-id="9d03a-110">継承ピッカーを使用して既存のフォームから継承された Windows フォームを作成するには</span><span class="sxs-lookup"><span data-stu-id="9d03a-110">To create a Windows Form inherited from an existing form by using the Inheritance Picker</span></span>  
   
-1.  **\[プロジェクト\]** メニューから **\[Windows フォームの追加\]** を選択します。  
+1.  <span data-ttu-id="9d03a-111">**[プロジェクト]** メニューの **[Windows フォームの追加]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="9d03a-111">From the **Project** menu, choose **Add Windows Form**.</span></span>  
   
-     **\[新しい項目の追加\]** ダイアログ ボックスが表示されます。  
+     <span data-ttu-id="9d03a-112">**[新しい項目の追加]** ダイアログ ボックスが開きます。</span><span class="sxs-lookup"><span data-stu-id="9d03a-112">The **Add New Item** dialog box opens.</span></span>  
   
-2.  **\[継承されたフォーム\]** テンプレートを選択して、**\[名前\]** ボックスで名前を付けます。  **\[追加\]** ボタンをクリックして続行します。  
+2.  <span data-ttu-id="9d03a-113">**[継承されたフォーム]** テンプレートを選択し、**[名前]** ボックスに名前を入力します。</span><span class="sxs-lookup"><span data-stu-id="9d03a-113">Select the **Inherited Form** template, and name it in the **Name** box.</span></span> <span data-ttu-id="9d03a-114">**[追加]** をクリックして続行します。</span><span class="sxs-lookup"><span data-stu-id="9d03a-114">Click the **Add** button to proceed.</span></span>  
   
-     **\[継承ピッカー\]** ダイアログ ボックスが開きます。  現在のプロジェクトに既にフォームが含まれている場合は、**\[継承ピッカー\]** ダイアログ ボックスに表示されます。  
+     <span data-ttu-id="9d03a-115">**[継承ピッカー]** ダイアログ ボックスが開きます。</span><span class="sxs-lookup"><span data-stu-id="9d03a-115">The **Inheritance Picker** dialog box opens.</span></span> <span data-ttu-id="9d03a-116">現在のプロジェクトに既にフォームが含まれている場合は、**[継承ピッカー]** ダイアログ ボックスに表示されます。</span><span class="sxs-lookup"><span data-stu-id="9d03a-116">If the current project already contains forms, they are displayed in the **Inheritance Picker** dialog box.</span></span>  
   
-3.  別のアセンブリのフォームから継承する場合は、**\[参照\]** ボタンをクリックします。  
+3.  <span data-ttu-id="9d03a-117">別のアセンブリのフォームから継承する場合は、**[参照]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9d03a-117">To inherit from a form in another assembly, click the **Browse** button.</span></span>  
   
-4.  **\[継承元コンポーネントを含むファイルの選択\]** ダイアログ ボックスで、必要なフォームまたはモジュールを含むプロジェクトに移動します。  
+4.  <span data-ttu-id="9d03a-118">**[継承元コンポーネントを含むファイルの選択]** ダイアログ ボックスで、目的のフォームまたはモジュールを含むプロジェクトに移動します。</span><span class="sxs-lookup"><span data-stu-id="9d03a-118">Within the **Select a file which contains a component to inherit from** dialog box, navigate to the project containing the form or module you desire.</span></span>  
   
-5.  選択する .exe ファイルまたは .dll ファイルの名前をクリックしてそれを選択し、**\[開く\]** ボタンをクリックします。  
+5.  <span data-ttu-id="9d03a-119">.exe ファイルまたは .dll ファイルの名前をクリックして選択し、**[開く]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9d03a-119">Click the name of the .exe or .dll file to select it and click the **Open** button.</span></span>  
   
-     これにより、**\[継承ピッカー\]** ダイアログ ボックスに戻り、ここで、配置されているプロジェクトと共にコンポーネントが一覧表示されます。  
+     <span data-ttu-id="9d03a-120">これにより、**[継承ピッカー]** ダイアログ ボックスに戻ります。ダイアログ ボックスには、配置されているプロジェクトと共に、コンポーネントが表示されています。</span><span class="sxs-lookup"><span data-stu-id="9d03a-120">This returns you to the **Inheritance Picker** dialog box, where the component is now listed, along with the project in which it is located.</span></span>  
   
-6.  コンポーネントを選択します。  
+6.  <span data-ttu-id="9d03a-121">コンポーネントを選択します。</span><span class="sxs-lookup"><span data-stu-id="9d03a-121">Select the component.</span></span>  
   
-     **ソリューション エクスプローラー**で、コンポーネントがプロジェクトに追加されます。  UI がある場合は、継承されたフォームの一部であるコントロールにはグリフ \(![VisualBasicInheritanceSymbol スクリーンショット](../../../../docs/framework/winforms/advanced/media/vbinheritanceglyph.png "vbInheritanceGlyph")\) のマークが付き、選択すると、コントロールがスーパークラスのフォーム上で持っているセキュリティのレベルを示す罫線も表示されます。  様々なセキュリティ レベルに対応する動作を、次の表に示します。  
+     <span data-ttu-id="9d03a-122">**ソリューション エクスプローラー**で、コンポーネントがプロジェクトに追加されます。</span><span class="sxs-lookup"><span data-stu-id="9d03a-122">In **Solution Explorer**, the component is added to your project.</span></span> <span data-ttu-id="9d03a-123">UI がある場合は、継承されたフォームに含まれるコントロールがグリフ (![VisualBasicInheritanceSymbol screenshot](../../../../docs/framework/winforms/advanced/media/vbinheritanceglyph.gif "vbInheritanceGlyph")) でマークされます。コントロールを選択すると、スーパークラスのフォーム上でそのコントロールに適用されるセキュリティのレベルを示す罫線が表示されます。</span><span class="sxs-lookup"><span data-stu-id="9d03a-123">If it has a UI, controls that are part of the inherited form will be marked with a glyph (![VisualBasicInheritanceSymbol screenshot](../../../../docs/framework/winforms/advanced/media/vbinheritanceglyph.gif "vbInheritanceGlyph")), and, when selected, have a border indicating the level of security that the control has on the superclassed form.</span></span> <span data-ttu-id="9d03a-124">様々なセキュリティ レベルに対応する動作を、次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="9d03a-124">The behaviors that correspond to the different security levels are listed in the table below.</span></span>  
   
-    |コントロールのセキュリティ レベル|継承したフォームを使用したデザイナーとコード エディターの間で使用できる相互作用|  
-    |-----------------------|----------------------------------------------|  
-    |パブリック|サイズ変更ハンドルがある標準の罫線 : コントロールのサイズが変更され、移動される可能性があります。  コントロールは、宣言するクラスにより内部的にアクセスでき、他のクラスにより外部的にアクセスできます。|  
-    |プロテクト|サイズ変更ハンドルがある標準の罫線 : コントロールのサイズが変更され、移動される可能性があります。  宣言するクラス、および親クラスから継承したクラスにより内部的にアクセスできますが、外部クラスによってアクセスすることはできません。|  
-    |保護された内部 \(Visual Basic の保護されたフレンド\)|サイズ変更ハンドルがある標準の罫線 : コントロールのサイズが変更され、移動される可能性があります。  宣言するクラス、親クラスから継承したクラス、およびそれを含むアセンブリのその他のメンバーにより、内部的にアクセスできます。|  
-    |内部 \(Visual Basic のフレンド\)|**\[プロパティ\]** ウィンドウで表示されるプロパティで、フォームに表示される、サイズ変更ハンドルのない標準の罫線。  ただし、コントロールのすべての側面が読み取り専用と見なされます。  コントロールを移動またはサイズ変更したり、プロパティを変更したりできません。  グループ ボックスと同様に、コントロールがその他のコントロールのコンテナーである場合は、これらのコントロールがパブリックでも、新しいコントロールを追加することはできず、既存のコントロールを削除することもできません。  コントロールは、それを含むアセンブリの他のメンバーによってのみアクセスできます。|  
-    |プライベート|**\[プロパティ\]** ウィンドウで表示されるプロパティで、フォームに表示される、サイズ変更ハンドルのない標準の罫線。  ただし、コントロールのすべての側面が読み取り専用と見なされます。  コントロールを移動またはサイズ変更したり、プロパティを変更したりできません。  グループ ボックスと同様に、コントロールがその他のコントロールのコンテナーである場合は、これらのコントロールがパブリックでも、新しいコントロールを追加することはできず、既存のコントロールを削除することもできません。  コントロールは、宣言したクラスによってのみアクセスできます。|  
+    |<span data-ttu-id="9d03a-125">コントロールのセキュリティ レベル</span><span class="sxs-lookup"><span data-stu-id="9d03a-125">Security level of control</span></span>|<span data-ttu-id="9d03a-126">継承したフォームを使用したデザイナーとコード エディターの間で使用できる相互作用</span><span class="sxs-lookup"><span data-stu-id="9d03a-126">Available interaction through Designer and Code Editor with Inherited Form</span></span>|  
+    |-------------------------------|--------------------------------------------------------------------------------|  
+    |<span data-ttu-id="9d03a-127">パブリック</span><span class="sxs-lookup"><span data-stu-id="9d03a-127">Public</span></span>|<span data-ttu-id="9d03a-128">サイズ変更ハンドルがある標準の罫線 : コントロールのサイズが変更され、移動される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="9d03a-128">Standard border with sizing handles: control may be sized and moved.</span></span> <span data-ttu-id="9d03a-129">コントロールは、宣言するクラスにより内部的にアクセスでき、他のクラスにより外部的にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="9d03a-129">The control can be accessed internally by the class which declares it and externally by other classes.</span></span>|  
+    |<span data-ttu-id="9d03a-130">プロテクト</span><span class="sxs-lookup"><span data-stu-id="9d03a-130">Protected</span></span>|<span data-ttu-id="9d03a-131">サイズ変更ハンドルがある標準の罫線 : コントロールのサイズが変更され、移動される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="9d03a-131">Standard border with sizing handles: control may be sized and moved.</span></span> <span data-ttu-id="9d03a-132">宣言するクラス、および親クラスから継承したクラスにより内部的にアクセスできますが、外部クラスによってアクセスすることはできません。</span><span class="sxs-lookup"><span data-stu-id="9d03a-132">Can be accessed internally by the class that declares it and any class that inherits from the parent class, but cannot be accessed by external classes.</span></span>|  
+    |<span data-ttu-id="9d03a-133">保護された内部 (Visual Basic の保護されたフレンド)</span><span class="sxs-lookup"><span data-stu-id="9d03a-133">Protected Internal (Protected Friend in Visual Basic)</span></span>|<span data-ttu-id="9d03a-134">サイズ変更ハンドルがある標準の罫線 : コントロールのサイズが変更され、移動される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="9d03a-134">Standard border with sizing handles: control may be sized and moved.</span></span> <span data-ttu-id="9d03a-135">宣言するクラス、親クラスから継承したクラス、およびそれを含むアセンブリのその他のメンバーにより、内部的にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="9d03a-135">Can be accessed internally by the class that declares it, by any class that inherits from the parent class, and by other members of the assembly that contains it.</span></span>|  
+    |<span data-ttu-id="9d03a-136">内部 (Visual Basic のフレンド)</span><span class="sxs-lookup"><span data-stu-id="9d03a-136">Internal (Friend in Visual Basic)</span></span>|<span data-ttu-id="9d03a-137">**[プロパティ]** ウィンドウに表示されるプロパティで、フォームに表示される、サイズ変更ハンドルのない標準の罫線。</span><span class="sxs-lookup"><span data-stu-id="9d03a-137">Standard border with no sizing handles, shown on the form, properties visible in **Properties** window.</span></span> <span data-ttu-id="9d03a-138">ただし、コントロールのすべての側面が読み取り専用と見なされます。</span><span class="sxs-lookup"><span data-stu-id="9d03a-138">However, all aspects of the control will be considered read-only.</span></span> <span data-ttu-id="9d03a-139">コントロールを移動またはサイズ変更したり、プロパティを変更したりできません。</span><span class="sxs-lookup"><span data-stu-id="9d03a-139">You cannot move or size the control, or change its properties.</span></span> <span data-ttu-id="9d03a-140">グループ ボックスと同様に、コントロールがその他のコントロールのコンテナーである場合は、これらのコントロールがパブリックでも、新しいコントロールを追加することはできず、既存のコントロールを削除することもできません。</span><span class="sxs-lookup"><span data-stu-id="9d03a-140">If the control is a container of other controls, like a group box, new controls cannot be added and existing controls cannot be removed, even if those controls were public.</span></span> <span data-ttu-id="9d03a-141">コントロールは、それを含むアセンブリの他のメンバーによってのみアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="9d03a-141">The control can only be accessed by other members of the assembly that contains it.</span></span>|  
+    |<span data-ttu-id="9d03a-142">Private</span><span class="sxs-lookup"><span data-stu-id="9d03a-142">Private</span></span>|<span data-ttu-id="9d03a-143">**[プロパティ]** ウィンドウに表示されるプロパティで、フォームに表示される、サイズ変更ハンドルのない標準の罫線。</span><span class="sxs-lookup"><span data-stu-id="9d03a-143">Standard border with no sizing handles, shown on the form, properties visible in **Properties** window.</span></span> <span data-ttu-id="9d03a-144">ただし、コントロールのすべての側面が読み取り専用と見なされます。</span><span class="sxs-lookup"><span data-stu-id="9d03a-144">However, all aspects of the control will be considered read-only.</span></span> <span data-ttu-id="9d03a-145">コントロールを移動またはサイズ変更したり、プロパティを変更したりできません。</span><span class="sxs-lookup"><span data-stu-id="9d03a-145">You cannot move or size the control, or change its properties.</span></span> <span data-ttu-id="9d03a-146">グループ ボックスと同様に、コントロールがその他のコントロールのコンテナーである場合は、これらのコントロールがパブリックでも、新しいコントロールを追加することはできず、既存のコントロールを削除することもできません。</span><span class="sxs-lookup"><span data-stu-id="9d03a-146">If the control is a container of other controls, like a group box, new controls cannot be added and existing controls cannot be removed, even if those controls were public.</span></span> <span data-ttu-id="9d03a-147">コントロールは、宣言したクラスによってのみアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="9d03a-147">The control can only be accessed by the class that declares it.</span></span>|  
   
-     基本フォームの外観を変更する方法については、「[基本フォームの外観を変更した場合の影響](../../../../docs/framework/winforms/advanced/effects-of-modifying-base-form-appearance.md)」を参照してください。  
+     <span data-ttu-id="9d03a-148">基本フォームの外観を変更する方法については、「[基本フォームの外観を変更した場合の影響](../../../../docs/framework/winforms/advanced/effects-of-modifying-base-form-appearance.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9d03a-148">For information about how to alter a base form's appearance, see [Effects of Modifying a Base Form's Appearance](../../../../docs/framework/winforms/advanced/effects-of-modifying-base-form-appearance.md).</span></span>  
   
     > [!NOTE]
-    >  継承されたコントロールとコンポーネントを、Windows フォーム上の標準的なコントロールとコンポーネントに結合する場合、z オーダーとの競合が発生する可能性があります。  これは、**\[書式\]** メニュー内でクリックし、**\[順序\]** をポイントして、**\[最前面へ移動\]** または **\[最背面へ移動\]**.をクリックして z オーダーを変更することで修正できます。  コントロールの z オーダーに関する詳細については、「[方法 : Windows フォーム上のオブジェクトをレイヤー化する](../../../../docs/framework/winforms/controls/how-to-layer-objects-on-windows-forms.md)」を参照してください。  
+    >  <span data-ttu-id="9d03a-149">継承されたコントロールとコンポーネントを、Windows フォーム上の標準的なコントロールとコンポーネントに結合する場合、z オーダーとの競合が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="9d03a-149">When you combine inherited controls and components with standard controls and components on Windows Forms, you might encounter conflicts with the z-ordering.</span></span> <span data-ttu-id="9d03a-150">これを修正するには、**[書式]** メニュー内でクリックして、**[順序]** をポイントし、**[最前面へ移動]** または **[最背面へ移動]** をクリックして z オーダーを変更します。</span><span class="sxs-lookup"><span data-stu-id="9d03a-150">You can correct this by modifying the z-order, which is done by clicking in the **Format** menu, pointing to **Order**, and then clicking **Bring To Front** or **Send To Back**.</span></span> <span data-ttu-id="9d03a-151">コントロールの z オーダーの詳細については、「[方法 : Windows フォーム上のオブジェクトをレイヤー化する](../../../../docs/framework/winforms/controls/how-to-layer-objects-on-windows-forms.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9d03a-151">For more information about the z-order of controls, see [How to: Layer Objects on Windows Forms](../../../../docs/framework/winforms/controls/how-to-layer-objects-on-windows-forms.md).</span></span>  
   
-## 参照  
- [Inherits Statement](../../../../ocs/visual-basic/language-reference/statements/inherits-statement.md)   
- [使用](../Topic/using%20\(C%23%20Reference\).md)   
- [基本フォームの外観を変更した場合の影響](../../../../docs/framework/winforms/advanced/effects-of-modifying-base-form-appearance.md)   
- [Windows フォームのビジュアルの継承](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)
+## <a name="see-also"></a><span data-ttu-id="9d03a-152">関連項目</span><span class="sxs-lookup"><span data-stu-id="9d03a-152">See Also</span></span>  
+ [<span data-ttu-id="9d03a-153">Inherits ステートメント</span><span class="sxs-lookup"><span data-stu-id="9d03a-153">Inherits Statement</span></span>](~/docs/visual-basic/language-reference/statements/inherits-statement.md)  
+ [<span data-ttu-id="9d03a-154">using</span><span class="sxs-lookup"><span data-stu-id="9d03a-154">using</span></span>](~/docs/csharp/language-reference/keywords/using.md)  
+ [<span data-ttu-id="9d03a-155">基本フォームの外観を変更した場合の影響</span><span class="sxs-lookup"><span data-stu-id="9d03a-155">Effects of Modifying a Base Form's Appearance</span></span>](../../../../docs/framework/winforms/advanced/effects-of-modifying-base-form-appearance.md)  
+ [<span data-ttu-id="9d03a-156">Windows フォームのビジュアルの継承</span><span class="sxs-lookup"><span data-stu-id="9d03a-156">Windows Forms Visual Inheritance</span></span>](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)

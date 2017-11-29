@@ -1,36 +1,39 @@
 ---
-title: "方法 : リソースを定義および参照する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "定義 (リソースを)"
-  - "参照 (リソースを)"
-  - "リソース, 定義"
-  - "リソース, 参照"
+title: "方法 : リソースを定義および参照する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- resources [WPF], defining
+- defining resources [WPF]
+- resources [WPF], referencing
+- referencing resources [WPF]
 ms.assetid: b86b876b-0a10-489b-9a5d-581ea9b32406
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 322ac3e5ebfe2d820a4711d877396b9a1a2759a6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : リソースを定義および参照する
-この例では、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] 内の属性を使用して、リソースを定義および参照する方法を示します。  
+# <a name="how-to-define-and-reference-a-resource"></a><span data-ttu-id="9252f-102">方法 : リソースを定義および参照する</span><span class="sxs-lookup"><span data-stu-id="9252f-102">How to: Define and Reference a Resource</span></span>
+<span data-ttu-id="9252f-103">この例は、内の属性を使用して、参照およびリソースを定義する方法を示しています。[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="9252f-103">This example shows how to define a resource and reference it by using an attribute in [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].</span></span>  
   
-## 使用例  
- <xref:System.Windows.Media.SolidColorBrush> リソースおよびいくつかの <xref:System.Windows.Style> リソースの、2 つの種類のリソースを定義する例を次に示します。  <xref:System.Windows.Media.SolidColorBrush> リソースの `MyBrush` を使用して、<xref:System.Windows.Media.Brush> 型の値を取得するいくつかのプロパティの値を提供します。  <xref:System.Windows.Style> リソースの `PageBackground`、 `TitleText`、`Label` は、それぞれ特定のコントロール型をターゲットにします。  スタイル リソースをリソース キーで参照し、そのスタイル リソースを使用して [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] で定義するいくつかの特定のコントロール要素の <xref:System.Windows.FrameworkElement.Style%2A> プロパティを設定するとき、スタイルは、対象のコントロールのさまざまなプロパティを設定します。  
+## <a name="example"></a><span data-ttu-id="9252f-104">例</span><span class="sxs-lookup"><span data-stu-id="9252f-104">Example</span></span>  
+ <span data-ttu-id="9252f-105">次の例は、次の 2 つの種類のリソースを定義します。、<xref:System.Windows.Media.SolidColorBrush>リソース、およびいくつか<xref:System.Windows.Style>リソース。</span><span class="sxs-lookup"><span data-stu-id="9252f-105">The following example defines two types of resources: a <xref:System.Windows.Media.SolidColorBrush> resource, and several <xref:System.Windows.Style> resources.</span></span> <span data-ttu-id="9252f-106"><xref:System.Windows.Media.SolidColorBrush>リソース`MyBrush`それぞれ受け取るいくつかのプロパティの値を提供するため、<xref:System.Windows.Media.Brush>値を入力します。</span><span class="sxs-lookup"><span data-stu-id="9252f-106">The <xref:System.Windows.Media.SolidColorBrush> resource `MyBrush` is used to provide the value of several properties that each take a <xref:System.Windows.Media.Brush> type value.</span></span> <span data-ttu-id="9252f-107"><xref:System.Windows.Style>リソース`PageBackground`、`TitleText`と`Label`特定のコントロール型を対象の各します。</span><span class="sxs-lookup"><span data-stu-id="9252f-107">The <xref:System.Windows.Style> resources `PageBackground`, `TitleText` and `Label` each target a particular control type.</span></span> <span data-ttu-id="9252f-108">スタイルは、そのスタイル リソースのリソース キーによって参照され、設定に使用されるときに、対象となるコントロールのさまざまなプロパティを設定、<xref:System.Windows.FrameworkElement.Style%2A>プロパティで定義されているいくつかの特定のコントロール要素の[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]します。</span><span class="sxs-lookup"><span data-stu-id="9252f-108">The styles set a variety of different properties on the targeted controls, when that style resource is referenced by resource key and is used to set the <xref:System.Windows.FrameworkElement.Style%2A> property of several specific control elements defined in [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].</span></span>  
   
- `Label` スタイルの setter 内のプロパティの 1 つは、先に定義した `MyBrush` リソースも参照していることに注意してください。  これは一般的な手法ですが、リソースは、指定した順に解析されリソース ディクショナリに追加されます。  [StaticResource のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)を使用して別のリソース内から参照する場合、リソースは、ディクショナリ内で見つかった順序で要求されます。  参照するリソースは、そのリソースが要求されるよりも先に、リソース コレクション内ですべて定義しておく必要があります。  必要に応じて、代わりに [DynamicResource のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)を使用してリソースを実行時に参照することで、このリソース参照の厳密な作成手順を回避できますが、この DynamicResource 手法はパフォーマンスを低下させることに注意してください。  詳細については、「[XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)」を参照してください。  
+ <span data-ttu-id="9252f-109">注釈のいずれかのプロパティの中の set アクセス操作子、`Label`スタイル参照、`MyBrush`前に定義されたリソース。</span><span class="sxs-lookup"><span data-stu-id="9252f-109">Note that one of the properties within the setters of the `Label` style also references the `MyBrush` resource defined earlier.</span></span> <span data-ttu-id="9252f-110">これは、一般的な手法が、リソースが解析され、指定した順序でリソース ディクショナリに入力したことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="9252f-110">This is a common technique, but it is important to remember that resources are parsed and entered into a resource dictionary in the order that they are given.</span></span> <span data-ttu-id="9252f-111">使用する場合は、ディクショナリ内で見つかった順序により、リソースが要求も、 [StaticResource マークアップ拡張機能](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)から別のリソース内で参照します。</span><span class="sxs-lookup"><span data-stu-id="9252f-111">Resources are also requested by the order found within the dictionary if you use the [StaticResource Markup Extension](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md) to reference them from within another resource.</span></span> <span data-ttu-id="9252f-112">参照されている任意のリソースがそのリソースを要求しよりリソースのコレクション内で以前に定義されていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="9252f-112">Make sure that any resource that you reference is defined earlier within the resources collection than where that resource is then requested.</span></span> <span data-ttu-id="9252f-113">かどうか、必要に応じてを回避できますリソース refererences の厳密な作成順を使用して、 [DynamicResource マークアップ拡張機能](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)代わりに、実行時にリソースを参照する注意する必要がありますをこの DynamicResource手法には、パフォーマンスへの影響があります。</span><span class="sxs-lookup"><span data-stu-id="9252f-113">If necessary, you can work around the strict creation order of resource refererences by using a [DynamicResource Markup Extension](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md) to reference the resource at runtime instead, but you should be aware that this DynamicResource technique has performance consequences.</span></span> <span data-ttu-id="9252f-114">詳細については、「 [XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)です。</span><span class="sxs-lookup"><span data-stu-id="9252f-114">For details, see [XAML Resources](../../../../docs/framework/wpf/advanced/xaml-resources.md).</span></span>  
   
- [!code-xml[FEResource#XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FEResource/CS/default.xaml#xaml)]  
+ [!code-xaml[FEResource#XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FEResource/CS/default.xaml#xaml)]  
   
-## 参照  
- [XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)   
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+## <a name="see-also"></a><span data-ttu-id="9252f-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="9252f-115">See Also</span></span>  
+ [<span data-ttu-id="9252f-116">XAML リソース</span><span class="sxs-lookup"><span data-stu-id="9252f-116">XAML Resources</span></span>](../../../../docs/framework/wpf/advanced/xaml-resources.md)  
+ [<span data-ttu-id="9252f-117">スタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="9252f-117">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)

@@ -1,44 +1,43 @@
 ---
-title: "配置に関する注意事項 (Entity Framework) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: "配置に関する注意事項 (Entity Framework)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3a847a22-4eb8-4565-b18b-453bbca070db
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 03c64c9a300a92a86dfac1ed92c67be248e53219
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 配置に関する注意事項 (Entity Framework)
-このトピックでは、データ アクセスに ADO.NET Entity Framework を使用するアプリケーションの配置について説明します。  Entity Framework の詳細については、「[はじめに](../../../../../docs/framework/data/adonet/ef/getting-started.md)」を参照してください。  
+# <a name="deployment-considerations-entity-framework"></a><span data-ttu-id="6f287-102">配置に関する注意事項 (Entity Framework)</span><span class="sxs-lookup"><span data-stu-id="6f287-102">Deployment Considerations (Entity Framework)</span></span>
+<span data-ttu-id="6f287-103">このトピックでは、データ アクセスに ADO.NET Entity Framework を使用するアプリケーションの配置について説明します。</span><span class="sxs-lookup"><span data-stu-id="6f287-103">This topic provides information about deploying applications that use the ADO.NET Entity Framework for data access.</span></span> <span data-ttu-id="6f287-104">詳細については Entity Framework は、次を参照してください。[作業の開始](../../../../../docs/framework/data/adonet/ef/getting-started.md)です。</span><span class="sxs-lookup"><span data-stu-id="6f287-104">For more information about the Entity Framework, see [Getting Started](../../../../../docs/framework/data/adonet/ef/getting-started.md).</span></span>  
   
- Entity Framework は、Visual Studio に組み込むことにより Visual Studio での開発を容易にする一連のツールを提供します。  詳細については、「[ADO.NET Entity Data Model  Tools](http://msdn.microsoft.com/ja-jp/91076853-0881-421b-837a-f582f36be527)」を参照してください。  このトピックでは、Entity Framework ベースのアプリケーションを配置するための具体的なテクノロジの使用法については触れません。  
+ <span data-ttu-id="6f287-105">Entity Framework は、Visual Studio に組み込むことにより Visual Studio での開発を容易にする一連のツールを提供します。</span><span class="sxs-lookup"><span data-stu-id="6f287-105">The Entity Framework provides a set of tools that integrate with and make it easier to develop in Visual Studio.</span></span> <span data-ttu-id="6f287-106">詳細については、次を参照してください。 [ADO.NET Entity Data Model ツール](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527)です。</span><span class="sxs-lookup"><span data-stu-id="6f287-106">For more information, see [ADO.NET Entity Data Model  Tools](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527).</span></span> <span data-ttu-id="6f287-107">このトピックでは、Entity Framework ベースのアプリケーションを配置するための具体的なテクノロジの使用法については触れません。</span><span class="sxs-lookup"><span data-stu-id="6f287-107">This topic does not describe how to use specific technologies to deploy an Entity Framework–based application.</span></span>  
   
- Visual Studio では、ClickOnce 配置など、アプリケーションの配布および配置のための機能が提供されています。  詳細については、Visual Studio ドキュメントの「[アプリケーションとコンポーネントの配置](../Topic/Deploying%20Applications,%20Services,%20and%20Components.md)」を参照してください。  
+ <span data-ttu-id="6f287-108">Visual Studio では、ClickOnce 配置など、アプリケーションの配布および配置のための機能が提供されています。</span><span class="sxs-lookup"><span data-stu-id="6f287-108">Visual Studio provides facilities for distributing and deploying applications, such as ClickOnce deployment.</span></span> <span data-ttu-id="6f287-109">詳細については、次を参照してください。[アプリケーションの配置とコンポーネント](https://msdn.microsoft.com/library/wtzawcsz)、Visual Studio のマニュアルでします。</span><span class="sxs-lookup"><span data-stu-id="6f287-109">For more information, see [Deploying Applications and Components](https://msdn.microsoft.com/library/wtzawcsz) in the Visual Studio documentation.</span></span>  
   
- Entity Framework を使用するアプリケーションを配置する場合は、次の注意事項が適用されます。  
+ <span data-ttu-id="6f287-110">Entity Framework を使用するアプリケーションを配置する場合は、次の注意事項が適用されます。</span><span class="sxs-lookup"><span data-stu-id="6f287-110">The following considerations apply when you deploy an application that uses the Entity Framework:</span></span>  
   
--   .NET Framework 3.5 Service Pack 1 \(SP1\) 以降、Entity Framework は .NET Framework のコンポーネントになっています。  Entity Framework ベースのアプリケーションを配置する場合は、.NET Framework 3.5 SP1 以降のバージョンがインストールされていることを確認する必要があります。  
+-   <span data-ttu-id="6f287-111">.NET Framework 3.5 Service Pack 1 (SP1) 以降、Entity Framework は .NET Framework のコンポーネントになっています。</span><span class="sxs-lookup"><span data-stu-id="6f287-111">The Entity Framework is a component of the .NET Framework starting with the .NET Framework 3.5 Service Pack 1 (SP1).</span></span> <span data-ttu-id="6f287-112">Entity Framework ベースのアプリケーションを配置する場合は、.NET Framework 3.5 SP1 以降のバージョンがインストールされていることを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6f287-112">You must ensure that the .NET Framework 3.5 SP1 or a later version is installed when deploying an Entity Framework–based application.</span></span>  
   
--   Entity Data Model ウィザードで概念モデルが生成されると、アプリケーション設定ファイルに接続文字列が作成されます。  モデル ファイルおよびマッピング ファイルをアプリケーション リソースとして埋め込むか、出力ディレクトリにコピーすることができます。  既定では、モデル ファイルとマッピング ファイルは、組み込みアプリケーション リソースとして配置されます。  エンティティ デザイナー ファイルの `Metadata Artifact Processing` プロパティを使用して、次のオプションのいずれかを選択することができます。  詳細については、「[How to: Copy Model and Mapping Files to the Output Directory](http://msdn.microsoft.com/ja-jp/e2c9820f-1705-457e-9fdb-8b289f3179b4)」を参照してください。  
+-   <span data-ttu-id="6f287-113">Entity Data Model ウィザードで概念モデルが生成されると、アプリケーション設定ファイルに接続文字列が作成されます。</span><span class="sxs-lookup"><span data-stu-id="6f287-113">When a conceptual model is generated by the Entity Data Model Wizard, a connection string is created in the application configuration file.</span></span> <span data-ttu-id="6f287-114">モデル ファイルおよびマッピング ファイルをアプリケーション リソースとして埋め込むか、出力ディレクトリにコピーすることができます。</span><span class="sxs-lookup"><span data-stu-id="6f287-114">Model and mapping files can be embedded as application resources or they can be copied to the output directory.</span></span> <span data-ttu-id="6f287-115">既定では、モデル ファイルとマッピング ファイルは、組み込みアプリケーション リソースとして配置されます。</span><span class="sxs-lookup"><span data-stu-id="6f287-115">By default, they are deployed as embedded application resources.</span></span> <span data-ttu-id="6f287-116">エンティティ デザイナー ファイルの `Metadata Artifact Processing` プロパティを使用して、次のオプションのいずれかを選択することができます。</span><span class="sxs-lookup"><span data-stu-id="6f287-116">Use the `Metadata Artifact Processing` property of the Entity Designer file to select one of these options.</span></span> <span data-ttu-id="6f287-117">詳細については、次を参照してください。[する方法: コピー モデルとマッピング ファイルは出力ディレクトリ](http://msdn.microsoft.com/en-us/e2c9820f-1705-457e-9fdb-8b289f3179b4)です。</span><span class="sxs-lookup"><span data-stu-id="6f287-117">For more information, see [How to: Copy Model and Mapping Files to the Output Directory](http://msdn.microsoft.com/en-us/e2c9820f-1705-457e-9fdb-8b289f3179b4).</span></span>  
   
--   モデルとマッピングの情報 \(概念スキーマ定義言語 \(CSDL\)、ストア スキーマ定義言語 \(SSDL\)、およびマッピング仕様言語 \(MSL\) で表現\) は、アプリケーションと共に配置され、その場所は、接続文字列によって指定されます。  詳細については、「[接続文字列](../../../../../docs/framework/data/adonet/ef/connection-strings.md)」を参照してください。  
+-   <span data-ttu-id="6f287-118">モデルとマッピングの情報 (概念スキーマ定義言語 (CSDL)、ストア スキーマ定義言語 (SSDL)、およびマッピング仕様言語 (MSL) で表現) は、アプリケーションと共に配置され、その場所は、接続文字列によって指定されます。</span><span class="sxs-lookup"><span data-stu-id="6f287-118">Ensure that the model and mapping information (expressed in conceptual schema definition language (CSDL), store schema definition language (SSDL), and mapping specification language (MSL)) is deployed together with the application and in the location specified by the connection string.</span></span> <span data-ttu-id="6f287-119">詳細については、次を参照してください。[接続文字列](../../../../../docs/framework/data/adonet/ef/connection-strings.md)です。</span><span class="sxs-lookup"><span data-stu-id="6f287-119">For more information, see [Connection Strings](../../../../../docs/framework/data/adonet/ef/connection-strings.md).</span></span>  
   
--   モデルとマッピングの情報をアプリケーション リソースとして組み込む場合は、概念モデルを更新するたびに、アプリケーションの再コンパイルと再配置が必要になります。  
+-   <span data-ttu-id="6f287-120">モデルとマッピングの情報をアプリケーション リソースとして組み込む場合は、概念モデルを更新するたびに、アプリケーションの再コンパイルと再配置が必要になります。</span><span class="sxs-lookup"><span data-stu-id="6f287-120">When you embed model and mapping information as application resources, you must recompile and redeploy the application every time the conceptual model is updated.</span></span>  
   
--   Entity Framework は .NET Framework のコンポーネントであるため、.NET Framework 使用許諾契約書での許可に従ってアプリケーションと共に再配布できます。  
+-   <span data-ttu-id="6f287-121">Entity Framework は .NET Framework のコンポーネントであるため、.NET Framework 使用許諾契約書での許可に従ってアプリケーションと共に再配布できます。</span><span class="sxs-lookup"><span data-stu-id="6f287-121">Because the Entity Framework is a component of the .NET Framework, it can be redistributed with your application as permitted by the .NET Framework license agreement.</span></span>  
   
-## 参照  
- [ADO.NET Entity Framework](../../../../../docs/framework/data/adonet/ef/index.md)   
- [開発および配置に関する注意事項](../../../../../docs/framework/data/adonet/ef/development-and-deployment-considerations.md)
+## <a name="see-also"></a><span data-ttu-id="6f287-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="6f287-122">See Also</span></span>  
+ [<span data-ttu-id="6f287-123">ADO.NET Entity Framework</span><span class="sxs-lookup"><span data-stu-id="6f287-123">ADO.NET Entity Framework</span></span>](../../../../../docs/framework/data/adonet/ef/index.md)  
+ [<span data-ttu-id="6f287-124">開発と展開に関する考慮事項</span><span class="sxs-lookup"><span data-stu-id="6f287-124">Development and Deployment Considerations</span></span>](../../../../../docs/framework/data/adonet/ef/development-and-deployment-considerations.md)

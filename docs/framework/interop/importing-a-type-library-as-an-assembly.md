@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - importing type library
 - type metadata
@@ -28,73 +22,71 @@ helpviewer_keywords:
 - COM interop, importing type library
 - COM interop, exposing COM components
 ms.assetid: d1898229-cd40-426e-a275-f3eb65fbc79f
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a907e75785bb0eb9ced43466ef5e51e598d4f629
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: a7657540991099cca29dc911c8e42e5ddcd22802
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="importing-a-type-library-as-an-assembly"></a>タイプ ライブラリのアセンブリとしてのインポート
-通常、COM 型の定義は、タイプ ライブラリに存在します。 これに対し、CLS 準拠のコンパイラはアセンブリ内に型のメタデータを生成します。 型情報の 2 つのソースは大きく異なります。 このトピックでは、タイプ ライブラリからメタデータを生成する方法について説明します。 結果のアセンブリは相互運用機能アセンブリと呼ばれ、含まれる型情報により、.NET Framework アプリケーションで COM 型を使用できます。  
+# <a name="importing-a-type-library-as-an-assembly"></a><span data-ttu-id="15944-102">タイプ ライブラリのアセンブリとしてのインポート</span><span class="sxs-lookup"><span data-stu-id="15944-102">Importing a Type Library as an Assembly</span></span>
+<span data-ttu-id="15944-103">通常、COM 型の定義は、タイプ ライブラリに存在します。</span><span class="sxs-lookup"><span data-stu-id="15944-103">COM type definitions usually reside in a type library.</span></span> <span data-ttu-id="15944-104">これに対し、CLS 準拠のコンパイラはアセンブリ内に型のメタデータを生成します。</span><span class="sxs-lookup"><span data-stu-id="15944-104">In contrast, CLS-compliant compilers produce type metadata in an assembly.</span></span> <span data-ttu-id="15944-105">型情報の 2 つのソースは大きく異なります。</span><span class="sxs-lookup"><span data-stu-id="15944-105">The two sources of type information are quite different.</span></span> <span data-ttu-id="15944-106">このトピックでは、タイプ ライブラリからメタデータを生成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="15944-106">This topic describes techniques for generating metadata from a type library.</span></span> <span data-ttu-id="15944-107">結果のアセンブリは相互運用機能アセンブリと呼ばれ、含まれる型情報により、.NET Framework アプリケーションで COM 型を使用できます。</span><span class="sxs-lookup"><span data-stu-id="15944-107">The resulting assembly is called an interop assembly, and the type information it contains enables .NET Framework applications to use COM types.</span></span>  
   
- この型情報をアプリケーションに使用できるようにする 2 つの方法があります。  
+ <span data-ttu-id="15944-108">この型情報をアプリケーションに使用できるようにする 2 つの方法があります。</span><span class="sxs-lookup"><span data-stu-id="15944-108">There are two ways to make this type information available to your application:</span></span>  
   
--   デザイン時専用の相互運用アセンブリの使用: [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、相互運用機能アセンブリから実行可能ファイルに型情報を埋め込むようにコンパイラに指示できます。 コンパイラは、アプリケーションで使用する型情報だけを埋め込みます。 アプリケーションを使用して相互運用機能アセンブリを展開する必要はありません。 この手法を使用することをお勧めします。  
+-   <span data-ttu-id="15944-109">デザイン時専用の相互運用アセンブリの使用: [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、相互運用機能アセンブリから実行可能ファイルに型情報を埋め込むようにコンパイラに指示できます。</span><span class="sxs-lookup"><span data-stu-id="15944-109">Using design-time-only interop assemblies: Beginning with the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], you can instruct the compiler to embed type information from the interop assembly into your executable.</span></span> <span data-ttu-id="15944-110">コンパイラは、アプリケーションで使用する型情報だけを埋め込みます。</span><span class="sxs-lookup"><span data-stu-id="15944-110">The compiler embeds only the type information that your application uses.</span></span> <span data-ttu-id="15944-111">アプリケーションで相互運用機能アセンブリを配置する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="15944-111">You do not have to deploy the interop assembly with your application.</span></span> <span data-ttu-id="15944-112">この手法を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="15944-112">This is the recommended technique.</span></span>  
   
--   相互運用機能アセンブリの展開: 相互運用機能アセンブリへの標準の参照を作成できます。 この場合、アプリケーションで相互運用機能アセンブリを展開する必要があります。 この手法を採用し、プライベートの COM コンポーネントを使用していない場合は、常に、マネージ コードで組み込む予定の COM コンポーネントの作成者によってパブリッシュされたプライマリ相互運用機能アセンブリ (PIA) を参照します。 プライマリ相互運用機能アセンブリの生成と使用の詳細については、「[プライマリ相互運用機能](http://msdn.microsoft.com/en-us/b977a8be-59a0-40a0-a806-b11ffba5c080)」を参照してください。  
+-   <span data-ttu-id="15944-113">相互運用機能アセンブリの展開: 相互運用機能アセンブリへの標準の参照を作成できます。</span><span class="sxs-lookup"><span data-stu-id="15944-113">Deploying interop assemblies: You can create a standard reference to the interop assembly.</span></span> <span data-ttu-id="15944-114">この場合、アプリケーションで相互運用機能アセンブリを展開する必要があります。</span><span class="sxs-lookup"><span data-stu-id="15944-114">In this case, the interop assembly must be deployed with your application.</span></span> <span data-ttu-id="15944-115">この手法を採用し、プライベートの COM コンポーネントを使用しない場合は、常に、マネージ コードに組み込む予定の COM コンポーネントの作成者によって発行されたプライマリ相互運用機能アセンブリ (PIA) を参照します。</span><span class="sxs-lookup"><span data-stu-id="15944-115">If you employ this technique, and you are not using a private COM component, always reference the primary interop assembly (PIA) published by the author of the COM component you intend to incorporate in your managed code.</span></span> <span data-ttu-id="15944-116">プライマリ相互運用機能アセンブリの生成と使用の詳細については、「[プライマリ相互運用機能](http://msdn.microsoft.com/en-us/b977a8be-59a0-40a0-a806-b11ffba5c080)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="15944-116">For more information about producing and using primary interop assemblies, see [Primary Interop Assemblies](http://msdn.microsoft.com/en-us/b977a8be-59a0-40a0-a806-b11ffba5c080).</span></span>  
   
- 設計時専用の相互運用機能アセンブリを使用する場合は、COM コンポーネントの作成者によってパブリッシュされたプライマリ相互運用機能アセンブリから型情報を埋め込むことができます。 ただし、アプリケーションを使用してプライマリ相互運用機能アセンブリを展開する必要はありません。  
+ <span data-ttu-id="15944-117">設計時専用の相互運用機能アセンブリを使用する場合は、COM コンポーネントの作成者によってパブリッシュされたプライマリ相互運用機能アセンブリから型情報を埋め込むことができます。</span><span class="sxs-lookup"><span data-stu-id="15944-117">When you use design-time-only interop assemblies, you can embed type information from the primary interop assembly published by the author of the COM component.</span></span> <span data-ttu-id="15944-118">ただし、アプリケーションを使用してプライマリ相互運用機能アセンブリを展開する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="15944-118">However, you do not have to deploy the primary interop assembly with your application.</span></span>  
   
- 設計時専用の相互運用機能アセンブリを使用すると、ほとんどのアプリケーションは、COM コンポーネントのすべての機能を使用しないため、アプリケーションのサイズが小さくなります。 型情報を埋め込む場合に、コンパイラは非常に効率的です。アプリケーションが、COM インターフェイスでメソッドの一部のみを使用する場合、コンパイラは、使用されないメソッドを埋め込みません。 型情報が埋め込まれているアプリケーションが、そのような別のアプリケーションと対話するか、プライマリ相互運用機能アセンブリを使用するアプリケーションと対話する場合、共通言語ランタイムは、型等価性の規則を使用して、同じ名前の 2 つの型が同じ COM 型を表すかどうかを判断します。 COM オブジェクトを使用するためにこれらの規則を理解する必要はありません。 ただし、規則に興味がある場合は、「[Type Equivalence and Embedded Interop Types](../../../docs/framework/interop/type-equivalence-and-embedded-interop-types.md)」(型の等価性と埋め込まれた相互運用機能型) を参照してください。  
+ <span data-ttu-id="15944-119">設計時専用の相互運用機能アセンブリを使用すると、ほとんどのアプリケーションは、COM コンポーネントのすべての機能を使用しないため、アプリケーションのサイズが小さくなります。</span><span class="sxs-lookup"><span data-stu-id="15944-119">Using design-time-only interop assemblies reduces the size of your application, because most applications do not use all the features of a COM component.</span></span> <span data-ttu-id="15944-120">型情報を埋め込む場合に、コンパイラは非常に効率的です。アプリケーションが、COM インターフェイスでメソッドの一部のみを使用する場合、コンパイラは、使用されないメソッドを埋め込みません。</span><span class="sxs-lookup"><span data-stu-id="15944-120">The compiler is very efficient when it embeds type information; if your application uses only some of the methods on a COM interface, the compiler does not embed the unused methods.</span></span> <span data-ttu-id="15944-121">型情報が埋め込まれているアプリケーションが、そのような別のアプリケーションと対話するか、プライマリ相互運用機能アセンブリを使用するアプリケーションと対話する場合、共通言語ランタイムは、型等価性の規則を使用して、同じ名前の 2 つの型が同じ COM 型を表すかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="15944-121">When an application that has embedded type information interacts with another such application, or interacts with an application that uses a primary interop assembly, the common language runtime uses type equivalence rules to determine whether two types with the same name represent the same COM type.</span></span> <span data-ttu-id="15944-122">COM オブジェクトを使用するためにこれらの規則を理解する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="15944-122">You do not have to know these rules to use COM objects.</span></span> <span data-ttu-id="15944-123">ただし、規則に興味がある場合は、「[Type Equivalence and Embedded Interop Types](../../../docs/framework/interop/type-equivalence-and-embedded-interop-types.md)」(型の等価性と埋め込まれた相互運用機能型) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="15944-123">However, if you are interested in the rules, see [Type Equivalence and Embedded Interop Types](../../../docs/framework/interop/type-equivalence-and-embedded-interop-types.md).</span></span>  
   
-## <a name="generating-metadata"></a>メタデータ ファイルの生成  
- COM タイプ ライブラリには、Loanlib.tlb などの .tlb 拡張子を持つスタンドアロンのファイルを指定できます。 一部のタイプ ライブラリは、.dll または .exe ファイルのリソース セクションに埋め込まれます。 タイプ ライブラリ情報の他のソースは、.olb ファイルおよび .ocx ファイルです。  
+## <a name="generating-metadata"></a><span data-ttu-id="15944-124">メタデータ ファイルの生成</span><span class="sxs-lookup"><span data-stu-id="15944-124">Generating Metadata</span></span>  
+ <span data-ttu-id="15944-125">COM タイプ ライブラリには、Loanlib.tlb などの .tlb 拡張子を持つスタンドアロンのファイルを指定できます。</span><span class="sxs-lookup"><span data-stu-id="15944-125">COM type libraries can be stand-alone files that have a .tlb extension, such as Loanlib.tlb.</span></span> <span data-ttu-id="15944-126">一部のタイプ ライブラリは、.dll または .exe ファイルのリソース セクションに埋め込まれます。</span><span class="sxs-lookup"><span data-stu-id="15944-126">Some type libraries are embedded in the resource section of a .dll or .exe file.</span></span> <span data-ttu-id="15944-127">タイプ ライブラリ情報の他のソースは、.olb ファイルおよび .ocx ファイルです。</span><span class="sxs-lookup"><span data-stu-id="15944-127">Other sources of type library information are .olb and .ocx files.</span></span>  
   
- 対象とする COM 型の実装を格納するタイプ ライブラリを特定した後は、型のメタデータを含む相互運用機能アセンブリを生成するための次のオプションがあります。  
+ <span data-ttu-id="15944-128">対象とする COM 型の実装を格納するタイプ ライブラリを特定した後は、型のメタデータを含む相互運用機能アセンブリを生成するための次のオプションがあります。</span><span class="sxs-lookup"><span data-stu-id="15944-128">After you locate the type library that contains the implementation of your target COM type, you have the following options for generating an interop assembly containing type metadata:</span></span>  
   
--   Visual Studio  
+-   <span data-ttu-id="15944-129">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="15944-129">Visual Studio</span></span>  
   
-     Visual Studio は、タイプ ライブラリ内の COM 型をアセンブリ内のメタデータに自動的に変換します。 手順については、「[How to: Add References to Type Libraries](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md)」(方法: タイプ ライブラリへの参照を追加する) と「[チュートリアル: Microsoft Office アセンブリからの型情報の埋め込み](http://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3)」を参照してください。です。  
+     <span data-ttu-id="15944-130">Visual Studio は、タイプ ライブラリ内の COM 型をアセンブリ内のメタデータに自動的に変換します。</span><span class="sxs-lookup"><span data-stu-id="15944-130">Visual Studio automatically converts COM types in a type library to metadata in an assembly.</span></span> <span data-ttu-id="15944-131">手順については、「[How to: Add References to Type Libraries](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md)」(方法: タイプ ライブラリへの参照を追加する) と「[チュートリアル: Microsoft Office アセンブリからの型情報の埋め込み](http://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3)」を参照してください。です。</span><span class="sxs-lookup"><span data-stu-id="15944-131">For instructions, see [How to: Add References to Type Libraries](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md) and [Walkthrough: Embedding Type Information from Microsoft Office Assemblies](http://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3).</span></span>  
   
--   [タイプ ライブラリ インポーター (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)  
+-   [<span data-ttu-id="15944-132">タイプ ライブラリ インポーター (Tlbimp.exe)</span><span class="sxs-lookup"><span data-stu-id="15944-132">Type Library Importer (Tlbimp.exe)</span></span>](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)  
   
-     タイプ ライブラリ インポーターは、結果の相互運用機能のファイルのメタデータを調整するコマンド ライン オプションを提供し、既存のタイプ ライブラリから型をインポートし、相互運用機能アセンブリと名前空間を生成します。 手順については、「[方法: 相互運用機能アセンブリをタイプ ライブラリから生成する](../../../docs/framework/interop/how-to-generate-interop-assemblies-from-type-libraries.md)」を参照してください。  
+     <span data-ttu-id="15944-133">タイプ ライブラリ インポーターは、結果の相互運用機能のファイルのメタデータを調整するコマンド ライン オプションを提供し、既存のタイプ ライブラリから型をインポートし、相互運用機能アセンブリと名前空間を生成します。</span><span class="sxs-lookup"><span data-stu-id="15944-133">The Type Library Importer provides command-line options to adjust metadata in the resulting interop file, imports types from an existing type library, and generates an interop assembly and a namespace.</span></span> <span data-ttu-id="15944-134">手順については、「[方法: 相互運用機能アセンブリをタイプ ライブラリから生成する](../../../docs/framework/interop/how-to-generate-interop-assemblies-from-type-libraries.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="15944-134">For instructions, see [How to: Generate Interop Assemblies from Type Libraries](../../../docs/framework/interop/how-to-generate-interop-assemblies-from-type-libraries.md).</span></span>  
   
--   <xref:System.Runtime.InteropServices.TypeLibConverter?displayProperty=fullName> クラス  
+-   <span data-ttu-id="15944-135"><xref:System.Runtime.InteropServices.TypeLibConverter?displayProperty=nameWithType> クラス</span><span class="sxs-lookup"><span data-stu-id="15944-135"><xref:System.Runtime.InteropServices.TypeLibConverter?displayProperty=nameWithType> class</span></span>  
   
-     このクラスは、コクラスとタイプ ライブラリ内のインターフェイスをアセンブリ内のメタデータに変換するメソッドを提供します。 これは Tlbimp.exe と同じメタデータ出力を生成します。 ただし、Tlbimp.exe とは異なり、<xref:System.Runtime.InteropServices.TypeLibConverter> クラスは、メモリ内のタイプ ライブラリをメタデータに変換できます。  
+     <span data-ttu-id="15944-136">このクラスは、コクラスとタイプ ライブラリ内のインターフェイスをアセンブリ内のメタデータに変換するメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="15944-136">This class provides methods to convert coclasses and interfaces in a type library to metadata within an assembly.</span></span> <span data-ttu-id="15944-137">これは Tlbimp.exe と同じメタデータ出力を生成します。</span><span class="sxs-lookup"><span data-stu-id="15944-137">It produces the same metadata output as Tlbimp.exe.</span></span> <span data-ttu-id="15944-138">ただし、Tlbimp.exe とは異なり、<xref:System.Runtime.InteropServices.TypeLibConverter> クラスは、メモリ内のタイプ ライブラリをメタデータに変換できます。</span><span class="sxs-lookup"><span data-stu-id="15944-138">However, unlike Tlbimp.exe, the <xref:System.Runtime.InteropServices.TypeLibConverter> class can convert an in-memory type library to metadata.</span></span>  
   
--   カスタム ラッパー  
+-   <span data-ttu-id="15944-139">カスタム ラッパー</span><span class="sxs-lookup"><span data-stu-id="15944-139">Custom wrappers</span></span>  
   
-     タイプ ライブラリが使用できないか正しくない場合、1 つのオプションは、マネージ ソース コードでクラスまたはインターフェイスの重複する定義を作成することです。 その後で、アセンブリ内のメタデータを生成するためにランタイムを対象とするコンパイラでソース コードをコンパイルします。  
+     <span data-ttu-id="15944-140">タイプ ライブラリが使用できないか正しくない場合、1 つのオプションは、マネージ ソース コードでクラスまたはインターフェイスの重複する定義を作成することです。</span><span class="sxs-lookup"><span data-stu-id="15944-140">When a type library is unavailable or incorrect, one option is to create a duplicate definition of the class or interface in managed source code.</span></span> <span data-ttu-id="15944-141">その後で、アセンブリ内のメタデータを生成するためにランタイムを対象とするコンパイラでソース コードをコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="15944-141">You then compile the source code with a compiler that targets the runtime to produce metadata in an assembly.</span></span>  
   
-     COM 型を手動で定義するには、次の項目へのアクセスが必要です。  
+     <span data-ttu-id="15944-142">COM 型を手動で定義するには、次の項目へのアクセスが必要です。</span><span class="sxs-lookup"><span data-stu-id="15944-142">To define COM types manually, you must have access to the following items:</span></span>  
   
-    -   定義されているコクラスとインターフェイスの正確な説明。  
+    -   <span data-ttu-id="15944-143">定義されているコクラスとインターフェイスの正確な説明。</span><span class="sxs-lookup"><span data-stu-id="15944-143">Precise descriptions of the coclasses and interfaces being defined.</span></span>  
   
-    -   C# コンパイラなど、適切な .NET Framework のクラス定義を生成できるコンパイラ。  
+    -   <span data-ttu-id="15944-144">C# コンパイラなど、適切な .NET Framework のクラス定義を生成できるコンパイラ。</span><span class="sxs-lookup"><span data-stu-id="15944-144">A compiler, such as the C# compiler, that can generate the appropriate .NET Framework class definitions.</span></span>  
   
-    -   タイプ ライブラリからアセンブリへの変換規則の知識。  
+    -   <span data-ttu-id="15944-145">タイプ ライブラリからアセンブリへの変換規則の知識。</span><span class="sxs-lookup"><span data-stu-id="15944-145">Knowledge of the type library-to-assembly conversion rules.</span></span>  
   
-     カスタム ラッパーの作成は、高度な手法です。 カスタム ラッパーを生成する方法の詳細については、「[標準ラッパーのカスタマイズ](http://msdn.microsoft.com/en-us/c40d089b-6a3c-41b5-a20d-d760c215e49d)」を参照してください。  
+     <span data-ttu-id="15944-146">カスタム ラッパーの作成は、高度な手法です。</span><span class="sxs-lookup"><span data-stu-id="15944-146">Writing a custom wrapper is an advanced technique.</span></span> <span data-ttu-id="15944-147">カスタム ラッパーを生成する方法の詳細については、「[標準ラッパーのカスタマイズ](http://msdn.microsoft.com/en-us/c40d089b-6a3c-41b5-a20d-d760c215e49d)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="15944-147">For additional information about how to generate a custom wrapper, see [Customizing Standard Wrappers](http://msdn.microsoft.com/en-us/c40d089b-6a3c-41b5-a20d-d760c215e49d).</span></span>  
   
- COM 相互運用機能のインポート処理の詳細については、「[Type Library to Assembly Conversion Summary](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)」(タイプ ライブラリからアセンブリへの変換の要約) を参照してください。  
+ <span data-ttu-id="15944-148">COM 相互運用機能のインポート処理の詳細については、「[Type Library to Assembly Conversion Summary](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)」(タイプ ライブラリからアセンブリへの変換の要約) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="15944-148">For more information about the COM interop import process, see [Type Library to Assembly Conversion Summary](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958).</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.InteropServices.TypeLibConverter>   
- [.NET Framework への COM コンポーネントの公開](../../../docs/framework/interop/exposing-com-components.md)   
- [タイプ ライブラリからアセンブリへの変換の要約](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)   
- [Tlbimp.exe (タイプ ライブラリ インポーター)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)   
- [標準ラッパーのカスタマイズ](http://msdn.microsoft.com/en-us/c40d089b-6a3c-41b5-a20d-d760c215e49d)   
- [マネージ コードでの COM 型の使用](http://msdn.microsoft.com/en-us/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66)   
- [相互運用プロジェクトのコンパイル](../../../docs/framework/interop/compiling-an-interop-project.md)   
- [相互運用アプリケーションの配置](../../../docs/framework/interop/deploying-an-interop-application.md)   
- [方法: タイプ ライブラリへの参照を追加する](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md)   
- [方法: 相互運用機能アセンブリをタイプ ライブラリから生成する](../../../docs/framework/interop/how-to-generate-interop-assemblies-from-type-libraries.md)   
- [チュートリアル: Microsoft Office アセンブリからの型情報の埋め込み](http://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3)
-
+## <a name="see-also"></a><span data-ttu-id="15944-149">関連項目</span><span class="sxs-lookup"><span data-stu-id="15944-149">See Also</span></span>  
+ <xref:System.Runtime.InteropServices.TypeLibConverter>  
+ [<span data-ttu-id="15944-150">.NET Framework への COM コンポーネントの公開</span><span class="sxs-lookup"><span data-stu-id="15944-150">Exposing COM Components to the .NET Framework</span></span>](../../../docs/framework/interop/exposing-com-components.md)  
+ [<span data-ttu-id="15944-151">タイプ ライブラリからアセンブリへの変換の要約</span><span class="sxs-lookup"><span data-stu-id="15944-151">Type Library to Assembly Conversion Summary</span></span>](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)  
+ [<span data-ttu-id="15944-152">Tlbimp.exe (タイプ ライブラリ インポーター)</span><span class="sxs-lookup"><span data-stu-id="15944-152">Tlbimp.exe (Type Library Importer)</span></span>](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)  
+ [<span data-ttu-id="15944-153">標準ラッパーのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="15944-153">Customizing Standard Wrappers</span></span>](http://msdn.microsoft.com/en-us/c40d089b-6a3c-41b5-a20d-d760c215e49d)  
+ [<span data-ttu-id="15944-154">マネージ コードの COM 型の使用</span><span class="sxs-lookup"><span data-stu-id="15944-154">Using COM Types in Managed Code</span></span>](http://msdn.microsoft.com/en-us/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66)  
+ [<span data-ttu-id="15944-155">相互運用プロジェクトのコンパイル</span><span class="sxs-lookup"><span data-stu-id="15944-155">Compiling an Interop Project</span></span>](../../../docs/framework/interop/compiling-an-interop-project.md)  
+ [<span data-ttu-id="15944-156">相互運用アプリケーションの配置</span><span class="sxs-lookup"><span data-stu-id="15944-156">Deploying an Interop Application</span></span>](../../../docs/framework/interop/deploying-an-interop-application.md)  
+ [<span data-ttu-id="15944-157">方法: タイプ ライブラリへの参照を追加する</span><span class="sxs-lookup"><span data-stu-id="15944-157">How to: Add References to Type Libraries</span></span>](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md)  
+ [<span data-ttu-id="15944-158">方法: 相互運用機能アセンブリをタイプ ライブラリから生成する</span><span class="sxs-lookup"><span data-stu-id="15944-158">How to: Generate Interop Assemblies from Type Libraries</span></span>](../../../docs/framework/interop/how-to-generate-interop-assemblies-from-type-libraries.md)  
+ [<span data-ttu-id="15944-159">チュートリアル: Microsoft Office アセンブリからの型情報の埋め込み</span><span class="sxs-lookup"><span data-stu-id="15944-159">Walkthrough: Embedding Type Information from Microsoft Office Assemblies</span></span>](http://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3)

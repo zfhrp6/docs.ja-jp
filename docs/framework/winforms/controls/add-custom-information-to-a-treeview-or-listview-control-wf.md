@@ -1,37 +1,40 @@
 ---
-title: "方法 : TreeView コントロールまたは ListView コントロール (Windows フォーム) にカスタム情報を追加する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ListItem"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "例 [Windows フォーム], ListView コントロール"
-  - "例 [Windows フォーム], TreeView コントロール"
-  - "ListView コントロール [Windows フォーム], 追加 (カスタム情報を)"
-  - "Tag プロパティ"
-  - "TreeView コントロール [Windows フォーム], 追加 (カスタム情報を)"
+title: "方法 : TreeView コントロールまたは ListView コントロール (Windows フォーム) にカスタム情報を追加する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+f1_keywords: ListItem
+helpviewer_keywords:
+- examples [Windows Forms], TreeView control
+- examples [Windows Forms], ListView control
+- ListView control [Windows Forms], adding custom information
+- TreeView control [Windows Forms], adding custom information
 ms.assetid: 68be11de-1d5b-430e-901f-cfbe48d14b19
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0e7086e52992f575781449e5dc2a83c3443f558d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : TreeView コントロールまたは ListView コントロール (Windows フォーム) にカスタム情報を追加する
-Windows フォームの <xref:System.Windows.Forms.TreeView> コントロールに派生ノードを作成したり、<xref:System.Windows.Forms.ListView> コントロールに派生アイテムを作成したりできます。  派生によって、必要な任意のフィールドを追加できます。また、追加するフィールドを操作するための、カスタム メソッドやカスタム コンストラクターを追加することもできます。  この機能の用途の 1 つに、各ツリー ノードまたはリスト項目への Customer オブジェクトの割り当てがあります。  ここでは <xref:System.Windows.Forms.TreeView> コントロールでの例を示しますが、<xref:System.Windows.Forms.ListView> コントロールの場合も同様に操作できます。  
+# <a name="how-to-add-custom-information-to-a-treeview-or-listview-control-windows-forms"></a><span data-ttu-id="810ee-102">方法 : TreeView コントロールまたは ListView コントロール (Windows フォーム) にカスタム情報を追加する</span><span class="sxs-lookup"><span data-stu-id="810ee-102">How to: Add Custom Information to a TreeView or ListView Control (Windows Forms)</span></span>
+<span data-ttu-id="810ee-103">派生ノードを作成するには、Windows フォームで<xref:System.Windows.Forms.TreeView>コントロールまたはの item の派生、<xref:System.Windows.Forms.ListView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="810ee-103">You can create a derived node in a Windows Forms <xref:System.Windows.Forms.TreeView> control or a derived item in a <xref:System.Windows.Forms.ListView> control.</span></span> <span data-ttu-id="810ee-104">派生により、必要なフィールドだけではなく、それらを処理するためのカスタム メソッドやコンストラクターも追加できます。</span><span class="sxs-lookup"><span data-stu-id="810ee-104">Derivation allows you to add any fields you require, as well as custom methods and constructors for handling them.</span></span> <span data-ttu-id="810ee-105">この機能を使用して、顧客オブジェクトを各ツリー ノードや各リスト項目にアタッチすることもできます。</span><span class="sxs-lookup"><span data-stu-id="810ee-105">One use of this feature is to attach a Customer object to each tree node or list item.</span></span> <span data-ttu-id="810ee-106">例をここでは、<xref:System.Windows.Forms.TreeView>のコントロールですが、これと同じアプローチを使用できます、<xref:System.Windows.Forms.ListView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="810ee-106">The examples here are for a <xref:System.Windows.Forms.TreeView> control, but the same approach can be used for a <xref:System.Windows.Forms.ListView> control.</span></span>  
   
-### ツリー ノードを派生させるには  
+### <a name="to-derive-a-tree-node"></a><span data-ttu-id="810ee-107">ツリー ノードを派生するには</span><span class="sxs-lookup"><span data-stu-id="810ee-107">To derive a tree node</span></span>  
   
--   <xref:System.Windows.Forms.TreeNode> クラスから派生を行って、ファイル パスを記録するためのカスタム フィールドを持つノード クラスを新規作成します。  
+-   <span data-ttu-id="810ee-108">派生する新しいノード クラスを作成、<xref:System.Windows.Forms.TreeNode>クラスで、ファイルのパスを記録するカスタム フィールドがあります。</span><span class="sxs-lookup"><span data-stu-id="810ee-108">Create a new node class, derived from the <xref:System.Windows.Forms.TreeNode> class, which has a custom field to record a file path.</span></span>  
   
     ```vb  
     Class myTreeNode  
@@ -45,7 +48,6 @@ Windows フォームの <xref:System.Windows.Forms.TreeView> コントロール�
           Me.Text = fp.Substring(fp.LastIndexOf("\"))  
        End Sub  
     End Class  
-  
     ```  
   
     ```csharp  
@@ -59,7 +61,6 @@ Windows フォームの <xref:System.Windows.Forms.TreeView> コントロール�
           this.Text = fp.Substring(fp.LastIndexOf("\\"));  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -76,11 +77,11 @@ Windows フォームの <xref:System.Windows.Forms.TreeView> コントロール�
     };  
     ```  
   
-### 派生されたツリー ノードを使用するには  
+### <a name="to-use-a-derived-tree-node"></a><span data-ttu-id="810ee-109">派生されたツリー ノードを使用するには</span><span class="sxs-lookup"><span data-stu-id="810ee-109">To use a derived tree node</span></span>  
   
-1.  新しい派生ツリー ノードは、呼び出した関数に渡すパラメーターとして使用できます。  
+1.  <span data-ttu-id="810ee-110">新たに派生されたツリー ノードは、関数呼び出しに対するパラメーターとして使用できます。</span><span class="sxs-lookup"><span data-stu-id="810ee-110">You can use the new derived tree node as a parameter to function calls.</span></span>  
   
-     次の例では、テキスト ファイルの場所に対するパスとして My Documents フォルダーが設定されています。  これは、Windows オペレーティング システムを実行するコンピューターには、通常このディレクトリが存在すると考えられるためです。  また、ユーザーは最小限のシステム アクセス レベルでアプリケーションを安全に実行できます。  
+     <span data-ttu-id="810ee-111">次の例では、テキスト ファイルの場所に設定されているパスは My Documents フォルダーです。</span><span class="sxs-lookup"><span data-stu-id="810ee-111">In the example below, the path set for the location of the text file is the My Documents folder.</span></span> <span data-ttu-id="810ee-112">このように設定できるのは、Windows オペレーティング システムを実行しているほとんどのコンピューターにこのディレクトリが含まれていると想定できるからです。</span><span class="sxs-lookup"><span data-stu-id="810ee-112">This is done because you can assume that most computers running the Windows operating system will include this directory.</span></span> <span data-ttu-id="810ee-113">また、このようにすることで、最小限のシステム アクセス レベルしか持たないユーザーもアプリケーションを安全に実行できるようになります。</span><span class="sxs-lookup"><span data-stu-id="810ee-113">This also allows users with minimal system access levels to safely run the application.</span></span>  
   
     ```vb  
     ' You should replace the bold text file   
@@ -88,7 +89,6 @@ Windows フォームの <xref:System.Windows.Forms.TreeView> コントロール�
     TreeView1.Nodes.Add(New myTreeNode (System.Environment.GetFolderPath _  
        (System.Environment.SpecialFolder.Personal) _  
        & "\ TextFile.txt ") )  
-  
     ```  
   
     ```csharp  
@@ -98,7 +98,6 @@ Windows フォームの <xref:System.Windows.Forms.TreeView> コントロール�
     treeView1.Nodes.Add(new myTreeNode (System.Environment.GetFolderPath _  
        (System.Environment.SpecialFolder.Personal) _  
        + @"\TextFile.txt") );  
-  
     ```  
   
     ```cpp  
@@ -110,7 +109,7 @@ Windows フォームの <xref:System.Windows.Forms.TreeView> コントロール�
        "\\TextFile.txt")));  
     ```  
   
-2.  渡されたツリー ノードが <xref:System.Windows.Forms.TreeNode> クラスに分類される場合は、派生クラスへのキャストを行う必要があります。  キャストとは、オブジェクトを他の型に明示的に変換することです。  キャストの詳細については、「[Implicit and Explicit Conversions](../Topic/Implicit%20and%20Explicit%20Conversions%20\(Visual%20Basic\).md)」 \([!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] の場合\)、「[\(\) 演算子](../Topic/\(\)%20Operator%20\(C%23%20Reference\).md)」 \([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] の場合\)、または「[キャスト演算子: \(\)](../../../../amples/snippets/visualbasic/VS_Snippets_Wpf/DocumentStructure/visualbasic/spec_withstructure-xps/_rels/.rels)」 \([!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)] の場合\) を参照してください。  
+2.  <span data-ttu-id="810ee-114">ツリー ノードが渡されとして入力したかどうか、<xref:System.Windows.Forms.TreeNode>クラス、派生クラスにキャストする必要があります。</span><span class="sxs-lookup"><span data-stu-id="810ee-114">If you are passed the tree node and it is typed as a <xref:System.Windows.Forms.TreeNode> class, then you will need to cast to your derived class.</span></span> <span data-ttu-id="810ee-115">キャストとは、ある型のオブジェクトから別の型のオブジェクトに明示的に変換することです。</span><span class="sxs-lookup"><span data-stu-id="810ee-115">Casting is an explicit conversion from one type of object to another.</span></span> <span data-ttu-id="810ee-116">キャストの詳細については、「[暗黙の型変換と明示的な型変換](~/docs/visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md) ([!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)])」、「[() 演算子](~/docs/csharp/language-reference/operators/invocation-operator.md) ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)])」、または[キャスト演算子: ()](/cpp/cpp/cast-operator-parens) ([!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)])」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="810ee-116">For more information on casting, see [Implicit and Explicit Conversions](~/docs/visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md) ([!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]), [() Operator](~/docs/csharp/language-reference/operators/invocation-operator.md) ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]), or [Cast Operator: ()](/cpp/cpp/cast-operator-parens) ([!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]).</span></span>  
   
     ```vb  
     Public Sub TreeView1_AfterSelect(ByVal sender As Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles TreeView1.AfterSelect  
@@ -118,7 +117,6 @@ Windows フォームの <xref:System.Windows.Forms.TreeView> コントロール�
        mynode = CType(e.node, myTreeNode)  
        MessageBox.Show("Node selected is " & mynode.filepath)  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -128,7 +126,6 @@ Windows フォームの <xref:System.Windows.Forms.TreeView> コントロール�
        myTreeNode myNode = (myTreeNode)e.Node;  
        MessageBox.Show("Node selected is " + myNode.FilePath);  
     }  
-  
     ```  
   
     ```cpp  
@@ -142,6 +139,6 @@ Windows フォームの <xref:System.Windows.Forms.TreeView> コントロール�
        }  
     ```  
   
-## 参照  
- [TreeView コントロール](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)   
- [ListView コントロール](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="810ee-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="810ee-117">See Also</span></span>  
+ [<span data-ttu-id="810ee-118">TreeView コントロール</span><span class="sxs-lookup"><span data-stu-id="810ee-118">TreeView Control</span></span>](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)  
+ [<span data-ttu-id="810ee-119">ListView コントロール</span><span class="sxs-lookup"><span data-stu-id="810ee-119">ListView Control</span></span>](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)

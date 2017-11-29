@@ -1,31 +1,34 @@
 ---
-title: "MessageQueueDuplicatedSocketLeak | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: MessageQueueDuplicatedSocketLeak
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9721a463-15d1-43dc-8e3a-cae44448de91
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 374a5900839dc1f0151743126de16369fa6bf7ab
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# MessageQueueDuplicatedSocketLeak
-ID : 165  
+# <a name="messagequeueduplicatedsocketleak"></a><span data-ttu-id="f6ba1-102">MessageQueueDuplicatedSocketLeak</span><span class="sxs-lookup"><span data-stu-id="f6ba1-102">MessageQueueDuplicatedSocketLeak</span></span>
+<span data-ttu-id="f6ba1-103">Id: 165</span><span class="sxs-lookup"><span data-stu-id="f6ba1-103">Id: 165</span></span>  
   
- 重大度 : エラー  
+ <span data-ttu-id="f6ba1-104">重大度 : エラー</span><span class="sxs-lookup"><span data-stu-id="f6ba1-104">Severity: Error</span></span>  
   
- カテゴリ : SMSvcHost  
+ <span data-ttu-id="f6ba1-105">カテゴリ: SMSvcHost</span><span class="sxs-lookup"><span data-stu-id="f6ba1-105">Category: SMSvcHost</span></span>  
   
-## 説明  
- このイベントは、複製されたソケットのディスパッチ中にエラーが発生したことを示します。このハンドルは現在プロセスでリークされています。イベントには、ソース、例外、プロセス名、およびプロセス ID が表示されます。  
+## <a name="description"></a><span data-ttu-id="f6ba1-106">説明</span><span class="sxs-lookup"><span data-stu-id="f6ba1-106">Description</span></span>  
+ <span data-ttu-id="f6ba1-107">このイベントは、複製されたソケットのディスパッチ中にエラーが発生したことを示します。</span><span class="sxs-lookup"><span data-stu-id="f6ba1-107">This event indicates that an error occurred while dispatching a duplicated socket.</span></span> <span data-ttu-id="f6ba1-108">このハンドルは現在プロセスでリークされています。</span><span class="sxs-lookup"><span data-stu-id="f6ba1-108">This handle is now leaked in the process.</span></span> <span data-ttu-id="f6ba1-109">イベントには、ソース、例外、プロセス名、およびプロセス ID が表示されます。</span><span class="sxs-lookup"><span data-stu-id="f6ba1-109">The event lists the Source, Exception, Process Name and Process ID.</span></span>  
   
-## 参照  
- [イベント ログ](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)   
- [イベント一覧](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a><span data-ttu-id="f6ba1-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="f6ba1-110">See Also</span></span>  
+ [<span data-ttu-id="f6ba1-111">イベントのログ記録</span><span class="sxs-lookup"><span data-stu-id="f6ba1-111">Event Logging</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [<span data-ttu-id="f6ba1-112">イベントの一般的なリファレンス</span><span class="sxs-lookup"><span data-stu-id="f6ba1-112">Events General Reference</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

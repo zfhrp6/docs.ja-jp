@@ -1,73 +1,79 @@
 ---
-title: "DataAdapter によるデータ ソースの更新 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DataAdapter によるデータ ソースの更新"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: d1bd9a8c-0e29-40e3-bda8-d89176b72fb1
-caps.latest.revision: 8
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 5c0e032c7f4483648826ed8c03a8bdaa0ce5e4a6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataAdapter によるデータ ソースの更新
-<xref:System.Data.Common.DataAdapter> の `Update` メソッドを呼び出して、変更を <xref:System.Data.DataSet> からデータ ソースに反映します。  `Update` メソッドは、`Fill` メソッドと同様に、引数として `DataSet` のインスタンスおよびオプションの <xref:System.Data.DataTable> オブジェクトまたは `DataTable` 名を受け取ります。  `DataSet` のインスタンスは、行われた変更点を格納する `DataSet` です。`DataTable` は、変更点の取得元のテーブルです。  `DataTable` を指定しなかった場合、`DataSet` 内の最初の `DataTable` が使用されます。  
+# <a name="updating-data-sources-with-dataadapters"></a><span data-ttu-id="0645c-102">DataAdapter によるデータ ソースの更新</span><span class="sxs-lookup"><span data-stu-id="0645c-102">Updating Data Sources with DataAdapters</span></span>
+<span data-ttu-id="0645c-103">`Update` の <xref:System.Data.Common.DataAdapter> メソッドを呼び出して、変更を <xref:System.Data.DataSet> からデータ ソースに反映します。</span><span class="sxs-lookup"><span data-stu-id="0645c-103">The `Update` method of the <xref:System.Data.Common.DataAdapter> is called to resolve changes from a <xref:System.Data.DataSet> back to the data source.</span></span> <span data-ttu-id="0645c-104">`Update` メソッドは、`Fill` メソッドと同様に、引数として `DataSet` のインスタンスおよびオプションの <xref:System.Data.DataTable> オブジェクトまたは `DataTable` 名を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="0645c-104">The `Update` method, like the `Fill` method, takes as arguments an instance of a `DataSet`, and an optional <xref:System.Data.DataTable> object or `DataTable` name.</span></span> <span data-ttu-id="0645c-105">`DataSet` のインスタンスは、行われた変更点を格納する `DataSet` です。`DataTable` は、変更点の取得元のテーブルです。</span><span class="sxs-lookup"><span data-stu-id="0645c-105">The `DataSet` instance is the `DataSet` that contains the changes that have been made, and the `DataTable` identifies the table from which to retrieve the changes.</span></span> <span data-ttu-id="0645c-106">`DataTable` を指定しなかった場合、`DataTable` 内の最初の `DataSet` が使用されます。</span><span class="sxs-lookup"><span data-stu-id="0645c-106">If no `DataTable` is specified, the first `DataTable` in the `DataSet` is used.</span></span>  
   
- `Update` メソッドを呼び出すと、`DataAdapter` は、既に加えられた変更を解析し、適切なコマンド \(INSERT、UPDATE、または DELETE\) を実行します。  `DataAdapter` は <xref:System.Data.DataRow> へ加えられた変更を検出すると、<xref:System.Data.Common.DbDataAdapter.InsertCommand%2A>、<xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A>、または <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> を使用してその変更を処理します。  その結果、デザイン時にコマンド構文を指定し、可能な場合はストアド プロシージャを使用することにより、ADO.NET アプリケーションのパフォーマンスを最適化できます。  コマンドは `Update` を呼び出す前に明示的に設定する必要があります。  `Update` を呼び出し、その更新に関連する適切なコマンドが存在しない場合 \(たとえば、削除済みの行に関連する `DeleteCommand` が存在しない場合\) は、例外がスローされます。  
-  
-> [!NOTE]
->  SQL Server のストアド プロシージャで、`DataAdapter` を使用してデータを編集または削除する場合、ストアド プロシージャの定義に SET NOCOUNT ON は使用しないでください。  処理された行数がゼロとして返され、`DataAdapter` によって同時実行の競合として解釈されてしまいます。  この場合、<xref:System.Data.DBConcurrencyException> がスローされます。  
-  
- Command パラメーターを使用して、`DataSet` 内の各変更行に対する SQL ステートメントまたはストアド プロシージャに入力値と出力値を指定できます。  詳細については、「[DataAdapter パラメーター](../../../../docs/framework/data/adonet/dataadapter-parameters.md)」を参照してください。  
+ <span data-ttu-id="0645c-107">`Update` メソッドを呼び出すと、`DataAdapter` は、既に加えられた変更を解析し、適切なコマンド (INSERT、UPDATE、または DELETE) を実行します。</span><span class="sxs-lookup"><span data-stu-id="0645c-107">When you call the `Update` method, the `DataAdapter` analyzes the changes that have been made and executes the appropriate command (INSERT, UPDATE, or DELETE).</span></span> <span data-ttu-id="0645c-108">`DataAdapter` は <xref:System.Data.DataRow> へ加えられた変更を検出すると、<xref:System.Data.Common.DbDataAdapter.InsertCommand%2A>、<xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A>、または <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> を使用してその変更を処理します。</span><span class="sxs-lookup"><span data-stu-id="0645c-108">When the `DataAdapter` encounters a change to a <xref:System.Data.DataRow>, it uses the <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A>, <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A>, or <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> to process the change.</span></span> <span data-ttu-id="0645c-109">その結果、デザイン時にコマンド構文を指定し、可能な場合はストアド プロシージャを使用することにより、ADO.NET アプリケーションのパフォーマンスを最適化できます。</span><span class="sxs-lookup"><span data-stu-id="0645c-109">This allows you to maximize the performance of your ADO.NET application by specifying command syntax at design time and, where possible, through the use of stored procedures.</span></span> <span data-ttu-id="0645c-110">コマンドは `Update` を呼び出す前に明示的に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0645c-110">You must explicitly set the commands before calling `Update`.</span></span> <span data-ttu-id="0645c-111">`Update` を呼び出し、その更新に関連する適切なコマンドが存在しない場合 (たとえば、削除済みの行に関連する `DeleteCommand` が存在しない場合) は、例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="0645c-111">If `Update` is called and the appropriate command does not exist for a particular update (for example, no `DeleteCommand` for deleted rows), an exception is thrown.</span></span>  
   
 > [!NOTE]
->  <xref:System.Data.DataTable> の行を Delete することと、行を Remove することの違いを理解することが大切です。  `Remove` メソッドまたは `RemoveAt` メソッドを呼び出した場合、行は直ちに削除されます。  その後、`DataTable` または `DataSet` を `DataAdapter` に渡し、`Update` を呼び出しても、バックエンド データ ソースの対応する行には影響しません。  `Delete` メソッドを使用した場合、行はそのまま `DataTable` 内に維持され、削除対象としてマークされます。  その後、`DataTable` または `DataSet` を `DataAdapter` に渡し、`Update` を呼び出すと、バックエンド データ ソースから対応する行が削除されます。  
+>  <span data-ttu-id="0645c-112">SQL Server のストアド プロシージャで、`DataAdapter` を使用してデータを編集または削除する場合、ストアド プロシージャの定義に SET NOCOUNT ON は使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="0645c-112">If you are using SQL Server stored procedures to edit or delete data using a `DataAdapter`, make sure that you do not use SET NOCOUNT ON in the stored procedure definition.</span></span> <span data-ttu-id="0645c-113">処理された行数がゼロとして返され、`DataAdapter` によって同時実行の競合として解釈されてしまいます。</span><span class="sxs-lookup"><span data-stu-id="0645c-113">This causes the rows affected count returned to be zero, which the `DataAdapter` interprets as a concurrency conflict.</span></span> <span data-ttu-id="0645c-114">この場合、<xref:System.Data.DBConcurrencyException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="0645c-114">In this event, a <xref:System.Data.DBConcurrencyException> will be thrown.</span></span>  
   
- `DataTable` を単一データベース テーブルに割り当てたり、単一データベースから生成する場合は、<xref:System.Data.Common.DbCommandBuilder> オブジェクトを利用して自動的に `DataAdapter` の `DeleteCommand` オブジェクト、`InsertCommand` オブジェクト、および `UpdateCommand` オブジェクトを生成できます。  詳細については、「[CommandBuilder でのコマンドの生成](../../../../docs/framework/data/adonet/generating-commands-with-commandbuilders.md)」を参照してください。  
-  
-## UpdatedRowSource を使用した値の DataSet への割り当て  
- <xref:System.Data.Common.DbCommand> オブジェクトの <xref:System.Data.Common.DbCommand.UpdatedRowSource%2A> プロパティを使用すると、`DataAdapter` の Update メソッドを呼び出した後、データ ソースから返された値を `DataTable` に割り当てる方法を制御できます。  `UpdatedRowSource` プロパティを <xref:System.Data.UpdateRowSource> 列挙型の値の 1 つに設定することで、`DataAdapter` コマンドが返した出力パラメーターを無視するか、`DataSet` 内の変更行に適用するかを制御できます。  最初に返された行 \(存在する場合\) を、`DataTable` 内の変更行に適用するかどうかを指定することもできます。  
-  
- `UpdateRowSource` 列挙型のさまざまの値と、それらの値が `DataAdapter` で使用されるコマンドの動作にどのように影響するかを次の表で説明します。  
-  
-|UpdatedRowSource 列挙型|説明|  
-|--------------------------|--------|  
-|<xref:System.Data.UpdateRowSource>|出力パラメーターと返された結果セットの最初の行を `DataSet` 内の変更行に割り当てます。|  
-|<xref:System.Data.UpdateRowSource>|返された結果セットの最初の行のデータだけを `DataSet` 内の変更行に割り当てます。|  
-|<xref:System.Data.UpdateRowSource>|出力パラメーターまたは返された結果セットの行が無視されます。|  
-|<xref:System.Data.UpdateRowSource>|出力パラメーターだけを `DataSet` 内の変更行に割り当てます。|  
-  
- `Update` メソッドは変更点を元のデータ ソースに反映させますが、`DataSet` に最後にデータを格納した後、他のクライアントがデータ ソースのデータを変更した可能性もあります。  `DataSet` を現在のデータで更新するには、`DataAdapter` および `Fill` メソッドを使用します。  新しい行がテーブルに追加され、更新された情報が既存の行に取り込まれます。  `Fill` メソッドは、`DataSet` の行と `SelectCommand` によって返された行の主キーの値を調べて、新しい行が追加されたか、または既存の行が更新されたかを判断します。  `Fill` メソッドは、`SelectCommand` によって返された結果の行に一致する主キーの値を持つ `DataSet` の行を見つけた場合、`SelectCommand` によって返された行の情報で既存の行を更新して、既存の行の <xref:System.Data.DataRow.RowState%2A> を `Unchanged` に設定します。  `SelectCommand` によって返された行の主キーの値が、`DataSet` のどの行の主キーの値にも一致しない場合、`Fill` メソッドは、`RowState` が `Unchanged` の新しい行を追加します。  
+ <span data-ttu-id="0645c-115">Command パラメーターを使用して、`DataSet` 内の各変更行に対する SQL ステートメントまたはストアド プロシージャに入力値と出力値を指定できます。</span><span class="sxs-lookup"><span data-stu-id="0645c-115">Command parameters can be used to specify input and output values for an SQL statement or stored procedure for each modified row in a `DataSet`.</span></span> <span data-ttu-id="0645c-116">詳細については、次を参照してください。 [DataAdapter パラメーター](../../../../docs/framework/data/adonet/dataadapter-parameters.md)です。</span><span class="sxs-lookup"><span data-stu-id="0645c-116">For more information, see [DataAdapter Parameters](../../../../docs/framework/data/adonet/dataadapter-parameters.md).</span></span>  
   
 > [!NOTE]
->  `SelectCommand` が OUTER JOIN の結果を返す場合、`DataAdapter` は、生成される `DataTable` に `PrimaryKey` 値を設定しません。  自分で `PrimaryKey` を定義して、重複行が正しく反映されるようにする必要があります。  詳細については、「[主キーの定義](../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md)」を参照してください。  
+>  <span data-ttu-id="0645c-117"><xref:System.Data.DataTable> の行を Delete することと、行を Remove することの違いを理解することが大切です。</span><span class="sxs-lookup"><span data-stu-id="0645c-117">It is important to understand the difference between deleting a row in a <xref:System.Data.DataTable> and removing the row.</span></span> <span data-ttu-id="0645c-118">`Remove` メソッドまたは `RemoveAt` メソッドを呼び出した場合、行は直ちに削除されます。</span><span class="sxs-lookup"><span data-stu-id="0645c-118">When you call the `Remove` or `RemoveAt` method, the row is removed immediately.</span></span> <span data-ttu-id="0645c-119">その後、`DataTable` または `DataSet` を `DataAdapter` に渡し、`Update` を呼び出しても、バックエンド データ ソースの対応する行には影響しません。</span><span class="sxs-lookup"><span data-stu-id="0645c-119">Any corresponding rows in the back end data source will not be affected if you then pass the `DataTable` or `DataSet` to a `DataAdapter` and call `Update`.</span></span> <span data-ttu-id="0645c-120">`Delete` メソッドを使用した場合、行はそのまま `DataTable` 内に維持され、削除対象としてマークされます。</span><span class="sxs-lookup"><span data-stu-id="0645c-120">When you use the `Delete` method, the row remains in the `DataTable` and is marked for deletion.</span></span> <span data-ttu-id="0645c-121">その後、`DataTable` または `DataSet` を `DataAdapter` に渡し、`Update` を呼び出すと、バックエンド データ ソースから対応する行が削除されます。</span><span class="sxs-lookup"><span data-stu-id="0645c-121">If you then pass the `DataTable` or `DataSet` to a `DataAdapter` and call `Update`, the corresponding row in the back end data source is deleted.</span></span>  
   
- `Update` メソッド呼び出し時に発生する例外を処理するには、行更新エラーが発生したときに `RowUpdated` イベントを使用して応答するか \(「[DataAdapter のイベント処理](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)」を参照\)、または `Update` メソッド呼び出しの前に `DataAdapter.ContinueUpdateOnError` を `true` に設定し、更新が完了した時点で特定の行の `RowError` プロパティに格納されているエラー情報に応答します \(「[行エラー情報](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)」を参照\)。  
+ <span data-ttu-id="0645c-122">`DataTable` を単一データベース テーブルに割り当てたり、単一データベースから生成する場合は、<xref:System.Data.Common.DbCommandBuilder> オブジェクトを利用して自動的に `DeleteCommand` の `InsertCommand` オブジェクト、`UpdateCommand` オブジェクト、および `DataAdapter` オブジェクトを生成できます。</span><span class="sxs-lookup"><span data-stu-id="0645c-122">If your `DataTable` maps to or is generated from a single database table, you can take advantage of the <xref:System.Data.Common.DbCommandBuilder> object to automatically generate the `DeleteCommand`, `InsertCommand`, and `UpdateCommand` objects for the `DataAdapter`.</span></span> <span data-ttu-id="0645c-123">詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](../../../../docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。</span><span class="sxs-lookup"><span data-stu-id="0645c-123">For more information, see [Generating Commands with CommandBuilders](../../../../docs/framework/data/adonet/generating-commands-with-commandbuilders.md).</span></span>  
   
- **注** `DataSet`、`DataTable`、または `DataRow` に対して `AcceptChanges` を呼び出すと、`DataRow` のすべての `Original` 値が `DataRow` の `Current` 値で上書きされます。  行を一意に識別するフィールド値が変更された場合は、`AcceptChanges` 呼び出しの後に `Original` 値がデータ ソースの値と一致しなくなります。  `AcceptChanges` は、`DataAdapter` の Update メソッドを呼び出す間に、各行について自動的に呼び出されます。  Update メソッドの呼び出し中に元の値を維持するには、まず `DataAdapter` の `AcceptChangesDuringUpdate` プロパティを false に設定するか、`RowUpdated` イベントのイベント ハンドラーを作成し、その <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> を <xref:System.Data.UpdateStatus> に設定します。  詳細については、「[DataSet の内容のマージ](../../../../docs/framework/data/adonet/dataset-datatable-dataview/merging-dataset-contents.md)」および「[DataAdapter のイベント処理](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)」を参照してください。  
+## <a name="using-updatedrowsource-to-map-values-to-a-dataset"></a><span data-ttu-id="0645c-124">UpdatedRowSource を使用した値の DataSet への割り当て</span><span class="sxs-lookup"><span data-stu-id="0645c-124">Using UpdatedRowSource to Map Values to a DataSet</span></span>  
+ <span data-ttu-id="0645c-125">`DataTable` オブジェクトの `DataAdapter` プロパティを使用すると、<xref:System.Data.Common.DbCommand.UpdatedRowSource%2A> の Update メソッドを呼び出した後、データ ソースから返された値を <xref:System.Data.Common.DbCommand> に割り当てる方法を制御できます。</span><span class="sxs-lookup"><span data-stu-id="0645c-125">You can control how the values returned from the data source are mapped back to the `DataTable` following a call to the Update method of a `DataAdapter`, by using the <xref:System.Data.Common.DbCommand.UpdatedRowSource%2A> property of a <xref:System.Data.Common.DbCommand> object.</span></span> <span data-ttu-id="0645c-126">`UpdatedRowSource` プロパティを <xref:System.Data.UpdateRowSource> 列挙型の値の 1 つに設定することで、`DataAdapter` コマンドが返した出力パラメーターを無視するか、`DataSet` 内の変更行に適用するかを制御できます。</span><span class="sxs-lookup"><span data-stu-id="0645c-126">By setting the `UpdatedRowSource` property to one of the <xref:System.Data.UpdateRowSource> enumeration values, you can control whether output parameters returned by the `DataAdapter` commands are ignored or applied to the changed row in the `DataSet`.</span></span> <span data-ttu-id="0645c-127">最初に返された行 (存在する場合) を、`DataTable` 内の変更行に適用するかどうかを指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="0645c-127">You can also specify whether the first returned row (if it exists) is applied to the changed row in the `DataTable`.</span></span>  
   
-## 例  
- `DataAdapter` の `UpdateCommand` を明示的に設定し、その `Update`  メソッドを呼び出すことによって、変更済みの行に対して更新を実行する方法を次の例に示します。  UPDATE ステートメントの WHERE 句に指定したパラメーターが `SourceColumn` の `Original` 値を使用するように設定されていることに注意してください。  `Current` 値が既に変更されている可能性、そしてデータ ソースの値と一致していない可能性があるため、この設定は重要です。  `Original` 値は、データ ソースから `DataTable` にデータを取得するために使用された値です。  
+ <span data-ttu-id="0645c-128">`UpdateRowSource` 列挙型のさまざまの値と、それらの値が `DataAdapter` で使用されるコマンドの動作にどのように影響するかを次の表で説明します。</span><span class="sxs-lookup"><span data-stu-id="0645c-128">The following table describes the different values of the `UpdateRowSource` enumeration and how they affect the behavior of a command used with a `DataAdapter`.</span></span>  
+  
+|<span data-ttu-id="0645c-129">UpdatedRowSource 列挙型</span><span class="sxs-lookup"><span data-stu-id="0645c-129">UpdatedRowSource Enumeration</span></span>|<span data-ttu-id="0645c-130">説明</span><span class="sxs-lookup"><span data-stu-id="0645c-130">Description</span></span>|  
+|----------------------------------|-----------------|  
+|<xref:System.Data.UpdateRowSource.Both>|<span data-ttu-id="0645c-131">出力パラメーターと返された結果セットの最初の行を `DataSet` 内の変更行に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="0645c-131">Both the output parameters and the first row of a returned result set may be mapped to the changed row in the `DataSet`.</span></span>|  
+|<xref:System.Data.UpdateRowSource.FirstReturnedRecord>|<span data-ttu-id="0645c-132">返された結果セットの最初の行のデータだけを `DataSet` 内の変更行に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="0645c-132">Only the data in the first row of a returned result set may be mapped to the changed row in the `DataSet`.</span></span>|  
+|<xref:System.Data.UpdateRowSource.None>|<span data-ttu-id="0645c-133">出力パラメーターまたは返された結果セットの行が無視されます。</span><span class="sxs-lookup"><span data-stu-id="0645c-133">Any output parameters or rows of a returned result set are ignored.</span></span>|  
+|<xref:System.Data.UpdateRowSource.OutputParameters>|<span data-ttu-id="0645c-134">出力パラメーターだけを `DataSet` 内の変更行に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="0645c-134">Only output parameters may be mapped to the changed row in the `DataSet`.</span></span>|  
+  
+ <span data-ttu-id="0645c-135">`Update` メソッドは変更点を元のデータ ソースに反映させますが、`DataSet` に最後にデータを格納した後、他のクライアントがデータ ソースのデータを変更した可能性もあります。</span><span class="sxs-lookup"><span data-stu-id="0645c-135">The `Update` method resolves your changes back to the data source; however other clients may have modified data at the data source since the last time you filled the `DataSet`.</span></span> <span data-ttu-id="0645c-136">`DataSet` を現在のデータで更新するには、`DataAdapter` および `Fill` メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="0645c-136">To refresh your `DataSet` with current data, use the `DataAdapter` and `Fill` method.</span></span> <span data-ttu-id="0645c-137">新しい行がテーブルに追加され、更新された情報が既存の行に取り込まれます。</span><span class="sxs-lookup"><span data-stu-id="0645c-137">New rows will be added to the table, and updated information will be incorporated into existing rows.</span></span> <span data-ttu-id="0645c-138">`Fill` メソッドは、`DataSet` の行と `SelectCommand` によって返された行の主キーの値を調べて、新しい行が追加されたか、または既存の行が更新されたかを判断します。</span><span class="sxs-lookup"><span data-stu-id="0645c-138">The `Fill` method determines whether a new row will be added or an existing row will be updated by examining the primary key values of the rows in the `DataSet` and the rows returned by the `SelectCommand`.</span></span> <span data-ttu-id="0645c-139">`Fill` メソッドは、`DataSet` によって返された結果の行に一致する主キーの値を持つ `SelectCommand` の行を見つけた場合、`SelectCommand` によって返された行の情報で既存の行を更新して、既存の行の <xref:System.Data.DataRow.RowState%2A> を `Unchanged` に設定します。</span><span class="sxs-lookup"><span data-stu-id="0645c-139">If the `Fill` method encounters a primary key value for a row in the `DataSet` that matches a primary key value from a row in the results returned by the `SelectCommand`, it updates the existing row with the information from the row returned by the `SelectCommand` and sets the <xref:System.Data.DataRow.RowState%2A> of the existing row to `Unchanged`.</span></span> <span data-ttu-id="0645c-140">`SelectCommand` によって返された行の主キーの値が、`DataSet` のどの行の主キーの値にも一致しない場合、`Fill` メソッドは、`RowState` が `Unchanged` の新しい行を追加します。</span><span class="sxs-lookup"><span data-stu-id="0645c-140">If a row returned by the `SelectCommand` has a primary key value that does not match any of the primary key values of the rows in the `DataSet`, the `Fill` method adds a new row with a `RowState` of `Unchanged`.</span></span>  
+  
+> [!NOTE]
+>  <span data-ttu-id="0645c-141">`SelectCommand` が OUTER JOIN の結果を返す場合、`DataAdapter` は、生成される `PrimaryKey` に `DataTable` 値を設定しません。</span><span class="sxs-lookup"><span data-stu-id="0645c-141">If the `SelectCommand` returns the results of an OUTER JOIN, the `DataAdapter` will not set a `PrimaryKey` value for the resulting `DataTable`.</span></span> <span data-ttu-id="0645c-142">自分で `PrimaryKey` を定義して、重複行が正しく反映されるようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="0645c-142">You must define the `PrimaryKey` yourself to ensure that duplicate rows are resolved correctly.</span></span> <span data-ttu-id="0645c-143">詳細については、次を参照してください。[主キーを定義する](../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md)です。</span><span class="sxs-lookup"><span data-stu-id="0645c-143">For more information, see [Defining Primary Keys](../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md).</span></span>  
+  
+ <span data-ttu-id="0645c-144">呼び出すときに発生する例外を処理する、`Update`メソッドを使用できます、`RowUpdated`イベントが発生すると、行の更新エラーに応答 (を参照してください[DataAdapter イベントの処理](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)) を設定することもできます`DataAdapter.ContinueUpdateOnError`に`true`呼び出す前に`Update`に格納されているエラー情報に応答し、`RowError`更新が完了すると、特定の行のプロパティ (を参照してください[行エラー情報](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md))。</span><span class="sxs-lookup"><span data-stu-id="0645c-144">To handle exceptions that may occur when calling the `Update` method, you can use the `RowUpdated` event to respond to row update errors as they occur (see [Handling DataAdapter Events](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)), or you can set `DataAdapter.ContinueUpdateOnError` to `true` before calling `Update`, and respond to the error information stored in the `RowError` property of a particular row when the update is complete (see [Row Error Information](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)).</span></span>  
+  
+ <span data-ttu-id="0645c-145">**注**を呼び出す`AcceptChanges`上、 `DataSet`、 `DataTable`、または`DataRow`がすべて`Original`の値を`DataRow`を上書きすることで、`Current`の値を`DataRow`です。</span><span class="sxs-lookup"><span data-stu-id="0645c-145">**Note** Calling `AcceptChanges` on the `DataSet`, `DataTable`, or `DataRow` will cause all `Original` values for a `DataRow` to be overwritten with the `Current` values for the `DataRow`.</span></span> <span data-ttu-id="0645c-146">行を一意に識別するフィールド値が変更された場合は、`AcceptChanges` 呼び出しの後に `Original` 値がデータ ソースの値と一致しなくなります。</span><span class="sxs-lookup"><span data-stu-id="0645c-146">If the field values that identify the row as unique have been modified, after calling `AcceptChanges` the `Original` values will no longer match the values in the data source.</span></span> <span data-ttu-id="0645c-147">`AcceptChanges` は、`DataAdapter` の Update メソッドを呼び出す間に、各行について自動的に呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="0645c-147">`AcceptChanges` is called automatically for each row during a call to the Update method of a `DataAdapter`.</span></span> <span data-ttu-id="0645c-148">Update メソッドの呼び出し中に元の値を維持するには、まず `AcceptChangesDuringUpdate` の `DataAdapter` プロパティを false に設定するか、`RowUpdated` イベントのイベント ハンドラーを作成し、その <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> を <xref:System.Data.UpdateStatus.SkipCurrentRow> に設定します。</span><span class="sxs-lookup"><span data-stu-id="0645c-148">You can preserve the original values during a call to the Update method by first setting the `AcceptChangesDuringUpdate` property of the `DataAdapter` to false, or by creating an event handler for the `RowUpdated` event and setting the <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> to <xref:System.Data.UpdateStatus.SkipCurrentRow>.</span></span> <span data-ttu-id="0645c-149">詳細については、次を参照してください。 [DataSet の内容のマージ](../../../../docs/framework/data/adonet/dataset-datatable-dataview/merging-dataset-contents.md)と[DataAdapter イベントの処理](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)です。</span><span class="sxs-lookup"><span data-stu-id="0645c-149">For more information, see [Merging DataSet Contents](../../../../docs/framework/data/adonet/dataset-datatable-dataview/merging-dataset-contents.md) and [Handling DataAdapter Events](../../../../docs/framework/data/adonet/handling-dataadapter-events.md).</span></span>  
+  
+## <a name="example"></a><span data-ttu-id="0645c-150">例</span><span class="sxs-lookup"><span data-stu-id="0645c-150">Example</span></span>  
+ <span data-ttu-id="0645c-151">次の例では、明示的に設定して変更された行の更新を実行する方法、`UpdateCommand`の`DataAdapter`呼び出しとその`Update`メソッドです。</span><span class="sxs-lookup"><span data-stu-id="0645c-151">The following examples demonstrate how to perform updates to modified rows by explicitly setting the `UpdateCommand` of a `DataAdapter` and calling its `Update` method.</span></span> <span data-ttu-id="0645c-152">UPDATE ステートメントの WHERE 句に指定したパラメーターが `Original` の `SourceColumn` 値を使用するように設定されていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="0645c-152">Notice that the parameter specified in the WHERE clause of the UPDATE statement is set to use the `Original` value of the `SourceColumn`.</span></span> <span data-ttu-id="0645c-153">`Current` 値が既に変更されている可能性、そしてデータ ソースの値と一致していない可能性があるため、この設定は重要です。</span><span class="sxs-lookup"><span data-stu-id="0645c-153">This is important, because the `Current` value may have been modified and may not match the value in the data source.</span></span> <span data-ttu-id="0645c-154">`Original` 値は、データ ソースから `DataTable` にデータを取得するために使用された値です。</span><span class="sxs-lookup"><span data-stu-id="0645c-154">The `Original` value is the value that was used to populate the `DataTable` from the data source.</span></span>  
   
  [!code-csharp[DataWorks SqlClient.DataAdapterUpdate#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.DataAdapterUpdate/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.DataAdapterUpdate#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.DataAdapterUpdate/VB/source.vb#1)]  
   
-## AutoIncrement 列  
- データ ソースから取得したテーブルに自動インクリメント列がある場合、自動インクリメント値をストアド プロシージャの出力パラメーターとして取得してそれをテーブルの列に割り当てるか、ストアド プロシージャまたは SQL ステートメントによって返された結果セットの最初の行の自動インクリメント値を取得するか、または `DataAdapter` の `RowUpdated` イベントを使用して追加の SELECT コマンドを実行することによって、`DataSet` の列に値を格納できます。  使用例を含む詳細については、「[ID 値および Autonumber 値の取得](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)」を参照してください。  
+## <a name="autoincrement-columns"></a><span data-ttu-id="0645c-155">AutoIncrement 列</span><span class="sxs-lookup"><span data-stu-id="0645c-155">AutoIncrement Columns</span></span>  
+ <span data-ttu-id="0645c-156">データ ソースから取得したテーブルに自動インクリメント列がある場合、自動インクリメント値をストアド プロシージャの出力パラメーターとして取得してそれをテーブルの列に割り当てるか、ストアド プロシージャまたは SQL ステートメントによって返された結果セットの最初の行の自動インクリメント値を取得するか、または `DataSet` の `RowUpdated` イベントを使用して追加の SELECT コマンドを実行することによって、`DataAdapter` の列に値を格納できます。</span><span class="sxs-lookup"><span data-stu-id="0645c-156">If the tables from your data source have auto-incrementing columns, you can fill the columns in your `DataSet` either by returning the auto-increment value as an output parameter of a stored procedure and mapping that to a column in a table, by returning the auto-increment value in the first row of a result set returned by a stored procedure or SQL statement, or by using the `RowUpdated` event of the `DataAdapter` to execute an additional SELECT statement.</span></span> <span data-ttu-id="0645c-157">例および詳細については、次を参照してください。 [Id の取得や Autonumber 値](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)です。</span><span class="sxs-lookup"><span data-stu-id="0645c-157">For more information and an example, see [Retrieving Identity or Autonumber Values](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md).</span></span>  
   
-## 挿入、更新、削除の順序  
- 通常の条件下では、`DataSet` を使用して行う変更の順序をデータ ソースに送信することが重要です。  たとえば、既存の行の主キーの値を更新し、その新しい主キーの値を外部キーとして新しい行を追加する場合、更新は挿入の前に処理する必要があります。  
+## <a name="ordering-of-inserts-updates-and-deletes"></a><span data-ttu-id="0645c-158">挿入、更新、削除の順序</span><span class="sxs-lookup"><span data-stu-id="0645c-158">Ordering of Inserts, Updates, and Deletes</span></span>  
+ <span data-ttu-id="0645c-159">通常の条件下では、`DataSet` を使用して行う変更の順序をデータ ソースに送信することが重要です。</span><span class="sxs-lookup"><span data-stu-id="0645c-159">In many circumstances, the order in which changes made through the `DataSet` are sent to the data source is important.</span></span> <span data-ttu-id="0645c-160">たとえば、既存の行の主キーの値を更新し、その新しい主キーの値を外部キーとして新しい行を追加する場合、更新は挿入の前に処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0645c-160">For example, if a primary key value for an existing row is updated, and a new row has been added with the new primary key value as a foreign key, it is important to process the update before the insert.</span></span>  
   
- `DataTable` の `Select` メソッドを使用すると、特定の `RowState` を持つ行だけを参照する `DataRow` 配列を返すことができます。  その後で、返された `DataRow` 配列を `DataAdapter` の `Update` メソッドに渡して変更行を処理できます。  更新する行のサブセットを指定することで、挿入、更新、および削除の処理順序を制御できます。  
+ <span data-ttu-id="0645c-161">`Select` の `DataTable` メソッドを使用すると、特定の `DataRow` を持つ行だけを参照する `RowState` 配列を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="0645c-161">You can use the `Select` method of the `DataTable` to return a `DataRow` array that only references rows with a particular `RowState`.</span></span> <span data-ttu-id="0645c-162">その後で、返された `DataRow` 配列を `Update` の `DataAdapter` メソッドに渡して変更行を処理できます。</span><span class="sxs-lookup"><span data-stu-id="0645c-162">You can then pass the returned `DataRow` array to the `Update` method of the `DataAdapter` to process the modified rows.</span></span> <span data-ttu-id="0645c-163">更新する行のサブセットを指定することで、挿入、更新、および削除の処理順序を制御できます。</span><span class="sxs-lookup"><span data-stu-id="0645c-163">By specifying a subset of rows to be updated, you can control the order in which inserts, updates, and deletes are processed.</span></span>  
   
-## 例  
- たとえば次のコードでは、テーブルの削除行を最初に処理し、次に更新行、最後に挿入行を処理します。  
+## <a name="example"></a><span data-ttu-id="0645c-164">例</span><span class="sxs-lookup"><span data-stu-id="0645c-164">Example</span></span>  
+ <span data-ttu-id="0645c-165">たとえば次のコードでは、テーブルの削除行を最初に処理し、次に更新行、最後に挿入行を処理します。</span><span class="sxs-lookup"><span data-stu-id="0645c-165">For example, the following code ensures that the deleted rows of the table are processed first, then the updated rows, and then the inserted rows.</span></span>  
   
 ```vb  
 Dim table As DataTable = dataSet.Tables("Customers")  
@@ -99,18 +105,18 @@ adapter.Update(table.Select(null, null,
 adapter.Update(table.Select(null, null, DataViewRowState.Added));  
 ```  
   
-## DataAdapter を使用したデータの取得と更新  
- DataAdapter を使用すると、データを取得および更新できます。  
+## <a name="use-a-dataadapter-to-retrieve-and-update-data"></a><span data-ttu-id="0645c-166">DataAdapter を使用したデータの取得と更新</span><span class="sxs-lookup"><span data-stu-id="0645c-166">Use a DataAdapter to Retrieve and Update Data</span></span>  
+ <span data-ttu-id="0645c-167">DataAdapter を使用すると、データを取得および更新できます。</span><span class="sxs-lookup"><span data-stu-id="0645c-167">You can use a DataAdapter to retrieve and update the data.</span></span>  
   
--   このサンプルでは、DataAdapter.AcceptChangesDuringFill を使用してデータベース内のデータを複製します。  このプロパティが false として設定されている場合、AcceptChanges はテーブルにデータを格納するときに呼び出されず、新しく追加された行が挿入された行として処理されます。  そのため、このサンプルでは、これらの行を使用して、データベースに新しい行を挿入します。  
+-   <span data-ttu-id="0645c-168">このサンプルでは、DataAdapter.AcceptChangesDuringFill を使用してデータベース内のデータを複製します。</span><span class="sxs-lookup"><span data-stu-id="0645c-168">The sample uses DataAdapter.AcceptChangesDuringFill to clone the data in the database.</span></span> <span data-ttu-id="0645c-169">このプロパティが false として設定されている場合、AcceptChanges はテーブルにデータを格納するときに呼び出されず、新しく追加された行が挿入された行として処理されます。</span><span class="sxs-lookup"><span data-stu-id="0645c-169">If the property is set as false, AcceptChanges is not called when filling the table, and the newly added rows are treated as inserted rows.</span></span> <span data-ttu-id="0645c-170">そのため、このサンプルでは、これらの行を使用して、データベースに新しい行を挿入します。</span><span class="sxs-lookup"><span data-stu-id="0645c-170">So, the sample uses these rows to insert the new rows into the database.</span></span>  
   
--   このサンプルでは、DataAdapter.TableMappings を使用して、ソース テーブルと DataTable 間のマッピングを定義します。  
+-   <span data-ttu-id="0645c-171">このサンプルでは、DataAdapter.TableMappings を使用して、ソース テーブルと DataTable 間のマッピングを定義します。</span><span class="sxs-lookup"><span data-stu-id="0645c-171">The samples uses DataAdapter.TableMappings to define the mapping between the source table and DataTable.</span></span>  
   
--   このサンプルでは、DataAdapter.FillLoadOption を使用して、アダプターが DbDataReader から DataTable にデータを設定する方法を決定します。  DataTable を作成するときに、プロパティを LoadOption.Upsert または LoadOption.PreserveChanges として設定した場合のみ、データベースのデータを現在のバージョンまたは元のバージョンに書き込むことができます。  
+-   <span data-ttu-id="0645c-172">このサンプルでは、DataAdapter.FillLoadOption を使用して、アダプターが DbDataReader から DataTable にデータを設定する方法を決定します。</span><span class="sxs-lookup"><span data-stu-id="0645c-172">The sample uses DataAdapter.FillLoadOption to determine how the adapter fills the DataTable from the DbDataReader.</span></span> <span data-ttu-id="0645c-173">DataTable を作成するときに、プロパティを LoadOption.Upsert または LoadOption.PreserveChanges として設定した場合のみ、データベースのデータを現在のバージョンまたは元のバージョンに書き込むことができます。</span><span class="sxs-lookup"><span data-stu-id="0645c-173">When you create a DataTable, you can only write the data from database to the current version or the original version by setting the property as the LoadOption.Upsert or the LoadOption.PreserveChanges.</span></span>  
   
--   このサンプルでは、DbDataAdapter.UpdateBatchSize を使用してバッチ操作を実行することにより、テーブルを更新します。  
+-   <span data-ttu-id="0645c-174">このサンプルでは、DbDataAdapter.UpdateBatchSize を使用してバッチ操作を実行することにより、テーブルを更新します。</span><span class="sxs-lookup"><span data-stu-id="0645c-174">The sample will also update the table by using DbDataAdapter.UpdateBatchSize to perform batch operations.</span></span>  
   
- サンプルをコンパイルして実行する前に、サンプル データベースを作成する必要があります。  
+ <span data-ttu-id="0645c-175">サンプルをコンパイルして実行する前に、サンプル データベースを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0645c-175">Before you compile and run the sample, you need to create the sample database:</span></span>  
   
 ```  
 USE [master]  
@@ -132,7 +138,7 @@ CREATE TABLE [dbo].[Course]([CourseID] [nvarchar](10) NOT NULL,
 [Title] [nvarchar](100) NOT NULL,  
 [Credits] [int] NOT NULL,  
 [DepartmentID] [int] NOT NULL,  
- CONSTRAINT [PK_Course] PRIMARY KEY CLUSTERED   
+ CONSTRAINT [PK_Course] PRIMARY KEY CLUSTERED  
 (  
 [CourseID] ASC,  
 [Year] ASC  
@@ -149,7 +155,7 @@ CREATE TABLE [dbo].[Department]([DepartmentID] [int] IDENTITY(1,1) NOT NULL,
 [Budget] [money] NOT NULL,  
 [StartDate] [datetime] NOT NULL,  
 [Administrator] [int] NULL,  
- CONSTRAINT [PK_Department] PRIMARY KEY CLUSTERED   
+ CONSTRAINT [PK_Department] PRIMARY KEY CLUSTERED  
 (  
 [DepartmentID] ASC  
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]) ON [PRIMARY]  
@@ -176,7 +182,7 @@ ALTER TABLE [dbo].[Course] CHECK CONSTRAINT [FK_Course_Department]
 GO  
 ```  
   
- このコードのサンプルがある C\# および Visual Basic のプロジェクトは、「[コード レシピ:サンプルコードから学ぶ](http://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=How%20to%20use%20DataAdapter%20to%20retrieve%20and%20update%20data&f%5B1%5D)」でご確認いただけます。  
+ <span data-ttu-id="0645c-176">このサンプル コードで c# および Visual Basic のプロジェクトにある [開発者コード サンプル](http://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=How%20to%20use%20DataAdapter%20to%20retrieve%20and%20update%20data&f%5B1%5D)です。</span><span class="sxs-lookup"><span data-stu-id="0645c-176">C# and Visual Basic projects with this code sample can be found on [Developer Code Samples](http://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=How%20to%20use%20DataAdapter%20to%20retrieve%20and%20update%20data&f%5B1%5D).</span></span>  
   
 ```  
 using System;  
@@ -372,10 +378,10 @@ class Program {
 }  
 ```  
   
-## 参照  
- [DataAdapter と DataReader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)   
- [行の状態とバージョン](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)   
- [AcceptChanges と RejectChanges](../../../../docs/framework/data/adonet/dataset-datatable-dataview/acceptchanges-and-rejectchanges.md)   
- [DataSet の内容のマージ](../../../../docs/framework/data/adonet/dataset-datatable-dataview/merging-dataset-contents.md)   
- [ID 値および Autonumber 値の取得](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="0645c-177">関連項目</span><span class="sxs-lookup"><span data-stu-id="0645c-177">See Also</span></span>  
+ [<span data-ttu-id="0645c-178">Dataadapter と Datareader</span><span class="sxs-lookup"><span data-stu-id="0645c-178">DataAdapters and DataReaders</span></span>](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [<span data-ttu-id="0645c-179">行の状態と行のバージョン</span><span class="sxs-lookup"><span data-stu-id="0645c-179">Row States and Row Versions</span></span>](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)  
+ [<span data-ttu-id="0645c-180">Acceptchange と Rejectchange</span><span class="sxs-lookup"><span data-stu-id="0645c-180">AcceptChanges and RejectChanges</span></span>](../../../../docs/framework/data/adonet/dataset-datatable-dataview/acceptchanges-and-rejectchanges.md)  
+ [<span data-ttu-id="0645c-181">DataSet の内容のマージ</span><span class="sxs-lookup"><span data-stu-id="0645c-181">Merging DataSet Contents</span></span>](../../../../docs/framework/data/adonet/dataset-datatable-dataview/merging-dataset-contents.md)  
+ [<span data-ttu-id="0645c-182">Identity 値および Autonumber 値を取得します。</span><span class="sxs-lookup"><span data-stu-id="0645c-182">Retrieving Identity or Autonumber Values</span></span>](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)  
+ [<span data-ttu-id="0645c-183">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="0645c-183">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

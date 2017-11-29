@@ -1,63 +1,66 @@
 ---
-title: "ワークフロー追跡とトレース | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "プログラミング [WF], 追跡とトレース"
+title: "ワークフロー追跡とトレース"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: programming [WF], tracking and tracing
 ms.assetid: b965ded6-370a-483d-8790-f794f65b137e
-caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d9f4df7832be962665c2a49d4b009d9cc6f76f93
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ワークフロー追跡とトレース
-Windows ワークフロー追跡は、ワークフローの実行を確認できるように設計された [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] の機能です。また、ワークフロー インスタンスの実行を追跡できる追跡インフラストラクチャが用意されています。WF 追跡インフラストラクチャはワークフローを透過的にインストルメント化し、実行中の主要イベントを反映してレコードを出力します。この機能はすべての [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] ワークフローから既定で使用できます。[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] ワークフローで追跡を実行するために変更は必要ありません。必要なのは、受信する追跡データの量を決定することのみです。ワークフロー インスタンスが開始または完了すると、追跡レコードの処理が出力されます。また、追跡によって、ワークフロー変数に関連付けられたビジネス関連データを抽出することもできます。たとえば、ワークフローが注文処理システムを表している場合、注文 ID と共に <xref:System.Activities.Tracking.TrackingRecord> オブジェクトを抽出できます。一般的に、WF 追跡機能を有効にすると、ワークフローの実行から診断またはビジネス分析データにアクセスしやすくなります。  
+# <a name="workflow-tracking-and-tracing"></a><span data-ttu-id="26ac3-102">ワークフロー追跡とトレース</span><span class="sxs-lookup"><span data-stu-id="26ac3-102">Workflow Tracking and Tracing</span></span>
+<span data-ttu-id="26ac3-103">Windows ワークフロー追跡は、ワークフローの実行を確認できるように設計された [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] の機能です。</span><span class="sxs-lookup"><span data-stu-id="26ac3-103">Windows Workflow tracking is a [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] feature designed to provide visibility into workflow execution.</span></span> <span data-ttu-id="26ac3-104">また、ワークフロー インスタンスの実行を追跡できる追跡インフラストラクチャが用意されています。</span><span class="sxs-lookup"><span data-stu-id="26ac3-104">It provides a tracking infrastructure to track the execution of a workflow instance.</span></span> <span data-ttu-id="26ac3-105">WF 追跡インフラストラクチャはワークフローを透過的にインストルメント化し、実行中の主要イベントを反映してレコードを出力します。</span><span class="sxs-lookup"><span data-stu-id="26ac3-105">The WF tracking infrastructure transparently instruments a workflow to emit records reflecting key events during the execution.</span></span> <span data-ttu-id="26ac3-106">この機能はすべての [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] ワークフローから既定で使用できます。</span><span class="sxs-lookup"><span data-stu-id="26ac3-106">This functionality is available by default for any [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] workflow.</span></span> <span data-ttu-id="26ac3-107">[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] ワークフローで追跡を実行するために変更は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="26ac3-107">No changes are required to be made to a [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] workflow for tracking to occur.</span></span> <span data-ttu-id="26ac3-108">必要なのは、受信する追跡データの量を決定することのみです。</span><span class="sxs-lookup"><span data-stu-id="26ac3-108">It is just a matter of deciding how much tracking data you want to receive.</span></span> <span data-ttu-id="26ac3-109">ワークフロー インスタンスが開始または完了すると、追跡レコードの処理が出力されます。</span><span class="sxs-lookup"><span data-stu-id="26ac3-109">When a workflow instance starts or completes, its processing tracking records are emitted.</span></span> <span data-ttu-id="26ac3-110">また、追跡によって、ワークフロー変数に関連付けられたビジネス関連データを抽出することもできます。</span><span class="sxs-lookup"><span data-stu-id="26ac3-110">Tracking can also extract business-relevant data associated with the workflow variables.</span></span> <span data-ttu-id="26ac3-111">たとえば、ワークフローが注文処理システムを表している場合、注文 ID と共に <xref:System.Activities.Tracking.TrackingRecord> オブジェクトを抽出できます。</span><span class="sxs-lookup"><span data-stu-id="26ac3-111">For example, if the workflow represents an order processing system, the order ID can be extracted along with the <xref:System.Activities.Tracking.TrackingRecord> object.</span></span> <span data-ttu-id="26ac3-112">一般的に、WF 追跡機能を有効にすると、ワークフローの実行から診断またはビジネス分析データにアクセスしやすくなります。</span><span class="sxs-lookup"><span data-stu-id="26ac3-112">In general, enabling WF tracking facilitates diagnostics or business analytics data to be accessed from a workflow execution.</span></span>  
   
- これらの追跡コンポーネントは、[!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] の追跡サービスと同等です。[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] では、WF 追跡機能のパフォーマンスが改善され、プログラミング モデルが簡略化されました。追跡ランタイムがワークフロー インスタンスをインストルメント化し、ワークフローのライフ サイクル、ワークフロー アクティビティ、およびカスタム イベント関連のイベントを出力します。  
+ <span data-ttu-id="26ac3-113">これらの追跡コンポーネントは、[!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] の追跡サービスと同等です。</span><span class="sxs-lookup"><span data-stu-id="26ac3-113">These tracking components are equivalent to the tracking service in [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)].</span></span> <span data-ttu-id="26ac3-114">[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] では、WF 追跡機能のパフォーマンスが改善され、プログラミング モデルが簡略化されました。</span><span class="sxs-lookup"><span data-stu-id="26ac3-114">In [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], the performance has been improved and the programming model simplified for the WF tracking feature.</span></span> <span data-ttu-id="26ac3-115">追跡ランタイムがワークフロー インスタンスをインストルメント化し、ワークフローのライフ サイクル、ワークフロー アクティビティ、およびカスタム イベント関連のイベントを出力します。</span><span class="sxs-lookup"><span data-stu-id="26ac3-115">The tracking runtime instruments a workflow instance to emit events related to the workflow life cycle, workflow activities and custom events.</span></span>  
   
- Windows Server App Fabric は、WCF とワーク フロー サービスの実行を監視することができます。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Windows Server App Fabric の監視](http://go.microsoft.com/fwlink/?LinkId=201273) と [Windows Server AppFabric を使用したアプリケーションの監視](http://go.microsoft.com/fwlink/?LinkId=201287)  
+ <span data-ttu-id="26ac3-116">Windows Server App Fabric は、WCF とワーク フロー サービスの実行を監視することもできます。</span><span class="sxs-lookup"><span data-stu-id="26ac3-116">Windows Server App Fabric also provides the ability to monitor the execution of a WCF and workflow services.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="26ac3-117">[Windows Server App Fabric の監視](http://go.microsoft.com/fwlink/?LinkId=201273)と[アプリケーション Windows Server AppFabric の監視](http://go.microsoft.com/fwlink/?LinkId=201287)</span><span class="sxs-lookup"><span data-stu-id="26ac3-117"> [Windows Server App Fabric Monitoring](http://go.microsoft.com/fwlink/?LinkId=201273) and [Monitoring Applications with Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=201287)</span></span>  
   
- ワークフロー ランタイムの問題を解決するには、診断ワークフロー追跡を有効にします。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)][ワークフロー トレース](../../../docs/framework/windows-workflow-foundation//workflow-tracing.md).  
+ <span data-ttu-id="26ac3-118">ワークフロー ランタイムの問題を解決するには、診断ワークフロー追跡を有効にします。</span><span class="sxs-lookup"><span data-stu-id="26ac3-118">To troubleshoot the workflow runtime, you can turn on diagnostic workflow tracing.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="26ac3-119">[ワークフロー トレース](../../../docs/framework/windows-workflow-foundation/workflow-tracing.md)です。</span><span class="sxs-lookup"><span data-stu-id="26ac3-119"> [Workflow Tracing](../../../docs/framework/windows-workflow-foundation/workflow-tracing.md).</span></span>  
   
- プログラミング モデルを理解するには、追跡インフラストラクチャの主要コンポーネントに関するトピックの説明を参照してください。  
+ <span data-ttu-id="26ac3-120">プログラミング モデルを理解するには、追跡インフラストラクチャの主要コンポーネントに関するトピックの説明を参照してください。</span><span class="sxs-lookup"><span data-stu-id="26ac3-120">To understand the programming model, the primary components of the tracking infrastructure are discussed in this topic:</span></span>  
   
--   <xref:System.Activities.Tracking.TrackingRecord> オブジェクトは、ワークフロー ランタイムから取得します。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)][追跡レコード](../../../docs/framework/windows-workflow-foundation//tracking-records.md).  
+-   <span data-ttu-id="26ac3-121"><xref:System.Activities.Tracking.TrackingRecord> オブジェクトは、ワークフロー ランタイムから取得します。</span><span class="sxs-lookup"><span data-stu-id="26ac3-121"><xref:System.Activities.Tracking.TrackingRecord> objects emitted from the workflow runtime.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="26ac3-122">[追跡レコード](../../../docs/framework/windows-workflow-foundation/tracking-records.md)です。</span><span class="sxs-lookup"><span data-stu-id="26ac3-122"> [Tracking Records](../../../docs/framework/windows-workflow-foundation/tracking-records.md).</span></span>  
   
--   <xref:System.Activities.Tracking.TrackingParticipant> オブジェクトは <xref:System.Activities.Tracking.TrackingRecord> オブジェクトに定期受信します。追跡参加要素には、<xref:System.Activities.Tracking.TrackingRecord> オブジェクトのペイロードを処理するロジックがありません \(たとえば、ファイルに書き込むことができるなど\)。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)][追跡参加要素](../../../docs/framework/windows-workflow-foundation//tracking-participants.md).  
+-   <span data-ttu-id="26ac3-123"><xref:System.Activities.Tracking.TrackingParticipant> オブジェクトは <xref:System.Activities.Tracking.TrackingRecord> オブジェクトに定期受信します。</span><span class="sxs-lookup"><span data-stu-id="26ac3-123"><xref:System.Activities.Tracking.TrackingParticipant> objects subscribe to <xref:System.Activities.Tracking.TrackingRecord> objects.</span></span> <span data-ttu-id="26ac3-124">追跡参加要素には、<xref:System.Activities.Tracking.TrackingRecord> オブジェクトのペイロードを処理するロジックがありません (たとえば、ファイルに書き込むことができるなど)。</span><span class="sxs-lookup"><span data-stu-id="26ac3-124">The tracking participants contain the logic to process the payload from the <xref:System.Activities.Tracking.TrackingRecord> objects (for example, they could choose to write to a file).</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="26ac3-125">[追跡参加要素](../../../docs/framework/windows-workflow-foundation/tracking-participants.md)です。</span><span class="sxs-lookup"><span data-stu-id="26ac3-125"> [Tracking Participants](../../../docs/framework/windows-workflow-foundation/tracking-participants.md).</span></span>  
   
--   <xref:System.Activities.Tracking.TrackingProfile> オブジェクトは、ワークフロー インスタンスから出力された追跡レコードをフィルター処理します。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)][追跡プロファイル](../../../docs/framework/windows-workflow-foundation//tracking-profiles.md).  
+-   <span data-ttu-id="26ac3-126"><xref:System.Activities.Tracking.TrackingProfile> オブジェクトは、ワークフロー インスタンスから出力された追跡レコードをフィルター処理します。</span><span class="sxs-lookup"><span data-stu-id="26ac3-126"><xref:System.Activities.Tracking.TrackingProfile> objects filter tracking records emitted from a workflow instance.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="26ac3-127">[追跡プロファイル](../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)です。</span><span class="sxs-lookup"><span data-stu-id="26ac3-127"> [Tracking Profiles](../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).</span></span>  
   
-## ワークフロー追跡インフラストラクチャ  
- ワークフロー追跡インフラストラクチャは、パブリッシュおよび定期受信のパラダイムに従っています。ワークフロー インスタンスは追跡レコードのパブリッシャーですが、追跡レコードのサブスクライバーはワークフローに対する拡張として登録されます。<xref:System.Activities.Tracking.TrackingRecord> オブジェクトに定期受信するこれらの拡張は、追跡参加要素と呼ばれます。追跡参加要素は、<xref:System.Activities.Tracking.TrackingRecord> オブジェクトにアクセスし、そのための書き込み方法にかかわらず処理する機能拡張ポイントです。追跡インフラストラクチャを使用すると、送信の追跡レコードにフィルターを適用して、参加要素からレコードのサブセットに定期受信できるようになります。このフィルター機構は追跡プロファイル ファイルによって実現します。  
+## <a name="workflow-tracking-infrastructure"></a><span data-ttu-id="26ac3-128">ワークフロー追跡インフラストラクチャ</span><span class="sxs-lookup"><span data-stu-id="26ac3-128">Workflow Tracking Infrastructure</span></span>  
+ <span data-ttu-id="26ac3-129">ワークフロー追跡インフラストラクチャは、パブリッシュおよび定期受信のパラダイムに従っています。</span><span class="sxs-lookup"><span data-stu-id="26ac3-129">The workflow tracking infrastructure follows a publish-and-subscribe paradigm.</span></span> <span data-ttu-id="26ac3-130">ワークフロー インスタンスは追跡レコードのパブリッシャーですが、追跡レコードのサブスクライバーはワークフローに対する拡張として登録されます。</span><span class="sxs-lookup"><span data-stu-id="26ac3-130">The workflow instance is the publisher of tracking records, while subscribers of the tracking records are registered as extensions to the workflow.</span></span> <span data-ttu-id="26ac3-131"><xref:System.Activities.Tracking.TrackingRecord> オブジェクトに定期受信するこれらの拡張は、追跡参加要素と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="26ac3-131">These extensions that subscribe to <xref:System.Activities.Tracking.TrackingRecord> objects are called tracking participants.</span></span> <span data-ttu-id="26ac3-132">追跡参加要素は、<xref:System.Activities.Tracking.TrackingRecord> オブジェクトにアクセスし、そのための書き込み方法にかかわらず処理する機能拡張ポイントです。</span><span class="sxs-lookup"><span data-stu-id="26ac3-132">Tracking participants are extensibility points that access <xref:System.Activities.Tracking.TrackingRecord> objects and process them in whatever manner they are written to do so.</span></span> <span data-ttu-id="26ac3-133">追跡インフラストラクチャを使用すると、送信の追跡レコードにフィルターを適用して、参加要素からレコードのサブセットに定期受信できるようになります。</span><span class="sxs-lookup"><span data-stu-id="26ac3-133">The tracking infrastructure allows the application of a filter on the outgoing tracking records to allow a participant to subscribe to a subset of the records.</span></span> <span data-ttu-id="26ac3-134">このフィルター機構は追跡プロファイル ファイルによって実現します。</span><span class="sxs-lookup"><span data-stu-id="26ac3-134">This filtering mechanism is accomplished through a tracking profile file.</span></span>  
   
- 追跡インフラストラクチャの概要図を次に示します。  
+ <span data-ttu-id="26ac3-135">追跡インフラストラクチャの概要図を次に示します。</span><span class="sxs-lookup"><span data-stu-id="26ac3-135">A high level view of the tracking infrastructure is shown in the following illustration.</span></span>  
   
- ![ワークフロー追跡インフラストラクチャ](../../../docs/framework/windows-workflow-foundation//media/wv.gif "WV")  
+ <span data-ttu-id="26ac3-136">![ワークフロー追跡インフラストラクチャ](../../../docs/framework/windows-workflow-foundation/media/wv.gif "WV")</span><span class="sxs-lookup"><span data-stu-id="26ac3-136">![Workflow Tracking Infrastructure](../../../docs/framework/windows-workflow-foundation/media/wv.gif "WV")</span></span>  
   
-## このセクションの内容  
- [追跡レコード](../../../docs/framework/windows-workflow-foundation//tracking-records.md)  
- ワークフロー ランタイムが出力する追跡レコードについて説明します。  
+## <a name="in-this-section"></a><span data-ttu-id="26ac3-137">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="26ac3-137">In This Section</span></span>  
+ [<span data-ttu-id="26ac3-138">追跡レコード</span><span class="sxs-lookup"><span data-stu-id="26ac3-138">Tracking Records</span></span>](../../../docs/framework/windows-workflow-foundation/tracking-records.md)  
+ <span data-ttu-id="26ac3-139">ワークフロー ランタイムが出力する追跡レコードについて説明します。</span><span class="sxs-lookup"><span data-stu-id="26ac3-139">Describes the tracking records that the workflow runtime emits.</span></span>  
   
- [追跡プロファイル](../../../docs/framework/windows-workflow-foundation//tracking-profiles.md)  
- 追跡プロファイルを使用する方法について説明します。  
+ [<span data-ttu-id="26ac3-140">追跡プロファイル</span><span class="sxs-lookup"><span data-stu-id="26ac3-140">Tracking Profiles</span></span>](../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
+ <span data-ttu-id="26ac3-141">追跡プロファイルを使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="26ac3-141">Discusses how tracking profiles are used.</span></span>  
   
- [追跡参加要素](../../../docs/framework/windows-workflow-foundation//tracking-participants.md)  
- システム標準の追跡参加要素を使用する方法またはカスタムの追跡参加要素を作成する方法について説明します。  
+ [<span data-ttu-id="26ac3-142">追跡参加要素</span><span class="sxs-lookup"><span data-stu-id="26ac3-142">Tracking Participants</span></span>](../../../docs/framework/windows-workflow-foundation/tracking-participants.md)  
+ <span data-ttu-id="26ac3-143">システム標準の追跡参加要素を使用する方法またはカスタムの追跡参加要素を作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="26ac3-143">Describes how to use system-provided tracking participant or how to create custom tracking participants.</span></span>  
   
- [ワークフローの追跡の構成](../../../docs/framework/windows-workflow-foundation//configuring-tracking-for-a-workflow.md)  
- ワークフローの追跡を構成する方法について説明します。  
+ [<span data-ttu-id="26ac3-144">ワークフローの追跡の構成</span><span class="sxs-lookup"><span data-stu-id="26ac3-144">Configuring Tracking for a Workflow</span></span>](../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md)  
+ <span data-ttu-id="26ac3-145">ワークフローの追跡を構成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="26ac3-145">Describes how to configure tracking for a workflow.</span></span>  
   
- [ワークフロー トレース](../../../docs/framework/windows-workflow-foundation//workflow-tracing.md)  
- ワークフローのデバッグ追跡を有効にする 2 つの方法について説明します。  
+ [<span data-ttu-id="26ac3-146">ワークフロー トレース</span><span class="sxs-lookup"><span data-stu-id="26ac3-146">Workflow Tracing</span></span>](../../../docs/framework/windows-workflow-foundation/workflow-tracing.md)  
+ <span data-ttu-id="26ac3-147">ワークフローのデバッグ追跡を有効にする 2 つの方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="26ac3-147">Describes the two ways to enable debug tracing for a workflow.</span></span>  
   
- [トレースを使用したワークフロー実行時間の決定](../../../docs/framework/windows-workflow-foundation//determining-workflow-execution-duration-using-tracing.md)  
- トレース メッセージを使用してワークフローの実行時間を決定する方法を説明します。  
+ [<span data-ttu-id="26ac3-148">トレースを使用したワークフロー実行時間の決定</span><span class="sxs-lookup"><span data-stu-id="26ac3-148">Determining Workflow Execution Duration Using Tracing</span></span>](../../../docs/framework/windows-workflow-foundation/determining-workflow-execution-duration-using-tracing.md)  
+ <span data-ttu-id="26ac3-149">トレース メッセージを使用してワークフローの実行時間を決定する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="26ac3-149">Describes how to use tracing messages to determine workflow execution duration.</span></span>  
   
-## 参照  
- [SQL 追跡](../../../docs/framework/windows-workflow-foundation/samples/sql-tracking.md)
+## <a name="see-also"></a><span data-ttu-id="26ac3-150">関連項目</span><span class="sxs-lookup"><span data-stu-id="26ac3-150">See Also</span></span>  
+ [<span data-ttu-id="26ac3-151">SQL 追跡</span><span class="sxs-lookup"><span data-stu-id="26ac3-151">SQL Tracking</span></span>](../../../docs/framework/windows-workflow-foundation/samples/sql-tracking.md)

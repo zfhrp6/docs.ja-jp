@@ -1,135 +1,141 @@
 ---
-title: "イージング関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "適用 (数式をアニメーションに) [WPF]"
-  - "適用 (イージング関数をアニメーションに) [WPF]"
-  - "アニメーションに適用する数学的数式 [WPF]"
-  - "リアルな動きのアニメーション [WPF]"
-  - "イージング関数 [WPF]"
-  - "カスタマイズ (イージング関数を) [WPF]"
-  - "定義であるイージング関数 [WPF]"
-  - "カスタマイズのイージング関数 [WPF]"
-  - "適用するアニメーション [WPF]"
+title: "イージング関数"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- applying mathematical formulas to animations [WPF]
+- applying easing functions to animations [WPF]
+- mathematical formulas [WPF], applying to animations
+- animations [WPF], realistic movement
+- easing functions [WPF]
+- customizing easing functions [WPF]
+- easing functions [WPF], definition
+- easing functions [WPF], customizing
+- animations [WPF], applying
 ms.assetid: 075b9c2b-82c4-43fa-b3cd-de0b6236eb38
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 198ec8b8cb0b27e009f01f8e60a47e8086a7dbc7
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# イージング関数
-イージング関数を使用すると、独自の数式をアニメーションに適用することができます。 たとえば、現実的にバウンスまたは、春のと同様に動作するオブジェクトもかまいません。 またはを使用してキー フレーム アニメーションによって/でもこれらの効果を概算するが、大量の作業がかかり、アニメーション公式を使用するよりも正確さに欠けます。  
+# <a name="easing-functions"></a><span data-ttu-id="cb624-102">イージング関数</span><span class="sxs-lookup"><span data-stu-id="cb624-102">Easing Functions</span></span>
+<span data-ttu-id="cb624-103">イージング関数を使うと、独自の数式をアニメーションに適用することができます。</span><span class="sxs-lookup"><span data-stu-id="cb624-103">Easing functions allow you to apply custom mathematical formulas to your animations.</span></span> <span data-ttu-id="cb624-104">たとえば、オブジェクトをリアルにバウンドさせたり、バネに乗っているように動作させたりすることができます。</span><span class="sxs-lookup"><span data-stu-id="cb624-104">For example, you may want an object to realistically bounce or behave as though it were on a spring.</span></span> <span data-ttu-id="cb624-105">キー フレーム アニメーションや From/To/By アニメーションを使ってこれらの効果を近似することもできますが、大量の作業が必要であり、アニメーションは数式を使うほど正確ではありません。</span><span class="sxs-lookup"><span data-stu-id="cb624-105">You could use Key-Frame or even From/To/By animations to approximate these effects but it would take a significant amount of work and the animation would be less accurate than using a mathematical formula.</span></span>  
   
- 継承することで、独自のカスタムのイージング関数を作成するだけでなく<xref:System.Windows.Media.Animation.EasingFunctionBase>、ランタイムによって提供される複数のイージング関数のいずれかを使用して、一般的な効果を作成することができます。  
+ <span data-ttu-id="cb624-106">継承することで、独自のカスタム イージング関数を作成するだけでなく<xref:System.Windows.Media.Animation.EasingFunctionBase>、ランタイムによって提供されるいくつかのイージング関数のいずれかを使用して、一般的な効果を作成することができます。</span><span class="sxs-lookup"><span data-stu-id="cb624-106">Besides creating your own custom easing function by inheriting from <xref:System.Windows.Media.Animation.EasingFunctionBase>, you can use one of several easing functions provided by the runtime to create common effects.</span></span>  
   
--   <xref:System.Windows.Media.Animation.BackEase>: 指定したパスのアニメーション化を開始する前に、少しアニメーションの動きが取り消されます。  
+-   <span data-ttu-id="cb624-107"><xref:System.Windows.Media.Animation.BackEase>: 取り消されますアニメーションの動き若干指定したパスにアニメーション化を開始する前にします。</span><span class="sxs-lookup"><span data-stu-id="cb624-107"><xref:System.Windows.Media.Animation.BackEase>: Retracts the motion of an animation slightly before it begins to animate in the path indicated.</span></span>  
   
--   <xref:System.Windows.Media.Animation.BounceEase>: 跳ね返り効果を作成します。  
+-   <span data-ttu-id="cb624-108"><xref:System.Windows.Media.Animation.BounceEase>: バウンス効果を作成します。</span><span class="sxs-lookup"><span data-stu-id="cb624-108"><xref:System.Windows.Media.Animation.BounceEase>: Creates a bouncing effect.</span></span>  
   
--   <xref:System.Windows.Media.Animation.CircleEase>: 加速または減速循環関数を使用してアニメーションを作成します。  
+-   <span data-ttu-id="cb624-109"><xref:System.Windows.Media.Animation.CircleEase>: 加速または減速循環関数を使用するアニメーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="cb624-109"><xref:System.Windows.Media.Animation.CircleEase>: Creates an animation that accelerates and/or decelerates using a circular function.</span></span>  
   
--   <xref:System.Windows.Media.Animation.CubicEase>: 加速または減速の公式を使用するアニメーションを作成*f*( *t*) = *t*<sup>3</sup>します。  
+-   <span data-ttu-id="cb624-110"><xref:System.Windows.Media.Animation.CubicEase>: 加速または減速の公式を使用するアニメーションを作成する*f*(*t*) = *t*<sup>3</sup>です。</span><span class="sxs-lookup"><span data-stu-id="cb624-110"><xref:System.Windows.Media.Animation.CubicEase>: Creates an animation that accelerates and/or decelerates using the formula *f*(*t*) = *t*<sup>3</sup>.</span></span>  
   
--   <xref:System.Windows.Media.Animation.ElasticEase>: 伸び縮みするまで春のようなアニメーションを作成します。  
+-   <span data-ttu-id="cb624-111"><xref:System.Windows.Media.Animation.ElasticEase>: するまでに前後に動く spring のようなアニメーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="cb624-111"><xref:System.Windows.Media.Animation.ElasticEase>: Creates an animation that resembles a spring oscillating back and forth until it comes to rest.</span></span>  
   
--   <xref:System.Windows.Media.Animation.ExponentialEase>: 加速または減速指数の式を使用してアニメーションを作成します。  
+-   <span data-ttu-id="cb624-112"><xref:System.Windows.Media.Animation.ExponentialEase>: 加速または減速指数の式を使用するアニメーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="cb624-112"><xref:System.Windows.Media.Animation.ExponentialEase>: Creates an animation that accelerates and/or decelerates using an exponential formula.</span></span>  
   
--   <xref:System.Windows.Media.Animation.PowerEase>: 加速または減速の公式を使用するアニメーションを作成*f*( *t*) = *t*<sup>p</sup> p に等しい、<xref:System.Windows.Media.Animation.PowerEase.Power%2A>プロパティです。  
+-   <span data-ttu-id="cb624-113"><xref:System.Windows.Media.Animation.PowerEase>: 加速または減速の公式を使用するアニメーションを作成する*f*(*t*) = *t*<sup>p</sup> p が、に等しい<xref:System.Windows.Media.Animation.PowerEase.Power%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="cb624-113"><xref:System.Windows.Media.Animation.PowerEase>: Creates an animation that accelerates and/or decelerates using the formula *f*(*t*) = *t*<sup>p</sup> where p is equal to the <xref:System.Windows.Media.Animation.PowerEase.Power%2A> property.</span></span>  
   
--   <xref:System.Windows.Media.Animation.QuadraticEase>: 加速または減速の公式を使用するアニメーションを作成*f*( *t*) = *t*<sup>2</sup>します。  
+-   <span data-ttu-id="cb624-114"><xref:System.Windows.Media.Animation.QuadraticEase>: 加速または減速の公式を使用するアニメーションを作成する*f*(*t*) = *t*<sup>2</sup>です。</span><span class="sxs-lookup"><span data-stu-id="cb624-114"><xref:System.Windows.Media.Animation.QuadraticEase>: Creates an animation that accelerates and/or decelerates using the formula *f*(*t*) = *t*<sup>2</sup>.</span></span>  
   
--   <xref:System.Windows.Media.Animation.QuarticEase>: 加速または減速の公式を使用するアニメーションを作成*f*( *t*) = *t*<sup>4</sup>します。  
+-   <span data-ttu-id="cb624-115"><xref:System.Windows.Media.Animation.QuarticEase>: 加速または減速の公式を使用するアニメーションを作成する*f*(*t*) = *t*<sup>4</sup>です。</span><span class="sxs-lookup"><span data-stu-id="cb624-115"><xref:System.Windows.Media.Animation.QuarticEase>: Creates an animation that accelerates and/or decelerates using the formula *f*(*t*) = *t*<sup>4</sup>.</span></span>  
   
--   <xref:System.Windows.Media.Animation.QuinticEase>: アニメーションを加速または減速式を使用して作成*f*( *t*) = *t*<sup>5</sup>します。  
+-   <span data-ttu-id="cb624-116"><xref:System.Windows.Media.Animation.QuinticEase>: 加速または減速の公式を使用するアニメーションを作成する*f*(*t*) = *t*<sup>5</sup>です。</span><span class="sxs-lookup"><span data-stu-id="cb624-116"><xref:System.Windows.Media.Animation.QuinticEase>: Create an animation that accelerates and/or decelerates using the formula *f*(*t*) = *t*<sup>5</sup>.</span></span>  
   
--   <xref:System.Windows.Media.Animation.SineEase>: 加速または減速サイン (正弦) 式を使用してアニメーションを作成します。  
+-   <span data-ttu-id="cb624-117"><xref:System.Windows.Media.Animation.SineEase>: 加速または減速サイン (正弦) 式を使用するアニメーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="cb624-117"><xref:System.Windows.Media.Animation.SineEase>: Creates an animation that accelerates and/or decelerates using a sine formula.</span></span>  
   
- 次の例を使ってイージング関数の動作を調べることができます。  
+ <span data-ttu-id="cb624-118">これらのイージング関数の動作は、次のサンプルを使って調べることができます。</span><span class="sxs-lookup"><span data-stu-id="cb624-118">You can explore the behavior of these easing functions with the following sample.</span></span>  
   
- [このサンプルを実行します。](http://go.microsoft.com/fwlink/?LinkId=139798&sref=easing_functions_gallery)  
+ [<span data-ttu-id="cb624-119">このサンプルを実行する</span><span class="sxs-lookup"><span data-stu-id="cb624-119">Run this sample</span></span>](http://go.microsoft.com/fwlink/?LinkId=139798&sref=easing_functions_gallery)  
   
- イージング関数をアニメーションに適用するには、使用、`EasingFunction`アニメーションのプロパティがアニメーションに適用するイージング関数を指定します。 次の例では、適用、 <xref:System.Windows.Media.Animation.BounceEase>イージング関数を<xref:System.Windows.Media.Animation.DoubleAnimation>跳ね返り効果を作成します。  
+ <span data-ttu-id="cb624-120">アニメーションにイージング関数を適用するには、使用、`EasingFunction`アニメーションのプロパティをアニメーションに適用するイージング関数を指定します。</span><span class="sxs-lookup"><span data-stu-id="cb624-120">To apply an easing function to an animation, use the `EasingFunction` property of the animation specify the easing function to apply to the animation.</span></span> <span data-ttu-id="cb624-121">次の例に適用されます、<xref:System.Windows.Media.Animation.BounceEase>イージング関数を<xref:System.Windows.Media.Animation.DoubleAnimation>跳ね返り効果を作成します。</span><span class="sxs-lookup"><span data-stu-id="cb624-121">The following example applies a <xref:System.Windows.Media.Animation.BounceEase> easing function to a <xref:System.Windows.Media.Animation.DoubleAnimation> to create a bouncing effect.</span></span>  
   
- [このサンプルを実行します。](http://go.microsoft.com/fwlink/?LinkId=139798&sref=BounceEase)  
+ [<span data-ttu-id="cb624-122">このサンプルを実行する</span><span class="sxs-lookup"><span data-stu-id="cb624-122">Run this sample</span></span>](http://go.microsoft.com/fwlink/?LinkId=139798&sref=BounceEase)  
   
- [!code-xml[BounceEase_snippet#BounceEase](../../../../samples/snippets/csharp/VS_Snippets_Wpf/bounceease_snippet/CS/window1.xaml#bounceease)]  
+ [!code-xaml[BounceEase_snippet#BounceEase](../../../../samples/snippets/csharp/VS_Snippets_Wpf/bounceease_snippet/CS/window1.xaml#bounceease)]  
   
- 前の例では、イージング関数を From/に/によって適用したアニメーションです。 キー フレーム アニメーションにこれらのイージング関数を適用することもできます。 次の例では、コントラクトから上位に向かって停止、速度が低下し、下方向 (よう減少) を展開し、停止し、上で移動する四角形のアニメーションを作成するイージングそれらに関連付けられている関数をキー フレームを使用する方法を示します。  
+ <span data-ttu-id="cb624-123">前の例では、イージング関数を From/To/By アニメーションに適用しました。</span><span class="sxs-lookup"><span data-stu-id="cb624-123">In the previous example, the easing function was applied to a From/To/By animation.</span></span> <span data-ttu-id="cb624-124">キー フレーム アニメーションにこれらのイージング関数を適用することもできます。</span><span class="sxs-lookup"><span data-stu-id="cb624-124">You can also apply these easing functions to Key-Frame animations.</span></span> <span data-ttu-id="cb624-125">次の例では、キー フレームとそれらに関連付けられたイージング関数を使って、四角形が上方に縮まり、遅くなり、下方に延び (落下するように)、停止するアニメーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="cb624-125">The following example shows how to use key frames with easing functions associated with them to create an animation of a rectangle that contracts upward, slows down, then expands downward (as though falling) and then bounces to a stop.</span></span>  
   
- [このサンプルを実行します。](http://go.microsoft.com/fwlink/?LinkId=139798&sref=EasingFunctionDoubleKeyFrame)  
+ [<span data-ttu-id="cb624-126">このサンプルを実行する</span><span class="sxs-lookup"><span data-stu-id="cb624-126">Run this sample</span></span>](http://go.microsoft.com/fwlink/?LinkId=139798&sref=EasingFunctionDoubleKeyFrame)  
   
- [!code-xml[EasingFunctionDoubleKeyFrame_snippet#EasingFunctionDoubleKeyFrame](../../../../samples/snippets/csharp/VS_Snippets_Wpf/easingfunctiondoublekeyframe_snippet/CS/window1.xaml#easingfunctiondoublekeyframe)]  
+ [!code-xaml[EasingFunctionDoubleKeyFrame_snippet#EasingFunctionDoubleKeyFrame](../../../../samples/snippets/csharp/VS_Snippets_Wpf/easingfunctiondoublekeyframe_snippet/CS/window1.xaml#easingfunctiondoublekeyframe)]  
   
- 使用することができます、 <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>イージング関数の動作について、つまりを変更するプロパティを変更するアニメーションの補間します。 渡すことができる&3; つの値がある<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>:  
+ <span data-ttu-id="cb624-127">使用することができます、<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>イージング関数の動作、つまり、変更するプロパティを変更する方法、アニメーションの補間します。</span><span class="sxs-lookup"><span data-stu-id="cb624-127">You can use the <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A> property to alter how the easing function behaves, that is, change how the animation interpolates.</span></span> <span data-ttu-id="cb624-128">3 つの値を与えることができますがある<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>:</span><span class="sxs-lookup"><span data-stu-id="cb624-128">There are three possible values you can give for <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>:</span></span>  
   
--   <xref:System.Windows.Media.Animation.EasingMode>: に従ってイージング関数に関連付けられている数式を補間します。  
+-   <span data-ttu-id="cb624-129"><xref:System.Windows.Media.Animation.EasingMode.EaseIn>: 補間には、イージング関数に関連付けられた数式が次に示します。</span><span class="sxs-lookup"><span data-stu-id="cb624-129"><xref:System.Windows.Media.Animation.EasingMode.EaseIn>: Interpolation follows the mathematical formula associated with the easing function.</span></span>  
   
--   <xref:System.Windows.Media.Animation.EasingMode>: に従ってイージング関数に関連付けられている計算式の出力結果を差し引き、100% の補間を補間します。  
+-   <span data-ttu-id="cb624-130"><xref:System.Windows.Media.Animation.EasingMode.EaseOut>: 補間に依存しているイージング機能に関連付けられている式の出力-100% の補間します。</span><span class="sxs-lookup"><span data-stu-id="cb624-130"><xref:System.Windows.Media.Animation.EasingMode.EaseOut>: Interpolation follows 100% interpolation minus the output of the formula associated with the easing function.</span></span>  
   
--   <xref:System.Windows.Media.Animation.EasingMode>: 補間を使用して<xref:System.Windows.Media.Animation.EasingMode>アニメーションの最初の半分についておよび<xref:System.Windows.Media.Animation.EasingMode>後半のです。  
+-   <span data-ttu-id="cb624-131"><xref:System.Windows.Media.Animation.EasingMode.EaseInOut>: 補間を使用して<xref:System.Windows.Media.Animation.EasingMode.EaseIn>アニメーションの前半のおよび<xref:System.Windows.Media.Animation.EasingMode.EaseOut>後半を 2 番目のです。</span><span class="sxs-lookup"><span data-stu-id="cb624-131"><xref:System.Windows.Media.Animation.EasingMode.EaseInOut>: Interpolation uses <xref:System.Windows.Media.Animation.EasingMode.EaseIn> for the first half of the animation and <xref:System.Windows.Media.Animation.EasingMode.EaseOut> for the second half.</span></span>  
   
- 次のグラフのそれぞれの値を示す<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A> 、 *f*( *x*) アニメーションの進行状況を表すと*t*時間を表します。  
+ <span data-ttu-id="cb624-132">下のグラフのさまざまな値を示す<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>場所*f*(*x*)、アニメーションの進行状況を表すと*t*時間を表します。</span><span class="sxs-lookup"><span data-stu-id="cb624-132">The graphs below demonstrate the different values of <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A> where *f*(*x*) represents the animation progress and *t* represents time.</span></span>  
   
  <xref:System.Windows.Media.Animation.BackEase>  
   
- ![BackEase EasingMode のグラフ。] (../Image/BackEase_Graph.png "BackEase_Graph")  
+ <span data-ttu-id="cb624-133">![BackEase EasingMode のグラフ。](../../../../docs/framework/wpf/graphics-multimedia/media/backease-graph.png "BackEase_Graph")</span><span class="sxs-lookup"><span data-stu-id="cb624-133">![BackEase EasingMode graphs.](../../../../docs/framework/wpf/graphics-multimedia/media/backease-graph.png "BackEase_Graph")</span></span>  
   
  <xref:System.Windows.Media.Animation.BounceEase>  
   
- ![BounceEase EasingMode のグラフ] (../Image/BounceEase_Graph.png "BounceEase_Graph")  
+ <span data-ttu-id="cb624-134">![BounceEase EasingMode のグラフ。](../../../../docs/framework/wpf/graphics-multimedia/media/bounceease-graph.png "BounceEase_Graph")</span><span class="sxs-lookup"><span data-stu-id="cb624-134">![BounceEase EasingMode graphs.](../../../../docs/framework/wpf/graphics-multimedia/media/bounceease-graph.png "BounceEase_Graph")</span></span>  
   
  <xref:System.Windows.Media.Animation.CircleEase>  
   
- ![CircleEase EasingMode のグラフ] (../Image/CircleEase_Graph.png "CircleEase_Graph")  
+ <span data-ttu-id="cb624-135">![CircleEase EasingMode のグラフ。](../../../../docs/framework/wpf/graphics-multimedia/media/circleease-graph.png "CircleEase_Graph")</span><span class="sxs-lookup"><span data-stu-id="cb624-135">![CircleEase EasingMode graphs.](../../../../docs/framework/wpf/graphics-multimedia/media/circleease-graph.png "CircleEase_Graph")</span></span>  
   
  <xref:System.Windows.Media.Animation.CubicEase>  
   
- ![CubicEase EasingMode のグラフ] (../Image/CubicEase_Graph.png "CubicEase_Graph")  
+ <span data-ttu-id="cb624-136">![CubicEase EasingMode のグラフ。](../../../../docs/framework/wpf/graphics-multimedia/media/cubicease-graph.png "CubicEase_Graph")</span><span class="sxs-lookup"><span data-stu-id="cb624-136">![CubicEase EasingMode graphs.](../../../../docs/framework/wpf/graphics-multimedia/media/cubicease-graph.png "CubicEase_Graph")</span></span>  
   
  <xref:System.Windows.Media.Animation.ElasticEase>  
   
- ![ElasticEase の異なる easingmode のグラフ] (../Image/ElasticEase_Graph.png "ElasticEase_Graph")  
+ <span data-ttu-id="cb624-137">![異なる EasingMode の ElasticEase のグラフ。](../../../../docs/framework/wpf/graphics-multimedia/media/elasticease-graph.png "ElasticEase_Graph")</span><span class="sxs-lookup"><span data-stu-id="cb624-137">![ElasticEase with graphs of different easingmodes.](../../../../docs/framework/wpf/graphics-multimedia/media/elasticease-graph.png "ElasticEase_Graph")</span></span>  
   
  <xref:System.Windows.Media.Animation.ExponentialEase>  
   
- ![異なる easingmode の ExponentialEase のグラフ。] (../Image/ExponentialEase_Graph.png "ExponentialEase_Graph")  
+ <span data-ttu-id="cb624-138">![異なる EasingMode の ExponentialEase のグラフ。](../../../../docs/framework/wpf/graphics-multimedia/media/exponentialease-graph.png "ExponentialEase_Graph")</span><span class="sxs-lookup"><span data-stu-id="cb624-138">![ExponentialEase graphs of different easingmodes.](../../../../docs/framework/wpf/graphics-multimedia/media/exponentialease-graph.png "ExponentialEase_Graph")</span></span>  
   
  <xref:System.Windows.Media.Animation.PowerEase>  
   
- ![異なる easingmode のグラフ QuarticEase] (../Image/QuarticEase_Graph.png "QuarticEase_Graph")  
+ <span data-ttu-id="cb624-139">![異なる EasingMode の QuarticEase のグラフ。](../../../../docs/framework/wpf/graphics-multimedia/media/quarticease-graph.png "QuarticEase_Graph")</span><span class="sxs-lookup"><span data-stu-id="cb624-139">![QuarticEase with graphs of different easingmodes.](../../../../docs/framework/wpf/graphics-multimedia/media/quarticease-graph.png "QuarticEase_Graph")</span></span>  
   
  <xref:System.Windows.Media.Animation.QuadraticEase>  
   
- ![異なる easingmode のグラフの QuadraticEase](../../../../docs/framework/wpf/graphics-multimedia/media/quadraticease-graph.png "QuadraticEase_Graph")  
+ <span data-ttu-id="cb624-140">![異なる EasingMode の QuadraticEase のグラフ。](../../../../docs/framework/wpf/graphics-multimedia/media/quadraticease-graph.png "QuadraticEase_Graph")</span><span class="sxs-lookup"><span data-stu-id="cb624-140">![QuadraticEase with graphs of different easingmodes](../../../../docs/framework/wpf/graphics-multimedia/media/quadraticease-graph.png "QuadraticEase_Graph")</span></span>  
   
  <xref:System.Windows.Media.Animation.QuarticEase>  
   
- ![異なる easingmode のグラフ QuarticEase] (../Image/QuarticEase_Graph.png "QuarticEase_Graph")  
+ <span data-ttu-id="cb624-141">![異なる EasingMode の QuarticEase のグラフ。](../../../../docs/framework/wpf/graphics-multimedia/media/quarticease-graph.png "QuarticEase_Graph")</span><span class="sxs-lookup"><span data-stu-id="cb624-141">![QuarticEase with graphs of different easingmodes.](../../../../docs/framework/wpf/graphics-multimedia/media/quarticease-graph.png "QuarticEase_Graph")</span></span>  
   
  <xref:System.Windows.Media.Animation.QuinticEase>  
   
- ![異なる easingmode のグラフ QuinticEase] (../Image/QuinticEase_Graph.png "QuinticEase_Graph")  
+ <span data-ttu-id="cb624-142">![異なる EasingMode の QuinticEase のグラフ。](../../../../docs/framework/wpf/graphics-multimedia/media/quinticease-graph.png "QuinticEase_Graph")</span><span class="sxs-lookup"><span data-stu-id="cb624-142">![QuinticEase with graphs of different easingmodes.](../../../../docs/framework/wpf/graphics-multimedia/media/quinticease-graph.png "QuinticEase_Graph")</span></span>  
   
  <xref:System.Windows.Media.Animation.SineEase>  
   
- ![異なる EasingMode 値の SineEase](../../../../docs/framework/wpf/graphics-multimedia/media/sineease-graph.png "SineEase_Graph")  
+ <span data-ttu-id="cb624-143">![異なる EasingMode 値の SineEase](../../../../docs/framework/wpf/graphics-multimedia/media/sineease-graph.png "SineEase_Graph")</span><span class="sxs-lookup"><span data-stu-id="cb624-143">![SineEase for different EasingMode values](../../../../docs/framework/wpf/graphics-multimedia/media/sineease-graph.png "SineEase_Graph")</span></span>  
   
 > [!NOTE]
->  使用することができます<xref:System.Windows.Media.Animation.PowerEase>と同じ動作を作成する<xref:System.Windows.Media.Animation.CubicEase>、 <xref:System.Windows.Media.Animation.QuadraticEase>、 <xref:System.Windows.Media.Animation.QuarticEase>、および<xref:System.Windows.Media.Animation.QuinticEase>を使用して、<xref:System.Windows.Media.Animation.PowerEase.Power%2A>プロパティです。 例では、使用する場合の<xref:System.Windows.Media.Animation.PowerEase>の代わりに<xref:System.Windows.Media.Animation.CubicEase>、指定、<xref:System.Windows.Media.Animation.PowerEase.Power%2A>3 の値。  
+>  <span data-ttu-id="cb624-144">使用することができます<xref:System.Windows.Media.Animation.PowerEase>と同じ動作を作成する<xref:System.Windows.Media.Animation.CubicEase>、 <xref:System.Windows.Media.Animation.QuadraticEase>、 <xref:System.Windows.Media.Animation.QuarticEase>、および<xref:System.Windows.Media.Animation.QuinticEase>を使用して、<xref:System.Windows.Media.Animation.PowerEase.Power%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="cb624-144">You can use <xref:System.Windows.Media.Animation.PowerEase> to create the same behavior as <xref:System.Windows.Media.Animation.CubicEase>, <xref:System.Windows.Media.Animation.QuadraticEase>, <xref:System.Windows.Media.Animation.QuarticEase>, and <xref:System.Windows.Media.Animation.QuinticEase> by using the <xref:System.Windows.Media.Animation.PowerEase.Power%2A> property.</span></span> <span data-ttu-id="cb624-145">たとえば、使用する場合<xref:System.Windows.Media.Animation.PowerEase>の代替として<xref:System.Windows.Media.Animation.CubicEase>を指定、 <xref:System.Windows.Media.Animation.PowerEase.Power%2A> 3 の値。</span><span class="sxs-lookup"><span data-stu-id="cb624-145">For example, if you want to use <xref:System.Windows.Media.Animation.PowerEase> to substitute for <xref:System.Windows.Media.Animation.CubicEase>, specify a <xref:System.Windows.Media.Animation.PowerEase.Power%2A> value of 3.</span></span>  
   
- 継承することで、独自のイージング関数を作成する実行時に含まれるイージング関数を使用するだけでなく<xref:System.Windows.Media.Animation.EasingFunctionBase>します。 次の例では、単純なカスタム イージング関数を作成する方法を示します。 イージング関数の動作をオーバーライドすることで、独自の数値演算ロジックを追加する、 <xref:System.Windows.Media.Animation.EasingFunctionBase.EaseInCore%2A>メソッドです。  
+ <span data-ttu-id="cb624-146">継承することで、独自のカスタム イージング関数を作成するだけでなく、実行時に含まれるイージング関数を使用して、<xref:System.Windows.Media.Animation.EasingFunctionBase>です。</span><span class="sxs-lookup"><span data-stu-id="cb624-146">In addition to using the easing functions included in the run-time, you can create your own custom easing functions by inheriting from <xref:System.Windows.Media.Animation.EasingFunctionBase>.</span></span> <span data-ttu-id="cb624-147">次の例では、簡単なカスタム イージング関数を作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="cb624-147">The following example demonstrates how to create a simple custom easing function.</span></span> <span data-ttu-id="cb624-148">イージング関数をオーバーライドすることで動作する方法を独自の数値演算ロジックを追加することができます、<xref:System.Windows.Media.Animation.EasingFunctionBase.EaseInCore%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="cb624-148">You can add your own mathematical logic for how the easing function behaves by overriding the <xref:System.Windows.Media.Animation.EasingFunctionBase.EaseInCore%2A> method.</span></span>  
   
- [このサンプルを実行します。](http://go.microsoft.com/fwlink/?LinkId=139798&sref=CustomEasingFunction)  
+ [<span data-ttu-id="cb624-149">このサンプルを実行する</span><span class="sxs-lookup"><span data-stu-id="cb624-149">Run this sample</span></span>](http://go.microsoft.com/fwlink/?LinkId=139798&sref=CustomEasingFunction)  
   
  [!code-csharp[CustomEasingFunction#CustomEasingFunction](../../../../samples/snippets/csharp/VS_Snippets_Wpf/customeasingfunction/csharp/customlog10easingfunction.cs#customeasingfunction)]
  [!code-vb[CustomEasingFunction#CustomEasingFunction](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/customeasingfunction/visualbasic/customlog10easingfunction.vb#customeasingfunction)]
- [!code-xml[CustomEasingFunction#CustomEasingFunction](../../../../samples/snippets/csharp/VS_Snippets_Wpf/customeasingfunction/csharp/window1.xaml#customeasingfunction)]
+ [!code-xaml[CustomEasingFunction#CustomEasingFunction](../../../../samples/snippets/csharp/VS_Snippets_Wpf/customeasingfunction/csharp/window1.xaml#customeasingfunction)]

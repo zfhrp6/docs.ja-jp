@@ -1,61 +1,65 @@
 ---
-title: "チュートリアル : MaskedTextBox コントロールの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "入力, 制御 (検証するために)"
-  - "MaskedTextBox コントロール [Windows フォーム], 検証"
-  - "MaskedTextBox コントロール [Windows フォーム], チュートリアル"
-  - "テキスト, コントロール (入力の)"
-  - "ユーザー入力, 制御"
+title: "チュートリアル : MaskedTextBox コントロールの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- input [Windows Forms], controlling to ensure validity
+- MaskedTextBox control [Windows Forms], walkthroughs
+- MaskedTextBox control [Windows Forms], validation
+- user input [Windows Forms], controlling
+- text [Windows Forms], controls for input
 ms.assetid: df60565e-5447-4110-92a6-be1f6ff5faa3
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 06b8ffd2bda9597198d94c99a785c59cc7cc052e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル : MaskedTextBox コントロールの使用
-このチュートリアルでは、以下のタスクを行います。  
+# <a name="walkthrough-working-with-the-maskedtextbox-control"></a><span data-ttu-id="30ca5-102">チュートリアル : MaskedTextBox コントロールの使用</span><span class="sxs-lookup"><span data-stu-id="30ca5-102">Walkthrough: Working with the MaskedTextBox Control</span></span>
+<span data-ttu-id="30ca5-103">このチュートリアルでは、以下のタスクを行います。</span><span class="sxs-lookup"><span data-stu-id="30ca5-103">Tasks illustrated in this walkthrough include:</span></span>  
   
--   <xref:System.Windows.Forms.MaskedTextBox> コントロールを初期化します。  
+-   <span data-ttu-id="30ca5-104">初期化中、<xref:System.Windows.Forms.MaskedTextBox>コントロール</span><span class="sxs-lookup"><span data-stu-id="30ca5-104">Initializing the <xref:System.Windows.Forms.MaskedTextBox> control</span></span>  
   
--   <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> イベント ハンドラーを使用して、文字がマスクに従っていない場合にユーザーに警告します。  
+-   <span data-ttu-id="30ca5-105">使用して、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>文字がマスクに準拠していないときにユーザーに警告するイベント ハンドラー</span><span class="sxs-lookup"><span data-stu-id="30ca5-105">Using the <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> event handler to alert the user when a character does not conform to the mask</span></span>  
   
--   <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> プロパティに型を割り当て、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> イベント ハンドラーを使用して、ユーザーがコミットしようとした値がその型に対して有効でない場合にユーザーに警告します。  
+-   <span data-ttu-id="30ca5-106">型を割り当てる、<xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A>プロパティを使用して、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>をコミットしようとしている値の型の有効な場合、ユーザーのアラートを生成するイベント ハンドラー</span><span class="sxs-lookup"><span data-stu-id="30ca5-106">Assigning a type to the <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> property and using the <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> event handler to alert the user when the value they're attempting to commit is not valid for the type</span></span>  
   
-## プロジェクトの作成とコントロールの追加  
+## <a name="creating-the-project-and-adding-a-control"></a><span data-ttu-id="30ca5-107">プロジェクトを作成して、コントロールの追加</span><span class="sxs-lookup"><span data-stu-id="30ca5-107">Creating the Project and Adding a Control</span></span>  
   
-#### MaskedTextBox コントロールをフォームに追加するには  
+#### <a name="to-add-a-maskedtextbox-control-to-your-form"></a><span data-ttu-id="30ca5-108">MaskedTextBox コントロールをフォームに追加するには</span><span class="sxs-lookup"><span data-stu-id="30ca5-108">To add a MaskedTextBox control to your form</span></span>  
   
-1.  <xref:System.Windows.Forms.MaskedTextBox> コントロールを配置するフォームを開きます。  
+1.  <span data-ttu-id="30ca5-109">配置するフォームを開いて、<xref:System.Windows.Forms.MaskedTextBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="30ca5-109">Open the form on which you want to place the <xref:System.Windows.Forms.MaskedTextBox> control.</span></span>  
   
-2.  **ツールボックス**からフォームに <xref:System.Windows.Forms.MaskedTextBox> コントロールをドラッグします。  
+2.  <span data-ttu-id="30ca5-110">ドラッグ、<xref:System.Windows.Forms.MaskedTextBox>から制御、**ツールボックス**をフォームにします。</span><span class="sxs-lookup"><span data-stu-id="30ca5-110">Drag a <xref:System.Windows.Forms.MaskedTextBox> control from the **Toolbox** to your form.</span></span>  
   
-3.  コントロールを右クリックし、**\[プロパティ\]** をクリックします。  **\[プロパティ\]** ウィンドウの **\[マスク\]** プロパティを選択し、プロパティ名の横の **\[...\]** \(省略記号\) ボタンをクリックします。  
+3.  <span data-ttu-id="30ca5-111">コントロールを右クリックして選択**プロパティ**です。</span><span class="sxs-lookup"><span data-stu-id="30ca5-111">Right-click the control and choose **Properties**.</span></span> <span data-ttu-id="30ca5-112">**プロパティ**ウィンドウで、**マスク**プロパティをクリックして、**しています.**プロパティ名の横にある (省略記号) ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="30ca5-112">In the **Properties** window, select the **Mask** property and click the **...** (ellipsis) button next to the property name.</span></span>  
   
-4.  **\[定型入力\]** ダイアログ ボックスで、**\[日付 \(和暦\)\]** マスクを選択し、**\[OK\]** をクリックします。  
+4.  <span data-ttu-id="30ca5-113">**定型入力**ダイアログ ボックスで、**短い日付**マスクし、をクリックして**OK**です。</span><span class="sxs-lookup"><span data-stu-id="30ca5-113">In the **Input Mask** dialog box, select the **Short Date** mask and click **OK**.</span></span>  
   
-5.  **\[プロパティ\]** ウィンドウで、<xref:System.Windows.Forms.MaskedTextBox.BeepOnError%2A> プロパティを `true` に設定します。  このプロパティを設定すると、マスク定義に違反する文字をユーザーが入力するたびに、短いビープ音が鳴ります。  
+5.  <span data-ttu-id="30ca5-114">**プロパティ**ウィンドウのセット、<xref:System.Windows.Forms.MaskedTextBox.BeepOnError%2A>プロパティを`true`です。</span><span class="sxs-lookup"><span data-stu-id="30ca5-114">In the **Properties** window set the <xref:System.Windows.Forms.MaskedTextBox.BeepOnError%2A> property to `true`.</span></span> <span data-ttu-id="30ca5-115">このプロパティはにより、ビープ音を鳴らすたびに、ユーザーが、マスク定義に違反する文字を入力しようとしています。 です。</span><span class="sxs-lookup"><span data-stu-id="30ca5-115">This property causes a short beep to sound every time the user attempts to input a character that violates the mask definition.</span></span>  
   
- \[マスク\] プロパティがサポートする文字の概要については、<xref:System.Windows.Forms.MaskedTextBox.Mask%2A> プロパティの「解説」を参照してください。  
+ <span data-ttu-id="30ca5-116">概要については、マスクのプロパティをサポートする文字のの「解説」セクションを参照してください、<xref:System.Windows.Forms.MaskedTextBox.Mask%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="30ca5-116">For a summary of the characters that the Mask property supports, see the Remarks section of the <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> property.</span></span>  
   
-## 入力エラーについてのユーザーへの警告  
+## <a name="alert-the-user-to-input-errors"></a><span data-ttu-id="30ca5-117">入力エラーをユーザーに警告します。</span><span class="sxs-lookup"><span data-stu-id="30ca5-117">Alert the User to Input Errors</span></span>  
   
-#### マスク入力の拒否に対するバルーン ヒントの追加  
+#### <a name="add-a-balloon-tip-for-rejected-mask-input"></a><span data-ttu-id="30ca5-118">拒否されたマスクの入力のバルーン ヒントを追加します。</span><span class="sxs-lookup"><span data-stu-id="30ca5-118">Add a balloon tip for rejected mask input</span></span>  
   
-1.  **ツールボックス**に戻り、<xref:System.Windows.Forms.ToolTip> をフォームに追加します。  
+1.  <span data-ttu-id="30ca5-119">戻り、**ツールボックス**を追加し、<xref:System.Windows.Forms.ToolTip>をフォームにします。</span><span class="sxs-lookup"><span data-stu-id="30ca5-119">Return to the **Toolbox** and add a <xref:System.Windows.Forms.ToolTip> to your form.</span></span>  
   
-2.  <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> イベントに対するイベント ハンドラーを作成します。この中では、入力エラーが発生したときに <xref:System.Windows.Forms.ToolTip> を表示させます。  バルーン ヒントは、5 秒が経過するか、またはユーザーがクリックするまでは表示されたままとなります。  
+2.  <span data-ttu-id="30ca5-120">イベント ハンドラーを作成、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>イベントを発生させる、<xref:System.Windows.Forms.ToolTip>入力エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="30ca5-120">Create an event handler for the <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> event that raises the <xref:System.Windows.Forms.ToolTip> when an input error occurs.</span></span> <span data-ttu-id="30ca5-121">バルーン ヒントは引き続き、5 秒間のまたは、ユーザーがクリックするまで表示します。</span><span class="sxs-lookup"><span data-stu-id="30ca5-121">The balloon tip remains visible for five seconds, or until the user clicks it.</span></span>  
   
     ```csharp  
     public void Form1_Load(Object sender, EventArgs e)   
@@ -82,14 +86,13 @@ caps.handback.revision: 16
         ToolTip1.ToolTipTitle = "Invalid Input"  
         ToolTip1.Show("We're sorry, but only digits (0-9) are allowed in dates.", MaskedTextBox1, 5000)  
     End Sub  
-  
     ```  
   
-## 有効でない型についてのユーザーへの警告  
+## <a name="alert-the-user-to-a-type-that-is-not-valid"></a><span data-ttu-id="30ca5-122">無効な型をユーザーに警告します。</span><span class="sxs-lookup"><span data-stu-id="30ca5-122">Alert the User to a Type that Is Not Valid</span></span>  
   
-#### 無効なデータ型に対するバルーン ヒントの追加  
+#### <a name="add-a-balloon-tip-for-invalid-data-types"></a><span data-ttu-id="30ca5-123">無効なデータ型のバルーン ヒントを追加します。</span><span class="sxs-lookup"><span data-stu-id="30ca5-123">Add a balloon tip for invalid data types</span></span>  
   
-1.  フォームの <xref:System.Windows.Forms.Form.Load> イベント ハンドラーで、<xref:System.DateTime> 型を表す <xref:System.Type> オブジェクトを、<xref:System.Windows.Forms.MaskedTextBox> コントロールの <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> プロパティに対して割り当てます。  
+1.  <span data-ttu-id="30ca5-124">フォームの<xref:System.Windows.Forms.Form.Load>、イベント ハンドラーを割り当てます、<xref:System.Type>オブジェクトを表す、<xref:System.DateTime>型を<xref:System.Windows.Forms.MaskedTextBox>コントロールの<xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A>プロパティ。</span><span class="sxs-lookup"><span data-stu-id="30ca5-124">In your form's <xref:System.Windows.Forms.Form.Load> event handler, assign a <xref:System.Type> object representing the <xref:System.DateTime> type to the <xref:System.Windows.Forms.MaskedTextBox> control's <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> property:</span></span>  
   
     ```csharp  
     private void Form1_Load(Object sender, EventArgs e)  
@@ -107,7 +110,7 @@ caps.handback.revision: 16
     End Sub  
     ```  
   
-2.  <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> イベントのイベント ハンドラーを追加します。  
+2.  <span data-ttu-id="30ca5-125"><xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> イベントのイベント ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="30ca5-125">Add an event handler for the <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> event:</span></span>  
   
     ```csharp  
     public void maskedTextBox1_TypeValidationCompleted(object sender, TypeValidationEventArgs e)  
@@ -129,9 +132,8 @@ caps.handback.revision: 16
            e.Cancel = True  
         End If  
     End Sub  
-  
     ```  
   
-## 参照  
- <xref:System.Windows.Forms.MaskedTextBox>   
- [MaskedTextBox コントロール](../../../../docs/framework/winforms/controls/maskedtextbox-control-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="30ca5-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="30ca5-126">See Also</span></span>  
+ <xref:System.Windows.Forms.MaskedTextBox>  
+ [<span data-ttu-id="30ca5-127">MaskedTextBox コントロール</span><span class="sxs-lookup"><span data-stu-id="30ca5-127">MaskedTextBox Control</span></span>](../../../../docs/framework/winforms/controls/maskedtextbox-control-windows-forms.md)

@@ -1,83 +1,89 @@
 ---
-title: "チュートリアル: WPF での Windows フォーム複合コントロールのホスト | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "複合コントロール, ホスト (WPF で)"
-  - "ホスト (Windows フォーム コントロールを WPF で)"
+title: "チュートリアル: WPF での Windows フォーム複合コントロールのホスト"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- hosting Windows Forms control in WPF [WPF]
+- composite controls [WPF], hosting in WPF
 ms.assetid: 96fcd78d-1c77-4206-8928-3a0579476ef4
-caps.latest.revision: 33
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 30
+caps.latest.revision: "33"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f9fc708d3fff3dfca29f46da8d345aeb243df38c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル: WPF での Windows フォーム複合コントロールのホスト
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は、アプリケーションの作成に適した環境を提供します。  ただし、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]のコードに多くの投資を行った場合は、コードを最初から記述し直すよりも、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションのコードの少なくとも一部を再利用する方が効率的です。  最も一般的なシナリオは、既存の [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] コントロールがある場合です。  場合によっては、これらのコントロールのソース コードにアクセスできないことがあります。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、そのようなコントロールを [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションでホストするための簡単な手順が用意されています。  たとえば、特殊な <xref:System.Windows.Forms.DataGridView> コントロールをホストしながら、ほとんどのプログラミングには [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] を使用できます。  
+# <a name="walkthrough-hosting-a-windows-forms-composite-control-in-wpf"></a><span data-ttu-id="82d43-102">チュートリアル: WPF での Windows フォーム複合コントロールのホスト</span><span class="sxs-lookup"><span data-stu-id="82d43-102">Walkthrough: Hosting a Windows Forms Composite Control in WPF</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="82d43-103"> は、アプリケーションの作成に適した環境を提供します。</span><span class="sxs-lookup"><span data-stu-id="82d43-103"> provides a rich environment for creating applications.</span></span> <span data-ttu-id="82d43-104">ただしがある場合、かなりの投資[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]コード、だということには、少なくともを再利用すると効率的では、そのコードの一部、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションではなく最初から書き換えをします。</span><span class="sxs-lookup"><span data-stu-id="82d43-104">However, when you have a substantial investment in [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] code, it can be more effective to reuse at least some of that code in your [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application rather than to rewrite it from scratch.</span></span> <span data-ttu-id="82d43-105">最も一般的なシナリオは、既存のある場合[!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)]コントロール。</span><span class="sxs-lookup"><span data-stu-id="82d43-105">The most common scenario is when you have existing [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] controls.</span></span> <span data-ttu-id="82d43-106">場合によっては、するがありますいないでもこれらのコントロールのソース コードへのアクセス。</span><span class="sxs-lookup"><span data-stu-id="82d43-106">In some cases, you might not even have access to the source code for these controls.</span></span> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="82d43-107">このようなコントロールをホストするため、簡単な手順を提供する[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="82d43-107"> provides a straightforward procedure for hosting such controls in a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application.</span></span> <span data-ttu-id="82d43-108">たとえば、使用することができます[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]、特殊なをホストしているときに、プログラミングのほとんどの<xref:System.Windows.Forms.DataGridView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="82d43-108">For example, you can use [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] for most of your programming while hosting your specialized <xref:System.Windows.Forms.DataGridView> controls.</span></span>  
   
- このチュートリアルでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションで [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] 複合コントロールをホストしてデータ エントリを実行するアプリケーションについて段階的に説明します。  複合コントロールは DLL にパッケージ化されています。  この一般的な手順は、さらに複雑なアプリケーションやコントロールに拡張できます。  このチュートリアルは、外観および機能が「[チュートリアル: Windows フォームでの WPF 複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)」の例とほぼ同じになるように設計されています。  主な違いは、ホストする側とされる側が逆であることです。  
+ <span data-ttu-id="82d43-109">このチュートリアル手順を説明してアプリケーションをホストする、[!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)]複合コントロールでのデータ入力を実行する、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="82d43-109">This walkthrough steps you through an application that hosts a [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] composite control to perform data entry in a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application.</span></span> <span data-ttu-id="82d43-110">複合コントロールは DLL にパッケージ化されています。</span><span class="sxs-lookup"><span data-stu-id="82d43-110">The composite control is packaged in a DLL.</span></span> <span data-ttu-id="82d43-111">この一般的な手順は、より複雑なアプリケーションやコントロールに拡張することができます。</span><span class="sxs-lookup"><span data-stu-id="82d43-111">This general procedure can be extended to more complex applications and controls.</span></span> <span data-ttu-id="82d43-112">このチュートリアルは、外観と機能をほぼ同一である[チュートリアル: Windows フォームで WPF 複合コントロールをホストしている](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="82d43-112">This walkthrough is designed to be nearly identical in appearance and functionality to [Walkthrough: Hosting a WPF Composite Control in Windows Forms](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md).</span></span> <span data-ttu-id="82d43-113">主な違いは、ホストする側とされる側が逆であることです。</span><span class="sxs-lookup"><span data-stu-id="82d43-113">The primary difference is that the hosting scenario is reversed.</span></span>  
   
- チュートリアルは、2 つのセクションに分かれています。  最初のセクションでは、[!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] 複合コントロールの実装について簡単に説明します。  2 番目のセクションでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションで複合コントロールをホストし、コントロールからイベントを受け取って、コントロールのプロパティの一部にアクセスする方法について詳しく説明します。  
+ <span data-ttu-id="82d43-114">このチュートリアルは、2 つのセクションに分かれています。</span><span class="sxs-lookup"><span data-stu-id="82d43-114">The walkthrough is divided into two sections.</span></span> <span data-ttu-id="82d43-115">最初のセクションの実装をについて簡単に説明する、[!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)]複合コントロール。</span><span class="sxs-lookup"><span data-stu-id="82d43-115">The first section briefly describes the implementation of the [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] composite control.</span></span> <span data-ttu-id="82d43-116">2 番目のセクションで詳しく複合コントロールをホストする方法について説明します、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーション、コントロールからイベントを受け取るし、コントロールのプロパティの一部にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="82d43-116">The second section discusses in detail how to host the composite control in a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application, receive events from the control, and access some of the control's properties.</span></span>  
   
- このチュートリアルでは、以下のタスクを行います。  
+ <span data-ttu-id="82d43-117">このチュートリアルでは、以下のタスクを行います。</span><span class="sxs-lookup"><span data-stu-id="82d43-117">Tasks illustrated in this walkthrough include:</span></span>  
   
--   Windows フォーム複合コントロールの実装  
+-   <span data-ttu-id="82d43-118">Windows フォームの複合コントロールを実装します。</span><span class="sxs-lookup"><span data-stu-id="82d43-118">Implementing the Windows Forms composite control.</span></span>  
   
--   WPF ホスト アプリケーションの実装  
+-   <span data-ttu-id="82d43-119">WPF のホスト アプリケーションを実装します。</span><span class="sxs-lookup"><span data-stu-id="82d43-119">Implementing the WPF host application.</span></span>  
   
- このチュートリアルで示すタスクの完全なコード一覧については、[WPF での Windows フォーム複合コントロールのホストのサンプル](http://go.microsoft.com/fwlink/?LinkID=159999)を参照してください。  
+ <span data-ttu-id="82d43-120">このチュートリアルでタスクの完全なコードについては、次を参照してください。 [WPF サンプルでは、Windows フォームの複合コントロールをホストしている](http://go.microsoft.com/fwlink/?LinkID=159999)です。</span><span class="sxs-lookup"><span data-stu-id="82d43-120">For a complete code listing of the tasks illustrated in this walkthrough, see [Hosting a Windows Forms Composite Control in WPF Sample](http://go.microsoft.com/fwlink/?LinkID=159999).</span></span>  
   
-## 必要条件  
- このチュートリアルを実行するには、次のコンポーネントが必要です。  
+## <a name="prerequisites"></a><span data-ttu-id="82d43-121">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="82d43-121">Prerequisites</span></span>  
+ <span data-ttu-id="82d43-122">このチュートリアルを実行するには、次のコンポーネントが必要です。</span><span class="sxs-lookup"><span data-stu-id="82d43-122">You need the following components to complete this walkthrough:</span></span>  
   
--   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)].  
+-   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)]<span data-ttu-id="82d43-123">。</span><span class="sxs-lookup"><span data-stu-id="82d43-123">.</span></span>  
   
-## Windows フォーム複合コントロールの実装  
- この例で使用する [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] 複合コントロールは、単純なデータ入力フォームです。  このフォームは、ユーザーの名前と住所を受け取った後、カスタム イベントを使用してその情報をホストに返します。  レンダリングされたコントロールを次の図に示します。  
+## <a name="implementing-the-windows-forms-composite-control"></a><span data-ttu-id="82d43-124">Windows フォームの複合コントロールを実装します。</span><span class="sxs-lookup"><span data-stu-id="82d43-124">Implementing the Windows Forms Composite Control</span></span>  
+ <span data-ttu-id="82d43-125">[!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)]この例で使用される複合コントロールは、単純なデータ エントリ フォーム。</span><span class="sxs-lookup"><span data-stu-id="82d43-125">The [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] composite control used in this example is a simple data-entry form.</span></span> <span data-ttu-id="82d43-126">このフォームは、ユーザーの名前とアドレスを受け取りし、カスタム イベントを使用してホストにその情報を返します。</span><span class="sxs-lookup"><span data-stu-id="82d43-126">This form takes the user's name and address and then uses a custom event to return that information to the host.</span></span> <span data-ttu-id="82d43-127">次の図はレンダリングされたコントロールを示しています。</span><span class="sxs-lookup"><span data-stu-id="82d43-127">The following illustration shows the rendered control.</span></span>  
   
- ![シンプルな Windows フォーム コントロール](../../../../docs/framework/wpf/advanced/media/wfcontrol.png "WFControl")  
-Windows フォーム複合コントロール  
+ <span data-ttu-id="82d43-128">![単純な Windows フォーム コントロールの](../../../../docs/framework/wpf/advanced/media/wfcontrol.gif "WFControl")</span><span class="sxs-lookup"><span data-stu-id="82d43-128">![Simple Windows Forms control](../../../../docs/framework/wpf/advanced/media/wfcontrol.gif "WFControl")</span></span>  
+<span data-ttu-id="82d43-129">Windows フォームの複合コントロール</span><span class="sxs-lookup"><span data-stu-id="82d43-129">Windows Forms composite control</span></span>  
   
-### プロジェクトの作成  
- プロジェクトを開始するには  
+### <a name="creating-the-project"></a><span data-ttu-id="82d43-130">プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="82d43-130">Creating the Project</span></span>  
+ <span data-ttu-id="82d43-131">プロジェクトを開始するには</span><span class="sxs-lookup"><span data-stu-id="82d43-131">To start the project:</span></span>  
   
-1.  [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] を起動して、**\[新しいプロジェクト\]** ダイアログ ボックスを開きます。  
+1.  <span data-ttu-id="82d43-132">起動[!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)]、開き、**新しいプロジェクト** ダイアログ ボックス。</span><span class="sxs-lookup"><span data-stu-id="82d43-132">Launch [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], and open the **New Project** dialog box.</span></span>  
   
-2.  ウィンドウのカテゴリで、**\[Windows フォーム コントロール ライブラリ\]** テンプレートを選択します。  
+2.  <span data-ttu-id="82d43-133">[ウィンドウ] カテゴリの選択、 **Windows フォーム コントロール ライブラリ**テンプレート。</span><span class="sxs-lookup"><span data-stu-id="82d43-133">In the Window category, select the **Windows Forms Control Library** template.</span></span>  
   
-3.  新しいプロジェクトに `MyControls` という名前を付けます。  
+3.  <span data-ttu-id="82d43-134">新しいプロジェクトに `MyControls` という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="82d43-134">Name the new project `MyControls`.</span></span>  
   
-4.  配置場所としては、`WpfHostingWindowsFormsControl` など、わかりやすい名前を付けた最上位フォルダーを指定します。  このフォルダーには後でホスト アプリケーションも配置します。  
+4.  <span data-ttu-id="82d43-135">場所についてを指定して、簡単に名前付きのトップレベルのフォルダーなど`WpfHostingWindowsFormsControl`です。</span><span class="sxs-lookup"><span data-stu-id="82d43-135">For the location, specify a conveniently named top-level folder, such as `WpfHostingWindowsFormsControl`.</span></span> <span data-ttu-id="82d43-136">このフォルダーには後でホスト アプリケーションも配置します。</span><span class="sxs-lookup"><span data-stu-id="82d43-136">Later, you will put the host application in this folder.</span></span>  
   
-5.  **\[OK\]** をクリックして、プロジェクトを作成します。  既定のプロジェクトには、`UserControl1` という名前の 1 つのコントロールが含まれます。  
+5.  <span data-ttu-id="82d43-137">をクリックして**OK**プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="82d43-137">Click **OK** to create the project.</span></span> <span data-ttu-id="82d43-138">既定のプロジェクトには、という名前の 1 つのコントロールが含まれています。`UserControl1`です。</span><span class="sxs-lookup"><span data-stu-id="82d43-138">The default project contains a single control named `UserControl1`.</span></span>  
   
-6.  ソリューション エクスプローラーで、`UserControl1` の名前を `MyControl1` に変更します。  
+6.  <span data-ttu-id="82d43-139">ソリューション エクスプ ローラーで、名前を変更`UserControl1`に`MyControl1`です。</span><span class="sxs-lookup"><span data-stu-id="82d43-139">In Solution Explorer, rename `UserControl1` to `MyControl1`.</span></span>  
   
- プロジェクトは、次のシステム DLL を参照している必要があります。  これらの DLL のいずれかが既定で含まれていない場合は、プロジェクトに追加します。  
+ <span data-ttu-id="82d43-140">プロジェクトは、以下のシステム DLL を参照している必要があります。</span><span class="sxs-lookup"><span data-stu-id="82d43-140">Your project should have references to the following system DLLs.</span></span> <span data-ttu-id="82d43-141">既定で含まれていないこれらの Dll のいずれかの場合は、プロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="82d43-141">If any of these DLLs are not included by default, add them to the project.</span></span>  
   
--   システム  
+-   <span data-ttu-id="82d43-142">システム</span><span class="sxs-lookup"><span data-stu-id="82d43-142">System</span></span>  
   
--   System.Data  
+-   <span data-ttu-id="82d43-143">System.Data</span><span class="sxs-lookup"><span data-stu-id="82d43-143">System.Data</span></span>  
   
--   System.Drawing  
+-   <span data-ttu-id="82d43-144">System.Drawing</span><span class="sxs-lookup"><span data-stu-id="82d43-144">System.Drawing</span></span>  
   
--   System.Windows.Forms  
+-   <span data-ttu-id="82d43-145">System.Windows.Forms</span><span class="sxs-lookup"><span data-stu-id="82d43-145">System.Windows.Forms</span></span>  
   
--   System.Xml  
+-   <span data-ttu-id="82d43-146">System.Xml</span><span class="sxs-lookup"><span data-stu-id="82d43-146">System.Xml</span></span>  
   
-### フォームへのコントロールの追加  
- フォームにコントロールを追加するには、次の操作を実行します。  
+### <a name="adding-controls-to-the-form"></a><span data-ttu-id="82d43-147">フォームへのコントロールの追加</span><span class="sxs-lookup"><span data-stu-id="82d43-147">Adding Controls to the Form</span></span>  
+ <span data-ttu-id="82d43-148">フォームにコントロールを追加します。</span><span class="sxs-lookup"><span data-stu-id="82d43-148">To add controls to the form:</span></span>  
   
--   デザイナーで `MyControl1` を開きます。  
+-   <span data-ttu-id="82d43-149">開いている`MyControl1`デザイナーでします。</span><span class="sxs-lookup"><span data-stu-id="82d43-149">Open `MyControl1` in the designer.</span></span>  
   
- 5 つの <xref:System.Windows.Forms.Label> コントロールとそれに対応する <xref:System.Windows.Forms.TextBox> コントロールを、前の図と同じようなサイズと位置関係で、フォーム上に追加します。  この例では、<xref:System.Windows.Forms.TextBox> コントロールには次のような名前を付けます。  
+ <span data-ttu-id="82d43-150">5 個追加<xref:System.Windows.Forms.Label>コントロールとそれに対応する<xref:System.Windows.Forms.TextBox>コントロール、サイズ設定およびフォームで、前の図のように配置されます。</span><span class="sxs-lookup"><span data-stu-id="82d43-150">Add five <xref:System.Windows.Forms.Label> controls and their corresponding <xref:System.Windows.Forms.TextBox> controls, sized and arranged as they are in the preceding illustration, on the form.</span></span> <span data-ttu-id="82d43-151">この例で、<xref:System.Windows.Forms.TextBox>コントロールの名前が付けられます。</span><span class="sxs-lookup"><span data-stu-id="82d43-151">In the example, the <xref:System.Windows.Forms.TextBox> controls are named:</span></span>  
   
 -   `txtName`  
   
@@ -89,129 +95,129 @@ Windows フォーム複合コントロール
   
 -   `txtZip`  
   
- **OK** と **Cancel** というラベルを付けた 2 つの <xref:System.Windows.Forms.Button> コントロールを追加します。  この例では、ボタンの名前はそれぞれ `btnOK` と `btnCancel` です。  
+ <span data-ttu-id="82d43-152">2 つ追加<xref:System.Windows.Forms.Button>ラベル コントロール**OK**と**キャンセル**です。</span><span class="sxs-lookup"><span data-stu-id="82d43-152">Add two <xref:System.Windows.Forms.Button> controls labeled **OK** and **Cancel**.</span></span> <span data-ttu-id="82d43-153">ボタン名は、例では、`btnOK`と`btnCancel`、それぞれします。</span><span class="sxs-lookup"><span data-stu-id="82d43-153">In the example, the button names are `btnOK` and `btnCancel`, respectively.</span></span>  
   
-### サポート コードの実装  
- コード ビューでフォームを開きます。  コントロールは、カスタム `OnButtonClick` イベントを発生させることで、収集したデータをホストに返します。  データは、イベント引数オブジェクトに格納されています。  次のコードは、イベントとデリゲートの宣言を示しています。  
+### <a name="implementing-the-supporting-code"></a><span data-ttu-id="82d43-154">サポート コードの実装</span><span class="sxs-lookup"><span data-stu-id="82d43-154">Implementing the Supporting Code</span></span>  
+ <span data-ttu-id="82d43-155">コード ビューで、フォームを開きます。</span><span class="sxs-lookup"><span data-stu-id="82d43-155">Open the form in code view.</span></span> <span data-ttu-id="82d43-156">コントロールがそのホストにカスタムを発生させることによって、収集したデータを返します`OnButtonClick`イベント。</span><span class="sxs-lookup"><span data-stu-id="82d43-156">The control returns the collected data to its host by raising the custom `OnButtonClick` event.</span></span> <span data-ttu-id="82d43-157">データは、イベント引数オブジェクトに含まれます。</span><span class="sxs-lookup"><span data-stu-id="82d43-157">The data is contained in the event argument object.</span></span> <span data-ttu-id="82d43-158">次のコードは、イベントおよびデリゲートの宣言を示しています。</span><span class="sxs-lookup"><span data-stu-id="82d43-158">The following code shows the event and delegate declaration.</span></span>  
   
- `MyControl1` クラスに次のコードを追加します。  
+ <span data-ttu-id="82d43-159">`MyControl1` クラスに次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="82d43-159">Add the following code to the `MyControl1` class.</span></span>  
   
  [!code-csharp[WpfHostingWindowsFormsControl#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/CSharp/MyControls/MyControl1.cs#2)]
  [!code-vb[WpfHostingWindowsFormsControl#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/VisualBasic/MyControls/MyControl1.vb#2)]  
   
- `MyControlEventArgs` クラスには、ホストに返される情報が格納されます。  
+ <span data-ttu-id="82d43-160">`MyControlEventArgs`クラスには、ホストに返される情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="82d43-160">The `MyControlEventArgs` class contains the information to be returned to the host.</span></span>  
   
- 次のクラスをフォームに追加します。  
+ <span data-ttu-id="82d43-161">フォームに次のクラスを追加します。</span><span class="sxs-lookup"><span data-stu-id="82d43-161">Add the following class to the form.</span></span>  
   
  [!code-csharp[WpfHostingWindowsFormsControl#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/CSharp/MyControls/MyControl1.cs#3)]
  [!code-vb[WpfHostingWindowsFormsControl#3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/VisualBasic/MyControls/MyControl1.vb#3)]  
   
- ユーザーが \[OK\] ボタンまたは \[Cancel\] ボタンをクリックすると、<xref:System.Windows.Forms.Control.Click> イベント ハンドラーはデータを格納した `MyControlEventArgs` オブジェクトを作成し、`OnButtonClick` イベントを発生させます。  2 つのハンドラーの違いは、イベント引数の `IsOK` プロパティだけです。  このプロパティにより、ホストはどちらのボタンがクリックされたのかを判別できます。  \[OK\] ボタンの場合は `true` が設定され、\[Cancel\] ボタンの場合は `false` が設定されます。  次のコード例は、2 つのボタン ハンドラーを示しています。  
+ <span data-ttu-id="82d43-162">ユーザーがクリックしたとき、 **[ok]**または**キャンセル**ボタン、<xref:System.Windows.Forms.Control.Click>イベント ハンドラーを作成、`MyControlEventArgs`データを格納しているオブジェクトを生成し、`OnButtonClick`イベント。</span><span class="sxs-lookup"><span data-stu-id="82d43-162">When the user clicks the **OK** or **Cancel** button, the <xref:System.Windows.Forms.Control.Click> event handlers create a `MyControlEventArgs` object that contains the data and raises the `OnButtonClick` event.</span></span> <span data-ttu-id="82d43-163">2 つのハンドラーの唯一の違いは、イベント引数の`IsOK`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="82d43-163">The only difference between the two handlers is the event argument's `IsOK` property.</span></span> <span data-ttu-id="82d43-164">このプロパティは、ホストがクリックしてされたボタンを決定できます。</span><span class="sxs-lookup"><span data-stu-id="82d43-164">This property enables the host to determine which button was clicked.</span></span> <span data-ttu-id="82d43-165">設定されている`true`の**[ok]**ボタン、および`false`の**キャンセル**ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="82d43-165">It is set to `true` for the **OK** button, and `false` for the **Cancel** button.</span></span> <span data-ttu-id="82d43-166">次のコードは、次の 2 つのボタン ハンドラーを示しています。</span><span class="sxs-lookup"><span data-stu-id="82d43-166">The following code shows the two button handlers.</span></span>  
   
- `MyControl1` クラスに次のコードを追加します。  
+ <span data-ttu-id="82d43-167">`MyControl1` クラスに次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="82d43-167">Add the following code to the `MyControl1` class.</span></span>  
   
  [!code-csharp[WpfHostingWindowsFormsControl#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/CSharp/MyControls/MyControl1.cs#4)]
  [!code-vb[WpfHostingWindowsFormsControl#4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/VisualBasic/MyControls/MyControl1.vb#4)]  
   
-### アセンブリへの厳密な名前の設定とアセンブリのビルド  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションからこのアセンブリを参照するには、アセンブリに厳密な名前を付ける必要があります。  厳密な名前を作成するには、Sn.exe でキー ファイルを作成し、それをプロジェクトに追加します。  
+### <a name="giving-the-assembly-a-strong-name-and-building-the-assembly"></a><span data-ttu-id="82d43-168">アセンブリに厳密な名前を付けると、アセンブリのビルド</span><span class="sxs-lookup"><span data-stu-id="82d43-168">Giving the Assembly a Strong Name and Building the Assembly</span></span>  
+ <span data-ttu-id="82d43-169">このアセンブリによって参照されていること、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーション、厳密な名前を持つ必要があります。</span><span class="sxs-lookup"><span data-stu-id="82d43-169">For this assembly to be referenced by a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application, it must have a strong name.</span></span> <span data-ttu-id="82d43-170">厳密な名前を作成するに Sn.exe のキー ファイルを作成し、プロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="82d43-170">To create a strong name, create a key file with Sn.exe and add it to your project.</span></span>  
   
-1.  [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)] のコマンド プロンプトを開きます。  この操作を行うには、**\[スタート\]** ボタンをクリックし、**\[すべてのプログラム\]**、\[Microsoft Visual Studio 2010\]、\[Visual Studio ツール\] の順にポイントして、\[Visual Studio コマンド プロンプト\] をクリックします。  カスタマイズされた環境変数でコンソール ウィンドウが起動されます。  
+1.  <span data-ttu-id="82d43-171">[!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)] のコマンド プロンプトを開きます。</span><span class="sxs-lookup"><span data-stu-id="82d43-171">Open a [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)] command prompt.</span></span> <span data-ttu-id="82d43-172">これを行うには、をクリックして、**開始**メニューをクリックして**すべてプログラム/Microsoft Visual Studio 2010 または Visual Studio Tools と Visual Studio コマンド プロンプト**です。</span><span class="sxs-lookup"><span data-stu-id="82d43-172">To do so, click the **Start** menu, and then select **All Programs/Microsoft Visual Studio 2010/Visual Studio Tools/Visual Studio Command Prompt**.</span></span> <span data-ttu-id="82d43-173">これは、カスタマイズされた環境変数とコンソール ウィンドウを起動します。</span><span class="sxs-lookup"><span data-stu-id="82d43-173">This launches a console window with customized environment variables.</span></span>  
   
-2.  コマンド プロンプトで、`cd` コマンドを使用してプロジェクト フォルダーに移動します。  
+2.  <span data-ttu-id="82d43-174">コマンド プロンプトを使用して、`cd`コマンドをプロジェクト フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="82d43-174">At the command prompt, use the `cd` command to go to your project folder.</span></span>  
   
-3.  次のコマンドを実行し、MyControls.snk という名前のキー ファイルを生成します。  
+3.  <span data-ttu-id="82d43-175">次のコマンドを実行して MyControls.snk をという名前のキー ファイルを生成します。</span><span class="sxs-lookup"><span data-stu-id="82d43-175">Generate a key file named MyControls.snk by running the following command.</span></span>  
   
     ```  
     Sn.exe -k MyControls.snk  
     ```  
   
-4.  キー ファイルをプロジェクトに組み込むには、ソリューション エクスプローラーでプロジェクト名を右クリックし、**\[プロパティ\]** をクリックします。  プロジェクト デザイナーで、**\[署名\]** タブをクリックし、**\[アセンブリの署名\]** チェック ボックスをオンにして、キー ファイルを参照します。  
+4.  <span data-ttu-id="82d43-176">キー ファイルをプロジェクトに含める、ソリューション エクスプ ローラーでプロジェクト名を右クリックし、をクリックして**プロパティ**です。</span><span class="sxs-lookup"><span data-stu-id="82d43-176">To include the key file in your project, right-click the project name in Solution Explorer and then click **Properties**.</span></span> <span data-ttu-id="82d43-177">プロジェクト デザイナーで、をクリックして、**署名**] タブで、[、**アセンブリに署名**チェック ボックスをオンし、キー ファイルを参照します。</span><span class="sxs-lookup"><span data-stu-id="82d43-177">In the Project Designer, click the **Signing** tab, select the **Sign the assembly** check box and then browse to your key file.</span></span>  
   
-5.  ソリューションをビルドします。  ビルドでは、MyControls.dll という名前の DLL が生成されます。  
+5.  <span data-ttu-id="82d43-178">ソリューションをビルドします。</span><span class="sxs-lookup"><span data-stu-id="82d43-178">Build the solution.</span></span> <span data-ttu-id="82d43-179">ビルドでは、MyControls.dll という名前の DLL が生成されます。</span><span class="sxs-lookup"><span data-stu-id="82d43-179">The build will produce a DLL named MyControls.dll.</span></span>  
   
-## WPF ホスト アプリケーションの実装  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ホスト アプリケーションは、<xref:System.Windows.Forms.Integration.WindowsFormsHost> コントロールを使用して `MyControl1` をホストします。  アプリケーションは、`OnButtonClick` イベントを処理して、コントロールからデータを受け取ります。  また、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションからコントロールの一部のプロパティを変更できるオプション ボタンのコレクションもあります。  最終的なアプリケーションを次の図に示します。  
+## <a name="implementing-the-wpf-host-application"></a><span data-ttu-id="82d43-180">WPF のホスト アプリケーションの実装</span><span class="sxs-lookup"><span data-stu-id="82d43-180">Implementing the WPF Host Application</span></span>  
+ <span data-ttu-id="82d43-181">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ホスト アプリケーションで使用する、<xref:System.Windows.Forms.Integration.WindowsFormsHost>コントロールをホストに`MyControl1`です。</span><span class="sxs-lookup"><span data-stu-id="82d43-181">The [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] host application uses the <xref:System.Windows.Forms.Integration.WindowsFormsHost> control to host `MyControl1`.</span></span> <span data-ttu-id="82d43-182">アプリケーションのハンドル、`OnButtonClick`コントロールからデータを受信するイベントです。</span><span class="sxs-lookup"><span data-stu-id="82d43-182">The application handles the `OnButtonClick` event to receive the data from the control.</span></span> <span data-ttu-id="82d43-183">さらから、コントロールのプロパティの一部を変更するためのオプション ボタンのコレクション、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="82d43-183">It also has a collection of option buttons that enable you to change some of the control's properties from the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application.</span></span> <span data-ttu-id="82d43-184">次の図は、完成したアプリケーションを示します。</span><span class="sxs-lookup"><span data-stu-id="82d43-184">The following illustration shows the finished application.</span></span>  
   
- ![WPF ページに埋め込まれたコントロール](../../../../docs/framework/wpf/advanced/media/avalonhost.png "AvalonHost")  
-WPF アプリケーションに埋め込まれたコントロールが表示されている完成したアプリケーション  
+ <span data-ttu-id="82d43-185">![WPF ページに埋め込まれたコントロール](../../../../docs/framework/wpf/advanced/media/avalonhost.gif "AvalonHost")</span><span class="sxs-lookup"><span data-stu-id="82d43-185">![A control embedded in a WPF page](../../../../docs/framework/wpf/advanced/media/avalonhost.gif "AvalonHost")</span></span>  
+<span data-ttu-id="82d43-186">完全なアプリケーションでは、コントロールを表示する WPF アプリケーションに埋め込まれています。</span><span class="sxs-lookup"><span data-stu-id="82d43-186">The complete application, showing the control embedded in the WPF application</span></span>  
   
-### プロジェクトの作成  
- プロジェクトを開始するには  
+### <a name="creating-the-project"></a><span data-ttu-id="82d43-187">プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="82d43-187">Creating the Project</span></span>  
+ <span data-ttu-id="82d43-188">プロジェクトを開始するには</span><span class="sxs-lookup"><span data-stu-id="82d43-188">To start the project:</span></span>  
   
-1.  [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)] を開き、\[新しいプロジェクト\] を選択します。  
+1.  <span data-ttu-id="82d43-189">開いている[!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)]を選択して**新しいプロジェクト**です。</span><span class="sxs-lookup"><span data-stu-id="82d43-189">Open [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], and select **New Project**.</span></span>  
   
-2.  ウィンドウのカテゴリで、**\[WPF アプリケーション\]** テンプレートを選択します。  
+2.  <span data-ttu-id="82d43-190">[ウィンドウ] カテゴリの選択、 **WPF アプリケーション**テンプレート。</span><span class="sxs-lookup"><span data-stu-id="82d43-190">In the Window category, select the **WPF Application** template.</span></span>
   
-3.  新しいプロジェクトに `WpfHost` という名前を付けます。  
+3.  <span data-ttu-id="82d43-191">新しいプロジェクトに `WpfHost` という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="82d43-191">Name the new project `WpfHost`.</span></span>  
   
-4.  配置場所としては、MyControls プロジェクトの配置先と同じ最上位フォルダーを指定します。  
+4.  <span data-ttu-id="82d43-192">配置場所として、MyControls の配置先と同じ最上位フォルダーを指定します。</span><span class="sxs-lookup"><span data-stu-id="82d43-192">For the location, specify the same top-level folder that contains the MyControls project.</span></span>  
   
-5.  **\[OK\]** をクリックして、プロジェクトを作成します。  
+5.  <span data-ttu-id="82d43-193">をクリックして**OK**プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="82d43-193">Click **OK** to create the project.</span></span>  
   
- `MyControl1` および他のアセンブリを含む DLL への参照も追加する必要があります。  
+ <span data-ttu-id="82d43-194">含む DLL への参照を追加する必要があります`MyControl1`およびその他のアセンブリ。</span><span class="sxs-lookup"><span data-stu-id="82d43-194">You also need to add references to the DLL that contains `MyControl1` and other assemblies.</span></span>  
   
-1.  ソリューション エクスプローラーで、プロジェクト名を右クリックし、**\[参照の追加\]** を選択します。  
+1.  <span data-ttu-id="82d43-195">ソリューション エクスプ ローラーでプロジェクト名を右クリックし **参照の追加**です。</span><span class="sxs-lookup"><span data-stu-id="82d43-195">Right-click the project name in Solution Explorer and select **Add Reference**.</span></span>  
   
-2.  **\[参照\]** タブをクリックし、MyControls.dll を格納しているフォルダーを参照します。  このチュートリアルの場合は、MyControls\\bin\\Debug フォルダーです。  
+2.  <span data-ttu-id="82d43-196">クリックして、**参照**タブをクリックし、MyControls.dll を含まれているフォルダーを参照します。</span><span class="sxs-lookup"><span data-stu-id="82d43-196">Click the **Browse** tab, and browse to the folder that contains MyControls.dll.</span></span> <span data-ttu-id="82d43-197">このチュートリアルの場合は、MyControls\bin\Debug フォルダーです。</span><span class="sxs-lookup"><span data-stu-id="82d43-197">For this walkthrough, this folder is MyControls\bin\Debug.</span></span>  
   
-3.  MyControls.dll を選択し、**\[OK\]** をクリックします。  
+3.  <span data-ttu-id="82d43-198">MyControls.dll を選択し、クリックして**OK**です。</span><span class="sxs-lookup"><span data-stu-id="82d43-198">Select MyControls.dll, and then click **OK**.</span></span>  
   
-4.  WindowsFormsIntegration.dll という名前の WindowsFormsIntegration アセンブリに参照を追加します。  
+4.  <span data-ttu-id="82d43-199">WindowsFormsIntegration.dll と呼ばれる WindowsFormsIntegration アセンブリへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="82d43-199">Add a reference to the WindowsFormsIntegration assembly, which is named WindowsFormsIntegration.dll.</span></span>  
   
-### 基本レイアウトの実装  
- ホスト アプリケーションの[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] は、MainWindow.xaml で実装されます。  このファイルは、レイアウトを定義する [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] マークアップを含み、[!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] コントロールをホストします。  アプリケーションは次の 3 つの領域に分かれています。  
+### <a name="implementing-the-basic-layout"></a><span data-ttu-id="82d43-200">基本的なレイアウトを実装します。</span><span class="sxs-lookup"><span data-stu-id="82d43-200">Implementing the Basic Layout</span></span>  
+ <span data-ttu-id="82d43-201">[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] MainWindow.xaml で、ホストのアプリケーションを実装します。</span><span class="sxs-lookup"><span data-stu-id="82d43-201">The [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] of the host application is implemented in MainWindow.xaml.</span></span> <span data-ttu-id="82d43-202">このファイルを含む[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]レイアウトを定義しをホストするマークアップを[!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)]コントロール。</span><span class="sxs-lookup"><span data-stu-id="82d43-202">This file contains [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] markup that defines the layout, and hosts the [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] control.</span></span> <span data-ttu-id="82d43-203">アプリケーションは、3 つの領域に分かれています。</span><span class="sxs-lookup"><span data-stu-id="82d43-203">The application is divided into three regions:</span></span>  
   
--   \[Control Properties\] パネルには、ホストされるコントロールのさまざまなプロパティの変更に使用できるオプション ボタンのコレクションが含まれます。  
+-   <span data-ttu-id="82d43-204">**コントロール プロパティ**パネルで、ホストされるコントロールのさまざまなプロパティを変更に使用できるオプション ボタンのコレクションを格納します。</span><span class="sxs-lookup"><span data-stu-id="82d43-204">The **Control Properties** panel, which contains a collection of option buttons that you can use to modify various properties of the hosted control.</span></span>  
   
--   \[Data from Control\] パネルには、ホストされるコントロールから返されるデータを表示する <xref:System.Windows.Controls.TextBlock> 要素が含まれます。  
+-   <span data-ttu-id="82d43-205">**コントロールからのデータ**パネルで、いくつか示します<xref:System.Windows.Controls.TextBlock>ホストされるコントロールからデータを表示する要素が返されます。</span><span class="sxs-lookup"><span data-stu-id="82d43-205">The **Data from Control** panel, which contains several <xref:System.Windows.Controls.TextBlock> elements that display the data returned from the hosted control.</span></span>  
   
--   ホストされるコントロール自体。  
+-   <span data-ttu-id="82d43-206">ホストされるコントロール自体です。</span><span class="sxs-lookup"><span data-stu-id="82d43-206">The hosted control itself.</span></span>  
   
- 基本的なレイアウトを次の XAML に示します。  `MyControl1` をホストするために必要なマークアップはこの例では省略されていますが、これについては後で説明します。  
+ <span data-ttu-id="82d43-207">次の XAML では、基本的なレイアウトが表示されます。</span><span class="sxs-lookup"><span data-stu-id="82d43-207">The basic layout is shown in the following XAML.</span></span> <span data-ttu-id="82d43-208">必要なマークアップをホストに`MyControl1`はからこの例では、省略されたものの、後で説明されています。</span><span class="sxs-lookup"><span data-stu-id="82d43-208">The markup that is needed to host `MyControl1` is omitted from this example, but will be discussed later.</span></span>  
   
- MainWindow.xaml 内の XAML を次のコードに置き換えます。  Visual Basic を使用している場合は、クラスを `x:Class="MainWindow"` に変更します。  
+ <span data-ttu-id="82d43-209">次の MainWindow.xaml で XAML に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="82d43-209">Replace the XAML in MainWindow.xaml with the following.</span></span> <span data-ttu-id="82d43-210">Visual Basic を使用している場合にクラスを変更`x:Class="MainWindow"`です。</span><span class="sxs-lookup"><span data-stu-id="82d43-210">If you are using Visual Basic, change the class to `x:Class="MainWindow"`.</span></span>  
   
- [!code-xml[WpfHostingWindowsFormsControl#100](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/CSharp/WpfHost/Page1.xaml#100)]  
+ [!code-xaml[WpfHostingWindowsFormsControl#100](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/CSharp/WpfHost/Page1.xaml#100)]  
   
- 最初の <xref:System.Windows.Controls.StackPanel> 要素には、ホストされるコントロールのさまざまな既定のプロパティを変更できる一連の <xref:System.Windows.Controls.RadioButton> コントロールが含まれます。  その後にある <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素は、`MyControl1` をホストします。  最後の <xref:System.Windows.Controls.StackPanel> 要素には、ホストされるコントロールから返されるデータを表示する <xref:System.Windows.Controls.TextBlock> 要素が含まれます。  要素の順序、および <xref:System.Windows.Controls.DockPanel.Dock%2A> 属性と <xref:System.Windows.FrameworkElement.Height%2A> 属性の設定により、すきまやゆがみがないように、ホストされるコントロールがウィンドウに埋め込まれます。  
+ <span data-ttu-id="82d43-211">最初の<xref:System.Windows.Controls.StackPanel>要素には、複数のセットが含まれています。<xref:System.Windows.Controls.RadioButton>ホストされるコントロールのさまざまな既定のプロパティを変更することができるようにするコントロール。</span><span class="sxs-lookup"><span data-stu-id="82d43-211">The first <xref:System.Windows.Controls.StackPanel> element contains several sets of <xref:System.Windows.Controls.RadioButton> controls that enable you to modify various default properties of the hosted control.</span></span> <span data-ttu-id="82d43-212">後に、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素、どのホスト`MyControl1`です。</span><span class="sxs-lookup"><span data-stu-id="82d43-212">That is followed by a <xref:System.Windows.Forms.Integration.WindowsFormsHost> element, which hosts `MyControl1`.</span></span> <span data-ttu-id="82d43-213">最終的な<xref:System.Windows.Controls.StackPanel>要素では、いくつか含まれています<xref:System.Windows.Controls.TextBlock>ホストされるコントロールによって返されるデータを表示する要素。</span><span class="sxs-lookup"><span data-stu-id="82d43-213">The final <xref:System.Windows.Controls.StackPanel> element contains several <xref:System.Windows.Controls.TextBlock> elements that display the data that is returned by the hosted control.</span></span> <span data-ttu-id="82d43-214">要素の順序と<xref:System.Windows.Controls.DockPanel.Dock%2A>と<xref:System.Windows.FrameworkElement.Height%2A>属性の設定は、ギャップや歪みなしで、ウィンドウにホストされるコントロールを埋め込みます。</span><span class="sxs-lookup"><span data-stu-id="82d43-214">The ordering of the elements and the <xref:System.Windows.Controls.DockPanel.Dock%2A> and <xref:System.Windows.FrameworkElement.Height%2A> attribute settings embed the hosted control into the window with no gaps or distortion.</span></span>  
   
-#### コントロールのホスト  
- 次のコードは前の XAML を編集したものですが、ここでは `MyControl1` をホストするために必要な要素に焦点を当てます。  
+#### <a name="hosting-the-control"></a><span data-ttu-id="82d43-215">コントロールをホストしています。</span><span class="sxs-lookup"><span data-stu-id="82d43-215">Hosting the Control</span></span>  
+ <span data-ttu-id="82d43-216">次の編集したバージョン以前の XAML のについて重点的に必要な要素をホストに`MyControl1`です。</span><span class="sxs-lookup"><span data-stu-id="82d43-216">The following edited version of the previous XAML focuses on the elements that are needed to host `MyControl1`.</span></span>  
   
- [!code-xml[WpfHostingWindowsFormsControl#101](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/CSharp/WpfHost/Page1.xaml#101)]  
-[!code-xml[WpfHostingWindowsFormsControl#102](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/CSharp/WpfHost/Page1.xaml#102)]  
+ [!code-xaml[WpfHostingWindowsFormsControl#101](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/CSharp/WpfHost/Page1.xaml#101)]  
+[!code-xaml[WpfHostingWindowsFormsControl#102](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/CSharp/WpfHost/Page1.xaml#102)]  
   
- `xmlns` 名前空間の割り当ての属性により、ホストされるコントロールを格納する `MyControls` 名前空間への参照が作成されます。  この割り当てにより、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] で `MyControl1` を `<mcl:MyControl1>` として表すことができます。  
+ <span data-ttu-id="82d43-217">`xmlns`名前空間のマッピング属性への参照を作成する、`MyControls`ホストされるコントロールを含む名前空間です。</span><span class="sxs-lookup"><span data-stu-id="82d43-217">The `xmlns` namespace mapping attribute creates a reference to the `MyControls` namespace that contains the hosted control.</span></span> <span data-ttu-id="82d43-218">このマッピングを使用すると、表す`MyControl1`で[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]として`<mcl:MyControl1>`です。</span><span class="sxs-lookup"><span data-stu-id="82d43-218">This mapping enables you to represent `MyControl1` in [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] as `<mcl:MyControl1>`.</span></span>  
   
- XAML に含まれる次の 2 つの要素がホストを処理します。  
+ <span data-ttu-id="82d43-219">XAML での 2 つの要素は、ホスティングを処理します。</span><span class="sxs-lookup"><span data-stu-id="82d43-219">Two elements in the XAML handle the hosting:</span></span>  
   
--   `WindowsFormsHost` は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションでの [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] コントロールのホストを可能にする <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素を表します。  
+-   <span data-ttu-id="82d43-220">`WindowsFormsHost`表す、<xref:System.Windows.Forms.Integration.WindowsFormsHost>ホストに使用すると要素、[!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)]内の制御、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="82d43-220">`WindowsFormsHost` represents the <xref:System.Windows.Forms.Integration.WindowsFormsHost> element that enables you to host a [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] control in a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application.</span></span>  
   
--   `MyControl1` を表す `mcl:MyControl1` は、<xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素の子コレクションに追加されます。  結果として、この [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] コントロールは [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ウィンドウの一部としてレンダリングされ、アプリケーションからコントロールと通信できます。  
+-   <span data-ttu-id="82d43-221">`mcl:MyControl1`、を表す`MyControl1`、に追加、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素の子のコレクション。</span><span class="sxs-lookup"><span data-stu-id="82d43-221">`mcl:MyControl1`, which represents `MyControl1`, is added to the <xref:System.Windows.Forms.Integration.WindowsFormsHost> element's child collection.</span></span> <span data-ttu-id="82d43-222">その結果、この[!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)]の一部としてコントロールを表示、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ウィンドウ、およびするが、アプリケーションからコントロールと通信できます。</span><span class="sxs-lookup"><span data-stu-id="82d43-222">As a result, this [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] control is rendered as part of the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] window, and you can communicate with the control from the application.</span></span>  
   
-### 分離コード ファイルの実装  
- 分離コード ファイル MainWindow.xaml.vb または MainWindow.xaml.cs には、前のセクションで説明した [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] の機能を実装する手順コードが含まれます。  主要なタスクは次のとおりです。  
+### <a name="implementing-the-code-behind-file"></a><span data-ttu-id="82d43-223">分離コード ファイルの実装</span><span class="sxs-lookup"><span data-stu-id="82d43-223">Implementing the Code-Behind File</span></span>  
+ <span data-ttu-id="82d43-224">MainWindow.xaml.vb または MainWindow.xaml.cs で、分離コード ファイルには、機能を実装する手順のコードが含まれています、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]前のセクションで説明します。</span><span class="sxs-lookup"><span data-stu-id="82d43-224">The code-behind file, MainWindow.xaml.vb or MainWindow.xaml.cs, contains the procedural code that implements the functionality of the [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] discussed in the preceding section.</span></span> <span data-ttu-id="82d43-225">主要なタスクは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="82d43-225">The primary tasks are:</span></span>  
   
--   `MyControl1` の `OnButtonClick` イベントへのイベント ハンドラーのアタッチ。  
+-   <span data-ttu-id="82d43-226">イベント ハンドラーをアタッチする`MyControl1`の`OnButtonClick`イベント。</span><span class="sxs-lookup"><span data-stu-id="82d43-226">Attaching an event handler to `MyControl1`'s `OnButtonClick` event.</span></span>  
   
--   一連のオプション ボタンの設定に基づく、`MyControl1` のさまざまなプロパティの変更。  
+-   <span data-ttu-id="82d43-227">さまざまなプロパティを変更する`MyControl1`オプション ボタンのコレクションを設定する方法に基づきます。</span><span class="sxs-lookup"><span data-stu-id="82d43-227">Modifying various properties of `MyControl1`, based on how the collection of option buttons are set.</span></span>  
   
--   コントロールによって収集されたデータの表示。  
+-   <span data-ttu-id="82d43-228">コントロールによって収集されたデータを表示します。</span><span class="sxs-lookup"><span data-stu-id="82d43-228">Displaying the data collected by the control.</span></span>  
   
-#### アプリケーションの初期化  
- 初期化コードは、ウィンドウの <xref:System.Windows.FrameworkElement.Loaded> イベントのイベント ハンドラーに含まれ、イベント ハンドラーをコントロールの `OnButtonClick` イベントにアタッチします。  
+#### <a name="initializing-the-application"></a><span data-ttu-id="82d43-229">アプリケーションの初期化</span><span class="sxs-lookup"><span data-stu-id="82d43-229">Initializing the Application</span></span>  
+ <span data-ttu-id="82d43-230">ウィンドウのイベント ハンドラーの初期化コードが含まれている<xref:System.Windows.FrameworkElement.Loaded>イベントをコントロールのイベント ハンドラーをアタッチおよび`OnButtonClick`イベント。</span><span class="sxs-lookup"><span data-stu-id="82d43-230">The initialization code is contained in an event handler for the window's <xref:System.Windows.FrameworkElement.Loaded> event and attaches an event handler to the control's `OnButtonClick` event.</span></span>  
   
- MainWindow.xaml.vb または MainWindow.xaml.cs で、`MainWindow` クラスに次のコードを追加します。  
+ <span data-ttu-id="82d43-231">MainWindow.xaml.vb または MainWindow.xaml.cs で、次のコードを追加、`MainWindow`クラスです。</span><span class="sxs-lookup"><span data-stu-id="82d43-231">In MainWindow.xaml.vb or MainWindow.xaml.cs, add the following code to the `MainWindow` class.</span></span>  
   
  [!code-csharp[WpfHostingWindowsFormsControl#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/CSharp/WpfHost/Page1.xaml.cs#11)]
  [!code-vb[WpfHostingWindowsFormsControl#11](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/VisualBasic/WpfHost/Page1.xaml.vb#11)]  
   
- 前述の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] によって、`MyControl1` が <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素の子要素コレクションに追加されているため、<xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素の <xref:System.Windows.Forms.Integration.WindowsFormsHost.Child%2A> をキャストして `MyControl1` への参照を取得できます。  その後、その参照を使用して、イベント ハンドラーを `OnButtonClick` にアタッチすることができます。  
+ <span data-ttu-id="82d43-232">[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]以前に追加された説明`MyControl1`を<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素の子要素のコレクションをキャストすること、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素の<xref:System.Windows.Forms.Integration.WindowsFormsHost.Child%2A>への参照を取得する`MyControl1`です。</span><span class="sxs-lookup"><span data-stu-id="82d43-232">Because the [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] discussed previously added `MyControl1` to the <xref:System.Windows.Forms.Integration.WindowsFormsHost> element's child element collection, you can cast the <xref:System.Windows.Forms.Integration.WindowsFormsHost> element's <xref:System.Windows.Forms.Integration.WindowsFormsHost.Child%2A> to get the reference to `MyControl1`.</span></span> <span data-ttu-id="82d43-233">イベント ハンドラーをアタッチする、その参照を使用することができますし、`OnButtonClick`です。</span><span class="sxs-lookup"><span data-stu-id="82d43-233">You can then use that reference to attach an event handler to `OnButtonClick`.</span></span>  
   
- コントロール自体への参照を提供するだけでなく、<xref:System.Windows.Forms.Integration.WindowsFormsHost> ではさまざまなコントロールのプロパティも公開されており、アプリケーションからそれを操作できます。  初期化コードは、後でアプリケーションで使用するため、これらの値をプライベート グローバル変数に代入します。  
+ <span data-ttu-id="82d43-234">コントロール自体への参照を提供するだけでなく<xref:System.Windows.Forms.Integration.WindowsFormsHost>は、アプリケーションから操作できるは、コントロールのプロパティの数を表示します。</span><span class="sxs-lookup"><span data-stu-id="82d43-234">In addition to providing a reference to the control itself, <xref:System.Windows.Forms.Integration.WindowsFormsHost> exposes a number of the control's properties, which you can manipulate from the application.</span></span> <span data-ttu-id="82d43-235">初期化コードは、後で使用するアプリケーションでのグローバル変数をプライベートにそれらの値を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="82d43-235">The initialization code assigns those values to private global variables for later use in the application.</span></span>  
   
- `MyControls` DLL の種類に簡単にアクセスできるように、次の `Imports` ステートメントまたは `using` ステートメントをファイルの先頭に追加します。  
+ <span data-ttu-id="82d43-236">内の型を簡単にアクセスできるように、 `MyControls` DLL、次の追加`Imports`または`using`ステートメント ファイルの先頭にします。</span><span class="sxs-lookup"><span data-stu-id="82d43-236">So that you can easily access the types in the `MyControls` DLL, add the following `Imports` or `using` statement to the top of the file.</span></span>  
   
 ```vb  
 Imports MyControls  
@@ -221,29 +227,29 @@ Imports MyControls
 using MyControls;  
 ```  
   
-#### OnButtonClick イベントの処理  
- ユーザーがコントロールのボタンのいずれかをクリックすると、`MyControl1` が `OnButtonClick` イベントを発生させます。  
+#### <a name="handling-the-onbuttonclick-event"></a><span data-ttu-id="82d43-237">OnButtonClick イベントの処理</span><span class="sxs-lookup"><span data-stu-id="82d43-237">Handling the OnButtonClick Event</span></span>  
+ <span data-ttu-id="82d43-238">`MyControl1`発生させる、`OnButtonClick`イベント、ユーザーがコントロールのボタンのいずれかをクリックします。</span><span class="sxs-lookup"><span data-stu-id="82d43-238">`MyControl1` raises the `OnButtonClick` event when the user clicks either of the control's buttons.</span></span>  
   
- `MainWindow` クラスに次のコードを追加します。  
+ <span data-ttu-id="82d43-239">`MainWindow` クラスに次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="82d43-239">Add the following code to the `MainWindow` class.</span></span>  
   
  [!code-csharp[WpfHostingWindowsFormsControl#12](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/CSharp/WpfHost/Page1.xaml.cs#12)]
  [!code-vb[WpfHostingWindowsFormsControl#12](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/VisualBasic/WpfHost/Page1.xaml.vb#12)]  
   
- テキスト ボックスのデータは、`MyControlEventArgs` オブジェクトに格納されます。  ユーザーが \[OK\] ボタンをクリックすると、イベント ハンドラーはデータを抽出して、`MyControl1` の下のパネルに表示します。  
+ <span data-ttu-id="82d43-240">テキスト ボックス内のデータがパック、`MyControlEventArgs`オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="82d43-240">The data in the text boxes is packed into the `MyControlEventArgs` object.</span></span> <span data-ttu-id="82d43-241">ユーザーがクリックした場合、 **OK**ボタン、イベント ハンドラーは、データを抽出し、下のパネルの表示`MyControl1`です。</span><span class="sxs-lookup"><span data-stu-id="82d43-241">If the user clicks the **OK** button, the event handler extracts the data and displays it in the panel below `MyControl1`.</span></span>  
   
-#### コントロールのプロパティの変更  
- <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素は、ホストされるコントロールのいくつかの既定のプロパティを公開します。  これにより、アプリケーションのスタイルにより一致するように、コントロールの外観を変更できます。  左側のパネルにある一連のオプション ボタンを使用すると、色やフォントのプロパティを変更できます。  各ボタン セットには <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントに対するハンドラーがあり、ユーザーによるオプション ボタンの選択を検出して、コントロールの対応するプロパティを変更します。  
+#### <a name="modifying-the-controls-properties"></a><span data-ttu-id="82d43-242">コントロールのプロパティを変更します。</span><span class="sxs-lookup"><span data-stu-id="82d43-242">Modifying the Control’s Properties</span></span>  
+ <span data-ttu-id="82d43-243"><xref:System.Windows.Forms.Integration.WindowsFormsHost>要素がいくつかのホストされるコントロールの既定のプロパティを公開します。</span><span class="sxs-lookup"><span data-stu-id="82d43-243">The <xref:System.Windows.Forms.Integration.WindowsFormsHost> element exposes several of the hosted control's default properties.</span></span> <span data-ttu-id="82d43-244">その結果、アプリケーションのスタイルをより厳密に一致するようにコントロールの外観を変更できます。</span><span class="sxs-lookup"><span data-stu-id="82d43-244">As a result, you can change the appearance of the control to match the style of your application more closely.</span></span> <span data-ttu-id="82d43-245">左側のパネルでオプション ボタンのセットには、いくつかの色とフォントのプロパティを変更するユーザーが有効にします。</span><span class="sxs-lookup"><span data-stu-id="82d43-245">The sets of option buttons in the left panel enable the user to modify several color and font properties.</span></span> <span data-ttu-id="82d43-246">ボタンの各セットのハンドラーがある、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベントでは、ユーザーのオプション ボタンの選択肢を検出し、コントロールに対応するプロパティを変更します。</span><span class="sxs-lookup"><span data-stu-id="82d43-246">Each set of buttons has a handler for the <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event, which detects the user's option button selections and changes the corresponding property on the control.</span></span>  
   
- `MainWindow` クラスに次のコードを追加します。  
+ <span data-ttu-id="82d43-247">`MainWindow` クラスに次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="82d43-247">Add the following code to the `MainWindow` class.</span></span>  
   
  [!code-csharp[WpfHostingWindowsFormsControl#13](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/CSharp/WpfHost/Page1.xaml.cs#13)]
  [!code-vb[WpfHostingWindowsFormsControl#13](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WpfHostingWindowsFormsControl/VisualBasic/WpfHost/Page1.xaml.vb#13)]  
   
- アプリケーションをビルドして実行します。  Windows フォーム複合コントロールにテキストを追加して **\[OK\]** をクリックします。  そのテキストがラベルに表示されます。  別のオプション ボタンをクリックして、コントロール上の影響を確認します。  
+ <span data-ttu-id="82d43-248">アプリケーションをビルドして実行します。</span><span class="sxs-lookup"><span data-stu-id="82d43-248">Build and run the application.</span></span> <span data-ttu-id="82d43-249">Windows フォームの複合コントロールのいくつかのテキストを追加し、クリックして**OK**です。</span><span class="sxs-lookup"><span data-stu-id="82d43-249">Add some text in the Windows Forms composite control and then click **OK**.</span></span> <span data-ttu-id="82d43-250">そのテキストがラベルに表示されます。</span><span class="sxs-lookup"><span data-stu-id="82d43-250">The text appears in the labels.</span></span> <span data-ttu-id="82d43-251">コントロールへの影響を表示する別のオプション ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="82d43-251">Click the different radio buttons to see the effect on the control.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.Integration.ElementHost>   
- <xref:System.Windows.Forms.Integration.WindowsFormsHost>   
- [WPF デザイナー](http://msdn.microsoft.com/ja-jp/c6c65214-8411-4e16-b254-163ed4099c26)   
- [チュートリアル: WPF での Windows フォーム コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md)   
- [チュートリアル: Windows フォームでの WPF 複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="82d43-252">関連項目</span><span class="sxs-lookup"><span data-stu-id="82d43-252">See Also</span></span>  
+ <xref:System.Windows.Forms.Integration.ElementHost>  
+ <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
+ [<span data-ttu-id="82d43-253">WPF デザイナー</span><span class="sxs-lookup"><span data-stu-id="82d43-253">WPF Designer</span></span>](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)  
+ [<span data-ttu-id="82d43-254">チュートリアル: WPF での Windows フォーム コントロールのホスト</span><span class="sxs-lookup"><span data-stu-id="82d43-254">Walkthrough: Hosting a Windows Forms Control in WPF</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md)  
+ [<span data-ttu-id="82d43-255">チュートリアル: Windows フォームでの WPF 複合コントロールのホスト</span><span class="sxs-lookup"><span data-stu-id="82d43-255">Walkthrough: Hosting a WPF Composite Control in Windows Forms</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)

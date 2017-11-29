@@ -1,72 +1,75 @@
 ---
-title: "WCF のメッセージのセキュリティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WCF のメッセージのセキュリティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a80efb59-591a-4a37-bb3c-8fffa6ca0b7d
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 0948c7447bcfd32ad666072ce6f74b1f6fd8aed8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WCF のメッセージのセキュリティ
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、セキュリティを提供する 2 つの主なモード \(`Transport` および `Message`\) と、この 2 つを組み合わせた 3 番目のモード \(`TransportWithMessageCredential`\) があります。ここでは、メッセージ セキュリティとその必要性について説明します。  
+# <a name="message-security-in-wcf"></a><span data-ttu-id="a265e-102">WCF のメッセージのセキュリティ</span><span class="sxs-lookup"><span data-stu-id="a265e-102">Message Security in WCF</span></span>
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="a265e-103"> には、セキュリティを提供する 2 つの主なモード (`Transport` および `Message`) と、この 2 つを組み合わせた 3 番目のモード (`TransportWithMessageCredential`) があります。</span><span class="sxs-lookup"><span data-stu-id="a265e-103"> has two major modes for providing security (`Transport` and `Message`) and a third mode (`TransportWithMessageCredential`) that combines the two.</span></span> <span data-ttu-id="a265e-104">ここでは、メッセージ セキュリティとその必要性について説明します。</span><span class="sxs-lookup"><span data-stu-id="a265e-104">This topic discusses message security and the reasons to use it.</span></span>  
   
-## メッセージ セキュリティとは  
- メッセージ セキュリティでは、メッセージをセキュリティで保護するために WS\-Security 仕様を使用します。WS\-Security 仕様では、トランスポート レベルではなく、SOAP メッセージ レベルで機密性、整合性、および認証を確保するための、SOAP メッセージングの機能拡張が規定されています。  
+## <a name="what-is-message-security"></a><span data-ttu-id="a265e-105">メッセージ セキュリティとは</span><span class="sxs-lookup"><span data-stu-id="a265e-105">What Is Message Security?</span></span>  
+ <span data-ttu-id="a265e-106">メッセージ セキュリティでは、メッセージをセキュリティで保護するために WS-Security 仕様を使用します。</span><span class="sxs-lookup"><span data-stu-id="a265e-106">Message security uses the WS-Security specification to secure messages.</span></span> <span data-ttu-id="a265e-107">この WS-Securityspecification 仕様では、トランスポート レベルではなく、SOAP メッセージ レベルで機密性、整合性、および認証を確保するための、SOAP メッセージングの機能拡張が規定されています。</span><span class="sxs-lookup"><span data-stu-id="a265e-107">The WS-Securityspecification describes enhancements to SOAP messaging to ensure confidentiality, integrity, and authentication at the SOAP message level (instead of the transport level).</span></span>  
   
- 簡単に言えば、メッセージ セキュリティでは、メッセージごとにセキュリティ資格情報とクレームが署名や暗号化などのメッセージ保護措置と共にカプセル化さるという点で、トランスポート セキュリティと異なります。メッセージの内容を変更してメッセージに直接セキュリティを適用することによって、セキュリティで保護されたメッセージは、セキュリティ面で自己完結する形になります。これによって、トランスポート セキュリティでは実現できないシナリオが可能になります。  
+ <span data-ttu-id="a265e-108">簡単に言えば、メッセージ セキュリティでは、メッセージごとにセキュリティ資格情報とクレームが署名や暗号化などのメッセージ保護措置と共にカプセル化さるという点で、トランスポート セキュリティと異なります。</span><span class="sxs-lookup"><span data-stu-id="a265e-108">In brief, message security differs from transport security by encapsulating the security credentials and claims with every message along with any message protection (signing or encryption).</span></span> <span data-ttu-id="a265e-109">メッセージの内容を変更してメッセージに直接セキュリティを適用することによって、セキュリティで保護されたメッセージは、セキュリティ面で自己完結する形になります。</span><span class="sxs-lookup"><span data-stu-id="a265e-109">Applying the security directly to the message by modifying its content allows the secured message to be self-containing with respect to the security aspects.</span></span> <span data-ttu-id="a265e-110">これによって、トランスポート セキュリティでは実現できないシナリオが可能になります。</span><span class="sxs-lookup"><span data-stu-id="a265e-110">This enables some scenarios that are not possible when transport security is used.</span></span>  
   
-## メッセージ セキュリティを使用する理由  
- メッセージ レベルのセキュリティでは、すべてのセキュリティ情報がメッセージ内にカプセル化されます。トランスポート レベルのセキュリティではなく、メッセージ レベルのセキュリティを使用してメッセージをセキュリティで保護することによって、次の利点を得ることができます。  
+## <a name="reasons-to-use-message-security"></a><span data-ttu-id="a265e-111">メッセージ セキュリティを使用する理由</span><span class="sxs-lookup"><span data-stu-id="a265e-111">Reasons to Use Message Security</span></span>  
+ <span data-ttu-id="a265e-112">メッセージ レベルのセキュリティでは、すべてのセキュリティ情報がメッセージ内にカプセル化されます。</span><span class="sxs-lookup"><span data-stu-id="a265e-112">In message-level security, all of the security information is encapsulated in the message.</span></span> <span data-ttu-id="a265e-113">トランスポート レベルのセキュリティではなく、メッセージ レベルのセキュリティを使用してメッセージをセキュリティで保護することによって、次の利点を得ることができます。</span><span class="sxs-lookup"><span data-stu-id="a265e-113">Securing the message with message-level security instead of transport-level security has the following advantages:</span></span>  
   
--   エンドツーエンドのセキュリティ。SSL \(Secure Sockets Layer\) などのトランスポート セキュリティは、通信が Point\-to\-Point の場合にのみメッセージを保護します。メッセージが最終の受信者に到達する前に 1 つ以上の SOAP 中継局 \(ルーターなど\) にルーティングされる場合、中継局でネットワークからメッセージが読み取られると、そのメッセージ自体は保護されない状態になります。また、クライアントの認証情報は最初の中継局しか使用できず、必要に応じて帯域外の方法で、最終の受信者にその情報を再度転送する必要があります。これは、経路全体で各ホップ間に SSL セキュリティを使用している場合にも当てはまります。メッセージ セキュリティはメッセージに直接作用し、メッセージ内の XML をセキュリティで保護するので、メッセージが最終の受信者に到達するまでに経由する中継局の数に関係なく、メッセージをセキュリティで保護できます。これによって、真の意味でエンド ツー エンドのセキュリティ シナリオが実現します。  
+-   <span data-ttu-id="a265e-114">エンドツーエンドのセキュリティ。</span><span class="sxs-lookup"><span data-stu-id="a265e-114">End-to-end security.</span></span> <span data-ttu-id="a265e-115">SSL (Secure Sockets Layer) などのトランスポート セキュリティは、通信が Point-to-Point の場合にのみメッセージを保護します。</span><span class="sxs-lookup"><span data-stu-id="a265e-115">Transport security, such as Secure Sockets Layer (SSL) only secures messages when the communication is point-to-point.</span></span> <span data-ttu-id="a265e-116">メッセージが最終の受信者に到達する前に 1 つ以上の SOAP 中継局 (ルーターなど) にルーティングされる場合、中継局でネットワークからメッセージが読み取られると、そのメッセージ自体は保護されない状態になります。</span><span class="sxs-lookup"><span data-stu-id="a265e-116">If the message is routed to one or more SOAP intermediaries (for example a router) before reaching the ultimate receiver, the message itself is not protected once an intermediary reads it from the wire.</span></span> <span data-ttu-id="a265e-117">また、クライアントの認証情報は最初の中継局しか使用できず、必要に応じて帯域外の方法で、最終の受信者にその情報を転送する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a265e-117">Additionally, the client authentication information is available only to the first intermediary and must be re-transmitted to the ultimate receiver in out-of-band fashion, if necessary.</span></span> <span data-ttu-id="a265e-118">これは、経路全体で各ホップ間に SSL セキュリティを使用している場合にも当てはまります。</span><span class="sxs-lookup"><span data-stu-id="a265e-118">This applies even if the entire route uses SSL security between individual hops.</span></span> <span data-ttu-id="a265e-119">メッセージ セキュリティはメッセージに直接作用し、メッセージ内の XML をセキュリティで保護するので、メッセージが最終の受信者に到達するまでに経由する中継局の数に関係なく、メッセージをセキュリティで保護できます。</span><span class="sxs-lookup"><span data-stu-id="a265e-119">Because message security works directly with the message and secures the XML in it, the security stays with the message regardless of how many intermediaries are involved before it reaches the ultimate receiver.</span></span> <span data-ttu-id="a265e-120">これによって、真の意味でエンド ツー エンドのセキュリティ シナリオが実現します。</span><span class="sxs-lookup"><span data-stu-id="a265e-120">This enables a true end-to-end security scenario.</span></span>  
   
--   柔軟性の向上。メッセージ全体ではなく、メッセージの一部を署名または暗号化できます。つまり、中継局は、その中継局に対して用意されたメッセージの一部を確認できます。メッセージ内の情報の一部を中継局に渡す必要があり、メッセージの改ざんを確実に防止する必要もある場合は、メッセージを暗号化せずに署名だけを行うことができます。署名はメッセージの一部なので、最終の受信者は受信メッセージ内の情報が元のままの状態であることを確認できます。シナリオの 1 つとして、Action ヘッダーの値に従ってメッセージをルーティングする SOAP 中継局サービスが考えられます。既定では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でメッセージ セキュリティを使用した場合、Action 値は暗号化されず、署名されます。この情報はすべての中継局で使用できますが、変更はできなくなります。  
+-   <span data-ttu-id="a265e-121">柔軟性の向上。</span><span class="sxs-lookup"><span data-stu-id="a265e-121">Increased flexibility.</span></span> <span data-ttu-id="a265e-122">メッセージ全体ではなく、メッセージの一部を署名または暗号化できます。</span><span class="sxs-lookup"><span data-stu-id="a265e-122">Parts of the message, instead of the entire message, can be signed or encrypted.</span></span> <span data-ttu-id="a265e-123">つまり、中継局は、その中継局に対して用意されたメッセージの一部を確認できます。</span><span class="sxs-lookup"><span data-stu-id="a265e-123">This means that intermediaries can view the parts of the message that are intended for them.</span></span> <span data-ttu-id="a265e-124">メッセージ内の情報の一部を中継局に渡す必要があり、メッセージの改ざんを確実に防止する必要もある場合は、メッセージを暗号化せずに署名だけを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="a265e-124">If the sender needs to make part of the information in the message visible to the intermediaries but wants to ensure that it is not tampered with, it can just sign it but leave it unencrypted.</span></span> <span data-ttu-id="a265e-125">署名はメッセージの一部なので、最終の受信者は受信メッセージ内の情報が元のままの状態であることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="a265e-125">Since the signature is part of the message, the ultimate receiver can verify that the information in the message was received intact.</span></span> <span data-ttu-id="a265e-126">シナリオの 1 つとして、Action ヘッダーの値に従ってメッセージをルーティングする SOAP 中継局サービスが考えられます。</span><span class="sxs-lookup"><span data-stu-id="a265e-126">One scenario might have a SOAP intermediary service that routes message according the Action header value.</span></span> <span data-ttu-id="a265e-127">既定では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でメッセージ セキュリティを使用した場合、Action 値は暗号化されず、署名されます。</span><span class="sxs-lookup"><span data-stu-id="a265e-127">By default, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] does not encrypt the Action value but signs it if message security is used.</span></span> <span data-ttu-id="a265e-128">この情報はすべての中継局で使用できますが、変更はできなくなります。</span><span class="sxs-lookup"><span data-stu-id="a265e-128">Therefore, this information is available to all intermediaries, but no one can change it.</span></span>  
   
--   複数のトランスポートに対するサポート。複数のトランスポートに対するサポート : セキュリティ用のプロトコルに依存することなく、名前付きパイプ、TCP などの複数の異なるトランスポートを経由して、セキュリティで保護されたメッセージを送信できます。トランスポート レベルのセキュリティでは、すべてのセキュリティ情報の有効範囲が 1 つの特定のトランスポート接続に限定されるので、メッセージの内容からその情報を使用することはできません。メッセージ セキュリティでは、メッセージの送信に使用するトランスポートの種類に関係なく、メッセージがセキュリティで保護されます。セキュリティ コンテキストはメッセージの内部に直接埋め込まれます。  
+-   <span data-ttu-id="a265e-129">複数のトランスポートに対するサポート。</span><span class="sxs-lookup"><span data-stu-id="a265e-129">Support for multiple transports.</span></span> <span data-ttu-id="a265e-130">複数のトランスポートに対するサポート : セキュリティ用のプロトコルに依存することなく、名前付きパイプ、TCP などの複数の異なるトランスポートを経由して、セキュリティで保護されたメッセージを送信できます。</span><span class="sxs-lookup"><span data-stu-id="a265e-130">You can send secured messages over many different transports, such as named pipes and TCP, without having to rely on the protocol for security.</span></span> <span data-ttu-id="a265e-131">トランスポート レベルのセキュリティでは、すべてのセキュリティ情報の有効範囲が 1 つの特定のトランスポート接続に限定されるので、メッセージの内容からその情報を使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="a265e-131">With transport-level security, all the security information is scoped to a single particular transport connection and is not available from the message content itself.</span></span> <span data-ttu-id="a265e-132">メッセージ セキュリティでは、メッセージの送信に使用するトランスポートの種類に関係なく、メッセージがセキュリティで保護されます。セキュリティ コンテキストはメッセージの内部に直接埋め込まれます。</span><span class="sxs-lookup"><span data-stu-id="a265e-132">Message security makes the message secure regardless of what transport you use to transmit the message, and the security context is directly embedded inside the message.</span></span>  
   
--   資格情報とクレームのセットを広範囲にサポート。メッセージ セキュリティは、SOAP メッセージの内部で任意の種類のクレームを送信できる拡張可能なフレームワークを提供する WS\-Security 仕様に基づいています。トランスポート セキュリティとは異なり、使用できる認証機構またはクレームはトランスポートの機能によって制限されません。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のメッセージ セキュリティには、複数の種類の認証とクレームの送信があります。必要に応じて、追加の種類がサポートされるように拡張できます。このため、たとえば、フェデレーション資格情報シナリオは、メッセージ セキュリティなしでは実現できません。WCF がサポートするフェデレーション シナリオ[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[フェデレーションと発行済みトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)」を参照してください。  
+-   <span data-ttu-id="a265e-133">資格情報とクレームのセットを広範囲にサポート。</span><span class="sxs-lookup"><span data-stu-id="a265e-133">Support for a wide set of credentials and claims.</span></span> <span data-ttu-id="a265e-134">メッセージ セキュリティは、SOAP メッセージの内部で任意の種類のクレームを送信できる拡張可能なフレームワークを提供する WS-Security 仕様に基づいています。</span><span class="sxs-lookup"><span data-stu-id="a265e-134">The message security is based on the WS-Security specification, which provides an extensible framework capable of transmitting any type of claim inside the SOAP message.</span></span> <span data-ttu-id="a265e-135">トランスポート セキュリティとは異なり、使用できる認証機構またはクレームはトランスポートの機能によって制限されません。</span><span class="sxs-lookup"><span data-stu-id="a265e-135">Unlike transport security, the set of authentication mechanisms, or claims, that you can use is not limited by the transport capabilities.</span></span> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="a265e-136"> のメッセージ セキュリティには、複数の種類の認証とクレームの送信があります。必要に応じて、追加の種類がサポートされるように拡張できます。</span><span class="sxs-lookup"><span data-stu-id="a265e-136"> message security includes multiple types of authentication and claim transmission and can be extended to support additional types as necessary.</span></span> <span data-ttu-id="a265e-137">このため、たとえば、フェデレーション資格情報シナリオは、メッセージ セキュリティなしでは実現できません。</span><span class="sxs-lookup"><span data-stu-id="a265e-137">For those reasons, for example, a federated credentials scenario is not possible without message security.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="a265e-138">WCF では、フェデレーション シナリオを参照してください[フェデレーションと発行されたトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)です。</span><span class="sxs-lookup"><span data-stu-id="a265e-138"> federation scenarios WCF supports, see [Federation and Issued Tokens](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).</span></span>  
   
-## メッセージ セキュリティとトランスポート セキュリティの比較  
+## <a name="how-message-and-transport-security-compare"></a><span data-ttu-id="a265e-139">メッセージ セキュリティとトランスポート セキュリティの比較</span><span class="sxs-lookup"><span data-stu-id="a265e-139">How Message and Transport Security Compare</span></span>  
   
-### トランスポート レベルのセキュリティの利点と欠点  
- トランスポート セキュリティの利点は次のとおりです。  
+### <a name="pros-and-cons-of-transport-level-security"></a><span data-ttu-id="a265e-140">トランスポート レベルのセキュリティの利点と欠点</span><span class="sxs-lookup"><span data-stu-id="a265e-140">Pros and Cons of Transport-Level Security</span></span>  
+ <span data-ttu-id="a265e-141">トランスポート セキュリティの利点は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="a265e-141">Transport security has the following advantages:</span></span>  
   
--   通信元と通信先では XML レベルのセキュリティ概念を理解する必要がありません。このため、たとえば、通信のセキュリティ保護に HTTPS が使用されている場合に相互運用性が向上します。  
+-   <span data-ttu-id="a265e-142">通信元と通信先では XML レベルのセキュリティ概念を理解する必要がありません。</span><span class="sxs-lookup"><span data-stu-id="a265e-142">Does not require that the communicating parties understand XML-level security concepts.</span></span> <span data-ttu-id="a265e-143">このため、たとえば、通信のセキュリティ保護に HTTPS が使用されている場合に相互運用性が向上します。</span><span class="sxs-lookup"><span data-stu-id="a265e-143">This can improve the interoperability, for example, when HTTPS is used to secure the communication.</span></span>  
   
--   パフォーマンスが全般的に向上します。  
+-   <span data-ttu-id="a265e-144">パフォーマンスが全般的に向上します。</span><span class="sxs-lookup"><span data-stu-id="a265e-144">Generally improved performance.</span></span>  
   
--   ハードウェア アクセラレータを使用できます。  
+-   <span data-ttu-id="a265e-145">ハードウェア アクセラレータを使用できます。</span><span class="sxs-lookup"><span data-stu-id="a265e-145">Hardware accelerators are available.</span></span>  
   
--   ストリーミングが可能です。  
+-   <span data-ttu-id="a265e-146">ストリーミングが可能です。</span><span class="sxs-lookup"><span data-stu-id="a265e-146">Streaming is possible.</span></span>  
   
- トランスポート セキュリティの欠点は次のとおりです。  
+ <span data-ttu-id="a265e-147">トランスポート セキュリティの欠点は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="a265e-147">Transport security has the following disadvantages:</span></span>  
   
--   セキュリティが提供されるのはホップからホップのみです。  
+-   <span data-ttu-id="a265e-148">セキュリティが提供されるのはホップからホップのみです。</span><span class="sxs-lookup"><span data-stu-id="a265e-148">Hop-to-hop only.</span></span>  
   
--   資格情報のセットが制限され、拡張はできません。  
+-   <span data-ttu-id="a265e-149">資格情報のセットが制限され、拡張はできません。</span><span class="sxs-lookup"><span data-stu-id="a265e-149">Limited and inextensible set of credentials.</span></span>  
   
--   トランスポートに依存します。  
+-   <span data-ttu-id="a265e-150">トランスポートに依存します。</span><span class="sxs-lookup"><span data-stu-id="a265e-150">Transport-dependent.</span></span>  
   
-### メッセージ レベルのセキュリティの欠点  
- メッセージ セキュリティの欠点は次のとおりです。  
+### <a name="disadvantages-of-message-level-security"></a><span data-ttu-id="a265e-151">メッセージ レベルのセキュリティの欠点</span><span class="sxs-lookup"><span data-stu-id="a265e-151">Disadvantages of Message-Level Security</span></span>  
+ <span data-ttu-id="a265e-152">メッセージ セキュリティの欠点は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="a265e-152">Message security has the following disadvantages:</span></span>  
   
--   パフォーマンスがトランスポート セキュリティより劣ります。  
+-   <span data-ttu-id="a265e-153">パフォーマンス</span><span class="sxs-lookup"><span data-stu-id="a265e-153">Performance</span></span>  
   
--   メッセージ ストリーミングを使用できません。  
+-   <span data-ttu-id="a265e-154">メッセージ ストリーミングを使用できません。</span><span class="sxs-lookup"><span data-stu-id="a265e-154">Cannot use message streaming.</span></span>  
   
--   XML レベルのセキュリティ機構の実装と WS\-Security 仕様のサポートが必要です。これは、相互運用性に影響する可能性があります。  
+-   <span data-ttu-id="a265e-155">XML レベルのセキュリティ機構の実装と WS-Security 仕様のサポートが必要です。</span><span class="sxs-lookup"><span data-stu-id="a265e-155">Requires implementation of XML-level security mechanisms and support for WS-Security specification.</span></span> <span data-ttu-id="a265e-156">これは、相互運用性に影響する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a265e-156">This might affect the interoperability.</span></span>  
   
-## 参照  
- [サービスおよびクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [トランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/transport-security.md)   
- [方法 : トランスポート セキュリティとメッセージ資格情報を使用する](../../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)   
- [Microsoft Patterns and Practices, Chapter 3: Implementing Transport and Message Layer Security](http://go.microsoft.com/fwlink/?LinkId=88897)
+## <a name="see-also"></a><span data-ttu-id="a265e-157">関連項目</span><span class="sxs-lookup"><span data-stu-id="a265e-157">See Also</span></span>  
+ [<span data-ttu-id="a265e-158">サービスとクライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="a265e-158">Securing Services and Clients</span></span>](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [<span data-ttu-id="a265e-159">トランスポート セキュリティ</span><span class="sxs-lookup"><span data-stu-id="a265e-159">Transport Security</span></span>](../../../../docs/framework/wcf/feature-details/transport-security.md)  
+ [<span data-ttu-id="a265e-160">方法: トランスポート セキュリティを使用してメッセージ資格情報</span><span class="sxs-lookup"><span data-stu-id="a265e-160">How to: Use Transport Security and Message Credentials</span></span>](../../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)  
+ [<span data-ttu-id="a265e-161">Microsoft Patterns and Practices、第 3 章: を実装するトランスポートとメッセージ層セキュリティ</span><span class="sxs-lookup"><span data-stu-id="a265e-161">Microsoft Patterns and Practices, Chapter 3: Implementing Transport and Message Layer Security</span></span>](http://go.microsoft.com/fwlink/?LinkId=88897)

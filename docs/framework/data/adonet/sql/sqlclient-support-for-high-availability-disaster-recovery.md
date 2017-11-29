@@ -1,105 +1,108 @@
 ---
-title: "高可用性障害復旧のための SqlClient サポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "高可用性障害復旧のための SqlClient サポート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 61e0b396-09d7-4e13-9711-7dcbcbd103a0
-caps.latest.revision: 13
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: cf17253478def72fe4fdc24de0a67c26fcbba0bd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 高可用性障害復旧のための SqlClient サポート
-このトピックでは、高可用性、障害回復のための SqlClient サポート \([!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)] に追加\) である AlwaysOn 可用性グループについて説明します。  AlwaysOn 可用性グループの機能は [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 に追加されています。  AlwaysOn 可用性グループの詳細については、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] オンライン ブックを参照してください。  
+# <a name="sqlclient-support-for-high-availability-disaster-recovery"></a><span data-ttu-id="fcd6a-102">高可用性障害復旧のための SqlClient サポート</span><span class="sxs-lookup"><span data-stu-id="fcd6a-102">SqlClient Support for High Availability, Disaster Recovery</span></span>
+<span data-ttu-id="fcd6a-103">このトピックでは、高可用性、ディザスター リカバリーのための SqlClient サポート ([!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)] に追加) である AlwaysOn 可用性グループについて説明します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-103">This topic discusses SqlClient support (added in [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]) for high-availability, disaster recovery -- AlwaysOn Availability Groups.</span></span>  <span data-ttu-id="fcd6a-104">AlwaysOn 可用性グループの機能は [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 に追加されています。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-104">AlwaysOn Availability Groups feature was added to [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012.</span></span> <span data-ttu-id="fcd6a-105">AlwaysOn 可用性グループの詳細については、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] オンライン ブックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-105">For more information about AlwaysOn Availability Groups, see [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] Books Online.</span></span>  
   
- 現在は、接続プロパティで、\(高可用性、障害回復\) 可用性グループ \(AG\) の高可用性グループ リスナーまたは [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 フェールオーバー クラスター インスタンスを指定できます。  フェールオーバーが発生した AlwaysOn データベースに SqlClient アプリケーションが接続される場合、元の接続が途切れるため、アプリケーションがフェールオーバーの後に処理を続行するには、新しい接続を開く必要があります。  
+ <span data-ttu-id="fcd6a-106">現在は、接続プロパティで、(高可用性、障害回復) 可用性グループ (AG) の高可用性グループ リスナーまたは [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 フェールオーバー クラスター インスタンスを指定できます。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-106">You can now specify the availability group listener of a (high-availability, disaster-recovery) availability group (AG) or [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 Failover Cluster Instance in the connection property.</span></span> <span data-ttu-id="fcd6a-107">フェールオーバーが発生した AlwaysOn データベースに SqlClient アプリケーションが接続される場合、元の接続が途切れるため、アプリケーションがフェールオーバーの後に処理を続行するには、新しい接続を開く必要があります。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-107">If a SqlClient application is connected to an AlwaysOn database that fails over, the original connection is broken and the application must open a new connection to continue work after the failover.</span></span>  
   
- 可用性グループ リスナーまたは [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 フェールオーバー クラスター インスタンスに接続していない場合、複数の IP アドレスがホスト名に関連付けられていると、SqlClient は、DNS エントリに関連付けられたすべての IP アドレスを順に反復処理します。  これは、DNS サーバーによって返された最初の IP アドレスがネットワーク インターフェイス カード \(NIC\) にバインドされていない場合、時間がかかります。  可用性グループ リスナーまたは [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 フェールオーバー クラスター インスタンスに接続する場合、SqlClient ですべての IP アドレスへの接続確立を並列実行しようとして、接続試行が成功すると、ドライバーは保留状態の接続試行を破棄します。  
+ <span data-ttu-id="fcd6a-108">可用性グループ リスナーまたは [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 フェールオーバー クラスター インスタンスに接続していない場合、複数の IP アドレスがホスト名に関連付けられていると、SqlClient は、DNS エントリに関連付けられたすべての IP アドレスを順に反復処理します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-108">If you are not connecting to an availability group listener or [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 Failover Cluster Instance, and if multiple IP addresses are associated with a hostname, SqlClient will iterate sequentially through all IP addresses associated with DNS entry.</span></span> <span data-ttu-id="fcd6a-109">これは、DNS サーバーによって返された最初の IP アドレスがネットワーク インターフェイス カード (NIC) にバインドされていない場合、時間がかかります。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-109">This can be time consuming if the first IP address returned by DNS server is not bound to any network interface card (NIC).</span></span> <span data-ttu-id="fcd6a-110">可用性グループ リスナーまたは [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 フェールオーバー クラスター インスタンスに接続する場合、SqlClient ですべての IP アドレスへの接続確立を並列実行しようとして、接続試行が成功すると、ドライバーは保留状態の接続試行を破棄します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-110">When connecting to an availability group listener or [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 Failover Cluster Instance, SqlClient attempts to establish connections to all IP addresses in parallel and if a connection attempt succeeds, the driver will discard any pending connection attempts.</span></span>  
   
 > [!NOTE]
->  接続タイムアウトの増加および接続の再試行ロジックの実装により、アプリケーションが可用性グループに接続する可能性は向上します。  また、接続がフェールオーバーによって失敗する可能性があるので、接続の再試行ロジックの実装は、失敗した接続が再接続するまで試行されるようにする必要があります。  
+>  <span data-ttu-id="fcd6a-111">接続タイムアウトの増加および接続の再試行ロジックの実装により、アプリケーションが可用性グループに接続する可能性は向上します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-111">Increasing connection timeout and implementing connection retry logic will increase the probability that an application will connect to an availability group.</span></span> <span data-ttu-id="fcd6a-112">また、接続がフェールオーバーによって失敗する可能性があるので、接続の再試行ロジックの実装は、失敗した接続が再接続するまで試行されるようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-112">Also, because a connection can fail because of a failover, you should implement connection retry logic, retrying a failed connection until it reconnects.</span></span>  
   
- 次の接続プロパティが、[!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)] の SqlClient に追加されました。  
+ <span data-ttu-id="fcd6a-113">次の接続プロパティが、[!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)] の SqlClient に追加されました。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-113">The following connection properties were added to SqlClient in [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]:</span></span>  
   
 -   `ApplicationIntent`  
   
 -   `MultiSubnetFailover`  
   
- プログラムによって、これらの接続文字列キーワードを次のとおりに変更できます。  
+ <span data-ttu-id="fcd6a-114">プログラムによって、これらの接続文字列キーワードを次のとおりに変更できます。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-114">You can programmatically modify these connection string keywords with:</span></span>  
   
 1.  <xref:System.Data.SqlClient.SqlConnectionStringBuilder.ApplicationIntent%2A>  
   
 2.  <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A>  
   
-## MultiSubnetFailover を使用した接続  
- [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 可用性グループ リスナーまたは [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 フェールオーバー クラスター インスタンスに接続する場合は、`MultiSubnetFailover=True` を必ず指定します。  `MultiSubnetFailover` を使用すると、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 のすべての可用性グループやフェールオーバー クラスター インスタンスのより高速なフェールオーバーが可能になるため、単一または複数のサブネットの AlwaysOn トポロジのフェールオーバー時間が削減されます。  複数のサブネットのフェールオーバーでは、クライアントは並列接続を試みます。  サブネットのフェールオーバー中に、積極的に TCP 接続を再試行します。  
+## <a name="connecting-with-multisubnetfailover"></a><span data-ttu-id="fcd6a-115">MultiSubnetFailover を使用した接続</span><span class="sxs-lookup"><span data-stu-id="fcd6a-115">Connecting With MultiSubnetFailover</span></span>  
+ <span data-ttu-id="fcd6a-116">`MultiSubnetFailover=True` 2012 可用性グループ リスナーまたは [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 フェールオーバー クラスター インスタンスに接続する場合は、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] を必ず指定します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-116">Always specify `MultiSubnetFailover=True` when connecting to a [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 availability group listener or [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 Failover Cluster Instance.</span></span> <span data-ttu-id="fcd6a-117">`MultiSubnetFailover` を使用すると、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 のすべての可用性グループやフェールオーバー クラスター インスタンスのより高速なフェールオーバーが可能になるため、単一または複数のサブネットの AlwaysOn トポロジのフェールオーバー時間が削減されます。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-117">`MultiSubnetFailover` enables faster failover for all Availability Groups and or Failover Cluster Instance in [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 and will significantly reduce failover time for single and multi-subnet AlwaysOn topologies.</span></span> <span data-ttu-id="fcd6a-118">複数のサブネットのフェールオーバーでは、クライアントは並列接続を試みます。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-118">During a multi-subnet failover, the client will attempt connections in parallel.</span></span> <span data-ttu-id="fcd6a-119">サブネットのフェールオーバー中に、積極的に TCP 接続を再試行します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-119">During a subnet failover, will aggressively retry the TCP connection.</span></span>  
   
- `MultiSubnetFailover` 接続プロパティは、アプリケーションが可用性グループまたは [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 フェールオーバー クラスター インスタンスで展開されていること、およびすべての IP アドレスへの接続を試行することで SqlClient がプライマリ [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] インスタンスのデータベースに接続を試行することを示します。  `MultiSubnetFailover=True` を接続に指定すると、クライアントは、オペレーティング システムの既定の TCP 再転送間隔よりも高速に接続試行を再試行します。  これは、AlwaysOn 可用性グループまたは AlwaysOn フェールオーバー クラスター インスタンスのフェールオーバー後のより高速な再接続を可能にし、単一および複数のサブネットの可用性グループおよびフェールオーバー クラスター インスタンスの両方に適用可能です。  
+ <span data-ttu-id="fcd6a-120">`MultiSubnetFailover` 接続プロパティは、アプリケーションが可用性グループまたは [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 フェールオーバー クラスター インスタンスで展開されていること、およびすべての IP アドレスへの接続を試行することで SqlClient がプライマリ [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] インスタンスのデータベースに接続を試行することを示します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-120">The `MultiSubnetFailover` connection property indicates that the application is being deployed in an availability group or [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 Failover Cluster Instance and that SqlClient will try to connect to the database on the primary [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] instance by trying to connect to all the IP addresses.</span></span> <span data-ttu-id="fcd6a-121">`MultiSubnetFailover=True` を接続に指定すると、クライアントは、オペレーティング システムの既定の TCP 再転送間隔よりも高速に接続試行を再試行します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-121">When `MultiSubnetFailover=True` is specified for a connection, the client retries TCP connection attempts faster than the operating system’s default TCP retransmit intervals.</span></span> <span data-ttu-id="fcd6a-122">これは、AlwaysOn 可用性グループまたは AlwaysOn フェールオーバー クラスター インスタンスのフェールオーバー後のより高速な再接続を可能にし、単一および複数のサブネットの可用性グループおよびフェールオーバー クラスター インスタンスの両方に適用可能です。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-122">This enables faster reconnection after failover of either an AlwaysOn Availability Group or an AlwaysOn Failover Cluster Instance, and is applicable to both single- and multi-subnet Availability Groups and Failover Cluster Instances.</span></span>  
   
- SqlClient の接続文字列キーワードの詳細については、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> を参照してください。  
+ <span data-ttu-id="fcd6a-123">SqlClient の接続文字列キーワードの詳細については、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> を参照してください。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-123">For more information about connection string keywords in SqlClient, see <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.</span></span>  
   
- 可用性グループ リスナーまたは [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 フェールオーバー クラスター インスタンス以外の何かに接続する場合に `MultiSubnetFailover=True` を指定すると、パフォーマンスに負の影響が及ぶ可能性があるため、サポートされていません。  
+ <span data-ttu-id="fcd6a-124">可用性グループ リスナーまたは `MultiSubnetFailover=True` 2012 フェールオーバー クラスター インスタンス以外の何かに接続する場合に [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] を指定すると、パフォーマンスに負の影響が及ぶ可能性があるため、サポートされていません。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-124">Specifying `MultiSubnetFailover=True` when connecting to something other than a availability group listener or [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 Failover Cluster Instance may result in a negative performance impact, and is not supported.</span></span>  
   
- 可用性グループのサーバーまたは [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 フェールオーバー クラスター インスタンスに接続するには、次のガイドラインに従います。  
+ <span data-ttu-id="fcd6a-125">可用性グループのサーバーまたは [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 フェールオーバー クラスター インスタンスに接続するには、次のガイドラインに従います。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-125">Use the following guidelines to connect to a server in an availability group or [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 Failover Cluster Instance:</span></span>  
   
--   単一のサブネットまたは複数のサブネットへの接続時には、`MultiSubnetFailover` 接続プロパティを使用します。これにより、両方の場合でパフォーマンスが向上します。  
+-   <span data-ttu-id="fcd6a-126">単一のサブネットまたは複数のサブネットへの接続時には、`MultiSubnetFailover` 接続プロパティを使用します。これにより、両方の場合でパフォーマンスが向上します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-126">Use the `MultiSubnetFailover` connection property when connecting to a single subnet or multi-subnet; it will improve performance for both.</span></span>  
   
--   可用性グループに接続するには、使用する接続文字列でサーバーとして可用性グループの可用性グループ リスナーを指定します。  
+-   <span data-ttu-id="fcd6a-127">可用性グループに接続するには、使用する接続文字列でサーバーとして可用性グループの可用性グループ リスナーを指定します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-127">To connect to an availability group, specify the availability group listener of the availability group as the server in your connection string.</span></span>  
   
--   64 を超える IP アドレスを使用して構成されている [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] インスタンスに接続すると、接続エラーが発生します。  
+-   <span data-ttu-id="fcd6a-128">64 を超える IP アドレスを使用して構成されている [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] インスタンスに接続すると、接続エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-128">Connecting to a [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] instance configured with more than 64 IP addresses will cause a connection failure.</span></span>  
   
--   [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 認証、Kerberos 認証、および Windows 認証という認証の種類に基づいて  `MultiSubnetFailover` 接続プロパティを使用するアプリケーションの動作には影響はありません。  
+-   <span data-ttu-id="fcd6a-129">`MultiSubnetFailover` 認証、Kerberos 認証、および Windows 認証という認証の種類に基づいて  [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 接続プロパティを使用するアプリケーションの動作には影響はありません。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-129">Behavior of an application that uses the `MultiSubnetFailover` connection property is not affected based on the type of authentication: [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] Authentication, Kerberos Authentication, or Windows Authentication.</span></span>  
   
--   フェールオーバー時に対応し、アプリケーションの接続の再試行を減らすには、`Connect Timeout` の値を増やします。  
+-   <span data-ttu-id="fcd6a-130">フェールオーバー時に対応し、アプリケーションの接続の再試行を減らすには、`Connect Timeout` の値を増やします。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-130">Increase the value of `Connect Timeout` to accommodate for failover time and reduce application connection retry attempts.</span></span>  
   
--   分散トランザクションはサポートされていません。  
+-   <span data-ttu-id="fcd6a-131">分散トランザクションはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-131">Distributed transactions are not supported.</span></span>  
   
- 読み取り専用のルーティングが有効でない場合は、セカンダリ レプリカの場所への接続は、次の場合に失敗します。  
+ <span data-ttu-id="fcd6a-132">読み取り専用のルーティングが有効でない場合は、セカンダリ レプリカの場所への接続は、次の場合に失敗します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-132">If read-only routing is not in effect, connecting to a secondary replica location will fail in the following situations:</span></span>  
   
-1.  セカンダリ レプリカの場所が接続を受け入れないように構成されている場合。  
+1.  <span data-ttu-id="fcd6a-133">セカンダリ レプリカの場所が接続を受け入れないように構成されている場合。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-133">If the secondary replica location is not configured to accept connections.</span></span>  
   
-2.  アプリケーションが `ApplicationIntent=ReadWrite` \(後で説明\) を使用している場合、セカンダリ レプリカの場所は読み取り専用アクセスとして構成されます。  
+2.  <span data-ttu-id="fcd6a-134">アプリケーションが `ApplicationIntent=ReadWrite` (後で説明) を使用している場合、セカンダリ レプリカの場所は読み取り専用アクセスとして構成されます。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-134">If an application uses `ApplicationIntent=ReadWrite` (discussed below) and the secondary replica location is configured for read-only access.</span></span>  
   
- <xref:System.Data.SqlClient.SqlDependency> は、読み取り専用のセカンダリ レプリカではサポートされていません。  
+ <span data-ttu-id="fcd6a-135"><xref:System.Data.SqlClient.SqlDependency> は、読み取り専用のセカンダリ レプリカではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-135"><xref:System.Data.SqlClient.SqlDependency> is not supported on read-only secondary replicas.</span></span>  
   
- プライマリ レプリカが読み取り専用のワークロードを拒否するように設定され、接続文字列が  `ApplicationIntent=ReadOnly` を含んでいる場合、接続は失敗します。  
+ <span data-ttu-id="fcd6a-136">プライマリ レプリカが読み取り専用のワークロードを拒否するように設定され、接続文字列が  `ApplicationIntent=ReadOnly` を含んでいる場合、接続は失敗します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-136">A connection will fail if a primary replica is configured to reject read-only workloads and the connection string contains `ApplicationIntent=ReadOnly`.</span></span>  
   
-## データベース ミラーリングから複数のサブネット クラスターを使用するためのアップグレード  
- 接続エラー \(<xref:System.ArgumentException>\) は、`MultiSubnetFailover` および `Failover Partner` 接続のキーワードが接続文字列内に存在する場合や、`MultiSubnetFailover=True` および TCP 以外のプロトコルが使用された場合に発生します。  エラー \(<xref:System.Data.SqlClient.SqlException>\) は、`MultiSubnetFailover` が使用され、フェールオーバー パートナーがデータベース ミラーリング ペアの一部であることを示す応答を [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] が返した場合にも発生します。  
+## <a name="upgrading-to-use-multi-subnet-clusters-from-database-mirroring"></a><span data-ttu-id="fcd6a-137">データベース ミラーリングから複数のサブネット クラスターを使用するためのアップグレード</span><span class="sxs-lookup"><span data-stu-id="fcd6a-137">Upgrading to Use Multi-Subnet Clusters from Database Mirroring</span></span>  
+ <span data-ttu-id="fcd6a-138">接続エラー (<xref:System.ArgumentException>) は、`MultiSubnetFailover` および `Failover Partner` 接続のキーワードが接続文字列内に存在する場合や、`MultiSubnetFailover=True` および TCP 以外のプロトコルが使用された場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-138">A connection error (<xref:System.ArgumentException>) will occur if the `MultiSubnetFailover` and `Failover Partner` connection keywords are present in the connection string, or if `MultiSubnetFailover=True` and a protocol other than TCP is used.</span></span> <span data-ttu-id="fcd6a-139">エラー (<xref:System.Data.SqlClient.SqlException>) は、`MultiSubnetFailover` が使用され、フェールオーバー パートナーがデータベース ミラーリング ペアの一部であることを示す応答を [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] が返した場合にも発生します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-139">An error (<xref:System.Data.SqlClient.SqlException>) will also occur if `MultiSubnetFailover` is used and the [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] returns a failover partner response indicating it is part of a database mirroring pair.</span></span>  
   
- 現在データベース ミラーリングを使用している SqlClient アプリケーションを複数のサブネットのシナリオへとアップグレードする場合、`Failover Partner` 接続プロパティを削除し、`True` に設定した `MultiSubnetFailover` で置き換え、接続文字列のサーバー名を可用性グループ リスナーと置き換える必要があります。  接続文字列が `Failover Partner` および `MultiSubnetFailover=True` を使用していると、ドライバーがエラーを生成します。  ただし、接続文字列が `Failover Partner` および `MultiSubnetFailover=False` \(または  `ApplicationIntent=ReadWrite`\) を使用している場合、アプリケーションはデータベース ミラーリングを使用します。  
+ <span data-ttu-id="fcd6a-140">現在データベース ミラーリングを使用している SqlClient アプリケーションを複数のサブネットのシナリオへとアップグレードする場合、`Failover Partner` 接続プロパティを削除し、`MultiSubnetFailover` に設定した `True` で置き換え、接続文字列のサーバー名を可用性グループ リスナーと置き換える必要があります。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-140">If you upgrade a SqlClient application that currently uses database mirroring to a multi-subnet scenario, you should remove the `Failover Partner` connection property and replace it with `MultiSubnetFailover` set to `True` and replace the server name in the connection string with an availability group listener.</span></span> <span data-ttu-id="fcd6a-141">接続文字列が `Failover Partner` および `MultiSubnetFailover=True` を使用していると、ドライバーがエラーを生成します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-141">If a connection string uses `Failover Partner` and `MultiSubnetFailover=True`, the driver will generate an error.</span></span> <span data-ttu-id="fcd6a-142">ただし、接続文字列が `Failover Partner` および `MultiSubnetFailover=False` (または  `ApplicationIntent=ReadWrite`) を使用している場合、アプリケーションはデータベース ミラーリングを使用します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-142">However, if a connection string uses `Failover Partner` and `MultiSubnetFailover=False` (or `ApplicationIntent=ReadWrite`), the application will use database mirroring.</span></span>  
   
- データベース ミラーリングが AG のプライマリ データベースで使用される場合、および  `MultiSubnetFailover=True` が可用性グループ リスナーではなくプライマリ データベースに接続する接続文字列で使用される場合、ドライバーはエラーを返します。  
+ <span data-ttu-id="fcd6a-143">データベース ミラーリングが AG のプライマリ データベースで使用される場合、および  `MultiSubnetFailover=True` が可用性グループ リスナーではなくプライマリ データベースに接続する接続文字列で使用される場合、ドライバーはエラーを返します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-143">The driver will return an error if database mirroring is used on the primary database in the AG, and if `MultiSubnetFailover=True` is used in the connection string that connects to a primary database instead of to an availability group listener.</span></span>  
   
-## アプリケーションの目的の指定  
- `ApplicationIntent=ReadOnly` の場合、クライアントは AlwaysOn が有効になったデータベースに接続する場合に、読み取られたワークロードを要求します。  サーバーは、接続時および USE データベース ステートメントの間、その目的を強制しますが、AlwaysOn が有効になったデータベースに対してのみ、これを行います。  
+## <a name="specifying-application-intent"></a><span data-ttu-id="fcd6a-144">アプリケーションの目的の指定</span><span class="sxs-lookup"><span data-stu-id="fcd6a-144">Specifying Application Intent</span></span>  
+ <span data-ttu-id="fcd6a-145">`ApplicationIntent=ReadOnly` の場合、クライアントは AlwaysOn が有効になったデータベースに接続する場合に、読み取られたワークロードを要求します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-145">When `ApplicationIntent=ReadOnly`, the client requests a read workload when connecting to an AlwaysOn enabled database.</span></span> <span data-ttu-id="fcd6a-146">サーバーは、接続時および USE データベース ステートメントの間、その目的を強制しますが、AlwaysOn が有効になったデータベースに対してのみ、これを行います。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-146">The server will enforce the intent at connection time and during a USE database statement but only to an Always On enabled database.</span></span>  
   
- `ApplicationIntent` キーワードは従来の読み取り専用のデータベースでは機能しません。  
+ <span data-ttu-id="fcd6a-147">`ApplicationIntent` キーワードは従来の読み取り専用のデータベースでは機能しません。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-147">The `ApplicationIntent` keyword does not work with legacy, read-only databases.</span></span>  
   
- データベースは、対象となる AlwaysOn データベースのワークロードの読み取りを許可または拒否できます。  \(これは `PRIMARY_ROLE` の `ALLOW_CONNECTIONS` 句および `SECONDARY_ROLE` [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] ステートメントを使用して行います。\)  
+ <span data-ttu-id="fcd6a-148">データベースは、対象となる AlwaysOn データベースのワークロードの読み取りを許可または拒否できます。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-148">A database can allow or disallow read workloads on the targeted AlwaysOn database.</span></span> <span data-ttu-id="fcd6a-149">(これは `ALLOW_CONNECTIONS` の `PRIMARY_ROLE` 句および `SECONDARY_ROLE`[!INCLUDE[tsql](../../../../../includes/tsql-md.md)] ステートメントを使用して行います。)</span><span class="sxs-lookup"><span data-stu-id="fcd6a-149">(This is done with the `ALLOW_CONNECTIONS` clause of the `PRIMARY_ROLE` and `SECONDARY_ROLE`[!INCLUDE[tsql](../../../../../includes/tsql-md.md)] statements.)</span></span>  
   
- `ApplicationIntent` キーワードは、読み取り専用のルーティングを有効にするために使用されます。  
+ <span data-ttu-id="fcd6a-150">`ApplicationIntent` キーワードは、読み取り専用のルーティングを有効にするために使用されます。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-150">The `ApplicationIntent` keyword is used to enable read-only routing.</span></span>  
   
-## 読み取り専用ルーティング  
- 読み取り専用のルーティングはデータベースの読み取り専用のレプリカの可用性を確保できる機能です。  読み取り専用のルーティングを有効にするには次のことが必要です。  
+## <a name="read-only-routing"></a><span data-ttu-id="fcd6a-151">読み取り専用ルーティング</span><span class="sxs-lookup"><span data-stu-id="fcd6a-151">Read-Only Routing</span></span>  
+ <span data-ttu-id="fcd6a-152">読み取り専用のルーティングはデータベースの読み取り専用のレプリカの可用性を確保できる機能です。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-152">Read-only routing is a feature that can ensure the availability of a read only replica of a database.</span></span> <span data-ttu-id="fcd6a-153">読み取り専用のルーティングを有効にするには次のことが必要です。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-153">To enable read-only routing:</span></span>  
   
-1.  AlwaysOn 可用性グループの可用性グループ リスナーに接続する必要があります。  
+1.  <span data-ttu-id="fcd6a-154">AlwaysOn 可用性グループの可用性グループ リスナーに接続する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-154">You must connect to an Always On Availability Group availability group listener.</span></span>  
   
-2.  `ApplicationIntent` 接続文字列キーワードを `ReadOnly` に設定する必要があります。  
+2.  <span data-ttu-id="fcd6a-155">`ApplicationIntent` 接続文字列キーワードを `ReadOnly` に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-155">The `ApplicationIntent` connection string keyword must be set to `ReadOnly`.</span></span>  
   
-3.  可用性グループは、データベース管理者によって、読み取り専用のルーティングを有効にするように構成される必要があります。  
+3.  <span data-ttu-id="fcd6a-156">可用性グループは、データベース管理者によって、読み取り専用のルーティングを有効にするように構成される必要があります。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-156">The Availability Group must be configured by the database administrator to enable read-only routing.</span></span>  
   
- 読み取り専用のルーティングを使用する複数の接続のすべてが、同じ読み取り専用のレプリカに接続しないようにすることができます。  データベースの同期変更またはサーバーのルーティング構成の変更は、異なる読み取り専用のレプリカに対するクライアントの接続につながることがあります。  すべての読み取り専用の要求が、確実に同じ読み取り専用のレプリカに接続するようにするには、`Data Source` 接続文字列キーワードに可用性グループ リスナーを渡さないでください。  代わりに、読み取り専用のインスタンスの名前を指定します。  
+ <span data-ttu-id="fcd6a-157">読み取り専用のルーティングを使用する複数の接続のすべてが、同じ読み取り専用のレプリカに接続しないようにすることができます。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-157">It is possible that multiple connections using read-only routing will not all connect to the same read-only replica.</span></span> <span data-ttu-id="fcd6a-158">データベースの同期変更またはサーバーのルーティング構成の変更は、異なる読み取り専用のレプリカに対するクライアントの接続につながることがあります。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-158">Changes in database synchronization or changes in the server's routing configuration can result in client connections to different read-only replicas.</span></span> <span data-ttu-id="fcd6a-159">すべての読み取り専用の要求が、確実に同じ読み取り専用のレプリカに接続するようにするには、`Data Source` 接続文字列キーワードに可用性グループ リスナーを渡さないでください。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-159">To ensure that all read-only requests connect to the same read-only replica, do not pass an availability group listener to the `Data Source` connection string keyword.</span></span> <span data-ttu-id="fcd6a-160">代わりに、読み取り専用のインスタンスの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-160">Instead, specify the name of the read-only instance.</span></span>  
   
- 読み取り専用のルーティングでは、最初にプライマリに接続し、最適な可用性の読み取り可能なセカンダリを検索するため、プライマリに接続するよりも時間がかかる場合があります。  そのため、ログインのタイムアウトを増やす必要があります。  
+ <span data-ttu-id="fcd6a-161">読み取り専用のルーティングでは、最初にプライマリに接続し、最適な可用性の読み取り可能なセカンダリを検索するため、プライマリに接続するよりも時間がかかる場合があります。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-161">Read-only routing may take longer than connecting to the primary because read only routing first connects to the primary and then looks for the best available readable secondary.</span></span> <span data-ttu-id="fcd6a-162">そのため、ログインのタイムアウトを増やす必要があります。</span><span class="sxs-lookup"><span data-stu-id="fcd6a-162">Because of this, you should increase your login timeout.</span></span>  
   
-## 参照  
- [SQL Server の機能と ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="fcd6a-163">関連項目</span><span class="sxs-lookup"><span data-stu-id="fcd6a-163">See Also</span></span>  
+ [<span data-ttu-id="fcd6a-164">SQL Server の機能と ADO.NET</span><span class="sxs-lookup"><span data-stu-id="fcd6a-164">SQL Server Features and ADO.NET</span></span>](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
+ [<span data-ttu-id="fcd6a-165">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="fcd6a-165">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

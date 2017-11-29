@@ -1,47 +1,48 @@
 ---
-title: "共有のデータ型 (アンマネージ API リファレンス) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
+title: "共有のデータ型 (アンマネージ API リファレンス)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: reference
 ms.assetid: e4ab2c4c-9433-4eba-9e9a-096de406cafb
-caps.latest.revision: 4
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 03350825b3de4515a0d30e8644f34df71efa25db
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 共有のデータ型 (アンマネージ API リファレンス)
-このトピックでは、C\/C\+\+ `typedef` ステートメントで定義される .NET Framework のアンマネージ API で使用する、簡単なデータ型について示します。 これらのデータ型は通常、C\/C\+\+ のプリミティブ データ型のエイリアスです。 一般的にこれらのデータ型の値は不透明です。これらのデータ型の値は他の関数またはメソッドに対して変更なしで渡せるように、特定の関数またはメソッドによって返されるためです。  
+# <a name="common-data-types-unmanaged-api-reference"></a><span data-ttu-id="f5d0f-102">共有のデータ型 (アンマネージ API リファレンス)</span><span class="sxs-lookup"><span data-stu-id="f5d0f-102">Common Data Types (Unmanaged API Reference)</span></span>
+<span data-ttu-id="f5d0f-103">このトピックでは、C/C++ `typedef` ステートメントで定義される .NET Framework のアンマネージ API で使用する、簡単なデータ型について示します。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-103">This topic lists simple data types used by the unmanaged APIs for the .NET Framework that are defined by C/C++ `typedef` statements.</span></span> <span data-ttu-id="f5d0f-104">これらのデータ型は通常、C/C++ のプリミティブ データ型のエイリアスです。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-104">These data types are typically aliases for C/C++ primitive data types.</span></span> <span data-ttu-id="f5d0f-105">一般的にこれらのデータ型の値は不透明です。これらのデータ型の値は他の関数またはメソッドに対して変更なしで渡せるように、特定の関数またはメソッドによって返されるためです。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-105">Typically, the values of these data types are opaque; that is, they are returned by a particular function or method so that they can be passed to other functions or methods without modification.</span></span>  
   
-|データ型|定義|定義されている場所|説明|  
-|----------|--------|---------------|--------|  
-|AppDomainID|`typedef UINT_PTR AppDomainID;`|corprof.h|アプリケーション ドメインの識別子。|  
-|AssemblyID|`typedef UINT_PTR AssemblyID;`|corprof.h|アセンブリの識別子。|  
-|ClassID|`typedef UINT_PTR ClassID;`|corprof.h|マネージ クラスの識別子。|  
-|CONNID|`typedef DWORD CONNID;`|cordebug.h、mscoree.h|Microsoft SQL Server のインスタンスへ接続されるスレッドの接続識別子。|  
-|ContextID|`typedef UINT_PTR ContextID;`|corprof.h|特定のマネージ スレッドに関連付けられているコンテキストの識別子。|  
-|COR\_PRF\_ELT\_INFO|`typedef UINT_PTR COR_PRF_ELT_INFO;`|corprof.h|特定のスタック フレームに関する情報を表す不透明なハンドル。|  
-|COR\_PRF\_FRAME\_INFO|`typedef UINT_PTR COR_PRF_FRAME_INFO;`|corprof.h|スタック フレームを指す不透明なハンドル。 これは、自身が渡されるコールバックの間のみ有効です。|  
-|CORDB\_ADDRESS|`typedef ULONG64 CORDB_ADDRESS;`|cordebug.h|メモリ内アドレス。|  
-|CORDB\_CONTINUE\_STATUS|`typedef DWORD CORDB_CONTINUE_STATUS;`|cordebug.h|継続状態。|  
-|CORDB\_REGISTER|`typedef ULONG64 CORDB_REGISTER;`|cordebug.h|CPU レジスタの値。|  
-|FunctionID|`typedef UINT_PTR FunctionID;`|corprof.h|関数またはメソッドの識別子。|  
-|GCHandleID|`typedef UINT_PTR GCHandleID;`|corprof.h|ガベージ コレクション ハンドル。|  
-|mdToken|`typedef UINT32 mdToken;`|corprof.h|メタデータ トークン \(メタデータ テーブル内の行\)。|  
-|ModuleID|`typedef UINT_PTR ModuleID;`|corprof.h|アセンブリ モジュールの識別子。|  
-|ObjectID|`typedef UINT_PTR ObjectID;`|corprof.h|オブジェクトの識別子。|  
-|ProcessID|`typedef UINT_PTR ProcessID;`|corprof.h|マネージ プロセスの識別子。|  
-|ReJITID|`typedef UINT_PTR ReJITID;`|corprof.h|JIT コンパイルされた関数の識別子。|  
-|TASKID|`typedef UINT64 TASKID;`|cordebug.h、mscoree.h|[ICLRTask](../../../ocs/framework/unmanaged-api/hosting/iclrtask-interface.md) インスタンスの識別子。|  
-|ThreadID|`typedef UINT_PTR ThreadID;`|corprof.h|マネージ スレッドの識別子。|  
+|<span data-ttu-id="f5d0f-106">データ型</span><span class="sxs-lookup"><span data-stu-id="f5d0f-106">Data type</span></span>|<span data-ttu-id="f5d0f-107">定義</span><span class="sxs-lookup"><span data-stu-id="f5d0f-107">Definition</span></span>|<span data-ttu-id="f5d0f-108">定義されている場所</span><span class="sxs-lookup"><span data-stu-id="f5d0f-108">Defined in</span></span>|<span data-ttu-id="f5d0f-109">説明</span><span class="sxs-lookup"><span data-stu-id="f5d0f-109">Description</span></span>|  
+|---------------|----------------|----------------|-----------------|  
+|<span data-ttu-id="f5d0f-110">AppDomainID</span><span class="sxs-lookup"><span data-stu-id="f5d0f-110">AppDomainID</span></span>|`typedef UINT_PTR AppDomainID;`|<span data-ttu-id="f5d0f-111">corprof.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-111">corprof.h</span></span>|<span data-ttu-id="f5d0f-112">アプリケーション ドメインの識別子。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-112">The identifier of an application domain.</span></span>|  
+|<span data-ttu-id="f5d0f-113">AssemblyID</span><span class="sxs-lookup"><span data-stu-id="f5d0f-113">AssemblyID</span></span>|`typedef UINT_PTR AssemblyID;`|<span data-ttu-id="f5d0f-114">corprof.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-114">corprof.h</span></span>|<span data-ttu-id="f5d0f-115">アセンブリの識別子。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-115">The identifier of an assembly.</span></span>|  
+|<span data-ttu-id="f5d0f-116">ClassID</span><span class="sxs-lookup"><span data-stu-id="f5d0f-116">ClassID</span></span>|`typedef UINT_PTR ClassID;`|<span data-ttu-id="f5d0f-117">corprof.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-117">corprof.h</span></span>|<span data-ttu-id="f5d0f-118">マネージ クラスの識別子。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-118">The identifier of a managed class.</span></span>|  
+|<span data-ttu-id="f5d0f-119">CONNID</span><span class="sxs-lookup"><span data-stu-id="f5d0f-119">CONNID</span></span>|`typedef DWORD CONNID;`|<span data-ttu-id="f5d0f-120">cordebug.h、mscoree.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-120">cordebug.h, mscoree.h</span></span>|<span data-ttu-id="f5d0f-121">Microsoft SQL Server のインスタンスへ接続されるスレッドの接続識別子。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-121">The connection identifier for a thread that is connected to an instance of Microsoft SQL Server.</span></span>|  
+|<span data-ttu-id="f5d0f-122">ContextID</span><span class="sxs-lookup"><span data-stu-id="f5d0f-122">ContextID</span></span>|`typedef UINT_PTR ContextID;`|<span data-ttu-id="f5d0f-123">corprof.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-123">corprof.h</span></span>|<span data-ttu-id="f5d0f-124">特定のマネージ スレッドに関連付けられているコンテキストの識別子。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-124">The identifier of the context associated with a particular managed thread.</span></span>|  
+|<span data-ttu-id="f5d0f-125">COR_PRF_ELT_INFO</span><span class="sxs-lookup"><span data-stu-id="f5d0f-125">COR_PRF_ELT_INFO</span></span>|`typedef UINT_PTR COR_PRF_ELT_INFO;`|<span data-ttu-id="f5d0f-126">corprof.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-126">corprof.h</span></span>|<span data-ttu-id="f5d0f-127">特定のスタック フレームに関する情報を表す不透明なハンドル。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-127">An opaque handle that represents information about a particular stack frame.</span></span>|  
+|<span data-ttu-id="f5d0f-128">COR_PRF_FRAME_INFO</span><span class="sxs-lookup"><span data-stu-id="f5d0f-128">COR_PRF_FRAME_INFO</span></span>|`typedef UINT_PTR COR_PRF_FRAME_INFO;`|<span data-ttu-id="f5d0f-129">corprof.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-129">corprof.h</span></span>|<span data-ttu-id="f5d0f-130">スタック フレームを指す不透明なハンドル。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-130">An opaque handle that points to a stack frame.</span></span> <span data-ttu-id="f5d0f-131">これは、自身が渡されるコールバックの間のみ有効です。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-131">It is valid only during the callback to which it is passed.</span></span>|  
+|<span data-ttu-id="f5d0f-132">CORDB_ADDRESS</span><span class="sxs-lookup"><span data-stu-id="f5d0f-132">CORDB_ADDRESS</span></span>|`typedef ULONG64 CORDB_ADDRESS;`|<span data-ttu-id="f5d0f-133">cordebug.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-133">cordebug.h</span></span>|<span data-ttu-id="f5d0f-134">メモリ内アドレス。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-134">An address in memory.</span></span>|  
+|<span data-ttu-id="f5d0f-135">CORDB_CONTINUE_STATUS</span><span class="sxs-lookup"><span data-stu-id="f5d0f-135">CORDB_CONTINUE_STATUS</span></span>|`typedef DWORD CORDB_CONTINUE_STATUS;`|<span data-ttu-id="f5d0f-136">cordebug.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-136">cordebug.h</span></span>|<span data-ttu-id="f5d0f-137">継続状態。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-137">The continuation status.</span></span>|  
+|<span data-ttu-id="f5d0f-138">CORDB_REGISTER</span><span class="sxs-lookup"><span data-stu-id="f5d0f-138">CORDB_REGISTER</span></span>|`typedef ULONG64 CORDB_REGISTER;`|<span data-ttu-id="f5d0f-139">cordebug.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-139">cordebug.h</span></span>|<span data-ttu-id="f5d0f-140">CPU レジスタの値。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-140">The value of a CPU register.</span></span>|  
+|<span data-ttu-id="f5d0f-141">FunctionID</span><span class="sxs-lookup"><span data-stu-id="f5d0f-141">FunctionID</span></span>|`typedef UINT_PTR FunctionID;`|<span data-ttu-id="f5d0f-142">corprof.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-142">corprof.h</span></span>|<span data-ttu-id="f5d0f-143">関数またはメソッドの識別子。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-143">The identifier of a function or method.</span></span>|  
+|<span data-ttu-id="f5d0f-144">GCHandleID</span><span class="sxs-lookup"><span data-stu-id="f5d0f-144">GCHandleID</span></span>|`typedef UINT_PTR GCHandleID;`|<span data-ttu-id="f5d0f-145">corprof.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-145">corprof.h</span></span>|<span data-ttu-id="f5d0f-146">ガベージ コレクション ハンドル。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-146">A garbage collection handle.</span></span>|  
+|<span data-ttu-id="f5d0f-147">mdToken</span><span class="sxs-lookup"><span data-stu-id="f5d0f-147">mdToken</span></span>|`typedef UINT32 mdToken;`|<span data-ttu-id="f5d0f-148">corprof.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-148">corprof.h</span></span>|<span data-ttu-id="f5d0f-149">メタデータ トークン (メタデータ テーブル内の行)。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-149">A   metadata token (a row in a metadata table).</span></span>|  
+|<span data-ttu-id="f5d0f-150">ModuleID</span><span class="sxs-lookup"><span data-stu-id="f5d0f-150">ModuleID</span></span>|`typedef UINT_PTR ModuleID;`|<span data-ttu-id="f5d0f-151">corprof.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-151">corprof.h</span></span>|<span data-ttu-id="f5d0f-152">アセンブリ モジュールの識別子。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-152">The identifier of an assembly module.</span></span>|  
+|<span data-ttu-id="f5d0f-153">ObjectID</span><span class="sxs-lookup"><span data-stu-id="f5d0f-153">ObjectID</span></span>|`typedef UINT_PTR ObjectID;`|<span data-ttu-id="f5d0f-154">corprof.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-154">corprof.h</span></span>|<span data-ttu-id="f5d0f-155">オブジェクトの識別子。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-155">The identifier of an object.</span></span>|  
+|<span data-ttu-id="f5d0f-156">ProcessID</span><span class="sxs-lookup"><span data-stu-id="f5d0f-156">ProcessID</span></span>|`typedef UINT_PTR ProcessID;`|<span data-ttu-id="f5d0f-157">corprof.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-157">corprof.h</span></span>|<span data-ttu-id="f5d0f-158">マネージ プロセスの識別子。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-158">The identifier of a managed process.</span></span>|  
+|<span data-ttu-id="f5d0f-159">ReJITID</span><span class="sxs-lookup"><span data-stu-id="f5d0f-159">ReJITID</span></span>|`typedef UINT_PTR ReJITID;`|<span data-ttu-id="f5d0f-160">corprof.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-160">corprof.h</span></span>|<span data-ttu-id="f5d0f-161">JIT コンパイルされた関数の識別子。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-161">The identifier of a jitted function.</span></span>|  
+|<span data-ttu-id="f5d0f-162">TASKID</span><span class="sxs-lookup"><span data-stu-id="f5d0f-162">TASKID</span></span>|`typedef UINT64 TASKID;`|<span data-ttu-id="f5d0f-163">cordebug.h、mscoree.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-163">cordebug.h, mscoree.h</span></span>|<span data-ttu-id="f5d0f-164">識別子、 [ICLRTask](../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)インスタンス。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-164">The identifier of an [ICLRTask](../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance.</span></span>|  
+|<span data-ttu-id="f5d0f-165">ThreadID</span><span class="sxs-lookup"><span data-stu-id="f5d0f-165">ThreadID</span></span>|`typedef UINT_PTR ThreadID;`|<span data-ttu-id="f5d0f-166">corprof.h</span><span class="sxs-lookup"><span data-stu-id="f5d0f-166">corprof.h</span></span>|<span data-ttu-id="f5d0f-167">マネージ スレッドの識別子。</span><span class="sxs-lookup"><span data-stu-id="f5d0f-167">The identifier of a managed thread.</span></span>|  
   
-## 参照  
- [アンマネージ API リファレンス](../../../docs/framework/unmanaged-api/index.md)
+## <a name="see-also"></a><span data-ttu-id="f5d0f-168">関連項目</span><span class="sxs-lookup"><span data-stu-id="f5d0f-168">See Also</span></span>  
+ [<span data-ttu-id="f5d0f-169">アンマネージ API リファレンス</span><span class="sxs-lookup"><span data-stu-id="f5d0f-169">Unmanaged API Reference</span></span>](../../../docs/framework/unmanaged-api/index.md)

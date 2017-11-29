@@ -1,74 +1,75 @@
 ---
-title: "Troubleshooting the DataRepeater Control (Visual Studio) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "DataRepeater, troubleshooting"
+title: "DataRepeater コントロールのトラブルシューティング (Visual Studio)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: DataRepeater, troubleshooting
 ms.assetid: c0ab9469-eced-4f52-aa18-4bd8dd4f1a9a
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 2d630dbf8601eeddd5ce3ea02696891a1087f71f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Troubleshooting the DataRepeater Control (Visual Studio)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-ここでは、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールを使用するときに発生する可能性のある一般的な問題について説明します。  
+# <a name="troubleshooting-the-datarepeater-control-visual-studio"></a><span data-ttu-id="58608-102">DataRepeater コントロールのトラブルシューティング (Visual Studio)</span><span class="sxs-lookup"><span data-stu-id="58608-102">Troubleshooting the DataRepeater Control (Visual Studio)</span></span>
+<span data-ttu-id="58608-103">このトピックは、使用している場合に発生する一般的な問題を一覧表示、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール。</span><span class="sxs-lookup"><span data-stu-id="58608-103">This topic lists common issues that may occur when you are working with the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.</span></span>  
   
-## DataRepeater のキーボード イベントおよびマウス イベントが発生しない  
- キーボード イベントやマウス イベントなどの一部の <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロール イベントは発生しません。  これは仕様に基づく制限事項です。  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロール自体は <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem> オブジェクトのコンテナーであるため、実行時にはアクセスできません。  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem> は、デザイン時にイベントを公開しません。  したがって、項目をクリックしても、項目にフォーカスがあるときにキーを押しても、イベントは発生しません。  
+## <a name="datarepeater-keyboard-and-mouse-events-are-not-raised"></a><span data-ttu-id="58608-104">DataRepeater キーボードとマウス イベントは発生しません</span><span class="sxs-lookup"><span data-stu-id="58608-104">DataRepeater Keyboard and Mouse Events Are Not Raised</span></span>  
+ <span data-ttu-id="58608-105">いくつか<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>キーボードとマウスのイベントなどのコントロール イベントは発生しません。</span><span class="sxs-lookup"><span data-stu-id="58608-105">Some <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control events, such as keyboard and mouse events, are not raised.</span></span> <span data-ttu-id="58608-106">これは仕様に基づく制限事項です。</span><span class="sxs-lookup"><span data-stu-id="58608-106">This is by design.</span></span> <span data-ttu-id="58608-107"><xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール自体は、コンテナーの<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>オブジェクトされ、実行時にアクセスすることはできません。</span><span class="sxs-lookup"><span data-stu-id="58608-107">The <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control itself is a container for <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem> objects and cannot be accessed at run time.</span></span> <span data-ttu-id="58608-108"><xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>はデザイン時にイベントを公開しません。</span><span class="sxs-lookup"><span data-stu-id="58608-108">The <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem> does not expose events at design time.</span></span> <span data-ttu-id="58608-109">そのため、項目をクリックするか、項目にフォーカスがあるときにキーを押して、イベントは発生しません。</span><span class="sxs-lookup"><span data-stu-id="58608-109">Therefore, clicking an item or pressing a key when the item has focus does not raise an event.</span></span>  
   
- ただし、<xref:System.Windows.Forms.Control.Padding%2A> プロパティが大きい値に設定されているために <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールの端が隠されていない場合は例外です。  この場合、隠されていない余白部分をクリックするとイベントが発生します。  
+ <span data-ttu-id="58608-110">この例外は、<xref:System.Windows.Forms.Control.Padding%2A>プロパティが多数の端を公開するための十分な値、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール。</span><span class="sxs-lookup"><span data-stu-id="58608-110">The exception to this is when the <xref:System.Windows.Forms.Control.Padding%2A> property is set to a large enough value to expose the edges of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.</span></span> <span data-ttu-id="58608-111">この場合、公開されている余白をクリックし、マウス イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="58608-111">In this case, clicking in the exposed margin will raise mouse events.</span></span>  
   
- この問題を解決するには、<xref:System.Windows.Forms.Panel> コントロールを <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールの <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A> セクションに追加し、それ以外のコントロールをすべて <xref:System.Windows.Forms.Panel> に追加します。  次に、<xref:System.Windows.Forms.Panel> コントロールのキーボード イベントおよびマウス イベントのイベント ハンドラーにコードを追加します。  
+ <span data-ttu-id="58608-112">この問題を解決するには、追加、<xref:System.Windows.Forms.Panel>コントロールを<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A>のセクションで、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>制御、およびコントロールの残りの部分を追加して、<xref:System.Windows.Forms.Panel>です。</span><span class="sxs-lookup"><span data-stu-id="58608-112">To resolve this issue, add a <xref:System.Windows.Forms.Panel> control to the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A> section of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control, and then add the rest of the controls to the <xref:System.Windows.Forms.Panel>.</span></span> <span data-ttu-id="58608-113">コードを追加することができますし、<xref:System.Windows.Forms.Panel>キーボードとマウスのイベントのコントロールのイベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="58608-113">You can then add code to the <xref:System.Windows.Forms.Panel> control's event handlers for keyboard and mouse events.</span></span>  
   
-## DataRepeater が部分的にバインド ナビゲーターの後ろに隠れる  
- フォームに先に <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールを追加し、次に **\[データ ソース\]** ウィンドウからデータ バインド コントロールを追加した場合、<xref:System.Windows.Forms.BindingNavigator> コントロールが <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールの上に重なって表示される場合があります。  これは **\[データ ソース\]** ウィンドウの既知の制限事項であり、<xref:System.Windows.Forms.DataGridView> などの他のコントロールの場合と同じ動作です。  
+## <a name="the-datarepeater-is-partially-hidden-behind-the-binding-navigator"></a><span data-ttu-id="58608-114">DataRepeater は部分的に隠れてナビゲーターのバインド</span><span class="sxs-lookup"><span data-stu-id="58608-114">The DataRepeater Is Partially Hidden Behind the Binding Navigator</span></span>  
+ <span data-ttu-id="58608-115">追加すると、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールをフォームにしてからのデータ バインド コントロールを追加して、**データ ソース** ウィンドウで、<xref:System.Windows.Forms.BindingNavigator>の上にコントロールが表示される、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール。</span><span class="sxs-lookup"><span data-stu-id="58608-115">When you first add a <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control to a form and then add data-bound controls from the **Data Sources** window, the <xref:System.Windows.Forms.BindingNavigator> control may appear on top of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.</span></span> <span data-ttu-id="58608-116">これは、既知の制限事項、**データ ソース**ウィンドウなどの他のコントロールの動作と一貫性がおよび、<xref:System.Windows.Forms.DataGridView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="58608-116">This is a known limitation of the **Data Sources** window and is consistent with the behavior of other controls, such as the <xref:System.Windows.Forms.DataGridView> control.</span></span>  
   
- この問題を解決するには、デザイン時に <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールを <xref:System.Windows.Forms.BindingNavigator> コントロールより下へ移動するか、`Load` イベント ハンドラーに次のようなコードを追加します。  
+ <span data-ttu-id="58608-117">移動することができます、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>よりも低い、<xref:System.Windows.Forms.BindingNavigator>または、デザイン時に、制御では、次のようなコードを追加、`Load`イベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="58608-117">You can either move the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> lower than the <xref:System.Windows.Forms.BindingNavigator> control at design time, or add code resembling the following in the `Load` event handler.</span></span>  
   
-```vb#  
+```vb  
 DataRepeater1.Top = ProductsBindingNavigator.Height  
 ```  
   
-```c#  
+```csharp  
 dataRepeater1.Top = productsBindingNavigator.Height;  
 ```  
   
-## 実行時にコントロールが正しく表示されない  
- <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロール内の一部のコントロールが、実行時に意図したとおりに表示されない場合があります。  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A> から <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem> にコントロールを複製する処理では、必ずしもすべてのコントロールのすべてのプロパティが特定されるわけではありません。  たとえば、デザイン時に <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールに非バインド <xref:System.Windows.Forms.ListBox> コントロールを追加し、その <xref:System.Windows.Forms.ListBox.Items%2A> コレクションを文字列リストで設定した場合、<xref:System.Windows.Forms.ListBox> は実行時には空になります。  これは、<xref:System.Windows.Forms.ListBox.Items%2A> プロパティが複製処理の対象とならないからです。  
+## <a name="controls-are-not-displayed-correctly-at-run-time"></a><span data-ttu-id="58608-118">実行時にコントロールが正しく表示されません。</span><span class="sxs-lookup"><span data-stu-id="58608-118">Controls Are Not Displayed Correctly at Run Time</span></span>  
+ <span data-ttu-id="58608-119">一部のコントロールで、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>期待どおりに実行時にコントロールが表示されない場合があります。</span><span class="sxs-lookup"><span data-stu-id="58608-119">Some controls in a <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control may not be displayed as expected at run time.</span></span> <span data-ttu-id="58608-120">コントロールの複製に使用されるプロセス、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A>を<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>すべてのコントロールのすべてのプロパティを必ず確認できることはできません。</span><span class="sxs-lookup"><span data-stu-id="58608-120">The process used to clone controls from the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A> to the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem> cannot always determine all the properties of all controls.</span></span> <span data-ttu-id="58608-121">非結合を追加する場合など、<xref:System.Windows.Forms.ListBox>コントロールを<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>デザイン時に制御し、設定、 <xref:System.Windows.Forms.ListBox.Items%2A> 、文字列の一覧を使用して、コレクション、<xref:System.Windows.Forms.ListBox>実行時に空になります。</span><span class="sxs-lookup"><span data-stu-id="58608-121">For example, if you add an unbound <xref:System.Windows.Forms.ListBox> control to a <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control at design time and populate its <xref:System.Windows.Forms.ListBox.Items%2A> collection with a list of strings, the <xref:System.Windows.Forms.ListBox> will be empty at run time.</span></span> <span data-ttu-id="58608-122">アカウントに、複製プロセスを使用できないため、これは、<xref:System.Windows.Forms.ListBox.Items%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="58608-122">This is because the cloning process cannot take into account the <xref:System.Windows.Forms.ListBox.Items%2A> property.</span></span>  
   
- この問題は、複製されないプロパティを <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemCloned> イベントで復元するなどの方法で解決できます。このイベントは既定の複製処理が完了した後に発生します。  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemCloned> イベント ハンドラーで、<xref:System.Windows.Forms.ListBox> コントロールの <xref:System.Windows.Forms.ListBox.Items%2A> コレクションを修復する方法を次の例に示します。  
+ <span data-ttu-id="58608-123">このなどの問題を修正するで不足しているプロパティを復元することによって、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemCloned>イベントで、既定の複製が完了した後に発生します。</span><span class="sxs-lookup"><span data-stu-id="58608-123">You can fix problems such as this by restoring the missing properties in the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemCloned> event, which occurs after the default cloning is completed.</span></span> <span data-ttu-id="58608-124">次の例では、修復する方法、<xref:System.Windows.Forms.ListBox.Items%2A>のコレクション、<xref:System.Windows.Forms.ListBox>内の制御、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemCloned>イベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="58608-124">The following example demonstrates how to repair the <xref:System.Windows.Forms.ListBox.Items%2A> collection of a <xref:System.Windows.Forms.ListBox> control in the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemCloned> event handler.</span></span>  
   
- [!code-cs[VbPowerPacksDataRepeaterItemCloned#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/troubleshooting-the-datarepeater-control-visual-studio_1.cs)]
+ [!code-csharp[VbPowerPacksDataRepeaterItemCloned#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/troubleshooting-the-datarepeater-control-visual-studio_1.cs)]
  [!code-vb[VbPowerPacksDataRepeaterItemCloned#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/troubleshooting-the-datarepeater-control-visual-studio_1.vb)]  
   
-## 項目ヘッダーに選択記号が表示されない  
- <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールで項目ヘッダーの <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.SelectionColor%2A> プロパティを変更すると、選択した色によっては選択記号が見えなくなることがあります。  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemHeaderSize%2A> プロパティを変更することによっても選択記号が見えなくなることがあります。  
+## <a name="the-selection-symbol-on-the-item-header-is-missing"></a><span data-ttu-id="58608-125">項目ヘッダーに選択範囲のシンボルがありません。</span><span class="sxs-lookup"><span data-stu-id="58608-125">The Selection Symbol on the Item Header Is Missing</span></span>  
+ <span data-ttu-id="58608-126">変更すると、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.SelectionColor%2A>項目のヘッダーのプロパティ、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール、いくつかの色がありますが消える選択記号。</span><span class="sxs-lookup"><span data-stu-id="58608-126">When you change the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.SelectionColor%2A> property of the item header in a <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control, some color choices may cause the selection symbol to disappear.</span></span> <span data-ttu-id="58608-127">変更、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemHeaderSize%2A>プロパティが選択記号が表示されなくなったもあります。</span><span class="sxs-lookup"><span data-stu-id="58608-127">Changing the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemHeaderSize%2A> property may also cause the selection symbol to disappear.</span></span>  
   
- 選択記号の色とサイズは変更できません。  
+ <span data-ttu-id="58608-128">選択記号のサイズと色を変更することはできません。</span><span class="sxs-lookup"><span data-stu-id="58608-128">The color and size of the selection symbol cannot be changed.</span></span>  
   
--   <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.SelectionColor%2A> を <xref:System.Drawing.Color.White%2A> に設定すると、項目が初めて選択されたときに選択記号は見えません。  
+-   <span data-ttu-id="58608-129">設定した場合、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.SelectionColor%2A>に<xref:System.Drawing.Color.White%2A>項目が最初に選択したときに、選択記号は表示されません。</span><span class="sxs-lookup"><span data-stu-id="58608-129">If you set the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.SelectionColor%2A> to <xref:System.Drawing.Color.White%2A>, the selection symbol will not be visible when an item is first selected.</span></span>  
   
--   <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.SelectionColor%2A> を <xref:System.Drawing.Color.Black%2A> に設定すると、コントロールが選択されているときは選択記号が見えず、コントロールが編集モードのときは鉛筆の記号が見えません。  
+-   <span data-ttu-id="58608-130">設定した場合、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.SelectionColor%2A>に<xref:System.Drawing.Color.Black%2A>コントロールが選択されているし、鉛筆のアイコンはコントロールが編集モードのときしか表示されない場合に、選択記号は表示されません。</span><span class="sxs-lookup"><span data-stu-id="58608-130">If you set the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.SelectionColor%2A> to <xref:System.Drawing.Color.Black%2A>, the selection symbol will not be visible when a control is selected, and the pencil symbol will not be visible when a control is in edit mode.</span></span>  
   
--   <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemHeaderSize%2A> プロパティが 11 未満の値に設定されている場合、項目ヘッダー内のインジケーター記号は表示されません。  
+-   <span data-ttu-id="58608-131">場合、 <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemHeaderSize%2A> 11 未満である値に設定されて、アイテム ヘッダーのマークは表示されません。</span><span class="sxs-lookup"><span data-stu-id="58608-131">If the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemHeaderSize%2A> property is set to a value that is less than 11, the indicator symbols in the item header will not be displayed.</span></span>  
   
- 独自の項目ヘッダーと選択記号を設定するには、<xref:System.Windows.Forms.PictureBox> コントロールを使用し、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールの <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem> イベントで <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem> の <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem.IsCurrent%2A> プロパティを監視します。  詳細については、「<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem.IsCurrent%2A>」を参照してください。  
+ <span data-ttu-id="58608-132">使用して独自のアイテムのヘッダーと選択シンボルを指定することができます、<xref:System.Windows.Forms.PictureBox>を管理および監視、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem.IsCurrent%2A>のプロパティ、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>で、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem>のイベント、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール。</span><span class="sxs-lookup"><span data-stu-id="58608-132">You can provide your own item header and selection symbol by using a <xref:System.Windows.Forms.PictureBox> control and monitoring the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem.IsCurrent%2A> property of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem> in the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem> event of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.</span></span> <span data-ttu-id="58608-133">詳細については、「<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem.IsCurrent%2A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="58608-133">For more information, see <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem.IsCurrent%2A>.</span></span>  
   
-## 参照  
- [Introduction to the DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)   
- [How to: Display Bound Data in a DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/how-to-display-bound-data-in-a-datarepeater-control-visual-studio.md)   
- [How to: Display Unbound Controls in a DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/how-to-display-unbound-controls-in-a-datarepeater-control-visual-studio.md)   
- [How to: Change the Layout of a DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/how-to-change-the-layout-of-a-datarepeater-control-visual-studio.md)   
- [How to: Change the Appearance of a DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/how-to-change-the-appearance-of-a-datarepeater-control-visual-studio.md)   
- [How to: Display Item Headers in a DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/how-to-display-item-headers-in-a-datarepeater-control-visual-studio.md)   
- [How to: Disable Adding and Deleting DataRepeater Items](../../../visual-basic/developing-apps/windows-forms/how-to-disable-adding-and-deleting-datarepeater-items-visual-studio.md)   
- [How to: Search Data in a DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/how-to-search-data-in-a-datarepeater-control-visual-studio.md)   
- [How to: Create a Master\/Detail Form by Using Two DataRepeater Controls](../../../visual-basic/developing-apps/windows-forms/how-to-create-a-master-detail-form-by-using-two-datarepeater-controls.md)
+## <a name="see-also"></a><span data-ttu-id="58608-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="58608-134">See Also</span></span>  
+ [<span data-ttu-id="58608-135">DataRepeater コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="58608-135">Introduction to the DataRepeater Control</span></span>](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)  
+ [<span data-ttu-id="58608-136">方法: DataRepeater コントロールに、バインドされたデータを表示する</span><span class="sxs-lookup"><span data-stu-id="58608-136">How to: Display Bound Data in a DataRepeater Control</span></span>](../../../visual-basic/developing-apps/windows-forms/how-to-display-bound-data-in-a-datarepeater-control-visual-studio.md)  
+ [<span data-ttu-id="58608-137">方法: DataRepeater コントロールに非バインド コントロールを表示する</span><span class="sxs-lookup"><span data-stu-id="58608-137">How to: Display Unbound Controls in a DataRepeater Control</span></span>](../../../visual-basic/developing-apps/windows-forms/how-to-display-unbound-controls-in-a-datarepeater-control-visual-studio.md)  
+ [<span data-ttu-id="58608-138">方法: DataRepeater コントロールのレイアウトを変更する</span><span class="sxs-lookup"><span data-stu-id="58608-138">How to: Change the Layout of a DataRepeater Control</span></span>](../../../visual-basic/developing-apps/windows-forms/how-to-change-the-layout-of-a-datarepeater-control-visual-studio.md)  
+ [<span data-ttu-id="58608-139">方法: DataRepeater コントロールの外観を変更する</span><span class="sxs-lookup"><span data-stu-id="58608-139">How to: Change the Appearance of a DataRepeater Control</span></span>](../../../visual-basic/developing-apps/windows-forms/how-to-change-the-appearance-of-a-datarepeater-control-visual-studio.md)  
+ [<span data-ttu-id="58608-140">方法: DataRepeater コントロールに項目ヘッダーを表示する</span><span class="sxs-lookup"><span data-stu-id="58608-140">How to: Display Item Headers in a DataRepeater Control</span></span>](../../../visual-basic/developing-apps/windows-forms/how-to-display-item-headers-in-a-datarepeater-control-visual-studio.md)  
+ [<span data-ttu-id="58608-141">方法: DataRepeater の項目の追加と削除を無効にする</span><span class="sxs-lookup"><span data-stu-id="58608-141">How to: Disable Adding and Deleting DataRepeater Items</span></span>](../../../visual-basic/developing-apps/windows-forms/how-to-disable-adding-and-deleting-datarepeater-items-visual-studio.md)  
+ [<span data-ttu-id="58608-142">方法: DataRepeater コントロールでデータを検索する</span><span class="sxs-lookup"><span data-stu-id="58608-142">How to: Search Data in a DataRepeater Control</span></span>](../../../visual-basic/developing-apps/windows-forms/how-to-search-data-in-a-datarepeater-control-visual-studio.md)  
+ [<span data-ttu-id="58608-143">方法: 2 つの DataRepeater コントロール (Visual Studio) を使用してマスター/詳細フォームを作成します。</span><span class="sxs-lookup"><span data-stu-id="58608-143">How to: Create a Master/Detail Form by Using Two DataRepeater Controls (Visual Studio)</span></span>](../../../visual-basic/developing-apps/windows-forms/how-to-create-a-master-detail-form-by-using-two-datarepeater-controls.md)

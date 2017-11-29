@@ -1,67 +1,64 @@
 ---
-title: "&lt;&lt;= Operator (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.<<="
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "operator <<="
-  - "assignment statements, compound"
-  - "<<= operator [Visual Basic]"
-  - "statements [Visual Basic], compound assignment"
-  - "operator<<="
-  - "compound assignment statements"
+title: "&lt;&lt;= 演算子 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.<<=
+helpviewer_keywords:
+- operator <<=
+- assignment statements [Visual Basic], compound
+- <<= operator [Visual Basic]
+- statements [Visual Basic], compound assignment
+- operator<<=
+- compound assignment statements [Visual Basic]
 ms.assetid: 8ad26613-faff-4e2f-89ee-63feee33bfda
-caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 5c5c36e4f91155c09d01b448777483941d018d9a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;&lt;= Operator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-変数またはプロパティの値に左シフトの算術演算を実行し、その結果を元の変数またはプロパティに代入します。  
+# <a name="ltlt-operator-visual-basic"></a><span data-ttu-id="716b9-102">&lt;&lt;= 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="716b9-102">&lt;&lt;= Operator (Visual Basic)</span></span>
+<span data-ttu-id="716b9-103">変数またはプロパティの値に対して算術左シフトを実行し、結果を変数またはプロパティに代入します。</span><span class="sxs-lookup"><span data-stu-id="716b9-103">Performs an arithmetic left shift on the value of a variable or property and assigns the result back to the variable or property.</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="716b9-104">構文</span><span class="sxs-lookup"><span data-stu-id="716b9-104">Syntax</span></span>  
   
 ```  
-  
 variableorproperty <<= amount  
 ```  
   
-## 指定項目  
+## <a name="parts"></a><span data-ttu-id="716b9-105">指定項目</span><span class="sxs-lookup"><span data-stu-id="716b9-105">Parts</span></span>  
  `variableorproperty`  
- 必ず指定します。  整数型 \(`SByte`、`Byte`、`Short`、`UShort`、`Integer`、`UInteger`、`Long` または `ULong`\) の変数またはプロパティです。  
+ <span data-ttu-id="716b9-106">必須です。</span><span class="sxs-lookup"><span data-stu-id="716b9-106">Required.</span></span> <span data-ttu-id="716b9-107">整数型の変数またはプロパティ (`SByte`、 `Byte`、 `Short`、 `UShort`、 `Integer`、 `UInteger`、 `Long`、または`ULong`)。</span><span class="sxs-lookup"><span data-stu-id="716b9-107">Variable or property of an integral type (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, or `ULong`).</span></span>  
   
  `amount`  
- 必ず指定します。  整数型 \(`Integer`\) に拡大変換されるデータ型の数値表現です。  
+ <span data-ttu-id="716b9-108">必須です。</span><span class="sxs-lookup"><span data-stu-id="716b9-108">Required.</span></span> <span data-ttu-id="716b9-109">拡大変換をデータ型の数値式`Integer`です。</span><span class="sxs-lookup"><span data-stu-id="716b9-109">Numeric expression of a data type that widens to `Integer`.</span></span>  
   
-## 解説  
- `<<=` 演算子の左側には、スカラー変数、プロパティ、配列の要素なども指定できます。  変数またはプロパティは [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md) にすることはできません。  
+## <a name="remarks"></a><span data-ttu-id="716b9-110">コメント</span><span class="sxs-lookup"><span data-stu-id="716b9-110">Remarks</span></span>  
+ <span data-ttu-id="716b9-111">左側にある要素、`<<=`演算子は、単純なスカラー変数、プロパティ、または配列の要素を指定できます。</span><span class="sxs-lookup"><span data-stu-id="716b9-111">The element on the left side of the `<<=` operator can be a simple scalar variable, a property, or an element of an array.</span></span> <span data-ttu-id="716b9-112">変数またはプロパティにできません。 [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)です。</span><span class="sxs-lookup"><span data-stu-id="716b9-112">The variable or property cannot be [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).</span></span>  
   
- `<<=` 演算子は、最初に変数またはプロパティの値の算術左シフトを実行します。  演算子は、変数またはプロパティに再度その操作の結果を代入します。  
+ <span data-ttu-id="716b9-113">`<<=`演算子は最初、変数またはプロパティの値に算術左シフトを実行します。</span><span class="sxs-lookup"><span data-stu-id="716b9-113">The `<<=` operator first performs an arithmetic left shift on the value of the variable or property.</span></span> <span data-ttu-id="716b9-114">演算子は、その変数またはプロパティにし、その操作の結果を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="716b9-114">The operator then assigns the result of that operation back to that variable or property.</span></span>  
   
- 数値のシフトは、循環的には行われません。つまり、一方の端からはみ出したビットが、もう一方の端に補われることはありません。  左シフトの算術演算では、結果のデータ型の範囲を超えてシフトされるビットは破棄され、右側に空いたビット位置はゼロに設定されます。  
+ <span data-ttu-id="716b9-115">算術シフトは循環、つまり、もう一方の端に結果の 1 つの端シフトは行われません。</span><span class="sxs-lookup"><span data-stu-id="716b9-115">Arithmetic shifts are not circular, which means the bits shifted off one end of the result are not reintroduced at the other end.</span></span> <span data-ttu-id="716b9-116">算術左シフト、結果のデータ型の範囲を超えてシフトは破棄され、右側の空いたビット位置は 0 に設定されます。</span><span class="sxs-lookup"><span data-stu-id="716b9-116">In an arithmetic left shift, the bits shifted beyond the range of the result data type are discarded, and the bit positions vacated on the right are set to zero.</span></span>  
   
-## オーバーロード  
- [\<\< Operator](../../../visual-basic/language-reference/operators/left-shift-operator.md) は *オーバーロード* できます。つまり、オペランドがそのクラスまたは構造体の型であれば、クラスまたは構造体がこの動作を再定義できます。  `<<` 演算子をオーバーロードすると、`<<=` 演算子の動作に影響します。  `<<` をオーバーロードしているクラスまたは構造体で `<<=` を使用している場合、再定義された動作を確認してください。  詳細については、「[Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+## <a name="overloading"></a><span data-ttu-id="716b9-117">オーバーロード</span><span class="sxs-lookup"><span data-stu-id="716b9-117">Overloading</span></span>  
+ <span data-ttu-id="716b9-118">[<< 演算子](../../../visual-basic/language-reference/operators/left-shift-operator.md)できます*オーバー ロードされた*、つまり、あるクラスまたは構造体を再定義できますその動作オペランドは、そのクラスまたは構造体の型を持つときにします。</span><span class="sxs-lookup"><span data-stu-id="716b9-118">The [<< Operator](../../../visual-basic/language-reference/operators/left-shift-operator.md) can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure.</span></span> <span data-ttu-id="716b9-119">オーバー ロード、`<<`演算子の動作に影響、`<<=`演算子。</span><span class="sxs-lookup"><span data-stu-id="716b9-119">Overloading the `<<` operator affects the behavior of the `<<=` operator.</span></span> <span data-ttu-id="716b9-120">コードで使用する場合`<<=`クラスまたはオーバー ロードする構造体で`<<`、再定義された動作を確認してください。</span><span class="sxs-lookup"><span data-stu-id="716b9-120">If your code uses `<<=` on a class or structure that overloads `<<`, be sure you understand its redefined behavior.</span></span> <span data-ttu-id="716b9-121">詳細については、次を参照してください。[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)です。</span><span class="sxs-lookup"><span data-stu-id="716b9-121">For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).</span></span>  
   
-## 使用例  
- `<<=` 演算子を使用して、整数型 \(`Integer`\) 変数のビット パターンを、指定されたビット数だけ左にシフトし、結果を元の変数に代入する例を、次に示します。  
+## <a name="example"></a><span data-ttu-id="716b9-122">例</span><span class="sxs-lookup"><span data-stu-id="716b9-122">Example</span></span>  
+ <span data-ttu-id="716b9-123">次の例では、`<<=`のビット パターンをシフトする演算子、`Integer`変数に指定された量と割り当ての結果で変数のままです。</span><span class="sxs-lookup"><span data-stu-id="716b9-123">The following example uses the `<<=` operator to shift the bit pattern of an `Integer` variable left by the specified amount and assign the result to the variable.</span></span>  
   
  [!code-vb[VbVbalrOperators#13](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/left-shift-assignment-operator_1.vb)]  
   
-## 参照  
- [\<\< Operator](../../../visual-basic/language-reference/operators/left-shift-operator.md)   
- [Assignment Operators](../../../visual-basic/language-reference/operators/assignment-operators.md)   
- [Bit Shift Operators](../../../visual-basic/language-reference/operators/bit-shift-operators.md)   
- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)   
- [Operators Listed by Functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)   
- [Statements](../../../visual-basic/programming-guide/language-features/statements.md)
+## <a name="see-also"></a><span data-ttu-id="716b9-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="716b9-124">See Also</span></span>  
+ [<span data-ttu-id="716b9-125"><< 演算子</span><span class="sxs-lookup"><span data-stu-id="716b9-125"><< Operator</span></span>](../../../visual-basic/language-reference/operators/left-shift-operator.md)  
+ [<span data-ttu-id="716b9-126">代入演算子</span><span class="sxs-lookup"><span data-stu-id="716b9-126">Assignment Operators</span></span>](../../../visual-basic/language-reference/operators/assignment-operators.md)  
+ [<span data-ttu-id="716b9-127">ビット シフト演算子</span><span class="sxs-lookup"><span data-stu-id="716b9-127">Bit Shift Operators</span></span>](../../../visual-basic/language-reference/operators/bit-shift-operators.md)  
+ [<span data-ttu-id="716b9-128">Visual Basic における演算子の優先順位</span><span class="sxs-lookup"><span data-stu-id="716b9-128">Operator Precedence in Visual Basic</span></span>](../../../visual-basic/language-reference/operators/operator-precedence.md)  
+ [<span data-ttu-id="716b9-129">機能別の演算子一覧</span><span class="sxs-lookup"><span data-stu-id="716b9-129">Operators Listed by Functionality</span></span>](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
+ [<span data-ttu-id="716b9-130">ステートメント</span><span class="sxs-lookup"><span data-stu-id="716b9-130">Statements</span></span>](../../../visual-basic/programming-guide/language-features/statements.md)

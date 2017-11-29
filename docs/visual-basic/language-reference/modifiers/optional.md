@@ -1,53 +1,52 @@
 ---
-title: "Optional (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Optional"
-  - "vb.optional"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Optional keyword, contexts"
-  - "Optional keyword"
+title: Optional (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.Optional
+- vb.optional
+helpviewer_keywords:
+- Optional keyword [Visual Basic], contexts
+- Optional keyword [Visual Basic]
 ms.assetid: 4571ce88-a539-4115-b230-54eb277c6aa7
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 3aa01c2c1ae731c8fe00fdee24521760db69e624
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Optional (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-プロシージャを呼び出すとき省略できる引数であることを示すキーワードです。  
+# <a name="optional-visual-basic"></a><span data-ttu-id="e54be-102">Optional (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e54be-102">Optional (Visual Basic)</span></span>
+<span data-ttu-id="e54be-103">プロシージャが呼び出されたときにプロシージャの引数を省略できますを指定します。</span><span class="sxs-lookup"><span data-stu-id="e54be-103">Specifies that a procedure argument can be omitted when the procedure is called.</span></span>  
   
-## 解説  
- 各省略可能なパラメーターに対して、このパラメーターの既定値として定数式を指定します。  式が [何も](../../../visual-basic/language-reference/nothing.md)と評価されると、パラメーターの既定値として値のデータ型の既定値が使用されます。  
+## <a name="remarks"></a><span data-ttu-id="e54be-104">コメント</span><span class="sxs-lookup"><span data-stu-id="e54be-104">Remarks</span></span>  
+ <span data-ttu-id="e54be-105">省略可能なパラメーターごとに、そのパラメーターの既定値として定数式を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e54be-105">For each optional parameter, you must specify a constant expression as the default value of that parameter.</span></span> <span data-ttu-id="e54be-106">式が評価された場合[Nothing](../../../visual-basic/language-reference/nothing.md)値のデータ型の既定値は、パラメーターの既定値として使用します。</span><span class="sxs-lookup"><span data-stu-id="e54be-106">If the expression evaluates to [Nothing](../../../visual-basic/language-reference/nothing.md), the default value of the value data type is used as the default value of the parameter.</span></span>  
   
- パラメーター リストに省略可能なパラメーターが含まれている場合、後続のすべてのパラメーターは、すべて省略可能である必要があります。  
+ <span data-ttu-id="e54be-107">パラメーター リストには、省略可能なパラメーターが含まれています、それに続くすべてのパラメーターは省略可能な必要があります。</span><span class="sxs-lookup"><span data-stu-id="e54be-107">If the parameter list contains an optional parameter, every parameter that follows it must also be optional.</span></span>  
   
- 修飾子 `Optional` は、次の構文で使用します。  
+ <span data-ttu-id="e54be-108">`Optional` 修飾子は、次のコンテキストで使用できます。</span><span class="sxs-lookup"><span data-stu-id="e54be-108">The `Optional` modifier can be used in these contexts:</span></span>  
   
--   [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)  
+-   [<span data-ttu-id="e54be-109">Declare ステートメント</span><span class="sxs-lookup"><span data-stu-id="e54be-109">Declare Statement</span></span>](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
--   [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)  
+-   [<span data-ttu-id="e54be-110">Function ステートメント</span><span class="sxs-lookup"><span data-stu-id="e54be-110">Function Statement</span></span>](../../../visual-basic/language-reference/statements/function-statement.md)  
   
--   [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)  
+-   [<span data-ttu-id="e54be-111">Property ステートメント</span><span class="sxs-lookup"><span data-stu-id="e54be-111">Property Statement</span></span>](../../../visual-basic/language-reference/statements/property-statement.md)  
   
--   [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
+-   [<span data-ttu-id="e54be-112">Sub ステートメント</span><span class="sxs-lookup"><span data-stu-id="e54be-112">Sub Statement</span></span>](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 > [!NOTE]
->  プロシージャを省略可能なパラメーターなしで呼び出すと、によってまたは名前の引数を位置渡すことができます。  詳細については、「[Passing Arguments by Position and by Name](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)」を参照してください。  
+>  <span data-ttu-id="e54be-113">省略可能なパラメーターの有無のプロシージャを呼び出すときに、位置または名前で引数を渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="e54be-113">When calling a procedure with or without optional parameters, you can pass arguments by position or by name.</span></span> <span data-ttu-id="e54be-114">詳細については、次を参照してください。[位置と名前による引数を渡す](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)です。</span><span class="sxs-lookup"><span data-stu-id="e54be-114">For more information, see [Passing Arguments by Position and by Name](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md).</span></span>  
   
 > [!NOTE]
->  また、オーバーロードを使用して、省略可能なパラメーターのプロシージャを定義できます。  1 種類の省略可能なパラメーターがある場合、パラメーターを受け入れるとして手順 1、 1 の 2 種類のオーバーロードされたバージョンを定義できます。  詳細については、「[Procedure Overloading](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)」を参照してください。  
+>  <span data-ttu-id="e54be-115">オーバー ロードを使用して、省略可能なパラメーターを持つプロシージャを定義することもできます。</span><span class="sxs-lookup"><span data-stu-id="e54be-115">You can also define a procedure with optional parameters by using overloading.</span></span> <span data-ttu-id="e54be-116">1 つの省略可能なパラメーターがある場合は、プロシージャ パラメーターを受け取る、しない 2 つのオーバー ロードされたバージョンを定義できます。</span><span class="sxs-lookup"><span data-stu-id="e54be-116">If you have one optional parameter, you can define two overloaded versions of the procedure, one that accepts the parameter and one that doesn’t.</span></span> <span data-ttu-id="e54be-117">詳細については、次を参照してください。[プロシージャのオーバー ロード](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)です。</span><span class="sxs-lookup"><span data-stu-id="e54be-117">For more information, see [Procedure Overloading](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).</span></span>  
   
-## 使用例  
- 次の例は、省略可能なパラメーターを持つプロシージャを定義しています。  
+## <a name="example"></a><span data-ttu-id="e54be-118">例</span><span class="sxs-lookup"><span data-stu-id="e54be-118">Example</span></span>  
+ <span data-ttu-id="e54be-119">次の例では、省略可能なパラメーターを持つプロシージャを定義します。</span><span class="sxs-lookup"><span data-stu-id="e54be-119">The following example defines a procedure that has an optional parameter.</span></span>  
   
 ```  
 Public Function FindMatches(ByRef values As List(Of String),  
@@ -68,12 +67,12 @@ Public Function FindMatches(ByRef values As List(Of String),
 End Function  
 ```  
   
-## 使用例  
- 次の例では、場所を渡された引数と名前で渡された引数のプロシージャをダイヤルする方法を示します。  プロシージャに 2 個の省略可能なパラメーターがあります。  
+## <a name="example"></a><span data-ttu-id="e54be-120">例</span><span class="sxs-lookup"><span data-stu-id="e54be-120">Example</span></span>  
+ <span data-ttu-id="e54be-121">次の例では、位置によって渡される引数を指定して、名前によって渡される引数を使用してプロシージャを呼び出す方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e54be-121">The following example demonstrates how to call a procedure with arguments passed by position and with arguments passed by name.</span></span> <span data-ttu-id="e54be-122">プロシージャは、2 つの省略可能なパラメーターを持ちます。</span><span class="sxs-lookup"><span data-stu-id="e54be-122">The procedure has two optional parameters.</span></span>  
   
  [!code-vb[VbVbalrKeywords#21](../../../visual-basic/language-reference/codesnippet/VisualBasic/optional_1.vb)]  
   
-## 参照  
- [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md)   
- [Optional Parameters](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)   
- [キーワード](../../../visual-basic/language-reference/keywords/index.md)
+## <a name="see-also"></a><span data-ttu-id="e54be-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="e54be-123">See Also</span></span>  
+ [<span data-ttu-id="e54be-124">パラメーター リスト</span><span class="sxs-lookup"><span data-stu-id="e54be-124">Parameter List</span></span>](../../../visual-basic/language-reference/statements/parameter-list.md)  
+ [<span data-ttu-id="e54be-125">省略可能なパラメーター</span><span class="sxs-lookup"><span data-stu-id="e54be-125">Optional Parameters</span></span>](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)  
+ [<span data-ttu-id="e54be-126">キーワード</span><span class="sxs-lookup"><span data-stu-id="e54be-126">Keywords</span></span>](../../../visual-basic/language-reference/keywords/index.md)

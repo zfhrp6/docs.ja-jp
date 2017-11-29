@@ -1,34 +1,37 @@
 ---
-title: "WCF Data Services プロトコル実装の詳細 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WCF Data Services プロトコル実装の詳細"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 712d689b-fada-4cbb-bcdb-d65a3ef83b4c
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 537bfc10bfc60e4e60b08a21c8cc2f5535eb9c82
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WCF Data Services プロトコル実装の詳細
-## OData プロトコル実装の詳細  
- [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] では、プロトコルを実装するデータ サービスが、特定の機能の最小セットを提供する必要があります。  これらの機能は、「すべきこと」と「必ずしなければならないこと」に関して、プロトコル ドキュメントで説明されています。その他のオプション機能は、「できること」に関して説明されています。このトピックでは、現在 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] で実装されていないオプション機能について説明します。  詳細については、「[OData プロトコル ドキュメント](http://go.microsoft.com/fwlink/?LinkID=184554)」を参照してください。  
+# <a name="wcf-data-services-protocol-implementation-details"></a><span data-ttu-id="fe979-102">WCF Data Services プロトコル実装の詳細</span><span class="sxs-lookup"><span data-stu-id="fe979-102">WCF Data Services Protocol Implementation Details</span></span>
+## <a name="odata-protocol-implementation-details"></a><span data-ttu-id="fe979-103">OData プロトコル実装の詳細</span><span class="sxs-lookup"><span data-stu-id="fe979-103">OData Protocol Implementation Details</span></span>  
+ <span data-ttu-id="fe979-104">[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] では、プロトコルを実装するデータ サービスが、特定の機能の最小セットを提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fe979-104">The [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] requires that a data service that implements the protocol provide a certain minimum set of functionalities.</span></span> <span data-ttu-id="fe979-105">これらの機能が「する必要があります」と「する必要があります」に関して、プロトコル ドキュメントで説明されています。</span><span class="sxs-lookup"><span data-stu-id="fe979-105">These functionalities are described in the protocol documents in terms of "should" and "must."</span></span> <span data-ttu-id="fe979-106">省略可能なその他の機能は「月」の観点から表現します。</span><span class="sxs-lookup"><span data-stu-id="fe979-106">Other optional functionality is described in terms of "may."</span></span> <span data-ttu-id="fe979-107">このトピックでは、現在 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] で実装されていないオプション機能について説明します。</span><span class="sxs-lookup"><span data-stu-id="fe979-107">This topic describes these optional functionalities that are not currently implemented by [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].</span></span> <span data-ttu-id="fe979-108">詳細については、次を参照してください。 [OData プロトコル ドキュメント](http://go.microsoft.com/fwlink/?LinkID=184554)です。</span><span class="sxs-lookup"><span data-stu-id="fe979-108">For more information, see [OData Protocol Documentation](http://go.microsoft.com/fwlink/?LinkID=184554).</span></span>  
   
-### $format クエリ オプションのサポート  
- [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] プロトコルは、JavaScript Notation \(JSON\) と Atom フィードの両方をサポートしており、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] の `$format` システム クエリ オプションを使用すると、クライアントは応答フィードの形式を要求できます。  このシステム クエリ オプションは、データ サービスでサポートされている場合、要求の Accept ヘッダーの値をオーバーライドする必要があります。  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、JSON と Atom フィードのどちらでも返すことができます。  ただし、既定の実装では `$format` クエリ オプションをサポートしておらず、Accept ヘッダーの値だけを使用して応答の形式を決定します。  クライアントが Accept ヘッダーを設定できない場合のように、データ サービスで `$format` クエリ オプションをサポートしなければならないこともあります。  このようなシナリオをサポートするには、このオプションを URI で処理するように、データ サービスを拡張する必要があります。  この機能をデータ サービスに追加するには、MSDN コード ギャラリー Web サイトから「[ADO.NET Data Services のための JSONP および URL 制御の形式のサポート](http://go.microsoft.com/fwlink/?LinkId=208228)」のサンプル プロジェクトをダウンロードして、データ サービス プロジェクトに追加します。  このサンプルは、`$format` クエリ オプションを削除し、Accept ヘッダーを `application/json` に変更します。  サンプル プロジェクトを含めるときに、`JSONPSupportBehaviorAttribute` をデータ サービス クラスに追加すると、サービスが `$format` クエリ オプションの `$format=json` を処理できるようになります。  `$format=atom` や他のカスタム形式も処理するには、このサンプル プロジェクトをさらにカスタマイズする必要があります。  
+### <a name="support-for-the-format-query-option"></a><span data-ttu-id="fe979-109">$format クエリ オプションのサポート</span><span class="sxs-lookup"><span data-stu-id="fe979-109">Support for the $format Query Option</span></span>  
+ <span data-ttu-id="fe979-110">[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] プロトコルは、JavaScript Notation (JSON) と Atom フィードの両方をサポートしており、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] の `$format` システム クエリ オプションを使用すると、クライアントは応答フィードの形式を要求できます。</span><span class="sxs-lookup"><span data-stu-id="fe979-110">The [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protocol supports both JavaScript Notation (JSON) and Atom feeds, and [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] provides the `$format` system query option to allow a client to request the format of the response feed.</span></span> <span data-ttu-id="fe979-111">このシステム クエリ オプションは、データ サービスでサポートされている場合、要求の Accept ヘッダーの値をオーバーライドする必要があります。</span><span class="sxs-lookup"><span data-stu-id="fe979-111">This system query option, if supported by the data service, must override the value of the Accept header of the request.</span></span> [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="fe979-112"> では、JSON と Atom フィードのどちらでも返すことができます。</span><span class="sxs-lookup"><span data-stu-id="fe979-112"> supports returning both JSON and Atom feeds.</span></span> <span data-ttu-id="fe979-113">ただし、既定の実装では `$format` クエリ オプションをサポートしておらず、Accept ヘッダーの値だけを使用して応答の形式を決定します。</span><span class="sxs-lookup"><span data-stu-id="fe979-113">However, the default implementation does not support the `$format` query option and uses only the value of the Accept header to determine the format of the response.</span></span> <span data-ttu-id="fe979-114">クライアントが Accept ヘッダーを設定できない場合のように、データ サービスで `$format` クエリ オプションをサポートしなければならないこともあります。</span><span class="sxs-lookup"><span data-stu-id="fe979-114">There are cases when your data service may need to support the `$format` query option, such as when clients cannot set the Accept header.</span></span> <span data-ttu-id="fe979-115">このようなシナリオをサポートするには、このオプションを URI で処理するように、データ サービスを拡張する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fe979-115">To support these scenarios, you must extend your data service to handle this option in the URI.</span></span> <span data-ttu-id="fe979-116">ダウンロードして、データ サービスにこの機能を追加することができます、 [ADO.NET データ サービスの JSONP および URL 制御の形式をサポート](http://go.microsoft.com/fwlink/?LinkId=208228)サンプルおよびプロジェクトを MSDN コード ギャラリー web サイト、データ サービス プロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="fe979-116">You can add this functionality to your data service by downloading the [JSONP and URL-controlled format support for ADO.NET Data Services](http://go.microsoft.com/fwlink/?LinkId=208228) sample project from the MSDN Code Gallery web site and adding it to your data service project.</span></span> <span data-ttu-id="fe979-117">このサンプルは、`$format` クエリ オプションを削除し、Accept ヘッダーを `application/json` に変更します。</span><span class="sxs-lookup"><span data-stu-id="fe979-117">This sample removes the `$format` query option and changes the Accept header to `application/json`.</span></span> <span data-ttu-id="fe979-118">サンプル プロジェクトを含めるときに、`JSONPSupportBehaviorAttribute` をデータ サービス クラスに追加すると、サービスが `$format` クエリ オプションの `$format=json` を処理できるようになります。</span><span class="sxs-lookup"><span data-stu-id="fe979-118">When you include the sample project and adding the `JSONPSupportBehaviorAttribute` to your data service class enables the service to handle the `$format` query option `$format=json`.</span></span> <span data-ttu-id="fe979-119">`$format=atom` や他のカスタム形式も処理するには、このサンプル プロジェクトをさらにカスタマイズする必要があります。</span><span class="sxs-lookup"><span data-stu-id="fe979-119">Further customization of this sample project is required to also handle `$format=atom` or other custom formats.</span></span>  
   
-## WCF Data Services の動作  
- 次の [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] の動作は、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] プロトコルでは明示的に定義されていません。  
+## <a name="wcf-data-services-behaviors"></a><span data-ttu-id="fe979-120">WCF Data Services の動作</span><span class="sxs-lookup"><span data-stu-id="fe979-120">WCF Data Services Behaviors</span></span>  
+ <span data-ttu-id="fe979-121">次の [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] の動作は、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] プロトコルでは明示的に定義されていません。</span><span class="sxs-lookup"><span data-stu-id="fe979-121">The following [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] behaviors are not explicitly defined by the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protocol:</span></span>  
   
-### 既定の並べ替え動作  
- データ サービスに送信されるクエリ要求に、`$top` または `$skip` システム クエリ オプションが含まれ、`$orderby` システム クエリ オプションが含まれていない場合、返されるフィードはキー プロパティで昇順に並べ替えられます。  これは、結果を正しくページングするには並べ替えが必要であるためです。  そのために、データ サービスがクエリに並べ替え式を追加します。  この動作は、データ サービスでサーバー ドリブン ページングが有効になっている場合にも発生します。  詳細については、「[データ サービスの構成](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md)」を参照してください。返されるフィードの並べ替えを制御するには、クエリ URI に `$orderby` を含める必要があります。  
+### <a name="default-sorting-behavior"></a><span data-ttu-id="fe979-122">既定の並べ替え動作</span><span class="sxs-lookup"><span data-stu-id="fe979-122">Default Sorting Behavior</span></span>  
+ <span data-ttu-id="fe979-123">データ サービスに送信されるクエリ要求に、`$top` または `$skip` システム クエリ オプションが含まれ、`$orderby` システム クエリ オプションが含まれていない場合、返されるフィードはキー プロパティで昇順に並べ替えられます。</span><span class="sxs-lookup"><span data-stu-id="fe979-123">When a query request that is sent to the data service includes a `$top` or `$skip` system query option and does not include the `$orderby` system query option, the returned feed is sorted by the key properties, in ascending order.</span></span> <span data-ttu-id="fe979-124">これは、結果を正しくページングするには並べ替えが必要であるためです。</span><span class="sxs-lookup"><span data-stu-id="fe979-124">This is because ordering is required to ensure the correct paging of results.</span></span> <span data-ttu-id="fe979-125">そのために、データ サービスがクエリに並べ替え式を追加します。</span><span class="sxs-lookup"><span data-stu-id="fe979-125">To do this, the data service adds an ordering expression to the query.</span></span> <span data-ttu-id="fe979-126">この動作は、データ サービスでサーバー ドリブン ページングが有効になっている場合にも発生します。</span><span class="sxs-lookup"><span data-stu-id="fe979-126">This behavior also occurs when server-driven paging is enabled in the data service.</span></span> <span data-ttu-id="fe979-127">詳細については、次を参照してください。[データ サービスの構成](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md)です。返されるフィードの順序を制御するを含めるように`$orderby`というクエリ URI にします。</span><span class="sxs-lookup"><span data-stu-id="fe979-127">For more information, see [Configuring the Data Service](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md).To control the ordering of the returned feed, you should include `$orderby` in the query URI.</span></span>  
   
-## 参照  
- [WCF Data Services の定義](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)   
- [WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
+## <a name="see-also"></a><span data-ttu-id="fe979-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="fe979-128">See Also</span></span>  
+ [<span data-ttu-id="fe979-129">WCF Data Services の定義</span><span class="sxs-lookup"><span data-stu-id="fe979-129">Defining WCF Data Services</span></span>](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  
+ [<span data-ttu-id="fe979-130">WCF Data Services クライアント ライブラリ</span><span class="sxs-lookup"><span data-stu-id="fe979-130">WCF Data Services Client Library</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

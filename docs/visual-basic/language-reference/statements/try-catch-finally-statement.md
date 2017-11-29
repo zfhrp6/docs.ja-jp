@@ -1,11 +1,10 @@
 ---
-title: "しようとしてください.キャッチしてください.Finally ステートメント (Visual Basic) |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "Try...Catch...Finally ステートメント (Visual Basic)"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.Try...Catch...Finally
@@ -13,47 +12,31 @@ f1_keywords:
 - vb.Finally
 - vb.Catch
 - vb.Try
-dev_langs:
-- VB
 helpviewer_keywords:
 - Try...Catch...Finally statements
-- Try statement
+- Try statement [Visual Basic]
 - try-catch exception handling, Try...Catch...Finally statements
 - error handling, while running code
-- Try statement, Try...Catch...Finally
+- Try statement [Visual Basic], Try...Catch...Finally
 - Finally keyword [Visual Basic], Try...Catch...Finally
-- Catch statement
-- When keyword
+- Catch statement [Visual Basic]
+- When keyword [Visual Basic]
 - Visual Basic code, handling errors while running
 - structured exception handling, Try...Catch...Finally statements
 ms.assetid: d6488026-ccb3-42b8-a810-0d97b9d6472b
-caps.latest.revision: 69
+caps.latest.revision: "69"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 379359e3a338746ccd440dbe1ad58c483e562dbe
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 08de4939960d8297269c82b1b040537dd43f3038
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="trycatchfinally-statement-visual-basic"></a>Try...Catch...Finally ステートメント (Visual Basic)
-コードを実行しながら、コードの所定のブロックで発生する可能性一部またはすべての可能なエラーを処理する方法を提供します。  
+# <a name="trycatchfinally-statement-visual-basic"></a><span data-ttu-id="1f650-102">Try...Catch...Finally ステートメント (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1f650-102">Try...Catch...Finally Statement (Visual Basic)</span></span>
+<span data-ttu-id="1f650-103">コードの実行中に、コードの所定のブロックで発生する可能性があります一部またはすべての可能なエラーを処理する方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="1f650-103">Provides a way to handle some or all possible errors that may occur in a given block of code, while still running code.</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="1f650-104">構文</span><span class="sxs-lookup"><span data-stu-id="1f650-104">Syntax</span></span>  
   
 ```  
 Try  
@@ -68,148 +51,148 @@ Try
 End Try  
 ```  
   
-## <a name="parts"></a>指定項目  
+## <a name="parts"></a><span data-ttu-id="1f650-105">指定項目</span><span class="sxs-lookup"><span data-stu-id="1f650-105">Parts</span></span>  
   
-|用語|定義|  
+|<span data-ttu-id="1f650-106">用語</span><span class="sxs-lookup"><span data-stu-id="1f650-106">Term</span></span>|<span data-ttu-id="1f650-107">定義</span><span class="sxs-lookup"><span data-stu-id="1f650-107">Definition</span></span>|  
 |---|---|  
-|`tryStatements`|省略可能です。 ステートメントは、エラーが発生することができます。 複合ステートメントにすることもできます。|  
-|`Catch`|省略可能です。 複数`Catch`許可されているブロックです。 処理するときに例外が発生した場合、`Try`ブロックする場合に、各`Catch`ステートメントが記述されていると、例外を処理するかどうかを判断する順で調べられ`exception`がスローされた例外を表します。|  
-|`exception`|省略可能です。 任意の変数名を指定します。 `exception` の初期値は、スローされたエラーの値です。 併用`Catch`キャッチ、エラーを指定します。 省略した場合は、`Catch`ステートメントは、例外をキャッチします。|  
-|`type`|省略可能です。 クラスのフィルターの種類を指定します。 場合の値`exception`で指定された型の`type`または派生型の識別子は、例外オブジェクトにバインドになります。|  
-|`When`|省略可能です。 A`Catch`ステートメントを`When`句が例外がキャッチされる場合にのみ`expression`に評価`True`します。 A`When`句は、例外の種類を確認後にのみ適用されると`expression`が例外を表す識別子を参照してください。|  
-|`expression`|省略可能です。 暗黙的に変換する必要があります`Boolean`します。 汎用フィルターを記述する式です。 通常、エラー番号でフィルター処理に使用されます。 併用`When`エラーがキャッチされる状況を指定するキーワードです。|  
-|`catchStatements`|省略可能です。 関連する発生したエラーを処理するステートメント`Try`ブロックします。 複合ステートメントにすることもできます。|  
-|`Exit Try`|省略可能です。 抜けキーワード、`Try...Catch...Finally`構造体。 すぐに次のコードから実行が再開、`End Try`ステートメントです。 `Finally`ステートメントは引き続き実行されます。 は許可されません`Finally`ブロックします。|  
-|`Finally`|省略可能です。 A`Finally`実行がの任意の部分を離れると、ブロックが常に実行、`Try...Catch`ステートメントです。|  
-|`finallyStatements`|省略可能です。 他のすべてのエラー処理が発生した後に実行されるステートメントです。|  
-|`End Try`|終了、`Try...Catch...Finally`構造体。|  
+|`tryStatements`|<span data-ttu-id="1f650-108">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="1f650-108">Optional.</span></span> <span data-ttu-id="1f650-109">ステートメントは、エラーが発生できます。</span><span class="sxs-lookup"><span data-stu-id="1f650-109">Statement(s) where an error can occur.</span></span> <span data-ttu-id="1f650-110">複合ステートメントにすることもできます。</span><span class="sxs-lookup"><span data-stu-id="1f650-110">Can be a compound statement.</span></span>|  
+|`Catch`|<span data-ttu-id="1f650-111">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="1f650-111">Optional.</span></span> <span data-ttu-id="1f650-112">複数`Catch`許可されているブロックです。</span><span class="sxs-lookup"><span data-stu-id="1f650-112">Multiple `Catch` blocks permitted.</span></span> <span data-ttu-id="1f650-113">処理するときに例外が発生した場合、`Try`ブロックする場合に、各`Catch`と、例外を処理するかどうかを決定するテキストの順序でステートメントを調べる`exception`がスローされた例外を表すです。</span><span class="sxs-lookup"><span data-stu-id="1f650-113">If an exception occurs when processing the `Try` block, each `Catch` statement is examined in textual order to determine whether it handles the exception, with `exception` representing the exception that has been thrown.</span></span>|  
+|`exception`|<span data-ttu-id="1f650-114">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="1f650-114">Optional.</span></span> <span data-ttu-id="1f650-115">任意の変数名を指定します。</span><span class="sxs-lookup"><span data-stu-id="1f650-115">Any variable name.</span></span> <span data-ttu-id="1f650-116">`exception` の初期値は、スローされたエラーの値です。</span><span class="sxs-lookup"><span data-stu-id="1f650-116">The initial value of `exception` is the value of the thrown error.</span></span> <span data-ttu-id="1f650-117">と共に使用`Catch`キャッチ、エラーを指定します。</span><span class="sxs-lookup"><span data-stu-id="1f650-117">Used with `Catch` to specify the error caught.</span></span> <span data-ttu-id="1f650-118">省略した場合は、`Catch`ステートメントはすべての例外をキャッチします。</span><span class="sxs-lookup"><span data-stu-id="1f650-118">If omitted, the `Catch` statement catches any exception.</span></span>|  
+|`type`|<span data-ttu-id="1f650-119">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="1f650-119">Optional.</span></span> <span data-ttu-id="1f650-120">クラスのフィルターの種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="1f650-120">Specifies the type of class filter.</span></span> <span data-ttu-id="1f650-121">場合の値`exception`で指定された型の`type`。 つまり、派生型の識別子が例外オブジェクトをバインドになります。</span><span class="sxs-lookup"><span data-stu-id="1f650-121">If the value of `exception` is of the type specified by `type` or of a derived type, the identifier becomes bound to the exception object.</span></span>|  
+|`When`|<span data-ttu-id="1f650-122">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="1f650-122">Optional.</span></span> <span data-ttu-id="1f650-123">A`Catch`ステートメントを`When`句が例外がキャッチされる場合にのみ`expression`に評価される`True`です。</span><span class="sxs-lookup"><span data-stu-id="1f650-123">A `Catch` statement with a `When` clause catches exceptions only when `expression` evaluates to `True`.</span></span> <span data-ttu-id="1f650-124">A`When`句は、例外の種類を確認後にのみ適用されると`expression`が例外を表す識別子を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1f650-124">A `When` clause is applied only after checking the type of the exception, and `expression` may refer to the identifier representing the exception.</span></span>|  
+|`expression`|<span data-ttu-id="1f650-125">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="1f650-125">Optional.</span></span> <span data-ttu-id="1f650-126">暗黙的に変換する必要があります`Boolean`です。</span><span class="sxs-lookup"><span data-stu-id="1f650-126">Must be implicitly convertible to `Boolean`.</span></span> <span data-ttu-id="1f650-127">汎用フィルターを記述する式。</span><span class="sxs-lookup"><span data-stu-id="1f650-127">Any expression that describes a generic filter.</span></span> <span data-ttu-id="1f650-128">通常、エラー番号によるフィルター処理に使用されます。</span><span class="sxs-lookup"><span data-stu-id="1f650-128">Typically used to filter by error number.</span></span> <span data-ttu-id="1f650-129">と共に使用`When`エラーはキャッチされる状況を指定するキーワードです。</span><span class="sxs-lookup"><span data-stu-id="1f650-129">Used with `When` keyword to specify circumstances under which the error is caught.</span></span>|  
+|`catchStatements`|<span data-ttu-id="1f650-130">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="1f650-130">Optional.</span></span> <span data-ttu-id="1f650-131">関連する発生したエラーを処理するステートメント`Try`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-131">Statement(s) to handle errors that occur in the associated `Try` block.</span></span> <span data-ttu-id="1f650-132">複合ステートメントにすることもできます。</span><span class="sxs-lookup"><span data-stu-id="1f650-132">Can be a compound statement.</span></span>|  
+|`Exit Try`|<span data-ttu-id="1f650-133">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="1f650-133">Optional.</span></span> <span data-ttu-id="1f650-134">抜けキーワード、`Try...Catch...Finally`構造体。</span><span class="sxs-lookup"><span data-stu-id="1f650-134">Keyword that breaks out of the `Try...Catch...Finally` structure.</span></span> <span data-ttu-id="1f650-135">すぐに次のコードの実行が再開、`End Try`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="1f650-135">Execution resumes with the code immediately following the `End Try` statement.</span></span> <span data-ttu-id="1f650-136">`Finally`ステートメントは実行もします。</span><span class="sxs-lookup"><span data-stu-id="1f650-136">The `Finally` statement will still be executed.</span></span> <span data-ttu-id="1f650-137">は許可されません`Finally`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-137">Not allowed in `Finally` blocks.</span></span>|  
+|`Finally`|<span data-ttu-id="1f650-138">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="1f650-138">Optional.</span></span> <span data-ttu-id="1f650-139">A`Finally`ブロックは、実行がの一部を離れると常に実行、`Try...Catch`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="1f650-139">A `Finally` block is always executed when execution leaves any part of the `Try...Catch` statement.</span></span>|  
+|`finallyStatements`|<span data-ttu-id="1f650-140">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="1f650-140">Optional.</span></span> <span data-ttu-id="1f650-141">その他のすべての処理の中にエラーが発生した後に実行されるステートメントです。</span><span class="sxs-lookup"><span data-stu-id="1f650-141">Statement(s) that are executed after all other error processing has occurred.</span></span>|  
+|`End Try`|<span data-ttu-id="1f650-142">終了、`Try...Catch...Finally`構造体。</span><span class="sxs-lookup"><span data-stu-id="1f650-142">Terminates the `Try...Catch...Finally` structure.</span></span>|  
   
-## <a name="remarks"></a>コメント  
- コードの特定のセクションで特定の例外が発生することを予定の場合にコードを配置、`Try`をブロックし、使用して、`Catch`ブロックを制御し、発生した場合、例外を処理します。  
+## <a name="remarks"></a><span data-ttu-id="1f650-143">コメント</span><span class="sxs-lookup"><span data-stu-id="1f650-143">Remarks</span></span>  
+ <span data-ttu-id="1f650-144">特定の例外コードの特定のセクションの中に発生する可能性がある場合は、コードを配置、`Try`をブロックしを使用して、`Catch`コントロールを保持し、発生した場合、例外を処理するブロック。</span><span class="sxs-lookup"><span data-stu-id="1f650-144">If you expect that a particular exception might occur during a particular section of code, put the code in a `Try` block and use a `Catch` block to retain control and handle the exception if it occurs.</span></span>  
   
- A`Try…Catch`ステートメントには、`Try`ブロックでは、1 つ以上続く`Catch`句で、さまざまな例外のハンドラーを指定します。 例外がスローされたときに、`Try`ブロック、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]の検索、`Catch`例外を処理するステートメントです。 一致する場合は、`Catch`ステートメントが検出されなければ、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]コール スタックの上に、現在のメソッドが呼び出されるメソッドを調べます。 ない場合`Catch`ブロックが見つかると、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]をユーザーにハンドルされない例外メッセージが表示され、プログラムの実行を停止します。  
+ <span data-ttu-id="1f650-145">A`Try…Catch`ステートメントには、`Try`ブロックとそれに続く 1 つ以上`Catch`句で、さまざまな例外のハンドラーを指定します。</span><span class="sxs-lookup"><span data-stu-id="1f650-145">A `Try…Catch` statement consists of a `Try` block followed by one or more `Catch` clauses, which specify handlers for various exceptions.</span></span> <span data-ttu-id="1f650-146">例外がスローされたときに、`Try`ブロック、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]は検索、`Catch`例外を処理するステートメント。</span><span class="sxs-lookup"><span data-stu-id="1f650-146">When an exception is thrown in a `Try` block, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] looks for the `Catch` statement that handles the exception.</span></span> <span data-ttu-id="1f650-147">一致する場合`Catch`ステートメントが見つかりません、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]呼び出し履歴の上に、現在のメソッドを呼び出す方法を調べます。</span><span class="sxs-lookup"><span data-stu-id="1f650-147">If a matching `Catch` statement is not found, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] examines the method that called the current method, and so on up the call stack.</span></span> <span data-ttu-id="1f650-148">ない場合は`Catch`ブロックが見つかると、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]をユーザーにハンドルされない例外メッセージが表示され、プログラムの実行を停止します。</span><span class="sxs-lookup"><span data-stu-id="1f650-148">If no `Catch` block is found, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] displays an unhandled exception message to the user and stops execution of the program.</span></span>  
   
- 1 つ以上を使用する`Catch`内のステートメントで、`Try…Catch`ステートメントです。 これにより、注文の場合、`Catch`句は重要では順序がチェックされるためです。 例外は、特殊性の高い順にキャッチしてください。  
+ <span data-ttu-id="1f650-149">1 つ以上を使用することができます`Catch`内のステートメント、`Try…Catch`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="1f650-149">You can use more than one `Catch` statement in a `Try…Catch` statement.</span></span> <span data-ttu-id="1f650-150">これには、順にした場合、`Catch`句は重要では順序がチェックされるためです。</span><span class="sxs-lookup"><span data-stu-id="1f650-150">If you do this, the order of the `Catch` clauses is significant because they are examined in order.</span></span> <span data-ttu-id="1f650-151">例外は、特殊性の高い順にキャッチしてください。</span><span class="sxs-lookup"><span data-stu-id="1f650-151">Catch the more specific exceptions before the less specific ones.</span></span>  
   
- 次`Catch`ステートメントの条件が少なくとも固有であり、キャッチ オール<xref:System.Exception>クラス</xref:System.Exception>から派生する例外 最後として通常これらのバリエーションの&1; つ使用する必要があります`Catch`内のブロック、`Try...Catch...Finally`期待するすべての特定の例外をキャッチした後、構造体。 制御フローに到達できることはありません、`Catch`これらのバリエーションのいずれかを次のブロックにします。  
+ <span data-ttu-id="1f650-152">次`Catch`ステートメントの条件が少なくとも固有であり、すべてをキャッチする例外から派生する、<xref:System.Exception>クラスです。</span><span class="sxs-lookup"><span data-stu-id="1f650-152">The following `Catch` statement conditions are the least specific, and will catch all exceptions that derive from the <xref:System.Exception> class.</span></span> <span data-ttu-id="1f650-153">前回通常これらのバリエーションの 1 つ使用する必要があります`Catch`のブロック、`Try...Catch...Finally`期待するすべての特定の例外をキャッチした後、構造体。</span><span class="sxs-lookup"><span data-stu-id="1f650-153">You should ordinarily use one of these variations as the last `Catch` block in the `Try...Catch...Finally` structure, after catching all the specific exceptions you expect.</span></span> <span data-ttu-id="1f650-154">制御フローに到達できることはありません、`Catch`これらのバリエーションのいずれかに依存してブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-154">Control flow can never reach a `Catch` block that follows either of these variations.</span></span>  
   
--   `type`は`Exception`など。`Catch ex As Exception`  
+-   <span data-ttu-id="1f650-155">`type`は`Exception`、例を示します。`Catch ex As Exception`</span><span class="sxs-lookup"><span data-stu-id="1f650-155">The `type` is `Exception`, for example: `Catch ex As Exception`</span></span>  
   
--   ステートメントでは、no`exception`例については、変数。`Catch`  
+-   <span data-ttu-id="1f650-156">ステートメントが no`exception`例については、変数。`Catch`</span><span class="sxs-lookup"><span data-stu-id="1f650-156">The statement has no `exception` variable, for example: `Catch`</span></span>  
   
- ときに、`Try…Catch…Finally`別のステートメントが入れ子になった`Try`ブロック、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]最初に各検証`Catch`最も内側のステートメント`Try`ブロックします。 一致する場合は、`Catch`ステートメントが見つかると、検索を実行する、`Catch`の外側のステートメント`Try…Catch…Finally`ブロックします。  
+ <span data-ttu-id="1f650-157">ときに、`Try…Catch…Finally`ステートメントが別の入れ子になった`Try`ブロック、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]最初各検証`Catch`最も内側のステートメント`Try`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-157">When a `Try…Catch…Finally` statement is nested in another `Try` block, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] first examines each `Catch` statement in the innermost `Try` block.</span></span> <span data-ttu-id="1f650-158">一致する場合`Catch`ステートメントが見つかりましたに、 `Catch` 、外側のステートメントの`Try…Catch…Finally`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-158">If no matching `Catch` statement is found, the search proceeds to the `Catch` statements of the outer `Try…Catch…Finally` block.</span></span>  
   
- ローカル変数、`Try`ブロックでは使用できない、`Catch`これらは独立したブロックをブロックします。 複数のブロックで変数を使用する場合は、外部変数を宣言、`Try...Catch...Finally`構造体。  
-  
-> [!TIP]
->  `Try…Catch…Finally`ステートメントは IntelliSense コード スニペットとして利用できます。 コード スニペット マネージャーでは、展開**コード パターンの場合は、ごとに、Try Catch プロパティなど**、し**エラー処理 (例外)**します。 詳細については、「[Code Snippets](https://docs.microsoft.com/visualstudio/ide/code-snippets)」を参照してください。  
-  
-## <a name="finally-block"></a>Finally ブロックします。  
- 終了する前に実行する&1; つまたは複数のステートメントがある場合、`Try`構造体を使用して、`Finally`ブロックします。 コントロールに渡して、`Finally`の外部に移るにする前にブロック、`Try…Catch`構造体。 これは内で例外が発生した場合でも、`Try`構造体。  
-  
- A`Finally`ブロックは例外がある場合でも任意のコードを実行すると実行する必要があります。 制御が渡される、`Finally`関係なくブロック`Try...Catch`ブロックが終了します。  
-  
- 内のコード、 `Finally` 、コードが発生した場合でも、ブロックが実行を`Return`内のステートメントで、`Try`または`Catch`ブロックします。 コントロールを渡しません、`Try`または`Catch`、対応するブロック`Finally`ブロックで、次の場合。  
-  
--   [End ステートメント](../../../visual-basic/language-reference/statements/end-statement.md)がで検出された、`Try`または`Catch`ブロックします。  
-  
--   A<xref:System.StackOverflowException>でスローされた、`Try`または`Catch`ブロック</xref:System.StackOverflowException>。  
-  
- 実行を明示的に転送することはできません、`Finally`ブロックします。 Out の実行を転送する、`Finally`ブロックが例外を除いて有効ではありません。  
-  
- 場合、`Try`ステートメントが&1; つ以上含まれていない`Catch`ブロックを含めることは、`Finally`ブロックします。  
+ <span data-ttu-id="1f650-159">ローカル変数、`Try`ブロックでは使用できない、`Catch`独立したブロックであるためにをブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-159">Local variables from a `Try` block are not available in a `Catch` block because they are separate blocks.</span></span> <span data-ttu-id="1f650-160">複数のブロックで変数を使用する場合は、外部変数を宣言、`Try...Catch...Finally`構造体。</span><span class="sxs-lookup"><span data-stu-id="1f650-160">If you want to use a variable in more than one block, declare the variable outside the `Try...Catch...Finally` structure.</span></span>  
   
 > [!TIP]
->  場合は、特定の例外をキャッチする必要はありません、`Using`のようにステートメントの動作、`Try…Finally`ブロックおよびブロックを終了する方法に関係なく、リソースの破棄を保証します。 これは、未処理の例外にも当てはまります。 詳細については、次を参照してください。 [Using ステートメント](../../../visual-basic/language-reference/statements/using-statement.md)します。  
+>  <span data-ttu-id="1f650-161">`Try…Catch…Finally`ステートメントは IntelliSense コード スニペットとして使用できます。</span><span class="sxs-lookup"><span data-stu-id="1f650-161">The `Try…Catch…Finally` statement is available as an IntelliSense code snippet.</span></span> <span data-ttu-id="1f650-162">コード スニペット マネージャーで **コード パターン - If、For Each、Try Catch、プロパティなど**、し**エラー処理 (例外)**です。</span><span class="sxs-lookup"><span data-stu-id="1f650-162">In the Code Snippets Manager, expand **Code Patterns - If, For Each, Try Catch, Property, etc**, and then **Error Handling (Exceptions)**.</span></span> <span data-ttu-id="1f650-163">詳細については、「[Code Snippets](/visualstudio/ide/code-snippets)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1f650-163">For more information, see [Code Snippets](/visualstudio/ide/code-snippets).</span></span>  
   
-## <a name="exception-argument"></a>例外の引数  
- `Catch`ブロック`exception`引数は、のインスタンス、<xref:System.Exception>クラスまたはクラスから派生した、`Exception`クラス</xref:System.Exception> `Exception`クラスのインスタンスで発生したエラーに対応して、`Try`ブロックします。  
+## <a name="finally-block"></a><span data-ttu-id="1f650-164">Finally ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-164">Finally Block</span></span>  
+ <span data-ttu-id="1f650-165">1 つまたは複数のステートメントを終了する前に実行する必要がある場合、`Try`構造体を使用して、`Finally`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-165">If you have one or more statements that must run before you exit the `Try` structure, use a `Finally` block.</span></span> <span data-ttu-id="1f650-166">制御が渡されます、`Finally`ブロックだけの out を渡す前に、`Try…Catch`構造体。</span><span class="sxs-lookup"><span data-stu-id="1f650-166">Control passes to the `Finally` block just before it passes out of the `Try…Catch` structure.</span></span> <span data-ttu-id="1f650-167">これは内で例外が発生した場合でも、`Try`構造体。</span><span class="sxs-lookup"><span data-stu-id="1f650-167">This is true even if an exception occurs anywhere inside the `Try` structure.</span></span>  
   
- プロパティ、`Exception`オブジェクトのヘルプを原因と、例外の場所を指定します。 たとえば、<xref:System.Exception.StackTrace%2A>プロパティに、コード内のエラーの発生場所を確認できるため、例外を引き起こしたと呼ばれるメソッドの一覧します</xref:System.Exception.StackTrace%2A>。 <xref:System.Exception.Message%2A>例外を説明するメッセージが返されます。</xref:System.Exception.Message%2A> <xref:System.Exception.HelpLink%2A>関連するヘルプ ファイルにリンクが返されます。</xref:System.Exception.HelpLink%2A> <xref:System.Exception.InnerException%2A>返します、`Exception`または現在の例外の原因となったオブジェクトが返す`Nothing`元が存在しない場合`Exception`します。</xref:System.Exception.InnerException%2A>  
+ <span data-ttu-id="1f650-168">A`Finally`ブロックが役に任意のコードを実行している場合でも、例外が発生しましたに実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1f650-168">A `Finally` block is useful for running any code that must execute even if there is an exception.</span></span> <span data-ttu-id="1f650-169">制御が渡されます、`Finally`に関係なく、どのブロック`Try...Catch`ブロックが終了します。</span><span class="sxs-lookup"><span data-stu-id="1f650-169">Control is passed to the `Finally` block regardless of how the `Try...Catch` block exits.</span></span>  
   
-## <a name="considerations-when-using-a-trycatch-statement"></a>Try を使用する際の考慮事項は.Catch ステートメント  
- 使用して、`Try…Catch`ステートメント プログラムの異常なまたは予期しないイベントの発生を通知するだけです。 この理由から、次のとおりです。  
+ <span data-ttu-id="1f650-170">内のコード、`Finally`ブロックが実行されますが、コードが発生した場合でも、`Return`内のステートメント、`Try`または`Catch`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-170">The code in a `Finally` block runs even if your code encounters a `Return` statement in a `Try` or `Catch` block.</span></span> <span data-ttu-id="1f650-171">コントロールを渡しません、`Try`または`Catch`、対応するブロック`Finally`次の場合にブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-171">Control does not pass from a `Try` or `Catch` block to the corresponding `Finally` block in the following cases:</span></span>  
   
--   実行時に例外をキャッチすると、追加のオーバーヘッドを作成し、例外を回避する前に確認するよりも遅くする可能性があります。  
+-   <span data-ttu-id="1f650-172">[End ステートメント](../../../visual-basic/language-reference/statements/end-statement.md)で見つかりましたが、`Try`または`Catch`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-172">An [End Statement](../../../visual-basic/language-reference/statements/end-statement.md) is encountered in the `Try` or `Catch` block.</span></span>  
   
--   場合、`Catch`ブロックが正常に処理されない、例外がユーザーに正しく報告されましていない可能性があります。  
+-   <span data-ttu-id="1f650-173">A<xref:System.StackOverflowException>でスローされた、`Try`または`Catch`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-173">A <xref:System.StackOverflowException> is thrown in the `Try` or `Catch` block.</span></span>  
   
--   例外処理では、プログラムをさらに複雑なにします。  
+ <span data-ttu-id="1f650-174">実行を明示的に転送することはできません、`Finally`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-174">It is not valid to explicitly transfer execution into a `Finally` block.</span></span> <span data-ttu-id="1f650-175">Out の実行を転送する、`Finally`ブロックが正しくないを除く、例外を通じてします。</span><span class="sxs-lookup"><span data-stu-id="1f650-175">Transferring execution out of a `Finally` block is not valid, except through an exception.</span></span>  
   
- 常に必要としない、`Try…Catch`条件で発生する可能性がある条件をチェックするステートメントです。 次の例では、それを開く前に、ファイルが存在するかどうかを確認します。 これによってスローされる例外をキャッチする必要性が軽減、<xref:System.IO.File.OpenText%2A>メソッド</xref:System.IO.File.OpenText%2A>。  
+ <span data-ttu-id="1f650-176">場合、`Try`ステートメントが 1 つ以上含まれていない`Catch`ブロックを含めることは、`Finally`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-176">If a `Try` statement does not contain at least one `Catch` block, it must contain a `Finally` block.</span></span>  
   
- [!code-vb[VbVbalrStatements #&94;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_1.vb)]  
+> [!TIP]
+>  <span data-ttu-id="1f650-177">場合は、特定の例外をキャッチする必要はありません、`Using`ステートメントの動作と同様に、`Try…Finally`ブロックおよびブロックを終了する方法に関係なく、リソースの破棄を保証します。</span><span class="sxs-lookup"><span data-stu-id="1f650-177">If you do not have to catch specific exceptions, the `Using` statement behaves like a `Try…Finally` block, and guarantees disposal of the resources, regardless of how you exit the block.</span></span> <span data-ttu-id="1f650-178">これは、未処理の例外にも該当します。</span><span class="sxs-lookup"><span data-stu-id="1f650-178">This is true even with an unhandled exception.</span></span> <span data-ttu-id="1f650-179">詳細については、「[Using ステートメント](../../../visual-basic/language-reference/statements/using-statement.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1f650-179">For more information, see [Using Statement](../../../visual-basic/language-reference/statements/using-statement.md).</span></span>  
   
- コードのことを確認`Catch`ブロックを通じてスレッド セーフなログ記録、または適切なメッセージにユーザーが例外を報告正しくことができます。 それ以外の場合、例外は、不明な残る可能性があります。  
+## <a name="exception-argument"></a><span data-ttu-id="1f650-180">例外の引数</span><span class="sxs-lookup"><span data-stu-id="1f650-180">Exception Argument</span></span>  
+ <span data-ttu-id="1f650-181">`Catch`ブロック`exception`引数がのインスタンスでは、<xref:System.Exception>クラスまたはクラスから派生した、`Exception`クラスです。</span><span class="sxs-lookup"><span data-stu-id="1f650-181">The `Catch` block `exception` argument is an instance of the <xref:System.Exception> class or a class that derives from the `Exception` class.</span></span> <span data-ttu-id="1f650-182">`Exception`クラスのインスタンスで発生したエラーに対応して、`Try`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-182">The `Exception` class instance corresponds to the error that occurred in the `Try` block.</span></span>  
   
-## <a name="async-methods"></a>非同期メソッド  
- 持つメソッドをマークした場合、 [Async](../../../visual-basic/language-reference/modifiers/async.md)修飾子は、使用できます、 [Await](../../../visual-basic/language-reference/operators/await-operator.md)メソッド内の演算子です。 指定したステートメント、`Await`演算子は、待機中のタスクが完了するまでに、メソッドの実行を中断します。 このタスクは、進行中の作業を表します。 ときに関連付けられているタスク、`Await`演算子が終了すると、同じメソッド内での実行が再開されます。 詳細については、次を参照してください。[非同期プログラムにおける制御のフロー](../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)します。  
+ <span data-ttu-id="1f650-183">プロパティ、`Exception`オブジェクトのヘルプを原因と、例外の場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="1f650-183">The properties of the `Exception` object help to identify the cause and location of an exception.</span></span> <span data-ttu-id="1f650-184">たとえば、<xref:System.Exception.StackTrace%2A>プロパティに、コード内のエラーの発生場所を確認できるため、例外を引き起こした呼び出されたメソッドの一覧です。</span><span class="sxs-lookup"><span data-stu-id="1f650-184">For example, the <xref:System.Exception.StackTrace%2A> property lists the called methods that led to the exception, helping you find where the error occurred in the code.</span></span> <span data-ttu-id="1f650-185"><xref:System.Exception.Message%2A>例外を説明するメッセージが返されます。</span><span class="sxs-lookup"><span data-stu-id="1f650-185"><xref:System.Exception.Message%2A> returns a message that describes the exception.</span></span> <span data-ttu-id="1f650-186"><xref:System.Exception.HelpLink%2A>関連付けられているヘルプ ファイルへのリンクを返します。</span><span class="sxs-lookup"><span data-stu-id="1f650-186"><xref:System.Exception.HelpLink%2A> returns a link to an associated Help file.</span></span> <span data-ttu-id="1f650-187"><xref:System.Exception.InnerException%2A>返します、`Exception`または現在の例外の原因となったオブジェクトを返します`Nothing`元が存在しない場合`Exception`です。</span><span class="sxs-lookup"><span data-stu-id="1f650-187"><xref:System.Exception.InnerException%2A> returns the `Exception` object that caused the current exception, or it returns `Nothing` if there is no original `Exception`.</span></span>  
   
- 非同期のメソッドによって返されるタスクは、未処理の例外によって完了したことを示すエラーが発生した状態になる可能性があります。 タスクがその結果、取り消された状態になる可能性がありますも、 `OperationCanceledException` await 式からスローされます。 どちらの種類の例外をキャッチするには、配置、`Await`式内のタスクに関連付けられている、`Try`で例外をキャッチして、ブロック、`Catch`ブロックします。 例については、このトピックの後半で提供されます。  
+## <a name="considerations-when-using-a-trycatch-statement"></a><span data-ttu-id="1f650-188">使用に関する注意点、試してみてください.Catch ステートメント</span><span class="sxs-lookup"><span data-stu-id="1f650-188">Considerations When Using a Try…Catch Statement</span></span>  
+ <span data-ttu-id="1f650-189">使用して、`Try…Catch`ステートメントのみにプログラムの異常なまたは予期しないイベントの発生を通知します。</span><span class="sxs-lookup"><span data-stu-id="1f650-189">Use a `Try…Catch` statement only to signal the occurrence of unusual or unanticipated program events.</span></span> <span data-ttu-id="1f650-190">この理由から、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="1f650-190">Reasons for this include the following:</span></span>  
   
- 複数の例外がそのエラーの前に行うために、タスクは faulted 状態にできます。 タスクが<xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>。</xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>への呼び出しの結果になる可能性があります、 このようなタスクを待機するときにキャッチされた例外は、例外を&1; つと、どの例外がキャッチされるを予測することはできません。 例については、このトピックの後半で提供されます。  
+-   <span data-ttu-id="1f650-191">実行時に例外をキャッチ、追加のオーバーヘッドを作成し、例外を回避する事前に確認するよりも遅くする可能性があります。</span><span class="sxs-lookup"><span data-stu-id="1f650-191">Catching exceptions at runtime creates additional overhead, and is likely to be slower than pre-checking to avoid exceptions.</span></span>  
   
- `Await`内の式で使用できない、`Catch`ブロックまたは`Finally`ブロックします。  
+-   <span data-ttu-id="1f650-192">場合、`Catch`ブロックが正しく処理されないが、例外が正しく表示されないことをユーザーにします。</span><span class="sxs-lookup"><span data-stu-id="1f650-192">If a `Catch` block is not handled correctly, the exception might not be reported correctly to users.</span></span>  
   
-## <a name="iterators"></a>反復子  
- Iterator 関数または`Get`アクセサーは、コレクションに対するカスタム イテレーションを実行します。 反復子を使用して、 [Yield](../../../visual-basic/language-reference/statements/yield-statement.md)ステートメントを一度に&1; つのコレクションの各要素を返します。 使用して反復子関数を呼び出す、[ごとにしています.次のステートメントの](../../../visual-basic/language-reference/statements/for-each-next-statement.md)です。  
+-   <span data-ttu-id="1f650-193">例外処理より複雑なプログラムをによりします。</span><span class="sxs-lookup"><span data-stu-id="1f650-193">Exception handling makes a program more complex.</span></span>  
   
- A`Yield`ステートメントは、内で使用できます、`Try`ブロックします。 A`Try`を含むブロック、`Yield`ステートメントにはできます`Catch`ブロック、およびことができますが、`Finally`ブロックします。 "再試行ブロックで Visual Basic"を参照してください[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)例については、です。  
+ <span data-ttu-id="1f650-194">常に必要としない、`Try…Catch`条件で発生する可能性がある条件をチェックするステートメント。</span><span class="sxs-lookup"><span data-stu-id="1f650-194">You do not always need a `Try…Catch` statement to check for a condition that is likely to occur.</span></span> <span data-ttu-id="1f650-195">次の例では、それを開く前にファイルが存在するかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="1f650-195">The following example checks whether a file exists before trying to open it.</span></span> <span data-ttu-id="1f650-196">これは、必要が減り、によってスローされる例外をキャッチするため、<xref:System.IO.File.OpenText%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="1f650-196">This reduces the need for catching an exception thrown by the <xref:System.IO.File.OpenText%2A> method.</span></span>  
   
- A`Yield`ステートメント内で使用できない、`Catch`ブロックまたは`Finally`ブロックします。  
+ [!code-vb[VbVbalrStatements#94](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_1.vb)]  
   
- 場合、`For Each`本体 (iterator 関数) の外部で、例外がスロー、 `Catch` iterator 関数内のブロックは実行されませんが、`Finally`反復子関数でのブロックを実行します。 A`Catch`反復子関数の内側のブロックは、反復子関数内で発生する例外だけをキャッチします。  
+ <span data-ttu-id="1f650-197">必要なコードを確認してください`Catch`ブロックがまたは適切なメッセージのログ記録をスレッド セーフであるかどうかをユーザーに例外を正しく報告できます。</span><span class="sxs-lookup"><span data-stu-id="1f650-197">Ensure that code in `Catch` blocks can properly report exceptions to users, whether through thread-safe logging or appropriate messages.</span></span> <span data-ttu-id="1f650-198">それ以外の場合、例外は、不明な残る可能性があります。</span><span class="sxs-lookup"><span data-stu-id="1f650-198">Otherwise, exceptions might remain unknown.</span></span>  
   
-## <a name="partial-trust-situations"></a>部分的に信頼された状況  
- ネットワーク共有にホストされるアプリケーションなど、部分的に信頼された状況で`Try...Catch...Finally`呼び出しが含まれているメソッドが呼び出される前に発生するセキュリティ例外をキャッチしません。 次の例、そこから、サーバーの共有と実行に格納するときにエラーを生成する"System.Security.SecurityException: 失敗を要求します"。 セキュリティ例外の詳細については、<xref:System.Security.SecurityException>クラス</xref:System.Security.SecurityException>を参照してください。  
+## <a name="async-methods"></a><span data-ttu-id="1f650-199">非同期メソッド</span><span class="sxs-lookup"><span data-stu-id="1f650-199">Async Methods</span></span>  
+ <span data-ttu-id="1f650-200">持つメソッドをマークする場合、 [Async](../../../visual-basic/language-reference/modifiers/async.md)修飾子、行うこともできます、 [Await](../../../visual-basic/language-reference/operators/await-operator.md)メソッド内の演算子。</span><span class="sxs-lookup"><span data-stu-id="1f650-200">If you mark a method with the [Async](../../../visual-basic/language-reference/modifiers/async.md) modifier, you can use the [Await](../../../visual-basic/language-reference/operators/await-operator.md) operator in the method.</span></span> <span data-ttu-id="1f650-201">ステートメントを`Await`演算子は、待機中のタスクが完了するまでに、メソッドの実行を中断します。</span><span class="sxs-lookup"><span data-stu-id="1f650-201">A statement with the `Await` operator suspends execution of the method until the awaited task completes.</span></span> <span data-ttu-id="1f650-202">このタスクは、進行中の作業を表します。</span><span class="sxs-lookup"><span data-stu-id="1f650-202">The task represents ongoing work.</span></span> <span data-ttu-id="1f650-203">ときに、タスクに関連付けられている、`Await`演算子が終了すると、同じメソッド内で実行が再開されます。</span><span class="sxs-lookup"><span data-stu-id="1f650-203">When the task that's associated with the `Await` operator finishes, execution resumes in the same method.</span></span> <span data-ttu-id="1f650-204">詳細については、次を参照してください。[非同期プログラムにおける制御フロー](../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)です。</span><span class="sxs-lookup"><span data-stu-id="1f650-204">For more information, see [Control Flow in Async Programs](../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md).</span></span>  
   
- [!code-vb[VbVbalrStatements #&85;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_2.vb)]  
+ <span data-ttu-id="1f650-205">非同期のメソッドによって返されるタスクは、未処理の例外によって終了したことを示す違反状態になる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="1f650-205">A task returned by an Async method may end in a faulted state, indicating that it completed due to an unhandled exception.</span></span> <span data-ttu-id="1f650-206">タスクがその結果、取り消された状態で終了するも、 `OperationCanceledException` await 式からスローされています。</span><span class="sxs-lookup"><span data-stu-id="1f650-206">A task may also end in a canceled state, which results in an `OperationCanceledException` being thrown out of the await expression.</span></span> <span data-ttu-id="1f650-207">どちらの種類の例外をキャッチするには、配置、`Await`内のタスクに関連付けられている式、`Try`で例外をキャッチして、ブロック、`Catch`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-207">To catch either type of exception, place the `Await` expression that's associated with the task in a `Try` block, and catch the exception in the `Catch` block.</span></span> <span data-ttu-id="1f650-208">このトピックで後述する例を示します。</span><span class="sxs-lookup"><span data-stu-id="1f650-208">An example is provided later in this topic.</span></span>  
   
- このような部分的に信頼された場合に、登録する必要が、`Process.Start`別個のステートメント`Sub`します。 最初の呼び出し、`Sub`は失敗します。 これにより、`Try...Catch`する前にそれをキャッチする、`Sub`を含む`Process.Start`が開始し、セキュリティ例外が生成されます。  
+ <span data-ttu-id="1f650-209">複数の例外がそのエラーの前に行うために、タスクは faulted 状態にできます。</span><span class="sxs-lookup"><span data-stu-id="1f650-209">A task can be in a faulted state because multiple exceptions were responsible for its faulting.</span></span> <span data-ttu-id="1f650-210">たとえば、タスクは <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> の呼び出しの結果になることがあります。</span><span class="sxs-lookup"><span data-stu-id="1f650-210">For example, the task might be the result of a call to <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>.</span></span> <span data-ttu-id="1f650-211">このようなタスクを待機して例外をキャッチしましたが、例外の 1 つだけどの例外がキャッチされるかを予測することはできません。</span><span class="sxs-lookup"><span data-stu-id="1f650-211">When you await such a task, the caught exception is only one of the exceptions, and you can't predict which exception will be caught.</span></span> <span data-ttu-id="1f650-212">このトピックで後述する例を示します。</span><span class="sxs-lookup"><span data-stu-id="1f650-212">An example is provided later in this topic.</span></span>  
   
-## <a name="example"></a>例  
- 次の例の構造を示しています、`Try...Catch...Finally`ステートメントです。  
+ <span data-ttu-id="1f650-213">`Await`内の式で使用できない、`Catch`ブロックまたは`Finally`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-213">An `Await` expression can't be inside a `Catch` block or `Finally` block.</span></span>  
   
- [!code-vb[VbVbalrStatements #&86;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_3.vb)]  
+## <a name="iterators"></a><span data-ttu-id="1f650-214">反復子</span><span class="sxs-lookup"><span data-stu-id="1f650-214">Iterators</span></span>  
+ <span data-ttu-id="1f650-215">Iterator 関数または`Get`アクセサーは、コレクションに対するカスタム イテレーションを実行します。</span><span class="sxs-lookup"><span data-stu-id="1f650-215">An iterator function or `Get` accessor performs a custom iteration over a collection.</span></span> <span data-ttu-id="1f650-216">反復子を使用して、 [Yield](../../../visual-basic/language-reference/statements/yield-statement.md)ステートメントを一度にいずれかのコレクションの各要素を返します。</span><span class="sxs-lookup"><span data-stu-id="1f650-216">An iterator uses a [Yield](../../../visual-basic/language-reference/statements/yield-statement.md) statement to return each element of the collection one at a time.</span></span> <span data-ttu-id="1f650-217">使用して反復子関数を呼び出す、[ごとにしています.次のステートメントの](../../../visual-basic/language-reference/statements/for-each-next-statement.md)します。</span><span class="sxs-lookup"><span data-stu-id="1f650-217">You call an iterator function by using a [For Each...Next Statement](../../../visual-basic/language-reference/statements/for-each-next-statement.md).</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、`CreateException`メソッドでのスロー、`NullReferenceException`です。 例外を生成するコードに含まれていない、`Try`ブロックします。 したがって、`CreateException`メソッドが例外を処理できません。 `RunSample`ため、例外の処理はメソッドへの呼び出し、`CreateException`にメソッドが、`Try`ブロックします。  
+ <span data-ttu-id="1f650-218">A`Yield`内のステートメントに含めることができます、`Try`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-218">A `Yield` statement can be inside a `Try` block.</span></span> <span data-ttu-id="1f650-219">A`Try`を含むブロック、`Yield`ステートメントが持つことができます`Catch`をブロックしてができます、`Finally`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-219">A `Try` block that contains a `Yield` statement can have `Catch` blocks, and can have a `Finally` block.</span></span> <span data-ttu-id="1f650-220">"再試行ブロック Visual Basic で"を参照してください[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)例についてはします。</span><span class="sxs-lookup"><span data-stu-id="1f650-220">See the "Try Blocks in Visual Basic" section of [Iterators](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7) for an example.</span></span>  
   
- この例では`Catch`からいくつかの種類の例外、ステートメントの順序に最も一般的な特定します。  
+ <span data-ttu-id="1f650-221">A`Yield`ステートメント内で使用できない、`Catch`ブロックまたは`Finally`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-221">A `Yield` statement cannot be inside a `Catch` block or a `Finally` block.</span></span>  
   
- [!code-vb[VbVbalrStatements #&91;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_4.vb)]  
+ <span data-ttu-id="1f650-222">場合、`For Each`本体 (関数の外側で、反復子)、例外がスロー、 `Catch` iterator 関数内のブロックが実行されていないが、 `Finally` iterator 関数内のブロックを実行します。</span><span class="sxs-lookup"><span data-stu-id="1f650-222">If the `For Each` body (outside of the iterator function) throws an exception, a `Catch` block in the iterator function is not executed, but a `Finally` block in the iterator function is executed.</span></span> <span data-ttu-id="1f650-223">A`Catch`反復子関数の内側のブロックは、iterator 関数内で発生する例外のみをキャッチします。</span><span class="sxs-lookup"><span data-stu-id="1f650-223">A `Catch` block inside an iterator function catches only exceptions that occur inside the iterator function.</span></span>  
   
-## <a name="example"></a>例  
- 次の例を使用する方法を示しています、`Catch When`ステートメント条件式をフィルター処理します。 条件式と評価された場合`True`、内のコード、`Catch`ブロックが実行されます。  
+## <a name="partial-trust-situations"></a><span data-ttu-id="1f650-224">部分的に信頼された状況</span><span class="sxs-lookup"><span data-stu-id="1f650-224">Partial-Trust Situations</span></span>  
+ <span data-ttu-id="1f650-225">ネットワーク共有でホストされているアプリケーションなど、部分的に信頼された状況で`Try...Catch...Finally`呼び出しを含むメソッドが呼び出される前に発生したセキュリティ例外をキャッチしません。</span><span class="sxs-lookup"><span data-stu-id="1f650-225">In partial-trust situations, such as an application hosted on a network share, `Try...Catch...Finally` does not catch security exceptions that occur before the method that contains the call is invoked.</span></span> <span data-ttu-id="1f650-226">サーバーの共有および実行にそこから、配置するときに、次の例は、エラーを生成します"System.Security.SecurityException: 要求が失敗しました。"。</span><span class="sxs-lookup"><span data-stu-id="1f650-226">The following example, when you put it on a server share and run from there, produces the error "System.Security.SecurityException: Request Failed."</span></span> <span data-ttu-id="1f650-227">セキュリティ例外の詳細については、次を参照してください。、<xref:System.Security.SecurityException>クラスです。</span><span class="sxs-lookup"><span data-stu-id="1f650-227">For more information about security exceptions, see the <xref:System.Security.SecurityException> class.</span></span>  
   
- [!code-vb[VbVbalrStatements #&92;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_5.vb)]  
+ [!code-vb[VbVbalrStatements#85](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_2.vb)]  
   
-## <a name="example"></a>例  
- 次の例は、`Try…Catch`ステートメントに含まれている、`Try`ブロックします。 内部`Catch`ブロックが例外をスローする、`InnerException`プロパティが、元の例外に設定します。 外側`Catch`ブロックは、独自の例外と内部例外を報告します。  
+ <span data-ttu-id="1f650-228">このような部分的に信頼された状況で、配置する必要がある、`Process.Start`別個のステートメント`Sub`です。</span><span class="sxs-lookup"><span data-stu-id="1f650-228">In such a partial-trust situation, you have to put the `Process.Start` statement in a separate `Sub`.</span></span> <span data-ttu-id="1f650-229">最初の呼び出し、`Sub`は失敗します。</span><span class="sxs-lookup"><span data-stu-id="1f650-229">The initial call to the `Sub` will fail.</span></span> <span data-ttu-id="1f650-230">これにより、`Try...Catch`する前にそれをキャッチする、`Sub`を格納している`Process.Start`が開始されており、セキュリティ例外が生成します。</span><span class="sxs-lookup"><span data-stu-id="1f650-230">This enables `Try...Catch` to catch it before the `Sub` that contains `Process.Start` is started and the security exception produced.</span></span>  
   
- [!code-vb[VbVbalrStatements #&93;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_6.vb)]  
+## <a name="example"></a><span data-ttu-id="1f650-231">例</span><span class="sxs-lookup"><span data-stu-id="1f650-231">Example</span></span>  
+ <span data-ttu-id="1f650-232">次の例の構造を示しています、`Try...Catch...Finally`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="1f650-232">The following example illustrates the structure of the `Try...Catch...Finally` statement.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、非同期メソッドの例外処理を示します。 非同期タスクに適用される例外をキャッチする、`Await`にある式は、`Try`でブロック、呼び出し元と、例外がキャッチされました、`Catch`ブロックします。  
+ [!code-vb[VbVbalrStatements#86](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_3.vb)]  
   
- 例外処理を示すために、この例の `Throw New Exception` 行のコメントを解除します。 例外がキャッチされました、`Catch`ブロック、タスクの`IsFaulted`にプロパティが設定されている`True`、およびタスクの`Exception.InnerException`プロパティは、例外に設定します。  
+## <a name="example"></a><span data-ttu-id="1f650-233">例</span><span class="sxs-lookup"><span data-stu-id="1f650-233">Example</span></span>  
+ <span data-ttu-id="1f650-234">次の例で、`CreateException`メソッドがスローされます、`NullReferenceException`です。</span><span class="sxs-lookup"><span data-stu-id="1f650-234">In the following example, the `CreateException` method throws a `NullReferenceException`.</span></span> <span data-ttu-id="1f650-235">例外を生成するコードに含まれていない、`Try`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-235">The code that generates the exception is not in a `Try` block.</span></span> <span data-ttu-id="1f650-236">したがって、`CreateException`メソッドが例外を処理できません。</span><span class="sxs-lookup"><span data-stu-id="1f650-236">Therefore, the `CreateException` method does not handle the exception.</span></span> <span data-ttu-id="1f650-237">`RunSample`ために、メソッドは例外を処理はへの呼び出し、`CreateException`にメソッドが、`Try`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-237">The `RunSample` method does handle the exception because the call to the `CreateException` method is in a `Try` block.</span></span>  
   
- コメントを解除、`Throw New OperationCancelledException`行を非同期的な処理をキャンセルすると、動作を示します。 例外がキャッチされました、`Catch`ブロック、およびタスクの`IsCanceled`にプロパティが設定されている`True`します。 ただし、状況によってこの例に適用されない`IsFaulted`に設定されている`True`と`IsCanceled`に設定されている`False`します。  
+ <span data-ttu-id="1f650-238">例が含まれています`Catch`から複数の種類、例外のためのステートメントの順序、一般的に最も固有の仕様です。</span><span class="sxs-lookup"><span data-stu-id="1f650-238">The example includes `Catch` statements for several types of exceptions, ordered from the most specific to the most general.</span></span>  
   
- [!code-vb[csAsyncExceptions&1;](../../../csharp/language-reference/keywords/codesnippet/VisualBasic/try-catch-finally-statement_7.vb)]  
+ [!code-vb[VbVbalrStatements#91](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_4.vb)]  
   
-## <a name="example"></a>例  
- 次の例では、複数のタスクで複数の例外が発生する可能性がある例外処理について説明します。 `Try`ブロックには、`Await`タスクの式を<xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>が返されます</xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>。 タスクが完了するタスクの&3; つすると<xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>適用が完了します</xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>。  
+## <a name="example"></a><span data-ttu-id="1f650-239">例</span><span class="sxs-lookup"><span data-stu-id="1f650-239">Example</span></span>  
+ <span data-ttu-id="1f650-240">次の例を使用する方法を示しています、`Catch When`条件付きの式をフィルター処理ステートメント。</span><span class="sxs-lookup"><span data-stu-id="1f650-240">The following example shows how to use a `Catch When` statement to filter on a conditional expression.</span></span> <span data-ttu-id="1f650-241">条件式の評価が場合`True`、内のコード、`Catch`ブロックが実行されます。</span><span class="sxs-lookup"><span data-stu-id="1f650-241">If the conditional expression evaluates to `True`, the code in the `Catch` block runs.</span></span>  
   
- 3 つのタスクでそれぞれ例外が発生します。 `Catch`は、例外を反復処理ブロック、`Exception.InnerExceptions`タスクのプロパティを`Task.WhenAll`が返されます。  
+ [!code-vb[VbVbalrStatements#92](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_5.vb)]  
   
- [!code-vb[csAsyncExceptions&3;](../../../csharp/language-reference/keywords/codesnippet/VisualBasic/try-catch-finally-statement_8.vb)]  
+## <a name="example"></a><span data-ttu-id="1f650-242">例</span><span class="sxs-lookup"><span data-stu-id="1f650-242">Example</span></span>  
+ <span data-ttu-id="1f650-243">次の例は、`Try…Catch`ステートメントに含まれている、`Try`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-243">The following example has a `Try…Catch` statement that is contained in a `Try` block.</span></span> <span data-ttu-id="1f650-244">内部`Catch`ブロックが例外をスローする、`InnerException`プロパティを元の例外に設定します。</span><span class="sxs-lookup"><span data-stu-id="1f650-244">The inner `Catch` block throws an exception that has its `InnerException` property set to the original exception.</span></span> <span data-ttu-id="1f650-245">外側`Catch`ブロックは、独自の例外と内部例外を報告します。</span><span class="sxs-lookup"><span data-stu-id="1f650-245">The outer `Catch` block reports its own exception and the inner exception.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:Microsoft.VisualBasic.Information.Err%2A></xref:Microsoft.VisualBasic.Information.Err%2A>   
- <xref:System.Exception></xref:System.Exception>   
- [Exit ステートメント](../../../visual-basic/language-reference/statements/exit-statement.md)   
- [On Error ステートメント](../../../visual-basic/language-reference/statements/on-error-statement.md)   
- [コード スニペットを使用するためのベスト プラクティス](https://docs.microsoft.com/visualstudio/ide/best-practices-for-using-code-snippets)   
- [例外処理](https://msdn.microsoft.com/library/dd997415)   
- [Throw ステートメント](../../../visual-basic/language-reference/statements/throw-statement.md)
+ [!code-vb[VbVbalrStatements#93](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/try-catch-finally-statement_6.vb)]  
+  
+## <a name="example"></a><span data-ttu-id="1f650-246">例</span><span class="sxs-lookup"><span data-stu-id="1f650-246">Example</span></span>  
+ <span data-ttu-id="1f650-247">次の例では、非同期メソッドの例外処理を示します。</span><span class="sxs-lookup"><span data-stu-id="1f650-247">The following example illustrates exception handling for async methods.</span></span> <span data-ttu-id="1f650-248">非同期タスクに適用される例外をキャッチする、`Await`式には、`Try`でブロック、呼び出し元とは、例外がキャッチされました、`Catch`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="1f650-248">To catch an exception that applies to an async task, the `Await` expression is in a `Try` block of the caller, and the exception is caught in the `Catch` block.</span></span>  
+  
+ <span data-ttu-id="1f650-249">例外処理を示すために、この例の `Throw New Exception` 行のコメントを解除します。</span><span class="sxs-lookup"><span data-stu-id="1f650-249">Uncomment the `Throw New Exception` line in the example to demonstrate exception handling.</span></span> <span data-ttu-id="1f650-250">例外がキャッチされました、`Catch`ブロック、タスクの`IsFaulted`プロパティに設定されている`True`、およびタスクの`Exception.InnerException`プロパティが例外に設定します。</span><span class="sxs-lookup"><span data-stu-id="1f650-250">The exception is caught in the `Catch` block, the task's `IsFaulted` property is set to `True`, and the task's `Exception.InnerException` property is set to the exception.</span></span>  
+  
+ <span data-ttu-id="1f650-251">`Throw New OperationCancelledException` 行のコメントを解除して、非同期処理を取り消したときに何が起こるかを示します。</span><span class="sxs-lookup"><span data-stu-id="1f650-251">Uncomment the `Throw New OperationCancelledException` line to demonstrate what happens when you cancel an asynchronous process.</span></span> <span data-ttu-id="1f650-252">例外がキャッチされました、`Catch`ブロック、およびタスクの`IsCanceled`プロパティに設定されている`True`です。</span><span class="sxs-lookup"><span data-stu-id="1f650-252">The exception is caught in the `Catch` block, and the task's `IsCanceled` property is set to `True`.</span></span> <span data-ttu-id="1f650-253">ただし、この例に該当しない一部の条件下で`IsFaulted`に設定されている`True`と`IsCanceled`に設定されている`False`です。</span><span class="sxs-lookup"><span data-stu-id="1f650-253">However, under some conditions that don't apply to this example, `IsFaulted` is set to `True` and `IsCanceled` is set to `False`.</span></span>  
+  
+ [!code-vb[csAsyncExceptions#1](../../../csharp/language-reference/keywords/codesnippet/VisualBasic/try-catch-finally-statement_7.vb)]  
+  
+## <a name="example"></a><span data-ttu-id="1f650-254">例</span><span class="sxs-lookup"><span data-stu-id="1f650-254">Example</span></span>  
+ <span data-ttu-id="1f650-255">次の例では、複数のタスクで複数の例外が発生する可能性がある例外処理について説明します。</span><span class="sxs-lookup"><span data-stu-id="1f650-255">The following example illustrates exception handling where multiple tasks can result in multiple exceptions.</span></span> <span data-ttu-id="1f650-256">`Try`ブロックには、`Await`タスクの式を<xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>が返されます。</span><span class="sxs-lookup"><span data-stu-id="1f650-256">The `Try` block has the `Await` expression for the task that <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> returned.</span></span> <span data-ttu-id="1f650-257">3 つのタスクとタスクが完了<xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>適用が完了します。</span><span class="sxs-lookup"><span data-stu-id="1f650-257">The task is complete when the three tasks to which <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> is applied are complete.</span></span>  
+  
+ <span data-ttu-id="1f650-258">3 つのタスクでそれぞれ例外が発生します。</span><span class="sxs-lookup"><span data-stu-id="1f650-258">Each of the three tasks causes an exception.</span></span> <span data-ttu-id="1f650-259">`Catch`は、例外を反復処理ブロック、`Exception.InnerExceptions`タスクのプロパティを`Task.WhenAll`が返されます。</span><span class="sxs-lookup"><span data-stu-id="1f650-259">The `Catch` block iterates through the exceptions, which are found in the `Exception.InnerExceptions` property of the task that `Task.WhenAll` returned.</span></span>  
+  
+ [!code-vb[csAsyncExceptions#3](../../../csharp/language-reference/keywords/codesnippet/VisualBasic/try-catch-finally-statement_8.vb)]  
+  
+## <a name="see-also"></a><span data-ttu-id="1f650-260">関連項目</span><span class="sxs-lookup"><span data-stu-id="1f650-260">See Also</span></span>  
+ <xref:Microsoft.VisualBasic.Information.Err%2A>  
+ <xref:System.Exception>  
+ [<span data-ttu-id="1f650-261">Exit ステートメント</span><span class="sxs-lookup"><span data-stu-id="1f650-261">Exit Statement</span></span>](../../../visual-basic/language-reference/statements/exit-statement.md)  
+ [<span data-ttu-id="1f650-262">On Error ステートメント</span><span class="sxs-lookup"><span data-stu-id="1f650-262">On Error Statement</span></span>](../../../visual-basic/language-reference/statements/on-error-statement.md)  
+ [<span data-ttu-id="1f650-263">コード スニペットを使用するためのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="1f650-263">Best Practices for Using Code Snippets</span></span>](/visualstudio/ide/best-practices-for-using-code-snippets)  
+ [<span data-ttu-id="1f650-264">例外処理</span><span class="sxs-lookup"><span data-stu-id="1f650-264">Exception Handling</span></span>](https://msdn.microsoft.com/library/dd997415)  
+ [<span data-ttu-id="1f650-265">Throw ステートメント</span><span class="sxs-lookup"><span data-stu-id="1f650-265">Throw Statement</span></span>](../../../visual-basic/language-reference/statements/throw-statement.md)

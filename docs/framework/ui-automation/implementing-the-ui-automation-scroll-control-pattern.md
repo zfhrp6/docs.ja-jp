@@ -1,85 +1,88 @@
 ---
-title: "Implementing the UI Automation Scroll Control Pattern | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "UI Automation, Scroll control pattern"
-  - "control patterns, Scroll"
-  - "Scroll control pattern"
+title: "UI オートメーション Scroll コントロール パターンの実装"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- UI Automation, Scroll control pattern
+- control patterns, Scroll
+- Scroll control pattern
 ms.assetid: 73d64242-6cbb-424c-92dd-dc69530b7899
-caps.latest.revision: 23
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: b9f38bbe185013c498a7ecf98bbf915b35c2d791
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Implementing the UI Automation Scroll Control Pattern
+# <a name="implementing-the-ui-automation-scroll-control-pattern"></a><span data-ttu-id="b5cd6-102">UI オートメーション Scroll コントロール パターンの実装</span><span class="sxs-lookup"><span data-stu-id="b5cd6-102">Implementing the UI Automation Scroll Control Pattern</span></span>
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の最新情報については、「[Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」をご覧ください。  
+>  <span data-ttu-id="b5cd6-103">このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="b5cd6-104">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- このトピックでは、イベントおよびプロパティに関する情報など、<xref:System.Windows.Automation.Provider.IScrollProvider> の実装のためのガイドラインと規則について説明します。 その他のリファレンスへのリンクは、このトピックの最後に記載します。  
+ <span data-ttu-id="b5cd6-105">このトピックでは、イベントおよびプロパティに関する情報など、 <xref:System.Windows.Automation.Provider.IScrollProvider>の実装のためのガイドラインと規則について説明します。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-105">This topic introduces guidelines and conventions for implementing <xref:System.Windows.Automation.Provider.IScrollProvider>, including information about events and properties.</span></span> <span data-ttu-id="b5cd6-106">その他のリファレンスへのリンクは、このトピックの最後に記載します。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-106">Links to additional references are listed at the end of the topic.</span></span>  
   
- <xref:System.Windows.Automation.ScrollPattern> コントロール パターンは、子オブジェクトのコレクションのスクロール可能なコンテナーとして機能するコントロールをサポートするために使用します。 通常は、スクロール バーを使用してスクロール機能をサポートするためにコントロールが必要ですが、ここでは必要ありません。  
+ <span data-ttu-id="b5cd6-107"><xref:System.Windows.Automation.ScrollPattern> コントロール パターンは、子オブジェクトのコレクションのスクロール可能なコンテナーとして機能するコントロールをサポートするために使用します。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-107">The <xref:System.Windows.Automation.ScrollPattern> control pattern is used to support a control that acts as a scrollable container for a collection of child objects.</span></span> <span data-ttu-id="b5cd6-108">通常は、スクロール バーを使用してスクロール機能をサポートするためにコントロールが必要ですが、ここでは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-108">The control is not required to use scrollbars to support the scrolling functionality, although it commonly does.</span></span>  
   
- ![スクロール バーのないスクロール コントロール。](../../../docs/framework/ui-automation/media/uia-scrollpattern-without-scrollbars.PNG "UIA\_ScrollPattern\_Without\_Scrollbars")  
-スクロール バーを使用しないスクロール コントロールの例  
+ <span data-ttu-id="b5cd6-109">![スクロールバーなしのコントロールをスクロールします。] (../../../docs/framework/ui-automation/media/uia-scrollpattern-without-scrollbars.PNG "UIA_ScrollPattern_Without_Scrollbars")</span><span class="sxs-lookup"><span data-stu-id="b5cd6-109">![Scroll control without scrollbars.](../../../docs/framework/ui-automation/media/uia-scrollpattern-without-scrollbars.PNG "UIA_ScrollPattern_Without_Scrollbars")</span></span>  
+<span data-ttu-id="b5cd6-110">スクロール バーを使用しないスクロール コントロールの例</span><span class="sxs-lookup"><span data-stu-id="b5cd6-110">Example of a Scrolling Control that Does Not Use Scrollbars</span></span>  
   
- このコントロールを実装するコントロールの例については、「[Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)」を参照してください。  
+ <span data-ttu-id="b5cd6-111">このコントロールを実装するコントロールの例については、「 [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-111">For examples of controls that implement this control, see [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).</span></span>  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## 実装のガイドラインと規則  
- スクロール コントロール パターンを実装する場合は、次のガイドラインと規則に留意してください。  
+## <a name="implementation-guidelines-and-conventions"></a><span data-ttu-id="b5cd6-112">実装のガイドラインと規則</span><span class="sxs-lookup"><span data-stu-id="b5cd6-112">Implementation Guidelines and Conventions</span></span>  
+ <span data-ttu-id="b5cd6-113">スクロール コントロール パターンを実装する場合は、次のガイドラインと規則に留意してください。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-113">When implementing the Scroll control pattern, note the following guidelines and conventions:</span></span>  
   
--   このコントロールの子は <xref:System.Windows.Automation.Provider.IScrollItemProvider> を実装する必要があります。  
+-   <span data-ttu-id="b5cd6-114">このコントロールの子は <xref:System.Windows.Automation.Provider.IScrollItemProvider>を実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-114">The children of this control must implement <xref:System.Windows.Automation.Provider.IScrollItemProvider>.</span></span>  
   
--   コンテナー コントロールのスクロール バーは <xref:System.Windows.Automation.ScrollPattern> コントロール パターンをサポートしません。 代わりに、<xref:System.Windows.Automation.RangeValuePattern> コントロール パターンをサポートする必要があります。  
+-   <span data-ttu-id="b5cd6-115">コンテナー コントロールのスクロール バーは <xref:System.Windows.Automation.ScrollPattern> コントロール パターンをサポートしません。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-115">The scrollbars of a container control do not support the <xref:System.Windows.Automation.ScrollPattern> control pattern.</span></span> <span data-ttu-id="b5cd6-116">代わりに、 <xref:System.Windows.Automation.RangeValuePattern> コントロール パターンをサポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-116">They must support the <xref:System.Windows.Automation.RangeValuePattern> control pattern instead.</span></span>  
   
--   スクロールをパーセンテージで測定する場合は、スクロール目盛りに関連するすべての値または量を 0 ～ 100 の範囲に正規化する必要があります。  
+-   <span data-ttu-id="b5cd6-117">スクロールをパーセンテージで測定する場合は、スクロール目盛りに関連するすべての値または量を 0 ～ 100 の範囲に正規化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-117">When scrolling is measured in percentages, all values or amounts related to scroll graduation must be normalized to a range of 0 to 100.</span></span>  
   
--   <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> と <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> は <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> とは無関係です。  
+-   <span data-ttu-id="b5cd6-118"><xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> と <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> は <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty>とは無関係です。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-118"><xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> and <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> are independent of the <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty>.</span></span>  
   
--   <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> \= `false` の場合は、<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalViewSizeProperty> を 100% に設定し、<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty> を <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll> に設定する必要があります。 同様に、<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> \= `false` の場合は、<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty> を 100% に設定し、<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalScrollPercentProperty> を <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll> に設定する必要があります。 これにより、UI オートメーション クライアントは、スクロールしたくない方向がアクティブになっている場合の[競合状態](http://support.microsoft.com/default.aspx?scid=kb;en-us;317723)を回避しながら、<xref:System.Windows.Automation.ScrollPattern.SetScrollPercent%2A> メソッド内でこれらのプロパティ値を使用できます。  
+-   <span data-ttu-id="b5cd6-119">場合<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty>  =  `false`し<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalViewSizeProperty>100% に設定する必要がありますと<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty>に設定する必要があります<xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>です。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-119">If <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> = `false` then <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalViewSizeProperty> should be set to 100% and <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty> should be set to <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>.</span></span> <span data-ttu-id="b5cd6-120">同様に、 <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> = `false` の場合は、 <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty> を 100% に設定し、 <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalScrollPercentProperty> を <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-120">Likewise, if <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> = `false` then <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty> should be set to 100 percent and <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalScrollPercentProperty> should be set to <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>.</span></span> <span data-ttu-id="b5cd6-121">これにより、UI オートメーション クライアントは、スクロールしたくない方向がアクティブになっている場合の <xref:System.Windows.Automation.ScrollPattern.SetScrollPercent%2A> 競合状態 [を回避しながら、](http://support.microsoft.com/default.aspx?scid=kb;en-us;317723) メソッド内でこれらのプロパティ値を使用できます。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-121">This allows a UI Automation client to use these property values within the <xref:System.Windows.Automation.ScrollPattern.SetScrollPercent%2A> method while avoiding a [race condition](http://support.microsoft.com/default.aspx?scid=kb;en-us;317723) if a direction the client is not interested in scrolling becomes activated.</span></span>  
   
--   <xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A> はロケール固有です。 HorizontalScrollPercent \= 100.0 の設定では、左から右に読む英語などの言語の場合、右端に相当する位置にコントロールのスクロール位置を設定する必要があります。 また、右から左に読むアラビア語などの言語の場合は、HorizontalScrollPercent \= 100.0 の設定でスクロール位置を左端の位置に設定する必要があります。  
+-   <span data-ttu-id="b5cd6-122"><xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A> はロケール固有です。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-122"><xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A> is locale-specific.</span></span> <span data-ttu-id="b5cd6-123">HorizontalScrollPercent = 100.0 の設定では、左から右に読む英語などの言語の場合、右端に相当する位置にコントロールのスクロール位置を設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-123">Setting HorizontalScrollPercent = 100.0 must set the scrolling location of the control to the equivalent of its rightmost position for languages such as English that read left to right.</span></span> <span data-ttu-id="b5cd6-124">また、右から左に読むアラビア語などの言語の場合は、HorizontalScrollPercent = 100.0 の設定でスクロール位置を左端の位置に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-124">Alternately, for languages such as Arabic that read right to left, setting HorizontalScrollPercent = 100.0 must set the scroll location to the leftmost position.</span></span>  
   
 <a name="Required_Members_for_IScrollProvider"></a>   
-## IScrollProvider の必須メンバー  
- <xref:System.Windows.Automation.Provider.IScrollProvider> の実装には、次のプロパティとメソッドが必要です。  
+## <a name="required-members-for-iscrollprovider"></a><span data-ttu-id="b5cd6-125">IScrollProvider の必須メンバー</span><span class="sxs-lookup"><span data-stu-id="b5cd6-125">Required Members for IScrollProvider</span></span>  
+ <span data-ttu-id="b5cd6-126"><xref:System.Windows.Automation.Provider.IScrollProvider>の実装には、次のプロパティとメソッドが必要です。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-126">The following properties and methods are required for implementing <xref:System.Windows.Automation.Provider.IScrollProvider>.</span></span>  
   
-|必須メンバー|メンバーの型|ノート|  
-|------------|------------|---------|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A>|プロパティ|なし|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticalScrollPercent%2A>|プロパティ|なし|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalViewSize%2A>|プロパティ|なし|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticalViewSize%2A>|プロパティ|なし|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontallyScrollable%2A>|プロパティ|なし|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticallyScrollable%2A>|プロパティ|なし|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A>|メソッド|なし|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A>|メソッド|なし|  
+|<span data-ttu-id="b5cd6-127">必須メンバー</span><span class="sxs-lookup"><span data-stu-id="b5cd6-127">Required member</span></span>|<span data-ttu-id="b5cd6-128">メンバーの型</span><span class="sxs-lookup"><span data-stu-id="b5cd6-128">Member type</span></span>|<span data-ttu-id="b5cd6-129">ノート</span><span class="sxs-lookup"><span data-stu-id="b5cd6-129">Notes</span></span>|  
+|---------------------|-----------------|-----------|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A>|<span data-ttu-id="b5cd6-130">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b5cd6-130">Property</span></span>|<span data-ttu-id="b5cd6-131">なし</span><span class="sxs-lookup"><span data-stu-id="b5cd6-131">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticalScrollPercent%2A>|<span data-ttu-id="b5cd6-132">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b5cd6-132">Property</span></span>|<span data-ttu-id="b5cd6-133">なし</span><span class="sxs-lookup"><span data-stu-id="b5cd6-133">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalViewSize%2A>|<span data-ttu-id="b5cd6-134">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b5cd6-134">Property</span></span>|<span data-ttu-id="b5cd6-135">なし</span><span class="sxs-lookup"><span data-stu-id="b5cd6-135">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticalViewSize%2A>|<span data-ttu-id="b5cd6-136">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b5cd6-136">Property</span></span>|<span data-ttu-id="b5cd6-137">なし</span><span class="sxs-lookup"><span data-stu-id="b5cd6-137">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontallyScrollable%2A>|<span data-ttu-id="b5cd6-138">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b5cd6-138">Property</span></span>|<span data-ttu-id="b5cd6-139">なし</span><span class="sxs-lookup"><span data-stu-id="b5cd6-139">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticallyScrollable%2A>|<span data-ttu-id="b5cd6-140">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b5cd6-140">Property</span></span>|<span data-ttu-id="b5cd6-141">なし</span><span class="sxs-lookup"><span data-stu-id="b5cd6-141">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A>|<span data-ttu-id="b5cd6-142">メソッド</span><span class="sxs-lookup"><span data-stu-id="b5cd6-142">Method</span></span>|<span data-ttu-id="b5cd6-143">なし</span><span class="sxs-lookup"><span data-stu-id="b5cd6-143">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A>|<span data-ttu-id="b5cd6-144">メソッド</span><span class="sxs-lookup"><span data-stu-id="b5cd6-144">Method</span></span>|<span data-ttu-id="b5cd6-145">なし</span><span class="sxs-lookup"><span data-stu-id="b5cd6-145">None</span></span>|  
   
- このコントロール パターンには、関連するイベントがありません。  
+ <span data-ttu-id="b5cd6-146">このコントロール パターンには、関連するイベントがありません。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-146">This control pattern has no associated events.</span></span>  
   
 <a name="Exceptions"></a>   
-## 例外  
- プロバイダーは、次の例外をスローする必要があります。  
+## <a name="exceptions"></a><span data-ttu-id="b5cd6-147">例外</span><span class="sxs-lookup"><span data-stu-id="b5cd6-147">Exceptions</span></span>  
+ <span data-ttu-id="b5cd6-148">プロバイダーは、次の例外をスローする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-148">Providers must throw the following exceptions.</span></span>  
   
-|例外の種類|状態|  
-|-----------|--------|  
-|<xref:System.ArgumentException>|コントロールが水平または垂直スクロールの場合にだけ <xref:System.Windows.Automation.ScrollAmount> の値をサポートするはずが、<xref:System.Windows.Automation.ScrollAmount> の値が渡された場合に、<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> がこの例外をスローします。|  
-|<xref:System.ArgumentException>|<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> は、倍精度浮動小数点型に変換できない値が渡された場合に、この例外をスローします。|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> は、100 を超える値または 0 未満の値が渡された場合に、この例外をスローします \(<xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll> に相当する \-1 を除く\)。|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> と <xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> はどちらも、サポートされていない方向にスクロールされたときに、この例外をスローします。|  
+|<span data-ttu-id="b5cd6-149">例外の種類</span><span class="sxs-lookup"><span data-stu-id="b5cd6-149">Exception Type</span></span>|<span data-ttu-id="b5cd6-150">状態</span><span class="sxs-lookup"><span data-stu-id="b5cd6-150">Condition</span></span>|  
+|--------------------|---------------|  
+|<xref:System.ArgumentException>|<span data-ttu-id="b5cd6-151">コントロールが水平または垂直スクロールの場合にだけ<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> の値をサポートするはずが、 <xref:System.Windows.Automation.ScrollAmount.SmallIncrement> の値が渡された場合に、 <xref:System.Windows.Automation.ScrollAmount.LargeIncrement> がこの例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-151"><xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> throws this exception if a control supports <xref:System.Windows.Automation.ScrollAmount.SmallIncrement> values exclusively for horizontal or vertical scrolling, but a <xref:System.Windows.Automation.ScrollAmount.LargeIncrement> value is passed in.</span></span>|  
+|<xref:System.ArgumentException>|<span data-ttu-id="b5cd6-152"><xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> は、倍精度浮動小数点型に変換できない値が渡された場合に、この例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-152"><xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> throws this exception when a value that cannot be converted to a double is passed in.</span></span>|  
+|<xref:System.ArgumentOutOfRangeException>|<span data-ttu-id="b5cd6-153"><xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> は、100 を超える値または 0 未満の値が渡された場合に、この例外をスローします ( <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>に相当する -1 を除く)。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-153"><xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> throws this exception when a value greater than 100 or less than 0 is passed in (except -1 which is equivalent to <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>).</span></span>|  
+|<xref:System.InvalidOperationException>|<span data-ttu-id="b5cd6-154"><xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> と <xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> はどちらも、サポートされていない方向にスクロールされたときに、この例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-154">Both <xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> and <xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> throw this exception when an attempt is made to scroll in an unsupported direction.</span></span>|  
   
-## 参照  
- [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)   
- [Support Control Patterns in a UI Automation Provider](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)   
- [UI Automation Control Patterns for Clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)   
- [UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)   
- [Use Caching in UI Automation](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+## <a name="see-also"></a><span data-ttu-id="b5cd6-155">関連項目</span><span class="sxs-lookup"><span data-stu-id="b5cd6-155">See Also</span></span>  
+ [<span data-ttu-id="b5cd6-156">UI オートメーション コントロール パターンの概要</span><span class="sxs-lookup"><span data-stu-id="b5cd6-156">UI Automation Control Patterns Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [<span data-ttu-id="b5cd6-157">UI オートメーション プロバイダーでコントロール パターンをサポートします。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-157">Support Control Patterns in a UI Automation Provider</span></span>](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
+ [<span data-ttu-id="b5cd6-158">クライアントの UI オートメーション コントロール パターン</span><span class="sxs-lookup"><span data-stu-id="b5cd6-158">UI Automation Control Patterns for Clients</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
+ [<span data-ttu-id="b5cd6-159">UI オートメーション ツリーの概要</span><span class="sxs-lookup"><span data-stu-id="b5cd6-159">UI Automation Tree Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
+ [<span data-ttu-id="b5cd6-160">UI オートメーションにおけるキャッシュを使用します。</span><span class="sxs-lookup"><span data-stu-id="b5cd6-160">Use Caching in UI Automation</span></span>](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)

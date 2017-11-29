@@ -1,239 +1,242 @@
 ---
-title: "バインディングとセキュリティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "バインディング [WCF]"
-  - "バインディング [WCF], セキュリティ"
-  - "WCF セキュリティ"
-  - "Windows Communication Foundation, セキュリティ"
+title: "バインディングとセキュリティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- bindings [WCF], security
+- WCF security
+- Windows Communication Foundation, security
+- bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-caps.latest.revision: 42
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 42
+caps.latest.revision: "42"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 9a6ba021688094afcbbb176cf03fb3e4b4c10df7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# バインディングとセキュリティ
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に用意されたシステム指定のバインディングを使用すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションをすばやくプログラミングできます。1 つの例外を除き、すべてのバインディングにはセキュリティ スキームが含まれており、既定で有効になっています。ここでは、セキュリティ ニーズに適した正しいバインディングの選択方法について説明します。  
+# <a name="bindings-and-security"></a><span data-ttu-id="0e94a-102">バインディングとセキュリティ</span><span class="sxs-lookup"><span data-stu-id="0e94a-102">Bindings and Security</span></span>
+<span data-ttu-id="0e94a-103">[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に用意されたシステム指定のバインディングを使用すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションをすばやくプログラミングできます。</span><span class="sxs-lookup"><span data-stu-id="0e94a-103">The system-provided bindings included with [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] offer a quick way to program [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] applications.</span></span> <span data-ttu-id="0e94a-104">1 つの例外を除き、すべてのバインディングにはセキュリティ スキームが含まれており、既定で有効になっています。</span><span class="sxs-lookup"><span data-stu-id="0e94a-104">With one exception, all the bindings have a default security scheme enabled.</span></span> <span data-ttu-id="0e94a-105">ここでは、セキュリティ ニーズに適した正しいバインディングの選択方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-105">This topic helps you select the right binding for your security needs.</span></span>  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティの概要については、「[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)」を参照してください。バインディングを使用した [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のプログラミング[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[WCF セキュリティのプログラミング](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)」を参照してください。  
+ <span data-ttu-id="0e94a-106">概要については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]セキュリティを参照してください[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-106">For an overview of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] security, see [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md).</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="0e94a-107">プログラミング[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]バインドを使用して、参照してください[WCF セキュリティのプログラミング](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-107"> programming [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] using bindings, see [Programming WCF Security](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md).</span></span>  
   
- バインディングを既に選択している場合、セキュリティに関連する実行時の動作の詳細については、「[セキュリティ動作](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)」を参照してください。  
+ <span data-ttu-id="0e94a-108">バインディングを既に選択した場合のセキュリティに関連付けられている実行時の動作に関する詳細を見つかります[セキュリティ動作](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-108">If you have already selected a binding, you can find out more about the run-time behaviors that are associated with security in [Security Behaviors](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md).</span></span>  
   
- セキュリティ機能のなかには、システム指定のバインディングを使用してプログラミングできないものがあります。カスタム バインディングを使用したより細かな制御については、「[カスタム バインディングを使用したセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)」を参照してください。  
+ <span data-ttu-id="0e94a-109">セキュリティ機能のなかには、システム指定のバインディングを使用してプログラミングできないものがあります。</span><span class="sxs-lookup"><span data-stu-id="0e94a-109">Some security functions are not programmable using the system-provided bindings.</span></span> <span data-ttu-id="0e94a-110">詳細コントロールがカスタム バインドを使用して、次を参照してください。[のカスタム バインディングのセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-110">For more control using a custom binding, see [Security Capabilities with Custom Bindings](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md).</span></span>  
   
-## バインディングのセキュリティ機能  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、ほとんどのニーズを満たすシステム指定のバインディングが多数用意されています。特定のバインディングでは不十分な場合は、カスタム バインディングを作成することもできます。システム指定のバインディングの一覧については、「[システム標準のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)」を参照してください。カスタム バインディング[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[カスタム バインディング](../../../../docs/framework/wcf/extending/custom-bindings.md)」を参照してください。  
+## <a name="security-functions-of-bindings"></a><span data-ttu-id="0e94a-111">バインディングのセキュリティ機能</span><span class="sxs-lookup"><span data-stu-id="0e94a-111">Security Functions of Bindings</span></span>  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="0e94a-112"> には、ほとんどのニーズを満たすシステム指定のバインディングが多数用意されています。</span><span class="sxs-lookup"><span data-stu-id="0e94a-112"> includes a number of system-provided bindings that meet most needs.</span></span> <span data-ttu-id="0e94a-113">特定のバインディングでは不十分な場合は、カスタム バインドを作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="0e94a-113">If a particular binding does not suffice, you can also create a custom binding.</span></span> <span data-ttu-id="0e94a-114">システム指定のバインディングの一覧は、次を参照してください。[システム指定のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-114">For a list of system-provided bindings, see [System-Provided Bindings](../../../../docs/framework/wcf/system-provided-bindings.md).</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="0e94a-115">カスタム バインディングを参照してください[カスタム バインド](../../../../docs/framework/wcf/extending/custom-bindings.md)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-115"> custom bindings, see [Custom Bindings](../../../../docs/framework/wcf/extending/custom-bindings.md).</span></span>  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のすべてのバインディングには、API としての形式と、構成ファイルで使用する XML 要素としての形式という 2 つの形式があります。たとえば、`WSHttpBinding` \(API\) に対応する要素は [\<wsHttpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)です。  
+ <span data-ttu-id="0e94a-116">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のすべてのバインディングには、API としての形式と、構成ファイルで使用する XML 要素としての形式という 2 つの形式があります。</span><span class="sxs-lookup"><span data-stu-id="0e94a-116">Every binding in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] has two forms: as an API and as an XML element used in a configuration file.</span></span> <span data-ttu-id="0e94a-117">たとえば、 `WSHttpBinding` (API)、対応するには、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-117">For example, the `WSHttpBinding` (API) has a counterpart in the [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).</span></span>  
   
- 以下のセクションでは、各バインディングについて両方の形式を示し、セキュリティ機能の概要を説明します。  
+ <span data-ttu-id="0e94a-118">以下のセクションでは、各バインディングについて両方の形式を示し、セキュリティ機能の概要を説明します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-118">The following section lists both forms for each binding and summarizes the security features.</span></span>  
   
-### BasicHttp  
- コードでは <xref:System.ServiceModel.BasicHttpBinding> クラスを使用し、構成では [\<basicHttpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)を使用します。  
+### <a name="basichttp"></a><span data-ttu-id="0e94a-119">BasicHttp</span><span class="sxs-lookup"><span data-stu-id="0e94a-119">BasicHttp</span></span>  
+ <span data-ttu-id="0e94a-120">コードを使用して、<xref:System.ServiceModel.BasicHttpBinding>クラスは、構成を使用して、 [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-120">In code, use the <xref:System.ServiceModel.BasicHttpBinding> class; in configuration, use the [\<basicHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).</span></span>  
   
- このバインディングは、次のような既存のさまざまなテクノロジと共に使用できるようにデザインされています。  
+ <span data-ttu-id="0e94a-121">このバインディングは、次のような既存のさまざまなテクノロジと共に使用できるようにデザインされています。</span><span class="sxs-lookup"><span data-stu-id="0e94a-121">This binding is designed for use with a range of existing technologies, including the following:</span></span>  
   
--   ASP.NET Web サービス \(ASMX\) Version 1  
+-   <span data-ttu-id="0e94a-122">ASP.NET Web サービス (ASMX) Version 1</span><span class="sxs-lookup"><span data-stu-id="0e94a-122">ASP.NET Web services (ASMX), version 1.</span></span>  
   
--   Web サービス拡張 \(WSE\) アプリケーション  
+-   <span data-ttu-id="0e94a-123">Web サービス拡張 (WSE) アプリケーション</span><span class="sxs-lookup"><span data-stu-id="0e94a-123">Web Service Enhancements (WSE) applications.</span></span>  
   
--   WS\-I \(Web Services Interoperability\) 仕様 \([http:\/\/go.microsoft.com\/fwlink\/?LinkId\=38955](http://go.microsoft.com/fwlink/?LinkId=38955)\) で定義されている基本プロファイル  
+-   <span data-ttu-id="0e94a-124">基本プロファイル、Web Services Interoperability で定義されている (WS-すれば) 仕様 ([http://go.microsoft.com/fwlink/?LinkId=38955](http://go.microsoft.com/fwlink/?LinkId=38955))。</span><span class="sxs-lookup"><span data-stu-id="0e94a-124">Basic Profile as defined in the Web Services Interoperability (WS-I) specification ([http://go.microsoft.com/fwlink/?LinkId=38955](http://go.microsoft.com/fwlink/?LinkId=38955)).</span></span>  
   
--   WS\-I で定義されている基本セキュリティ プロファイル  
+-   <span data-ttu-id="0e94a-125">WS-I で定義されている基本セキュリティ プロファイル</span><span class="sxs-lookup"><span data-stu-id="0e94a-125">Basic security profile as defined in WS-I.</span></span>  
   
- 既定では、このバインディングはセキュリティで保護されません。ASMX サービスと相互運用するように設計されています。セキュリティを有効にした場合、このバインディングは、インターネット インフォメーション サービス \(IIS: Internet Information Services\) のセキュリティ機構 \(基本認証、ダイジェスト、Windows 統合セキュリティなど\) とシームレスに相互運用できるように設計されています。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][トランスポート セキュリティの概要](../../../../docs/framework/wcf/feature-details/transport-security-overview.md).このバインディングでは、以下をサポートしています。  
+ <span data-ttu-id="0e94a-126">既定では、このバインディングはセキュリティで保護されません。</span><span class="sxs-lookup"><span data-stu-id="0e94a-126">By default, this binding is not secure.</span></span> <span data-ttu-id="0e94a-127">ASMX サービスと相互運用するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="0e94a-127">It is designed to interoperate with ASMX services.</span></span> <span data-ttu-id="0e94a-128">セキュリティを有効にした場合、このバインディングは、インターネット インフォメーション サービス (IIS: Internet Information Services) のセキュリティ機構 (基本認証、ダイジェスト、Windows 統合セキュリティなど) とシームレスに相互運用できるように設計されています。</span><span class="sxs-lookup"><span data-stu-id="0e94a-128">When security is enabled, the binding is designed for seamless interoperation with Internet Information Services (IIS) security mechanisms, such as basic authentication, digest, and integrated Windows security.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="0e94a-129">[トランスポート セキュリティの概要](../../../../docs/framework/wcf/feature-details/transport-security-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-129"> [Transport Security Overview](../../../../docs/framework/wcf/feature-details/transport-security-overview.md).</span></span> <span data-ttu-id="0e94a-130">このバインディングでは、以下をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="0e94a-130">This binding supports the following:</span></span>  
   
--   HTTPS トランスポート セキュリティ  
+-   <span data-ttu-id="0e94a-131">HTTPS トランスポート セキュリティ</span><span class="sxs-lookup"><span data-stu-id="0e94a-131">HTTPS transport security.</span></span>  
   
--   HTTP 基本認証  
+-   <span data-ttu-id="0e94a-132">HTTP 基本認証</span><span class="sxs-lookup"><span data-stu-id="0e94a-132">HTTP basic authentication.</span></span>  
   
--   WS\-Security。  
+-   <span data-ttu-id="0e94a-133">WS-Security。</span><span class="sxs-lookup"><span data-stu-id="0e94a-133">WS-Security.</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.BasicHttpSecurity>、<xref:System.ServiceModel.BasicHttpMessageSecurity>、<xref:System.ServiceModel.BasicHttpMessageCredentialType>、および <xref:System.ServiceModel.BasicHttpSecurityMode>。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="0e94a-134"><xref:System.ServiceModel.BasicHttpSecurity>、<xref:System.ServiceModel.BasicHttpMessageSecurity>、<xref:System.ServiceModel.BasicHttpMessageCredentialType>、および <xref:System.ServiceModel.BasicHttpSecurityMode>。</span><span class="sxs-lookup"><span data-stu-id="0e94a-134"> <xref:System.ServiceModel.BasicHttpSecurity>, <xref:System.ServiceModel.BasicHttpMessageSecurity>, <xref:System.ServiceModel.BasicHttpMessageCredentialType>, and <xref:System.ServiceModel.BasicHttpSecurityMode>.</span></span>  
   
-### WSHttpBinding  
- コードでは <xref:System.ServiceModel.WSHttpBinding> クラスを使用し、構成では [\<wsHttpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)を使用します。  
+### <a name="wshttpbinding"></a><span data-ttu-id="0e94a-135">WSHttpBinding</span><span class="sxs-lookup"><span data-stu-id="0e94a-135">WSHttpBinding</span></span>  
+ <span data-ttu-id="0e94a-136">コードを使用して、<xref:System.ServiceModel.WSHttpBinding>クラスは、構成を使用して、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-136">In code, use the <xref:System.ServiceModel.WSHttpBinding> class; in configuration, use the [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).</span></span>  
   
- 既定では、このバインディングは WS\-Security 仕様を実装しており、WS\-\* 仕様を実装するサービスとの相互運用性があります。次のセキュリティをサポートします。  
+ <span data-ttu-id="0e94a-137">既定では、このバインディングは WS-Security 仕様を実装しており、WS-* 仕様を実装するサービスとの相互運用性があります。</span><span class="sxs-lookup"><span data-stu-id="0e94a-137">By default, this binding implements the WS-Security specification and provides interoperability with services that implement the WS-* specifications.</span></span> <span data-ttu-id="0e94a-138">次のセキュリティをサポートします。</span><span class="sxs-lookup"><span data-stu-id="0e94a-138">It supports the following:</span></span>  
   
--   HTTPS トランスポート セキュリティ。  
+-   <span data-ttu-id="0e94a-139">HTTPS トランスポート セキュリティ</span><span class="sxs-lookup"><span data-stu-id="0e94a-139">HTTPS transport security.</span></span>  
   
--   WS\-Security。  
+-   <span data-ttu-id="0e94a-140">WS-Security。</span><span class="sxs-lookup"><span data-stu-id="0e94a-140">WS-Security.</span></span>  
   
--   SOAP メッセージ資格情報セキュリティを使用した、HTTPS トランスポート保護による呼び出し元の認証。  
+-   <span data-ttu-id="0e94a-141">SOAP メッセージ資格情報セキュリティを使用した、HTTPS トランスポート保護による呼び出し元の認証。</span><span class="sxs-lookup"><span data-stu-id="0e94a-141">HTTPS transport protection with SOAP message credential security for authenticating the caller.</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.WSHttpSecurity>、<xref:System.ServiceModel.MessageSecurityOverHttp>、<xref:System.ServiceModel.MessageCredentialType>、<xref:System.ServiceModel.SecurityMode>、<xref:System.ServiceModel.HttpTransportSecurity>、<xref:System.ServiceModel.HttpClientCredentialType>、および <xref:System.ServiceModel.HttpProxyCredentialType>。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="0e94a-142"><xref:System.ServiceModel.WSHttpSecurity>、<xref:System.ServiceModel.MessageSecurityOverHttp>、<xref:System.ServiceModel.MessageCredentialType>、<xref:System.ServiceModel.SecurityMode>、<xref:System.ServiceModel.HttpTransportSecurity>、<xref:System.ServiceModel.HttpClientCredentialType>、および <xref:System.ServiceModel.HttpProxyCredentialType>。</span><span class="sxs-lookup"><span data-stu-id="0e94a-142"> <xref:System.ServiceModel.WSHttpSecurity>, <xref:System.ServiceModel.MessageSecurityOverHttp>, <xref:System.ServiceModel.MessageCredentialType>, <xref:System.ServiceModel.SecurityMode>, <xref:System.ServiceModel.HttpTransportSecurity>, <xref:System.ServiceModel.HttpClientCredentialType>, and <xref:System.ServiceModel.HttpProxyCredentialType>.</span></span>  
   
-### WSDualHttpBinding  
- コードでは <xref:System.ServiceModel.WSDualHttpBinding> クラスを使用し、構成では [\<wsDualHttpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)を使用します。  
+### <a name="wsdualhttpbinding"></a><span data-ttu-id="0e94a-143">WSDualHttpBinding</span><span class="sxs-lookup"><span data-stu-id="0e94a-143">WSDualHttpBinding</span></span>  
+ <span data-ttu-id="0e94a-144">コードを使用して、<xref:System.ServiceModel.WSDualHttpBinding>クラスは、構成を使用して、 [ \<wsDualHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-144">In code, use the <xref:System.ServiceModel.WSDualHttpBinding> class; in configuration, use the [\<wsDualHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).</span></span>  
   
- このバインディングは、双方向サービス アプリケーションを有効にするために設計されています。このバインディングは、メッセージ ベースの転送セキュリティ用に WS\-Security 仕様を実装しています。トランスポート セキュリティは使用できません。既定では、次の機能を提供します。  
+ <span data-ttu-id="0e94a-145">このバインディングは、双方向サービス アプリケーションを有効にするために設計されています。</span><span class="sxs-lookup"><span data-stu-id="0e94a-145">This binding is designed to enable duplex service applications.</span></span> <span data-ttu-id="0e94a-146">このバインディングは、メッセージ ベースの転送セキュリティ用に WS-Security 仕様を実装しています。</span><span class="sxs-lookup"><span data-stu-id="0e94a-146">This binding implements the WS-Security specification for message-based transfer security.</span></span> <span data-ttu-id="0e94a-147">トランスポート セキュリティは使用できません。</span><span class="sxs-lookup"><span data-stu-id="0e94a-147">Transport security is not available.</span></span> <span data-ttu-id="0e94a-148">既定では、次の機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-148">By default, it provides the following features:</span></span>  
   
--   WS\-ReliableMessaging を実装して信頼性を確保します。  
+-   <span data-ttu-id="0e94a-149">WS-ReliableMessaging を実装して信頼性を確保します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-149">Implements WS-Reliable Messaging for reliability.</span></span>  
   
--   WS\-Security を実装して転送セキュリティおよび認証を実現します。  
+-   <span data-ttu-id="0e94a-150">WS-Security を実装して転送セキュリティおよび認証を実現します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-150">Implements WS-Security for transfer security and authentication.</span></span>  
   
--   HTTP を使用してメッセージを配信します。  
+-   <span data-ttu-id="0e94a-151">HTTP を使用してメッセージを配信します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-151">Uses HTTP for message delivery.</span></span>  
   
--   テキスト\/XML メッセージ エンコーディングを使用します。  
+-   <span data-ttu-id="0e94a-152">テキスト/XML メッセージ エンコーディングを使用します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-152">Uses text/XML message encoding.</span></span>  
   
- バインディングで WS\-Security \(メッセージ層セキュリティ\) を使用すると、次のパラメーターを構成できるようになります。  
+ <span data-ttu-id="0e94a-153">バインディングで WS-Security (メッセージ層セキュリティ) を使用すると、次のパラメーターを構成できるようになります。</span><span class="sxs-lookup"><span data-stu-id="0e94a-153">Using WS-Security (message-layer security), the binding allows you to configure the following parameters:</span></span>  
   
--   暗号アルゴリズムを決定するためのセキュリティ アルゴリズム スイート  
+-   <span data-ttu-id="0e94a-154">暗号アルゴリズムを決定するためのセキュリティ アルゴリズム スイート</span><span class="sxs-lookup"><span data-stu-id="0e94a-154">The security algorithm suite to determine the cryptographic algorithm.</span></span>  
   
--   以下を行うためのバインディング オプション  
+-   <span data-ttu-id="0e94a-155">以下を行うためのバインディング オプション</span><span class="sxs-lookup"><span data-stu-id="0e94a-155">Binding options for the following:</span></span>  
   
-    -   クライアントで帯域外で使用可能なサービス資格情報の提供  
+    -   <span data-ttu-id="0e94a-156">クライアントで帯域外で使用可能なサービス資格情報の提供</span><span class="sxs-lookup"><span data-stu-id="0e94a-156">Providing service credentials available out-of-band at the client.</span></span>  
   
-    -   チャネル セットアップの一部としてサービスからネゴシエートされるサービス資格情報の提供  
+    -   <span data-ttu-id="0e94a-157">チャネル セットアップの一部としてサービスからネゴシエートされるサービス資格情報の提供</span><span class="sxs-lookup"><span data-stu-id="0e94a-157">Providing service credentials negotiated from the service as part of channel setup.</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]「<xref:System.ServiceModel.WSDualHttpSecurity>」および「<xref:System.ServiceModel.WSDualHttpSecurityMode>」を参照してください。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="0e94a-158"><xref:System.ServiceModel.WSDualHttpSecurity> and <xref:System.ServiceModel.WSDualHttpSecurityMode>.</span><span class="sxs-lookup"><span data-stu-id="0e94a-158"> <xref:System.ServiceModel.WSDualHttpSecurity> and <xref:System.ServiceModel.WSDualHttpSecurityMode>.</span></span>  
   
-### NetTcpBinding  
- コードでは <xref:System.ServiceModel.NetTcpBinding> クラスを使用し、構成では [\<netTcpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)を使用します。  
+### <a name="nettcpbinding"></a><span data-ttu-id="0e94a-159">NetTcpBinding</span><span class="sxs-lookup"><span data-stu-id="0e94a-159">NetTcpBinding</span></span>  
+ <span data-ttu-id="0e94a-160">コードを使用して、<xref:System.ServiceModel.NetTcpBinding>クラスは、構成を使用して、 [ \<netTcpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-160">In code, use the <xref:System.ServiceModel.NetTcpBinding> class; in configuration, use the [\<netTcpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).</span></span>  
   
- このバインディングは複数のコンピューター間での通信に最適化されています。既定では、次の特性があります。  
+ <span data-ttu-id="0e94a-161">このバインディングは複数のコンピューター間での通信に最適化されています。</span><span class="sxs-lookup"><span data-stu-id="0e94a-161">This binding is optimized for cross-machine communication.</span></span> <span data-ttu-id="0e94a-162">既定では、次の特性があります。</span><span class="sxs-lookup"><span data-stu-id="0e94a-162">By default, it has the following characteristics:</span></span>  
   
--   トランスポート層セキュリティを実装します。  
+-   <span data-ttu-id="0e94a-163">トランスポート層セキュリティを実装します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-163">Implements transport-layer security.</span></span>  
   
--   Windows セキュリティを利用して、転送セキュリティと認証を確保します。  
+-   <span data-ttu-id="0e94a-164">Windows セキュリティを利用して、転送セキュリティと認証を確保します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-164">Leverages Windows security for transfer security and authentication.</span></span>  
   
--   トランスポートに TCP を使用します。  
+-   <span data-ttu-id="0e94a-165">トランスポートに TCP を使用します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-165">Uses TCP for transport.</span></span>  
   
--   バイナリ メッセージのエンコードを実装します。  
+-   <span data-ttu-id="0e94a-166">バイナリ メッセージのエンコードを実装します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-166">Implements binary message encoding.</span></span>  
   
--   WS\-ReliableMessaging を実装します。  
+-   <span data-ttu-id="0e94a-167">WS-ReliableMessaging を実装します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-167">Implements WS-Reliable Messaging.</span></span>  
   
- 選択できる方法は次のとおりです。  
+ <span data-ttu-id="0e94a-168">選択できる方法は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="0e94a-168">Options include the following:</span></span>  
   
--   メッセージ層セキュリティ \(WS\-Security を使用\)  
+-   <span data-ttu-id="0e94a-169">メッセージ層セキュリティ (WS-Security を使用)</span><span class="sxs-lookup"><span data-stu-id="0e94a-169">Message-layer security (using WS-Security).</span></span>  
   
--   メッセージ資格情報を使用するトランスポート セキュリティ \(TLS \(Transport Layer Security\) over TCP によって実現される機密性と整合性、および WS\-Security によって提供される承認に使用する資格情報\)  
+-   <span data-ttu-id="0e94a-170">メッセージ資格情報を使用するトランスポート セキュリティ (TLS (Transport Layer Security) over TCP によって実現される機密性と整合性、および WS-Security によって提供される承認に使用する資格情報)</span><span class="sxs-lookup"><span data-stu-id="0e94a-170">Transport security with message credential—confidentiality and integrity provided by Transport Layer Security (TLS) over TCP, and credentials for authorization provided by WS-Security.</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.NetTcpSecurity>、<xref:System.ServiceModel.TcpTransportSecurity>、<xref:System.ServiceModel.TcpClientCredentialType>、<xref:System.ServiceModel.MessageSecurityOverTcp>、および <xref:System.ServiceModel.MessageCredentialType>。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="0e94a-171"><xref:System.ServiceModel.NetTcpSecurity>、<xref:System.ServiceModel.TcpTransportSecurity>、<xref:System.ServiceModel.TcpClientCredentialType>、<xref:System.ServiceModel.MessageSecurityOverTcp>、および <xref:System.ServiceModel.MessageCredentialType>。</span><span class="sxs-lookup"><span data-stu-id="0e94a-171"> <xref:System.ServiceModel.NetTcpSecurity>, <xref:System.ServiceModel.TcpTransportSecurity>, <xref:System.ServiceModel.TcpClientCredentialType>, <xref:System.ServiceModel.MessageSecurityOverTcp>, and <xref:System.ServiceModel.MessageCredentialType>.</span></span>  
   
-### NetNamedPipeBinding  
- コードでは <xref:System.ServiceModel.NetNamedPipeBinding> クラスを使用し、構成では [\<netNamedPipeBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md)を使用します。  
+### <a name="netnamedpipebinding"></a><span data-ttu-id="0e94a-172">NetNamedPipeBinding</span><span class="sxs-lookup"><span data-stu-id="0e94a-172">NetNamedPipeBinding</span></span>  
+ <span data-ttu-id="0e94a-173">コードを使用して、<xref:System.ServiceModel.NetNamedPipeBinding>クラスは、構成を使用して、 [ \<netNamedPipeBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-173">In code, use the <xref:System.ServiceModel.NetNamedPipeBinding> class; in configuration, use the [\<netNamedPipeBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md).</span></span>  
   
- このバインディングは、\(通常では同じコンピューター上の\) 複数プロセス間の通信に最適化されています。既定では、このバインディングには次の特性があります。  
+ <span data-ttu-id="0e94a-174">このバインディングは、(通常では同じコンピューター上の) 複数プロセス間の通信に最適化されています。</span><span class="sxs-lookup"><span data-stu-id="0e94a-174">This binding is optimized for cross-process communication (usually on the same machine).</span></span> <span data-ttu-id="0e94a-175">既定では、このバインディングには次の特性があります。</span><span class="sxs-lookup"><span data-stu-id="0e94a-175">By default, this binding has the following characteristics:</span></span>  
   
--   トランスポート セキュリティを使用して、メッセージ転送と認証を実現します。  
+-   <span data-ttu-id="0e94a-176">トランスポート セキュリティを使用して、メッセージ転送と認証を実現します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-176">Uses transport security for message transfer and authentication.</span></span>  
   
--   名前付きパイプを使用してメッセージを配信します。  
+-   <span data-ttu-id="0e94a-177">名前付きパイプを使用してメッセージを配信します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-177">Uses named pipes for message delivery.</span></span>  
   
--   バイナリ メッセージのエンコードを実装します。  
+-   <span data-ttu-id="0e94a-178">バイナリ メッセージのエンコードを実装します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-178">Implements binary message encoding.</span></span>  
   
--   暗号化とメッセージの署名を使用します。  
+-   <span data-ttu-id="0e94a-179">暗号化とメッセージの署名を使用します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-179">Encryption and message signing.</span></span>  
   
- 選択できる方法は次のとおりです。  
+ <span data-ttu-id="0e94a-180">選択できる方法は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="0e94a-180">Options include the following:</span></span>  
   
--   Windows セキュリティを使用した認証  
+-   <span data-ttu-id="0e94a-181">Windows セキュリティを使用した認証</span><span class="sxs-lookup"><span data-stu-id="0e94a-181">Authentication using Windows security.</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]「<xref:System.ServiceModel.NetNamedPipeSecurity>」、「<xref:System.ServiceModel.NetNamedPipeSecurityMode>」、および「<xref:System.ServiceModel.NamedPipeTransportSecurity>」を参照してください。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="0e94a-182">、「<xref:System.ServiceModel.NetNamedPipeSecurity>」、「<xref:System.ServiceModel.NetNamedPipeSecurityMode>」、および「<xref:System.ServiceModel.NamedPipeTransportSecurity>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0e94a-182"> <xref:System.ServiceModel.NetNamedPipeSecurity>, <xref:System.ServiceModel.NetNamedPipeSecurityMode>, and <xref:System.ServiceModel.NamedPipeTransportSecurity>.</span></span>  
   
-### MsmqIntegrationBinding  
- コードでは <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> クラスを使用し、構成では [\<msmqIntegrationBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md)を使用します。  
+### <a name="msmqintegrationbinding"></a><span data-ttu-id="0e94a-183">MsmqIntegrationBinding</span><span class="sxs-lookup"><span data-stu-id="0e94a-183">MsmqIntegrationBinding</span></span>  
+ <span data-ttu-id="0e94a-184">コードを使用して、<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>クラスは、構成を使用して、 [ \<msmqIntegrationBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-184">In code, use the <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> class; in configuration, use the [\<msmqIntegrationBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md).</span></span>  
   
- このバインディングは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] MSMQ \(Microsoft Message Queuing\) 以外のエンドポイントと相互運用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントおよびサービスの作成用に最適化されています。  
+ <span data-ttu-id="0e94a-185">このバインディングは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] MSMQ (Microsoft Message Queuing) 以外のエンドポイントと相互運用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントおよびサービスの作成用に最適化されています。</span><span class="sxs-lookup"><span data-stu-id="0e94a-185">This binding is optimized for creating [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] clients and services that interoperate with non-[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Microsoft Message Queuing (MSMQ) endpoints.</span></span>  
   
- 既定では、このバインディングはトランスポート セキュリティを使用し、次のセキュリティ特性を提供します。  
+ <span data-ttu-id="0e94a-186">既定では、このバインディングはトランスポート セキュリティを使用し、次のセキュリティ特性があります。</span><span class="sxs-lookup"><span data-stu-id="0e94a-186">By default, this binding uses transport security and provides the following security characteristics:</span></span>  
   
--   セキュリティは無効 \(なし\) にできます。  
+-   <span data-ttu-id="0e94a-187">セキュリティは無効 (なし) にできます。</span><span class="sxs-lookup"><span data-stu-id="0e94a-187">Security can be disabled (None).</span></span>  
   
--   MSMQ トランスポート セキュリティ \(トランスポート\)。  
+-   <span data-ttu-id="0e94a-188">MSMQ トランスポート セキュリティ (トランスポート)。</span><span class="sxs-lookup"><span data-stu-id="0e94a-188">MSMQ transport security (Transport).</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]「<xref:System.ServiceModel.NetMsmqSecurity>」および「<xref:System.ServiceModel.NetMsmqSecurityMode>」を参照してください。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="0e94a-189"><xref:System.ServiceModel.NetMsmqSecurity> and <xref:System.ServiceModel.NetMsmqSecurityMode>.</span><span class="sxs-lookup"><span data-stu-id="0e94a-189"> <xref:System.ServiceModel.NetMsmqSecurity> and <xref:System.ServiceModel.NetMsmqSecurityMode>.</span></span>  
   
-### NetMsmqBinding  
- コードでは <xref:System.ServiceModel.NetMsmqBinding> クラスを使用し、構成では [\<netMsmqBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)を使用します。  
+### <a name="netmsmqbinding"></a><span data-ttu-id="0e94a-190">NetMsmqBinding</span><span class="sxs-lookup"><span data-stu-id="0e94a-190">NetMsmqBinding</span></span>  
+ <span data-ttu-id="0e94a-191">コードを使用して、<xref:System.ServiceModel.NetMsmqBinding>クラスは、構成を使用して、 [ \<netMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-191">In code, use the <xref:System.ServiceModel.NetMsmqBinding> class; in configuration, use the [\<netMsmqBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md).</span></span>  
   
- このバインディングは、MSMQ のキューに置かれたメッセージのサポートを必要とする [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの作成時に使用します。  
+ <span data-ttu-id="0e94a-192">このバインディングは、MSMQ のキューに置かれたメッセージのサポートを必要とする [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの作成時に使用します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-192">This binding is intended for use when creating [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services that require MSMQ queued message support.</span></span>  
   
- 既定では、このバインディングはトランスポート セキュリティを使用し、次のセキュリティ特性があります。  
+ <span data-ttu-id="0e94a-193">既定では、このバインディングはトランスポート セキュリティを使用し、次のセキュリティ特性があります。</span><span class="sxs-lookup"><span data-stu-id="0e94a-193">By default, this binding uses transport security and provides the following security characteristics:</span></span>  
   
--   セキュリティは無効 \(なし\) にできます。  
+-   <span data-ttu-id="0e94a-194">セキュリティは無効 (なし) にできます。</span><span class="sxs-lookup"><span data-stu-id="0e94a-194">Security can be disabled (None).</span></span>  
   
--   MSMQ トランスポート セキュリティ \(トランスポート\)。  
+-   <span data-ttu-id="0e94a-195">MSMQ トランスポート セキュリティ (トランスポート)。</span><span class="sxs-lookup"><span data-stu-id="0e94a-195">MSMQ transport security (Transport).</span></span>  
   
--   SOAP に基づくメッセージ セキュリティ \(メッセージ\)。  
+-   <span data-ttu-id="0e94a-196">SOAP に基づくメッセージ セキュリティ (メッセージ)。</span><span class="sxs-lookup"><span data-stu-id="0e94a-196">SOAP-based message security (Message).</span></span>  
   
--   トランスポート セキュリティとメッセージ セキュリティ \(両方\)。  
+-   <span data-ttu-id="0e94a-197">トランスポート セキュリティとメッセージ セキュリティ (両方)。</span><span class="sxs-lookup"><span data-stu-id="0e94a-197">Simultaneous Transport and Message security (Both).</span></span>  
   
--   サポートされるクライアント資格情報の種類 : なし、Windows、UserName、証明書、IssuedToken。  
+-   <span data-ttu-id="0e94a-198">サポートされるクライアント資格情報の種類 : なし、Windows、UserName、証明書、IssuedToken。</span><span class="sxs-lookup"><span data-stu-id="0e94a-198">Client Credential Types supported: None, Windows, UserName, Certificate, IssuedToken.</span></span>  
   
- <xref:System.ServiceModel.MessageCredentialType> 資格情報は、セキュリティ モードが <xref:System.ServiceModel.NetMsmqSecurityMode> または <xref:System.ServiceModel.NetMsmqSecurityMode> に設定されている場合にのみサポートされます。  
+ <span data-ttu-id="0e94a-199"><xref:System.ServiceModel.MessageCredentialType.Certificate> 資格情報は、セキュリティ モードが <xref:System.ServiceModel.NetMsmqSecurityMode.Both> または <xref:System.ServiceModel.NetMsmqSecurityMode.Message> に設定されている場合にのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="0e94a-199">The <xref:System.ServiceModel.MessageCredentialType.Certificate> credential is supported only when the security mode is set to either <xref:System.ServiceModel.NetMsmqSecurityMode.Both> or <xref:System.ServiceModel.NetMsmqSecurityMode.Message>.</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]「<xref:System.ServiceModel.MessageSecurityOverMsmq>」および「<xref:System.ServiceModel.MsmqTransportSecurity>」を参照してください。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="0e94a-200"><xref:System.ServiceModel.MessageSecurityOverMsmq> and <xref:System.ServiceModel.MsmqTransportSecurity>.</span><span class="sxs-lookup"><span data-stu-id="0e94a-200"> <xref:System.ServiceModel.MessageSecurityOverMsmq> and <xref:System.ServiceModel.MsmqTransportSecurity>.</span></span>  
   
-### WSFederationHttpBinding  
- コードでは <xref:System.ServiceModel.WSFederationHttpBinding> クラスを使用し、構成では [\<wsFederationHttpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)を使用します。  
+### <a name="wsfederationhttpbinding"></a><span data-ttu-id="0e94a-201">WSFederationHttpBinding</span><span class="sxs-lookup"><span data-stu-id="0e94a-201">WSFederationHttpBinding</span></span>  
+ <span data-ttu-id="0e94a-202">コードを使用して、<xref:System.ServiceModel.WSFederationHttpBinding>クラスは、構成を使用して、 [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-202">In code, use the <xref:System.ServiceModel.WSFederationHttpBinding> class; in configuration, use the [\<wsFederationHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).</span></span>  
   
- 既定では、このバインディングは WS\-Security \(メッセージ層セキュリティ\) を使用します。  
+ <span data-ttu-id="0e94a-203">既定では、このバインディングは WS-Security (メッセージ層セキュリティ) を使用します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-203">By default, this binding uses WS-Security (message-layer security).</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]、「[フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)」、「<xref:System.ServiceModel.WSFederationHttpSecurity>」、および「<xref:System.ServiceModel.WSFederationHttpSecurityMode>」を参照してください。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="0e94a-204">[フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)、 <xref:System.ServiceModel.WSFederationHttpSecurity>、および<xref:System.ServiceModel.WSFederationHttpSecurityMode>です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-204"> [Federation](../../../../docs/framework/wcf/feature-details/federation.md), <xref:System.ServiceModel.WSFederationHttpSecurity>, and <xref:System.ServiceModel.WSFederationHttpSecurityMode>.</span></span>  
   
-## カスタム バインディング  
- システム指定のバインディングがいずれも要件を満たさない場合は、カスタム セキュリティ バインド要素を使用してカスタム バインディングを作成できます。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][カスタム バインディングを使用したセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md).  
+## <a name="custom-bindings"></a><span data-ttu-id="0e94a-205">カスタム バインディング</span><span class="sxs-lookup"><span data-stu-id="0e94a-205">Custom Bindings</span></span>  
+ <span data-ttu-id="0e94a-206">システム指定のバインディングがいずれも要件を満たさない場合は、カスタム セキュリティ バインド要素を使用してカスタム バインディングを作成できます。</span><span class="sxs-lookup"><span data-stu-id="0e94a-206">If none of the system-provided bindings meets you requirements, you can create a custom binding with a custom security binding element.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="0e94a-207">[のカスタム バインディングのセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-207"> [Security Capabilities with Custom Bindings](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md).</span></span>  
   
-## バインディングの選択肢  
- 次の表は、セキュリティ モード設定で提供される機能をまとめたものです。つまり、セキュリティ モードを `Transport`、`Message`、または `TransportWithMessageCredential` に設定したときに使用できる機能の一覧です。アプリケーションで必要なセキュリティ機能を決定するときに、この表を参考にしてください。  
+## <a name="binding-choices"></a><span data-ttu-id="0e94a-208">バインディングの選択肢</span><span class="sxs-lookup"><span data-stu-id="0e94a-208">Binding Choices</span></span>  
+ <span data-ttu-id="0e94a-209">次の表は、セキュリティ モード設定で提供される機能をまとめたものです。つまり、セキュリティ モードを `Transport`、`Message`、または `TransportWithMessageCredential` に設定したときに使用できる機能の一覧です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-209">The following table summarizes the features offered in the security mode setting, that is, it lists the features available when the security mode is set to `Transport`, `Message`, or `TransportWithMessageCredential`.</span></span> <span data-ttu-id="0e94a-210">アプリケーションで必要なセキュリティ機能を決定するときに、この表を参考にしてください。</span><span class="sxs-lookup"><span data-stu-id="0e94a-210">Use this table to help you find the security features your application requires.</span></span>  
   
-|設定|機能|  
-|--------|--------|  
-|トランスポート|サーバー認証<br /><br /> クライアント認証<br /><br /> Point\-to\-Point のセキュリティ<br /><br /> 相互運用性<br /><br /> ハードウェア アクセラレータ<br /><br /> 高いスループット<br /><br /> セキュリティで保護されたファイアウォール<br /><br /> 待機時間の長いアプリケーション<br /><br /> 複数のホップでの再暗号化|  
-|メッセージ|サーバー認証<br /><br /> クライアント認証<br /><br /> エンド ツー エンドのセキュリティ<br /><br /> 相互運用性<br /><br /> 多様なクレーム<br /><br /> フェデレーション<br /><br /> 複数要因の認証<br /><br /> カスタム トークン<br /><br /> Notary\/Timestamp サービス<br /><br /> 待ち時間の長いアプリケーション<br /><br /> メッセージ署名の永続化|  
-|TransportWithMessageCredential|サーバー認証<br /><br /> クライアント認証<br /><br /> Point\-to\-Point のセキュリティ<br /><br /> 相互運用性<br /><br /> ハードウェアの高速化<br /><br /> 高いスループット<br /><br /> 多様なクライアント クレーム<br /><br /> フェデレーション<br /><br /> 複数要因の認証<br /><br /> カスタム トークン<br /><br /> セキュリティで保護されたファイアウォール<br /><br /> 待ち時間の長いアプリケーション<br /><br /> 複数のホップでの再暗号化|  
+|<span data-ttu-id="0e94a-211">設定</span><span class="sxs-lookup"><span data-stu-id="0e94a-211">Setting</span></span>|<span data-ttu-id="0e94a-212">機能</span><span class="sxs-lookup"><span data-stu-id="0e94a-212">Features</span></span>|  
+|-------------|--------------|  
+|<span data-ttu-id="0e94a-213">Transport</span><span class="sxs-lookup"><span data-stu-id="0e94a-213">Transport</span></span>|<span data-ttu-id="0e94a-214">サーバー認証</span><span class="sxs-lookup"><span data-stu-id="0e94a-214">Server authentication</span></span><br /><br /> <span data-ttu-id="0e94a-215">クライアント認証</span><span class="sxs-lookup"><span data-stu-id="0e94a-215">Client authentication</span></span><br /><br /> <span data-ttu-id="0e94a-216">Point-to-Point のセキュリティ</span><span class="sxs-lookup"><span data-stu-id="0e94a-216">Point-to-point security</span></span><br /><br /> <span data-ttu-id="0e94a-217">相互運用性</span><span class="sxs-lookup"><span data-stu-id="0e94a-217">Interoperability</span></span><br /><br /> <span data-ttu-id="0e94a-218">ハードウェアの高速化</span><span class="sxs-lookup"><span data-stu-id="0e94a-218">Hardware acceleration</span></span><br /><br /> <span data-ttu-id="0e94a-219">高いスループット</span><span class="sxs-lookup"><span data-stu-id="0e94a-219">High throughput</span></span><br /><br /> <span data-ttu-id="0e94a-220">セキュリティで保護されたファイアウォール</span><span class="sxs-lookup"><span data-stu-id="0e94a-220">Secure firewall</span></span><br /><br /> <span data-ttu-id="0e94a-221">待ち時間の長いアプリケーション</span><span class="sxs-lookup"><span data-stu-id="0e94a-221">High-latency applications</span></span><br /><br /> <span data-ttu-id="0e94a-222">複数のホップでの再暗号化</span><span class="sxs-lookup"><span data-stu-id="0e94a-222">Re-encryption across multiple hops</span></span>|  
+|<span data-ttu-id="0e94a-223">メッセージ</span><span class="sxs-lookup"><span data-stu-id="0e94a-223">Message</span></span>|<span data-ttu-id="0e94a-224">サーバー認証</span><span class="sxs-lookup"><span data-stu-id="0e94a-224">Server authentication</span></span><br /><br /> <span data-ttu-id="0e94a-225">クライアント認証</span><span class="sxs-lookup"><span data-stu-id="0e94a-225">Client authentication</span></span><br /><br /> <span data-ttu-id="0e94a-226">エンド ツー エンドのセキュリティ</span><span class="sxs-lookup"><span data-stu-id="0e94a-226">End-to-end security</span></span><br /><br /> <span data-ttu-id="0e94a-227">相互運用性</span><span class="sxs-lookup"><span data-stu-id="0e94a-227">Interoperability</span></span><br /><br /> <span data-ttu-id="0e94a-228">多様なクレーム</span><span class="sxs-lookup"><span data-stu-id="0e94a-228">Rich claims</span></span><br /><br /> <span data-ttu-id="0e94a-229">フェデレーション</span><span class="sxs-lookup"><span data-stu-id="0e94a-229">Federation</span></span><br /><br /> <span data-ttu-id="0e94a-230">複数要因の認証</span><span class="sxs-lookup"><span data-stu-id="0e94a-230">Multifactor authentication</span></span><br /><br /> <span data-ttu-id="0e94a-231">カスタム トークン</span><span class="sxs-lookup"><span data-stu-id="0e94a-231">Custom tokens</span></span><br /><br /> <span data-ttu-id="0e94a-232">Notary/Timestamp サービス</span><span class="sxs-lookup"><span data-stu-id="0e94a-232">Notary/timestamp service</span></span><br /><br /> <span data-ttu-id="0e94a-233">待ち時間の長いアプリケーション</span><span class="sxs-lookup"><span data-stu-id="0e94a-233">High-latency applications</span></span><br /><br /> <span data-ttu-id="0e94a-234">メッセージ署名の永続化</span><span class="sxs-lookup"><span data-stu-id="0e94a-234">Persistence of message signatures</span></span>|  
+|<span data-ttu-id="0e94a-235">TransportWithMessageCredential</span><span class="sxs-lookup"><span data-stu-id="0e94a-235">TransportWithMessageCredential</span></span>|<span data-ttu-id="0e94a-236">サーバー認証</span><span class="sxs-lookup"><span data-stu-id="0e94a-236">Server authentication</span></span><br /><br /> <span data-ttu-id="0e94a-237">クライアント認証</span><span class="sxs-lookup"><span data-stu-id="0e94a-237">Client authentication</span></span><br /><br /> <span data-ttu-id="0e94a-238">Point-to-Point のセキュリティ</span><span class="sxs-lookup"><span data-stu-id="0e94a-238">Point-to-point security</span></span><br /><br /> <span data-ttu-id="0e94a-239">相互運用性</span><span class="sxs-lookup"><span data-stu-id="0e94a-239">Interoperability</span></span><br /><br /> <span data-ttu-id="0e94a-240">ハードウェアの高速化</span><span class="sxs-lookup"><span data-stu-id="0e94a-240">Hardware acceleration</span></span><br /><br /> <span data-ttu-id="0e94a-241">高いスループット</span><span class="sxs-lookup"><span data-stu-id="0e94a-241">High throughput</span></span><br /><br /> <span data-ttu-id="0e94a-242">多様なクライアント クレーム</span><span class="sxs-lookup"><span data-stu-id="0e94a-242">Rich client claims</span></span><br /><br /> <span data-ttu-id="0e94a-243">フェデレーション</span><span class="sxs-lookup"><span data-stu-id="0e94a-243">Federation</span></span><br /><br /> <span data-ttu-id="0e94a-244">複数要因の認証</span><span class="sxs-lookup"><span data-stu-id="0e94a-244">Multifactor authentication</span></span><br /><br /> <span data-ttu-id="0e94a-245">カスタム トークン</span><span class="sxs-lookup"><span data-stu-id="0e94a-245">Custom tokens</span></span><br /><br /> <span data-ttu-id="0e94a-246">セキュリティで保護されたファイアウォール</span><span class="sxs-lookup"><span data-stu-id="0e94a-246">Secure firewall</span></span><br /><br /> <span data-ttu-id="0e94a-247">待ち時間の長いアプリケーション</span><span class="sxs-lookup"><span data-stu-id="0e94a-247">High-latency applications</span></span><br /><br /> <span data-ttu-id="0e94a-248">複数のホップでの再暗号化</span><span class="sxs-lookup"><span data-stu-id="0e94a-248">Re-encryption across multiple hops</span></span>|  
   
- さまざまなモード設定をサポートするバインディングを次の表に示します。サービス エンドポイントを作成するときは、使用するバインディングをこの表から選択してください。  
+ <span data-ttu-id="0e94a-249">さまざまなモード設定をサポートするバインディングを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-249">The following table lists the bindings that support the various mode settings.</span></span> <span data-ttu-id="0e94a-250">サービス エンドポイントを作成するときは、使用するバインディングをこの表から選択してください。</span><span class="sxs-lookup"><span data-stu-id="0e94a-250">Select a binding from the table to use to create your service endpoint.</span></span>  
   
-|バインディング|トランスポート モードのサポート|メッセージ モードのサポート|TransportWithMessageCredential のサポート|  
-|-------------|----------------------|--------------------|------------------------------------------|  
-|`BasicHttpBinding`|○|○|○|  
-|`WSHttpBinding`|○|○|○|  
-|`WSDualHttpBinding`|×|○|×|  
-|`NetTcpBinding`|○|○|○|  
-|`NetNamedPipeBinding`|○|×|×|  
-|`NetMsmqBinding`|○|○|×|  
-|`MsmqIntegrationBinding`|○|×|×|  
-|`wsFederationHttpBinding`|×|○|○|  
+|<span data-ttu-id="0e94a-251">バインディング</span><span class="sxs-lookup"><span data-stu-id="0e94a-251">Binding</span></span>|<span data-ttu-id="0e94a-252">トランスポート モードのサポート</span><span class="sxs-lookup"><span data-stu-id="0e94a-252">Transport mode support</span></span>|<span data-ttu-id="0e94a-253">メッセージ モードのサポート</span><span class="sxs-lookup"><span data-stu-id="0e94a-253">Message mode support</span></span>|<span data-ttu-id="0e94a-254">TransportWithMessageCredential のサポート</span><span class="sxs-lookup"><span data-stu-id="0e94a-254">TransportWithMessageCredential support</span></span>|  
+|-------------|----------------------------|--------------------------|--------------------------------------------|  
+|`BasicHttpBinding`|<span data-ttu-id="0e94a-255">はい</span><span class="sxs-lookup"><span data-stu-id="0e94a-255">Yes</span></span>|<span data-ttu-id="0e94a-256">はい</span><span class="sxs-lookup"><span data-stu-id="0e94a-256">Yes</span></span>|<span data-ttu-id="0e94a-257">はい</span><span class="sxs-lookup"><span data-stu-id="0e94a-257">Yes</span></span>|  
+|`WSHttpBinding`|<span data-ttu-id="0e94a-258">はい</span><span class="sxs-lookup"><span data-stu-id="0e94a-258">Yes</span></span>|<span data-ttu-id="0e94a-259">はい</span><span class="sxs-lookup"><span data-stu-id="0e94a-259">Yes</span></span>|<span data-ttu-id="0e94a-260">はい</span><span class="sxs-lookup"><span data-stu-id="0e94a-260">Yes</span></span>|  
+|`WSDualHttpBinding`|<span data-ttu-id="0e94a-261">いいえ</span><span class="sxs-lookup"><span data-stu-id="0e94a-261">No</span></span>|<span data-ttu-id="0e94a-262">はい</span><span class="sxs-lookup"><span data-stu-id="0e94a-262">Yes</span></span>|<span data-ttu-id="0e94a-263">いいえ</span><span class="sxs-lookup"><span data-stu-id="0e94a-263">No</span></span>|  
+|`NetTcpBinding`|<span data-ttu-id="0e94a-264">はい</span><span class="sxs-lookup"><span data-stu-id="0e94a-264">Yes</span></span>|<span data-ttu-id="0e94a-265">はい</span><span class="sxs-lookup"><span data-stu-id="0e94a-265">Yes</span></span>|<span data-ttu-id="0e94a-266">はい</span><span class="sxs-lookup"><span data-stu-id="0e94a-266">Yes</span></span>|  
+|`NetNamedPipeBinding`|<span data-ttu-id="0e94a-267">はい</span><span class="sxs-lookup"><span data-stu-id="0e94a-267">Yes</span></span>|<span data-ttu-id="0e94a-268">いいえ</span><span class="sxs-lookup"><span data-stu-id="0e94a-268">No</span></span>|<span data-ttu-id="0e94a-269">いいえ</span><span class="sxs-lookup"><span data-stu-id="0e94a-269">No</span></span>|  
+|`NetMsmqBinding`|<span data-ttu-id="0e94a-270">はい</span><span class="sxs-lookup"><span data-stu-id="0e94a-270">Yes</span></span>|<span data-ttu-id="0e94a-271">はい</span><span class="sxs-lookup"><span data-stu-id="0e94a-271">Yes</span></span>|<span data-ttu-id="0e94a-272">いいえ</span><span class="sxs-lookup"><span data-stu-id="0e94a-272">No</span></span>|  
+|`MsmqIntegrationBinding`|<span data-ttu-id="0e94a-273">はい</span><span class="sxs-lookup"><span data-stu-id="0e94a-273">Yes</span></span>|<span data-ttu-id="0e94a-274">いいえ</span><span class="sxs-lookup"><span data-stu-id="0e94a-274">No</span></span>|<span data-ttu-id="0e94a-275">いいえ</span><span class="sxs-lookup"><span data-stu-id="0e94a-275">No</span></span>|  
+|`wsFederationHttpBinding`|<span data-ttu-id="0e94a-276">いいえ</span><span class="sxs-lookup"><span data-stu-id="0e94a-276">No</span></span>|<span data-ttu-id="0e94a-277">はい</span><span class="sxs-lookup"><span data-stu-id="0e94a-277">Yes</span></span>|<span data-ttu-id="0e94a-278">はい</span><span class="sxs-lookup"><span data-stu-id="0e94a-278">Yes</span></span>|  
   
-## バインディングにおけるトランスポート資格情報  
- トランスポート セキュリティ モードで `BasicHttpBinding` または `WSHttpBinding` を使用するときに使用できるクライアント資格情報の種類を、次の表に示します。  
+## <a name="transport-credentials-in-bindings"></a><span data-ttu-id="0e94a-279">バインディングにおけるトランスポート資格情報</span><span class="sxs-lookup"><span data-stu-id="0e94a-279">Transport Credentials in Bindings</span></span>  
+ <span data-ttu-id="0e94a-280">トランスポート セキュリティ モードで `BasicHttpBinding` または `WSHttpBinding` を使用するときに使用できるクライアント資格情報の種類を、次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-280">The following table lists the client credential types available when using either `BasicHttpBinding` or `WSHttpBinding` in transport security mode.</span></span>  
   
-|種類|説明|  
-|--------|--------|  
-|なし|クライアントは資格情報を提示する必要がないことを指定します。匿名クライアントであると解釈されます。|  
-|基本|基本認証です。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]「RFC 2617 – HTTP Authentication: Basic and Digest Authentication」を参照してください。このドキュメントは、[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=84023](http://go.microsoft.com/fwlink/?LinkId=84023) で参照できます。|  
-|ダイジェスト|ダイジェスト認証です。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]「RFC 2617 – HTTP Authentication: Basic and Digest Authentication」を参照してください。このドキュメントは、[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=84023](http://go.microsoft.com/fwlink/?LinkId=84023) で参照できます。|  
-|NTLM|NTLM \(NT LAN Manager\) 認証です。|  
-|Windows|Windows 認証です。|  
-|証明書|証明書を使用して実行される認証です。|  
-|IssuedToken|セキュリティ トークン サービスまたは [!INCLUDE[infocard](../../../../includes/infocard-md.md)] によって発行されたトークンを使用したクライアントの認証を、サービスが要求できるようにします。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][フェデレーションと発行済みトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
+|<span data-ttu-id="0e94a-281">型</span><span class="sxs-lookup"><span data-stu-id="0e94a-281">Type</span></span>|<span data-ttu-id="0e94a-282">説明</span><span class="sxs-lookup"><span data-stu-id="0e94a-282">Description</span></span>|  
+|----------|-----------------|  
+|<span data-ttu-id="0e94a-283">なし</span><span class="sxs-lookup"><span data-stu-id="0e94a-283">None</span></span>|<span data-ttu-id="0e94a-284">クライアントが資格情報を提示する必要がないことを指定します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-284">Specifies that the client does not need to present any credential.</span></span> <span data-ttu-id="0e94a-285">匿名クライアントであると解釈されます。</span><span class="sxs-lookup"><span data-stu-id="0e94a-285">This translates to an anonymous client.</span></span>|  
+|<span data-ttu-id="0e94a-286">Basic</span><span class="sxs-lookup"><span data-stu-id="0e94a-286">Basic</span></span>|<span data-ttu-id="0e94a-287">基本認証です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-287">Basic authentication.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="0e94a-288">RFC 2617 – HTTP Authentication: Basic and Digest Authentication で利用可能な[http://go.microsoft.com/fwlink/?LinkId=84023](http://go.microsoft.com/fwlink/?LinkId=84023)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-288"> RFC 2617 – HTTP Authentication: Basic and Digest Authentication, available at [http://go.microsoft.com/fwlink/?LinkId=84023](http://go.microsoft.com/fwlink/?LinkId=84023).</span></span>|  
+|<span data-ttu-id="0e94a-289">Digest</span><span class="sxs-lookup"><span data-stu-id="0e94a-289">Digest</span></span>|<span data-ttu-id="0e94a-290">ダイジェスト認証です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-290">Digest authentication.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="0e94a-291">RFC 2617 – HTTP Authentication: Basic and Digest Authentication で利用可能な[http://go.microsoft.com/fwlink/?LinkId=84023](http://go.microsoft.com/fwlink/?LinkId=84023)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-291"> RFC 2617 – HTTP Authentication: Basic and Digest Authentication, available at [http://go.microsoft.com/fwlink/?LinkId=84023](http://go.microsoft.com/fwlink/?LinkId=84023).</span></span>|  
+|<span data-ttu-id="0e94a-292">NTLM</span><span class="sxs-lookup"><span data-stu-id="0e94a-292">NTLM</span></span>|<span data-ttu-id="0e94a-293">NTLM (NT LAN Manager) 認証です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-293">NT LAN Manager (NTLM) authentication.</span></span>|  
+|<span data-ttu-id="0e94a-294">Windows</span><span class="sxs-lookup"><span data-stu-id="0e94a-294">Windows</span></span>|<span data-ttu-id="0e94a-295">Windows 認証です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-295">Windows authentication.</span></span>|  
+|<span data-ttu-id="0e94a-296">証明書</span><span class="sxs-lookup"><span data-stu-id="0e94a-296">Certificate</span></span>|<span data-ttu-id="0e94a-297">証明書を使用して実行される認証です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-297">Authentication performed using a certificate.</span></span>|  
+|<span data-ttu-id="0e94a-298">IssuedToken</span><span class="sxs-lookup"><span data-stu-id="0e94a-298">IssuedToken</span></span>|<span data-ttu-id="0e94a-299">セキュリティ トークン サービスまたは [!INCLUDE[infocard](../../../../includes/infocard-md.md)] によって発行されたトークンを使用したクライアントの認証を、サービスが要求できるようにします。</span><span class="sxs-lookup"><span data-stu-id="0e94a-299">Allows the service to require that the client be authenticated using a token issued by a security token service or by [!INCLUDE[infocard](../../../../includes/infocard-md.md)].</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="0e94a-300">[フェデレーションと発行済みトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)です。</span><span class="sxs-lookup"><span data-stu-id="0e94a-300"> [Federation and Issued Tokens](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).</span></span>|  
   
-### バインディングにおけるメッセージ クライアント資格情報  
- メッセージ セキュリティ モードでバインディングを使用するときに使用できる、クライアント資格情報の種類を次の表に示します。  
+### <a name="message-client-credentials-in-bindings"></a><span data-ttu-id="0e94a-301">バインディングにおけるメッセージ クライアント資格情報</span><span class="sxs-lookup"><span data-stu-id="0e94a-301">Message Client Credentials in Bindings</span></span>  
+ <span data-ttu-id="0e94a-302">メッセージ セキュリティ モードでバインディングを使用するときに使用できるクライアント資格情報の種類を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-302">The following table lists the client credential types available when using a binding in Message security mode.</span></span>  
   
-|型|説明|  
-|-------|--------|  
-|なし|サービスが匿名クライアントとやり取りを行うことが可能になります。|  
-|Windows|Windows 資格情報の認証済みコンテキストの制御下で SOAP メッセージ交換を行うことができます。|  
-|UserName|サービスが、ユーザー名資格情報を使用したクライアントの認証を要求できるようにします。セキュリティ モードが `TransportWithMessageCredential` に設定されている場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、パスワード ダイジェストの送信、またはパスワードを使用したキーの派生、およびメッセージ モード セキュリティでのこのようなキーの使用がサポートされません。そのため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ユーザー名資格情報を使用する場合に、トランスポートが強制的にセキュリティで保護されます。|  
-|Certificate|証明書を使用したクライアントの認証を、サービスで要求することが可能になります。|  
-|IssuedToken|サービスは、セキュリティ トークン サービスを使用してカスタム トークンを提供できます。|  
+|<span data-ttu-id="0e94a-303">型</span><span class="sxs-lookup"><span data-stu-id="0e94a-303">Type</span></span>|<span data-ttu-id="0e94a-304">説明</span><span class="sxs-lookup"><span data-stu-id="0e94a-304">Description</span></span>|  
+|----------|-----------------|  
+|<span data-ttu-id="0e94a-305">なし</span><span class="sxs-lookup"><span data-stu-id="0e94a-305">None</span></span>|<span data-ttu-id="0e94a-306">サービスが匿名クライアントとやり取りを行うことが可能になります。</span><span class="sxs-lookup"><span data-stu-id="0e94a-306">Allows the service to interact with anonymous clients.</span></span>|  
+|<span data-ttu-id="0e94a-307">Windows</span><span class="sxs-lookup"><span data-stu-id="0e94a-307">Windows</span></span>|<span data-ttu-id="0e94a-308">Windows 資格情報の認証済みコンテキストの制御下で SOAP メッセージ交換を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="0e94a-308">Allows SOAP message exchanges to be made under the authenticated context of a Windows credential.</span></span>|  
+|<span data-ttu-id="0e94a-309">UserName</span><span class="sxs-lookup"><span data-stu-id="0e94a-309">UserName</span></span>|<span data-ttu-id="0e94a-310">サービスが、ユーザー名資格情報を使用したクライアントの認証を要求できるようにします。</span><span class="sxs-lookup"><span data-stu-id="0e94a-310">Allows the service to require that the client be authenticated using a user name credential.</span></span> <span data-ttu-id="0e94a-311">セキュリティ モードが `TransportWithMessageCredential` に設定されている場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、パスワード ダイジェストの送信、またはパスワードを使用したキーの派生、およびメッセージ モード セキュリティでのこのようなキーの使用がサポートされません。</span><span class="sxs-lookup"><span data-stu-id="0e94a-311">Note that when the security mode is set to `TransportWithMessageCredential`, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] does not support sending a password digest or deriving keys using password and using such keys for Message mode security.</span></span> <span data-ttu-id="0e94a-312">そのため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ユーザー名資格情報を使用する場合は、トランスポートが強制的にセキュリティで保護されます。</span><span class="sxs-lookup"><span data-stu-id="0e94a-312">As such, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] enforces that the transport is secured when using user name credentials.</span></span>|  
+|<span data-ttu-id="0e94a-313">証明書</span><span class="sxs-lookup"><span data-stu-id="0e94a-313">Certificate</span></span>|<span data-ttu-id="0e94a-314">証明書を使用したクライアントの認証を、サービスで要求することが可能になります。</span><span class="sxs-lookup"><span data-stu-id="0e94a-314">Allows the service to require that the client be authenticated using a certificate.</span></span>|  
+|<span data-ttu-id="0e94a-315">IssuedToken</span><span class="sxs-lookup"><span data-stu-id="0e94a-315">IssuedToken</span></span>|<span data-ttu-id="0e94a-316">サービスは、セキュリティ トークン サービスを使用してカスタム トークンを提供できます。</span><span class="sxs-lookup"><span data-stu-id="0e94a-316">Allows the service to use a security token service to supply a custom token.</span></span>|  
   
-## 参照  
- [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)   
- [サービスおよびクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [資格情報の種類の選択](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)   
- [カスタム バインディングを使用したセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)   
- [セキュリティ動作](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)   
- [Windows Server AppFabric のセキュリティ モデル](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a><span data-ttu-id="0e94a-317">関連項目</span><span class="sxs-lookup"><span data-stu-id="0e94a-317">See Also</span></span>  
+ [<span data-ttu-id="0e94a-318">セキュリティの概要</span><span class="sxs-lookup"><span data-stu-id="0e94a-318">Security Overview</span></span>](../../../../docs/framework/wcf/feature-details/security-overview.md)  
+ [<span data-ttu-id="0e94a-319">サービスとクライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="0e94a-319">Securing Services and Clients</span></span>](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [<span data-ttu-id="0e94a-320">資格情報の種類を選択します。</span><span class="sxs-lookup"><span data-stu-id="0e94a-320">Selecting a Credential Type</span></span>](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
+ [<span data-ttu-id="0e94a-321">カスタム バインドのセキュリティ機能</span><span class="sxs-lookup"><span data-stu-id="0e94a-321">Security Capabilities with Custom Bindings</span></span>](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)  
+ [<span data-ttu-id="0e94a-322">セキュリティ動作</span><span class="sxs-lookup"><span data-stu-id="0e94a-322">Security Behaviors</span></span>](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
+ [<span data-ttu-id="0e94a-323">Windows Server App Fabric のセキュリティ モデル</span><span class="sxs-lookup"><span data-stu-id="0e94a-323">Security Model for Windows Server App Fabric</span></span>](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

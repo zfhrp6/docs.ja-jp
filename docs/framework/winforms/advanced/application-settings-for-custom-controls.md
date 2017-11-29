@@ -1,48 +1,49 @@
 ---
-title: "カスタム コントロールのアプリケーション設定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "アプリケーション設定 [Windows フォーム], カスタム コントロール"
-  - "カスタム コントロール [Windows フォーム], アプリケーション設定"
+title: "カスタム コントロールのアプリケーション設定"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- custom controls [Windows Forms], application settings
+- application settings [Windows Forms], custom controls
 ms.assetid: f44afb74-76cc-44f2-890a-44b7cdc211a1
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3f8292ac459a2943376229ef62466b0a772430dc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# カスタム コントロールのアプリケーション設定
-コントロールがサードパーティのアプリケーションでホストされている場合、アプリケーション設定を永続化するための機能をカスタム コントロールに持たせるには特定のタスクを完了する必要があります。  
+# <a name="application-settings-for-custom-controls"></a><span data-ttu-id="b0906-102">カスタム コントロールのアプリケーション設定</span><span class="sxs-lookup"><span data-stu-id="b0906-102">Application Settings for Custom Controls</span></span>
+<span data-ttu-id="b0906-103">カスタム コントロールのコントロールがサード パーティ製のアプリケーションでホストされているときに、アプリケーションの設定を保存する機能を提供する特定のタスクを完了する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b0906-103">You must complete certain tasks to give your custom controls the ability to persist application settings when the controls are hosted in third-party applications.</span></span>  
   
- アプリケーション設定機能に関するほとんどのドキュメントは、スタンドアロン アプリケーションを作成していることを前提にしています。  ただし、他の開発者が作成したアプリケーション内でホストされるコントロールを作成する場合には、コントロールが設定を適切に永続化できるように、追加の手順を実行する必要があります。  
+ <span data-ttu-id="b0906-104">アプリケーション設定機能についてのドキュメントのほとんどは、スタンドアロンのアプリケーションを作成していることを前提として書き込まれます。</span><span class="sxs-lookup"><span data-stu-id="b0906-104">Most of the documentation about the Application Settings feature is written under the assumption that you are creating a standalone application.</span></span> <span data-ttu-id="b0906-105">ただし場合は、アプリケーションで他の開発者がホストするコントロールを作成する必要があります、コントロールがその設定を保持するためのいくつかの追加手順を実行する適切です。</span><span class="sxs-lookup"><span data-stu-id="b0906-105">However, if you are creating a control that other developers will host in their applications, you need to take a few additional steps for your control to persist its settings properly.</span></span>  
   
-## アプリケーション設定とカスタム コントロール  
- コントロールで設定を適切に永続化できるようにするためには、<xref:System.Configuration.ApplicationSettingsBase> から派生した独自の専用アプリケーション設定ラッパー クラスを作成することによってプロセスをカプセル化する必要があります。  また、メイン コントロール クラスで <xref:System.Configuration.IPersistComponentSettings> を実装する必要があります。  このインターフェイスには、複数のプロパティと 2 つのメソッド \(<xref:System.Configuration.IPersistComponentSettings.LoadComponentSettings%2A> および <xref:System.Configuration.IPersistComponentSettings.SaveComponentSettings%2A>\) が含まれます。  Visual Studio の **Windows フォーム デザイナー**を使用してコントロールをフォームに追加する場合、コントロールの初期化時に、Windows フォームは自動的に <xref:System.Configuration.IPersistComponentSettings.LoadComponentSettings%2A> を呼び出します。<xref:System.Configuration.IPersistComponentSettings.SaveComponentSettings%2A> は、コントロールの  `Dispose`  メソッド内で独自に呼び出す必要があります。  
+## <a name="application-settings-and-custom-controls"></a><span data-ttu-id="b0906-106">アプリケーションの設定とカスタム コントロール</span><span class="sxs-lookup"><span data-stu-id="b0906-106">Application Settings and Custom Controls</span></span>  
+ <span data-ttu-id="b0906-107">その設定を正しく維持する目的のコントロールの必要がありますをカプセル化プロセスから派生した、設定のラッパー クラスの独自の専用のアプリケーションを作成することで<xref:System.Configuration.ApplicationSettingsBase>です。</span><span class="sxs-lookup"><span data-stu-id="b0906-107">For your control to properly persist its settings, it must encapsulate the process by creating its own dedicated applications settings wrapper class, derived from <xref:System.Configuration.ApplicationSettingsBase>.</span></span> <span data-ttu-id="b0906-108">また、メイン コントロール クラスを実装する必要があります、<xref:System.Configuration.IPersistComponentSettings>です。</span><span class="sxs-lookup"><span data-stu-id="b0906-108">Additionally, the main control class must implement the <xref:System.Configuration.IPersistComponentSettings>.</span></span> <span data-ttu-id="b0906-109">インターフェイスには、いくつかのプロパティだけでなく 2 つのメソッドが含まれています。<xref:System.Configuration.IPersistComponentSettings.LoadComponentSettings%2A>と<xref:System.Configuration.IPersistComponentSettings.SaveComponentSettings%2A>です。</span><span class="sxs-lookup"><span data-stu-id="b0906-109">The interface contains several properties as well as two methods, <xref:System.Configuration.IPersistComponentSettings.LoadComponentSettings%2A> and <xref:System.Configuration.IPersistComponentSettings.SaveComponentSettings%2A>.</span></span> <span data-ttu-id="b0906-110">使用して、フォームにコントロールを追加する場合、 **Windows フォーム デザイナー** Visual Studio で、Windows フォームが呼び出す<xref:System.Configuration.IPersistComponentSettings.LoadComponentSettings%2A>以外のコントロールが初期化される場合に自動的に呼び出す必要があります<xref:System.Configuration.IPersistComponentSettings.SaveComponentSettings%2A>で自分自身、 `Dispose`コントロールのメソッドです。</span><span class="sxs-lookup"><span data-stu-id="b0906-110">If you add your control to a form using the **Windows Forms Designer** in Visual Studio, Windows Forms will call <xref:System.Configuration.IPersistComponentSettings.LoadComponentSettings%2A> automatically when the control is initialized; you must call <xref:System.Configuration.IPersistComponentSettings.SaveComponentSettings%2A> yourself in the `Dispose` method of your control.</span></span>  
   
- また、カスタム コントロールのアプリケーション設定が Visual Studio などデザイン時の環境で正しく動作するように、次を実装する必要があります。  
+ <span data-ttu-id="b0906-111">さらに、Visual Studio などのデザイン時環境で正しく動作するカスタム コントロールのアプリケーション設定の順序で、次を実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b0906-111">In addition, you should implement the following in order for application settings for custom controls to work properly in design-time environments such as Visual Studio:</span></span>  
   
-1.  <xref:System.ComponentModel.IComponent> を 1 つのパラメーターとして使用するコンストラクターを含む、カスタム アプリケーション設定クラス。  このクラスを使用して、すべてのアプリケーション設定を読み込みます。  このクラスの新しいインスタンスを作成するときに、コンストラクターを使用してカスタム コントロールを渡します。  
+1.  <span data-ttu-id="b0906-112">受け取るコンス トラクターを持つカスタム アプリケーション設定クラス、<xref:System.ComponentModel.IComponent>として 1 つのパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="b0906-112">A custom application settings class with a constructor that takes an <xref:System.ComponentModel.IComponent> as a single parameter.</span></span> <span data-ttu-id="b0906-113">保存し、すべてのアプリケーションの設定を読み込むには、このクラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="b0906-113">Use this class to save and load all of your application settings.</span></span> <span data-ttu-id="b0906-114">このクラスの新しいインスタンスを作成するときは、コンス トラクターを使用して、カスタム コントロールを渡します。</span><span class="sxs-lookup"><span data-stu-id="b0906-114">When you create a new instance of this class, pass your custom control using the constructor.</span></span>  
   
-2.  コントロールを作成し、フォームの <xref:System.Windows.Forms.Form.Load> イベント ハンドラーなどに配置した後に、カスタム設定クラスを作成します。  
+2.  <span data-ttu-id="b0906-115">コントロールを作成し、フォームのように、フォームに配置した後、このカスタム設定クラスを作成する<xref:System.Windows.Forms.Form.Load>イベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="b0906-115">Create this custom settings class after the control has been created and placed on a form, such as in the form's <xref:System.Windows.Forms.Form.Load> event handler.</span></span>  
   
- カスタム設定クラスを作成する手順については、「[方法 : アプリケーション設定を作成する](../../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)」を参照してください。  
+ <span data-ttu-id="b0906-116">カスタム設定クラスを作成する方法の詳細については、次を参照してください。[する方法: アプリケーション設定の作成](../../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)です。</span><span class="sxs-lookup"><span data-stu-id="b0906-116">For instructions on creating a custom settings class, see [How to: Create Application Settings](../../../../docs/framework/winforms/advanced/how-to-create-application-settings.md).</span></span>  
   
-## 設定キーと共有設定  
- コントロールの中には、同じフォーム内で何度も使用できるものがあります。  ほとんどの場合、このようなコントロールが個々の設定を独自に永続化するように設定すると便利です。  <xref:System.Configuration.IPersistComponentSettings> の <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A> プロパティを使用すると、フォーム上のコントロールの複数のバージョンを区別する一意の文字列を指定できます。  
+## <a name="settings-keys-and-shared-settings"></a><span data-ttu-id="b0906-117">設定キーと共有設定</span><span class="sxs-lookup"><span data-stu-id="b0906-117">Settings Keys and Shared Settings</span></span>  
+ <span data-ttu-id="b0906-118">一部のコントロールを同じフォーム内で複数回使用できます。</span><span class="sxs-lookup"><span data-stu-id="b0906-118">Some controls can be used multiple times within the same form.</span></span> <span data-ttu-id="b0906-119">ほとんどの場合、これらのコントロールを各自の設定を保持します。</span><span class="sxs-lookup"><span data-stu-id="b0906-119">Most of the time, you will want these controls to persist their own individual settings.</span></span> <span data-ttu-id="b0906-120"><xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A>プロパティ<xref:System.Configuration.IPersistComponentSettings>フォーム上のコントロールの複数のバージョンを区別するために機能する一意の文字列を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="b0906-120">With the <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A> property on <xref:System.Configuration.IPersistComponentSettings>, you can supply a unique string that acts to disambiguate multiple versions of a control on a form.</span></span>  
   
- <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A> を実装する最も簡単な方法は、コントロールの <xref:System.Windows.Forms.Control.Name%2A> プロパティを <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A> に使用することです。  コントロールの設定を読み込むときまたは保存するときに、<xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A> の値を <xref:System.Configuration.ApplicationSettingsBase> クラスの <xref:System.Configuration.ApplicationSettingsBase.SettingsKey%2A> プロパティに渡します。  アプリケーション設定は、ユーザーの設定を XML ファイルに永続化するときにこの一意キーを使用します。   `Text`  プロパティの設定を保存する  `CustomControl1`  という名前のカスタム コントロールのインスタンスを  `<userSettings>`  セクションが検索するしくみを次のコード例に示します。  
+ <span data-ttu-id="b0906-121">実装する最も簡単な方法<xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A>を使用して、<xref:System.Windows.Forms.Control.Name%2A>のコントロールのプロパティ、<xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A>です。</span><span class="sxs-lookup"><span data-stu-id="b0906-121">The simplest way to implement <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A> is to use the <xref:System.Windows.Forms.Control.Name%2A> property of the control for the <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A>.</span></span> <span data-ttu-id="b0906-122">値を渡すロードまたはコントロールの設定を保存するときに<xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A>に、<xref:System.Configuration.ApplicationSettingsBase.SettingsKey%2A>のプロパティ、<xref:System.Configuration.ApplicationSettingsBase>クラスです。</span><span class="sxs-lookup"><span data-stu-id="b0906-122">When you load or save the control's settings, you pass the value of <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A> on to the <xref:System.Configuration.ApplicationSettingsBase.SettingsKey%2A> property of the <xref:System.Configuration.ApplicationSettingsBase> class.</span></span> <span data-ttu-id="b0906-123">アプリケーションの設定は、XML へのユーザーの設定が引き続き発生するときに、この一意のキーを使用します。</span><span class="sxs-lookup"><span data-stu-id="b0906-123">Application Settings uses this unique key when it persists the user's settings to XML.</span></span> <span data-ttu-id="b0906-124">次のコード例に示す方法、`<userSettings>`セクションという名前のカスタム コントロールのインスタンスを検索`CustomControl1`の設定を保存するその`Text`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="b0906-124">The following code example shows how a `<userSettings>` section may look for an instance of a custom control named `CustomControl1` that saves a setting for its `Text` property.</span></span>  
   
-```  
+```xml  
 <userSettings>  
     <CustomControl1>  
         <setting name="Text" serializedAs="string">  
@@ -52,9 +53,9 @@ caps.handback.revision: 13
 </userSettings>  
 ```  
   
- <xref:System.Configuration.ApplicationSettingsBase.SettingsKey%2A> の値を指定しないコントロールのすべてのインスタンスは、同じ設定を共有します。  
+ <span data-ttu-id="b0906-125">値を指定しない、コントロールのすべてのインスタンス<xref:System.Configuration.ApplicationSettingsBase.SettingsKey%2A>同じ設定で共有されます。</span><span class="sxs-lookup"><span data-stu-id="b0906-125">Any instances of a control that do not supply a value for <xref:System.Configuration.ApplicationSettingsBase.SettingsKey%2A> will share the same settings.</span></span>  
   
-## 参照  
- <xref:System.Configuration.ApplicationSettingsBase>   
- <xref:System.Configuration.IPersistComponentSettings>   
- [アプリケーション設定アーキテクチャ](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)
+## <a name="see-also"></a><span data-ttu-id="b0906-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="b0906-126">See Also</span></span>  
+ <xref:System.Configuration.ApplicationSettingsBase>  
+ <xref:System.Configuration.IPersistComponentSettings>  
+ [<span data-ttu-id="b0906-127">アプリケーション設定アーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="b0906-127">Application Settings Architecture</span></span>](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)

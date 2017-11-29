@@ -1,89 +1,95 @@
 ---
-title: ".NET Framework クライアント アプリケーションの作成 (WCF Data Services クイック スタート) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: ".NET Framework クライアント アプリケーションの作成 (WCF Data Services クイック スタート)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 41ade767-eeab-437d-9121-9797e8fb8045
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 2d654ad24f8d23a47d2a3be3b07c42c104bb9b70
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# .NET Framework クライアント アプリケーションの作成 (WCF Data Services クイック スタート)
-これは、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クイック スタートの最後のタスクです。  このタスクでは、コンソール アプリケーションをソリューションに追加し、この新しいクライアント アプリケーションに [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] フィードへの参照を追加します。次に、生成されたクライアント データ サービス クラスおよびクライアント ライブラリを使用して、クライアント アプリケーションから [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードにアクセスします。  
+# <a name="creating-the-net-framework-client-application-wcf-data-services-quickstart"></a><span data-ttu-id="ab395-102">.NET Framework クライアント アプリケーションの作成 (WCF Data Services クイック スタート)</span><span class="sxs-lookup"><span data-stu-id="ab395-102">Creating the .NET Framework Client Application (WCF Data Services Quickstart)</span></span>
+<span data-ttu-id="ab395-103">これは、最後のタスク、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]クイック スタート。</span><span class="sxs-lookup"><span data-stu-id="ab395-103">This is the final task of the [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] quickstart.</span></span> <span data-ttu-id="ab395-104">このタスクが、コンソール アプリケーションをソリューションに追加されたらへの参照を追加、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]この新しいクライアント、アプリケーションにアクセス フィード、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]生成されたクライアント データ サービス クラスおよびクライアントを使用して、クライアント アプリケーションからフィードライブラリ。</span><span class="sxs-lookup"><span data-stu-id="ab395-104">In this task, you will add a console application to the solution, add a reference to the [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] feed into this new client application, and access the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed from the client application by using the generated client data service classes and client libraries.</span></span>  
   
 > [!NOTE]
->  データ フィードへのアクセスには .NET Framework ベースのクライアント アプリケーションは必要ありません。  データ サービスは、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードを使用する任意のアプリケーション コンポーネントからアクセスできます。  詳細については、「[クライアント アプリケーションでのデータ サービスの使用](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)」を参照してください。  
+>  <span data-ttu-id="ab395-105">データ フィードへのアクセスには .NET Framework ベースのクライアント アプリケーションは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="ab395-105">A .NET Framework-based client application is not required to access a data feed.</span></span> <span data-ttu-id="ab395-106">データ サービスは、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードを使用する任意のアプリケーション コンポーネントからアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="ab395-106">The data service can be accessed by any application component that consumes an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed.</span></span> <span data-ttu-id="ab395-107">詳細については、次を参照してください。[クライアント アプリケーションでデータ サービスを使用して](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="ab395-107">For more information, see [Using a Data Service in a Client Application](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md).</span></span>  
   
-### Visual Studio を使用してクライアント アプリケーションを作成するには  
+### <a name="to-create-the-client-application-by-using-visual-studio"></a><span data-ttu-id="ab395-108">Visual Studio を使用してクライアント アプリケーションを作成するには</span><span class="sxs-lookup"><span data-stu-id="ab395-108">To create the client application by using Visual Studio</span></span>  
   
-1.  **ソリューション エクスプローラー**でソリューションを右クリックし、**\[追加\]** をポイントして **\[新しいプロジェクト\]** をクリックします。  
+1.  <span data-ttu-id="ab395-109">**ソリューション エクスプ ローラー**ソリューションを右クリックしをクリックして**追加**、クリックして**新しいプロジェクト**です。</span><span class="sxs-lookup"><span data-stu-id="ab395-109">In **Solution Explorer**, right-click the solution, click **Add**, and then click **New Project**.</span></span>  
   
-2.  **\[プロジェクトの種類\]** で **\[Windows\]** をクリックして、**\[テンプレート\]** ペインで **\[WPF アプリケーション\]** を選択します。  
+2.  <span data-ttu-id="ab395-110">**プロジェクトの種類**をクリックして**Windows**、し、[ **WPF アプリケーション**で、**テンプレート**ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="ab395-110">In **Project types**, click **Windows**, and then select **WPF Application** in the **Templates** pane.</span></span>  
   
-3.  プロジェクト名として「`NorthwindClient`」を入力し、**\[OK\]** をクリックします。  
+3.  <span data-ttu-id="ab395-111">入力`NorthwindClient`プロジェクト名、およびクリック**OK**です。</span><span class="sxs-lookup"><span data-stu-id="ab395-111">Enter `NorthwindClient` for the project name, and then click **OK**.</span></span>  
   
-4.  ファイル MainWindow.xaml を開き、XAML コードを次のコードに置き換えます。  
+4.  <span data-ttu-id="ab395-112">ファイル MainWindow.xaml を開き、XAML コードを次のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="ab395-112">Open the file MainWindow.xaml and replace the XAML code with the following code:</span></span>  
   
-     [!code-xml[Astoria Quickstart Client#Window1Xaml](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart client/vb/window1.xaml#window1xaml)]  
+     [!code-xaml[Astoria Quickstart Client#Window1Xaml](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart client/vb/window1.xaml#window1xaml)]  
   
-### データ サービス参照をプロジェクトに追加するには  
+### <a name="to-add-a-data-service-reference-to-the-project"></a><span data-ttu-id="ab395-113">データ サービス参照をプロジェクトに追加するには</span><span class="sxs-lookup"><span data-stu-id="ab395-113">To add a data service reference to the project</span></span>  
   
-1.  NorthwindClient プロジェクトを右クリックして、**\[サービス参照の追加\]**、**\[探索\]** の順にクリックします。  
+1.  <span data-ttu-id="ab395-114">NorthwindClient プロジェクトを右クリックし、をクリックして**サービス参照の追加**、クリックして**Discover**です。</span><span class="sxs-lookup"><span data-stu-id="ab395-114">Right-click the NorthwindClient project, click **Add Service Reference**, and then click **Discover**.</span></span>  
   
-     最初のタスクで作成した Northwind データ サービスが表示されます。  
+     <span data-ttu-id="ab395-115">最初のタスクで作成した Northwind データ サービスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="ab395-115">This displays the Northwind data service that you created in the first task.</span></span>  
   
-2.  **\[名前空間\]** ボックスに「`Northwind`」と入力し、**\[OK\]** をクリックします。  
+2.  <span data-ttu-id="ab395-116">**Namespace**テキスト ボックスで、「 `Northwind`、順にクリック**OK**です。</span><span class="sxs-lookup"><span data-stu-id="ab395-116">In the **Namespace** text box, type `Northwind`, and then click **OK**.</span></span>  
   
-     プロジェクトに新しいコード ファイルが追加されます。このコード ファイルには、データ サービス リソースにアクセスし、オブジェクトとしてデータ サービス リソースと対話するデータ クラスが含まれています。  データ クラスは、名前空間 `NorthwindClient.Northwind` で作成されます。  
+     <span data-ttu-id="ab395-117">プロジェクトに新しいコード ファイルが追加されます。このコード ファイルには、データ サービス リソースにアクセスし、オブジェクトとしてデータ サービス リソースと対話するデータ クラスが含まれています。</span><span class="sxs-lookup"><span data-stu-id="ab395-117">This adds a new code file to the project, which contains the data classes that are used to access and interact with data service resources as objects.</span></span> <span data-ttu-id="ab395-118">データ クラスは、名前空間 `NorthwindClient.Northwind` で作成されます。</span><span class="sxs-lookup"><span data-stu-id="ab395-118">The data classes are created in the namespace `NorthwindClient.Northwind`.</span></span>  
   
-### WPF アプリケーションのデータ サービスにアクセスするには  
+### <a name="to-access-data-service-data-in-the-wpf-application"></a><span data-ttu-id="ab395-119">WPF アプリケーションのデータ サービスにアクセスするには</span><span class="sxs-lookup"><span data-stu-id="ab395-119">To access data service data in the WPF application</span></span>  
   
-1.  **NorthwindClient** の下の**ソリューション エクスプローラー**でプロジェクトを右クリックして、**\[参照の追加\]** をクリックします。  
+1.  <span data-ttu-id="ab395-120">**ソリューション エクスプ ローラー** [ **NorthwindClient**プロジェクトを右クリックし、クリックして、**参照の追加**です。</span><span class="sxs-lookup"><span data-stu-id="ab395-120">In **Solution Explorer** under **NorthwindClient**, right-click the project and click **Add Reference**.</span></span>  
   
-2.  \[参照の追加\] ダイアログ ボックスで、**\[.NET\]** タブをクリックし、System.Data.Services.Client.dll アセンブリを選択して、**\[OK\]** をクリックします。  **NorthwindClient** の下の**ソリューション エクスプローラー**で、MainWindow.xaml ファイルのコード ページを開き、次の `using` ステートメント \(Visual Basic の場合は `Imports`\) を追加します。  
+2.  <span data-ttu-id="ab395-121">[参照の追加] ダイアログ ボックス、 **.NET** ] タブ、System.Data.Services.Client.dll アセンブリを選択し、をクリックして**OK**です。</span><span class="sxs-lookup"><span data-stu-id="ab395-121">In the Add Reference dialog box, click the **.NET** tab, select the System.Data.Services.Client.dll assembly, and then click **OK**.</span></span> <span data-ttu-id="ab395-122">**ソリューション エクスプ ローラー** [ **NorthwindClient**MainWindow.xaml ファイルのコード ページを開き、次の追加`using`ステートメント (`Imports` Visual Basic で)。</span><span class="sxs-lookup"><span data-stu-id="ab395-122">In **Solution Explorer** under **NorthwindClient**, open the code page for the MainWindow.xaml file, and add the following `using` statement (`Imports` in Visual Basic).</span></span>  
   
      [!code-csharp[Astoria Quickstart Client#Using](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart client/cs/window1.xaml.cs#using)]
      [!code-vb[Astoria Quickstart Client#Using](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart client/vb/window1.xaml.vb#using)]  
   
-3.  次のコードを挿入します。このコードは、データ サービスをクエリし、<xref:System.Data.Services.Client.DataServiceCollection%601> に対する結果を `MainWindow` クラスにバインドします。  
+3.  <span data-ttu-id="ab395-123">次のコードを挿入します。このコードは、データ サービスをクエリし、<xref:System.Data.Services.Client.DataServiceCollection%601> に対する結果を `MainWindow` クラスにバインドします。</span><span class="sxs-lookup"><span data-stu-id="ab395-123">Insert the following code that queries that data service and binds the result to a <xref:System.Data.Services.Client.DataServiceCollection%601> into the `MainWindow` class:</span></span>  
   
     > [!NOTE]
-    >  ホスト名 `localhost:12345` を Northwind データ サービスのインスタンスをホストするサーバーとポートで置き換えます。  
+    >  <span data-ttu-id="ab395-124">ホスト名 `localhost:12345` を Northwind データ サービスのインスタンスをホストするサーバーとポートで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="ab395-124">You must replace the host name `localhost:12345` with the server and port that is hosting your instance of the Northwind data service.</span></span>  
   
      [!code-csharp[Astoria Quickstart Client#QueryCode](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart client/cs/window1.xaml.cs#querycode)]
      [!code-vb[Astoria Quickstart Client#QueryCode](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart client/vb/window1.xaml.vb#querycode)]  
   
-4.  次のコードを挿入します。このコードは、変更内容を `MainWindow` クラスに保存します。  
+4.  <span data-ttu-id="ab395-125">次のコードを挿入します。このコードは、変更内容を `MainWindow` クラスに保存します。</span><span class="sxs-lookup"><span data-stu-id="ab395-125">Insert the following code that saves changes into the `MainWindow` class:</span></span>  
   
      [!code-csharp[Astoria Quickstart Client#SaveChanges](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart client/cs/window1.xaml.cs#savechanges)]
      [!code-vb[Astoria Quickstart Client#SaveChanges](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart client/vb/window1.xaml.vb#savechanges)]  
   
-### NorthwindClient アプリケーションをビルドして実行するには  
+### <a name="to-build-and-run-the-northwindclient-application"></a><span data-ttu-id="ab395-126">NorthwindClient アプリケーションをビルドして実行するには</span><span class="sxs-lookup"><span data-stu-id="ab395-126">To build and run the NorthwindClient application</span></span>  
   
-1.  **ソリューション エクスプローラー**で NorthwindClient プロジェクトを右クリックして **\[スタートアップ プロジェクトに設定\]** を選択します。  
+1.  <span data-ttu-id="ab395-127">**ソリューション エクスプ ローラー**NorthwindClient プロジェクトを右クリックし、選択、**スタートアップ プロジェクトとして設定**です。</span><span class="sxs-lookup"><span data-stu-id="ab395-127">In **Solution Explorer**, right-click the NorthwindClient project and select **Set as startup project**.</span></span>  
   
-2.  F5 キーを押してアプリケーションを起動します。  
+2.  <span data-ttu-id="ab395-128">F5 キーを押してアプリケーションを起動します。</span><span class="sxs-lookup"><span data-stu-id="ab395-128">Press F5 to start the application.</span></span>  
   
-     ソリューションがビルドされ、クライアント アプリケーションが起動します。  データがサービスから要求され、コンソールに表示されます。  
+     <span data-ttu-id="ab395-129">ソリューションがビルドされ、クライアント アプリケーションが起動します。</span><span class="sxs-lookup"><span data-stu-id="ab395-129">This builds the solution and starts the client application.</span></span> <span data-ttu-id="ab395-130">データがサービスから要求され、コンソールに表示されます。</span><span class="sxs-lookup"><span data-stu-id="ab395-130">Data is requested from the service and displayed in the console.</span></span>  
   
-3.  データ グリッドの **Quantity** 列の値を編集し、**\[保存\]** をクリックします。  
+3.  <span data-ttu-id="ab395-131">値を編集、**数量**をクリックし、データ グリッドの列**保存**です。</span><span class="sxs-lookup"><span data-stu-id="ab395-131">Edit a value in the **Quantity** column of the data grid, and then click **Save**.</span></span>  
   
-     変更内容はデータ サービスに保存されます。  
+     <span data-ttu-id="ab395-132">変更内容はデータ サービスに保存されます。</span><span class="sxs-lookup"><span data-stu-id="ab395-132">Changes are saved to the data service.</span></span>  
   
     > [!NOTE]
-    >  このバージョンの NorthwindClient アプリケーションでは、エンティティの追加と削除はサポートされません。  
+    >  <span data-ttu-id="ab395-133">このバージョンの NorthwindClient アプリケーションでは、エンティティの追加と削除はサポートされません。</span><span class="sxs-lookup"><span data-stu-id="ab395-133">This version of the NorthwindClient application does not support adding and deleting of entities.</span></span>  
   
-## 次の手順  
- ここでは、サンプル Northwind の [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードにアクセスするクライアント アプリケーションを作成しました。  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クイック スタートも完了しました。  [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アプリケーションから [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードへのアクセスについては、「[WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)」を参照してください。  
+## <a name="next-steps"></a><span data-ttu-id="ab395-134">次の手順</span><span class="sxs-lookup"><span data-stu-id="ab395-134">Next Steps</span></span>  
+ <span data-ttu-id="ab395-135">ここでは、サンプル Northwind の [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードにアクセスするクライアント アプリケーションを作成しました。</span><span class="sxs-lookup"><span data-stu-id="ab395-135">You have successfully created the client application that accesses the sample Northwind [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed.</span></span> <span data-ttu-id="ab395-136">[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クイック スタートも完了しました。</span><span class="sxs-lookup"><span data-stu-id="ab395-136">You have also completed the [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] quickstart.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="ab395-137">アクセス、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]からフィード、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]アプリケーションを参照してください[WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)です。</span><span class="sxs-lookup"><span data-stu-id="ab395-137"> accessing an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed from a [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] application, see [WCF Data Services Client Library](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md).</span></span>  
   
-## 参照  
- [概要](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)   
- [リソース](../../../../docs/framework/data/wcf/wcf-data-services-resources.md)
+## <a name="see-also"></a><span data-ttu-id="ab395-138">関連項目</span><span class="sxs-lookup"><span data-stu-id="ab395-138">See Also</span></span>  
+ [<span data-ttu-id="ab395-139">はじめに</span><span class="sxs-lookup"><span data-stu-id="ab395-139">Getting Started</span></span>](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)  
+ [<span data-ttu-id="ab395-140">リソース</span><span class="sxs-lookup"><span data-stu-id="ab395-140">Resources</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-resources.md)

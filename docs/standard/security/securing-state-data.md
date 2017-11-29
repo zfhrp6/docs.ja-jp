@@ -1,47 +1,39 @@
 ---
-title: "状態データの保護 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "コード セキュリティ, 状態データ"
-  - "安全なコーディング, 状態データ"
-  - "セキュリティ [.NET Framework], 状態データ"
-  - "状態データのセキュリティ"
+title: "状態データの保護"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- security [.NET Framework], state data
+- code security, state data
+- secure coding, state data
+- state data security
 ms.assetid: 12671309-2877-43fe-a3df-6863507e712d
-caps.latest.revision: 9
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "9"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: bd41f5174f426e723ea7e069eaee8f2d367625a1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 状態データの保護
-重要情報を処理するアプリケーション、または任意の種類のセキュリティ決定を行うアプリケーションは、扱うデータを自分自身の制御下に置き、他の悪意の可能性のあるコードが直接それらのデータにアクセスできないようにする必要があります。  データをメモリ内で保護する最も良い方法は、データをプライベート変数または内部変数 \(同じアセンブリ内だけにスコープを制限\) として宣言することです。  しかし、このデータがアクセスを受ける場合は、次の点を認識する必要があります。  
+# <a name="securing-state-data"></a><span data-ttu-id="c74ff-102">状態データの保護</span><span class="sxs-lookup"><span data-stu-id="c74ff-102">Securing State Data</span></span>
+<span data-ttu-id="c74ff-103">機密データの処理または任意の種類のセキュリティ決定を行うアプリケーションは、そのデータを自らの制御下に置き、潜在的に悪意がある他のコードがそのデータに直接アクセスできないようにします。</span><span class="sxs-lookup"><span data-stu-id="c74ff-103">Applications that handle sensitive data or make any kind of security decisions need to keep that data under their own control and cannot allow other potentially malicious code to access the data directly.</span></span> <span data-ttu-id="c74ff-104">メモリ内でデータを保護する最善の方法は、そのデータをプライベート変数または内部変数 (同じアセンブリにスコープが限定されている) として宣言することです。</span><span class="sxs-lookup"><span data-stu-id="c74ff-104">The best way to protect data in memory is to declare the data as private or internal (with scope limited to the same assembly) variables.</span></span> <span data-ttu-id="c74ff-105">ただし、このようなデータでさえも、次のように注意が必要なアクセスの対象となります。</span><span class="sxs-lookup"><span data-stu-id="c74ff-105">However, even this data is subject to access you should be aware of:</span></span>  
   
--   リフレクション機構を使用すると、オブジェクトを参照できる信頼度の高いコードはプライベート メンバーを取得および設定できます。  
+-   <span data-ttu-id="c74ff-106">リフレクション メカニズムを使用すると、オブジェクトを参照できる信頼性の高いコードはプライベート メンバーを取得および設定できます。</span><span class="sxs-lookup"><span data-stu-id="c74ff-106">Using reflection mechanisms, highly trusted code that can reference your object can get and set private members.</span></span>  
   
--   シリアル化を使用すると、信頼度の高いコードがオブジェクトに対応するシリアル化された形式のデータにアクセスできる場合は、そのコードは効率よくプライベート メンバーを取得および設定できます。  
+-   <span data-ttu-id="c74ff-107">シリアル化を使用すると、信頼性の高いコードがプライベート メンバーを効率よく取得および設定できます (シリアル化された形式のオブジェクトにおいて対応するデータにアクセスできる場合)。</span><span class="sxs-lookup"><span data-stu-id="c74ff-107">Using serialization, highly trusted code can effectively get and set private members if it can access the corresponding data in the serialized form of the object.</span></span>  
   
--   デバッグ時には、このデータを読み取られる可能性があります。  
+-   <span data-ttu-id="c74ff-108">デバッギング中にはこのデータを読み取ることができます。</span><span class="sxs-lookup"><span data-stu-id="c74ff-108">Under debugging, this data can be read.</span></span>  
   
- どのメソッドおよびプロパティも、意図しない方法でこれらのデータを公開しないようにしてください。  
+ <span data-ttu-id="c74ff-109">自分のメソッドやプロパティがこれらの値を意図せずに公開することのないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="c74ff-109">Make sure none of your own methods or properties exposes these values unintentionally.</span></span>  
   
- クラスとその派生クラスへのアクセスを制限することにより、データが保護された状態であると宣言する方法もあります。  しかし、公開の度合いが高まるため、次の対策を講じる必要があります。  
-  
--   クラスからの派生を許可するコードを制御します。この方法として、同じアセンブリだけに派生を制限するか、または「[メソッド アクセスの保護](../../../docs/framework/misc/securing-method-access.md)」に記述されている宣言セキュリティを使用し、コードをクラスから派生させるために ID またはアクセス許可を要求します。  
-  
--   派生したすべてのクラスが同じ保護機能を実装しているかどうか、またはシールされているかどうかを確認します。  
-  
-## 参照  
- [安全なコーディングのガイドライン](../../../docs/standard/security/secure-coding-guidelines.md)
+## <a name="see-also"></a><span data-ttu-id="c74ff-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="c74ff-110">See Also</span></span>  
+ [<span data-ttu-id="c74ff-111">安全なコーディングのガイドライン</span><span class="sxs-lookup"><span data-stu-id="c74ff-111">Secure Coding Guidelines</span></span>](../../../docs/standard/security/secure-coding-guidelines.md)

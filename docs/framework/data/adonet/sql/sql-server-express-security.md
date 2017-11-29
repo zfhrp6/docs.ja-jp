@@ -1,50 +1,53 @@
 ---
-title: "SQL Server Express のセキュリティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "SQL Server Express のセキュリティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: cf9cf6d9-4b05-43e9-ac7b-6cefbfcd6d4e
-caps.latest.revision: 6
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 2052656a524eafd7b9a137ac7d5006aba53fc075
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# SQL Server Express のセキュリティ
-Microsoft SQL Server Express Edition \(SQL Server Express\) は Microsoft SQL Server をベースとしており、同データベース エンジンの多くの機能をサポートしています。  必須ではない機能やネットワーク接続は、既定では無効にされています。  これは悪意のあるユーザーに攻撃の隙をできるだけ与えないようにするための配慮です。  
+# <a name="sql-server-express-security"></a><span data-ttu-id="b5694-102">SQL Server Express のセキュリティ</span><span class="sxs-lookup"><span data-stu-id="b5694-102">SQL Server Express Security</span></span>
+<span data-ttu-id="b5694-103">Microsoft SQL Server Express Edition (SQL Server Express) は Microsoft SQL Server をベースとしており、同データベース エンジンの多くの機能をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="b5694-103">Microsoft SQL Server Express Edition (SQL Server Express) is based on Microsoft SQL Server, and supports most of the features of the database engine.</span></span> <span data-ttu-id="b5694-104">必須ではない機能やネットワーク接続は、既定では無効にされています。</span><span class="sxs-lookup"><span data-stu-id="b5694-104">It is designed so that nonessential features and network connectivity are off by default.</span></span> <span data-ttu-id="b5694-105">これは悪意のあるユーザーに攻撃の隙をできるだけ与えないようにするための配慮です。</span><span class="sxs-lookup"><span data-stu-id="b5694-105">This reduces the surface area available for attack by a malicious user.</span></span>  
   
- 通常、SQL Server Express は名前付きインスタンスとしてインストールされます。  このインスタンスの既定の名前は `SQLExpress` です。  名前付きインスタンスは、コンピューターのネットワーク名と、インストール時に指定したインスタンス名によって識別されます。  
+ <span data-ttu-id="b5694-106">通常、SQL Server Express は名前付きインスタンスとしてインストールされます。</span><span class="sxs-lookup"><span data-stu-id="b5694-106">SQL Server Express is usually installed as a named instance.</span></span> <span data-ttu-id="b5694-107">このインスタンスの既定の名前は `SQLExpress` です。</span><span class="sxs-lookup"><span data-stu-id="b5694-107">The default name of the instance is `SQLExpress`.</span></span> <span data-ttu-id="b5694-108">名前付きインスタンスは、コンピューターのネットワーク名と、インストール時に指定したインスタンス名によって識別されます。</span><span class="sxs-lookup"><span data-stu-id="b5694-108">A named instance is identified by the network name of the computer plus the instance name that you specify during installation.</span></span>  
   
-## ネットワーク アクセス  
- セキュリティ上の理由により、SQL Server Express では、ネットワーク プロトコルが既定で無効になっています。  これにより、SQL Server Express のインスタンスをホストしているコンピューターを危険にさらすような、外部ユーザーからの攻撃を防ぐことができます。  SQL Server Express インスタンスに別のコンピューターから接続する場合は、ネットワーク接続を明示的に有効にし、SQL Server Browser サービスを開始する必要があります。  
+## <a name="network-access"></a><span data-ttu-id="b5694-109">ネットワーク アクセス</span><span class="sxs-lookup"><span data-stu-id="b5694-109">Network Access</span></span>  
+ <span data-ttu-id="b5694-110">セキュリティ上の理由により、SQL Server Express では、ネットワーク プロトコルが既定で無効になっています。</span><span class="sxs-lookup"><span data-stu-id="b5694-110">For security reasons, networking protocols are disabled by default in SQL Server Express.</span></span> <span data-ttu-id="b5694-111">これにより、SQL Server Express のインスタンスをホストしているコンピューターを危険にさらすような、外部ユーザーからの攻撃を防ぐことができます。</span><span class="sxs-lookup"><span data-stu-id="b5694-111">This prevents attacks from outside users that might compromise the computer that hosts the instance of SQL Server Express.</span></span> <span data-ttu-id="b5694-112">SQL Server Express インスタンスに別のコンピューターから接続する場合は、ネットワーク接続を明示的に有効にし、SQL Server Browser サービスを開始する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b5694-112">You must explicitly enable network connectivity and start the SQL Server Browser service to connect to a SQL Server Express instance from another computer.</span></span>  
   
- ネットワーク接続を有効にした場合、SQL Server Express のインスタンスにも、他のエディションの SQL Server と同じセキュリティ要件が適用されます。  
+ <span data-ttu-id="b5694-113">ネットワーク接続を有効にした場合、SQL Server Express のインスタンスにも、他のエディションの SQL Server と同じセキュリティ要件が適用されます。</span><span class="sxs-lookup"><span data-stu-id="b5694-113">Once network connectivity is enabled, a SQL Server Express instance has the same security requirements as the other editions of SQL Server.</span></span>  
   
-## ユーザー インスタンス  
- ユーザー インスタンスは、SQL Server Express の親インスタンスによって生成される SQL Server Express データベース エンジンの独立したインスタンスです。  ユーザー インスタンスの主要な目的は、Windows を最小限の権限しか持たないユーザー アカウントで実行しているユーザーが、そのローカル コンピューター上の SQL Server Express インスタンスについてはシステム管理者 \(`sysadmin`\) 権限を利用できるようにすることです。  ローカル コンピューターのシステム管理者を想定したものではありません。  
+## <a name="user-instances"></a><span data-ttu-id="b5694-114">ユーザー インスタンス</span><span class="sxs-lookup"><span data-stu-id="b5694-114">User Instances</span></span>  
+ <span data-ttu-id="b5694-115">ユーザー インスタンスは、SQL Server Express の親インスタンスによって生成される SQL Server Express データベース エンジンの独立したインスタンスです。</span><span class="sxs-lookup"><span data-stu-id="b5694-115">A user instance is a separate instance of the SQL Server Express database engine that is generated by a parent instance of SQL Server Express.</span></span> <span data-ttu-id="b5694-116">ユーザー インスタンスの主要な目的は、Windows を最小限の権限しか持たないユーザー アカウントで実行しているユーザーが、そのローカル コンピューター上の SQL Server Express インスタンスについてはシステム管理者 (`sysadmin`) 権限を利用できるようにすることです。</span><span class="sxs-lookup"><span data-stu-id="b5694-116">The primary goal of a user instance is to allow users who are running Windows under a least-privilege user account to have system administrator (`sysadmin`) privileges on the SQL Server Express instance on their local computer.</span></span> <span data-ttu-id="b5694-117">ローカル コンピューターのシステム管理者を想定したものではありません。</span><span class="sxs-lookup"><span data-stu-id="b5694-117">User instances are not intended for users who are system administrators on their own computers.</span></span>  
   
- ユーザー インスタンスは、SQL Server のプライマリ インスタンス \(SQL Server Express\) が、ユーザーに代わって生成するインスタンスです。  サービスとして実行されるのではなく、ユーザーの Windows セキュリティ コンテキスト下で、ユーザー プロセスとして実行されます。  サポートされているのは Windows ログインのみで、SQL Server ログインは禁止されています。  実行可能な操作はログインしたユーザーの権限に限定されるため、ユーザー インスタンスで実行されているソフトウェアによって、システム全体に及ぶ変更が行われることはありません。  ユーザー インスタンスは子インスタンスまたはクライアント インスタンス、あるいは、"Run As Normal User" の頭文字を取って RANU と呼ばれることもあります。  
+ <span data-ttu-id="b5694-118">ユーザー インスタンスは、SQL Server のプライマリ インスタンス (SQL Server Express) が、ユーザーに代わって生成するインスタンスです。</span><span class="sxs-lookup"><span data-stu-id="b5694-118">A user instance is generated from a primary instance of SQL Server or SQL Server Express on behalf of a user.</span></span> <span data-ttu-id="b5694-119">サービスとして実行されるのではなく、ユーザーの Windows セキュリティ コンテキスト下で、ユーザー プロセスとして実行されます。</span><span class="sxs-lookup"><span data-stu-id="b5694-119">It runs as a user process under the Windows security context of the user, not as a service.</span></span> <span data-ttu-id="b5694-120">サポートされているのは Windows ログインのみで、SQL Server ログインは禁止されています。</span><span class="sxs-lookup"><span data-stu-id="b5694-120">SQL Server logins are disallowed; only Windows logins are supported.</span></span> <span data-ttu-id="b5694-121">実行可能な操作はログインしたユーザーの権限に限定されるため、ユーザー インスタンスで実行されているソフトウェアによって、システム全体に及ぶ変更が行われることはありません。</span><span class="sxs-lookup"><span data-stu-id="b5694-121">This prevents software executing on a user instance from making system-wide changes that the user would not have permissions to make.</span></span> <span data-ttu-id="b5694-122">ユーザー インスタンスは子インスタンスまたはクライアント インスタンス、あるいは、"Run As Normal User" の頭文字を取って RANU と呼ばれることもあります。</span><span class="sxs-lookup"><span data-stu-id="b5694-122">A user instance is also known as a child or client instance, and is sometimes referred to by using the RANU acronym ("run as normal user").</span></span>  
   
- 各ユーザー インスタンスは、その親インスタンスや同じコンピューター上で実行されている他のユーザー インスタンスとは分離されます。  ユーザー インスタンス上にインストールされたデータベースは、シングル ユーザー モードでのみ開くことができ、複数のユーザーが接続することはできません。  ユーザー インスタンスでは、レプリケーション、分散クエリ、およびリモート接続が無効にされています。  ユーザー インスタンスに接続したユーザーには、親 SQL Server Express インスタンスに対する特別な権限は一切与えられません。  
+ <span data-ttu-id="b5694-123">各ユーザー インスタンスは、その親インスタンスや同じコンピューター上で実行されている他のユーザー インスタンスとは分離されます。</span><span class="sxs-lookup"><span data-stu-id="b5694-123">Each user instance is isolated from its parent instance and from other user instances running on the same computer.</span></span> <span data-ttu-id="b5694-124">ユーザー インスタンス上にインストールされたデータベースは、シングル ユーザー モードでのみ開くことができ、複数のユーザーが接続することはできません。</span><span class="sxs-lookup"><span data-stu-id="b5694-124">Databases installed on user instances are opened in single-user mode only; multiple users cannot connect to them.</span></span> <span data-ttu-id="b5694-125">ユーザー インスタンスでは、レプリケーション、分散クエリ、およびリモート接続が無効にされています。</span><span class="sxs-lookup"><span data-stu-id="b5694-125">Replication, distributed queries and remote connections are disabled for user instances.</span></span> <span data-ttu-id="b5694-126">ユーザー インスタンスに接続したユーザーには、親 SQL Server Express インスタンスに対する特別な権限は一切与えられません。</span><span class="sxs-lookup"><span data-stu-id="b5694-126">When connected to a user instance, users do not have any special privileges on the parent SQL Server Express instance.</span></span>  
   
-## 外部リソース  
- SQL Server Express の詳細については、次のリソースを参照してください。  
+## <a name="external-resources"></a><span data-ttu-id="b5694-127">外部リソース</span><span class="sxs-lookup"><span data-stu-id="b5694-127">External Resources</span></span>  
+ <span data-ttu-id="b5694-128">SQL Server Express の詳細については、次のリソースを参照してください。</span><span class="sxs-lookup"><span data-stu-id="b5694-128">For more information about SQL Server Express, see the following resources.</span></span>  
   
 |||  
 |-|-|  
-|[SQL Server オンライン ブック](http://msdn.microsoft.com/library/bb543165.aspx)|SQL Server Express のドキュメントが含まれます。|  
-|SQL Server オンライン ブックの「[SQL Server Express への接続](http://msdn.microsoft.com/library/ms165679.aspx)」|SQL Server Express Edition をネットワーク上で使用する方法について説明します。|  
-|[Microsoft SQL Server 2005 Express Edition Books Online](http://msdn.microsoft.com/library/ms165706.aspx)|SQL Server 2005 Express Edition の完全なドキュメントです。|  
-|SQL Server オンライン ブックの「[管理者以外のユーザーのためのユーザー インスタンス](http://msdn.microsoft.com/library/ms143684.aspx)」|ユーザー インスタンスの作成方法および配置方法について説明します。|  
-|[SQL Server Express ユーザー インスタンス](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)|ADO.NET アプリケーションにおけるユーザー インスタンスの機能について説明します。  ユーザー インスタンスを有効にする方法、<xref:System.Data.SqlClient.SqlConnection> を使ってユーザー インスタンスに接続する方法、ユーザー インスタンスの有効期間、ユーザー インスタンスのシナリオについて情報を提供します。|  
+|[<span data-ttu-id="b5694-129">SQL Server オンライン ブック</span><span class="sxs-lookup"><span data-stu-id="b5694-129">SQL Server Books Online</span></span>](http://msdn.microsoft.com/library/bb543165.aspx)|<span data-ttu-id="b5694-130">SQL Server Express のドキュメントが含まれます。</span><span class="sxs-lookup"><span data-stu-id="b5694-130">Contains documentation for SQL Server Express.</span></span>|  
+|<span data-ttu-id="b5694-131">[SQL Server Express への接続](http://msdn.microsoft.com/library/ms165679.aspx)SQL Server オンライン ブック</span><span class="sxs-lookup"><span data-stu-id="b5694-131">[Connecting to SQL Server Express](http://msdn.microsoft.com/library/ms165679.aspx) in SQL Server Books Online</span></span>|<span data-ttu-id="b5694-132">SQL Server Express Edition をネットワーク上で使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b5694-132">Describes how to use SQL Server Express Edition on a network.</span></span>|  
+|[<span data-ttu-id="b5694-133">Microsoft SQL Server 2005 Express Edition オンライン ブック</span><span class="sxs-lookup"><span data-stu-id="b5694-133">Microsoft SQL Server 2005 Express Edition Books Online</span></span>](http://msdn.microsoft.com/library/ms165706.aspx)|<span data-ttu-id="b5694-134">SQL Server 2005 Express Edition の完全なドキュメントです。</span><span class="sxs-lookup"><span data-stu-id="b5694-134">Complete documentation for SQL Server 2005 Express Edition.</span></span>|  
+|<span data-ttu-id="b5694-135">[管理者以外のユーザー インスタンス](http://msdn.microsoft.com/library/ms143684.aspx)SQL Server オンライン ブック</span><span class="sxs-lookup"><span data-stu-id="b5694-135">[User Instances for Non-Administrators](http://msdn.microsoft.com/library/ms143684.aspx) in SQL Server Books Online</span></span>|<span data-ttu-id="b5694-136">ユーザー インスタンスの作成方法および配置方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b5694-136">Describes how to create and deploy user instances.</span></span>|  
+|[<span data-ttu-id="b5694-137">SQL Server Express ユーザー インスタンス</span><span class="sxs-lookup"><span data-stu-id="b5694-137">SQL Server Express User Instances</span></span>](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)|<span data-ttu-id="b5694-138">ADO.NET アプリケーションにおけるユーザー インスタンスの機能について説明します。</span><span class="sxs-lookup"><span data-stu-id="b5694-138">Describes user instance capabilities in an ADO.NET application.</span></span> <span data-ttu-id="b5694-139">ユーザー インスタンスを有効にする方法、<xref:System.Data.SqlClient.SqlConnection> を使ってユーザー インスタンスに接続する方法、ユーザー インスタンスの有効期間、ユーザー インスタンスのシナリオについて情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="b5694-139">Provides information about how to enable a user instance, connect to a user instance using a <xref:System.Data.SqlClient.SqlConnection>, user instance lifetime, and user instance scenarios.</span></span>|  
   
-## 参照  
- [SQL Server のセキュリティ](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)   
- [SQL Server Express ユーザー インスタンス](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="b5694-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="b5694-140">See Also</span></span>  
+ [<span data-ttu-id="b5694-141">SQL Server のセキュリティ</span><span class="sxs-lookup"><span data-stu-id="b5694-141">SQL Server Security</span></span>](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
+ [<span data-ttu-id="b5694-142">SQL Server Express ユーザー インスタンス</span><span class="sxs-lookup"><span data-stu-id="b5694-142">SQL Server Express User Instances</span></span>](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)  
+ [<span data-ttu-id="b5694-143">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="b5694-143">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

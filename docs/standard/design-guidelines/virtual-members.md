@@ -1,53 +1,51 @@
 ---
-title: "仮想メンバー | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "オーバーライド可能なメンバー"
-  - "仮想メンバー"
-  - "仮想メンバー [.NET Framework]"
+title: "仮想メンバー"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- overridable members
+- virtual members
+- members [.NET Framework], virtual
 ms.assetid: 8ff4eb97-0364-43ec-8a02-934b5cd94d19
-caps.latest.revision: 9
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 56838fc4c1c1e7cb8723beee3f0e6b23515d43f0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 仮想メンバー
-このため、サブクラスの動作を変更する、仮想メンバーをオーバーライドできます。 それらはそれらのもたらす拡張性の観点からのコールバックとよく似ていますが、実行のパフォーマンスとメモリの消費に関して優れています。 また、仮想メンバーは、特別な既存の型 \(特殊化\) の種類を作成する必要のあるシナリオで複数な操作です。  
+# <a name="virtual-members"></a><span data-ttu-id="b9c27-102">仮想メンバー</span><span class="sxs-lookup"><span data-stu-id="b9c27-102">Virtual Members</span></span>
+<span data-ttu-id="b9c27-103">したがって、サブクラスの動作を変更する、仮想メンバーをオーバーライドできます。</span><span class="sxs-lookup"><span data-stu-id="b9c27-103">Virtual members can be overridden, thus changing the behavior of the subclass.</span></span> <span data-ttu-id="b9c27-104">それらは、拡張性の観点からのコールバックを非常に似ていますが、実行のパフォーマンスとメモリ消費量の観点から優れています。</span><span class="sxs-lookup"><span data-stu-id="b9c27-104">They are quite similar to callbacks in terms of the extensibility they provide, but they are better in terms of execution performance and memory consumption.</span></span> <span data-ttu-id="b9c27-105">また、仮想メンバーは、特殊な既存の型 (特殊化) の種類を作成する必要があるシナリオで複数な操作です。</span><span class="sxs-lookup"><span data-stu-id="b9c27-105">Also, virtual members feel more natural in scenarios that require creating a special kind of an existing type (specialization).</span></span>  
   
- 仮想メンバーは、コールバックとイベントよりパフォーマンスが向上は、非仮想メソッドをより実行はされません。  
+ <span data-ttu-id="b9c27-106">仮想メンバーはコールバックとイベントをよりパフォーマンスが向上しますが、非仮想メソッドをより実行しません。</span><span class="sxs-lookup"><span data-stu-id="b9c27-106">Virtual members perform better than callbacks and events, but do not perform better than non-virtual methods.</span></span>  
   
- 仮想メンバーの主な短所は、仮想メンバーの動作はコンパイル時にのみ変更できます。 コールバックの動作は、実行時に変更できます。  
+ <span data-ttu-id="b9c27-107">仮想メンバーの主な欠点は、仮想メンバーの動作はコンパイル時にのみ変更できます。</span><span class="sxs-lookup"><span data-stu-id="b9c27-107">The main disadvantage of virtual members is that the behavior of a virtual member can only be modified at the time of compilation.</span></span> <span data-ttu-id="b9c27-108">実行時に、コールバックの動作を変更できます。</span><span class="sxs-lookup"><span data-stu-id="b9c27-108">The behavior of a callback can be modified at runtime.</span></span>  
   
- コールバック \(とそれよりコールバックの他の情報\) などの仮想メンバーは、設計、テスト、および仮想メンバーへの呼び出しが予測できない方法でオーバーライドされることができ、任意のコードを実行できるためのメンテナンス コストがかかる。 またより多くの労力は通常、設計およびそれらを文書化のコストが高いために、仮想メンバーの契約を明確に定義する要求されます。  
+ <span data-ttu-id="b9c27-109">コールバック (やその他のコールバックより) と同様に、仮想メンバーは、設計、テスト、および仮想メンバーへの呼び出しが予測できない方法でオーバーライドされることができ、任意のコードを実行できるため維持にコストがかかる。</span><span class="sxs-lookup"><span data-stu-id="b9c27-109">Virtual members, like callbacks (and maybe more than callbacks), are costly to design, test, and maintain because any call to a virtual member can be overridden in unpredictable ways and can execute arbitrary code.</span></span> <span data-ttu-id="b9c27-110">またより多くの労力は通常、設計およびそれらを文書化のコストが高いため、仮想メンバーの契約を明確に定義する要求されます。</span><span class="sxs-lookup"><span data-stu-id="b9c27-110">Also, much more effort is usually required to clearly define the contract of virtual members, so the cost of designing and documenting them is higher.</span></span>  
   
- **X のしないで** メンバーをそのためには相応の理由があり、設計、テスト、および仮想メンバーの保守に関連するすべてのコストを認識している場合を除き、仮想化します。  
+ <span data-ttu-id="b9c27-111">**X しないで**これを行うには相応の理由があり、デザイン、テスト、および仮想メンバーを保守に関連するすべてのコストを認識している限り、メンバーを仮想にすることです。</span><span class="sxs-lookup"><span data-stu-id="b9c27-111">**X DO NOT** make members virtual unless you have a good reason to do so and you are aware of all the costs related to designing, testing, and maintaining virtual members.</span></span>  
   
- 仮想メンバーは、変更を行う際に互換性を損なうことがなくに関して厳格に構成します。 また、これらは非仮想メンバーよりも低速仮想メンバーへの呼び出しがインライン関数ではないためにほとんどの場合です。  
+ <span data-ttu-id="b9c27-112">仮想メンバーは、互換性の問題なしに作成できる変更の観点からありました。</span><span class="sxs-lookup"><span data-stu-id="b9c27-112">Virtual members are less forgiving in terms of changes that can be made to them without breaking compatibility.</span></span> <span data-ttu-id="b9c27-113">また、これらはよりも遅い非仮想メンバーは、仮想メンバーへの呼び出しはインライン関数ではないため、ほとんどの場合です。</span><span class="sxs-lookup"><span data-stu-id="b9c27-113">Also, they are slower than non-virtual members, mostly because calls to virtual members are not inlined.</span></span>  
   
- **✓ を検討してください** に何がどうしても必要なだけの機能拡張を制限することです。  
+ <span data-ttu-id="b9c27-114">**✓ を検討してください**に何がどうしても必要なだけの機能拡張を制限します。</span><span class="sxs-lookup"><span data-stu-id="b9c27-114">**✓ CONSIDER** limiting extensibility to only what is absolutely necessary.</span></span>  
   
- **✓ は** 仮想メンバーのアクセシビリティは public で保護されたアクセシビリティを使用します。 パブリック メンバーが利用拡張 \(必要な場合\) プロテクト仮想メンバーを呼び出すことによってできます。  
+ <span data-ttu-id="b9c27-115">**✓ しないで**仮想メンバーのアクセシビリティは public で保護されたアクセシビリティを優先します。</span><span class="sxs-lookup"><span data-stu-id="b9c27-115">**✓ DO** prefer protected accessibility over public accessibility for virtual members.</span></span> <span data-ttu-id="b9c27-116">パブリック メンバーは拡張機能を提供 (必要な場合) プロテクト仮想メンバーを呼び出すことによってです。</span><span class="sxs-lookup"><span data-stu-id="b9c27-116">Public members should provide extensibility (if required) by calling into a protected virtual member.</span></span>  
   
- クラスのパブリック メンバーは、そのクラスの直接のコンシューマー向けの機能の適切なセットを提供する必要があります。 仮想メンバーが、サブクラスで無効にするように設計し、保護されたアクセシビリティがスコープを使用する場所へのすべての仮想機能拡張ポイントを有効にします。  
+ <span data-ttu-id="b9c27-117">クラスのパブリック メンバーは、そのクラスの直接のコンシューマーを適切な機能のセットを提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b9c27-117">The public members of a class should provide the right set of functionality for direct consumers of that class.</span></span> <span data-ttu-id="b9c27-118">仮想メンバーは、サブクラスでオーバーライドされるように設計されていて、保護されたアクセシビリティがスコープを使用する場所のすべての仮想機能拡張ポイントを有効にします。</span><span class="sxs-lookup"><span data-stu-id="b9c27-118">Virtual members are designed to be overridden in subclasses, and protected accessibility is a great way to scope all virtual extensibility points to where they can be used.</span></span>  
   
- *部分 © 2005年、2009 Microsoft Corporation します。 All rights reserved.*  
+ <span data-ttu-id="b9c27-119">*部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*</span><span class="sxs-lookup"><span data-stu-id="b9c27-119">*Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*</span></span>  
   
- *翔泳社からのアクセス許可によって検出 [Framework デザイン ガイドライン: 規則が、表現方法と再利用可能な .NET ライブラリを 2 nd Edition パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) は Cwalina Brad エイブラムスによる、Microsoft Windows の開発シリーズの一部として Addison\-wesley Professional、2008 年 10 月 22 日を公開します。*  
+ <span data-ttu-id="b9c27-120">*ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*</span><span class="sxs-lookup"><span data-stu-id="b9c27-120">*Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*</span></span>  
   
-## 参照  
- [Framework デザイン ガイドライン](../../../docs/standard/design-guidelines/index.md)   
- [機能拡張のデザイン](../../../docs/standard/design-guidelines/designing-for-extensibility.md)
+## <a name="see-also"></a><span data-ttu-id="b9c27-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="b9c27-121">See Also</span></span>  
+ [<span data-ttu-id="b9c27-122">フレームワーク デザインのガイドライン</span><span class="sxs-lookup"><span data-stu-id="b9c27-122">Framework Design Guidelines</span></span>](../../../docs/standard/design-guidelines/index.md)  
+ [<span data-ttu-id="b9c27-123">機能拡張のための設計</span><span class="sxs-lookup"><span data-stu-id="b9c27-123">Designing for Extensibility</span></span>](../../../docs/standard/design-guidelines/designing-for-extensibility.md)

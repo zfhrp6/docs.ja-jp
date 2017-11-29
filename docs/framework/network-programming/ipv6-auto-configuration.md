@@ -7,39 +7,32 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: 581c1d21-1013-43a3-bf3e-2d9ead62b79c
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c46d4b8f6b9e3620c313e9737b556a6050da0126
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 0332bca146041aa955ea000cfeee78d3f5287036
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="ipv6-auto-configuration"></a>IPv6 の自動構成
-IPv6 用の 1 つの重要な目標は、ノードのプラグ アンド プレイをサポートすることです。 つまり、IPv6 ネットワークにノードを接続して、それを人間の操作なしに自動的に構成できる必要があります。  
+# <a name="ipv6-auto-configuration"></a><span data-ttu-id="8ce9e-102">IPv6 の自動構成</span><span class="sxs-lookup"><span data-stu-id="8ce9e-102">IPv6 Auto-Configuration</span></span>
+<span data-ttu-id="8ce9e-103">IPv6 用の 1 つの重要な目標は、ノードのプラグ アンド プレイをサポートすることです。</span><span class="sxs-lookup"><span data-stu-id="8ce9e-103">One important goal for IPv6 is to support node Plug and Play.</span></span> <span data-ttu-id="8ce9e-104">つまり、IPv6 ネットワークにノードを接続して、それを人間の操作なしに自動的に構成できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="8ce9e-104">That is, it should be possible to plug a node into an IPv6 network and have it automatically configured without any human intervention.</span></span>  
   
-## <a name="type-of-auto-configuration"></a>自動構成の種類  
- IPv6 は、次の種類の自動構成をサポートします。  
+## <a name="type-of-auto-configuration"></a><span data-ttu-id="8ce9e-105">自動構成の種類</span><span class="sxs-lookup"><span data-stu-id="8ce9e-105">Type of Auto-Configuration</span></span>  
+ <span data-ttu-id="8ce9e-106">IPv6 は、次の種類の自動構成をサポートします。</span><span class="sxs-lookup"><span data-stu-id="8ce9e-106">IPv6 supports the following types of auto-configuration:</span></span>  
   
--   **ステートフルな自動構成** この種類の構成では、ノードのインストールと管理のために IPv6 用動的ホスト構成プロトコル (DHCPv6) サーバーが必要なので、特定のレベルの人間の操作が必要です。 DHCPv6 サーバーは、構成情報を提供するノードのリストを保持します。 また、状態情報も保持するのでサーバーは、各アドレスがどのくらいの時間使用されているか、および再割り当てできるようになるタイミングを知ることができます。  
+-   <span data-ttu-id="8ce9e-107">**ステートフルな自動構成**</span><span class="sxs-lookup"><span data-stu-id="8ce9e-107">**Stateful auto-configuration**.</span></span> <span data-ttu-id="8ce9e-108">この種類の構成では、ノードのインストールと管理のために IPv6 用動的ホスト構成プロトコル (DHCPv6) サーバーが必要なので、特定のレベルの人間の操作が必要です。</span><span class="sxs-lookup"><span data-stu-id="8ce9e-108">This type of configuration requires a certain level of human intervention because it needs a Dynamic Host Configuration Protocol for IPv6 (DHCPv6) server for the installation and administration of the nodes.</span></span> <span data-ttu-id="8ce9e-109">DHCPv6 サーバーは、構成情報を提供するノードのリストを保持します。</span><span class="sxs-lookup"><span data-stu-id="8ce9e-109">The DHCPv6 server keeps a list of nodes to which it supplies configuration information.</span></span> <span data-ttu-id="8ce9e-110">また、状態情報も保持するのでサーバーは、各アドレスがどのくらいの時間使用されているか、および再割り当てできるようになるタイミングを知ることができます。</span><span class="sxs-lookup"><span data-stu-id="8ce9e-110">It also maintains state information so the server knows how long each address is in use, and when it might be available for reassignment.</span></span>  
   
--   **ステートレスな自動構成** この種類の構成は、小規模な組織や個人に適しています。 この場合、各ホストは、受信したルーター アドバタイズの内容からそのアドレスを決定します。 IEEE EUI-64 標準を使用して、アドレスのネットワーク ID 部分を定義しますが、リンク上のホストアドレスの一意性を前提とすることは合理的です。  
+-   <span data-ttu-id="8ce9e-111">**ステートレスな自動構成**</span><span class="sxs-lookup"><span data-stu-id="8ce9e-111">**Stateless auto-configuration**.</span></span> <span data-ttu-id="8ce9e-112">この種類の構成は、小規模な組織や個人に適しています。</span><span class="sxs-lookup"><span data-stu-id="8ce9e-112">This type of configuration is suitable for small organizations and individuals.</span></span> <span data-ttu-id="8ce9e-113">この場合、各ホストは、受信したルーター アドバタイズの内容からそのアドレスを決定します。</span><span class="sxs-lookup"><span data-stu-id="8ce9e-113">In this case, each host determines its addresses from the contents of received router advertisements.</span></span> <span data-ttu-id="8ce9e-114">IEEE EUI-64 標準を使用して、アドレスのネットワーク ID 部分を定義しますが、リンク上のホストアドレスの一意性を前提とすることは合理的です。</span><span class="sxs-lookup"><span data-stu-id="8ce9e-114">Using the IEEE EUI-64 standard to define the network ID portion of the address, it is reasonable to assume the uniqueness of the host address on the link.</span></span>  
   
- アドレスの決定方法に関係なく、ノードは、潜在的なアドレスがローカル リンクに対して一意であることを確認する必要があります。 これは、潜在的なアドレスに近隣要請を送信することによって行われます。 ノードが応答を受信する場合は、アドレスが既に使用されていて別のアドレスを決定する必要があることがわかります。  
+ <span data-ttu-id="8ce9e-115">アドレスの決定方法に関係なく、ノードは、潜在的なアドレスがローカル リンクに対して一意であることを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8ce9e-115">Regardless of how the address is determined, the node must verify that its potential address is unique to the local link.</span></span> <span data-ttu-id="8ce9e-116">これは、潜在的なアドレスに近隣要請を送信することによって行われます。</span><span class="sxs-lookup"><span data-stu-id="8ce9e-116">This is done by sending a neighbor solicitation message to the potential address.</span></span> <span data-ttu-id="8ce9e-117">ノードが応答を受信する場合は、アドレスが既に使用されていて別のアドレスを決定する必要があることがわかります。</span><span class="sxs-lookup"><span data-stu-id="8ce9e-117">If the node receives any response, it knows that the address is already in use and must determine another address.</span></span>  
   
-## <a name="ipv6-mobility"></a>IPv6 モビリティ  
- モバイル デバイスの急増によって、新しい要件が導入されました。デバイスが IPv6 インターネット上の場所を任意に変更しても既存の接続を維持できるようにする必要があります。 この機能を提供するために、モバイル ノードに常に到達できるホーム アドレスが割り当てられます。 モバイル ノードが自宅にあるときは、ホーム リンクに接続し、ホーム アドレスを使用します。 モバイル ノードが自宅から離れた場所にあるときは、ホーム エージェント (通常はルーター) が、モバイル ノードと通信相手のノードの間でメッセージを中継します。  
+## <a name="ipv6-mobility"></a><span data-ttu-id="8ce9e-118">IPv6 モビリティ</span><span class="sxs-lookup"><span data-stu-id="8ce9e-118">IPv6 Mobility</span></span>  
+ <span data-ttu-id="8ce9e-119">モバイル デバイスの急増によって、新しい要件が導入されました。デバイスが IPv6 インターネット上の場所を任意に変更しても既存の接続を維持できるようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="8ce9e-119">The proliferation of mobile devices has introduced a new requirement: A device must be able to arbitrarily change locations on the IPv6 Internet and still maintain existing connections.</span></span> <span data-ttu-id="8ce9e-120">この機能を提供するために、モバイル ノードに常に到達できるホーム アドレスが割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="8ce9e-120">To provide this functionality, a mobile node is assigned a home address at which it can always be reached.</span></span> <span data-ttu-id="8ce9e-121">モバイル ノードが自宅にあるときは、ホーム リンクに接続し、ホーム アドレスを使用します。</span><span class="sxs-lookup"><span data-stu-id="8ce9e-121">When the mobile node is at home, it connects to the home link and uses its home address.</span></span> <span data-ttu-id="8ce9e-122">モバイル ノードが自宅から離れた場所にあるときは、ホーム エージェント (通常はルーター) が、モバイル ノードと通信相手のノードの間でメッセージを中継します。</span><span class="sxs-lookup"><span data-stu-id="8ce9e-122">When the mobile node is away from home, a home agent, which is usually a router, relays messages between the mobile node and nodes with which it is communicating.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [インターネット プロトコル バージョン 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)   
- [ソケット](../../../docs/framework/network-programming/sockets.md)
-
+## <a name="see-also"></a><span data-ttu-id="8ce9e-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="8ce9e-123">See Also</span></span>  
+ [<span data-ttu-id="8ce9e-124">インターネット プロトコル バージョン 6</span><span class="sxs-lookup"><span data-stu-id="8ce9e-124">Internet Protocol Version 6</span></span>](../../../docs/framework/network-programming/internet-protocol-version-6.md)  
+ [<span data-ttu-id="8ce9e-125">ソケット</span><span class="sxs-lookup"><span data-stu-id="8ce9e-125">Sockets</span></span>](../../../docs/framework/network-programming/sockets.md)

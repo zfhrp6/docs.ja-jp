@@ -1,50 +1,53 @@
 ---
-title: "基本的なリソース サービス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "基本的なリソース サービス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4360063e-cc8c-4648-846e-c05a5af51a7a
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d8ba436cba284201f14635162ed394abfa9a14db
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 基本的なリソース サービス
-このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] REST プログラミング モデルを使用して HTTP ベースのサービスを実装する方法を示します。このモデルでは、取得、追加、削除、および置換の各操作をサポートする顧客のコレクションが公開されます。このサンプルは、自己ホスト型 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] HTTP サービス \(Service.cs\) と、サービスの作成およびサービスへの呼び出しを行うコンソール アプリケーション \(program.cs\) の 2 つのコンポーネントで構成されています。  
+# <a name="basic-resource-service"></a><span data-ttu-id="4e5f6-102">基本的なリソース サービス</span><span class="sxs-lookup"><span data-stu-id="4e5f6-102">Basic Resource Service</span></span>
+<span data-ttu-id="4e5f6-103">このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] REST プログラミング モデルを使用して HTTP ベースのサービスを実装する方法を示します。このモデルでは、取得、追加、削除、および置換の各操作をサポートする顧客のコレクションが公開されます。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-103">This sample demonstrates how to implement a HTTP-based service using the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] REST Programming model that exposes a collection of customers that supports the retrieve, add, delete and replace operations.</span></span> <span data-ttu-id="4e5f6-104">このサンプルは、自己ホスト型 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] HTTP サービス (Service.cs) と、サービスの作成およびサービスへの呼び出しを行うコンソール アプリケーション (program.cs) の 2 つのコンポーネントで構成されています。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-104">This sample consists of 2 components - a self-hosted [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] HTTP service (Service.cs) and a console application (program.cs) that creates the service and makes calls to it.</span></span>  
   
-## サンプルの詳細  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスでは、リソース指向の REST 方式で顧客のコレクションが公開されます。つまり、顧客のコレクションには一意の URI があり、コレクションにはすべての顧客が含まれます。このサービスは、コレクション全体を取得するための、コレクションの URI への HTTP `GET` の送信と、新しい顧客をコレクションに追加するための、コレクションの URI への HTTP `POST` の送信をサポートしています。また、個々の顧客の URI では、顧客の詳細を取得する HTTP `GET`、顧客の詳細を置換する HTTP `PUT`、コレクションから顧客を削除する HTTP `DELETE` をサポートしています。新しい顧客がコレクションに追加されると、サービスはその顧客に一意の URI を割り当て、顧客の詳細の一部として URI を格納します。また、応答の Location HTTP ヘッダーを使用して、クライアントの URI と通信します。  
+## <a name="sample-details"></a><span data-ttu-id="4e5f6-105">サンプルの詳細</span><span class="sxs-lookup"><span data-stu-id="4e5f6-105">Sample Details</span></span>  
+ <span data-ttu-id="4e5f6-106">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスでは、リソース指向の REST 方式で顧客のコレクションが公開されます。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-106">The [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service exposes a collection of customers in a resource-oriented/REST manner.</span></span> <span data-ttu-id="4e5f6-107">つまり、顧客のコレクションには一意の URI があり、コレクションにはすべての顧客が含まれます。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-107">In short, this involves having unique URIs for the collection of customers and every customer in the collection.</span></span> <span data-ttu-id="4e5f6-108">このサービスは、コレクション全体を取得するための、コレクションの URI への HTTP `GET` の送信と、新しい顧客をコレクションに追加するための、コレクションの URI への HTTP `POST` の送信をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-108">The service supports sending an HTTP `GET` at the collection URI to retrieve the entire collection and HTTP `POST` at the collection URI to add a new customer to the collection.</span></span> <span data-ttu-id="4e5f6-109">また、個々の顧客の URI では、顧客の詳細を取得する HTTP `GET`、顧客の詳細を置換する HTTP `PUT`、コレクションから顧客を削除する HTTP `DELETE` をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-109">Also at the URI for an individual customer, it supports HTTP `GET` to get the customer details, HTTP `PUT` to replace the details of the customer and HTTP `DELETE` to remove the customer from the collection.</span></span> <span data-ttu-id="4e5f6-110">新しい顧客がコレクションに追加されると、サービスはその顧客に一意の URI を割り当て、顧客の詳細の一部として URI を格納します。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-110">When a new customer is added to the collection, the service assigns it a unique URI and stores the URI as part of the customer’s details.</span></span> <span data-ttu-id="4e5f6-111">また、応答の Location HTTP ヘッダーを使用して、クライアントの URI と通信します。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-111">Also, it communicates the URI to the client using the Location HTTP header of the response.</span></span>  
   
- App.config ファイルでは、`true` に設定されている <xref:System.ServiceModel.Description.WebHttpEndpoint.HelpEnabled%2A> プロパティを持つ既定の <xref:System.ServiceModel.Description.WebHttpEndpoint> を使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを構成します。その結果、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって、自動的な HTML ベースのヘルプ ページが `http://localhost:8000/Customers/help` に作成されます。このページでは、サービスに対する HTTP 要求の作成方法とサービスの HTTP 応答へのアクセス方法に関する情報 \(顧客の詳細を XML と JSON で表す方法の例など\) が提供されます。  
+ <span data-ttu-id="4e5f6-112">App.config ファイルでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に設定されている <xref:System.ServiceModel.Description.WebHttpEndpoint> プロパティを持つ既定の <xref:System.ServiceModel.Description.WebHttpEndpoint.HelpEnabled%2A> を使用して、`true` サービスを構成します。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-112">The App.config file configures the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service with a default <xref:System.ServiceModel.Description.WebHttpEndpoint> that has the <xref:System.ServiceModel.Description.WebHttpEndpoint.HelpEnabled%2A> property set to `true`.</span></span> <span data-ttu-id="4e5f6-113">その結果、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって、自動的な HTML ベースのヘルプ ページが `http://localhost:8000/Customers/help` に作成されます。このページでは、サービスに対する HTTP 要求の作成方法とサービスの HTTP 応答へのアクセス方法に関する情報 (顧客の詳細を XML と JSON で表す方法の例など) が提供されます。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-113">As a result, the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] creates an automatic HTML-based help page at `http://localhost:8000/Customers/help` that provides information about how to construct HTTP requests to the service and how to access the service’s HTTP response – for instance, an example of how the customer details is represented in XML and JSON.</span></span>  
   
- 顧客のコレクション \(一般的には、任意のリソース\) をこの方法で公開すると、クライアントは、URI と HTTP の `GET`、`PUT`、`DELETE`、および `POST` を使用して一貫した方法でサービスと対話することができます。Program.cs では、<xref:System.Net.HttpWebRequest> を使用してこのようなクライアントを作成する方法を示します。これは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST サービスにアクセスする 1 つの方法にすぎません。<xref:System.ServiceModel.ChannelFactory> や <xref:System.Net.WebClient> などの他の .NET Framework クラスを使用して、サービスにアクセスすることも可能です。SDK 内の他のサンプル \(「[基本的な HTTP サービス](../../../../docs/framework/wcf/samples/basic-http-service.md)」のサンプルや「[形式の自動選択](../../../../docs/framework/wcf/samples/automatic-format-selection.md)」のサンプルなど\) では、これらのクラスを使用して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと通信する方法を示します。  
+ <span data-ttu-id="4e5f6-114">顧客のコレクション (一般的には、任意のリソース) をこの方法で公開すると、クライアントは、URI と HTTP の `GET`、`PUT`、`DELETE`、および `POST` を使用して一貫した方法でサービスと対話することができます。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-114">Exposing the customer collection (and more generally, any resource) in this manner allows the client to interact with it in a uniform way using URIs and HTTP `GET`, `PUT`, `DELETE` and `POST`.</span></span> <span data-ttu-id="4e5f6-115">Program.cs では、<xref:System.Net.HttpWebRequest> を使用してこのようなクライアントを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-115">Program.cs demonstrates how such a client can be authored using <xref:System.Net.HttpWebRequest>.</span></span> <span data-ttu-id="4e5f6-116">これは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST サービスにアクセスする 1 つの方法にすぎません。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-116">Note that this is just one way to access a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST service.</span></span> <span data-ttu-id="4e5f6-117"><xref:System.ServiceModel.ChannelFactory> や <xref:System.Net.WebClient> などの他の .NET Framework クラスを使用して、サービスにアクセスすることも可能です。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-117">It is also possible to access the service using other .NET Framework classes like the <xref:System.ServiceModel.ChannelFactory> and <xref:System.Net.WebClient>.</span></span> <span data-ttu-id="4e5f6-118">SDK 内の他のサンプル (など、[基本 HTTP サービス](../../../../docs/framework/wcf/samples/basic-http-service.md)サンプルおよび[自動形式選択](../../../../docs/framework/wcf/samples/automatic-format-selection.md)サンプル) との通信にこれらのクラスを使用する方法を示して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービス。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-118">Other samples in the SDK (such as the [Basic HTTP Service](../../../../docs/framework/wcf/samples/basic-http-service.md) sample and the [Automatic Format Selection](../../../../docs/framework/wcf/samples/automatic-format-selection.md) sample) show how to use these classes to communicate with a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service.</span></span>  
   
- このサンプルは、コンソール アプリケーション内で実行される自己ホスト型サービスとクライアントで構成されています。コンソール アプリケーションが実行されると、クライアントはサービスに要求を発行し、応答からの適切な情報をコンソール ウィンドウに書き込みます。  
+ <span data-ttu-id="4e5f6-119">このサンプルは、コンソール アプリケーション内で実行される自己ホスト型サービスとクライアントで構成されています。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-119">The sample consists a self-hosted service and a client that both run within a console application.</span></span> <span data-ttu-id="4e5f6-120">コンソール アプリケーションが実行されると、クライアントはサービスに要求を発行し、応答からの適切な情報をコンソール ウィンドウに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-120">As the console application runs, the client makes requests to the service and writes the pertinent information from the responses to the console window.</span></span>  
   
-#### このサンプルを使用するには  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="4e5f6-121">このサンプルを使用するには</span><span class="sxs-lookup"><span data-stu-id="4e5f6-121">To use this sample</span></span>  
   
-1.  基本的なリソース サービス サンプルのソリューションを開きます。サンプルを正しく実行するには、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を起動するときに、管理者として実行する必要があります。管理者として実行するには、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] アイコンを右クリックし、コンテキスト メニューの **\[管理者として実行\]** をクリックします。  
+1.  <span data-ttu-id="4e5f6-122">基本的なリソース サービス サンプルのソリューションを開きます。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-122">Open the solution for the Basic Resource Service Sample.</span></span> <span data-ttu-id="4e5f6-123">サンプルを正しく実行するには、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を起動するときに、管理者として実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-123">When launching [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], you must run as an administrator for the sample to execute successfully.</span></span> <span data-ttu-id="4e5f6-124">これには、右クリックし、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]アイコンを選択して**管理者として実行**コンテキスト メニューからです。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-124">Do this by right-clicking the [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] icon and selecting **Run as Administrator** from the context menu.</span></span>  
   
-2.  Ctrl キーと Shift キーを押しながら B キーを押してソリューションをビルドし、Ctrl キーを押しながら F5 キーを押してコンソール アプリケーションを実行します。コンソール ウィンドウが表示されて、実行中のサービスの URI および実行中のサービスの HTML ヘルプ ページの URI が示されます。ブラウザーでヘルプ ページの URI を入力することで、いつでも HTML ヘルプ ページを表示することができます。サンプルが実行されると、クライアントは現在のアクティビティのステータスを書き込みます。  
+2.  <span data-ttu-id="4e5f6-125">Ctrl キーと Shift キーを押しながら B キーを押してソリューションをビルドし、Ctrl キーを押しながら F5 キーを押してコンソール アプリケーションを実行します。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-125">Press CTRL+SHIFT+B to build the solution and then press Ctrl+F5 to run the console application.</span></span> <span data-ttu-id="4e5f6-126">コンソール ウィンドウが表示されて、実行中のサービスの URI および実行中のサービスの HTML ヘルプ ページの URI が示されます。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-126">The console window appears and provides the URI of the running service and the URI of the HTML help page for the running service.</span></span> <span data-ttu-id="4e5f6-127">ブラウザーでヘルプ ページの URI を入力することで、いつでも HTML ヘルプ ページを表示することができます。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-127">At any point in time you can view the HTML help page by typing the URI of the help page in a browser.</span></span> <span data-ttu-id="4e5f6-128">サンプルが実行されると、クライアントは現在のアクティビティのステータスを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-128">As the sample runs, the client writes the status of the current activity.</span></span>  
   
-3.  任意のキーを押して、サンプルを終了します。  
+3.  <span data-ttu-id="4e5f6-129">任意のキーを押して、サンプルを終了します。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-129">Press any key to terminate the sample.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="4e5f6-130">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-130">The samples may already be installed on your machine.</span></span> <span data-ttu-id="4e5f6-131">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-131">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="4e5f6-132">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-132">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="4e5f6-133">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="4e5f6-133">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\BasicResourceService`  
   
-## 参照  
- [基本的な HTTP サービス](../../../../docs/framework/wcf/samples/basic-http-service.md)   
- [形式の自動選択](../../../../docs/framework/wcf/samples/automatic-format-selection.md)
+## <a name="see-also"></a><span data-ttu-id="4e5f6-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="4e5f6-134">See Also</span></span>  
+ [<span data-ttu-id="4e5f6-135">基本 HTTP サービス</span><span class="sxs-lookup"><span data-stu-id="4e5f6-135">Basic HTTP Service</span></span>](../../../../docs/framework/wcf/samples/basic-http-service.md)  
+ [<span data-ttu-id="4e5f6-136">形式の自動選択</span><span class="sxs-lookup"><span data-stu-id="4e5f6-136">Automatic Format Selection</span></span>](../../../../docs/framework/wcf/samples/automatic-format-selection.md)

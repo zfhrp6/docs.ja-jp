@@ -5,47 +5,40 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - images [.NET Framework], debugging
 - executable image for debugging
 - debugging [.NET Framework], executable images for
 ms.assetid: 7d90ea7a-150f-4f97-98a7-f9c26541b9a3
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e844cde5f33c1accb8addf953b5a72415f4dc301
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 46a9c11f3545e5d2b9f91572a87ee2614810e4d0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="making-an-image-easier-to-debug"></a>イメージのデバッグの簡略化
-アンマネージ コードをコンパイルするときは、IDE スイッチまたはコマンド ライン オプションを使用して、デバッグ用の実行可能イメージを構成できます。 たとえば、Visual C++ で /**Zi** コマンド ライン オプションを使用すると、デバッグ シンボル ファイル (拡張子 .pdb) が生成されます。 同様に、/**Od** コマンド ライン オプションを使用すると、コンパイラは最適化処理を無効にします。 出力されるコードの処理速度は低下しますが、デバッグは簡単になるため、デバッグ時にはこれらのオプションを指定することをお勧めします。  
+# <a name="making-an-image-easier-to-debug"></a><span data-ttu-id="26078-102">イメージのデバッグの簡略化</span><span class="sxs-lookup"><span data-stu-id="26078-102">Making an Image Easier to Debug</span></span>
+<span data-ttu-id="26078-103">アンマネージ コードをコンパイルするときは、IDE スイッチまたはコマンド ライン オプションを使用して、デバッグ用の実行可能イメージを構成できます。</span><span class="sxs-lookup"><span data-stu-id="26078-103">When compiling unmanaged code, you can configure an executable image for debugging by setting IDE switches or command-line options.</span></span> <span data-ttu-id="26078-104">たとえば、Visual C++ で /**Zi** コマンド ライン オプションを使用すると、デバッグ シンボル ファイル (拡張子 .pdb) が生成されます。</span><span class="sxs-lookup"><span data-stu-id="26078-104">For example, you can use the /**Zi** command-line option in Visual C++ to ask it to emit debug symbol files (file extension .pdb).</span></span> <span data-ttu-id="26078-105">同様に、/**Od** コマンド ライン オプションを使用すると、コンパイラは最適化処理を無効にします。</span><span class="sxs-lookup"><span data-stu-id="26078-105">Similarly, the /**Od** command-line option tells the compiler to disable optimization.</span></span> <span data-ttu-id="26078-106">出力されるコードの処理速度は低下しますが、デバッグは簡単になるため、デバッグ時にはこれらのオプションを指定することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="26078-106">The resulting code runs more slowly, but is easier to debug, should this be necessary.</span></span>  
   
- .NET Framework マネージ コードをコンパイルするとき、Visual C++、Visual Basic、C# などのコンパイラは、そのソース プログラムをコンパイルして Microsoft Intermediate Language (MSIL) を生成します。 MSIL は、実行される直前にコンパイルされて、ネイティブなマシン語コードになります。 アンマネージ コードでは、IDE スイッチまたはコマンド ライン オプションを設定することにより、デバッグ用の実行可能イメージを構成できます。 さらに、ほとんど同じ方法で、デバッグ用の JIT コンパイルを構成することもできます。  
+ <span data-ttu-id="26078-107">.NET Framework マネージ コードをコンパイルするとき、Visual C++、Visual Basic、C# などのコンパイラは、そのソース プログラムをコンパイルして Microsoft Intermediate Language (MSIL) を生成します。</span><span class="sxs-lookup"><span data-stu-id="26078-107">When compiling .NET Framework managed code, compilers such as Visual C++, Visual Basic, and C# compile their source program into Microsoft Intermediate Language (MSIL).</span></span> <span data-ttu-id="26078-108">MSIL は、実行される直前にコンパイルされて、ネイティブなマシン語コードになります。</span><span class="sxs-lookup"><span data-stu-id="26078-108">MSIL is subsequently JIT-compiled, just before execution, into native machine code.</span></span> <span data-ttu-id="26078-109">アンマネージ コードでは、IDE スイッチまたはコマンド ライン オプションを設定することにより、デバッグ用の実行可能イメージを構成できます。</span><span class="sxs-lookup"><span data-stu-id="26078-109">As with unmanaged code, you can configure an executable image for debugging by setting IDE switches or command-line options.</span></span> <span data-ttu-id="26078-110">さらに、ほとんど同じ方法で、デバッグ用の JIT コンパイルを構成することもできます。</span><span class="sxs-lookup"><span data-stu-id="26078-110">In addition, you can configure the JIT compilation for debugging in much the same way.</span></span>  
   
- このような目的で JIT を構成する場合、次の 2 つの要素が関係してきます。  
+ <span data-ttu-id="26078-111">このような目的で JIT を構成する場合、次の 2 つの要素が関係してきます。</span><span class="sxs-lookup"><span data-stu-id="26078-111">This JIT configuration has two aspects:</span></span>  
   
--   開発者は、JIT コンパイラに対し、追跡情報を生成するように要求できます。 追跡情報を生成すると、デバッガーは、MSIL のチェインをマシン語コードの対応部分に対応させたり、ローカル変数と関数の引数が格納される位置を追跡したりできるようになります。  .NET Framework Version 2.0 では、JIT コンパイラは常に追跡情報を生成します。そのため、要求する必要がありません。  
+-   <span data-ttu-id="26078-112">開発者は、JIT コンパイラに対し、追跡情報を生成するように要求できます。</span><span class="sxs-lookup"><span data-stu-id="26078-112">You can request the JIT-compiler to generate tracking information.</span></span> <span data-ttu-id="26078-113">追跡情報を生成すると、デバッガーは、MSIL のチェインをマシン語コードの対応部分に対応させたり、ローカル変数と関数の引数が格納される位置を追跡したりできるようになります。</span><span class="sxs-lookup"><span data-stu-id="26078-113">This makes it possible for the debugger to match up a chain of MSIL with its machine code counterpart, and to track where local variables and function arguments are stored.</span></span>  <span data-ttu-id="26078-114">.NET Framework Version 2.0 では、JIT コンパイラは常に追跡情報を生成します。そのため、要求する必要がありません。</span><span class="sxs-lookup"><span data-stu-id="26078-114">In the .NET Framework version 2.0, the JIT compiler will always generate tracking information, so there is no need to request it.</span></span>  
   
--   開発者は、JIT コンパイラに対し、出力するマシン語コードを最適化しないように要求できます。  
+-   <span data-ttu-id="26078-115">開発者は、JIT コンパイラに対し、出力するマシン語コードを最適化しないように要求できます。</span><span class="sxs-lookup"><span data-stu-id="26078-115">You can request the JIT-compiler to not optimize the resulting machine code.</span></span>  
   
- 通常、MSIL を生成するコンパイラは、指定された IDE スイッチまたはコマンド ライン オプション (/**Od** など) に基づいて、これらの JIT コンパイラ オプションを適切に設定します。  
+ <span data-ttu-id="26078-116">通常、MSIL を生成するコンパイラは、指定された IDE スイッチまたはコマンド ライン オプション (/**Od** など) に基づいて、これらの JIT コンパイラ オプションを適切に設定します。</span><span class="sxs-lookup"><span data-stu-id="26078-116">Normally, the compiler that generates the MSIL sets these JIT-compiler options appropriately, based upon the IDE switches or command-line options you specify, for example, /**Od**.</span></span>  
   
- 場合によっては、JIT コンパイラが生成するマシン語コードをデバッグしやすくするために、JIT コンパイラの動作の変更が必要となることがあります。 たとえば、製品版またはコントロールを最適化するために JIT 追跡情報の生成が必要となる場合などです。 このような場合は、初期化 (.ini) ファイルを使用します。  
+ <span data-ttu-id="26078-117">場合によっては、JIT コンパイラが生成するマシン語コードをデバッグしやすくするために、JIT コンパイラの動作の変更が必要となることがあります。</span><span class="sxs-lookup"><span data-stu-id="26078-117">In some cases, you might want to change the behavior of the JIT compiler so that the machine code it generates is easier to debug.</span></span> <span data-ttu-id="26078-118">たとえば、製品版またはコントロールを最適化するために JIT 追跡情報の生成が必要となる場合などです。</span><span class="sxs-lookup"><span data-stu-id="26078-118">For example, you might want to generate JIT tracking information for a retail build or control optimization.</span></span> <span data-ttu-id="26078-119">このような場合は、初期化 (.ini) ファイルを使用します。</span><span class="sxs-lookup"><span data-stu-id="26078-119">You can do so with an initialization (.ini) file.</span></span>  
   
- たとえば、MyApp.exe というアセンブリをデバッグする場合は、MyApp.exe と同じフォルダー内に MyApp.ini というテキスト ファイルを作成します。MyApp.ini ファイルには、次の 3 行を記述します。  
+ <span data-ttu-id="26078-120">たとえば、MyApp.exe というアセンブリをデバッグする場合は、MyApp.exe と同じフォルダー内に MyApp.ini というテキスト ファイルを作成します。MyApp.ini ファイルには、次の 3 行を記述します。</span><span class="sxs-lookup"><span data-stu-id="26078-120">For example, if the assembly you want to debug is called MyApp.exe, then you can create a text file named MyApp.ini, in the same folder as MyApp.exe, which contains these three lines:</span></span>  
   
 ```  
 [.NET Framework Debugging Control]  
@@ -53,25 +46,24 @@ GenerateTrackingInfo=1
 AllowOptimize=0  
 ```  
   
- 各オプションの値として、0 または 1 を設定できます。記述しなかったオプションの値は、既定値の 0 に設定されます。 `GenerateTrackingInfo` を 1 に設定し、`AllowOptimize` を 0 に設定すると、デバッグが最も簡単になります。  
+ <span data-ttu-id="26078-121">各オプションの値として、0 または 1 を設定できます。記述しなかったオプションの値は、既定値の 0 に設定されます。</span><span class="sxs-lookup"><span data-stu-id="26078-121">You can set the value of each option to 0 or 1, and any absent option defaults to 0.</span></span> <span data-ttu-id="26078-122">`GenerateTrackingInfo` を 1 に設定し、`AllowOptimize` を 0 に設定すると、デバッグが最も簡単になります。</span><span class="sxs-lookup"><span data-stu-id="26078-122">Setting `GenerateTrackingInfo` to 1 and `AllowOptimize` to 0 provides the easiest debugging.</span></span>  
   
 > [!NOTE]
->  .NET Framework Version 2.0 では、JIT コンパイラが `GenerateTrackingInfo` の値に関係なく常に追跡情報を生成しますが、`AllowOptimize` の値は引き続き効力を持ちます。 [Ngen.exe (Native Image Generator)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) を使用して最適化を行わずにネイティブ イメージをプリコンパイルする場合は、`AllowOptimize=0` が記述された .ini ファイルが、Ngen.exe 実行時にターゲット フォルダー内に存在している必要があります。 最適化を行わずにアセンブリをプリコンパイルした場合は、プリコンパイルされたコードを NGen.exe の **/uninstall** オプションを使用して削除したうえで、Ngen.exe を再度実行してコードを最適化してプリコンパイルする必要があります。 .ini ファイルがフォルダーにない場合は、Ngen.exe が既定でコードを最適化してプリコンパイルします。  
+>  <span data-ttu-id="26078-123">.NET Framework Version 2.0 では、JIT コンパイラが `GenerateTrackingInfo` の値に関係なく常に追跡情報を生成しますが、`AllowOptimize` の値は引き続き効力を持ちます。</span><span class="sxs-lookup"><span data-stu-id="26078-123">In the .NET Framework version 2.0, the JIT compiler always generates tracking information regardless of the value for `GenerateTrackingInfo`; however, the `AllowOptimize` value still has an effect.</span></span> <span data-ttu-id="26078-124">[Ngen.exe (Native Image Generator)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) を使用して最適化を行わずにネイティブ イメージをプリコンパイルする場合は、`AllowOptimize=0` が記述された .ini ファイルが、Ngen.exe 実行時にターゲット フォルダー内に存在している必要があります。</span><span class="sxs-lookup"><span data-stu-id="26078-124">When using the [Ngen.exe (Native Image Generator)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) to precompile the native image without optimization, the .ini file must be present in the target folder with `AllowOptimize=0` when Ngen.exe executes.</span></span> <span data-ttu-id="26078-125">最適化を行わずにアセンブリをプリコンパイルした場合は、プリコンパイルされたコードを NGen.exe の **/uninstall** オプションを使用して削除したうえで、Ngen.exe を再度実行してコードを最適化してプリコンパイルする必要があります。</span><span class="sxs-lookup"><span data-stu-id="26078-125">If you have precompiled an assembly without optimization, you must remove the precompiled code using the NGen.exe **/uninstall** option before rerunning Ngen.exe to precompile the code as optimized.</span></span> <span data-ttu-id="26078-126">.ini ファイルがフォルダーにない場合は、Ngen.exe が既定でコードを最適化してプリコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="26078-126">If the .ini file is not present in the folder, by default Ngen.exe precompiles the code as optimized.</span></span>  
   
 > [!NOTE]
->  アセンブリの設定は、<xref:System.Diagnostics.DebuggableAttribute?displayProperty=fullName> によって制御されます。 **DebuggableAttribute** には、2 つのフィールドがあり、それぞれは、JIT コンパイラが最適化処理を実行するかどうか、および追跡情報を生成するかどうかを設定します。 .NET Framework Version 2.0 では、JIT コンパイラは常に追跡情報を生成します。  
+>  <span data-ttu-id="26078-127">アセンブリの設定は、<xref:System.Diagnostics.DebuggableAttribute?displayProperty=nameWithType> によって制御されます。</span><span class="sxs-lookup"><span data-stu-id="26078-127">The <xref:System.Diagnostics.DebuggableAttribute?displayProperty=nameWithType> controls the settings for an assembly.</span></span> <span data-ttu-id="26078-128">**DebuggableAttribute** には、2 つのフィールドがあり、それぞれは、JIT コンパイラが最適化処理を実行するかどうか、および追跡情報を生成するかどうかを設定します。</span><span class="sxs-lookup"><span data-stu-id="26078-128">**DebuggableAttribute** includes two fields that record the settings for whether the JIT compiler should optimize, and/or generate tracking information.</span></span> <span data-ttu-id="26078-129">.NET Framework Version 2.0 では、JIT コンパイラは常に追跡情報を生成します。</span><span class="sxs-lookup"><span data-stu-id="26078-129">In the .NET Framework version 2.0, the JIT compiler will always generate tracking information.</span></span>  
   
 > [!NOTE]
->  製品版をビルドする場合、コンパイラは **DebuggableAttribute** のどちらのフィールドも設定しません。 JIT コンパイラの既定の動作では、最大のパフォーマンスを達成する、デバッグが最も困難なマシン語コードを生成します。 JIT 追跡を有効にすると、パフォーマンスが多少低下します。最適化処理を無効にすると、パフォーマンスは大幅に低下します。  
+>  <span data-ttu-id="26078-130">製品版をビルドする場合、コンパイラは **DebuggableAttribute** のどちらのフィールドも設定しません。</span><span class="sxs-lookup"><span data-stu-id="26078-130">For a retail build, compilers do not set any **DebuggableAttribute**.</span></span> <span data-ttu-id="26078-131">JIT コンパイラの既定の動作では、最大のパフォーマンスを達成する、デバッグが最も困難なマシン語コードを生成します。</span><span class="sxs-lookup"><span data-stu-id="26078-131">The JIT-compiler default behavior is to generate the highest performance, hardest to debug machine code.</span></span> <span data-ttu-id="26078-132">JIT 追跡を有効にすると、パフォーマンスが多少低下します。最適化処理を無効にすると、パフォーマンスは大幅に低下します。</span><span class="sxs-lookup"><span data-stu-id="26078-132">Enabling JIT tracking lowers performance a little, and disabling optimization lowers performance a lot.</span></span>  
   
 > [!NOTE]
->  **DebuggableAttribute** は、アセンブリに含まれる個々のモジュールではなく、アセンブリ全体に適用されます。 そのため開発ツールでは、アセンブリが既に作成されている場合は、カスタム属性をアセンブリのメタデータ トークン、または **System.Runtime.CompilerServices.AssemblyAttributesGoHere** というクラスに追加できる必要があります。 次に、ALink ツールによって、これらの **DebuggableAttribute** 属性は、各モジュールからこれらのモジュールが構成の一部となるアセンブリへと昇格されます。 競合が発生すると、ALink の操作は失敗します。  
+>  <span data-ttu-id="26078-133">**DebuggableAttribute** は、アセンブリに含まれる個々のモジュールではなく、アセンブリ全体に適用されます。</span><span class="sxs-lookup"><span data-stu-id="26078-133">The **DebuggableAttribute** applies to a whole assembly at a time, not to individual modules within the assembly.</span></span> <span data-ttu-id="26078-134">そのため開発ツールでは、アセンブリが既に作成されている場合は、カスタム属性をアセンブリのメタデータ トークン、または **System.Runtime.CompilerServices.AssemblyAttributesGoHere** というクラスに追加できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="26078-134">Development tools must therefore attach custom attributes to the assembly metadata token, if an assembly has already been created, or to the class called **System.Runtime.CompilerServices.AssemblyAttributesGoHere**.</span></span> <span data-ttu-id="26078-135">次に、ALink ツールによって、これらの **DebuggableAttribute** 属性は、各モジュールからこれらのモジュールが構成の一部となるアセンブリへと昇格されます。</span><span class="sxs-lookup"><span data-stu-id="26078-135">The ALink tool will then promote these **DebuggableAttribute** attributes from each module to the assembly they become a part of.</span></span> <span data-ttu-id="26078-136">競合が発生すると、ALink の操作は失敗します。</span><span class="sxs-lookup"><span data-stu-id="26078-136">If there is a conflict, the ALink operation will fail.</span></span>  
   
 > [!NOTE]
->  .NET Framework Version 1.0 では、**/clr** および **/Zi** コンパイラ オプションを指定すると、Microsoft Visual C++ コンパイラによって **DebuggableAttribute** が追加されます。 .NET Framework Version 1.1 では、**DebuggableAttribute** をコードに手動で追加するか、**/ASSEMBLYDEBUG** リンカー オプションを使用する必要があります。  
+>  <span data-ttu-id="26078-137">.NET Framework Version 1.0 では、**/clr** および **/Zi** コンパイラ オプションを指定すると、Microsoft Visual C++ コンパイラによって **DebuggableAttribute** が追加されます。</span><span class="sxs-lookup"><span data-stu-id="26078-137">In version 1.0 of the .NET Framework, the Microsoft Visual C++ compiler adds the **DebuggableAttribute** when the **/clr** and **/Zi** compiler options are specified.</span></span> <span data-ttu-id="26078-138">.NET Framework Version 1.1 では、**DebuggableAttribute** をコードに手動で追加するか、**/ASSEMBLYDEBUG** リンカー オプションを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="26078-138">In version 1.1 of the .NET Framework, you must either add the **DebugabbleAttribute** manually in your code or use the **/ASSEMBLYDEBUG** linker option.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [デバッグ、トレース、およびプロファイリング](../../../docs/framework/debug-trace-profile/index.md)   
- [JIT アタッチ デバッグの有効化](../../../docs/framework/debug-trace-profile/enabling-jit-attach-debugging.md)   
- [プロファイルの有効化](http://msdn.microsoft.com/en-us/3b669676-f0e0-4ebf-8674-68986dd2020d)
-
+## <a name="see-also"></a><span data-ttu-id="26078-139">関連項目</span><span class="sxs-lookup"><span data-stu-id="26078-139">See Also</span></span>  
+ [<span data-ttu-id="26078-140">デバッグ、トレース、およびプロファイリング</span><span class="sxs-lookup"><span data-stu-id="26078-140">Debugging, Tracing, and Profiling</span></span>](../../../docs/framework/debug-trace-profile/index.md)  
+ [<span data-ttu-id="26078-141">JIT アタッチ デバッグの有効化</span><span class="sxs-lookup"><span data-stu-id="26078-141">Enabling JIT-Attach Debugging</span></span>](../../../docs/framework/debug-trace-profile/enabling-jit-attach-debugging.md)  
+ [<span data-ttu-id="26078-142">プロファイルの有効化</span><span class="sxs-lookup"><span data-stu-id="26078-142">Enabling Profiling</span></span>](http://msdn.microsoft.com/en-us/3b669676-f0e0-4ebf-8674-68986dd2020d)

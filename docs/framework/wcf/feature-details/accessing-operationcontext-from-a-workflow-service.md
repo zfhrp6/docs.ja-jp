@@ -1,39 +1,42 @@
 ---
-title: "ワークフロー サービスから OperationContext へのアクセス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ワークフロー サービスから OperationContext へのアクセス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b1dafe55-a20e-4db0-9ac8-90c315883cdd
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 11a6a1efad59ba5b9f3a143277909b63a5fe5e05
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ワークフロー サービスから OperationContext へのアクセス
-ワークフロー サービス内の <xref:System.ServiceModel.OperationContext> にアクセスするには、カスタム実行プロパティに <xref:System.ServiceModel.Activities.IReceiveMessageCallback> インターフェイスを実装する必要があります。これには、<xref:System.ServiceModel.OperationContext> への参照が渡される <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage%2A> System.Activities.ExecutionProperties)?qualifyHint=False&autoUpgrade=True メソッドをオーバーライドします。このトピックでは、カスタム ヘッダーを取得するためにこの実行プロパティを実装する方法に加え、実行時にこのプロパティを <xref:System.ServiceModel.Activities.Receive> に提示するカスタム アクティビティの実装方法を順に説明します。このカスタム アクティビティが行う動作は、<xref:System.ServiceModel.Activities.Sequence> アクティビティと同じですが、<xref:System.ServiceModel.Activities.Receive> がその内部に配置されるのに対し、<xref:System.ServiceModel.Activities.IReceiveMessageCallback> は呼び出されて <xref:System.ServiceModel.OperationContext> 情報を取得します。このトピックでは、クライアント側 <xref:System.ServiceModel.OperationContext> にアクセスして、<xref:System.ServiceModel.Activities.ISendMessageCallback> インターフェイス経由で送信ヘッダーを追加する方法も説明します。  
+# <a name="accessing-operationcontext-from-a-workflow-service"></a><span data-ttu-id="fb69f-102">ワークフロー サービスから OperationContext へのアクセス</span><span class="sxs-lookup"><span data-stu-id="fb69f-102">Accessing OperationContext from a Workflow Service</span></span>
+<span data-ttu-id="fb69f-103">ワークフロー サービス内の <xref:System.ServiceModel.OperationContext> にアクセスするには、カスタム実行プロパティに <xref:System.ServiceModel.Activities.IReceiveMessageCallback> インターフェイスを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fb69f-103">To access the <xref:System.ServiceModel.OperationContext> inside a workflow service, you must implement the <xref:System.ServiceModel.Activities.IReceiveMessageCallback> interface in a custom execution property.</span></span> <span data-ttu-id="fb69f-104">上書き、 <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage%2A> System.Activities.ExecutionProperties)?qualifyHint=False & autoUpgrade = True メソッドへの参照が渡される、<xref:System.ServiceModel.OperationContext>です。</span><span class="sxs-lookup"><span data-stu-id="fb69f-104">Override the <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage%2A> System.Activities.ExecutionProperties)?qualifyHint=False&autoUpgrade=True method which is passed a reference to the <xref:System.ServiceModel.OperationContext>.</span></span> <span data-ttu-id="fb69f-105">このトピックでは、カスタム ヘッダーを取得するためにこの実行プロパティを実装する方法に加え、実行時にこのプロパティを <xref:System.ServiceModel.Activities.Receive> に提示するカスタム アクティビティの実装方法を順に説明します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-105">This topic will walk you through implementing this execution property to retrieve a custom header, as well as a custom activity that will surface this property to the <xref:System.ServiceModel.Activities.Receive> at runtime.</span></span>  <span data-ttu-id="fb69f-106">カスタム アクティビティと同じ動作を実装、 <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence`アクティビティとその、 <xref:System.ServiceModel.Activities.Receive> 、内部に配置されますが、<xref:System.ServiceModel.Activities.IReceiveMessageCallback>が呼び出されますと<xref:System.ServiceModel.OperationContext>情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-106">The custom activity will implement the same behavior as a <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` activity, except that when a <xref:System.ServiceModel.Activities.Receive> is placed inside of it, the <xref:System.ServiceModel.Activities.IReceiveMessageCallback> will be called and the <xref:System.ServiceModel.OperationContext> information will be retrieved.</span></span>  <span data-ttu-id="fb69f-107">このトピックでは、クライアント側 <xref:System.ServiceModel.OperationContext> にアクセスして、<xref:System.ServiceModel.Activities.ISendMessageCallback> インターフェイス経由で送信ヘッダーを追加する方法も説明します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-107">This topic also shows how to access the client-side <xref:System.ServiceModel.OperationContext> to add outgoing headers via the <xref:System.ServiceModel.Activities.ISendMessageCallback> interface.</span></span>  
   
-### サービス側の IReceiveMessageCallback の実装  
+### <a name="implement-the-service-side-ireceivemessagecallback"></a><span data-ttu-id="fb69f-108">サービス側の IReceiveMessageCallback の実装</span><span class="sxs-lookup"><span data-stu-id="fb69f-108">Implement the Service-side IReceiveMessageCallback</span></span>  
   
-1.  空の [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] ソリューションを作成します。  
+1.  <span data-ttu-id="fb69f-109">空の [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] ソリューションを作成します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-109">Create an empty [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] solution.</span></span>  
   
-2.  `Service` という新しいコンソール アプリケーションをソリューションに追加します。  
+2.  <span data-ttu-id="fb69f-110">`Service` という新しいコンソール アプリケーションをソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-110">Add a new console application called `Service` to the solution.</span></span>  
   
-3.  次のアセンブリへの参照を追加します。  
+3.  <span data-ttu-id="fb69f-111">次のアセンブリへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-111">Add references to the following assemblies:</span></span>  
   
-    1.  System.Runtime.Serialization  
+    1.  <span data-ttu-id="fb69f-112">System.Runtime.Serialization</span><span class="sxs-lookup"><span data-stu-id="fb69f-112">System.Runtime.Serialization</span></span>  
   
-    2.  System.ServiceModel  
+    2.  <span data-ttu-id="fb69f-113">System.ServiceModel</span><span class="sxs-lookup"><span data-stu-id="fb69f-113">System.ServiceModel</span></span>  
   
-    3.  System.ServiceModel.Activities  
+    3.  <span data-ttu-id="fb69f-114">System.ServiceModel.Activities</span><span class="sxs-lookup"><span data-stu-id="fb69f-114">System.ServiceModel.Activities</span></span>  
   
-4.  次の例に示すように、`ReceiveInstanceIdCallback` という新しいクラスを追加し、<xref:System.ServiceModel.Activities.IReceiveMessageCallback> を実装します。  
+4.  <span data-ttu-id="fb69f-115">次の例に示すように、`ReceiveInstanceIdCallback` という新しいクラスを追加し、<xref:System.ServiceModel.Activities.IReceiveMessageCallback> を実装します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-115">Add a new class called `ReceiveInstanceIdCallback` and implement <xref:System.ServiceModel.Activities.IReceiveMessageCallback> as shown in the following example.</span></span>  
   
     ```csharp  
     class ReceiveInstanceIdCallback : IReceiveMessageCallback  
@@ -54,16 +57,15 @@ caps.handback.revision: 9
                 }  
             }  
     }  
-  
     ```  
   
-     このコードでは、メソッドに渡される <xref:System.ServiceModel.OperationContext> を使用して、着信メッセージのヘッダーにアクセスします。  
+     <span data-ttu-id="fb69f-116">このコードでは、メソッドに渡される <xref:System.ServiceModel.OperationContext> を使用して、着信メッセージのヘッダーにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="fb69f-116">This code uses the <xref:System.ServiceModel.OperationContext> passed into the method to access the incoming message’s headers.</span></span>  
   
-### IReceiveMessageCallback 実装を NativeActivityContext に追加するためのサービス側のネイティブ アクティビティの実装  
+### <a name="implement-a-service-side-native-activity-to-add-the-ireceivemessagecallback-implementation-to-the-nativeactivitycontext"></a><span data-ttu-id="fb69f-117">IReceiveMessageCallback 実装を NativeActivityContext に追加するためのサービス側のネイティブ アクティビティの実装</span><span class="sxs-lookup"><span data-stu-id="fb69f-117">Implement a Service-side Native activity to add the IReceiveMessageCallback implementation to the NativeActivityContext</span></span>  
   
-1.  <xref:System.Activities.NativeActivity> から派生した `ReceiveInstanceIdScope` という新しいクラスを追加します。  
+1.  <span data-ttu-id="fb69f-118"><xref:System.Activities.NativeActivity> から派生した `ReceiveInstanceIdScope` という新しいクラスを追加します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-118">Add a new class derived from <xref:System.Activities.NativeActivity> called `ReceiveInstanceIdScope`.</span></span>  
   
-2.  子アクティビティ、変数、現在のアクティビティ インデックス、および <xref:System.Activities.CompletionCallback> コールバックを追跡するためのローカル変数を追加します。  
+2.  <span data-ttu-id="fb69f-119">子アクティビティ、変数、現在のアクティビティ インデックス、および <xref:System.Activities.CompletionCallback> コールバックを追跡するためのローカル変数を追加します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-119">Add local variables to keep track of child activities, variables, current activity index, and a <xref:System.Activities.CompletionCallback> callback.</span></span>  
   
     ```  
     public sealed class ReceiveInstanceIdScope : NativeActivity  
@@ -73,10 +75,9 @@ caps.handback.revision: 9
             Variable<int> currentIndex;  
             CompletionCallback onChildComplete;  
     }  
-  
     ```  
   
-3.  コンストラクターを実装します。  
+3.  <span data-ttu-id="fb69f-120">コンストラクターを実装します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-120">Implement the constructor</span></span>  
   
     ```  
     public ReceiveInstanceIdScope()  
@@ -87,10 +88,9 @@ caps.handback.revision: 9
                 this.currentIndex = new Variable<int>();  
             }  
     }  
-  
     ```  
   
-4.  `Activities` プロパティと `Variables` プロパティを実装します。  
+4.  <span data-ttu-id="fb69f-121">`Activities` プロパティと `Variables` プロパティを実装します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-121">Implement the `Activities` and `Variables` properties.</span></span>  
   
     ```  
     public Collection<Activity> Activities  
@@ -102,10 +102,9 @@ caps.handback.revision: 9
     {  
         get { return this.variables; }  
     }  
-  
     ```  
   
-5.  <xref:System.Activities.NativeActivity.CacheMetadata%2A> をオーバーライドします。  
+5.  <span data-ttu-id="fb69f-122"><xref:System.Activities.NativeActivity.CacheMetadata%2A> をオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="fb69f-122">Override <xref:System.Activities.NativeActivity.CacheMetadata%2A></span></span>  
   
     ```  
     protected override void CacheMetadata(NativeActivityMetadata metadata)  
@@ -115,10 +114,9 @@ caps.handback.revision: 9
         //add the private implementation variable: currentIndex   
         metadata.AddImplementationVariable(this.currentIndex);  
     }  
-  
     ```  
   
-6.  <xref:System.Activities.NativeActivity.Execute%2A> をオーバーライドします。  
+6.  <span data-ttu-id="fb69f-123"><xref:System.Activities.NativeActivity.Execute%2A> をオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="fb69f-123">Override <xref:System.Activities.NativeActivity.Execute%2A></span></span>  
   
     ```  
     protected override void Execute(  
@@ -152,14 +150,13 @@ caps.handback.revision: 9
                 //increment the currentIndex  
                 this.currentIndex.Set(context, ++currentActivityIndex);  
             }  
-  
     ```  
   
-### ワークフロー サービスの実装  
+### <a name="implement-the-workflow-service"></a><span data-ttu-id="fb69f-124">ワークフロー サービスの実装</span><span class="sxs-lookup"><span data-stu-id="fb69f-124">Implement the workflow service</span></span>  
   
-1.  既存の `Program` クラスを開きます。  
+1.  <span data-ttu-id="fb69f-125">既存を開く`Program`クラスです。</span><span class="sxs-lookup"><span data-stu-id="fb69f-125">Open the existing `Program` class.</span></span>  
   
-2.  次の定数を定義します。  
+2.  <span data-ttu-id="fb69f-126">次の定数を定義します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-126">Define the following constants:</span></span>  
   
     ```  
     class Program  
@@ -167,10 +164,9 @@ caps.handback.revision: 9
        const string addr = "http://localhost:8080/Service";  
        static XName contract = XName.Get("IService", "http://tempuri.org");  
     }  
-  
     ```  
   
-3.  ワークフロー サービスを作成する `GetWorkflowService` という静的メソッドを追加します。  
+3.  <span data-ttu-id="fb69f-127">ワークフロー サービスを作成する `GetWorkflowService` という静的メソッドを追加します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-127">Add a static method called `GetWorkflowService` that creates the workflow service.</span></span>  
   
     ```  
     static Activity GetServiceWorkflow()  
@@ -206,10 +202,9 @@ caps.handback.revision: 9
                     }  
                 };  
             }  
-  
     ```  
   
-4.  既存の `Main` メソッドで、ワークフロー サービスをホストします。  
+4.  <span data-ttu-id="fb69f-128">既存の `Main` メソッドで、ワークフロー サービスをホストします。</span><span class="sxs-lookup"><span data-stu-id="fb69f-128">In the existing `Main` method, host the workflow service.</span></span>  
   
     ```  
     static void Main(string[] args)  
@@ -227,22 +222,21 @@ caps.handback.revision: 9
                     host.Close();  
                 }  
             }  
-  
     ```  
   
-### クライアント側の ISendMessageCallback の実装  
+### <a name="implement-the-client-side-isendmessagecallback"></a><span data-ttu-id="fb69f-129">クライアント側の ISendMessageCallback の実装</span><span class="sxs-lookup"><span data-stu-id="fb69f-129">Implement the Client-side ISendMessageCallback</span></span>  
   
-1.  `Service` という新しいコンソール アプリケーションをソリューションに追加します。  
+1.  <span data-ttu-id="fb69f-130">`Service` という新しいコンソール アプリケーションをソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-130">Add a new console application called `Service` to the solution.</span></span>  
   
-2.  次のアセンブリへの参照を追加します。  
+2.  <span data-ttu-id="fb69f-131">次のアセンブリへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-131">Add references to the following assemblies:</span></span>  
   
-    1.  System.Runtime.Serialization  
+    1.  <span data-ttu-id="fb69f-132">System.Runtime.Serialization</span><span class="sxs-lookup"><span data-stu-id="fb69f-132">System.Runtime.Serialization</span></span>  
   
-    2.  System.ServiceModel  
+    2.  <span data-ttu-id="fb69f-133">System.ServiceModel</span><span class="sxs-lookup"><span data-stu-id="fb69f-133">System.ServiceModel</span></span>  
   
-    3.  System.ServiceModel.Activities  
+    3.  <span data-ttu-id="fb69f-134">System.ServiceModel.Activities</span><span class="sxs-lookup"><span data-stu-id="fb69f-134">System.ServiceModel.Activities</span></span>  
   
-3.  次の例に示すように、`SendInstanceIdCallback` という新しいクラスを追加し、<xref:System.ServiceModel.Activities.ISendMessageCallback> を実装します。  
+3.  <span data-ttu-id="fb69f-135">次の例に示すように、`SendInstanceIdCallback` という新しいクラスを追加し、<xref:System.ServiceModel.Activities.ISendMessageCallback> を実装します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-135">Add a new class called `SendInstanceIdCallback` and implement <xref:System.ServiceModel.Activities.ISendMessageCallback> as shown in the following example.</span></span>  
   
     ```csharp  
     class SendInstanceIdCallback : ISendMessageCallback  
@@ -257,16 +251,15 @@ caps.handback.revision: 9
                 operationContext.OutgoingMessageHeaders.Add(MessageHeader.CreateHeader(HeaderName, HeaderNS, this.InstanceId));  
             }  
         }  
-  
     ```  
   
-     このコードでは、メソッドに渡される <xref:System.ServiceModel.OperationContext> を使用して、着信メッセージにカスタム ヘッダーを追加します。  
+     <span data-ttu-id="fb69f-136">このコードでは、メソッドに渡される <xref:System.ServiceModel.OperationContext> を使用して、着信メッセージにカスタム ヘッダーを追加します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-136">This code uses the <xref:System.ServiceModel.OperationContext> passed into the method to add a custom header to the incoming message.</span></span>  
   
-### クライアント側の ISendMessageCallback 実装を NativeActivityContext に追加するためのクライアント側のネイティブ アクティビティの実装  
+### <a name="implement-a-client-side-native-activity-to-add-the-client-side-isendmessagecallback-implementation-to-the-nativeactivitycontext"></a><span data-ttu-id="fb69f-137">クライアント側の ISendMessageCallback 実装を NativeActivityContext に追加するためのクライアント側のネイティブ アクティビティの実装</span><span class="sxs-lookup"><span data-stu-id="fb69f-137">Implement a Client-side Native activity to add the client-side ISendMessageCallback implementation to the NativeActivityContext</span></span>  
   
-1.  <xref:System.Activities.NativeActivity> から派生した `SendInstanceIdScope` という新しいクラスを追加します。  
+1.  <span data-ttu-id="fb69f-138"><xref:System.Activities.NativeActivity> から派生した `SendInstanceIdScope` という新しいクラスを追加します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-138">Add a new class derived from <xref:System.Activities.NativeActivity> called `SendInstanceIdScope`.</span></span>  
   
-2.  子アクティビティ、変数、現在のアクティビティ インデックス、および <xref:System.Activities.CompletionCallback> コールバックを追跡するためのローカル変数を追加します。  
+2.  <span data-ttu-id="fb69f-139">子アクティビティ、変数、現在のアクティビティ インデックス、および <xref:System.Activities.CompletionCallback> コールバックを追跡するためのローカル変数を追加します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-139">Add local variables to keep track of child activities, variables, current activity index, and a <xref:System.Activities.CompletionCallback> callback.</span></span>  
   
     ```  
     public sealed class SendInstanceIdScope : NativeActivity  
@@ -276,10 +269,9 @@ caps.handback.revision: 9
             Variable<int> currentIndex;  
             CompletionCallback onChildComplete;  
     }  
-  
     ```  
   
-3.  コンストラクターを実装します。  
+3.  <span data-ttu-id="fb69f-140">コンストラクターを実装します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-140">Implement the constructor</span></span>  
   
     ```  
     public SendInstanceIdScope()  
@@ -289,10 +281,9 @@ caps.handback.revision: 9
                 this.variables = new Collection<Variable>();  
                 this.currentIndex = new Variable<int>();  
             }  
-  
     ```  
   
-4.  `Activities` プロパティと `Variables` プロパティを実装します。  
+4.  <span data-ttu-id="fb69f-141">`Activities` プロパティと `Variables` プロパティを実装します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-141">Implement the `Activities` and `Variables` properties.</span></span>  
   
     ```  
     public Collection<Activity> Activities  
@@ -304,10 +295,9 @@ caps.handback.revision: 9
     {  
         get { return this.variables; }  
     }  
-  
     ```  
   
-5.  <xref:System.Activities.NativeActivity.CacheMetadata%2A> をオーバーライドします。  
+5.  <span data-ttu-id="fb69f-142"><xref:System.Activities.NativeActivity.CacheMetadata%2A> をオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="fb69f-142">Override <xref:System.Activities.NativeActivity.CacheMetadata%2A></span></span>  
   
     ```  
     protected override void CacheMetadata(NativeActivityMetadata metadata)  
@@ -317,10 +307,9 @@ caps.handback.revision: 9
         //add the private implementation variable: currentIndex   
         metadata.AddImplementationVariable(this.currentIndex);  
     }  
-  
     ```  
   
-6.  <xref:System.Activities.NativeActivity.Execute%2A> をオーバーライドします。  
+6.  <span data-ttu-id="fb69f-143"><xref:System.Activities.NativeActivity.Execute%2A> をオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="fb69f-143">Override <xref:System.Activities.NativeActivity.Execute%2A></span></span>  
   
     ```  
     protected override void Execute(  
@@ -385,22 +374,21 @@ caps.handback.revision: 9
                 //increment the currentIndex  
                 this.currentIndex.Set(context, ++currentActivityIndex);  
             }  
-  
     ```  
   
-### ワークフロー クライアントの実装  
+### <a name="implement-a-workflow-client"></a><span data-ttu-id="fb69f-144">ワークフロー クライアントの実装</span><span class="sxs-lookup"><span data-stu-id="fb69f-144">Implement a workflow client</span></span>  
   
-1.  `Client` という新しいコンソール アプリケーション プロジェクトを作成します。  
+1.  <span data-ttu-id="fb69f-145">`Client` という新しいコンソール アプリケーション プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-145">Create a new console application project called `Client`.</span></span>  
   
-2.  次のアセンブリへの参照を追加します。  
+2.  <span data-ttu-id="fb69f-146">次のアセンブリへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-146">Add references to the following assemblies:</span></span>  
   
-    1.  System.Activities  
+    1.  <span data-ttu-id="fb69f-147">System.Activities</span><span class="sxs-lookup"><span data-stu-id="fb69f-147">System.Activities</span></span>  
   
-    2.  System.ServiceModel  
+    2.  <span data-ttu-id="fb69f-148">System.ServiceModel</span><span class="sxs-lookup"><span data-stu-id="fb69f-148">System.ServiceModel</span></span>  
   
-    3.  System.ServiceModel.Activities  
+    3.  <span data-ttu-id="fb69f-149">System.ServiceModel.Activities</span><span class="sxs-lookup"><span data-stu-id="fb69f-149">System.ServiceModel.Activities</span></span>  
   
-3.  生成された Program.cs ファイルを開き、`GetClientWorkflow` という静的メソッドを追加してクライアント ワークフローを作成します。  
+3.  <span data-ttu-id="fb69f-150">生成された Program.cs ファイルを開き、`GetClientWorkflow` という静的メソッドを追加してクライアント ワークフローを作成します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-150">Open the generated Program.cs file and add a static method called `GetClientWorkflow` to create the client workflow.</span></span>  
   
     ```  
     static Activity GetClientWorkflow()  
@@ -458,10 +446,9 @@ caps.handback.revision: 9
                     }  
                 };  
             }  
-  
     ```  
   
-4.  次のホスティング コードを `Main()` メソッドに追加します。  
+4.  <span data-ttu-id="fb69f-151">次のホスティング コードを `Main()` メソッドに追加します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-151">Add the following hosting code to the `Main()` method.</span></span>  
   
     ```  
     static void Main(string[] args)  
@@ -472,11 +459,10 @@ caps.handback.revision: 9
        Console.WriteLine("Press [ENTER] to exit");  
        Console.ReadLine();  
     }  
-  
     ```  
   
-## 使用例  
- このトピックで使用されているソース コードの完全な一覧を次に示します。  
+## <a name="example"></a><span data-ttu-id="fb69f-152">例</span><span class="sxs-lookup"><span data-stu-id="fb69f-152">Example</span></span>  
+ <span data-ttu-id="fb69f-153">このトピックで使用されているソース コードの完全な一覧を次に示します。</span><span class="sxs-lookup"><span data-stu-id="fb69f-153">Here is a complete listing of the source code used in this topic.</span></span>  
   
 ```  
 // ReceiveInstanceIdScope.cs  
@@ -561,7 +547,6 @@ namespace Microsoft.Samples.AccessingOperationContext.Service
         }  
     }  
 }  
-  
 ```  
   
 ```  
@@ -595,7 +580,6 @@ namespace Microsoft.Samples.AccessingOperationContext.Service
         }  
     }  
 }  
-  
 ```  
   
 ```  
@@ -671,7 +655,6 @@ namespace Microsoft.Samples.AccessingOperationContext.Service
     }  
   
 }  
-  
 ```  
   
 ```  
@@ -699,7 +682,6 @@ namespace Microsoft.Samples.AccessingOperationContext.Client
         }  
     }  
 }  
-  
 ```  
   
 ```  
@@ -785,7 +767,6 @@ namespace Microsoft.Samples.AccessingOperationContext.Client
         }  
     }  
 }  
-  
 ```  
   
 ```  
@@ -864,12 +845,11 @@ namespace Microsoft.Samples.AccessingOperationContext.Client
         }  
     }  
 }  
-  
 ```  
   
- コメント。省略できます。  
+ <span data-ttu-id="fb69f-154">オプション コメント。</span><span class="sxs-lookup"><span data-stu-id="fb69f-154">Optional comments.</span></span>  
   
-## 参照  
- [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)   
- [OperationContext へのアクセス](../../../../docs/framework/windows-workflow-foundation/samples/accessing-operationcontext.md)   
- [命令型コードを使用してワークフロー、アクティビティ、および式を作成する方法](../../../../docs/framework/windows-workflow-foundation//authoring-workflows-activities-and-expressions-using-imperative-code.md)
+## <a name="see-also"></a><span data-ttu-id="fb69f-155">関連項目</span><span class="sxs-lookup"><span data-stu-id="fb69f-155">See Also</span></span>  
+ [<span data-ttu-id="fb69f-156">ワークフロー サービス</span><span class="sxs-lookup"><span data-stu-id="fb69f-156">Workflow Services</span></span>](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
+ [<span data-ttu-id="fb69f-157">OperationContext へのアクセス</span><span class="sxs-lookup"><span data-stu-id="fb69f-157">Accessing OperationContext</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/accessing-operationcontext.md)  
+ [<span data-ttu-id="fb69f-158">命令型コードを使用してワークフロー、アクティビティ、および式を作成する方法</span><span class="sxs-lookup"><span data-stu-id="fb69f-158">Authoring Workflows, Activities, and Expressions Using Imperative Code</span></span>](../../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)

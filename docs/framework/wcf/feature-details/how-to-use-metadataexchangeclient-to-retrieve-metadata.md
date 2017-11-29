@@ -1,48 +1,51 @@
 ---
-title: "方法 : MetadataExchangeClient を使用してメタデータを取得する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : MetadataExchangeClient を使用してメタデータを取得する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0754e9dc-13c5-45c2-81b5-f3da466e5a87
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6a675c42c597928c0ea2cc60be6de0cea6111499
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : MetadataExchangeClient を使用してメタデータを取得する
-WS\-MetadataExchange \(MEX\) プロトコルを使用してメタデータをダウンロードするには、<xref:System.ServiceModel.Description.MetadataExchangeClient> クラスを使用します。取得されたメタデータ ファイルは、<xref:System.ServiceModel.Description.MetadataSet> オブジェクトとして返されます。返された <xref:System.ServiceModel.Description.MetadataSet> オブジェクトには、<xref:System.ServiceModel.Description.MetadataSection> オブジェクトのコレクションが含まれ、コレクションの各オブジェクトには、特定のメタデータの言語と識別子が含まれます。返されたメタデータはファイルに書き込むことができます。また、返されたメタデータに Web サービス記述言語 \(WSDL: Web Services Description Language\) ドキュメントが含まれている場合は、<xref:System.ServiceModel.Description.WsdlImporter> を使用してメタデータをインポートできます。  
+# <a name="how-to-use-metadataexchangeclient-to-retrieve-metadata"></a><span data-ttu-id="eefa3-102">方法 : MetadataExchangeClient を使用してメタデータを取得する</span><span class="sxs-lookup"><span data-stu-id="eefa3-102">How to: Use MetadataExchangeClient to Retrieve Metadata</span></span>
+<span data-ttu-id="eefa3-103">WS-MetadataExchange (MEX) プロトコルを使用してメタデータをダウンロードするには、<xref:System.ServiceModel.Description.MetadataExchangeClient> クラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="eefa3-103">Use the <xref:System.ServiceModel.Description.MetadataExchangeClient> class to download metadata using the WS-MetadataExchange (MEX) protocol.</span></span> <span data-ttu-id="eefa3-104">取得されたメタデータ ファイルは、<xref:System.ServiceModel.Description.MetadataSet> オブジェクトとして返されます。</span><span class="sxs-lookup"><span data-stu-id="eefa3-104">The retrieved metadata files are returned as a <xref:System.ServiceModel.Description.MetadataSet> object.</span></span> <span data-ttu-id="eefa3-105">返された <xref:System.ServiceModel.Description.MetadataSet> オブジェクトには、<xref:System.ServiceModel.Description.MetadataSection> オブジェクトのコレクションが含まれ、コレクションの各オブジェクトには、特定のメタデータの言語と識別子が含まれます。</span><span class="sxs-lookup"><span data-stu-id="eefa3-105">The returned <xref:System.ServiceModel.Description.MetadataSet> object contains a collection of <xref:System.ServiceModel.Description.MetadataSection> objects, each of which contains a specific metadata dialect and an identifier.</span></span> <span data-ttu-id="eefa3-106">返されたメタデータはファイルに書き込むことができます。また、返されたメタデータに Web サービス記述言語 (WSDL: Web Services Description Language) ドキュメントが含まれている場合は、<xref:System.ServiceModel.Description.WsdlImporter> を使用してメタデータをインポートできます。</span><span class="sxs-lookup"><span data-stu-id="eefa3-106">You can write the returned metadata to files or, if the returned metadata contains Web Services Description Language (WSDL) documents, you can import the metadata using the <xref:System.ServiceModel.Description.WsdlImporter>.</span></span>  
   
- アドレスを取得する <xref:System.ServiceModel.Description.MetadataExchangeClient> コンストラクターは、アドレスの URI \(Uniform Resource Identifier\) スキームに一致する <xref:System.ServiceModel.Description.MetadataExchangeBindings> 静的クラスでバインディングを使用します。または、使用するバインディングを明示的に指定できるようにする <xref:System.ServiceModel.Description.MetadataExchangeClient> コンストラクターを使用することもできます。指定したバインディングは、すべてのメタデータ参照を解決するために使用されます。  
+ <span data-ttu-id="eefa3-107">アドレスを取得する <xref:System.ServiceModel.Description.MetadataExchangeClient> コンストラクターは、アドレスの URI (Uniform Resource Identifier) スキームに一致する <xref:System.ServiceModel.Description.MetadataExchangeBindings> 静的クラスでバインディングを使用します。</span><span class="sxs-lookup"><span data-stu-id="eefa3-107">The <xref:System.ServiceModel.Description.MetadataExchangeClient> constructors that take an address use the binding on the <xref:System.ServiceModel.Description.MetadataExchangeBindings> static class that matches the Uniform Resource Identifier (URI) scheme of the address.</span></span> <span data-ttu-id="eefa3-108">または、使用するバインディングを明示的に指定できるようにする <xref:System.ServiceModel.Description.MetadataExchangeClient> コンストラクターを使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="eefa3-108">You can alternatively use the <xref:System.ServiceModel.Description.MetadataExchangeClient> constructor that allows you to explicitly specify the binding to use.</span></span> <span data-ttu-id="eefa3-109">指定したバインディングは、すべてのメタデータ参照を解決するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="eefa3-109">The specified binding is used to resolve all metadata references.</span></span>  
   
- 他の [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアントと同様に、<xref:System.ServiceModel.Description.MetadataExchangeClient> 型は、エンドポイント構成名を使用してクライアント エンドポイント構成を読み込むためのコンストラクターを提供します。指定したエンドポイント構成では、<xref:System.ServiceModel.Description.IMetadataExchange> コントラクトを指定する必要があります。エンドポイント構成のアドレスは読み込まれないため、アドレスを受け取る <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> オーバーロードのいずれかを使用する必要があります。<xref:System.ServiceModel.EndpointAddress> インスタンスを使用してメタデータ アドレスを指定した場合、<xref:System.ServiceModel.Description.MetadataExchangeClient> は、指定したアドレスが MEX エンドポイントを指すものと想定します。メタデータ アドレスを URL として指定した場合は、使用する <xref:System.ServiceModel.Description.MetadataExchangeClientMode> として、MEX または HTTP GET のいずれかを指定する必要もあります。  
+ <span data-ttu-id="eefa3-110">他の [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアントと同様に、<xref:System.ServiceModel.Description.MetadataExchangeClient> 型は、エンドポイント構成名を使用してクライアント エンドポイント構成を読み込むためのコンストラクターを提供します。</span><span class="sxs-lookup"><span data-stu-id="eefa3-110">Just like any other [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] client, the <xref:System.ServiceModel.Description.MetadataExchangeClient> type provides a constructor for loading client endpoint configurations using the endpoint configuration name.</span></span> <span data-ttu-id="eefa3-111">指定したエンドポイント構成では、<xref:System.ServiceModel.Description.IMetadataExchange> コントラクトを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="eefa3-111">The specified endpoint configuration must specify the <xref:System.ServiceModel.Description.IMetadataExchange> contract.</span></span> <span data-ttu-id="eefa3-112">エンドポイント構成のアドレスは読み込まれないため、アドレスを受け取る <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> オーバーロードのいずれかを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="eefa3-112">The address in the endpoint configuration is not loaded, so you must use one of the <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> overloads that take an address.</span></span> <span data-ttu-id="eefa3-113"><xref:System.ServiceModel.EndpointAddress> インスタンスを使用してメタデータ アドレスを指定した場合、<xref:System.ServiceModel.Description.MetadataExchangeClient> は、指定したアドレスが MEX エンドポイントを指すものと想定します。</span><span class="sxs-lookup"><span data-stu-id="eefa3-113">When you specify the metadata address using an <xref:System.ServiceModel.EndpointAddress> instance, the <xref:System.ServiceModel.Description.MetadataExchangeClient> assumes that the address points to a MEX endpoint.</span></span> <span data-ttu-id="eefa3-114">メタデータ アドレスを URL として指定した場合は、使用する <xref:System.ServiceModel.Description.MetadataExchangeClientMode> として、MEX または HTTP GET のいずれかを指定する必要もあります。</span><span class="sxs-lookup"><span data-stu-id="eefa3-114">If you specify the metadata address as a URL, then you need to also specify which <xref:System.ServiceModel.Description.MetadataExchangeClientMode> to use, MEX or HTTP GET.</span></span>  
   
 > [!IMPORTANT]
->  既定では、<xref:System.ServiceModel.Description.MetadataExchangeClient> は、WSDL と XML スキーマのインポートおよびインクルードを含むすべての参照を解決します。<xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> プロパティを `false` に設定すると、この機能を無効にできます。解決する参照の最大数を制御するには、<xref:System.ServiceModel.Description.MetadataExchangeClient.MaximumResolvedReferences%2A> プロパティを使用します。バインディングでこのプロパティと `MaxReceivedMessageSize` プロパティを組み合わせて使用すると、取得するメタデータのサイズを制御できます。  
+>  <span data-ttu-id="eefa3-115">既定では、<xref:System.ServiceModel.Description.MetadataExchangeClient> は、WSDL と XML スキーマのインポートおよびインクルードを含むすべての参照を解決します。</span><span class="sxs-lookup"><span data-stu-id="eefa3-115">By default, the <xref:System.ServiceModel.Description.MetadataExchangeClient> resolves all references for you, including WSDL and XML Schema imports and includes.</span></span> <span data-ttu-id="eefa3-116"><xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> プロパティを `false` に設定すると、この機能を無効にできます。</span><span class="sxs-lookup"><span data-stu-id="eefa3-116">You can disable this functionality by setting the <xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> property to `false`.</span></span> <span data-ttu-id="eefa3-117">解決する参照の最大数を制御するには、<xref:System.ServiceModel.Description.MetadataExchangeClient.MaximumResolvedReferences%2A> プロパティを使用します。</span><span class="sxs-lookup"><span data-stu-id="eefa3-117">You can control the maximum number of references to resolve using the <xref:System.ServiceModel.Description.MetadataExchangeClient.MaximumResolvedReferences%2A> property.</span></span> <span data-ttu-id="eefa3-118">バインディングでこのプロパティと `MaxReceivedMessageSize` プロパティを組み合わせて使用すると、取得するメタデータのサイズを制御できます。</span><span class="sxs-lookup"><span data-stu-id="eefa3-118">You can use this property in conjunction with the `MaxReceivedMessageSize` property on the binding to control how much metadata is retrieved.</span></span>  
   
-### MetadataExchangeClient を使用してメタデータを取得するには  
+### <a name="to-use-metadataexchangeclient-to-obtain-metadata"></a><span data-ttu-id="eefa3-119">MetadataExchangeClient を使用してメタデータを取得するには</span><span class="sxs-lookup"><span data-stu-id="eefa3-119">To use MetadataExchangeClient to obtain metadata</span></span>  
   
-1.  新しい <xref:System.ServiceModel.Description.MetadataExchangeClient> オブジェクトを作成するには、バインディング、エンドポイント構成名、またはメタデータのアドレスを明示的に指定します。  
+1.  <span data-ttu-id="eefa3-120">新しい <xref:System.ServiceModel.Description.MetadataExchangeClient> オブジェクトを作成するには、バインディング、エンドポイント構成名、またはメタデータのアドレスを明示的に指定します。</span><span class="sxs-lookup"><span data-stu-id="eefa3-120">Create a new <xref:System.ServiceModel.Description.MetadataExchangeClient> object by explicitly specifying a binding, an endpoint configuration name, or the address of the metadata.</span></span>  
   
-2.  必要に応じて <xref:System.ServiceModel.Description.MetadataExchangeClient> を構成します。たとえば、メタデータを要求するときに使用する証明書を指定したり、メタデータ参照の解決方法を制御したり、<xref:System.ServiceModel.Description.MetadataExchangeClient.OperationTimeout%2A> プロパティを設定してメタデータ要求がタイムアウトするまでの待機時間を制御したりできます。  
+2.  <span data-ttu-id="eefa3-121">必要に応じて <xref:System.ServiceModel.Description.MetadataExchangeClient> を構成します。</span><span class="sxs-lookup"><span data-stu-id="eefa3-121">Configure the <xref:System.ServiceModel.Description.MetadataExchangeClient> to suit your needs.</span></span> <span data-ttu-id="eefa3-122">たとえば、メタデータを要求するときに使用する証明書を指定したり、メタデータ参照の解決方法を制御したり、<xref:System.ServiceModel.Description.MetadataExchangeClient.OperationTimeout%2A> プロパティを設定してメタデータ要求がタイムアウトするまでの待機時間を制御したりできます。</span><span class="sxs-lookup"><span data-stu-id="eefa3-122">For example, you can specify credentials to use when requesting metadata, control how metadata references are resolved, and set the <xref:System.ServiceModel.Description.MetadataExchangeClient.OperationTimeout%2A> property to control how long the metadata request has to return before it times out.</span></span>  
   
-3.  <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> メソッドのいずれかを呼び出して、取得されたメタデータを含む <xref:System.ServiceModel.Description.MetadataSet> オブジェクトを取得します。<xref:System.ServiceModel.Description.MetadataExchangeClient> の構築時にアドレスを明示的に指定した場合は、引数を受け取らない <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> オーバーロードしか使用できません。  
+3.  <span data-ttu-id="eefa3-123"><xref:System.ServiceModel.Description.MetadataSet> メソッドのいずれかを呼び出して、取得されたメタデータを含む <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="eefa3-123">Obtain the <xref:System.ServiceModel.Description.MetadataSet> object that contains the retrieved metadata by calling one of the <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> methods.</span></span> <span data-ttu-id="eefa3-124"><xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> の構築時にアドレスを明示的に指定した場合は、引数を受け取らない <xref:System.ServiceModel.Description.MetadataExchangeClient> オーバーロードしか使用できません。</span><span class="sxs-lookup"><span data-stu-id="eefa3-124">Note that you can only use the <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> overload that takes no arguments if you explicitly specified an address when constructing the <xref:System.ServiceModel.Description.MetadataExchangeClient>.</span></span>  
   
-## 使用例  
- <xref:System.ServiceModel.Description.MetadataExchangeClient> を使用してメタデータ ファイルをダウンロードし、列挙する方法を次のコード例に示します。  
-  
+## <a name="example"></a><span data-ttu-id="eefa3-125">例</span><span class="sxs-lookup"><span data-stu-id="eefa3-125">Example</span></span>  
+ <span data-ttu-id="eefa3-126"><xref:System.ServiceModel.Description.MetadataExchangeClient> を使用してメタデータ ファイルをダウンロードし、列挙する方法を次のコード例に示します。</span><span class="sxs-lookup"><span data-stu-id="eefa3-126">The following code example shows how to use <xref:System.ServiceModel.Description.MetadataExchangeClient> to download and enumerate metadata files.</span></span>  
+
  [!code-csharp[MetadataResolver#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/metadataresolver/cs/client.cs#3)]  
+
+## <a name="compiling-the-code"></a><span data-ttu-id="eefa3-127">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="eefa3-127">Compiling the Code</span></span>  
+ <span data-ttu-id="eefa3-128">このコード例をコンパイルするには、System.ServiceModel.dll アセンブリを参照し、<xref:System.ServiceModel.Description> 名前空間をインポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="eefa3-128">To compile this code example, you must reference the System.ServiceModel.dll assembly and import the <xref:System.ServiceModel.Description> namespace.</span></span>  
   
-## コードのコンパイル  
- このコード例をコンパイルするには、System.ServiceModel.dll アセンブリを参照し、<xref:System.ServiceModel.Description> 名前空間をインポートする必要があります。  
-  
-## 参照  
- <xref:System.ServiceModel.Description.MetadataResolver>   
- <xref:System.ServiceModel.Description.MetadataExchangeClient>   
+## <a name="see-also"></a><span data-ttu-id="eefa3-129">関連項目</span><span class="sxs-lookup"><span data-stu-id="eefa3-129">See Also</span></span>  
+ <xref:System.ServiceModel.Description.MetadataResolver>  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient>  
  <xref:System.ServiceModel.Description.WsdlImporter>

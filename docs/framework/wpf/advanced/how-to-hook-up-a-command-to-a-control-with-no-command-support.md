@@ -1,55 +1,61 @@
 ---
-title: "方法 : コマンドをサポートしないコントロールにコマンドをフックする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "クラス, コントロール, 添付 (RoutedCommand を)"
-  - "クラス, RoutedCommand, 添付 (コントロールに)"
-  - "Control クラス, 添付 (RoutedCommand を)"
-  - "RoutedCommand クラス, 添付 (コントロールに)"
+title: "方法 : コマンドをサポートしないコントロールにコマンドをフックする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Control class [WPF], attaching a RoutedCommand
+- classes [WPF], Control [WPF], attaching a RoutedCommand
+- RoutedCommand class [WPF], attaching to a Control
+- classes [WPF], RoutedCommand [WPF], attaching to a Control
 ms.assetid: dad08f64-700b-46fb-ad3f-fbfee95f0dfe
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6f38a6f900ee2b253708da4b63bdc2f474fa3ab1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : コマンドをサポートしないコントロールにコマンドをフックする
-コマンドのサポートが組み込まれていない <xref:System.Windows.Controls.Control> に <xref:System.Windows.Input.RoutedCommand> をフックする方法を次の例に示します。  コマンドを複数のソースにフックするサンプル全体については、[カスタム RoutedCommand の作成のサンプル](http://go.microsoft.com/fwlink/?LinkID=159980)を参照してください。  
+# <a name="how-to-hook-up-a-command-to-a-control-with-no-command-support"></a><span data-ttu-id="5ce78-102">方法 : コマンドをサポートしないコントロールにコマンドをフックする</span><span class="sxs-lookup"><span data-stu-id="5ce78-102">How to: Hook Up a Command to a Control with No Command Support</span></span>
+<span data-ttu-id="5ce78-103">次の例にフックする方法を示しています、<xref:System.Windows.Input.RoutedCommand>を<xref:System.Windows.Controls.Control>が組み込まれていないコマンドのサポート。</span><span class="sxs-lookup"><span data-stu-id="5ce78-103">The following example shows how to hook up a <xref:System.Windows.Input.RoutedCommand> to a <xref:System.Windows.Controls.Control> which does not have built in support for the command.</span></span>  <span data-ttu-id="5ce78-104">コマンドを複数のソースに関連付けるサンプル全体については、「[カスタム RoutedCommand の作成のサンプル](http://go.microsoft.com/fwlink/?LinkID=159980)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5ce78-104">For a complete sample which hooks up commands to multiple sources, see the [Create a Custom RoutedCommand Sample](http://go.microsoft.com/fwlink/?LinkID=159980) sample.</span></span>  
   
-## 使用例  
- [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] には、アプリケーション プログラマがよく使用する一般的なコマンドのライブラリが用意されています。  このコマンド ライブラリには、<xref:System.Windows.Input.ApplicationCommands>、<xref:System.Windows.Input.ComponentCommands>、<xref:System.Windows.Input.NavigationCommands>、<xref:System.Windows.Input.MediaCommands>、および <xref:System.Windows.Documents.EditingCommands> クラスが含まれています。  
+## <a name="example"></a><span data-ttu-id="5ce78-105">例</span><span class="sxs-lookup"><span data-stu-id="5ce78-105">Example</span></span>  
+ [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="5ce78-106"> には、アプリケーション プログラマがよく使用する一般的なコマンドのライブラリが用意されています。</span><span class="sxs-lookup"><span data-stu-id="5ce78-106"> provides a library of common commands which application programmers encounter regularly.</span></span>  <span data-ttu-id="5ce78-107">コマンドのライブラリを構成するクラスは、: <xref:System.Windows.Input.ApplicationCommands>、 <xref:System.Windows.Input.ComponentCommands>、 <xref:System.Windows.Input.NavigationCommands>、 <xref:System.Windows.Input.MediaCommands>、および<xref:System.Windows.Documents.EditingCommands>です。</span><span class="sxs-lookup"><span data-stu-id="5ce78-107">The classes which comprise the command library are: <xref:System.Windows.Input.ApplicationCommands>, <xref:System.Windows.Input.ComponentCommands>, <xref:System.Windows.Input.NavigationCommands>, <xref:System.Windows.Input.MediaCommands>, and <xref:System.Windows.Documents.EditingCommands>.</span></span>  
   
- これらのクラスを構成する静的な <xref:System.Windows.Input.RoutedCommand> オブジェクトには、コマンド ロジックが用意されていません。  コマンドのロジックは、<xref:System.Windows.Input.CommandBinding> でコマンドに関連付けられます。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の多くのコントロールには、コマンド ライブリにある一部のコマンドのサポートが組み込まれています。  たとえば、<xref:System.Windows.Controls.TextBox> は、<xref:System.Windows.Input.ApplicationCommands.Paste%2A>、<xref:System.Windows.Input.ApplicationCommands.Copy%2A>、<xref:System.Windows.Input.ApplicationCommands.Cut%2A>、<xref:System.Windows.Input.ApplicationCommands.Redo%2A>、<xref:System.Windows.Input.ApplicationCommands.Undo%2A> などの多くのアプリケーション編集コマンドをサポートしています。  アプリケーション開発者は、コントロールで使用するこれらのコマンドを取得するのに特別な作業を行う必要はありません。  <xref:System.Windows.Controls.TextBox> がコマンド ターゲットである場合は、コマンドを実行すると、コントロールに組み込まれている <xref:System.Windows.Input.CommandBinding> を使用してコマンドを処理します。  
+ <span data-ttu-id="5ce78-108">静的な<xref:System.Windows.Input.RoutedCommand>これらのクラスを構成するコマンドのロジックを指定しません。</span><span class="sxs-lookup"><span data-stu-id="5ce78-108">The static <xref:System.Windows.Input.RoutedCommand> objects which make up these classes do not supply command logic.</span></span>  <span data-ttu-id="5ce78-109">コマンドのロジックは、コマンドに関連付けられて、<xref:System.Windows.Input.CommandBinding>です。</span><span class="sxs-lookup"><span data-stu-id="5ce78-109">The logic for the command is associated with the command with a <xref:System.Windows.Input.CommandBinding>.</span></span>  <span data-ttu-id="5ce78-110">多くのコントロールで[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コマンド ライブラリ内のコマンドの一部のサポートが組み込まれています。</span><span class="sxs-lookup"><span data-stu-id="5ce78-110">Many controls in [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] have built in support for some of the commands in the command library.</span></span>  <span data-ttu-id="5ce78-111"><xref:System.Windows.Controls.TextBox>、たとえば、多くのアプリケーションの編集コマンドなどをサポート<xref:System.Windows.Input.ApplicationCommands.Paste%2A>、 <xref:System.Windows.Input.ApplicationCommands.Copy%2A>、 <xref:System.Windows.Input.ApplicationCommands.Cut%2A>、 <xref:System.Windows.Input.ApplicationCommands.Redo%2A>、および<xref:System.Windows.Input.ApplicationCommands.Undo%2A>です。</span><span class="sxs-lookup"><span data-stu-id="5ce78-111"><xref:System.Windows.Controls.TextBox>, for example, supports many of the application edit commands such as <xref:System.Windows.Input.ApplicationCommands.Paste%2A>, <xref:System.Windows.Input.ApplicationCommands.Copy%2A>, <xref:System.Windows.Input.ApplicationCommands.Cut%2A>, <xref:System.Windows.Input.ApplicationCommands.Redo%2A>, and <xref:System.Windows.Input.ApplicationCommands.Undo%2A>.</span></span>  <span data-ttu-id="5ce78-112">アプリケーション開発者は、コントロールで使用するこれらのコマンドを取得するのに特別な作業を行う必要はありません。</span><span class="sxs-lookup"><span data-stu-id="5ce78-112">The application developer does not have to do anything special to get these commands to work with these controls.</span></span>  <span data-ttu-id="5ce78-113">場合、<xref:System.Windows.Controls.TextBox>コマンド ターゲットを使用してコマンドを処理するコマンドを実行すると、<xref:System.Windows.Input.CommandBinding>コントロールに組み込まれています。</span><span class="sxs-lookup"><span data-stu-id="5ce78-113">If the <xref:System.Windows.Controls.TextBox> is the command target when the command is executed, it will handle the command using the <xref:System.Windows.Input.CommandBinding> that is built into the control.</span></span>  
   
- <xref:System.Windows.Controls.Button> を <xref:System.Windows.Input.ApplicationCommands.Open%2A> コマンドのコマンド ソースとして使用する方法を次に示します。  指定した <xref:System.Windows.Input.CanExecuteRoutedEventHandler> と、<xref:System.Windows.Input.RoutedCommand> を持つ <xref:System.Windows.Input.CanExecuteRoutedEventHandler> を関連付ける <xref:System.Windows.Input.CommandBinding> を作成します。  
+ <span data-ttu-id="5ce78-114">使用する方法を次に示します、<xref:System.Windows.Controls.Button>コマンドのソースとして、<xref:System.Windows.Input.ApplicationCommands.Open%2A>コマンド。</span><span class="sxs-lookup"><span data-stu-id="5ce78-114">The following shows how to use a <xref:System.Windows.Controls.Button> as the command source for the <xref:System.Windows.Input.ApplicationCommands.Open%2A> command.</span></span>  <span data-ttu-id="5ce78-115">A<xref:System.Windows.Input.CommandBinding>が作成される、指定された関連付ける<xref:System.Windows.Input.CanExecuteRoutedEventHandler>と<xref:System.Windows.Input.CanExecuteRoutedEventHandler>で、<xref:System.Windows.Input.RoutedCommand>です。</span><span class="sxs-lookup"><span data-stu-id="5ce78-115">A <xref:System.Windows.Input.CommandBinding> is created that associates the specified <xref:System.Windows.Input.CanExecuteRoutedEventHandler> and the <xref:System.Windows.Input.CanExecuteRoutedEventHandler> with the <xref:System.Windows.Input.RoutedCommand>.</span></span>  
   
- 最初に、コマンド ソースを作成します。  コマンド ソースには、<xref:System.Windows.Controls.Button> を使用します。  
+ <span data-ttu-id="5ce78-116">最初に、コマンド ソースが作成されます。</span><span class="sxs-lookup"><span data-stu-id="5ce78-116">First, the command source is created.</span></span>  <span data-ttu-id="5ce78-117">A<xref:System.Windows.Controls.Button>コマンド ソースとして使用されます。</span><span class="sxs-lookup"><span data-stu-id="5ce78-117">A <xref:System.Windows.Controls.Button> is used as the command source.</span></span>  
   
- [!code-xml[commandWithHandler#CommandHandlerCommandSource](../../../../samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml#commandhandlercommandsource)]  
+ [!code-xaml[commandWithHandler#CommandHandlerCommandSource](../../../../samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml#commandhandlercommandsource)]  
   
  [!code-csharp[CommandHandlerProcedural#CommandHandlerButtonCommandSource](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandHandlerProcedural/CSharp/Window1.xaml.cs#commandhandlerbuttoncommandsource)]
  [!code-vb[CommandHandlerProcedural#CommandHandlerButtonCommandSource](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandHandlerProcedural/visualbasic/window1.xaml.vb#commandhandlerbuttoncommandsource)]  
   
- 次に、<xref:System.Windows.Input.ExecutedRoutedEventHandler> および <xref:System.Windows.Input.CanExecuteRoutedEventHandler> を作成します。  <xref:System.Windows.Input.ExecutedRoutedEventHandler> は、コマンドが実行されたことを知らせるために、<xref:System.Windows.MessageBox> を開くだけです。  <xref:System.Windows.Input.CanExecuteRoutedEventHandler> は、<xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A> プロパティを `true` に設定します。  通常、実行可能ハンドラーは、そのコマンドが現在のコマンドの対象で実行可能かどうかについて、より信頼性の高いチェックを実行します。  
+ <span data-ttu-id="5ce78-118">次に、<xref:System.Windows.Input.ExecutedRoutedEventHandler>と<xref:System.Windows.Input.CanExecuteRoutedEventHandler>が作成されます。</span><span class="sxs-lookup"><span data-stu-id="5ce78-118">Next, the <xref:System.Windows.Input.ExecutedRoutedEventHandler> and the <xref:System.Windows.Input.CanExecuteRoutedEventHandler> are created.</span></span>  <span data-ttu-id="5ce78-119"><xref:System.Windows.Input.ExecutedRoutedEventHandler>だけが表示されます、<xref:System.Windows.MessageBox>コマンドが実行されることを示すためにします。</span><span class="sxs-lookup"><span data-stu-id="5ce78-119">The <xref:System.Windows.Input.ExecutedRoutedEventHandler> simply opens a <xref:System.Windows.MessageBox> to signify that the command executed.</span></span>  <span data-ttu-id="5ce78-120"><xref:System.Windows.Input.CanExecuteRoutedEventHandler>設定、<xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A>プロパティを`true`です。</span><span class="sxs-lookup"><span data-stu-id="5ce78-120">The <xref:System.Windows.Input.CanExecuteRoutedEventHandler> sets the <xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A> property to `true`.</span></span>  <span data-ttu-id="5ce78-121">通常、実行ハンドラーがより堅牢なチェックを実行し、現在のコマンド ターゲットでコマンドを実行できなかったかどうかを参照してください。</span><span class="sxs-lookup"><span data-stu-id="5ce78-121">Normally, the can execute handler would perform more robust checks to see if the command could execute on the current command target.</span></span>  
   
  [!code-csharp[commandWithHandler#CommandHandlerBothHandlers](../../../../samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml.cs#commandhandlerbothhandlers)]
  [!code-vb[commandWithHandler#CommandHandlerBothHandlers](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/commandWithHandler/VisualBasic/Window1.xaml.vb#commandhandlerbothhandlers)]  
   
- 最後に、アプリケーションのルート <xref:System.Windows.Window> で、ルーティング イベント ハンドラーを <xref:System.Windows.Input.ApplicationCommands.Open%2A> コマンドに関連付ける <xref:System.Windows.Input.CommandBinding> を作成します。  
+ <span data-ttu-id="5ce78-122">最後に、<xref:System.Windows.Input.CommandBinding>ルートに作成された<xref:System.Windows.Window>にルーティングされたイベント ハンドラーに関連付けるアプリケーションの<xref:System.Windows.Input.ApplicationCommands.Open%2A>コマンド。</span><span class="sxs-lookup"><span data-stu-id="5ce78-122">Finally, a <xref:System.Windows.Input.CommandBinding> is created on the root <xref:System.Windows.Window> of the application that associates the routed events handlers to the <xref:System.Windows.Input.ApplicationCommands.Open%2A> command.</span></span>  
   
- [!code-xml[commandWithHandler#CommandHandlerCommandBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml#commandhandlercommandbinding)]  
+ [!code-xaml[commandWithHandler#CommandHandlerCommandBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml#commandhandlercommandbinding)]  
   
  [!code-csharp[CommandHandlerProcedural#CommandHandlerBindingInit](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandHandlerProcedural/CSharp/Window1.xaml.cs#commandhandlerbindinginit)]
  [!code-vb[CommandHandlerProcedural#CommandHandlerBindingInit](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandHandlerProcedural/visualbasic/window1.xaml.vb#commandhandlerbindinginit)]  
   
-## 参照  
- [コマンド実行の概要](../../../../docs/framework/wpf/advanced/commanding-overview.md)   
- [コマンドをサポートするコントロールにコマンドをフックする](../../../../docs/framework/wpf/advanced/how-to-hook-up-a-command-to-a-control-with-command-support.md)
+## <a name="see-also"></a><span data-ttu-id="5ce78-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="5ce78-123">See Also</span></span>  
+ [<span data-ttu-id="5ce78-124">コマンド実行の概要</span><span class="sxs-lookup"><span data-stu-id="5ce78-124">Commanding Overview</span></span>](../../../../docs/framework/wpf/advanced/commanding-overview.md)  
+ [<span data-ttu-id="5ce78-125">コマンドをサポートするコントロールにコマンドをフックする</span><span class="sxs-lookup"><span data-stu-id="5ce78-125">Hook Up a Command to a Control with Command Support</span></span>](../../../../docs/framework/wpf/advanced/how-to-hook-up-a-command-to-a-control-with-command-support.md)

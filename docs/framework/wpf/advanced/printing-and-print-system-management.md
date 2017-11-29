@@ -1,37 +1,40 @@
 ---
-title: "印刷および印刷システムの管理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "印刷システム管理"
-  - "印刷"
+title: "印刷および印刷システムの管理"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- printing [WPF]
+- print system management [WPF]
 ms.assetid: 637911b3-0c78-4493-a4fb-91db56d767cd
-caps.latest.revision: 5
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5be4840f059467556e131e41dfa9ae9aac3bea34
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 印刷および印刷システムの管理
-[!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] と [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] には、[!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] 印刷に代わる、新しい印刷パスと印刷システム管理 [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] の大幅な拡張セットが導入されています。  
+# <a name="printing-and-print-system-management"></a><span data-ttu-id="7030f-102">印刷および印刷システムの管理</span><span class="sxs-lookup"><span data-stu-id="7030f-102">Printing and Print System Management</span></span>
+[!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)]<span data-ttu-id="7030f-103">および[!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)]新しい印刷パスを導入: の代わりに[!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)]印刷 — と大幅に拡張された一連の印刷システム管理[!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="7030f-103"> and [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] introduce a new print path — an alternative to [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] printing — and a vastly expanded set of print system management [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)].</span></span>  
   
-## このセクションの内容  
- [印刷の概要](../../../../docs/framework/wpf/advanced/printing-overview.md)  
- 新しい印刷パスと新しい [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] についての説明です。  
+## <a name="in-this-section"></a><span data-ttu-id="7030f-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="7030f-104">In This Section</span></span>  
+ [<span data-ttu-id="7030f-105">印刷の概要</span><span class="sxs-lookup"><span data-stu-id="7030f-105">Printing Overview</span></span>](../../../../docs/framework/wpf/advanced/printing-overview.md)  
+ <span data-ttu-id="7030f-106">新しい印刷パスの詳細については、[!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="7030f-106">A discussion of the new print path and [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)].</span></span>  
   
- [方法のトピック](../../../../docs/framework/wpf/advanced/printing-how-to-topics.md)  
- 新しい印刷パスと新しい [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] の使用方法を示す一連の記事です。  
+ [<span data-ttu-id="7030f-107">方法トピック</span><span class="sxs-lookup"><span data-stu-id="7030f-107">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/printing-how-to-topics.md)  
+ <span data-ttu-id="7030f-108">新しい印刷パスを使用する方法を示す記事のセットと[!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="7030f-108">A set of articles showing how to use the new print path and [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)].</span></span>  
   
-## 参照  
- <xref:System.Printing>   
- <xref:System.Printing.IndexedProperties>   
- <xref:System.Printing.Interop>   
- [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)   
- [XML Paper Specification: 概要](http://www.microsoft.com/japan/whdc/xps/default.mspx)
+## <a name="see-also"></a><span data-ttu-id="7030f-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="7030f-109">See Also</span></span>  
+ <xref:System.Printing>  
+ <xref:System.Printing.IndexedProperties>  
+ <xref:System.Printing.Interop>  
+ [<span data-ttu-id="7030f-110">WPF のドキュメント</span><span class="sxs-lookup"><span data-stu-id="7030f-110">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [<span data-ttu-id="7030f-111">XPS</span><span class="sxs-lookup"><span data-stu-id="7030f-111">XPS</span></span>](http://www.microsoft.com/xps)

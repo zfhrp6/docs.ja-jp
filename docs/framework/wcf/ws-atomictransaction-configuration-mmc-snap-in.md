@@ -1,99 +1,102 @@
 ---
-title: "WS-AtomicTransaction 構成 MMC スナップイン | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WS-AtomicTransaction 構成 MMC スナップイン"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 23592973-1d51-44cc-b887-bf8b0d801e9e
-caps.latest.revision: 17
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 622a8b488a97041800d626566923095a770412f6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WS-AtomicTransaction 構成 MMC スナップイン
-WS\-AtomicTransaction 構成 MMC スナップインは、WS\-AtomicTransaction 設定の一部をローカル マシンとリモート マシンの両方で構成するために使用されます。  
+# <a name="ws-atomictransaction-configuration-mmc-snap-in"></a><span data-ttu-id="62c77-102">WS-AtomicTransaction 構成 MMC スナップイン</span><span class="sxs-lookup"><span data-stu-id="62c77-102">WS-AtomicTransaction Configuration MMC Snap-in</span></span>
+<span data-ttu-id="62c77-103">WS-AtomicTransaction 構成 MMC スナップインは、WS-AtomicTransaction 設定の一部をローカル マシンとリモート マシンの両方で構成するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="62c77-103">The WS-AtomicTransaction Configuration MMC Snap-in is used to configure a portion of the WS-AtomicTransaction settings on both local and remote machines.</span></span>  
   
-## 解説  
- [!INCLUDE[wxp](../../../includes/wxp-md.md)] または [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] を実行している場合に、MMC スナップインにアクセスするには、**\[コントロール パネル\]、\[管理ツール\]、\[コンポーネント サービス\]** の順にクリックし、**\[マイ コンピューター\]** を右クリックして、**\[プロパティ\]** をクリックします。これは MSDTC を構成する場合と同じ場所です。構成で使用できるオプションは、**\[WS\-AT\]** タブにグループ化されています。  
+## <a name="remarks"></a><span data-ttu-id="62c77-104">コメント</span><span class="sxs-lookup"><span data-stu-id="62c77-104">Remarks</span></span>  
+ <span data-ttu-id="62c77-105">実行している場合[!INCLUDE[wxp](../../../includes/wxp-md.md)]または[!INCLUDE[ws2003](../../../includes/ws2003-md.md)]、MMC スナップインでご覧に移動して**コントロール パネル]、[管理ツール]、[コンポーネント サービス/**を右クリック、**マイ コンピューター**と選択すると**プロパティ**です。</span><span class="sxs-lookup"><span data-stu-id="62c77-105">If you are running [!INCLUDE[wxp](../../../includes/wxp-md.md)] or [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], the MMC snap-in can be found by navigating to **Control Panel/Administrative Tools/Component Services/**, right-clicking **My Computer**, and selecting **Properties**.</span></span> <span data-ttu-id="62c77-106">これは MSDTC を構成する場合と同じ場所です。</span><span class="sxs-lookup"><span data-stu-id="62c77-106">This is the same location where you can configure the MSDTC.</span></span> <span data-ttu-id="62c77-107">構成できるオプションは、グループ化されて、 **WS-AT**タブです。</span><span class="sxs-lookup"><span data-stu-id="62c77-107">Options available for configuration are grouped under the **WS-AT** tab.</span></span>  
   
- Windows Vista または [!INCLUDE[lserver](../../../includes/lserver-md.md)] を実行している場合に、MMC スナップインにアクセスするには、**\[スタート\]** ボタンをクリックし、**\[検索\]** ボックスに「`dcomcnfg.exe`」と入力します。MMC が開いている場合は、**\[マイ コンピューター\]、\[分散トランザクション コーディネーター\]** ノードの順にクリックし、\[ローカル DTC\] ノードを右クリックして、**\[プロパティ\]** をクリックします。構成で使用できるオプションは、**\[WS\-AT\]** タブにグループ化されています。  
+ <span data-ttu-id="62c77-108">Windows Vista を実行している場合または[!INCLUDE[lserver](../../../includes/lserver-md.md)]、MMC スナップインでにあります をクリックして、**開始**ボタンをクリックし、入力`dcomcnfg.exe`で、**検索**ボックス。</span><span class="sxs-lookup"><span data-stu-id="62c77-108">If you are running Windows Vista or [!INCLUDE[lserver](../../../includes/lserver-md.md)], MMC snap-in can be found by clicking the **Start** button, and typing in `dcomcnfg.exe` in the **Search** box.</span></span> <span data-ttu-id="62c77-109">MMC が開いているときに移動、**マイ Computer\Distributed トランザクション コーディネーター DTC**ノードを右クリックし、**プロパティ**です。</span><span class="sxs-lookup"><span data-stu-id="62c77-109">When the MMC is opened, navigate to the **My Computer\Distributed Transaction Coordinator\Local DTC** node, right click and select **Properties**.</span></span> <span data-ttu-id="62c77-110">構成できるオプションは、グループ化されて、 **WS-AT**タブです。</span><span class="sxs-lookup"><span data-stu-id="62c77-110">Options available for configuration are grouped under the **WS-AT** tab.</span></span>  
   
- 前の手順は、ローカル マシンを構成するためのスナップインを起動するために使用します。[!INCLUDE[wxp](../../../includes/wxp-md.md)] または [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] を実行している場合、リモート コンピューターを構成するには、**\[コントロール パネル\]、\[管理ツール\]、\[コンポーネント サービス\]** の順にクリックし、リモート コンピューターの名前にアクセスします。Windows Vista または [!INCLUDE[lserver](../../../includes/lserver-md.md)] を実行している場合は、前の Vista と [!INCLUDE[lserver](../../../includes/lserver-md.md)] 向けの手順に従います。ただし、リモート コンピューターのノードの **\[分散トランザクション コーディネーター\]\\\[ローカル DTC\]** ノードを使用します。  
+ <span data-ttu-id="62c77-111">前の手順は、ローカル マシンを構成するためのスナップインを起動するために使用します。</span><span class="sxs-lookup"><span data-stu-id="62c77-111">The previous steps are used to launch the snap-in for configuring a local machine.</span></span> <span data-ttu-id="62c77-112">リモート コンピューターを構成する場合でリモート コンピューターの名前を見つける必要があります**コントロール パネル]、[管理ツール]、[コンポーネント サービス/**を実行している場合は、同様の手順を実行および[!INCLUDE[wxp](../../../includes/wxp-md.md)]または[!INCLUDE[ws2003](../../../includes/ws2003-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="62c77-112">If you want to configure a remote machine, you should locate the remote machine's name in **Control Panel/Administrative Tools/Component Services/**, and perform similar steps if you are running [!INCLUDE[wxp](../../../includes/wxp-md.md)] or [!INCLUDE[ws2003](../../../includes/ws2003-md.md)].</span></span> <span data-ttu-id="62c77-113">Windows Vista を実行している場合または[!INCLUDE[lserver](../../../includes/lserver-md.md)]、vista の場合は、前の手順に従って、[!INCLUDE[lserver](../../../includes/lserver-md.md)]が使用して、**分散トランザクション コーディネーター DTC**リモート コンピューターのノードの下のノードです。</span><span class="sxs-lookup"><span data-stu-id="62c77-113">If you are running Windows Vista or [!INCLUDE[lserver](../../../includes/lserver-md.md)], follow the previous steps for Vista and [!INCLUDE[lserver](../../../includes/lserver-md.md)], but use the **Distributed Transaction Coordinator\Local DTC** node under the remote computer's node.</span></span>  
   
- ツールのユーザー インターフェイスを使用するには、WsatUI.dll ファイルを登録する必要があります。このファイルのパスは次のとおりです。  
+ <span data-ttu-id="62c77-114">ツールのユーザー インターフェイスを使用するには、WsatUI.dll ファイルを登録する必要があります。このファイルのパスは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="62c77-114">To use the user interface provided by the tool, you have to register the WsatUI.dll file, which is located at the following path,</span></span>  
   
- **%PROGRAMFILES%\\Microsoft SDKs\\Windows\\v6.0\\Bin\\WsatUI.dll**  
+ <span data-ttu-id="62c77-115">**%PROGRAMFILES%\Microsoft SDKs\Windows\v6.0\Bin\WsatUI.dll**</span><span class="sxs-lookup"><span data-stu-id="62c77-115">**%PROGRAMFILES%\Microsoft SDKs\Windows\v6.0\Bin\WsatUI.dll**</span></span>  
   
- 登録するには、次のコマンドを実行します。  
+ <span data-ttu-id="62c77-116">登録するには、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="62c77-116">The registration can be done by the following command.</span></span>  
   
 ```Output  
 regasm.exe /codebase WsatUI.dll  
 ```  
   
- このツールを使用すると、WS\-AtomicTransaction の基本設定を変更できます。たとえば、WS\-AtomicTransaction プロトコル サポートの有効\/無効の切り替え、WS\-AT で使用する HTTP ポートの構成、SSL 証明書の HTTP ポートへのバインド、証明書のサブジェクト名指定による証明書の構成、トレース モードの選択とタイムアウトの既定および上限の設定を行うことができます。  
+ <span data-ttu-id="62c77-117">このツールを使用すると、WS-AtomicTransaction の基本設定を変更できます。</span><span class="sxs-lookup"><span data-stu-id="62c77-117">You can use this tool to modify the basic WS-AtomicTransaction settings.</span></span> <span data-ttu-id="62c77-118">たとえば、WS-AtomicTransaction プロトコル サポートの有効/無効の切り替え、WS-AT で使用する HTTP ポートの構成、SSL 証明書の HTTP ポートへのバインド、証明書のサブジェクト名指定による証明書の構成、トレース モードの選択とタイムアウトの既定および上限の設定を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="62c77-118">For example, you can enable and disable the WS-AtomicTransaction protocol support, configure the HTTP ports for WS-AT, bind an SSL Certificate to the HTTP port, configure certificates by specifying certificate subject names, select the Tracing mode and set default and maximum timeouts.</span></span>  
   
- WS\-AtomicTransaction サポートをローカル マシン上にのみ構成する必要がある場合は、このツールのコマンド ライン バージョンを使用できます。コマンド ライン ツール[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[WS\-AtomicTransaction 構成ユーティリティ \(wsatConfig.exe\)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)」を参照してください。  
+ <span data-ttu-id="62c77-119">WS-AtomicTransaction サポートをローカル マシン上にのみ構成する必要がある場合は、このツールのコマンド ライン バージョンを使用できます。</span><span class="sxs-lookup"><span data-stu-id="62c77-119">If you must configure WS-AtomicTransaction support on the local machine only, you can use the command line version of this tool.</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="62c77-120">コマンド ライン ツールを参照してください、 [Ws-atomictransaction 構成ユーティリティ (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)トピックです。</span><span class="sxs-lookup"><span data-stu-id="62c77-120"> the command line tool, see the [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md) topic.</span></span>  
   
- MMC スナップインとコマンド ライン ツールはいずれも、すべての WS\-AT 設定を構成できるわけではありません。これらの設定は、レジストリを直接変更することによってのみ編集できます。これらのレジストリ設定[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[WS\-AtomicTransaction サポートの構成](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)」を参照してください。  
+ <span data-ttu-id="62c77-121">MMC スナップインとコマンド ライン ツールはいずれも、すべての WS-AT 設定を構成できるわけではありません。</span><span class="sxs-lookup"><span data-stu-id="62c77-121">You should be aware that both the MMC Snap-in and the command-line tool do not support configuring all WS-AT settings.</span></span> <span data-ttu-id="62c77-122">これらの設定は、レジストリを直接変更することによってのみ編集できます。</span><span class="sxs-lookup"><span data-stu-id="62c77-122">These settings can be edited only by modifying the registry directly.</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="62c77-123">これらのレジストリ設定を参照してください[Ws-atomic Transaction サポートの構成](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)です。</span><span class="sxs-lookup"><span data-stu-id="62c77-123"> these registry settings, see [Configuring WS-Atomic Transaction Support](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md).</span></span>  
   
-### ユーザー インターフェイスの説明  
- **Enable WS\-Atomic Transaction Network Support** :  
+### <a name="user-interface-description"></a><span data-ttu-id="62c77-124">ユーザー インターフェイスの説明</span><span class="sxs-lookup"><span data-stu-id="62c77-124">User Interface Description</span></span>  
+ <span data-ttu-id="62c77-125">**Ws-atomic Transaction ネットワーク サポートを有効にする**:</span><span class="sxs-lookup"><span data-stu-id="62c77-125">**Enable WS-Atomic Transaction Network Support**:</span></span>  
   
- このチェック ボックスをオンまたはオフに切り替えると、このスナップインのすべての GUI コンポーネントが有効または無効になります。  
+ <span data-ttu-id="62c77-126">このチェック ボックスをオンまたはオフに切り替えると、このスナップインのすべての GUI コンポーネントが有効または無効になります。</span><span class="sxs-lookup"><span data-stu-id="62c77-126">Toggling this checkbox enables or disables all the GUI components of this snap-in.</span></span>  
   
- このチェック ボックスをオンにする前に、受信か送信の通信、またはその両方で \[ネットワーク DTC アクセス\] が有効であることを確認する必要があります。この値は、MSDTC スナップインの **\[セキュリティ\]** タブで確認できます。  
+ <span data-ttu-id="62c77-127">このチェック ボックスをオンにする前に、受信か送信の通信、またはその両方で [ネットワーク DTC アクセス] が有効であることを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="62c77-127">Before you check this box, you should make sure that Network DTC Access is enabled with inbound or outbound communication, or both.</span></span> <span data-ttu-id="62c77-128">この値を検証することができます、**セキュリティ**MSDTC スナップインのタブ。</span><span class="sxs-lookup"><span data-stu-id="62c77-128">This value can be verified in the **Security** Tab of the MSDTC snap-in.</span></span>  
   
-#### Network グループ ボックス  
- Network グループでは、HTTPS ポートや追加のセキュリティ設定 \(SSL 暗号化など\) を指定できます。DTC ネットワーク トランザクションが有効でない場合、このグループは無効 \(灰色表示\) です。  
+#### <a name="network-group-box"></a><span data-ttu-id="62c77-129">Network グループ ボックス</span><span class="sxs-lookup"><span data-stu-id="62c77-129">Network Group Box</span></span>  
+ <span data-ttu-id="62c77-130">Network グループでは、HTTPS ポートや追加のセキュリティ設定 (SSL 暗号化など) を指定できます。</span><span class="sxs-lookup"><span data-stu-id="62c77-130">You can specify the HTTPS port and additional security settings such as SSL encryption in the Network group.</span></span> <span data-ttu-id="62c77-131">DTC ネットワーク トランザクションが有効でない場合、このグループは無効 (灰色表示) です。</span><span class="sxs-lookup"><span data-stu-id="62c77-131">This group is disabled (grayed out) if DTC Network Transactions are not enabled.</span></span>  
   
- **HTTPS Port**  
+ <span data-ttu-id="62c77-132">**HTTPS ポート**</span><span class="sxs-lookup"><span data-stu-id="62c77-132">**HTTPS Port**</span></span>  
   
- これは WS\-AT に使用される HTTPS ポートの値です。有効なポートを表す値は、1 ～ 65535 の範囲内であることが必要です。HTTP ポートを変更すると、HTTP サービス構成が変更されます。つまり、前に使用していた WS\-AT サービス アドレスが解放され、新しいポートに基づいて新しい WS\-AT サービス アドレスが登録されます。さらに、新しく選択したポートは、現在選択している SSL 証明書で暗号化されます。  
-  
-> [!NOTE]
->  このツールを実行する前にファイアウォールが既に有効な場合、ポートは例外の一覧に自動的に登録されます。このツールを実行する前にファイアウォールが無効な場合、ファイアウォールに関する追加の構成はありません。  
-  
- WS\-AT の構成後にファイアウォールを有効にする場合は、このツールを再度実行し、このパラメーターを使用してポート番号を指定する必要があります。WS\-AT の構成後にファイアウォールを無効にする場合は、入力を追加しないで WS\-AT の動作を続行します。  
-  
- **エンドポイント証明書**  
-  
- **\[Select\]** ボタンをクリックすると、ローカル マシン上で現在有効な証明書が一覧表示されます。ユーザーは、SSL 暗号化に使用できる証明書を選択できます。証明書には、秘密キーが必要です。秘密キーがない場合は、エラー メッセージが表示されます。  
+ <span data-ttu-id="62c77-133">これは WS-AT に使用される HTTPS ポートの値です。</span><span class="sxs-lookup"><span data-stu-id="62c77-133">This is the value of the HTTPS port used for WS-AT.</span></span> <span data-ttu-id="62c77-134">有効なポートを表す値は、1 ～ 65535 の範囲内であることが必要です。</span><span class="sxs-lookup"><span data-stu-id="62c77-134">The value must be a number in the range 1-65535 (as to represent a valid port).</span></span> <span data-ttu-id="62c77-135">HTTP ポートを変更すると、HTTP サービス構成が変更されます。つまり、前に使用していた WS-AT サービス アドレスが解放され、新しいポートに基づいて新しい WS-AT サービス アドレスが登録されます。</span><span class="sxs-lookup"><span data-stu-id="62c77-135">Changing the HTTP Port modifies the HTTP Service Configuration, which means that the previously used WS-AT Service Address is released, and a new WS-AT Service Address is registered based on the new port.</span></span> <span data-ttu-id="62c77-136">さらに、新しく選択したポートは、現在選択している SSL 証明書で暗号化されます。</span><span class="sxs-lookup"><span data-stu-id="62c77-136">In addition, the newly selected port is encrypted with the currently selected certificate for SSL Encryption.</span></span>  
   
 > [!NOTE]
->  選択したポートに SSL 証明書を設定すると、そのポートに関連付けられたオリジナルの SSL 証明書が上書きされます。  
+>  <span data-ttu-id="62c77-137">このツールを実行する前にファイアウォールが既に有効な場合、ポートは例外の一覧に自動的に登録されます。</span><span class="sxs-lookup"><span data-stu-id="62c77-137">If you have already enabled the firewall before running this tool, the port is automatically registered in the exception list.</span></span> <span data-ttu-id="62c77-138">このツールを実行する前にファイアウォールが無効な場合、ファイアウォールに関する追加の構成はありません。</span><span class="sxs-lookup"><span data-stu-id="62c77-138">If the firewall is disabled before running this tool, nothing additional is configured regarding the firewall.</span></span>  
   
- **Authorized Accounts**  
+ <span data-ttu-id="62c77-139">WS-AT の構成後にファイアウォールを有効にする場合は、このツールを再度実行し、このパラメーターを使用してポート番号を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="62c77-139">If you enable the firewall after configuring WS-AT, you must run this tool again and supply the port number using this parameter.</span></span> <span data-ttu-id="62c77-140">WS-AT の構成後にファイアウォールを無効にする場合は、入力を追加しないで WS-AT の動作を続行します。</span><span class="sxs-lookup"><span data-stu-id="62c77-140">If you disable the firewall after configuring, WS-AT continues to work without additional input.</span></span>  
   
- **\[Select\]** ボタンをクリックすると、Windows アクセス制御リスト エディターが呼び出されます。このエディターでは、WS\-AtomicTransaction に参加できるユーザーまたはグループを指定できます。指定するには、**\[Participate\]** アクセス許可グループの **\[Allow\]** または **\[Deny\]** ボックスをオンにします。  
+ <span data-ttu-id="62c77-141">**エンドポイントの証明書**</span><span class="sxs-lookup"><span data-stu-id="62c77-141">**Endpoint Certificate**</span></span>  
   
- **Authorized Certificates**  
-  
- **\[Select\]** ボタンをクリックすると、ローカル マシン上で現在有効な証明書が一覧表示されます。WS\-AtomicTransaction への参加が許可される証明書 ID を選択できます。  
-  
-#### Timeout グループ ボックス  
- **\[Timeout\]** グループ ボックスでは、WS\-AtomicTransaction の既定のタイムアウトと最大のタイムアウトを指定できます。送信のタイムアウトの有効値は 1 ～ 3600 の範囲です。受信のタイムアウトの有効値は 0 ～ 3600 の範囲です。  
-  
-#### グループ ボックスのトレースとログ記録  
- **\[Tracing and Logging\]** グループ ボックスでは、トレースとログ記録の必要なレベルを構成できます。  
-  
- **\[Options\]** ボタンをクリックすると、追加の設定を指定できるページが呼び出されます。  
-  
- **\[Trace Level\]** コンボ ボックスでは、<xref:System.Diagnostics.TraceLevel> 列挙体から有効値を選択できます。また、チェック ボックスを使用して、アクティビティ トレースやアクティビティ伝達を実行するかどうかを指定したり、個人を特定する情報を収集するかどうかを指定することもできます。  
-  
- **\[Logging Session\]** グループ ボックスでログ セッションを指定することもできます。  
+ <span data-ttu-id="62c77-142">クリックすると、**選択**ボタンには、ユーザーが SSL 暗号化のために使用する証明書を選択できるように、ローカル コンピューターで証明書が現在使用可能な一覧が表示されます。</span><span class="sxs-lookup"><span data-stu-id="62c77-142">Clicking the **Select** button displays a list with the currently available certificates on the Local Machine, allowing the user to select the certificate that can be used for SSL encryption.</span></span> <span data-ttu-id="62c77-143">証明書には、秘密キーが必要です。</span><span class="sxs-lookup"><span data-stu-id="62c77-143">The certificates must have a private key.</span></span> <span data-ttu-id="62c77-144">秘密キーがない場合は、エラー メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="62c77-144">Otherwise, you receive an error message.</span></span>  
   
 > [!NOTE]
->  別のトレース コンシューマーが WS\-AT トレース プロバイダーを使用している場合は、トレース イベントの新しいログ セッションを作成できません。このときにログ記録を構成しようとすると、エラー メッセージ "プロバイダーを有効にできませんでした。エラー コード: 1" が表示されます。  
+>  <span data-ttu-id="62c77-145">選択したポートに SSL 証明書を設定すると、そのポートに関連付けられたオリジナルの SSL 証明書が上書きされます。</span><span class="sxs-lookup"><span data-stu-id="62c77-145">When you set an SSL certificate for a selected port, you overwrite the original SSL certificate associated with that port if one exists.</span></span>  
   
- トレースとログ記録[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[管理と診断](../../../docs/framework/wcf/diagnostics/index.md)」を参照してください。  
+ <span data-ttu-id="62c77-146">**承認されたアカウント**</span><span class="sxs-lookup"><span data-stu-id="62c77-146">**Authorized Accounts**</span></span>  
   
-## 参照  
- [WS\-AtomicTransaction サポートの構成](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)   
- [WS\-AtomicTransaction 構成ユーティリティ \(wsatConfig.exe\)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)   
- [管理と診断](../../../docs/framework/wcf/diagnostics/index.md)
+ <span data-ttu-id="62c77-147">クリックすると、**選択**ボタンで位置で指定できます、ユーザーまたはグループを含めることができる ws-atomictransaction をチェックして、Windows アクセス制御リスト エディターが呼び出され、**許可**または**Deny**ボックスに、**参加**アクセス許可グループ。</span><span class="sxs-lookup"><span data-stu-id="62c77-147">Clicking the **Select** button invokes the Windows Access Control List editor, where you can specify the user or group that can participate in WS-Atomic transactions by checking the **Allow** or **Deny** box in the **Participate** permission group.</span></span>  
+  
+ <span data-ttu-id="62c77-148">**承認された証明書**</span><span class="sxs-lookup"><span data-stu-id="62c77-148">**Authorized Certificates**</span></span>  
+  
+ <span data-ttu-id="62c77-149">クリックすると、**選択**ボタンは、LocalMachine で現在使用可能な証明書の一覧を表示します。</span><span class="sxs-lookup"><span data-stu-id="62c77-149">Clicking the **Select** button displays a list of currently available certificates on the LocalMachine.</span></span> <span data-ttu-id="62c77-150">WS-AtomicTransaction への参加が許可される証明書 ID を選択できます。</span><span class="sxs-lookup"><span data-stu-id="62c77-150">You can then select which certificate identities are allowed to participate in WS-Atomic transactions.</span></span>  
+  
+#### <a name="timeout-group-box"></a><span data-ttu-id="62c77-151">Timeout グループ ボックス</span><span class="sxs-lookup"><span data-stu-id="62c77-151">Timeout Group Box</span></span>  
+ <span data-ttu-id="62c77-152">**タイムアウト**グループ ボックスでは、Ws-atomic transaction の既定値および最大のタイムアウトを指定することができます。</span><span class="sxs-lookup"><span data-stu-id="62c77-152">The **Timeout** group box allows you to specify the default and maximum timeout for a WS-Atomic transaction.</span></span> <span data-ttu-id="62c77-153">送信のタイムアウトの有効値は 1 ～ 3600 の範囲です。</span><span class="sxs-lookup"><span data-stu-id="62c77-153">A valid value for outgoing timeout is between 1 and 3600.</span></span> <span data-ttu-id="62c77-154">受信のタイムアウトの有効値は 0 ～ 3600 の範囲です。</span><span class="sxs-lookup"><span data-stu-id="62c77-154">A valid value for incoming timeout is between 0 and 3600.</span></span>  
+  
+#### <a name="tracing-and-logging-group-box"></a><span data-ttu-id="62c77-155">グループ ボックスのトレースとログ記録</span><span class="sxs-lookup"><span data-stu-id="62c77-155">Tracing and Logging Group Box</span></span>  
+ <span data-ttu-id="62c77-156">**トレースとログ記録**グループ ボックスでは、必要なトレースとログ記録レベルを構成することができます。</span><span class="sxs-lookup"><span data-stu-id="62c77-156">The **Tracing and Logging** group Box allows you to configure the desired tracing and logging level.</span></span>  
+  
+ <span data-ttu-id="62c77-157">クリックすると、**オプション**ボタンは、追加の設定を指定するページを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="62c77-157">Clicking the **Options** button invokes a page where you can specify additional settings.</span></span>  
+  
+ <span data-ttu-id="62c77-158">**トレース レベル**コンビネーション ボックスでは、任意の有効な値から選択することができます、<xref:System.Diagnostics.TraceLevel>列挙します。</span><span class="sxs-lookup"><span data-stu-id="62c77-158">The **Trace Level** combination box allows you to choose from any valid value of the <xref:System.Diagnostics.TraceLevel> enumeration.</span></span> <span data-ttu-id="62c77-159">また、チェック ボックスを使用して、アクティビティ トレースやアクティビティ伝達を実行するかどうかを指定したり、個人を特定する情報を収集するかどうかを指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="62c77-159">You can also use the checkboxes to specify if you want to perform activity tracing, activity propagation or collect personal identifiable information.</span></span>  
+  
+ <span data-ttu-id="62c77-160">ログ セッションを指定することも、**ログ セッション**グループ ボックス。</span><span class="sxs-lookup"><span data-stu-id="62c77-160">You can also specify logging sessions in the **Logging Session** group box.</span></span>  
+  
+> [!NOTE]
+>  <span data-ttu-id="62c77-161">別のトレース コンシューマーが WS-AT トレース プロバイダーを使用している場合は、トレース イベントの新しいログ セッションを作成できません。</span><span class="sxs-lookup"><span data-stu-id="62c77-161">When another trace consumer is using the WS-AT trace provider, you cannot create a new logging session for trace events.</span></span> <span data-ttu-id="62c77-162">このときにログ記録を構成しようとすると、エラー メッセージ "プロバイダーを有効にできませんでした。</span><span class="sxs-lookup"><span data-stu-id="62c77-162">Any attempt to configure logging during this time results in the error message "Failed to enable provider.</span></span> <span data-ttu-id="62c77-163">エラー コード: 1" が表示されます。</span><span class="sxs-lookup"><span data-stu-id="62c77-163">Error code: 1".</span></span>  
+  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="62c77-164">トレースとログ記録を参照してください。[管理と診断](../../../docs/framework/wcf/diagnostics/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="62c77-164"> tracing and logging, see [Administration and Diagnostics](../../../docs/framework/wcf/diagnostics/index.md).</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="62c77-165">関連項目</span><span class="sxs-lookup"><span data-stu-id="62c77-165">See Also</span></span>  
+ [<span data-ttu-id="62c77-166">Ws-atomic Transaction サポートを構成します。</span><span class="sxs-lookup"><span data-stu-id="62c77-166">Configuring WS-Atomic Transaction Support</span></span>](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)  
+ [<span data-ttu-id="62c77-167">WS-AtomicTransaction 構成ユーティリティ (wsatConfig.exe)</span><span class="sxs-lookup"><span data-stu-id="62c77-167">WS-AtomicTransaction Configuration Utility (wsatConfig.exe)</span></span>](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)  
+ [<span data-ttu-id="62c77-168">管理と診断</span><span class="sxs-lookup"><span data-stu-id="62c77-168">Administration and Diagnostics</span></span>](../../../docs/framework/wcf/diagnostics/index.md)

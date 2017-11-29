@@ -1,69 +1,69 @@
 ---
-title: "WebBrowser コントロールの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "WebBrowser"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Web ページ, 表示 (アプリケーション内に)"
-  - "WebBrowser コントロール [Windows フォーム], 概要"
+title: "WebBrowser コントロールの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: WebBrowser
+helpviewer_keywords:
+- WebBrowser control [Windows Forms], about
+- Web pages [Windows Forms], displaying in applications
 ms.assetid: 6e3e1cc2-9c48-4136-9659-e99e4e60b7e9
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9c2dfae4cbd7f583ce69ff5591c24a573db0d4e4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WebBrowser コントロールの概要
-<xref:System.Windows.Forms.WebBrowser> コントロールは、WebBrowser ActiveX コントロール用のマネージ ラッパーを提供します。  マネージ ラッパーを使用すると、Windows フォーム クライアント アプリケーションで、Web ページを表示できます。  <xref:System.Windows.Forms.WebBrowser> コントロールを使用すると、アプリケーションで Internet Explorer の Web ブラウザー同様の機能を利用できます。または、Internet Explorer の既定の機能を無効にして、コントロールを単純な HTML ドキュメント ビューアーとして使用することもできます。  また、このコントロールを使用してフォームに DHTML ベースのユーザー インターフェイス要素を追加することによって、これらの機能が <xref:System.Windows.Forms.WebBrowser> コントロールでホストされているという事実を隠すこともできます。  この方法によって、Web コントロールと Windows フォーム コントロールとを 1 つのアプリケーションでシームレスに組み合わせることができます。  
+# <a name="webbrowser-control-overview"></a><span data-ttu-id="4e09a-102">WebBrowser コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="4e09a-102">WebBrowser Control Overview</span></span>
+<span data-ttu-id="4e09a-103"><xref:System.Windows.Forms.WebBrowser>コントロールは、WebBrowser ActiveX コントロールのマネージ ラッパーを提供します。</span><span class="sxs-lookup"><span data-stu-id="4e09a-103">The <xref:System.Windows.Forms.WebBrowser> control provides a managed wrapper for the WebBrowser ActiveX control.</span></span> <span data-ttu-id="4e09a-104">マネージ ラッパーを使用して、Windows フォーム クライアント アプリケーションで Web ページを表示できます。</span><span class="sxs-lookup"><span data-stu-id="4e09a-104">The managed wrapper lets you display Web pages in your Windows Forms client applications.</span></span> <span data-ttu-id="4e09a-105">使用することができます、<xref:System.Windows.Forms.WebBrowser>したりするアプリケーションで Internet Explorer Web ブラウズの機能を複製するコントロールが既定の Internet Explorer の機能を無効にしてとして単純な HTML ドキュメント ビューアー コントロールを使用します。</span><span class="sxs-lookup"><span data-stu-id="4e09a-105">You can use the <xref:System.Windows.Forms.WebBrowser> control to duplicate Internet Explorer Web browsing functionality in your application or you can disable default Internet Explorer functionality and use the control as a simple HTML document viewer.</span></span> <span data-ttu-id="4e09a-106">DHTML ベースのユーザー インターフェイス要素をフォームに追加しでホストされているという事実を非表示にする、コントロールを使用することも、<xref:System.Windows.Forms.WebBrowser>コントロール。</span><span class="sxs-lookup"><span data-stu-id="4e09a-106">You can also use the control to add DHTML-based user interface elements to your form and hide the fact that they are hosted in the <xref:System.Windows.Forms.WebBrowser> control.</span></span> <span data-ttu-id="4e09a-107">この方法では、Web コントロールを 1 つのアプリケーションで Windows フォーム コントロールとシームレスに結合することができます。</span><span class="sxs-lookup"><span data-stu-id="4e09a-107">This approach lets you seamlessly combine Web controls with Windows Forms controls in a single application.</span></span>  
   
-## よく使用されるプロパティ、メソッド、およびイベント  
- <xref:System.Windows.Forms.WebBrowser> コントロールには、Internet Explorer のコントロールを実装するために利用できる複数のプロパティ、メソッド、およびイベントがあります。  たとえば、`Navigate` メソッドを使用すると、アドレス バーを実装でき、`GoBack` メソッド、`GoForward` メソッド、`Stop` メソッド、および `Refresh` メソッドを使用すると、ツール バー上の移動ボタンを実装できます。  `Navigated` イベントを処理すると、`Url` プロパティの値でアドレス バーを更新したり、`DocumentTitle` プロパティの値でタイトル バーを更新したりできます。  
+## <a name="frequently-used-properties-methods-and-events"></a><span data-ttu-id="4e09a-108">よく使用されるプロパティ、メソッド、およびイベント</span><span class="sxs-lookup"><span data-stu-id="4e09a-108">Frequently Used Properties, Methods, and Events</span></span>  
+ <span data-ttu-id="4e09a-109"><xref:System.Windows.Forms.WebBrowser>コントロールがいくつかのプロパティ、メソッド、および Internet Explorer でのコントロールを実装に使用できるイベントです。</span><span class="sxs-lookup"><span data-stu-id="4e09a-109">The <xref:System.Windows.Forms.WebBrowser> control has several properties, methods, and events that you can use to implement controls found in Internet Explorer.</span></span> <span data-ttu-id="4e09a-110">たとえば、使用することができます、 `Navigate` 、アドレス バーを実装するメソッド、および`GoBack`、 `GoForward`、 `Stop`、および`Refresh`ツールバーにあるナビゲーション ボタンを実装するメソッド。</span><span class="sxs-lookup"><span data-stu-id="4e09a-110">For example, you can use the `Navigate` method to implement an address bar, and the `GoBack`, `GoForward`, `Stop`, and `Refresh` methods to implement navigation buttons on a toolbar.</span></span> <span data-ttu-id="4e09a-111">処理することができます、`Navigated`の値は、アドレス バーを更新するイベント、`Url`プロパティとタイトル バーの値と、`DocumentTitle`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="4e09a-111">You can handle the `Navigated` event to update the address bar with the value of the `Url` property and the title bar with the value of the `DocumentTitle` property.</span></span>  
   
- アプリケーション内で独自のページ コンテンツを作成する場合は、`DocumentText` プロパティを設定します。  HTML ドキュメント オブジェクト モデル \(DOM\) の知識があれば、`Document` プロパティを使用して、現在の Web ページのコンテンツを操作することもできます。  このプロパティを使用すると、複数のファイルを移動しなくても、メモリ内でドキュメントの格納および変更を行うことができます。  
+ <span data-ttu-id="4e09a-112">アプリケーション内で独自のページ コンテンツを生成する場合は、設定、`DocumentText`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="4e09a-112">If you want to generate your own page content within your application, you can set the `DocumentText` property.</span></span> <span data-ttu-id="4e09a-113">現在の Web ページの内容を操作する場合は、HTML ドキュメント オブジェクト モデル (DOM) に慣れてもことができます、`Document`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="4e09a-113">If you are familiar with the HTML document object model (DOM), you can also manipulate the contents of the current Web page through the `Document` property.</span></span> <span data-ttu-id="4e09a-114">このプロパティを格納でき、ファイル間を移動する代わりに、メモリ内のドキュメントを変更できます。</span><span class="sxs-lookup"><span data-stu-id="4e09a-114">With this property, you can store and modify documents in memory instead of navigating among files.</span></span>  
   
- `Document` プロパティは、Web ページのスクリプト コードで実装されているメソッドを、クライアント アプリケーション コードから呼び出す場合にも使用できます。  スクリプト コードからクライアント アプリケーション コードにアクセスするには、`ObjectForScripting` プロパティを設定します。  指定したオブジェクトは、`window.external` オブジェクトとしてスクリプト コードによってアクセスできます。  
+ <span data-ttu-id="4e09a-115">`Document`プロパティでは Web ページのクライアント アプリケーション コードからコードをスクリプトで実装されているメソッドを呼び出すこともできます。</span><span class="sxs-lookup"><span data-stu-id="4e09a-115">The `Document` property also lets you call methods implemented in Web page scripting code from your client application code.</span></span> <span data-ttu-id="4e09a-116">スクリプト コードから、クライアント アプリケーション コードにアクセスするには、設定、`ObjectForScripting`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="4e09a-116">To access your client application code from your scripting code, set the `ObjectForScripting` property.</span></span> <span data-ttu-id="4e09a-117">指定したオブジェクトとして、スクリプト コードでアクセスできる、`window.external`オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="4e09a-117">The object that you specify can be accessed by your script code as the `window.external` object.</span></span>  
   
-|名前|Description|  
-|--------|-----------------|  
-|<xref:System.Windows.Forms.WebBrowser.Document%2A> プロパティ|現在の Web ページの HTML ドキュメント オブジェクト モデル \(DOM\) へのアクセスを管理するオブジェクトを取得します。|  
-|<xref:System.Windows.Forms.WebBrowser.DocumentCompleted> イベント|Web ページの読み込みが完了した時点で発生します。|  
-|<xref:System.Windows.Forms.WebBrowser.DocumentText%2A> プロパティ|現在の Web ページから HTML コンテンツを取得または設定します。|  
-|<xref:System.Windows.Forms.WebBrowser.DocumentTitle%2A> プロパティ|現在の Web ページのタイトルを取得します。|  
-|<xref:System.Windows.Forms.WebBrowser.GoBack%2A> メソッド|履歴内の前のページに移動します。|  
-|<xref:System.Windows.Forms.WebBrowser.GoForward%2A> メソッド|履歴内の次のページに移動します。|  
-|<xref:System.Windows.Forms.WebBrowser.Navigate%2A> メソッド|指定した URL へ移動します。|  
-|<xref:System.Windows.Forms.WebBrowser.Navigating> イベント|移動を開始する前に発生し、アクションのキャンセルを可能にします。|  
-|<xref:System.Windows.Forms.WebBrowser.ObjectForScripting%2A> プロパティ|Web ページのスクリプト コードでアプリケーションと通信するために使用するオブジェクトを取得または設定します。|  
-|<xref:System.Windows.Forms.WebBrowser.Print%2A> メソッド|現在の Web ページを印刷します。|  
-|<xref:System.Windows.Forms.WebBrowser.Refresh%2A> メソッド|現在の Web ページを再読み込みします。|  
-|<xref:System.Windows.Forms.WebBrowser.Stop%2A> メソッド|現在の移動処理を中断し、サウンドやアニメーションなどの動的なページ要素を停止します。|  
-|<xref:System.Windows.Forms.WebBrowser.Url%2A> プロパティ|現在の Web ページの URL を取得または設定します。  このプロパティを設定すると、コントロールを新しい URL に移動できます。|  
+|<span data-ttu-id="4e09a-118">名前</span><span class="sxs-lookup"><span data-stu-id="4e09a-118">Name</span></span>|<span data-ttu-id="4e09a-119">説明</span><span class="sxs-lookup"><span data-stu-id="4e09a-119">Description</span></span>|  
+|----------|-----------------|  
+|<span data-ttu-id="4e09a-120"><xref:System.Windows.Forms.WebBrowser.Document%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="4e09a-120"><xref:System.Windows.Forms.WebBrowser.Document%2A> property</span></span>|<span data-ttu-id="4e09a-121">現在の Web ページの HTML ドキュメント オブジェクト モデル (DOM) への管理アクセスを提供するオブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="4e09a-121">Gets an object that provides managed access to the HTML document object model (DOM) of the current Web page.</span></span>|  
+|<span data-ttu-id="4e09a-122"><xref:System.Windows.Forms.WebBrowser.DocumentCompleted> イベント</span><span class="sxs-lookup"><span data-stu-id="4e09a-122"><xref:System.Windows.Forms.WebBrowser.DocumentCompleted> event</span></span>|<span data-ttu-id="4e09a-123">Web ページには、読み込みが完了したときに発生します。</span><span class="sxs-lookup"><span data-stu-id="4e09a-123">Occurs when a Web page finishes loading.</span></span>|  
+|<span data-ttu-id="4e09a-124"><xref:System.Windows.Forms.WebBrowser.DocumentText%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="4e09a-124"><xref:System.Windows.Forms.WebBrowser.DocumentText%2A> property</span></span>|<span data-ttu-id="4e09a-125">取得または HTML を現在の Web ページのコンテンツに設定します。</span><span class="sxs-lookup"><span data-stu-id="4e09a-125">Gets or sets the HTML content of the current Web page.</span></span>|  
+|<span data-ttu-id="4e09a-126"><xref:System.Windows.Forms.WebBrowser.DocumentTitle%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="4e09a-126"><xref:System.Windows.Forms.WebBrowser.DocumentTitle%2A> property</span></span>|<span data-ttu-id="4e09a-127">現在の Web ページのタイトルを取得します。</span><span class="sxs-lookup"><span data-stu-id="4e09a-127">Gets the title of the current Web page.</span></span>|  
+|<span data-ttu-id="4e09a-128"><xref:System.Windows.Forms.WebBrowser.GoBack%2A> メソッド</span><span class="sxs-lookup"><span data-stu-id="4e09a-128"><xref:System.Windows.Forms.WebBrowser.GoBack%2A> method</span></span>|<span data-ttu-id="4e09a-129">履歴に前のページに移動します。</span><span class="sxs-lookup"><span data-stu-id="4e09a-129">Navigates to the previous page in history.</span></span>|  
+|<span data-ttu-id="4e09a-130"><xref:System.Windows.Forms.WebBrowser.GoForward%2A> メソッド</span><span class="sxs-lookup"><span data-stu-id="4e09a-130"><xref:System.Windows.Forms.WebBrowser.GoForward%2A> method</span></span>|<span data-ttu-id="4e09a-131">履歴に次のページに移動します。</span><span class="sxs-lookup"><span data-stu-id="4e09a-131">Navigates to the next page in history.</span></span>|  
+|<span data-ttu-id="4e09a-132"><xref:System.Windows.Forms.WebBrowser.Navigate%2A> メソッド</span><span class="sxs-lookup"><span data-stu-id="4e09a-132"><xref:System.Windows.Forms.WebBrowser.Navigate%2A> method</span></span>|<span data-ttu-id="4e09a-133">指定された URL に移動します。</span><span class="sxs-lookup"><span data-stu-id="4e09a-133">Navigates to the specified URL.</span></span>|  
+|<span data-ttu-id="4e09a-134"><xref:System.Windows.Forms.WebBrowser.Navigating> イベント</span><span class="sxs-lookup"><span data-stu-id="4e09a-134"><xref:System.Windows.Forms.WebBrowser.Navigating> event</span></span>|<span data-ttu-id="4e09a-135">ナビゲーションが開始されると、キャンセルの動作を有効にする前に発生します。</span><span class="sxs-lookup"><span data-stu-id="4e09a-135">Occurs before navigation begins, enabling the action to be canceled.</span></span>|  
+|<span data-ttu-id="4e09a-136"><xref:System.Windows.Forms.WebBrowser.ObjectForScripting%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="4e09a-136"><xref:System.Windows.Forms.WebBrowser.ObjectForScripting%2A> property</span></span>|<span data-ttu-id="4e09a-137">取得または Web ページのスクリプト コードは、アプリケーションを使用して通信するために使用できるオブジェクトを設定します。</span><span class="sxs-lookup"><span data-stu-id="4e09a-137">Gets or sets an object that Web page scripting code can use to communicate with your application.</span></span>|  
+|<span data-ttu-id="4e09a-138"><xref:System.Windows.Forms.WebBrowser.Print%2A> メソッド</span><span class="sxs-lookup"><span data-stu-id="4e09a-138"><xref:System.Windows.Forms.WebBrowser.Print%2A> method</span></span>|<span data-ttu-id="4e09a-139">現在の Web ページを印刷します。</span><span class="sxs-lookup"><span data-stu-id="4e09a-139">Prints the current Web page.</span></span>|  
+|<span data-ttu-id="4e09a-140"><xref:System.Windows.Forms.WebBrowser.Refresh%2A> メソッド</span><span class="sxs-lookup"><span data-stu-id="4e09a-140"><xref:System.Windows.Forms.WebBrowser.Refresh%2A> method</span></span>|<span data-ttu-id="4e09a-141">現在の Web ページを再読み込みします。</span><span class="sxs-lookup"><span data-stu-id="4e09a-141">Reloads the current Web page.</span></span>|  
+|<span data-ttu-id="4e09a-142"><xref:System.Windows.Forms.WebBrowser.Stop%2A> メソッド</span><span class="sxs-lookup"><span data-stu-id="4e09a-142"><xref:System.Windows.Forms.WebBrowser.Stop%2A> method</span></span>|<span data-ttu-id="4e09a-143">現在のナビゲーションを停止し、音声とアニメーションなどの動的なページの要素を停止します。</span><span class="sxs-lookup"><span data-stu-id="4e09a-143">Halts the current navigation and stops dynamic page elements such as sounds and animation.</span></span>|  
+|<span data-ttu-id="4e09a-144"><xref:System.Windows.Forms.WebBrowser.Url%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="4e09a-144"><xref:System.Windows.Forms.WebBrowser.Url%2A> property</span></span>|<span data-ttu-id="4e09a-145">取得または現在の Web ページの URL を設定します。</span><span class="sxs-lookup"><span data-stu-id="4e09a-145">Gets or sets the URL of the current Web page.</span></span> <span data-ttu-id="4e09a-146">このプロパティを設定すると、新しい URL にコントロールが移動します。</span><span class="sxs-lookup"><span data-stu-id="4e09a-146">Setting this property navigates the control to the new URL.</span></span>|  
   
-## 参照  
- <xref:System.Windows.Forms.WebBrowser>   
- <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventArgs>   
- <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventHandler>   
- <xref:System.Windows.Forms.WebBrowserEncryptionLevel>   
- <xref:System.Windows.Forms.WebBrowserNavigatedEventArgs>   
- <xref:System.Windows.Forms.WebBrowserNavigatedEventHandler>   
- <xref:System.Windows.Forms.WebBrowserNavigatingEventArgs>   
- <xref:System.Windows.Forms.WebBrowserNavigatingEventHandler>   
- <xref:System.Windows.Forms.WebBrowserProgressChangedEventArgs>   
- <xref:System.Windows.Forms.WebBrowserReadyState>   
- <xref:System.Windows.Forms.WebBrowserRefreshOption>   
- [方法 : WebBrowser コントロールで URL に移動する](../../../../docs/framework/winforms/controls/how-to-navigate-to-a-url-with-the-webbrowser-control.md)   
- [方法 : WebBrowser コントロールを使用して印刷する](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md)   
- [方法 : Windows フォーム アプリケーションに Web ブラウザーの機能を追加する](../../../../docs/framework/winforms/controls/how-to-add-web-browser-capabilities-to-a-windows-forms-application.md)   
- [方法 : Windows フォーム アプリケーションで HTML ドキュメントビューアーを作成する](../../../../docs/framework/winforms/controls/how-to-create-an-html-document-viewer-in-a-windows-forms-application.md)   
- [方法 : DHTML コードとクライアント アプリケーション コード間の双方向の通信を実装する](../../../../docs/framework/winforms/controls/implement-two-way-com-between-dhtml-and-client.md)   
- [WebBrowser セキュリティ](../../../../docs/framework/winforms/controls/webbrowser-security.md)
+## <a name="see-also"></a><span data-ttu-id="4e09a-147">関連項目</span><span class="sxs-lookup"><span data-stu-id="4e09a-147">See Also</span></span>  
+ <xref:System.Windows.Forms.WebBrowser>  
+ <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventArgs>  
+ <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventHandler>  
+ <xref:System.Windows.Forms.WebBrowserEncryptionLevel>  
+ <xref:System.Windows.Forms.WebBrowserNavigatedEventArgs>  
+ <xref:System.Windows.Forms.WebBrowserNavigatedEventHandler>  
+ <xref:System.Windows.Forms.WebBrowserNavigatingEventArgs>  
+ <xref:System.Windows.Forms.WebBrowserNavigatingEventHandler>  
+ <xref:System.Windows.Forms.WebBrowserProgressChangedEventArgs>  
+ <xref:System.Windows.Forms.WebBrowserReadyState>  
+ <xref:System.Windows.Forms.WebBrowserRefreshOption>  
+ [<span data-ttu-id="4e09a-148">方法: WebBrowser コントロールで URL に移動する</span><span class="sxs-lookup"><span data-stu-id="4e09a-148">How to: Navigate to a URL with the WebBrowser Control</span></span>](../../../../docs/framework/winforms/controls/how-to-navigate-to-a-url-with-the-webbrowser-control.md)  
+ [<span data-ttu-id="4e09a-149">方法: WebBrowser コントロールを使用して印刷する</span><span class="sxs-lookup"><span data-stu-id="4e09a-149">How to: Print with a WebBrowser Control</span></span>](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md)  
+ [<span data-ttu-id="4e09a-150">方法: Windows フォーム アプリケーションに Web ブラウザーの機能を追加する</span><span class="sxs-lookup"><span data-stu-id="4e09a-150">How to: Add Web Browser Capabilities to a Windows Forms Application</span></span>](../../../../docs/framework/winforms/controls/how-to-add-web-browser-capabilities-to-a-windows-forms-application.md)  
+ [<span data-ttu-id="4e09a-151">方法: Windows フォーム アプリケーションで HTML ドキュメントビューアーを作成する</span><span class="sxs-lookup"><span data-stu-id="4e09a-151">How to: Create an HTML Document Viewer in a Windows Forms Application</span></span>](../../../../docs/framework/winforms/controls/how-to-create-an-html-document-viewer-in-a-windows-forms-application.md)  
+ [<span data-ttu-id="4e09a-152">方法: DHTML コードとクライアント アプリケーション コード間の双方向の通信を実装する</span><span class="sxs-lookup"><span data-stu-id="4e09a-152">How to: Implement Two-Way Communication Between DHTML Code and Client Application Code</span></span>](../../../../docs/framework/winforms/controls/implement-two-way-com-between-dhtml-and-client.md)  
+ [<span data-ttu-id="4e09a-153">WebBrowser セキュリティ</span><span class="sxs-lookup"><span data-stu-id="4e09a-153">WebBrowser Security</span></span>](../../../../docs/framework/winforms/controls/webbrowser-security.md)

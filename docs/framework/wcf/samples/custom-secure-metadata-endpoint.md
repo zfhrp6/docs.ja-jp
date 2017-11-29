@@ -1,35 +1,37 @@
 ---
-title: "カスタム セキュア メタデータ エンドポイント | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "カスタム セキュア メタデータ エンドポイント"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9e369e99-ea4a-49ff-aed2-9fdf61091a48
-caps.latest.revision: 19
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 78fbde5f83d4a24594e06b787756c7ab3762d75a
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# カスタム セキュア メタデータ エンドポイント
-このサンプルでは、メタデータ交換バインディング以外のバインディングが使用されているセキュア メタデータ エンドポイントが含まれるサービスを実装する方法と、[ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) またはクライアントを構成して、そのようなメタデータ エンドポイントからメタデータを取得する方法を示します。メタデータ エンドポイントを公開する場合に使用できるシステム指定のバインディングには、mexHttpBinding と mexHttpsBinding の 2 つがあります。mexHttpBinding は、メタデータ エンドポイントをセキュリティ保護されない HTTP で公開する場合に使用します。mexHttpsBinding は、メタデータ エンドポイントをセキュリティ保護される HTTPS で公開する場合に使用します。このサンプルでは、<xref:System.ServiceModel.WSHttpBinding> を使用してセキュア メタデータ エンドポイントを公開する方法を示します。この方法は、HTTPS を使用せずにバインディングのセキュリティ設定を変更する場合に使用します。mexHttpsBinding を使用すると、メタデータ エンドポイントがセキュリティ保護されますが、バインディング設定を変更できなくなります。  
+# <a name="custom-secure-metadata-endpoint"></a><span data-ttu-id="e728e-102">カスタム セキュア メタデータ エンドポイント</span><span class="sxs-lookup"><span data-stu-id="e728e-102">Custom Secure Metadata Endpoint</span></span>
+<span data-ttu-id="e728e-103">このサンプルは、非メタデータ交換バインディングのいずれかを使用するセキュリティで保護されたメタデータ エンドポイントとサービスを実装する方法および構成する方法を示しています[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)またはフェッチするクライアント、。このようなメタデータ エンドポイントからメタデータ。</span><span class="sxs-lookup"><span data-stu-id="e728e-103">This sample demonstrates how to implement a service with a secure metadata endpoint that uses one of the non-metadata exchange bindings, and how to configure [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) or clients to fetch the metadata from such a metadata endpoint.</span></span> <span data-ttu-id="e728e-104">メタデータ エンドポイントを公開する場合に使用できるシステム指定のバインディングには、mexHttpBinding と mexHttpsBinding の 2 つがあります。</span><span class="sxs-lookup"><span data-stu-id="e728e-104">There are two system-provided bindings available for exposing metadata endpoints: mexHttpBinding and mexHttpsBinding.</span></span> <span data-ttu-id="e728e-105">mexHttpBinding は、メタデータ エンドポイントをセキュリティ保護されない HTTP を介して公開する場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="e728e-105">mexHttpBinding is used to expose a metadata endpoint over HTTP in a non-secure manner.</span></span> <span data-ttu-id="e728e-106">mexHttpsBinding は、メタデータ エンドポイントをセキュリティ保護される HTTPS を介して公開する場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="e728e-106">mexHttpsBinding is used to expose a metadata endpoint over HTTPS in a secure manner.</span></span> <span data-ttu-id="e728e-107">このサンプルでは、<xref:System.ServiceModel.WSHttpBinding> を使用してセキュア メタデータ エンドポイントを公開する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e728e-107">This sample illustrates how to expose a secure metadata endpoint using the <xref:System.ServiceModel.WSHttpBinding>.</span></span> <span data-ttu-id="e728e-108">この方法は、HTTPS を使用せずにバインディングのセキュリティ設定を変更する場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="e728e-108">You would want to do this when you want to change the security settings on the binding, but you do not want to use HTTPS.</span></span> <span data-ttu-id="e728e-109">mexHttpsBinding を使用すると、メタデータ エンドポイントがセキュリティ保護されますが、バインディング設定を変更できなくなります。</span><span class="sxs-lookup"><span data-stu-id="e728e-109">If you use the mexHttpsBinding your metadata endpoint will be secure, but there is no way to modify the binding settings.</span></span>  
   
 > [!NOTE]
->  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
+>  <span data-ttu-id="e728e-110">このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e728e-110">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
-## サービス  
- このサンプルのサービスには 2 つのエンドポイントがあります。アプリケーション エンドポイントは、`ReliableSession` が有効で証明書による `Message` セキュリティを使用する `WSHttpBinding` に、`ICalculator` コントラクトを提供します。メタデータ エンドポイントでも、同じセキュリティが設定されている `WSHttpBinding` を使用しますが、`ReliableSession` は無効です。関連する構成は次のとおりです。  
+## <a name="service"></a><span data-ttu-id="e728e-111">サービス</span><span class="sxs-lookup"><span data-stu-id="e728e-111">Service</span></span>  
+ <span data-ttu-id="e728e-112">このサンプルのサービスには 2 つのエンドポイントがあります。</span><span class="sxs-lookup"><span data-stu-id="e728e-112">The service in this sample has two endpoints.</span></span> <span data-ttu-id="e728e-113">アプリケーション エンドポイントは、`ICalculator` が有効で証明書による `WSHttpBinding` セキュリティを使用する `ReliableSession` に、`Message` コントラクトを提供します。</span><span class="sxs-lookup"><span data-stu-id="e728e-113">The application endpoint serves the `ICalculator` contract on a `WSHttpBinding` with `ReliableSession` enabled and `Message` security using certificates.</span></span> <span data-ttu-id="e728e-114">メタデータ エンドポイントでも、同じセキュリティが設定されている `WSHttpBinding` を使用しますが、`ReliableSession` は無効です。</span><span class="sxs-lookup"><span data-stu-id="e728e-114">The metadata endpoint also uses `WSHttpBinding`, with the same security settings but with no `ReliableSession`.</span></span> <span data-ttu-id="e728e-115">関連する構成は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="e728e-115">Here is the relevant configuration:</span></span>  
   
-```  
-<services>  
-    …  
+```xml  
+<services>   
     <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
-            behaviorConfiguration="CalculatorServiceBehavior">  
+             behaviorConfiguration="CalculatorServiceBehavior">  
      <!-- use base address provided by host -->  
      <endpoint address=""  
        binding="wsHttpBinding"  
@@ -58,24 +60,24 @@ caps.handback.revision: 19
  </bindings>  
 ```  
   
- 他の多くのサンプルでは、メタデータ エンドポイントには、セキュリティ保護されていない既定の `mexHttpBinding` が使用されます。このサンプルのメタデータは、`Message` セキュリティが設定されている `WSHttpBinding` を使用してセキュリティ保護されます。メタデータ クライアントがこのメタデータを取得するには、照合バインディングを使用して構成する必要があります。このサンプルでは、こうした 2 つのクライアントを示します。  
+ <span data-ttu-id="e728e-116">他の多くのサンプルでは、メタデータ エンドポイントには、セキュリティ保護されていない既定の `mexHttpBinding` が使用されます。</span><span class="sxs-lookup"><span data-stu-id="e728e-116">In many of the other samples, the metadata endpoint uses the default `mexHttpBinding`, which is not secure.</span></span> <span data-ttu-id="e728e-117">このサンプルのメタデータは、`WSHttpBinding` セキュリティが設定されている `Message` を使用してセキュリティ保護されます。</span><span class="sxs-lookup"><span data-stu-id="e728e-117">Here the metadata is secured using `WSHttpBinding` with `Message` security.</span></span> <span data-ttu-id="e728e-118">メタデータ クライアントがこのメタデータを取得するには、照合バインディングを使用して構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e728e-118">In order for metadata clients to retrieve this metadata, they must be configured with a matching binding.</span></span> <span data-ttu-id="e728e-119">このサンプルでは、こうした 2 つのクライアントを示します。</span><span class="sxs-lookup"><span data-stu-id="e728e-119">This sample demonstrates two such clients.</span></span>  
   
- 最初のクライアントでは Svcutil.exe を使用し、デザイン時にメタデータを取得してクライアント コードと構成を生成します。サービスはメタデータの既定以外のバインディングを使用するので、Svcutil.exe ツールはこのバインディングを使用してサービスからメタデータを取得できるよう、特に構成される必要があります。  
+ <span data-ttu-id="e728e-120">最初のクライアントでは Svcutil.exe を使用し、デザイン時にメタデータを取得してクライアント コードと構成を生成します。</span><span class="sxs-lookup"><span data-stu-id="e728e-120">The first client uses Svcutil.exe to fetch the metadata and generate client code and configuration at design time.</span></span> <span data-ttu-id="e728e-121">サービスはメタデータの既定以外のバインディングを使用するので、Svcutil.exe ツールはこのバインディングを使用してサービスからメタデータを取得できるよう、特に構成される必要があります。</span><span class="sxs-lookup"><span data-stu-id="e728e-121">Because the service uses a non-default binding for the metadata, the Svcutil.exe tool must be specifically configured so that it can get the metadata from the service using that binding.</span></span>  
   
- 2 番目のクライアントでは `MetadataResolver` を使用し、既知のコントラクトのメタデータを動的に取得して、動的に生成されたクライアントでの操作を呼び出します。  
+ <span data-ttu-id="e728e-122">2 番目のクライアントでは `MetadataResolver` を使用し、既知のコントラクトのメタデータを動的に取得して、動的に生成されたクライアントでの操作を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="e728e-122">The second client uses the `MetadataResolver` to dynamically fetch the metadata for a known contract and then invoke operations on the dynamically generated client.</span></span>  
   
-## Svcutil クライアント  
- 既定のバインディングを使用して `IMetadataExchange` エンドポイントをホストする場合、このエンドポイントのアドレスを使用して次のように Svcutil.exe を実行できます。  
+## <a name="svcutil-client"></a><span data-ttu-id="e728e-123">Svcutil クライアント</span><span class="sxs-lookup"><span data-stu-id="e728e-123">Svcutil client</span></span>  
+ <span data-ttu-id="e728e-124">既定のバインディングを使用して `IMetadataExchange` エンドポイントをホストする場合、このエンドポイントのアドレスを使用して次のように Svcutil.exe を実行できます。</span><span class="sxs-lookup"><span data-stu-id="e728e-124">When using the default binding to host your `IMetadataExchange` endpoint, you can run Svcutil.exe with the address of that endpoint:</span></span>  
   
 ```  
 svcutil http://localhost/servicemodelsamples/service.svc/mex  
 ```  
   
- これでツールが動作します。ただしこのサンプルのサーバーでは、メタデータをホストするときに既定以外のエンドポイントを使用しています。そのため、正しいバインディングが使用されるように Svcutil.exe を指定する必要があります。これは、Svcutil.exe.config ファイルを使用して実行できます。  
+ <span data-ttu-id="e728e-125">これでツールが動作します。</span><span class="sxs-lookup"><span data-stu-id="e728e-125">and it works.</span></span> <span data-ttu-id="e728e-126">ただしこのサンプルのサーバーでは、メタデータをホストするときに既定以外のエンドポイントを使用しています。</span><span class="sxs-lookup"><span data-stu-id="e728e-126">But in this sample, the server uses a non-default endpoint to host the metadata.</span></span> <span data-ttu-id="e728e-127">そのため、正しいバインディングが使用されるように Svcutil.exe を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e728e-127">So Svcutil.exe must be instructed to use the correct binding.</span></span> <span data-ttu-id="e728e-128">これは、Svcutil.exe.config ファイルを使用して実行できます。</span><span class="sxs-lookup"><span data-stu-id="e728e-128">This can be done using a Svcutil.exe.config file.</span></span>  
   
- Svcutil.exe.config ファイルは、通常のクライアント構成ファイルに似ています。異なる点は、次に示すようにクライアントのエンドポイント名とエンドポイント コントラクトだけです。  
+ <span data-ttu-id="e728e-129">Svcutil.exe.config ファイルは、通常のクライアント構成ファイルに似ています。</span><span class="sxs-lookup"><span data-stu-id="e728e-129">The Svcutil.exe.config file looks like a normal client configuration file.</span></span> <span data-ttu-id="e728e-130">異なる点は、次に示すようにクライアントのエンドポイント名とエンドポイント コントラクトだけです。</span><span class="sxs-lookup"><span data-stu-id="e728e-130">The only unusual aspects are the client endpoint name and contract:</span></span>  
   
-```  
+```xml  
 <endpoint name="http"  
           binding="wsHttpBinding"  
           bindingConfiguration="Binding1"  
@@ -83,26 +85,26 @@ svcutil http://localhost/servicemodelsamples/service.svc/mex
           contract="IMetadataExchange" />  
 ```  
   
- エンドポイント名は、メタデータがホストされるアドレスのスキーマの名前である必要があります。また、エンドポイント コントラクトは `IMetadataExchange` であることが必要です。したがって、Svcutil.exe をコマンド ラインで実行する場合は次のようになります。  
+ <span data-ttu-id="e728e-131">エンドポイント名は、メタデータがホストされるアドレスのスキーマの名前である必要があります。また、エンドポイント コントラクトは `IMetadataExchange` であることが必要です。</span><span class="sxs-lookup"><span data-stu-id="e728e-131">The endpoint name must be the name of the scheme of the address where the metadata is hosted and the endpoint contract must be `IMetadataExchange`.</span></span> <span data-ttu-id="e728e-132">したがって、Svcutil.exe をコマンド ラインで実行する場合は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="e728e-132">Thus, when Svcutil.exe is run with a command-line such as the following:</span></span>  
   
 ```  
 svcutil http://localhost/servicemodelsamples/service.svc/mex  
 ```  
   
- ここでは、"http" という名前のエンドポイントと、このメタデータ エンドポイントとの通信交換のバインディングと動作を構成するコントラクト `IMetadataExchange` が検索されます。このサンプルでは、Svcutil.exe.config ファイルの残りの部分でバインディング構成と動作の資格情報を指定して、サーバーのメタデータ エンドポイントの構成と照合します。  
+ <span data-ttu-id="e728e-133">ここでは、"http" という名前のエンドポイントと、このメタデータ エンドポイントとの通信交換のバインディングと動作を構成するコントラクト `IMetadataExchange` が検索されます。</span><span class="sxs-lookup"><span data-stu-id="e728e-133">it looks for the endpoint named "http" and contract `IMetadataExchange` to configure the binding and behavior of the communication exchange with the metadata endpoint.</span></span> <span data-ttu-id="e728e-134">このサンプルでは、Svcutil.exe.config ファイルの残りの部分でバインディング構成と動作の資格情報を指定して、サーバーのメタデータ エンドポイントの構成と照合します。</span><span class="sxs-lookup"><span data-stu-id="e728e-134">The rest of the Svcutil.exe.config file in the sample specifies the binding configuration and behavior credentials to match the server's configuration of the metadata endpoint.</span></span>  
   
- Svcutil.exe が Svcutil.exe.config の構成を使用するには、Svcutil.exe がこの構成ファイルと同じディレクトリにある必要があります。したがって、Svcutil.exe をインストール場所から Svcutil.exe.config ファイルが含まれるディレクトリにコピーする必要があります。その後、そのディレクトリで次のコマンドを実行します。  
+ <span data-ttu-id="e728e-135">Svcutil.exe が Svcutil.exe.config の構成を使用するには、Svcutil.exe がこの構成ファイルと同じディレクトリにある必要があります。</span><span class="sxs-lookup"><span data-stu-id="e728e-135">In order for Svcutil.exe to pick up the configuration in Svcutil.exe.config, Svcutil.exe must be in the same directory as the configuration file.</span></span> <span data-ttu-id="e728e-136">したがって、Svcutil.exe をインストール場所から Svcutil.exe.config ファイルが含まれるディレクトリにコピーする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e728e-136">As a result, you must copy Svcutil.exe from its install location to the directory that contains the Svcutil.exe.config file.</span></span> <span data-ttu-id="e728e-137">その後、そのディレクトリで次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="e728e-137">Then from that directory, run the following command:</span></span>  
   
 ```  
 .\svcutil.exe http://localhost/servicemodelsamples/service.svc/mex  
 ```  
   
- 先頭の ".\\" により、現在のディレクトリ \(対応する Svcutil.exe.config のあるディレクトリ\) 内の Svcutil.exe のコピーが実行されることになります。  
+ <span data-ttu-id="e728e-138">先頭"です。\\"(のある対応する Svcutil.exe.config) このディレクトリ内の Svcutil.exe のコピーが実行されることを確認します。</span><span class="sxs-lookup"><span data-stu-id="e728e-138">The leading ".\\" ensures that the copy of Svcutil.exe in this directory (the one which has a corresponding Svcutil.exe.config) is run.</span></span>  
   
-## MetadataResolver クライアント  
- クライアントで、コントラクトおよびメタデータと対話する方法がデザイン時に認識されている場合、クライアントは `MetadataResolver` を使用してアプリケーション エンドポイントのバインディングとアドレスを動的に検索することができます。その例として、このクライアントのサンプルでは、`MetadataExchangeClient` を作成して構成することにより、`MetadataResolver` で使用されるバインディングと資格情報を構成する方法を示します。  
+## <a name="metadataresolver-client"></a><span data-ttu-id="e728e-139">MetadataResolver クライアント</span><span class="sxs-lookup"><span data-stu-id="e728e-139">MetadataResolver client</span></span>  
+ <span data-ttu-id="e728e-140">クライアントで、コントラクトおよびメタデータと対話する方法がデザイン時に認識されている場合、クライアントは `MetadataResolver` を使用してアプリケーション エンドポイントのバインディングとアドレスを動的に検索することができます。</span><span class="sxs-lookup"><span data-stu-id="e728e-140">If the client knows the contract and how to talk to the metadata at design time, the client can dynamically find out the binding and address of application endpoints using the `MetadataResolver`.</span></span> <span data-ttu-id="e728e-141">その例として、このクライアントのサンプルでは、`MetadataResolver` を作成して構成することにより、`MetadataExchangeClient` で使用されるバインディングと資格情報を構成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e728e-141">This sample client demonstrates this, showing how to configure the binding and credentials used by `MetadataResolver` by creating and configuring a `MetadataExchangeClient`.</span></span>  
   
- Svcutil.exe.config には、同じバインディングと資格情報についての情報が示されており、`MetadataExchangeClient` でこれを次のように強制的に使用できます。  
+ <span data-ttu-id="e728e-142">Svcutil.exe.config には、同じバインディングと資格情報についての情報が示されており、`MetadataExchangeClient` でこれを次のように強制的に使用できます。</span><span class="sxs-lookup"><span data-stu-id="e728e-142">The same binding and certificate information that appeared in Svcutil.exe.config can be specified imperatively on the `MetadataExchangeClient`:</span></span>  
   
 ```  
 // Specify the Metadata Exchange binding and its security mode  
@@ -118,7 +120,7 @@ mexClient.SoapCredentials.ServiceCertificate.SetDefaultCertificate(    StoreLoca
     X509FindType.FindBySubjectName, "localhost");  
 ```  
   
- `mexClient` が構成されている場合、次のように必要なコントラクトを列挙し、`MetadataResolver` を使用してこれらのコントラクトが含まれるエンドポイントの一覧を取得できます。  
+ <span data-ttu-id="e728e-143">`mexClient` が構成されている場合、次のように必要なコントラクトを列挙し、`MetadataResolver` を使用してこれらのコントラクトが含まれるエンドポイントの一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="e728e-143">With the `mexClient` configured, we can enumerate the contracts we are interested in, and use `MetadataResolver` to fetch a list of endpoints with those contracts:</span></span>  
   
 ```  
 // The contract we want to fetch metadata for  
@@ -130,68 +132,68 @@ EndpointAddress mexAddress = new    EndpointAddress(ConfigurationManager.AppSett
 ServiceEndpointCollection endpoints =    MetadataResolver.Resolve(contracts, mexAddress, mexClient);  
 ```  
   
- 最後に、こうしたエンドポイントからの情報を使用して、アプリケーション エンドポイントと通信するチャネルの作成に使用される、`ChannelFactory` のバインディングとアドレスを初期化できます。  
+ <span data-ttu-id="e728e-144">最後に、こうしたエンドポイントからの情報を使用して、アプリケーション エンドポイントと通信するチャネルの作成に使用される、`ChannelFactory` のバインディングとアドレスを初期化できます。</span><span class="sxs-lookup"><span data-stu-id="e728e-144">Finally we can use the information from those endpoints to initialize the binding and address of a `ChannelFactory` used to create channels to communicate with the application endpoints.</span></span>  
   
 ```  
 ChannelFactory<ICalculator> cf = new    ChannelFactory<ICalculator>(endpoint.Binding, endpoint.Address);  
 ```  
   
- このクライアント サンプルで重要な点は、`MetadataResolver` を使用しているときにメタデータ交換通信用のカスタム バインディングまたはカスタム動作を指定する必要がある場合に、`MetadataExchangeClient` を使用すればこうしたカスタム設定を指定できるということです。  
+ <span data-ttu-id="e728e-145">このクライアント サンプルで重要な点は、`MetadataResolver` を使用しているときにメタデータ交換通信用のカスタム バインディングまたはカスタム動作を指定する必要がある場合に、`MetadataExchangeClient` を使用すればこうしたカスタム設定を指定できるということです。</span><span class="sxs-lookup"><span data-stu-id="e728e-145">The key point of this sample client is to demonstrate that, if you are using `MetadataResolver`, and you must specify custom bindings or behaviors for the metadata exchange communication, you can use a `MetadataExchangeClient` to specify those custom settings.</span></span>  
   
-#### サンプルをセットアップしてビルドするには  
+#### <a name="to-set-up-and-build-the-sample"></a><span data-ttu-id="e728e-146">サンプルをセットアップしてビルドするには</span><span class="sxs-lookup"><span data-stu-id="e728e-146">To set up and build the sample</span></span>  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  <span data-ttu-id="e728e-147">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="e728e-147">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  ソリューションをビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  <span data-ttu-id="e728e-148">指示に従って、ソリューションをビルドする[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="e728e-148">To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-#### サンプルを同じコンピューターで実行するには  
+#### <a name="to-run-the-sample-on-the-same-machine"></a><span data-ttu-id="e728e-149">サンプルを同じコンピューターで実行するには</span><span class="sxs-lookup"><span data-stu-id="e728e-149">To run the sample on the same machine</span></span>  
   
-1.  Setup.bat をサンプルのインストール フォルダーで実行します。これにより、サンプルの実行に必要なすべての証明書がインストールされます。Setup.bat は、「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」から setupCertTool.bat を実行してインストールされる FindPrivateKey.exe ツールを使用します。  
+1.  <span data-ttu-id="e728e-150">Setup.bat をサンプルのインストール フォルダーで実行します。</span><span class="sxs-lookup"><span data-stu-id="e728e-150">Run Setup.bat from the sample install folder.</span></span> <span data-ttu-id="e728e-151">これにより、サンプルの実行に必要なすべての証明書がインストールされます。</span><span class="sxs-lookup"><span data-stu-id="e728e-151">This installs all the certificates required for running the sample.</span></span> <span data-ttu-id="e728e-152">SetupCertTool.bat からを実行して、インストールされている FindPrivateKey.exe ツールを使用して Setup.bat [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="e728e-152">Note that Setup.bat uses the FindPrivateKey.exe tool, which is installed by running setupCertTool.bat from [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  \\MetadataResolverClient\\bin または \\SvcutilClient\\bin でクライアント アプリケーションを実行します。クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。  
+2.  <span data-ttu-id="e728e-153">\MetadataResolverClient\bin または \SvcutilClient\bin でクライアント アプリケーションを実行します。</span><span class="sxs-lookup"><span data-stu-id="e728e-153">Run the client application from \MetadataResolverClient\bin or \SvcutilClient\bin.</span></span> <span data-ttu-id="e728e-154">クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。</span><span class="sxs-lookup"><span data-stu-id="e728e-154">Client activity is displayed on the client console application.</span></span>  
   
-3.  クライアントとサービス間で通信できない場合は、「[Troubleshooting Tips](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
+3.  <span data-ttu-id="e728e-155">クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e728e-155">If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).</span></span>  
   
-4.  サンプルの使用が終わったら、Cleanup.bat を実行して証明書を削除してください。他のセキュリティ サンプルでも同じ証明書を使用します。  
+4.  <span data-ttu-id="e728e-156">サンプルの使用が終わったら、Cleanup.bat を実行して証明書を削除してください。</span><span class="sxs-lookup"><span data-stu-id="e728e-156">Remove the certificates by running Cleanup.bat when you have finished with the sample.</span></span> <span data-ttu-id="e728e-157">他のセキュリティ サンプルでも同じ証明書を使用します。</span><span class="sxs-lookup"><span data-stu-id="e728e-157">Other security samples use the same certificates.</span></span>  
   
-#### サンプルを別のコンピューターで実行するには  
+#### <a name="to-run-the-sample-across-machines"></a><span data-ttu-id="e728e-158">サンプルを複数コンピューターで実行するには</span><span class="sxs-lookup"><span data-stu-id="e728e-158">To run the sample across machines</span></span>  
   
-1.  サーバーで `setup.bat service` を実行します。`setup.bat` に `service` 引数を指定して実行すると、コンピューターの完全修飾ドメイン名を使用してサービス証明書が作成され、Service.cer というファイルにエクスポートされます。  
+1.  <span data-ttu-id="e728e-159">サーバーで `setup.bat service` を実行します。</span><span class="sxs-lookup"><span data-stu-id="e728e-159">On the server, run `setup.bat service`.</span></span> <span data-ttu-id="e728e-160">実行している`setup.bat`で、`service`引数は、マシンの完全修飾ドメイン名サービス証明書を作成し、サービス証明書が Service.cer というファイルにエクスポートします。</span><span class="sxs-lookup"><span data-stu-id="e728e-160">Running `setup.bat` with the `service` argument creates a service certificate with the fully-qualified domain name of the machine and exports the service certificate to a file named Service.cer.</span></span>  
   
-2.  サーバーで、Web.config を編集して新しい証明書の名前を反映します。つまり、[\<serviceCertificate\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md) 要素の `findValue` 属性をコンピューターの完全修飾ドメイン名に変更します。  
+2.  <span data-ttu-id="e728e-161">サーバーで、Web.config を編集して新しい証明書の名前を反映します。</span><span class="sxs-lookup"><span data-stu-id="e728e-161">On the server, edit Web.config to reflect the new certificate name.</span></span> <span data-ttu-id="e728e-162">つまり、変更、`findValue`属性、 [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)要素をマシンの完全修飾ドメイン名です。</span><span class="sxs-lookup"><span data-stu-id="e728e-162">That is, change the `findValue` attribute in the [\<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md) element to the fully-qualified domain name of the machine.</span></span>  
   
-3.  Service.cer ファイルを、サービス ディレクトリからクライアント コンピューターのクライアント ディレクトリにコピーします。  
+3.  <span data-ttu-id="e728e-163">Service.cer ファイルを、サービス ディレクトリからクライアント コンピューターのクライアント ディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="e728e-163">Copy the Service.cer file from the service directory to the client directory on the client machine.</span></span>  
   
-4.  クライアントで `setup.bat client` を実行します。`setup.bat` に `client` 引数を指定して実行すると、Client.com というクライアント証明書が作成され、Client.cer というファイルにエクスポートされます。  
+4.  <span data-ttu-id="e728e-164">クライアントで `setup.bat client` を実行します。</span><span class="sxs-lookup"><span data-stu-id="e728e-164">On the client, run `setup.bat client`.</span></span> <span data-ttu-id="e728e-165">実行している`setup.bat`で、`client`引数は、Client.com というクライアント証明書を作成し、クライアント証明書が Client.cer というファイルにエクスポートします。</span><span class="sxs-lookup"><span data-stu-id="e728e-165">Running `setup.bat` with the `client` argument creates a client certificate named Client.com and exports the client certificate to a file named Client.cer.</span></span>  
   
-5.  クライアント コンピューターにある `MetadataResolverClient` の App.config ファイルで、MEX エンドポイントのアドレス値をサービスの新しいアドレスに合わせて変更します。そのためには、localhost をサーバーの完全修飾ドメイン名に置き換えます。さらに、metadataResolverClient.cs ファイルに記述されている "localhost" を、新しいサービス証明書の名前 \(サーバーの完全修飾ドメイン名\) に変更します。SvcutilClient プロジェクトの App.config に対して、同様の手順を行います。  
+5.  <span data-ttu-id="e728e-166">クライアント コンピューターにある `MetadataResolverClient` の App.config ファイルで、MEX エンドポイントのアドレス値をサービスの新しいアドレスに合わせて変更します。</span><span class="sxs-lookup"><span data-stu-id="e728e-166">In the App.config file of the `MetadataResolverClient` on the client machine, change the address value of the mex endpoint to match the new address of your service.</span></span> <span data-ttu-id="e728e-167">そのためには、localhost をサーバーの完全修飾ドメイン名に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="e728e-167">You do this by replacing localhost with the fully-qualified domain name of the server.</span></span> <span data-ttu-id="e728e-168">さらに、metadataResolverClient.cs ファイルに記述されている "localhost" を、新しいサービス証明書の名前 (サーバーの完全修飾ドメイン名) に変更します。</span><span class="sxs-lookup"><span data-stu-id="e728e-168">Also change the occurrence of "localhost" in the metadataResolverClient.cs file to the new service certificate name (the fully-qualified domain name of the server).</span></span> <span data-ttu-id="e728e-169">SvcutilClient プロジェクトの App.config に対して、同様の手順を行います。</span><span class="sxs-lookup"><span data-stu-id="e728e-169">Do the same thing for the App.config of the SvcutilClient project.</span></span>  
   
-6.  Client.cer ファイルを、クライアント ディレクトリからサーバーのサービス ディレクトリにコピーします。  
+6.  <span data-ttu-id="e728e-170">Client.cer ファイルを、クライアント ディレクトリからサーバーのサービス ディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="e728e-170">Copy the Client.cer file from the client directory to the service directory on the server.</span></span>  
   
-7.  クライアントで `ImportServiceCert.bat` を実行します。これにより、サービス証明書が Service.cer ファイルから CurrentUser \- TrustedPeople ストアにインポートされます。  
+7.  <span data-ttu-id="e728e-171">クライアントで `ImportServiceCert.bat` を実行します。</span><span class="sxs-lookup"><span data-stu-id="e728e-171">On the client, run `ImportServiceCert.bat`.</span></span> <span data-ttu-id="e728e-172">これにより、サービス証明書が Service.cer ファイルから CurrentUser - TrustedPeople ストアにインポートされます。</span><span class="sxs-lookup"><span data-stu-id="e728e-172">This imports the service certificate from the Service.cer file into the CurrentUser - TrustedPeople store.</span></span>  
   
-8.  サーバーで `ImportClientCert.bat` を実行します。これにより、クライアント証明書が Client.cer ファイルから LocalMachine \- TrustedPeople ストアにインポートされます。  
+8.  <span data-ttu-id="e728e-173">サーバーで `ImportClientCert.bat` を実行します。これにより、クライアント証明書が Client.cer ファイルから LocalMachine - TrustedPeople ストアにインポートされます。</span><span class="sxs-lookup"><span data-stu-id="e728e-173">On the server, run `ImportClientCert.bat`, This imports the client certificate from the Client.cer file into the LocalMachine - TrustedPeople store.</span></span>  
   
-9. サービス コンピューターで、Visual Studio でサービス プロジェクトをビルドし、それが実行されていることを Web ブラウザーでヘルプ ページを選択することにより検証します。  
+9. <span data-ttu-id="e728e-174">サービス コンピューターで、Visual Studio でサービス プロジェクトをビルドし、それが実行されていることを Web ブラウザーでヘルプ ページを選択することにより検証します。</span><span class="sxs-lookup"><span data-stu-id="e728e-174">On the service machine, build the service project in Visual Studio and select the help page in a web browser to verify that it is running.</span></span>  
   
-10. クライアント コンピューター上の VS で、MetadataResolverClient または SvcutilClient を実行します。  
+10. <span data-ttu-id="e728e-175">クライアント コンピューター上の VS で、MetadataResolverClient または SvcutilClient を実行します。</span><span class="sxs-lookup"><span data-stu-id="e728e-175">On the client machine, run the MetadataResolverClient or the SvcutilClient from VS.</span></span>  
   
-    1.  クライアントとサービス間で通信できない場合は、「[Troubleshooting Tips](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
+    1.  <span data-ttu-id="e728e-176">クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e728e-176">If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).</span></span>  
   
-#### サンプルの実行後にクリーンアップするには  
+#### <a name="to-clean-up-after-the-sample"></a><span data-ttu-id="e728e-177">サンプルの実行後にクリーンアップするには</span><span class="sxs-lookup"><span data-stu-id="e728e-177">To clean up after the sample</span></span>  
   
--   サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。  
+-   <span data-ttu-id="e728e-178">サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。</span><span class="sxs-lookup"><span data-stu-id="e728e-178">Run Cleanup.bat in the samples folder once you have finished running the sample.</span></span>  
   
     > [!NOTE]
-    >  このサンプルを別のマシンで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。別のコンピューターで証明書を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルを実行した場合は、CurrentUser \- TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` のようにします。  
+    >  <span data-ttu-id="e728e-179">このサンプルを別のマシンで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。</span><span class="sxs-lookup"><span data-stu-id="e728e-179">This script does not remove service certificates on a client when running this sample across machines.</span></span> <span data-ttu-id="e728e-180">別のコンピューターで証明書を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルを実行した場合は、CurrentUser - TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。</span><span class="sxs-lookup"><span data-stu-id="e728e-180">If you have run [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] samples that use certificates across machines, be sure to clear the service certificates that have been installed in the CurrentUser - TrustedPeople store.</span></span> <span data-ttu-id="e728e-181">削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。</span><span class="sxs-lookup"><span data-stu-id="e728e-181">To do this, use the following command: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`.</span></span> <span data-ttu-id="e728e-182">たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` のように指定します。</span><span class="sxs-lookup"><span data-stu-id="e728e-182">For example: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="e728e-183">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="e728e-183">The samples may already be installed on your machine.</span></span> <span data-ttu-id="e728e-184">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="e728e-184">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="e728e-185">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="e728e-185">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="e728e-186">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="e728e-186">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Metadata\CustomMexEndpoint`  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="e728e-187">関連項目</span><span class="sxs-lookup"><span data-stu-id="e728e-187">See Also</span></span>

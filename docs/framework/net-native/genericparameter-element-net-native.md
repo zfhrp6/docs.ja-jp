@@ -5,26 +5,24 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: cbd49732-3615-49a5-a900-f96947cdc3e6
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 05463ad3ba42315c607cd30dedcd6d855dc8298d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: c682c75d4be78e9219a32e2a92520e9f9bfff823
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="ltgenericparametergt-element-net-native"></a>&lt;GenericParameter&gt; 要素 (.NET ネイティブ)
-ジェネリック型またはメソッドのパラメーターの型にポリシーを適用します。  
+# <a name="ltgenericparametergt-element-net-native"></a><span data-ttu-id="4722f-102">&lt;GenericParameter&gt; 要素 (.NET ネイティブ)</span><span class="sxs-lookup"><span data-stu-id="4722f-102">&lt;GenericParameter&gt; Element (.NET Native)</span></span>
+<span data-ttu-id="4722f-103">ジェネリック型またはメソッドのパラメーターの型にポリシーを適用します。</span><span class="sxs-lookup"><span data-stu-id="4722f-103">Applies policy to the parameter type of a generic type or method.</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="4722f-104">構文</span><span class="sxs-lookup"><span data-stu-id="4722f-104">Syntax</span></span>  
   
 ```xml  
 <GenericParameter Name="generic_parameter_name"  
@@ -40,51 +38,51 @@ ms.lasthandoff: 08/21/2017
                   MarshalStructure="policy_type"  
 ```  
   
-## <a name="attributes-and-elements"></a>属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="4722f-105">属性および要素</span><span class="sxs-lookup"><span data-stu-id="4722f-105">Attributes and Elements</span></span>  
+ <span data-ttu-id="4722f-106">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="4722f-106">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a><span data-ttu-id="4722f-107">属性</span><span class="sxs-lookup"><span data-stu-id="4722f-107">Attributes</span></span>  
   
-|属性|属性の型|説明|  
+|<span data-ttu-id="4722f-108">属性</span><span class="sxs-lookup"><span data-stu-id="4722f-108">Attribute</span></span>|<span data-ttu-id="4722f-109">属性の型</span><span class="sxs-lookup"><span data-stu-id="4722f-109">Attribute type</span></span>|<span data-ttu-id="4722f-110">説明</span><span class="sxs-lookup"><span data-stu-id="4722f-110">Description</span></span>|  
 |---------------|--------------------|-----------------|  
-|`Name`|全般|必須の属性です。 ジェネリック パラメーターの名前。 たとえば、ジェネリック デリゲート <xref:System.Func%603> の場合、デリゲートの戻り値に実行時ポリシーを適用するための `Name` 属性の値は "TResult" です。|  
-|`Activate`|リフレクション|省略可能な属性です。 コンストラクターへの実行時アクセスを制御して、インスタンスのアクティブ化を有効にします。|  
-|`Browse`|リフレクション|省略可能な属性です。 プログラム要素に関する情報の照会を制御しますが、実行時アクセスは有効にしません。|  
-|`Dynamic`|リフレクション|省略可能な属性です。 コンストラクター、メソッド、フィールド、プロパティ、およびイベントを含むすべての型のメンバーへの実行時アクセスを制御して、動的プログラミングを有効にします。|  
-|`Serialize`|シリアル化|省略可能な属性です。 コンストラクター、フィールド、およびプロパティへの実行時アクセスを制御し、Newtonsoft の JSON シリアライザーなどのライブラリによって型インスタンスをシリアル化および逆シリアル化できるようにします。|  
-|`DataContractSerializer`|シリアル化|省略可能な属性です。 <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=fullName> クラスを使用するシリアル化のポリシーを制御します。|  
-|`DataContractJsonSerializer`|シリアル化|省略可能な属性です。 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=fullName> クラスを使用する JSON シリアル化のポリシーを制御します。|  
-|`XmlSerializer`|シリアル化|省略可能な属性です。 <xref:System.Xml.Serialization.XmlSerializer?displayProperty=fullName> クラスを使用する XML シリアル化のポリシーを制御します。|  
-|`MarshalObject`|Interop|省略可能な属性です。 Windows ランタイムと COM に参照型をマーシャリングするためのポリシーを制御します。|  
-|`MarshalDelegate`|Interop|省略可能な属性です。 ネイティブ コードへの関数ポインターとしてデリゲート型をマーシャリングするためのポリシーを制御します。|  
-|`MarshalStructure`|Interop|省略可能な属性です。 値型をネイティブ コードにマーシャリングするためのポリシーを制御します。|  
+|`Name`|<span data-ttu-id="4722f-111">全般</span><span class="sxs-lookup"><span data-stu-id="4722f-111">General</span></span>|<span data-ttu-id="4722f-112">必須の属性です。</span><span class="sxs-lookup"><span data-stu-id="4722f-112">Required attribute.</span></span> <span data-ttu-id="4722f-113">ジェネリック パラメーターの名前。</span><span class="sxs-lookup"><span data-stu-id="4722f-113">The name of the generic parameter.</span></span> <span data-ttu-id="4722f-114">たとえば、ジェネリック デリゲート <xref:System.Func%603> の場合、デリゲートの戻り値に実行時ポリシーを適用するための `Name` 属性の値は "TResult" です。</span><span class="sxs-lookup"><span data-stu-id="4722f-114">For example, for the generic delegate <xref:System.Func%603>, the value of the `Name` attribute is "TResult" to apply runtime policy to the delegate's return value.</span></span>|  
+|`Activate`|<span data-ttu-id="4722f-115">リフレクション</span><span class="sxs-lookup"><span data-stu-id="4722f-115">Reflection</span></span>|<span data-ttu-id="4722f-116">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="4722f-116">Optional attribute.</span></span> <span data-ttu-id="4722f-117">コンストラクターへの実行時アクセスを制御して、インスタンスのアクティブ化を有効にします。</span><span class="sxs-lookup"><span data-stu-id="4722f-117">Controls runtime access to constructors to enable activation of instances.</span></span>|  
+|`Browse`|<span data-ttu-id="4722f-118">リフレクション</span><span class="sxs-lookup"><span data-stu-id="4722f-118">Reflection</span></span>|<span data-ttu-id="4722f-119">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="4722f-119">Optional attribute.</span></span> <span data-ttu-id="4722f-120">プログラム要素に関する情報の照会を制御しますが、実行時アクセスは有効にしません。</span><span class="sxs-lookup"><span data-stu-id="4722f-120">Controls querying for information about program elements, but does not enable any runtime access.</span></span>|  
+|`Dynamic`|<span data-ttu-id="4722f-121">リフレクション</span><span class="sxs-lookup"><span data-stu-id="4722f-121">Reflection</span></span>|<span data-ttu-id="4722f-122">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="4722f-122">Optional attribute.</span></span> <span data-ttu-id="4722f-123">コンストラクター、メソッド、フィールド、プロパティ、およびイベントを含むすべての型のメンバーへの実行時アクセスを制御して、動的プログラミングを有効にします。</span><span class="sxs-lookup"><span data-stu-id="4722f-123">Controls runtime access to all type members, including constructors, methods, fields, properties, and events, to enable dynamic programming.</span></span>|  
+|`Serialize`|<span data-ttu-id="4722f-124">シリアル化</span><span class="sxs-lookup"><span data-stu-id="4722f-124">Serialization</span></span>|<span data-ttu-id="4722f-125">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="4722f-125">Optional attribute.</span></span> <span data-ttu-id="4722f-126">コンストラクター、フィールド、およびプロパティへの実行時アクセスを制御し、Newtonsoft の JSON シリアライザーなどのライブラリによって型インスタンスをシリアル化および逆シリアル化できるようにします。</span><span class="sxs-lookup"><span data-stu-id="4722f-126">Controls runtime access to constructors, fields, and properties, to enable type instances to be serialized and deserialized by libraries such as the Newtonsoft JSON serializer.</span></span>|  
+|`DataContractSerializer`|<span data-ttu-id="4722f-127">シリアル化</span><span class="sxs-lookup"><span data-stu-id="4722f-127">Serialization</span></span>|<span data-ttu-id="4722f-128">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="4722f-128">Optional attribute.</span></span> <span data-ttu-id="4722f-129"><xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> クラスを使用するシリアル化のポリシーを制御します。</span><span class="sxs-lookup"><span data-stu-id="4722f-129">Controls policy for serialization that uses the <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> class.</span></span>|  
+|`DataContractJsonSerializer`|<span data-ttu-id="4722f-130">シリアル化</span><span class="sxs-lookup"><span data-stu-id="4722f-130">Serialization</span></span>|<span data-ttu-id="4722f-131">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="4722f-131">Optional attribute.</span></span> <span data-ttu-id="4722f-132"><xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> クラスを使用する JSON シリアル化のポリシーを制御します。</span><span class="sxs-lookup"><span data-stu-id="4722f-132">Controls policy for JSON serialization that uses the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> class.</span></span>|  
+|`XmlSerializer`|<span data-ttu-id="4722f-133">シリアル化</span><span class="sxs-lookup"><span data-stu-id="4722f-133">Serialization</span></span>|<span data-ttu-id="4722f-134">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="4722f-134">Optional attribute.</span></span> <span data-ttu-id="4722f-135"><xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> クラスを使用する XML シリアル化のポリシーを制御します。</span><span class="sxs-lookup"><span data-stu-id="4722f-135">Controls policy for XML serialization that uses the <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> class.</span></span>|  
+|`MarshalObject`|<span data-ttu-id="4722f-136">Interop</span><span class="sxs-lookup"><span data-stu-id="4722f-136">Interop</span></span>|<span data-ttu-id="4722f-137">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="4722f-137">Optional attribute.</span></span> <span data-ttu-id="4722f-138">Windows ランタイムと COM に参照型をマーシャリングするためのポリシーを制御します。</span><span class="sxs-lookup"><span data-stu-id="4722f-138">Controls policy for marshaling reference types to Windows Runtime and COM.</span></span>|  
+|`MarshalDelegate`|<span data-ttu-id="4722f-139">Interop</span><span class="sxs-lookup"><span data-stu-id="4722f-139">Interop</span></span>|<span data-ttu-id="4722f-140">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="4722f-140">Optional attribute.</span></span> <span data-ttu-id="4722f-141">ネイティブ コードへの関数ポインターとしてデリゲート型をマーシャリングするためのポリシーを制御します。</span><span class="sxs-lookup"><span data-stu-id="4722f-141">Controls policy for marshaling delegate types as function pointers to native code.</span></span>|  
+|`MarshalStructure`|<span data-ttu-id="4722f-142">Interop</span><span class="sxs-lookup"><span data-stu-id="4722f-142">Interop</span></span>|<span data-ttu-id="4722f-143">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="4722f-143">Optional attribute.</span></span> <span data-ttu-id="4722f-144">値型をネイティブ コードにマーシャリングするためのポリシーを制御します。</span><span class="sxs-lookup"><span data-stu-id="4722f-144">Controls policy for marshaling value types to native code.</span></span>|  
   
-## <a name="name-attribute"></a>Name 属性  
+## <a name="name-attribute"></a><span data-ttu-id="4722f-145">Name 属性</span><span class="sxs-lookup"><span data-stu-id="4722f-145">Name attribute</span></span>  
   
-|値|説明|  
+|<span data-ttu-id="4722f-146">値</span><span class="sxs-lookup"><span data-stu-id="4722f-146">Value</span></span>|<span data-ttu-id="4722f-147">説明</span><span class="sxs-lookup"><span data-stu-id="4722f-147">Description</span></span>|  
 |-----------|-----------------|  
-|*generic_parameter_name*|必須の属性です。 ジェネリック型パラメーターの名前。 たとえば、ジェネリック デリゲート <xref:System.Func%603> の場合、*generic_parameter_name* の値 "TResult" によって、デリゲートの戻り値に実行時ポリシーが適用されます。|  
+|<span data-ttu-id="4722f-148">*generic_parameter_name*</span><span class="sxs-lookup"><span data-stu-id="4722f-148">*generic_parameter_name*</span></span>|<span data-ttu-id="4722f-149">必須の属性です。</span><span class="sxs-lookup"><span data-stu-id="4722f-149">Required attribute.</span></span> <span data-ttu-id="4722f-150">ジェネリック型パラメーターの名前。</span><span class="sxs-lookup"><span data-stu-id="4722f-150">The name of the generic type parameter.</span></span> <span data-ttu-id="4722f-151">たとえば、ジェネリック デリゲート <xref:System.Func%603> の場合、*generic_parameter_name* の値 "TResult" によって、デリゲートの戻り値に実行時ポリシーが適用されます。</span><span class="sxs-lookup"><span data-stu-id="4722f-151">For example, for the generic delegate <xref:System.Func%603>, a *generic_parameter_name* value of "TResult" applies runtime policy to the delegate's return value.</span></span>|  
   
-## <a name="all-other-attributes"></a>その他すべての属性  
+## <a name="all-other-attributes"></a><span data-ttu-id="4722f-152">その他すべての属性</span><span class="sxs-lookup"><span data-stu-id="4722f-152">All other attributes</span></span>  
   
-|値|説明|  
+|<span data-ttu-id="4722f-153">値</span><span class="sxs-lookup"><span data-stu-id="4722f-153">Value</span></span>|<span data-ttu-id="4722f-154">説明</span><span class="sxs-lookup"><span data-stu-id="4722f-154">Description</span></span>|  
 |-----------|-----------------|  
-|*policy_setting*|このポリシーの種類に適用する設定です。 指定できる値は、`All`、`Public`、`PublicAndInternal`、`Required Public`、`Required PublicAndInternal`、および `Required All` です。 詳細については、「[ランタイム ディレクティブのポリシー設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)」を参照してください。|  
+|<span data-ttu-id="4722f-155">*policy_setting*</span><span class="sxs-lookup"><span data-stu-id="4722f-155">*policy_setting*</span></span>|<span data-ttu-id="4722f-156">このポリシーの種類に適用する設定です。</span><span class="sxs-lookup"><span data-stu-id="4722f-156">The setting to apply to this policy type.</span></span> <span data-ttu-id="4722f-157">指定できる値は、`All`、`Public`、`PublicAndInternal`、`Required Public`、`Required PublicAndInternal`、および `Required All` です。</span><span class="sxs-lookup"><span data-stu-id="4722f-157">Possible values are `All`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, and `Required All`.</span></span> <span data-ttu-id="4722f-158">詳細については、「[ランタイム ディレクティブのポリシー設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4722f-158">For more information, see [Runtime Directive Policy Settings](../../../docs/framework/net-native/runtime-directive-policy-settings.md).</span></span>|  
   
-### <a name="child-elements"></a>子要素  
- なし。  
+### <a name="child-elements"></a><span data-ttu-id="4722f-159">子要素</span><span class="sxs-lookup"><span data-stu-id="4722f-159">Child Elements</span></span>  
+ <span data-ttu-id="4722f-160">なし。</span><span class="sxs-lookup"><span data-stu-id="4722f-160">None.</span></span>  
   
-### <a name="parent-elements"></a>親要素  
+### <a name="parent-elements"></a><span data-ttu-id="4722f-161">親要素</span><span class="sxs-lookup"><span data-stu-id="4722f-161">Parent Elements</span></span>  
   
-|要素|説明|  
+|<span data-ttu-id="4722f-162">要素</span><span class="sxs-lookup"><span data-stu-id="4722f-162">Element</span></span>|<span data-ttu-id="4722f-163">説明</span><span class="sxs-lookup"><span data-stu-id="4722f-163">Description</span></span>|  
 |-------------|-----------------|  
-|[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|コンストラクターまたはメソッドにランタイム リフレクション ポリシーを適用します。|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|クラスや構造体など、特定の型にランタイム リフレクション ポリシーを適用します。|  
+|[<span data-ttu-id="4722f-164">\<Method></span><span class="sxs-lookup"><span data-stu-id="4722f-164">\<Method></span></span>](../../../docs/framework/net-native/method-element-net-native.md)|<span data-ttu-id="4722f-165">コンストラクターまたはメソッドにランタイム リフレクション ポリシーを適用します。</span><span class="sxs-lookup"><span data-stu-id="4722f-165">Applies runtime reflection policy to a constructor or method.</span></span>|  
+|[<span data-ttu-id="4722f-166">\<Type></span><span class="sxs-lookup"><span data-stu-id="4722f-166">\<Type></span></span>](../../../docs/framework/net-native/type-element-net-native.md)|<span data-ttu-id="4722f-167">クラスや構造体など、特定の型にランタイム リフレクション ポリシーを適用します。</span><span class="sxs-lookup"><span data-stu-id="4722f-167">Applies runtime reflection policy to a particular type, such as a class or structure.</span></span>|  
   
-## <a name="remarks"></a>コメント  
- `<GenericParameter>` 要素は [\<Method>](../../../docs/framework/net-native/method-element-net-native.md) 要素または [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) 要素のいずれかの子で、ジェネリック型またはメソッド シグネチャでの名前によって指定される、特定のジェネリック型パラメーターにポリシーを適用するために使用されます。  
+## <a name="remarks"></a><span data-ttu-id="4722f-168">コメント</span><span class="sxs-lookup"><span data-stu-id="4722f-168">Remarks</span></span>  
+ <span data-ttu-id="4722f-169">`<GenericParameter>` 要素は [\<Method>](../../../docs/framework/net-native/method-element-net-native.md) 要素または [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) 要素のいずれかの子で、ジェネリック型またはメソッド シグネチャでの名前によって指定される、特定のジェネリック型パラメーターにポリシーを適用するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="4722f-169">The `<GenericParameter>` element is a child of either the [\<Method>](../../../docs/framework/net-native/method-element-net-native.md) or [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) element and is used to apply policy to a particular generic type parameter, which is specified by its name in the generic type or method signature.</span></span>  
   
- `<GenericParameter>` 要素は、シリアライザーで使用する場合に最も役立ちます。 次の例では、`<GenericParameter>` 要素を使用して、NewtonSoft の JSON シリアライザーの [JsonConvert.DeserializeObject\<T>(String)](http://james.newtonking.com/json/help/index.html?topic=html/T_Newtonsoft_Json_JsonConvert.htm) メソッド オーバーロードの呼び出しで、`T` 型にポリシーを適用します。  
+ <span data-ttu-id="4722f-170">`<GenericParameter>` 要素は、シリアライザーで使用する場合に最も役立ちます。</span><span class="sxs-lookup"><span data-stu-id="4722f-170">The `<GenericParameter>` element is most useful when used with serializers.</span></span> <span data-ttu-id="4722f-171">次の例では、`<GenericParameter>` 要素を使用して、NewtonSoft の JSON シリアライザーの [JsonConvert.DeserializeObject\<T>(String)](http://james.newtonking.com/json/help/index.html?topic=html/T_Newtonsoft_Json_JsonConvert.htm) メソッド オーバーロードの呼び出しで、`T` 型にポリシーを適用します。</span><span class="sxs-lookup"><span data-stu-id="4722f-171">The following example uses the `<GenericParameter>` element to apply policy to the type `T` in calls to the NewtonSoft JSON serializer's [JsonConvert.DeserializeObject\<T>(String)](http://james.newtonking.com/json/help/index.html?topic=html/T_Newtonsoft_Json_JsonConvert.htm) method overloads.</span></span>  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
@@ -96,10 +94,9 @@ ms.lasthandoff: 08/21/2017
 </Directives>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [\<Method> 要素](../../../docs/framework/net-native/method-element-net-native.md)   
- [\<Type> 要素](../../../docs/framework/net-native/type-element-net-native.md)   
- [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
- [ランタイム ディレクティブ ポリシーの設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)   
- [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)
-
+## <a name="see-also"></a><span data-ttu-id="4722f-172">関連項目</span><span class="sxs-lookup"><span data-stu-id="4722f-172">See Also</span></span>  
+ [<span data-ttu-id="4722f-173">\<Method> 要素</span><span class="sxs-lookup"><span data-stu-id="4722f-173">\<Method> Element</span></span>](../../../docs/framework/net-native/method-element-net-native.md)  
+ [<span data-ttu-id="4722f-174">\<型 > 要素</span><span class="sxs-lookup"><span data-stu-id="4722f-174">\<Type> Element</span></span>](../../../docs/framework/net-native/type-element-net-native.md)  
+ [<span data-ttu-id="4722f-175">ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス</span><span class="sxs-lookup"><span data-stu-id="4722f-175">Runtime Directives (rd.xml) Configuration File Reference</span></span>](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [<span data-ttu-id="4722f-176">ランタイム ディレクティブ ポリシーの設定</span><span class="sxs-lookup"><span data-stu-id="4722f-176">Runtime Directive Policy Settings</span></span>](../../../docs/framework/net-native/runtime-directive-policy-settings.md)  
+ [<span data-ttu-id="4722f-177">ランタイム ディレクティブ要素</span><span class="sxs-lookup"><span data-stu-id="4722f-177">Runtime Directive Elements</span></span>](../../../docs/framework/net-native/runtime-directive-elements.md)

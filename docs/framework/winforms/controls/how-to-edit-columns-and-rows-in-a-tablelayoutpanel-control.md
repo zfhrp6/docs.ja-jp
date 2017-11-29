@@ -1,57 +1,57 @@
 ---
-title: "方法 : TableLayoutPanel コントロールの列と行を編集する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "net.ComponentModel.StyleCollectionEditor"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "列 [Windows フォーム], 編集"
-  - "行 [Windows フォーム], 編集"
-  - "TableLayoutPanel コントロール [Windows フォーム], 編集"
+title: "方法 : TableLayoutPanel コントロールの列と行を編集する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: net.ComponentModel.StyleCollectionEditor
+helpviewer_keywords:
+- columns [Windows Forms], editing
+- TableLayoutPanel control [Windows Forms], editing
+- rows [Windows Forms], editing
 ms.assetid: c367ed43-40dc-49eb-9e0f-ba70e83dfec0
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 84dbcfcbad30f9ef08548874c5e68ed658aa0914
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : TableLayoutPanel コントロールの列と行を編集する
-<xref:System.Windows.Forms.TableLayoutPanel> コントロールのコレクション エディター \(**\[列と行のスタイル\]** ダイアログ ボックス\) を使用して、コントロールの行と列を編集できます。  
+# <a name="how-to-edit-columns-and-rows-in-a-tablelayoutpanel-control"></a><span data-ttu-id="6a76e-102">方法 : TableLayoutPanel コントロールの列と行を編集する</span><span class="sxs-lookup"><span data-stu-id="6a76e-102">How to: Edit Columns and Rows in a TableLayoutPanel Control</span></span>
+<span data-ttu-id="6a76e-103">コレクション エディターを使用することができます、<xref:System.Windows.Forms.TableLayoutPanel>と呼ばれるコントロール、**列と行のスタイル**ダイアログ ボックスで、行と、コントロールの列を編集します。</span><span class="sxs-lookup"><span data-stu-id="6a76e-103">You can use the collection editor of the <xref:System.Windows.Forms.TableLayoutPanel> control, called the **Column and Row Styles** dialog box, to edit the rows and columns of your controls.</span></span>  
   
 > [!NOTE]
->  コントロールが複数の行または列にわたるようにする場合は、コントロールの `RowSpan` プロパティおよび `ColumnSpan` プロパティを設定します。  詳細については、「[チュートリアル : TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)」を参照してください。  
+>  <span data-ttu-id="6a76e-104">を複数の行または列の span を制御する場合は、設定、`RowSpan`と`ColumnSpan`コントロールのプロパティです。</span><span class="sxs-lookup"><span data-stu-id="6a76e-104">If you want a control to span multiple rows or columns, set the `RowSpan` and `ColumnSpan` properties on the control.</span></span> <span data-ttu-id="6a76e-105">詳細については、「 [Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6a76e-105">For more information, see [Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).</span></span>  
 >   
->  コントロールをセル内に配置したり、コントロールをセル内で拡大したりする場合は、コントロールの <xref:System.Windows.Forms.Control.Anchor%2A> プロパティを使用します。  詳細については、「[チュートリアル : TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)」を参照してください。  
+>  <span data-ttu-id="6a76e-106">セル内のコントロールを配置する場合、またはセル内で stretch を制御する場合は、使用、コントロールの<xref:System.Windows.Forms.Control.Anchor%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="6a76e-106">If you want to align a control within a cell, or if you want a control to stretch within a cell, use the control's <xref:System.Windows.Forms.Control.Anchor%2A> property.</span></span> <span data-ttu-id="6a76e-107">詳細については、「 [Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6a76e-107">For more information, see [Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).</span></span>  
 >   
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  <span data-ttu-id="6a76e-108">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="6a76e-108">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="6a76e-109">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="6a76e-109">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="6a76e-110">詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6a76e-110">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### 行と列を編集するには  
+### <a name="to-edit-rows-and-columns"></a><span data-ttu-id="6a76e-111">行と列を編集するには</span><span class="sxs-lookup"><span data-stu-id="6a76e-111">To edit rows and columns</span></span>  
   
-1.  **ツールボックス**からフォームに、<xref:System.Windows.Forms.TableLayoutPanel> コントロールをドラッグします。  
+1.  <span data-ttu-id="6a76e-112">ドラッグ、<xref:System.Windows.Forms.TableLayoutPanel>から制御、**ツールボックス**フォーム上にします。</span><span class="sxs-lookup"><span data-stu-id="6a76e-112">Drag a <xref:System.Windows.Forms.TableLayoutPanel> control from the **Toolbox** onto your form.</span></span>  
   
-2.  <xref:System.Windows.Forms.TableLayoutPanel> コントロールのスマート タグ グリフ \(![スマート タグ グリフ](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.png "VS\_WinFormSmtTagGlyph")\) をクリックし、**\[行および列の編集\]** をクリックして、**\[列と行のスタイル\]** ダイアログ ボックスを開きます。  <xref:System.Windows.Forms.TableLayoutPanel> コントロールを右クリックして、ショートカット メニューの **\[行および列の編集\]** をクリックすることもできます。  
+2.  <span data-ttu-id="6a76e-113">クリックして、<xref:System.Windows.Forms.TableLayoutPanel>コントロールのスマート タグ グリフ (![スマート タグ グリフ](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) を選択して**編集行と列**を開くには、 **列と行のスタイル** ダイアログ ボックス。</span><span class="sxs-lookup"><span data-stu-id="6a76e-113">Click the <xref:System.Windows.Forms.TableLayoutPanel> control's smart tag glyph (![Smart Tag Glyph](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) and select **Edit Rows and Columns** to open the **Column and Row Styles** dialog box.</span></span> <span data-ttu-id="6a76e-114">右クリックで、<xref:System.Windows.Forms.TableLayoutPanel>してコントロールを選択**編集行と列**ショートカット メニューからです。</span><span class="sxs-lookup"><span data-stu-id="6a76e-114">You can also right click on the <xref:System.Windows.Forms.TableLayoutPanel> control and select **Edit Rows and Columns** from the shortcut menu.</span></span>  
   
-3.  列を追加または削除するには、**\[型\]** ボックスの **\[列\]** をクリックします。  
+3.  <span data-ttu-id="6a76e-115">列を追加または削除、選択**列**から、**メンバー型**ドロップダウン リスト ボックス。</span><span class="sxs-lookup"><span data-stu-id="6a76e-115">To add or remove columns, select **Columns** from the **Member type** drop-down list box.</span></span>  
   
-4.  行を追加または削除するには、**\[型\]** ボックスの **\[行\]** をクリックします。  
+4.  <span data-ttu-id="6a76e-116">追加したり、行を削除する選択**行**から、**メンバー型**ドロップダウン リスト ボックス。</span><span class="sxs-lookup"><span data-stu-id="6a76e-116">To add or remove rows, select **Rows** from the **Member type** drop-down list box.</span></span>  
   
-5.  **\[追加\]** をクリックすると、行または列が **\[メンバー\]** 一覧の末尾に追加されます。  
+5.  <span data-ttu-id="6a76e-117">クリックして、**追加**の末尾に行または列を追加するボタン、**メンバー**  ボックスの一覧です。</span><span class="sxs-lookup"><span data-stu-id="6a76e-117">Click the **Add** button to add a row or column to the end of the **Member** list.</span></span>  
   
-6.  **\[挿入\]** をクリックすると、一覧で現在選択されている項目の前に行または列が追加されます。  
+6.  <span data-ttu-id="6a76e-118">をクリックして、**挿入**一覧で行または現在選択されている項目の前に列を追加するボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="6a76e-118">Click the **Insert** button to add a row or column before the currently selected item in the list.</span></span>  
   
-7.  行または列を追加する場合は、新しい行または列の **\[サイズの型\]** を選択します。  詳細については、「<xref:System.Windows.Forms.SizeType>」を参照してください。  
+7.  <span data-ttu-id="6a76e-119">行または列を追加する場合は、選択、**サイズの種類**新しい行または列に対応します。</span><span class="sxs-lookup"><span data-stu-id="6a76e-119">If you are adding a row or column, select the **Size Type** for the new row or column.</span></span> <span data-ttu-id="6a76e-120">詳細については、「<xref:System.Windows.Forms.SizeType>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6a76e-120">For more information, see <xref:System.Windows.Forms.SizeType>.</span></span>  
   
-8.  行または列を削除するには、**\[削除\]** をクリックします。**\[メンバー\]** 一覧で現在選択されている項目が削除されます。  
+8.  <span data-ttu-id="6a76e-121">行または列を削除する をクリックして、**削除**で現在選択されている項目を削除するボタン、**メンバー**  ボックスの一覧です。</span><span class="sxs-lookup"><span data-stu-id="6a76e-121">To remove a row or column, click the **Remove** button to delete the currently selected item in the **Member** list.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.SizeType>   
- [TableLayoutPanel コントロール](../../../../docs/framework/winforms/controls/tablelayoutpanel-control-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="6a76e-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="6a76e-122">See Also</span></span>  
+ <xref:System.Windows.Forms.SizeType>  
+ [<span data-ttu-id="6a76e-123">TableLayoutPanel コントロール</span><span class="sxs-lookup"><span data-stu-id="6a76e-123">TableLayoutPanel Control</span></span>](../../../../docs/framework/winforms/controls/tablelayoutpanel-control-windows-forms.md)

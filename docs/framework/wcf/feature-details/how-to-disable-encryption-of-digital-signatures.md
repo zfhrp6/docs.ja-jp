@@ -1,36 +1,39 @@
 ---
-title: "方法 : デジタル署名の暗号化を無効にする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : デジタル署名の暗号化を無効にする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: fd174313-ad81-4dca-898a-016ccaff8187
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 25380c021372d8c74498952ddc482aada8a1e906
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : デジタル署名の暗号化を無効にする
-既定では、メッセージは署名され、署名はデジタル暗号化されます。  これは、<xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> または <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> のインスタンスを使用してカスタム バインディングを作成し、いずれかのクラスの `MessageProtectionOrder` プロパティを <xref:System.ServiceModel.Security.MessageProtectionOrder> 列挙値に設定することによって制御されます。  既定値は、<xref:System.ServiceModel.Security.MessageProtectionOrder> です。  このプロセスは、単に署名して暗号化する場合よりも、メッセージ全体のサイズによって最大で 30 パーセントほど長い時間がかかります \(メッセージが小さいほどパフォーマンスへの影響は大きくなります\)。  ただし、署名の暗号化を無効にすると、攻撃者がメッセージの内容を予想できるようになる危険性があります。  その理由は、メッセージ内のすべての署名部分のプレーン テキストのハッシュ コードが署名要素に含まれるからです。  たとえば、メッセージ本体は既定で暗号化されますが、暗号化されていない署名には、暗号化される前のメッセージ本体のハッシュ コードが含まれます。  署名および暗号化された部分に指定できる一連の値が小さい場合、攻撃者にハッシュ値を参照され、内容を推測されてしまうおそれがあります。  署名を暗号化すると、このような攻撃は軽減します。  
+# <a name="how-to-disable-encryption-of-digital-signatures"></a><span data-ttu-id="9d9bc-102">方法 : デジタル署名の暗号化を無効にする</span><span class="sxs-lookup"><span data-stu-id="9d9bc-102">How to: Disable Encryption of Digital Signatures</span></span>
+<span data-ttu-id="9d9bc-103">既定では、メッセージは署名され、署名はデジタル暗号化されます。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-103">By default, a message is signed and the signature is digitally encrypted.</span></span> <span data-ttu-id="9d9bc-104">これは、<xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> または <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> のインスタンスを使用してカスタム バインディングを作成し、いずれかのクラスの `MessageProtectionOrder` プロパティを <xref:System.ServiceModel.Security.MessageProtectionOrder> 列挙値に設定することによって制御されます。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-104">This is controlled by creating a custom binding with an instance of the <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> or the <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> and setting the `MessageProtectionOrder` property of either class to a <xref:System.ServiceModel.Security.MessageProtectionOrder> enumeration value.</span></span> <span data-ttu-id="9d9bc-105">既定値は、<xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature> です。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-105">The default is <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>.</span></span> <span data-ttu-id="9d9bc-106">このプロセスは、単に署名して暗号化する場合よりも、メッセージ全体のサイズによって最大で 30 パーセントほど長い時間がかかります (メッセージが小さいほどパフォーマンスへの影響は大きくなります)。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-106">This process consumes up to 30 percent more time than simply signing and encrypting based on the overall message size (the smaller the message, the greater the performance impact).</span></span> <span data-ttu-id="9d9bc-107">ただし、署名の暗号化を無効にすると、攻撃者がメッセージの内容を予想できるようになる危険性があります。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-107">Disabling encryption of the signature, however, might allow an attacker to guess the content of the message.</span></span> <span data-ttu-id="9d9bc-108">その理由は、メッセージ内のすべての署名部分のプレーン テキストのハッシュ コードが署名要素に含まれるからです。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-108">This is possible because the signature element contains the hash code of the plain text of every signed part in the message.</span></span> <span data-ttu-id="9d9bc-109">たとえば、メッセージ本体は既定で暗号化されますが、暗号化されていない署名には、暗号化される前のメッセージ本体のハッシュ コードが含まれます。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-109">For example, although the message body is encrypted by default, the unencrypted signature contains the hash code of the message body before the encryption.</span></span> <span data-ttu-id="9d9bc-110">署名および暗号化された部分に指定できる一連の値が小さい場合、攻撃者にハッシュ値を参照され、内容を推測されてしまうおそれがあります。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-110">If the set of possible values for the signed and encrypted part is small, an attacker might be able to deduce the contents by looking at the hash value.</span></span> <span data-ttu-id="9d9bc-111">署名を暗号化すると、このような攻撃は軽減します。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-111">Encrypting the signature mitigates this attack vector.</span></span>  
   
- そのため、署名の暗号化を無効にするのは、コンテンツの重要性が低いか、または指定できる一連のコンテンツの値が大きくて非決定性があり、前述の攻撃を軽減するよりもパフォーマンスの向上が重要な場合に限定してください。  
+ <span data-ttu-id="9d9bc-112">そのため、署名の暗号化を無効にするのは、コンテンツの重要性が低いか、または指定できる一連のコンテンツの値が大きくて非決定性があり、前述の攻撃を軽減するよりもパフォーマンスの向上が重要な場合に限定してください。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-112">Therefore, disable encryption of the signature only when the value of the content is low or the set of possible content values is large and nondeterministic, and the performance gain is more important than mitigating the attack described above.</span></span>  
   
 > [!NOTE]
->  メッセージ内に暗号化する対象が存在しない場合は、<xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=fullName> プロパティまたは <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=fullName> プロパティが <xref:System.ServiceModel.Security.MessageProtectionOrder> に設定されていても、署名要素は暗号化されません。  この動作は、システム指定のバインディングでも発生します。すべてのシステム指定のバインディングには、メッセージを保護する順序が `SignBeforeEncryptAndEncryptSignature` に設定されています。  ただし、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が生成する Web サービス記述言語 \(WSDL\) には、依然として `<sp:EncryptSignature>` アサーションが含まれます。  
+>  <span data-ttu-id="9d9bc-113">メッセージ内に暗号化する対象が存在しない場合は、<xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> プロパティまたは <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> プロパティが <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature> に設定されていても、署名要素は暗号化されません。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-113">If there is nothing in the message that is encrypted, the signature element is not encrypted, even when the <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> or <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> property is set to <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>.</span></span> <span data-ttu-id="9d9bc-114">この動作は、システム指定のバインディングでも発生します。すべてのシステム指定のバインディングには、メッセージを保護する順序が `SignBeforeEncryptAndEncryptSignature` に設定されています。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-114">This behavior occurs even with system-provided bindings; all system-provided bindings have the message protection order set to `SignBeforeEncryptAndEncryptSignature`.</span></span> <span data-ttu-id="9d9bc-115">ただし、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が生成する Web サービス記述言語 (WSDL) には、依然として `<sp:EncryptSignature>` アサーションが含まれます。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-115">However, the Web Services Description Language (WSDL) [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] generates will still contain the `<sp:EncryptSignature>` assertion.</span></span>  
   
-### デジタル署名を無効にするには  
+### <a name="to-disable-digital-signing"></a><span data-ttu-id="9d9bc-116">デジタル署名を無効にするには</span><span class="sxs-lookup"><span data-stu-id="9d9bc-116">To disable digital signing</span></span>  
   
-1.  <xref:System.ServiceModel.Channels.CustomBinding> を作成します。  [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [方法 : SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).  
+1.  <span data-ttu-id="9d9bc-117"><xref:System.ServiceModel.Channels.CustomBinding> を作成します。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-117">Create a <xref:System.ServiceModel.Channels.CustomBinding>.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="9d9bc-118">[する方法: SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)です。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-118"> [How to: Create a Custom Binding Using the SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).</span></span>  
   
-2.  <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> または <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> をバインディング コレクションに追加します。  
+2.  <span data-ttu-id="9d9bc-119"><xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> または <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> をバインディング コレクションに追加します。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-119">Add either an <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> or a <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> to the binding collection.</span></span>  
   
-3.  <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=fullName> プロパティを <xref:System.ServiceModel.Security.MessageProtectionOrder> に設定するか、または <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=fullName> プロパティを <xref:System.ServiceModel.Security.MessageProtectionOrder> に設定します。  
+3.  <span data-ttu-id="9d9bc-120"><xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> プロパティを <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt> に設定するか、または <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> プロパティを <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt> に設定します。</span><span class="sxs-lookup"><span data-stu-id="9d9bc-120">Set the <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> property to <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt>, or set the <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> property to <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt>.</span></span>  
   
-## 参照  
- [カスタム バインディングを使用したセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)
+## <a name="see-also"></a><span data-ttu-id="9d9bc-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="9d9bc-121">See Also</span></span>  
+ [<span data-ttu-id="9d9bc-122">カスタム バインドのセキュリティ機能</span><span class="sxs-lookup"><span data-stu-id="9d9bc-122">Security Capabilities with Custom Bindings</span></span>](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)

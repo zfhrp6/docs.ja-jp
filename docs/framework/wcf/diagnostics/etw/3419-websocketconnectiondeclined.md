@@ -1,35 +1,38 @@
 ---
-title: "3419 - WebSocketConnectionDeclined | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 3419 - WebSocketConnectionDeclined
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d1d27f33-7d59-40c7-b464-6cd1f13b7c72
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 5450584cd8e88949a9b53360a94a765e64c0ef87
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 3419 - WebSocketConnectionDeclined
-## プロパティ  
+# <a name="3419---websocketconnectiondeclined"></a><span data-ttu-id="6efe6-102">3419 - WebSocketConnectionDeclined</span><span class="sxs-lookup"><span data-stu-id="6efe6-102">3419 - WebSocketConnectionDeclined</span></span>
+## <a name="properties"></a><span data-ttu-id="6efe6-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="6efe6-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|ID|3419|  
-|キーワード|HTTP|  
-|レベル|Error|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Analytic|  
+|<span data-ttu-id="6efe6-104">ID</span><span class="sxs-lookup"><span data-stu-id="6efe6-104">ID</span></span>|<span data-ttu-id="6efe6-105">3419</span><span class="sxs-lookup"><span data-stu-id="6efe6-105">3419</span></span>|  
+|<span data-ttu-id="6efe6-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="6efe6-106">Keywords</span></span>|<span data-ttu-id="6efe6-107">HTTP</span><span class="sxs-lookup"><span data-stu-id="6efe6-107">HTTP</span></span>|  
+|<span data-ttu-id="6efe6-108">レベル</span><span class="sxs-lookup"><span data-stu-id="6efe6-108">Level</span></span>|<span data-ttu-id="6efe6-109">Error</span><span class="sxs-lookup"><span data-stu-id="6efe6-109">Error</span></span>|  
+|<span data-ttu-id="6efe6-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="6efe6-110">Channel</span></span>|<span data-ttu-id="6efe6-111">Microsoft-Windows-Application Server-Applications/Analytic</span><span class="sxs-lookup"><span data-stu-id="6efe6-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## 説明  
- このイベントは、WebSocket 接続が拒否されたときに生成されます。  
+## <a name="description"></a><span data-ttu-id="6efe6-112">説明</span><span class="sxs-lookup"><span data-stu-id="6efe6-112">Description</span></span>  
+ <span data-ttu-id="6efe6-113">このイベントは、WebSocket 接続が拒否されたときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="6efe6-113">This event is emitted when WebSocket connection is declined.</span></span>  
   
-## メッセージ  
- WebSocket 接続が状態コード '%1' で拒否されました  
+## <a name="message"></a><span data-ttu-id="6efe6-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="6efe6-114">Message</span></span>  
+ <span data-ttu-id="6efe6-115">WebSocket 接続が状態コード '%1' で拒否されました</span><span class="sxs-lookup"><span data-stu-id="6efe6-115">WebSocket connection declined with status code '%1'</span></span>  
   
-## 詳細
+## <a name="details"></a><span data-ttu-id="6efe6-116">詳細</span><span class="sxs-lookup"><span data-stu-id="6efe6-116">Details</span></span>

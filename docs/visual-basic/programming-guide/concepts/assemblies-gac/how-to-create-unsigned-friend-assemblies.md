@@ -1,39 +1,31 @@
 ---
-title: "方法: 署名のないフレンド アセンブリ (Visual Basic) を作成する |Microsoft ドキュメント"
+title: "方法: 署名のないフレンド アセンブリ (Visual Basic) を作成します。"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 5735eb79-9729-4c46-ac1f-537ada3acaa7
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ceddb35c306f72c8927deda326d9fcca6c75d786
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: a2b2667c60a07a2897a0934d210901042e2e43c1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-create-unsigned-friend-assemblies-visual-basic"></a>方法: 署名のないフレンド アセンブリ (Visual Basic) を作成します。
-この例では、フレンド アセンブリを署名されていないアセンブリを使用する方法を示します。  
+# <a name="how-to-create-unsigned-friend-assemblies-visual-basic"></a><span data-ttu-id="caf09-102">方法: 署名のないフレンド アセンブリ (Visual Basic) を作成します。</span><span class="sxs-lookup"><span data-stu-id="caf09-102">How to: Create Unsigned Friend Assemblies (Visual Basic)</span></span>
+<span data-ttu-id="caf09-103">この例では、署名のないアセンブリと共にフレンド アセンブリを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="caf09-103">This example shows how to use friend assemblies with assemblies that are unsigned.</span></span>  
   
-### <a name="to-create-an-assembly-and-a-friend-assembly"></a>アセンブリおよびフレンド アセンブリを作成するには  
+### <a name="to-create-an-assembly-and-a-friend-assembly"></a><span data-ttu-id="caf09-104">署名のないアセンブリとフレンド アセンブリを作成するには</span><span class="sxs-lookup"><span data-stu-id="caf09-104">To create an assembly and a friend assembly</span></span>  
   
-1.  コマンド プロンプトを開きます。  
+1.  <span data-ttu-id="caf09-105">コマンド プロンプトを開きます。</span><span class="sxs-lookup"><span data-stu-id="caf09-105">Open a command prompt.</span></span>  
   
-2.  という名前の Visual Basic ファイルの作成`friend_signed_A.`次のコードを格納しています。 コードを使用して、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>フレンド アセンブリとして friend_signed_B を宣言する属性</xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>。  
+2.  <span data-ttu-id="caf09-106">という名前の Visual Basic ファイルを作成する`friend_signed_A.`次のコードを格納しています。</span><span class="sxs-lookup"><span data-stu-id="caf09-106">Create a Visual Basic file named `friend_signed_A.` that contains the following code.</span></span> <span data-ttu-id="caf09-107">コードでは <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性を使用して、フレンド アセンブリとして friend_signed_B を宣言します。</span><span class="sxs-lookup"><span data-stu-id="caf09-107">The code uses the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute to declare friend_signed_B as a friend assembly.</span></span>  
   
     ```vb  
     ' friend_unsigned_A.vb  
@@ -59,13 +51,13 @@ ms.lasthandoff: 03/13/2017
     End Class  
     ```  
   
-3.  コンパイルし、次のコマンドを使用して friend_signed_A に署名します。  
+3.  <span data-ttu-id="caf09-108">次のコマンドを使用して friend_signed_A をコンパイルして署名します。</span><span class="sxs-lookup"><span data-stu-id="caf09-108">Compile and sign friend_signed_A by using the following command.</span></span>  
   
     ```vb  
     Vbc /target:library friend_unsigned_A.vb  
     ```  
   
-4.  という名前の Visual Basic ファイルの作成`friend_unsigned_B`次のコードを格納しています。 Friend_unsigned_B のコードにアクセスできる friend_unsigned_A 指定フレンド アセンブリとして friend_unsigned_B しているので`Friend`型およびメンバー friend_unsigned_A からです。  
+4.  <span data-ttu-id="caf09-109">という名前の Visual Basic ファイルを作成する`friend_unsigned_B`次のコードを格納しています。</span><span class="sxs-lookup"><span data-stu-id="caf09-109">Create a Visual Basic file named `friend_unsigned_B` that contains the following code.</span></span> <span data-ttu-id="caf09-110">friend_unsigned_A が friend_unsigned_B をフレンド アセンブリとして指定しているため、friend_unsigned_B 内のコードは、friend_unsigned_A の `Friend` 型とメンバーにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="caf09-110">Because friend_unsigned_A specifies friend_unsigned_B as a friend assembly, the code in friend_unsigned_B can access `Friend` types and members from friend_unsigned_A.</span></span>  
   
     ```vb  
     ' friend_unsigned_B.vb  
@@ -86,24 +78,24 @@ ms.lasthandoff: 03/13/2017
     End Module  
     ```  
   
-5.  次のコマンドを使用して friend_signed_B をコンパイルします。  
+5.  <span data-ttu-id="caf09-111">次のコマンドを使用して friend_signed_B をコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="caf09-111">Compile friend_signed_B by using the following command.</span></span>  
   
     ```vb  
     Vbc /r:friend_unsigned_A.dll friend_unsigned_B.vb  
     ```  
   
-     コンパイラによって生成されるアセンブリの名前に渡されるフレンド アセンブリ名に一致する必要があります、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性</xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>。 使用してアセンブリを明示的に設定することができます、`/out`コンパイラ オプション。  
+     <span data-ttu-id="caf09-112">コンパイラによって生成されるアセンブリの名前は、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性に渡されるフレンド アセンブリ名と一致している必要があります。</span><span class="sxs-lookup"><span data-stu-id="caf09-112">The name of the assembly that is generated by the compiler must match the friend assembly name that is passed to the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute.</span></span> <span data-ttu-id="caf09-113">使用してアセンブリを明示的に設定することができます、`/out`コンパイラ オプション。</span><span class="sxs-lookup"><span data-stu-id="caf09-113">You can explicitly set the assembly by using the `/out` compiler option.</span></span>  
   
-6.  Friend_signed_B.exe ファイルを実行します。  
+6.  <span data-ttu-id="caf09-114">friend_signed_B.exe ファイルを実行します。</span><span class="sxs-lookup"><span data-stu-id="caf09-114">Run the friend_signed_B.exe file.</span></span>  
   
-     2 つの文字列を出力します。"Class1.Test"と"Class2.Test"です。  
+     <span data-ttu-id="caf09-115">プログラムによって 2 つの文字列 "Class1.Test" と "Class2.Test" が出力されます。</span><span class="sxs-lookup"><span data-stu-id="caf09-115">The program prints two strings: "Class1.Test" and "Class2.Test".</span></span>  
   
-## <a name="net-framework-security"></a>.NET Framework セキュリティ  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性と<xref:System.Security.Permissions.StrongNameIdentityPermission>クラス</xref:System.Security.Permissions.StrongNameIdentityPermission></xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>の類似点があります。 その主な違いは<xref:System.Security.Permissions.StrongNameIdentityPermission>一方、コードの特定のセクションを実行するセキュリティのアクセス許可を要求できます、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性の表示を制御する`Friend`型およびメンバー</xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> </xref:System.Security.Permissions.StrongNameIdentityPermission> 。  
+## <a name="net-framework-security"></a><span data-ttu-id="caf09-116">.NET Framework セキュリティ</span><span class="sxs-lookup"><span data-stu-id="caf09-116">.NET Framework Security</span></span>  
+ <span data-ttu-id="caf09-117"><xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性と <xref:System.Security.Permissions.StrongNameIdentityPermission> クラスには類似点があります。</span><span class="sxs-lookup"><span data-stu-id="caf09-117">There are similarities between the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute and the <xref:System.Security.Permissions.StrongNameIdentityPermission> class.</span></span> <span data-ttu-id="caf09-118">主な違いは、<xref:System.Security.Permissions.StrongNameIdentityPermission> はセキュリティ アクセス許可を要求することで特定のコード セクションを実行できますが、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性では `Friend` 型とメンバーの参照可能範囲を制御することです。</span><span class="sxs-lookup"><span data-stu-id="caf09-118">The main difference is that <xref:System.Security.Permissions.StrongNameIdentityPermission> can demand security permissions to run a particular section of code, whereas the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute controls the visibility of `Friend` types and members.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute></xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>   
- [アセンブリとグローバル アセンブリ キャッシュ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)   
- [フレンド アセンブリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/friend-assemblies.md)   
- [方法: 署名されたフレンド アセンブリ (Visual Basic) を作成します。](../../../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)   
- [ガイドのプログラミング概念](../../../../visual-basic/programming-guide/concepts/index.md)
+## <a name="see-also"></a><span data-ttu-id="caf09-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="caf09-119">See Also</span></span>  
+ <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
+ [<span data-ttu-id="caf09-120">アセンブリとグローバル アセンブリ キャッシュ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="caf09-120">Assemblies and the Global Assembly Cache (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
+ [<span data-ttu-id="caf09-121">フレンド アセンブリ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="caf09-121">Friend Assemblies (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
+ [<span data-ttu-id="caf09-122">方法: 署名されたフレンド アセンブリ (Visual Basic) を作成します。</span><span class="sxs-lookup"><span data-stu-id="caf09-122">How to: Create Signed Friend Assemblies (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)  
+ [<span data-ttu-id="caf09-123">ガイドのプログラミング概念</span><span class="sxs-lookup"><span data-stu-id="caf09-123">Programming Guide Concepts</span></span>](../../../../visual-basic/programming-guide/concepts/index.md)

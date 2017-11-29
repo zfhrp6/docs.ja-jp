@@ -1,81 +1,82 @@
 ---
-title: "チュートリアル : ElementHost コントロールの別の Windows フォームへのコピーと貼り付け | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ElementHost コントロール, コピーと貼り付け (デザイン時に)"
-  - "相互運用性 [WPF]"
-  - "Windows フォーム, コンテンツのコピーと貼り付け"
-  - "WPF ユーザー コントロール, ホスト (Windows フォームで)"
+title: "チュートリアル : ElementHost コントロールの別の Windows フォームへのコピーと貼り付け"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Forms, content copying and pasting
+- interoperability [WPF]
+- ElementHost control [Windows Forms], copying and pasting at design time
+- WPF user control [Windows Forms], hosting in Windows Forms
 ms.assetid: 6e81bb13-577c-46c3-a1cf-8d15969fb83e
-caps.latest.revision: 19
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 65882925c6fbe3e9b393b139a937bc9a1f95ed04
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル : ElementHost コントロールの別の Windows フォームへのコピーと貼り付け
-このチュートリアルでは、Windows フォーム間で Windows Presentation Foundation \(WPF\) コントロールをコピーする方法について説明します。  
+# <a name="walkthrough-copying-and-pasting-an-elementhost-control-into-separate-windows-forms"></a><span data-ttu-id="69810-102">チュートリアル : ElementHost コントロールの別の Windows フォームへのコピーと貼り付け</span><span class="sxs-lookup"><span data-stu-id="69810-102">Walkthrough: Copying and Pasting an ElementHost Control into Separate Windows Forms</span></span>
+<span data-ttu-id="69810-103">このチュートリアルでは、Windows フォーム間で Windows Presentation Foundation (WPF) コントロールをコピーする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="69810-103">This walkthrough shows you how to copy a Windows Presentation Foundation (WPF) control from one Windows Form to another.</span></span>  
   
- このチュートリアルでは次のタスクを実行します。  
+ <span data-ttu-id="69810-104">このチュートリアルでは次のタスクを実行します。</span><span class="sxs-lookup"><span data-stu-id="69810-104">In this walkthrough, you perform the following tasks:</span></span>  
   
--   プロジェクトを作成する。  
+-   <span data-ttu-id="69810-105">プロジェクトを作成する。</span><span class="sxs-lookup"><span data-stu-id="69810-105">Create the project.</span></span>  
   
--   WPF コントロールをコピーする。  
-  
-> [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
-  
-## 必須コンポーネント  
- このチュートリアルを実行するには、次のコンポーネントが必要です。  
-  
--   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)].  
-  
-## プロジェクトの作成  
- まず、Windows フォーム プロジェクトを作成します。  
+-   <span data-ttu-id="69810-106">WPF コントロールをコピーする。</span><span class="sxs-lookup"><span data-stu-id="69810-106">Copy a WPF Control.</span></span>  
   
 > [!NOTE]
->  WPF コンテンツをホストする場合は、C\# プロジェクトと Visual Basic プロジェクトのみがサポートされます。  
+>  <span data-ttu-id="69810-107">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="69810-107">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="69810-108">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="69810-108">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="69810-109">詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="69810-109">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-#### プロジェクトを作成するには  
+## <a name="prerequisites"></a><span data-ttu-id="69810-110">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="69810-110">Prerequisites</span></span>  
+ <span data-ttu-id="69810-111">このチュートリアルを実行するには、次のコンポーネントが必要です。</span><span class="sxs-lookup"><span data-stu-id="69810-111">You need the following components to complete this walkthrough:</span></span>  
   
--   `CopyElementHost` という名前の新しい Windows フォーム アプリケーション プロジェクトを Visual Basic または Visual C\# で作成します。  
+-   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)]<span data-ttu-id="69810-112">。</span><span class="sxs-lookup"><span data-stu-id="69810-112">.</span></span>  
   
-## WPF コントロールのコピー  
- プロジェクトに WPF コントロールを追加した後、プロジェクト内の他のフォームにコピーすることができます。  
+## <a name="creating-the-project"></a><span data-ttu-id="69810-113">プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="69810-113">Creating the Project</span></span>  
+ <span data-ttu-id="69810-114">まず、Windows フォーム プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="69810-114">The first step is to create the Windows Forms project.</span></span>  
   
-#### WPF コントロールをコピーするには  
+> [!NOTE]
+>  <span data-ttu-id="69810-115">WPF コンテンツをホストする場合は、C# プロジェクトと Visual Basic プロジェクトのみがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="69810-115">When hosting WPF content, only C# and Visual Basic projects are supported.</span></span>  
   
-1.  新しい WPF <xref:System.Windows.Controls.UserControl> プロジェクトをソリューションに追加します。  コントロール型の既定の名前である `UserControl1.xaml` を使用します。  詳細については、「[チュートリアル: デザイン時の Windows フォームでの新しい WPF コンテンツの作成](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md)」を参照してください。  
+#### <a name="to-create-the-project"></a><span data-ttu-id="69810-116">プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="69810-116">To create the project</span></span>  
   
-2.  プロジェクトをビルドします。  
+-   <span data-ttu-id="69810-117">Visual Basic または Visual c# のという名前で新しい Windows フォーム アプリケーション プロジェクトを作成`CopyElementHost`です。</span><span class="sxs-lookup"><span data-stu-id="69810-117">Create a new Windows Forms Application project in Visual Basic or Visual C# named `CopyElementHost`.</span></span>  
   
-3.  Windows フォーム デザイナーで `Form1` を開きます。  
+## <a name="copying-a-wpf-control"></a><span data-ttu-id="69810-118">WPF コントロールのコピー</span><span class="sxs-lookup"><span data-stu-id="69810-118">Copying a WPF Control</span></span>  
+ <span data-ttu-id="69810-119">プロジェクトに WPF コントロールを追加した後、プロジェクト内の他のフォームにコピーすることができます。</span><span class="sxs-lookup"><span data-stu-id="69810-119">After you add a WPF control to the project, you can copy it to other forms in the project.</span></span>  
   
-4.  **ツールボックス**から、`UserControl1` のインスタンスをフォームにドラッグします。  
+#### <a name="to-copy-a-wpf-control"></a><span data-ttu-id="69810-120">WPF コントロールをコピーするには</span><span class="sxs-lookup"><span data-stu-id="69810-120">To copy a WPF control</span></span>  
   
-     `UserControl1` のインスタンスは、`elementHost1` という名前の新しい <xref:System.Windows.Forms.Integration.ElementHost> コントロールでホストされます。  
+1.  <span data-ttu-id="69810-121">新しい WPF <xref:System.Windows.Controls.UserControl> プロジェクトをソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="69810-121">Add a new WPF <xref:System.Windows.Controls.UserControl> project to the solution.</span></span> <span data-ttu-id="69810-122">コントロール型の既定の名前である `UserControl1.xaml` を使用します。</span><span class="sxs-lookup"><span data-stu-id="69810-122">Use the default name for the control type, `UserControl1.xaml`.</span></span> <span data-ttu-id="69810-123">詳細については、次を参照してください。[チュートリアル: 新しい WPF コンテンツの作成デザイン時に Windows フォームで](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md)です。</span><span class="sxs-lookup"><span data-stu-id="69810-123">For more information, see [Walkthrough: Creating New WPF Content on Windows Forms at Design Time](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).</span></span>  
   
-5.  `elementHost1` を選択して、CTRL \+ C キーを押してクリップボードにコピーします。  
+2.  <span data-ttu-id="69810-124">プロジェクトをビルドします。</span><span class="sxs-lookup"><span data-stu-id="69810-124">Build the project.</span></span>  
   
-6.  新しい Windows フォームをプロジェクトに追加します。  フォームの種類の既定の名前である `Form2` を使用します。  
+3.  <span data-ttu-id="69810-125">Windows フォーム デザイナーで `Form1` を開きます。</span><span class="sxs-lookup"><span data-stu-id="69810-125">Open `Form1` in the Windows Forms Designer.</span></span>  
   
-7.  Windows フォーム デザイナーで `Form2` を開いたまま、CTRL キーを押しながら V キーを押して、`elementHost1` のコピーをフォームに貼り付けます。  
+4.  <span data-ttu-id="69810-126">**ツールボックス**のインスタンスをドラッグ`UserControl1`フォーム上にします。</span><span class="sxs-lookup"><span data-stu-id="69810-126">From the **Toolbox**, drag an instance of `UserControl1` onto the form.</span></span>  
   
-     `Form2` クラスのプライベート フィールドであるため、コピーしたコントロールの名前も `elementHost1` です。  `Form1` クラスの `elementHost1` には名前の競合がありません。  
+     <span data-ttu-id="69810-127">`UserControl1` のインスタンスは、`elementHost1` という名前の新しい <xref:System.Windows.Forms.Integration.ElementHost> コントロールでホストされます。</span><span class="sxs-lookup"><span data-stu-id="69810-127">An instance of `UserControl1` is hosted in a new <xref:System.Windows.Forms.Integration.ElementHost> control named `elementHost1`.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.Integration.ElementHost>   
- <xref:System.Windows.Forms.Integration.WindowsFormsHost>   
- [移行と相互運用性](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)   
- [WPF コントロールの使用](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)   
- [WPF デザイナー](http://msdn.microsoft.com/ja-jp/c6c65214-8411-4e16-b254-163ed4099c26)
+5.  <span data-ttu-id="69810-128">`elementHost1` を選択して、CTRL + C キーを押してクリップボードにコピーします。</span><span class="sxs-lookup"><span data-stu-id="69810-128">With `elementHost1` selected, press CTRL+C to copy it to the clipboard.</span></span>  
+  
+6.  <span data-ttu-id="69810-129">新しい Windows フォームをプロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="69810-129">Add a new Windows Form to the project.</span></span> <span data-ttu-id="69810-130">フォームの種類の既定の名前である `Form2` を使用します。</span><span class="sxs-lookup"><span data-stu-id="69810-130">Use the default name for the form type, `Form2`.</span></span>  
+  
+7.  <span data-ttu-id="69810-131">Windows フォーム デザイナーで `Form2` を開いたまま、CTRL キーを押しながら V キーを押して、`elementHost1` のコピーをフォームに貼り付けます。</span><span class="sxs-lookup"><span data-stu-id="69810-131">With `Form2` open in the Windows Forms Designer, press CTRL+V to paste a copy of `elementHost1` onto the form.</span></span>  
+  
+     <span data-ttu-id="69810-132">`Form2` クラスのプライベート フィールドであるため、コピーしたコントロールの名前も `elementHost1` です。</span><span class="sxs-lookup"><span data-stu-id="69810-132">The copied control is also named `elementHost1`, because it is a private field of the `Form2` class.</span></span> <span data-ttu-id="69810-133">`Form1` クラスの `elementHost1` には名前の競合がありません。</span><span class="sxs-lookup"><span data-stu-id="69810-133">There is no name collision with the `elementHost1` in the `Form1` class.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="69810-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="69810-134">See Also</span></span>  
+ <xref:System.Windows.Forms.Integration.ElementHost>  
+ <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
+ [<span data-ttu-id="69810-135">移行と相互運用性</span><span class="sxs-lookup"><span data-stu-id="69810-135">Migration and Interoperability</span></span>](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
+ [<span data-ttu-id="69810-136">WPF コントロールの使用</span><span class="sxs-lookup"><span data-stu-id="69810-136">Using WPF Controls</span></span>](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)  
+ [<span data-ttu-id="69810-137">WPF デザイナー</span><span class="sxs-lookup"><span data-stu-id="69810-137">WPF Designer</span></span>](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)

@@ -1,166 +1,188 @@
 ---
-title: "LINQ に関する留意点 (WCF Data Services) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "WCF Data Services、LINQ"
-  - "クエリ (データ サービスに対する) [WCF Data Services]"
-  - "WCF Data Services は、クエリを実行します。"
+title: "LINQ に関する留意点 (WCF Data Services)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- WCF Data Services, LINQ
+- querying the data service [WCF Data Services]
+- WCF Data Services, querying
 ms.assetid: cc4ec9e9-348f-42a6-a78e-1cd40e370656
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 4072574d1451655ba303af257c87c309c79dfc82
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# LINQ に関する留意点 (WCF Data Services)
-このトピックでは、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアントを使用しているときに LINQ クエリを作成および実行する方法と、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] を実装するデータ サービスを LINQ で照会する場合の制限について説明します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]に対するクエリの実行を作成し、 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-ベースのデータ サービスを参照してください[クエリ データ サービスに対する](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)します。  
+# <a name="linq-considerations-wcf-data-services"></a><span data-ttu-id="5376e-102">LINQ に関する留意点 (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="5376e-102">LINQ Considerations (WCF Data Services)</span></span>
+<span data-ttu-id="5376e-103">このトピックでは、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアントを使用しているときに LINQ クエリを作成および実行する方法と、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] を実装するデータ サービスを LINQ で照会する場合の制限について説明します。</span><span class="sxs-lookup"><span data-stu-id="5376e-103">This topic provides information about the way in which LINQ queries are composed and executed when you are using the [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] client and limitations of using LINQ to query a data service that implements the [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)].</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="5376e-104">作成し、に対するクエリの実行、 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-ベースのデータ サービスを参照してください[データ サービスのクエリ](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="5376e-104"> composing and executing queries against an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-based data service, see [Querying the Data Service](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).</span></span>  
   
-## <a name="composing-linq-queries"></a>LINQ クエリの作成  
- LINQ を実装するオブジェクトのコレクションに対してクエリを作成できます。 <xref:System.Collections.Generic.IEnumerable%601>します。 両方、**サービス参照の追加** ダイアログ ボックスで[!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]DataSvcUtil.exe ツールは、の形式の生成に使用されると、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]サービスから継承するエンティティ コンテナー クラスとして<xref:System.Data.Services.Client.DataServiceContext>、およびフィードで返されるエンティティを表すオブジェクトします。 これらのツールでは、サービスによってフィードとして公開されるコレクションに対応するエンティティ コンテナー クラスのプロパティも生成されます。 これらの各プロパティの戻り値のデータ サービスをカプセル化するクラス、 <xref:System.Data.Services.Client.DataServiceQuery%601>します。 <xref:System.Data.Services.Client.DataServiceQuery%601>クラスが実装する、 <xref:System.Linq.IQueryable%601> LINQ で定義されているインターフェイスは、クライアント ライブラリによってクエリ要求の実行時にデータ サービスに送信される URI に変換、データ サービスによって公開されるフィードに対する LINQ クエリを作成することができます。  
+## <a name="composing-linq-queries"></a><span data-ttu-id="5376e-105">LINQ クエリの作成</span><span class="sxs-lookup"><span data-stu-id="5376e-105">Composing LINQ Queries</span></span>  
+ <span data-ttu-id="5376e-106">LINQ を使用すると、<xref:System.Collections.Generic.IEnumerable%601> を実装するオブジェクトのコレクションに対するクエリを作成できます。</span><span class="sxs-lookup"><span data-stu-id="5376e-106">LINQ enables you to compose queries against a collection of objects that implements <xref:System.Collections.Generic.IEnumerable%601>.</span></span> <span data-ttu-id="5376e-107">両方の**サービス参照の追加** ダイアログ ボックスで[!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]DataSvcUtil.exe ツールを使用しての表現を生成、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]サービスから継承するエンティティ コンテナー クラスとして<xref:System.Data.Services.Client.DataServiceContext>、だけでなくフィードで返されるエンティティを表すオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="5376e-107">Both the **Add Service Reference** dialog box in [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] and the DataSvcUtil.exe tool are used to generate a representation of an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] service as an entity container class that inherits from <xref:System.Data.Services.Client.DataServiceContext>, as well as objects that represent the entities returned in feeds.</span></span> <span data-ttu-id="5376e-108">これらのツールでは、サービスによってフィードとして公開されるコレクションに対応するエンティティ コンテナー クラスのプロパティも生成されます。</span><span class="sxs-lookup"><span data-stu-id="5376e-108">These tools also generate properties on the entity container class for the collections that are exposed as feeds by the service.</span></span> <span data-ttu-id="5376e-109">データ サービスをカプセル化するクラスのこれらのプロパティは、それぞれ <xref:System.Data.Services.Client.DataServiceQuery%601> を返します。</span><span class="sxs-lookup"><span data-stu-id="5376e-109">Each of these properties of the class that encapsulates the data service return a <xref:System.Data.Services.Client.DataServiceQuery%601>.</span></span> <span data-ttu-id="5376e-110"><xref:System.Data.Services.Client.DataServiceQuery%601> クラスは LINQ で定義された <xref:System.Linq.IQueryable%601> インターフェイスを実装するので、データ サービスによって公開されるフィードに対する LINQ クエリを作成できます。作成した LINQ クエリは、クライアント ライブラリにより、実行時にデータ サービスに送信されるクエリ要求 URI に変換されます。</span><span class="sxs-lookup"><span data-stu-id="5376e-110">Because the <xref:System.Data.Services.Client.DataServiceQuery%601> class implements the <xref:System.Linq.IQueryable%601> interface defined by LINQ, you can compose a LINQ query against feeds exposed by the data service, which are translated by the client library into a query request URI that is sent to the data service on execution.</span></span>  
   
 > [!IMPORTANT]
->  LINQ 構文で表現できるクエリのセットは、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] データ サービスによって使用される URI 構文で有効なクエリのセットよりも範囲が広くなります。 A <xref:System.NotSupportedException>クエリは、ターゲット データ サービスの URI にマップできない場合に発生します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][サポートされていない LINQ メソッド](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md#unsupportedMethods)」を参照します。  
+>  <span data-ttu-id="5376e-111">LINQ 構文で表現できるクエリのセットは、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] データ サービスによって使用される URI 構文で有効なクエリのセットよりも範囲が広くなります。</span><span class="sxs-lookup"><span data-stu-id="5376e-111">The set of queries expressible in the LINQ syntax is broader than those enabled in the URI syntax that is used by [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] data services.</span></span> <span data-ttu-id="5376e-112">クエリを対象データ サービスの URI にマップできない場合、<xref:System.NotSupportedException> が発生します。</span><span class="sxs-lookup"><span data-stu-id="5376e-112">A <xref:System.NotSupportedException> is raised when the query cannot be mapped to a URI in the target data service.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="5376e-113">[サポートされていない LINQ メソッド](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md#unsupportedMethods)」を参照します。</span><span class="sxs-lookup"><span data-stu-id="5376e-113"> the [Unsupported LINQ Methods](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md#unsupportedMethods) in this topic.</span></span>  
   
- 次の例の LINQ クエリは、輸送費が&30; ドルを超える `Orders` を取得し、結果を出荷日の新しい順に並べ替えます。  
+ <span data-ttu-id="5376e-114">次の例の LINQ クエリは、輸送費が 30 ドルを超える `Orders` を取得し、結果を出荷日の新しい順に並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="5376e-114">The following example is a LINQ query that returns `Orders` that have a freight cost of more than $30 and sorts the results by the shipping date, starting with the latest ship date:</span></span>  
   
-  [Astoria NorthwindClient #AddQueryOptionsLinqSpecific](../../../../amples/snippets/xml/VS_Snippets_Misc/astoria northwind service/astoria.vsmdi NorthwindClient#AddQueryOptionsLinqSpecific)]  
+[!code-csharp[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#addqueryoptionslinqspecific)]      
+[!code-vb[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#addqueryoptionslinqspecific)]    
   
- この LINQ クエリは次のクエリ、Northwind ベースに対して実行される URI に変換[クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)データ サービス。  
+ <span data-ttu-id="5376e-115">この LINQ クエリは次のクエリ、Northwind ベースに対して実行される URI に変換[クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)データ サービス。</span><span class="sxs-lookup"><span data-stu-id="5376e-115">This LINQ query is translated into the following query URI that is executed against the Northwind-based [quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) data service:</span></span>  
   
 ```  
 http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight gt 30  
 ```  
   
- LINQ の概要については、次を参照してください。 [LINQ (Language-Integrated Query)](../Topic/LINQ%20\(Language-Integrated%20Query\).md)します。  
+ <span data-ttu-id="5376e-116">LINQ の概要については、次を参照してください。[クエリ (LINQ: Language-Integrated)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)です。</span><span class="sxs-lookup"><span data-stu-id="5376e-116">For more general information about LINQ, see [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d).</span></span>  
   
- LINQ を使用してクエリを作成する際には、前の例のような言語固有の宣言型のクエリ構文と、標準クエリ演算子と呼ばれる一連のクエリ メソッドの両方を使用できます。 したがって、次の例のように、前の例と同等のクエリをメソッド ベースの構文のみを使用して作成することもできます。  
+ <span data-ttu-id="5376e-117">LINQ を使用してクエリを作成する際には、前の例のような言語固有の宣言型のクエリ構文と、標準クエリ演算子と呼ばれる一連のクエリ メソッドの両方を使用できます。</span><span class="sxs-lookup"><span data-stu-id="5376e-117">LINQ enables you to compose queries by using both the language-specific declarative query syntax, shown in the previous example, as well as a set of query methods known as standard query operators.</span></span> <span data-ttu-id="5376e-118">したがって、次の例のように、前の例と同等のクエリをメソッド ベースの構文のみを使用して作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="5376e-118">An equivalent query to the previous example can be composed by using only the method-based syntax, as shown the following example:</span></span>  
   
-  [Astoria NorthwindClient #AddQueryOptionsLinqExpressionSpecific](../../../../amples/snippets/xml/VS_Snippets_Misc/astoria northwind service/astoria.vsmdi NorthwindClient#AddQueryOptionsLinqExpressionSpecific)]  
+[!code-csharp[Astoria Northwind Client#AddQueryOptionsLinqExpressionSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#addqueryoptionslinqexpressionspecific)]      
+[!code-vb[Astoria Northwind Client#AddQueryOptionsLinqExpressionSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#addqueryoptionslinqexpressionspecific)]    
   
- どちらの方法で作成したクエリも、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアントによってクエリ URI に変換されます。クエリ式にクエリ メソッドを追加して LINQ クエリを拡張することもできます。 クエリ式にメソッド構文を追加して LINQ クエリを作成した場合、または<xref:System.Data.Services.Client.DataServiceQuery%601>、操作をメソッドが呼び出される順序でのクエリ URI に追加します。 これは、呼び出すことと同じ、 <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A>というクエリ URI に各クエリ オプションを追加します。  
+ <span data-ttu-id="5376e-119">どちらの方法で作成したクエリも、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアントによってクエリ URI に変換されます。クエリ式にクエリ メソッドを追加して LINQ クエリを拡張することもできます。</span><span class="sxs-lookup"><span data-stu-id="5376e-119">The [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] client is able to translate both kinds of composed queries into a query URI, and you can extend a LINQ query by appending query methods to a query expression.</span></span> <span data-ttu-id="5376e-120">クエリ式または <xref:System.Data.Services.Client.DataServiceQuery%601> にメソッド構文を追加して LINQ クエリを作成した場合は、メソッドが呼び出される順序で操作がクエリ URI に追加されます。</span><span class="sxs-lookup"><span data-stu-id="5376e-120">When you compose LINQ queries by appending method syntax to a query expression or a <xref:System.Data.Services.Client.DataServiceQuery%601>, the operations are added to the query URI in the order in which methods are called.</span></span> <span data-ttu-id="5376e-121">これは、<xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> メソッドを呼び出して各クエリ オプションをクエリ URI に追加するのと同じです。</span><span class="sxs-lookup"><span data-stu-id="5376e-121">This is equivalent to calling the <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> method to add each query option to the query URI.</span></span>  
   
-## <a name="executing-linq-queries"></a>LINQ クエリの実行  
- 特定の LINQ などのメソッドのクエリ<xref:System.Linq.Enumerable.First%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%29>または<xref:System.Linq.Enumerable.Single%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%29>、クエリに追加するときに、クエリを実行します。 クエリは、結果が暗黙的に列挙される場合 (`foreach` ループの間など) や、クエリが `List` コレクションに割り当てられている場合にも実行されます。 詳細については、次を参照してください。[クエリ データ サービスに対する](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)します。  
+## <a name="executing-linq-queries"></a><span data-ttu-id="5376e-122">LINQ クエリの実行</span><span class="sxs-lookup"><span data-stu-id="5376e-122">Executing LINQ Queries</span></span>  
+ <span data-ttu-id="5376e-123">クエリに特定の LINQ クエリ メソッド (<xref:System.Linq.Enumerable.First%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%29>、<xref:System.Linq.Enumerable.Single%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%29> など) を追加するとクエリが実行されます。</span><span class="sxs-lookup"><span data-stu-id="5376e-123">Certain LINQ query methods, such as <xref:System.Linq.Enumerable.First%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%29> or <xref:System.Linq.Enumerable.Single%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%29>, when appended to the query, cause the query to be executed.</span></span> <span data-ttu-id="5376e-124">クエリは、結果が暗黙的に列挙される場合 (`foreach` ループの間など) や、クエリが `List` コレクションに割り当てられている場合にも実行されます。</span><span class="sxs-lookup"><span data-stu-id="5376e-124">A query is also executed when results are enumerated implicitly, such as during a `foreach` loop or when the query is assigned to a `List` collection.</span></span> <span data-ttu-id="5376e-125">詳細については、次を参照してください。[データ サービスのクエリ](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="5376e-125">For more information, see [Querying the Data Service](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).</span></span>  
   
- クライアントによる LINQ クエリの実行は&2; つの部分に分かれています。 可能な限り、クエリ内の LINQ 式は最初にクライアントで評価されます。その後、URI ベースのクエリが生成され、データ サービスに送信されて、サービス内のデータに対して評価されます。 詳細については、セクションを参照してください。[クライアントとサーバーでの実行](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md#executingQueries)で[クエリ データ サービスに対する](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)します。  
+ <span data-ttu-id="5376e-126">クライアントによる LINQ クエリの実行は 2 つの部分に分かれています。</span><span class="sxs-lookup"><span data-stu-id="5376e-126">The client executes a LINQ query in two parts.</span></span> <span data-ttu-id="5376e-127">可能な限り、クエリ内の LINQ 式は最初にクライアントで評価されます。その後、URI ベースのクエリが生成され、データ サービスに送信されて、サービス内のデータに対して評価されます。</span><span class="sxs-lookup"><span data-stu-id="5376e-127">Whenever possible, LINQ expressions in a query are first evaluated on the client, and then a URI-based query is generated and sent to the data service for evaluation against data in the service.</span></span> <span data-ttu-id="5376e-128">詳細については、セクションを参照して[サーバーの実行とクライアント](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md#executingQueries)で[データ サービスのクエリ](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="5376e-128">For more information, see the section [Client versus Server Execution](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md#executingQueries) in [Querying the Data Service](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).</span></span>  
   
- [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] 準拠のクエリ URI で LINQ クエリを変換できない場合は、クエリを実行しようとすると例外が発生します。 詳細については、次を参照してください。[クエリ データ サービスに対する](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)します。  
+ <span data-ttu-id="5376e-129">[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] 準拠のクエリ URI で LINQ クエリを変換できない場合は、クエリを実行しようとすると例外が発生します。</span><span class="sxs-lookup"><span data-stu-id="5376e-129">When a LINQ query cannot be translated in an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-compliant query URI, an exception is raised when execution is attempted.</span></span> <span data-ttu-id="5376e-130">詳細については、次を参照してください。[データ サービスのクエリ](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="5376e-130">For more information, see [Querying the Data Service](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).</span></span>  
   
-## <a name="linq-query-examples"></a>LINQ クエリの例  
- 以下のセクションの各例は、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] サービスに対して実行できる LINQ クエリの種類を示しています。  
+## <a name="linq-query-examples"></a><span data-ttu-id="5376e-131">LINQ クエリの例</span><span class="sxs-lookup"><span data-stu-id="5376e-131">LINQ Query Examples</span></span>  
+ <span data-ttu-id="5376e-132">以下のセクションの各例は、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] サービスに対して実行できる LINQ クエリの種類を示しています。</span><span class="sxs-lookup"><span data-stu-id="5376e-132">The examples in the following sections demonstrate the kinds of LINQ queries that can be executed against an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] service.</span></span>  
   
 <a name="filtering"></a>   
-### <a name="filtering"></a>フィルター処理  
- このセクションの LINQ クエリは、サービスによって返されるフィード内のデータをフィルター処理します。  
+### <a name="filtering"></a><span data-ttu-id="5376e-133">フィルター処理</span><span class="sxs-lookup"><span data-stu-id="5376e-133">Filtering</span></span>  
+ <span data-ttu-id="5376e-134">このセクションの LINQ クエリは、サービスによって返されるフィード内のデータをフィルター処理します。</span><span class="sxs-lookup"><span data-stu-id="5376e-134">The LINQ query examples in this section filter data in the feed returned by the service.</span></span>  
   
- 以下の各例は、返された `Orders` エンティティをフィルター処理して、輸送費が&30; ドルを超える注文のみが返されるようにする同等のクエリを示しています。  
+ <span data-ttu-id="5376e-135">以下の各例は、返された `Orders` エンティティをフィルター処理して、輸送費が 30 ドルを超える注文のみが返されるようにする同等のクエリを示しています。</span><span class="sxs-lookup"><span data-stu-id="5376e-135">The following examples are equivalent queries that filter the returned `Orders` entities so that only orders with a freight cost greater than $30 are returned:</span></span>  
   
--   LINQ クエリ構文を使用する場合:  
+-   <span data-ttu-id="5376e-136">LINQ クエリ構文を使用する場合:</span><span class="sxs-lookup"><span data-stu-id="5376e-136">Using LINQ query syntax:</span></span>  
   
-      [Astoria NorthwindClient #LinqWhereClauseSpecific](../../../../amples/snippets/xml/VS_Snippets_Misc/astoria northwind service/astoria.vsmdi NorthwindClient#LinqWhereClauseSpecific)]  
+[!code-csharp[Astoria Northwind Client#LinqWhereClauseSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#linqwhereclausespecific)]      
+[!code-vb[Astoria Northwind Client#LinqWhereClauseSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#linqwhereclausespecific)]     
   
--   LINQ クエリ メソッドを使用する場合:  
+-   <span data-ttu-id="5376e-137">LINQ クエリ メソッドを使用する場合:</span><span class="sxs-lookup"><span data-stu-id="5376e-137">Using LINQ query methods:</span></span>  
   
-      [Astoria NorthwindClient #LinqWhereMethodSpecific](../../../../amples/snippets/xml/VS_Snippets_Misc/astoria northwind service/astoria.vsmdi NorthwindClient#LinqWhereMethodSpecific)]  
+[!code-csharp[Astoria Northwind Client#LinqWhereMethodSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#linqwheremethodspecific)]      
+[!code-vb[Astoria Northwind Client#LinqWhereMethodSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#linqwheremethodspecific)]       
   
--   URI クエリ文字列オプション `$filter`:  
+-   <span data-ttu-id="5376e-138">URI クエリ文字列オプション `$filter`:</span><span class="sxs-lookup"><span data-stu-id="5376e-138">The URI query string `$filter` option:</span></span>  
   
-      [Astoria NorthwindClient #ExplicitQueryWhereMethodSpecific](../../../../amples/snippets/xml/VS_Snippets_Misc/astoria northwind service/astoria.vsmdi NorthwindClient#ExplicitQueryWhereMethodSpecific)]  
+[!code-csharp[Astoria Northwind Client#ExplicitQueryWhereMethodSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#explicitquerywheremethodspecific)]      
+[!code-vb[Astoria Northwind Client#ExplicitQueryWhereMethodSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#explicitquerywheremethodspecific)]       
   
- 上の例はすべて、`http://localhost:12345/northwind.svc/Orders()?$filter=Freight gt 30M` というクエリ URI に変換されます。  
+ <span data-ttu-id="5376e-139">上の例はすべて、`http://localhost:12345/northwind.svc/Orders()?$filter=Freight gt 30M` というクエリ URI に変換されます。</span><span class="sxs-lookup"><span data-stu-id="5376e-139">All of the previous examples are translated to the query URI: `http://localhost:12345/northwind.svc/Orders()?$filter=Freight gt 30M`.</span></span>  
   
 <a name="sorting"></a>   
-### <a name="sorting"></a>並べ替え  
- 以下の各例は、返されたデータを会社名と郵便番号の降順で並べ替える同等のクエリを示しています。  
+### <a name="sorting"></a><span data-ttu-id="5376e-140">並べ替え</span><span class="sxs-lookup"><span data-stu-id="5376e-140">Sorting</span></span>  
+ <span data-ttu-id="5376e-141">以下の各例は、返されたデータを会社名と郵便番号の降順で並べ替える同等のクエリを示しています。</span><span class="sxs-lookup"><span data-stu-id="5376e-141">The following examples show equivalent queries that sort returned data both by the company name and by postal code, descending:</span></span>  
   
--   LINQ クエリ構文を使用する場合:  
+-   <span data-ttu-id="5376e-142">LINQ クエリ構文を使用する場合:</span><span class="sxs-lookup"><span data-stu-id="5376e-142">Using LINQ query syntax:</span></span>  
   
-      [Astoria NorthwindClient #LinqOrderByClauseSpecific](../../../../amples/snippets/xml/VS_Snippets_Misc/astoria northwind service/astoria.vsmdi NorthwindClient#LinqOrderByClauseSpecific)]  
+[!code-csharp[Astoria Northwind Client#LinqOrderByClauseSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#linqorderbyclausespecific)]      
+[!code-vb[Astoria Northwind Client#LinqOrderByClauseSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#linqorderbyclausespecific)]        
   
--   LINQ クエリ メソッドを使用する場合:  
+-   <span data-ttu-id="5376e-143">LINQ クエリ メソッドを使用する場合:</span><span class="sxs-lookup"><span data-stu-id="5376e-143">Using LINQ query methods:</span></span>  
   
-      [Astoria NorthwindClient #LinqOrderByMethodSpecific](../../../../amples/snippets/xml/VS_Snippets_Misc/astoria northwind service/astoria.vsmdi NorthwindClient#LinqOrderByMethodSpecific)]  
+[!code-csharp[Astoria Northwind Client#LinqOrderByMethodSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#linqorderbymethodspecific)]      
+[!code-vb[Astoria Northwind Client#LinqOrderByMethodSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#linqorderbymethodspecific)]        
   
--   URI クエリ文字列オプション `$orderby`:  
+-   <span data-ttu-id="5376e-144">URI クエリ文字列オプション `$orderby`:</span><span class="sxs-lookup"><span data-stu-id="5376e-144">URI query string `$orderby` option):</span></span>  
   
-      [Astoria NorthwindClient #ExplicitQueryOrderByMethodSpecific](../../../../amples/snippets/xml/VS_Snippets_Misc/astoria northwind service/astoria.vsmdi NorthwindClient#ExplicitQueryOrderByMethodSpecific)]  
+[!code-csharp[Astoria Northwind Client#ExplicitQueryOrderByMethodSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#explicitqueryorderbymethodspecific)]      
+[!code-vb[Astoria Northwind Client#ExplicitQueryOrderByMethodSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#explicitqueryorderbymethodspecific)]         
   
- 上の例はすべて、`http://localhost:12345/northwind.svc/Customers()?$orderby=CompanyName,PostalCode desc` というクエリ URI に変換されます。  
+ <span data-ttu-id="5376e-145">上の例はすべて、`http://localhost:12345/northwind.svc/Customers()?$orderby=CompanyName,PostalCode desc` というクエリ URI に変換されます。</span><span class="sxs-lookup"><span data-stu-id="5376e-145">All of the previous examples are translated to the query URI: `http://localhost:12345/northwind.svc/Customers()?$orderby=CompanyName,PostalCode desc`.</span></span>  
   
 <a name="projection"></a>   
-### <a name="projection"></a>射影  
- 以下の各例は、返されたデータをより範囲の狭い `CustomerAddress` 型に射影する同等のクエリを示しています。  
+### <a name="projection"></a><span data-ttu-id="5376e-146">射影</span><span class="sxs-lookup"><span data-stu-id="5376e-146">Projection</span></span>  
+ <span data-ttu-id="5376e-147">以下の各例は、返されたデータをより範囲の狭い `CustomerAddress` 型に射影する同等のクエリを示しています。</span><span class="sxs-lookup"><span data-stu-id="5376e-147">The following examples show equivalent queries that project returned data into the narrower `CustomerAddress` type:</span></span>  
   
--   LINQ クエリ構文を使用する場合:  
+-   <span data-ttu-id="5376e-148">LINQ クエリ構文を使用する場合:</span><span class="sxs-lookup"><span data-stu-id="5376e-148">Using LINQ query syntax:</span></span>  
   
-      [Astoria NorthwindClient #LinqSelectClauseSpecific](../../../../amples/snippets/xml/VS_Snippets_Misc/astoria northwind service/astoria.vsmdi NorthwindClient#LinqSelectClauseSpecific)]  
+[!code-csharp[Astoria Northwind Client#LinqSelectClauseSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#linqselectclausespecific)]      
+[!code-vb[Astoria Northwind Client#LinqSelectClauseSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#linqselectclausespecific)]         
   
--   LINQ クエリ メソッドを使用する場合:  
+-   <span data-ttu-id="5376e-149">LINQ クエリ メソッドを使用する場合:</span><span class="sxs-lookup"><span data-stu-id="5376e-149">Using LINQ query methods:</span></span>  
   
-      [Astoria NorthwindClient #LinqSelectMethodSpecific](../../../../amples/snippets/xml/VS_Snippets_Misc/astoria northwind service/astoria.vsmdi NorthwindClient#LinqSelectMethodSpecific)]  
+[!code-csharp[Astoria Northwind Client#LinqSelectMethodSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#linqselectmethodspecific)]      
+[!code-vb[Astoria Northwind Client#LinqSelectMethodSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#linqselectmethodspecific)]         
+ 
   
 > [!NOTE]
->  `$select`クエリ オプションを使用してクエリ URI に追加できません、 <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A>メソッドです。 LINQ を使用することをお勧め<xref:System.Linq.Enumerable.Select%2A>クライアントを生成するメソッド、`$select`クエリ要求 URI 内のオプション\</TSource, TResult>。  
+>  <span data-ttu-id="5376e-150">`$select` メソッドを使用してクエリ URI に <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> クエリ オプションを追加することはできません。</span><span class="sxs-lookup"><span data-stu-id="5376e-150">The `$select` query option cannot be added to a query URI by using the <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> method.</span></span> <span data-ttu-id="5376e-151">LINQ の <xref:System.Linq.Enumerable.Select%2A> メソッドを使用して、クライアントによって要求 URI に `$select` クエリ オプションが生成されるようにすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="5376e-151">We recommend that you use the LINQ <xref:System.Linq.Enumerable.Select%2A> method to have the client generate the `$select` query option in the request URI.</span></span>  
   
- 上の例はいずれも、`"http://localhost:12345/northwind.svc/Customers()?$filter=Country eq 'GerGerm'&$select=CustomerID,Address,City,Region,PostalCode,Country"` というクエリ URI に変換されます。  
+ <span data-ttu-id="5376e-152">上の例はいずれも、`"http://localhost:12345/northwind.svc/Customers()?$filter=Country eq 'GerGerm'&$select=CustomerID,Address,City,Region,PostalCode,Country"` というクエリ URI に変換されます。</span><span class="sxs-lookup"><span data-stu-id="5376e-152">Both of the previous examples are translated to the query URI: `"http://localhost:12345/northwind.svc/Customers()?$filter=Country eq 'GerGerm'&$select=CustomerID,Address,City,Region,PostalCode,Country"`.</span></span>  
   
 <a name="paging"></a>   
-### <a name="client-paging"></a>クライアントのページング  
- 以下の各例は、25 件の注文を含む並べ替え済みの注文エンティティのページを、最初の 50 件の注文をスキップして要求する同等のクエリを示しています。  
+### <a name="client-paging"></a><span data-ttu-id="5376e-153">クライアントのページング</span><span class="sxs-lookup"><span data-stu-id="5376e-153">Client Paging</span></span>  
+ <span data-ttu-id="5376e-154">以下の各例は、25 件の注文を含む並べ替え済みの注文エンティティのページを、最初の 50 件の注文をスキップして要求する同等のクエリを示しています。</span><span class="sxs-lookup"><span data-stu-id="5376e-154">The following examples show equivalent queries that request a page of sorted order entities that includes 25 orders, skipping the first 50 orders:</span></span>  
   
--   LINQ クエリにクエリ メソッドを適用する場合:  
+-   <span data-ttu-id="5376e-155">LINQ クエリにクエリ メソッドを適用する場合:</span><span class="sxs-lookup"><span data-stu-id="5376e-155">Applying query methods to a LINQ query:</span></span>  
   
-      [Astoria NorthwindClient #LinqSkipTakeMethodSpecific](../../../../amples/snippets/xml/VS_Snippets_Misc/astoria northwind service/astoria.vsmdi NorthwindClient#LinqSkipTakeMethodSpecific)]  
+[!code-csharp[Astoria Northwind Client#LinqSkipTakeMethodSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#linqskiptakemethodspecific)]      
+[!code-vb[Astoria Northwind Client#LinqSkipTakeMethodSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#linqskiptakemethodspecific)]     
   
--   URI クエリ文字列オプション `$skip` および `$top`:  
+-   <span data-ttu-id="5376e-156">URI クエリ文字列オプション `$skip` および `$top`:</span><span class="sxs-lookup"><span data-stu-id="5376e-156">URI query string `$skip` and `$top` options):</span></span>  
   
-      [Astoria NorthwindClient #ExplicitQuerySkipTakeMethodSpecific](../../../../amples/snippets/xml/VS_Snippets_Misc/astoria northwind service/astoria.vsmdi NorthwindClient#ExplicitQuerySkipTakeMethodSpecific)]  
+[!code-csharp[Astoria Northwind Client#ExplicitQuerySkipTakeMethodSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#explicitqueryskiptakemethodspecific)]      
+[!code-vb[Astoria Northwind Client#ExplicitQuerySkipTakeMethodSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#explicitqueryskiptakemethodspecific)]     
   
- 上の例はいずれも、`http://localhost:12345/northwind.svc/Orders()?$orderby=OrderDate desc&$skip=50&$top=25` というクエリ URI に変換されます。  
+ <span data-ttu-id="5376e-157">上の例はいずれも、`http://localhost:12345/northwind.svc/Orders()?$orderby=OrderDate desc&$skip=50&$top=25` というクエリ URI に変換されます。</span><span class="sxs-lookup"><span data-stu-id="5376e-157">Both of the previous examples are translated to the query URI: `http://localhost:12345/northwind.svc/Orders()?$orderby=OrderDate desc&$skip=50&$top=25`.</span></span>  
   
 <a name="expand"></a>   
-### <a name="expand"></a>Expand  
- [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] データ サービスを照会するときに、返されるフィードにクエリの対象のエンティティに関連するエンティティを含めるように要求することができます。 <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A>メソッドが、 <xref:System.Data.Services.Client.DataServiceQuery%601> LINQ クエリの対象となるエンティティ セットの関連するエンティティ セットの名前として、`path`パラメーター。 詳細については、次を参照してください。[遅延コンテンツの読み込み](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md)します。  
+### <a name="expand"></a><span data-ttu-id="5376e-158">Expand</span><span class="sxs-lookup"><span data-stu-id="5376e-158">Expand</span></span>  
+ <span data-ttu-id="5376e-159">[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] データ サービスを照会するときに、返されるフィードにクエリの対象のエンティティに関連するエンティティを含めるように要求することができます。</span><span class="sxs-lookup"><span data-stu-id="5376e-159">When you query an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] data service, you can request that entities related to the entity targeted by the query be included the returned feed.</span></span> <span data-ttu-id="5376e-160">そのためには、LINQ クエリの対象のエンティティ セットの <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> で <xref:System.Data.Services.Client.DataServiceQuery%601> メソッドを呼び出して、関連するエンティティ セットの名前を `path` パラメーターとして渡します。</span><span class="sxs-lookup"><span data-stu-id="5376e-160">The <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> method is called on the <xref:System.Data.Services.Client.DataServiceQuery%601> for the entity set targeted by the LINQ query, with the related entity set name supplied as the `path` parameter.</span></span> <span data-ttu-id="5376e-161">詳細については、次を参照してください。[遅延コンテンツを読み込んで](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="5376e-161">For more information, see [Loading Deferred Content](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).</span></span>  
   
- 次の例は、使用する同等の方法を示して、<xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A>クエリ内のメソッド。  
+ <span data-ttu-id="5376e-162">以下の各例は、クエリで <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> メソッドを使用する同等の方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="5376e-162">The following examples show equivalent ways to use the <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> method in a query:</span></span>  
   
--   LINQ クエリ構文の場合:  
+-   <span data-ttu-id="5376e-163">LINQ クエリ構文の場合:</span><span class="sxs-lookup"><span data-stu-id="5376e-163">In LINQ query syntax:</span></span>  
   
-      [Astoria NorthwindClient #LinqQueryExpandSpecific](../../../../amples/snippets/xml/VS_Snippets_Misc/astoria northwind service/astoria.vsmdi NorthwindClient#LinqQueryExpandSpecific)]  
+[!code-csharp[Astoria Northwind Client#LinqQueryExpandSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#linqqueryexpandspecific)]      
+[!code-vb[Astoria Northwind Client#LinqQueryExpandSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#linqqueryexpandspecific)]  
   
--   LINQ クエリ メソッドの場合:  
+-   <span data-ttu-id="5376e-164">LINQ クエリ メソッドの場合:</span><span class="sxs-lookup"><span data-stu-id="5376e-164">With LINQ query methods:</span></span>  
+
+[!code-csharp[Astoria Northwind Client#LinqQueryExpandMethodSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#linqqueryexpandmethodspecific)]       
+[!code-vb[Astoria Northwind Client#LinqQueryExpandMethodSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#linqqueryexpandmethodspecific)]       
   
-      [Astoria NorthwindClient #LinqQueryExpandMethodSpecific](../../../../amples/snippets/xml/VS_Snippets_Misc/astoria northwind service/astoria.vsmdi NorthwindClient#LinqQueryExpandMethodSpecific)]  
   
- 上の例はいずれも、`http://localhost:12345/northwind.svc/Orders()?$filter=CustomerID eq 'ALFKI'&$expand=Order_Details` というクエリ URI に変換されます。  
+ <span data-ttu-id="5376e-165">上の例はいずれも、`http://localhost:12345/northwind.svc/Orders()?$filter=CustomerID eq 'ALFKI'&$expand=Order_Details` というクエリ URI に変換されます。</span><span class="sxs-lookup"><span data-stu-id="5376e-165">Both of the previous examples are translated to the query URI: `http://localhost:12345/northwind.svc/Orders()?$filter=CustomerID eq 'ALFKI'&$expand=Order_Details`.</span></span>  
   
 <a name="unsupportedMethods"></a>   
-## <a name="unsupported-linq-methods"></a>サポートされていない LINQ メソッド  
- 次の表に含まれている LINQ メソッドはサポートされていません。[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] サービスに対して実行されるクエリにこれらのメソッドを含めることはできません。  
+## <a name="unsupported-linq-methods"></a><span data-ttu-id="5376e-166">サポートされていない LINQ メソッド</span><span class="sxs-lookup"><span data-stu-id="5376e-166">Unsupported LINQ Methods</span></span>  
+ <span data-ttu-id="5376e-167">次の表に含まれている LINQ メソッドはサポートされていません。[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] サービスに対して実行されるクエリにこれらのメソッドを含めることはできません。</span><span class="sxs-lookup"><span data-stu-id="5376e-167">The following table contains the classes of LINQ methods are not supported and cannot be included in a query executed against an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] service:</span></span>  
   
-|演算の種類|サポートされていないメソッド|  
+|<span data-ttu-id="5376e-168">演算の種類</span><span class="sxs-lookup"><span data-stu-id="5376e-168">Operation Type</span></span>|<span data-ttu-id="5376e-169">サポートされていないメソッド</span><span class="sxs-lookup"><span data-stu-id="5376e-169">Unsupported Method</span></span>|  
 |--------------------|------------------------|  
-|集合演算子|すべての集合演算子はに対してサポートされている、 <xref:System.Data.Services.Client.DataServiceQuery%601>、次が含まれています。<br /><br /> -   <xref:System.Linq.Enumerable.All%2A><br />-   <xref:System.Linq.Enumerable.Any%2A><br />-   <xref:System.Linq.Enumerable.Concat%2A><br />-   <xref:System.Linq.Enumerable.DefaultIfEmpty%2A><br />-   <xref:System.Linq.Enumerable.Distinct%2A><br />-   <xref:System.Linq.Enumerable.Except%2A><br />-   <xref:System.Linq.Enumerable.Intersect%2A><br />-   <xref:System.Linq.Enumerable.Union%2A><br />-   <xref:System.Linq.Enumerable.Zip%2A>\</TFirst, TSecond, TResult>|  
-|順序付け演算子|次の順序付け演算子を必要とする<xref:System.Collections.Generic.IComparer%601>に対してサポートされていない、 <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> -   <xref:System.Linq.Enumerable.OrderBy%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%2CSystem.Collections.Generic.IComparer%7B%60%601%7D%29> </TSource, TKey> </TSource, TKey><br />-   <xref:System.Linq.Enumerable.OrderByDescending%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%2CSystem.Collections.Generic.IComparer%7B%60%601%7D%29> \</TSource, TKey> \</TSource, TKey><br />-   <xref:System.Linq.Enumerable.ThenBy%60%602%28System.Linq.IOrderedEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%2CSystem.Collections.Generic.IComparer%7B%60%601%7D%29> </TSource, TKey> </TSource, TKey><br />-   <xref:System.Linq.Enumerable.ThenByDescending%60%602%28System.Linq.IOrderedEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%2CSystem.Collections.Generic.IComparer%7B%60%601%7D%29> \</TSource, TKey> \</TSource, TKey>|  
-|プロジェクション演算子とフィルター演算子|以下のプロジェクションと位置の引数を受け入れるフィルターの演算子がに対してサポートされていない、 <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> -   <xref:System.Linq.Enumerable.Join%60%604%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%2CSystem.Func%7B%60%600%2C%60%602%7D%2CSystem.Func%7B%60%601%2C%60%602%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%603%7D%2CSystem.Collections.Generic.IEqualityComparer%7B%60%602%7D%29> </TOuter, TInner, TResult> </TInner, TKey> </TOuter, TKey> </TOuter, TInner, TKey, TResult><br />-   <xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2C%60%601%7D%29> </TSource, Int32, TResult> </TSource, TResult><br />-   <xref:System.Linq.Enumerable.SelectMany%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%29> </TSource, TResult><br />-   <xref:System.Linq.Enumerable.SelectMany%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%29> </TSource, TResult><br />-   <xref:System.Linq.Enumerable.SelectMany%60%603%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%602%7D%29> \</TSource, TCollection, TResult> \</TSource, TCollection, TResult><br />-   <xref:System.Linq.Enumerable.SelectMany%60%603%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%602%7D%29> </TSource, TCollection, TResult> </TSource, TCollection, TResult><br />-   <xref:System.Linq.Enumerable.Where%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Boolean%7D%29> \</TSource, Int32, Boolean>|  
-|グループ化演算子|に対するすべてのグループ化演算子がサポートされていない、 <xref:System.Data.Services.Client.DataServiceQuery%601>、次を含みます。<br /><br /> -   <xref:System.Linq.Enumerable.GroupBy%2A>\</TSource, TKey><br />-   <xref:System.Linq.Enumerable.GroupJoin%2A>\</TOuter, TInner, TKey, TResult><br /><br /> グループ化の操作はクライアント側で実行する必要があります。|  
-|集計演算子|に対するすべての集計演算子がサポートされていない、 <xref:System.Data.Services.Client.DataServiceQuery%601>、次を含みます。<br /><br /> -   <xref:System.Linq.Enumerable.Aggregate%2A><br />-   <xref:System.Linq.Enumerable.Average%2A><br />-   <xref:System.Linq.Enumerable.Count%2A><br />-   <xref:System.Linq.Enumerable.LongCount%2A><br />-   <xref:System.Linq.Enumerable.Max%2A><br />-   <xref:System.Linq.Enumerable.Min%2A><br />-   <xref:System.Linq.Enumerable.Sum%2A><br /><br /> 集計操作は、クライアント側で実行するか、サービス操作でカプセル化する必要があります。|  
-|ページング演算子|に対して以下のページング演算子はサポートされていません、 <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> -   <xref:System.Linq.Enumerable.ElementAt%2A><br />-   <xref:System.Linq.Enumerable.Last%2A><br />-   <xref:System.Linq.Enumerable.LastOrDefault%2A><br />-   <xref:System.Linq.Enumerable.SkipWhile%2A><br />-   <xref:System.Linq.Enumerable.TakeWhile%2A> **注:** null、空のシーケンスで実行されるページング演算子を返します。|  
-|その他の演算子|次に対して他の演算子がサポートされていない、 <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> 1.<xref:System.Linq.Enumerable.Empty%2A><br />2.<xref:System.Linq.Enumerable.Range%2A><br />3.<xref:System.Linq.Enumerable.Repeat%2A><br />4.<xref:System.Linq.Enumerable.ToDictionary%2A></TSource, TKey><br />5.<xref:System.Linq.Enumerable.ToLookup%2A>\</TSource, TKey>|  
+|<span data-ttu-id="5376e-170">集合演算子</span><span class="sxs-lookup"><span data-stu-id="5376e-170">Set operators</span></span>|<span data-ttu-id="5376e-171">すべての集合演算子は <xref:System.Data.Services.Client.DataServiceQuery%601> に対してサポートされていません。以下に例を示します。</span><span class="sxs-lookup"><span data-stu-id="5376e-171">All set operators are unsupported against a <xref:System.Data.Services.Client.DataServiceQuery%601>, which included the following:</span></span><br /><br /> -   <xref:System.Linq.Enumerable.All%2A><br />-   <xref:System.Linq.Enumerable.Any%2A><br />-   <xref:System.Linq.Enumerable.Concat%2A><br />-   <xref:System.Linq.Enumerable.DefaultIfEmpty%2A><br />-   <xref:System.Linq.Enumerable.Distinct%2A><br />-   <xref:System.Linq.Enumerable.Except%2A><br />-   <xref:System.Linq.Enumerable.Intersect%2A><br />-   <xref:System.Linq.Enumerable.Union%2A><br />-   <xref:System.Linq.Enumerable.Zip%2A>|  
+|<span data-ttu-id="5376e-172">順序付け演算子</span><span class="sxs-lookup"><span data-stu-id="5376e-172">Ordering operators</span></span>|<span data-ttu-id="5376e-173"><xref:System.Collections.Generic.IComparer%601> を必要とする以下の順序付け演算子は <xref:System.Data.Services.Client.DataServiceQuery%601> に対してサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="5376e-173">The following ordering operators that require <xref:System.Collections.Generic.IComparer%601> are unsupported against a <xref:System.Data.Services.Client.DataServiceQuery%601>:</span></span><br /><br /> -   <xref:System.Linq.Enumerable.OrderBy%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%2CSystem.Collections.Generic.IComparer%7B%60%601%7D%29><br />-   <xref:System.Linq.Enumerable.OrderByDescending%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%2CSystem.Collections.Generic.IComparer%7B%60%601%7D%29><br />-   <xref:System.Linq.Enumerable.ThenBy%60%602%28System.Linq.IOrderedEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%2CSystem.Collections.Generic.IComparer%7B%60%601%7D%29><br />-   <xref:System.Linq.Enumerable.ThenByDescending%60%602%28System.Linq.IOrderedEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%2CSystem.Collections.Generic.IComparer%7B%60%601%7D%29>|  
+|<span data-ttu-id="5376e-174">プロジェクション演算子とフィルター演算子</span><span class="sxs-lookup"><span data-stu-id="5376e-174">Projection and filtering operators</span></span>|<span data-ttu-id="5376e-175">位置指定引数を受け取る以下のプロジェクション演算子とフィルター演算子は <xref:System.Data.Services.Client.DataServiceQuery%601> に対してサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="5376e-175">The following projection and filtering operators that accept a positional argument are unsupported against a <xref:System.Data.Services.Client.DataServiceQuery%601>:</span></span><br /><br /> -   <xref:System.Linq.Enumerable.Join%60%604%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%2CSystem.Func%7B%60%600%2C%60%602%7D%2CSystem.Func%7B%60%601%2C%60%602%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%603%7D%2CSystem.Collections.Generic.IEqualityComparer%7B%60%602%7D%29><br />-   <xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2C%60%601%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%603%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%602%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%603%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%602%7D%29><br />-   <xref:System.Linq.Enumerable.Where%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Boolean%7D%29>|  
+|<span data-ttu-id="5376e-176">グループ化演算子</span><span class="sxs-lookup"><span data-stu-id="5376e-176">Grouping operators</span></span>|<span data-ttu-id="5376e-177">すべてのグループ化演算子は <xref:System.Data.Services.Client.DataServiceQuery%601> に対してサポートされていません。以下に例を示します。</span><span class="sxs-lookup"><span data-stu-id="5376e-177">All grouping operators are unsupported against a <xref:System.Data.Services.Client.DataServiceQuery%601>, including the following:</span></span><br /><br /> -   <xref:System.Linq.Enumerable.GroupBy%2A><br />-   <xref:System.Linq.Enumerable.GroupJoin%2A><br /><br /> <span data-ttu-id="5376e-178">グループ化の操作はクライアント側で実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5376e-178">Grouping operations must be performed on the client.</span></span>|  
+|<span data-ttu-id="5376e-179">集計演算子</span><span class="sxs-lookup"><span data-stu-id="5376e-179">Aggregate operators</span></span>|<span data-ttu-id="5376e-180">すべての集計演算子は <xref:System.Data.Services.Client.DataServiceQuery%601> に対してサポートされていません。以下に例を示します。</span><span class="sxs-lookup"><span data-stu-id="5376e-180">All aggregate operations are unsupported against a <xref:System.Data.Services.Client.DataServiceQuery%601>, including the following:</span></span><br /><br /> -   <xref:System.Linq.Enumerable.Aggregate%2A><br />-   <xref:System.Linq.Enumerable.Average%2A><br />-   <xref:System.Linq.Enumerable.Count%2A><br />-   <xref:System.Linq.Enumerable.LongCount%2A><br />-   <xref:System.Linq.Enumerable.Max%2A><br />-   <xref:System.Linq.Enumerable.Min%2A><br />-   <xref:System.Linq.Enumerable.Sum%2A><br /><br /> <span data-ttu-id="5376e-181">集計操作は、クライアント側で実行するか、サービス操作でカプセル化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5376e-181">Aggregate operations must either be performed on the client or be encapsulated by a service operation.</span></span>|  
+|<span data-ttu-id="5376e-182">ページング演算子</span><span class="sxs-lookup"><span data-stu-id="5376e-182">Paging operators</span></span>|<span data-ttu-id="5376e-183">以下のページング演算子は <xref:System.Data.Services.Client.DataServiceQuery%601> に対してサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="5376e-183">The following paging operators are not supported against a <xref:System.Data.Services.Client.DataServiceQuery%601>:</span></span><br /><br /> -   <xref:System.Linq.Enumerable.ElementAt%2A><br />-   <xref:System.Linq.Enumerable.Last%2A><br />-   <xref:System.Linq.Enumerable.LastOrDefault%2A><br />-   <xref:System.Linq.Enumerable.SkipWhile%2A><br /><span data-ttu-id="5376e-184">-   <xref:System.Linq.Enumerable.TakeWhile%2A>**注:** null、空のシーケンスで実行されるページング演算子を返します。</span><span class="sxs-lookup"><span data-stu-id="5376e-184">-   <xref:System.Linq.Enumerable.TakeWhile%2A> **Note:**  Paging operators that are executed on an empty sequence return null.</span></span>|  
+|<span data-ttu-id="5376e-185">その他の演算子</span><span class="sxs-lookup"><span data-stu-id="5376e-185">Other operators</span></span>|<span data-ttu-id="5376e-186">以下に示す演算子は <xref:System.Data.Services.Client.DataServiceQuery%601> に対してサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="5376e-186">The following other operators are not supported against a <xref:System.Data.Services.Client.DataServiceQuery%601>:</span></span><br /><br /> <span data-ttu-id="5376e-187">1.  <xref:System.Linq.Enumerable.Empty%2A></span><span class="sxs-lookup"><span data-stu-id="5376e-187">1.  <xref:System.Linq.Enumerable.Empty%2A></span></span><br /><span data-ttu-id="5376e-188">2.  <xref:System.Linq.Enumerable.Range%2A></span><span class="sxs-lookup"><span data-stu-id="5376e-188">2.  <xref:System.Linq.Enumerable.Range%2A></span></span><br /><span data-ttu-id="5376e-189">3.  <xref:System.Linq.Enumerable.Repeat%2A></span><span class="sxs-lookup"><span data-stu-id="5376e-189">3.  <xref:System.Linq.Enumerable.Repeat%2A></span></span><br /><span data-ttu-id="5376e-190">4.  <xref:System.Linq.Enumerable.ToDictionary%2A></span><span class="sxs-lookup"><span data-stu-id="5376e-190">4.  <xref:System.Linq.Enumerable.ToDictionary%2A></span></span><br /><span data-ttu-id="5376e-191">5.  <xref:System.Linq.Enumerable.ToLookup%2A></span><span class="sxs-lookup"><span data-stu-id="5376e-191">5.  <xref:System.Linq.Enumerable.ToLookup%2A></span></span>|  
   
 <a name="supportedExpressions"></a>   
-## <a name="supported-expression-functions"></a>サポートされている式の関数  
- 共通言語ランタイム (CLR) の以下のメソッドおよびプロパティは、クエリ式で変換して [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] サービスへの要求 URI に含めることができるため、サポートされています。  
+## <a name="supported-expression-functions"></a><span data-ttu-id="5376e-192">サポートされている式の関数</span><span class="sxs-lookup"><span data-stu-id="5376e-192">Supported Expression Functions</span></span>  
+ <span data-ttu-id="5376e-193">共通言語ランタイム (CLR) の以下のメソッドおよびプロパティは、クエリ式で変換して [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] サービスへの要求 URI に含めることができるため、サポートされています。</span><span class="sxs-lookup"><span data-stu-id="5376e-193">The following common-language runtime (CLR) methods and properties are supported because they can be translated in a query expression for inclusion in the request URI to an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] service:</span></span>  
   
-|<xref:System.String>メンバー|サポートされている [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] 関数|  
+|<span data-ttu-id="5376e-194"><xref:System.String> メンバー</span><span class="sxs-lookup"><span data-stu-id="5376e-194"><xref:System.String> Member</span></span>|<span data-ttu-id="5376e-195">サポートされている [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] 関数</span><span class="sxs-lookup"><span data-stu-id="5376e-195">Supported [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Function</span></span>|  
 |-----------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|  
 |<xref:System.String.Concat%28System.String%2CSystem.String%29>|`string concat(string p0, string p1)`|  
 |<xref:System.String.Contains%28System.String%29>|`bool substringof(string p0, string p1)`|  
@@ -174,7 +196,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 |<xref:System.String.ToUpper>|`string toupper(string p0)`|  
 |<xref:System.String.Trim>|`string trim(string p0)`|  
   
-|<xref:System.DateTime>メンバー<sup>1</sup>|サポートされている [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] 関数|  
+|<span data-ttu-id="5376e-196"><xref:System.DateTime>メンバー<sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="5376e-196"><xref:System.DateTime> Member<sup>1</sup></span></span>|<span data-ttu-id="5376e-197">サポートされている [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] 関数</span><span class="sxs-lookup"><span data-stu-id="5376e-197">Supported [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Function</span></span>|  
 |-------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|  
 |<xref:System.DateTime.Day>|`int day(DateTime p0)`|  
 |<xref:System.DateTime.Hour>|`int hour(DateTime p0)`|  
@@ -183,9 +205,9 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 |<xref:System.DateTime.Second>|`int second(DateTime p0)`|  
 |<xref:System.DateTime.Year>|`int year(DateTime p0)`|  
   
- <sup>1</sup>と等価な日付と時刻のプロパティの<xref:Microsoft.VisualBasic.DateAndTime?displayProperty=fullName>、だけでなく、 <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A> Visual Basic のメソッドもサポートされています。  
+ <span data-ttu-id="5376e-198"><sup>1</sup>、等価の日付と時刻のプロパティの<xref:Microsoft.VisualBasic.DateAndTime?displayProperty=nameWithType>、だけでなく<xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A>Visual Basic のメソッドもサポートされています。</span><span class="sxs-lookup"><span data-stu-id="5376e-198"><sup>1</sup>The equivalent date and time properties of <xref:Microsoft.VisualBasic.DateAndTime?displayProperty=nameWithType>, as well as the <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A> method in Visual Basic are also supported.</span></span>  
   
-|<xref:System.Math>メンバー|サポートされている [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] 関数|  
+|<span data-ttu-id="5376e-199"><xref:System.Math> メンバー</span><span class="sxs-lookup"><span data-stu-id="5376e-199"><xref:System.Math> Member</span></span>|<span data-ttu-id="5376e-200">サポートされている [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] 関数</span><span class="sxs-lookup"><span data-stu-id="5376e-200">Supported [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Function</span></span>|  
 |---------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|  
 |<xref:System.Math.Ceiling%28System.Decimal%29>|`decimal ceiling(decimal p0)`|  
 |<xref:System.Math.Ceiling%28System.Double%29>|`double ceiling(double p0)`|  
@@ -194,14 +216,14 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 |<xref:System.Math.Round%28System.Decimal%29>|`decimal round(decimal p0)`|  
 |<xref:System.Math.Round%28System.Double%29>|`double round(double p0)`|  
   
-|<xref:> System.Linq.Expressions.Expression?qualifyHint=False&autoUpgrade=Trueメンバー|サポートされている [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] 関数|  
+|<span data-ttu-id="5376e-201"><xref:System.Linq.Expressions.Expression?qualifyHint=False&autoUpgrade=True> メンバー</span><span class="sxs-lookup"><span data-stu-id="5376e-201"><xref:System.Linq.Expressions.Expression?qualifyHint=False&autoUpgrade=True> Member</span></span>|<span data-ttu-id="5376e-202">サポートされている [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] 関数</span><span class="sxs-lookup"><span data-stu-id="5376e-202">Supported [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Function</span></span>|  
 |---------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|  
 |<xref:System.Linq.Expressions.Expression.TypeIs%28System.Linq.Expressions.Expression%2CSystem.Type%29>|`bool isof(type p0)`|  
   
- クライアント側でその他の CLR 関数を評価できる場合もあります。 A <xref:System.NotSupportedException>がクライアントで評価できないし、サーバー上での評価の有効な要求 URI に変換できない式に対して発生します。  
+ <span data-ttu-id="5376e-203">クライアント側でその他の CLR 関数を評価できる場合もあります。</span><span class="sxs-lookup"><span data-stu-id="5376e-203">The client may also be able to evaluate additional CLR functions on the client.</span></span> <span data-ttu-id="5376e-204">クライアント側で評価することも、サーバー側で評価するために有効な要求 URI に変換することもできない式に対しては、<xref:System.NotSupportedException> が発生します。</span><span class="sxs-lookup"><span data-stu-id="5376e-204">A <xref:System.NotSupportedException> is raised for any expression that cannot be evaluated on the client and cannot be translated into a valid request URI for evaluation on the server.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [データ サービスのクエリ](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)   
- [クエリ射影](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)   
- [オブジェクトの具体化](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md)   
- [OData: URI 規則](http://go.microsoft.com/fwlink/?LinkID=185564)
+## <a name="see-also"></a><span data-ttu-id="5376e-205">関連項目</span><span class="sxs-lookup"><span data-stu-id="5376e-205">See Also</span></span>  
+ [<span data-ttu-id="5376e-206">データ サービスに対するクエリ</span><span class="sxs-lookup"><span data-stu-id="5376e-206">Querying the Data Service</span></span>](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)  
+ [<span data-ttu-id="5376e-207">クエリの射影</span><span class="sxs-lookup"><span data-stu-id="5376e-207">Query Projections</span></span>](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)  
+ [<span data-ttu-id="5376e-208">オブジェクトの具体化</span><span class="sxs-lookup"><span data-stu-id="5376e-208">Object Materialization</span></span>](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md)  
+ [<span data-ttu-id="5376e-209">OData: URI 規則</span><span class="sxs-lookup"><span data-stu-id="5376e-209">OData: URI Conventions</span></span>](http://go.microsoft.com/fwlink/?LinkID=185564)

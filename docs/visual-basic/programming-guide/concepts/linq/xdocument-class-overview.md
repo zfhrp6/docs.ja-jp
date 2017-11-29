@@ -1,65 +1,57 @@
 ---
-title: "XDocument クラスの概要 (Visual Basic) |Microsoft ドキュメント"
+title: "XDocument クラスの概要 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 45cb7e71-196a-47da-bfe9-7a5589db1eed
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 31111b23adb019aad3ad55787c073dc02446291d
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 41b09335ae124ac290d8cd51afda71dfd935b7ff
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="xdocument-class-overview-visual-basic"></a>XDocument クラスの概要 (Visual Basic)
-このトピックに<xref:System.Xml.Linq.XDocument>クラス</xref:System.Xml.Linq.XDocument>が導入されています  
+# <a name="xdocument-class-overview-visual-basic"></a><span data-ttu-id="2c2bd-102">XDocument クラスの概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2c2bd-102">XDocument Class Overview (Visual Basic)</span></span>
+<span data-ttu-id="2c2bd-103">このトピックでは、<xref:System.Xml.Linq.XDocument> クラスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-103">This topic introduces the <xref:System.Xml.Linq.XDocument> class.</span></span>  
   
-## <a name="overview-of-the-xdocument-class"></a>XDocument クラスの概要  
- <xref:System.Xml.Linq.XDocument>クラスには、有効な XML ドキュメントに必要な情報が含まれています</xref:System.Xml.Linq.XDocument>。 これには、XML 宣言、処理命令、コメントが含まれます。  
+## <a name="overview-of-the-xdocument-class"></a><span data-ttu-id="2c2bd-104">XDocument クラスの概要</span><span class="sxs-lookup"><span data-stu-id="2c2bd-104">Overview of the XDocument class</span></span>  
+ <span data-ttu-id="2c2bd-105"><xref:System.Xml.Linq.XDocument> クラスには、有効な XML ドキュメントに必要な情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-105">The <xref:System.Xml.Linq.XDocument> class contains the information necessary for a valid XML document.</span></span> <span data-ttu-id="2c2bd-106">これには、XML 宣言、処理命令、コメントが含まれます。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-106">This includes an XML declaration, processing instructions, and comments.</span></span>  
   
- <xref:System.Xml.Linq.XDocument><xref:System.Xml.Linq.XDocument>クラス</xref:System.Xml.Linq.XDocument>によって提供される特定の機能を必要とする場合のオブジェクト</xref:System.Xml.Linq.XDocument>を作成する必要がだけに注意してください。 多くの状況では、 <xref:System.Xml.Linq.XElement>。</xref:System.Xml.Linq.XElement>を直接操作できます。 直接操作<xref:System.Xml.Linq.XElement>は比較的単純なプログラミング モデル</xref:System.Xml.Linq.XElement>。  
+ <span data-ttu-id="2c2bd-107"><xref:System.Xml.Linq.XDocument> クラスが提供する特定の機能が必要な場合は、<xref:System.Xml.Linq.XDocument> オブジェクトを作成するだけで済みます。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-107">Note that you only have to create <xref:System.Xml.Linq.XDocument> objects if you require the specific functionality provided by the <xref:System.Xml.Linq.XDocument> class.</span></span> <span data-ttu-id="2c2bd-108">多くの場合、<xref:System.Xml.Linq.XElement> を直接操作できます。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-108">In many circumstances, you can work directly with <xref:System.Xml.Linq.XElement>.</span></span> <span data-ttu-id="2c2bd-109"><xref:System.Xml.Linq.XElement> を直接操作するのは、比較的単純なプログラミング モデルです。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-109">Working directly with <xref:System.Xml.Linq.XElement> is a simpler programming model.</span></span>  
   
- <xref:System.Xml.Linq.XDocument><xref:System.Xml.Linq.XContainer>。</xref:System.Xml.Linq.XContainer>から派生します。</xref:System.Xml.Linq.XDocument> したがって子ノードを含めることができます。 ただし、<xref:System.Xml.Linq.XDocument>オブジェクトが&1; つだけの子を持つ<xref:System.Xml.Linq.XElement>ノード</xref:System.Xml.Linq.XElement></xref:System.Xml.Linq.XDocument>。 これは、XML ドキュメントにルート要素を&1; つしか持てないという XML 標準を反映しています。  
+ <span data-ttu-id="2c2bd-110"><xref:System.Xml.Linq.XDocument> は、<xref:System.Xml.Linq.XContainer> から派生します。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-110"><xref:System.Xml.Linq.XDocument> derives from <xref:System.Xml.Linq.XContainer>.</span></span> <span data-ttu-id="2c2bd-111">したがって子ノードを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-111">Therefore, it can contain child nodes.</span></span> <span data-ttu-id="2c2bd-112">ただし、<xref:System.Xml.Linq.XDocument> オブジェクトに格納できる子 <xref:System.Xml.Linq.XElement> ノードは 1 つだけです。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-112">However, <xref:System.Xml.Linq.XDocument> objects can have only one child <xref:System.Xml.Linq.XElement> node.</span></span> <span data-ttu-id="2c2bd-113">これは、XML ドキュメントにルート要素を 1 つしか持てないという XML 標準を反映しています。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-113">This reflects the XML standard that there can be only one root element in an XML document.</span></span>  
   
-## <a name="components-of-xdocument"></a>XDocument のコンポーネント  
- <xref:System.Xml.Linq.XDocument>、次の要素を含めることができます:</xref:System.Xml.Linq.XDocument>  
+## <a name="components-of-xdocument"></a><span data-ttu-id="2c2bd-114">XDocument のコンポーネント</span><span class="sxs-lookup"><span data-stu-id="2c2bd-114">Components of XDocument</span></span>  
+ <span data-ttu-id="2c2bd-115"><xref:System.Xml.Linq.XDocument> には、次の要素を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-115">An <xref:System.Xml.Linq.XDocument> can contain the following elements:</span></span>  
   
--   1 つ<xref:System.Xml.Linq.XDeclaration>オブジェクト</xref:System.Xml.Linq.XDeclaration>。 <xref:System.Xml.Linq.XDeclaration>XML 宣言の関連部分を指定することができます。 XML バージョン、ドキュメントのエンコードおよび XML ドキュメントがスタンドアロンかどうか。</xref:System.Xml.Linq.XDeclaration>  
+-   <span data-ttu-id="2c2bd-116">1 つの <xref:System.Xml.Linq.XDeclaration> オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-116">One <xref:System.Xml.Linq.XDeclaration> object.</span></span> <span data-ttu-id="2c2bd-117"><xref:System.Xml.Linq.XDeclaration> では、XML 宣言の関連部分である XML バージョン、ドキュメントのエンコード、および XML ドキュメントがスタンドアロンかどうかを指定できます。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-117"><xref:System.Xml.Linq.XDeclaration> enables you to specify the pertinent parts of an XML declaration: the XML version, the encoding of the document, and whether the XML document is stand-alone.</span></span>  
   
--   1 つ<xref:System.Xml.Linq.XElement>オブジェクト</xref:System.Xml.Linq.XElement>。 これは XML ドキュメントのルート ノードです。  
+-   <span data-ttu-id="2c2bd-118">1 つの <xref:System.Xml.Linq.XElement> オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-118">One <xref:System.Xml.Linq.XElement> object.</span></span> <span data-ttu-id="2c2bd-119">これは XML ドキュメントのルート ノードです。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-119">This is the root node of the XML document.</span></span>  
   
--   任意の数の<xref:System.Xml.Linq.XProcessingInstruction>オブジェクト</xref:System.Xml.Linq.XProcessingInstruction>。 処理命令は、XML を処理するアプリケーションに情報を伝達します。  
+-   <span data-ttu-id="2c2bd-120">任意の数の <xref:System.Xml.Linq.XProcessingInstruction> オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-120">Any number of <xref:System.Xml.Linq.XProcessingInstruction> objects.</span></span> <span data-ttu-id="2c2bd-121">処理命令は、XML を処理するアプリケーションに情報を伝達します。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-121">A processing instruction communicates information to an application that processes the XML.</span></span>  
   
--   任意の数の<xref:System.Xml.Linq.XComment>オブジェクト</xref:System.Xml.Linq.XComment>。 コメントは、ルート要素の兄弟になります。 <xref:System.Xml.Linq.XComment>オブジェクトは、XML ドキュメントのコメントで始めることはできませんので、一覧の最初の引数にすることはできません</xref:System.Xml.Linq.XComment>。  
+-   <span data-ttu-id="2c2bd-122">任意の数の <xref:System.Xml.Linq.XComment> オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-122">Any number of <xref:System.Xml.Linq.XComment> objects.</span></span> <span data-ttu-id="2c2bd-123">コメントは、ルート要素の兄弟になります。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-123">The comments will be siblings to the root element.</span></span> <span data-ttu-id="2c2bd-124">XML ドキュメントをコメントで始めることは無効であるため、<xref:System.Xml.Linq.XComment> オブジェクトをリストの最初の引数にすることはできません。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-124">The <xref:System.Xml.Linq.XComment> object cannot be the first argument in the list, because it is not valid for an XML document to start with a comment.</span></span>  
   
--   1 つ<xref:System.Xml.Linq.XDocumentType>DTD 用</xref:System.Xml.Linq.XDocumentType>。  
+-   <span data-ttu-id="2c2bd-125">DTD 用の 1 つの <xref:System.Xml.Linq.XDocumentType>。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-125">One <xref:System.Xml.Linq.XDocumentType> for the DTD.</span></span>  
   
- シリアル化すると、<xref:System.Xml.Linq.XDocument>場合でも、`XDocument.Declaration`は`null`、ライターがある場合、出力は XML 宣言には`Writer.Settings.OmitXmlDeclaration`に設定`false`(既定値).</xref:System.Xml.Linq.XDocument>  
+ <span data-ttu-id="2c2bd-126"><xref:System.Xml.Linq.XDocument> をシリアル化すると、`XDocument.Declaration` が `null` である場合でも、作成者が `Writer.Settings.OmitXmlDeclaration` を `false` (既定値) に設定していれば、出力には XML 宣言が含まれます。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-126">When you serialize an <xref:System.Xml.Linq.XDocument>, even if `XDocument.Declaration` is `null`, the output will have an XML declaration if the writer has `Writer.Settings.OmitXmlDeclaration` set to `false` (the default).</span></span>  
   
- 既定では、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] によってバージョンが "1.0" に、エンコードが "utf-8" に設定されます。  
+ <span data-ttu-id="2c2bd-127">既定では、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] によってバージョンが "1.0" に、エンコードが "utf-8" に設定されます。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-127">By default, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] sets the version to "1.0", and sets the encoding to "utf-8".</span></span>  
   
-## <a name="using-xelement-without-xdocument"></a>XDocument なしでの XElement の使用  
- 既に触れましたが、<xref:System.Xml.Linq.XElement>クラスが主なクラスで、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]プログラミング インターフェイスです</xref:System.Xml.Linq.XElement>。 多くの場合、アプリケーションはドキュメントの作成を必要としません。 使用して、<xref:System.Xml.Linq.XElement>クラス、XML ツリーを作成、他の XML ツリーを追加して、XML ツリーを変更および保存すればすべて</xref:System.Xml.Linq.XElement>  
+## <a name="using-xelement-without-xdocument"></a><span data-ttu-id="2c2bd-128">XDocument なしでの XElement の使用</span><span class="sxs-lookup"><span data-stu-id="2c2bd-128">Using XElement without XDocument</span></span>  
+ <span data-ttu-id="2c2bd-129">既に説明したように、<xref:System.Xml.Linq.XElement> クラスは [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] プログラミング インターフェイスのメイン クラスです。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-129">As previously mentioned, the <xref:System.Xml.Linq.XElement> class is the main class in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] programming interface.</span></span> <span data-ttu-id="2c2bd-130">多くの場合、アプリケーションはドキュメントの作成を必要としません。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-130">In many cases, your application will not require that you create a document.</span></span> <span data-ttu-id="2c2bd-131"><xref:System.Xml.Linq.XElement> クラスを使用することで、XML ツリーを作成し、そのツリーに他の XML ツリーを追加し、その XML ツリーを変更し、さらにそのツリーを保存できます。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-131">By using the <xref:System.Xml.Linq.XElement> class, you can create an XML tree, add other XML trees to it, modify the XML tree, and save it.</span></span>  
   
-## <a name="using-xdocument"></a>XDocument の使用  
- 構築する、 <xref:System.Xml.Linq.XDocument>、構築する場合と同じように、関数型構築を使用して<xref:System.Xml.Linq.XElement>オブジェクト</xref:System.Xml.Linq.XElement></xref:System.Xml.Linq.XDocument>。  
+## <a name="using-xdocument"></a><span data-ttu-id="2c2bd-132">XDocument の使用</span><span class="sxs-lookup"><span data-stu-id="2c2bd-132">Using XDocument</span></span>  
+ <span data-ttu-id="2c2bd-133"><xref:System.Xml.Linq.XDocument> を構築するには、<xref:System.Xml.Linq.XElement> オブジェクトを構築する場合と同様に関数型構築を使用します。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-133">To construct an <xref:System.Xml.Linq.XDocument>, use functional construction, just like you do to construct <xref:System.Xml.Linq.XElement> objects.</span></span>  
   
- 次のコード作成、<xref:System.Xml.Linq.XDocument>オブジェクトおよびそれに関連する格納されるオブジェクト</xref:System.Xml.Linq.XDocument>。  
+ <span data-ttu-id="2c2bd-134">次のコードは、<xref:System.Xml.Linq.XDocument> オブジェクトおよび関連する格納されるオブジェクトを作成しています。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-134">The following code creates an <xref:System.Xml.Linq.XDocument> object and its associated contained objects.</span></span>  
   
 ```vb  
 Dim doc As XDocument = <?xml version="1.0" encoding="utf-8"?>  
@@ -79,7 +71,7 @@ Dim doc As XDocument = <?xml version="1.0" encoding="utf-8"?>
 doc.Save("test.xml")  
 ```  
   
- ファイル test.xml を調べると、次の出力が生成されます。  
+ <span data-ttu-id="2c2bd-135">ファイル test.xml を調べると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="2c2bd-135">When you examine the file test.xml, you get the following output:</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -98,5 +90,5 @@ doc.Save("test.xml")
 <!--This is another comment.-->  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [LINQ to XML プログラミングの概要 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)
+## <a name="see-also"></a><span data-ttu-id="2c2bd-136">関連項目</span><span class="sxs-lookup"><span data-stu-id="2c2bd-136">See Also</span></span>  
+ [<span data-ttu-id="2c2bd-137">LINQ to XML プログラミングの概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2c2bd-137">LINQ to XML Programming Overview (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)

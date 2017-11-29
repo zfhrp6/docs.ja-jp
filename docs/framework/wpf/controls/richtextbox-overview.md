@@ -1,104 +1,109 @@
 ---
-title: "RichTextBox の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "コントロール, RichTextBox"
-  - "RichTextBox コントロール [WPF], RichTextBox コントロールの概要"
+title: "RichTextBox の概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- controls [WPF], RichTextBox
+- RichTextBox control [WPF], about RichTextBox control
 ms.assetid: c94548b2-c1e9-4b62-b10c-dd8740eb23d8
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 41b423235fc2ed9c0e0612c90017d41ab0e83d0a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# RichTextBox の概要
-<xref:System.Windows.Controls.RichTextBox> コントロールを使用すると、段落、イメージ、テーブルなどのフロー コンテンツを表示または編集できます。  このトピックでは、<xref:System.Windows.Controls.TextBox> クラスについて説明し、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] と [!INCLUDE[TLA#tla_lhcshrp](../../../../includes/tlasharptla-lhcshrp-md.md)] の両方で使用する例を示します。  
+# <a name="richtextbox-overview"></a><span data-ttu-id="c43b4-102">RichTextBox の概要</span><span class="sxs-lookup"><span data-stu-id="c43b4-102">RichTextBox Overview</span></span>
+<span data-ttu-id="c43b4-103"><xref:System.Windows.Controls.RichTextBox>コントロールでは、表示または段落、画像、テーブルなどのフロー コンテンツを編集することができます。</span><span class="sxs-lookup"><span data-stu-id="c43b4-103">The <xref:System.Windows.Controls.RichTextBox> control enables you to display or edit flow content including paragraphs, images, tables, and more.</span></span> <span data-ttu-id="c43b4-104">このトピックでは、<xref:System.Windows.Controls.TextBox>クラスし、両方で使用する方法の例を示します[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]と[!INCLUDE[TLA#tla_lhcshrp](../../../../includes/tlasharptla-lhcshrp-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="c43b4-104">This topic introduces the <xref:System.Windows.Controls.TextBox> class and provides examples of how to use it in both [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] and [!INCLUDE[TLA#tla_lhcshrp](../../../../includes/tlasharptla-lhcshrp-md.md)].</span></span>  
   
-   
   
 <a name="textbox_or_richtextbox"></a>   
-## TextBox と RichTextBox  
- <xref:System.Windows.Controls.RichTextBox> と <xref:System.Windows.Controls.TextBox> のどちらを使用してもテキストを編集できますが、2 つのコントロールは異なるシナリオで使用されます。  <xref:System.Windows.Controls.RichTextBox> は、書式設定されたテキスト、イメージ、テーブル、またはその他のリッチ コンテンツを編集する必要がある場合に適しています。  たとえば、書式設定やイメージなどが必要なドキュメント、記事、またはブログを編集する場合は、<xref:System.Windows.Controls.RichTextBox> を使用することをお勧めします。  <xref:System.Windows.Controls.TextBox> で必要なシステム リソースは <xref:System.Windows.Controls.RichTextBox> よりも少ないため、プレーンテキストのみを編集する必要がある場合 \(  フォームでの使用\) に適しています。  <xref:System.Windows.Controls.TextBox> の詳細については、「[TextBox の概要](../../../../docs/framework/wpf/controls/textbox-overview.md)」を参照してください。  <xref:System.Windows.Controls.TextBox> および <xref:System.Windows.Controls.RichTextBox> の主要な機能を次の表にまとめます。  
+## <a name="textbox-or-richtextbox"></a><span data-ttu-id="c43b4-105">TextBox か RichTextBox か</span><span class="sxs-lookup"><span data-stu-id="c43b4-105">TextBox or RichTextBox?</span></span>  
+ <span data-ttu-id="c43b4-106">両方<xref:System.Windows.Controls.RichTextBox>と<xref:System.Windows.Controls.TextBox>テキストを編集できるように、ただし、2 つのコントロールがさまざまなシナリオで使用します。</span><span class="sxs-lookup"><span data-stu-id="c43b4-106">Both <xref:System.Windows.Controls.RichTextBox> and <xref:System.Windows.Controls.TextBox> allow users to edit text, however, the two controls are used in different scenarios.</span></span> <span data-ttu-id="c43b4-107">A<xref:System.Windows.Controls.RichTextBox>書式付きテキスト、画像、テーブル、またはその他の豊富なコンテンツを編集するユーザーの必要がある場合をお勧めします。</span><span class="sxs-lookup"><span data-stu-id="c43b4-107">A <xref:System.Windows.Controls.RichTextBox> is a better choice when it is necessary for the user to edit formatted text, images, tables, or other rich content.</span></span> <span data-ttu-id="c43b4-108">たとえば、画像、ドキュメント、アーティクル、または書式設定を必要とするブログを編集などの使用が最も適切な<xref:System.Windows.Controls.RichTextBox>します。</span><span class="sxs-lookup"><span data-stu-id="c43b4-108">For example, editing a document, article, or blog that requires formatting, images, etc is best accomplished using a <xref:System.Windows.Controls.RichTextBox>.</span></span> <span data-ttu-id="c43b4-109">A<xref:System.Windows.Controls.TextBox>システム リソースが必要です、<xref:System.Windows.Controls.RichTextBox>のみプレーン テキストする必要があります (つまりフォームで使用) を編集する際に最適とします。</span><span class="sxs-lookup"><span data-stu-id="c43b4-109">A <xref:System.Windows.Controls.TextBox> requires less system resources then a <xref:System.Windows.Controls.RichTextBox> and it is ideal when only plain text needs to be edited (i.e. usage in forms).</span></span> <span data-ttu-id="c43b4-110">参照してください[TextBox 概要](../../../../docs/framework/wpf/controls/textbox-overview.md)について<xref:System.Windows.Controls.TextBox>です。</span><span class="sxs-lookup"><span data-stu-id="c43b4-110">See [TextBox Overview](../../../../docs/framework/wpf/controls/textbox-overview.md) for more information on <xref:System.Windows.Controls.TextBox>.</span></span> <span data-ttu-id="c43b4-111">次の表の主な機能をまとめたもの<xref:System.Windows.Controls.TextBox>と<xref:System.Windows.Controls.RichTextBox>です。</span><span class="sxs-lookup"><span data-stu-id="c43b4-111">The table below summarizes the main features of <xref:System.Windows.Controls.TextBox> and <xref:System.Windows.Controls.RichTextBox>.</span></span>  
   
-|Control|リアルタイム スペル チェック|コンテキスト メニュー|<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A> \(Ctrl \+ B\) などの書式設定コマンド|イメージ、段落、テーブルなどの <xref:System.Windows.Documents.FlowDocument> コンテンツ|  
-|-------------|---------------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
-|<xref:System.Windows.Controls.TextBox>|○|○|Ｘ|いいえ。|  
-|<xref:System.Windows.Controls.RichTextBox>|○|○|○|○|  
+|<span data-ttu-id="c43b4-112">コントロール</span><span class="sxs-lookup"><span data-stu-id="c43b4-112">Control</span></span>|<span data-ttu-id="c43b4-113">リアルタイム スペル チェック</span><span class="sxs-lookup"><span data-stu-id="c43b4-113">Real-time Spellchecking</span></span>|<span data-ttu-id="c43b4-114">コンテキスト メニュー</span><span class="sxs-lookup"><span data-stu-id="c43b4-114">Context Menu</span></span>|<span data-ttu-id="c43b4-115">ようなコマンドの書式設定<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A>(範囲 + B)</span><span class="sxs-lookup"><span data-stu-id="c43b4-115">Formatting commands like <xref:System.Windows.Documents.EditingCommands.ToggleBold%2A> (Ctr+B)</span></span>|<span data-ttu-id="c43b4-116"><xref:System.Windows.Documents.FlowDocument>イメージ、段落、テーブルなどのコンテンツ。</span><span class="sxs-lookup"><span data-stu-id="c43b4-116"><xref:System.Windows.Documents.FlowDocument> content like images, paragraphs, tables, etc.</span></span>|  
+|-------------|------------------------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|<xref:System.Windows.Controls.TextBox>|<span data-ttu-id="c43b4-117">はい</span><span class="sxs-lookup"><span data-stu-id="c43b4-117">Yes</span></span>|<span data-ttu-id="c43b4-118">はい</span><span class="sxs-lookup"><span data-stu-id="c43b4-118">Yes</span></span>|<span data-ttu-id="c43b4-119">いいえ</span><span class="sxs-lookup"><span data-stu-id="c43b4-119">No</span></span>|<span data-ttu-id="c43b4-120">いいえ。</span><span class="sxs-lookup"><span data-stu-id="c43b4-120">No.</span></span>|  
+|<xref:System.Windows.Controls.RichTextBox>|<span data-ttu-id="c43b4-121">はい</span><span class="sxs-lookup"><span data-stu-id="c43b4-121">Yes</span></span>|<span data-ttu-id="c43b4-122">はい</span><span class="sxs-lookup"><span data-stu-id="c43b4-122">Yes</span></span>|<span data-ttu-id="c43b4-123">はい</span><span class="sxs-lookup"><span data-stu-id="c43b4-123">Yes</span></span>|<span data-ttu-id="c43b4-124">はい</span><span class="sxs-lookup"><span data-stu-id="c43b4-124">Yes</span></span>|  
   
- **メモ :** <xref:System.Windows.Controls.TextBox> では <xref:System.Windows.Documents.EditingCommands.ToggleBold%2A> \(Ctrl \+ B\) などの書式設定関連のコマンドはサポートされませんが、<xref:System.Windows.Documents.EditingCommands.MoveToLineEnd%2A> などのさまざまな基本コマンドが両方のコントロールでサポートされています。  
+ <span data-ttu-id="c43b4-125">**注:**が<xref:System.Windows.Controls.TextBox>のように関連するコマンドの書式設定をサポートしていません<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A>(範囲 + B)、多くの基本的なコマンドがなどの両方のコントロールでサポートされて<xref:System.Windows.Documents.EditingCommands.MoveToLineEnd%2A>です。</span><span class="sxs-lookup"><span data-stu-id="c43b4-125">**Note:** Although <xref:System.Windows.Controls.TextBox> does not support formatting related commands like <xref:System.Windows.Documents.EditingCommands.ToggleBold%2A> (Ctr+B), many basic commands are supported by both controls such as <xref:System.Windows.Documents.EditingCommands.MoveToLineEnd%2A>.</span></span>  
   
- 上の表に示した機能については、後で詳しく説明します。  
+ <span data-ttu-id="c43b4-126">上の表の機能については、後で詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="c43b4-126">The features from the table above are covered in more detail later.</span></span>  
   
 <a name="creating_a_richtextbox"></a>   
-## RichTextBox の作成  
- 次のコードでは、ユーザーがリッチ コンテンツを編集できる <xref:System.Windows.Controls.RichTextBox> を作成する方法を示します。  
+## <a name="creating-a-richtextbox"></a><span data-ttu-id="c43b4-127">RichTextBox の作成</span><span class="sxs-lookup"><span data-stu-id="c43b4-127">Creating a RichTextBox</span></span>  
+ <span data-ttu-id="c43b4-128">次のコードを作成する方法を示しています、<xref:System.Windows.Controls.RichTextBox>ユーザーがの豊富なコンテンツを編集できます。</span><span class="sxs-lookup"><span data-stu-id="c43b4-128">The code below shows how to create a <xref:System.Windows.Controls.RichTextBox> that a user can edit rich content in.</span></span>  
   
- [!code-xml[RichTextBoxMiscSnippets_snip#BasicRichTextBoxExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/CSharp/BasicRichTextBoxExample.xaml#basicrichtextboxexamplewholepage)]  
+ [!code-xaml[RichTextBoxMiscSnippets_snip#BasicRichTextBoxExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/CSharp/BasicRichTextBoxExample.xaml#basicrichtextboxexamplewholepage)]  
   
- 具体的に言えば、<xref:System.Windows.Controls.RichTextBox> で編集されるコンテンツはフロー コンテンツです。  フロー コンテンツには、書式設定されたテキスト、イメージ、リスト、およびテーブルなどのさまざまな種類の要素を格納できます。  フロー ドキュメントの詳細については、「[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)」を参照してください。  フロー コンテンツを格納するために、<xref:System.Windows.Controls.RichTextBox> が <xref:System.Windows.Documents.FlowDocument> オブジェクトをホストし、そのオブジェクトが編集可能コンテンツを格納します。  <xref:System.Windows.Controls.RichTextBox> のフロー コンテンツを示すために、次のコードで、段落と太字テキストのある <xref:System.Windows.Controls.RichTextBox> を作成する方法を示します。  
+ <span data-ttu-id="c43b4-129">具体的には、コンテンツの編集、<xref:System.Windows.Controls.RichTextBox>フロー コンテンツを示します。</span><span class="sxs-lookup"><span data-stu-id="c43b4-129">Specifically, the content edited in a <xref:System.Windows.Controls.RichTextBox> is flow content.</span></span> <span data-ttu-id="c43b4-130">フロー コンテンツは、書式設定されたテキスト、イメージ、リスト、テーブルなどのさまざまな種類の要素を格納できます。</span><span class="sxs-lookup"><span data-stu-id="c43b4-130">Flow content can contain many types of elements including formatted text, images, lists, and tables.</span></span> <span data-ttu-id="c43b4-131">フロー ドキュメントの詳細については、[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c43b4-131">See [Flow Document Overview](../../../../docs/framework/wpf/advanced/flow-document-overview.md) for in depth information on flow documents.</span></span> <span data-ttu-id="c43b4-132">フロー コンテンツを格納するために、<xref:System.Windows.Controls.RichTextBox>ホスト、<xref:System.Windows.Documents.FlowDocument>オブジェクトが編集可能なコンテンツが含まれています。</span><span class="sxs-lookup"><span data-stu-id="c43b4-132">In order to contain flow content, a <xref:System.Windows.Controls.RichTextBox> hosts a <xref:System.Windows.Documents.FlowDocument> object which in turn contains the editable content.</span></span> <span data-ttu-id="c43b4-133">フロー コンテンツを示すために、 <xref:System.Windows.Controls.RichTextBox>、次のコードを作成する方法を示しています、<xref:System.Windows.Controls.RichTextBox>段落といくつかの太字で表示されるテキストを使用します。</span><span class="sxs-lookup"><span data-stu-id="c43b4-133">To demonstrate flow content in a <xref:System.Windows.Controls.RichTextBox>, the following code shows how to create a <xref:System.Windows.Controls.RichTextBox> with a paragraph and some bolded text.</span></span>  
   
- [!code-xml[RichTextBoxMiscSnippets_snip#RichTextBoxWithContentExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/CSharp/RichTextBoxWithContentExample.xaml#richtextboxwithcontentexamplewholepage)]  
+ [!code-xaml[RichTextBoxMiscSnippets_snip#RichTextBoxWithContentExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/CSharp/RichTextBoxWithContentExample.xaml#richtextboxwithcontentexamplewholepage)]  
   
  [!code-csharp[RichTextBoxMiscSnippets_procedural_snip#BasicRichTextBoxWithContentCodeOnlyExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxMiscSnippets_procedural_snip/CSharp/BasicRichTextBoxWithContentExample.cs#basicrichtextboxwithcontentcodeonlyexample)]
  [!code-vb[RichTextBoxMiscSnippets_procedural_snip#BasicRichTextBoxWithContentCodeOnlyExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RichTextBoxMiscSnippets_procedural_snip/visualbasic/basicrichtextboxwithcontentexample.vb#basicrichtextboxwithcontentcodeonlyexample)]  
   
- このサンプルの表示結果を次の図に示します。  
+ <span data-ttu-id="c43b4-134">次の図は、このサンプルがレンダリングする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="c43b4-134">The following illustration shows how this sample renders.</span></span>  
   
- ![内容を含む RichTextBox](../../../../docs/framework/wpf/controls/media/editing-richtextbox-with-content.png "Editing\_RichTextBox\_with\_Content")  
+ <span data-ttu-id="c43b4-135">![RichTextBox with content](../../../../docs/framework/wpf/controls/media/editing-richtextbox-with-content.png "Editing_RichTextBox_with_Content")</span><span class="sxs-lookup"><span data-stu-id="c43b4-135">![RichTextBox with content](../../../../docs/framework/wpf/controls/media/editing-richtextbox-with-content.png "Editing_RichTextBox_with_Content")</span></span>  
   
- <xref:System.Windows.Documents.Paragraph> や <xref:System.Windows.Documents.Bold> などの要素は、<xref:System.Windows.Controls.RichTextBox> 内のコンテンツがどのように表示されるかを決定します。  ユーザーが <xref:System.Windows.Controls.RichTextBox> のコンテンツを編集すると、これらの要素がこのフロー コンテンツを変更します。  フロー コンテンツの機能、およびその使用方法の詳細については、「[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)」を参照してください。  
+ <span data-ttu-id="c43b4-136">などの要素<xref:System.Windows.Documents.Paragraph>と<xref:System.Windows.Documents.Bold>を決定する方法の内部コンテンツ、<xref:System.Windows.Controls.RichTextBox>が表示されます。</span><span class="sxs-lookup"><span data-stu-id="c43b4-136">Elements like <xref:System.Windows.Documents.Paragraph> and <xref:System.Windows.Documents.Bold> determine how the content inside a <xref:System.Windows.Controls.RichTextBox> appears.</span></span> <span data-ttu-id="c43b4-137">ユーザーが編集と<xref:System.Windows.Controls.RichTextBox>コンテンツを変更することもこのフロー コンテンツ。</span><span class="sxs-lookup"><span data-stu-id="c43b4-137">As a user edits <xref:System.Windows.Controls.RichTextBox> content, they change this flow content.</span></span> <span data-ttu-id="c43b4-138">フロー コンテンツの機能およびその操作方法の詳細については、[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c43b4-138">To learn more about the features of flow content and how to work with it, see [Flow Document Overview](../../../../docs/framework/wpf/advanced/flow-document-overview.md).</span></span>  
   
- **メモ :** <xref:System.Windows.Controls.RichTextBox> 内のフロー コンテンツの動作は、他のコントロールに格納されたフロー コンテンツの動作とは異なる場合があります。  たとえば、<xref:System.Windows.Controls.RichTextBox> 内には列が存在しないため、自動サイズ変更動作もありません。  また、検索、表示モード、ページ ナビゲーション、およびズームなどの組み込み機能も、<xref:System.Windows.Controls.RichTextBox> 内では使用できません。  
+ <span data-ttu-id="c43b4-139">**注:**内のコンテンツをフローする<xref:System.Windows.Controls.RichTextBox>フロー コンテンツを他のコントロールに含まれているのと同じように動作しません。</span><span class="sxs-lookup"><span data-stu-id="c43b4-139">**Note:** Flow content inside a <xref:System.Windows.Controls.RichTextBox> does not behave exactly like flow content contained in other controls.</span></span> <span data-ttu-id="c43b4-140">たとえば、内の列がない、<xref:System.Windows.Controls.RichTextBox>のため自動サイズ変更なしの動作とします。</span><span class="sxs-lookup"><span data-stu-id="c43b4-140">For example, there are no columns in a <xref:System.Windows.Controls.RichTextBox> and hence no automatic resizing behavior.</span></span> <span data-ttu-id="c43b4-141">また、組み込み機能の検索、表示モード、ページ ナビゲーション、およびズームは、内で使用できるように、<xref:System.Windows.Controls.RichTextBox>です。</span><span class="sxs-lookup"><span data-stu-id="c43b4-141">Also, built in features like search, viewing mode, page navigation, and zoom are not available within a <xref:System.Windows.Controls.RichTextBox>.</span></span>  
   
 <a name="realtime_spellechecking"></a>   
-## リアルタイム スペル チェック  
- <xref:System.Windows.Controls.TextBox> または <xref:System.Windows.Controls.RichTextBox> でリアルタイム スペル チェックを有効にすることができます。  スペル チェックを有効にすると、スペル ミスがある単語の下に赤い線が表示されます \(下図を参照\)。  
+## <a name="real-time-spell-checking"></a><span data-ttu-id="c43b4-142">リアルタイム スペル チェック</span><span class="sxs-lookup"><span data-stu-id="c43b4-142">Real-time Spell Checking</span></span>  
+ <span data-ttu-id="c43b4-143">リアルタイムでスペル チェックを有効にすることができます、<xref:System.Windows.Controls.TextBox>または<xref:System.Windows.Controls.RichTextBox>です。</span><span class="sxs-lookup"><span data-stu-id="c43b4-143">You can enable real-time spell checking in a <xref:System.Windows.Controls.TextBox> or <xref:System.Windows.Controls.RichTextBox>.</span></span> <span data-ttu-id="c43b4-144">スペル チェックをオンにすると、スペル ミスの語句の下に赤色の線が表示されます (下図を参照)。</span><span class="sxs-lookup"><span data-stu-id="c43b4-144">When spellchecking is turned on, a red line appears underneath any misspelled words (see picture below).</span></span>  
   
- ![スペル チェックを含む Textbox](../../../../docs/framework/wpf/controls/media/editing-textbox-with-spellchecking.png "Editing\_TextBox\_with\_Spellchecking")  
+ <span data-ttu-id="c43b4-145">![スペル チェックを含む Textbox](../../../../docs/framework/wpf/controls/media/editing-textbox-with-spellchecking.png "Editing_TextBox_with_Spellchecking")</span><span class="sxs-lookup"><span data-stu-id="c43b4-145">![Textbox with spell&#45;checking](../../../../docs/framework/wpf/controls/media/editing-textbox-with-spellchecking.png "Editing_TextBox_with_Spellchecking")</span></span>  
   
- スペル チェックを有効にする方法については、「[テキスト編集コントロールでスペル チェックを有効にする](../../../../docs/framework/wpf/controls/how-to-enable-spell-checking-in-a-text-editing-control.md)」を参照してください。  
+ <span data-ttu-id="c43b4-146">スペル チェックを有効にする方法については、「[テキスト編集コントロールでスペル チェックを有効にする](../../../../docs/framework/wpf/controls/how-to-enable-spell-checking-in-a-text-editing-control.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c43b4-146">See [Enable Spell Checking in a Text Editing Control](../../../../docs/framework/wpf/controls/how-to-enable-spell-checking-in-a-text-editing-control.md) to learn how to enable spellchecking.</span></span>  
   
 <a name="context_menu"></a>   
-## コンテキスト メニュー  
- 既定で、<xref:System.Windows.Controls.TextBox> と <xref:System.Windows.Controls.RichTextBox> の両方に、ユーザーがコントロール内を右クリックしたときに表示されるコンテキスト メニューが用意されています。  コンテキスト メニューを使用すると、ユーザーは切り取り、コピー、または貼り付けを実行できます \(下図を参照\)。  
+## <a name="context-menu"></a><span data-ttu-id="c43b4-147">コンテキスト メニュー</span><span class="sxs-lookup"><span data-stu-id="c43b4-147">Context Menu</span></span>  
+ <span data-ttu-id="c43b4-148">既定では、両方とも<xref:System.Windows.Controls.TextBox>と<xref:System.Windows.Controls.RichTextBox>コントロール内にユーザーを右クリックしたときに表示されるコンテキスト メニューが表示されます。</span><span class="sxs-lookup"><span data-stu-id="c43b4-148">By default, both <xref:System.Windows.Controls.TextBox> and <xref:System.Windows.Controls.RichTextBox> have a context menu that appears when a user right-clicks inside the control.</span></span> <span data-ttu-id="c43b4-149">コンテキスト メニューでは、ユーザーは、切り取り、コピー、または貼り付けをできます (下図を参照)。</span><span class="sxs-lookup"><span data-stu-id="c43b4-149">The context menu allows the user to cut, copy, or paste (see illustration below).</span></span>  
   
- ![コンテキスト メニューを含む TextBox](../../../../docs/framework/wpf/controls/media/editing-textbox-with-context-menu.png "Editing\_TextBox\_with\_Context\_Menu")  
+ <span data-ttu-id="c43b4-150">![コンテキスト メニューを含む TextBox](../../../../docs/framework/wpf/controls/media/editing-textbox-with-context-menu.png "Editing_TextBox_with_Context_Menu")</span><span class="sxs-lookup"><span data-stu-id="c43b4-150">![TextBox with context menu](../../../../docs/framework/wpf/controls/media/editing-textbox-with-context-menu.png "Editing_TextBox_with_Context_Menu")</span></span>  
   
- 独自のカスタム コンテキスト メニューを作成して、既定のメニューをオーバーライドできます。  詳細については、「[カスタム コンテキスト メニューを RichTextBox に配置する](../../../../docs/framework/wpf/controls/how-to-position-a-custom-context-menu-in-a-richtextbox.md)」を参照してください。  
+ <span data-ttu-id="c43b4-151">独自のカスタム コンテキスト メニューを作成して、既定のコンテキスト メニューをオーバーライドできます。</span><span class="sxs-lookup"><span data-stu-id="c43b4-151">You can create your own custom context menu to override the default one.</span></span> <span data-ttu-id="c43b4-152">詳細については、[カスタム コンテキスト メニューを RichTextBox に配置](../../../../docs/framework/wpf/controls/how-to-position-a-custom-context-menu-in-a-richtextbox.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c43b4-152">See [Position a Custom Context Menu in a RichTextBox](../../../../docs/framework/wpf/controls/how-to-position-a-custom-context-menu-in-a-richtextbox.md) for more information.</span></span>  
   
 <a name="detect_when_content_changes"></a>   
-## 編集コマンド  
- 編集コマンドを使用することで、ユーザーは <xref:System.Windows.Controls.RichTextBox> 内の編集可能コンテンツを書式設定できます。  <xref:System.Windows.Controls.RichTextBox> には、基本的な編集コマンドのほかに、<xref:System.Windows.Controls.TextBox> ではサポートされていない書式設定コマンドが含まれています。  たとえば、<xref:System.Windows.Controls.RichTextBox> 内で編集を行う場合、ユーザーは Ctrl \+ B キーを押すことで、テキストの太字設定を切り替えることができます。  使用可能なコマンドの全リストについては、<xref:System.Windows.Documents.EditingCommands> を参照してください。  キーボード ショートカットを使用するほかに、コマンドをボタンなどのその他のコントロールにフックすることができます。  次の例では、ユーザーがテキストの書式設定を変更するために使用できるボタンを格納した簡単なツール バーを作成する方法を示します。  
+## <a name="editing-commands"></a><span data-ttu-id="c43b4-153">コマンドの編集</span><span class="sxs-lookup"><span data-stu-id="c43b4-153">Editing Commands</span></span>  
+ <span data-ttu-id="c43b4-154">コマンド内の編集可能なコンテンツを書式設定を有効にするユーザーの編集、<xref:System.Windows.Controls.RichTextBox>です。</span><span class="sxs-lookup"><span data-stu-id="c43b4-154">Editing commands enable users to format editable content inside a <xref:System.Windows.Controls.RichTextBox>.</span></span> <span data-ttu-id="c43b4-155">Basic だけでなく編集コマンド、<xref:System.Windows.Controls.RichTextBox>を含むコマンドの書式設定<xref:System.Windows.Controls.TextBox>はサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="c43b4-155">Besides basic editing commands, <xref:System.Windows.Controls.RichTextBox> includes formatting commands that <xref:System.Windows.Controls.TextBox> does not support.</span></span> <span data-ttu-id="c43b4-156">例で編集するときの<xref:System.Windows.Controls.RichTextBox>ユーザーには、太字のテキストの書式設定を切り替えるには、範囲 B がキーを押して可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c43b4-156">For example, when editing in a <xref:System.Windows.Controls.RichTextBox>, a user could press Ctr+B to toggle bold text formatting.</span></span> <span data-ttu-id="c43b4-157">参照してください<xref:System.Windows.Documents.EditingCommands>可能なコマンドの完全な一覧についてはします。</span><span class="sxs-lookup"><span data-stu-id="c43b4-157">See <xref:System.Windows.Documents.EditingCommands> for a complete list of commands available.</span></span> <span data-ttu-id="c43b4-158">キーボード ショートカットを使用するだけでなく、ボタンのようにコマンドをフックしてその他のコントロールにすることができます。</span><span class="sxs-lookup"><span data-stu-id="c43b4-158">In addition to using keyboard shortcuts, you can hook commands up to other controls like buttons.</span></span> <span data-ttu-id="c43b4-159">次の例では、テキストの書式設定を変更するためにユーザーが使用できるボタンを含む簡単なツールバーを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c43b4-159">The following example shows how to create a simple tool bar containing buttons that the user can use to change text formatting.</span></span>  
   
- [!code-xml[RichTextBox_InputPanel_snip#RichTextBoxWithToolBarExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RichTextBox_InputPanel_snip/CS/Window1.xaml#richtextboxwithtoolbarexamplewholepage)]  
+ [!code-xaml[RichTextBox_InputPanel_snip#RichTextBoxWithToolBarExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RichTextBox_InputPanel_snip/CS/Window1.xaml#richtextboxwithtoolbarexamplewholepage)]  
   
- このサンプルの表示結果を次の図に示します。  
+ <span data-ttu-id="c43b4-160">次の図は、このサンプルの表示方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="c43b4-160">The following illustration shows how this sample displays.</span></span>  
   
- ![ツール バーを含む RichTextBox](../../../../docs/framework/wpf/controls/media/editing-richtextbox-with-toobar.png "Editing\_RichTextBox\_with\_TooBar")  
+ <span data-ttu-id="c43b4-161">![ツールバーを含む RichTextBox](../../../../docs/framework/wpf/controls/media/editing-richtextbox-with-toobar.gif "Editing_RichTextBox_with_TooBar")</span><span class="sxs-lookup"><span data-stu-id="c43b4-161">![RichTextBox with ToolBar](../../../../docs/framework/wpf/controls/media/editing-richtextbox-with-toobar.gif "Editing_RichTextBox_with_TooBar")</span></span>  
   
 <a name="editing_commands"></a>   
-## コンテンツの変更の検出  
- <xref:System.Windows.Controls.TextBox> または <xref:System.Windows.Controls.RichTextBox> のテキストの変更を検出するには、<xref:System.Windows.UIElement.KeyDown> イベントを使用するのではなく、通常は <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> イベントを使用する必要があります。  例については、「[TextBox のテキストがいつ変更されたかを検出する](../../../../docs/framework/wpf/controls/how-to-detect-when-text-in-a-textbox-has-changed.md)」を参照してください。  
+## <a name="detect-when-content-changes"></a><span data-ttu-id="c43b4-162">コンテンツがいつ変更されたかの検出</span><span class="sxs-lookup"><span data-stu-id="c43b4-162">Detect when Content Changes</span></span>  
+ <span data-ttu-id="c43b4-163">通常、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>を検出するたびにイベントを使用する必要があります内のテキスト、<xref:System.Windows.Controls.TextBox>または<xref:System.Windows.Controls.RichTextBox>変更ではなく<xref:System.Windows.UIElement.KeyDown>想定される場合があります。</span><span class="sxs-lookup"><span data-stu-id="c43b4-163">Usually the <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> event should be used to detect whenever the text in a <xref:System.Windows.Controls.TextBox> or <xref:System.Windows.Controls.RichTextBox> changes rather then <xref:System.Windows.UIElement.KeyDown> as you might expect.</span></span> <span data-ttu-id="c43b4-164">例については、「[TextBox のテキストがいつ変更されたかを検出する](../../../../docs/framework/wpf/controls/how-to-detect-when-text-in-a-textbox-has-changed.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c43b4-164">See [Detect When Text in a TextBox Has Changed](../../../../docs/framework/wpf/controls/how-to-detect-when-text-in-a-textbox-has-changed.md) for an example.</span></span>  
   
 <a name="save_load_and_print_richtextbox_content"></a>   
-## RichTextBox コンテンツの保存、読み込み、および印刷  
- <xref:System.Windows.Controls.RichTextBox> のコンテンツをファイルに保存し、そのコンテンツを再び <xref:System.Windows.Controls.RichTextBox> に読み込み、そのコンテンツを印刷する方法を次の例に示します。  以下は、この例のマークアップです。  
+## <a name="save-load-and-print-richtextbox-content"></a><span data-ttu-id="c43b4-165">RichTextBox コンテンツの保存、読み込み、および印刷</span><span class="sxs-lookup"><span data-stu-id="c43b4-165">Save, Load, and Print RichTextBox Content</span></span>  
+ <span data-ttu-id="c43b4-166">次の例の内容を保存する方法を示しています、<xref:System.Windows.Controls.RichTextBox>をファイルにそのコンテンツの状態に戻してを読み込み、 <xref:System.Windows.Controls.RichTextBox>、および内容を印刷します。</span><span class="sxs-lookup"><span data-stu-id="c43b4-166">The following example shows how to save content of a <xref:System.Windows.Controls.RichTextBox> to a file, load that content back into the <xref:System.Windows.Controls.RichTextBox>, and print the contents.</span></span> <span data-ttu-id="c43b4-167">この例のマークアップを次に示します。</span><span class="sxs-lookup"><span data-stu-id="c43b4-167">Below is the markup for the example.</span></span>  
   
- [!code-xml[RichTextBoxMiscSnippets_snip#SaveLoadPrintRTBExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/CSharp/SaveLoadPrintRTB.xaml#saveloadprintrtbexamplewholepage)]  
+ [!code-xaml[RichTextBoxMiscSnippets_snip#SaveLoadPrintRTBExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/CSharp/SaveLoadPrintRTB.xaml#saveloadprintrtbexamplewholepage)]  
   
- 以下は、この例の分離コードです。  
+ <span data-ttu-id="c43b4-168">この例のコードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="c43b4-168">Below is the code behind for the example.</span></span>  
   
  [!code-csharp[RichTextBoxMiscSnippets_snip#SaveLoadPrintRTBCodeExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/CSharp/SaveLoadPrintRTB.xaml.cs#saveloadprintrtbcodeexamplewholepage)]
  [!code-vb[RichTextBoxMiscSnippets_snip#SaveLoadPrintRTBCodeExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/VisualBasic/SaveLoadPrintRTB.xaml.vb#saveloadprintrtbcodeexamplewholepage)]  
   
-## 参照  
- [方法のトピック](../../../../docs/framework/wpf/controls/richtextbox-how-to-topics.md)   
- [TextBox の概要](../../../../docs/framework/wpf/controls/textbox-overview.md)
+## <a name="see-also"></a><span data-ttu-id="c43b4-169">関連項目</span><span class="sxs-lookup"><span data-stu-id="c43b4-169">See Also</span></span>  
+ [<span data-ttu-id="c43b4-170">方法トピック</span><span class="sxs-lookup"><span data-stu-id="c43b4-170">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/richtextbox-how-to-topics.md)  
+ [<span data-ttu-id="c43b4-171">TextBox の概要</span><span class="sxs-lookup"><span data-stu-id="c43b4-171">TextBox Overview</span></span>](../../../../docs/framework/wpf/controls/textbox-overview.md)

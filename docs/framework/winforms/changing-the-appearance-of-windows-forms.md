@@ -1,57 +1,57 @@
 ---
-title: "Windows フォームの表示形式の変更 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Windows フォーム, 変更 (表示形式を)"
+title: "Windows フォームの表示形式の変更"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: Windows Forms, changing the appearance of
 ms.assetid: 12f35d5b-1587-49cc-ada3-47eec1ff1738
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ceeedf3d6b73d08ce8aeade74288dc797d462123
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Windows フォームの表示形式の変更
-罫線、不透明度、図形、スタイルの変更、または Windows フォーム アプリケーションの背景画像の設定など、Windows フォーム アプリケーションの外観をさまざまな方法でカスタマイズできます。  
+# <a name="changing-the-appearance-of-windows-forms"></a><span data-ttu-id="675dd-102">Windows フォームの表示形式の変更</span><span class="sxs-lookup"><span data-stu-id="675dd-102">Changing the Appearance of Windows Forms</span></span>
+<span data-ttu-id="675dd-103">罫線、不透明度、図形、スタイルの変更、または Windows フォーム アプリケーションの背景画像の設定など、Windows フォーム アプリケーションの外観をさまざまな方法でカスタマイズできます。</span><span class="sxs-lookup"><span data-stu-id="675dd-103">You can customize the look of your Windows Forms applications in many different ways, such as changing the border, opacity, shape, style, or setting a background image for your Windows Forms application.</span></span>  
   
-## このセクションの内容  
- [方法 : Windows フォームの境界線を変更する](../../../docs/framework/winforms/how-to-change-the-borders-of-windows-forms.md)  
- フォームの罫線のスタイルを変更する方法を示します。  
+## <a name="in-this-section"></a><span data-ttu-id="675dd-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="675dd-104">In This Section</span></span>  
+ [<span data-ttu-id="675dd-105">方法: Windows フォームの境界線を変更する</span><span class="sxs-lookup"><span data-stu-id="675dd-105">How to: Change the Borders of Windows Forms</span></span>](../../../docs/framework/winforms/how-to-change-the-borders-of-windows-forms.md)  
+ <span data-ttu-id="675dd-106">フォームの罫線のスタイルを変更する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="675dd-106">Shows how to change the border style of a form.</span></span>  
   
-## 関連項目  
+## <a name="reference"></a><span data-ttu-id="675dd-107">参照</span><span class="sxs-lookup"><span data-stu-id="675dd-107">Reference</span></span>  
  <xref:System.Windows.Forms.Form>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
+ <span data-ttu-id="675dd-108">このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="675dd-108">Describes this class and has links to all of its members.</span></span>  
   
  <xref:System.Windows.Forms.FormBorderStyle>  
- この列挙体について説明し、そのすべてのメンバーの説明が含まれています。  
+ <span data-ttu-id="675dd-109">この列挙体について説明し、そのすべてのメンバーの説明が含まれています。</span><span class="sxs-lookup"><span data-stu-id="675dd-109">Describes this enumeration and contains descriptions of all of its members.</span></span>  
   
  <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
+ <span data-ttu-id="675dd-110">このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="675dd-110">Describes this class and has links to all of its members.</span></span>  
   
  <xref:System.Drawing.Image>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
+ <span data-ttu-id="675dd-111">このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="675dd-111">Describes this class and has links to all of its members.</span></span>  
   
  <xref:System.Drawing.Region>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
+ <span data-ttu-id="675dd-112">このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="675dd-112">Describes this class and has links to all of its members.</span></span>  
   
  <xref:System.Drawing.Color>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
+ <span data-ttu-id="675dd-113">このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="675dd-113">Describes this class and has links to all of its members.</span></span>  
   
-## 関連項目  
- [Windows フォームのサイズとスケールを調整する](../../../docs/framework/winforms/adjusting-the-size-and-scale-of-windows-forms.md)  
- フォームのサイズとスケールを変更する方法を説明するトピックへのリンクが含まれます。  
+## <a name="related-sections"></a><span data-ttu-id="675dd-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="675dd-114">Related Sections</span></span>  
+ [<span data-ttu-id="675dd-115">Windows フォームのサイズとスケールを調整する</span><span class="sxs-lookup"><span data-stu-id="675dd-115">Adjusting the Size and Scale of Windows Forms</span></span>](../../../docs/framework/winforms/adjusting-the-size-and-scale-of-windows-forms.md)  
+ <span data-ttu-id="675dd-116">フォームのサイズとスケールを変更する方法を説明するトピックへのリンクが含まれます。</span><span class="sxs-lookup"><span data-stu-id="675dd-116">Contains links to topics that show how to change the size and scale of a form.</span></span>  
   
- [Windows フォームにおけるグラフィックスと描画](../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
- Windows フォームでカスタム描画を実行する方法を説明するトピックへのリンクが含まれます。  
+ [<span data-ttu-id="675dd-117">Windows フォームにおけるグラフィックスと描画</span><span class="sxs-lookup"><span data-stu-id="675dd-117">Graphics and Drawing in Windows Forms</span></span>](../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
+ <span data-ttu-id="675dd-118">Windows フォームでカスタム描画を実行する方法を説明するトピックへのリンクが含まれます。</span><span class="sxs-lookup"><span data-stu-id="675dd-118">Contains links to topics that describe how to perform custom drawing on Windows Forms.</span></span>  
   
- [組み込みのオーナー描画サポートを備えたコントロール](../../../docs/framework/winforms/controls/controls-with-built-in-owner-drawing-support.md)  
- Windows フォーム コントロールでのオーナー描画のサポートの一覧を表示します。
+ [<span data-ttu-id="675dd-119">組み込みのオーナー描画サポートを備えたコントロール</span><span class="sxs-lookup"><span data-stu-id="675dd-119">Controls with Built-In Owner-Drawing Support</span></span>](../../../docs/framework/winforms/controls/controls-with-built-in-owner-drawing-support.md)  
+ <span data-ttu-id="675dd-120">Windows フォーム コントロールでのオーナー描画のサポートの一覧を表示します。</span><span class="sxs-lookup"><span data-stu-id="675dd-120">List owner-draw support in Windows Forms controls.</span></span>

@@ -1,65 +1,71 @@
 ---
-title: "サービス チャネル レベルのプログラミング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "サービス チャネル レベルのプログラミング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 8d8dcd85-0a05-4c44-8861-4a0b3b90cca9
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e296cc2d8960280c6af278a79eaeaa3984f07eff
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# サービス チャネル レベルのプログラミング
-ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービス アプリケーションを <xref:System.ServiceModel.ServiceHost?displayProperty=fullName> とこれに関係するオブジェクト モデルを使用しないで作成する方法を説明します。  
+# <a name="service-channel-level-programming"></a><span data-ttu-id="67e7f-102">サービス チャネル レベルのプログラミング</span><span class="sxs-lookup"><span data-stu-id="67e7f-102">Service Channel-Level Programming</span></span>
+<span data-ttu-id="67e7f-103">ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービス アプリケーションを <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> とこれに関係するオブジェクト モデルを使用しないで作成する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-103">This topic describes how to write a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service application without using the <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> and its associated object model.</span></span>  
   
-## メッセージの受信  
- メッセージの受信と処理の準備を整えるには、次の手順に従う必要があります。  
+## <a name="receiving-messages"></a><span data-ttu-id="67e7f-104">メッセージの受信</span><span class="sxs-lookup"><span data-stu-id="67e7f-104">Receiving Messages</span></span>  
+ <span data-ttu-id="67e7f-105">メッセージの受信と処理の準備を整えるには、次の手順に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="67e7f-105">To be ready to receive and process messages, the following steps are required:</span></span>  
   
-1.  バインディングを作成します。  
+1.  <span data-ttu-id="67e7f-106">バインディングを作成します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-106">Create a binding.</span></span>  
   
-2.  チャネル リスナーをビルドします。  
+2.  <span data-ttu-id="67e7f-107">チャネル リスナーをビルドします。</span><span class="sxs-lookup"><span data-stu-id="67e7f-107">Build a channel listener.</span></span>  
   
-3.  チャネル リスナーを開きます。  
+3.  <span data-ttu-id="67e7f-108">チャネル リスナーを開きます。</span><span class="sxs-lookup"><span data-stu-id="67e7f-108">Open the channel listener.</span></span>  
   
-4.  要求を読み取り、応答を送信します。  
+4.  <span data-ttu-id="67e7f-109">要求を読み取り、応答を送信します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-109">Read the request and send a reply.</span></span>  
   
-5.  すべてのチャネル オブジェクトを閉じます。  
+5.  <span data-ttu-id="67e7f-110">すべてのチャネル オブジェクトを閉じます。</span><span class="sxs-lookup"><span data-stu-id="67e7f-110">Close all channel objects.</span></span>  
   
-#### バインディングの作成  
- メッセージのリッスンと受信の最初の手順として、バインディングを作成します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、組み込みバインディングまたはシステム標準のバインディングが複数付属しており、そのうちの 1 個をインスタンス化することによって直接使用できます。また、CustomBinding クラスをインスタンス化することにより、独自のバインディングを作成することもできます。手順 1. のコードは、この処理を実行します。  
+#### <a name="creating-a-binding"></a><span data-ttu-id="67e7f-111">バインディングの作成</span><span class="sxs-lookup"><span data-stu-id="67e7f-111">Creating a Binding</span></span>  
+ <span data-ttu-id="67e7f-112">メッセージのリッスンと受信の最初の手順として、バインディングを作成します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-112">The first step in listening for and receiving messages is creating a binding.</span></span> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="67e7f-113"> には、組み込みバインディングまたはシステム標準のバインディングが複数付属しており、そのうちの 1 個をインスタンス化することによって直接使用できます。</span><span class="sxs-lookup"><span data-stu-id="67e7f-113"> ships with several built-in or system-provided bindings that can be used directly by instantiating one of them.</span></span> <span data-ttu-id="67e7f-114">また、CustomBinding クラスをインスタンス化することにより、独自のバインディングを作成することもできます。手順 1. のコードは、この処理を実行します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-114">In addition, you can also create your own custom binding by instantiating a CustomBinding class which is what the code in listing 1 does.</span></span>  
   
- 後のコード例は、<xref:System.ServiceModel.Channels.CustomBinding?displayProperty=fullName> のインスタンスを作成し、その Elements コレクションに <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=fullName> を追加します。Elements コレクションは、チャネル スタックを作成するために使用されるバインド要素のコレクションです。この例では、Elements コレクションには <xref:System.ServiceModel.Channels.HttpTransportBindingElement> しか含まれないため、チャネル スタックは HTTP トランスポート チャネルだけを持ちます。  
+ <span data-ttu-id="67e7f-115">後のコード例は、<xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> のインスタンスを作成し、その Elements コレクションに <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType> を追加します。Elements コレクションは、チャネル スタックを作成するために使用されるバインド要素のコレクションです。</span><span class="sxs-lookup"><span data-stu-id="67e7f-115">The code example below creates an instance of <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> and adds an <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType> to its Elements collection which is a collection of binding elements that are used to build the channel stack.</span></span> <span data-ttu-id="67e7f-116">この例では、Elements コレクションには <xref:System.ServiceModel.Channels.HttpTransportBindingElement> しか含まれないため、チャネル スタックは HTTP トランスポート チャネルだけを持ちます。</span><span class="sxs-lookup"><span data-stu-id="67e7f-116">In this example, because the elements collection has only the <xref:System.ServiceModel.Channels.HttpTransportBindingElement>, the resulting channel stack has only the HTTP transport channel.</span></span>  
   
-#### ChannelListener のビルド  
- バインディングを作成したら、<xref:System.ServiceModel.Channels.Binding.BuildChannelListener%601%2A?displayProperty=fullName> を呼び出してチャネル リスナーをビルドします。型パラメーターは、作成するチャネル形状です。この例では、要求\/応答メッセージ交換パターンで受信メッセージをリッスンする必要があるため、<xref:System.ServiceModel.Channels.IReplyChannel?displayProperty=fullName> を使用します。  
+#### <a name="building-a-channellistener"></a><span data-ttu-id="67e7f-117">ChannelListener のビルド</span><span class="sxs-lookup"><span data-stu-id="67e7f-117">Building a ChannelListener</span></span>  
+ <span data-ttu-id="67e7f-118">バインディングを作成した後で呼び出して<!--zz<xref:System.ServiceModel.Channels.Binding.BuildChannelListener%601%2A?displayProperty=nameWithType>-->`System.ServiceModel.Channels.Binding.BuildChannelListener`型パラメーターは、チャネル形状を作成するチャネル リスナーを作成します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-118">After creating a binding, we call <!--zz<xref:System.ServiceModel.Channels.Binding.BuildChannelListener%601%2A?displayProperty=nameWithType>--> `System.ServiceModel.Channels.Binding.BuildChannelListener` to build the channel listener where the type parameter is the channel shape to create.</span></span> <span data-ttu-id="67e7f-119">この例では、要求/応答メッセージ交換パターンで受信メッセージをリッスンする必要があるため、<xref:System.ServiceModel.Channels.IReplyChannel?displayProperty=nameWithType> を使用します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-119">In this example we are using <xref:System.ServiceModel.Channels.IReplyChannel?displayProperty=nameWithType> because we want to listen for incoming messages in a request/reply message exchange pattern.</span></span>  
   
- <xref:System.ServiceModel.Channels.IReplyChannel> は、要求メッセージを受信し、応答メッセージを返信するために使用されます。<xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A?displayProperty=fullName> を呼び出すと、要求メッセージの受信と応答メッセージの返信に使用できる <xref:System.ServiceModel.Channels.IRequestChannel?displayProperty=fullName> が返されます。  
+ <span data-ttu-id="67e7f-120"><xref:System.ServiceModel.Channels.IReplyChannel> は、要求メッセージを受信し、応答メッセージを返信するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="67e7f-120"><xref:System.ServiceModel.Channels.IReplyChannel> is used for receiving request messages and sending back reply messages.</span></span> <span data-ttu-id="67e7f-121"><xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A?displayProperty=nameWithType> を呼び出すと、要求メッセージの受信と応答メッセージの返信に使用できる <xref:System.ServiceModel.Channels.IRequestChannel?displayProperty=nameWithType> が返されます。</span><span class="sxs-lookup"><span data-stu-id="67e7f-121">Calling <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A?displayProperty=nameWithType> returns an <xref:System.ServiceModel.Channels.IRequestChannel?displayProperty=nameWithType>, which can be used to receive the request message and to send back a reply message.</span></span>  
   
- リスナーを作成する際には、リッスンするネットワーク アドレス \(この場合は `http://localhost:8080/channelapp`\) を渡します。一般に、各トランスポート チャネルは 1 つまたは複数のアドレス スキームをサポートします。たとえば、HTTP トランスポートは、http スキームと https スキームの両方をサポートします。  
+ <span data-ttu-id="67e7f-122">リスナーを作成する際には、リッスンするネットワーク アドレス (この場合は `http://localhost:8080/channelapp`) を渡します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-122">When creating the listener, we pass the network address on which it listens, in this case `http://localhost:8080/channelapp`.</span></span> <span data-ttu-id="67e7f-123">一般に、各トランスポート チャネルは 1 つまたは複数のアドレス スキームをサポートします。たとえば、HTTP トランスポートは、http スキームと https スキームの両方をサポートします。</span><span class="sxs-lookup"><span data-stu-id="67e7f-123">In general, each transport channel supports one or possibly several address schemes, for example, the HTTP transport supports both http and https schemes.</span></span>  
   
- また、リスナーを作成する際には、空の <xref:System.ServiceModel.Channels.BindingParameterCollection?displayProperty=fullName> を渡します。バインディング パラメーターは、リスナーのビルド方法を制御するパラメーターを渡すしくみです。この例では、このようなパラメーターは使用しないため、空のコレクションを渡します。  
+ <span data-ttu-id="67e7f-124">また、リスナーを作成する際には、空の <xref:System.ServiceModel.Channels.BindingParameterCollection?displayProperty=nameWithType> を渡します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-124">We also pass an empty <xref:System.ServiceModel.Channels.BindingParameterCollection?displayProperty=nameWithType> when creating the listener.</span></span> <span data-ttu-id="67e7f-125">バインディング パラメーターは、リスナーのビルド方法を制御するパラメーターを渡すしくみです。</span><span class="sxs-lookup"><span data-stu-id="67e7f-125">A binding parameter is a mechanism to pass parameters that control how the listener should be built.</span></span> <span data-ttu-id="67e7f-126">この例では、このようなパラメーターは使用しないため、空のコレクションを渡します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-126">In our example, we are not using any such parameters so we pass an empty collection.</span></span>  
   
-#### 受信メッセージのリッスン  
- 次に、ビルドしたリスナーで <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=fullName> を呼び出し、チャネルの受け入れを開始します。<xref:System.ServiceModel.Channels.IChannelListener%601.AcceptChannel%2A?displayProperty=fullName> の動作は、トランスポートが接続指向であるか、コネクションレスであるかによって異なります。接続指向トランスポートの場合、<xref:System.ServiceModel.Channels.IChannelListener%601.AcceptChannel%2A> は新しい接続要求が届くまでブロックし、接続要求が届いた時点で、その新しい接続を表す新しいチャネルを返します。HTTP などのコネクションレス トランスポートの場合、<xref:System.ServiceModel.Channels.IChannelListener%601.AcceptChannel%2A> は、トランスポート リスナーが作成する唯一のチャネルを直ちに返します。  
+#### <a name="listening-for-incoming-messages"></a><span data-ttu-id="67e7f-127">受信メッセージのリッスン</span><span class="sxs-lookup"><span data-stu-id="67e7f-127">Listening for Incoming Messages</span></span>  
+ <span data-ttu-id="67e7f-128">次に、ビルドしたリスナーで <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> を呼び出し、チャネルの受け入れを開始します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-128">We then call <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> on the listener and start accepting channels.</span></span> <span data-ttu-id="67e7f-129"><xref:System.ServiceModel.Channels.IChannelListener%601.AcceptChannel%2A?displayProperty=nameWithType> の動作は、トランスポートが接続指向であるか、コネクションレスであるかによって異なります。</span><span class="sxs-lookup"><span data-stu-id="67e7f-129">The behavior of <xref:System.ServiceModel.Channels.IChannelListener%601.AcceptChannel%2A?displayProperty=nameWithType> depends on whether the transport is connection-oriented or connection-less.</span></span> <span data-ttu-id="67e7f-130">接続指向トランスポートの場合、<xref:System.ServiceModel.Channels.IChannelListener%601.AcceptChannel%2A> は新しい接続要求が届くまでブロックし、接続要求が届いた時点で、その新しい接続を表す新しいチャネルを返します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-130">For connection-oriented transports, <xref:System.ServiceModel.Channels.IChannelListener%601.AcceptChannel%2A> blocks until a new connection request comes in at which point it returns a new channel that represents that new connection.</span></span> <span data-ttu-id="67e7f-131">HTTP などのコネクションレス トランスポートの場合、<xref:System.ServiceModel.Channels.IChannelListener%601.AcceptChannel%2A> は、トランスポート リスナーが作成する唯一のチャネルを直ちに返します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-131">For connection-less transports, such as HTTP, <xref:System.ServiceModel.Channels.IChannelListener%601.AcceptChannel%2A> returns immediately with the one and only channel that the transport listener creates.</span></span>  
   
- この例では、リスナーは、<xref:System.ServiceModel.Channels.IReplyChannel> を実装するチャネルを返します。このチャネルでメッセージを受信するには、まず、チャネルで <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=fullName> を呼び出して通信できる状態にします。次に、メッセージが到着するまでブロックする <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> を呼び出します。  
+ <span data-ttu-id="67e7f-132">この例では、リスナーは、<xref:System.ServiceModel.Channels.IReplyChannel> を実装するチャネルを返します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-132">In this example, the listener returns a channel that implements <xref:System.ServiceModel.Channels.IReplyChannel>.</span></span> <span data-ttu-id="67e7f-133">このチャネルでメッセージを受信するには、まず、チャネルで <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> を呼び出して通信できる状態にします。</span><span class="sxs-lookup"><span data-stu-id="67e7f-133">To receive messages on this channel we first call <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> on it to place it in a state ready for communication.</span></span> <span data-ttu-id="67e7f-134">次に、メッセージが到着するまでブロックする <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-134">We then call <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> which blocks until a message arrives.</span></span>  
   
-#### 要求の読み取りと応答の送信  
- <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> が <xref:System.ServiceModel.Channels.RequestContext> を返すときに、その <xref:System.ServiceModel.Channels.RequestContext.RequestMessage%2A> プロパティを使用して受信メッセージを取得します。メッセージのアクションと本文のコンテンツ \(文字列であることを前提とします\) を書き込みます。  
+#### <a name="reading-the-request-and-sending-a-reply"></a><span data-ttu-id="67e7f-135">要求の読み取りと応答の送信</span><span class="sxs-lookup"><span data-stu-id="67e7f-135">Reading the Request and Sending a Reply</span></span>  
+ <span data-ttu-id="67e7f-136"><xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> が <xref:System.ServiceModel.Channels.RequestContext> を返すときに、その <xref:System.ServiceModel.Channels.RequestContext.RequestMessage%2A> プロパティを使用して受信メッセージを取得します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-136">When <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> returns a <xref:System.ServiceModel.Channels.RequestContext>, we get the received message using its <xref:System.ServiceModel.Channels.RequestContext.RequestMessage%2A> property.</span></span> <span data-ttu-id="67e7f-137">メッセージのアクションと本文のコンテンツ (文字列であることを前提とします) を書き込みます。</span><span class="sxs-lookup"><span data-stu-id="67e7f-137">We write out the message’s action and body content, (which we assume is a string).</span></span>  
   
- 応答を送信するには、新しい応答メッセージを作成します。この場合は、要求で受信した文字列データを渡します。次に、<xref:System.ServiceModel.Channels.RequestContext.Reply%2A> を呼び出して、その応答メッセージを送信します。  
+ <span data-ttu-id="67e7f-138">応答を送信するには、新しい応答メッセージを作成します。この場合は、要求で受信した文字列データを渡します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-138">To send a reply, we create a new reply message in this case passing back the string data we received in the request.</span></span> <span data-ttu-id="67e7f-139">次に、<xref:System.ServiceModel.Channels.RequestContext.Reply%2A> を呼び出して、その応答メッセージを送信します。</span><span class="sxs-lookup"><span data-stu-id="67e7f-139">We then call <xref:System.ServiceModel.Channels.RequestContext.Reply%2A> to send the reply message.</span></span>  
   
-#### オブジェクトを閉じる  
- リソースのリークを避けるには、通信に使用したオブジェクトが不要になったら閉じることが重要です。この例では、要求メッセージ、要求コンテキスト、チャネル、およびリスナーを閉じます。  
+#### <a name="closing-objects"></a><span data-ttu-id="67e7f-140">オブジェクトの終了</span><span class="sxs-lookup"><span data-stu-id="67e7f-140">Closing Objects</span></span>  
+ <span data-ttu-id="67e7f-141">リソースのリークを避けるには、通信に使用したオブジェクトが不要になったら閉じることが重要です。</span><span class="sxs-lookup"><span data-stu-id="67e7f-141">To avoid leaking resources, it is very important to close objects used in communications when they are no longer required.</span></span> <span data-ttu-id="67e7f-142">この例では、要求メッセージ、要求コンテキスト、チャネル、およびリスナーを閉じます。</span><span class="sxs-lookup"><span data-stu-id="67e7f-142">In this example we close the request message, the request context, the channel and the listener.</span></span>  
   
- 次のコード例は、チャネル リスナーがメッセージを 1 つだけ受け取る基本的なサービスです。実際のサービスでは、サービスが終了するまでチャネルの受け入れとメッセージの受信を続けます。  
+ <span data-ttu-id="67e7f-143">次のコード例は、チャネル リスナーがメッセージを 1 つだけ受け取る基本的なサービスです。</span><span class="sxs-lookup"><span data-stu-id="67e7f-143">The following code example shows a basic service in which a channel listener receives only one message.</span></span> <span data-ttu-id="67e7f-144">実際のサービスでは、サービスが終了するまでチャネルの受け入れとメッセージの受信を続けます。</span><span class="sxs-lookup"><span data-stu-id="67e7f-144">A real service keeps accepting channels and receiving messages until the service exits.</span></span>  
   
  [!code-csharp[ChannelProgrammingBasic#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/channelprogrammingbasic/cs/serviceprogram.cs#1)]
  [!code-vb[ChannelProgrammingBasic#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/channelprogrammingbasic/vb/serviceprogram.vb#1)]

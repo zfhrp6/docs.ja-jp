@@ -1,32 +1,31 @@
 ---
-title: "How to: Call an Extension Method (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "calling extension methods"
-  - "extension methods [Visual Basic]"
+title: "方法: 拡張メソッドを呼び出す (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- calling extension methods [Visual Basic]
+- extension methods [Visual Basic]
 ms.assetid: df07750f-40f4-4c07-a79e-1113a27cfbea
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 25b5a86af15694e6f64f96a5d5d645a01f8f1f12
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Call an Extension Method (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-拡張メソッドを使用すると、既存のクラスにメソッドを追加できます。  拡張メソッドを宣言してスコープに組み入れたら、その拡張メソッドによって拡張した型のインスタンス メソッドと同じ要領で拡張メソッドを呼び出すことができます。  拡張メソッドを作成する方法の詳細については、「[How to: Write an Extension Method](../../../../visual-basic/programming-guide/language-features/procedures/how-to-write-an-extension-method.md)」を参照してください。  
+# <a name="how-to-call-an-extension-method-visual-basic"></a><span data-ttu-id="ce84d-102">方法: 拡張メソッドを呼び出す (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ce84d-102">How to: Call an Extension Method (Visual Basic)</span></span>
+<span data-ttu-id="ce84d-103">拡張メソッドを使用すると、既存のクラスにメソッドを追加できます。</span><span class="sxs-lookup"><span data-stu-id="ce84d-103">Extension methods enable you to add methods to an existing class.</span></span> <span data-ttu-id="ce84d-104">拡張メソッドが宣言されており、スコープに取り込む後、は、拡張する型のインスタンス メソッドと同様に呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="ce84d-104">After an extension method is declared and brought into scope, you can call it like an instance method of the type that it extends.</span></span> <span data-ttu-id="ce84d-105">拡張メソッドを作成する方法の詳細については、次を参照してください。[する方法: 拡張メソッドを記述](./how-to-write-an-extension-method.md)です。</span><span class="sxs-lookup"><span data-stu-id="ce84d-105">For more information about how to write an extension method, see [How to: Write an Extension Method](./how-to-write-an-extension-method.md).</span></span>  
   
- ここでは、拡張メソッド `PrintAndPunctuate` に関する手順を取り上げます。このメソッドの呼び出し元になる文字列インスタンスが表示されてから、2 番目のパラメーター `punc` で渡される値が表示されます。  
+ <span data-ttu-id="ce84d-106">次の手順は、拡張メソッドを参照してください`PrintAndPunctuate`、2 番目のパラメーターを渡して、文字列を呼び出すインスタンス、どのような値を続けて表示される`punc`です。</span><span class="sxs-lookup"><span data-stu-id="ce84d-106">The following instructions refer to extension method `PrintAndPunctuate`, which will display the string instance that invokes it, followed by whatever value is sent in for the second parameter, `punc`.</span></span>  
   
-```vb#  
+```vb  
 Imports System.Runtime.CompilerServices  
   
 Module StringExtensions  
@@ -37,45 +36,44 @@ Module StringExtensions
     End Sub  
   
 End Module  
-  
 ```  
   
- メソッドを呼び出すには、そのメソッドがスコープに入っている必要があります。  
+ <span data-ttu-id="ce84d-107">メソッドが呼び出されるとスコープ内にある必要があります。</span><span class="sxs-lookup"><span data-stu-id="ce84d-107">The method must be in scope when it is called.</span></span>  
   
-### 拡張メソッドを呼び出すには  
+### <a name="to-call-an-extension-method"></a><span data-ttu-id="ce84d-108">拡張メソッドを呼び出す</span><span class="sxs-lookup"><span data-stu-id="ce84d-108">To call an extension method</span></span>  
   
-1.  拡張メソッドの最初のパラメーターのデータ型で変数を宣言します。  `PrintAndPunctuate` の場合は、<xref:System.String> の変数が必要です。  
+1.  <span data-ttu-id="ce84d-109">拡張メソッドの最初のパラメーターのデータ型を持つ変数を宣言します。</span><span class="sxs-lookup"><span data-stu-id="ce84d-109">Declare a variable that has the data type of the first parameter of the extension method.</span></span> <span data-ttu-id="ce84d-110">`PrintAndPunctuate`、する必要があります、<xref:System.String>変数。</span><span class="sxs-lookup"><span data-stu-id="ce84d-110">For `PrintAndPunctuate`, you need a <xref:System.String> variable:</span></span>  
   
     ```  
     Dim example = "Ready"  
     ```  
   
-2.  その変数が拡張メソッドを呼び出し、その変数の値が最初のパラメーター `aString` にバインドされます。  呼び出しに次のステートメントを使用すると、`Ready?` が表示されます。  
+2.  <span data-ttu-id="ce84d-111">変数が、拡張メソッドを呼び出し、その値が最初のパラメーターにバインドされている`aString`です。</span><span class="sxs-lookup"><span data-stu-id="ce84d-111">That variable will invoke the extension method, and its value is bound to the first parameter, `aString`.</span></span> <span data-ttu-id="ce84d-112">次のステートメントの呼び出しが表示されます`Ready?`です。</span><span class="sxs-lookup"><span data-stu-id="ce84d-112">The following calling statement will display `Ready?`.</span></span>  
   
     ```  
     example.PrintAndPunctuate("?")  
     ```  
   
-     この拡張メソッドの呼び出しは、1 つのパラメーターが必要な <xref:System.String> インスタンス メソッドの呼び出しとよく似ています。  
+     <span data-ttu-id="ce84d-113">この拡張メソッドの呼び出しは単に検索する通知などのいずれかを呼び出し、<xref:System.String>インスタンス メソッドを 1 つのパラメーターを必要とします。</span><span class="sxs-lookup"><span data-stu-id="ce84d-113">Notice that the call to this extension method looks just like a call to any one of the <xref:System.String> instance methods that require one parameter:</span></span>  
   
     ```  
     example.EndsWith("dy")  
     example.IndexOf("R")  
     ```  
   
-3.  もう 1 つの文字列変数を宣言し、メソッドを再び呼び出して、どの文字列でもそのメソッドが正しく動作するかどうかを確認します。  
+3.  <span data-ttu-id="ce84d-114">別の文字列変数を宣言し、任意の文字列での動作を確認するには、もう一度メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="ce84d-114">Declare another string variable and call the method again to see that it works with any string.</span></span>  
   
     ```  
     Dim example2 = " or not"  
     example2.PrintAndPunctuate("!!!")  
     ```  
   
-     今回の結果は `or not!!!` です。  
+     <span data-ttu-id="ce84d-115">この時間は、結果:`or not!!!`です。</span><span class="sxs-lookup"><span data-stu-id="ce84d-115">The result this time is: `or not!!!`.</span></span>  
   
-## 使用例  
- 簡単な拡張メソッドを作成して使用する完成版のコード例を以下に示します。  
+## <a name="example"></a><span data-ttu-id="ce84d-116">例</span><span class="sxs-lookup"><span data-stu-id="ce84d-116">Example</span></span>  
+ <span data-ttu-id="ce84d-117">次のコード作成の完全な例、単純な拡張メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="ce84d-117">The following code is a complete example of the creation and use of a simple extension method.</span></span>  
   
-```vb#  
+```vb  
 Imports System.Runtime.CompilerServices  
 Imports ConsoleApplication1.StringExtensions  
   
@@ -104,7 +102,7 @@ End Module
 ' Goodbye?  
 ```  
   
-## 参照  
- [How to: Write an Extension Method](../../../../visual-basic/programming-guide/language-features/procedures/how-to-write-an-extension-method.md)   
- [拡張メソッド](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)   
- [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+## <a name="see-also"></a><span data-ttu-id="ce84d-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="ce84d-118">See Also</span></span>  
+ [<span data-ttu-id="ce84d-119">方法 : 拡張メソッドを作成する</span><span class="sxs-lookup"><span data-stu-id="ce84d-119">How to: Write an Extension Method</span></span>](./how-to-write-an-extension-method.md)  
+ [<span data-ttu-id="ce84d-120">拡張メソッド</span><span class="sxs-lookup"><span data-stu-id="ce84d-120">Extension Methods</span></span>](./extension-methods.md)  
+ [<span data-ttu-id="ce84d-121">Visual Basic におけるスコープ</span><span class="sxs-lookup"><span data-stu-id="ce84d-121">Scope in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)

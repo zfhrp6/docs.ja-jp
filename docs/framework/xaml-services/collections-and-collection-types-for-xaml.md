@@ -1,52 +1,55 @@
 ---
-title: "Collections and Collection Types for XAML | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "XAML のコレクションおよびコレクション型"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 58f8e7c6-9a41-4f25-8551-c042f1315baa
-caps.latest.revision: 2
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 991360433b5fb09c13e59f63be94e0fa0ec94b61
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Collections and Collection Types for XAML
-このトピックではコレクションをサポートするように定義する必要のある親オブジェクトのプロパティ要素または要素の子要素としてコレクション項目のインスタンスを作成するための XAML 構文を説明します。型のプロパティをサポートする方法を示します。  
+# <a name="collections-and-collection-types-for-xaml"></a><span data-ttu-id="9ba02-102">XAML のコレクションおよびコレクション型</span><span class="sxs-lookup"><span data-stu-id="9ba02-102">Collections and Collection Types for XAML</span></span>
+<span data-ttu-id="9ba02-103">このトピックでは、コレクションをサポートして、親オブジェクトの要素またはプロパティ要素の子要素としてコレクション アイテムをインスタンス化するため、XAML 構文をサポートするためには、型のプロパティを定義する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9ba02-103">This topic describes how to define properties of types that are intended to support a collection, and to support the XAML syntax for instantiating collection items as element children of a parent object element or property element.</span></span>  
   
-## XAML のコレクションの概念  
- 概念的には複数の子項目が XAML オブジェクト要素または XAML プロパティ要素のスコープ内にある XAML のリレーションシップがコレクションとして実装する必要があります。  このコレクションはリレーションシップの親である XAML 型の特定の XAML プロパティに関連付ける必要があります。  プロパティはXAML プロセッサに対応するコレクション プロパティの新しく追加された項目にマークアップの各項目を割り当てる受け取るためコレクションである必要があります。  
+## <a name="xaml-collection-concepts"></a><span data-ttu-id="9ba02-104">XAML のコレクションの概念</span><span class="sxs-lookup"><span data-stu-id="9ba02-104">XAML Collection Concepts</span></span>  
+ <span data-ttu-id="9ba02-105">概念的には、xaml を XAML オブジェクト要素のスコープ内で複数の子項目があるまたは XAML プロパティ要素をコレクションとして実装する必要がある関係します。</span><span class="sxs-lookup"><span data-stu-id="9ba02-105">Conceptually, any relationship in XAML where there are multiple child items within the scope of a XAML object element or XAML property element must be implemented as a collection.</span></span> <span data-ttu-id="9ba02-106">コレクションには、そのリレーションシップの親である XAML 型の特定の XAML プロパティを関連付ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="9ba02-106">That collection must be associated with a particular XAML property of the XAML type that is the parent in that relationship.</span></span> <span data-ttu-id="9ba02-107">プロパティは、XAML プロセッサは、バッキング コレクション プロパティの新しく追加された項目であるマークアップ内の各項目を割り当てるが必要ですがあるために、コレクションにすることがあります。</span><span class="sxs-lookup"><span data-stu-id="9ba02-107">The property must be a collection because a XAML processor expects to assign each item in markup to be a newly added item of the backing collection property.</span></span>  
   
- XAML 言語レベルでコレクションのサポートの必要条件が完全には定義されていません。  コレクションが一覧になるかまたはディクショナリ \(ただしXAML 言語レベルの両方で\) が定義されているバッキング型を表す概念はXAML 言語にリストまたはディクショナリ定義されません。  
+ <span data-ttu-id="9ba02-108">XAML 言語レベルでは、コレクションのサポートの正確な要件は完全には定義されていません。</span><span class="sxs-lookup"><span data-stu-id="9ba02-108">At the XAML language level, the exact requirements of collection support are not fully defined.</span></span> <span data-ttu-id="9ba02-109">コレクションできるリストまたはディクショナリ (が両方ではなく) の概念が XAML 言語レベルで定義されているが、どのバッキング型は、いずれかのリストを表すまたは辞書は、XAML 言語で定義されていません。</span><span class="sxs-lookup"><span data-stu-id="9ba02-109">The concept that a collection can be either a list or a dictionary(but not both) is defined at the XAML language level, but which backing types represent either lists or dictionaries is not defined by the XAML language.</span></span>  
   
- .NET Framework XAML サービスではXAML のコレクションをサポートする概念は.NET Framework のバッキング型の点でより明確に定義されます。  具体的にはコレクションの XAML はリストおよびディクショナリの .NET Framework プログラミングに対して一般的に使用される API と .NET Framework の複数の概念に基づいています。  
+ <span data-ttu-id="9ba02-110">.NET Framework XAML サービスでは、バッキング型の .NET Framework の観点から、XAML コレクションのサポートの概念がより明確に定義します。</span><span class="sxs-lookup"><span data-stu-id="9ba02-110">In .NET Framework XAML Services, the concept of XAML collection support is more clearly defined in terms of .NET Framework backing types.</span></span> <span data-ttu-id="9ba02-111">具体的には、コレクションの XAML サポートは、いくつかの .NET Framework の概念とリストやディクショナリで .NET Framework の一般的なプログラミングに使用される Api に基づいています。</span><span class="sxs-lookup"><span data-stu-id="9ba02-111">Specifically, the XAML support for collections is based on several .NET Framework concepts and APIs that are used for lists and dictionaries in general .NET Framework programming.</span></span>  
   
-1.  <xref:System.Collections.IList> インターフェイスはコレクションの一覧を示します。  
+1.  <span data-ttu-id="9ba02-112"><xref:System.Collections.IList>インターフェイスは、リスト コレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="9ba02-112">The <xref:System.Collections.IList> interface indicates a list collection.</span></span>  
   
-2.  <xref:System.Collections.IDictionary> のインターフェイスは dicionary コレクションを示しています。  
+2.  <span data-ttu-id="9ba02-113"><xref:System.Collections.IDictionary>インターフェイスが dicionary コレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="9ba02-113">The <xref:System.Collections.IDictionary> interface indicates a dicionary collection.</span></span>  
   
-3.  <xref:System.Array> は配列と配列の <xref:System.Collections.IList> のメソッドを表します。  
+3.  <span data-ttu-id="9ba02-114"><xref:System.Array>配列、および配列をサポートしている表します<xref:System.Collections.IList>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="9ba02-114"><xref:System.Array> represents an array, and an array supports <xref:System.Collections.IList> methods.</span></span>  
   
- これらのコレクションの概念にはそれぞれ.NET Framework XAML サービスの XAML プロセッサはコレクション プロパティの型のインスタンスに `Add` のメソッドを呼び出そうとします。  またはシリアル化の場合XAML プロセッサは各コレクションの項目 「」の概念に基づいた辞書リストまたは配列内で検索項目ごとに別個の XAML 型のインスタンスを生成します。  これらは次のとおりです : <xref:System.Collections.IList.Item%2A>; <xref:System.Collections.IDictionary.Item%2A>; <xref:System.Array> の明示 <xref:System.Array.System%23Collections%23IList%23Item%2A>。  
+ <span data-ttu-id="9ba02-115">これらの概念のコレクションの各で、.NET Framework XAML サービスの XAML プロセッサは、予期を呼び出して、`Add`コレクション プロパティの型の特定のインスタンス上のメソッドです。</span><span class="sxs-lookup"><span data-stu-id="9ba02-115">In each of these collection concepts, a .NET Framework XAML Services XAML processor expects to call the `Add` method on a specific instance of the collection property's type.</span></span> <span data-ttu-id="9ba02-116">または、XAML プロセッサ シナリオでは、シリアル化、リスト、ディクショナリまたは「アイテム」の各コレクションの特定の概念に基づいて配列内に見つかった項目ごとに個別の XAML 型のインスタンスが生成されます。</span><span class="sxs-lookup"><span data-stu-id="9ba02-116">Or, in a serialization scenario, a XAML processor produces discrete XAML-type instances for each item found in the list, dictionary or array based on each collection's specific concept of "Items".</span></span> <span data-ttu-id="9ba02-117">これらは、:<xref:System.Collections.IList.Item%2A>です。<xref:System.Collections.IDictionary.Item%2A>; 明示的な<xref:System.Array.System%23Collections%23IList%23Item%2A>の<xref:System.Array>します。</span><span class="sxs-lookup"><span data-stu-id="9ba02-117">These are : <xref:System.Collections.IList.Item%2A>; <xref:System.Collections.IDictionary.Item%2A>; the explicit <xref:System.Array.System%23Collections%23IList%23Item%2A> for <xref:System.Array>.</span></span>  
   
-## ジェネリック コレクション  
- ジェネリック コレクションをプログラミングする通常の場合.NET Framework 便利でありXAML のコレクション プロパティに使用できます。  ただしジェネリック インターフェイス <xref:System.Collections.Generic.IList%601> と <xref:System.Collections.Generic.IDictionary%602> が指定されて <xref:System.Collections.IList> または非ジェネリック <xref:System.Collections.IDictionary> と同等として .NET Framework XAML サービスの XAML プロセッサによって。  インターフェイスを実装するのではなくジェネリック コレクション型のプロパティの推奨される方法はクラス <xref:System.Collections.Generic.List%601> または <xref:System.Collections.Generic.Dictionary%602> から派生させることです。  これらのクラスは非ジェネリック インターフェイスを実装し基本の実装として XAML のコレクションに対して予期されるサポートが含まれます。  
+## <a name="generic-collections"></a><span data-ttu-id="9ba02-118">ジェネリック コレクション</span><span class="sxs-lookup"><span data-stu-id="9ba02-118">Generic Collections</span></span>  
+ <span data-ttu-id="9ba02-119">ジェネリック コレクションは、プログラミングでは、一般的な .NET Framework の役に立ち、XAML コレクションのプロパティも使用できます。</span><span class="sxs-lookup"><span data-stu-id="9ba02-119">Generic collections can be useful for general .NET Framework programming, and can also be used for XAML collection properties.</span></span> <span data-ttu-id="9ba02-120">ただし、ジェネリック インターフェイス<xref:System.Collections.Generic.IList%601>と<xref:System.Collections.Generic.IDictionary%602>として、非ジェネリックと同等の .NET Framework XAML サービスの XAML プロセッサによって識別されない<xref:System.Collections.IList>または<xref:System.Collections.IDictionary>です。</span><span class="sxs-lookup"><span data-stu-id="9ba02-120">However, the generic interfaces <xref:System.Collections.Generic.IList%601> and <xref:System.Collections.Generic.IDictionary%602> are not identified by .NET Framework XAML Services XAML processors as being equivalent to the non-generic <xref:System.Collections.IList> or <xref:System.Collections.IDictionary>.</span></span> <span data-ttu-id="9ba02-121">ジェネリック コレクションのプロパティの型の方法をお勧めのクラスから派生するインターフェイスを実装するのではなく<xref:System.Collections.Generic.List%601>または<xref:System.Collections.Generic.Dictionary%602>です。</span><span class="sxs-lookup"><span data-stu-id="9ba02-121">Rather than implementing the interfaces, a recommended approach for generic collection property types is to derive from the classes <xref:System.Collections.Generic.List%601> or <xref:System.Collections.Generic.Dictionary%602>.</span></span> <span data-ttu-id="9ba02-122">これらのクラスは、非ジェネリック インターフェイスを実装して、したがってサポートが含まれて、期待される XAML コレクションの基底クラスの実装です。</span><span class="sxs-lookup"><span data-stu-id="9ba02-122">These classes implement the non-generic interfaces and thus include the expected support for XAML collections in the base implementation.</span></span>  
   
-## 読み取り専用コレクションと初期化ロジック  
- .NET Framework プログラミングでは読み取り専用コレクションとしてコレクションの値を保持するプロパティを生成する一般的なデザイン パターンです。  このパターンの割り当ての動作を制御するコレクションに改善するためにコレクション プロパティを所有するインスタンス。  具体的にはパターンはプロパティを設定すると既存のコレクションの誤ったを置換します。  このパターンでは呼び出し元によってコレクションに対するアクセスが <xref:System.Collections.IList> などのコレクション型やインターフェイスに関連するコレクションをサポートするように呼び出し元のメソッドやプロパティの代わりにを使用して行う必要があります。  
+## <a name="read-only-collections-and-initialization-logic"></a><span data-ttu-id="9ba02-123">読み取り専用のコレクションおよび初期化ロジック</span><span class="sxs-lookup"><span data-stu-id="9ba02-123">Read-Only Collections and Initialization Logic</span></span>  
+ <span data-ttu-id="9ba02-124">.NET Framework プログラミングでは、読み取り専用のコレクションとして、コレクションの値が格納されるすべてのプロパティを作成する一般的なデザイン パターンを勧めします。</span><span class="sxs-lookup"><span data-stu-id="9ba02-124">In .NET Framework programming, it is a common design pattern to make any property that holds a value of a collection as a read-only collection.</span></span> <span data-ttu-id="9ba02-125">このパターンでは、コレクションへの影響の制御を強化するコレクションのプロパティを所有するインスタンスで許可される.</span><span class="sxs-lookup"><span data-stu-id="9ba02-125">This pattern permits the instance that owns the collection property to better control what happens to the collection..</span></span> <span data-ttu-id="9ba02-126">具体的には、パターンにより、既存コレクション全体の置換を偶発的なプロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="9ba02-126">Specifically, the pattern prevents accidental replacement of the entire pre-existing collection by setting the property.</span></span> <span data-ttu-id="9ba02-127">このパターンでは呼び出し元が、コレクションへのアクセス代わりにできるようにように、コレクションの種類や、関連するコレクション インターフェイスでサポートされているメソッドまたはプロパティを呼び出すことによって<xref:System.Collections.IList>です。</span><span class="sxs-lookup"><span data-stu-id="9ba02-127">In this pattern, any access to the collection by callers should instead be made by calling methods or properties as supported by the collection type and/or the relevant collection interfaces such as <xref:System.Collections.IList>.</span></span>  
   
- このパターンを使用して読み取り専用コレクションのプロパティを公開する空のコレクションを保持するクラスは最初にそのプロパティを初期化する必要があります。  通常初期化はクラスのコンストラクターの動作の一部として実行されます。  XAML のプロパティを処理する前に既定のコンストラクターを呼び出すためこのようなロジックは既定のコンストラクターによって常に参照するよう XAML に役立つことが重要でコレクション プロパティ \(またはそのほか\)。  
+ <span data-ttu-id="9ba02-128">このパターンを使用すると、読み取り専用コレクションのプロパティを公開する任意のクラスが空のコレクションを保持するには、そのプロパティを初期化する必要があります最初を意味します。</span><span class="sxs-lookup"><span data-stu-id="9ba02-128">Using this pattern implies that any class that exposes a read-only collection property must first initialize that property to hold an empty collection.</span></span> <span data-ttu-id="9ba02-129">通常、初期化は、クラスの構築の動作の一部として実行されます。</span><span class="sxs-lookup"><span data-stu-id="9ba02-129">Typically the initialization is performed as part of the construction behavior for the class.</span></span> <span data-ttu-id="9ba02-130">XAML の役に立ちます、ことが重要このようなロジックが常に既定のコンス トラクターによって参照されている XAML は、通常、プロパティを処理する前に既定のコンス トラクターを呼び出すため (コレクションのプロパティまたはそれ以外の場合)。</span><span class="sxs-lookup"><span data-stu-id="9ba02-130">To be useful for XAML, it is important that such logic is always referenced by the default constructor, because XAML generally calls the default constructor prior to processing the properties (collection properties or otherwise).</span></span>  
   
-## XAML 型システムのサポートおよびコレクション  
- XAML の基本メカニズムに解析しコレクション プロパティを設定するかシリアル化.NET Framework XAML サービスで実装される XAML 型システムはXAML のコレクションに関するさまざまな設計できますが含まれています。  
+## <a name="xaml-type-system-support-and-collections"></a><span data-ttu-id="9ba02-131">XAML 型システムのサポートとコレクション</span><span class="sxs-lookup"><span data-stu-id="9ba02-131">XAML Type System Support and Collections</span></span>  
+ <span data-ttu-id="9ba02-132">XAML を解析しを設定するまたはコレクションのプロパティをシリアル化の基本的なメカニズム、以外は、.NET Framework XAML サービスに実装されている XAML 型システムには、XAML でのコレクションに関連するいくつかのデザイン機能が含まれています。</span><span class="sxs-lookup"><span data-stu-id="9ba02-132">Beyond the basic mechanics of parsing XAML and populating or serializing collection properties, the XAML type system as implemented in .NET Framework XAML Services includes several design features that pertain to collections in XAML.</span></span>  
   
-1.  <xref:System.Xaml.XamlType.IsCollection%2A> はXAML の型が XAML のコレクションをサポートする型によってサポートされている場合は true を返します。  
+1.  <span data-ttu-id="9ba02-133"><xref:System.Xaml.XamlType.IsCollection%2A>XAML の型は、XAML コレクションのサポートを提供する型によってバックアップされている場合は true を返します。</span><span class="sxs-lookup"><span data-stu-id="9ba02-133"><xref:System.Xaml.XamlType.IsCollection%2A> returns true if the XAML type is backed by a type that provides XAML collection support.</span></span>  
   
-2.  コレクション モード XAML 型のサポート <xref:System.Xaml.XamlType.IsDictionary%2A> と <xref:System.Xaml.XamlType.IsArray%2A> では識別できます。  .NET Framework XAML サービスおよびその XAML 型システムに基づいていますが<xref:System.Xaml.XamlWriter> の実装に基づいていないカスタム XAML プロセッサの場合コレクション モードを使用するかはコレクションの処理を開始するためにメソッドを知る必要がある場合があります。  
+2.  <span data-ttu-id="9ba02-134"><xref:System.Xaml.XamlType.IsDictionary%2A>および<xref:System.Xaml.XamlType.IsArray%2A>XAML の型をサポートするコレクション モードをさらに特定できます。</span><span class="sxs-lookup"><span data-stu-id="9ba02-134"><xref:System.Xaml.XamlType.IsDictionary%2A> and <xref:System.Xaml.XamlType.IsArray%2A> can further identify which collection mode the XAML type supports.</span></span> <span data-ttu-id="9ba02-135">カスタム XAML の .NET Framework XAML サービスと、XAML に基づくプロセッサは入力システムが、既存に基づいていない<xref:System.Xaml.XamlWriter>実装では、使用するコレクション モードを知る必要がありますを呼び出す方法を把握するためにコレクションの処理です。</span><span class="sxs-lookup"><span data-stu-id="9ba02-135">For custom XAML processors that are based on .NET Framework XAML Services and the XAML type system but not based on existing <xref:System.Xaml.XamlWriter> implementations, knowing which collection mode is used might be necessary in order to know which method to invoke for collection processing.</span></span>  
   
-3.  前のプロパティ値にはXAML 型の <xref:System.Xaml.XamlType.LookupCollectionKind%2A> のオーバーライドにでも影響を受けます。
+3.  <span data-ttu-id="9ba02-136">前のプロパティの値の各可能性のある影響を受けますの上書きによって<xref:System.Xaml.XamlType.LookupCollectionKind%2A>XAML の型にします。</span><span class="sxs-lookup"><span data-stu-id="9ba02-136">Each of the previous property values are potentially influenced by overrides of <xref:System.Xaml.XamlType.LookupCollectionKind%2A> on a XAML type.</span></span>

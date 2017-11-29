@@ -1,70 +1,73 @@
 ---
-title: "Implementing the UI Automation Dock Control Pattern | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "control patterns, dock"
-  - "dock control pattern"
-  - "UI Automation, dock control pattern"
+title: "UI オートメーション Dock コントロール パターンの実装"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- control patterns, dock
+- dock control pattern
+- UI Automation, dock control pattern
 ms.assetid: ea3d2212-7c8e-4dd7-bf08-73141ca2d4fb
-caps.latest.revision: 23
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: 68c3dcdb1d8f15f312dea40ae59a3b1a4736c484
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Implementing the UI Automation Dock Control Pattern
+# <a name="implementing-the-ui-automation-dock-control-pattern"></a><span data-ttu-id="856de-102">UI オートメーション Dock コントロール パターンの実装</span><span class="sxs-lookup"><span data-stu-id="856de-102">Implementing the UI Automation Dock Control Pattern</span></span>
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の最新情報については、「[Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
+>  <span data-ttu-id="856de-103">このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="856de-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="856de-104">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="856de-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- ここでは、プロパティに関する情報など、<xref:System.Windows.Automation.Provider.IDockProvider> を実装するガイドラインと規則について説明します。 その他のリファレンスへのリンクは、トピックの最後に記載します。  
+ <span data-ttu-id="856de-105">ここでは、プロパティに関する情報など、 <xref:System.Windows.Automation.Provider.IDockProvider>を実装するガイドラインと規則について説明します。</span><span class="sxs-lookup"><span data-stu-id="856de-105">This topic introduces guidelines and conventions for implementing <xref:System.Windows.Automation.Provider.IDockProvider>, including information about properties.</span></span> <span data-ttu-id="856de-106">その他のリファレンスへのリンクは、トピックの最後に記載します。</span><span class="sxs-lookup"><span data-stu-id="856de-106">Links to additional references are listed at the end of the topic.</span></span>  
   
- <xref:System.Windows.Automation.DockPattern> コントロール パターンは、ドッキング コンテナー内のコントロールのドッキング プロパティを公開するために使用します。 ドッキング コンテナーは、子要素を互いに水平方向または垂直方向に整列できるコントロールです。 このコントロール パターンを実装するコントロールの例については、「[Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)」を参照してください。  
+ <span data-ttu-id="856de-107"><xref:System.Windows.Automation.DockPattern> コントロール パターンは、ドッキング コンテナー内のコントロールのドッキング プロパティを公開するために使用します。</span><span class="sxs-lookup"><span data-stu-id="856de-107">The <xref:System.Windows.Automation.DockPattern> control pattern is used to expose the dock properties of a control within a docking container.</span></span> <span data-ttu-id="856de-108">ドッキング コンテナーは、子要素を互いに水平方向または垂直方向に整列できるコントロールです。</span><span class="sxs-lookup"><span data-stu-id="856de-108">A docking container is a control that allows you to arrange child elements horizontally and vertically, relative to each other.</span></span> <span data-ttu-id="856de-109">このコントロール パターンを実装するコントロールの例については、「 [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="856de-109">For examples of controls that implement this control pattern, see [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).</span></span>  
   
- ![ドッキングされた 2 つの子を持つドッキング コンテナー。](../../../docs/framework/ui-automation/media/uia-dockpattern-dockingexample.PNG "UIA\_DockPattern\_DockingExample")  
-"Class View" ウィンドウが DockPosition.Right に "Error List" ウィンドウが DockPosition.Bottom にそれぞれ配置された Visual Studio のドッキングの例  
+ <span data-ttu-id="856de-110">![ドッキング コンテナーは、ドッキングされた 2 つの子にします。] (../../../docs/framework/ui-automation/media/uia-dockpattern-dockingexample.PNG "UIA_DockPattern_DockingExample")</span><span class="sxs-lookup"><span data-stu-id="856de-110">![Docking container with two docked children.](../../../docs/framework/ui-automation/media/uia-dockpattern-dockingexample.PNG "UIA_DockPattern_DockingExample")</span></span>  
+<span data-ttu-id="856de-111">"Class View" ウィンドウが DockPosition.Right に "Error List" ウィンドウが DockPosition.Bottom にそれぞれ配置された Visual Studio のドッキングの例</span><span class="sxs-lookup"><span data-stu-id="856de-111">Docking Example from Visual Studio Where "Class View" Window Is DockPosition.Right and "Error List" Window Is DockPosition.Bottom</span></span>  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## 実装のガイドラインと規則  
- Dock コントロール パターンを実装する場合は、次のガイドラインと規則に注意してください。  
+## <a name="implementation-guidelines-and-conventions"></a><span data-ttu-id="856de-112">実装のガイドラインと規則</span><span class="sxs-lookup"><span data-stu-id="856de-112">Implementation Guidelines and Conventions</span></span>  
+ <span data-ttu-id="856de-113">Dock コントロール パターンを実装する場合は、次のガイドラインと規則に注意してください。</span><span class="sxs-lookup"><span data-stu-id="856de-113">When implementing the Dock control pattern, note the following guidelines and conventions:</span></span>  
   
--   <xref:System.Windows.Automation.Provider.IDockProvider> は、ドッキング コンテナーのプロパティや、ドッキング コンテナー内の現在のコントロールに隣接してドッキングされるコントロールのプロパティは公開しません。  
+-   <span data-ttu-id="856de-114"><xref:System.Windows.Automation.Provider.IDockProvider> は、ドッキング コンテナーのプロパティや、ドッキング コンテナー内の現在のコントロールに隣接してドッキングされるコントロールのプロパティは公開しません。</span><span class="sxs-lookup"><span data-stu-id="856de-114"><xref:System.Windows.Automation.Provider.IDockProvider> does not expose any properties of the docking container or any properties of controls that are docked adjacent to the current control within the docking container.</span></span>  
   
--   コントロールは、現在の重ね順に基づき、互いを基準としてドッキングされます。重ね順が上位であるほど、指定されたドッキング コンテナーの端から離れた位置に配置されます。  
+-   <span data-ttu-id="856de-115">コントロールは、現在の重ね順に基づき、互いを基準としてドッキングされます。重ね順が上位であるほど、指定されたドッキング コンテナーの端から離れた位置に配置されます。</span><span class="sxs-lookup"><span data-stu-id="856de-115">Controls are docked relative to each other based on their current z-order; the higher their z-order placement, the farther they are placed from the specified edge of the docking container.</span></span>  
   
--   ドッキング コンテナーのサイズを変更すると、コンテナー内にドッキングされているコントロールは、もともとドッキングされていたのと同じ端に合わせて再配置されます。 また、ドッキングされているコントロールは、<xref:System.Windows.Automation.DockPosition> のドッキング動作に従って、コンテナー内のスペースを埋めるようにサイズ変更されます。 たとえば、<xref:System.Windows.Automation.DockPosition> が指定されている場合は、コントロールの左側と右側が広がって、使用できるスペースを埋めます。<xref:System.Windows.Automation.DockPosition> が指定されている場合は、コントロールの 4 つの側面すべてが広がって、使用できるスペースを埋めます。  
+-   <span data-ttu-id="856de-116">ドッキング コンテナーのサイズを変更すると、コンテナー内にドッキングされているコントロールは、もともとドッキングされていたのと同じ端に合わせて再配置されます。</span><span class="sxs-lookup"><span data-stu-id="856de-116">If the docking container is resized, any docked controls within the container will be repositioned flush to the same edge to which they were originally docked.</span></span> <span data-ttu-id="856de-117">また、ドッキングされているコントロールは、 <xref:System.Windows.Automation.DockPosition>のドッキング動作に従って、コンテナー内のスペースを埋めるようにサイズ変更されます。</span><span class="sxs-lookup"><span data-stu-id="856de-117">The docked controls will also resize to fill any space within the container according to the docking behavior of their <xref:System.Windows.Automation.DockPosition>.</span></span> <span data-ttu-id="856de-118">たとえば、 <xref:System.Windows.Automation.DockPosition.Top> が指定されている場合は、コントロールの左側と右側が広がって、使用できるスペースを埋めます。</span><span class="sxs-lookup"><span data-stu-id="856de-118">For example, if <xref:System.Windows.Automation.DockPosition.Top> is specified, the left and right sides of the control will expand to fill any available space.</span></span> <span data-ttu-id="856de-119"><xref:System.Windows.Automation.DockPosition.Fill> が指定されている場合は、コントロールの 4 つの側面すべてが広がって、使用できるスペースを埋めます。</span><span class="sxs-lookup"><span data-stu-id="856de-119">If <xref:System.Windows.Automation.DockPosition.Fill> is specified, all four sides of the control will expand to fill any available space.</span></span>  
   
--   マルチモニター システムでは、コントロールは現在のモニターの左側または右側にドッキングする必要があります。 それが不可能な場合は、左端のモニターの左側、または右端のモニターの右側にドッキングする必要があります。  
+-   <span data-ttu-id="856de-120">マルチモニター システムでは、コントロールは現在のモニターの左側または右側にドッキングする必要があります。</span><span class="sxs-lookup"><span data-stu-id="856de-120">On a multi-monitor system, controls should dock to the left or right side of the current monitor.</span></span> <span data-ttu-id="856de-121">それが不可能な場合は、左端のモニターの左側、または右端のモニターの右側にドッキングする必要があります。</span><span class="sxs-lookup"><span data-stu-id="856de-121">If that is not possible, they should dock to the left side of the leftmost monitor or the right side of the rightmost monitor.</span></span>  
   
 <a name="Required_Members_for_IDockProvider"></a>   
-## IDockProvider の必須メンバー  
- 次のプロパティとメソッドは、IDockProvider インターフェイスの実装時に必要です。  
+## <a name="required-members-for-idockprovider"></a><span data-ttu-id="856de-122">IDockProvider の必須メンバー</span><span class="sxs-lookup"><span data-stu-id="856de-122">Required Members for IDockProvider</span></span>  
+ <span data-ttu-id="856de-123">次のプロパティとメソッドは、IDockProvider インターフェイスの実装時に必要です。</span><span class="sxs-lookup"><span data-stu-id="856de-123">The following properties and methods are required for implementing the IDockProvider interface.</span></span>  
   
-|必須メンバー|メンバーの型|ノート|  
-|------------|------------|---------|  
-|<xref:System.Windows.Automation.Provider.IDockProvider.DockPosition%2A>|プロパティ|なし|  
-|<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A>|メソッド|なし|  
+|<span data-ttu-id="856de-124">必須メンバー</span><span class="sxs-lookup"><span data-stu-id="856de-124">Required members</span></span>|<span data-ttu-id="856de-125">メンバーの型</span><span class="sxs-lookup"><span data-stu-id="856de-125">Member type</span></span>|<span data-ttu-id="856de-126">ノート</span><span class="sxs-lookup"><span data-stu-id="856de-126">Notes</span></span>|  
+|----------------------|-----------------|-----------|  
+|<xref:System.Windows.Automation.Provider.IDockProvider.DockPosition%2A>|<span data-ttu-id="856de-127">プロパティ</span><span class="sxs-lookup"><span data-stu-id="856de-127">Property</span></span>|<span data-ttu-id="856de-128">なし</span><span class="sxs-lookup"><span data-stu-id="856de-128">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A>|<span data-ttu-id="856de-129">メソッド</span><span class="sxs-lookup"><span data-stu-id="856de-129">Method</span></span>|<span data-ttu-id="856de-130">なし</span><span class="sxs-lookup"><span data-stu-id="856de-130">None</span></span>|  
   
- このコントロール パターンに関連付けられたイベントはありません。  
+ <span data-ttu-id="856de-131">このコントロール パターンには、関連するイベントがありません。</span><span class="sxs-lookup"><span data-stu-id="856de-131">This control pattern has no associated events.</span></span>  
   
 <a name="Exceptions"></a>   
-## 例外  
- プロバイダーは、次の例外をスローする必要があります。  
+## <a name="exceptions"></a><span data-ttu-id="856de-132">例外</span><span class="sxs-lookup"><span data-stu-id="856de-132">Exceptions</span></span>  
+ <span data-ttu-id="856de-133">プロバイダーは、次の例外をスローする必要があります。</span><span class="sxs-lookup"><span data-stu-id="856de-133">Providers must throw the following exceptions.</span></span>  
   
-|例外の種類|状態|  
-|-----------|--------|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A><br /><br /> -   要求されたドッキング スタイルをコントロールが実行することができない場合。|  
+|<span data-ttu-id="856de-134">例外の種類</span><span class="sxs-lookup"><span data-stu-id="856de-134">Exception type</span></span>|<span data-ttu-id="856de-135">状態</span><span class="sxs-lookup"><span data-stu-id="856de-135">Condition</span></span>|  
+|--------------------|---------------|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A><br /><br /> <span data-ttu-id="856de-136">場合、コントロールは、要求されたドッキング スタイルを実行することはできません。</span><span class="sxs-lookup"><span data-stu-id="856de-136">-   When a control is not able to execute the requested dock style.</span></span>|  
   
-## 参照  
- [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)   
- [Support Control Patterns in a UI Automation Provider](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)   
- [UI Automation Control Patterns for Clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)   
- [UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)   
- [Use Caching in UI Automation](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+## <a name="see-also"></a><span data-ttu-id="856de-137">関連項目</span><span class="sxs-lookup"><span data-stu-id="856de-137">See Also</span></span>  
+ [<span data-ttu-id="856de-138">UI オートメーション コントロール パターンの概要</span><span class="sxs-lookup"><span data-stu-id="856de-138">UI Automation Control Patterns Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [<span data-ttu-id="856de-139">UI オートメーション プロバイダーでコントロール パターンをサポートします。</span><span class="sxs-lookup"><span data-stu-id="856de-139">Support Control Patterns in a UI Automation Provider</span></span>](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
+ [<span data-ttu-id="856de-140">クライアントの UI オートメーション コントロール パターン</span><span class="sxs-lookup"><span data-stu-id="856de-140">UI Automation Control Patterns for Clients</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
+ [<span data-ttu-id="856de-141">UI オートメーション ツリーの概要</span><span class="sxs-lookup"><span data-stu-id="856de-141">UI Automation Tree Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
+ [<span data-ttu-id="856de-142">UI オートメーションにおけるキャッシュを使用します。</span><span class="sxs-lookup"><span data-stu-id="856de-142">Use Caching in UI Automation</span></span>](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)

@@ -1,70 +1,74 @@
 ---
-title: "方法 : ICommandSource を実装する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ICommandSource インターフェイス, 実装"
-  - "インターフェイス, ICommandSource, 実装"
+title: "方法 : ICommandSource を実装する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: ICommandSource interfaces [WPF], implementing
 ms.assetid: 7452dd39-6e11-44bf-806a-31d87f3772ac
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bdff5ebeb51daff4e8848e9a7c8282c2eee6f208
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : ICommandSource を実装する
-この例では、<xref:System.Windows.Input.ICommandSource> を実装してコマンド ソースを作成する方法を示します。  コマンド ソースは、コマンドを呼び出す方法を認識しているオブジェクトです。  <xref:System.Windows.Input.ICommandSource> インターフェイスは、<xref:System.Windows.Input.ICommandSource.Command%2A>、<xref:System.Windows.Input.ICommandSource.CommandParameter%2A>、および <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> の 3 つのメンバーを公開します。  <xref:System.Windows.Input.ICommandSource.Command%2A> は、呼び出されるコマンドです。  <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> は、コマンド ソースからコマンドを処理するメソッドに渡されるユーザー定義のデータ型です。  <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> は、コマンドが実行されているオブジェクトです。  
+# <a name="how-to-implement-icommandsource"></a><span data-ttu-id="45c7d-102">方法 : ICommandSource を実装する</span><span class="sxs-lookup"><span data-stu-id="45c7d-102">How to: Implement ICommandSource</span></span>
+<span data-ttu-id="45c7d-103">この例は、実装することによってコマンド ソースを作成する方法を示します<xref:System.Windows.Input.ICommandSource>です。</span><span class="sxs-lookup"><span data-stu-id="45c7d-103">This example shows how to create a command source by implementing <xref:System.Windows.Input.ICommandSource>.</span></span>  <span data-ttu-id="45c7d-104">コマンド ソースは、コマンドを呼び出す方法を認識しているオブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="45c7d-104">A command source is an object that knows how to invoke a command.</span></span>  <span data-ttu-id="45c7d-105"><xref:System.Windows.Input.ICommandSource>インターフェイスが 3 つのメンバーを公開: <xref:System.Windows.Input.ICommandSource.Command%2A>、 <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>、および<xref:System.Windows.Input.ICommandSource.CommandTarget%2A>です。</span><span class="sxs-lookup"><span data-stu-id="45c7d-105">The <xref:System.Windows.Input.ICommandSource> interface exposes three members: <xref:System.Windows.Input.ICommandSource.Command%2A>, <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>, and <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>.</span></span>  <span data-ttu-id="45c7d-106"><xref:System.Windows.Input.ICommandSource.Command%2A>呼び出されるコマンドです。</span><span class="sxs-lookup"><span data-stu-id="45c7d-106"><xref:System.Windows.Input.ICommandSource.Command%2A> is the command which will be invoked.</span></span> <span data-ttu-id="45c7d-107"><xref:System.Windows.Input.ICommandSource.CommandParameter%2A>はコマンドのソースから、コマンドを処理するメソッドに渡されるユーザー定義データ型です。</span><span class="sxs-lookup"><span data-stu-id="45c7d-107">The <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> is a user-defined data type which is passed from the command source to the method which handles the command.</span></span> <span data-ttu-id="45c7d-108"><xref:System.Windows.Input.ICommandSource.CommandTarget%2A>コマンドが実行されているオブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="45c7d-108">The <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> is the object that the command is being executed on.</span></span>  
   
- この例では、<xref:System.Windows.Controls.Slider> コントロールをサブクラス化し、<xref:System.Windows.Input.ICommandSource> を実装するクラスが作成されます。  
+ <span data-ttu-id="45c7d-109">この例では、クラスが、どのサブクラスを作成、<xref:System.Windows.Controls.Slider>コントロールと実装<xref:System.Windows.Input.ICommandSource>です。</span><span class="sxs-lookup"><span data-stu-id="45c7d-109">In this example, a class is created which subclasses the <xref:System.Windows.Controls.Slider> control and implements <xref:System.Windows.Input.ICommandSource>.</span></span>  
   
-## 使用例  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、<xref:System.Windows.Controls.Button>、<xref:System.Windows.Controls.MenuItem>、<xref:System.Windows.Controls.ListBoxItem> などの <xref:System.Windows.Input.ICommandSource> を実装するさまざまなクラスを提供します。  コマンド ソースは、コマンドを呼び出す方法を定義します。  <xref:System.Windows.Controls.Button> および <xref:System.Windows.Controls.MenuItem> は、クリックされるとコマンドを呼び出します。  <xref:System.Windows.Controls.ListBoxItem> は、ダブルクリックされるとコマンドを呼び出します。  これらのクラスは、<xref:System.Windows.Input.ICommandSource.Command%2A> プロパティが設定されている場合にのみコマンド ソースになります。  
+## <a name="example"></a><span data-ttu-id="45c7d-110">例</span><span class="sxs-lookup"><span data-stu-id="45c7d-110">Example</span></span>  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="45c7d-111">実装するクラスのいくつか提供<xref:System.Windows.Input.ICommandSource>など<xref:System.Windows.Controls.Button>、 <xref:System.Windows.Controls.MenuItem>、および<xref:System.Windows.Controls.ListBoxItem>です。</span><span class="sxs-lookup"><span data-stu-id="45c7d-111"> provides a number of classes which implement <xref:System.Windows.Input.ICommandSource>, such as <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.MenuItem>, and <xref:System.Windows.Controls.ListBoxItem>.</span></span>  <span data-ttu-id="45c7d-112">コマンド ソースは、コマンドを呼び出す方法を定義します。</span><span class="sxs-lookup"><span data-stu-id="45c7d-112">A command source defines how it invokes a command.</span></span>   <span data-ttu-id="45c7d-113"><xref:System.Windows.Controls.Button>および<xref:System.Windows.Controls.MenuItem>クリックしたときに、コマンドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="45c7d-113"><xref:System.Windows.Controls.Button> and <xref:System.Windows.Controls.MenuItem> invoke a command when they are clicked.</span></span>  <span data-ttu-id="45c7d-114">A<xref:System.Windows.Controls.ListBoxItem>ダブルクリックされたときにコマンドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="45c7d-114">A <xref:System.Windows.Controls.ListBoxItem> invokes a command when it is double clicked.</span></span> <span data-ttu-id="45c7d-115">これらのクラスでは、コマンドのみになるソース、<xref:System.Windows.Input.ICommandSource.Command%2A>プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="45c7d-115">These classes only become a command source when their <xref:System.Windows.Input.ICommandSource.Command%2A> property is set.</span></span>  
   
- この例では、スライダーが移動したときにコマンドを呼び出します。正確には、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> プロパティが変更されたときにコマンドを呼び出します。  
+ <span data-ttu-id="45c7d-116">この例で、スライダーを移動すると、コマンドを呼び出すより正確に言うと、ときに、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>プロパティを変更します。</span><span class="sxs-lookup"><span data-stu-id="45c7d-116">For this example we will invoke the command when the slider is moved, or more accurately, when the <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> property is changed.</span></span>  
   
- クラス定義を次に示します。  
+ <span data-ttu-id="45c7d-117">クラス定義を次に示します。</span><span class="sxs-lookup"><span data-stu-id="45c7d-117">The following is the class definition.</span></span>  
   
  [!code-csharp[ImplementICommandSource#ImplementICommandSourceClassDefinition](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImplementICommandSource/CSharp/CommandSlider.cs#implementicommandsourceclassdefinition)]
  [!code-vb[ImplementICommandSource#ImplementICommandSourceClassDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImplementICommandSource/visualbasic/commandslider.vb#implementicommandsourceclassdefinition)]  
   
- 次に、<xref:System.Windows.Input.ICommandSource> メンバーを実装します。  この例では、プロパティは <xref:System.Windows.DependencyProperty> オブジェクトとして実装されます。  これにより、プロパティでデータ バインディングを使用できるようになります。  <xref:System.Windows.DependencyProperty> クラスの詳細については、「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」を参照してください。  データ バインディングの詳細については、「[データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
+ <span data-ttu-id="45c7d-118">次の手順を実装するのには、<xref:System.Windows.Input.ICommandSource>メンバー。</span><span class="sxs-lookup"><span data-stu-id="45c7d-118">The next step is to implement the <xref:System.Windows.Input.ICommandSource> members.</span></span>  <span data-ttu-id="45c7d-119">この例では、プロパティとして実装されます<xref:System.Windows.DependencyProperty>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="45c7d-119">In this example, the properties are implemented as <xref:System.Windows.DependencyProperty> objects.</span></span>  <span data-ttu-id="45c7d-120">これにより、データ バインディングを使用するプロパティです。</span><span class="sxs-lookup"><span data-stu-id="45c7d-120">This enables the properties to use data binding.</span></span>  <span data-ttu-id="45c7d-121">詳細については、<xref:System.Windows.DependencyProperty>クラスを参照してください、[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="45c7d-121">For more information about the <xref:System.Windows.DependencyProperty> class, see the [Dependency Properties Overview](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md).</span></span>  <span data-ttu-id="45c7d-122">データ バインディングの詳細については、次を参照してください。、[データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="45c7d-122">For more information about data binding, see the [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md).</span></span>  
   
- <xref:System.Windows.Input.ICommandSource.Command%2A> プロパティのみを次に示します。  
+ <span data-ttu-id="45c7d-123">のみ、<xref:System.Windows.Input.ICommandSource.Command%2A>プロパティを示します。</span><span class="sxs-lookup"><span data-stu-id="45c7d-123">Only the <xref:System.Windows.Input.ICommandSource.Command%2A> property is shown here.</span></span>  
   
  [!code-csharp[ImplementICommandSource#ImplementICommandSourceCommandPropertyDefinition](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImplementICommandSource/CSharp/CommandSlider.cs#implementicommandsourcecommandpropertydefinition)]
  [!code-vb[ImplementICommandSource#ImplementICommandSourceCommandPropertyDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImplementICommandSource/visualbasic/commandslider.vb#implementicommandsourcecommandpropertydefinition)]  
   
- <xref:System.Windows.DependencyProperty> 変更コールバックを次に示します。  
+ <span data-ttu-id="45c7d-124">次に、<xref:System.Windows.DependencyProperty>コールバックを変更します。</span><span class="sxs-lookup"><span data-stu-id="45c7d-124">The following is the <xref:System.Windows.DependencyProperty> change callback.</span></span>  
   
  [!code-csharp[ImplementICommandSource#ImplementICommandSourceCommandChanged](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImplementICommandSource/CSharp/CommandSlider.cs#implementicommandsourcecommandchanged)]
  [!code-vb[ImplementICommandSource#ImplementICommandSourceCommandChanged](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImplementICommandSource/visualbasic/commandslider.vb#implementicommandsourcecommandchanged)]  
   
- 次に、コマンド ソースに関連付けられているコマンドを追加および削除します。  <xref:System.Windows.Input.ICommandSource.Command%2A> プロパティは、新しいコマンドを追加しても上書きできません。これは、前のコマンドに関連付けられているイベント ハンドラーが存在する場合、まずそのハンドラーを削除する必要があるためです。  
+ <span data-ttu-id="45c7d-125">次の手順を追加およびコマンド ソースに関連付けられているコマンドを削除します。</span><span class="sxs-lookup"><span data-stu-id="45c7d-125">The next step is to add and remove the command which is associated with the command source.</span></span>  <span data-ttu-id="45c7d-126"><xref:System.Windows.Input.ICommandSource.Command%2A>プロパティだけでために上書きできません、新しいコマンドが追加されると、イベント ハンドラーは、前のコマンドに関連付けられている場合は 1 つを最初に削除する必要があります。</span><span class="sxs-lookup"><span data-stu-id="45c7d-126">The <xref:System.Windows.Input.ICommandSource.Command%2A> property cannot simply be overwritten when a new command is added, because the event handlers associated with the previous command, if there was one, must be removed first.</span></span>  
   
  [!code-csharp[ImplementICommandSource#ImplementICommandSourceHookUnHookCommands](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImplementICommandSource/CSharp/CommandSlider.cs#implementicommandsourcehookunhookcommands)]
  [!code-vb[ImplementICommandSource#ImplementICommandSourceHookUnHookCommands](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImplementICommandSource/visualbasic/commandslider.vb#implementicommandsourcehookunhookcommands)]  
   
- 最後に、<xref:System.Windows.Input.ICommand.CanExecuteChanged> ハンドラーおよび <xref:System.Windows.Input.ICommand.Execute%2A> メソッドのロジックを作成します。  
+ <span data-ttu-id="45c7d-127">ロジックを作成する最後の手順では、<xref:System.Windows.Input.ICommand.CanExecuteChanged>ハンドラーおよび<xref:System.Windows.Input.ICommand.Execute%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="45c7d-127">The last step is to create logic for the <xref:System.Windows.Input.ICommand.CanExecuteChanged> handler and the <xref:System.Windows.Input.ICommand.Execute%2A> method.</span></span>  
   
- 現在のコマンド ターゲットでコマンドを実行できるかどうかが変更された可能性があることが、<xref:System.Windows.Input.ICommand.CanExecuteChanged> イベントによってコマンド ソースに通知されます。  通常、このイベントを受け取ると、コマンド ソースがコマンドで <xref:System.Windows.Input.ICommand.CanExecute%2A> メソッドを呼び出します。  コマンドが現在のコマンド ターゲットで実行できない場合、通常はコマンド ソースが無効になります。  コマンドが現在のコマンド ターゲットで実行できる場合、通常はコマンド ソースが有効になります。  
+ <span data-ttu-id="45c7d-128"><xref:System.Windows.Input.ICommand.CanExecuteChanged>イベントは、現在のコマンド ターゲットで実行するコマンドの機能が変更されたコマンド ソースに通知します。</span><span class="sxs-lookup"><span data-stu-id="45c7d-128">The <xref:System.Windows.Input.ICommand.CanExecuteChanged> event notifies the command source that the ability of the command to execute on the current command target may have changed.</span></span>  <span data-ttu-id="45c7d-129">通常呼び出しコマンド ソースがこのイベントを受け取ると、<xref:System.Windows.Input.ICommand.CanExecute%2A>のコマンドは、上のメソッドです。</span><span class="sxs-lookup"><span data-stu-id="45c7d-129">When a command source receives this event, it typically calls the <xref:System.Windows.Input.ICommand.CanExecute%2A> method on the command.</span></span>  <span data-ttu-id="45c7d-130">コマンドが現在のコマンド ターゲットで実行できない場合、通常はコマンド ソースが無効にします。</span><span class="sxs-lookup"><span data-stu-id="45c7d-130">If the command cannot execute on the current command target, the command source will typically disable itself.</span></span>  <span data-ttu-id="45c7d-131">コマンドは、現在のコマンド ターゲットで実行できる場合、通常はコマンド ソースが有効にします。</span><span class="sxs-lookup"><span data-stu-id="45c7d-131">If the command can execute on the current command target, the command source will typically enable itself.</span></span>  
   
  [!code-csharp[ImplementICommandSource#ImplementICommandCanExecuteChanged](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImplementICommandSource/CSharp/CommandSlider.cs#implementicommandcanexecutechanged)]
  [!code-vb[ImplementICommandSource#ImplementICommandCanExecuteChanged](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImplementICommandSource/visualbasic/commandslider.vb#implementicommandcanexecutechanged)]  
   
- 最後の手順は、<xref:System.Windows.Input.ICommand.Execute%2A> メソッドです。  コマンドが <xref:System.Windows.Input.RoutedCommand> の場合は、<xref:System.Windows.Input.RoutedCommand> <xref:System.Windows.Input.RoutedCommand.Execute%2A> メソッドが呼び出されます。それ以外の場合は、<xref:System.Windows.Input.ICommand> <xref:System.Windows.Input.ICommand.Execute%2A> メソッドが呼び出されます。  
+ <span data-ttu-id="45c7d-132">最後の手順は、<xref:System.Windows.Input.ICommand.Execute%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="45c7d-132">The last step is the <xref:System.Windows.Input.ICommand.Execute%2A> method.</span></span>  <span data-ttu-id="45c7d-133">コマンドがの場合、 <xref:System.Windows.Input.RoutedCommand>、 <xref:System.Windows.Input.RoutedCommand> <xref:System.Windows.Input.RoutedCommand.Execute%2A>メソッドが呼び出される、それ以外の<xref:System.Windows.Input.ICommand><xref:System.Windows.Input.ICommand.Execute%2A>メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="45c7d-133">If the command is a <xref:System.Windows.Input.RoutedCommand>, the <xref:System.Windows.Input.RoutedCommand> <xref:System.Windows.Input.RoutedCommand.Execute%2A> method is called; otherwise, the <xref:System.Windows.Input.ICommand> <xref:System.Windows.Input.ICommand.Execute%2A> method is called.</span></span>  
   
  [!code-csharp[ImplementICommandSource#ImplementICommandExecute](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImplementICommandSource/CSharp/CommandSlider.cs#implementicommandexecute)]
  [!code-vb[ImplementICommandSource#ImplementICommandExecute](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImplementICommandSource/visualbasic/commandslider.vb#implementicommandexecute)]  
   
-## 参照  
- <xref:System.Windows.Input.ICommandSource>   
- <xref:System.Windows.Input.ICommand>   
- <xref:System.Windows.Input.RoutedCommand>   
- [コマンド実行の概要](../../../../docs/framework/wpf/advanced/commanding-overview.md)
+## <a name="see-also"></a><span data-ttu-id="45c7d-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="45c7d-134">See Also</span></span>  
+ <xref:System.Windows.Input.ICommandSource>  
+ <xref:System.Windows.Input.ICommand>  
+ <xref:System.Windows.Input.RoutedCommand>  
+ [<span data-ttu-id="45c7d-135">コマンド実行の概要</span><span class="sxs-lookup"><span data-stu-id="45c7d-135">Commanding Overview</span></span>](../../../../docs/framework/wpf/advanced/commanding-overview.md)

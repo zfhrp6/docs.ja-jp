@@ -1,131 +1,113 @@
 ---
-title: "拡張する、Visual Basic では、My Namespace |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "Visual Basic における My 名前空間の拡張"
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-f1_keywords:
-- vb.AddingMyExtensions
-dev_langs:
-- VB
+f1_keywords: vb.AddingMyExtensions
 helpviewer_keywords:
-- My namespace, customizing
+- My namespace [Visual Basic], customizing
 - My namespace
-- My namespace, extending
+- My namespace [Visual Basic], extending
 ms.assetid: 808e8617-b01c-4135-8b21-babe87389e8e
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1d1e957536f35b81a9672994c9d4d261afb764ea
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 25fff04b19cce299a2d437e662fb7481153d29da
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="extending-the-my-namespace-in-visual-basic"></a>Visual Basic における My 名前空間の拡張
-`My` Visual Basic における名前空間は、プロパティおよび .NET Framework の能力を簡単に利用するためのメソッドを公開します。 `My`名前空間には、一般的なプログラミング上の問題、多くの場合、1 行のコードに困難な作業を減らすことが簡略化されます。 さらに、`My`の動作をカスタマイズできるように、名前空間は完全に拡張可能`My`し、その階層の特定のアプリケーションのニーズに対応する新しいサービスを追加します。 このトピックでは両方の既存のメンバーをカスタマイズする方法、`My`名前空間に、独自のカスタム クラスを追加する方法と、`My`名前空間。  
+# <a name="extending-the-my-namespace-in-visual-basic"></a><span data-ttu-id="2e1ae-102">Visual Basic における My 名前空間の拡張</span><span class="sxs-lookup"><span data-stu-id="2e1ae-102">Extending the My Namespace in Visual Basic</span></span>
+<span data-ttu-id="2e1ae-103">`My` Visual Basic での名前空間を簡単に活用するために、.NET Framework の機能を有効にするプロパティとメソッドを公開します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-103">The `My` namespace in Visual Basic exposes properties and methods that enable you to easily take advantage of the power of the .NET Framework.</span></span> <span data-ttu-id="2e1ae-104">`My`名前空間には多くの場合、1 行のコードに困難な作業を減らす、プログラミングの共通の問題が簡略化します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-104">The `My` namespace simplifies common programming problems, often reducing a difficult task to a single line of code.</span></span> <span data-ttu-id="2e1ae-105">さらに、`My`の動作をカスタマイズすることができるように、名前空間は完全に拡張可能`My`特定のアプリケーションのニーズに合わせて調整するには、その階層に新しいサービスを追加します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-105">Additionally, the `My` namespace is fully extensible so that you can customize the behavior of `My` and add new services to its hierarchy to adapt to specific application needs.</span></span> <span data-ttu-id="2e1ae-106">このトピックでは両方の既存のメンバーをカスタマイズする方法、`My`名前空間に独自のカスタム クラスを追加する方法と、`My`名前空間。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-106">This topic discusses both how to customize existing members of the `My` namespace and how to add your own custom classes to the `My` namespace.</span></span>  
   
- **トピック目次**  
+ <span data-ttu-id="2e1ae-107">**トピックの内容**</span><span class="sxs-lookup"><span data-stu-id="2e1ae-107">**Topic Contents**</span></span>  
   
--   [既存の My Namespace メンバーのカスタマイズ](#customizing)  
+-   [<span data-ttu-id="2e1ae-108">既存の My Namespace メンバーのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="2e1ae-108">Customizing Existing My Namespace Members</span></span>](#customizing)  
   
--   [My オブジェクトにメンバーを追加します。](#addingtoobjects)  
+-   [<span data-ttu-id="2e1ae-109">My オブジェクトにメンバーを追加します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-109">Adding Members to My Objects</span></span>](#addingtoobjects)  
   
--   [カスタム オブジェクトを追加、My Namespace](#addingcustom)  
+-   [<span data-ttu-id="2e1ae-110">カスタム オブジェクトを追加、My Namespace</span><span class="sxs-lookup"><span data-stu-id="2e1ae-110">Adding Custom Objects to the My Namespace</span></span>](#addingcustom)  
   
--   [メンバーを追加する、My Namespace](#addingtonamespace)  
+-   [<span data-ttu-id="2e1ae-111">メンバーを追加する、My Namespace</span><span class="sxs-lookup"><span data-stu-id="2e1ae-111">Adding Members to the My Namespace</span></span>](#addingtonamespace)  
   
--   [カスタム My オブジェクトへのイベントの追加](#addingevents)  
+-   [<span data-ttu-id="2e1ae-112">カスタム My オブジェクトへのイベントの追加</span><span class="sxs-lookup"><span data-stu-id="2e1ae-112">Adding Events to Custom My Objects</span></span>](#addingevents)  
   
--   [デザインのガイドライン](#design)  
+-   [<span data-ttu-id="2e1ae-113">デザイン ガイドライン</span><span class="sxs-lookup"><span data-stu-id="2e1ae-113">Design Guidelines</span></span>](#design)  
   
--   [用のクラス ライブラリをデザイン、](#designing)  
+-   [<span data-ttu-id="2e1ae-114">設計のクラス ライブラリの </span><span class="sxs-lookup"><span data-stu-id="2e1ae-114">Designing Class Libraries for My</span></span>](#designing)  
   
--   [パッケージ化と配置の拡張機能](#packaging)  
+-   [<span data-ttu-id="2e1ae-115">パッケージ化と配置の拡張機能</span><span class="sxs-lookup"><span data-stu-id="2e1ae-115">Packaging and Deploying Extensions</span></span>](#packaging)  
   
-##  <a name="customizing"></a>既存の My Namespace メンバーのカスタマイズ  
- `My`公開の Visual Basic で名前空間は、アプリケーションや、コンピューターに関する情報を頻繁に使用します。 内のオブジェクトの完全な一覧については、`My`名前空間を参照してください[マイ参照](../../../visual-basic/language-reference/keywords/my-reference.md)します。 既存のメンバーをカスタマイズする必要があります、`My`名前空間するよう、アプリケーションのニーズに合致しています。 内のオブジェクトのプロパティ、`My`が読み取り専用でない名前空間は、カスタムの値に設定することができます。  
+##  <span data-ttu-id="2e1ae-116"><a name="customizing"></a>既存の My Namespace メンバーのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="2e1ae-116"><a name="customizing"></a> Customizing Existing My Namespace Members</span></span>  
+ <span data-ttu-id="2e1ae-117">`My` Visual Basic の公開で名前空間は、アプリケーション、自分のコンピューターに関する情報を頻繁に使用します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-117">The `My` namespace in Visual Basic exposes frequently used information about your application, your computer, and more.</span></span> <span data-ttu-id="2e1ae-118">内のオブジェクトの完全な一覧については、`My`名前空間を参照してください[マイ参照](../../../visual-basic/language-reference/keywords/my-reference.md)です。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-118">For a complete list of the objects in the `My` namespace, see [My Reference](../../../visual-basic/language-reference/keywords/my-reference.md).</span></span> <span data-ttu-id="2e1ae-119">既存のメンバーをカスタマイズする必要があります、`My`名前空間にするようは、アプリケーションのニーズを満たします。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-119">You may have to customize existing members of the `My` namespace so that they better match the needs of your application.</span></span> <span data-ttu-id="2e1ae-120">内のオブジェクトの任意のプロパティ、`My`読み取り専用ではない名前空間は、カスタムの値に設定することができます。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-120">Any property of an object in the `My` namespace that is not read-only can be set to a custom value.</span></span>  
   
- たとえば、頻繁に使用すると仮定、`My.User`アプリケーションを実行しているユーザーの現在のセキュリティ コンテキストにアクセスするオブジェクト。 ただし、会社では、カスタムのユーザー オブジェクトを使用して、追加情報と、企業内のユーザー用の機能を公開します。 このシナリオでの既定値を置き換えることができます、`My.User.CurrentPrincipal`次の例で示すように、独自カスタム プリンシパルのオブジェクトのインスタンスを持つプロパティです。  
+ <span data-ttu-id="2e1ae-121">たとえば、頻繁に使用する、`My.User`アプリケーションを実行しているユーザーの現在のセキュリティ コンテキストにアクセスするオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-121">For example, assume that you frequently use the `My.User` object to access the current security context for the user running your application.</span></span> <span data-ttu-id="2e1ae-122">ただし、会社は、追加情報や企業内のユーザーの機能を公開するのにカスタムのユーザー オブジェクトを使用します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-122">However, your company uses a custom user object to expose additional information and capabilities for users within the company.</span></span> <span data-ttu-id="2e1ae-123">このシナリオでの既定値を置き換えることができます、`My.User.CurrentPrincipal`次の例で示すように、独自カスタム プリンシパルのオブジェクトのインスタンスを持つプロパティです。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-123">In this scenario, you can replace the default value of the `My.User.CurrentPrincipal` property with an instance of your own custom principal object, as shown in the following example.</span></span>  
   
- [!code-vb[VbVbcnExtendingMy&#1;](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_1.vb)]  
+ [!code-vb[VbVbcnExtendingMy#1](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_1.vb)]  
   
- 設定、`CurrentPrincipal`プロパティを`My.User`オブジェクトが、アプリケーションを実行する id を変更します。 `My.User`オブジェクトは、さらに、新しく指定したユーザーに関する情報を返します。  
+ <span data-ttu-id="2e1ae-124">設定、`CurrentPrincipal`プロパティを`My.User`オブジェクトが、アプリケーションを実行する id を変更します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-124">Setting the `CurrentPrincipal` property on the `My.User` object changes the identity under which the application runs.</span></span> <span data-ttu-id="2e1ae-125">`My.User`オブジェクトは、さらに、新しく指定したユーザーに関する情報を返します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-125">The `My.User` object, in turn, returns information about the newly specified user.</span></span>  
   
-##  <a name="addingtoobjects"></a>My オブジェクトにメンバーを追加します。  
- 返される型`My.Application`と`My.Computer`として定義された`Partial`クラスです。 そのため、拡張することができます、`My.Application`と`My.Computer`オブジェクトを作成することで、`Partial`という名前のクラス`MyApplication`または`MyComputer`です。 クラスにすることはできません、`Private`クラスです。 一部として、クラスを指定する場合、`My`名前空間、プロパティとは含まれているメソッドを追加できる、`My.Application`または`My.Computer`オブジェクトです。  
+##  <span data-ttu-id="2e1ae-126"><a name="addingtoobjects"></a>My オブジェクトにメンバーを追加します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-126"><a name="addingtoobjects"></a> Adding Members to My Objects</span></span>  
+ <span data-ttu-id="2e1ae-127">返される型`My.Application`と`My.Computer`として定義されます`Partial`クラスです。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-127">The types returned from `My.Application` and `My.Computer` are defined as `Partial` classes.</span></span> <span data-ttu-id="2e1ae-128">そのため、拡張することができます、`My.Application`と`My.Computer`オブジェクトを作成して、`Partial`という名前のクラス`MyApplication`または`MyComputer`です。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-128">Therefore, you can extend the `My.Application` and `My.Computer` objects by creating a `Partial` class named `MyApplication` or `MyComputer`.</span></span> <span data-ttu-id="2e1ae-129">クラスにすることはできません、`Private`クラスです。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-129">The class cannot be a `Private` class.</span></span> <span data-ttu-id="2e1ae-130">一部として、クラスを指定する場合、`My`名前空間、プロパティとに含まれているメソッドを追加できる、`My.Application`または`My.Computer`オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-130">If you specify the class as part of the `My` namespace, you can add properties and methods that will be included with the `My.Application` or `My.Computer` objects.</span></span>  
   
- たとえば、次の例がという名前のプロパティを追加`DnsServerIPAddresses`に、`My.Computer`オブジェクトです。  
+ <span data-ttu-id="2e1ae-131">たとえば、次の例がという名前のプロパティを追加`DnsServerIPAddresses`を`My.Computer`オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-131">For example, the following example adds a property named `DnsServerIPAddresses` to the `My.Computer` object.</span></span>  
   
- [!code-vb[VbVbcnExtendingMy&#2;](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_2.vb)]  
+ [!code-vb[VbVbcnExtendingMy#2](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_2.vb)]  
   
-##  <a name="addingcustom"></a>カスタム オブジェクトを追加、My Namespace  
- ですが、`My`名前空間は、多くの一般的なプログラミング タスクの解決方法、タスクが表示される可能性を`My`名前空間では取り上げません。 たとえば、アプリケーションが、ユーザー データのカスタム ディレクトリ サービスにアクセスまたは Visual Basic では、既定でインストールされていないアセンブリ、アプリケーションを使用しています。 拡張する、`My`名前空間は、環境に固有の一般的なタスクへのカスタム ソリューションを含めます。 `My`名前空間は、増え続けるアプリケーションのニーズを満たす新しいメンバーを追加する簡単に拡張できます。 さらに、展開、`My`名前空間の拡張を Visual Basic テンプレートとして他の開発者です。  
+##  <span data-ttu-id="2e1ae-132"><a name="addingcustom"></a>カスタム オブジェクトを追加、My Namespace</span><span class="sxs-lookup"><span data-stu-id="2e1ae-132"><a name="addingcustom"></a> Adding Custom Objects to the My Namespace</span></span>  
+ <span data-ttu-id="2e1ae-133">`My`名前空間は、多くの一般的なプログラミング タスクのソリューションを提供、作業が発生する可能性がある、`My`名前空間では対処できません。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-133">Although the `My` namespace provides solutions for many common programming tasks, you may encounter tasks that the `My` namespace does not address.</span></span> <span data-ttu-id="2e1ae-134">たとえば、アプリケーションが、ユーザー データのカスタム ディレクトリ サービスにアクセスしたり、アプリケーションが Visual Basic での既定でインストールされていないアセンブリを使用可能性があります。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-134">For example, your application might access custom directory services for user data, or your application might use assemblies that are not installed by default with Visual Basic.</span></span> <span data-ttu-id="2e1ae-135">拡張することができます、`My`環境に固有の一般的なタスクへのカスタム ソリューションを含める名前空間。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-135">You can extend the `My` namespace to include custom solutions to common tasks that are specific to your environment.</span></span> <span data-ttu-id="2e1ae-136">`My`名前空間は、アプリケーションのニーズの増大に応じて新しいメンバーを追加に簡単に拡張できます。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-136">The `My` namespace can easily be extended to add new members to meet growing application needs.</span></span> <span data-ttu-id="2e1ae-137">さらに、展開することができます、`My`名前空間の拡張機能を Visual Basic テンプレートとして他の開発者。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-137">Additionally, you can deploy your `My` namespace extensions to other developers as a Visual Basic template.</span></span>  
   
-###  <a name="addingtonamespace"></a>メンバーを追加する、My Namespace  
- `My`名前空間には、他の名前空間のようにプロパティを追加できます最上位レベルにモジュールを追加して、指定するだけで、`Namespace`の`My`です。 使用して、モジュールに注釈を付ける、`HideModuleName`属性の次の例で示すようにします。 `HideModuleName`属性により、IntelliSense は表示されないように、モジュール名のメンバーを表示するとき、`My`名前空間。  
+###  <span data-ttu-id="2e1ae-138"><a name="addingtonamespace"></a>メンバーを追加する、My Namespace</span><span class="sxs-lookup"><span data-stu-id="2e1ae-138"><a name="addingtonamespace"></a> Adding Members to the My Namespace</span></span>  
+ <span data-ttu-id="2e1ae-139">`My`名前空間には、その他の名前空間のようなことができますを追加する最上位のプロパティだけを追加して、モジュールを指定する、`Namespace`の`My`します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-139">Because `My` is a namespace like any other namespace, you can add top-level properties to it by just adding a module and specifying a `Namespace` of `My`.</span></span> <span data-ttu-id="2e1ae-140">モジュールに注釈を付ける、`HideModuleName`属性の次の例で示すようにします。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-140">Annotate the module with the `HideModuleName` attribute as shown in the following example.</span></span> <span data-ttu-id="2e1ae-141">`HideModuleName`属性により、エントリのメンバーを表示するとき、IntelliSense は、モジュール名が表示されない、`My`名前空間。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-141">The `HideModuleName` attribute ensures that IntelliSense will not display the module name when it displays the members of the `My` namespace.</span></span>  
   
- [!code-vb[VbVbcnExtendingMy&#3;](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_3.vb)]  
+ [!code-vb[VbVbcnExtendingMy#3](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_3.vb)]  
   
- メンバーを追加する、`My`名前空間、モジュールに必要に応じてプロパティを追加します。 追加されたプロパティごとに、`My`名前空間、型のプライベート フィールドを追加`ThreadSafeObjectProvider(Of T)`型は、カスタム プロパティによって返される型。 このフィールドは呼び出すことによって、プロパティによって返されるスレッド セーフなオブジェクト インスタンスの作成に使用、`GetInstance`メソッドです。 その結果、拡張プロパティにアクセスしている各スレッドは、返される型のインスタンスを受け取ります。 次の例は、という名前のプロパティを追加`SampleExtension`型のある`SampleExtension`に、`My`名前空間。  
+ <span data-ttu-id="2e1ae-142">メンバーを追加する、`My`名前空間、モジュールに必要なプロパティを追加します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-142">To add members to the `My` namespace, add properties as needed to the module.</span></span> <span data-ttu-id="2e1ae-143">追加の各プロパティについて、`My`名前空間、型のプライベート フィールドを追加`ThreadSafeObjectProvider(Of T)`型は、カスタム プロパティによって返される型です。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-143">For each property added to the `My` namespace, add a private field of type `ThreadSafeObjectProvider(Of T)`, where the type is the type returned by your custom property.</span></span> <span data-ttu-id="2e1ae-144">このフィールドは呼び出すことによって、プロパティによって返されるスレッド セーフであるオブジェクトのインスタンスの作成に使用、`GetInstance`メソッドです。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-144">This field is used to create thread-safe object instances to be returned by the property by calling the `GetInstance` method.</span></span> <span data-ttu-id="2e1ae-145">その結果、拡張プロパティにアクセスする各スレッドは、返される型のインスタンスを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-145">As a result, each thread that is accessing the extended property receives its own instance of the returned type.</span></span> <span data-ttu-id="2e1ae-146">次の例は、という名前のプロパティを追加`SampleExtension`型である`SampleExtension`を`My`名前空間。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-146">The following example adds a property named `SampleExtension` that is of type `SampleExtension` to the `My` namespace:</span></span>  
   
- [!code-vb[VbVbcnExtendingMy&4;](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_4.vb)]  
+ [!code-vb[VbVbcnExtendingMy#4](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_4.vb)]  
   
-##  <a name="addingevents"></a>カスタム My オブジェクトへのイベントの追加  
- 使用することができます、`My.Application`独自のイベントを公開するオブジェクト`My`オブジェクトを拡張することによって、`MyApplication`部分クラスに、`My`名前空間。 ダブルクリックし、Windows ベースのプロジェクト、 **My Project**内のノードに、プロジェクトの**ソリューション エクスプ ローラー**します。 Visual Basic で**プロジェクト デザイナー**、 をクリックして、 `Application`  タブでをクリックし、 `View Application Events`  ボタンをクリックします。 ApplicationEvents.vb という新しいファイルが作成されます。 拡張するための次のコードが含まれている、`MyApplication`クラスです。  
+##  <span data-ttu-id="2e1ae-147"><a name="addingevents"></a>カスタム My オブジェクトへのイベントの追加</span><span class="sxs-lookup"><span data-stu-id="2e1ae-147"><a name="addingevents"></a> Adding Events to Custom My Objects</span></span>  
+ <span data-ttu-id="2e1ae-148">使用することができます、`My.Application`独自のイベントを公開するオブジェクト`My`オブジェクトを拡張することによって、`MyApplication`部分クラスで、`My`名前空間。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-148">You can use the `My.Application` object to expose events for your custom `My` objects by extending the `MyApplication` partial class in the `My` namespace.</span></span> <span data-ttu-id="2e1ae-149">ダブルクリックし、Windows ベースのプロジェクト、 **My Project**内のノードに、プロジェクトの**ソリューション エクスプ ローラー**です。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-149">For Windows-based projects, you can double-click the **My Project** node in for your project in **Solution Explorer**.</span></span> <span data-ttu-id="2e1ae-150">Visual Basic で**プロジェクト デザイナー**をクリックして、 `Application`  タブでをクリックし、`View Application Events`ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-150">In the Visual Basic **Project Designer**, click the `Application` tab and then click the `View Application Events` button.</span></span> <span data-ttu-id="2e1ae-151">ApplicationEvents.vb という新しいファイルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-151">A new file that is named ApplicationEvents.vb will be created.</span></span> <span data-ttu-id="2e1ae-152">拡張するための次のコードが含まれている、`MyApplication`クラスです。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-152">It contains the following code for extending the `MyApplication` class.</span></span>  
   
- [!code-vb[VbVbcnExtendingMy&#5;](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_5.vb)]  
+ [!code-vb[VbVbcnExtendingMy#5](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_5.vb)]  
   
- イベント ハンドラーを追加するには独自の`My`オブジェクトへのカスタム イベント ハンドラーを追加することで、`MyApplication`クラスです。 カスタム イベントを使用すると、イベント ハンドラーを追加すると、削除、またはイベントが発生したときに実行されるコードを追加できます。 なお、`AddHandler`コード カスタム イベントがイベントを処理するユーザー コードを追加した場合にのみを実行するためのです。 たとえば、それを考慮して、`SampleExtension`前のセクションからオブジェクトには、`Load`のカスタム イベント ハンドラーを追加するイベントです。 次のコード例は、という名前のカスタム イベント ハンドラーを示しています。`SampleExtensionLoad`されるするときに呼び出さ、`My.SampleExtension.Load`イベントが発生します。 新しいを処理するコードを追加するときに`My.SampleExtensionLoad`、イベント、`AddHandler`このカスタム イベント コードの一部を実行します。 `MyApplication_SampleExtensionLoad`を処理するイベント ハンドラーの例を示すコード例ではメソッドが含まれている、`My.SampleExtensionLoad`イベントです。 注意してください、`SampleExtensionLoad`を決めるときに、イベントが使用できる、**マイ アプリケーション イベント**左側のドロップダウン リスト、コード エディターの上、ApplicationEvents.vb ファイルを編集するときにオプション。  
+ <span data-ttu-id="2e1ae-153">イベント ハンドラーを追加するには独自の`My`オブジェクトへのカスタム イベント ハンドラーを追加することによって、`MyApplication`クラスです。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-153">You can add event handlers for your custom `My` objects by adding custom event handlers to the `MyApplication` class.</span></span> <span data-ttu-id="2e1ae-154">カスタム イベントを使用すると、イベント ハンドラーを追加すると、削除、またはイベントが発生したときに実行されるコードを追加できます。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-154">Custom events enable you to add code that will execute when an event handler is added, removed, or the event is raised.</span></span> <span data-ttu-id="2e1ae-155">なお、`AddHandler`コード、ユーザー イベントを処理するコードを追加した場合にのみ、カスタム イベントが実行されるためです。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-155">Note that the `AddHandler` code for a custom event runs only if code is added by a user to handle the event.</span></span> <span data-ttu-id="2e1ae-156">たとえばを`SampleExtension`、前のセクションのオブジェクトが、`Load`のカスタム イベント ハンドラーを追加するイベントです。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-156">For example, consider that the `SampleExtension` object from the previous section has a `Load` event that you want to add a custom event handler for.</span></span> <span data-ttu-id="2e1ae-157">次のコード例は、という名前のカスタム イベント ハンドラーを示しています。`SampleExtensionLoad`されるときに呼び出されます、`My.SampleExtension.Load`イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-157">The following code example shows a custom event handler named `SampleExtensionLoad` that will be invoked when the `My.SampleExtension.Load` event occurs.</span></span> <span data-ttu-id="2e1ae-158">新しいを処理するコードを追加するときに`My.SampleExtensionLoad`イベント、`AddHandler`このカスタム イベント コードの一部を実行します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-158">When code is added to handle the new `My.SampleExtensionLoad` event, the `AddHandler` part of this custom event code is executed.</span></span> <span data-ttu-id="2e1ae-159">`MyApplication_SampleExtensionLoad`を処理するイベント ハンドラーの例を表示するコード例ではメソッドが含まれている、`My.SampleExtensionLoad`イベント。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-159">The `MyApplication_SampleExtensionLoad` method is included in the code example to show an example of an event handler that handles the `My.SampleExtensionLoad` event.</span></span> <span data-ttu-id="2e1ae-160">なお、`SampleExtensionLoad`を選択すると、イベントが表示されます、**マイ アプリケーション イベント**左のドロップダウン リストの上、コード エディター、ApplicationEvents.vb ファイルを編集するときのオプションです。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-160">Note that the `SampleExtensionLoad` event will be available when you select the **My Application Events** option in the left drop-down list above the Code Editor when you are editing the ApplicationEvents.vb file.</span></span>  
   
- [!code-vb[VbVbcnExtendingMy&6;](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_6.vb)]  
+ [!code-vb[VbVbcnExtendingMy#6](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_6.vb)]  
   
-##  <a name="design"></a>デザインのガイドライン  
- 拡張機能を開発する場合、`My`名前空間、拡張コンポーネントのメンテナンス コストを最小限に抑えるために、次のガイドラインを使用します。  
+##  <span data-ttu-id="2e1ae-161"><a name="design"></a>デザイン ガイドライン</span><span class="sxs-lookup"><span data-stu-id="2e1ae-161"><a name="design"></a> Design Guidelines</span></span>  
+ <span data-ttu-id="2e1ae-162">拡張機能を開発する際に、`My`名前空間を拡張コンポーネントのメンテナンス コストを抑えるために、次のガイドラインを使用します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-162">When you develop extensions to the `My` namespace, use the following guidelines to help minimize the maintenance costs of your extension components.</span></span>  
   
--   **拡張機能のロジックのみが含まれます。** 含まれるロジック、`My`名前空間の拡張機能に必要な機能を公開するために必要なコードのみを含める必要があります、`My`名前空間。 拡張機能は、ソース コードとしてユーザー プロジェクトに存在するため拡張コンポーネントを更新、高のメンテナンス コストが発生し、可能な限り避ける必要があります。  
+-   <span data-ttu-id="2e1ae-163">**拡張機能のロジックのみが含まれます。**</span><span class="sxs-lookup"><span data-stu-id="2e1ae-163">**Include only the extension logic.**</span></span> <span data-ttu-id="2e1ae-164">含まれるロジック、`My`名前空間の拡張機能に必要な機能を公開するために必要なコードのみを含める必要があります、`My`名前空間。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-164">The logic included in the `My` namespace extension should include only the code that is needed to expose the required functionality in the `My` namespace.</span></span> <span data-ttu-id="2e1ae-165">拡張機能は、ソース コードとしてユーザーのプロジェクトに存在するため拡張コンポーネントを更新高のメンテナンス コストが生じます、可能な限り避ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-165">Because your extension will reside in user projects as source code, updating the extension component incurs a high maintenance cost and should be avoided if possible.</span></span>  
   
--   **プロジェクトの前提条件を最小化します。** 拡張機能を作成する場合、`My`名前空間、参照、プロジェクト レベルのインポート、または特定のコンパイラ設定のセットと仮定しないで (たとえば、`Option Strict`オフ) です。 代わりに、依存関係を最小限にしを使用してすべての型参照を完全に修飾、`Global`キーワードです。 またで、拡張機能がコンパイルされることを確認`Option Strict`の拡張機能のエラーを最小限にします。  
+-   <span data-ttu-id="2e1ae-166">**プロジェクトの前提条件を最小限に抑えます。**</span><span class="sxs-lookup"><span data-stu-id="2e1ae-166">**Minimize project assumptions.**</span></span> <span data-ttu-id="2e1ae-167">拡張機能を作成する場合、`My`名前空間、参照、プロジェクト レベル インポート、または特定のコンパイラ設定のセットと仮定しないで (たとえば、`Option Strict`オフ)。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-167">When you create your extensions of the `My` namespace, do not assume a set of references, project-level imports, or specific compiler settings (for example, `Option Strict` off).</span></span> <span data-ttu-id="2e1ae-168">代わりに、依存関係を最小限にしを使用してすべての型参照を完全に修飾、`Global`キーワード。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-168">Instead, minimize dependencies and fully qualify all type references by using the `Global` keyword.</span></span> <span data-ttu-id="2e1ae-169">また、拡張機能を使用してコンパイルすることを確認`Option Strict`の拡張機能でエラーを最小限にします。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-169">Also, ensure that the extension compiles with `Option Strict` on to minimize errors in the extension.</span></span>  
   
--   **拡張機能のコードを分離します。** Visual Studio 項目テンプレートとして簡単に展開できる、拡張機能は、1 つのファイルのコードを記述します。 詳細については、このトピックの後半の「パッケージ化および展開する拡張機能」を参照してください。 すべてを配置する、`My`名前空間の拡張機能コードを単一のファイルまたは別のフォルダー、プロジェクトにも役立つ検索、`My`名前空間の拡張機能です。  
+-   <span data-ttu-id="2e1ae-170">**拡張機能のコードを分離します。**</span><span class="sxs-lookup"><span data-stu-id="2e1ae-170">**Isolate the extension code.**</span></span> <span data-ttu-id="2e1ae-171">Visual Studio 項目テンプレートと簡単に配置できる拡張機能は、1 つのファイルでコードを記述します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-171">Placing the code in a single file makes your extension easily deployable as a Visual Studio item template.</span></span> <span data-ttu-id="2e1ae-172">詳細については、このトピックの「「のパッケージ化し、拡張機能の配置」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-172">For more information, see "Packaging and Deploying Extensions" later in this topic.</span></span> <span data-ttu-id="2e1ae-173">すべてを配置する、`My`名前空間の拡張機能コードを 1 つのファイルまたは別のフォルダーをプロジェクトにも役立ちますを検索するユーザー、`My`名前空間の拡張機能です。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-173">Placing all the `My` namespace extension code in a single file or a separate folder in a project will also help users locate the `My` namespace extension.</span></span>  
   
-##  <a name="designing"></a>用のクラス ライブラリをデザイン、  
- ほとんどのオブジェクト モデルの場合と同様に、一部のデザイン パターンが正常に動作、`My`名前空間とその他のユーザーはありません。 拡張機能を設計する際、`My`名前空間には、次の原則を検討してください。  
+##  <span data-ttu-id="2e1ae-174"><a name="designing"></a>設計のクラス ライブラリの </span><span class="sxs-lookup"><span data-stu-id="2e1ae-174"><a name="designing"></a> Designing Class Libraries for My</span></span>  
+ <span data-ttu-id="2e1ae-175">ほとんどのオブジェクト モデルと同様に、一部のデザイン パターンが適切に機能、`My`名前空間とその他のユーザーはこれはできません。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-175">As is the case with most object models, some design patterns work well in the `My` namespace and others do not.</span></span> <span data-ttu-id="2e1ae-176">拡張機能を設計するとき、`My`名前空間には、次の原則を検討してください。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-176">When designing an extension to the `My` namespace, consider the following principles:</span></span>  
   
--   **ステートレスな方法があります。** 内のメソッド、`My`名前空間は、特定のタスクに完全なソリューションを提供する必要があります。 メソッドに渡されるパラメーター値が特定のタスクを完了するために必要なすべての入力を提供することを確認します。 リソースへの接続などの以前の状態に依存するメソッドを作成しないでください。  
+-   <span data-ttu-id="2e1ae-177">**ステートレスな方法があります。**</span><span class="sxs-lookup"><span data-stu-id="2e1ae-177">**Stateless methods.**</span></span> <span data-ttu-id="2e1ae-178">内のメソッド、`My`名前空間は、特定のタスクへの完全なソリューションを提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-178">Methods in the `My` namespace should provide a complete solution to a specific task.</span></span> <span data-ttu-id="2e1ae-179">メソッドに渡されるパラメーター値が特定のタスクを完了するために必要なすべての入力を提供することを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-179">Ensure that the parameter values that are passed to the method provide all the input required to complete the particular task.</span></span> <span data-ttu-id="2e1ae-180">リソースへの開いている接続など、前の状態に依存するメソッドを作成しないでください。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-180">Avoid creating methods that rely on prior state, such as open connections to resources.</span></span>  
   
--   **グローバルのインスタンス。** 管理されている唯一の状態、`My`名前空間は、プロジェクトに対してグローバルです。 たとえば、`My.Application.Info`アプリケーション全体で共有されている状態をカプセル化します。  
+-   <span data-ttu-id="2e1ae-181">**グローバル インスタンス。**</span><span class="sxs-lookup"><span data-stu-id="2e1ae-181">**Global instances.**</span></span> <span data-ttu-id="2e1ae-182">管理されている唯一の状態、`My`名前空間は、プロジェクトに対してグローバルです。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-182">The only state that is maintained in the `My` namespace is global to the project.</span></span> <span data-ttu-id="2e1ae-183">たとえば、`My.Application.Info`アプリケーション全体で共有されている状態をカプセル化します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-183">For example, `My.Application.Info` encapsulates state that is shared throughout the application.</span></span>  
   
--   **単純なパラメーターの型。** 簡潔さの複雑なパラメーターの型を回避することで。 パラメーターの入力を受け取らないメソッドの代わりに、作成し、文字列、プリミティブ型などの簡単な入力型がかかります。  
+-   <span data-ttu-id="2e1ae-184">**単純なパラメーターの型。**</span><span class="sxs-lookup"><span data-stu-id="2e1ae-184">**Simple parameter types.**</span></span> <span data-ttu-id="2e1ae-185">複雑にならない複雑なパラメーターの型を回避することで。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-185">Keep things simple by avoiding complex parameter types.</span></span> <span data-ttu-id="2e1ae-186">代わりに、いずれかの入力パラメーターをとらないメソッドを作成するかを単純な入力文字列となど型、プリミティブ型にします。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-186">Instead, create methods that either take no parameter input or that take simple input types such as strings, primitive types, and so on.</span></span>  
   
--   **ファクトリ メソッド。** 一部の型がインスタンス化することが困難です。 ファクトリ メソッドを提供する拡張機能として、`My`名前空間を使用するより簡単に検出し、このカテゴリに分類される型を使用します。 適切に動作するためのファクトリ メソッドの例としては`My.Computer.FileSystem.OpenTextFileReader`です。 ストリーム型がいくつかは、.NET Framework で使用できます。 具体的には、テキスト ファイルを指定することによって、`OpenTextFileReader`を使用するストリームをユーザーに役立ちます。  
+-   <span data-ttu-id="2e1ae-187">**ファクトリ メソッド。**</span><span class="sxs-lookup"><span data-stu-id="2e1ae-187">**Factory methods.**</span></span> <span data-ttu-id="2e1ae-188">一部の型がインスタンス化するが困難とは限りません。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-188">Some types are necessarily difficult to instantiate.</span></span> <span data-ttu-id="2e1ae-189">ファクトリ メソッドを提供する拡張機能として、`My`名前空間より簡単に検出し、このカテゴリに分類される型を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-189">Providing factory methods as extensions to the `My` namespace enables you to more easily discover and consume types that fall into this category.</span></span> <span data-ttu-id="2e1ae-190">適切に動作するためのファクトリ メソッドの例は`My.Computer.FileSystem.OpenTextFileReader`します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-190">An example of a factory method that works well is `My.Computer.FileSystem.OpenTextFileReader`.</span></span> <span data-ttu-id="2e1ae-191">いくつかのストリーム型は .NET Framework で使用できます。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-191">There are several stream types available in the .NET Framework.</span></span> <span data-ttu-id="2e1ae-192">具体的には、テキスト ファイルを指定することによって、`OpenTextFileReader`ユーザーが使用するストリームを理解するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-192">By specifying text files specifically, the `OpenTextFileReader` helps the user understand which stream to use.</span></span>  
   
- 次のガイドラインは、クラス ライブラリに関する一般的な設計原則を妨害しません。 Visual Basic を使用する開発者向けに最適化された推奨事項を正確には、`My`名前空間。 クラス ライブラリを作成するための一般的な設計原則を参照してください。 [Framework デザイン ガイドライン](http://msdn.microsoft.com/library/5fbcaf4f-ea2a-4d20-b0d6-e61dee202b4b)します。  
+ <span data-ttu-id="2e1ae-193">次のガイドラインは、クラス ライブラリに関する一般的な設計の原則を妨害しません。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-193">These guidelines do not preclude general design principles for class libraries.</span></span> <span data-ttu-id="2e1ae-194">代わりに、Visual Basic を使用する開発者用に最適化された推奨事項は、`My`名前空間。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-194">Rather, they are recommendations that are optimized for developers who are using Visual Basic and the `My` namespace.</span></span> <span data-ttu-id="2e1ae-195">クラス ライブラリを作成するための一般的な設計原則を参照してください。 [Framework デザイン ガイドライン](../../../standard/design-guidelines/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-195">For general design principles for creating class libraries, see [Framework Design Guidelines](../../../standard/design-guidelines/index.md).</span></span>  
   
-##  <a name="packaging"></a>パッケージ化と配置の拡張機能  
- 含めることができます`My`には、Visual Studio プロジェクト テンプレートでは、名前空間の拡張は、拡張機能をパッケージ化し、Visual Studio 項目テンプレートとして配置します。 パッケージ化するときに、 `My` Visual Studio 項目テンプレートと名前空間の拡張、Visual Basic で提供される追加の機能の利点を行えます。 これらの機能を使用するプロジェクトは、特定のアセンブリを参照するときに、拡張機能を含めるまたは明示的に追加するユーザーを有効にする、`My`名前空間の拡張機能を使用して、 **My 拡張**Visual Basic プロジェクト デザイナーのページです。  
+##  <span data-ttu-id="2e1ae-196"><a name="packaging"></a>パッケージ化と配置の拡張機能</span><span class="sxs-lookup"><span data-stu-id="2e1ae-196"><a name="packaging"></a> Packaging and Deploying Extensions</span></span>  
+ <span data-ttu-id="2e1ae-197">含めることができます`My`には、Visual Studio プロジェクト テンプレートでは、名前空間の拡張機能が、拡張機能をパッケージ化し、し、Visual Studio 項目テンプレートとして展開できます。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-197">You can include `My` namespace extensions in a Visual Studio project template, or you can package your extensions and deploy them as a Visual Studio item template.</span></span> <span data-ttu-id="2e1ae-198">パッケージ化するときに、 `My` Visual Studio 項目テンプレートと名前空間拡張を行う Visual Basic で提供される追加機能を活用します。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-198">When you package your `My` namespace extensions as a Visual Studio item template, you can take advantage of additional capabilities provided by Visual Basic.</span></span> <span data-ttu-id="2e1ae-199">これらの機能を使用するプロジェクトは、特定のアセンブリを参照するときに、拡張機能を含めるまたは明示的に追加するユーザーを有効にする、`My`名前空間の拡張機能を使用して、**マイ拡張**Visual Basic のページプロジェクト デザイナー。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-199">These capabilities enable you to include an extension when a project references a particular assembly, or enable users to explicitly add your `My` namespace extension by using the **My Extensions** page of the Visual Basic Project Designer.</span></span>  
   
- 展開する方法の詳細について`My`名前空間の拡張機能を参照してください[パッケージ化と展開のカスタム My 拡張](../../../visual-basic/developing-apps/customizing-extending-my/packaging-and-deploying-custom-my-extensions.md)します。  
+ <span data-ttu-id="2e1ae-200">展開する方法の詳細について`My`名前空間の拡張機能を参照してください[パッケージ化とカスタム My 拡張機能の配置](../../../visual-basic/developing-apps/customizing-extending-my/packaging-and-deploying-custom-my-extensions.md)です。</span><span class="sxs-lookup"><span data-stu-id="2e1ae-200">For details about how to deploy `My` namespace extensions, see [Packaging and Deploying Custom My Extensions](../../../visual-basic/developing-apps/customizing-extending-my/packaging-and-deploying-custom-my-extensions.md).</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [カスタム マイ拡張のパッケージ化と配置](../../../visual-basic/developing-apps/customizing-extending-my/packaging-and-deploying-custom-my-extensions.md)   
- [Visual Basic アプリケーション モデルの拡張](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-visual-basic-application-model.md)   
- [利用可能なオブジェクトのカスタマイズ ](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)   
- [マイ拡張 ページ、プロジェクト デザイナー](https://docs.microsoft.com/visualstudio/ide/reference/my-extensions-page-project-designer-visual-basic)   
- [[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)   
- [Partial](../../../visual-basic/language-reference/modifiers/partial.md)
+## <a name="see-also"></a><span data-ttu-id="2e1ae-201">関連項目</span><span class="sxs-lookup"><span data-stu-id="2e1ae-201">See Also</span></span>  
+ [<span data-ttu-id="2e1ae-202">カスタム My 拡張のパッケージ化と配置</span><span class="sxs-lookup"><span data-stu-id="2e1ae-202">Packaging and Deploying Custom My Extensions</span></span>](../../../visual-basic/developing-apps/customizing-extending-my/packaging-and-deploying-custom-my-extensions.md)  
+ [<span data-ttu-id="2e1ae-203">Visual Basic アプリケーション モデルの拡張</span><span class="sxs-lookup"><span data-stu-id="2e1ae-203">Extending the Visual Basic Application Model</span></span>](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-visual-basic-application-model.md)  
+ [<span data-ttu-id="2e1ae-204">My で利用可能なオブジェクトのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="2e1ae-204">Customizing Which Objects are Available in My</span></span>](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)  
+ <span data-ttu-id="2e1ae-205">[[マイ拡張] ページ、プロジェクト デザイナー](/visualstudio/ide/reference/my-extensions-page-project-designer-visual-basic)</span><span class="sxs-lookup"><span data-stu-id="2e1ae-205">[My Extensions Page, Project Designer](/visualstudio/ide/reference/my-extensions-page-project-designer-visual-basic)</span></span>  
+ <span data-ttu-id="2e1ae-206">[[アプリケーション] ページ (プロジェクト デザイナー)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)</span><span class="sxs-lookup"><span data-stu-id="2e1ae-206">[Application Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)</span></span>  
+ [<span data-ttu-id="2e1ae-207">Partial</span><span class="sxs-lookup"><span data-stu-id="2e1ae-207">Partial</span></span>](../../../visual-basic/language-reference/modifiers/partial.md)

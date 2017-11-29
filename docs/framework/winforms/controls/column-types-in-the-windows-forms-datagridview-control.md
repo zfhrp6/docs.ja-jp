@@ -1,104 +1,105 @@
 ---
-title: "Windows フォーム DataGridView コントロールの列型 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "列 [Windows フォーム], 種類"
-  - "データ グリッド, 列"
-  - "DataGridView コントロール [Windows フォーム], 列の型"
+title: "Windows フォーム DataGridView コントロールの列型"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- columns [Windows Forms], types
+- DataGridView control [Windows Forms], column types
+- data grids [Windows Forms], columns
 ms.assetid: f0a0a9f1-8757-4bfd-891f-d7d12870dbed
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3e45ddcec4459e376a5dab4eec36e51cc2e5e49c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォーム DataGridView コントロールの列型
-<xref:System.Windows.Forms.DataGridView> コントロールでは、情報を表示し、ユーザーが情報を変更したり追加したりできるようにさまざまな列型を使用します。  
+# <a name="column-types-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="0c8e1-102">Windows フォーム DataGridView コントロールの列型</span><span class="sxs-lookup"><span data-stu-id="0c8e1-102">Column Types in the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="0c8e1-103"><xref:System.Windows.Forms.DataGridView>コントロールは、その情報を表示して情報を変更または追加のユーザーを有効にするいくつかの列の型を使用します。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-103">The <xref:System.Windows.Forms.DataGridView> control uses several column types to display its information and enable users to modify or add information.</span></span>  
   
- <xref:System.Windows.Forms.DataGridView> コントロールをバインドし、<xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A> プロパティを `true` に設定すると、バインドしたデータ ソースに含まれるデータ型に見合った既定の列型を使用して、列が自動的に生成されます。  
+ <span data-ttu-id="0c8e1-104">バインドすると、<xref:System.Windows.Forms.DataGridView>を制御し、設定、<xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A>プロパティを`true`列は、バインドされたデータ ソースに含まれるデータ型の適切な既定の列型を使用して自動的に生成されます。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-104">When you bind a <xref:System.Windows.Forms.DataGridView> control and set the <xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A> property to `true`, columns are automatically generated using default column types appropriate for the data types contained in the bound data source.</span></span>  
   
- また、任意の列クラスのインスタンスを独自に作成し、<xref:System.Windows.Forms.DataGridView.Columns%2A> プロパティによって返されたコレクションに追加することもできます。  作成したこれらのインスタンスは、非バインド列として使用することも、手動でバインドすることもできます。  手動バインド列は、たとえば、自動生成されたある型の列を、別の型の列に置き換える場合に便利です。  
+ <span data-ttu-id="0c8e1-105">任意の列のクラスのインスタンスを作成およびによって返されるコレクションに追加することができますも、<xref:System.Windows.Forms.DataGridView.Columns%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-105">You can also create instances of any of the column classes yourself and add them to the collection returned by the <xref:System.Windows.Forms.DataGridView.Columns%2A> property.</span></span> <span data-ttu-id="0c8e1-106">非バインド列として使用するため、これらのインスタンスを作成するか、手動でバインドすることができます。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-106">You can create these instances for use as unbound columns, or you can manually bind them.</span></span> <span data-ttu-id="0c8e1-107">手動でバインドされた列は、別の型の列を含む 1 つの種類、自動的に生成された列を置換するときなどに便利です。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-107">Manually bound columns are useful, for example, when you want to replace an automatically generated column of one type with a column of another type.</span></span>  
   
- <xref:System.Windows.Forms.DataGridView> コントロールで使用できる列クラスの一覧を次の表に示します。  
+ <span data-ttu-id="0c8e1-108">次の表は、さまざまな列のクラスで使用可能な<xref:System.Windows.Forms.DataGridView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-108">The following table describes the various column classes available for use in the <xref:System.Windows.Forms.DataGridView> control.</span></span>  
   
-|Class|Description|  
+|<span data-ttu-id="0c8e1-109">クラス</span><span class="sxs-lookup"><span data-stu-id="0c8e1-109">Class</span></span>|<span data-ttu-id="0c8e1-110">説明</span><span class="sxs-lookup"><span data-stu-id="0c8e1-110">Description</span></span>|  
 |-----------|-----------------|  
-|<xref:System.Windows.Forms.DataGridViewTextBoxColumn>|テキスト ベースの値で使用されます。  数値や文字列にバインドすると自動的に生成されます。|  
-|<xref:System.Windows.Forms.DataGridViewCheckBoxColumn>|<xref:System.Boolean> 値と <xref:System.Windows.Forms.CheckState> 値で使用されます。  これらの型の値にバインドすると自動的に生成されます。|  
-|<xref:System.Windows.Forms.DataGridViewImageColumn>|イメージの表示に使用されます。  バイト配列、<xref:System.Drawing.Image> オブジェクト、または <xref:System.Drawing.Icon> オブジェクトにバインドすると自動的に生成されます。|  
-|<xref:System.Windows.Forms.DataGridViewButtonColumn>|セルにボタンを表示するために使用されます。  バインド時に自動的に生成されません。  通常、非バインド列として使用されます。|  
-|<xref:System.Windows.Forms.DataGridViewComboBoxColumn>|セルにドロップダウン リストを表示するために使用されます。  バインド時に自動的に生成されません。  通常、手動でデータ バインドされます。|  
-|<xref:System.Windows.Forms.DataGridViewLinkColumn>|セルにリンクを表示するために使用されます。  バインド時に自動的に生成されません。  通常、手動でデータ バインドされます。|  
-|カスタム列型|<xref:System.Windows.Forms.DataGridViewColumn> クラスやその派生クラスを継承して独自の列クラスを作成すると、独自の外観や動作、またはホストされるコントロールを提供できます。  詳細については、「[方法 : Windows フォーム DataGridView コントロールのセルと列を、それぞれの動作と外観を拡張してカスタマイズする](../../../../docs/framework/winforms/controls/customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md)」を参照してください。|  
+|<xref:System.Windows.Forms.DataGridViewTextBoxColumn>|<span data-ttu-id="0c8e1-111">テキスト ベースの値と共に使用します。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-111">Used with text-based values.</span></span> <span data-ttu-id="0c8e1-112">数値や文字列にバインドするときに自動的に生成されます。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-112">Generated automatically when binding to numbers and strings.</span></span>|  
+|<xref:System.Windows.Forms.DataGridViewCheckBoxColumn>|<span data-ttu-id="0c8e1-113">と共に使用<xref:System.Boolean>と<xref:System.Windows.Forms.CheckState>値。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-113">Used with <xref:System.Boolean> and <xref:System.Windows.Forms.CheckState> values.</span></span> <span data-ttu-id="0c8e1-114">これらの型の値にバインドするときに自動的に生成されます。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-114">Generated automatically when binding to values of these types.</span></span>|  
+|<xref:System.Windows.Forms.DataGridViewImageColumn>|<span data-ttu-id="0c8e1-115">イメージを表示するために使用します。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-115">Used to display images.</span></span> <span data-ttu-id="0c8e1-116">バイト配列にバインドするときに自動的に生成された<xref:System.Drawing.Image>オブジェクト、または<xref:System.Drawing.Icon>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-116">Generated automatically when binding to byte arrays, <xref:System.Drawing.Image> objects, or <xref:System.Drawing.Icon> objects.</span></span>|  
+|<xref:System.Windows.Forms.DataGridViewButtonColumn>|<span data-ttu-id="0c8e1-117">セルにボタンを表示するために使用します。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-117">Used to display buttons in cells.</span></span> <span data-ttu-id="0c8e1-118">バインドするときに自動的に生成されます。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-118">Not automatically generated when binding.</span></span> <span data-ttu-id="0c8e1-119">通常、非バインド列として使用されます。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-119">Typically used as unbound columns.</span></span>|  
+|<xref:System.Windows.Forms.DataGridViewComboBoxColumn>|<span data-ttu-id="0c8e1-120">セルのドロップダウン リストを表示するために使用します。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-120">Used to display drop-down lists in cells.</span></span> <span data-ttu-id="0c8e1-121">バインドするときに自動的に生成されます。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-121">Not automatically generated when binding.</span></span> <span data-ttu-id="0c8e1-122">通常のデータにバインド手動でします。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-122">Typically data-bound manually.</span></span>|  
+|<xref:System.Windows.Forms.DataGridViewLinkColumn>|<span data-ttu-id="0c8e1-123">セル内のリンクを表示するために使用します。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-123">Used to display links in cells.</span></span> <span data-ttu-id="0c8e1-124">バインドするときに自動的に生成されます。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-124">Not automatically generated when binding.</span></span> <span data-ttu-id="0c8e1-125">通常のデータにバインド手動でします。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-125">Typically data-bound manually.</span></span>|  
+|<span data-ttu-id="0c8e1-126">カスタム列型</span><span class="sxs-lookup"><span data-stu-id="0c8e1-126">Your custom column type</span></span>|<span data-ttu-id="0c8e1-127">独自の列のクラスを継承して作成することができます、<xref:System.Windows.Forms.DataGridViewColumn>クラスまたはカスタムの外観、動作、またはホストされるコントロールを提供する派生クラスのいずれか。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-127">You can create your own column class by inheriting the <xref:System.Windows.Forms.DataGridViewColumn> class or any of its derived classes to provide custom appearance, behavior, or hosted controls.</span></span> <span data-ttu-id="0c8e1-128">詳細については、次を参照してください[する方法: セルのカスタマイズとその動作を拡張すると外観が Windows フォーム DataGridView コントロール内の列。](../../../../docs/framework/winforms/controls/customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md)</span><span class="sxs-lookup"><span data-stu-id="0c8e1-128">For more information, see [How to: Customize Cells and Columns in the Windows Forms DataGridView Control by Extending Their Behavior and Appearance](../../../../docs/framework/winforms/controls/customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md)</span></span>|  
   
- これらの列型について、以下のセクションで詳しく説明します。  
+ <span data-ttu-id="0c8e1-129">これらの列型は、次のセクションで詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-129">These column types are described in more detail in the following sections.</span></span>  
   
-## DataGridViewTextBoxColumn  
- <xref:System.Windows.Forms.DataGridViewTextBoxColumn> は、数値や文字列などのテキスト ベースの値で使用する汎用の列型です。  編集モードでは、<xref:System.Windows.Forms.TextBox> コントロールがアクティブなセルに表示されるので、ユーザーはセル値を変更できます。  
+## <a name="datagridviewtextboxcolumn"></a><span data-ttu-id="0c8e1-130">[Datagridviewtextboxcolumn]</span><span class="sxs-lookup"><span data-stu-id="0c8e1-130">DataGridViewTextBoxColumn</span></span>  
+ <span data-ttu-id="0c8e1-131"><xref:System.Windows.Forms.DataGridViewTextBoxColumn>が数値や文字列などのテキスト ベースの値で使用するための汎用的な列の型。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-131">The <xref:System.Windows.Forms.DataGridViewTextBoxColumn> is a general-purpose column type for use with text-based values such as numbers and strings.</span></span> <span data-ttu-id="0c8e1-132">編集モードで、<xref:System.Windows.Forms.TextBox>セル値を変更するユーザーを有効にすると、アクティブなセルに、コントロールが表示されます。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-132">In editing mode, a <xref:System.Windows.Forms.TextBox> control is displayed in the active cell, enabling users to modify the cell value.</span></span>  
   
- セル値は、表示用の文字列に自動的に変換されます。  ユーザーが入力または変更した値は自動的に解析され、適切なデータ型のセル値が生成されます。  この変換は、<xref:System.Windows.Forms.DataGridView> コントロールの <xref:System.Windows.Forms.DataGridView.CellFormatting> イベントと <xref:System.Windows.Forms.DataGridView.CellParsing> イベントを処理することでカスタマイズできます。  
+ <span data-ttu-id="0c8e1-133">セルの値は、表示する文字列に自動的に変換されます。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-133">Cell values are automatically converted to strings for display.</span></span> <span data-ttu-id="0c8e1-134">入力またはユーザーによって変更された値は、適切なデータ型のセル値の作成に自動的に解析されます。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-134">Values entered or modified by the user are automatically parsed to create a cell value of the appropriate data type.</span></span> <span data-ttu-id="0c8e1-135">これらの変換をカスタマイズするには処理することにより、<xref:System.Windows.Forms.DataGridView.CellFormatting>と<xref:System.Windows.Forms.DataGridView.CellParsing>のイベント、<xref:System.Windows.Forms.DataGridView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-135">You can customize these conversions by handling the <xref:System.Windows.Forms.DataGridView.CellFormatting> and <xref:System.Windows.Forms.DataGridView.CellParsing> events of the <xref:System.Windows.Forms.DataGridView> control.</span></span>  
   
- 列のセル値のデータ型は、列の <xref:System.Windows.Forms.DataGridViewColumn.ValueType%2A> プロパティで指定されます。  
+ <span data-ttu-id="0c8e1-136">列のセル値のデータ型がで指定された、<xref:System.Windows.Forms.DataGridViewColumn.ValueType%2A>列のプロパティです。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-136">The cell value data type of a column is specified in the <xref:System.Windows.Forms.DataGridViewColumn.ValueType%2A> property of the column.</span></span>  
   
-## DataGridViewCheckBoxColumn  
- <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> は、<xref:System.Boolean> 値と <xref:System.Windows.Forms.CheckState> 値で使用されます。  <xref:System.Boolean> 値は、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A> プロパティの値に応じて、2 ステートまたは 3 ステート チェック ボックスとして表示されます。  列が <xref:System.Windows.Forms.CheckState> 値にバインドされると、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A> プロパティ値は既定で `true` になります。  
+## <a name="datagridviewcheckboxcolumn"></a><span data-ttu-id="0c8e1-137">DataGridViewCheckBoxColumn</span><span class="sxs-lookup"><span data-stu-id="0c8e1-137">DataGridViewCheckBoxColumn</span></span>  
+ <span data-ttu-id="0c8e1-138"><xref:System.Windows.Forms.DataGridViewCheckBoxColumn>と共に使用される<xref:System.Boolean>と<xref:System.Windows.Forms.CheckState>値。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-138">The <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> is used with <xref:System.Boolean> and <xref:System.Windows.Forms.CheckState> values.</span></span> <span data-ttu-id="0c8e1-139"><xref:System.Boolean>値の値に応じて、2 つの状態または 3 つの状態のチェック ボックスとして表示、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-139"><xref:System.Boolean> values display as two-state or three-state check boxes, depending on the value of the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A> property.</span></span> <span data-ttu-id="0c8e1-140">列をバインドするときに<xref:System.Windows.Forms.CheckState>、値、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A>プロパティの値が`true`既定です。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-140">When the column is bound to <xref:System.Windows.Forms.CheckState> values, the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A> property value is `true` by default.</span></span>  
   
- 通常、チェック ボックス セル値は、他のデータと同様にストレージ用として、または一括操作を実行するために使用されます。  ユーザーがチェック ボックス セルをクリックしたときに直ちに応答する場合は、<xref:System.Windows.Forms.DataGridView.CellClick> イベントを処理しますが、このイベントはセル値が更新される前に発生します。  クリック時に新しい値が必要な場合は、現在の値を基に期待される値を計算するという方法が考えられます。  また別の方法として、変更を直ちにコミットし、<xref:System.Windows.Forms.DataGridView.CellValueChanged> イベントを処理してその変更に応答することも考えられます。  セルがクリックされたときに変更をコミットするには、<xref:System.Windows.Forms.DataGridView.CurrentCellDirtyStateChanged> イベントを処理する必要があります。  このハンドラーでは、現在のセルがチェック ボックス セルの場合、<xref:System.Windows.Forms.DataGridView.CommitEdit%2A> メソッドを呼び出し、<xref:System.Windows.Forms.DataGridViewDataErrorContexts> 値を渡します。  
+ <span data-ttu-id="0c8e1-141">通常は、チェック ボックス セルの値は記憶域は、その他のデータと同様に、または一括操作を実行するものです。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-141">Typically, check box cell values are intended either for storage, like any other data, or for performing bulk operations.</span></span> <span data-ttu-id="0c8e1-142">処理することができる場合、ユーザーは、チェック ボックス セルをクリックして、すぐに応答する場合、<xref:System.Windows.Forms.DataGridView.CellClick>セルの値が更新される前に、イベントでなく、このイベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-142">If you want to respond immediately when users click a check box cell, you can handle the <xref:System.Windows.Forms.DataGridView.CellClick> event, but this event occurs before the cell value is updated.</span></span> <span data-ttu-id="0c8e1-143">1 つのオプションは、予期された値を計算する、クリックの時に新しい値を必要がある場合、現在の値に基づいています。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-143">If you need the new value at the time of the click, one option is to calculate what the expected value will be based on the current value.</span></span> <span data-ttu-id="0c8e1-144">すぐに、変更をコミットし、処理は、別の方法として、<xref:System.Windows.Forms.DataGridView.CellValueChanged>イベントに応答します。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-144">Another approach is to commit the change immediately, and handle the <xref:System.Windows.Forms.DataGridView.CellValueChanged> event to respond to it.</span></span> <span data-ttu-id="0c8e1-145">セルがクリックされたときに、変更をコミットするには、処理、<xref:System.Windows.Forms.DataGridView.CurrentCellDirtyStateChanged>イベント。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-145">To commit the change when the cell is clicked, you must handle the <xref:System.Windows.Forms.DataGridView.CurrentCellDirtyStateChanged> event.</span></span> <span data-ttu-id="0c8e1-146">呼び出しでは、ハンドラーを現在のセルがチェック ボックス セルの場合、<xref:System.Windows.Forms.DataGridView.CommitEdit%2A>メソッドを渡します、<xref:System.Windows.Forms.DataGridViewDataErrorContexts.Commit>値。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-146">In the handler, if the current cell is a check box cell, call the <xref:System.Windows.Forms.DataGridView.CommitEdit%2A> method and pass in the <xref:System.Windows.Forms.DataGridViewDataErrorContexts.Commit> value.</span></span>  
   
-## DataGridViewImageColumn  
- <xref:System.Windows.Forms.DataGridViewImageColumn> は、イメージの表示に使用されます。  イメージ列は、データ ソースから自動的に設定でき、非バインド列の場合は手動で設定できます。また <xref:System.Windows.Forms.DataGridView.CellFormatting> イベントのハンドラーで動的に設定することもできます。  
+## <a name="datagridviewimagecolumn"></a><span data-ttu-id="0c8e1-147">DataGridViewImageColumn</span><span class="sxs-lookup"><span data-stu-id="0c8e1-147">DataGridViewImageColumn</span></span>  
+ <span data-ttu-id="0c8e1-148"><xref:System.Windows.Forms.DataGridViewImageColumn>イメージを表示するために使用します。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-148">The <xref:System.Windows.Forms.DataGridViewImageColumn> is used to display images.</span></span> <span data-ttu-id="0c8e1-149">イメージ列がデータ ソースから自動的に設定、バインドされていない列は、手動で設定されますまたはのハンドラーで動的に読み込まれることができます、<xref:System.Windows.Forms.DataGridView.CellFormatting>イベント。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-149">Image columns can be populated automatically from a data source, populated manually for unbound columns, or populated dynamically in a handler for the <xref:System.Windows.Forms.DataGridView.CellFormatting> event.</span></span>  
   
- イメージ列をデータ ソースから自動的に設定する場合は、<xref:System.Drawing.Image> クラスでサポートされるすべての形式と、Microsoft® Access や Northwind サンプル データベースで使用される OLE ピクチャ形式を含む各種イメージ形式のバイト配列を使用できます。  
+ <span data-ttu-id="0c8e1-150">イメージ列をデータ ソースからの自動作成の動作では、さまざまなイメージ形式でサポートされているすべての形式を含むバイト配列と、<xref:System.Drawing.Image>クラスおよび Microsoft® アクセスと、Northwind サンプル データベースで使用される OLE 画像形式です。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-150">The automatic population of an image column from a data source works with byte arrays in a variety of image formats, including all formats supported by the <xref:System.Drawing.Image> class and the OLE Picture format used by Microsoft® Access and the Northwind sample database.</span></span>  
   
- イメージ列の手動設定は、<xref:System.Windows.Forms.DataGridViewButtonColumn> の機能を独自の外観で提供する場合に役立ちます。  <xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=fullName> イベントを処理することにより、イメージ セル内のクリックに応答できます。  
+ <span data-ttu-id="0c8e1-151">機能を提供する場合に便利ですが image 列を手動で設定する、 <xref:System.Windows.Forms.DataGridViewButtonColumn>、カスタマイズされた外観でします。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-151">Populating an image column manually is useful when you want to provide the functionality of a <xref:System.Windows.Forms.DataGridViewButtonColumn>, but with a customized appearance.</span></span> <span data-ttu-id="0c8e1-152">処理することができます、<xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType>イメージ セル内のクリックに応答するイベントです。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-152">You can handle the <xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType> event to respond to clicks within an image cell.</span></span>  
   
- <xref:System.Windows.Forms.DataGridView.CellFormatting> イベントのハンドラーでのイメージ列のセルの設定は、計算値やイメージ形式以外の値にイメージを提供する場合に役立ちます。  たとえば、"Risk" 列には、アイコンとして表示する `"high"`、`"middle"`、`"low"` などの文字列型の値を設定できます。  また、"Image" 列には、イメージのバイナリ コンテンツではなく、読み込む必要があるイメージの場所を格納できます。  
+ <span data-ttu-id="0c8e1-153">ハンドラーで image 列のセルを設定する、<xref:System.Windows.Forms.DataGridView.CellFormatting>イベントは、計算値や非イメージ形式の値に画像を提供する場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-153">Populating the cells of an image column in a handler for the <xref:System.Windows.Forms.DataGridView.CellFormatting> event is useful when you want to provide images for calculated values or values in non-image formats.</span></span> <span data-ttu-id="0c8e1-154">たとえば、する必要があります「リスク」文字列値を持つ列など`"high"`、 `"middle"`、および`"low"`アイコンとして表示します。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-154">For example, you may have a "Risk" column with string values such as `"high"`, `"middle"`, and `"low"` that you want to display as icons.</span></span> <span data-ttu-id="0c8e1-155">または、画像のバイナリ コンテンツではなく読み込む必要があるイメージの場所が含まれる"Image"列がある可能性があります。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-155">Alternately, you may have an "Image" column that contains the locations of images that must be loaded rather than the binary content of the images.</span></span>  
   
-## DataGridViewButtonColumn  
- <xref:System.Windows.Forms.DataGridViewButtonColumn> を使用すると、ボタンを含むセルの列を表示できます。  これは、発注を行ったり別個のウィンドウに子レコードを表示したりという操作を、ユーザーが特定のレコードで簡単に実行できるようにする場合に便利です。  
+## <a name="datagridviewbuttoncolumn"></a><span data-ttu-id="0c8e1-156">DataGridViewButtonColumn</span><span class="sxs-lookup"><span data-stu-id="0c8e1-156">DataGridViewButtonColumn</span></span>  
+ <span data-ttu-id="0c8e1-157"><xref:System.Windows.Forms.DataGridViewButtonColumn>ボタンが含まれているセルの列を表示することができます。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-157">With the <xref:System.Windows.Forms.DataGridViewButtonColumn>, you can display a column of cells that contain buttons.</span></span> <span data-ttu-id="0c8e1-158">これは、ユーザーが注文を配置することや、別のウィンドウで、子レコードを表示するなど、特定のレコードに対してアクションを実行するための簡単な方法を提供する場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-158">This is useful when you want to provide an easy way for your users to perform actions on particular records, such as placing an order or displaying child records in a separate window.</span></span>  
   
- ボタン列は、<xref:System.Windows.Forms.DataGridView> コントロールをデータ バインディングしたときに自動的に生成されるわけではありません。  ボタン列を使用するには、ボタン列を手動で作成し、<xref:System.Windows.Forms.DataGridView.Columns%2A?displayProperty=fullName> プロパティによって返されたコレクションに追加する必要があります。  
+ <span data-ttu-id="0c8e1-159">データ バインド時にボタン列は自動的に生成されません、<xref:System.Windows.Forms.DataGridView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-159">Button columns are not generated automatically when data-binding a <xref:System.Windows.Forms.DataGridView> control.</span></span> <span data-ttu-id="0c8e1-160">ボタン列を使用するには、手動で作成してによって返されるコレクションに追加する必要があります、<xref:System.Windows.Forms.DataGridView.Columns%2A?displayProperty=nameWithType>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-160">To use button columns, you must create them manually and add them to the collection returned by the <xref:System.Windows.Forms.DataGridView.Columns%2A?displayProperty=nameWithType> property.</span></span>  
   
- ボタン セル内のユーザー クリックに応答するには、<xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=fullName> イベントを処理します。  
+ <span data-ttu-id="0c8e1-161">処理することによりユーザーがクリックしたボタン セル内に応答して、<xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType>イベント。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-161">You can respond to user clicks in button cells by handling the <xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType> event.</span></span>  
   
-## DataGridViewComboBoxColumn  
- <xref:System.Windows.Forms.DataGridViewComboBoxColumn> を使用すると、ドロップダウン リスト ボックスを含むセルの列を表示できます。  これは、Northwind サンプル データベースの Products テーブルの Category 列など、特定の値しか入力できないフィールドでのデータ入力に便利です。  
+## <a name="datagridviewcomboboxcolumn"></a><span data-ttu-id="0c8e1-162">DataGridViewComboBoxColumn</span><span class="sxs-lookup"><span data-stu-id="0c8e1-162">DataGridViewComboBoxColumn</span></span>  
+ <span data-ttu-id="0c8e1-163"><xref:System.Windows.Forms.DataGridViewComboBoxColumn>、ドロップダウン リスト ボックスが含まれているセルの列を表示することができます。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-163">With the <xref:System.Windows.Forms.DataGridViewComboBoxColumn>, you can display a column of cells that contain drop-down list boxes.</span></span> <span data-ttu-id="0c8e1-164">これは、データ フィールドのエントリ、Northwind サンプル データベースの Products テーブルのカテゴリ列などの特定の値を含めることができるのみ便利です。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-164">This is useful for data entry in fields that can only contain particular values, such as the Category column of the Products table in the Northwind sample database.</span></span>  
   
- すべてのセルで共通に使用するドロップダウン リストは、<xref:System.Windows.Forms.ComboBox> ドロップダウン リストの場合と同様に、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.Items%2A> プロパティによって返されたコレクションを通じて手動で設定することも、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A> プロパティ、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A> プロパティ、および <xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A> プロパティを通じてデータ ソースにバインドして設定することもできます。  詳細については、「[ComboBox コントロール](../../../../docs/framework/winforms/controls/combobox-control-windows-forms.md)」を参照してください。  
+ <span data-ttu-id="0c8e1-165">設定と同じ方法ですべてのセルの使用、ドロップダウン リストに表示することができます、<xref:System.Windows.Forms.ComboBox>によって返されるコレクションを手動でいずれかのドロップダウン リスト、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.Items%2A>プロパティ、または使用して、データ ソースにバインドすることによって、 <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A>、 <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>、および<xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-165">You can populate the drop-down list used for all cells the same way you would populate a <xref:System.Windows.Forms.ComboBox> drop-down list, either manually through the collection returned by the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.Items%2A> property, or by binding it to a data source through the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A>, <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>, and <xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A> properties.</span></span> <span data-ttu-id="0c8e1-166">詳細については、次を参照してください。[コンボ ボックス コントロール](../../../../docs/framework/winforms/controls/combobox-control-windows-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-166">For more information, see [ComboBox Control](../../../../docs/framework/winforms/controls/combobox-control-windows-forms.md).</span></span>  
   
- <xref:System.Windows.Forms.DataGridView> コントロールによって使用されるデータ ソースに実際のセル値をバインドするには、<xref:System.Windows.Forms.DataGridViewComboBoxColumn?displayProperty=fullName> の <xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A> プロパティを設定します。  
+ <span data-ttu-id="0c8e1-167">によって使用されるデータ ソースに実際のセル値をバインドすることができます、<xref:System.Windows.Forms.DataGridView>コントロールを設定して、<xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A>のプロパティ、<xref:System.Windows.Forms.DataGridViewComboBoxColumn?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-167">You can bind the actual cell values to the data source used by the <xref:System.Windows.Forms.DataGridView> control by setting the <xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A> property of the <xref:System.Windows.Forms.DataGridViewComboBoxColumn?displayProperty=nameWithType>.</span></span>  
   
- コンボ ボックス列は、<xref:System.Windows.Forms.DataGridView> コントロールをデータ バインディングしたときに自動的に生成されるわけではありません。  コンボ ボックス列を使用するには、コンボ ボックス列を手動で作成し、<xref:System.Windows.Forms.DataGridView.Columns%2A> プロパティによって返されたコレクションに追加する必要があります。  
+ <span data-ttu-id="0c8e1-168">データ バインド時に、コンボ ボックスの列が自動的に生成されませんが、<xref:System.Windows.Forms.DataGridView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-168">Combo box columns are not generated automatically when data-binding a <xref:System.Windows.Forms.DataGridView> control.</span></span> <span data-ttu-id="0c8e1-169">コンボ ボックスの列を使用するには、手動で作成してによって返されるコレクションに追加する必要があります、<xref:System.Windows.Forms.DataGridView.Columns%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-169">To use combo box columns, you must create them manually and add them to the collection returned by the <xref:System.Windows.Forms.DataGridView.Columns%2A> property.</span></span>  
   
-## DataGridViewLinkColumn  
- <xref:System.Windows.Forms.DataGridViewLinkColumn> を使用すると、ハイパーリンクを含むセルの列を表示できます。  これは、データ ソース内の URL 値を表示するのに便利です。またボタン列の代わりに使用して、子レコードを表示するウィンドウを開くなど、特別な動作を提供することもできます。  
+## <a name="datagridviewlinkcolumn"></a><span data-ttu-id="0c8e1-170">DataGridViewLinkColumn</span><span class="sxs-lookup"><span data-stu-id="0c8e1-170">DataGridViewLinkColumn</span></span>  
+ <span data-ttu-id="0c8e1-171"><xref:System.Windows.Forms.DataGridViewLinkColumn>ハイパーリンクが含まれているセルの列を表示することができます。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-171">With the <xref:System.Windows.Forms.DataGridViewLinkColumn>, you can display a column of cells that contain hyperlinks.</span></span> <span data-ttu-id="0c8e1-172">これは、データ ソースまたは子レコードを含むウィンドウを開くなどの特殊な動作のボタン列の代わりとしての URL 値に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-172">This is useful for URL values in the data source or as an alternative to the button column for special behaviors such as opening a window with child records.</span></span>  
   
- リンク列は、<xref:System.Windows.Forms.DataGridView> コントロールをデータ バインディングしたときに自動的に生成されるわけではありません。  リンク列を使用するには、リンク列を手動で作成し、<xref:System.Windows.Forms.DataGridView.Columns%2A> プロパティによって返されたコレクションに追加する必要があります。  
+ <span data-ttu-id="0c8e1-173">データ バインド時に、リンク列が自動的に生成されませんが、<xref:System.Windows.Forms.DataGridView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-173">Link columns are not generated automatically when data-binding a <xref:System.Windows.Forms.DataGridView> control.</span></span> <span data-ttu-id="0c8e1-174">リンク列を使用するには、手動で作成してによって返されるコレクションに追加する必要があります、<xref:System.Windows.Forms.DataGridView.Columns%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-174">To use link columns, you must create them manually and add them to the collection returned by the <xref:System.Windows.Forms.DataGridView.Columns%2A> property.</span></span>  
   
- ユーザーによるリンクのクリックに応答するには、<xref:System.Windows.Forms.DataGridView.CellContentClick> イベントを処理します。  このイベントは、ユーザーがセル内の場所をクリックしたときに発生する <xref:System.Windows.Forms.DataGridView.CellClick> イベントや <xref:System.Windows.Forms.DataGridView.CellMouseClick> イベントとは別です。  
+ <span data-ttu-id="0c8e1-175">処理することによりユーザーへのリンクがクリックに応答して、<xref:System.Windows.Forms.DataGridView.CellContentClick>イベント。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-175">You can respond to user clicks on links by handling the <xref:System.Windows.Forms.DataGridView.CellContentClick> event.</span></span> <span data-ttu-id="0c8e1-176">このイベントは、別個のもの、<xref:System.Windows.Forms.DataGridView.CellClick>と<xref:System.Windows.Forms.DataGridView.CellMouseClick>イベントで、ユーザーがセルの任意の場所をクリックしたときに発生します。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-176">This event is distinct from the <xref:System.Windows.Forms.DataGridView.CellClick> and <xref:System.Windows.Forms.DataGridView.CellMouseClick> events, which occur when a user clicks anywhere in a cell.</span></span>  
   
- <xref:System.Windows.Forms.DataGridViewLinkColumn> クラスには、クリックの前後およびクリック時のリンクの外観を変更するプロパティが用意されています。  
+ <span data-ttu-id="0c8e1-177"><xref:System.Windows.Forms.DataGridViewLinkColumn>クラスでは、いくつかのプロパティを提供する前に、実行時と後のリンクの外観を変更するためをクリックします。</span><span class="sxs-lookup"><span data-stu-id="0c8e1-177">The <xref:System.Windows.Forms.DataGridViewLinkColumn> class provides several properties for modifying the appearance of links before, during, and after they are clicked.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.DataGridView>   
- <xref:System.Windows.Forms.DataGridViewColumn>   
- <xref:System.Windows.Forms.DataGridViewButtonColumn>   
- <xref:System.Windows.Forms.DataGridViewCheckBoxColumn>   
- <xref:System.Windows.Forms.DataGridViewComboBoxColumn>   
- <xref:System.Windows.Forms.DataGridViewImageColumn>   
- <xref:System.Windows.Forms.DataGridViewTextBoxColumn>   
- <xref:System.Windows.Forms.DataGridViewLinkColumn>   
- [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)   
- [方法 : Windows フォーム DataGridView コントロールのセルにイメージを表示する](../../../../docs/framework/winforms/controls/how-to-display-images-in-cells-of-the-windows-forms-datagridview-control.md)   
- [方法 : Windows フォーム DataGridView コントロールのイメージ列を操作する](../../../../docs/framework/winforms/controls/how-to-work-with-image-columns-in-the-windows-forms-datagridview-control.md)   
- [Windows フォーム DataGridView コントロールのカスタマイズ](../../../../docs/framework/winforms/controls/customizing-the-windows-forms-datagridview-control.md)
+## <a name="see-also"></a><span data-ttu-id="0c8e1-178">関連項目</span><span class="sxs-lookup"><span data-stu-id="0c8e1-178">See Also</span></span>  
+ <xref:System.Windows.Forms.DataGridView>  
+ <xref:System.Windows.Forms.DataGridViewColumn>  
+ <xref:System.Windows.Forms.DataGridViewButtonColumn>  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxColumn>  
+ <xref:System.Windows.Forms.DataGridViewComboBoxColumn>  
+ <xref:System.Windows.Forms.DataGridViewImageColumn>  
+ <xref:System.Windows.Forms.DataGridViewTextBoxColumn>  
+ <xref:System.Windows.Forms.DataGridViewLinkColumn>  
+ [<span data-ttu-id="0c8e1-179">DataGridView コントロール</span><span class="sxs-lookup"><span data-stu-id="0c8e1-179">DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)  
+ [<span data-ttu-id="0c8e1-180">方法: Windows フォーム DataGridView コントロールのセルにイメージを表示する</span><span class="sxs-lookup"><span data-stu-id="0c8e1-180">How to: Display Images in Cells of the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-display-images-in-cells-of-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="0c8e1-181">方法: Windows フォーム DataGridView コントロールのイメージ列を操作する</span><span class="sxs-lookup"><span data-stu-id="0c8e1-181">How to: Work with Image Columns in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-work-with-image-columns-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="0c8e1-182">Windows フォーム DataGridView コントロールのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="0c8e1-182">Customizing the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/customizing-the-windows-forms-datagridview-control.md)

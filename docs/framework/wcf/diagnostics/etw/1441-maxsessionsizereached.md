@@ -1,35 +1,38 @@
 ---
-title: "1441 - MaxSessionSizeReached | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 1441 - MaxSessionSizeReached
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ccf51232-cdbc-4004-a4b9-aed0c256dfe4
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 163bbfeaa5ba550d49a6e72877cba777f522bb31
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 1441 - MaxSessionSizeReached
-## プロパティ  
+# <a name="1441---maxsessionsizereached"></a><span data-ttu-id="3194a-102">1441 - MaxSessionSizeReached</span><span class="sxs-lookup"><span data-stu-id="3194a-102">1441 - MaxSessionSizeReached</span></span>
+## <a name="properties"></a><span data-ttu-id="3194a-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="3194a-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|ID|1441|  
-|キーワード|クォータ|  
-|レベル|警告|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Analytic|  
+|<span data-ttu-id="3194a-104">ID</span><span class="sxs-lookup"><span data-stu-id="3194a-104">ID</span></span>|<span data-ttu-id="3194a-105">1441</span><span class="sxs-lookup"><span data-stu-id="3194a-105">1441</span></span>|  
+|<span data-ttu-id="3194a-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="3194a-106">Keywords</span></span>|<span data-ttu-id="3194a-107">クォータ</span><span class="sxs-lookup"><span data-stu-id="3194a-107">Quota</span></span>|  
+|<span data-ttu-id="3194a-108">レベル</span><span class="sxs-lookup"><span data-stu-id="3194a-108">Level</span></span>|<span data-ttu-id="3194a-109">警告</span><span class="sxs-lookup"><span data-stu-id="3194a-109">Warning</span></span>|  
+|<span data-ttu-id="3194a-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="3194a-110">Channel</span></span>|<span data-ttu-id="3194a-111">Microsoft-Windows-Application Server-Applications/Analytic</span><span class="sxs-lookup"><span data-stu-id="3194a-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## 説明  
- このイベントは、セッションの最大サイズに達したときに生成されます。  
+## <a name="description"></a><span data-ttu-id="3194a-112">説明</span><span class="sxs-lookup"><span data-stu-id="3194a-112">Description</span></span>  
+ <span data-ttu-id="3194a-113">このイベントは、セッションの最大サイズに達したときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="3194a-113">This event is emitted when maximum session size is reached.</span></span>  
   
-## メッセージ  
- 1%  
+## <a name="message"></a><span data-ttu-id="3194a-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="3194a-114">Message</span></span>  
+ <span data-ttu-id="3194a-115">1%</span><span class="sxs-lookup"><span data-stu-id="3194a-115">1%</span></span>  
   
-## 詳細
+## <a name="details"></a><span data-ttu-id="3194a-116">詳細</span><span class="sxs-lookup"><span data-stu-id="3194a-116">Details</span></span>

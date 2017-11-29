@@ -1,54 +1,57 @@
 ---
-title: "方法 : 単純または複雑な TreeView を作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Control クラス, TreeView, 作成"
-  - "TreeView コントロール, 作成"
+title: "方法 : 単純または複雑な TreeView を作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- TreeView control [WPF], creating
+- Control class [WPF], TreeView [WPF], creating
 ms.assetid: 1defbb78-b8e7-4c0e-b650-576453ac828d
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5e09f0f39d0c9a40a0e91299d308921917067166
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 単純または複雑な TreeView を作成する
-この例では、単純または複雑な <xref:System.Windows.Controls.TreeView> コントロールを作成する方法を示します。  
+# <a name="how-to-create-simple-or-complex-treeviews"></a><span data-ttu-id="e6614-102">方法 : 単純または複雑な TreeView を作成する</span><span class="sxs-lookup"><span data-stu-id="e6614-102">How to: Create Simple or Complex TreeViews</span></span>
+<span data-ttu-id="e6614-103">この例は、単純または複雑なを作成する方法を示しています。<xref:System.Windows.Controls.TreeView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="e6614-103">This example shows how to create simple or complex <xref:System.Windows.Controls.TreeView> controls.</span></span>  
   
- <xref:System.Windows.Controls.TreeView> は <xref:System.Windows.Controls.TreeViewItem> コントロールの階層で構成されます。<xref:System.Windows.Controls.TreeViewItem> は、単純なテキスト文字列を含むことも、<xref:System.Windows.Controls.Button> コントロールや、コンテンツが埋め込まれた <xref:System.Windows.Controls.StackPanel> などのさらに複雑なコンテンツを含むこともできます。  <xref:System.Windows.Controls.TreeView> のコンテンツは、明示的に定義することも、データ ソースが提供することもできます。  このトピックでは、これらの概念の例を示します。  
+ <span data-ttu-id="e6614-104">A<xref:System.Windows.Controls.TreeView>の階層から成る<xref:System.Windows.Controls.TreeViewItem>含めることができる単純なテキスト文字列より複雑なコンテンツなどのコントロール<xref:System.Windows.Controls.Button>コントロールまたは<xref:System.Windows.Controls.StackPanel>埋め込みコンテンツを持つ。</span><span class="sxs-lookup"><span data-stu-id="e6614-104">A <xref:System.Windows.Controls.TreeView> consists of a hierarchy of <xref:System.Windows.Controls.TreeViewItem> controls, which can contain simple text strings and also more complex content, such as <xref:System.Windows.Controls.Button> controls or a <xref:System.Windows.Controls.StackPanel> with embedded content.</span></span> <span data-ttu-id="e6614-105">明示的に定義することができます、<xref:System.Windows.Controls.TreeView>コンテンツまたはデータ ソースがコンテンツを提供します。</span><span class="sxs-lookup"><span data-stu-id="e6614-105">You can explicitly define the <xref:System.Windows.Controls.TreeView> content or a data source can provide the content.</span></span> <span data-ttu-id="e6614-106">このトピックでは、これらの概念の例を示します。</span><span class="sxs-lookup"><span data-stu-id="e6614-106">This topic provides examples of these concepts.</span></span>  
   
-## 使用例  
- <xref:System.Windows.Controls.TreeViewItem> の <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> プロパティには、<xref:System.Windows.Controls.TreeView> がその項目に対して表示するコンテンツが含まれます。  <xref:System.Windows.Controls.TreeViewItem> は、子要素として <xref:System.Windows.Controls.TreeViewItem> を持つこともでき、これらの子要素は <xref:System.Windows.Controls.ItemsControl.Items%2A> プロパティを使用して定義できます。  
+## <a name="example"></a><span data-ttu-id="e6614-107">例</span><span class="sxs-lookup"><span data-stu-id="e6614-107">Example</span></span>  
+ <span data-ttu-id="e6614-108"><xref:System.Windows.Controls.HeaderedItemsControl.Header%2A>のプロパティ、<xref:System.Windows.Controls.TreeViewItem>コンテンツを含むを<xref:System.Windows.Controls.TreeView>その項目が表示されます。</span><span class="sxs-lookup"><span data-stu-id="e6614-108">The <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> property of the <xref:System.Windows.Controls.TreeViewItem> contains the content that the <xref:System.Windows.Controls.TreeView> displays for that item.</span></span> <span data-ttu-id="e6614-109">A<xref:System.Windows.Controls.TreeViewItem>こともできます<xref:System.Windows.Controls.TreeViewItem>コントロールとその子要素としてを使用してこれらの子要素を定義することができます、<xref:System.Windows.Controls.ItemsControl.Items%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="e6614-109">A <xref:System.Windows.Controls.TreeViewItem> can also have <xref:System.Windows.Controls.TreeViewItem> controls as its child elements and you can define these child elements by using the <xref:System.Windows.Controls.ItemsControl.Items%2A> property.</span></span>  
   
- <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> プロパティにテキスト文字列を設定することで <xref:System.Windows.Controls.TreeViewItem> のコンテンツを明示的に定義する方法を次の例に示します。  
+ <span data-ttu-id="e6614-110">次の例は、明示的に定義する方法を示しています。<xref:System.Windows.Controls.TreeViewItem>コンテンツを設定して、<xref:System.Windows.Controls.HeaderedItemsControl.Header%2A>プロパティをテキスト文字列にします。</span><span class="sxs-lookup"><span data-stu-id="e6614-110">The following example shows how to explicitly define <xref:System.Windows.Controls.TreeViewItem> content by setting the <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> property to a text string.</span></span>  
   
- [!code-xml[TreeViewSimple#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSimple/CS/Window1.xaml#1)]  
+ [!code-xaml[TreeViewSimple#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSimple/CS/Window1.xaml#1)]  
   
- <xref:System.Windows.Controls.Button> コントロールである <xref:System.Windows.Controls.ItemsControl.Items%2A> を定義することで <xref:System.Windows.Controls.TreeViewItem> の子要素を定義する方法を次の例に示します。  
+ <span data-ttu-id="e6614-111">次の例は、の子要素を定義する方法を示して、<xref:System.Windows.Controls.TreeViewItem>を定義して<xref:System.Windows.Controls.ItemsControl.Items%2A>いる<xref:System.Windows.Controls.Button>コントロール。</span><span class="sxs-lookup"><span data-stu-id="e6614-111">The following example show how to define child elements of a <xref:System.Windows.Controls.TreeViewItem> by defining <xref:System.Windows.Controls.ItemsControl.Items%2A> that are <xref:System.Windows.Controls.Button> controls.</span></span>  
   
- [!code-xml[TreeViewSimple#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSimple/CS/Window1.xaml#3)]  
+ [!code-xaml[TreeViewSimple#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSimple/CS/Window1.xaml#3)]  
   
- <xref:System.Windows.Data.XmlDataProvider> で <xref:System.Windows.Controls.TreeViewItem> のコンテンツを提供し、<xref:System.Windows.HierarchicalDataTemplate> でコンテンツの表示を定義して、<xref:System.Windows.Controls.TreeView> を作成する方法を次の例に示します。  
+ <span data-ttu-id="e6614-112">次の例を作成する方法を示しています、<xref:System.Windows.Controls.TreeView>場所、<xref:System.Windows.Data.XmlDataProvider>提供<xref:System.Windows.Controls.TreeViewItem>コンテンツと<xref:System.Windows.HierarchicalDataTemplate>コンテンツの外観を定義します。</span><span class="sxs-lookup"><span data-stu-id="e6614-112">The following example shows how to create a <xref:System.Windows.Controls.TreeView> where an <xref:System.Windows.Data.XmlDataProvider> provides <xref:System.Windows.Controls.TreeViewItem> content and a <xref:System.Windows.HierarchicalDataTemplate> defines the appearance of the content.</span></span>  
   
- [!code-xml[TreeViewSimple#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSimple/CS/Window1.xaml#6)]  
+ [!code-xaml[TreeViewSimple#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSimple/CS/Window1.xaml#6)]  
   
- [!code-xml[TreeViewSimple#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSimple/CS/Window1.xaml#7)]  
+ [!code-xaml[TreeViewSimple#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSimple/CS/Window1.xaml#7)]  
   
- [!code-xml[TreeViewSimple#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSimple/CS/Window1.xaml#5)]  
+ [!code-xaml[TreeViewSimple#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSimple/CS/Window1.xaml#5)]  
   
- <xref:System.Windows.Controls.TreeViewItem> のコンテンツとして、コンテンツが埋め込まれた <xref:System.Windows.Controls.DockPanel> コントロールを含む <xref:System.Windows.Controls.TreeView> を作成する方法を次の例に示します。  
+ <span data-ttu-id="e6614-113">次の例を作成する方法を示しています、<xref:System.Windows.Controls.TreeView>場所、<xref:System.Windows.Controls.TreeViewItem>コンテンツが含まれる<xref:System.Windows.Controls.DockPanel>コンテンツが埋め込まれているコントロール。</span><span class="sxs-lookup"><span data-stu-id="e6614-113">The following example shows how to create a <xref:System.Windows.Controls.TreeView> where the <xref:System.Windows.Controls.TreeViewItem> content contains <xref:System.Windows.Controls.DockPanel> controls that have embedded content.</span></span>  
   
- [!code-xml[TreeViewSimple#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSimple/CS/Window1.xaml#9)]  
+ [!code-xaml[TreeViewSimple#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSimple/CS/Window1.xaml#9)]  
   
-## 参照  
- <xref:System.Windows.Controls.TreeView>   
- <xref:System.Windows.Controls.TreeViewItem>   
- [TreeView の概要](../../../../docs/framework/wpf/controls/treeview-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/controls/treeview-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="e6614-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="e6614-114">See Also</span></span>  
+ <xref:System.Windows.Controls.TreeView>  
+ <xref:System.Windows.Controls.TreeViewItem>  
+ [<span data-ttu-id="e6614-115">TreeView の概要</span><span class="sxs-lookup"><span data-stu-id="e6614-115">TreeView Overview</span></span>](../../../../docs/framework/wpf/controls/treeview-overview.md)  
+ [<span data-ttu-id="e6614-116">方法トピック</span><span class="sxs-lookup"><span data-stu-id="e6614-116">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/treeview-how-to-topics.md)

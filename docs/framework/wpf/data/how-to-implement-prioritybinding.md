@@ -1,56 +1,59 @@
 ---
-title: "方法 : PriorityBinding を実装する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "クラス, PriorityBinding"
-  - "データ バインディング, PriorityBinding クラス"
-  - "PriorityBinding クラス"
+title: "方法 : PriorityBinding を実装する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: data binding [WPF], PriorityBinding class
 ms.assetid: d63b65ab-b3e9-4322-9aa8-1450f8d89532
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9753462908928eaf177e100a16186826bf4828ee
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : PriorityBinding を実装する
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] における <xref:System.Windows.Data.PriorityBinding> は、バインディング リストの指定により機能します。  バインディング リストは、優先順位の高いものから低いものに順番に並べられています。  優先順位の最も高いバインディングが処理された際に値を正常に返した場合は、リスト内の他のバインディングを処理する必要はありません。  優先順位の最も高いバインディングの評価に時間がかかる場合は、そのバインディングが値を正常に返すまで、正常に値を返した 2 番目に優先順位の高いバインディングが使用されることがあります。  
+# <a name="how-to-implement-prioritybinding"></a><span data-ttu-id="c857c-102">方法 : PriorityBinding を実装する</span><span class="sxs-lookup"><span data-stu-id="c857c-102">How to: Implement PriorityBinding</span></span>
+<span data-ttu-id="c857c-103"><xref:System.Windows.Data.PriorityBinding>[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]のバインドの一覧を指定することによって動作します。</span><span class="sxs-lookup"><span data-stu-id="c857c-103"><xref:System.Windows.Data.PriorityBinding> in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] works by specifying a list of bindings.</span></span> <span data-ttu-id="c857c-104">バインディングのリストの順序は、最高の優先度から最も低い優先順位。</span><span class="sxs-lookup"><span data-stu-id="c857c-104">The list of bindings is ordered from highest priority to lowest priority.</span></span> <span data-ttu-id="c857c-105">最高の優先度のバインドが値を返す場合が正常に処理される際はありませんリスト内の他のバインディングを処理する必要。</span><span class="sxs-lookup"><span data-stu-id="c857c-105">If the highest priority binding returns a value successfully when it is processed then there is never a need to process the other bindings in the list.</span></span> <span data-ttu-id="c857c-106">最高の優先度のバインドに評価される時間がかかる場合がある可能性があります、優先順位の高いバインドが正常に値を返すまで、正常に値を返す次の最も優先度が使用されます。</span><span class="sxs-lookup"><span data-stu-id="c857c-106">It could be the case that the highest priority binding takes a long time to be evaluated, the next highest priority that returns a value successfully will be used until a binding of a higher priority returns a value successfully.</span></span>  
   
-## 使用例  
- <xref:System.Windows.Data.PriorityBinding> の動作を示すため、`FastDP`、`SlowerDP`、および `SlowestDP` という 3 つのプロパティを持つ `AsyncDataSource` オブジェクトを作成しています。  
+## <a name="example"></a><span data-ttu-id="c857c-107">例</span><span class="sxs-lookup"><span data-stu-id="c857c-107">Example</span></span>  
+ <span data-ttu-id="c857c-108">示すためにどのように<xref:System.Windows.Data.PriorityBinding>の動作、`AsyncDataSource`次の 3 つのプロパティでオブジェクトが作成されました: `FastDP`、`SlowerDP`と`SlowestDP`です。</span><span class="sxs-lookup"><span data-stu-id="c857c-108">To demonstrate how <xref:System.Windows.Data.PriorityBinding> works, the `AsyncDataSource` object has been created with the following three properties: `FastDP`, `SlowerDP`, and `SlowestDP`.</span></span>  
   
- `FastDP` の get アクセサーは、`_fastDP` データ メンバーの値を返します。  
+ <span data-ttu-id="c857c-109">Get アクセサー`FastDP`の値を返します、`_fastDP`データ メンバーです。</span><span class="sxs-lookup"><span data-stu-id="c857c-109">The get accessor of `FastDP` returns the value of the `_fastDP` data member.</span></span>  
   
- `SlowerDP` の get アクセサーは、3 秒待機してから `_slowerDP` データ メンバーの値を返します。  
+ <span data-ttu-id="c857c-110">Get アクセサー `SlowerDP` 3 秒間の値を返す前に待機する、`_slowerDP`データ メンバーです。</span><span class="sxs-lookup"><span data-stu-id="c857c-110">The get accessor of `SlowerDP` waits for 3 seconds before returning the value of the `_slowerDP` data member.</span></span>  
   
- `SlowestDP` の get アクセサーは、5 秒待機してから `_slowestDP` データ メンバーの値を返します。  
+ <span data-ttu-id="c857c-111">Get アクセサー`SlowestDP`を 5 秒間の値を返す前に待機する、`_slowestDP`データ メンバーです。</span><span class="sxs-lookup"><span data-stu-id="c857c-111">The get accessor of `SlowestDP` waits for 5 seconds before returning the value of the `_slowestDP` data member.</span></span>  
   
 > [!NOTE]
->  この例は、デモンストレーションのためだけに作成されています。  フィールド セットよりもはるかに時間がかかるため、[!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] ガイドラインではプロパティを定義しないように推奨しています。  詳細については、「[NIB: Choosing Between Properties and Methods](http://msdn.microsoft.com/ja-jp/55825e8f-7e2e-448a-9505-7217cc91b1af)」を参照してください。  
+>  <span data-ttu-id="c857c-112">この例はデモ目的でのみです。</span><span class="sxs-lookup"><span data-stu-id="c857c-112">This example is for demonstration purposes only.</span></span> <span data-ttu-id="c857c-113">[!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)]ガイドライン推奨桁違いフィールド セットよりも低速であるプロパティを定義します。</span><span class="sxs-lookup"><span data-stu-id="c857c-113">The [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] guidelines recommend against defining properties that are orders of magnitude slower than a field set would be.</span></span> <span data-ttu-id="c857c-114">詳細については、次を参照してください。 [NIB: プロパティとの間の選択とメソッド](http://msdn.microsoft.com/en-us/55825e8f-7e2e-448a-9505-7217cc91b1af)です。</span><span class="sxs-lookup"><span data-stu-id="c857c-114">For more information, see [NIB: Choosing Between Properties and Methods](http://msdn.microsoft.com/en-us/55825e8f-7e2e-448a-9505-7217cc91b1af).</span></span>  
   
  [!code-csharp[PriorityBinding#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PriorityBinding/CSharp/Window1.xaml.cs#1)]
  [!code-vb[PriorityBinding#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PriorityBinding/VisualBasic/AsyncDataSource.vb#1)]  
   
- <xref:System.Windows.Controls.TextBlock.Text%2A> プロパティは、<xref:System.Windows.Data.PriorityBinding> を次のように使用して、上の `AsyncDS` にバインドされます。  
+ <span data-ttu-id="c857c-115"><xref:System.Windows.Controls.TextBlock.Text%2A>プロパティ上にバインドされて`AsyncDS`を使用して<xref:System.Windows.Data.PriorityBinding>:</span><span class="sxs-lookup"><span data-stu-id="c857c-115">The <xref:System.Windows.Controls.TextBlock.Text%2A> property binds to the above `AsyncDS` using <xref:System.Windows.Data.PriorityBinding>:</span></span>  
   
- [!code-xml[PriorityBinding#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PriorityBinding/CSharp/Window1.xaml#2)]  
+ [!code-xaml[PriorityBinding#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PriorityBinding/CSharp/Window1.xaml#2)]  
   
- バインディング エンジンが <xref:System.Windows.Data.Binding> オブジェクトを処理する場合は、最初の <xref:System.Windows.Data.Binding> から処理を開始しますが、これは `SlowestDP` プロパティにバインドされています。  この <xref:System.Windows.Data.Binding> は 5 秒間スリープするため、処理された時点では正常に値を返しません。そのため、次の <xref:System.Windows.Data.Binding> 要素が処理されます。  次の <xref:System.Windows.Data.Binding> も 3 秒間スリープするため、正常に値を返しません。  そのため、バインディング エンジンは次の <xref:System.Windows.Data.Binding> 要素に移動します。この要素は `FastDP` プロパティにバインドされています。  この <xref:System.Windows.Data.Binding> は、値 "Fast Value" を返します。  <xref:System.Windows.Controls.TextBlock> には、値 "Fast Value" が表示されます。  
+ <span data-ttu-id="c857c-116">バインディング エンジンが処理するときに、<xref:System.Windows.Data.Binding>オブジェクト、1 つ目で始まっている<xref:System.Windows.Data.Binding>にバインドされている、`SlowestDP`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="c857c-116">When the binding engine processes the <xref:System.Windows.Data.Binding> objects, it starts with the first <xref:System.Windows.Data.Binding>, which is bound to the `SlowestDP` property.</span></span> <span data-ttu-id="c857c-117">ときにこの<xref:System.Windows.Data.Binding>は、処理は返されません、値が正常にため、これがスリープ状態 5 (秒単位) のため、次へ<xref:System.Windows.Data.Binding>要素を処理します。</span><span class="sxs-lookup"><span data-stu-id="c857c-117">When this <xref:System.Windows.Data.Binding> is processed, it does not return a value successfully because it is sleeping for 5 seconds, so the next <xref:System.Windows.Data.Binding> element is processed.</span></span> <span data-ttu-id="c857c-118">次<xref:System.Windows.Data.Binding>は正常に完了しなかった値が 3 秒間スリープ状態にあるためです。</span><span class="sxs-lookup"><span data-stu-id="c857c-118">The next <xref:System.Windows.Data.Binding> does not return a value successfully because it is sleeping for 3 seconds.</span></span> <span data-ttu-id="c857c-119">バインディング エンジンは、次のステップに移動<xref:System.Windows.Data.Binding>にバインドされている要素、`FastDP`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="c857c-119">The binding engine then moves onto the next <xref:System.Windows.Data.Binding> element, which is bound to the `FastDP` property.</span></span> <span data-ttu-id="c857c-120">これは、 <xref:System.Windows.Data.Binding> "高速 Value"の値を返します。</span><span class="sxs-lookup"><span data-stu-id="c857c-120">This <xref:System.Windows.Data.Binding> returns the value "Fast Value".</span></span> <span data-ttu-id="c857c-121"><xref:System.Windows.Controls.TextBlock>値"Fast"が表示されます。</span><span class="sxs-lookup"><span data-stu-id="c857c-121">The <xref:System.Windows.Controls.TextBlock> now displays the value "Fast Value".</span></span>  
   
- 3 秒経過すると、`SlowerDP` プロパティから値 "Slower Value" が返されます。  <xref:System.Windows.Controls.TextBlock> には、値 "Slower Value" が表示されます。  
+ <span data-ttu-id="c857c-122">3 秒が経過した後、 `SlowerDP` "低速 Value"の値を返します。</span><span class="sxs-lookup"><span data-stu-id="c857c-122">After 3 seconds elapses, the `SlowerDP` property returns the value "Slower Value".</span></span> <span data-ttu-id="c857c-123"><xref:System.Windows.Controls.TextBlock> "低速 Value"の値が表示されます。</span><span class="sxs-lookup"><span data-stu-id="c857c-123">The <xref:System.Windows.Controls.TextBlock> then displays the value "Slower Value".</span></span>  
   
- 5 秒経過すると、`SlowestDP` プロパティから値 "Slowest Value" が返されます。  このバインディングは、リストの先頭に表示されているため、優先順位が最も高くなります。  <xref:System.Windows.Controls.TextBlock> には、値 "Slowest Value" が表示されます。  
+ <span data-ttu-id="c857c-124">5 秒が経過した後、 `SlowestDP` "最も低速な Value"の値を返します。</span><span class="sxs-lookup"><span data-stu-id="c857c-124">After 5 seconds elapses, the `SlowestDP` property returns the value "Slowest Value".</span></span> <span data-ttu-id="c857c-125">そのバインディングは、最初に表示されているために、最高の優先順位をでいます。</span><span class="sxs-lookup"><span data-stu-id="c857c-125">That binding has the highest priority because it is listed first.</span></span> <span data-ttu-id="c857c-126"><xref:System.Windows.Controls.TextBlock> "最も低速な Value"の値が表示されます。</span><span class="sxs-lookup"><span data-stu-id="c857c-126">The <xref:System.Windows.Controls.TextBlock> now displays the value "Slowest Value".</span></span>  
   
- どのような値がバインディングからの正常な戻り値と見なされるかについては、<xref:System.Windows.Data.PriorityBinding> を参照してください。  
+ <span data-ttu-id="c857c-127">参照してください<xref:System.Windows.Data.PriorityBinding>については、バインドからの成功の戻り値と見なされます。</span><span class="sxs-lookup"><span data-stu-id="c857c-127">See <xref:System.Windows.Data.PriorityBinding> for information about what is considered a successful return value from a binding.</span></span>  
   
-## 参照  
- <xref:System.Windows.Data.Binding.IsAsync%2A?displayProperty=fullName>   
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="c857c-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="c857c-128">See Also</span></span>  
+ <xref:System.Windows.Data.Binding.IsAsync%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="c857c-129">データ バインディングの概要</span><span class="sxs-lookup"><span data-stu-id="c857c-129">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [<span data-ttu-id="c857c-130">方法トピック</span><span class="sxs-lookup"><span data-stu-id="c857c-130">How-to Topics</span></span>](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

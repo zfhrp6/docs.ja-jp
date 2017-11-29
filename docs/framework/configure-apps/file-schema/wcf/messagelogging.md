@@ -1,32 +1,34 @@
 ---
-title: "&lt;messageLogging&gt;&lt;/messageLogging&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;メッセージ ログ&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1d06a7e6-9633-4a12-8c5d-123adbbc19c5
-caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e5b232e3faf1e0e8976b0c08264c8ba03988902a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;messageLogging&gt;&lt;/messageLogging&gt;
-この要素は Windows Communication Foundation (WCF) のメッセージ ログ機能の設定を定義します。  
+# <a name="ltmessagelogginggt"></a><span data-ttu-id="b26f3-102">&lt;メッセージ ログ&gt;</span><span class="sxs-lookup"><span data-stu-id="b26f3-102">&lt;messageLogging&gt;</span></span>
+<span data-ttu-id="b26f3-103">この要素は Windows Communication Foundation (WCF) のメッセージ ログ機能の設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="b26f3-103">This element defines the settings for the message-logging capabilities of Windows Communication Foundation (WCF).</span></span>  
   
- \<system.ServiceModel>  
-<>\>  
-<>\>  
+ <span data-ttu-id="b26f3-104">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="b26f3-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="b26f3-105">\<診断 ></span><span class="sxs-lookup"><span data-stu-id="b26f3-105">\<diagnostic></span></span>  
+<span data-ttu-id="b26f3-106">\<メッセージ ログ ></span><span class="sxs-lookup"><span data-stu-id="b26f3-106">\<messageLogging></span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="b26f3-107">構文</span><span class="sxs-lookup"><span data-stu-id="b26f3-107">Syntax</span></span>  
   
-```  
-  
+```xml  
 <system.serviceModel>  
    <diagnostics>  
        <messageLogging logEntireMessage="Boolean"  
@@ -43,40 +45,40 @@ caps.handback.revision: 16
 </system.serviceModel>  
 ```  
   
-## <a name="attributes-and-elements"></a>属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="b26f3-108">属性および要素</span><span class="sxs-lookup"><span data-stu-id="b26f3-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="b26f3-109">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="b26f3-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a><span data-ttu-id="b26f3-110">属性</span><span class="sxs-lookup"><span data-stu-id="b26f3-110">Attributes</span></span>  
   
-|属性|説明|  
+|<span data-ttu-id="b26f3-111">属性</span><span class="sxs-lookup"><span data-stu-id="b26f3-111">Attribute</span></span>|<span data-ttu-id="b26f3-112">説明</span><span class="sxs-lookup"><span data-stu-id="b26f3-112">Description</span></span>|  
 |---------------|-----------------|  
-|`logEntireMessage`|メッセージ全体 (メッセージ ヘッダーと本文) を記録するかどうかを指定するブール値。 既定は `false` で、メッセージ ヘッダーだけが記録されます。 この設定は、すべてのメッセージ ログ レベル (サービス、トランスポート、および不正) に影響を与えます。|  
-|`logMalformedMessages`|無効なメッセージを記録するかどうかを指定するブール値。 無効なメッセージは、`maxMessagesToLog` にカウントされません。 既定値は、`false` です。|  
-|`logMessagesAtServiceLevel`|(暗号化およびトランスポートに関連する変換の前に) メッセージをサービス レベルでトレースするかどうかを指定するブール値。 既定値は、`false` です。|  
-|`logMessagesAtTransportLevel`|メッセージをトランスポート レベルでトレースするかどうかを指定するブール値。 構成ファイルに指定されたフィルターが適用され、フィルターに一致するメッセージだけがトレースされます。 既定値は、`false` です。|  
-|`maxMessagesToLog`|記録するメッセージの最大数を指定する正の整数。 既定値は 1000 です。|  
-|`maxSizeOfMessageToLog`|記録するメッセージの最大サイズ (バイト単位) を指定する正の整数。 サイズが制限より大きなメッセージは、記録されません。 この設定は、すべてのトレース レベルに影響を与えます。 既定値は 262144 (0x4000) です。|  
+|`logEntireMessage`|<span data-ttu-id="b26f3-113">メッセージ全体 (メッセージ ヘッダーと本文) を記録するかどうかを指定するブール値。</span><span class="sxs-lookup"><span data-stu-id="b26f3-113">A Boolean value that specifies whether the entire message (message header and body) is logged.</span></span> <span data-ttu-id="b26f3-114">既定は `false` で、メッセージ ヘッダーだけが記録されます。</span><span class="sxs-lookup"><span data-stu-id="b26f3-114">The default is `false`, which means that only the message header is logged.</span></span> <span data-ttu-id="b26f3-115">この設定は、すべてのメッセージ ログ レベル (サービス、トランスポート、および不正) に影響を与えます。</span><span class="sxs-lookup"><span data-stu-id="b26f3-115">This setting affects all message logging levels (service, transport, and malformed).</span></span>|  
+|`logMalformedMessages`|<span data-ttu-id="b26f3-116">無効なメッセージを記録するかどうかを指定するブール値。</span><span class="sxs-lookup"><span data-stu-id="b26f3-116">A Boolean value that specifies whether malformed messages are logged.</span></span> <span data-ttu-id="b26f3-117">無効なメッセージは、`maxMessagesToLog` にカウントされません。</span><span class="sxs-lookup"><span data-stu-id="b26f3-117">Malformed messages do not count toward the `maxMessagesToLog`.</span></span> <span data-ttu-id="b26f3-118">既定値は、`false` です。</span><span class="sxs-lookup"><span data-stu-id="b26f3-118">The default is `false`.</span></span>|  
+|`logMessagesAtServiceLevel`|<span data-ttu-id="b26f3-119">(暗号化およびトランスポートに関連する変換の前に) メッセージをサービス レベルでトレースするかどうかを指定するブール値。</span><span class="sxs-lookup"><span data-stu-id="b26f3-119">A Boolean value that specifies whether messages are traced at the service level (before encryption- and transport-related transforms).</span></span> <span data-ttu-id="b26f3-120">既定値は、`false` です。</span><span class="sxs-lookup"><span data-stu-id="b26f3-120">The default is `false`.</span></span>|  
+|`logMessagesAtTransportLevel`|<span data-ttu-id="b26f3-121">メッセージをトランスポート レベルでトレースするかどうかを指定するブール値。</span><span class="sxs-lookup"><span data-stu-id="b26f3-121">A Boolean value that specifies whether messages are traced at the transport level.</span></span> <span data-ttu-id="b26f3-122">構成ファイルに指定されたフィルターが適用され、フィルターに一致するメッセージだけがトレースされます。</span><span class="sxs-lookup"><span data-stu-id="b26f3-122">Any filters specified in the config file are applied, and only messages that match the filters are traced.</span></span> <span data-ttu-id="b26f3-123">既定値は、`false` です。</span><span class="sxs-lookup"><span data-stu-id="b26f3-123">The default is `false`.</span></span>|  
+|`maxMessagesToLog`|<span data-ttu-id="b26f3-124">記録するメッセージの最大数を指定する正の整数。</span><span class="sxs-lookup"><span data-stu-id="b26f3-124">A positive integer that specifies the maximum number of messages to log.</span></span> <span data-ttu-id="b26f3-125">既定値は 1000 です。</span><span class="sxs-lookup"><span data-stu-id="b26f3-125">The default is 1000.</span></span>|  
+|`maxSizeOfMessageToLog`|<span data-ttu-id="b26f3-126">記録するメッセージの最大サイズ (バイト単位) を指定する正の整数。</span><span class="sxs-lookup"><span data-stu-id="b26f3-126">A positive integer that specifies the maximum size, in bytes, of a message to log.</span></span> <span data-ttu-id="b26f3-127">サイズが制限より大きなメッセージは、記録されません。</span><span class="sxs-lookup"><span data-stu-id="b26f3-127">Messages larger than the limit will not be logged.</span></span> <span data-ttu-id="b26f3-128">この設定は、すべてのトレース レベルに影響を与えます。</span><span class="sxs-lookup"><span data-stu-id="b26f3-128">This setting affects all trace levels.</span></span> <span data-ttu-id="b26f3-129">既定値は 262144 (0x4000) です。</span><span class="sxs-lookup"><span data-stu-id="b26f3-129">The default is 262144(0x4000).</span></span>|  
   
-### <a name="child-elements"></a>子要素  
+### <a name="child-elements"></a><span data-ttu-id="b26f3-130">子要素</span><span class="sxs-lookup"><span data-stu-id="b26f3-130">Child Elements</span></span>  
   
-|要素|説明|  
+|<span data-ttu-id="b26f3-131">要素</span><span class="sxs-lookup"><span data-stu-id="b26f3-131">Element</span></span>|<span data-ttu-id="b26f3-132">説明</span><span class="sxs-lookup"><span data-stu-id="b26f3-132">Description</span></span>|  
 |-------------|-----------------|  
-|フィルター|`filters` 要素には、XPath フィルターのコレクションが保持されます。 トランスポート メッセージ ログが有効な場合 (`logMessagesAtTransportLevel` が `true`)、フィルターに一致するメッセージだけが記録されます。<br /><br /> フィルターは、トランスポート層でのみ適用されます。 サービス レベルおよび形式が正しくないメッセージ ログ記録は、フィルターの影響を受けません。<br /><br /> この要素の唯一の属性である `filter` は、XpathFilter です。<br /><br /> `<filters>     <add xmlns:soap="http://www.w3.org/2003/05/soap-envelope">/soap:Envelope</add> </filters>`|  
+|<span data-ttu-id="b26f3-133">フィルター</span><span class="sxs-lookup"><span data-stu-id="b26f3-133">filters</span></span>|<span data-ttu-id="b26f3-134">`filters` 要素には、XPath フィルターのコレクションが保持されます。</span><span class="sxs-lookup"><span data-stu-id="b26f3-134">The `filters` element holds a collection of XPath filters.</span></span> <span data-ttu-id="b26f3-135">トランスポート メッセージ ログが有効な場合 (`logMessagesAtTransportLevel` が `true`)、フィルターに一致するメッセージだけが記録されます。</span><span class="sxs-lookup"><span data-stu-id="b26f3-135">When transport message logging is enabled (`logMessagesAtTransportLevel` is `true`), only messages matching the filters will be logged.</span></span><br /><br /> <span data-ttu-id="b26f3-136">フィルターは、トランスポート層でのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="b26f3-136">Filters are applied only at the transport layer.</span></span> <span data-ttu-id="b26f3-137">サービス レベルおよび形式が正しくないメッセージ ログ記録は、フィルターの影響を受けません。</span><span class="sxs-lookup"><span data-stu-id="b26f3-137">Service level and malformed message logging are not affected by filters.</span></span><br /><br /> <span data-ttu-id="b26f3-138">この要素の唯一の属性である `filter` は、XpathFilter です。</span><span class="sxs-lookup"><span data-stu-id="b26f3-138">The only attribute for this element, `filter`, is an XpathFilter.</span></span><br /><br /> `<filters>     <add xmlns:soap="http://www.w3.org/2003/05/soap-envelope">/soap:Envelope</add> </filters>`|  
   
-### <a name="parent-elements"></a>親要素  
+### <a name="parent-elements"></a><span data-ttu-id="b26f3-139">親要素</span><span class="sxs-lookup"><span data-stu-id="b26f3-139">Parent Elements</span></span>  
   
-|要素|説明|  
+|<span data-ttu-id="b26f3-140">要素</span><span class="sxs-lookup"><span data-stu-id="b26f3-140">Element</span></span>|<span data-ttu-id="b26f3-141">説明</span><span class="sxs-lookup"><span data-stu-id="b26f3-141">Description</span></span>|  
 |-------------|-----------------|  
-|診断|管理者が行うランタイムの検査と管理の WCF 設定を定義します。|  
+|<span data-ttu-id="b26f3-142">診断</span><span class="sxs-lookup"><span data-stu-id="b26f3-142">diagnostics</span></span>|<span data-ttu-id="b26f3-143">管理者が行うランタイムの検査と管理の WCF 設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="b26f3-143">Defines WCF settings for runtime inspection and control for the administrator.</span></span>|  
   
-## <a name="remarks"></a>コメント  
- メッセージは、サービス、トランスポート、および不正の&3; 種類のレベルで記録されます。 各レベルは、個別にアクティブにできます。  
+## <a name="remarks"></a><span data-ttu-id="b26f3-144">コメント</span><span class="sxs-lookup"><span data-stu-id="b26f3-144">Remarks</span></span>  
+ <span data-ttu-id="b26f3-145">メッセージは、サービス、トランスポート、および不正の 3 種類のレベルで記録されます。</span><span class="sxs-lookup"><span data-stu-id="b26f3-145">Messages are logged at three different levels in the stack: service, transport, and malformed.</span></span> <span data-ttu-id="b26f3-146">各レベルは、個別にアクティブにできます。</span><span class="sxs-lookup"><span data-stu-id="b26f3-146">Each level can be activated separately.</span></span>  
   
- XPath フィルターは、トランスポート レベルとサービス レベルで特定のメッセージを記録するために追加できます。 フィルターが定義されていない場合、すべてのメッセージが記録されます。 フィルターは、メッセージのヘッダーにのみ適用されます。 本文は無視されます。 WCF は、パフォーマンスを強化するためにメッセージ本文を無視します。 本文の内容に基づいてフィルターを適用する場合は、そのためのフィルターを備えたカスタム リスナーを作成できます。  
+ <span data-ttu-id="b26f3-147">XPath フィルターは、トランスポート レベルとサービス レベルで特定のメッセージを記録するために追加できます。</span><span class="sxs-lookup"><span data-stu-id="b26f3-147">XPath filters can be added to log specific messages at the transport and service levels.</span></span> <span data-ttu-id="b26f3-148">フィルターが定義されていない場合、すべてのメッセージが記録されます。</span><span class="sxs-lookup"><span data-stu-id="b26f3-148">If no filters are defined, all messages are logged.</span></span> <span data-ttu-id="b26f3-149">フィルターは、メッセージのヘッダーにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="b26f3-149">Filters are applied only to the headers of the message.</span></span> <span data-ttu-id="b26f3-150">本文は無視されます。</span><span class="sxs-lookup"><span data-stu-id="b26f3-150">The body is ignored.</span></span> <span data-ttu-id="b26f3-151">WCF は、パフォーマンスを強化するためにメッセージ本文を無視します。</span><span class="sxs-lookup"><span data-stu-id="b26f3-151">WCF ignores the message body to improve performance.</span></span> <span data-ttu-id="b26f3-152">本文の内容に基づいてフィルターを適用する場合は、そのためのフィルターを備えたカスタム リスナーを作成できます。</span><span class="sxs-lookup"><span data-stu-id="b26f3-152">If you want to filter based on the content of the body, you can create a custom listener with a filter that does so.</span></span>  
   
- メッセージ トレースをアクティブ化するために、トレース リスナーを作成する必要があります。 リスナー自体にで動作するリスナーを指定できます、 <xref:System.Diagnostics>トレース アーキテクチャです。 次の例は、そのようなリスナーの作成方法を示します。  
+ <span data-ttu-id="b26f3-153">メッセージ トレースをアクティブ化するために、トレース リスナーを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b26f3-153">You need to create a trace listener to activate message tracing.</span></span> <span data-ttu-id="b26f3-154">リスナー自体には、<xref:System.Diagnostics> トレース アーキテクチャで動作するリスナーを指定できます。</span><span class="sxs-lookup"><span data-stu-id="b26f3-154">The listener itself can be any listener that works with the <xref:System.Diagnostics> tracing architecture.</span></span> <span data-ttu-id="b26f3-155">次の例は、そのようなリスナーの作成方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b26f3-155">The following example demonstrates how to create such a listener.</span></span>  
   
-```  
+```xml  
 <system.diagnostics>  
     <sources>  
           <source name="System.ServiceModel" switchValue="Verbose">  
@@ -109,9 +111,9 @@ caps.handback.revision: 16
 </system.diagnostics>  
 ```  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="b26f3-156">例</span><span class="sxs-lookup"><span data-stu-id="b26f3-156">Example</span></span>  
   
-```  
+```xml  
 <messageLogging logEntireMessage="true"  
     logMalformedMessages="true"  
     logMessagesAtServiceLevel="true"  
@@ -124,9 +126,9 @@ caps.handback.revision: 16
  </messageLogging>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.ServiceModel.Configuration.DiagnosticSection>   
- <xref:System.ServiceModel.Diagnostics>   
- <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>   
- <xref:System.ServiceModel.Configuration.MessageLoggingElement>   
- [メッセージ ログの構成](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)
+## <a name="see-also"></a><span data-ttu-id="b26f3-157">関連項目</span><span class="sxs-lookup"><span data-stu-id="b26f3-157">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.DiagnosticSection>  
+ <xref:System.ServiceModel.Diagnostics>  
+ <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>  
+ <xref:System.ServiceModel.Configuration.MessageLoggingElement>  
+ [<span data-ttu-id="b26f3-158">メッセージ ログの構成</span><span class="sxs-lookup"><span data-stu-id="b26f3-158">Configuring Message Logging</span></span>](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)

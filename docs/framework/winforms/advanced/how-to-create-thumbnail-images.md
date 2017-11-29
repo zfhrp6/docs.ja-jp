@@ -1,61 +1,65 @@
 ---
-title: "方法 : サムネイル イメージを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "イメージ [Windows フォーム], 作成 (サムネイル)"
-  - "サムネイル イメージ, 作成"
+title: "方法 : サムネイル イメージを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- thumbnail images [Windows Forms], creating
+- images [Windows Forms], creating thumbnails
 ms.assetid: e956242a-1e5b-4217-a3cf-5f3fb45d00ba
-caps.latest.revision: 20
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2a3866274340932819a419c622c10072dd67c439
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : サムネイル イメージを作成する
-サムネイル イメージとは、イメージの縮小版のことです。  サムネイル イメージを作成するには、<xref:System.Drawing.Image> オブジェクトの <xref:System.Drawing.Image.GetThumbnailImage%2A> メソッドを呼び出します。  
+# <a name="how-to-create-thumbnail-images"></a><span data-ttu-id="be7de-102">方法 : サムネイル イメージを作成する</span><span class="sxs-lookup"><span data-stu-id="be7de-102">How to: Create Thumbnail Images</span></span>
+<span data-ttu-id="be7de-103">サムネイル イメージとは、画像の縮小版です。</span><span class="sxs-lookup"><span data-stu-id="be7de-103">A thumbnail image is a small version of an image.</span></span> <span data-ttu-id="be7de-104">サムネイル イメージを作成するには呼び出すことによって、<xref:System.Drawing.Image.GetThumbnailImage%2A>のメソッド、<xref:System.Drawing.Image>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="be7de-104">You can create a thumbnail image by calling the <xref:System.Drawing.Image.GetThumbnailImage%2A> method of an <xref:System.Drawing.Image> object.</span></span>  
   
-## 使用例  
- JPG ファイルから <xref:System.Drawing.Image> オブジェクトを作成する例を次に示します。  元のイメージの幅は 640 ピクセルで、高さは 479 ピクセルです。  このコードは、幅および高さが共に 100 ピクセルのサムネイル イメージを作成します。  
+## <a name="example"></a><span data-ttu-id="be7de-105">例</span><span class="sxs-lookup"><span data-stu-id="be7de-105">Example</span></span>  
+ <span data-ttu-id="be7de-106">次の例の構築、 <xref:System.Drawing.Image> JPG ファイルからオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="be7de-106">The following example constructs an <xref:System.Drawing.Image> object from a JPG file.</span></span> <span data-ttu-id="be7de-107">元のイメージは、640 ピクセル幅および 479 ピクセルの高さを持ちます。</span><span class="sxs-lookup"><span data-stu-id="be7de-107">The original image has a width of 640 pixels and a height of 479 pixels.</span></span> <span data-ttu-id="be7de-108">コードでは、100 ピクセルの幅と高さ 100 ピクセルを持つサムネイル イメージを作成します。</span><span class="sxs-lookup"><span data-stu-id="be7de-108">The code creates a thumbnail image that has a width of 100 pixels and a height of 100 pixels.</span></span>  
   
- 作成されたサムネイル イメージを次の図に示します。  
+ <span data-ttu-id="be7de-109">次の図は、サムネイル画像を示します。</span><span class="sxs-lookup"><span data-stu-id="be7de-109">The following illustration shows the thumbnail image.</span></span>  
   
- ![サムネイル イメージ](../../../../docs/framework/winforms/advanced/media/thumbnail1.png "Thumbnail1")  
+ <span data-ttu-id="be7de-110">![サムネイル画像](../../../../docs/framework/winforms/advanced/media/thumbnail1.png "Thumbnail1")</span><span class="sxs-lookup"><span data-stu-id="be7de-110">![Thumbnail Image](../../../../docs/framework/winforms/advanced/media/thumbnail1.png "Thumbnail1")</span></span>  
   
 > [!NOTE]
->  この例では、コールバック メソッドが宣言されていますが、使用しません。  このメソッドは GDI\+ のすべてのバージョンをサポートします。  
+>  <span data-ttu-id="be7de-111">この例では、コールバック メソッドは宣言されている、使用されていません。</span><span class="sxs-lookup"><span data-stu-id="be7de-111">In this example, a callback method is declared, but never used.</span></span> <span data-ttu-id="be7de-112">これには、GDI + のすべてのバージョンがサポートしています。</span><span class="sxs-lookup"><span data-stu-id="be7de-112">This supports all versions of GDI+.</span></span>  
   
  [!code-csharp[System.Drawing.WorkingWithImages#71](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#71)]
  [!code-vb[System.Drawing.WorkingWithImages#71](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#71)]  
   
-## コードのコンパイル  
- 前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  この例を実行するには、次の手順に従います。  
+## <a name="compiling-the-code"></a><span data-ttu-id="be7de-113">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="be7de-113">Compiling the Code</span></span>  
+ <span data-ttu-id="be7de-114">前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。</span><span class="sxs-lookup"><span data-stu-id="be7de-114">The preceding example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs> `e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span> <span data-ttu-id="be7de-115">例を実行するには、次の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="be7de-115">To run the example, follow these steps:</span></span>  
   
-1.  新しい Windows フォームアプリケーションを作成します。  
+1.  <span data-ttu-id="be7de-116">新しい Windows フォーム アプリケーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="be7de-116">Create a new Windows Forms application.</span></span>  
   
-2.  プログラム例をフォームに追加します。  
+2.  <span data-ttu-id="be7de-117">例のコードをフォームに追加します。</span><span class="sxs-lookup"><span data-stu-id="be7de-117">Add the example code to the form.</span></span>  
   
-3.  フォームの <xref:System.Windows.Forms.Control.Paint> イベントのハンドラーを作成します。  
+3.  <span data-ttu-id="be7de-118">フォームのハンドラーを作成<xref:System.Windows.Forms.Control.Paint>イベント</span><span class="sxs-lookup"><span data-stu-id="be7de-118">Create a handler for the form's <xref:System.Windows.Forms.Control.Paint> event</span></span>  
   
-4.  <xref:System.Windows.Forms.Control.Paint> ハンドラーで、`GetThumbnail` メソッドを呼び出し、<xref:System.Windows.Forms.PaintEventArgs> の `e` を渡します。  
+4.  <span data-ttu-id="be7de-119"><xref:System.Windows.Forms.Control.Paint>ハンドラーを呼び出し、`GetThumbnail`メソッドを渡します`e`の<xref:System.Windows.Forms.PaintEventArgs>します。</span><span class="sxs-lookup"><span data-stu-id="be7de-119">In the <xref:System.Windows.Forms.Control.Paint> handler, call the `GetThumbnail` method and pass `e` for <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
   
-5.  サムネイルを作成するイメージ ファイルを見つけます。  
+5.  <span data-ttu-id="be7de-120">サムネイルを作成するイメージ ファイルを検索します。</span><span class="sxs-lookup"><span data-stu-id="be7de-120">Find an image file that you want to make a thumbnail of.</span></span>  
   
-6.  `GetThumbnail` メソッドで、イメージのパスとファイル名を指定します。  
+6.  <span data-ttu-id="be7de-121">`GetThumbnail`メソッドは、パスを指定し、ファイルをイメージ名。</span><span class="sxs-lookup"><span data-stu-id="be7de-121">In the `GetThumbnail` method, specify the path and file name to your image.</span></span>  
   
-7.  F5 キーを押して例を実行します。  
+7.  <span data-ttu-id="be7de-122">F5 キーを押して、例を実行します。</span><span class="sxs-lookup"><span data-stu-id="be7de-122">Press F5 to run the example.</span></span>  
   
-     100 × 100 のサムネイル イメージがフォーム上に表示されます。  
+     <span data-ttu-id="be7de-123">100 × 100 のサムネイル画像は、フォームに表示されます。</span><span class="sxs-lookup"><span data-stu-id="be7de-123">A 100 by 100 thumbnail image appears on the form.</span></span>  
   
-## 参照  
- [イメージ、ビットマップ、およびメタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)   
- [イメージ、ビットマップ、アイコン、およびメタファイルの操作](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)
+## <a name="see-also"></a><span data-ttu-id="be7de-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="be7de-124">See Also</span></span>  
+ [<span data-ttu-id="be7de-125">イメージ、ビットマップ、メタファイル</span><span class="sxs-lookup"><span data-stu-id="be7de-125">Images, Bitmaps, and Metafiles</span></span>](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
+ [<span data-ttu-id="be7de-126">イメージ、ビットマップ、アイコン、およびメタファイルの操作</span><span class="sxs-lookup"><span data-stu-id="be7de-126">Working with Images, Bitmaps, Icons, and Metafiles</span></span>](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)

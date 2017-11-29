@@ -1,79 +1,80 @@
 ---
-title: "&lt;schemeSettings&gt; 要素 (Uri 設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "&lt;schemeSettings&gt;要素 (Uri 設定)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0ae45c6e-8c4c-4c0d-8b9f-a93824648890
-caps.latest.revision: 6
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 4cf1d2013a51985f9d7772ac0ef86e5dbb120be9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;schemeSettings&gt; 要素 (Uri 設定)
-<xref:System.Uri> が特定のスキーマに対して解析される方法を指定します。  
+# <a name="ltschemesettingsgt-element-uri-settings"></a><span data-ttu-id="76d80-102">&lt;schemeSettings&gt;要素 (Uri 設定)</span><span class="sxs-lookup"><span data-stu-id="76d80-102">&lt;schemeSettings&gt; Element (Uri Settings)</span></span>
+<span data-ttu-id="76d80-103"><xref:System.Uri> が特定のスキームに解析される方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="76d80-103">Specifies how a <xref:System.Uri> will be parsed for specific schemes.</span></span>  
   
-## 構文  
+ <span data-ttu-id="76d80-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="76d80-104">\<configuration></span></span>  
+<span data-ttu-id="76d80-105">\<uri ></span><span class="sxs-lookup"><span data-stu-id="76d80-105">\<uri></span></span>  
+<span data-ttu-id="76d80-106">\<schemeSettings ></span><span class="sxs-lookup"><span data-stu-id="76d80-106">\<schemeSettings></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="76d80-107">構文</span><span class="sxs-lookup"><span data-stu-id="76d80-107">Syntax</span></span>  
   
-      <schemeSettings>   
+```xml  
+<schemeSettings>   
 </schemeSettings>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="76d80-108">属性および要素</span><span class="sxs-lookup"><span data-stu-id="76d80-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="76d80-109">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="76d80-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
- なし。  
+### <a name="attributes"></a><span data-ttu-id="76d80-110">属性</span><span class="sxs-lookup"><span data-stu-id="76d80-110">Attributes</span></span>  
+ <span data-ttu-id="76d80-111">なし</span><span class="sxs-lookup"><span data-stu-id="76d80-111">None</span></span>  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="76d80-112">子要素</span><span class="sxs-lookup"><span data-stu-id="76d80-112">Child Elements</span></span>  
   
-|**要素**|**説明**|  
-|------------|------------|  
-|[add](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-schemesettings-uri-settings.md)|スキーム名に対するスキーム設定を追加します。|  
-|[clear](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-schemesettings-uri-settings.md)|既存のスキーム設定をすべて消去します。|  
-|[remove](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-schemesettings-uri-settings.md)|スキーム名に対するスキーム設定を削除します。|  
+|<span data-ttu-id="76d80-113">**要素**</span><span class="sxs-lookup"><span data-stu-id="76d80-113">**Element**</span></span>|<span data-ttu-id="76d80-114">**説明**</span><span class="sxs-lookup"><span data-stu-id="76d80-114">**Description**</span></span>|  
+|-----------------|---------------------|  
+|[<span data-ttu-id="76d80-115">add</span><span class="sxs-lookup"><span data-stu-id="76d80-115">add</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-schemesettings-uri-settings.md)|<span data-ttu-id="76d80-116">スキーム名にスキームの設定を追加します。</span><span class="sxs-lookup"><span data-stu-id="76d80-116">Adds a scheme setting for a scheme name.</span></span>|  
+|[<span data-ttu-id="76d80-117">clear</span><span class="sxs-lookup"><span data-stu-id="76d80-117">clear</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-schemesettings-uri-settings.md)|<span data-ttu-id="76d80-118">既存のすべての構成設定を消去します。</span><span class="sxs-lookup"><span data-stu-id="76d80-118">Clears all existing scheme settings.</span></span>|  
+|[<span data-ttu-id="76d80-119">remove</span><span class="sxs-lookup"><span data-stu-id="76d80-119">remove</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-schemesettings-uri-settings.md)|<span data-ttu-id="76d80-120">スキーム名にスキームの設定を削除します。</span><span class="sxs-lookup"><span data-stu-id="76d80-120">Removes a scheme setting for a scheme name.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="76d80-121">親要素</span><span class="sxs-lookup"><span data-stu-id="76d80-121">Parent Elements</span></span>  
   
-|**要素**|**説明**|  
-|------------|------------|  
-|[uri](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|URI \(Uniform Resource Identifier\) で表現された Web アドレスが .NET Framework によってどのように処理されるかの設定を格納します。|  
+|<span data-ttu-id="76d80-122">**要素**</span><span class="sxs-lookup"><span data-stu-id="76d80-122">**Element**</span></span>|<span data-ttu-id="76d80-123">**説明**</span><span class="sxs-lookup"><span data-stu-id="76d80-123">**Description**</span></span>|  
+|-----------------|---------------------|  
+|[<span data-ttu-id="76d80-124">uri</span><span class="sxs-lookup"><span data-stu-id="76d80-124">uri</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|<span data-ttu-id="76d80-125">.NET Framework での web アドレスの uniform resource identifier (Uri) を使用して表現の処理方法を指定する設定が含まれています。</span><span class="sxs-lookup"><span data-stu-id="76d80-125">Contains settings that specify how the .NET Framework handles web addresses expressed using uniform resource identifiers (URIs).</span></span>|  
   
-## 解説  
- 既定では、<xref:System.Uri?displayProperty=fullName> クラスは、パスの圧縮を実行する前に、パーセント記号をエンコードしたパス区切り記号のエスケープを解除します。  これは、次のような攻撃に対するセキュリティ機構として実装されました。  
+## <a name="remarks"></a><span data-ttu-id="76d80-126">コメント</span><span class="sxs-lookup"><span data-stu-id="76d80-126">Remarks</span></span>  
+ <span data-ttu-id="76d80-127">既定では、<xref:System.Uri?displayProperty=nameWithType>クラス エスケープを解除 % は、パスの圧縮を実行する前にパスの区切り記号をエンコードします。</span><span class="sxs-lookup"><span data-stu-id="76d80-127">By default, the <xref:System.Uri?displayProperty=nameWithType> class un-escapes percent encoded path delimiters before executing path compression.</span></span> <span data-ttu-id="76d80-128">これは、次のような攻撃に対するセキュリティ機構として実装されていました。</span><span class="sxs-lookup"><span data-stu-id="76d80-128">This was implemented as a security mechanism against attacks like the following:</span></span>  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
- パーセント記号をエンコードした文字を正しく処理できないモジュールにこの URI が渡されると、次のコマンドがサーバーによって実行されます。  
+ <span data-ttu-id="76d80-129">この URI が渡される場合は、モジュール % は処理されません。 エンコードした文字を正しく、サーバーにより実行されている次のコマンドを可能性があります。</span><span class="sxs-lookup"><span data-stu-id="76d80-129">If this URI gets passed down to modules not handling percent encoded characters correctly, it could result in the following command being executed by the server:</span></span>  
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- このため、<xref:System.Uri?displayProperty=fullName> クラスでは、パス区切り記号のエスケープを解除してから、パスの圧縮を適用します。  上のような悪意のある URL を <xref:System.Uri?displayProperty=fullName> クラス コンストラクターに渡した場合、次の URI になります。  
+ <span data-ttu-id="76d80-130">このため、<xref:System.Uri?displayProperty=nameWithType>クラスの最初のエスケープを解除パス区切り記号とパスの圧縮を適用します。</span><span class="sxs-lookup"><span data-stu-id="76d80-130">For this reason, <xref:System.Uri?displayProperty=nameWithType> class first un-escapes path delimiters and then applies path compression.</span></span> <span data-ttu-id="76d80-131">上への悪意のある URL を渡した結果<xref:System.Uri?displayProperty=nameWithType>クラスのコンス トラクターの結果で、次の URI:</span><span class="sxs-lookup"><span data-stu-id="76d80-131">The result of passing the malicious URL above to <xref:System.Uri?displayProperty=nameWithType> class constructor results in the following URI:</span></span>  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   
- この既定の動作は、特定のスキームの schemeSettings 構成オプションを使用して、パーセント記号をエンコードしたパス区切り記号のエスケープを解除しないように変更できます。  
+ <span data-ttu-id="76d80-132">いないエスケープ解除パーセント エンコードされたパスの区切り記号 schemeSettings 構成オプションを使用して、特定のスキームには、この既定の動作を変更できます。</span><span class="sxs-lookup"><span data-stu-id="76d80-132">This default behavior can be modified to not un-escape percent encoded path delimiters using the schemeSettings configuration option for a specific scheme.</span></span>  
   
-## 構成ファイル  
- この要素は、アプリケーション構成ファイルまたはマシン構成ファイル \(Machine.config\) で使用できます。  
+## <a name="configuration-files"></a><span data-ttu-id="76d80-133">構成ファイル</span><span class="sxs-lookup"><span data-stu-id="76d80-133">Configuration Files</span></span>  
+ <span data-ttu-id="76d80-134">この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。</span><span class="sxs-lookup"><span data-stu-id="76d80-134">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
-## 使用例  
- http スキームのパーセント記号をエンコードしたパス区切り記号をエスケープしないようにするために、<xref:System.Uri> クラスで使用する構成を次のコード例に示します。  
+## <a name="example"></a><span data-ttu-id="76d80-135">例</span><span class="sxs-lookup"><span data-stu-id="76d80-135">Example</span></span>  
+ <span data-ttu-id="76d80-136">次の例で使用する構成を示しています、 <xref:System.Uri> http スキームのパーセントでエンコードされたパスの区切り記号をエスケープしないをサポートするクラス。</span><span class="sxs-lookup"><span data-stu-id="76d80-136">The following example shows a configuration used by the <xref:System.Uri> class to support not escaping percent-encoded path delimiters for the http scheme.</span></span>  
   
-```  
+```xml  
 <configuration>  
   <uri>  
     <schemeSettings>  
@@ -83,20 +84,20 @@ caps.handback.revision: 6
 </configuration>  
 ```  
   
-## 要素情報  
+## <a name="element-information"></a><span data-ttu-id="76d80-137">要素情報</span><span class="sxs-lookup"><span data-stu-id="76d80-137">Element Information</span></span>  
   
-|||  
+|||
 |-|-|  
-|名前空間|システム|  
-|スキーマ名||  
-|検証ファイル||  
-|空も使用できる||  
+|<span data-ttu-id="76d80-138">名前空間</span><span class="sxs-lookup"><span data-stu-id="76d80-138">Namespace</span></span>|<span data-ttu-id="76d80-139">システム</span><span class="sxs-lookup"><span data-stu-id="76d80-139">System</span></span>|  
+|<span data-ttu-id="76d80-140">スキーマ名</span><span class="sxs-lookup"><span data-stu-id="76d80-140">Schema Name</span></span>||  
+|<span data-ttu-id="76d80-141">検証ファイル</span><span class="sxs-lookup"><span data-stu-id="76d80-141">Validation File</span></span>||  
+|<span data-ttu-id="76d80-142">空にすることができます。</span><span class="sxs-lookup"><span data-stu-id="76d80-142">Can be Empty</span></span>||  
   
-## 参照  
- <xref:System.Configuration.SchemeSettingElement?displayProperty=fullName>   
- <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=fullName>   
- <xref:System.Configuration.UriSection?displayProperty=fullName>   
- <xref:System.Configuration.UriSection.SchemeSettings%2A?displayProperty=fullName>   
- <xref:System.GenericUriParserOptions?displayProperty=fullName>   
- <xref:System.Uri?displayProperty=fullName>   
- [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+## <a name="see-also"></a><span data-ttu-id="76d80-143">関連項目</span><span class="sxs-lookup"><span data-stu-id="76d80-143">See Also</span></span>  
+ <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>  
+ <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>  
+ <xref:System.Configuration.UriSection?displayProperty=nameWithType>  
+ <xref:System.Configuration.UriSection.SchemeSettings%2A?displayProperty=nameWithType>  
+ <xref:System.GenericUriParserOptions?displayProperty=nameWithType>  
+ <xref:System.Uri?displayProperty=nameWithType>  
+ [<span data-ttu-id="76d80-144">ネットワーク設定スキーマ</span><span class="sxs-lookup"><span data-stu-id="76d80-144">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

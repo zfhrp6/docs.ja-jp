@@ -1,156 +1,159 @@
 ---
-title: "トランザクション プロトコル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "トランザクション プロトコル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 2820b0ec-2f32-430c-b299-1f0e95e1f2dc
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d8791b871679495e3f399649899535cc25f9c150
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# トランザクション プロトコル
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、WS\-Atomic Transaction プロトコルと WS\-Coordination プロトコルを実装しています。  
+# <a name="transaction-protocols"></a><span data-ttu-id="8e467-102">トランザクション プロトコル</span><span class="sxs-lookup"><span data-stu-id="8e467-102">Transaction Protocols</span></span>
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="8e467-103"> は、WS-Atomic Transaction プロトコルと WS-Coordination プロトコルを実装しています。</span><span class="sxs-lookup"><span data-stu-id="8e467-103"> implements WS-Atomic Transaction and WS-Coordination protocols.</span></span>  
   
-|仕様\/ドキュメント|バージョン|リンク|  
-|----------------|-----------|---------|  
-|WS\-Coordination|1.0<br /><br /> 1.1|[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96104](http://go.microsoft.com/fwlink/?LinkId=96104)<br /><br /> [http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96079](http://go.microsoft.com/fwlink/?LinkId=96079)|  
-|WS\-AtomicTransaction|1.0<br /><br /> 1.1|[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96080](http://go.microsoft.com/fwlink/?LinkId=96080)<br /><br /> http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96081|  
+|<span data-ttu-id="8e467-104">仕様/ドキュメント</span><span class="sxs-lookup"><span data-stu-id="8e467-104">Specification/Document</span></span>|<span data-ttu-id="8e467-105">Version</span><span class="sxs-lookup"><span data-stu-id="8e467-105">Version</span></span>|<span data-ttu-id="8e467-106">Link</span><span class="sxs-lookup"><span data-stu-id="8e467-106">Link</span></span>|  
+|-----------------------------|-------------|----------|  
+|<span data-ttu-id="8e467-107">WS-Coordination</span><span class="sxs-lookup"><span data-stu-id="8e467-107">WS-Coordination</span></span>|<span data-ttu-id="8e467-108">1.0</span><span class="sxs-lookup"><span data-stu-id="8e467-108">1.0</span></span><br /><br /> <span data-ttu-id="8e467-109">1.1</span><span class="sxs-lookup"><span data-stu-id="8e467-109">1.1</span></span>|[<span data-ttu-id="8e467-110">http://go.microsoft.com/fwlink/?LinkId=96104</span><span class="sxs-lookup"><span data-stu-id="8e467-110">http://go.microsoft.com/fwlink/?LinkId=96104</span></span>](http://go.microsoft.com/fwlink/?LinkId=96104)<br /><br /> [<span data-ttu-id="8e467-111">http://go.microsoft.com/fwlink/?LinkId=96079</span><span class="sxs-lookup"><span data-stu-id="8e467-111">http://go.microsoft.com/fwlink/?LinkId=96079</span></span>](http://go.microsoft.com/fwlink/?LinkId=96079)|  
+|<span data-ttu-id="8e467-112">WS-AtomicTransaction</span><span class="sxs-lookup"><span data-stu-id="8e467-112">WS-AtomicTransaction</span></span>|<span data-ttu-id="8e467-113">1.0</span><span class="sxs-lookup"><span data-stu-id="8e467-113">1.0</span></span><br /><br /> <span data-ttu-id="8e467-114">1.1</span><span class="sxs-lookup"><span data-stu-id="8e467-114">1.1</span></span>|[<span data-ttu-id="8e467-115">http://go.microsoft.com/fwlink/?LinkId=96080</span><span class="sxs-lookup"><span data-stu-id="8e467-115">http://go.microsoft.com/fwlink/?LinkId=96080</span></span>](http://go.microsoft.com/fwlink/?LinkId=96080)<br /><br /> <span data-ttu-id="8e467-116">http://go.microsoft.com/fwlink/?LinkId=96081</span><span class="sxs-lookup"><span data-stu-id="8e467-116">http://go.microsoft.com/fwlink/?LinkId=96081</span></span>|  
   
- これらのプロトコル仕様の相互運用性は、アプリケーション間とトランザクション マネージャー間の 2 つのレベルで必要です \(次の図を参照\)。仕様では、相互運用性の両方のレベルについて、メッセージ形式とメッセージ交換が詳細に説明されます。アプリケーション間での交換に必要な一定のセキュリティ、信頼性、およびエンコーディングは、通常のアプリケーションによる交換にも当てはまります。ただし、トランザクション マネージャー間で適切な相互運用性を実現するには、特定のバインディングを使用するという合意が必要となります。通常、バインディングはユーザーによって構成されないためです。  
+ <span data-ttu-id="8e467-117">これらのプロトコル仕様の相互運用性は、アプリケーション間とトランザクション マネージャー間の 2 つのレベルで必要です (次の図を参照)。</span><span class="sxs-lookup"><span data-stu-id="8e467-117">Interoperability on these protocol specifications is required at two levels: between applications and between transaction managers (see the following figure).</span></span> <span data-ttu-id="8e467-118">仕様では、相互運用性の両方のレベルについて、メッセージ形式とメッセージ交換が詳細に説明されます。</span><span class="sxs-lookup"><span data-stu-id="8e467-118">Specifications describe in great detail the message formats and message exchange for both interoperability levels.</span></span> <span data-ttu-id="8e467-119">アプリケーション間での交換に必要な一定のセキュリティ、信頼性、およびエンコーディングは、通常のアプリケーションによる交換にも当てはまります。</span><span class="sxs-lookup"><span data-stu-id="8e467-119">Certain security, reliability, and encodings for application-to-application exchange apply as they do for regular application exchange.</span></span> <span data-ttu-id="8e467-120">ただし、トランザクション マネージャー間で適切な相互運用性を実現するには、特定のバインディングを使用するという合意が必要となります。通常、バインディングはユーザーによって構成されないためです。</span><span class="sxs-lookup"><span data-stu-id="8e467-120">However, successful interoperability between transaction managers requires agreement on the particular binding, because it is usually not configured by the user.</span></span>  
   
- ここでは、WS\-AtomicTransaction \(WS\-AT\) 仕様のセキュリティに関する構成と、トランザクション マネージャー間の通信に使用されるセキュリティで保護されたバインディングについて説明します。このドキュメントで説明されているアプローチは、IBM、IONA、Sun Microsystems などを含む WS\-AT および WS\-Coordination の各種の実装でテスト済みのものです。  
+ <span data-ttu-id="8e467-121">ここでは、WS-AtomicTransaction (WS-AT) 仕様のセキュリティに関する構成と、トランザクション マネージャー間の通信に使用されるセキュリティで保護されたバインディングについて説明します。</span><span class="sxs-lookup"><span data-stu-id="8e467-121">This topic describes a composition of the WS-Atomic Transaction (WS-AT) specification with security and describes the secure binding used for communication between transaction managers.</span></span> <span data-ttu-id="8e467-122">このドキュメントで説明されているアプローチは、IBM、IONA、Sun Microsystems などを含む WS-AT および WS-Coordination の各種の実装でテスト済みのものです。</span><span class="sxs-lookup"><span data-stu-id="8e467-122">The approach described in this document has been successfully tested with other implementations of WS-AT and WS-Coordination including IBM, IONA, Sun Microsystems, and others.</span></span>  
   
- 次の図は、2 つのトランザクション マネージャー \(Transaction Manager 1 と Transaction Manager 2\)、および 2 つのアプリケーション \(Application 1 と Application 2\) 間の相互運用性を示しています。  
+ <span data-ttu-id="8e467-123">次の図は、2 つのトランザクション マネージャー (Transaction Manager 1 と Transaction Manager 2)、および 2 つのアプリケーション (Application 1 と Application 2) 間の相互運用性を示しています。</span><span class="sxs-lookup"><span data-stu-id="8e467-123">The following figure depicts the interoperability between two transaction managers, Transaction Manager 1 and Transaction Manager 2, and two applications, Application 1 and Application 2.</span></span>  
   
- ![トランザクション プロトコル](../../../../docs/framework/wcf/feature-details/media/transactionmanagers.gif "TransactionManagers")  
+ <span data-ttu-id="8e467-124">![トランザクション プロトコル](../../../../docs/framework/wcf/feature-details/media/transactionmanagers.gif "トランザクション")</span><span class="sxs-lookup"><span data-stu-id="8e467-124">![Transaction Protocols](../../../../docs/framework/wcf/feature-details/media/transactionmanagers.gif "TransactionManagers")</span></span>  
   
- 1 つのイニシエーター \(I\) と 1 つの参加要素 \(P\) を持つ、一般的な WS\-Coordination\/WS\-AtomicTransaction のシナリオを考えます。イニシエーターと参加要素の両方にトランザクション マネージャー \(それぞれ ITM および PTM と呼びます\) があります。2 フェーズ コミットは、このトピックでは 2PC と呼びます。  
+ <span data-ttu-id="8e467-125">1 つのイニシエーター (I) と 1 つの参加要素 (P) を持つ、一般的な WS-Coordination/WS-AtomicTransaction のシナリオを考えます。</span><span class="sxs-lookup"><span data-stu-id="8e467-125">Consider a typical WS-Coordination/WS-Atomic Transaction scenario with one Initiator (I) and one Participant (P).</span></span> <span data-ttu-id="8e467-126">イニシエーターと参加要素の両方にトランザクション マネージャー (それぞれ ITM および PTM と呼びます) があります。</span><span class="sxs-lookup"><span data-stu-id="8e467-126">Both Initiator and Participant have Transaction Managers, (ITM and PTM, respectively).</span></span> <span data-ttu-id="8e467-127">2 フェーズ コミットは、このトピックでは 2PC と呼びます。</span><span class="sxs-lookup"><span data-stu-id="8e467-127">Two-phase commit is referred to as 2PC in this topic.</span></span>  
   
 |||  
 |-|-|  
-|1.CreateCoordinationContext|12.アプリケーション メッセージ応答|  
-|2.CreateCoordinationContextResponse|13.Commit \(完了\)|  
-|3.Register \(完了\)|14.Prepare \(2PC\)|  
-|4.RegisterResponse|15.Prepare \(2PC\)|  
-|5.アプリケーション メッセージ|16.Prepared \(2PC\)|  
-|6.CreateCoordinationContext with Context|17.Prepared \(2PC\)|  
-|7.Register \(永続的\)|18.Committed \(完了\)|  
-|8.RegisterResponse|19.Commit \(2PC\)|  
-|9.CreateCoordinationContextResponse|20.Commit \(2PC\)|  
-|10.Register \(永続的\)|21.Committed \(2PC\)|  
-|11.RegisterResponse|22.Committed \(2PC\)|  
+|<span data-ttu-id="8e467-128">1.CreateCoordinationContext</span><span class="sxs-lookup"><span data-stu-id="8e467-128">1. CreateCoordinationContext</span></span>|<span data-ttu-id="8e467-129">12.アプリケーション メッセージ応答</span><span class="sxs-lookup"><span data-stu-id="8e467-129">12. Application Message Response</span></span>|  
+|<span data-ttu-id="8e467-130">2.CreateCoordinationContextResponse</span><span class="sxs-lookup"><span data-stu-id="8e467-130">2. CreateCoordinationContextResponse</span></span>|<span data-ttu-id="8e467-131">13.Commit (完了)</span><span class="sxs-lookup"><span data-stu-id="8e467-131">13. Commit (Completion)</span></span>|  
+|<span data-ttu-id="8e467-132">3.Register (完了)</span><span class="sxs-lookup"><span data-stu-id="8e467-132">3. Register (Completion)</span></span>|<span data-ttu-id="8e467-133">14.Prepare (2PC)</span><span class="sxs-lookup"><span data-stu-id="8e467-133">14. Prepare (2PC)</span></span>|  
+|<span data-ttu-id="8e467-134">4.RegisterResponse</span><span class="sxs-lookup"><span data-stu-id="8e467-134">4. RegisterResponse</span></span>|<span data-ttu-id="8e467-135">15.Prepare (2PC)</span><span class="sxs-lookup"><span data-stu-id="8e467-135">15. Prepare (2PC)</span></span>|  
+|<span data-ttu-id="8e467-136">5.アプリケーション メッセージ</span><span class="sxs-lookup"><span data-stu-id="8e467-136">5. Application Message</span></span>|<span data-ttu-id="8e467-137">16.Prepared (2PC)</span><span class="sxs-lookup"><span data-stu-id="8e467-137">16. Prepared (2PC)</span></span>|  
+|<span data-ttu-id="8e467-138">6.CreateCoordinationContext with Context</span><span class="sxs-lookup"><span data-stu-id="8e467-138">6. CreateCoordinationContext with Context</span></span>|<span data-ttu-id="8e467-139">17.Prepared (2PC)</span><span class="sxs-lookup"><span data-stu-id="8e467-139">17. Prepared (2PC)</span></span>|  
+|<span data-ttu-id="8e467-140">7.Register (永続的)</span><span class="sxs-lookup"><span data-stu-id="8e467-140">7. Register (Durable)</span></span>|<span data-ttu-id="8e467-141">18.Committed (完了)</span><span class="sxs-lookup"><span data-stu-id="8e467-141">18. Committed (Completion)</span></span>|  
+|<span data-ttu-id="8e467-142">8.RegisterResponse</span><span class="sxs-lookup"><span data-stu-id="8e467-142">8. RegisterResponse</span></span>|<span data-ttu-id="8e467-143">19.Commit (2PC)</span><span class="sxs-lookup"><span data-stu-id="8e467-143">19. Commit (2PC)</span></span>|  
+|<span data-ttu-id="8e467-144">9.CreateCoordinationContextResponse</span><span class="sxs-lookup"><span data-stu-id="8e467-144">9. CreateCoordinationContextResponse</span></span>|<span data-ttu-id="8e467-145">20.Commit (2PC)</span><span class="sxs-lookup"><span data-stu-id="8e467-145">20. Commit (2PC)</span></span>|  
+|<span data-ttu-id="8e467-146">10.Register (永続的)</span><span class="sxs-lookup"><span data-stu-id="8e467-146">10. Register (Durable)</span></span>|<span data-ttu-id="8e467-147">21.Committed (2PC)</span><span class="sxs-lookup"><span data-stu-id="8e467-147">21. Committed (2PC)</span></span>|  
+|<span data-ttu-id="8e467-148">11.RegisterResponse</span><span class="sxs-lookup"><span data-stu-id="8e467-148">11. RegisterResponse</span></span>|<span data-ttu-id="8e467-149">22.Committed (2PC)</span><span class="sxs-lookup"><span data-stu-id="8e467-149">22. Committed (2PC)</span></span>|  
   
- このドキュメントでは、WS\-AtomicTransaction 仕様のセキュリティに関する構成と、トランザクション マネージャー間の通信に使用されるセキュリティで保護されたバインディングについて説明します。このドキュメントで説明されているアプローチは、WS\-AT および WS\-Coordination の各種の実装でテスト済みのものです。  
+ <span data-ttu-id="8e467-150">このドキュメントでは、WS-AtomicTransaction 仕様のセキュリティに関する構成と、トランザクション マネージャー間の通信に使用されるセキュリティで保護されたバインディングについて説明します。</span><span class="sxs-lookup"><span data-stu-id="8e467-150">This document describes a composition of the WS-AtomicTransaction specification with security and describes the secure binding used for communication between transaction managers.</span></span> <span data-ttu-id="8e467-151">このドキュメントで説明されているアプローチは、WS-AT および WS-Coordination の各種の実装でテスト済みのものです。</span><span class="sxs-lookup"><span data-stu-id="8e467-151">The approach described in this document has been successfully tested with other implementations of WS-AT and WS-Coordination.</span></span>  
   
- この図および表では、セキュリティの観点から見た次の 4 つのクラスのメッセージを示しています。  
+ <span data-ttu-id="8e467-152">この図および表では、セキュリティの観点から見た次の 4 つのクラスのメッセージを示しています。</span><span class="sxs-lookup"><span data-stu-id="8e467-152">The figure and table illustrate four classes of messages from the viewpoint of security:</span></span>  
   
--   アクティベーション メッセージ \(CreateCoordinationContext と CreateCoordinationContextResponse\)  
+-   <span data-ttu-id="8e467-153">アクティベーション メッセージ (CreateCoordinationContext と CreateCoordinationContextResponse)</span><span class="sxs-lookup"><span data-stu-id="8e467-153">Activation messages (CreateCoordinationContext and CreateCoordinationContextResponse).</span></span>  
   
--   登録メッセージ \(Register と RegisterResponse\)  
+-   <span data-ttu-id="8e467-154">登録メッセージ (Register と RegisterResponse)</span><span class="sxs-lookup"><span data-stu-id="8e467-154">Registration messages (Register and RegisterResponse)</span></span>  
   
--   プロトコル メッセージ \(Prepare、Rollback、Commit、Aborted など\)  
+-   <span data-ttu-id="8e467-155">プロトコル メッセージ (Prepare、Rollback、Commit、Aborted など)</span><span class="sxs-lookup"><span data-stu-id="8e467-155">Protocol messages (Prepare, Rollback, Commit, Aborted, and so on).</span></span>  
   
--   アプリケーション メッセージ  
+-   <span data-ttu-id="8e467-156">アプリケーション メッセージ</span><span class="sxs-lookup"><span data-stu-id="8e467-156">Application messages.</span></span>  
   
- 最初の 3 つのメッセージ クラスはトランザクション マネージャーのメッセージと考えられます。これらのクラスのバインディング構成については、後の「アプリケーション メッセージ交換」で説明します。4 番目のメッセージ クラスは、アプリケーション間のメッセージであり、後の「メッセージの例」で説明します。ここでは、これらの各クラスで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって使用されるプロトコル バインディングについて説明します。  
+ <span data-ttu-id="8e467-157">最初の 3 つのメッセージ クラスはトランザクション マネージャーのメッセージと考えられます。これらのクラスのバインディング構成については、後の「アプリケーション メッセージ交換」で説明します。</span><span class="sxs-lookup"><span data-stu-id="8e467-157">The first three message classes are considered Transaction Manager messages and their binding configuration is described in the "Application Message Exchange" later in this topic.</span></span> <span data-ttu-id="8e467-158">4 番目のメッセージ クラスは、アプリケーション間のメッセージであり、後の「メッセージの例」で説明します。</span><span class="sxs-lookup"><span data-stu-id="8e467-158">The fourth class of message is application to application messages and is described in the "Message Examples" section later in this topic.</span></span> <span data-ttu-id="8e467-159">ここでは、これらの各クラスで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって使用されるプロトコル バインディングについて説明します。</span><span class="sxs-lookup"><span data-stu-id="8e467-159">This section describes the protocol bindings used for each of these classes by [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span>  
   
- このドキュメントでは、次の XML 名前空間と関連付けられたプレフィックスが使用されます。  
+ <span data-ttu-id="8e467-160">このドキュメントでは、次の XML 名前空間と関連付けられたプレフィックスが使用されます。</span><span class="sxs-lookup"><span data-stu-id="8e467-160">The following XML Namespaces and associated prefixes are used throughout this document.</span></span>  
   
-|プレフィックス|Version|名前空間の URI|  
-|-------------|-------------|---------------|  
-|s11||[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96014](http://go.microsoft.com/fwlink/?LinkId=96014)|  
-|wsa|1.0 より前<br /><br /> 1.0|http:\/\/www.w3.org\/2004\/08\/addressing<br /><br /> [http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96022](http://go.microsoft.com/fwlink/?LinkId=96022)|  
-|wscoor|1.0<br /><br /> 1.1|[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96078](http://go.microsoft.com/fwlink/?LinkId=96078)<br /><br /> [http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96079](http://go.microsoft.com/fwlink/?LinkId=96079)|  
-|wsat|1.0<br /><br /> 1.1|[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96080](http://go.microsoft.com/fwlink/?LinkId=96080)<br /><br /> [http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96081](http://go.microsoft.com/fwlink/?LinkId=96081)|  
-|t|1.3 より前<br /><br /> 1.3|[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96082](http://go.microsoft.com/fwlink/?LinkId=96082)<br /><br /> [http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96100](http://go.microsoft.com/fwlink/?LinkId=96100)|  
-|o||[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96101](http://go.microsoft.com/fwlink/?LinkId=96101)|  
-|xsd||[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96102](http://go.microsoft.com/fwlink/?LinkId=96102)|  
+|<span data-ttu-id="8e467-161">プレフィックス</span><span class="sxs-lookup"><span data-stu-id="8e467-161">Prefix</span></span>|<span data-ttu-id="8e467-162">Version</span><span class="sxs-lookup"><span data-stu-id="8e467-162">Version</span></span>|<span data-ttu-id="8e467-163">名前空間の URI</span><span class="sxs-lookup"><span data-stu-id="8e467-163">Namespace URI</span></span>|  
+|------------|-------------|-------------------|  
+|<span data-ttu-id="8e467-164">s11</span><span class="sxs-lookup"><span data-stu-id="8e467-164">s11</span></span>||[<span data-ttu-id="8e467-165">http://go.microsoft.com/fwlink/?LinkId=96014</span><span class="sxs-lookup"><span data-stu-id="8e467-165">http://go.microsoft.com/fwlink/?LinkId=96014</span></span>](http://go.microsoft.com/fwlink/?LinkId=96014)|  
+|<span data-ttu-id="8e467-166">wsa</span><span class="sxs-lookup"><span data-stu-id="8e467-166">wsa</span></span>|<span data-ttu-id="8e467-167">1.0 より前</span><span class="sxs-lookup"><span data-stu-id="8e467-167">Pre-1.0</span></span><br /><br /> <span data-ttu-id="8e467-168">1.0</span><span class="sxs-lookup"><span data-stu-id="8e467-168">1.0</span></span>|<span data-ttu-id="8e467-169">http://www.w3.org/2004/08/addressing</span><span class="sxs-lookup"><span data-stu-id="8e467-169">http://www.w3.org/2004/08/addressing</span></span><br /><br /> [<span data-ttu-id="8e467-170">http://go.microsoft.com/fwlink/?LinkId=96022</span><span class="sxs-lookup"><span data-stu-id="8e467-170">http://go.microsoft.com/fwlink/?LinkId=96022</span></span>](http://go.microsoft.com/fwlink/?LinkId=96022)|  
+|<span data-ttu-id="8e467-171">wscoor</span><span class="sxs-lookup"><span data-stu-id="8e467-171">wscoor</span></span>|<span data-ttu-id="8e467-172">1.0</span><span class="sxs-lookup"><span data-stu-id="8e467-172">1.0</span></span><br /><br /> <span data-ttu-id="8e467-173">1.1</span><span class="sxs-lookup"><span data-stu-id="8e467-173">1.1</span></span>|[<span data-ttu-id="8e467-174">http://go.microsoft.com/fwlink/?LinkId=96078</span><span class="sxs-lookup"><span data-stu-id="8e467-174">http://go.microsoft.com/fwlink/?LinkId=96078</span></span>](http://go.microsoft.com/fwlink/?LinkId=96078)<br /><br /> [<span data-ttu-id="8e467-175">http://go.microsoft.com/fwlink/?LinkId=96079</span><span class="sxs-lookup"><span data-stu-id="8e467-175">http://go.microsoft.com/fwlink/?LinkId=96079</span></span>](http://go.microsoft.com/fwlink/?LinkId=96079)|  
+|<span data-ttu-id="8e467-176">wsat</span><span class="sxs-lookup"><span data-stu-id="8e467-176">wsat</span></span>|<span data-ttu-id="8e467-177">1.0</span><span class="sxs-lookup"><span data-stu-id="8e467-177">1.0</span></span><br /><br /> <span data-ttu-id="8e467-178">1.1</span><span class="sxs-lookup"><span data-stu-id="8e467-178">1.1</span></span>|[<span data-ttu-id="8e467-179">http://go.microsoft.com/fwlink/?LinkId=96080</span><span class="sxs-lookup"><span data-stu-id="8e467-179">http://go.microsoft.com/fwlink/?LinkId=96080</span></span>](http://go.microsoft.com/fwlink/?LinkId=96080)<br /><br /> [<span data-ttu-id="8e467-180">http://go.microsoft.com/fwlink/?LinkId=96081</span><span class="sxs-lookup"><span data-stu-id="8e467-180">http://go.microsoft.com/fwlink/?LinkId=96081</span></span>](http://go.microsoft.com/fwlink/?LinkId=96081)|  
+|<span data-ttu-id="8e467-181">t</span><span class="sxs-lookup"><span data-stu-id="8e467-181">t</span></span>|<span data-ttu-id="8e467-182">1.3 より前</span><span class="sxs-lookup"><span data-stu-id="8e467-182">Pre-1.3</span></span><br /><br /> <span data-ttu-id="8e467-183">1.3</span><span class="sxs-lookup"><span data-stu-id="8e467-183">1.3</span></span>|[<span data-ttu-id="8e467-184">http://go.microsoft.com/fwlink/?LinkId=96082</span><span class="sxs-lookup"><span data-stu-id="8e467-184">http://go.microsoft.com/fwlink/?LinkId=96082</span></span>](http://go.microsoft.com/fwlink/?LinkId=96082)<br /><br /> [<span data-ttu-id="8e467-185">http://go.microsoft.com/fwlink/?LinkId=96100</span><span class="sxs-lookup"><span data-stu-id="8e467-185">http://go.microsoft.com/fwlink/?LinkId=96100</span></span>](http://go.microsoft.com/fwlink/?LinkId=96100)|  
+|<span data-ttu-id="8e467-186">o</span><span class="sxs-lookup"><span data-stu-id="8e467-186">o</span></span>||[<span data-ttu-id="8e467-187">http://go.microsoft.com/fwlink/?LinkId=96101</span><span class="sxs-lookup"><span data-stu-id="8e467-187">http://go.microsoft.com/fwlink/?LinkId=96101</span></span>](http://go.microsoft.com/fwlink/?LinkId=96101)|  
+|<span data-ttu-id="8e467-188">xsd</span><span class="sxs-lookup"><span data-stu-id="8e467-188">xsd</span></span>||[<span data-ttu-id="8e467-189">http://go.microsoft.com/fwlink/?LinkId=96102</span><span class="sxs-lookup"><span data-stu-id="8e467-189">http://go.microsoft.com/fwlink/?LinkId=96102</span></span>](http://go.microsoft.com/fwlink/?LinkId=96102)|  
   
-## トランザクション マネージャー バインディング  
- R1001 : WS\-AT 1.0 トランザクションに参加するトランザクション マネージャーは、SOAP 1.1、WS\-Addressing 2004\/08 for WS\-Atomic Transaction、および WS\-Coordination メッセージ交換を使用する必要があります。  
+## <a name="transaction-manager-bindings"></a><span data-ttu-id="8e467-190">トランザクション マネージャー バインディング</span><span class="sxs-lookup"><span data-stu-id="8e467-190">Transaction Manager Bindings</span></span>  
+ <span data-ttu-id="8e467-191">R1001: トランザクション マネージャー、WS-AT 1.0 のトランザクションに参加している必要があります使用 SOAP 1.1、Ws-addressing 2004/08 for Ws-atomic Transaction、および Ws-coordination メッセージ交換。</span><span class="sxs-lookup"><span data-stu-id="8e467-191">R1001: Transaction Managers participating in a WS-AT 1.0 transaction must use SOAP 1.1 and WS-Addressing 2004/08 for WS-Atomic Transaction and WS-Coordination message exchanges.</span></span>  
   
- R1002 : WS\-AT 1.1 トランザクションに参加するトランザクション マネージャーは、SOAP 1.1、WS\-Addressing 2005\/08 for WS\-Atomic Transaction、および WS\-Coordination メッセージ交換を使用する必要があります。  
+ <span data-ttu-id="8e467-192">R1002 : WS-AT 1.1 トランザクションに参加するトランザクション マネージャーは、SOAP 1.1、WS-Addressing 2005/08 for WS-Atomic Transaction、および WS-Coordination メッセージ交換を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8e467-192">R1002: Transaction Managers participating in a WS-AT 1.1 transaction must use SOAP 1.1 and WS-Addressing 2005/08 for WS-Atomic Transaction and WS-Coordination message exchanges.</span></span>  
   
- アプリケーション メッセージは、後で説明するように、これらのバインディングに制限されません。  
+ <span data-ttu-id="8e467-193">アプリケーション メッセージは、後で説明するように、これらのバインディングに制限されません。</span><span class="sxs-lookup"><span data-stu-id="8e467-193">Application messages are not constrained to these bindings and are described later.</span></span>  
   
-### トランザクション マネージャー HTTPS バインディング  
- トランザクション マネージャー HTTPS バインディングは、セキュリティを実現してトランザクション ツリー内の送信者と受信者の各ペア間で信頼を確立するトランスポート セキュリティにのみ依存します。  
+### <a name="transaction-manager-https-binding"></a><span data-ttu-id="8e467-194">トランザクション マネージャー HTTPS バインディング</span><span class="sxs-lookup"><span data-stu-id="8e467-194">Transaction Manager HTTPS Binding</span></span>  
+ <span data-ttu-id="8e467-195">トランザクション マネージャー HTTPS バインディングは、セキュリティを実現してトランザクション ツリー内の送信者と受信者の各ペア間で信頼を確立するトランスポート セキュリティにのみ依存します。</span><span class="sxs-lookup"><span data-stu-id="8e467-195">The transaction manager HTTPS binding relies solely on transport security to achieve security and establish trust between each sender-receiver pair in the transaction tree.</span></span>  
   
-#### HTTPS トランスポート構成  
- トランザクション マネージャー ID を確立するために X.509 証明書が使用されます。クライアントおよびサーバーの承認が必要です。クライアントおよびサーバーの承認は、以下のような実装詳細の状態にしておきます。  
+#### <a name="https-transport-configuration"></a><span data-ttu-id="8e467-196">HTTPS トランスポート構成</span><span class="sxs-lookup"><span data-stu-id="8e467-196">HTTPS Transport Configuration</span></span>  
+ <span data-ttu-id="8e467-197">トランザクション マネージャー ID を確立するために X.509 証明書が使用されます。</span><span class="sxs-lookup"><span data-stu-id="8e467-197">X.509 certificates are used to establish Transaction Manager Identity.</span></span> <span data-ttu-id="8e467-198">クライアントおよびサーバーの承認が必要です。クライアントおよびサーバーの承認は、以下のような実装詳細の状態にしておきます。</span><span class="sxs-lookup"><span data-stu-id="8e467-198">Client/server authentication is required, and client/server authorization is left as an implementation detail:</span></span>  
   
--   R1111 : ネットワーク経由で示された X.509 証明書は、発信元コンピューターの完全修飾ドメイン名 \(FQDN\) と一致するサブジェクト名を持っている必要があります。  
+-   <span data-ttu-id="8e467-199">R1111 : ネットワーク経由で示された X.509 証明書は、発信元コンピューターの完全修飾ドメイン名 (FQDN) と一致するサブジェクト名を持っている必要があります。</span><span class="sxs-lookup"><span data-stu-id="8e467-199">R1111: X.509 certificates presented over the wire must have a subject name that matches the fully qualified domain name (FQDN) of the originating machine.</span></span>  
   
--   B1112 : X.509 のサブジェクト名のチェックが成功するには、システム内の送信者と受信者の各ペア間で、DNS が機能している必要があります。  
+-   <span data-ttu-id="8e467-200">B1112 : X.509 のサブジェクト名のチェックが成功するには、システム内の送信者と受信者の各ペア間で、DNS が機能している必要があります。</span><span class="sxs-lookup"><span data-stu-id="8e467-200">B1112: DNS must be functional between each sender-receiver pair in the system for X.509 subject name checks to succeed.</span></span>  
   
-#### アクティベーションと登録のバインディング構成  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、HTTPS 上での関連付けにおいて要求\/応答の二重バインディングが必要です \(関連付けと要求\/応答メッセージ交換パターンの詳細については、WS\-AtomicTransaction 仕様のセクション 8 を参照してください\)。  
+#### <a name="activation-and-registration-binding-configuration"></a><span data-ttu-id="8e467-201">アクティベーションと登録のバインディング構成</span><span class="sxs-lookup"><span data-stu-id="8e467-201">Activation and Registration Binding Configuration</span></span>  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="8e467-202"> では、HTTPS 上での関連付けにおいて要求/応答の二重バインディングが必要です </span><span class="sxs-lookup"><span data-stu-id="8e467-202"> requires request/reply duplex binding with correlation over HTTPS.</span></span> <span data-ttu-id="8e467-203">(関連付けと要求/応答メッセージ交換パターンの詳細については、WS-AtomicTransaction 仕様のセクション 8 を参照してください)。</span><span class="sxs-lookup"><span data-stu-id="8e467-203">(For more information about correlation and descriptions of the request/reply message exchange patterns, see WS-Atomic Transaction, Section 8.)</span></span>  
   
-#### 2PC プロトコルのバインディング構成  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、HTTPS 上の一方向 \(データグラム\) メッセージをサポートしています。メッセージ間の関連付けは、実装詳細の状態にしておきます。  
+#### <a name="2pc-protocol-binding-configuration"></a><span data-ttu-id="8e467-204">2PC プロトコルのバインディング構成</span><span class="sxs-lookup"><span data-stu-id="8e467-204">2PC Protocol Binding Configuration</span></span>  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="8e467-205"> は、HTTPS 上の一方向 (データグラム) メッセージをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="8e467-205"> supports one-way (datagram) messages over HTTPS.</span></span> <span data-ttu-id="8e467-206">メッセージ間の関連付けは、実装詳細の状態にしておきます。</span><span class="sxs-lookup"><span data-stu-id="8e467-206">Correlation among the messages is left as an implementation detail.</span></span>  
   
- B1131 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の 2PC メッセージの関連付けを行うには、WS\-Addressing に記載されているように、実装で `wsa:ReferenceParameters` をサポートする必要があります。  
+ <span data-ttu-id="8e467-207">B1131: 実装をサポートする必要があります`wsa:ReferenceParameters`Ws-addressing の相関関係を実現するために」の説明に従って[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の 2 pc メッセージ。</span><span class="sxs-lookup"><span data-stu-id="8e467-207">B1131: Implementations must support `wsa:ReferenceParameters` as described in WS-Addressing to achieve correlation of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]’s 2PC messages.</span></span>  
   
-### トランザクション マネージャーによる混合セキュリティ バインディング  
- これは、ID を確立するために、トランスポート セキュリティを WS\-Coordination 発行済みトークン モデルと組み合わせて使用する代替の \(混合モードの\) バインディングです。2 つのバインディングを区別する要素は、アクティベーションと登録のみです。  
+### <a name="transaction-manager-mixed-security-binding"></a><span data-ttu-id="8e467-208">トランザクション マネージャーによる混合セキュリティ バインディング</span><span class="sxs-lookup"><span data-stu-id="8e467-208">Transaction Manager Mixed Security Binding</span></span>  
+ <span data-ttu-id="8e467-209">これは、ID を確立するために、トランスポート セキュリティを WS-Coordination 発行済みトークン モデルと組み合わせて使用する代替の (混合モードの) バインディングです。</span><span class="sxs-lookup"><span data-stu-id="8e467-209">This is an alternate (mixed mode) binding that uses transport security combined with the WS-Coordination Issued Token model for identity establishment purposes.</span></span> <span data-ttu-id="8e467-210">2 つのバインディングを区別する要素は、アクティベーションと登録のみです。</span><span class="sxs-lookup"><span data-stu-id="8e467-210">Activation and Registration are the only elements that differ between the two bindings.</span></span>  
   
-#### HTTPS トランスポート構成  
- トランザクション マネージャー ID を確立するために X.509 証明書が使用されます。クライアントおよびサーバーの承認が必要です。クライアントおよびサーバーの承認は、以下のような実装詳細の状態にしておきます。  
+#### <a name="https-transport-configuration"></a><span data-ttu-id="8e467-211">HTTPS トランスポート構成</span><span class="sxs-lookup"><span data-stu-id="8e467-211">HTTPS Transport Configuration</span></span>  
+ <span data-ttu-id="8e467-212">トランザクション マネージャー ID を確立するために X.509 証明書が使用されます。</span><span class="sxs-lookup"><span data-stu-id="8e467-212">X.509 certificates are used to establish Transaction Manager Identity.</span></span> <span data-ttu-id="8e467-213">クライアントおよびサーバーの承認が必要です。クライアントおよびサーバーの承認は、以下のような実装詳細の状態にしておきます。</span><span class="sxs-lookup"><span data-stu-id="8e467-213">Client/Server authentication is required, and client/server authorization is left as an implementation detail.</span></span>  
   
-#### アクティベーション メッセージのバインディング構成  
- アクティベーション メッセージは通常、アプリケーションとローカルのトランザクション マネージャー間で発生するため、相互運用には参加しません。  
+#### <a name="activation-message-binding-configuration"></a><span data-ttu-id="8e467-214">アクティベーション メッセージのバインディング構成</span><span class="sxs-lookup"><span data-stu-id="8e467-214">Activation Message Binding Configuration</span></span>  
+ <span data-ttu-id="8e467-215">アクティベーション メッセージは通常、アプリケーションとローカルのトランザクション マネージャー間で発生するため、相互運用には参加しません。</span><span class="sxs-lookup"><span data-stu-id="8e467-215">Activation Messages usually do not participate in interoperability because they typically occur between an application and its local Transaction Manager.</span></span>  
   
- B1221 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、アクティベーション メッセージに \(「[メッセージング プロトコル](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)」で説明する\) HTTPS の二重バインディングを使用します。要求\/応答メッセージは、WS\-AT 1.0 の WS\-Addressing 2004\/08 と WS\-AT 1.1 の WS\-Addressing 2005\/08 を使用して関連付けられます。  
+ <span data-ttu-id="8e467-216">B1221:[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]双方向の HTTPS バインドを使用して (「[メッセージング プロトコル](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)) アクティベーション メッセージのです。</span><span class="sxs-lookup"><span data-stu-id="8e467-216">B1221: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] uses duplex HTTPS binding (described in [Messaging Protocols](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)) for Activation messages.</span></span> <span data-ttu-id="8e467-217">要求/応答メッセージは、WS-AT 1.0 の WS-Addressing 2004/08 と WS-AT 1.1 の WS-Addressing 2005/08 を使用して関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="8e467-217">Request and Reply messages are correlated using WS-Addressing 2004/08 for WS-AT 1.0 and WS-Addressing 2005/08 for WS-AT 1.1.</span></span>  
   
- WS\-AtomicTransaction 仕様のセクション 8 では、関連付けとメッセージ交換のパターンについて詳細に説明されています。  
+ <span data-ttu-id="8e467-218">WS-AtomicTransaction 仕様のセクション 8 では、関連付けとメッセージ交換のパターンについて詳細に説明されています。</span><span class="sxs-lookup"><span data-stu-id="8e467-218">WS-Atomic Transaction specification, Section 8, describes further details about correlation and the message exchange patterns.</span></span>  
   
--   R1222 : `CreateCoordinationContext` を受信すると、コーディネーターは、関連付けられている秘密の `STx` を使用して `SecurityContextToken` を発行します。このトークンは、WS\-Trust の仕様に従って、`t:IssuedTokens` ヘッダー内に返されます。  
+-   <span data-ttu-id="8e467-219">R1222 : `CreateCoordinationContext` を受信すると、コーディネーターは、関連付けられている秘密の `SecurityContextToken` を使用して `STx` を発行します。</span><span class="sxs-lookup"><span data-stu-id="8e467-219">R1222: Upon receiving a `CreateCoordinationContext`, the Coordinator must issue a `SecurityContextToken` with associated secret `STx`.</span></span> <span data-ttu-id="8e467-220">このトークンは、WS-Trust の仕様に従って、`t:IssuedTokens` ヘッダー内に返されます。</span><span class="sxs-lookup"><span data-stu-id="8e467-220">This token is returned inside a `t:IssuedTokens` header following WS-Trust specification.</span></span>  
   
--   R1223 : アクティベーションが既存のコーディネーション コンテキスト内で発生した場合、既存のコンテキストに関連付けられた `SecurityContextToken` がある `t:IssuedTokens` ヘッダーは、`CreateCoordinationContext` メッセージでフローする必要があります。  
+-   <span data-ttu-id="8e467-221">R1223 : アクティベーションが既存のコーディネーション コンテキスト内で発生した場合、既存のコンテキストに関連付けられた `t:IssuedTokens` がある `SecurityContextToken` ヘッダーは、`CreateCoordinationContext` メッセージでフローする必要があります。</span><span class="sxs-lookup"><span data-stu-id="8e467-221">R1223: If Activation occurs within an existing Coordination Context, the `t:IssuedTokens` header with the `SecurityContextToken` associated with existing Context must flow on the `CreateCoordinationContext` message.</span></span>  
   
- `wscoor:CreateCoordinationContextResponse`  送信メッセージに添付する新しい `t:IssuedTokens` ヘッダーが生成されます。  
+ <span data-ttu-id="8e467-222">新しい`t:IssuedTokens`送信にアタッチするためのヘッダーを生成する必要があります`wscoor:CreateCoordinationContextResponse`メッセージ。</span><span class="sxs-lookup"><span data-stu-id="8e467-222">A new `t:IssuedTokens` header should be generated for attaching to the outgoing `wscoor:CreateCoordinationContextResponse` message.</span></span>  
   
-#### 登録メッセージのバインディング構成  
- B1231 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、\(「[メッセージング プロトコル](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)」で説明する\) HTTPS の二重バインディングを使用します。要求\/応答メッセージは、WS\-AT 1.0 の WS\-Addressing 2004\/08 と WS\-AT 1.1 の WS\-Addressing 2005\/08 を使用して関連付けられます。  
+#### <a name="registration-message-binding-configuration"></a><span data-ttu-id="8e467-223">登録メッセージのバインド構成</span><span class="sxs-lookup"><span data-stu-id="8e467-223">Registration Message Binding Configuration</span></span>  
+ <span data-ttu-id="8e467-224">B1231:[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]双方向の HTTPS バインドを使用して (「[メッセージング プロトコル](../../../../docs/framework/wcf/feature-details/messaging-protocols.md))。</span><span class="sxs-lookup"><span data-stu-id="8e467-224">B1231: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] uses duplex HTTPS binding (described in [Messaging Protocols](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)).</span></span> <span data-ttu-id="8e467-225">要求/応答メッセージは、WS-AT 1.0 の WS-Addressing 2004/08 と WS-AT 1.1 の WS-Addressing 2005/08 を使用して関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="8e467-225">Request and Reply messages are correlated using WS-Addressing 2004/08 for WS-AT 1.0 and WS-Addressing 2005/08 for WS-AT 1.1.</span></span>  
   
- WS\-AtomicTransaction 仕様のセクション 8 では、関連付けとメッセージ交換のパターンについて詳細に説明されています。  
+ <span data-ttu-id="8e467-226">WS-AtomicTransaction 仕様のセクション 8 では、関連付けとメッセージ交換のパターンについて詳細に説明されています。</span><span class="sxs-lookup"><span data-stu-id="8e467-226">WS-AtomicTransaction, Section 8, describes further details about correlation and descriptions of the message exchange patterns.</span></span>  
   
- R1232 : `wscoor:Register` 送信メッセージでは、「[セキュリティ プロトコル](../../../../docs/framework/wcf/feature-details/security-protocols.md)」で説明する `IssuedTokenOverTransport` 認証モードを使用する必要があります。  
+ <span data-ttu-id="8e467-227">R1232: 発信`wscoor:Register`メッセージで使用する必要があります、`IssuedTokenOverTransport`で説明されている認証モード[セキュリティ プロトコル](../../../../docs/framework/wcf/feature-details/security-protocols.md)です。</span><span class="sxs-lookup"><span data-stu-id="8e467-227">R1232: Outgoing `wscoor:Register` messages must use the `IssuedTokenOverTransport` authentication mode described in [Security Protocols](../../../../docs/framework/wcf/feature-details/security-protocols.md).</span></span>  
   
- `wsse:Timestamp` 要素は、`STx` によって発行された `SecurityContextToken` を使用して署名される必要があります。この署名は特定のトランザクションに関連付けられたトークンを所有していることの証明であり、トランザクションに登録されている参加要素の認証で使用されます。RegistrationResponse メッセージは、HTTPS を使用して返信されます。  
+ <span data-ttu-id="8e467-228">`wsse:Timestamp`要素を使用して署名する必要があります、`SecurityContextToken``STx`発行します。</span><span class="sxs-lookup"><span data-stu-id="8e467-228">The `wsse:Timestamp` element must be signed using the `SecurityContextToken``STx` issued.</span></span> <span data-ttu-id="8e467-229">この署名は特定のトランザクションに関連付けられたトークンを所有していることの証明であり、トランザクションに登録されている参加要素の認証で使用されます。</span><span class="sxs-lookup"><span data-stu-id="8e467-229">This signature is a proof of possession of the token associated with particular transaction and is used to authenticate a participant enlisting in the transaction.</span></span> <span data-ttu-id="8e467-230">RegistrationResponse メッセージは、HTTPS を使用して返信されます。</span><span class="sxs-lookup"><span data-stu-id="8e467-230">The RegistrationResponse message is sent back over HTTPS.</span></span>  
   
-#### 2PC プロトコルのバインディング構成  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、HTTPS 上の一方向 \(データグラム\) メッセージをサポートしています。メッセージ間の関連付けは、実装詳細の状態にしておきます。  
+#### <a name="2pc-protocol-binding-configuration"></a><span data-ttu-id="8e467-231">2PC プロトコルのバインディング構成</span><span class="sxs-lookup"><span data-stu-id="8e467-231">2PC Protocol Binding Configuration</span></span>  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="8e467-232"> は、HTTPS 上の一方向 (データグラム) メッセージをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="8e467-232"> supports one-way (datagram) messages over HTTPS.</span></span> <span data-ttu-id="8e467-233">メッセージ間の関連付けは、実装詳細の状態にしておきます。</span><span class="sxs-lookup"><span data-stu-id="8e467-233">Correlation among the messages is left as an implementation detail.</span></span>  
   
- B1241 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の 2PC メッセージの関連付けを行うには、WS\-Addressing に記載されているように、実装で `wsa:ReferenceParameters` がサポートされている必要があります。  
+ <span data-ttu-id="8e467-234">B1241 : `wsa:ReferenceParameters` の 2PC メッセージの関連付けを行うには、WS-Addressing に記載されているように、実装で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] がサポートされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="8e467-234">B1241: Implementations must support `wsa:ReferenceParameters` as described in WS-Addressing to achieve correlation of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]’s 2PC messages.</span></span>  
   
-## アプリケーション メッセージ交換  
- アプリケーションでは、バインディングが次のセキュリティ要件を満たしている限り、アプリケーション間メッセージに任意のバインディングを使用できます。  
+## <a name="application-message-exchange"></a><span data-ttu-id="8e467-235">アプリケーション メッセージ交換</span><span class="sxs-lookup"><span data-stu-id="8e467-235">Application Message Exchange</span></span>  
+ <span data-ttu-id="8e467-236">アプリケーションでは、バインディングが次のセキュリティ要件を満たしている限り、アプリケーション間メッセージに任意のバインディングを使用できます。</span><span class="sxs-lookup"><span data-stu-id="8e467-236">Applications are free to use any particular binding for application-to-application messages, as long as the binding meets the following security requirements:</span></span>  
   
--   R2001 : アプリケーション間メッセージでは、メッセージのヘッダーの `CoordinationContext` に加えて `t:IssuedTokens` ヘッダーをフローする必要があります。  
+-   <span data-ttu-id="8e467-237">R2001 : アプリケーション間メッセージでは、メッセージのヘッダーの `t:IssuedTokens` に加えて `CoordinationContext` ヘッダーをフローする必要があります。</span><span class="sxs-lookup"><span data-stu-id="8e467-237">R2001: Application-to-application messages must flow the `t:IssuedTokens` header along with the `CoordinationContext` in the header of the message.</span></span>  
   
--   R2002 : `t:IssuedToken` の整合性と機密性が提供される必要があります。  
+-   <span data-ttu-id="8e467-238">R2002 : `t:IssuedToken` の整合性と機密性が提供される必要があります。</span><span class="sxs-lookup"><span data-stu-id="8e467-238">R2002: Integrity and confidentiality of `t:IssuedToken` must be provided.</span></span>  
   
- `CoordinationContext` ヘッダーには `wscoor:Identifier` が含まれます。`xsd:AnyURI` の定義では、絶対 URI と相対 URI の両方の使用が許可されていますが、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では絶対 URI である `wscoor:Identifiers` のみがサポートされています。  
+ <span data-ttu-id="8e467-239">`CoordinationContext` ヘッダーには `wscoor:Identifier` が含まれます。</span><span class="sxs-lookup"><span data-stu-id="8e467-239">The `CoordinationContext` header contains `wscoor:Identifier`.</span></span> <span data-ttu-id="8e467-240">`xsd:AnyURI` の定義では、絶対 URI と相対 URI の両方の使用が許可されていますが、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では絶対 URI である `wscoor:Identifiers` のみがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="8e467-240">While the definition of `xsd:AnyURI` allows the use of both absolute and relative URIs, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] supports only `wscoor:Identifiers`, which are absolute URIs.</span></span>  
   
- B2003 : `wscoor:CoordinationContext` の `wscoor:Identifier` が相対 URI の場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] トランザクション サービスからエラーが返されます。  
+ <span data-ttu-id="8e467-241">B2003 : `wscoor:Identifier` の `wscoor:CoordinationContext` が相対 URI の場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] トランザクション サービスからエラーが返されます。</span><span class="sxs-lookup"><span data-stu-id="8e467-241">B2003: If the `wscoor:Identifier` of the `wscoor:CoordinationContext` is a relative URI, faults will be returned from transactional [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services.</span></span>  
   
-## メッセージの例  
+## <a name="message-examples"></a><span data-ttu-id="8e467-242">メッセージの例</span><span class="sxs-lookup"><span data-stu-id="8e467-242">Message Examples</span></span>  
   
-### CreateCoordinationContext 要求\/応答メッセージ  
- 次のメッセージは、要求\/応答のパターンに従います。  
+### <a name="createcoordinationcontext-requestresponse-messages"></a><span data-ttu-id="8e467-243">CreateCoordinationContext 要求/応答メッセージ</span><span class="sxs-lookup"><span data-stu-id="8e467-243">CreateCoordinationContext Request/Response Messages</span></span>  
+ <span data-ttu-id="8e467-244">次のメッセージは、要求/応答のパターンに従います。</span><span class="sxs-lookup"><span data-stu-id="8e467-244">The following messages follow a request/response pattern.</span></span>  
   
-#### WSCoor 1.0 での CreateCoordinationContext  
+#### <a name="createcoordinationcontext-with-wscoor-10"></a><span data-ttu-id="8e467-245">WSCoor 1.0 での CreateCoordinationContext</span><span class="sxs-lookup"><span data-stu-id="8e467-245">CreateCoordinationContext with WSCoor 1.0</span></span>  
   
-```  
+```xml  
 <s:Envelope>  
   <s:Header>  
     <a:Action>http://.../ws/2004/10/wscoor/CreateCoordinationContext</Action>  
@@ -172,12 +175,11 @@ caps.handback.revision: 14
     </wscoor:CreateCoordinationContext>  
   </s:Body>  
 </s11:Envelope>  
-  
 ```  
   
-#### WSCoor 1.1 での CreateCoordinationContext  
+#### <a name="createcoordinationcontext-with-wscoor-11"></a><span data-ttu-id="8e467-246">WSCoor 1.1 での CreateCoordinationContext</span><span class="sxs-lookup"><span data-stu-id="8e467-246">CreateCoordinationContext with WSCoor 1.1</span></span>  
   
-```  
+```xml  
 <s:Envelope>   
 <s:Header>  
 <a:Action>http://docs.oasis-open.org/ws-tx/wscoor/2006/06/CreateCoordinationContext</Action>  
@@ -187,7 +189,7 @@ caps.handback.revision: 14
 </a:ReplyTo>   
 <a:To>https://...</a:To>   
 <wsse:Security>  
- <u:Timestamp>   
+ <u:Timestamp>  
 <wsu:Created>2005-12-15T23:36:09.921Z</u:Created>  
 <wsu:Expires>2005-12-15T23:41:09.921Z</u:Expires>  
 </u:Timestamp>   
@@ -197,14 +199,13 @@ caps.handback.revision: 14
 <wscoor:CreateCoordinationContext>  
 <wscoor:CoordinationType>...</wscoor:CoordinationType>  
 </wscoor:CreateCoordinationContext>  
- </s:Body>   
+ </s:Body>  
 </s11:Envelope>  
-  
 ```  
   
-#### Trust Pre\-1.3 および WSCoor 1.0 での CreateCoordinationContextResponse  
+#### <a name="createcoordinationcontextresponse-with-trust-pre-13-and-wscoor-10"></a><span data-ttu-id="8e467-247">Trust Pre-1.3 および WSCoor 1.0 での CreateCoordinationContextResponse</span><span class="sxs-lookup"><span data-stu-id="8e467-247">CreateCoordinationContextResponse with Trust Pre-1.3 and WSCoor 1.0</span></span>  
   
-```  
+```xml  
 <s:Envelope>  
   <!-- Data below is shown in the clear for  
        illustration purposes only. -->  
@@ -282,12 +283,11 @@ caps.handback.revision: 14
     </wscoor:CreateCoordinationContextResponse>  
   </s:Body>  
 </s:Envelope>  
-  
 ```  
   
-#### Trust 1.3 および WSCoor 1.1 での CreateCoordinationContextResponse  
+#### <a name="createcoordinationcontextresponse-with-trust-13-and-wscoor-11"></a><span data-ttu-id="8e467-248">Trust 1.3 および WSCoor 1.1 での CreateCoordinationContextResponse</span><span class="sxs-lookup"><span data-stu-id="8e467-248">CreateCoordinationContextResponse with Trust 1.3 and WSCoor 1.1</span></span>  
   
-```  
+```xml  
 <s:Envelope>  
 <!-- Data below is shown in the clear for illustration purposes only. -->   
 <s:Header>   
@@ -359,15 +359,14 @@ xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
 </wscoor:CreateCoordinationContextResponse>   
 </s:Body>   
 </s:Envelope>  
-  
 ```  
   
-### 登録メッセージ  
- 次のメッセージは、登録メッセージです。  
+### <a name="registration-messages"></a><span data-ttu-id="8e467-249">登録メッセージ</span><span class="sxs-lookup"><span data-stu-id="8e467-249">Registration Messages</span></span>  
+ <span data-ttu-id="8e467-250">次のメッセージは、登録メッセージです。</span><span class="sxs-lookup"><span data-stu-id="8e467-250">The following messages are registration messages.</span></span>  
   
-#### WSCoor 1.0 での Register  
+#### <a name="register-with-wscoor-10"></a><span data-ttu-id="8e467-251">WSCoor 1.0 での register します。</span><span class="sxs-lookup"><span data-stu-id="8e467-251">Register with WSCoor 1.0</span></span>  
   
-```  
+```xml  
 <s:Envelope>  
   <s:Header>  
     <a:Action>http://schemas.xmlsoap.org/ws/2004/10/wscoor/Register</a:Action>  
@@ -424,12 +423,11 @@ xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
     </wscoor:Register>  
   </s:Body>  
 </s:Envelope>  
-  
 ```  
   
-#### WSCoor 1.1 での Register  
+#### <a name="register-with-wscoor-11"></a><span data-ttu-id="8e467-252">WSCoor 1.1 での Register</span><span class="sxs-lookup"><span data-stu-id="8e467-252">Register with WSCoor 1.1</span></span>  
   
-```  
+```xml  
 <s:Envelope>  
 <s:Header>   
 <a:Action>http://docs.oasis-open.org/ws-tx/wscoor/2006/06/Register</a:Action>   
@@ -484,12 +482,11 @@ Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
 </wscoor:Register>   
 </s:Body>   
 </s:Envelope>  
-  
 ```  
   
-#### WSCoor 1.0 での Register Response  
+#### <a name="register-response-with-wscoor-10"></a><span data-ttu-id="8e467-253">WSCoor 1.0 での register Response</span><span class="sxs-lookup"><span data-stu-id="8e467-253">Register Response with WSCoor 1.0</span></span>  
   
-```  
+```xml  
 <s:Envelope>  
   <s:Header>  
     <a:Action>  
@@ -521,12 +518,11 @@ Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
     </wscoor:RegisterResponse>  
   </s:Body>  
 </s:Envelope>  
-  
 ```  
   
-#### WSCoor 1.1 での Register Response  
+#### <a name="register-response-with-wscoor-11"></a><span data-ttu-id="8e467-254">WSCoor 1.1 での Register Response</span><span class="sxs-lookup"><span data-stu-id="8e467-254">Register Response with WSCoor 1.1</span></span>  
   
-```  
+```xml  
 <s:Envelope>  
 <s:Header>   
 <a:Action> http://docs.oasis-open.org/ws-tx/wscoor/2006/06/RegisterResponse  
@@ -553,15 +549,14 @@ xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-u
 </wscoor:RegisterResponse>   
 </s:Body>   
 </s:Envelope>  
-  
 ```  
   
-### 2 フェーズ コミット プロトコル メッセージ  
- 次のメッセージは、2 フェーズ コミット \(2PC\) プロトコルに関連しています。  
+### <a name="two-phase-commit-protocol-messages"></a><span data-ttu-id="8e467-255">2 フェーズ コミット プロトコル メッセージ</span><span class="sxs-lookup"><span data-stu-id="8e467-255">Two Phase Commit Protocol Messages</span></span>  
+ <span data-ttu-id="8e467-256">次のメッセージは、2 フェーズ コミット (2PC) プロトコルに関連しています。</span><span class="sxs-lookup"><span data-stu-id="8e467-256">The following message relates to the two-phase commit (2PC) protocol.</span></span>  
   
-#### WSAT 1.0 での Commit  
+#### <a name="commit-with-wsat-10"></a><span data-ttu-id="8e467-257">WSAT 1.0 での commit します。</span><span class="sxs-lookup"><span data-stu-id="8e467-257">Commit with WSAT 1.0</span></span>  
   
-```  
+```xml  
 <s:Envelope>  
   <s:Header>  
     <a:Action>http://.../ws/2004/10/wsat/Commit</a:Action>  
@@ -580,12 +575,11 @@ xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-u
     <wsat:Commit />  
   </s:Body>  
 </s:Envelope>  
-  
 ```  
   
-#### WSAT 1.1 での Commit  
+#### <a name="commit-with-wsat-11"></a><span data-ttu-id="8e467-258">WSAT 1.1 での Commit</span><span class="sxs-lookup"><span data-stu-id="8e467-258">Commit with WSAT 1.1</span></span>  
   
-```  
+```xml  
 <s:Envelope>  
 <s:Header>   
 <a:Action>http://docs.oasis-open.org/ws-tx/wsat/2006/06</a:Action>  
@@ -604,15 +598,14 @@ xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-u
 <wsat:Commit />   
 </s:Body>   
 </s:Envelope>  
-  
 ```  
   
-### アプリケーション メッセージ  
- 次のメッセージは、アプリケーション メッセージです。  
+### <a name="application-messages"></a><span data-ttu-id="8e467-259">アプリケーション メッセージ</span><span class="sxs-lookup"><span data-stu-id="8e467-259">Application Messages</span></span>  
+ <span data-ttu-id="8e467-260">次のメッセージは、アプリケーション メッセージです。</span><span class="sxs-lookup"><span data-stu-id="8e467-260">The following messages are application messages.</span></span>  
   
-#### アプリケーション メッセージ \(要求\)  
+#### <a name="application-message-request"></a><span data-ttu-id="8e467-261">アプリケーション メッセージ (要求)</span><span class="sxs-lookup"><span data-stu-id="8e467-261">Application message-Request</span></span>  
   
-```  
+```xml  
 <s:Envelope>  
   <s:Header>  
 <!-- Addressing headers, all signed-->  

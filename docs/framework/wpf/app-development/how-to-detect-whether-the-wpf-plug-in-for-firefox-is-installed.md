@@ -1,35 +1,38 @@
 ---
-title: "方法 : Firefox に対応した WPF プラグインがインストールされているかどうかを確認する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "確認 (Firefox プラグインを) [WPF]"
-  - "検出 (Firefox のインストールを) [WPF]"
-  - "検出 (Firefox に対応した WPF プラグインがインストールされているかどうかを) [WPF]"
-  - "Firefox [WPF], 検出 (インストールを)"
-  - "Firefox に対応したプラグイン [WPF]"
+title: "方法 : Firefox に対応した WPF プラグインがインストールされているかどうかを確認する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- plug-in for Firefox [WPF]
+- detecting Firefox installation [WPF]
+- checking for the Firefox plug-in [WPF]
+- Firefox [WPF], detecting installation
+- detecting whether the WPF plug-in for Firefox is installed [WPF]
 ms.assetid: 5f839373-e3fb-44f1-88ad-4a0761f02189
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3012afc118420a83c869785d26c28f1eee969cb3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Firefox に対応した WPF プラグインがインストールされているかどうかを確認する
-Firefox に対応した [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] プラグインを使用すると、[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] ファイルおよび Loose XAML ファイルを Mozilla Firefox ブラウザーで実行できます。  ここでは、Firefox に対応した WPF プラグインがインストールされているかどうかを確認するための、HTML および JavaScript で記述されたスクリプトを示します。  
+# <a name="how-to-detect-whether-the-wpf-plug-in-for-firefox-is-installed"></a><span data-ttu-id="0c735-102">方法 : Firefox に対応した WPF プラグインがインストールされているかどうかを確認する</span><span class="sxs-lookup"><span data-stu-id="0c735-102">How to: Detect Whether the WPF Plug-In for Firefox Is Installed</span></span>
+<span data-ttu-id="0c735-103">[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] Firefox 有効用のプラグイン[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]Mozilla Firefox ブラウザーで実行する XAML ファイルが失われるとします。</span><span class="sxs-lookup"><span data-stu-id="0c735-103">The [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] plug-in for Firefox enables [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] and loose XAML files to run in the Mozilla Firefox browser.</span></span> <span data-ttu-id="0c735-104">このトピックでは、HTML および WPF Firefox のプラグインがインストールされているかどうかを決定する管理者が使用できる JavaScript で記述されたスクリプトを提供します。</span><span class="sxs-lookup"><span data-stu-id="0c735-104">This topic provides a script written in HTML and JavaScript that administrators can use to determine whether the WPF plug-in for Firefox is installed.</span></span>  
   
 > [!NOTE]
->  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] のインストール、配置、および検出の詳細については、「[.NET Framework のインストール](../../../../docs/framework/install/guide-for-developers.md)」を参照してください。  
+>  <span data-ttu-id="0c735-105">インストール、配置、および検出の詳細については、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]を参照してください[開発者向け .NET Framework をインストール](../../../../docs/framework/install/guide-for-developers.md)です。</span><span class="sxs-lookup"><span data-stu-id="0c735-105">For more information about installing, deploying, and detecting the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], see [Install the .NET Framework for developers](../../../../docs/framework/install/guide-for-developers.md).</span></span>  
   
-## 使用例  
- [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] がインストールされると、クライアント コンピューターは、Firefox に対応した WPF プラグインで構成されます。  Firefox に対応した WPF プラグインの有無をチェックして、適切なステータス メッセージを表示するスクリプトの例を次に示します。  
+## <a name="example"></a><span data-ttu-id="0c735-106">例</span><span class="sxs-lookup"><span data-stu-id="0c735-106">Example</span></span>  
+ <span data-ttu-id="0c735-107">ときに、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]がインストールされている、クライアント コンピューターが構成されているプラグインの wpf Firefox のです。</span><span class="sxs-lookup"><span data-stu-id="0c735-107">When the [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] is installed, the client computer is configured with a WPF plug-in for Firefox.</span></span> <span data-ttu-id="0c735-108">次のスクリプトの例では、プラグインの WPF Firefox のチェックし、適切なステータス メッセージを表示します。</span><span class="sxs-lookup"><span data-stu-id="0c735-108">The following example script checks for the WPF plug-in for Firefox and then displays an appropriate status message.</span></span>  
   
 ```  
 <HTML>  
@@ -61,15 +64,15 @@ Firefox に対応した [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-
 </HTML>  
 ```  
   
- Firefox に対応した WPF プラグインの有無のチェックが成功すると、次のステータス メッセージが表示されます。  
+ <span data-ttu-id="0c735-109">Firefox のプラグインの WPF のチェックが成功した場合は、次のステータス メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="0c735-109">If the check for the WPF plug-in for Firefox is successful, the following status message is displayed:</span></span>  
   
  `The WPF plug-in for Firefox is installed.`  
   
- それ以外の場合は、次のステータス メッセージが表示されます。  
+ <span data-ttu-id="0c735-110">それ以外の場合、次のステータス メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="0c735-110">Otherwise, the following status message is displayed:</span></span>  
   
- `The WPF plug-in for Firefox is not installed.  Please install or reinstall the .NET Framework 3.5.`  
+ `The WPF plug-in for Firefox is not installed. Please install or reinstall the .NET Framework 3.5.`  
   
-## 参照  
- [.NET Framework 3.0 がインストールされているかどうかの確認](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md)   
- [.NET Framework 3.5 がインストールされているかどうかの確認](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-5-is-installed.md)   
- [WPF XAML ブラウザー アプリケーションの概要](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)
+## <a name="see-also"></a><span data-ttu-id="0c735-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="0c735-111">See Also</span></span>  
+ [<span data-ttu-id="0c735-112">.NET Framework 3.0 がインストールされているかどうかを確認する</span><span class="sxs-lookup"><span data-stu-id="0c735-112">Detect Whether the .NET Framework 3.0 Is Installed</span></span>](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md)  
+ [<span data-ttu-id="0c735-113">.NET Framework 3.5 がインストールされているかどうかを確認する</span><span class="sxs-lookup"><span data-stu-id="0c735-113">Detect Whether the .NET Framework 3.5 Is Installed</span></span>](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-5-is-installed.md)  
+ [<span data-ttu-id="0c735-114">WPF XAML ブラウザー アプリケーションの概要</span><span class="sxs-lookup"><span data-stu-id="0c735-114">WPF XAML Browser Applications Overview</span></span>](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)

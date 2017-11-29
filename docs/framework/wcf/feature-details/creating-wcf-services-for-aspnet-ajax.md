@@ -1,46 +1,49 @@
 ---
-title: "ASP.NET AJAX 用の WCF サービスの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ASP.NET AJAX 用の WCF サービスの作成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 04c0402c-e617-4ba5-aedf-d17692234776
-caps.latest.revision: 18
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 50ce4918689687bfa702f0673d8d2a669abdf541
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ASP.NET AJAX 用の WCF サービスの作成
-Microsoft ASP.NET AJAX により、応答性に優れ、使い慣れたユーザー インターフェイス要素を使用して、充実したユーザー エクスペリエンスを提供する Web ページを簡単に作成できます。ASP.NET AJAX には、ブラウザーに依存しない ECMAScript \(JavaScript\) テクノロジとダイナミック HTML \(DHTML\) テクノロジを組み込んだクライアント スクリプト ライブラリが用意されており、これらのライブラリが ASP.NET 2.0 サーバー ベース開発プラットフォームと統合されます。ASP.NET AJAX を使用することで、Web アプリケーションのユーザー エクスペリエンスと効率を向上させることができます。  
+# <a name="creating-wcf-services-for-aspnet-ajax"></a><span data-ttu-id="5f256-102">ASP.NET AJAX 用の WCF サービスの作成</span><span class="sxs-lookup"><span data-stu-id="5f256-102">Creating WCF Services for ASP.NET AJAX</span></span>
+<span data-ttu-id="5f256-103">Microsoft ASP.NET AJAX により、応答性に優れ、使い慣れたユーザー インターフェイス要素を使用して、充実したユーザー エクスペリエンスを提供する Web ページを簡単に作成できます。</span><span class="sxs-lookup"><span data-stu-id="5f256-103">Microsoft ASP.NET AJAX enables you to quickly create Web pages that include a rich user experience with responsive and familiar user interface elements.</span></span> <span data-ttu-id="5f256-104">ASP.NET AJAX には、ブラウザーに依存しない ECMAScript (JavaScript) テクノロジとダイナミック HTML (DHTML) テクノロジを組み込んだクライアント スクリプト ライブラリが用意されており、これらのライブラリが ASP.NET 2.0 サーバー ベース開発プラットフォームと統合されます。</span><span class="sxs-lookup"><span data-stu-id="5f256-104">ASP.NET AJAX provides client-script libraries that incorporate cross-browser ECMAScript (JavaScript) and dynamic HTML (DHTML) technologies, and it integrates them with the ASP.NET 2.0 server-based development platform.</span></span> <span data-ttu-id="5f256-105">ASP.NET AJAX を使用することで、Web アプリケーションのユーザー エクスペリエンスと効率を向上させることができます。</span><span class="sxs-lookup"><span data-stu-id="5f256-105">By using ASP.NET AJAX, you can improve the user experience and the efficiency of your Web applications.</span></span>  
   
- ASP.NET AJAX は、クライアント スクリプト ライブラリとサーバー コンポーネントを統合した強固な開発フレームワークです。ASP.NET ページからサービスにアクセスする場合、サービス URL をページ上の ASP.NET スクリプト マネージャーに追加すると、標準の JavaScript 関数の呼び出しとまったく同じに見える JavaScript コードを使い、サービス操作を呼び出すことができます。AJAX フレームワーク内での Web サービスの使用については、「[ASP.NET AJAX について](http://go.microsoft.com/fwlink/?LinkId=186475)」を参照してください。  
+ <span data-ttu-id="5f256-106">ASP.NET AJAX は、クライアント スクリプト ライブラリとサーバー コンポーネントを統合した強固な開発フレームワークです。</span><span class="sxs-lookup"><span data-stu-id="5f256-106">ASP.NET AJAX consists of client-script libraries and of server components that are integrated to provide a robust development framework.</span></span> <span data-ttu-id="5f256-107">ASP.NET ページからサービスにアクセスする場合、サービス URL をページ上の ASP.NET スクリプト マネージャーに追加すると、標準の JavaScript 関数の呼び出しとまったく同じに見える JavaScript コードを使い、サービス操作を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="5f256-107">To access a service from an ASP.NET page: once the service URL is added to the ASP.NET Script Manager control on the page, service operations may be invoked using JavaScript code that looks exactly like a regular JavaScript function call.</span></span> <span data-ttu-id="5f256-108">参照してください[ASP.NET AJAX の学習](http://go.microsoft.com/fwlink/?LinkId=186475)AJAX フレームワーク内で Web サービスの使用に関するします。</span><span class="sxs-lookup"><span data-stu-id="5f256-108">See [Learn ASP.NET AJAX](http://go.microsoft.com/fwlink/?LinkId=186475) about the use of Web services within the AJAX framework.</span></span>  
   
- 適切な ASP.NET AJAX エンドポイントを追加すると、ほとんどの [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを、ASP.NET AJAX 互換のサービスとして公開できます。  
+ <span data-ttu-id="5f256-109">適切な ASP.NET AJAX エンドポイントを追加すると、ほとんどの [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを、ASP.NET AJAX 互換のサービスとして公開できます。</span><span class="sxs-lookup"><span data-stu-id="5f256-109">Most [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] services may be exposed as a service compatible with ASP.NET AJAX by adding an appropriate ASP.NET AJAX endpoint.</span></span>  
   
- Visual Studio を使用する場合は、AJAX 対応 WCF サービス用のビルド済みテンプレートを使用できます。このテンプレートは、ASP.NET Web サイトまたは Web アプリケーションでの作業中に **\[新しい項目の追加\]** ダイアログ ボックスで選択できます。  
+ <span data-ttu-id="5f256-110">Visual Studio を使用している場合で、AJAX 対応 WCF サービスの構築済みテンプレートを使用することがあります、**新しい項目の追加**ダイアログ ASP.NET Web サイトや Web アプリケーションを使用する場合。</span><span class="sxs-lookup"><span data-stu-id="5f256-110">If you are using Visual Studio, you may use a pre-built template for AJAX-enabled WCF services, available in the **Add New Item** dialog when working with ASP.NET Web Sites or Web Applications.</span></span>  
   
- Visual Studio テンプレートを使用しない場合、ASP.NET AJAX エンドポイントを作成するには次の 2 つの方法があります。  
+ <span data-ttu-id="5f256-111">Visual Studio テンプレートを使用しない場合、ASP.NET AJAX エンドポイントを作成するには次の 2 つの方法があります。</span><span class="sxs-lookup"><span data-stu-id="5f256-111">If you are not using the Visual Studio templates, there are two ways to create an ASP.NET AJAX endpoint:</span></span>  
   
--   構成を使用せずに、動的ホスト アクティブ化を使用してエンドポイントを作成する。これは、WCF 構成システムの操作に慣れていない場合の最も簡単な方法です。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][方法 : 構成を使用せずに ASP.NET AJAX エンドポイントを追加する](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md).  
+-   <span data-ttu-id="5f256-112">構成を使用せずに、動的ホスト アクティブ化を使用してエンドポイントを作成する。</span><span class="sxs-lookup"><span data-stu-id="5f256-112">Create the endpoint using dynamic host activation without using any configuration.</span></span> <span data-ttu-id="5f256-113">これは、WCF 構成システムの操作に慣れていない場合の最も簡単な方法です。</span><span class="sxs-lookup"><span data-stu-id="5f256-113">This is the most basic approach if you are unfamiliar with the WCF configuration system.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="5f256-114">[する方法: 構成を使用せずに ASP.NET AJAX エンドポイントを追加](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md)です。</span><span class="sxs-lookup"><span data-stu-id="5f256-114"> [How to: Add an ASP.NET AJAX Endpoint Without Using Configuration](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md).</span></span>  
   
--   構成を使用して、AJAX 対応のエンドポイントを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスに追加する。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][方法 : 構成を使用して ASP.NET AJAX エンドポイントを追加する](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md).  
+-   <span data-ttu-id="5f256-115">構成を使用して、AJAX 対応のエンドポイントを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスに追加する。</span><span class="sxs-lookup"><span data-stu-id="5f256-115">Add an AJAX-enabled endpoint to a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service using configuration.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="5f256-116">[する方法: ASP.NET AJAX エンドポイントを追加する構成を使用して](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)です。</span><span class="sxs-lookup"><span data-stu-id="5f256-116"> [How to: Use Configuration to Add an ASP.NET AJAX Endpoint](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md).</span></span>  
   
- 「[WCF Web HTTP プログラミング モデルの概要](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)」で説明されている Web プログラミング モデルは、ASP.NET AJAX サービスと共に使うことができます。具体的には、次のように使用します。  
+ <span data-ttu-id="5f256-117">説明されている Web プログラミング モデル、 [WCF Web HTTP プログラミング モデルの概要](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)は ASP.NET AJAX サービスで使用できます。</span><span class="sxs-lookup"><span data-stu-id="5f256-117">The Web Programming Model described in the [WCF Web HTTP Programming Model Overview](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md) may be used with ASP.NET AJAX services.</span></span> <span data-ttu-id="5f256-118">具体的には、次のように使用します。</span><span class="sxs-lookup"><span data-stu-id="5f256-118">Specifically:</span></span>  
   
--   <xref:System.ServiceModel.Web.WebGetAttribute> および <xref:System.ServiceModel.Web.WebInvokeAttribute> 属性を使用して、HTTP GET 動詞と HTTP POST 動詞のいずれかを選択できます。正しく使用すれば、アプリケーションのパフォーマンスを大幅に向上させることができます。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][方法 : ASP.NET AJAX エンドポイントのために HTTP POST または HTTP GET を選択する](../../../../docs/framework/wcf/feature-details/http-post-and-http-get-requests-for-aspnet-ajax-endpoints.md).  
+-   <span data-ttu-id="5f256-119"><xref:System.ServiceModel.Web.WebGetAttribute> および <xref:System.ServiceModel.Web.WebInvokeAttribute> 属性を使用して、HTTP GET 動詞と HTTP POST 動詞のいずれかを選択できます。</span><span class="sxs-lookup"><span data-stu-id="5f256-119">You can use the <xref:System.ServiceModel.Web.WebGetAttribute> and <xref:System.ServiceModel.Web.WebInvokeAttribute> attributes to select between HTTP GET and HTTP POST verbs.</span></span> <span data-ttu-id="5f256-120">正しく使用すれば、アプリケーションのパフォーマンスを大幅に向上させることができます。</span><span class="sxs-lookup"><span data-stu-id="5f256-120">If used correctly, this may significantly improve your application’s performance.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="5f256-121">[する方法: ASP.NET AJAX エンドポイントに対して HTTP POST または HTTP GET 要求を選択](../../../../docs/framework/wcf/feature-details/http-post-and-http-get-requests-for-aspnet-ajax-endpoints.md)です。</span><span class="sxs-lookup"><span data-stu-id="5f256-121"> [How to: Choose between HTTP POST and HTTP GET requests for ASP.NET AJAX Endpoints](../../../../docs/framework/wcf/feature-details/http-post-and-http-get-requests-for-aspnet-ajax-endpoints.md).</span></span>  
   
--   <xref:System.ServiceModel.Web.WebGetAttribute.ResponseFormat%2A> および <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A> プロパティを使用して、サービスが返すデータを、既定の JSON \(JavaScript Object Notation\) ではなく XML データにすることができます。これを ASP.NET AJAX フレームワークで行うと、JavaScript クライアントは XML DOM オブジェクトを受け取ります。  
+-   <span data-ttu-id="5f256-122"><xref:System.ServiceModel.Web.WebGetAttribute.ResponseFormat%2A> および <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A> プロパティを使用して、サービスが返すデータを、既定の JSON (JavaScript Object Notation) ではなく XML データにすることができます。</span><span class="sxs-lookup"><span data-stu-id="5f256-122">You can use the <xref:System.ServiceModel.Web.WebGetAttribute.ResponseFormat%2A> and <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A> properties to cause your service to return XML data instead of the default JavaScript Object Notation (JSON).</span></span> <span data-ttu-id="5f256-123">これを ASP.NET AJAX フレームワークで行うと、JavaScript クライアントは XML DOM オブジェクトを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="5f256-123">Doing this with the ASP.NET AJAX framework causes the JavaScript client to receive an XML DOM object.</span></span>  
   
     > [!WARNING]
-    >  この動作を機能させるには、コンテンツ タイプを text\/xml に設定する必要があります。設定しない場合、JavaScript クライアントは XML DOM オブジェクトではなく XML を含む文字列を受け取ります。  
+    >  <span data-ttu-id="5f256-124">この動作を機能させるには、コンテンツ タイプを text/xml に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5f256-124">Your operation must set the content type to text/xml for this to work.</span></span> <span data-ttu-id="5f256-125">設定しない場合、JavaScript クライアントは XML DOM オブジェクトではなく XML を含む文字列を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="5f256-125">Otherwise, the JavaScript client will receive a string containing the XML instead of an XML DOM object.</span></span>  
   
-     コンテンツ タイプが適切に設定された XML データを返す操作の例を次に示します。  
+     <span data-ttu-id="5f256-126">コンテンツ タイプが適切に設定された XML データを返す操作の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="5f256-126">The following is an example of an operation that returns XML data with the content type set appropriately:</span></span>  
   
     ```  
     [OperationContract, WebGet(ResponseFormat=WebMessageFormat.Xml)]  
@@ -52,21 +55,20 @@ Microsoft ASP.NET AJAX により、応答性に優れ、使い慣れたユーザ
     WebOperationContext.Current.OutgoingResponse.ContentType = "text/xml";      
     return x;  
     }  
-  
     ```  
   
--   ASP.NET AJAX との互換性が必要な場合、<xref:System.ServiceModel.Web.WebGetAttribute> および <xref:System.ServiceModel.Web.WebInvokeAttribute> 属性の他の属性は変更できません。ASP.NET AJAX 呼び出し規約に違反しない限り、Web プログラミング モデルのその他の機能を使用できます。  
+-   <span data-ttu-id="5f256-127">ASP.NET AJAX との互換性が必要な場合、<xref:System.ServiceModel.Web.WebGetAttribute> および <xref:System.ServiceModel.Web.WebInvokeAttribute> 属性の他の属性は変更できません。</span><span class="sxs-lookup"><span data-stu-id="5f256-127">No other properties on the <xref:System.ServiceModel.Web.WebGetAttribute> and <xref:System.ServiceModel.Web.WebInvokeAttribute> attributes can be changed if compatibility with ASP.NET AJAX is required.</span></span> <span data-ttu-id="5f256-128">ASP.NET AJAX 呼び出し規約に違反しない限り、Web プログラミング モデルのその他の機能を使用できます。</span><span class="sxs-lookup"><span data-stu-id="5f256-128">Other aspects of the Web Programming Model can be used as long as the ASP.NET AJAX calling conventions are not violated.</span></span>  
   
- より高度なシナリオでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] での AJAX サポートについて、他にいくつかの詳細な事項を理解する必要があります。  
+ <span data-ttu-id="5f256-129">より高度なシナリオでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] での AJAX サポートについて、他にいくつかの詳細な事項を理解する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5f256-129">More advanced scenarios require some additional details of AJAX support in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] be understood:</span></span>  
   
--   JavaScript を使用して AJAX ページ クライアントと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス間でデータを転送する方法と、.NET Framework の型を JavaScript の型に割り当てる方法の詳細については、「[JSON などのデータ転送形式のサポート](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md)」を参照してください。  
+-   <span data-ttu-id="5f256-130">AJAX ページのクライアントの間でデータを転送する方法を理解しておくと、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] JavaScript を使用してサービスを提供し、.NET Framework の型を JavaScript の型にマップする方法の詳細については、「 [JSON とその他のデータ転送形式のサポート](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md).</span><span class="sxs-lookup"><span data-stu-id="5f256-130">To understand how data is transferred between an AJAX page client and a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service using JavaScript, and for details on how .NET Framework types map to JavaScript types, see [Support for JSON and Other Data Transfer Formats](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md).</span></span>  
   
--   たとえば、URL ベースの認証や ASP.NET セッション情報へのアクセスなどの ASP.NET 機能を活用するには、構成で ASP.NET 互換モードを有効にします。  
+-   <span data-ttu-id="5f256-131">たとえば、URL ベースの認証や ASP.NET セッション情報へのアクセスなどの ASP.NET 機能を活用するには、構成で ASP.NET 互換モードを有効にします。</span><span class="sxs-lookup"><span data-stu-id="5f256-131">To take advantage of ASP.NET features, for example, URL-based authentication and accessing the ASP.NET session information, you may want to enable the ASP.NET Compatibility Mode through configuration.</span></span>  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の AJAX エンドポイントは、ASP.NET AJAX フレームワークなしで使用できます。これを行うには、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] での AJAX サポートのサポート アーキテクチャに関する知識が必要です。このアーキテクチャについては、「[WCF Web HTTP プログラミング オブジェクト モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)」を参照してください。この方法を実行するコード例については、「[JSON および XML 形式の AJAX サービス](../../../../docs/framework/wcf/samples/ajax-service-with-json-and-xml-sample.md)」を参照してください。  
+ <span data-ttu-id="5f256-132">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の AJAX エンドポイントは、ASP.NET AJAX フレームワークなしで使用できます。</span><span class="sxs-lookup"><span data-stu-id="5f256-132">AJAX endpoints in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] may even be consumed without the ASP.NET AJAX framework.</span></span> <span data-ttu-id="5f256-133">これを行うには、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] での AJAX サポートのサポート アーキテクチャに関する知識が必要です。</span><span class="sxs-lookup"><span data-stu-id="5f256-133">Doing so requires an understanding of the support architecture of AJAX support in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span> <span data-ttu-id="5f256-134">このアーキテクチャの詳細については、次を参照してください。 [WCF Web HTTP プログラミング オブジェクト モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)です。</span><span class="sxs-lookup"><span data-stu-id="5f256-134">For a discussion of this architecture, see [WCF Web HTTP Programming Object Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md).</span></span> <span data-ttu-id="5f256-135">この方法を示すコード サンプルは、次を参照してください。、 [JSON と XML での AJAX サービス](../../../../docs/framework/wcf/samples/ajax-service-with-json-and-xml-sample.md)です。</span><span class="sxs-lookup"><span data-stu-id="5f256-135">For a code sample demonstrating this approach, see the [AJAX Service with JSON and XML](../../../../docs/framework/wcf/samples/ajax-service-with-json-and-xml-sample.md).</span></span>  
   
-## 参照  
- [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)   
- [方法 : 構成を使用せずに ASP.NET AJAX エンドポイントを追加する](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md)   
- [方法 : 構成を使用して ASP.NET AJAX エンドポイントを追加する](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)   
- [方法 : ASP.NET AJAX エンドポイントのために HTTP POST または HTTP GET を選択する](../../../../docs/framework/wcf/feature-details/http-post-and-http-get-requests-for-aspnet-ajax-endpoints.md)
+## <a name="see-also"></a><span data-ttu-id="5f256-136">関連項目</span><span class="sxs-lookup"><span data-stu-id="5f256-136">See Also</span></span>  
+ [<span data-ttu-id="5f256-137">WCF Web HTTP プログラミング モデル</span><span class="sxs-lookup"><span data-stu-id="5f256-137">WCF Web HTTP Programming Model</span></span>](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
+ [<span data-ttu-id="5f256-138">方法: 構成を使用せずに ASP.NET AJAX エンドポイントを追加</span><span class="sxs-lookup"><span data-stu-id="5f256-138">How to: Add an ASP.NET AJAX Endpoint Without Using Configuration</span></span>](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md)  
+ [<span data-ttu-id="5f256-139">方法: 構成を使用して ASP.NET AJAX エンドポイントを追加するには</span><span class="sxs-lookup"><span data-stu-id="5f256-139">How to: Use Configuration to Add an ASP.NET AJAX Endpoint</span></span>](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)  
+ [<span data-ttu-id="5f256-140">方法: ASP.NET AJAX エンドポイントに対して HTTP POST または HTTP GET 要求を選択</span><span class="sxs-lookup"><span data-stu-id="5f256-140">How to: Choose between HTTP POST and HTTP GET requests for ASP.NET AJAX Endpoints</span></span>](../../../../docs/framework/wcf/feature-details/http-post-and-http-get-requests-for-aspnet-ajax-endpoints.md)

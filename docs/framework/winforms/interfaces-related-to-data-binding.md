@@ -1,164 +1,165 @@
 ---
-title: "データ連結に関連するインターフェイス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "データ [Windows フォーム], データ バインディング インターフェイス"
-  - "データ バインド, インターフェイス"
-  - "IBindingList インターフェイス, Windows フォームのデータ バインディング"
-  - "IBindingListView インターフェイス"
-  - "IDataErrorInfo インターフェイス, Windows フォームのデータ バインディング"
-  - "IEditableObject インターフェイス, Windows フォームのデータ バインディング"
-  - "IList インターフェイス, Windows フォームのデータ バインディング"
-  - "INotifyPropertyChanged インターフェイス"
-  - "インターフェイス, Windows フォームのデータ バインディング"
+title: "データ連結に関連するインターフェイス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- data [Windows Forms], data-binding interfaces
+- INotifyPropertyChanged interface
+- IBindingListView interface
+- IList interface [Windows Forms], Windows Forms data binding
+- IBindingList interface [Windows Forms], Windows Forms data binding
+- interfaces [Windows Forms], Windows Forms data binding
+- IEditableObject interface [Windows Forms], Windows Forms data binding
+- data binding [Windows Forms], interfaces
+- IDataErrorInfo interface [Windows Forms], Windows Forms data binding
 ms.assetid: 14e49a2e-3e46-47ca-b491-70d546333277
-caps.latest.revision: 23
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8108cd3c5ae305b6def5324385cb12c94cd42774
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# データ連結に関連するインターフェイス
-[!INCLUDE[vstecado](../../../includes/vstecado-md.md)] では、アプリケーションで必要なバインディングや、処理する対象のデータに合わせて、さまざまなデータ構造を作成できます。  Windows フォームでデータを提供または利用するための独自のクラスを作成すると役立つ場合があります。  これらのオブジェクトはさまざまなレベルの機能を提供でき、複雑さもそれぞれに異なります。基本的なデータ バインディングを提供するもの、デザイン時のサポート、エラー チェック機能、または変更通知機能を提供するもの、さらには、データ自体に加えられた変更の構造化されたロールバックをサポートするものまであります。  
+# <a name="interfaces-related-to-data-binding"></a><span data-ttu-id="a0fc8-102">データ連結に関連するインターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-102">Interfaces Related to Data Binding</span></span>
+<span data-ttu-id="a0fc8-103">[!INCLUDE[vstecado](../../../includes/vstecado-md.md)] では、アプリケーションのバインドのニーズや使用するデータに合わせてさまざまなデータ構造を作成できます。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-103">With [!INCLUDE[vstecado](../../../includes/vstecado-md.md)], you can create many different data structures to suit the binding needs of your application and the data you are working with.</span></span> <span data-ttu-id="a0fc8-104">Windows フォームでデータを提供または使用するための独自のクラスを作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-104">You may want to create your own classes that provide or consume data in Windows Forms.</span></span> <span data-ttu-id="a0fc8-105">これらのオブジェクトは、基本的なデータ バインディングから、デザイン時サポートの提供、エラー チェック、変更通知、データ自体に加えられた変更の構造化されたロールバックのサポートに至るまで、さまざまなレベルの機能を提供することができ、複雑さに対応できます。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-105">These objects can offer varying levels of functionality and complexity, from basic data binding, to providing design-time support, error checking, change notification, or even support for a structured rollback of the changes made to the data itself.</span></span>  
   
-## データ バインディング インターフェイスのコンシューマー  
- 以下のセクションでは、インターフェイス オブジェクトを 2 つのグループに分けて説明します。  1 つ目のグループは、データ ソース作成者がデータ ソースに実装するインターフェイスの一覧です。  これらのインターフェイスは、データ ソース コンシューマーによって利用されるようにデザインされています。データ ソース コンシューマーは、通常は Windows フォーム コントロールまたはコンポーネントです。  2 つ目のグループは、コンポーネント作成者によって利用されるようデザインされているインターフェイスの一覧です。  Windows フォーム データ バインディング エンジンが利用する、データ バインディングをサポートするコンポーネントを作成するときに、コンポーネント作成者はこれらのインターフェイスを使用します。  フォームに関連付けられたクラス内にこれらのインターフェイスを実装することで、データ バインディングを有効にできます。つまり、データとの対話を実現するインターフェイスを実装したクラスを作成できます。  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] の Rapid Application Development \(RAD\) データ デザイン体験ツールでは、この機能が既に活用されています。  
+## <a name="consumers-of-data-binding-interfaces"></a><span data-ttu-id="a0fc8-106">データ バインディング インターフェイスのコンシューマー</span><span class="sxs-lookup"><span data-stu-id="a0fc8-106">Consumers of Data-Binding Interfaces</span></span>  
+ <span data-ttu-id="a0fc8-107">以下のセクションでは、インターフェイス オブジェクトの 2 つのグループについて説明します。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-107">Following sections describe two groups of interface objects.</span></span> <span data-ttu-id="a0fc8-108">1 つ目のグループでは、データ ソース作成者がデータ ソースに実装するインターフェイスを示します。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-108">The first group lists interfaces that are implemented on data sources by data source authors.</span></span> <span data-ttu-id="a0fc8-109">これらのインターフェイスは、データ ソース コンシューマーが使用するように設計されています。ほとんどの場合、データ ソース コンシューマーは、Windows フォーム コントロールまたはコンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-109">These interfaces are designed to be consumed by data source consumers, which are in most cases Windows Forms controls or components.</span></span> <span data-ttu-id="a0fc8-110">2 つ目のグループでは、コンポーネント作成者向けに設計されたインターフェイスを示します。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-110">The second group lists interfaces designed for use by component authors.</span></span> <span data-ttu-id="a0fc8-111">コンポーネント作成者は、Windows フォーム データ バインディング エンジンが使用する、データ バインディングをサポートするコンポーネントを作成するときにこれらのインターフェイスを使用します。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-111">Component authors use these interfaces when they are creating a component that supports data binding to be consumed by the Windows Forms data-binding engine.</span></span> <span data-ttu-id="a0fc8-112">フォームに関連付けられたクラス内でこれらのインターフェイスを実装することで、データ バインディングを実現できます。各ケースは、データの操作を可能にするインターフェイスを実装するクラスを示しています。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-112">You can implement these interfaces within classes associated with your form to enable data binding; each case presents a class that implements an interface that enables interaction with data.</span></span> [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]<span data-ttu-id="a0fc8-113"> の Rapid Application Development (RAD) データ デザイン エクスペリエンス ツールでは、この機能を既に活用しています。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-113"> rapid application development (RAD) data design experience tools already take advantage of this functionality.</span></span>  
   
-### データ ソース作成者が実装するインターフェイス  
- 以下のインターフェイスは、Windows フォーム コントロールによって利用されるようにデザインされています。  
+### <a name="interfaces-for-implementation-by-data-source-authors"></a><span data-ttu-id="a0fc8-114">データ ソース作成者が実装するインターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-114">Interfaces for Implementation by Data Source Authors</span></span>  
+ <span data-ttu-id="a0fc8-115">以下のインターフェイスは、Windows フォーム コントロールで使用するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-115">The following interfaces are designed to be consumed by Windows Forms controls:</span></span>  
   
--   <xref:System.Collections.IList> インターフェイスの使い方  
+-   <span data-ttu-id="a0fc8-116"><xref:System.Collections.IList> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-116"><xref:System.Collections.IList> interface</span></span>  
   
-     <xref:System.Collections.IList> インターフェイスを実装するクラスには、<xref:System.Array>、<xref:System.Collections.ArrayList>、および <xref:System.Collections.CollectionBase> があります。  これらは、<xref:System.Object> 型の項目のインデックス付きリストです。  これらのリストは、同じ型のみを格納できます。インデックスの先頭の項目によって型が決定されるためです。  <xref:System.Collections.IList> は、実行時にのみバインディングに利用できます。  
-  
-    > [!NOTE]
-    >  Windows フォームとのバインディングのために、ビジネス オブジェクトのリストを作成する場合には、<xref:System.ComponentModel.BindingList%601> の使用を検討する必要があります。  <xref:System.ComponentModel.BindingList%601> は、双方向の Windows フォーム データ バインディングに必要となる主要なインターフェイスが実装された、拡張性のあるクラスです。  
-  
--   <xref:System.ComponentModel.IBindingList> インターフェイスの使い方  
-  
-     <xref:System.ComponentModel.IBindingList> インターフェイスを実装するクラスは、はるかに高いレベルのデータ バインディング機能を提供します。  この実装は、基本的な並べ替え機能と変更通知機能を持ちます。変更通知機能では、リスト項目が変更されたとき \(たとえば、顧客リストの 3 番目の項目で Address フィールドが変更されたとき\) とリスト自体が変更されたとき \(たとえば、リスト内の項目の数が増減したとき\) の両方について変更が通知されます。  変更通知は、複数のコントロールを同じデータにバインドする予定のときに、1 つのコントロールで行ったデータ変更を他のバインド コントロールにも反映させる場合に重要です。  
+     <span data-ttu-id="a0fc8-117">実装するクラス、<xref:System.Collections.IList>インターフェイス可能性があります、 <xref:System.Array>、 <xref:System.Collections.ArrayList>、または<xref:System.Collections.CollectionBase>です。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-117">A class that implements the <xref:System.Collections.IList> interface could be an <xref:System.Array>, <xref:System.Collections.ArrayList>, or <xref:System.Collections.CollectionBase>.</span></span> <span data-ttu-id="a0fc8-118">これらの型の項目のインデックス付きのリストは、<xref:System.Object>です。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-118">These are indexed lists of items of type <xref:System.Object>.</span></span> <span data-ttu-id="a0fc8-119">インデックスの最初の項目によって型が決定されるため、これらのリストには同種の型が含まれている必要があります。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-119">These lists must contain homogenous types, because the first item of the index determines the type.</span></span> <span data-ttu-id="a0fc8-120"><xref:System.Collections.IList>実行時にのみバインドできるようになります。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-120"><xref:System.Collections.IList> would be available for binding only at run time.</span></span>  
   
     > [!NOTE]
-    >  <xref:System.ComponentModel.IBindingList> インターフェイスの変更通知は <xref:System.ComponentModel.IBindingList.SupportsChangeNotification%2A> プロパティで有効にされます。このプロパティが `true` の場合には <xref:System.ComponentModel.IBindingList.ListChanged> イベントが発生し、リストまたはその中の項目が変更されたことが示されます。  
+    >  <span data-ttu-id="a0fc8-121">Windows フォームでバインディング用のビジネス オブジェクトの一覧を作成する場合は、使用を検討する必要があります、<xref:System.ComponentModel.BindingList%601>です。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-121">If you want to create a list of business objects for binding with Windows Forms, you should consider using the <xref:System.ComponentModel.BindingList%601>.</span></span> <span data-ttu-id="a0fc8-122"><xref:System.ComponentModel.BindingList%601>双方向の Windows フォーム データ バインディングに必要なプライマリ インターフェイスを実装する拡張可能なクラスです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-122">The <xref:System.ComponentModel.BindingList%601> is an extensible class that implements the primary interfaces required for two-way Windows Forms data binding.</span></span>  
   
-     変更の種類は、<xref:System.ComponentModel.ListChangedEventArgs> パラメーターの <xref:System.ComponentModel.ListChangedType> プロパティで示されます。  したがって、データ モデルが更新されたときには、それに依存するビュー \(たとえば、同じデータ ソースにバインドされた他のコントロール\) も更新されます。  ただし、リストが <xref:System.ComponentModel.IBindingList.ListChanged> イベントを発生させるためには、リスト内に含まれるオブジェクトが変更されたときに、それをリストに通知する必要があります。  
+-   <span data-ttu-id="a0fc8-123"><xref:System.ComponentModel.IBindingList> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-123"><xref:System.ComponentModel.IBindingList> interface</span></span>  
   
-    > [!NOTE]
-    >  <xref:System.ComponentModel.BindingList%601> は、<xref:System.ComponentModel.IBindingList> インターフェイスの汎用実装です。  
-  
--   <xref:System.ComponentModel.IBindingListView> インターフェイスの使い方  
-  
-     <xref:System.ComponentModel.IBindingListView> インターフェイスを実装するクラスは、<xref:System.ComponentModel.IBindingList> の実装が持つすべての機能に加えて、フィルター処理機能および高度な並べ替え機能を持ちます。  この実装は、文字列ベースのフィルター処理、およびプロパティ記述子と方向のペアによる複数列の並べ替え機能を提供します。  
-  
--   <xref:System.ComponentModel.IEditableObject> インターフェイスの使い方  
-  
-     <xref:System.ComponentModel.IEditableObject> インターフェイスを実装するクラスを使用すると、オブジェクトへの変更を永続化するタイミングをオブジェクトが制御できるようになります。  この実装により、<xref:System.ComponentModel.IEditableObject.BeginEdit%2A>、<xref:System.ComponentModel.IEditableObject.EndEdit%2A>、および <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> の各メソッドを使用できるようになり、それによってオブジェクトへの変更をロールバックできます。  次に示すのは、<xref:System.ComponentModel.IEditableObject.BeginEdit%2A>、<xref:System.ComponentModel.IEditableObject.EndEdit%2A>、および <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> の各メソッドの機能と、データに対して加えられた変更のロールバックを実現するためのこれら各メソッドの連係についての簡単な説明です。  
-  
-    -   <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> メソッドはオブジェクトの編集の開始を示します。  このインターフェイスを実装するオブジェクトは、<xref:System.ComponentModel.IEditableObject.BeginEdit%2A> メソッドの呼び出し後に加えられたすべての更新を格納して、<xref:System.ComponentModel.IEditableObject.CancelEdit%2A> メソッドが呼び出されたときに破棄できるようにする必要があります。  Windows フォームのデータ バインディングでは、1 つの編集トランザクションのスコープ内で <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> を複数回呼び出すことができます \(たとえば、<xref:System.ComponentModel.IEditableObject.BeginEdit%2A>、<xref:System.ComponentModel.IEditableObject.BeginEdit%2A>、<xref:System.ComponentModel.IEditableObject.EndEdit%2A>\)。  <xref:System.ComponentModel.IEditableObject> の実装では、<xref:System.ComponentModel.IEditableObject.BeginEdit%2A> が既に呼び出されたかどうかを追跡し、それ以降の <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> の呼び出しを無視する必要があります。  このメソッドは複数回呼び出すことができるため、同じメソッドの以降の呼び出しが破壊的でないことが重要です。つまり、以降の <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> の呼び出しでは、既に加えられている更新を破棄したり、最初の <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> 呼び出し時に保存されたデータを変更したりすることはできません。  
-  
-    -   <xref:System.ComponentModel.IEditableObject.EndEdit%2A> メソッドは、基になるオブジェクトが現在編集モードである場合に、<xref:System.ComponentModel.IEditableObject.BeginEdit%2A> の呼び出し後に加えられた変更をオブジェクトに反映します。  
-  
-    -   <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> メソッドは、オブジェクトに加えられた変更を破棄します。  
-  
-     <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>、<xref:System.ComponentModel.IEditableObject.EndEdit%2A>、および <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> の各メソッドの機能の詳細については、「[データセットのデータの保存](../Topic/Save%20data%20back%20to%20the%20database.md)」を参照してください。  
-  
-     データ機能のこのトランザクションの概念は、<xref:System.Windows.Forms.DataGridView> コントロールで使用されています。  
-  
--   <xref:System.ComponentModel.ICancelAddNew> インターフェイスの使い方  
-  
-     <xref:System.ComponentModel.ICancelAddNew> インターフェイスを実装するクラスには、<xref:System.ComponentModel.IBindingList> インターフェイスも実装するのが一般的で、<xref:System.ComponentModel.IBindingList.AddNew%2A> メソッドでデータ ソースに対して行われた追加をロールバックできるようにします。  データ ソースに <xref:System.ComponentModel.IBindingList> インターフェイスを実装する場合には、<xref:System.ComponentModel.ICancelAddNew> インターフェイスも実装する必要があります。  
-  
--   <xref:System.ComponentModel.IDataErrorInfo> インターフェイスの使い方  
-  
-     <xref:System.ComponentModel.IDataErrorInfo> インターフェイスを実装するクラスでは、オブジェクトからバインド コントロールに対してカスタムのエラー情報を次のように提供できます。  
-  
-    -   <xref:System.ComponentModel.IDataErrorInfo.Error%2A> プロパティは、一般的なエラー メッセージ テキスト \(たとえば、"An error has occurred"\) を返します。  
-  
-    -   <xref:System.ComponentModel.IDataErrorInfo.Item%2A> プロパティは、列からの具体的なエラー メッセージを含む文字列 \(たとえば、"The value in the `State` column is invalid"\) を返します。  
-  
--   <xref:System.Collections.IEnumerable> インターフェイスの使い方  
-  
-     <xref:System.Collections.IEnumerable> インターフェイスを実装するクラスは、[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] によって利用されるのが一般的です。  このインターフェイスに対する Windows フォームのサポートは、<xref:System.Windows.Forms.BindingSource> コンポーネントを通じてのみ利用できます。  
+     <span data-ttu-id="a0fc8-124">実装するクラス、<xref:System.ComponentModel.IBindingList>インターフェイスには、データ バインディング機能の非常に高いレベルが用意されています。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-124">A class that implements the <xref:System.ComponentModel.IBindingList> interface provides a much higher level of data-binding functionality.</span></span> <span data-ttu-id="a0fc8-125">この実装では、基本的な並べ替え機能と変更通知を提供します。変更通知では、リスト項目が変更されたとき (たとえば、顧客リストの 3 番目の項目の Address フィールドが変更されたとき) と、リスト自体が変更されたとき (たとえば、リスト内の項目の数が増減したとき) のどちらの場合も変更が通知されます。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-125">This implementation offers you basic sorting capabilities and change notification, both for when the list items change (for example, the third item in a list of customers has a change to the Address field), as well as when the list itself changes (for example, the number of items in the list increases or decreases).</span></span> <span data-ttu-id="a0fc8-126">複数のコントロールを同じデータにバインドする予定であり、いずれかのコントロールで行われたデータ変更をバインドされた他のコントロールに反映させる必要がある場合に、変更通知が重要になります。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-126">Change notification is important if you plan to have multiple controls bound to the same data, and you want data changes made in one of the controls to propagate to the other bound controls.</span></span>  
   
     > [!NOTE]
-    >  <xref:System.Windows.Forms.BindingSource> コンポーネントは、バインディングのために、すべての <xref:System.Collections.IEnumerable> 項目を別個のリストにコピーします。  
+    >  <span data-ttu-id="a0fc8-127">変更通知が有効になって、<xref:System.ComponentModel.IBindingList>によってインターフェイスを<xref:System.ComponentModel.IBindingList.SupportsChangeNotification%2A>プロパティを`true`を発生させます、<xref:System.ComponentModel.IBindingList.ListChanged>変更されたリストまたはリスト内の項目を示すイベントを変更します。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-127">Change notification is enabled for the <xref:System.ComponentModel.IBindingList> interface through the <xref:System.ComponentModel.IBindingList.SupportsChangeNotification%2A> property which, when `true`, raises a <xref:System.ComponentModel.IBindingList.ListChanged> event, indicating the list changed or an item in the list changed.</span></span>  
   
--   <xref:System.ComponentModel.ITypedList> インターフェイスの使い方  
-  
-     <xref:System.ComponentModel.ITypedList> インターフェイスを実装するコレクション クラスは、バインド コントロールに対して公開するプロパティの順序と組み合わせを制御する機能を持ちます。  
+     <span data-ttu-id="a0fc8-128">変更の種類は、<xref:System.ComponentModel.ListChangedType>のプロパティ、<xref:System.ComponentModel.ListChangedEventArgs>パラメーター。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-128">The type of change is described by the <xref:System.ComponentModel.ListChangedType> property of the <xref:System.ComponentModel.ListChangedEventArgs> parameter.</span></span> <span data-ttu-id="a0fc8-129">したがって、データ モデルが更新されるたびに、依存するビュー (同じデータ ソースにバインドされた他のコントロールなど) も更新されます。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-129">Hence, whenever the data model is updated, any dependent views, such as other controls bound to the same data source, will also be updated.</span></span> <span data-ttu-id="a0fc8-130">ただし、一覧に含まれるオブジェクトがリストにリストを発生させることができるように変更したときに通知する必要が、<xref:System.ComponentModel.IBindingList.ListChanged>イベント。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-130">However, objects contained within the list will have to notify the list when they change so that the list can raise the <xref:System.ComponentModel.IBindingList.ListChanged> event.</span></span>  
   
     > [!NOTE]
-    >  <xref:System.ComponentModel.ITypedList.GetItemProperties%2A> メソッドを実装するとき、<xref:System.ComponentModel.PropertyDescriptor> 配列が null でない場合には、配列の最後のエントリは、他の項目リストであるリスト プロパティを説明するプロパティ記述子です。  
+    >  <span data-ttu-id="a0fc8-131"><xref:System.ComponentModel.BindingList%601>の一般的な実装を提供、<xref:System.ComponentModel.IBindingList>インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-131">The <xref:System.ComponentModel.BindingList%601> provides a generic implementation of the <xref:System.ComponentModel.IBindingList> interface.</span></span>  
   
--   <xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイスの使い方  
+-   <span data-ttu-id="a0fc8-132"><xref:System.ComponentModel.IBindingListView> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-132"><xref:System.ComponentModel.IBindingListView> interface</span></span>  
   
-     <xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイスを実装するクラスは、自らに関する動的な情報を提供します。  このインターフェイスは <xref:System.ComponentModel.ITypedList> に似ていますが、リストではなくオブジェクトに対して使用されます。  このインターフェイスは、<xref:System.Data.DataRowView> によって、基になる行のスキーマを反映するために使用されます。  <xref:System.ComponentModel.ICustomTypeDescriptor> の単純な実装は <xref:System.ComponentModel.CustomTypeDescriptor> クラスにより提供されています。  
+     <span data-ttu-id="a0fc8-133">実装するクラス、<xref:System.ComponentModel.IBindingListView>インターフェイスの実装のすべての機能を提供する<xref:System.ComponentModel.IBindingList>、同様に、フィルター処理と高度な並べ替え機能します。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-133">A class that implements the <xref:System.ComponentModel.IBindingListView> interface provides all the functionality of an implementation of <xref:System.ComponentModel.IBindingList>, as well as filtering and advanced sorting functionality.</span></span> <span data-ttu-id="a0fc8-134">この実装では、文字列ベースのフィルター処理と、プロパティ記述子と方向のペアによる複数列の並べ替え機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-134">This implementation offers string-based filtering, and multicolumn sorting with property descriptor-direction pairs.</span></span>  
   
-    > [!NOTE]
-    >  <xref:System.ComponentModel.ICustomTypeDescriptor> を実装する型に対するデザイン時バインディングをサポートするためには、その型に <xref:System.ComponentModel.IComponent> も実装し、フォーム上にインスタンスとして配置する必要があります。  
+-   <span data-ttu-id="a0fc8-135"><xref:System.ComponentModel.IEditableObject> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-135"><xref:System.ComponentModel.IEditableObject> interface</span></span>  
   
--   <xref:System.ComponentModel.IListSource> インターフェイスの使い方  
+     <span data-ttu-id="a0fc8-136">実装するクラス、<xref:System.ComponentModel.IEditableObject>インターフェイスにより、そのオブジェクトへの変更を永続的なものとを制御するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-136">A class that implements the <xref:System.ComponentModel.IEditableObject> interface allows an object to control when changes to that object are made permanent.</span></span> <span data-ttu-id="a0fc8-137">この実装により、 <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>、 <xref:System.ComponentModel.IEditableObject.EndEdit%2A>、および<xref:System.ComponentModel.IEditableObject.CancelEdit%2A>メソッドで、使用すると、オブジェクトに加えられた変更をロールバックします。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-137">This implementation affords you the <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>, <xref:System.ComponentModel.IEditableObject.EndEdit%2A>, and <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> methods, which enable you to roll back changes made to the object.</span></span> <span data-ttu-id="a0fc8-138">機能の簡単な説明を次に示します、 <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>、 <xref:System.ComponentModel.IEditableObject.EndEdit%2A>、および<xref:System.ComponentModel.IEditableObject.CancelEdit%2A>メソッドと考えられるデータに加えられた変更のロールバックを有効にするのには互いに連携して動作方法。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-138">Following is a brief explanation of the functioning of the <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>, <xref:System.ComponentModel.IEditableObject.EndEdit%2A>, and <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> methods and how they work in conjunction with one another to enable a possible rollback of changes made to the data:</span></span>  
   
-     <xref:System.ComponentModel.IListSource> インターフェイスを実装するクラスでは、非リスト オブジェクトへのリストベース バインディングが可能になります。  <xref:System.ComponentModel.IListSource> の <xref:System.ComponentModel.IListSource.GetList%2A> メソッドを使用すると、<xref:System.Collections.IList> を継承していないオブジェクトから、バインドできるリストを取得できます。  <xref:System.ComponentModel.IListSource> は <xref:System.Data.DataSet> クラスで使用されます。  
+    -   <span data-ttu-id="a0fc8-139"><xref:System.ComponentModel.IEditableObject.BeginEdit%2A>メソッドがオブジェクトの編集の開始を通知します。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-139">The <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> method signals the start of an edit on an object.</span></span> <span data-ttu-id="a0fc8-140">このインターフェイスを実装するオブジェクトが、更新プログラムを後に保存する必要があります、<xref:System.ComponentModel.IEditableObject.BeginEdit%2A>メソッドの呼び出し、更新プログラムを破棄できるように場合、<xref:System.ComponentModel.IEditableObject.CancelEdit%2A>メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-140">An object that implements this interface will need to store any updates after the <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> method call in such a way that the updates can be discarded if the <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> method is called.</span></span> <span data-ttu-id="a0fc8-141">データ バインディング Windows フォームでを呼び出すことができます<xref:System.ComponentModel.IEditableObject.BeginEdit%2A>複数回、1 つのスコープ内でトランザクションの編集 (たとえば、 <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>、 <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>、 <xref:System.ComponentModel.IEditableObject.EndEdit%2A>)。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-141">In data binding Windows Forms, you can call <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> multiple times within the scope of a single edit transaction (for example, <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>, <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>, <xref:System.ComponentModel.IEditableObject.EndEdit%2A>).</span></span> <span data-ttu-id="a0fc8-142">実装<xref:System.ComponentModel.IEditableObject>かどうかを追跡する必要があります<xref:System.ComponentModel.IEditableObject.BeginEdit%2A>は既に呼び出されておよび後続の呼び出しを無視する<xref:System.ComponentModel.IEditableObject.BeginEdit%2A>です。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-142">Implementations of <xref:System.ComponentModel.IEditableObject> should keep track of whether <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> has already been called and ignore subsequent calls to <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>.</span></span> <span data-ttu-id="a0fc8-143">このメソッドは、複数回呼び出すことができます、ためにが後続の呼び出しが破壊的でないことが重要つまり、後続<xref:System.ComponentModel.IEditableObject.BeginEdit%2A>呼び出しが行われたまたは保存されたデータを変更する更新プログラムを破棄できません。 最初の<xref:System.ComponentModel.IEditableObject.BeginEdit%2A>を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-143">Because this method can be called multiple times, it is important that subsequent calls to it are nondestructive; that is, subsequent <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> calls cannot destroy the updates that have been made or change the data that was saved on the first <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> call.</span></span>  
   
--   <xref:System.ComponentModel.IRaiseItemChangedEvents> インターフェイスの使い方  
+    -   <span data-ttu-id="a0fc8-144"><xref:System.ComponentModel.IEditableObject.EndEdit%2A>メソッドは、以降のすべての変更をプッシュ<xref:System.ComponentModel.IEditableObject.BeginEdit%2A>が、オブジェクトが現在編集モードである場合、基になるオブジェクトに呼び出されました。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-144">The <xref:System.ComponentModel.IEditableObject.EndEdit%2A> method pushes any changes since <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> was called into the underlying object, if the object is currently in edit mode.</span></span>  
   
-     <xref:System.ComponentModel.IRaiseItemChangedEvents> インターフェイスを実装するクラスは、<xref:System.ComponentModel.IBindingList> インターフェイスも実装する、バインドできるリストです。  このインターフェイスは、<xref:System.ComponentModel.ListChangedType> 型の <xref:System.ComponentModel.IBindingList.ListChanged> イベントを発生させる型かどうかを <xref:System.ComponentModel.IRaiseItemChangedEvents.RaisesItemChangedEvents%2A> プロパティを通じて示すために使用されます。  
+    -   <span data-ttu-id="a0fc8-145"><xref:System.ComponentModel.IEditableObject.CancelEdit%2A>メソッドがオブジェクトに加えられた変更を破棄します。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-145">The <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> method discards any changes made to the object.</span></span>  
   
-    > [!NOTE]
-    >  データ ソースが、前述のリスト イベント変換を行うプロパティを持ち、<xref:System.Windows.Forms.BindingSource> コンポーネントとやり取りする場合には、<xref:System.ComponentModel.IRaiseItemChangedEvents> を実装する必要があります。  その他の場合は、<xref:System.Windows.Forms.BindingSource> がリスト イベント変換のためのプロパティを実行し、結果としてパフォーマンスが低下します。  
+     <span data-ttu-id="a0fc8-146">方法の詳細については<xref:System.ComponentModel.IEditableObject.BeginEdit%2A>、 <xref:System.ComponentModel.IEditableObject.EndEdit%2A>、および<xref:System.ComponentModel.IEditableObject.CancelEdit%2A>作業、メソッドを参照してください[データをデータベースに保存](/visualstudio/data-tools/save-data-back-to-the-database)です。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-146">For more information about how the <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>, <xref:System.ComponentModel.IEditableObject.EndEdit%2A>, and <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> methods work, see [Save data back to the database](/visualstudio/data-tools/save-data-back-to-the-database).</span></span>  
   
--   <xref:System.ComponentModel.ISupportInitialize> インターフェイスの使い方  
+     <span data-ttu-id="a0fc8-147">によってこのトランザクション データ機能の概念が使用される、<xref:System.Windows.Forms.DataGridView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-147">This transactional notion of data functionality is used by the <xref:System.Windows.Forms.DataGridView> control.</span></span>  
   
-     <xref:System.ComponentModel.ISupportInitialize> インターフェイスを実装するコンポーネントは、プロパティの設定、および互いに依存するプロパティの初期化のために、バッチ最適化を活用します。  <xref:System.ComponentModel.ISupportInitialize> は次の 2 つのメソッドを持ちます。  
+-   <span data-ttu-id="a0fc8-148"><xref:System.ComponentModel.ICancelAddNew> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-148"><xref:System.ComponentModel.ICancelAddNew> interface</span></span>  
   
-    -   <xref:System.ComponentModel.ISupportInitialize.BeginInit%2A> は、オブジェクトの初期化の開始を通知します。  
+     <span data-ttu-id="a0fc8-149">実装するクラス、<xref:System.ComponentModel.ICancelAddNew>インターフェイスは通常、実装、<xref:System.ComponentModel.IBindingList>インターフェイスし、使用して、データ ソースに加え、追加をロールバックすることができます、<xref:System.ComponentModel.IBindingList.AddNew%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-149">A class that implements the <xref:System.ComponentModel.ICancelAddNew> interface usually implements the <xref:System.ComponentModel.IBindingList> interface and allows you to roll back an addition made to the data source with the <xref:System.ComponentModel.IBindingList.AddNew%2A> method.</span></span> <span data-ttu-id="a0fc8-150">データ ソースを実装する場合、<xref:System.ComponentModel.IBindingList>インターフェイスも必要を実施する、<xref:System.ComponentModel.ICancelAddNew>インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-150">If your data source implements the <xref:System.ComponentModel.IBindingList> interface, you should also have it implement the <xref:System.ComponentModel.ICancelAddNew> interface.</span></span>  
   
-    -   <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> は、オブジェクトの初期化の終了を通知します。  
+-   <span data-ttu-id="a0fc8-151"><xref:System.ComponentModel.IDataErrorInfo> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-151"><xref:System.ComponentModel.IDataErrorInfo> interface</span></span>  
   
--   <xref:System.ComponentModel.ISupportInitializeNotification> インターフェイスの使い方  
+     <span data-ttu-id="a0fc8-152">実装するクラス、<xref:System.ComponentModel.IDataErrorInfo>インターフェイスにより、バインド コントロールをカスタム エラー情報を提供するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-152">A class that implements the <xref:System.ComponentModel.IDataErrorInfo> interface allows objects to offer custom error information to bound controls:</span></span>  
   
-     <xref:System.ComponentModel.ISupportInitializeNotification> インターフェイスを実装するコンポーネントは <xref:System.ComponentModel.ISupportInitialize> インターフェイスも実装します。  このインターフェイスを使用すると、他の <xref:System.ComponentModel.ISupportInitialize> コンポーネントに対して初期化の完了を通知できます。  <xref:System.ComponentModel.ISupportInitializeNotification> インターフェイスは次の 2 つのメンバーを持ちます。  
+    -   <span data-ttu-id="a0fc8-153"><xref:System.ComponentModel.IDataErrorInfo.Error%2A>プロパティには、一般的なエラー メッセージ テキストが返されます (たとえば、「エラーが発生しました」) です。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-153">The <xref:System.ComponentModel.IDataErrorInfo.Error%2A> property returns general error message text (for example, "An error has occurred").</span></span>  
   
-    -   <xref:System.ComponentModel.ISupportInitializeNotification.IsInitialized%2A> は、コンポーネントが初期化されているかどうかを示す `boolean` 値を返します。  
+    -   <span data-ttu-id="a0fc8-154"><xref:System.ComponentModel.IDataErrorInfo.Item%2A>プロパティは、列から特定のエラー メッセージで文字列を返します (たとえば、"の値、`State`列は有効ではありません") です。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-154">The <xref:System.ComponentModel.IDataErrorInfo.Item%2A> property returns a string with the specific error message from the column (for example, "The value in the `State` column is invalid").</span></span>  
   
-    -   <xref:System.ComponentModel.ISupportInitializeNotification.Initialized> は、<xref:System.ComponentModel.ISupportInitialize.EndInit%2A> が呼び出されたときに発生します。  
+-   <span data-ttu-id="a0fc8-155"><xref:System.Collections.IEnumerable> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-155"><xref:System.Collections.IEnumerable> interface</span></span>  
   
--   <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスの使い方  
-  
-     このインターフェイスを実装するクラスは、いずれかのプロパティ値が変更されたときにイベントを発生させる型です。  このインターフェイスは、コントロールの各プロパティに対して変更イベントを用意するパターンを置き換えるようにデザインされています。  <xref:System.ComponentModel.BindingList%601> で使用する場合、ビジネス オブジェクトは <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスを実装する必要があり、BindingList\`1 は <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> イベントを <xref:System.ComponentModel.ListChangedType> 型の <xref:System.ComponentModel.BindingList%601.ListChanged> イベントに変換します。  
+     <span data-ttu-id="a0fc8-156">実装するクラス、<xref:System.Collections.IEnumerable>インターフェイスがによって使用される通常[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-156">A class that implements the <xref:System.Collections.IEnumerable> interface is typically consumed by [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)].</span></span> <span data-ttu-id="a0fc8-157">Windows フォームのこのインターフェイスはのみサポートを介して使用できる、<xref:System.Windows.Forms.BindingSource>コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-157">Windows Forms support for this interface is only available through the <xref:System.Windows.Forms.BindingSource> component.</span></span>  
   
     > [!NOTE]
-    >  バインド クライアントとデータ ソースとの間のバインディングで変更通知が行われるためには、バインドされるデータ ソース型に <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスを実装するか、またはバインドされる型に *propertyName*`Changed` イベントを用意するかのいずれか一方を行う必要があります。両方を行うことはできません \(前者を行うことをお勧めします\)。  
+    >  <span data-ttu-id="a0fc8-158"><xref:System.Windows.Forms.BindingSource>コンポーネントがすべてコピー<xref:System.Collections.IEnumerable>バインド用に別の一覧にアイテムをします。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-158">The <xref:System.Windows.Forms.BindingSource> component copies all <xref:System.Collections.IEnumerable> items into a separate list for binding purposes.</span></span>  
   
-### コンポーネント作成者が実装するインターフェイス  
- 以下のインターフェイスは、Windows フォームのデータ バインディング エンジンによって利用されるようデザインされています。  
+-   <span data-ttu-id="a0fc8-159"><xref:System.ComponentModel.ITypedList> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-159"><xref:System.ComponentModel.ITypedList> interface</span></span>  
   
--   <xref:System.Windows.Forms.IBindableComponent> インターフェイスの使い方  
-  
-     このインターフェイスを実装するクラスは、データ バインディングをサポートする非コントロール コンポーネントです。  このクラスは、このインターフェイスの <xref:System.Windows.Forms.IBindableComponent.DataBindings%2A> プロパティおよび <xref:System.Windows.Forms.IBindableComponent.BindingContext%2A> プロパティを通じて、コンポーネントのデータ バインディングおよびバインディング コンテキストを返します。  
+     <span data-ttu-id="a0fc8-160">実装するコレクション クラス、<xref:System.ComponentModel.ITypedList>インターフェイスには、順序と、バインドされたコントロールに公開されるプロパティのセットを制御する機能が用意されています。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-160">A collections class that implements the <xref:System.ComponentModel.ITypedList> interface provides the ability to control the order and the set of properties exposed to the bound control.</span></span>  
   
     > [!NOTE]
-    >  <xref:System.Windows.Forms.Control> を継承するコンポーネントの場合は、<xref:System.Windows.Forms.IBindableComponent> インターフェイスを実装する必要はありません。  
+    >  <span data-ttu-id="a0fc8-161">実装する場合、<xref:System.ComponentModel.ITypedList.GetItemProperties%2A>メソッド、および<xref:System.ComponentModel.PropertyDescriptor>配列が null でない、配列の最後のエントリは項目の別の一覧は、一覧のプロパティを説明するプロパティ記述子。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-161">When you implement the <xref:System.ComponentModel.ITypedList.GetItemProperties%2A> method, and the <xref:System.ComponentModel.PropertyDescriptor> array is not null, the last entry in the array will be the property descriptor that describes the list property that is another list of items.</span></span>  
   
--   <xref:System.Windows.Forms.ICurrencyManagerProvider> インターフェイスの使い方  
+-   <span data-ttu-id="a0fc8-162"><xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-162"><xref:System.ComponentModel.ICustomTypeDescriptor> interface</span></span>  
   
-     <xref:System.Windows.Forms.ICurrencyManagerProvider> インターフェイスを実装するクラスは、この特定のコンポーネントに関連付けられたバインディングを管理するための独自の <xref:System.Windows.Forms.CurrencyManager> を持つコンポーネントです。  カスタムの <xref:System.Windows.Forms.CurrencyManager> へは <xref:System.Windows.Forms.ICurrencyManagerProvider.CurrencyManager%2A> プロパティからアクセスできます。  
+     <span data-ttu-id="a0fc8-163">実装するクラス、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイスがそれ自体の動的な情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-163">A class that implements the <xref:System.ComponentModel.ICustomTypeDescriptor> interface provides dynamic information about itself.</span></span> <span data-ttu-id="a0fc8-164">このインターフェイスはのような<xref:System.ComponentModel.ITypedList>がリストではなく、オブジェクトの使用されます。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-164">This interface is similar to <xref:System.ComponentModel.ITypedList> but is used for objects rather than lists.</span></span> <span data-ttu-id="a0fc8-165">このインターフェイスを使用して<xref:System.Data.DataRowView>基になる行のスキーマをプロジェクトにします。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-165">This interface is used by <xref:System.Data.DataRowView> to project the schema of the underlying rows.</span></span> <span data-ttu-id="a0fc8-166">簡単な実装<xref:System.ComponentModel.ICustomTypeDescriptor>によって提供される、<xref:System.ComponentModel.CustomTypeDescriptor>クラスです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-166">A simple implementation of <xref:System.ComponentModel.ICustomTypeDescriptor> is provided by the <xref:System.ComponentModel.CustomTypeDescriptor> class.</span></span>  
   
     > [!NOTE]
-    >  <xref:System.Windows.Forms.Control> を継承するクラスでは、バインディングは <xref:System.Windows.Forms.Control.BindingContext%2A> プロパティを通じて自動的に管理されます。そのため、<xref:System.Windows.Forms.ICurrencyManagerProvider> の実装が必要なケースはきわめてまれです。  
+    >  <span data-ttu-id="a0fc8-167">デザイン時のバインドをサポートする型を実装する<xref:System.ComponentModel.ICustomTypeDescriptor>、型を実装する必要がありますも<xref:System.ComponentModel.IComponent>フォーム上のインスタンスとして存在します。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-167">To support design-time binding to types that implement <xref:System.ComponentModel.ICustomTypeDescriptor>, the type must also implement <xref:System.ComponentModel.IComponent> and exist as an instance on the Form.</span></span>  
   
-## 参照  
- [データ連結と Windows フォーム](../../../docs/framework/winforms/data-binding-and-windows-forms.md)   
- [方法 : Windows フォームに単純バインド コントロールを作成する](../../../docs/framework/winforms/how-to-create-a-simple-bound-control-on-a-windows-form.md)   
- [Windows フォームでのデータ バインド](../../../docs/framework/winforms/windows-forms-data-binding.md)
+-   <span data-ttu-id="a0fc8-168"><xref:System.ComponentModel.IListSource> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-168"><xref:System.ComponentModel.IListSource> interface</span></span>  
+  
+     <span data-ttu-id="a0fc8-169">実装するクラス、<xref:System.ComponentModel.IListSource>インターフェイス非リスト オブジェクトのリストに基づくバインドを有効にします。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-169">A class that implements the <xref:System.ComponentModel.IListSource> interface enables list-based binding on non-list objects.</span></span> <span data-ttu-id="a0fc8-170"><xref:System.ComponentModel.IListSource.GetList%2A>メソッドの<xref:System.ComponentModel.IListSource>から継承しないオブジェクトからバインド可能な一覧を返すために使用<xref:System.Collections.IList>です。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-170">The <xref:System.ComponentModel.IListSource.GetList%2A> method of <xref:System.ComponentModel.IListSource> is used to return a bindable list from an object that does not inherit from <xref:System.Collections.IList>.</span></span> <span data-ttu-id="a0fc8-171"><xref:System.ComponentModel.IListSource>によって使用される、<xref:System.Data.DataSet>クラスです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-171"><xref:System.ComponentModel.IListSource> is used by the <xref:System.Data.DataSet> class.</span></span>  
+  
+-   <span data-ttu-id="a0fc8-172"><xref:System.ComponentModel.IRaiseItemChangedEvents> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-172"><xref:System.ComponentModel.IRaiseItemChangedEvents> interface</span></span>  
+  
+     <span data-ttu-id="a0fc8-173">実装するクラス、<xref:System.ComponentModel.IRaiseItemChangedEvents>インターフェイスも実装するバインド可能なリストは、<xref:System.ComponentModel.IBindingList>インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-173">A class that implements the <xref:System.ComponentModel.IRaiseItemChangedEvents> interface is a bindable list that also implements the <xref:System.ComponentModel.IBindingList> interface.</span></span> <span data-ttu-id="a0fc8-174">このインターフェイスは、種類を発生させるかどうかを示すために使用<xref:System.ComponentModel.IBindingList.ListChanged>の種類のイベント<xref:System.ComponentModel.ListChangedType.ItemChanged>を通じてその<xref:System.ComponentModel.IRaiseItemChangedEvents.RaisesItemChangedEvents%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-174">This interface is used to indicate if your type raises <xref:System.ComponentModel.IBindingList.ListChanged> events of type <xref:System.ComponentModel.ListChangedType.ItemChanged> through its <xref:System.ComponentModel.IRaiseItemChangedEvents.RaisesItemChangedEvents%2A> property.</span></span>  
+  
+    > [!NOTE]
+    >  <span data-ttu-id="a0fc8-175">実装する必要があります、 <xref:System.ComponentModel.IRaiseItemChangedEvents> 、データ ソースから一覧イベントへの変換前に説明したプロパティを提供しとの対話は、<xref:System.Windows.Forms.BindingSource>コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-175">You should implement the <xref:System.ComponentModel.IRaiseItemChangedEvents> if your data source provides the property to list event conversion described previously and is interacting with the <xref:System.Windows.Forms.BindingSource> component.</span></span> <span data-ttu-id="a0fc8-176">それ以外の場合、<xref:System.Windows.Forms.BindingSource>一覧イベント変換のパフォーマンスが低下するプロパティも実行されます。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-176">Otherwise, the <xref:System.Windows.Forms.BindingSource> will also perform property to list event conversion resulting in slower performance.</span></span>  
+  
+-   <span data-ttu-id="a0fc8-177"><xref:System.ComponentModel.ISupportInitialize> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-177"><xref:System.ComponentModel.ISupportInitialize> interface</span></span>  
+  
+     <span data-ttu-id="a0fc8-178">実装するコンポーネント、<xref:System.ComponentModel.ISupportInitialize>インターフェイスは、プロパティを設定し、相互に依存するプロパティの初期化中のバッチの最適化の利点があります。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-178">A component that implements the <xref:System.ComponentModel.ISupportInitialize> interface takes advantages of batch optimizations for setting properties and initializing co-dependent properties.</span></span> <span data-ttu-id="a0fc8-179"><xref:System.ComponentModel.ISupportInitialize> 2 つのメソッドが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-179">The <xref:System.ComponentModel.ISupportInitialize> contains two methods:</span></span>  
+  
+    -   <span data-ttu-id="a0fc8-180"><xref:System.ComponentModel.ISupportInitialize.BeginInit%2A>オブジェクト初期化の開始を通知します。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-180"><xref:System.ComponentModel.ISupportInitialize.BeginInit%2A> signals that object initialization is starting.</span></span>  
+  
+    -   <span data-ttu-id="a0fc8-181"><xref:System.ComponentModel.ISupportInitialize.EndInit%2A>そのオブジェクトの初期化が完了を通知します。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-181"><xref:System.ComponentModel.ISupportInitialize.EndInit%2A> signals that object initialization is finishing.</span></span>  
+  
+-   <span data-ttu-id="a0fc8-182"><xref:System.ComponentModel.ISupportInitializeNotification> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-182"><xref:System.ComponentModel.ISupportInitializeNotification> interface</span></span>  
+  
+     <span data-ttu-id="a0fc8-183">実装するコンポーネント、<xref:System.ComponentModel.ISupportInitializeNotification>インターフェイスも実装して、<xref:System.ComponentModel.ISupportInitialize>インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-183">A component that implements the <xref:System.ComponentModel.ISupportInitializeNotification> interface also implements the <xref:System.ComponentModel.ISupportInitialize> interface.</span></span> <span data-ttu-id="a0fc8-184">このインターフェイスを使用すると、その他の通知<xref:System.ComponentModel.ISupportInitialize>コンポーネント初期化が完了しました。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-184">This interface allows you to notify other <xref:System.ComponentModel.ISupportInitialize> components that initialization is complete.</span></span> <span data-ttu-id="a0fc8-185"><xref:System.ComponentModel.ISupportInitializeNotification>インターフェイスには、2 つのメンバーが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-185">The <xref:System.ComponentModel.ISupportInitializeNotification> interface contains two members:</span></span>  
+  
+    -   <span data-ttu-id="a0fc8-186"><xref:System.ComponentModel.ISupportInitializeNotification.IsInitialized%2A>返します、`boolean`コンポーネントが初期化されているかどうかを示す値。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-186"><xref:System.ComponentModel.ISupportInitializeNotification.IsInitialized%2A> returns a `boolean` value indicating whether the component is initialized.</span></span>  
+  
+    -   <span data-ttu-id="a0fc8-187"><xref:System.ComponentModel.ISupportInitializeNotification.Initialized>発生したときに<xref:System.ComponentModel.ISupportInitialize.EndInit%2A>と呼びます。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-187"><xref:System.ComponentModel.ISupportInitializeNotification.Initialized> occurs when <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> is called.</span></span>  
+  
+-   <span data-ttu-id="a0fc8-188"><xref:System.ComponentModel.INotifyPropertyChanged> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-188"><xref:System.ComponentModel.INotifyPropertyChanged> interface</span></span>  
+  
+     <span data-ttu-id="a0fc8-189">このインターフェイスを実装するクラスは、プロパティ値のいずれかが変更されたときにイベントを発生させる型です。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-189">A class that implements this interface is a type that raises an event when any of its property values change.</span></span> <span data-ttu-id="a0fc8-190">このインターフェイスは、コントロールのプロパティごとに変更イベントを持つパターンを置き換えるように設計されています。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-190">This interface is designed to replace the pattern of having a change event for each property of a control.</span></span> <span data-ttu-id="a0fc8-191">使用する場合、 <xref:System.ComponentModel.BindingList%601>、ビジネス オブジェクトを実装する必要があります、<xref:System.ComponentModel.INotifyPropertyChanged>インターフェイスと、BindingList\\`1 に変換されます<xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged>イベント<xref:System.ComponentModel.BindingList%601.ListChanged>の種類のイベント<xref:System.ComponentModel.ListChangedType.ItemChanged>です。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-191">When used in a <xref:System.ComponentModel.BindingList%601>, a business object should implement the <xref:System.ComponentModel.INotifyPropertyChanged> interface and the BindingList\\`1 will convert <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> events to <xref:System.ComponentModel.BindingList%601.ListChanged> events of type <xref:System.ComponentModel.ListChangedType.ItemChanged>.</span></span>  
+  
+    > [!NOTE]
+    >  <span data-ttu-id="a0fc8-192">変更の通知をバインドされているクライアントとデータ間のバインドで発生ソース、バインドされたデータ ソースの種類、実装する必要があります、 <xref:System.ComponentModel.INotifyPropertyChanged> (推奨) インターフェイスを提供できる*propertyName* `Changed`バインドの型がのイベントは、両方を行うことはできません。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-192">For change notification to occur in a binding between a bound client and a data source your bound data-source type should either implement the <xref:System.ComponentModel.INotifyPropertyChanged> interface (preferred) or you can provide *propertyName*`Changed` events for the bound type, but you shouldn't do both.</span></span>  
+  
+### <a name="interfaces-for-implementation-by-component-authors"></a><span data-ttu-id="a0fc8-193">コンポーネント作成者が実装するインターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-193">Interfaces for Implementation by Component Authors</span></span>  
+ <span data-ttu-id="a0fc8-194">以下のインターフェイスは、Windows フォーム データ バインディング エンジンが使用するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-194">The following interfaces are designed for consumption by the Windows Forms data-binding engine:</span></span>  
+  
+-   <span data-ttu-id="a0fc8-195"><xref:System.Windows.Forms.IBindableComponent> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-195"><xref:System.Windows.Forms.IBindableComponent> interface</span></span>  
+  
+     <span data-ttu-id="a0fc8-196">このインターフェイスを実装するクラスは、データ バインディングをサポートするコントロール以外のコンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-196">A class that implements this interface is a non-control component that supports data binding.</span></span> <span data-ttu-id="a0fc8-197">このクラスは、データ バインディングおよびバインディング コンテキストを使用して、コンポーネントを返します、<xref:System.Windows.Forms.IBindableComponent.DataBindings%2A>と<xref:System.Windows.Forms.IBindableComponent.BindingContext%2A>このインターフェイスのプロパティです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-197">This class returns the data bindings and binding context of the component through the <xref:System.Windows.Forms.IBindableComponent.DataBindings%2A> and <xref:System.Windows.Forms.IBindableComponent.BindingContext%2A> properties of this interface.</span></span>  
+  
+    > [!NOTE]
+    >  <span data-ttu-id="a0fc8-198">コンポーネントから継承している場合<xref:System.Windows.Forms.Control>、実装する必要はありません、<xref:System.Windows.Forms.IBindableComponent>インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-198">If your component inherits from <xref:System.Windows.Forms.Control>, you do not need to implement the <xref:System.Windows.Forms.IBindableComponent> interface.</span></span>  
+  
+-   <span data-ttu-id="a0fc8-199"><xref:System.Windows.Forms.ICurrencyManagerProvider> インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a0fc8-199"><xref:System.Windows.Forms.ICurrencyManagerProvider> interface</span></span>  
+  
+     <span data-ttu-id="a0fc8-200">実装するクラス、<xref:System.Windows.Forms.ICurrencyManagerProvider>インターフェイスは、独自に提供するコンポーネント<xref:System.Windows.Forms.CurrencyManager>この特定のコンポーネントに関連付けられているバインドを管理します。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-200">A class that implements the <xref:System.Windows.Forms.ICurrencyManagerProvider> interface is a component that provides its own <xref:System.Windows.Forms.CurrencyManager> to manage the bindings associated with this particular component.</span></span> <span data-ttu-id="a0fc8-201">カスタムへのアクセス<xref:System.Windows.Forms.CurrencyManager>によって提供される、<xref:System.Windows.Forms.ICurrencyManagerProvider.CurrencyManager%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-201">Access to the custom <xref:System.Windows.Forms.CurrencyManager> is provided by the <xref:System.Windows.Forms.ICurrencyManagerProvider.CurrencyManager%2A> property.</span></span>  
+  
+    > [!NOTE]
+    >  <span data-ttu-id="a0fc8-202">継承するクラスを<xref:System.Windows.Forms.Control>管理バインドを使用して自動的にその<xref:System.Windows.Forms.Control.BindingContext%2A>プロパティを実装する必要があります。 その場合、<xref:System.Windows.Forms.ICurrencyManagerProvider>非常にまれです。</span><span class="sxs-lookup"><span data-stu-id="a0fc8-202">A class that inherits from <xref:System.Windows.Forms.Control> manages bindings automatically through its <xref:System.Windows.Forms.Control.BindingContext%2A> property, so cases in which you need to implement the <xref:System.Windows.Forms.ICurrencyManagerProvider> are fairly rare.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="a0fc8-203">関連項目</span><span class="sxs-lookup"><span data-stu-id="a0fc8-203">See Also</span></span>  
+ [<span data-ttu-id="a0fc8-204">データ連結と Windows フォーム</span><span class="sxs-lookup"><span data-stu-id="a0fc8-204">Data Binding and Windows Forms</span></span>](../../../docs/framework/winforms/data-binding-and-windows-forms.md)  
+ [<span data-ttu-id="a0fc8-205">方法: Windows フォームに単純バインド コントロールを作成する</span><span class="sxs-lookup"><span data-stu-id="a0fc8-205">How to: Create a Simple-Bound Control on a Windows Form</span></span>](../../../docs/framework/winforms/how-to-create-a-simple-bound-control-on-a-windows-form.md)  
+ [<span data-ttu-id="a0fc8-206">Windows フォームでのデータ バインディング</span><span class="sxs-lookup"><span data-stu-id="a0fc8-206">Windows Forms Data Binding</span></span>](../../../docs/framework/winforms/windows-forms-data-binding.md)

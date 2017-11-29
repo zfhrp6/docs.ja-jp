@@ -1,198 +1,202 @@
 ---
-title: "チュートリアル : プロフェッショナル スタイルの ToolStrip コントロールの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ツール バー [Windows フォーム], チュートリアル"
-  - "ToolStrip コントロール [Windows フォーム], 作成 (プロフェッショナル スタイルのコントロールを)"
-  - "ToolStripProfessionalRenderer クラス [Windows フォーム]"
-  - "ToolStripRenderer クラス [Windows フォーム]"
+title: "チュートリアル : プロフェッショナル スタイルの ToolStrip コントロールの作成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ToolStripProfessionalRenderer class [Windows Forms]
+- ToolStripRenderer class [Windows Forms]
+- toolbars [Windows Forms], walkthroughs
+- ToolStrip control [Windows Forms], creating professionally styled controls
 ms.assetid: b52339ae-f1d3-494e-996e-eb455614098a
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0fbc03ad16bcc0d63a75df5478f7da8abbf19193
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル : プロフェッショナル スタイルの ToolStrip コントロールの作成
-<xref:System.Windows.Forms.ToolStripProfessionalRenderer> 型から派生する独自のクラスを記述することで、アプリケーションの <xref:System.Windows.Forms.ToolStrip> コントロールにプロフェッショナルな外観と動作を与えることができます。  
+# <a name="walkthrough-creating-a-professionally-styled-toolstrip-control"></a><span data-ttu-id="73837-102">チュートリアル : プロフェッショナル スタイルの ToolStrip コントロールの作成</span><span class="sxs-lookup"><span data-stu-id="73837-102">Walkthrough: Creating a Professionally Styled ToolStrip Control</span></span>
+<span data-ttu-id="73837-103">アプリケーションを移すことができる<xref:System.Windows.Forms.ToolStrip>から派生した独自のクラスを記述して、プロフェッショナルな外観と動作を制御、<xref:System.Windows.Forms.ToolStripProfessionalRenderer>型です。</span><span class="sxs-lookup"><span data-stu-id="73837-103">You can give your application’s <xref:System.Windows.Forms.ToolStrip> controls a professional appearance and behavior by writing your own class derived from the <xref:System.Windows.Forms.ToolStripProfessionalRenderer> type.</span></span>  
   
- このチュートリアルでは、<xref:System.Windows.Forms.ToolStrip> コントロールを使用して、Microsoft® Outlook® の**ナビゲーション ペイン**に似た複合コントロールを作成する方法について説明します。  このチュートリアルでは、次のタスクについて説明します。  
+ <span data-ttu-id="73837-104">このチュートリアルを使用する方法を示します<xref:System.Windows.Forms.ToolStrip>に似た複合コントロールを作成するコントロール、**ナビゲーション ウィンドウ**Microsoft® Outlook® によって提供されます。</span><span class="sxs-lookup"><span data-stu-id="73837-104">This walkthrough demonstrates how to use <xref:System.Windows.Forms.ToolStrip> controls to create a composite control that resembles the **Navigation Pane** provided by Microsoft® Outlook®.</span></span> <span data-ttu-id="73837-105">次のタスクは、このチュートリアルで例を示します。</span><span class="sxs-lookup"><span data-stu-id="73837-105">The following tasks are illustrated in this walkthrough:</span></span>  
   
--   新しい Windows コントロール ライブラリ プロジェクトを作成します。  
+-   <span data-ttu-id="73837-106">Windows コントロール ライブラリ プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="73837-106">Creating a Windows Control Library project.</span></span>  
   
--   StackView コントロールをデザインします。  
+-   <span data-ttu-id="73837-107">StackView コントロールをデザインします。</span><span class="sxs-lookup"><span data-stu-id="73837-107">Designing the StackView Control.</span></span>  
   
--   カスタム レンダラーを割り当てます。  
+-   <span data-ttu-id="73837-108">カスタム レンダラーを実装します。</span><span class="sxs-lookup"><span data-stu-id="73837-108">Implementing a Custom Renderer.</span></span>  
   
- これらのタスクを終了すると、Microsoft Office® XP コントロールのプロフェッショナルな外観を備えた、再利用できるカスタム クライアント コントロールが作成されます。  
+ <span data-ttu-id="73837-109">完了したら、Microsoft Office® XP コントロールのプロフェッショナルな外観を持つカスタムのクライアントを再利用可能なコントロールがあります。</span><span class="sxs-lookup"><span data-stu-id="73837-109">When you are finished, you will have a reusable custom client control with the professional appearance of a Microsoft Office® XP control.</span></span>  
   
- このトピックのコードを単一のリストとしてコピーするには、「[方法 : プロフェッショナル スタイルの ToolStrip コントロールを作成する](../../../../docs/framework/winforms/controls/how-to-create-a-professionally-styled-toolstrip-control.md)」を参照してください。  
+ <span data-ttu-id="73837-110">このトピックの「単一のリストとしてコードをコピーするに、を参照してください。[する方法: プロフェッショナル スタイルの ToolStrip コントロールを作成](../../../../docs/framework/winforms/controls/how-to-create-a-professionally-styled-toolstrip-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="73837-110">To copy the code in this topic as a single listing, see [How to: Create a Professionally Styled ToolStrip Control](../../../../docs/framework/winforms/controls/how-to-create-a-professionally-styled-toolstrip-control.md).</span></span>  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  <span data-ttu-id="73837-111">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="73837-111">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="73837-112">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="73837-112">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="73837-113">詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="73837-113">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-## 必須コンポーネント  
- このチュートリアルを完了するための要件は次のとおりです。  
+## <a name="prerequisites"></a><span data-ttu-id="73837-114">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="73837-114">Prerequisites</span></span>  
+ <span data-ttu-id="73837-115">このチュートリアルを完了するための要件は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="73837-115">In order to complete this walkthrough, you will need:</span></span>  
   
--   [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] がインストールされているコンピューターで、Windows フォーム アプリケーション プロジェクトを作成および実行するための十分なアクセス許可が付与されていること。  
+-   <span data-ttu-id="73837-116">作成し、コンピューターで Windows フォーム アプリケーション プロジェクトを実行できる十分なアクセス許可を[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]がインストールされています。</span><span class="sxs-lookup"><span data-stu-id="73837-116">Sufficient permissions to be able to create and run Windows Forms application projects on the computer where [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] is installed.</span></span>  
   
-## コントロール ライブラリ プロジェクトの作成  
- 最初に、コントロール ライブラリ プロジェクトを作成します。  
+## <a name="creating-a-windows-control-library-project"></a><span data-ttu-id="73837-117">Windows コントロール ライブラリ プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="73837-117">Creating a Windows Control Library Project</span></span>  
+ <span data-ttu-id="73837-118">最初の手順では、コントロール ライブラリ プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="73837-118">The first step is to create the control library project.</span></span>  
   
-#### コントロール ライブラリ プロジェクトを作成するには  
+#### <a name="to-create-the-control-library-project"></a><span data-ttu-id="73837-119">コントロール ライブラリ プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="73837-119">To create the control library project</span></span>  
   
-1.  `StackViewLibrary` という新しい Windows コントロール ライブラリ プロジェクトを作成します。  
+1.  <span data-ttu-id="73837-120">という名前の新しい Windows コントロール ライブラリ プロジェクトを作成する`StackViewLibrary`です。</span><span class="sxs-lookup"><span data-stu-id="73837-120">Create a new Windows Control Library project named `StackViewLibrary`.</span></span>  
   
-2.  **ソリューション エクスプローラー**で、選択した言語に応じて "UserControl1.cs" または "UserControl1.vb" という名前のソース ファイルを削除して、プロジェクトの既定のコントロールを削除します。  
+2.  <span data-ttu-id="73837-121">**ソリューション エクスプ ローラー**、選択した言語に応じて"UserControl1.cs"または"UserControl1.vb"をという名前のソース ファイルを削除して、プロジェクトの既定のコントロールを削除します。</span><span class="sxs-lookup"><span data-stu-id="73837-121">In **Solution Explorer**, delete the project's default control by deleting the source file named "UserControl1.cs" or "UserControl1.vb", depending on your language of choice.</span></span>  
   
-     詳細については、「[NIB:How to: Remove, Delete, and Exclude Items](http://msdn.microsoft.com/ja-jp/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73)」を参照してください。  
+     <span data-ttu-id="73837-122">詳細については、次を参照してください。 [NIB: 方法:: 削除、削除、および項目の除外](http://msdn.microsoft.com/en-us/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73)です。</span><span class="sxs-lookup"><span data-stu-id="73837-122">For more information, see [NIB:How to: Remove, Delete, and Exclude Items](http://msdn.microsoft.com/en-us/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73).</span></span>  
   
-3.  新しい <xref:System.Windows.Forms.UserControl> アイテムを **StackViewLibrary** プロジェクトに追加します。  新しいソース ファイルに、"`StackView`" という基本名を付けます。  
+3.  <span data-ttu-id="73837-123">新しい<xref:System.Windows.Forms.UserControl>項目を**StackViewLibrary**プロジェクト。</span><span class="sxs-lookup"><span data-stu-id="73837-123">Add a new <xref:System.Windows.Forms.UserControl> item to the **StackViewLibrary** project.</span></span> <span data-ttu-id="73837-124">新しいソース ファイルの基本の名前を付けます`StackView`です。</span><span class="sxs-lookup"><span data-stu-id="73837-124">Give the new source file a base name of `StackView`.</span></span>  
   
-## StackView コントロールのデザイン  
- `StackView` コントロールは、1 つの子コントロール <xref:System.Windows.Forms.ToolStrip> を含む複合コントロールです。  複合コントロールの詳細については、「[さまざまなカスタム コントロール](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)」を参照してください。  
+## <a name="designing-the-stackview-control"></a><span data-ttu-id="73837-125">StackView コントロールのデザイン</span><span class="sxs-lookup"><span data-stu-id="73837-125">Designing the StackView Control</span></span>  
+ <span data-ttu-id="73837-126">`StackView`コントロールは、1 つの子による複合コントロール<xref:System.Windows.Forms.ToolStrip>コントロール。</span><span class="sxs-lookup"><span data-stu-id="73837-126">The `StackView` control is a composite control with one child <xref:System.Windows.Forms.ToolStrip> control.</span></span> <span data-ttu-id="73837-127">複合コントロールの詳細については、次を参照してください。[カスタム コントロールの種類](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)です。</span><span class="sxs-lookup"><span data-stu-id="73837-127">For more information about composite controls, see [Varieties of Custom Controls](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md).</span></span>  
   
-#### StackView コントロールをデザインするには  
+#### <a name="to-design-the-stackview-control"></a><span data-ttu-id="73837-128">StackView コントロールを設計するには</span><span class="sxs-lookup"><span data-stu-id="73837-128">To design the StackView control</span></span>  
   
-1.  **ツールボックス**からデザイン サーフェイスに <xref:System.Windows.Forms.ToolStrip> コントロールを追加します。  
+1.  <span data-ttu-id="73837-129">**ツールボックス**、ドラッグ、<xref:System.Windows.Forms.ToolStrip>コントロールをデザイン画面にします。</span><span class="sxs-lookup"><span data-stu-id="73837-129">From the **Toolbox**, drag a <xref:System.Windows.Forms.ToolStrip> control to the design surface.</span></span>  
   
-2.  **プロパティ** ウィンドウで、次の表に従って <xref:System.Windows.Forms.ToolStrip> コントロールのプロパティを設定します。  
+2.  <span data-ttu-id="73837-130">**プロパティ**ウィンドウで、設定、<xref:System.Windows.Forms.ToolStrip>次の表に従ってコントロールのプロパティです。</span><span class="sxs-lookup"><span data-stu-id="73837-130">In the **Properties** window, set the <xref:System.Windows.Forms.ToolStrip> control's properties according to the following table.</span></span>  
   
-    |プロパティ|値|  
-    |-----------|-------|  
-    |名前|`stackStrip`|  
-    |CanOverflow|`false`|  
-    |Dock|<xref:System.Windows.Forms.DockStyle>|  
-    |フォント|`Tahoma, 10pt, style=Bold`|  
-    |GripStyle|<xref:System.Windows.Forms.ToolStripGripStyle>|  
-    |LayoutStyle|<xref:System.Windows.Forms.ToolStripLayoutStyle>|  
-    |Padding|`0, 7, 0, 0`|  
-    |RenderMode|<xref:System.Windows.Forms.ToolStripRenderMode>|  
+    |<span data-ttu-id="73837-131">プロパティ</span><span class="sxs-lookup"><span data-stu-id="73837-131">Property</span></span>|<span data-ttu-id="73837-132">値</span><span class="sxs-lookup"><span data-stu-id="73837-132">Value</span></span>|  
+    |--------------|-----------|  
+    |<span data-ttu-id="73837-133">名前</span><span class="sxs-lookup"><span data-stu-id="73837-133">Name</span></span>|`stackStrip`|  
+    |<span data-ttu-id="73837-134">CanOverflow</span><span class="sxs-lookup"><span data-stu-id="73837-134">CanOverflow</span></span>|`false`|  
+    |<span data-ttu-id="73837-135">ドッキング</span><span class="sxs-lookup"><span data-stu-id="73837-135">Dock</span></span>|<xref:System.Windows.Forms.DockStyle.Bottom>|  
+    |<span data-ttu-id="73837-136">フォント</span><span class="sxs-lookup"><span data-stu-id="73837-136">Font</span></span>|`Tahoma, 10pt, style=Bold`|  
+    |<span data-ttu-id="73837-137">GripStyle</span><span class="sxs-lookup"><span data-stu-id="73837-137">GripStyle</span></span>|<xref:System.Windows.Forms.ToolStripGripStyle.Hidden>|  
+    |<span data-ttu-id="73837-138">LayoutStyle</span><span class="sxs-lookup"><span data-stu-id="73837-138">LayoutStyle</span></span>|<xref:System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow>|  
+    |<span data-ttu-id="73837-139">[間隔]</span><span class="sxs-lookup"><span data-stu-id="73837-139">Padding</span></span>|`0, 7, 0, 0`|  
+    |<span data-ttu-id="73837-140">RenderMode</span><span class="sxs-lookup"><span data-stu-id="73837-140">RenderMode</span></span>|<xref:System.Windows.Forms.ToolStripRenderMode.Professional>|  
   
-3.  Windows フォーム デザイナーで <xref:System.Windows.Forms.ToolStrip> コントロールの **\[追加\]** ボタンをクリックし、<xref:System.Windows.Forms.ToolStripButton> を `stackStrip` コントロールへ追加します。  
+3.  <span data-ttu-id="73837-141">Windows フォーム デザイナーでをクリックして、<xref:System.Windows.Forms.ToolStrip>コントロールの**追加**ボタンをクリックし、追加、<xref:System.Windows.Forms.ToolStripButton>を`stackStrip`コントロール。</span><span class="sxs-lookup"><span data-stu-id="73837-141">In the Windows Forms Designer, click the <xref:System.Windows.Forms.ToolStrip> control's **Add** button and add a <xref:System.Windows.Forms.ToolStripButton> to the `stackStrip` control.</span></span>  
   
-4.  **プロパティ** ウィンドウで、次の表に従って <xref:System.Windows.Forms.ToolStripButton> コントロールのプロパティを設定します。  
+4.  <span data-ttu-id="73837-142">**プロパティ**ウィンドウで、設定、<xref:System.Windows.Forms.ToolStripButton>次の表に従ってコントロールのプロパティです。</span><span class="sxs-lookup"><span data-stu-id="73837-142">In the **Properties** window, set the <xref:System.Windows.Forms.ToolStripButton> control's properties according to the following table.</span></span>  
   
-    |プロパティ|値|  
-    |-----------|-------|  
-    |名前|`mailStackButton`|  
-    |CheckOnClick|true|  
-    |CheckState|<xref:System.Windows.Forms.CheckState>|  
-    |DisplayStyle|<xref:System.Windows.Forms.ToolStripItemDisplayStyle>|  
-    |ImageAlign|<xref:System.Drawing.ContentAlignment>|  
-    |ImageScaling|<xref:System.Windows.Forms.ToolStripItemImageScaling>|  
-    |ImageTransparentColor|`238, 238, 238`|  
-    |Margin|`0, 0, 0, 0`|  
-    |Padding|`3, 3, 3, 3`|  
-    |テキスト|Mail|  
-    |TextAlign|<xref:System.Drawing.ContentAlignment>|  
+    |<span data-ttu-id="73837-143">プロパティ</span><span class="sxs-lookup"><span data-stu-id="73837-143">Property</span></span>|<span data-ttu-id="73837-144">値</span><span class="sxs-lookup"><span data-stu-id="73837-144">Value</span></span>|  
+    |--------------|-----------|  
+    |<span data-ttu-id="73837-145">名前</span><span class="sxs-lookup"><span data-stu-id="73837-145">Name</span></span>|`mailStackButton`|  
+    |<span data-ttu-id="73837-146">CheckOnClick</span><span class="sxs-lookup"><span data-stu-id="73837-146">CheckOnClick</span></span>|<span data-ttu-id="73837-147">TRUE</span><span class="sxs-lookup"><span data-stu-id="73837-147">true</span></span>|  
+    |<span data-ttu-id="73837-148">CheckState</span><span class="sxs-lookup"><span data-stu-id="73837-148">CheckState</span></span>|<xref:System.Windows.Forms.CheckState.Checked>|  
+    |<span data-ttu-id="73837-149">DisplayStyle</span><span class="sxs-lookup"><span data-stu-id="73837-149">DisplayStyle</span></span>|<xref:System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText>|  
+    |<span data-ttu-id="73837-150">ImageAlign</span><span class="sxs-lookup"><span data-stu-id="73837-150">ImageAlign</span></span>|<xref:System.Drawing.ContentAlignment.MiddleLeft>|  
+    |<span data-ttu-id="73837-151">ImageScaling</span><span class="sxs-lookup"><span data-stu-id="73837-151">ImageScaling</span></span>|<xref:System.Windows.Forms.ToolStripItemImageScaling.None>|  
+    |<span data-ttu-id="73837-152">ImageTransparentColor</span><span class="sxs-lookup"><span data-stu-id="73837-152">ImageTransparentColor</span></span>|`238, 238, 238`|  
+    |<span data-ttu-id="73837-153">Margin</span><span class="sxs-lookup"><span data-stu-id="73837-153">Margin</span></span>|`0, 0, 0, 0`|  
+    |<span data-ttu-id="73837-154">[間隔]</span><span class="sxs-lookup"><span data-stu-id="73837-154">Padding</span></span>|`3, 3, 3, 3`|  
+    |<span data-ttu-id="73837-155">テキスト</span><span class="sxs-lookup"><span data-stu-id="73837-155">Text</span></span>|<span data-ttu-id="73837-156">**メール**</span><span class="sxs-lookup"><span data-stu-id="73837-156">**Mail**</span></span>|  
+    |<span data-ttu-id="73837-157">TextAlign</span><span class="sxs-lookup"><span data-stu-id="73837-157">TextAlign</span></span>|<xref:System.Drawing.ContentAlignment.MiddleLeft>|  
   
-5.  残りの 3 つの <xref:System.Windows.Forms.ToolStripButton> コントロールについても手順 7. を繰り返します。  
+5.  <span data-ttu-id="73837-158">複数の 3 つの手順 7.<xref:System.Windows.Forms.ToolStripButton>コントロール。</span><span class="sxs-lookup"><span data-stu-id="73837-158">Repeat step 7 for three more <xref:System.Windows.Forms.ToolStripButton> controls.</span></span>  
   
-     `calendarStackButton` コントロール、`contactsStackButton` コントロール、および `tasksStackButton` コントロールに名前を付けます。  <xref:System.Windows.Forms.Control.Text%2A> プロパティの値を、それぞれ Calendar、Contacts、および Tasks に設定します。  
+     <span data-ttu-id="73837-159">コントロールの名前を付けます`calendarStackButton`、 `contactsStackButton`、および`tasksStackButton`です。</span><span class="sxs-lookup"><span data-stu-id="73837-159">Name the controls `calendarStackButton`, `contactsStackButton`, and `tasksStackButton`.</span></span> <span data-ttu-id="73837-160">値を設定、<xref:System.Windows.Forms.Control.Text%2A>プロパティを**カレンダー**、**連絡先**、および**タスク**、それぞれします。</span><span class="sxs-lookup"><span data-stu-id="73837-160">Set the value of the <xref:System.Windows.Forms.Control.Text%2A> property to **Calendar**, **Contacts**, and **Tasks**, respectively.</span></span>  
   
-## イベントの処理  
- `StackView` コントロールが適切に動作するようにするには、2 つのイベントが重要です。  コントロールの位置を適切に指定するには <xref:System.Windows.Forms.UserControl.Load> イベントを処理します。  `StackView` コントロールの状態を <xref:System.Windows.Forms.RadioButton> コントロールと似た動作にするには、<xref:System.Windows.Forms.ToolStripButton> ごとに <xref:System.Windows.Forms.ToolStripItem.Click> イベントを処理します。  
+## <a name="handling-events"></a><span data-ttu-id="73837-161">イベントの処理</span><span class="sxs-lookup"><span data-stu-id="73837-161">Handling Events</span></span>  
+ <span data-ttu-id="73837-162">2 つのイベントは、重要な`StackView`コントロールが適切に動作します。</span><span class="sxs-lookup"><span data-stu-id="73837-162">Two events are important to make the `StackView` control behave correctly.</span></span> <span data-ttu-id="73837-163">処理、<xref:System.Windows.Forms.UserControl.Load>コントロールを正しく配置するイベントです。</span><span class="sxs-lookup"><span data-stu-id="73837-163">Handle the <xref:System.Windows.Forms.UserControl.Load> event to position the control correctly.</span></span> <span data-ttu-id="73837-164">処理、<xref:System.Windows.Forms.ToolStripItem.Click>各イベント<xref:System.Windows.Forms.ToolStripButton>を与える、`StackView`のような状態の動作を制御、<xref:System.Windows.Forms.RadioButton>コントロール。</span><span class="sxs-lookup"><span data-stu-id="73837-164">Handle the <xref:System.Windows.Forms.ToolStripItem.Click> event for each <xref:System.Windows.Forms.ToolStripButton> to give the `StackView` control state behavior similar to the <xref:System.Windows.Forms.RadioButton> control.</span></span>  
   
-#### イベントを処理するには  
+#### <a name="to-handle-events"></a><span data-ttu-id="73837-165">イベントを処理するには</span><span class="sxs-lookup"><span data-stu-id="73837-165">To handle events</span></span>  
   
-1.  Windows フォーム デザイナーで、`StackView` コントロールを選択します。  
+1.  <span data-ttu-id="73837-166">Windows フォーム デザイナーで、選択、`StackView`コントロール。</span><span class="sxs-lookup"><span data-stu-id="73837-166">In the Windows Forms Designer, select the `StackView` control.</span></span>  
   
-2.  **\[プロパティ\]** ウィンドウ ツール バーの **\[イベント\]** をクリックします。  
+2.  <span data-ttu-id="73837-167">**プロパティ**ウィンドウで、をクリックして**イベント**です。</span><span class="sxs-lookup"><span data-stu-id="73837-167">In the **Properties** window, click **Events**.</span></span>  
   
-3.  Load イベントをダブルクリックして、`StackView_Load` イベント ハンドラーを生成します。  
+3.  <span data-ttu-id="73837-168">Load イベントをダブルクリックして、`StackView_Load`イベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="73837-168">Double-click the Load event to generate the `StackView_Load` event handler.</span></span>  
   
-4.  次のコードをコピーし、`StackView_Load` イベント ハンドラーに貼り付けます。  
+4.  <span data-ttu-id="73837-169">`StackView_Load` イベント ハンドラーで、次のコードをコピーして貼り付けます。</span><span class="sxs-lookup"><span data-stu-id="73837-169">In the `StackView_Load` event handler, copy and paste the following code.</span></span>  
   
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#3](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#3)]
      [!code-vb[System.Windows.Forms.ToolStrip.StackView#3](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#3)]  
   
-5.  Windows フォーム デザイナーで、`mailStackButton` コントロールを選択します。  
+5.  <span data-ttu-id="73837-170">Windows フォーム デザイナーで、選択、`mailStackButton`コントロール。</span><span class="sxs-lookup"><span data-stu-id="73837-170">In the Windows Forms Designer, select the `mailStackButton` control.</span></span>  
   
-6.  **\[プロパティ\]** ウィンドウ ツール バーの **\[イベント\]** をクリックします。  
+6.  <span data-ttu-id="73837-171">**プロパティ**ウィンドウで、をクリックして**イベント**です。</span><span class="sxs-lookup"><span data-stu-id="73837-171">In the **Properties** window, click **Events**.</span></span>  
   
-7.  \[Click\] イベントをダブルクリックします。  
+7.  <span data-ttu-id="73837-172">Click イベントをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="73837-172">Double-click the Click event.</span></span>  
   
-     Windows フォーム デザイナーで `mailStackButton_Click` イベント ハンドラーが生成されます。  
+     <span data-ttu-id="73837-173">Windows フォーム デザイナーで生成する、`mailStackButton_Click`イベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="73837-173">The Windows Forms Designer generates the `mailStackButton_Click` event handler.</span></span>  
   
-8.  `mailStackButton_Click` イベント ハンドラーの名前を `stackButton_Click` に変更します。  
+8.  <span data-ttu-id="73837-174">名前を変更、`mailStackButton_Click`イベント ハンドラーを`stackButton_Click`です。</span><span class="sxs-lookup"><span data-stu-id="73837-174">Rename the `mailStackButton_Click` event handler to `stackButton_Click`.</span></span>  
   
-     詳細については、「[How to: Rename an Identifier \(Visual Basic\)](http://msdn.microsoft.com/ja-jp/e5a5edf8-3dba-4119-81f4-fc2aba180e0c)」を参照してください。  
+     <span data-ttu-id="73837-175">詳細については、次を参照してください。[する方法: 識別子 (Visual Basic) の名前を変更](http://msdn.microsoft.com/en-us/e5a5edf8-3dba-4119-81f4-fc2aba180e0c)です。</span><span class="sxs-lookup"><span data-stu-id="73837-175">For more information, see [How to: Rename an Identifier (Visual Basic)](http://msdn.microsoft.com/en-us/e5a5edf8-3dba-4119-81f4-fc2aba180e0c).</span></span>  
   
-9. `stackButton_Click` イベント ハンドラー内に次のコードを挿入します。  
+9. <span data-ttu-id="73837-176">次のコードを挿入、`stackButton_Click`イベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="73837-176">Insert the following code into the `stackButton_Click` event handler.</span></span>  
   
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#4](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#4)]
      [!code-vb[System.Windows.Forms.ToolStrip.StackView#4](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#4)]  
   
-10. Windows フォーム デザイナーで、`calendarStackButton` コントロールを選択します。  
+10. <span data-ttu-id="73837-177">Windows フォーム デザイナーで、選択、`calendarStackButton`コントロール。</span><span class="sxs-lookup"><span data-stu-id="73837-177">In the Windows Forms Designer, select the `calendarStackButton` control.</span></span>  
   
-11. **\[プロパティ\]** ウィンドウで、Click イベントを `stackButton_Click` イベント ハンドラーに設定します。  
+11. <span data-ttu-id="73837-178">**プロパティ** ウィンドウの Click イベントを設定、`stackButton_Click`イベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="73837-178">In the **Properties** window, set the Click event to the `stackButton_Click` event handler.</span></span>  
   
-12. `contactsStackButton` コントロールと `tasksStackButton` コントロールについて、手順 10. と手順 11. を繰り返します。  
+12. <span data-ttu-id="73837-179">手順 10 および 11 for、`contactsStackButton`と`tasksStackButton`コントロール。</span><span class="sxs-lookup"><span data-stu-id="73837-179">Repeat steps 10 and 11 for the `contactsStackButton` and `tasksStackButton` controls.</span></span>  
   
-## アイコンの定義  
- 各 `StackView` にはアイコンが関連付けられています。  わかりやすいように、各アイコンは Base64 でエンコードされた文字列で表されます。この文字列は、<xref:System.Drawing.Bitmap> を作成する前に逆シリアル化されます。  稼動環境では、ビットマップ データをリソースとして格納すると、Windows フォーム デザイナーにアイコンが表示されます。  詳細については、「[How to: Add Background Images to Windows Forms](http://msdn.microsoft.com/ja-jp/7a509ba2-055c-4ae6-b88a-54625c6d9aff)」を参照してください。  
+## <a name="defining-icons"></a><span data-ttu-id="73837-180">アイコンの定義</span><span class="sxs-lookup"><span data-stu-id="73837-180">Defining Icons</span></span>  
+ <span data-ttu-id="73837-181">各`StackView`ボタンに関連付けられているアイコンがあります。</span><span class="sxs-lookup"><span data-stu-id="73837-181">Each `StackView` button has an associated icon.</span></span> <span data-ttu-id="73837-182">便宜上、各アイコンとして表されます、Base64 でエンコードされた文字列の前に逆シリアル化する、<xref:System.Drawing.Bitmap>から作成します。</span><span class="sxs-lookup"><span data-stu-id="73837-182">For convenience, each icon is represented as a Base64-encoded string, which is deserialized before a <xref:System.Drawing.Bitmap> is created from it.</span></span> <span data-ttu-id="73837-183">実稼働環境でのリソースとしてビットマップ データを格納して、アイコン、Windows フォーム デザイナーに表示されます。</span><span class="sxs-lookup"><span data-stu-id="73837-183">In a production environment, you store bitmap data as a resource, and your icons appear in the Windows Forms Designer.</span></span> <span data-ttu-id="73837-184">詳細については、次を参照してください。[する方法: Windows フォームの背景画像の追加](http://msdn.microsoft.com/en-us/7a509ba2-055c-4ae6-b88a-54625c6d9aff)です。</span><span class="sxs-lookup"><span data-stu-id="73837-184">For more information, see [How to: Add Background Images to Windows Forms](http://msdn.microsoft.com/en-us/7a509ba2-055c-4ae6-b88a-54625c6d9aff).</span></span>  
   
-#### アイコンを定義するには  
+#### <a name="to-define-icons"></a><span data-ttu-id="73837-185">アイコンを定義する</span><span class="sxs-lookup"><span data-stu-id="73837-185">To define icons</span></span>  
   
-1.  コード エディターで、次のコードを `StackView` クラス定義に追加します。  このコードでは、<xref:System.Windows.Forms.ToolStripButton> アイコンのビットマップを初期化します。  
+1.  <span data-ttu-id="73837-186">コード エディターに次のコードを挿入する、`StackView`クラス定義です。</span><span class="sxs-lookup"><span data-stu-id="73837-186">In the Code Editor, insert the following code into the `StackView` class definition.</span></span> <span data-ttu-id="73837-187">このコードでのビットマップは初期化、<xref:System.Windows.Forms.ToolStripButton>アイコン。</span><span class="sxs-lookup"><span data-stu-id="73837-187">This code initializes the bitmaps for the <xref:System.Windows.Forms.ToolStripButton> icons.</span></span>  
   
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#2)]
      [!code-vb[System.Windows.Forms.ToolStrip.StackView#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#2)]  
   
-2.  `StackView` クラス コンストラクターに `InitializeImages` メソッドの呼び出しを追加します。  
+2.  <span data-ttu-id="73837-188">呼び出しを追加、`InitializeImages`メソッドで、`StackView`クラスのコンス トラクターです。</span><span class="sxs-lookup"><span data-stu-id="73837-188">Add a call to the `InitializeImages` method in the `StackView` class constructor.</span></span>  
   
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#5](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#5)]
      [!code-vb[System.Windows.Forms.ToolStrip.StackView#5](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#5)]  
   
-## カスタム レンダラーの実装  
- <xref:System.Windows.Forms.ToolStripRenderer> クラスから派生するクラスを実装することによって、`StackView` コントロールでは、ほとんどの要素をカスタマイズできます。  この手順では、<xref:System.Windows.Forms.ToolStripButton> コントロールについて、グリップをカスタマイズし、グラデーションの背景を描画する <xref:System.Windows.Forms.ToolStripProfessionalRenderer> クラスを実装します。  
+## <a name="implementing-a-custom-renderer"></a><span data-ttu-id="73837-189">カスタム レンダラーを実装します。</span><span class="sxs-lookup"><span data-stu-id="73837-189">Implementing a Custom Renderer</span></span>  
+ <span data-ttu-id="73837-190">要素の大部分をカスタマイズすることができます、`StackView`から派生するクラスを実装する、コントロール、<xref:System.Windows.Forms.ToolStripRenderer>クラスです。</span><span class="sxs-lookup"><span data-stu-id="73837-190">You can customize most elements of the `StackView` control my implementing a class that derives from the <xref:System.Windows.Forms.ToolStripRenderer> class.</span></span> <span data-ttu-id="73837-191">この手順では、実装、<xref:System.Windows.Forms.ToolStripProfessionalRenderer>グリップをカスタマイズしのグラデーションの背景を描画するクラス、<xref:System.Windows.Forms.ToolStripButton>コントロール。</span><span class="sxs-lookup"><span data-stu-id="73837-191">In this procedure, you will implement a <xref:System.Windows.Forms.ToolStripProfessionalRenderer> class that customizes the grip and draws gradient backgrounds for the <xref:System.Windows.Forms.ToolStripButton> controls.</span></span>  
   
-#### カスタム レンダラーを実装するには  
+#### <a name="to-implement-a-custom-renderer"></a><span data-ttu-id="73837-192">カスタム レンダラーを実装するには</span><span class="sxs-lookup"><span data-stu-id="73837-192">To implement a custom renderer</span></span>  
   
-1.  `StackView` コントロール定義内に次のコードを挿入します。  
+1.  <span data-ttu-id="73837-193">次のコードを挿入、`StackView`定義を制御します。</span><span class="sxs-lookup"><span data-stu-id="73837-193">Insert the following code into the `StackView` control definition.</span></span>  
   
-     これは `StackRenderer` クラスの定義です。この定義は、<xref:System.Windows.Forms.ToolStripRenderer.RenderGrip>、<xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBorder>、および <xref:System.Windows.Forms.ToolStripRenderer.RenderButtonBackground> の各メソッドをオーバーライドし、カスタムの外観を作成します。  
+     <span data-ttu-id="73837-194">定義、`StackRenderer`クラスが優先、 <xref:System.Windows.Forms.ToolStripRenderer.RenderGrip>、 <xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBorder>、および<xref:System.Windows.Forms.ToolStripRenderer.RenderButtonBackground>独自の外観を生成するメソッド。</span><span class="sxs-lookup"><span data-stu-id="73837-194">This is the definition for the `StackRenderer` class, which overrides the <xref:System.Windows.Forms.ToolStripRenderer.RenderGrip>, <xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBorder>, and <xref:System.Windows.Forms.ToolStripRenderer.RenderButtonBackground> methods to produce a custom appearance.</span></span>  
   
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#10)]
      [!code-vb[System.Windows.Forms.ToolStrip.StackView#10](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#10)]  
   
-2.  `StackView` コントロールのコンストラクターで、`StackRenderer` クラスの新しいインスタンスを作成し、そのインスタンスを `stackStrip` コントロールの <xref:System.Windows.Forms.ToolStrip.Renderer%2A> プロパティに割り当てます。  
+2.  <span data-ttu-id="73837-195">`StackView`コントロールのコンス トラクターの新しいインスタンスを作成、`StackRenderer`クラスし、このインスタンスに割り当てる、`stackStrip`コントロールの<xref:System.Windows.Forms.ToolStrip.Renderer%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="73837-195">In the `StackView` control's constructor, create a new instance of the `StackRenderer` class and assign this instance to the `stackStrip` control's <xref:System.Windows.Forms.ToolStrip.Renderer%2A> property.</span></span>  
   
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#5](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#5)]
      [!code-vb[System.Windows.Forms.ToolStrip.StackView#5](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#5)]  
   
-## StackView コントロールのテスト  
- `StackView` コントロールは <xref:System.Windows.Forms.UserControl> クラスから派生します。  そのため、このコントロールは**UserControl Test Container**でテストできます。  詳細については、「[方法 : UserControl の実行時の動作をテストする](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md)」を参照してください。  
+## <a name="testing-the-stackview-control"></a><span data-ttu-id="73837-196">StackView コントロールのテスト</span><span class="sxs-lookup"><span data-stu-id="73837-196">Testing the StackView Control</span></span>  
+ <span data-ttu-id="73837-197">`StackView`から派生したコントロール、<xref:System.Windows.Forms.UserControl>クラスです。</span><span class="sxs-lookup"><span data-stu-id="73837-197">The `StackView` control derives from the <xref:System.Windows.Forms.UserControl> class.</span></span> <span data-ttu-id="73837-198">そのため、コントロールをテストすることができます、 **UserControl Test Container**です。</span><span class="sxs-lookup"><span data-stu-id="73837-198">Therefore, you can test the control with the **UserControl Test Container**.</span></span> <span data-ttu-id="73837-199">詳細については、「[方法: UserControl の実行時の動作をテストする](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="73837-199">For more information, see [How to: Test the Run-Time Behavior of a UserControl](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md).</span></span>  
   
-#### StackView コントロールをテストするには  
+#### <a name="to-test-the-stackview-control"></a><span data-ttu-id="73837-200">StackView コントロールをテストするには</span><span class="sxs-lookup"><span data-stu-id="73837-200">To test the StackView control</span></span>  
   
-1.  F5 キーを押してプロジェクトをビルドし、**UserControl Test Container**を起動します。  
+1.  <span data-ttu-id="73837-201">F5 キーを押して、プロジェクトをビルドし、開始、 **UserControl テスト コンテナー**です。</span><span class="sxs-lookup"><span data-stu-id="73837-201">Press F5 to build the project and start the **UserControl Test Container**.</span></span>  
   
-2.  `StackView` コントロールのボタンにマウス ポインターを移動し、ボタンをクリックすると、選択した状態の外観が表示されます。  
+2.  <span data-ttu-id="73837-202">ボタンの上にポインターを移動、`StackView`を制御して、選択した状態の外観を表示するボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="73837-202">Move the pointer over the buttons of the `StackView` control, and then click a button to see the appearance of its selected state.</span></span>  
   
-## 次の手順  
- このチュートリアルでは、Office XP コントロールのプロフェッショナルな外観を備えた、再利用できるカスタム コントロールを作成しました。  <xref:System.Windows.Forms.ToolStrip> 系コントロールの用途は、他にもたくさんあります。  
+## <a name="next-steps"></a><span data-ttu-id="73837-203">次の手順</span><span class="sxs-lookup"><span data-stu-id="73837-203">Next Steps</span></span>  
+ <span data-ttu-id="73837-204">このチュートリアルでは、Office XP コントロールのプロフェッショナルな外観とカスタムのクライアントを再利用可能なコントロールを作成しました。</span><span class="sxs-lookup"><span data-stu-id="73837-204">In this walkthrough, you have created a reusable custom client control with the professional appearance of an Office XP control.</span></span> <span data-ttu-id="73837-205">使用することができます、<xref:System.Windows.Forms.ToolStrip>ファミリの他のさまざまな目的のコントロール。</span><span class="sxs-lookup"><span data-stu-id="73837-205">You can use the <xref:System.Windows.Forms.ToolStrip> family of controls for many other purposes:</span></span>  
   
--   <xref:System.Windows.Forms.ContextMenuStrip> を使って、コントロールにショートカット メニューを作成します。  詳細については、「[ContextMenu コンポーネントの概要](../../../../docs/framework/winforms/controls/contextmenu-component-overview-windows-forms.md)」を参照してください。  
+-   <span data-ttu-id="73837-206">コントロールのショートカット メニューを作成する<xref:System.Windows.Forms.ContextMenuStrip>です。</span><span class="sxs-lookup"><span data-stu-id="73837-206">Create shortcut menus for your controls with <xref:System.Windows.Forms.ContextMenuStrip>.</span></span> <span data-ttu-id="73837-207">詳細については、次を参照してください。 [ContextMenu コンポーネントの概要](../../../../docs/framework/winforms/controls/contextmenu-component-overview-windows-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="73837-207">For more information, see [ContextMenu Component Overview](../../../../docs/framework/winforms/controls/contextmenu-component-overview-windows-forms.md).</span></span>  
   
--   標準メニューに自動的に項目が設定されるフォームを作成します。  詳細については、「[チュートリアル : 標準メニュー項目をフォームに用意する](../../../../docs/framework/winforms/controls/walkthrough-providing-standard-menu-items-to-a-form.md)」を参照してください。  
+-   <span data-ttu-id="73837-208">フォームを自動的に設定された標準のメニューを作成します。</span><span class="sxs-lookup"><span data-stu-id="73837-208">Create a form with an automatically populated standard menu.</span></span> <span data-ttu-id="73837-209">詳細については、次を参照してください。[チュートリアル: 標準メニュー項目をフォームに](../../../../docs/framework/winforms/controls/walkthrough-providing-standard-menu-items-to-a-form.md)です。</span><span class="sxs-lookup"><span data-stu-id="73837-209">For more information, see [Walkthrough: Providing Standard Menu Items to a Form](../../../../docs/framework/winforms/controls/walkthrough-providing-standard-menu-items-to-a-form.md).</span></span>  
   
--   <xref:System.Windows.Forms.ToolStrip> コントロールがドッキングされている、複数のマルチ ドキュメント インターフェイス \(MDI\) フォームを作成します。  詳細については、「[方法 : メニューのマージと ToolStrip コントロールを使用して MDI フォームを作成する](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md)」を参照してください。  
+-   <span data-ttu-id="73837-210">ドッキングとマルチ ドキュメント インターフェイス (MDI) フォームを作成する<xref:System.Windows.Forms.ToolStrip>コントロール。</span><span class="sxs-lookup"><span data-stu-id="73837-210">Create a multiple document interface (MDI) form with docking <xref:System.Windows.Forms.ToolStrip> controls.</span></span> <span data-ttu-id="73837-211">詳細については、次を参照してください。[する方法: メニューのマージと ToolStrip コントロールを MDI フォームを作成](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md)です。</span><span class="sxs-lookup"><span data-stu-id="73837-211">For more information, see [How to: Create an MDI Form with Menu Merging and ToolStrip Controls](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md).</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.MenuStrip>   
- <xref:System.Windows.Forms.ToolStrip>   
- <xref:System.Windows.Forms.StatusStrip>   
- [ToolStrip コントロール](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)   
- [方法 : フォームに標準メニュー項目を追加する](../../../../docs/framework/winforms/controls/how-to-provide-standard-menu-items-to-a-form.md)
+## <a name="see-also"></a><span data-ttu-id="73837-212">関連項目</span><span class="sxs-lookup"><span data-stu-id="73837-212">See Also</span></span>  
+ <xref:System.Windows.Forms.MenuStrip>  
+ <xref:System.Windows.Forms.ToolStrip>  
+ <xref:System.Windows.Forms.StatusStrip>  
+ [<span data-ttu-id="73837-213">ToolStrip コントロール</span><span class="sxs-lookup"><span data-stu-id="73837-213">ToolStrip Control</span></span>](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)  
+ [<span data-ttu-id="73837-214">方法: フォームに標準メニュー項目を追加する</span><span class="sxs-lookup"><span data-stu-id="73837-214">How to: Provide Standard Menu Items to a Form</span></span>](../../../../docs/framework/winforms/controls/how-to-provide-standard-menu-items-to-a-form.md)

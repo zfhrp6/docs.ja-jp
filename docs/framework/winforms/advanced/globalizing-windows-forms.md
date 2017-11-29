@@ -1,72 +1,73 @@
 ---
-title: "Windows フォームのグローバル化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "グローバル アプリケーション, 作成 (Windows フォームを)"
-  - "グローバリゼーション [Windows フォーム]"
-  - "ローカリゼーション [Windows フォーム]"
-  - "Windows フォーム, グローバリゼーション"
-  - "国際対応アプリケーション"
+title: "Windows フォームのグローバル化"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Forms, globalization
+- localization [Windows Forms]
+- globalization [Windows Forms]
+- world-ready applications
+- global applications [Windows Forms], creating Windows Forms
 ms.assetid: 72f6cd92-83be-45ec-aa37-9cb8e3ebc3c5
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4a111a600230bda529362ac19969a8a4b7d32916
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# Windows フォームのグローバル化
-*グローバリゼーション*は、複数のロケールで機能するソフトウェア製品をデザインおよび開発するプロセスです。  
+# <a name="globalizing-windows-forms"></a><span data-ttu-id="d30c3-102">Windows フォームのグローバル化</span><span class="sxs-lookup"><span data-stu-id="d30c3-102">Globalizing Windows Forms</span></span>
+<span data-ttu-id="d30c3-103">*グローバリゼーション*は、プロセスをデザインおよび複数カルチャ機能を持つソフトウェア製品を開発します。</span><span class="sxs-lookup"><span data-stu-id="d30c3-103">*Globalization* is the process of designing and developing a software product that functions for multiple cultures.</span></span>  
   
-## このセクションの内容  
- [エンコード方式および Windows フォームのグローバリゼーション](../../../../docs/framework/winforms/advanced/encoding-and-windows-forms-globalization.md)  
- Unicode の完全なサポートとその影響について説明します。  
+## <a name="in-this-section"></a><span data-ttu-id="d30c3-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="d30c3-104">In This Section</span></span>  
+ [<span data-ttu-id="d30c3-105">エンコード方式および Windows フォームのグローバリゼーション</span><span class="sxs-lookup"><span data-stu-id="d30c3-105">Encoding and Windows Forms Globalization</span></span>](../../../../docs/framework/winforms/advanced/encoding-and-windows-forms-globalization.md)  
+ <span data-ttu-id="d30c3-106">Unicode の完全なサポートとその影響について説明します。</span><span class="sxs-lookup"><span data-stu-id="d30c3-106">Describes full Unicode support and its implications.</span></span>  
   
- [Windows フォームおよびコントロールの国際対応フォント](../../../../docs/framework/winforms/advanced/international-fonts-in-windows-forms-and-controls.md)  
- Windows フォームで各国語の文字を表示するためのフォントを選択するタイミングと方法について説明します。  
+ [<span data-ttu-id="d30c3-107">Windows フォームおよびコントロールの国際対応フォント</span><span class="sxs-lookup"><span data-stu-id="d30c3-107">International Fonts in Windows Forms and Controls</span></span>](../../../../docs/framework/winforms/advanced/international-fonts-in-windows-forms-and-controls.md)  
+ <span data-ttu-id="d30c3-108">Windows フォームで各国語の文字を表示するためのフォントを選択するタイミングと方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d30c3-108">Explains when and how to select fonts for display of international characters on Windows Forms.</span></span>  
   
- [ImeMode プロパティによるアジア言語の文字表示](../../../../docs/framework/winforms/advanced/display-of-asian-characters-with-the-imemode-property.md)  
- Windows フォームまたはコントロールが受け取る入力の種類を制御するために使用する、`ImeMode` プロパティを説明しています。  
+ [<span data-ttu-id="d30c3-109">ImeMode プロパティによるアジア言語の文字表示</span><span class="sxs-lookup"><span data-stu-id="d30c3-109">Display of Asian Characters with the ImeMode Property</span></span>](../../../../docs/framework/winforms/advanced/display-of-asian-characters-with-the-imemode-property.md)  
+ <span data-ttu-id="d30c3-110">Windows フォームまたはコントロールが受け取る入力の種類を制御するために使用する、`ImeMode` プロパティを説明しています。</span><span class="sxs-lookup"><span data-stu-id="d30c3-110">Introduces the `ImeMode` property, which is used to control the type of input a Windows Form or control accepts.</span></span>  
   
--   [チュートリアル : ClickOnce 配置 API を使用して必要に応じてサテライト アセンブリをダウンロードする](http://msdn.microsoft.com/library/ms366788\(v=vs.110\))  
+-   <span data-ttu-id="d30c3-111">[チュートリアル : デザイナーを使用し、ClickOnce 配置 API で必要に応じてサテライト アセンブリをダウンロードする](http://msdn.microsoft.com/library/ms366788\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="d30c3-111">[Walkthrough: Downloading Satellite Assemblies on Demand with the ClickOnce Deployment API Using the Designer](http://msdn.microsoft.com/library/ms366788\(v=vs.110\))</span></span>  
   
--   [ClickOnce アプリケーションのローカライズ](http://msdn.microsoft.com/library/ms404266%20\(v=vs.110\))  
+-   <span data-ttu-id="d30c3-112">[ClickOnce アプリケーションのローカライズ](http://msdn.microsoft.com/library/ms404266\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="d30c3-112">[Localizing ClickOnce Applications](http://msdn.microsoft.com/library/ms404266\(v=vs.110\))</span></span>  
   
--   [チュートリアル : ClickOnce 配置 API を使用して必要に応じてサテライト アセンブリをダウンロードする](http://msdn.microsoft.com/library/ms404269\(v=vs.110\))  
+-   <span data-ttu-id="d30c3-113">[チュートリアル : ClickOnce 配置 API を使用して必要に応じてサテライト アセンブリをダウンロードする](http://msdn.microsoft.com/library/ms404269\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="d30c3-113">[Walkthrough: Downloading Satellite Assemblies on Demand with the ClickOnce Deployment API](http://msdn.microsoft.com/library/ms404269\(v=vs.110\))</span></span>  
   
--   [方法 : Windows フォームのグローバリゼーション用のカルチャおよび UI カルチャを設定する](http://msdn.microsoft.com/library/b28bx3bh\(v=vs.110\))  
+-   <span data-ttu-id="d30c3-114">[方法: Windows フォームのグローバリゼーション用のカルチャおよび UI カルチャの設定](http://msdn.microsoft.com/library/b28bx3bh\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="d30c3-114">[How to: Set the Culture and UI Culture for Windows Forms Globalization](http://msdn.microsoft.com/library/b28bx3bh\(v=vs.110\))</span></span>  
   
--   [方法: ミラー化された Windows フォームおよびコントロールを作成する](http://msdn.microsoft.com/library/xwbz5ws0\(v=vs.110\))  
+-   <span data-ttu-id="d30c3-115">[方法: ミラー化されたウィンドウを作成フォームおよびコントロール](http://msdn.microsoft.com/library/xwbz5ws0\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="d30c3-115">[How to: Create Mirrored Windows Forms and Controls](http://msdn.microsoft.com/library/xwbz5ws0\(v=vs.110\))</span></span>  
   
--   [方法 : AutoSize と TableLayoutPanel コントロールを使用して Windows フォームのローカリゼーションをサポートする](http://msdn.microsoft.com/library/1zkt8b33\(v=vs.110\))  
+-   <span data-ttu-id="d30c3-116">[方法: AutoSize と TableLayoutPanel コントロールを使用して Windows フォームのローカリゼーションをサポートする](http://msdn.microsoft.com/library/1zkt8b33\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="d30c3-116">[How to: Support Localization on Windows Forms Using AutoSize and the TableLayoutPanel Control](http://msdn.microsoft.com/library/1zkt8b33\(v=vs.110\))</span></span>  
   
--   [チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/library/y99d1cd3\(v=vs.110\))  
+-   <span data-ttu-id="d30c3-117">[チュートリアル: Windows フォームのローカリゼーション](http://msdn.microsoft.com/library/y99d1cd3\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="d30c3-117">[Walkthrough: Localizing Windows Forms](http://msdn.microsoft.com/library/y99d1cd3\(v=vs.110\))</span></span>  
   
--   [チュートリアル : ローカライズの際に均等に調整されるレイアウトの作成](http://msdn.microsoft.com/library/7k9fa71y\(v=vs.110\))  
+-   <span data-ttu-id="d30c3-118">[チュートリアル: のローカライズ用割合が調整されるレイアウトの作成](http://msdn.microsoft.com/en-us/library/7k9fa71y\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="d30c3-118">[Walkthrough: Creating a Layout That Adjusts Proportion for Localization](http://msdn.microsoft.com/en-us/library/7k9fa71y\(v=vs.110\))</span></span>  
   
--   [方法 : 双方向 Windows フォームのメッセージ ボックスを作成する](http://msdn.microsoft.com/library/k1689bxh\(v=vs.110\))  
+-   <span data-ttu-id="d30c3-119">[方法: 双方向 Windows フォームのメッセージ ボックスを作成します。](http://msdn.microsoft.com/library/k1689bxh\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="d30c3-119">[How to: Create Message Boxes for Bi-Directional Windows Forms](http://msdn.microsoft.com/library/k1689bxh\(v=vs.110\))</span></span>  
   
--   [チュートリアル : ClickOnce 配置 API を使用して必要に応じてサテライト アセンブリをダウンロードする](http://msdn.microsoft.com/library/ms366788\(v=vs.120\))  
+-   <span data-ttu-id="d30c3-120">[チュートリアル : デザイナーを使用し、ClickOnce 配置 API で必要に応じてサテライト アセンブリをダウンロードする](http://msdn.microsoft.com/library/ms366788\(v=vs.120\))</span><span class="sxs-lookup"><span data-stu-id="d30c3-120">[Walkthrough: Downloading Satellite Assemblies on Demand with the ClickOnce Deployment API Using the Designer](http://msdn.microsoft.com/library/ms366788\(v=vs.120\))</span></span>  
   
--   [ClickOnce アプリケーションのローカライズ](http://msdn.microsoft.com/library/ms404266%20\(v=vs.120\))  
+-   <span data-ttu-id="d30c3-121">[ClickOnce アプリケーションのローカライズ](http://msdn.microsoft.com/library/ms404266\(v=vs.120\))</span><span class="sxs-lookup"><span data-stu-id="d30c3-121">[Localizing ClickOnce Applications](http://msdn.microsoft.com/library/ms404266\(v=vs.120\))</span></span>  
   
--   [チュートリアル : ClickOnce 配置 API を使用して必要に応じてサテライト アセンブリをダウンロードする](http://msdn.microsoft.com/library/ms404269\(v=vs.120\))  
+-   <span data-ttu-id="d30c3-122">[チュートリアル : ClickOnce 配置 API を使用して必要に応じてサテライト アセンブリをダウンロードする](http://msdn.microsoft.com/library/ms404269\(v=vs.120\))</span><span class="sxs-lookup"><span data-stu-id="d30c3-122">[Walkthrough: Downloading Satellite Assemblies on Demand with the ClickOnce Deployment API](http://msdn.microsoft.com/library/ms404269\(v=vs.120\))</span></span>  
   
-## 関連項目  
+## <a name="related-sections"></a><span data-ttu-id="d30c3-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="d30c3-123">Related Sections</span></span>  
   
-1.  [アプリケーションのグローバライズとローカライズ](http://msdn.microsoft.com/library/1021kkz0\(v=vs.110\))  
+1.  <span data-ttu-id="d30c3-124">[アプリケーションのグローバライズとローカライズ](http://msdn.microsoft.com/library/1021kkz0\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="d30c3-124">[Globalizing and Localizing Applications](http://msdn.microsoft.com/library/1021kkz0\(v=vs.110\))</span></span>  
   
-2.  [アプリケーションのグローバル化](http://msdn.microsoft.com/library/eaa7b9c0\(v=vs.110\))  
+2.  <span data-ttu-id="d30c3-125">[アプリケーションのグローバル化](http://msdn.microsoft.com/library/eaa7b9c0\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="d30c3-125">[Globalizing Applications](http://msdn.microsoft.com/library/eaa7b9c0\(v=vs.110\))</span></span>  
   
-3.  [アプリケーションのグローバライズとローカライズ](http://msdn.microsoft.com/library/1021kkz0\(v=vs.120\))  
+3.  <span data-ttu-id="d30c3-126">[アプリケーションのグローバライズとローカライズ](http://msdn.microsoft.com/library/1021kkz0\(v=vs.120\))</span><span class="sxs-lookup"><span data-stu-id="d30c3-126">[Globalizing and Localizing Applications](http://msdn.microsoft.com/library/1021kkz0\(v=vs.120\))</span></span>  
   
-4.  [アプリケーションのグローバル化](http://msdn.microsoft.com/library/eaa7b9c0\(v=vs.120\))
+4.  <span data-ttu-id="d30c3-127">[アプリケーションのグローバル化](http://msdn.microsoft.com/library/eaa7b9c0\(v=vs.120\))</span><span class="sxs-lookup"><span data-stu-id="d30c3-127">[Globalizing Applications](http://msdn.microsoft.com/library/eaa7b9c0\(v=vs.120\))</span></span>

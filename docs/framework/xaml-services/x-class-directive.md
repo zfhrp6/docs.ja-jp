@@ -1,74 +1,77 @@
 ---
-title: "x:Class Directive | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "x:Class"
-  - "xClass"
-  - "Class"
-helpviewer_keywords: 
-  - "Class attribute in XAML [XAML Services]"
-  - "XAML [XAML Services], x:Class attribute"
-  - "x:Class attribute [XAML Services]"
+title: "x:Class ディレクティブ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- x:Class
+- xClass
+- Class
+helpviewer_keywords:
+- Class attribute in XAML [XAML Services]
+- XAML [XAML Services], x:Class attribute
+- x:Class attribute [XAML Services]
 ms.assetid: bc4a3d8e-76e2-423e-a5d1-159a023e82ec
-caps.latest.revision: 27
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 26
+caps.latest.revision: "27"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 1828ef3614cc1f3a81d8aeff62c15ed5accfe380
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# x:Class Directive
-マークアップと分離コード間を部分クラスで結合するように、XAML のマークアップ コンパイルを構成します。  コードの部分クラスは、[!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)] 言語で個別のコード ファイル内に定義され、マークアップの部分クラスは、通常 XAML のコンパイル時にコード生成によって作成されます。  
+# <a name="xclass-directive"></a><span data-ttu-id="87111-102">x:Class ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="87111-102">x:Class Directive</span></span>
+<span data-ttu-id="87111-103">部分クラスのマークアップと分離コードの間で結合する XAML マークアップのコンパイルを構成します。</span><span class="sxs-lookup"><span data-stu-id="87111-103">Configures XAML markup compilation to join partial classes between markup and code-behind.</span></span> <span data-ttu-id="87111-104">コードの部分クラスが個別のコード ファイル内で定義されている、[!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]言語、マークアップの部分クラスは、通常、XAML のコンパイル時にコード生成によって作成されします。</span><span class="sxs-lookup"><span data-stu-id="87111-104">The code partial class is defined in a separate code file in a [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)] language, whereas the markup partial class is typically created by code generation during XAML compilation.</span></span>  
   
-## XAML 属性の使用方法  
+## <a name="xaml-attribute-usage"></a><span data-ttu-id="87111-105">XAML 属性の使用方法</span><span class="sxs-lookup"><span data-stu-id="87111-105">XAML Attribute Usage</span></span>  
   
 ```  
-<object x:Class="namespace.classname"...>  
+<object x:Class="namespace.classname"...>  
   ...  
 </object>  
 ```  
   
-## XAML 値  
+## <a name="xaml-values"></a><span data-ttu-id="87111-106">XAML 値</span><span class="sxs-lookup"><span data-stu-id="87111-106">XAML Values</span></span>  
   
 |||  
 |-|-|  
-|`namespace`|省略可能です。  `classname` で識別される部分クラスを含む [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] 名前空間を指定します。  `namespace` を指定する場合は、`namespace` と `classname` をドット \(.\) で区切ります。  「解説」を参照してください。|  
-|`classname`|必ず指定します。  読み込まれた XAML、およびその XAML の分離コードを接続する部分クラスの [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] 名を指定します。|  
+|`namespace`|<span data-ttu-id="87111-107">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="87111-107">Optional.</span></span> <span data-ttu-id="87111-108">指定します、[!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)]で識別される部分クラスを含む名前空間`classname`です。</span><span class="sxs-lookup"><span data-stu-id="87111-108">Specifies a [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] namespace that contains the partial class identified by `classname`.</span></span> <span data-ttu-id="87111-109">場合`namespace`を指定すると、ドット (.) で区切られます`namespace`と`classname`です。</span><span class="sxs-lookup"><span data-stu-id="87111-109">If `namespace` is specified, a dot (.) separates `namespace` and `classname`.</span></span> <span data-ttu-id="87111-110">「解説」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="87111-110">See Remarks.</span></span>|  
+|`classname`|<span data-ttu-id="87111-111">必須です。</span><span class="sxs-lookup"><span data-stu-id="87111-111">Required.</span></span> <span data-ttu-id="87111-112">指定します、[!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)]読み込まれた XAML およびその XAML の分離コードで接続する部分クラスの名前。</span><span class="sxs-lookup"><span data-stu-id="87111-112">Specifies the [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] name of the partial class that connects the loaded XAML and your code-behind for that XAML.</span></span>|  
   
-## 依存関係  
- `x:Class` は、XAML 稼動環境のルート要素でのみ指定できます。  `x:Class` は、XAML 稼動環境内に親を持つ任意のオブジェクトで無効です。  詳細については、「[\[MS\-XAML\] 第 4.3.1.6 節](http://go.microsoft.com/fwlink/?LinkId=114525)」を参照してください。  
+## <a name="dependencies"></a><span data-ttu-id="87111-113">依存関係</span><span class="sxs-lookup"><span data-stu-id="87111-113">Dependencies</span></span>  
+ <span data-ttu-id="87111-114">`x:Class`XAML の運用環境のルート要素でのみ指定できます。</span><span class="sxs-lookup"><span data-stu-id="87111-114">`x:Class` can only be specified on the root element of a XAML production.</span></span> <span data-ttu-id="87111-115">`x:Class`XAML の運用環境である親を持つ任意のオブジェクトで有効です。</span><span class="sxs-lookup"><span data-stu-id="87111-115">`x:Class` is invalid on any object that has a parent in the XAML production.</span></span> <span data-ttu-id="87111-116">詳細については、次を参照してください。 [ \[MS-XAML\]セクション 4.3.1.6](http://go.microsoft.com/fwlink/?LinkId=114525)です。</span><span class="sxs-lookup"><span data-stu-id="87111-116">For more information, see [\[MS-XAML\] Section 4.3.1.6](http://go.microsoft.com/fwlink/?LinkId=114525).</span></span>  
   
-## 解説  
- `namespace` の値には、関連する名前空間を名前の階層に編成するために追加のドットを含めることができます。これは、.NET Framework プログラミングの一般的な手法です。  `x:Class` の値の文字列に含まれる最後のドットのみが、`namespace` と `classname` の区切りとして解釈されます。`x:Class` として使用するクラスは、入れ子にできません。  入れ子になったクラスが許可されると `x:Class` 文字列のドットの意味の判断があいまいになるので、入れ子になったクラスは許可されません。  
+## <a name="remarks"></a><span data-ttu-id="87111-117">コメント</span><span class="sxs-lookup"><span data-stu-id="87111-117">Remarks</span></span>  
+ <span data-ttu-id="87111-118">`namespace`値は、.NET Framework プログラミングで一般的な手法は、名前の階層に関連する名前空間を整理する追加のドットを含めることがあります。</span><span class="sxs-lookup"><span data-stu-id="87111-118">The `namespace` value may contain additional dots to organize related namespaces into name hierarchies, which is a common technique in .NET Framework programming.</span></span> <span data-ttu-id="87111-119">文字列の最後のドットのみ`x:Class`を区切るための値を解釈`namespace`と`classname.`として使用されるクラス`x:Class`入れ子になったクラスにすることはできません。</span><span class="sxs-lookup"><span data-stu-id="87111-119">Only the last dot in a string of `x:Class` values is interpreted to separate `namespace` and `classname.` The class that is used as `x:Class` cannot be a nested class.</span></span> <span data-ttu-id="87111-120">ドットの意味を決定するため、入れ子になったクラスは許可されません`x:Class`文字列が入れ子になったクラスが許可されている場合は、あいまいです。</span><span class="sxs-lookup"><span data-stu-id="87111-120">Nested classes are not allowed because determining the meaning of dots for `x:Class` strings is ambiguous if nested classes are permitted.</span></span>  
   
- `x:Class` を使用する既存のプログラミング モデルの `x:Class` は、分離コードを一切持たない XAML ページが存在することはまったく問題ないという意味で省略可能です。  ただし、XAML を使用するフレームワークによって実装されたビルド アクションにはこの機能が作用します。  また、さまざまな種類の XAML 固有コンテンツがアプリケーション モデル内や対応するビルド アクションにおいて担う役割も、`x:Class` の機能に影響します。  イベント処理属性の値を XAML で宣言する場合や、\(定義しているクラスが分離コード クラスに存在するような\) カスタム要素を XAML でインスタンス化する場合には、分離コードの該当クラスに対する `x:Class` ディレクティブ参照 \(または [x:Subclass](../../../docs/framework/xaml-services/x-subclass-directive.md)\) を指定する必要があります。  
+ <span data-ttu-id="87111-121">既存のプログラミングを使用するモデル`x:Class`、`x:Class`を分離コードを持たない XAML ページが存在する有効な完全であるという意味では省略可能です。</span><span class="sxs-lookup"><span data-stu-id="87111-121">In existing programming models that use `x:Class`, `x:Class` is optional in the sense that it is entirely valid to have a XAML page that has no code-behind.</span></span> <span data-ttu-id="87111-122">ただし、その機能は、XAML を使用するフレームワークによって実装されているビルド アクションと対話します。</span><span class="sxs-lookup"><span data-stu-id="87111-122">However, that capability interacts with the build actions as implemented by frameworks that use XAML.</span></span> <span data-ttu-id="87111-123">`x:Class`機能は、XAML で指定されたコンテンツのさまざまな分類が、アプリケーション モデルがあり、ビルド アクションで、対応するロールの影響も受けます。</span><span class="sxs-lookup"><span data-stu-id="87111-123">`x:Class` capability is also influenced by the roles that various classifications of XAML-specified content have in an application model and in the corresponding build actions.</span></span> <span data-ttu-id="87111-124">指定する必要が、XAML では、イベント ハンドラー属性の値またはクラスを定義するには、分離コード クラスにあるカスタムの要素をインスタンス化を宣言する場合、`x:Class`ディレクティブ リファレンス (または[X:subclass](../../../docs/framework/xaml-services/x-subclass-directive.md)) に、分離コードの適切なクラスです。</span><span class="sxs-lookup"><span data-stu-id="87111-124">If your XAML declares event-handling attribute values or instantiates custom elements where the defining classes are in the code-behind class, you have to provide the `x:Class` directive reference (or [x:Subclass](../../../docs/framework/xaml-services/x-subclass-directive.md)) to the appropriate class for code-behind.</span></span>  
   
- `x:Class` ディレクティブの値は、クラスの完全修飾名を指定する文字列です。ただし、アセンブリの情報は含まれません \(<xref:System.Type.FullName%2A?displayProperty=fullName> に相当します\)。  単純なアプリケーションの場合、CLR 名前空間情報を省略することもできますが、分離コードもそのように構成されている \(コード定義がクラス レベルで開始する\) ことが条件となります。  
+ <span data-ttu-id="87111-125">値、`x:Class`ディレクティブは、アセンブリ情報がない場合は、クラスの完全修飾名を指定する文字列である必要があります (と同等、 <xref:System.Type.FullName%2A?displayProperty=nameWithType>)。</span><span class="sxs-lookup"><span data-stu-id="87111-125">The value of the `x:Class` directive must be a string that specifies the fully qualified name of a class but without any assembly information (equivalent to the <xref:System.Type.FullName%2A?displayProperty=nameWithType>).</span></span> <span data-ttu-id="87111-126">単純なアプリケーションは、分離コードがそのように (クラス レベルでコードの定義の開始) も構造化された場合、CLR 名前空間情報を省略できます。</span><span class="sxs-lookup"><span data-stu-id="87111-126">For simple applications, you can omit CLR namespace information if the code-behind is also structured in that manner (code definition starts at the class level).</span></span>  
   
- ページまたはアプリケーション定義の分離コード ファイルは、コンパイル済みアプリケーションを作成しマークアップ コンパイルに関与するプロジェクトの一部として含まれているコード ファイル内にある必要があります。  CLR クラスの名前規則に従う必要があります。  詳細については、「[Framework デザイン ガイドライン](../../../ml/index.xml)」を参照してください。  既定では、分離コード クラスは `public` である必要がありますが、[x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)を使用して、異なるアクセス レベルとして定義できます。  
+ <span data-ttu-id="87111-127">ページまたはアプリケーション定義の分離コード ファイルは、コンパイルされたアプリケーションを作成し、マークアップのコンパイルでは、プロジェクトの一部として含まれているコード ファイル内になければなりません。</span><span class="sxs-lookup"><span data-stu-id="87111-127">The code-behind file for a page or application definition must be within a code file that is included as part of the project that produces a compiled application and involves markup compilation.</span></span> <span data-ttu-id="87111-128">CLR クラスの名前規則に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="87111-128">You must follow name rules for CLR classes.</span></span> <span data-ttu-id="87111-129">詳細については、次を参照してください。 [Framework デザイン ガイドライン](../../../docs/standard/design-guidelines/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="87111-129">For more information, see [Framework Design Guidelines](../../../docs/standard/design-guidelines/index.md).</span></span> <span data-ttu-id="87111-130">既定では、分離コード クラスがある必要があります`public`。 ただし、を使用して、異なるアクセス レベルで定義できる、 [X:classmodifier ディレクティブ](../../../docs/framework/xaml-services/x-classmodifier-directive.md)です。</span><span class="sxs-lookup"><span data-stu-id="87111-130">By default, the code-behind class must be `public`; however, you can define it at a different access level by using the [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md).</span></span>  
   
- この `x:Class` 属性の解釈が当てはまるのは、CLR ベースの XAML 実装、特に、.NET Framework XAML サービスのみです。  CLR に基づかず、.NET Framework XAML サービスを使用しない他の XAML 実装では、XAML マークアップと対応するランタイム コードを関連付けるために異なる解決式を使用する場合があります。  `x:Class` の一般的な解釈の詳細については、「[\[MS\-XAML\]](http://go.microsoft.com/fwlink/?LinkId=114525)」を参照してください。  
+ <span data-ttu-id="87111-131">この解釈、`x:Class`属性にのみ適用されます、CLR ベースの XAML 実装では、特に .NET Framework XAML サービスにします。</span><span class="sxs-lookup"><span data-stu-id="87111-131">This interpretation of the `x:Class` attribute applies only to a CLR-based XAML implementation, in particular to .NET Framework XAML Services.</span></span> <span data-ttu-id="87111-132">CLR には基づいていません、.NET Framework XAML サービスを使用しないその他の XAML 実装には、XAML マークアップを接続し、実行時のコードをバックアップするための解像度が異なる数式を使用できます。</span><span class="sxs-lookup"><span data-stu-id="87111-132">Other XAML implementations that are not based on CLR and that do not use .NET Framework XAML Services might use a different resolution formula for connecting XAML markup and backing run-time code.</span></span> <span data-ttu-id="87111-133">一般的な意味の詳細については`x:Class`を参照してください[ \[MS-XAML\]](http://go.microsoft.com/fwlink/?LinkId=114525)です。</span><span class="sxs-lookup"><span data-stu-id="87111-133">For more information about more general interpretations of `x:Class`, see [\[MS-XAML\]](http://go.microsoft.com/fwlink/?LinkId=114525).</span></span>  
   
- 特定レベルのアーキテクチャでは、`x:Class` の意味は、.NET Framework XAML サービスで定義されていません。  これは、.NET Framework XAML サービスで、XAML マークアップと対応するコードが関連付けられるプログラミング モデルが指定されていないためです。  `x:Class` ディレクティブの用途は他にも考えられます。XAML マークアップと CLR ベースの分離コードを関連付ける方法を定義する目的で、そうした用途が、プログラミング モデルまたはアプリケーション モデルを使用する特定のフレームワークによって実装される場合があります。  それぞれのフレームワークは、一部の動作を実現する独自のビルド アクションや、ビルド環境に含める必要のある特定のコンポーネントを備えています。  フレームワーク内では、分離コードで使用される特定の CLR 言語に応じてビルド アクションは変化することもあります。  
+ <span data-ttu-id="87111-134">アーキテクチャの意味のあるレベルで`x:Class`.NET Framework XAML サービスでは未定義です。</span><span class="sxs-lookup"><span data-stu-id="87111-134">At a certain level of architecture, the meaning of `x:Class` is undefined in .NET Framework XAML Services.</span></span> <span data-ttu-id="87111-135">これは、.NET Framework XAML サービスでどの XAML マークアップおよびコードのバックアップを接続するプログラミング モデルが指定されていないためです。</span><span class="sxs-lookup"><span data-stu-id="87111-135">This is because .NET Framework XAML Services does not specify the programming model by which XAML markup and backing code are connected.</span></span> <span data-ttu-id="87111-136">別の使用、`x:Class`ディレクティブが XAML のマークアップと CLR ベースの分離コードを接続する方法を定義するプログラミング モデルまたはアプリケーションのモデルを使用する特定のフレームワークによって実装される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="87111-136">Additional uses of the `x:Class` directive might be implemented by specific frameworks that use programming models or application models to define how to connect XAML markup and CLR-based code-behind.</span></span> <span data-ttu-id="87111-137">各フレームワークには、ビルド アクションをいくつかの動作またはビルド環境に含める必要がある特定のコンポーネントを有効にすることができます。</span><span class="sxs-lookup"><span data-stu-id="87111-137">Each framework can have its own build actions that enable some of the behavior or specific components that must be included in the build environment.</span></span> <span data-ttu-id="87111-138">フレームワーク内でのビルド アクションは、分離コードに使用される特定の CLR 言語によっても異なります。</span><span class="sxs-lookup"><span data-stu-id="87111-138">Within a framework, build actions can also vary depending on the specific CLR language that is used for the code-behind.</span></span>  
   
-## WPF プログラミング モデルの x:Class  
- WPF アプリケーションおよび WPF アプリケーション モデルでは、`x:Class` を、XAML ファイルのルートで、コンパイルされている任意の要素の属性 \(XAML が `Page` ビルド アクションによって WPF アプリケーション プロジェクトに組み込まれている場合\)、またはコンパイル済み WPF アプリケーションのアプリケーション定義の <xref:System.Windows.Application> ルートの属性として宣言できます。  [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)] および [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] の WPF XAML コンパイラでは、ページ ルートまたはアプリケーション ルート以外の要素、あるいはコンパイルされていない WPF XAML ファイルで `x:Class` を宣言すると、コンパイル時エラーが発生します。  WPF の `x:Class` 処理に関連したその他の情報については、「[WPF における分離コードと XAML](../../../ocs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)」を参照してください。  
+## <a name="xclass-in-the-wpf-programming-model"></a><span data-ttu-id="87111-139">WPF のプログラミング モデルでは、X:class</span><span class="sxs-lookup"><span data-stu-id="87111-139">x:Class in the WPF Programming Model</span></span>  
+ <span data-ttu-id="87111-140">WPF アプリケーションと WPF アプリケーション モデルで`x:Class`を XAML ファイルのルートは、コンパイルしている任意の要素の属性として宣言することができます (と WPF アプリケーション プロジェクトでは、XAML が含まれている`Page`ビルド アクション)、または、「c4 > <xref:System.Windows.Application> コンパイル済みの WPF アプリケーションのアプリケーション定義のルートです。</span><span class="sxs-lookup"><span data-stu-id="87111-140">In WPF applications and the WPF application model, `x:Class` can be declared as an attribute for any element that is the root of a XAML file and is being compiled (where the XAML is included in a WPF application project with `Page` build action), or for the <xref:System.Windows.Application> root in the application definition of a compiled WPF application.</span></span> <span data-ttu-id="87111-141">宣言`x:Class`ページのルートまたはアプリケーションのルート以外の要素またはコンパイルされていない WPF XAML ファイルでは、コンパイル時エラーが発生、[!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)]と[!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)]WPF XAML コンパイラです。</span><span class="sxs-lookup"><span data-stu-id="87111-141">Declaring `x:Class` on an element other than a page root or application root, or on a WPF XAML file that is not compiled, causes a compile-time error under the [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)] and [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] WPF XAML compiler.</span></span> <span data-ttu-id="87111-142">他の側面について`x:Class`WPF での処理を参照してください[分離コードと wpf XAML](../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)です。</span><span class="sxs-lookup"><span data-stu-id="87111-142">For information about other aspects of `x:Class` handling in WPF, see [Code-Behind and XAML in WPF](../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md).</span></span>  
   
-## Windows Workflow Foundation の x:Class  
- Windows Workflow Foundation の場合、`x:Class` によって名前指定されるのは、完全に XAML で構成されたカスタム アクティビティのクラスか、または分離コードを持つアクティビティ デザイナー用の XAML ページの部分クラスです。  
+## <a name="xclass-for-windows-workflow-foundation"></a><span data-ttu-id="87111-143">Windows Workflow Foundation の x: クラス</span><span class="sxs-lookup"><span data-stu-id="87111-143">x:Class for Windows Workflow Foundation</span></span>  
+ <span data-ttu-id="87111-144">Windows Workflow foundation `x:Class` XAML で構成されるカスタム アクティビティのクラスの名前または分離コードを含むアクティビティ デザイナーに、XAML ページの部分クラスの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="87111-144">For Windows Workflow Foundation, `x:Class` names the class of a custom activity composed entirely in XAML, or names the partial class of the XAML page for  an activity designer with code-behind.</span></span>  
   
-## Silverlight の使用上の注意  
- Silverlight 用の `x:Class` に関しては、別途ドキュメントが用意されています。  詳細については、「[XAML 名前空間 \(x:\) 言語機能 \(Silverlight\)](http://go.microsoft.com/fwlink/?LinkId=199081)」を参照してください。  
+## <a name="silverlight-usage-notes"></a><span data-ttu-id="87111-145">Silverlight の使用上の注意</span><span class="sxs-lookup"><span data-stu-id="87111-145">Silverlight Usage Notes</span></span>  
+ <span data-ttu-id="87111-146">Silverlight 用の `x:Class` に関しては、別途ドキュメントが用意されています。</span><span class="sxs-lookup"><span data-stu-id="87111-146">`x:Class` for Silverlight is documented separately.</span></span> <span data-ttu-id="87111-147">詳細については、次を参照してください[XAML Namespace (x:)。言語機能 (Silverlight)](http://go.microsoft.com/fwlink/?LinkId=199081)です。</span><span class="sxs-lookup"><span data-stu-id="87111-147">For more information, see [XAML Namespace (x:) Language Features (Silverlight)](http://go.microsoft.com/fwlink/?LinkId=199081).</span></span>  
   
-## 参照  
- [x:Subclass Directive](../../../docs/framework/xaml-services/x-subclass-directive.md)   
- [WPF における XAML とカスタム クラス](../../../ocs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)   
- [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)   
- [Types Migrated from WPF to System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)
+## <a name="see-also"></a><span data-ttu-id="87111-148">関連項目</span><span class="sxs-lookup"><span data-stu-id="87111-148">See Also</span></span>  
+ [<span data-ttu-id="87111-149">x:Subclass ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="87111-149">x:Subclass Directive</span></span>](../../../docs/framework/xaml-services/x-subclass-directive.md)  
+ [<span data-ttu-id="87111-150">WPF における XAML とカスタム クラス</span><span class="sxs-lookup"><span data-stu-id="87111-150">XAML and Custom Classes for WPF</span></span>](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)  
+ [<span data-ttu-id="87111-151">x:ClassModifier ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="87111-151">x:ClassModifier Directive</span></span>](../../../docs/framework/xaml-services/x-classmodifier-directive.md)  
+ [<span data-ttu-id="87111-152">WPF から System.Xaml に移行した型</span><span class="sxs-lookup"><span data-stu-id="87111-152">Types Migrated from WPF to System.Xaml</span></span>](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)

@@ -1,47 +1,50 @@
 ---
-title: "方法 : SolidColorBrush の色または不透明度をアニメーション化する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アニメーション, 色 (SolidColorBrush の)"
-  - "アニメーション, 不透明度 (SolidColorBrush の)"
-  - "色, アニメーション化"
-  - "不透明, アニメーション化"
-  - "SolidColorBrush, アニメーション化 (色を)"
-  - "SolidColorBrush, アニメーション化 (不透明度を)"
+title: "方法 : SolidColorBrush の色または不透明度をアニメーション化する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- SolidColorBrush [WPF], animating color of
+- colors [WPF], animating
+- opacity [WPF], animating
+- animation [WPF], color of SolidColorBrush
+- animation [WPF], opacity of SolidColorBrush
+- SolidColorBrush [WPF], animating opacity of
 ms.assetid: d9154354-843f-4713-bad1-35bb0ba6eaeb
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 03052cdf68a5a8564d5a24c91521749c10afa6cc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : SolidColorBrush の色または不透明度をアニメーション化する
-この例では、<xref:System.Windows.Media.SolidColorBrush> の <xref:System.Windows.Media.SolidColorBrush.Color%2A> および <xref:System.Windows.Media.Brush.Opacity%2A> をアニメーション化する方法を説明します。  
+# <a name="how-to-animate-the-color-or-opacity-of-a-solidcolorbrush"></a><span data-ttu-id="793ad-102">方法 : SolidColorBrush の色または不透明度をアニメーション化する</span><span class="sxs-lookup"><span data-stu-id="793ad-102">How to: Animate the Color or Opacity of a SolidColorBrush</span></span>
+<span data-ttu-id="793ad-103">この例は、アニメーション化する方法を示しています、<xref:System.Windows.Media.SolidColorBrush.Color%2A>と<xref:System.Windows.Media.Brush.Opacity%2A>の<xref:System.Windows.Media.SolidColorBrush>です。</span><span class="sxs-lookup"><span data-stu-id="793ad-103">This example shows how to animate the <xref:System.Windows.Media.SolidColorBrush.Color%2A> and <xref:System.Windows.Media.Brush.Opacity%2A> of a <xref:System.Windows.Media.SolidColorBrush>.</span></span>  
   
-## 使用例  
- 3 つのアニメーションを使用して、<xref:System.Windows.Media.SolidColorBrush> の <xref:System.Windows.Media.SolidColorBrush.Color%2A> と <xref:System.Windows.Media.Brush.Opacity%2A> をアニメーション化する例を次に示します。  
+## <a name="example"></a><span data-ttu-id="793ad-104">例</span><span class="sxs-lookup"><span data-stu-id="793ad-104">Example</span></span>  
+ <span data-ttu-id="793ad-105">次の例は、アニメーション化する 3 つのアニメーションを使用して、<xref:System.Windows.Media.SolidColorBrush.Color%2A>と<xref:System.Windows.Media.Brush.Opacity%2A>の<xref:System.Windows.Media.SolidColorBrush>です。</span><span class="sxs-lookup"><span data-stu-id="793ad-105">The following example uses three animations to animate the <xref:System.Windows.Media.SolidColorBrush.Color%2A> and <xref:System.Windows.Media.Brush.Opacity%2A> of a <xref:System.Windows.Media.SolidColorBrush>.</span></span>  
   
--   1 つ目のアニメーション <xref:System.Windows.Media.Animation.ColorAnimation> では、マウスが四角形の中に入ると、ブラシの色が <xref:System.Windows.Media.Colors.Gray%2A> に変更されます。  
+-   <span data-ttu-id="793ad-106">最初のアニメーション、 <xref:System.Windows.Media.Animation.ColorAnimation>、ブラシの色を変更<xref:System.Windows.Media.Colors.Gray%2A>マウスが四角形に入ったとき。</span><span class="sxs-lookup"><span data-stu-id="793ad-106">The first animation, a <xref:System.Windows.Media.Animation.ColorAnimation>, changes the brush's color to <xref:System.Windows.Media.Colors.Gray%2A> when the mouse enters the rectangle.</span></span>  
   
--   2 つ目のアニメーションである、別の <xref:System.Windows.Media.Animation.ColorAnimation> では、マウスが四角形の外に出ると、ブラシの色が <xref:System.Windows.Media.Colors.Orange%2A> に変更されます。  
+-   <span data-ttu-id="793ad-107">次のアニメーション別<xref:System.Windows.Media.Animation.ColorAnimation>、ブラシの色を変更<xref:System.Windows.Media.Colors.Orange%2A>マウスが四角形を離れるときにします。</span><span class="sxs-lookup"><span data-stu-id="793ad-107">The next animation, another <xref:System.Windows.Media.Animation.ColorAnimation>, changes the brush's color to <xref:System.Windows.Media.Colors.Orange%2A> when the mouse leaves the rectangle.</span></span>  
   
--   最後のアニメーション <xref:System.Windows.Media.Animation.DoubleAnimation> では、マウスの左ボタンをクリックすると、ブラシの不透明度が 0.0 に変更されます。  
+-   <span data-ttu-id="793ad-108">最後のアニメーション、<xref:System.Windows.Media.Animation.DoubleAnimation>マウスの左ボタンが押されたときに、0.0 ブラシの不透明度を変更します。</span><span class="sxs-lookup"><span data-stu-id="793ad-108">The final animation, a <xref:System.Windows.Media.Animation.DoubleAnimation>, changes the brush's opacity to 0.0 when the left mouse button is pressed.</span></span>  
   
  [!code-csharp[brushanimations_snip#SolidColorBrushAnimationExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/brushanimations_snip/CSharp/SolidColorBrushExample.cs#solidcolorbrushanimationexample)]  
   
- さまざまな種類のブラシをアニメーション化する方法を示した、より完全なサンプルについては、[ブラシのサンプル](http://go.microsoft.com/fwlink/?LinkID=159973)を参照してください。  アニメーションの詳細については、「[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)」を参照してください。  
+ <span data-ttu-id="793ad-109">完全なサンプルは、さまざまな種類のブラシをアニメーション化する方法を表示するには、次を参照してください。、[ブラシ サンプル](http://go.microsoft.com/fwlink/?LinkID=159973)です。</span><span class="sxs-lookup"><span data-stu-id="793ad-109">For a more complete sample, which shows how to animate different types of brushes, see the [Brushes Sample](http://go.microsoft.com/fwlink/?LinkID=159973).</span></span> <span data-ttu-id="793ad-110">アニメーションの詳細については、次を参照してください。、[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="793ad-110">For more information about animation, see the [Animation Overview](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).</span></span>  
   
- 他のアニメーション例との一貫性を保つために、この例のコードでは、<xref:System.Windows.Media.Animation.Storyboard> オブジェクトを使用してアニメーションを適用しています。  ただし、コードで 1 つのアニメーションを適用する場合は、<xref:System.Windows.Media.Animation.Storyboard> よりも <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> メソッドを使用する方が簡単です。  例については、「[ストーリーボードを使用せずにプロパティをアニメーション化する](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)」を参照してください。  
+ <span data-ttu-id="793ad-111">この例のコードを使用して他のアニメーション例と一貫性を保つのため、<xref:System.Windows.Media.Animation.Storyboard>アニメーションを適用するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="793ad-111">For consistency with other animation examples, the code versions of this example use a <xref:System.Windows.Media.Animation.Storyboard> object to apply their animations.</span></span> <span data-ttu-id="793ad-112">ただし、コード内の 1 つのアニメーションを適用するときに使いやすく、<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>メソッドを使用してではなく、<xref:System.Windows.Media.Animation.Storyboard>です。</span><span class="sxs-lookup"><span data-stu-id="793ad-112">However, when applying a single animation in code, it's simpler to use the <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> method instead of using a <xref:System.Windows.Media.Animation.Storyboard>.</span></span> <span data-ttu-id="793ad-113">例については、「[ストーリーボードを使用せずにプロパティをアニメーション化する](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="793ad-113">For an example, see [Animate a Property Without Using a Storyboard](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md).</span></span>  
   
-## 参照  
- [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)   
- [ストーリーボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)   
- [ブラシのサンプル](http://go.microsoft.com/fwlink/?LinkID=159973)
+## <a name="see-also"></a><span data-ttu-id="793ad-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="793ad-114">See Also</span></span>  
+ [<span data-ttu-id="793ad-115">アニメーションの概要</span><span class="sxs-lookup"><span data-stu-id="793ad-115">Animation Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [<span data-ttu-id="793ad-116">ストーリーボードの概要</span><span class="sxs-lookup"><span data-stu-id="793ad-116">Storyboards Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)  
+ [<span data-ttu-id="793ad-117">ブラシのサンプル</span><span class="sxs-lookup"><span data-stu-id="793ad-117">Brushes Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=159973)

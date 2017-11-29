@@ -1,77 +1,78 @@
 ---
-title: "Windows フォームおよびアンマネージ アプリケーションの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "COM [Windows フォーム]"
-  - "Windows フォーム, アンマネージ"
-  - "COM 相互運用"
-  - "ActiveX コントロール [Windows フォーム], ActiveX コントロールの概要"
-  - "Windows フォーム, 相互運用"
+title: "Windows フォームおよびアンマネージ アプリケーションの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- COM [Windows Forms]
+- Windows Forms, unmanaged
+- COM interop
+- ActiveX controls [Windows Forms], about ActiveX controls
+- Windows Forms, interop
 ms.assetid: 0a26d99d-8135-4895-8760-c9a2b5f67f14
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ae36d1897b452767fae5f48bd6501c18f9405801
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォームおよびアンマネージ アプリケーションの概要
-Windows フォーム アプリケーションとコントロールは、いくつかの注意事項がありますが、アンマネージ アプリケーションと相互運用できます。 次のセクションでは、Windows フォーム アプリケーションとコントロールがサポートするシナリオと構成、および、サポートしないシナリオと構成について説明します。  
+# <a name="windows-forms-and-unmanaged-applications-overview"></a><span data-ttu-id="0752c-102">Windows フォームおよびアンマネージ アプリケーションの概要</span><span class="sxs-lookup"><span data-stu-id="0752c-102">Windows Forms and Unmanaged Applications Overview</span></span>
+<span data-ttu-id="0752c-103">Windows フォーム アプリケーションとコントロールは、いくつかの注意事項がありますが、アンマネージ アプリケーションと相互運用できます。</span><span class="sxs-lookup"><span data-stu-id="0752c-103">Windows Forms applications and controls can interoperate with unmanaged applications, with some caveats.</span></span> <span data-ttu-id="0752c-104">次のセクションでは、Windows フォーム アプリケーションとコントロールがサポートするシナリオと構成、および、サポートしないシナリオと構成について説明します。</span><span class="sxs-lookup"><span data-stu-id="0752c-104">The following sections describe the scenarios and configurations that Windows Forms applications and controls support and those that they do not support.</span></span>  
   
-## Windows フォーム コントロールおよび ActiveX アプリケーション  
- Microsoft Internet Explorer と Microsoft Foundation Classes \(MFC\) を除いて、Windows フォーム コントロールは、ActiveX コントロールをホストするように設計されたアプリケーションではサポートされません。 Visual Studio .NET 2003 より前のバージョンの Visual Studio からの ActiveX テスト コンテナーなど、ActiveX コントロールをホストできるその他のアプリケーションと開発ツールは、Windows Forms コントロールでサポートされるホストではありません。  
+## <a name="windows-forms-controls-and-activex-applications"></a><span data-ttu-id="0752c-105">Windows フォーム コントロールおよび ActiveX アプリケーション</span><span class="sxs-lookup"><span data-stu-id="0752c-105">Windows Forms Controls and ActiveX Applications</span></span>  
+ <span data-ttu-id="0752c-106">Microsoft Internet Explorer と Microsoft Foundation Classes (MFC) を除いて、Windows フォーム コントロールは、ActiveX コントロールをホストするように設計されたアプリケーションではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="0752c-106">With the exception of Microsoft Internet Explorer and Microsoft Foundation Classes (MFC), Windows Forms controls are not supported in applications designed to host ActiveX controls.</span></span> <span data-ttu-id="0752c-107">Visual Studio .NET 2003 より前のバージョンの Visual Studio からの ActiveX テスト コンテナーなど、ActiveX コントロールをホストできるその他のアプリケーションと開発ツールは、Windows Forms コントロールでサポートされるホストではありません。</span><span class="sxs-lookup"><span data-stu-id="0752c-107">Other applications and development tools that are capable of hosting ActiveX controls, including the ActiveX test containers from versions of Visual Studio that are earlier than Visual Studio .NET 2003, are not supported hosts for Windows Forms controls.</span></span>  
   
- これらの制約は、コンポーネント オブジェクト モデルの COM 相互運用機能を通じて、Windows フォーム コントロールの使用にも適用されます。 COM 呼び出し可能ラッパー \(CCW\) を通じた Windows フォーム コントロールの使用は、Internet Explorer でのみサポートされます。 COM 相互運用の詳細については、  
+ <span data-ttu-id="0752c-108">これらの制約は、コンポーネント オブジェクト モデルの COM 相互運用機能を通じて、Windows フォーム コントロールの使用にも適用されます。</span><span class="sxs-lookup"><span data-stu-id="0752c-108">These constraints also apply to the use of Windows Forms controls through Component Object Model COM interop.</span></span> <span data-ttu-id="0752c-109">COM 呼び出し可能ラッパー (CCW) を通じた Windows フォーム コントロールの使用は、Internet Explorer でのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="0752c-109">The use of a Windows Forms control through a COM callable wrapper (CCW) is supported only in Internet Explorer.</span></span> <span data-ttu-id="0752c-110">COM 相互運用の詳細については、</span><span class="sxs-lookup"><span data-stu-id="0752c-110">For more information about COM interop, see</span></span>  
   
- [COM Interop](../Topic/COM%20Interop%20\(Visual%20Basic\).md)。  
+ <span data-ttu-id="0752c-111">[COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)。</span><span class="sxs-lookup"><span data-stu-id="0752c-111">[COM Interop](../../../visual-basic/programming-guide/com-interop/index.md).</span></span>  
   
- Windows フォーム コントロールのサポートをホストしている、使用できる ActiveX を次の表に示します。  
+ <span data-ttu-id="0752c-112">Windows フォーム コントロールのサポートをホストしている、使用できる ActiveX を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="0752c-112">The following table shows the available ActiveX hosting support for Windows Forms controls.</span></span>  
   
-|Windows フォームのバージョン|Support|  
-|------------------------|-------------|  
-|.NET Framework version 1.0|Internet Explorer 5.01 以降のバージョン|  
-|.NET Framework version 1.1 以降|Internet Explorer 5.01 以降のバージョン<br /><br /> Microsoft Foundation Classes \(MFC\) 7.0 以降|  
+|<span data-ttu-id="0752c-113">Windows フォームのバージョン</span><span class="sxs-lookup"><span data-stu-id="0752c-113">Windows Forms version</span></span>|<span data-ttu-id="0752c-114">Support</span><span class="sxs-lookup"><span data-stu-id="0752c-114">Support</span></span>|  
+|---------------------------|-------------|  
+|<span data-ttu-id="0752c-115">.NET Framework version 1.0</span><span class="sxs-lookup"><span data-stu-id="0752c-115">.NET Framework version 1.0</span></span>|<span data-ttu-id="0752c-116">Internet Explorer 5.01 以降のバージョン</span><span class="sxs-lookup"><span data-stu-id="0752c-116">Internet Explorer 5.01 and later versions</span></span>|  
+|<span data-ttu-id="0752c-117">.NET Framework version 1.1 以降</span><span class="sxs-lookup"><span data-stu-id="0752c-117">.NET Framework version 1.1 and later</span></span>|<span data-ttu-id="0752c-118">Internet Explorer 5.01 以降のバージョン</span><span class="sxs-lookup"><span data-stu-id="0752c-118">Internet Explorer 5.01 and later versions</span></span><br /><br /> <span data-ttu-id="0752c-119">Microsoft Foundation Classes (MFC) 7.0 以降</span><span class="sxs-lookup"><span data-stu-id="0752c-119">Microsoft Foundation Classes (MFC) 7.0 and later</span></span>|  
   
-## ActiveX コントロールとして Windows フォームのコンポーネントをホストする  
- .NET Framework 1.1 では、MFC 7.0 以降のバージョンを含めるようサポートが拡張されました。 このサポートには、MFC 7.0 以降の ActiveX コントロール コンテナーと完全に互換性があるすべてのコンテナーが含まれています。  
+## <a name="hosting-windows-forms-components-as-activex-controls"></a><span data-ttu-id="0752c-120">ActiveX コントロールとして Windows フォームのコンポーネントをホストする</span><span class="sxs-lookup"><span data-stu-id="0752c-120">Hosting Windows Forms components as ActiveX controls</span></span>  
+ <span data-ttu-id="0752c-121">.NET Framework 1.1 では、MFC 7.0 以降のバージョンを含めるようサポートが拡張されました。</span><span class="sxs-lookup"><span data-stu-id="0752c-121">In the .NET Framework 1.1, support was extended to include MFC 7.0 and later versions.</span></span> <span data-ttu-id="0752c-122">このサポートには、MFC 7.0 以降の ActiveX コントロール コンテナーと完全に互換性があるすべてのコンテナーが含まれています。</span><span class="sxs-lookup"><span data-stu-id="0752c-122">This support includes any container that is fully compatible with the MFC 7.0 and later ActiveX control container.</span></span>  
   
- ただし、Windows フォーム コントロールの ActiveX コントロールとしての登録はサポートされません。 また、Windows フォーム コントロールの `com.ms.win32.Ole32.CoCreateInstance` メソッドの呼び出しはサポートされていません。 Windows フォーム コントロールのマネージ アクティベーションだけがサポートされます。 Windows フォーム コントロールを作成すると、ActiveX コントロールの場合と同様に MFC アプリケーションでホストできます。  
+ <span data-ttu-id="0752c-123">ただし、Windows フォーム コントロールの ActiveX コントロールとしての登録はサポートされません。</span><span class="sxs-lookup"><span data-stu-id="0752c-123">However, registration of Windows Forms controls as ActiveX controls is not supported.</span></span> <span data-ttu-id="0752c-124">また、Windows フォーム コントロールの `com.ms.win32.Ole32.CoCreateInstance` メソッドの呼び出しはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="0752c-124">Also, calling the `com.ms.win32.Ole32.CoCreateInstance` method for Windows Forms controls is not supported.</span></span> <span data-ttu-id="0752c-125">Windows フォーム コントロールのマネージ アクティベーションだけがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="0752c-125">Only managed activation of Windows Forms controls is supported.</span></span> <span data-ttu-id="0752c-126">Windows フォーム コントロールを作成すると、ActiveX コントロールの場合と同様に MFC アプリケーションでホストできます。</span><span class="sxs-lookup"><span data-stu-id="0752c-126">Once you create a Windows Forms control, you can host it in an MFC application just as with an ActiveX control.</span></span>  
   
- アンマネージ アプリケーションで Windows フォーム コントロールを使用するには、アンマネージ CLR ホスティング API を使用して CLR をホストするか、C\+\+ interop 機能を使用する必要があります。 C\+\+ interop 機能の使用が、推奨されるソリューションです。  
+ <span data-ttu-id="0752c-127">アンマネージ アプリケーションで Windows フォーム コントロールを使用するには、アンマネージ CLR ホスティング API を使用して CLR をホストするか、C++ interop 機能を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0752c-127">To use Windows Forms controls in your unmanaged application, you must either host the CLR using the unmanaged CLR hosting APIs or use the C++ interop features.</span></span> <span data-ttu-id="0752c-128">C++ interop 機能の使用が、推奨されるソリューションです。</span><span class="sxs-lookup"><span data-stu-id="0752c-128">Using the C++ interop features is the recommended solution.</span></span>  
   
-## COM クライアント アプリケーションでの Windows フォーム  
- Windows フォームを Visual Basic 6.0 アプリケーションや MFC アプリケーションなどの COM クライアント アプリケーションから開くと、フォームが予期しない動作をすることがあります。 たとえば、TAB キーを押した時に、フォーカスが 1 つのコントロールから別のコントロールに変更されません。 コマンド ボタンにフォーカスがあるときに ENTER キーを押すと、ボタンの <xref:System.Windows.Forms.Control.Click> イベントは発生しません。 また、キー ストロークやマウスのアクティビティで、予期しない動作が発生することもあります。  
+## <a name="windows-forms-in-com-client-applications"></a><span data-ttu-id="0752c-129">COM クライアント アプリケーションでの Windows フォーム</span><span class="sxs-lookup"><span data-stu-id="0752c-129">Windows Forms in COM client applications</span></span>  
+ <span data-ttu-id="0752c-130">Windows フォームを Visual Basic 6.0 アプリケーションや MFC アプリケーションなどの COM クライアント アプリケーションから開くと、フォームが予期しない動作をすることがあります。</span><span class="sxs-lookup"><span data-stu-id="0752c-130">When you open a Windows Form from a COM client application, such as a Visual Basic 6.0 application or an MFC application, the form may behave unexpectedly.</span></span> <span data-ttu-id="0752c-131">たとえば、TAB キーを押した時に、フォーカスが 1 つのコントロールから別のコントロールに変更されません。</span><span class="sxs-lookup"><span data-stu-id="0752c-131">For example, when you press the TAB key, the focus does not change from one control to another control.</span></span> <span data-ttu-id="0752c-132">コマンド ボタンにフォーカスがあるときに ENTER キーを押すと、ボタンの <xref:System.Windows.Forms.Control.Click> イベントは発生しません。</span><span class="sxs-lookup"><span data-stu-id="0752c-132">When you press the ENTER key while a command button has focus, the button's <xref:System.Windows.Forms.Control.Click> event is not raised.</span></span> <span data-ttu-id="0752c-133">また、キー ストロークやマウスのアクティビティで、予期しない動作が発生することもあります。</span><span class="sxs-lookup"><span data-stu-id="0752c-133">You may also experience unexpected behavior for keystrokes or mouse activity.</span></span>  
   
- この動作は、Windows フォームが正常に動作するために必要なメッセージ ループ サポートを、アンマネージ アプリケーションが実装していないために発生します。 COM クライアント アプリケーションによって提供されるメッセージ ループは、Windows フォームのメッセージ ループと基本的に異なります。  
+ <span data-ttu-id="0752c-134">この動作は、Windows フォームが正常に動作するために必要なメッセージ ループ サポートを、アンマネージ アプリケーションが実装していないために発生します。</span><span class="sxs-lookup"><span data-stu-id="0752c-134">This behavior occurs because the unmanaged application does not implement the message loop support that Windows Forms requires to work correctly.</span></span> <span data-ttu-id="0752c-135">COM クライアント アプリケーションによって提供されるメッセージ ループは、Windows フォームのメッセージ ループと基本的に異なります。</span><span class="sxs-lookup"><span data-stu-id="0752c-135">The message loop provided by the COM client application is fundamentally different from the Windows Forms message loop.</span></span>  
   
- アプリケーションのメッセージ ループは、スレッドのメッセージ キューのメッセージを取得して変換し、処理のためにアプリケーションに送信する内部プログラム ループです。 Windows フォームのメッセージ ループは、Visual Basic 6.0 アプリケーションや MFC アプリケーションなど、以前のアプリケーションが提供するメッセージ ループと同じアーキテクチャを持っていません。 メッセージ ループにポストされたウィンドウのメッセージは、Windows フォームの要求とは異なる処理を実行することがあります。 そのため、予期しない動作が発生する可能性があります。 一部のキーストロークの組み合わせ、一部のマウスのアクティビティが動作せず、一部のイベントが想定どおりに発生しないことがあります。  
+ <span data-ttu-id="0752c-136">アプリケーションのメッセージ ループは、スレッドのメッセージ キューのメッセージを取得して変換し、処理のためにアプリケーションに送信する内部プログラム ループです。</span><span class="sxs-lookup"><span data-stu-id="0752c-136">An application's message loop is an internal program loop that retrieves messages from a thread's message queue, translates them, and then sends them to the application to be handled.</span></span> <span data-ttu-id="0752c-137">Windows フォームのメッセージ ループは、Visual Basic 6.0 アプリケーションや MFC アプリケーションなど、以前のアプリケーションが提供するメッセージ ループと同じアーキテクチャを持っていません。</span><span class="sxs-lookup"><span data-stu-id="0752c-137">The message loop for a Windows Form does not have the same architecture as message loops that earlier applications, such as Visual Basic 6.0 applications and MFC applications, provide.</span></span> <span data-ttu-id="0752c-138">メッセージ ループにポストされたウィンドウのメッセージは、Windows フォームの要求とは異なる処理を実行することがあります。</span><span class="sxs-lookup"><span data-stu-id="0752c-138">The window messages that are posted to the message loop may be handled differently than the Windows Form expects.</span></span> <span data-ttu-id="0752c-139">そのため、予期しない動作が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="0752c-139">Therefore, unexpected behavior may occur.</span></span> <span data-ttu-id="0752c-140">一部のキーストロークの組み合わせ、一部のマウスのアクティビティが動作せず、一部のイベントが想定どおりに発生しないことがあります。</span><span class="sxs-lookup"><span data-stu-id="0752c-140">Some keystroke combinations may not work, some mouse activity may not work, or some events may not be raised as expected.</span></span>  
   
-## 相互運用性の問題の解決  
- これらの問題は、<xref:System.Windows.Forms.Application.Run%2A?displayProperty=fullName> メソッドを使用して作成された [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] メッセージ ループでフォームを表示することで解決できます。  
+## <a name="resolving-interoperability-issues"></a><span data-ttu-id="0752c-141">相互運用性の問題の解決</span><span class="sxs-lookup"><span data-stu-id="0752c-141">Resolving Interoperability Issues</span></span>  
+ <span data-ttu-id="0752c-142">これらの問題は、<xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> メソッドを使用して作成された [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] メッセージ ループでフォームを表示することで解決できます。</span><span class="sxs-lookup"><span data-stu-id="0752c-142">You can resolve these problems by displaying the form on a [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] message loop, which is created by using the <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> method.</span></span>  
   
- Windows フォームが COM クライアント アプリケーションから正しく動作するには、Windows フォームのメッセージ ループ上で実行する必要があります。 そのためには、次の方法のいずれかを使用します。  
+ <span data-ttu-id="0752c-143">Windows フォームが COM クライアント アプリケーションから正しく動作するには、Windows フォームのメッセージ ループ上で実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0752c-143">To make a Windows Form work correctly from a COM client application, you must run it on a Windows Forms message loop.</span></span> <span data-ttu-id="0752c-144">そのためには、次の方法のいずれかを使用します。</span><span class="sxs-lookup"><span data-stu-id="0752c-144">To do this, use one of the following approaches:</span></span>  
   
--   <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=fullName> メソッドを使用して、Windows フォームを表示します。 詳細については、「[方法 : ShowDialog メソッドで Windows フォームを表示して COM 相互運用機能をサポートする](../../../../docs/framework/winforms/advanced/com-interop-by-displaying-a-windows-form-shadow.md)」を参照してください。  
+-   <span data-ttu-id="0752c-145"><xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> メソッドを使用して、Windows フォームを表示します。</span><span class="sxs-lookup"><span data-stu-id="0752c-145">Use the <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> method to display the Windows Form.</span></span> <span data-ttu-id="0752c-146">詳細については、「 [How to: Support COM Interop by Displaying a Windows Form with the ShowDialog Method](../../../../docs/framework/winforms/advanced/com-interop-by-displaying-a-windows-form-shadow.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0752c-146">For more information, see [How to: Support COM Interop by Displaying a Windows Form with the ShowDialog Method](../../../../docs/framework/winforms/advanced/com-interop-by-displaying-a-windows-form-shadow.md).</span></span>  
   
--   各 Windows フォームを新しいスレッドで表示します。 詳細については、「[方法 : 独自のスレッドで各 Windows フォームを表示して COM 相互運用機能をサポートする](../../../../docs/framework/winforms/advanced/how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md)」を参照してください。  
+-   <span data-ttu-id="0752c-147">各 Windows フォームを新しいスレッドで表示します。</span><span class="sxs-lookup"><span data-stu-id="0752c-147">Display each Windows Form on a new thread.</span></span> <span data-ttu-id="0752c-148">詳細については、「[方法 : 独自のスレッドで各 Windows フォームを表示して COM 相互運用機能をサポートする](../../../../docs/framework/winforms/advanced/how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0752c-148">For more information, see [How to: Support COM Interop by Displaying Each Windows Form on Its Own Thread](../../../../docs/framework/winforms/advanced/how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md).</span></span>  
   
-## 参照  
- [Windows フォームとアンマネージ アプリケーション](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)   
- [COM Interop](../Topic/COM%20Interop%20\(Visual%20Basic\).md)   
- [COM Interoperability in .NET Framework Applications](../Topic/COM%20Interoperability%20in%20.NET%20Framework%20Applications%20\(Visual%20Basic\).md)   
- [COM Interoperability Samples](http://msdn.microsoft.com/ja-jp/09c38567-6380-4d70-848a-e896a4ca05f4)   
- [Aximp.exe \(Windows フォーム ActiveX コントロール インポーター\)](../../../../docs/framework/tools/aximp-exe-windows-forms-activex-control-importer.md)   
- [COM への .NET Framework コンポーネントの公開](../../../../docs/framework/interop/exposing-dotnet-components-to-com.md)   
- [COM 用のアセンブリのパッケージ化](../../../../docs/framework/interop/packaging-an-assembly-for-com.md)   
- [COM へのアセンブリの登録](../../../../docs/framework/interop/registering-assemblies-with-com.md)   
- [方法 : ShowDialog メソッドで Windows フォームを表示して COM 相互運用機能をサポートする](../../../../docs/framework/winforms/advanced/com-interop-by-displaying-a-windows-form-shadow.md)   
- [方法 : 独自のスレッドで各 Windows フォームを表示して COM 相互運用機能をサポートする](../../../../docs/framework/winforms/advanced/how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md)
+## <a name="see-also"></a><span data-ttu-id="0752c-149">関連項目</span><span class="sxs-lookup"><span data-stu-id="0752c-149">See Also</span></span>  
+ [<span data-ttu-id="0752c-150">Windows フォームとアンマネージ アプリケーション</span><span class="sxs-lookup"><span data-stu-id="0752c-150">Windows Forms and Unmanaged Applications</span></span>](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)  
+ [<span data-ttu-id="0752c-151">COM 相互運用</span><span class="sxs-lookup"><span data-stu-id="0752c-151">COM Interop</span></span>](../../../visual-basic/programming-guide/com-interop/index.md)  
+ [<span data-ttu-id="0752c-152">.NET Framework アプリケーションにおける COM 相互運用性</span><span class="sxs-lookup"><span data-stu-id="0752c-152">COM Interoperability in .NET Framework Applications</span></span>](~/docs/visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)  
+ [<span data-ttu-id="0752c-153">COM 相互運用性サンプル</span><span class="sxs-lookup"><span data-stu-id="0752c-153">COM Interoperability Samples</span></span>](http://msdn.microsoft.com/en-us/09c38567-6380-4d70-848a-e896a4ca05f4)  
+ [<span data-ttu-id="0752c-154">Aximp.exe (Windows フォーム ActiveX コントロール インポーター)</span><span class="sxs-lookup"><span data-stu-id="0752c-154">Aximp.exe (Windows Forms ActiveX Control Importer)</span></span>](../../../../docs/framework/tools/aximp-exe-windows-forms-activex-control-importer.md)  
+ [<span data-ttu-id="0752c-155">COM への .NET Framework コンポーネントの公開</span><span class="sxs-lookup"><span data-stu-id="0752c-155">Exposing .NET Framework Components to COM</span></span>](../../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
+ [<span data-ttu-id="0752c-156">COM 用のアセンブリのパッケージ化</span><span class="sxs-lookup"><span data-stu-id="0752c-156">Packaging an Assembly for COM</span></span>](../../../../docs/framework/interop/packaging-an-assembly-for-com.md)  
+ [<span data-ttu-id="0752c-157">COM へのアセンブリの登録</span><span class="sxs-lookup"><span data-stu-id="0752c-157">Registering Assemblies with COM</span></span>](../../../../docs/framework/interop/registering-assemblies-with-com.md)  
+ [<span data-ttu-id="0752c-158">方法: ShowDialog メソッドで Windows フォームを表示して COM 相互運用機能をサポートする</span><span class="sxs-lookup"><span data-stu-id="0752c-158">How to: Support COM Interop by Displaying a Windows Form with the ShowDialog Method</span></span>](../../../../docs/framework/winforms/advanced/com-interop-by-displaying-a-windows-form-shadow.md)  
+ [<span data-ttu-id="0752c-159">方法: 独自のスレッドで各 Windows フォームを表示して COM 相互運用機能をサポートする</span><span class="sxs-lookup"><span data-stu-id="0752c-159">How to: Support COM Interop by Displaying Each Windows Form on Its Own Thread</span></span>](../../../../docs/framework/winforms/advanced/how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md)

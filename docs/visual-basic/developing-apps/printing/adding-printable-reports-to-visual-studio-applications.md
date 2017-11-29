@@ -1,111 +1,108 @@
 ---
-title: "Adding Printable Reports to Visual Studio Applications | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "printing [Visual Studio], reports"
-  - "reports, printing in Visual Studio"
+title: "Visual Studio アプリケーションへの印刷可能なレポートの追加"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- printing [Visual Studio], reports
+- reports [Visual Basic], printing in Visual Studio
 ms.assetid: 93928405-ef41-495e-bce2-9d43d5a7080a
-caps.latest.revision: 27
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 27
+caps.latest.revision: "27"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 4ce2a8b12d8202a9f201a82b0d4a571249210d48
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# Adding Printable Reports to Visual Studio Applications
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-Visual Studio では、Visual Basic アプリケーションにリッチ データ レポート機能を追加するのに役立つさまざまなレポート ソリューションが用意されています。  レポート ビューアー コントロール、Crystal Reports、または SQL Server Reporting Services を使用して、レポートを作成したり追加したりできます。  
+# <a name="adding-printable-reports-to-visual-studio-applications"></a><span data-ttu-id="e88aa-102">Visual Studio アプリケーションへの印刷可能なレポートの追加</span><span class="sxs-lookup"><span data-stu-id="e88aa-102">Adding Printable Reports to Visual Studio Applications</span></span>
+<span data-ttu-id="e88aa-103">Visual Studio では、さまざまな豊富なデータを Visual Basic アプリケーションにレポートを追加するためのレポート ソリューションをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="e88aa-103">Visual Studio supports a variety of reporting solutions to help you add rich data reporting to your Visual Basic applications.</span></span> <span data-ttu-id="e88aa-104">作成し、ReportViewer コントロール、Crystal Reports、または SQL Server Reporting Services を使用してレポートを追加できます。</span><span class="sxs-lookup"><span data-stu-id="e88aa-104">You can create and add reports using ReportViewer controls, Crystal Reports, or SQL Server Reporting Services.</span></span>  
   
 > [!NOTE]
->  SQL Server Reporting Services は、Visual Studio ではなく SQL Server 2005 の一部です。  Reporting Services は、SQL Server 2005 をインストールしていなければ、システムにインストールされていません。  
+>  <span data-ttu-id="e88aa-105">SQL Server Reporting Services は、Visual Studio ではなく、SQL Server 2005 の一部です。</span><span class="sxs-lookup"><span data-stu-id="e88aa-105">SQL Server Reporting Services is part of SQL Server 2005 rather than Visual Studio.</span></span> <span data-ttu-id="e88aa-106">Reporting Services が SQL Server 2005 をインストールしていない限り、システムにインストールされていません。</span><span class="sxs-lookup"><span data-stu-id="e88aa-106">Reporting Services not installed on your system unless you have installed SQL Server 2005.</span></span>  
   
-## Visual Basic アプリケーションの Microsoft レポート テクノロジの概要  
- アプリケーションで Microsoft レポート テクノロジを使用するには、以下のいずれかの方法を選択します。  
+## <a name="overview-of-microsoft-reporting-technology-in-visual-basic-applications"></a><span data-ttu-id="e88aa-107">Visual Basic アプリケーションで Microsoft レポート テクノロジの概要</span><span class="sxs-lookup"><span data-stu-id="e88aa-107">Overview of Microsoft Reporting Technology in Visual Basic Applications</span></span>  
+ <span data-ttu-id="e88aa-108">Microsoft レポート アプリケーションでのテクノロジを使用する、次の方法から選択します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-108">Choose from the following approaches to use a Microsoft reporting technology in your application:</span></span>  
   
--   レポート ビューアー コントロールの 1 つ以上のインスタンスを Visual Basic Windows アプリケーションに追加します。  
+-   <span data-ttu-id="e88aa-109">Visual Basic Windows アプリケーションに ReportViewer コントロールの 1 つまたは複数のインスタンスを追加します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-109">Add one or more instances of a ReportViewer control to a Visual Basic Windows application.</span></span>  
   
--   レポート サーバー Web サービスを呼び出すことにより、プログラムによって SQL Server Reporting Services を統合します。  
+-   <span data-ttu-id="e88aa-110">レポート サーバー Web サービスを呼び出すことにより、SQL Server Reporting Services をプログラムで統合します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-110">Integrate SQL Server Reporting Services programmatically by making calls to the Report Server Web service.</span></span>  
   
--   レポート ビューアー コントロールと Microsoft SQL Server 2005 Reporting Services を併用します。レポート ビューアー コントロールはレポート ビューアーとして、レポート サーバーはレポート プロセッサとして使用します。  レポート サーバーと レポート ビューアー コントロールを併用する場合は、SQL Server 2005 バージョンの Reporting Services を使用する必要があります。  
+-   <span data-ttu-id="e88aa-111">ReportViewer コントロールと Microsoft SQL Server 2005 Reporting Services 一緒に使用、レポート プロセッサとしてコントロールをレポート ビューアーとレポート サーバーとして使用します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-111">Use the ReportViewer control and Microsoft SQL Server 2005 Reporting Services together, using the control as a report viewer and a report server as a report processor.</span></span> <span data-ttu-id="e88aa-112">(、レポート サーバーと ReportViewer コントロールを一緒に使用する場合は、SQL Server 2005 バージョンの Reporting Services を使用する必要がありますに注意してください。)</span><span class="sxs-lookup"><span data-stu-id="e88aa-112">(Note that you must use the SQL Server 2005 version of Reporting Services if you want to use a report server and the ReportViewer control together).</span></span>  
   
-## レポート ビューアー コントロールの使用  
- レポート機能を Visual Basic Windows アプリケーションに組み込む一番簡単な方法は、アプリケーションのフォームにレポート ビューアー コントロールを追加することです。  このコントロールは、レポート処理機能を直接アプリケーションに追加し、統合レポート デザイナーを提供して、ADO.NET データ オブジェクトのデータを使用してレポートを作成できるようにします。  多機能 API により、プログラムによってコントロールおよびレポートにアクセスして、ランタイム機能を構成できます。  
+## <a name="using-reportviewer-controls"></a><span data-ttu-id="e88aa-113">ReportViewer コントロールを使用します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-113">Using ReportViewer Controls</span></span>  
+ <span data-ttu-id="e88aa-114">Visual Basic Windows アプリケーションにレポート機能を埋め込むには最も簡単な方法は、ReportViewer コントロールをアプリケーションのフォームに追加するのにです。</span><span class="sxs-lookup"><span data-stu-id="e88aa-114">The easiest way to embed report functionality into a Visual Basic Windows application is to add the ReportViewer control to a form in your application.</span></span> <span data-ttu-id="e88aa-115">コントロールは、処理機能をアプリケーションに直接レポートを追加し、統合されたレポート デザイナーを提供し、任意の ADO.NET データ オブジェクトからデータを使用してレポートを作成できるようにします。</span><span class="sxs-lookup"><span data-stu-id="e88aa-115">The control adds report processing capabilities directly to your application and provides an integrated report designer so that you can build reports using data from any ADO.NET data object.</span></span> <span data-ttu-id="e88aa-116">全機能を備えた API では、コントロールにプログラムからアクセスし、実行時の機能を構成することができるようにを報告します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-116">A full-featured API provides programmatic access to the control and reports so that you can configure run-time functionality.</span></span>  
   
- レポート ビューアーには、単一の無償配布データ コントロール内にレポート処理機能とレポート表示機能が組み込まれています。  次のようなレポート機能が必要な場合は、レポート ビューアー コントロールを選択します。  
+ <span data-ttu-id="e88aa-117">ReportViewer は、組み込みのレポート処理および表示、自由に配布できる単一のデータ コントロール内の機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-117">ReportViewer provides built-in report processing and viewing capability in a single, freely distributable data control.</span></span> <span data-ttu-id="e88aa-118">次のレポート機能を必要とする場合、レポート ビューアー コントロールを選択します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-118">Choose ReportViewer controls if you require the following report functionality:</span></span>  
   
--   クライアント アプリケーションでのレポート処理。  処理されたレポートは、コントロールが提供するビュー領域に表示されます。  
+-   <span data-ttu-id="e88aa-119">レポート クライアント アプリケーションで処理します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-119">Report processing in the client application.</span></span> <span data-ttu-id="e88aa-120">コントロールによって提供される、表示領域で、処理されたレポートが表示されます。</span><span class="sxs-lookup"><span data-stu-id="e88aa-120">A processed report appears in a view area provided by the control.</span></span>  
   
--   ADO.NET データ テーブルへのデータ バインディング。  コントロールに渡される <xref:System.Data.DataTable> インスタンスを使用するレポートを作成できます。  ビジネス オブジェクトに直接バインドすることもできます。  
+-   <span data-ttu-id="e88aa-121">ADO.NET データ テーブルにデータ バインディング。</span><span class="sxs-lookup"><span data-stu-id="e88aa-121">Data binding to ADO.NET data tables.</span></span> <span data-ttu-id="e88aa-122">使用するレポートを作成することができます<xref:System.Data.DataTable>インスタンス コントロールを提供します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-122">You can create reports that consume <xref:System.Data.DataTable> instances supplied to the control.</span></span> <span data-ttu-id="e88aa-123">ビジネス オブジェクトに直接バインドすることもできます。</span><span class="sxs-lookup"><span data-stu-id="e88aa-123">You can also bind directly to business objects.</span></span>  
   
--   アプリケーションに組み込むことができる再頒布可能なコントロール。  
+-   <span data-ttu-id="e88aa-124">アプリケーションに含めることができる再頒布可能パッケージを制御します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-124">Redistributable controls that you can include in your application.</span></span>  
   
--   ページの移動、印刷、検索、エクスポート形式などのランタイム機能。  レポート ビューアーのツール バーでこれらの操作がサポートされています。  
+-   <span data-ttu-id="e88aa-125">ページ ナビゲーション、印刷、検索、およびエクスポート形式などのランタイム機能。</span><span class="sxs-lookup"><span data-stu-id="e88aa-125">Runtime functionality such as page navigation, printing, searching, and export formats.</span></span> <span data-ttu-id="e88aa-126">ReportViewer ツールバーは、これらの操作のサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-126">A ReportViewer toolbar provides support for these operations.</span></span>  
   
- レポート ビューアー コントロールを使用する場合は、レポート ビューアー コントロールを、Visual Studio のツールボックスの **\[データ\]** セクションから Visual Basic Windows アプリケーションのフォームにドラッグできます。  
+ <span data-ttu-id="e88aa-127">ReportViewer コントロールを使用するドラッグしてから、**データ**Visual Basic Windows アプリケーションのフォーム上に Visual Studio ツールボックスのセクションです。</span><span class="sxs-lookup"><span data-stu-id="e88aa-127">To use the ReportViewer control, you can drag it from the **Data** section of the Visual Studio Toolbox onto a form in your Visual Basic Windows application.</span></span>  
   
-### Visual Studio でのレポート ビューアー コントロールに対応するレポートの作成  
- レポート ビューアーで実行するレポートを作成するには、プロジェクトに **レポート** テンプレートを追加します。  Visual Studio により、クライアント レポート定義ファイル \(.rdlc\) が作成され、プロジェクトにファイルが追加され、Visual Studio ワークスペース上に統合レポート デザイナーが開きます。  
+### <a name="creating-reports-in-visual-studio-for-reportviewer-controls"></a><span data-ttu-id="e88aa-128">ReportViewer コントロール用の Visual Studio でレポートを作成します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-128">Creating Reports in Visual Studio for ReportViewer Controls</span></span>  
+ <span data-ttu-id="e88aa-129">レポート ビューアーで実行されるレポートをビルドするには、追加、**レポート**プロジェクト テンプレート。</span><span class="sxs-lookup"><span data-stu-id="e88aa-129">To build a report that runs in ReportViewer, add a **Report** template to your project.</span></span> <span data-ttu-id="e88aa-130">Visual Studio は、クライアント レポート定義 (.rdlc) ファイルを作成、ファイル、プロジェクトに追加し、Visual Studio ワークスペースに統合されたレポート デザイナーを開きます。</span><span class="sxs-lookup"><span data-stu-id="e88aa-130">Visual Studio creates a client report definition file (.rdlc), adds the file to your project, and opens an integrated report designer in the Visual Studio workspace.</span></span>  
   
- Visual Studio レポート デザイナーは **\[データ ソース\]** ウィンドウと統合されています。  **\[データ ソース\]** ウィンドウからレポートにフィールドをドラッグすると、レポート デザイナーはデータ ソースについてのメタデータをレポート定義ファイルにコピーします。  このメタデータは、レポート ビューアー コントロールがデータ バインディング コードを自動的に生成するために使用します。  
+ <span data-ttu-id="e88aa-131">Visual Studio レポート デザイナーとの統合、**データソース**ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="e88aa-131">The Visual Studio Report Designer integrates with the **Data Sources** window.</span></span> <span data-ttu-id="e88aa-132">フィールドをドラッグすると、**データソース**レポート、レポート デザイナーにウィンドウが、レポート定義ファイルにデータ ソースに関するメタデータをコピーします。</span><span class="sxs-lookup"><span data-stu-id="e88aa-132">When you drag a field from the **Data Sources** window to the report, the Report Designer copies metadata about the data source into the report definition file.</span></span> <span data-ttu-id="e88aa-133">このメタデータは自動的にデータ バインド コードを生成する ReportViewer コントロールによって使用します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-133">This metadata is used by the ReportViewer control to automatically generate data-binding code.</span></span>  
   
- Visual Studio レポート デザイナーにプレビュー機能はありません。  レポートをプレビューするには、アプリケーションを実行し、そのアプリケーションに埋め込まれているレポートをプレビューします。  
+ <span data-ttu-id="e88aa-134">Visual Studio レポート デザイナーでは、レポートのプレビュー機能は含まれません。</span><span class="sxs-lookup"><span data-stu-id="e88aa-134">The Visual Studio Report Designer does not include report preview functionality.</span></span> <span data-ttu-id="e88aa-135">レポートをプレビューするには、アプリケーションを実行し、そこに埋め込まれたレポートをプレビューします。</span><span class="sxs-lookup"><span data-stu-id="e88aa-135">To preview your report, run the application and preview the report embedded in it.</span></span>  
   
-||  
-|-|  
-|アプリケーションに基本的なレポート機能を追加するには|  
-|1.  レポート ビューアー コントロールを、**ツールボックス**の **\[データ\]** タブからフォーム上にドラッグします。<br />2.  **\[プロジェクト\]** メニューの **\[新しい項目の追加\]** をクリックします。  **\[新しい項目の追加\]** ダイアログ ボックスの **\[レポート\]** アイコンを選択し、**\[追加\]** をクリックします。<br />     開発環境にレポート デザイナーが開き、レポート \(.rdlc\) ファイルがプロジェクトに追加されます。<br />3.  レポート アイテムを**ツールボックス**からレポート レイアウトにドラッグし、必要に応じて配置替えします。<br />4.  フィールドを **\[データ ソース\]** ウィンドウからレポート レイアウト上のレポート アイテムにドラッグします。|  
+|<span data-ttu-id="e88aa-136">基本的なレポート機能をアプリケーションに追加するには</span><span class="sxs-lookup"><span data-stu-id="e88aa-136">To add basic report functionality to your application</span></span>|  
+|---|    
+|<span data-ttu-id="e88aa-137">1.ReportViewer コントロールをドラッグして、**データ**のタブ、**ツールボックス**フォーム上にします。</span><span class="sxs-lookup"><span data-stu-id="e88aa-137">1.  Drag a ReportViewer control from the **Data** tab of the **Toolbox** onto your form.</span></span><br /><span data-ttu-id="e88aa-138">2.**[プロジェクト]** メニューの **[新しい項目の追加]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="e88aa-138">2.  On the **Project** menu, choose **Add New Item**.</span></span> <span data-ttu-id="e88aa-139">**新しい項目の追加**ダイアログ ボックスで、**レポート**アイコンをクリックしてをクリックして**追加**です。</span><span class="sxs-lookup"><span data-stu-id="e88aa-139">In the **Add New Item** dialog box, select the **Report** icon and click **Add**.</span></span><br />     <span data-ttu-id="e88aa-140">レポート デザイナーで、開発環境が開きレポート (.rdlc) ファイルがプロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-140">The Report Designer opens in the development environment, and a report (.rdlc) file is added to the project.</span></span><br /><span data-ttu-id="e88aa-141">3.レポート アイテムをドラッグして、**ツールボックス**レポート レイアウト上とするように配置します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-141">3.  Drag report items from the **Toolbox** on the report layout and arrange them as you want.</span></span><br /><span data-ttu-id="e88aa-142">4.フィールドをドラッグ、**データソース**レポート レイアウトでのレポート アイテムにウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="e88aa-142">4.  Drag fields from the **Data Sources** window to the report items in the report layout.</span></span>|  
   
-## Visual Basic アプリケーションでの Reporting Services の使用  
- Reporting Services は SQL Server に組み込まれているサーバー ベースのレポート テクノロジです。  Reporting Services には、レポート ビューアー コントロールにはない機能が含まれています。  次のような機能が必要な場合は、Reporting Services を選択します。  
+## <a name="using-reporting-services-in-visual-basic-applications"></a><span data-ttu-id="e88aa-143">Visual Basic アプリケーションでの Reporting Services の使用</span><span class="sxs-lookup"><span data-stu-id="e88aa-143">Using Reporting Services in Visual Basic Applications</span></span>  
+ <span data-ttu-id="e88aa-144">Reporting Services は、SQL Server に含まれているサーバーに基づくレポート テクノロジです。</span><span class="sxs-lookup"><span data-stu-id="e88aa-144">Reporting Services is a server-based reporting technology that is included with SQL Server.</span></span> <span data-ttu-id="e88aa-145">Reporting Services には、ReportViewer コントロールに記載されていないその他の機能が含まれます。</span><span class="sxs-lookup"><span data-stu-id="e88aa-145">Reporting Services includes additional features that are not found in the ReportViewer controls.</span></span> <span data-ttu-id="e88aa-146">次の機能のいずれかが必要な場合は、Reporting Services を選択します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-146">Choose Reporting Services if you require any of the following features:</span></span>  
   
--   複雑なレポートや長期のレポート、および大容量レポート アクティビティに対して優れたパフォーマンスを提供する、スケール アウトの配置とサーバー側のレポート処理。  
+-   <span data-ttu-id="e88aa-147">スケール アウト配置と複雑なまたは実行時間の長いレポートおよびの大量のレポートの利用状況、パフォーマンスの向上を提供するサーバー側のレポート処理。</span><span class="sxs-lookup"><span data-stu-id="e88aa-147">Scale-out deployment and server-side report processing that provides improved performance for complex or long-running reports and for high-volume report activity.</span></span>  
   
--   カスタム レポート制御とリッチ レンダリング出力形式をサポートする、統合されたデータ処理とレポート処理。  
+-   <span data-ttu-id="e88aa-148">統合されたデータとレポート処理、カスタム レポート コントロールと豊富な出力形式のレンダリングをサポートします。</span><span class="sxs-lookup"><span data-stu-id="e88aa-148">Integrated data and report processing, with support for custom report controls and rich rendering output formats.</span></span>  
   
--   レポートの実行時間を正確に指定できるレポート スケジュール処理。  
+-   <span data-ttu-id="e88aa-149">レポートの実行時に正確に指定できるようにレポートの処理をスケジュールします。</span><span class="sxs-lookup"><span data-stu-id="e88aa-149">Scheduled report processing so that you can specify exactly when reports are run.</span></span>  
   
--   電子メールを使用した、またはファイル共有場所への、サブスクライバー ベースのレポート配布。  
+-   <span data-ttu-id="e88aa-150">電子メールまたはファイル共有の場所に、分布をサブスクライバーに基づいたレポートです。</span><span class="sxs-lookup"><span data-stu-id="e88aa-150">Subscriber-based report distribution through e-mail or to file share locations.</span></span>  
   
--   ビジネス ユーザーが適宜レポートを作成できるアドホック レポート。  
+-   <span data-ttu-id="e88aa-151">アドホック レポートの必要に応じて、ビジネス ユーザーがレポートを作成できるようにします。</span><span class="sxs-lookup"><span data-stu-id="e88aa-151">Ad hoc reporting so that business users can create reports as needed.</span></span>  
   
--   カスタマイズされたレポート出力を動的な受信者リストにルーティングするデータドリブン サブスクリプション。  
+-   <span data-ttu-id="e88aa-152">データ ドリブン サブスクリプションで動的な受信者一覧にカスタマイズされたレポート出力をルーティングします。</span><span class="sxs-lookup"><span data-stu-id="e88aa-152">Data-driven subscriptions that route customized report output to a dynamic list of recipients.</span></span>  
   
--   データ処理、レポート配信、カスタム認証、およびレポート レンダリング用のカスタム拡張機能。  
+-   <span data-ttu-id="e88aa-153">データ処理、レポートの配信、カスタム認証、およびレポートの表示用のカスタム拡張機能です。</span><span class="sxs-lookup"><span data-stu-id="e88aa-153">Custom extensions for data processing, report delivery, custom authentication, and report rendering.</span></span>  
   
- レポート サーバーは Web サービスとして実装されます。  レポートおよび他のメタデータにアクセスするには、アプリケーション コードに Web サービスへの呼び出しが含まれている必要があります。  Web サービスにより、プログラムによってレポート サーバー インスタンスにアクセスできます。  
+ <span data-ttu-id="e88aa-154">レポート サーバーは、Web サービスとして実装されます。</span><span class="sxs-lookup"><span data-stu-id="e88aa-154">The report server is implemented as Web service.</span></span> <span data-ttu-id="e88aa-155">アプリケーション コードでは、レポートやその他のメタデータにアクセスする Web サービスへの呼び出しを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="e88aa-155">Your application code must include calls to the Web service to access reports and other metadata.</span></span> <span data-ttu-id="e88aa-156">Web サービスでは、レポート サーバー インスタンスに完全なプログラムによるアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-156">The Web service provides complete programmatic access to a report server instance.</span></span>  
   
- Reporting Services は Web ベースのレポート テクノロジなので、既定のビューアーでは、レポートは HTML 形式で表示されます。  既定のレポート表示形式として HTML 形式を使用しない場合は、アプリケーションに対してカスタム レポート ビューアーを記述する必要があります。  
+ <span data-ttu-id="e88aa-157">Reporting Services は Web ベースのレポート テクノロジであるため、既定のビューアーは HTML 形式で表示されるレポートを示します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-157">Because Reporting Services is a Web-based reporting technology, the default viewer shows reports that are rendered in HTML format.</span></span> <span data-ttu-id="e88aa-158">既定のレポートの表示形式として HTML を使用しないようにする場合は、アプリケーションのカスタム レポート ビューアーを記述する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e88aa-158">If you do not want to use HTML as the default report presentation format, you will have to write a custom report viewer for your application.</span></span>  
   
-### Visual Studio での Reporting Services に対応するレポートの作成  
- レポート サーバーを実行するレポートを作成するには、SQL Server 2005 に組み込まれている Business Intelligence Development Studio を介して Visual Studio 上にレポート定義 \(.rdl\) ファイルを作成します。  
+### <a name="creating-reports-in-visual-studio-for-reporting-services"></a><span data-ttu-id="e88aa-159">Reporting Services 用の Visual Studio でレポートを作成します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-159">Creating Reports in Visual Studio for Reporting Services</span></span>  
+ <span data-ttu-id="e88aa-160">レポート サーバーで実行されるレポートをビルドするには、作成するレポート定義 (.rdl) ファイル、Business Intelligence Development Studio での Visual Studio で SQL Server 2005 に含まれています。</span><span class="sxs-lookup"><span data-stu-id="e88aa-160">To build reports that run on a report server, you create report definition (.rdl) files in Visual Studio through the Business Intelligence Development Studio, which is included with SQL Server 2005.</span></span>  
   
 > [!NOTE]
->  SQL Server Reporting Services と Business Intelligence Development Studio を使用するには、SQL Server 2005 がインストールされている必要があります。  
+>  <span data-ttu-id="e88aa-161">SQL Server Reporting Services と Business Intelligence Development Studio を使用するためにインストールされている SQL Server 2005 が必要です。</span><span class="sxs-lookup"><span data-stu-id="e88aa-161">You must have SQL Server 2005 installed in order to use SQL Server Reporting Services and the Business Intelligence Development Studio.</span></span>  
   
- Business Intelligence Development Studio は、SQL Server コンポーネント固有のプロジェクト テンプレートを追加します。  レポートを作成するには、**レポート サーバー プロジェクト** テンプレートまたは **レポート サーバー プロジェクト ウィザード** テンプレートを選択します。  SQL Server、Oracle、Analysis Services、XML、SQL Server Integration Services などさまざまなデータ ソース タイプに対するデータ ソース接続およびクエリを指定できます。  **\[データ\]**、**\[レイアウト\]**、および **\[プレビュー\]** の各タブにより、データの定義、レポート レイアウトの作成、およびレポートのプレビューを同じワークスペースから実行できます。  
+ <span data-ttu-id="e88aa-162">Business Intelligence Development Studio では、SQL Server コンポーネントに固有のプロジェクト テンプレートを追加します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-162">The Business Intelligence Development Studio adds project templates that are specific to SQL Server components.</span></span> <span data-ttu-id="e88aa-163">レポートを作成するから選択できます、**レポート サーバー プロジェクト**または**レポート サーバー プロジェクト ウィザード**テンプレート。</span><span class="sxs-lookup"><span data-stu-id="e88aa-163">To create reports, you can choose from the **Report Server Project** or **Report Server Project Wizard** templates.</span></span> <span data-ttu-id="e88aa-164">データ ソース接続とデータ ソースの種類、SQL Server、Oracle、Analysis Services、XML、SQL Server Integration Services などのさまざまなクエリを指定することができます。</span><span class="sxs-lookup"><span data-stu-id="e88aa-164">You can specify data source connections and queries to a variety of data source types, including SQL Server, Oracle, Analysis Services, XML, and SQL Server Integration Services.</span></span> <span data-ttu-id="e88aa-165">A**データ** タブで、**レイアウト** タブ、および**プレビュー**  タブを使用すると、データの定義、レポートのレイアウトを作成および同じワークスペースですべてのレポートをプレビューできます。</span><span class="sxs-lookup"><span data-stu-id="e88aa-165">A **Data** tab, **Layout** tab, and **Preview** tab allow you to define data, create a report layout, and preview the report all in the same workspace.</span></span>  
   
- コントロールまたはレポート サーバー用に作成するレポート定義は、どのテクノロジでも再利用できます。  
+ <span data-ttu-id="e88aa-166">どちらのテクノロジでは、コントロール、またはレポート サーバー用に作成するレポート定義を再利用できます。</span><span class="sxs-lookup"><span data-stu-id="e88aa-166">Report definitions that you build for the control or the report server can be reused in either technology.</span></span>  
   
-||  
-|-|  
-|レポート サーバー上で実行するレポートを作成するには|  
-|1.  **\[ファイル\]** メニューの **\[新しいプロジェクト\]** をクリックします。<br />     **\[新しいプロジェクト\]** ダイアログ ボックスが表示されます。<br />2.  **\[プロジェクトの種類\]** ペインで、**\[ビジネス インテリジェンス プロジェクト\]** をクリックします。<br />3.  \[テンプレート\] ペインで、**\[レポート サーバー プロジェクト\]** または **\[レポート サーバー プロジェクト ウィザード\]** を選択します。|  
+|<span data-ttu-id="e88aa-167">レポート サーバーで実行されているレポートを作成するには</span><span class="sxs-lookup"><span data-stu-id="e88aa-167">To create a report that runs on a report server</span></span>|  
+|---|    
+|<span data-ttu-id="e88aa-168">1.**ファイル**] メニューの [選択**新規**です。</span><span class="sxs-lookup"><span data-stu-id="e88aa-168">1.  On the **File** menu, choose **New**.</span></span><br />     <span data-ttu-id="e88aa-169">**[新しいプロジェクト]** ダイアログ ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="e88aa-169">The **New Project** dialog box opens.</span></span><br /><span data-ttu-id="e88aa-170">2.**プロジェクトの種類** ウィンドウで、をクリックして**ビジネス インテリジェンス プロジェクト**です。</span><span class="sxs-lookup"><span data-stu-id="e88aa-170">2.  In the **Project types** pane, click **Business Intelligence Projects**.</span></span><br /><span data-ttu-id="e88aa-171">3.[テンプレート] ペインで選択**レポート サーバー プロジェクト**または**レポート サーバー プロジェクト ウィザード**です。</span><span class="sxs-lookup"><span data-stu-id="e88aa-171">3.  In the Templates pane, select **Report Server Project** or **Report Server Project Wizard**.</span></span>|  
   
-## レポート ビューアー コントロールと SQL Server Reporting Services の併用  
- レポート ビューアー コントロールと SQL Server 2005 Reporting Services を同じアプリケーションで併用できます。  
+## <a name="using-reportviewer-controls-and-sql-server-reporting-services-together"></a><span data-ttu-id="e88aa-172">ReportViewer コントロールおよび SQL Server Reporting Services を一緒に使用</span><span class="sxs-lookup"><span data-stu-id="e88aa-172">Using ReportViewer Controls and SQL Server Reporting Services Together</span></span>  
+ <span data-ttu-id="e88aa-173">ReportViewer コントロールと SQL Server 2005 Reporting Services は、同じアプリケーション内に使用することができます。</span><span class="sxs-lookup"><span data-stu-id="e88aa-173">The ReportViewer controls and SQL Server 2005 Reporting Services can be used together in the same application.</span></span>  
   
--   レポート ビューアー コントロールは、アプリケーション上でレポートを表示するためのビューアーを提供します。  
+-   <span data-ttu-id="e88aa-174">ReportViewer コントロールは、アプリケーションでレポートを表示するために使用するビューアーを提供します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-174">The ReportViewer control provides a viewer that is used to display reports in your application.</span></span>  
   
--   Reporting Services は、レポートを提供し、リモート サーバー上のすべての処理を実行します。  
+-   <span data-ttu-id="e88aa-175">Reporting Services レポートを提供し、リモート サーバー上のすべての処理を実行します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-175">Reporting Services provides the reports and performs all processing on a remote server.</span></span>  
   
- リモートの Reporting Services レポート サーバー上で格納および処理されるレポートを表示するようにレポート ビューアー コントロールを構成できます。  この種類の構成は、*リモート処理モード*と呼ばれます。  リモート処理モードでは、コントロールはリモート レポート サーバー上に格納されるレポートを要求します。  レポート サーバーが、レポート処理、データ処理、およびレポート レンダリングをすべて実行します。  処理が終了し、レンダリングされたレポートがコントロールに返され、ビュー領域に表示されます。  
+ <span data-ttu-id="e88aa-176">リモートの Reporting Services レポート サーバーに保存され、処理されるレポートを表示するのには、ReportViewer コントロールを構成できます。</span><span class="sxs-lookup"><span data-stu-id="e88aa-176">The ReportViewer control can be configured to show reports that are stored and processed on a remote Reporting Services report server.</span></span> <span data-ttu-id="e88aa-177">この種類の構成と呼びます*リモート処理モード*です。</span><span class="sxs-lookup"><span data-stu-id="e88aa-177">This type of configuration is called *remote processing mode*.</span></span> <span data-ttu-id="e88aa-178">リモート処理モードでは、コントロールは、リモートのレポート サーバーに格納されているレポートを要求します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-178">In remote processing mode, the control requests a report that is stored on a remote report server.</span></span> <span data-ttu-id="e88aa-179">レポート サーバーは、すべてのレポートの処理、データ処理、およびレポートの表示を実行します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-179">The report server performs all report processing, data processing, and report rendering.</span></span> <span data-ttu-id="e88aa-180">終了、レンダリングされたレポートは、コントロールに返され、ビュー領域に表示されます。</span><span class="sxs-lookup"><span data-stu-id="e88aa-180">A finished, rendered report is returned to the control and displayed in the view area.</span></span>  
   
- レポート サーバー上で実行するレポートは、他のエクスポート形式をサポートし、異なるレポート パラメーター化を実装します。また、レポート サーバーによってサポートされるデータ ソースの種類を使用し、レポート サーバー上のロール ベースの承認モデルを介してアクセスされます。  
+ <span data-ttu-id="e88aa-181">その他のレポート サーバーのサポートで実行されるレポート エクスポート形式、別のレポートのパラメーター化の実装にロールベースの承認モデルを介してアクセスおよびレポート サーバーによってサポートされるデータ ソースの種類を使用して、レポート サーバー。</span><span class="sxs-lookup"><span data-stu-id="e88aa-181">Reports that run on a report server support additional export formats, have a different report parameterization implementation, use the data source types that are supported by the report server, and are accessed through the role-based authorization model on the report server.</span></span>  
   
- リモート処理モデルを使用するには、レポート ビューアー コントロールを構成するときにサーバー レポートの URL とパスを指定します。
+ <span data-ttu-id="e88aa-182">リモート処理モードを使用するには、ReportViewer コントロールを構成するときに、URL とサーバーのレポートへのパスを指定します。</span><span class="sxs-lookup"><span data-stu-id="e88aa-182">To use remote processing mode, specify the URL and path to a server report when configuring the ReportViewer control.</span></span>

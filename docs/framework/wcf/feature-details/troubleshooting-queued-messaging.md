@@ -1,215 +1,218 @@
 ---
-title: "キューに置かれたメッセージングのトラブルシューティング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "キューに置かれたメッセージングのトラブルシューティング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-caps.latest.revision: 19
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1c12f02bc40764c1e4acc70906c6145988103d9b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# キューに置かれたメッセージングのトラブルシューティング
-ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でのキューの使用に関する一般的な質問とトラブルシューティング ヘルプについて説明します。  
+# <a name="troubleshooting-queued-messaging"></a><span data-ttu-id="89c9a-102">キューに置かれたメッセージングのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="89c9a-102">Troubleshooting Queued Messaging</span></span>
+<span data-ttu-id="89c9a-103">ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でのキューの使用に関する一般的な質問とトラブルシューティング ヘルプについて説明します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-103">This section contains common questions and troubleshooting help for using queues in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span></span>  
   
-## 一般的な質問  
- **Q:** [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Beta 1 を使用しているときに MSMQ 修正プログラムをインストールしました。この修正プログラムを削除する必要がありますか。  
+## <a name="common-questions"></a><span data-ttu-id="89c9a-104">一般的な質問</span><span class="sxs-lookup"><span data-stu-id="89c9a-104">Common Questions</span></span>  
+ <span data-ttu-id="89c9a-105">**Q:**使用[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]ベータ 1 とは、MSMQ の修正プログラムをインストールします。</span><span class="sxs-lookup"><span data-stu-id="89c9a-105">**Q:** I used [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Beta 1 and I installed the MSMQ hotfix.</span></span> <span data-ttu-id="89c9a-106">この修正プログラムを削除する必要がありますか。</span><span class="sxs-lookup"><span data-stu-id="89c9a-106">Do I need to remove the hotfix?</span></span>  
   
- **A:** 必要があります。この修正プログラムのサポートは終了しています。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、現在、MSMQ で正常に動作し、修正プログラムは不要です。  
+ <span data-ttu-id="89c9a-107">**A:** できます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-107">**A:** Yes.</span></span> <span data-ttu-id="89c9a-108">この修正プログラムのサポートは終了しています。</span><span class="sxs-lookup"><span data-stu-id="89c9a-108">This hotfix is no longer supported.</span></span> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="89c9a-109"> は、現在、MSMQ で正常に動作し、修正プログラムは不要です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-109"> now works on MSMQ without a hotfix requirement.</span></span>  
   
- **Q:** MSMQ 用のバインディングには、<xref:System.ServiceModel.NetMsmqBinding> と <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> の 2 つがあります。それぞれの用途を教えてください。  
+ <span data-ttu-id="89c9a-110">**Q:** MSMQ 用の 2 つのバインディングがある:<xref:System.ServiceModel.NetMsmqBinding>と<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-110">**Q:** There are two bindings for MSMQ: <xref:System.ServiceModel.NetMsmqBinding> and <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>.</span></span> <span data-ttu-id="89c9a-111">それぞれの用途を教えてください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-111">What should I use and when?</span></span>  
   
- **A:** <xref:System.ServiceModel.NetMsmqBinding> を使用するのは、2 つの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーション間でのキューを使用した通信にトランスポートとして MSMQ を使用する場合です。また、<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> を使用するのは、既存の MSMQ アプリケーションを使用して、新しい [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションと通信する場合です。  
+ <span data-ttu-id="89c9a-112">**A:**を使用して、<xref:System.ServiceModel.NetMsmqBinding>の 2 つのキューに置かれた通信をトランスポートとして MSMQ を使用するときに[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="89c9a-112">**A:** Use the <xref:System.ServiceModel.NetMsmqBinding> when you want to use MSMQ as a transport for queued communication between two [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] applications.</span></span> <span data-ttu-id="89c9a-113">また、<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> を使用するのは、既存の MSMQ アプリケーションを使用して、新しい [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションと通信する場合です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-113">Use the <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> when you want to use existing MSMQ applications to communicate with new [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] applications.</span></span>  
   
- **Q:** <xref:System.ServiceModel.NetMsmqBinding> バインディングと `MsmqIntegration` バインディングを使用するには、MSMQ をアップグレードする必要がありますか。  
+ <span data-ttu-id="89c9a-114">**Q:**を使用するように MSMQ をアップグレードする必要は、<xref:System.ServiceModel.NetMsmqBinding>と`MsmqIntegration`バインドしますか?</span><span class="sxs-lookup"><span data-stu-id="89c9a-114">**Q:** Do I have to upgrade MSMQ to use the <xref:System.ServiceModel.NetMsmqBinding> and `MsmqIntegration` bindings?</span></span>  
   
- **A:** 必要ありません。これらは共に [!INCLUDE[wxp](../../../../includes/wxp-md.md)] および [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] 上の MSMQ 3.0 で使用できます。[!INCLUDE[wv](../../../../includes/wv-md.md)] で MSMQ 4.0 にアップグレードすると、バインディングの特定の機能が使用可能になります。  
+ <span data-ttu-id="89c9a-115">**A:** いいえ。</span><span class="sxs-lookup"><span data-stu-id="89c9a-115">**A:** No.</span></span> <span data-ttu-id="89c9a-116">これらは共に [!INCLUDE[wxp](../../../../includes/wxp-md.md)] および [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] 上の MSMQ 3.0 で使用できます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-116">Both bindings work with MSMQ 3.0 on [!INCLUDE[wxp](../../../../includes/wxp-md.md)] and [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)].</span></span> <span data-ttu-id="89c9a-117">[!INCLUDE[wv](../../../../includes/wv-md.md)] で MSMQ 4.0 にアップグレードすると、バインディングの特定の機能が使用可能になります。</span><span class="sxs-lookup"><span data-stu-id="89c9a-117">Certain features of the bindings become available when you upgrade to MSMQ 4.0 in [!INCLUDE[wv](../../../../includes/wv-md.md)].</span></span>  
   
- **Q:** <xref:System.ServiceModel.NetMsmqBinding> バインディングと <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> バインディングの機能のうち、MSMQ 4.0 では使用できるが MSMQ 3.0 では使用できないのはどれですか。  
+ <span data-ttu-id="89c9a-118">**Q:**のどの機能、<xref:System.ServiceModel.NetMsmqBinding>と<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>バインドが MSMQ 4.0 ではなく MSMQ 3.0 で使用可能ですか?</span><span class="sxs-lookup"><span data-stu-id="89c9a-118">**Q:** What features of the <xref:System.ServiceModel.NetMsmqBinding> and <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> bindings are available in MSMQ 4.0 but not in MSMQ 3.0?</span></span>  
   
- **A:** MSMQ 4.0 では使用できても MSMQ 3.0 では使用できない機能は次のとおりです。  
+ <span data-ttu-id="89c9a-119">**A:**次の機能は、MSMQ 4.0 ではなく MSMQ 3.0 で使用します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-119">**A:** The following features are available in MSMQ 4.0 but not in MSMQ 3.0:</span></span>  
   
--   カスタム配信不能キューは、MSMQ 4.0 でのみサポートされます。  
+-   <span data-ttu-id="89c9a-120">カスタム配信不能キューは、MSMQ 4.0 でのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-120">Custom dead-letter queue is supported only on MSMQ 4.0.</span></span>  
   
--   MSMQ 3.0 と 4.0 では、有害メッセージの処理方法が異なります。  
+-   <span data-ttu-id="89c9a-121">MSMQ 3.0 と 4.0 では、有害メッセージの処理方法が異なります。</span><span class="sxs-lookup"><span data-stu-id="89c9a-121">MSMQ 3.0 and 4.0 handle poison messages differently.</span></span>  
   
--   MSMQ 4.0 のみが、リモート トランザクション読み取りをサポートします。  
+-   <span data-ttu-id="89c9a-122">MSMQ 4.0 のみが、リモート トランザクション読み取りをサポートします。</span><span class="sxs-lookup"><span data-stu-id="89c9a-122">Only MSMQ 4.0 supports remote transacted read.</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Windows Vista、Windows Server 2003、および Windows XP におけるキュー機能の相違点](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md).  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="89c9a-123">[Windows Vista、Windows Server 2003、および Windows XP におけるキュー機能の相違](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-123"> [Differences in Queuing Features in Windows Vista, Windows Server 2003, and Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md).</span></span>  
   
- **Q:** キューを使用する通信の一方の側で MSMQ 3.0 を使用し、もう一方の側で MSMQ 4.0 を使用できますか。  
+ <span data-ttu-id="89c9a-124">**Q:**相手側のキューに置かれた通信および MSMQ 4.0 の一方の側で MSMQ 3.0 を使用できますか。</span><span class="sxs-lookup"><span data-stu-id="89c9a-124">**Q:** Can I use MSMQ 3.0 on one side of a queued communication and MSMQ 4.0 on the other side?</span></span>  
   
- **A:** 使用できます。  
+ <span data-ttu-id="89c9a-125">**A:** できます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-125">**A:** Yes.</span></span>  
   
- **Q:** 既存の MSMQ アプリケーションを新しい [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントまたはサーバーと統合しようと考えています。使用している MSMQ インフラストラクチャの両方の側をアップグレードする必要がありますか。  
+ <span data-ttu-id="89c9a-126">**Q:**新規と既存の MSMQ アプリケーションを統合する[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアントまたはサーバー。</span><span class="sxs-lookup"><span data-stu-id="89c9a-126">**Q:** I want to integrate existing MSMQ applications with new [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] clients or servers.</span></span> <span data-ttu-id="89c9a-127">使用している MSMQ インフラストラクチャの両方の側をアップグレードする必要がありますか。</span><span class="sxs-lookup"><span data-stu-id="89c9a-127">Do I need to upgrade both sides of my MSMQ infrastructure?</span></span>  
   
- **A:** 必要ありません。どちら側も MSMQ 4.0 にアップグレードする必要はありません。  
+ <span data-ttu-id="89c9a-128">**A:** いいえ。</span><span class="sxs-lookup"><span data-stu-id="89c9a-128">**A:** No.</span></span> <span data-ttu-id="89c9a-129">どちら側も MSMQ 4.0 にアップグレードする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="89c9a-129">You do not have to upgrade to MSMQ 4.0 on either side.</span></span>  
   
-## トラブルシューティング  
- ここでは、一般的なトラブルシューティングの問題に対する解答を示します。既知の制限である一部の問題は、リリース ノートにも記載されています。  
+## <a name="troubleshooting"></a><span data-ttu-id="89c9a-130">トラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="89c9a-130">Troubleshooting</span></span>  
+ <span data-ttu-id="89c9a-131">ここでは、一般的なトラブルシューティングの問題に対する解答を示します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-131">This section contains answers to most common troubleshooting issues.</span></span> <span data-ttu-id="89c9a-132">既知の制限である一部の問題は、リリース ノートにも記載されています。</span><span class="sxs-lookup"><span data-stu-id="89c9a-132">Some issues that are known limitations are also described in the release notes.</span></span>  
   
- **Q:** プライベート キューを使用しようとすると、次の例外が表示されます。`System.InvalidOperationException` : この URL は無効です。キューの URL に '$' 文字を使用することはできません。net.msmq:\/\/machine\/private\/queueName の構文を使用して、プライベート キューをアドレス指定してください。  
+ <span data-ttu-id="89c9a-133">**Q:**プライベート キューを使用して、次の例外を取得します。 `System.InvalidOperationException`: URL が無効です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-133">**Q:** I am trying to use a private queue and I get the following exception: `System.InvalidOperationException`: The URL is invalid.</span></span> <span data-ttu-id="89c9a-134">キューの URL に '$' 文字を使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="89c9a-134">The URL for the queue cannot contain the '$' character.</span></span> <span data-ttu-id="89c9a-135">net.msmq://machine/private/queueName の構文を使用して、プライベート キューをアドレス指定してください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-135">Use the syntax in net.msmq://machine/private/queueName to address a private queue.</span></span>  
   
- **A:** 構成とコードでキュー URI \(Uniform Resource Identifier\) を確認してください。URI では、"$" 文字を使用できません。たとえば、OrdersQueue という名前のプライベート キューのアドレスを指定する場合は、URI を net.msmq:\/\/localhost\/private\/ordersQueue と指定してください。  
+ <span data-ttu-id="89c9a-136">**A:**構成またはコードでキュー (Uniform Resource Identifier) を確認してください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-136">**A:** Please check the queue Uniform Resource Identifier (URI) in your configuration and code.</span></span> <span data-ttu-id="89c9a-137">URI では、"$" 文字を使用できません。</span><span class="sxs-lookup"><span data-stu-id="89c9a-137">Do not use the "$" character in the URI.</span></span> <span data-ttu-id="89c9a-138">たとえば、OrdersQueue という名前のプライベート キューのアドレスを指定する場合は、URI を net.msmq://localhost/private/ordersQueue と指定してください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-138">For example, to address a private queue named OrdersQueue, specify the URI as net.msmq://localhost/private/ordersQueue.</span></span>  
   
- **Q:** キューに置かれたアプリケーションで `ServiceHost.Open()` を呼び出すと次の例外がスローされます。`System.ArgumentException` : ベース アドレスに URI クエリ文字列を含めることはできません。その理由を教えてください。  
+ <span data-ttu-id="89c9a-139">**Q:**呼び出す`ServiceHost.Open()`キューに置かれたアプリケーションで、次の例外をスローします。 `System.ArgumentException`: ベース アドレスに URI クエリ文字列を含めることはできません。</span><span class="sxs-lookup"><span data-stu-id="89c9a-139">**Q:** Calling `ServiceHost.Open()` on my queued application throws the following exception: `System.ArgumentException`: A base address cannot contain a URI query string.</span></span> <span data-ttu-id="89c9a-140">なぜでしょうか。</span><span class="sxs-lookup"><span data-stu-id="89c9a-140">Why?</span></span>  
   
- **A:** 構成とコードでキュー URI を確認してください。MSMQ のキューでは '?' 文字の使用がサポートされていますが、URI はこれを文字列クエリの開始と解釈します。この問題を回避するには、'?' 文字を含まないキュー名を使用してください。  
+ <span data-ttu-id="89c9a-141">**A:** URI の構成ファイルと、コードでキューを確認します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-141">**A:** Check the queue URI in your configuration file and in your code.</span></span> <span data-ttu-id="89c9a-142">MSMQ のキューでは '?' 文字の使用がサポートされていますが、URI はこれを文字列クエリの開始と解釈します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-142">While MSMQ queues support the use of the '?' character, URIs interpret this character as the beginning of a string query.</span></span> <span data-ttu-id="89c9a-143">この問題を回避するには、'?' 文字を含まないキュー名を使用してください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-143">To avoid this issue, use queue names that do not contain '?' characters.</span></span>  
   
- **Q:** 送信は成功したのですが、受信側でサービス操作が呼び出されません。その理由を教えてください。  
+ <span data-ttu-id="89c9a-144">**Q:**送信が成功しましたが、受信者側でサービス操作が呼び出されません。</span><span class="sxs-lookup"><span data-stu-id="89c9a-144">**Q:** My send succeeded but no service operation is invoked on the receiver.</span></span> <span data-ttu-id="89c9a-145">なぜでしょうか。</span><span class="sxs-lookup"><span data-stu-id="89c9a-145">Why?</span></span>  
   
- **A:** 理由を特定するには、次のチェック リストを検討してください。  
+ <span data-ttu-id="89c9a-146">**A:**への回答を決定するには、次のチェック ボックスの一覧から作業します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-146">**A:** To determine the answer, work through the following check list:</span></span>  
   
--   トランザクション キューの要件と指定済みの保証が適合することを確認します。次の原則に注意してください。  
+-   <span data-ttu-id="89c9a-147">トランザクション キューの要件と指定済みの保証が適合することを確認します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-147">Check that the transactional queue requirements are compatible with the assurances specified.</span></span> <span data-ttu-id="89c9a-148">次の原則に注意してください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-148">Note the following principles:</span></span>  
   
-    -   "1 回限りの" 配信の保証 \(<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> \= `true`\) 付きの永続的なメッセージ \(データグラムとセッション\) は、トランザクション キューにのみ送信できます。  
+    -   <span data-ttu-id="89c9a-149">メッセージを送信できます持続性のある (データグラムとセッション) に「1 回限り」保証 (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `true`)、トランザクション キューだけにします。</span><span class="sxs-lookup"><span data-stu-id="89c9a-149">You can send durable messages (datagrams and sessions) with "exactly once" assurances (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `true`) only to a transactional queue.</span></span>  
   
-    -   "1 回限りの" 配信の保証付きのセッションのみを送信できます。  
+    -   <span data-ttu-id="89c9a-150">"1 回限りの" 配信の保証付きのセッションのみを送信できます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-150">You can send sessions only with "exactly once" assurances.</span></span>  
   
-    -   セッションでトランザクション キューからメッセージを受け取るには、1 つのトランザクションが必要です。  
+    -   <span data-ttu-id="89c9a-151">セッションでトランザクション キューからメッセージを受け取るには、1 つのトランザクションが必要です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-151">A transaction is required to receive messages in a session from a transactional queue.</span></span>  
   
-    -   保証なし \(<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> \= `false`\) の一時的なメッセージまたは永続的なメッセージ \(ダイアグラムのみ\) は、非トランザクション キューにのみ送受信できます。  
+    -   <span data-ttu-id="89c9a-152">保証なしの揮発性または持続性のメッセージ (ダイアグラムのみ) を送受信する (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `false`)、非トランザクション キューにのみです。</span><span class="sxs-lookup"><span data-stu-id="89c9a-152">You can send or receive volatile or durable messages (datagrams only) with no assurances (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `false`) only to a non-transactional queue.</span></span>  
   
--   配信不能キューを確認します。このキューにメッセージが置かれている場合は、メッセージが配信されなかった理由を特定してください。  
+-   <span data-ttu-id="89c9a-153">配信不能キューを確認します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-153">Check the dead-letter queue.</span></span> <span data-ttu-id="89c9a-154">このキューにメッセージが置かれている場合は、メッセージが配信されなかった理由を特定してください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-154">If you find the messages there, determine why they were not delivered.</span></span>  
   
--   送信キューを確認して、接続性またはアドレス指定の問題を特定します。  
+-   <span data-ttu-id="89c9a-155">送信キューを確認して、接続性またはアドレス指定の問題を特定します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-155">Check the outgoing queues for connectivity or addressing problems.</span></span>  
   
- **Q:** カスタム配信不能キューを指定したのですが、送信元アプリケーションを起動すると、カスタム配信不能キューが見つからない、または送信元アプリケーションにカスタム配信不能キューへのアクセス許可がないという例外が表示されます。なぜ、こうなるのでしょうか。  
+ <span data-ttu-id="89c9a-156">**Q:**カスタムの配信不能キューを指定したが、送信側のアプリケーションを起動したとき、いずれかの配信不能キューが含まれていない例外を取得または送信元アプリケーションに、配信不能キューへのアクセス許可がありません。</span><span class="sxs-lookup"><span data-stu-id="89c9a-156">**Q:** I have specified a custom dead-letter queue, but when I start the sender application, I get an exception that either the dead-letter queue is not found, or the sending application has no permission to the dead-letter queue.</span></span> <span data-ttu-id="89c9a-157">なぜ、こうなるのでしょうか。</span><span class="sxs-lookup"><span data-stu-id="89c9a-157">Why is this happening?</span></span>  
   
- **A:** カスタム配信不能キューの URI には、先頭のセグメントに "localhost" またはコンピューター名を含める必要があります。たとえば、net.msmq:\/\/localhost\/private\/myAppdead\-letter queue のようにします。  
+ <span data-ttu-id="89c9a-158">**A:**カスタム配信不能キューの URI は、たとえば、net.msmq://localhost/private/myAppdead-letter queue の最初のセグメントに"localhost"またはコンピューター名を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="89c9a-158">**A:** The custom dead-letter queue URI must include a "localhost" or the computer name in the first segment, for example, net.msmq://localhost/private/myAppdead-letter queue.</span></span>  
   
- **Q:** カスタム配信不能キューを常に定義する必要がありますか。それとも既定の配信不能キューがあるのですか。  
+ <span data-ttu-id="89c9a-159">**Q:**常にする必要があるカスタムの配信不能キューを定義または既定の配信不能キューではありますか。</span><span class="sxs-lookup"><span data-stu-id="89c9a-159">**Q:** Is it always necessary to define a custom dead-letter queue, or is there a default dead-letter queue?</span></span>  
   
- **A:** 保証が "1 回限り" \(<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> \= `true`\) の場合、およびカスタム配信不能キューを指定していない場合は、システム全体のトランザクション配信不能キューが既定になります。  
+ <span data-ttu-id="89c9a-160">**A:**保証が「1 回限り」の場合 (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `true`)、およびカスタム配信不能キューを指定しないと、既定値がシステム全体のトランザクション配信不能キュー。</span><span class="sxs-lookup"><span data-stu-id="89c9a-160">**A:** If assurances are "exactly once" (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `true`), and if you do not specify a custom dead-letter queue, the default is a system-wide transactional dead-letter queue.</span></span>  
   
- 保証なし \(<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> \= `false`\) の場合、既定は配信不能キュー機能なしです。  
+ <span data-ttu-id="89c9a-161">保証がない場合 (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `false`)、既定値には、配信不能キューの機能は不要です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-161">If assurances are none (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `false`), then the default is no dead-letter queue functionality.</span></span>  
   
- **Q:** サービスが、SvcHost.Open で "EndpointListener が ListenerFactory の要件を満たすことができません" という内容のメッセージをスローします。その理由を教えてください。  
+ <span data-ttu-id="89c9a-162">**Q:**メッセージ SvcHost.Open で「EndpointListener 要件満たすことができません ListenerFactory」サービスがスローされます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-162">**Q:** My service throws on SvcHost.Open with a message "EndpointListener requirements cannot be met by the ListenerFactory".</span></span> <span data-ttu-id="89c9a-163">なぜでしょうか。</span><span class="sxs-lookup"><span data-stu-id="89c9a-163">Why?</span></span>  
   
- A.サービス コントラクトを確認してください。"IsOneWay\=`true`" をすべてのサービス操作に配置するのを忘れた可能性があります。キューは、一方向のサービス操作しかサポートしません。  
+ <span data-ttu-id="89c9a-164">A: </span><span class="sxs-lookup"><span data-stu-id="89c9a-164">A.</span></span> <span data-ttu-id="89c9a-165">サービス コントラクトを確認してください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-165">Check your service contract.</span></span> <span data-ttu-id="89c9a-166">配置を忘れた"IsOneWay =`true`"すべてのサービス操作にします。</span><span class="sxs-lookup"><span data-stu-id="89c9a-166">You may have forgotten to put "IsOneWay=`true`" on all the service operations.</span></span> <span data-ttu-id="89c9a-167">キューは、一方向のサービス操作しかサポートしません。</span><span class="sxs-lookup"><span data-stu-id="89c9a-167">Queues support only one-way service operations.</span></span>  
   
- **Q:** キューにメッセージが置かれているのにサービス操作が呼び出されません。何が問題なのでしょうか。  
+ <span data-ttu-id="89c9a-168">**Q:**キューにメッセージがあるが、サービス操作が呼び出されません。</span><span class="sxs-lookup"><span data-stu-id="89c9a-168">**Q:** There are messages in the queue but no service operation is invoked.</span></span> <span data-ttu-id="89c9a-169">何が問題なのでしょうか。</span><span class="sxs-lookup"><span data-stu-id="89c9a-169">What is the problem?</span></span>  
   
- **A:** サービス ホストがエラーになっているかどうかを確認してください。確認するには、トレースを調べるか、`IErrorHandler` を実装します。既定では、有害メッセージが検出された場合、サービス ホストはエラーになります。  
+ <span data-ttu-id="89c9a-170">**A:**サービス ホストに障害があるかを判断します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-170">**A:** Determine if your service host is faulted.</span></span> <span data-ttu-id="89c9a-171">確認するには、トレースを調べるか、`IErrorHandler` を実装します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-171">You can check by looking at the trace or implementing `IErrorHandler`.</span></span> <span data-ttu-id="89c9a-172">既定では、有害メッセージが検出された場合、サービス ホストはエラーになります。</span><span class="sxs-lookup"><span data-stu-id="89c9a-172">Service host faults, by default, if a poison message is detected.</span></span>  
   
- **Q:** キューにメッセージが格納されているのに、Web ホスト型のキューを使用するサービスがアクティブになりません。その理由を教えてください。  
+ <span data-ttu-id="89c9a-173">**Q:**キューにメッセージがあるが、Web ホストのキューに置かれたサービスがアクティブになりません。</span><span class="sxs-lookup"><span data-stu-id="89c9a-173">**Q:** There are messages in the queue but my Web-hosted queued service is not getting activated.</span></span> <span data-ttu-id="89c9a-174">なぜでしょうか。</span><span class="sxs-lookup"><span data-stu-id="89c9a-174">Why?</span></span>  
   
- **A:** 最も一般的な理由はアクセス許可です。  
+ <span data-ttu-id="89c9a-175">**A:**最も一般的な理由はアクセス許可。</span><span class="sxs-lookup"><span data-stu-id="89c9a-175">**A:** The most common reason is permissions.</span></span>  
   
-1.  `NetMsmqActivator` プロセスが実行され、そのキューで、`NetMsmqActivator` の ID に読み取りおよびシーク アクセス許可が割り当てられていることを確認してください。  
+1.  <span data-ttu-id="89c9a-176">`NetMsmqActivator` プロセスが実行され、そのキューで、`NetMsmqActivator` の ID に読み取りおよびシーク アクセス許可が割り当てられていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-176">Ensure that the `NetMsmqActivator` process is running and the identity of the `NetMsmqActivator` process is given read and seek permission on the queue.</span></span>  
   
-2.  `NetMsmqActivator` がリモート コンピューター上のキューを監視している場合は、`NetMsmqActivator` が制限付きトークンの下で実行されていないことを確認してください。無制限のトークンを使用して `NetMsmqActivator` を実行するには、以下を実行します。  
+2.  <span data-ttu-id="89c9a-177">`NetMsmqActivator` がリモート コンピューター上のキューを監視している場合は、`NetMsmqActivator` が制限付きトークンの下で実行されていないことを確認してください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-177">If the `NetMsmqActivator` is monitoring queues on a remote machine, ensure that `NetMsmqActivator` does not run under a restricted token.</span></span> <span data-ttu-id="89c9a-178">無制限のトークンを使用して `NetMsmqActivator` を実行するには、以下を実行します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-178">To run the `NetMsmqActivator` with an unrestricted token:</span></span>  
   
     ```  
     sc sidtype NetMsmqActivator unrestricted  
     ```  
   
- セキュリティ関連以外の Web ホストの問題については、「[キューに置かれたアプリケーションの Web ホスト](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)」を参照してください。  
+ <span data-ttu-id="89c9a-179">関連する Web ホストの問題のないセキュリティを参照してください:[キューに置かれたアプリケーションをホストしている Web](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-179">For non-security related Web host issues refer to: [Web Hosting a Queued Application](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md).</span></span>  
   
- **Q:** 最も簡単にセッションにアクセスする方法を教えてください。  
+ <span data-ttu-id="89c9a-180">**Q:** access セッションに最も簡単な方法は何ですか。</span><span class="sxs-lookup"><span data-stu-id="89c9a-180">**Q:** What is the easiest way to access sessions?</span></span>  
   
- **A:** セッションの最後のメッセージに対応する操作で AutoComplete\=`true` を設定し、残りのすべてのサービス操作で AutoComplete\=`false` を設定します。  
+ <span data-ttu-id="89c9a-181">**A:**オートコンプリートの設定 =`true`の最後に対応した操作には、セッションで、メッセージし、オートコンプリートの設定 =`false`残りのすべてのサービス操作にします。</span><span class="sxs-lookup"><span data-stu-id="89c9a-181">**A:** Set AutoComplete=`true` on the operation that corresponds to the last message in the session, and set AutoComplete=`false` on all remaining service operations.</span></span>  
   
- **Q:** MSMQ に関する一般的な質問の解答はどこで見つけられますか。  
+ <span data-ttu-id="89c9a-182">**Q:** MSMQ によく寄せられる質問に対する回答を見つける場所ですか?</span><span class="sxs-lookup"><span data-stu-id="89c9a-182">**Q:** Where can I find answers to common questions on MSMQ?</span></span>  
   
- **A:** MSMQ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[Microsoft Message Queuing](http://go.microsoft.com/fwlink/?LinkId=87810)」を参照してください。  
+ <span data-ttu-id="89c9a-183">**A:** [!INCLUDE[crabout](../../../../includes/crabout-md.md)] MSMQ を参照してください[Microsoft メッセージ キュー](http://go.microsoft.com/fwlink/?LinkId=87810)です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-183">**A:** [!INCLUDE[crabout](../../../../includes/crabout-md.md)] MSMQ, see [Microsoft Message Queuing](http://go.microsoft.com/fwlink/?LinkId=87810).</span></span>  
   
- **Q:** キューを使用するセッション メッセージとキューを使用するデータグラム メッセージの両方を格納するキューから読み取るときに、サービスが `ProtocolException` をスローするのはなぜですか。  
+ <span data-ttu-id="89c9a-184">**Q:**理由は、サービスをスロー、`ProtocolException`両方を含むキューからの読み取りがセッション メッセージをキューに登録および使用するデータグラム メッセージをキューに登録しますか?</span><span class="sxs-lookup"><span data-stu-id="89c9a-184">**Q:** Why does my service throw a `ProtocolException` when reading from a queue that contains both queued session messages and queued datagram messages?</span></span>  
   
- **A:** キューを使用するセッション メッセージとキューを使用するデータグラム メッセージは、それぞれ構成する方法が基本的に異なります。このため、キューを使用するセッション メッセージを読み取ろうとするサービスは、キューを使用するデータグラム メッセージを受信できず、キューを使用するデータグラム メッセージを読み取ろうとするサービスは、セッション メッセージを受信できません。これら両方の種類のメッセージを同じキューから読み取ろうとすると、次の例外がスローされます。  
+ <span data-ttu-id="89c9a-185">**A:**までキューに置かれたセッションのメッセージでの基本的な違いがあるし、キューに置かれた使用するデータグラム メッセージを構成します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-185">**A:** There is a fundamental difference in the way queued session messages and queued datagram messages are composed.</span></span> <span data-ttu-id="89c9a-186">このため、キューを使用するセッション メッセージを読み取ろうとするサービスは、キューを使用するデータグラム メッセージを受信できず、キューを使用するデータグラム メッセージを読み取ろうとするサービスは、セッション メッセージを受信できません。</span><span class="sxs-lookup"><span data-stu-id="89c9a-186">Because of this, a service that is expecting to read a queued session message cannot receive a queued datagram message and a service expecting to read a queued datagram message cannot receive a session message.</span></span> <span data-ttu-id="89c9a-187">これら両方の種類のメッセージを同じキューから読み取ろうとすると、次の例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-187">Attempting to read both types of messages from the same queue throws the following exception:</span></span>  
   
 ```  
 System.ServiceModel.MsmqPoisonMessageException: The transport channel detected a poison message. This occurred because the message exceeded the maximum number of delivery attempts or because the channel detected a fundamental problem with the message. The inner exception may contain additional information.   
 ---> System.ServiceModel.ProtocolException: An incoming MSMQ message contained invalid or unexpected .NET Message Framing information in its body. The message cannot be received. Ensure that the sender is using a compatible service contract with a matching SessionMode.  
 ```  
   
- アプリケーションが同じコンピューターからキューを使用するセッション メッセージとキューを使用するデータグラム メッセージの両方を送信する場合は、任意のカスタム配信不能キューだけでなくシステム配信不能キューで特にこの問題が発生する可能性があります。メッセージを正常に送信できない場合、メッセージは配信不能キューに移されます。このような場合は、セッション メッセージとデータグラム メッセージの両方が配信不能キューに置かれる可能性があります。実行時にキューから読み取るときに両方の種類のメッセージを分離することはできません。そのため、アプリケーションでは、キューを使用するセッション メッセージとキューを使用するデータグラム メッセージの両方を同じコンピューターから送信しないでください。  
+ <span data-ttu-id="89c9a-188">アプリケーションが同じコンピューターからキューを使用するセッション メッセージとキューを使用するデータグラム メッセージの両方を送信する場合は、任意のカスタム配信不能キューだけでなくシステム配信不能キューで特にこの問題が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="89c9a-188">The system dead-letter queue, as well as any custom dead-letter queue, is particularly susceptible to this issue if an application sends both queued session messages and queued datagram messages from the same computer.</span></span> <span data-ttu-id="89c9a-189">メッセージを正常に送信できない場合、メッセージは配信不能キューに移されます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-189">If a message cannot be sent successfully, it is moved to the dead-letter queue.</span></span> <span data-ttu-id="89c9a-190">このような場合は、セッション メッセージとデータグラム メッセージの両方が配信不能キューに置かれる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="89c9a-190">Under these circumstances, it is possible to have both session and datagram messages in the dead-letter queue.</span></span> <span data-ttu-id="89c9a-191">実行時にキューから読み取るときに両方の種類のメッセージを分離することはできません。そのため、アプリケーションでは、キューを使用するセッション メッセージとキューを使用するデータグラム メッセージの両方を同じコンピューターから送信しないでください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-191">There is no way to separate both types of messages at runtime when reading from a queue, therefore, applications should not send both queued session messages and queued datagram messages from the same computer.</span></span>  
   
-### MSMQ 統合 : 固有のトラブルシューティング  
- **Q:** メッセージを送信したり、サービス ホストを開いたりすると、スキームが不正であるというエラー メッセージが表示されます。その理由を教えてください。  
+### <a name="msmq-integration-specific-troubleshooting"></a><span data-ttu-id="89c9a-192">MSMQ 統合 : 固有のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="89c9a-192">MSMQ Integration: Specific Troubleshooting</span></span>  
+ <span data-ttu-id="89c9a-193">**Q:**メッセージを送信するとき、またはサービス ホストを開くときに、スキームが間違っているかを示すエラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-193">**Q:** When I send a message, or when I open the service host, I get an error that indicates the scheme is wrong.</span></span> <span data-ttu-id="89c9a-194">なぜでしょうか。</span><span class="sxs-lookup"><span data-stu-id="89c9a-194">Why?</span></span>  
   
- **A:** MSMQ 統合バインディングを使用するときは、msmq.formatname スキームを使用する必要があります。たとえば、msmq.formatname:DIRECT\=OS:.\\private$\\OrdersQueue などです。ただし、カスタム配信不能キューを指定するときは、net.msmq スキームを使用する必要があります。  
+ <span data-ttu-id="89c9a-195">**A:** MSMQ 統合バインディングを使用する場合は、msmq.formatname スキームを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="89c9a-195">**A:** When you use the MSMQ integration binding, you must use the msmq.formatname scheme.</span></span> <span data-ttu-id="89c9a-196">たとえば、msmq.formatname:DIRECT=OS:.\private$\OrdersQueue などです。</span><span class="sxs-lookup"><span data-stu-id="89c9a-196">For example, msmq.formatname:DIRECT=OS:.\private$\OrdersQueue.</span></span> <span data-ttu-id="89c9a-197">ただし、カスタム配信不能キューを指定するときは、net.msmq スキームを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="89c9a-197">But when you specify the custom dead-letter queue, you must use the net.msmq scheme.</span></span>  
   
- **Q:** 公開または専用の形式名を使用して、[!INCLUDE[wv](../../../../includes/wv-md.md)] 上のサービス ホストを開くと、エラーが発生します。その理由を教えてください。  
+ <span data-ttu-id="89c9a-198">**Q:** public または private 形式名を使用し、上のサービス ホストを開いてすればとき[!INCLUDE[wv](../../../../includes/wv-md.md)]、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-198">**Q:** When I use a public or private format name and open the service host on [!INCLUDE[wv](../../../../includes/wv-md.md)], I get an error.</span></span> <span data-ttu-id="89c9a-199">なぜでしょうか。</span><span class="sxs-lookup"><span data-stu-id="89c9a-199">Why?</span></span>  
   
- **A:** [!INCLUDE[wv](../../../../includes/wv-md.md)] 上の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 統合チャネルは、メイン アプリケーション キューの有害メッセージ処理用のサブキューを開くことができるかどうかを確認します。サブキューの名前は、リスナーに渡される msmq.formatname URI から派生します。MSMQ でのサブキュー名は、直接形式名に限定されます。そのためにエラーが発生します。キュー URI を直接形式名に変更してください。  
+ <span data-ttu-id="89c9a-200">**A:** 、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]で統合チャネル[!INCLUDE[wv](../../../../includes/wv-md.md)]サブキュー有害なメッセージを処理するため、アプリケーションのメイン キューを開くことができるかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-200">**A:** The [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] integration channel on [!INCLUDE[wv](../../../../includes/wv-md.md)] checks to see if a sub-queue can be opened for the main application queue for handling poison messages.</span></span> <span data-ttu-id="89c9a-201">サブキューの名前は、リスナーに渡される msmq.formatname URI から派生します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-201">The sub-queue name is derived from an msmq.formatname URI passed to the listener.</span></span> <span data-ttu-id="89c9a-202">MSMQ でのサブキュー名は、直接形式名に限定されます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-202">The sub-queue name in MSMQ can only be a direct format name.</span></span> <span data-ttu-id="89c9a-203">そのためにエラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-203">So you see the error.</span></span> <span data-ttu-id="89c9a-204">キュー URI を直接形式名に変更してください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-204">Change the queue URI to a direct format name.</span></span>  
   
- **Q:** MSMQ アプリケーションからメッセージを受信すると、メッセージはキューに置かれ、受信側の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションによって読み取られません。その理由を教えてください。  
+ <span data-ttu-id="89c9a-205">**Q:** MSMQ アプリケーションからメッセージを受信するときに、メッセージがキューに置かれ、受信側によって読み取られません[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="89c9a-205">**Q:** When receiving a message from an MSMQ application, the message sits in the queue and is not read by the receiving [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] application.</span></span> <span data-ttu-id="89c9a-206">なぜでしょうか。</span><span class="sxs-lookup"><span data-stu-id="89c9a-206">Why?</span></span>  
   
- **A:** メッセージに本文があるかどうか確認してください。メッセージに本文がない場合、MSMQ 統合チャネルはメッセージを無視します。例外を通知する `IErrorHandler` を実装し、トレースを確認してください。  
+ <span data-ttu-id="89c9a-207">**A:**メッセージ本文が含まれるかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-207">**A:** Check to see whether the message has a body.</span></span> <span data-ttu-id="89c9a-208">メッセージに本文がない場合、MSMQ 統合チャネルはメッセージを無視します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-208">If the message has no body, the MSMQ integration channel ignores the message.</span></span> <span data-ttu-id="89c9a-209">例外を通知する `IErrorHandler` を実装し、トレースを確認してください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-209">Implement `IErrorHandler` to be notified of exceptions and check the traces.</span></span>  
   
-### セキュリティ関連のトラブルシューティング  
- **Q:** ワークグループ モードで既定のバインディングを使用するサンプルを実行すると、メッセージは送信されるように思われるのですが、受信側で受信されません。  
+### <a name="security-related-troubleshooting"></a><span data-ttu-id="89c9a-210">セキュリティ関連のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="89c9a-210">Security-Related Troubleshooting</span></span>  
+ <span data-ttu-id="89c9a-211">**Q:**メッセージが送信されたようですが、受信側で受信されませんワークグループ モードで、既定のバインディングを使用するサンプルを実行するとします。</span><span class="sxs-lookup"><span data-stu-id="89c9a-211">**Q:** When I run the sample that uses a default binding in workgroup mode, messages seem to get sent but are never received by the receiver.</span></span>  
   
- **A:** 既定では、メッセージは、Active Directory ディレクトリ サービスを必要とする MSMQ の内部証明書を使用して署名されます。ワークグループ モードでは、Active Directory が使用できないため、メッセージに署名できません。そのため、メッセージは配信不能キューに置かれ、"署名が正しくありません" などのエラーの原因が示されます。  
+ <span data-ttu-id="89c9a-212">**A:**を Active Directory ディレクトリ サービスを必要とする MSMQ 内部の証明書を使用して既定では、メッセージは署名されます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-212">**A:** By default, messages are signed using an MSMQ internal certificate that requires the Active Directory directory service.</span></span> <span data-ttu-id="89c9a-213">ワークグループ モードでは、Active Directory が使用できないため、メッセージに署名できません。</span><span class="sxs-lookup"><span data-stu-id="89c9a-213">In workgroup mode, because Active Directory is not available, signing the message fails.</span></span> <span data-ttu-id="89c9a-214">したがって、メッセージが配信不能キューに入るれ、「署名が正しくありません」などの障害の原因が示されます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-214">So the message lands in the dead-letter queue and failure cause, such as "Bad signature", is indicated.</span></span>  
   
- この問題を回避するには、セキュリティを無効にします。セキュリティを無効にするには、ワークグループ モードで動作するように <xref:System.ServiceModel.NetMsmqSecurity.Mode%2A> \= <xref:System.ServiceModel.NetMsmqSecurityMode> を設定します。  
+ <span data-ttu-id="89c9a-215">この問題を回避するには、セキュリティを無効にします。</span><span class="sxs-lookup"><span data-stu-id="89c9a-215">The workaround is to turn off security.</span></span> <span data-ttu-id="89c9a-216">これは、設定で<xref:System.ServiceModel.NetMsmqSecurity.Mode%2A>  =  <xref:System.ServiceModel.NetMsmqSecurityMode.None>ワークグループ モードで動作させるのにします。</span><span class="sxs-lookup"><span data-stu-id="89c9a-216">This is done by setting <xref:System.ServiceModel.NetMsmqSecurity.Mode%2A> = <xref:System.ServiceModel.NetMsmqSecurityMode.None> to make it work in workgroup mode.</span></span>  
   
- また、<xref:System.ServiceModel.NetMsmqSecurity.Transport%2A> プロパティから <xref:System.ServiceModel.MsmqTransportSecurity> を取得し、それを <xref:System.ServiceModel.MsmqAuthenticationMode> に設定して、クライアント証明書を設定する方法もあります。  
+ <span data-ttu-id="89c9a-217">また、<xref:System.ServiceModel.MsmqTransportSecurity> プロパティから <xref:System.ServiceModel.NetMsmqSecurity.Transport%2A> を取得し、それを <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> に設定して、クライアント証明書を設定する方法もあります。</span><span class="sxs-lookup"><span data-stu-id="89c9a-217">Another workaround is to get the <xref:System.ServiceModel.MsmqTransportSecurity> from the <xref:System.ServiceModel.NetMsmqSecurity.Transport%2A> property and set it to <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate>, and set the client certificate.</span></span>  
   
- さらに、MSMQ と Active Directory 統合をインストールして回避することもできます。  
+ <span data-ttu-id="89c9a-218">さらに、MSMQ と Active Directory 統合をインストールして回避することもできます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-218">Yet another workaround is to install MSMQ with Active Directory integration.</span></span>  
   
- **Q:** Active Directory で既定のバインディング \(トランスポート セキュリティが有効\) を使用してメッセージをキューに送信すると、"内部証明書が見つからない" という内容のメッセージが表示されます。これを修復する方法を教えてください。  
+ <span data-ttu-id="89c9a-219">**Q:**既定のバインディングでメッセージを送信するときに (トランスポート セキュリティが有効)「内部証明書が見つかりません」メッセージが表示されるキューを Active Directory でします。</span><span class="sxs-lookup"><span data-stu-id="89c9a-219">**Q:** When I send a message with default binding (transport security turned on) in Active Directory to a queue, I get an "internal certificate not found" message.</span></span> <span data-ttu-id="89c9a-220">これを修復する方法を教えてください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-220">How do I fix this?</span></span>  
   
- **A:** これは、送信側の Active Directory 内の証明書を更新する必要があることを意味します。証明書を更新するには、**\[コントロール パネル\]**、**\[管理ツール\]**、**\[コンピューターの管理\]** の順に開き、**\[MSMQ\]** を右クリックして **\[プロパティ\]** を選択します。**\[ユーザー証明書\]** タブをクリックし、**\[更新\]** をクリックします。  
+ <span data-ttu-id="89c9a-221">**A:**つまり、送信者の Active Directory で証明書を更新する必要があります。</span><span class="sxs-lookup"><span data-stu-id="89c9a-221">**A:** This means that the certificate in Active Directory for the sender must be renewed.</span></span> <span data-ttu-id="89c9a-222">これを行うには、開く**コントロール パネルの **、**管理ツール**、**コンピューターの管理**を右クリックして**MSMQ**を選択し、**プロパティ**です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-222">To do so, open **Control Panel**, **Administrative Tools**, **Computer Management**, right-click **MSMQ**, and select **Properties**.</span></span> <span data-ttu-id="89c9a-223">選択、**ユーザー証明書** タブでをクリックし、**書き換え**ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="89c9a-223">Select the **User Certificate** tab and click the **Renew** button.</span></span>  
   
- **Q:** <xref:System.ServiceModel.MsmqAuthenticationMode> を使用してメッセージを送信するときに、使用する証明書を指定すると、"無効な証明書" というメッセージが表示されます。これを修復する方法を教えてください。  
+ <span data-ttu-id="89c9a-224">**Q:**を使用して、メッセージ送信時に<xref:System.ServiceModel.MsmqAuthenticationMode.Certificate>使用する証明書を指定して、「無効な証明書」メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-224">**Q:** When I send a message using <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> and specify the certificate to use, I get an "Invalid certificate" message.</span></span> <span data-ttu-id="89c9a-225">これを修復する方法を教えてください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-225">How do I fix this?</span></span>  
   
- **A:** 証明書モードでは、ローカル コンピューターの証明書ストアを使用できません。証明書スナップインを使用して、コンピューターの証明書ストアから現在のユーザー ストアに証明書をコピーする必要があります。証明書スナップインを開くには、以下を実行します。  
+ <span data-ttu-id="89c9a-226">**A:**証明書のモードでローカル コンピューターの証明書ストアを使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="89c9a-226">**A:** You cannot use a local machine certificate store with certificate mode.</span></span> <span data-ttu-id="89c9a-227">証明書スナップインを使用して、コンピューターの証明書ストアから現在のユーザー ストアに証明書をコピーする必要があります。</span><span class="sxs-lookup"><span data-stu-id="89c9a-227">You have to copy the certificate from the machine certificate store to the current user store using the Certificate snap-in.</span></span> <span data-ttu-id="89c9a-228">証明書スナップインを開くには、以下を実行します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-228">To get the Certificate snap-in:</span></span>  
   
-1.  **\[スタート\]** ボタンをクリックし、**\[ファイル名を指定して実行\]** を選択し、「`mmc`」と入力して、**\[OK\]** をクリックします。  
+1.  <span data-ttu-id="89c9a-229">をクリックして**開始**を選択**実行**、型`mmc`、 をクリック**OK**です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-229">Click **Start**, select **Run**, type `mmc`, and click **OK**.</span></span>  
   
-2.  **\[Microsoft 管理コンソール\]** の **\[ファイル\]** メニューを開き、**\[スナップインの追加と削除\]** を選択します。  
+2.  <span data-ttu-id="89c9a-230">**Microsoft 管理コンソール**を開き、**ファイル**メニュー**スナップインの追加と削除**です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-230">In the **Microsoft Management Console**, open the **File** menu and select **Add/Remove Snap-in**.</span></span>  
   
-3.  **\[スナップインの追加と削除\]** ダイアログ ボックスで、**\[追加\]** をクリックします。  
+3.  <span data-ttu-id="89c9a-231">**スナップインの追加と削除**ダイアログ ボックスで、をクリックして、**追加**ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="89c9a-231">In the **Add/Remove Snap-in** dialog box, click the **Add** button.</span></span>  
   
-4.  **\[スタンドアロン スナップインの追加\]** ダイアログ ボックスで証明書を選択し、**\[追加\]** をクリックします。  
+4.  <span data-ttu-id="89c9a-232">**スタンドアロン スナップインの追加** ダイアログ ボックス、選択の証明書およびクリック**追加**です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-232">In the **Add Standalone Snap-in** dialog box, select Certificates and click **Add**.</span></span>  
   
-5.  **\[証明書スナップイン\]** ダイアログ ボックスで、**\[ユーザー アカウント\]** を選択し、**\[完了\]** をクリックします。  
+5.  <span data-ttu-id="89c9a-233">**証明書**スナップイン ダイアログ ボックスで、 **ユーザー アカウント** をクリック**完了**です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-233">In the **Certificates** snap-in dialog box, select **My user account,** and click **Finish**.</span></span>  
   
-6.  次に、前の手順に従って 2 番目の証明書スナップインを追加しますが、今回は、**\[コンピューター アカウント\]** を選択して **\[次へ\]** をクリックします。  
+6.  <span data-ttu-id="89c9a-234">スナップインで、前の手順を使用して、2 番目の証明書が、今回の選択を次に、追加**コンピューター アカウント** をクリック**次**です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-234">Next, add a second Certificates snap-in using the previous steps, but this time select **Computer account** and click **Next**.</span></span>  
   
-7.  **\[ローカル コンピューター\]** を選択し、**\[完了\]** をクリックします。これで、コンピューターの証明書ストアから現在のユーザー ストアに証明書をドラッグ アンド ドロップできます。  
+7.  <span data-ttu-id="89c9a-235">選択**ローカル コンピューター**  をクリック**完了**です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-235">Select **Local Computer** and click **Finish**.</span></span> <span data-ttu-id="89c9a-236">これで、コンピューターの証明書ストアから現在のユーザー ストアに証明書をドラッグ アンド ドロップできます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-236">You can now drag and drop certificates from the machine certificate store to the current user store.</span></span>  
   
- **Q:** ワークグループモードで、サービスが別のコンピューター上のキューから読み取るときに "access denied" 例外が発生します。  
+ <span data-ttu-id="89c9a-237">**Q:**ときに、サービス、キューから読み取るワークグループ モードで別のコンピューターに"access denied"例外を取得します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-237">**Q:** When my service reads from a queue on another computer in workgroup mode, I get an "access denied" exception.</span></span>  
   
- **A:** ワークグループ モードでリモート アプリケーションがキューへのアクセスを取得するには、キューへのアクセス許可がアプリケーションに必要です。キューのアクセス制御リスト \(ACL\) に "匿名ログイン" を追加して、読み取りアクセス許可を割り当ててください。  
+ <span data-ttu-id="89c9a-238">**A:**リモート アプリケーション キューにアクセスするために、ワークグループ モードでアプリケーションのキューへのアクセス権限が必要です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-238">**A:** In workgroup mode, for a remote application to gain access to the queue, the application must have permission to access the queue.</span></span> <span data-ttu-id="89c9a-239">キューのアクセス制御リスト (ACL) に「匿名ログイン」を追加し、読み取りアクセス許可を付けます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-239">Add "Anonymous login" to the queue's access control list (ACL) and give it read permission.</span></span>  
   
- **Q:** ネットワーク サービス クライアント \(またはドメイン アカウントを持たない任意のクライアント\) がキューを使用するメッセージを送信すると、証明書が無効であるというエラー メッセージが表示され、送信できません。これを修復する方法を教えてください。  
+ <span data-ttu-id="89c9a-240">**Q:**ネットワーク サービス クライアント (またはドメイン アカウントを持たない任意のクライアント) は、キューに置かれたメッセージを送信するとき、送信が無効な証明書で失敗します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-240">**Q:** When a network service client (or any client that does not have a domain account) sends a queued message, the send fails with an invalid certificate.</span></span> <span data-ttu-id="89c9a-241">これを修復する方法を教えてください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-241">How do I fix this?</span></span>  
   
- **A:** バインディング構成を確認してください。既定のバインディングでは、メッセージに署名するために MSMQ トランスポート セキュリティを有効にしています。これを無効にしてください。  
+ <span data-ttu-id="89c9a-242">**A:**バインディング構成を確認します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-242">**A:** Check the binding configuration.</span></span> <span data-ttu-id="89c9a-243">既定のバインディングでは、メッセージに署名するために MSMQ トランスポート セキュリティを有効にしています。</span><span class="sxs-lookup"><span data-stu-id="89c9a-243">The default binding has MSMQ transport security turned on to sign the message.</span></span> <span data-ttu-id="89c9a-244">これを無効にしてください。</span><span class="sxs-lookup"><span data-stu-id="89c9a-244">Turn it off.</span></span>  
   
-### リモート トランザクション受信  
- **Q:** コンピューター A にキューがあるときに、コンピューター B のキューからメッセージを読み取る [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを実行すると \(リモート トランザクション受信シナリオ\)、キューからメッセージが読み取られません。トレース情報には、"Transaction cannot be imported." というメッセージが示され、受信に失敗したことがわかります。この問題を解決するには、どうすればいいですか。  
+### <a name="remote-transacted-receives"></a><span data-ttu-id="89c9a-245">リモート トランザクション受信</span><span class="sxs-lookup"><span data-stu-id="89c9a-245">Remote Transacted Receives</span></span>  
+ <span data-ttu-id="89c9a-246">**Q:**コンピューター A で、キューがある場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスを読み取るメッセージの B (リモート トランザクション受信シナリオ)、コンピューター上のキューからメッセージがキューから読み取られません。</span><span class="sxs-lookup"><span data-stu-id="89c9a-246">**Q:** When I have a queue on machine A, and a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service that reads messages from a queue on machine B (the remote transacted receive scenario), messages are not read from the queue.</span></span> <span data-ttu-id="89c9a-247">受信側は、メッセージ「トランザクションをインポートできません」で失敗しました。 トレース情報を示します</span><span class="sxs-lookup"><span data-stu-id="89c9a-247">Tracing information indicates the receive failed with the message "Transaction cannot be imported."</span></span> <span data-ttu-id="89c9a-248">これを修正するのには、どうすればよいですか</span><span class="sxs-lookup"><span data-stu-id="89c9a-248">What can I do to fix this?</span></span>  
   
- **A:** これには、次の理由が考えられます。  
+ <span data-ttu-id="89c9a-249">**A:**この 3 つの理由が考えられます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-249">**A:** There are three possible reasons for this:</span></span>  
   
--   ドメイン モードの場合、リモート トランザクション受信には、Microsoft 分散トランザクション コーディネーター \(MSDTC\) ネットワーク アクセスが必要です。これは、**\[Windows コンポーネントの追加と削除\]** を使用して有効にできます。  
+-   <span data-ttu-id="89c9a-250">ドメイン モードの場合、リモート トランザクション受信には、Microsoft 分散トランザクション コーディネーター (MSDTC) ネットワーク アクセスが必要です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-250">If you are in domain mode, remote transacted receive requires Microsoft Distributed Transaction Coordinator (MSDTC) network access.</span></span> <span data-ttu-id="89c9a-251">有効にできますこれを使用して**コンポーネントの追加/削除**です。</span><span class="sxs-lookup"><span data-stu-id="89c9a-251">You can enable this using **Add/Remove Components**.</span></span>  
   
-     ![ネットワーク DTC アクセスの有効化](../../../../docs/framework/wcf/feature-details/media/applicationserveraddcomps.jpg "ApplicationServerAddComps")  
+     <span data-ttu-id="89c9a-252">![ネットワーク DTC アクセスを有効にする](../../../../docs/framework/wcf/feature-details/media/applicationserveraddcomps.jpg "ApplicationServerAddComps")</span><span class="sxs-lookup"><span data-stu-id="89c9a-252">![Enabling network DTC access](../../../../docs/framework/wcf/feature-details/media/applicationserveraddcomps.jpg "ApplicationServerAddComps")</span></span>  
   
--   トランザクション マネージャーと通信するための認証モードを確認します。ワークグループ モードの場合は、\[認証を必要としない\] を選択する必要があります。ドメイン モードの場合は、\[相互認証を必要とする\] を選択する必要があります。  
+-   <span data-ttu-id="89c9a-253">トランザクション マネージャーと通信するための認証モードを確認します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-253">Check the authentication mode for communicating with the transaction manager.</span></span> <span data-ttu-id="89c9a-254">ワークグループ モードの場合は、「認証が必要です」を選択する必要があります。</span><span class="sxs-lookup"><span data-stu-id="89c9a-254">If you are in workgroup mode, "No Authentication Required" must be selected.</span></span> <span data-ttu-id="89c9a-255">ドメイン モードの場合は、「相互認証が必要です」を選択する必要があります。</span><span class="sxs-lookup"><span data-stu-id="89c9a-255">If you are in domain mode, then "Mutual Authentication Required" must be selected.</span></span>  
   
-     ![XA トランザクションの有効化](../../../../docs/framework/wcf/feature-details/media/4f3695e0-fb0b-4c5b-afac-75f8860d2bb0.jpg "4f3695e0\-fb0b\-4c5b\-afac\-75f8860d2bb0")  
+     <span data-ttu-id="89c9a-256">![XA トランザクションを有効にする](../../../../docs/framework/wcf/feature-details/media/4f3695e0-fb0b-4c5b-afac-75f8860d2bb0.jpg "4f3695e0-fb0b-4c5b-afac-75f8860d2bb0")</span><span class="sxs-lookup"><span data-stu-id="89c9a-256">![Enabling XA transactions](../../../../docs/framework/wcf/feature-details/media/4f3695e0-fb0b-4c5b-afac-75f8860d2bb0.jpg "4f3695e0-fb0b-4c5b-afac-75f8860d2bb0")</span></span>  
   
--   MSDTC が **\[インターネット接続ファイアウォール\]** 設定の例外の一覧に含まれていることを確認します。  
+-   <span data-ttu-id="89c9a-257">MSDTC が内の例外の一覧であるかどうかを確認、**インターネット接続ファイアウォール**設定します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-257">Make sure that MSDTC is in the list of exceptions in the **Internet Connection Firewall** settings.</span></span>  
   
--   [!INCLUDE[wv](../../../../includes/wv-md.md)] を使用していることを確認します。[!INCLUDE[wv](../../../../includes/wv-md.md)] 上の MSMQ は、リモート トランザクション読み取りをサポートします。以前の Windows リリース上の MSMQ は、リモート トランザクション読み取りをサポートしません。  
+-   <span data-ttu-id="89c9a-258">[!INCLUDE[wv](../../../../includes/wv-md.md)] を使用していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-258">Ensure that you are using [!INCLUDE[wv](../../../../includes/wv-md.md)].</span></span> <span data-ttu-id="89c9a-259">[!INCLUDE[wv](../../../../includes/wv-md.md)] 上の MSMQ は、リモート トランザクション読み取りをサポートします。</span><span class="sxs-lookup"><span data-stu-id="89c9a-259">MSMQ on [!INCLUDE[wv](../../../../includes/wv-md.md)] supports remote transacted read.</span></span> <span data-ttu-id="89c9a-260">以前の Windows リリース上の MSMQ は、リモート トランザクション読み取りをサポートしません。</span><span class="sxs-lookup"><span data-stu-id="89c9a-260">MSMQ on earlier Windows releases does not support remote transacted read.</span></span>  
   
- **Q:** キューから読み取るサービスが、Web ホストなどでのネットワーク サービスであるときにキューから読み取ると、アクセス拒否例外が発生するのはなぜですか。  
+ <span data-ttu-id="89c9a-261">**Q:**キューから読み取るサービスがネットワーク サービスの場合は、たとえば、Web でホスト、アクセス拒否例外を取得する理由が発生、キューから読み取るときにしますか?</span><span class="sxs-lookup"><span data-stu-id="89c9a-261">**Q:** When the service reading from the queue is a network service, for example, in a Web host, why do I get an access-denied exception is raised when reading from the queue?</span></span>  
   
- **A:** ネットワーク サービス読み取りアクセスをキュー ACL に追加して、ネットワーク サービスがキューから読み取れるようにしてください。  
+ <span data-ttu-id="89c9a-262">**A:**ネットワーク サービス読み取りアクセスは、キュー、ネットワーク サービスがキューから読み取ることができますを確実に ACL に追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="89c9a-262">**A:** Network service read access must be added to the queue ACL to ensure that a network service can read from the queue.</span></span>  
   
- **Q:** MSMQ アクティベーション サービスを使用して、リモート コンピューター上のキュー内のメッセージに基づいてアプリケーションをアクティブ化することは可能ですか。  
+ <span data-ttu-id="89c9a-263">**Q:**をリモート コンピューター上のキュー内のメッセージに基づくアプリケーションをアクティブ化する、MSMQ アクティブ化サービスを使用できますか。</span><span class="sxs-lookup"><span data-stu-id="89c9a-263">**Q:** Can I use the MSMQ activation service to activate applications based on messages in a queue on a remote machine?</span></span>  
   
- **A:** 可能です。これには、ネットワーク サービスとして動作するように MSMQ アクティベーション サービスを構成し、リモート コンピューター上のキューへのネットワーク サービス アクセスを追加する必要があります。  
+ <span data-ttu-id="89c9a-264">**A:** できます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-264">**A:** Yes.</span></span> <span data-ttu-id="89c9a-265">これには、ネットワーク サービスとして動作するように MSMQ アクティベーション サービスを構成し、リモート コンピューター上のキューへのネットワーク サービス アクセスを追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="89c9a-265">To do this, you must configure the MSMQ activation service to run as a network service, and add network service access to the queue on the remote machine.</span></span>  
   
-## ReceiveContext を有効にしたカスタム MSMQ バインディングの使用  
- <xref:System.ServiceModel.Channels.ReceiveContext> を有効にしてカスタム MSMQ バインディングを使用すると、ネイティブの MSMQ が非同期の <xref:System.ServiceModel.Channels.ReceiveContext> 受信の I\/O 完了をサポートしないために、着信メッセージの処理にスレッド プール内のスレッドが使用されます。これは、このようなメッセージの処理に <xref:System.ServiceModel.Channels.ReceiveContext> の内部トランザクションが使用され、MSMQ が非同期処理をサポートしないためです。この問題を回避するには、<xref:System.ServiceModel.Description.SynchronousReceiveBehavior> をエンドポイントに追加して同期処理を強制するか、<xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.MaxPendingReceives%2A> を 1 に設定します。
+## <a name="using-custom-msmq-bindings-with-receivecontext-enabled"></a><span data-ttu-id="89c9a-266">ReceiveContext を有効にしたカスタム MSMQ バインディングの使用</span><span class="sxs-lookup"><span data-stu-id="89c9a-266">Using Custom MSMQ Bindings with ReceiveContext Enabled</span></span>  
+ <span data-ttu-id="89c9a-267"><xref:System.ServiceModel.Channels.ReceiveContext> を有効にしてカスタム MSMQ バインディングを使用すると、ネイティブの MSMQ が非同期の <xref:System.ServiceModel.Channels.ReceiveContext> 受信の I/O 完了をサポートしないために、着信メッセージの処理にスレッド プール内のスレッドが使用されます。</span><span class="sxs-lookup"><span data-stu-id="89c9a-267">When using a custom MSMQ binding with <xref:System.ServiceModel.Channels.ReceiveContext> enabled processing an incoming message will use a thread pool thread because native MSMQ does not support I/O completion for asynchronous <xref:System.ServiceModel.Channels.ReceiveContext> receives.</span></span> <span data-ttu-id="89c9a-268">これは、このようなメッセージの処理に <xref:System.ServiceModel.Channels.ReceiveContext> の内部トランザクションが使用され、MSMQ が非同期処理をサポートしないためです。</span><span class="sxs-lookup"><span data-stu-id="89c9a-268">This is because processing such a message uses internal transactions for <xref:System.ServiceModel.Channels.ReceiveContext> and MSMQ does not support asynchronous processing.</span></span> <span data-ttu-id="89c9a-269">この問題を回避するには、<xref:System.ServiceModel.Description.SynchronousReceiveBehavior> をエンドポイントに追加して同期処理を強制するか、<xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.MaxPendingReceives%2A> を 1 に設定します。</span><span class="sxs-lookup"><span data-stu-id="89c9a-269">To work around this issue you can add a <xref:System.ServiceModel.Description.SynchronousReceiveBehavior> to the endpoint to force synchronous processing or set <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.MaxPendingReceives%2A> to 1.</span></span>

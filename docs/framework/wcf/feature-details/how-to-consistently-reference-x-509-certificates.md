@@ -1,36 +1,41 @@
 ---
-title: "方法 : 一貫性を保って X.509 証明書を参照する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "証明書 [WCF], X.509 証明書の参照"
+title: "方法 : 一貫性を保って X.509 証明書を参照する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: certificates [WCF], referencing X.509 certificates
 ms.assetid: a6de1c63-e450-4640-ad08-ad7302dbfbfc
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 8d42af919b9792fc5a5303737187be7ffef6405d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : 一貫性を保って X.509 証明書を参照する
-証明書を識別する方法には、証明書のハッシュを使用する方法、発行者とシリアル番号を使用する方法、またはサブジェクト キー識別子 \(SKI\) を使用する方法があります。SKI を使用すると、証明書のサブジェクト公開キーを一意に識別できます。SKI は、XML デジタル署名を処理する場合によく使用されます。SKI の値は、通常、*X.509 証明書の拡張*として X.509 証明書の一部を構成します。SKI 拡張が証明書に見つからない場合、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、発行者とシリアル番号を使用する既定の*参照スタイル*を使用します。証明書に SKI 拡張が含まれる場合、既定の参照スタイルは SKI を使用してその証明書を識別します。アプリケーションの開発中に、SKI 拡張を使用しない証明書から SKI 拡張を使用する証明書に切り替えた場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が生成するメッセージに使用される参照スタイルも変更されます。  
+# <a name="how-to-consistently-reference-x509-certificates"></a><span data-ttu-id="3614a-102">方法 : 一貫性を保って X.509 証明書を参照する</span><span class="sxs-lookup"><span data-stu-id="3614a-102">How to: Consistently Reference X.509 Certificates</span></span>
+<span data-ttu-id="3614a-103">証明書を識別する方法には、証明書のハッシュを使用する方法、発行者とシリアル番号を使用する方法、またはサブジェクト キー識別子 (SKI) を使用する方法があります。</span><span class="sxs-lookup"><span data-stu-id="3614a-103">You can identify a certificate in several ways: by the hash of the certificate, by the issuer and serial number, or by the subject key identifier (SKI).</span></span> <span data-ttu-id="3614a-104">SKI を使用すると、証明書のサブジェクト公開キーを一意に識別できます。SKI は、XML デジタル署名を処理する場合によく使用されます。</span><span class="sxs-lookup"><span data-stu-id="3614a-104">The SKI provides a unique identification for the certificate's subject public key and is often used when working with XML digital signing.</span></span> <span data-ttu-id="3614a-105">SKI の値は、X.509 証明書の一部では通常、 *X.509 証明書の拡張*です。</span><span class="sxs-lookup"><span data-stu-id="3614a-105">The SKI value is usually part of the X.509 certificate as an *X.509 certificate extension*.</span></span> [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="3614a-106">既定値を持つ*参照スタイル*SKI 拡張が証明書に見つからない場合、発行者とシリアル番号を使用します。</span><span class="sxs-lookup"><span data-stu-id="3614a-106"> has a default *referencing style* that uses the issuer and serial number if the SKI extension is missing from the certificate.</span></span> <span data-ttu-id="3614a-107">証明書に SKI 拡張が含まれる場合、既定の参照スタイルは SKI を使用してその証明書を識別します。</span><span class="sxs-lookup"><span data-stu-id="3614a-107">If the certificate contains the SKI extension, the default referencing style uses the SKI to point to the certificate.</span></span> <span data-ttu-id="3614a-108">アプリケーションの開発中に、SKI 拡張を使用しない証明書から SKI 拡張を使用する証明書に切り替えた場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が生成するメッセージに使用される参照スタイルも変更されます。</span><span class="sxs-lookup"><span data-stu-id="3614a-108">If mid-way through development of an application, you switch from using certificates that do not use the SKI extension to certificates that use the SKI extension, the referencing style used in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]-generated messages also changes.</span></span>  
   
- SKI 拡張が存在するかどうかに関係なく、一貫性のある参照スタイルが必要な場合は、次のコードに示されているような参照スタイルを構成できます。  
+ <span data-ttu-id="3614a-109">SKI 拡張が存在するかどうかに関係なく、一貫性のある参照スタイルが必要な場合は、次のコードに示されているような参照スタイルを構成できます。</span><span class="sxs-lookup"><span data-stu-id="3614a-109">If a consistent referencing style is required regardless of SKI extension presence, it is possible to configure the desired referencing style as shown in the following code.</span></span>  
   
-## 使用例  
- 次の例では、1 つの一貫した参照スタイル \(ユーザー名とシリアル番号\) を使用するカスタム セキュリティ バインド要素を作成します。  
+## <a name="example"></a><span data-ttu-id="3614a-110">例</span><span class="sxs-lookup"><span data-stu-id="3614a-110">Example</span></span>  
+ <span data-ttu-id="3614a-111">次の例では、1 つの一貫した参照スタイル (ユーザー名とシリアル番号) を使用するカスタム セキュリティ バインド要素を作成します。</span><span class="sxs-lookup"><span data-stu-id="3614a-111">The following example creates a custom security binding element that uses a single consistent referencing style, the issuer name and serial number.</span></span>  
   
  [!code-csharp[c_ReferencingCertificatesConsistently#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_referencingcertificatesconsistently/cs/source.cs#1)]
  [!code-vb[c_ReferencingCertificatesConsistently#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_referencingcertificatesconsistently/vb/source.vb#1)]  
   
-## コードのコンパイル  
- 次の名前空間は以下のコードのコンパイルに必要です。  
+## <a name="compiling-the-code"></a><span data-ttu-id="3614a-112">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="3614a-112">Compiling the Code</span></span>  
+ <span data-ttu-id="3614a-113">コードのコンパイルには次の名前空間が必要です。</span><span class="sxs-lookup"><span data-stu-id="3614a-113">The following namespaces are required to compile the code:</span></span>  
   
 -   <xref:System>  
   
@@ -40,5 +45,5 @@ caps.handback.revision: 6
   
 -   <xref:System.ServiceModel.Security.Tokens>  
   
-## 参照  
- [証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+## <a name="see-also"></a><span data-ttu-id="3614a-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="3614a-114">See Also</span></span>  
+ [<span data-ttu-id="3614a-115">証明書の使用</span><span class="sxs-lookup"><span data-stu-id="3614a-115">Working with Certificates</span></span>](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

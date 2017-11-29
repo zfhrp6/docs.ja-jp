@@ -1,79 +1,82 @@
 ---
-title: "Implementing the UI Automation ExpandCollapse Control Pattern | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "UI Automation, ExpandCollapse control pattern"
-  - "ExpandCollapse control pattern"
-  - "control patterns, ExpandCollapse"
+title: "UI オートメーション ExpandCollapse コントロール パターンの実装"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- UI Automation, ExpandCollapse control pattern
+- ExpandCollapse control pattern
+- control patterns, ExpandCollapse
 ms.assetid: 1dbabb8c-0d68-47c1-a35e-1c01cb01af26
-caps.latest.revision: 25
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 25
+caps.latest.revision: "25"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: 877fac575255159c82d1c1e3c3c4b3dbb803198e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Implementing the UI Automation ExpandCollapse Control Pattern
+# <a name="implementing-the-ui-automation-expandcollapse-control-pattern"></a><span data-ttu-id="969e0-102">UI オートメーション ExpandCollapse コントロール パターンの実装</span><span class="sxs-lookup"><span data-stu-id="969e0-102">Implementing the UI Automation ExpandCollapse Control Pattern</span></span>
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の最新情報については、「[Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
+>  <span data-ttu-id="969e0-103">このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="969e0-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="969e0-104">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="969e0-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- このトピックでは、プロパティ、メソッド、イベントに関する情報など、<xref:System.Windows.Automation.Provider.IExpandCollapseProvider> の実装のためのガイドラインと規則について説明します。 その他のリファレンスへのリンクは、概要の最後に記載します。  
+ <span data-ttu-id="969e0-105">このトピックでは、プロパティ、メソッド、イベントに関する情報など、 <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>の実装のためのガイドラインと規則について説明します。</span><span class="sxs-lookup"><span data-stu-id="969e0-105">This topic introduces guidelines and conventions for implementing <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>, including information about properties, methods, and events.</span></span> <span data-ttu-id="969e0-106">その他のリファレンスへのリンクは、概要の最後に記載します。</span><span class="sxs-lookup"><span data-stu-id="969e0-106">Links to additional references are listed at the end of the overview.</span></span>  
   
- <xref:System.Windows.Automation.ExpandCollapsePattern> コントロール パターンは、視覚的に展開してより多くのコンテンツを表示したり、折りたたんでコンテンツを非表示にしたりするコントロールをサポートするために使用します。 このコントロール パターンを実装するコントロールの例については、「[Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)」を参照してください。  
+ <span data-ttu-id="969e0-107"><xref:System.Windows.Automation.ExpandCollapsePattern> コントロール パターンは、視覚的に展開してより多くのコンテンツを表示したり、折りたたんでコンテンツを非表示にしたりするコントロールをサポートするために使用します。</span><span class="sxs-lookup"><span data-stu-id="969e0-107">The <xref:System.Windows.Automation.ExpandCollapsePattern> control pattern is used to support controls that visually expand to display more content and collapse to hide content.</span></span> <span data-ttu-id="969e0-108">このコントロール パターンを実装するコントロールの例については、「 [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="969e0-108">For examples of controls that implement this control pattern, see [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).</span></span>  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## 実装のガイドラインと規則  
- ExpandCollapse コントロール パターンを実装する場合は、次のガイドラインと規則に注意してください。  
+## <a name="implementation-guidelines-and-conventions"></a><span data-ttu-id="969e0-109">実装のガイドラインと規則</span><span class="sxs-lookup"><span data-stu-id="969e0-109">Implementation Guidelines and Conventions</span></span>  
+ <span data-ttu-id="969e0-110">ExpandCollapse コントロール パターンを実装する場合は、次のガイドラインと規則に注意してください。</span><span class="sxs-lookup"><span data-stu-id="969e0-110">When implementing the ExpandCollapse control pattern, note the following guidelines and conventions:</span></span>  
   
--   展開または折りたたみの機能を備えた UI を提供する子オブジェクトで構成された集約コントロールは、<xref:System.Windows.Automation.ExpandCollapsePattern> コントロール パターンをサポートする必要がありますが、その子要素がサポートする必要はありません。 たとえば、コンボ ボックス コントロールは、リスト ボックス、ボタン、およびエディット コントロールの組み合わせで構成されていますが、<xref:System.Windows.Automation.ExpandCollapsePattern> をサポートする必要があるのは親のコンボ ボックスのみです。  
+-   <span data-ttu-id="969e0-111">展開または折りたたみの機能を備えた UI を提供する子オブジェクトで構成された集約コントロールは、 <xref:System.Windows.Automation.ExpandCollapsePattern> コントロール パターンをサポートする必要がありますが、その子要素がサポートする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="969e0-111">Aggregate controls—built with child objects that provide the UI with expand/collapse functionality—must support the <xref:System.Windows.Automation.ExpandCollapsePattern> control pattern whereas their child elements do not.</span></span> <span data-ttu-id="969e0-112">たとえば、コンボ ボックス コントロールは、リスト ボックス、ボタン、およびエディット コントロールの組み合わせで構成されていますが、 <xref:System.Windows.Automation.ExpandCollapsePattern>をサポートする必要があるのは親のコンボ ボックスのみです。</span><span class="sxs-lookup"><span data-stu-id="969e0-112">For example, a combo box control is built with a combination of list box, button, and edit controls, but it is only the parent combo box that must support the <xref:System.Windows.Automation.ExpandCollapsePattern>.</span></span>  
   
     > [!NOTE]
-    >  メニュー コントロールは例外であり、これは個々の MenuItem オブジェクトの集合体です。 MenuItem オブジェクトは <xref:System.Windows.Automation.ExpandCollapsePattern> コントロール パターンをサポートできますが、親の Menu コントロールはできません。 同様の例外が、Tree および Tree Item コントロールにも適用されます。  
+    >  <span data-ttu-id="969e0-113">メニュー コントロールは例外であり、これは個々の MenuItem オブジェクトの集合体です。</span><span class="sxs-lookup"><span data-stu-id="969e0-113">An exception is the menu control, which is an aggregate of individual MenuItem objects.</span></span> <span data-ttu-id="969e0-114">MenuItem オブジェクトは <xref:System.Windows.Automation.ExpandCollapsePattern> コントロール パターンをサポートできますが、親の Menu コントロールはできません。</span><span class="sxs-lookup"><span data-stu-id="969e0-114">The MenuItem objects can support the <xref:System.Windows.Automation.ExpandCollapsePattern> control pattern, but the parent Menu control cannot.</span></span> <span data-ttu-id="969e0-115">同様の例外が、Tree および Tree Item コントロールにも適用されます。</span><span class="sxs-lookup"><span data-stu-id="969e0-115">A similar exception applies to the Tree and Tree Item controls.</span></span>  
   
--   コントロールの <xref:System.Windows.Automation.ExpandCollapseState> が <xref:System.Windows.Automation.ExpandCollapseState> に設定されている場合、コントロールに対して現在アクティブな <xref:System.Windows.Automation.ExpandCollapsePattern> 機能は存在せず、このコントロール パターンを使用して取得できる情報は <xref:System.Windows.Automation.ExpandCollapseState> だけです。 その後、子オブジェクトが追加された場合は、<xref:System.Windows.Automation.ExpandCollapseState> が変更され、<xref:System.Windows.Automation.ExpandCollapsePattern> 機能がアクティブになります。  
+-   <span data-ttu-id="969e0-116">コントロールの <xref:System.Windows.Automation.ExpandCollapseState> が <xref:System.Windows.Automation.ExpandCollapseState.LeafNode>に設定されている場合、コントロールに対して現在アクティブな <xref:System.Windows.Automation.ExpandCollapsePattern> 機能は存在せず、このコントロール パターンを使用して取得できる情報は <xref:System.Windows.Automation.ExpandCollapseState>だけです。</span><span class="sxs-lookup"><span data-stu-id="969e0-116">When the <xref:System.Windows.Automation.ExpandCollapseState> of a control is set to <xref:System.Windows.Automation.ExpandCollapseState.LeafNode>, any <xref:System.Windows.Automation.ExpandCollapsePattern> functionality is currently inactive for the control and the only information that can be obtained using this control pattern is the <xref:System.Windows.Automation.ExpandCollapseState>.</span></span> <span data-ttu-id="969e0-117">その後、子オブジェクトが追加された場合は、 <xref:System.Windows.Automation.ExpandCollapseState> が変更され、 <xref:System.Windows.Automation.ExpandCollapsePattern> 機能がアクティブになります。</span><span class="sxs-lookup"><span data-stu-id="969e0-117">If any child objects are subsequently added, the <xref:System.Windows.Automation.ExpandCollapseState> changes and <xref:System.Windows.Automation.ExpandCollapsePattern> functionality is activated.</span></span>  
   
--   <xref:System.Windows.Automation.ExpandCollapseState> は、すべての子孫オブジェクトの可視性を表すのではなく、直接の子オブジェクトの可視性のみを表します。  
+-   <span data-ttu-id="969e0-118"><xref:System.Windows.Automation.ExpandCollapseState> は、すべての子孫オブジェクトの可視性を表すのではなく、直接の子オブジェクトの可視性のみを表します。</span><span class="sxs-lookup"><span data-stu-id="969e0-118"><xref:System.Windows.Automation.ExpandCollapseState> refers to the visibility of immediate child objects only; it does not refer to the visibility of all descendant objects.</span></span>  
   
--   展開および折りたたみ機能は、コントロールに固有の機能です。 この機能の動作例を次に示します。  
+-   <span data-ttu-id="969e0-119">展開および折りたたみ機能は、コントロールに固有の機能です。</span><span class="sxs-lookup"><span data-stu-id="969e0-119">Expand and Collapse functionality is control-specific.</span></span> <span data-ttu-id="969e0-120">この機能の動作例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="969e0-120">The following are examples of this behavior.</span></span>  
   
-    -   Office Personal のメニューには、3 つの状態を示す MenuItem \(<xref:System.Windows.Automation.ExpandCollapseState>、<xref:System.Windows.Automation.ExpandCollapseState>、および <xref:System.Windows.Automation.ExpandCollapseState>\) を指定できます。この場合、<xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> または <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> を呼び出したときに選択される状態は、コントロールによって指定されます。  
+    -   <span data-ttu-id="969e0-121">Office Personal のメニューには、3 つの状態を示す MenuItem (<xref:System.Windows.Automation.ExpandCollapseState.Expanded>、 <xref:System.Windows.Automation.ExpandCollapseState.Collapsed> 、および <xref:System.Windows.Automation.ExpandCollapseState.PartiallyExpanded>) を指定できます。この場合、 <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> または <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> を呼び出したときに選択される状態は、コントロールによって指定されます。</span><span class="sxs-lookup"><span data-stu-id="969e0-121">The Office Personal Menu can be a tri-state MenuItem (<xref:System.Windows.Automation.ExpandCollapseState.Expanded>, <xref:System.Windows.Automation.ExpandCollapseState.Collapsed> and <xref:System.Windows.Automation.ExpandCollapseState.PartiallyExpanded>) where the control specifies the state to adopt when an <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> or <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> is called.</span></span>  
   
-    -   TreeItem で <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> を呼び出すと、すべての子孫または直接の子のみを表示できます。  
+    -   <span data-ttu-id="969e0-122">TreeItem で <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> を呼び出すと、すべての子孫または直接の子のみを表示できます。</span><span class="sxs-lookup"><span data-stu-id="969e0-122">Calling <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> on a TreeItem may display all descendants or only immediate children.</span></span>  
   
-    -   コントロールでの <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> または <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> の呼び出しによってその子孫の状態が維持されるとき、状態の変更イベントではなく、可視性の変更イベントが送信されます。折りたたみの実行時に親コントロールが子孫の状態を維持しないときは、コントロールが表示されなくなったすべての子孫を破棄し、破棄イベントを発生させる場合と、子孫ごとに <xref:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState%2A> を変更して、可視性の変更イベントを発生させる場合があります。  
+    -   <span data-ttu-id="969e0-123">コントロールでの <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> または <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> の呼び出しによってその子孫の状態が維持されるとき、状態の変更イベントではなく、可視性の変更イベントが送信されます。折りたたみの実行時に親コントロールが子孫の状態を維持しないときは、コントロールが表示されなくなったすべての子孫を破棄し、破棄イベントを発生させる場合と、子孫ごとに <xref:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState%2A> を変更して、可視性の変更イベントを発生させる場合があります。</span><span class="sxs-lookup"><span data-stu-id="969e0-123">If calling <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> or <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> on a control maintains the state of its descendants, a visibility change event should be sent, not a state change event If the parent control does not maintain the state of its descendants when collapsed, the control may destroy all the descendants that are no longer visible and raise a destroyed event; or it may change the <xref:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState%2A> for each descendant and raise a visibility change event.</span></span>  
   
--   ナビゲーションを確実にするには、オブジェクトを親の <xref:System.Windows.Automation.ExpandCollapseState> に関係なく、\(可視性の状態が適切な\) [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー内に配置することをお勧めします。 子孫が必要に応じて生成される場合、それらが [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーに表示されるのは、初回の表示以降か、または可視状態になっている間に限られます。  
+-   <span data-ttu-id="969e0-124">ナビゲーションを確実にするには、オブジェクトを親の [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] に関係なく、(可視性の状態が適切な) <xref:System.Windows.Automation.ExpandCollapseState>ツリー内に配置することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="969e0-124">To guarantee navigation, it is desirable for an object to be in the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree (with appropriate visibility state) regardless of its parents <xref:System.Windows.Automation.ExpandCollapseState>.</span></span> <span data-ttu-id="969e0-125">子孫が必要に応じて生成される場合、それらが [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーに表示されるのは、初回の表示以降か、または可視状態になっている間に限られます。</span><span class="sxs-lookup"><span data-stu-id="969e0-125">If descendants are generated on demand, they may only appear in the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree after being displayed for the first time or only while they are visible.</span></span>  
   
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>   
-## IExpandCollapseProvider の必須メンバー  
- <xref:System.Windows.Automation.Provider.IExpandCollapseProvider> の実装には、次のプロパティとメソッドが必要です。  
+## <a name="required-members-for-iexpandcollapseprovider"></a><span data-ttu-id="969e0-126">IExpandCollapseProvider の必須メンバー</span><span class="sxs-lookup"><span data-stu-id="969e0-126">Required Members for IExpandCollapseProvider</span></span>  
+ <span data-ttu-id="969e0-127"><xref:System.Windows.Automation.Provider.IExpandCollapseProvider>の実装には、次のプロパティとメソッドが必要です。</span><span class="sxs-lookup"><span data-stu-id="969e0-127">The following properties and methods are required for implementing <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>.</span></span>  
   
-|必須メンバー|メンバーの型|ノート|  
-|------------|------------|---------|  
-|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState%2A>|プロパティ|なし|  
-|<xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A>|メソッド|なし|  
-|<xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A>|メソッド|なし|  
-|<xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>|Event|このコントロールには関連付けられているイベントがありません。この汎用デリゲートを使用します。|  
+|<span data-ttu-id="969e0-128">必須メンバー</span><span class="sxs-lookup"><span data-stu-id="969e0-128">Required members</span></span>|<span data-ttu-id="969e0-129">メンバーの型</span><span class="sxs-lookup"><span data-stu-id="969e0-129">Member type</span></span>|<span data-ttu-id="969e0-130">ノート</span><span class="sxs-lookup"><span data-stu-id="969e0-130">Notes</span></span>|  
+|----------------------|-----------------|-----------|  
+|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState%2A>|<span data-ttu-id="969e0-131">プロパティ</span><span class="sxs-lookup"><span data-stu-id="969e0-131">Property</span></span>|<span data-ttu-id="969e0-132">なし</span><span class="sxs-lookup"><span data-stu-id="969e0-132">None</span></span>|  
+|<xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A>|<span data-ttu-id="969e0-133">メソッド</span><span class="sxs-lookup"><span data-stu-id="969e0-133">Method</span></span>|<span data-ttu-id="969e0-134">なし</span><span class="sxs-lookup"><span data-stu-id="969e0-134">None</span></span>|  
+|<xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A>|<span data-ttu-id="969e0-135">メソッド</span><span class="sxs-lookup"><span data-stu-id="969e0-135">Method</span></span>|<span data-ttu-id="969e0-136">なし</span><span class="sxs-lookup"><span data-stu-id="969e0-136">None</span></span>|  
+|<xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>|<span data-ttu-id="969e0-137">Event</span><span class="sxs-lookup"><span data-stu-id="969e0-137">Event</span></span>|<span data-ttu-id="969e0-138">このコントロールには関連付けられているイベントがありません。この汎用デリゲートを使用します。</span><span class="sxs-lookup"><span data-stu-id="969e0-138">This control has no associated events; use this generic delegate.</span></span>|  
   
 <a name="Exceptions"></a>   
-## 例外  
- プロバイダーは、次の例外をスローする必要があります。  
+## <a name="exceptions"></a><span data-ttu-id="969e0-139">例外</span><span class="sxs-lookup"><span data-stu-id="969e0-139">Exceptions</span></span>  
+ <span data-ttu-id="969e0-140">プロバイダーは、次の例外をスローする必要があります。</span><span class="sxs-lookup"><span data-stu-id="969e0-140">Providers must throw the following exceptions.</span></span>  
   
-|例外の種類|状態|  
-|-----------|--------|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.ExpandCollapseState> \= <xref:System.Windows.Automation.ExpandCollapseState> の場合、<xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> または <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> のどちらかが呼び出されます。|  
+|<span data-ttu-id="969e0-141">例外の種類</span><span class="sxs-lookup"><span data-stu-id="969e0-141">Exception type</span></span>|<span data-ttu-id="969e0-142">状態</span><span class="sxs-lookup"><span data-stu-id="969e0-142">Condition</span></span>|  
+|--------------------|---------------|  
+|<xref:System.InvalidOperationException>|<span data-ttu-id="969e0-143">いずれか<xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A>または<xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A>時に呼び出される、 <xref:System.Windows.Automation.ExpandCollapseState>  = <xref:System.Windows.Automation.ExpandCollapseState.LeafNode>です。</span><span class="sxs-lookup"><span data-stu-id="969e0-143">Either <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> or <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> is called when the <xref:System.Windows.Automation.ExpandCollapseState> = <xref:System.Windows.Automation.ExpandCollapseState.LeafNode>.</span></span>|  
   
-## 参照  
- [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)   
- [Support Control Patterns in a UI Automation Provider](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)   
- [UI Automation Control Patterns for Clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)   
- [Navigate Among UI Automation Elements with TreeWalker](../../../docs/framework/ui-automation/navigate-among-ui-automation-elements-with-treewalker.md)   
- [UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)   
- [Use Caching in UI Automation](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+## <a name="see-also"></a><span data-ttu-id="969e0-144">関連項目</span><span class="sxs-lookup"><span data-stu-id="969e0-144">See Also</span></span>  
+ [<span data-ttu-id="969e0-145">UI オートメーション コントロール パターンの概要</span><span class="sxs-lookup"><span data-stu-id="969e0-145">UI Automation Control Patterns Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [<span data-ttu-id="969e0-146">UI オートメーション プロバイダーでコントロール パターンをサポートします。</span><span class="sxs-lookup"><span data-stu-id="969e0-146">Support Control Patterns in a UI Automation Provider</span></span>](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
+ [<span data-ttu-id="969e0-147">クライアントの UI オートメーション コントロール パターン</span><span class="sxs-lookup"><span data-stu-id="969e0-147">UI Automation Control Patterns for Clients</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
+ [<span data-ttu-id="969e0-148">Treewalker を使用した UI オートメーション要素間の移動します。</span><span class="sxs-lookup"><span data-stu-id="969e0-148">Navigate Among UI Automation Elements with TreeWalker</span></span>](../../../docs/framework/ui-automation/navigate-among-ui-automation-elements-with-treewalker.md)  
+ [<span data-ttu-id="969e0-149">UI オートメーション ツリーの概要</span><span class="sxs-lookup"><span data-stu-id="969e0-149">UI Automation Tree Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
+ [<span data-ttu-id="969e0-150">UI オートメーションにおけるキャッシュを使用します。</span><span class="sxs-lookup"><span data-stu-id="969e0-150">Use Caching in UI Automation</span></span>](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)

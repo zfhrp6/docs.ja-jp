@@ -1,36 +1,42 @@
 ---
-title: "方法 : TextBox コントロールのテキスト コンテンツを設定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "テキスト コンテンツ, 設定"
-  - "TextBox コントロール, 設定 (テキスト コンテンツを)"
+title: "方法 : TextBox コントロールのテキスト コンテンツを設定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- text content [WPF], setting
+- TextBox control [WPF], setting text content
 ms.assetid: bcd25fc7-a52f-4453-b802-2c8d2b335ab8
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8da173fb91745f83aac2b4461a917c1fff6e9cb4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : TextBox コントロールのテキスト コンテンツを設定する
-この例では、<xref:System.Windows.Controls.TextBox.Text%2A> プロパティを使用して、<xref:System.Windows.Controls.TextBox> コントロールの初期のテキスト コンテンツを設定する方法を示します。  
+# <a name="how-to-set-the-text-content-of-a-textbox-control"></a><span data-ttu-id="e01f9-102">方法 : TextBox コントロールのテキスト コンテンツを設定する</span><span class="sxs-lookup"><span data-stu-id="e01f9-102">How to: Set the Text Content of a TextBox Control</span></span>
+<span data-ttu-id="e01f9-103">この例を使用する方法を示しています、<xref:System.Windows.Controls.TextBox.Text%2A>の最初のテキスト内容を設定するプロパティ、<xref:System.Windows.Controls.TextBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="e01f9-103">This example shows how to use the <xref:System.Windows.Controls.TextBox.Text%2A> property to set the initial text contents of a <xref:System.Windows.Controls.TextBox> control.</span></span>  
   
- **メモ** この例の [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] バージョンでは、各ボタンの <xref:System.Windows.Controls.TextBox> コンテンツのテキストの前後に `<TextBox.Text>` タグを使用することもできますが、<xref:System.Windows.Controls.TextBox> は <xref:System.Windows.Controls.TextBox.Text%2A> プロパティに  <xref:System.Windows.Markup.ContentPropertyAttribute> 属性を適用するため、この処理は必要ありません。  詳細については、「[XAML の概要 \(WPF\)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)」を参照してください。  
+ <span data-ttu-id="e01f9-104">**注**ですが、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]バージョンの例を使用、`<TextBox.Text>`の各ボタンのテキスト タグで囲みます<xref:System.Windows.Controls.TextBox>コンテンツの必要はありませんので、<xref:System.Windows.Controls.TextBox>適用、<xref:System.Windows.Markup.ContentPropertyAttribute>属性を<xref:System.Windows.Controls.TextBox.Text%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="e01f9-104">**Note** Although the [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] version of the example could use the `<TextBox.Text>` tags around the text of each button's <xref:System.Windows.Controls.TextBox> content, it is not necessary because the <xref:System.Windows.Controls.TextBox> applies the <xref:System.Windows.Markup.ContentPropertyAttribute> attribute to the <xref:System.Windows.Controls.TextBox.Text%2A> property.</span></span> <span data-ttu-id="e01f9-105">詳細については、次を参照してください。 [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)です。</span><span class="sxs-lookup"><span data-stu-id="e01f9-105">For more information, see [XAML Overview (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md).</span></span>  
   
-## 使用例  
- [!code-xml[TextBox_MiscCode#_TextBoxSetTextXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_textboxsettextxaml)]  
+## <a name="example"></a><span data-ttu-id="e01f9-106">例</span><span class="sxs-lookup"><span data-stu-id="e01f9-106">Example</span></span>  
+ [!code-xaml[TextBox_MiscCode#_TextBoxSetTextXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_textboxsettextxaml)]  
   
-## 使用例  
+## <a name="example"></a><span data-ttu-id="e01f9-107">例</span><span class="sxs-lookup"><span data-stu-id="e01f9-107">Example</span></span>  
  [!code-csharp[TextBox_MiscCode#_TextBoxSetText](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml.cs#_textboxsettext)]
  [!code-vb[TextBox_MiscCode#_TextBoxSetText](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextBox_MiscCode/VisualBasic/Window1.xaml.vb#_textboxsettext)]  
   
-## 参照  
- [TextBox の概要](../../../../docs/framework/wpf/controls/textbox-overview.md)   
- [RichTextBox の概要](../../../../docs/framework/wpf/controls/richtextbox-overview.md)
+## <a name="see-also"></a><span data-ttu-id="e01f9-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="e01f9-108">See Also</span></span>  
+ [<span data-ttu-id="e01f9-109">TextBox の概要</span><span class="sxs-lookup"><span data-stu-id="e01f9-109">TextBox Overview</span></span>](../../../../docs/framework/wpf/controls/textbox-overview.md)  
+ [<span data-ttu-id="e01f9-110">RichTextBox の概要</span><span class="sxs-lookup"><span data-stu-id="e01f9-110">RichTextBox Overview</span></span>](../../../../docs/framework/wpf/controls/richtextbox-overview.md)

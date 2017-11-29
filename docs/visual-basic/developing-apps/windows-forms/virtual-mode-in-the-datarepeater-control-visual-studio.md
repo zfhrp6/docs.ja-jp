@@ -1,100 +1,86 @@
 ---
-title: "DataRepeater コントロール (Visual Studio) での仮想モード |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "DataRepeater コントロールの仮想モード (Visual Studio)"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
 dev_langs:
-- VB
+- csharp
+- vb
 helpviewer_keywords:
-- virtual data binding
+- virtual data binding [Visual Basic]
 - DataRepeater
 - DataRepeater, virtual mode
 ms.assetid: 5fb805dc-2d8b-4139-b1e3-86e4c2667221
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 85f7e250c57a507e891eb30756c0550098cce9e0
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 4c85ce4541e32991bfa09b1436385281d27ad355
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="virtual-mode-in-the-datarepeater-control-visual-studio"></a>DataRepeater コントロールの仮想モード (Visual Studio)
-大量の表形式データを表示する場合、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールを設定してパフォーマンスを向上させることができます、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A>プロパティを`True`と明示的にそのデータ ソース コントロールの相互作用を管理します</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A></xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>。 <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールには、データ ソースとやり取りし、実行時に、必要に応じて、データを表示するために利用できるいくつかのイベントが用意されています</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>。  
+# <a name="virtual-mode-in-the-datarepeater-control-visual-studio"></a><span data-ttu-id="7cd38-102">DataRepeater コントロールの仮想モード (Visual Studio)</span><span class="sxs-lookup"><span data-stu-id="7cd38-102">Virtual Mode in the DataRepeater Control (Visual Studio)</span></span>
+<span data-ttu-id="7cd38-103">大量の表形式データを表示する場合、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールを設定してパフォーマンスを向上させることができます、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A>プロパティを`True`と明示的にそのデータ ソース コントロールの相互作用を管理します。</span><span class="sxs-lookup"><span data-stu-id="7cd38-103">When you want to display large quantities of tabular data in a <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control, you can improve performance by setting the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A> property to `True` and explicitly managing the control's interaction with its data source.</span></span> <span data-ttu-id="7cd38-104"><xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールは、データ ソースと対話し、実行時に、必要に応じてデータの表示を処理できるいくつかのイベントを提供します。</span><span class="sxs-lookup"><span data-stu-id="7cd38-104">The <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control provides several events that you can handle to interact with your data source and display the data as needed at run time.</span></span>  
   
-## <a name="how-virtual-mode-works"></a>仮想モードの動作  
- 最も一般的なシナリオ、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールは、コントロールの子コントロールをバインドする、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A>データにでき、デザイン時にソース、<xref:System.Windows.Forms.BindingSource>必要に応じて、双方向にデータを渡す</xref:System.Windows.Forms.BindingSource></xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A></xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>。 仮想モードを使用して、コントロールがデータ ソースにバインドされていないデータがやり取りされる基になるデータ ソースに実行時にします。  
+## <a name="how-virtual-mode-works"></a><span data-ttu-id="7cd38-105">仮想モードの動作</span><span class="sxs-lookup"><span data-stu-id="7cd38-105">How Virtual Mode Works</span></span>  
+ <span data-ttu-id="7cd38-106">最も一般的なシナリオ、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールは、の子コントロールをバインドする、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A>データにでき、デザイン時にソース、<xref:System.Windows.Forms.BindingSource>に応じて前後にデータを渡すことです。</span><span class="sxs-lookup"><span data-stu-id="7cd38-106">The most common scenario for the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control is to bind the child controls of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A> to a data source at design time and allow the <xref:System.Windows.Forms.BindingSource> to pass data back and forth as needed.</span></span> <span data-ttu-id="7cd38-107">仮想モードを使用するときに、コントロールがデータ ソースにバインドされていない、データ渡されます前後、基になるデータ ソースに実行時。</span><span class="sxs-lookup"><span data-stu-id="7cd38-107">When you use virtual mode, the controls are not bound to a data source, and data is passed back and forth to the underlying data source at run time.</span></span>  
   
- ときに、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A>にプロパティが設定されている`True`からコントロールを追加して、ユーザー インターフェイスを作成する、**ツールボックス**からバインドされたコントロールを追加する代わりに、**データソース**ウィンドウ</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A>。  
+ <span data-ttu-id="7cd38-108">ときに、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A>プロパティに設定されている`True`からコントロールを追加して、ユーザー インターフェイスを作成する、**ツールボックス**からバインド コントロールを追加する代わりに、**データソース**ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="7cd38-108">When the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A> property is set to `True`, you create the user interface by adding controls from the **Toolbox** instead of adding bound controls from the **Data Sources** window.</span></span>  
   
- コントロールごとにイベントが発生して、データの表示を処理するコードを追加する必要があります。 新しい<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>がビューにスクロールされる基準、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValueNeeded>イベントの各コントロールの&1; つの時間が発生し、内の各コントロールの値を指定する必要があります、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValueNeeded>イベント ハンドラー</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValueNeeded> </xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValueNeeded> </xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem> 。  
+ <span data-ttu-id="7cd38-109">イベントは、コントロールごとに発生して、データの表示を処理するコードを追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7cd38-109">Events are raised on a control-by-control basis, and you must add code to handle the display of data.</span></span> <span data-ttu-id="7cd38-110">新しい<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>スクロール、表示、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValueNeeded>イベントはコントロールごとに 1 回発生し、内の各コントロールの値を指定する必要があります、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValueNeeded>イベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="7cd38-110">When a new <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem> is scrolled into view, the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValueNeeded> event is raised one time for each control and you must supply the values for each control in the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValueNeeded> event handler.</span></span>  
   
- コントロールのいずれかでデータが、ユーザーが変更された場合、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed>イベントが発生し、データを検証し、データ ソースに保存する必要があります</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed>。  
+ <span data-ttu-id="7cd38-111">ユーザーがコントロールのいずれかでデータが変更された場合、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed>イベントが発生し、データを検証し、データ ソースに保存する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7cd38-111">If data in one of the controls is changed by the user, the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed> event is raised and you must validate the data and save it to your data source.</span></span>  
   
- ユーザーが新しい項目を追加する場合、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.NewItemNeeded>イベントが発生します</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.NewItemNeeded>。 このイベントのハンドラーを使用して、データ ソースに新しいレコードを作成します。 意図しない変更を防ぐためには、監視する必要も、<xref:System.Windows.Forms.Control.KeyDown>の各コントロールと呼び出しイベント<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.CancelEdit%2A>場合は、ユーザーが ESC キーを押した</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.CancelEdit%2A></xref:System.Windows.Forms.Control.KeyDown>。  
+ <span data-ttu-id="7cd38-112">ユーザーは新しい項目を追加する場合、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.NewItemNeeded>イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="7cd38-112">If the user adds a new item, the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.NewItemNeeded> event is raised.</span></span> <span data-ttu-id="7cd38-113">このイベントのハンドラーを使用して、データ ソースに新しいレコードを作成します。</span><span class="sxs-lookup"><span data-stu-id="7cd38-113">Use this event's handler to create a new record in your data source.</span></span> <span data-ttu-id="7cd38-114">予期しない変更を防ぐためには、監視する必要も、<xref:System.Windows.Forms.Control.KeyDown>コントロールおよび呼び出しごとにイベント<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.CancelEdit%2A>ユーザーが ESC キーを押した場合。</span><span class="sxs-lookup"><span data-stu-id="7cd38-114">To prevent unintended changes, you must also monitor the <xref:System.Windows.Forms.Control.KeyDown> event for each control and call <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.CancelEdit%2A> if the user presses the ESC key.</span></span>  
   
- データ ソースが変更する場合は、更新、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールを呼び出して、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.BeginResetItemTemplate%2A>と<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.EndResetItemTemplate%2A>メソッド</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.EndResetItemTemplate%2A></xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.BeginResetItemTemplate%2A></xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>。 順序では、両方のメソッドを呼び出す必要があります。  
+ <span data-ttu-id="7cd38-115">場合は、データ ソースが変更を更新できます、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールを呼び出して、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.BeginResetItemTemplate%2A>と<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.EndResetItemTemplate%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="7cd38-115">If your data source changes, you can refresh the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control by calling the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.BeginResetItemTemplate%2A> and <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.EndResetItemTemplate%2A> methods.</span></span> <span data-ttu-id="7cd38-116">順序では、両方のメソッドを呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="7cd38-116">Both methods must be called in order.</span></span>  
   
- 最後に、イベント ハンドラーを実装する必要があります、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemsRemoved>の直接的および必要に応じて項目が削除されるときに発生するイベント、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.UserDeletingItems>と<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.UserDeletedItems>イベントでは、ユーザーが DELETE キーを押すと項目を削除するたびに発生します</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.UserDeletedItems></xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.UserDeletingItems></xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemsRemoved>。  
+ <span data-ttu-id="7cd38-117">最後に、イベント ハンドラーを実装する必要があります、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemsRemoved>用、および必要に応じて項目が削除されたときに発生するイベント、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.UserDeletingItems>と<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.UserDeletedItems>イベントで、ユーザーは、DELETE キーを押して、項目が削除されるたびに発生します。</span><span class="sxs-lookup"><span data-stu-id="7cd38-117">Finally, you must implement event handlers for the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemsRemoved> event, which occurs when an item is deleted, and optionally for the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.UserDeletingItems> and <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.UserDeletedItems> events, which occur whenever a user deletes an item by pressing the DELETE key.</span></span>  
   
-## <a name="implementing-virtual-mode"></a>仮想モードの実装  
- 仮想モードを実装するために必要な手順を次に示します。  
+## <a name="implementing-virtual-mode"></a><span data-ttu-id="7cd38-118">仮想モードの実装</span><span class="sxs-lookup"><span data-stu-id="7cd38-118">Implementing Virtual Mode</span></span>  
+ <span data-ttu-id="7cd38-119">仮想モードを実装するために必要な手順を次に示します。</span><span class="sxs-lookup"><span data-stu-id="7cd38-119">Following are the steps that are required to implement virtual mode.</span></span>  
   
-#### <a name="to-implement-virtual-mode"></a>仮想モードを実装するには  
+#### <a name="to-implement-virtual-mode"></a><span data-ttu-id="7cd38-120">仮想モードを実装するには</span><span class="sxs-lookup"><span data-stu-id="7cd38-120">To implement virtual mode</span></span>  
   
-1.  ドラッグ、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールから、 **Visual Basic power Packs**  タブで、**ツールボックス**フォームまたはコンテナー コントロールにします</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>。 設定、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A>プロパティを`True`</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A>。  
+1.  <span data-ttu-id="7cd38-121">ドラッグ、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>から制御、 **Visual Basic PowerPacks**  タブで、**ツールボックス**フォームまたはコンテナー コントロールにします。</span><span class="sxs-lookup"><span data-stu-id="7cd38-121">Drag a <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.</span></span> <span data-ttu-id="7cd38-122"><xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A> プロパティを `True` に設定します。</span><span class="sxs-lookup"><span data-stu-id="7cd38-122">Set the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A> property to `True`.</span></span>  
   
-2.  コントロールをドラッグ、**ツールボックス**の項目テンプレートの領域 (上の領域) に、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>。 1 つのコントロールは、各フィールドを表示する、データ ソース内の必要があります。  
+2.  <span data-ttu-id="7cd38-123">コントロールをドラッグ、**ツールボックス**の項目テンプレート領域 (上部領域) に、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール。</span><span class="sxs-lookup"><span data-stu-id="7cd38-123">Drag controls from the **Toolbox** onto the item template region (the upper region) of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.</span></span> <span data-ttu-id="7cd38-124">表示するデータ ソースのフィールドごとに 1 つのコントロールを必要があります。</span><span class="sxs-lookup"><span data-stu-id="7cd38-124">You will need one control for each field in your data source that you want to display.</span></span>  
   
-3.  ハンドラーを実装する、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValueNeeded>イベントの各コントロールの値を指定します</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValueNeeded>。 このイベントは、新しい<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>スクロールして表示します</xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>。 コードはという名前のデータ ソースの場合は次の例のように`Employees`します。  
+3.  <span data-ttu-id="7cd38-125">ハンドラーを実装、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValueNeeded>イベントの各コントロールの値を指定します。</span><span class="sxs-lookup"><span data-stu-id="7cd38-125">Implement a handler for the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValueNeeded> event to provide values for each control.</span></span> <span data-ttu-id="7cd38-126">このイベントは、新しい<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>スクロール表示します。</span><span class="sxs-lookup"><span data-stu-id="7cd38-126">This event is raised when a new <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem> is scrolled into view.</span></span> <span data-ttu-id="7cd38-127">コードの次の例では、という名前のデータ ソースのようになります`Employees`です。</span><span class="sxs-lookup"><span data-stu-id="7cd38-127">The code will resemble the following example, which is for a data source named `Employees`.</span></span>  
   
-     [!code-vb[VbPowerPacksDataRepeaterVirtualMode&1;](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_1.vb) ] 
-     [!code-cs [VbPowerPacksDataRepeaterVirtualMode&1;](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_1.cs)]  
+     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_1.vb)]
+     [!code-csharp[VbPowerPacksDataRepeaterVirtualMode#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_1.cs)]  
   
-4.  ハンドラーを実装する、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed>データを格納するイベントです</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed>。 このイベントは、ユーザーが<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>。</xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>の子コントロールに変更をコミットと発生します。 コードはという名前のデータ ソースの場合は次の例のように`Employees`します。  
+4.  <span data-ttu-id="7cd38-128">ハンドラーを実装、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed>データを格納するイベントです。</span><span class="sxs-lookup"><span data-stu-id="7cd38-128">Implement a handler for the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed> event to store the data.</span></span> <span data-ttu-id="7cd38-129">このイベントは、ユーザーの子コントロールに変更をコミットするときに、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>です。</span><span class="sxs-lookup"><span data-stu-id="7cd38-129">This event is raised when the user commits changes to a child control of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>.</span></span> <span data-ttu-id="7cd38-130">コードの次の例では、という名前のデータ ソースのようになります`Employees`です。</span><span class="sxs-lookup"><span data-stu-id="7cd38-130">The code will resemble the following example, which is for a data source named `Employees`.</span></span>  
   
-     [!code-vb[VbPowerPacksDataRepeaterVirtualMode&2;](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_2.vb) ] 
-     [!code-cs [VbPowerPacksDataRepeaterVirtualMode&2;](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_2.cs)]  
+     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_2.vb)]
+     [!code-csharp[VbPowerPacksDataRepeaterVirtualMode#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_2.cs)]  
   
-5.  子コントロールごとにハンドラーを実装<xref:System.Windows.Forms.Control.KeyDown>イベントと、ESC キーを監視します</xref:System.Windows.Forms.Control.KeyDown>。 呼び出す、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.CancelEdit%2A>しないようにする方法、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed>イベントの発生します</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed></xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.CancelEdit%2A>。 コードは、次の例ようになります。  
+5.  <span data-ttu-id="7cd38-131">各子コントロールのハンドラーを実装して<xref:System.Windows.Forms.Control.KeyDown>イベントとモニター、ESC キー。</span><span class="sxs-lookup"><span data-stu-id="7cd38-131">Implement a handler for each child control's <xref:System.Windows.Forms.Control.KeyDown> event and monitor the ESC key.</span></span> <span data-ttu-id="7cd38-132">呼び出す、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.CancelEdit%2A>しないようにする方法、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed>イベントの発生します。</span><span class="sxs-lookup"><span data-stu-id="7cd38-132">Call the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.CancelEdit%2A> method to prevent the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed> event from being raised.</span></span> <span data-ttu-id="7cd38-133">コードは次の例のようになります。</span><span class="sxs-lookup"><span data-stu-id="7cd38-133">The code will resemble the following example.</span></span>  
   
-     [!code-vb[VbPowerPacksDataRepeaterVirtualMode&3;](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_3.vb) ] 
-     [!code-cs [VbPowerPacksDataRepeaterVirtualMode&3;](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_3.cs)]  
+     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#3](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_3.vb)]
+     [!code-csharp[VbPowerPacksDataRepeaterVirtualMode#3](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_3.cs)]  
   
-6.  ハンドラーを実装する、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.NewItemNeeded>イベント</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.NewItemNeeded>。 このイベントは、ユーザーが新しいアイテムを追加すると、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>。 コードはという名前のデータ ソースの場合は次の例のように`Employees`します。  
+6.  <span data-ttu-id="7cd38-134">ハンドラーを実装、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.NewItemNeeded>イベント。</span><span class="sxs-lookup"><span data-stu-id="7cd38-134">Implement a handler for the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.NewItemNeeded> event.</span></span> <span data-ttu-id="7cd38-135">このイベントは、ユーザーに新しい項目を追加するときに、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール。</span><span class="sxs-lookup"><span data-stu-id="7cd38-135">This event is raised when the user adds a new item to the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.</span></span> <span data-ttu-id="7cd38-136">コードの次の例では、という名前のデータ ソースのようになります`Employees`です。</span><span class="sxs-lookup"><span data-stu-id="7cd38-136">The code will resemble the following example, which is for a data source named `Employees`.</span></span>  
   
-     [!code-vb[VbPowerPacksDataRepeaterVirtualMode&4;](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_4.vb) ] 
-     [!code-cs [VbPowerPacksDataRepeaterVirtualMode&4;](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_4.cs)]  
+     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#4](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_4.vb)]
+     [!code-csharp[VbPowerPacksDataRepeaterVirtualMode#4](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_4.cs)]  
   
-7.  ハンドラーを実装する、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemsRemoved>イベント</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemsRemoved>。 このイベントは、ユーザーが既存の項目を削除したときに発生します。 コードはという名前のデータ ソースの場合は次の例のように`Employees`します。  
+7.  <span data-ttu-id="7cd38-137">ハンドラーを実装、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemsRemoved>イベント。</span><span class="sxs-lookup"><span data-stu-id="7cd38-137">Implement a handler for the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemsRemoved> event.</span></span> <span data-ttu-id="7cd38-138">このイベントは、ユーザーが既存の項目を削除するときに発生します。</span><span class="sxs-lookup"><span data-stu-id="7cd38-138">This event occurs when a user deletes an existing item.</span></span> <span data-ttu-id="7cd38-139">コードの次の例では、という名前のデータ ソースのようになります`Employees`です。</span><span class="sxs-lookup"><span data-stu-id="7cd38-139">The code will resemble the following example, which is for a data source named `Employees`.</span></span>  
   
-     [!code-vb[VbPowerPacksDataRepeaterVirtualMode&5;](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_5.vb) ] 
-     [!code-cs [VbPowerPacksDataRepeaterVirtualMode&5;](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_5.cs)]  
+     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#5](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_5.vb)]
+     [!code-csharp[VbPowerPacksDataRepeaterVirtualMode#5](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_5.cs)]  
   
-8.  ハンドラーを必要に応じてコントロール レベルの検証の実装、<xref:System.Windows.Forms.Control.Validating>子コントロールのイベント</xref:System.Windows.Forms.Control.Validating>。 コードは、次の例ようになります。  
+8.  <span data-ttu-id="7cd38-140">ハンドラーを必要に応じてコントロール レベルの検証の実装、<xref:System.Windows.Forms.Control.Validating>子コントロールのイベントです。</span><span class="sxs-lookup"><span data-stu-id="7cd38-140">For control-level validation, optionally implement handlers for the <xref:System.Windows.Forms.Control.Validating> events of the child controls.</span></span> <span data-ttu-id="7cd38-141">コードは次の例のようになります。</span><span class="sxs-lookup"><span data-stu-id="7cd38-141">The code will resemble the following example.</span></span>  
   
-     [!code-vb[VbPowerPacksDataRepeaterVirtualMode&6;](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_6.vb) ] 
-     [!code-cs [VbPowerPacksDataRepeaterVirtualMode&6;](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_6.cs)]  
+     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#6](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_6.vb)]
+     [!code-csharp[VbPowerPacksDataRepeaterVirtualMode#6](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_6.cs)]  
   
-## <a name="see-also"></a>関連項目  
- <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed></xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed>   
- <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.NewItemNeeded></xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.NewItemNeeded>   
- <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValueNeeded></xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValueNeeded>   
- [DataRepeater コントロールの概要](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)
+## <a name="see-also"></a><span data-ttu-id="7cd38-142">関連項目</span><span class="sxs-lookup"><span data-stu-id="7cd38-142">See Also</span></span>  
+ <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed>  
+ <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.NewItemNeeded>  
+ <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValueNeeded>  
+ [<span data-ttu-id="7cd38-143">DataRepeater コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="7cd38-143">Introduction to the DataRepeater Control</span></span>](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)

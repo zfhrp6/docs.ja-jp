@@ -1,34 +1,38 @@
 ---
-title: "カスタム アクティビティ デザイナー | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "カスタム アクティビティ デザイナー"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: dcf14dca-ce6d-4278-96ba-062f0a679075
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 953ee102c910fbdf120136493fa6e2a89e7e9936
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# カスタム アクティビティ デザイナー
-このセクションでは、ワークフロー デザイナーに表示するカスタム デザイナーを使用するアクティビティ サンプルを示します。  
+# <a name="custom-activity-designers"></a><span data-ttu-id="c998f-102">カスタム アクティビティ デザイナー</span><span class="sxs-lookup"><span data-stu-id="c998f-102">Custom Activity Designers</span></span>
+<span data-ttu-id="c998f-103">このセクションでは、ワークフロー デザイナーに表示するカスタム デザイナーを使用するアクティビティ サンプルを示します。</span><span class="sxs-lookup"><span data-stu-id="c998f-103">This section contains activity samples that use custom designers for display in the workflow designer.</span></span>  
   
-## このセクションの内容  
- [カスタム複合デザイナー \- Workflow Item Presenter](../../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-item-presenter.md)  
- このサンプルでは、このような "ドロップ ゾーン" を表示するアクティビティ デザイナーの構築方法を示します。  
+## <a name="in-this-section"></a><span data-ttu-id="c998f-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="c998f-104">In This Section</span></span>  
+ [<span data-ttu-id="c998f-105">カスタム複合デザイナー - Workflow Item Presenter</span><span class="sxs-lookup"><span data-stu-id="c998f-105">Custom Composite Designers - Workflow Item Presenter</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-item-presenter.md)  
+ <span data-ttu-id="c998f-106">このサンプルでは、そのこのような「ドロップ ゾーン」を表示しますアクティビティ デザイナーの構築</span><span class="sxs-lookup"><span data-stu-id="c998f-106">This sample shows how to build an activity designer that surfaces such a "drop zone."</span></span>  
   
- [カスタム複合デザイナー \- Workflow Items Presenter](../../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-items-presenter.md)  
- このサンプルでは、このような編集可能なコレクションを表示するアクティビティ デザイナーの構築方法を示します。  
+ [<span data-ttu-id="c998f-107">カスタム複合デザイナー - Workflow Items Presenter</span><span class="sxs-lookup"><span data-stu-id="c998f-107">Custom Composite Designers - Workflow Items Presenter</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-items-presenter.md)  
+ <span data-ttu-id="c998f-108">このサンプルでは、このような編集可能なコレクションを表示するアクティビティ デザイナーの構築方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c998f-108">This sample shows how to build an activity designer that surfaces such an editable collection.</span></span>  
   
- [メタデータ ストアのプログラム性](../../../../docs/framework/windows-workflow-foundation/samples/metadata-store-programmability.md)  
- このサンプルでは、属性を実行時の型に適用することで、メタデータ ストアを使用して制御できないソースをプログラミングする方法を示します。  
+ [<span data-ttu-id="c998f-109">メタデータ ストアのプログラミング</span><span class="sxs-lookup"><span data-stu-id="c998f-109">Metadata Store Programmability</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/metadata-store-programmability.md)  
+ <span data-ttu-id="c998f-110">このサンプルでは、属性を実行時の型に適用することで、メタデータ ストアを使用して制御できないソースをプログラミングする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c998f-110">This sample shows how to program against the metadata store by applying attributes to a run-time type, the source for which we have no control over.</span></span>  
   
- [カスタム アクティビティ デザイナーでの ExpressionTextBox の使用](../../../../docs/framework/windows-workflow-foundation/samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)  
- このサンプルでは、カスタム アクティビティ デザイナーで <xref:System.Activities.Presentation.View.ExpressionTextBox> を使用する方法を示します。  
+ [<span data-ttu-id="c998f-111">カスタム アクティビティ デザイナーでの ExpressionTextBox の使用</span><span class="sxs-lookup"><span data-stu-id="c998f-111">Using the ExpressionTextBox in a Custom Activity Designer</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)  
+ <span data-ttu-id="c998f-112">このサンプルでは、カスタム アクティビティ デザイナーで <xref:System.Activities.Presentation.View.ExpressionTextBox> を使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c998f-112">This sample shows how to use the <xref:System.Activities.Presentation.View.ExpressionTextBox> in a custom activity designer.</span></span>  
   
- [編集スコープの使用](../../../../docs/framework/windows-workflow-foundation/samples/using-editing-scope.md)  
- このサンプルでは、変更のセットを 1 つの分割不可能な単位で元に戻せるように、変更のセットをバッチ処理する方法を示します。既定では、アクティビティ デザイナー作者が実行した操作は、"元に戻す\/やり直し" システムに自動的に統合されます。
+ [<span data-ttu-id="c998f-113">編集スコープの使用</span><span class="sxs-lookup"><span data-stu-id="c998f-113">Using Editing Scope</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/using-editing-scope.md)  
+ <span data-ttu-id="c998f-114">このサンプルでは、変更のセットを 1 つの分割不可能な単位で元に戻せるように、変更のセットをバッチ処理する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c998f-114">This sample demonstrates how to batch a set of changes so that they can be undone in a single atomic unit.</span></span> <span data-ttu-id="c998f-115">既定では、アクティビティ デザイナー作者が実行した操作は、"元に戻す/やり直し" システムに自動的に統合されます。</span><span class="sxs-lookup"><span data-stu-id="c998f-115">By default, the actions taken by an activity designer author are automatically integrated into the Undo/Redo system.</span></span>

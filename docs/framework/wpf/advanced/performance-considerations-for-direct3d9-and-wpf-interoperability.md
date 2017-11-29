@@ -1,73 +1,76 @@
 ---
-title: "Direct3D9 および WPF の相互運用性のパフォーマンスに関する考慮事項 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Direct3D9 [WPF 相互運用性], パフォーマンス"
-  - "WPF, Direct3D9 相互運用パフォーマンス"
+title: "Direct3D9 および WPF の相互運用性のパフォーマンスに関する考慮事項"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WPF [WPF], Direct3D9 interop performance
+- Direct3D9 [WPF interoperability], performance
 ms.assetid: ea8baf91-12fe-4b44-ac4d-477110ab14dd
-caps.latest.revision: 19
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 886ef6c8c9df9d14b5c2a805da2e3948d5e55f69
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Direct3D9 および WPF の相互運用性のパフォーマンスに関する考慮事項
-<xref:System.Windows.Interop.D3DImage> クラスを使用して、Direct3D9 コンテンツをホストできます。  Direct3D9 コンテンツをホストすると、アプリケーションのパフォーマンスに影響することがあります。  このトピックでは、Windows Presentation Foundation \(WPF\) アプリケーションで Direct3D9 コンテンツをホストする場合に、パフォーマンスを最適化するベスト プラクティスについて説明します。  これらのベスト プラクティスでは、<xref:System.Windows.Interop.D3DImage> の使用方法と、Windows Vista、Windows XP、およびマルチモニター ディスプレイを使用する場合のベスト プラクティスを紹介します。  
+# <a name="performance-considerations-for-direct3d9-and-wpf-interoperability"></a><span data-ttu-id="b48d0-102">Direct3D9 および WPF の相互運用性のパフォーマンスに関する考慮事項</span><span class="sxs-lookup"><span data-stu-id="b48d0-102">Performance Considerations for Direct3D9 and WPF Interoperability</span></span>
+<span data-ttu-id="b48d0-103">使用して Direct3D9 コンテンツをホストすることができます、<xref:System.Windows.Interop.D3DImage>クラスです。</span><span class="sxs-lookup"><span data-stu-id="b48d0-103">You can host Direct3D9 content by using the <xref:System.Windows.Interop.D3DImage> class.</span></span> <span data-ttu-id="b48d0-104">Direct3D9 コンテンツをホストするいると、アプリケーションのパフォーマンスに影響する可能性です。</span><span class="sxs-lookup"><span data-stu-id="b48d0-104">Hosting Direct3D9 content can affect the performance of your application.</span></span> <span data-ttu-id="b48d0-105">このトピックでは、Windows Presentation Foundation (WPF) アプリケーションで Direct3D9 コンテンツをホストする場合にパフォーマンスを最適化するために、ベスト プラクティスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="b48d0-105">This topic describes best practices to optimize performance when hosting Direct3D9 content in a Windows Presentation Foundation (WPF) application.</span></span> <span data-ttu-id="b48d0-106">これらのベスト プラクティスには、使用する方法が含まれます。<xref:System.Windows.Interop.D3DImage>およびベスト プラクティスの Windows Vista、Windows XP を使用していると、複数のモニターに表示されます。</span><span class="sxs-lookup"><span data-stu-id="b48d0-106">These best practices include how to use <xref:System.Windows.Interop.D3DImage> and best practices when you are using Windows Vista, Windows XP, and multi-monitor displays.</span></span>  
   
 > [!NOTE]
->  これらのベスト プラクティスを示すコード例については、「[WPF と Direct3D9 の相互運用性](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md)」を参照してください。  
+>  <span data-ttu-id="b48d0-107">これらのベスト プラクティスを説明するコード例では、次を参照してください。 [WPF と Direct3D9 相互運用](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md)です。</span><span class="sxs-lookup"><span data-stu-id="b48d0-107">For code examples that demonstrate these best practices, see [WPF and Direct3D9 Interoperation](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md).</span></span>  
   
-## 最小限の D3DImage の使用  
- <xref:System.Windows.Interop.D3DImage> インスタンスでホストされる Direct3D9 コンテンツは、純粋な Direct3D アプリケーションでホストされる場合よりも表示が遅くなります。  サーフェイスのコピーおよびコマンド バッファーのフラッシュに時間がかかることがあります。  <xref:System.Windows.Interop.D3DImage> インスタンスの数が増えると、フラッシュの回数が多くなり、パフォーマンスが低下します。  したがって、<xref:System.Windows.Interop.D3DImage> の使用を最小限にする必要があります。  
+## <a name="use-d3dimage-sparingly"></a><span data-ttu-id="b48d0-108">D3DImage を多用しません。</span><span class="sxs-lookup"><span data-stu-id="b48d0-108">Use D3DImage Sparingly</span></span>  
+ <span data-ttu-id="b48d0-109">ホストされている Direct3D9 コンテンツ、<xref:System.Windows.Interop.D3DImage>インスタンスが、純粋な Direct3D アプリケーションと同様に高速として表示されません。</span><span class="sxs-lookup"><span data-stu-id="b48d0-109">Direct3D9 content hosted in a <xref:System.Windows.Interop.D3DImage> instance does not render as fast as in a pure Direct3D application.</span></span> <span data-ttu-id="b48d0-110">サーフェイスのコピーとコマンド バッファーのフラッシュは、コストの高い操作を指定できます。</span><span class="sxs-lookup"><span data-stu-id="b48d0-110">Copying the surface and flushing the command buffer can be costly operations.</span></span> <span data-ttu-id="b48d0-111">数として<xref:System.Windows.Interop.D3DImage>インスタンスが増えると、複数のフラッシュが発生し、パフォーマンスが低下します。</span><span class="sxs-lookup"><span data-stu-id="b48d0-111">As the number of <xref:System.Windows.Interop.D3DImage> instances increases, more flushing occurs, and performance degrades.</span></span> <span data-ttu-id="b48d0-112">したがって、使用する必要があります<xref:System.Windows.Interop.D3DImage>限定的に使用します。</span><span class="sxs-lookup"><span data-stu-id="b48d0-112">Therefore, you should use <xref:System.Windows.Interop.D3DImage> sparingly.</span></span>  
   
-## Windows Vista のベスト プラクティス  
- ディスプレイが Windows Display Driver Model \(WDDM\) を使用するように構成されている Windows Vista で最大限のパフォーマンスを得るには、Direct3D9 サーフェイスを `IDirect3DDevice9Ex` デバイス上に作成します。  これにより、サーフェイスを共有できるようになります。  ビデオカードは、Windows Vista の `D3DDEVCAPS2_CAN_STRETCHRECT_FROM_TEXTURES` および `D3DCAPS2_CANSHARERESOURCE` というドライバーの機能をサポートしている必要があります。  その他の設定では、サーフェイスがソフトウェアを通してコピーされ、パフォーマンスが大幅に低下します。  
-  
-> [!NOTE]
->  Windows Vista に、Windows XP Display Driver Model \(XDDM\) を使用するように構成されているディスプレイがある場合は、設定にかかわらず、サーフェイスが常にソフトウェアを通じてコピーされます。  適切な設定とビデオ カードがあれば、サーフェイスのコピーはハードウェアで実行されるため、WDDM を使用するときに Windows Vista のパフォーマンスが向上します。  
-  
-## Windows XP のベスト プラクティス  
- Windows XP Display Driver Model \(XDDM\) を使用する Windows XP でパフォーマンスを最適にするために、`IDirect3DSurface9::GetDC` メソッドが呼び出されたときに正しく動作するロック可能なサーフェイスを作成します。  内部的に、`BitBlt` メソッドはハードウェアのデバイス間でサーフェイスを転送します。  `GetDC` メソッドは、常に XRGB サーフェイス上で動作します。  ただし、クライアント コンピューターで Windows XP SP3 または SP2 が実行されており、レイヤード ウィンドウ機能の修正プログラムも適用されている場合、このメソッドは ARGB サーフェイス上でのみ動作します。  ビデオ カードは、`D3DDEVCAPS2_CAN_STRETCHRECT_FROM_TEXTURES` ドライバー機能をサポートする必要があります。  
-  
- 16 ビット デスクトップ表示深度を使用すると、パフォーマンスが大幅に低下することがあります。  32 ビット デスクトップをお勧めします。  
-  
- Windows Vista および Windows XP で開発している場合は、Windows XP 上でパフォーマンスをテストします。  Windows XP のビデオ メモリが不足することは問題です。  また、Windows XP 上の <xref:System.Windows.Interop.D3DImage> では、余分なビデオ メモリ コピーが必要なため、Windows Vista WDDM よりも多くのビデオ メモリと帯域幅を使用します。  したがって、同じビデオ ハードウェアの場合は Windows Vista よりも Windows XP の方がパフォーマンスが低いと予想されます。  
+## <a name="best-practices-on-windows-vista"></a><span data-ttu-id="b48d0-113">Windows Vista でのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="b48d0-113">Best Practices on Windows Vista</span></span>  
+ <span data-ttu-id="b48d0-114">Windows 表示 Driver Model (WDDM) を使用するように構成するディスプレイと Windows Vista の最適なパフォーマンスは、上、Direct3D9 画面を作成、`IDirect3DDevice9Ex`デバイス。</span><span class="sxs-lookup"><span data-stu-id="b48d0-114">For best performance on Windows Vista with a display that is configured to use the Windows Display Driver Model (WDDM), create your Direct3D9 surface on an `IDirect3DDevice9Ex` device.</span></span> <span data-ttu-id="b48d0-115">これにより、画面を共有できます。</span><span class="sxs-lookup"><span data-stu-id="b48d0-115">This enables surface sharing.</span></span> <span data-ttu-id="b48d0-116">ビデオ カードをサポートする必要があります、`D3DDEVCAPS2_CAN_STRETCHRECT_FROM_TEXTURES`と`D3DCAPS2_CANSHARERESOURCE`Windows Vista でのドライバーの機能です。</span><span class="sxs-lookup"><span data-stu-id="b48d0-116">The video card must support the `D3DDEVCAPS2_CAN_STRETCHRECT_FROM_TEXTURES` and `D3DCAPS2_CANSHARERESOURCE` driver capabilities on Windows Vista.</span></span> <span data-ttu-id="b48d0-117">その他の設定には、パフォーマンスが大幅に低下するためのソフトウェアをコピーする画面が発生します。</span><span class="sxs-lookup"><span data-stu-id="b48d0-117">Any other settings cause the surface to be copied through software, which reduces performance significantly.</span></span>  
   
 > [!NOTE]
->  XDDM は、Windows XP と Windows Vista の両方で使用できますが、WDDM は Windows Vista でのみ使用できます。  
+>  <span data-ttu-id="b48d0-118">Windows Vista では、Windows XP 表示ドライバー モデル (XDDM) を使用するように構成の表示が、設定に関係なく、ソフトウェアを介して、画面は常にコピーします。</span><span class="sxs-lookup"><span data-stu-id="b48d0-118">If Windows Vista has a display that is configured to use the Windows XP Display Driver Model (XDDM), the surface is always copied through software, regardless of settings.</span></span> <span data-ttu-id="b48d0-119">画面のコピーは、ハードウェアで実行されるため、WDDM を使用する場合の適切な設定とビデオ カードでは、パフォーマンスを向上させる Windows Vista 上に表示されます。</span><span class="sxs-lookup"><span data-stu-id="b48d0-119">With the proper settings and video card, you will see better performance on Windows Vista when you use the WDDM because surface copies are performed in hardware.</span></span>  
   
-## 一般的なベスト プラクティス  
- デバイスを作成する場合は、`D3DCREATE_MULTITHREADED` 作成フラグを使用します。  これにより、パフォーマンスが低下しますが、WPF レンダリング システムは、別のスレッドからこのデバイスに対してメソッドを呼び出します。  ロック プロトコルに正しく従い、2 つのスレッドがデバイスに同時にアクセスしないようにしてください。  
+## <a name="best-practices-on-windows-xp"></a><span data-ttu-id="b48d0-120">Windows XP 上のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="b48d0-120">Best Practices on Windows XP</span></span>  
+ <span data-ttu-id="b48d0-121">最適なパフォーマンスを Windows xp では、Windows XP ディスプレイ ドライバー モデル (XDDM) を使用が正しく動作するためのロック可能なサーフェイスの作成時に、`IDirect3DSurface9::GetDC`メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="b48d0-121">For best performance on Windows XP, which uses the Windows XP Display Driver Model (XDDM), create a lockable surface that behaves correctly when the `IDirect3DSurface9::GetDC` method is called.</span></span> <span data-ttu-id="b48d0-122">内部的には、`BitBlt`メソッドは、ハードウェア デバイス間で、画面を転送します。</span><span class="sxs-lookup"><span data-stu-id="b48d0-122">Internally, the `BitBlt` method transfers the surface across devices in hardware.</span></span> <span data-ttu-id="b48d0-123">`GetDC`メソッドは常に XRGB サーフェスで動作します。</span><span class="sxs-lookup"><span data-stu-id="b48d0-123">The `GetDC` method always works on XRGB surfaces.</span></span> <span data-ttu-id="b48d0-124">ただし、クライアント コンピューターは、SP3 または SP2、Windows XP を実行している場合、および、クライアントは階層化ウィンドウの機能の修正プログラムもある場合は、このメソッドはのみ ARGB 画面に機能します。</span><span class="sxs-lookup"><span data-stu-id="b48d0-124">However, if the client computer is running Windows XP with SP3 or SP2, and if the client also has the hotfix for the layered-window feature, this method only works on ARGB surfaces.</span></span> <span data-ttu-id="b48d0-125">ビデオ カードをサポートする必要があります、`D3DDEVCAPS2_CAN_STRETCHRECT_FROM_TEXTURES`ドライバー機能します。</span><span class="sxs-lookup"><span data-stu-id="b48d0-125">The video card must support the `D3DDEVCAPS2_CAN_STRETCHRECT_FROM_TEXTURES` driver capability.</span></span>  
   
- レンダリングが WPF マネージ スレッドで実行される場合は、`D3DCREATE_FPU_PRESERVE` 作成フラグを使用してデバイスを作成することを強くお勧めします。  この設定がないと、D3D レンダリングによって、WPF の倍精度演算の精度が低下し、レンダリングの問題が発生することがあります。  
+ <span data-ttu-id="b48d0-126">デスクトップの表示を 16 ビットの深さは、パフォーマンスを大幅に削減できます。</span><span class="sxs-lookup"><span data-stu-id="b48d0-126">A 16-bit desktop display depth can significantly reduce performance.</span></span> <span data-ttu-id="b48d0-127">32 ビットのデスクトップをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b48d0-127">A 32-bit desktop is recommended.</span></span>  
   
- ハードウェア サポートがない状態で非 pow2 サーフェイスを並べて表示するのでない場合、または、<xref:System.Windows.Interop.D3DImage> を含む <xref:System.Windows.Media.DrawingBrush> か <xref:System.Windows.Media.VisualBrush> を並べて表示する場合は、<xref:System.Windows.Interop.D3DImage> を並べて表示するのが高速です。  
+ <span data-ttu-id="b48d0-128">Windows Vista および Windows XP 開発している場合は、Windows XP 上のパフォーマンスをテストします。</span><span class="sxs-lookup"><span data-stu-id="b48d0-128">If you are developing for Windows Vista and Windows XP, test the performance on Windows XP.</span></span> <span data-ttu-id="b48d0-129">Windows XP でのビデオ メモリ不足は問題です。</span><span class="sxs-lookup"><span data-stu-id="b48d0-129">Running out of video memory on Windows XP is a concern.</span></span> <span data-ttu-id="b48d0-130">さらに、 <xref:System.Windows.Interop.D3DImage> Windows XP で複数のビデオ メモリと必要な余分なビデオ メモリのコピーのための Windows Vista WDDM よりも帯域幅を使用します。</span><span class="sxs-lookup"><span data-stu-id="b48d0-130">In addition, <xref:System.Windows.Interop.D3DImage> on Windows XP uses more video memory and bandwidth than Windows Vista WDDM, due to a necessary extra video memory copy.</span></span> <span data-ttu-id="b48d0-131">したがって、同じビデオ ハードウェアが Windows Vista でよりも、Windows XP の低いパフォーマンスを期待できます。</span><span class="sxs-lookup"><span data-stu-id="b48d0-131">Therefore, you can expect performance to be worse on Windows XP than on Windows Vista for the same video hardware.</span></span>  
   
-## マルチモニター ディスプレイのベスト プラクティス  
- 複数のモニターがあるコンピューターを使用している場合は、前に説明したベスト プラクティスに従う必要があります。  マルチモニター構成に関する追加のパフォーマンス考慮事項もいくつかあります。  
+> [!NOTE]
+>  <span data-ttu-id="b48d0-132">XDDM は Windows XP および Windows Vista; の両方で使用できます。ただし、WDDM は Windows Vista でのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="b48d0-132">XDDM is available on both Windows XP and Windows Vista; however, WDDM is available only on Windows Vista.</span></span>  
   
- バック バッファーを作成する場合は、特定のデバイスおよびアダプターに作成されますが、WPF は任意のアダプターのフロント バッファーを表示する場合があります。  アダプター間でコピーしてフロント バッファーを更新すると、非常にコストが高くなる可能性があります。  複数のビデオ カードと `IDirect3DDevice9Ex` デバイスと共に WDDM を使用するように構成されている Windows Vista では、フロント バッファーが別のアダプターにあっても、同じビデオ カードである場合は、パフォーマンスの低下はありません。  ただし、Windows XP と複数のビデオ カードのある XDDM では、フロント バッファーがバック バッファーとは異なるアダプターに表示される場合にパフォーマンスが大幅に低下します。  詳細については、「[WPF と Direct3D9 の相互運用性](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md)」を参照してください。  
+## <a name="general-best-practices"></a><span data-ttu-id="b48d0-133">一般的なベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="b48d0-133">General Best Practices</span></span>  
+ <span data-ttu-id="b48d0-134">デバイスを作成するときに使用して、`D3DCREATE_MULTITHREADED`作成フラグ。</span><span class="sxs-lookup"><span data-stu-id="b48d0-134">When you create the device, use the `D3DCREATE_MULTITHREADED` creation flag.</span></span> <span data-ttu-id="b48d0-135">この、パフォーマンスが低下しますが、WPF レンダリング システムは、別のスレッドからこのデバイス上でメソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="b48d0-135">This reduces performance, but the WPF rendering system calls methods on this device from another thread.</span></span> <span data-ttu-id="b48d0-136">必ずロック プロトコルの後ろに正しくない 2 つのスレッドがデバイスを同時にアクセスできるようにします。</span><span class="sxs-lookup"><span data-stu-id="b48d0-136">Be sure to follow the locking protocol correctly, so that no two threads access the device at the same time.</span></span>  
   
-## パフォーマンスの概要  
- 次の表に、オペレーティング システムの機能、ピクセル形式、およびサーフェイスのロック可能性としてのフロント バッファー更新のパフォーマンスを示します。  フロント バッファーとバック バッファーは、同じアダプター上にあることが前提です。  アダプター構成に応じて、ハードウェア更新は、一般にソフトウェア更新よりもはるかに高速です。  
+ <span data-ttu-id="b48d0-137">レンダリングが管理されている WPF のスレッドで実行される場合を使用してデバイスを作成することを強くお勧め、`D3DCREATE_FPU_PRESERVE`作成フラグ。</span><span class="sxs-lookup"><span data-stu-id="b48d0-137">If your rendering is performed on a WPF managed thread, it is strongly recommended that you create the device with the `D3DCREATE_FPU_PRESERVE` creation flag.</span></span> <span data-ttu-id="b48d0-138">この設定がない、D3D 表示モードの WPF の倍精度演算の精度が低下し、レンダリングの問題が発生することができます。</span><span class="sxs-lookup"><span data-stu-id="b48d0-138">Without this setting, the D3D rendering can reduce the accuracy of WPF double-precision operations and introduce rendering issues.</span></span>  
   
-|サーフェイスのピクセル形式|Windows Vista、WDDM、および 9Ex|その他の Windows Vista 構成|修正プログラムを適用した Windows XP SP3 または SP2|Windows XP SP2|  
-|-------------------|--------------------------------|---------------------------|-----------------------------------------|--------------------|  
-|D3DFMT\_X8R8G8B8 \(ロック不能\)|**ハードウェアのアップデート**|ソフトウェアのアップデート|ソフトウェアのアップデート|ソフトウェアのアップデート|  
-|D3DFMT\_X8R8G8B8 \(ロック可能\)|**ハードウェアのアップデート**|ソフトウェアのアップデート|**ハードウェアのアップデート**|**ハードウェアのアップデート**|  
-|D3DFMT\_A8R8G8B8 \(ロック不能\)|**ハードウェアのアップデート**|ソフトウェアのアップデート|ソフトウェアのアップデート|ソフトウェアのアップデート|  
-|D3DFMT\_A8R8G8B8 \(ロック可能\)|**ハードウェアのアップデート**|ソフトウェアのアップデート|**ハードウェアのアップデート**|ソフトウェアのアップデート|  
+ <span data-ttu-id="b48d0-139">並べて表示、<xref:System.Windows.Interop.D3DImage>を並べて表示する場合、またはハードウェア サポートのない非 pow2 サーフェスを並べて表示する場合を除き、高速では、<xref:System.Windows.Media.DrawingBrush>または<xref:System.Windows.Media.VisualBrush>を格納している、<xref:System.Windows.Interop.D3DImage>です。</span><span class="sxs-lookup"><span data-stu-id="b48d0-139">Tiling a <xref:System.Windows.Interop.D3DImage> is fast, unless you tile a non-pow2 surface without hardware support, or if you tile a <xref:System.Windows.Media.DrawingBrush> or <xref:System.Windows.Media.VisualBrush> that contains a <xref:System.Windows.Interop.D3DImage>.</span></span>  
   
-## 参照  
- <xref:System.Windows.Interop.D3DImage>   
- [WPF と Direct3D9 の相互運用性](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md)   
- [チュートリアル : WPF でホストするための Direct3D9 コンテンツの作成](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)   
- [チュートリアル : WPF での Direct3D9 コンテンツのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)
+## <a name="best-practices-for-multi-monitor-displays"></a><span data-ttu-id="b48d0-140">マルチ モニター表示のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="b48d0-140">Best Practices for Multi-Monitor Displays</span></span>  
+ <span data-ttu-id="b48d0-141">複数のモニターを持つコンピューターを使用している場合は、既に説明したベスト プラクティスに従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="b48d0-141">If you are using a computer that has multiple monitors, you should follow the previously described best practices.</span></span> <span data-ttu-id="b48d0-142">マルチ モニターの構成のいくつか追加のパフォーマンスに関する考慮事項もあります。</span><span class="sxs-lookup"><span data-stu-id="b48d0-142">There are also some additional performance considerations for a multi-monitor configuration.</span></span>  
+  
+ <span data-ttu-id="b48d0-143">バック バッファーを作成するときに、特定のデバイスと、アダプター上に作成されますが、WPF は、アダプターの前面のバッファーを表示することがあります。</span><span class="sxs-lookup"><span data-stu-id="b48d0-143">When you create the back buffer, it is created on a specific device and adapter, but WPF may display the front buffer on any adapter.</span></span> <span data-ttu-id="b48d0-144">フロントのバッファーを更新するアダプター間でコピーと、非常に高価なことができます。</span><span class="sxs-lookup"><span data-stu-id="b48d0-144">Copying across adapters to update the front buffer can be very expensive.</span></span> <span data-ttu-id="b48d0-145">WDDM の複数のビデオ カードと共に使用するように構成は、Windows Vista で、`IDirect3DDevice9Ex`デバイス、前面のバッファーが別のアダプターが、引き続き同じビデオ カード上にある場合は、パフォーマンスの低下はありません。</span><span class="sxs-lookup"><span data-stu-id="b48d0-145">On Windows Vista that is configured to use the WDDM with multiple video cards and with an `IDirect3DDevice9Ex` device, if the front buffer is on a different adapter but still the same video card, there is no performance penalty.</span></span> <span data-ttu-id="b48d0-146">ただし、Windows XP および複数のビデオ カードで XDDM では、大幅なパフォーマンスの低下フロント バッファーは、バック バッファーとは異なるアダプターに表示されるときにします。</span><span class="sxs-lookup"><span data-stu-id="b48d0-146">However, on Windows XP and the XDDM with multiple video cards, there is a significant performance penalty when the front buffer is displayed on a different adapter than the back buffer.</span></span> <span data-ttu-id="b48d0-147">詳細については、次を参照してください。 [WPF と Direct3D9 相互運用](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md)です。</span><span class="sxs-lookup"><span data-stu-id="b48d0-147">For more information, see [WPF and Direct3D9 Interoperation](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md).</span></span>  
+  
+## <a name="performance-summary"></a><span data-ttu-id="b48d0-148">パフォーマンスの概要</span><span class="sxs-lookup"><span data-stu-id="b48d0-148">Performance Summary</span></span>  
+ <span data-ttu-id="b48d0-149">次の表では、オペレーティング システム、ピクセル形式、およびサーフェイスのロック可能性の関数としてフロント バッファー更新プログラムのパフォーマンスを表示します。</span><span class="sxs-lookup"><span data-stu-id="b48d0-149">The following table shows performance of the front buffer update as a function of operating system, pixel format, and surface lockability.</span></span> <span data-ttu-id="b48d0-150">バッファーのフロントとバック バッファーは、同じアダプター上にあると見なされます。</span><span class="sxs-lookup"><span data-stu-id="b48d0-150">The front buffer and back buffer are assumed to be on the same adapter.</span></span> <span data-ttu-id="b48d0-151">アダプターの構成に応じて、ハードウェアの更新プログラムは通常、ソフトウェア更新プログラムよりもはるかに高速です。</span><span class="sxs-lookup"><span data-stu-id="b48d0-151">Depending on the adapter configuration, hardware updates are generally much faster than software updates.</span></span>  
+  
+|<span data-ttu-id="b48d0-152">画面のピクセル形式</span><span class="sxs-lookup"><span data-stu-id="b48d0-152">Surface pixel format</span></span>|<span data-ttu-id="b48d0-153">Windows Vista、WDDM および 9Ex</span><span class="sxs-lookup"><span data-stu-id="b48d0-153">Windows Vista, WDDM and 9Ex</span></span>|<span data-ttu-id="b48d0-154">その他の Windows Vista の構成</span><span class="sxs-lookup"><span data-stu-id="b48d0-154">Other Windows Vista configurations</span></span>|<span data-ttu-id="b48d0-155">Windows XP SP3 または修正プログラムを使用した SP2</span><span class="sxs-lookup"><span data-stu-id="b48d0-155">Windows XP SP3 or SP2 w/ hotfix</span></span>|<span data-ttu-id="b48d0-156">Windows XP SP2</span><span class="sxs-lookup"><span data-stu-id="b48d0-156">Windows XP SP2</span></span>|  
+|--------------------------|---------------------------------|----------------------------------------|--------------------------------------|--------------------|  
+|<span data-ttu-id="b48d0-157">D3DFMT_X8R8G8B8 (lockable されません)</span><span class="sxs-lookup"><span data-stu-id="b48d0-157">D3DFMT_X8R8G8B8 (not lockable)</span></span>|<span data-ttu-id="b48d0-158">**ハードウェアの更新**</span><span class="sxs-lookup"><span data-stu-id="b48d0-158">**Hardware Update**</span></span>|<span data-ttu-id="b48d0-159">ソフトウェアの更新</span><span class="sxs-lookup"><span data-stu-id="b48d0-159">Software Update</span></span>|<span data-ttu-id="b48d0-160">ソフトウェアの更新</span><span class="sxs-lookup"><span data-stu-id="b48d0-160">Software Update</span></span>|<span data-ttu-id="b48d0-161">ソフトウェアの更新</span><span class="sxs-lookup"><span data-stu-id="b48d0-161">Software Update</span></span>|  
+|<span data-ttu-id="b48d0-162">D3DFMT_X8R8G8B8 (lockable)</span><span class="sxs-lookup"><span data-stu-id="b48d0-162">D3DFMT_X8R8G8B8 (lockable)</span></span>|<span data-ttu-id="b48d0-163">**ハードウェアの更新**</span><span class="sxs-lookup"><span data-stu-id="b48d0-163">**Hardware Update**</span></span>|<span data-ttu-id="b48d0-164">ソフトウェアの更新</span><span class="sxs-lookup"><span data-stu-id="b48d0-164">Software Update</span></span>|<span data-ttu-id="b48d0-165">**ハードウェアの更新**</span><span class="sxs-lookup"><span data-stu-id="b48d0-165">**Hardware Update**</span></span>|<span data-ttu-id="b48d0-166">**ハードウェアの更新**</span><span class="sxs-lookup"><span data-stu-id="b48d0-166">**Hardware Update**</span></span>|  
+|<span data-ttu-id="b48d0-167">(ロックではない) では D3DFMT_A8R8G8B8</span><span class="sxs-lookup"><span data-stu-id="b48d0-167">D3DFMT_A8R8G8B8 (not lockable)</span></span>|<span data-ttu-id="b48d0-168">**ハードウェアの更新**</span><span class="sxs-lookup"><span data-stu-id="b48d0-168">**Hardware Update**</span></span>|<span data-ttu-id="b48d0-169">ソフトウェアの更新</span><span class="sxs-lookup"><span data-stu-id="b48d0-169">Software Update</span></span>|<span data-ttu-id="b48d0-170">ソフトウェアの更新</span><span class="sxs-lookup"><span data-stu-id="b48d0-170">Software Update</span></span>|<span data-ttu-id="b48d0-171">ソフトウェアの更新</span><span class="sxs-lookup"><span data-stu-id="b48d0-171">Software Update</span></span>|  
+|<span data-ttu-id="b48d0-172">(ロック) では D3DFMT_A8R8G8B8</span><span class="sxs-lookup"><span data-stu-id="b48d0-172">D3DFMT_A8R8G8B8 (lockable)</span></span>|<span data-ttu-id="b48d0-173">**ハードウェアの更新**</span><span class="sxs-lookup"><span data-stu-id="b48d0-173">**Hardware Update**</span></span>|<span data-ttu-id="b48d0-174">ソフトウェアの更新</span><span class="sxs-lookup"><span data-stu-id="b48d0-174">Software Update</span></span>|<span data-ttu-id="b48d0-175">**ハードウェアの更新**</span><span class="sxs-lookup"><span data-stu-id="b48d0-175">**Hardware Update**</span></span>|<span data-ttu-id="b48d0-176">ソフトウェアの更新</span><span class="sxs-lookup"><span data-stu-id="b48d0-176">Software Update</span></span>|  
+  
+## <a name="see-also"></a><span data-ttu-id="b48d0-177">関連項目</span><span class="sxs-lookup"><span data-stu-id="b48d0-177">See Also</span></span>  
+ <xref:System.Windows.Interop.D3DImage>  
+ [<span data-ttu-id="b48d0-178">WPF と Direct3D9 の相互運用性</span><span class="sxs-lookup"><span data-stu-id="b48d0-178">WPF and Direct3D9 Interoperation</span></span>](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md)  
+ [<span data-ttu-id="b48d0-179">チュートリアル: WPF でホストするための Direct3D9 コンテンツの作成</span><span class="sxs-lookup"><span data-stu-id="b48d0-179">Walkthrough: Creating Direct3D9 Content for Hosting in WPF</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)  
+ [<span data-ttu-id="b48d0-180">チュートリアル: WPF での Direct3D9 コンテンツのホスト</span><span class="sxs-lookup"><span data-stu-id="b48d0-180">Walkthrough: Hosting Direct3D9 Content in WPF</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)

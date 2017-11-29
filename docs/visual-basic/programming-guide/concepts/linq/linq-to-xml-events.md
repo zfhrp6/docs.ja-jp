@@ -1,59 +1,51 @@
 ---
-title: "LINQ to XML イベント (Visual Basic) |Microsoft ドキュメント"
+title: "LINQ to XML イベント (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 34923928-b99c-4004-956e-38f6db25e910
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2b7756845f155c4683015d54b41f2ecc09b29333
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: b19d8f19f9feb1d385f9900d76d2a7af8e89bbeb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="linq-to-xml-events-visual-basic"></a>LINQ to XML イベント (Visual Basic)
-[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]イベントを使用すると、XML ツリーが変更されるときに通知することができます。  
+# <a name="linq-to-xml-events-visual-basic"></a><span data-ttu-id="2fd59-102">LINQ to XML イベント (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2fd59-102">LINQ to XML Events (Visual Basic)</span></span>
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="2fd59-103"> イベントを使うと、XML ツリーが変更されるときに通知を受けることができます。</span><span class="sxs-lookup"><span data-stu-id="2fd59-103"> events enable you to be notified when an XML tree is altered.</span></span>  
   
- イベントをすべて<xref:System.Xml.Linq.XObject>。</xref:System.Xml.Linq.XObject>のインスタンスに追加します。 イベント ハンドラーがイベントをへの変更を受信して<xref:System.Xml.Linq.XObject>とその子孫のいずれか</xref:System.Xml.Linq.XObject>。 たとえば、イベント ハンドラーをツリーのルートに追加して、そのツリーに対するすべての変更をイベント ハンドラーから処理できます。  
+ <span data-ttu-id="2fd59-104">イベントは、任意の <xref:System.Xml.Linq.XObject> のインスタンスに追加できます。</span><span class="sxs-lookup"><span data-stu-id="2fd59-104">You can add events to an instance of any <xref:System.Xml.Linq.XObject>.</span></span> <span data-ttu-id="2fd59-105">イベント ハンドラーは、その <xref:System.Xml.Linq.XObject> およびその任意の子孫に対する変更のイベントを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="2fd59-105">The event handler will then receive events for modifications to that <xref:System.Xml.Linq.XObject> and any of its descendants.</span></span> <span data-ttu-id="2fd59-106">たとえば、イベント ハンドラーをツリーのルートに追加して、そのツリーに対するすべての変更をイベント ハンドラーから処理できます。</span><span class="sxs-lookup"><span data-stu-id="2fd59-106">For example, you can add an event handler to the root of the tree, and handle all modifications to the tree from that event handler.</span></span>  
   
- 例については[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] <xref:System.Xml.Linq.XObject.Changing> <xref:System.Xml.Linq.XObject.Changed>.</xref:System.Xml.Linq.XObject.Changed></xref:System.Xml.Linq.XObject.Changing>イベントを参照してください  
+ <span data-ttu-id="2fd59-107">[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] イベントの例については、<xref:System.Xml.Linq.XObject.Changing> および <xref:System.Xml.Linq.XObject.Changed> を参照してください。</span><span class="sxs-lookup"><span data-stu-id="2fd59-107">For examples of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] events, see <xref:System.Xml.Linq.XObject.Changing> and <xref:System.Xml.Linq.XObject.Changed>.</span></span>  
   
-## <a name="types-and-events"></a>型とイベント  
- イベントを使用する場合は、次の型を使用できます。  
+## <a name="types-and-events"></a><span data-ttu-id="2fd59-108">型とイベント</span><span class="sxs-lookup"><span data-stu-id="2fd59-108">Types and Events</span></span>  
+ <span data-ttu-id="2fd59-109">イベントを使用する場合は、次の型を使用できます。</span><span class="sxs-lookup"><span data-stu-id="2fd59-109">You use the following types when working with events:</span></span>  
   
-|種類|説明|  
+|<span data-ttu-id="2fd59-110">種類</span><span class="sxs-lookup"><span data-stu-id="2fd59-110">Type</span></span>|<span data-ttu-id="2fd59-111">説明</span><span class="sxs-lookup"><span data-stu-id="2fd59-111">Description</span></span>|  
 |----------|-----------------|  
-|<xref:System.Xml.Linq.XObjectChange></xref:System.Xml.Linq.XObjectChange>|<xref:System.Xml.Linq.XObject>。</xref:System.Xml.Linq.XObject>イベントが発生したときに、イベントの種類を指定します。|  
-|<xref:System.Xml.Linq.XObjectChangeEventArgs></xref:System.Xml.Linq.XObjectChangeEventArgs>|データを提供、<xref:System.Xml.Linq.XObject.Changing>と<xref:System.Xml.Linq.XObject.Changed>イベント</xref:System.Xml.Linq.XObject.Changed></xref:System.Xml.Linq.XObject.Changing>。|  
+|<xref:System.Xml.Linq.XObjectChange>|<span data-ttu-id="2fd59-112"><xref:System.Xml.Linq.XObject> に対してイベントが生成されるときのイベントの種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="2fd59-112">Specifies the event type when an event is raised for an <xref:System.Xml.Linq.XObject>.</span></span>|  
+|<xref:System.Xml.Linq.XObjectChangeEventArgs>|<span data-ttu-id="2fd59-113"><xref:System.Xml.Linq.XObject.Changing> イベントおよび <xref:System.Xml.Linq.XObject.Changed> イベントのデータを提供します。</span><span class="sxs-lookup"><span data-stu-id="2fd59-113">Provides data for the <xref:System.Xml.Linq.XObject.Changing> and <xref:System.Xml.Linq.XObject.Changed> events.</span></span>|  
   
- XML ツリーを変更するときに次のイベントが発生します。  
+ <span data-ttu-id="2fd59-114">XML ツリーを変更するときに次のイベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="2fd59-114">The following events are raised when you modify an XML tree:</span></span>  
   
-|Event|説明|  
+|<span data-ttu-id="2fd59-115">Event</span><span class="sxs-lookup"><span data-stu-id="2fd59-115">Event</span></span>|<span data-ttu-id="2fd59-116">説明</span><span class="sxs-lookup"><span data-stu-id="2fd59-116">Description</span></span>|  
 |-----------|-----------------|  
-|<xref:System.Xml.Linq.XObject.Changing></xref:System.Xml.Linq.XObject.Changing>|この直前に発生<xref:System.Xml.Linq.XObject>を変更またはその子孫のいずれかができます</xref:System.Xml.Linq.XObject>。|  
-|<xref:System.Xml.Linq.XObject.Changed></xref:System.Xml.Linq.XObject.Changed>|発生したときに、<xref:System.Xml.Linq.XObject>が変更またはその子孫のいずれかの変更されています</xref:System.Xml.Linq.XObject>。|  
+|<xref:System.Xml.Linq.XObject.Changing>|<span data-ttu-id="2fd59-117"><xref:System.Xml.Linq.XObject> またはその子孫のいずれかが変更される直前に発生します。</span><span class="sxs-lookup"><span data-stu-id="2fd59-117">Occurs just before this <xref:System.Xml.Linq.XObject> or any of its descendants is going to change.</span></span>|  
+|<xref:System.Xml.Linq.XObject.Changed>|<span data-ttu-id="2fd59-118"><xref:System.Xml.Linq.XObject> またはその子孫のいずれかが変更されたときに発生します。</span><span class="sxs-lookup"><span data-stu-id="2fd59-118">Occurs when an <xref:System.Xml.Linq.XObject> has changed or any of its descendants have changed.</span></span>|  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="2fd59-119">例</span><span class="sxs-lookup"><span data-stu-id="2fd59-119">Example</span></span>  
   
-### <a name="description"></a>説明  
- XML ツリー内の集計情報を維持する場合に、イベントは便利です。 たとえば、請求書の品目の合計である請求合計を維持する場合があります。 この例では、イベントを使用して、複合要素の `Items` の下にあるすべての子要素の合計を維持します。  
+### <a name="description"></a><span data-ttu-id="2fd59-120">説明</span><span class="sxs-lookup"><span data-stu-id="2fd59-120">Description</span></span>  
+ <span data-ttu-id="2fd59-121">XML ツリー内の集計情報を維持する場合に、イベントは便利です。</span><span class="sxs-lookup"><span data-stu-id="2fd59-121">Events are useful when you want to maintain some aggregate information in an XML tree.</span></span> <span data-ttu-id="2fd59-122">たとえば、請求書の品目の合計である請求合計を維持する場合があります。</span><span class="sxs-lookup"><span data-stu-id="2fd59-122">For example, you may want maintain an invoice total that is the sum of the line items of the invoice.</span></span> <span data-ttu-id="2fd59-123">この例では、イベントを使用して、複合要素の `Items` の下にあるすべての子要素の合計を維持します。</span><span class="sxs-lookup"><span data-stu-id="2fd59-123">This example uses events to maintain the total of all of the child elements under the complex element `Items`.</span></span>  
   
-### <a name="code"></a>コード  
+### <a name="code"></a><span data-ttu-id="2fd59-124">コード</span><span class="sxs-lookup"><span data-stu-id="2fd59-124">Code</span></span>  
   
 ```vb  
 Module Module1  
@@ -109,8 +101,8 @@ Module Module1
 End Module  
 ```  
   
-### <a name="comments"></a>コメント  
- このコードを実行すると、次の出力が生成されます。  
+### <a name="comments"></a><span data-ttu-id="2fd59-125">コメント</span><span class="sxs-lookup"><span data-stu-id="2fd59-125">Comments</span></span>  
+ <span data-ttu-id="2fd59-126">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="2fd59-126">This code produces the following output:</span></span>  
   
 ```  
 Changed System.Xml.Linq.XElement Add  
@@ -131,5 +123,5 @@ Total:308
 </Root>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [高度な LINQ to XML のプログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+## <a name="see-also"></a><span data-ttu-id="2fd59-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="2fd59-127">See Also</span></span>  
+ [<span data-ttu-id="2fd59-128">高度な LINQ to XML プログラミング (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2fd59-128">Advanced LINQ to XML Programming (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
