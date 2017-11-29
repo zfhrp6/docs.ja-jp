@@ -5,33 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
+- cpp
 helpviewer_keywords:
 - platform invoke, attribute fields
 - attribute fields in platform invoke, CharSet
 - CharSet field
 ms.assetid: a8347eb1-295f-46b9-8a78-63331f9ecc50
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a1b0e444ef73deac6f6e353c8e1b67d1cf361ab2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 3e97c640472156c1a47ad125bffeaf39b8eb0762
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="specifying-a-character-set"></a>文字セットの指定
-<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=fullName> フィールドは文字列のマーシャリングを制御し、DLL の関数名をプラットフォーム呼び出しが見つけるしくみを決定します。 このトピックでは、両方の動作について説明します。  
+<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> フィールドは文字列のマーシャリングを制御し、DLL の関数名をプラットフォーム呼び出しが見つけるしくみを決定します。 このトピックでは、両方の動作について説明します。  
   
  一部の API は、文字列引数、ナロー (ANSI) とワイド (Unicode) を受け取る 2 種類の関数をエクスポートします。 たとえば、Win32 API には、**MessageBox** 関数の次のエントリ ポイント名が含まれています。  
   
@@ -54,7 +51,7 @@ ms.lasthandoff: 08/21/2017
   
 -   名前の一致  
   
-     <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=fullName> フィールドが **true** の場合 ([!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] の既定値)、プラットフォーム呼び出しは、指定された名前だけを検索します。 たとえば、**MessageBox** を指定した場合、プラットフォーム呼び出しは **MessageBox** を検索し、厳密に一致する綴りが見つからない場合、検索失敗となります。  
+     <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=nameWithType> フィールドが **true** の場合 ([!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] の既定値)、プラットフォーム呼び出しは、指定された名前だけを検索します。 たとえば、**MessageBox** を指定した場合、プラットフォーム呼び出しは **MessageBox** を検索し、厳密に一致する綴りが見つからない場合、検索失敗となります。  
   
      **ExactSpelling** フィールドが **false** のとき (C++ と C# で既定)、プラットフォーム呼び出しは最初に修飾なしのエイリアスを探し (**MessageBox**)、見つからなければ、修飾ありの名前を探します (**MessageBoxA**)。 ANSI の名前一致動作と Unicode の名前一致動作は異なることにご注意ください。  
   
@@ -77,7 +74,7 @@ ms.lasthandoff: 08/21/2017
 ## <a name="specifying-a-character-set-in-visual-basic"></a>Visual Basic で文字セットを指定する  
  次の例では **MessageBox** 関数を 3 回宣言しています。宣言のたびに文字セット動作が変わっています。 Visual Basic では、文字セット動作を指定できます。宣言ステートメントにキーワードとして **Ansi**、**Unicode**、**Auto** を追加します。  
   
- 最初の宣言ステートメントのように、文字セット キーワードを省略した場合、<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=fullName> フィールドは既定で ANSI 文字セットに設定されます。 例の 2 番目と 3 番目のステートメントは、キーワードで文字セットを明示的に指定しています。  
+ 最初の宣言ステートメントのように、文字セット キーワードを省略した場合、<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> フィールドは既定で ANSI 文字セットに設定されます。 例の 2 番目と 3 番目のステートメントは、キーワードで文字セットを明示的に指定しています。  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -98,7 +95,7 @@ End Class
 ```  
   
 ## <a name="specifying-a-character-set-in-c-and-c"></a>C# と C++ で文字セットを指定する  
- <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=fullName> フィールドは、基礎となる文字セットとして ANSI または Unicode を識別します。 この文字セットは、メソッドの文字列引数をマーシャリングする方法を制御します。 次の形式の 1 つを使用し、文字セットを指示します。  
+ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> フィールドは、基礎となる文字セットとして ANSI または Unicode を識別します。 この文字セットは、メソッドの文字列引数をマーシャリングする方法を制御します。 次の形式の 1 つを使用し、文字セットを指示します。  
   
 ```csharp  
 [DllImport("dllname", CharSet=CharSet.Ansi)]  
@@ -152,8 +149,7 @@ extern "C" int MessageBox(HWND hWnd,
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.InteropServices.DllImportAttribute>   
- [マネージ コードでのプロトタイプの作成](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)   
- [プラットフォーム呼び出しの例](../../../docs/framework/interop/platform-invoke-examples.md)   
+ <xref:System.Runtime.InteropServices.DllImportAttribute>  
+ [マネージ コードでのプロトタイプの作成](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)  
+ [プラットフォーム呼び出しの例](../../../docs/framework/interop/platform-invoke-examples.md)  
  [プラットフォーム呼び出しによるデータのマーシャリング](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)
-

@@ -1,37 +1,40 @@
 ---
-title: "カスタム WSDL パブリケーション | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "カスタム WSDL パブリケーション"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3b3e8103-2c95-4db3-a05b-46aa8e9d4d29
-caps.latest.revision: 21
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7e390bf728cde703a967fcea954583f6e5f84002
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# カスタム WSDL パブリケーション
+# <a name="custom-wsdl-publication"></a>カスタム WSDL パブリケーション
 このサンプルでは、次の方法を示します。  
   
--   カスタム <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=fullName> 属性に <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=fullName> を実装し、属性プロパティを WSDL 注釈としてエクスポートします。  
+-   カスタム <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType> 属性に <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> を実装し、属性プロパティを WSDL 注釈としてエクスポートします。  
   
--   <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=fullName> を実装し、カスタム WSDL 注釈をインポートします。  
+-   <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> を実装し、カスタム WSDL 注釈をインポートします。  
   
--   カスタム コントラクトの動作とカスタム操作の動作に、それぞれ <xref:System.ServiceModel.Description.IServiceContractGenerationExtension?displayProperty=fullName> と <xref:System.ServiceModel.Description.IOperationContractGenerationExtension?displayProperty=fullName> を実装し、インポートされたコントラクトと操作の CodeDOM に、インポートされた注釈をコメントとして書き込みます。  
+-   カスタム コントラクトの動作とカスタム操作の動作に、それぞれ <xref:System.ServiceModel.Description.IServiceContractGenerationExtension?displayProperty=nameWithType> と <xref:System.ServiceModel.Description.IOperationContractGenerationExtension?displayProperty=nameWithType> を実装し、インポートされたコントラクトと操作の CodeDOM に、インポートされた注釈をコメントとして書き込みます。  
   
--   <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> を使用して WSDL をダウンロードし、<xref:System.ServiceModel.Description.WsdlImporter?displayProperty=fullName> を使用してカスタム WSDL インポータによって WSDL をインポートします。さらに、<xref:System.ServiceModel.Description.ServiceContractGenerator?displayProperty=fullName> を使用して、C\# では \/\/\/、Visual Basic では ''' のコメントとして WSDL 注釈を含む [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント コードを生成します。  
+-   <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> を使用して WSDL をダウンロードし、<xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> を使用してカスタム WSDL インポータによって WSDL をインポートします。さらに、<xref:System.ServiceModel.Description.ServiceContractGenerator?displayProperty=nameWithType> を使用して、C# では ///、Visual Basic では ''' のコメントとして WSDL 注釈を含む [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント コードを生成します。  
   
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
-## サービス  
- このサンプルのサービスは、2 つのカスタム属性でマークされています。1 つ目の属性は `WsdlDocumentationAttribute` で、この属性を使用するとコントラクタ内で文字列を使用でき、用途を説明する文字列をコントラクト インターフェイスまたは操作に提供するために適用できます。2 つ目は `WsdlParamOrReturnDocumentationAttribute` で、この属性は、操作内で値またはその値を表すパラメータを返すために適用できます。これらの属性を使用して表されたサービス コントラクト `ICalculator` を、次の例に示します。  
+## <a name="service"></a>サービス  
+ このサンプルのサービスは、2 つのカスタム属性でマークされています。 1 つ目の属性は `WsdlDocumentationAttribute` で、この属性を使用するとコントラクタ内で文字列を使用でき、用途を説明する文字列をコントラクト インターフェイスまたは操作に提供するために適用できます。 2 つ目は `WsdlParamOrReturnDocumentationAttribute` で、この属性は、操作内で値またはその値を表すパラメータを返すために適用できます。 これらの属性を使用して表されたサービス コントラクト `ICalculator` を、次の例に示します。  
   
 ```  
 // Define a service contract.      
@@ -72,10 +75,9 @@ public interface ICalculator
       [WsdlParamOrReturnDocumentation("The denominator.")]double n2  
     );  
 }  
-  
 ```  
   
- `WsdlDocumentationAttribute` は <xref:System.ServiceModel.Description.IContractBehavior> と <xref:System.ServiceModel.Description.IOperationBehavior> を実装しています。したがってサービスが開かれている場合は、この属性のインスタンスを、対応する <xref:System.ServiceModel.Description.ContractDescription> または <xref:System.ServiceModel.Description.OperationDescription> に追加できます。この属性は、さらに <xref:System.ServiceModel.Description.IWsdlExportExtension> を実装しています。<xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> が呼び出されると、メタデータのエクスポートに使用される <xref:System.ServiceModel.Description.WsdlExporter> と、サービス説明オブジェクトを含む <xref:System.ServiceModel.Description.WsdlContractConversionContext> が、エクスポートされたメタデータの変更を有効にするパラメータとして渡されます。  
+ `WsdlDocumentationAttribute` は <xref:System.ServiceModel.Description.IContractBehavior> と <xref:System.ServiceModel.Description.IOperationBehavior> を実装しています。したがってサービスが開かれている場合は、この属性のインスタンスを、対応する <xref:System.ServiceModel.Description.ContractDescription> または <xref:System.ServiceModel.Description.OperationDescription> に追加できます。 この属性は、さらに <xref:System.ServiceModel.Description.IWsdlExportExtension> を実装しています。 <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> が呼び出されると、メタデータのエクスポートに使用される <xref:System.ServiceModel.Description.WsdlExporter> と、サービス説明オブジェクトを含む <xref:System.ServiceModel.Description.WsdlContractConversionContext> が、エクスポートされたメタデータの変更を有効にするパラメータとして渡されます。  
   
  このサンプルでは、次のコードに示すように、エクスポート コンテキスト オブジェクトに <xref:System.ServiceModel.Description.ContractDescription> または <xref:System.ServiceModel.Description.OperationDescription> のどちらが含まれているかに応じて、そのテキスト プロパティを使用して属性からコメントが抽出され、WSDL 注釈の要素に追加されます。  
   
@@ -143,12 +145,11 @@ for (int i = 0; i < args.Length; i++)
         operation.DocumentationElement.AppendChild(newParamElement);  
     }  
 }  
-  
 ```  
   
  その後、サンプルでは次の構成ファイルを使用して、メタデータを標準的な方法で公開します。  
   
-```  
+```xml  
 <services>  
   <service   
       name="Microsoft.ServiceModel.Samples.CalculatorService"  
@@ -173,13 +174,12 @@ for (int i = 0; i < args.Length; i++)
     </behavior>  
   </serviceBehaviors>  
 </behaviors>  
-  
 ```  
   
-## Svcutil クライアント  
- このサンプルでは、Svcutil.exe を使用しません。コントラクトは generatedClient.cs ファイルで提供されます。したがって、サンプルでカスタム WSDL のインポートとコードの生成を確認した後で、サービスを呼び出すことができます。次のカスタム WSDL インポータをこのサンプルで使用するには、Svcutil.exe を実行して `/svcutilConfig` オプションを指定します。このオプションは、このサンプルで使用されているクライアント構成ファイルへのパスを示します。また、Svcutil.exe は `WsdlDocumentation.dll` ライブラリを参照します。ただし、`WsdlDocumentationImporter` を読み込むには、Svuctil.exe が `WsdlDocumentation.dll` ライブラリの場所を特定し、これを読み込むことができる必要があります。つまり、このライブラリがグローバル アセンブリ キャッシュに登録されているか、パスに含まれているか、または Svcutil.exe と同じディレクトリにあることが必要です。このサンプルのような基本的なサンプルにおいてこれを行う最も簡単な方法は、Svcutil.exe とクライアント構成ファイルを `WsdlDocumentation.dll` と同じディレクトリにコピーして、そのディレクトリで実行することです。  
+## <a name="svcutil-client"></a>Svcutil クライアント  
+ このサンプルでは、Svcutil.exe を使用しません。 コントラクトは generatedClient.cs ファイルで提供されます。したがって、サンプルでカスタム WSDL のインポートとコードの生成を確認した後で、サービスを呼び出すことができます。 次のカスタム WSDL インポータをこのサンプルで使用するには、Svcutil.exe を実行して `/svcutilConfig` オプションを指定します。このオプションは、このサンプルで使用されているクライアント構成ファイルへのパスを示します。また、Svcutil.exe は `WsdlDocumentation.dll` ライブラリを参照します。 ただし、`WsdlDocumentationImporter` を読み込むには、Svuctil.exe が `WsdlDocumentation.dll` ライブラリの場所を特定し、これを読み込むことができる必要があります。つまり、このライブラリがグローバル アセンブリ キャッシュに登録されているか、パスに含まれているか、または Svcutil.exe と同じディレクトリにあることが必要です。 このサンプルのような基本的なサンプルにおいてこれを行う最も簡単な方法は、Svcutil.exe とクライアント構成ファイルを `WsdlDocumentation.dll` と同じディレクトリにコピーして、そのディレクトリで実行することです。  
   
-## カスタム WSDL インポータ  
+## <a name="the-custom-wsdl-importer"></a>カスタム WSDL インポータ  
  カスタム <xref:System.ServiceModel.Description.IWsdlImportExtension> オブジェクトの `WsdlDocumentationImporter` は、<xref:System.ServiceModel.Description.IContractBehavior> と <xref:System.ServiceModel.Description.IOperationBehavior> も実装しています。これらはインポートされた ServiceEndpoints、<xref:System.ServiceModel.Description.IServiceContractGenerationExtension>、および <xref:System.ServiceModel.Description.IOperationContractGenerationExtension> に追加され、コントラクトまたは操作コードが作成されるときにコード生成を変更するために呼び出されます。  
   
  サンプルでは、最初に <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> メソッドで、WSDL 注釈がコントラクト レベルまたは操作レベルのどちらにあるかを判断し、適切なスコープで WDSL 注釈自体を動作として追加します。その際、インポートされた注釈テキストをコンストラクタに渡します。  
@@ -207,10 +207,9 @@ public void ImportContract(WsdlImporter importer, WsdlContractConversionContext 
         }  
     }  
 }  
-  
 ```  
   
- その後、コードが生成される際に、システムは <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> メソッドと <xref:System.ServiceModel.Description.IOperationContractGenerationExtension.GenerateOperation%28System.ServiceModel.Description.OperationContractGenerationContext%29> メソッドを呼び出し、適切なコンテキスト情報を渡します。サンプルでは、カスタム WSDL 注釈の書式を設定し、コメントとして CodeDom に挿入します。  
+ その後、コードが生成される際に、システムは <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> メソッドと <xref:System.ServiceModel.Description.IOperationContractGenerationExtension.GenerateOperation%28System.ServiceModel.Description.OperationContractGenerationContext%29> メソッドを呼び出し、適切なコンテキスト情報を渡します。 サンプルでは、カスタム WSDL 注釈の書式を設定し、コメントとして CodeDom に挿入します。  
   
 ```  
 public void GenerateContract(ServiceContractGenerationContext context)  
@@ -224,13 +223,12 @@ public void GenerateOperation(OperationContractGenerationContext context)
     context.SyncMethod.Comments.AddRange(FormatComments(text));  
     Debug.WriteLine("In generate operation.");  
 }  
-  
 ```  
   
-## クライアント アプリケーション  
+## <a name="the-client-application"></a>クライアント アプリケーション  
  クライアント アプリケーションは、アプリケーション構成ファイルにカスタム WSDL インポータを指定することにより、このインポータを読み込みます。  
   
-```  
+```xml  
 <client>  
   <endpoint address="http://localhost/servicemodelsamples/service.svc"   
   binding="wsHttpBinding"   
@@ -241,10 +239,9 @@ public void GenerateOperation(OperationContractGenerationContext context)
     </wsdlImporters>  
   </metadata>  
 </client>  
-  
 ```  
   
- カスタム インポータが指定されると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メタデータ システムはカスタム インポータを、この目的のために作成された <xref:System.ServiceModel.Description.WsdlImporter> に読み込みます。このサンプルでは、<xref:System.ServiceModel.Description.MetadataExchangeClient> を使用してメタデータをダウンロードし、適切に構成された <xref:System.ServiceModel.Description.WsdlImporter> を使用してサンプルで作成されたカスタム インポータによってメタデータをインポートします。さらに、<xref:System.ServiceModel.Description.ServiceContractGenerator> を使用して、変更されたコントラクト情報を Visual Basic および C\# のクライアント コードにコンパイルします。このコードは Intellisense をサポートする Visual Studio で使用するか、または XML ドキュメントにコンパイルできます。  
+ カスタム インポータが指定されると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メタデータ システムはカスタム インポータを、この目的のために作成された <xref:System.ServiceModel.Description.WsdlImporter> に読み込みます。 このサンプルでは、<xref:System.ServiceModel.Description.MetadataExchangeClient> を使用してメタデータをダウンロードし、適切に構成された <xref:System.ServiceModel.Description.WsdlImporter> を使用してサンプルで作成されたカスタム インポータによってメタデータをインポートします。さらに、<xref:System.ServiceModel.Description.ServiceContractGenerator> を使用して、変更されたコントラクト情報を Visual Basic および C# のクライアント コードにコンパイルします。このコードは Intellisense をサポートする Visual Studio で使用するか、または XML ドキュメントにコンパイルできます。  
   
 ```  
 /// From WSDL Documentation:  
@@ -300,21 +297,21 @@ public interface ICalculator
 }  
 ```  
   
-#### サンプルを設定、ビルド、および実行するには  
+#### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。  
   
-2.  ソリューションの C\# 版または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
   
-3.  単一コンピューター構成か複数コンピューター構成かに応じて、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+3.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Metadata\WsdlDocumentation`  
   
-## 参照
+## <a name="see-also"></a>関連項目

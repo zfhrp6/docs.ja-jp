@@ -1,26 +1,29 @@
 ---
-title: "トランスポート : UDP 経由のカスタム トランザクションのサンプル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "トランスポート : UDP 経由のカスタム トランザクションのサンプル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6cebf975-41bd-443e-9540-fd2463c3eb23
-caps.latest.revision: 21
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9c1586b763d98776468322144019407c7c6cc27a
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# トランスポート : UDP 経由のカスタム トランザクションのサンプル
-このサンプルは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の「[トランスポート拡張](../../../../docs/framework/wcf/samples/transport-extensibility.md)」にある「[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)」サンプルに基づいています。ここでは、カスタム トランザクション フローをサポートするように UDP トランスポートのサンプルを拡張し、<xref:System.ServiceModel.Channels.TransactionMessageProperty> プロパティの使用方法について説明します。  
+# <a name="transport-custom-transactions-over-udp-sample"></a>トランスポート : UDP 経由のカスタム トランザクションのサンプル
+このサンプルがに基づいて、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプルは、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)][トランスポート拡張](../../../../docs/framework/wcf/samples/transport-extensibility.md)です。 ここでは、カスタム トランザクション フローをサポートするように UDP トランスポートのサンプルを拡張し、<xref:System.ServiceModel.Channels.TransactionMessageProperty> プロパティの使用方法について説明します。  
   
-## UDP トランスポート サンプルのコードの変更  
- トランザクション フローを示すため、サンプルでは、`ICalculatorContract` のサービス コントラクトが `CalculatorService.Add()` のトランザクション スコープを要求するように変更されています。また、サンプルでは、別の `System.Guid` パラメータを `Add` 操作のコントラクトに追加します。このパラメータは、クライアント トランザクションの識別子をサービスに渡すために使用されます。  
+## <a name="code-changes-in-the-udp-transport-sample"></a>UDP トランスポート サンプルのコードの変更  
+ トランザクション フローを示すため、サンプルでは、`ICalculatorContract` のサービス コントラクトが `CalculatorService.Add()` のトランザクション スコープを要求するように変更されています。 また、サンプルでは、別の `System.Guid` パラメータを `Add` 操作のコントラクトに追加します。 このパラメータは、クライアント トランザクションの識別子をサービスに渡すために使用されます。  
   
 ```  
 class CalculatorService : IDatagramContract, ICalculatorContract  
@@ -45,7 +48,7 @@ class CalculatorService : IDatagramContract, ICalculatorContract
 }  
 ```  
   
- 「[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)」のサンプルでは、UDP パケットを使用してクライアントとサービス間でメッセージを渡します。「[Transport: Custom Transport Sample](../../../../docs/framework/wcf/samples/transport-custom-transactions-over-udp-sample.md)」でも同じメッセージ トランスポート機構を使用しますが、トランザクションはフローされるときに、エンコードされたメッセージと共に UDP パケットに挿入されます。  
+ [トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプルでは、UDP パケットを使用して、クライアントとサービス間でメッセージを渡します。 [トランスポート: カスタム トランスポートのサンプル](../../../../docs/framework/wcf/samples/transport-custom-transactions-over-udp-sample.md)同じメカニズムを使用してメッセージを転送するが、エンコードされたメッセージと一緒に UDP パケットが挿入されてトランザクションがフローされた場合。  
   
 ```  
 byte[] txmsgBuffer =                TransactionMessageBuffer.WriteTransactionMessageBuffer(txPropToken, messageBuffer);  
@@ -55,11 +58,11 @@ int bytesSent = this.socket.SendTo(txmsgBuffer, 0, txmsgBuffer.Length, SocketFla
   
  `TransactionMessageBuffer.WriteTransactionMessageBuffer` は、メッセージ エンティティを使用して現在のトランザクションの反映トークンをマージし、それをバッファに配置する新しい機能を持つヘルパー メソッドです。  
   
- カスタム トランザクション フローのトランスポートの場合、クライアント実装では、トランザクション フローが必要なサービス操作と、この情報を [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に渡す必要があるサービス操作を把握している必要があります。また、ユーザー トランザクションをトランスポート層に転送するための機構もあります。このサンプルでは、"[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージ インスペクタ" を使用して、この情報を取得します。ここで実装されるクライアント メッセージ インスペクタは `TransactionFlowInspector` と呼ばれ、次のタスクを実行します。  
+ カスタム トランザクション フローのトランスポートの場合、クライアント実装では、トランザクション フローが必要なサービス操作と、この情報を [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に渡す必要があるサービス操作を把握している必要があります。 また、ユーザー トランザクションをトランスポート層に転送するための機構もあります。 このサンプルでは、"[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージ インスペクタ" を使用して、この情報を取得します。 ここで実装されるクライアント メッセージ インスペクタは `TransactionFlowInspector` と呼ばれ、次のタスクを実行します。  
   
--   指定されたメッセージ アクションに対してトランザクションをフローする必要があるかどうかを判断します \(これは `IsTxFlowRequiredForThisOperation()` で行われます\)。  
+-   指定されたメッセージ アクションに対してトランザクションをフローする必要があるかどうかを判断します (これは `IsTxFlowRequiredForThisOperation()` で行われます)。  
   
--   トランザクションをフローする必要がある場合、`TransactionFlowProperty` を使用して現在のアンビエント トランザクションをメッセージにアタッチします \(これは `BeforeSendRequest()` で行われます\)。  
+-   トランザクションをフローする必要がある場合、`TransactionFlowProperty` を使用して現在のアンビエント トランザクションをメッセージにアタッチします (これは `BeforeSendRequest()` で行われます)。  
   
 ```  
 public class TransactionFlowInspector : IClientMessageInspector  
@@ -97,7 +100,6 @@ public class TransactionFlowInspector : IClientMessageInspector
       [...]  
  }  
 }  
-  
 ```  
   
  `TransactionFlowInspector` 自体は、カスタム動作 `TransactionFlowBehavior` を使用してフレームワークに渡されます。  
@@ -125,7 +127,7 @@ public class TransactionFlowBehavior : IEndpointBehavior
 }  
 ```  
   
- 上記の機構を使用して、ユーザー コードは、サービス操作を呼び出す前に `TransactionScope` を作成します。メッセージ インスペクタは、トランザクションをサービス操作にフローする必要がある場合に、トランザクションがトランスポートに渡されるようにします。  
+ 上記の機構を使用して、ユーザー コードは、サービス操作を呼び出す前に `TransactionScope` を作成します。 メッセージ インスペクタは、トランザクションをサービス操作にフローする必要がある場合に、トランザクションがトランスポートに渡されるようにします。  
   
 ```  
 CalculatorContractClient calculatorClient = new CalculatorContractClient("SampleProfileUdpBinding_ICalculatorContract");  
@@ -159,7 +161,7 @@ catch (Exception)
 }  
 ```  
   
- クライアントから UDP パケットを受け取ると、サービスはこれを逆シリアル化して、メッセージとトランザクション \(可能な場合\) を抽出します。  
+ クライアントから UDP パケットを受け取ると、サービスはこれを逆シリアル化して、メッセージとトランザクション (可能な場合) を抽出します。  
   
 ```  
 count = listenSocket.EndReceiveFrom(result, ref dummy);  
@@ -182,11 +184,11 @@ if (transaction != null)
   
  これにより、ディスパッチャはディスパッチ時にトランザクションを取得し、メッセージによってアドレス指定されたサービス操作を呼び出すときにそのトランザクションを使用します。  
   
-#### サンプルを設定、ビルド、および実行するには  
+#### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
-1.  ソリューションをビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順を参照してください。  
+1.  指示に従って、ソリューションをビルドする[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。  
   
-2.  現在のサンプルは、「[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)」のサンプルと同様に実行する必要があります。実行するには、UdpTestService.exe を使用してサービスを開始します。[!INCLUDE[windowsver](../../../../includes/windowsver-md.md)] を実行している場合は、サービスをシステム特権で開始する必要があります。これを行うには、[!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)] で UdpTestService.exe を右クリックし、**\[管理者として実行\]** をクリックします。  
+2.  同様に現在のサンプルを実行する必要があります、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプルです。 実行するには、UdpTestService.exe を使用してサービスを開始します。 [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)] を実行している場合は、サービスをシステム特権で開始する必要があります。 これを行うで UdpTestService.exe を右クリックして[!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)] をクリック**管理者として実行**です。  
   
 3.  これによって次の文字列が出力されます。  
   
@@ -196,7 +198,7 @@ if (transaction != null)
     Press <ENTER> to terminate the service and start service from config...  
     ```  
   
-4.  この時点で、UdpTestClient.exe を実行してクライアントを開始できます。クライアントによって生成される出力を次に示します。  
+4.  この時点で、UdpTestClient.exe を実行してクライアントを開始できます。 クライアントによって生成される出力を次に示します。  
   
     ```  
     0  
@@ -227,9 +229,9 @@ if (transaction != null)
        adding 4 + 8  
     ```  
   
-6.  `CalculatorService.Add()` 操作の `clientTransactionId` パラメータで、クライアントによって送信されたトランザクション識別子がサービス トランザクションの識別子と一致する場合、サービス アプリケーションには、"`The client transaction has flowed to the service`" というメッセージが表示されます。クライアント トランザクションがサービスにフローされた場合にのみ、一致が取得されます。  
+6.  `The client transaction has flowed to the service` 操作の `clientTransactionId` パラメータで、クライアントによって送信されたトランザクション識別子がサービス トランザクションの識別子と一致する場合、サービス アプリケーションには、"`CalculatorService.Add()`" というメッセージが表示されます。 クライアント トランザクションがサービスにフローされた場合にのみ、一致が取得されます。  
   
-7.  構成を使用して公開されたエンドポイントに対してクライアント アプリケーションを実行するには、サービス側のアプリケーション ウィンドウで Enter キーを押して、テスト クライアントを再実行します。サービスには、次の出力が表示されます。  
+7.  構成を使用して公開されたエンドポイントに対してクライアント アプリケーションを実行するには、サービス側のアプリケーション ウィンドウで Enter キーを押して、テスト クライアントを再実行します。 サービスには、次の出力が表示されます。  
   
     ```  
     Testing Udp From Config.  
@@ -247,7 +249,7 @@ if (transaction != null)
   
 10. Svcutil.exe を実行しても `sampleProfileUdpBinding` のバインディング拡張構成は生成されません。したがって、次のコードを手動で追加する必要があります。  
   
-    ```  
+    ```xml  
     <configuration>  
         <system.serviceModel>      
             …  
@@ -262,13 +264,13 @@ if (transaction != null)
     ```  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transactions\TransactionMessagePropertyUDPTransport`  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)

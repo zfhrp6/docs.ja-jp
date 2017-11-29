@@ -1,28 +1,31 @@
 ---
-title: "標準エンドポイントの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "標準エンドポイントの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ecd6a62f-9619-4778-a497-6f888087a9ea
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 85dda1619fe3a77c4716806de2467cb96287b2f9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 標準エンドポイントの使用
-このサンプルでは、サービスの構成ファイルでの標準エンドポイントの使用方法を示します。  標準エンドポイントでは、単一のプロパティを使用してアドレス、バインディング、およびコントラクトの組み合わせをそのエンドポイントに関連付けられている追加のプロパティで記述することで、エンドポイントの定義を簡単に行うことができます。  このサンプルでは、カスタムの標準エンドポイントを定義して実装する方法、およびエンドポイントの特定のプロパティを定義する方法を示します。  
+# <a name="usage-of-standard-endpoints"></a>標準エンドポイントの使用
+このサンプルでは、サービスの構成ファイルでの標準エンドポイントの使用方法を示します。 標準エンドポイントでは、単一のプロパティを使用してアドレス、バインディング、およびコントラクトの組み合わせをそのエンドポイントに関連付けられている追加のプロパティで記述することで、エンドポイントの定義を簡単に行うことができます。 このサンプルでは、カスタムの標準エンドポイントを定義して実装する方法、およびエンドポイントの特定のプロパティを定義する方法を示します。  
   
-## サンプルの詳細  
- サービス エンドポイントは、アドレス、バインディング、およびコントラクトの 3 つのパラメーターを指定して指定できます。  指定できるその他のパラメーターには、動作構成、ヘッダー、リッスン URI などがあります。  アドレス、バインディング、およびコントラクトのいずれかまたはすべてに、変更できない値が含まれている場合があります。  このような理由から、標準エンドポイントを使用できます。  このようなエンドポイントの例として、メタデータ交換エンドポイントや探索エンドポイントがあります。  また、標準エンドポイントでは、固定された性質の情報を提供したり、独自の標準エンドポイントを作成したりしなくても、サービス エンドポイントを構成できるため、ユーザビリティが向上します。たとえば、適切な既定の値のセットを指定し、構成ファイルの詳細を削減してユーザビリティを向上させることができます。  
+## <a name="sample-details"></a>サンプルの詳細  
+ サービス エンドポイントは、アドレス、バインディング、およびコントラクトの 3 つのパラメーターを指定して指定できます。 指定できるその他のパラメーターには、動作構成、ヘッダー、リッスン URI などがあります。 アドレス、バインディング、およびコントラクトのいずれかまたはすべてに、変更できない値が含まれている場合があります。 このような理由から、標準エンドポイントを使用できます。 このようなエンドポイントの例として、メタデータ交換エンドポイントや探索エンドポイントがあります。 また、標準エンドポイントでは、固定された性質の情報を提供したり、独自の標準エンドポイントを作成したりしなくても、サービス エンドポイントを構成できるため、ユーザビリティが向上します。たとえば、適切な既定の値のセットを指定し、構成ファイルの詳細を削減してユーザビリティを向上させることができます。  
   
- このサンプルは、2 つの標準エンドポイントを定義するサービスおよびサービスと通信するクライアントの 2 つのプロジェクトで構成されています。  構成ファイルでサービスの標準エンドポイントを定義する方法を次の例に示します。  
+ このサンプルは、2 つの標準エンドポイントを定義するサービスおよびサービスと通信するクライアントの 2 つのプロジェクトで構成されています。 構成ファイルでサービスの標準エンドポイントを定義する方法を次の例に示します。  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -53,12 +56,11 @@ caps.handback.revision: 8
     </standardEndpoints>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
- サービスに定義されている最初のエンドポイントは、`customEndpoint` の一種で、その定義については、`<standardEndpoints>` セクションで確認できます。このセクションでは、プロパティ `property` に `true` の値が指定されています。  これは、新しいプロパティでカスタマイズされたエンドポイントの例です。  2 つ目のエンドポイントはメタデータ エンドポイントを表します。このエンドポイントでは、アドレス、バインディング、およびコントラクトの値が固定されています。  
+ サービスに定義されている最初のエンドポイントは、`customEndpoint` の一種で、その定義については、`<standardEndpoints>` セクションで確認できます。このセクションでは、プロパティ `property` に `true` の値が指定されています。 これは、新しいプロパティでカスタマイズされたエンドポイントの例です。 2 つ目のエンドポイントはメタデータ エンドポイントを表します。このエンドポイントでは、アドレス、バインディング、およびコントラクトの値が固定されています。  
   
- 標準エンドポイント要素を定義するには、`StandardEndpointElement` から派生するクラスを作成する必要があります。  このサンプルでは、`CustomEndpointElement` クラスは、次の例のように定義されています。  
+ 標準エンドポイント要素を定義するには、`StandardEndpointElement` から派生するクラスを作成する必要があります。 このサンプルでは、`CustomEndpointElement` クラスは、次の例のように定義されています。  
   
 ```csharp  
 public class CustomEndpointElement : StandardEndpointElement  
@@ -109,10 +111,9 @@ public class CustomEndpointElement : StandardEndpointElement
     {  
     }  
 }  
-  
 ```  
   
- `CreateServiceEndpoint` 関数で、`CustomEndpoint` オブジェクトが作成されます。  その定義については、以下の例を参照してください。  
+ `CreateServiceEndpoint` 関数で、`CustomEndpoint` オブジェクトが作成されます。 その定義については、以下の例を参照してください。  
   
 ```  
 public class CustomEndpoint : ServiceEndpoint  
@@ -140,24 +141,23 @@ public class CustomEndpoint : ServiceEndpoint
             set;  
         }  
     }  
-  
 ```  
   
- サービスとクライアントとの間で通信を実行するために、クライアントでサービスに対するサービス参照が作成されます。  このサンプルをビルドして実行した場合、サービスが実行されて、クライアントはそのサービスと通信します。  サービスが変更されるたびに、サービス参照を更新する必要があります。  
+ サービスとクライアントとの間で通信を実行するために、クライアントでサービスに対するサービス参照が作成されます。 このサンプルをビルドして実行した場合、サービスが実行されて、クライアントはそのサービスと通信します。 サービスが変更されるたびに、サービス参照を更新する必要があります。  
   
-#### このサンプルを使用するには  
+#### <a name="to-use-this-sample"></a>このサンプルを使用するには  
   
 1.  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を使用して、StandardEndpoints.sln ファイルを開きます。  
   
 2.  複数のプロジェクトを起動できるようにします。  
   
-    1.  **ソリューション エクスプローラー**で、標準エンドポイント ソリューションを右クリックし、**\[プロパティ\]** をクリックします。  
+    1.  **ソリューション エクスプ ローラー**標準エンドポイント ソリューションを右クリックし、**プロパティ**です。  
   
-    2.  **\[共通プロパティ\]** で、**\[スタートアップ プロジェクト\]** をクリックし、**\[マルチ スタートアップ プロジェクト\]** をクリックします。  
+    2.  **共通プロパティ****スタートアップ プロジェクト**、順にクリック**マルチ スタートアップ プロジェクト**です。  
   
-    3.  Service プロジェクトを一覧の先頭に移動し、**\[アクション\]** を **\[開始\]** に設定します。  
+    3.  サービス プロジェクトをリストの先頭に移動、**アクション**'éý'**開始**です。  
   
-    4.  Client プロジェクトを Service プロジェクトの後ろに移動し、この場合も **\[アクション\]** を **\[開始\]** に設定します。  
+    4.  も、サービス プロジェクトの後にクライアント プロジェクトに移動、**アクション**'éý'**開始**です。  
   
          これで、Client プロジェクトは Service プロジェクトの後に実行されます。  
   
@@ -166,17 +166,17 @@ public class CustomEndpoint : ServiceEndpoint
 > [!NOTE]
 >  この手順が機能しない場合は、次の手順を使用して、環境設定が適切であることを確認してください。  
 >   
->  1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
-> 2.  ソリューションをビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
-> 3.  単一コンピューター構成か複数コンピューター構成かに応じて、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+>  1.  実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。  
+> 2.  指示に従って、ソリューションをビルドする[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。  
+> 3.  1 つまたは複数のコンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。  続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。  このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\StandardEndpoints`  
   
-## 参照
+## <a name="see-also"></a>関連項目

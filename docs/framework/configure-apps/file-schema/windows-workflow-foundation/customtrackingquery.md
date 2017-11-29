@@ -1,62 +1,71 @@
 ---
-title: "&lt;customTrackingQuery&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: '&lt;customTrackingQuery&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 ms.assetid: 4e108e89-1132-46b7-868a-c7f5c69dc89f
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: fc06c34cb4db99f5e7b6850ed8e7cf7ed073ef72
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;customTrackingQuery&gt;
-コード アクティビティで定義するイベントを追跡するために使用する、クエリのコレクションを表します。  追跡参加要素がカスタム追跡レコードを定期受信するには、このクエリが必要です。  
+# <a name="ltcustomtrackingquerygt"></a>&lt;customTrackingQuery&gt;
+コード アクティビティで定義するイベントを追跡するために使用する、クエリのコレクションを表します。 追跡参加要素がカスタム追跡レコードを定期受信するには、このクエリが必要です。  
   
- 追跡プロファイルのクエリの詳細については、「[追跡プロファイル](../../../../../docs/framework/windows-workflow-foundation//tracking-profiles.md)」を参照してください。  
+ 追跡プロファイルのクエリの詳細については、次を参照してください[追跡プロファイル。](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
   
-## 構文  
+\<system.serviceModel >  
+\<追跡 >  
+\<trackingProfile >  
+\<ワークフロー >  
+\<customTrackingQueries >  
+\<customTrackingQuery >  
   
-```vb  
+## <a name="syntax"></a>構文  
   
-<tracking>  
-   <trackingProfile name="Name">  
-       <workflow>  
-          <customTrackingQueries>  
-             <customTrackingQuery activityName="String"  
-                 name="String"/>  
-          </customTrackingQueries>  
-       </workflow>  
-   </trackingProfile>  
+```xml  
+<tracking>
+  <trackingProfile name="Name">
+    <workflow>
+      <customTrackingQueries>
+        <customTrackingQuery activityName="String" 
+                             name="String" />
+      </customTrackingQueries>
+    </workflow>
+ </trackingProfile>
 </tracking>  
-  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
 |属性|説明|  
-|--------|--------|  
+|---------------|-----------------|  
 |activityName|追跡レコードを生成したアクティビティの名前を指定する文字列。|  
 |name|生成されたカスタム追跡レコードの名前を指定する文字列。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<customTrackingQuery\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/customtrackingquery.md)|コード アクティビティで定義するイベントを追跡するために使用するクエリ。|  
+|-------------|-----------------|  
+|[\<customTrackingQuery >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/customtrackingquery.md)|コード アクティビティで定義するイベントを追跡するために使用するクエリ。|  
   
-## 参照  
- [System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection](assetId:///System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?qualifyHint=False&amp;autoUpgrade=True)   
- [System.Activities.Tracking.CustomTrackingQuery](assetId:///System.Activities.Tracking.CustomTrackingQuery?qualifyHint=False&amp;autoUpgrade=True)   
- [ワークフロー追跡とトレース](../../../../../docs/framework/windows-workflow-foundation//workflow-tracking-and-tracing.md)   
- [追跡プロファイル](../../../../../docs/framework/windows-workflow-foundation//tracking-profiles.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?displayProperty=nameWithType>       
+ <xref:System.Activities.Tracking.CustomTrackingQuery?displayProperty=nameWithType>         
+ [ワークフローの追跡とトレース](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
+ [追跡プロファイル](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)

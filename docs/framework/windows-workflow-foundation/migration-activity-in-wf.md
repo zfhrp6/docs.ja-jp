@@ -1,21 +1,25 @@
 ---
-title: "WF 内の移行のアクティビティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WF 内の移行のアクティビティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4ad46db7-5744-410e-8fac-6c3b325b1dd0
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 512c025dc8c69b7a2e29cfafead40572de9a73f5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# WF 内の移行のアクティビティ
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] 提供、 <xref:> System.Activities.Statements.Interop?qualifyHint=False&autoUpgrade=True から派生するアクティビティを実行するアクティビティ <xref:System.WorkflowModel.Activities.Activity> に基づくワークフロー内で <xref:System.Activities.Activity>します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]  [移行ガイダンス](../../../docs/framework/windows-workflow-foundation//migration-guidance.md) セクションです。  
+# <a name="migration-activity-in-wf"></a>WF 内の移行のアクティビティ
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]提供、<xref:System.Activities.Statements.Interop>を基になっている、ワークフロー内でアクティビティから派生するアクティビティを実行するアクティビティ<xref:System.Activities.Activity>です。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)セクションです。  
   
 > [!NOTE]
->   <xref:System.Activities.Statements.Interop> ワークフローのプロジェクトで、アクティビティがワークフロー デザイナー ツールボックスに表示されない、 **ターゲット フレームワーク** ] に設定 **.Net Framework 4** またはそれ以降。
+>  <xref:System.Activities.Statements.Interop> 、ワークフローのプロジェクトがあるない限り、ワークフロー デザイナー ツールボックスにアクティビティが表示されないその**ターゲット フレームワーク**の設定に**.Net Framework 4**またはそれ以降。

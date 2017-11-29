@@ -1,39 +1,43 @@
 ---
-title: "1015 - StartCompletionWorkItem | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 1015 - StartCompletionWorkItem
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 96fd1d4e-c5d0-46ad-8a71-4b4b49ac7262
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7457b65f81e9e26b9de6055df474a83ce4264846
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 1015 - StartCompletionWorkItem
-## プロパティ  
+# <a name="1015---startcompletionworkitem"></a>1015 - StartCompletionWorkItem
+## <a name="properties"></a>プロパティ  
   
 |||  
 |-|-|  
 |ID|1015|  
 |キーワード|WFRuntime|  
 |レベル|詳細|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Debug|  
+|チャネル|Microsoft-Windows-Application Server-Applications/Debug|  
   
-## 説明  
+## <a name="description"></a>説明  
  CompletionWorkItem が実行を開始していることを示します。  
   
-## メッセージ  
- 親 Activity '%1'、DisplayName: '%2'、InstanceId: '%3' の CompletionWorkItem の実行を開始しています。  Activity '%4'、DisplayName: '%5'、InstanceId: '%6' が完了しました。  
+## <a name="message"></a>メッセージ  
+ 親 Activity '%1'、DisplayName: '%2'、InstanceId: '%3' の CompletionWorkItem の実行を開始しています。 Activity '%4'、DisplayName: '%5'、InstanceId: '%6' が完了しました。  
   
-## 詳細  
+## <a name="details"></a>詳細  
   
 |データ項目名|データ項目の型|説明|  
-|------------|-------------|--------|  
+|--------------------|--------------------|-----------------|  
 |ParentActivity|xs:string|親アクティビティの型名。|  
 |ParentDisplayName|xs:string|親アクティビティの表示名。|  
 |ParentInstanceId|xs:string|親アクティビティのインスタンス ID。|  

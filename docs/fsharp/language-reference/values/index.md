@@ -1,6 +1,6 @@
 ---
 title: "値 (F#)"
-description: "値 (F#)"
+description: "F# の値の特定の種類の数量の方法について説明します。"
 keywords: "visual f#, f#, 関数型プログラミング"
 author: cartermp
 ms.author: phcart
@@ -10,13 +10,12 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 5e1e73c3-5adb-4bba-9976-d57f1ff6cd8d
-translationtype: Human Translation
-ms.sourcegitcommit: 0a01ec92a90d99fafaacbd3f71f5177e5cf94a68
-ms.openlocfilehash: 31d28a5ff1bb7d9a88949bcaee895a405a5e7014
-ms.lasthandoff: 04/05/2017
-
+ms.openlocfilehash: a1e077552ba39a483be3129c89af48b547219733
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="values"></a>値
 
 F# の値は、特定の型を持つ数量です。値は、整数または浮動小数点数、文字またはテキスト、リスト、シーケンス、配列、タプル、判別共用体、レコード、クラス型、関数値のいずれかです。
@@ -50,11 +49,10 @@ F# は、純粋な関数型言語ではありませんが、関数型プログ�
 
 |タイトル|説明|
 |-----|-----------|
-|[let バインド](../functions/let-bindings.md)|`let` キーワードを使用した値および関数への名前のバインディングに関する情報を提供します。|
+|[let バインド](../functions/let-bindings.md)|使用に関する情報、`let`キーワード値や関数に名前をバインドします。|
 |[関数](../functions/index.md)|F# の関数の概要を説明します。|
 
 ## <a name="see-also"></a>関連項目
 [null 値](null-Values.md)
 
 [F# 言語リファレンス](../index.md)
-

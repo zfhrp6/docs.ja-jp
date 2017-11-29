@@ -1,73 +1,84 @@
 ---
-title: "&lt;sendMessageChannelCache&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: '&lt;sendMessageChannelCache&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 ms.assetid: 241e428e-5030-4b13-8a0a-69f05288d3d9
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1543142a8ff5fb77db48d0e479433c533e7eff83
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;sendMessageChannelCache&gt;
-キャッシュの共有レベルのカスタマイズや、チャネル ファクトリ キャッシュの設定を可能にするほか、Send メッセージング アクティビティを使用してサービス エンドポイントにメッセージを送信するワークフローのチャネル キャッシュの設定も可能にするサービス動作。  
+# <a name="ltsendmessagechannelcachegt"></a>&lt;sendMessageChannelCache&gt;
+キャッシュ共有レベル、チャネル ファクトリ キャッシュの設定および送信メッセージング アクティビティを使用してサービス エンドポイントにメッセージを送信するワークフローのチャネル キャッシュの設定のカスタマイズをできるサービス動作です。  
   
-## 構文  
+\<システムです。ServiceModel >  
+\<ビヘイビアー >  
+\<serviceBehaviors >  
+\<動作 >  
+\<sendMessageChannelCache >  
   
-```  
+## <a name="syntax"></a>構文  
   
-<behaviors>  
-  <serviceBehaviors>  
-    <behavior name=String">  
-       <sendMessageChannelCache allowUnsafeCaching="Boolean" >          
-           <channelSettings idleTimeout="TimeSpan" leaseTimeout="TimeSpan" maxItemsInCache="Integer" />  
-           <factorySettings idleTimeout="TimeSpan" leaseTimeout="TimeSpan" maxItemsInCache="Integer" />  
-       </sendMessageChannelCache>  
-    </behavior>  
-  </serviceBehaviors>  
+```xml  
+<behaviors>
+  <serviceBehaviors>
+    <behavior name="String">
+      <sendMessageChannelCache allowUnsafeCaching="Boolean">
+        <channelSettings idleTimeout="TimeSpan"
+                         leaseTimeout="TimeSpan" 
+                         maxItemsInCache="Integer" />
+        <factorySettings idleTimeout="TimeSpan" 
+                         leaseTimeout="TimeSpan" 
+                         maxItemsInCache="Integer" />
+      </sendMessageChannelCache>
+    </behavior>
+  </serviceBehaviors>
 </behaviors>  
-  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
 |属性|説明|  
-|--------|--------|  
-|allowUnsafeCaching|キャッシュをオンにするかどうかを示すブール値。  ワークフロー サービスにカスタムのバインディングまたは動作がある場合は、キャッシュが安全性を損う可能性があるため、既定では無効になります。  ただし、キャッシュをオンにする場合は、このプロパティを **true** に設定します。|  
+|---------------|-----------------|  
+|allowUnsafeCaching|キャッシュをオンにするかどうかを示すブール値。 ワークフロー サービスにカスタムのバインディングまたは動作がある場合は、キャッシュが安全性を損う可能性があるため、既定では無効になります。 ただし、有効にする場合のキャッシュにこのプロパティを設定**true**です。|  
   
-### 子要素  
-  
-|要素|説明|  
-|--------|--------|  
-|[\<channelSettings\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/channelsettings.md)|チャネル キャッシュの設定を指定します。|  
-|[\<factorySettings\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/factorysettings.md)|チャネル ファクトリ キャッシュの設定を指定します。|  
-  
-### 親要素  
+### <a name="child-elements"></a>子要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<serviceBehaviors\> の \<behavior\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|動作の要素を指定します。|  
+|-------------|-----------------|  
+|[\<channelSettings >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/channelsettings.md)|チャネル キャッシュの設定を指定します。|  
+|[\<factorySettings >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/factorysettings.md)|チャネル ファクトリ キャッシュの設定を指定します。|  
   
-## 解説  
- このサービス動作は、サービス エンドポイントにメッセージを送信するワークフローを対象としています。  これらのワークフローは、通常はクライアント ワークフローですが、<xref:System.ServiceModel.WorkflowServiceHost> でホストされるワークフロー サービスである場合もあります。  
+### <a name="parent-elements"></a>親要素  
   
- 既定では、<xref:System.ServiceModel.WorkflowServiceHost> によってホストされるワークフローでは、<xref:System.ServiceModel.Activities.Send> メッセージング アクティビティが使用するキャッシュは <xref:System.ServiceModel.WorkflowServiceHost> のすべてのワークフロー インスタンス間で共有されます \(ホストレベルのキャッシュ\)。  <xref:System.ServiceModel.WorkflowServiceHost> によってホストされないクライアント ワークフローの場合、キャッシュを使用できるのはワークフロー インスタンスだけです \(インスタンスレベルのキャッシュ\)。  構成でエンドポイントが定義されているワークフローに送信アクティビティがある場合、キャッシュは既定で無効になります。  
+|要素|説明|  
+|-------------|-----------------|  
+|[\<動作 > の\<serviceBehaviors >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|動作の要素を指定します。|  
   
- [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] チャネル ファクトリおよびチャネル キャッシュの既定のキャッシュ共有レベルとキャッシュ設定を変更する方法については、「[Send アクティビティのキャッシュ共有レベルの変更](../../../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ このサービス動作は、サービス エンドポイントにメッセージを送信するワークフローを対象としています。 これらのワークフローは、通常はクライアント ワークフローですが、<xref:System.ServiceModel.WorkflowServiceHost> でホストされるワークフロー サービスである場合もあります。  
   
-## 使用例  
- ホストされたワークフロー サービスでは、ファクトリ キャッシュとチャネル キャッシュの設定をアプリケーション構成ファイルで指定できます。  これを行うには、ファクトリ キャッシュおよびチャネル キャッシュのキャッシュ設定を含むサービス動作を追加し、そのサービス動作をサービスに追加します。  次の例は、カスタムのファクトリ キャッシュ設定およびチャネル キャッシュ設定が指定された **MyChannelCacheBehavior** サービス動作を含む構成ファイルの内容を示しています。  このサービス動作は、**behaviorConfiguarion** 属性を通じてサービスに追加されます。  
+ 既定では、<xref:System.ServiceModel.WorkflowServiceHost> によってホストされるワークフローでは、<xref:System.ServiceModel.Activities.Send> メッセージング アクティビティが使用するキャッシュは <xref:System.ServiceModel.WorkflowServiceHost> のすべてのワークフロー インスタンス間で共有されます (ホストレベルのキャッシュ)。 <xref:System.ServiceModel.WorkflowServiceHost> によってホストされないクライアント ワークフローの場合、キャッシュを使用できるのはワークフロー インスタンスだけです (インスタンスレベルのキャッシュ)。 構成でエンドポイントが定義されているワークフローに送信アクティビティがある場合、キャッシュは既定で無効になります。  
   
-```  
+ [!INCLUDE[crabout](../../../../../includes/crabout-md.md)]方法、既定のキャッシュ共有レベルを変更し、キャッシュのチャネル ファクトリおよびチャネル キャッシュ設定を参照してください[送信アクティビティのキャッシュ共有レベルを変更する](../../../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md)です。  
   
+## <a name="example"></a>例  
+ ホストされたワークフロー サービスでは、ファクトリ キャッシュとチャネル キャッシュの設定をアプリケーション構成ファイルで指定できます。 これを行うには、ファクトリ キャッシュおよびチャネル キャッシュのキャッシュ設定を含むサービス動作を追加し、そのサービス動作をサービスに追加します。 次の例を含む構成ファイルの内容を示しています、 **MyChannelCacheBehavior**サービス、カスタム ファクトリ キャッシュおよびチャネル キャッシュの設定で動作します。 このサービスの動作がを通じてサービスに追加されて、 **behaviorConfiguarion**属性。  
+  
+```xml  
 <configuration>    
   <system.serviceModel>  
     <!-- List of other config sections here -->   
@@ -87,11 +98,10 @@ caps.handback.revision: 3
     </services>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
-## 参照  
- <xref:System.ServiceModel.Activities.SendMessageChannelCache>   
- <xref:System.ServiceModel.Activities.Configuration.SendMessageChannelCacheElement>   
- <xref:System.ServiceModel.Activities.Send>   
- [Send アクティビティのキャッシュ共有レベルの変更](../../../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.ServiceModel.Activities.SendMessageChannelCache>  
+ <xref:System.ServiceModel.Activities.Configuration.SendMessageChannelCacheElement>  
+ <xref:System.ServiceModel.Activities.Send>  
+ [Send アクティビティのレベルのキャッシュ共有を変更します。](../../../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md)

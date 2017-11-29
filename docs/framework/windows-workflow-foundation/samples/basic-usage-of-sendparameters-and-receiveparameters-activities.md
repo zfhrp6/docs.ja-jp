@@ -1,39 +1,43 @@
 ---
-title: "SendParameters および ReceiveParameters アクティビティの基本的な使用方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "SendParameters および ReceiveParameters アクティビティの基本的な使用方法"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1b6b1681-3d41-403f-bfe2-3f600f24aa8c
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9c3b6f189f1a2564662af89961c9363f025ae8c3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# SendParameters および ReceiveParameters アクティビティの基本的な使用方法
-このサンプルでは、<xref:System.ServiceModel.Activities.SendParametersContent> アクティビティと <xref:System.ServiceModel.Activities.ReceiveParametersContent> アクティビティの使用方法を示します。このサービスは、文字列引数を取得して、クライアントに入力を再度エコーするという 1 つの操作を公開します。このサンプルで示すのは、これらのメッセージング アクティビティのパラメーターを設定する方法です。  
+# <a name="basic-usage-of-sendparameters-and-receiveparameters-activities"></a>SendParameters および ReceiveParameters アクティビティの基本的な使用方法
+このサンプルでは、<xref:System.ServiceModel.Activities.SendParametersContent> アクティビティと <xref:System.ServiceModel.Activities.ReceiveParametersContent> アクティビティの使用方法を示します。 このサービスは、文字列引数を取得して、クライアントに入力を再度エコーするという 1 つの操作を公開します。 このサンプルで示すのは、これらのメッセージング アクティビティのパラメーターを設定する方法です。  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\SendReceiveParameters`  
   
-#### このサンプルの使用  
+#### <a name="using-this-sample"></a>このサンプルの使用  
   
 1.  [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] でプロジェクト ソリューションを読み込み、プロジェクトをビルドします。  
   
-2.  最初に、\[ソリューションの基本ディレクトリ\]\\EchoWorkflowService\\bin\\debug に生成された EchoWorkflowService アプリケーションを実行します。  
+2.  最初に、[ソリューションの基本ディレクトリ]\EchoWorkflowService\bin\debug に生成された EchoWorkflowService アプリケーションを実行します。  
   
-3.  2 番目に、\[ソリューションの基本ディレクトリ\]\\EchoWorkflowClient\\bin\\debug に生成された EchoWorkflowClient アプリケーションを実行します。  
+3.  2 番目に、[ソリューションの基本ディレクトリ]\EchoWorkflowClient\bin\debug に生成された EchoWorkflowClient アプリケーションを実行します。  
   
-4.  クライアントは、サービスで Echo 操作を呼び出し、結果を出力します。完了したら、Enter キーを押してクライアントを終了し、サービスを終了します。  
+4.  クライアントは、サービスで Echo 操作を呼び出し、結果を出力します。 完了したら、Enter キーを押してクライアントを終了し、サービスを終了します。  
   
-## 参照
+## <a name="see-also"></a>関連項目

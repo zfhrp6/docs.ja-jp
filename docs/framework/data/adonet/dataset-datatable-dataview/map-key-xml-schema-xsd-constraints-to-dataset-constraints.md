@@ -1,38 +1,41 @@
 ---
-title: "XML スキーマ (XSD) のキー制約の DataSet 制約への割り当て | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "XML スキーマ (XSD) のキー制約の DataSet 制約への割り当て"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 22664196-f270-4ebc-a169-70e16a83dfa1
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: f5247d0ccfd2ceec641ff29d29b889a55c1a5e12
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# XML スキーマ (XSD) のキー制約の DataSet 制約への割り当て
-スキーマでは、**key** 要素を使用して要素または属性のキー制約を指定できます。  キー制約を指定する要素または属性の値は、スキーマ インスタンス内で一意になる必要があります。また、null 値にすることはできません。  
+# <a name="map-key-xml-schema-xsd-constraints-to-dataset-constraints"></a>XML スキーマ (XSD) のキー制約の DataSet 制約への割り当て
+スキーマで要素にキー制約を指定したり、属性を使用して、**キー**要素。 キー制約を指定する要素または属性の値は、スキーマ インスタンス内で一意になる必要があります。また、null 値にすることはできません。  
   
  キー制約を定義する列の値を null 値にできない点を除くと、キー制約は UNIQUE 制約と同じです。  
   
- **key** 要素に指定できる **msdata** 属性を次の表に示します。  
+ 次の表にアウトライン、 **msdata**属性で指定できる、**キー**要素。  
   
 |属性名|説明|  
-|---------|--------|  
-|**msdata:ConstraintName**|この属性を指定した場合、その値が制約名として使用されます。  それ以外の場合は、**name** 属性によって制約名の値が設定されます。|  
-|**msdata:PrimaryKey**|`PrimaryKey="true"` が指定されている場合、**IsPrimaryKey** 制約のプロパティを **true** に設定することによって、主キーになります。  主キーの値は null 値にできないため、**AllowDBNull** 列のプロパティが **false** に設定されます。|  
+|--------------------|-----------------|  
+|**msdata:ConstraintName**|この属性を指定した場合、その値が制約名として使用されます。 それ以外の場合、**名前**属性は、制約の名前の値を提供します。|  
+|**msdata:PrimaryKey**|場合`PrimaryKey="true"`が含まれている、 **IsPrimaryKey**制約のプロパティに設定されている**true**、ようになり、主キー。 **AllowDBNull**列のプロパティに設定されている**false**、主キーが null 値を持つことはできません。|  
   
- キー制約を指定するスキーマの変換では、割り当て処理により、制約の列ごとに **AllowDBNull** 列のプロパティが **false** に設定された状態でテーブルに UNIQUE 制約が作成されます。  **key** 要素で `msdata:PrimaryKey="true"` を指定しない限り、UNIQUE 制約の **IsPrimaryKey** プロパティも **false** に設定されます。  これは、スキーマに `PrimaryKey="true"` が指定される UNIQUE 制約と同じです。  
+ キーの制約が指定されているスキーマを変換するで、マッピング プロセスが含まれているテーブルに unique 制約を作成、 **AllowDBNull**設定された column プロパティ**false**の各列に対して、制約です。 **IsPrimaryKey** 、unique 制約のプロパティ設定されても**false**指定した場合を除き、`msdata:PrimaryKey="true"`上、**キー**要素。 これは、スキーマに `PrimaryKey="true"` が指定される UNIQUE 制約と同じです。  
   
- **key** 要素を使用して **CustomerID** 要素のキー制約を指定するスキーマの例を次に示します。  
+ 次のスキーマの例では、**キー**要素のキーの制約を指定する、 **CustomerID**要素。  
   
-```  
+```xml  
 <xs:schema id="cod"  
             xmlns:xs="http://www.w3.org/2001/XMLSchema"   
             xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
@@ -61,16 +64,15 @@ caps.handback.revision: 4
 </xs:schema>   
 ```  
   
- **key** 要素は、**Customers** 要素の **CustomerID** 子要素の値を一意の値にし、null 値を許可しないように指定します。  XML スキーマ定義言語 \(XSD\) スキーマの変換では、割り当て処理によって次のテーブルが作成されます。  
+ **キー**要素には、ことを指定の値、 **CustomerID**の子要素、**顧客**要素の一意の値が必要し、null 値を持つことはできません。 XML スキーマ定義言語 (XSD) スキーマの変換では、割り当て処理によって次のテーブルが作成されます。  
   
 ```  
 Customers(CustomerID, CompanyName, Phone)  
 ```  
   
- また、次の <xref:System.Data.DataSet> に示すように、XML スキーマの割り当てによって **CustomerID** 列の **UniqueConstraint** を作成することもできます   \(わかりやすいように、関連するプロパティだけを示します\)。  
+ XML スキーマのマッピングも作成、 **UniqueConstraint**上、 **CustomerID**列で、次に示すように<xref:System.Data.DataSet>です。 (わかりやすいように、関連するプロパティだけを示します)。  
   
 ```  
-  
       DataSetName: MyDataSet  
 TableName: customers  
   ColumnName: CustomerID  
@@ -82,11 +84,11 @@ TableName: customers
       IsPrimaryKey: True  
 ```  
   
- 生成される **DataSet** では、スキーマの **Key** 要素で `msdata:PrimaryKey="true"` が指定されるため、**UniqueConstraint** の **IsPrimaryKey** プロパティが **true** に設定されます。  
+ **データセット**、生成される、 **IsPrimaryKey**のプロパティ、 **UniqueConstraint**に設定されている**true**のためスキーマ指定`msdata:PrimaryKey="true"`で、**キー**要素。  
   
- **DataSet** にある **UniqueConstraint**の **ConstraintName** プロパティの値は、スキーマの**key** 要素で指定した **msdata:ConstraintName** 属性の値です。  
+ 値、 **ConstraintName**のプロパティ、 **UniqueConstraint**で、**データセット**の値は、 **msdata:ConstraintName**指定された属性、**キー**スキーマ内の要素。  
   
-## 参照  
- [XML スキーマ \(XSD\) 制約の DataSet 制約への割り当て](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)   
- [XML スキーマ \(XSD\) からの DataSet リレーションの生成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [制約の DataSet 制約への XML スキーマ (XSD) 制約のマッピング](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ [XML スキーマ (XSD) からの DataSet リレーションの生成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

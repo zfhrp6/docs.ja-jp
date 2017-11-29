@@ -1,24 +1,27 @@
 ---
-title: "一般的なリファレンス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "一般的なリファレンス [WCF]"
-  - "WCF, 一般リファレンス"
-  - "Windows Communication Foundation, 一般リファレンス"
+title: "一般的なリファレンス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- general reference [WCF]
+- Windows Communication Foundation, general reference
+- WCF, general reference
 ms.assetid: b1a21e93-4700-46e6-88ca-bd7a50e19a16
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9109898adb20a3630ca393176e7f0a59eda0d617
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 一般的なリファレンス
-「[\<system.serviceModel\>](../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)」では、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] クライアントとサービスの構成に使用する要素について説明します。
+# <a name="general-reference"></a>一般的なリファレンス
+セクション[ \<system.serviceModel >](../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)構成に使用される要素について説明[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]クライアントとサービス。

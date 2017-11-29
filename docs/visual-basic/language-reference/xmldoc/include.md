@@ -1,61 +1,60 @@
 ---
-title: "&lt;include&gt; (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "include XML tag"
-  - "<include> XML tag"
+title: "&lt;含める&gt;(Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- include XML tag
+- <include> XML tag
 ms.assetid: ba8e9173-82cd-460b-8938-a075a2dfb36d
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 22eebaa8da8ef082e132cfdf8cb68498bfe16d73
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;include&gt; (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-ソース コード内の型やメンバーを記述する別のファイルを参照します。  
+# <a name="ltincludegt-visual-basic"></a>&lt;含める&gt;(Visual Basic)
+型と、ソース コード内のメンバーを表す別のファイルを参照します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
+```xml  
 <include file="filename" path="tagpath[@name='id']" />  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `filename`  
- 必ず指定します。  ドキュメントを含むファイルの名前。  ファイル名にパスを指定することもできます。  `filename` は二重引用符 \(" "\) で囲みます。  
+ 必須です。 ドキュメントを含むファイルの名前。 ファイル名をパスで修飾することができます。 囲む`filename`を二重引用符 ("") です。  
   
  `tagpath`  
- 必ず指定します。  `filename` のタグのパス。その後ろにタグの `name` を指定します。  パスは二重引用符 \(" "\) で囲みます。  
+ 必須です。 タグ `name` につながる `filename` 内のタグのパス。 パスを二重引用符で囲みます ("") です。  
   
  `name`  
- 必ず指定します。  タグの名前指定子。その後ろにコメントを指定します。  `Name` には `id` を指定します。  
+ 必須です。 コメントの前に、タグの名前指定子。 `Name``id`です。  
   
  `id`  
- 必ず指定します。  タグの ID。その後ろにコメントを指定します。  ID は、単一引用符 \(' '\) で囲みます。  
+ 必須です。 コメントの前に配置するタグの ID。 ID を単一引用符で囲みます (' ')。  
   
-## 解説  
- `<include>` タグを使用すると、ソース コード内の型およびメンバーの説明として、別のファイル内のコメントを参照できます。  これはソース コードのファイルにドキュメント コメントを直接記述しない方法です。  
+## <a name="remarks"></a>コメント  
+ 使用して、`<include>`タイプを記述する別のファイル内のコメントおよびソース コード内のメンバーを参照するタグです。 これは文書化のコメントをソース コード ファイル内に直接配置する方法の代替です。  
   
- `<include>` タグは、W3C の XML Path Language \(XPath\) Version 1.0 Recommendation を使用します。  `<include>` のカスタマイズ方法の詳細については、http:\/\/www.w3.org\/TR\/xpath を参照してください。  
+ `<include>`タグは、W3C XML Path Language (XPath) Version 1.0 の推奨設定を使用します。 カスタマイズする方法の詳細については、 `<include>` http://www.w3.org/tr/xpath 使用することはできます。  
   
-## 使用例  
- この例では、`<include>` タグを使用してメンバーもドキュメントのコメントを `commentFile.xml` ファイルからインポートします。  
+## <a name="example"></a>例  
+ この例では、`<include>`メンバー ドキュメント コメントをという名前のファイルからインポートするタグ`commentFile.xml`です。  
   
  [!code-vb[VbVbcnXmlDocComments#4](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/include_1.vb)]  
   
- `commentFile.xml` の形式は次のとおりです。  
+ 形式、`commentFile.xml`のとおりです。  
   
-```  
+```xml  
 <Docs>  
 <Members name="Open">  
 <summary>Opens a file.</summary>  
@@ -68,5 +67,5 @@ caps.handback.revision: 11
 </Docs>  
 ```  
   
-## 参照  
- [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)
+## <a name="see-also"></a>関連項目  
+ [XML のコメント用タグ](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

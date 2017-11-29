@@ -1,6 +1,6 @@
 ---
 title: "関数 (F#)"
-description: "関数 (F#)"
+description: "F# および f# のサポートについて共通の関数型プログラミング構成要素内の関数について説明します。"
 keywords: "visual f#, f#, 関数型プログラミング"
 author: cartermp
 ms.author: phcart
@@ -10,13 +10,12 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 6dea2c3e-2f9d-4c9d-97a2-d8f9a72b6f4c
-translationtype: Human Translation
-ms.sourcegitcommit: 0a01ec92a90d99fafaacbd3f71f5177e5cf94a68
-ms.openlocfilehash: 7a5fff4746157b430c6f1a492c23e9ea3d7b82c3
-ms.lasthandoff: 04/05/2017
-
+ms.openlocfilehash: 9750e37647a3e382c7a8308c3ffede15729012d8
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="functions"></a>関数
 
 関数は、あらゆるプログラミング言語においてプログラムの実行の基本となる単位です。 他の言語の場合と同様に、F# の関数にもそれぞれ名前と本体があり、パラメーターや引数を受け取ることができます。 F# ではさらに、関数型プログラミング構成要素もサポートしています。たとえば、関数を値として処理したり、名前のない関数を式で使用したりできます。また、関数の合成による新しい関数の作成、カリー化関数、関数の引数の部分適用による関数の暗黙の定義などがサポートされます。
@@ -116,7 +115,7 @@ let vol = cylinderVolume 2.0 3.0
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet107.fs)]
     
 ## <a name="recursive-functions"></a>再帰関数
-*再帰関数*はそれらの関数自体を呼び出す関数です。 再帰関数を使用するには、**let** キーワードの後に **rec** キーワードを指定する必要があります。 関数の本体から再帰関数を呼び出す方法は、他の関数呼び出しの場合と変わりません。 次の再帰関数は、*n* 番目のフィボナッチ数を計算します。 フィボナッチ数列は、古代から知られている数列で、数例の各数値が、前の 2 つの連続する数値の和になります。
+*再帰関数*はそれらの関数自体を呼び出す関数です。 再帰関数を使用するには、**let** キーワードの後に **rec** キーワードを指定する必要があります。 関数の本体から再帰関数を呼び出す方法は、他の関数呼び出しの場合と変わりません。 次の再帰関数は、計算、  *n*番目のフィボナッチ数。 フィボナッチ数列は、古代から知られている数列で、数例の各数値が、前の 2 つの連続する数値の和になります。
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet108.fs)]
 
@@ -188,11 +187,11 @@ let result2 = Compose2 2
 
 // Pipelining
 // Pipeline operator
-// ( <| ) : ('T -> 'U) -> 'T -> 'U
+// ( |> ) : 'T1 -> ('T1 -> 'U) -> 'U
 let Pipeline1 x = addOne <| timesTwo x
 
 // Backward pipeline operator
-// ( |> ) : 'T1 -> ('T1 -> 'U) -> 'U
+// ( <| ) : ('T -> 'U) -> 'T -> 'U
 let Pipeline2 x = addOne x |> timesTwo
 
 // Result is 5
@@ -210,4 +209,3 @@ let result4 = Pipeline2 2
 [値](../values/index.md)
 
 [F# 言語リファレンス](../index.md)
-

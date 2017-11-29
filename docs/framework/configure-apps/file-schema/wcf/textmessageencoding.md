@@ -5,24 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
 ms.assetid: e6d834d0-356e-45eb-b530-bbefbb9ec3f0
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c69b7647fa03cf8a6f83a7e3869da4c7a09161ba
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: b5ce6d658822a8c4600a3cde09bfb9cb57886ee6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="lttextmessageencodinggt"></a>&lt;textMessageEncoding&gt;
 テキストベースの XML メッセージに使用される文字エンコーディングおよびメッセージ バージョン管理を指定します。  
@@ -81,14 +76,13 @@ ms.lasthandoff: 09/25/2017
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.ServiceModel.Configuration.TextMessageEncodingElement>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>   
- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>   
- [メッセージ エンコーダーを選択します。](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)   
- [メッセージのエンコード](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)   
- [バインド](../../../../../docs/framework/wcf/bindings.md)   
- [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
- [カスタム バインド](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
+ <xref:System.ServiceModel.Configuration.TextMessageEncodingElement>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>  
+ <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  
+ [メッセージ エンコーダーを選択します。](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
+ [メッセージのエンコード](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)  
+ [バインディング](../../../../../docs/framework/wcf/bindings.md)  
+ [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [カスタム バインド](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
-

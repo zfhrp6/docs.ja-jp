@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 1e40b5c9-0df2-4d66-afc5-a99d0e4ae7a4
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 4870ed05e59ac075cfd6be9b41b0d7a788309b01
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 855752c057926ba4eeb4e79ef5fe2584ad2942b9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ltwshttpcontextbindinggt"></a>&lt;wsHttpContextBinding&gt;
 保護レベルの署名を要求する <xref:System.ServiceModel.WSHttpBinding> のコンテキストを提供します。  
@@ -111,13 +109,12 @@ ms.lasthandoff: 09/25/2017
 |[\<バインド >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|この要素には、標準バインディングおよびカスタム バインディングのコレクションが保持されます。|  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.ServiceModel.WSHttpBinding>   
- <xref:System.ServiceModel.WSHttpContextBinding>   
- <xref:System.ServiceModel.Configuration.WSHttpContextBindingElement>   
- <xref:System.ServiceModel.Channels.ContextBindingElement>   
- [バインド](../../../../../docs/framework/wcf/bindings.md)   
- [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
- [\<バインド >](../../../../../docs/framework/misc/binding.md)   
+ <xref:System.ServiceModel.WSHttpBinding>  
+ <xref:System.ServiceModel.WSHttpContextBinding>  
+ <xref:System.ServiceModel.Configuration.WSHttpContextBindingElement>  
+ <xref:System.ServiceModel.Channels.ContextBindingElement>  
+ [バインディング](../../../../../docs/framework/wcf/bindings.md)  
+ [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<バインド >](../../../../../docs/framework/misc/binding.md)  
  [\<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)
-

@@ -1,23 +1,26 @@
 ---
-title: "テーブルの推論 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "テーブルの推論"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 74a288d4-b8e9-4f1a-b2cd-10df92c1ed1f
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: ae6f7827b7206544ff7547cc04f44b7cda34bef8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# テーブルの推論
-XML ドキュメントから <xref:System.Data.DataSet> のスキーマを推論するときには、ADO.NET では、テーブルを表す XML 要素を最初に決定します。  次に示すいくつかの XML 構造は、**DataSet** スキーマのテーブルとして推論されます。  
+# <a name="inferring-tables"></a>テーブルの推論
+XML ドキュメントから <xref:System.Data.DataSet> のスキーマを推論するときには、ADO.NET では、テーブルを表す XML 要素を最初に決定します。 次の XML 構造の結果のテーブルに、**データセット**スキーマ。  
   
 -   属性を持つ要素  
   
@@ -25,10 +28,10 @@ XML ドキュメントから <xref:System.Data.DataSet> のスキーマを推論
   
 -   繰り返し出現する要素  
   
-## 属性を持つ要素  
- 要素に属性が指定されている場合は、それらの要素はテーブルとして推論されます。  たとえば、次のような XML があるとします。  
+## <a name="elements-with-attributes"></a>属性を持つ要素  
+ 要素に属性が指定されている場合は、それらの要素はテーブルとして推論されます。 たとえば、次のような XML があるとします。  
   
-```  
+```xml  
 <DocumentElement>  
   <Element1 attr1="value1"/>  
   <Element1 attr1="value2">Text1</Element1>  
@@ -37,19 +40,19 @@ XML ドキュメントから <xref:System.Data.DataSet> のスキーマを推論
   
  推論プロセスにより、"Element1" という名前のテーブルが生成されます。  
   
- **DataSet:** DocumentElement  
+ **データセット:** DocumentElement  
   
  **Table:** Element1  
   
-|attr1|Element1\_Text|  
+|attr1|Element1_Text|  
 |-----------|--------------------|  
 |value1||  
 |value2|Text1|  
   
-## 子要素を持つ要素  
- 子要素を持つ要素は、テーブルとして推論されます。  たとえば、次のような XML があるとします。  
+## <a name="elements-with-child-elements"></a>子要素を持つ要素  
+ 子要素を持つ要素は、テーブルとして推論されます。 たとえば、次のような XML があるとします。  
   
-```  
+```xml  
 <DocumentElement>  
   <Element1>  
     <ChildElement1>Text1</ChildElement1>  
@@ -59,7 +62,7 @@ XML ドキュメントから <xref:System.Data.DataSet> のスキーマを推論
   
  推論プロセスにより、"Element1" という名前のテーブルが生成されます。  
   
- **DataSet:** DocumentElement  
+ **データセット:** DocumentElement  
   
  **Table:** Element1  
   
@@ -67,9 +70,9 @@ XML ドキュメントから <xref:System.Data.DataSet> のスキーマを推論
 |-------------------|  
 |Text1|  
   
- ドキュメント \(ルート\) 要素に属性または子要素があり、それらが列として推論される場合には、そのドキュメント要素はテーブルとして推論されます。  ドキュメント要素の属性や子要素が列として推論されない場合には、そのドキュメント要素は **DataSet** として推論されます。  たとえば、次のような XML があるとします。  
+ ドキュメント (ルート) 要素に属性または子要素があり、それらが列として推論される場合には、そのドキュメント要素はテーブルとして推論されます。 要素として推論ドキュメントの要素に属性がありません。 や列として推論される子要素がある場合、**データセット**です。 たとえば、次のような XML があるとします。  
   
-```  
+```xml  
 <DocumentElement>  
   <Element1>Text1</Element1>  
   <Element2>Text2</Element2>  
@@ -78,7 +81,7 @@ XML ドキュメントから <xref:System.Data.DataSet> のスキーマを推論
   
  推論プロセスにより、"DocumentElement" という名前のテーブルが生成されます。  
   
- **DataSet:** NewDataSet  
+ **データセット:** NewDataSet  
   
  **Table:** DocumentElement  
   
@@ -88,15 +91,15 @@ XML ドキュメントから <xref:System.Data.DataSet> のスキーマを推論
   
  または、次のような XML があるとします。  
   
-```  
+```xml  
 <DocumentElement>  
   <Element1 attr1="value1" attr2="value2"/>  
 </DocumentElement>  
 ```  
   
- 推論プロセスにより、"Element1" という名前のテーブルを含む "DocumentElement" という名前の **DataSet** が生成されます。  
+ 推論プロセスが生成される、**データセット**"Element1"という名前のテーブルを含む"DocumentElement"という名前  
   
- **DataSet:** DocumentElement  
+ **データセット:** DocumentElement  
   
  **Table:** Element1  
   
@@ -104,10 +107,10 @@ XML ドキュメントから <xref:System.Data.DataSet> のスキーマを推論
 |-----------|-----------|  
 |value1|value2|  
   
-## 繰り返し出現する要素  
- 繰り返し出現する要素は、単一のテーブルとして推論されます。  たとえば、次のような XML があるとします。  
+## <a name="repeating-elements"></a>繰り返し出現する要素  
+ 繰り返し出現する要素は、単一のテーブルとして推論されます。 たとえば、次のような XML があるとします。  
   
-```  
+```xml  
 <DocumentElement>  
   <Element1>Text1</Element1>  
   <Element1>Text2</Element1>  
@@ -116,19 +119,19 @@ XML ドキュメントから <xref:System.Data.DataSet> のスキーマを推論
   
  推論プロセスにより、"Element1" という名前のテーブルが生成されます。  
   
- **DataSet:** DocumentElement  
+ **データセット:** DocumentElement  
   
  **Table:** Element1  
   
-|Element1\_Text|  
+|Element1_Text|  
 |--------------------|  
 |Text1|  
 |Text2|  
   
-## 参照  
- [XML からの DataSet リレーショナル構造の推論](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)   
- [XML からの DataSet の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)   
- [XML の DataSet スキーマ情報の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)   
- [DataSet での XML の使用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)   
- [DataSets、DataTables、および DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [XML からの DataSet リレーショナル構造の推論](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)  
+ [XML からの DataSet の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)  
+ [XML からの DataSet スキーマ情報の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)  
+ [DataSet での XML の使用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
+ [DataSet、DataTable、および DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,70 +1,72 @@
 ---
-title: "&lt;sources&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#sources"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<sources> 要素"
-  - "sources 要素"
-  - "トレース ソース"
+title: "&lt;ソース&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#sources
+helpviewer_keywords:
+- sources element
+- trace sources
+- <sources> element
 ms.assetid: c727b2e2-423a-4463-a223-013f40ff16a3
-caps.latest.revision: 7
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 58e9ff8787916132406a7e63aff511c9fb221b73
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;sources&gt; 要素
+# <a name="ltsourcesgt-element"></a>&lt;ソース&gt;要素
 トレース メッセージを開始するトレース ソースを指定します。  
   
-## 構文  
+ \<configuration>  
+\<system.diagnostics >  
+\<ソース >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <sources>  
    <source>...</source>  
 </sources>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
  なし。  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<source\>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md)|必須の要素です。<br /><br /> トレース メッセージを開始するトレース ソースを指定します。|  
+|-------------|-----------------|  
+|[\<source>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md)|必須の要素です。<br /><br /> トレース メッセージを開始するトレース ソースを指定します。|  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
+|-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`system.diagnostics`|メッセージを収集、格納、およびルーティングするトレース リスナーとトレース スイッチを設定するレベルを指定します。|  
   
-## 解説  
- この要素は、マシン構成ファイル \(Machine.config\) およびアプリケーション構成ファイルで使用できます。  
+## <a name="remarks"></a>コメント  
+ この要素は、マシン構成ファイル (Machine.config) と、アプリケーション構成ファイルで使用できます。  
   
-## 使用例  
- `<sources>`  要素を使用してトレース ソース `mySource` を追加し、`sourceSwitch` という名前のソース スイッチのレベルを設定する方法を次の例に示します。  トレース情報をコンソールに書き込むコンソール トレース リスナーが追加されます。  
+## <a name="example"></a>例  
+ 次の例を使用する方法を示しています、`<sources>`トレース ソースを追加する要素`mySource`という名前のソース スイッチのレベルを設定して`sourceSwitch`です。 トレース情報をコンソールに出力をコンソール トレース リスナーが追加されます。  
   
-```  
+```xml  
 <configuration>  
    <system.diagnostics>  
       <sources>  
@@ -87,12 +89,12 @@ caps.handback.revision: 7
 </configuration>  
 ```  
   
-## 参照  
- <xref:System.Diagnostics.TraceListener>   
- <xref:System.Diagnostics.DefaultTraceListener>   
- <xref:System.Diagnostics.TextWriterTraceListener>   
- <xref:System.Diagnostics.ConsoleTraceListener>   
- <xref:System.Diagnostics.EventLogTraceListener>   
- <xref:System.Diagnostics.XmlWriterTraceListener>   
- [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)   
- [\<source\>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Diagnostics.TraceListener>  
+ <xref:System.Diagnostics.DefaultTraceListener>  
+ <xref:System.Diagnostics.TextWriterTraceListener>  
+ <xref:System.Diagnostics.ConsoleTraceListener>  
+ <xref:System.Diagnostics.EventLogTraceListener>  
+ <xref:System.Diagnostics.XmlWriterTraceListener>  
+ [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
+ [\<source>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md)

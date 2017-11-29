@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - downloading Internet resources, pluggable protocols
 - WebRequest class, pluggable protocols
@@ -26,18 +21,17 @@ helpviewer_keywords:
 - receiving data, pluggable protocols
 - protocols, pluggable
 ms.assetid: 66ef8456-7576-4e97-8956-959b216373db
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b422012004d164cf8a84ddeb53b6c0bf9fd1fb92
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 51d9b6e444cfa49bfbf7854ee7f33f5a45d80e31
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# プラグ可能なプロトコルのプログラミング
+# <a name="programming-pluggable-protocols"></a>プラグ可能なプロトコルのプログラミング
 抽象クラスの <xref:System.Net.WebRequest> と <xref:System.Net.WebResponse> は、プラグ可能なプロトコルの基礎を提供します。 アプリケーションでは、<xref:System.Net.WebRequest> と <xref:System.Net.WebResponse> からプロトコル固有のクラスを派生することにより、使うプロトコルを指定しなくても、インターネット リソースにデータを要求して応答を読み取ることができます。  
   
  プロトコル固有の <xref:System.Net.WebRequest> を作成するには、その前に Create メソッドを登録する必要があります。 <xref:System.Net.WebRequest> の静的 <xref:System.Net.WebRequest.RegisterPrefix%28System.String%2CSystem.Net.IWebRequestCreate%29> メソッドを使って、特定のインターネット スキーム、スキームとサーバー、またはスキームとサーバーとパスに対する要求のセットを処理するための、<xref:System.Net.WebRequest> の子孫を登録します。  
@@ -46,9 +40,8 @@ ms.lasthandoff: 08/21/2017
   
  プラグ可能なプロトコルを利用するには、<xref:System.Net.WebRequest> の子孫で、プロトコル固有のプロパティを設定する必要がない既定の要求-応答トランザクションを提供する必要があります。 たとえば、HTTP 用の <xref:System.Net.WebRequest> クラスを実装する <xref:System.Net.HttpWebRequest> クラスは、既定で `GET` 要求を提供し、Web サーバーから返されたストリームを含む <xref:System.Net.HttpWebResponse> を返します。  
   
-## 関連項目  
- [WebRequest からの派生](../../../docs/framework/network-programming/deriving-from-webrequest.md)   
- [WebResponse からの派生](../../../docs/framework/network-programming/deriving-from-webresponse.md)   
- [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)   
+## <a name="see-also"></a>関連項目  
+ [WebRequest からの派生](../../../docs/framework/network-programming/deriving-from-webrequest.md)  
+ [WebResponse からの派生](../../../docs/framework/network-programming/deriving-from-webresponse.md)  
+ [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)  
  [方法: WebRequest を型キャストしてプロトコル固有のプロパティにアクセスする](../../../docs/framework/network-programming/how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md)
-

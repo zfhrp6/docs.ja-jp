@@ -1,23 +1,26 @@
 ---
-title: "トークン認証システム | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "トークン認証システム"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 84382f2c-f6b1-4c32-82fa-aebc8f6064db
-caps.latest.revision: 22
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 559ce043c50582f40e2d7828ad74f6d16e2b81f8
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# トークン認証システム
-このサンプルでは、カスタム トークンの認証システムを実装する方法を示します。[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のトークン認証システムは、メッセージと共に使用されるトークンの検証、このトークンに自己矛盾がないことの確認、およびこのトークンに関連付けられている ID の認証に使用されます。  
+# <a name="token-authenticator"></a>トークン認証システム
+このサンプルでは、カスタム トークンの認証システムを実装する方法を示します。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のトークン認証システムは、メッセージと共に使用されるトークンの検証、このトークンに自己矛盾がないことの確認、およびこのトークンに関連付けられている ID の認証に使用されます。  
   
  カスタム トークン認証システムは次のようなさまざまな場合に役立ちます。  
   
@@ -27,7 +30,7 @@ caps.handback.revision: 22
   
  このサンプルでは、次の方法を示します。  
   
--   クライアントがユーザー名\/パスワードの組み合わせを使用して認証する方法。  
+-   クライアントがユーザー名/パスワードの組み合わせを使用して認証する方法。  
   
 -   サーバーがカスタム トークン認証システムを使用してクライアント資格情報を検証する方法。  
   
@@ -37,9 +40,9 @@ caps.handback.revision: 22
   
  さらにこのサンプルでは、カスタム トークン認証システムの処理後に [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] から呼び出し元の ID にアクセスするための方法も示します。  
   
- サービスは、そのサービスとの通信に使用する単一エンドポイントを公開します。エンドポイントは App.config 構成ファイルで定義します。エンドポイントは、アドレス、バインディング、およびコントラクトがそれぞれ 1 つずつで構成されます。バインディングの構成には、標準の `wsHttpBinding` が使用されます。このセキュリティ モードは、`wsHttpBinding` の既定モードであるメッセージに設定されます。このサンプルは、標準の `wsHttpBinding` を設定してクライアントのユーザー名認証を使用します。また、サービスは `serviceCredentials` 動作を使用してサービス証明書の構成も行います。`securityCredentials` 動作を使用すると、サービス証明書を指定できます。クライアントはサービス証明書を使用して、サービスを認証し、メッセージを保護します。次の構成では、次のセットアップ手順で説明しているサンプル セットアップでインストールされる localhost 証明書を参照しています。  
+ サービスは、そのサービスとの通信に使用する単一エンドポイントを公開します。エンドポイントは App.config 構成ファイルで定義します。 エンドポイントは、アドレス、バインディング、およびコントラクトがそれぞれ 1 つずつで構成されます。 バインディングの構成には、標準の `wsHttpBinding` が使用されます。このセキュリティ モードは、`wsHttpBinding` の既定モードであるメッセージに設定されます。 このサンプルは、クライアント ユーザー名認証を使用するように標準の `wsHttpBinding`を設定します。 また、サービスは `serviceCredentials` 動作を使用してサービス証明書の構成も行います。 `securityCredentials` 動作を使用すると、サービス証明書を指定できます。 クライアントはサービス証明書を使用して、サービスを認証し、メッセージを保護します。 次の構成では、次のセットアップ手順で説明しているサンプル セットアップでインストールされる localhost 証明書を参照しています。  
   
-```  
+```xml  
 <system.serviceModel>  
     <services>  
       <service   
@@ -86,12 +89,11 @@ caps.handback.revision: 22
     </behaviors>  
   
   </system.serviceModel>  
-  
 ```  
   
- クライアント エンドポイント構成は、構成名、サービス エンドポイントの絶対アドレス、バインディング、およびコントラクトで構成されます。クライアント バインディングは、適切な `Mode` と `clientCredentialType` で構成されます。  
+ クライアント エンドポイント構成は、構成名、サービス エンドポイントの絶対アドレス、バインディング、およびコントラクトで構成されます。 クライアント バインディングは、適切な `Mode` と `clientCredentialType` で構成されます。  
   
-```  
+```xml  
 <system.serviceModel>  
     <client>  
       <endpoint name=""  
@@ -126,12 +128,12 @@ static void Main()
 }  
 ```  
   
-## カスタム トークン認証システム  
+## <a name="custom-token-authenticator"></a>カスタム トークン認証システム  
  カスタム トークン認証システムを作成するには、次の手順に従います。  
   
 1.  カスタム トークン認証システムを作成します。  
   
-     このサンプルは、ユーザー名が有効な電子メール形式であることを検証するカスタム トークン認証システムを実装しています。この実装は <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator> から派生します。このクラスで最も重要なメソッドは <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore%28System.String%2CSystem.String%29> です。このメソッドで、認証システムはユーザー名の形式を検証し、さらに、ホスト名が非承認のドメインのものでないことを検証します。どちらの条件も満たされる場合は、<xref:System.IdentityModel.Policy.IAuthorizationPolicy> インスタンスの読み取り専用のコレクションを返します。次にこれを使用して、ユーザー名トークン内に格納されている情報を表すクレームを指定します。  
+     このサンプルは、ユーザー名が有効な電子メール形式であることを検証するカスタム トークン認証システムを実装しています。 この実装は <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator> から派生します。 このクラスで最も重要なメソッドは <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore%28System.String%2CSystem.String%29> です。 このメソッドで、認証システムはユーザー名の形式を検証し、さらに、ホスト名が非承認のドメインのものでないことを検証します。 どちらの条件も満たされる場合は、<xref:System.IdentityModel.Policy.IAuthorizationPolicy> インスタンスの読み取り専用のコレクションを返します。次にこれを使用して、ユーザー名トークン内に格納されている情報を表すクレームを指定します。  
   
     ```  
     protected override ReadOnlyCollection<IAuthorizationPolicy> ValidateUserNamePasswordCore(string userName, string password)  
@@ -150,7 +152,7 @@ static void Main()
   
 2.  カスタム トークン認証システムによって返された承認ポリシーを指定します。  
   
-     このサンプルでは、`UnconditionalPolicy` という名前の <xref:System.IdentityModel.Policy.IAuthorizationPolicy> の独自の実装を示します。これにより、コンストラクター内でこのポリシーに渡されたクレームと ID のセットが返されます。  
+     このサンプルでは、<xref:System.IdentityModel.Policy.IAuthorizationPolicy> という名前の `UnconditionalPolicy` の独自の実装を示します。これにより、コンストラクター内でこのポリシーに渡されたクレームと ID のセットが返されます。  
   
     ```  
     class UnconditionalPolicy : IAuthorizationPolicy  
@@ -220,10 +222,9 @@ static void Main()
   
 3.  カスタム セキュリティ トークン マネージャーを作成します。  
   
-     <xref:System.IdentityModel.Selectors.SecurityTokenManager> は、`CreateSecurityTokenAuthenticator` メソッド内でカスタム セキュリティ トークン マネージャーに渡される特定の <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> オブジェクトを対象とした <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> の作成に使用されます。セキュリティ トークン マネージャーは、トークン プロバイダーとトークン シリアライザーの作成にも使用されますが、このサンプルでは扱っていません。このサンプルでは、カスタム セキュリティ トークン マネージャーは <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> クラスを継承し、渡されたトークンの要件でユーザー名認証システムが必要であることが示されている場合に、`CreateSecurityTokenAuthenticator` メソッドをオーバーライドしてユーザー名トークンのカスタム認証システムを返します。  
+     <xref:System.IdentityModel.Selectors.SecurityTokenManager> は、<xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> メソッド内でカスタム セキュリティ トークン マネージャーに渡される特定の <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> オブジェクトを対象とした `CreateSecurityTokenAuthenticator` の作成に使用されます。 セキュリティ トークン マネージャーは、トークン プロバイダーとトークン シリアライザーの作成にも使用されますが、このサンプルでは扱っていません。 このサンプルでは、カスタム セキュリティ トークン マネージャーは <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> クラスを継承し、渡されたトークンの要件でユーザー名認証システムが必要であることが示されている場合に、`CreateSecurityTokenAuthenticator` メソッドをオーバーライドしてユーザー名トークンのカスタム認証システムを返します。  
   
     ```  
-  
     public class MySecurityTokenManager : ServiceCredentialsSecurityTokenManager  
     {  
         MyUserNameCredential myUserNameCredential;  
@@ -288,7 +289,7 @@ static void Main()
     serviceHost.Description.Behaviors.Add(serviceCredential);  
     ```  
   
- 呼び出し元の情報を表示するには、次のコードに示すように <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> を使用できます。<xref:System.ServiceModel.ServiceSecurityContext.Current%2A> には、現在のユーザーに関するクレーム情報が保持されています。  
+ 呼び出し元の情報を表示するには、次のコードに示すように <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> を使用できます。 <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> には、現在のユーザーに関する情報が保持されています。  
   
 ```  
 static void DisplayIdentityInformation()  
@@ -297,19 +298,18 @@ static void DisplayIdentityInformation()
             ServiceSecurityContext.Current.PrimaryIdentity.Name);  
      return;  
 }  
-  
 ```  
   
- このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
+ このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。 クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
   
-## セットアップ バッチ ファイル  
- このサンプルに用意されている Setup.bat バッチ ファイルを使用すると、適切な証明書を使用してサーバーを構成し、サーバー証明書ベースのセキュリティを必要とする自己ホスト型アプリケーションを実行できるようになります。このバッチ ファイルは、複数のコンピューターを使用する場合またはホストなしの場合に応じて変更する必要があります。  
+## <a name="setup-batch-file"></a>セットアップ バッチ ファイル  
+ このサンプルに用意されている Setup.bat バッチ ファイルを使用すると、適切な証明書を使用してサーバーを構成し、サーバー証明書ベースのセキュリティを必要とする自己ホスト型アプリケーションを実行できるようになります。 このバッチ ファイルは、複数のコンピューターを使用する場合またはホストなしの場合に応じて変更する必要があります。  
   
  次に、バッチ ファイルのセクションのうち、適切な構成で実行するために変更が必要となる部分を示します。  
   
 -   サーバー証明書の作成。  
   
-     Setup.bat バッチ ファイルの次の行は、使用するサーバー証明書を作成します。`%SERVER_NAME%` 変数はユーザー名を指定します。この変数を変更して、使用するサーバー名を指定します。このバッチ ファイルでの既定は localhost です。  
+     Setup.bat バッチ ファイルの次の行は、使用するサーバー証明書を作成します。 `%SERVER_NAME%` 変数はサーバー名です。 この変数を変更して、使用するサーバー名を指定します。 このバッチ ファイルでの既定は localhost です。  
   
     ```  
     echo ************  
@@ -319,63 +319,62 @@ static void DisplayIdentityInformation()
     echo making server cert  
     echo ************  
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
-  
     ```  
   
 -   サーバー証明書のクライアントの信頼された証明書ストアへのインストール。  
   
-     Setup.bat バッチ ファイルの次の行は、サーバー証明書をクライアントの信頼されたユーザーのストアにコピーします。この手順が必要なのは、Makecert.exe によって生成される証明書がクライアント システムにより暗黙には信頼されないためです。マイクロソフト発行の証明書など、クライアントの信頼されたルート証明書に基づいた証明書が既にある場合は、クライアント証明書ストアにサーバー証明書を配置するこの手順は不要です。  
+     Setup.bat バッチ ファイルの次の行は、サーバー証明書をクライアントの信頼されたユーザーのストアにコピーします。 この手順が必要なのは、Makecert.exe によって生成される証明書がクライアント システムにより暗黙には信頼されないからです。 マイクロソフト発行の証明書など、クライアントの信頼されたルート証明書に基づいた証明書が既にある場合は、クライアント証明書ストアにサーバー証明書を配置するこの手順は不要です。  
   
     ```  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
     ```  
   
     > [!NOTE]
-    >  セットアップ バッチ ファイルは、Windows SDK コマンド プロンプトから実行します。MSSDK 環境変数が SDK のインストール ディレクトリを指している必要があります。この環境変数は、Windows SDK コマンド プロンプトで自動設定されます。  
+    >  セットアップ バッチ ファイルは、Windows SDK コマンド プロンプトから実行します。 MSSDK 環境変数が SDK のインストール ディレクトリを指している必要があります。 この環境変数は、Windows SDK コマンド プロンプトで自動設定されます。  
   
-#### サンプルをセットアップしてビルドするには  
+#### <a name="to-set-up-and-build-the-sample"></a>サンプルをセットアップしてビルドするには  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。  
   
-2.  ソリューションをビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  指示に従って、ソリューションをビルドする[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。  
   
-#### サンプルを同じコンピューターで実行するには  
+#### <a name="to-run-the-sample-on-the-same-computer"></a>サンプルを同じコンピューターで実行するには  
   
-1.  管理特権で [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトを開き、サンプルのインストール フォルダーから Setup.bat を実行します。これにより、サンプルの実行に必要なすべての証明書がインストールされます。  
+1.  管理特権で [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトを開き、サンプルのインストール フォルダーから Setup.bat を実行します。 これにより、サンプルの実行に必要なすべての証明書がインストールされます。  
   
     > [!NOTE]
-    >  Setup.bat バッチ ファイルは、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトから実行します。[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプト内で設定された PATH 環境変数は、Setup.bat スクリプトで必要な実行可能ファイルが格納されているディレクトリを指しています。  
+    >  Setup.bat バッチ ファイルは、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトから実行します。 [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプト内で設定された PATH 環境変数は、Setup.bat スクリプトで必要な実行可能ファイルが格納されているディレクトリを指しています。  
   
-2.  service.exe を \\service\\bin で起動します。  
+2.  service.exe を \service\bin で起動します。  
   
-3.  client.exe を \\client\\bin で起動します。クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。  
+3.  client.exe を \client\bin で起動します。 クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。  
   
-4.  クライアントとサービス間で通信できない場合は、「[Troubleshooting Tips](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
+4.  クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
   
-#### サンプルを複数のコンピューターで実行するには  
+#### <a name="to-run-the-sample-across-computers"></a>サンプルを複数のコンピューターで実行するには  
   
 1.  サービス コンピューターにサービス バイナリ用のディレクトリを作成します。  
   
-2.  サービス プログラム ファイルを、サービス コンピューターのサービス ディレクトリにコピーします。Setup.bat ファイルと Cleanup.bat ファイルもサービス コンピューターにコピーします。  
+2.  サービス プログラム ファイルを、サービス コンピューターのサービス ディレクトリにコピーします。 Setup.bat ファイルと Cleanup.bat ファイルもサービス コンピューターにコピーします。  
   
-3.  コンピューターの完全修飾ドメイン名を含むサブジェクト名を持つサーバー証明書が必要です。新しい証明書名を反映するには、サービスの App.config ファイルを更新する必要があります。`%SERVER_NAME%` 変数を、サービスを実行するコンピューターの完全修飾ホスト名に設定している場合は、Setup.bat を使用してこの証明書を作成できます。setup.bat ファイルは、管理特権を使用して開いた Visual Studio コマンド プロンプトから実行する必要があります。  
+3.  コンピューターの完全修飾ドメイン名を含むサブジェクト名を持つサーバー証明書が必要です。 新しい証明書名を反映するには、サービスの App.config ファイルを更新する必要があります。 `%SERVER_NAME%` 変数を、サービスを実行するコンピューターの完全修飾ホスト名に設定している場合は、Setup.bat を使用してこの証明書を作成できます。 setup.bat ファイルは、管理特権を使用して開いた Visual Studio コマンド プロンプトから実行する必要があります。  
   
-4.  サーバー証明書をクライアントの CurrentUser\-TrustedPeople ストアにコピーします。サーバー証明書の発行元をクライアントが信頼できる場合を除き、この操作は不要です。  
+4.  サーバー証明書をクライアントの CurrentUser-TrustedPeople ストアにコピーします。 サーバー証明書の発行元をクライアントが信頼できる場合を除き、この操作は不要です。  
   
 5.  サービス コンピューターの App.config ファイルで、ベース アドレスの値を localhost から完全修飾コンピューター名に変更します。  
   
 6.  サービス コンピューターで、コマンド プロンプトから service.exe を実行します。  
   
-7.  クライアント プログラム ファイルを、言語固有のフォルダーにある \\client\\bin\\ フォルダーからクライアント コンピューターにコピーします。  
+7.  クライアント プログラム ファイルを、言語固有のフォルダーにある \client\bin\ フォルダーからクライアント コンピューターにコピーします。  
   
 8.  クライアント コンピューターの Client.exe.config ファイルで、エンドポイントのアドレス値をサービスの新しいアドレスに合わせます。  
   
 9. クライアント コンピューターで、コマンド プロンプトから Client.exe を起動します。  
   
-10. クライアントとサービス間で通信できない場合は、「[Troubleshooting Tips](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
+10. クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
   
-#### サンプルの実行後にクリーンアップするには  
+#### <a name="to-clean-up-after-the-sample"></a>サンプルの実行後にクリーンアップするには  
   
 1.  サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。  
   
-## 参照
+## <a name="see-also"></a>関連項目

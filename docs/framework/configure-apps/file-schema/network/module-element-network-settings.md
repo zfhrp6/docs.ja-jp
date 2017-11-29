@@ -1,85 +1,87 @@
 ---
-title: "&lt;module&gt; 要素 (ネットワーク設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#module"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/module"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<module> 要素"
-  - "module 要素"
+title: "&lt;モジュール&gt;要素 (ネットワーク設定)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#module
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/module
+helpviewer_keywords:
+- module element
+- <module> element
 ms.assetid: 10318725-9666-4d65-ab61-b94c64e59f13
-caps.latest.revision: 14
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: a039f6ed985997c5557659abd299fe0fc7699a1b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;module&gt; 要素 (ネットワーク設定)
+# <a name="ltmodulegt-element-network-settings"></a>&lt;モジュール&gt;要素 (ネットワーク設定)
 新しいプロキシ モジュールをアプリケーションに追加します。  
   
-## 構文  
+ \<configuration>  
+\<system.net >  
+\<defaultProxy >  
+\<モジュール >  
   
-```  
+## <a name="syntax"></a>構文  
   
-      <module   
-   type = "name", System, Version="version number", Culture="culture", PublicKeyToken="token" "   
+```xml  
+<module   
+  type="type_fullname, assembly_fullname"   
 />  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|**Attribute**|**説明**|  
-|-------------------|------------|  
-|`type`|プロキシを実装するモジュールの名前および詳細。|  
+|**属性**|**説明**|  
+|-------------------|---------------------|  
+|`type`|完全修飾型名 (によって示される、<xref:System.Type.FullName%2A>プロパティ) とアセンブリ名 (によって示される、<xref:System.Reflection.Assembly.FullName%2A>プロパティ)、プロキシを実装する、コンマで区切って指定します。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |**要素**|**説明**|  
-|------------|------------|  
-|[defaultProxy](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|ハイパーテキスト転送プロトコル \(HTTP: Hypertext Transfer Protocol\) プロキシ サーバーを構成します。|  
+|-----------------|---------------------|  
+|[defaultProxy](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|ハイパーテキスト転送プロトコル (HTTP: Hypertext Transfer Protocol) プロキシ サーバーを構成します。|  
   
-## 解説  
- `module` 要素は、<xref:System.Net.IWebProxy> インターフェイスを実装するプロキシ クラスを登録します。  プロキシ クラスを登録したら、`module` がサポートされたプロキシによって情報を要求するために使用できます。  
+## <a name="remarks"></a>コメント  
+ `module`要素を実装するプロキシ クラスを登録する、<xref:System.Net.IWebProxy>インターフェイスです。 プロキシ クラスを登録した後`module`サポートされているプロキシ経由の情報を要求するために使用できます。  
   
- `type` 属性の値には、有効なダイナミック リンク ライブラリ \(DLL: Dynamic Link Library\) の名前およびこのモジュールの名前を指定する必要があります。  
+ 値、`type`属性が、モジュールのクラス名と名前の対応するダイナミック リンク ライブラリ (DLL) にする必要があります。  
   
-## 構成ファイル  
- この要素は、アプリケーション構成ファイルまたはマシン構成ファイル \(Machine.config\) で使用できます。  
+## <a name="configuration-files"></a>構成ファイル  
+ この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
   
-## 使用例  
- カスタム プロキシ クラスを登録するコード例を次に示します。  
+## <a name="example"></a>例  
+ 次の例では、カスタムのプロキシ クラスを登録します。  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <defaultProxy>  
       <module  
-        type = "Test.CustomWebProxy, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"  
+        type="Test.CustomWebProxy, TestProxy, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b23a5c561934e385"  
       />  
     </defaultProxy>  
   </system.net>  
 </configuration>  
 ```  
   
-## 参照  
- <xref:System.Net.IWebProxy?displayProperty=fullName>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Net.IWebProxy?displayProperty=nameWithType>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

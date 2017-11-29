@@ -1,32 +1,35 @@
 ---
-title: "UI オートメーション GridItem コントロール パターンの実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "GridItem コントロール パターン"
-  - "UI オートメーション GridItem コントロール パターン"
-  - "GridItem コントロール パターン"
+title: "UI オートメーション GridItem コントロール パターンの実装"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- control patterns, GridItem
+- UI Automation GridItem control pattern
+- GridItem control pattern
 ms.assetid: bffbae08-fe2a-42fd-ab84-f37187518916
-caps.latest.revision: 15
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: daaffd02eaaf7fcb0e64dbcda4bd2ee155163f4f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# UI オートメーション GridItem コントロール パターンの実装
+# <a name="implementing-the-ui-automation-griditem-control-pattern"></a>UI オートメーション GridItem コントロール パターンの実装
 > [!NOTE]
->  このドキュメントが目的とする、管理を使用する .NET Framework 開発者[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]で定義されたクラス、 <xref:System.Windows.Automation>名前空間。 最新情報について[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]を参照してください[Windows Automation API: UI 自動化](http://go.microsoft.com/fwlink/?LinkID=156746)します。  
+>  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
   
- このトピックでは、実装するため<xref:System.Windows.Automation.Provider.IGridItemProvider>、プロパティに関する情報などです。 その他のリファレンスへのリンクは、概要の最後に記載します。  
+ このトピックのガイドラインと規則を実装するための導入<xref:System.Windows.Automation.Provider.IGridItemProvider>、プロパティに関する情報などです。 その他のリファレンスへのリンクは、概要の最後に記載します。  
   
- <xref:System.Windows.Automation.GridItemPattern>コントロール パターンが実装したコンテナーの個々 の子コントロールをサポートするために使用される<xref:System.Windows.Automation.Provider.IGridProvider>します。 このコントロール パターンを実装するコントロールの例については、次を参照してください。 [UI オートメーション クライアントのコントロール パターン マッピング](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)します。  
+ <xref:System.Windows.Automation.GridItemPattern>コントロール パターンを実装するコンテナーの各子コントロールをサポートするために使用<xref:System.Windows.Automation.Provider.IGridProvider>です。 このコントロール パターンを実装するコントロールの例については、「 [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)」をご覧ください。  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>実装のガイドラインと規則  
@@ -34,15 +37,15 @@ caps.handback.revision: 15
   
 -   グリッドの座標は 0 から始まり、左上のセルの座標が (0, 0) です。  
   
--   結合されたセルが報告されます、<xref:System.Windows.Automation.Provider.IGridItemProvider.Row%2A>と<xref:System.Windows.Automation.Provider.IGridItemProvider.Column%2A>プロパティは、UI オートメーション プロバイダーで定義されている、基になるアンカー セルに基づいています。 通常、これは、最上位の左端の行または列です。  
+-   マージされたセルが報告、<xref:System.Windows.Automation.Provider.IGridItemProvider.Row%2A>と<xref:System.Windows.Automation.Provider.IGridItemProvider.Column%2A>プロパティは、UI オートメーション プロバイダーによって定義された、基になるアンカー セルに基づきます。 通常、これは、最上位の左端の行または列です。  
   
--   <xref:System.Windows.Automation.Provider.IGridItemProvider>は、グリッドの結合またはセルの分割などのアクティブな操作を提供しません。  
+-   <xref:System.Windows.Automation.Provider.IGridItemProvider>グリッドの結合またはセルの分割などのアクティブな操作を提供しません。  
   
--   実装するコントロール<xref:System.Windows.Automation.Provider.IGridItemProvider>走査できる通常 (つまり、UI オートメーション クライアントが隣接するコントロールに移動できる)、キーボードを使用しています。  
+-   実装するコントロール<xref:System.Windows.Automation.Provider.IGridItemProvider>通常走査することができます (つまり、UI オートメーション クライアントが隣接するコントロールに移動ことができます)、キーボードを使用しています。  
   
 <a name="Required_Members_for_IGridItemProvider"></a>   
 ## <a name="required-members-for-igriditemprovider"></a>IGridItemProvider の必須メンバー  
- 次のプロパティとメソッドを実装するために必要な<xref:System.Windows.Automation.Provider.IGridItemProvider>します。  
+ <xref:System.Windows.Automation.Provider.IGridItemProvider> の実装には、次のプロパティとメソッドが必要です。  
   
 |必須メンバー|メンバーの型|ノート|  
 |----------------------|-----------------|-----------|  
@@ -56,12 +59,12 @@ caps.handback.revision: 15
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>例外  
- このコントロール パターンに関連付けられる例外はありません。  
+ このコントロール パターンに関連付けられた例外はありません。  
   
 ## <a name="see-also"></a>関連項目  
- [UI オートメーション コントロール パターンの概要](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)   
- [UI オートメーション プロバイダーでコントロール パターンをサポートします。](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)   
- [クライアントの UI オートメーション コントロール パターン](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)   
- [UI オートメーション Grid コントロール パターンの実装](../../../docs/framework/ui-automation/implementing-the-ui-automation-grid-control-pattern.md)   
- [UI オートメーション ツリーの概要](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)   
+ [UI オートメーション コントロール パターンの概要](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [UI オートメーション プロバイダーでコントロール パターンをサポートします。](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
+ [クライアントの UI オートメーション コントロール パターン](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
+ [UI オートメーション Grid コントロール パターンを実装します。](../../../docs/framework/ui-automation/implementing-the-ui-automation-grid-control-pattern.md)  
+ [UI オートメーション ツリーの概要](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
  [UI オートメーションにおけるキャッシュを使用します。](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)

@@ -1,39 +1,43 @@
 ---
-title: "1013 - CompleteExecuteActivityWorkItem | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 1013 - CompleteExecuteActivityWorkItem
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 31fc57b3-ef2f-48f0-a5de-b4e2c5c9ded7
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 8f430e7b58d5aba277b0a35a20f1f5fdb707bce9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 1013 - CompleteExecuteActivityWorkItem
-## プロパティ  
+# <a name="1013---completeexecuteactivityworkitem"></a>1013 - CompleteExecuteActivityWorkItem
+## <a name="properties"></a>プロパティ  
   
 |||  
 |-|-|  
 |ID|1013|  
 |キーワード|WFRuntime|  
 |レベル|詳細|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Debug|  
+|チャネル|Microsoft-Windows-Application Server-Applications/Debug|  
   
-## 説明  
+## <a name="description"></a>説明  
  ExecuteActivityWorkItem が完了したことを示します  
   
-## メッセージ  
+## <a name="message"></a>メッセージ  
  Activity '%1'、DisplayName: '%2'、InstanceId: '%3' の ExecuteActivityWorkItem が完了しました。  
   
-## 詳細  
+## <a name="details"></a>詳細  
   
 |データ項目名|データ項目の型|説明|  
-|------------|-------------|--------|  
+|--------------------|--------------------|-----------------|  
 |アクティビティ|xs:string|アクティビティの型名。|  
 |DisplayName|xs:string|アクティビティの表示名。|  
 |InstanceId|xs:string|アクティビティのインスタンス ID。|  

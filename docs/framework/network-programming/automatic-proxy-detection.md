@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - automatic proxy detections
 - Web Proxy Auto-Discovery
@@ -22,16 +20,15 @@ helpviewer_keywords:
 - network
 - WPAD (Web Proxy Auto-Discovery)
 ms.assetid: fcd9c3bd-93de-4c92-8ff3-837327ad18de
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9f0c1a0d462768229c730f06a6514d040a3e5c1c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 8eec6ff84978cdbd31dd4be307d0eb9560edde19
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="automatic-proxy-detection"></a>自動プロキシ検出
 自動プロキシ検出は、Web プロキシ サーバーがシステムによって確認され、クライアントに代わって要求を送信する際に使用されるプロセスです。 この機能は、Web プロキシの自動検出 (WPAD) とも呼ばれます。 自動プロキシ検出を有効にすると、システムは、要求に使用できるプロキシのセットを返すプロキシ構成スクリプトを検索しようとします。 プロキシ構成スクリプトが見つかった場合、プロキシ情報、要求ストリーム、または <xref:System.Net.WebProxy> インスタンスを使用する要求に対する応答が取得されたときに、ローカル コンピューター上でスクリプトがダウンロード、コンパイル、および実行されます。  
@@ -80,7 +77,6 @@ Public Shared Sub DisableForMyRequest(ByVal resource As Uri)
  プロキシがない要求では、アプリケーション ドメインの既定のプロキシが使用されます。この既定のプロキシは <xref:System.Net.WebRequest.DefaultWebProxy%2A> プロパティで使用できます。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Net.WebProxy>   
- <xref:System.Net.WebRequest>   
+ <xref:System.Net.WebProxy>  
+ <xref:System.Net.WebRequest>  
  [\<system.Net> 要素 (ネットワーク設定)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)
-

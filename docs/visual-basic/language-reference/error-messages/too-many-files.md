@@ -1,32 +1,30 @@
 ---
-title: "Too many files | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID67"
-dev_langs: 
-  - "VB"
+title: "ファイルが多すぎます。"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID67
 ms.assetid: 2ff203e2-bba6-43ae-b72f-8e92a881c98f
-caps.latest.revision: 7
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 506f0735956267d51b575cd26b628605e9db38cc
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Too many files
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-オペレーティング システムの制限を超える数のファイルがルート ディレクトリに作成されているか、CONFIG.SYS ファイルの **files\=** 設定で指定された数を超えるファイルが開かれています。  
+# <a name="too-many-files"></a>ファイルが多すぎます。
+指定された数より多くのファイルが開かれているかよりオペレーティング システムの制限、ルート ディレクトリにファイルが作成されましたが、**ファイル =** CONFIG で設定します。SYS ファイルです。  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  プログラムでルート ディレクトリ内のファイルに対して、開く、閉じる、または保存の操作を行っている場合は、サブディレクトリが使用されるようにプログラムを変更します。  
+1.  プログラムが開く、閉じるか、ルート ディレクトリでファイルを保存している場合、は、サブディレクトリを使用するようにプログラムを変更します。  
   
-2.  CONFIG.SYS ファイルの **files\=** 設定で指定するファイルの数を増やし、コンピューターを再起動します。  
+2.  指定されたファイルの数を増やす、**ファイル =** CONFIG で設定します。SYS ファイルを開き、コンピューターを再起動します。  
   
-## 参照  
- [Error Types](../../../visual-basic/programming-guide/language-features/error-types.md)
+## <a name="see-also"></a>関連項目  
+ [エラーの種類](../../../visual-basic/programming-guide/language-features/error-types.md)

@@ -1,34 +1,37 @@
 ---
-title: "XML スキーマ (XSD) の UNIQUE 制約の DataSet 制約への割り当て | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "XML スキーマ (XSD) の UNIQUE 制約の DataSet 制約への割り当て"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 56da90bf-21d3-4d1a-8bb8-de908866b78d
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 66183768b5b48608dc69a4021b27816595c43b4b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# XML スキーマ (XSD) の UNIQUE 制約の DataSet 制約への割り当て
-XML スキーマ定義言語 \(XSD\) スキーマでは、**unique** 要素を使用して要素または属性の UNIQUE 制約を指定します。  XML スキーマをリレーショナル スキーマに変換する処理では、XML スキーマの要素または属性で指定した UNIQUE 制約が、生成される <xref:System.Data.DataSet> に対応する <xref:System.Data.DataTable> の UNIQUE 制約に割り当てられます。  
+# <a name="map-unique-xml-schema-xsd-constraints-to-dataset-constraints"></a>XML スキーマ (XSD) の UNIQUE 制約の DataSet 制約への割り当て
+XML スキーマ定義言語 (XSD) スキーマで、**一意**要素が要素または属性の一意性制約を指定します。 XML スキーマをリレーショナル スキーマに変換する処理では、XML スキーマの要素または属性で指定した UNIQUE 制約が、生成される <xref:System.Data.DataTable> に対応する <xref:System.Data.DataSet> の UNIQUE 制約に割り当てられます。  
   
- **unique** 要素で指定できる **msdata** 属性を次の表に示します。  
+ 次の表にアウトライン、 **msdata**属性で指定できる、**一意**要素。  
   
 |属性名|説明|  
-|---------|--------|  
-|**msdata:ConstraintName**|この属性を指定した場合、その値が制約名として使用されます。  それ以外の場合は、**name** 属性によって制約名の値が設定されます。|  
-|**msdata:PrimaryKey**|**unique** 要素に `PrimaryKey="true"` がある場合、UNIQUE 制約は、**IsPrimaryKey** プロパティが **true** に設定された状態で作成されます。|  
+|--------------------|-----------------|  
+|**msdata:ConstraintName**|この属性を指定した場合、その値が制約名として使用されます。 それ以外の場合、**名前**属性は、制約の名前の値を提供します。|  
+|**msdata:PrimaryKey**|場合`PrimaryKey="true"`に存在、**一意**要素、unique 制約が作成され、 **IsPrimaryKey**プロパティに設定**true**です。|  
   
- **unique** 要素を使用して UNIQUE 制約を指定する XML スキーマの例を次に示します。  
+ 次の例を使用する XML スキーマ、**一意**一意性制約を指定する要素。  
   
-```  
+```xml  
 <xs:schema id="SampleDataSet"   
             xmlns:xs="http://www.w3.org/2001/XMLSchema"   
             xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
@@ -50,56 +53,48 @@ XML スキーマ定義言語 \(XSD\) スキーマでは、**unique** 要素を�
       <xs:element ref="Customers" />  
     </xs:choice>  
   </xs:complexType>  
-   <xs:unique      
-msdata:ConstraintName="UCustID"      
-name="UniqueCustIDConstr" >        
-<xs:selector xpath=".//Customers" />        
-<xs:field xpath="CustomerID" />      
-</xs:unique>  
+   <xs:unique     msdata:ConstraintName="UCustID"     name="UniqueCustIDConstr" >       <xs:selector xpath=".//Customers" />       <xs:field xpath="CustomerID" />     </xs:unique>  
 </xs:element>  
 </xs:schema>  
 ```  
   
- スキーマの **unique** 要素を使用して、ドキュメント インスタンスのすべての **Customers** 要素に unique 要素を指定します。**CustomerID** 子要素の値は一意になる必要があります。  **DataSet** を作成する場合は、割り当て処理によってスキーマが読み込まれ、次のテーブルが生成されます。  
+ **一意**スキーマ内の要素を指定するすべての**顧客**ドキュメント内の要素のインスタンスの値、 **CustomerID**子要素を一意にする必要があります。 ビル、**データセット**、マッピング プロセスがこのスキーマを読み込み、次の表を生成します。  
   
 ```  
 Customers (CustomerID, CompanyName, Phone)  
 ```  
   
- 次の **DataSet** に示すように、割り当てプロセスによって **CustomerID** 列に対して UNIQUE 制約を作成することもできます   \(わかりやすいように、関連するプロパティだけを示します\)。  
+ マッピング プロセスで、unique 制約も作成されます、 **CustomerID**列で、次に示すように**データセット**です。 (わかりやすいように、関連するプロパティだけを示します)。  
   
 ```  
-  
       DataSetName: MyDataSet  
 TableName: Customers  
   ColumnName: CustomerID  
       AllowDBNull: True  
       Unique: True  
-  ConstraintName: UcustID  
-      Type: UniqueConstraint  
+  ConstraintName: UcustID       Type: UniqueConstraint  
       Table: Customers  
       Columns: CustomerID   
       IsPrimaryKey: False  
 ```  
   
- 生成される **DataSet** は UNIQUE 制約のために **IsPrimaryKey** プロパティが **False** に設定されます。  列の **unique** プロパティは、**CustomerID** 列の値が一意であることを示します \(ただし、列の **AllowDBNull** プロパティで指定されているように、CustomerID の値は null 参照となります\)。  
+ **データセット**、生成される、 **IsPrimaryKey**プロパティに設定されている**False**一意制約。 **一意**、列のプロパティを示す、 **CustomerID**列の値は一意である必要があります (null 参照で指定された可能性があるが、 **AllowDBNull**列のプロパティ)。  
   
- スキーマを変更し、オプションの **msdata:PrimaryKey** 属性を **True** に設定すると、UNIQUE 制約がテーブルに作成されます。  **AllowDBNull** 列のプロパティが **False** に、制約の **IsPrimaryKey** プロパティが **True** に設定されると、**CustomerID** 列が主キー列になります。  
+ スキーマを変更し、省略可能な**msdata:PrimaryKey**属性に値**True**テーブルに unique 制約を作成します。 **AllowDBNull**列のプロパティに設定されている**False**、および**IsPrimaryKey**プロパティに設定する制約の**True**のため、**CustomerID**列、主キー列です。  
   
- XML スキーマの要素や属性を組み合わせて UNIQUE 制約を指定できます。  スキーマに別の xs:field 要素を追加することにより、Customer**ID** の値と **CompanyName** の値の組み合わせを任意のインスタンスのすべての **Customers** に対して必ず一意になるように指定する方法を次の例で示します。  
+ XML スキーマの要素や属性を組み合わせて UNIQUE 制約を指定できます。 次の例は、ことを指定する方法の組み合わせを示します**CustomerID**と**CompanyName**値はすべて一意である必要があります**顧客**任意のインスタンスで、追加する**xs:field**スキーマ内の要素。  
   
-```  
-  
-      <xs:unique     
-         msdata:ConstraintName="SomeName"    
-         name="UniqueCustIDConstr" >   
-  <xs:selector xpath=".//Customers" />   
-  <xs:field xpath="CustomerID" />   
-  <xs:field xpath="CompanyName" />   
+```xml  
+      <xs:unique     
+         msdata:ConstraintName="SomeName"    
+         name="UniqueCustIDConstr" >   
+  <xs:selector xpath=".//Customers" />   
+  <xs:field xpath="CustomerID" />   
+  <xs:field xpath="CompanyName" />   
 </xs:unique>  
 ```  
   
- その結果、**DataSet** に作成される制約を次に示します。  
+ これは、結果として得られるで作成された制約**データセット**です。  
   
 ```  
 ConstraintName: SomeName  
@@ -108,7 +103,7 @@ ConstraintName: SomeName
   IsPrimaryKey: False  
 ```  
   
-## 参照  
- [XML スキーマ \(XSD\) 制約の DataSet 制約への割り当て](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)   
- [XML スキーマ \(XSD\) からの DataSet リレーションの生成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [制約の DataSet 制約への XML スキーマ (XSD) 制約のマッピング](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ [XML スキーマ (XSD) からの DataSet リレーションの生成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

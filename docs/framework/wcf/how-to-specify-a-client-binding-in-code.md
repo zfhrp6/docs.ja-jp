@@ -1,31 +1,37 @@
 ---
-title: "方法 : コード内でクライアント バインディングを指定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : コード内でクライアント バインディングを指定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 6bee5da4-adf7-42e6-8f78-63a9e5c6dbad
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 50b27432081f15955ef7ccd63e91a7cbd75d50f3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : コード内でクライアント バインディングを指定する
-この例では、電卓サービスを使用するためのクライアントを作成し、そのクライアントのバインディングを強制的にコードで指定します。クライアントは `CalculatorService` にアクセスします。これにより、`ICalculator` インターフェイスが実装され、サービスとクライアントの両方で <xref:System.ServiceModel.BasicHttpBinding> クラスが使用されます。  
+# <a name="how-to-specify-a-client-binding-in-code"></a>方法 : コード内でクライアント バインディングを指定する
+この例では、電卓サービスを使用するためのクライアントを作成し、そのクライアントのバインディングを強制的にコードで指定します。 クライアントは `CalculatorService` にアクセスします。これにより、`ICalculator` インターフェイスが実装され、サービスとクライアントの両方で <xref:System.ServiceModel.BasicHttpBinding> クラスが使用されます。  
   
- ここで説明する手順では、電卓サービスが実行されていることを前提としています。サービスの構築については、「[方法 : 構成でサービス バインディングを指定する](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)」を参照してください。クライアント コンポーネントを自動的に生成するために、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] に付属する [ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) も使用します。このツールでは、サービスにアクセスするためのクライアント コードが生成されます。  
+ ここで説明する手順では、電卓サービスが実行されていることを前提としています。 サービスの構築方法の詳細については、次を参照してください。[する方法: 構成では、サービス バインドを指定して](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)です。 使用して、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]クライアント コンポーネントを自動的に生成するを提供します。 このツールでは、サービスにアクセスするためのクライアント コードが生成されます。  
   
- クライアントは 2 つの部分で構成されます。Svcutil.exe によって、`ICalculator` インターフェイスを実装する `ClientCalculator` が生成されます。次に、`ClientCalculator` のインスタンスを作成し、サービスのバインディングとアドレスをコードで指定して、このクライアント アプリケーションを作成します。  
+ クライアントは 2 つの部分で構成されます。 Svcutil.exe によって、`ClientCalculator` インターフェイスを実装する `ICalculator` が生成されます。 次に、`ClientCalculator` のインスタンスを作成し、サービスのバインディングとアドレスをコードで指定して、このクライアント アプリケーションを作成します。  
   
- この例のソースのコピーについては、「[BasicBinding](../../../docs/framework/wcf/samples/basicbinding.md)」のサンプルを参照してください。  
+ この例の元のコピーを次を参照してください。、 [BasicBinding](../../../docs/framework/wcf/samples/basicbinding.md)サンプルです。  
   
-### コード内でカスタム バインディングを指定するには  
+### <a name="to-specify-a-custom-binding-in-code"></a>コード内でカスタム バインドを指定するには  
   
 1.  コマンド ラインから Svcutil.exe を実行して、サービス メタデータからコードを生成します。  
   
@@ -43,12 +49,12 @@ caps.handback.revision: 9
      [!code-csharp[C_HowTo_CodeClientBinding#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeclientbinding/cs/client.cs#2)]
      [!code-vb[C_HowTo_CodeClientBinding#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeclientbinding/vb/client.vb#2)]  
   
-4.  クライアント アプリケーション内で <xref:System.ServiceModel.BasicHttpBinding> クラスを使用する `ClientCalculator` のインスタンスを作成し、指定したアドレスのサービス操作を呼び出します。  
+4.  クライアント アプリケーション内で `ClientCalculator` クラスを使用する <xref:System.ServiceModel.BasicHttpBinding> のインスタンスを作成し、指定したアドレスのサービス操作を呼び出します。  
   
      [!code-csharp[C_HowTo_CodeClientBinding#3](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeclientbinding/cs/client.cs#3)]
      [!code-vb[C_HowTo_CodeClientBinding#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeclientbinding/vb/client.vb#3)]  
   
 5.  クライアントをコンパイルして実行します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [サービスとクライアントを構成するためのバインディングの使用](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)

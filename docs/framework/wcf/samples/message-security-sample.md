@@ -1,30 +1,33 @@
 ---
-title: "メッセージ セキュリティ サンプル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "メッセージ セキュリティ サンプル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 82444166-6288-493a-85d4-85f43f134d19
-caps.latest.revision: 33
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 33
+caps.latest.revision: "33"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: eda5acd6865e463f01b59566c7c75f8efad0c329
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# メッセージ セキュリティ サンプル
-このサンプルでは、`basicHttpBinding` とメッセージ セキュリティを使用するアプリケーションを実装する方法を示します。このサンプルは、電卓サービスを実装する「[概要](../../../../docs/framework/wcf/samples/getting-started-sample.md)」に基づいています。  
+# <a name="message-security-sample"></a>メッセージ セキュリティ サンプル
+このサンプルでは、`basicHttpBinding` とメッセージ セキュリティを使用するアプリケーションを実装する方法を示します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)電卓サービスを実装します。  
   
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
- `basicHttpBinding` のセキュリティ モードの値は、`Message`、`Transport`、`TransportWithMessageCredential`、`TransportCredentialOnly`、および `None` に設定できます。サービスのサンプルの App.config ファイルでは、エンドポイント定義によって `basicHttpBinding` が指定され、`Binding1` という名前のバインディング構成が参照されます。次のサンプル構成を参照してください。  
+ `basicHttpBinding` のセキュリティ モードの値は、`Message`、`Transport`、`TransportWithMessageCredential`、`TransportCredentialOnly`、および `None` に設定できます。 サービスのサンプルの App.config ファイルでは、エンドポイント定義によって `basicHttpBinding` が指定され、`Binding1` という名前のバインディング構成が参照されます。次のサンプル構成を参照してください。  
   
-```  
+```xml  
 <system.serviceModel>  
   <services>  
     <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
@@ -40,9 +43,9 @@ caps.handback.revision: 33
 </system.serviceModel>  
 ```  
   
- このバインディング構成では、[\<security\>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)の `mode` 属性を `Message` に設定し、[\<message\>](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-basichttpbinding.md)の `clientCredentialType` 属性を `Certificate` に設定します。次のサンプル構成を参照してください。  
+ バインディングの構成セット、`mode`の属性、 [\<セキュリティ >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)に`Message`設定と、`clientCredentialType`の属性、 [\<メッセージ >](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-basichttpbinding.md)に`Certificate`サンプル構成を次に示すようにします。  
   
-```  
+```xml  
 <bindings>  
   <basicHttpBinding>  
     <!--   
@@ -58,9 +61,9 @@ caps.handback.revision: 33
 </bindings>  
 ```  
   
- サービスがクライアントに対してサービス自体を認証するために使用する証明書は、`serviceCredentials` 要素の下にある構成ファイルの behaviors セクションで設定されます。クライアントがサービスに対してクライアント自体を認証するために使用する証明書に適用される検証モードも、`clientCertificate` 要素の下にある behaviors セクションで設定されます。  
+ サービスがクライアントに対してサービス自体を認証するために使用する証明書は、`serviceCredentials` 要素の下にある構成ファイルの behaviors セクションで設定されます。 クライアントがサービスに対してクライアント自体を認証するために使用する証明書に適用される検証モードも、`clientCertificate` 要素の下にある behaviors セクションで設定されます。  
   
-```  
+```xml  
 <!--For debugging purposes, set the includeExceptionDetailInFaults attribute to true.-->  
 <behaviors>  
   <serviceBehaviors>  
@@ -106,7 +109,7 @@ caps.handback.revision: 33
 Console.WriteLine("Called by {0}", ServiceSecurityContext.Current.PrimaryIdentity.Name);  
 ```  
   
- このサンプルを実行する場合は、操作要求および応答はクライアントのコンソール ウィンドウに表示されます。クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
+ このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。 クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -116,73 +119,73 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-### サンプルをセットアップしてビルドするには  
+### <a name="to-set-up-and-build-the-sample"></a>サンプルをセットアップしてビルドするには  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。  
   
-2.  ソリューションの C\# 版または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
   
-### サンプルを同じコンピュータで実行するには  
+### <a name="to-run-the-sample-on-the-same-machine"></a>サンプルを同じコンピューターで実行するには  
   
-1.  Setup.bat をサンプルのインストール フォルダーで実行します。これにより、サンプルの実行に必要なすべての証明書がインストールされます。  
+1.  Setup.bat をサンプルのインストール フォルダーで実行します。 これにより、サンプルの実行に必要なすべての証明書がインストールされます。  
   
     > [!NOTE]
-    >  Setup.bat バッチ ファイルは、Windows SDK コマンド プロンプトから実行します。MSSDK 環境変数が SDK のインストール ディレクトリを指している必要があります。この環境変数は、Windows SDK コマンド プロンプトで自動設定されます。  
+    >  Setup.bat バッチ ファイルは、Windows SDK コマンド プロンプトから実行します。 MSSDK 環境変数が SDK のインストール ディレクトリを指している必要があります。 この環境変数は、Windows SDK コマンド プロンプトで自動設定されます。  
   
-2.  サービス アプリケーションを \\service\\bin で実行します。  
+2.  サービス アプリケーションを \service\bin で実行します。  
   
-3.  クライアント アプリケーションを \\client\\bin で実行します。クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。  
+3.  クライアント アプリケーションを \client\bin で実行します。 クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。  
   
-4.  クライアントとサービス間で通信できない場合は、「[Troubleshooting Tips](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
+4.  クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
   
-5.  サンプルの使用が終わったら、Cleanup.bat を実行して証明書を削除してください。他のセキュリティ サンプルでも同じ証明書を使用します。  
+5.  サンプルの使用が終わったら、Cleanup.bat を実行して証明書を削除してください。 他のセキュリティ サンプルでも同じ証明書を使用します。  
   
-### サンプルを別のコンピュータで実行するには  
+### <a name="to-run-the-sample-across-machines"></a>サンプルを複数コンピューターで実行するには  
   
-1.  サービス コンピュータにサービス バイナリ用のディレクトリを作成します。  
+1.  サービス コンピューターにサービス バイナリ用のディレクトリを作成します。  
   
-2.  サービス プログラム ファイルを、サーバーのサービス ディレクトリにコピーします。Setup.bat、Cleanup.bat、ImportClientCert.bat の各ファイルもサーバーにコピーします。  
+2.  サービス プログラム ファイルを、サーバーのサービス ディレクトリにコピーします。 Setup.bat、Cleanup.bat、ImportClientCert.bat の各ファイルもサーバーにコピーします。  
   
-3.  クライアント コンピュータにクライアント バイナリ用のディレクトリを作成します。  
+3.  クライアント コンピューターにクライアント バイナリ用のディレクトリを作成します。  
   
-4.  クライアント プログラム ファイルを、クライアント コンピュータに作成したクライアント ディレクトリにコピーします。Setup.bat、Cleanup.bat、ImportServiceCert.bat の各ファイルもクライアントにコピーします。  
+4.  クライアント プログラム ファイルを、クライアント コンピュータに作成したクライアント ディレクトリにコピーします。 Setup.bat、Cleanup.bat、ImportServiceCert.bat の各ファイルもクライアントにコピーします。  
   
-5.  サーバーで `setup.bat service` を実行します。`setup.bat`  に `service` 引数を指定して実行すると、コンピュータの完全修飾ドメイン名を使用してサービス証明書が作成され、Service.cer というファイルにエクスポートされます。  
+5.  サーバーで `setup.bat service` を実行します。 実行している`setup.bat`で、`service`引数は、マシンの完全修飾ドメイン名サービス証明書を作成し、サービス証明書が Service.cer というファイルにエクスポートします。  
   
-6.  Service.exe.config を編集して、新しい証明書名 \([\<serviceCertificate\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) 要素の `findValue` 属性\) を反映します。これは、コンピュータの完全修飾ドメイン名と同じです。さらに、ベース アドレスの値を `localhost` から完全修飾コンピュータ名に変更します。  
+6.  新しい証明書名を反映するように Service.exe.config を編集 (で、`findValue`属性、 [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)要素) は、マシンの完全修飾ドメイン名と同じです。 さらに、ベース アドレスの値を `.` から完全修飾コンピュータ名に変更します。  
   
-7.  Service.cer ファイルを、サービス ディレクトリからクライアント コンピュータのクライアント ディレクトリにコピーします。  
+7.  Service.cer ファイルを、サービス ディレクトリからクライアント コンピューターのクライアント ディレクトリにコピーします。  
   
-8.  クライアントで `setup.bat client` を実行します。`setup.bat`  に `client` 引数を指定して実行すると、client.com というクライアント証明書が作成され、Client.cer というファイルにエクスポートされます。  
+8.  クライアントで `setup.bat client` を実行します。 `setup.bat`に `client` 引数を指定して実行すると、client.com というクライアント証明書が作成され、Client.cer というファイルにエクスポートされます。  
   
-9. クライアント コンピュータの Client.exe.config ファイルで、エンドポイントのアドレス値をサービスの新しいアドレスに合わせます。そのためには、localhost をサーバーの完全修飾ドメイン名に置き換えます。さらに、[\<defaultCertificate\>](../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md)の `findValue` 属性を、サーバーの完全修飾ドメイン名になる、新しいサービス証明書の名前に変更します。  
+9. クライアント コンピューターの Client.exe.config ファイルで、エンドポイントのアドレス値をサービスの新しいアドレスに合わせます。 そのためには、localhost をサーバーの完全修飾ドメイン名に置き換えます。 変更も、`findValue`の属性、 [ \<defaultCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md)新しいサービスの証明書名は、サーバーの完全修飾ドメイン名にします。  
   
 10. Client.cer ファイルを、クライアント ディレクトリからサーバーのサービス ディレクトリにコピーします。  
   
-11. クライアントで ImportServiceCert.bat を実行します。これにより、サービス証明書が Service.cer ファイルから CurrentUser \- TrustedPeople ストアにインポートされます。  
+11. クライアントで ImportServiceCert.bat を実行します。 これにより、サービス証明書が Service.cer ファイルから CurrentUser - TrustedPeople ストアにインポートされます。  
   
-12. サーバーで ImportClientCert.bat を実行します。これにより、クライアント証明書が Client.cer ファイルから LocalMachine \- TrustedPeople ストアにインポートされます。  
+12. サーバーで ImportClientCert.bat を実行します。これにより、クライアント証明書が Client.cer ファイルから LocalMachine - TrustedPeople ストアにインポートされます。  
   
-13. サービス コンピュータで、コマンド プロンプトから Service.exe を起動します。  
+13. サービス コンピューターで、コマンド プロンプトから Service.exe を起動します。  
   
-14. クライアント コンピュータで、コマンド プロンプト ウィンドウから Client.exe を起動します。  
+14. クライアント コンピューターで、コマンド プロンプト ウィンドウから Client.exe を起動します。  
   
-    1.  クライアントとサービス間で通信できない場合は、「[Troubleshooting Tips](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
+    1.  クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
   
-### サンプルの実行後にクリーンアップするには  
+### <a name="to-clean-up-after-the-sample"></a>サンプルの実行後にクリーンアップするには  
   
 -   サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。  
   
     > [!NOTE]
-    >  このサンプルを別のマシンで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。別のコンピューターで証明書を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルを実行した場合は、CurrentUser \- TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。  
+    >  このサンプルを別のマシンで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。 別のコンピューターで証明書を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルを実行した場合は、CurrentUser - TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。 削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Basic\MessageSecurity`  
   
-## 参照
+## <a name="see-also"></a>関連項目

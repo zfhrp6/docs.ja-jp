@@ -1,23 +1,27 @@
 ---
-title: "WF におけるトランザクションのアクティビティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WF におけるトランザクションのアクティビティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: fb33378e-82c6-4ea0-870f-76dc77e7f0fe
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f6132f1d9cbeef3ed7af5d2b711d04e8bd5755bb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# WF におけるトランザクションのアクティビティ
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、トランザクションや、補正、取り消しをモデル化するためのシステム指定のアクティビティがいくつかあります。これらのプログラミング モデルにより、ビジネス ロジックとエラー処理の変更の場合に、ワークフローは進行を続けることができます。トランザクション、補正および取り消し[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[トランザクション](../../../docs/framework/windows-workflow-foundation//workflow-transactions.md)」、「[補正](../../../docs/framework/windows-workflow-foundation//compensation.md)」および「[取り消し](../../../docs/framework/windows-workflow-foundation//modeling-cancellation-behavior-in-workflows.md)」を参照してください。  
+# <a name="transaction-activities-in-wf"></a>WF におけるトランザクションのアクティビティ
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、トランザクションや、補正、取り消しをモデル化するためのシステム指定のアクティビティがいくつかあります。 これらのプログラミング モデルにより、ビジネス ロジックとエラー処理の変更の場合に、ワークフローは進行を続けることができます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]トランザクションや、補正、取り消しを参照してください。[トランザクション](../../../docs/framework/windows-workflow-foundation/workflow-transactions.md)、[補正](../../../docs/framework/windows-workflow-foundation/compensation.md)、および[キャンセル](../../../docs/framework/windows-workflow-foundation/modeling-cancellation-behavior-in-workflows.md)です。  
   
-## トランザクションのアクティビティ  
+## <a name="transaction-activities"></a>トランザクションのアクティビティ  
   
 |||  
 |-|-|  
@@ -26,4 +30,4 @@ caps.handback.revision: 10
 |<xref:System.Activities.Statements.Compensate>|<xref:System.Activities.Statements.CompensableActivity> の補正ハンドラーを明示的に呼び出します。|  
 |<xref:System.Activities.Statements.Confirm>|<xref:System.Activities.Statements.CompensableActivity> の確認ハンドラーを明示的に呼び出します。|  
 |<xref:System.Activities.Statements.TransactionScope>|トランザクションの境界を設定します。|  
-|<xref:System.ServiceModel.Activities.TransactedReceiveScope>|受信したメッセージによって開始されるトランザクションの有効期間を制御します。トランザクションは、開始メッセージでワークフローにフローすることも、メッセージの受信時にディスパッチャーが作成することも可能です。 **Note:**  <xref:System.ServiceModel.Activities.TransactedReceiveScope> は、**ツールボックス** の **\[メッセージング\]** セクションにあります。|
+|<xref:System.ServiceModel.Activities.TransactedReceiveScope>|受信したメッセージによって開始されるトランザクションの有効期間のスコープを設定します。 トランザクションは、開始メッセージでワークフローにフローすることも、メッセージの受信時にディスパッチャーが作成することも可能です。 **注:** 、<xref:System.ServiceModel.Activities.TransactedReceiveScope>内にある、**メッセージング**のセクションで、**ツールボックス**です。|

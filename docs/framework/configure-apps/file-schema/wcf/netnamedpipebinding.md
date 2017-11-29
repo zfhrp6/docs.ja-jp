@@ -5,24 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
 ms.assetid: 00a8580b-face-47a4-838d-b9fed48e72df
-caps.latest.revision: 29
+caps.latest.revision: "29"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a5854b3f2630c1e27ec77976eccfe6765acefcab
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 7a582f009719245483bdfe9192d775347c1f1a29
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ltnetnamedpipebindinggt"></a>&lt;netNamedPipeBinding&gt;
 コンピューター上のプロセス間通信に適した、セキュリティで保護された信頼できる最適バインディングを定義します。 既定では、信頼のための WS-ReliableMessaging、転送セキュリティ用トランスポート セキュリティ、メッセージ配信用名前付きパイプ、およびバイナリ メッセージ エンコーディングを持つランタイム通信スタックを生成します。  
@@ -158,10 +153,9 @@ ms.lasthandoff: 09/25/2017
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement>   
- <xref:System.ServiceModel.NetNamedPipeBinding>   
- [\<バインド >](../../../../../docs/framework/misc/binding.md)   
- [バインド](../../../../../docs/framework/wcf/bindings.md)   
- [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
+ <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement>  
+ <xref:System.ServiceModel.NetNamedPipeBinding>  
+ [\<バインド >](../../../../../docs/framework/misc/binding.md)  
+ [バインディング](../../../../../docs/framework/wcf/bindings.md)  
+ [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
  [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)
-
