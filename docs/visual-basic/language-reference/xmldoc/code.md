@@ -1,47 +1,46 @@
 ---
-title: "&lt;code&gt; (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "code XML tag"
-  - "<code> XML tag"
+title: "&lt;コード&gt;(Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- code XML tag
+- <code> XML tag
 ms.assetid: 925e5342-be05-45f2-bf66-7398bbd6710e
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: a7c1d8ab3db0c36c6a2935b9ffbef15e87df5ebc
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;code&gt; (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
+# <a name="ltcodegt-visual-basic"></a>&lt;コード&gt;(Visual Basic)
 テキストが複数行のコードであることを示します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
+```xml  
 <code>content</code>  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `content`  
  コードとしてマークするテキストです。  
   
-## 解説  
- 複数の行をコードとして示すには `<code>` タグを使用します。  説明内のテキストをコードとして指定する場合は、[\<c\>](../../../visual-basic/language-reference/xmldoc/c.md) タグを使用します。  
+## <a name="remarks"></a>コメント  
+ 使用して、`<code>`タグ コードとして複数の行を指定します。 説明内のテキストをコードとしてマークする場合は、[\<c](../../../visual-basic/language-reference/xmldoc/c.md) タグを使用します。  
   
- コンパイル時に [\/doc](../../../visual-basic/reference/command-line-compiler/doc.md) を指定してドキュメント コメントをファイルに出力します。  
+ コンパイル時に [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) を指定して、ドキュメント コメントをファイルに出力します。  
   
-## 使用例  
- この例では、&lt;code&gt; タグを使用して、`ID` フィールドの使用例を含めます。  
+## <a name="example"></a>例  
+ この例では、\<コード > タグを使用するためのサンプル コードを`ID`フィールドです。  
   
  [!code-vb[VbVbcnXmlDocComments#2](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/code_1.vb)]  
   
-## 参照  
- [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)
+## <a name="see-also"></a>関連項目  
+ [XML のコメント用タグ](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

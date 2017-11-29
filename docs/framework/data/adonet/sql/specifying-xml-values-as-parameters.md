@@ -1,35 +1,41 @@
 ---
-title: "パラメーターとしての XML 値の指定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "パラメーターとしての XML 値の指定"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 2c4d08b8-fc29-4614-97fa-29c8ff7ca5b3
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 4d48cc329644873be268606409c154ffe832cd91
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# パラメーターとしての XML 値の指定
-値が XML 文字列であるパラメーターがクエリに必要な場合、開発者はその値を **SqlXml** のインスタンスを使用して提供することができます。  特別な処理は必要ありません。[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] の XML 列は、他のデータ型と同じ方法でパラメーター値を受け入れます。  
+# <a name="specifying-xml-values-as-parameters"></a>パラメーターとしての XML 値の指定
+開発者がのインスタンスを使用してその値を指定できますクエリには、その値は、XML 文字列パラメーターが必要とする場合、 **SqlXml**データ型。 特別な処理は必要ありません。[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] の XML 列は、他のデータ型と同じ方法でパラメーター値を受け入れます。  
   
-## 例  
- 次のコンソール アプリケーションでは、**AdventureWorks** データベースに新しいテーブルを作成します。  新しいテーブルには、**SalesID** という名前の列と、**SalesInfo** という名前の XML 列があります。  
+## <a name="example"></a>例  
+ 次のコンソール アプリケーションで新しいテーブルを作成する、 **AdventureWorks**データベース。 新しいテーブルには、という名前の列が含まれています。 **SalesID**とという XML 列を**SalesInfo**です。  
   
 > [!NOTE]
->  **AdventureWorks** サンプル データベースは、既定では [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] のインストール時にはインストールされません。  SQL Server Setup を実行してインストールします。  
+>  **AdventureWorks**をインストールするときに、サンプル データベースが既定でインストールされていない[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]です。 SQL Server Setup を実行してインストールします。  
   
- この例では、新しいテーブルに行を挿入するために <xref:System.Data.SqlClient.SqlCommand> オブジェクトを準備します。  保存されたファイルは、**SalesInfo** 列に必要な XML データを提供します。  
+ この例では、新しいテーブルに行を挿入するために <xref:System.Data.SqlClient.SqlCommand> オブジェクトを準備します。 保存されたファイルに必要な XML データを提供する、 **SalesInfo**列です。  
   
- この例を実行させるために必要なファイルを作成するには、プロジェクトと同じフォルダー内に新しいテキスト ファイルを作成します。  ファイルに MyTestStoreData.xml という名前を付けます。  ファイルをメモ帳で開き、次のテキストをコピーして貼り付けます。  
+ この例を実行させるために必要なファイルを作成するには、プロジェクトと同じフォルダー内に新しいテキスト ファイルを作成します。 ファイルに MyTestStoreData.xml という名前を付けます。 ファイルをメモ帳で開き、次のテキストをコピーして貼り付けます。  
   
-```  
+```xml  
 <StoreSurvey xmlns="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/StoreSurvey">  
   <AnnualSales>300000</AnnualSales>  
   <AnnualRevenue>30000</AnnualRevenue>  
@@ -44,9 +50,7 @@ caps.handback.revision: 5
 </StoreSurvey>  
 ```  
   
- \[Visual Basic\]  
-  
-```  
+```vb  
 Imports System  
 Imports System.Data.SqlClient  
 Imports System.Data.SqlTypes  
@@ -104,9 +108,7 @@ End Sub
 End Module  
 ```  
   
- \[C\#\]  
-  
-```  
+```csharp  
 using System;  
 using System.Data;  
 using System.Data.SqlClient;  
@@ -167,7 +169,7 @@ class Class1
 }  
 ```  
   
-## 参照  
- <xref:System.Data.SqlTypes.SqlXml>   
- [SQL Server における XML データ](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Data.SqlTypes.SqlXml>  
+ [SQL Server の XML データ](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

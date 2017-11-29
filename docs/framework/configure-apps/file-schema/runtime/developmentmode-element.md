@@ -1,75 +1,77 @@
 ---
-title: "&lt;developmentMode&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/developmentMode"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#developmentMode"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<developmentMode> 要素"
-  - "コンテナー タグ, <developmentMode> 要素"
-  - "developmentMode 要素"
+title: "&lt;developmentMode&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/developmentMode
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#developmentMode
+helpviewer_keywords:
+- developmentMode element
+- container tags, <developmentMode> element
+- <developmentMode> element
 ms.assetid: 60e79a8c-415a-497d-be29-b9d0fd9bdee3
-caps.latest.revision: 10
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 4573c3a5e0cf64996f2a4e109736d966b754494a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;developmentMode&gt; 要素
-DEVPATH 環境変数で指定されたディレクトリでランタイムがアセンブリを検索するかどうかを指定します。  
+# <a name="ltdevelopmentmodegt-element"></a>&lt;developmentMode&gt;要素
+DEVPATH 環境変数によって指定されたディレクトリで、ランタイムがアセンブリの検索を行うかどうかを指定します。  
   
-## 構文  
+ \<configuration>  
+\<ランタイム >  
+\<developmentMode >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <developmentMode developerInstallation="true | false"/>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|Attribute|説明|  
-|---------------|--------|  
-|**developerInstallation**|DEVPATH 環境変数で指定されたディレクトリでランタイムがアセンブリを検索するかどうかを指定します。|  
+|属性|説明|  
+|---------------|-----------------|  
+|**developerInstallation**|DEVPATH 環境変数によって指定されたディレクトリで、ランタイムがアセンブリの検索を行うかどうかを指定します。|  
   
-## developerInstallation 属性  
+## <a name="developerinstallation-attribute"></a>developerInstallation 属性  
   
 |値|説明|  
-|-------|--------|  
-|**true**|DEVPATH 環境変数で指定されたディレクトリでアセンブリを検索します。|  
-|**false**|DEVPATH 環境変数で指定されたディレクトリでアセンブリを検索しません。  これが既定値です。|  
+|-----------|-----------------|  
+|**true**|DEVPATH 環境変数で指定したディレクトリ内のアセンブリを検索します。|  
+|**false**|DEVPATH 環境変数で指定したディレクトリ内のアセンブリを検索しません。 これは、既定値です。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
+|-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
   
-## 解説  
- この設定は、開発時にだけ使用します。  ランタイムは、DEVPATH で見つかった厳密な名前付きアセンブリのバージョンを確認しません。  単純に、最初に見つかったアセンブリを使用します。  
+## <a name="remarks"></a>コメント  
+ この設定を使用して、開発時のみです。 ランタイムは、DEVPATH で見つかった厳密な名前のアセンブリのバージョンをチェックしません。 最初に見つかったアセンブリは単に使用します。  
   
-## 使用例  
- DEVPATH 環境変数で指定されたディレクトリでランタイムがアセンブリを検索するように指定する例を示します。  
+## <a name="example"></a>例  
+ 次の例では、DEVPATH 環境変数で指定したディレクトリ内のアセンブリを検索するランタイムを発生させる方法を示します。  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <developmentMode developerInstallation="true"/>  
@@ -77,7 +79,7 @@ DEVPATH 環境変数で指定されたディレクトリでランタイムがア
 </configuration>  
 ```  
   
-## 参照  
- [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+## <a name="see-also"></a>関連項目  
+ [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [方法 : DEVPATH を使用してアセンブリを指定する](../../../../../docs/framework/configure-apps/how-to-locate-assemblies-by-using-devpath.md)

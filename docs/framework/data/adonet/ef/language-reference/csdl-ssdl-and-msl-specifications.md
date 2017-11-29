@@ -1,26 +1,25 @@
 ---
-title: "CSDL、SSDL、および MSL 仕様 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: "CSDL、SSDL、および MSL 仕様"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: bbdc9237-ff4c-4441-9565-31ebc29743e9
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: d4a11afef526d013e5674b172377ecb9db9b0e1c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# CSDL、SSDL、および MSL 仕様
-現在、[msdn.microsoft.com\/data\/ef](http://msdn.microsoft.com/data/ef) サイトでは、主に Entity Framework に関するコンテンツを提供しています。  
+# <a name="csdl-ssdl-and-msl-specifications"></a>CSDL、SSDL、および MSL 仕様
+[Msdn.microsoft.com/data/ef](http://msdn.microsoft.com/data/ef)サイトでは、主に Entity Framework に関するコンテンツ。  
   
- このトピックの内容は、「[EDMX ファイル](http://msdn.microsoft.com/data/jj650889)」ページでご利用いただけます。
+ このトピックの内容は次のページで使用できるようになりました: [EDMX ファイル](http://msdn.microsoft.com/data/jj650889)です。

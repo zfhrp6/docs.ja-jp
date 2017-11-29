@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: e38ae4f3-3e3d-42c3-a4b8-db1aa9d84f85
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 39c1d68962ab1108f1a7c0aa976cb62558609d29
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 5a15ac314590b9b7e240e759b9482eafb7071cd3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="net-native-and-compilation"></a>.NET Native とコンパイル
 .NET Framework を対象にした Windows 8.1 アプリケーションと Windows デスクトップ アプリケーションは特定のプログラミング言語で記述し、中間言語 (IL: Intermediate Language) にコンパイルされます。 実行時には、メソッドが初めて実行される直前に JIT (Just-In-Time) コンパイラによって IL がローカル コンピューターのネイティブ コードにコンパイルされます。 それとは対照的に、.NET ネイティブ ツール チェーンでは、コンパイル時にソース コードをネイティブ コードに変換します。 このトピックでは、.NET ネイティブを、.NET Framework アプリをコンパイルする他のテクノロジと比較します。また、.NET ネイティブがネイティブ コードをどのように生成するのかについて実践的な概要を説明しますので、.NET ネイティブでコンパイルしたコードで発生する例外が JIT でコンパイルしたコードでは発生しない理由を理解するために役立ちます。  
@@ -51,7 +49,7 @@ ms.lasthandoff: 08/21/2017
   
  アプリを IL からネイティブ コードに変換する過程で、.NET ネイティブ ツール チェーンは次のような操作を実行します。  
   
--   特定のコード パスについて、リフレクションやメタデータに依存するコードを、静的なネイティブ コードで置き換えます。 たとえば、値型が <xref:System.ValueType.Equals%2A?displayProperty=fullName> メソッドを上書きしない場合、等しいかどうかの既定のテストは、リフレクションを使用して値型のフィールドを表す <xref:System.Reflection.FieldInfo> オブジェクトを取得することによって行われるため、2 つのインスタンスのフィールド値の比較になります。 ネイティブ コードにコンパイルするとき、.NET ネイティブ ツール チェーンは、このリフレクションのコードとメタデータをフィールド値の静的な比較に置き換えます。  
+-   特定のコード パスについて、リフレクションやメタデータに依存するコードを、静的なネイティブ コードで置き換えます。 たとえば、値型が <xref:System.ValueType.Equals%2A?displayProperty=nameWithType> メソッドを上書きしない場合、等しいかどうかの既定のテストは、リフレクションを使用して値型のフィールドを表す <xref:System.Reflection.FieldInfo> オブジェクトを取得することによって行われるため、2 つのインスタンスのフィールド値の比較になります。 ネイティブ コードにコンパイルするとき、.NET ネイティブ ツール チェーンは、このリフレクションのコードとメタデータをフィールド値の静的な比較に置き換えます。  
   
 -   可能であれば、すべてのメタデータを削除しようとします。  
   
@@ -111,8 +109,7 @@ ms.lasthandoff: 08/21/2017
 -   NGEN イメージは、脆弱な傾向があります。 たとえば、依存関係のあるファイルにパッチや変更が適用された場合は、通常、それを使用するアセンブリも再度 NGEN で処理する必要があります。 このことは、特に .NET Framework クラス ライブラリに含まれるシステム アセンブリの場合に当てはまります。 これに対して、.NET ネイティブでは、アプリケーションがそれぞれ個別に実行されます。  
   
 ## <a name="see-also"></a>関連項目  
- [メタデータと自己言及的なコンポーネント](../../../docs/standard/metadata-and-self-describing-components.md)   
- [インサイド .NET ネイティブ (Channel 9 ビデオ)](http://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)   
- [リフレクションおよび .NET ネイティブ](../../../docs/framework/net-native/reflection-and-net-native.md)   
+ [メタデータと自己言及的なコンポーネント](../../../docs/standard/metadata-and-self-describing-components.md)  
+ [内側の .NET ネイティブ (Channel 9 ビデオ)](http://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)  
+ [リフレクションおよび .NET ネイティブ](../../../docs/framework/net-native/reflection-and-net-native.md)  
  [.NET ネイティブの一般的なトラブルシューティング](../../../docs/framework/net-native/net-native-general-troubleshooting.md)
-

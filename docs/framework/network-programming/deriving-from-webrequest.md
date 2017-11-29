@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - WebRequest class, pluggable protocols
 - protocol-specific request handler
@@ -21,26 +16,25 @@ helpviewer_keywords:
 - receiving data, pluggable protocols
 - protocols, pluggable
 ms.assetid: 9810c177-973e-43d7-823c-14960bd625ea
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2ea66dd7fcb474977511b872ba3f917eee90ed2f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 56a536ccdd9b4ad67bc6a07f4a6d2a225f6fa565
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="deriving-from-webrequest"></a>WebRequest からの派生
 <xref:System.Net.WebRequest> クラスは、.NET Framework プラグ可能なプロトコル モデルに適合するプロトコル固有の要求ハンドラーを作成するための基本メソッドとプロパティを提供する抽象基底クラスです。 **WebRequest** クラスを使用するアプリケーションは、使用されるプロトコルを指定することなく、サポートされている任意のプロトコルを使用してデータを要求できます。  
   
- プロトコル固有のクラスがプラグ可能なプロトコルとして使用されるようにするには、クラスが <xref:System.Net.IWebRequestCreate> インターフェイスを実装する、およびそれを <xref:System.Net.WebRequest.RegisterPrefix%2A?displayProperty=fullName> メソッドに登録するという 2 つの条件を満たす必要があります。 クラスは、**WebRequest** のすべての抽象メソッドとプロパティをオーバーライドし、プラグ可能なインターフェイスを提供する必要があります。  
+ プロトコル固有のクラスがプラグ可能なプロトコルとして使用されるようにするには、クラスが <xref:System.Net.IWebRequestCreate> インターフェイスを実装する、およびそれを <xref:System.Net.WebRequest.RegisterPrefix%2A?displayProperty=nameWithType> メソッドに登録するという 2 つの条件を満たす必要があります。 クラスは、**WebRequest** のすべての抽象メソッドとプロパティをオーバーライドし、プラグ可能なインターフェイスを提供する必要があります。  
   
  **WebRequest** インスタンスは 1 回限りの使用を意図しており、別の要求を作成する場合は、新しい **WebRequest** を作成します。 **WebRequest** は、開発者がテンプレート **WebRequest** をシリアル化して、そのテンプレートを追加の要求用に再構成できるように、<xref:System.Runtime.Serialization.ISerializable> インターフェイスをサポートしています。  
   
 ## <a name="iwebrequest-create-method"></a>IWebRequest Create メソッド  
- <xref:System.Net.IWebRequestCreate.Create%2A> メソッドは、プロトコル固有のクラスの新しいインスタンスの初期化を行います。 新しい **WebRequest** が作成されると、<xref:System.Net.WebRequest.Create%2A?displayProperty=fullName> メソッドは要求された URI を **RegisterPrefix** メソッドに登録されている URI プレフィックスと照合します。 適切なプロトコル固有の子孫の **Create** メソッドは、プロトコル固有のフィールドを変更することなく、プロトコルの標準的な要求/応答のトランザクションを実行できる子孫の初期化されたインスタンスを返す必要があります。  
+ <xref:System.Net.IWebRequestCreate.Create%2A> メソッドは、プロトコル固有のクラスの新しいインスタンスの初期化を行います。 新しい **WebRequest** が作成されると、<xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> メソッドは要求された URI を **RegisterPrefix** メソッドに登録されている URI プレフィックスと照合します。 適切なプロトコル固有の子孫の **Create** メソッドは、プロトコル固有のフィールドを変更することなく、プロトコルの標準的な要求/応答のトランザクションを実行できる子孫の初期化されたインスタンスを返す必要があります。  
   
 ## <a name="connectiongroupname-property"></a>ConnectionGroupName プロパティ  
  <xref:System.Net.WebRequest.ConnectionGroupName%2A> プロパティは、1 つの接続を介して複数の要求が作成できるように、リソースへの接続のグループを指定するために使用されます。 接続の共有を実装するには、プーリングと接続の割り当てのプロトコル固有のメソッドを使用する必要があります。 たとえば、指定した <xref:System.Net.ServicePointManager> クラスは <xref:System.Net.HttpWebRequest> クラスの接続の共有を実装します。 **ServicePointManager** クラスは、各接続グループに特定のサーバーへの接続を提供する <xref:System.Net.ServicePoint> を作成します。  
@@ -59,7 +53,7 @@ ms.lasthandoff: 08/21/2017
 ## <a name="headers-property"></a>Headers プロパティ  
  <xref:System.Net.WebRequest.Headers%2A> プロパティには、要求に関連付けられているメタデータの名前/値ペアの任意のコレクションが含まれています。 名前/値のペアとして表すことができるプロトコルで必要なすべてのメタデータは、**Headers** プロパティに含めることができます。 通常、この情報は、<xref:System.Net.WebRequest.GetRequestStream%2A> メソッドまたは <xref:System.Net.WebRequest.GetResponse%2A> メソッドを呼び出す前に設定する必要があります。要求が作成されると、メタデータは読み取り専用と見なされます。  
   
- ヘッダー メタデータを使用するために **Headers** プロパティを使用する必要はありません。 プロトコル固有のメタデータをプロパティとして公開することができます。たとえば、<xref:System.Net.HttpWebRequest.UserAgent%2A?displayProperty=fullName> プロパティは、**User-agent** HTTP ヘッダーを公開します。 ヘッダー メタデータをプロパティとして公開する場合、**Headers** プロパティを使用して同じプロパティが設定されないようにする必要があります。  
+ ヘッダー メタデータを使用するために **Headers** プロパティを使用する必要はありません。 プロトコル固有のメタデータをプロパティとして公開することができます。たとえば、<xref:System.Net.HttpWebRequest.UserAgent%2A?displayProperty=nameWithType> プロパティは、**User-agent** HTTP ヘッダーを公開します。 ヘッダー メタデータをプロパティとして公開する場合、**Headers** プロパティを使用して同じプロパティが設定されないようにする必要があります。  
   
 ## <a name="method-property"></a>Method プロパティ  
  <xref:System.Net.WebRequest.Method%2A> プロパティには、要求がサーバーに実行を求める動詞やアクションが含まれています。 **Method** プロパティの既定値は、プロトコル固有のプロパティを設定しなくても、標準的な要求/応答アクションを有効にする必要があります。 たとえば、<xref:System.Net.HttpWebResponse.Method%2A> メソッドの既定値は GET で、Web サーバーからリソースを要求し、応答を返します。  
@@ -104,9 +98,8 @@ ms.lasthandoff: 08/21/2017
  **GetResponse** メソッドは、受信した応答を含めるための適切な **WebResponse** の子孫を作成します。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Net.WebRequest>   
- <xref:System.Net.HttpWebRequest>   
- <xref:System.Net.FileWebRequest>   
- [プラグ可能なプロトコルのプログラミング](../../../docs/framework/network-programming/programming-pluggable-protocols.md)   
+ <xref:System.Net.WebRequest>  
+ <xref:System.Net.HttpWebRequest>  
+ <xref:System.Net.FileWebRequest>  
+ [プラグ可能なプロトコルのプログラミング](../../../docs/framework/network-programming/programming-pluggable-protocols.md)  
  [WebResponse からの派生](../../../docs/framework/network-programming/deriving-from-webresponse.md)
-

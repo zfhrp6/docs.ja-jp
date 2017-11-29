@@ -1,30 +1,33 @@
 ---
-title: "チャネル拡張 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "チャネル拡張"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4cc3b20b-778a-4ae8-b58c-a3822fb13065
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7e0cf92edc4ec05df3e5e8c25b90bcf253e94ed6
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# チャネル拡張
+# <a name="channels-extensibility"></a>チャネル拡張
 このセクションには、カスタム チャネルを示すサンプルが含まれています。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [ローカル チャネル](../../../../docs/framework/wcf/samples/local-channel.md)  
  同じアプリケーション ドメイン内の通信に使用される [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] トランスポート チャネルであるローカル チャネルを示します。  
   
- [Reliable Secure Profile](../../../../docs/framework/wcf/samples/reliable-secure-profile.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と Reliable Secure Profile \(RSP\) を作成する方法を示します。  
+ [信頼性の高いセキュリティで保護されたプロファイル](../../../../docs/framework/wcf/samples/reliable-secure-profile.md)  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と Reliable Secure Profile (RSP) を作成する方法を示します。  
   
  [カスタム チャネル ディスパッチャー](../../../../docs/framework/wcf/samples/custom-channel-dispatcher.md)  
  <xref:System.ServiceModel.ServiceHostBase> を直接実装することによって、カスタマイズした方法でチャネル スタックを作成する方法と、Web ホスト環境でカスタム チャネル ディスパッチャーを作成する方法を示します。  
@@ -39,4 +42,4 @@ caps.handback.revision: 3
  カスタム プロトコル チャネルを作成し、セッション管理用の HTTP クッキーを使用する方法を示します。  
   
  [カスタム メッセージ インターセプター](../../../../docs/framework/wcf/samples/custom-message-interceptor.md)  
- チャネル ファクトリとチャネル リスナーを作成するカスタム バインディング要素を実装して、ランタイム スタックの特定のポイントですべての送受信メッセージを中断する方法を示します。
+ チャネル ファクトリとチャネル リスナーを作成するカスタム バインド要素を実装して、ランタイム スタックの特定のポイントですべての送受信メッセージを中断する方法を示します。

@@ -1,67 +1,76 @@
 ---
-title: "&lt;customCookieHandler&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;customCookieHandler&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a03b153d-5ec6-4915-9031-6f0c3fd348be
-caps.latest.revision: 7
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 6
+caps.latest.revision: "7"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: df95e8d47d6a19e4fd488fa14bc771bc2c2b56b7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;customCookieHandler&gt;
-Cookie のカスタム ハンドラーの種類を設定します。  この要素のみが表示される場合は、 `mode`属性の`<cookieHandler>`要素は、「ユーザー設定」。  カスタムの型から派生する必要があります、 <xref:System.IdentityModel.Services.CookieHandler>クラス。  
+# <a name="ltcustomcookiehandlergt"></a>&lt;customCookieHandler&gt;
+カスタム クッキー ハンドラーの種類を設定します。 この要素が存在するのみ場合、`mode`の属性、`<cookieHandler>`要素は、"Custom"です。 カスタム型から派生する必要があります、<xref:System.IdentityModel.Services.CookieHandler>クラスです。  
   
-## 構文  
+ \<system.identityModel.services >  
+\<federationConfiguration >  
+\<cookieHandler >  
+\<customCookieHandler >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <system.identityModel.services>  
-  <federationConfiguration>  
-    <cookieHandler mode=”Custom”>  
-      <customCookieHandler type="MyNamespace.MyCustomCookieHandler, MyAssembly" >  
-      </customCookieHandler>  
-    </cookieHandler>  
-  </federationConfiguration>  
+  <federationConfiguration>  
+    <cookieHandler mode="Custom">  
+      <customCookieHandler type="MyNamespace.MyCustomCookieHandler, MyAssembly" >  
+      </customCookieHandler>  
+    </cookieHandler>  
+  </federationConfiguration>  
 </system.identityModel.services>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|属性|Description|  
-|--------|-----------------|  
-|type|派生するカスタム型を指定します、 <xref:System.IdentityModel.Services.CookieHandler>クラス。  指定する方法の詳細については、 `type`属性は、 [Custom Type References](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md#BKMK_CustomTypeReferences)。|  
+|属性|説明|  
+|---------------|-----------------|  
+|型|派生するカスタム型を指定します、<xref:System.IdentityModel.Services.CookieHandler>クラスです。 指定する方法について、`type`属性は、「[カスタム型の参照](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md)です。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
-|要素|Description|  
-|--------|-----------------|  
-|[\<cookieHandler\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)|構成、 <xref:System.IdentityModel.Services.CookieHandler>は、 <xref:System.IdentityModel.Services.SessionAuthenticationModule> cookie の読み書きに使用します。|  
+|要素|説明|  
+|-------------|-----------------|  
+|[\<cookieHandler >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)|構成、<xref:System.IdentityModel.Services.CookieHandler>を<xref:System.IdentityModel.Services.SessionAuthenticationModule>読み取りし、書き込みの cookie を使用します。|  
   
-## 解説  
- 設定することにより、クッキーのカスタム ハンドラーを指定すると、 `mode`属性の`<cookieHandler>`要素「ユーザー設定」などでカスタム cookie のハンドラーの種類を指定する必要があります、 `<customCookieHandler>`クッキーのハンドラーの型を参照する子要素。  この要素にすることはできない時に指定、 `mode` 「チャンク」または「既定値」属性を設定します。  ハンドラーのカスタム cookie を派生する必要がありますから、 <xref:System.IdentityModel.Services.CookieHandler>クラス。  
+## <a name="remarks"></a>コメント  
+ 設定して、カスタム クッキー ハンドラーを指定する場合、`mode`の属性、`<cookieHandler>`要素"Custom"にする必要がありますを指定するカスタム クッキー ハンドラーの型を含めることによって、`<customCookieHandler>`クッキー ハンドラー型を参照する子要素です。 この要素にすることはできない時に指定された、`mode`属性が"Chunked"または"Default"に設定します。 カスタム クッキー ハンドラーがから派生する必要があります、<xref:System.IdentityModel.Services.CookieHandler>クラスです。  
   
- `<customCookieHandler>`要素で表される、 <xref:System.IdentityModel.Configuration.CustomTypeElement>クラス。  
+ `<customCookieHandler>`要素として表されます、<xref:System.IdentityModel.Configuration.CustomTypeElement>クラスです。  
   
-## 使用例  
- 次の使用例カスタム cookie のハンドラーの型を使用すると、SAM の構成`MyNamespace.MyCustomCookieHandler`。  
+## <a name="example"></a>例  
+ 次の例の構成の種類のカスタム クッキー ハンドラーを使用して、SAM`MyNamespace.MyCustomCookieHandler`です。  
   
-```  
+```xml  
 <cookieHandler mode="Custom">  
     <customCookieHandler type="MyNamespace.MyCustomCookieHandler, MyAssembly" />  
 </cookieHandler>  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.IdentityModel.Services.CookieHandler>

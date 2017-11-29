@@ -1,35 +1,41 @@
 ---
-title: "Data Retrieval and CUD Operations in N-Tier Applications (LINQ to SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "N 層アプリケーションでのデータ取得および CUD 操作 (LINQ to SQL)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: c3133d53-83ed-4a4d-af8b-82edcf3831db
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: adc5d50707155495c43703b6586cedf5da209b69
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Data Retrieval and CUD Operations in N-Tier Applications (LINQ to SQL)
-Customers または Orders のようなエンティティ オブジェクトをネットワークを介してクライアントにシリアル化すると、これらのエンティティはデータ コンテキストからデタッチされます。  変更内容、および他のオブジェクトとの関連付けはデータ コンテキストによって追跡されなくなります。  クライアントがデータを読み取るだけの場合は、これは問題にはなりません。  また、クライアントが新しい行をデータベースに追加できるようにすることも、ある程度簡単です。  しかし、アプリケーションでクライアントによるデータの更新または削除を可能にする必要がある場合には、<xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=fullName> を呼び出す前に、新しいデータ コンテキストにエンティティをアタッチする必要があります。  さらに、元の値によるオプティミスティック同時実行制御チェックを使用する場合には、何らかの方法で、元のエンティティと変更後のエンティティをデータベースに渡す必要もあります。  エンティティがデタッチされた後に新しいデータ コンテキストにエンティティを入れるために、`Attach` メソッドが用意されています。  
+# <a name="data-retrieval-and-cud-operations-in-n-tier-applications-linq-to-sql"></a>N 層アプリケーションでのデータ取得および CUD 操作 (LINQ to SQL)
+Customers または Orders のようなエンティティ オブジェクトをネットワークを介してクライアントにシリアル化すると、これらのエンティティはデータ コンテキストからデタッチされます。 変更内容、および他のオブジェクトとの関連付けはデータ コンテキストによって追跡されなくなります。 クライアントがデータを読み取るだけの場合は、これは問題にはなりません。 また、クライアントが新しい行をデータベースに追加できるようにすることも、ある程度簡単です。 しかし、アプリケーションでクライアントによるデータの更新または削除を可能にする必要がある場合には、<xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType> を呼び出す前に、新しいデータ コンテキストにエンティティをアタッチする必要があります。 さらに、元の値によるオプティミスティック同時実行制御チェックを使用する場合には、何らかの方法で、元のエンティティと変更後のエンティティをデータベースに渡す必要もあります。 エンティティがデタッチされた後に新しいデータ コンテキストにエンティティを入れるために、`Attach` メソッドが用意されています。  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] エンティティの代わりにプロキシ オブジェクトをシリアル化する場合でも、データベースにデータを送るには、データ アクセス層 \(DAL\) 上にエンティティを構築して新しい <xref:System.Data.Linq.DataContext?displayProperty=fullName> にそれをアタッチする必要があります。  
+ 代わりにプロキシ オブジェクトをシリアル化する場合でも、 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 、エンティティがあるデータ アクセス層 (DAL) 上のエンティティを作成して、新しいアタッチ<xref:System.Data.Linq.DataContext?displayProperty=nameWithType>データベースにデータを送信するためにします。  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、エンティティがどのようにシリアル化されるかについてはまったく関与しません。  Windows Communication Foundation \(WCF\) を使ってシリアル化できるクラスを生成するために[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]および SQLMetal ツールを使用する方法について、詳しくは「[How to: Make Entities Serializable](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md)」を参照してください。  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]エンティティをシリアル化する方法について完全に無関心です。 使用する方法についての詳細、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]し、Windows Communication Foundation (WCF) を使用してシリアル化できるクラスを生成する SQLMetal ツールを参照してください[する方法: エンティティをシリアル化](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md)です。  
   
 > [!NOTE]
->  `Attach` メソッドは、新しいエンティティまたは逆シリアル化されたエンティティに対してのみ呼び出してください。  エンティティを元のデータ コンテキストからデタッチする唯一の方法は、シリアル化です。  デタッチされていないエンティティを新しいデータ コンテキストにアタッチしようとした場合、元のデータ コンテキストの遅延ローダーがそのエンティティにまだ存在するならば、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は例外をスローします。  2 つの異なるデータ コンテキストの遅延ローダーを持つエンティティに対して、挿入、更新、および削除操作を実行すると、予想外の結果が生じる可能性があります。  遅延ローダーの詳細については、「[Deferred versus Immediate Loading](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md)」を参照してください。  
+>  `Attach` メソッドは、新しいエンティティまたは逆シリアル化されたエンティティに対してのみ呼び出してください。 エンティティを元のデータ コンテキストからデタッチする唯一の方法は、シリアル化です。 デタッチされていないエンティティを新しいデータ コンテキストにアタッチしようとした場合、元のデータ コンテキストの遅延ローダーがそのエンティティにまだ存在するならば、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は例外をスローします。 2 つの異なるデータ コンテキストの遅延ローダーを持つエンティティに対して、挿入、更新、および削除操作を実行すると、予想外の結果が生じる可能性があります。 遅延ローダーの詳細については、次を参照してください。[遅延実行と即時読み込み](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md)です。  
   
-## データの取得  
+## <a name="retrieving-data"></a>データの取得  
   
-### クライアントのメソッド呼び出し  
- Windows フォーム クライアントから DAL に対するメソッド呼び出しの例を以下に示します。  この例では、DAL は Windows サービス ライブラリとして実装されています。  
+### <a name="client-method-call"></a>クライアントのメソッド呼び出し  
+ Windows フォーム クライアントから DAL に対するメソッド呼び出しの例を以下に示します。 この例では、DAL は Windows サービス ライブラリとして実装されています。  
   
 ```vb  
 Private Function GetProdsByCat_Click(ByVal sender As Object, ByVal e _  
@@ -86,12 +92,12 @@ private void GetProdsByCat_Click(object sender, EventArgs e)
     }  
 ```  
   
-### 中間層での実装  
- 次の例は、中間層でのインターフェイス メソッドの実装を示しています。  ここでは、次の 2 つの点が重要です。  
+### <a name="middle-tier-implementation"></a>中間層での実装  
+ 次の例は、中間層でのインターフェイス メソッドの実装を示しています。 ここでは、次の 2 つの点が重要です。  
   
 -   <xref:System.Data.Linq.DataContext> はメソッドのスコープで宣言されます。  
   
--   メソッドは、実際の結果から成る <xref:System.Collections.IEnumerable> コレクションを返します。  シリアライザーは、結果をクライアント\/プレゼンテーション層に戻すためのクエリを実行します。  中間層でクエリ結果にローカルにアクセスするには、クエリ変数に対して `ToList` または `ToArray` を呼び出すことで、実行を強制できます。  その後、そのリストまたは配列を `IEnumerable` として返すことができます。  
+-   メソッドは、実際の結果から成る <xref:System.Collections.IEnumerable> コレクションを返します。 シリアライザーは、結果をクライアント/プレゼンテーション層に戻すためのクエリを実行します。 中間層でクエリ結果にローカルにアクセスするには、クエリ変数に対して `ToList` または `ToArray` を呼び出すことで、実行を強制できます。 その後、そのリストまたは配列を `IEnumerable` として返すことができます。  
   
 ```vb  
 Public Function GetProductsByCategory(ByVal categoryID As Integer) _  
@@ -123,15 +129,15 @@ public IEnumerable<Product> GetProductsByCategory(int categoryID)
 }  
 ```  
   
- データ コンテキストの 1 つのインスタンスの有効期間は、1 つの「作業単位」である必要があります。疎結合環境では、通常、作業単位は小さく、たとえば `SubmitChanges` の 1 つの呼び出しを含む単一のオプティミスティック トランザクションです。  このため、データ コンテキストはメソッドのスコープ内で作成されて破棄されます。  作業単位にビジネス ルール ロジックの呼び出しが含まれる場合、通常は、その操作全体のために `DataContext` インスタンスを保持する必要が生じます。  いずれにしても、`DataContext` インスタンスの有効期間は、多数のトランザクションにわたって長い時間になることが意図されていません。  
+ データ コンテキストの 1 つのインスタンスの有効期間は、1 つの「作業単位」である必要があります。 疎結合環境では、通常、作業単位は小さく、たとえば `SubmitChanges` の 1 つの呼び出しを含む単一のオプティミスティック トランザクションです。 このため、データ コンテキストはメソッドのスコープ内で作成されて破棄されます。 作業単位にビジネス ルール ロジックの呼び出しが含まれる場合、通常は、その操作全体のために `DataContext` インスタンスを保持する必要が生じます。 いずれにしても、`DataContext` インスタンスの有効期間は、多数のトランザクションにわたって長い時間になることが意図されていません。  
   
- このメソッドは Product オブジェクトを返しますが、各 Product に関連付けられた Order\_Detail オブジェクトのコレクションを返しません。  この既定の動作を変更するには、<xref:System.Data.Linq.DataLoadOptions> オブジェクトを使用します。  詳細については、「[How to: Control How Much Related Data Is Retrieved](../../../../../../docs/framework/data/adonet/sql/linq/how-to-control-how-much-related-data-is-retrieved.md)」を参照してください。  
+ このメソッドは Product オブジェクトを返しますが、各 Product に関連付けられた Order_Detail オブジェクトのコレクションを返しません。 この既定の動作を変更するには、<xref:System.Data.Linq.DataLoadOptions> オブジェクトを使用します。 詳細については、次を参照してください。[する方法: コントロールより関連データの取得方法](../../../../../../docs/framework/data/adonet/sql/linq/how-to-control-how-much-related-data-is-retrieved.md)です。  
   
-## データの挿入  
- 新しいオブジェクトを挿入するために、プレゼンテーション層は単に中間層インターフェイス上の関連するメソッドを呼び出して、挿入対象の新しいオブジェクトを渡します。  ただし、クライアントがいくつかの値だけを渡して、オブジェクト全体の構築を中間層に任せた方が効率的である場合もあります。  
+## <a name="inserting-data"></a>データの挿入  
+ 新しいオブジェクトを挿入するために、プレゼンテーション層は単に中間層インターフェイス上の関連するメソッドを呼び出して、挿入対象の新しいオブジェクトを渡します。 ただし、クライアントがいくつかの値だけを渡して、オブジェクト全体の構築を中間層に任せた方が効率的である場合もあります。  
   
-### 中間層での実装  
- 中間層で、新しい <xref:System.Data.Linq.DataContext> が作成され、<xref:System.Data.Linq.Table%601.InsertOnSubmit%2A> メソッドを使ってオブジェクトが <xref:System.Data.Linq.DataContext> にアタッチされて、<xref:System.Data.Linq.DataContext.SubmitChanges%2A> の呼び出し時にオブジェクトが挿入されます。  他の Web サービスのシナリオとまったく同じ方法で、例外、コールバック、エラー状態を処理できます。  
+### <a name="middle-tier-implementation"></a>中間層での実装  
+ 中間層で、新しい <xref:System.Data.Linq.DataContext> が作成され、<xref:System.Data.Linq.DataContext> メソッドを使ってオブジェクトが <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A> にアタッチされて、<xref:System.Data.Linq.DataContext.SubmitChanges%2A> の呼び出し時にオブジェクトが挿入されます。 他の Web サービスのシナリオとまったく同じ方法で、例外、コールバック、エラー状態を処理できます。  
   
 ```vb  
 ' No call to Attach is necessary for inserts.  
@@ -158,10 +164,10 @@ End Sub
     }  
 ```  
   
-## データの削除  
+## <a name="deleting-data"></a>データの削除  
  既存のオブジェクトをデータベースから削除するために、プレゼンテーション層は中間層インターフェイス上の関連するメソッドを呼び出して、削除対象のオブジェクトの元の値を含むコピーを渡します。  
   
- 削除操作ではオプティミスティック同時実行制御チェックが行われて、削除対象のオブジェクトを新しいデータ コンテキストに最初にアタッチする必要があります。  この例では、オブジェクトにタイムスタンプ \(RowVersion\) が含まれないことを示すために `Boolean` パラメーターが `false` に設定されます。  各レコードのタイムスタンプがデータベース テーブルで生成される場合には、同時実行チェックは特にクライアントにとって非常に簡単です。  元のオブジェクトまたは変更後のオブジェクトを渡して、`Boolean` パラメーターを `true` に設定するだけです。  いずれの場合も、中間層では、通常、<xref:System.Data.Linq.ChangeConflictException> をキャッチする必要があります。  オプティミスティック同時実行の競合を処理する方法について、詳しくは「[Optimistic Concurrency: Overview](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md)」を参照してください。  
+ 削除操作ではオプティミスティック同時実行制御チェックが行われて、削除対象のオブジェクトを新しいデータ コンテキストに最初にアタッチする必要があります。 この例では、オブジェクトにタイムスタンプ (RowVersion) が含まれないことを示すために `Boolean` パラメーターが `false` に設定されます。 各レコードのタイムスタンプがデータベース テーブルで生成される場合には、同時実行チェックは特にクライアントにとって非常に簡単です。 元のオブジェクトまたは変更後のオブジェクトを渡して、`Boolean` パラメーターを `true` に設定するだけです。 いずれの場合も、中間層では、通常、<xref:System.Data.Linq.ChangeConflictException> をキャッチする必要があります。 オプティミスティック同時実行の競合を処理する方法の詳細については、次を参照してください。[オプティミスティック同時実行制御: 概要](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md)です。  
   
  関連するテーブルに対する外部キー制約を含むエンティティを削除する際には、<xref:System.Data.Linq.EntitySet%601> コレクション内のすべてのオブジェクトを最初に削除する必要があります。  
   
@@ -211,7 +217,7 @@ public void DeleteOrder(Order order)
 }  
 ```  
   
-## データの更新  
+## <a name="updating-data"></a>データの更新  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、オプティミスティック同時実行制御を行う次のようなシナリオでの更新をサポートします。  
   
 -   タイムスタンプつまり RowVersion 番号に基づくオプティミスティック同時実行制御。  
@@ -220,13 +226,13 @@ public void DeleteOrder(Order order)
   
 -   元のエンティティ全体および変更後のエンティティ全体に基づくオプティミスティック同時実行制御。  
   
- また、エンティティとそのリレーションシップの両方に対して更新または削除を実行することもできます \(たとえば Customer と、それに関連した Order オブジェクトのコレクション\)。  エンティティ オブジェクトとその子 \(`EntitySet`\) コレクションから成るグラフをクライアント上で変更して、オプティミスティック同時実行制御チェックで元の値が必要とされる場合には、クライアントはそれぞれのエンティティと <xref:System.Data.Linq.EntitySet%601> オブジェクトの元の値を提供する必要があります。  1 つのメソッド呼び出しで互いに関連する更新、削除、挿入のセットをクライアントが実行できるようにするには、各エンティティにどんな操作を実行するかを示す方法をクライアントに提供する必要があります。  その後、中間層で適切な <xref:System.Data.Linq.ITable.Attach%2A> メソッドを呼び出した後、<xref:System.Data.Linq.DataContext.SubmitChanges%2A> を呼び出す前に、各エンティティに対して <xref:System.Data.Linq.ITable.InsertOnSubmit%2A>, <xref:System.Data.Linq.ITable.DeleteAllOnSubmit%2A> または <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A> \(挿入の場合は `Attach` 無し\) を呼び出す必要があります。  更新を試行する前に元の値を入手するためにデータベースからデータを取得しないでください。  
+ また、エンティティとそのリレーションシップの両方に対して更新または削除を実行することもできます (たとえば Customer と、それに関連した Order オブジェクトのコレクション)。 エンティティ オブジェクトとその子 (`EntitySet`) コレクションから成るグラフをクライアント上で変更して、オプティミスティック同時実行制御チェックで元の値が必要とされる場合には、クライアントはそれぞれのエンティティと <xref:System.Data.Linq.EntitySet%601> オブジェクトの元の値を提供する必要があります。 1 つのメソッド呼び出しで互いに関連する更新、削除、挿入のセットをクライアントが実行できるようにするには、各エンティティにどんな操作を実行するかを示す方法をクライアントに提供する必要があります。 その後、中間層で適切な <xref:System.Data.Linq.ITable.Attach%2A> メソッドを呼び出した後、<xref:System.Data.Linq.ITable.InsertOnSubmit%2A> を呼び出す前に、各エンティティに対して <xref:System.Data.Linq.ITable.DeleteAllOnSubmit%2A>, <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A> または `Attach` (挿入の場合は <xref:System.Data.Linq.DataContext.SubmitChanges%2A> 無し) を呼び出す必要があります。 更新を試行する前に元の値を入手するためにデータベースからデータを取得しないでください。  
   
- オプティミスティック同時実行制御の詳細については、「[Optimistic Concurrency: Overview](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md)」を参照してください。  オプティミスティック同時実行の変更の競合を解決する方法について、詳しくは「[How to: Manage Change Conflicts](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)」を参照してください。  
+ オプティミスティック同時実行制御の詳細については、次を参照してください。[オプティミスティック同時実行制御: 概要](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md)です。 詳細については、オプティミスティック同時実行制御を解決する競合は、「[する方法: 変更の競合の管理](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)です。  
   
  それぞれのシナリオの例を以下に示します。  
   
-### タイムスタンプを使用したオプティミスティック同時実行  
+### <a name="optimistic-concurrency-with-timestamps"></a>タイムスタンプを使用したオプティミスティック同時実行  
   
 ```vb  
 ' Assume that "customer" has been sent by client.  
@@ -267,7 +273,7 @@ catch(ChangeConflictException e)
 }  
 ```  
   
-### 元の値のサブセットを使用した場合  
+### <a name="with-subset-of-original-values"></a>元の値のサブセットを使用した場合  
  この手法では、クライアントは変更対象の値と共に、シリアル化されたオブジェクト全体を返します。  
   
 ```vb  
@@ -328,7 +334,7 @@ public void UpdateProductInventory(Product p, short? unitsInStock, short? unitsO
 }  
 ```  
   
-### エンティティ全体を使用する場合  
+### <a name="with-complete-entities"></a>エンティティ全体を使用する場合  
   
 ```vb  
 Public Sub UpdateProductInfo(ByVal newProd As Product, ByVal _  
@@ -378,10 +384,10 @@ public void UpdateProductInfo(Product newProd, Product originalProd)
 }  
 ```  
   
- コレクションを更新するには、`Attach` ではなく <xref:System.Data.Linq.ITable.AttachAll%2A> を呼び出します。  
+ コレクションを更新するには、<xref:System.Data.Linq.ITable.AttachAll%2A> ではなく `Attach` を呼び出します。  
   
-### 必要なエンティティ メンバー  
- 既に説明したように、`Attach` メソッドを呼び出す前に設定する必要があるのは、エンティティ オブジェクトのいくつかのメンバーだけです。  設定する必要のあるエンティティ メンバーは、次の条件を満たす必要があります。  
+### <a name="expected-entity-members"></a>必要なエンティティ メンバー  
+ 既に説明したように、`Attach` メソッドを呼び出す前に設定する必要があるのは、エンティティ オブジェクトのいくつかのメンバーだけです。 設定する必要のあるエンティティ メンバーは、次の条件を満たす必要があります。  
   
 -   エンティティの ID の一部分である。  
   
@@ -389,27 +395,27 @@ public void UpdateProductInfo(Product newProd, Product originalProd)
   
 -   タイムスタンプであるか、<xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A> 属性が `Never` 以外の値に設定されている。  
   
- テーブルでオプティミスティック同時実行チェック用にタイムスタンプまたはバージョン番号を使用している場合は、<xref:System.Data.Linq.ITable.Attach%2A> を呼び出す前にこれらのメンバーを設定する必要があります。  Column 属性の <xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A> プロパティが true に設定されている場合、メンバーはオプティミスティック同時実行チェック専用です。  要求された更新は、データベース上のバージョン番号またはタイムスタンプ値が同じ場合にのみ、送信されます。  
+ テーブルでオプティミスティック同時実行チェック用にタイムスタンプまたはバージョン番号を使用している場合は、<xref:System.Data.Linq.ITable.Attach%2A> を呼び出す前にこれらのメンバーを設定する必要があります。 Column 属性の <xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A> プロパティが true に設定されている場合、メンバーはオプティミスティック同時実行チェック専用です。 要求された更新は、データベース上のバージョン番号またはタイムスタンプ値が同じ場合にのみ、送信されます。  
   
- また、<xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A> が `Never` に設定されていないメンバーもまた、オプティミスティック同時実行チェックに使用されます。  他の値が指定されない場合、既定値は `Always` です。  
+ また、<xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A> が `Never` に設定されていないメンバーもまた、オプティミスティック同時実行チェックに使用されます。 他の値が指定されない場合、既定値は `Always` です。  
   
- これらの必要なメンバーのいずれかが欠落している場合、<xref:System.Data.Linq.DataContext.SubmitChanges%2A> 中に <xref:System.Data.Linq.ChangeConflictException> \("行が見つからないか変更されています"\) がスローされます。  
+ これらの必要なメンバーのいずれかが欠落している場合、<xref:System.Data.Linq.ChangeConflictException> 中に <xref:System.Data.Linq.DataContext.SubmitChanges%2A> ("行が見つからないか変更されています") がスローされます。  
   
-### 状態  
- エンティティ オブジェクトが <xref:System.Data.Linq.DataContext> インスタンスにアタッチされた後、そのオブジェクトは `PossiblyModified` 状態にあると見なされます。  アタッチされたオブジェクトを強制的に `Modified` 状態にする方法は、3 つあります。  
+### <a name="state"></a>状態  
+ エンティティ オブジェクトが <xref:System.Data.Linq.DataContext> インスタンスにアタッチされた後、そのオブジェクトは `PossiblyModified` 状態にあると見なされます。 アタッチされたオブジェクトを強制的に `Modified` 状態にする方法は、3 つあります。  
   
 1.  未変更としてアタッチした後、フィールドを直接変更する。  
   
-2.  現在のオブジェクト インスタンスと元のオブジェクト インスタンスを受け入れる <xref:System.Data.Linq.Table%601.Attach%2A> オーバーロードを使ってアタッチする。  こうすると、古い値と新しい値が変更トラッカーに提供されるため、変更されたフィールドが自動的に判別されます。  
+2.  現在のオブジェクト インスタンスと元のオブジェクト インスタンスを受け入れる <xref:System.Data.Linq.Table%601.Attach%2A> オーバーロードを使ってアタッチする。 こうすると、古い値と新しい値が変更トラッカーに提供されるため、変更されたフィールドが自動的に判別されます。  
   
-3.  \(true に設定された\) 2 番目のブール値パラメーターを受け入れる <xref:System.Data.Linq.Table%601.Attach%2A> オーバーロードを使ってアタッチする。  こうすると、元の値を提供しなくても、変更トラッカーはオブジェクトが変更済みと見なします。  この手法では、オブジェクトにバージョン\/タイムスタンプ フィールドが含まれる必要があります。  
+3.  (true に設定された) 2 番目のブール値パラメーターを受け入れる <xref:System.Data.Linq.Table%601.Attach%2A> オーバーロードを使ってアタッチする。 こうすると、元の値を提供しなくても、変更トラッカーはオブジェクトが変更済みと見なします。 この手法では、オブジェクトにバージョン/タイムスタンプ フィールドが含まれる必要があります。  
   
- 詳細については、「[Object States and Change\-Tracking](../../../../../../docs/framework/data/adonet/sql/linq/object-states-and-change-tracking.md)」を参照してください。  
+ 詳細については、次を参照してください。[オブジェクトの状態と変更の追跡](../../../../../../docs/framework/data/adonet/sql/linq/object-states-and-change-tracking.md)です。  
   
  アタッチ対象のオブジェクトと同じ ID を持つエンティティ オブジェクトが ID キャッシュ内に既に存在する場合、<xref:System.Data.Linq.DuplicateKeyException> がスローされます。  
   
- オブジェクトの `IEnumerable` セットを使ってアタッチするとき、既存のキーが含まれる場合には、<xref:System.Data.Linq.DuplicateKeyException> がスローされます。  残りのオブジェクトはアタッチされません。  
+ オブジェクトの `IEnumerable` セットを使ってアタッチするとき、既存のキーが含まれる場合には、<xref:System.Data.Linq.DuplicateKeyException> がスローされます。 残りのオブジェクトはアタッチされません。  
   
-## 参照  
- [N\-Tier and Remote Applications with LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)   
- [Background Information](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
+## <a name="see-also"></a>関連項目  
+ [N 層でおよびリモート アプリケーション LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)  
+ [背景情報](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

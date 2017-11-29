@@ -1,79 +1,81 @@
 ---
-title: "&lt;disableFusionUpdatesFromADManager&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<disableFusionUpdatesFromADManager> 要素"
-  - "disableFusionUpdatesFromADManager 要素"
+title: "&lt;disableFusionUpdatesFromADManager&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- disableFusionUpdatesFromADManager element
+- <disableFusionUpdatesFromADManager> element
 ms.assetid: 58d2866c-37bd-4ffa-abaf-ff35926a2939
-caps.latest.revision: 7
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: d4aa3343e7f3f60bbf6a57340d858c1ef12197bb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;disableFusionUpdatesFromADManager&gt; 要素
-アプリケーション ドメインの構成設定をランタイム ホストがオーバーライドできるという既定の動作を、無効にするかどうかを指定します。  
+# <a name="ltdisablefusionupdatesfromadmanagergt-element"></a>&lt;disableFusionUpdatesFromADManager&gt;要素
+アプリケーション ドメインの構成設定をランタイム ホストが上書きする既定の動作を無効化するかどうかを指定します。  
   
-## 構文  
+ \<configuration > 要素  
+\<ランタイム > 要素  
+\<disableFusionUpdatesFromADManager >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <disableFusionUpdatesFromADManager enabled="0|1"/>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|Attribute|説明|  
-|---------------|--------|  
-|enabled|必須の属性です。<br /><br /> Fusion の設定をオーバーライドする既定の機能を無効にするかどうかを指定します。|  
+|属性|説明|  
+|---------------|-----------------|  
+|enabled|必須の属性です。<br /><br /> Fusion の設定を上書きする既定の機能が無効になっているかどうかを指定します。|  
   
-## enabled 属性  
+## <a name="enabled-attribute"></a>enabled 属性  
   
 |値|説明|  
-|-------|--------|  
-|0|Fusion の設定をオーバーライドする機能を無効にしません。  [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] 以降では、これが既定の動作です。|  
-|1|Fusion の設定をオーバーライドする機能を無効にします。  これにより、.NET Framework の以前のバージョンの動作に戻ります。|  
+|-----------|-----------------|  
+|0|Fusion の設定を上書きする機能を無効にしないでください。 これは、以降で、既定の動作、[!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)]です。|  
+|1|Fusion の設定を上書きする機能を無効にします。 これは、.NET Framework の以前のバージョンの動作に戻ります。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
+|-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
   
-## 解説  
- [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] 以降の既定の動作では、<xref:System.AppDomainManager> オブジェクトが構成設定をオーバーライドできます。そのためには、<xref:System.AppDomainManager> の独自のサブクラスで、<xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=fullName> メソッドの実装に渡された <xref:System.AppDomainSetup> オブジェクトの <xref:System.AppDomainSetup.ConfigurationFile%2A> プロパティまたは <xref:System.AppDomainSetup.SetConfigurationBytes%2A> メソッドを使用します。  既定のアプリケーション ドメインでは、変更された設定によって、アプリケーション構成ファイルで指定された設定がオーバーライドされます。  その他のアプリケーション ドメインでは、<xref:System.AppDomainManager.CreateDomain%2A?displayProperty=fullName> メソッドまたは <xref:System.AppDomain.CreateDomain%2A?displayProperty=fullName> メソッドに渡された構成設定がオーバーライドされます。  
+## <a name="remarks"></a>コメント  
+ 以降で、 [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)]、既定の動作を許可するのには、<xref:System.AppDomainManager>を使用して構成設定を上書きするオブジェクト、<xref:System.AppDomainSetup.ConfigurationFile%2A>プロパティまたは<xref:System.AppDomainSetup.SetConfigurationBytes%2A>のメソッド、<xref:System.AppDomainSetup>実装に渡されるオブジェクト<xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType>のサブクラス内のメソッド<xref:System.AppDomainManager>です。 既定のアプリケーション ドメインは、変更する設定は、アプリケーション構成ファイルで指定した設定を上書きします。 渡された構成設定が上書きの他のアプリケーション ドメイン、<xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType>または<xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType>メソッドです。  
   
- 渡された構成情報を削除するには、新しい構成情報を渡すか、または null \(Visual Basic では `Nothing`\) を渡すことができます。  
+ 新しい構成情報を渡すか、null を渡します (`Nothing` Visual Basic で) で渡された構成情報を削除します。  
   
- 構成情報は、<xref:System.AppDomainSetup.ConfigurationFile%2A> プロパティと <xref:System.AppDomainSetup.SetConfigurationBytes%2A> メソッドのどちらか一方に渡すようにしてください。  両方に構成情報を渡した場合、<xref:System.AppDomainSetup.SetConfigurationBytes%2A> メソッドはアプリケーション構成ファイルの構成情報をオーバーライドするため、<xref:System.AppDomainSetup.ConfigurationFile%2A> プロパティに渡した情報は無視されます。  <xref:System.AppDomainSetup.ConfigurationFile%2A> プロパティを使用する場合は、<xref:System.AppDomainSetup.SetConfigurationBytes%2A> メソッドに null \(Visual Basic では `Nothing`\) を渡すことで、<xref:System.AppDomainManager.CreateDomain%2A?displayProperty=fullName> メソッドまたは <xref:System.AppDomain.CreateDomain%2A?displayProperty=fullName> メソッドの呼び出しで指定されたすべての構成バイトを削除できます。  
+ 両方に構成情報を渡さないでください、<xref:System.AppDomainSetup.ConfigurationFile%2A>プロパティおよび<xref:System.AppDomainSetup.SetConfigurationBytes%2A>メソッドです。 両方に構成情報を渡す場合、情報を渡す、<xref:System.AppDomainSetup.ConfigurationFile%2A>プロパティが無視されるため、<xref:System.AppDomainSetup.SetConfigurationBytes%2A>メソッドは、アプリケーション構成ファイルから構成情報をオーバーライドします。 使用する場合、<xref:System.AppDomainSetup.ConfigurationFile%2A>プロパティが null を渡す (`Nothing` Visual Basic で) に、<xref:System.AppDomainSetup.SetConfigurationBytes%2A>への呼び出しで指定された構成バイトを取り除く方法、<xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType>または<xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType>メソッドです。  
   
- 構成情報に加えて、<xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=fullName> メソッドの実装に渡される <xref:System.AppDomainSetup> オブジェクトの設定も変更できます。変更できる設定には、<xref:System.AppDomainSetup.ApplicationBase%2A>、<xref:System.AppDomainSetup.ApplicationName%2A>、<xref:System.AppDomainSetup.CachePath%2A>、<xref:System.AppDomainSetup.DisallowApplicationBaseProbing%2A>、<xref:System.AppDomainSetup.DisallowBindingRedirects%2A>、<xref:System.AppDomainSetup.DisallowCodeDownload%2A>、<xref:System.AppDomainSetup.DisallowPublisherPolicy%2A>、<xref:System.AppDomainSetup.DynamicBase%2A>、<xref:System.AppDomainSetup.LoaderOptimization%2A>、<xref:System.AppDomainSetup.PrivateBinPath%2A>、<xref:System.AppDomainSetup.PrivateBinPathProbe%2A>、<xref:System.AppDomainSetup.ShadowCopyDirectories%2A>、および <xref:System.AppDomainSetup.ShadowCopyFiles%2A> があります。  
+ 次の設定を変更する構成情報に加えて、<xref:System.AppDomainSetup>の実装に渡されるオブジェクト、<xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType>メソッド: <xref:System.AppDomainSetup.ApplicationBase%2A>、 <xref:System.AppDomainSetup.ApplicationName%2A>、 <xref:System.AppDomainSetup.CachePath%2A>、 <xref:System.AppDomainSetup.DisallowApplicationBaseProbing%2A>、 <xref:System.AppDomainSetup.DisallowBindingRedirects%2A>、 <xref:System.AppDomainSetup.DisallowCodeDownload%2A>、 <xref:System.AppDomainSetup.DisallowPublisherPolicy%2A>、 <xref:System.AppDomainSetup.DynamicBase%2A>、 <xref:System.AppDomainSetup.LoaderOptimization%2A>、 <xref:System.AppDomainSetup.PrivateBinPath%2A>、 <xref:System.AppDomainSetup.PrivateBinPathProbe%2A>、 <xref:System.AppDomainSetup.ShadowCopyDirectories%2A>、および<xref:System.AppDomainSetup.ShadowCopyFiles%2A>です。  
   
- `<disableFusionUpdatesFromADManager>` 要素を使用する代わりに、レジストリ設定を作成するか環境変数を設定して、既定の動作を無効にすることもできます。  レジストリの場合、`HKCU\Software\Microsoft\.NETFramework` または `HKLM\Software\Microsoft\.NETFramework` の下に `COMPLUS_disableFusionUpdatesFromADManager` という名前の DWORD 値を作成し、その値を 1 に設定します。  コマンド ラインの場合、`COMPLUS_disableFusionUpdatesFromADManager` 環境変数を 1 に設定します。  
+ 使用する代わりに、`<disableFusionUpdatesFromADManager>`要素、ことができますを無効にする既定の動作または環境変数を設定して、レジストリ設定を作成します。 レジストリで、という名前の DWORD 値を作成する`COMPLUS_disableFusionUpdatesFromADManager``HKCU\Software\Microsoft\.NETFramework`または`HKLM\Software\Microsoft\.NETFramework`、し、値を 1 に設定します。 環境変数を設定、コマンドラインで`COMPLUS_disableFusionUpdatesFromADManager`を 1 にします。  
   
-## 使用例  
- 次のコード例は、`<disableFusionUpdatesFromADManager>` 要素を使用して、Fusion の設定をオーバーライドする機能を無効にする方法を示しています。  
+## <a name="example"></a>例  
+ 次の例を使用して Fusion の設定を上書きする機能を無効にする方法を示しています、`<disableFusionUpdatesFromADManager>`要素。  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <disableFusionUpdatesFromADManager enabled="1" />  
@@ -81,7 +83,7 @@ caps.handback.revision: 7
 </configuration>  
 ```  
   
-## 参照  
- [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+## <a name="see-also"></a>関連項目  
+ [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [ランタイムがアセンブリを検索する方法](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)

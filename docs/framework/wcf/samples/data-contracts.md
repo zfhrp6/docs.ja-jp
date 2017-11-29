@@ -1,25 +1,28 @@
 ---
-title: "データ コントラクト | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "データ コントラクト"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 941049b6-8e98-497f-ab3f-19848241699f
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 21f85c21490f1200d1f486f44036356287aec91f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# データ コントラクト
+# <a name="data-contracts"></a>データ コントラクト
 このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のデータ コントラクトを示すサンプルが含まれています。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [基本的なデータ コントラクト](../../../../docs/framework/wcf/samples/basic-data-contract.md)  
  データ コントラクトを実装する方法を示します。  
   
@@ -33,7 +36,7 @@ caps.handback.revision: 4
  サーバーとクライアント間でオブジェクトを参照渡しする方法を示します。  
   
  [POCO サポート](../../../../docs/framework/wcf/samples/poco-support.md)  
- マークされていない型 \(シリアル化属性が適用されていない型で、POCO \(Plain Old CLR Object\) 型と呼ばれる場合もあります\) のシリアル化のサポートについて説明します。  
+ マークされていない型 (シリアル化属性が適用されていない型で、POCO (Plain Old CLR Object) 型と呼ばれる場合もあります) のシリアル化のサポートについて説明します。  
   
- [シリアル化バインダーの使用](../../../../docs/framework/wcf/samples/usage-of-serialization-binder.md)  
+ [シリアル化バインダーの使用法](../../../../docs/framework/wcf/samples/usage-of-serialization-binder.md)  
  このサンプルでは、<xref:System.Runtime.Serialization.SerializationBinder> を使用して、ジェネリック型のバージョンをシリアル化する際に変更する方法を示します。

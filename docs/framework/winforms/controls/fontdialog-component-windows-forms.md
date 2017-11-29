@@ -1,44 +1,45 @@
 ---
-title: "FontDialog コンポーネント (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "フォント ダイアログ ボックス, Windows フォーム"
-  - "FontDialog コンポーネント [Windows フォーム]"
-  - "フォント, ダイアログ ボックス"
+title: "FontDialog コンポーネント (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- fonts [Windows Forms], dialog box
+- FontDialog component [Windows Forms]
+- Font dialog box [Windows Forms], Windows Forms
 ms.assetid: 54015df3-aab2-4338-84e5-ba78cedbfdfc
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e92ce3e74ee4da518b78f8ab4ac5015a50a547b1
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# FontDialog コンポーネント (Windows フォーム)
-Windows フォームの <xref:System.Windows.Forms.FontDialog> コンポーネントは、定義済みのダイアログ ボックスです。  Windows オペレーティング システムの **\[フォント\]** ダイアログ ボックスと同じダイアログ ボックスです。  このコンポーネントは、<xref:System.Windows.Forms.CommonDialog> クラスを継承します。  
+# <a name="fontdialog-component-windows-forms"></a>FontDialog コンポーネント (Windows フォーム)
+Windows フォームの <xref:System.Windows.Forms.FontDialog> コンポーネントは、事前構成済みのダイアログ ボックスです。 これは、同じ**フォント** ダイアログ ボックスが、Windows オペレーティング システムによって公開されています。 このコンポーネントは、<xref:System.Windows.Forms.CommonDialog>クラスです。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [FontDialog コンポーネントの概要](../../../../docs/framework/winforms/controls/fontdialog-component-overview-windows-forms.md)  
- <xref:System.Windows.Forms.FontDialog> コンポーネントの概念の概要を紹介します。このコンポーネントは、構成前のダイアログ ボックスの表示に使用します。  このダイアログ ボックスを使用すると、フォントとその設定を操作できます。  
+ 一般的な概念が導入されています、<xref:System.Windows.Forms.FontDialog>コンポーネントは、構成済みのダイアログ ボックスを表示するために使用します。 ユーザーは、ダイアログ ボックスを使用して、フォントとその設定を操作することができます。  
   
- [方法 : FontDialog コンポーネントを使用してフォントの一覧を表示する](../../../../docs/framework/winforms/controls/how-to-show-a-font-list-with-the-fontdialog-component.md)  
- <xref:System.Windows.Forms.FontDialog> コンポーネントのインスタンスを使用して実行時にフォントを選択する方法について説明します。  
+ [方法: FontDialog コンポーネントを使用してフォントの一覧を表示する](../../../../docs/framework/winforms/controls/how-to-show-a-font-list-with-the-fontdialog-component.md)  
+ インスタンスで、実行時にフォントを選択する方法について説明します、<xref:System.Windows.Forms.FontDialog>コンポーネントです。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.Windows.Forms.FontDialog>  
- <xref:System.Windows.Forms.FontDialog> クラスとそのメンバーに関する参照情報を提供します。  
+ <xref:System.Windows.Forms.FontDialog> クラスとそのメンバーに関するリファレンス情報を提供します。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [ダイアログ ボックス コントロールおよびコンポーネント](../../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md)  
- アプリケーションまたはシステムとの標準的なやり取りを可能にする一連のコントロールおよびコンポーネントについて説明します。  
+ アプリケーションまたはシステムと標準的なやり取りを実行するユーザーを有効にするコントロールとコンポーネントのセットについて説明します。  
   
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- 使用方法に関する情報へのリンクを含む、Windows フォーム コントロールの完全なリストを提供します。
+ その使用に関する情報リンクと共に、Windows フォーム コントロールの完全な一覧を提供します。

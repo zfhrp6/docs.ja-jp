@@ -1,60 +1,64 @@
 ---
-title: "方法 : アプリケーション設定を検証する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "アプリケーション設定, 検証"
-  - "アプリケーション設定, Windows フォーム"
-  - "検証 (アプリケーション設定を)"
+title: "方法 : アプリケーション設定を検証する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- validating application settings
+- application settings [Windows Forms], Windows Forms
+- application settings [Windows Forms], validating
 ms.assetid: 9f145ada-4267-436a-aa4c-c4dcffd0afb7
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 309429c2481bad3a8dff4708d9e2ea8a03057a4e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : アプリケーション設定を検証する
-ここでは、アプリケーション設定を永続化する前に検証する方法について説明します。  
+# <a name="how-to-validate-application-settings"></a>方法 : アプリケーション設定を検証する
+このトピックでは、アプリケーション設定を永続化する前に検証する方法について説明します。  
   
- アプリケーションは厳密に型指定されるため、特定の設定に対してユーザーが誤った型を指定することはほとんどありません。  しかし、たとえば、誕生日として未来の日付を指定するなど、ユーザーが許容範囲外の設定値を割り当てようとすることもあります。  すべてのアプリケーション設定クラスの親クラスである <xref:System.Configuration.ApplicationSettingsBase> では、このような範囲チェックを有効にする 4 つのイベントが公開されています。  これらのイベントを処理すると、すべての検証コードを 1 か所に配置できるため、検証コードがプロジェクト全体に分散しません。  
+ アプリケーション設定は厳密に型指定されているため、ユーザーが特定の設定に誤った型のデータを割り当てることはほとんどありません。 しかし、誕生日として未来の日付を入力するなど、ユーザーが許容範囲外の値を設定に割り当てようとする場合もあります。 <xref:System.Configuration.ApplicationSettingsBase>で、すべてのアプリケーション設定クラスの親クラスは、このような範囲チェックを有効にする 4 つのイベントを公開します。 これらのイベントを処理すると、検証コードがプロジェクト全体に分散するのではなく、すべての検証コードが 1 か所に配置されます。  
   
- 次の表で説明するように、使用するイベントは設定をいつ検証するかによって決まります。  
+ 次の表に示すように、使用するイベントは設定をいつ検証する必要があるかによって決まります。  
   
-|Event|発生と使用|  
-|-----------|-----------|  
-|<xref:System.Configuration.ApplicationSettingsBase.SettingsLoaded>|設定プロパティ グループが初めて読み込まれた後に発生します。<br /><br /> このイベントを使用して、プロパティ グループ全体の初期値がアプリケーション内で使用される前に検証します。|  
-|<xref:System.Configuration.ApplicationSettingsBase.SettingChanging>|単一の設定プロパティの値が変更される前に発生します。<br /><br /> このイベントを使用して、単一のプロパティが変更される前に検証します。  処理および選択に関するフィードバックを即時にユーザーに提供できます。|  
-|<xref:System.Configuration.ApplicationSettingsBase.PropertyChanged>|単一の設定プロパティの値が変更された後に発生します。<br /><br /> このイベントを使用して、単一のプロパティが変更された後で検証します。  時間がかかる非同期の検証プロセスが必要な場合を除き、このイベントを検証に使用することはほとんどありません。|  
-|<xref:System.Configuration.ApplicationSettingsBase.SettingsSaving>|設定プロパティ グループが格納される前に発生します。<br /><br /> このイベントを使用して、プロパティ グループ全体の値がディスクに永続化される前に検証します。|  
+|イベント|発生と使用|  
+|-----------|------------------------|  
+|<xref:System.Configuration.ApplicationSettingsBase.SettingsLoaded>|設定プロパティ グループの初期読み込み後に発生します。<br /><br /> プロパティ グループ全体の初期値がアプリケーション内で使用される前に値を検証するには、このイベントを使用します。|  
+|<xref:System.Configuration.ApplicationSettingsBase.SettingChanging>|1 つの設定プロパティの値が変更される前に発生します。<br /><br /> 1 つのプロパティが変更される前にプロパティを検証するには、このイベントを使用します。 アクションと選択に関するフィードバックをユーザーにすぐに提供できます。|  
+|<xref:System.Configuration.ApplicationSettingsBase.PropertyChanged>|1 つの設定プロパティの値が変更された後に発生します。<br /><br /> 1 つのプロパティが変更された後にプロパティを検証するには、このイベントを使用します。 時間がかかる非同期の検証プロセスが必要な場合を除き、このイベントを検証に使用することはほとんどありません。|  
+|<xref:System.Configuration.ApplicationSettingsBase.SettingsSaving>|設定プロパティ グループが保存される前に発生します。<br /><br /> プロパティ グループ全体の値がディスクに永続化される前に値を検証するには、このイベントを使用します。|  
   
- 通常、同じアプリケーション内のすべてのイベントを検証の目的で使用することはありません。  たとえば、多くの場合、<xref:System.Configuration.ApplicationSettingsBase.SettingChanging> イベントを処理するだけですべての検証要件を満たすことができます。  
+ 通常は、検証のために同じアプリケーション内でこれらのイベントをすべて使用するわけではありません。 たとえば、可能であれば多くの場合、要件を満たすすべての検証のみを処理することによって、<xref:System.Configuration.ApplicationSettingsBase.SettingChanging>イベント。  
   
- 一般に、イベント ハンドラーが無効な値を検出すると、次のいずれかを実行します。  
+ イベント ハンドラーは、無効な値を検出すると、一般に次のいずれかのアクションを実行します。  
   
--   既定値など、正しいことが判明している値を自動的に入力します。  
+-   既定値など、正しいことがわかっている値を自動的に入力します。  
   
--   情報のサーバー コードをユーザーに再照会します。  
+-   サーバー コードのユーザーに情報を再度照会します。  
   
--   関連付けられたアクションの前に発生した <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> や <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving> などのイベントの場合は、引数 <xref:System.ComponentModel.CancelEventArgs> を使用して操作を取り消します。  
+-   など、関連付けられたアクションの前に発生するイベントに対して<xref:System.Configuration.ApplicationSettingsBase.SettingChanging>と<xref:System.Configuration.ApplicationSettingsBase.SettingsSaving>を使用して、<xref:System.ComponentModel.CancelEventArgs>操作をキャンセルする引数。  
   
  イベント処理の詳細については、「[イベント ハンドラーの概要](../../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)」を参照してください。  
   
- 次のプロシージャは、<xref:System.Configuration.ApplicationSettingsBase.SettingChanging> イベントまたは <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving> イベントを使用して有効な誕生日をテストする方法を示しています。  このプロシージャは、アプリケーション設定を既に作成していることを前提にしています。この例では、 `DateOfBirth` という名前の設定の範囲チェックを実行します。  設定の作成の詳細については、「[方法 : アプリケーション設定を作成する](../../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)」を参照してください。  
+ 以下の手順は、いずれかを使用して有効な生年月日をテストする方法を示して、<xref:System.Configuration.ApplicationSettingsBase.SettingChanging>または<xref:System.Configuration.ApplicationSettingsBase.SettingsSaving>イベント。 これらの手順は、アプリケーション設定を既に作成していることを前提としています。この例では、`DateOfBirth` という名前の設定の範囲チェックを実行します。 設定を作成する方法の詳細については、「[方法 : アプリケーション設定を作成する](../../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)」を参照してください。  
   
-### アプリケーション設定オブジェクトを取得するには  
+### <a name="to-obtain-the-application-settings-object"></a>アプリケーション設定オブジェクトを取得するには  
   
--   次の項目のいずれかを実行してアプリケーション設定オブジェクト \(ラッパー インスタンス\) への参照を取得します。  
+-   次の項目のいずれかを実行して、アプリケーション設定オブジェクト (ラッパー インスタンス) への参照を取得します。  
   
-    -   Visual Studio の**プロパティ エディター**の \[アプリケーション設定\] ダイアログ ボックスを使用して設定を作成したときは、次の式によって使用している言語用に生成された既定の設定オブジェクトを取得できます。  
+    -   Visual Studio の**プロパティ エディター**で [アプリケーション設定] ダイアログ ボックスを使用して設定を作成した場合は、次の式によって、使用している言語用に生成された既定の設定オブジェクトを取得できます。  
   
         ```csharp  
         Configuration.Settings.Default   
@@ -66,11 +70,11 @@ caps.handback.revision: 17
   
          または  
   
-    -   Visual Basic 開発者がプロジェクト デザイナーを使用してアプリケーション設定を作成したときは、[My.Settings オブジェクト](../../../../ocs/visual-basic/language-reference/objects/my-settings-object.md) を使用して設定を取得できます。  
+    -   Visual Basic 開発者がプロジェクト デザイナーを使用してアプリケーション設定を作成した場合は、[My.Settings オブジェクト](~/docs/visual-basic/language-reference/objects/my-settings-object.md)を使用して設定を取得できます。  
   
          または  
   
-    -   <xref:System.Configuration.ApplicationSettingsBase> から直接派生して設定を作成したときは、手動でクラスをインスタンス化する必要があります。  
+    -   派生することで、設定を作成する場合<xref:System.Configuration.ApplicationSettingsBase>直接、手動で、クラスのインスタンスを作成する必要があります。  
   
         ```csharp  
         MyCustomSettings settings = new MyCustomSettings();  
@@ -80,15 +84,15 @@ caps.handback.revision: 17
         Dim Settings as New MyCustomSettings()  
         ```  
   
- 次のプロシージャでは、この最後に紹介した項目を実行してアプリケーション設定オブジェクトを取得していることを前提にしています。  
+ 以下の手順は、この手順の最後の項目を実行してアプリケーション設定オブジェクトを取得したことを前提としています。  
   
-### 設定の変更時にアプリケーション設定を検証するには  
+### <a name="to-validate-application-settings-when-a-setting-is-changing"></a>設定の変更時にアプリケーション設定を検証するには  
   
-1.  C\# を使用している場合は、フォームまたはコントロールの  `Load`  イベント内に <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> イベントのイベント ハンドラーを追加します。  
+1.  C# 開発者は、フォームまたはコントロールのかどうかは`Load`イベント、イベント ハンドラーを追加、<xref:System.Configuration.ApplicationSettingsBase.SettingChanging>イベント。  
   
      または  
   
-     Visual Basic を使用している場合は、`WithEvents` キーワードを使用して `Settings` 変数を宣言します。  
+     Visual Basic 開発者の場合、`WithEvents` キーワードを使用して `Settings` 変数を宣言します。  
   
     ```csharp  
     public void Form1_Load(Object sender, EventArgs e)   
@@ -103,7 +107,7 @@ caps.handback.revision: 17
     End Sub   
     ```  
   
-2.  イベント ハンドラーを定義し、その中に誕生日の範囲チェックを実行するコードを記述します。  
+2.  イベント ハンドラーを定義し、誕生日の範囲チェックを実行するコードをイベント ハンドラー内に記述します。  
   
     ```csharp  
     private void MyCustomSettings_SettingChanging(Object sender, SettingChangingEventArgs e)  
@@ -130,9 +134,9 @@ caps.handback.revision: 17
     End Sub  
     ```  
   
-### 保存時にアプリケーション設定を検証するには  
+### <a name="to-validate-application-settings-when-a-save-occurs"></a>保存時にアプリケーション設定を検証するには  
   
-1.  フォームまたはコントロールの  `Load`  イベント内に <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving> イベントのイベント ハンドラーを追加します。  
+1.  フォームまたはコントロールの`Load`イベント、イベント ハンドラーを追加、<xref:System.Configuration.ApplicationSettingsBase.SettingsSaving>イベント。  
   
     ```csharp  
     public void Form1_Load(Object sender, EventArgs e)   
@@ -147,7 +151,7 @@ caps.handback.revision: 17
     End Sub  
     ```  
   
-2.  イベント ハンドラーを定義し、その中に誕生日の範囲チェックを実行するコードを記述します。  
+2.  イベント ハンドラーを定義し、誕生日の範囲チェックを実行するコードをイベント ハンドラー内に記述します。  
   
     ```csharp  
     private void MyCustomSettings_SettingsSaving(Object sender, SettingsSavingEventArgs e)  
@@ -166,6 +170,6 @@ caps.handback.revision: 17
     End Sub  
     ```  
   
-## 参照  
- [Windows フォーム内でのイベント ハンドラーの作成](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)   
- [方法 : アプリケーション設定を作成する](../../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)
+## <a name="see-also"></a>関連項目  
+ [Windows フォーム内でのイベント ハンドラーの作成](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
+ [方法: アプリケーション設定を作成する](../../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)

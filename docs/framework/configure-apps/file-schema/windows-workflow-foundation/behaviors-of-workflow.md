@@ -1,54 +1,57 @@
 ---
-title: "ワークフローの &lt;behaviors&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: "ワークフローの &lt;behaviors&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 ms.assetid: 3c6017b6-0c4f-4192-bd67-9515f5d1ec82
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 40278c0a3d99dd5c37df1d642b8a2e13e9f62633
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ワークフローの &lt;behaviors&gt;
-この要素には、**serviceBehaviors** コレクションが含まれています。  コレクション内の各要素は、ワークフロー サービスによって使用されるそれぞれの動作要素を定義します。  各動作要素は、その一意の **name** 属性で識別されます。  
+# <a name="ltbehaviorsgt-of-workflow"></a>ワークフローの &lt;behaviors&gt;
+この要素が含まれています、 **serviceBehaviors**コレクション。  コレクション内の各要素は、ワークフロー サービスによって使用されるそれぞれの動作要素を定義します。 各動作要素は、独自のによって識別される**名前**属性。  
   
- \<system.ServiceModel\>  
+ \<システムです。ServiceModel >  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
-  
+```xml  
 <behaviors>  
-   <serviceBehaviors>  
-   </serviceBehaviors>  
+  <serviceBehaviors>  
+  </serviceBehaviors>  
 </behaviors>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
  なし  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<serviceBehaviors\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/servicebehaviors-of-workflow.md)|この構成セクションは、特定のワークフロー サービスに対して定義されたすべての動作を表します。|  
+|-------------|-----------------|  
+|[\<serviceBehaviors >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/servicebehaviors-of-workflow.md)|この構成セクションは、特定のワークフロー サービスに対して定義されたすべての動作を表します。|  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<system.serviceModel\>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)|すべてのワークフロー構成要素のルート要素。|  
+|-------------|-----------------|  
+|[\<system.serviceModel>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)|すべてのワークフロー構成要素のルート要素。|  
   
-## 参照  
- <xref:System.ServiceModel.Configuration.BehaviorsSection>   
- <xref:System.ServiceModel.Configuration.ServiceBehaviorElementCollection>   
- <xref:System.ServiceModel.Configuration.ServiceBehaviorElement>   
- [動作を使用したランタイムの構成と拡張](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.ServiceModel.Configuration.BehaviorsSection>  
+ <xref:System.ServiceModel.Configuration.ServiceBehaviorElementCollection>  
+ <xref:System.ServiceModel.Configuration.ServiceBehaviorElement>  
+ [構成して、ランタイムのビヘイビアーの使用を拡張します。](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)

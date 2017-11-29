@@ -1,32 +1,38 @@
 ---
-title: "DataSet への既存の制約の追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DataSet への既存の制約の追加"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 307d2809-208b-4cf8-b6a9-5d16f15fc16c
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 0e457113eff471c620ccdbf78337d2013d7a62bb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataSet への既存の制約の追加
-**DataAdapter** の **Fill** メソッドは、<xref:System.Data.DataSet> にデータ ソースからのテーブルの列および行だけを格納します。制約は一般にデータ ソースで設定されますが、既定では **Fill** メソッドは **DataSet** にスキーマ情報を追加しません。  データ ソースからの既存の主キー制約情報を **DataSet** に設定するには、**DataAdapter** の **FillSchema** メソッドを呼び出すか、または **Fill** を呼び出す前に **DataAdapter** の **MissingSchemaAction** プロパティを **AddWithKey** に設定します。  これにより、データ ソースの主キー制約が **DataSet** の主キー制約に反映されます。  外部キー制約情報はインクルードされないため、「[DataTable の制約](../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md)」で示すように明示的に作成する必要があります。  
+# <a name="adding-existing-constraints-to-a-dataset"></a>DataSet への既存の制約の追加
+**塗りつぶし**のメソッド、 **DataAdapter**塗りつぶします、<xref:System.Data.DataSet>のみテーブルの列およびデータ ソースからの行も制約は一般設定、データ ソースによって、 **を塗りつぶす**メソッドでは、このスキーマ情報には追加されません、**データセット**既定です。 設定する、**データセット**呼び出すかを使用してデータ ソースから既存の主キー制約情報できます、 **FillSchema**のメソッド、 **DataAdapter**、設定や、**MissingSchemaAction**のプロパティ、 **DataAdapter**に**AddWithKey**呼び出す前に**塗りつぶし**です。 これが主キーをにより、内の制約、**データセット**データ ソースに反映します。 外部キー制約情報が含まれていないのように、明示的に作成する必要があります[DataTable の制約](../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md)です。  
   
- **DataSet** 内にデータを格納する前にスキーマ情報を追加すると、主キー制約が **DataSet** 内の <xref:System.Data.DataTable> オブジェクトにインクルードされます。  その結果、**DataSet** に対して格納を行う追加の呼び出しを行ったとき、その主キー列情報を使用してデータ ソースから得られた新しい行と各 **DataTable** の現在の行を一致させ、各テーブルの現在のデータをデータ ソースのデータで上書きします。  スキーマ情報がないと、**DataSet** にデータ ソースからの新しい行が付け加えられ、重複行が発生します。  
+ スキーマ情報を追加する、**データセット**主キー制約に含まれているようにデータを設定する前に、<xref:System.Data.DataTable>内のオブジェクト、**データセット**です。 その結果、追加時に入力への呼び出し、**データセット**が行われますが、プライマリ キー列情報を使用して、現在の行の各データ ソースから新しい行と一致**DataTable**との現在のデータテーブルは、データ ソースのデータで上書きされます。 スキーマ情報がない場合、新しいデータ ソースから行が、**データセット**、その結果が重複する行にします。  
   
 > [!NOTE]
->  データ ソースの列を自動インクリメント列として指定した場合は、**FillSchema** メソッド \(**MissingSchemaAction** を **AddWithKey** に設定した **Fill** メソッド\) が、**AutoIncrement** プロパティを `true` に設定した **DataColumn** を作成します。  ただし、**AutoIncrementStep** 値と **AutoIncrementSeed** 値は明示的に設定する必要があります。  自動インクリメント列の詳細については、「[AutoIncrement 列の作成](../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-autoincrement-columns.md)」を参照してください。  
+>  データ ソース内の列が自動インクリメントとして識別された場合、 **FillSchema**メソッド、または**塗りつぶし**メソッドを**MissingSchemaAction**の**AddWithKey**、作成、 **DataColumn**で、 **AutoIncrement**プロパティに設定`true`です。 ただしを設定する必要がありますには、 **AutoIncrementStep**と**AutoIncrementSeed**値を自分でします。 自動インクリメント列の詳細については、次を参照してください。 [AutoIncrement 列の作成](../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-autoincrement-columns.md)です。  
   
- **FillSchema** の使用や **MissingSchemaAction** の設定を **AddWithKey** にする場合、データ ソースで主キー列情報を確認するための追加の処理が必要になります。  この追加の処理によりパフォーマンスが低下する場合があります。  デザイン時に主キー情報がわかっている場合は、最適のパフォーマンスを得るために主キー列 \(複数の場合もある\) を明示的に指定することをお勧めします。  テーブルに関する主キー情報を明示的に設定する方法については、「[主キーの定義](../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md)」を参照してください。  
+ 使用して**FillSchema**またはの設定、 **MissingSchemaAction**に**AddWithKey**主キー列情報を確認するのにはデータ ソースで余分な処理が必要です。 この追加の処理によりパフォーマンスが低下する場合があります。 デザイン時に主キー情報がわかっている場合は、最適のパフォーマンスを得るために主キー列 (複数の場合もある) を明示的に指定することをお勧めします。 テーブルの主キーの情報を明示的に設定については、次を参照してください。[主キーを定義する](../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md)です。  
   
- **FillSchema** を使用して **DataSet** にスキーマ情報を追加する方法を次のコード サンプルに示します。  
+ 次のコード例は、スキーマ情報を追加する方法を示しています、**データセット**を使用して**FillSchema**です。  
   
 ```vb  
 Dim custDataSet As DataSet = New DataSet()  
@@ -42,7 +48,7 @@ custAdapter.FillSchema(custDataSet, SchemaType.Source, "Customers");
 custAdapter.Fill(custDataSet, "Customers");  
 ```  
   
- **Fill** メソッドの **MissingSchemaAction.AddWithKey** プロパティを使用してスキーマ情報を **DataSet** に追加する方法を次のコード サンプルに示します。  
+ 次のコード例は、スキーマ情報を追加する方法を示しています、**データセット**を使用して、 **MissingSchemaAction.AddWithKey**のプロパティ、**塗りつぶし**メソッドです。  
   
 ```vb  
 Dim custDataSet As DataSet = New DataSet()  
@@ -58,14 +64,14 @@ custAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
 custAdapter.Fill(custDataSet, "Customers");  
 ```  
   
-## 複数の結果セットの処理  
- **DataAdapter** は、**SelectCommand** から返された複数の結果セットを検出すると **DataSet** に複数のテーブルを作成します。  これらのテーブルには、0 から始まるインクリメンタル既定名 **Table** *N* が割り当てられます。したがって "Table0" ではなく、**Table** から始まります。  テーブル名が **FillSchema** メソッドに引数として渡されると、0 からから始まるインクリメンタル名 **TableName** *N* が割り当てられます。ここでは、"TableName0" ではなく **TableName** から始まります。  
+## <a name="handling-multiple-result-sets"></a>複数の結果セットの処理  
+ 場合、 **DataAdapter**から返された複数の結果セットが発生した、 **SelectCommand**、複数のテーブルが作成されます、**データセット**です。 テーブルが、0 から始まるインクリメンタル既定名を指定する**テーブル** *N*以降で、**テーブル**したがって"Table0"の代わりにします。 テーブル名がへの引数として渡されたかどうか、 **FillSchema**メソッド、テーブルがある、0 から始まるインクリメンタル名**TableName** *N*始まる**TableName** "TableName0"ではなくです。  
   
 > [!NOTE]
->  **OleDbDataAdapter** オブジェクトの **FillSchema** メソッドが複数の結果セットを返すコマンドとして呼び出された場合は、最初の結果セットのスキーマ情報が返されます。  **OleDbDataAdapter** を使用して複数の結果セットのスキーマ情報を返すときは、**Fill** メソッドを呼び出すときに **AddWithKey** に設定した **MissingSchemaAction** を指定してスキーマ情報を取得することをお勧めします。  
+>  場合、 **FillSchema**のメソッド、 **OleDbDataAdapter**を複数の結果セットを返すコマンドのオブジェクトが呼び出されると、最初の結果セットからスキーマ情報のみが返されます。 ときに複数の結果のスキーマ情報セットを返すを使用して、 **OleDbDataAdapter**を指定することをお勧め、 **MissingSchemaAction**の**AddWithKey**呼び出すときに、スキーマ情報を取得し、**塗りつぶし**メソッドです。  
   
-## 参照  
- [DataAdapter と DataReader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)   
- [DataSets、DataTables、および DataViews](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
- [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [Dataadapter と Datareader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [DataSet、DataTable、および DataView](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

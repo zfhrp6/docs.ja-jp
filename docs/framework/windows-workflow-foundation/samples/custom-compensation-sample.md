@@ -1,23 +1,27 @@
 ---
-title: "カスタム補正のサンプル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "カスタム補正のサンプル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 385920da-9284-44bf-9fe9-0d87c7478ec5
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c3a9745c0cdd3a2d7050aed083d2eee5dfd4aaaf
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# カスタム補正のサンプル
-このサンプルでは、<xref:System.Activities.Statements.CompensableActivity> とその補正ハンドラーを使用してカスタム補正ロジックを定義する方法を示します。このサンプルでは、トラック レンタル会社のシナリオをモデル化しています。  
+# <a name="custom-compensation-sample"></a>カスタム補正のサンプル
+このサンプルでは、<xref:System.Activities.Statements.CompensableActivity> とその補正ハンドラーを使用してカスタム補正ロジックを定義する方法を示します。 このサンプルでは、トラック レンタル会社のシナリオをモデル化しています。  
   
-## サンプルの詳細  
+## <a name="sample-details"></a>サンプルの詳細  
  シミュレートする手順は次のとおりです。  
   
 1.  ユーザーが日付を指定してトラック レンタルの見積もりを要求します。  
@@ -38,23 +42,23 @@ caps.handback.revision: 13
   
     1.  顧客がプレミアム アカウントでなく、かつ利用予定日の 10 日前を過ぎている場合、サービス手数料が請求されます。それ以外の場合は、サービス手数料が返金されます。  
   
-    2.  残りの補正可能なアクティビティ \(トラックの注文 \+ トラックの注文料金\) については、既定の補正ロジックに従って、逆の順序で補正が実行されます。  
+    2.  残りの補正可能なアクティビティ (トラックの注文 + トラックの注文料金) については、既定の補正ロジックに従って、逆の順序で補正が実行されます。  
   
-#### サンプルを設定、ビルド、および実行するには  
+#### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
-1.  [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] を使用して、CustomCompensation.sln ソリューション ファイルを開きます。このソリューションは \\WF\\Basic\\Compensation\\CustomCompensation ディレクトリにあります。  
+1.  [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] を使用して、CustomCompensation.sln ソリューション ファイルを開きます。 このソリューションは \WF\Basic\Compensation\CustomCompensation ディレクトリにあります。  
   
 2.  Ctrl キーと Shift キーを押しながら B キーを押して、ソリューションをビルドします。  
   
 3.  Ctrl キーを押しながら F5 キーを押してアプリケーションを実行します。  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Compensation\CustomCompensation`  
   
-## 参照
+## <a name="see-also"></a>関連項目

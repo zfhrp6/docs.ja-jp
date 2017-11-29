@@ -1,25 +1,28 @@
 ---
-title: "TransportBindingElement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: TransportBindingElement
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 54ecfbee-53c0-410c-a7fa-a98f2e40c545
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c130093b9600c324e7179febce6857341b8a7d3c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# TransportBindingElement
+# <a name="transportbindingelement"></a>TransportBindingElement
 TransportBindingElement  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class TransportBindingElement : BindingElement  
@@ -31,45 +34,45 @@ class TransportBindingElement : BindingElement
 };  
 ```  
   
-## メソッド  
+## <a name="methods"></a>メソッド  
  TransportBindingElement クラスは、メソッドを一切定義しません。  
   
-## プロパティ  
+## <a name="properties"></a>プロパティ  
  TransportBindingElement クラスには、次のプロパティがあります。  
   
-### ManualAddressing  
+### <a name="manualaddressing"></a>ManualAddressing  
  データ型 : boolean  
   
  アクセスの種類 : 読み取り専用  
   
  メッセージのアドレス指定をユーザーが制御するかどうかを指定するブール値。  
   
-### MaxBufferPoolSize  
+### <a name="maxbufferpoolsize"></a>MaxBufferPoolSize  
  データ型 : sint64  
   
  アクセスの種類 : 読み取り専用  
   
  バインディングに使用するバッファー プールの最大サイズ。  
   
-### MaxReceivedMessageSize  
+### <a name="maxreceivedmessagesize"></a>MaxReceivedMessageSize  
  データ型 : sint64  
   
  アクセスの種類 : 読み取り専用  
   
  このバインディングで処理されるメッセージの最大サイズ。  
   
-### Scheme  
- データ型 : string  
+### <a name="scheme"></a>Scheme  
+ データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  トランスポートの URI スキーム。  
   
-## 要件  
+## <a name="requirements"></a>要件  
   
 |MOF|Servicemodel.mof にて宣言済み。|  
-|---------|------------------------------|  
-|名前空間|root\\ServiceModel で定義|  
+|---------|-----------------------------------|  
+|Namespace|root\ServiceModel で定義|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels.TransportBindingElement>

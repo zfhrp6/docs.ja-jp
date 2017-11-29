@@ -1,25 +1,31 @@
 ---
-title: "クライアントのチャネル レベルのプログラミング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "クライアントのチャネル レベルのプログラミング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 3b787719-4e77-4e77-96a6-5b15a11b995a
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a6ffe482c8d04314b79ee5bb7029d2583c56c363
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# クライアントのチャネル レベルのプログラミング
-ここでは、<xref:System.ServiceModel.ClientBase%601?displayProperty=fullName> クラスとこれに関連するオブジェクト モデルを使用せずに、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント アプリケーションを作成する方法を説明します。  
+# <a name="client-channel-level-programming"></a>クライアントのチャネル レベルのプログラミング
+ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クラスとこれに関連するオブジェクト モデルを使用せずに、<xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType> クライアント アプリケーションを作成する方法を説明します。  
   
-## メッセージの送信  
+## <a name="sending-messages"></a>メッセージの送信  
  メッセージを送信し、応答を受信して処理できるようにするには、次の手順に従う必要があります。  
   
 1.  バインディングを作成します。  
@@ -32,19 +38,19 @@ caps.handback.revision: 6
   
 5.  すべてのチャネル オブジェクトを閉じます。  
   
-#### バインディングの作成  
- 受信の場合 \(「[サービス チャネル レベルのプログラミング](../../../../docs/framework/wcf/extending/service-channel-level-programming.md)」を参照\) と同様に、メッセージの送信はバインディングを作成することから始まります。この例では、新しい <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=fullName> を作成し、その要素コレクションに <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=fullName> を追加します。  
+#### <a name="creating-a-binding"></a>バインディングの作成  
+ 受信側の場合と同様に (を参照してください[サービス チャネル レベルのプログラミング](../../../../docs/framework/wcf/extending/service-channel-level-programming.md))、メッセージの開始を送信するバインディングを作成します。 この例では、新しい <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> を作成し、その要素コレクションに <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType> を追加します。  
   
-#### ChannelFactory のビルド  
- <xref:System.ServiceModel.Channels.IChannelListener?displayProperty=fullName> を作成する代わりに、今回はバインディングで型パラメーターを <xref:System.ServiceModel.Channels.IRequestChannel?displayProperty=fullName> にして <xref:System.ServiceModel.ChannelFactory.CreateFactory%2A?displayProperty=fullName> を呼び出すことで、<xref:System.ServiceModel.ChannelFactory%601?displayProperty=fullName> を作成します。チャネル リスナーは受信メッセージを待機する側で使用されますが、チャネル ファクトリはチャネルを作成するために通信を開始する側で使用されます。チャネル リスナーと同様に、チャネル ファクトリも使用する前に開く必要があります。  
+#### <a name="building-a-channelfactory"></a>ChannelFactory のビルド  
+ <xref:System.ServiceModel.Channels.IChannelListener?displayProperty=nameWithType> を作成する代わりに、今回はバインディングで型パラメーターを <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> にして <xref:System.ServiceModel.ChannelFactory.CreateFactory%2A?displayProperty=nameWithType> を呼び出すことで、<xref:System.ServiceModel.Channels.IRequestChannel?displayProperty=nameWithType> を作成します。 チャネル リスナーは受信メッセージを待機する側で使用されますが、チャネル ファクトリはチャネルを作成するために通信を開始する側で使用されます。 チャネル リスナーと同様に、チャネル ファクトリも使用する前に開く必要があります。  
   
-#### チャネルの作成  
- 次に <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=fullName> を呼び出して、<xref:System.ServiceModel.Channels.IRequestChannel> を作成します。この呼び出しには、新しく作成するチャネルを使用して通信を行う対象となるエンドポイントのアドレスを使用します。チャネルを作成したら、このチャネルで Open を呼び出して通信できる状態にします。この Open の呼び出しにより、トランスポートの性質に応じて、目的のエンドポイントとの接続が開始されることもあれば、ネットワーク上では何も起こらないこともあります。  
+#### <a name="creating-a-channel"></a>チャネルの作成  
+ 次に <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> を呼び出して、<xref:System.ServiceModel.Channels.IRequestChannel> を作成します。 この呼び出しには、新しく作成するチャネルを使用して通信を行う対象となるエンドポイントのアドレスを使用します。 チャネルを作成したら、このチャネルで Open を呼び出して通信できる状態にします。 この Open の呼び出しにより、トランスポートの性質に応じて、目的のエンドポイントとの接続が開始されることもあれば、ネットワーク上では何も起こらないこともあります。  
   
-#### 要求の送信と応答の読み取り  
- チャネルが開かれると、メッセージを作成して、チャネルの Request メソッドを使用して要求を送信し、応答が返ってくるのを待機できます。Request メソッドが終了すると、応答メッセージを取得して読み取り、エンドポイントの応答内容を確認できます。  
+#### <a name="sending-a-request-and-reading-the-reply"></a>要求の送信と応答の読み取り  
+ チャネルが開かれると、メッセージを作成して、チャネルの Request メソッドを使用して要求を送信し、応答が返ってくるのを待機できます。 Request メソッドが終了すると、応答メッセージを取得して読み取り、エンドポイントの応答内容を確認できます。  
   
-#### オブジェクトの終了  
+#### <a name="closing-objects"></a>オブジェクトの終了  
  リソースのリークを避けるには、通信に使用したオブジェクトが不要になったら、これを終了します。  
   
  次のコード例に、メッセージを送信して応答を読み取るためにチャネル ファクトリを使用する基本的なクライアントを示します。  

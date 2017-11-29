@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 271b6889-3454-46ff-96ab-9feb15e742ee
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 516e065bc360538e7b62807a5492c0c6c9d16e69
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-enable-wif-tracing"></a>方法: WIF トレースの有効化
 ## <a name="applies-to"></a>対象  
@@ -112,4 +110,3 @@ ms.lasthandoff: 08/21/2017
 2.  ブラウザー ウィンドウを閉じ、**C:\logs** フォルダーに移動します。 テキスト エディターを使用して **C:\logs\WIF.xml** ファイルを開きます。  
   
 3.  **WIF.xml** ファイルを調べ、**\<E2ETraceEvent>** で始まるエントリが含まれていることを確認します。 これらのトレースには、**\<TraceRecord>** 要素と、トレースされるアクティビティ (**Validating SecurityToken** など) の説明が含まれています。
-

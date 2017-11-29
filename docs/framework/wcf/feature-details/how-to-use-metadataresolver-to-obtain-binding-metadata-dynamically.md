@@ -1,25 +1,28 @@
 ---
-title: "方法 : MetadataResolver を使用してバインディング メタデータを動的に取得する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : MetadataResolver を使用してバインディング メタデータを動的に取得する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 56ffcb99-fff0-4479-aca0-e3909009f605
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ab95212d0f7b57b2bc076bed862b3d07c3c93df9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : MetadataResolver を使用してバインディング メタデータを動的に取得する
+# <a name="how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically"></a>方法 : MetadataResolver を使用してバインディング メタデータを動的に取得する
 ここでは、<xref:System.ServiceModel.Description.MetadataResolver> クラスを使用してバインディング メタデータを動的に取得する方法を示します。  
   
-### バインディング メタデータを動的に取得するには  
+### <a name="to-dynamically-obtain-binding-metadata"></a>バインディング メタデータを動的に取得するには  
   
 1.  メタデータ エンドポイントのアドレスを持つ <xref:System.ServiceModel.EndpointAddress> オブジェクトを作成します。  
   
@@ -28,13 +31,13 @@ caps.handback.revision: 12
       = new EndpointAddress(new   Uri("http://localhost:8080/SampleService/mex"));  
     ```  
   
-2.  サービス型とメタデータ エンドポイント アドレスを渡して、<xref:System.ServiceModel.Description.MetadataResolver.Resolve%28System.Type%2CSystem.ServiceModel.EndpointAddress%29> を呼び出します。これにより、指定したコントラクトを実装したエンドポイントのコレクションが返されます。メタデータからはバインディング情報のみがインポートされます。コントラクト情報はインポートされません。提供されたコントラクトが代わりに使用されます。  
+2.  サービス型とメタデータ エンドポイント アドレスを渡して、<xref:System.ServiceModel.Description.MetadataResolver.Resolve%28System.Type%2CSystem.ServiceModel.EndpointAddress%29> を呼び出します。 これにより、指定したコントラクトを実装したエンドポイントのコレクションが返されます。 メタデータからはバインディング情報のみがインポートされます。コントラクト情報はインポートされません。 提供されたコントラクトが代わりに使用されます。  
   
     ```  
     ServiceEndpointCollection endpoints = MetadataResolver.Resolve(typeof(SampleServiceClient),metaAddress);  
     ```  
   
-3.  これで、サービス エンドポイントのコレクションを反復処理して必要なバインディング情報を抽出できます。次のコードは、エンドポイントを反復処理し、現在のエンドポイントに関連付けられたバインディングとアドレスを渡すサービス クライアント オブジェクトを作成し、そのサービスでメソッドを呼び出します。  
+3.  これで、サービス エンドポイントのコレクションを反復処理して必要なバインディング情報を抽出できます。 次のコードは、エンドポイントを反復処理し、現在のエンドポイントに関連付けられたバインディングとアドレスを渡すサービス クライアント オブジェクトを作成し、そのサービスでメソッドを呼び出します。  
   
     ```  
     foreach (ServiceEndpoint point in endpoints)  
@@ -52,5 +55,5 @@ caps.handback.revision: 12
     }  
     ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [メタデータ](../../../../docs/framework/wcf/feature-details/metadata.md)

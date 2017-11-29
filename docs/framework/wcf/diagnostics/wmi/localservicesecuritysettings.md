@@ -1,25 +1,28 @@
 ---
-title: "LocalServiceSecuritySettings | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: LocalServiceSecuritySettings
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 490aa0e5-5242-4f8d-b505-5ec6287633b4
-caps.latest.revision: 8
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 74eff3a6193e6507c1049accf4c43c3ecc8d30a6
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# LocalServiceSecuritySettings
+# <a name="localservicesecuritysettings"></a>LocalServiceSecuritySettings
 LocalServiceSecuritySettings  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class LocalServiceSecuritySettings  
@@ -41,115 +44,115 @@ class LocalServiceSecuritySettings
 };  
 ```  
   
-## メソッド  
+## <a name="methods"></a>メソッド  
  LocalServiceSecuritySettings クラスで定義されるメソッドはありません。  
   
-## プロパティ  
+## <a name="properties"></a>プロパティ  
  LocalServiceSecuritySettings クラスには、次のプロパティがあります。  
   
-### DetectReplays  
+### <a name="detectreplays"></a>DetectReplays  
  データ型 : boolean  
   
  アクセスの種類 : 読み取り専用  
   
  チャネルに対するリプレイ攻撃を検出し、自動的に処理するかどうかを指定するブール値です。  
   
-### InactivityTimeout  
+### <a name="inactivitytimeout"></a>InactivityTimeout  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  サービスがサポートする保留状態のセキュリティ セッションの最大数。  
   
-### IssuedCookieLifetime  
+### <a name="issuedcookielifetime"></a>IssuedCookieLifetime  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  すべての新しいセキュリティ クッキーに対して発行する有効期間を指定する TimeSpan です。  
   
-### MaxCachedCookies  
+### <a name="maxcachedcookies"></a>MaxCachedCookies  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  キャッシュできるクッキーの最大数。  
   
-### MaxClockSkew  
+### <a name="maxclockskew"></a>MaxClockSkew  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  通信している双方の 2 つのシステム クロックのずれの最長時間を指定する TimeSpan です。  
   
-### MaxPendingSessions  
+### <a name="maxpendingsessions"></a>MaxPendingSessions  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  サービスにおける保留状態の接続の最大数です。  
   
-### MaxStatefulNegotiations  
+### <a name="maxstatefulnegotiations"></a>MaxStatefulNegotiations  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  同時にアクティブにできるセキュリティ ネゴシエーションの数。  
   
-### NegotiationTimeout  
+### <a name="negotiationtimeout"></a>NegotiationTimeout  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  サーバーとクライアント間のセキュリティ ネゴシエーション フェーズの最大継続時間を指定する TimeSpan です。  
   
-### ReconnectTransportOnFailure  
+### <a name="reconnecttransportonfailure"></a>ReconnectTransportOnFailure  
  データ型 : boolean  
   
  アクセスの種類 : 読み取り専用  
   
- WS\-ReliableMessaging を使用した接続が、トランスポート エラーの後再接続を試みるかどうかを指定するブール値です。  
+ WS-ReliableMessaging を使用した接続が、トランスポート エラーの後再接続を試みるかどうかを指定するブール値です。  
   
-### ReplayCacheSize  
+### <a name="replaycachesize"></a>ReplayCacheSize  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  リプレイ検証で使用されるキャッシュ済みの nonce の数。  
   
-### ReplayWindow  
+### <a name="replaywindow"></a>ReplayWindow  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  個別のメッセージの nonce の有効期間を指定する TimeSpan です。  
   
-### SessionKeyRenewalInterval  
+### <a name="sessionkeyrenewalinterval"></a>SessionKeyRenewalInterval  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  イニシエーターがセキュリティ セッションのキーを更新するまでの期間を指定する TimeSpan です。  
   
-### SessionKeyRolloverInterval  
+### <a name="sessionkeyrolloverinterval"></a>SessionKeyRolloverInterval  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  キーの更新中に、前のセッション キーが受信メッセージで有効な時間間隔を指定する TimeSpan です。  
   
-### TimestampValidityDuration  
+### <a name="timestampvalidityduration"></a>TimestampValidityDuration  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  タイムスタンプの有効期間を指定する TimeSpan です。  
   
-## 要件  
+## <a name="requirements"></a>要件  
   
-|MOF|Servicemodel.mof にて宣言済み|  
-|---------|-----------------------------|  
-|名前空間|root\\ServiceModel で定義|  
+|MOF|Servicemodel.mof にて宣言済み。|  
+|---------|-----------------------------------|  
+|Namespace|root\ServiceModel で定義|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>

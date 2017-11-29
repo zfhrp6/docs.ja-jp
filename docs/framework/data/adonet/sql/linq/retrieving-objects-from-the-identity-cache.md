@@ -1,30 +1,36 @@
 ---
-title: "Retrieving Objects from the Identity Cache | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ID キャッシュからのオブジェクトの取得"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 96c13903-ccb6-4a0e-ab6a-8ca955ca314d
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: d078476e881c3823d7772a9db4cdbdb23dac8bb4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Retrieving Objects from the Identity Cache
+# <a name="retrieving-objects-from-the-identity-cache"></a>ID キャッシュからのオブジェクトの取得
 このトピックでは、<xref:System.Data.Linq.DataContext> によって管理される ID キャッシュからオブジェクトを返す、LINQ to SQL クエリの種類について説明します。  
   
- LINQ to SQL では、<xref:System.Data.Linq.DataContext> がクエリの実行に応じてオブジェクトの ID を ID キャッシュにログして、オブジェクトを管理する場合があります。  場合によっては、データベースに対してクエリを実行する前に、LINQ to SQL が ID キャッシュからオブジェクトの取得を試みることがあります。  
+ LINQ to SQL では、<xref:System.Data.Linq.DataContext> がクエリの実行に応じてオブジェクトの ID を ID キャッシュにログして、オブジェクトを管理する場合があります。 場合によっては、データベースに対してクエリを実行する前に、LINQ to SQL が ID キャッシュからオブジェクトの取得を試みることがあります。  
   
- 通常、LINQ to SQL で ID キャッシュからオブジェクトを取得するには、そのクエリがオブジェクトのプライマリ キーに基づき、1 つのオブジェクトを返すようにする必要があります。  特に、次に示す一般的な形式のいずれかでクエリを実行する必要があります。  
+ 通常、LINQ to SQL で ID キャッシュからオブジェクトを取得するには、そのクエリがオブジェクトのプライマリ キーに基づき、1 つのオブジェクトを返すようにする必要があります。 特に、次に示す一般的な形式のいずれかでクエリを実行する必要があります。  
   
 > [!NOTE]
->  プリコンパイル済みクエリでは、ID キャッシュからオブジェクトが返されません。  プリコンパイル済みクエリの詳細については、「<xref:System.Data.Linq.CompiledQuery>」および「[How to: Store and Reuse Queries](../../../../../../docs/framework/data/adonet/sql/linq/how-to-store-and-reuse-queries.md)」を参照してください。  
+>  プリコンパイル済みクエリでは、ID キャッシュからオブジェクトが返されません。 事前にコンパイルされたクエリの詳細については、次を参照してください。<xref:System.Data.Linq.CompiledQuery>と[する方法: ストアとクエリの再利用](../../../../../../docs/framework/data/adonet/sql/linq/how-to-store-and-reuse-queries.md)です。  
   
  オブジェクトを ID キャッシュから取得するには、次に示す一般的な形式のいずれかでクエリを実行する必要があります。  
   
@@ -56,20 +62,20 @@ caps.handback.revision: 2
   
 -   <xref:System.Linq.Queryable.SingleOrDefault%2A>  
   
- `predicate` は、オブジェクトのプライマリ キー プロパティが定数値に設定された式である必要があります。  オブジェクトのプライマリ キーが複数のプロパティで定義されている場合は、それぞれのプライマリ キー プロパティが定数値に設定されている必要があります。  `predicate` に使用する必要がある形式の例を次に示します。  
+ `predicate` は、オブジェクトのプライマリ キー プロパティが定数値に設定された式である必要があります。 オブジェクトのプライマリ キーが複数のプロパティで定義されている場合は、それぞれのプライマリ キー プロパティが定数値に設定されている必要があります。 `predicate` に使用する必要がある形式の例を次に示します。  
   
 -   `c => c.PK == constant_value`  
   
 -   `c => c.PK1 == constant_value1 && c=> c.PK2 == constant_value2`  
   
-## 例  
+## <a name="example"></a>例  
  次のコードは、ID キャッシュからオブジェクトを取得する LINQ to SQL クエリの例です。  
   
  [!code-csharp[L2S_QueryCache#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/l2s_querycache/cs/program.cs#1)]
  [!code-vb[L2S_QueryCache#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/l2s_querycache/vb/module1.vb#1)]  
   
-## 参照  
- [Query Concepts](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)   
- [Object Identity](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)   
- [Background Information](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)   
- [Object Identity](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)
+## <a name="see-also"></a>関連項目  
+ [クエリの概念](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)  
+ [オブジェクト Id](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)  
+ [背景情報](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
+ [オブジェクト Id](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)

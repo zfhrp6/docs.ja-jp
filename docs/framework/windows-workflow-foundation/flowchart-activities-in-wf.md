@@ -1,20 +1,24 @@
 ---
-title: "WF のフローチャート アクティビティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WF のフローチャート アクティビティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e80d9734-b43a-4d21-a250-74400330a4c0
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e54065f0877e8df410b91f9b4e25c9cb6120d718
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# WF のフローチャート アクティビティ
+# <a name="flowchart-activities-in-wf"></a>WF のフローチャート アクティビティ
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、フローチャート内の実行と分岐を制御する、システムによって提供されるアクティビティがいくつか用意されています。  
   
 |||  
@@ -23,5 +27,5 @@ caps.handback.revision: 8
 |<xref:System.Activities.Statements.FlowDecision>|2 つの結果を持つ条件ノードをモデル化する機能を提供する特殊な <xref:System.Activities.Statements.FlowNode>。|  
 |<xref:System.Activities.Statements.FlowSwitch%601>|アクティビティの型指定子に定義された型の 1 つの式、および各一致につき 1 つの結果を使用してスイッチ構造のモデリングができる、特殊な <xref:System.Activities.Statements.FlowNode>。|  
   
-## 参照  
- [チュートリアル入門](../../../docs/framework/windows-workflow-foundation//getting-started-tutorial.md)
+## <a name="see-also"></a>関連項目  
+ [チュートリアル入門](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md)

@@ -1,88 +1,90 @@
 ---
-title: "&lt;NetFx40_LegacySecurityPolicy&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<NetFx40_LegacySecurityPolicy> 要素"
-  - "NetFx40_LegacySecurityPolicy 要素"
+title: "&lt;NetFx40_LegacySecurityPolicy&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- <NetFx40_LegacySecurityPolicy> element
+- NetFx40_LegacySecurityPolicy element
 ms.assetid: 07132b9c-4a72-4710-99d7-e702405e02d4
-caps.latest.revision: 21
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: cb59eb6e2a5e831f603747b3e0f9435bd076fbf8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;NetFx40_LegacySecurityPolicy&gt; 要素
-ランタイムがレガシ コード アクセス セキュリティ \(CAS: Code Access Security\) ポリシーを使用するかどうかを指定します。  
+# <a name="ltnetfx40legacysecuritypolicygt-element"></a>&lt;NetFx40_LegacySecurityPolicy&gt;要素
+ランタイムがレガシ コード アクセス セキュリティ (CAS) ポリシーを使用するかどうかを指定します。  
   
-## 構文  
+ \<configuration>  
+\<ランタイム >  
+< NetFx40_LegacySecurityPolicy >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <NetFx40_LegacySecurityPolicy  
    enabled="true|false"/>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|Attribute|説明|  
-|---------------|--------|  
+|属性|説明|  
+|---------------|-----------------|  
 |`enabled`|必須の属性です。<br /><br /> ランタイムがレガシ CAS ポリシーを使用するかどうかを指定します。|  
   
-## enabled 属性  
+## <a name="enabled-attribute"></a>enabled 属性  
   
 |値|説明|  
-|-------|--------|  
-|`false`|ランタイムはレガシ CAS ポリシーを使用しません。  これは、既定の設定です。|  
-|`true`|ランタイムはレガシ CAS ポリシーを使用します。|  
+|-----------|-----------------|  
+|`false`|ランタイムは、従来の CAS ポリシーを使用しません。 既定値です。|  
+|`true`|ランタイムは、従来の CAS ポリシーを使用します。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
+|-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`runtime`|ランタイム初期化オプションに関する情報を含んでいます。|  
   
-## 解説  
- .NET Framework Version 3.5 以前のバージョンでは、CAS ポリシーが常に有効になります。  [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] では、CAS ポリシーを明示的に有効にする必要があります。  
+## <a name="remarks"></a>コメント  
+ .NET Framework バージョン 3.5 と以前のバージョンでは、CAS ポリシーは常に有効にします。 [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)]、CAS ポリシーを有効にする必要があります。  
   
- CAS ポリシーはバージョンに固有です。  旧バージョンの .NET Framework に存在するカスタム CAS ポリシーは、[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] では再度指定する必要があります。  
+ CAS ポリシーは、バージョン固有です。 .NET Framework の以前のバージョンに存在するカスタムの CAS ポリシーを再度指定する必要があります、[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]です。  
   
- `<NetFx40_LegacySecurityPolicy>` 要素を [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] アセンブリに適用しても、[透過的セキュリティ コード](../../../../../docs/framework/misc/security-transparent-code.md)には影響しません。透過性規則は引き続き適用されます。  
+ 適用する、`<NetFx40_LegacySecurityPolicy>`要素を[!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)]アセンブリには影響しません[セキュリティ透過的なコード](../../../../../docs/framework/misc/security-transparent-code.md); 透過性規則を引き続き適用されます。  
   
 > [!IMPORTANT]
->  `<NetFx40_LegacySecurityPolicy>` 要素を適用すると、[グローバル アセンブリ キャッシュ](../../../../../docs/framework/app-domains/gac.md)にインストールされていない、[ネイティブ イメージ ジェネレーター \(Ngen.exe\)](../../../../../docs/framework/tools/ngen-exe-native-image-generator.md) で作成されたネイティブ イメージのアセンブリでパフォーマンスが大幅に低下する可能性があります。  このパフォーマンスの低下が発生するのは、属性が適用されたときに、ランタイムがアセンブリをネイティブ イメージとして読み込むことができず、結果的に Just\-In\-Time アセンブリとして読み込まれるためです。  
+>  適用する、`<NetFx40_LegacySecurityPolicy>`要素につながる重大なパフォーマンスの低下によって作成されたネイティブ イメージ アセンブリを[ネイティブ イメージ ジェネレーター (Ngen.exe)](../../../../../docs/framework/tools/ngen-exe-native-image-generator.md)でインストールされていない、[グローバル アセンブリ キャッシュ](../../../../../docs/framework/app-domains/gac.md). ランタイムの機能を利用し、できないに属性が適用されるときに、ネイティブ イメージとして、アセンブリを読み込むことが原因でパフォーマンスの低下が発生、結果的に読み込まれたと - just-in-time アセンブリ。  
   
 > [!NOTE]
->  Visual Studio プロジェクトのプロジェクト設定で、対象となる .NET Framework のバージョンとして、[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] より前のバージョンを指定する場合は、そのバージョン用に指定したすべてのカスタム CAS ポリシーを含む CAS ポリシーが有効になります。  ただし、[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] の新しい型およびメンバーは使用できません。  また [アプリケーション構成ファイル](../../../../../docs/framework/configure-apps/index.md)でスタートアップ設定スキーマの [\<supportedRuntime\> 要素](../../../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) を使用して .NET Framework の旧バージョンを指定できます。  
+>  ターゲット .NET Framework のバージョンよりも前に指定するかどうか、[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]プロジェクトには、Visual Studio プロジェクト用の設定が、CAS ポリシーが有効になります、そのバージョンの指定したカスタムの CAS ポリシーを含むです。 ただし、することはできません new を使用する[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]型およびメンバー。 使用して、.NET Framework の以前のバージョンを指定することも、 [ \<supportedRuntime > 要素](../../../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)でスタートアップ設定スキーマで、[アプリケーション構成ファイル](../../../../../docs/framework/configure-apps/index.md)です。  
   
 > [!NOTE]
->  構成ファイルの構文では、大文字と小文字が区別されます。  構文と例の各セクションで提供されている構文を使用する必要があります。  
+>  構成ファイルの構文は、大文字小文字を区別します。 構文と例のセクションに示されている構文を使用する必要があります。  
   
-## 構成ファイル  
+## <a name="configuration-file"></a>構成ファイル  
  この要素は、アプリケーション構成ファイルでのみ使用できます。  
   
-## 使用例  
- アプリケーションのレガシ CAS ポリシーを有効にする方法を次の例に示します。  
+## <a name="example"></a>例  
+ 次の例では、アプリケーションのレガシーの CAS ポリシーを有効にする方法を示します。  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <NetFx40_LegacySecurityPolicy enabled="true"/>  
@@ -90,6 +92,6 @@ caps.handback.revision: 21
 </configuration>  
 ```  
   
-## 参照  
- [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
+## <a name="see-also"></a>関連項目  
+ [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)

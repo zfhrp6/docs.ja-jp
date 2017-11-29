@@ -1,39 +1,41 @@
 ---
-title: "Load メソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Load メソッド"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: vb
 ms.assetid: e22e5812-89c6-41f0-9302-bb899a46dbff
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 4617f2193b9d557094b7570f8ca8fd5ff7a9d25d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Load メソッド
-<xref:System.Data.DataTable.Load%2A> メソッドを使用して、データ ソースの行を <xref:System.Data.DataTable> に読み込むことができます。  これはオーバーロードされたメソッドで、最も単純な形式で単一の **DataReader** パラメーターを受け取ります。  この形式により、このメソッドは **DataTable** に対する行の読み込みのみを行います。  あるいは、**LoadOption** パラメーターを指定して **DataTable** へのデータの追加方法を制御することもできます。  
+# <a name="the-load-method"></a>Load メソッド
+<xref:System.Data.DataTable.Load%2A> メソッドを使用して、データ ソースの行を <xref:System.Data.DataTable> に読み込むことができます。 これは最も単純な形式で、単一のパラメーターを受け取っているオーバー ロードされたメソッド、 **DataReader**です。 このフォームで、単に読み込む、 **DataTable**行を含むです。 必要に応じて、指定することができます、 **LoadOption**にデータを追加する方法を制御するパラメーター、 **DataTable**です。  
   
- **LoadOption** パラメーターは、**DataTable** にデータの行が既に含まれている場合に特に役立ちます。それは、このパラメーターによって、データ ソースから読み込まれるデータとテーブル内に既に存在するデータを組み合わせる方法が指定されているためです。  たとえば、**PreserveCurrentValues** \(既定値\) は、**DataTable** の行が **Added** としてマークされ、データ ソースの行に一致する内容に対して **Original** 値または各列が設定されている場合に指定します。  **Current** 値は、行が追加されたときに割り当てられた値が保持され、その行の **RowState** は **Changed** に設定されます。  
+ **LoadOption**パラメーターがの場合に特に便利ですが、 **DataTable**既に行のデータを含む、データと組み合わせられるため、データ ソースからどのように受信データがについて説明しますテーブルの既存の。 たとえば、 **PreserveCurrentValues** (既定値) を指定する行としてマークされている場合**Added**で、 **DataTable**、**元**値列または各列に設定されている一致する行の内容、データ ソースからです。 **現在**値は、行が追加されたときに割り当てられた値を保持し、 **RowState**の行に設定されます**Changed**です。  
   
  <xref:System.Data.LoadOption> 列挙値の簡単な説明を次の表に示します。  
   
 |LoadOption の値|説明|  
-|-------------------|--------|  
-|**OverwriteRow**|読み込まれる行と **DataTable** に既に存在する行で **PrimaryKey** 値が同じ場合、各列の **Original** 値と **Current** 値は読み込まれる行の値に置き換えられ、**RowState** プロパティは **Unchanged** に設定されます。<br /><br /> **DataTable** に存在していなかった行がデータ ソースから読み込まれ、その行の **RowState** 値は **Unchanged** に設定されます。<br /><br /> このオプションは **DataTable** の内容を更新して、データ ソースの内容と一致するようにします。|  
-|**PreserveCurrentValues \(既定値\)**|読み込まれる行と **DataTable** に既に存在する行の **PrimaryKey** 値が同じ場合、**Original** 値には読み込まれる行の内容が設定されますが、**Current** 値は変更されません。<br /><br /> **RowState** が **Added** または **Modified** の場合、この値は **Modified** に設定されます。<br /><br /> **RowState** が **Deleted** であった場合、この値は **Deleted** のままとなります。<br /><br /> **DataTable** に存在していなかった行がデータ ソースから読み込まれ、その行の **RowState** は **Unchanged** に設定されます。|  
-|**UpdateCurrentValues**|読み込まれる行と **DataTable** に既に存在する行の **PrimaryKey** 値が同じ場合、**Current** 値が **Original** 値にコピーされ、**Current** 値には読み込まれる行の内容が設定されます。<br /><br /> **DataTable** の **RowState** が **Added** の場合、**RowState** は **Added** のままとなります。  **Modified** または **Deleted** としてマークされた行の **RowState** は **Modified** になります。<br /><br /> **DataTable** に存在していなかった行がデータ ソースから読み込まれ、その行の **RowState** は **Added** に設定されます。|  
+|----------------------|-----------------|  
+|**OverwriteRow**|受信した行が同じである場合**PrimaryKey**既に行と値、 **DataTable**、**元**と**現在**それぞれの値列は、受信した行の値に置き換えられます、 **RowState**プロパティに設定されている**Unchanged**です。<br /><br /> 行に既に存在しないデータ ソースから、 **DataTable**を使用して追加、 **RowState**値**Unchanged**です。<br /><br /> このオプションが有効の内容を更新、 **DataTable**データ ソースの内容と一致するようにします。|  
+|**PreserveCurrentValues (既定値)**|受信した行が同じである場合**PrimaryKey**既に行と値、 **DataTable**、**元**受信する行、および、の内容に値が設定されている**現在**値は変更されません。<br /><br /> 場合、 **RowState**は**Added**または**Modified**に設定されている**Modified**です。<br /><br /> 場合、 **RowState**が**Deleted**、そのまま**Deleted**です。<br /><br /> 行に既に存在しないデータ ソースから、 **DataTable**追加されると、および**RowState**に設定されている**Unchanged**です。|  
+|**UpdateCurrentValues**|受信した行が同じである場合**PrimaryKey**に既に存在する行と値、 **DataTable**、**現在**値をコピー、**元**値、および**現在**値は、受信した行の内容に設定されます。<br /><br /> 場合、 **RowState**で、 **DataTable**が**Added**、 **RowState**まま**Added**です。 としてマークされた行**Modified**または**Deleted**、 **RowState**は**Modified**です。<br /><br /> 行に既に存在しないデータ ソースから、 **DataTable**追加されると、および**RowState**に設定されている**Added**です。|  
   
- **Load** メソッドを使用して **Northwind** データベースに従業員の誕生日リストを表示する例を次に示します。  
+ 次のサンプルは、**ロード**に従業員の誕生日の一覧を表示するメソッド、 **Northwind**データベース。  
   
- \[Visual Basic\]  
-  
-```  
+```vb  
 Private Sub LoadBirthdays(ByVal connectionString As String)  
     ' Assumes that connectionString is a valid connection string  
     ' to the Northwind database on SQL Server.  
@@ -75,6 +77,6 @@ Private Sub LoadBirthdays(ByVal connectionString As String)
 End Sub  
 ```  
   
-## 参照  
- [DataTable 内のデータの操作](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [DataTable 内のデータを操作します。](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

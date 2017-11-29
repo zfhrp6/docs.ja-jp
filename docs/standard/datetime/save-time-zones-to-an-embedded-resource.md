@@ -1,87 +1,97 @@
 ---
-title: "方法 : 埋め込みリソースにタイム ゾーンを保存する | Microsoft Docs"
-ms.custom: ""
-ms.date: "04/10/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "タイム ゾーン オブジェクト [.NET Framework], 保存"
-  - "タイム ゾーン オブジェクト [.NET Framework], シリアル化"
-  - "タイム ゾーン [.NET Framework], 保存"
+title: "方法: 埋め込みリソースにタイム ゾーンを保存"
+ms.custom: 
+ms.date: 04/10/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- time zones [.NET Framework], saving
+- time zone objects [.NET Framework], serializing
+- time zone objects [.NET Framework], saving
 ms.assetid: 3c96d83a-a057-4496-abb0-8f4b12712558
-caps.latest.revision: 12
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 96dd3f0a3ed27a9e09c62f3ad4f450ced5a8e644
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : 埋め込みリソースにタイム ゾーンを保存する
-タイム ゾーンに対応したアプリケーションでは、多くの場合、特定のタイム ゾーンが存在する必要があります。  しかし、個別の <xref:System.TimeZoneInfo> オブジェクトを使用できるかどうかはローカル システムのレジストリに格納されている情報に依存するので、通常は使用できるタイム ゾーンであっても存在しない場合があります。  さらに、<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> メソッドを使用することでインスタンス化されるカスタム タイム ゾーンについての情報は、他のタイム ゾーン情報とは異なりレジストリに格納されません。  このようなタイム ゾーンを必要なときに確実に使用できるようにするには、タイム ゾーンをシリアル化して保存し、必要になったら逆シリアル化して復元します。  
-  
- 通常、<xref:System.TimeZoneInfo> オブジェクトのシリアル化は、タイム ゾーンに対応するアプリケーションとは関係なく行われます。  シリアル化された <xref:System.TimeZoneInfo> オブジェクトの保持に使用するデータ ストアによっては、セットアップ ルーチンまたはインストール ルーチンの一部として \(たとえば、データがレジストリのアプリケーション キーに格納されるとき\)、または最終的なアプリケーションがコンパイルされる前に実行するユーティリティ ルーチンの一部として \(たとえば、シリアル化されたデータが .NET XML リソース \(.resx\) ファイルに格納されるとき\)、タイム ゾーンのデータをシリアル化できます。  
-  
- アプリケーションと共にコンパイルされるリソース ファイル以外に、複数のデータ ストアをタイム ゾーン情報に使用できます。  次に例を示します。  
-  
--   レジストリ。  アプリケーションでは、HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Time Zones というサブキーを使用するのではなく、アプリケーション自体のキーのサブキーを使用してカスタム タイム ゾーン データを格納する必要があります。  
-  
--   構成ファイル。  
-  
--   その他のシステム ファイル。  
-  
-### .resx ファイルにシリアル化してタイム ゾーンを保存するには  
-  
-1.  既存のタイム ゾーンを取得するか、新しいタイム ゾーンを作成します。  
-  
-     既存のタイム ゾーンを取得する方法については、「[方法 : 定義済みの UTC オブジェクトおよびローカル タイム ゾーン オブジェクトにアクセスする](../../../docs/standard/datetime/access-utc-and-local.md)」および「[方法 : TimeZoneInfo オブジェクトをインスタンス化する](../../../docs/standard/datetime/instantiate-time-zone-info.md)」を参照してください。  
-  
-     新しいタイム ゾーンを作成するには、<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> メソッドのオーバーロードの 1 つを呼び出します。  詳細については、「[方法 : 調整規則のないタイム ゾーンを作成する](../../../docs/standard/datetime/create-time-zones-without-adjustment-rules.md)」および「[方法 : 調整規則のあるタイム ゾーンを作成する](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md)」を参照してください。  
-  
-2.  <xref:System.TimeZoneInfo.ToSerializedString%2A> メソッドを呼び出して、タイム ゾーンのデータを含む文字列を作成します。  
-  
-3.  .resx ファイルの名前、および必要に応じてファイルへのパスを <xref:System.IO.StreamWriter> クラスのコンストラクターに渡して、<xref:System.IO.StreamWriter> オブジェクトをインスタンス化します。  
-  
-4.  <xref:System.IO.StreamWriter> オブジェクトを <xref:System.Resources.ResXResourceWriter> クラスのコンストラクターに渡して、<xref:System.Resources.ResXResourceWriter> オブジェクトをインスタンス化します。  
-  
-5.  タイム ゾーンのシリアル化された文字列を、<xref:System.Resources.ResXResourceWriter.AddResource%2A?displayProperty=fullName> メソッドに渡します。  
-  
-6.  <xref:System.Resources.ResXResourceWriter.Generate%2A?displayProperty=fullName> メソッドを呼び出します。  
-  
-7.  <xref:System.Resources.ResXResourceWriter.Close%2A?displayProperty=fullName> メソッドを呼び出します。  
-  
-8.  <xref:System.IO.StreamWriter.Close%2A> メソッドを呼び出して、<xref:System.IO.StreamWriter> オブジェクトを閉じます。  
-  
-9. 生成された .resx ファイルを、アプリケーションの Visual Studio プロジェクトに追加します。  
-  
-10. Visual Studio の **\[プロパティ\]** ウィンドウを使用して、.resx ファイルの **\[ビルド アクション\]** プロパティが **\[埋め込まれたリソース\]** に設定されていることを確認します。  
-  
-## 使用例  
- 次の例では、中部標準時を表す <xref:System.TimeZoneInfo> オブジェクトと、Palmer Station, Antarctica 時刻を表す <xref:System.TimeZoneInfo> オブジェクトを、SerializedTimeZones.resx という名前の .NET XML リソース ファイルにシリアル化します。  普通、中部標準時はレジストリで定義されています。Palmer Station, Antarctica はカスタム タイム ゾーンです。  
-  
- [!code-csharp[TimeZone2.Serialization#1](../../../samples/snippets/csharp/VS_Snippets_CLR/TimeZone2.Serialization/cs/SerializeTimeZoneData.cs#1)]
- [!code-vb[TimeZone2.Serialization#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/TimeZone2.Serialization/vb/SerializeTimeZoneData.vb#1)]  
-  
- この例では、コンパイル時にリソース ファイルで使用できるように <xref:System.TimeZoneInfo> オブジェクトをシリアル化します。  
-  
- <xref:System.Resources.ResXResourceWriter.Generate%2A?displayProperty=fullName> メソッドは完全なヘッダー情報を .NET XML リソース ファイルに追加するので、既存のファイルにリソースを追加するためには使用できません。  この例では、SerializedTimeZones.resx ファイルを検査することでこのことに対処しています。ファイルが存在する場合は、シリアル化した 2 つのタイム ゾーン以外のすべてのリソースを、汎用の <xref:System.Collections.Generic.Dictionary%602> オブジェクトに格納します。  その後、既存のファイルを削除し、既存のリソースを新しい SerializedTimeZones.resx ファイルに追加します。  シリアル化したタイム ゾーンのデータも、このファイルに追加します。  
-  
- リソースのキー \(つまり **\[名前\]**\) フィールドでは、空白を含む文字列は指定できません。  タイム ゾーン識別子をリソース ファイルに割り当てる前に、<xref:System.String.Replace%28System.String%2CSystem.String%29> メソッドを呼び出して識別子に含まれるすべての空白を除去します。  
-  
-## コードのコンパイル  
- この例には、次の項目が必要です。  
-  
--   System.Windows.Forms.dll および System.Core.dll への参照をプロジェクトに追加する。  
-  
--   次の名前空間をインポートする。  
-  
-     [!code-csharp[TimeZone2.Serialization#2](../../../samples/snippets/csharp/VS_Snippets_CLR/TimeZone2.Serialization/cs/SerializeTimeZoneData.cs#2)]
-     [!code-vb[TimeZone2.Serialization#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/TimeZone2.Serialization/vb/SerializeTimeZoneData.vb#2)]  
-  
-## 参照  
- [日付、時刻、およびタイム ゾーン](../../../docs/standard/datetime/index.md)   
- [タイム ゾーンの概要](../../../docs/standard/datetime/time-zone-overview.md)   
- [方法 : 埋め込みリソースからタイム ゾーンを復元する](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md)
+# <a name="how-to-save-time-zones-to-an-embedded-resource"></a>方法: 埋め込みリソースにタイム ゾーンを保存
+
+多くの場合、タイム ゾーンに対応するアプリケーションでは、特定のタイム ゾーンが存在する必要があります。 ただし、ため個々 の可用性<xref:System.TimeZoneInfo>オブジェクトは、ローカル システムのレジストリに格納されている情報によって異なります、慣例的でも使用できるタイム ゾーンが存在しない可能性があります。 使用してさらに、カスタム タイム ゾーンに関する情報がインスタンス化、<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>メソッドが他のタイム ゾーン情報がレジストリに保存されていません。 必要なときにこれらのタイム ゾーンが使用可能なであることを確認するをシリアル化するして保存し、それらを逆シリアル化して後で復元することができます。
+
+通常、シリアル化する、<xref:System.TimeZoneInfo>オブジェクトが、タイム ゾーンに対応するアプリケーションとは別に発生します。 シリアル化された保持するために使用されるデータ ストアによって<xref:System.TimeZoneInfo>オブジェクト、(たとえば、レジストリのアプリケーション キーでデータが格納されている場合)、セットアップまたはインストール ルーチンの一部として、またはを実行するユーティリティ ルーチンの一部としては、タイム ゾーンのデータをシリアル化される可能性があります前に、(たとえば、シリアル化されたデータは .NET の XML リソース (.resx) ファイルに格納されている) 場合、最終的なアプリケーションがコンパイルされます。
+
+ファイルに加え、リソース、アプリケーションでコンパイルされる、タイム ゾーン情報に関するその他のいくつかのデータ ストアを使用できます。 次に例を示します。
+
+* レジストリです。 Hkey_local_machine NT\CurrentVersion\Time ゾーンのサブキーを使用するのではなく、カスタム タイム ゾーン データを格納するアプリケーションが独自のアプリケーション キーのサブキーを使用する必要があることに注意してください。
+
+* 構成ファイル。
+
+* その他のシステム ファイルです。
+
+### <a name="to-save-a-time-zone-by-serializing-it-to-a-resx-file"></a>.Resx ファイルにシリアル化することによって、タイム ゾーンを保存するには
+
+1. 既存のタイム ゾーンを取得するか、新しいタイム ゾーンを作成します。
+
+   既存のタイム ゾーンを取得するには、次を参照してください。[する方法: 定義済みの UTC とローカル タイム ゾーン オブジェクトをアクセス](../../../docs/standard/datetime/access-utc-and-local.md)と[する方法: TimeZoneInfo オブジェクトをインスタンス化](../../../docs/standard/datetime/instantiate-time-zone-info.md)です。
+
+   新しいタイム ゾーンを作成するには、オーバー ロードのいずれかを呼び出して、<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>メソッドです。 詳細については、次を参照してください。[する方法: 調整規則のないタイム ゾーンを作成](../../../docs/standard/datetime/create-time-zones-without-adjustment-rules.md)と[する方法: 調整規則のあるタイム ゾーンを作成する](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md)です。
+
+2. 呼び出す、<xref:System.TimeZoneInfo.ToSerializedString%2A>タイム ゾーンのデータを含む文字列を作成するメソッド。
+
+3. インスタンスを作成、<xref:System.IO.StreamWriter>オブジェクトの名前と必要に応じて、.resx ファイルへのパスを提供することによって、<xref:System.IO.StreamWriter>クラスのコンス トラクターです。
+
+4. インスタンスを作成、<xref:System.Resources.ResXResourceWriter>オブジェクトを渡すことによって、<xref:System.IO.StreamWriter>オブジェクトを<xref:System.Resources.ResXResourceWriter>クラスのコンス トラクターです。
+
+5. タイム ゾーンをパスする文字列をシリアル化、<xref:System.Resources.ResXResourceWriter.AddResource%2A?displayProperty=nameWithType>メソッドです。
+
+6. <xref:System.Resources.ResXResourceWriter.Generate%2A?displayProperty=nameWithType> メソッドを呼び出します。
+
+7. <xref:System.Resources.ResXResourceWriter.Close%2A?displayProperty=nameWithType> メソッドを呼び出します。
+
+8. 閉じる、<xref:System.IO.StreamWriter>オブジェクトを呼び出してその<xref:System.IO.StreamWriter.Close%2A>メソッドです。
+
+9. 生成された .resx ファイルをアプリケーションの Visual Studio プロジェクトに追加します。
+
+10. 使用して、**プロパティ**Visual Studio で、ウィンドウことを確認して、.resx ファイルの**ビルド アクション**プロパティに設定されている**埋め込まれたリソース**です。
+
+## <a name="example"></a>例
+
+次の例のシリアル化、<xref:System.TimeZoneInfo>中部標準時を表すオブジェクト、および<xref:System.TimeZoneInfo>SerializedTimeZones.resx という名前の .NET XML リソース ファイルに Palmer ステーション、南極時間を表すオブジェクト。 中部標準時は通常、レジストリで定義されています。Palmer ステーション南極は、カスタム タイム ゾーンです。
+
+[!code-csharp[TimeZone2.Serialization#1](../../../samples/snippets/csharp/VS_Snippets_CLR/TimeZone2.Serialization/cs/SerializeTimeZoneData.cs#1)]
+[!code-vb[TimeZone2.Serialization#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/TimeZone2.Serialization/vb/SerializeTimeZoneData.vb#1)]
+
+この例のシリアル化<xref:System.TimeZoneInfo>オブジェクトを使用できるように、リソース ファイルにコンパイル時にします。
+
+<xref:System.Resources.ResXResourceWriter.Generate%2A?displayProperty=nameWithType>メソッドは、.NET の XML リソース ファイルに完全なヘッダー情報を追加し、リソースを追加する既存のファイルを使用することはできません。 例では、これを処理 SerializedTimeZones.resx ファイルを確認して、存在する場合以外のすべてのリソースを格納する、2 つシリアル化されたジェネリック型にタイム ゾーン<xref:System.Collections.Generic.Dictionary%602>オブジェクト。 既存のファイルは削除し、され、既存のリソースが新しい SerializedTimeZones.resx ファイルに追加されます。 シリアル化されたタイム ゾーンのデータは、このファイルにも追加されます。
+
+キー (または**名前**) リソースのフィールドは空白文字を含めることはできません。 <xref:System.String.Replace%28System.String%2CSystem.String%29>リソース ファイルに割り当てられている前に、タイム ゾーン識別子ですべての埋め込みスペースを削除するメソッドが呼び出されます。
+
+## <a name="compiling-the-code"></a>コードのコンパイル
+
+この例で必要な要素は次のとおりです。
+
+* System.Windows.Forms.dll および System.Core.dll への参照がプロジェクトに追加します。
+
+* 次の名前空間は、インポートします。
+
+  [!code-csharp[TimeZone2.Serialization#2](../../../samples/snippets/csharp/VS_Snippets_CLR/TimeZone2.Serialization/cs/SerializeTimeZoneData.cs#2)]
+  [!code-vb[TimeZone2.Serialization#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/TimeZone2.Serialization/vb/SerializeTimeZoneData.vb#2)]
+
+## <a name="see-also"></a>関連項目
+
+[日付、時刻、およびタイム ゾーン](../../../docs/standard/datetime/index.md)
+[タイム ゾーンの概要](../../../docs/standard/datetime/time-zone-overview.md)
+[する方法: 埋め込みリソースからタイム ゾーンを復元](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md)

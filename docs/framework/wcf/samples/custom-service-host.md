@@ -1,45 +1,48 @@
 ---
-title: "カスタム サービス ホスト | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "カスタム サービス ホスト"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: fe16ff50-7156-4499-9c32-13d8a79dc100
-caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a7fd853ed67b843888b899d0bd0528b293a7520f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# カスタム サービス ホスト
-このサンプルでは、<xref:System.ServiceModel.ServiceHost> クラスから派生したカスタムのサービス ホストを使用して、サービスの実行時動作を変更する方法を示します。  この方法は、多数のサービスを共通方式で構成するという方法の代わりに使用でき、再利用可能です。  このサンプルでは、<xref:System.ServiceModel.Activation.ServiceHostFactory> クラスを使用して、カスタムの ServiceHost を、インターネット インフォメーション サービス \(IIS\) または Windows プロセス アクティブ化サービス \(WAS\) でホストされる環境で使用する方法も示します。  
+# <a name="custom-service-host"></a>カスタム サービス ホスト
+このサンプルでは、<xref:System.ServiceModel.ServiceHost> クラスから派生したカスタムのサービス ホストを使用して、サービスの実行時動作を変更する方法を示します。 この方法は、多数のサービスを共通方式で構成するという方法の代わりに使用でき、再利用可能です。 このサンプルでは、<xref:System.ServiceModel.Activation.ServiceHostFactory> クラスを使用して、カスタムの ServiceHost を、インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) でホストされる環境で使用する方法も示します。  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。  続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。  このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Hosting\CustomServiceHost`  
   
-## シナリオについて  
- サービスのメタデータには機密情報が含まれる可能性がありますが、意図的ではない開示を回避するために、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスの既定の構成では、メタデータは公開されないようになっています。  この動作は、既定の設定ではセキュリティで保護されますが、同時に、サービスの構成の中でメタデータ公開の動作が明示的に有効化されない限り、サービスの呼び出しに必要なクライアント コードをメタデータ インポート ツール \(Svcutil.exe など\) を使用して生成できないことも意味します。  
+## <a name="about-the-scenario"></a>シナリオについて  
+ サービスのメタデータには機密情報が含まれる可能性がありますが、意図的ではない開示を回避するために、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスの既定の構成では、メタデータは公開されないようになっています。 この動作は、既定の設定ではセキュリティで保護されますが、同時に、サービスの構成の中でメタデータ公開の動作が明示的に有効化されない限り、サービスの呼び出しに必要なクライアント コードをメタデータ インポート ツール (Svcutil.exe など) を使用して生成できないことも意味します。  
   
- 多数のサービスのメタデータ公開を有効にすると、同一の構成要素が各サービスに追加されます。この結果、本質的に同じ構成情報が大量に発生することになります。  各サービスを個別に構成する代わりに、メタデータ公開を有効化する命令型コードを一度だけプログラミングして、そのコードを複数のサービスで再利用するという方法もあります。  この方法を使用するには、<xref:System.ServiceModel.ServiceHost> から派生する新しいクラスを作成し、`ApplyConfiguration`\(\) メソッドをオーバーライドして命令型コードでメタデータ公開動作を追加します。  
+ 多数のサービスのメタデータ公開を有効にすると、同一の構成要素が各サービスに追加されます。この結果、本質的に同じ構成情報が大量に発生することになります。 各サービスを個別に構成する代わりに、メタデータ公開を有効化する命令型コードを一度だけプログラミングして、そのコードを複数のサービスで再利用するという方法もあります。 この方法を使用するには、<xref:System.ServiceModel.ServiceHost> から派生する新しいクラスを作成し、`ApplyConfiguration`() メソッドをオーバーライドして命令型コードでメタデータ公開動作を追加します。  
   
 > [!IMPORTANT]
->  このサンプルでは、わかりやすくするために、セキュリティで保護されていないメタデータ公開エンドポイントを作成する方法を示します。  このようなエンドポイントを利用するコンシューマーは、匿名で、認証を受けていない可能性もあります。したがって、エンドポイントを配置する前には注意を払い、サービスのメタデータをパブリックに開示することが適切であることを確認する必要があります。  
+>  このサンプルでは、わかりやすくするために、セキュリティで保護されていないメタデータ公開エンドポイントを作成する方法を示します。 このようなエンドポイントを利用するコンシューマーは、匿名で、認証を受けていない可能性もあります。したがって、エンドポイントを配置する前には注意を払い、サービスのメタデータをパブリックに開示することが適切であることを確認する必要があります。  
   
-## カスタム ServiceHost の実装  
- <xref:System.ServiceModel.ServiceHost> クラスは、便利な仮想メソッドを多数公開しています。継承側でこの仮想メソッドをオーバーライドして、サービスの実行時動作を変更することができます。  たとえば、`ApplyConfiguration`\(\) メソッドはサービスの構成情報を構成ストアから読み取り、それに応じてホストの <xref:System.ServiceModel.Description.ServiceDescription> を変更します。  既定の実装は構成をアプリケーションの構成ファイルから読み取りますが、  カスタム実装では、`ApplyConfiguration`\(\) をオーバーライドすれば、命令型コードを使用して <xref:System.ServiceModel.Description.ServiceDescription> にさらに変更を加えることや、既定の構成ストア全体を置き換えることも可能です \(  たとえば、サービスのエンドポイント構成を、アプリケーションの構成ファイルではなくデータベースから読み取るようにする場合\)。  
+## <a name="implementing-a-custom-servicehost"></a>カスタム ServiceHost の実装  
+ <xref:System.ServiceModel.ServiceHost> クラスは、便利な仮想メソッドを多数公開しています。継承側でこの仮想メソッドをオーバーライドして、サービスの実行時動作を変更することができます。 たとえば、`ApplyConfiguration`() メソッドはサービスの構成情報を構成ストアから読み取り、それに応じてホストの <xref:System.ServiceModel.Description.ServiceDescription> を変更します。 既定の実装は構成をアプリケーションの構成ファイルから読み取りますが、 カスタム実装では、`ApplyConfiguration`() をオーバーライドすれば、命令型コードを使用して <xref:System.ServiceModel.Description.ServiceDescription> にさらに変更を加えることや、既定の構成ストア全体を置き換えることも可能です ( たとえば、サービスのエンドポイント構成を、アプリケーションの構成ファイルではなくデータベースから読み取るようにする場合)。  
   
- このサンプルでは、ServiceMetadataBehavior \(メタデータ公開を有効にする動作\) がサービスの構成ファイルに明示的に追加されていない場合でもこの動作を追加する、カスタムの ServiceHost を構築します。  これを実現するには、<xref:System.ServiceModel.ServiceHost> から継承する新しいクラスを作成して `ApplyConfiguration`\(\) をオーバーライドします。  
+ このサンプルでは、ServiceMetadataBehavior (メタデータ公開を有効にする動作) がサービスの構成ファイルに明示的に追加されていない場合でもこの動作を追加する、カスタムの ServiceHost を構築します。 これを実現するには、<xref:System.ServiceModel.ServiceHost> から継承する新しいクラスを作成して `ApplyConfiguration`() をオーバーライドします。  
   
 ```  
 class SelfDescribingServiceHost : ServiceHost  
@@ -64,7 +67,7 @@ class SelfDescribingServiceHost : ServiceHost
 }  
 ```  
   
- アプリケーションの構成ファイルで指定されている構成が無視されないようにしたいので、`ApplyConfiguration`\(\) のオーバーライドで最初に行うことは、基本実装の呼び出しです。  このメソッドが完了した後で、次の命令型コードを使用して、サービス記述に <xref:System.ServiceModel.Description.ServiceMetadataBehavior> を追加します。  
+ アプリケーションの構成ファイルで指定されている構成が無視されないようにしたいので、`ApplyConfiguration`() のオーバーライドで最初に行うことは、基本実装の呼び出しです。 このメソッドが完了した後で、次の命令型コードを使用して、サービス記述に <xref:System.ServiceModel.Description.ServiceMetadataBehavior> を追加します。  
   
 ```  
 ServiceMetadataBehavior mexBehavior = this.Description.Behaviors.Find<ServiceMetadataBehavior>();  
@@ -81,7 +84,7 @@ else
 }  
 ```  
   
- `ApplyConfiguration`\(\) のオーバーライドでの最後の処理は、既定のメタデータ エンドポイントの追加です。  通常は、サービス ホストの BaseAddresses コレクション内の各 URI に対して 1 つずつメタデータ エンドポイントを作成します。  
+ `ApplyConfiguration`() のオーバーライドでの最後の処理は、既定のメタデータ エンドポイントの追加です。 通常は、サービス ホストの BaseAddresses コレクション内の各 URI に対して 1 つずつメタデータ エンドポイントを作成します。  
   
 ```  
 //Add a metadata endpoint at each base address  
@@ -115,11 +118,10 @@ foreach (Uri baseAddress in this.BaseAddresses)
                                 "mex");  
     }  
 }  
-  
 ```  
   
-## 自己ホストでのカスタム ServiceHost の使用  
- カスタム ServiceHost の実装が完成したので、これを使用して任意のサービスにメタデータ公開動作を追加できるようになりました。追加するには、`SelfDescribingServiceHost` のインスタンス内でサービスをホストします。  カスタム ServiceHost を自己ホストのシナリオで使用する方法を次のコードに示します。  
+## <a name="using-a-custom-servicehost-in-self-host"></a>自己ホストでのカスタム ServiceHost の使用  
+ カスタム ServiceHost の実装が完成したので、これを使用して任意のサービスにメタデータ公開動作を追加できるようになりました。追加するには、`SelfDescribingServiceHost` のインスタンス内でサービスをホストします。 カスタム ServiceHost を自己ホストのシナリオで使用する方法を次のコードに示します。  
   
 ```  
 SelfDescribingServiceHost host =   
@@ -127,10 +129,10 @@ SelfDescribingServiceHost host =
 host.Open();  
 ```  
   
- 既定の <xref:System.ServiceModel.ServiceHost> クラスを使用してサービスをホストする場合と同様に、このカスタム ServiceHost も、サービスのエンドポイント構成をアプリケーションの構成ファイルから読み取ります。  ただし、カスタム ホストの内部でメタデータ公開を有効にするというロジックを追加したので、構成の中でメタデータ公開動作を明示的に有効化することは不要になりました。  この方法のメリットがはっきりと現れるのは、開発するアプリケーションに複数のサービスがあり、同じ構成要素を繰り返し記述することなく各サービスでメタデータ公開を有効化できるようにする場合です。  
+ 既定の <xref:System.ServiceModel.ServiceHost> クラスを使用してサービスをホストする場合と同様に、このカスタム ServiceHost も、サービスのエンドポイント構成をアプリケーションの構成ファイルから読み取ります。 ただし、カスタム ホストの内部でメタデータ公開を有効にするというロジックを追加したので、構成の中でメタデータ公開動作を明示的に有効化することは不要になりました。 この方法のメリットがはっきりと現れるのは、開発するアプリケーションに複数のサービスがあり、同じ構成要素を繰り返し記述することなく各サービスでメタデータ公開を有効化できるようにする場合です。  
   
-## IIS または WAS でのカスタム ServiceHost の使用  
- カスタム サービス ホストを自己ホストのシナリオで使用することは簡単です。サービス ホストのインスタンスを作成して開くことは、アプリケーションのコードで行うからです。  ただし、IIS または WAS がホストする環境では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のインフラストラクチャが、受信メッセージに応答してサービスのホストを動的にインスタンス化します。  このホスト環境でもカスタム サービス ホストを使用できますが、ServiceHostFactory の形式でコードを追加する必要があります。  次に示すコードは、カスタム `SelfDescribingServiceHost` のインスタンスを返す、<xref:System.ServiceModel.Activation.ServiceHostFactory> の派生クラスの例です。  
+## <a name="using-a-custom-servicehost-in-iis-or-was"></a>IIS または WAS でのカスタム ServiceHost の使用  
+ カスタム サービス ホストを自己ホストのシナリオで使用することは簡単です。サービス ホストのインスタンスを作成して開くことは、アプリケーションのコードで行うからです。 ただし、IIS または WAS がホストする環境では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のインフラストラクチャが、受信メッセージに応答してサービスのホストを動的にインスタンス化します。 このホスト環境でもカスタム サービス ホストを使用できますが、ServiceHostFactory の形式でコードを追加する必要があります。 次に示すコードは、カスタム <xref:System.ServiceModel.Activation.ServiceHostFactory> のインスタンスを返す、`SelfDescribingServiceHost` の派生クラスの例です。  
   
 ```  
 public class SelfDescribingServiceHostFactory : ServiceHostFactory  
@@ -149,7 +151,7 @@ public class SelfDescribingServiceHostFactory : ServiceHostFactory
 }  
 ```  
   
- 上のコードでわかるように、カスタム ServiceHostFactory の実装は非常に簡単です。  すべてのカスタム ロジックは ServiceHost 実装内部にあり、このファクトリによって派生クラスのインスタンスが返されます。  
+ 上のコードでわかるように、カスタム ServiceHostFactory の実装は非常に簡単です。 すべてのカスタム ロジックは ServiceHost 実装内部にあり、このファクトリによって派生クラスのインスタンスが返されます。  
   
  サービス実装と共にカスタム ファクトリを使用するには、いくつかのメタデータをサービスの .svc ファイルに追加する必要があります。  
   
@@ -159,28 +161,28 @@ public class SelfDescribingServiceHostFactory : ServiceHostFactory
                language=c# Debug="true" %>  
 ```  
   
- ここでは、`Factory` 属性を `@ServiceHost` ディレクティブに追加し、カスタム ファクトリの CLR 型の名前を属性値として渡しました。  IIS または WAS がこのサービスのメッセージを受信すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ホスト インフラストラクチャによって最初に ServiceHostFactory のインスタンスが作成され、次に `ServiceHostFactory.CreateServiceHost()` が呼び出されてサービス ホスト自体のインスタンスが作成されます。  
+ ここでは、`Factory` 属性を `@ServiceHost` ディレクティブに追加し、カスタム ファクトリの CLR 型の名前を属性値として渡しました。 IIS または WAS がこのサービスのメッセージを受信すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ホスト インフラストラクチャによって最初に ServiceHostFactory のインスタンスが作成され、次に `ServiceHostFactory.CreateServiceHost()` が呼び出されてサービス ホスト自体のインスタンスが作成されます。  
   
-## サンプルの実行  
+## <a name="running-the-sample"></a>サンプルの実行  
  このサンプルには完全な機能を持つクライアントとサービスの実装が用意されていますが、ここでの目的は、カスタム ホストを使用してサービスのランタイム動作を変更する方法を示すことです。次の手順を実行します。  
   
-#### カスタム ホストの影響を確認するには  
+#### <a name="to-observe-the-effect-of-the-custom-host"></a>カスタム ホストの影響を確認するには  
   
 1.  サービスの Web.config ファイルを開き、その構成ではサービスのメタデータが明示的には有効にされていないことを確認します。  
   
-2.  サービスの .svc ファイルを開き、@ServiceHost ディレクティブに Factory 属性があることと、カスタム ServiceHostFactory の名前が指定されていることを確認します。  
+2.  サービスの .svc ファイルを開き、されることを確認、@ServiceHostディレクティブには、カスタム ServiceHostFactory の名前を示す Factory 属性が含まれています。  
   
-#### サンプルをセットアップ、ビルド、および実行するには  
+#### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。  
   
-2.  ソリューションをビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  指示に従って、ソリューションをビルドする[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。  
   
-3.  ソリューションがビルドされたら、Setup.bat を実行し、[!INCLUDE[iisver](../../../../includes/iisver-md.md)] で ServiceModelSamples アプリケーションを設定します。  ServiceModelSamples ディレクトリは、[!INCLUDE[iisver](../../../../includes/iisver-md.md)] アプリケーションとして表示されます。  
+3.  ソリューションがビルドされたら、Setup.bat を実行し、[!INCLUDE[iisver](../../../../includes/iisver-md.md)] で ServiceModelSamples アプリケーションを設定します。 ServiceModelSamples ディレクトリは、[!INCLUDE[iisver](../../../../includes/iisver-md.md)] アプリケーションとして表示されます。  
   
-4.  単一コンピューター構成か複数コンピューター構成かに応じて、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+4.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
 5.  [!INCLUDE[iisver](../../../../includes/iisver-md.md)] アプリケーションを削除するには、Cleanup.bat を実行します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [方法 : IIS で WCF サービスをホストする](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)

@@ -1,25 +1,28 @@
 ---
-title: "ReliableSessionBindingElement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: ReliableSessionBindingElement
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: effda125-b8d3-4de6-8c0e-f59f5ea8f6eb
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 3f4aff60c96db5071d41a3f011019b05746f0c96
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ReliableSessionBindingElement
+# <a name="reliablesessionbindingelement"></a>ReliableSessionBindingElement
 ReliableSessionBindingElement  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class ReliableSessionBindingElement : BindingElement  
@@ -35,73 +38,73 @@ class ReliableSessionBindingElement : BindingElement
 };  
 ```  
   
-## メソッド  
+## <a name="methods"></a>メソッド  
  ReliableSessionBindingElement クラスは、メソッドを一切定義しません。  
   
-## プロパティ  
+## <a name="properties"></a>プロパティ  
  ReliableSessionBindingElement クラスには、次のプロパティがあります。  
   
-### AcknowledgementInterval  
+### <a name="acknowledgementinterval"></a>AcknowledgementInterval  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  ファクトリによって作成された信頼できるチャネルで、メッセージの送信元に受信確認を送信するまで送信先が待機する時間  
   
-### FlowControlEnabled  
+### <a name="flowcontrolenabled"></a>FlowControlEnabled  
  データ型 : boolean  
   
  アクセスの種類 : 読み取り専用  
   
  フロー制御を有効にするかどうかを示すブール値  
   
-### InactivityTimeout  
+### <a name="inactivitytimeout"></a>InactivityTimeout  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  他の通信相手がチャネルにメッセージを送信せずにいられる最長期間を指定します。他の通信相手がメッセージを送信しない期間がこの値を超えると、チャネルでエラーが発生します。  
   
-### MaxPendingChannels  
+### <a name="maxpendingchannels"></a>MaxPendingChannels  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  リスナーで受け入れを待機できるチャネルの最大数。  
   
-### MaxRetryCount  
+### <a name="maxretrycount"></a>MaxRetryCount  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  基になるチャネルで `Send` を呼び出すことで、信頼できるチャネルが受信確認を受信していないメッセージの再転送を試みる最大回数  
   
-### MaxTransferWindowSize  
+### <a name="maxtransferwindowsize"></a>MaxTransferWindowSize  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  信頼できるセッションの転送ウィンドウの最大サイズ  
   
-### 順序あり  
+### <a name="ordered"></a>順序あり  
  データ型 : boolean  
   
  アクセスの種類 : 読み取り専用  
   
  メッセージが送信された順序で到着されることを保証するかどうかを指定するブール値です。  
   
-### ReliableMessagingVersion  
+### <a name="reliablemessagingversion"></a>ReliableMessagingVersion  
  データ型 : integer  
   
  アクセスの種類 : 読み取り専用  
   
- 信頼できるセッションで使用される WS\-ReliableMessaging プロトコルのバージョンを指定する整数。  
+ 信頼できるセッションで使用される WS-ReliableMessaging プロトコルのバージョンを指定する整数。  
   
-## 要件  
+## <a name="requirements"></a>要件  
   
 |MOF|Servicemodel.mof にて宣言済み。|  
-|---------|------------------------------|  
-|Namespace|root\\ServiceModel で定義|  
+|---------|-----------------------------------|  
+|Namespace|root\ServiceModel で定義|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels.ReliableSessionBindingElement>

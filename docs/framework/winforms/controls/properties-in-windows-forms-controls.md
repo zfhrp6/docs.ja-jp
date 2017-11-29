@@ -1,33 +1,34 @@
 ---
-title: "Windows フォーム コントロールのプロパティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "コントロール [Windows フォーム], プロパティ"
-  - "カスタム コントロール [Windows フォーム], プロパティの概要 (コードを使用)"
-  - "プロパティ [Windows フォーム]"
+title: "Windows フォーム コントロールのプロパティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- custom controls [Windows Forms], properties overview (using code)
+- controls [Windows Forms], properties
+- properties [Windows Forms]
 ms.assetid: 2785279b-fb57-4937-8f6b-2050e475db6f
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d5de09635fb92b46a2c0f89427ad03449de6bd53
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Windows フォーム コントロールのプロパティ
-Windows フォーム コントロールは、基本クラス <xref:System.Windows.Forms.Control?displayProperty=fullName> から数多くのプロパティを継承しています。  こうしたプロパティには、<xref:System.Windows.Forms.Control.Font%2A>、<xref:System.Windows.Forms.Control.ForeColor%2A>、<xref:System.Windows.Forms.Control.BackColor%2A>、<xref:System.Windows.Forms.Control.Bounds%2A>、<xref:System.Windows.Forms.Control.ClientRectangle%2A>、<xref:System.Windows.Forms.Control.DisplayRectangle%2A>、<xref:System.Windows.Forms.Control.Enabled%2A>、<xref:System.Windows.Forms.Control.Focused%2A>、<xref:System.Windows.Forms.Control.Height%2A>、<xref:System.Windows.Forms.Control.Width%2A>、<xref:System.Windows.Forms.Control.Visible%2A>、<xref:System.Windows.Forms.Control.AutoSize%2A> などがあります。  継承されるプロパティの詳細については、<xref:System.Windows.Forms.Control?displayProperty=fullName> に関するトピックを参照してください。  
+# <a name="properties-in-windows-forms-controls"></a>Windows フォーム コントロールのプロパティ
+Windows フォーム コントロールは多くのプロパティ フォームの基本クラスを継承して<xref:System.Windows.Forms.Control?displayProperty=nameWithType>です。 などのプロパティが含まれます<xref:System.Windows.Forms.Control.Font%2A>、 <xref:System.Windows.Forms.Control.ForeColor%2A>、 <xref:System.Windows.Forms.Control.BackColor%2A>、 <xref:System.Windows.Forms.Control.Bounds%2A>、 <xref:System.Windows.Forms.Control.ClientRectangle%2A>、 <xref:System.Windows.Forms.Control.DisplayRectangle%2A>、 <xref:System.Windows.Forms.Control.Enabled%2A>、 <xref:System.Windows.Forms.Control.Focused%2A>、 <xref:System.Windows.Forms.Control.Height%2A>、 <xref:System.Windows.Forms.Control.Width%2A>、 <xref:System.Windows.Forms.Control.Visible%2A>、 <xref:System.Windows.Forms.Control.AutoSize%2A>、およびその他の多くのです。 詳細については、継承されたプロパティは、次を参照してください。<xref:System.Windows.Forms.Control?displayProperty=nameWithType>です。  
   
- コントロールに継承されたプロパティをオーバーライドしたり、新しいプロパティを定義したりできます。  
+ コントロールで継承されたプロパティをオーバーライドしたり、新しいプロパティを定義したりできます。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [プロパティの定義](../../../../docs/framework/winforms/controls/defining-a-property-in-windows-forms-controls.md)  
  カスタム コントロールまたはカスタム コンポーネントのプロパティを実装する方法と、そのプロパティをデザイン環境に統合する方法について説明します。  
   
@@ -35,30 +36,30 @@ Windows フォーム コントロールは、基本クラス <xref:System.Window
  カスタム コントロールまたはカスタム コンポーネントの既定のプロパティ値を定義する方法について説明します。  
   
  [プロパティ変更イベント](../../../../docs/framework/winforms/controls/property-changed-events.md)  
- プロパティ値が変化したときにプロパティ変更通知を有効にする方法について説明します。  
+ プロパティ値が変更されたときに、プロパティ変更通知を有効にする方法について説明します。  
   
  [方法 : 内在コントロールのプロパティを公開する](../../../../docs/framework/winforms/controls/how-to-expose-properties-of-constituent-controls.md)  
  カスタム複合コントロール内の内在コントロールのプロパティを公開する方法について説明します。  
   
  [カスタム コントロールへのメソッドの実装](../../../../docs/framework/winforms/controls/method-implementation-in-custom-controls.md)  
- カスタム コントロールおよびカスタム コンポーネントのメソッドを実装する方法について説明します。  
+ カスタム コントロールおよびカスタム コンポーネントにメソッドを実装する方法について説明します。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.Windows.Forms.UserControl>  
- 複合コントロールを実装する基本クラスについて説明します。  
+ 複合コントロールを実装するための基本クラスについて説明します。  
   
  <xref:System.ComponentModel.TypeConverterAttribute>  
- カスタム プロパティの型に使用する <xref:System.ComponentModel.TypeConverter> を指定する属性について説明します。  
+ 指定する属性をドキュメント、<xref:System.ComponentModel.TypeConverter>カスタム プロパティの型を使用します。  
   
  <xref:System.ComponentModel.EditorAttribute>  
- カスタム プロパティに使用する <xref:System.Drawing.Design.UITypeEditor> を指定する属性について説明します。  
+ 指定する属性をドキュメント、<xref:System.Drawing.Design.UITypeEditor>カスタム プロパティに使用します。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [Windows フォーム コントロールの属性](../../../../docs/framework/winforms/controls/attributes-in-windows-forms-controls.md)  
- カスタム コントロールとカスタム コンポーネントのプロパティやその他のメンバーに適用できる属性について説明します。  
+ カスタム コントロールとコンポーネントのプロパティや他のメンバーに適用できる属性について説明します。  
   
- [コンポーネントのデザイン時属性](../Topic/Design-Time%20Attributes%20for%20Components.md)  
- コンポーネントとコントロールに適用されるメタデータ属性の一覧を示します。メタデータ属性が適用されたコンポーネントとコントロールは、デザイン時にビジュアル デザイナーで適切に表示されます。  
+ [コンポーネントのデザイン時属性](http://msdn.microsoft.com/library/12050fe3-9327-4509-9e21-4ee2494b95c3)  
+ ビジュアル デザイナーでデザインするときに正しく表示されるようにコンポーネントとコントロールに適用するメタデータ属性の一覧を表示します。  
   
- [Extending Design\-Time Support](../Topic/Extending%20Design-Time%20Support.md)  
- デザイン時サポートを提供するエディターやデザイナーなどのクラスを実装する方法を説明します。
+ [デザイン時サポートの拡張](http://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)  
+ デザイン時サポートを提供するエディターやデザイナーなどのクラスを実装する方法について説明します。

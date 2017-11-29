@@ -1,27 +1,29 @@
 ---
-title: "Windows Communication Foundation エンドポイント | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "エンドポイント [WCF]"
+title: "Windows Communication Foundation エンドポイント"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: endpoints [WCF]
 ms.assetid: bd0c310f-dd9f-4081-9be2-3db5909850b6
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 4ac3d1f16d860ea01217d0d1d35d0588da0c8d87
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Windows Communication Foundation エンドポイント
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスを使用して行われるすべての通信では、サービスの*エンドポイント*が使用されます。  エンドポイントは、クライアントが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスによって提供される機能にアクセスできるようにします。  
+# <a name="windows-communication-foundation-endpoints"></a>Windows Communication Foundation エンドポイント
+すべての通信、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]サービスが使用して行われる、*エンドポイント*サービス。 エンドポイントは、クライアントが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスによって提供される機能にアクセスできるようにします。  
   
- エンドポイントの作成方法の概要については、「[エンドポイントの作成の概要](../../../docs/framework/wcf/endpoint-creation-overview.md)」を参照してください。  エンドポイントは次の要素から成ります。  
+ エンドポイントを作成する方法の詳細については、次を参照してください。[エンドポイントの作成の概要](../../../docs/framework/wcf/endpoint-creation-overview.md)です。 エンドポイントは次の要素から成ります。  
   
 -   そのエンドポイントの場所を示すアドレス。  
   
@@ -37,24 +39,24 @@ caps.handback.revision: 13
   
 -   [サービスの設計と実装](../../../docs/framework/wcf/designing-and-implementing-services.md)  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [エンドポイントの作成の概要](../../../docs/framework/wcf/endpoint-creation-overview.md)  
  エンドポイントの構造を説明し、構成やコード内にエンドポイントを定義する方法と、ランタイムによって提供される既定のエンドポイント、バインディング、および動作の使用方法を解説します。  
   
  [エンドポイント アドレスの指定](../../../docs/framework/wcf/specifying-an-endpoint-address.md)  
  エンドポイントを通して [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスと通信する方法を解説します。  
   
- [方法 : 構成にサービス エンドポイントを作成する](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
+ [方法: 構成でサービス エンドポイントの作成](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
  構成でサービス エンドポイントを作成する方法を解説します。  
   
- [方法 : コード内にサービス エンドポイントを作成する](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
+ [方法: コードでサービス エンドポイントの作成](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
  コードでサービス エンドポイントを作成する方法を解説します。  
   
  [メタデータ エンドポイントを公開する](../../../docs/framework/wcf/publishing-metadata-endpoints.md)  
  構成およびコードでメタデータ エンドポイントを公開することによりってメタデータを公開する方法を解説します。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.ServiceModel.EndpointAddress>  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [基本的なプログラミング ライフサイクル](../../../docs/framework/wcf/basic-programming-lifecycle.md)

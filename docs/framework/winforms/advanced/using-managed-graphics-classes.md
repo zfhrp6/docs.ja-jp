@@ -1,72 +1,73 @@
 ---
-title: "マネージ グラフィックス クラスの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "GDI+, マネージ クラス"
-  - "グラフィックス, マネージ クラス"
-  - "グラフィックス, 使用 (Windows フォームで)"
+title: "マネージ グラフィックス クラスの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- GDI+, managed classes
+- graphics [Windows Forms], using in Windows Forms
+- graphics [Windows Forms], managed classes
 ms.assetid: e6d1a42d-2100-46aa-97e6-a5ddc0baaae5
-caps.latest.revision: 21
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7a53d5d4961e191ae3f3b821641e3f4b161cddf1
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# マネージ グラフィックス クラスの使用
-以下のトピックでは、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] API をマネージ クラス フレームワーク内で使用する方法について説明します。  
+# <a name="using-managed-graphics-classes"></a>マネージ グラフィックス クラスの使用
+次のトピックを使用する方法について説明、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]マネージ クラス フレームワーク内の API です。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [グラフィックス プログラミングについて](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)  
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] を使用して基本的なタスクを実行する方法について説明します。  
+ 使用して基本的なタスクを実行する方法について説明します[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]です。  
   
  [ペンを使用した直線と図形の描画](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)  
- ペンを作成し、それを使用してさまざまな線や図形を描画する方法について説明します。  
+ ペンを作成し、さまざまな線と図形の描画に使用する方法を示します。  
   
  [ブラシを使用した図形の塗りつぶし](../../../../docs/framework/winforms/advanced/using-a-brush-to-fill-shapes.md)  
- ブラシを作成し、さまざまな効果を使用して図形を塗りつぶす方法について説明します。  
+ さまざまな効果のブラシと塗りつぶし図形を構築する方法を示します。  
   
  [グラデーション ブラシを使用した図形の塗りつぶし](../../../../docs/framework/winforms/advanced/using-a-gradient-brush-to-fill-shapes.md)  
- 各種グラデーション ブラシの作成方法、および使用方法について説明します。  
+ 作成およびグラデーション ブラシの種類を使用する方法を示します。  
   
  [イメージ、ビットマップ、アイコン、およびメタファイルの操作](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)  
- イメージの作成および操作の方法について説明します。  
+ 構築して、イメージを操作する方法を示します。  
   
  [アルファ ブレンドの直線と塗りつぶし](../../../../docs/framework/winforms/advanced/alpha-blending-lines-and-fills.md)  
- 図形や線に透過性を設定する方法について説明します。  
+ 図形や線の透明度を実現する方法を示します。  
   
  [フォントとテキストの使用](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)  
- テキストの描画と、フォントとフォント ファミリを使用する方法について説明します。  
+ テキストを描画して、フォント、フォント ファミリを使用する方法を示します。  
   
  [曲線の作成と描画](../../../../docs/framework/winforms/advanced/constructing-and-drawing-curves.md)  
- カーディナル スプラインとベジエ スプラインを描画する方法について説明します。  
+ 基数とベジエ スプラインを描画する方法を示します。  
   
  [パスの作成および描画](../../../../docs/framework/winforms/advanced/constructing-and-drawing-paths.md)  
- パスを使用して図形を作成する方法について説明します。  
+ パスを使用して図形を作成する方法を示します。  
   
- [マネージ GDI\+ での変換の使用](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)  
- 行列変換について説明します。  
+ [マネージ GDI+ での変換の使用](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)  
+ 行列による変換をについて説明します。  
   
  [グラフィックス コンテナーの使用](../../../../docs/framework/winforms/advanced/using-graphics-containers.md)  
- グラフィックス オブジェクトの状態と、入れ子になったグラフィックス コンテナーを管理する方法について説明します。  
+ グラフィック オブジェクトの状態と入れ子になったグラフィックス コンテナーを管理する方法を示します。  
   
  [領域の使用](../../../../docs/framework/winforms/advanced/using-regions.md)  
- 領域のヒット テストとクリッピングについて説明します。  
+ ヒット テストと領域のクリッピングを示します。  
   
  [イメージの色の変更](../../../../docs/framework/winforms/advanced/recoloring-images.md)  
- 色の操作におけるさまざまな要素について説明します。  
+ 色を操作するためのさまざまな側面について説明します。  
   
- [マネージ GDI\+ でのイメージ エンコーダーおよびイメージ デコーダーの使用](../../../../docs/framework/winforms/advanced/using-image-encoders-and-decoders-in-managed-gdi.md)  
- イメージ エンコーダーおよびイメージ デコーダーを使用してイメージを操作する方法について説明します。  
+ [マネージ GDI+ でのイメージ エンコーダーおよびイメージ デコーダーの使用](../../../../docs/framework/winforms/advanced/using-image-encoders-and-decoders-in-managed-gdi.md)  
+ イメージ エンコーダーおよびデコーダーを使用してイメージを操作する方法を示します。  
   
  [ダブル バッファリングされたグラフィックス](../../../../docs/framework/winforms/advanced/double-buffered-graphics.md)  
- ダブル バッファリングを使用してちらつきを抑える方法について説明します。
+ ダブル バッファリングがちらつきを軽減する方法を示します。

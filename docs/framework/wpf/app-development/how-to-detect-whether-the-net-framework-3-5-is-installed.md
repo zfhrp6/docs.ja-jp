@@ -1,37 +1,40 @@
 ---
-title: "方法: .NET Framework 3.5 がインストールされているかどうかを確認する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "検出 (.NET Framework 3.5 のインストールを) [WPF]"
-  - "検出 (.NET Framework 3.5 がインストールされているかどうかを) [WPF]"
-  - "確認 (.NET Framework 3.5 がインストールされているかどうかを) [WPF]"
-  - "検証 (.NET Framework 3.5 がインストールされているかどうかを) [WPF]"
+title: "方法: .NET Framework 3.5 がインストールされているかどうかを検出"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- verifying whether.NET Framework 3.5 is installed [WPF]
+- detecting .NET Framework 3.5 installation [WPF]
+- detecting whether.NET Framework 3.5 is installed [WPF]
+- determining whether.NET Framework 3.5 is installed [WPF]
 ms.assetid: 8556a9d2-1eb8-48ef-919c-5baf22a2a9a2
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b603bbd86bb5eb12782ff8aff7797b73444b8518
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法: .NET Framework 3.5 がインストールされているかどうかを確認する
-管理者が [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] アプリケーションを [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] に対応するシステムに配置するには、最初に、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] ランタイムが存在することを確認する必要があります。  ここでは、システムに [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] が存在するかどうかを確認するための、HTML\/JavaScript で記述されたスクリプトを示します。  
+# <a name="how-to-detect-whether-the-net-framework-35-is-installed"></a>方法: .NET Framework 3.5 がインストールされているかどうかを検出
+管理者は展開する前に[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]を対象とするシステム上のアプリケーション、 [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]、する必要がありますまずことを確認したこと、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]ランタイムが存在します。 このトピックで記述されたスクリプトは、HTML または JavaScript を決定する管理者が使用できるのかどうか、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]は、システムに存在します。  
   
 > [!NOTE]
->  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] のインストール、配置、および検出の詳細については、「[.NET Framework のインストール](../../../../docs/framework/install/guide-for-developers.md)」を参照してください。  
+>  インストール、配置、および検出についての詳細、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]を参照してください[開発者向け .NET Framework をインストール](../../../../docs/framework/install/guide-for-developers.md)です。  
   
-## 使用例  
- [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] がインストールされるときに、MSI によって ".NET CLR" およびバージョン番号が UserAgent 文字列に追加されます。  次の例では、単純な HTML ページに埋め込まれたスクリプトを示します。  このスクリプトは、UserAgent 文字列を検索して、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] がインストールされているかどうかを判断し、検索の結果についてのステータス メッセージを表示します。  
+## <a name="example"></a>例  
+ ときに、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]がインストールされている、MSI バージョン番号と".NET CLR"文字列に追加 UserAgent です。 次の例では、単純な HTML ページに埋め込まれたスクリプトを示します。 スクリプトを決定する UserAgent 文字列を検索するかどうか、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]がインストールされているし、検索の結果のステータス メッセージを表示します。  
   
 > [!NOTE]
->  このスクリプトは Internet Explorer 向けです。  他のブラウザーでは、UserAgent 文字列に .NET CLR の情報は含まれません。  
+>  このスクリプトは、Internet Explorer 用に設計されています。 その他のブラウザーは、User-agent 文字列で .NET CLR の情報を含まない場合があります。  
   
 ```  
 <HTML>  
@@ -121,20 +124,19 @@ caps.handback.revision: 7
     <div id="result" />  
   </BODY>  
 </HTML>  
-  
 ```  
   
- ".NET CLR " バージョンが検出された場合は、次のようなステータス メッセージが表示されます。  
+ ".NET CLR"バージョンの検索が成功した場合は、次のようなステータス メッセージが表示されます。  
   
  `This machine has the correct version of the .NET Framework 3.5.`  
   
  `This machine's userAgent string is: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; InfoPath.2; .NET CLR 3.0.590; .NET CLR 3.5.20726; MS-RTC LM 8).`  
   
- それ以外の場合は、次のようなステータス メッセージが表示されます。  
+ それ以外の場合、次のようなステータス メッセージが表示されます。  
   
- `This machine does not have the correct version of the .NET Framework 3.5.  The required version is v3.5.0.0.`  
+ `This machine does not have the correct version of the .NET Framework 3.5. The required version is v3.5.0.0.`  
   
  `This machine's userAgent string is: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; InfoPath.2; .NET CLR 3.0.590; MS-RTC LM 8).`  
   
-## 参照  
- [.NET Framework 3.0 がインストールされているかどうかの確認](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md)
+## <a name="see-also"></a>関連項目  
+ [.NET Framework 3.0 がインストールされているかどうかを確認する](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md)

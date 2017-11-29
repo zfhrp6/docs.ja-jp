@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - deadlocks [.NET Framework]
 - LoaderLock MDA
@@ -23,16 +17,15 @@ helpviewer_keywords:
 - loader locks
 - locks, threads
 ms.assetid: 8c10fa02-1b9c-4be5-ab03-451d943ac1ee
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 632f46593f3e9ab5acba06d00f3a919cca31611f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 90fa57bae7bec1fb7f29ad566e92ae9143a39539
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="loaderlock-mda"></a>loaderLock MDA
 `loaderLock` マネージ デバッグ アシスタント (MDA) は、Microsoft Windows オペレーティング システムのローダー ロックを保持しているスレッド上でマネージ コードを実行する試行を検出します。  このような実行は、デッドロックの原因になる可能性があり、オペレーティング システムのローダーが初期化する前に DLL が使用される可能性があるため、不適切です。  
@@ -45,7 +38,7 @@ ms.lasthandoff: 08/21/2017
  最後に、オペレーティング システムのローダーが DLL を適切に初期化する前に、それらの DLL の呼び出しが発生する場合があります。  デッドロック エラーの場合、デッドロックに関係する全スレッドのスタックを調べることで診断できますが、この MDA を使用せずに初期化されていない DLL の使用を診断することは非常に困難です。  
   
 ## <a name="cause"></a>原因  
- .NET Framework バージョン 1.0 または 1.1 用に構築されたマネージ/アンマネージ混在 C++ アセンブリの場合、特別な措置 (**/NOENTRY** とリンクするなど) を取っていなければ、一般的にローダー ロック内でマネージ コードを実行しようとします。  このような問題の詳細な説明については、MSDN ライブラリの「混在モード DLL 読み込み時の問題」を参照してください。  
+ .NET Framework バージョン 1.0 または 1.1 用に構築されたマネージ/アンマネージ混在 C++ アセンブリの場合、特別な措置 (**/NOENTRY** とリンクするなど) を取っていなければ、一般的にローダー ロック内でマネージ コードを実行しようとします。
   
  .NET Framework バージョン 2.0 用に構築されたマネージ/アンマネージ混在 C++ アセンブリの場合、このような問題の影響をあまり受けません。オペレーティング システムのルールに違反するアンマネージ DLL を使用するアプリケーションと同程度に少ないリスクです。  たとえば、アンマネージ DLL の `DllMain` エントリ ポイントが `CoCreateInstance` を呼び出して、COM に公開されているマネージ オブジェクトを取得する場合、結果として、ローダー ロック内のマネージ コードを実行することになります。 .NET Framework バージョン 2.0 以降のローダー ロックの問題については、「[混在アセンブリの初期化](/cpp/dotnet/initialization-of-mixed-assemblies)」を参照してください。  
   
@@ -72,4 +65,3 @@ ms.lasthandoff: 08/21/2017
   
 ## <a name="see-also"></a>関連項目  
  [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-

@@ -5,30 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - performance, .NET Framework applications
 - performance counters
 - performance monitoring, counters
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c67018df35816b38828e548a88d25efe16d6a15a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 2e21b1f92c6694c6572d4651e94964e5d2d93c51
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="performance-counters-in-the-net-framework"></a>.NET Framework のパフォーマンス カウンター
 このトピックでは、[パフォーマンス モニター](http://technet.microsoft.com/library/cc749249.aspx)で参照できるパフォーマンス カウンターの一覧を示します。  
@@ -137,7 +130,7 @@ ms.lasthandoff: 08/21/2017
 |**# Gen 0 Collections**|アプリケーションの開始後に、ジェネレーション 0 のオブジェクト (最後に割り当てられた、最も若いオブジェクト) がガベージ コレクションされた回数を表示します。<br /><br /> ジェネレーション 0 ガベージ コレクションは、割り当て要求を満たすために利用できるジェネレーション 0 のメモリが不足したときに発生します。 このカウンターは、ジェネレーション 0 のガベージ コレクションの最後にインクリメントされます。 上位のジェネレーションのガベージ コレクションには、それより下位のすべてのジェネレーションのコレクションが含まれます。 このカウンターは、上位のジェネレーション (ジェネレーション 1 または 2) ガベージ コレクションが発生したときに明示的にインクリメントされます。<br /><br /> このカウンターは、最後に計測された値を表示します。 **_Global\_** カウンターの値は正確でないので、無視する必要があります。|  
 |**# Gen 1 Collections**|アプリケーションの開始後にジェネレーション 1 のオブジェクトをガベージ コレクションした回数を表示します。<br /><br /> このカウンターは、ジェネレーション 1 のガベージ コレクションの最後にインクリメントされます。 上位のジェネレーションのガベージ コレクションには、それより下位のすべてのジェネレーションのコレクションが含まれます。 このカウンターは、上位のジェネレーション (ジェネレーション 2) ガベージ コレクションが発生したときに明示的にインクリメントされます。<br /><br /> このカウンターは、最後に計測された値を表示します。 **_Global\_** カウンターの値は正確でないので、無視する必要があります。|  
 |**# Gen 2 Collections**|アプリケーションの開始後にジェネレーション 2 のオブジェクトをガベージ コレクションした回数を表示します。 このカウンターは、ジェネレーション 2 ガベージ コレクション (フル ガベージ コレクションとも呼ばれる) の最後にインクリメントされます。<br /><br /> このカウンターは、最後に計測された値を表示します。 **_Global\_** カウンターの値は正確でないので、無視する必要があります。|  
-|**# Induced GC**|明示的な <xref:System.GC.Collect%2A?displayProperty=fullName> 呼び出しが原因でガベージ コレクションが実行されたピーク回数を表示します。 ガベージ コレクターのコレクションの頻度を調整することをお勧めします。|  
+|**# Induced GC**|明示的な <xref:System.GC.Collect%2A?displayProperty=nameWithType> 呼び出しが原因でガベージ コレクションが実行されたピーク回数を表示します。 ガベージ コレクターのコレクションの頻度を調整することをお勧めします。|  
 |**# of Pinned Objects**|最後のガベージ コレクションで検出されたピン止めオブジェクトの数を表示します。 ピン止めオブジェクトとは、ガベージ コレクターがメモリ内を移動させることのできないオブジェクトです。 このカウンターは、ガベージ コレクションされるヒープ内のピン止めオブジェクトだけを追跡します。 たとえば、ジェネレーション 0 のガベージ コレクションは、ジェネレーション 0 のヒープ内のピン止めオブジェクトだけを列挙します。|  
 |**# of Sink Blocks in use**|現在使用中の同期ブロックの数を表示します。 同期ブロックは、同期情報を格納するためにオブジェクトごとに割り当てられるデータ構造体です。 同期ブロックは、マネージ オブジェクトへの弱い参照を保持します。ガベージ コレクターは、同期ブロックをスキャンする必要があります。 同期ブロックには、同期情報だけでなく、COM 相互運用メタデータも格納できます。 このカウンターは、同期プリミティブの頻繁な使用に関係するパフォーマンス問題を示します。|  
 |**# Total committed Bytes**|ガベージ コレクターによって現在コミットされている仮想メモリの量をバイト数で表示します。 コミットされたメモリとは、ディスク ページング ファイル内で領域が予約された物理メモリのことです。|  
@@ -267,6 +260,5 @@ for (int i = 0; i < Array.Length; i++)
 |**Total Runtime Checks**|アプリケーションの開始後に実行されたランタイム コード アクセス セキュリティ チェックの総数を表示します。 ランタイム コード アクセス セキュリティ チェックは、呼び出し元が特別のアクセス許可を要求したときに実行されます。 ランタイム チェックは、呼び出し元からのすべての呼び出しに対して実行され、呼び出し元の現在のスレッド スタックをチェックします。 このカウンターを **Stack Walk Depth** カウンターと共に使用することで、セキュリティ チェック時に発生するパフォーマンス低下を把握できます。|  
   
 ## <a name="see-also"></a>関連項目  
- [パフォーマンス カウンター](../../../docs/framework/debug-trace-profile/performance-counters.md)   
+ [Performance Counters](../../../docs/framework/debug-trace-profile/performance-counters.md)  
  [ランタイム プロファイリング](../../../docs/framework/debug-trace-profile/runtime-profiling.md)
-

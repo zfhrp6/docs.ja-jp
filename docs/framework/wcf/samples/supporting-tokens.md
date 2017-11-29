@@ -1,25 +1,28 @@
 ---
-title: "トークンのサポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "トークンのサポート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 65a8905d-92cc-4ab0-b6ed-1f710e40784e
-caps.latest.revision: 29
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 29
+caps.latest.revision: "29"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: bf4c153cb3bb0b977b2d1f0438d1b6ac0d46ab43
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# トークンのサポート
-このトークンのサポート サンプルでは、WS\-Security を使用するメッセージに追加トークンを追加する方法を示します。  この例では、ユーザー名セキュリティ トークンに加え、X.509 バイナリ セキュリティ トークンを追加します。  トークンは、WS\-Security メッセージ ヘッダーでクライアントからサービスに渡されます。そのメッセージの一部は X.509 証明書を所有していることを受信側に証明するため、X.509 セキュリティ トークンに関連付けられた秘密キーで署名されます。  これは、複数のクレームをメッセージに関連付けて送信側を認証または承認する必要がある場合に便利です。  サービスは、要求\/応答通信パターンを定義するコントラクトを実装します。  
+# <a name="supporting-tokens"></a>トークンのサポート
+このトークンのサポート サンプルでは、WS-Security を使用するメッセージに追加トークンを追加する方法を示します。 この例では、ユーザー名セキュリティ トークンに加え、X.509 バイナリ セキュリティ トークンを追加します。 トークンは、WS-Security メッセージ ヘッダーでクライアントからサービスに渡されます。そのメッセージの一部は X.509 証明書を所有していることを受信側に証明するため、X.509 セキュリティ トークンに関連付けられた秘密キーで署名されます。 これは、複数のクレームをメッセージに関連付けて送信側を認証または承認する必要がある場合に便利です。 サービスは、要求/応答通信パターンを定義するコントラクトを実装します。  
   
-## 使用例  
+## <a name="demonstrates"></a>使用例  
  このサンプルでは、次の方法を示します。  
   
 -   クライアントが追加セキュリティ トークンをサービスに渡す方法。  
@@ -31,8 +34,8 @@ caps.handback.revision: 29
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
-## クライアントによる、ユーザー名トークンと X.509 サポート セキュリティ トークンを使用した認証  
- サービスは、通信に使用する単一エンドポイントを公開します。エンドポイントは、`BindingHelper` クラスと `EchoServiceHost` クラスを使用してプログラムによって作成されます。  エンドポイントは、アドレス、バインディング、およびコントラクトがそれぞれ 1 つずつで構成されます。  バインディングは、`SymmetricSecurityBindingElement` と `HttpTransportBindingElement` を使用して、カスタム バインディングとして構成されます。  このサンプルでは、`SymmetricSecurityBindingElement` を設定してサービス X.509 証明書を使用し、送信中の対称キーを保護して、WS\-Security メッセージ ヘッダー内で `UserNameToken` とサポート `X509SecurityToken` を渡します。  対称キーは、メッセージ本文とユーザー名セキュリティ トークンの暗号化に使用されます。  サポート トークンは、追加バイナリ セキュリティ トークンとして WS\-Security メッセージ ヘッダー内で渡されます。  サポート トークンの信頼性は、サポート X.509 セキュリティ トークンに関連付けられている秘密キーを使用してメッセージに署名することによって証明されます。  
+## <a name="client-authenticates-with-username-token-and-supporting-x509-security-token"></a>クライアントによる、ユーザー名トークンと X.509 サポート セキュリティ トークンを使用した認証  
+ サービスは、通信に使用する単一エンドポイントを公開します。エンドポイントは、`BindingHelper` クラスと `EchoServiceHost` クラスを使用してプログラムによって作成されます。 エンドポイントは、アドレス、バインディング、およびコントラクトがそれぞれ 1 つずつで構成されます。 バインディングは、`SymmetricSecurityBindingElement` と `HttpTransportBindingElement` を使用して、カスタム バインディングとして構成されます。 このサンプルでは、`SymmetricSecurityBindingElement` を設定してサービス X.509 証明書を使用し、送信中の対称キーを保護して、WS-Security メッセージ ヘッダー内で `UserNameToken` とサポート `X509SecurityToken` を渡します。 対称キーは、メッセージ本文とユーザー名セキュリティ トークンの暗号化に使用されます。 サポート トークンは、追加バイナリ セキュリティ トークンとして WS-Security メッセージ ヘッダー内で渡されます。 サポート トークンの信頼性は、サポート X.509 セキュリティ トークンに関連付けられている秘密キーを使用してメッセージに署名することによって証明されます。  
   
 ```  
 public static Binding CreateMultiFactorAuthenticationBinding()  
@@ -58,10 +61,9 @@ public static Binding CreateMultiFactorAuthenticationBinding()
     // Create a CustomBinding based on the constructed security binding element.  
     return new CustomBinding(messageSecurity, httpTransport);  
 }  
-  
 ```  
   
- この動作により、クライアント認証に使用されるサービス資格情報と、サービス X.509 証明書に関する情報が指定されます。  サンプルでは、サービス X.509 証明書内のサブジェクト名として `CN=localhost` を使用しています。  
+ この動作により、クライアント認証に使用されるサービス資格情報と、サービス X.509 証明書に関する情報が指定されます。 サンプルでは、サービス X.509 証明書内のサブジェクト名として `CN=localhost` を使用しています。  
   
 ```  
 override protected void InitializeRuntime()  
@@ -180,7 +182,7 @@ public class EchoService : IEchoService
 }   
 ```  
   
- クライアント エンドポイントは、サービス エンドポイントと同様の方法で構成されます。  クライアントは、同じ `BindingHelper` クラスを使用してバインディングを作成します。  セットアップの残りの部分は、`Client` クラスにあります。  クライアントはクライアント エンドポイントの動作コレクションに対するセットアップ コード内に、ユーザー名セキュリティ トークンに関する情報、サポート X.509 セキュリティ トークン、およびサービス X.509 証明書に関する情報を設定します。  
+ クライアント エンドポイントは、サービス エンドポイントと同様の方法で構成されます。 クライアントは、同じ `BindingHelper` クラスを使用してバインディングを作成します。 セットアップの残りの部分は、`Client` クラスにあります。 クライアントはクライアント エンドポイントの動作コレクションに対するセットアップ コード内に、ユーザー名セキュリティ トークンに関する情報、サポート X.509 セキュリティ トークン、およびサービス X.509 証明書に関する情報を設定します。  
   
 ```  
  static void Main()  
@@ -290,8 +292,8 @@ public class EchoService : IEchoService
 }  
 ```  
   
-## 呼び出し元の情報の表示  
- 呼び出し元の情報を表示するには、次のコードに示すように `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` を使用できます。  `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` には、現在の呼び出し元に関連付けられている承認クレームが含まれています。  こうしたクレームは、メッセージ内で受信した各トークンの [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] によって自動的に提供されます。  
+## <a name="displaying-callers-information"></a>呼び出し元の情報の表示  
+ 呼び出し元の情報を表示するには、次のコードに示すように `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` を使用できます。 `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` には、現在の呼び出し元に関連付けられている承認クレームが含まれています。 こうしたクレームは、メッセージ内で受信した各トークンの [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] によって自動的に提供されます。  
   
 ```  
 bool TryGetClaimValue<TClaimResource>(ClaimSet claimSet, string   
@@ -353,18 +355,18 @@ void GetCallerIdentities(ServiceSecurityContext callerSecurityContext, out strin
 }  
 ```  
   
-## サンプルの実行  
- このサンプルを実行すると、最初にクライアントから、ユーザー名トークンのユーザー名とパスワードを入力するように求められます。  サービス上の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、ユーザー名トークンで提供された値をシステムによって提供される ID にマップするので、必ずシステム アカウントの正しい値を入力してください。  その後、クライアントではサービスからの応答が表示されます。  クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
+## <a name="running-the-sample"></a>サンプルの実行  
+ このサンプルを実行すると、最初にクライアントから、ユーザー名トークンのユーザー名とパスワードを入力するように求められます。 サービス上の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、ユーザー名トークンで提供された値をシステムによって提供される ID にマップするので、必ずシステム アカウントの正しい値を入力してください。 その後、クライアントではサービスからの応答が表示されます。 クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
   
-## セットアップ バッチ ファイル  
- このサンプルに用意されている Setup.bat バッチ ファイルを使用すると、適切な証明書を使用してサーバーを構成し、インターネット インフォメーション サービス \(IIS\) でホストされるアプリケーションを実行できるようになります。このアプリケーションは、サーバー証明書ベースのセキュリティを必要とします。  このバッチ ファイルは、別のコンピューターを使用する場合またはホストなしの場合に応じて変更する必要があります。  
+## <a name="setup-batch-file"></a>セットアップ バッチ ファイル  
+ このサンプルに用意されている Setup.bat バッチ ファイルを使用すると、適切な証明書を使用してサーバーを構成し、インターネット インフォメーション サービス (IIS) でホストされるアプリケーションを実行できるようになります。このアプリケーションは、サーバー証明書ベースのセキュリティを必要とします。 このバッチ ファイルは、別のコンピューターを使用する場合またはホストなしの場合に応じて変更する必要があります。  
   
  次に、バッチ ファイルのセクションのうち、適切な構成で実行するために変更が必要となる部分を示します。  
   
-### クライアント証明書の作成  
- Setup.bat バッチ ファイルの次の行は、使用するクライアント証明書を作成します。  `%CLIENT_NAME%` 変数は、クライアント証明書のサブジェクトを指定します。  このサンプルでは、サブジェクト名として "client.com" を使用します。  
+### <a name="creating-the-client-certificate"></a>クライアント証明書の作成  
+ Setup.bat バッチ ファイルの次の行は、使用するクライアント証明書を作成します。 `%CLIENT_NAME%` 変数は、クライアント証明書のサブジェクトを指定します。 このサンプルでは、サブジェクト名として "client.com" を使用します。  
   
- 証明書は、`CurrentUser` ストアの場所の My \(Personal\) ストアに保存されます。  
+ 証明書は、`CurrentUser` ストアの場所の My (Personal) ストアに保存されます。  
   
 ```  
 echo ************  
@@ -373,8 +375,8 @@ echo ************
 makecert.exe -sr CurrentUser -ss MY -a sha1 -n CN=%CLIENT_NAME% -sky exchange -pe  
 ```  
   
-### クライアント証明書のサーバーの信頼されたストアへのインストール  
- Setup.bat バッチ ファイルの次の行は、クライアント証明書をサーバーの信頼されたユーザーのストアにコピーします。  この手順が必要なのは、Makecert.exe によって生成される証明書がサーバーのシステムにより暗黙には信頼されないからです。  マイクロソフト発行の証明書など、クライアントの信頼されたルート証明書に基づいた証明書が既にある場合は、クライアント証明書ストアにサーバー証明書を配置するこの手順は不要です。  
+### <a name="installing-the-client-certificate-into-the-servers-trusted-store"></a>クライアント証明書のサーバーの信頼されたストアへのインストール  
+ Setup.bat バッチ ファイルの次の行は、クライアント証明書をサーバーの信頼されたユーザーのストアにコピーします。 この手順が必要なのは、Makecert.exe によって生成される証明書がサーバーのシステムにより暗黙には信頼されないからです。 マイクロソフト発行の証明書など、クライアントの信頼されたルート証明書に基づいた証明書が既にある場合は、クライアント証明書ストアにサーバー証明書を配置するこの手順は不要です。  
   
 ```  
 echo ************  
@@ -383,10 +385,10 @@ echo ************
 certmgr.exe -add -r CurrentUser -s My -c -n %CLIENT_NAME% -r LocalMachine -s TrustedPeople  
 ```  
   
-### サーバー証明書の作成  
- Setup.bat バッチ ファイルの次の行は、使用するサーバー証明書を作成します。  `%SERVER_NAME%`  変数はサーバー名です。  この変数を変更して、使用するサーバー名を指定します。  このバッチ ファイルでの既定は localhost です。  
+### <a name="creating-the-server-certificate"></a>サーバー証明書の作成  
+ Setup.bat バッチ ファイルの次の行は、使用するサーバー証明書を作成します。 `%SERVER_NAME%` 変数はサーバー名です。 この変数を変更して、使用するサーバー名を指定します。 このバッチ ファイルでの既定は localhost です。  
   
- 証明書は、LocalMachine ストアの場所の My \(Personal\) ストアに保存されます。  証明書は、IIS でホストされるサービスの LocalMachine ストアに保存されます。  自己ホスト型サービスの場合、バッチ ファイルで文字列 LocalMachine を CurrentUser に置き換えて、サーバー証明書を CurrentUser ストアの場所に保存します。  
+ 証明書は、LocalMachine ストアの場所の My (Personal) ストアに保存されます。 証明書は、IIS でホストされるサービスの LocalMachine ストアに保存されます。 自己ホスト型サービスの場合、バッチ ファイルで文字列 LocalMachine を CurrentUser に置き換えて、サーバー証明書を CurrentUser ストアの場所に保存します。  
   
 ```  
 echo ************  
@@ -398,8 +400,8 @@ echo ************
 makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
 ```  
   
-### サーバー証明書のクライアントの信頼された証明書ストアへのインストール  
- Setup.bat バッチ ファイルの次の行は、サーバー証明書をクライアントの信頼されたユーザーのストアにコピーします。  この手順が必要なのは、Makecert.exe によって生成される証明書がクライアント システムにより暗黙には信頼されないからです。  マイクロソフト発行の証明書など、クライアントの信頼されたルート証明書に基づいた証明書が既にある場合は、クライアント証明書ストアにサーバー証明書を配置するこの手順は不要です。  
+### <a name="installing-server-certificate-into-clients-trusted-certificate-store"></a>サーバー証明書のクライアントの信頼された証明書ストアへのインストール  
+ Setup.bat バッチ ファイルの次の行は、サーバー証明書をクライアントの信頼されたユーザーのストアにコピーします。 この手順が必要なのは、Makecert.exe によって生成される証明書がクライアント システムにより暗黙には信頼されないからです。 マイクロソフト発行の証明書など、クライアントの信頼されたルート証明書に基づいた証明書が既にある場合は、クライアント証明書ストアにサーバー証明書を配置するこの手順は不要です。  
   
 ```  
 echo ************  
@@ -407,8 +409,8 @@ echo copying server cert to client's TrustedPeople store
 echo ************certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
 ```  
   
-### 証明書の秘密キーへのアクセスの有効化  
- IIS でホストされるサービスから証明書の秘密キーへのアクセスを有効にするには、IIS でホストされる処理が実行されているユーザー アカウントに、秘密キーへの適切なアクセス許可を付与する必要があります。  これは、Setup.bat スクリプトの最後の手順によって実現されます。  
+### <a name="enabling-access-to-the-certificates-private-key"></a>証明書の秘密キーへのアクセスの有効化  
+ IIS でホストされるサービスから証明書の秘密キーへのアクセスを有効にするには、IIS でホストされる処理が実行されているユーザー アカウントに、秘密キーへの適切なアクセス許可を付与する必要があります。 これは、Setup.bat スクリプトの最後の手順によって実現されます。  
   
 ```  
 echo ************  
@@ -421,58 +423,58 @@ echo Y|cacls.exe "%PRIVATE_KEY_FILE%" /E /G "%WP_ACCOUNT%":R
 iisreset  
 ```  
   
-##### サンプルをセットアップ、ビルド、および実行するには  
+##### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」を実行したことを確認します。  
+1.  実行することを確認、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。  
   
-2.  ソリューションをビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  指示に従って、ソリューションをビルドする[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。  
   
 3.  サンプルを単一コンピューター構成で実行するか、複数コンピューター構成で実行するかに応じて、次の手順に従います。  
   
-##### サンプルを同じコンピューターで実行するには  
+##### <a name="to-run-the-sample-on-the-same-machine"></a>サンプルを同じコンピューターで実行するには  
   
-1.  管理特権で [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトを実行し、サンプルのインストール フォルダーから Setup.bat を実行します。  これにより、サンプルの実行に必要なすべての証明書がインストールされます。  
+1.  管理特権で [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトを実行し、サンプルのインストール フォルダーから Setup.bat を実行します。 これにより、サンプルの実行に必要なすべての証明書がインストールされます。  
   
     > [!NOTE]
-    >  Setup.bat バッチ ファイルは、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトから実行します。  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプト内で設定された PATH 環境変数は、Setup.bat スクリプトで必要な実行可能ファイルが格納されているディレクトリを指しています。  サンプルの使用が終わったら、Cleanup.bat を実行して証明書を削除してください。  他のセキュリティ サンプルでも同じ証明書を使用します。  
+    >  Setup.bat バッチ ファイルは、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトから実行します。 [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプト内で設定された PATH 環境変数は、Setup.bat スクリプトで必要な実行可能ファイルが格納されているディレクトリを指しています。 サンプルの使用が終わったら、Cleanup.bat を実行して証明書を削除してください。 他のセキュリティ サンプルでも同じ証明書を使用します。  
   
-2.  Client.exe を \\client\\bin で起動します。  クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。  
+2.  Client.exe を \client\bin で起動します。 クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。  
   
-3.  クライアントとサービス間で通信できない場合は、「[トラブルシューティングのヒント](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
+3.  クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
   
-##### サンプルを複数コンピューターで実行するには  
+##### <a name="to-run-the-sample-across-machines"></a>サンプルを複数コンピューターで実行するには  
   
-1.  サービス コンピューターにディレクトリを作成します。  インターネット インフォメーション サービス \(IIS\) 管理ツールを使用して、このディレクトリ用に servicemodelsamples という仮想アプリケーションを作成します。  
+1.  サービス コンピューターにディレクトリを作成します。 インターネット インフォメーション サービス (IIS) 管理ツールを使用して、このディレクトリ用に servicemodelsamples という仮想アプリケーションを作成します。  
   
-2.  サービス プログラム ファイルを \\inetpub\\wwwroot\\servicemodelsamples からサービス コンピューターの仮想ディレクトリにコピーします。  ファイルのコピー先が \\bin サブディレクトリであることを確認します。  Setup.bat、Cleanup.bat、ImportClientCert.bat の各ファイルもサービス コンピューターにコピーします。  
+2.  サービス プログラム ファイルを \inetpub\wwwroot\servicemodelsamples からサービス コンピューターの仮想ディレクトリにコピーします。 ファイルのコピー先が \bin サブディレクトリであることを確認します。 Setup.bat、Cleanup.bat、ImportClientCert.bat の各ファイルもサービス コンピューターにコピーします。  
   
 3.  クライアント コンピューターにクライアント バイナリ用のディレクトリを作成します。  
   
-4.  クライアント プログラム ファイルを、クライアント コンピュータに作成したクライアント ディレクトリにコピーします。  Setup.bat、Cleanup.bat、ImportServiceCert.bat の各ファイルもクライアントにコピーします。  
+4.  クライアント プログラム ファイルを、クライアント コンピュータに作成したクライアント ディレクトリにコピーします。 Setup.bat、Cleanup.bat、ImportServiceCert.bat の各ファイルもクライアントにコピーします。  
   
-5.  サーバー上で管理特権を使用して Visual Studio コマンド プロンプトを開き、`setup.bat service` を実行します。  `setup.bat` に `` `service` 引数を指定して実行すると、コンピューターの完全修飾ドメイン名を使用してサービス証明書が作成され、Service.cer というファイルにエクスポートされます。  
+5.  サーバー上で管理特権を使用して Visual Studio コマンド プロンプトを開き、`setup.bat service` を実行します。 実行している`setup.bat`で、`service`引数は、マシンの完全修飾ドメイン名サービス証明書を作成し、サービス証明書が Service.cer というファイルにエクスポートします。  
   
-6.  Web.config を編集して、新しい証明書名 \([\<serviceCertificate\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)の `findValue` 属性\) を反映します。これは、コンピューターの完全修飾ドメイン名と同じです。  
+6.  新しい証明書名を反映するように Web.config を編集 (で、`findValue`属性、 [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) は、マシンの完全修飾ドメイン名と同じです。  
   
 7.  Service.cer ファイルを、サービス ディレクトリからクライアント コンピューターのクライアント ディレクトリにコピーします。  
   
-8.  クライアント上で、管理特権を使用して Visual Studio コマンド プロンプトを開き、`setup.bat client` を実行します。  `setup.bat`に `client` 引数を指定して実行すると、client.com というクライアント証明書が作成され、Client.cer というファイルにエクスポートされます。  
+8.  クライアント上で、管理特権を使用して Visual Studio コマンド プロンプトを開き、`setup.bat client` を実行します。 `setup.bat`に `client` 引数を指定して実行すると、client.com というクライアント証明書が作成され、Client.cer というファイルにエクスポートされます。  
   
-9. クライアント コンピューターの Client.exe.config ファイルで、エンドポイントのアドレス値をサービスの新しいアドレスに合わせます。  そのためには、localhost をサーバーの完全修飾ドメイン名に置き換えます。  
+9. クライアント コンピューターの Client.exe.config ファイルで、エンドポイントのアドレス値をサービスの新しいアドレスに合わせます。 そのためには、localhost をサーバーの完全修飾ドメイン名に置き換えます。  
   
 10. Client.cer ファイルを、クライアント ディレクトリからサーバーのサービス ディレクトリにコピーします。  
   
-11. クライアントで ImportServiceCert.bat を実行します。  これにより、サービス証明書が Service.cer ファイルから CurrentUser \- TrustedPeople ストアにインポートされます。  
+11. クライアントで ImportServiceCert.bat を実行します。 これにより、サービス証明書が Service.cer ファイルから CurrentUser - TrustedPeople ストアにインポートされます。  
   
-12. サーバーで ImportClientCert.bat を実行します。これにより、クライアント証明書が Client.cer ファイルから LocalMachine \- TrustedPeople ストアにインポートされます。  
+12. サーバーで ImportClientCert.bat を実行します。これにより、クライアント証明書が Client.cer ファイルから LocalMachine - TrustedPeople ストアにインポートされます。  
   
-13. クライアント コンピューターで、コマンド プロンプト ウィンドウから Client.exe を起動します。  クライアントとサービス間で通信できない場合は、「[トラブルシューティングのヒント](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
+13. クライアント コンピューターで、コマンド プロンプト ウィンドウから Client.exe を起動します。 クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
   
-##### サンプルの実行後にクリーンアップするには  
+##### <a name="to-clean-up-after-the-sample"></a>サンプルの実行後にクリーンアップするには  
   
 -   サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。  
   
 > [!NOTE]
->  このサンプルを別のマシンで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。  別のコンピューターで証明書を使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルを実行した場合は、CurrentUser \- TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。  削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。  
+>  このサンプルを別のマシンで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。 別のコンピューターで証明書を使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルを実行した場合は、CurrentUser - TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。 削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。  
   
-## 参照
+## <a name="see-also"></a>関連項目

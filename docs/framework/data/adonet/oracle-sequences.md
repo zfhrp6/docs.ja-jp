@@ -1,38 +1,41 @@
 ---
-title: "Oracle シーケンス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Oracle シーケンス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 27cd371d-8252-414d-b5b2-5d31fa44b585
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: c50e8d64201a369ed76e328ee355201cbd45bca6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Oracle シーケンス
-.NET Framework Data Provider for Oracle では、<xref:System.Data.OracleClient.OracleDataAdapter> を使用して挿入操作を実行した後、サーバーによって生成されたキー値 \(Oracle シーケンス\) を取得できます。  
+# <a name="oracle-sequences"></a>Oracle シーケンス
+.NET Framework Data Provider for Oracle では、<xref:System.Data.OracleClient.OracleDataAdapter> を使用して挿入操作を実行した後、サーバーによって生成されたキー値 (Oracle シーケンス) を取得できます。  
   
- SQL Server および Oracle は、主キーとして指定できる自動増分列の作成をサポートします。  これらの値はテーブルに行を追加するとサーバーによって自動的に生成されます。  SQL Server では列の Identity プロパティを設定し、Oracle では Sequence を作成します。  SQL Server の自動増分列と Oracle シーケンスの違いは、次のとおりです。  
+ SQL Server および Oracle は、主キーとして指定できる自動増分列の作成をサポートします。 これらの値はテーブルに行を追加するとサーバーによって自動的に生成されます。 SQL Server では列の Identity プロパティを設定し、Oracle では Sequence を作成します。 SQL Server の自動増分列と Oracle シーケンスの違いは、次のとおりです。  
   
 -   SQL Server では列を自動増分列として指定すると、新しい行を挿入するたびに SQL Server によって新しい列値が自動的に生成されます。  
   
--   Oracle ではシーケンスを作成することによって、テーブルに新しい列値を生成します。ただし、シーケンスとテーブルまたはシーケンスと列の間に直接的な関係はありません。  Oracle シーケンスは、テーブルやストアド プロシージャと同様のオブジェクトです。  
+-   Oracle ではシーケンスを作成することによって、テーブルに新しい列値を生成します。ただし、シーケンスとテーブルまたはシーケンスと列の間に直接的な関係はありません。 Oracle シーケンスは、テーブルやストアド プロシージャと同様のオブジェクトです。  
   
- Oracle データベースにシーケンスを作成する場合は、初期値と増分値を定義できます。  新しい行を送信する前に、新しい値のシーケンスを照会することもできます。  つまり、コードでデータベースに行を挿入する前に、新しい行のキー値を調べることができます。  
+ Oracle データベースにシーケンスを作成する場合は、初期値と増分値を定義できます。 新しい行を送信する前に、新しい値のシーケンスを照会することもできます。 つまり、コードでデータベースに行を挿入する前に、新しい行のキー値を調べることができます。  
   
- SQL Server および ADO.NET を使用した自動増分列の作成の詳細については、「[ID 値および Autonumber 値の取得](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)」および「[AutoIncrement 列の作成](../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-autoincrement-columns.md)」を参照してください。  
+ SQL Server と ADO.NET を使用して自動インクリメント列の作成の詳細については、次を参照してください。 [Id の取得や Autonumber 値](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)と[AutoIncrement 列の作成](../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-autoincrement-columns.md)です。  
   
-## 例  
- 次の C\# コードは、Oracle データベースから新しいシーケンス値を取得する例です。  新しい行を送信する INSERT INTO クエリでシーケンスを参照した後、Oracle10g で導入された RETURNING 句を使って、生成されたシーケンス値を返します。  この例では、保留状態の一連の新しい行を、ADO.NET の自動増分機能を使って <xref:System.Data.DataTable> に追加し、"プレースホルダー" の主キー値を生成します。  ADO.NET が新しい行に対して生成した増分値は、単なる "プレースホルダー" である点に注意してください。  つまり、データベースで生成される値は、ADO.NET によって生成された値とは必ずしも一致しません。  
+## <a name="example"></a>例  
+ 次の C# コードは、Oracle データベースから新しいシーケンス値を取得する例です。 新しい行を送信する INSERT INTO クエリでシーケンスを参照した後、Oracle10g で導入された RETURNING 句を使って、生成されたシーケンス値を返します。 この例では、保留状態の一連の新しい行を、ADO.NET の自動増分機能を使って <xref:System.Data.DataTable> に追加し、"プレースホルダー" の主キー値を生成します。 ADO.NET が新しい行に対して生成した増分値は、単なる "プレースホルダー" である点に注意してください。 つまり、データベースで生成される値は、ADO.NET によって生成された値とは必ずしも一致しません。  
   
- この例では、保留中の挿入をデータベースに送信する前に行の内容を表示します。  次に、新しい <xref:System.Data.OracleClient.OracleDataAdapter> オブジェクトを作成して、その <xref:System.Data.OracleClient.OracleDataAdapter.InsertCommand%2A> プロパティと <xref:System.Data.OracleClient.OracleDataAdapter.UpdateBatchSize%2A> プロパティを設定します。  この例では、サーバーによって生成された値を、出力パラメーターを使って返すロジックも使用されています。  その後、更新操作を実行し、保留中の行を送信して、<xref:System.Data.DataTable> の内容を表示します。  
+ この例では、保留中の挿入をデータベースに送信する前に行の内容を表示します。 次に、新しい <xref:System.Data.OracleClient.OracleDataAdapter> オブジェクトを作成して、その <xref:System.Data.OracleClient.OracleDataAdapter.InsertCommand%2A> プロパティと <xref:System.Data.OracleClient.OracleDataAdapter.UpdateBatchSize%2A> プロパティを設定します。 この例では、サーバーによって生成された値を、出力パラメーターを使って返すロジックも使用されています。 その後、更新操作を実行し、保留中の行を送信して、<xref:System.Data.DataTable> の内容を表示します。  
   
 ```csharp  
 public void OracleSequence(String connectionString)  
@@ -105,6 +108,6 @@ public void OracleSequence(String connectionString)
 }  
 ```  
   
-## 参照  
- [Oracle および ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [Oracle および ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

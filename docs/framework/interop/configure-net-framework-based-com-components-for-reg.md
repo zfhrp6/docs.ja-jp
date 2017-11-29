@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - components [.NET Framework], manifest
 - application manifests [.NET Framework]
@@ -21,16 +15,15 @@ helpviewer_keywords:
 - registration-free COM interop, configuring .NET-based components
 - activation, registration-free
 ms.assetid: 32f8b7c6-3f73-455d-8e13-9846895bd43b
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cb323bfdff40aafa65c050d4d42f66047d63f650
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: d373d6abc82e482a3b1df873295573f0e34eeda2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>方法: 登録を必要としないアクティベーション用の .NET Framework ベースの COM コンポーネントを構成する
 .NET Framework ベースのコンポーネントの登録を必要としないアクティベーションは、COM コンポーネントの場合よりも少しだけ複雑です。 セットアップには 2 つのマニフェストが必要です。  
@@ -52,7 +45,7 @@ ms.lasthandoff: 08/21/2017
     <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
     ```  
   
-     マニフェストの要素とその属性については、MSDN Library で「Application Manifests Reference」を検索してください。  
+     マニフェストの要素とその属性については、次を参照してください。[アプリケーション マニフェスト](https://msdn.microsoft.com/library/windows/desktop/aa374191.aspx)です。  
   
 3.  マニフェストの所有者を指定します。 次の例では、`myComApp` バージョン 1 がマニフェスト ファイルを所有しています。  
   
@@ -92,7 +85,7 @@ ms.lasthandoff: 08/21/2017
   
 5.  マニフェスト ファイルに名前を付けて保存します。 アプリケーション マニフェストの名前は、アセンブリ実行可能ファイルの名前に拡張子 .manifest が付いたものです。 たとえば、myComApp.exe のアプリケーション マニフェスト ファイル名は myComApp.exe.manifest です。  
   
- アプリケーション マニフェストは、COM アプリケーションと同じディレクトリにインストールできます。 また、アプリケーションの .exe ファイルにリソースとして追加することもできます。 詳細については、MSDN Library で「Side-by-side Assemblies」を検索してください。  
+ アプリケーション マニフェストは、COM アプリケーションと同じディレクトリにインストールできます。 また、アプリケーションの .exe ファイルにリソースとして追加することもできます。 詳細については、詳細については、次を参照してください。[サイド バイ サイド アセンブリに関する](https://msdn.microsoft.com/library/windows/desktop/ff951640.aspx)です。  
   
 #### <a name="to-create-a-component-manifest"></a>コンポーネント マニフェストを作成するには  
   
@@ -188,8 +181,7 @@ ms.lasthandoff: 08/21/2017
      ここでも、`myresource.res` は埋め込むリソースを含むリソース ファイルの名前です。  
   
 ## <a name="see-also"></a>関連項目  
- [登録を必要としない COM 相互運用機能](../../../docs/framework/interop/registration-free-com-interop.md)   
- [登録を必要としない COM 相互運用機能の要件](http://msdn.microsoft.com/en-us/0c43bc57-eecf-4e6c-8114-490141cce4da)   
- [登録を必要としないアクティベーション用の COM コンポーネントの構成](http://msdn.microsoft.com/en-us/bfe9b02f-d964-4784-960e-a1f94692fbfe)   
+ [登録を必要としない COM 相互運用機能](../../../docs/framework/interop/registration-free-com-interop.md)  
+ [登録を必要としない COM 相互運用機能の要件](http://msdn.microsoft.com/en-us/0c43bc57-eecf-4e6c-8114-490141cce4da)  
+ [登録を必要としないアクティベーション用の COM コンポーネントの構成](http://msdn.microsoft.com/en-us/bfe9b02f-d964-4784-960e-a1f94692fbfe)  
  [.NET ベースのコンポーネントの登録を必要としないアクティベーション: チュートリアル](http://go.microsoft.com/fwlink/?LinkId=158812)
-

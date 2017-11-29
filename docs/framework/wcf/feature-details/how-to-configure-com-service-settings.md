@@ -1,30 +1,32 @@
 ---
-title: "方法 : COM+ サービス設定を構成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "COM+ [WCF], サービス設定の構成"
+title: "方法 : COM+ サービス設定を構成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: COM+ [WCF], configuring service settings
 ms.assetid: f42a55a8-3af8-4394-9fdd-bf12a93780eb
-caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7cbe038b55358ec8607d54b67861ef1743c2e301
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : COM+ サービス設定を構成する
-COM\+ サービス構成ツールを使用してアプリケーション インターフェイスを追加または削除すると、アプリケーション構成ファイル内の Web サービス構成が更新されます。  COM\+ ホスト モードでは、Application.config ファイルはアプリケーションのルート ディレクトリ \(既定は %PROGRAMFILES%\\ComPlus Applications\\{appid}\) に配置されます。  いずれの Web ホスト モードでも、Web.config ファイルは指定した vroot ディレクトリに配置されます。  
+# <a name="how-to-configure-com-service-settings"></a>方法 : COM+ サービス設定を構成する
+COM+ サービス構成ツールを使用してアプリケーション インターフェイスを追加または削除すると、アプリケーション構成ファイル内の Web サービス構成が更新されます。 COM + ホスト モードでは、Application.config ファイルはアプリケーションのルート ディレクトリに配置されます (%PROGRAMFILES%\ComPlus アプリケーション\\%programfiles%\complus は既定値)。 いずれの Web ホスト モードでも、Web.config ファイルは指定した vroot ディレクトリに配置されます。  
   
 > [!NOTE]
->  クライアントとサーバー間のメッセージの改ざんを防止するには、メッセージの署名を使用する必要があります。  また、クライアントとサーバー間のメッセージから情報が漏えいするのを防止するには、メッセージまたはトランスポート層の暗号化を使用する必要があります。  [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスの場合と同様に、調整機能を使用して同時呼び出し、同時接続、同時インスタンス、同時保留操作の数を制限する必要があります。  これによりリソースの過剰消費を防ぐことができます。  調整の動作は、サービス構成ファイルの設定で指定します。  
+>  クライアントとサーバー間のメッセージの改ざんを防止するには、メッセージの署名を使用する必要があります。 また、クライアントとサーバー間のメッセージから情報が漏えいするのを防止するには、メッセージまたはトランスポート層の暗号化を使用する必要があります。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスの場合と同様に、調整機能を使用して同時呼び出し、同時接続、同時インスタンス、同時保留操作の数を制限する必要があります。 これによりリソースの過剰消費を防ぐことができます。 調整の動作は、サービス構成ファイルの設定で指定します。  
   
-## 使用例  
+## <a name="example"></a>例  
  次のインターフェイスを実装するコンポーネントについて考えます。  
   
 ```  
@@ -34,7 +36,6 @@ public interface IFinances
     string Debit(string accountNo, double amount);  
     string Credit(string accountNo, double amount);  
 }  
-  
 ```  
   
  コンポーネントを Web サービスとして公開する場合、クライアントが準拠する必要のある対応の公開サービス コントラクトは次のとおりです。  
@@ -50,7 +51,6 @@ public interface IFinancesContract : IDisposable
     [OperationContract]  
     string Credit(string accountNo, double amount);  
 }  
-  
 ```  
   
 > [!NOTE]
@@ -58,19 +58,19 @@ public interface IFinancesContract : IDisposable
   
  このサービスを使用するクライアント アプリケーションはこのコントラクトに準拠し、さらにアプリケーションの構成に指定したバインディングと互換性のあるバインディングを使用する必要があります。  
   
- 次のコード例は、既定の構成ファイルの例を示しています。  [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Web サービスであるため、これは標準サービス モデルの構成スキーマに準拠し、他の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの構成ファイルと同様の方法で編集できます。  
+ 次のコード例は、既定の構成ファイルの例を示しています。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Web サービスであるため、これは標準サービス モデルの構成スキーマに準拠し、他の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの構成ファイルと同様の方法で編集できます。  
   
  通常、次のような変更を行います。  
   
--   エンドポイント アドレスを既定の ApplicationName\/ComponentName\/InterfaceName という形式から、より利用しやすい形式に変更する。  
+-   エンドポイント アドレスを既定の ApplicationName/ComponentName/InterfaceName という形式から、より利用しやすい形式に変更する。  
   
--   サービスの名前空間を既定の "http:\/\/tempuri.org\/InterfaceID" という形式から、より関連性の高い形式に変更する。  
+-   サービスの名前空間を既定の "http://tempuri.org/InterfaceID" という形式から、より関連性の高い形式に変更する。  
   
 -   異なるトランスポート バインディングを使用するようにエンドポイントを変更する。  
   
-     COM\+ ホスト モードの場合、既定では名前付きパイプ トランスポートが使用されますが、その代わりに TCP などのコンピューターに関係のないトランスポートも使用できます。  
+     COM+ ホスト モードの場合、既定では名前付きパイプ トランスポートが使用されますが、その代わりに TCP などのコンピューターに関係のないトランスポートも使用できます。  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
     <system.serviceModel>  
@@ -103,8 +103,7 @@ public interface IFinancesContract : IDisposable
         </services>  
     </system.serviceModel>  
 </configuration>  
-  
 ```  
   
-## 参照  
- [COM\+ アプリケーションとの統合](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)
+## <a name="see-also"></a>関連項目  
+ [COM + アプリケーションとの統合](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)

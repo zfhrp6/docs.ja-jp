@@ -1,36 +1,34 @@
 ---
-title: "暗号化アルゴリズムへのオブジェクト ID の割り当て | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "暗号アルゴリズム"
-  - "暗号化, 割り当て (オブジェクト ID の)"
-  - "デジタル署名"
-  - "識別子, 割り当て (オブジェクト ID の)"
-  - "割り当て (オブジェクト ID の)"
+title: "暗号化アルゴリズムへのオブジェクト ID の割り当て"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- digital signatures
+- identifiers, mapping object identifiers
+- cryptographic algorithms
+- mapping object identifiers
+- cryptography, mapping object identifiers
 ms.assetid: c9673f81-bf9e-47fd-bc6f-6bc1c1c4c15e
-caps.latest.revision: 8
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: dbfe394193925e38dad774d39d79ac813abef22a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 暗号化アルゴリズムへのオブジェクト ID の割り当て
-デジタル署名は、データをあるプログラムから別のプログラムへ送信したときに、データが不正に変更されないことを保証するために使用されます。  一般に、デジタル署名は、署名の対象となるデータのハッシュに数値演算関数を適用して計算されます。  署名対象のハッシュ値をフォーマットするときに、一定のデジタル署名アルゴリズムにより、フォーマット操作の一部として ASN.1 OID \(オブジェクト ID\) が付加されます。  OID は、ハッシュの計算に使用されたアルゴリズムを識別します。  アルゴリズムにオブジェクト ID を割り当てることにより、カスタムのアルゴリズムを使用するように暗号機構を拡張できます。  新しいハッシュ アルゴリズムにオブジェクト ID を割り当てる方法を次の例で示します。  
+# <a name="mapping-object-identifiers-to-cryptography-algorithms"></a>暗号化アルゴリズムへのオブジェクト ID の割り当て
+デジタル署名は、データが改ざんされない 1 つのプログラムから別の送信時を確認します。 通常、デジタル署名は、数学関数に署名するデータのハッシュを適用して計算されます。 署名するハッシュ値を書式設定時に一部のデジタル署名アルゴリズムは、書式設定操作の一部として ASN.1 オブジェクト識別子 (OID) を追加します。 OID は、ハッシュの計算に使用されたアルゴリズムを識別します。 アルゴリズムは、カスタム アルゴリズムを使用する暗号化機構を拡張するオブジェクトの識別子にマップできます。 次の例では、オブジェクト識別子を新しいハッシュ アルゴリズムにマップする方法を示します。  
   
-```  
+```xml  
 <configuration>  
    <mscorlib>  
       <cryptographySettings>  
@@ -50,8 +48,8 @@ caps.handback.revision: 8
 </configuration>  
 ```  
   
- [\<oidEntry\> 要素](../../../docs/framework/configure-apps/file-schema/cryptography/oidentry-element.md) は 2 個の属性が含まれています。  **OID** 属性は、オブジェクト ID 番号です。  **名前** 属性は [\<nameEntry\> 要素](../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md)から **名前** 属性の値です。  オブジェクト ID に簡易名を割り当てるには、あらかじめ、クラスにアルゴリズム名を割り当てる必要があります。  
+ [ \<OidEntry > 要素](../../../docs/framework/configure-apps/file-schema/cryptography/oidentry-element.md)2 つの属性が含まれています。 **OID**属性は、オブジェクトの識別番号。 **名前**属性の値が、**名前**属性から、 [ \<nameEntry > 要素](../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md)です。 オブジェクト識別子は、簡易名にマップできる前に、クラスにアルゴリズム名をマッピングする必要があります。  
   
-## 参照  
- [暗号化クラスの設定](../../../docs/framework/configure-apps/configure-cryptography-classes.md)   
- [暗号サービス](../../../docs/standard/security/cryptographic-services.md)
+## <a name="see-also"></a>関連項目  
+ [暗号化クラスの設定](../../../docs/framework/configure-apps/configure-cryptography-classes.md)  
+ [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)

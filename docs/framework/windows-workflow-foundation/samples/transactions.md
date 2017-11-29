@@ -1,34 +1,32 @@
 ---
-title: "トランザクション | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Transactions2
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 51212219-a39e-448e-bff3-10064ff5de64
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c7611ce26c1a3b9150a60ced7b4931cc1282eecd
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# トランザクション
-このセクションには、[!INCLUDE[wf](../../../../includes/wf-md.md)] のワークフロー トランザクションを使用するシナリオを示すサンプルが含まれています。  
+# <a name="transactions"></a>トランザクション
+このセクションには、[!INCLUDE[wf](../../../../includes/wf-md.md)] のワークフロー トランザクションを示すサンプルが含まれています。  
   
-## このセクションの内容  
- [命令型 TransactionScope でのワークフローの実行](../../../../docs/framework/windows-workflow-foundation/samples/execute-a-workflow-in-an-imperative-transactionscope.md)  
- 命令型 C\# コードから <xref:System.Transactions.Transaction> の下にある <xref:System.Activities.WorkflowInvoker> を使用してワークフローを実行する方法を示します。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [基本 TransactionScope](../../../../docs/framework/windows-workflow-foundation/samples/basic-transactionscope.md)  
+ <xref:System.Activities.Statements.TransactionScope> インスタンスを入れ子にする方法を示す 4 つのシナリオで構成されます。  
   
- [トランザクション コンボイ スコープ](../../../../docs/framework/windows-workflow-foundation/samples/transaction-convoy-scope.md)  
- パラレルなコンボイ メッセージング アクティビティ パターンを <xref:System.ServiceModel.Activities.TransactedReceiveScope> と組み合わせて作成し、多数の操作をすべて同じトランザクションで任意の順序で行うことができるプロトコルをモデル化する方法を示します。  
+ [TransactedReceiveScope の使用](../../../../docs/framework/windows-workflow-foundation/samples/use-of-transactedreceivescope.md)  
+ クライアントからサーバーにトランザクションをフローする方法を示します。このために、<xref:System.Activities.Statements.TransactionScope> を使用してクライアント上に新しいトランザクションを作成し、<xref:System.ServiceModel.Activities.TransactedReceiveScope> を使用してフローされたトランザクションを含むメッセージを受信し、サーバー上でトランザクションの有効期間のスコープを設定します。  
   
- [トランザクションのロールバック](../../../../docs/framework/windows-workflow-foundation/samples/transaction-rollback.md)  
- アンビエント <xref:System.Activities.RuntimeTransactionHandle> にアクセスしてアンビエント トランザクションを取得し、そのトランザクションを明示的にロールバックするカスタム <xref:System.Activities.NativeActivity> を作成する方法を示します。  
-  
- [トランザクション スコープの抑制](../../../../docs/framework/windows-workflow-foundation/samples/suppress-transaction-scope.md)  
- アンビエント ランタイム トランザクションが存在する場合はそのトランザクションを抑制するカスタム `SuppressTransactionScope` アクティビティを作成する方法を示します。  
-  
- [トランザクション キュー](../../../../docs/framework/windows-workflow-foundation/samples/transacted-queues.md)  
- キューとトランザクションを [!INCLUDE[wf1](../../../../includes/wf1-md.md)] に統合し、信頼性があり、拡張性の高いサービスを作成する方法を示します。
+ [サービス内での TransactionScope の入れ子化](../../../../docs/framework/windows-workflow-foundation/samples/nesting-of-transactionscope-within-a-service.md)  
+ サービス内で <xref:System.Activities.Statements.TransactionScope> アクティビティ インスタンスを処理する方法を示す 2 つのシナリオで構成されます。

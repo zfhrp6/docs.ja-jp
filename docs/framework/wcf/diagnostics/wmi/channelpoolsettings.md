@@ -1,25 +1,28 @@
 ---
-title: "ChannelPoolSettings | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: ChannelPoolSettings
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d3f475bd-f780-4bbe-b291-339387322964
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 0a56616e97526b2d410d18d97dc1391c6fc32cc3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ChannelPoolSettings
+# <a name="channelpoolsettings"></a>ChannelPoolSettings
 ChannelPoolSettings  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class ChannelPoolSettings  
@@ -30,38 +33,38 @@ class ChannelPoolSettings
 };  
 ```  
   
-## メソッド  
+## <a name="methods"></a>メソッド  
  ChannelPoolSettings クラスは、メソッドを一切定義しません。  
   
-## プロパティ  
+## <a name="properties"></a>プロパティ  
  ChannelPoolSettings クラスには、次のプロパティがあります。  
   
-### IdleTimeout  
+### <a name="idletimeout"></a>IdleTimeout  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  接続が切断されるまでの最大アイドル時間。  
   
-### LeaseTimeout  
+### <a name="leasetimeout"></a>LeaseTimeout  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  リース操作の完了がタイムアウトするまでの最大時間。  
   
-### MaxOutboundChannelsPerEndpoint  
+### <a name="maxoutboundchannelsperendpoint"></a>MaxOutboundChannelsPerEndpoint  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  各エンドポイントでの送信チャネルの最大数。  
   
-## 要件  
+## <a name="requirements"></a>要件  
   
 |MOF|Servicemodel.mof にて宣言済み。|  
-|---------|------------------------------|  
-|Namespace|root\\ServiceModel で定義|  
+|---------|-----------------------------------|  
+|Namespace|root\ServiceModel で定義|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels.ChannelPoolSettings>

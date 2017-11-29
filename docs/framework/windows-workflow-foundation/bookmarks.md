@@ -1,30 +1,34 @@
 ---
-title: "ブックマーク | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Bookmarks1
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9b51a346-09ae-455c-a70a-e2264ddeb9e2
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f570db1e677445239cec537f66bdf66fad66b37d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ブックマーク
-ブックマークは、ワークフローのスレッド上に保持することなく、アクティビティが受動的に入力を待機できるようにする機構です。アクティビティが働きかけを待機していることを示すときは、ブックマークを作成できます。これは、現在実行中の \(<xref:System.Activities.Bookmark> を作成した\) メソッドから返された場合でも、アクティビティの実行が完了していると見なさないことをランタイムに対して示します。  
+# <a name="bookmarks"></a>ブックマーク
+ブックマークは、ワークフローのスレッド上に保持することなく、アクティビティが受動的に入力を待機できるようにする機構です。 アクティビティが働きかけを待機していることを示すときは、ブックマークを作成できます。 これは、現在実行中の (<xref:System.Activities.Bookmark> を作成した) メソッドから返された場合でも、アクティビティの実行が完了していると見なさないことをランタイムに対して示します。  
   
-## ブックマークの基本  
- <xref:System.Activities.Bookmark> は、ワークフロー インスタンス内で実行を再開できるポイント \(および入力を渡すことができるポイント\) を表します。通常、<xref:System.Activities.Bookmark> には名前が付けられ、外部 \(ホストまたは拡張\) コードで、関連データを含むブックマークを再開する処理を実行します。<xref:System.Activities.Bookmark> を再開すると、ワークフロー ランタイムは、作成時に、その <xref:System.Activities.Bookmark> と関連付けられた <xref:System.Activities.BookmarkCallback> のデリゲートをスケジュールします。  
+## <a name="bookmark-basics"></a>ブックマークの基本  
+ <xref:System.Activities.Bookmark> は、ワークフロー インスタンス内で実行を再開できるポイント (および入力を渡すことができるポイント) を表します。 通常、<xref:System.Activities.Bookmark> には名前が付けられ、外部 (ホストまたは拡張) コードで、関連データを含むブックマークを再開する処理を実行します。 <xref:System.Activities.Bookmark> を再開すると、ワークフロー ランタイムは、作成時に、その <xref:System.Activities.BookmarkCallback> と関連付けられた <xref:System.Activities.Bookmark> のデリゲートをスケジュールします。  
   
-## ブックマークのオプション  
- <xref:System.Activities.BookmarkOptions> クラスは、作成する <xref:System.Activities.Bookmark> の種類を指定します。互いに矛盾しない値として、<xref:System.Activities.BookmarkOptions>、<xref:System.Activities.BookmarkOptions>、および <xref:System.Activities.BookmarkOptions> があります。1 度のみ再開される想定の <xref:System.Activities.Bookmark> を作成する場合、既定では <xref:System.Activities.BookmarkOptions> を使用します。複数回再開できる <xref:System.Activities.Bookmark> を作成する場合は、<xref:System.Activities.BookmarkOptions> を使用します。再開しない <xref:System.Activities.Bookmark> を作成する場合は、<xref:System.Activities.BookmarkOptions> を使用します。既定の <xref:System.Activities.BookmarkOptions> を使用して作成されるブックマークとは異なり、<xref:System.Activities.BookmarkOptions> ブックマークはアクティビティの完了を妨げません。  
+## <a name="bookmark-options"></a>ブックマークのオプション  
+ <xref:System.Activities.BookmarkOptions> クラスは、作成する <xref:System.Activities.Bookmark> の種類を指定します。 互いに矛盾しない値として、<xref:System.Activities.BookmarkOptions.None>、<xref:System.Activities.BookmarkOptions.MultipleResume>、および <xref:System.Activities.BookmarkOptions.NonBlocking> があります。 1 度のみ再開される想定の <xref:System.Activities.BookmarkOptions.None> を作成する場合、既定では <xref:System.Activities.Bookmark> を使用します。 複数回再開できる <xref:System.Activities.BookmarkOptions.MultipleResume> を作成する場合は、<xref:System.Activities.Bookmark> を使用します。 再開しない <xref:System.Activities.BookmarkOptions.NonBlocking> を作成する場合は、<xref:System.Activities.Bookmark> を使用します。 既定の <xref:System.Activities.BookmarkOptions> を使用して作成されるブックマークとは異なり、<xref:System.Activities.BookmarkOptions.NonBlocking> ブックマークはアクティビティの完了を妨げません。  
   
-## ブックマークの再開  
- ブックマークは、ワークフロー以外のコードから、<xref:System.Activities.WorkflowApplication.ResumeBookmark%2A> オーバーロードのいずれかを使用して再開できます。この例では、`ReadLine` アクティビティが作成されます。実行されると、`ReadLine` アクティビティは <xref:System.Activities.Bookmark> を作成し、コールバックを登録してから、<xref:System.Activities.Bookmark> が再開されるのを待機します。再開されると、`ReadLine` アクティビティは <xref:System.Activities.Bookmark> と一緒に渡されたデータを <xref:System.Activities.Activity%601.Result%2A> 引数に割り当てます。  
+## <a name="bookmark-resumption"></a>ブックマークの再開  
+ ブックマークは、ワークフロー以外のコードから、<xref:System.Activities.WorkflowApplication.ResumeBookmark%2A> オーバーロードのいずれかを使用して再開できます。 この例では、`ReadLine` アクティビティが作成されます。 実行されると、`ReadLine` アクティビティは <xref:System.Activities.Bookmark> を作成し、コールバックを登録してから、<xref:System.Activities.Bookmark> が再開されるのを待機します。 再開されると、`ReadLine` アクティビティは <xref:System.Activities.Bookmark> と一緒に渡されたデータを <xref:System.Activities.Activity%601.Result%2A> 引数に代入します。  
   
 ```csharp  
 public sealed class ReadLine : NativeActivity<string>  
@@ -56,7 +60,7 @@ public sealed class ReadLine : NativeActivity<string>
 }  
 ```  
   
- 次の例では、`ReadLine` アクティビティを使用してユーザー名を収集し、それをコンソール ウィンドウに表示するワークフローを作成します。ホスト アプリケーションは入力を収集する実際の作業を実行し、<xref:System.Activities.Bookmark> を再開することでワークフローに渡します。  
+ 次の例では、`ReadLine` アクティビティを使用してユーザー名を収集し、それをコンソール ウィンドウに表示するワークフローを作成します。 ホスト アプリケーションは入力を収集する実際の作業を実行し、<xref:System.Activities.Bookmark> を再開することでワークフローに渡します。  
   
 ```csharp  
 Variable<string> name = new Variable<string>  
@@ -116,7 +120,7 @@ wfApp.ResumeBookmark("UserName", Console.ReadLine());
 syncEvent.WaitOne();  
 ```  
   
- `ReadLine` アクティビティが実行されると、`UserName` という名前の <xref:System.Activities.Bookmark> が作成され、ブックマークが再開されるのを待機します。ホストは必要なデータを収集し、<xref:System.Activities.Bookmark> を再開します。ワークフローが再開されると名前が表示されて、完了します。ブックマークの再開に関して、同期コードは必要ありません。<xref:System.Activities.Bookmark> を再開できるのは、ワークフローがアイドルの場合のみです。ワークフローがアイドルではない場合、<xref:System.Activities.WorkflowApplication.ResumeBookmark%2A> を呼び出すと、ワークフローがアイドルになるまでブロックされます。  
+ `ReadLine` アクティビティが実行されると、<xref:System.Activities.Bookmark> という名前の `UserName` が作成され、ブックマークが再開されるのを待機します。 ホストは必要なデータを収集し、<xref:System.Activities.Bookmark> を再開します。 ワークフローが再開されると名前が表示されて、完了します。 ブックマークの再開に関して、同期コードは必要ありません。 <xref:System.Activities.Bookmark> を再開できるのは、ワークフローがアイドルの場合のみです。ワークフローがアイドルではない場合、<xref:System.Activities.WorkflowApplication.ResumeBookmark%2A> を呼び出すと、ワークフローがアイドルになるまでブロックされます。  
   
-## ブックマークの再開結果  
- <xref:System.Activities.WorkflowApplication.ResumeBookmark%2A> は、ブックマークの再開要求の結果を示す <xref:System.Activities.BookmarkResumptionResult> 列挙値を返します。戻り値には <xref:System.Activities.BookmarkResumptionResult>、<xref:System.Activities.BookmarkResumptionResult>、および <xref:System.Activities.BookmarkResumptionResult> があります。ホストと拡張ではこの値を使用して処理の進め方を決定します。
+## <a name="bookmark-resumption-result"></a>ブックマークの再開結果  
+ <xref:System.Activities.WorkflowApplication.ResumeBookmark%2A> は、ブックマークの再開要求の結果を示す <xref:System.Activities.BookmarkResumptionResult> 列挙値を返します。 戻り値には <xref:System.Activities.BookmarkResumptionResult.Success>、<xref:System.Activities.BookmarkResumptionResult.NotReady>、および <xref:System.Activities.BookmarkResumptionResult.NotFound> があります。 ホストと拡張ではこの値を使用して処理の進め方を決定します。

@@ -5,30 +5,24 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+dev_langs: cpp
 helpviewer_keywords:
 - platform invoke, marshaling data
 - data marshaling, platform invoke
 - marshaling, platform invoke
 ms.assetid: dc5c76cf-7b12-406f-b79c-d1a023ec245d
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 70383e7623852935c0192e700b798a5f0ec554aa
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 71a4962029c0056287e97ea56dc02ae6cef8b603
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="marshaling-data-with-platform-invoke"></a>プラットフォーム呼び出しによるデータのマーシャリング
 アンマネージ ライブラリからエクスポートされた関数を呼び出すには、.NET Framework アプリケーションで、マネージ コード内にアンマネージ関数を表す関数プロトタイプが必要です。 プラットフォーム呼び出しがデータを正しくマーシャリングできるようにするプロトタイプを作成するには、次のことを実行する必要があります。  
@@ -46,24 +40,24 @@ ms.lasthandoff: 08/21/2017
   
 |Wtypes.h でのアンマネージ型|アンマネージ C 言語型|マネージ クラス名|説明|  
 |--------------------------------|-------------------------------|------------------------|-----------------|  
-|**HANDLE**|**void\***|<xref:System.IntPtr?displayProperty=fullName>|32 ビット Windows オペレーティング システム、64 ビット Windows オペレーティング システムで 64 ビットに 32 ビットです。|  
-|**BYTE**|**unsigned char**|<xref:System.Byte?displayProperty=fullName>|8 ビット|  
-|**SHORT**|**short**|<xref:System.Int16?displayProperty=fullName>|16 ビット|  
-|**WORD**|**unsigned short**|<xref:System.UInt16?displayProperty=fullName>|16 ビット|  
-|**INT**|**int**|<xref:System.Int32?displayProperty=fullName>|32 ビット|  
-|**UINT**|**unsigned int**|<xref:System.UInt32?displayProperty=fullName>|32 ビット|  
-|**LONG**|**long**|<xref:System.Int32?displayProperty=fullName>|32 ビット|  
+|**HANDLE**|**void\***|<xref:System.IntPtr?displayProperty=nameWithType>|32 ビット Windows オペレーティング システム、64 ビット Windows オペレーティング システムで 64 ビットに 32 ビットです。|  
+|**BYTE**|**unsigned char**|<xref:System.Byte?displayProperty=nameWithType>|8 ビット|  
+|**SHORT**|**short**|<xref:System.Int16?displayProperty=nameWithType>|16 ビット|  
+|**WORD**|**unsigned short**|<xref:System.UInt16?displayProperty=nameWithType>|16 ビット|  
+|**INT**|**int**|<xref:System.Int32?displayProperty=nameWithType>|32 ビット|  
+|**UINT**|**unsigned int**|<xref:System.UInt32?displayProperty=nameWithType>|32 ビット|  
+|**LONG**|**long**|<xref:System.Int32?displayProperty=nameWithType>|32 ビット|  
 |**BOOL**|**long**|<xref:System.Byte>|32 ビット|  
-|**DWORD**|**unsigned long**|<xref:System.UInt32?displayProperty=fullName>|32 ビット|  
-|**ULONG**|**unsigned long**|<xref:System.UInt32?displayProperty=fullName>|32 ビット|  
-|**CHAR**|**char**|<xref:System.Char?displayProperty=fullName>|ANSI で装飾します。|  
-|**WCHAR**|**wchar_t**|<xref:System.Char?displayProperty=fullName>|Unicode で装飾します。|  
-|**LPSTR**|**char\***|<xref:System.String?displayProperty=fullName> または <xref:System.Text.StringBuilder?displayProperty=fullName>|ANSI で装飾します。|  
-|**LPCSTR**|**Const char\***|<xref:System.String?displayProperty=fullName> または <xref:System.Text.StringBuilder?displayProperty=fullName>|ANSI で装飾します。|  
-|**LPWSTR**|**wchar_t\***|<xref:System.String?displayProperty=fullName> または <xref:System.Text.StringBuilder?displayProperty=fullName>|Unicode で装飾します。|  
-|**LPCWSTR**|**Const wchar_t\***|<xref:System.String?displayProperty=fullName> または <xref:System.Text.StringBuilder?displayProperty=fullName>|Unicode で装飾します。|  
-|**FLOAT**|**Float**|<xref:System.Single?displayProperty=fullName>|32 ビット|  
-|**DOUBLE**|**Double**|<xref:System.Double?displayProperty=fullName>|64 ビット|  
+|**DWORD**|**unsigned long**|<xref:System.UInt32?displayProperty=nameWithType>|32 ビット|  
+|**ULONG**|**unsigned long**|<xref:System.UInt32?displayProperty=nameWithType>|32 ビット|  
+|**CHAR**|**char**|<xref:System.Char?displayProperty=nameWithType>|ANSI で装飾します。|  
+|**WCHAR**|**wchar_t**|<xref:System.Char?displayProperty=nameWithType>|Unicode で装飾します。|  
+|**LPSTR**|**char\***|<xref:System.String?displayProperty=nameWithType> または <xref:System.Text.StringBuilder?displayProperty=nameWithType>|ANSI で装飾します。|  
+|**LPCSTR**|**Const char\***|<xref:System.String?displayProperty=nameWithType> または <xref:System.Text.StringBuilder?displayProperty=nameWithType>|ANSI で装飾します。|  
+|**LPWSTR**|**wchar_t\***|<xref:System.String?displayProperty=nameWithType> または <xref:System.Text.StringBuilder?displayProperty=nameWithType>|Unicode で装飾します。|  
+|**LPCWSTR**|**Const wchar_t\***|<xref:System.String?displayProperty=nameWithType> または <xref:System.Text.StringBuilder?displayProperty=nameWithType>|Unicode で装飾します。|  
+|**FLOAT**|**Float**|<xref:System.Single?displayProperty=nameWithType>|32 ビット|  
+|**DOUBLE**|**Double**|<xref:System.Double?displayProperty=nameWithType>|64 ビット|  
   
  [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)]、C#、および C++ での対応する型については、「[.NET Framework クラス ライブラリの概要](../../../docs/standard/class-library-overview.md)」を参照してください。  
   
@@ -74,4 +68,3 @@ ms.lasthandoff: 08/21/2017
  [!code-cpp[PInvokeLib#1](../../../samples/snippets/cpp/VS_Snippets_CLR/pinvokelib/cpp/pinvokelib.cpp#1)]  
   
  [!code-cpp[PInvokeLib#2](../../../samples/snippets/cpp/VS_Snippets_CLR/pinvokelib/cpp/pinvokelib.h#2)]
-

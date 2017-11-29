@@ -1,32 +1,30 @@
 ---
-title: "Property let procedure not defined and property get procedure did not return an object | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID451"
-dev_langs: 
-  - "VB"
+title: "Property Let プロシージャが定義されておらず、Property Get プロシージャからオブジェクトが返されませんでした。"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID451
 ms.assetid: 8542382a-689f-4e1b-abc0-c1e2dadb92f4
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: b043ca698a9c90afd41de90c7dbc5879ae7de623
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Property let procedure not defined and property get procedure did not return an object
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-プロパティ、メソッド、および演算の中には、`Collection` にしか適用できないものがあります。  コレクションにしか適用できない演算またはプロパティが、コレクション以外のオブジェクトに対して指定されています。  
+# <a name="property-let-procedure-not-defined-and-property-get-procedure-did-not-return-an-object"></a>Property Let プロシージャが定義されておらず、Property Get プロシージャからオブジェクトが返されませんでした。
+特定のプロパティ、メソッド、および操作に適用できますのみ`Collection`オブジェクト。 操作またはコレクションに排他であるプロパティを指定しましたが、オブジェクトがコレクションではありません。  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  オブジェクト名およびプロパティ名のスペルを確認するし、オブジェクトが `Collection` オブジェクトであることを確認します。  
+1.  オブジェクトまたはプロパティの名前のスペルを確認するか、オブジェクトがあることを確認、`Collection`オブジェクト。  
   
-2.  コレクションにオブジェクトを追加するのに使用した `Add` メソッドの構文が正しく、各識別子のスペルが正しいことを確認します。  
+2.  見て、`Add`構文であることを確認して、コレクションにオブジェクトを追加するために使用するメソッドが正しいこと、および任意の識別子は正しく入力されました。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.Collection>

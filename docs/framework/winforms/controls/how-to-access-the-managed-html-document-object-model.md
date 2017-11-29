@@ -1,57 +1,59 @@
 ---
-title: "方法 : マネージ HTML DOM (Document Object Model) にアクセスする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "HTML DOM にアクセスします。"
-  - "マネージ HTML DOM にアクセスします。"
+title: "方法 : マネージ HTML DOM (Document Object Model) にアクセスする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- HTML DOM [Windows Forms], accessing
+- managed HTML DOM [Windows Forms], accessing
 ms.assetid: 40fa5cd5-1ed8-42f6-a93f-9ac01608bbeb
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 284bd30a0a42f245c6b75d916853b264c7f72e6a
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : マネージ HTML DOM (Document Object Model) にアクセスする
-マネージ HTML ドキュメント オブジェクト モデル (DOM) には、次の&2; 種類のアプリケーションからアクセスできます。  
+# <a name="how-to-access-the-managed-html-document-object-model"></a>方法 : マネージ HTML DOM (Document Object Model) にアクセスする
+マネージ HTML ドキュメント オブジェクト モデル (DOM) には、次の 2 種類のアプリケーションからアクセスできます。  
   
--   マネージ ホストされている Windows フォーム アプリケーション (.exe) <xref:System.Windows.Forms.WebBrowser>コントロールです。 これら&2; つのテクノロジが相互に補完、 <xref:System.Windows.Forms.WebBrowser>コントロール、ユーザーと、ドキュメントの論理構造を表す HTML DOM にページを表示します。  
+-   マネージ <xref:System.Windows.Forms.WebBrowser> コントロールをホストする Windows フォーム アプリケーション (.exe)。 この 2 つのテクノロジは相互に補完します。つまり、<xref:System.Windows.Forms.WebBrowser> コントロールはユーザーに対してページを表示し、HTML DOM はドキュメントの論理構造体を表します。  
   
--   Windows フォーム<xref:System.Windows.Forms.UserControl> Internet Explorer 内でホストされています。 先のページを表す HTML DOM にアクセスすることができます、 <xref:System.Windows.Forms.UserControl>がドキュメントの構造を変更したり、さまざまな操作の間でのモーダル ダイアログ ボックスを開いたりするためにホストされています。  
+-   Internet Explorer 内でホストされた Windows フォーム <xref:System.Windows.Forms.UserControl>。 <xref:System.Windows.Forms.UserControl> をホストするページを表す HTML DOM にアクセスして、ドキュメントの構造体を変更したり、モーダル ダイアログ ボックスを開いたりするなど、さまざまな操作を行うことができます。  
   
 ### <a name="to-access-dom-from-a-windows-forms-application"></a>Windows フォーム アプリケーションから DOM にアクセスするには  
   
-1.  ホスト、 <xref:System.Windows.Forms.WebBrowser> 、Windows フォーム アプリケーション内で制御し、監視、 <xref:System.Windows.Forms.WebBrowser.DocumentCompleted>イベントです。 コントロールをホストしていると、イベントの監視の詳細については、「[イベント](../../../../docs/standard/events/index.md)です。  
+1.  Windows フォーム アプリケーション内で <xref:System.Windows.Forms.WebBrowser> コントロールをホストし、<xref:System.Windows.Forms.WebBrowser.DocumentCompleted> イベントを監視します。 コントロールのホストとイベントの監視の詳細については、「[イベント](../../../../docs/standard/events/index.md)」を参照してください。  
   
-2.  取得、 <xref:System.Windows.Forms.HtmlDocument> 、現在のページにアクセスして、<xref:System.Windows.Forms.WebBrowser.Document%2A>のプロパティ、 <xref:System.Windows.Forms.WebBrowser>コントロールです。  
-  
-<!-- TODO: review snippet reference  [!CODE [AccessHTMLDOMApp#1](AccessHTMLDOMApp#1)]  -->  
-  
+2.  <xref:System.Windows.Forms.HtmlDocument> コントロールの <xref:System.Windows.Forms.WebBrowser.Document%2A> プロパティにアクセスして、現在のページの <xref:System.Windows.Forms.WebBrowser> を取得します。  
+
 ### <a name="to-access-dom-from-a-usercontrol-hosted-in-internet-explorer"></a>Internet Explorer でホストされた UserControl から DOM にアクセスするには  
   
-1.  独自のカスタム派生クラスを作成、 <xref:System.Windows.Forms.UserControl>クラスです。 詳細については、次を参照してください。[方法: 複合コントロールの作成](../../../../docs/framework/winforms/controls/how-to-author-composite-controls.md)します。  
+1.  <xref:System.Windows.Forms.UserControl> クラスのカスタム派生クラスを作成します。 詳細については、「[方法: 複合コントロールを作成する](../../../../docs/framework/winforms/controls/how-to-author-composite-controls.md)」を参照してください。  
   
-2.  Load イベント ハンドラー内の次のコードを配置、 <xref:System.Windows.Forms.UserControl>:  
+2.  <xref:System.Windows.Forms.UserControl> の Load イベント ハンドラー内に次のコードを配置します。  
   
  [!code-csharp[AccessHTMLDOMControl#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/AccessHTMLDOMControl/cs/UserControl1.cs#1)]
  [!code-vb[AccessHTMLDOMControl#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/AccessHTMLDOMControl/vb/UserControl1.vb#1)]  
   
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
   
-1.  を通じて DOM を使用する場合、 <xref:System.Windows.Forms.WebBrowser>コントロールが常にまで待っていると、 <xref:System.Windows.Forms.WebBrowser.DocumentCompleted>にアクセスする前に発生するイベント、<xref:System.Windows.Forms.WebBrowser.Document%2A>のプロパティ、 <xref:System.Windows.Forms.WebBrowser>コントロールです。 <xref:System.Windows.Forms.WebBrowser.DocumentCompleted>ドキュメント全体が読み込まれた後にイベントが発生します。 アプリケーションで、実行時に例外が発生する恐れその前に、DOM を使用する場合。  
+1.  <xref:System.Windows.Forms.WebBrowser> コントロールを通じて DOM を使用するときは、必ず <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> イベントが発生するまで待機してから <xref:System.Windows.Forms.WebBrowser.Document%2A> コントロールの <xref:System.Windows.Forms.WebBrowser> プロパティにアクセスするようにします。 <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> イベントは、ドキュメント全体が読み込まれた後で発生します。それ以前に DOM を使用すると、アプリケーション内でランタイム例外が発生する恐れがあります。  
   
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
   
-1.  アプリケーションまたは<xref:System.Windows.Forms.UserControl>マネージ HTML DOM にアクセスするために完全な信頼が必要 使用して Windows フォーム アプリケーションを展開する場合[!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)]、アクセス許可の昇格または信頼されたアプリケーションの配置を使用して完全な信頼を要求できます。 を参照してください[ClickOnce アプリケーションのセキュリティで保護する](../Topic/Securing%20ClickOnce%20Applications.md)詳細です。  
+1.  アプリケーションまたは <xref:System.Windows.Forms.UserControl> がマネージ HTML DOM にアクセスするには、完全信頼が必要です。 [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] を使用して Windows フォーラム アプリケーションを配置するときは、"アクセス許可の昇格" または "信頼されたアプリケーションの配置" を使用して完全信頼を要求できます。詳細については、「[ClickOnce アプリケーションのセキュリティ](/visualstudio/deployment/securing-clickonce-applications)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [マネージ HTML ドキュメント オブジェクト モデルを使用します。](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)
+ [マネージ HTML DOM (Document Object Model) の使用](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)

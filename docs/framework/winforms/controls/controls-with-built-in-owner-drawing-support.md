@@ -1,61 +1,62 @@
 ---
-title: "組み込みのオーナー描画サポートを備えたコントロール | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "描画、所有者"
-  - "描画、カスタム"
-  - "外観を変更するコントロール [Windows フォーム]"
-  - "カスタム描画"
-  - "オーナー描画"
+title: "組み込みのオーナー描画サポートを備えたコントロール"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- drawing [Windows Forms], owner
+- drawing [Windows Forms], custom
+- controls [Windows Forms], changing appearance
+- custom drawing
+- owner drawing
 ms.assetid: 3823d01e-9610-43e6-864d-99f9b7c2b351
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8fb699a93effcdf0b5f88606419479d51754125b
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 組み込みのオーナー描画サポートを備えたコントロール
-オーナー描画とも呼ばれるカスタムの描画には、Windows フォームでは、特定のコントロールの外観を変更するための手法です。  
+# <a name="controls-with-built-in-owner-drawing-support"></a>組み込みのオーナー描画サポートを備えたコントロール
+Windows フォームのオーナー描画 (カスタム描画とも呼ばれます) は、特定のコントロールの外観を変更するための手法です。  
   
 > [!NOTE]
->  このトピックの「コントロール」という単語はいずれかから派生するクラスを意味するために使用<xref:System.Windows.Forms.Control>または<xref:System.ComponentModel.Component>します。  
+>  このトピックでは、「コントロール」という単語がいずれかから派生したクラスのことを意味する使用<xref:System.Windows.Forms.Control>または<xref:System.ComponentModel.Component>です。  
   
- 通常、Windows の描画を自動的に処理などのプロパティの設定を使用して<xref:System.Windows.Forms.Control.BackColor%2A>コントロールの外観を決定します。 オーナー描画、引き継ぎを行う描画プロセスの外観のプロパティを使用して提供されていない要素を変更します。 たとえば、多くのコントロールを使用して、表示されるテキストの色を設定できますが、1 つの色に制限されます。 オーナー描画では、黒で部分を赤でテキストの一部を表示したりすることができます。  
+ 通常、Windows の描画を自動的に処理などのプロパティ設定を使用して<xref:System.Windows.Forms.Control.BackColor%2A>をコントロールの外観を決定します。 オーナー描画では、描画プロセスを引き継いで、プロパティでは設定できない外観の要素を変更できます。 たとえば、多くのコントロールでは表示されるテキストの色を設定できますが、1 つの色に制限されます。 オーナー描画では、テキストの一部分を黒で表示し、別の部分を赤で表示する、といったことができます。  
   
- 実際には、オーナー描画は、フォーム上のグラフィックスの描画に似ています。 フォームのため、ハンドラーでグラフィックス メソッドを使用する可能性があります<xref:System.Windows.Forms.Control.Paint>をエミュレートするイベント、`ListBox`コントロールですは、すべてのユーザー操作を処理するコードを記述する必要があります。 オーナー描画、コントロールのサイズ、コードを使用して、その内容を描画するがそれ以外の場合、すべての組み込み機能を保持します。 コントロール内の各項目を描画するか、既定の外観を使用して各項目の他の側面の中に、各項目の一部の機能をカスタマイズするには、グラフィックス メソッドを使用することができます。  
+ 実際には、オーナー描画はフォームでのグラフィックスの描画に似ています。 フォームのなどのハンドラーでグラフィックス メソッドを使用する可能性があります<xref:System.Windows.Forms.Control.Paint>をエミュレートするイベント、`ListBox`コントロールですはすべてのユーザー操作を処理するコードを記述する必要があります。 オーナー描画では、コントロールは独自のコードを使って内容を描画しますが、それ以外については組み込み機能がすべて保持されます。 グラフィックス メソッドを使うと、コントロール内の各項目を描画したり、各項目の一部だけカスタマイズして他の部分は既定の外観を使ったりすることができます。  
   
-## <a name="owner-drawing-in-windows-forms-controls"></a>オーナー描画 Windows フォーム コントロール  
- をサポートしているコントロールのオーナー描画を実行するには、通常&1; つのプロパティを設定して&1; つまたは複数のイベントを処理します。  
+## <a name="owner-drawing-in-windows-forms-controls"></a>Windows フォーム コントロールでのオーナー描画  
+ オーナー描画をサポートしているコントロールでオーナー描画を実行するには、通常、1 つのプロパティを設定し、1 つまたは複数のイベントを処理します。  
   
- ほとんどのコントロールのオーナー描画をサポートしているが、`OwnerDraw`または`DrawMode`コントロールは、描画関連のイベントまたは自身を描画するときにイベントを発生させるかどうかを示すプロパティです。  
+ オーナー描画をサポートしているほとんどのコントロールには、コントロールの描画時に描画関連のイベントが発生するかどうかを示す `OwnerDraw` または `DrawMode` プロパティがあります。  
   
- コントロールがない、`OwnerDraw`または`DrawMode`プロパティを含む、`DataGridView`コントロールで、自動的に実行する描画イベントを提供するには、および`ToolStrip`を独自の描画に関連するイベントを持つ外部レンダリング クラスを使用して描画するコントロール。  
+ `OwnerDraw` または `DrawMode` プロパティを持たないコントロールには、自動的に発生する描画イベントを提供する `DataGridView` コントロールと、独自の描画関連イベントを持つ外部レンダリング クラスを使って描画される `ToolStrip` コントロールが含まれます。  
   
- 描画イベントのさまざまな種類がありますが、コントロール内の&1; つの項目を描画するために一般的な描画イベントが発生しました。 イベント ハンドラーは、`EventArgs`を描画することで描画される項目に関する情報を含み、ツール オブジェクトで使用できます。 このオブジェクトが通常、その親コレクション内の項目のインデックス番号を含むなど、<xref:System.Drawing.Rectangle>アイテムの表示の境界を示す、<xref:System.Drawing.Graphics>ペイント メソッドを呼び出すためのオブジェクト。 一部のイベント、`EventArgs`オブジェクトは、アイテムと、バック グラウンドやフォーカス四角形などの既定では、項目の一部の機能の描画に呼び出すことのできるメソッドに関する追加情報を提供します。  
+ さまざまな種類の描画イベントがありますが、標準的な描画イベントはコントロール内の 1 つの項目を描画するために発生します。 イベント ハンドラーは、描画される項目に関する情報と、その描画に使用できるツールを含む、`EventArgs` オブジェクトを受け取ります。 このオブジェクトが通常、その親コレクション内の項目のインデックス番号を含むなど、<xref:System.Drawing.Rectangle>アイテムの表示の境界を示す、<xref:System.Drawing.Graphics>ペイント メソッドを呼び出すためのオブジェクト。 一部のイベントの `EventArgs` オブジェクトでは、項目に関する追加情報と、背景やフォーカス四角形などの項目の一部分を既定で描画するために呼び出すことができるメソッドが提供されます。  
   
- オーナー描画のカスタマイズを含む再利用可能なコントロールを作成するには、オーナー描画をサポートするコントロール クラスから派生する新しいクラスを作成します。 描画イベントを処理するのではなく、オーナー描画コードを適切な上書き含める`On` *EventName*メソッドまたは新しいクラスのメソッドです。 基本クラスを呼び出すことを確認`On` *EventName*メソッドまたはメソッドはここでは、コントロールのユーザーがオーナー描画イベントを処理して、追加のカスタマイズを提供できるようにします。  
+ オーナー描画のカスタマイズを含む再利用可能なコントロールを作成するには、オーナー描画をサポートするコントロール クラスから派生する新しいクラスを作成します。 描画イベントを処理するのではなく、新しいクラスの適切な `On`<*イベント名*> メソッドのオーバーライドにオーナー描画のコードを組み込みます。 この場合、コントロールのユーザーがオーナー描画イベントを処理して追加のカスタマイズを提供できるように、基底クラスの `On`<*イベント名*> メソッドを呼び出す必要があります。  
   
- 次の Windows フォームでは、サポートのオーナー描画、.NET Framework のすべてのバージョンを制御します。  
+ 次の Windows フォーム コントロールは、すべてのバージョンの .NET Framework でオーナー描画をサポートします。  
   
 -   <xref:System.Windows.Forms.ListBox>  
   
 -   <xref:System.Windows.Forms.ComboBox>  
   
--   <xref:System.Windows.Forms.MenuItem> (で使用される<xref:System.Windows.Forms.MainMenu>と<xref:System.Windows.Forms.ContextMenu>)  
+-   <xref:System.Windows.Forms.MenuItem>(で使用される<xref:System.Windows.Forms.MainMenu>と<xref:System.Windows.Forms.ContextMenu>)  
   
 -   <xref:System.Windows.Forms.TabControl>  
   
- 次のコントロールは、オーナー描画でのみをサポート[!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]:  
+ 次のコントロールは、[!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] でのみオーナー描画をサポートします。  
   
 -   <xref:System.Windows.Forms.ToolTip>  
   
@@ -63,117 +64,117 @@ caps.handback.revision: 15
   
 -   <xref:System.Windows.Forms.TreeView>  
   
- オーナー描画との新機能は次のコントロールがサポート[!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]:  
+ 次のコントロールはオーナー描画をサポートし、[!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] での新機能です。  
   
 -   <xref:System.Windows.Forms.DataGridView>  
   
 -   <xref:System.Windows.Forms.ToolStrip>  
   
- 次のセクションでは、これらの各コントロールの追加の詳細を説明します。  
+ 以下のセクションでは、これらの各コントロールについてさらに詳しく説明します。  
   
-### <a name="listbox-and-combobox-controls"></a>リスト ボックスやコンボ ボックス コントロール  
- <xref:System.Windows.Forms.ListBox>と<xref:System.Windows.Forms.ComboBox>コントロールを使用すると、すべてに&1; つのサイズまたはさまざまなサイズのいずれかのコントロールに個別の項目を描画します。  
+### <a name="listbox-and-combobox-controls"></a>ListBox コントロールと ComboBox コントロール  
+ <xref:System.Windows.Forms.ListBox>と<xref:System.Windows.Forms.ComboBox>コントロールを使用すると、すべて 1 つのサイズまたはさまざまなサイズで、コントロール内の個々 の項目を描画します。  
   
 > [!NOTE]
->  ですが、 <xref:System.Windows.Forms.CheckedListBox>から派生したコントロールは、 <xref:System.Windows.Forms.ListBox>コントロール、これはサポートされないオーナー描画します。  
+>  ただし、<xref:System.Windows.Forms.CheckedListBox>から派生したコントロールが、<xref:System.Windows.Forms.ListBox>コントロールをサポートしていませんオーナー描画します。  
   
- 同じサイズの各項目を描画する設定、`DrawMode`プロパティを<xref:System.Windows.Forms.DrawMode>を処理し、`DrawItem`イベントです。  
+ 同じサイズの各項目を描画する設定、`DrawMode`プロパティを<xref:System.Windows.Forms.DrawMode.OwnerDrawFixed>を処理し、`DrawItem`イベント。  
   
- さまざまなサイズを使用して各項目を描画する設定、`DrawMode`プロパティを<xref:System.Windows.Forms.DrawMode>両方を処理し、`MeasureItem`と`DrawItem`イベントです。 `MeasureItem`イベントでは前に、の項目のサイズを指定することができます、`DrawItem`その項目に対してイベントが発生します。  
+ さまざまなサイズを使用して各項目を描画する設定、`DrawMode`プロパティを<xref:System.Windows.Forms.DrawMode.OwnerDrawVariable>両方を処理し、`MeasureItem`と`DrawItem`イベント。 `MeasureItem` イベントを使うと、項目の `DrawItem` イベントが発生する前に、その項目のサイズを指定できます。  
   
- 詳細については、コード例を含む、次のトピックを参照してください。  
+ サンプル コードなど詳細については、次のトピックをご覧ください。  
   
--   <xref:System.Windows.Forms.ListBox.DrawMode%2A?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ListBox.DrawMode%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ListBox.MeasureItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ListBox.MeasureItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ComboBox.DrawMode%2A?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ComboBox.DrawMode%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ComboBox.MeasureItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ComboBox.MeasureItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ComboBox.DrawItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ComboBox.DrawItem?displayProperty=nameWithType>  
   
--   [方法: ComboBox コントロールに変数のサイズのテキストを作成します。](../../../../docs/framework/winforms/controls/how-to-create-variable-sized-text-in-a-combobox-control.md)  
+-   [方法: ComboBox コントロールにサイズ変更可能なテキストを作成する](../../../../docs/framework/winforms/controls/how-to-create-variable-sized-text-in-a-combobox-control.md)  
   
 ### <a name="menuitem-component"></a>MenuItem コンポーネント  
- <xref:System.Windows.Forms.MenuItem>コンポーネント内の&1; つのメニュー項目を表す、 <xref:System.Windows.Forms.MainMenu>または<xref:System.Windows.Forms.ContextMenu>コンポーネントです。  
+ <xref:System.Windows.Forms.MenuItem>コンポーネントが 1 つのメニュー項目を表す、<xref:System.Windows.Forms.MainMenu>または<xref:System.Windows.Forms.ContextMenu>コンポーネントです。  
   
- 描画する、 <xref:System.Windows.Forms.MenuItem>、設定、`OwnerDraw`プロパティを`true`処理とその`DrawItem`イベントです。 前にメニュー項目のサイズをカスタマイズする、`DrawItem`イベントが発生する処理、項目の`MeasureItem`イベントです。  
+ 描画する、<xref:System.Windows.Forms.MenuItem>設定、その`OwnerDraw`プロパティを`true`処理とその`DrawItem`イベント。 `DrawItem` イベントが発生する前にメニュー項目のサイズをカスタマイズするには、項目の`MeasureItem` イベントを処理します。  
   
- 詳細については、コード例を含む次のリファレンス トピックを参照してください。  
+ サンプル コードなど詳細については、次のトピックをご覧ください。  
   
--   <xref:System.Windows.Forms.MenuItem.OwnerDraw%2A?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.MenuItem.OwnerDraw%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.MenuItem.DrawItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.MenuItem.DrawItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.MenuItem.MeasureItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.MenuItem.MeasureItem?displayProperty=nameWithType>  
   
 ### <a name="tabcontrol-control"></a>TabControl コントロール  
- <xref:System.Windows.Forms.TabControl>コントロールでは、コントロール内の各タブを描画することができます。 オーナー描画タブのみに影響を与えます<xref:System.Windows.Forms.TabPage>内容が影響を受けません。  
+ <xref:System.Windows.Forms.TabControl>コントロールでは、コントロール内の個々 のタブを描画することができます。 オーナー描画タブのみに影響を与える<xref:System.Windows.Forms.TabPage>内容が影響を受けません。  
   
- 各タブを描画する、 <xref:System.Windows.Forms.TabControl>、設定されて、`DrawMode`プロパティを<xref:System.Windows.Forms.TabDrawMode>を処理し、`DrawItem`イベントです。 タブがコントロールに表示されている場合にのみ、このイベントは各タブに&1; 回発生します。  
+ 各タブを描画する、 <xref:System.Windows.Forms.TabControl>、設定、`DrawMode`プロパティを<xref:System.Windows.Forms.TabDrawMode.OwnerDrawFixed>を処理し、`DrawItem`イベント。 このイベントは、コントロールにタブが表示されている場合にのみ、タブごとに 1 回発生します。  
   
- 詳細については、コード例を含む次のリファレンス トピックを参照してください。  
+ サンプル コードなど詳細については、次のトピックをご覧ください。  
   
--   <xref:System.Windows.Forms.TabControl.DrawMode%2A?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.TabControl.DrawMode%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.TabControl.DrawItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.TabControl.DrawItem?displayProperty=nameWithType>  
   
 ### <a name="tooltip-component"></a>ToolTip コンポーネント  
- <xref:System.Windows.Forms.ToolTip>コンポーネントでは、表示された場合、全体のツールヒントを描画することができます。  
+ <xref:System.Windows.Forms.ToolTip>コンポーネントでは、表示される場合、全体のツールヒントを描画することができます。  
   
- 描画する、<xref:System.Windows.Forms.ToolTip>、設定、`OwnerDraw`プロパティを`true`処理とその`Draw`イベントです。 サイズをカスタマイズする、<xref:System.Windows.Forms.ToolTip>する前に、`Draw`処理イベントが発生する、`Popup`イベントと、 <xref:System.Windows.Forms.PopupEventArgs.ToolTipSize%2A>イベント ハンドラーのプロパティです。  
+ 描画する、<xref:System.Windows.Forms.ToolTip>設定、その`OwnerDraw`プロパティを`true`処理とその`Draw`イベント。 サイズをカスタマイズする、<xref:System.Windows.Forms.ToolTip>する前に、`Draw`処理イベントが発生する、`Popup`イベントとセット、<xref:System.Windows.Forms.PopupEventArgs.ToolTipSize%2A>イベント ハンドラーのプロパティです。  
   
- 詳細については、コード例を含む次のリファレンス トピックを参照してください。  
+ サンプル コードなど詳細については、次のトピックをご覧ください。  
   
--   <xref:System.Windows.Forms.ToolTip.OwnerDraw%2A?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ToolTip.OwnerDraw%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ToolTip.Draw?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ToolTip.Draw?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ToolTip.Popup?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ToolTip.Popup?displayProperty=nameWithType>  
   
 ### <a name="listview-control"></a>ListView コントロール  
- <xref:System.Windows.Forms.ListView>コントロールでは、コントロール内の個々 のアイテム、サブ項目、および列ヘッダーを描画することができます。  
+ <xref:System.Windows.Forms.ListView>コントロールでは、コントロール内の個々 の項目、サブ項目、および列ヘッダーを描画することができます。  
   
- コントロールのオーナー描画を有効にするには設定、`OwnerDraw`プロパティを`true`します。  
+ コントロールのオーナー描画を有効にするには、`OwnerDraw` プロパティを `true` に設定します。  
   
- コントロール内の各項目を描画するには、処理、`DrawItem`イベントです。  
+ コントロール内の各項目を描画するには、`DrawItem` イベントを処理します。  
   
- コントロール内の各サブ項目または列ヘッダーを描画するときに、<xref:System.Windows.Forms.ListView.View%2A>にプロパティが設定されている<xref:System.Windows.Forms.View>、処理、`DrawSubItem`と`DrawColumnHeader`イベントです。  
+ コントロール内の各サブ項目または列ヘッダーを描画するときに、<xref:System.Windows.Forms.ListView.View%2A>プロパティに設定されている<xref:System.Windows.Forms.View.Details>、処理、`DrawSubItem`と`DrawColumnHeader`イベント。  
   
- 詳細については、コード例を含む次のリファレンス トピックを参照してください。  
+ サンプル コードなど詳細については、次のトピックをご覧ください。  
   
--   <xref:System.Windows.Forms.ListView.OwnerDraw%2A?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ListView.OwnerDraw%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ListView.DrawItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ListView.DrawColumnHeader?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ListView.DrawColumnHeader?displayProperty=nameWithType>  
   
 ### <a name="treeview-control"></a>TreeView コントロール  
  <xref:System.Windows.Forms.TreeView>コントロールでは、コントロール内の個々 のノードを描画することができます。  
   
- 各ノードに表示されるテキストのみを描画する設定、`DrawMode`プロパティを<xref:System.Windows.Forms.TreeViewDrawMode>を処理し、`DrawNode`テキストを描画するイベントです。  
+ 各ノードに表示されるテキストのみを描画する設定、`DrawMode`プロパティを<xref:System.Windows.Forms.TreeViewDrawMode.OwnerDrawText>を処理し、`DrawNode`テキストを描画するイベントです。  
   
- 各ノードのすべての要素を描画する設定、`DrawMode`プロパティを<xref:System.Windows.Forms.TreeViewDrawMode>を処理し、`DrawNode`ノードを結ぶ線とテキスト、アイコン、チェック ボックス、プラスとマイナス記号 ($) などに必要な任意の要素を描画するイベントです。  
+ 各ノードのすべての要素を描画する設定、`DrawMode`プロパティを<xref:System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll>を処理し、`DrawNode`方に必要な要素、テキスト、アイコン、チェック ボックス、プラスとマイナス記号などと、ノードを結ぶ直線を描画するイベントです。  
   
- 詳細については、コード例を含む次のリファレンス トピックを参照してください。  
+ サンプル コードなど詳細については、次のトピックをご覧ください。  
   
--   <xref:System.Windows.Forms.TreeView.DrawMode%2A?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.TreeView.DrawMode%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.TreeView.DrawNode?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.TreeView.DrawNode?displayProperty=nameWithType>  
   
 ### <a name="datagridview-control"></a>DataGridView コントロール  
- <xref:System.Windows.Forms.DataGridView>コントロールでは、コントロール内の個々 のセルおよび行を描画することができます。  
+ <xref:System.Windows.Forms.DataGridView>コントロールでは、コントロール内の個々 のセルと行を描画することができます。  
   
- 個々 のセルを描画する、`CellPainting`イベントです。  
+ 個別のセルを描画するには、`CellPainting` イベントを処理します。  
   
- 個々 の行または行の要素を描画する処理の一方または両方、`RowPrePaint`と`RowPostPaint`イベントです。 `RowPrePaint`行内のセルを描画する前に、イベントが発生して、`RowPostPaint`イベント セルが描画された後に発生します。 両方のイベントを処理して、`CellPainting`とは別に、行の背景、個々 のセルおよび行の前景色の描画にイベントまたはするには、場所と必要とするそれらの行の他の要素の既定の表示を使用して特定のカスタマイズを提供できます。  
+ 個別の行または行の要素を描画するには、`RowPrePaint` イベントと `RowPostPaint` イベントの一方または両方を処理します。 `RowPrePaint` イベントは行内のセルが描画される前に発生し、`RowPostPaint` イベントはセルが描画された後で発生します。 両方のイベントと `CellPainting` イベントを処理して、行の背景、個々のセル、行の前景を個別に描画できます。または、必要な部分については個別にカスタマイズを提供し、行の他の要素には既定の表示を使うこともできます。  
   
- 詳細については、コード例を含む、次のトピックを参照してください。  
+ サンプル コードなど詳細については、次のトピックをご覧ください。  
   
 -   <xref:System.Windows.Forms.DataGridView.CellPainting>  
   
@@ -181,22 +182,22 @@ caps.handback.revision: 15
   
 -   <xref:System.Windows.Forms.DataGridView.RowPostPaint>  
   
--   [方法: Windows フォーム DataGridView コントロール内のセルの外観をカスタマイズします。](../../../../docs/framework/winforms/controls/customize-the-appearance-of-cells-in-the-datagrid.md)  
+-   [方法: Windows フォームの DataGridView コントロールのセルの外観をカスタマイズする](../../../../docs/framework/winforms/controls/customize-the-appearance-of-cells-in-the-datagrid.md)  
   
--   [方法: Windows フォーム DataGridView コントロール内の行の外観をカスタマイズします。](../../../../docs/framework/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid.md)  
+-   [方法 : Windows フォームの DataGridView コントロールの行の外観をカスタマイズする](../../../../docs/framework/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid.md)  
   
 ### <a name="toolstrip-control"></a>ToolStrip コントロール  
- <xref:System.Windows.Forms.ToolStrip>派生コントロールの外観のさまざまな面をカスタマイズすることを有効にするとします。  
+ <xref:System.Windows.Forms.ToolStrip>派生したコントロールの外観のすべての側面をカスタマイズできます。  
   
- カスタム表示を提供する<xref:System.Windows.Forms.ToolStrip>コントロール、設定、`Renderer`のプロパティ、 <xref:System.Windows.Forms.ToolStrip>、 <xref:System.Windows.Forms.ToolStripManager>、 <xref:System.Windows.Forms.ToolStripPanel>、または<xref:System.Windows.Forms.ToolStripContentPanel>に、`ToolStripRenderer`オブジェクトし、1 つ以上によって提供される多くの描画イベントの処理、`ToolStripRenderer`クラスです。 また、設定、`Renderer`から派生した独自のクラスのインスタンスにプロパティ`ToolStripRenderer`、 <xref:System.Windows.Forms.ToolStripProfessionalRenderer>、または<xref:System.Windows.Forms.ToolStripSystemRenderer>を実装またはオーバーライド特定`On` *EventName*メソッドです。  
+ カスタムの表示を提供する<xref:System.Windows.Forms.ToolStrip>、コントロールの設定、`Renderer`のプロパティ、 <xref:System.Windows.Forms.ToolStrip>、 <xref:System.Windows.Forms.ToolStripManager>、 <xref:System.Windows.Forms.ToolStripPanel>、または<xref:System.Windows.Forms.ToolStripContentPanel>を`ToolStripRenderer`オブジェクトし、によって提供される多くの描画イベントの 1 つ以上の処理、`ToolStripRenderer`クラスです。 または、設定、`Renderer`から派生した独自のクラスのインスタンスにプロパティ`ToolStripRenderer`、 <xref:System.Windows.Forms.ToolStripProfessionalRenderer>、または<xref:System.Windows.Forms.ToolStripSystemRenderer>を実装またはオーバーライド特定`On` *EventName*メソッドです。  
   
- 詳細については、コード例を含む、次のトピックを参照してください。  
+ サンプル コードなど詳細については、次のトピックをご覧ください。  
   
 -   <xref:System.Windows.Forms.ToolStripRenderer>  
   
--   [方法: 作成し、Windows フォームに ToolStrip コントロールのカスタム レンダラーを設定](../../../../docs/framework/winforms/controls/create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)  
+-   [方法: Windows フォームに ToolStrip コントロールのカスタム レンダラーを作成して設定する](../../../../docs/framework/winforms/controls/create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)  
   
--   [方法: ToolStrip コントロールをカスタム描画](../../../../docs/framework/winforms/controls/how-to-custom-draw-a-toolstrip-control.md)  
+-   [方法 : ToolStrip コントロールをカスタム描画する](../../../../docs/framework/winforms/controls/how-to-custom-draw-a-toolstrip-control.md)  
   
 ## <a name="see-also"></a>関連項目  
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
