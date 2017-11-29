@@ -1,45 +1,25 @@
 ---
 title: "Visual Basic における配列"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-f1_keywords:
-- vb.Array
-dev_langs:
-- VB
+f1_keywords: vb.Array
 helpviewer_keywords:
 - arrays [Visual Basic]
 - Visual Basic, arrays
 ms.assetid: dbf29737-b589-4443-bee6-a27588d9c67e
-caps.latest.revision: 47
+caps.latest.revision: "47"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8ebad59a07d07d61ea77e41e4044b3febc0ef250
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: 04deeccd19fd4edb3f2c88310d660eedf5c707d5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="arrays-in-visual-basic"></a>Visual Basic における配列
 配列は、学校の各学年の生徒の数など、互いに論理的に関連する一連の値です。  Visual Basic for Applications (VBA) の配列についてのヘルプが必要な場合は、 [言語リファレンス](https://msdn.microsoft.com/library/office/gg264383\(v=office.14\).aspx)を参照してください。  
@@ -257,11 +237,11 @@ Dim prices(3, 4, 5) As Long
 ##  <a name="BKMK_ArrayTypes"></a> 配列の型および他の型  
  すべての配列にデータ型がありますが、要素のデータ型とは異なります。 すべての配列を包括する 1 つのデータ型はありません。 代わりに、配列のデータ型は、配列の次元数 ( *ランク*) と配列の要素のデータ型によって決まります。 ランクと要素のデータ型が一致しない限り、2 つの配列変数が同じデータ型を持つと見なされることはありません。 配列の各次元の長さは、配列のデータ型には影響しません。  
   
- すべての配列は、<xref:System.Array?displayProperty=fullName> クラスから継承しています。また、`Array` 型として変数を宣言できますが、`Array` 型の配列は作成できません。 また、[ReDim ステートメント](../../../../visual-basic/language-reference/statements/redim-statement.md) は、`Array` 型として宣言された変数上では使用できません。 これらの理由やタイプ セーフを考慮して、すべての配列を、前の例の `Integer` などの特定の型として宣言することをお勧めします。  
+ すべての配列は、<xref:System.Array?displayProperty=nameWithType> クラスから継承しています。また、`Array` 型として変数を宣言できますが、`Array` 型の配列は作成できません。 また、[ReDim ステートメント](../../../../visual-basic/language-reference/statements/redim-statement.md) は、`Array` 型として宣言された変数上では使用できません。 これらの理由やタイプ セーフを考慮して、すべての配列を、前の例の `Integer` などの特定の型として宣言することをお勧めします。  
   
  いくつかの方法で、配列またはその要素のいずれかのデータ型を知ることができます。  
   
--   変数の <xref:System.Object.GetType%2A?displayProperty=fullName> メソッドを呼び出して、実行時型の変数の <xref:System.Type> オブジェクトを取得できます。 <xref:System.Type> オブジェクトでは、プロパティおよびメソッドに詳細情報が保持されます。  
+-   変数の <xref:System.Object.GetType%2A?displayProperty=nameWithType> メソッドを呼び出して、実行時型の変数の <xref:System.Type> オブジェクトを取得できます。 <xref:System.Type> オブジェクトでは、プロパティおよびメソッドに詳細情報が保持されます。  
   
 -   変数を <xref:Microsoft.VisualBasic.Information.TypeName%2A> 関数に渡して、実行時型の名前が含まれる `String` を取得できます。  
   
@@ -278,12 +258,12 @@ Dim prices(3, 4, 5) As Long
   
  コレクションによっては、コレクションに含まれるオブジェクトのキーを割り当てると、そのキーを使用してオブジェクトを迅速に取り出すことができます。  
   
- 含まれる要素が 1 つのデータ型だけのコレクションの場合は、 <xref:System.Collections.Generic?displayProperty=fullName> 名前空間のクラスのいずれかを使用できます。 ジェネリック コレクションでは、タイプ セーフが強制されるため、他のデータ型を追加することはできません。 ジェネリック コレクションから要素を取得する場合は、データ型を判断したり、変換したりする必要はありません。  
+ 含まれる要素が 1 つのデータ型だけのコレクションの場合は、 <xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間のクラスのいずれかを使用できます。 ジェネリック コレクションでは、タイプ セーフが強制されるため、他のデータ型を追加することはできません。 ジェネリック コレクションから要素を取得する場合は、データ型を判断したり、変換したりする必要はありません。  
   
  コレクションの詳細については、「[コレクション](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)」を参照してください。  
   
 ### <a name="example"></a>例  
- [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のジェネリック クラス <xref:System.Collections.Generic.List%601?displayProperty=fullName> を使用して、`Customer` オブジェクトの一覧コレクションを作成する例を次に示します。  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のジェネリック クラス <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> を使用して、`Customer` オブジェクトの一覧コレクションを作成する例を次に示します。  
   
  [!code-vb[VbVbalrArrays#1](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#1)]  
   
@@ -300,7 +280,6 @@ Dim prices(3, 4, 5) As Long
 |[配列のトラブルシューティング](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)|配列を使用しているときに発生する一般的な問題について説明します。|  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Array>   
- [Dim ステートメント](../../../../visual-basic/language-reference/statements/dim-statement.md)   
+ <xref:System.Array>  
+ [Dim ステートメント](../../../../visual-basic/language-reference/statements/dim-statement.md)  
  [ReDim ステートメント](../../../../visual-basic/language-reference/statements/redim-statement.md)
-

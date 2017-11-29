@@ -18,16 +18,15 @@ helpviewer_keywords:
 - managed heap
 - runtime, automatic memory management
 ms.assetid: d4850de5-fa63-4936-a250-5678d118acba
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 7f8ee49861902002e69af96168def5883d73c3a5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8b06d21006b95b385792785cafaf75fa3e8cf4b1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="automatic-memory-management"></a>Automatic Memory Management
 自動メモリ管理は、[マネージ実行](../../docs/standard/managed-execution-process.md)中に共通言語ランタイムが提供するサービスの 1 つです。 共通言語ランタイムのガベージ コレクターは、アプリケーションが使用するメモリの割り当ておよび解放を管理します。 したがって、開発者がマネージ アプリケーションを開発するときに、メモリ管理タスクを実行するためのコードを記述する必要はありません。 自動メモリ管理により、オブジェクトを解放し忘れたためにメモリ リークが発生する、既に解放されているオブジェクトのメモリにアクセスしようとするなどの一般的な問題を回避できます。 ここでは、ガベージ コレクターによるメモリの割り当て方法および解放方法について説明します。  
@@ -60,7 +59,6 @@ ms.lasthandoff: 08/21/2017
  アプリケーションで作成されるオブジェクトの大部分については、ガベージ コレクターによって、必要なメモリ管理タスクを自動的に実行できます。 しかし、アンマネージ リソースでは、明示的なクリーンアップが必要です。 最も一般的な種類のアンマネージ リソースは、ファイル ハンドル、ウィンドウ ハンドル、ネットワーク接続などのオペレーティング システム リソースをラップしたオブジェクトです。 ガベージ コレクターは、アンマネージ リソースをカプセル化したマネージ オブジェクトの存続期間を追跡することはできますが、そのアンマネージ リソースのクリーンアップ方法については具体的な情報を持っていません。 アンマネージ リソースをカプセル化するオブジェクトを作成する場合は、そのアンマネージ リソースをクリーンアップするために必要なコードをパブリックな **Dispose** メソッドという形で提供することをお勧めします。 **Dispose** メソッドを提供すると、ユーザーがオブジェクトを使い終わったときに、そのオブジェクトのメモリを明示的に解放できます。 アンマネージ リソースをカプセル化するオブジェクトを使用する場合は、**Dispose** メソッドの存在を念頭に置き、必要に応じて呼び出すようにしてください。 アンマネージ リソースのクリーンアップの詳細と、**Dispose** を実装するためのデザイン パターンの例については、「[ガベージ コレクション](../../docs/standard/garbage-collection/index.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.GC>   
- [ガベージ コレクション](../../docs/standard/garbage-collection/index.md)   
+ <xref:System.GC>  
+ [ガベージ コレクション](../../docs/standard/garbage-collection/index.md)  
  [マネージ実行プロセス](../../docs/standard/managed-execution-process.md)
-

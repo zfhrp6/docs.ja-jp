@@ -1,59 +1,57 @@
 ---
-title: "How to: Create a Variable that Does Not Change in Value (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "variables [Visual Basic], read-only"
-  - "variables [Visual Basic], constant value"
+title: "方法: 値の変わらない変数を作成する (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- variables [Visual Basic], read-only
+- variables [Visual Basic], constant value
 ms.assetid: 86b59266-25df-4635-ae15-9b59c411d036
-caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: d1475553e64fef92ec3f3bb7e1b4fbfb357dbec8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Create a Variable that Does Not Change in Value (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-値の変わらない変数という概念は、一見矛盾しているように見えます。  しかし、場合によっては定数を使用できないこともあり、そのようなときに固定値を持つ変数を使用すると便利です。  このような場合に、[ReadOnly](../../../../visual-basic/language-reference/modifiers/readonly.md) キーワードを使用してメンバー変数を定義できます。  
+# <a name="how-to-create-a-variable-that-does-not-change-in-value-visual-basic"></a>方法: 値の変わらない変数を作成する (Visual Basic)
+その値が変化しない変数の概念は、矛盾する可能性があります。 定数は実行可能でない場合もありますし、固定値を持つ変数を使用すると便利です。 このようなケースで付きのメンバー変数を定義することができます、 [ReadOnly](../../../../visual-basic/language-reference/modifiers/readonly.md)キーワード。  
   
- 次のような場合は、[Const Statement](../../../../visual-basic/language-reference/statements/const-statement.md) を使用して定数を宣言し、値を割り当てることはできません。  
+ 使用することはできません、 [Const ステートメント](../../../../visual-basic/language-reference/statements/const-statement.md)宣言して、次の状況に、定数値を代入します。  
   
--   `Const` ステートメントが、使用するデータ型を受け付けない。  
+-   `Const`ステートメントには、使用するデータ型は受け入れません。  
   
--   コンパイル時には値がわからない。  
+-   コンパイル時に値がわからない  
   
--   コンパイル時に定数値を計算できない。  
+-   コンパイル時に定数値を計算できません。  
   
-### 値の変わらない変数を作成するには  
+### <a name="to-create-a-variable-that-does-not-change-in-value"></a>値の変わらない変数を作成するには  
   
-1.  モジュール レベルで、[Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md) を指定してメンバー変数を宣言し、[ReadOnly](../../../../visual-basic/language-reference/modifiers/readonly.md) キーワードを含めます。  
+1.  モジュール レベルでのメンバー変数を宣言、 [Dim ステートメント](../../../../visual-basic/language-reference/statements/dim-statement.md)、含めると、 [ReadOnly](../../../../visual-basic/language-reference/modifiers/readonly.md)キーワード。  
   
     ```  
-  
     Dim ReadOnly timeStarted  
     ```  
   
-     メンバー変数に対してのみ `ReadOnly` を指定します。  これは、プロシージャ外部で、モジュール レベルの変数を定義することが必要であることを意味します。  
+     指定できます`ReadOnly`メンバー変数に対してのみです。 つまり、すべてのプロシージャの外部でのモジュール レベル変数を定義する必要があります。  
   
-2.  コンパイル時に単一のステートメントで値を計算できる場合は、`Dim` ステートメントで初期化の句を指定します。  [As](../../../../visual-basic/language-reference/statements/as-clause.md) 句の後ろに等号 \(`=`\) を付け、式を続けます。  コンパイラでこの式を定数値に評価できることを確認します。  
+2.  コンパイル時に単一のステートメントで値を計算する場合で初期化句を使用して、`Dim`ステートメントです。 以下の[として](../../../../visual-basic/language-reference/statements/as-clause.md)等号 (=) を含む句 (`=`)、式でその後にします。 必ず、コンパイラは定数値には、この式を評価できます。  
   
     ```  
     Dim ReadOnly timeStarted As Date = Now  
     ```  
   
-     `ReadOnly` 変数に値を割り当てることができるのは 1 回だけです。  この値を割り当てた後は、いずれのコードもこの値を変更することはできません。  
+     値を割り当てることができます、`ReadOnly`変数を一度だけです。 これを行うと、コードが変更できるなしの値。  
   
-     コンパイル時に値がわからない、またはコンパイル時に単一ステートメントではこれを計算できない場合は、実行時にコンストラクター内で値を割り当てることができます。  実行時に値を割り当てるには、クラス レベルまたは構造体レベルで `ReadOnly` 変数を宣言する必要があります。  そのクラスまたは構造体のコンストラクター内では、変数の固定値を計算し、コンストラクターから返される前にその値を変数に割り当てます。  
+     、コンパイル時に値がわからないか単一のステートメントでは、コンパイル時に計算できない場合は、コンス トラクターで実行時にも割り当てることができます。 これを行うには、宣言する必要があります、`ReadOnly`クラスまたは構造体のレベルで変数。 そのクラスまたは構造体のコンス トラクターで、変数の固定値を計算し、コンス トラクターから戻る前に、変数に割り当てます。  
   
-## 参照  
- [WriteOnly](../../../../visual-basic/language-reference/modifiers/writeonly.md)   
- [Const Statement](../../../../visual-basic/language-reference/statements/const-statement.md)
+## <a name="see-also"></a>関連項目  
+ [WriteOnly](../../../../visual-basic/language-reference/modifiers/writeonly.md)  
+ [Const ステートメント](../../../../visual-basic/language-reference/statements/const-statement.md)

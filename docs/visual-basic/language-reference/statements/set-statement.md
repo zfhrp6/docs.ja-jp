@@ -1,47 +1,45 @@
 ---
-title: "Set Statement (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Set"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "property procedures, Set statements"
-  - "Set statement"
-  - "Set statement, syntax"
-  - "write-only properties"
-  - "properties [Visual Basic], write-only"
+title: "Set ステートメント (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Set
+helpviewer_keywords:
+- property procedures [Visual Basic], Set statements
+- Set statement [Visual Basic]
+- Set statement [Visual Basic], syntax
+- write-only properties
+- properties [Visual Basic], write-only
 ms.assetid: 9ecc27b4-df84-420d-9075-db25455fb3cd
-caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 3b18e6c858e64e78d7ab85fdaafd70e510f7a02f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Set Statement (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-値をプロパティに代入するための `Set` プロパティ プロシージャを宣言します。  
+# <a name="set-statement-visual-basic"></a>Set ステートメント (Visual Basic)
+宣言、`Set`プロパティ プロシージャのプロパティに値を代入するために使用します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-[ <attributelist> ] [ accessmodifier ] Set (ByVal value [ As datatype ])  
-    [ statements ]  
+[ <attributelist> ] [ accessmodifier ] Set (ByVal value [ As datatype ])  
+    [ statements ]  
 End Set  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
  `attributelist`  
- 省略可能です。  「[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)」を参照してください。  
+ 省略可能です。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。  
   
  `accessmodifier`  
- 省略可能です。このプロパティの `Get` ステートメントか `Set` ステートメントの一方に指定できます。  次のいずれかになります。  
+ 1 つの省略可能な`Get`と`Set`このプロパティ内のステートメント。 次のいずれかの値を指定します。  
   
 -   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
   
@@ -51,52 +49,52 @@ End Set
   
 -   `Protected Friend`  
   
- 「[Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
+ 参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。  
   
  `value`  
- 必ず指定します。  このパラメーターには、プロパティの新しい値が格納されます。  
+ 必須です。 プロパティの新しい値を格納するパラメーター。  
   
  `datatype`  
- `Option Strict` が `On` の場合は、必ず指定します。  `value` パラメーターのデータ型を指定します。  指定するデータ型は、この `Set` ステートメントを宣言するプロパティのデータ型と同じにする必要があります。  
+ 場合は必須`Option Strict`は`On`します。 データ型、`value`パラメーター。 指定されたデータ型は、プロパティのデータ型と同じである必要があります、これ`Set`ステートメントを宣言します。  
   
  `statements`  
- 省略可能です。  `Set` プロパティ プロシージャの呼び出し時に実行される 1 つ以上のステートメントを指定します。  
+ 省略可能です。 場合に実行する 1 つまたは複数のステートメント、`Set`プロパティ プロシージャが呼び出されます。  
   
  `End Set`  
- 必ず指定します。  `Set` プロパティ プロシージャの定義を終了します。  
+ 必須です。 定義を終了、`Set`プロパティ プロシージャです。  
   
-## 解説  
- `ReadOnly` のマークが付けられたプロパティを除き、すべてのプロパティは `Set` プロパティ プロシージャを持つ必要があります。  `Set` プロシージャは、プロパティの値を設定するために使用されます。  
+## <a name="remarks"></a>コメント  
+ すべてのプロパティがあります、`Set`プロパティ プロシージャ、プロパティが設定されていない限り`ReadOnly`です。 `Set`プロパティの値を設定する手順を使用します。  
   
- プロパティに保存する値が代入ステートメントで指定された場合、Visual Basic は自動的にプロパティの `Set` プロシージャを呼び出します。  
+ Visual Basic は、このプロパティの自動的に呼び出します`Set`代入ステートメントは、プロパティに格納される値を提供するときの手順です。  
   
- Visual Basic は、プロパティの割り当ての際に、パラメーターを `Set` プロシージャに渡します。  `Set` のパラメーターを指定しないと、統合開発環境 \(IDE: Integrated Development Environment\) では `value` というパラメーターが暗黙的に使用されます。  このパラメーターには、プロパティに代入する値が含まれています。  通常、この値はプライベートなローカル変数に格納しますが、`Get` プロシージャを呼び出せばいつでも値を取得できます。  
+ Visual Basic のパラメーターを渡す、`Set`プロパティの割り当て時にプロシージャです。 パラメーターを指定しない場合`Set`、統合開発環境 (IDE) という名前の暗黙のパラメーターを使用して`value`です。 パラメーターでは、プロパティに割り当てられる値を保持します。 通常プライベート ローカル変数にこの値を格納して返すたびに、`Get`プロシージャが呼び出されます。  
   
- プロパティ宣言の本体には、プロパティの `Get` プロシージャと `Set` プロシージャのみを [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md) ステートメントと `End Property` ステートメントの間に記述できます。  それ以外のプロシージャを含めることはできません。  特に、プロパティの現在の値を含めることはできません。  現在の値をどちらかのプロパティ プロシージャの内部に含めると他のプロパティ プロシージャから値にアクセスできなくなるため、この値はプロパティの外部に格納する必要があります。  通常は、プロパティと同じレベルで [Private](../../../visual-basic/language-reference/modifiers/private.md) 変数を宣言し、この中に現在の値を格納します。  `Set` プロシージャが適用されるプロパティには、このプロシージャを内部に定義する必要があります。  
+ プロパティの宣言の本体でのみ、プロパティを含めることができます`Get`と`Set`間でのプロシージャ、 [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)と`End Property`ステートメントです。 これらのプロシージャ以外のものを格納できません。 具体的には、プロパティの現在の値を格納できません。 プロパティ プロシージャのいずれかの内側で保存する場合、その他のプロパティ プロシージャ アクセスできないために、プロパティの外部には、この値を格納する必要があります。 通常の方法は、の値を格納する、[プライベート](../../../visual-basic/language-reference/modifiers/private.md)プロパティと同じレベルで宣言された変数です。 定義する必要があります、`Set`に適用すると、プロパティの内部プロシージャです。  
   
- `Set` ステートメント内で `accessmodifier` を使ってアクセス レベルを設定しない限り、既定で `Set` プロシージャのアクセス レベルは、それが含まれるプロパティと同じになります。  
+ `Set`プロシージャの既定値は、包含するプロパティのアクセス レベルを使用する場合を除き、`accessmodifier`で、`Set`ステートメントです。  
   
-## 規則  
+## <a name="rules"></a>ルール  
   
--   **アクセス レベルの混在。**読み書き可能なプロパティを定義する場合、必要であれば `Get` プロシージャと `Set` プロシージャのどちらか一方にだけ、プロパティとは異なるアクセス レベルを指定できます。  これを指定する場合は、プロシージャにプロパティよりも制限の高いアクセス レベルを指定する必要があります。  たとえば、プロパティを `Friend` で宣言する場合、`Set` プロシージャを `Private` で宣言できますが、`Public` では宣言できません。  
+-   **混合アクセス レベル。** 必要に応じていずれかの異なるアクセス レベルを指定することができます、読み取り/書き込みプロパティを定義する場合、`Get`または`Set`プロシージャが、両方は使用できません。 これを行うと、プロシージャのアクセス レベルがプロパティのアクセス レベルよりも制限する必要があります。 プロパティが宣言されている場合など、 `Friend`、宣言することができます、`Set`プロシージャ`Private`、ではなく`Public`です。  
   
-     `WriteOnly` プロパティを宣言している場合は、`Set` プロシージャはプロパティ全体を表します。  別のアクセス レベルを `Set` に宣言するとプロパティに 2 つのアクセス レベルを設定することになるので、このような宣言はできません。  
+     定義する場合、 `WriteOnly` 、プロパティ、`Set`プロシージャが全体のプロパティを表します。 レベルを別のアクセスを宣言することはできません`Set`プロパティの 2 つのアクセス レベルを設定することがあるため、します。  
   
-## \[動作\]  
+## <a name="behavior"></a>動作  
   
--   **プロパティ プロシージャからの制御の戻り。** `Set` プロシージャから呼び出し元のコードに制御が戻るとき、プロパティに格納する値を渡したステートメントの直後から実行が続行されます。  
+-   **プロパティ プロシージャから取得します。** ときに、`Set`次のステートメントを格納する値が指定されている、プロシージャ呼び出し元のコードに戻ると、実行が継続します。  
   
-     `Set` プロパティ プロシージャは、[Return Statement](../../../visual-basic/language-reference/statements/return-statement.md) または [Exit Statement](../../../visual-basic/language-reference/statements/exit-statement.md) を使って呼び出し元に戻ることができます。  
+     `Set`プロパティ プロシージャは、いずれかを使用して返すことができます、 [Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)または[Exit ステートメント](../../../visual-basic/language-reference/statements/exit-statement.md)です。  
   
-     `Exit Property` ステートメントおよび `Return` ステートメントは、プロパティ プロシージャを直ちに終了します。  プロシージャの任意の場所に、`Exit Property` ステートメントと `Return` ステートメントを何度でも定義できます。また、`Exit Property` ステートメントと `Return` ステートメントを混在して使用できます。  
+     `Exit Property`と`Return`ステートメントでは、プロパティ プロシージャからすぐに終了します。 任意の数の`Exit Property`と`Return`ステートメントがどこにでも表示、プロシージャとを混在させること`Exit Property`と`Return`ステートメントです。  
   
-## 使用例  
- `Set` ステートメントを使って、プロパティの値を設定するコード例を次に示します。  
+## <a name="example"></a>例  
+ 次の例では、`Set`プロパティの値を設定するステートメント。  
   
  [!code-vb[VbVbalrStatements#55](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/set-statement_1.vb)]  
   
-## 参照  
- [Get Statement](../../../visual-basic/language-reference/statements/get-statement.md)   
- [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)   
- [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)   
+## <a name="see-also"></a>関連項目  
+ [Get ステートメント](../../../visual-basic/language-reference/statements/get-statement.md)  
+ [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
  [Property プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)

@@ -18,16 +18,15 @@ helpviewer_keywords:
 - Collections classes
 - generic collections
 ms.assetid: f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55
-caps.latest.revision: 29
+caps.latest.revision: "29"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: ff8ae4475bde934258e4d3f97451e598a53fb6c5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: b37d1d7ff75aebfcdf3e849931a5d2b3924d5d7a
-ms.openlocfilehash: dfdfea20aeb8d0002ef22b9649afc09f80caeae2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="commonly-used-collection-types"></a>一般的に使用されるコレクション型
 コレクション型は、ハッシュ テーブル、キュー、スタック、バッグ、ディクショナリ、リストなど、一般的な種類のデータ コレクションです。  
@@ -65,4 +64,3 @@ ms.lasthandoff: 09/06/2017
  <xref:System.Collections.IDictionary?displayProperty=nameWithType>  
   
  <xref:System.Collections.Generic.IDictionary%602?displayProperty=nameWithType>
-

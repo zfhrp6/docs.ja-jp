@@ -1,40 +1,22 @@
 ---
 title: "C# 言語と .NET Framework の概要"
 description: "C# と .NET の基本を説明します。 C# 言語および .NET エコシステムの概要をご確認ください。"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-caps.latest.revision: 32
+caps.latest.revision: "32"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 2bc7dfbca102a5d2e891b48b676347822eae56f7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: c7fac541dd233111bfffb9c0f67ba048f8d271be
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>C# 言語と .NET Framework の概要
 C# は、タイプ セーフで洗練されたオブジェクト指向言語です。C# を使用すると、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] で稼働する、安全で信頼性の高いさまざまなアプリケーションを構築できます。 C# を使用すると、Windows クライアント アプリケーション、XML Web サービス、分散コンポーネント、クライアント/サーバー アプリケーション、データベース アプリケーションなど、さまざまなアプリケーションを作成できます。 Visual C# には、高度なコード エディター、便利なユーザー インターフェイス デザイナー、統合デバッガーなど、C# 言語と [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] に基づいたアプリケーション開発をより簡単にする多数のツールが用意されています。  
@@ -69,10 +51,8 @@ C# は、タイプ セーフで洗練されたオブジェクト指向言語で�
   
 -   C# 言語の具体的な側面の詳細については、「[C# リファレンス](../../csharp/language-reference/index.md)」を参照してください。  
   
--   [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] の詳細については、「[LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)」を参照してください。  
-  
--   Visual C# チームが提供する最新記事とその他のリソース見つけるには、[Visual C# デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=47811)を参照してください。  
-  
+-   [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] の詳細については、「[LINQ (Language-Integrated Query)](../programming-guide/concepts/linq/index.md)」を参照してください。  
+
 ## <a name="net-framework-platform-architecture"></a>.NET Framework のプラットフォーム アーキテクチャ  
  C# プログラムは、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] で実行されます。これは、共通言語ランタイム (CLR: Common Language Runtime) と呼ばれる仮想実行システムや統合的なクラス ライブラリを備えた Windows の統合コンポーネントです。 CLR は、共通言語基盤 (CLI: Common Language Infrastructure) をサポートする Microsoft のシステムです。CLI は、複数の言語やライブラリをシームレスに連携する実行環境と開発環境を構築するための、基本的な国際規格です。  
   
@@ -86,8 +66,7 @@ C# は、タイプ セーフで洗練されたオブジェクト指向言語で�
   
  [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] には、実行時のサービス以外にも、4,000 クラスを超える多数のライブラリが用意されています。このライブラリは、ファイルの入出力、XML 解析のための文字列操作、Windows フォーム コントロールなど、役に立つさまざまな機能を備えた名前空間に構成されています。 C# アプリケーションでは、一般に、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] クラス ライブラリを広範囲に使用して、一般的な "配管工事" のような作業を処理しています。  
   
- .NET Framework の詳細については、[Microsoft .NET Framework の概要](http://msdn.microsoft.com/en-us/d05daf50-00fe-45c7-8383-06fe41697355)に関する記事を参照してください。  
+ .NET Framework の詳細については、[Microsoft .NET Framework の概要](../../framework/get-started/overview.md)に関する記事を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [C#](../../csharp/index.md) [Visual C# と Visual Basic の概要](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)
-

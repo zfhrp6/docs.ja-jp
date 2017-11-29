@@ -1,41 +1,40 @@
 ---
-title: "#If...Then...#Else Directives | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.#EndIf"
-  - "#End If"
-  - "#Then"
-  - "#ElseIf"
-  - "vb.#ElseIf"
-  - "vb.#Else"
-  - "vb.#If"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Visual Basic code, compiling"
-  - "#If directive [Visual Basic]"
-  - "conditional compilation, directives"
-  - "#End if directive [Visual Basic]"
-  - "selective compiling"
-  - "else directive (#else)"
-  - "#Else directive [Visual Basic]"
+title: "#<a name=\"ifthenelse-directives\"></a>もし。。。Then... #Else ディレクティブ"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.#EndIf
+- '#End If'
+- '#Then'
+- '#ElseIf'
+- vb.#ElseIf
+- vb.#Else
+- vb.#If
+helpviewer_keywords:
+- Visual Basic code, compiling
+- '#If directive [Visual Basic]'
+- conditional compilation [Visual Basic], directives
+- '#End if directive [Visual Basic]'
+- selective compiling
+- else directive (#else)
+- '#Else directive [Visual Basic]'
 ms.assetid: 10bba104-e3fd-451b-b672-faa472530502
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 77757e441ae937aa86122f237e839d1005644409
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# #If...Then...#Else Directives
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-式の値に基づいて、条件付きのコンパイルを行います。  
+# <a name="ifthenelse-directives"></a>#If...Then...#Else ディレクティブ
+条件付きで選択した Visual Basic コード ブロックをコンパイルします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 #If expression Then  
@@ -50,32 +49,32 @@ caps.handback.revision: 14
 #End If  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
  `expression`  
- `#If` ステートメントおよび `#ElseIf` ステートメント に対しては必ず指定します。それ以外の場合は省略できます。  真 \(`True`\) または偽 \(`False`\) を評価する、1 つ以上の条件付きコンパイル定数、リテラル値、および演算子だけで構成される任意の式を指定します。  
+ 必要な`#If`と`#ElseIf`ステートメント、省略可能な他の場所。 1 つまたは複数の条件付きコンパイラ定数、リテラル、およびに評価される演算子だけで構成される、任意の式`True`または`False`です。  
   
  `statements`  
- `#If` ステートメント ブロックに対しては必ず指定します。それ以外の場合は省略できます。  関連付けられた式が真 \(`True`\) に評価される場合にコンパイルされる、Visual Basic のプログラム行またはコンパイラ ディレクティブを指定します。  
+ 必要な`#If`ステートメント ブロック、省略可能な他の場所。 Visual Basic プログラム行またはに関連付けられた式が評価された場合にコンパイルされているコンパイラ ディレクティブ`True`です。  
   
  `#End If`  
- `#If` ステートメント ブロックを終了します。  
+ 終了、`#If`ステートメント ブロックします。  
   
-## 解説  
- `#If...Then...#Else` ディレクティブの動作は、`If...Then...Else` ステートメントの動作と表面上は同じに見えます。  しかし、`#If...Then...#Else` ディレクティブはコンパイラが何をコンパイルするかを評価するのに対し、`If...Then...Else` ステートメントは実行時に条件を評価する点が異なります。  
+## <a name="remarks"></a>コメント  
+ 画面の動作で、`#If...Then...#Else`ディレクティブが同じのように見える、`If...Then...Else`ステートメントです。 ただし、`#If...Then...#Else`ディレクティブ、コンパイラによってどのようなコンパイルが一方の評価、`If...Then...Else`ステートメントが実行時に条件を評価します。  
   
- 通常、条件付きコンパイルは、同じプログラムを異なるシステムでコンパイルするために使用します。  また、デバッグ コードが実行可能ファイルに表示されるのを防ぐためにも使用します。  条件付きコンパイルによって省略されたコードは、コンパイル後の実行可能ファイルからは取り除かれるため、プログラムのサイズや動作に影響しません。  
+ 条件付きコンパイルは通常、さまざまなプラットフォームの同じプログラムのコンパイルに使用されます。 防ぐためにも使用する実行可能ファイルに表示されないコードをデバッグします。 条件付きコンパイル中に除外されたコードを完全に省略すると、最終的な実行可能ファイルからサイズやパフォーマンスに影響があるないようにします。  
   
- 評価結果に関係なく、すべての式が `Option Compare Binary` を使って評価されます。  `Option Compare` ステートメントは、`#If` ステートメントと `#ElseIf` ステートメントの式に影響しません。  
+ 使用して、任意の評価の結果に関係なくすべての式が評価は`Option Compare Binary`します。 `Option Compare`ステートメントでは内の式には影響しません`#If`と`#ElseIf`ステートメントです。  
   
 > [!NOTE]
->  `#If`、`#Else`、`#ElseIf`、および `#End If` ディレクティブを単体で使用することはできません。  他のコードをこれらのディレクティブと同じ行に記述することはできません。  
+>  単一行形式、 `#If`、 `#Else`、 `#ElseIf`、および`#End If`ディレクティブが存在しません。 他のコードは、ディレクティブのいずれかと同じ行に表示できません。  
   
-## 使用例  
- この例では、`#If...Then...#Else` ブロックを使用して、特定のステートメントをコンパイルするかどうかを決定します。  
+## <a name="example"></a>例  
+ この例では、`#If...Then...#Else`コンストラクトを特定のステートメントをコンパイルするかどうかを判断します。  
   
  [!code-vb[VbVbalrConditionalComp#1](../../../visual-basic/language-reference/directives/codesnippet/VisualBasic/if-then-else-directives_1.vb)]  
   
-## 参照  
- [\#Const Directive](../../../visual-basic/language-reference/directives/const-directive.md)   
- [If...Then...Else Statement](../../../visual-basic/language-reference/statements/if-then-else-statement.md)   
- [Conditional Compilation](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)
+## <a name="see-also"></a>関連項目  
+ [#Const ディレクティブ](../../../visual-basic/language-reference/directives/const-directive.md)  
+ [If...Then...Else ステートメント](../../../visual-basic/language-reference/statements/if-then-else-statement.md)  
+ [条件付きコンパイル](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)

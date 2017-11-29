@@ -1,20 +1,18 @@
 ---
 title: "純粋関数へのリファクタリング (C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 ms.assetid: 2944a0d4-fd33-4e2e-badd-abb0f9be2fcc
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: 36bb31975523055962fa9572109dab7e2ed47336
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb17207ba72bb22f5d6db55e9d1bd77e3013445
-ms.openlocfilehash: 2bce781df80a777203ed8e713bedf83f1c7779a8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="refactoring-into-pure-functions-c"></a>純粋関数へのリファクタリング (C#)
 
@@ -120,6 +118,5 @@ class Program
  詳細については、「[標準クエリ演算子の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [純粋関数型変換の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)   
+ [純粋関数型変換の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)  
  [関数型プログラミングと命令型プログラミング (C#)](../../../../csharp/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)
-

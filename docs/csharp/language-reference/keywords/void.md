@@ -1,41 +1,22 @@
 ---
 title: "void (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - void_CSharpKeyword
 - void
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- void keyword [C#]
+helpviewer_keywords: void keyword [C#]
 ms.assetid: 0d2d8a95-fe20-4fbd-bf5d-c1e54bce71d4
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: a71cac30132417abce60cdde54322b5f2067d39d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d1bd7ece5ce3b558c616a4eb3a4668c3c13eb1cb
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="void-c-reference"></a>void (C# リファレンス)
 メソッドの戻り値の型として使用した場合、`void` はメソッドが値を返さないことを指定します。
@@ -51,17 +32,16 @@ public void SampleMethod()
 
 `void` は、不明な型へのポインターを宣言するために、unsafe コンテキストでも使用されます。 詳しくは、「[ポインター型](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)」をご覧ください。
 
-`void` は、.NET Framework の <xref:System.Void?displayProperty=fullName> 型のエイリアスです。
+`void` は、.NET Framework の <xref:System.Void?displayProperty=nameWithType> 型のエイリアスです。
 
 ## <a name="c-language-specification"></a>C# 言語仕様
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
 ## <a name="see-also"></a>関連項目
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [参照型](../../../csharp/language-reference/keywords/reference-types.md)   
- [値型](../../../csharp/language-reference/keywords/value-types.md)   
- [メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
+ [参照型](../../../csharp/language-reference/keywords/reference-types.md)  
+ [値型](../../../csharp/language-reference/keywords/value-types.md)  
+ [メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)  
  [アンセーフ コードとポインター](../../../csharp/programming-guide/unsafe-code-pointers/index.md)
-

@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -16,16 +15,15 @@ helpviewer_keywords:
 - culture, assembly manifest
 - assemblies [.NET Framework], metadata
 ms.assetid: 8e40fab9-549d-4731-aec2-ffa47a382de0
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 1df64129a0ae15b5bad387a62ca60bb4b1b92f7d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: eb20bfac6717779f5394724617d247a6dc980c7e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="assembly-manifest"></a>アセンブリ マニフェスト
 静的であるか動的であるかにかかわらず、すべてのアセンブリは、アセンブリ内の要素の相互関係を記述したデータのコレクションを含んでいます。 このアセンブリ メタデータは、アセンブリ マニフェストに格納されています。 アセンブリ マニフェストには、アセンブリのバージョン要件およびセキュリティ ID を指定するために必要なすべてのメタデータと、アセンブリのスコープを定義したり、リソースやクラスへの参照を解決したりするために必要なすべてのメタデータが格納されています。 アセンブリ マニフェストは、MSIL (Microsoft Intermediate Language) コードが記述されている PE ファイル (.exe または .dll)、またはアセンブリ マニフェスト情報だけを格納したスタンドアロンの PE ファイルに保存できます。  
@@ -65,8 +63,7 @@ ms.lasthandoff: 07/28/2017
  アセンブリ マニフェストの一部の情報は、コード内でアセンブリ属性を使用することで、追加または変更できます。 バージョン情報や、商標、著作権、製品名、会社名、補足バージョンなどの情報属性は変更できます。 アセンブリ属性の完全なリストについては、「[Setting Assembly Attributes](../../../docs/framework/app-domains/set-assembly-attributes.md)」 (アセンブリ属性の設定) を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [アセンブリの内容](../../../docs/framework/app-domains/assembly-contents.md)   
- [アセンブリのバージョン管理](../../../docs/framework/app-domains/assembly-versioning.md)   
- [サテライト アセンブリの作成](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)   
+ [アセンブリの内容](../../../docs/framework/app-domains/assembly-contents.md)  
+ [アセンブリのバージョン管理](../../../docs/framework/app-domains/assembly-versioning.md)  
+ [サテライト アセンブリの作成](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)  
  [厳密な名前付きアセンブリ](../../../docs/framework/app-domains/strong-named-assemblies.md)
-

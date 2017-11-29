@@ -1,36 +1,28 @@
 ---
-title: "スレッド タイマー (Visual Basic) |Microsoft ドキュメント"
+title: "スレッド タイマー (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 809cba93-cc93-4e21-afda-f299f9a39818
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9ea657482d4e8e1465d9bc6ae3f94915badee512
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: b828476301424ca767e2b581c173d6a2dcd184ed
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="thread-timers-visual-basic"></a>スレッド タイマー (Visual Basic)
-<xref:System.Threading.Timer?displayProperty=fullName>クラスは別のスレッドでタスクを定期的に実行するのに便利です</xref:System.Threading.Timer?displayProperty=fullName>。 たとえば、状態と、データベースの整合性をチェックするか、重要なファイルをバックアップするスレッドのタイマーを使用できます。  
+<xref:System.Threading.Timer?displayProperty=nameWithType> クラスは、タスクを別々のスレッドで定期的に実行するのに便利です。 たとえば、スレッド タイマーを使用すると、データベースのステータスと整合性をチェックしたり、重要なファイルをバックアップしたりできます。  
   
 ## <a name="thread-timer-example"></a>スレッド タイマーの例  
- 次の例は、2 秒ごとにタスクを開始し、開始するフラグを使用して、<xref:System.IDisposable.Dispose%2A>タイマーを停止するメソッド</xref:System.IDisposable.Dispose%2A>。 この例では、出力ウィンドウにステータスを送信します。  
+ 2 秒ごとにタスクを起動し、フラグを使用して <xref:System.IDisposable.Dispose%2A> メソッドを開始し、タイマーを停止する例を次に示します。 この例は、ステータスを出力ウィンドウに出力します。  
   
 ```vb  
 Private Class StateObjClass  
@@ -76,8 +68,8 @@ Private Sub TimerTask(ByVal StateObj As Object)
 End Sub  
 ```  
   
- スレッド タイマーとは特に便利な場合に、<xref:System.Windows.Forms.Timer?displayProperty=fullName>オブジェクトは、コンソール アプリケーションを開発する場合などは使用できません</xref:System.Windows.Forms.Timer?displayProperty=fullName>。  
+ スレッド タイマーは、コンソール アプリケーションを開発するときなど、<xref:System.Windows.Forms.Timer?displayProperty=nameWithType> オブジェクトを使用できないときに特に有効です。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Threading></xref:System.Threading>   
- [マルチ スレッド アプリケーション (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/multithreaded-applications.md)
+ <xref:System.Threading>  
+ [マルチスレッド アプリケーション (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/multithreaded-applications.md)

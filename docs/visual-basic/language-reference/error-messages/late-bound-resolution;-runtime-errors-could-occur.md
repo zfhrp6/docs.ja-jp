@@ -1,51 +1,33 @@
 ---
-title: "遅延バインディングの解決実行時エラーが発生する可能性があります。Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "遅延バインドの解決です。ランタイム エラーが発生する可能性があります。"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vbc42017
 - BC42017
-dev_langs:
-- VB
-helpviewer_keywords:
-- BC42017
+helpviewer_keywords: BC42017
 ms.assetid: 45f552c8-57c6-44c0-97d3-e510119b257a
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3ac885b0de2c4f44d4323487fc55cde9b23defa4
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 8d01164914b484ef689654f048a8743f3c2eb669
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="late-bound-resolution-runtime-errors-could-occur"></a>遅延バインドの解決です。ランタイム エラーが発生する可能性があります。
-として宣言された変数にオブジェクトが割り当てられている、 [Object データ型](../../../visual-basic/language-reference/data-types/object-data-type.md)します。  
+オブジェクトは、宣言する変数に割り当てられた、[オブジェクト データ型](../../../visual-basic/language-reference/data-types/object-data-type.md)です。  
   
- として変数を宣言すると`Object`、コンパイラを実行する必要があります*遅延バインディング*、これにより実行時に余分な処理が発生します。 また、アプリケーションで実行時エラーが発生する可能性があります。 割り当てる場合など、<xref:System.Windows.Forms.Form>に、`Object`変数にアクセスしようと、<xref:System.Xml.XmlDocument.NameTable%2A?displayProperty=fullName>プロパティには、ランタイムは、スロー、<xref:System.MemberAccessException>ため、<xref:System.Windows.Forms.Form>クラスを公開しません、`NameTable`プロパティ</xref:System.Windows.Forms.Form></xref:System.MemberAccessException></xref:System.Xml.XmlDocument.NameTable%2A?displayProperty=fullName></xref:System.Windows.Forms.Form>。  
+ として変数を宣言するときに`Object`、コンパイラを実行する必要があります*遅延バインディング*、これによって実行時に余分な処理が発生します。 また、アプリケーションで実行時エラーが発生する可能性があります。 割り当てる場合など、<xref:System.Windows.Forms.Form>を`Object`変数にアクセスしようと、<xref:System.Xml.XmlDocument.NameTable%2A?displayProperty=nameWithType>プロパティ、ランタイムは、スロー、<xref:System.MemberAccessException>ため、<xref:System.Windows.Forms.Form>クラスを公開しません、`NameTable`プロパティです。  
   
- 特定の種類を指定して変数を宣言する場合、コンパイラを実行できます*事前バインディング*コンパイル時にします。 これは、結果、パフォーマンスの向上、制御されたアクセスを特定の型のメンバーと、コードの読みやすさをします。  
+ コンパイラが実行できる場合は、特定の種類を指定して変数を宣言すると、*事前バインディング*コンパイル時にします。 これは、結果、パフォーマンスを向上させる、特定の種類のメンバーと、コードの読みやすいようにへのアクセスを制御します。  
   
- 既定では、このメッセージは警告です。 警告を非表示にする方法や、警告をエラーとして扱う方法の詳細については、「 [Configuring Warnings in Visual Basic](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic)」を参照してください。  
+ 既定では、このメッセージは警告です。 警告を非表示にする方法や、警告をエラーとして扱う方法の詳細については、「 [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic)」を参照してください。  
   
  **エラー ID:** BC42017  
   
@@ -54,5 +36,5 @@ ms.lasthandoff: 03/13/2017
 -   可能であれば、特定の種類を指定して変数を宣言します。  
   
 ## <a name="see-also"></a>関連項目  
- [事前バインディングと遅延バインディング](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)   
+ [事前バインディングと遅延バインディング](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)  
  [オブジェクト変数の宣言](../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)

@@ -1,104 +1,103 @@
 ---
-title: "Type Conversion Functions (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.CUShort"
-  - "vb.csng"
-  - "vb.CDate"
-  - "CByte"
-  - "CSng"
-  - "vb.CDec"
-  - "CBool"
-  - "CStr"
-  - "vb.CULng"
-  - "CDec"
-  - "CVErr"
-  - "CDbl"
-  - "CShort"
-  - "vb.CObj"
-  - "vb.CVErr"
-  - "CULng"
-  - "vb.cdbl"
-  - "vb.cbool"
-  - "CObj"
-  - "CDate"
-  - "CLng"
-  - "vb.cstr"
-  - "vb.cbyte"
-  - "vb.clng"
-  - "vb.CChar"
-  - "CUShort"
-  - "vb.CUInt"
-  - "vb.cint"
-  - "vb.CShort"
-  - "CInt"
-  - "CUInt"
-  - "CChar"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "CDate function"
-  - "CByte function"
-  - "Integer data type, converting"
-  - "string conversion, conversion functions"
-  - "fractions"
-  - "data types [Visual Basic], converting"
-  - "text, converting"
-  - "CDec function"
-  - "Char data type, converting"
-  - "type conversion, functions for"
-  - "Single data type, converting"
-  - "numbers, rounding"
-  - "rounding numbers, type conversion"
-  - "CUShort function"
-  - "Long data type, converting"
-  - "return values, data types"
-  - "single-precision numbers, converting"
-  - "data type conversion, functions for"
-  - "CStr function"
-  - "times, converting"
-  - "CSng function"
-  - "conversions, type conversion functions"
-  - "CBool function"
-  - "CDbl function"
-  - "CUInt function"
-  - "Currency data type, conversion functions"
-  - "numbers, converting"
-  - "Double data type, converting"
-  - "CLng function"
-  - "CSByte function"
-  - "double-precision numbers"
-  - "Decimal data type, converting"
-  - "Boolean data type, converting"
-  - "integers, type conversion functions"
-  - "dates, converting"
-  - "CULng function"
-  - "CInt function"
-  - "Date data type, converting"
-  - "Byte data type, converting"
-  - "String data type, converting"
-  - "CChar function"
-  - "banker's rounding"
-  - "Short data type, converting"
-  - "rounding numbers, banker's rounding"
-  - "type conversion, Visual Basic vs. .NET Framework"
+title: "データ型変換関数 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.CUShort
+- vb.csng
+- vb.CDate
+- CByte
+- CSng
+- vb.CDec
+- CBool
+- CStr
+- vb.CULng
+- CDec
+- CVErr
+- CDbl
+- CShort
+- vb.CObj
+- vb.CVErr
+- CULng
+- vb.cdbl
+- vb.cbool
+- CObj
+- CDate
+- CLng
+- vb.cstr
+- vb.cbyte
+- vb.clng
+- vb.CChar
+- CUShort
+- vb.CUInt
+- vb.cint
+- vb.CShort
+- CInt
+- CUInt
+- CChar
+helpviewer_keywords:
+- CDate function
+- CByte function
+- Integer data type [Visual Basic], converting
+- string conversion [Visual Basic], conversion functions
+- fractions
+- data types [Visual Basic], converting
+- text, converting
+- CDec function
+- Char data type [Visual Basic], converting
+- type conversion [Visual Basic], functions for
+- Single data type [Visual Basic], converting
+- numbers [Visual Basic], rounding
+- rounding numbers [Visual Basic], type conversion
+- CUShort function
+- Long data type [Visual Basic], converting
+- return values [Visual Basic], data types
+- single-precision numbers [Visual Basic], converting
+- data type conversion [Visual Basic], functions for
+- CStr function
+- times [Visual Basic], converting
+- CSng function
+- conversions [Visual Basic], type conversion functions
+- CBool function
+- CDbl function
+- CUInt function
+- Currency data type [Visual Basic], conversion functions
+- numbers [Visual Basic], converting
+- Double data type [Visual Basic], converting
+- CLng function
+- CSByte function
+- double-precision numbers
+- Decimal data type [Visual Basic], converting
+- Boolean data type [Visual Basic], converting
+- integers [Visual Basic], type conversion functions
+- dates [Visual Basic], converting
+- CULng function
+- CInt function
+- Date data type [Visual Basic], converting
+- Byte data type [Visual Basic], converting
+- String data type [Visual Basic], converting
+- CChar function
+- banker's rounding
+- Short data type [Visual Basic], converting
+- rounding numbers [Visual Basic], banker's rounding
+- type conversion [Visual Basic], Visual Basic vs. .NET Framework
 ms.assetid: d9d8d165-f967-44ff-a6cd-598e4740a99e
-caps.latest.revision: 22
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 117cd4ce038a533715bbc86558545f0f223dd149
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Type Conversion Functions (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-データ型変換関数は、インラインでコンパイルされます。つまり、変換コードは、式を評価するコードに含まれます。  変換を実行するためにプロシージャへの呼び出しを行わないようにすると、パフォーマンスが向上することがあります。  各関数は式を特定のデータ型に変換します。  
+# <a name="type-conversion-functions-visual-basic"></a>データ型変換関数 (Visual Basic)
+これらの関数は、コンパイルされたインラインで、変換コードは、式を評価するコードの一部を意味します。 場合によってパフォーマンスを向上させると、変換を行うプロシージャへの呼び出しはありません。 各関数は、式を特定のデータ型を変換します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 CBool(expression)  
@@ -119,163 +118,163 @@ CULng(expression)
 CUShort(expression)  
 ```  
   
-## 指定項目  
+## <a name="part"></a>パーツ  
  `expression`  
- 必ず指定します。  変換前のデータ型の任意の式です。  
+ 必須です。 ソースのデータ型の任意の式。  
   
-## 戻り値のデータ型  
- 返される値のデータ型は、次に示すように、関数名によって異なります。  
+## <a name="return-value-data-type"></a>戻り値のデータ型  
+ 関数名は、次の表に示すように、返されると、値のデータ型を決定します。  
   
-|関数名|戻り値の型|引数 `expression` の範囲|  
-|---------|-----------|-------------------------|  
-|`CBool`|[Boolean Data Type](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|任意の有効な `Char`、`String`、または数式。|  
-|`CByte`|[Byte Data Type](../../../visual-basic/language-reference/data-types/byte-data-type.md)|0 から 255 \(符号なし\)。小数部分は丸められます<sup>1</sup>。|  
-|`CChar`|[Char Data Type](../../../visual-basic/language-reference/data-types/char-data-type.md)|任意の有効な `Char` または `String` 式。`String` の最初の文字だけが変換されます。値は 0 から 65535 \(符号なし\)。|  
-|`CDate`|[Date Data Type](../../../visual-basic/language-reference/data-types/date-data-type.md)|任意の有効な日付と時刻の表現。|  
-|`CDbl`|[Double Data Type](../../../visual-basic/language-reference/data-types/double-data-type.md)|\-1.79769313486231570E\+308 ～ \-4.94065645841246544E\-324 \(負の値\)。4.94065645841246544E\-324 ～ 1.79769313486231570E\+308 \(正の値\)。|  
-|`CDec`|[Decimal Data Type](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|小数点以下が 0 桁 \(小数部分を持たない数値\) の場合、\-79,228,162,514,264,337,593,543,950,335 ～ 79,228,162,514,264,337,593,543,950,335。  小数点以下 28 桁の数値の場合、 \-7.9228162514264337593543950335 ～ 7.9228162514264337593543950335。  絶対値の最小値は 0 を除いた場合、0.0000000000000000000000000001 \(\+\/\-1E\-28\) です。|  
-|`CInt`|[Integer Data Type](../../../visual-basic/language-reference/data-types/integer-data-type.md)|\-2,147,483,648 から 2,147,483,647。小数部分は丸められます<sup>1</sup>。|  
-|`CLng`|[Long Data Type](../../../visual-basic/language-reference/data-types/long-data-type.md)|\-9,223,372,036,854,775,808 から 9,223,372,036,854,775,807。小数部分は丸められます<sup>1</sup>。|  
-|`CObj`|[Object Data Type](../../../visual-basic/language-reference/data-types/object-data-type.md)|任意の有効な式。|  
-|`CSByte`|[SByte Data Type](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|\-128 から 127。小数部分は丸められます<sup>1</sup>。|  
-|`CShort`|[Short Data Type](../../../visual-basic/language-reference/data-types/short-data-type.md)|\-32,768 から 32,767。小数部分は丸められます<sup>1</sup>。|  
-|`CSng`|[Single Data Type](../../../visual-basic/language-reference/data-types/single-data-type.md)|\-3.402823E\+38 ～ \-1.401298E\-45 \(負の値\)。1.401298E\-45 ～ 3.402823E\+38 \(正の値\)。|  
-|`CStr`|[String Data Type](../../../visual-basic/language-reference/data-types/string-data-type.md)|`CStr` 関数の戻り値は引数 `expression` により異なります。  [Return Values for the CStr Function](../../../visual-basic/language-reference/functions/return-values-for-the-cstr-function.md) を参照してください。|  
-|`CUInt`|[UInteger Data Type](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|0 から 4,294,967,295 \(符号なし\)。小数部分は丸められます<sup>1</sup>。|  
-|`CULng`|[ULong Data Type](../../../visual-basic/language-reference/data-types/ulong-data-type.md)|0 から 18,446,744,073,709,551,615 \(符号なし\)。小数部分は丸められます<sup>1</sup>。|  
-|`CUShort`|[UShort Data Type](../../../visual-basic/language-reference/data-types/ushort-data-type.md)|0 から 65,535 \(符号なし\)。小数部分は丸められます<sup>1</sup>。|  
+|関数名|戻り値のデータ型|範囲`expression`引数|  
+|-------------------|----------------------|-------------------------------------|  
+|`CBool`|[Boolean データ型](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|任意の有効な`Char`または`String`または数値式です。|  
+|`CByte`|[Byte データ型](../../../visual-basic/language-reference/data-types/byte-data-type.md)|0 ~ 255 (符号なし)。小数部は丸められます。<sup>1</sup>|  
+|`CChar`|[Char データ型](../../../visual-basic/language-reference/data-types/char-data-type.md)|任意の有効な`Char`または`String`式以外の最初の文字のみの場合は、`String`に変換されます。 値は 0 ~ 65535 (符号なし) を指定できます。|  
+|`CDate`|[Date データ型](../../../visual-basic/language-reference/data-types/date-data-type.md)|任意の有効な日付と時刻の表現。|  
+|`CDbl`|[Double 型](../../../visual-basic/language-reference/data-types/double-data-type.md)|-- を 4.94065645841246544E-(負の値)。4.94065645841246544E-324 正の値の 1.79769313486231570 e + 308 ~ です。|  
+|`CDec`|[Decimal データ型](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|数値のゼロ拡張 79,228,162,514,264,337,593,543,950,335、+/-小数点以下の桁数番号は、します。 小数点以下桁数が 28 数値の場合は、範囲は、7.9228162514264337593543950335 です。 可能な 0 以外の最小値は、(1 e ~ 28) +/-0.0000000000000000000000000001 です。|  
+|`CInt`|[整数データ型](../../../visual-basic/language-reference/data-types/integer-data-type.md)|-2,147, 483,648 ~ 2,147, 483,647 です。小数部は丸められます。<sup>1</sup>|  
+|`CLng`|[Long データ型](../../../visual-basic/language-reference/data-types/long-data-type.md)|9,223,372,036,854,775,807; を通じて-9,223,372,036,854,775,808小数部は丸められます。<sup>1</sup>|  
+|`CObj`|[Object 型](../../../visual-basic/language-reference/data-types/object-data-type.md)|任意の有効な式。|  
+|`CSByte`|[SByte データ型](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|-128 ~ 127 です。小数部は丸められます。<sup>1</sup>|  
+|`CShort`|[Short データ型](../../../visual-basic/language-reference/data-types/short-data-type.md)|-32,768 ~ 32,767 です。小数部は丸められます。<sup>1</sup>|  
+|`CSng`|[Single データ型](../../../visual-basic/language-reference/data-types/single-data-type.md)|-3.402823 e + 38 ~ - 1.401298E-45 負の値です。1.401298E-45 正の値の 3.402823 e + 38 ~ です。|  
+|`CStr`|[String データ型](../../../visual-basic/language-reference/data-types/string-data-type.md)|返します`CStr`によって異なります、`expression`引数。 参照してください[CStr 関数の戻り値](../../../visual-basic/language-reference/functions/return-values-for-the-cstr-function.md)です。|  
+|`CUInt`|[UInteger データ型](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|0 ~ 4,294,967,295 (符号なし)。小数部は丸められます。<sup>1</sup>|  
+|`CULng`|[ULong データ型](../../../visual-basic/language-reference/data-types/ulong-data-type.md)|0 ~ 18,446,744,073,709,551,615 (符号なし)。小数部は丸められます。<sup>1</sup>|  
+|`CUShort`|[UShort データ型](../../../visual-basic/language-reference/data-types/ushort-data-type.md)|0 ~ 65,535 (符号なし)。小数部は丸められます。<sup>1</sup>|  
   
- <sup>1</sup> 小数部分は、*銀行型丸め*と呼ばれる特別な丸めの対象になります。  詳細については、「解説」を参照してください。  
+ <sup>1</sup>小数部分は、特殊な丸めと呼ばれるを受けることができます*銀行型丸め*です。 詳細については、「解説」を参照してください。  
   
-## 解説  
- 規則として、Visual Basic の型変換関数は、<xref:System.Convert> クラスと個々の型構造体またはクラスの両方で `ToString()` などの .NET Framework メソッドよりも優先して使用します。  Visual Basic 関数は、Visual Basic コードへの対応に最適化されており、ソース コードをより短く、より読みやすくします。  さらに、`Boolean` を `Integer` に変換する場合など、.NET Framework の変換メソッドは Visual Basic 関数と同じ結果を生成するとは限りません。  詳細については、「[Troubleshooting Data Types](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ 原則として、する必要があります、Visual Basic 型変換関数を使用、.NET Framework のメソッドよりもなど`ToString()`か、上、<xref:System.Convert>クラスまたは個々 の型の構造体またはクラス。 Visual Basic の関数は最適な Visual Basic コード、対話するために設計されていてもソース コードできるだけ短く、また読みやすくします。 さらに、.NET Framework 変換メソッドは、常に生成しない変換する場合の例については、Visual Basic の関数と同じ結果`Boolean`に`Integer`です。 詳細については、次を参照してください。[データ型のトラブルシューティング](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)です。  
   
-## \[動作\]  
+## <a name="behavior"></a>動作  
   
--   **強制型変換。**一般に、ある操作結果を既定のデータ型ではなく特定のデータ型に強制的に変換する場合は、データ型変換関数を使用します。  たとえば、単精度、倍精度、または整数で計算を行うような場合に、`CDec` 関数を使用して 10 進の演算を強制的に行います。  
+-   **強制型変換です。** 一般に、データ型変換関数を使用して、既定のデータ型ではなく、特定のデータ型を操作の結果を強制することができます。 たとえば、使用して`CDec`場合の単精度、倍精度、または整数算術演算は通常を行う場所の 10 進数の演算を強制的にします。  
   
--   **変換の失敗。**関数に渡された引数 `expression` の値が変換されるデータ型の範囲を超えている場合、<xref:System.OverflowException> が発生します。  
+-   **変換の失敗。** 場合、`expression`関数に渡されるが範囲外のデータ型の変換するのには、先に<xref:System.OverflowException>に発生します。  
   
--   **小数部分。**非整数型の値を整数型に変換する場合、整数変換関数 \(`CByte`、`CInt`、`CLng`、`CSByte`、`CShort`、`CUInt`、`CULng`、`CUShort`\) は、最も近い整数に値を丸めて小数部分を取り除きます。  
+-   **小数部分。** 整数以外の値を整数に変換すると、型、整数の変換関数 (`CByte`、 `CInt`、 `CLng`、 `CSByte`、 `CShort`、 `CUInt`、 `CULng`、および`CUShort`) を削除します小数部分し、を最も近い整数値を丸めます。  
   
-     小数部分がちょうど 0.5 のとき、整数変換関数はこれを最も近い偶数に丸めます。  たとえば、0.5 は 0 に、1.5 と 2.5 はどちらも 2 になります。  これは*銀行型丸め*とも呼ばれ、このような数値を大量に加算するときに蓄積する偏りを調整する目的で使用されます。  
+     場合は、小数部分が正確には 0.5、整数の変換関数に丸める、近い偶数の整数。 たとえば、0.5 は、0、および 1.5 2.5 は 2 にどちらに切り上げられます。 これとも呼ばれます*銀行型丸めが*、その目的は、このような多くの数値をまとめて追加するときに蓄積する偏りを調整するとします。  
   
-     <xref:Microsoft.VisualBasic.Conversion.Int%2A> および <xref:Microsoft.VisualBasic.Conversion.Fix%2A> 関数は小数部分を丸めるのではなく切り捨てるので、`CInt` および `CLng` とは異なります。  また、`Fix` 関数および `Int` 関数は引き渡された値と同じデータ型で常に値を返します。  
+     `CInt``CLng`は異なる、<xref:Microsoft.VisualBasic.Conversion.Int%2A>と<xref:Microsoft.VisualBasic.Conversion.Fix%2A>切り上げるには、数値の小数部ではなく、切り捨て関数。 また、`Fix`と`Int`を渡すと、同じデータ型の値を常に返します。  
   
--   **日付\/時刻の変換。**値を日付と時刻に変換できるかどうかを確認するには、<xref:Microsoft.VisualBasic.Information.IsDate%2A> 関数を使用します。  `CDate` は日付リテラルと時刻リテラルを認識しますが、数値は認識しません。  Visual Basic 6.0 の `Date` 値を Visual Basic 2005 以降のバージョンの  `Date` 値に変換するには、<xref:System.DateTime.FromOADate%2A?displayProperty=fullName> メソッドを使用します。  
+-   **日付/時刻の変換。** 使用して、<xref:Microsoft.VisualBasic.Information.IsDate%2A>値を日付と時刻に変換できるかどうかを判断する関数。 `CDate`リテラルの日付と時刻リテラルが数値以外の値を認識します。 Visual Basic 6.0 を変換する`Date`値を`Date`Visual Basic 2005 での値またはそれ以降のバージョンでは、使用できます、<xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType>メソッドです。  
   
--   **日付\/時刻の基準値。** [Date Data Type](../../../visual-basic/language-reference/data-types/date-data-type.md) には、常に日付と時刻の両方の情報が含まれます。  型変換のために、Visual Basic は 1\/1\/0001 \(西暦 1 年 1 月 1 日\) を日付の基準値と見なし、00:00:00 \(午前 0 時\) を時刻の*基準値*と見なします。  日付型 \(`Date`\) の値を文字列に変換する場合、`CStr` は結果の文字列に基準値を含めません。  たとえば、`#January 1, 0001 9:30:00#` を文字列に変換すると、結果は "9:30:00 AM" となり、日付情報が省略されます。  ただし、元の日付型 \(`Date`\) の値には日付情報が残っており、<xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A> などの関数を使って復元できます。  
+-   **ニュートラル日付/時刻値。** [Date データ型](../../../visual-basic/language-reference/data-types/date-data-type.md)常に日付と時刻の両方の情報が含まれます。 型変換のため、Visual Basic 1/1/0001 (1 年 1 月、1) であると見なす、*ニュートラル値*日付、および 00時 00分: 00 (午前 0 時) に依存しない値であることにします。 変換する場合、`Date`値を文字列に`CStr`結果の文字列に中立的な値は含まれません。 変換する場合など、`#January 1, 0001 9:30:00#`文字列に、結果は"9時 30分: 00 AM"以外の場合は、日付情報は表示されません。 ただし、日付情報は、元にまだ存在している`Date`値し、などの関数で回復できる<xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A>関数。  
   
--   **カルチャの区別。**文字列を扱う型変換関数は、アプリケーションの現在のカルチャ設定に基づいて変換を実行します。  たとえば、`CDate` は、システムのロケール情報に基づいて日付の形式を認識します。  日、月、および年は、ロケールに対応した正しい順序で指定する必要があります。そうしないと、日付が正しく解釈されない場合があります。  日付の形式が、曜日文字列 \("Wednesday" など\) を含む長い形式の場合も認識できません。  
+-   **カルチャと小文字の区別します。** 文字列に関係するデータ型変換関数は、アプリケーションの現在のカルチャ設定に基づく変換を実行します。 たとえば、`CDate`システムのロケール設定に従って日付形式を認識します。 日、月、および使用されるロケールの正しい順序で年を指定するか、日付が正しく解釈されない可能性があります。 長い日付形式は、「水曜日」などの曜日の文字列が含まれている場合に認識されません。  
   
-     ロケールで指定されているもの以外の書式の、値の文字列形式を扱った変換では、Visual Basic の型変換関数は使用できません。  この変換では、その値の型の `ToString(IFormatProvider)` および `Parse(String, IFormatProvider)` メソッドを使用します。  たとえば、文字列を `Double` に変換するには <xref:System.Double.Parse%2A?displayProperty=fullName> を使用します。`Double` 型の値を文字列に変換するには <xref:System.Double.ToString%2A?displayProperty=fullName> を使用します。  
+     または現在のロケールで指定された 1 つは異なる形式で値の文字列形式からに変換する必要がある場合は、Visual Basic の型変換関数を使用することはできません。 これを行うを使用して、`ToString(IFormatProvider)`と`Parse(String, IFormatProvider)`値の型のメソッドです。 たとえば、使用<xref:System.Double.Parse%2A?displayProperty=nameWithType>を文字列に変換するときに、`Double`を使用して<xref:System.Double.ToString%2A?displayProperty=nameWithType>型の値を変換するときに`Double`を文字列にします。  
   
-## CType 関数  
- [CType 関数](../../../visual-basic/language-reference/functions/ctype-function.md) は、2 番目の引数として `typename` を取り、`expression` を強制的に `typename` に変換します \(`typename` は、有効な変換が可能な任意のデータ型、構造体、クラス、インターフェイス\)。  
+## <a name="ctype-function"></a>CType Function  
+ [CType 関数](../../../visual-basic/language-reference/functions/ctype-function.md)2 番目の引数を受け取り`typename`、強制`expression`に`typename`ここで、`typename`任意のデータ型、構造体、クラス、または有効な変換が存在するインターフェイスを指定できます。  
   
- `CType` とその他の型変換キーワードとの比較については、「[DirectCast Operator](../../../visual-basic/language-reference/operators/directcast-operator.md)」および「[TryCast Operator](../../../visual-basic/language-reference/operators/trycast-operator.md)」を参照してください。  
+ 比較について`CType`他の型変換のキーワードと、次を参照してください。 [DirectCast 演算子](../../../visual-basic/language-reference/operators/directcast-operator.md)と[TryCast 演算子](../../../visual-basic/language-reference/operators/trycast-operator.md)です。  
   
-## CBool の例  
- `CBool` 関数を使って式をブール型 \(`Boolean`\) の値に変換する例を次に示します。  式が 0 でない値のときは、`CBool` 関数は `True` を返します。それ以外は `False` を返します。  
+## <a name="cbool-example"></a>CBool 例  
+ 次の例では、`CBool`関数を式に変換する`Boolean`値。 0 以外の値に式が評価された場合`CBool`を返します`True`、それ以外を返します`False`です。  
   
  [!code-vb[VbVbalrFunctions#1](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_1.vb)]  
   
-## CByte の例  
- `CByte` 関数を使って式を \(`Byte`\) に変換する例を次に示します。  
+## <a name="cbyte-example"></a>CByte 例  
+ 次の例では、`CByte`関数を式に変換する、`Byte`です。  
   
  [!code-vb[VbVbalrFunctions#2](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_2.vb)]  
   
-## CChar の例  
- `CChar` 関数を使って、文字列型 \(`String`\) の式の最初の文字を char 型 \(`Char`\) に変換する例を次に示します。  
+## <a name="cchar-example"></a>Cchar 関数の例  
+ 次の例では、`CChar`関数の最初の文字に変換する、`String`式、`Char`型です。  
   
  [!code-vb[VbVbalrFunctions#3](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_3.vb)]  
   
- `CChar` の入力引数は `Char` または `String` データ型である必要があります。  `CChar` には数値データ型を入力できないため、`CChar` を使って数値を文字に変換することはできません。  次の例では、コード ポイント \(文字コード\) を表す数値を取得し、それを対応する文字に変換します。  ここでは、<xref:Microsoft.VisualBasic.Interaction.InputBox%2A> 関数を使って数字の文字列を取得し、`CInt` を使って文字列を整数型 \(`Integer`\) に変換し、`ChrW` を使ってその数値を `Char` に変換しています。  
+ 入力引数`CChar`データ型でなければなりません`Char`または`String`です。 使用することはできません`CChar`に変換する数値、文字、ため`CChar`数値データ型を受け入れることはできません。 次の例では、コード ポイント (文字コード) を表す数値を取得し、対応する文字に変換します。 使用して、 <xref:Microsoft.VisualBasic.Interaction.InputBox%2A> 、桁の数字の文字列を取得する関数`CInt`を入力文字列に変換する`Integer`、および`ChrW`を入力する数値を変換する`Char`です。  
   
  [!code-vb[VbVbalrFunctions#4](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_4.vb)]  
   
-## CDate の例  
- `CDate` 関数を使って文字列を日付型 \(`Date`\) の値に変換する例を次に示します。  一般的には、この例のように文字列で日付\/時刻を表すことはお勧めできません。  文字列の代わりに、日付リテラルや時刻リテラル \(\#Feb 12, 1969\# や \#4:45:23 PM\# など\) を使ってください。  
+## <a name="cdate-example"></a>Cdate 関数の例  
+ 次の例では、`CDate`関数への文字列に変換する`Date`値。 一般に、ハードコーディングされた日付と時刻文字列としてのこの例に示す) は推奨されません。 日付リテラルと #Feb 12、&#1969; など、時刻のリテラルを使用し、# 4時 45分: 23 PM #、代わりにします。  
   
  [!code-vb[VbVbalrFunctions#5](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_5.vb)]  
   
-## CDbl の例  
+## <a name="cdbl-example"></a>CDbl 例  
  [!code-vb[VbVbalrFunctions#6](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_6.vb)]  
   
-## CDec の例  
- `CDec` 関数を使って数値を `Decimal` に変換する例を次に示します。  
+## <a name="cdec-example"></a>CDec 例  
+ 次の例では、`CDec`関数を数値に変換する`Decimal`です。  
   
  [!code-vb[VbVbalrFunctions#7](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_7.vb)]  
   
-## CInt の例  
- `CInt` 関数を使って値を `Integer` に変換する例を次に示します。  
+## <a name="cint-example"></a>CInt 例  
+ 次の例では、`CInt`値を変換する関数`Integer`です。  
   
  [!code-vb[VbVbalrFunctions#8](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_8.vb)]  
   
-## CLng の例  
- `CLng` 関数を使って値を `Long` に変換する例を次に示します。  
+## <a name="clng-example"></a>CLng 例  
+ 次の例では、`CLng`値に変換する関数`Long`です。  
   
  [!code-vb[VbVbalrFunctions#9](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_9.vb)]  
   
-## CObj の例  
- `CObj` 関数を使って数値を `Object` に変換する例を次に示します。  オブジェクト型 \(`Object`\) の変数自体には、4 バイトのポインターだけが含まれます。このポインターは、変数に代入された倍精度浮動小数点数型 \(`Double`\) の値を指しています。  
+## <a name="cobj-example"></a>CObj 例  
+ 次の例では、`CObj`関数を数値に変換する`Object`です。 `Object`変数自体を指す 4 バイト ポインターのみが含まれています、`Double`値を割り当てます。  
   
  [!code-vb[VbVbalrFunctions#10](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_10.vb)]  
   
-## CSByte の例  
- `CSByte` 関数を使って数値を `SByte` に変換する例を次に示します。  
+## <a name="csbyte-example"></a>CSByte 例  
+ 次の例では、`CSByte`関数を数値に変換する`SByte`です。  
   
  [!code-vb[VbVbalrFunctions#11](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_11.vb)]  
   
-## CShort の例  
- `CShort` 関数を使って数値を `Short` に変換する例を次に示します。  
+## <a name="cshort-example"></a>CShort 例  
+ 次の例では、`CShort`関数を数値に変換する`Short`です。  
   
  [!code-vb[VbVbalrFunctions#12](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_12.vb)]  
   
-## CSng の例  
- `CSng` 関数を使って値を `Single` に変換する例を次に示します。  
+## <a name="csng-example"></a>CSng 例  
+ 次の例では、`CSng`値に変換する関数`Single`です。  
   
  [!code-vb[VbVbalrFunctions#13](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_13.vb)]  
   
-## CStr の例  
- `CStr` 関数を使って数値を `String` に変換する例を次に示します。  
+## <a name="cstr-example"></a>Cstr 関数の例  
+ 次の例では、`CStr`関数を数値に変換する`String`です。  
   
  [!code-vb[VbVbalrFunctions#14](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_14.vb)]  
   
- `CStr` 関数を使って `Date` の値を `String` の値に変換する例を次に示します。  
+ 次の例では、`CStr`関数に変換する`Date`値`String`値。  
   
  [!code-vb[VbVbalrFunctions#15](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_15.vb)]  
   
- `CStr` は常に、現在のロケールに対する標準の短い形式 \("6\/15\/2003 4:35:47 PM " など\) で日付型 \(`Date`\) の値を表示します。  しかし、`CStr` は 1\/1\/0001 \(日付\) および 00:00:00 \(時刻\) の*基準値*を表示しません。  
+ `CStr`常に表示、`Date`現在のロケールのたとえば、標準の短い形式の値"2003 年 6 月 15/4時 35分: 47 PM"です。 ただし、`CStr`抑制、*ニュートラル値*の日付と時刻の 00時 00分: 00 の 1/1/0001 です。  
   
- `CStr` が返す値の詳細については、「[Return Values for the CStr Function](../../../visual-basic/language-reference/functions/return-values-for-the-cstr-function.md)」を参照してください。  
+ によって返される値の詳細については`CStr`を参照してください[CStr 関数の戻り値](../../../visual-basic/language-reference/functions/return-values-for-the-cstr-function.md)です。  
   
-## CUInt の例  
- `CUInt` 関数を使って数値を `UInteger` に変換する例を次に示します。  
+## <a name="cuint-example"></a>CUInt 例  
+ 次の例では、`CUInt`関数を数値に変換する`UInteger`です。  
   
  [!code-vb[VbVbalrFunctions#16](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_16.vb)]  
   
-## CULng の例  
- `CULng` 関数を使って数値を `ULong` に変換する例を次に示します。  
+## <a name="culng-example"></a>CULng 例  
+ 次の例では、`CULng`関数を数値に変換する`ULong`です。  
   
  [!code-vb[VbVbalrFunctions#17](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_17.vb)]  
   
-## CUShort の例  
- `CUShort` 関数を使って数値を `UShort` に変換する例を次に示します。  
+## <a name="cushort-example"></a>CUShort 例  
+ 次の例では、`CUShort`関数を数値に変換する`UShort`です。  
   
  [!code-vb[VbVbalrFunctions#18](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_18.vb)]  
   
-## 参照  
- <xref:Microsoft.VisualBasic.Strings.Asc%2A>   
- <xref:Microsoft.VisualBasic.Strings.AscW%2A>   
- <xref:Microsoft.VisualBasic.Strings.Chr%2A>   
- <xref:Microsoft.VisualBasic.Strings.ChrW%2A>   
- <xref:Microsoft.VisualBasic.Conversion.Int%2A>   
- <xref:Microsoft.VisualBasic.Conversion.Fix%2A>   
- <xref:Microsoft.VisualBasic.Strings.Format%2A>   
- <xref:Microsoft.VisualBasic.Conversion.Hex%2A>   
- <xref:Microsoft.VisualBasic.Conversion.Oct%2A>   
- <xref:Microsoft.VisualBasic.Conversion.Str%2A>   
- <xref:Microsoft.VisualBasic.Conversion.Val%2A>   
- [Conversion Functions](../../../visual-basic/language-reference/functions/conversion-functions.md)   
- [Type Conversions in Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.Strings.Asc%2A>  
+ <xref:Microsoft.VisualBasic.Strings.AscW%2A>  
+ <xref:Microsoft.VisualBasic.Strings.Chr%2A>  
+ <xref:Microsoft.VisualBasic.Strings.ChrW%2A>  
+ <xref:Microsoft.VisualBasic.Conversion.Int%2A>  
+ <xref:Microsoft.VisualBasic.Conversion.Fix%2A>  
+ <xref:Microsoft.VisualBasic.Strings.Format%2A>  
+ <xref:Microsoft.VisualBasic.Conversion.Hex%2A>  
+ <xref:Microsoft.VisualBasic.Conversion.Oct%2A>  
+ <xref:Microsoft.VisualBasic.Conversion.Str%2A>  
+ <xref:Microsoft.VisualBasic.Conversion.Val%2A>  
+ [変換関数](../../../visual-basic/language-reference/functions/conversion-functions.md)  
+ [Visual Basic での型変換](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)

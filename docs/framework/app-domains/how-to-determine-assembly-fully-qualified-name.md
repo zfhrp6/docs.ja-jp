@@ -5,36 +5,39 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
 helpviewer_keywords:
 - names [.NET Framework], fully qualified type names
 - names [.NET Framework], assemblies
 - assemblies [.NET Framework], names
 ms.assetid: 009dae23-e1f6-4a64-9a9a-32e4c34802b0
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 6e3736a1fa16b51262169d4d3efec56a958cedf6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 673c836ea761c24e2627e97ab3bcb5dd3c35d141
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-determine-an-assembly39s-fully-qualified-name"></a>方法: アセンブリの完全修飾名を特定する
 グローバル アセンブリ キャッシュ内のアセンブリの完全修飾名を検出するには、グローバル アセンブリ キャッシュ ツール ([Gacutil.exe](../../../docs/framework/tools/gacutil-exe-gac-tool.md)) を使用します。 「[方法 : グローバル アセンブリ キャッシュの内容を表示する](../../../docs/framework/app-domains/how-to-view-the-contents-of-the-gac.md)」を参照してください。  
   
  グローバル アセンブリ キャッシュにないアセンブリについては、複数の方法で完全修飾アセンブリ名を取得できます。コードを使用しコンソールや変数に情報を出力したり、[Ildasm.exe (IL 逆アセンブラー)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) を使用して完全修飾名を含むアセンブリのメタデータを調べたりできます。  
   
--   アセンブリがアプリケーションによって既に読み込まれている場合、<xref:System.Reflection.Assembly.FullName%2A?displayProperty=fullName> プロパティの値を取得して、完全修飾名を取得できます。 この方法を使用して、アセンブリが GAC 内にあるかどうかを判別できます。 具体的な例を次に示します。  
+-   アセンブリがアプリケーションによって既に読み込まれている場合、<xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType> プロパティの値を取得して、完全修飾名を取得できます。 この方法を使用して、アセンブリが GAC 内にあるかどうかを判別できます。 具体的な例を次に示します。  
   
--   アセンブリのファイル システム パスがわかっている場合は、(`Shared` Visual Basic で) 静的 <xref:System.Reflection.AssemblyName.GetAssemblyName%2A?displayProperty=fullName> メソッドを呼び出して、完全修飾アセンブリ名を取得できます。 単純な例を次に示します。  
+-   アセンブリのファイル システム パスがわかっている場合は、(`Shared` Visual Basic で) 静的 <xref:System.Reflection.AssemblyName.GetAssemblyName%2A?displayProperty=nameWithType> メソッドを呼び出して、完全修飾アセンブリ名を取得できます。 単純な例を次に示します。  
   
-     [!code-csharp[System.Reflection.AssemblyName.GetAssemblyName#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.reflection.assemblyname.getassemblyname/cs/getassemblyname1.cs#1)]  [!code-vb[System.Reflection.AssemblyName.GetAssemblyName#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.reflection.assemblyname.getassemblyname/vb/getassemblyname1.vb#1)]  
+     [!code-csharp[System.Reflection.AssemblyName.GetAssemblyName#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.reflection.assemblyname.getassemblyname/cs/getassemblyname1.cs#1)]
+     [!code-vb[System.Reflection.AssemblyName.GetAssemblyName#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.reflection.assemblyname.getassemblyname/vb/getassemblyname1.vb#1)]  
   
 -   [Ildasm.exe (IL 逆アセンブラー)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) を使用して、アセンブリのメタデータを使用できます。これには完全修飾名が含まれています。  
   
@@ -43,13 +46,14 @@ ms.lasthandoff: 07/28/2017
 ## <a name="example"></a>例  
  指定したクラスを含むアセンブリの完全限定名をコンソールに表示するコード例を次に示します。 アプリによって既に読み込まれているアセンブリの名前を取得するので、アセンブリが GAC 内にあるかどうかは重要ではありません。  
   
- [!code-cpp[Assembly.Fullname#2](../../../samples/snippets/cpp/VS_Snippets_CLR/Assembly.FullName/CPP/example2.cpp#2)] [!code-csharp[Assembly.Fullname#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Assembly.FullName/CS/example2.cs#2)] [!code-vb[Assembly.Fullname#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Assembly.FullName/VB/example2.vb#2)]  
+ [!code-cpp[Assembly.Fullname#2](../../../samples/snippets/cpp/VS_Snippets_CLR/Assembly.FullName/CPP/example2.cpp#2)]
+ [!code-csharp[Assembly.Fullname#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Assembly.FullName/CS/example2.cs#2)]
+ [!code-vb[Assembly.Fullname#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Assembly.FullName/VB/example2.vb#2)]  
   
 ## <a name="see-also"></a>関連項目  
- [アセンブリ名](../../../docs/framework/app-domains/assembly-names.md)   
- [アセンブリの作成](../../../docs/framework/app-domains/create-assemblies.md)   
- [厳密な名前付きアセンブリの作成と使用](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)   
- [グローバル アセンブリ キャッシュ](../../../docs/framework/app-domains/gac.md)   
- [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
+ [アセンブリ名](../../../docs/framework/app-domains/assembly-names.md)  
+ [アセンブリの作成](../../../docs/framework/app-domains/create-assemblies.md)  
+ [厳密な名前付きアセンブリの作成と使用](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)  
+ [グローバル アセンブリ キャッシュ](../../../docs/framework/app-domains/gac.md)  
+ [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [アセンブリを使用したプログラミング](../../../docs/framework/app-domains/programming-with-assemblies.md)
-

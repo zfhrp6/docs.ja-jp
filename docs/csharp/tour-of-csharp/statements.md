@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 5409c379-5622-4fae-88b5-1654276ea8d4
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 99ec2489daf89926da9b8c4e148965412826a8a6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="statements"></a>ステートメント
 
 プログラムの処理は、"*ステートメント*" を使用して表されます。 C# はさまざまな種類のステートメントをサポートしており、その多くは埋め込みステートメントとして定義されています。
@@ -46,7 +44,7 @@ ms.lasthandoff: 07/28/2017
 
 * ローカル変数の宣言:
 
- [!code-csharp[宣言](../../../samples/snippets/csharp/tour/statements/Program.cs#L9-L15)]
+ [!code-csharp[Declarations](../../../samples/snippets/csharp/tour/statements/Program.cs#L9-L15)]
 
 * ローカル定数の宣言:
 
@@ -54,7 +52,7 @@ ms.lasthandoff: 07/28/2017
 
 * 式ステートメント:
 
- [!code-csharp[式](../../../samples/snippets/csharp/tour/statements/Program.cs#L24-L31)]
+ [!code-csharp[Expressions](../../../samples/snippets/csharp/tour/statements/Program.cs#L24-L31)]
 
 * `if` ステートメント:
 
@@ -119,4 +117,3 @@ ms.lasthandoff: 07/28/2017
 >[!div class="step-by-step"]
 [前へ](expressions.md)
 [次へ](classes-and-objects.md)
-

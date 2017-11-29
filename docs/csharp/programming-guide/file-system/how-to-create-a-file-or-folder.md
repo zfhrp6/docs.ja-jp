@@ -1,49 +1,31 @@
 ---
 title: "方法: ファイルまたはフォルダーを作成する (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - folders [C#]
 - creating files [C#]
 - files [C#]
 - creating folders [C#]
 ms.assetid: 4582ee2d-d72d-4687-bcb9-08d336c62c25
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: f7eb2c6386a8433c025a9f2abea4b03f6ab271d6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 150190eeef829bd0431eeea7789025b9905553e3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>方法: ファイルまたはフォルダーを作成する (C# プログラミング ガイド)
 プログラムによって、コンピューター上でのフォルダーの作成、サブフォルダーの作成、サブフォルダー内でのファイルの作成、およびファイルへのデータの記述を行うことができます。  
   
 ## <a name="example"></a>例  
- [!code-cs[csFilesandFolders#10](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-create-a-file-or-folder_1.cs)]  
+ [!code-csharp[csFilesandFolders#10](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-create-a-file-or-folder_1.cs)]  
   
- フォルダーが既に存在していた場合、<xref:System.IO.Directory.CreateDirectory%2A> は何も実行せず、例外はスローされません。 ただし <xref:System.IO.File.Create%2A?displayProperty=fullName> は、既存のファイルを新しいファイルに置き換えます。 この例では、`if`-`else` ステートメントを使用して、既存のファイルが置き換えられないようにします。  
+ フォルダーが既に存在していた場合、<xref:System.IO.Directory.CreateDirectory%2A> は何も実行せず、例外はスローされません。 ただし <xref:System.IO.File.Create%2A?displayProperty=nameWithType> は、既存のファイルを新しいファイルに置き換えます。 この例では、`if`-`else` ステートメントを使用して、既存のファイルが置き換えられないようにします。  
   
  この例に次の変更を加えることによって、特定の名前のファイルが既に存在するかどうかに基づいて異なる結果を指定できます。 そのようなファイルが存在しない場合、コードによって作成されます。 このようなファイルがある場合、コードはそのファイルにデータを追加します。  
   
@@ -91,7 +73,6 @@ ms.lasthandoff: 07/28/2017
  フォルダーの作成に必要なアクセス許可が与えられていない場合、この例では <xref:System.UnauthorizedAccessException> クラスのインスタンスがスローされます。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.IO?displayProperty=fullName>   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ <xref:System.IO?displayProperty=nameWithType>  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [ファイル システムとレジストリ (C# プログラミング ガイド)](../../../csharp/programming-guide/file-system/index.md)
-

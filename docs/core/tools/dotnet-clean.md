@@ -7,12 +7,11 @@ ms.date: 08/13/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.translationtype: HT
-ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
 ms.openlocfilehash: 4836f07ec1a8b59c343b4d0181587e602f61d45e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/14/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="dotnet-clean"></a>dotnet-clean
 
@@ -107,4 +106,3 @@ dotnet clean [-h|--help]
 リリース構成を使用してビルドされたプロジェクトを消去します。
 
 `dotnet clean --configuration Release`
-

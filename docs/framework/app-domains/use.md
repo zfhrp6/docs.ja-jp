@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,16 +13,15 @@ helpviewer_keywords:
 - common language runtime, application domains
 - runtime, application domains
 ms.assetid: c6d99815-e022-4d2c-9420-1d7ab5b9d504
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 53180d5d3d9314c3f078ddca8f5c155b01981f4e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b2dac2238ae9117d3678335748c680d594a8b5c6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="using-application-domains"></a>アプリケーション ドメインの使用
 アプリケーション ドメインには、共通言語ランタイムに使用できる分離の単位が用意されています。 アプリケーション ドメインはプロセス内で作成され、実行されます。 通常、アプリケーション ドメインはランタイム ホストによって作成されます。ランタイム ホストは、ランタイムをプロセスに読み込み、アプリケーション ドメイン内でユーザー コードを実行する処理を担当します。 ランタイム ホストはプロセスと既定のアプリケーション ドメインを作成し、その中でマネージ コードを実行します。 ランタイム ホストには、ASP.NET、Microsoft Internet Explorer、Windows シェルなどがあります。  
@@ -56,7 +54,7 @@ ms.lasthandoff: 07/28/2017
  共通言語ランタイムが例外ハンドラーの検索を開始する前に、例外がスローされたことを知らせる通知を受け取る方法について説明します。  
   
  [アセンブリ読み込みの解決](../../../docs/framework/app-domains/resolve-assembly-loads.md)  
- <xref:System.AppDomain.AssemblyResolve?displayProperty=fullName> イベントを使用してアセンブリの読み込みエラーを解決する方法について説明します。  
+ <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> イベントを使用してアセンブリの読み込みエラーを解決する方法について説明します。  
   
 ## <a name="reference"></a>参照  
  <xref:System.AppDomain>  
@@ -77,4 +75,3 @@ ms.lasthandoff: 07/28/2017
   
  [リフレクションの概要](../../../docs/framework/reflection-and-codedom/reflection.md)  
  **Reflection** クラスを使用して、アセンブリに関する情報を取得する方法を説明します。
-

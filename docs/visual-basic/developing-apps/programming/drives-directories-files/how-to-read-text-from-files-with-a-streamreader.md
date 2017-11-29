@@ -1,44 +1,26 @@
 ---
 title: "方法: StreamReader を使用してファイルからテキストを読み取る (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- reading files, text
+- reading files [Visual Basic], text
 - text, reading from files
-- reading text from files
-- files, reading
+- reading text from files [Visual Basic]
+- files [Visual Basic], reading
 ms.assetid: 384033c6-18f9-4d59-9610-36371226558f
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 834657f80a9f3841e8f30e457c373510dec6d17d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d895b32b1613462a6c8dedcc19040b5040f936ec
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-read-text-from-files-with-a-streamreader-visual-basic"></a>方法: StreamReader を使用してファイルからテキストを読み取る (Visual Basic)
 `My.Computer.FileSystem` オブジェクトには、<xref:System.IO.TextReader> および <xref:System.IO.TextWriter> を開くためのメソッドがあります。 これらのメソッド (`OpenTextFileWriter` メソッドと `OpenTextFileReader` メソッド) は、高度なメソッドで、**[すべて]** タブを選択しないと IntelliSense で表示されません。  
@@ -60,10 +42,9 @@ ms.lasthandoff: 07/28/2017
  ファイルを読み取るには、アセンブリに対して <xref:System.Security.Permissions.FileIOPermission> クラスで特権レベルが許可されている必要があります。 部分的に信頼されているコンテキストで実行している場合は、特権不足のため例外がスローされることがあります。 詳しくは、「[コード アクセス セキュリティの基礎](https://msdn.microsoft.com/library/33tceax8)」をご覧ください。 また、ユーザーはファイルへのアクセス許可も必要です。 詳細については、「[アクセス制御リスト (ACL: Access Control List) 技術の概要](http://msdn.microsoft.com/en-us/06fbf66d-6f02-4378-b863-b2f12e349045)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:Microsoft.VisualBasic.FileIO.FileSystem>   
- <xref:System.Windows.Forms.OpenFileDialog>   
- <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileWriter%2A>   
- <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader%2A>   
- [SaveFileDialog コンポーネント](../../../../framework/winforms/controls/savefiledialog-component-windows-forms.md)   
+ <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
+ <xref:System.Windows.Forms.OpenFileDialog>  
+ <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileWriter%2A>  
+ <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader%2A>  
+ [SaveFileDialog コンポーネント](../../../../framework/winforms/controls/savefiledialog-component-windows-forms.md)  
  [ファイルの読み取り](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
-

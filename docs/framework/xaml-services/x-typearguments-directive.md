@@ -1,95 +1,98 @@
 ---
-title: "x:TypeArguments Directive | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "x:TypeArguments"
-  - "xTypeArguments"
-  - "TypeArguments"
-helpviewer_keywords: 
-  - "x:TypeArguments attribute [XAML Services]"
-  - "TypeArguments attribute in XAML [XAML Services]"
-  - "XAML [XAML Services], x:TypeArguments attribute"
+title: "x:TypeArguments ディレクティブ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- x:TypeArguments
+- xTypeArguments
+- TypeArguments
+helpviewer_keywords:
+- x:TypeArguments attribute [XAML Services]
+- TypeArguments attribute in XAML [XAML Services]
+- XAML [XAML Services], x:TypeArguments attribute
 ms.assetid: 86561058-d393-4a44-b5c3-993a4513ea74
-caps.latest.revision: 18
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: a63a8080c71ad026664e2e14fc1762fcdd4bdb36
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# x:TypeArguments Directive
-ジェネリックの制約型引数をジェネリック型のコンストラクターに渡します。  
+# <a name="xtypearguments-directive"></a>x:TypeArguments ディレクティブ
+パスの制約は、ジェネリック型のコンス トラクターにジェネリック型の引数を入力します。  
   
-## XAML 属性の使用方法  
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
   
+```xaml  
+<object x:TypeArguments="typeString" .../>  
 ```  
-<object x:TypeArguments="typeString" .../>  
-```  
   
-## XAML 値  
+## <a name="xaml-values"></a>XAML 値  
   
 |||  
 |-|-|  
-|`object`|CLR ジェネリック型によってサポートされる XAML 型のオブジェクト要素の宣言。  `object` が、既定の XAML 名前空間から派生していない XAML 型である場合、`object` は `object` が存在する XAML 名前空間を示すプレフィックスを必要とします。|  
-|`typeString`|CLR ジェネリック型に型引数を提供する、1 つ以上の XAML 型名を文字列として宣言する文字列。  構文の注意事項の詳細については、「解説」を参照してください。|  
+|`object`|CLR のジェネリック型によってサポートされる XAML 型のオブジェクト要素の宣言。 場合`object`は既定の XAML 名前空間ではない XAML 型を参照`object`XAML 名前空間を示すためにプレフィックスが必要です、`object`が存在します。|  
+|`typeString`|1 つまたは複数の XAML を宣言する文字列は、CLR のジェネリック型の型引数を指定する文字列で名前を入力します。 追加の構文のノートの「解説」を参照してください。|  
   
-## 解説  
- ほとんどの場合、`typeString` 文字列の情報項目として使用される XAML 型には、プレフィックスが付加されます。  CLR ジェネリック制約 \(<xref:System.Int32>、<xref:System.String> など\) の一般的な型は、CLR 基本クラス ライブラリから派生します。  これらのライブラリは一般的なフレームワーク固有の既定の XAML 名前空間にマッピングされないので、XAML の使用方法に対応するプレフィックスのマッピングが必要になります。  
+## <a name="remarks"></a>コメント  
+ ほとんどの場合、XAML の型情報の項目として使用される、`typeString`文字列の先頭には、します。 一般的な種類の CLR ジェネリック制約 (たとえば、<xref:System.Int32>と<xref:System.String>) CLR 基底クラス ライブラリから取得します。 これらのライブラリを使用して、フレームワーク固有の標準的なマップの既定の XAML 名前空間ではありません、したがって、XAML の使用方法のプレフィックスのマッピングが必要があります。  
   
- コンマを区切り記号として使用することで、複数の XAML 型名を指定できます。  
+ コンマ区切り記号を使用して、1 つ以上の XAML 型名を指定できます。  
   
- ジェネリック制約自体がジェネリック型を使用している場合、ネストされた制約型引数はかっこ \(\) で囲むことができます。  
+ ジェネリック制約自体がジェネリック型を使用する場合、入れ子になった制約の型引数はかっこ () で含まれていることができます。  
   
- この `x:TypeArguments` の定義は、.NET Framework XAML サービスに固有で、CLR バッキングを使用していることに注意してください。  言語レベルの定義については、「[\[MS\-XAML\] 第 5.3.11 節](http://go.microsoft.com/fwlink/?LinkId=114525)」を参照してください。  
+ なおのこの定義`x:TypeArguments`が .NET Framework XAML サービスに固有で CLR バッキングを使用しています。 言語レベルの定義は含まれて[ \[MS-XAML\]セクション 5.3.11](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
   
-## 使用例  
- この例では、次の XAML 名前空間の定義が宣言されていることを前提としています。  
+## <a name="usage-examples"></a>使用例  
+ これらの例については、次の XAML 名前空間の定義が宣言されていることを想定します。  
   
 ```  
 xmlns:sys="clr-namespace:System;assembly=mscorlib"  
 xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"  
 ```  
   
-### List\<String\>  
- `<scg:List x:TypeArguments="sys:String" ...>` は、<xref:System.String> 型引数で新しい <xref:System.Collections.Generic.List%601> をインスタンス化します。  
+### <a name="liststring"></a>リスト\<文字列 >  
+ `<scg:List x:TypeArguments="sys:String" ...>`新しいインスタンスを作成<xref:System.Collections.Generic.List%601>で、<xref:System.String>引数を入力します。  
   
-### Dictionary\<String,String\>  
- `<scg:Dictionary x:TypeArguments="sys:String,sys:String" ...>` は、2 つの <xref:System.String> 型引数で新しい <xref:System.Collections.Generic.Dictionary%602> をインスタンス化します。  
+### <a name="dictionarystringstring"></a>ディクショナリ\<String, String >  
+ `<scg:Dictionary x:TypeArguments="sys:String,sys:String" ...>`新しいインスタンスを作成<xref:System.Collections.Generic.Dictionary%602>、2 つ<xref:System.String>引数を入力します。  
   
-### Queue\<KeyValuePair\<String,String\>\>  
- `<scg:Queue x:TypeArguments="scg:KeyValuePair(sys:String,sys:String)" ...>` は、内部制約型引数 <xref:System.String> および <xref:System.String> で <xref:System.Collections.Generic.KeyValuePair%602> の制約がある新しい <xref:System.Collections.Generic.Queue%601> をインスタンス化します。  
+### <a name="queuekeyvaluepairstringstring"></a>キュー < KeyValuePair\<String, String >>  
+ `<scg:Queue x:TypeArguments="scg:KeyValuePair(sys:String,sys:String)" ...>`新しいインスタンスを作成<xref:System.Collections.Generic.Queue%601>の制約を持つ<xref:System.Collections.Generic.KeyValuePair%602>内部制約の型引数を持つ<xref:System.String>と<xref:System.String>です。  
   
-## XAML 2006 および WPF ジェネリック XAML の使用方法  
- XAML 2006 の使用方法と、WPF アプリケーションで使用される XAML では、通常、XAML からの `x:TypeArguments` とジェネリック型の使用方法に対して、次のような制約があります。  
+## <a name="xaml-2006-and-wpf-generic-xaml-usages"></a>XAML 2006 および WPF の汎用的な XAML の使用  
+ XAML 2006 の使用状況、および WPF アプリケーションに使用される XAML では、次の制限が存在して`x:TypeArguments`と一般的な XAML からジェネリック型の使用法。  
   
--   ジェネリック型を参照するジェネリック XAML の使用方法をサポートできるのは、XAML ファイルのルート要素のみに限定されます。  
+-   XAML ファイルのルート要素だけでは、ジェネリック型を参照する汎用的な XAML の使用方法をサポートできます。  
   
--   ルート要素は最低 1 つの型引数と共にジェネリック型にマッピングする必要があります。  <xref:System.Windows.Navigation.PageFunction%601> はその一例です。  ページ関数は、WPF でジェネリック XAML の使用方法をサポートする主なシナリオです。  
+-   ルート要素は、少なくとも 1 つの型引数を持つジェネリック型にマップする必要があります。 例としては<xref:System.Windows.Navigation.PageFunction%601>します。 ページ関数は、wpf XAML ジェネリックの使用状況のサポートの主なシナリオです。  
   
--   ジェネリック対応のルート要素の XAML オブジェクト要素も、`x:Class` を使用して特定のクラスを宣言する必要があります。  これは、WPF ビルド アクションを定義する場合にも当てはまります。  
+-   ジェネリックのルート要素の XAML オブジェクト要素は、部分クラスを使用しても宣言しなければなりません`x:Class`です。 これは、ビルド アクションを WPF を定義する場合でも当てはまります。  
   
--   `x:TypeArguments` は、ネストされたジェネリック制約を参照できません。  
+-   `x:TypeArguments`入れ子になったジェネリック制約は参照できません。  
   
-## XAML 2009、または WPF 3.0\/3.5 に依存しない XAML 2006  
- XAML 2006 または XAML 2009 の .NET Framework XAML サービスでは、ジェネリック XAML の使用方法に対する WPF 関連の制約が緩和されています。  バッキング型システムとオブジェクト モデルがサポートできる XAML マークアップの任意の位置で、汎用オブジェクト要素をインスタンス化できます。  
+## <a name="xaml-2009-or-xaml-2006-with-no-wpf-30-or-wpf-35-dependency"></a>XAML 2009 またはなし、WPF 3.0 または 3.5 を WPF XAML 2006 の依存関係  
+ XAML 2006 または XAML 2009 のいずれかの .NET Framework XAML サービスでは、WPF に関連する汎用の XAML 使用量に制限が緩和されています。 XAML マークアップ、バッキング型システムとオブジェクト モデルをサポートする任意の位置に汎用オブジェクトの要素をインスタンス化することができます。  
   
- XAML 2009 を使用している場合は、一般的な言語プリミティブを取得するために CLR 基本型をマッピングする代わりに、[共通の XAML 言語プリミティブの組み込み型](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)を `typeString` の情報アイテムとして使用できます。  たとえば、次を宣言できます \(プレフィックス マッピングは示されていません。x は XAML 2009 の XAML 言語 XAML 名前空間です\)。  
+ XAML 2009 を使用する場合は、CLR のマッピングではなく基本データ型を共通言語プリミティブの XAML 型を取得する、使用することができます[共通の XAML 言語プリミティブの組み込み型](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)内の情報項目として、`typeString`です。 たとえば、次を宣言する可能性があります (表示されませんが、プレフィックスのマッピングが x は XAML 2009 の XAML 言語の XAML 名前空間)。  
   
-```  
+```xaml  
 <my:BusinessObject x:TypeArguments="x:String,x:Int32"/>  
 ```  
   
- WPF で、[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] を対象としている場合は、XAML 2009 の機能を `x:TypeArguments` と共に使用できますが、Loose XAML \(マークアップ コンパイルされていない XAML\) に限定されます。  WPF 向けにマークアップ コンパイルされた XAML、および XAML の BAML 形式は、現在、XAML 2009 のキーワードと機能をサポートしていません。  XAML をマークアップ コンパイルする必要がある場合、「XAML 2006 および WPF ジェネリック XAML の使用方法」に記載された制約に従って操作する必要があります。  
+ WPF では、対象とするときに[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]、と共に XAML 2009 の機能を使用する`x:TypeArguments`loose XAML (XAML をマークアップ コンパイルされていない) に対してのみです。 WPF 向けにマークアップ コンパイルされた XAML、および XAML の BAML 形式は、現在、XAML 2009 のキーワードと機能をサポートしていません。 必要なマークアップをコンパイルした場合、XAML は、「XAML 2006 および WPF 汎用 XAML の使用」セクションで説明した制限で動作する必要があります。  
   
-## 参照  
- [x:Class Directive](../../../docs/framework/xaml-services/x-class-directive.md)   
- [x:Type Markup Extension](../../../docs/framework/xaml-services/x-type-markup-extension.md)   
- [共通の XAML 言語プリミティブの組み込み型](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)   
- [Generics in XAML](../../../docs/framework/xaml-services/generics-in-xaml.md)
+## <a name="see-also"></a>関連項目  
+ [x:Class ディレクティブ](../../../docs/framework/xaml-services/x-class-directive.md)  
+ [x:Type マークアップ拡張機能](../../../docs/framework/xaml-services/x-type-markup-extension.md)  
+ [共通の XAML 言語プリミティブの組み込み型](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)  
+ [XAML のジェネリック](../../../docs/framework/xaml-services/generics-in-xaml.md)

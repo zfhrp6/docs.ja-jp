@@ -5,21 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: b73dd4f4-f2dc-47a2-9425-3896e92321fb
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 8bc8aab23490b5531a155798520936cacbd6a6d3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 786e2d0d70aaead6d464d262ca43dade8db64a52
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/19/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="mitigation-xml-schema-validation"></a>軽減策: XML スキーマ検証
 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] 以降では、複合キーが使用され、1 つのキーが空の場合、XSD スキーマ検証で一意制約の違反が検出されます。  
@@ -46,4 +47,3 @@ ms.lasthandoff: 09/19/2017
   
 ## <a name="see-also"></a>関連項目  
  [変更の再ターゲット](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6.md)
-

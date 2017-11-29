@@ -1,39 +1,21 @@
 ---
 title: "メンバー (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - types [C#], nested types
 - C# language, type members
 ms.assetid: 4a30a4ab-d690-4936-9124-92ce9448665a
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 184d4f2976b8594c308efeb113a0490499e3460e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 98446a2eb0415c92aa44cbddf8539477a00a2666
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="members-c-programming-guide"></a>メンバー (C# プログラミング ガイド)
 クラスと構造体には、そのデータおよび動作を表すメンバーがあります。 クラスのメンバーには、クラスで宣言されているすべてのメンバーと、継承の階層構造のすべてのクラスで宣言されているメンバー (コンストラクターとファイナライザーを除く) が含まれます。 基底クラスのプライベート メンバーは継承されますが、派生クラスからはアクセスできません。  
@@ -54,16 +36,15 @@ ms.lasthandoff: 07/28/2017
 |[入れ子にされた型](../../../csharp/programming-guide/classes-and-structs/nested-types.md)|入れ子にされた型は、別の型で宣言された型です。 入れ子にされた型は、通常、それを格納している型だけで使用されるオブジェクトを表すために使用します。|  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [クラス](../../../csharp/programming-guide/classes-and-structs/classes.md)   
- [メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)   
- [コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)   
- [ファイナライザー](../../../csharp/programming-guide/classes-and-structs/destructors.md)   
- [プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)   
- [フィールド](../../../csharp/programming-guide/classes-and-structs/fields.md)   
- [インデクサー](../../../csharp/programming-guide/indexers/index.md)   
- [イベント](../../../csharp/programming-guide/events/index.md)   
- [入れ子にされた型](../../../csharp/programming-guide/classes-and-structs/nested-types.md)   
- [演算子](../../../csharp/programming-guide/statements-expressions-operators/operators.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [クラス](../../../csharp/programming-guide/classes-and-structs/classes.md)  
+ [メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)  
+ [コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
+ [ファイナライザー](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
+ [プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+ [フィールド](../../../csharp/programming-guide/classes-and-structs/fields.md)  
+ [インデクサー](../../../csharp/programming-guide/indexers/index.md)  
+ [イベント](../../../csharp/programming-guide/events/index.md)  
+ [入れ子にされた型](../../../csharp/programming-guide/classes-and-structs/nested-types.md)  
+ [演算子](../../../csharp/programming-guide/statements-expressions-operators/operators.md)  
  [オーバーロードされた演算子](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)
-

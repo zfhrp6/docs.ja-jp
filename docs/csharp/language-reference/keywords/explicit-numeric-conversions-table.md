@@ -1,12 +1,9 @@
 ---
 title: "明示的な数値変換の一覧表 (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - conversions [C#], explicit numeric
 - numeric conversions [C#], explicit
@@ -15,29 +12,14 @@ helpviewer_keywords:
 - types [C#], explicit numeric conversions
 - type conversion [C#], explicit numeric
 ms.assetid: f3bb9e76-6b92-4df7-bc36-f866c24e1dfd
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: e7a366328035b205b93a50ff6d212a06576ee801
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0315810522be319a6bb565c99e1c8f7d1ba4701b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="explicit-numeric-conversions-table-c-reference"></a>明示的な数値変換の一覧表 (C# リファレンス)
 明示的な数値変換は、暗黙的変換がないときに、キャスト式を利用し、任意の数値型を他の数値型に変換するために利用します。 次の表はこの変換についてまとめたものです。  
@@ -54,7 +36,7 @@ ms.lasthandoff: 07/28/2017
 |[uint](../../../csharp/language-reference/keywords/uint.md)|`sbyte`、`byte`、`short`、`ushort`、`int`、または `char`|  
 |[long](../../../csharp/language-reference/keywords/long.md)|`sbyte`、`byte`、`short`、`ushort`、`int`、`uint`、`ulong`、または `char`|  
 |[ulong](../../../csharp/language-reference/keywords/ulong.md)|`sbyte`、`byte`、`short`、`ushort`、`int`、`uint`、`long`、または `char`|  
-|[char](../../../csharp/language-reference/keywords/char.md)|`sbyte`、 `byte`、または `short`|  
+|[char](../../../csharp/language-reference/keywords/char.md)|`sbyte`、`byte`、または `short`|  
 |[float](../../../csharp/language-reference/keywords/float.md)|`sbyte`、`byte`、`short`、`ushort`、`int`、`uint`、`long`、`ulong`、`char`、または `decimal`|  
 |[double](../../../csharp/language-reference/keywords/double.md)|`sbyte`、`byte`、`short`、`ushort`、`int`、`uint`、`long`、`ulong`、`char`、`float`、または `decimal`|  
 |[decimal](../../../csharp/language-reference/keywords/decimal.md)|`sbyte`、`byte`、`short`、`ushort`、`int`、`uint`、`long`、`ulong`、`char`、`float`、または `double`|  
@@ -80,11 +62,10 @@ ms.lasthandoff: 07/28/2017
  明示的な変換の詳細については、「C# 言語仕様」の「明示的」を参照してください。 仕様にアクセスする方法については、「[C# のドラフト言語仕様](../../../csharp/language-reference/language-specification/index.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [キャストと型変換](../../../csharp/programming-guide/types/casting-and-type-conversions.md)   
- [() 演算子](../../../csharp/language-reference/operators/invocation-operator.md)   
- [整数型の一覧表](../../../csharp/language-reference/keywords/integral-types-table.md)   
- [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [キャストと型変換](../../../csharp/programming-guide/types/casting-and-type-conversions.md)  
+ [() 演算子](../../../csharp/language-reference/operators/invocation-operator.md)  
+ [整数型の一覧表](../../../csharp/language-reference/keywords/integral-types-table.md)  
+ [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)  
  [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)
-

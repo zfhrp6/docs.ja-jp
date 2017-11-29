@@ -1,42 +1,24 @@
 ---
 title: "方法 : ディレクトリ ツリーを反復処理する (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - iterating through folders [C#]
 - file iteration [C#]
 ms.assetid: c4be4a75-6b1b-46a7-9d38-bab353091ed7
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: c4851938aafefd93aa9189aecbb3f5cdd9a09ea0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 562431f525cc58b5d630671c9015e30a14ea06ee
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>方法 : ディレクトリ ツリーを反復処理する (C# プログラミング ガイド)
-"ディレクトリ ツリーを反復処理する" とは、指定したルート フォルダー以下の入れ子になっている各サブディレクトリ内の各ファイルにアクセスすることです。 必ずしもファイルを 1 つ 1 つ開く必要はありません。 ファイルまたはサブディレクトリの名前だけを `string` として取得することも、その他の情報を <xref:System.IO.FileInfo?displayProperty=fullName> または <xref:System.IO.DirectoryInfo?displayProperty=fullName> オブジェクトの形式で取得することもできます。  
+"ディレクトリ ツリーを反復処理する" とは、指定したルート フォルダー以下の入れ子になっている各サブディレクトリ内の各ファイルにアクセスすることです。 必ずしもファイルを 1 つ 1 つ開く必要はありません。 ファイルまたはサブディレクトリの名前だけを `string` として取得することも、その他の情報を <xref:System.IO.FileInfo?displayProperty=nameWithType> または <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> オブジェクトの形式で取得することもできます。  
   
 > [!NOTE]
 >  Windows では、"ディレクトリ" と "フォルダー" という用語は同義です。 多くのドキュメントおよびユーザー インターフェイスのテキストでは、"フォルダー" という用語が使用されていますが、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] クラス ライブラリでは、"ディレクトリ" という用語が使用されています。  
@@ -63,14 +45,14 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
   
  ここで処理される例外や、各ファイルまたは各フォルダーに対して実行される操作は、あくまで例として用意したものです。 実際の要件を満たす際には、このコードを修正する必要があります。 詳細については、コード内のコメントを参照してください。  
   
- [!code-cs[csFilesandFolders#1](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-iterate-through-a-directory-tree_1.cs)]  
+ [!code-csharp[csFilesandFolders#1](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-iterate-through-a-directory-tree_1.cs)]  
   
 ## <a name="example"></a>例  
  再帰を使用せずにディレクトリ ツリー内のファイルおよびフォルダーを反復処理する方法を、次の例に示します。 この方法では、後入れ先出し (LIFO) スタックである、一般的な <xref:System.Collections.Generic.Stack%601> コレクション型を使用します。  
   
  ここで処理される例外や、各ファイルまたは各フォルダーに対して実行される操作は、あくまで例として用意したものです。 実際の要件を満たす際には、このコードを修正する必要があります。 詳細については、コード内のコメントを参照してください。  
   
- [!code-cs[csFilesandFolders#2](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-iterate-through-a-directory-tree_2.cs)]  
+ [!code-csharp[csFilesandFolders#2](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-iterate-through-a-directory-tree_2.cs)]  
   
  通常、すべてのフォルダーをテストして、アプリケーションにフォルダーを開くアクセス許可があるかどうかを確認する作業には時間がかかります。 そのため、このコード例には、`try/catch` ブロック内の操作の該当部分のみが含まれています。 フォルダーへのアクセスが拒否されたときにアクセス許可を昇格して再びアクセスを試行するように、`catch` ブロックを修正できます。 原則として、アプリケーションが不明の状態にならずに処理できる例外のみをキャッチしてください。  
   
@@ -80,7 +62,6 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
  堅牢性の高いファイル反復処理コードでは、ファイル システムの数多くの複雑な部分を考慮する必要があります。 詳細については、「[NTFS Technical Reference (NTFS テクニカル リファレンス)](http://go.microsoft.com/fwlink/?LinkId=79488)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.IO>   
- [LINQ とファイル ディレクトリ](http://msdn.microsoft.com/library/5a5d516c-0279-4a84-ac84-b87f54caa808)   
+ <xref:System.IO>  
+ [LINQ とファイル ディレクトリ](http://msdn.microsoft.com/library/5a5d516c-0279-4a84-ac84-b87f54caa808)  
  [ファイル システムとレジストリ (C# プログラミング ガイド)](../../../csharp/programming-guide/file-system/index.md)
-

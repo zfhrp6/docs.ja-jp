@@ -1,41 +1,22 @@
 ---
 title: "プロパティ (C# プログラミング ガイド)"
-ms.date: 2017-03-10
+ms.date: 03/10/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- cs.properties
-dev_langs:
-- CSharp
+f1_keywords: cs.properties
 helpviewer_keywords:
 - properties [C#]
 - C# language, properties
 ms.assetid: e295a8a2-b357-4ee7-a12e-385a44146fa8
-caps.latest.revision: 38
+caps.latest.revision: "38"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 6f40bea2c7d39d88839a70e73e391113bee86f14
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 127299a617cacee15f87964a12bb3877a2586204
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="properties-c-programming-guide"></a>プロパティ (C# プログラミング ガイド)
 
@@ -56,9 +37,9 @@ ms.lasthandoff: 07/28/2017
 
 プロパティを実装する基本的な手法の 1 つとして、プロパティ値の設定と取得にプライベート バッキング フィールドを使用する方法があります。 この方法では、`get` アクセサーはプライベート フィールドの値を返します。`set` アクセサーはプライベート フィールドに値を割り当てる前にデータ検証を実行できます。 また、どちらのアクセサーも、データの変換や計算を行ってから、データを格納したり返したりすることができます。
 
-このパターンを説明する例を下に示します。 この例では、`TimePeriod` クラスは時間間隔を表しています。 クラスの内部では、`seconds` という名前のプライベート フィールドに時間間隔が秒単位で格納されます。 `Hours` という読み取り/書き込みプロパティでは、ユーザーが時間間隔を時間単位で指定できます。 `get` アクセサーと `set` アクセサーの両方で、必要に応じて時間と秒の変換が実行されます。 また、`set` アクセサーは、データを検証し、時間数が無効である場合に @System.ArgumentOutOfRangeException をスローします。 
+このパターンを説明する例を下に示します。 この例では、`TimePeriod` クラスは時間間隔を表しています。 クラスの内部では、`seconds` という名前のプライベート フィールドに時間間隔が秒単位で格納されます。 `Hours` という読み取り/書き込みプロパティでは、ユーザーが時間間隔を時間単位で指定できます。 `get` アクセサーと `set` アクセサーの両方で、必要に応じて時間と秒の変換が実行されます。 また、`set` アクセサーは、データを検証し、時間数が無効である場合に <xref:System.ArgumentOutOfRangeException> をスローします。 
    
- [!code-cs[Properties#1](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/properties-1.cs)]  
+ [!code-csharp[Properties#1](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/properties-1.cs)]  
   
 ## <a name="expression-body-definitions"></a>式本体の定義  
 
@@ -66,11 +47,11 @@ ms.lasthandoff: 07/28/2017
 
  C# 6 以降では、読み取り専用プロパティに `get` アクセサーを式形式のメンバーとして実装できます。 この場合、`get` アクセサー キーワードと `return` キーワードはどちらも使用しません。 次の例では、読み取り専用 `Name` プロパティを式形式のメンバーとして実装しています。
 
- [!code-cs[Properties#2](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/properties-2.cs)]  
+ [!code-csharp[Properties#2](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/properties-2.cs)]  
 
  C# 7 以降では、`get` アクセサーと `set` アクセサーのどちらも、式形式のメンバーとして実装できます。 この場合、`get` キーワードと `set` キーワードを使用する必要があります。 両方のアクセサーに式本体の定義を使用する例を次に示します。 `get` アクセサーで `return` キーワードが使用されていない点に注意してください。
  
-  [!code-cs[Properties#3](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/properties-3.cs)]  
+  [!code-csharp[Properties#3](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/properties-3.cs)]  
 
 ## <a name="auto-implemented-properties"></a>自動実装プロパティ
 
@@ -78,7 +59,7 @@ ms.lasthandoff: 07/28/2017
 
 プロパティが `get` アクセサーと `set` アクセサーの両方を備えている場合は、両方を自動実装する必要があります。 自動実装プロパティを定義するには、実装を省略して `get` キーワードと `set` キーワードを使用します。 次の例は前の例と似ていますが、`Name` と `Price` が自動実装プロパティである点が異なります。 この例では、パラメーター化されたコンストラクターも削除されているため、`SaleItem` オブジェクトが既定のコンストラクターの呼び出しと[オブジェクト初期化子](object-and-collection-initializers.md)を使用して初期化されています。
 
-  [!code-cs[Properties#4](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/properties-4.cs)]  
+  [!code-csharp[Properties#4](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/properties-4.cs)]  
 
 ## <a name="related-sections"></a>関連項目  
   
@@ -96,9 +77,8 @@ ms.lasthandoff: 07/28/2017
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [プロパティの使用](../../../csharp/programming-guide/classes-and-structs/using-properties.md)   
- [インデクサー](../../../csharp/programming-guide/indexers/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [プロパティの使用](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
+ [インデクサー](../../../csharp/programming-guide/indexers/index.md)  
  [et キーワード](../../../csharp/language-reference/keywords/get.md)    
  [set キーワード](../../../csharp/language-reference/keywords/set.md)    
-

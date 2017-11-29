@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: a315b111-8e48-446c-ab19-acb6405894a7
-ms.translationtype: HT
-ms.sourcegitcommit: 934373d61407c8cc19b7d6424898a582880f9c21
 ms.openlocfilehash: 08b8de2fe17a0032a1c1180667f39b1d6ce0feb6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="generic-types-generics-overview"></a>ジェネリック型 (ジェネリック) の概要
 
 暗黙的か明示的かに関わらず、C# では常にジェネリックを使用します。 C# で LINQ を使用していると、IEnumerable<T> を操作することがあります。 または、Entity Framework を使用してデータベースと通信するための "汎用リポジトリ" のオンライン サンプルでは、ほとんどのメソッドが IQueryable<T> を返すことに気付きます。 これらの例の **T** とは何で、なぜそこにあるのでしょうか。
@@ -75,4 +73,3 @@ Non-Generic Sort: System.Collections.ArrayList Time taken: 2.4324ms
 
 *   [C# のジェネリックの概要](https://msdn.microsoft.com/library/ms379564.aspx)
 *   [ジェネリック (C# プログラミング ガイド)](https://msdn.microsoft.com/library/512aeb7t.aspx)
-

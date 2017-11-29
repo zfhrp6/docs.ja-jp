@@ -1,44 +1,65 @@
 ---
-title: "(Visual Basic) のジェネリック コレクションに対するインターフェイスの分散の使用 |Microsoft ドキュメント"
+title: "(Visual Basic) のジェネリック コレクションに対するインターフェイスの分散の使用"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: c867fcea-7462-4995-b9c5-542feec74036
-caps.latest.revision: 3
-author: stevehoag
-ms.author: shoag
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 86184c7de3fe16148bf954b16d703ca682216337
-ms.lasthandoff: 03/13/2017
-
+caps.latest.revision: "3"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: b8944bf8f6377ddc633f81dccd9f379bf176d9f3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="using-variance-in-interfaces-for-generic-collections-visual-basic"></a>(Visual Basic) のジェネリック コレクションに対するインターフェイスの分散の使用
-共変のインターフェイスは、インターフェイスで指定されている以上の派生型を返すメソッドを使用します。 反変のインターフェイスは、インターフェイスで指定された値よりも弱い派生型のパラメーターを受け取るには、そのメソッドを許可します。  
+共変のインターフェイスのメソッドでは、そのインターフェイスで指定された型よりも強い派生型を返すことができます。 反変のインターフェイスのメソッドでは、そのインターフェイスで指定された型よりも弱い派生型のパラメーターを受け取ることができます。  
   
- .NET Framework 4 ではいくつかの既存のインターフェイスが共変と反変です。 <xref:System.Collections.Generic.IEnumerable%601>および<xref:System.IComparable%601>。</xref:System.IComparable%601></xref:System.Collections.Generic.IEnumerable%601>が含まれます これにより、派生型のコレクションの基本型のジェネリック コレクションを操作するメソッドを再利用できます。  
+ .NET Framework 4 では、既存のいくつかのインターフェイスが共変および反変になります。 その中には、<xref:System.Collections.Generic.IEnumerable%601> や <xref:System.IComparable%601> があります。 これにより、派生型のコレクションに対して、基本型のジェネリック コレクションを操作するメソッドを再利用できます。  
   
- .NET Framework のバリアントのインターフェイスの一覧は、次を参照してください。[ジェネリック インターフェイス (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)します。  
+ .NET Framework でのバリアントのインターフェイスの一覧は、次を参照してください。[ジェネリック インターフェイス (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)です。  
   
 ## <a name="converting-generic-collections"></a>ジェネリック コレクションの変換  
- 次の例では、ジェネリックの共変性でのサポートの特典、<xref:System.Collections.Generic.IEnumerable%601>インターフェイス</xref:System.Collections.Generic.IEnumerable%601>。 `PrintFullName`メソッドのコレクションを受け取る、`IEnumerable(Of Person)`型をパラメーターとして。 ただし、再利用できますのコレクションを`IEnumerable(Of Person)`ために、入力`Employee`継承`Person`します。  
+ 次の例は、<xref:System.Collections.Generic.IEnumerable%601> インターフェイスにおける共変性のサポートの利点を示しています。 `PrintFullName` メソッドは、パラメーターとして `IEnumerable(Of Person)` 型のコレクションを受け取ります。 ただし、`Employee` は `Person` を継承しているため、`IEnumerable(Of Person)` 型のコレクションで再利用できます。  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+```vb  
+' Simple hierarchy of classes.  
+Public Class Person  
+    Public Property FirstName As String  
+    Public Property LastName As String  
+End Class  
+  
+Public Class Employee  
+    Inherits Person  
+End Class  
+  
+' The method has a parameter of the IEnumerable(Of Person) type.  
+Public Sub PrintFullName(ByVal persons As IEnumerable(Of Person))  
+    For Each person As Person In persons  
+        Console.WriteLine(  
+            "Name: " & person.FirstName & " " & person.LastName)  
+    Next  
+End Sub  
+  
+Sub Main()  
+    Dim employees As IEnumerable(Of Employee) = New List(Of Employee)  
+  
+    ' You can pass IEnumerable(Of Employee),   
+    ' although the method expects IEnumerable(Of Person).  
+  
+    PrintFullName(employees)  
+  
+End Sub  
+```  
+  
 ## <a name="comparing-generic-collections"></a>ジェネリック コレクションの比較  
- 次の例では、反変性でのサポートの特典、<xref:System.Collections.Generic.IComparer%601>インターフェイス</xref:System.Collections.Generic.IComparer%601>。 `PersonComparer` クラスは、`IComparer(Of Person)` インターフェイスを実装します。 ただし、このクラスのオブジェクトのシーケンスを比較するを再利用する、`Employee`ために、入力`Employee`継承`Person`します。  
+ 次の例は、<xref:System.Collections.Generic.IComparer%601> インターフェイスにおける反変性のサポートの利点を示しています。 `PersonComparer` クラスは、`IComparer(Of Person)` インターフェイスを実装します。 ただし、`Employee` は `Person` を継承しているため、`Employee` 型の一連のオブジェクトを比較するためにこのクラスを再利用できます。  
   
 ```vb  
 ' Simple hierarhcy of classes.  
@@ -98,4 +119,4 @@ End Sub
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [ジェネリック インターフェイス (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
+ [ジェネリック インターフェイスの分散 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)

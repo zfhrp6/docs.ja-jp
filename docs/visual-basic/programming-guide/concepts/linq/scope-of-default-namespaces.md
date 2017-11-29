@@ -1,31 +1,27 @@
 ---
-title: "Visual Basic での既定の名前空間のスコープ |Microsoft ドキュメント"
+title: "Visual Basic の既定の名前空間のスコープ"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: d4cce80c-342f-4097-be8b-40ab0bfa90ba
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c0152250cf7cfb4b6cadbcaab60eaad8ec2fb5ee
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 3aaf5395f1216b0cb56f2d1f003e42ed30790012
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="scope-of-default-namespaces-in-visual-basic"></a>Visual Basic での既定の名前空間のスコープ
-XML ツリーで表される既定の名前空間は、クエリのスコープ内にありません。 かどうかは、既定の名前空間に含まれる XML がある、まだ宣言する必要あります、<xref:System.Xml.Linq.XNamespace>変数と組み合わせて作成クエリで使用される修飾名のローカル名</xref:System.Xml.Linq.XNamespace>。  
+# <a name="scope-of-default-namespaces-in-visual-basic"></a>Visual Basic の既定の名前空間のスコープ
+XML ツリーで表される既定の名前空間は、クエリのスコープ内にありません。 既定の名前空間に含まれる XML が存在する場合は、<xref:System.Xml.Linq.XNamespace> 変数を宣言し、この変数をローカル名と組み合わせて作成した修飾名をクエリで使用する必要があります。  
   
- XML ツリーのクエリにおける最も一般的な問題の&1; つは、XML ツリーに既定の名前空間がある場合に、XML が名前空間に含まれていないものとして開発者がクエリを記述してしまうことです。  
+ XML ツリーのクエリにおける最も一般的な問題の 1 つは、XML ツリーに既定の名前空間がある場合に、XML が名前空間に含まれていないものとして開発者がクエリを記述してしまうことです。  
   
  このトピックの最初に示す一連の例では、既定の名前空間内の XML が読み込まれても、クエリが不適切に実行される典型的な例を示しています。  
   
@@ -71,7 +67,7 @@ End of result set
 ## <a name="example"></a>例  
  この例では、名前空間内にある XML の作成と、適切に記述されたクエリを示します。  
   
- 上記の不適切に記述された例に対しては、Visual Basic を使用する場合は、正しいアプローチを宣言して既定のグローバル名前空間の初期化です。 これにより、すべての XML プロパティが既定の名前空間に配置されます。 この例を正しく動作させるために必要な変更はこれだけです。  
+ 上記の不適切に記述された例に対しては、Visual Basic を使用する場合は、正しいアプローチを宣言および初期化するグローバルな既定の名前空間です。 これにより、すべての XML プロパティが既定の名前空間に配置されます。 この例を正しく動作させるために必要な変更はこれだけです。  
   
 ### <a name="code"></a>コード  
   

@@ -14,30 +14,27 @@ helpviewer_keywords:
 - application compatibility
 - .NET Framework application compatibility
 - .NET Framework changes
-caps.latest.revision: 19
+caps.latest.revision: "19"
 ms.assetid: c4ba3ff2-fe59-4c5d-9e0b-86bba3cd865c
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: e67fff19c4b187010b35519081f46e11effbad6c
+ms.sourcegitcommit: d0f7646d67db5809cf43ff1d27b399a4020e8ee2
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b3c7df2984c2c9e8af308ca8070f7207d11ba49e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/25/2017
 ---
-
 # <a name="application-compatibility-in-the-net-framework"></a>.NET Framework のアプリケーションの互換性
 
 ## <a name="introduction"></a>はじめに
-
 .NET の各リリースにおいて互換性は非常に重要な目標です。 各バージョンが付加的な場合は互換性が確保され、以前のバージョンも引き続き動作します。 一方、以前の機能に変更が生じた場合 (パフォーマンスの向上、セキュリティに関する問題への対処、またはバグの修正を目的として)、既存のコードまたは既存のアプリケーションを以降のバージョンで実行すると互換性に問題が発生する可能性があります。 .NET Framework では、変更の再ターゲットとランタイムの変更点を認識します。 変更の再ターゲットは、.NET Framework の特定のバージョンをターゲットとしているもののそれ以降のバージョンで実行されるアプリケーションに影響します。 ランタイムの変更点は、特定のバージョンで実行されるすべてのアプリケーションに影響します。
 
 各アプリは .NET Framework の特定のバージョンをターゲットとします。バージョンは次の方法で指定することができます。
 
-- Visual Studio でターゲット フレームワークを定義する。
-- プロジェクト ファイルでターゲット フレームワークを指定する。
-- <xref:System.Runtime.Versioning.TargetFrameworkAttribute> をソース コードに適用する。
+* Visual Studio でターゲット フレームワークを定義する。
+* プロジェクト ファイルでターゲット フレームワークを指定する。
+* <xref:System.Runtime.Versioning.TargetFrameworkAttribute> をソース コードに適用する。
 
 ターゲットに指定されたバージョンより新しいバージョンでアプリが実行されると、.NET Framework は後方互換動作によって、ターゲットに指定されている古いバージョンを模倣します。 つまり、アプリは、Framework の新しいバージョンで実行されていても、古いバージョンで実行されているように機能します。 .NET Framework のバージョン間の互換性の問題の多くは、この後方互換モデルを通して対応されます。
 
@@ -82,16 +79,14 @@ ms.lasthandoff: 07/28/2017
 -   使用可能な診断の ID
 
 ## <a name="usage"></a>使用方法
-
 開始するには、以下の中から互換性の変更の種類を選択します。
 
-- [変更の再ターゲット](./retargeting/index.md)
-- [ランタイムの変更点](./runtime/index.md)
+* [変更の再ターゲット](./retargeting/index.md)
+* [ランタイムの変更点](./runtime/index.md)
 
 
 ## <a name="see-also"></a>関連項目
 
-[バージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)   
-[新機能](../../../docs/framework/whats-new/index.md)   
-[クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)
-
+* [バージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)
+* [新機能](../../../docs/framework/whats-new/index.md)
+* [クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)

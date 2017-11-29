@@ -1,52 +1,33 @@
 ---
 title: "演算子 (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - operators [C#]
 - C# language, operators
 - operators [C#], about operators
 ms.assetid: 214e7b83-1a41-4f7c-9867-64e9c0bab39f
-caps.latest.revision: 42
+caps.latest.revision: "42"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 8e270b683862502c218ff248de76819ecea83dc8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 22d2f6b93a18fcacbeea10ab60a1d078c632b0af
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="operators-c-programming-guide"></a>演算子 (C# プログラミング ガイド)
 C# では、 *演算子* は式またはステートメントの中で 1 つ以上の *オペランド* に適用されるプログラム要素です。 インクリメント演算子 (`++`) や `new`など、1 つのオペランドを受け取る演算子を *単項* 演算子と言います。 算術演算子 (`+`、`-`、`*`、`/`) など、2 つのオペランドを受け取る演算子を *二項* 演算子と言います。 条件演算子 (`?:`) は、3 つのオペランドを受け取る、C# でただ 1 つの三項演算子です。  
   
  次の C# ステートメントには、1 つの単項演算子と 1 つのオペランドがあります。 インクリメント演算子 `++`は、オペランド `y`の値を変更します。  
   
- [!code-cs[csProgGuideStatements#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/operators_1.cs)]  
+ [!code-csharp[csProgGuideStatements#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/operators_1.cs)]  
   
  次の C# ステートメントには、それぞれ 2 つのオペランドを持つ 2 つの二項演算子があります。 代入演算子 `=`には、オペランドとして整数の変数 `y` と式 `2 + 3` が含まれています。 式 `2 + 3` 自体も、加算演算子と、2 つのオペランド ( `2` と `3`) で構成されています。  
   
- [!code-cs[csProgGuideStatements#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/operators_2.cs)]  
+ [!code-csharp[csProgGuideStatements#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/operators_2.cs)]  
   
 ## <a name="operators-evaluation-and-operator-precedence"></a>演算子、評価、演算子の優先順位  
  オペランドは、任意の長さのコードで構成される有効な式で、任意の数の副次式を含むことができます。 複数の演算子を含む式の場合、演算子が適用される順序は *演算子の優先順位*、 *結合規則*、およびかっこによって決定されます。  
@@ -193,6 +174,5 @@ a = (b = c);
  詳細については、「[演算子のキーワード](../../../csharp/language-reference/keywords/operator-keywords.md)」および「[C# 演算子](../../../csharp/language-reference/operators/index.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [ステートメント、式、および演算子](../../../csharp/programming-guide/statements-expressions-operators/index.md)
-

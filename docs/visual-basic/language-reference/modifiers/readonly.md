@@ -1,49 +1,47 @@
 ---
-title: "ReadOnly (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.ReadOnly"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "ReadOnly keyword"
-  - "variables [Visual Basic], read-only"
-  - "ReadOnly property"
-  - "properties [Visual Basic], read-only"
-  - "read-only variables"
+title: ReadOnly (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.ReadOnly
+helpviewer_keywords:
+- ReadOnly keyword [Visual Basic]
+- variables [Visual Basic], read-only
+- ReadOnly property
+- properties [Visual Basic], read-only
+- read-only variables
 ms.assetid: e868185d-6142-4359-a2fd-a7965cadfce8
-caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 9ca1d2e4eddb3b88073d6fcd46b0de5c627ba809
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ReadOnly (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-読み取ることはできても書き込むことはできない変数またはプロパティを示します。  
+# <a name="readonly-visual-basic"></a>ReadOnly (Visual Basic)
+変数またはプロパティを読み取るがある書き込まれませんを指定します。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
   
-## 規則  
+## <a name="rules"></a>ルール  
   
--   **宣言コンテキスト。** `ReadOnly` は、モジュール レベルでのみ使用できます。  つまり、`ReadOnly` 要素の宣言コンテキストは、ソース ファイル、名前空間、インターフェイス、プロシージャではなく、クラス、構造体、またはモジュールである必要があります。  
+-   **宣言コンテキスト。** `ReadOnly` は、モジュール レベルでのみ使用できます。 つまりの宣言コンテキスト、`ReadOnly`要素は、クラス、構造体、またはモジュールにある必要があるあり、ソース ファイル、名前空間、またはプロシージャにすることはできません。  
   
--   **結合された修飾子。**同じ変数宣言で `ReadOnly` と `Static` を同時に指定することはできません。  
+-   **結合された修飾子。** 指定することはできません`ReadOnly`と共に`Static`同じ宣言内で。  
   
--   **値の代入。** `ReadOnly` プロパティを使用するコードは値を設定できません。  しかし、基になるストレージにアクセスできるコードは、いつでもその値を代入および変更できます。  
+-   **値を代入しています。** コードの使用、`ReadOnly`プロパティは、その値を設定できません。 基になる記憶域にアクセスするコードが割り当てるまたはいつでも、値を変更します。  
   
-     `ReadOnly` 変数に値を代入できるのは、変数の定義時、または、この変数が定義されたクラスまたは構造体のコンストラクターの中のみです。  
+     値を割り当てることができます、`ReadOnly`変数の宣言またはクラスまたは定義されている構造体のコンス トラクターでのみです。  
   
-## ReadOnly 変数を使用する場合  
- [Const Statement](../../../visual-basic/language-reference/statements/const-statement.md) を使用して、定数の値を宣言および代入できない場合があります。  たとえば、`Const` ステートメントが代入するデータ型を受け入れない場合や、コンパイル時に定数式で値を計算できない場合などです。  コンパイル時には値がわからないことも考えられます。  このような場合、`ReadOnly` 変数を使用して定数値を格納します。  
+## <a name="when-to-use-a-readonly-variable"></a>読み取り専用変数を使用する場合  
+ 使用することはできませんが、 [Const ステートメント](../../../visual-basic/language-reference/statements/const-statement.md)を宣言し、定数値を割り当てます。 たとえば、`Const`ステートメントで割り当てるには、必要なデータ型を受け入れない場合や、定数式でのコンパイル時に値を計算することができません。 わからない場合がありますも値コンパイル時にします。 このような場合は、使用することができます、`ReadOnly`定数値を保持する変数。  
   
 > [!IMPORTANT]
->  この変数のデータ型が配列やクラス インスタンスなどの参照型の場合、変数自体が `ReadOnly` であっても、このメンバーは変更できます。  次に例を示します。  
+>  場合でも、変数自体に、そのメンバーを変更することができます、変数のデータ型が配列またはクラスのインスタンスなど、参照型の場合`ReadOnly`です。 次に例を示します。  
   
  `ReadOnly characterArray() As Char = {"x"c, "y"c, "z"c}`  
   
@@ -53,21 +51,21 @@ caps.handback.revision: 15
   
  `End Sub`  
   
- 初期化されたとき、`characterArray()` で参照される配列には "x"、"y"、"z" が格納されています。  変数 `characterArray` は `ReadOnly` なので、一度初期化するとこの値は変更できません。つまり、新しい配列をこれに代入することはできません。  しかし、配列のメンバー \(1 つまたは複数\) の値は変更できます。  プロシージャ `changeArrayElement` の呼び出し後、`characterArray()` が参照する配列には "x"、"M"、"z" が格納されています。  
+ 初期化する場合、配列を指す`characterArray()`を保持"x"、"y"および"z"です。 変数`characterArray`は`ReadOnly`、初期化; であると、その値を変更することはできません、新しい配列を割り当てることはできません。 ただし、配列メンバーの 1 つ以上の値を変更することができます。 次のプロシージャの呼び出し`changeArrayElement`、配列を指す`characterArray()`を保持"x"、"M"および"z"です。  
   
- これは、プロシージャのパラメーターを [ByVal](../../../visual-basic/language-reference/modifiers/byval.md) として宣言するのと同様です。プロシージャは呼び出し元の引数そのものは変更できませんが、そのメンバーは変更できます。  
+ これは、プロシージャ パラメーターの宣言に似て[ByVal](../../../visual-basic/language-reference/modifiers/byval.md)プロシージャが呼び出し元引数自体を変更できないようにするが、そのメンバーを変更することができます。  
   
-## 使用例  
- 次の例では、従業員が雇用された日付を表す `ReadOnly` プロパティを定義します。  このクラスは、プロパティの値を `Private` 変数として内部に格納し、クラス内のコードだけがこの値を変更できます。  ただし、このプロパティは `Public` であり、このクラスにアクセスできるすべてのコードがこのプロパティを読み取れます。  
+## <a name="example"></a>例  
+ 次の例では定義、`ReadOnly`従業員が雇用された日付のプロパティです。 プロパティ値としての内部クラス ストア、`Private`クラス内の変数、およびのみのコードは、その値を変更できます。 ただし、このプロパティは`Public`、すべてのコードをクラスにアクセスできますが、プロパティを読み取ることができます。  
   
  [!code-vb[VbVbalrKeywords#4](../../../visual-basic/language-reference/codesnippet/VisualBasic/readonly_1.vb)]  
   
- `ReadOnly` 修飾子は、次の場合に使用できます。  
+ `ReadOnly` 修飾子は、次のコンテキストで使用できます。  
   
  [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
  [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)  
   
-## 参照  
- [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)   
+## <a name="see-also"></a>関連項目  
+ [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)  
  [キーワード](../../../visual-basic/language-reference/keywords/index.md)

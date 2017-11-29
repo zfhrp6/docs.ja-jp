@@ -1,25 +1,21 @@
 ---
 title: "方法: 特定の要素名を持つ子孫を検索する (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: f684da20-bee9-47f5-9607-7e3fd7e67470
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: b1cc45f07accd7ae6dcc530f0fd5a9078bce949d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 72659358a50d3ae1de9c699bff0bdd9f4ac4f383
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-find-descendants-with-a-specific-element-name-c"></a>方法: 特定の要素名を持つ子孫を検索する (C#)
 特定の名前を持つ子孫をすべて検索しなければならない場合があります。 すべての子孫を反復処理するコードを記述することもできますが、<xref:System.Xml.Linq.XContainer.Descendants%2A> 軸を使用する方が簡単です。  
@@ -104,6 +100,5 @@ Some text that is broken up into multiple segments.
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Xml.Linq.XContainer.Descendants%2A>   
+ <xref:System.Xml.Linq.XContainer.Descendants%2A>  
  [基本的なクエリ (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
-

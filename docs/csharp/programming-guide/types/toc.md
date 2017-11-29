@@ -6,4 +6,4 @@
 ## [方法: as 演算子と is 演算子を使用して安全にキャストする](how-to-safely-cast-by-using-as-and-is-operators.md)
 ## [方法: バイト配列を int に変換する](how-to-convert-a-byte-array-to-an-int.md)
 ## [方法: 文字列を数値に変換する](how-to-convert-a-string-to-a-number.md)
-## [方法:&16; 進文字列と数値型の間で変換する](how-to-convert-between-hexadecimal-strings-and-numeric-types.md)
+## [方法: 16 進文字列と数値型の間で変換する](how-to-convert-between-hexadecimal-strings-and-numeric-types.md)

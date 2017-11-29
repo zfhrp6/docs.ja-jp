@@ -7,12 +7,11 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.translationtype: HT
-ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
 ms.openlocfilehash: 6721615e4df820ab50ea4f79fbba30daeffe8165
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/14/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
@@ -107,4 +106,3 @@ API キーを指定して、カスタム プッシュ ソース `http://customso
 最も高い詳細レベルで、既定のプッシュ ソースに現在のディレクトリ内のすべての *.nupkg* ファイルをプッシュします。
 
 `dotnet nuget push *.nupkg --verbosity detailed`
-

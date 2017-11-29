@@ -1,38 +1,19 @@
 ---
 title: "方法 : CLS 準拠でない例外をキャッチする"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- exceptions [C#], non-CLS
+helpviewer_keywords: exceptions [C#], non-CLS
 ms.assetid: db4630b3-5240-471a-b3a7-c7ff6ab31e8d
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 473cace033983915c66647d14cae16dc7f5d5b9d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 18a19fe34b8ec13bd9fc6d25335d0931a22ce4a3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/19/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-catch-a-non-cls-exception"></a>方法 : CLS 準拠でない例外をキャッチする
 C++/CLI をはじめとする一部の .NET 言語では、<xref:System.Exception> から派生していない例外をオブジェクトでスローすることができます。 このような例外は "*CLS 準拠でない例外*" や "*非例外*" と呼ばれています。 [!INCLUDE[csprcs](~/includes/csprcs-md.md)] では、CLS 準拠でない例外をスローすることはできませんが、それらをキャッチすることはできます。次の 2 とおりの方法があります。  
@@ -52,7 +33,7 @@ C++/CLI をはじめとする一部の .NET 言語では、<xref:System.Exceptio
 2.  <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A> プロパティから元の例外にアクセスします。  
   
 ## <a name="example"></a>例  
- 次の例は、C++/CLR のクラス ライブラリからスローされた、CLS 準拠でない例外をキャッチする方法を示しています。 この例で、[!INCLUDE[csprcs](~/includes/csprcs-md.md)] クライアント コードは、スローされる例外の型が <xref:System.String?displayProperty=fullName> であることを事前に把握しています。 その型にコードからアクセスできる限り、<xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A> プロパティは元の型にキャストできます。  
+ 次の例は、C++/CLR のクラス ライブラリからスローされた、CLS 準拠でない例外をキャッチする方法を示しています。 この例で、[!INCLUDE[csprcs](~/includes/csprcs-md.md)] クライアント コードは、スローされる例外の型が <xref:System.String?displayProperty=nameWithType> であることを事前に把握しています。 その型にコードからアクセスできる限り、<xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A> プロパティは元の型にキャストできます。  
   
 ```  
 // Class library written in C++/CLR.  
@@ -84,6 +65,5 @@ C++/CLI をはじめとする一部の .NET 言語では、<xref:System.Exceptio
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.CompilerServices.RuntimeWrappedException>   
+ <xref:System.Runtime.CompilerServices.RuntimeWrappedException>  
  [例外と例外処理](../../../csharp/programming-guide/exceptions/index.md)
-

@@ -1,25 +1,21 @@
 ---
 title: "方法: 要素を並べ替える (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: aee6fbbc-81fd-4b3e-b40f-6ed7b3bd3fee
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: 2a9fba878a5f760996566a566cee94a2ca16dcee
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a5c17b13f6f637559e2f99426b71947e795e0516
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-sort-elements-c"></a>方法: 要素を並べ替える (C#)
 この例では、結果を並べ替えるクエリの作成方法を示します。  
@@ -80,6 +76,5 @@ foreach (decimal el in prices)
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [データの並べ替え (C#)](../../../../csharp/programming-guide/concepts/linq/sorting-data.md)   
+ [データの並べ替え (C#)](../../../../csharp/programming-guide/concepts/linq/sorting-data.md)  
  [基本的なクエリ (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
-

@@ -1,25 +1,21 @@
 ---
 title: "関数型プログラミングと命令型プログラミング (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 5e35c5a0-c949-422a-873b-fca6b2254f57
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: 2c57d89120eee8c7f84d6e87b14f038378a0b3d1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e26cf7946a2ee8d83683a31666b13c6685fbc045
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="functional-programming-vs-imperative-programming-c"></a>関数型プログラミングと命令型プログラミング (C#)
 このトピックでは、関数型プログラミングを従来の命令型 (手続き型) プログラミングと比較対照します。  
@@ -63,7 +59,6 @@ ms.lasthandoff: 07/28/2017
  C# では、命令型と関数型の両方のプログラミング方法がサポートされているため、関数型プログラミングに完全に移行する必要はありません。 開発者は、個々のシナリオに適した方法を選択できます。 実際、プログラムで両方の方法が組み合わされている場合もよくあります。  
   
 ## <a name="see-also"></a>関連項目  
- [純粋関数型変換の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)   
- [XSLT 変換](../../../../standard/data/xml/xslt-transformations.md)   
+ [純粋関数型変換の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)  
+ [XSLT 変換](../../../../standard/data/xml/xslt-transformations.md)  
  [純粋関数へのリファクタリング (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
-

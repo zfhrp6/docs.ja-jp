@@ -1,12 +1,9 @@
 ---
 title: "継承 (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - abstract methods [C#]
 - abstract classes [C#]
@@ -15,29 +12,14 @@ helpviewer_keywords:
 - virtual methods [C#]
 - C# language, inheritance
 ms.assetid: 81d64ee4-50f9-4d6c-a8dc-257c348d2eea
-caps.latest.revision: 38
+caps.latest.revision: "38"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: dc3d448d311fe0a67839757fa43a209d92141214
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 01092b94c83f50b16604428780b2786496017732
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="inheritance-c-programming-guide"></a>継承 (C# プログラミング ガイド)
 
@@ -50,14 +32,14 @@ ms.lasthandoff: 07/28/2017
   
  クラスを別のクラスから派生するように定義すると、派生クラスには、コンストラクターとファイナライザーを除く、基底クラスのすべてのメンバーが暗黙的に引き継がれます。 そのため、派生クラスでは、基底クラスのコードを再実装しなくても再利用できます。 派生クラスには、メンバーを追加できます。 このような方法で、派生クラスは基底クラスの機能を拡張します。  
   
- 次の図は、あるビジネス プロセスの作業項目を表す `WorkItem` クラスを示しています。 他のすべてのクラスと同様に、<xref:System.Object?displayProperty=fullName> から派生し、そのすべてのメソッドを継承します。 `WorkItem` には、独自のメンバーが 5 つ追加されています。 これにはコンストラクターが含まれています。コンストラクターは継承されないためです。 `WorkItem` から継承される `ChangeRequest` クラスは、特定の種類の作業項目を表します。 `ChangeRequest` には、`WorkItem` と <xref:System.Object> から継承したメンバーに 2 つのメンバーが追加されます。 独自のコンストラクターを追加する必要があるほか、さらに `originalItemID` も追加されます。 `originalItemID` プロパティを使用すると、`ChangeRequest` インスタンスは、変更要求が適用される元の `WorkItem` と関連付けることができます。  
+ 次の図は、あるビジネス プロセスの作業項目を表す `WorkItem` クラスを示しています。 他のすべてのクラスと同様に、<xref:System.Object?displayProperty=nameWithType> から派生し、そのすべてのメソッドを継承します。 `WorkItem` には、独自のメンバーが 5 つ追加されています。 これにはコンストラクターが含まれています。コンストラクターは継承されないためです。 `WorkItem` から継承される `ChangeRequest` クラスは、特定の種類の作業項目を表します。 `ChangeRequest` には、`WorkItem` と <xref:System.Object> から継承したメンバーに 2 つのメンバーが追加されます。 独自のコンストラクターを追加する必要があるほか、さらに `originalItemID` も追加されます。 `originalItemID` プロパティを使用すると、`ChangeRequest` インスタンスは、変更要求が適用される元の `WorkItem` と関連付けることができます。  
   
  ![クラスの継承](../../../csharp/programming-guide/classes-and-structs/media/class_inheritance.png "Class_Inheritance")  
 クラスの継承  
   
- 次の例は、前の図に示したクラスの関係が C# でどのように表現されるかを示しています。 また、`WorkItem` が仮想メソッド <xref:System.Object.ToString%2A?displayProperty=fullName> をオーバーライドする方法と、`ChangeRequest` クラスが `WorkItem` によるメソッドの実装を継承する方法も示しています。  
+ 次の例は、前の図に示したクラスの関係が C# でどのように表現されるかを示しています。 また、`WorkItem` が仮想メソッド <xref:System.Object.ToString%2A?displayProperty=nameWithType> をオーバーライドする方法と、`ChangeRequest` クラスが `WorkItem` によるメソッドの実装を継承する方法も示しています。  
   
- [!code-cs[csProgGuideInheritance#49](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/inheritance_1.cs)]  
+ [!code-csharp[csProgGuideInheritance#49](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/inheritance_1.cs)]  
   
 ## <a name="abstract-and-virtual-methods"></a>抽象メソッドと仮想メソッド  
  基底クラスでメソッドを [virtual](../../../csharp/language-reference/keywords/virtual.md) として宣言する場合、派生クラスはそのメソッドを独自の実装で[オーバーライド](../../../csharp/language-reference/keywords/override.md)することができます。 基底クラスでメンバーを [abstract](../../../csharp/language-reference/keywords/abstract.md) として宣言する場合、そのクラスから直接継承される非抽象クラスで、そのメソッドをオーバーライドする必要があります。 派生クラス自体が抽象クラスである場合は、抽象メンバーを実装することなく継承します。 抽象メンバーと仮想メンバーは、オブジェクト指向プログラミングの重要な特性の 2 つ目であるポリモーフィズムの基礎です。 詳細については、「[ポリモーフィズム](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)」を参照してください。  
@@ -68,7 +50,7 @@ ms.lasthandoff: 07/28/2017
 ## <a name="interfaces"></a>インターフェイス  
  "*インターフェイス*" は、抽象メンバーのみで構成される抽象基底クラスに類似した参照型です。 クラスでインターフェイスを実装するときは、インターフェイスのすべてのメンバーを実装する必要があります。 クラスは、直接的には 1 つの基底クラスからしか派生できませんが、複数のインターフェイスを実装できます。  
   
- インターフェイスは、必ずしも "is a" 関係を持たないクラスの特定の機能を定義するために使用されます。 たとえば、ある型の 2 つのオブジェクトが等しいかどうかをクライアント コードで判別できるようにする (ただし、等価性の定義は型によって行う) クラスまたは構造体では、<xref:System.IEquatable%601?displayProperty=fullName> インターフェイスを実装できます。 <xref:System.IEquatable%601> は、基底クラスと派生クラス間に存在する "is a" 関係 ("`Mammal` は `Animal` である" など) と同様の意味を示すものではありません。 詳細については、「[インターフェイス](../../../csharp/programming-guide/interfaces/index.md)」を参照してください。  
+ インターフェイスは、必ずしも "is a" 関係を持たないクラスの特定の機能を定義するために使用されます。 たとえば、ある型の 2 つのオブジェクトが等しいかどうかをクライアント コードで判別できるようにする (ただし、等価性の定義は型によって行う) クラスまたは構造体では、<xref:System.IEquatable%601?displayProperty=nameWithType> インターフェイスを実装できます。 <xref:System.IEquatable%601> は、基底クラスと派生クラス間に存在する "is a" 関係 ("`Mammal` は `Animal` である" など) と同様の意味を示すものではありません。 詳細については、「[インターフェイス](../../../csharp/programming-guide/interfaces/index.md)」を参照してください。  
   
 ## <a name="preventing-further-derivation"></a>それ以上の派生の禁止  
  クラス自体またはメンバーを [sealed](../../../csharp/language-reference/keywords/sealed.md)と宣言することにより、他のクラスがそのクラスまたはそのクラスのメンバーを継承できないようにすることができます。 詳細については、「[抽象クラスとシール クラス、およびクラス メンバー](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)」を参照してください。  
@@ -77,8 +59,7 @@ ms.lasthandoff: 07/28/2017
  派生クラスは、同じ名前とシグネチャでメンバーを宣言することで、基底クラスのメンバーを隠ぺいすることができます。 [new](../../../csharp/language-reference/keywords/new.md) 修飾子を使用すると、そのメンバーが基底クラスのメンバーのオーバーライドとして用意されているのではないことを明示的に指定できます。 [new](../../../csharp/language-reference/keywords/new.md) の使用は必須ではありませんが、[new](../../../csharp/language-reference/keywords/new.md) が使用されていない場合はコンパイラの警告が生成されます。 詳細については、「[Override キーワードと New キーワードによるバージョン管理](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)」および「[Override キーワードと New キーワードを使用する場合について](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)   
- [class](../../../csharp/language-reference/keywords/class.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)  
+ [class](../../../csharp/language-reference/keywords/class.md)  
  [struct](../../../csharp/language-reference/keywords/struct.md)
-

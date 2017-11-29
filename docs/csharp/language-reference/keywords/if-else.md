@@ -1,50 +1,31 @@
 ---
 title: "if-else (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - if_CSharpKeyword
 - else
 - else_CSharpKeyword
 - if
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - else keyword [C#]
 - if keyword [C#]
 ms.assetid: d9a1d562-8cf5-4bd4-9ba7-8ad970cd25b2
-caps.latest.revision: 32
+caps.latest.revision: "32"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: a0ecc915af00caffeba92a8308a60bc24198d477
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 694761a9b03fadf2dff97e61e37c0af52658f9e4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="if-else-c-reference"></a>if-else (C# リファレンス)
 `if` ステートメントは、 `Boolean` 式の値に基づいて実行するステートメントを決定します。 次の例では、 `Boolean` 変数 `result` を `true` に設定してから、 `if` ステートメントにチェックインします。 出力は `The condition is true`になります。  
   
- [!code-cs[csrefKeywordsSelection#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_1.cs)]  
+ [!code-csharp[csrefKeywordsSelection#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_1.cs)]  
   
  このトピックの例を実行するには、コンソール アプリケーションの `Main` メソッドに例を挿入します。  
   
@@ -78,28 +59,28 @@ if (condition)
   
  `then-statement` および `else-statement` では、任意の種類のステートメントを使用できます。元の `if` ステートメント内に別の `if` ステートメントを入れ子にすることもできます。 入れ子になった `if` ステートメントでは、各 `else` 句が、対応する `if` がない最後の `else`に属します。 次の例では、 `Result1` と `m > 10` の両方が true に評価されると、 `n > 20` が表示されます。 `m > 10` が true で `n > 20` が false の場合は、 `Result2` が表示されます。  
   
- [!code-cs[csrefKeywordsSelection#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_2.cs)]  
+ [!code-csharp[csrefKeywordsSelection#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_2.cs)]  
   
  代わりに `Result2` が false の場合に `(m > 10)` を表示させるには、次の例に示すように、中かっこを使用して入れ子になった `if` の開始と終了を設定することで、その関連付けを指定します。  
   
- [!code-cs[csrefKeywordsSelection#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_3.cs)]  
+ [!code-csharp[csrefKeywordsSelection#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_3.cs)]  
   
  条件 `(m > 10)` が false に評価されると、`Result2` が表示されます。  
   
 ## <a name="example"></a>例  
  次の例では、キーボードから文字を入力すると、プログラムが、入れ子になった `if` ステートメントを実行して、入力された文字が英字かどうかを判別します。 入力された文字が英字である場合、プログラムはその文字が小文字と大文字のどちらであるかを判別します。 いずれの場合も、メッセージが表示されます。  
   
- [!code-cs[csrefKeywordsSelection#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_4.cs)]  
+ [!code-csharp[csrefKeywordsSelection#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_4.cs)]  
   
 ## <a name="example"></a>例  
  以下の部分的なコードに示すように、 `if` ステートメントを else ブロック内に入れ子にすることもできます。 この例では、2 つの else ブロックと 1 つの then ブロックの中で `if` ステートメントを入れ子にしています。 コメントに、各ブロックでどの条件が true または false であるかを示しています。  
   
- [!code-cs[csrefKeywordsSelection#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_5.cs)]  
+ [!code-csharp[csrefKeywordsSelection#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_5.cs)]  
   
 ## <a name="example"></a>例  
  この例では、入力された文字が小文字、大文字、または数値のいずれであるかを判別します。 3 つすべての条件が false の場合、文字は英数字ではありません。 この例では、いずれの場合もメッセージが表示されます。  
   
- [!code-cs[csrefKeywordsSelection#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_6.cs)]  
+ [!code-csharp[csrefKeywordsSelection#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_6.cs)]  
   
  else ブロックまたは then ブロック内のステートメントを任意の有効なステートメントにできるように、条件には任意の有効なブール式を使用できます。 [&&](../../../csharp/language-reference/operators/conditional-and-operator.md)、[&](../../../csharp/language-reference/operators/and-operator.md)、[&#124;&#124;](../../../csharp/language-reference/operators/conditional-or-operator.md)、[&#124;](../../../csharp/language-reference/operators/or-operator.md)、[!](../../../csharp/language-reference/operators/logical-negation-operator.md) などの論理演算子を使用して複合条件を作成できます。 次のコードに例を示します。  
   
@@ -154,10 +135,9 @@ if (!(m >= n || m >= p))
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [?: 演算子](../../../csharp/language-reference/operators/conditional-operator.md)   
- [if-else ステートメント (C++)](/cpp/cpp/if-else-statement-cpp)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
+ [?: 演算子](../../../csharp/language-reference/operators/conditional-operator.md)  
+ [if-else ステートメント (C++)](/cpp/cpp/if-else-statement-cpp)  
  [switch](../../../csharp/language-reference/keywords/switch.md)
-

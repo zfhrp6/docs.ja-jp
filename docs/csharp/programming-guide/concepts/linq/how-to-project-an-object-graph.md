@@ -1,25 +1,21 @@
 ---
 title: "方法: オブジェクト グラフを射影する (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 293d15d5-3eaf-48de-9a02-3e13cb117b5b
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: 222fa65848d503a6fe5d1eb961b97c5760e5eb6c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 3f09d1ab23d027829a8b3ea94fa62455ddb95499
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-project-an-object-graph-c"></a>方法: オブジェクト グラフを射影する (C#)
 このトピックでは、XML からオブジェクト グラフを射影 (作成) する方法を示します。  
@@ -269,7 +265,6 @@ ShipDate: 5/21/1999
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Linq.Enumerable.Select%2A>   
- <xref:System.Linq.Enumerable.ToList%2A>   
+ <xref:System.Linq.Enumerable.Select%2A>  
+ <xref:System.Linq.Enumerable.ToList%2A>  
  [プロジェクションと変換 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
-

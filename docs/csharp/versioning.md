@@ -10,14 +10,12 @@ ms.prod: visual-studio-dev-14
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 0b671333019c00abafcfb72533e30936f8fc6ad7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="versioning-in-c"></a>C# でのバージョン管理 #
 
 このチュートリアルでは、.NET でのバージョン管理のしくみについて学習します。 また、ライブラリのバージョン管理を行う際や、ライブラリを新しいバージョンにアップグレードする際の考慮事項についても学習します。
@@ -89,7 +87,7 @@ SemVer に対する最も基本的なアプローチは、3 コンポーネン�
 
 次の例を参照してください。
 
-[!code-csharp[new 修飾子の使用例](../../samples/csharp/versioning/new/Program.cs#sample)]
+[!code-csharp[Sample usage of the 'new' modifier](../../samples/csharp/versioning/new/Program.cs#sample)]
 
 **出力**
 
@@ -107,7 +105,7 @@ A derived method
 
 `override` 修飾子を使用した場合、派生実装は基底クラス メンバーの実装を非表示にはせず、そのメンバーを拡張します。 基底クラスのメンバーには、`virtual` 修飾子が適用されている必要があります。
 
-[!code-csharp[override 修飾子の使用例](../../samples/csharp/versioning/override/Program.cs#sample)]
+[!code-csharp[Sample usage of the 'override' modifier](../../samples/csharp/versioning/override/Program.cs#sample)]
 
 **出力**
 
@@ -119,4 +117,3 @@ Derived Method One: Derived Method One
 `override` 修飾子はコンパイル時に評価され、オーバーライドする仮想メンバーが見つからない場合には、コンパイラがエラーをスローします。
 
 ここで説明したテクニックを身につけ、それらをいつ使用すればよいかを理解すれば、ライブラリ バージョン間の移行を大幅に容易にすることができます。
-

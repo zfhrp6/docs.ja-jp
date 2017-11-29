@@ -1,46 +1,44 @@
 ---
-title: "&#39;Set&#39; accessor of property &#39;&lt;propertyname&gt;&#39; is not accessible | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc31102"
-  - "bc31102"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC31102"
+title: "&#39;です。セット &#39;プロパティ &#39; アクセサー&lt;propertyname&gt;&#39; にアクセスできません"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc31102
+- bc31102
+helpviewer_keywords: BC31102
 ms.assetid: 6f7b31b7-3656-4ae1-8851-90f5f4c6950a
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 9256a09b719ad3890e1d7c2cc23ffb0d40eec62f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &#39;Set&#39; accessor of property &#39;&lt;propertyname&gt;&#39; is not accessible
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-ステートメントがプロパティの値を格納しようとしましたが、プロパティの `Set` プロシージャへのアクセス許可がありません。  
+# <a name="39set39-accessor-of-property-39ltpropertynamegt39-is-not-accessible"></a>&#39;です。セット &#39;プロパティ &#39; アクセサー&lt;propertyname&gt;&#39; にアクセスできません
+ステートメントが、プロパティへのアクセスがあるないときに、プロパティの値を格納しようとしています。`Set`プロシージャです。  
   
- [Set Statement](../../../visual-basic/language-reference/statements/set-statement.md) が [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)よりも制限の高いアクセス レベルでマーク付けされている場合にプロパティ値の設定を試みると、次のケースでエラーになります。  
+ 場合、 [Set ステートメント](../../../visual-basic/language-reference/statements/set-statement.md)でマークされているより制限の厳しいアクセス レベルよりもその[Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)、次の場合、プロパティ値を設定しようとするが失敗します。  
   
--   `Set` ステートメントが [Private](../../../visual-basic/language-reference/modifiers/private.md) でマーク付けされており、呼び出し元のコードがプロパティが定義されたクラスまたは構造体の外側にある場合。  
+-   `Set`ステートメントがマークされている[プライベート](../../../visual-basic/language-reference/modifiers/private.md)し、呼び出し元のコードがクラスまたはプロパティが定義されている構造体の範囲外です。  
   
--   `Set` ステートメントが [Protected](../../../visual-basic/language-reference/modifiers/protected.md) でマーク付けされており、呼び出し元のコードがプロパティが定義されたクラスまたは構造体の内部にも、派生クラスの内部にもない場合。  
+-   `Set`ステートメントがマークされている[Protected](../../../visual-basic/language-reference/modifiers/protected.md)呼び出し元のコードは、派生クラスでないか、クラスまたはプロパティが定義されている構造体ではなくとします。  
   
--   `Set` ステートメントが [Friend](../../../visual-basic/language-reference/modifiers/friend.md) でマーク付けされており、呼び出し元のコードがプロパティが定義されたのと同じアセンブリにない場合。  
+-   `Set`ステートメントがマークされている[フレンド](../../../visual-basic/language-reference/modifiers/friend.md)し、呼び出し元のコードは、プロパティが定義されている同じアセンブリに含まれない。  
   
- **Error ID:** BC31102  
+ **エラー ID:** BC31102  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   プロパティが定義されたソース コードを変更できる場合は、`Set` プロシージャをプロパティ自体と同じアクセス レベルで宣言できないか検討してください。  
+-   プロパティが定義されたソース コードを使っている場合を宣言することを検討してください、`Set`プロパティ自体と同じアクセス レベルを持つプロシージャ。  
   
--   プロパティが定義されたソース コードを変更できない場合、または `Set` プロシージャをプロパティ自体よりも高いアクセス レベルで制限する必要がある場合は、プロパティ値を設定するステートメントをプロパティへのアクセスが可能なコード領域に移動することを検討します。  
+-   プロパティを定義するソース コードがないか、または制限する必要がある場合、`Set`プロシージャに簡単にアクセスのあるコード領域にプロパティの値を設定するコードを移動しようとしている、プロパティ自体には、複数のレベルにアクセスしますプロパティ。  
   
-## 参照  
- [Property プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)   
- [How to: Declare a Property with Mixed Access Levels](../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-a-property-with-mixed-access-levels.md)
+## <a name="see-also"></a>関連項目  
+ [Property プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)  
+ [方法 : 複数のアクセス レベルを持つプロパティを宣言する](../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-a-property-with-mixed-access-levels.md)

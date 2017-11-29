@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -18,16 +17,15 @@ helpviewer_keywords:
 - packaging application resources
 - localizing resources
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 24b23d3fd4d3c318fd2fad36bbbbe0cb065db453
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 95ca72a6da8def7c98a978650c60a27722141527
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="resources-in-desktop-apps"></a>デスクトップ アプリケーションのリソース
 ほとんどの製品レベルのアプリでは、リソースを使用する必要があります。 リソースは実行不可能なデータであり、アプリと共に論理的に配置されます。 このリソースは、アプリ内ではエラー メッセージまたはユーザー インターフェイスの一部として表示できます。 リソースには、文字列、イメージ、永続化されたオブジェクトなど、多数の形式のデータを含めることができます。 (永続化されたオブジェクトをリソース ファイルに書き込むには、そのオブジェクトをシリアル化できることが必要です)。データをリソース ファイルに格納しておけば、アプリ全体を再コンパイルすることなくデータを変更できます。 また、データの格納場所が 1 つになり、複数の場所に格納されているハードコーディングされたデータを利用する必要がなくなります。  
@@ -51,17 +49,17 @@ ms.lasthandoff: 09/05/2017
  詳細については、「[リソースのパッケージ化と配置](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)」の記事を参照してください。  
   
 ## <a name="retrieving-resources"></a>リソースの取得  
- 実行時に、アプリは、<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName> プロパティで指定されるカルチャに基づいて、適切なローカライズ バージョンのリソースをスレッド単位で読み込みます。 このプロパティ値の派生は次のように行われます。  
+ 実行時に、アプリは、<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> プロパティで指定されるカルチャに基づいて、適切なローカライズ バージョンのリソースをスレッド単位で読み込みます。 このプロパティ値の派生は次のように行われます。  
   
--   ローカライズされたカルチャを表す <xref:System.Globalization.CultureInfo> オブジェクトを <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=fullName> プロパティに直接割り当てます。  
+-   ローカライズされたカルチャを表す <xref:System.Globalization.CultureInfo> オブジェクトを <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType> プロパティに直接割り当てます。  
   
--   カルチャが明示的に割り当てられていない場合は、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=fullName> プロパティから既定のスレッド UI カルチャを取得します。  
+-   カルチャが明示的に割り当てられていない場合は、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType> プロパティから既定のスレッド UI カルチャを取得します。  
   
 -   既定のスレッド UI カルチャが明示的に割り当てられていない場合は、Windows の `GetUserDefaultUILanguage` 関数を呼び出して、ローカル コンピューター上の現在のユーザーのカルチャを取得します。  
   
- 現在の UI カルチャを設定する方法の詳細については、「<xref:System.Globalization.CultureInfo>」リファレンス ページと「<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName>」リファレンス ページを参照してください。  
+ 現在の UI カルチャを設定する方法の詳細については、「<xref:System.Globalization.CultureInfo>」リファレンス ページと「<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>」リファレンス ページを参照してください。  
   
- これで、<xref:System.Resources.ResourceManager?displayProperty=fullName> クラスを使用して、現在の UI カルチャまたは特定のカルチャのリソースを取得できます。 <xref:System.Resources.ResourceManager> クラスはデスクトップ アプリのリソースを取得する場合に最もよく使用されますが、<xref:System.Resources?displayProperty=fullName> 名前空間には、リソースの取得に使用できるその他のタイプも含まれています。 以下に例を示します。  
+ これで、<xref:System.Resources.ResourceManager?displayProperty=nameWithType> クラスを使用して、現在の UI カルチャまたは特定のカルチャのリソースを取得できます。 <xref:System.Resources.ResourceManager> クラスはデスクトップ アプリのリソースを取得する場合に最もよく使用されますが、<xref:System.Resources?displayProperty=nameWithType> 名前空間には、リソースの取得に使用できるその他のタイプも含まれています。 以下に例を示します。  
   
 -   <xref:System.Resources.ResourceReader> クラス。アセンブリに埋め込まれているリソースまたはスタンドアロンの .resources バイナリ ファイルに格納されているリソースを列挙できます。 これは、実行時に使用可能なリソースの正確な名前がわからない場合に役立ちます。  
   
@@ -72,11 +70,10 @@ ms.lasthandoff: 09/05/2017
 -   <xref:System.Resources.ResXResourceSet> クラス。XML リソース ファイル内のすべての項目を取得してメモリに格納できます。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Globalization.CultureInfo>   
- <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName>   
- [アプリケーションの基本事項](../../../docs/standard/application-essentials.md)   
- [リソース ファイルの作成](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)   
- [リソースのパッケージ化と配置](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)   
- [サテライト アセンブリの作成](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)   
+ <xref:System.Globalization.CultureInfo>  
+ <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>  
+ [アプリケーションの基本事項](../../../docs/standard/application-essentials.md)  
+ [リソース ファイルの作成](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)  
+ [リソースのパッケージ化と配置](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)  
+ [サテライト アセンブリの作成](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)  
  [リソースの取得](../../../docs/framework/resources/retrieving-resources-in-desktop-apps.md)
-

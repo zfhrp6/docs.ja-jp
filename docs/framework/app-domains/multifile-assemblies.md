@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -18,16 +17,15 @@ helpviewer_keywords:
 - code modules
 - multifile assemblies
 ms.assetid: 13509e73-db77-4645-8165-aad8dfaedff6
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: fead0a944b464ffd8f72dca6da33fd97404fe2d1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 7851375c03f9caacd9c89d33e5a03212581d7937
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="multifile-assemblies"></a>マルチファイル アセンブリ
 コマンド ライン コンパイラまたは Visual C++ で [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] を使って、マルチファイル アセンブリを作成できます。 アセンブリ内の 1 つのファイルには、アセンブリ マニフェストが含まれている必要があります。 アプリケーションを起動するアセンブリには、Main メソッドや WinMain メソッドなどのエントリ ポイントも含まれている必要があります。  
@@ -51,6 +49,5 @@ ms.lasthandoff: 07/28/2017
  アセンブリを作成した後は、アセンブリ マニフェスト (以降アセンブリ) を含むファイルに署名したり、ファイル (およびアセンブリ) に厳密な名前を付けて、グローバル アセンブリ キャッシュに配置したりすることができます。  
   
 ## <a name="see-also"></a>関連項目  
- [方法: マルチファイル アセンブリをビルドする](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)   
+ [方法: マルチファイル アセンブリをビルドする](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)  
  [アセンブリを使用したプログラミング](../../../docs/framework/app-domains/programming-with-assemblies.md)
-

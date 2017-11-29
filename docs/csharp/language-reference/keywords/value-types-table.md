@@ -1,42 +1,23 @@
 ---
 title: "値型の一覧表 (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - value types [C#], table
 - Visual C#, types
 - types [C#], value types
 - types [C#], suffixes
 ms.assetid: 67d8f631-b6e3-4d83-9910-5ec497f8c5f3
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 49ada8d7c006808077b5a7c93175a143932bf277
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1f97f0b7fd1887367bf64fef737420e4c6c3ada2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="value-types-table-c-reference"></a>値型の一覧表 (C# リファレンス)
 次の表に、C# の値型をカテゴリ別に示します。  
@@ -60,10 +41,9 @@ ms.lasthandoff: 07/28/2017
 |[ushort](../../../csharp/language-reference/keywords/ushort.md)|符号なし、数値、整数||  
   
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [既定値の一覧表](../../../csharp/language-reference/keywords/default-values-table.md)   
- [値型](../../../csharp/language-reference/keywords/value-types.md)   
- [数値結果テーブルの書式設定](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [既定値の一覧表](../../../csharp/language-reference/keywords/default-values-table.md)  
+ [値型](../../../csharp/language-reference/keywords/value-types.md)  
+ [数値結果テーブルの書式設定](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md)  
  [型のリファレンス表](../../../csharp/language-reference/keywords/reference-tables-for-types.md)
-

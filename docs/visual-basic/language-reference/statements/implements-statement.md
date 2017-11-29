@@ -1,33 +1,32 @@
 ---
-title: "Implements Statement | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Implements"
-  - "Implements"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Implements statement, syntax"
-  - "Implements statement"
-  - "interface implementation, Implements statement"
+title: "Implements ステートメント"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.Implements
+- Implements
+helpviewer_keywords:
+- Implements statement [Visual Basic], syntax
+- Implements statement [Visual Basic]
+- interface implementation [Visual Basic], Implements statement
 ms.assetid: 1fafb83f-f55a-4215-8ea9-681e8622613d
-caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 1103305ffbf5425d9a6a6a09695437968642710d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Implements Statement
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-クラスまたは構造体の定義に実装する必要のある、1 つ以上のインターフェイス \(インターフェイス メンバー\) を指定します。  
+# <a name="implements-statement"></a>Implements ステートメント
+1 つ以上のインターフェイス、またはインターフェイス メンバーの場合、クラスに実装する必要がありますまたはが表示される構造体の定義を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 Implements interfacename [, ...]  
@@ -35,35 +34,35 @@ Implements interfacename [, ...]
 Implements interfacename.interfacemember [, ...]  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
  `interfacename`  
- 必ず指定します。  インターフェイスを指定します。このインターフェイスのプロパティ、プロシージャ、およびイベントが、クラスまたは構造体の対応するメンバーによって実装されます。  
+ 必須です。 プロパティ、プロシージャ、およびイベントは、クラスまたは構造体に対応するメンバーによって実装されるインターフェイスです。  
   
  `interfacemember`  
- 必ず指定します。  実装されるインターフェイスのメンバーを指定します。  
+ 必須です。 実装されるインターフェイスのメンバー。  
   
-## 解説  
- インターフェイスは、インターフェイスによってカプセル化されるメンバー \(プロパティ、プロシージャ、およびイベント\) を表すプロトタイプの集合体です。  インターフェイスには、メンバーの宣言だけが含まれます。これらのメンバーを実装するのは、クラスおよび構造体です。  詳細については、「[Interfaces](../../../visual-basic/programming-guide/language-features/interfaces/index.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ インターフェイスは、コレクションのプロトタイプのメンバー (プロパティ、プロシージャ、およびイベント) を表すインターフェイスをカプセル化します。 インターフェイスにメンバーの宣言のみを含めるクラスと構造体は、これらのメンバーを実装します。 詳細については、「[インターフェイス](../../../visual-basic/programming-guide/language-features/interfaces/index.md)」を参照してください。  
   
- `Implements` ステートメントは、`Class` ステートメントまたは `Structure` ステートメントの直後に指定する必要があります。  
+ `Implements`ステートメントの直後に続く必要があります、`Class`または`Structure`ステートメントです。  
   
- インターフェイスを実装するときは、インターフェイスで宣言されたメンバーをすべて実装する必要があります。  メンバーのいずれかを省略すると、構文エラーと見なされます。  個々のメンバーを実装するには、クラスまたは構造体にメンバーを宣言するときに、[Implements](../../../visual-basic/language-reference/statements/implements-clause.md) キーワードを \(`Implements` ステートメントとは別に\) 指定します。  詳細については、「[Interfaces](../../../visual-basic/programming-guide/language-features/interfaces/index.md)」を参照してください。  
+ インターフェイスを実装する場合は、インターフェイスで宣言されているすべてのメンバーを実装する必要があります。 任意のメンバーを省略することは、構文エラーであると見なされます。 指定する個々 のメンバーを実装する、 [Implements](../../../visual-basic/language-reference/statements/implements-clause.md)キーワード (これとは別、`Implements`ステートメント) クラスまたは構造体のメンバーを宣言する場合。 詳細については、「[インターフェイス](../../../visual-basic/programming-guide/language-features/interfaces/index.md)」を参照してください。  
   
- クラスは、プロパティおよびプロシージャを [Private](../../../visual-basic/language-reference/modifiers/private.md) で実装できますが、そうするとクラスのインスタンスをインターフェイスの型で宣言した変数にキャストしない限り、これらのメンバーにアクセスできなくなります。  
+ クラスに使用できる[プライベート](../../../visual-basic/language-reference/modifiers/private.md)プロパティと、プロシージャが、これらのメンバーの実装が変数に実装するクラスのインスタンスとして宣言されたインターフェイスの型のキャストによってのみアクセスできます。  
   
-## 使用例  
- `Implements` ステートメントを使って、インターフェイスのメンバーを実装するコード例を次に示します。  イベント、プロパティ、およびプロシージャを含むインターフェイスが、`ICustomerInfo` という名前で定義されています。  `customerInfo` クラスは、インターフェイスに定義されたすべてのメンバーを実装します。  
+## <a name="example"></a>例  
+ 次の例を使用する方法を示しています、`Implements`インターフェイスのメンバーを実装するステートメント。 という名前のインターフェイスを定義`ICustomerInfo`イベント、プロパティ、およびプロシージャを使用します。 クラス`customerInfo`インターフェイスで定義されているすべてのメンバーを実装します。  
   
  [!code-vb[VbVbalrStatements#33](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/implements-statement_1.vb)]  
   
- `customerInfo` クラスでは 1 行のソース コードに `Implements` ステートメントを定義し、そのクラスが `ICustomerInfo` インターフェイスのすべてのメンバーを実装することを示しています。  その後、クラスの各メンバーにおいて、メンバー宣言に `Implements` キーワードを指定し、そのインターフェイスのメンバーが実装されることを示しています。  
+ なおクラス`customerInfo`を使用して、`Implements`クラスが、一部のメンバーを実装することを示すために別のソース コード行のステートメントで、`ICustomerInfo`インターフェイスです。 クラス内の各メンバーを使用して、`Implements`そのインターフェイスのメンバーを実装することを示すために、メンバー宣言の一部としてキーワード。  
   
-## 使用例  
- 実装されたインターフェイスを使用する 2 つのプロシージャを次に示します。  インターフェイスの実装をテストするには、これらのプロシージャをプロジェクトに追加して、`testImplements` プロシージャを呼び出します。  
+## <a name="example"></a>例  
+ 次の 2 つの手順では、前の例で実装されるインターフェイスを使用する方法を示しています。 実装をテストするには、呼び出しをプロジェクトにこれらの手順を追加、`testImplements`プロシージャです。  
   
  [!code-vb[VbVbalrStatements#34](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/implements-statement_2.vb)]  
   
-## 参照  
- [Implements](../../../visual-basic/language-reference/statements/implements-clause.md)   
- [Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md)   
- [Interfaces](../../../visual-basic/programming-guide/language-features/interfaces/index.md)
+## <a name="see-also"></a>関連項目  
+ [Implements](../../../visual-basic/language-reference/statements/implements-clause.md)  
+ [Interface ステートメント](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [インターフェイス](../../../visual-basic/programming-guide/language-features/interfaces/index.md)

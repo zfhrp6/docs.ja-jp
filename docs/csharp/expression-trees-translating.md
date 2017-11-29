@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b453c591-acc6-4e08-8175-97e5bc65958e
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 602a17591d27ebfd098516453b9028bca37ad5e3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="translating-expression-trees"></a>式ツリーの変換
 
 [前回 -- 式の構築](expression-trees-building.md)
@@ -205,4 +203,3 @@ Computed sum: 10
 コードのセットを確認し、そのコードに必要な変更を加え、変更されたバージョンを実行することができます。 式ツリーは不変なので、既存のツリーのコンポーネントを使用して新しいツリーを作成できます。 その結果、変更した式ツリーの作成に必要なメモリ量が最小限に抑えられます。
 
 [次回 -- まとめ](expression-trees-summary.md)
-

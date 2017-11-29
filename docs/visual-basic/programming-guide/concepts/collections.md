@@ -1,47 +1,39 @@
 ---
-title: "コレクション (Visual Basic) |Microsoft ドキュメント"
+title: "コレクション (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: get-started-article
-dev_langs:
-- VB
 ms.assetid: 5f7749f3-aaf2-4319-b63c-bfa72e1e2b7a
-caps.latest.revision: 6
-author: stevehoag
-ms.author: shoag
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b3c8de3e22075d576f86bcd4eb599946740ebe16
-ms.lasthandoff: 03/13/2017
-
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: aac9ed655982ff4618e0bdb7fd2af16aaa546719
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="collections-visual-basic"></a>コレクション (Visual Basic)
 多くのアプリケーションで、関連するオブジェクトのグループの作成および管理が必要になります。 オブジェクトをグループ化するには、オブジェクトの配列を作成する方法と、オブジェクトのコレクションを作成する方法があります。  
   
- 配列は、数が固定されている厳密に型指定されたオブジェクトの作成および処理に最も適しています。 配列の概要については、次を参照してください。[配列](../../../visual-basic/programming-guide/language-features/arrays/index.md)します。  
+ 配列は、数が固定されている厳密に型指定されたオブジェクトの作成および処理に最も適しています。 配列の詳細については、「[配列](../../../visual-basic/programming-guide/language-features/arrays/index.md)」を参照してください。  
   
  コレクションは、オブジェクトのグループをより柔軟に処理できます。 配列の場合とは違って、コレクションで扱うオブジェクトのグループは、アプリケーションの変更に伴う必要に応じて動的に拡大および縮小できます。 コレクションによっては、コレクションに含まれるオブジェクトのキーを割り当てると、そのキーを使用してオブジェクトを迅速に取り出すことができます。  
   
  コレクションはクラスであるため、そのコレクションに要素を追加するには、事前にそのクラスのインスタンスを宣言する必要があります。  
   
- コレクションに&1; つのデータ型の要素が含まれている場合は、クラスでは、いずれかを使用、<xref:System.Collections.Generic?displayProperty=fullName>名前空間</xref:System.Collections.Generic?displayProperty=fullName>。 ジェネリック コレクションでは、タイプ セーフが強制されるため、他のデータ型を追加することはできません。 ジェネリック コレクションから要素を取得する場合は、データ型を判断したり、変換したりする必要はありません。  
+ 含まれる要素が 1 つのデータ型だけのコレクションの場合は、<xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間のクラスのいずれかを使用できます。 ジェネリック コレクションでは、タイプ セーフが強制されるため、他のデータ型を追加することはできません。 ジェネリック コレクションから要素を取得する場合は、データ型を判断したり、変換したりする必要はありません。  
   
 > [!NOTE]
->  このトピックの例に、 [Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)ステートメントを`System.Collections.Generic`と`System.Linq`名前空間。  
+>  このトピックの例については、含める[Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)のステートメント、`System.Collections.Generic`と`System.Linq`名前空間。  
   
  **このトピックの内容**  
   
--   [単純なコレクションを使用します。](#BKMK_SimpleCollection)  
+-   [単純なコレクションを使用する](#BKMK_SimpleCollection)  
   
 -   [コレクションの種類](#BKMK_KindsOfCollections)  
   
@@ -53,21 +45,21 @@ ms.lasthandoff: 03/13/2017
   
     -   [Visual Basic のコレクション クラス](#BKMK_VisualBasic)  
   
--   [キー/値ペアのコレクションを実装します。](#BKMK_KeyValuePairs)  
+-   [キーと値のペアのコレクションを実装する](#BKMK_KeyValuePairs)  
   
--   [LINQ を使用して、コレクションにアクセスするには](#BKMK_LINQ)  
+-   [LINQ を使用してコレクションにアクセスする](#BKMK_LINQ)  
   
 -   [コレクションを並べ替える](#BKMK_Sorting)  
   
--   [カスタム コレクションを定義します。](#BKMK_CustomCollection)  
+-   [カスタム コレクションを定義する](#BKMK_CustomCollection)  
   
 -   [反復子](#BKMK_Iterators)  
   
 <a name="BKMK_SimpleCollection"></a>
 ## <a name="using-a-simple-collection"></a>単純なコレクションを使用する  
- このセクションの例では、ジェネリックを使用して<xref:System.Collections.Generic.List%601>クラスで、この厳密に型指定されたオブジェクトの一覧を使用することができます</xref:System.Collections.Generic.List%601>。  
+ このセクションの例は、厳密に型指定されたオブジェクトの一覧を使用できる、ジェネリックの <xref:System.Collections.Generic.List%601> クラスを使用します。  
   
- 次の例は、文字列のリストを作成しを使用して、文字列を使用して反復処理し、[ごとにしています.次](../../../visual-basic/language-reference/statements/for-each-next-statement.md)ステートメントです。  
+ 次の例は、文字列のリストを作成しを使用して、文字列を反復処理し、[ごとにしています.[次へ]](../../../visual-basic/language-reference/statements/for-each-next-statement.md)ステートメントです。  
   
 ```vb  
 ' Create a list of strings.  
@@ -84,7 +76,7 @@ Next
 'Output: chinook coho pink sockeye  
 ```  
   
- 使用することができます、コレクションの内容が事前にわかっている場合、*コレクション初期化子*コレクションを初期化します。 詳細については、次を参照してください。[コレクション初期化子](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)します。  
+ コレクションのコンテンツが既知の場合、コレクションの初期化に*コレクション初期化子*を使用できます。 詳細については、「[コレクション初期化子](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)」を参照してください。  
   
  次の例は、コレクションへの要素の追加にコレクション初期化子を使用する以外、前の例と同じです。  
   
@@ -100,7 +92,7 @@ Next
 'Output: chinook coho pink sockeye  
 ```  
   
- 使用することができます、[にしています.次](../../../visual-basic/language-reference/statements/for-next-statement.md)ステートメントの代わりに、`For Each`コレクションを反復処理します。 インデックス位置によってコレクションの要素にアクセスすることで、これを実現します。 要素のインデックスは、0 から開始し、要素の数から 1 少ない値で終了します。  
+ 使用することができます、[をしています.[次へ]](../../../visual-basic/language-reference/statements/for-next-statement.md)ステートメントの代わりに、`For Each`コレクションを反復処理するステートメント。 インデックス位置によってコレクションの要素にアクセスすることで、これを実現します。 要素のインデックスは、0 から開始し、要素の数から 1 少ない値で終了します。  
   
  次の例は、`For…Next` の代わりに `For Each` を使用して、コレクションの要素を反復処理します。  
   
@@ -132,7 +124,7 @@ Next
 'Output: chinook pink sockeye  
 ```  
   
- 次の例では、ジェネリック リストからすべての要素を削除します。 代わりに、`For Each`ステートメント、[にしています.次](../../../visual-basic/language-reference/statements/for-next-statement.md)降順に反復処理するステートメントを使用します。 これは、<xref:System.Collections.Generic.List%601.RemoveAt%2A>メソッドが低いインデックス値を持つ削除された要素の後に要素をにより</xref:System.Collections.Generic.List%601.RemoveAt%2A>。  
+ 次の例では、ジェネリック リストからすべての要素を削除します。 代わりに、`For Each`ステートメント、[をしています.[次へ]](../../../visual-basic/language-reference/statements/for-next-statement.md)降順に反復処理するステートメントを使用します。 これは、<xref:System.Collections.Generic.List%601.RemoveAt%2A> メソッドを実行すると、削除された要素の後にある各要素のインデックス値が小さくなるためです。  
   
 ```vb  
 Dim numbers As New List(Of Integer) From  
@@ -155,7 +147,7 @@ numbers.ForEach(
 ' Output: 0 2 4 6 8  
 ```  
   
- で<xref:System.Collections.Generic.List%601>、独自のクラスを定義することも、</xref:System.Collections.Generic.List%601>要素の型の 次の例で、`Galaxy`クラスによって使用される、 <xref:System.Collections.Generic.List%601>、コードで定義されています</xref:System.Collections.Generic.List%601>。  
+ <xref:System.Collections.Generic.List%601> の要素の型は、独自のクラスでも定義できます。 次の例では、`Galaxy` が使用する <xref:System.Collections.Generic.List%601> クラスがコードに定義されます。  
   
 ```vb  
 Private Sub IterateThroughList()  
@@ -192,71 +184,71 @@ End Class
   
  このセクションでは、次の共通のコレクション クラスをいつくか説明します:  
   
--   @System.Collections.Generic クラス  
+-   <xref:System.Collections.Generic> クラス  
   
--   @System.Collections.Concurrent クラス  
+-   <xref:System.Collections.Concurrent> クラス  
   
--   @System.Collections クラス  
+-   <xref:System.Collections> クラス  
   
 -   Visual Basic の `Collection` クラス  
   
 <a name="BKMK_Generic"></a>
 ### <a name="systemcollectionsgeneric-classes"></a>System.Collections.Generic のクラス  
 
- ジェネリック コレクションを作成するにはクラスでは、いずれかを使用して、<xref:System.Collections.Generic>名前空間</xref:System.Collections.Generic>。 ジェネリック コレクションは、コレクション内のすべての項目が同じデータ型である場合に便利です。 ジェネリック コレクションには該当するデータ型しか追加できないため、厳密な型指定が適用されます。  
+ <xref:System.Collections.Generic> 名前空間の 1 つのクラスを使用すると、ジェネリック コレクションを作成できます。 ジェネリック コレクションは、コレクション内のすべての項目が同じデータ型である場合に便利です。 ジェネリック コレクションには該当するデータ型しか追加できないため、厳密な型指定が適用されます。  
   
- 次の表の頻繁に使用されるクラスの一覧、<xref:System.Collections.Generic?displayProperty=fullName>名前空間:</xref:System.Collections.Generic?displayProperty=fullName>  
+ 次のテーブルは <xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間でよく使用されるクラスの一覧です:  
   
 |クラス|説明|  
 |---|---|  
-|<xref:System.Collections.Generic.Dictionary%602></xref:System.Collections.Generic.Dictionary%602>|キーに基づいて編成された、キーと値のペアのコレクションを表します。|  
-|<xref:System.Collections.Generic.List%601></xref:System.Collections.Generic.List%601>|インデックスを使用してアクセスできる、オブジェクトの一覧を表します。 リストの検索、並べ替え、および変更のメソッドを提供します。|  
-|<xref:System.Collections.Generic.Queue%601></xref:System.Collections.Generic.Queue%601>|先入れ先出し (FIFO) のオブジェクトのコレクションを表します。|  
-|<xref:System.Collections.Generic.SortedList%602></xref:System.Collections.Generic.SortedList%602>|関連付けられたに基づいてキーにより並べ替えられたキー/値ペアのコレクションを表す<xref:System.Collections.Generic.IComparer%601>実装</xref:System.Collections.Generic.IComparer%601>。|  
-|<xref:System.Collections.Generic.Stack%601></xref:System.Collections.Generic.Stack%601>|後入れ先出し (LIFO) のオブジェクトのコレクションを表します。|  
+|<xref:System.Collections.Generic.Dictionary%602>|キーに基づいて編成された、キーと値のペアのコレクションを表します。|  
+|<xref:System.Collections.Generic.List%601>|インデックスを使用してアクセスできる、オブジェクトの一覧を表します。 リストの検索、並べ替え、および変更のメソッドを提供します。|  
+|<xref:System.Collections.Generic.Queue%601>|先入れ先出し (FIFO) のオブジェクトのコレクションを表します。|  
+|<xref:System.Collections.Generic.SortedList%602>|関連付けられた <xref:System.Collections.Generic.IComparer%601> 実装に基づいて、キーにより並べ替えられた、キーと値のペアのコレクションを表します。|  
+|<xref:System.Collections.Generic.Stack%601>|後入れ先出し (LIFO) のオブジェクトのコレクションを表します。|  
   
- 詳細については、次を参照してください[よく使用されるコレクション型](http://msdn.microsoft.com/library/f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55)、[コレクション クラスの選択](../../../standard/collections/selecting-a-collection-class.md)、 <xref:System.Collections.Generic?displayProperty=fullName>.</xref:System.Collections.Generic?displayProperty=fullName> 。  
+ 詳細については、「[一般的に使用されるコレクション型](../../../standard/collections/commonly-used-collection-types.md)」、「[コレクション クラスの選択](../../../standard/collections/selecting-a-collection-class.md)」、「<xref:System.Collections.Generic?displayProperty=nameWithType>」を参照してください。  
   
 <a name="BKMK_Concurrent"></a>
 ### <a name="systemcollectionsconcurrent-classes"></a>System.Collections.Concurrent のクラス   
- .NET Framework 4 またはそれ以降のコレクションで、<xref:System.Collections.Concurrent>名前空間は、複数のスレッドからコレクション項目にアクセスするための効率的なスレッド セーフな操作を提供します</xref:System.Collections.Concurrent>。  
+ .NET Framework 4 以降では、<xref:System.Collections.Concurrent> 名前空間のコレクションによって、複数のスレッドからコレクション項目にアクセスするための効率的なスレッド セーフ操作が可能になります。  
   
- 内のクラス、<xref:System.Collections.Concurrent>名前空間は、対応する型の代わりに使用する必要があります、<xref:System.Collections.Generic?displayProperty=fullName>と<xref:System.Collections?displayProperty=fullName>に、複数のスレッドがコレクションを同時にアクセスするたびに、名前空間</xref:System.Collections?displayProperty=fullName></xref:System.Collections.Generic?displayProperty=fullName></xref:System.Collections.Concurrent>。 詳細については、次を参照してください[スレッド セーフなコレクション](../../../standard/collections/threadsafe/index.md) <xref:System.Collections.Concurrent>.</xref:System.Collections.Concurrent> 。  
+ <xref:System.Collections.Concurrent> 名前空間のクラスは、複数のスレッドがコレクションに同時にアクセスするときに、<xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間および <xref:System.Collections?displayProperty=nameWithType> 名前空間の対応する型の代わりに使用する必要があります。 詳しくは、「[スレッド セーフなコレクション](../../../standard/collections/thread-safe/index.md)」と「<xref:System.Collections.Concurrent>」を参照してください。  
   
- 含まれるいくつかのクラス、<xref:System.Collections.Concurrent>名前空間は<xref:System.Collections.Concurrent.BlockingCollection%601>、 <xref:System.Collections.Concurrent.ConcurrentDictionary%602>、 <xref:System.Collections.Concurrent.ConcurrentQueue%601>、 <xref:System.Collections.Concurrent.ConcurrentStack%601>.</xref:System.Collections.Concurrent.ConcurrentStack%601> </xref:System.Collections.Concurrent.ConcurrentQueue%601> </xref:System.Collections.Concurrent.ConcurrentDictionary%602> </xref:System.Collections.Concurrent.BlockingCollection%601> </xref:System.Collections.Concurrent>  
+ <xref:System.Collections.Concurrent> 名前空間には、<xref:System.Collections.Concurrent.BlockingCollection%601>、<xref:System.Collections.Concurrent.ConcurrentDictionary%602>、<xref:System.Collections.Concurrent.ConcurrentQueue%601>、および <xref:System.Collections.Concurrent.ConcurrentStack%601> などのクラスがあります。  
   
 <a name="BKMK_Collections"></a>
 ### <a name="systemcollections-classes"></a>System.Collections のクラス    
- 内のクラス、<xref:System.Collections?displayProperty=fullName>型のオブジェクトが、具体的には型指定されたオブジェクトと名前空間が要素を格納しないで`Object`</xref:System.Collections?displayProperty=fullName>。  
+ <xref:System.Collections?displayProperty=nameWithType> 名前空間のクラスでは、要素は、固有の型のオブジェクトとしてではなく `Object` 型のオブジェクトとして格納されます。  
   
- 可能であれば、ジェネリック コレクションを使用する必要があります、<xref:System.Collections.Generic?displayProperty=fullName>名前空間または<xref:System.Collections.Concurrent>従来型の代わりに名前空間、`System.Collections`名前空間</xref:System.Collections.Concurrent></xref:System.Collections.Generic?displayProperty=fullName>。  
+ できる限り、<xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間の従来の型の代わりに、<xref:System.Collections.Concurrent> 名前空間または `System.Collections` 名前空間のジェネリック コレクションを使用します。  
   
  次のテーブルは `System.Collections` 名前空間でよく使用されるクラスの一覧です:  
   
 |クラス|説明|  
 |---|---|  
-|<xref:System.Collections.ArrayList></xref:System.Collections.ArrayList>|必要に応じてサイズが動的に拡大されるオブジェクトの配列を表します。|  
-|<xref:System.Collections.Hashtable></xref:System.Collections.Hashtable>|キーのハッシュ コードに基づいて編成された、キーと値のペアのコレクションを表します。|  
-|<xref:System.Collections.Queue></xref:System.Collections.Queue>|先入れ先出し (FIFO) のオブジェクトのコレクションを表します。|  
-|<xref:System.Collections.Stack></xref:System.Collections.Stack>|後入れ先出し (LIFO) のオブジェクトのコレクションを表します。|  
+|<xref:System.Collections.ArrayList>|必要に応じてサイズが動的に拡大されるオブジェクトの配列を表します。|  
+|<xref:System.Collections.Hashtable>|キーのハッシュ コードに基づいて編成された、キーと値のペアのコレクションを表します。|  
+|<xref:System.Collections.Queue>|先入れ先出し (FIFO) のオブジェクトのコレクションを表します。|  
+|<xref:System.Collections.Stack>|後入れ先出し (LIFO) のオブジェクトのコレクションを表します。|  
   
- <xref:System.Collections.Specialized>名前空間には、文字列専用のコレクションやリンク リスト、ハイブリッド ディクショナリなどの厳密に型指定された専用のコレクション クラスが用意されています</xref:System.Collections.Specialized>。  
+ <xref:System.Collections.Specialized> 名前空間には、文字列専用のコレクションやリンク リスト、ハイブリッド ディクショナリなど、厳密に型指定された専用のコレクション クラスが用意されています。  
 
 <a name="BKMK_VisualBasic"></a> 
 ###  <a name="visual-basic-collection-class"></a>Visual Basic のコレクション クラス  
- Visual Basic を使用する<xref:Microsoft.VisualBasic.Collection>クラスや数値インデックスを使用して、項目コレクションのアクセスを`String`キー</xref:Microsoft.VisualBasic.Collection> 。 キーを指定してもしなくても、項目をコレクション オブジェクトに追加できます。 キーを使わずに項目を追加した場合は、その項目にアクセスするときに数値インデックスを使う必要があります。  
+ 数値インデックスまたは <xref:Microsoft.VisualBasic.Collection> キーを使用したコレクション項目にアクセスするには、Visual Basic の `String` のクラスを使用できます。 キーを指定してもしなくても、項目をコレクション オブジェクトに追加できます。 キーを使わずに項目を追加した場合は、その項目にアクセスするときに数値インデックスを使う必要があります。  
   
  Visual Basic の `Collection` クラスは、そのすべての要素を `Object` 型として保存するため、任意のデータ型の項目を追加できます。 不適切なデータ型が追加されないようにする保護機能はありません。  
   
  Visual Basic の `Collection` クラスを使用すると、コレクション内の最初の項目はインデックス 1 となります。 これは、インデックスが 0 から開始される .NET Framework のコレクション クラスとは異なります。  
   
- 可能であれば、ジェネリック コレクションを使用する必要があります、<xref:System.Collections.Generic?displayProperty=fullName>名前空間または<xref:System.Collections.Concurrent>Visual Basic ではなく名前空間`Collection`クラス</xref:System.Collections.Concurrent></xref:System.Collections.Generic?displayProperty=fullName>  
+ できる限り、Visual Basic の <xref:System.Collections.Generic?displayProperty=nameWithType> クラスの代わりに、<xref:System.Collections.Concurrent> 名前空間または `Collection` 名前空間のジェネリック コレクションを使用します。  
   
- 詳細については、 <xref:Microsoft.VisualBasic.Collection>。</xref:Microsoft.VisualBasic.Collection>を参照してください。  
+ 詳細については、「<xref:Microsoft.VisualBasic.Collection>」を参照してください。  
   
 <a name="BKMK_KeyValuePairs"></a>
 ## <a name="implementing-a-collection-of-keyvalue-pairs"></a>キーと値のペアのコレクションを実装する   
- <xref:System.Collections.Generic.Dictionary%602>ジェネリック コレクションでは、各要素のキーを使用して、コレクション内の要素にアクセスすることができます</xref:System.Collections.Generic.Dictionary%602>。 ディクショナリに追加される各エントリは、値とその値に関連付けられたキーで構成されます。 `Dictionary` クラスはハッシュ テーブルとして実装されているため、キーを使用した値の取得は非常に高速になります。  
+ <xref:System.Collections.Generic.Dictionary%602> ジェネリック コレクションでは、各要素のキーを使用してコレクションの要素にアクセスできます。 ディクショナリに追加される各エントリは、値とその値に関連付けられたキーで構成されます。 `Dictionary` クラスはハッシュ テーブルとして実装されているため、キーを使用した値の取得は非常に高速になります。  
   
  次の例では `Dictionary` のコレクションを作成し、`For Each` ステートメントを使用してディクショナリを反復処理します。  
   
@@ -322,7 +314,7 @@ Private Function BuildDictionary2() As Dictionary(Of String, Element)
 End Function  
 ```  
   
- 次の例では、<xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A>メソッドおよび<xref:System.Collections.Generic.Dictionary%602.Item%2A>のプロパティ`Dictionary`キーによって項目をすばやく検索します</xref:System.Collections.Generic.Dictionary%602.Item%2A></xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A>。 `Item`プロパティでは、項目にアクセスすることができます、`elements`を使用してコレクション、 `elements(symbol)` Visual basic コードです。  
+ 次の例では、キーによって項目をすばやく検索するために、<xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A> の <xref:System.Collections.Generic.Dictionary%602.Item%2A> メソッドと `Dictionary` プロパティを使用します。 `Item`プロパティでは、項目にアクセスすることができます、`elements`コレクションを使用して、 `elements(symbol)` Visual basic コードです。  
   
 ```vb  
 Private Sub FindInDictionary(ByVal symbol As String)  
@@ -337,7 +329,7 @@ Private Sub FindInDictionary(ByVal symbol As String)
 End Sub  
 ```  
   
- 代わりに次の例を使用して、<xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A>メソッドがキーによって項目をすばやく検索します</xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A>。  
+ 次の例では、キーによって項目をすばやく検索するために、<xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> メソッドを代わりに使用します。  
   
 ```vb  
 Private Sub FindInDictionary2(ByVal symbol As String)  
@@ -354,7 +346,7 @@ End Sub
   
 <a name="BKMK_LINQ"></a> 
 ##  <a name="using-linq-to-access-a-collection"></a>LINQ を使用してコレクションにアクセスする  
- 統合言語クエリ (LINQ) を使用してコレクションにアクセスできます。 LINQ クエリは、フィルター処理、並べ替え、およびグループ化の機能を提供します。 詳細については、次を参照してください。 [Visual Basic における LINQ の概要](../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)します。  
+ 統合言語クエリ (LINQ) を使用してコレクションにアクセスできます。 LINQ クエリは、フィルター処理、並べ替え、およびグループ化の機能を提供します。 詳細については、次を参照してください。 [Visual Basic における LINQ の概要](../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)です。  
   
  次の例では、ジェネリック `List` に対して LINQ クエリを実行します。 LINQ クエリは、結果が格納されている別のコレクションを戻します。  
   
@@ -400,11 +392,11 @@ End Class
   
  <a name="BKMK_Sorting"></a> 
 ## <a name="sorting-a-collection"></a>コレクションを並べ替える  
- 次の例では、コレクションを並べ替えるための手順を示しています。 この例のインスタンスの並べ替え、 `Car` <xref:System.Collections.Generic.List%601>.</xref:System.Collections.Generic.List%601>に格納されているクラス `Car`クラスが実装する、<xref:System.IComparable%601>を必要とするインターフェイス、<xref:System.IComparable%601.CompareTo%2A>メソッドを実装する</xref:System.IComparable%601.CompareTo%2A></xref:System.IComparable%601>。  
+ 次の例では、コレクションを並べ替えるための手順を示しています。 この例は、`Car` に格納されている <xref:System.Collections.Generic.List%601> クラスのインスタンスの並べ替えを実行します。 `Car` クラスは、<xref:System.IComparable%601> のメソッドの実装を必要とする <xref:System.IComparable%601.CompareTo%2A> インターフェイスを実装します。  
   
- 呼び出すたび、<xref:System.IComparable%601.CompareTo%2A>メソッドは、並べ替えに使用される単一の比較</xref:System.IComparable%601.CompareTo%2A>。 `CompareTo` メソッドのユーザーが作成したコードは、現在のオブジェクトと別のオブジェクトとの各比較の値を戻します。 現在のオブジェクトが別のオブジェクトよりも小さい場合はゼロ未満の値を、大きい場合はゼロ以上の値を、等しい場合はゼロを戻します。 これによって、より大きい、より小さい、等しい、の条件をコードに定義することができます。  
+ <xref:System.IComparable%601.CompareTo%2A> メソッドに対する各呼び出しは、並べ替えに使用される単一の比較を実行します。 `CompareTo` メソッドのユーザーが作成したコードは、現在のオブジェクトと別のオブジェクトとの各比較の値を戻します。 現在のオブジェクトが別のオブジェクトよりも小さい場合はゼロ未満の値を、大きい場合はゼロ以上の値を、等しい場合はゼロを戻します。 これによって、より大きい、より小さい、等しい、の条件をコードに定義することができます。  
   
- `ListCars` のメソッドでは、`cars.Sort()` ステートメントがリストを並べ替えます。 この呼び出しを<xref:System.Collections.Generic.List%601.Sort%2A>のメソッド、<xref:System.Collections.Generic.List%601>により、`CompareTo`に対して自動的に呼び出されるメソッド、`Car`内のオブジェクト、 `List`</xref:System.Collections.Generic.List%601> </xref:System.Collections.Generic.List%601.Sort%2A> 。  
+ `ListCars` のメソッドでは、`cars.Sort()` ステートメントがリストを並べ替えます。 <xref:System.Collections.Generic.List%601.Sort%2A> の <xref:System.Collections.Generic.List%601> メソッドへの呼び出しによって、`CompareTo` メソッドは `Car` 内の `List` オブジェクトに自動的に呼び出されます。  
   
 ```vb  
 Public Sub ListCars()  
@@ -478,13 +470,13 @@ End Class
   
 <a name="BKMK_CustomCollection"></a> 
 ## <a name="defining-a-custom-collection"></a>カスタム コレクションを定義する  
- コレクションを定義するには実装することによって、<xref:System.Collections.Generic.IEnumerable%601>または<xref:System.Collections.IEnumerable>インターフェイス</xref:System.Collections.IEnumerable></xref:System.Collections.Generic.IEnumerable%601>。 詳細については、次を参照してください。[コレクションを列挙する](http://msdn.microsoft.com/en-us/71807ea7-9180-48a6-916f-35a5251d477f)です。  
+ <xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Collections.IEnumerable> のインターフェイスを実装してコレクションを定義できます。 詳細については、次を参照してください。[コレクションを列挙して](http://msdn.microsoft.com/en-us/71807ea7-9180-48a6-916f-35a5251d477f)です。  
   
- カスタム コレクションを定義するには、通常に説明されている .NET Framework に含まれているコレクションを使用するように[コレクションの種類](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)このトピックの前です。  
+ カスタム コレクションを定義できますが、通常は、.NET Framework に含まれるコレクションを使用することが推奨されます。これについては、このトピックの[コレクションの種類](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)で既に説明されています。  
   
- 次の例は、`AllColors` という名前のカスタム コレクション クラスを定義します。 このクラスは、実装、<xref:System.Collections.IEnumerable>を必要とするインターフェイス、<xref:System.Collections.IEnumerable.GetEnumerator%2A>メソッドを実装する</xref:System.Collections.IEnumerable.GetEnumerator%2A></xref:System.Collections.IEnumerable>。  
+ 次の例は、`AllColors` という名前のカスタム コレクション クラスを定義します。 このクラスは、<xref:System.Collections.IEnumerable> メソッドの実装を必要とする <xref:System.Collections.IEnumerable.GetEnumerator%2A> インターフェイスを実装します。  
   
- `GetEnumerator` メソッドは、`ColorEnumerator` クラスのインスタンスを戻します。 `ColorEnumerator`実装して、<xref:System.Collections.IEnumerator>を必要とするインターフェイス、<xref:System.Collections.IEnumerator.Current%2A>プロパティには、<xref:System.Collections.IEnumerator.MoveNext%2A>メソッド、および<xref:System.Collections.IEnumerator.Reset%2A>メソッドを実装する</xref:System.Collections.IEnumerator.Reset%2A></xref:System.Collections.IEnumerator.MoveNext%2A></xref:System.Collections.IEnumerator.Current%2A></xref:System.Collections.IEnumerator>。  
+ `GetEnumerator` メソッドは、`ColorEnumerator` クラスのインスタンスを戻します。 `ColorEnumerator` は、<xref:System.Collections.IEnumerator> プロパティ、<xref:System.Collections.IEnumerator.Current%2A> メソッド、および <xref:System.Collections.IEnumerator.MoveNext%2A> メソッドの実装を必要とする <xref:System.Collections.IEnumerator.Reset%2A> インターフェイスを実装します。  
   
 ```vb  
 Public Sub ListColors()  
@@ -556,13 +548,13 @@ End Class
   
 <a name="BKMK_Iterators"></a>
 ##  <a name="iterators"></a>反復子  
- *反復子*コレクションに対するカスタム イテレーションを実行するために使用します。 反復子は、メソッドまたは `get` アクセサーのいずれかです。 反復子を使用して、 [Yield](../../../visual-basic/language-reference/statements/yield-statement.md)ステートメントを一度に&1; つのコレクションの各要素を返します。  
+ *反復子*は、コレクションに対するカスタム イテレーションを実行するために使用されます。 反復子は、メソッドまたは `get` アクセサーのいずれかです。 反復子を使用して、 [Yield](../../../visual-basic/language-reference/statements/yield-statement.md)ステートメントを一度にいずれかのコレクションの各要素を返します。  
   
- 使用して、反復子を呼び出す、[ごとにしています.次](../../../visual-basic/language-reference/statements/for-each-next-statement.md)ステートメントです。 `For Each` ループの各イテレーションは、反復子を呼び出します。 ときに、`Yield`反復子でステートメントに達すると、式が返され、コードの現在位置が保持されます。 次回、反復子が呼び出されると、この位置から実行が再開されます。  
+ 使用して、反復子を呼び出す、[ごとにしています.[次へ]](../../../visual-basic/language-reference/statements/for-each-next-statement.md)ステートメントです。 `For Each` ループの各イテレーションは、反復子を呼び出します。 `Yield` ステートメントが反復子に到達すると、式が戻され、コードの現在の位置が保持されます。 次回、反復子が呼び出されると、この位置から実行が再開されます。  
   
- 詳細については、次を参照してください。[反復子 (Visual Basic)](../../../visual-basic/programming-guide/concepts/iterators.md)します。  
+ 詳細については、次を参照してください。[反復子 (Visual Basic)](../../../visual-basic/programming-guide/concepts/iterators.md)です。  
   
- 次の例は、Iterator メソッドを使用します。 Iterator メソッドには、`Yield`ステートメント内にある、[にしています.次](../../../visual-basic/language-reference/statements/for-next-statement.md)ループします。 `ListEvenNumbers`メソッドは、の各反復処理、`For Each`ステートメント本体を次の手順を実行する反復子メソッドの呼び出しを作成`Yield`ステートメントです。  
+ 次の例は、反復子メソッドを使用します。 Iterator メソッドには、`Yield`内にあるステートメント、[をしています.[次へ]](../../../visual-basic/language-reference/statements/for-next-statement.md)ループします。 `ListEvenNumbers` メソッドでは、`For Each` ステートメント本文の各イテレーションが、反復子メソッドの呼び出しを作成し、これが次の `Yield` ステートメントに続行されます。  
   
 ```vb  
 Public Sub ListEvenNumbers()  
@@ -587,13 +579,13 @@ End Function
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [コレクション初期化子](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)   
- [プログラミングの概念 (Visual Basic)](../../../visual-basic/programming-guide/concepts/index.md)   
- [Option Strict ステートメント](../../../visual-basic/language-reference/statements/option-strict-statement.md)   
- [LINQ to Objects (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)   
- [Parallel LINQ (PLINQ)](http://msdn.microsoft.com/library/3d4d0cd3-bde4-490b-99e7-f4e41be96455)   
- [コレクションとデータ構造体](../../../standard/collections/index.md)   
- [作成して、コレクションの操作](http://msdn.microsoft.com/en-us/2065398e-eb1a-4821-9188-75f16e42e069)   
- [コレクション クラスの選択](../../../standard/collections/selecting-a-collection-class.md)   
- [比較とコレクション内で並べ替え](../../../standard/collections/comparisons-and-sorts-within-collections.md)   
+ [コレクション初期化子](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)  
+ [プログラミングの概念 (Visual Basic)](../../../visual-basic/programming-guide/concepts/index.md)  
+ [Option Strict ステートメント](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [LINQ to Objects (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
+ [Parallel LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)  
+ [コレクションとデータ構造体](../../../standard/collections/index.md)  
+ [作成して、コレクションの操作](http://msdn.microsoft.com/en-us/2065398e-eb1a-4821-9188-75f16e42e069)  
+ [コレクション クラスの選択](../../../standard/collections/selecting-a-collection-class.md)  
+ [コレクション内での比較と並べ替え](../../../standard/collections/comparisons-and-sorts-within-collections.md)  
  [ジェネリック コレクションを使用する状況](../../../standard/collections/when-to-use-generic-collections.md)

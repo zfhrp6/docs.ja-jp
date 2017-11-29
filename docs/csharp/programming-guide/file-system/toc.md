@@ -6,5 +6,5 @@
 ## [方法: ファイル操作の [進行状況] ダイアログ ボックスを表示する](how-to-provide-a-progress-dialog-box-for-file-operations.md)
 ## [方法: テキスト ファイルに書き込む](how-to-write-to-a-text-file.md)
 ## [方法: テキスト ファイルから読み込む](how-to-read-from-a-text-file.md)
-## [方法: テキスト ファイルを一度に&1; 行読み込む (Visual C#)](how-to-read-a-text-file-one-line-at-a-time.md)
+## [方法: テキスト ファイルを一度に 1 行読み込む (Visual C#)](how-to-read-a-text-file-one-line-at-a-time.md)
 ## [方法: レジストリにキーを作成する (Visual C#)](how-to-create-a-key-in-the-registry.md)

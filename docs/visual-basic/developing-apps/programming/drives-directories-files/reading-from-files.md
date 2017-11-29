@@ -1,45 +1,27 @@
 ---
 title: "Visual Basic でのファイルの読み取り"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - data [Visual Basic], reading from files
 - I/O [Visual Basic], reading from files
 - examples [Visual Basic], reading from files
-- files, reading
-- reading files
+- files [Visual Basic], reading
+- reading files [Visual Basic]
 ms.assetid: ad831a1b-7d01-4f07-a47b-799f3037df19
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 29eddd4abbadd2b4dfa12c19213612f4822bbb3f
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 298f821cc2dd6e8152db71206669b243112b6a6a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
 # <a name="reading-from-files-in-visual-basic"></a>Visual Basic でのファイルの読み取り
 このセクションでは、ファイルからの読み取りに関連するタスクを実行する方法について説明します。  
@@ -91,4 +73,3 @@ ms.lasthandoff: 07/28/2017
   
  [チュートリアル : .NET Framework のメソッドによるファイル操作](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
  ファイルとディレクトリで [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] メソッドを使用する方法について説明します。
-

@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 20d5eb10-7381-47b9-ad90-f1cc895aa27e
+ms.openlocfilehash: 7b7e321e6554818924a8a2b68afa4c787807bcba
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 155804dd212d8eda8d81ce7e296a9fe308e9c69b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/21/2017
 ---
-
 # <a name="expressions"></a>式
 
 *式*は、*オペランド*と*演算子*で構成されます。 式の演算子は、オペランドに適用する演算を表します。 演算子の例として、`+`、`-`、`*`、`/`、および `new` などがあります。 オペランドの例としては、リテラル、フィールド、ローカル変数、式などがあります。
@@ -45,7 +43,7 @@ ms.lasthandoff: 07/28/2017
     - `new T(...){...}`: 初期化子を使用したオブジェクトの作成
     - `new {...}`:  匿名オブジェクト初期化子
     - `new T[...]`: 配列の作成
-    - `typeof(T)`: 取得 @System.Type のオブジェクト`T`
+    - `typeof(T)`: `T` の <xref:System.Type> オブジェクトの取得
     - `checked(x)`: チェック済みコンテキストで式を評価する
     - `unchecked(x)`: 未チェックのコンテキストで式を評価する
     - `default(T)`: `T` 型の既定値の取得
@@ -102,4 +100,3 @@ ms.lasthandoff: 07/28/2017
 >[!div class="step-by-step"]
 [前へ](types-and-variables.md)
 [次へ](statements.md)
-

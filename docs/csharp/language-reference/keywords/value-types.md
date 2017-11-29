@@ -1,42 +1,23 @@
 ---
 title: "値型 (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- cs.valuetypes
-dev_langs:
-- CSharp
+f1_keywords: cs.valuetypes
 helpviewer_keywords:
 - value types [C#]
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 281b811f2a8a1f2c364405b563f9f103899b492c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 7500426846562dd7f3bbb8ea99f300a3e8a26546
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="value-types-c-reference"></a>値型 (C# リファレンス)
 値型は、次の 2 つの主要なカテゴリで構成されます。  
@@ -62,7 +43,7 @@ ms.lasthandoff: 07/28/2017
 ## <a name="main-features-of-value-types"></a>値型の主な機能  
  値型に基づく変数には、値が直接含まれます。 ある値型の変数を別の変数に代入することで、含まれている値がコピーされます。 これは、オブジェクトそのものではなく、参照をオブジェクトにコピーする、参照型の変数の代入とは異なります。  
   
- すべての値型が <xref:System.ValueType?displayProperty=fullName> から暗黙的に派生されます。  
+ すべての値型が <xref:System.ValueType?displayProperty=nameWithType> から暗黙的に派生されます。  
   
  参照型とは異なり、値型から新しい型を派生することはできません。 ただし、参照型の場合と同様に、構造体はインターフェイスを実装できます。  
   
@@ -71,7 +52,7 @@ ms.lasthandoff: 07/28/2017
  各値型には、その型の既定値を初期化する暗黙の既定のコンストラクターがあります。 値型の既定値の詳細については、「[既定値の一覧表](../../../csharp/language-reference/keywords/default-values-table.md)」を参照してください。  
   
 ## <a name="main-features-of-simple-types"></a>単純型の主な機能  
- C# 言語に不可欠なすべての単純型は、.NET Framework システム型のエイリアスです。 たとえば、[int](../../../csharp/language-reference/keywords/int.md) は <xref:System.Int32?displayProperty=fullName> のエイリアスです。 エイリアスの完全な一覧については、「[組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)」を参照してください。  
+ C# 言語に不可欠なすべての単純型は、.NET Framework システム型のエイリアスです。 たとえば、[int](../../../csharp/language-reference/keywords/int.md) は <xref:System.Int32?displayProperty=nameWithType> のエイリアスです。 エイリアスの完全な一覧については、「[組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)」を参照してください。  
   
  オペランドがすべて単純型の定数式は、コンパイル時に評価されます。  
   
@@ -123,10 +104,9 @@ Point p = new Point(); // Invoke default constructor for the struct.
  数値型の出力の書式設定については、「[数値結果テーブルの書式設定](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [型](../../../csharp/language-reference/keywords/types.md)   
- [型のリファレンス表](../../../csharp/language-reference/keywords/reference-tables-for-types.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
+ [型](../../../csharp/language-reference/keywords/types.md)  
+ [型のリファレンス表](../../../csharp/language-reference/keywords/reference-tables-for-types.md)  
  [参照型](../../../csharp/language-reference/keywords/reference-types.md)
-

@@ -7,16 +7,14 @@ manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
 ms.assetid: 2bf0c397-13fb-4f68-bc2b-531c6c88a167
+ms.openlocfilehash: 376bd461bfeb51653471fd374a2215aa15872976
+ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9ce4a4ca62bb476b2414ec8b93d5633faca53b59
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="handle-exceptions-in-query-expressions"></a>クエリ式の例外の処理
 
@@ -28,7 +26,7 @@ ms.lasthandoff: 08/11/2017
 
  次の例では、例外処理コードをクエリ式の外側に移動する方法を説明します。 この方法は、メソッドがクエリのローカル変数に依存しない場合にのみ可能です。  
   
- [!code-cs[csProgGuideLINQ#10](../../../samples/snippets/csharp/concepts/linq/how-to-handle-exceptions-in-query-expressions_1.cs)]  
+ [!code-csharp[csProgGuideLINQ#10](../../../samples/snippets/csharp/concepts/linq/how-to-handle-exceptions-in-query-expressions_1.cs)]  
   
 ## <a name="example"></a>例 
 
@@ -36,9 +34,8 @@ ms.lasthandoff: 08/11/2017
   
  `try` ブロックは `foreach` ループを囲み、クエリ自体を囲むのではありません。 その理由は、`foreach` ループがクエリの実際の実行ポイントであるためです。 詳細については、「[LINQ クエリの概要](../programming-guide/concepts/linq/introduction-to-linq-queries.md)」を参照してください。  
   
- [!code-cs[csProgGuideLINQ#12](../../../samples/snippets/csharp/concepts/linq/how-to-handle-exceptions-in-query-expressions_2.cs)]  
+ [!code-csharp[csProgGuideLINQ#12](../../../samples/snippets/csharp/concepts/linq/how-to-handle-exceptions-in-query-expressions_2.cs)]  
   
 
 ## <a name="see-also"></a>関連項目  
  [LINQ クエリ式](index.md)
-

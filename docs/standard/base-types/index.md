@@ -13,16 +13,15 @@ helpviewer_keywords:
 - base types
 - type system, base types
 ms.assetid: 028d0ce8-ebc2-4a88-a16f-17508f6d0bd6
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: d6b1c760fb8667850d4f4e88ca8fe5bcf0b0a662
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="working-with-base-types-in-net"></a>.NET における基本型の操作
 このセクションでは、書式設定、変換、および一般的な操作を含む、.NET 基本型の操作について説明します。  
@@ -46,4 +45,3 @@ ms.lasthandoff: 09/05/2017
   
  [日付、時刻、およびタイム ゾーン](../../../docs/standard/datetime/index.md)  
  タイム ゾーン対応のアプリケーションでのタイム ゾーンの処理方法とタイム ゾーンの変換について説明します。
-

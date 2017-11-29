@@ -1,40 +1,19 @@
 ---
 title: Visual Basic
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - programming, Visual Basic
 - Visual Basic
-ms.assetid: 5cc578fe-d9e5-4015-937d-b34b83207072
-caps.latest.revision: 37
-author: dotnet-bot
-ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+author: rpetrusha
+ms.author: ronpet
+ms.openlocfilehash: 38ccf61b488a40d100895d0dd2bb4bdecca7eba5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 64a6edc4c58e96132f20848a066542be57e8667f
-ms.openlocfilehash: cae4d2571bc9bde6239e1324dbe4e725ef5e12c7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="visual-basic-guide"></a>Visual Basic のガイド
 
@@ -42,10 +21,10 @@ Visual Basic は、タイプ セーフなオブジェクト指向アプリケー
   
  この世代の Visual Basic でも、これまでに続いてすばやく簡単な方法で .NET Framework ベースのアプリケーションを作成できます。  
   
- Visual Basic をまだお持ちでない場合は、Visual Basic が含まれている Visual Studio のバージョンを [Visual Studio](https://www.visualstudio.com/products/free-developer-offers-vs) サイトから無料で入手することができます。  
+ Visual Basic をまだお持ちでない場合は、Visual Basic が含まれている Visual Studio のバージョンを [Visual Studio](https://www.visualstudio.com/products/downloads) サイトから無料で入手することができます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [はじめに](../visual-basic/getting-started/index.md)   
+ [はじめに](../visual-basic/getting-started/index.md)  
  この製品の新機能および各種エディションで使用できる機能の一覧を示し、製品について簡単に説明します。  
    
  [プログラミングの概念](../visual-basic/programming-guide/concepts/index.md) Visual Basic プログラマにとって最も役に立つ言語の概念を紹介します。
@@ -77,4 +56,3 @@ Visual Basic は、タイプ セーフなオブジェクト指向アプリケー
   
  [.NET Framework クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkID=227195)  
  Microsoft [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] SDK に含まれるクラス、インターフェイス、および値型のライブラリを紹介します。
-

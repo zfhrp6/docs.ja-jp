@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: 617310e7-336b-4864-8dab-7e2021512929
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 5c8b6e2d14a14724a040bed5cc58c5ffef3ce520
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="samples-and-tutorials"></a>サンプルおよびチュートリアル
 
 .NET ドキュメントには、.NET について学習できるサンプルとチュートリアルが含まれています。 ここでは、.NET Core、ASP.NET Core、C# のサンプルを検索、表示、ダウンロードする方法について説明します。 F# プログラミング言語の学習に最適なリソースは [F# Foundation のサイト](http://fsharp.org/learn.html)にあります。 オンライン コード エディターを使用した C# の学習に関心がある場合は、[インタラクティブ チュートリアル](http://go.microsoft.com/fwlink/p/?LinkId=817234)をお試しください。 サンプル コードの表示とダウンロード方法については、「[サンプルの表示とダウンロード](#viewing-and-downloading-samples)」セクションをご覧ください。
@@ -117,4 +115,3 @@ ms.lasthandoff: 07/28/2017
    * [Visual Studio](https://www.visualstudio.com/) または [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/) を使用する: メニュー バーから **[ファイル] > [開く] > [プロジェクト/ソリューション]** の順に選択し、サンプルを開きます。次にサンプルのプロジェクト フォルダーに移動し、プロジェクト ファイル (*.csproj* または *.fsproj*) を選択します。
    * [Visual Studio Code](https://code.visualstudio.com/) を使用する: メニュー バーから **[ファイル] > [フォルダーを開く]** の順に選択し、サンプルのプロジェクト フォルダーを選択してサンプルを開きます。
    * .NET Core プロジェクトをサポートする別の IDE を使用する。
-

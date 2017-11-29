@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: b7c18905-850c-4da4-8977-a074406a4263
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
+ms.openlocfilehash: adf48310c1c2e0c59224ab820211e818a2401579
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 7d623a8c2276811ae443a4d745faffeeb79ffc6f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="using-manipulations-and-inertia-in-an-xna-application"></a>XNA アプリケーションでの操作と慣性の使用
 この記事では、操作と慣性の処理を Microsoft XNA アプリケーションで使用して、ゲーム ピースの動きを制御する方法について説明します。 この記事をお読みになる前に、「[操作と慣性の概要](../../../docs/framework/common-client-technologies/manipulations-and-inertia-overview.md)」トピックの内容、および基本的な XNA のプログラミングの概念についてよく理解してください。  
@@ -42,6 +40,5 @@ ms.lasthandoff: 07/28/2017
  [完全なコードの一覧](../../../docs/framework/common-client-technologies/full-code-listings.md)  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Windows.Input.Manipulations>   
+ <xref:System.Windows.Input.Manipulations>  
  [操作と慣性の概要](../../../docs/framework/common-client-technologies/manipulations-and-inertia-overview.md)
-

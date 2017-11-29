@@ -7,16 +7,14 @@ manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
 ms.assetid: 56a2a4a5-7299-497d-b3c3-23c848678911
+ms.openlocfilehash: fef146c92a5cbbf21f8f1688f221c2bd45c99de7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 51bdae75346022a7564fdb50e582c143e7762a1f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="perform-custom-join-operations"></a>カスタム結合操作の実行
 
@@ -40,15 +38,14 @@ ms.lasthandoff: 07/28/2017
   
  2 番目のメソッドは、左辺のカテゴリの一覧にカテゴリ ID が含まれているすべての製品のシーケンスを生成します。 `let` 句と `Contains` メソッドを使用して一時配列を作成していることに注意してください。 クエリの前に配列を作成し、最初の `from` 句を削除することもできます。  
   
- [!code-cs[csProgGuideLINQ#64](../../../samples/snippets/csharp/concepts/linq/how-to-perform-custom-join-operations_1.cs)]  
+ [!code-csharp[csProgGuideLINQ#64](../../../samples/snippets/csharp/concepts/linq/how-to-perform-custom-join-operations_1.cs)]  
   
 ## <a name="example"></a>例  
  次の例では、クエリは一致するキーに基づいて 2 つのシーケンスを結合する必要があります。内部 (右辺) シーケンスでは、join 句自体より前にキーを取得することはできません。 この結合が `join` 句を使用して実行された場合は、要素ごとに `Split` メソッドを呼び出す必要があります。 複数の `from` 句を使用すると、クエリは、メソッドを繰り返し呼び出すことのオーバーヘッドを回避することができます。 ただし、`join` は最適化されるため、この特定の場合には、複数の `from` 句を使用するよりも処理が速くなることがあります。 結果は、主に、メソッド呼び出しにかかる負荷に応じて異なります。  
   
- [!code-cs[csProgGuideLINQ#13](../../../samples/snippets/csharp/concepts/linq/how-to-perform-custom-join-operations_2.cs)]  
+ [!code-csharp[csProgGuideLINQ#13](../../../samples/snippets/csharp/concepts/linq/how-to-perform-custom-join-operations_2.cs)]  
   
 ## <a name="see-also"></a>関連項目  
- [LINQ クエリ式](index.md)   
- [join 句](../language-reference/keywords/join-clause.md)   
+ [LINQ クエリ式](index.md)  
+ [join 句](../language-reference/keywords/join-clause.md)  
  [join 句の結果の順序指定](order-the-results-of-a-join-clause.md)
-

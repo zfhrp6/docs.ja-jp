@@ -41,16 +41,15 @@ helpviewer_keywords:
 - integer value type
 - base types, class library
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 05af1b2a881cabb418adcaaee44a819ae323e62a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b88c85eaeabc7fa87b483c7302bd5e135e3fd276
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="net-framework-class-library-overview"></a>.NET Framework クラス ライブラリの概要
 [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] には、開発プロセスを高速化および最適化し、システム機能へのアクセスを提供する、クラス、インターフェイス、および値型があります。 言語間での相互運用性を確保するために、.NET Framework のほとんどの型は共通言語仕様 (CLS: Common Language Specification) に準拠しています。このため、コンパイラが CLS に準拠しているすべてのプログラミング言語でこれらの型を使用できます。  
@@ -106,7 +105,7 @@ ms.lasthandoff: 08/21/2017
 ||<xref:System.Decimal>|十進数 (128 ビット) の値です。|**Decimal**|**decimal**|**Decimal**|**Decimal**|  
 ||<xref:System.IntPtr>|基になるプラットフォームによってサイズが決まる符号付き整数 (32 ビットのプラットフォームでは 32 ビット値、64 ビットのプラットフォームでは 64 ビット値)|**IntPtr**<br /><br /> 非組み込み型|**IntPtr**<br /><br /> 非組み込み型|**IntPtr**<br /><br /> 非組み込み型|**IntPtr**|  
 ||<xref:System.UIntPtr>|基になるプラットフォームによってサイズが決まる符号なし整数 (32 ビットのプラットフォームでは 32 ビット値、64 ビットのプラットフォームでは 64 ビット値)<br /><br /> 非 CLS 準拠|**UIntPtr**<br /><br /> 非組み込み型|**UIntPtr**<br /><br /> 非組み込み型|**UIntPtr**<br /><br /> 非組み込み型|**UIntPtr**|  
-クラス オブジェクト|<xref:System.Object>|オブジェクト階層構造のルート|**Object**|**object**|**Object\***|**Object**|  
+クラス オブジェクト|<xref:System.Object>|オブジェクト階層構造のルート|**オブジェクト**|**object**|**Object\***|**オブジェクト**|  
 ||<xref:System.String>|Unicode 文字の不変固定長文字列|**String**|**string**|**String\***|**String**|  
   
  基本データ型に加えて、<xref:System> 名前空間には、例外を処理するクラスから、核となるランタイム概念 (アプリケーション ドメインやガベージ コレクターなど) を扱うクラスまで、100 以上のクラスが含まれます。 <xref:System> 名前空間には、2 次レベルの名前空間も数多く含まれています。  
@@ -114,7 +113,6 @@ ms.lasthandoff: 08/21/2017
  名前空間の詳細については、「[.NET Framework クラス ライブラリ リファレンス](http://go.microsoft.com/fwlink/?LinkID=227195)」を参照してください。 参照ドキュメントには、各名前空間の簡単な概要と、各型とそのメンバーについての説明が記載されています。  
   
 ## <a name="see-also"></a>関連項目  
- [共通型システム](../../docs/standard/base-types/common-type-system.md)   
- [.NET Framework クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkID=227195)   
+ [共通型システム](../../docs/standard/base-types/common-type-system.md)  
+ [.NET Framework クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkID=227195)  
  [概要](../../docs/framework/get-started/overview.md)
-

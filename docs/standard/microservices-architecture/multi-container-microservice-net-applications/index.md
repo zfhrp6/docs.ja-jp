@@ -8,12 +8,11 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
+ms.openlocfilehash: 46d2859fa3b739b1a2a8b1502d4e418fab204648
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: 8651254f4550a1a5c6a776ebd2524b5bfe20c546
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="designing-and-developing-multi-container-and-microservice-based-net-applications"></a>複数のコンテナーとマイクロサービス ベースの NET アプリケーションのデザインと開発
 
@@ -26,4 +25,3 @@ ms.lasthandoff: 09/05/2017
 
 >[!div class="step-by-step"]
 [前へ] (../containerize-net-framework-applications/index.md) [次へ] (microservice-application-design.md)
-

@@ -16,19 +16,18 @@ helpviewer_keywords:
 - hash function
 - collections [.NET Framework], Hashtable collection type
 ms.assetid: bfc20837-3d02-4fc7-8a8f-c5215b6b7913
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: aa2392775f0bd2d68c0aeb28aa0654b690b11808
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: b37d1d7ff75aebfcdf3e849931a5d2b3924d5d7a
-ms.openlocfilehash: 223174392019e0958360858740d7cae37d934f4c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="hashtable-and-dictionary-collection-types"></a>Hashtable コレクション型と Dictionary コレクション型
-<xref:System.Collections.Hashtable?displayProperty=fullName> クラス、および <xref:System.Collections.Generic.Dictionary%602?displayProperty=fullName> と <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=fullName> ジェネリック クラスは、<xref:System.Collections.IDictionary?displayProperty=fullName> インターフェイスを実装します。 <xref:System.Collections.Generic.Dictionary%602> ジェネリック クラスも <xref:System.Collections.Generic.IDictionary%602> ジェネリック インターフェイスを実装します。 そのため、これらのコレクション内の各要素は、キーと値のペアになります。  
+<xref:System.Collections.Hashtable?displayProperty=nameWithType> クラス、および <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> と <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType> ジェネリック クラスは、<xref:System.Collections.IDictionary?displayProperty=nameWithType> インターフェイスを実装します。 <xref:System.Collections.Generic.Dictionary%602> ジェネリック クラスも <xref:System.Collections.Generic.IDictionary%602> ジェネリック インターフェイスを実装します。 そのため、これらのコレクション内の各要素は、キーと値のペアになります。  
   
  <xref:System.Collections.Hashtable> オブジェクトは、コレクションの要素を含むバケットので構成されます。 バケットは<xref:System.Collections.Hashtable> に含まれる要素の仮想サブグループで、これを使用することにより、ほとんどのコレクションで検索と取得がより簡単で高速になります。 各バケットは、ハッシュ関数を使用して生成され、要素のキーに基づいている、ハッシュ コードに関連付けられています。  
   
@@ -45,11 +44,10 @@ ms.lasthandoff: 09/06/2017
  <xref:System.Collections.Generic.Dictionary%602> および <xref:System.Collections.Concurrent.ConcurrentDictionary%602> クラスには、<xref:System.Collections.Hashtable> クラスと同じ機能があります。 特定の型 (<xref:System.Object> を除く) の<xref:System.Collections.Generic.Dictionary%602> は、値型の <xref:System.Collections.Hashtable> よりも優れたパフォーマンスを実現します。 これは、<xref:System.Collections.Hashtable> の要素の型が <xref:System.Object> であるため、値型を格納したり取得したりすると、ボックス化とボックス化解除が通常発生するためです。 複数のスレッドが同時にコレクションにアクセスするときには、<xref:System.Collections.Concurrent.ConcurrentDictionary%602> クラスを使用する必要があります。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Collections.Hashtable>   
- <xref:System.Collections.IDictionary>   
- <xref:System.Collections.IHashCodeProvider>   
- <xref:System.Collections.Generic.Dictionary%602>   
- <xref:System.Collections.Generic.IDictionary%602?displayProperty=fullName>   
- <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=fullName>   
+ <xref:System.Collections.Hashtable>  
+ <xref:System.Collections.IDictionary>  
+ <xref:System.Collections.IHashCodeProvider>  
+ <xref:System.Collections.Generic.Dictionary%602>  
+ <xref:System.Collections.Generic.IDictionary%602?displayProperty=nameWithType>  
+ <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>  
  [ 一般的に使用されるコレクション型](../../../docs/standard/collections/commonly-used-collection-types.md)
-

@@ -1,39 +1,21 @@
 ---
 title: "ポリモーフィズム (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-caps.latest.revision: 31
+caps.latest.revision: "31"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 601c8cf626c846ca6c5d6bc2338e271e6b93544a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c278a6a931154af97cab5b1ff33124dd31a3fa2e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="polymorphism-c-programming-guide"></a>ポリモーフィズム (C# プログラミング ガイド)
 ポリモーフィズムは、カプセル化と継承に次ぐ、オブジェクト指向プログラミングの第 3 の柱と言われることがよくあります。 ポリモーフィズムは、ギリシャ語で "多形" を意味し、次の 2 つの側面を持っています。  
@@ -50,7 +32,7 @@ ms.lasthandoff: 07/28/2017
   
  まず、`Shape` という基底クラスと、`Rectangle`、`Circle`、`Triangle` などの派生クラスを作成します。 `Shape` クラスで `Draw` という仮想メソッドを定義し、各派生クラスでそれをオーバーライドして、そのクラスが表す特定の図形を描画します。 `List<Shape>` オブジェクトを作成し、Circle、Triangle、および Rectangle を追加します。 描画サーフェイスを更新するには、[foreach](../../../csharp/language-reference/keywords/foreach-in.md) ループを使用してリストを反復処理し、リスト内の各 `Shape` オブジェクトの `Draw` メソッドを呼び出します。 リスト内の各オブジェクトの宣言された型は `Shape` ですが、呼び出されるのは実行時の型 (それぞれの派生クラスでオーバーライドされたメソッド) になります。  
   
- [!code-cs[csProgGuideInheritance#50](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_1.cs)]  
+ [!code-csharp[csProgGuideInheritance#50](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_1.cs)]  
   
  C# では、すべての型がポリモーフィックです。これは、ユーザー定義型を含むすべての型が <xref:System.Object> から派生するためです。  
   
@@ -67,42 +49,42 @@ ms.lasthandoff: 07/28/2017
   
  派生クラスが基底クラスのメンバーをオーバーライドできるのは、基底クラスのメンバーが [virtual](../../../csharp/language-reference/keywords/virtual.md) または [abstract](../../../csharp/language-reference/keywords/abstract.md) として宣言されている場合だけです。 派生メンバーでは、[override](../../../csharp/language-reference/keywords/override.md) キーワードを使用して、そのメソッドが仮想呼び出しに加わることを明示的に示す必要があります。 次にコード例を示します。  
   
- [!code-cs[csProgGuideInheritance#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_2.cs)]  
+ [!code-csharp[csProgGuideInheritance#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_2.cs)]  
   
  フィールドは仮想メンバーにできません。仮想メンバーにできるのは、メソッド、プロパティ、イベント、およびインデクサーに限られます。 派生クラスが仮想メンバーをオーバーライドすると、派生クラスのメンバーは、そのクラスのインスタンスが基底クラスのインスタンスとしてアクセスされるときでも呼び出されます。 次にコード例を示します。  
   
- [!code-cs[csProgGuideInheritance#21](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_3.cs)]  
+ [!code-csharp[csProgGuideInheritance#21](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_3.cs)]  
   
  仮想メソッドとプロパティを使用すると、派生クラスは、基底クラスのメソッドの実装を使用せずに基底クラスを拡張できます。 詳細については、「[Override キーワードと New キーワードによるバージョン管理](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)」を参照してください。 1 つまたは一連のメソッドを定義し、その実装を派生クラスに任せるもう 1 つの方法として、インターフェイスがあります。 詳細については、「[インターフェイス](../../../csharp/programming-guide/interfaces/index.md)」を参照してください。  
   
 ### <a name="hiding-base-class-members-with-new-members"></a>新しいメンバーによる基底クラスのメンバーの隠ぺい  
  派生メンバーに基底クラスのメンバーと同じ名前を付けながら、そのメンバーが仮想呼び出しに加わらないようにするには、[new](../../../csharp/language-reference/keywords/new.md) キーワードを使用します。 `new` キーワードは、置き換えられるクラス メンバーの戻り値の型の前に配置します。 次にコード例を示します。  
   
- [!code-cs[csProgGuideInheritance#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_4.cs)]  
+ [!code-csharp[csProgGuideInheritance#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_4.cs)]  
   
- 基底クラスのメンバーが隠ぺいされても、派生クラスのインスタンスを基底クラスのインスタンスにキャストすることで、クライアント コードから基底クラスのメンバーにアクセスできます。 例:  
+ 基底クラスのメンバーが隠ぺいされても、派生クラスのインスタンスを基底クラスのインスタンスにキャストすることで、クライアント コードから基底クラスのメンバーにアクセスできます。 次に例を示します。  
   
- [!code-cs[csProgGuideInheritance#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_5.cs)]  
+ [!code-csharp[csProgGuideInheritance#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_5.cs)]  
   
 ### <a name="preventing-derived-classes-from-overriding-virtual-members"></a>派生クラスが仮想メンバーをオーバーライドしないようにする  
  仮想メンバーは、それを最初に宣言したクラスとの間でどれほど多くのクラスが宣言されても、いつまでも仮想のままです。 たとえば、クラス A が仮想メンバーを宣言し、クラス B がクラス A から派生し、クラス C がクラス B から派生した場合、クラス C は仮想メンバーを継承し、クラス B がその仮想メンバーのオーバーライドを宣言したかどうかに関係なく、そのメンバーをオーバーライドできます。 次にコード例を示します。  
   
- [!code-cs[csProgGuideInheritance#22](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_6.cs)]  
+ [!code-csharp[csProgGuideInheritance#22](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_6.cs)]  
   
  派生クラスでは、オーバーライドを [sealed](../../../csharp/language-reference/keywords/sealed.md) として宣言することで仮想継承を中止できます。 この場合、クラス メンバーの宣言で、`sealed` キーワードの前に `override` キーワードを指定する必要があります。 次にコード例を示します。  
   
- [!code-cs[csProgGuideInheritance#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_7.cs)]  
+ [!code-csharp[csProgGuideInheritance#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_7.cs)]  
   
  上の例では、`DoWork` メソッドは C から派生したどのクラスに対しても仮想メソッドではありません。C のインスタンスに対しては、B 型や A 型にキャストされた場合でも、依然として仮想メソッドです。シール メソッドは、次のコード例に示すように、`new` キーワードを使用して派生クラスに置き換えることができます。  
   
- [!code-cs[csProgGuideInheritance#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_8.cs)]  
+ [!code-csharp[csProgGuideInheritance#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_8.cs)]  
   
  このコード例では、`DoWork` が、D 型の変数を使用して D で呼び出されると、新しい `DoWork` が呼び出されます。 また、C 型、B 型、または A 型の変数を使用して D のインスタンスにアクセスした場合、`DoWork` への呼び出しは、仮想継承の規則に従って、クラス C の `DoWork` の実装に転送されます。  
   
 ### <a name="accessing-base-class-virtual-members-from-derived-classes"></a>派生クラスからの基底クラスの仮想メンバーへのアクセス  
  メソッドやプロパティを置き換えたり、オーバーライドしたりした派生クラスでは、base キーワードを使用することで、基底クラスのメソッドやプロパティにアクセスできます。 次にコード例を示します。  
   
- [!code-cs[csProgGuideInheritance#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_9.cs)]  
+ [!code-csharp[csProgGuideInheritance#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_9.cs)]  
   
  詳細については、「[base](../../../csharp/language-reference/keywords/base.md)」を参照してください。  
   
@@ -118,13 +100,12 @@ ms.lasthandoff: 07/28/2017
 -   [方法: ToString メソッドをオーバーライドする](../../../csharp/programming-guide/classes-and-structs/how-to-override-the-tostring-method.md)  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)   
- [抽象クラスとシール クラス、およびクラス メンバー](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)   
- [メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)   
- [イベント](../../../csharp/programming-guide/events/index.md)   
- [プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)   
- [インデクサー](../../../csharp/programming-guide/indexers/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)  
+ [抽象クラスとシール クラス、およびクラス メンバー](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)  
+ [メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)  
+ [イベント](../../../csharp/programming-guide/events/index.md)  
+ [プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+ [インデクサー](../../../csharp/programming-guide/indexers/index.md)  
  [型](../../../csharp/programming-guide/types/index.md)
-

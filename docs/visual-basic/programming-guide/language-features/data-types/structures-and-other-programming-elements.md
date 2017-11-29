@@ -1,39 +1,38 @@
 ---
-title: "Structures and Other Programming Elements (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "structures, arrays"
-  - "procedures, structures as arguments to"
-  - "objects [Visual Basic], structure elements"
-  - "arrays [Visual Basic], structure elements"
-  - "nested structures"
+title: "構造体およびその他のプログラミング要素 (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- structures [Visual Basic], arrays
+- procedures [Visual Basic], structures as arguments to
+- objects [Visual Basic], structure elements
+- arrays [Visual Basic], structure elements
+- nested structures [Visual Basic]
 ms.assetid: 0f849313-ccd2-4c9a-acb9-69de6751c088
-caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: de343c06ec255d6cb68aa25d733e85385e884769
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Structures and Other Programming Elements (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-構造体は、配列、オブジェクト、プロシージャ、および他の構造体と組み合わせて使用できます。  このやり取りには、各要素が個別に使用する構文が使用されます。  
+# <a name="structures-and-other-programming-elements-visual-basic"></a>構造体およびその他のプログラミング要素 (Visual Basic)
+構造体は、配列、オブジェクト、およびプロシージャ、相互に組み合わせて使用できます。 これらの要素が個別に使用すると、相互作用は同じ構文を使用します。  
   
 > [!NOTE]
->  構造体の宣言で構造体の要素を初期化することはできません。  構造体型として宣言された変数の要素に対してだけ、値を割り当てることができます。  
+>  構造体の宣言で構造体の要素を初期化することはできません。 構造体型として宣言された変数の要素にのみ値を割り当てることができます。  
   
-## 構造体と配列  
- 構造体には、1 つまたは複数の要素として配列を含めることができます。  次に例を示します。  
+## <a name="structures-and-arrays"></a>構造体と配列  
+ 構造体には、1 つまたは複数の要素として配列を含めることができます。 次に例を示します。  
   
-```vb#  
+```vb  
 Public Structure systemInfo  
     Public cPU As String  
     Public memory As Long  
@@ -42,32 +41,32 @@ Public Structure systemInfo
 End Structure   
 ```  
   
- オブジェクトのプロパティにアクセスするのと同じ方法で構造体内の配列の値にアクセスします。  次に例を示します。  
+ 構造体の配列の値はオブジェクトのプロパティにアクセスする同じ方法でアクセスします。 次に例を示します。  
   
-```vb#  
+```vb  
 Dim mySystem As systemInfo  
 ReDim mySystem.diskDrives(3)  
 mySystem.diskDrives(0) = "1.44 MB"  
 ```  
   
- 構造体の配列を宣言することもできます。  次に例を示します。  
+ 構造体の配列を宣言することもできます。 次に例を示します。  
   
-```vb#  
+```vb  
 Dim allSystems(100) As systemInfo  
 ```  
   
- このデータ アーキテクチャのコンポーネントにアクセスする際にも同じルールに従います。  次に例を示します。  
+ このデータのアーキテクチャのコンポーネントにアクセスする同じ規則に従うします。 次に例を示します。  
   
-```vb#  
+```vb  
 ReDim allSystems(5).diskDrives(3)  
 allSystems(5).CPU = "386SX"  
 allSystems(5).diskDrives(2) = "100M SCSI"  
 ```  
   
-## 構造体とオブジェクト  
- 構造体には、1 つまたは複数の要素としてオブジェクトを含めることができます。  次に例を示します。  
+## <a name="structures-and-objects"></a>構造とオブジェクト  
+ 構造体には、1 つまたは複数の要素としてオブジェクトを含めることができます。 次に例を示します。  
   
-```vb#  
+```vb  
 Protected Structure userInput  
     Public userName As String  
     Public inputForm As System.Windows.Forms.Form  
@@ -75,12 +74,12 @@ Protected Structure userInput
 End Structure  
 ```  
   
- このような宣言では、オブジェクト型 \(`Object`\) ではなく特定のオブジェクト クラスを使用してください。  
+ このような宣言で特定のオブジェクト クラスを使用する必要がなく`Object`です。  
   
-## 構造体とプロシージャ  
- プロシージャの引数として構造体を渡すことができます。  次に例を示します。  
+## <a name="structures-and-procedures"></a>構造体とプロシージャ  
+ 構造体は、プロシージャの引数として渡すことができます。 次に例を示します。  
   
-```vb#  
+```vb  
 Public currentCPUName As String = "700MHz Pentium compatible"  
 Public currentMemorySize As Long = 256  
 Public Sub fillSystem(ByRef someSystem As systemInfo)  
@@ -90,11 +89,11 @@ Public Sub fillSystem(ByRef someSystem As systemInfo)
 End Sub  
 ```  
   
- 上の例では、*参照*によって構造体を渡していますが、この方法ではプロシージャで要素を変更でき、呼び出し側のコードで変更内容が有効になります。  構造体が変更されないようにするには、構造体を値で渡します。  
+ 前の例は、構造体を渡します*参照によって*、これにより、呼び出し元のコードの変更が反映されるように、その要素を変更する手順。 このような変更に対して構造体を保護するには、場合は、値によって渡します。  
   
- `Function` プロシージャから構造体を返すこともできます。  次に例を示します。  
+ 構造体を取得することもできます、`Function`プロシージャです。 次に例を示します。  
   
-```vb#  
+```vb  
 Dim allSystems(100) As systemInfo  
 Function findByDate(ByVal searchDate As Date) As systemInfo  
     Dim i As Integer  
@@ -105,10 +104,10 @@ Function findByDate(ByVal searchDate As Date) As systemInfo
 End Function  
 ```  
   
-## 構造体内の構造体  
- 構造体には他の構造体を含めることもできます。  次に例を示します。  
+## <a name="structures-within-structures"></a>構造体の構造体  
+ 構造体には、その他の構造を含めることができます。 次に例を示します。  
   
-```vb#  
+```vb  
 Public Structure driveInfo  
     Public type As String  
     Public size As Long  
@@ -121,24 +120,24 @@ Public Structure systemInfo
 End Structure  
 ```  
   
-```vb#  
+```vb  
 Dim allSystems(100) As systemInfo  
 ReDim allSystems(1).diskDrives(3)  
 allSystems(1).diskDrives(0).type = "Floppy"  
 ```  
   
- この方法を使用すると、あるモジュールで定義された構造体を別のモジュールで定義された構造体にカプセル化できます。  
+ また、別のモジュールで定義されている構造内の 1 つのモジュールで定義されている構造体をカプセル化するのにこの手法を使用することができます。  
   
- 構造体は、任意の深さで入れ子にできます。  
+ 構造体には、任意の深さを他の構造体を含めることができます。  
   
-## 参照  
- [データ型](../../../../visual-basic/programming-guide/language-features/data-types/index.md)   
- [Elementary Data Types](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)   
- [Composite Data Types](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)   
- [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)   
- [Structures](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)   
- [Troubleshooting Data Types](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)   
- [How to: Declare a Structure](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)   
- [Structure Variables](../../../../visual-basic/programming-guide/language-features/data-types/structure-variables.md)   
- [Structures and Classes](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)   
- [Structure Statement](../../../../visual-basic/language-reference/statements/structure-statement.md)
+## <a name="see-also"></a>関連項目  
+ [データの種類](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
+ [基本データ型](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)  
+ [複合データ型](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)  
+ [値型と参照型](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
+ [構造体](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
+ [トラブルシューティング (データ型)](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
+ [方法 : 構造体を宣言する](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)  
+ [構造体変数](../../../../visual-basic/programming-guide/language-features/data-types/structure-variables.md)  
+ [構造体とクラス](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)  
+ [Structure ステートメント](../../../../visual-basic/language-reference/statements/structure-statement.md)

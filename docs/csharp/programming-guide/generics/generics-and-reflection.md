@@ -1,39 +1,21 @@
 ---
 title: "ジェネリックとリフレクション (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - generics [C#], reflection
 - reflection [C#], generic types
 ms.assetid: 162fd9b4-dd5b-4abb-8c9b-e44e21e2f451
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: cc2363eea7d5c601fc73f5f9eb14b4b07ad14cb8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 201806cca08be0633d41e10ecb7641a0f03c975b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="generics-and-reflection-c-programming-guide"></a>ジェネリックとリフレクション (C# プログラミング ガイド)
 共通言語ランタイム (CLR) は実行時にジェネリック型の情報にアクセスできるため、非ジェネリック型の場合と同じように、リフレクションを使用してジェネリック型の情報を取得できます。 詳細については、「[ランタイムのジェネリック](../../../csharp/programming-guide/generics/generics-in-the-run-time.md)」を参照してください。  
@@ -68,8 +50,7 @@ ms.lasthandoff: 07/28/2017
 |<xref:System.Reflection.MethodInfo.MakeGenericMethod%2A>|現在のジェネリック メソッド定義の型パラメーターを型の配列要素に置き換え、その結果構築されるメソッドを表す <xref:System.Reflection.MethodInfo> オブジェクトを返します。|  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [ジェネリック](../../../csharp/programming-guide/generics/index.md)   
- [リフレクションとジェネリック型](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [ジェネリック](../../../csharp/programming-guide/generics/index.md)  
+ [リフレクションとジェネリック型](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)  
  [ジェネリック](~/docs/standard/generics/index.md)
-

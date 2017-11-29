@@ -8,6 +8,9 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 helpviewer_keywords:
 - runtime, metadata
 - languages, interoperability
@@ -18,16 +21,15 @@ helpviewer_keywords:
 - PE files, metadata
 - components [.NET Framework], metadata
 ms.assetid: 3dd13c5d-a508-455b-8dce-0a852882a5a7
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 8fcb5ea90cc16d62fee5b8e95b03bfe53c3a6793
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: f5469f649d594553e1567d6d611cfafcd28e2c5b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="metadata-and-self-describing-components"></a>メタデータと自己言及的なコンポーネント
 以前は、ある 1 つの言語で記述されたソフトウェア コンポーネント (.exe または .dll) で、別の言語で記述されたコンポーネントを使用するのは簡単ではありませんでした。 COM により、この問題が解決するための手段が提供されるようになりました。 .NET Framework では、コンパイラからすべてのモジュールやアセンブリに追加の宣言情報を挿入できるようになり、コンポーネントの相互運用性が大幅に強化されています。 メタデータと呼ばれるこの情報により、コンポーネント間のシームレスな相互作用がサポートされます。  
@@ -157,7 +159,7 @@ IL_000d:  call int32 ConsoleApplication.MyApp::Add(int32,int32) /* 06000003 */
   
  JIT コンパイラはこのメソッド全体の MSIL を読み取って詳細に分析し、このメソッドの効率的なネイティブ命令を生成します。 `IL_000d` で、`Add` メソッドのメタデータ トークン (`/*` `06000003 */`) が検出されます。ランタイムは、このトークンを使用して **MethodDef** テーブルの 3 行目を調べます。  
   
-  **メソッドが記述されているメタデータ トークンによって参照される、**MethodDef`Add` テーブルの一部の例を次の表に示します。 このアセンブリにはほかにもメタデータ テーブルが存在し、それぞれ独自の値を持っていますが、ここでは、このテーブルだけを参照します。  
+ **メソッドが記述されているメタデータ トークンによって参照される、**MethodDef`Add` テーブルの一部の例を次の表に示します。 このアセンブリにはほかにもメタデータ テーブルが存在し、それぞれ独自の値を持っていますが、ここでは、このテーブルだけを参照します。  
   
 |行|Relative Virtual Address (RVA)|ImplFlags|フラグ|名前<br /><br /> (文字列ヒープを指す)|Signature (BLOB ヒープを指す)|  
 |---------|--------------------------------------|---------------|-----------|-----------------------------------------|----------------------------------------|  
@@ -176,4 +178,3 @@ IL_000d:  call int32 ConsoleApplication.MyApp::Add(int32,int32) /* 06000003 */
 |タイトル|説明|  
 |-----------|-----------------|  
 |[属性](../../docs/standard/attributes/index.md)|属性の適用方法、カスタム属性の記述方法、および属性に格納されている情報の取得方法を説明します。|
-

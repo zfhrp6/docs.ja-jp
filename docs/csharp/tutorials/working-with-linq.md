@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: ec86c558b9aa9c6269fcf9890978f61a934c081f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="working-with-linq"></a>LINQ の使用
 
 ## <a name="introduction"></a>はじめに
@@ -334,4 +332,3 @@ var startingDeck = (from s in Suits().LogQuery("Suit Generation")
 このサンプルでは、LINQ で使用されるいくつかのメソッドと、LINQ が有効なコードで簡単に使えるメソッドの作成方法を紹介しました。 さらに、遅延評価と先行評価の違いを示し、どちらを選ぶかによってパフォーマンスにどのような影響があるかを説明しました。
 
 マジシャンのテクニックについて少し学びました。 マジシャンは、ファロー シャッフルを使ってデッキでの各カードの位置をコントロールします。 中には、マジシャンが観客にデッキの一番上にカードを置いてもらい、そのカードの行き先を把握しながら何回かシャッフルするトリックもあります。 デッキを特定の方法で置いておく必要があるトリックもあります。 こうしたトリックの場合は、デッキを事前にセットしておきます。 次にデッキをイン シャッフルの形で 5 回シャッフルします。 ステージで、マジシャンはランダムに並べ替えられたように見えるデッキをさらに 3 回シャッフルして、思い通りのようにデッキをセットするのです。
-

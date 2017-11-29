@@ -1,46 +1,28 @@
 ---
-title: "Mid ステートメント |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "Mid ステートメント"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.MidB
 - vb.Mid
-dev_langs:
-- VB
 helpviewer_keywords:
-- substrings, Mid statement
+- substrings [Visual Basic], Mid statement
 - strings [Visual Basic], substrings
-- Mid statement
+- Mid statement [Visual Basic]
 - strings [Visual Basic], replacing
 ms.assetid: 2b82d7a8-9646-4cb0-bec5-80abc98297bf
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e385d6838daa16d45903c6b270fc47ad88797845
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 61d812ef91acc65728b04efc9aa99e3975e71d0c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="mid-statement"></a>Mid ステートメント
 指定した数の文字を置換、`String`別の文字列から文字を含む変数。  
@@ -60,7 +42,7 @@ Mid( _
  必須です。 名前、`String`変数を変更します。  
   
  `Start`  
- 必須です。 `Integer`式。 文字の位置`Target`テキストの置換が開始します。 `Start`1 から始まるインデックスを使用します。  
+ 必須です。 `Integer`式。 文字の位置`Target`テキストの置換を開始します。 `Start`1 から始まるインデックスを使用します。  
   
  `Length`  
  省略可能です。 `Integer`式。 置換する文字の数。 省略した場合、すべての`String`を使用します。  
@@ -70,31 +52,31 @@ Mid( _
   
 ## <a name="exceptions"></a>例外  
   
-|例外の種類|条件|  
+|例外の種類|状態|  
 |--------------------|---------------|  
-|<xref:System.ArgumentException></xref:System.ArgumentException>|`Start`<= 0="" or=""></=>`Length`< 0.></ 0.>|  
+|<xref:System.ArgumentException>|`Start`< = 0 または`Length`< 0 です。|  
   
 ## <a name="remarks"></a>コメント  
- 置き換えられた文字の数は、文字数以下では常に`Target`します。  
+ 置換される文字数は、の文字数以下では常に`Target`です。  
   
- Visual Basic には、<xref:Microsoft.VisualBasic.Strings.Mid%2A>関数と`Mid`ステートメント</xref:Microsoft.VisualBasic.Strings.Mid%2A>。 この要素はどちらも、文字列内の文字の指定の数が、`Mid`関数の中に文字を返します、`Mid`文字をステートメントに置き換えます。 詳細については、 <xref:Microsoft.VisualBasic.Strings.Mid%2A>。</xref:Microsoft.VisualBasic.Strings.Mid%2A>を参照してください。  
+ Visual Basic には、<xref:Microsoft.VisualBasic.Strings.Mid%2A>関数と`Mid`ステートメントです。 この要素はどちらも、文字列の文字の指定された数が、`Mid`関数の中に文字を返します、`Mid`文字をステートメントに置き換えます。 詳細については、「<xref:Microsoft.VisualBasic.Strings.Mid%2A>」を参照してください。  
   
 > [!NOTE]
->  `MidB`以前のバージョンの Visual Basic のステートメントには、文字ではなく、(バイト単位) の部分文字列が置き換えられます。 2 バイト文字セット (DBCS) のアプリケーションで文字列に変換するためには、主に使用されます。 Visual Basic のすべての文字列が Unicode と`MidB`現在サポートされていません。  
+>  `MidB`以前のバージョンの Visual Basic のステートメントには文字ではなく、(バイト単位) 内の部分文字列が置き換えられます。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、すべての Visual Basic の文字列と`MidB`は現在サポートされていません。  
   
 ## <a name="example"></a>例  
  この例では、`Mid`ステートメントに指定した文字列変数の文字数を別の文字列から文字に置き換えます。  
   
- [!code-vb[VbVbalrStrings&#5;](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/mid-statement_1.vb)]  
+ [!code-vb[VbVbalrStrings#5](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/mid-statement_1.vb)]  
   
 ## <a name="requirements"></a>要件  
  **Namespace:** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
   
  **モジュール:**`Strings`  
   
- **アセンブリ:**[!INCLUDE[vbprvbruntime](../../../visual-basic/language-reference/objects/includes/vbprvbruntime_md.md)]  
+ **アセンブリ:** [!INCLUDE[vbprvbruntime](~/includes/vbprvbruntime-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
- <xref:Microsoft.VisualBasic.Strings.Mid%2A></xref:Microsoft.VisualBasic.Strings.Mid%2A>   
- [文字列](../../../visual-basic/programming-guide/language-features/strings/index.md)   
- [Visual Basic における文字列の概要](../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)
+ <xref:Microsoft.VisualBasic.Strings.Mid%2A>  
+ [文字列](../../../visual-basic/programming-guide/language-features/strings/index.md)  
+ [Visual Basic の文字列の概要](../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)

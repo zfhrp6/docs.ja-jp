@@ -1,35 +1,27 @@
 ---
-title: "リフレクション (Visual Basic) を使用して属性へのアクセス |Microsoft ドキュメント"
+title: "リフレクション (Visual Basic) を使用して属性へのアクセス"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: c56e41da-5433-464f-a7bf-2a722e78bc9f
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4763eccc5d1a6bdf3e89c1c4d825d5ff5c6caa3e
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: a4397200b5a2aa5f337dd3479b5405c1a9f245a8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="accessing-attributes-by-using-reflection-visual-basic"></a>リフレクション (Visual Basic) を使用して属性へのアクセス
-その情報を取得、およびその操作方法がないほとんどの値のカスタム属性を定義し、ソース コード内に配置できることになります。 リフレクションを使用するには、カスタム属性で定義されている情報を取得できます。 重要なメソッドは`GetCustomAttributes`実行時に相当するソース コードの属性であるオブジェクトの配列が返されます。 このメソッドには、いくつかのオーバー ロードされたバージョンがあります。 詳細については、 <xref:System.Attribute>。</xref:System.Attribute>を参照してください。  
+カスタム属性を定義し、それらをソース コード内に配置することができても、その情報を取得して操作する手段がなければ、ほとんど価値はありません。 リフレクションを使用すれば、カスタム属性を使用して定義された情報を取得することができます。 鍵となるメソッドは `GetCustomAttributes` です。このメソッドは、ソース コード属性の実行時の等価オブジェクトを配列で返します。 このメソッドには、いくつかのオーバー ロード バージョンがあります。 詳細については、「<xref:System.Attribute>」を参照してください。  
   
- などの属性の指定:  
+ 次のような属性指定は、  
   
 ```vb  
 <Author("P. Ackerman", Version:=1.1)>   
@@ -38,17 +30,17 @@ Class SampleClass
 End Class  
 ```  
   
- 概念的にはこれと同じです。  
+ 概念的には次の記述と同じです。  
   
 ```vb  
 Dim anonymousAuthorObject As Author = New Author("P. Ackerman")  
 anonymousAuthorObject.version = 1.1  
 ```  
   
- ただし、コードをまで実行されず`SampleClass`の属性の照会します。 呼び出す`GetCustomAttributes`に`SampleClass`により、`Author`オブジェクトを構築しても、上記のように初期化します。 その他の属性をクラスには、その他の属性のオブジェクトが同様に構築されます。 `GetCustomAttributes`戻ります、`Author`オブジェクトと配列内の他の属性オブジェクトです。 この配列を反復処理することができますし、各配列要素の種類に基づいて適用された属性を確認し、属性のオブジェクトから情報を抽出します。  
+ ただし、属性について `SampleClass` が照会されるまで、コードは実行されません。 `SampleClass` について `GetCustomAttributes` を呼び出すと、`Author` オブジェクトが作成され、上記のように初期化されます。 クラスに他の属性がある場合は、他の属性オブジェクトも同様に作成されます。 `GetCustomAttributes` はその後、`Author` オブジェクトと配列内の他の属性オブジェクトを返します。 その後、この配列を反復処理し、各配列要素の型に基づいてどの属性が適用されたかを確認して、属性オブジェクトから情報を抽出することができます。  
   
 ## <a name="example"></a>例  
- 完全な例を次に示します。 カスタム属性が定義されている、複数のエンティティに適用され、リフレクションを使用して取得します。  
+ 完全な例を次に示します。 カスタム属性が定義され、複数のエンティティに適用された後、リフレクションを使用して取得されています。  
   
 ```vb  
 ' Multiuse attribute  
@@ -117,10 +109,10 @@ End Class
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Reflection></xref:System.Reflection>   
- <xref:System.Attribute></xref:System.Attribute>   
- [Visual Basic のプログラミング ガイド](../../../../visual-basic/programming-guide/index.md)   
- [属性に格納されている情報を取得します。](http://msdn.microsoft.com/library/37dfe4e3-7da0-48b6-a3d9-398981524e1c)   
- [リフレクション (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)   
- [属性 (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)   
- [カスタム属性 (Visual Basic) の作成](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
+ <xref:System.Reflection>  
+ <xref:System.Attribute>  
+ [Visual Basic プログラミング ガイド](../../../../visual-basic/programming-guide/index.md)  
+ [属性に格納されている情報の取得](../../../../standard/attributes/retrieving-information-stored-in-attributes.md)  
+ [リフレクション (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)  
+ [属性 (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)  
+ [カスタム属性の作成 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)

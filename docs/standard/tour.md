@@ -1,5 +1,5 @@
 ---
-title: ".NET のツアー | Microsoft Docs"
+title: ".NET のツアー"
 description: ".NET のいくつかの優れた機能についてのガイド付きツアーです。"
 keywords: ".NET, .NET Core, ツアー, プログラミング言語, アンセーフ, メモリ管理, タイプ セーフ, 非同期"
 author: cartermp
@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
+ms.openlocfilehash: 809f0eaddf298b0d6a57e217c2bcf5450675c3e9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 2762cdc983465979a530192716c33de7044dd1ed
-ms.openlocfilehash: c64a3113cf4e9e9ff203ed2cf449359f67ee9d10
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="tour-of-net"></a>.NET のツアー
 
 .NET は、汎用的な開発プラットフォームです。 .NET には、複数のプラットフォームでのさまざまなシナリオを可能にする、複数のプログラミング言語、非同期および同時実行のプログラミング モデル、ネイティブな相互運用性のサポートなど、重要な機能がいくつかあります。
@@ -149,4 +147,3 @@ F# の機能については、「[F# のツアー](../fsharp/tour.md)」をご�
 独自のコードの記述を開始する場合は、「[Getting Started](get-started.md)」 (はじめに) をご覧ください。
 
 .NET の重要なコンポーネントについては、「[.NET アーキテクチャ コンポーネント](components.md)」をご覧ください。
-

@@ -1,96 +1,92 @@
 ---
-title: "Using Statement (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.using"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "resource disposal"
-  - "Try...Catch...Finally statements, equivalent to Using statement"
-  - "resources [Visual Basic], disposing"
-  - "Using statement"
+title: "Using ステートメント (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.using
+helpviewer_keywords:
+- resource disposal
+- Try...Catch...Finally statements, equivalent to Using statement
+- resources [Visual Basic], disposing
+- Using statement [Visual Basic]
 ms.assetid: 665d1580-dd54-4e96-a9a9-6be2a68948f1
-caps.latest.revision: 36
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 36
+caps.latest.revision: "36"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: ed9cc0d04c89eac1fe342a0924dd89bb1e258a11
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Using Statement (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-`Using` ブロックの開始を宣言し、オプションでこのブロックが制御するシステム リソースを取得します。  
+# <a name="using-statement-visual-basic"></a>Using ステートメント (Visual Basic)
+始まりを宣言、`Using`をブロックし、必要に応じてブロックを制御するシステム リソースを取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-Using { resourcelist | resourceexpression }  
-    [ statements ]  
+Using { resourcelist | resourceexpression }  
+    [ statements ]  
 End Using  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`resourcelist`|`resourceexpression` を指定しない場合は必ず指定します。  コンマで区切られた一つ以上のシステム リソースのリスト `Using` のこのブロックが制御する。|  
-|`resourceexpression`|`resourcelist` を指定しない場合は必ず指定します。  この `Using` ブロックによって制御されるシステム リソースを参照する参照変数または式です。|  
-|`statements`|省略可能。  `Using` ブロックが実行するステートメントのブロックです。|  
-|`End Using`|必須。  `Using` ブロックの定義を終了し、制御しているすべてのリソースを破棄します。|  
+|用語|定義|  
+|---|---|  
+|`resourcelist`|指定しないかどうかに必要な`resourceexpression`します。 この 1 つまたは複数のシステム リソースの一覧表示`Using`コントロール、コンマで区切ってをブロックします。|  
+|`resourceexpression`|指定しないかどうかに必要な`resourcelist`します。 参照変数またはこので制御するシステム リソースを参照する式`Using`ブロックします。|  
+|`statements`|省略可能です。 ステートメントのブロックを`Using`ブロックが実行されます。|  
+|`End Using`|必須です。 定義を終了、`Using`ブロックおよびそれによって制御されるすべてのリソースを破棄します。|  
   
- `resourcelist` 部分のリソースは、次の構文と指定項目で指定します。  
+ 内の各リソース、`resourcelist`部分は、次の構文とパーツ。  
   
- `resourcename As New resourcetype [ ( [ arglist ] ) ]`  
+ `resourcename As New resourcetype [ ( [ arglist ] ) ]`  
   
  または  
   
- `resourcename As resourcetype = resourceexpression`  
+ `resourcename As resourcetype = resourceexpression`  
   
-## resourcelist の指定項目  
+## <a name="resourcelist-parts"></a>resourcelist 部分  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`resourcename`|必須。  `Using` ブロックが制御するシステム リソースを参照する参照変数です。|  
-|`New`|`Using` ステートメントがリソースを取得する場合は、必ず指定します。  リソースを既に取得している場合は、2 つ目の構文を使用してください。|  
-|`resourcetype`|必須。  リソースのクラス。  このクラスは、<xref:System.IDisposable> インターフェイスを実装する必要があります。|  
-|`arglist`|省略可能。  `resourcetype` のインスタンスを作成するために、コンストラクターに渡す引数のリストです。  「[Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md)」を参照してください。|  
-|`resourceexpression`|必須。  `resourcetype` の要件を満たすシステム リソースを参照する変数または式です。  2 番目の構文を使用する場合は、制御を `Using` ステートメントに渡す前にリソースを取得する必要があります。|  
+|用語|定義|  
+|---|---|  
+|`resourcename`|必須です。 システム リソースを参照する参照変数を`Using`コントロールをブロックします。|  
+|`New`|必要な場合、`Using`ステートメントがリソースを取得します。 リソースを既に取得した場合は、2 番目の構文を使用します。|  
+|`resourcetype`|必須です。 リソースのクラスです。 このクラスを実装する必要があります、<xref:System.IDisposable>インターフェイスです。|  
+|`arglist`|省略可能です。 インスタンスを作成するコンス トラクターに渡す引数のリスト`resourcetype`です。 参照してください[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)です。|  
+|`resourceexpression`|必須です。 変数または式の要件を満たすシステム リソースを参照する`resourcetype`です。 2 番目の構文を使用する場合は、制御を渡す前に、リソースを取得する必要があります、`Using`ステートメントです。|  
   
-## 解説  
- ファイル ハンドル、COM ラッパー、SQL 接続などのアンマネージ リソースを取得するコードを作成する場合があります。  そのようなコードに `Using` ブロックを使用すると、リソースを使い終わったとき、その 1 つ以上のリソースを確実に破棄できます。  これにより、他のコードからそれらのリソースを使うことが可能になります。  
+## <a name="remarks"></a>コメント  
+ 場合によって、コードでは、ファイル ハンドル、COM ラッパーの場合は、SQL 接続など、アンマネージ リソースが必要です。 A`Using`ブロックがそれらにコードが完了すると、そのような 1 つまたは複数のリソースの破棄を保証します。 これによりを使用するには、他のコードで使用可能です。  
   
- マネージ リソースであれば、何もコードを追加しなくても、.NET Framework のガベージ コレクター \(GC\) が破棄してくれます。  マネージ リソースに `Using` ブロックは必要ありません。  ただし、`Using` ブロックを使用して、ガベージ コレクターを待たずに、マネージ リソースの破棄を強制することはできます。  
+ マネージ リソースが破棄、.NET Framework ガベージ コレクター (GC) によって、手動で追加のコーディングなし。 必要としない、`Using`マネージ リソースをブロックします。 ただし、引き続き使用できます、`Using`強制的にガベージ コレクターを待つ代わりにマネージ リソースの破棄をブロックします。  
   
- `Using` ブロックは、取得、使用、破棄という 3 つの部分で構成されます。  
+ A`Using`ブロックには 3 つの部分。 取得、使用状況、および破棄します。  
   
--   *取得*システム リソースを参照するための変数を作成、および初期化します。  `Using` ステートメントでは 1 つ以上のリソースを取得することも、ブロックに入る前にリソースを 1 つ取得して、それを `Using` ステートメントに指定することもできます。  `resourceexpression` を指定する場合は、制御を `Using` ステートメントに渡す前にリソースを取得する必要があります。  
+-   *買収*変数の作成と初期化、システムのリソースを参照することを意味します。 `Using`ステートメントが 1 つまたは複数のリソースを取得するか、ブロックに入る前にリソースを 1 つを取得してそれを指定する、`Using`ステートメントです。 指定した場合`resourceexpression`に制御を渡す前に、リソースを取得する必要があります、`Using`ステートメントです。  
   
--   *使用*リソースにアクセスし、それを使って処理を実行します。  リソースを使用するステートメントは、`Using` と `End Using` の間に記述します。  
+-   *使用状況*リソースにアクセスし、それを使ってアクションを実行することを意味します。 間にあるステートメント`Using`と`End Using`リソースの使用量を表します。  
   
--   *破棄* `resourcename` に指定されたオブジェクトから <xref:System.IDisposable.Dispose%2A> メソッドを呼び出します。  これによって、オブジェクトはリソースを適切に終了させることができます。  `End Using` ステートメントはリソースを `Using` ブロックの制御に基づいて破棄します。  
+-   *廃棄*を呼び出す方法、<xref:System.IDisposable.Dispose%2A>メソッド内のオブジェクトを`resourcename`です。 これにより、そのリソースを正常に終了するオブジェクト。 `End Using`下にあるリソースを破棄するステートメント、`Using`ブロックのコントロールです。  
   
-## \[動作\]  
- `Using` ブロックは `Try`...`Finally` 構造 \(`Try` でリソースを使用し、`Finally` ブロックでリソースを破棄する\) と同様に動作します。  このため、`Using` ブロックを使えば、ブロックがどのように終了した場合でも、リソースは必ず破棄されます。  これは、<xref:System.StackOverflowException> を除く未処理の例外の場合にも該当します。  
+## <a name="behavior"></a>動作  
+ A`Using`ブロックの動作と同様に、`Try`しています.`Finally`を構築、`Try`ブロックは、リソースを使用して、`Finally`それらのブロックを破棄します。 このため、`Using`ブロック、ブロックを終了する方法に関係なく、リソースの破棄を保証します。 これは、未処理の例外を場合でも当てはまりますを除き、<xref:System.StackOverflowException>です。  
   
- `Using` ステートメントによって取得されるリソース変数のスコープは、必ず `Using` ブロックに制限されます。  
+ によって取得されたすべてのリソース変数のスコープ、`Using`ステートメントに制限されます、`Using`ブロックします。  
   
- `Using` ステートメントで 1 つ以上のシステム リソースを指定すると、`Using` ブロックを入れ子にするのと同じ意味になります。  
+ 1 つ以上のシステム リソースを指定する場合、`Using`を入れ子にする場合と同じステートメントでは、影響は`Using`互いをブロックします。  
   
- `resourcename` が `Nothing`場合、<xref:System.IDisposable.Dispose%2A> の呼び出しは行われず、例外はスローされません。  
+ 場合`resourcename`は`Nothing`、呼び出しがありません<xref:System.IDisposable.Dispose%2A>が行われると、例外はスローされません。  
   
-## Using ブロック内の構造化例外処理  
- `Using` ブロック内で起きる可能性のある例外を処理することが必要な場合は、ブロック内に `Try`...`Finally` 構造全体を追加してください。  `Using` ステートメントがリソースの取得に失敗するケースに対応する必要がある場合は、`resourcename` が `Nothing` であるかどうかをテストします。  
+## <a name="structured-exception-handling-within-a-using-block"></a>構造化例外処理を使用してブロック内  
+ 内で発生する可能性がある例外を処理する必要があるかどうか、`Using`ブロック、完全なを追加することができます`Try`しています.`Finally`を構築します。 ケースを処理する必要がある場合で、`Using`ステートメントが、リソースの取得中に失敗した、かどうかをテストできます`resourcename`は`Nothing`します。  
   
-## Using ブロック以外での構造化例外処理  
- リソースの取得を細かく制御する必要がある場合、または `Finally` ブロックにコードを追加する必要がある場合は、`Using` ブロックを `Try`...`Finally` 構造に書き換えてください。  次に示すスケルトンは、どちらも `resource` の取得と破棄の処理を実行する `Try` 構造と `Using` 構造の例です。  
+## <a name="structured-exception-handling-instead-of-a-using-block"></a>構造化例外処理を使用してブロックではなく  
+ 場合は、リソースの取得をより細かく制御する必要がありますまたはでコードを追加する必要があります、`Finally`ブロックを書き直すことができます、`Using`としてブロック、`Try`しています.`Finally`構築します。 次の例では、スケルトン`Try`と`Using`買収や破棄が同じ構造`resource`です。  
   
 ```vb  
 Using resource As New resourceType   
@@ -110,16 +106,16 @@ End Try
 ```  
   
 > [!NOTE]
->  `Using` ブロック内のコードで、`resourcename` に含まれるオブジェクトを別の変数に割り当てることはできません。  `Using` ブロックの終了時にリソースが破棄され、他の変数は自分がポイントしているリソースにアクセスできなくなります。  
+>  内のコード、`Using`ブロック内のオブジェクトを割り当てないでください`resourcename`を別の変数です。 終了すると、`Using`ブロック、リソースが破棄され、他の変数が指すリソースにアクセスできません。  
   
-## 使用例  
- 次の例は、log.txtという作成して2行のテキストをファイルに書き込みます。  この例では、と同じファイルを読み取り、行のテキストが表示されます。  
+## <a name="example"></a>例  
+ 次の例では、log.txt は、ファイルに次の 2 つの行のテキストを書き込むファイルを作成します。 例もその同じファイルをテキストの行が表示されます。  
   
- <xref:System.IO.TextWriter> と <xref:System.IO.TextReader> のクラスが <xref:System.IDisposable> のインターフェイスを実装するため、コードは、ファイルが読み取りおよび書き込み操作の後で正しく閉じるように `Using` のステートメントを使用できます。  
+ <xref:System.IO.TextWriter>と<xref:System.IO.TextReader>クラスで実装、<xref:System.IDisposable>コードで使用できるインターフェイス、`Using`ステートメント ファイルの書き込みの後に閉じられたし、読み取り操作は正しくことを確認します。  
   
  [!code-vb[VbVbalrStatements#50](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/using-statement_1.vb)]  
   
-## 参照  
- <xref:System.IDisposable>   
- [Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)   
- [How to: Dispose of a System Resource](../../../visual-basic/programming-guide/language-features/control-flow/how-to-dispose-of-a-system-resource.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.IDisposable>  
+ [Try...Catch...Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
+ [方法 : システム リソースを破棄する](../../../visual-basic/programming-guide/language-features/control-flow/how-to-dispose-of-a-system-resource.md)

@@ -1,59 +1,62 @@
 ---
-title: "方法 : システム ブラシで領域を塗りつぶす | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ブラシ, 塗りつぶし (システム ブラシによる)"
-  - "描画, システム ブラシで"
-  - "システム ブラシ, 塗りつぶし"
+title: "方法 : システム ブラシで領域を塗りつぶす"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- system brushes [WPF], painting with
+- painting [WPF], with system brushes
+- brushes [WPF], painting with system brushes [WPF]
 ms.assetid: 5141a763-9235-42cb-a6bb-afc75513eac7
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 355df3718d90768cdfa8bc9780c44c19eb4bf9bf
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : システム ブラシで領域を塗りつぶす
-<xref:System.Windows.SystemColors> クラスを使用すると、<xref:System.Windows.SystemColors.ControlBrush%2A>、<xref:System.Windows.SystemColors.ControlBrushKey%2A>、<xref:System.Windows.SystemColors.DesktopBrush%2A> などのシステム ブラシやシステム カラーにアクセスできます。  システム ブラシは、指定したシステム カラーで領域を塗りつぶす <xref:System.Windows.Media.SolidColorBrush> オブジェクトです。  システム ブラシは、常に純色の塗りつぶしを生成します。グラデーションを作成するためには使用できません。  
+# <a name="how-to-paint-an-area-with-a-system-brush"></a>方法 : システム ブラシで領域を塗りつぶす
+<xref:System.Windows.SystemColors>クラスなどのシステム ブラシおよび色 へのアクセスの提供<xref:System.Windows.SystemColors.ControlBrush%2A>、 <xref:System.Windows.SystemColors.ControlBrushKey%2A>、および<xref:System.Windows.SystemColors.DesktopBrush%2A>です。 システム ブラシ、<xref:System.Windows.Media.SolidColorBrush>指定したシステム カラーを使用して領域を描画するオブジェクト。 システム ブラシは、常に純色の塗りつぶしを生成します。グラデーションを作成するために使用することはできません。  
   
- システム ブラシは、静的なリソースとしても、動的なリソースとしても使用できます。  アプリケーションの実行中にユーザーがシステム ブラシを変更したときにブラシを自動的に更新する場合は、動的リソースを使用します。それ以外の場合は、静的リソースを使用します。  SystemColors クラスには、厳密な名前付け規則に従うさまざまな静的プロパティが含まれます。  
+ システム ブラシは、静的なリソースとしても、動的なリソースとしても使用できます。 アプリケーションの実行中にユーザーがシステム ブラシを変更したときにブラシを自動的に更新する場合は、動的なリソースを使用します。それ以外の場合は、静的なリソースを使用します。 SystemColors クラスには、厳密な名前付け規則に従うさまざまな静的プロパティが含まれます。  
   
--   *\<SystemColor\>*Brush  
+-   *\<SystemColor>*Brush  
   
-     指定したシステム カラーの <xref:System.Windows.Media.SolidColorBrush> に対する静的参照を取得します。  
+     静的参照を取得、<xref:System.Windows.Media.SolidColorBrush>の指定したシステム カラーです。  
   
--   *\<SystemColor\>*BrushKey  
+-   *\<SystemColor>*BrushKey  
   
-     指定したシステム カラーの <xref:System.Windows.Media.SolidColorBrush> に対する動的参照を取得します。  
+     参照を動的に取得、<xref:System.Windows.Media.SolidColorBrush>の指定したシステム カラーです。  
   
--   *\<SystemColor\>*Color  
+-   *\<SystemColor>*Color  
   
-     指定したシステム カラーの <xref:System.Windows.Media.Color> 構造体に対する静的参照を取得します。  
+     静的参照を取得、<xref:System.Windows.Media.Color>指定したシステム カラーの構造。  
   
--   *\<SystemColor\>*ColorKey  
+-   *\<SystemColor>*ColorKey  
   
-     指定したシステム カラーの <xref:System.Windows.Media.Color> 構造体に対する動的参照を取得します。  
+     参照を動的に取得、<xref:System.Windows.Media.Color>指定したシステム カラーの構造。  
   
- システム カラーは <xref:System.Windows.Media.Color> 構造体であり、ブラシの構成に使用できます。  たとえば、<xref:System.Windows.Media.LinearGradientBrush> オブジェクトのグラデーション終了位置の <xref:System.Windows.Media.GradientStop.Color%2A> プロパティにシステム カラーを設定することで、システム カラーを使用してグラデーションを作成できます。  例については、「[グラデーションでシステム カラーを使用する](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-system-colors-in-a-gradient.md)」を参照してください。  
+ システム色は、<xref:System.Windows.Media.Color>ブラシを構成するために使用できます。 システム カラーを設定して、使用してグラデーションを作成するなど、<xref:System.Windows.Media.GradientStop.Color%2A>のプロパティ、<xref:System.Windows.Media.LinearGradientBrush>グラデーション終了位置を色のシステム オブジェクトの。 例については、次を参照してください。[のグラデーションを使用してシステム カラー](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-system-colors-in-a-gradient.md)です。  
   
-## 使用例  
- 次の例では、動的システム ブラシ参照を使用して、ボタンの背景を設定しています。  
+## <a name="example"></a>例  
+ 次の例では、動的なシステム ブラシの参照を使用して、ボタンの背景を設定します。  
   
- [!code-xml[brushsamples_snip#GraphicsMMDynamicSystemColorDesktopBrushKeyExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/brushsamples_snip/CS/DynamicSystemBrushExample.xaml#graphicsmmdynamicsystemcolordesktopbrushkeyexamplewholepage)]  
+ [!code-xaml[brushsamples_snip#GraphicsMMDynamicSystemColorDesktopBrushKeyExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/brushsamples_snip/CS/DynamicSystemBrushExample.xaml#graphicsmmdynamicsystemcolordesktopbrushkeyexamplewholepage)]  
   
- 次の例では、静的システム ブラシ参照を使用して、ボタンの背景を設定しています。  
+ 次の例では、静的なシステム ブラシの参照を使用して、ボタンの背景を設定します。  
   
- [!code-xml[brushsamples_snip#GraphicsMMStaticSystemColorDesktopBrushExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/brushsamples_snip/CS/StaticSystemBrushExample.xaml#graphicsmmstaticsystemcolordesktopbrushexamplewholepage)]  
+ [!code-xaml[brushsamples_snip#GraphicsMMStaticSystemColorDesktopBrushExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/brushsamples_snip/CS/StaticSystemBrushExample.xaml#graphicsmmstaticsystemcolordesktopbrushexamplewholepage)]  
   
- グラデーションでのシステム カラーの使用方法を示す例については、「[グラデーションでシステム カラーを使用する](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-system-colors-in-a-gradient.md)」を参照してください。  
+ グラデーションのシステム カラーを使用する方法を示す例は、次を参照してください。[グラデーションのシステム カラーを使用して](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-system-colors-in-a-gradient.md)です。  
   
-## 参照  
- [グラデーションでシステム カラーを使用する](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-system-colors-in-a-gradient.md)   
+## <a name="see-also"></a>関連項目  
+ [グラデーションでシステム カラーを使用する](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-system-colors-in-a-gradient.md)  
  [純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)

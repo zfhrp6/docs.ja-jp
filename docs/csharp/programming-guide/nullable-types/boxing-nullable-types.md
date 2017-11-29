@@ -1,40 +1,22 @@
 ---
 title: "Null 許容型のボックス化 (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - boxing [C#], nullable types
 - unboxing [C#], nullable types
 - nullable types [C#], boxing and unboxing
 ms.assetid: bdb5b626-abc0-405d-8f64-0f0a0bf883a4
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 29fccba56f6758fdfd407fa1879baa9260b69187
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5ce063a70ced98fd8b99b4b46d704e08ddc96e10
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="boxing-nullable-types-c-programming-guide"></a>Null 許容型のボックス化 (C# プログラミング ガイド)
 Null 許容型に基づくオブジェクトは、オブジェクトが Null 以外の場合にのみボックス化されます。 <xref:System.Nullable%601.HasValue%2A> が `false` の場合、オブジェクト参照はボックス化ではなく `null` に割り当てられます。 例:  
@@ -45,7 +27,7 @@ object o = b;
 // Now o is null.  
 ```  
   
- オブジェクトが Null 以外の場合 (<xref:System.Nullable%601.HasValue%2A> が `true` の場合)、ボックス化が発生しますが、Null 許容型オブジェクトの基礎になっている基本型のみがボックス化されます。 Null 以外の Null 許容値型をボックス化すると、値の型をラップする <xref:System.Nullable%601?displayProperty=fullName> ではなく、値の型自体がボックス化されます。 例:  
+ オブジェクトが Null 以外の場合 (<xref:System.Nullable%601.HasValue%2A> が `true` の場合)、ボックス化が発生しますが、Null 許容型オブジェクトの基礎になっている基本型のみがボックス化されます。 Null 以外の Null 許容値型をボックス化すると、値の型をラップする <xref:System.Nullable%601?displayProperty=nameWithType> ではなく、値の型自体がボックス化されます。 例:  
   
 ```csharp  
 bool? b = false;  
@@ -91,7 +73,6 @@ int? i2 = (int?)iBoxed;
     ```  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [Null 許容型](../../../csharp/programming-guide/nullable-types/index.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [Null 許容型](../../../csharp/programming-guide/nullable-types/index.md)  
  [方法: Null 許容型を識別する](../../../csharp/programming-guide/nullable-types/how-to-identify-a-nullable-type.md)
-

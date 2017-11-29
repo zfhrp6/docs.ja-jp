@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -20,16 +19,15 @@ helpviewer_keywords:
 - code, verification process
 - verification testing code
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 7a41a6bf29ec9310d88778b55aa0c27672ba0568
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 46b25b9eb518d2dadb3ec069c5d4d61a929262f2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="application-domains"></a>アプリケーション ドメイン
 オペレーティング システムやランタイム環境では、通常、複数のアプリケーションがなんらかの形で分離されています。 たとえば、Windows ではプロセスを使用してアプリケーションが分離されています。 このような分離は、あるアプリケーションで実行されているコードが、関係のない別のアプリケーションに悪影響をもたらさないようにするために必要です。  
@@ -65,7 +63,7 @@ ms.lasthandoff: 07/28/2017
     > [!NOTE]
     >  個々のアセンブリや型はアンロードできません。 アンロードできるのはドメイン全体だけです。  
   
--   1 つのアプリケーションで実行されているコードは、ほかのアプリケーションのコードやリソースに直接アクセスできません。 共通言語ランタイムでは、異なるアプリケーション ドメインにあるオブジェクト間での直接呼び出しを禁止することで分離を実現しています。 ドメイン間で渡されるオブジェクトは、コピーされるか、またはプロキシ経由でアクセスされます。 オブジェクトがコピーされる場合、オブジェクトの呼び出しはローカル呼び出しです。 つまり、呼び出し元と参照先オブジェクトの両方が、同じアプリケーション ドメイン内にあります。 オブジェクトがプロキシ経由でアクセスされる場合は、オブジェクトの呼び出しはリモート呼び出しです。 この場合は、呼び出し元と参照先オブジェクトが別のアプリケーション ドメイン内にあります。 ドメイン間呼び出しでは、2 つのプロセス間や 2 台のコンピューター間での呼び出しと同じリモート呼び出しインフラストラクチャが使用されます。 そのため、メソッドの呼び出しが正しく JIT コンパイルされるように、参照先オブジェクトのメタデータが両方のアプリケーション ドメインから利用できることが必要です。 呼び出し元のドメインが呼び出し先オブジェクトのメタデータにアクセスできない場合、コンパイルは **System.IO.FileNotFound** という例外が発生して失敗する可能性があります。 詳細については、「[リモート オブジェクト](http://msdn.microsoft.com/en-us/515686e6-0a8d-42f7-8188-73abede57c58)」を参照してください。 ドメイン間でオブジェクトにアクセスする方法は、アクセス対象のオブジェクトによって決まります。 詳細については、「<xref:System.MarshalByRefObject?displayProperty=fullName>」を参照してください。  
+-   1 つのアプリケーションで実行されているコードは、ほかのアプリケーションのコードやリソースに直接アクセスできません。 共通言語ランタイムでは、異なるアプリケーション ドメインにあるオブジェクト間での直接呼び出しを禁止することで分離を実現しています。 ドメイン間で渡されるオブジェクトは、コピーされるか、またはプロキシ経由でアクセスされます。 オブジェクトがコピーされる場合、オブジェクトの呼び出しはローカル呼び出しです。 つまり、呼び出し元と参照先オブジェクトの両方が、同じアプリケーション ドメイン内にあります。 オブジェクトがプロキシ経由でアクセスされる場合は、オブジェクトの呼び出しはリモート呼び出しです。 この場合は、呼び出し元と参照先オブジェクトが別のアプリケーション ドメイン内にあります。 ドメイン間呼び出しでは、2 つのプロセス間や 2 台のコンピューター間での呼び出しと同じリモート呼び出しインフラストラクチャが使用されます。 そのため、メソッドの呼び出しが正しく JIT コンパイルされるように、参照先オブジェクトのメタデータが両方のアプリケーション ドメインから利用できることが必要です。 呼び出し元のドメインが呼び出し先オブジェクトのメタデータにアクセスできない場合、コンパイルは **System.IO.FileNotFound** という例外が発生して失敗する可能性があります。 詳細については、「[リモート オブジェクト](http://msdn.microsoft.com/en-us/515686e6-0a8d-42f7-8188-73abede57c58)」を参照してください。 ドメイン間でオブジェクトにアクセスする方法は、アクセス対象のオブジェクトによって決まります。 詳細については、「<xref:System.MarshalByRefObject?displayProperty=nameWithType>」を参照してください。  
   
 -   コードが影響する範囲は、そのコードが実行されるアプリケーションによって決まります。 つまり、アプリケーション ドメインは、アプリケーションのバージョン ポリシー、アクセス対象となるリモート アセンブリの位置、ドメインに読み込まれるアセンブリの場所に関する情報などの構成設定を提供します。  
   
@@ -110,12 +108,12 @@ ms.lasthandoff: 07/28/2017
   
  アプリケーション ドメインとスレッドとの関係は一対一ではありません。 1 つのアプリケーション ドメイン内で一度に複数のスレッドが実行される場合があり、また 1 つのスレッドが 1 つのアプリケーション ドメインに限定されることもありません。 つまり、スレッドはアプリケーション ドメイン境界を自由に越えることができ、アプリケーション ドメインごとに新しいスレッドが生成されるわけではありません。  
   
- 特定の時点に限って見ると、どのスレッドも 1 つのアプリケーション ドメイン内で実行されています。 特定のアプリケーション ドメインでゼロ、1 つ、または複数のスレッドを実行できます。 ランタイムは、どのスレッドがどのアプリケーション ドメインで実行されているかを追跡しています。 任意の時点で、あるスレッドが実行されているドメインを特定するには、<xref:System.Threading.Thread.GetDomain%2A?displayProperty=fullName> メソッドを呼び出します。  
+ 特定の時点に限って見ると、どのスレッドも 1 つのアプリケーション ドメイン内で実行されています。 特定のアプリケーション ドメインでゼロ、1 つ、または複数のスレッドを実行できます。 ランタイムは、どのスレッドがどのアプリケーション ドメインで実行されているかを追跡しています。 任意の時点で、あるスレッドが実行されているドメインを特定するには、<xref:System.Threading.Thread.GetDomain%2A?displayProperty=nameWithType> メソッドを呼び出します。  
   
 ### <a name="application-domains-and-cultures"></a>アプリケーション ドメインとカルチャ  
- <xref:System.Globalization.CultureInfo> オブジェクトによって表されるカルチャは、スレッドに関連付けられます。 <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName> プロパティを使用すると、現在実行しているスレッドに関連付けられているカルチャを取得できます。<xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=fullName> プロパティを使用すると、現在実行しているスレッドに関連付けられているカルチャを取得または設定できます。 スレッドに関連付けられているカルチャが <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=fullName> プロパティを使用して明示的に設定されている場合、スレッドがアプリケーション ドメインの境界を越えても、そのスレッドとの関連付けが維持されます。 それ以外の場合、スレッドに関連付けられるカルチャは、任意の時点でスレッドが実行されているアプリケーション ドメインの <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=fullName> プロパティの値によって決まります。  
+ <xref:System.Globalization.CultureInfo> オブジェクトによって表されるカルチャは、スレッドに関連付けられます。 <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> プロパティを使用すると、現在実行しているスレッドに関連付けられているカルチャを取得できます。<xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> プロパティを使用すると、現在実行しているスレッドに関連付けられているカルチャを取得または設定できます。 スレッドに関連付けられているカルチャが <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> プロパティを使用して明示的に設定されている場合、スレッドがアプリケーション ドメインの境界を越えても、そのスレッドとの関連付けが維持されます。 それ以外の場合、スレッドに関連付けられるカルチャは、任意の時点でスレッドが実行されているアプリケーション ドメインの <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> プロパティの値によって決まります。  
   
--   プロパティの値が `null` でない場合、プロパティによって返されるカルチャはスレッドに関連付けられます (したがって <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=fullName> プロパティと <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName> プロパティによって返されます)。  
+-   プロパティの値が `null` でない場合、プロパティによって返されるカルチャはスレッドに関連付けられます (したがって <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> プロパティと <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> プロパティによって返されます)。  
   
 -   プロパティの値が `null` の場合は、現在のシステム カルチャがスレッドに関連付けられます。  
   
@@ -171,5 +169,4 @@ Value (to append) = COMPLUS_LoaderOptimization=1
   
 <a name="reference"></a>   
 ## <a name="reference"></a>参照  
- <xref:System.MarshalByRefObject?displayProperty=fullName>
-
+ <xref:System.MarshalByRefObject?displayProperty=nameWithType>

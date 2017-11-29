@@ -1,53 +1,35 @@
 ---
-title: "現在のメソッドは引き続き実行呼び出しが完了する前にこの呼び出しを待機しないため |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "この呼び出しは待機されなかったため、現在のメソッドの実行は呼び出しの完了を待たずに続行されます。"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - bc42358
 - vbc42358
-helpviewer_keywords:
-- BC42358
+helpviewer_keywords: BC42358
 ms.assetid: 43342515-c3c8-4155-9263-c302afabcbc2
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a9165414bc08b62aab20410e7af187fa4b45c162
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: a0d0a5e7c50bacc657a3f54a7f08036ede59cbfa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="because-this-call-is-not-awaited-the-current-method-continues-to-run-before-the-call-is-completed"></a>この呼び出しは待機されなかったため、現在のメソッドの実行は呼び出しの完了を待たずに続行されます。
 この呼び出しは待機されなかったため、現在のメソッドの実行は呼び出しの完了を待たずに続行されます。 呼び出しの結果に 'Await' 演算子を適用することを検討してください。  
   
- 現在のメソッドを返す非同期メソッドを呼び出す、<xref:System.Threading.Tasks.Task>または<xref:System.Threading.Tasks.Task%601>適用しないと、 [Await](../../../visual-basic/language-reference/operators/await-operator.md)演算子の結果を</xref:System.Threading.Tasks.Task%601></xref:System.Threading.Tasks.Task>。 この非同期メソッドの呼び出しは、非同期タスクを開始します。 ただし、 `Await` 演算子が適用されないため、プログラムはタスクの完了を待たずに処理を続行します。 ほとんどの場合、この動作は想定されていません。 通常は、呼び出し元のメソッドの他の側面が呼び出しの結果に依存します。また、最低でも、呼び出しを含むメソッドから制御が返される前に、呼び出されたメソッドが完了することが想定されます。  
+ 現在のメソッドは <xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601> を返す非同期メソッドを呼び出し、 [Await](../../../visual-basic/language-reference/operators/await-operator.md) 演算子を結果に適用しません。 この非同期メソッドの呼び出しは、非同期タスクを開始します。 ただし、 `Await` 演算子が適用されないため、プログラムはタスクの完了を待たずに処理を続行します。 ほとんどの場合、この動作は想定されていません。 通常は、呼び出し元のメソッドの他の側面が呼び出しの結果に依存します。また、最低でも、呼び出しを含むメソッドから制御が返される前に、呼び出されたメソッドが完了することが想定されます。  
   
- 同様に、呼び出された非同期メソッドで発生した例外に対する処理も重要です。 返すメソッドで発生した例外、<xref:System.Threading.Tasks.Task>または<xref:System.Threading.Tasks.Task%601>返されたタスクに格納されます</xref:System.Threading.Tasks.Task%601></xref:System.Threading.Tasks.Task>。 このタスクが返されるのを待たない場合や例外を明示的にチェックしない場合、例外は失われます。 このタスクが返されるのを待機する場合は、例外が再スローされます。  
+ 同様に、呼び出された非同期メソッドで発生した例外に対する処理も重要です。 <xref:System.Threading.Tasks.Task> または  <xref:System.Threading.Tasks.Task%601> を返すメソッド内で発生した例外は、返されたタスクに格納されます。 このタスクが返されるのを待たない場合や例外を明示的にチェックしない場合、例外は失われます。 このタスクが返されるのを待機する場合は、例外が再スローされます。  
   
  ベスト プラクティスとしては、常に呼び出しを待機する必要があります。  
   
- 既定では、このメッセージは警告です。 警告を非表示や警告をエラーとして扱う方法の詳細については、次を参照してください。 [Visual Basic での警告の構成](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic)します。  
+ 既定では、このメッセージは警告です。 警告を非表示や、警告をエラーとして扱う方法の詳細については、次を参照してください。 [Visual Basic での警告の構成](/visualstudio/ide/configuring-warnings-in-visual-basic)です。  
   
  **エラー ID:** BC42358  
   
@@ -141,7 +123,7 @@ ms.lasthandoff: 03/13/2017
   
      ボタンとテキスト ボックスを含むシンプルなウィンドウが、MainWindow.xaml の **[デザイン]** ビューに表示されます。  
   
-     XAML デザイナーの詳細については、次を参照してください。 [XAML デザイナーを使用して UI を作成する](https://docs.microsoft.com/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio)です。 独自の単純な UI を構築する方法については、次を参照してください。、WPF アプリケーションを作成するには"するには」および「単純な WPF MainWindow をデザインするには"するセクションの[チュートリアル: を使用して Async と Await による Web にアクセスする](http://msdn.microsoft.com/library/25879a6d-fdee-4a38-bc98-bb8c24d16042)です。  
+     XAML デザイナーの詳細については、「[XAML デザイナーを使用した UI の作成](/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio)」を参照してください。 独自の単純な UI を構築する方法については、「[チュートリアル: Async と Await を使用した Web へのアクセス](http://msdn.microsoft.com/library/25879a6d-fdee-4a38-bc98-bb8c24d16042)」の WPF アプリケーションの作成に関するセクションと単純な WPF MainWindow のデザインに関するセクションを参照してください。  
   
 4.  MainWindow.xaml.vb のコードを次のコードに置き換えます。  
   
@@ -228,6 +210,5 @@ ms.lasthandoff: 03/13/2017
      想定される出力がコードの最後に表示されます。  
   
 ## <a name="see-also"></a>関連項目  
- [Await 演算子](../../../visual-basic/language-reference/operators/await-operator.md)   
+ [Await 演算子](../../../visual-basic/language-reference/operators/await-operator.md)  
  [Async および Await を使用した非同期プログラミング](../../../visual-basic/programming-guide/concepts/async/index.md)
-

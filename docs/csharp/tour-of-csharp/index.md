@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: ebc727cd-8112-42e7-b59c-3c2873ad661c
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 0fa7f9f906ba72b114fc59c8026b4b6c79586dd2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="a-tour-of-the-c-language"></a>C# 言語のツアー  
 
 C# ("シー シャープ" と読みます) は、シンプルで最新のタイプ セーフなオブジェクト指向のプログラミング言語です。 C# は C 言語ファミリーをルーツとしているため、C、C++、Java、JavaScript のプログラマーであればすぐに使いこなすことができます。
@@ -85,4 +83,3 @@ C# について学ぶべきことはまだたくさんあります。  以下の
 
 >[!div class="step-by-step"]
 [次へ](program-structure.md)
-

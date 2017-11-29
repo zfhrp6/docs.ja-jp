@@ -5,15 +5,12 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - CIM types
 - Management Strongly Typed Class Generator
@@ -21,16 +18,15 @@ helpviewer_keywords:
 - Mgmtclassgen.exe
 - early-bound managed classes
 ms.assetid: 02ce6699-49b5-4a0b-b0d5-1003c491232e
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 0f3e01e54cb60c7da1a57940246c5402ba635778
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: f83136265c4002f3ea4872b370b856bfacf4db3d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="mgmtclassgenexe-management-strongly-typed-class-generator"></a>Mgmtclassgen.exe (厳密型クラス ジェネレーター)
 厳密型クラス ジェネレーター (Mgmtclassgen.exe) ツールを使用すると、指定した WMI (Windows Management Instrumentation) クラスに対して、事前バインディングされたマネージ クラスをすばやく生成できます。 生成されたクラスを使用すると、WMI クラスのインスタンスにアクセスするために書く必要のあるコードを簡略化できます。  
@@ -58,7 +54,7 @@ WMIClass [options]
 |**/?**|このツールのコマンド構文とオプションを表示します。|  
   
 ## <a name="remarks"></a>コメント  
- Mgmtclassgen.exe は、<xref:System.Management.ManagementClass.GetStronglyTypedClassCode%2A?displayProperty=fullName> メソッドを使用します。 したがって、任意のカスタム コード プロバイダーを使用して、C#、Visual Basic、および JScript 以外のマネージ言語でコードを生成できます。  
+ Mgmtclassgen.exe は、<xref:System.Management.ManagementClass.GetStronglyTypedClassCode%2A?displayProperty=nameWithType> メソッドを使用します。 したがって、任意のカスタム コード プロバイダーを使用して、C#、Visual Basic、および JScript 以外のマネージ言語でコードを生成できます。  
   
  生成されたクラスは、それらのクラスを生成する目的となったスキーマにバインドされます。 基になるスキーマが変更された場合に、その変更をこのスキーマに反映するには、クラスを生成し直す必要があります。  
   
@@ -163,9 +159,8 @@ public class App
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Management>   
- <xref:System.Management.ManagementClass.GetStronglyTypedClassCode%2A?displayProperty=fullName>   
- <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=fullName>   
- [ツール](../../../docs/framework/tools/index.md)   
+ <xref:System.Management>  
+ <xref:System.Management.ManagementClass.GetStronglyTypedClassCode%2A?displayProperty=nameWithType>  
+ <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>  
+ [ツール](../../../docs/framework/tools/index.md)  
  [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
-

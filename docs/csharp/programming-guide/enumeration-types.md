@@ -2,8 +2,7 @@
 title: "列挙型 (C# プログラミング ガイド)"
 ms.date: 09/10/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - enumerations [C#]
@@ -11,15 +10,14 @@ helpviewer_keywords:
 - C# Language, enums
 - bit flags [C#]
 ms.assetid: 64a9b731-9e3c-4336-8a09-018db2aa10b7
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: 13ec7d5d2a44cddb2b7f440c8d811c2e4060d432
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 6b58466f8dd70a3eefb73c3d1ac21ec42a370b47
-ms.openlocfilehash: 71ddf47259ce55a6a7c5a9e5f4999ed786154f52
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/19/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="enumeration-types-c-programming-guide"></a>列挙型 (C# プログラミング ガイド)
 
@@ -68,7 +66,7 @@ Console.WriteLine("{0} is month number #{1}.", thisMonth, monthNumber);
 
 列挙型を利用してビット フラグを定義できます。ビット フラグを定義すると、列挙型のインスタンスは列挙子一覧で定義されている値のあらゆる組み合わせを格納できます。 (もちろん、意味のない組み合わせやプログラム コードで許可されない組み合わせもあります。)
 
-ビット フラグ列挙を作成するには、<xref:System.FlagsAttribute?displayProperty=fullName> 属性を適用し、ビット処理演算の `AND`、`OR`、`NOT`、`XOR` を実行できるように値を定義します。 ビット フラグ列挙に、"フラグが設定されていない" という意味のゼロの値を持つ名前付き定数を追加します。 "フラグが設定されていない" という意味ではない場合、ゼロの値をフラグに指定しないでください。
+ビット フラグ列挙を作成するには、<xref:System.FlagsAttribute?displayProperty=nameWithType> 属性を適用し、ビット処理演算の `AND`、`OR`、`NOT`、`XOR` を実行できるように値を定義します。 ビット フラグ列挙に、"フラグが設定されていない" という意味のゼロの値を持つ名前付き定数を追加します。 "フラグが設定されていない" という意味ではない場合、ゼロの値をフラグに指定しないでください。
 
 次の例では、`Day` 列挙の別のバージョンが定義されています。`Days` という名前が付いています。 `Days` に `Flags` 属性が与えられており、各値に次の大きい 2 の累乗が割り当てられています。 これにより、値が `Days.Tuesday | Days.Thursday` になる `Days` 変数を作成できます。
 
@@ -82,20 +80,19 @@ Console.WriteLine("{0} is month number #{1}.", thisMonth, monthNumber);
 
 [!code-csharp[csProgGuideEnums#7](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideEnums/CS/Enums.cs#7)]
 
-<xref:System.FlagsAttribute?displayProperty=fullName> 属性を使用して列挙型を定義する際の検討事項の詳細については、<xref:System.Enum?displayProperty=fullName> に関する記事を参照してください。
+<xref:System.FlagsAttribute?displayProperty=nameWithType> 属性を使用して列挙型を定義する際の検討事項の詳細については、<xref:System.Enum?displayProperty=nameWithType> に関する記事を参照してください。
 
 ## <a name="using-the-systemenum-methods-to-discover-and-manipulate-enum-values"></a>System.Enum メソッドを利用して列挙値を検出し、操作する
 
-列挙はすべて、<xref:System.Enum?displayProperty=fullName> 型のインスタンスです。 <xref:System.Enum?displayProperty=fullName> から新しいクラスを派生させることはできませんが、このメソッドを利用して列挙インスタンスの値に関する情報を検出し、操作できます。
+列挙はすべて、<xref:System.Enum?displayProperty=nameWithType> 型のインスタンスです。 <xref:System.Enum?displayProperty=nameWithType> から新しいクラスを派生させることはできませんが、このメソッドを利用して列挙インスタンスの値に関する情報を検出し、操作できます。
 
 [!code-csharp[csProgGuideEnums#5](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideEnums/CS/Enums.cs#5)]
 
-詳細については、「<xref:System.Enum?displayProperty=fullName>」を参照してください。
+詳細については、「<xref:System.Enum?displayProperty=nameWithType>」を参照してください。
 
 拡張メソッドを利用して列挙に新しいメソッドを作成することもできます。 詳細については、「[方法 : 列挙型対応の新しいメソッドを作成する](../../csharp/programming-guide/classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
- <xref:System.Enum?displayProperty=fullName>   
- [C# プログラミング ガイド](../../csharp/programming-guide/index.md)   
+ <xref:System.Enum?displayProperty=nameWithType>  
+ [C# プログラミング ガイド](../../csharp/programming-guide/index.md)  
  [enum](../../csharp/language-reference/keywords/enum.md)
-

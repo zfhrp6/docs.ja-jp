@@ -1,120 +1,117 @@
 ---
-title: "Const Statement (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Const"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Const statement [Visual Basic]"
+title: "Const ステートメント (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Const
+helpviewer_keywords: Const statement [Visual Basic]
 ms.assetid: 495b318d-b7c5-4198-94f8-0790a541b07a
-caps.latest.revision: 28
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 28
+caps.latest.revision: "28"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 720a465f1459b663a1fca2a48856f51762328459
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Const Statement (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-1 つ以上の定数を宣言および定義します。  
+# <a name="const-statement-visual-basic"></a>Const ステートメント (Visual Basic)
+宣言し、1 つまたは複数の定数を定義します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-[ <attributelist> ] [ accessmodifier ] [ Shadows ]   
+[ <attributelist> ] [ accessmodifier ] [ Shadows ]   
 Const constantlist  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
  `attributelist`  
- 省略可能です。  このステートメントで宣言されるすべての定数に適用される属性のリストです。  [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md)が山かっこ \("`<`" および "`>`"\) で囲まれている点に注意してください。  
+ 省略可能です。 すべての定数に適用される属性の一覧は、このステートメントで宣言します。 参照してください[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこ ("`<`「と」`>`") です。  
   
  `accessmodifier`  
- 省略可能です。  これらの定数にアクセスできるコードを指定するために使います。  [Public](../../../visual-basic/language-reference/modifiers/public.md)、[Protected](../../../visual-basic/language-reference/modifiers/protected.md)、[Friend](../../../visual-basic/language-reference/modifiers/friend.md)、`Protected Friend`、または [Private](../../../visual-basic/language-reference/modifiers/private.md) を指定できます。  
+ 省略可能です。 これらの定数にアクセスできるコードを指定するのにには、これを使用します。 指定できます[パブリック](../../../visual-basic/language-reference/modifiers/public.md)、 [Protected](../../../visual-basic/language-reference/modifiers/protected.md)、[フレンド](../../../visual-basic/language-reference/modifiers/friend.md)、 `Protected Friend`、または[プライベート](../../../visual-basic/language-reference/modifiers/private.md)です。  
   
  `Shadows`  
- 省略可能です。  基本クラス内のプログラミング要素を宣言し直して隠ぺいする場合に使用します。  「[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)」を参照してください。  
+ 省略可能です。 再宣言して、基底クラスのプログラミング要素を非表示にするには、これを使用します。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。  
   
  `constantlist`  
- 必ず指定します。  このステートメントで宣言する定数のリストです。  
+ 必須です。 このステートメントで宣言されている定数の一覧です。  
   
- `constant` `[ ,` `constant` `... ]`  
+ `constant` `[ ,` `constant` `... ]`  
   
  `constant` の構文と指定項目は次のとおりです。  
   
- `constantname` `[ As` `datatype` `] =` `initializer`  
+ `constantname``[ As``datatype``] =``initializer`  
   
-|指定項目|Description|  
+|パーツ|説明|  
 |----------|-----------------|  
-|`constantname`|必ず指定します。  定数の名前を指定します。  「[Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。|  
-|`datatype`|`Option Strict` が `On` の場合は、必ず指定します。  定数のデータ型を指定します。|  
-|`initializer`|必ず指定します。  コンパイル時に評価して、定数に代入される式です。|  
+|`constantname`|必須です。 定数の名前です。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
+|`datatype`|場合は必須`Option Strict`は`On`します。 定数のデータ型。|  
+|`initializer`|必須です。 コンパイル時に評価され、式を定数に割り当てられています。|  
   
-## 解説  
- 決して変わらない値がアプリケーションにある場合は、名前付き定数を定義してリテラル値の代わりに使用できます。  名前は値よりも覚えるのが簡単です。  定数を一度定義すると、コード内の多くの場所でそれを使用できます。  その後のバージョンで値を定義し直すことが必要になった場合も、`Const` ステートメントを変更するだけで済みます。  
+## <a name="remarks"></a>コメント  
+ アプリケーションで変更されない値があれば、名前付き定数を定義でき、リテラル値の代わりに使用できます。 名前は、値よりも覚えやすくです。 定数を 1 回だけ定義し、コードでのさまざまな場所で使用できます。 以降のバージョンでは、値を再定義する必要がある場合、`Const`ステートメントは、唯一の場所を変更する必要があります。  
   
- `Const` は、モジュール レベルまたはプロシージャ レベルでのみ使用できます。  つまり、変数の*宣言コンテキスト*は、クラス、構造体、モジュール、プロシージャ、またはブロックであることが必要で、ソース ファイル、名前空間、インターフェイスでは宣言できません。  詳細については、「[Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。  
+ 使用することができます`Const`モジュールまたはプロシージャ レベルでのみです。 つまり、*宣言コンテキスト*変数はクラス、構造体、モジュール、プロシージャ、またはブロックする必要があり、ソース ファイル、名前空間、またはインターフェイスにすることはできません。 詳細については、「[宣言コンテキストと既定のアクセス レベル](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。  
   
- ローカル定数 \(プロシージャ内\) のアクセス レベルは、既定で public になります。このような定数にはアクセス修飾子を指定できません。  クラスおよびモジュールのメンバー定数 \(プロシージャ外\) のアクセス レベルは、既定で private になります。また、構造体のメンバー定数の既定のアクセスレベルは public です。  アクセス修飾子を使用してこれらのアクセス レベルを調整できます。  
+ ローカル定数 (プロシージャ) 内の既定値は、パブリック アクセスとは、それらのアクセス修飾子を使用できません。 クラスとモジュールのメンバー (プロシージャ) の外部の定数既定でプライベート アクセスは、および構造体メンバー定数とパブリック アクセスの既定値です。 アクセス修飾子を使用してこれらのアクセス レベルを調整できます。  
   
-## 規則  
+## <a name="rules"></a>ルール  
   
--   **宣言コンテキスト。**モジュール レベルで宣言された、プロシージャの外側にある定数を*メンバー定数*といいます。定数を宣言しているクラス、構造体、またはモジュールのメンバーです。  
+-   **宣言コンテキスト。** 定数は、プロシージャの外部のモジュール レベルで宣言された、*メンバー定数*以外の場合は、クラス、構造体のメンバーであるかを宣言するモジュールです。  
   
-     プロシージャ レベルで宣言された定数を*ローカル定数*といいます。つまり、それを宣言しているプロシージャまはたブロックに対してローカルという意味です。  
+     プロシージャ レベルで宣言されている定数は、*ローカル定数*; プロシージャまたはブロックを宣言したに対してローカルであります。  
   
--   **属性。**属性を適用できるのはメンバー定数だけで、ローカル定数には適用できません。  属性はアセンブリのメタデータに情報を提供しますが、これはローカル定数などの一時的な格納領域には意味がありません。  
+-   **属性。** 属性は、ローカル定数ではなく、メンバー定数にのみ適用できます。 属性は、ローカル定数などの一時的なストレージの意味ではないアセンブリのメタデータに情報を提供します。  
   
--   **修飾子。**既定では、すべての定数が `Shared` であり、`Static` であり、また `ReadOnly` になります。  定数を宣言するとき、これらのどのキーワードも指定できません。  
+-   **修飾子です。** すべての定数は、既定では、 `Shared`、 `Static`、および`ReadOnly`です。 定数を宣言するときに、これらのキーワードのいずれかを使用することはできません。  
   
-     プロシージャ レベルでは、ローカル定数の宣言に `Shadows` またはアクセス修飾子を指定できません。  
+     プロシージャ レベルでは使用できません`Shadows`またはのいずれかのアクセス修飾子をローカル定数を宣言します。  
   
--   **複数の定数。**同じ宣言ステートメントに複数の定数を宣言するには、各定数ごとに `constantname` の指定項目を指定します。  複数の定数を指定するときは、コンマ \(,\) で区切ります。  
+-   **複数の定数です。** 同じ宣言ステートメントで複数の定数を宣言することができますを指定する、`constantname`それぞれの一部です。 複数の定数は、コンマで区切られます。  
   
-## データ型のルール  
+## <a name="data-type-rules"></a>データ型のルール  
   
--   **データ型。** `Const` ステートメントでは、変数のデータ型を宣言できます。  任意のデータ型、または列挙型の名前を指定できます。  
+-   **データ型。** `Const`ステートメントは、変数のデータ型を宣言できます。 任意のデータ型または列挙型の名前を指定することができます。  
   
--   **既定の型。** `datatype` を指定しない場合、定数のデータ型は `initializer` のデータ型になります。  `datatype` と `initializer` の両方を指定する場合は、`initializer` のデータ型を `datatype` と互換性のあるものにする必要があります。  `datatype` と `initializer` のどちらも指定しない場合、既定のデータ型は `Object` になります。  
+-   **既定の型。** 指定しない場合`datatype`、定数のデータ型を受け取る`initializer`です。 両方を指定する場合`datatype`と`initializer`のデータ型`initializer`に変換できる必要があります`datatype`です。 どちらの場合`datatype`も`initializer`が含まれているデータ型の既定値は`Object`します。  
   
--   **異なる型。**複数の定数に異なるデータ型を指定するには、宣言する各変数に対して `As` 句を別々に指定します。  ただし、共通の `As` 句を使って複数の定数を同じ型にすることはできません。  
+-   **さまざまな種類。** 個別を使用して複数の定数に異なるデータ型を指定することができます`As`それぞれの変数を宣言する句。 ただし、一般的に使われるを使用して同じ型にいくつかの定数を宣言することはできません`As`句。  
   
--   **初期化。**すべての定数の値を、`constantlist` で初期化する必要があります。  定数に代入するための式を指定するには、`initializer` を使用します。  式にはリテラル、他の定義済みの定数、および定義済みの列挙体のメンバーを自由に組み合わせることができます。  算術演算子と論理演算子を使って、各要素を組み合わせることもできます。  
+-   **初期化します。** すべての定数の値を初期化する必要があります`constantlist`です。 使用する`initializer`を定数に割り当てられる式を指定します。 式には、リテラル、既に定義されているその他の定数、および既に定義されている列挙型メンバーの任意の組み合わせを指定できます。 算術演算子および論理演算子を使用すると、このような要素を結合します。  
   
-     `initializer` では、変数または関数は使用できません。  ただし、`CByte` や `CShort` などの変換キーワードは使用できます。  また、`AscW` も使用できます。この場合には、定数の `String` 引数、または `Char` 引数を指定して、コンパイル時に計算できるようにします。  
+     変数または関数を使用することはできません`initializer`です。 変換キーワードなどを使用するただし、`CByte`と`CShort`です。 使用することも`AscW`定数で呼び出す場合は、`String`または`Char`引数、コンパイル時に評価できるためです。  
   
-## \[動作\]  
+## <a name="behavior"></a>動作  
   
--   **スコープ。**ローカル定数には、そのプロシージャまたはブロックの内部からのみアクセスできます。  メンバー定数にはそのクラス、構造体、またはモジュール内の任意の場所からアクセスできます。  
+-   **スコープです。** ローカル定数は、そのプロシージャまたはブロック内からしかアクセスできません。 メンバー定数には、クラス、構造体、またはモジュール内で任意の場所からアクセスします。  
   
--   **修飾。**クラス、構造体、またはモジュールの外部のコードで使用する場合は、その名前でメンバー定数の名前を修飾する必要があります。  プロシージャやブロックの外部のコードは、その内部にあるローカル定数を参照できません。  
+-   **パス名です。** コードをクラスの外部構造体、またはモジュール修飾する必要がありますそのクラス、構造体、モジュールの名前を持つメンバー定数の名前。 プロシージャまたはブロックは、そのプロシージャまたはブロック内であるローカル定数を参照できません外部をコードします。  
   
-## 使用例  
- `Const` ステートメントを使って、リテラル値の代わりに使用する定数を宣言するコード例は、次のとおりです。  
+## <a name="example"></a>例  
+ 次の例では、`Const`ステートメントをリテラル値の代わりに使用する定数を宣言します。  
   
  [!code-vb[VbVbalrStatements#13](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/const-statement_1.vb)]  
   
-## 使用例  
- データ型が `Object` である定数を定義すると、Visual Basic コンパイラはそれを `Object` 型ではなく、`initializer` 型にします。  次の例では、定数 `naturalLogBase` のランタイム型は `Decimal` です。  
+## <a name="example"></a>例  
+ データ型の定数を定義した場合`Object`、Visual Basic コンパイラは、の型を提供、`initializer`の代わりに`Object`です。 次の例では、定数`naturalLogBase`実行時の型を持つ`Decimal`します。  
   
  [!code-vb[VbVbalrStatements#87](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/const-statement_2.vb)]  
   
- この例では、`CStr` を使用して <xref:System.Type> を `String` に変換できないため、[GetType Operator](../../../visual-basic/language-reference/operators/gettype-operator.md) から返された <xref:System.Type> オブジェクトの <xref:System.Type.ToString%2A> メソッドが使用されます。  
+ 前の例では、<xref:System.Type.ToString%2A>メソッドを<xref:System.Type>によって返されるオブジェクト、 [GetType 演算子](../../../visual-basic/language-reference/operators/gettype-operator.md)ため、<xref:System.Type>に変換できない`String`を使用して`CStr`です。  
   
-## 参照  
- <xref:Microsoft.VisualBasic.Strings.Asc%2A>   
- <xref:Microsoft.VisualBasic.Strings.AscW%2A>   
- [Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md)   
- [\#Const Directive](../../../visual-basic/language-reference/directives/const-directive.md)   
- [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md)   
- [ReDim Statement](../../../visual-basic/language-reference/statements/redim-statement.md)   
- [Implicit and Explicit Conversions](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)   
- [Constants and Enumerations](../../../visual-basic/programming-guide/language-features/constants-enums/index.md)   
- [Constants and Enumerations](../../../visual-basic/language-reference/constants-and-enumerations.md)   
- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.Strings.Asc%2A>  
+ <xref:Microsoft.VisualBasic.Strings.AscW%2A>  
+ [Enum ステートメント](../../../visual-basic/language-reference/statements/enum-statement.md)  
+ [#Const ディレクティブ](../../../visual-basic/language-reference/directives/const-directive.md)  
+ [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [ReDim ステートメント](../../../visual-basic/language-reference/statements/redim-statement.md)  
+ [暗黙の型変換と明示的な型変換](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
+ [定数と列挙体](../../../visual-basic/programming-guide/language-features/constants-enums/index.md)  
+ [定数と列挙体](../../../visual-basic/language-reference/constants-and-enumerations.md)  
+ [データ型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)

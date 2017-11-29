@@ -1,30 +1,21 @@
 ---
 title: "共通属性 (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 785a0526-6c0e-4599-8c61-ccdc88dd9965
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: aded9c9b2e8c253eebd6c71782f0bff6ca0104ea
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 98bb21ef0b5582202578b72fd6eaf459801747cc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="common-attributes-c"></a>共通属性 (C#)
 このトピックでは、C# プログラムで最もよく使用される属性について説明します。  
@@ -67,7 +58,7 @@ ms.lasthandoff: 07/28/2017
 |<xref:System.Reflection.AssemblyFlagsAttribute>|同じコンピューター、同じプロセス、または同じアプリケーション ドメインでの side-by-side 実行をアセンブリがサポートするかどうかを指定します。|  
   
 ### <a name="informational-attributes"></a>情報属性  
- 情報属性は、追加の会社情報または製品情報をアセンブリに指定する場合に使用できます。 次の表は、<xref:System.Reflection?displayProperty=fullName> 名前空間で定義されている情報属性を示しています。  
+ 情報属性は、追加の会社情報または製品情報をアセンブリに指定する場合に使用できます。 次の表は、<xref:System.Reflection?displayProperty=nameWithType> 名前空間で定義されている情報属性を示しています。  
   
 |属性|目的|  
 |---------------|-------------|  
@@ -80,7 +71,7 @@ ms.lasthandoff: 07/28/2017
 |<xref:System.CLSCompliantAttribute>|アセンブリが共通言語仕様 (CLS) に準拠しているかどうかを示します。|  
   
 ### <a name="assembly-manifest-attributes"></a>アセンブリ マニフェスト属性  
- アセンブリ マニフェスト属性を使用すると、アセンブリ マニフェストの情報を指定できます。 ここには、タイトル、説明、既定の別名、構成が含まれます。 次の表は、<xref:System.Reflection?displayProperty=fullName> 名前空間で定義されているアセンブリ マニフェスト属性を示しています。  
+ アセンブリ マニフェスト属性を使用すると、アセンブリ マニフェストの情報を指定できます。 ここには、タイトル、説明、既定の別名、構成が含まれます。 次の表は、<xref:System.Reflection?displayProperty=nameWithType> 名前空間で定義されているアセンブリ マニフェスト属性を示しています。  
   
 |属性|目的|  
 |---------------|-------------|  
@@ -236,7 +227,7 @@ class SampleClass
 ##  <a name="CallerInfo"></a> 呼び出し元情報属性  
  呼び出し元情報の属性を使用すると、メソッドへの呼び出し元に関する情報を取得できます。 ソース コードのファイル パス、ソース コードの行番号、呼び出し元のメンバー名を取得できます。  
   
- メンバー呼び出し元情報を取得するには、省略可能なパラメーターに適用される属性を使用します。 省略可能な各パラメーターでは既定値が指定されます。 次の表は、<xref:System.Runtime.CompilerServices?displayProperty=fullName> 名前空間で定義されている呼び出し元情報の属性の一覧です。  
+ メンバー呼び出し元情報を取得するには、省略可能なパラメーターに適用される属性を使用します。 省略可能な各パラメーターでは既定値が指定されます。 次の表は、<xref:System.Runtime.CompilerServices?displayProperty=nameWithType> 名前空間で定義されている呼び出し元情報の属性の一覧です。  
   
 |属性|説明|型|  
 |---|---|---|  
@@ -247,10 +238,9 @@ class SampleClass
  呼び出し元情報属性の詳細については、「[呼び出し元情報 (C#)](../../../../csharp/programming-guide/concepts/caller-information.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Reflection>   
- <xref:System.Attribute>   
- [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)   
- [属性](https://msdn.microsoft.com/library/5x6cd29c)   
- [リフレクション (C#)](../../../../csharp/programming-guide/concepts/reflection.md)   
+ <xref:System.Reflection>  
+ <xref:System.Attribute>  
+ [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)  
+ [属性](https://msdn.microsoft.com/library/5x6cd29c)  
+ [リフレクション (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
  [リフレクションを使用した属性へのアクセス (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
-

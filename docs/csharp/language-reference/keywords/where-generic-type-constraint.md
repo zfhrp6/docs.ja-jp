@@ -1,41 +1,22 @@
 ---
 title: "where (ジェネリック型制約) (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - whereconstraint
 - whereconstraint_CSharpKeyword
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- where (generic type constraint) [C#]
+helpviewer_keywords: where (generic type constraint) [C#]
 ms.assetid: d7aa871b-0714-416a-bab2-96f87ada4310
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: f2b7b159689aa771d3f9d59e3b1dd340c85b1d79
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8e81640ee56ed672bb09242a070fdf167740874b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="where-generic-type-constraint-c-reference"></a>where (ジェネリック型制約) (C# リファレンス)
 ジェネリック型定義では、ジェネリック宣言で定義されている型パラメーターの引数として使用できる型に対する制約を指定する場合に `where` 句を使用します。 たとえば、型パラメーター `T` が <xref:System.IComparable%601> インターフェイスを実装するように、次のように `MyGenericClass` ジェネリック クラスを宣言できます。  
@@ -49,17 +30,17 @@ public class MyGenericClass<T> where T:IComparable { }
   
  `where` 句には、インターフェイス制約だけでなく基底クラス制約も含めることができます。基底クラス制約は、ジェネリック型の型引数として使用する型には、基底クラスとして指定されているクラス (または基底クラス自体) が含まれている必要があることを指定します。 このような制約を使用する場合は、型パラメーターに関する制約よりも前に制約を記述する必要があります。  
   
- [!code-cs[csrefKeywordsContextual#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_1.cs)]  
+ [!code-csharp[csrefKeywordsContextual#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_1.cs)]  
   
  `where` 句には、コンストラクター制約を含めることもできます。 新しい演算子を使用して、型パラメーターのインスタンスを作成することができます。ただし、その場合は、型パラメーターにコンストラクター制約 `new()` で制約を指定する必要があります。 [new() 制約](../../../csharp/language-reference/keywords/new-constraint.md)に基づいて、コンパイラは、指定されている型引数には、アクセス可能なパラメーターなしの (または既定の) コンストラクターが必要であることを認識します。 例:  
   
- [!code-cs[csrefKeywordsContextual#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_2.cs)]  
+ [!code-csharp[csrefKeywordsContextual#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_2.cs)]  
   
  `new()` 制約は `where` 句の最後に示されます。  
   
  複数の型パラメーターがある場合には、型パラメーターごとに `where` 句を 1 つずつ使用します。次に例を示します。  
   
- [!code-cs[csrefKeywordsContextual#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_3.cs)]  
+ [!code-csharp[csrefKeywordsContextual#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_3.cs)]  
   
  次に示すように、ジェネリック メソッドの型パラメーターにも制約を適用できます。  
   
@@ -81,9 +62,8 @@ delegate T MyDelegate<T>() where T : new()
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [ジェネリックの概要](../../../csharp/programming-guide/generics/introduction-to-generics.md)   
- [new 制約](../../../csharp/language-reference/keywords/new-constraint.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [ジェネリックの概要](../../../csharp/programming-guide/generics/introduction-to-generics.md)  
+ [new 制約](../../../csharp/language-reference/keywords/new-constraint.md)  
  [型パラメーターの制約](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)
-

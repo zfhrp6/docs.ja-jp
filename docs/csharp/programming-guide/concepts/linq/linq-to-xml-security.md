@@ -1,30 +1,21 @@
 ---
 title: "LINQ to XML のセキュリティ (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: ef2c0dc9-ecf9-4c17-b24e-144184ab725f
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 281f979d0c7df2538f664199e4444db5166ba55e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b55a9b70ad4291bc74b629e289bdc168a30702ca
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="linq-to-xml-security-c"></a>LINQ to XML のセキュリティ (C#)
 ここでは、LINQ to XML に関連するセキュリティの問題について説明し、 セキュリティ上の脆弱性を緩和するためのガイドラインを紹介します。  
@@ -39,9 +30,9 @@ ms.lasthandoff: 07/28/2017
  XML は、ドキュメントのサイズ、深さ、要素名のサイズなどの制限がないため、サービス拒否攻撃に対して本質的に脆弱です。 XML の処理に使用するコンポーネントに関係なく、リソースが過剰に使用されている場合は、常にアプリケーション ドメインを再利用できるようにしておく必要があります。  
   
 ## <a name="mitigation-of-xml-xsd-xpath-and-xslt-attacks"></a>XML、XSD、XPath、および XSLT の攻撃の緩和  
- LINQ to XML は、<xref:System.Xml.XmlReader> と <xref:System.Xml.XmlWriter> に基づいて構築されており、 <xref:System.Xml.Schema?displayProperty=fullName> 名前空間と <xref:System.Xml.XPath?displayProperty=fullName> 名前空間の拡張メソッドによって XSD と XPath をサポートしています。 <xref:System.Xml.XmlReader>、<xref:System.Xml.XPath.XPathNavigator>、および <xref:System.Xml.XmlWriter> の各クラスを LINQ to XML と組み合わせて使用することにより、XSLT を呼び出して XML ツリーを変換することができます。  
+ LINQ to XML は、<xref:System.Xml.XmlReader> と <xref:System.Xml.XmlWriter> に基づいて構築されており、 <xref:System.Xml.Schema?displayProperty=nameWithType> 名前空間と <xref:System.Xml.XPath?displayProperty=nameWithType> 名前空間の拡張メソッドによって XSD と XPath をサポートしています。 <xref:System.Xml.XmlReader>、<xref:System.Xml.XPath.XPathNavigator>、および <xref:System.Xml.XmlWriter> の各クラスを LINQ to XML と組み合わせて使用することにより、XSLT を呼び出して XML ツリーを変換することができます。  
   
- 運用環境の安全性が高くない場合は、XML や <xref:System.Xml?displayProperty=fullName>、<xref:System.Xml.Schema?displayProperty=fullName>、<xref:System.Xml.XPath?displayProperty=fullName>、および <xref:System.Xml.Xsl?displayProperty=fullName> の各クラスの使用に関連するセキュリティの問題が発生する可能性が高いといえます。 そのような問題の一部を次に示します。  
+ 運用環境の安全性が高くない場合は、XML や <xref:System.Xml?displayProperty=nameWithType>、<xref:System.Xml.Schema?displayProperty=nameWithType>、<xref:System.Xml.XPath?displayProperty=nameWithType>、および <xref:System.Xml.Xsl?displayProperty=nameWithType> の各クラスの使用に関連するセキュリティの問題が発生する可能性が高いといえます。 そのような問題の一部を次に示します。  
   
 -   XSD、XPath、および XSLT は文字列に基づく言語であり、時間やメモリを大量に消費する操作を指定することができます。 信頼されていないソースの XSD、XPath、または XSLT の文字列を受け取る場合、アプリケーション プログラマは、その文字列が悪意のあるものでないかどうかを検証する必要があります。また、その文字列の評価によってシステム リソースが過剰に消費されないように監視し、過剰に消費された場合はその状況を緩和する必要があります。  
   
@@ -78,9 +69,9 @@ ms.lasthandoff: 07/28/2017
 ### <a name="do-not-call-codeaccesspermissionsassert-in-an-event-handler"></a>イベント ハンドラーで CodeAccessPermissions.Assert を呼び出さない  
  アセンブリの権限は、低い場合もあれば高い場合もあります。 高い権限を持つアセンブリは、コンピューターやその環境をより自由に制御できます。  
   
- 高い権限を持つアセンブリのコードがイベント ハンドラーで <xref:System.Security.CodeAccessPermission.Assert%2A?displayProperty=fullName> を呼び出した後に、権限が制限されている悪意のあるアセンブリに XML ツリーが渡されると、悪意のあるアセンブリによってイベントが発生させられる可能性があります。 このイベントは、高い権限を持つアセンブリ内のコードを実行するため、悪意のあるアセンブリが高度な特権で動作するようになります。  
+ 高い権限を持つアセンブリのコードがイベント ハンドラーで <xref:System.Security.CodeAccessPermission.Assert%2A?displayProperty=nameWithType> を呼び出した後に、権限が制限されている悪意のあるアセンブリに XML ツリーが渡されると、悪意のあるアセンブリによってイベントが発生させられる可能性があります。 このイベントは、高い権限を持つアセンブリ内のコードを実行するため、悪意のあるアセンブリが高度な特権で動作するようになります。  
   
- イベント ハンドラーでは <xref:System.Security.CodeAccessPermission.Assert%2A?displayProperty=fullName> を呼び出さないようにすることをお勧めします。  
+ イベント ハンドラーでは <xref:System.Security.CodeAccessPermission.Assert%2A?displayProperty=nameWithType> を呼び出さないようにすることをお勧めします。  
   
 ### <a name="dtds-are-not-secure"></a>DTD は安全ではない  
  DTD 内のエンティティは、本質的に安全ではありません。 DTD を含む悪意のある XML ドキュメントが原因で、サービス拒否攻撃を受け、メモリと CPU 時間のすべてがパーサーによって使用されるといった状況が発生する可能性があります。 このため、LINQ to XML では DTD の処理が既定で無効になっています。 信頼されていないソースの DTD は受け入れないようにしてください。  
@@ -90,12 +81,12 @@ ms.lasthandoff: 07/28/2017
 ### <a name="avoid-excessive-buffer-allocation"></a>過剰なバッファーの割り当てを回避する  
  アプリケーション開発者は、極端に大きなデータ ソースが原因でリソース消費攻撃やサービス拒否攻撃を受ける可能性があることを認識しておく必要があります。  
   
- 悪意のあるユーザーによって非常に大きな XML ドキュメントが送信されたり、アップロードされたりすると、LINQ to XML がシステム リソースを過剰に消費するようになります。 このような状況が、サービス拒否攻撃の原因となる場合があります。 これを防ぐには、<xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A?displayProperty=fullName> プロパティを設定して、読み込むことのできるドキュメントのサイズが制限されたリーダーを作成します。 その後、そのリーダーを使用して XML ツリーを作成します。  
+ 悪意のあるユーザーによって非常に大きな XML ドキュメントが送信されたり、アップロードされたりすると、LINQ to XML がシステム リソースを過剰に消費するようになります。 このような状況が、サービス拒否攻撃の原因となる場合があります。 これを防ぐには、<xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A?displayProperty=nameWithType> プロパティを設定して、読み込むことのできるドキュメントのサイズが制限されたリーダーを作成します。 その後、そのリーダーを使用して XML ツリーを作成します。  
   
- たとえば、信頼されていないソースからの XML ドキュメントの最大サイズが 50K バイト未満と予測される場合は、<xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A?displayProperty=fullName> を 100,000 に設定します。 これにより、XML ドキュメントの処理を妨げずに、大量のメモリを消費するドキュメントがアップロードされるサービス拒否攻撃の脅威を緩和できます。  
+ たとえば、信頼されていないソースからの XML ドキュメントの最大サイズが 50K バイト未満と予測される場合は、<xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A?displayProperty=nameWithType> を 100,000 に設定します。 これにより、XML ドキュメントの処理を妨げずに、大量のメモリを消費するドキュメントがアップロードされるサービス拒否攻撃の脅威を緩和できます。  
   
 ### <a name="avoid-excess-entity-expansion"></a>過剰なエンティティの展開を回避する  
- DTD の使用時に発生するサービス拒否攻撃の 1 つに、エンティティを過剰に展開するドキュメントによる攻撃があります。 これを防ぐには、<xref:System.Xml.XmlReaderSettings.MaxCharactersFromEntities%2A?displayProperty=fullName> プロパティを設定して、エンティティの展開により生成される文字数が制限されたリーダーを作成します。 その後、そのリーダーを使用して XML ツリーを作成します。  
+ DTD の使用時に発生するサービス拒否攻撃の 1 つに、エンティティを過剰に展開するドキュメントによる攻撃があります。 これを防ぐには、<xref:System.Xml.XmlReaderSettings.MaxCharactersFromEntities%2A?displayProperty=nameWithType> プロパティを設定して、エンティティの展開により生成される文字数が制限されたリーダーを作成します。 その後、そのリーダーを使用して XML ツリーを作成します。  
   
 ### <a name="limit-the-depth-of-the-xml-hierarchy"></a>XML 階層の深さを制限する  
  サービス拒否攻撃は、極端に深い階層を持つドキュメントが送信された場合にも発生します。 これを防ぐには、要素の深さをカウントする独自のクラスで <xref:System.Xml.XmlReader> をラップします。 これにより、要素の深さが事前に設定したレベルを超えている場合に、その悪意のあるドキュメントの処理を終了できます。  
@@ -118,4 +109,3 @@ ms.lasthandoff: 07/28/2017
   
 ## <a name="see-also"></a>関連項目  
  [プログラミング ガイド (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
-

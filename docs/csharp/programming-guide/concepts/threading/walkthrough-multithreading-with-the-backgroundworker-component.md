@@ -1,30 +1,21 @@
 ---
 title: "チュートリアル: BackgroundWorker コンポーネントでのマルチスレッド (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: ff670fbf-a0ac-40c1-ab08-9ed53768f880
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 72d6e9ab42ca270ebe0691be23ebe181b973620d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 541a1ec788c337eea9965b8a46155e5c6606ea2f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="walkthrough-multithreading-with-the-backgroundworker-component-c"></a>チュートリアル: BackgroundWorker コンポーネントでのマルチスレッド (C#)
 このチュートリアルでは、テキスト ファイルで単語を検索する、マルチスレッドの Windows Forms アプリケーションを作成する方法について説明します。 具体的には、次のタスクについて説明します。  
@@ -80,7 +71,7 @@ ms.lasthandoff: 07/28/2017
   
 1.  **[プロジェクト]** メニューの **[クラスの追加]** を選択して、プロジェクトにクラスを追加します。 **[新しい項目の追加]** ダイアログ ボックスが表示されます。  
   
-2.  テンプレート ウィンドウから **[クラス]** を選択し、名前フィールドに「`Words.cs`」と入力します。  
+2.  テンプレート ウィンドウから **[クラス]** を選択し、名前 フィールドに「`Words.cs`」と入力します。  
   
 3.  **[追加]**をクリックします。 `Words` クラスが表示されます。  
   
@@ -292,6 +283,5 @@ ms.lasthandoff: 07/28/2017
  このアプリケーションには、基本的なエラー処理が含まれており、 このアプリケーションは空白の検索文字列を検出します。 その他のエラーを処理できるようにすれば、このプログラムの堅牢性をさらに高めることができます (カウントできる単語や行の最大数を超えた場合の処理を追加するなど)。  
   
 ## <a name="see-also"></a>関連項目  
- [スレッド処理 (C#)](../../../../csharp/programming-guide/concepts/threading/index.md)   
+ [スレッド処理 (C#)](../../../../csharp/programming-guide/concepts/threading/index.md)  
  [方法: イベント サブスクリプションとサブスクリプションの解除](../../../../csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)
-

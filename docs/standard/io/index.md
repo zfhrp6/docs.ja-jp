@@ -16,16 +16,15 @@ helpviewer_keywords:
 - streams, I/O
 - data streams, I/O
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
-caps.latest.revision: 33
+caps.latest.revision: "33"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: 48a3c0e0e00e9fd55dd3e4dfde8e20522b801bc8
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: fbd31e6bff5502291fd24b57b55c81046da330d3
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="file-and-stream-io"></a>ファイルおよびストリーム入出力
 ファイルおよびストリーム I/O (入出力) とは、ストレージ メディアとの間のデータの転送を指します。 .NET Framework では、[System.IO](http://go.microsoft.com/fwlink/?LinkId=231142) 名前空間に、データ ストリームおよびファイルで同期的および非同期的に読み取りと書き込みを有効にする型が用意されています。 これらの名前空間には、ファイルを圧縮および圧縮解除する型、パイプとシリアル ポート経由の通信を有効にする型もあります。  
@@ -33,7 +32,7 @@ ms.lasthandoff: 09/05/2017
  ファイルとは、バイトを順序立てて格納する名前付きのコレクションであり、永続ストレージを保有します。 ファイルを操作するときには、ディレクトリ パス、ディスク ストレージ、ファイル名、ディレクトリ名を操作します。 これに対し、ストリームは、バッキング ストアの読み取りと書き込みに使用できるバイトのシーケンスです。バッキング ストアは、複数のストレージ メディアのいずれかになります (たとえば、ディスク、メモリ)。 ディスク以外にいくつかのバッキング ストアが存在するのと同じように、ファイル ストリーム以外にも、ネットワーク ストリーム、メモリ ストリーム、パイプ ストリームなど、さまざまなストリームが存在します。  
   
 ## <a name="files-and-directories"></a>ファイルとディレクトリ  
- <xref:System.IO?displayProperty=fullName> 名前空間の型を使用して、ファイルとディレクトリを操作できます。 たとえば、ファイルとディレクトリに対するプロパティを取得および設定したり、検索条件に基づいて、ファイルとディレクトリのコレクションを取得したりできます。  
+ <xref:System.IO?displayProperty=nameWithType> 名前空間の型を使用して、ファイルとディレクトリを操作できます。 たとえば、ファイルとディレクトリに対するプロパティを取得および設定したり、検索条件に基づいて、ファイルとディレクトリのコレクションを取得したりできます。  
   
  一般的なファイルおよびディレクトリのクラスを次に示します。  
   
@@ -47,7 +46,7 @@ ms.lasthandoff: 09/05/2017
   
 -   <xref:System.IO.Path> - 複数のプラットフォームにまたがってディレクトリ文字列を処理するためのメソッドおよびプロパティを提供します。  
   
- これらのクラスに加えて、Visual Basic のユーザーは、ファイル I/O 用の <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=fullName> クラスに用意されているメソッドとプロパティを使用できます。  
+ これらのクラスに加えて、Visual Basic のユーザーは、ファイル I/O 用の <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=nameWithType> クラスに用意されているメソッドとプロパティを使用できます。  
   
  「[方法: ディレクトリをコピーする](../../../docs/standard/io/how-to-copy-directories.md)」、「[方法: ディレクトリ リストを作成する](http://msdn.microsoft.com/en-us/4d2772b1-b991-4532-a8a6-6ef733277e69)」、および「[方法: ディレクトリとファイルを列挙する](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)」を参照してください。  
   
@@ -83,7 +82,7 @@ ms.lasthandoff: 09/05/2017
  ストリームを非同期的に操作する例については、「[非同期ファイル I/O](../../../docs/standard/io/asynchronous-file-i-o.md)」を参照してください。  
   
 ## <a name="readers-and-writers"></a>リーダーとライター  
- <xref:System.IO?displayProperty=fullName> 名前空間には、ストリームからエンコードされた文字を読み取ったり、ストリームに書き込んだりするための型も用意されています。 通常、ストリームはバイトの入出力用に設計されています。 リーダー型とライター型は、ストリームが操作を完了できるように、バイトとの間でエンコードされた文字の変換を処理します。 各リーダー クラスとライター クラスは、クラスの `BaseStream` プロパティから取得できるストリームに関連付けられます。  
+ <xref:System.IO?displayProperty=nameWithType> 名前空間には、ストリームからエンコードされた文字を読み取ったり、ストリームに書き込んだりするための型も用意されています。 通常、ストリームはバイトの入出力用に設計されています。 リーダー型とライター型は、ストリームが操作を完了できるように、バイトとの間でエンコードされた文字の変換を処理します。 各リーダー クラスとライター クラスは、クラスの `BaseStream` プロパティから取得できるストリームに関連付けられます。  
   
  一般的なリーダー クラスとライター クラスを次に示します。  
   
@@ -105,7 +104,7 @@ ms.lasthandoff: 09/05/2017
  詳細については、「[非同期ファイル I/O](../../../docs/standard/io/asynchronous-file-i-o.md)」を参照してください。  
   
 ## <a name="compression"></a>[圧縮]  
- 圧縮とは、保管するためにファイルのサイズを小さくするプロセスのことです。 圧縮解除は、圧縮ファイルの内容を抽出し、その内容を使用可能な形式にするプロセスです。 <xref:System.IO.Compression?displayProperty=fullName> 名前空間には、ファイルおよびストリームを圧縮および圧縮解除するための型が含まれています。  
+ 圧縮とは、保管するためにファイルのサイズを小さくするプロセスのことです。 圧縮解除は、圧縮ファイルの内容を抽出し、その内容を使用可能な形式にするプロセスです。 <xref:System.IO.Compression?displayProperty=nameWithType> 名前空間には、ファイルおよびストリームを圧縮および圧縮解除するための型が含まれています。  
   
  次のクラスは、ファイルおよびストリームを圧縮および圧縮解除するときによく使用します。  
   
@@ -156,7 +155,7 @@ ms.lasthandoff: 09/05/2017
  [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリでの I/O 操作の詳細については、Windows デベロッパー センターの「[クイック スタート: ファイルの読み取りと書き込み](http://go.microsoft.com/fwlink/p/?LinkId=243072)」を参照してください。  
   
 ## <a name="io-and-security"></a>I/O とセキュリティ  
- <xref:System.IO?displayProperty=fullName> 名前空間のクラスを使用する場合、アクセス制御リスト (ACL: Access Control List) などのオペレーティング システムのセキュリティ要件に従い、ファイルとディレクトリへのアクセスを制御する必要があります。 この要件の他にも、<xref:System.Security.Permissions.FileIOPermission> で指定されている要件を満たす必要があります。 ACL はプログラムで管理できます。 詳細については、「[方法: アクセス制御リスト エントリを追加または削除する](../../../docs/standard/io/how-to-add-or-remove-access-control-list-entries.md)」を参照してください。  
+ <xref:System.IO?displayProperty=nameWithType> 名前空間のクラスを使用する場合、アクセス制御リスト (ACL: Access Control List) などのオペレーティング システムのセキュリティ要件に従い、ファイルとディレクトリへのアクセスを制御する必要があります。 この要件の他にも、<xref:System.Security.Permissions.FileIOPermission> で指定されている要件を満たす必要があります。 ACL はプログラムで管理できます。 詳細については、「[方法: アクセス制御リスト エントリを追加または削除する](../../../docs/standard/io/how-to-add-or-remove-access-control-list-entries.md)」を参照してください。  
   
  既定のセキュリティ ポリシーでは、インターネットまたはイントラネットのアプリケーションはユーザーのコンピューターのファイルにアクセスできません。 したがって、インターネットまたはイントラネットを経由してダウンロードされるコードを記述する場合に、物理ファイル パスを必要とする I/O クラスを使用しないでください。 代わりに、従来の .NET Framework アプリケーション用の[分離ストレージ](../../../docs/standard/io/isolated-storage.md)を使用するか、[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリ用の[アプリケーション データ](http://go.microsoft.com/fwlink/?LinkId=229175)を使用します。  
   
@@ -183,4 +182,3 @@ ms.lasthandoff: 09/05/2017
 -   [メモリ マップト ファイル](../../../docs/standard/io/memory-mapped-files.md)  
   
  ディスク上のファイルの内容を仮想メモリ内に格納するメモリ マップト ファイルについて説明します。 メモリ マップト ファイルは、非常に大きなファイルを編集したり、プロセス間通信用の共有メモリを作成したりするために使用できます。
-

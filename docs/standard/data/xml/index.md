@@ -8,22 +8,16 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: e695047f-3c0f-4045-8708-5baea91cc380
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: 38382609fb21069fd69a84eb8b9de4701efeaf2c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 88d993122bf1498b08d2e523a71f7f1bed505c9a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="xml-documents-and-data"></a>XML ドキュメントと XML データ
 .NET Framework には、XML 対応アプリを容易に構築するための、包括的で統合された一連のクラスが用意されています。 次の名前空間のクラスでは、XML の解析と書き込み、メモリ内での XML データの編集、データの検証、および XSLT 変換がサポートされます。  
@@ -42,13 +36,13 @@ ms.lasthandoff: 09/05/2017
   
  次の名前空間のクラスでは、World Wide Web Consortium (W3C) 勧告がサポートされます。 例:  
   
--   <xref:System.Xml.XmlDocument?displayProperty=fullName> クラスは、[W3C ドキュメント オブジェクト モデル (DOM) 勧告の DOM Level 1 Core](http://www.w3.org/TR/REC-DOM-Level-1/) および [DOM Level 2 Core](http://www.w3.org/TR/DOM-Level-2-Core/) を実装しています。  
+-   <xref:System.Xml.XmlDocument?displayProperty=nameWithType> クラスは、[W3C ドキュメント オブジェクト モデル (DOM) 勧告の DOM Level 1 Core](http://www.w3.org/TR/REC-DOM-Level-1/) および [DOM Level 2 Core](http://www.w3.org/TR/DOM-Level-2-Core/) を実装しています。  
   
--   <xref:System.Xml.XmlReader?displayProperty=fullName> クラスと <xref:System.Xml.XmlWriter?displayProperty=fullName> クラスは、W3C 勧告『[XML 1.0](http://www.w3.org/TR/2006/REC-xml-20060816/)』および『[Namespaces in XML](http://www.w3.org/TR/REC-xml-names/)』をサポートしています。  
+-   <xref:System.Xml.XmlReader?displayProperty=nameWithType> クラスと <xref:System.Xml.XmlWriter?displayProperty=nameWithType> クラスは、W3C 勧告『[XML 1.0](http://www.w3.org/TR/2006/REC-xml-20060816/)』および『[Namespaces in XML](http://www.w3.org/TR/REC-xml-names/)』をサポートしています。  
   
--   <xref:System.Xml.Schema.XmlSchemaSet?displayProperty=fullName> クラスのスキーマは、W3C 勧告『[XML Schema Part 1: Structures](http://www.w3.org/TR/xmlschema-1/)』および『[XML Schema Part 2: DataTypes](http://www.w3.org/TR/xmlschema-2/)』をサポートしています。  
+-   <xref:System.Xml.Schema.XmlSchemaSet?displayProperty=nameWithType> クラスのスキーマは、W3C 勧告『[XML Schema Part 1: Structures](http://www.w3.org/TR/xmlschema-1/)』および『[XML Schema Part 2: DataTypes](http://www.w3.org/TR/xmlschema-2/)』をサポートしています。  
   
--   <xref:System.Xml.Xsl?displayProperty=fullName> 名前空間のクラスは、W3C 勧告『[XSLT version 1.0](http://www.w3.org/TR/xslt)』に準拠する XSLT 変換をサポートしています。  
+-   <xref:System.Xml.Xsl?displayProperty=nameWithType> 名前空間のクラスは、W3C 勧告『[XSLT version 1.0](http://www.w3.org/TR/xslt)』に準拠する XSLT 変換をサポートしています。  
   
  .NET Framework の XML クラスの利点を次に示します。  
   
@@ -101,4 +95,3 @@ ms.lasthandoff: 09/05/2017
   
  [XML デベロッパー センター](http://go.microsoft.com/fwlink/?linkid=42458)  
  追加の技術情報、ダウンロード、ニュースグループ、および XML 開発者向けのその他のリソースを提供します。
-

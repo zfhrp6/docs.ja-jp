@@ -1,30 +1,21 @@
 ---
 title: "スレッド プール (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 98ae68c1-ace8-44b9-9317-8920ac9ef2b6
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 09dd597e8ac7a6b336f71891ccc89984ea659614
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d2f8e5a2d7a83dc6fef72ef87b4003ae49656d8f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="thread-pooling-c"></a>スレッド プール (C#)
 "*スレッド プール*" とは、複数のタスクをバックグラウンドで実行するときに使用できるスレッドのコレクションです  (詳細については、「[スレッド処理 (C#)](../../../../csharp/programming-guide/concepts/threading/index.md)」を参照してください)。これにより、プライマリ スレッドは他のタスクを非同期的に実行できます。  
@@ -37,7 +28,7 @@ ms.lasthandoff: 07/28/2017
   
  独自のスレッド プールを実装することもできますが、.NET Framework が <xref:System.Threading.ThreadPool> クラスを通じて提供するスレッド プールを使用する方が簡単です。  
   
- スレッド プールを使用する場合、<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=fullName> メソッドを呼び出すときに実行対象のプロシージャのデリゲートを指定すると、C# によってスレッドが作成され、プロシージャが実行されます。  
+ スレッド プールを使用する場合、<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> メソッドを呼び出すときに実行対象のプロシージャのデリゲートを指定すると、C# によってスレッドが作成され、プロシージャが実行されます。  
   
 ## <a name="thread-pooling-example"></a>スレッド プールの例  
  次の例は、スレッド プールを使用して、タスクをいくつか開始する方法を示しています。  
@@ -76,11 +67,10 @@ private void AnotherLongTask(Object state)
  構造体を使用して、状態オブジェクト内の値を返すことはできません。 構造体は値型であるため、非同期プロセスで行われた変更によって元の構造体のメンバーが変更されることはありません。 構造体は、戻り値を必要としないときにパラメーターを提供するために使用します。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>   
- <xref:System.Threading>   
- <xref:System.Threading.ThreadPool>   
- [方法: スレッド プールを使用する (C#)](../../../../csharp/programming-guide/concepts/threading/how-to-use-a-thread-pool.md)   
- [スレッド処理 (C#)](../../../../csharp/programming-guide/concepts/threading/index.md)   
- [マルチスレッド アプリケーション (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)   
+ <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>  
+ <xref:System.Threading>  
+ <xref:System.Threading.ThreadPool>  
+ [方法: スレッド プールを使用する (C#)](../../../../csharp/programming-guide/concepts/threading/how-to-use-a-thread-pool.md)  
+ [スレッド処理 (C#)](../../../../csharp/programming-guide/concepts/threading/index.md)  
+ [マルチスレッド アプリケーション (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)  
  [スレッドの同期 (C#)](../../../../csharp/programming-guide/concepts/threading/thread-synchronization.md)
-

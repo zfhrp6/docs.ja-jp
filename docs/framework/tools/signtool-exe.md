@@ -5,29 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - Sign tool
 - SignTool.exe
 ms.assetid: 0c25ff6c-bff3-422e-b017-146a3ee86cb9
-caps.latest.revision: 33
+caps.latest.revision: "33"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 06a8b2e41841dfa43609468cce60a3776137b720
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 78814d27e8416d37a018fa3bc1ab643d99970ec9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="signtoolexe-sign-tool"></a>SignTool.exe (署名ツール)
 署名ツールはコマンド ライン ツールで、ファイルにデジタル署名を添付し、ファイルの署名を検証し、ファイルにタイム スタンプを付けます。  
@@ -91,7 +84,7 @@ signtool [command] [options] [file_name | ...]
 |`/csp`  *CSPName*|秘密キー コンテナーを含む暗号化サービス プロバイダー (CSP: Cryptographic Service Provider) を指定します。|  
 |`/d`  *Desc*|署名された内容の説明を指定します。|  
 |`/du`  *URL*|署名された内容の詳細な説明に対する URL (Uniform Resource Locator) を指定します。|  
-|`/f`  *SignCertFile*|ファイルの署名証明書を指定します。 ファイルが個人情報交換 (PFX: Personal Information Exchange) 形式でパスワードによって保護されている場合に、`/p` オプションを使用してパスワードを指定します。 ファイルに秘密キーが含まれていない場合、`/csp` および `/k` オプションを使用して、CSP と秘密キー コンテナー名を指定します。|  
+|`/f`  *SignCertFile*|ファイルの署名証明書を指定します。 ファイルが個人情報交換 (PFX: Personal Information Exchange) 形式でパスワードによって保護されている場合に、`/p` オプションを使用してパスワードを指定します。 ファイルに秘密キーが含まれていない場合、`/csp` および `/kc` オプションを使用して、CSP と秘密キー コンテナー名を指定します。|  
 |`/fd`|ファイルの署名の作成に使用するファイル ダイジェスト アルゴリズムを指定します。 既定値は SHA1 です。|  
 |`/i`  *IssuerName*|署名証明書の発行者の名前を指定します。 この値には、発行者名全体の部分文字列を指定できます。|  
 |`/kc`  *PrivKeyContainerName*|秘密キー コンテナー名を指定します。|  
@@ -225,6 +218,5 @@ signtool verify /c MyCatalog.cat SystemFile.dll
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [ツール](../../../docs/framework/tools/index.md)   
+ [ツール](../../../docs/framework/tools/index.md)  
  [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
-

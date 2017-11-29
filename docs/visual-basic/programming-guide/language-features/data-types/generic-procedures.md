@@ -1,46 +1,45 @@
 ---
-title: "Generic Procedures in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "generic methods, type inference"
-  - "generics [Visual Basic], type inference"
-  - "procedures, generic"
-  - "generic procedures"
-  - "type inference, generics"
-  - "generic methods"
-  - "type inference"
-  - "generics [Visual Basic], procedures"
-  - "generic procedures, type inference"
+title: "Visual Basic におけるジェネリック プロシージャ"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- generic methods [Visual Basic], type inference
+- generics [Visual Basic], type inference
+- procedures [Visual Basic], generic
+- generic procedures
+- type inference, generics
+- generic methods [Visual Basic]
+- type inference
+- generics [Visual Basic], procedures
+- generic procedures [Visual Basic], type inference
 ms.assetid: 95577b28-137f-4d5c-a149-919c828600e5
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: e019ca32277f93f798e99e996a3670c8302ba9b9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Generic Procedures in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-*ジェネリック プロシージャ*は、少なくとも 1 つの型パラメーターで定義されるプロシージャであり、*ジェネリック メソッド*とも呼ばれます。  これを使用すると、呼び出し元のコードは、プロシージャを呼び出すたびにその要件に合わせてデータ型を調整できます。  
+# <a name="generic-procedures-in-visual-basic"></a>Visual Basic におけるジェネリック プロシージャ
+A*ジェネリック プロシージャ*もという、*ジェネリック メソッド*、少なくとも 1 つの型パラメーターで定義されているプロシージャは、します。 これにより、呼び出し元のコードをプロシージャが呼び出されるたびに、その要求をデータ型を調整できます。  
   
- プロシージャは、ジェネリック クラスまたはジェネリックな構造体内で定義されていることだけでジェネリックになるわけではありません。  ジェネリックであるためには、プロシージャは、必要に応じて使用される通常のパラメーター以外に、少なくとも 1 つの型パラメーターを使用する必要があります。  ジェネリック クラスまたはジェネリックな構造体が、非ジェネリック プロシージャを含むことも、非ジェネリックなクラス、構造体、またはモジュールが、ジェネリック プロシージャを含むこともできます。  
+ 手順は、ジェネリック クラスまたはジェネリック構造体の内部で定義されていることだけでジェネリックではありません。 ジェネリックにするには、プロシージャはかかる場合があります、通常のパラメーターに加えて、少なくとも 1 つの型パラメーターを受け取る必要があります。 ジェネリック クラスまたは構造体は、非ジェネリック プロシージャは、および非ジェネリックのクラス、構造体を含めることができます、またはモジュールには、ジェネリック プロシージャが含まれていることができます。  
   
- ジェネリック プロシージャは、その型パラメーターを、その通常のパラメーター リスト、その戻り値の型があればその型、およびそのプロシージャ コードで使用できます。  
+ ジェネリック プロシージャでは、戻り値の型、およびそのプロシージャのコードがある場合、通常のパラメーター リストにその型パラメーターを使用できます。  
   
-## 型の推定  
- 型引数を一切指定しないでジェネリック プロシージャを呼び出すことができます。  この方法で呼び出す場合、コンパイラは、プロシージャの型引数に渡す適切なデータ型を決定しようとします。  これは、*型の推定*と呼ばれます。  コンパイラが `String` 型を型パラメーター `t` に渡すと推定する呼び出しを次のコードに示します。  
+## <a name="type-inference"></a>型推論  
+ すべての型引数を指定せず、ジェネリック プロシージャを呼び出すことができます。 この方法で呼び出すこと、コンパイラは、プロシージャの型引数を渡すための適切なデータ型を決定しようとします。 これと呼ばれる*型推論*です。 次のコードが呼び出しを示しているコンパイラが推論型を渡すかで`String`、型パラメーターに`t`です。  
   
  [!code-vb[VbVbalrDataTypes#15](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-procedures_1.vb)]  
   
- コンパイラが呼び出しのコンテキストから型引数を推定できない場合、エラーが報告されます。  このようなエラーの原因の 1 つは、配列ランクの不一致です。  たとえば、通常のパラメーターを型パラメーターの配列として定義するとします。  異なるランク \(次元数\) の配列を指定するジェネリック プロシージャを呼び出すと、不一致により型の推定が失敗します。  1 次元配列を受け取るプロシージャに 2 次元配列が渡される呼び出しを次のコードに示します。  
+ 場合は、コンパイラは、呼び出しのコンテキストから型引数を推定できません、エラーを報告します。 このようなエラーの考えられる原因の 1 つは、配列ランクの不一致です。 たとえば、型パラメーターの配列として、通常のパラメーターを定義します。 ジェネリック プロシージャを呼び出す場合は、異なるランク (次元の数) の配列を指定する、不一致が原因で型の推定が失敗します。 次のコードを 1 次元配列を受け取るプロシージャに渡される 2 次元配列にします。  
   
  `Public Sub demoSub(Of t)(ByVal arg() As t)`  
   
@@ -54,32 +53,32 @@ caps.handback.revision: 11
   
  `End Sub`  
   
- 型の推定は、すべての型引数を省略することによってのみ呼び出すことができます。  型引数を 1 つでも指定する場合は、すべての型引数を指定する必要があります。  
+ 型の推論は、すべての型引数を省略することによってのみ呼び出すことができます。 1 つの型引数を指定する場合は、それらすべてを指定する必要があります。  
   
- 型の推定がサポートされるのは、ジェネリック プロシージャの場合だけです。  型の推定を、ジェネリック クラス、構造体、インターフェイス、またはデリゲートで呼び出すことはできません。  
+ 型の推定方法は、ジェネリック プロシージャにのみサポートされます。 ジェネリック クラス、構造体、インターフェイス、またはデリゲートの型の推論を呼び出すことはできません。  
   
-## 例  
+## <a name="example"></a>例  
   
-### Description  
- 次の例では、配列内の特定の要素を検索するためのジェネリック `Function` プロシージャを定義しています。  これは、1 つの型パラメーターを定義し、それを使用して、パラメーター リストに 2 つのパラメーターを構築します。  
+### <a name="description"></a>説明  
+ 次の例では、汎用的な`Function`配列内の特定の要素を検索する手順。 1 つの型パラメーターを定義し、パラメーター リスト内の 2 つのパラメーターを構築するために使用します。  
   
-### コード  
+### <a name="code"></a>コード  
  [!code-vb[VbVbalrDataTypes#14](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-procedures_2.vb)]  
   
-### コメント  
- 前の例では、`searchValue` と `searchArray` の各要素を比較する機能が必要です。  この機能が確実に動作するように、型パラメーター `T` は <xref:System.IComparable%601> インターフェイスを実装するように制限されています。  コードでは、`=` 演算子の代わりに <xref:System.IComparable%601.CompareTo%2A> メソッドを使用します。これは、`T` によって提供される型引数が `=` 演算子をサポートしているという保証がないからです。  
+### <a name="comments"></a>コメント  
+ 前の例を比較することが必要に`searchValue`の各要素に対して`searchArray`です。 この機能を保証するために、型パラメーター制約`T`を実装する、<xref:System.IComparable%601>インターフェイスです。 コードを使用して、<xref:System.IComparable%601.CompareTo%2A>メソッドの代わりに、`=`演算子に渡される型引数の保証がないため`T`をサポートしている、`=`演算子。  
   
- `findElement` プロシージャをテストするためには、次のコードを使用してください。  
+ テストすることができます、`findElement`次のコードを持つプロシージャ。  
   
  [!code-vb[VbVbalrDataTypes#13](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-procedures_3.vb)]  
   
- 前の `MsgBox` 呼び出しでは、それぞれ "0"、"1"、および "\-1" が表示されます。  
+ 呼び出す前に、 `MsgBox` 「0」、「1」、および「-1」をそれぞれ表示されます。  
   
-## 参照  
- [Visual Basic におけるジェネリック型](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)   
- [方法 : 複数のデータ型に同一の機能を提供できるクラスを定義する](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md)   
- [方法 : ジェネリック クラスを使用する](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)   
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [Type List](../../../../visual-basic/language-reference/statements/type-list.md)   
- [Parameter List](../../../../visual-basic/language-reference/statements/parameter-list.md)
+## <a name="see-also"></a>関連項目  
+ [Visual Basic におけるジェネリック型](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
+ [方法 : 複数のデータ型に同一の機能を提供できるクラスを定義する](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md)  
+ [方法 : ジェネリック クラスを使用する](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
+ [手順](../../../../visual-basic/programming-guide/language-features/procedures/index.md)  
+ [プロシージャのパラメーターと引数](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)  
+ [型リスト](../../../../visual-basic/language-reference/statements/type-list.md)  
+ [パラメーター リスト](../../../../visual-basic/language-reference/statements/parameter-list.md)

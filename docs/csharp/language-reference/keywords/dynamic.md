@@ -1,41 +1,22 @@
 ---
 title: "dynamic (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- dynamic_CSharpKeyword
-dev_langs:
-- CSharp
+f1_keywords: dynamic_CSharpKeyword
 helpviewer_keywords:
 - dynamic [C#]
 - dynamic keyword [C#]
 ms.assetid: 9e797102-cc83-4964-bf58-afe4f54d16bc
-caps.latest.revision: 25
+caps.latest.revision: "25"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: e3bf51ab62e195f7a5d1f0641f62380977c731ce
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b68a6ef4dc3dda01638b9bb84db58ba77214f490
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="dynamic-c-reference"></a>dynamic (C# リファレンス)
 `dynamic` 型を使用すると、コンパイル時の型チェックをバイパスする処理が可能になります。 代わりに、演算は実行時に解決されます。 `dynamic` 型により、Office オートメーション API などの COM API、IronPython ライブラリなどの動的 API、および HTML ドキュメント オブジェクト モデル (DOM: Document Object Model) へのアクセスが容易になります。  
@@ -44,7 +25,7 @@ ms.lasthandoff: 07/28/2017
   
  `dynamic` 型の変数と `object` 型の変数の違いを次に示します。 コンパイル時に各変数の型を確認するには、`WriteLine` ステートメントの `dyn` または `obj` にマウス ポインターを置きます。 IntelliSense 機能によって、`dyn` には **dynamic**、`obj` には **object** が表示されます。  
   
- [!code-cs[csrefKeywordsTypes#21](../../../csharp/language-reference/keywords/codesnippet/CSharp/dynamic_1.cs)]  
+ [!code-csharp[csrefKeywordsTypes#21](../../../csharp/language-reference/keywords/codesnippet/CSharp/dynamic_1.cs)]  
   
  `WriteLine` ステートメントは `dyn` および `obj` の実行時の型を表示します。 その時点では、両方が同じ整数型を持ちます。 次の出力が生成されます。  
   
@@ -66,31 +47,30 @@ obj = obj + 3;
   
 -   宣言では、プロパティ、フィールド、インデクサー、パラメーター、戻り値、ローカル変数、または型制約として記述できます。 次のクラス定義はさまざまな宣言で `dynamic` を使用します。  
   
-     [!code-cs[csrefKeywordsTypes#22](../../../csharp/language-reference/keywords/codesnippet/CSharp/dynamic_2.cs)]  
+     [!code-csharp[csrefKeywordsTypes#22](../../../csharp/language-reference/keywords/codesnippet/CSharp/dynamic_2.cs)]  
   
 -   明示的な型変換で、変換先の型として記述できます。  
   
-     [!code-cs[csrefKeywordsTypes#23](../../../csharp/language-reference/keywords/codesnippet/CSharp/dynamic_3.cs)]  
+     [!code-csharp[csrefKeywordsTypes#23](../../../csharp/language-reference/keywords/codesnippet/CSharp/dynamic_3.cs)]  
   
 -   `is` 演算子または `as` 演算子の右側、`typeof` への引数など、型が値として機能するコンテキストでは構築型の一部として記述できます。 たとえば、次の式では `dynamic` を使用できます。  
   
-     [!code-cs[csrefKeywordsTypes#24](../../../csharp/language-reference/keywords/codesnippet/CSharp/dynamic_4.cs)]  
+     [!code-csharp[csrefKeywordsTypes#24](../../../csharp/language-reference/keywords/codesnippet/CSharp/dynamic_4.cs)]  
   
 ## <a name="example"></a>例  
  さまざまな宣言で `dynamic` を使用する例を次に示します。 また、`Main` メソッドで、コンパイル時の型チェックと実行時の型チェックの違いを確認できます。  
   
- [!code-cs[csrefKeywordsTypes#25](../../../csharp/language-reference/keywords/codesnippet/CSharp/dynamic_5.cs)]  
+ [!code-csharp[csrefKeywordsTypes#25](../../../csharp/language-reference/keywords/codesnippet/CSharp/dynamic_5.cs)]  
   
  使用例を含む詳細については、「[dynamic 型の使用](../../../csharp/programming-guide/types/using-type-dynamic.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Dynamic.ExpandoObject?displayProperty=fullName>   
- <xref:System.Dynamic.DynamicObject?displayProperty=fullName>   
- [dynamic 型の使用](../../../csharp/programming-guide/types/using-type-dynamic.md)   
- [object](../../../csharp/language-reference/keywords/object.md)   
- [is](../../../csharp/language-reference/keywords/is.md)   
- [as](../../../csharp/language-reference/keywords/as.md)   
- [typeof](../../../csharp/language-reference/keywords/typeof.md)   
- [方法: as 演算子と is 演算子を使用して安全にキャストする](../../../csharp/programming-guide/types/how-to-safely-cast-by-using-as-and-is-operators.md)   
+ <xref:System.Dynamic.ExpandoObject?displayProperty=nameWithType>  
+ <xref:System.Dynamic.DynamicObject?displayProperty=nameWithType>  
+ [dynamic 型の使用](../../../csharp/programming-guide/types/using-type-dynamic.md)  
+ [object](../../../csharp/language-reference/keywords/object.md)  
+ [is](../../../csharp/language-reference/keywords/is.md)  
+ [as](../../../csharp/language-reference/keywords/as.md)  
+ [typeof](../../../csharp/language-reference/keywords/typeof.md)  
+ [方法: as 演算子と is 演算子を使用して安全にキャストする](../../../csharp/programming-guide/types/how-to-safely-cast-by-using-as-and-is-operators.md)  
  [チュートリアル: 動的オブジェクトの作成と使用](../../../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)
-

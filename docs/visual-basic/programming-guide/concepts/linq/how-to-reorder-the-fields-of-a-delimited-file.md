@@ -1,39 +1,31 @@
 ---
-title: "方法: 区切り記号入りファイル (LINQ) (Visual Basic) のフィールドの順序を |Microsoft ドキュメント"
+title: "方法: 区切り記号入りファイル (LINQ) (Visual Basic) のフィールドの順序を変更"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: c451c7db-663b-4daf-b8ba-a2093095d672
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9abb0510ed3944cd80d6658238ef79d64dc0ca27
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: f308495a21b671edf03fbd791ef77d668d55388d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-visual-basic"></a>方法: 区切り記号入りファイル (LINQ) (Visual Basic) のフィールドの順序を変更
-コンマ区切り値 (CSV) ファイルは、スプレッドシートのデータまたはその他の行と列によって表される表形式のデータの格納に使用される多くの場合、テキスト ファイルです。 使用して、 <xref:System.String.Split%2A>、フィールドを分割するメソッドはクエリおよび LINQ を使用して CSV ファイルを操作する方が簡単です</xref:System.String.Split%2A>。 実際に、任意の構造化された行のテキスト部分の順序を変更する同じ手法を使用できます。CSV ファイルに制限はありません。  
+コンマ区切り (CSV) ファイルは、テキスト ファイルです。多くの場合、行と列で表されるスプレッドシート データや他の表形式データの格納に使用されます。 <xref:System.String.Split%2A> メソッドを使用してフィールドを区切ると、LINQ を使用した CSV ファイルのクエリと操作がとても簡単になります。 この手法は、CSV ファイルに限らず、行が構造化されているテキストの一部を並べ替えるときに利用できます。  
   
- 次の例では、3 つの列を表す受講者「姓」という前提としています「姓」と"ID" フィールドは、学生の姓に基づいてアルファベット順になっています。 クエリでは、ID 列が表示される&1; つは、生徒の名前と姓を結合する&2; 番目の列の後に新しいシーケンスを生成します。 行の順序は、ID フィールドに基づいて変更されます。 結果は、新しいファイルに保存し、元のデータは変更されません。  
+ 次の例では、学生の "名"、"姓"、"ID" を表す 3 つの列があります。 これらのフィールドは、学生の姓に基づいてアルファベット順に並べられています。 クエリによって、ID 列が最初に表示され、学生の姓と名を結合して 2 列目に表示されるように列順を変えます。 行は ID フィールドの順に並べ替えられます。 結果は新しいファイルに保存され、元のデータは変更されません。  
   
 ### <a name="to-create-the-data-file"></a>データ ファイルを作成するには  
   
-1.  Spreadsheet1.csv というプレーン テキスト ファイルに次の行をコピーします。 プロジェクト フォルダーに保存します。  
+1.  次の行を、spreadsheet1.csv というプレーン テキスト ファイルにコピーします。 プロジェクト フォルダーにファイルを保存します。  
   
     ```  
     Adams,Terry,120  
@@ -94,6 +86,6 @@ End Class
 ## <a name="compiling-the-code"></a>コードのコンパイル  
   
 ## <a name="see-also"></a>関連項目  
- [LINQ と文字列 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)   
- [LINQ とファイル ディレクトリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)   
+ [LINQ と文字列 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)  
+ [LINQ とファイル ディレクトリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)  
  [方法: CSV ファイルから XML を生成する](http://msdn.microsoft.com/library/dd7bab8c-96fa-4343-94d0-9739dd6a74fd)

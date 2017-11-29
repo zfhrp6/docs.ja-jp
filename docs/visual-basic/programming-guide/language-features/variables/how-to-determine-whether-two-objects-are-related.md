@@ -1,43 +1,42 @@
 ---
-title: "How to: Determine Whether Two Objects Are Related (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "inheritance, Visual Basic objects"
-  - "objects [Visual Basic], inheritance"
-  - "object variables, determining relation"
+title: "方法: 2 つのオブジェクトが関連しているかどうかを判別する (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- inheritance [Visual Basic], Visual Basic objects
+- objects [Visual Basic], inheritance
+- object variables [Visual Basic], determining relation
 ms.assetid: da002e3f-6616-4bad-a229-f842d06652bb
-caps.latest.revision: 7
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 7824742459fca355c0043ad8ed20a26330402c05
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Determine Whether Two Objects Are Related (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-2 つのオブジェクトの各作成元クラス間の関係 \(もしあれば\) を確認するために、それらのオブジェクトを比較することができます。  指定されたクラスが現在のクラスから継承されている場合、または指定されたクラスが現在の型をサポートしている場合、<xref:System.Type?displayProperty=fullName> クラスの <xref:System.Type.IsInstanceOfType%2A> メソッドは `True` を返します。  
+# <a name="how-to-determine-whether-two-objects-are-related-visual-basic"></a>方法: 2 つのオブジェクトが関連しているかどうかを判別する (Visual Basic)
+その作成元のクラス間のリレーションシップを判断する 2 つのオブジェクトを比較することができます。 <xref:System.Type.IsInstanceOfType%2A>のメソッド、<xref:System.Type?displayProperty=nameWithType>クラスを返します`True`指定したクラスを現在のクラスから継承する場合、または現在の型が指定したクラスでサポートされているインターフェイス。  
   
-### あるオブジェクトが、他のオブジェクトのクラスまたはインターフェイスを継承しているかどうかを決めるには  
+### <a name="to-determine-if-one-object-inherits-from-another-objects-class-or-interface"></a>1 つのオブジェクトが別のオブジェクトのクラスまたはインターフェイスから継承かどうかを決定するには  
   
-1.  基本型と思われるオブジェクトで、<xref:System.Object.GetType%2A> メソッドを呼び出します。  
+1.  思われるオブジェクトの可能性がありますの基本型、呼び出し、<xref:System.Object.GetType%2A>メソッドです。  
   
-2.  <xref:System.Object.GetType%2A> によって返された <xref:System.Type?displayProperty=fullName> オブジェクトで、<xref:System.Type.IsInstanceOfType%2A> メソッドを呼び出します。  
+2.  <xref:System.Type?displayProperty=nameWithType>によって返されるオブジェクト<xref:System.Object.GetType%2A>を呼び出し、<xref:System.Type.IsInstanceOfType%2A>メソッドです。  
   
-3.  <xref:System.Type.IsInstanceOfType%2A> の引数リスト内で、派生型であると思われるオブジェクトを指定します。  
+3.  引数リストの<xref:System.Type.IsInstanceOfType%2A>、派生型のオブジェクトと思われる場合がありますを指定します。  
   
-     引数型が <xref:System.Type?displayProperty=fullName> オブジェクト型を継承している場合、<xref:System.Type.IsInstanceOfType%2A> は `True` を返します。  
+     <xref:System.Type.IsInstanceOfType%2A>返します`True`からその引数の型を継承する場合、<xref:System.Type?displayProperty=nameWithType>オブジェクトの種類。  
   
-## 使用例  
- 次に示すのは、一方のオブジェクトの表すクラスが、もう一方のオブジェクトのクラスから派生したものかどうかを確認する例です。  
+## <a name="example"></a>例  
+ 次の例では、1 つのオブジェクトが別のオブジェクトのクラスから派生するクラスを表すかどうかを判断します。  
   
 ```  
 Public Class baseClass  
@@ -55,13 +54,13 @@ Public Class testTheseClasses
 End Class  
 ```  
   
- <xref:System.Type.IsInstanceOfType%2A> への呼び出し内にある 2 つのオブジェクト変数が、期待どおり設定されない場合があることに注意してください。  この処理では、想定される基本型を使用して <xref:System.Type?displayProperty=fullName> クラスが生成され、想定される派生型が引数として <xref:System.Type.IsInstanceOfType%2A> メソッドに渡されます。  
+ 呼び出しで 2 つのオブジェクト変数の予期しない配置に注意してください<xref:System.Type.IsInstanceOfType%2A>です。 生成に使用される基本型、<xref:System.Type?displayProperty=nameWithType>クラス、およびされる派生型が引数として渡される、<xref:System.Type.IsInstanceOfType%2A>メソッドです。  
   
-## 参照  
- <xref:System.Object.GetType%2A>   
- <xref:System.Type?displayProperty=fullName>   
- <xref:System.Type.IsInstanceOfType%2A>   
- [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)   
- [Object Variables](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)   
- [Object Variable Values](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)   
- [How to: Determine Whether Two Objects Are Identical](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Object.GetType%2A>  
+ <xref:System.Type?displayProperty=nameWithType>  
+ <xref:System.Type.IsInstanceOfType%2A>  
+ [Object 型](../../../../visual-basic/language-reference/data-types/object-data-type.md)  
+ [オブジェクト変数](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)  
+ [オブジェクト変数の値](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)  
+ [方法: 2 つのオブジェクトが同一であるかどうか判別する](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)

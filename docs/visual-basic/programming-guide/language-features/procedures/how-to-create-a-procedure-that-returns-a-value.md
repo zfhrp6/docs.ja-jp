@@ -1,56 +1,55 @@
 ---
-title: "How to: Create a Procedure that Returns a Value (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "procedures, defining"
-  - "Visual Basic code, procedures"
-  - "procedures, returning a value"
+title: "方法: 値を返すプロシージャを作成する (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- procedures [Visual Basic], defining
+- Visual Basic code, procedures
+- procedures [Visual Basic], returning a value
 ms.assetid: 8ee19f95-a9ef-4033-963b-d224dca207c4
-caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 787eddc1fd1cdb9dd6b655a8556b75044b2a49dc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Create a Procedure that Returns a Value (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-呼び出し元のコードに体を返すには、`Function` プロシージャを使用します。  
+# <a name="how-to-create-a-procedure-that-returns-a-value-visual-basic"></a>方法: 値を返すプロシージャを作成する (Visual Basic)
+使用する、`Function`呼び出しコードに値を返すプロシージャです。  
   
-### 値を返すプロシージャを作成するには  
+### <a name="to-create-a-procedure-that-returns-a-value"></a>値を返すプロシージャを作成するのには  
   
-1.  その他のプロシージャの外部で、`Function` ステートメントと `End Function` ステートメントを使用します。  
+1.  その他のすべてのプロシージャの外側を使用して、`Function`ステートメントの後に、`End Function`ステートメントです。  
   
-2.  `Function` ステートメントの中では、`Function` キーワードの後にプロシージャの名前とかっこで囲んだパラメーター リストを指定します。  
+2.  `Function`ステートメントでは、以下の`Function`キーワード、プロシージャとし、かっこで囲まれたパラメーター リストの名前に置き換えます。  
   
-3.  かっこの後には `As` 句で、返された値のデータ型を指定します。  
+3.  かっこの後に、`As`句を戻り値のデータ型を指定します。  
   
-4.  プロシージャのコード ステートメントは、`Function` と `End Function` ステートメントの間に記述します。  
+4.  間に、プロシージャのコード ステートメントを配置、`Function`と`End Function`ステートメントです。  
   
-5.  `Return` ステートメントを使用して、呼び出し元のコードに値を返します。  
+5.  使用して、`Return`ステートメントを呼び出し元のコードに値を返します。  
   
-     次の `Function` プロシージャは、直角三角形の最も長い辺 \(斜辺\) を他の 2 つの辺の値を基に計算します。  
+     次`Function`最長側では、やの他の 2 つの辺の値を指定、直角三角形の斜辺を計算します。  
   
      [!code-vb[VbVbcnProcedures#1](./codesnippet/VisualBasic/how-to-create-a-procedure-that-returns-a-value_1.vb)]  
   
-     `hypotenuse` の一般的な呼び出しを次に示します。  
+     次の例では、一般的な呼び出しを`hypotenuse`です。  
   
      [!code-vb[VbVbcnProcedures#6](./codesnippet/VisualBasic/how-to-create-a-procedure-that-returns-a-value_2.vb)]  
   
-## 参照  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Sub Procedures](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md)   
- [Property プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)   
- [Operator Procedures](../../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md)   
- [How to: Return a Value from a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-return-a-value-from-a-procedure.md)   
- [How to: Call a Procedure That Returns a Value](../../../../visual-basic/programming-guide/language-features/procedures/how-to-call-a-procedure-that-returns-a-value.md)
+## <a name="see-also"></a>関連項目  
+ [手順](./index.md)  
+ [Sub プロシージャ](./sub-procedures.md)  
+ [Property プロシージャ](./property-procedures.md)  
+ [演算子プロシージャ](./operator-procedures.md)  
+ [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)  
+ [Function ステートメント](../../../../visual-basic/language-reference/statements/function-statement.md)  
+ [方法 : プロシージャから値を返す](./how-to-return-a-value-from-a-procedure.md)  
+ [方法: 値を返すプロシージャを呼び出す](./how-to-call-a-procedure-that-returns-a-value.md)

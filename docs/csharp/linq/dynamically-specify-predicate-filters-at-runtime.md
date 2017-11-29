@@ -7,16 +7,14 @@ manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
 ms.assetid: 90238470-0767-497c-916c-52d0d16845e0
+ms.openlocfilehash: 06bc594ac1357e7dca6c182fa28310559a79875c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9e724428bce09e2b2fa20b9391ad131424e16413
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="dynamically-specify-predicate-filters-at-runtime"></a>実行時における述語フィルターの動的指定
 
@@ -32,7 +30,7 @@ ms.lasthandoff: 07/28/2017
   
 4.  クラス `Program` を次のコードで置き換えます。  
   
-     [!code-cs[csProgGuideLINQ#26](../../../samples/snippets/csharp/concepts/linq/how-to-dynamically-specify-predicate-filters-at-runtime_1.cs)]  
+     [!code-csharp[csProgGuideLINQ#26](../../../samples/snippets/csharp/concepts/linq/how-to-dynamically-specify-predicate-filters-at-runtime_1.cs)]  
   
 5.  次の行をクラス `DynamicPredicates` の `Main` メソッドに追加します。`ids` の宣言の下です。  
   
@@ -70,7 +68,7 @@ ms.lasthandoff: 07/28/2017
   
 2.  次のメソッドをコピーし、クラス `DynamicPredicates` に貼り付けます。  
   
-     [!code-cs[csProgGuideLINQ#27](../../../samples/snippets/csharp/concepts/linq//how-to-dynamically-specify-predicate-filters-at-runtime_2.cs)]  
+     [!code-csharp[csProgGuideLINQ#27](../../../samples/snippets/csharp/concepts/linq//how-to-dynamically-specify-predicate-filters-at-runtime_2.cs)]  
   
 3.  `Main` メソッドで、`QueryByID` の呼び出しを次の呼び出しに置換します。この呼び出しは、`args` 配列の最初の要素をその引数として送信します (`QueryByYear(args[0])`)。  
   
@@ -78,6 +76,5 @@ ms.lasthandoff: 07/28/2017
   
  
 ## <a name="see-also"></a>関連項目  
- [LINQ クエリ式](index.md)   
+ [LINQ クエリ式](index.md)  
  [where 句](../language-reference/keywords/where-clause.md)
-

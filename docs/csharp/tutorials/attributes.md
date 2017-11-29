@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
+ms.openlocfilehash: dad02c64d22fe0f127057202c082680f13261d7b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cc8f38d96f7f1c41f04d64c2acc2f53805b6b012
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="using-attributes-in-c"></a>C# での属性の使用 #
 
 属性は、情報をコードに宣言的に関連付けるための手段を提供します。 また、さまざまなターゲットに適用できる再利用可能な要素も提供します。
@@ -38,6 +36,8 @@ ms.lasthandoff: 07/28/2017
 
 このコマンドにより、必要最小限の .NET Core プロジェクト ファイルが作成されます。 `dotnet restore` を実行して、このプロジェクトのコンパイルに必要な依存関係を復元する必要があります。
 
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+
 プログラムを実行するには `dotnet run` を使用します。 コンソールに "Hello, World" という出力が表示されます。
 
 ## <a name="how-to-add-attributes-to-code"></a>コードに属性を追加する方法
@@ -45,14 +45,14 @@ ms.lasthandoff: 07/28/2017
 C# では、属性は `Attribute` 基底クラスを継承するクラスです。 `Attribute` クラスから継承したクラスは、コードの他の部分で一種の "タグ" として使用できます。
 たとえば `ObsoleteAttribute` という名前の属性があります。 これは、そのコードが古いので現在は使用できないことを警告するために使用されます。 この属性を、角かっこを使用して、たとえばクラスに適用することができます。
 
-[!code-csharp[Obsolete 属性の例](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ObsoleteExample1)]  
+[!code-csharp[Obsolete attribute example](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ObsoleteExample1)]  
 
 この属性の名前は `ObsoleteAttribute` ですが、コードでは `[Obsolete]` と記述するだけで使用できます。 これは C# が準拠している規則によります。
 完全な名前 `[ObsoleteAttribute]` も使用できます。
 
 クラスを現在使用されていないとマークするときは、その "*理由*" と、代わりに "*何を*" 使用べきかについての情報を提供することをお勧めします。 これは、Obsolete 属性に文字列パラメーターを渡すことで行います。
 
-[!code-csharp[パラメーターを指定した Obsolete 属性の例](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ObsoleteExample2)]
+[!code-csharp[Obsolete attribute example with parameters](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ObsoleteExample2)]
 
 この文字列は、`var attr = new ObsoleteAttribute("some string")` と記述した場合と同様に、`ObsoleteAttribute` コンストラクターに引数として渡されます。
 
@@ -63,21 +63,21 @@ C# では、属性は `Attribute` 基底クラスを継承するクラスです�
 
 属性の作成は、`Attribute` 基底クラスからの継承と同じくらいに簡単です。
 
-[!code-csharp[独自の属性の作成](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CreateAttributeExample1)]
+[!code-csharp[Create your own attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CreateAttributeExample1)]
 
 これで、`[MySpecial]` (または `[MySpecialAttribute]`) をコード ベースの他の場所で属性として使用できます。
 
-[!code-csharp[独自の属性の使用](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CreateAttributeExample2)]
+[!code-csharp[Using your own attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CreateAttributeExample2)]
 
 .NET の基本クラス ライブラリに含まれる `ObsoleteAttribute` のような属性は、コンパイラ内で特定の動作をトリガーします。 しかし、作成した属性はメタデータとしてのみ機能するため、属性クラス内のコードは実行されません。 そのメタデータを、コードの他の場所で操作する必要があります (詳細については、このチュートリアルの公判で説明します)。
 
 ここに注意すべき "罠" があります。 前述のように、属性を使用するときは、特定の型のみを引数として渡すことができます。 しかし、属性の型を作成するときに、C# コンパイラによってパラメーターの作成が阻止されることはありません。 下の例では、正常にコンパイルされるコンストラクターを使用して属性を作成しています。
 
-[!code-csharp[属性で使用されている有効なコンストラクター](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeGothca1)]
+[!code-csharp[Valid constructor used in an attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeGothca1)]
 
 しかし、このコンストラクターは属性構文では使用できません。
 
-[!code-csharp[属性コンストラクターの無効な使用の試行](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeGotcha2)]
+[!code-csharp[Invalid attempt to use the attribute constructor](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeGotcha2)]
 
 上のコードでは、次のようなエラーが発生します。`Attribute constructor parameter 'myClass' has type 'Foo', which is not a valid attribute parameter type`
 
@@ -103,11 +103,11 @@ C# では、属性は `Attribute` 基底クラスを継承するクラスです�
 
 C# の既定では、属性クラスを作成した場合、その属性は可能なすべての属性ターゲットに使用できます。 属性を特定のターゲットにのみ使用できるように制限するには、属性クラスに対して`AttributeUsageAttribute` を使用します。 つまり、属性に属性を設定します。
 
-[!code-csharp[独自の属性の使用](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeUsageExample1)]
+[!code-csharp[Using your own attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeUsageExample1)]
 
 クラスまたは構造体以外のターゲットに上の属性を設定しようとすると、次のようなコンパイラ エラーが発生します。`Attribute 'MyAttributeForClassAndStructOnly' is not valid on this declaration type. It is only valid on 'class, struct' declarations`
 
-[!code-csharp[独自の属性の使用](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeUsageExample2)]
+[!code-csharp[Using your own attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeUsageExample2)]
 
 ## <a name="how-to-use-attributes-attached-to-a-code-element"></a>コード要素にアタッチされた属性を使用する方法
 
@@ -117,7 +117,7 @@ C# の既定では、属性クラスを作成した場合、その属性は可�
 
 たとえば、Reflection を使用して次のクラスに関する情報を取得できます。 
 
-[!code-csharp[Reflection を使用した型情報の取得](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ReflectionExample1)]
+[!code-csharp[Getting type information with Reflection](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ReflectionExample1)]
 
 出力は次のようになります。`The assembly qualified name of MyClass is ConsoleApplication.MyClass, attributes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`
 
@@ -126,7 +126,7 @@ C# の既定では、属性クラスを作成した場合、その属性は可�
 
 `MyClass` クラス (前の例で `[Obsolete]` 属性を適用したクラス)の `MemberInfo` インスタンスに対して `GetCustomAttributes` を使用する例を以下に示します。
 
-[!code-csharp[Reflection を使用した型情報の取得](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ReflectionExample2)]
+[!code-csharp[Getting type information with Reflection](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ReflectionExample2)]
 
 コンソールには次のように出力されます。`Attribute on MyClass: ObsoleteAttribute` `MyClass` に他の属性を追加してみてください。
 
@@ -146,11 +146,10 @@ C# の既定では、属性クラスを作成した場合、その属性は可�
 
 * `[CallerMemberName]`。 この属性はパラメーターに使用でき、`System.Runtime.CompilerServices` 名前空間に格納されています。 この属性は、別のメソッドを呼び出しているメソッドの名前を挿入するために使用します。 これは通常、さまざまな UI フレームワークで INotifyPropertyChanged を実装する際に "マジック文字列" を排除するための方法として使用されます。 以下に例を示します。
 
-[!code-csharp[INotifyPropertyChanged 実装時の CallerMemberName の使用](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CallerMemberName1)]
+[!code-csharp[Using CallerMemberName when implementing INotifyPropertyChanged](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CallerMemberName1)]
 
 上のコードでは、リテラルの `"Name"` 文字列を使用する必要はありません。 これは入力ミス関連のバグを防ぎ、リファクタリングや名前変更をスムーズにするのに役立ちます。
 
 ## <a name="summary"></a>まとめ
 
 属性は、C# に宣言的な機能を提供します。 ただし、コードのメタデータの一種であり、それ自体では処理を実行しません。
-
