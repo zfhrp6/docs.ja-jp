@@ -1,49 +1,50 @@
 ---
-title: "グラデーション ブラシを使用した図形の塗りつぶし | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ブラシ, グラデーション ブラシ"
-  - "例 [Windows フォーム], グラデーション ブラシ"
-  - "グラデーション ブラシ"
+title: "グラデーション ブラシを使用した図形の塗りつぶし"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- brushes [Windows Forms], gradient brushes
+- gradient brushes
+- examples [Windows Forms], gradient brushes
 ms.assetid: 2c6037b9-05bd-44c0-a22a-19584b722524
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5a1c4ab7c2ee6f7164b6158dcb4ca4721be12650
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# グラデーション ブラシを使用した図形の塗りつぶし
-グラデーション ブラシを使用して、段階的に色を変化させて 1 つの図形を塗りつぶすことができます。  たとえば、水平方向のグラデーションを使用して、図形の左端から右端に移動するにつれて色が段階的に変化するように図形を塗りつぶすことができます。  左端が黒 \(赤、緑、青の各要素が \(0, 0, 0\) で表される\) で右端が赤 \(255, 0, 0\) の四角形があると想定します。  この四角形の幅が 256 ピクセルだとすると、あるピクセルの赤の要素は、その左側にあるピクセルの赤の要素よりも 1 大きい値になります。  一列に並んだピクセルの左端のピクセルの色要素は \(0, 0, 0\)、2 番目のピクセルは \(1, 0, 0\)、3 番目のピクセルは \(2, 0, 0\) となり、その後も同様に、色要素が \(255, 0, 0\) の右端のピクセルに達するまで続いていきます。  これらの補間色の値によって色のグラデーションが構成されます。  
+# <a name="using-a-gradient-brush-to-fill-shapes"></a>グラデーション ブラシを使用した図形の塗りつぶし
+グラデーション ブラシを使用して、図形を塗りつぶす色が徐々 に変化させることができます。 たとえば、色、形状の左端から右端に移動する段階的に変化するように図形を塗りつぶすに水平方向のグラデーションを使用できます。 黒を左の端で四角形を想像してください (0, 0, 0 は、赤、緑、および青のコンポーネントによって表されます)、右端が赤 (255, 0, 0) とします。 四角形が 256 ピクセルである場合は、いずれかの左側にあるピクセルの赤の要素より大きい値を特定のピクセルの赤の要素になります。 行の左端のピクセルの色要素 (0, 0, 0)、2 番目のピクセルが (1, 0, 0)、3 番目のピクセルが (2, 0, 0)、し、右端のピクセルの色要素 (255, 0, 0) に達するまでします。 これらの色の補間値は、色のグラデーションを構成します。  
   
- 線形グラデーションでは、水平方向、垂直方向、または指定した斜線と並行方向に移動するにつれて色が変化します。  パス グラデーションでは、パスの内側および境界周辺を移動するにつれて色が変化します。  パス グラデーションをカスタマイズして、さまざまな効果を得ることができます。  
+ 線形グラデーションは、水平、垂直方向に移動または並列斜めの指定した行に色を変更します。 パス グラデーションは、内側およびパスの境界を移動すると、色を変更します。 さまざまな効果を実現するためにパス グラデーションをカスタマイズすることができます。  
   
- 線形グラデーション ブラシで塗りつぶした四角形と、パス グラデーション ブラシで塗りつぶした楕円を次の図に示します。  
+ 次の図は、四角形が線形グラデーション ブラシで塗りつぶされパス グラデーション ブラシで塗りつぶした楕円を示します。  
   
  ![グラデーション](../../../../docs/framework/winforms/advanced/media/gradient2.png "gradient2")  
   
-## このセクションの内容  
- [方法 : 線形グラデーションを作成する](../../../../docs/framework/winforms/advanced/how-to-create-a-linear-gradient.md)  
- <xref:System.Drawing.Drawing2D.LinearGradientBrush> クラスを使用して線形グラデーションを作成する方法を示します。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [方法: 線形グラデーションを作成する](../../../../docs/framework/winforms/advanced/how-to-create-a-linear-gradient.md)  
+ 線形グラデーションを使用して、作成する方法を示しています、<xref:System.Drawing.Drawing2D.LinearGradientBrush>クラスです。  
   
- [方法 : パス グラデーションを作成する](../../../../docs/framework/winforms/advanced/how-to-create-a-path-gradient.md)  
- <xref:System.Drawing.Drawing2D.PathGradientBrush> クラスを使用してパス グラデーションを作成する方法を説明します。  
+ [方法: パス グラデーションを作成する](../../../../docs/framework/winforms/advanced/how-to-create-a-path-gradient.md)  
+ パス グラデーションを使用して、作成する方法について説明します、<xref:System.Drawing.Drawing2D.PathGradientBrush>クラスです。  
   
- [方法 : グラデーションに対してガンマ補正を適用する](../../../../docs/framework/winforms/advanced/how-to-apply-gamma-correction-to-a-gradient.md)  
- グラデーション ブラシでガンマ補正を使用する方法を説明します。  
+ [方法: グラデーションに対してガンマ補正を適用する](../../../../docs/framework/winforms/advanced/how-to-apply-gamma-correction-to-a-gradient.md)  
+ グラデーション ブラシでガンマ補正を使用する方法について説明します。  
   
-## 関連項目  
- <xref:System.Drawing.Drawing2D.LinearGradientBrush?displayProperty=fullName>  
- このクラスについて説明し、そのすべてのメンバーへのリンクを示します。  
+## <a name="reference"></a>参照  
+ <xref:System.Drawing.Drawing2D.LinearGradientBrush?displayProperty=nameWithType>  
+ このクラスの説明を表すし、そのすべてのメンバーへのリンクがあります。  
   
- <xref:System.Drawing.Drawing2D.PathGradientBrush?displayProperty=fullName>  
- このクラスについて説明し、そのすべてのメンバーへのリンクを示します。
+ <xref:System.Drawing.Drawing2D.PathGradientBrush?displayProperty=nameWithType>  
+ このクラスの説明を表すし、そのすべてのメンバーへのリンクがあります。

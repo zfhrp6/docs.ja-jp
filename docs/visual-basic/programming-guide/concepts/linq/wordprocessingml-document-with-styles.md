@@ -1,36 +1,32 @@
 ---
-title: "Styles2 を含む WordprocessingML ドキュメント |Microsoft ドキュメント"
+title: "Styles2 を含む WordprocessingML ドキュメント"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: a9136e4d-c368-4661-8049-7d45c679a236
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ae85aef4ab2f5e1be5b62b038f5f09faf29480e3
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: ac833daca2e4ba12d61a1ee3c9526b7368baee74
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="wordprocessingml-document-with-styles"></a>スタイルを含む WordprocessingML ドキュメント
 複雑な WordprocessingML ドキュメントには、スタイルを使用して書式設定された段落が含まれています。  
   
  WordprocessingML ドキュメントを構成する場合に役立つ情報をいくつか説明します。 WordprocessingML ドキュメントはパッケージに格納されます。 パッケージには複数のパーツがあります (パーツは、パッケージのコンテキストで使用する場合は明示的な意味を持っています。基本的には、パーツとはパッケージを構成するためにまとめて圧縮されたファイルです)。 スタイルを使用して書式設定された段落がドキュメントに含まれている場合、スタイルが適用されている段落を含むドキュメント パーツがあります。 ドキュメントによって参照されるスタイルを含むスタイル パーツもあります。  
   
- パッケージにアクセスする場合、任意のパスを使用してではなく、パーツ間のリレーションシップを通じてアクセスすることが重要です。 この問題が WordprocessingML ドキュメントのチュートリアルではコンテンツの操作の範囲を超えてが、このチュートリアルに含まれているプログラム例では、適切なアプローチを示します。  
+ パッケージにアクセスする場合、任意のパスを使用してではなく、パーツ間のリレーションシップを通じてアクセスすることが重要です。 この問題は「WordprocessingML ドキュメント内のコンテンツの操作」のチュートリアルでは扱いませんが、このチュートリアルに用意されているプログラム例では正しい方法を示しています。  
   
 ## <a name="a-document-that-uses-styles"></a>スタイルを使用するドキュメント  
- WordML の例、 [WordprocessingML ドキュメントの構造 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/shape-of-wordprocessingml-documents.md)トピックでは、非常に単純なものです。 次のドキュメントはより複雑で、スタイルを使用して書式設定された段落を含んでいます。 Office Open XML ドキュメントを構成する XML では、実行する最も簡単な方法、[その出力 Office Open XML ドキュメント パーツ (Visual Basic) の使用例](../../../../visual-basic/programming-guide/concepts/linq/example-that-outputs-office-open-xml-document-parts.md)します。  
+ WordML の例に表示される、 [WordprocessingML ドキュメントの構造 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/shape-of-wordprocessingml-documents.md)トピックでは、非常に単純なものです。 次のドキュメントはより複雑で、スタイルを使用して書式設定された段落を含んでいます。 実行する、Office Open XML ドキュメントを構成する XML を確認する最も簡単な方法、[その出力 Office Open XML ドキュメント パーツ (Visual Basic) の使用例](../../../../visual-basic/programming-guide/concepts/linq/example-that-outputs-office-open-xml-document-parts.md)です。  
   
  次のドキュメントでは、最初の段落にスタイル `Heading1` が設定されています。 既定のスタイルが設定されている段落が多数あります。 スタイル `Code` が設定されている段落も多数あります。 このドキュメントは比較的複雑であるため、LINQ to XML を使用した解析を行うのに適したドキュメントといえます。  
   
@@ -152,4 +148,4 @@ ms.lasthandoff: 03/13/2017
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [Office の詳細については Open XML WordprocessingML ドキュメント (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+ [Office の詳細は Open XML WordprocessingML ドキュメント (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)

@@ -1,31 +1,29 @@
 ---
-title: "Subscript out of range (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID9"
-dev_langs: 
-  - "VB"
+title: "インデックスが有効範囲にありません。 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID9
 ms.assetid: d0344a65-ec02-4caf-8d3c-9977392ca353
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: a3c7f596af55508d31a576778b36c8b214fe6511
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Subscript out of range (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-配列の添字が無効です。有効な範囲内にありません。  次元の添字の最小値は常に 0 です。添字の最大値は、その次元に対する `GetUpperBound` メソッドによって返されます。  
+# <a name="subscript-out-of-range-visual-basic"></a>インデックスが有効範囲にありません。 (Visual Basic)
+許容範囲外になるために、配列の添字が正しくありません。 ディメンションの添字の最小値は常に 0、および最上位の添字の値がによって返される、`GetUpperBound`そのディメンションのメソッドです。  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   有効な範囲内に収まるように添字を変更します。  
+-   有効な範囲内に収まるように、添字を変更します。  
   
-## 参照  
- <xref:System.Array.GetUpperBound%2A?displayProperty=fullName>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Array.GetUpperBound%2A?displayProperty=nameWithType>  
  [配列](../../../visual-basic/programming-guide/language-features/arrays/index.md)

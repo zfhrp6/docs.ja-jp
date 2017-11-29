@@ -1,58 +1,62 @@
 ---
-title: "方法 : イメージを回転、反転、および傾斜させる | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "イメージ [Windows フォーム], 反転"
-  - "イメージ [Windows フォーム], 回転"
-  - "イメージ [Windows フォーム], 傾斜"
+title: "方法 : イメージを回転、反転、および傾斜させる"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- images [Windows Forms], reflecting
+- images [Windows Forms], rotating
+- images [Windows Forms], skewing
 ms.assetid: a3bf97eb-63ed-425a-ba07-dcc65efb567c
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: eaa6286731d196dad387e1648644ca3e8103da03
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : イメージを回転、反転、および傾斜させる
-元のイメージの左上隅、右上隅、および左下隅に対して、それぞれ変換後の点を指定して、イメージを回転、反転、および傾斜させることができます。  この 3 つの変換後の点によって、元の四角形イメージを平行四辺形に変換するアフィン変換が決定されます。  
+# <a name="how-to-rotate-reflect-and-skew-images"></a>方法 : イメージを回転、反転、および傾斜させる
+回転、反転、および元のイメージの左、右、上および左下コーナーの終点を指定することによって、イメージを傾けることができます。 次の 3 つのターゲット ポイントでは、元の四角形の画像を指定した平行四辺形にマップされるアフィン変換を決定します。  
   
-## 使用例  
- たとえば、元のイメージが、左上隅が \(0, 0\)、右上隅が \(100, 0\)、左下隅が \(0, 50\) にある四角形だとします。  これらの 3 つの点を、次に示す変換後の点に割り当てるとします。  
+## <a name="example"></a>例  
+ たとえば、元のイメージが四角形の左上隅が (0, 0)、右上隅にある (100, 0)、および左下隅にある (0, 50)。 3 つの点を次のようにターゲット ポイントにマップするものとします。  
   
-|変換前の点|変換後の点|  
-|-----------|-----------|  
-|左上隅 \(0, 0\)|\(200, 20\)|  
-|右上隅 \(100, 0\)|\(110, 100\)|  
-|左下隅 \(0, 50\)|\(250, 30\)|  
+|元のポイント|コピー先のポイント|  
+|--------------------|-----------------------|  
+|左上隅 (0, 0)|(200, 20)|  
+|右 (100, 0)|(110, 100)|  
+|左下 (0, 50)|(250, 30)|  
   
- 元のイメージと、変換後の平行四辺形を次の図に示します。  元のイメージは傾斜され、反転され、回転され、そして平行移動されています。  元のイメージの上辺は、変換前は x 軸に沿っていましたが、変換後は点 \(200, 20\) と点 \(110, 100\) を結ぶ直線になっています。  元のイメージの左辺は、変換前は y 軸に沿っていましたが、変換後は点 \(200, 20\) と点 \(250, 30\) を結ぶ直線になっています。  
+ 次の図は、元のイメージと平行四辺形にマップされているイメージを示します。 元のイメージがされて傾斜、反映、回転、および変換します。 元のイメージの上端に沿って、x 軸を実行している行にマップされている (200, 20) と (110, 100)。 元のイメージの左側に y 軸を実行している行にマップされている (200, 20) と (250, 30)。  
   
  ![ストライプ](../../../../docs/framework/winforms/advanced/media/stripes1.gif "Stripes1")  
   
- 同じ変換を写真に適用した場合を次の図に示します。  
+ 次の図は、写真のイメージに適用されるような変換を示します。  
   
  ![変換クライマ](../../../../docs/framework/winforms/advanced/media/transformedclimber.png "TransformedClimber")  
   
- 同じ変換をメタファイルに適用した場合を次の図に示します。  
+ 次の図は、同じ変換をメタファイルに適用します。  
   
  ![変換メタファイル](../../../../docs/framework/winforms/advanced/media/transformedmetafile.png "TransformedMetafile")  
   
- 最初の図で示したイメージを作成する例を次に示します。  
+ 次の例では、最初の図に示すようにイメージを生成します。  
   
  [!code-csharp[System.Drawing.WorkingWithImages#61](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#61)]
  [!code-vb[System.Drawing.WorkingWithImages#61](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#61)]  
   
-## コードのコンパイル  
- 前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  `Stripes.bmp` は、必ずシステム上で有効なイメージへのパスに置き換えてください。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ 前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.PaintEventArgs> イベント ハンドラーのパラメーターである `e`<xref:System.Windows.Forms.Control.Paint> を必要とします。 必ず置き換えて`Stripes.bmp`をシステム上で有効であるイメージへのパス。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [イメージ、ビットマップ、アイコン、およびメタファイルの操作](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)

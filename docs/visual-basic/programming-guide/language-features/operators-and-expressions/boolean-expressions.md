@@ -1,85 +1,84 @@
 ---
-title: "Boolean Expressions (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "short-circuiting"
-  - "Boolean expressions"
-  - "logical operators, Boolean expressions"
-  - "expressions [Visual Basic], Boolean"
-  - "expression evaluation, Boolean expressions"
-  - "operators [Visual Basic], short-circuiting"
-  - "Visual Basic code, operators"
-  - "short-circuit evaluation"
-  - "logical operators, short-circuiting"
-  - "operators [Visual Basic], Boolean"
-  - "Visual Basic code, expressions"
+title: "Boolean 式 (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- short-circuiting
+- Boolean expressions
+- logical operators [Visual Basic], Boolean expressions
+- expressions [Visual Basic], Boolean
+- expression evaluation [Visual Basic], Boolean expressions
+- operators [Visual Basic], short-circuiting
+- Visual Basic code, operators
+- short-circuit evaluation
+- logical operators [Visual Basic], short-circuiting
+- operators [Visual Basic], Boolean
+- Visual Basic code, expressions
 ms.assetid: d3d90406-55c8-4404-8143-50fd7f0d0d1a
-caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 48071c6833f9841fa42311dda59d6959c0645ff4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Boolean Expressions (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-*ブール式*とは、評価結果が [Boolean 型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)の値 \(`True` または `False`\) になる式です。  `Boolean` 式にはいくつかの形式があります。  最も単純な形式では、次のように、`Boolean` 変数の値を `Boolean` リテラルと直接比較します。  
+# <a name="boolean-expressions-visual-basic"></a>Boolean 式 (Visual Basic)
+A*ブール式*の値に評価される式を指定、[ブールのデータ型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md):`True`または`False`です。 `Boolean`式は、いくつかの形式を取ります。 単純な形式の値を直接比較、`Boolean`変数を`Boolean`リテラルで、次の例に示すようにします。  
   
  [!code-vb[VbVbalrOperators#87](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_1.vb)]  
   
-## \= 演算子の 2 つの意味  
- `newCustomer = True` という代入ステートメントは、前述の例に出てきた式と同じに見えますが、機能も使い方も異なります。  前述の例では、`newCustomer = True` という式は Boolean 値を表しているため、`=` 記号は比較演算子として解釈されます。  スタンドアロンのステートメントでは、`=` 記号は代入演算子として解釈され、右の値が左の変数に代入されます。  次に例を示します。  
+## <a name="two-meanings-of-the--operator"></a>2 つの意味、= 演算子  
+ 注意して代入ステートメント`newCustomer = True`前の例では、内の式と同じように見えますが、別の関数を実行して別々 に使用されます。 前の例では、式で`newCustomer = True`ブール値を表す、`=`記号は、比較演算子として解釈されます。 スタンドアロンのステートメントで、`=`記号、代入演算子と解釈され、左側にある変数の右側にある値を割り当てます。 次に例を示します。  
   
  [!code-vb[VbVbalrOperators#88](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_2.vb)]  
   
- 詳細については、「[Value Comparisons](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)」および「[Statements](../../../../visual-basic/language-reference/statements/index.md)」を参照してください。  
+ 詳細については、次を参照してください。[値の比較](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)と[ステートメント](../../../../visual-basic/language-reference/statements/index.md)です。  
   
-## 比較演算子  
- `=`、`<`、`>`、`<>`、`<=`、`>=` などの比較演算子は、演算子の左側の式と右側の式を比較し、その結果を `True` または `False` として評価することでブール式を形成します。  次に例を示します。  
+## <a name="comparison-operators"></a>比較演算子  
+ 比較演算子など`=`、 `<`、 `>`、 `<>`、 `<=`、および`>=`右側にある式を演算子の左辺の式を比較することでブール式を生成演算子と、結果としての評価の`True`または`False`です。 次に例を示します。  
   
  `42 < 81`  
   
- 42 は 81 より小さいので、このブール式の評価は `True` になります。  この種類の式の詳細については、「[Value Comparisons](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)」を参照してください。  
+ 前の例でブール式の評価が 42 は 81 未満であるため、`True`です。 この種類の式の詳細については、次を参照してください。[値の比較](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)です。  
   
-### 比較演算子と論理演算子の組み合わせ  
- 論理演算子を使って比較式を組み合わせると、より複雑なブール式を作成できます。  次の例では、比較演算子と論理演算子を組み合わせて使用しています。  
+### <a name="comparison-operators-combined-with-logical-operators"></a>論理演算子と組み合わせて使用する比較演算子  
+ 比較式より複雑なブール式を生成するために論理演算子を使用して結合できます。 次の例では、論理演算子で組み合わせて比較演算子の使用を示します。  
   
  `x > y And x < 1000`  
   
- この式全体の値は、`And` 演算子の両側の式の値によって決まります。  両方の式が `True` の場合は、式全体の評価も `True` になります。  いずれかの式が `False` の場合は、式全体の評価も `False` になります。  
+ 前の例で、全体的な式の値がのそれぞれの側に式の値に依存、`And`演算子。 両方の式が場合`True`、全体的な式に評価し、`True`です。 いずれかの式が場合`False`、全体の式に評価し、`False`です。  
   
-## 演算子のショートサーキット  
- `AndAlso` と `OrElse` という論理演算子は、*ショートサーキット*と呼ばれる動作を示します。  ショートサーキット演算子は、左のオペランドを最初に評価します。  左のオペランドによって式全体の値が決まる場合は、右の式が評価されないまま、プログラムの実行が次に進みます。  次に例を示します。  
+## <a name="short-circuiting-operators"></a>ショート サーキット演算子  
+ 論理演算子`AndAlso`と`OrElse`と呼ばれる現象が発生*ショート サーキット*です。 ショート サーキット演算子は、まず、左側のオペランドを評価します。 左側のオペランドでは、式全体の値を決定、右の式を評価することがなくプログラムの実行が処理されます。 次に例を示します。  
   
  [!code-vb[VbVbalrOperators#89](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_3.vb)]  
   
- この例では、まず左の式 `45 < 12` が評価されます。  左の式の評価は `False` になるので、この論理式全体の評価は `False` になります。  したがって、右の式 `testFunction(3)` は評価されないまま、`If` ブロック内のコードの実行がスキップされます。  この例では、左の式を評価しただけで式全体が false になることが決まるので、`testFunction()` は呼び出されません。  
+ 前の例で、演算子は左の式を評価`45 < 12`です。 左の式が評価されるため`False`、全体の論理式を評価する`False`です。 プログラムの実行がそのためのコードの実行をスキップ、`If`右の式を評価することがなくブロック`testFunction(3)`です。 この例は呼び出しません`testFunction()`左の式が式全体を falsifies ためです。  
   
- 同様に、`OrElse` を使った論理式の左の式が `True` になる場合も、右の式は評価されないまま次のコード行が実行されます。これは、左の式を評価しただけで式全体が true になることが決まるからです。  
+ 同様に場合、左の式を使用して、論理式で`OrElse`に評価される`True`、左の式が既に全体を検証するため、右の式を評価することがなく次のコード行に実行されます式。  
   
-### 非ショートサーキット演算子との比較  
- これに対して、`And` 演算子または `Or` 演算子を使用した場合は、論理演算子の両側が評価されます。  次に例を示します。  
+### <a name="comparison-with-non-short-circuiting-operators"></a>非ショート サーキット演算子との比較  
+ これに対し、論理演算子の両側が評価されるときに、論理演算子`And`と`Or`使用されます。 次に例を示します。  
   
  [!code-vb[VbVbalrOperators#90](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_4.vb)]  
   
- この例では、左の式の評価が `False` になる場合でも、`testFunction()` が呼び出されます。  
+ 上記の例では、 `testFunction()` 、左の式を評価する場合でも`False`です。  
   
-## かっこを使った式  
- かっこを使うと、ブール式を評価する順序を制御できます。  かっこで囲まれている式が最初に評価されます。  複数のレベルで入れ子になっている場合は、最も内側の式から評価されます。  かっこの中の式は、演算子の優先順位の規則に従って評価されます。  詳細については、「[Operator Precedence in Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md)」を参照してください。  
+## <a name="parenthetical-expressions"></a>かっこで囲んだ式  
+ ブール式の評価の順序を制御するのにかっこを使用することができます。 かっこで囲まれた式が最初に評価されます。 複数のレベルの入れ子では、優先順位が最も深く入れ子になった式に付与されます。 かっこ内では、演算子の優先順位の規則に従って評価が続行されます。 詳細については、次を参照してください。 [Visual Basic の演算子の優先順位](../../../../visual-basic/language-reference/operators/operator-precedence.md)です。  
   
-## 参照  
- [Logical and Bitwise Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)   
- [Value Comparisons](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)   
- [Statements](../../../../visual-basic/programming-guide/language-features/statements.md)   
- [Comparison Operators](../../../../visual-basic/language-reference/operators/comparison-operators.md)   
- [Efficient Combination of Operators](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/efficient-combination-of-operators.md)   
- [Operator Precedence in Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md)   
- [Boolean Data Type](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)
+## <a name="see-also"></a>関連項目  
+ [Visual Basic における論理/ビット処理演算子](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)  
+ [値の比較](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)  
+ [ステートメント](../../../../visual-basic/programming-guide/language-features/statements.md)  
+ [比較演算子](../../../../visual-basic/language-reference/operators/comparison-operators.md)  
+ [演算子の効率のよい組み合わせ](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/efficient-combination-of-operators.md)  
+ [Visual Basic における演算子の優先順位](../../../../visual-basic/language-reference/operators/operator-precedence.md)  
+ [Boolean データ型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)

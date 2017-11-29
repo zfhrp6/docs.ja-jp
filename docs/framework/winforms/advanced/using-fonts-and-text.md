@@ -1,78 +1,79 @@
 ---
-title: "フォントとテキストの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "例 [Windows フォーム], フォントとテキスト"
-  - "フォント, 使用 (Windows フォームで)"
-  - "GDI, 描画 (テキストを) [Windows フォーム]"
-  - "文字列 [Windows フォーム], 描画 (Windows フォームで)"
-  - "テキスト [Windows フォーム], 描画 (Windows フォームで)"
+title: "フォントとテキストの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- GDI [Windows Forms], drawing text [Windows Forms]
+- text [Windows Forms], drawing in Windows Forms
+- examples [Windows Forms], fonts and text
+- fonts [Windows Forms], using in Windows Forms
+- strings [Windows Forms], drawing in Windows Forms
 ms.assetid: d43640f3-da94-4df2-a29d-a9d021a1c069
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c18dde7265a07eb45e0211a882b19acc6342e924
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# フォントとテキストの使用
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] と [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] には、Windows フォームでテキストを描画するためのクラスがいくつか用意されています。  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] の <xref:System.Drawing.Graphics> クラスにはいくつかの <xref:System.Drawing.Graphics.DrawString%2A> メソッドがあり、これらのメソッドを使用して、テキストの位置、外接する四角形、フォント、書式などのさまざまな特徴を指定できます。  また、[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] では `TextRenderer` クラスの <xref:System.Windows.Forms.TextRenderer.DrawText%2A> と <xref:System.Windows.Forms.TextRenderer.MeasureText%2A> の静的メソッドを使用して、テキストの描画と寸法計測ができます。  [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] のメソッドを使用して、位置、フォント、および書式を指定することも可能です。  テキストの描画には [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] または [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] を選択できますが、一般に [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] の方がパフォーマンスが高く、テキストの寸法計測も正確です。  この他にも、テキストの描画には `FontFamily`、`Font`、<xref:System.Drawing.StringFormat>、および `TextFormatFlags` などが使用されます。  
+# <a name="using-fonts-and-text"></a>フォントとテキストの使用
+によって提供されるいくつかのクラスがある[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]と[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]Windows フォームでテキストを描画するためです。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Graphics>クラスにはいくつか<xref:System.Drawing.Graphics.DrawString%2A>テキスト、位置、外接する四角形、フォント、および形式などのさまざまな機能を指定できるようにするメソッド。 さらに、描画し、メジャーを含むテキスト[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]静的<xref:System.Windows.Forms.TextRenderer.DrawText%2A>と<xref:System.Windows.Forms.TextRenderer.MeasureText%2A>によって提供されるメソッド、`TextRenderer`クラスです。 [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]メソッドの場所、フォント、および形式を指定することも可能です。 いずれかを選択することができます[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]または[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]テキスト レンダリングされます。 ただし、[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]通常をより的確にパフォーマンスとより正確なテキストを測定します。 テキスト レンダリングに影響するその他のクラスに含まれる`FontFamily`、 `Font`、 <xref:System.Drawing.StringFormat>、および`TextFormatFlags`です。  
   
-## このセクションの内容  
- [方法 : フォント ファミリとフォントを作成する](../../../../docs/framework/winforms/advanced/how-to-construct-font-families-and-fonts.md)  
- `Font` オブジェクトと `FontFamily` オブジェクトの作成方法について説明します。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [方法: フォント ファミリとフォントを作成する](../../../../docs/framework/winforms/advanced/how-to-construct-font-families-and-fonts.md)  
+ 作成する方法を示します`Font`と`FontFamily`オブジェクト。  
   
- [方法 : テキストを指定の位置に描画する](../../../../docs/framework/winforms/advanced/how-to-draw-text-at-a-specified-location.md)  
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] と [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] を使用して、テキストを特定の位置に描画する方法について説明します。  
+ [方法: テキストを指定の位置に描画する](../../../../docs/framework/winforms/advanced/how-to-draw-text-at-a-specified-location.md)  
+ 特定の場所を使用して、テキストを描画する方法について説明[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]と[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]です。  
   
- [方法 : 四角形内にテキストを折り返して描画する](../../../../docs/framework/winforms/advanced/how-to-draw-wrapped-text-in-a-rectangle.md)  
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] と [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] を使用して、テキストを四角形内に描画する方法について説明します。  
+ [方法: 四角形内にテキストを折り返して描画する](../../../../docs/framework/winforms/advanced/how-to-draw-wrapped-text-in-a-rectangle.md)  
+ 使用して、四角形内のテキストを描画する方法について説明します[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]と[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]です。  
   
- [方法 : GDI を使用してテキストを描画する](../../../../docs/framework/winforms/advanced/how-to-draw-text-with-gdi.md)  
- [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] によるテキストの描画方法について説明します。  
+ [方法: GDI を使用してテキストを描画する](../../../../docs/framework/winforms/advanced/how-to-draw-text-with-gdi.md)  
+ 使用する方法を示します[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]テキストを描画するためです。  
   
- [方法 : 描画テキストを配置する](../../../../docs/framework/winforms/advanced/how-to-align-drawn-text.md)  
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] と [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] でのテキストの書式設定の方法について説明します。  
+ [方法: 描画テキストを配置する](../../../../docs/framework/winforms/advanced/how-to-align-drawn-text.md)  
+ 書式設定する方法を示しています。[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]と[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]テキスト。  
   
- [方法 : 垂直方向のテキストを作成する](../../../../docs/framework/winforms/advanced/how-to-create-vertical-text.md)  
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] でテキストを垂直方向に配置して描画する方法について説明します。  
+ [方法: 垂直方向のテキストを作成する](../../../../docs/framework/winforms/advanced/how-to-create-vertical-text.md)  
+ 垂直方向に配置されたテキストを描画する方法について説明[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]です。  
   
- [方法 : 描画されたテキストにタブ ストップを設定する](../../../../docs/framework/winforms/advanced/how-to-set-tab-stops-in-drawn-text.md)  
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] で、テキストにタブ ストップを設定して描画する方法について説明します。  
+ [方法: 描画されたテキストにタブ ストップを設定する](../../../../docs/framework/winforms/advanced/how-to-set-tab-stops-in-drawn-text.md)  
+ 表示方法でタブ位置でテキストの描画[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]です。  
   
- [方法 : インストールされているフォントを列挙する](../../../../docs/framework/winforms/advanced/how-to-enumerate-installed-fonts.md)  
- インストール済みのフォントの名前を一覧表示する方法について説明します。  
+ [方法: インストールされているフォントを列挙する](../../../../docs/framework/winforms/advanced/how-to-enumerate-installed-fonts.md)  
+ インストールされているフォントの名前を一覧表示する方法について説明します。  
   
- [方法 : プライベート フォント コレクションを作成する](../../../../docs/framework/winforms/advanced/how-to-create-a-private-font-collection.md)  
- <xref:System.Drawing.Text.PrivateFontCollection> オブジェクトの作成方法について説明します。  
+ [方法: プライベート フォント コレクションを作成する](../../../../docs/framework/winforms/advanced/how-to-create-a-private-font-collection.md)  
+ 作成する方法について説明します、<xref:System.Drawing.Text.PrivateFontCollection>オブジェクト。  
   
- [方法 : フォント メトリックを取得する](../../../../docs/framework/winforms/advanced/how-to-obtain-font-metrics.md)  
- セルのアセントやディセントなどのフォント メトリックを取得する方法について説明します。  
+ [方法: フォント メトリックを取得する](../../../../docs/framework/winforms/advanced/how-to-obtain-font-metrics.md)  
+ セル アセント降下などのフォント メトリックを取得する方法を示します。  
   
- [方法 : テキストでのアンチエイリアシングの使用](../../../../docs/framework/winforms/advanced/how-to-use-antialiasing-with-text.md)  
- テキストの描画にアンチエイリアシングを使用する方法について説明します。  
+ [方法: テキストでのアンチエイリアシングの使用](../../../../docs/framework/winforms/advanced/how-to-use-antialiasing-with-text.md)  
+ テキストを描画するときに、アンチ エイリアスを使用する方法について説明します。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.Drawing.Font>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
+ このクラスについて説明し、そのすべてのメンバーへのリンクが含まれています。  
   
  <xref:System.Drawing.FontFamily>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
+ このクラスについて説明し、そのすべてのメンバーへのリンクが含まれています。  
   
  <xref:System.Drawing.Text.PrivateFontCollection>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
+ このクラスについて説明し、そのすべてのメンバーへのリンクが含まれています。  
   
  <xref:System.Windows.Forms.TextRenderer>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
+ このクラスについて説明し、そのすべてのメンバーへのリンクが含まれています。  
   
  <xref:System.Windows.Forms.TextFormatFlags>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。
+ このクラスについて説明し、そのすべてのメンバーへのリンクが含まれています。

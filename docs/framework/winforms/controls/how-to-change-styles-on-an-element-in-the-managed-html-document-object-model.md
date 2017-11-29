@@ -1,31 +1,34 @@
 ---
-title: "方法 : マネージ HTML DOM (Document Object Model) の要素のスタイルを変更する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "マネージ HTML DOM, 変更 (要素のスタイルを)"
+title: "方法 : マネージ HTML DOM (Document Object Model) の要素のスタイルを変更する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: managed HTML DOM [Windows Forms], changing styles on elements
 ms.assetid: 154e8d9f-3e2d-4e8b-a6f3-c85a070e9cc1
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 968dd4210e13e301ba2f0ca24617df23706cefc0
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : マネージ HTML DOM (Document Object Model) の要素のスタイルを変更する
-HTML のスタイルを使用してドキュメントの外観と要素を制御できます。  <xref:System.Windows.Forms.HtmlDocument> および <xref:System.Windows.Forms.HtmlElement> は、次の形式のスタイル文字列を設定する <xref:System.Windows.Forms.HtmlElement.Style%2A> プロパティをサポートします。  
+# <a name="how-to-change-styles-on-an-element-in-the-managed-html-document-object-model"></a>方法 : マネージ HTML DOM (Document Object Model) の要素のスタイルを変更する
+Html 形式でスタイルを使用すると、ドキュメントとその要素の外観を制御します。 <xref:System.Windows.Forms.HtmlDocument>および<xref:System.Windows.Forms.HtmlElement>サポート<xref:System.Windows.Forms.HtmlElement.Style%2A>次の形式のスタイルの文字列を使用するプロパティ。  
   
  `name1:value1;...;nameN:valueN;`  
   
- これは、フォントを Arial に設定し、すべてのテキストを太字に設定するスタイル文字列を持つ `DIV` です。  
+ ここでは、`DIV`フォントを太字で表示するには、Arial およびすべてのテキストに設定するスタイルの文字列で。  
   
  `<DIV style="font-face:arial;font-weight:bold;">`  
   
@@ -33,19 +36,19 @@ HTML のスタイルを使用してドキュメントの外観と要素を制御
   
  `</DIV>`  
   
- <xref:System.Windows.Forms.HtmlElement.Style%2A> プロパティを使用してスタイルを操作する場合の問題点は、文字列への個々のスタイル設定の追加や削除が面倒なことです。  たとえば、ユーザーがカーソルを `DIV` 上に配置するたびに直前のテキストを斜体で表示し、カーソルを `DIV` から離したときに斜体をオフにする手順は複雑になります。  この方法で多数のスタイルを操作する必要がある場合には、時間が問題になります。  
+ 使用してスタイルを操作すると、問題、<xref:System.Windows.Forms.HtmlElement.Style%2A>プロパティが煩雑に追加し、文字列から個別のスタイル設定を削除することが検証されます。 たとえば、ユーザーが経由で、カーソルを移動するたびに斜体の以前のテキストをレンダリングするための複雑な手順はなります、 `DIV`、斜体、カーソルのままにするとオフを受け取ると、`DIV`です。 多数のこのようなスタイルを操作する必要がある場合は、時間を問題になります。  
   
- 次のプロシージャには、HTML ドキュメントのスタイルと要素を簡単に操作するために使用できるコードが含まれています。  このプロシージャを実行するには、新しいプロジェクトの作成やフォームへのコントロールの追加など、Windows フォームの基本的なタスクの実行方法を理解している必要があります。  
+ 次の手順には、HTML ドキュメントと要素のスタイルを簡単に操作に使用できるコードが含まれています。 プロシージャでは、新しいプロジェクトを作成し、コントロールをフォームに追加するなどの Windows フォームで基本的なタスクを実行する方法を知っている必要があります。  
   
-### Windows フォーム アプリケーションのスタイル変更を処理するには  
+### <a name="to-process-style-changes-in-a-windows-forms-application"></a>Windows フォーム アプリケーションにおけるスタイルの変更を処理するには  
   
 1.  新しい Windows フォーム プロジェクトを作成します。  
   
-2.  新しいクラス ファイルを作成します。ファイル名の最後に、プログラミング言語に適した拡張子を付けてください。  
+2.  末尾に使用するプログラミング言語の適切な拡張子の新しいクラス ファイルを作成します。  
   
-3.  このトピックの「例」にある `StyleGenerator` クラス コードをクラス ファイルにコピーし、コードを保存します。  
+3.  コピー、`StyleGenerator`クラス ファイルに、このトピックの「例」でコード クラスし、、コードを保存します。  
   
-4.  次の HTML を Test.htm という名前のファイルに保存します。  
+4.  次の HTML を Test.htm をという名前のファイルに保存します。  
   
     ```  
     <HTML>  
@@ -63,23 +66,23 @@ HTML のスタイルを使用してドキュメントの外観と要素を制御
     </HTML>  
     ```  
   
-5.  `webBrowser1` という名前の <xref:System.Windows.Forms.WebBrowser> コントロールをプロジェクトのメイン フォームに追加します。  
+5.  追加、<xref:System.Windows.Forms.WebBrowser>という名前のコントロール`webBrowser1`プロジェクトのメイン フォームにします。  
   
 6.  プロジェクトのコード ファイルに次のコードを追加します。  
   
     > [!IMPORTANT]
-    >  `webBrowser1_DocumentCompleted` イベント ハンドラーが <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> イベントのリスナーとして構成されていることを確認します。  [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] で、<xref:System.Windows.Forms.WebBrowser> コントロールをダブルクリックします。次に、テキスト エディターで、リスナーをプログラムで構成します。  
+    >  いることを確認、`webBrowser1_DocumentCompleted`のリスナーとしてイベント ハンドラーが構成されている、<xref:System.Windows.Forms.WebBrowser.DocumentCompleted>イベント。 [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]をダブルクリックして、<xref:System.Windows.Forms.WebBrowser>制御以外の場合は、テキスト エディターで、リスナーをプログラムで構成します。  
   
      [!code-csharp[ManagedDOMStyles#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ManagedDOMStyles/CS/Form1.cs#2)]
      [!code-vb[ManagedDOMStyles#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ManagedDOMStyles/VB/Form1.vb#2)]  
   
-7.  プロジェクトを実行します。  カーソルを最初の `DIV` 上に移動して、コードの効果を確認します。  
+7.  プロジェクトを実行します。 カーソルの最初の実行`DIV`コードの効果を確認します。  
   
-## 使用例  
- `StyleGenerator` クラスの完全なコードを次のコード例に示します。このコードは、既存のスタイル値を解析し、スタイルの追加、変更、および削除をサポートし、変更要求に対応した新しいスタイル値を返します。  
+## <a name="example"></a>例  
+ 次のコード例の完全なコードを示しています、`StyleGenerator`クラスは、既存のスタイル値を解析するをサポートします。 追加すると、変更すると、削除、スタイル、および要求された変更で新しいスタイルの値を返します。  
   
  [!code-csharp[ManagedDOMStyles#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ManagedDOMStyles/CS/StyleGenerator.cs#1)]
  [!code-vb[ManagedDOMStyles#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ManagedDOMStyles/VB/StyleGenerator.vb#1)]  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.HtmlElement>

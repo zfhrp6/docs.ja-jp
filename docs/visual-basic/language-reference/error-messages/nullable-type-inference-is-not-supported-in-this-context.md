@@ -1,38 +1,36 @@
 ---
-title: "Nullable type inference is not supported in this context | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc36629"
-  - "bc36629"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC36629"
+title: "Null 許容型の推論はこのコンテキストではサポートされていません"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc36629
+- bc36629
+helpviewer_keywords: BC36629
 ms.assetid: 0a1e2dbc-d9a4-433d-9306-c5540782b81d
-caps.latest.revision: 5
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: e7a5450d812260d3916296dff56abee27b3d586c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Nullable type inference is not supported in this context
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-値の型と構造を Null 許容として宣言することは可能です。  
+# <a name="nullable-type-inference-is-not-supported-in-this-context"></a>Null 許容型の推論はこのコンテキストではサポートされていません
+値の型と構造体宣言できます null 値を許容します。  
   
-```vb#  
+```vb  
 Dim a? As Integer  
 Dim b As Integer?  
 ```  
   
- ただし、Null 許容の宣言と型の推論を組み合わせて使用することはできません。  次の例はエラーになります。  
+ ただし、型の推定と組み合わせて、null 許容型の宣言を使用することはできません。 次の例では、このエラーが発生します。  
   
-```vb#  
+```vb  
 ' Not valid.  
 ' Dim c? = 10  
 ' Dim d? = a  
@@ -40,10 +38,10 @@ Dim b As Integer?
   
  **エラー ID:** BC36629  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   `As` 句を使用して、変数を Null 許容として宣言します。  
+-   使用して、`As`句を null 値許容と変数を宣言します。  
   
-## 参照  
- [Nullable Value Types](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)   
- [Local Type Inference](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
+## <a name="see-also"></a>関連項目  
+ [null 許容値型](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)  
+ [ローカル型の推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)

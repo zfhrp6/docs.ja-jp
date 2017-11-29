@@ -1,56 +1,59 @@
 ---
-title: "From/To/By アニメーションの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アニメーション, From/To/By"
-  - "From/To/By アニメーション"
+title: "別のアニメーションの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- animation [WPF], From/to/by
+- From/to/by animation
 ms.assetid: 516fce0a-e7f8-49b8-b018-53b3d409a8a3
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f5eba773a290f1100fcea411919c5c16558e01ee
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# From/To/By アニメーションの概要
-ここでは、From\/To\/By アニメーションを使用して[依存関係プロパティ](GTMT)をアニメーション化する方法について説明します。  From\/To\/By アニメーションでは、2 つの値の間の遷移が作成されます。  
+# <a name="fromtoby-animations-overview"></a>From/To/By アニメーションの概要
+このトピックでは、From/To/By アニメーションを使って依存関係プロパティをアニメーション化する方法を説明します。 From/To/By アニメーションでは、2 つの値の間の遷移が作成されます。  
   
- このトピックは、次のセクションで構成されています。  
-  
-<a name="autoTopLevelSectionsOUTLINE0"></a>   
 <a name="prereq"></a>   
-## 必要条件  
- このトピックを理解するには、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のアニメーション機能に精通している必要があります。  アニメーション機能の概要については、「[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)」を参照してください。  
+## <a name="prerequisites"></a>必須コンポーネント  
+ このトピックの内容を理解しておく必要があります慣れて[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アニメーション機能します。 アニメーションの機能の概要については、次を参照してください。、[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)です。  
   
 <a name="whatisanimation"></a>   
-## From\/To\/By アニメーションとは  
- From\/To\/By アニメーションは、開始値と終了値の間の遷移を作成する <xref:System.Windows.Media.Animation.AnimationTimeline> の一種です。  遷移の完了に要する時間は、そのアニメーションの <xref:System.Windows.Media.Animation.Timeline.Duration%2A> によって決まります。  
+## <a name="what-is-a-fromtoby-animation"></a>From/To/By アニメーションとは  
+ From/に/でアニメーションの種類は、<xref:System.Windows.Media.Animation.AnimationTimeline>開始値と終了値の間の遷移を作成します。 移行が完了にかかる時間はによって決まります、<xref:System.Windows.Media.Animation.Timeline.Duration%2A>したアニメーションのです。  
   
- マークアップとコードで <xref:System.Windows.Media.Animation.Storyboard> を使用することにより、またはコードで <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> メソッドを使用することで、From\/To\/By アニメーションをプロパティに適用できます。  また、From\/To\/By アニメーションを使用して <xref:System.Windows.Media.Animation.AnimationClock> を作成し、1 つ以上のプロパティに適用することもできます。  アニメーションを適用するさまざまな方法の詳細については、「[プロパティ アニメーションの手法の概要](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)」を参照してください。  
+ 適用するには From/に/アニメーションのプロパティを使用して、<xref:System.Windows.Media.Animation.Storyboard>マークアップおよびコード、またはを使用して、<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>コード内のメソッドです。 作成する From/To/By アニメーションを使用することも、<xref:System.Windows.Media.Animation.AnimationClock>し、1 つまたは複数のプロパティに適用します。 アニメーションを適用するためのさまざまなメソッドの詳細については、「[プロパティ アニメーションの手法の概要](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)」を参照してください。  
   
- From\/To\/By アニメーションで指定できるターゲット値は 2 つまでです。  3 つ以上のターゲット値を持つアニメーションが必要な場合は、キー フレーム アニメーションを使用してください。  キー フレーム アニメーションについては、「[キー フレーム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)」を参照してください。  
+ From/To/By アニメーションは、2 つのターゲット値以外の値を持つことはできません。 3 つ以上のターゲット値を持つアニメーションを必要とする場合は、キー フレーム アニメーションを使います。 キー フレーム アニメーションに記載されている、[キー フレーム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)です。  
   
 <a name="animation_types"></a>   
-## From\/To\/By アニメーションの種類  
- アニメーションによってプロパティ値が生成されるため、さまざまなプロパティ型に対応するさまざまな種類のアニメーションが存在します。  <xref:System.Double> を受け取るプロパティ \(要素の <xref:System.Windows.FrameworkElement.Width%2A> プロパティなど\) をアニメーション化するには、<xref:System.Double> 値を生成するアニメーションを使用します。  <xref:System.Windows.Point> を受け取るプロパティをアニメーション化するには、<xref:System.Windows.Point> 値を生成するアニメーションを使用します。他も同様です。  
+## <a name="fromtoby-animation-types"></a>From/To/By アニメーションの種類  
+ アニメーションはプロパティ値を生成するため、プロパティの型ごとに異なるアニメーションの種類があります。 受け取るプロパティをアニメーション化する、 <xref:System.Double>、ように、 <xref:System.Windows.FrameworkElement.Width%2A> 、要素のプロパティを生成するアニメーションを使用して<xref:System.Double>値。 受け取るプロパティをアニメーション化する、 <xref:System.Windows.Point>、生成されるアニメーションを使用して<xref:System.Windows.Point>値、およびなどです。  
   
- From\/To\/By アニメーション クラスは <xref:System.Windows.Media.Animation> 名前空間に属し、次の名前付け規則を使用します。  
+ アニメーションによって/クラスが属している、<xref:System.Windows.Media.Animation>名前空間および次の命名規則を使用します。  
   
- *\<Type\>* `Animation`  
+ *\<Type>* `Animation`  
   
- ここで、*\<Type\>* はクラスによってアニメーション化される値の型です。  
+ ここで、*\<Type>*は、クラスがアニメーション化する値の型です。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、次の From\/To\/By アニメーション クラスが用意されています。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、次の From/To/By アニメーション クラスが用意されています。  
   
-|プロパティの型|対応する From\/To\/By アニメーション クラス|  
-|-------------|-----------------------------------|  
+|プロパティの型|対応する From/To/By アニメーションのクラス|  
+|-------------------|------------------------------------------------|  
 |<xref:System.Byte>|<xref:System.Windows.Media.Animation.ByteAnimation>|  
 |<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimation>|  
 |<xref:System.Decimal>|<xref:System.Windows.Media.Animation.DecimalAnimation>|  
@@ -69,90 +72,90 @@ caps.handback.revision: 13
 |<xref:System.Windows.Vector>|<xref:System.Windows.Media.Animation.VectorAnimation>|  
   
 <a name="anim_values"></a>   
-## ターゲット値  
- From\/To\/By アニメーションでは、2 つのターゲット値の間の遷移が作成されます。  開始値 \(<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> プロパティを使用して設定\) と終了値 \(<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> プロパティを使用して設定\) を指定するのが一般的です。  ただし、開始値だけ、終点の値だけ、またはオフセット値だけを指定することもできます。  これらの場合、アニメーションは、足りないターゲット値をアニメーション化しているプロパティから取得します。  アニメーションのターゲット値を指定するさまざまな方法を次に示します。  
+## <a name="target-values"></a>ターゲット値  
+ From/To/By アニメーションでは、2 つのターゲット値の間の遷移が作成されます。 開始値を指定するが一般的 (を使用して設定、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>プロパティ) と終了値 (を使用して設定、<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>プロパティ)。 ただし、開始値、終了値、またはオフセット値のみを指定することもできます。 これらの場合、アニメーションは不足しているターゲット値をアニメーション化するプロパティから取得します。 次の一覧では、アニメーションのターゲット値を指定する方法について説明します。  
   
 -   **開始値**  
   
-     アニメーションの開始値を明示的に指定する場合は、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> プロパティを使用します。  <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> プロパティだけで使用することも、<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> プロパティまたは <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> プロパティと共に使用することもできます。  <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> プロパティだけを指定した場合は、アニメーションはその値から、アニメーション化されているプロパティの基本値まで遷移します。  
+     使用して、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>プロパティをアニメーションの開始値を明示的に指定する場合。 使用することができます、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>プロパティ自体は、または、<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>または<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>プロパティです。 のみを指定する場合、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>プロパティ、アニメーションのプロパティのベース値に、その値をアニメーション遷移します。  
   
 -   **終了値**  
   
-     アニメーションの終了値を指定するには、<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> プロパティを使用します。  <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> プロパティだけを使用すると、アニメーションは開始値を、アニメーション化されているプロパティから、または同じプロパティに適用されている別のアニメーションから取得します。  <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> プロパティと <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> プロパティを一緒に使用することで、アニメーションの開始値と終了値を明示的に指定できます。  
+     アニメーションの終了値を指定するには、次のように使用します。 その<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>プロパティです。 使用する場合、<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>プロパティ自体によって、アニメーションはその開始値はアニメーション化するプロパティと同じプロパティに適用される別のアニメーションの出力からします。 使用することができます、<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>と共に、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>開始、アニメーションの値と終了を明示的に指定するプロパティです。  
   
 -   **オフセット値**  
   
-     <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> プロパティを使用すると、アニメーションの明示的な開始値と終了値の代わりに、オフセットを指定できます。  アニメーションの <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> プロパティは、継続時間中にアニメーションが変更する値の大きさを指定します。  <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> プロパティだけで使用することも、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> プロパティと共に使用することもできます。  <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> プロパティだけを指定した場合は、プロパティの基本値または別のアニメーションの出力に、オフセット値が追加されます。  
+     <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>プロパティでは、明示的な開始時刻またはアニメーションの終了値ではなくオフセットを指定することができます。 <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>アニメーションのプロパティは、どの程度のアニメーションで、その期間にわたって値を変更します。 を指定します。 使用することができます、<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>プロパティまたは単独で、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>プロパティです。 のみを指定する場合、<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>プロパティのベース値に、または別のアニメーションの出力に、プロパティ、アニメーションがオフセット値を追加します。  
   
 <a name="examples"></a>   
-## From\/To\/By 値の使用  
- 以下では、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>、<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>、<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> の各プロパティを、一緒に、または個別に使用する方法を説明します。  
+## <a name="using-fromtoby-values"></a>From/To/By 値の使用  
+ 次のセクションを使用する方法について説明、 <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>、 <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>、および<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>プロパティとは別にまたは同時にします。  
   
- このセクションの各例では、From\/To\/By アニメーションの一種である <xref:System.Windows.Media.Animation.DoubleAnimation> を使用し、高さが 10 [デバイス非依存ピクセル](GTMT)で幅が 100 [デバイス非依存ピクセル](GTMT)の <xref:System.Windows.Shapes.Rectangle> の <xref:System.Windows.FrameworkElement.Width%2A> プロパティをアニメーション化します。  
+ 例では、このセクションの各使用、 <xref:System.Windows.Media.Animation.DoubleAnimation>、これは、/、アニメーションのアニメーション化する型、<xref:System.Windows.FrameworkElement.Width%2A>のプロパティ、 <xref:System.Windows.Shapes.Rectangle> 10 デバイス非依存ピクセル高と 100 デバイス非依存のピクセル幅の広いされています。  
   
- 各例では <xref:System.Windows.Media.Animation.DoubleAnimation> を使用しますが、すべての From\/To\/By アニメーションの From、To、By プロパティの動作はまったく同じです。  これらの例では <xref:System.Windows.Media.Animation.Storyboard> を使用しますが、別の方法で From\/To\/By アニメーションを使用することもできます。  詳細については、「[プロパティ アニメーションの手法の概要](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)」を参照してください。  
+ それぞれの例を使用しますが、 <xref:System.Windows.Media.Animation.DoubleAnimation>、およびすべて From/に/でのプロパティでアニメーションの動作は同じです。 これらの例を使用しますが、 <xref:System.Windows.Media.Animation.Storyboard>、他の方法で、またはアニメーションを使用することができます。 詳細については、次を参照してください。[プロパティ アニメーションの技術概要](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)です。  
   
-### From\/To  
- <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> 値と <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> 値を設定すると、アニメーションは、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> プロパティで指定されている値から、<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> プロパティで指定されている値まで進行します。  
+### <a name="fromto"></a>From/To  
+ 設定すると、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>と<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>値を同時に、アニメーション、によって指定される値、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>で指定された値に、プロパティ、<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>プロパティです。  
   
- 次の例では、<xref:System.Windows.Media.Animation.DoubleAnimation> の <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> プロパティを 50 に設定し、<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> プロパティを 300 に設定しています。  その結果、<xref:System.Windows.Shapes.Rectangle> の <xref:System.Windows.FrameworkElement.Width%2A> は、50 から 300 までアニメーション化されます。  
+ 次の例のセット、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>のプロパティ、<xref:System.Windows.Media.Animation.DoubleAnimation>に 50 およびその<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>300 プロパティです。 その結果、<xref:System.Windows.FrameworkElement.Width%2A>の<xref:System.Windows.Shapes.Rectangle>50 から 300 にアニメーションを実行します。  
   
  [!code-csharp[basicvalues_snip#FromToAnimationInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicvalues_snip/CSharp/AnimationTargetValuesExample.cs#fromtoanimationinline)]
  [!code-vb[basicvalues_snip#FromToAnimationInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicvalues_snip/VisualBasic/AnimationTargetValuesExample.vb#fromtoanimationinline)]  
   
-### 目的  
- <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> プロパティだけを設定すると、アニメーションは、アニメーション化されているプロパティの基本値から、または同じプロパティに対して先に適用されている構成アニメーションの出力から、<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> プロパティで指定されている値まで進行します。  
+### <a name="to"></a>終了  
+ 設定した場合だけ、<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>プロパティ、アニメーション、アニメーションのプロパティのベース値から、またはで指定された値に、同じプロパティに適用されていた作成中のアニメーションの出力から、 <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>プロパティ。  
   
- "構成アニメーション" とは、同じプロパティに対して以前に適用されていて、現在のアニメーションが <xref:System.Windows.Media.Animation.HandoffBehavior> ハンドオフ動作を使用して適用された時点でまだ有効であった、<xref:System.Windows.Media.Animation.ClockState> アニメーションまたは <xref:System.Windows.Media.Animation.ClockState> アニメーションのことです。  
+ (「構成アニメーション」を指す、<xref:System.Windows.Media.Animation.ClockState.Active>または<xref:System.Windows.Media.Animation.ClockState.Filling>アニメーションを使用して現在のアニメーションが適用されたときに、有効なままで、同じプロパティに適用されていた、<xref:System.Windows.Media.Animation.HandoffBehavior.Compose>ハンドオフ動作します)。  
   
- 次の例では、<xref:System.Windows.Media.Animation.DoubleAnimation> の <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> プロパティだけを 300 に設定しています。  開始値は指定されていないので、<xref:System.Windows.Media.Animation.DoubleAnimation> は、<xref:System.Windows.FrameworkElement.Width%2A> プロパティの基本値 \(100\) を開始値として使用します。  <xref:System.Windows.Shapes.Rectangle> の <xref:System.Windows.FrameworkElement.Width%2A> は、100 から、アニメーションのターゲット値である 300 までアニメーション化されます。  
+ 次の例の設定だけ、<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>のプロパティ、 <xref:System.Windows.Media.Animation.DoubleAnimation> 300 にします。 開始値が指定されなかったため、<xref:System.Windows.Media.Animation.DoubleAnimation>のベース値 (100) を使用して、<xref:System.Windows.FrameworkElement.Width%2A>プロパティとしてその開始値。 <xref:System.Windows.FrameworkElement.Width%2A>の<xref:System.Windows.Shapes.Rectangle>100 人から 300 のアニメーションの対象の値をアニメーション化します。  
   
  [!code-csharp[basicvalues_snip#ToAnimationInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicvalues_snip/CSharp/AnimationTargetValuesExample.cs#toanimationinline)]
  [!code-vb[basicvalues_snip#ToAnimationInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicvalues_snip/VisualBasic/AnimationTargetValuesExample.vb#toanimationinline)]  
   
-### By  
- アニメーションの <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> プロパティだけを設定すると、アニメーションは、アニメーション化されているプロパティの基本値から、または構成アニメーションの出力から、これらの値に <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> プロパティで指定されている値を加えた合計値まで進行します。  
+### <a name="by"></a>By  
+ 設定した場合だけ、<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>アニメーションのプロパティ、アニメーションをアニメーション化するプロパティのベース値から、またはその値とで指定されている値の合計に作成したアニメーションの出力から、 <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>プロパティ。  
   
- 次の例では、<xref:System.Windows.Media.Animation.DoubleAnimation> の <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> プロパティだけを 300 に設定しています。  開始値は指定されていないので、<xref:System.Windows.Media.Animation.DoubleAnimation> は、<xref:System.Windows.FrameworkElement.Width%2A> プロパティの基本値である 100 を開始値として使用します。  終了値は、アニメーションの <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> の値 300 を開始値 100 に加えた値 400 になります。  その結果、<xref:System.Windows.Shapes.Rectangle> の <xref:System.Windows.FrameworkElement.Width%2A> は、100 から 400 までアニメーション化されます。  
+ 次の例の設定だけ、<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>のプロパティ、 <xref:System.Windows.Media.Animation.DoubleAnimation> 300 にします。 この例で、開始値が指定されていないため、<xref:System.Windows.Media.Animation.DoubleAnimation>のベース値を使用して、<xref:System.Windows.FrameworkElement.Width%2A>プロパティ、100、開始値として。 終了値を追加することで決定されます、<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>アニメーション、その開始値 100: 400 の値。 その結果、<xref:System.Windows.FrameworkElement.Width%2A>の<xref:System.Windows.Shapes.Rectangle>100 人から 400 にアニメーションを実行します。  
   
  [!code-csharp[basicvalues_snip#ByAnimationInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicvalues_snip/CSharp/AnimationTargetValuesExample.cs#byanimationinline)]
  [!code-vb[basicvalues_snip#ByAnimationInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicvalues_snip/VisualBasic/AnimationTargetValuesExample.vb#byanimationinline)]  
   
-### From\/By  
- アニメーションの <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> プロパティと <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> プロパティを設定すると、アニメーションは、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> プロパティで指定されている値から、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> プロパティと <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> プロパティの合計で指定される値まで進行します。  
+### <a name="fromby"></a>From/By  
+ 設定すると、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>と<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>アニメーションのプロパティをアニメーションで指定された値、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>の値の合計で指定されている値を<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>と<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>プロパティです。  
   
- 次の例では、<xref:System.Windows.Media.Animation.DoubleAnimation> の <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> プロパティを 50 に設定し、<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> プロパティを 300 に設定しています。  終了値は、アニメーションの <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> の値 300 を開始値 50 に加えた値 350 になります。  その結果、<xref:System.Windows.Shapes.Rectangle> の <xref:System.Windows.FrameworkElement.Width%2A> は、50 から 350 までアニメーション化されます。  
+ 次の例のセット、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>のプロパティ、<xref:System.Windows.Media.Animation.DoubleAnimation>に 50 およびその<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>300 プロパティです。 終了値を追加することで決定されます、<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>アニメーション、その開始値 50: 350 の値。 その結果、<xref:System.Windows.FrameworkElement.Width%2A>の<xref:System.Windows.Shapes.Rectangle>350 を 50 からアニメーション化します。  
   
  [!code-csharp[basicvalues_snip#FromByAnimationInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicvalues_snip/CSharp/AnimationTargetValuesExample.cs#frombyanimationinline)]
  [!code-vb[basicvalues_snip#FromByAnimationInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicvalues_snip/VisualBasic/AnimationTargetValuesExample.vb#frombyanimationinline)]  
   
-### 変換前  
- アニメーションの <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> 値だけを指定すると、アニメーションは、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> プロパティで指定されている値から、アニメーション化されているプロパティの基本値、または構成アニメーションの出力まで進行します。  
+### <a name="from"></a>変換前  
+ 指定した場合だけ、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>アニメーションの値、アニメーションで指定された値、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>プロパティ、または作成中のアニメーションの出力にはアニメーション化するプロパティのベース値にします。  
   
- 次の例では、<xref:System.Windows.Media.Animation.DoubleAnimation> の <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> プロパティだけを 50 に設定しています。  終了値は指定されていないので、<xref:System.Windows.Media.Animation.DoubleAnimation> は、<xref:System.Windows.FrameworkElement.Width%2A> プロパティの基本値 100 を終了値として使用します。  <xref:System.Windows.Shapes.Rectangle> の <xref:System.Windows.FrameworkElement.Width%2A> は、50 から、<xref:System.Windows.FrameworkElement.Width%2A> プロパティの基本値 100 までアニメーション化されます。  
+ 次の例の設定だけ、<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>のプロパティ、 <xref:System.Windows.Media.Animation.DoubleAnimation> 50 にします。 終了値が指定されなかったため、<xref:System.Windows.Media.Animation.DoubleAnimation>のベース値を使用して、<xref:System.Windows.FrameworkElement.Width%2A>プロパティを 100、としてその終了値。 <xref:System.Windows.FrameworkElement.Width%2A>の<xref:System.Windows.Shapes.Rectangle>は 50 からのベース値にアニメーション、<xref:System.Windows.FrameworkElement.Width%2A>プロパティ、100 です。  
   
  [!code-csharp[basicvalues_snip#FromAnimationInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicvalues_snip/CSharp/AnimationTargetValuesExample.cs#fromanimationinline)]
  [!code-vb[basicvalues_snip#FromAnimationInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicvalues_snip/VisualBasic/AnimationTargetValuesExample.vb#fromanimationinline)]  
   
-### To\/By  
- <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> プロパティと <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> プロパティの両方を設定した場合は、<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> プロパティは無視されます。  
+### <a name="toby"></a>To/By  
+ 両方を設定する場合、<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>と<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>、アニメーションのプロパティを<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>プロパティは無視されます。  
   
 <a name="otheranimationtypes"></a>   
-## 他のアニメーションの種類  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] が提供するアニメーションの種類は、From\/To\/By アニメーションだけではありません。キー フレーム アニメーションとパス アニメーションも提供されています。  
+## <a name="other-animation-types"></a>他のアニメーションの種類  
+ によって/アニメーションがアニメーションの唯一の種類ではないを[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]提供: キー フレーム アニメーション、およびパス アニメーションも用意されています。  
   
--   キー フレーム アニメーションは、キー フレームを使用して記述される複数の終了値に沿ってアニメーション化を行います。  詳細については、「[キー フレーム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)」を参照してください。  
+-   キー フレーム アニメーションは、キー フレームを使って記述されている任意の数の目標値に沿ってアニメーション化します。 詳細については、次を参照してください。、[キー フレーム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)です。  
   
--   パス アニメーションは、<xref:System.Windows.Media.PathGeometry> から出力値を生成します。  詳細については、「[パス アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md)」を参照してください。  
+-   パスのアニメーションからの出力値を生成する、<xref:System.Windows.Media.PathGeometry>です。 詳細については、次を参照してください。、[パス アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md)です。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、独自のカスタム アニメーションの種類を作成することもできます。  詳細については、「[カスタム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md)」を参照してください。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、独自のカスタム アニメーションの種類を作成することもできます。 詳細については、次を参照してください。、[カスタム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md)です。  
   
-## 参照  
- <xref:System.Windows.Media.Animation.Timeline>   
- <xref:System.Windows.Media.Animation.Storyboard>   
- [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)   
- [ストーリーボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)   
- [キー フレーム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)   
- [パス アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md)   
- [カスタム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md)   
- [アニメーションのターゲット値 \(From、To、および By\) のサンプル](http://go.microsoft.com/fwlink/?LinkID=159988)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Media.Animation.Timeline>  
+ <xref:System.Windows.Media.Animation.Storyboard>  
+ [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [ストーリーボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)  
+ [キー フレーム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)  
+ [パス アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md)  
+ [カスタム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md)  
+ [アニメーションのターゲット値 (From、To、および By) のサンプル](http://go.microsoft.com/fwlink/?LinkID=159988)

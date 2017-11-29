@@ -1,49 +1,53 @@
 ---
-title: "方法 : イメージをトリミングする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "クラス, CroppedBitmap"
-  - "CroppedBitmap クラス"
-  - "トリミング (イメージを)"
-  - "イメージ, トリミング"
+title: "方法 : イメージをトリミングする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- images [WPF], cropping
+- cropping images [WPF]
 ms.assetid: c6bba109-c6e7-4cf8-bfe6-9cf8d01bb4fc
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6de7914a1226381da763b3348d1794453fe93b02
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : イメージをトリミングする
-この例では、<xref:System.Windows.Media.Imaging.CroppedBitmap> を使用してイメージをトリミングする方法を示します。  
+# <a name="how-to-crop-an-image"></a>方法 : イメージをトリミングする
+この例では、イメージを使用して、トリミング<xref:System.Windows.Media.Imaging.CroppedBitmap>です。  
   
- <xref:System.Windows.Media.Imaging.CroppedBitmap> は、主にイメージのトリミングされたバージョンをエンコードしてファイルに保存する際に使用されます。  表示する目的でイメージをトリミングするには、「[Create a Clip Region](http://msdn.microsoft.com/ja-jp/56e4bed6-78d7-4292-b917-d72d0b3e4376)」を参照してください。  
+ <xref:System.Windows.Media.Imaging.CroppedBitmap>主にエンコードに使用、イメージのトリミングされたバージョンをファイルに保存します。 表示目的では、「イメージをトリミングするには、[クリップ領域を作成する](http://msdn.microsoft.com/en-us/56e4bed6-78d7-4292-b917-d72d0b3e4376)トピックです。  
   
-## 使用例  
- 次の [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] は、以下のサンプル内で使用するリソースを定義しています。  
+## <a name="example"></a>例  
+ 次[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]以下のサンプル内で使用されるリソースを定義します。  
   
- [!code-xml[imageelementexample#CroppedXAML1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample/CSharp/CroppedImageExample.xaml#croppedxaml1)]  
+ [!code-xaml[imageelementexample#CroppedXAML1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample/CSharp/CroppedImageExample.xaml#croppedxaml1)]  
   
- <xref:System.Windows.Media.Imaging.CroppedBitmap> をイメージ ソースとして使用してイメージを作成する例を次に示します。  
+ 次の例を使用して、イメージを作成、<xref:System.Windows.Media.Imaging.CroppedBitmap>のソースとして。  
   
- [!code-xml[imageelementexample#CroppedXAML2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample/CSharp/CroppedImageExample.xaml#croppedxaml2)]  
+ [!code-xaml[imageelementexample#CroppedXAML2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample/CSharp/CroppedImageExample.xaml#croppedxaml2)]  
   
  [!code-csharp[imageelementexample#CroppedCSharp1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample/CSharp/CroppedImageExample.xaml.cs#croppedcsharp1)]
  [!code-vb[imageelementexample#CroppedCSharp1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImageElementExample/VB/CroppedImageExample.xaml.vb#croppedcsharp1)]  
   
- <xref:System.Windows.Media.Imaging.CroppedBitmap> は、別の <xref:System.Windows.Media.Imaging.CroppedBitmap> のソースとして使用して、トリミングされたイメージをつなぎ合わせることもできます。  <xref:System.Windows.Media.Imaging.CroppedBitmap.SourceRect%2A> は、最初のイメージではなく、ソースとなるトリミングされたビットマップを基準とした値を使用することに注意してください。  
+ <xref:System.Windows.Media.Imaging.CroppedBitmap>別のソースとしても使用できます<xref:System.Windows.Media.Imaging.CroppedBitmap>、トリミングの組み合わせ。 なお、<xref:System.Windows.Media.Imaging.CroppedBitmap.SourceRect%2A>値は、ソースと初期イメージではなくビットマップをトリミングに対する相対パスを使用します。  
   
- [!code-xml[imageelementexample#CroppedXAML3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample/CSharp/CroppedImageExample.xaml#croppedxaml3)]  
+ [!code-xaml[imageelementexample#CroppedXAML3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample/CSharp/CroppedImageExample.xaml#croppedxaml3)]  
   
  [!code-csharp[imageelementexample#CroppedCSharp2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample/CSharp/CroppedImageExample.xaml.cs#croppedcsharp2)]
  [!code-vb[imageelementexample#CroppedCSharp2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImageElementExample/VB/CroppedImageExample.xaml.vb#croppedcsharp2)]  
   
-## 参照  
- [Create a Clip Region](http://msdn.microsoft.com/ja-jp/56e4bed6-78d7-4292-b917-d72d0b3e4376)
+## <a name="see-also"></a>関連項目  
+ [クリップ領域を作成します。](http://msdn.microsoft.com/en-us/56e4bed6-78d7-4292-b917-d72d0b3e4376)

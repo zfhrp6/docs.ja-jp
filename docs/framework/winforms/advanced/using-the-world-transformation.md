@@ -1,53 +1,57 @@
 ---
-title: "ワールド変換の使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "グラフィックス, ワールド変換"
-  - "ワールド変換, 例"
+title: "ワールド変換の使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- graphics [Windows Forms], world transformation
+- world transformation [Windows Forms], examples
 ms.assetid: 1e717711-1361-448e-aa49-0f3ec43110c9
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b5b2a8de0644e71a5e6ae1a5ca796f580f0c4f23
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ワールド変換の使用
-ワールド変換は、<xref:System.Drawing.Graphics> クラスのプロパティです。  ワールド変換を指定する数値は、3 × 3 の行列を表す <xref:System.Drawing.Drawing2D.Matrix> オブジェクトに格納されます。  <xref:System.Drawing.Drawing2D.Matrix> クラスおよび <xref:System.Drawing.Graphics> クラスには、ワールド変換行列の数値を設定するためのメソッドがいくつかあります。  
+# <a name="using-the-world-transformation"></a>ワールド変換の使用
+ワールド変換のプロパティは、<xref:System.Drawing.Graphics>クラスです。 ワールド変換を指定する数値に格納されている、 <xref:System.Drawing.Drawing2D.Matrix> 3 × 3 行列を表すオブジェクト。 <xref:System.Drawing.Drawing2D.Matrix>と<xref:System.Drawing.Graphics>クラス ワールド変換行列の数値を設定するためのいくつかの方法があります。  
   
-## さまざまな変換  
- 最初に 50 × 50 の四角形を作成し、その四角形を原点 \(0, 0\) に配置する例を次に示します。  原点は、クライアント領域の左上隅の位置です。  
+## <a name="different-types-of-transformations"></a>異なる種類の変換  
+ 次の例では、コードはまず 50 × 50 四角形を作成し、原点 (0, 0) を検索します。 原点は、クライアント領域の左上隅にあること。  
   
  [!code-csharp[System.Drawing.MiscLegacyTopics#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/CS/Class1.cs#11)]
  [!code-vb[System.Drawing.MiscLegacyTopics#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/VB/Class1.vb#11)]  
   
- スケーリング変換を適用し、四角形を x 方向に係数 1.75 で拡大し、y 方向に係数 0.5 で縮小するコードを次に示します。  
+ 次のコードを 1.75 x 軸方向の四角形を拡張し、y 軸方向 0.5 の四角形を縮小する拡大縮小変換が適用されます。  
   
  [!code-csharp[System.Drawing.MiscLegacyTopics#12](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/CS/Class1.cs#12)]
  [!code-vb[System.Drawing.MiscLegacyTopics#12](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/VB/Class1.vb#12)]  
   
- その結果、元の四角形よりも x 方向が長く、y 方向が短い四角形が作成されます。  
+ X 方向に長いと、元のより短い y 方向の四角形になります。  
   
- この四角形をスケーリングせずに回転させる場合は、次のコードを使用します。  
+ スケーリングすることではなく四角形を回転するには、次のコードを使用します。  
   
  [!code-csharp[System.Drawing.MiscLegacyTopics#13](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/CS/Class1.cs#13)]
  [!code-vb[System.Drawing.MiscLegacyTopics#13](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/VB/Class1.vb#13)]  
   
- この四角形を平行移動するには、次のコードを使用します。  
+ 四角形を変換するには、次のコードを使用します。  
   
  [!code-csharp[System.Drawing.MiscLegacyTopics#14](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/CS/Class1.cs#14)]
  [!code-vb[System.Drawing.MiscLegacyTopics#14](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/VB/Class1.vb#14)]  
   
-## 参照  
- <xref:System.Drawing.Drawing2D.Matrix>   
- [座標系と変換](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)   
- [マネージ GDI\+ での変換の使用](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Drawing.Drawing2D.Matrix>  
+ [座標系と変換](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)  
+ [マネージ GDI+ での変換の使用](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)

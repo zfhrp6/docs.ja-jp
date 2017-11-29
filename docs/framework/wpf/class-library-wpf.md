@@ -1,47 +1,49 @@
 ---
-title: "クラス ライブラリ (WPF) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "クラス ライブラリ"
-  - "Windows Presentation Foundation クラス ライブラリ"
-  - "WPF クラス ライブラリ"
+title: "クラス ライブラリ (WPF)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WPF class library [WPF]
+- Windows Presentation Foundation class library [WPF]
 ms.assetid: dcb35927-00ad-4141-a1ab-a7a524dd3f10
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 85e5eb11f1eee12a15d19b0e0ecd93dd8042c15f
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# クラス ライブラリ (WPF)
-次のリンクは、[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] の [!INCLUDE[TLA#tla_api#plural](../../../includes/tlasharptla-apisharpplural-md.md)] を格納する名前空間を参照します。  
+# <a name="class-library-wpf"></a>クラス ライブラリ (WPF)
+次のリンクが含まれている名前空間を参照してください[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)][!INCLUDE[TLA#tla_api#plural](../../../includes/tlasharptla-apisharpplural-md.md)]です。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
   
-## 関連項目  
+## <a name="reference"></a>参照  
   
 -   <xref:Microsoft.Build.Tasks.Windows>  
   
--   <xref:Microsoft.Win32> \(共有\)  
+-   <xref:Microsoft.Win32>(共有)  
   
 -   <xref:Microsoft.Windows.Themes>  
   
--   <xref:System.Collections.ObjectModel> \(共有\)  
+-   <xref:System.Collections.ObjectModel>(共有)  
   
--   <xref:System.Collections.Specialized> \(共有\)  
+-   <xref:System.Collections.Specialized>(共有)  
   
--   <xref:System.ComponentModel> \(共有\)  
+-   <xref:System.ComponentModel>(共有)  
   
--   <xref:System.Diagnostics> \(共有\)  
+-   <xref:System.Diagnostics>(共有)  
   
--   <xref:System.IO> \(共有\)  
+-   <xref:System.IO>(共有)  
   
 -   <xref:System.IO.Packaging>  
   
@@ -51,7 +53,7 @@ caps.handback.revision: 10
   
 -   <xref:System.Printing.Interop>  
   
--   <xref:System.Security.Permissions> \(共有\)  
+-   <xref:System.Security.Permissions>(共有)  
   
 -   <xref:System.Security.RightsManagement>  
   
@@ -93,7 +95,7 @@ caps.handback.revision: 10
   
 -   <xref:System.Windows.Interop>  
   
--   <xref:System.Windows.Markup> \(共有\)  
+-   <xref:System.Windows.Markup>(共有)  
   
 -   <xref:System.Windows.Markup.Localizer>  
   
@@ -131,10 +133,10 @@ caps.handback.revision: 10
   
 -   <xref:UIAutomationClientsideProviders>  
   
-## .NET 4 での XAML のサポート  
- 次の名前空間には、System.Xaml アセンブリの型が含まれています。  System.Xaml は、[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] を基盤として構築されたフレームワーク \(WPF など\) に対して、XAML の共通言語サポートを提供します。  
+## <a name="xaml-support-in-net-4"></a>.NET 4 での XAML のサポート  
+ 次の名前空間には、System.Xaml アセンブリから型が含まれます。 System.Xaml に組み込まれている WPF などのフレームワークの共通の XAML 言語サポートを提供する[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]です。  
   
--   <xref:System.Windows.Markup> \(共有\)  
+-   <xref:System.Windows.Markup>(共有)  
   
 -   <xref:System.Xaml>  
   

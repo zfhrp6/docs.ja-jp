@@ -1,94 +1,93 @@
 ---
-title: "How to: Match a String against a Pattern (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "comparison operators, comparing strings"
-  - "pattern matching"
-  - "strings [Visual Basic], comparing"
-  - "string comparison [Visual Basic], operators"
-  - "Visual Basic code, operators"
-  - "pattern matching, string comparison"
-  - "string comparison [Visual Basic]"
-  - "Like operator [Visual Basic], pattern matching"
-  - "pattern matching, empty strings"
-  - "operators [Visual Basic], comparison"
+title: "方法: 文字列がパターンに一致するかどうかを調べる (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- comparison operators [Visual Basic], comparing strings
+- pattern matching
+- strings [Visual Basic], comparing
+- string comparison [Visual Basic], operators
+- Visual Basic code, operators
+- pattern matching [Visual Basic], string comparison
+- string comparison [Visual Basic]
+- Like operator [Visual Basic], pattern matching
+- pattern matching, empty strings
+- operators [Visual Basic], comparison
 ms.assetid: 19a83804-b5af-4739-928b-ac93e64e457f
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 83433bdb41df0ce40d0979f3f44603f10ba1c7d5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Match a String against a Pattern (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-[String Data Type](../../../../visual-basic/language-reference/data-types/string-data-type.md) の式がパターンと一致しているかどうかを調べるには、[Like Operator](../../../../visual-basic/language-reference/operators/like-operator.md)を使います。  
+# <a name="how-to-match-a-string-against-a-pattern-visual-basic"></a>方法: 文字列がパターンに一致するかどうかを調べる (Visual Basic)
+式かどうかを検索する場合、[文字列データ型](../../../../visual-basic/language-reference/data-types/string-data-type.md)を使用して、パターンを満たす、 [Like 演算子](../../../../visual-basic/language-reference/operators/like-operator.md)です。  
   
- `Like` は 2 つのオペランドを受け取ります。  左のオペランドは文字列式で、右のオペランドは一致するかどうかを調べるパターンを格納する文字列です。  `Like` は文字列式がパターンと一致するかどうかを示す `Boolean` 値を返します。  
+ `Like`2 つのオペランドを受け取ります。 左のオペランドは、文字列式であり、右のオペランドが、照合に使用するパターンを含む文字列。 `Like`返します、`Boolean`文字列式が、パターンを満たすかどうかを示す値。  
   
- 文字列式の各文字が、特定の文字、ワイルドカード文字、文字リスト、または文字範囲と一致するかを調べることができます。  パターン文字列に指定された位置が、文字列式の一致するかどうかを調べる文字の位置に対応します。  
+ 特定の文字、ワイルドカード文字、文字のリスト、または文字の範囲に対して文字列式内の各文字に一致することができます。 パターン文字列に指定された位置は、文字列式に一致する文字の位置に対応します。  
   
-### 文字列式の文字が特定の文字と一致するかを調べるには  
+### <a name="to-match-a-character-in-the-string-expression-against-a-specific-character"></a>特定の文字の文字列式の文字と一致するには  
   
--   特定の文字をパターン文字列に直接配置します。  その特定の文字は、角かっこ \(`[ ]`\) で囲む必要があります。  詳細については、「[Like Operator](../../../../visual-basic/language-reference/operators/like-operator.md)」を参照してください。  
+-   特定の文字をパターン文字列に直接配置します。 特定の特殊文字は、角かっこで囲む必要があります (`[ ]`)。 詳細については、次を参照してください。 [Like 演算子](../../../../visual-basic/language-reference/operators/like-operator.md)です。  
   
-     次の例では、`myString` が単一の文字 `H` で構成されるかどうかを調べます。  
+     次の例のテストするかどうか`myString`だけの 1 つの文字から成る`H`です。  
   
      [!code-vb[VbVbalrOperators#70](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_1.vb)]  
   
-### 文字列式の文字がワイルドカード文字と一致するか調べるには  
+### <a name="to-match-a-character-in-the-string-expression-against-a-wildcard-character"></a>ワイルドカード文字の文字列式の文字と一致するには  
   
--   疑問符 \(`?`\) をパターン文字列に入れます。  この位置に、有効などの文字が入っていても、一致すると見なされます。  
+-   疑問符 () の配置 (`?`) パターン文字列にします。 この位置での任意の有効な文字は、検索が成功します。  
   
-     次の例は、`myString` が単一の文字 `W` と、それに続く任意の 2 文字で構成されるかどうかを調べます。  
+     次の例のテストかどうか`myString`単一の文字から成る`W`任意の値の 2 つの英文字で構成します。  
   
      [!code-vb[VbVbalrOperators#71](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_2.vb)]  
   
-### 文字列式の文字が文字のリストと一致するか調べるには  
+### <a name="to-match-a-character-in-the-string-expression-against-a-list-of-characters"></a>文字の一覧に対して文字列式の文字と一致するには  
   
--   パターン文字列内に角かっこ \(`[ ]`\) を置き、その内部に文字のリストを入れます。  文字をコンマやその他の区切り記号で区切らないでください。  リスト内のどの 1 文字が見つかっても、一致すると見なされます。  
+-   角かっこの配置 (`[ ]`) 文字のリストを置く角かっこ内とパターン文字列にします。 コンマまたはその他の任意の区切り記号の文字を分離されません。 リスト内の任意の 1 文字は、検索が成功します。  
   
-     次の例は、`myString` が有効な任意の文字と、それに続く 1 文字 \(`A`、`C`、または `E` のいずれか\) で構成されるかどうかを調べます。  
+     次の例のテストするかどうか`myString`続けて、文字の 1 つだけの任意の有効な文字から成る`A`、 `C`、または`E`です。  
   
      [!code-vb[VbVbalrOperators#72](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_3.vb)]  
   
-     この一致では、大文字と小文字が区別されます。  
+     この照合の大文字小文字を区別に注意してください。  
   
-### 文字列式の文字が文字の範囲と一致するか調べるには  
+### <a name="to-match-a-character-in-the-string-expression-against-a-range-of-characters"></a>文字の範囲に対して文字列式の文字と一致するには  
   
--   パターン文字列内に角かっこ \(`[ ]`\) を置き、その内部に範囲の開始文字と終了文字をハイフン \(`–`\) で区切って指定します。  範囲内のどの 1 文字が見つかっても、一致すると見なされます。  
+-   角かっこの配置 (`[ ]`)、ハイフンで区切られたパターン文字列に、最低と最高の文字を範囲に、かっこ内 (`–`)。 範囲内の任意の 1 文字は、検索が成功します。  
   
-     次の例は、`myString` が文字列 `num` と、それに続く 1 文字 \(`i`、`j`、`k`、`l`、`m`、または `n` のいずれか\) で構成されるかどうかを調べます。  
+     次の例のテストするかどうか`myString`文字から成る`num`続けて、文字の 1 つだけ`i`、 `j`、 `k`、 `l`、 `m`、または`n`です。  
   
      [!code-vb[VbVbalrOperators#73](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_4.vb)]  
   
-     この一致では、大文字と小文字が区別されます。  
+     この照合の大文字小文字を区別に注意してください。  
   
-## 空の文字列との一致  
- `Like` は `[]` を長さ 0 の文字列 \(`""`\) として扱います。  `[]` を使うと文字列式全体が空かどうかを調べることができます。ただし、文字列式の特定の位置が空かどうかを調べることはできません。  特定の位置が空である場合も含めて調べる必要がある場合は、`Like` を 2 度以上使用します。  
+## <a name="matching-empty-strings"></a>空の文字列に一致します。  
+ `Like`シーケンスを扱う`[]`長さ 0 の文字列として (`""`)。 使用することができます`[]`文字列全体の式が空、ですが、文字列式で特定の位置が空かどうかを行うことはできないかどうかをテストします。 空の位置は、オプションのいずれかの場合は、テストする、使用できる必要があります。`Like`も複数回です。  
   
-#### 文字列式の文字が文字のリストと一致するか、または空かを調べるには  
+#### <a name="to-match-a-character-in-the-string-expression-against-a-list-of-characters-or-no-character"></a>一覧の文字または文字の文字列式の文字と一致するには  
   
-1.  `Like` 演算子を同じ文字列式で 2 度呼び出して、2 つの呼び出しを [Or Operator](../../../../visual-basic/language-reference/operators/or-operator.md) または [OrElse Operator](../../../../visual-basic/language-reference/operators/orelse-operator.md) でつなぎます。  
+1.  呼び出す、`Like`演算子と同じで 2 回、式の文字列と接続し、2 つの呼び出しか、[または演算子](../../../../visual-basic/language-reference/operators/or-operator.md)または[OrElse 演算子](../../../../visual-basic/language-reference/operators/orelse-operator.md)です。  
   
-2.  1 つ目の `Like` 句のパターン文字列に、文字リストを角かっこ \(`[ ]`\) で囲んで指定します。  
+2.  最初のパターン文字列に`Like`句、角かっこで囲まれた、文字の一覧が含まれます (`[ ]`)。  
   
-3.  2 つ目の `Like` 句のパターン文字列では、調べる位置に文字を入れずに指定します。  
+3.  2 つ目のパターン文字列に`Like`句を配置しない任意の文字位置にある問題のです。  
   
-     次の例では、7 桁の電話番号 `phoneNum` が、3 桁の数字の後に空白、ハイフン \(`–`\)、ピリオド \(`.`\) のいずれかが続くか、または文字が何も入らずに 4 桁の数字がそのまま続くかを調べます。  
+     次の例では、7 桁の電話番号`phoneNum`3 桁の数字、続けてスペース、ハイフン (`–`)、ピリオド (`.`)、文字、続くなしに 4 桁の数値。  
   
      [!code-vb[VbVbalrOperators#74](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_5.vb)]  
   
-## 参照  
- [Comparison Operators](../../../../visual-basic/language-reference/operators/comparison-operators.md)   
- [Operators and Expressions](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)   
- [Like Operator](../../../../visual-basic/language-reference/operators/like-operator.md)   
- [String Data Type](../../../../visual-basic/language-reference/data-types/string-data-type.md)
+## <a name="see-also"></a>関連項目  
+ [比較演算子](../../../../visual-basic/language-reference/operators/comparison-operators.md)  
+ [演算子および式](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)  
+ [Like 演算子](../../../../visual-basic/language-reference/operators/like-operator.md)  
+ [String データ型](../../../../visual-basic/language-reference/data-types/string-data-type.md)

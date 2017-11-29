@@ -1,49 +1,50 @@
 ---
-title: "方法 : アクセス キーおよびテキスト折り返し機能を持つコントロールを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アクセス キー, コントロール"
-  - "コントロール, アクセス キー"
-  - "コントロール, テキストの折り返し"
-  - "キー, コントロール"
-  - "テキストの折り返し"
-  - "折り返し (テキストを)"
+title: "方法 : アクセス キーおよびテキスト折り返し機能を持つコントロールを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- access keys [WPF], control for
+- controls [WPF], text wrapping
+- wrapping text [WPF]
+- keys [WPF], control for
+- controls [WPF], access keys
+- text wrapping [WPF]
 ms.assetid: 205099d9-2551-4302-a25e-a15af9f67e04
-caps.latest.revision: 22
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 19
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2a759011425a3f09a7b91b728442f8e8ea7b92fa
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : アクセス キーおよびテキスト折り返し機能を持つコントロールを作成する
-この例では、[アクセス キー](GTMT)を持ち、テキストの折り返しをサポートするコントロールを作成する方法を示します。  これらの概念を示すために、例では <xref:System.Windows.Controls.Label> コントロールを使用します。  
+# <a name="how-to-create-a-control-that-has-an-access-key-and-text-wrapping"></a>方法 : アクセス キーおよびテキスト折り返し機能を持つコントロールを作成する
+この例では、アクセス キーがありテキスト折り返しをサポートするコントロールを作成する方法を説明します。 この例では、<xref:System.Windows.Controls.Label>これらの概念を説明するために管理します。  
   
-## 使用例  
- **ラベルにテキストの折り返し機能を追加する**  
+## <a name="example"></a>例  
+ **ラベルにテキスト折り返し機能を追加する**  
   
- <xref:System.Windows.Controls.Label> コントロールは、テキストの折り返しをサポートしません。  複数行にわたって折り返すラベルが必要な場合は、テキストの折り返しをサポートする別の要素を入れ子にして、その要素をラベルの内部に配置します。  複数のテキスト行にわたって折り返すラベルを <xref:System.Windows.Controls.TextBlock> を使用して作成する方法を次の例に示します。  
+ <xref:System.Windows.Controls.Label>コントロールがテキストの折り返しをサポートしていません。 複数の行を折り返せるラベルが必要な場合には、テキスト折り返し機能をサポートしている別の要素を入れ子にすることができます。 次の例を使用する方法を示しています、<xref:System.Windows.Controls.TextBlock>数行のテキストをラップするラベルにします。  
   
- <!-- TODO: review snippet reference [!code-xml[Label#5](../../../../samples/snippets/xaml/VS_Snippets_Wpf/Label/XAML/Pane1.xaml#5)]  -->
- <!-- TODO: review snippet reference [!code-xml[Label#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Label/CS/Pane1.xaml#5)]  -->  
+ [!code-xaml[LabelSnippet#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LabelSnippet/CS/Pane1.xaml#5)]  
   
- **アクセス キーとテキストの折り返しをラベルに追加する**  
+ **アクセス キーおよびテキスト折り返し機能をラベルに追加する**  
   
- アクセス キー \(ニーモニック\) を持つ <xref:System.Windows.Controls.Label> が必要な場合は、<xref:System.Windows.Controls.Label> の内部の <xref:System.Windows.Controls.AccessText> を使用します。  
+ 必要がある場合、<xref:System.Windows.Controls.Label>アクセス キー (ニーモニック) を持つを使用して、<xref:System.Windows.Controls.AccessText>要素内にある、<xref:System.Windows.Controls.Label>です。  
   
- <xref:System.Windows.Controls.Label>、<xref:System.Windows.Controls.Button>、<xref:System.Windows.Controls.RadioButton>、<xref:System.Windows.Controls.CheckBox>、<xref:System.Windows.Controls.MenuItem>、<xref:System.Windows.Controls.TabItem>、<xref:System.Windows.Controls.Expander>、<xref:System.Windows.Controls.GroupBox> などのコントロールには、既定のコントロール テンプレートがあります。  これらのテンプレートには、<xref:System.Windows.Controls.ContentPresenter> が含まれます。  <xref:System.Windows.Controls.ContentPresenter> で設定できるプロパティの 1 つに <xref:System.Windows.Controls.ContentPresenter.RecognizesAccessKey%2A>\="true" があり、これを使用するとコントロールのアクセス キーを指定できます。  
+ などのコントロール<xref:System.Windows.Controls.Label>、 <xref:System.Windows.Controls.Button>、 <xref:System.Windows.Controls.RadioButton>、 <xref:System.Windows.Controls.CheckBox>、 <xref:System.Windows.Controls.MenuItem>、 <xref:System.Windows.Controls.TabItem>、 <xref:System.Windows.Controls.Expander>、および<xref:System.Windows.Controls.GroupBox>コントロールの既定のテンプレートがあります。 これらのテンプレートが含まれて、<xref:System.Windows.Controls.ContentPresenter>です。 設定できるプロパティの 1 つ、<xref:System.Windows.Controls.ContentPresenter>は<xref:System.Windows.Controls.ContentPresenter.RecognizesAccessKey%2A>="true"、コントロールのアクセス キーの指定に使用できます。  
   
- アクセス キーを持ち、テキストの折り返しをサポートする <xref:System.Windows.Controls.Label> を作成する方法を次の例に示します。  この例では、テキストの折り返しを有効にするために <xref:System.Windows.Controls.AccessText.TextWrapping%2A> プロパティを設定し、下線文字を使用してアクセス キーを示しています。  下線文字のすぐ後にある文字がアクセス キーです。  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Controls.Label>アクセス キーがあり、テキストの折り返しをサポートします。 テキストの折り返しを例のセットを有効にする、<xref:System.Windows.Controls.AccessText.TextWrapping%2A>下線付きのアクセス キーを指定する文字使用してプロパティです。 (下線文字の直後の文字はアクセス キーになります。)  
   
- <!-- TODO: review snippet reference [!code-xml[Label#4](../../../../samples/snippets/xaml/VS_Snippets_Wpf/Label/XAML/Pane1.xaml#4)]  -->
- <!-- TODO: review snippet reference [!code-xml[Label#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Label/CS/Pane1.xaml#4)]  -->  
+ [!code-xaml[LabelSnippet#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LabelSnippet/CS/Pane1.xaml#4)]  
   
-## 参照  
- [How to: Set the Target Property of a Label](http://msdn.microsoft.com/ja-jp/b24c6977-ebcb-4855-a9bb-3fd4435af8f8)
+## <a name="see-also"></a>関連項目  
+ [方法: ラベルのターゲット プロパティを設定する](http://msdn.microsoft.com/en-us/b24c6977-ebcb-4855-a9bb-3fd4435af8f8)

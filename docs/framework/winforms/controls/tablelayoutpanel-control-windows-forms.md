@@ -1,34 +1,35 @@
 ---
-title: "TableLayoutPanel コントロール (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "サイズの自動調整"
-  - "コントロール [Windows フォーム], サイズ変更"
-  - "レイアウト [Windows フォーム]"
-  - "レイアウト [Windows フォーム], TableLayoutPanel コントロール"
-  - "サイズ変更, 自動"
-  - "TableLayoutPanel コントロール [Windows フォーム]"
+title: "TableLayoutPanel コントロール (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- TableLayoutPanel control [Windows Forms]
+- layout [Windows Forms]
+- controls [Windows Forms], sizing
+- sizing [Windows Forms], automatic
+- layout [Windows Forms], TableLayoutPanel control
+- automatic sizing
 ms.assetid: f55175c6-424e-4782-a86e-3f79c1550235
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6f8f949edcf637f4b56ab0bcfdd121c5cb29e543
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# TableLayoutPanel コントロール (Windows フォーム)
-<xref:System.Windows.Forms.TableLayoutPanel> コントロールは、その内容をグリッド内に配置します。  レイアウトはデザイン時と実行時の両方で行われるため、アプリケーション環境の変更に合わせて動的に変更できます。  また、パネル内のコントロールが適切にサイズ変更されるため、親コントロールのサイズ変更や、ローカリゼーションに伴うテキスト長の変更に対応できます。  
+# <a name="tablelayoutpanel-control-windows-forms"></a>TableLayoutPanel コントロール (Windows フォーム)
+<xref:System.Windows.Forms.TableLayoutPanel> コントロールは、その内容をグリッド内に配置します。 レイアウトはデザイン時と実行時の両方で行われるため、アプリケーション環境の変更に合わせて動的に変更できます。 また、パネル内のコントロールが適切にサイズ変更されるため、親コントロールのサイズ変更や、ローカリゼーションに伴うテキスト長の変更に対応できます。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [TableLayoutPanel コントロールの概要](../../../../docs/framework/winforms/controls/tablelayoutpanel-control-overview.md)  
  <xref:System.Windows.Forms.TableLayoutPanel> コントロールの全般的な概念を説明します。このコントロールを使用すると、行と列から成るレイアウトを構築できます。  
   
@@ -38,24 +39,24 @@ caps.handback.revision: 14
  [TableLayoutPanel コントロールにおける AutoSize 動作](../../../../docs/framework/winforms/controls/autosize-behavior-in-the-tablelayoutpanel-control.md)  
  <xref:System.Windows.Forms.TableLayoutPanel> コントロールが自動サイズ変更の動作をどのようにサポートするかを説明します。  
   
- [方法 : TableLayoutPanel コントロールで子コントロールを固定およびドッキングする](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)  
+ [方法: TableLayoutPanel コントロールで子コントロールを固定およびドッキングする](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)  
  <xref:System.Windows.Forms.TableLayoutPanel> コントロールの子コントロールを固定およびドッキングする方法を示します。  
   
- [方法 : ローカリゼーションに対応した Windows フォーム レイアウトをデザインする](../../../../docs/framework/winforms/controls/how-to-design-a-windows-forms-layout-that-responds-well-to-localization.md)  
+ [方法: ローカリゼーションに対応した Windows フォーム レイアウトをデザインする](../../../../docs/framework/winforms/controls/how-to-design-a-windows-forms-layout-that-responds-well-to-localization.md)  
  <xref:System.Windows.Forms.TableLayoutPanel> コントロールを使用して、ローカリゼーションに適切に対応できるフォームを作成する例を示します。  
   
- [方法 : データ入力用のサイズ変更可能な Windows フォームを作成する](../../../../docs/framework/winforms/controls/how-to-create-a-resizable-windows-form-for-data-entry.md)  
+ [方法: データ入力用のサイズ変更可能な Windows フォームを作成する](../../../../docs/framework/winforms/controls/how-to-create-a-resizable-windows-form-for-data-entry.md)  
  <xref:System.Windows.Forms.TableLayoutPanel> コントロールを使用して、サイズ変更に適切に対応できるフォームを作成する例を示します。  
   
-1.  [方法 : TableLayoutPanel コントロール内でコントロールを配置して伸縮する](http://msdn.microsoft.com/library/ms171688\(v=vs.110\))  
+1.  [方法: TableLayoutPanel コントロール内でコントロールを配置して伸縮する](http://msdn.microsoft.com/library/ms171688\(v=vs.110\))  
   
-2.  [方法 : TableLayoutPanel コントロールの行と列を拡大する](http://msdn.microsoft.com/library/ms171687\(v=vs.110\))  
+2.  [方法: TableLayoutPanel コントロールの行と列を拡大する](http://msdn.microsoft.com/library/ms171687\(v=vs.110\))  
   
-3.  [方法 : TableLayoutPanel コントロールの列と行を編集する](http://msdn.microsoft.com/library/ms171686\(v=vs.110\))  
+3.  [方法: TableLayoutPanel コントロールの列と行を編集する](http://msdn.microsoft.com/library/ms171686\(v=vs.110\))  
   
-4.  [チュートリアル : TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](http://msdn.microsoft.com/library/w4yc3e8c\(v=vs.110\))  
+4.  [チュートリアル: TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](http://msdn.microsoft.com/library/w4yc3e8c\(v=vs.110\))  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.Windows.Forms.TableLayoutPanel>  
  <xref:System.Windows.Forms.TableLayoutPanel> コントロールのリファレンス ドキュメントを提供します。  
   
@@ -65,8 +66,8 @@ caps.handback.revision: 14
  <xref:System.Windows.Forms.FlowLayoutPanel>  
  <xref:System.Windows.Forms.FlowLayoutPanel> コントロールのリファレンス ドキュメントを提供します。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [ローカリゼーション](../../../../docs/standard/globalization-localization/localization.md)  
  ローカリゼーションに関連するトピックの概要を示します。  
   
- 「[アプリケーションのローカライズ](http://msdn.microsoft.com/library/z68135h5%20\(v=vs.110\))」または「[アプリケーションのローカライズ](http://msdn.microsoft.com/library/z68135h5%20\(v=vs.120\))」も参照してください。
+ 参照してください[アプリケーションのローカライズ](http://msdn.microsoft.com/library/z68135h5\(v=vs.110\))または[アプリケーションのローカライズ](http://msdn.microsoft.com/library/z68135h5\(v=vs.120\))

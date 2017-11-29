@@ -1,59 +1,58 @@
 ---
-title: "Differences Between Modifiable and Nonmodifiable Arguments (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "procedures, arguments"
-  - "procedure arguments"
-  - "arguments [Visual Basic], nonmodifiable"
-  - "Visual Basic code, procedures"
-  - "arguments [Visual Basic], modifiable"
+title: "変更できる引数と変更できない引数の違い (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- procedures [Visual Basic], arguments
+- procedure arguments
+- arguments [Visual Basic], nonmodifiable
+- Visual Basic code, procedures
+- arguments [Visual Basic], modifiable
 ms.assetid: 87b2df69-e1f7-4657-9caf-b3f48d693428
-caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: ab108d064f5c6740f80328a9b6db4785334550ca
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Differences Between Modifiable and Nonmodifiable Arguments (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-プロシージャを呼び出すとき、通常はいくつかの引数を渡します。  各引数は、基底にあるプログラミング要素に対応します。  基底にある要素と引数の両方が、変更できる場合とできない場合があります。  
+# <a name="differences-between-modifiable-and-nonmodifiable-arguments-visual-basic"></a>変更できる引数と変更できない引数の違い (Visual Basic)
+プロシージャを呼び出すときに通常を 1 つまたは複数の引数を渡します。 各引数は、基になるプログラミング要素に対応しています。 基になる要素と引数の両方には、変更可能または変更不可能なのかを指定できます。  
   
-## 変更できる要素と変更できない要素  
- プログラミング要素は、値を変更できる「*変更できる要素*」と、作成時から値が変更されない「*変更できない要素*」の 2 つに分けられます。  
+## <a name="modifiable-and-nonmodifiable-elements"></a>変更可能なと変更できない要素  
+ プログラミング要素には、いずれかを指定できます、*変更可能な要素*、変更されると、その値であることができます、または*変更不可能*、固定値が作成されています。  
   
- 次の表に、変更できるプログラミング要素と変更できないプログラミング要素を挙げます。  
+ 次の表には、変更可能なと変更できないのプログラミング要素が一覧表示します。  
   
-|変更できる要素|変更できない要素|  
-|-------------|--------------|  
-|オブジェクト変数を含むローカル変数 \(プロシージャ内で宣言されたもの\) 読み取り専用を除く|読み取り専用変数、フィールド、プロパティ|  
-|フィールド \(モジュール、クラス、構造体のメンバー変数\) 読み取り専用を除く|定数とリテラル|  
-|プロパティ、読み取り専用を除く|列挙型メンバー|  
-|配列要素|式 \(式内の要素が変更可能な場合も\)|  
+|変更可能な要素|変更できない要素|  
+|-------------------------|----------------------------|  
+|(プロシージャ内で宣言)、ローカル変数が読み取り専用以外のオブジェクト変数を含む|読み取り専用の変数、フィールド、およびプロパティ|  
+|読み取り専用以外のフィールド (モジュール、クラス、および構造体のメンバー変数)|定数とリテラル|  
+|読み取り専用以外のプロパティ|列挙体メンバー|  
+|配列の要素|式 (その要素が変更可能な場合でも)|  
   
-## 変更できる引数と変更できない引数  
- *変更できる引数*は、基底にある要素が変更できるものです。  呼び出し元のコードは、いつでも新しい値を格納でき、引数 [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) を渡すと、プロシージャ内のコードが、呼び出し元のコードにある基底の要素を変更できます。  
+## <a name="modifiable-and-nonmodifiable-arguments"></a>変更可能なと変更できない引数  
+ A*変更可能な引数*は変更可能な基になる要素を持つ 1 つです。 呼び出し元のコードは、いつでも新しい値を格納することができます、引数を渡した場合と[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)プロシージャ内のコードでは、呼び出し元のコード内の基になる要素を変更することもできます。  
   
- *変更できない引数*は、変更できない要素が基底にあるか、[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) で渡されています。  呼び出し元のコードの基底の要素が変更可能な要素であっても、プロシージャはこれを変更できません。  基底の要素が変更できない要素である場合、呼び出し元のコード自身もこれを変更できません。  
+ A*変更できない引数*変更不可能な基になる要素があるか、渡される[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)です。 プロシージャは、変更可能な要素がある場合でも、呼び出し元のコードでは、基になる要素を変更できません。 変更不可能である場合、呼び出し元コード自体によって変更できません。  
   
- 呼び出したプロシージャによって変更できない引数のコピーが変更されることはあっても、その変更が呼び出し元のコードの基の要素に影響することはありません。  
+ 変更では呼び出し元のコード内の基になる要素には影響しませんが、呼び出されたプロシージャ変更できない引数のローカル コピーが変更される可能性があります。  
   
-## 参照  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [How to: Pass Arguments to a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-pass-arguments-to-a-procedure.md)   
- [Passing Arguments by Value and by Reference](../../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)   
- [Differences Between Passing an Argument By Value and By Reference](../../../../visual-basic/programming-guide/language-features/procedures/differences-between-passing-an-argument-by-value-and-by-reference.md)   
- [How to: Change the Value of a Procedure Argument](../../../../visual-basic/programming-guide/language-features/procedures/how-to-change-the-value-of-a-procedure-argument.md)   
- [How to: Protect a Procedure Argument Against Value Changes](../../../../visual-basic/programming-guide/language-features/procedures/how-to-protect-a-procedure-argument-against-value-changes.md)   
- [How to: Force an Argument to Be Passed by Value](../../../../visual-basic/programming-guide/language-features/procedures/how-to-force-an-argument-to-be-passed-by-value.md)   
- [Passing Arguments by Position and by Name](../../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)   
- [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+## <a name="see-also"></a>関連項目  
+ [手順](./index.md)  
+ [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)  
+ [方法: プロシージャに引数を渡す](./how-to-pass-arguments-to-a-procedure.md)  
+ [引数の値渡しと参照渡し](./passing-arguments-by-value-and-by-reference.md)  
+ [引数の値渡しと参照渡しの違い](./differences-between-passing-an-argument-by-value-and-by-reference.md)  
+ [方法: プロシージャ引数の値を変更する](./how-to-change-the-value-of-a-procedure-argument.md)  
+ [方法: プロシージャ引数の値が変化しないようにする](./how-to-protect-a-procedure-argument-against-value-changes.md)  
+ [方法: 引数の値渡しを強制する](./how-to-force-an-argument-to-be-passed-by-value.md)  
+ [位置と名前による引数渡し](./passing-arguments-by-position-and-by-name.md)  
+ [値型と参照型](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)

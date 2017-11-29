@@ -1,42 +1,24 @@
 ---
-title: "Visual Basic コンパイラ オプションは、カテゴリごとに一覧表示 |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "Visual Basic コンパイラ オプション一覧 (カテゴリ別)"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
-helpviewer_keywords:
-- Visual Basic compiler, options
+helpviewer_keywords: Visual Basic compiler, options
 ms.assetid: fbe36f7a-7cfa-4f77-a8d4-2be5958568e3
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9c379a937f798a02badd7b7cd8470f2e1ce3b072
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: f554893858b9475b3d94a669a094206be6a5c3fa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="visual-basic-compiler-options-listed-by-category"></a>Visual Basic コンパイラ オプション一覧 (カテゴリ別)
-[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] コマンド ライン コンパイラは、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)] 統合開発環境 (IDE) 内からプログラムをコンパイルする方法の代替手段として提供されています。 機能のカテゴリ順に並べ替えた [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] コマンド ライン コンパイラ オプションの一覧を次に示します。  
+[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コマンド ライン コンパイラは、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 統合開発環境 (IDE) 内からプログラムをコンパイルする方法の代替手段として提供されています。 機能のカテゴリ順に並べ替えた [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コマンド ライン コンパイラ オプションの一覧を次に示します。  
   
 ## <a name="compiler-output"></a>コンパイラ出力  
   
@@ -60,7 +42,7 @@ ms.lasthandoff: 03/13/2017
 |オプション|目的|  
 |---|---|  
 |[/doc](../../../visual-basic/reference/command-line-compiler/doc.md)|ドキュメント コメントを XML ファイルに出力します。|  
-|[/netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|[!INCLUDE[Compact](../../../visual-basic/reference/command-line-compiler/includes/compact_md.md)] が対象になるようにコンパイラを設定します。|  
+|[/netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|[!INCLUDE[Compact](~/includes/compact-md.md)] が対象になるようにコンパイラを設定します。|  
 |[/out](../../../visual-basic/reference/command-line-compiler/out.md)|出力ファイルを指定します。|  
 |[/target](../../../visual-basic/reference/command-line-compiler/target.md)|出力の形式を指定します。|  
   
@@ -73,7 +55,7 @@ ms.lasthandoff: 03/13/2017
 |[/imports](../../../visual-basic/reference/command-line-compiler/imports.md)|指定したアセンブリから名前空間をインポートします。|  
 |[/keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)|アセンブリに厳密な名前を付けるキー ペアのキー コンテナー名を指定します。|  
 |[/keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)|アセンブリに厳密な名前を付けるキーまたはキー ペアを含むファイルを指定します。|  
-|[/libpath](../../../visual-basic/reference/command-line-compiler/libpath.md)|によって参照されるアセンブリの場所を指定、 [/reference](../../../visual-basic/reference/command-line-compiler/reference.md)オプション。|  
+|[/libpath](../../../visual-basic/reference/command-line-compiler/libpath.md)|によって参照されるアセンブリの場所を指定します、 [/reference](../../../visual-basic/reference/command-line-compiler/reference.md)オプション。|  
 |[/reference](../../../visual-basic/reference/command-line-compiler/reference.md)|アセンブリからメタデータをインポートします。|  
 |[/moduleassemblyname](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)|モジュールが一部となるアセンブリの名前を指定します。|  
 |`/analyzer`|このアセンブリからアナライザーを実行します (短縮形: /a)。|  
@@ -102,7 +84,7 @@ ms.lasthandoff: 03/13/2017
   
 |オプション|目的|  
 |---|---|  
-|[/langversion](../../../visual-basic/reference/command-line-compiler/langversion.md)|言語バージョンを指定します。 9 | 9.0 | 10 | 10.0 | 11 | 11.0 です。|  
+|[/langversion](../../../visual-basic/reference/command-line-compiler/langversion.md)|言語バージョンを指定します: 9 &#124; 9.0 &#124; 10 &#124; 10.0 &#124; 11 &#124; 11.0。|  
 |[/optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)|変数の明示的な宣言を強制的に適用します。|  
 |[/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)|厳密な型のセマンティクスを強制的に適用します。|  
 |[/optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)|文字列比較をバイナリにするか、ロケール固有のテキストのセマンティクスを使用するかどうかを指定します。|  
@@ -130,9 +112,9 @@ ms.lasthandoff: 03/13/2017
 |[@ (応答ファイルの指定)](../../../visual-basic/reference/command-line-compiler/specify-response-file.md)|応答ファイルを指定します。|  
 |[/baseaddress](../../../visual-basic/reference/command-line-compiler/baseaddress.md)|DLL のベース アドレスを指定します。|  
 |[/codepage](../../../visual-basic/reference/command-line-compiler/codepage.md)|コンパイルですべてのソース コード ファイルに使用するコード ページを指定します。|  
-|[/errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] コンパイラで内部コンパイル エラーを報告するかどうかを指定します。|  
+|[/errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コンパイラで内部コンパイル エラーを報告するかどうかを指定します。|  
 |[/highentropyva](../../../visual-basic/reference/command-line-compiler/highentropyva.md)|特定の実行可能ファイルで高エントロピ ASLR (Address Space Layout Randomization) をサポートするかどうかを Windows カーネルに示します。|  
-|[/main](../../../visual-basic/reference/command-line-compiler/main.md)|含むクラスの指定、`Sub``Main`起動時に使用するプロシージャです。|  
+|[/main](../../../visual-basic/reference/command-line-compiler/main.md)|含むクラスを指定します、`Sub``Main`起動時に使用するプロシージャ。|  
 |[/noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)|コンパイルに Vbc.rsp が使用されないようにします。|  
 |[/nostdlib](../../../visual-basic/reference/command-line-compiler/nostdlib.md)|コンパイラが標準ライブラリを参照しないようにします。|  
 |[/nowin32manifest](../../../visual-basic/reference/command-line-compiler/nowin32manifest.md)|アプリケーション マニフェストを実行可能ファイルに埋め込まないようコンパイラに指定します。|  
@@ -146,7 +128,7 @@ ms.lasthandoff: 03/13/2017
 |`/checksumalgorithm:<alg>`|PDB に格納されているソース ファイルのチェックサムを計算するためのアルゴリズムを指定します。  サポートされる値は、SHA1 (既定値) または SHA256 です。|  
   
 ## <a name="see-also"></a>関連項目  
- [Visual Basic コンパイラ オプションをアルファベット順に表示](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)   
- [プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)   
- [C# コンパイラ オプションの一覧 (アルファベット順)](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)   
+ [Visual Basic コンパイラ オプション一覧 (アルファベット順)](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)  
+ [プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)  
+ [アルファベット順の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)  
  [カテゴリ別の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-by-category.md)

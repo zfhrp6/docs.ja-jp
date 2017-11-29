@@ -1,22 +1,28 @@
 ---
-title: "WCF 配信オブジェクト モデルを Atom や RSS に割り当てる方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WCF 配信オブジェクト モデルを Atom や RSS に割り当てる方法"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 0365eb37-98cc-4b13-80fb-f1e78847a748
-caps.latest.revision: 18
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9e6af3dc911cdf67e7290d339122821c00fe6bc6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WCF 配信オブジェクト モデルを Atom や RSS に割り当てる方法
+# <a name="how-the-wcf-syndication-object-model-maps-to-atom-and-rss"></a>WCF 配信オブジェクト モデルを Atom や RSS に割り当てる方法
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 配信サービスを開発する場合、次のクラスを使用するフィードや項目を作成します。  
   
 -   <xref:System.ServiceModel.Syndication.SyndicationFeed>  
@@ -35,9 +41,9 @@ caps.handback.revision: 18
   
 -   <xref:System.ServiceModel.Syndication.XmlSyndicationContent>  
   
- <xref:System.ServiceModel.Syndication.SyndicationFeed> はフォーマッタが定義されている任意の配信フォーマットにシリアル化できます。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、<xref:System.ServiceModel.Syndication.Atom10FeedFormatter> および <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> の 2 つのフォーマッタが付属しています。  
+ <xref:System.ServiceModel.Syndication.SyndicationFeed> はフォーマッタが定義されている任意の配信フォーマットにシリアル化できます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、<xref:System.ServiceModel.Syndication.Atom10FeedFormatter> および <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> の 2 つのフォーマッタが付属しています。  
   
- RSS 2.0 仕様より Atom 1.0 仕様の方が、<xref:System.ServiceModel.Syndication.SyndicationFeed> および <xref:System.ServiceModel.Syndication.SyndicationItem> 周辺のオブジェクト モデルをより細かく調整しています。これは、Atom 1.0 が、あいまいな要素または RSS 2.0 仕様から省略された要素を定義する、より基本的な仕様であるためです。このため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 配信オブジェクト モデルにある多くの項目には、RSS 2.0 仕様の直接表現がありません。<xref:System.ServiceModel.Syndication.SyndicationFeed> および <xref:System.ServiceModel.Syndication.SyndicationItem> オブジェクトを RSS 2.0 にシリアル化する場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] により、Atom 固有のデータ要素を、Atom 仕様に準拠する名前空間で修飾された拡張要素にシリアル化できます。これは、<xref:System.ServiceModel.Syndication.Rss20FeedFormatter> コンストラクターに渡すパラメーターで制御できます。  
+ RSS 2.0 仕様より Atom 1.0 仕様の方が、<xref:System.ServiceModel.Syndication.SyndicationFeed> および <xref:System.ServiceModel.Syndication.SyndicationItem> 周辺のオブジェクト モデルをより細かく調整しています。 これは、Atom 1.0 が、あいまいな要素または RSS 2.0 仕様から省略された要素を定義する、より基本的な仕様であるためです。 このため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 配信オブジェクト モデルにある多くの項目には、RSS 2.0 仕様の直接表現がありません。 <xref:System.ServiceModel.Syndication.SyndicationFeed> および <xref:System.ServiceModel.Syndication.SyndicationItem> オブジェクトを RSS 2.0 にシリアル化する場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] により、Atom 固有のデータ要素を、Atom 仕様に準拠する名前空間で修飾された拡張要素にシリアル化できます。 これは、<xref:System.ServiceModel.Syndication.Rss20FeedFormatter> コンストラクターに渡すパラメーターで制御できます。  
   
  このトピックのコード例では、ここで定義される 2 つのメソッドのいずれかを使い、実際のシリアル化を行っています。  
   
@@ -51,15 +57,15 @@ caps.handback.revision: 18
  [!code-csharp[SyndicationMapping#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#11)]
  [!code-vb[SyndicationMapping#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#11)]  
   
-## SyndicationFeed  
+## <a name="syndicationfeed"></a>SyndicationFeed  
  <xref:System.ServiceModel.Syndication.SyndicationFeed> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。  
   
  [!code-csharp[SyndicationMapping#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#0)]
  [!code-vb[SyndicationMapping#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#0)]  
   
- 次の XML は、<xref:System.ServiceModel.Syndication.SyndicationFeed> を Atom 1.0 にシリアル化する方法を示しています。  
+ <xref:System.ServiceModel.Syndication.SyndicationFeed> を Atom 1.0 にシリアル化する方法を次の XML に示します。  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <feed xml:lang="EN-US" xmlns="http://www.w3.org/2005/Atom">  
   <title type="text">My Feed Title</title>  
@@ -106,9 +112,9 @@ caps.handback.revision: 18
 </feed>  
 ```  
   
- <xref:System.ServiceModel.Syndication.SyndicationFeed> を RSS 2.0 にシリアル化する方法を次の XML に示します。  
+ <xref:System.ServiceModel.Syndication.SyndicationFeed> を RSS 2.0.0 にシリアル化する方法を次の XML に示します。  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0">  
   <channel>  
@@ -148,7 +154,7 @@ caps.handback.revision: 18
 </rss>  
 ```  
   
-## SyndicationItem  
+## <a name="syndicationitem"></a>SyndicationItem  
  <xref:System.ServiceModel.Syndication.SyndicationItem> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。  
   
  [!code-csharp[SyndicationMapping#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#1)]
@@ -156,7 +162,7 @@ caps.handback.revision: 18
   
  <xref:System.ServiceModel.Syndication.SyndicationItem> を Atom 1.0 にシリアル化する方法を次の XML に示します。  
   
-```  
+```xml  
 <entry xmlns="http://www.w3.org/2005/Atom">  
   <id>ItemID</id>  
   <title type="text">Item Title</title>  
@@ -198,7 +204,7 @@ caps.handback.revision: 18
   
  <xref:System.ServiceModel.Syndication.SyndicationItem> を RSS 2.0.0 にシリアル化する方法を次の XML に示します。  
   
-```  
+```xml  
 <item>  
   <guid isPermaLink="false">ItemID</guid>  
   <link>http://myitemuri/</link>  
@@ -234,7 +240,7 @@ caps.handback.revision: 18
 </item>  
 ```  
   
-## SyndicationPerson  
+## <a name="syndicationperson"></a>SyndicationPerson  
  <xref:System.ServiceModel.Syndication.SyndicationPerson> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。  
   
  [!code-csharp[SyndicationMapping#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#2)]
@@ -242,7 +248,7 @@ caps.handback.revision: 18
   
  <xref:System.ServiceModel.Syndication.SyndicationPerson> を Atom 1.0 にシリアル化する方法を次の XML に示します。  
   
-```  
+```xml  
   <author>  
     <name>Jesper Aaberg</name>  
     <uri>http://Contoso/Aaberg</uri>  
@@ -255,9 +261,9 @@ caps.handback.revision: 18
   </contributor>  
 ```  
   
- `Authors` コレクションまたは `Contributors` コレクションに、それぞれ <xref:System.ServiceModel.Syndication.SyndicationPerson> が 1 つのみ存在する場合に、<xref:System.ServiceModel.Syndication.SyndicationPerson> クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson> コレクションまたは <xref:System.ServiceModel.Syndication.SyndicationPerson> コレクションに、それぞれ `Authors` が 1 つのみ存在する場合に、`Contributors` クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。  
   
-```  
+```xml  
 <author>Jesper.Aaberg@contoso.com</author>  
 <a10:contributor>  
     <a10:name>Lene Aaling</a10:name>  
@@ -266,9 +272,9 @@ caps.handback.revision: 18
 </a10:contributor>  
 ```  
   
- `Authors` コレクションまたは `Contributors` コレクションに、それぞれ <xref:System.ServiceModel.Syndication.SyndicationPerson> が複数存在する場合に、<xref:System.ServiceModel.Syndication.SyndicationPerson> クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson> コレクションまたは <xref:System.ServiceModel.Syndication.SyndicationPerson> コレクションに、それぞれ `Authors` が複数存在する場合に、`Contributors` クラスを RSS 2.0 にシリアル化する方法を次の XML に示します。  
   
-```  
+```xml  
 <a10:author>  
     <a10:name>Jesper Aaberg</a10:name>  
     <a10:uri>http://Contoso/Aaberg</a10:uri>  
@@ -291,7 +297,7 @@ caps.handback.revision: 18
 </a10:contributor>  
 ```  
   
-## SyndicationLink  
+## <a name="syndicationlink"></a>SyndicationLink  
  <xref:System.ServiceModel.Syndication.SyndicationLink> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。  
   
  [!code-csharp[SyndicationMapping#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#3)]
@@ -305,7 +311,7 @@ caps.handback.revision: 18
   
  `<a10:link rel="alternate" type="text/html" title="My Link Title" length="2048" href="http://contoso/MyLink" />`  
   
-## SyndicationCategory  
+## <a name="syndicationcategory"></a>SyndicationCategory  
  <xref:System.ServiceModel.Syndication.SyndicationCategory> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。  
   
  [!code-csharp[SyndicationMapping#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#4)]
@@ -319,7 +325,7 @@ caps.handback.revision: 18
   
  `<category domain="categoryScheme">categoryName</category>`  
   
-## TextSyndicationContent  
+## <a name="textsyndicationcontent"></a>TextSyndicationContent  
  <xref:System.ServiceModel.Syndication.TextSyndicationContent> が HTML コンテンツと共に作成される場合に <xref:System.ServiceModel.Syndication.TextSyndicationContent> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。  
   
  [!code-csharp[SyndicationMapping#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#5)]
@@ -363,7 +369,7 @@ caps.handback.revision: 18
   
  `<description><html> some xhtml </html></description>`  
   
-## UrlSyndicationContent  
+## <a name="urlsyndicationcontent"></a>UrlSyndicationContent  
  <xref:System.ServiceModel.Syndication.UrlSyndicationContent> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。  
   
  [!code-csharp[SyndicationMapping#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#8)]
@@ -379,7 +385,7 @@ caps.handback.revision: 18
   
  `<content type="audio" src="http://Contoso/someurl/" xmlns="http://www.w3.org/2005/Atom" />`  
   
-## XmlSyndicationContent  
+## <a name="xmlsyndicationcontent"></a>XmlSyndicationContent  
  <xref:System.ServiceModel.Syndication.XmlSyndicationContent> クラスを Atom 1.0 および RSS 2.0 にシリアル化するコード例を次に示します。  
   
  [!code-csharp[SyndicationMapping#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#9)]
@@ -401,9 +407,9 @@ caps.handback.revision: 18
   
  `</content>`  
   
-## 参照  
- [WCF 配信の概要](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)   
- [配信のアーキテクチャ](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)   
- [方法 : 基本的な RSS フィードを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)   
- [方法 : 基本的な ATOM フィードを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-atom-feed.md)   
- [方法 : Atom および RSS の両方としてフィードを公開する](../../../../docs/framework/wcf/feature-details/how-to-expose-a-feed-as-both-atom-and-rss.md)
+## <a name="see-also"></a>関連項目  
+ [WCF 配信の概要](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  
+ [配信のアーキテクチャ](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)  
+ [方法: 基本的な RSS フィードを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)  
+ [方法: 基本的な Atom フィードの作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-atom-feed.md)  
+ [方法: として両方 Atom フィードを公開し、RSS](../../../../docs/framework/wcf/feature-details/how-to-expose-a-feed-as-both-atom-and-rss.md)

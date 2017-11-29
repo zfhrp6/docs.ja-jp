@@ -1,9 +1,8 @@
 ---
-title: "申し訳ありませんが詳細情報 Visual Basic エラーに関する |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "申し訳ありませんが、お don &#39; この Visual Basic エラーに関する詳細が含まれていたり"
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -3048,54 +3047,37 @@ f1_keywords:
 - bc31432
 - bc30233
 - bc30829
-dev_langs:
-- VB
 ms.assetid: 0938efc2-e205-450b-9314-99951fcbd702
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 406a53192e8ce2cd56280dad01ebce3165d7e377
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 132bb3f93ae5084df73aed56b6d1483830984928
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="sorry-we-don39t-have-specifics-on-this-visual-basic-error"></a>申し訳ありませんが詳細情報 Visual Basic エラーに関する
+# <a name="sorry-we-don39t-have-specifics-on-this-visual-basic-error"></a>申し訳ありませんが、お don &#39; この Visual Basic エラーに関する詳細が含まれていたり
 申し訳ありませんが、このエラーに関する特定の情報はありません。 Web でエラー番号とメッセージ テキストを検索して情報を探すことができます。 または、次のフォーラムのいずれかを使用して他の開発者に尋ねることができます。  
   
  [Visual Basic 言語](http://go.microsoft.com/fwlink/?LinkId=145963)  
- [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] 言語の構文やコンパイラに関する質問や議論のためのフォーラムです。  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語の構文やコンパイラに関する質問や議論のためのフォーラムです。  
   
  [Visual Basic の相互運用とアップグレード](http://go.microsoft.com/fwlink/?LinkId=145966)  
- [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] へのアップグレードや相互運用機能の使用に関する質問や議論のためのフォーラムです。  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] へのアップグレードや相互運用機能の使用に関する質問や議論のためのフォーラムです。  
   
  [Visual Basic IDE](http://go.microsoft.com/fwlink/?LinkId=145971)  
- [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] 環境で作業する方法について質問するためのフォーラムです。  
+ [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 環境で作業する方法について質問するためのフォーラムです。  
   
  [Visual Basic 全般](http://go.microsoft.com/fwlink/?LinkId=145973)  
- 他のフォーラムで取り上げていない [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] に関する質問や議論のためのフォーラムです。  
+ 他のフォーラムで取り上げていない [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] に関する質問や議論のためのフォーラムです。  
   
  [StackOverflow](http://stackoverflow.com/questions/tagged/vb.net)  
- [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] に関する質問や問題のためのフォーラムです。  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] に関する質問や問題のためのフォーラムです。  
   
  関連項目:  
  [Visual Basic プログラマのための追加リソース](../../visual-basic/getting-started/additional-resources.md)  
   
 ## <a name="see-also"></a>関連項目  
- [Visual Basic のプログラミング ガイド](../../visual-basic/programming-guide/index.md)   
+ [Visual Basic プログラミング ガイド](../../visual-basic/programming-guide/index.md)  
  [Visual Basic リファレンス](../../visual-basic/reference/index.md)

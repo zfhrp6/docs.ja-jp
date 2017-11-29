@@ -1,47 +1,50 @@
 ---
-title: "方法 : IIS でサービス以外のワークフローをホストする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : IIS でサービス以外のワークフローをホストする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f362562c-767d-401b-8257-916616568fd4
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 892875fb8340220dc152f91ab2239257c7b96fb8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : IIS でサービス以外のワークフローをホストする
-ワークフロー サービスではないワークフローは IIS\/WAS でホストできます。  これは他の人が作成したワークフローをホストする必要がある場合に役に立ちます。  たとえば、ワークフロー デザイナーを再ホストして、ユーザーが独自のワークフローを作成できるようにする場合がその例です。  IIS でサービス以外のワークフローをホストすると、プロセス リサイクル、アイドル シャットダウン、処理状況の監視、メッセージ ベースのアクティブ化などの機能をサポートできます。  IIS でホストされるワークフロー サービスには <xref:System.ServiceModel.Activities.Receive> アクティビティが含まれ、IIS がメッセージを受け取るとアクティブ化されます。  サービス以外のワークフローにはメッセージング アクティビティは含まれないので、既定ではメッセージを送信することによってアクティブ化できません。  <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> からクラスを派生させ、そのワークフローのインスタンスを作成する操作を含むサービス コントラクトを定義する必要があります。  このトピックでは、単純なワークフローを作成して、クライアントがワークフローのアクティブ化に使用できるサービス コントラクトを定義し、そのサービス コントラクトを使ってワークフロー作成のリクエストをリッスンする <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> からクラスを派生させる方法を説明します。  
+# <a name="how-to-host-a-non-service-workflow-in-iis"></a>方法 : IIS でサービス以外のワークフローをホストする
+ワークフロー サービスではないワークフローは IIS/WAS でホストできます。 これは他の人が作成したワークフローをホストする必要がある場合に役に立ちます。 たとえば、ワークフロー デザイナーを再ホストして、ユーザーが独自のワークフローを作成できるようにする場合がその例です。  IIS でサービス以外のワークフローをホストすると、プロセス リサイクル、アイドル シャットダウン、処理状況の監視、メッセージ ベースのアクティブ化などの機能をサポートできます。 IIS でホストされるワークフロー サービスには <xref:System.ServiceModel.Activities.Receive> アクティビティが含まれ、IIS がメッセージを受け取るとアクティブ化されます。 サービス以外のワークフローにはメッセージング アクティビティは含まれないので、既定ではメッセージを送信することによってアクティブ化できません。  <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> からクラスを派生させ、そのワークフローのインスタンスを作成する操作を含むサービス コントラクトを定義する必要があります。 このトピックでは、手順、単純なワークフローを作成、クライアントが、ワークフローをアクティブ化に使用できるサービス コントラクトを定義およびからクラスを派生する<xref:System.ServiceModel.Activities.WorkflowHostingEndpoint>ワークフロー作成のリクエストをリッスンするように、サービス コントラクトを使用します。  
   
-### 単純なワークフローの作成  
+### <a name="create-a-simple-workflow"></a>単純なワークフローの作成  
   
-1.  `CreationEndpointTest` という名前で、新しい空の [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] ソリューションを作成します。  
+1.  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] という名前で、新しい空の `CreationEndpointTest` ソリューションを作成します。  
   
-2.  `SimpleWorkflow` という新しい WCF ワークフロー サービス アプリケーション プロジェクトをソリューションに追加します。  ワークフロー デザイナーが開きます。  
+2.  `SimpleWorkflow` という新しい WCF ワークフロー サービス アプリケーション プロジェクトをソリューションに追加します。 ワークフロー デザイナーが開きます。  
   
-3.  ReceiveRequest アクティビティと SendResponse アクティビティを削除します。  ワークフローはこれらのアクティビティによってワークフロー サービスになります。  ここではワークフロー サービスを使用しないので、これらのアクティビティは必要ありません。  
+3.  ReceiveRequest アクティビティと SendResponse アクティビティを削除します。 ワークフローはこれらのアクティビティによってワークフロー サービスになります。 ここではワークフロー サービスを使用しないので、これらのアクティビティは必要ありません。  
   
-4.  シーケンス アクティビティの DisplayName を "Sequential Workflow" に設定します。  
+4.  DisplayName を"Sequential Workflow"にシーケンス アクティビティを設定します。  
   
 5.  Service1.xamlx を Workflow1.xamlx という名前に変更します。  
   
-6.  シーケンス アクティビティの外でデザイナーをクリックして、Name プロパティと ConfigurationName プロパティを "Workflow1" に設定します。  
+6.  シーケンス アクティビティの外でデザイナーをクリックし、Name プロパティと ConfigurationName プロパティを"Workflow1"に設定  
   
-7.  <xref:System.Activities.Statements.WriteLine> アクティビティを <xref:System.Activities.Statements.Sequence> にドラッグします。  <xref:System.Activities.Statements.WriteLine> アクティビティはツールボックスの **\[プリミティブ\]** セクションにあります。  <xref:System.Activities.Statements.WriteLine> アクティビティの <xref:System.Activities.Statements.WriteLine.Text%2A> プロパティを "Hello, world" に設定します。  
+7.  <xref:System.Activities.Statements.WriteLine> アクティビティを <xref:System.Activities.Statements.Sequence> にドラッグします。 <xref:System.Activities.Statements.WriteLine>アクティビティは含まれて、**プリミティブ**ツールボックスのセクションです。 設定、<xref:System.Activities.Statements.WriteLine.Text%2A>のプロパティ、<xref:System.Activities.Statements.WriteLine>アクティビティに「こんにちは, world」です。  
   
      この時点で、ワークフローは次の図のようになります。  
   
      ![単純なワークフロー](../../../../docs/framework/wcf/feature-details/media/simpleworkflow.png "SimpleWorkflow")  
   
-### ワークフロー作成サービス コントラクトの作成  
+### <a name="create-the-workflow-creation-service-contract"></a>ワークフロー作成サービス コントラクトの作成  
   
-1.  `CreationEndpointTest` に `Shared` という新しいクラス ライブラリ プロジェクトを追加します。  
+1.  `Shared` に `CreationEndpointTest` という新しいクラス ライブラリ プロジェクトを追加します。  
   
 2.  System.ServiceModel.dll、System.Configuration、および System.ServiceModel.Activities への参照を `Shared` プロジェクトに追加します。  
   
@@ -69,11 +72,11 @@ caps.handback.revision: 7
     }  
     ```  
   
-     このコントラクトは 2 つの操作を定義します。どちらも作成したサービス以外のワークフローの新しいインスタンスを作成します。  1 つは生成されたインスタンス ID を持つ新しいインスタンスを作成し、もう 1 つは新しいワークフロー インスタンスのインスタンス ID を指定できるようにします。  どちらの方法でも、新しいワークフロー インスタンスにパラメーターを渡すことができます。  このコントラクトは <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> によって公開され、クライアントがサービス以外のワークフローの新しいインスタンスを作成できるようにします。  
+     このコントラクトは 2 つの操作を定義します。どちらも作成したサービス以外のワークフローの新しいインスタンスを作成します。 1 つは生成されたインスタンス ID を持つ新しいインスタンスを作成し、もう 1 つは新しいワークフロー インスタンスのインスタンス ID を指定できるようにします。  どちらの方法でも、新しいワークフロー インスタンスにパラメーターを渡すことができます。 このコントラクトによって公開される、<xref:System.ServiceModel.Activities.WorkflowHostingEndpoint>にクライアントがサービス以外のワークフローの新しいインスタンスを作成できるようにします。  
   
-### WorkflowHostingEndpoint からのクラスの派生  
+### <a name="derive-a-class-from-workflowhostingendpoint"></a>WorkflowHostingEndpoint からのクラスの派生  
   
-1.  `CreationEndpoint` という <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> から派生された新しいクラスを `Shared` プロジェクトに追加します。  
+1.  いう新しいクラスを追加`CreationEndpoint`から派生した<xref:System.ServiceModel.Activities.WorkflowHostingEndpoint>を`Shared`プロジェクト。  
   
     ```  
     using System;  
@@ -92,7 +95,7 @@ caps.handback.revision: 7
     }  
     ```  
   
-2.  `defaultBaseUri` というローカルの静的 <xref:System.Uri> 変数を `CreationEndpoint` クラスに追加します。  
+2.  <xref:System.Uri> というローカルの静的 `defaultBaseUri` 変数を `CreationEndpoint` クラスに追加します。  
   
     ```  
     public class CreationEndpoint : WorkflowHostingEndpoint  
@@ -101,7 +104,7 @@ caps.handback.revision: 7
     }  
     ```  
   
-3.  `CreationEndpoint` クラスに次のコンストラクターを追加します。  基本コンストラクターへの呼び出しに `IWorkflowCreation` サービス コントラクトを指定することに注意してください。  
+3.  `CreationEndpoint` クラスに次のコンストラクターを追加します。 基本コンストラクターへの呼び出しに `IWorkflowCreation` サービス コントラクトを指定することに注意してください。  
   
     ```  
     public CreationEndpoint(Binding binding, EndpointAddress address)  
@@ -120,7 +123,7 @@ caps.handback.revision: 7
        }  
     ```  
   
-5.  `DefaultBaseUri` という静的プロパティを `CreationEndpoint` クラスに追加します。  このプロパティは既定のベース URI の保持に使用されます \(指定されない場合\)。  
+5.  `DefaultBaseUri` という静的プロパティを `CreationEndpoint` クラスに追加します。 このプロパティは既定のベース URI の保持に使用されます (指定されない場合)。  
   
     ```  
     static Uri DefaultBaseUri  
@@ -148,7 +151,7 @@ caps.handback.revision: 7
     }  
     ```  
   
-7.  <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint.OnGetInstanceId%2A> メソッドをオーバーライドしてワークフロー インスタンス ID を返します。  `Action` ヘッダーが "Create" で終わる場合は空の GUID を返し、`Action` ヘッダーが "CreateWithInstanceId" で終わる場合はメソッドに渡す GUID を返します。  それ以外の場合は、<xref:System.InvalidOperationException> がスローされます。  これらの `Action` ヘッダーは `IWorkflowCreation` サービス コントラクトで定義した 2 つの操作に対応しています。  
+7.  <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint.OnGetInstanceId%2A> メソッドをオーバーライドしてワークフロー インスタンス ID を返します。 場合、`Action`場合、ヘッダーが"Create"では空の GUID を返します、`Action`ヘッダーが"CreateWithInstanceId"return メソッドに渡す GUID で終了します。 それ以外の場合は、<xref:System.InvalidOperationException> がスローされます。 これらの `Action` ヘッダーは `IWorkflowCreation` サービス コントラクトで定義した 2 つの操作に対応しています。  
   
     ```  
     protected override Guid OnGetInstanceId(object[] inputs, OperationContext operationContext)  
@@ -198,11 +201,11 @@ caps.handback.revision: 7
     }  
     ```  
   
-### WorkflowCreationEndpoint の構成を可能にする標準エンドポイント要素の作成  
+### <a name="create-a-standard-endpoint-element-to-allow-you-to-configure-the-workflowcreationendpoint"></a>WorkflowCreationEndpoint の構成を可能にする標準エンドポイント要素の作成  
   
 1.  `CreationEndpoint` プロジェクトの Shared への参照を追加します。  
   
-2.  `CreationEndpointElement` という <xref:System.ServiceModel.Configuration.StandardEndpointElement> から派生された新しいクラスを `CreationEndpoint` プロジェクトに追加します。  このクラスは web.config ファイル内の `CreationEndpoint` を表します。  
+2.  `CreationEndpointElement` という <xref:System.ServiceModel.Configuration.StandardEndpointElement> から派生された新しいクラスを `CreationEndpoint` プロジェクトに追加します。 このクラスは web.config ファイル内の `CreationEndpoint` を表します。  
   
     ```  
     using System;  
@@ -236,10 +239,9 @@ caps.handback.revision: 7
     {  
        return new CreationEndpoint();  
     }  
-  
     ```  
   
-5.  <xref:System.ServiceModel.Configuration.StandardEndpointElement.OnApplyConfiguration%2A>、<xref:System.ServiceModel.Configuration.StandardEndpointElement.OnApplyConfiguration%2A>、<xref:System.ServiceModel.Configuration.StandardEndpointElement.OnInitializeAndValidate%2A>、および <xref:System.ServiceModel.Configuration.StandardEndpointElement.OnInitializeAndValidate%2A> の各メソッドをオーバーロードします。  これらのメソッドは定義する必要があるだけで、コードを追加する必要はありません。  
+5.  <xref:System.ServiceModel.Configuration.StandardEndpointElement.OnApplyConfiguration%2A>、<xref:System.ServiceModel.Configuration.StandardEndpointElement.OnApplyConfiguration%2A>、<xref:System.ServiceModel.Configuration.StandardEndpointElement.OnInitializeAndValidate%2A>、および <xref:System.ServiceModel.Configuration.StandardEndpointElement.OnInitializeAndValidate%2A> の各メソッドをオーバーロードします。 これらのメソッドは定義する必要があるだけで、コードを追加する必要はありません。  
   
     ```  
     protected override void OnApplyConfiguration(ServiceEndpoint endpoint, ChannelEndpointElement channelEndpointElement)  
@@ -259,7 +261,7 @@ caps.handback.revision: 7
     }  
     ```  
   
-6.  `CreationEndpoint` のコレクション クラスを `CreationEndpoint` プロジェクト内の CreationEndpointElement.cs ファイルに追加します。  このクラスは構成によって使用され、web.config ファイル内に `CreationEndpoint` のインスタンス数を格納します。  
+6.  `CreationEndpoint` のコレクション クラスを `CreationEndpoint` プロジェクト内の CreationEndpointElement.cs ファイルに追加します。 このクラスは構成によって使用され、web.config ファイル内に `CreationEndpoint` のインスタンス数を格納します。  
   
     ```  
     public class CreationEndpointCollection : StandardEndpointCollectionElement<CreationEndpoint, CreationEndpointElement>  
@@ -269,13 +271,13 @@ caps.handback.revision: 7
   
 7.  ソリューションをビルドします。  
   
-### IIS でのワークフローのホスト  
+### <a name="host-the-workflow-in-iis"></a>IIS でのワークフローのホスト  
   
 1.  IIS 内に `MyCreationEndpoint` という新しいアプリケーションを作成します。  
   
 2.  ワークフロー デザイナーによって生成された workflow1.xaml というファイルをアプリケーション ディレクトリにコピーして、その名前を workflow1.xamlx に変更します。  
   
-3.  shared.dll と CreationEndpoint.dll というファイルをアプリケーションの bin ディレクトリにコピーします \(bin ディレクトリは存在しなければ作成します\)。  
+3.  shared.dll と CreationEndpoint.dll というファイルをアプリケーションの bin ディレクトリにコピーします (bin ディレクトリは存在しなければ作成します)。  
   
 4.  `CreationEndpoint` プロジェクト内の Web.config ファイルの内容を次のコードで置き換えます。  
   
@@ -290,7 +292,7 @@ caps.handback.revision: 7
   
 5.  `<system.web>` 要素の後に、次の構成コードを追加して、`CreationEndpoint` を登録します。  
   
-    ```  
+    ```xml  
     <system.serviceModel>  
         <!--register CreationEndpoint-->  
         <serviceHostingEnvironment multipleSiteBindingsEnabled="true" />  
@@ -300,24 +302,22 @@ caps.handback.revision: 7
           </endpointExtensions>  
         </extensions>  
     </system.serviceModel>  
-  
     ```  
   
      これによって、`CreationEndpointCollection` クラスが登録され、web.config ファイル内で `CreationEndpoint` を構成できるようになります。  
   
-6.  受信メッセージをリッスンする `CreationEndpoint` と共に `<service>` 要素を \<\/extensions\> タグの後に追加します。  
+6.  追加、`<service>`要素 (後、 \</extensions > タグ) と、`CreationEndpoint`受信メッセージをリッスンします。  
   
-    ```  
+    ```xml  
     <services>  
           <!-- add endpoint to service-->  
           <service name="Workflow1" behaviorConfiguration="basicConfig" >  
             <endpoint kind="creationEndpoint" binding="basicHttpBinding" address=""/>  
           </service>  
         </services>  
-  
     ```  
   
-7.  サービス メタデータを有効にするために、\<behaviors\> 要素を \<\/services\> タグの後に追加します。  
+7.  追加、\<動作 > 要素 (後、 \</サービス > タグ) をサービス メタデータを有効にします。  
   
     ```xml  
     <behaviors>  
@@ -327,22 +327,21 @@ caps.handback.revision: 7
             </behavior>  
           </serviceBehaviors>  
         </behaviors>  
-  
     ```  
   
 8.  web.config ファイルを IIS アプリケーション ディレクトリにコピーします。  
   
-9. 作成エンドポイントが機能しているかどうかをテストするために、Internet Explorer を起動して http:\/\/localhost\/MyCreationEndpoint\/Workflow1.xamlx を表示します。  Internet Explorer には次のような画面が表示されます。  
+9. 作成エンドポイントが機能しているかどうかをテストするために、Internet Explorer を起動して http://localhost/MyCreationEndpoint/Workflow1.xamlx を表示します。 Internet Explorer には次のような画面が表示されます。  
   
      ![サービスのテスト](../../../../docs/framework/wcf/feature-details/media/testservice.gif "TestService")  
   
-### CreationEndpoint を呼び出すクライアントの作成  
+### <a name="create-a-client-that-will-call-the-creationendpoint"></a>CreationEndpoint を呼び出すクライアントの作成  
   
 1.  新しいコンソール アプリケーションを `CreationEndpointTest` ソリューションに追加します。  
   
 2.  System.ServiceModel.dll、System.ServiceModel.Activities、および `Shared` プロジェクトへの参照を追加します。  
   
-3.  `Main` メソッド内に `IWorkflowCreation` 型の <xref:System.ServiceModel.ChannelFactory%601> を作成して、<xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A> を呼び出します。  これはプロキシを返します。  次に、そのプロキシの `Create` を呼び出して、IIS でホストされるワークフロー インスタンスを作成します。  
+3.  `Main`メソッドを作成、<xref:System.ServiceModel.ChannelFactory%601>型の`IWorkflowCreation`を呼び出すと<xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A>です。 これはプロキシを返します。 次に、そのプロキシの `Create` を呼び出して、IIS でホストされるワークフロー インスタンスを作成します。  
   
     ```  
     using System.Text;  
@@ -374,18 +373,16 @@ caps.handback.revision: 7
     }  
     ```  
   
-4.  CreationEndpointClient を実行します。  出力の内容は次のようになります。  
+4.  CreationEndpointClient を実行します。 出力の内容は次のようになります。  
   
     ```Output  
-  
-                "Workflow Instance created using CreationEndpoint added in config.  Instance Id: 0875dac0-2b8b-473e-b3cc-abcb235e9693  
-    Press return to exit ...    
+    Workflow Instance created using CreationEndpoint added in config. Instance Id: 0875dac0-2b8b-473e-b3cc-abcb235e9693Press return to exit ...  
     ```  
   
     > [!NOTE]
     >  ワークフローの出力は表示されません。これはコンソール出力を持たない IIS を使って実行しているためです。  
   
-## 使用例  
+## <a name="example"></a>例  
  以下はこのサンプルの完全なコードです。  
   
 ```xaml  
@@ -430,7 +427,6 @@ caps.handback.revision: 7
     <p:WriteLine sap:VirtualizedContainerService.HintSize="211,61" Text="Hello, world" />  
   </p:Sequence>  
 </WorkflowService>  
-  
 ```  
   
 ```csharp  
@@ -488,7 +484,6 @@ namespace CreationEndpointTest
     {  
     }  
 }  
-  
 ```  
   
 ```xml  
@@ -521,7 +516,6 @@ namespace CreationEndpointTest
     </behaviors>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
 ```csharp  
@@ -545,7 +539,6 @@ namespace Shared
         void CreateWithInstanceId(IDictionary<string, object> inputs, Guid instanceId);  
     }  
 }  
-  
 ```  
   
 ```csharp  
@@ -649,7 +642,6 @@ namespace Shared
         }  
     }  
 }  
-  
 ```  
   
 ```csharp  
@@ -686,17 +678,16 @@ namespace CreationClient
     }  
   
 }  
-  
 ```  
   
- この例では `IWorkflowCreation` を実装するサービスを実装しないので、わかりにくい可能性があります。  これは、`CreationEndpoint` がユーザーに代わって実装するためです。  
+ この例では `IWorkflowCreation` を実装するサービスを実装しないので、わかりにくい可能性があります。 これは、`CreationEndpoint` がユーザーに代わって実装するためです。  
   
-## 参照  
- [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)   
- [インターネット インフォメーション サービスでのホスティング](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)   
- [インターネット インフォメーション サービス ホスティングのベスト プラクティス](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)   
- [インターネット インフォメーション サービスのホスティング手順](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)   
- [Windows Workflow のアーキテクチャ](../../../../docs/framework/windows-workflow-foundation//architecture.md)   
- [WorkflowHostingEndpoint 再開ブックマーク](../../../../docs/framework/windows-workflow-foundation/samples/workflowhostingendpoint-resume-bookmark.md)   
- [ワークフロー デザイナーのホスト変更](../../../../docs/framework/windows-workflow-foundation//rehosting-the-workflow-designer.md)   
- [Windows Workflow の概要](../../../../docs/framework/windows-workflow-foundation//overview.md)
+## <a name="see-also"></a>関連項目  
+ [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
+ [インターネット インフォメーション サービスをホストしています。](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
+ [インターネット インフォメーション サービス ホスティングのベスト プラクティス](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)  
+ [インターネット情報サービスのホスティング手順](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)  
+ [Windows Workflow のアーキテクチャ](../../../../docs/framework/windows-workflow-foundation/architecture.md)  
+ [WorkflowHostingEndpoint 再開ブックマーク](../../../../docs/framework/windows-workflow-foundation/samples/workflowhostingendpoint-resume-bookmark.md)  
+ [ワークフロー デザイナーのホスト変更](../../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
+ [Windows Workflow の概要](../../../../docs/framework/windows-workflow-foundation/overview.md)

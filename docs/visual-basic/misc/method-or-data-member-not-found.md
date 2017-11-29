@@ -1,24 +1,26 @@
 ---
-title: "メソッドまたはデータ メンバーが見つかりません | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID461"
+title: "メソッドまたはデータ メンバーが見つかりません"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID461
 ms.assetid: 40b178c3-7dc4-4216-8460-17ff8d9aedf1
-caps.latest.revision: 6
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 9e25e24a13e1d8e86dc28f852c23e00717e9d763
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# メソッドまたはデータ メンバーが見つかりません
+# <a name="method-or-data-member-not-found"></a>メソッドまたはデータ メンバーが見つかりません
 アクセスしようとしていたメソッドまたはデータ メンバーは見つかりませんでした。  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
 -   メソッドまたはデータ メンバーの名前のスペルが正しいことを確認します。  
   
-## 参照  
- [Error Types](../../visual-basic/programming-guide/language-features/error-types.md)
+## <a name="see-also"></a>関連項目  
+ [エラーの種類](../../visual-basic/programming-guide/language-features/error-types.md)

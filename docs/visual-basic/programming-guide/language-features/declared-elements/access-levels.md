@@ -1,103 +1,102 @@
 ---
-title: "Access Levels in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "members, accessing in Visual Basic"
-  - "Friend access modifier"
-  - "access levels, declared elements"
-  - "access levels"
-  - "access modifiers"
-  - "Public access modifier"
-  - "Protected access modifier"
-  - "Protected Friend access modifier"
-  - "Private access modifier"
-  - "declared elements, access level"
+title: "Visual Basic でのアクセス レベル"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- members [Visual Basic], accessing in Visual Basic
+- Friend access modifier
+- access levels, declared elements
+- access levels
+- access modifiers
+- Public access modifier
+- Protected access modifier
+- Protected Friend access modifier
+- Private access modifier
+- declared elements [Visual Basic], access level
 ms.assetid: 6e06c1ab-fd78-47f0-83a8-1152780b5e1a
-caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 87e43ac7e813cece1179bdaf24c86fa62adcb438
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Access Levels in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-宣言された要素の*アクセス レベル*とは、その要素にアクセスするために必要な権限の程度、つまり、その要素に対する読み取りと書き込みの許可がどのようなコードに与えられるかを示します。  アクセス レベルは、要素自体を宣言する方法だけでなく、要素のコンテナーのアクセス レベルによっても左右されます。  コンテナー要素にアクセスできないコードは、そのコンテナー要素に含まれる要素にも一切アクセスできません。含まれる要素が `Public` として宣言されていても同じです。  たとえば、`Private` 構造体の中の `Public` 変数は、その構造体を含むクラス内からはアクセスできますが、そのクラスの外からはアクセスできません。  
+# <a name="access-levels-in-visual-basic"></a>Visual Basic でのアクセス レベル
+*アクセス レベル*宣言された要素の範囲にアクセスできるは、どのようなコードは、読み取りし、書き込みをするアクセス許可。 これは、アクセス レベルは、要素自体を宣言する方法だけでなく、要素のコンテナーのアクセス レベルによっても決定されます。 として宣言も含めに含まれる要素のいずれかのコンテナー要素にアクセスできないコードにアクセスできない、`Public`です。 たとえば、`Public`に変数が、`Private`構造体からではなく、構造体を含むクラスの内部からアクセスできるそのクラスの外です。  
   
-## Public  
- 宣言ステートメントで [Public](../../../../visual-basic/language-reference/modifiers/public.md) キーワードを使用して宣言した要素は、同じプロジェクト内からも、そのプロジェクトを参照している他のプロジェクトからも、そのプロジェクトからビルドされたアセンブリからもアクセスできます。  `Public` 宣言の例を次に示します。  
+## <a name="public"></a>パブリック  
+ [パブリック](../../../../visual-basic/language-reference/modifiers/public.md)宣言ステートメントでキーワードは、要素を同じプロジェクト内のすべてのコード、プロジェクトを参照する他のプロジェクトおよびプロジェクトからビルドされたアセンブリからアクセスできることを指定します。 次のコードはサンプル`Public`宣言します。  
   
 ```  
 Public Class classForEverybody  
 ```  
   
- `Public` は、モジュール レベル、インターフェイス レベル、または名前空間レベルでのみ使用できます。  つまり、パブリック要素は、ソース ファイルまたは名前空間のレベルか、インターフェイス内、モジュール内、クラス内、または構造体内では宣言できますが、プロシージャ内では宣言できません。  
+ 使用することができます`Public`モジュール、インターフェイス、または名前空間レベルでのみです。 つまり、元のファイルまたは名前空間、またはインターフェイス、モジュール、クラスまたは構造体の内部ではなく、プロシージャ レベルでパブリック要素を宣言することができます。  
   
-## Protected  
- 宣言ステートメントで [Protected](../../../../visual-basic/language-reference/modifiers/protected.md) キーワードを使用して宣言した要素は、同じクラス、またはそのクラスの派生クラスからしかアクセスできません。  `Protected` 宣言の例を次に示します。  
+## <a name="protected"></a>プロテクト  
+ [Protected](../../../../visual-basic/language-reference/modifiers/protected.md)宣言ステートメントでキーワードは、同じクラス内で、またはこのクラスから派生したクラスから、要素をからのみアクセスできることを指定します。 次のコードはサンプル`Protected`宣言します。  
   
 ```  
 Protected Class classForMyHeirs  
 ```  
   
- `Protected` は、クラス レベルでのみ、しかも、クラスのメンバーを宣言する場合にのみ使用できます。  つまり、プロテクト要素は、クラス内では宣言できますが、ソース ファイルや名前空間のレベルと、インターフェイス内、モジュール内、構造体内、およびプロシージャ内では宣言できません。  
+ 使用することができます`Protected`クラスでのみレベル、およびだけ宣言する場合、クラスのメンバーです。 つまり、元のファイルまたは名前空間、またはインターフェイス、モジュール、構造体、またはプロシージャ内のレベルではなくが、クラスでは、保護されている要素を宣言することができます。  
   
-## Friend  
- 宣言ステートメントで [Friend](../../../../visual-basic/language-reference/modifiers/friend.md) キーワードを使用して宣言した要素は、同じアセンブリからはアクセスできますが、そのアセンブリの外部からはアクセスできません。  `Friend` 宣言の例を次に示します。  
+## <a name="friend"></a>Friend  
+ [フレンド](../../../../visual-basic/language-reference/modifiers/friend.md)宣言ステートメントでキーワードは、同じアセンブリ内からではなく、要素をからアクセスできることを指定します、アセンブリ外です。 次のコードはサンプル`Friend`宣言します。  
   
 ```  
 Friend stringForThisProject As String  
 ```  
   
- `Friend` は、モジュール レベル、インターフェイス レベル、または名前空間レベルでのみ使用できます。  つまり、フレンド要素は、ソース ファイルまたは名前空間のレベルか、インターフェイス内、モジュール内、クラス内、または構造体内では宣言できますが、プロシージャ内では宣言できません。  
+ 使用することができます`Friend`モジュール、インターフェイス、または名前空間レベルでのみです。 これは、元のファイルまたは名前空間、またはインターフェイス、モジュール、クラスまたは構造体の内部ではなく、プロシージャ レベルでフレンド要素を宣言することを意味します。  
   
-## Protected Friend  
- 宣言ステートメントで `Protected` キーワードと `Friend` キーワードの両方を使用して宣言した要素は、派生クラス内と同じアセンブリ内のいずれか、または両方からアクセスできます。  次のコードは、`Protected` `Friend` 宣言の例を示します。  
+## <a name="protected-friend"></a>保護されたフレンド  
+ `Protected`と`Friend`宣言ステートメントでキーワードを指定の要素は、派生クラスから、または内からアクセスできます、同じアセンブリまたはその両方です。 次のコードはサンプル`Protected Friend`宣言します。  
   
 ```  
 Protected Friend stringForProjectAndHeirs As String  
 ```  
   
- `Protected` `Friend` は、クラス レベルでのみ、しかも、クラスのメンバーを宣言する場合にのみ使用できます。  つまり、プロテクト フレンド要素は、クラス内では宣言できますが、ソース ファイルや名前空間のレベルと、インターフェイス内、モジュール内、構造体内、およびプロシージャ内では宣言できません。  
+ 使用することができます`Protected Friend`クラスでのみレベル、およびだけ宣言する場合、クラスのメンバーです。 つまり、元のファイルまたは名前空間、またはインターフェイス、モジュール、構造体、またはプロシージャ内のレベルではなくが、クラスでは、保護されたフレンド要素を宣言することができます。  
   
-## Private  
- 宣言ステートメントで [Private](../../../../visual-basic/language-reference/modifiers/private.md) キーワードを使用して宣言した要素は、同じモジュール、クラス、または構造体からしかアクセスできません。  `Private` 宣言の例を次に示します。  
+## <a name="private"></a>Private  
+ [プライベート](../../../../visual-basic/language-reference/modifiers/private.md)宣言ステートメントでキーワードは、要素を同じモジュール、クラスまたは構造体からのみアクセスできることを指定します。 次のコードはサンプル`Private`宣言します。  
   
 ```  
 Private numberForMeOnly As Integer  
 ```  
   
- `Private` は、モジュール レベルでのみ使用できます。  つまり、プライベート要素は、モジュール内、クラス内、または構造体内では宣言できますが、ソース ファイルや名前空間のレベルと、インターフェイス内およびプロシージャ内では宣言できません。  
+ `Private` は、モジュール レベルでのみ使用できます。 これは、プライベート要素は、モジュール、クラス、または構造体の内部ではなく、ソース ファイルまたは名前空間、インターフェイス内またはプロシージャ内のレベルを宣言することを意味します。  
   
- モジュール レベルでは、アクセス レベル キーワードのない `Dim` ステートメントは、`Private` 宣言と等価です。  ただし、`Private` キーワードを使った方がコードがわかりやすくなります。  
+ モジュール レベルで、`Dim`アクセス レベル キーワードを指定せず、ステートメントは等価、`Private`宣言します。 ただしを使用する場合、`Private`コードを読みやすくするためにキーワード。  
   
-## アクセス修飾子  
- アクセス レベルを指定するキーワードは、*アクセス修飾子*と呼ばれます。  アクセス修飾子の比較を次の表に示します。  
+## <a name="access-modifiers"></a>アクセス修飾子  
+ アクセス レベルを指定するキーワードと呼ばれる*アクセス修飾子*です。 次の表では、アクセス修飾子を比較します。  
   
-|\[アクセス修飾子\]|付与されるアクセス レベル|このアクセス レベルで宣言できる要素|この修飾子を使用できる宣言コンテキスト|  
-|-----------------|-------------------|------------------------|-------------------------|  
-|`Public`|無制限:<br /><br /> パブリック要素を参照できるすべてのコードがアクセスできます。|インターフェイス<br /><br /> モジュール<br /><br /> Classes<br /><br /> 構造体<br /><br /> 構造体メンバー<br /><br /> 手順<br /><br /> プロパティ<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙型<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|ソース ファイル<br /><br /> 名前空間<br /><br /> Interface<br /><br /> Module<br /><br /> Class<br /><br /> Structure|  
-|`Protected`|派生:<br /><br /> プロテクト要素を宣言するクラス内のコード、またはそのクラスの派生したクラスが、この要素にアクセスできます。|インターフェイス<br /><br /> Classes<br /><br /> 構造体<br /><br /> 手順<br /><br /> プロパティ<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙型<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|Class|  
-|`Friend`|アセンブリ:<br /><br /> フレンド要素が宣言されているアセンブリ内のコードが、この要素にアクセスできます。|インターフェイス<br /><br /> モジュール<br /><br /> Classes<br /><br /> 構造体<br /><br /> 構造体メンバー<br /><br /> 手順<br /><br /> プロパティ<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙型<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|ソース ファイル<br /><br /> 名前空間<br /><br /> Interface<br /><br /> Module<br /><br /> Class<br /><br /> Structure|  
-|`Protected` `Friend`|`Protected` と `Friend` の結合:<br /><br /> プロテクト フレンド要素と同じクラスまたは同じアセンブリ内のコード、または要素のクラスから派生した各クラス内から、要素にアクセスできます。|インターフェイス<br /><br /> Classes<br /><br /> 構造体<br /><br /> 手順<br /><br /> プロパティ<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙型<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|Class|  
-|`Private`|宣言コンテキスト:<br /><br /> 含まれている型の中のコードを含め、プライベート要素が宣言されている型内のコードが、要素にアクセスできます。|インターフェイス<br /><br /> Classes<br /><br /> 構造体<br /><br /> 構造体メンバー<br /><br /> 手順<br /><br /> プロパティ<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙型<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|Module<br /><br /> Class<br /><br /> Structure|  
+|アクセス修飾子|付与されるアクセス レベル|このアクセス レベルで宣言されていることができます要素|宣言コンテキスト内部では、この修飾子を使用することができます。|  
+|---------------------|--------------------------|-----------------------------------------------------|----------------------------------------------------------------|  
+|`Public`|無制限の。<br /><br /> パブリック要素を参照するすべてのコードがアクセスできます。|インターフェイス<br /><br /> モジュール<br /><br /> クラス<br /><br /> 構造体<br /><br /> 構造体のメンバー<br /><br /> 手順<br /><br /> プロパティ<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|ソース ファイル<br /><br /> 名前空間<br /><br /> インターフェイス<br /><br /> モジュール<br /><br /> クラス<br /><br /> 構造体|  
+|`Protected`|継承。<br /><br /> 要素にアクセスできる保護対象の要素、または、そこから派生するクラスを宣言するクラス内のコードします。|インターフェイス<br /><br /> クラス<br /><br /> 構造体<br /><br /> 手順<br /><br /> プロパティ<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|クラス|  
+|`Friend`|アセンブリ:<br /><br /> フレンド要素にアクセスできる宣言されているアセンブリ内のコードします。|インターフェイス<br /><br /> モジュール<br /><br /> クラス<br /><br /> 構造体<br /><br /> 構造体のメンバー<br /><br /> 手順<br /><br /> プロパティ<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|ソース ファイル<br /><br /> 名前空間<br /><br /> インターフェイス<br /><br /> モジュール<br /><br /> クラス<br /><br /> 構造体|  
+|`Protected``Friend`|共用体の`Protected`と`Friend`:<br /><br /> 同じクラスまたは保護されたフレンド要素として、または要素のクラスから派生したクラス内では、同じアセンブリのコードは、アクセスできます。|インターフェイス<br /><br /> クラス<br /><br /> 構造体<br /><br /> 手順<br /><br /> プロパティ<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|クラス|  
+|`Private`|宣言コンテキスト。<br /><br /> 含まれる型は、内のコードを含め、プライベートの要素を宣言する型のコードは、要素にアクセスできます。|インターフェイス<br /><br /> クラス<br /><br /> 構造体<br /><br /> 構造体のメンバー<br /><br /> 手順<br /><br /> プロパティ<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|モジュール<br /><br /> クラス<br /><br /> 構造体|  
   
-## 参照  
- [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md)   
- [Static](../../../../visual-basic/language-reference/modifiers/static.md)   
- [Declared Element Names](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)   
- [References to Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)   
- [Declared Element Characteristics](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)   
- [Lifetime in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)   
- [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)   
- [How to: Control the Availability of a Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-availability-of-a-variable.md)   
- [Variables](../../../../visual-basic/programming-guide/language-features/variables/index.md)   
+## <a name="see-also"></a>関連項目  
+ [Dim ステートメント](../../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Static](../../../../visual-basic/language-reference/modifiers/static.md)  
+ [Declared Element Names](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
+ [宣言された要素の参照](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
+ [宣言された要素の特性](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
+ [Visual Basic における有効期間](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)  
+ [Visual Basic におけるスコープ](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)  
+ [方法: 変数の可用性を制御する](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-availability-of-a-variable.md)  
+ [変数](../../../../visual-basic/programming-guide/language-features/variables/index.md)  
  [変数宣言](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)

@@ -1,31 +1,37 @@
 ---
-title: "方法 : サービスのメッセージを検査および変更する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : サービスのメッセージを検査および変更する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 9c5b1cc7-84f3-45f8-9226-d59c278e8c42
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c919083b165233614a01faf3d63dacd6712fbd01
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : サービスのメッセージを検査および変更する
-検査またはを介して受信または送信メッセージを変更できる、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]クライアントを実装することによって、 <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=fullName>をサービス ランタイムに挿入します。 詳細については、次を参照してください。[ディスパッチャーの拡張](../../../../docs/framework/wcf/extending/extending-dispatchers.md)します。 サービスの同等の機能は、 <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=fullName>します。  
+# <a name="how-to-inspect-and-modify-messages-on-the-service"></a>方法 : サービスのメッセージを検査および変更する
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を実装し、それをサービス ランタイムに挿入することで、<xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType> クライアントの送受信メッセージを検査または変更できます。 詳細については、次を参照してください。[ディスパッチャーの拡張](../../../../docs/framework/wcf/extending/extending-dispatchers.md)です。 サービスの同等の機能は、<xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType> です。  
   
 ### <a name="to-inspect-or-modify-messages"></a>メッセージを検査または変更するには  
   
-1.  実装、 <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=fullName>インターフェイスです。  
+1.  <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType> インターフェイスを実装します。  
   
-2.  実装、 <xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=fullName>、 <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=fullName>、または<xref:System.ServiceModel.Description.IContractBehavior?displayProperty=fullName>インターフェイス サービス メッセージ インスペクターを容易に挿入するスコープによって異なります。  
+2.  サービス メッセージ インスペクターを容易に挿入したいスコープに応じて、<xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=nameWithType>、<xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType>、または <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> インターフェイスを実装します。  
   
-3.  呼び出しの前に、動作を挿入、 <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=fullName>メソッドを<xref:System.ServiceModel.ServiceHost?displayProperty=fullName>します。 詳細については、「[の構成と動作を使用したランタイムの拡張](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)します。  
+3.  <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> で <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> メソッドを呼び出す前に、動作を挿入します。 詳細については、「[を構成して、ランタイムのビヘイビアーの使用を拡張する](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)です。  
   
 ## <a name="example"></a>例  
  下のコード例では、次の項目を順番に示しています。  
@@ -42,11 +48,9 @@ caps.handback.revision: 6
  [!code-csharp[Interceptors#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/insertingbehaviors.cs#8)]
  [!code-vb[Interceptors#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/insertingbehaviors.vb#8)]  
   
- <!-- TODO: review snippet reference [!code[Interceptors#9](../../../../samples/snippets/common/VS_Snippets_CFX/interceptors/common/hostapplication.exe.config#9)]  -->
- <!-- TODO: review snippet reference [!code-csharp[Interceptors#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/hostapplication.exe.config#9)]  -->
- <!-- TODO: review snippet reference [!code-vb[Interceptors#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/hostapplication.exe.config#9)]  -->  
+ [!code-xml[Interceptors#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/hostapplication.exe.config#9)]  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=fullName>   
- <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=fullName>   
- [構成と動作を使用したランタイムの拡張](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
+ <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType>  
+ <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType>  
+ [構成して、ランタイムのビヘイビアーの使用を拡張します。](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)

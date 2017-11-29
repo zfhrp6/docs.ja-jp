@@ -1,49 +1,48 @@
 ---
-title: "構成ファイルを使用してサービスを構成する方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "サービスの構成 [WCF]"
+title: "構成ファイルを使用してサービスを構成する方法"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: configuring services [WCF]
 ms.assetid: c9c8cd32-2c9d-4541-ad0d-16dff6bd2a00
-caps.latest.revision: 29
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 28
+caps.latest.revision: "29"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 480cdb83248dc1cf9dd90c0f654aa4f269318c4a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 構成ファイルを使用してサービスを構成する方法
+# <a name="configuring-services-using-configuration-files"></a>構成ファイルを使用してサービスを構成する方法
 構成ファイルを使用して [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスを構成すると、デザイン時ではなく配置時にエンドポイントとサービス動作のデータを指定できるという柔軟性が生まれます。 ここでは使用可能な主要な技術について説明します。  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスは、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] の構成技術を使用して構成できます。 通常、XML 要素は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをホストするインターネット インフォメーション サービス \(IIS\) サイトの Web.config ファイルに追加されます。 この要素によって、コンピューターごとにエンドポイント アドレス \(サービスと通信するために使用する実際のアドレス\) などの詳細情報を変更できます。 また、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、システム指定の要素がいくつか用意されており、これらの要素によって、サービスの最も基本的な機能を簡単に選択できます。[!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] 以降では、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成要件を簡略化する新しい既定の構成モデルが付属しています。 特定のサービスに対し [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成を指定しないと、ランタイムは自動的にいくつかの標準エンドポイントおよびバインディング\/動作でサービスを構成します。 実際、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションのプログラミングにおいては、構成ファイルの記述が作業の大きな部分を占めます。  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスは、 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] の構成技術を使用して構成できます。 通常、XML 要素は、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをホストするインターネット インフォメーション サービス (IIS) サイトの Web.config ファイルに追加されます。 この要素によって、コンピューターごとにエンドポイント アドレス (サービスと通信するために使用する実際のアドレス) などの詳細情報を変更できます。 また、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、システム指定の要素がいくつか用意されており、これらの要素によって、サービスの最も基本的な機能を簡単に選択できます。 [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]以降では、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成要件を簡略化する新しい既定の構成モデルが付属しています。 特定のサービスに対し [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成を指定しないと、ランタイムは自動的にいくつかの標準エンドポイントおよびバインディング/動作でサービスを構成します。 実際、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションのプログラミングにおいては、構成ファイルの記述が作業の大きな部分を占めます。  
   
- [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [サービスのバインディングの構成](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)。 最もよく使用される要素の[!INCLUDE[crlist](../../../includes/crlist-md.md)]については、「[システム標準のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)」を参照してください。 既定のエンドポイント、バインディング、および動作の[!INCLUDE[crabout](../../../includes/crabout-md.md)]については、「[簡略化された構成](../../../docs/framework/wcf/simplified-configuration.md)」および「[WCF サービスの簡略化された構成](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)」を参照してください。  
+ [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][のサービスのバインドを構成する](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)です。 [!INCLUDE[crlist](../../../includes/crlist-md.md)] については、「 [System-Provided Bindings](../../../docs/framework/wcf/system-provided-bindings.md)。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md) 」および「 [Simplified Configuration for WCF Services](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)。  
   
 > [!IMPORTANT]
->  2 つの異なるバージョンのサービスが配置される side\-by\-side のシナリオを配置する場合、構成ファイルで参照されるアセンブリの部分名を指定する必要があります。 これは構成ファイルがすべてのバージョンのサービスで共有されて、異なるバージョンの .NET Framework で実行される可能性があるためです。  
+>  2 つの異なるバージョンのサービスが配置される side-by-side のシナリオを配置する場合、構成ファイルで参照されるアセンブリの部分名を指定する必要があります。 これは構成ファイルがすべてのバージョンのサービスで共有されて、異なるバージョンの .NET Framework で実行される可能性があるためです。  
   
-## System.Configuration: Web.config と App.config  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] の System.Configuration 構成システムを使用します。  
+## <a name="systemconfiguration-webconfig-and-appconfig"></a>System.Configuration: Web.config と App.config  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]の System.Configuration 構成システムを使用します。  
   
- [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] でサービスを構成するとき、Web.config ファイルまたは App.config ファイルのいずれかを使用して、設定を指定します。 選択する構成ファイル名は、サービスに選択したホスト環境によって異なります。 サービスのホストに IIS を使用している場合は、Web.config ファイルを使用します。 他のホスト環境を使用している場合、App.config ファイルを使用します。  
+ [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]でサービスを構成するとき、Web.config ファイルまたは App.config ファイルのいずれかを使用して、設定を指定します。 選択する構成ファイル名は、サービスに選択したホスト環境によって異なります。 サービスのホストに IIS を使用している場合は、Web.config ファイルを使用します。 他のホスト環境を使用している場合、App.config ファイルを使用します。  
   
- [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] では、App.config という名前のファイルを使用して、最終の構成ファイルを作成します。 構成で実際に使用される最終的な名前は、アセンブリ名によって異なります。 たとえば、アセンブリ名が "Cohowinery.exe" の場合、最終の構成ファイルの名前は "Cohowinery.exe.config" になります。 ただし、変更する必要があるのは App.config ファイルだけです。 このファイルで行った変更は、コンパイル時に自動的に最終のアプリケーション構成ファイルに反映されます。  
+ [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]では、App.config という名前のファイルを使用して、最終の構成ファイルを作成します。 構成で実際に使用される最終的な名前は、アセンブリ名によって異なります。 たとえば、アセンブリ名が "Cohowinery.exe" の場合、最終の構成ファイルの名前は "Cohowinery.exe.config" になります。 ただし、変更する必要があるのは App.config ファイルだけです。 このファイルで行った変更は、コンパイル時に自動的に最終のアプリケーション構成ファイルに反映されます。  
   
- App.config ファイルを使用しているとき、アプリケーションが開始され、構成が適用されると、構成システムは App.config ファイルを Machine.config ファイルの内容とマージします。 このしくみによって、Machine.config ファイルにはコンピューター全体の設定を定義できます。 App.config ファイルは、Machine.config ファイルの設定をオーバーライドするために使用できます。また、Machine.config ファイルにある設定をロックしてこの設定が使用されるようにすることもできます。 Web.config の場合、構成システムは、アプリケーション ディレクトリまでのすべてのディレクトリにある Web.config ファイルを、適用される構成にマージします。 構成と設定の優先順位[!INCLUDE[crabout](../../../includes/crabout-md.md)]、<xref:System.Configuration> 名前空間のトピックを参照してください。  
+ App.config ファイルを使用しているとき、アプリケーションが開始され、構成が適用されると、構成システムは App.config ファイルを Machine.config ファイルの内容とマージします。 このしくみによって、Machine.config ファイルにはコンピューター全体の設定を定義できます。 App.config ファイルは、Machine.config ファイルの設定をオーバーライドするために使用できます。また、Machine.config ファイルにある設定をロックしてこの設定が使用されるようにすることもできます。 Web.config の場合、構成システムは、アプリケーション ディレクトリまでのすべてのディレクトリにある Web.config ファイルを、適用される構成にマージします。 構成と設定の優先順位[!INCLUDE[crabout](../../../includes/crabout-md.md)] 、 <xref:System.Configuration> 名前空間のトピックを参照してください。  
   
-## 構成ファイルの主要セクション  
+## <a name="major-sections-of-the-configuration-file"></a>構成ファイルの主要セクション  
  構成ファイルの主要セクションには、次の要素があります。  
   
-```  
+```xml  
 <system.ServiceModel>  
   
    <services>  
@@ -76,59 +75,59 @@ caps.handback.revision: 28
 > [!NOTE]
 >  バインディングと動作のセクションは省略可能であり、必要な場合のみ追加されます。  
   
-### \<services\> 要素  
- `services` 要素には、アプリケーションによってホストされるすべてのサービスの仕様が入ります。[!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] の簡略化された構成モデル以降の場合、このセクションは省略可能です。  
+### <a name="the-services-element"></a>\<Services > 要素  
+ `services` 要素には、アプリケーションによってホストされるすべてのサービスの仕様が入ります。 [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]の簡略化された構成モデル以降の場合、このセクションは省略可能です。  
   
- [\<services\>](../../../docs/framework/configure-apps/file-schema/wcf/services.md)  
+ [\<サービス >](../../../docs/framework/configure-apps/file-schema/wcf/services.md)  
   
-### \<service\> 要素  
+### <a name="the-service-element"></a>\<Service > 要素  
  各サービスには次の属性があります。  
   
--   `name`。 \- サービス コントラクトの実装を提供する型を指定します。 これは、名前空間、期間、および型名を構成する完全修飾名です。 たとえば、`"MyNameSpace.myServiceType"` などです。  
+-   `name`。 - サービス コントラクトの実装を提供する型を指定します。 これは、名前空間、期間、および型名を構成する完全修飾名です。 たとえば、 `"MyNameSpace.myServiceType"`などです。  
   
--   `behaviorConfiguration`。 \- `behavior` 要素に存在するいずれかの `behaviors` 要素の名前を指定します。 指定された動作は、サービスが偽装を許可するかどうかなどのアクションを制御します。 その値が空の名前であるか、または `behaviorConfiguration` が指定されていない場合、サービスの動作の既定のセットがサービスに追加されます。  
+-   `behaviorConfiguration`。 - `behavior` 要素に存在するいずれかの `behaviors` 要素の名前を指定します。 指定された動作は、サービスが偽装を許可するかどうかなどのアクションを制御します。 その値が空の名前であるか、または `behaviorConfiguration` が指定されていない場合、サービスの動作の既定のセットがサービスに追加されます。  
   
--   [\<service\>](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
+-   [\<サービス >](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
   
-### \<endpoint\> 要素  
+### <a name="the-endpoint-element"></a>\<Endpoint > 要素  
  各エンドポイントには、次の属性で表されるアドレス、バインディング、およびコントラクトが必要です。  
   
--   `address`。 サービスの URI \(Uniform Resource Identifier\) を指定します。絶対アドレスまたはサービスのベース アドレスからの相対アドレスを指定できます。 空の文字列を設定した場合、サービスの <xref:System.ServiceModel.ServiceHost> を作成するときに指定したベース アドレスでエンドポイントを使用できることを示します。  
+-   `address`。 サービスの URI (Uniform Resource Identifier) を指定します。絶対アドレスまたはサービスのベース アドレスからの相対アドレスを指定できます。 空の文字列を設定した場合、サービスの <xref:System.ServiceModel.ServiceHost> を作成するときに指定したベース アドレスでエンドポイントを使用できることを示します。  
   
--   `binding`。 \- 通常、<xref:System.ServiceModel.WsHttpBinding> などのシステム指定のバインディングを指定しますが、ユーザー定義バインディングを指定することも可能です。 指定するバインディングによって、トランスポートの種類、使用するセキュリティとエンコーディング、および信頼できるセッション、トランザクション、またはストリーミングがサポートされるかどうか、または有効かどうかが決まります。  
+-   `binding`。 - 通常、 <xref:System.ServiceModel.WSHttpBinding>などのシステム指定のバインディングを指定しますが、ユーザー定義バインディングを指定することも可能です。 指定するバインディングによって、トランスポートの種類、使用するセキュリティとエンコーディング、および信頼できるセッション、トランザクション、またはストリーミングがサポートされるかどうか、または有効かどうかが決まります。  
   
--   `bindingConfiguration`。 バインディングの既定値を変更する必要がある場合、`binding` 要素の該当する `bindings` 要素を構成することによって変更できます。 この属性には、既定値の変更に使用される `name` 要素の`binding` 属性と同じ値を指定する必要があります。 名前を指定しない場合、またはバインディングに `bindingConfiguration` を指定しない場合、バインディングの種類の既定のバインディングは、エンドポイントで使用されます。  
+-   `bindingConfiguration`。 バインディングの既定値を変更する必要がある場合、 `binding` 要素の該当する `bindings` 要素を構成することによって変更できます。 この属性には、既定値の変更に使用される `name` 要素の `binding` 属性と同じ値を指定する必要があります。 名前を指定しない場合、またはバインディングに `bindingConfiguration` を指定しない場合、バインディングの種類の既定のバインディングは、エンドポイントで使用されます。  
   
--   `contract`。 コントラクトを定義するインターフェイスを指定します。 これは `name` 要素の `service` 属性で指定された共通言語ランタイム \(CLR\) 型で実装されたインターフェイスです。  
+-   `contract`。 コントラクトを定義するインターフェイスを指定します。 これは `name` 要素の `service` 属性で指定された共通言語ランタイム (CLR) 型で実装されたインターフェイスです。  
   
--   [\<endpoint\> element reference](http://msdn.microsoft.com/ja-jp/13aa23b7-2f08-4add-8dbf-a99f8127c017)  
+-   [\<endpoint > 要素のリファレンス](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017)  
   
-### \<bindings\> 要素  
+### <a name="the-bindings-element"></a>\<バインド > 要素  
  `bindings` 要素には、任意のサービスで定義される任意のエンドポイントによって使用できるすべてのバインディングに関する仕様が入ります。  
   
- [\<bindings\>](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)  
+ [\<バインド >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)  
   
-### \<binding\> 要素  
- `bindings` 要素に含まれる `binding` 要素には、システム指定のバインディング \(「[システム標準のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)」を参照\) またはカスタム バインディング \(「[カスタム バインディング](../../../docs/framework/wcf/extending/custom-bindings.md)」を参照\) のどちらかを指定できます。`binding` 要素には、バインディングを `name` 要素の `bindingConfiguration` 属性で指定されたエンドポイントと関連付ける `endpoint` 属性があります。 名前を指定しない場合、バインディングは、バインディングの既定の種類に対応します。  
+### <a name="the-binding-element"></a>\<バインディング > 要素  
+ `binding`に含まれる要素の`bindings`要素は、システム指定のバインディングのいずれかを指定できます (を参照してください[システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)) またはカスタム バインディング (を参照してください[カスタム バインド](../../../docs/framework/wcf/extending/custom-bindings.md))。 `binding` 要素には、バインディングを `name` 要素の `bindingConfiguration` 属性で指定されたエンドポイントと関連付ける `endpoint` 属性があります。 名前を指定しない場合、バインディングは、バインディングの既定の種類に対応します。  
   
- サービスとクライアントの構成の[!INCLUDE[crabout](../../../includes/crabout-md.md)]については、「[Configuring Windows Communication Foundation Applications](http://msdn.microsoft.com/ja-jp/13cb368e-88d4-4c61-8eed-2af0361c6d7a)」を参照してください。  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [Configuring Windows Communication Foundation Applications](http://msdn.microsoft.com/en-us/13cb368e-88d4-4c61-8eed-2af0361c6d7a)。  
   
- [\<binding\>](../../../docs/framework/misc/binding.md)  
+ [\<バインド >](../../../docs/framework/misc/binding.md)  
   
-### \<behaviors\> 要素  
+### <a name="the-behaviors-element"></a>\<動作 > 要素  
  これは、サービスの動作を定義する `behavior` 要素のコンテナー要素です。  
   
- [\<behaviors\>](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
+ [\<ビヘイビアー >](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
   
-### \<behavior\> 要素  
- 各 `behavior` 要素は、`name` 属性によって識別され、\<`throttling`\> などのシステム指定の動作またはカスタム動作のいずれかを定義します。 名前を指定しない場合、動作要素は、既定のサービスまたはエンドポイント動作に対応します。  
+### <a name="the-behavior-element"></a>\<動作 > 要素  
+ 各 `behavior` 要素は、`name` 属性によって識別され、<`throttling`> などのシステム指定の動作またはカスタム動作のいずれかを定義します。 名前を指定しない場合、動作要素は、既定のサービスまたはエンドポイント動作に対応します。  
   
- [\<behavior\>](../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)  
+ [\<動作 >](../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)  
   
-## バインディングと動作の構成を使用する方法  
+## <a name="how-to-use-binding-and-behavior-configurations"></a>バインディングと動作の構成を使用する方法  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、構成で参照システムを使用することによって、エンドポイント間で構成を簡単に共有できます。 構成値を直接エンドポイントに割り当てるのではなく、バインディング関連の構成値を `bindingConfiguration` セクションの `<binding>` 要素にグループ化します。 バインディング構成とは、バインディングの設定の名前付きグループです。 エンドポイントは、名前によって `bindingConfiguration` を参照できます。  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
  <system.serviceModel>  
@@ -158,11 +157,11 @@ caps.handback.revision: 28
 </configuration>  
 ```  
   
- `name` の `bindingConfiguration` は、`<binding>` 要素で設定します。`name` には、バインディングの種類 \(この場合は [\<basicHttpBinding\>](../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)\) のスコープ内で一意の文字列、または既定のバインディングを参照する空の値を指定する必要があります。 エンドポイントは、`bindingConfiguration` 属性をこの文字列に設定することによって構成にリンクします。  
+ `name` の `bindingConfiguration` は、 `<binding>` 要素で設定します。 `name`バインドの種類のスコープ内で一意の文字列にする必要があります: ここでは、 [< basicHttpBinding\>](../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)、または空の値を既定のバインディングを参照してください。 エンドポイントは、 `bindingConfiguration` 属性をこの文字列に設定することによって構成にリンクします。  
   
  `behaviorConfiguration` は、次のサンプルに示すように、同じ方法で実装されます。  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <system.serviceModel>  
@@ -184,21 +183,21 @@ caps.handback.revision: 28
        <endpoint   
           address="myAddress3" behaviorConfiguration="myBehavior"  
           binding="basicHttpBinding"  
-          contract=”MyContract” />  
+          contract="MyContract" />  
       </service>  
     </services>  
    </system.serviceModel>  
 </configuration>  
 ```  
   
- サービスの動作の既定のセットは、サービスに追加されることに注意してください。 このシステムでは、設定を再定義することなく、エンドポイント間で共通の構成を共有できます。 コンピューター全体のスコープが必要な場合は、バインディングまたは動作の構成を Machine.config に作成します。 構成設定は、すべての App.config ファイルで操作できます。[構成エディター ツール \(SvcConfigEditor.exe\)](../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md) を使用すると、構成を簡単に作成できます。  
+ サービスの動作の既定のセットは、サービスに追加されることに注意してください。 このシステムでは、設定を再定義することなく、エンドポイント間で共通の構成を共有できます。 コンピューター全体のスコープが必要な場合は、バインディングまたは動作の構成を Machine.config に作成します。構成設定は、すべての App.config ファイルで操作できます。 [Configuration Editor Tool (SvcConfigEditor.exe)](../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md) を使用すると、構成を簡単に作成できます。  
   
-## 動作のマージ  
+## <a name="behavior-merge"></a>動作のマージ  
  動作のマージ機能を使用すると、共通動作のセットを常に使用する場合に動作の管理が容易になります。 この機能では、さまざまなレベルの構成階層で動作を指定し、サービスが複数レベルの構成階層から動作を継承することができます。 このしくみを説明するため、IIS に次の仮想ディレクトリ レイアウトが存在するとします。  
   
- ~\\Web.config~\\Service.svc~\\Child\\Web.config~\\Child\\Service.svc  
+ ~\Web.config~\Service.svc~\Child\Web.config~\Child\Service.svc  
   
- また ~\\Web.config ファイルに次の内容が含まれているとします。  
+ また ~\Web.config ファイルに次の内容が含まれているとします。  
   
 ```xml  
 <configuration>  
@@ -212,10 +211,9 @@ caps.handback.revision: 28
     </behaviors>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
- さらに ~\\Child\\Web.config にある子 Web.config に次の内容が含まれているとします。  
+ さらに ~\Child\Web.config にある子 Web.config に次の内容が含まれているとします。  
   
 ```xml  
 <configuration>  
@@ -229,12 +227,11 @@ caps.handback.revision: 28
     </behaviors>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
- ~\\Child\\Service.svc にあるサービスは、serviceDebug 動作と serviceMetadata 動作の両方を持つ場合と同様に動作します。 ~\\Service.svc にあるサービスは、serviceDebug 動作のみを持ちます。 これによって、同じ名前の 2 つの動作コレクション \(この例では空の文字列\) がマージされます。  
+ ~\Child\Service.svc にあるサービスは、serviceDebug 動作と serviceMetadata 動作の両方を持つ場合と同様に動作します。 ~\Service.svc にあるサービスは、serviceDebug 動作のみを持ちます。 これによって、同じ名前の 2 つの動作コレクション (この例では空の文字列) がマージされます。  
   
- また、\<clear\> タグを使用して動作コレクションを消去したり、\<remove\> タグを使用してコレクションから個々の動作を削除することができます。 たとえば、次の 2 つの構成は serviceMetadata 動作のみを持つ子サービスになります。  
+ 使用して、動作コレクションをクリアすることも、\<オフ > タグを使用してコレクションから個々 の動作を削除、\<削除 > タグです。 たとえば、次の 2 つの構成は serviceMetadata 動作のみを持つ子サービスになります。  
   
 ```xml  
 <configuration>  
@@ -249,7 +246,6 @@ caps.handback.revision: 28
     </behaviors>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
 ```xml  
@@ -265,19 +261,18 @@ caps.handback.revision: 28
     </behaviors>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
  動作のマージは、上に示した名前なし動作コレクションだけでなく、名前付き動作コレクションにも適用できます。  
   
- 動作のマージは、IIS ホスト環境で機能し、Web.config ファイルがルートの Web.config ファイルおよび machine.config と階層的にマージされます。 ただし、動作のマージはアプリケーション環境でも機能し、machine.config を App.config ファイルとマージできます。  
+ 動作のマージは、IIS ホスト環境で機能し、Web.config ファイルがルートの Web.config ファイルおよび machine.config と階層的にマージされます。ただし、動作のマージはアプリケーション環境でも機能し、machine.config を App.config ファイルとマージできます。  
   
  動作のマージは、構成内のエンドポイント動作とサービス動作の両方に適用されます。  
   
- 親動作コレクションに既に存在する動作が子動作コレクションにも含まれている場合、子動作が親をオーバーライドします。 たとえば、親動作コレクションに `<serviceMetadata httpGetEnabled="False" />` があり、子動作コレクションに `<serviceMetadata httpGetEnabled="True" />` がある場合、動作コレクションで子動作が親動作をオーバーライドし、httpGetEnabled が "true" になります。  
+ 親動作コレクションに既に存在する動作が子動作コレクションにも含まれている場合、子動作が親をオーバーライドします。 親動作コレクションであれば`<serviceMetadata httpGetEnabled="False" />`あり、子動作コレクション`<serviceMetadata httpGetEnabled="True" />`、子動作が、動作コレクションで親動作をオーバーライドし、httpGetEnabled が"true"です。  
   
-## 参照  
- [簡略化された構成](../../../docs/framework/wcf/simplified-configuration.md)   
- [Configuring Windows Communication Foundation Applications](http://msdn.microsoft.com/ja-jp/13cb368e-88d4-4c61-8eed-2af0361c6d7a)   
- [\<service\>](../../../docs/framework/configure-apps/file-schema/wcf/service.md)   
- [\<binding\>](../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a>関連項目  
+ [簡略化された構成](../../../docs/framework/wcf/simplified-configuration.md)  
+ [Windows Communication Foundation アプリケーションの構成](http://msdn.microsoft.com/en-us/13cb368e-88d4-4c61-8eed-2af0361c6d7a)  
+ [\<サービス >](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
+ [\<バインド >](../../../docs/framework/misc/binding.md)

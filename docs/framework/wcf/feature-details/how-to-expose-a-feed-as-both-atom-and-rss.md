@@ -1,27 +1,33 @@
 ---
-title: "方法 : Atom および RSS の両方としてフィードを公開する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : Atom および RSS の両方としてフィードを公開する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: fe374932-67f5-487d-9325-f868812b92e4
-caps.latest.revision: 23
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 66b8ee21159d2900972a9cd8b42a9d26eefb8e01
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Atom および RSS の両方としてフィードを公開する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、配信フィードを公開するサービスを作成できます。  このトピックでは、Atom 1.0 と RSS 2.0 の両方を使用して配信フィードを公開する配信サービスを作成する方法について説明します。  このサービスは、どちらかの配信フォーマットを返すエンドポイントを公開します。  簡略化のため、この例で使用するサービスは自己ホスト型です。  運用環境では、このタイプのサービスは IIS または WAS でホストされます。  各種の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ホスティング オプション[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[ホスト](../../../../docs/framework/wcf/feature-details/hosting.md)」を参照してください。  
+# <a name="how-to-expose-a-feed-as-both-atom-and-rss"></a>方法 : Atom および RSS の両方としてフィードを公開する
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、配信フィードを公開するサービスを作成できます。 このトピックでは、Atom 1.0 と RSS 2.0 の両方を使用して配信フィードを公開する配信サービスを作成する方法について説明します。 このサービスは、どちらかの配信フォーマットを返すエンドポイントを公開します。 簡略化のため、この例で使用するサービスは自己ホスト型です。 運用環境では、このタイプのサービスは IIS または WAS でホストされます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]さまざまな[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]オプションをホストするを参照してください[ホスティング](../../../../docs/framework/wcf/feature-details/hosting.md)です。  
   
-### 基本的な配信サービスを作成するには  
+### <a name="to-create-a-basic-syndication-service"></a>基本的な配信サービスを作成するには  
   
-1.  <xref:System.ServiceModel.Web.WebGetAttribute> 属性でマークされたインターフェイスを使用して、サービス コントラクトを定義します。  配信フィードとして公開される各操作は、<xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> オブジェクトを返します。  <xref:System.ServiceModel.Web.WebGetAttribute> のパラメーターに注意してください。  `UriTemplate` は、このサービス操作を呼び出すために使用される URL を指定します。  このパラメーターに対する文字列には、\({*format*}\) のように、リテラルと変数を中かっこで囲んで指定します。  この変数は、サービス操作の `format` パラメーターに対応します。  [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.UriTemplate>.  `BodyStyle` は、このサービス操作が送受信するメッセージの書き方に影響を与えます。  <xref:System.ServiceModel.Web.WebMessageBodyStyle> は、このサービス操作に送受信されるデータが、インフラストラクチャにより定義された XML 要素でラップされないことを指定します。  [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.Web.WebMessageBodyStyle>.  
+1.  <xref:System.ServiceModel.Web.WebGetAttribute> 属性でマークされたインターフェイスを使用して、サービス コントラクトを定義します。 配信フィードとして公開される各操作は、<xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> オブジェクトを返します。 <xref:System.ServiceModel.Web.WebGetAttribute> のパラメーターに注意してください。 `UriTemplate` は、このサービス操作を呼び出すために使用される URL を指定します。 このパラメーターの文字列には、リテラルと中かっこ内の変数が含まれています ({*形式*})。 この変数は、サービス操作の `format` パラメーターに対応します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]「<xref:System.UriTemplate>」を参照してください。 `BodyStyle` は、このサービス操作が送受信するメッセージの書き方に影響を与えます。 <xref:System.ServiceModel.Web.WebMessageBodyStyle.Bare> は、このサービス操作に送受信されるデータが、インフラストラクチャにより定義された XML 要素でラップされないことを指定します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]「<xref:System.ServiceModel.Web.WebMessageBodyStyle>」を参照してください。  
   
      [!code-csharp[htAtomRss#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatomrss/cs/program.cs#0)]
      [!code-vb[htAtomRss#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatomrss/vb/program.vb#0)]  
@@ -54,9 +60,9 @@ caps.handback.revision: 23
      [!code-csharp[htAtomRss#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatomrss/cs/program.cs#5)]
      [!code-vb[htAtomRss#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatomrss/vb/program.vb#5)]  
   
-### サービスをホストするには  
+### <a name="to-host-the-service"></a>サービスをホストするには  
   
-1.  <xref:System.ServiceModel.Web.WebServiceHost> オブジェクトを作成します。  <xref:System.ServiceModel.Web.WebServiceHost> クラスは、エンドポイントがコードまたは構成で指定されない限り、自動的にエンドポイントをサービスのベース アドレスで追加します。  次の例は、既定のエンドポイントが公開されるので、エンドポイントは指定されません。  
+1.  <xref:System.ServiceModel.Web.WebServiceHost> オブジェクトを作成します。 <xref:System.ServiceModel.Web.WebServiceHost> クラスは、エンドポイントがコードまたは構成で指定されない限り、自動的にエンドポイントをサービスのベース アドレスで追加します。 次の例は、既定のエンドポイントが公開されるので、エンドポイントは指定されません。  
   
      [!code-csharp[htAtomRss#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatomrss/cs/program.cs#6)]
      [!code-vb[htAtomRss#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatomrss/vb/program.vb#6)]  
@@ -66,13 +72,13 @@ caps.handback.revision: 23
      [!code-csharp[htAtomRss#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatomrss/cs/program.cs#8)]
      [!code-vb[htAtomRss#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatomrss/vb/program.vb#8)]  
   
-### HTTP GET を使用して GetBlog を呼び出すには  
+### <a name="to-call-getblog-with-an-http-get"></a>HTTP GET を使用して GetBlog を呼び出すには  
   
-1.  Internet Explorer を開いて、次の URL を入力し、Enter キーを押します。  http:\/\/localhost:8000\/BlogService\/GetBlog  
+1.  Internet Explorer を開いて、次の URL を入力し、Enter キーを押します。 http://localhost:8000/BlogService/GetBlog  
   
-     この URL には、サービスのベース アドレス \(http:\/\/localhost:8000\/BlogService\)、エンドポイントの相対アドレス、および呼び出すサービス操作が含まれます。  
+     この URL には、サービスのベース アドレス (http://localhost:8000/BlogService)、エンドポイントの相対アドレス、および呼び出すサービス操作が含まれます。  
   
-### コードから GetBlog\(\) を呼び出すには  
+### <a name="to-call-getblog-from-code"></a>コードから GetBlog() を呼び出すには  
   
 1.  ベース アドレスと呼び出すメソッドを使用して <xref:System.Xml.XmlReader> を作成します。  
   
@@ -91,14 +97,14 @@ caps.handback.revision: 23
      [!code-csharp[htAtomRss#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatomrss/cs/snippets.cs#11)]
      [!code-vb[htAtomRss#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatomrss/vb/snippets.vb#11)]  
   
-## 使用例  
+## <a name="example"></a>例  
  この例の完全なコードの一覧を以下に示します。  
   
  [!code-csharp[htAtomRss#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatomrss/cs/program.cs#12)]  
   
-## コードのコンパイル  
+## <a name="compiling-the-code"></a>コードのコンパイル  
  上記のコードのコンパイル時には、System.ServiceModel.dll と System.ServiceModel.Web.dll が参照されます。  
   
-## 参照  
- <xref:System.ServiceModel.WebHttpBinding>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.ServiceModel.WebHttpBinding>  
  <xref:System.ServiceModel.Web.WebGetAttribute>

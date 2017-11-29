@@ -1,30 +1,29 @@
 ---
-title: "方法 : Windows Communication Foundation クライアントを使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "WCF クライアント [WCF], 使用"
+title: "方法 : Windows Communication Foundation クライアントを使用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: WCF clients [WCF], using
 ms.assetid: 190349fc-0573-49c7-bb85-8e316df7f31f
-caps.latest.revision: 38
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 38
+caps.latest.revision: "38"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c4b0612cc18129f9f35ed3f475bca8941a20d3ca
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows Communication Foundation クライアントを使用する
-これは、基本的な [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの作成に必要な 6 つのタスクのうち、最後のタスクです。  6 つのすべてのタスクの概要については、「[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)」を参照してください。  
+# <a name="how-to-use-a-windows-communication-foundation-client"></a>方法 : Windows Communication Foundation クライアントを使用する
+これは、基本的な [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの作成に必要な 6 つのタスクのうち、最後のタスクです。 タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  
   
- [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] プロキシを作成して構成したら、クライアント インスタンスを作成できます。また、クライアント アプリケーションをコンパイルし、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスとの通信に使用できます。  このトピックでは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントをインスタンス化し、使用する手順について説明します。  この手順は、次の 3 つの手順で構成されます。  
+ [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] プロキシを作成して構成したら、クライアント インスタンスを作成できます。また、クライアント アプリケーションをコンパイルし、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスとの通信に使用できます。 このトピックでは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントをインスタンス化し、使用する手順について説明します。 この手順は、次の 3 つの手順で構成されます。  
   
 1.  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントをインスタンス化します。  
   
@@ -32,7 +31,7 @@ caps.handback.revision: 38
   
 3.  操作の呼び出しが完了したらクライアントを閉じます。  
   
-### Windows Communication Foundation クライアントを使用するには  
+### <a name="to-use-a-windows-communication-foundation-client"></a>Windows Communication Foundation クライアントを使用するには  
   
 1.  GettingStartedClient プロジェクトの Program.cs ファイルまたは Program.vb ファイルを開き、既存のコードを次のコードで置き換えます。  
   
@@ -82,7 +81,6 @@ caps.handback.revision: 38
             }  
         }  
     }  
-  
     ```  
   
     ```  
@@ -133,44 +131,28 @@ caps.handback.revision: 38
         End Sub  
   
     End Module  
-  
     ```  
   
-     GettingStartedClient.ServiceReference1 をインポートする using または imports ステートメントに注意してください。  これによって、Visual Studio の "サービス参照の追加" によって生成されたコードがインポートされます。  そのコードは WCF プロキシをインスタンス化してから、電卓サービスによって公開されている各サービス操作を呼び出し、プロキシを閉じて終了します。  
+     GettingStartedClient.ServiceReference1 をインポートする using または imports ステートメントに注意してください。 これによって、Visual Studio の "サービス参照の追加" によって生成されたコードがインポートされます。 そのコードは WCF プロキシをインスタンス化してから、電卓サービスによって公開されている各サービス操作を呼び出し、プロキシを閉じて終了します。  
   
- これで、チュートリアルは終了です。  サービス コントラクトの定義、サービス コントラクトの実装、WCF プロキシの生成、WCF クライアント アプリケーションの構成、そしてプロキシの使用によるサービス操作の呼び出しを行いました。  アプリケーションをテストするには、まず GettingStartedHost を実行してサービスを開始し、次に GettingStartedClient を実行します。  GettingStartedHost からの出力は、次のようになります。  
+ これで、チュートリアルは終了です。 サービス コントラクトの定義、サービス コントラクトの実装、WCF プロキシの生成、WCF クライアント アプリケーションの構成、そしてプロキシの使用によるサービス操作の呼び出しを行いました。 アプリケーションをテストするには、まず GettingStartedHost を実行してサービスを開始し、次に GettingStartedClient を実行します。 GettingStartedHost からの出力は、次のようになります。  
   
 ```Output  
-  
-            サービスの準備は整っています。  サービスを終了するには、<Enter> キーを押します。  Received Add(100,15.99)  
-Return: 115.99  
-Received Subtract(145,76.54)  
-Return: 68.46  
-Received Multiply(9,81.25)  
-Return: 731.25  
-Received Divide(22,7)  
-Return: 3.14285714285714    
+The service is ready.Press <ENTER> to terminate service.Received Add(100,15.99)Return: 115.99Received Subtract(145,76.54)Return: 68.46Received Multiply(9,81.25)Return: 731.25Received Divide(22,7)Return: 3.14285714285714  
 ```  
   
  GettingStartedClient からの出力は、次のようになります。  
   
 ```Output  
-  
-            Add(100,15.99) = 115.99  
-Subtract(145,76.54) = 68.46  
-Multiply(9,81.25) = 731.25  
-Divide(22,7) = 3.14285714285714  
-  
-クライアントを終了するには、<Enter> キーを押します。  
-  
+Add(100,15.99) = 115.99Subtract(145,76.54) = 68.46Multiply(9,81.25) = 731.25Divide(22,7) = 3.14285714285714Press <ENTER> to terminate client.  
 ```  
   
-## 参照  
- [クライアントを構築する](../../../docs/framework/wcf/building-clients.md)   
- [方法 : クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)   
- [チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)   
- [基本的な WCF プログラミング](../../../docs/framework/wcf/basic-wcf-programming.md)   
- [方法 : 双方向コントラクトを作成する](../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)   
- [方法 : 双方向コントラクトを使用してサービスにアクセスする](../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)   
- [概要](../../../docs/framework/wcf/samples/getting-started-sample.md)   
- [自己ホスト](../../../docs/framework/wcf/samples/self-host.md)
+## <a name="see-also"></a>関連項目  
+ [クライアントを構築する](../../../docs/framework/wcf/building-clients.md)  
+ [方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  
+ [チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)  
+ [基本的な WCF プログラミング](../../../docs/framework/wcf/basic-wcf-programming.md)  
+ [方法: 双方向コントラクトを作成します。](../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)  
+ [方法: 双方向コントラクトでサービスへのアクセス](../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)  
+ [はじめに](../../../docs/framework/wcf/samples/getting-started-sample.md)  
+ [自己ホストします。](../../../docs/framework/wcf/samples/self-host.md)

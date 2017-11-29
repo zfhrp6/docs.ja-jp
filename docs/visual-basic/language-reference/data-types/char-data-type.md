@@ -1,46 +1,44 @@
 ---
-title: "Char Data Type (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Char"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "literal type characters, C"
-  - "Char data type"
-  - "C literal type character"
-  - "data types [Visual Basic], assigning"
-  - "Char data type, character literals"
+title: "文字型 (Char) (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Char
+helpviewer_keywords:
+- literal type characters [Visual Basic], C
+- Char data type
+- C literal type character [Visual Basic]
+- data types [Visual Basic], assigning
+- Char data type [Visual Basic], character literals
 ms.assetid: cd7547a9-7855-4e8e-b216-35d74a362657
-caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 16ff547fccbf4481d31ca79537962cc7090fc9b0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Char Data Type (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-0 ～ 65,535 の値を持つ符号なしの 16 ビット \(2 バイト\) コード ポイントを保持します。  各*コード ポイント* \(文字コード\) は、単一の Unicode 文字を表します。  
+# <a name="char-data-type-visual-basic"></a>文字型 (Char) (Visual Basic)
+0 から 65535 まで符号なし 16 ビット (2 バイト) コード ポイントを保持します。 各*コード ポイントが*、または文字コードを 1 つの Unicode 文字を表します。  
   
-## 解説  
- 単独の文字を扱う場合に `String` のオーバーヘッドを避けるには `Char` データ型を使用します。  複数の文字を扱う場合に、`Char` 要素の配列である `Char()` を使用することもできます。  
+## <a name="remarks"></a>コメント  
+ 使用して、`Char`データ型の 1 つのみを保持するために必要なときのオーバーヘッドが不要および文字`String`です。 使用することができる場合によっては`Char()`、配列の`Char`要素、複数の文字を保持するためにします。  
   
- `Char` の既定値は、コード ポイント 0 を持つ文字です。  
+ 既定値の`Char`が 0 のコード ポイントを使用して文字です。  
   
-## Unicode 文字  
- Unicode の最初の 128 個のコード ポイント \(0 ～ 127\) は、標準の英語版キーボードの文字と記号に  対応します。  これら最初の 128 個のコード ポイントは、ASCII 文字セットで定義された文字と同じです。  次の 128 個のコード ポイント \(128 ～ 255\) は、ラテン語系のアルファベット、アクセント記号、通貨記号、分数などの特殊文字を表します。  Unicode はその他のコード ポイント \(256\-65535\) を使用して、各言語の文字、発音符、数学記号、技術記号などのさまざまな記号を表します。  
+## <a name="unicode-characters"></a>Unicode 文字  
+ Unicode の最初の 128 個のコード ポイント (0 ~ 127) は、文字および記号の標準的な US キーボード上に対応します。 これらの最初の 128 個のコード ポイントと同じ、ASCII 文字セットを定義します。 2 番目の 128 個のコード ポイント (128 ~ 255) では、ラテン語系のアルファベット文字、アクセント記号、通貨記号、および分数などの特殊文字を表します。 Unicode は、さまざまな記号、世界中のテキスト文字、分音文字、数学と技術的な記号などの他のコード ポイント (256 ~ 65535) を使用します。  
   
- <xref:System.Char.IsDigit%2A> や <xref:System.Char.IsPunctuation%2A> などのメソッドを `Char` 型の変数で使用すると、Unicode の分類を判別できます。  
+ などのメソッドを使用する<xref:System.Char.IsDigit%2A>と<xref:System.Char.IsPunctuation%2A>上、`Char`の Unicode の分類を決定する変数。  
   
-## 型変換  
- Visual Basic では、`Char` 型と数値型の直接変換は行われません。  `Char` の値を、対応するコード ポイントを表す `Integer` に変換するには、<xref:Microsoft.VisualBasic.Strings.Asc%2A> 関数または <xref:Microsoft.VisualBasic.Strings.AscW%2A> 関数を使用します。  `Integer` の値を、このコード ポイントを持つ `Char` に変換するには、<xref:Microsoft.VisualBasic.Strings.Chr%2A> 関数または <xref:Microsoft.VisualBasic.Strings.ChrW%2A> 関数を使用します。  
+## <a name="type-conversions"></a>型変換  
+ Visual Basic では間で直接変換されません`Char`と数値の型。 使用することができます、<xref:Microsoft.VisualBasic.Strings.Asc%2A>または<xref:Microsoft.VisualBasic.Strings.AscW%2A>に変換する関数、`Char`値を`Integer`コード ポイントを表すです。 使用することができます、<xref:Microsoft.VisualBasic.Strings.Chr%2A>または<xref:Microsoft.VisualBasic.Strings.ChrW%2A>に変換する関数、`Integer`値を`Char`そのコード ポイントを保持します。  
   
- 型チェックのスイッチ \([Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md)\) がオンの場合、これが `Char` データ型であることを識別するために、リテラル型の文字を 1 文字の文字列に追加します。  次に例を示します。  
+ 型チェック スイッチの場合 ([Option Strict ステートメント](../../../visual-basic/language-reference/statements/option-strict-statement.md)) は、リテラルとして識別するために 1 文字の文字列にリテラルの型文字を追加する必要があります、`Char`データ型。 次に例を示します。  
   
 ```  
 Option Strict On  
@@ -52,27 +50,27 @@ charVar = "Z"
 charVar = "Z"C  
 ```  
   
-## プログラミングのヒント  
+## <a name="programming-tips"></a>プログラミングのヒント  
   
--   **負の数。** `Char` は符号なしのデータ型で、負の値を表すことはできません。  数値を格納するのに `Char` は使用しません。  
+-   **負の数。** `Char`符号なしの型は、負の値を表すことはできません。 いずれの場合は、使用しないで`Char`数値の値を保持します。  
   
--   **相互運用の考慮事項。** オートメーション オブジェクトや COM オブジェクトなど、.NET Framework 向けに作成されていないコンポーネントを使用する場合、他の環境では文字型のデータ幅が異なる \(8 ビット\) ことに注意してください。  そのようなコンポーネントに 8 ビットの引数を渡す場合は、新しい Visual Basic のコードで、`Char` 型ではなく `Byte` 型として宣言します。  
+-   **相互運用の考慮事項。** オートメーション オブジェクトや COM オブジェクトなど、.NET Framework 用に作成されていないコンポーネントを使用する場合、他の環境では文字型の別のデータ幅 (8 ビット) ことに注意してください。 このようなコンポーネントを 8 ビットの引数を渡す場合として宣言`Byte`の代わりに`Char`新しい Visual Basic コードでします。  
   
--   **拡大変換。** `Char` データ型は、`String` に拡大されます。  つまり、`Char` は <xref:System.OverflowException?displayProperty=fullName> エラーにならずに `String` に変換できます。  
+-   **拡大します。** `Char`拡大変換後のデータ型`String`です。 つまり、変換することができます`Char`に`String`は発生しないと、<xref:System.OverflowException?displayProperty=nameWithType>エラーです。  
   
--   **型宣言文字。** 1 文字のリテラル文字列に、リテラルの型文字 `C` を追加すると、`Char` データ型に変換されます。  `Char` には識別子の型文字はありません。  
+-   **型宣言文字。** リテラルの型文字を付加する`C`1 文字の文字列にリテラルを強制的に、`Char`データ型。 `Char`識別子の型文字がありません。  
   
--   **Framework のデータ型。** .NET Framework において対応する型は、<xref:System.Char?displayProperty=fullName> 構造体です。  
+-   **Framework の型。** .NET Framework において対応する型は、<xref:System.Char?displayProperty=nameWithType> 構造体です。  
   
-## 参照  
- <xref:System.Char?displayProperty=fullName>   
- <xref:Microsoft.VisualBasic.Strings.Asc%2A>   
- <xref:Microsoft.VisualBasic.Strings.AscW%2A>   
- <xref:Microsoft.VisualBasic.Strings.Chr%2A>   
- <xref:Microsoft.VisualBasic.Strings.ChrW%2A>   
- [Data Types](../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [String Data Type](../../../visual-basic/language-reference/data-types/string-data-type.md)   
- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)   
- [How to: Call a Windows Function that Takes Unsigned Types](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)   
- [Efficient Use of Data Types](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Char?displayProperty=nameWithType>  
+ <xref:Microsoft.VisualBasic.Strings.Asc%2A>  
+ <xref:Microsoft.VisualBasic.Strings.AscW%2A>  
+ <xref:Microsoft.VisualBasic.Strings.Chr%2A>  
+ <xref:Microsoft.VisualBasic.Strings.ChrW%2A>  
+ [データの種類](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [String データ型](../../../visual-basic/language-reference/data-types/string-data-type.md)  
+ [データ型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [方法 : 符号なしの型を使用する Windows の機能を呼び出す](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)  
+ [データ型の有効な使用方法](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

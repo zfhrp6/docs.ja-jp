@@ -1,46 +1,37 @@
 ---
-title: "方法: LINQ (Visual Basic) で ArrayList を照会 |Microsoft ドキュメント"
+title: "方法: LINQ (Visual Basic) で ArrayList を照会します。"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 176358a9-d765-4b57-9557-7feb4428138d
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f48b06c23b1e28fccb953638954a8d9afefe574e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 6740d8a7c6d4a31ccd3730249695c24c6417785d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-query-an-arraylist-with-linq-visual-basic"></a>方法: クエリ、LINQ で ArrayList を (Visual Basic)
-LINQ を使用してクエリの非ジェネリックする<xref:System.Collections.IEnumerable>などコレクション<xref:System.Collections.ArrayList>、コレクション内のオブジェクトの特定の種類を反映するように範囲変数の型を明示的に宣言する必要があります</xref:System.Collections.ArrayList></xref:System.Collections.IEnumerable>。 ある場合など、<xref:System.Collections.ArrayList>の`Student`オブジェクト、 [From 句](../../../../visual-basic/language-reference/queries/from-clause.md)次のようになります:</xref:System.Collections.ArrayList>  
+# <a name="how-to-query-an-arraylist-with-linq-visual-basic"></a>方法: LINQ (Visual Basic) で ArrayList を照会します。
+LINQ を使用して <xref:System.Collections.ArrayList> などの非ジェネリックの <xref:System.Collections.IEnumerable> コレクションをクエリする場合、範囲変数の型を明示的に宣言して、オブジェクトの特定の型をコレクションに反映させる必要があります。 ある場合など、<xref:System.Collections.ArrayList>の`Student`、オブジェクト、 [From 句](../../../../visual-basic/language-reference/queries/from-clause.md)は次のようになります。  
   
 ```  
 Dim query = From student As Student In arrList   
 ...  
 ```  
   
- 内の各項目のキャストの範囲変数の型を指定することによって、<xref:System.Collections.ArrayList>に、 `Student`</xref:System.Collections.ArrayList> 。  
+ 範囲変数の型を指定することで、<xref:System.Collections.ArrayList> 内の各項目を `Student` にキャストします。  
   
- クエリ式で明示的に型指定された範囲変数の使用は呼び出すことと同じ、<xref:System.Linq.Enumerable.Cast%2A>メソッド</xref:System.Linq.Enumerable.Cast%2A>。 <xref:System.Linq.Enumerable.Cast%2A>指定されたキャストは実行できない場合は、例外をスローします。</xref:System.Linq.Enumerable.Cast%2A> <xref:System.Linq.Enumerable.Cast%2A><xref:System.Linq.Enumerable.OfType%2A>非ジェネリックで動作する&2; つの標準クエリ演算子メソッドを<xref:System.Collections.IEnumerable>の種類</xref:System.Collections.IEnumerable></xref:System.Linq.Enumerable.OfType%2A>。</xref:System.Linq.Enumerable.Cast%2A> Visual basic で明示的に呼び出す必要があります、<xref:System.Linq.Enumerable.Cast%2A>メソッドをデータ ソースを特定の範囲変数の型を確認します</xref:System.Linq.Enumerable.Cast%2A>。 詳細については、次を参照してください。[クエリ操作 (Visual Basic) での型の関係](../../../../visual-basic/programming-guide/concepts/linq/type-relationships-in-query-operations.md)します。  
+ 明示的に型指定された範囲変数をクエリ式で使用すると、<xref:System.Linq.Enumerable.Cast%2A> メソッドを呼び出した場合と同じ結果を得ることができます。 指定したキャストを実行できない場合、<xref:System.Linq.Enumerable.Cast%2A> は例外をスローします。 <xref:System.Linq.Enumerable.Cast%2A> および <xref:System.Linq.Enumerable.OfType%2A> は、非ジェネリックの <xref:System.Collections.IEnumerable> 型で動作する、2 つの標準クエリ演算子メソッドです。 Visual basic で明示的に呼び出す必要があります、<xref:System.Linq.Enumerable.Cast%2A>メソッドをデータ ソースを特定の範囲変数の型を確認します。 詳細については、次を参照してください。[クエリ操作 (Visual Basic) での型の関係](../../../../visual-basic/programming-guide/concepts/linq/type-relationships-in-query-operations.md)です。  
   
 ## <a name="example"></a>例  
- 次の例は、 <xref:System.Collections.ArrayList>。</xref:System.Collections.ArrayList>経由で簡単なクエリを示します この例では、コードを呼び出すときに、オブジェクト初期化子が使用して、メモ、<xref:System.Collections.ArrayList.Add%2A>メソッドが、これは必須ではありません</xref:System.Collections.ArrayList.Add%2A>。  
+ 次の例では、<xref:System.Collections.ArrayList> に対して単純なクエリを実行しています。 この例では、コードが <xref:System.Collections.ArrayList.Add%2A> メソッドを呼び出すときにオブジェクト初期化子を使用していますが、これは必須ではありません。  
   
 ```vb  
 Imports System.Collections  
@@ -96,4 +87,3 @@ End Module
   
 ## <a name="see-also"></a>関連項目  
  [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
-

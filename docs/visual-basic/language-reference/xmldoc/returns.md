@@ -1,48 +1,47 @@
 ---
-title: "&lt;returns&gt; (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "returns XML tag"
-  - "<returns> XML tag"
+title: "&lt;返します&gt;(Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- returns XML tag
+- <returns> XML tag
 ms.assetid: a03a6469-d907-425d-882f-083187950e7e
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: b6130a6fabe450900fe19ef4d361654508f907ea
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;returns&gt; (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
+# <a name="ltreturnsgt-visual-basic"></a>&lt;返します&gt;(Visual Basic)
 プロパティまたは関数の戻り値を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```  
+```xml  
 <returns>description</returns>  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `description`  
  戻り値の説明。  
   
-## 解説  
- `<returns>` タグは、メソッド宣言のコメント内で使用され、戻り値について説明します。  
+## <a name="remarks"></a>コメント  
+ 使用して、`<returns>`タグを戻り値を記述するメソッドの宣言をコメントにします。  
   
- コンパイル時に [\/doc](../../../visual-basic/reference/command-line-compiler/doc.md) を指定してドキュメント コメントをファイルに出力します。  
+ コンパイル時に [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) を指定して、ドキュメント コメントをファイルに出力します。  
   
-## 使用例  
- この例では、`<returns>` タグを使用して `DoesRecordExist` 関数が返す値について説明します。  
+## <a name="example"></a>例  
+ この例では、`<returns>`何かを説明するタグ、`DoesRecordExist`関数が返される。  
   
  [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/returns_1.vb)]  
   
-## 参照  
- [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)
+## <a name="see-also"></a>関連項目  
+ [XML のコメント用タグ](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

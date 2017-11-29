@@ -1,91 +1,97 @@
 ---
-title: "方法 : データ オブジェクトを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "データ オブジェクト [WPF], 作成"
-  - "DataObject クラス [WPF], 作成"
-  - "ドラッグ アンド ドロップ [WPF], 作成 (データ オブジェクトを)"
+title: "方法 : データ オブジェクトを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DataObject class [WPF], creating
+- data objects [WPF], creating
+- drag-and-drop [WPF], creating data objects
 ms.assetid: 022fa142-717d-4fea-a53c-3b52e9d91aff
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7b002e1c7a9eea2592de58aac3b838b9f6f982ce
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : データ オブジェクトを作成する
-<xref:System.Windows.DataObject> クラスによって提供されるコンストラクターを使用してデータ オブジェクトを作成するためのさまざまな方法を次の例に示します。  
+# <a name="how-to-create-a-data-object"></a>方法 : データ オブジェクトを作成する
+次の例は、によって提供されるコンス トラクターを使用して、データ オブジェクトを作成するさまざまな方法を示して、<xref:System.Windows.DataObject>クラスです。  
   
-## 例  
+## <a name="example"></a>例  
   
-### Description  
- 新しいデータ オブジェクトを作成し、オーバーロードされたコンストラクターのいずれか \(<xref:System.Windows.DataObject.%23ctor%28System.Object%29>\) を使用して、文字列でデータ オブジェクトを初期化するコード例を次に示します。  ここでは、格納されているデータの型に応じて適切なデータ形式が自動的に判別されます。既定では、格納されるデータの自動変換が有効です。  
+### <a name="description"></a>説明  
+ 次のコード例は、新しいデータ オブジェクトを作成し、オーバー ロードされたコンス トラクターのいずれかを使用して (<xref:System.Windows.DataObject.%23ctor%28System.Object%29>) を文字列でデータ オブジェクトを初期化します。  ここでは、格納されたデータの種類に応じて、適切なデータ形式が自動的に決定し、既定では、格納されたデータの自動変換は許可されています。  
   
-### コード  
+### <a name="code"></a>コード  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_Simple](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_simple)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_Simple](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_simple)]  
   
-### Description  
- 次のコード例は、上記のコードの縮小バージョンです。  
+### <a name="description"></a>説明  
+ 次のコード例は、上記のコードの圧縮バージョンです。  
   
-### コード  
+### <a name="code"></a>コード  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_Simple_Condensed](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_simple_condensed)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_Simple_Condensed](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_simple_condensed)]  
   
-## 例  
+## <a name="example"></a>例  
   
-### Description  
- 新しいデータ オブジェクトを作成し、オーバーロードされたこのコンストラクターのいずれか \(<xref:System.Windows.DataObject.%23ctor%28System.String%2CSystem.Object%29>\) を使用して、文字列と指定したデータ形式でデータ オブジェクトを初期化するコード例を次に示します。  ここでは、データ形式は文字列によって指定されます。<xref:System.Windows.DataFormats> クラスは、事前定義されている一連の型文字列を提供します。  既定では、格納されるデータの自動変換が有効です。  
+### <a name="description"></a>説明  
+ 次のコード例は、新しいデータ オブジェクトを作成し、オーバー ロードされたコンス トラクターのいずれかを使用して (<xref:System.Windows.DataObject.%23ctor%28System.String%2CSystem.Object%29>) 文字列と指定したデータ形式でデータ オブジェクトを初期化します。  ここでは、データ形式は文字列です。<xref:System.Windows.DataFormats>クラスには、事前に定義された型の文字列のセットが用意されています。 既定では、格納されたデータの自動変換は許可されています。  
   
-### コード  
+### <a name="code"></a>コード  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_TypeString](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_typestring)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_TypeString](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_typestring)]  
   
-### Description  
- 次のコード例は、上記のコードの縮小バージョンです。  
+### <a name="description"></a>説明  
+ 次のコード例は、上記のコードの圧縮バージョンです。  
   
-### コード  
+### <a name="code"></a>コード  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_TypeString_Condensed](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_typestring_condensed)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_TypeString_Condensed](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_typestring_condensed)]  
   
-## 例  
+## <a name="example"></a>例  
   
-### Description  
- 新しいデータ オブジェクトを作成し、オーバーロードされたこのコンストラクターのいずれか \(<xref:System.Windows.DataObject.%23ctor%2A>\) を使用して、文字列と指定したデータ形式でデータ オブジェクトを初期化するコード例を次に示します。  この場合、データ形式は <xref:System.Type> パラメーターによって指定されます。  既定では、格納されるデータの自動変換が有効です。  
+### <a name="description"></a>説明  
+ 次のコード例は、新しいデータ オブジェクトを作成し、オーバー ロードされたコンス トラクターのいずれかを使用して (<xref:System.Windows.DataObject.%23ctor%2A>) 文字列と指定したデータ形式でデータ オブジェクトを初期化します。  ここでは、データ形式は、<xref:System.Type>パラメーター。  既定では、格納されたデータの自動変換は許可されています。  
   
-### コード  
+### <a name="code"></a>コード  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_Type](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_type)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_Type](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_type)]  
   
-### Description  
- 次のコード例は、上記のコードの縮小バージョンです。  
+### <a name="description"></a>説明  
+ 次のコード例は、上記のコードの圧縮バージョンです。  
   
-### コード  
+### <a name="code"></a>コード  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_Type_Condensed](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_type_condensed)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_Type_Condensed](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_type_condensed)]  
   
-## 例  
+## <a name="example"></a>例  
   
-### Description  
- 新しいデータ オブジェクトを作成し、オーバーロードされたこのコンストラクターのいずれか \(<xref:System.Windows.DataObject.%23ctor%28System.String%2CSystem.Object%2CSystem.Boolean%29>\) を使用して、文字列と指定したデータ形式でデータ オブジェクトを初期化するコード例を次に示します。  ここでは、データ形式は文字列によって指定されます。<xref:System.Windows.DataFormats> クラスは、事前定義されている一連の型文字列を提供します。  この特定のコンストラクター オーバーロードにより、呼び出し元で自動変換を有効にするかどうかを指定できます。  
+### <a name="description"></a>説明  
+ 次のコード例は、新しいデータ オブジェクトを作成し、オーバー ロードされたコンス トラクターのいずれかを使用して (<xref:System.Windows.DataObject.%23ctor%28System.String%2CSystem.Object%2CSystem.Boolean%29>) 文字列と指定したデータ形式でデータ オブジェクトを初期化します。  ここでは、データ形式は文字列です。<xref:System.Windows.DataFormats>クラスには、事前に定義された型の文字列のセットが用意されています。 この特定のコンス トラクター オーバー ロードには、自動変換は許可されているかどうかを指定する、呼び出し元が有効です。  
   
-### コード  
+### <a name="code"></a>コード  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_AutoConvert](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_autoconvert)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_AutoConvert](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_autoconvert)]  
   
-### Description  
- 次のコード例は、上記のコードの縮小バージョンです。  
+### <a name="description"></a>説明  
+ 次のコード例は、上記のコードの圧縮バージョンです。  
   
-### コード  
+### <a name="code"></a>コード  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_AutoConvert_Condensed](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_autoconvert_condensed)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_AutoConvert_Condensed](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_autoconvert_condensed)]  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.IDataObject>

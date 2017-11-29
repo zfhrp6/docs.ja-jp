@@ -1,77 +1,76 @@
 ---
-title: "Parameter Arrays (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "parameter arrays, about parameter arrays"
-  - "ParamArray keyword, parameter arrays"
-  - "Visual Basic code, procedures"
-  - "parameters, parameter arrays"
-  - "arguments [Visual Basic], parameter arrays"
-  - "procedures, indefinite number of argument values"
-  - "arrays [Visual Basic], parameter arrays"
+title: "パラメーター配列 (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- parameter arrays [Visual Basic], about parameter arrays
+- ParamArray keyword [Visual Basic], parameter arrays
+- Visual Basic code, procedures
+- parameters [Visual Basic], parameter arrays
+- arguments [Visual Basic], parameter arrays
+- procedures [Visual Basic], indefinite number of argument values
+- arrays [Visual Basic], parameter arrays
 ms.assetid: c43edfae-9114-4096-9ebc-8c5c957a1067
-caps.latest.revision: 26
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 26
+caps.latest.revision: "26"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 8ca2b5f02ac4fb3eb613488c8a9852eb2aa4ce5d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Parameter Arrays (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-通常は、プロシージャ宣言で指定されているより多くの引数を使ってプロシージャを呼び出すことはできません。  不特定多数の引数が必要な場合は、*パラメーター配列*を宣言すると、値の配列をプロシージャのパラメーターとして渡すことができます。  プロシージャを定義するときには、パラメーター配列の要素の数がわからなくてもかまいません。  配列のサイズは、プロシージャの呼び出しごとに個別に決定されます。  
+# <a name="parameter-arrays-visual-basic"></a>パラメーター配列 (Visual Basic)
+通常、プロシージャ宣言で指定より引数を持つプロシージャを呼び出すことはできません。 不特定多数の引数が必要なときを宣言できます、*パラメーター配列*、これにより、プロシージャ パラメーターの値の配列を受け入れるようにします。 プロシージャを定義するときに、パラメーター配列内の要素の数を把握する必要はありません。 配列のサイズは、プロシージャ呼び出しごとに個別に決定されます。  
   
-## ParamArray を宣言する  
- パラメーター リストでパラメーター配列を指定するには、[ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) キーワードを使用します。  次の規則が適用されます。  
+## <a name="declaring-a-paramarray"></a>ParamArray を宣言します。  
+ 使用する、 [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md)パラメーター リストでは、パラメーター配列を示すキーワードです。 次の規則が適用されます。  
   
--   プロシージャはパラメーター配列を 1 つだけ定義でき、これはプロシージャの定義の最後のパラメーターである必要があります。  
+-   プロシージャが 1 つだけのパラメーター配列を定義およびプロシージャの定義の最後のパラメーターをする必要があります。  
   
--   パラメーター配列は値渡しで渡す必要があります。  プロシージャ定義で [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) キーワードを使って明示的に指定することをお勧めします。  
+-   パラメーター配列は、値で渡される必要があります。 明示的に指定することをお勧め、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)プロシージャの定義のキーワードです。  
   
--   パラメーター配列は自動的に省略可能になります。  既定値は、パラメーター配列の要素型の空の 1 次元配列です。  
+-   パラメーター配列は、自動的に省略可能です。 既定値は、パラメーター配列の要素の型の空の 1 次元配列です。  
   
--   パラメーター配列より前には、必須のパラメーターだけを指定します。  省略可能なパラメーターはパラメーター配列だけであることが必要です。  
+-   パラメーター配列の前のすべてのパラメーターを必須にする必要があります。 パラメーター配列は、のみ省略可能なパラメーターである必要があります。  
   
-## ParamArray を呼び出す  
- パラメーター配列を定義するプロシージャを呼び出す場合、引数は次のいずれかの方法で渡します。  
+## <a name="calling-a-paramarray"></a>ParamArray を呼び出す  
+ パラメーター配列を定義するプロシージャを呼び出すときに、次の方法のいずれかで、引数を指定できます。  
   
--   なし。[ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) 引数は省略できます。  この場合は、空の配列がプロシージャに渡されます。  [Nothing](../../../../visual-basic/language-reference/nothing.md) キーワードを渡しても同じ結果になります。  
+-   何も — は、省略できます、 [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md)引数。 この場合、空の配列は、プロシージャに渡されます。 渡すことも、 [Nothing](../../../../visual-basic/language-reference/nothing.md)キーワードは、同じ効果を持つ。  
   
--   コンマで区切った任意の数の引数のリスト。  各引数のデータ型は、暗黙的に `ParamArray` 要素型に変換できる必要があります。  
+-   任意の数の引数、コンマ区切りの一覧。 各引数のデータ型は暗黙的に変換する必要があります、`ParamArray`要素の型。  
   
--   パラメーター配列と同じ要素型の配列  
+-   同じ要素を持つ配列は、パラメーター配列の要素型として入力します。  
   
- いずれの場合も、プロシージャ内のコードでは、各要素が `ParamArray` データ型と同じデータ型の 1 次元配列として、パラメーター配列を扱う必要があります。  
+ すべての場合、プロシージャ内のコード、パラメーターは配列として扱いますと同じデータ型の要素を持つ 1 次元配列、`ParamArray`データ型。  
   
 > [!IMPORTANT]
->  無限に増大する配列を扱う場合、アプリケーション内部の容量を超過してしまう可能性があります。  パラメーター配列を受け取る場合は、呼び出し元のコードが渡した配列のサイズをテストする必要があります。  このサイズがアプリケーションには大きすぎる場合、適切な手順を行う必要があります。  詳細については、「[配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)」を参照してください。  
+>  無制限に大きくなることが、配列を処理するたびに、アプリケーションの内部の容量を超過してしまうリスクがあります。 パラメーター配列を受け取る場合は、呼び出し元のコードによって渡される配列のサイズをテストする必要があります。 アプリケーションには大きすぎる場合は、適切な手順を実行します。 詳細については、次を参照してください。[配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)です。  
   
-## 例  
- 次の例では、関数 `calcSum`を定義し、ダイヤルいます。  パラメーター `args` の `ParamArray` の修飾子は可変数の引数を使用すると、関数ができます。  
+## <a name="example"></a>例  
+ 次の例を定義し、関数を呼び出す`calcSum`です。 `ParamArray`パラメーター修飾子`args`可変個の引数を受け入れるように関数を有効にします。  
   
  [!code-vb[VbVbalrStatements#26](../../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/parameter-arrays_1.vb)]  
   
- パラメーター配列を受け取るプロシージャを定義し、パラメーター配列に渡されたすべての要素の値を出力する例を次に示します。  
+ 次の例では、パラメーター配列を持つプロシージャを定義し、パラメーター配列に渡されるすべての配列要素の値を出力します。  
   
  [!code-vb[VbVbcnProcedures#48](./codesnippet/VisualBasic/parameter-arrays_2.vb)]  
   
  [!code-vb[VbVbcnProcedures#49](./codesnippet/VisualBasic/parameter-arrays_3.vb)]  
   
-## 参照  
- <xref:Microsoft.VisualBasic.Information.UBound%2A>   
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [Passing Arguments by Value and by Reference](../../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)   
- [Passing Arguments by Position and by Name](../../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)   
- [Optional Parameters](../../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)   
- [Procedure Overloading](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)   
- [配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.Information.UBound%2A>  
+ [手順](./index.md)  
+ [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)  
+ [引数の値渡しと参照渡し](./passing-arguments-by-value-and-by-reference.md)  
+ [位置と名前による引数渡し](./passing-arguments-by-position-and-by-name.md)  
+ [省略可能なパラメーター](./optional-parameters.md)  
+ [プロシージャのオーバーロード](./procedure-overloading.md)  
+ [配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)  
  [Optional](../../../../visual-basic/language-reference/modifiers/optional.md)

@@ -1,82 +1,81 @@
 ---
-title: "Scope in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "module scope"
-  - "scope, levels"
-  - "module level"
-  - "procedures, scope"
-  - "declared elements, scope"
-  - "namespaces, scope"
-  - "scope, declared elements"
-  - "scope, about scope"
-  - "levels of scope"
-  - "block scope"
-  - "scope, Visual Basic"
-  - "procedure scope"
+title: "Visual Basic におけるスコープ"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- module scope [Visual Basic]
+- scope [Visual Basic], levels
+- module level
+- procedures [Visual Basic], scope
+- declared elements [Visual Basic], scope
+- namespaces [Visual Basic], scope
+- scope [Visual Basic], declared elements
+- scope [Visual Basic], about scope
+- levels of scope [Visual Basic]
+- block scope [Visual Basic]
+- scope [Visual Basic], Visual Basic
+- procedure scope [Visual Basic]
 ms.assetid: 208106fe-79c9-4eec-93c6-55f08548895f
-caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: a9bfda19b9f5ee96d45a0322541b35dfab7635d7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Scope in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-宣言された要素の*スコープ*とは、名前に修飾子を付けたり [Imports Statement \(.NET Namespace and Type\)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)を使用して有効にすることなく、その要素を参照できるコードの範囲です。  要素は、次のいずれかのレベルのスコープを持つことができます。  
+# <a name="scope-in-visual-basic"></a>Visual Basic におけるスコープ
+*スコープ*一連の名前に修飾子またはを通じて使用できるようにせずに参照できるすべてのコードは、宣言された要素の[Imports ステートメント (.NET Namespace よぶ型)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)です。 要素は、次のレベルのいずれかのスコープを持つことができます。  
   
-|\[レベル\]|Description|  
-|-------------|-----------------|  
-|ブロック スコープ|要素が宣言されたコード ブロック内でのみ使用可能|  
-|プロシージャ スコープ|要素が宣言されたプロシージャ内のすべてのコードで使用可能|  
-|モジュール スコープ|要素が宣言されたモジュール内、クラス内、または構造体内のすべてのコードで使用可能|  
-|名前空間スコープ|要素が宣言された名前空間内のすべてのコードで使用可能|  
+|レベル|説明|  
+|-----------|-----------------|  
+|ブロック スコープ|宣言されたブロック、コード内でのみ使用可能|  
+|プロシージャ スコープ|宣言されているプロシージャ内のすべてのコードで使用可能|  
+|モジュール スコープ|モジュール、クラス、または構造体が宣言されているすべてのコードで使用可能|  
+|Namespace スコープ|宣言されている名前空間内のすべてのコードに使用可能|  
   
- 上に列挙したスコープのレベルは、下にいくほどスコープが広くなります。つまり、ブロック スコープが最も狭いスコープ、名前空間スコープが最も広いスコープです。ここでいう*最も狭いスコープ*とは、修飾子を付けずにその要素を参照できるコード範囲が最も小さいという意味です。  詳細については、このページの「スコープのレベル」を参照してください。  
+ これらのレベルのスコープから進行状況を最も狭い (ブロック)、最も幅の広い (名前空間) に場所*狭いスコープ*修飾なしの要素に参照できるコードの最小セットのことを意味します。 詳細については、このページで「レベルのスコープ」を参照してください。  
   
-## スコープの指定と変数の定義  
- 要素のスコープは、要素を宣言するときに指定します。  スコープは以下の要因によって決まります。  
+## <a name="specifying-scope-and-defining-variables"></a>スコープを指定して、変数を定義します。  
+ 宣言する場合は、要素のスコープを指定します。 スコープは、次の要因によって異なります。  
   
--   要素を宣言する領域 \(ブロック、プロシージャ、モジュール、クラス、または構造体\)  
+-   要素を宣言する地域 (ブロック、プロシージャ、モジュール、クラスまたは構造体)  
   
 -   要素の宣言を含む名前空間  
   
--   要素に宣言するアクセス レベル  
+-   要素の宣言するアクセス レベル  
   
- 名前が同じでスコープが異なる変数を定義する場合は、予想外の結果を招く可能性があるので注意してください。  詳細については、「[References to Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)」を参照してください。  
+ これを行うために名前が同じで別のスコープを持つ変数を定義するときは注意して、予期しない結果に可能性があります。 詳細については、「 [References to Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)」を参照してください。  
   
-## スコープのレベル  
- プログラミング要素は、宣言した領域全体にわたって使用できます。  同じ領域内のコードで要素を参照する場合は、名前に修飾子を付ける必要はありません。  
+## <a name="levels-of-scope"></a>スコープのレベル  
+ プログラミング要素は、その宣言領域全体で使用できます。 同じリージョン内のすべてのコードは、その名前を修飾せず、要素を参照できます。  
   
-### ブロック スコープ  
- ブロックとは、次のように、開始宣言ステートメントと終了宣言ステートメントで囲まれた一連のステートメントです。  
+### <a name="block-scope"></a>ブロック スコープ  
+ ブロックは、開始および終了して、次のような宣言ステートメントで囲まれたステートメントのセットを示します。  
   
--   `Do` と `Loop`  
+-   `Do` および `Loop`  
   
--   `For` `Each` と `Next`  
+-   `For`[`Each`] と`Next`  
   
--   `If` と `End If`  
+-   `If` および `End If`  
   
--   `Select` と `End Select`  
+-   `Select` および `End Select`  
   
--   `SyncLock` と `End SyncLock`  
+-   `SyncLock` および `End SyncLock`  
   
--   `Try` と `End Try`  
+-   `Try` および `End Try`  
   
--   `While` と `End While`  
+-   `While` および `End While`  
   
--   `With` と `End With`  
+-   `With` および `End With`  
   
- ブロック内で変数を宣言した場合、その変数はそのブロック内でのみ使用できます。  たとえば、次の例で整数型の変数 `cube` のスコープは `If` と `End If` の間のブロックであるため、実行ステップがこのブロックの外に出てしまうと `cube` を参照できなくなります。  
+ ブロック内で変数を宣言する場合は、そのブロック内でのみ使用できます。 次の例では、整数型の変数のスコープで`cube`間ブロック`If`と`End If`を参照することが不要になったと`cube`ブロックからの実行のパスとします。  
   
 ```  
 If n < 1291 Then  
@@ -86,24 +85,24 @@ End If
 ```  
   
 > [!NOTE]
->  スコープがブロック内に制限されている変数でも、有効期間はプロシージャ全体の有効期間と同じです。  プロシージャ内で同じブロックが複数回実行される場合、各ブロック変数には前に実行されたときの値が保持されています。  そのような場合に予想外の結果が生じるのを避けるために、ブロックの先頭ではブロック変数を初期化することをお勧めします。  
+>  変数のスコープは、ブロックに制限されている場合でもその有効期間はまだ全体のプロシージャのです。 処理中に、ブロックを複数回入力した場合、各ブロック変数は、前の値を保持します。 このようなケースで予期しない結果を回避するのには、ブロックの先頭でブロック変数を初期化することをお勧めします。  
   
-### プロシージャ スコープ  
- プロシージャ内で宣言した要素は、そのプロシージャの外では使用できません。  要素を使用できるのは、その要素の宣言を含むプロシージャだけです。  このレベルの変数は、*ローカル変数*とも呼ばれます。  ローカル要素を宣言するには、[Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md) を使用します。[Static](../../../../visual-basic/language-reference/modifiers/static.md) キーワードは指定することも省くこともできます。  
+### <a name="procedure-scope"></a>プロシージャ スコープ  
+ プロシージャ内で宣言された要素では、そのプロシージャの外部使用できません。 宣言を含むプロシージャのみを使用できます。 このレベルでの変数とも呼ばれる*ローカル変数*です。 宣言することで、 [Dim ステートメント](../../../../visual-basic/language-reference/statements/dim-statement.md)、有無にかかわらず、[静的](../../../../visual-basic/language-reference/modifiers/static.md)キーワード。  
   
- プロシージャとブロック スコープの間には密接な関係があります。  プロシージャ内のどのブロックにも含まれていない場所で変数を宣言した場合、その変数は、プロシージャ全体から成るブロックのブロック スコープを持つと見なすことができます。  
+ プロシージャとブロックのスコープは密接に関連します。 そのプロシージャ内で任意のブロックの外側ではなく、プロシージャ内部変数を宣言する場合は、プロシージャ全体をブロックがここでは、ブロック スコープを持つ、変数の考えることができます。  
   
 > [!NOTE]
->  `Static` 変数を含め、すべてのローカル要素は、宣言されたプロシージャ内にプライベートです。  プロシージャ内で [Public](../../../../visual-basic/language-reference/modifiers/public.md) キーワードを使って要素を宣言することはできません。  
+>  いる場合でも、すべてのローカル要素`Static`変数は、表示されている手順にプライベートです。 使用しているすべての要素を宣言することはできません、[パブリック](../../../../visual-basic/language-reference/modifiers/public.md)プロシージャ内でキーワード。  
   
-### モジュール スコープ  
- 便宜上、モジュール、クラス、および構造体に対して、*モジュール レベル* という 1 つの用語を使用します。  要素をモジュール レベルで宣言するには、モジュール、クラス、または構造体の中で、プロシージャやブロックの外に宣言ステートメントを配置します。  
+### <a name="module-scope"></a>モジュール スコープ  
+ 便宜上、1 つの用語*モジュール レベル*モジュール、クラス、および構造体に適用されます。 このレベルの要素を宣言するには、モジュール、クラスまたは構造体が、すべてのプロシージャまたはブロックの外部で宣言ステートメントを配置します。  
   
- モジュール レベルで要素を宣言するときは、選択するアクセス レベルによってスコープが決まります。  また、モジュール、クラス、または構造体を含む名前空間もスコープに影響します。  
+ モジュール レベルで宣言すると、選択したアクセス レベルは、スコープを決定します。 モジュール、クラスまたは構造体を含む名前空間もスコープに影響します。  
   
- [Private](../../../../visual-basic/language-reference/modifiers/private.md) のアクセス レベルを宣言した要素は、モジュール内のすべてのプロシージャから参照できますが、他のモジュール内のコードからは参照できません。  アクセス レベル キーワードを使用しないと、モジュール レベルの `Dim` ステートメントは既定で `Private` になります。  ただし、`Dim` ステートメントで `Private` キーワードを使用すると、スコープとアクセス レベルがより明確になります。  
+ 要素が宣言した[プライベート](../../../../visual-basic/language-reference/modifiers/private.md)アクセス レベルがある別のモジュール内のコードではなく、そのモジュール内のすべてのプロシージャにします。 `Dim`モジュール レベルのステートメントの既定値`Private`場合は、アクセス レベル キーワードを使用しないでください。 ただし、行うことができます、スコープとアクセス レベルより明確を使用して、`Private`キーワード、`Dim`ステートメントです。  
   
- 次の例の場合、モジュール内で定義されているすべてのプロシージャから、文字列変数 `strMsg` を参照できます。  2 番目のプロシージャが呼び出されると、文字列変数 `strMsg` の内容がダイアログ ボックスに表示されます。  
+ 次の例では、モジュールで定義されているすべてのプロシージャが文字列変数を参照できます`strMsg`です。 2 番目のプロシージャが呼び出されると、文字列変数の内容が表示されます`strMsg` ダイアログ ボックス。  
   
 ```  
 ' Put the following declaration at module level (not in any procedure).  
@@ -118,35 +117,35 @@ Sub usePrivateVariable()
 End Sub  
 ```  
   
-### 名前空間スコープ  
- [Friend](../../../../visual-basic/language-reference/modifiers/friend.md) キーワードまたは [Public](../../../../visual-basic/language-reference/modifiers/public.md) キーワードを使ってモジュール レベルで要素を宣言すると、宣言した名前空間内のすべてのプロシージャで使用できるようになります。  上の例を次のように変更すると、宣言した名前空間内のすべてのコードで文字列変数 `strMsg` を参照できるようになります。  
+### <a name="namespace-scope"></a>Namespace スコープ  
+ モジュールを使用してレベルにある要素を宣言する場合、[フレンド](../../../../visual-basic/language-reference/modifiers/friend.md)または[パブリック](../../../../visual-basic/language-reference/modifiers/public.md)要素が宣言されている名前空間全体ですべてのプロシージャを使用可能になったら、キーワード。 次の部分を変更前の例では、文字列変数に`strMsg`宣言の名前空間内の任意の場所のコードによって参照することができます。  
   
 ```  
 ' Include this declaration at module level (not inside any procedure).  
 Public strMsg As String  
 ```  
   
- 名前空間スコープには、入れ子にした名前空間も含まれます。  名前空間内で使用できる要素は、その名前空間内に入れ子にした名前空間の中からも使用できます。  
+ Namespace スコープには、入れ子になった名前空間が含まれています。 名前空間内で使用可能な要素もその名前空間内に入れ子に名前空間の中から使用できます。  
   
- プロジェクト内に [Namespace Statement](../../../../visual-basic/language-reference/statements/namespace-statement.md)が 1 つもない場合は、プロジェクト全体が同じ名前空間に属します。  この場合、名前空間スコープはプロジェクト スコープであると考えることができます。  モジュール、クラス、または構造体の中の `Public` 要素は、そのプロジェクトを参照するどのプロジェクトからも使用できます。  
+ いずれかのプロジェクトが含まれない場合[Namespace ステートメント](../../../../visual-basic/language-reference/statements/namespace-statement.md)s、プロジェクト内のすべてが同じ名前空間。 ここでは、名前空間のスコープはようなもののプロジェクト スコープ。 `Public`モジュール、クラス、または構造内の要素も、プロジェクトを参照する他のプロジェクトを使用できます。  
   
-## スコープの選択  
- 変数を宣言する際は、次の点を念頭に置いてスコープを選択する必要があります。  
+## <a name="choice-of-scope"></a>スコープの選択  
+ 変数を宣言するときにおく必要がありますに注意、次の点スコープを選択します。  
   
-### ローカル変数の利点  
- ローカル変数は、次の理由により、各種の一時的な計算を行う場合に最適です。  
+### <a name="advantages-of-local-variables"></a>ローカル変数の利点  
+ ローカル変数は、次の理由ですべての種類の一時的な計算は、適切な選択を。  
   
--   **名前の競合の回避。**ローカル変数には名前の重複が発生しません。  たとえば、`intTemp` という名前の変数を持つプロシージャを複数作成できます。  それぞれの `intTemp` をローカル変数として宣言する限り、各プロシージャは自分の `intTemp` 以外は認識しません。  いずれかのプロシージャがローカルの `intTemp` の値を変更しても、他のプロシージャの `intTemp` に影響が及ぶことはありません。  
+-   **名前の競合回避します。** ローカルの変数名が競合を受けやすくなります。 たとえば、という名前の変数を含むいくつかの異なる手順を作成することができます`intTemp`です。 各いる限り`intTemp`各プロシージャが、独自のバージョンのみを認識する、ローカル変数として宣言されての`intTemp`します。 任意の 1 つのプロシージャは、ローカルの値を変更できます`intTemp`影響を与えずに`intTemp`他のプロシージャ内の変数です。  
   
--   **メモリの使用量。**ローカル変数は、そのプロシージャの実行中にしかメモリを消費しません。  制御がプロシージャから呼び出し側のコードに戻ると、メモリは解放されます。  逆に、[Shared](../../../../visual-basic/language-reference/modifiers/shared.md) 変数および [Static](../../../../visual-basic/language-reference/modifiers/static.md) 変数は、アプリケーションが実行を終えるまでメモリ リソースを消費するため、これらの変数は必要な場合にのみ使用してください。  *インスタンス変数*は、インスタンスが存在している間メモリを消費します。このため、ローカル変数ほど効率的ではありませんが、`Shared` および `Static` 変数よりも効率的である可能性があります。  
+-   **メモリ使用量。** ローカル変数は、そのプロシージャの実行中にのみ、メモリを消費します。 プロシージャが呼び出し元のコードに戻るときに、自らのメモリは解放されます。 これに対し、 [Shared](../../../../visual-basic/language-reference/modifiers/shared.md)と[静的](../../../../visual-basic/language-reference/modifiers/static.md)変数、アプリケーションの実行が停止されるまで、メモリ リソースを消費するので、使用に必要な場合のみです。 *インスタンス変数*間メモリを消費、インスタンスが存在しているが、ローカル変数より効率的な可能性のあるより効率的`Shared`または`Static`変数。  
   
-### スコープをできるだけ狭くする  
- 変数や定数を宣言する場合に、通常、できる限りスコープを狭くすることをお勧めします \(最も狭いのはブロック スコープです\)。  スコープを狭くすると、メモリを節約できます。また、間違った変数を参照する可能性も低くなります。  同様に、プロシージャの呼び出し間で値を保持する必要がある場合だけ、変数を [Static](../../../../visual-basic/language-reference/modifiers/static.md) として宣言してください。  
+### <a name="minimizing-scope"></a>スコープを最小限に抑える  
+ 一般に、すべての変数または定数を宣言するとき、推奨されるプログラミング可能な幅の狭いスコープを作成することを (ブロック スコープは最も狭いです)。 これにより、メモリを節約できます、誤って間違った変数を参照する、コードの可能性を最小限に抑えられます。 同様に、ある変数を宣言する必要があります[静的](../../../../visual-basic/language-reference/modifiers/static.md)プロシージャ呼び出しの間には、その値を保持するために必要な場合のみです。  
   
-## 参照  
- [Declared Element Characteristics](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)   
- [How to: Control the Scope of a Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)   
- [Lifetime in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)   
- [Access Levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)   
- [References to Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)   
+## <a name="see-also"></a>関連項目  
+ [宣言された要素の特性](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
+ [方法: 変数のスコープを制御する](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)  
+ [Visual Basic における有効期間](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)  
+ [Visual Basic でのアクセス レベル](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
+ [宣言された要素の参照](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
  [変数宣言](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)

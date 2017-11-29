@@ -1,40 +1,32 @@
 ---
-title: "方法: LINQ クエリ (Visual Basic) のカスタム メソッドを追加 |Microsoft ドキュメント"
+title: "方法: LINQ クエリ (Visual Basic) のカスタム メソッドを追加"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 099b2e2a-83cd-45c6-aa4d-01b398b5faaf
-caps.latest.revision: 3
-author: stevehoag
-ms.author: shoag
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 166eb731d41e009c374ba55f929eed302793ecd0
-ms.lasthandoff: 03/13/2017
-
+caps.latest.revision: "3"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: c94973bf9eae0feb2f7690dcc10e839b6b7c060c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-add-custom-methods-for-linq-queries-visual-basic"></a>方法: LINQ クエリ (Visual Basic) のカスタム メソッドを追加
-LINQ クエリを使用する拡張メソッドを追加することでメソッドのセットを拡張する、<xref:System.Collections.Generic.IEnumerable%601>インターフェイス</xref:System.Collections.Generic.IEnumerable%601>。 たとえば、だけでなく、標準的な平均または操作の最大数は、値のシーケンスから単一の値を計算する場合は、カスタム集計メソッドを作成できます。 カスタム フィルターまたは一連の値の変換を特定のデータとして機能し、新しいシーケンスを返すメソッドを作成することもできます。 このようなメソッドの例としては<xref:System.Linq.Enumerable.Distinct%2A>、 <xref:System.Linq.Enumerable.Skip%2A>、 <xref:System.Linq.Enumerable.Reverse%2A>.</xref:System.Linq.Enumerable.Reverse%2A> </xref:System.Linq.Enumerable.Skip%2A> </xref:System.Linq.Enumerable.Distinct%2A>  
+<xref:System.Collections.Generic.IEnumerable%601> インターフェイスに拡張メソッドを追加することで、LINQ クエリに使用できるメソッド セットを拡張できます。 たとえば一連の値から単一の値を求めるために、平均値や最大値を求める標準的な演算に加えて、独自の集計メソッドを作成することができます。 また、一連の値を受け取って別の一連の値を返す特定のデータ変換やカスタム フィルターの働きを持ったメソッドを作成することもできます。 このようなメソッドには、<xref:System.Linq.Enumerable.Distinct%2A>、<xref:System.Linq.Enumerable.Skip%2A>、<xref:System.Linq.Enumerable.Reverse%2A> があります。  
   
- 拡張すると、<xref:System.Collections.Generic.IEnumerable%601>インターフェイス、列挙可能なコレクションにカスタム メソッドを適用することができます</xref:System.Collections.Generic.IEnumerable%601>。 詳細については、次を参照してください。[拡張メソッド](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)します。  
+ <xref:System.Collections.Generic.IEnumerable%601> インターフェイスを拡張すると、列挙可能なコレクションにカスタム メソッドを適用できます。 詳細については、「[拡張メソッド](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)」を参照してください。  
   
 ## <a name="adding-an-aggregate-method"></a>集計メソッドの追加  
- 集計メソッドは、一連の値から単一の値を計算します。 LINQ を含むいくつかの集計メソッドを提供する<xref:System.Linq.Enumerable.Average%2A>、 <xref:System.Linq.Enumerable.Min%2A>、 <xref:System.Linq.Enumerable.Max%2A>.</xref:System.Linq.Enumerable.Max%2A> </xref:System.Linq.Enumerable.Min%2A> </xref:System.Linq.Enumerable.Average%2A> 拡張メソッドを追加することで、独自の集計メソッドを作成することができます、<xref:System.Collections.Generic.IEnumerable%601>インターフェイス</xref:System.Collections.Generic.IEnumerable%601>。  
+ 集計メソッドは、一連の値から単一の値を計算するメソッドです。 LINQ は、<xref:System.Linq.Enumerable.Average%2A>、<xref:System.Linq.Enumerable.Min%2A>、<xref:System.Linq.Enumerable.Max%2A> などの集計メソッドを提供します。 <xref:System.Collections.Generic.IEnumerable%601> インターフェイスに拡張メソッドを追加することで、独自の集計メソッドを作成できます。  
   
- 次のコード例は、という拡張メソッドを作成する方法を示しています。`Median`型の数値のシーケンスの中央値を計算する`double`です。  
+ 次のコード例は、`double` 型の一連の数値から中央値を求める `Median` という拡張メソッドの作成方法を示しています。  
   
 ```vb  
 Imports System.Runtime.CompilerServices  
@@ -65,31 +57,72 @@ Module LINQExtension
 End Module  
 ```  
   
- 他の集計メソッドを呼び出すのと同じ方法で、列挙可能なコレクションに対してこの拡張メソッドを呼び出す、<xref:System.Collections.Generic.IEnumerable%601>インターフェイス</xref:System.Collections.Generic.IEnumerable%601>。  
+ この拡張メソッドは、<xref:System.Collections.Generic.IEnumerable%601> インターフェイスにある他の集計メソッドを呼び出すときと同じように、列挙可能な任意のコレクションに対して呼び出すことができます。  
   
 > [!NOTE]
->  Visual Basic ではできますか、または使用するメソッドの呼び出しの標準的なクエリ構文、`Aggregate`または`Group By`句。 詳細については、次を参照してください。 [Aggregate 句](../../../../visual-basic/language-reference/queries/aggregate-clause.md)と[グループ By 句](../../../../visual-basic/language-reference/queries/group-by-clause.md)します。  
+>  Visual basic でことができますか、またはを使用するメソッドを呼び出すのための標準的なクエリ構文、`Aggregate`または`Group By`句。 詳細については、次を参照してください。 [Aggregate 句](../../../../visual-basic/language-reference/queries/aggregate-clause.md)と[グループ By 句](../../../../visual-basic/language-reference/queries/group-by-clause.md)です。  
   
- 次のコード例を使用する方法を示しています、`Median`型の配列をメソッド`double`します。  
+ `double` 型の配列に対して `Median` メソッドを使用する方法を次のコード例に示します。  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
-<CodeContentPlaceHolder>2</CodeContentPlaceHolder>  
-### <a name="overloading-an-aggregate-method-to-accept-various-types"></a>さまざまな種類をそのまま使用する集計メソッドのオーバー ロード  
- さまざまな種類のシーケンスを受け入れるように、集計メソッドをオーバー ロードできます。 標準的なアプローチでは、各種類のオーバー ロードを作成します。 別の方法では、ジェネリック型を受け取るはデリゲートを使用して、特定の種類に変換するオーバー ロードを作成します。 どちらの方法を組み合わせることもできます。  
+```vb  
+Dim numbers1() As Double = {1.9, 2, 8, 4, 5.7, 6, 7.2, 0}  
   
-#### <a name="to-create-an-overload-for-each-type"></a>各種類のオーバー ロードを作成するには  
- サポートする各種類の特定のオーバー ロードを作成することができます。 次のコード例のオーバー ロードを示しています、`Median`のメソッド、`integer`型です。  
+Dim query1 = Aggregate num In numbers1 Into Median()  
   
-<CodeContentPlaceHolder>3</CodeContentPlaceHolder>  
- 呼び出せるように、`Median`両方のオーバー ロード`integer`と`double`型の場合、次のコードに示すようにします。  
+Console.WriteLine("Double: Median = " & query1)  
+```  
   
-<CodeContentPlaceHolder>4</CodeContentPlaceHolder>  
-<CodeContentPlaceHolder>5</CodeContentPlaceHolder>  
-<CodeContentPlaceHolder>6</CodeContentPlaceHolder>  
-#### <a name="to-create-a-generic-overload"></a>ジェネリック オーバー ロードを作成するには  
- 汎用オブジェクトのシーケンスを受け入れるオーバー ロードを作成することもできます。 このオーバー ロードは、パラメーターとしてデリゲートを受け取るし、それを使用してジェネリック型のオブジェクトのシーケンスを特定の種類に変換します。  
+```vb  
+' This code produces the following output:  
+'  
+' Double: Median = 4.85  
+```  
   
- 次のコードはのオーバー ロード、`Median`を受け取るメソッド、<xref:System.Func%602>をパラメーターとしてデリゲートします</xref:System.Func%602>。 このデリゲートがジェネリック型 T のオブジェクトを受け取るし、型のオブジェクトを返します`double`します。  
+
+### <a name="overloading-an-aggregate-method-to-accept-various-types"></a>さまざまな型を受け取るために集計メソッドをオーバーロードする  
+ 集計メソッドでさまざまな型を受け取るように、集計メソッドをオーバーロードすることができます。 その標準的な方法として、型ごとにオーバーロードを作成します。 または、ジェネリック型を受け取り、デリゲートを使って特定の型に変換するオーバーロードを作成する方法もあります。 その両方の方法を組み合わせることもできます。  
+  
+#### <a name="to-create-an-overload-for-each-type"></a>型ごとにオーバーロードを作成するには  
+ サポート予定の型ごとに固有のオーバーロードを作成できます。 次のコード例では、`integer` 型の `Median` メソッドのオーバーロードを示します。  
+  
+```vb  
+' Integer overload  
+  
+<Extension()>   
+Function Median(ByVal source As IEnumerable(Of Integer)) As Double  
+    Return Aggregate num In source Select CDbl(num) Into med = Median()  
+End Function  
+```  
+ これで、次のコードに示すように、`integer` 型と `double` 型の両方に対して、`Median` のオーバーロードを呼び出すことができるようになりました。  
+  
+```vb  
+Dim numbers1() As Double = {1.9, 2, 8, 4, 5.7, 6, 7.2, 0}  
+  
+Dim query1 = Aggregate num In numbers1 Into Median()  
+  
+Console.WriteLine("Double: Median = " & query1)  
+```  
+  
+```vb  
+Dim numbers2() As Integer = {1, 2, 3, 4, 5}  
+  
+Dim query2 = Aggregate num In numbers2 Into Median()  
+  
+Console.WriteLine("Integer: Median = " & query2)  
+```  
+  
+```vb  
+' This code produces the following output:  
+'  
+' Double: Median = 4.85  
+' Integer: Median = 3  
+```  
+  
+ 
+#### <a name="to-create-a-generic-overload"></a>ジェネリック オーバーロードを作成するには  
+ 一連のジェネリック オブジェクトを受け取るオーバーロードを作成することもできます。 このオーバーロードは、デリゲートをパラメーターとして受け取り、ジェネリック型の一連のオブジェクトを特定の型に変換します。  
+  
+ 次のコードは、<xref:System.Func%602> デリゲートをパラメーターとして受け取る `Median` メソッドのオーバーロードを示しています。 このデリゲートは、ジェネリック型 T のオブジェクトを受け取り、`double` 型のオブジェクトを返します。  
   
 ```vb  
 ' Generic overload.  
@@ -101,18 +134,61 @@ Function Median(Of T)(ByVal source As IEnumerable(Of T),
 End Function  
 ```  
   
- 呼び出せるように、`Median`任意の型のオブジェクトの順序のメソッドです。 型が、独自のメソッド オーバー ロードを持たない場合に、デリゲートのパラメーターを渡す必要あります。 Visual basic では、この目的のため、ラムダ式を使用できます。 また、使用する場合、`Aggregate`または`Group By`句メソッドの呼び出しではなく、任意の値またはこの句は、スコープ内の式を渡すことができます。  
+ これで、任意の型の一連のオブジェクトに対して `Median` メソッドを呼び出すことができます。 型に固有のメソッド オーバーロードがない場合は、デリゲート パラメーターを渡す必要があります。 Visual basic では、この目的のため、ラムダ式を使用できます。 また、使用する場合、`Aggregate`または`Group By`メソッドの呼び出しではなく句は、任意の値またはスコープ内にあるこの句の式を渡すことができます。  
   
- 次のコード例を呼び出す方法を示します、`Median`方法の整数の配列と文字列の配列。 文字列の場合は、配列内の文字列の長さの中央値が計算されます。 渡す方法の例、<xref:System.Func%602>にパラメーターをデリゲート、`Median`各ケースのメソッドです</xref:System.Func%602>。  
+ 次のコード例では、整数の配列と文字列の配列に対して `Median` メソッドを呼び出す方法を示します。 文字列の場合は、配列に格納されている文字列の長さの中央値が計算されます。 この例は、それぞれのケースについて、`Median` メソッドに <xref:System.Func%602> デリゲート パラメーターを渡す方法を示しています。  
   
-<CodeContentPlaceHolder>8</CodeContentPlaceHolder>  
-## <a name="adding-a-method-that-returns-a-collection"></a>コレクションを返すメソッドを追加します。  
- 拡張する、<xref:System.Collections.Generic.IEnumerable%601>を一連の値を返すカスタム クエリ メソッドを持つインターフェイスです</xref:System.Collections.Generic.IEnumerable%601>。 この場合、メソッドが型<xref:System.Collections.Generic.IEnumerable%601>。</xref:System.Collections.Generic.IEnumerable%601>のコレクションを返す必要があります。 値のシーケンスをフィルターまたはデータ変換を適用するのには、このようなメソッドを使用できます。  
+```vb  
+Dim numbers3() As Integer = {1, 2, 3, 4, 5}  
   
- 次の例は、という名前の拡張メソッドを作成する方法を示しています。`AlternateElements`最初の要素を起点として、コレクション内のその他のすべての要素を返します。  
+' You can use num as a parameter for the Median method   
+' so that the compiler will implicitly convert its value to double.  
+' If there is no implicit conversion, the compiler will  
+' display an error message.  
   
-<CodeContentPlaceHolder>9</CodeContentPlaceHolder>  
- 他のメソッドを呼び出すと同様に、列挙可能なコレクションに対してこの拡張メソッドを呼び出すことができます、<xref:System.Collections.Generic.IEnumerable%601>次のコードに示すように、インターフェイス:</xref:System.Collections.Generic.IEnumerable%601>  
+Dim query3 = Aggregate num In numbers3 Into Median(num)  
+  
+Console.WriteLine("Integer: Median = " & query3)  
+  
+Dim numbers4() As String = {"one", "two", "three", "four", "five"}  
+  
+' With the generic overload, you can also use numeric properties of objects.  
+  
+Dim query4 = Aggregate str In numbers4 Into Median(str.Length)  
+  
+Console.WriteLine("String: Median = " & query4)  
+  
+' This code produces the following output:  
+'  
+' Integer: Median = 3  
+' String: Median = 4  
+```  
+## <a name="adding-a-method-that-returns-a-collection"></a>コレクションを返すメソッドを追加する  
+ <xref:System.Collections.Generic.IEnumerable%601> インターフェイスは、一連の値を返すカスタム クエリ メソッドを追加することで拡張できます。 その場合、メソッドで型 <xref:System.Collections.Generic.IEnumerable%601> のコレクションを返す必要があります。 このようなメソッドを使用すると、一連の値にフィルターまたはデータ変換を適用することができます。  
+  
+ 次の例では、コレクション内の最初の要素から 1 つおきに要素を返す `AlternateElements` という名前の拡張メソッドを作成する方法を示しています。  
+  
+```vb  
+' Extension method for the IEnumerable(of T) interface.   
+' The method returns every other element of a sequence.  
+  
+<Extension()>   
+Function AlternateElements(Of T)(  
+    ByVal source As IEnumerable(Of T)  
+    ) As IEnumerable(Of T)  
+  
+    Dim list As New List(Of T)  
+    Dim i = 0  
+    For Each element In source  
+        If (i Mod 2 = 0) Then  
+            list.Add(element)  
+        End If  
+        i = i + 1  
+    Next  
+    Return list  
+End Function  
+```  
+ この拡張メソッドは、次のコードに示すとおり、<xref:System.Collections.Generic.IEnumerable%601> インターフェイスにある他のメソッドを呼び出すときと同じように、列挙可能な任意のコレクションに対して呼び出すことができます。  
   
 ```vb  
 Dim strings() As String = {"a", "b", "c", "d", "e"}  
@@ -131,5 +207,5 @@ Next
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Collections.Generic.IEnumerable%601></xref:System.Collections.Generic.IEnumerable%601>   
+ <xref:System.Collections.Generic.IEnumerable%601>  
  [拡張メソッド](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)

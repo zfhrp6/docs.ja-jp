@@ -1,37 +1,32 @@
 ---
-title: "方法: 軸メソッドの呼び出し (LINQ to XML) を連結する (Visual Basic) |Microsoft ドキュメント"
+title: "方法: チェーンの軸メソッドの呼び出し (LINQ to XML) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: e4e22942-39bd-460f-b3c0-9f09e53d3aa9
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7c0e9d440ab50b7f275296731e5210578bcedcaa
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 39579d08d339ed8964520936d28ee289de5fb15d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-chain-axis-method-calls-linq-to-xml-visual-basic"></a>方法: 軸メソッドの呼び出し (LINQ to XML) を連結する (Visual Basic)
+# <a name="how-to-chain-axis-method-calls-linq-to-xml-visual-basic"></a>方法: チェーンの軸メソッドの呼び出し (LINQ to XML) (Visual Basic)
 コードで使用する一般的なパターンでは、軸メソッドを呼び出してから、拡張メソッド軸のいずれかを呼び出します。  
   
- 2 つの軸の名前がある`Elements`要素のコレクションを返す:<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName>メソッドおよび<xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName>メソッド</xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName></xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName>。 この&2; つの軸を組み合わせて、ツリー内の指定した深さで指定した名前を持つ要素をすべて検索できます。  
+ 要素のコレクションを返す `Elements` という名前の軸には、<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> メソッドと <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> メソッドの 2 つがあります。 この 2 つの軸を組み合わせて、ツリー内の指定した深さで指定した名前を持つ要素をすべて検索できます。  
   
 ## <a name="example"></a>例  
- この例では<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName>と<xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName>すべてを検索する`Name`内のすべての要素`Address`内のすべての要素`PurchaseOrder`要素</xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName></xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName>。  
+ この例では、<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> および <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> を使用して、すべての `Name` 要素内にあるすべての `Address` 要素内で `PurchaseOrder` 要素をすべて検索します。  
   
- この例は、次の XML ドキュメントを使用して:[サンプル XML ファイル: 複数の発注書 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md)します。  
+ この例では、「[サンプル XML ファイル: 複数の購買発注書 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md)」の XML ドキュメントを使用します。  
   
 ```vb  
 Dim purchaseOrders As XElement = XElement.Load("PurchaseOrders.xml")  
@@ -54,7 +49,7 @@ Next
 <Name>Jessica Arnold</Name>  
 ```  
   
- これは、数式のための実装の&1; つ、`Elements`軸は<xref:System.Collections.Generic.IEnumerable%601><xref:System.Xml.Linq.XContainer></xref:System.Xml.Linq.XContainer></xref:System.Collections.Generic.IEnumerable%601>の拡張メソッドとして、。 <xref:System.Xml.Linq.XElement>派生<xref:System.Xml.Linq.XContainer>呼び出すことができますので、<xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName>メソッドの呼び出しの結果を<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName>メソッド</xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName></xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName></xref:System.Xml.Linq.XContainer>。</xref:System.Xml.Linq.XElement>  
+ このように出力されるのは、`Elements` 軸の実装の 1 つが、<xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XContainer> に対する拡張メソッドとして存在しているためです。 <xref:System.Xml.Linq.XElement> は <xref:System.Xml.Linq.XContainer> から派生するため、<xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> メソッドを呼び出した結果に対して <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> メソッドを呼び出すことができます。  
   
 ## <a name="example"></a>例  
  祖先が介在する可能性と介在しないが可能性がある場合に、特定の要素の深さにあるすべての要素を取得しなければならないことがあります。 たとえば、次のドキュメントで、`ConfigParameter` 要素の子である `Customer` 要素はすべて取得し、`ConfigParameter` 要素の子である `Root` は取得しないとします。  
@@ -81,7 +76,7 @@ Next
 </Root>  
 ```  
   
- これを行うには、使用することができます、<xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName>次のように、軸:</xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName>  
+ この操作を行うには、次のように <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> 軸を使用します。  
   
 ```vb  
 Dim root As XElement = XElement.Load("Irregular.xml")  
@@ -100,9 +95,9 @@ Next
 ```  
   
 ## <a name="example"></a>例  
- 次の例は名前空間に含まれている XML 用の手法です。これらの手法は上の例と同じ機能を表しています。 詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の使用](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)します。  
+ 次の例は名前空間に含まれている XML 用の手法です。これらの手法は上の例と同じ機能を表しています。 詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の操作](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)です。  
   
- この例は、次の XML ドキュメントを使用して:[サンプル XML ファイル: 複数の購買発注、Namespace で](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md)します。  
+ この例では、「[サンプル XML ファイル: 名前空間内の複数の購買発注書](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md)」の XML ドキュメントを使用します。  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  

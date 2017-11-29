@@ -1,56 +1,62 @@
 ---
-title: "ユーザー名クライアントを使用したメッセージ セキュリティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ユーザー名クライアントを使用したメッセージ セキュリティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 36335cb9-76b8-4443-92c7-44f081eabb21
-caps.latest.revision: 15
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 429136ab3e01f3f53f662db02bbac6096be48d11
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ユーザー名クライアントを使用したメッセージ セキュリティ
-メッセージ レベルのセキュリティで保護された [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスとクライアントを次の図に示します。サービスは X.509 証明書を使用して認証されます。クライアントはユーザー名とパスワードを使用して認証されます。  
+# <a name="message-security-with-a-user-name-client"></a>ユーザー名クライアントを使用したメッセージ セキュリティ
+メッセージ レベルのセキュリティで保護された [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスとクライアントを次の図に示します。 サービスは X.509 証明書を使用して認証されます。 クライアントはユーザー名とパスワードを使用して認証されます。  
   
- サンプル アプリケーションについては、「[メッセージ セキュリティ ユーザー名](../../../../docs/framework/wcf/samples/message-security-user-name.md)」を参照してください。  
+ サンプル アプリケーションについては、次を参照してください。[メッセージ セキュリティ ユーザー名](../../../../docs/framework/wcf/samples/message-security-user-name.md)です。  
   
- ![ユーザー名認証を使用する場合のメッセージ セキュリティ](../../../../docs/framework/wcf/feature-details/media/1fb10a61-7e1d-42f5-b1af-195bfee5b3c6.gif "1fb10a61\-7e1d\-42f5\-b1af\-195bfee5b3c6")  
+ ![ユーザー名認証を使用してメッセージ セキュリティ](../../../../docs/framework/wcf/feature-details/media/1fb10a61-7e1d-42f5-b1af-195bfee5b3c6.gif "1fb10a61-7e1d-42f5-b1af-195bfee5b3c6")  
   
-|特性|説明|  
-|--------|--------|  
+|特徴|説明|  
+|--------------------|-----------------|  
 |セキュリティ モード|メッセージ|  
 |相互運用性|[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のみ|  
-|認証 \(サーバー\)|初期ネゴシエーションにはサーバー認証が必要|  
-|認証 \(クライアント\)|ユーザー名\/パスワード|  
+|認証 (サーバー)|初期ネゴシエーションにはサーバー認証が必要|  
+|認証 (クライアント)|ユーザー名/パスワード|  
 |整合性|はい、共有のセキュリティ コンテキストを使用します|  
 |機密性|はい、共有のセキュリティ コンテキストを使用します|  
-|トランスポート|HTTP|  
+|Transport|HTTP|  
 |バインディング|<xref:System.ServiceModel.WSHttpBinding>|  
   
-## サービス  
- 次のコードと構成は、別々に実行します。以下のいずれかを実行します。  
+## <a name="service"></a>サービス  
+ 次のコードと構成は、別々に実行します。 次のいずれかの操作を行います。  
   
 -   構成を使用せずに、コードを使用してスタンドアロン サービスを作成します。  
   
 -   提供された構成を使用してサービスを作成しますが、エンドポイントを定義しません。  
   
-### コード  
+### <a name="code"></a>コード  
  次のコードは、メッセージ セキュリティを使用するサービス エンドポイントの作成方法を示します。  
   
  [!code-csharp[C_SecurityScenarios#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#9)]
  [!code-vb[C_SecurityScenarios#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#9)]  
   
-### 構成  
+### <a name="configuration"></a>構成  
  コードの代わりに次の構成を使用できます。  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <system.serviceModel>  
@@ -90,18 +96,18 @@ caps.handback.revision: 15
 </configuration>  
 ```  
   
-## クライアント  
+## <a name="client"></a>クライアント  
   
-### コード  
- クライアントを作成する場合のコード例を次に示します。バインディングはメッセージ モード セキュリティに対して行い、クライアント資格情報の種類は `UserName` に設定します。ユーザー名とパスワードの指定はコードを使用する場合に限られます \(構成可能ではありません\)。ユーザー名とパスワードを返すコードは、アプリケーション レベルで実行される必要があるため、ここには示しません。たとえば、Windows フォーム ダイアログ ボックスを使用してユーザーにデータを照会します。  
+### <a name="code"></a>コード  
+ クライアントを作成する場合のコード例を次に示します。 バインディングではメッセージ モード セキュリティを使用し、クライアント資格情報の種類は `UserName` に設定します。 ユーザー名とパスワードの指定はコードを使用する場合に限られます (構成可能ではありません)。 ユーザー名とパスワードを返すコードは、アプリケーション レベルで実行される必要があるため、ここには示しません。 たとえば、Windows フォーム ダイアログ ボックスを使用してユーザーにデータを照会します。  
   
  [!code-csharp[C_SecurityScenarios#16](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#16)]
  [!code-vb[C_SecurityScenarios#16](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#16)]  
   
-### 構成  
- クライアントを構成する場合のコード例を次に示します。バインディングはメッセージ モード セキュリティに対して行い、クライアント資格情報の種類は `UserName` に設定します。ユーザー名とパスワードの指定はコードを使用する場合に限られます \(構成可能ではありません\)。  
+### <a name="configuration"></a>構成  
+ クライアントを構成する場合のコード例を次に示します。 バインディングではメッセージ モード セキュリティを使用し、クライアント資格情報の種類は `UserName` に設定します。 ユーザー名とパスワードの指定はコードを使用する場合に限られます (構成可能ではありません)。  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <system.serviceModel>  
@@ -129,9 +135,9 @@ caps.handback.revision: 15
 </configuration>  
 ```  
   
-## 参照  
- [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)   
- [メッセージ セキュリティ ユーザー名](../../../../docs/framework/wcf/samples/message-security-user-name.md)   
- [サービス ID と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)   
- [\<identity\>](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)   
- [Windows Server AppFabric のセキュリティ モデル](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a>関連項目  
+ [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
+ [メッセージ セキュリティ ユーザー名](../../../../docs/framework/wcf/samples/message-security-user-name.md)  
+ [サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
+ [\<id >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)  
+ [Windows Server App Fabric のセキュリティ モデル](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

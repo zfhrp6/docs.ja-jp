@@ -1,34 +1,37 @@
 ---
-title: "方法: .NET Framework 3.0 がインストールされているかどうかを確認する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "検出 (WPF の存在を)"
-  - "WPT の存在, 検出"
-  - "WinFX ランタイム ユーザー エージェント文字列"
+title: "方法: .NET Framework 3.0 がインストールされているかどうかを確認する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WinFX Runtime user-agent string
+- presence of WPT [WPF], detecting
+- detecting WPF presence [WPF]
 ms.assetid: 7f71d652-1749-4379-945a-aa2e3994cb43
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e013c9426507e20da05df26932a1f9cf1e5df761
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法: .NET Framework 3.0 がインストールされているかどうかを確認する
-管理者が [!INCLUDE[TLA#tla_avalonwinfx](../../../../includes/tlasharptla-avalonwinfx-md.md)] アプリケーションをシステムに配置するには、最初に、[!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)] ランタイムが存在することを確認する必要があります。  ここでは、システムに [!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)] が存在するかどうかを確認するための、HTML\/JavaScript で記述されたスクリプトを示します。  
+# <a name="how-to-detect-whether-the-net-framework-30-is-installed"></a>方法: .NET Framework 3.0 がインストールされているかどうかを確認する
+管理者は展開する前に[!INCLUDE[TLA#tla_avalonwinfx](../../../../includes/tlasharptla-avalonwinfx-md.md)]アプリケーション システムでは、する必要がありますまずことを確認したこと、[!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)]ランタイムが存在します。 このトピックで記述されたスクリプトは、HTML または JavaScript を決定する管理者が使用できるのかどうか[!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)]は、システムに存在します。  
   
 > [!NOTE]
->  [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] のインストール、配置、および検出の詳細については、「[Deploying Microsoft .NET Framework Version 3.0](http://go.microsoft.com/fwlink/?LinkId=96739)」を参照してください。  
+>  インストール、配置、および検出についての詳細、[!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)]の説明を参照[を展開する Microsoft .NET Framework バージョン 3.0](http://go.microsoft.com/fwlink/?LinkId=96739)です。  
   
 <a name="content_expiration"></a>   
-## ".NET CLR" ユーザー エージェント文字列の検出  
- [!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)] がインストールされるときに、MSI によって ".NET CLR" およびバージョン番号が UserAgent 文字列に追加されます。  次の例では、単純な HTML ページに埋め込まれたスクリプトを示します。  このスクリプトは、UserAgent 文字列を検索して、[!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)] がインストールされているかどうかを判断し、検索の結果についてのステータス メッセージを表示します。  
+## <a name="detect-the-net-clr-user-agent-string"></a>".NET CLR"ユーザー エージェント文字列を検出します。  
+ ときに[!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)]がインストールされている、MSI バージョン番号と".NET CLR"文字列に追加 UserAgent です。 次の例では、単純な HTML ページに埋め込まれたスクリプトを示します。 スクリプトを決定する UserAgent 文字列を検索するかどうか[!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)]がインストールされているし、検索の結果のステータス メッセージを表示します。  
   
 ```  
 <HTML>  
@@ -118,16 +121,15 @@ caps.handback.revision: 12
     <div id="result" />  
   </BODY>  
 </HTML>  
-  
 ```  
   
- ".NET CLR " バージョンが検出された場合は、次のようなステータス メッセージが表示されます。  
+ ".NET CLR"バージョンの検索が成功した場合は、次のようなステータス メッセージが表示されます。  
   
  `This machine has the correct version of the .NET Framework 3.0: 3.0.04425.00`  
   
  `This machine's userAgent string is: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; InfoPath.1; .NET CLR 2.0.50727; .NET CLR 3.0.04425.00).`  
   
- それ以外の場合は、次のようなステータス メッセージが表示されます。  
+ それ以外の場合、次のようなステータス メッセージが表示されます。  
   
  `This machine does not have correct version of the .NET Framework 3.0.`  
   

@@ -1,52 +1,52 @@
 ---
-title: "方法 : TableLayoutPanel コントロール内でコントロールを配置して伸縮する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "net.ComponentModel.StyleCollectionEditor.TLP.AlignStretchCtrl"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "コントロール [Windows フォーム], エイリアスの使用"
-  - "コントロール [Windows フォーム], 拡大"
-  - "TableLayoutPanel コントロール [Windows フォーム], 拡大 (コントロールを)"
+title: "方法 : TableLayoutPanel コントロール内でコントロールを配置して伸縮する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: net.ComponentModel.StyleCollectionEditor.TLP.AlignStretchCtrl
+helpviewer_keywords:
+- TableLayoutPanel control [Windows Forms], stretching controls
+- controls [Windows Forms], stretching
+- controls [Windows Forms], aligning
 ms.assetid: 7dc1a157-6fee-4995-8ebc-b65bdc0909a8
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 043adb68b88ab031cea3de1206d1f2c4252b75d7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : TableLayoutPanel コントロール内でコントロールを配置して伸縮する
-<xref:System.Windows.Forms.Control.Anchor%2A> プロパティと <xref:System.Windows.Forms.Control.Dock%2A> プロパティを使用すると、<xref:System.Windows.Forms.TableLayoutPanel> 内でコントロールを配置して伸縮できます。  
+# <a name="how-to-align-and-stretch-a-control-in-a-tablelayoutpanel-control"></a>方法 : TableLayoutPanel コントロール内でコントロールを配置して伸縮する
+内のコントロールを拡大して整列することができます、<xref:System.Windows.Forms.TableLayoutPanel>で、<xref:System.Windows.Forms.Control.Anchor%2A>と<xref:System.Windows.Forms.Control.Dock%2A>プロパティです。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-### コントロールを配置して伸縮するには  
+### <a name="to-align-and-stretch-a-control"></a>配置して伸縮コントロール  
   
-1.  **ツールボックス**からフォームに、<xref:System.Windows.Forms.TableLayoutPanel> コントロールをドラッグします。  
+1.  ドラッグ、<xref:System.Windows.Forms.TableLayoutPanel>から制御、**ツールボックス**フォーム上にします。  
   
-2.  **ツールボックス**の <xref:System.Windows.Forms.Button> コントロールを <xref:System.Windows.Forms.TableLayoutPanel> コントロールの左上のセルにドラッグします。  <xref:System.Windows.Forms.Button> コントロールはセルの中央に配置されます。  
+2.  ドラッグ、<xref:System.Windows.Forms.Button>から制御、**ツールボックス**の左上隅のセルに、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。 <xref:System.Windows.Forms.Button>コントロールがセルの中央に配置します。  
   
-3.  <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Anchor%2A> プロパティの値を `Left,Right` に設定します。  <xref:System.Windows.Forms.Button> コントロールがセルの幅に合わせて伸縮します。  
+3.  値を設定、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Anchor%2A>プロパティを`Left,Right`です。 <xref:System.Windows.Forms.Button>端まで拡大に合わせてセルの幅を制御します。  
   
-4.  <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Anchor%2A> プロパティの値を `Top,Bottom` に設定します。  <xref:System.Windows.Forms.Button> コントロールがセルの高さに合わせて伸縮します。  
+4.  値を設定、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Anchor%2A>プロパティを`Top,Bottom`です。 <xref:System.Windows.Forms.Button>セルの高さが揃うように端まで拡大を制御します。  
   
-5.  <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Dock%2A> プロパティの値を <xref:System.Windows.Forms.DockStyle> に設定します。  <xref:System.Windows.Forms.Button> コントロールがセル全体に拡張します。  
+5.  値を設定、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Dock%2A>プロパティを<xref:System.Windows.Forms.DockStyle.Fill>です。 <xref:System.Windows.Forms.Button>コントロールがセルを満たす展開します。  
   
-6.  <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Dock%2A> プロパティの値を <xref:System.Windows.Forms.DockStyle> に設定します。  <xref:System.Windows.Forms.Button> コントロールが元のサイズに戻り、セルの左上隅に移動します。  **Windows フォーム デザイナー**で <xref:System.Windows.Forms.Control.Anchor%2A> プロパティが `Top, Left` に設定されているからです。  
+6.  値を設定、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Dock%2A>プロパティを<xref:System.Windows.Forms.DockStyle.None>です。 <xref:System.Windows.Forms.Button>コントロールは、元のサイズを返し、セルの左上隅に移動します。 **Windows フォーム デザイナー**設定が、<xref:System.Windows.Forms.Control.Anchor%2A>プロパティを`Top, Left`です。  
   
-7.  <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Anchor%2A> プロパティの値を `Bottom,Right` に設定します。  <xref:System.Windows.Forms.Button> コントロールがセルの右下隅に移動します。  
+7.  値を設定、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Anchor%2A>プロパティを`Bottom,Right`です。 <xref:System.Windows.Forms.Button>コントロールがセルの右下隅に移動します。  
   
-8.  <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Anchor%2A> プロパティの値を <xref:System.Windows.Forms.AnchorStyles> に設定します。  <xref:System.Windows.Forms.Button> コントロールがセルの中央に移動します。  
+8.  値を設定、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Anchor%2A>プロパティを<xref:System.Windows.Forms.AnchorStyles.None>です。 <xref:System.Windows.Forms.Button>コントロールがセルの中央に移動します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [TableLayoutPanel コントロール](../../../../docs/framework/winforms/controls/tablelayoutpanel-control-windows-forms.md)

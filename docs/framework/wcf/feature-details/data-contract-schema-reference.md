@@ -1,190 +1,192 @@
 ---
-title: "データ コントラクト スキーマの参照 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "データ コントラクト [WCF], スキーマの参照"
+title: "データ コントラクト スキーマの参照"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: data contracts [WCF], schema reference
 ms.assetid: 9ebb0ebe-8166-4c93-980a-7c8f1f38f7c0
-caps.latest.revision: 24
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 24
+caps.latest.revision: "24"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: b0838eeae79dff6e7f0371abe3a3ad23df0384a4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# データ コントラクト スキーマの参照
-ここでは、XML シリアル化用の共通言語ランタイム \(CLR\) 型を表すために <xref:System.Runtime.Serialization.DataContractSerializer> が使用する XML スキーマ \(XSD\) のサブセットについて説明します。  
+# <a name="data-contract-schema-reference"></a>データ コントラクト スキーマの参照
+ここでは、XML シリアル化用の共通言語ランタイム (CLR) 型を表すために <xref:System.Runtime.Serialization.DataContractSerializer> が使用する XML スキーマ (XSD) のサブセットについて説明します。  
   
-## DataContractSerializer のマッピング  
- `DataContractSerializer` は、メタデータ エンドポイントや [ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) を使用してメタデータを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスからエクスポートするときに、CLR 型を XSD にマッピングします。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [データ コントラクト シリアライザー](../../../../docs/framework/wcf/feature-details/data-contract-serializer.md)。  
+## <a name="datacontractserializer-mappings"></a>DataContractSerializer のマッピング  
+ また、 `DataContractSerializer` は、メタデータ エンドポイントや [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用してメタデータを [indigo1](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービスからエクスポートするときに、CLR 型を XSD にマッピングします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][データ コントラクト シリアライザー](../../../../docs/framework/wcf/feature-details/data-contract-serializer.md)です。  
   
- また、`DataContractSerializer` は、Svcutil.exe を使用して Web サービス記述言語 \(WSDL\) や XSD ドキュメントにアクセスし、サービスまたはクライアントのデータ コントラクトを生成するときに、XSD を CLR 型にマッピングします。  
+ また、 `DataContractSerializer` は、Svcutil.exe を使用して Web サービス記述言語 (WSDL) や XSD ドキュメントにアクセスし、サービスまたはクライアントのデータ コントラクトを生成するときに、XSD を CLR 型にマッピングします。  
   
- `DataContractSerializer` を使用して CLR 型にマッピングできるのは、この文書に記載されている要件に適合する XML スキーマ インスタンスに限られます。  
+ `DataContractSerializer`を使用して CLR 型にマッピングできるのは、この文書に記載されている要件に適合する XML スキーマ インスタンスに限られます。  
   
-### サポート レベル  
+### <a name="support-levels"></a>サポート レベル  
  `DataContractSerializer` は、特定の XML スキーマ機能に次のサポート レベルを提供します。  
   
--   **サポートあり**。 この機能から CLR 型または属性の一方または両方への、`DataContractSerializer` を使用する明示的なマッピングが存在します。  
+-   **サポートあり**。 この機能から CLR 型または属性の一方または両方への、 `DataContractSerializer`を使用する明示的なマッピングが存在します。  
   
--   **無視**。 この機能は、`DataContractSerializer` によってインポートされたスキーマで使用できますが、コードの生成に影響しません。  
+-   **無視**。 この機能は、 `DataContractSerializer`によってインポートされたスキーマで使用できますが、コードの生成に影響しません。  
   
--   **禁止**。`DataContractSerializer` は、この機能を使用するスキーマのインポートをサポートしません。 たとえば、Svcutil.exe は、この機能を使用するスキーマに基づいて WSDL にアクセスする場合、代わりに <xref:System.Xml.Serialization.XmlSerializer> を使用します。 これが既定値です。  
+-   **禁止**。 `DataContractSerializer` は、この機能を使用するスキーマのインポートをサポートしません。 たとえば、Svcutil.exe は、この機能を使用するスキーマに基づいて WSDL にアクセスする場合、代わりに <xref:System.Xml.Serialization.XmlSerializer> を使用します。 これが既定値です。  
   
-## 一般情報  
+## <a name="general-information"></a>一般情報  
   
--   スキーマ名前空間については、「[XML Schema \(XML スキーマ\)](http://go.microsoft.com/fwlink/?LinkId=95475)」を参照してください。 このドキュメントでは、プレフィックス "xs" を使用しています。  
+-   スキーマ名前空間については、「 [XML Schema (XML スキーマ)](http://go.microsoft.com/fwlink/?LinkId=95475)」を参照してください。 このドキュメントでは、プレフィックス "xs" を使用しています。  
   
 -   スキーマ以外の名前空間を含む属性は無視されます。  
   
--   注釈 \(このドキュメントで説明しているものを除きます\) はすべて無視されます。  
+-   注釈 (このドキュメントで説明しているものを除きます) はすべて無視されます。  
   
-### \<xs:schema\>: 属性  
+### <a name="xsschema-attributes"></a>\<xs:schema >: 属性  
   
 |属性|DataContract|  
-|--------|------------------|  
+|---------------|------------------|  
 |`attributeFormDefault`|無視されます。|  
 |`blockDefault`|無視されます。|  
-|`elementFormDefault`|修飾する必要があります。`DataContractSerializer` でスキーマをサポートするには、すべての要素を修飾する必要があります。 要素を修飾するには、xs:schema\/@elementFormDefault を "qualified" に設定するか、個々の要素の宣言で xs:element\/@form を "qualified" に設定します。|  
+|`elementFormDefault`|修飾する必要があります。 `DataContractSerializer`でスキーマをサポートするには、すべての要素を修飾する必要があります。 これには、いずれかの設定によってxs:schema/@elementFormDefaultを"qualified"かを設定してxs:element/@form各個々 の要素の宣言を"qualified"にします。|  
 |`finalDefault`|無視されます。|  
 |`Id`|無視されます。|  
-|`targetNamespace`|サポートされます。データ コントラクト名前空間にマッピングされます。 この属性を指定しなかった場合は、空の名前空間が使用されます。 予約されている名前空間 http:\/\/schemas.microsoft.com\/2003\/10\/Serialization\/ は指定できません。|  
+|`targetNamespace`|サポートされます。データ コントラクト名前空間にマッピングされます。 この属性を指定しなかった場合は、空の名前空間が使用されます。 予約されている名前空間 http://schemas.microsoft.com/2003/10/Serialization/ は指定できません。|  
 |`version`|無視されます。|  
   
-### \<xs:schema\> : コンテンツ  
+### <a name="xsschema-contents"></a>\<xs:schema >: コンテンツ  
   
 |目次|Schema|  
-|--------|------------|  
-|`include`|サポートされています。`DataContractSerializer` では xs:include と xs:import がサポートされています。 ただし、メタデータをローカル ファイルから読み込む場合、Svcutil.exe では、後続の `xs:include/@schemaLocation` 参照と `xs:import/@location` 参照が制限されます。 この場合、`include` ではなく帯域外機構を通じてスキーマ ファイルの一覧を渡す必要があります。`include` されたスキーマ ドキュメントは無視されます。|  
-|`redefine`|禁止。 セキュリティ上の理由により、`xs:redefine` では、`DataContractSerializer` の使用が禁止されています。`x:redefine` では、`schemaLocation` を後続させる必要があります。 状況によっては、DataContract を使用する Svcutil.exe では、`schemaLocation` の使用が制限されます。|  
-|`import`|サポートされています。`DataContractSerializer` では、`xs:include` と `xs:import` がサポートされています。 ただし、メタデータをローカル ファイルから読み込む場合、Svcutil.exe では、後続の `xs:include/@schemaLocation` 参照と `xs:import/@location` 参照が制限されます。 この場合、`include` ではなく帯域外機構を通じてスキーマ ファイルの一覧を渡す必要があります。`include` されたスキーマ ドキュメントは無視されます。|  
-|`simpleType`|サポートされています。`xs:simpleType` のセクションを参照してください。|  
-|`complexType`|サポートされます。データ コントラクトにマッピングされます。`xs:complexType` のセクションを参照してください。|  
-|`group`|無視されます。`DataContractSerializer` では、`xs:group`、`xs:attributeGroup`、および `xs:attribute` の使用はサポートされていません。 これらの宣言は `xs:schema` の子として無視され、`complexType` やその他のサポートされている構文内から参照できません。|  
-|`attributeGroup`|無視されます。`DataContractSerializer` では、`xs:group`、`xs:attributeGroup`、および `xs:attribute` の使用はサポートされていません。 これらの宣言は `xs:schema` の子として無視され、`complexType` やその他のサポートされている構文内から参照できません。|  
-|`element`|サポートされています。 グローバル要素宣言 \(GED\) を参照してください。|  
-|`attribute`|無視されます。`DataContractSerializer` では、`xs:group`、`xs:attributeGroup`、および `xs:attribute` の使用はサポートされていません。 これらの宣言は `xs:schema` の子として無視され、`complexType` やその他のサポートされている構文内から参照できません。|  
+|--------------|------------|  
+|`include`|サポートされています。 `DataContractSerializer` では xs:include と xs:import がサポートされています。 ただし、メタデータをローカル ファイルから読み込む場合、Svcutil.exe では、後続の `xs:include/@schemaLocation` 参照と `xs:import/@location` 参照が制限されます。 この場合、 `include` ではなく帯域外機構を通じてスキーマ ファイルの一覧を渡す必要があります。 `include`されたスキーマ ドキュメントは無視されます。|  
+|`redefine`|禁止。 セキュリティ上の理由により、 `xs:redefine` では、 `DataContractSerializer` の使用が禁止されています。 `x:redefine` では、 `schemaLocation` を後続させる必要があります。 状況によっては、DataContract を使用する Svcutil.exe では、 `schemaLocation`の使用が制限されます。|  
+|`import`|サポートされています。 `DataContractSerializer` では、 `xs:include` と `xs:import`がサポートされています。 ただし、メタデータをローカル ファイルから読み込む場合、Svcutil.exe では、後続の `xs:include/@schemaLocation` 参照と `xs:import/@location` 参照が制限されます。 この場合、 `include` ではなく帯域外機構を通じてスキーマ ファイルの一覧を渡す必要があります。 `include`されたスキーマ ドキュメントは無視されます。|  
+|`simpleType`|サポートされています。 `xs:simpleType` のセクションを参照してください。|  
+|`complexType`|サポートされます。データ コントラクトにマッピングされます。 `xs:complexType` のセクションを参照してください。|  
+|`group`|無視されます。 `DataContractSerializer` では、 `xs:group`、 `xs:attributeGroup`、および `xs:attribute`の使用はサポートされていません。 これらの宣言は `xs:schema`の子として無視され、 `complexType` やその他のサポートされている構文内から参照できません。|  
+|`attributeGroup`|無視されます。 `DataContractSerializer` では、 `xs:group`、 `xs:attributeGroup`、および `xs:attribute`の使用はサポートされていません。 これらの宣言は `xs:schema`の子として無視され、 `complexType` やその他のサポートされている構文内から参照できません。|  
+|`element`|サポートされています。 グローバル要素宣言 (GED) を参照してください。|  
+|`attribute`|無視されます。 `DataContractSerializer` では、 `xs:group`、 `xs:attributeGroup`、および `xs:attribute`の使用はサポートされていません。 これらの宣言は `xs:schema`の子として無視され、 `complexType` やその他のサポートされている構文内から参照できません。|  
 |`notation`|無視されます。|  
   
-## 複合型 – \<xs:complexType\>  
+## <a name="complex-types--xscomplextype"></a>複合型 – \<xs:complexType >  
   
-### 一般情報  
- 各複合型 \<xs:complexType\> は、データ コントラクトにマッピングされます。  
+### <a name="general-information"></a>一般情報  
+ 各複合型\<xs:complexType > データ コントラクトにマップします。  
   
-### \<xs:complexType\>: 属性  
+### <a name="xscomplextype-attributes"></a>\<xs:complexType >: 属性  
   
 |属性|Schema|  
-|--------|------------|  
-|`abstract`|false \(既定\) のみ有効です。|  
+|---------------|------------|  
+|`abstract`|false (既定) のみ有効です。|  
 |`block`|禁止。|  
 |`final`|無視されます。|  
 |`id`|無視されます。|  
-|`mixed`|false \(既定\) のみ有効です。|  
-|`name`|サポートされています。データ コントラクト名にマッピングされます。 名前にピリオドが含まれている場合は、内部型への型のマッピングが実行されます。 たとえば、`A.B` という名前の複合型は、データ コントラクト名 `A` を持つ型の内部型であるデータ コントラクト型にマッピングされますが、このようなデータ コントラクト型が存在する場合に限られます。 複数レベルの入れ子が可能です。たとえば、`A.B.C` という内部型も可能ですが、これは、`A` と `A.B` の両方が存在する場合に限られます。|  
+|`mixed`|false (既定) のみ有効です。|  
+|`name`|サポートされています。データ コントラクト名にマッピングされます。 名前にピリオドが含まれている場合は、内部型への型のマッピングが実行されます。 たとえば、 `A.B` という名前の複合型は、データ コントラクト名 `A`を持つ型の内部型であるデータ コントラクト型にマッピングされますが、このようなデータ コントラクト型が存在する場合に限られます。 複数レベルの入れ子が可能です。たとえば、 `A.B.C` という内部型も可能ですが、これは、 `A` と `A.B` の両方が存在する場合に限られます。|  
   
-### \<xs:complexType\> : コンテンツ  
+### <a name="xscomplextype-contents"></a>\<xs:complexType >: コンテンツ  
   
 |目次|Schema|  
-|--------|------------|  
-|`simpleContent`|拡張は禁止です。<br /><br /> 制限は、`anySimpleType` からのみ許可されます。|  
+|--------------|------------|  
+|`simpleContent`|拡張は禁止です。<br /><br /> 制限は、 `anySimpleType`からのみ許可されます。|  
 |`complexContent`|サポートされています。 「継承」を参照してください。|  
 |`group`|禁止。|  
 |`all`|禁止。|  
-|`choice`|禁止。|  
+|`choice`|禁止|  
 |`sequence`|サポートされます。データ コントラクトのデータ メンバーにマッピングされます。|  
-|`attribute`|use\="prohibited" の場合でも禁止です \(ただし、例外が 1 つあります\)。 標準シリアル化スキーマ名前空間のオプションの属性のみがサポートされます。 これらは、データ コントラクト プログラミング モデルのデータ メンバーにマッピングされません。 現在、これらの属性で意味のあるものは 1 つだけです。詳細については、ISerializable のセクションを参照してください。 他の属性はすべて無視されます。|  
-|`attributeGroup`|禁止。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] v1 リリースの `DataContractSerializer` では、`attributeGroup` 内部の `xs:complexType` の存在が無視されます。|  
+|`attribute`|use="prohibited" の場合でも禁止です (ただし、例外が 1 つあります)。 標準シリアル化スキーマ名前空間のオプションの属性のみがサポートされます。 これらは、データ コントラクト プログラミング モデルのデータ メンバーにマッピングされません。 現在、これらの属性で意味のあるものは 1 つだけです。詳細については、ISerializable のセクションを参照してください。 他の属性はすべて無視されます。|  
+|`attributeGroup`|禁止。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] v1 リリースの `DataContractSerializer` では、 `attributeGroup` 内部の `xs:complexType`の存在が無視されます。|  
 |`anyAttribute`|禁止。|  
-|\(空\)|データ メンバーを持たないデータ コントラクトにマッピングされます。|  
+|(空)|データ メンバーを持たないデータ コントラクトにマッピングされます。|  
   
-### 複合型での \<xs:sequence\> : 属性  
+### <a name="xssequence-in-a-complex-type-attributes"></a>\<xs:sequence > 複合型で: 属性  
   
 |属性|Schema|  
-|--------|------------|  
+|---------------|------------|  
 |`id`|無視されます。|  
-|`maxOccurs`|1 \(既定\) のみ有効です。|  
-|`minOccurs`|1 \(既定\) のみ有効です。|  
+|`maxOccurs`|1 (既定) のみ有効です。|  
+|`minOccurs`|1 (既定) のみ有効です。|  
   
-### 複合型での \<xs:sequence\> : コンテンツ  
+### <a name="xssequence-in-a-complex-type-contents"></a>\<xs:sequence > 複合型で: コンテンツ  
   
 |目次|Schema|  
-|--------|------------|  
+|--------------|------------|  
 |`element`|各インスタンスがデータ メンバーにマッピングされます。|  
 |`group`|禁止。|  
 |`choice`|禁止。|  
 |`sequence`|禁止。|  
 |`any`|禁止。|  
-|\(空\)|データ メンバーを持たないデータ コントラクトにマッピングされます。|  
+|(空)|データ メンバーを持たないデータ コントラクトにマッピングされます。|  
   
-## 要素 – \<xs:element\>  
+## <a name="elements--xselement"></a>要素 – \<xs:element >  
   
-### 一般情報  
+### <a name="general-information"></a>一般情報  
  `<xs:element>` は、次の構文で発生します。  
   
--   `<xs:sequence>` 内で発生し、通常 \(コレクション以外\) のデータ コントラクトのデータ メンバーを表すことができます。 この場合、`maxOccurs` 属性は 1 にする必要があります  \(値 0 は使用できません\)。  
+-   `<xs:sequence>`内で発生し、通常 (コレクション以外) のデータ コントラクトのデータ メンバーを表すことができます。 この場合、 `maxOccurs` 属性は 1 にする必要があります (値 0 は使用できません)。  
   
--   `<xs:sequence>` 内で発生し、コレクション データ コントラクトのデータ メンバーを表すことができます。 この場合、`maxOccurs` 属性は 2 以上の値か、"unbounded" にする必要があります。  
+-   `<xs:sequence>`内で発生し、コレクション データ コントラクトのデータ メンバーを表すことができます。 この場合、 `maxOccurs` 属性は 2 以上の値か、"unbounded" にする必要があります。  
   
--   `<xs:schema>` 内で GED \(グローバル要素宣言\) として発生します。  
+-   `<xs:schema>` 内で GED (グローバル要素宣言) として発生します。  
   
-### \<xs:sequence\> 内の maxOccurs\=1 を持つ \<xs:element\> \(データ メンバー\)  
+### <a name="xselement-with-maxoccurs1-within-an-xssequence-data-members"></a>\<xs:element > maxOccurs = 1 内で、 \<xs:sequence > (データ メンバー)  
   
 |属性|Schema|  
-|--------|------------|  
+|---------------|------------|  
 |`ref`|禁止。|  
 |`name`|サポートされます。データ メンバー名にマッピングされます。|  
-|`type`|サポートされます。データ メンバー型にマッピングされます。 詳細については、「型\/プリミティブのマッピング」を参照してください。 指定しない場合 \(および要素に匿名型が含まれていない場合\) は、`xs:anyType` が使用されます。|  
+|`type`|サポートされます。データ メンバー型にマッピングされます。 詳細については、「型/プリミティブのマッピング」を参照してください。 指定しない場合 (および要素に匿名型が含まれていない場合) は、 `xs:anyType` が使用されます。|  
 |`block`|無視されます。|  
 |`default`|禁止。|  
 |`fixed`|禁止。|  
-|`form`|修飾する必要があります。 この属性は、`elementFormDefault` の `xs:schema` を通じて設定できます。|  
+|`form`|修飾する必要があります。 この属性は、 `elementFormDefault` の `xs:schema`を通じて設定できます。|  
 |`id`|無視されます。|  
 |`maxOccurs`|1|  
-|`minOccurs`|データ メンバーの <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> プロパティにマッピングされます \(`IsRequired` が 1 の場合、`minOccurs` は true です\)。|  
-|`nillable`|型のマッピングに影響します。 「型\/プリミティブのマッピング」を参照してください。|  
+|`minOccurs`|データ メンバーの <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> プロパティにマッピングされます (`IsRequired` が 1 の場合、 `minOccurs` は true です)。|  
+|`nillable`|型のマッピングに影響します。 「型/プリミティブのマッピング」を参照してください。|  
   
-### \<xs:sequence\> 内の maxOccurs\>1 を持つ \<xs:element\> \(コレクション\)  
+### <a name="xselement-with-maxoccurs1-within-an-xssequence-collections"></a>\<xs:element > に maxOccurs > 1 内で、 \<xs:sequence > (コレクション)  
   
--   <xref:System.Runtime.Serialization.CollectionDataContractAttribute> にマッピングされます。  
+-   <xref:System.Runtime.Serialization.CollectionDataContractAttribute>にマッピングされます。  
   
 -   コレクションの型では、xs:sequence 内で xs:element を 1 つしか使用できません。  
   
  コレクションは次のいずれかになります。  
   
--   標準コレクション \(配列など\)。  
+-   標準コレクション (配列など)。  
   
--   ディクショナリ コレクション \(1 つの値を別の値にマッピングする、<xref:System.Collections.Hashtable> など\)。  
+-   ディクショナリ コレクション (1 つの値を別の値にマッピングする、 <xref:System.Collections.Hashtable>など)。  
   
--   ディクショナリとキー\/値ペアの配列の種類との唯一の相違は、生成されるプログラミング モデルにあります。 特定の種類がディクショナリ コレクションであることを示すには、スキーマ注釈機構を使用できます。  
+-   ディクショナリとキー/値ペアの配列の種類との唯一の相違は、生成されるプログラミング モデルにあります。 特定の種類がディクショナリ コレクションであることを示すには、スキーマ注釈機構を使用できます。  
   
- `ref`、`block`、`default`、`fixed`、`form`、および `id` の各属性に対するルールは、コレクション以外の場合と同じです。 その他に、次の表に示す属性があります。  
+ `ref`、 `block`、 `default`、 `fixed`、 `form`、および `id` の各属性に対するルールは、コレクション以外の場合と同じです。 その他に、次の表に示す属性があります。  
   
 |属性|Schema|  
-|--------|------------|  
-|`name`|サポートされます。<xref:System.Runtime.Serialization.CollectionDataContractAttribute.ItemName%2A> 属性の `CollectionDataContractAttribute` プロパティにマッピングされます。|  
+|---------------|------------|  
+|`name`|サポートされます。 <xref:System.Runtime.Serialization.CollectionDataContractAttribute.ItemName%2A> 属性の `CollectionDataContractAttribute` プロパティにマッピングされます。|  
 |`type`|サポートされます。コレクションに格納されている型にマッピングされます。|  
 |`maxOccurs`|2 以上または "unbounded"。 DC スキーマでは、"unbounded" を使用する必要があります。|  
 |`minOccurs`|無視されます。|  
 |`nillable`|型のマッピングに影響します。 この属性は、ディクショナリ コレクションでは無視されます。|  
   
-### \<xs:schema\> グローバル要素宣言内の \<xs:element\>  
+### <a name="xselement-within-an-xsschema-global-element-declaration"></a>\<xs:element > 内で、 \<xs:schema > グローバル要素宣言  
   
--   スキーマ内の型と同じ名前および名前空間を持つか、それ自体の内部で匿名型を定義するグローバル要素宣言 \(GED\) は、型に関連付けられていると言います。  
+-   スキーマ内の型と同じ名前および名前空間を持つか、それ自体の内部で匿名型を定義するグローバル要素宣言 (GED) は、型に関連付けられていると言います。  
   
 -   スキーマのエクスポート : 単純型と複合型の両方で、生成された型ごとに関連 GED が生成されます。  
   
--   逆シリアル化\/シリアル化 : 関連 GED が、該当する型のルート要素として使用されます。  
+-   逆シリアル化/シリアル化 : 関連 GED が、該当する型のルート要素として使用されます。  
   
--   スキーマのインポート : 次のルールに従う場合、関連 GED は不要となり無視されます \(ただし、それが型を定義する場合を除きます\)。  
+-   スキーマのインポート : 次のルールに従う場合、関連 GED は不要となり無視されます (ただし、それが型を定義する場合を除きます)。  
   
 |属性|Schema|  
-|--------|------------|  
+|---------------|------------|  
 |`abstract`|関連 GED では false のみ有効です。|  
 |`block`|関連 GED では禁止です。|  
 |`default`|関連 GED では禁止です。|  
@@ -194,20 +196,20 @@ caps.handback.revision: 24
 |`name`|サポートされています。 関連 GED の定義を参照してください。|  
 |`nillable`|関連 GED では true のみ有効です。|  
 |`substitutionGroup`|関連 GED では禁止です。|  
-|`type`|サポートされます。関連 GED に関連付けられた型に一致させる必要があります \(ただし、要素に匿名型が含まれている場合を除きます\)。|  
+|`type`|サポートされます。関連 GED に関連付けられた型に一致させる必要があります (ただし、要素に匿名型が含まれている場合を除きます)。|  
   
-### \<xs:element\> : コンテンツ  
+### <a name="xselement-contents"></a>\<xs:element >: コンテンツ  
   
 |目次|Schema|  
-|--------|------------|  
-|`simpleType`|サポートされています。\*|  
-|`complexType`|サポートされています。\*|  
+|--------------|------------|  
+|`simpleType`|サポートされています。*|  
+|`complexType`|サポートされています。*|  
 |`unique`|無視されます。|  
 |`key`|無視されます。|  
 |`keyref`|無視されます。|  
-|\(空白\)|サポートされています。|  
+|(空白)|サポートされています。|  
   
- \* `simpleType` および `complexType,` を使用する場合、匿名型のマッピングは、匿名データ コントラクトが存在しないことを除き、非匿名型の場合と同じです。そのため、要素名から派生した名前の付いたデータ コントラクトが作成されます。 匿名型のルールは、次のとおりです。  
+ \*使用する場合、`simpleType`と`complexType,`匿名型のマッピングは、同じ非匿名型、匿名データ コントラクトがないする点を除いて、および要素名から派生して生成された名前で、名前付きのデータ コントラクトが作成されるようにします。 匿名型のルールは、次のとおりです。  
   
 -   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 実装詳細 : `xs:element` 名にピリオドが含まれていない場合、匿名型は、外部データ コントラクト型の内部型にマッピングされます。 名前にピリオドが含まれている場合、結果のデータ コントラクト型は、内部型ではなく、独立した型になります。  
   
@@ -215,43 +217,43 @@ caps.handback.revision: 24
   
 -   そのような名前を持つデータ コントラクトが既に存在する場合は、"1"、"2"、"3" などの番号が付加されて一意の名前になります。  
   
-## 単純型 \- \<xs:simpleType\>  
+## <a name="simple-types---xssimpletype"></a>単純型 - \<xs:simpleType >  
   
-### \<xs:simpleType\> : 属性  
+### <a name="xssimpletype-attributes"></a>\<xs:simpleType >: 属性  
   
 |属性|Schema|  
-|--------|------------|  
+|---------------|------------|  
 |`final`|無視されます。|  
 |`id`|無視されます。|  
 |`name`|サポートされます。データ コントラクト名にマッピングされます。|  
   
-### \<xs:simpleType\> : コンテンツ  
+### <a name="xssimpletype-contents"></a>\<xs:simpleType >: コンテンツ  
   
 |目次|Schema|  
-|--------|------------|  
-|`restriction`|サポートされています。 列挙データ コントラクトにマッピングされます。 列挙パターンに一致しない場合、この属性は無視されます。`xs:simpleType` の制限のセクションを参照してください。|  
-|`list`|サポートされています。 フラグ列挙データ コントラクトにマッピングされます。`xs:simpleType` の一覧のセクションを参照してください。|  
+|--------------|------------|  
+|`restriction`|サポートされています。 列挙データ コントラクトにマッピングされます。 列挙パターンに一致しない場合、この属性は無視されます。 `xs:simpleType` の制限のセクションを参照してください。|  
+|`list`|サポートされています。 フラグ列挙データ コントラクトにマッピングされます。 `xs:simpleType` の一覧のセクションを参照してください。|  
 |`union`|禁止。|  
   
-### \<xs:restriction\>  
+### <a name="xsrestriction"></a>\<xs:restriction >  
   
--   複合型制限は、base\="`xs:anyType`" の場合のみサポートされます。  
+-   複合型制限は、base="`xs:anyType`" の場合のみサポートされます。  
   
 -   `xs:string` 以外の制限ファセットを持たない `xs:enumeration` の単純型制限は、列挙データ コントラクトにマッピングされます。  
   
--   その他すべての単純型制限は、それぞれが制限する型にマッピングされます。 たとえば、`xs:int` の制限は、`xs:int` 自体と同様に整数にマッピングされます。 プリミティブ型のマッピング[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「型\/プリミティブのマッピング」を参照してください。  
+-   その他すべての単純型制限は、それぞれが制限する型にマッピングされます。 たとえば、 `xs:int` の制限は、 `xs:int` 自体と同様に整数にマッピングされます。 プリミティブ型のマッピング[!INCLUDE[crabout](../../../../includes/crabout-md.md)] 、「型/プリミティブのマッピング」を参照してください。  
   
-### \<xs:restriction\> : 属性  
+### <a name="xsrestriction-attributes"></a>\<xs:restriction >: 属性  
   
 |属性|Schema|  
-|--------|------------|  
-|`base`|サポートされている単純型または `xs:anyType` のみ有効です。|  
+|---------------|------------|  
+|`base`|サポートされている単純型または `xs:anyType`のみ有効です。|  
 |`id`|無視されます。|  
   
-### 他のすべての場合の \<xs:restriction\> : コンテンツ  
+### <a name="xsrestriction-for-all-other-cases-contents"></a>\<xs:restriction > 以外の場合: コンテンツ  
   
 |目次|Schema|  
-|--------|------------|  
+|--------------|------------|  
 |`simpleType`|存在する場合、サポートされているプリミティブ型から派生する必要があります。|  
 |`minExclusive`|無視されます。|  
 |`minInclusive`|無視されます。|  
@@ -265,22 +267,22 @@ caps.handback.revision: 24
 |`enumeration`|無視されます。|  
 |`whiteSpace`|無視されます。|  
 |`pattern`|無視されます。|  
-|\(空白\)|サポートされています。|  
+|(空白)|サポートされています。|  
   
-## 列挙  
+## <a name="enumeration"></a>列挙  
   
-### 列挙体の \<xs:restriction\> : 属性  
+### <a name="xsrestriction-for-enumerations-attributes"></a>\<xs:restriction > 列挙体の場合: 属性  
   
 |属性|Schema|  
-|--------|------------|  
-|`base`|存在する場合、`xs:string` のみ有効です。|  
+|---------------|------------|  
+|`base`|存在する場合、 `xs:string`のみ有効です。|  
 |`id`|無視されます。|  
   
-### 列挙体の \<xs:restriction\> : コンテンツ  
+### <a name="xsrestriction-for-enumerations-contents"></a>\<xs:restriction > 列挙体の場合: コンテンツ  
   
 |目次|Schema|  
-|--------|------------|  
-|`simpleType`|存在する場合、データ コントラクトによってサポートされている列挙体制限 \(このセクション\) のみ有効です。|  
+|--------------|------------|  
+|`simpleType`|存在する場合、データ コントラクトによってサポートされている列挙体制限 (このセクション) のみ有効です。|  
 |`minExclusive`|無視されます。|  
 |`minInclusive`|無視されます。|  
 |`maxExclusive`|無視されます。|  
@@ -293,9 +295,9 @@ caps.handback.revision: 24
 |`enumeration`|サポートされています。 列挙体 "id" は無視され、"値" が列挙データ コントラクトの値の名前にマッピングされます。|  
 |`whiteSpace`|禁止。|  
 |`pattern`|禁止。|  
-|\(空\)|サポートされます。空の列挙型にマッピングされます。|  
+|(空)|サポートされます。空の列挙型にマッピングされます。|  
   
- 次のコードは、C\# の列挙クラスを示しています。  
+ 次のコードは、C# の列挙クラスを示しています。  
   
 ```  
 public enum MyEnum  
@@ -307,9 +309,9 @@ public enum MyEnum
   
  }  
   
- このクラスは `DataContractSerializer` により、次のスキーマにマッピングされます。 列挙値が 1 から始まる場合、`xs:annotation` ブロックは生成されません。  
+ このクラスは `DataContractSerializer`により、次のスキーマにマッピングされます。 列挙値が 1 から始まる場合、 `xs:annotation` ブロックは生成されません。  
   
-```  
+```xml  
 <xs:simpleType name="MyEnum">  
 <xs:restriction base="xs:string">  
  <xs:enumeration value="first">  
@@ -331,28 +333,28 @@ public enum MyEnum
     </EnumerationValue>  
    </xs:appinfo>  
   </xs:annotation>  
- </xs:enumeration>   
+ </xs:enumeration>  
 </xs:restriction>  
 </xs:simpleType>  
 ```  
   
-### \<xs:list\>  
- `DataContractSerializer` は、`System.FlagsAttribute` によってマークされた列挙型を、`xs:list` から派生した `xs:string` にマッピングします。 これ以外の `xs:list` のバリエーションはサポートされません。  
+### <a name="xslist"></a>\<xs:list >  
+ `DataContractSerializer` は、 `System.FlagsAttribute` によってマークされた列挙型を、 `xs:list` から派生した `xs:string`にマッピングします。 これ以外の `xs:list` のバリエーションはサポートされません。  
   
-### \<xs:list\> : 属性  
+### <a name="xslist-attributes"></a>\<xs:list >: 属性  
   
 |属性|Schema|  
-|--------|------------|  
+|---------------|------------|  
 |`itemType`|禁止。|  
 |`id`|無視されます。|  
   
-### \<xs:list\> : コンテンツ  
+### <a name="xslist-contents"></a>\<xs:list >: コンテンツ  
   
 |目次|Schema|  
-|--------|------------|  
+|--------------|------------|  
 |`simpleType`|`xs:string` ファセットを使用する `xs:enumeration` からの制限のみ有効です。|  
   
- 列挙値が 2 の累乗の数列 \(フラグの既定\) に従わない場合、値は `xs:annotation/xs:appInfo/ser:EnumerationValue` 要素に格納されます。  
+ 列挙値が 2 の累乗の数列 (フラグの既定) に従わない場合、値は `xs:annotation/xs:appInfo/ser:EnumerationValue` 要素に格納されます。  
   
  たとえば、次のコードは列挙型をフラグとして処理します。  
   
@@ -370,7 +372,7 @@ public enum AuthFlags
   
  この列挙型は次のスキーマにマッピングされます。  
   
-```  
+```xml  
 <xs:simpleType name="AuthFlags">  
     <xs:list>  
       <xs:simpleType>  
@@ -400,10 +402,10 @@ rialization/">64</EnumerationValue>
   </xs:simpleType>  
 ```  
   
-## 継承  
+## <a name="inheritance"></a>継承  
   
-### 一般ルール  
- データ コントラクトは、別のデータ コントラクトを継承できます。 このようなデータ コントラクトは base にマッピングされ、`<xs:extension>` XML スキーマ コントラクトを使用する拡張型によって派生されます。  
+### <a name="general-rules"></a>一般ルール  
+ データ コントラクトは、別のデータ コントラクトを継承できます。 このようなデータ コントラクトは base にマッピングされ、 `<xs:extension>` XML スキーマ コントラクトを使用する拡張型によって派生されます。  
   
  データ コントラクトは、コレクション データ コントラクトを継承できません。  
   
@@ -426,7 +428,7 @@ public class Employee : Person
   
  このデータ コントラクトは次の XML スキーマ型の宣言にマッピングされます。  
   
-```  
+```xml  
 <xs:complexType name="Employee">  
  <xs:complexContent mixed="false">  
   <xs:extension base="tns:Person">  
@@ -444,50 +446,50 @@ public class Employee : Person
 </xs:complexType>  
 ```  
   
-### \<xs:complexContent\> : 属性  
+### <a name="xscomplexcontent-attributes"></a>\<xs:complexContent >: 属性  
   
 |属性|Schema|  
-|--------|------------|  
+|---------------|------------|  
 |`id`|無視されます。|  
 |`mixed`|false のみ有効です。|  
   
-### \<xs:complexContent\> : コンテンツ  
+### <a name="xscomplexcontent-contents"></a>\<xs:complexContent >: コンテンツ  
   
 |目次|Schema|  
-|--------|------------|  
-|`restriction`|禁止ですが、base\="`xs:anyType`" の場合を除きます。 後者は、`xs:restriction` のコンテナーの下に `xs:complexContent` のコンテンツを直接配置するのと同じです。|  
+|--------------|------------|  
+|`restriction`|禁止ですが、base="`xs:anyType`" の場合を除きます。 後者は、 `xs:restriction` のコンテナーの下に `xs:complexContent`のコンテンツを直接配置するのと同じです。|  
 |`extension`|サポートされています。 データ コントラクトの継承にマッピングされます。|  
   
-### \<xs:complexContent\> での \<xs:extension\> : 属性  
+### <a name="xsextension-in-xscomplexcontent-attributes"></a>\<xs:extension > で\<xs:complexContent >: 属性  
   
 |属性|Schema|  
-|--------|------------|  
+|---------------|------------|  
 |`id`|無視されます。|  
 |`base`|サポートされています。 この型が継承する基本データ コントラクト型にマッピングされます。|  
   
-### \<xs:complexContent\> での \<xs:extension\> : コンテンツ  
+### <a name="xsextension-in-xscomplexcontent-contents"></a>\<xs:extension > で\<xs:complexContent >: コンテンツ  
  `<xs:complexType>` コンテンツと同じルールです。  
   
  `<xs:sequence>` を指定した場合は、そのメンバー要素が、派生データ コントラクトに存在する追加のデータ メンバーにマッピングされます。  
   
- 基本型の要素と同じ名前を持つ要素が派生型に含まれている場合は、重複する要素宣言が、一意のものとして生成される名前を持つデータ メンバーにマッピングされます。 データ メンバーの名前には、一意の名前が見つかるまで正の整数が付加されます \("member1"、"member2" など\)。 これに対して、次のようになります。  
+ 基本型の要素と同じ名前を持つ要素が派生型に含まれている場合は、重複する要素宣言が、一意のものとして生成される名前を持つデータ メンバーにマッピングされます。 データ メンバーの名前には、一意の名前が見つかるまで正の整数が付加されます ("member1"、"member2" など)。 これに対して、次のようになります。  
   
--   基本データ コントラクトのデータ メンバーと同じ名前および型を持つデータ メンバーが派生データ コントラクトに存在する場合、`DataContractSerializer` は、これに対応する要素を派生型で生成します。  
+-   基本データ コントラクトのデータ メンバーと同じ名前および型を持つデータ メンバーが派生データ コントラクトに存在する場合、 `DataContractSerializer` は、これに対応する要素を派生型で生成します。  
   
--   基本データ コントラクトのデータ メンバーと名前は同じでも型が異なるデータ メンバーが派生データ コントラクトに存在する場合、`DataContractSerializer` は、`xs:anyType` 型の要素を含むスキーマを、基本型と派生型の両方の宣言にインポートします。 元の型名は、`xs:annotations/xs:appInfo/ser:ActualType/@Name` に保持されます。  
+-   基本データ コントラクトのデータ メンバーと名前は同じでも型が異なるデータ メンバーが派生データ コントラクトに存在する場合、 `DataContractSerializer` は、 `xs:anyType` 型の要素を含むスキーマを、基本型と派生型の両方の宣言にインポートします。 元の型名は、 `xs:annotations/xs:appInfo/ser:ActualType/@Name`に保持されます。  
   
  それぞれのデータ メンバーの順序によっては、これら両方のバリエーションにより、あいまいなコンテンツ モデルを含むスキーマが生じる場合があります。  
   
-## 型\/プリミティブのマッピング  
+## <a name="typeprimitive-mapping"></a>型/プリミティブのマッピング  
  `DataContractSerializer` は、XML スキーマのプリミティブ型で次のマッピングを使用します。  
   
 |XSD 型|.NET 型|  
-|-----------|------------|  
+|--------------|---------------|  
 |`anyType`|<xref:System.Object>。|  
 |`anySimpleType`|<xref:System.String>。|  
 |`duration`|<xref:System.TimeSpan>。|  
 |`dateTime`|<xref:System.DateTime>。|  
-|`dateTimeOffset`|オフセットの <xref:System.DateTime> および <xref:System.TimeSpan>。 後の「DateTimeOffset のシリアル化」を参照してください。|  
+|`dateTimeOffset`|オフセットの<xref:System.DateTime> および <xref:System.TimeSpan> 。 後の「DateTimeOffset のシリアル化」を参照してください。|  
 |`time`|<xref:System.String>。|  
 |`date`|<xref:System.String>。|  
 |`gYearMonth`|<xref:System.String>。|  
@@ -530,10 +532,10 @@ public class Employee : Person
 |`unsignedByte`|<xref:System.Byte>。|  
 |`positiveInteger`|<xref:System.Int64>。|  
   
-## ISerializable 型のマッピング  
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Version 1.0 では、永続性の確保やデータ転送のためにオブジェクトをシリアル化する一般的な機構として `ISerializable` が導入されました。[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] を実装したり、アプリケーション間で受け渡したりできる、さまざまな `ISerializable` 型があります。`DataContractSerializer` は、当然ながら `ISerializable` クラスをサポートします。`DataContractSerializer` は、型の QName \(修飾名\) のみが異なり、事実上プロパティ コレクションである `ISerializable` 実装スキーマ型をマッピングします。 たとえば、`DataContractSerializer` は、http:\/\/schemas.datacontract.org\/2004\/07\/System 名前空間にある次の XSD 型に <xref:System.Exception> をマッピングします。  
+## <a name="iserializable-types-mapping"></a>ISerializable 型のマッピング  
+ [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Version 1.0 では、永続性の確保やデータ転送のためにオブジェクトをシリアル化する一般的な機構として `ISerializable` が導入されました。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] を実装したり、アプリケーション間で受け渡したりできる、さまざまな `ISerializable` 型があります。 `DataContractSerializer` は、当然ながら `ISerializable` クラスをサポートします。 `DataContractSerializer` は、型の QName (修飾名) のみが異なり、事実上プロパティ コレクションである `ISerializable` 実装スキーマ型をマッピングします。 たとえば、 `DataContractSerializer` は、http://schemas.datacontract.org/2004/07/System 名前空間にある次の XSD 型に <xref:System.Exception> をマッピングします。  
   
-```  
+```xml  
 <xs:complexType name="Exception">  
  <xs:sequence>  
   <xs:any minOccurs="0" maxOccurs="unbounded"   
@@ -543,16 +545,16 @@ public class Employee : Person
 </xs:complexType>  
 ```  
   
- データ コントラクトのシリアル化スキーマで宣言されたオプションの属性 `ser:FactoryType` は、型を逆シリアル化できるファクトリ クラスを参照します。 ファクトリ クラスは、使用する `DataContractSerializer` インスタンスの既知の型コレクションの一部である必要があります。 既知の型[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[既知のデータ コントラクト型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)」を参照してください。  
+ データ コントラクトのシリアル化スキーマで宣言されたオプションの属性 `ser:FactoryType` は、型を逆シリアル化できるファクトリ クラスを参照します。 ファクトリ クラスは、使用する `DataContractSerializer` インスタンスの既知の型コレクションの一部である必要があります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 、「 [Data Contract Known Types](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)サービスからエクスポートするときに、CLR 型を XSD にマッピングします。  
   
-## DataContract のシリアル化スキーマ  
+## <a name="datacontract-serialization-schema"></a>DataContract のシリアル化スキーマ  
  `DataContractSerializer` によってエクスポートされたいくつかのスキーマでは、次の特別なデータ コントラクト シリアル化名前空間の型、要素、および属性を使用します。  
   
- http:\/\/schemas.microsoft.com\/2003\/10\/Serialization  
+ http://schemas.microsoft.com/2003/10/Serialization  
   
  データ コントラクト シリアル化スキーマの完全な宣言を次に示します。  
   
-```  
+```xml  
 <xs:schema attributeFormDefault="qualified"          
    elementFormDefault="qualified"        
    targetNamespace =   
@@ -563,7 +565,7 @@ public class Employee : Person
  <!-- Top-level elements for primitive types. -->  
  <xs:element name="anyType" nillable="true" type="xs:anyType"/>  
  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>  
- <xs:element name="base64Binary"   
+ <xs:element name="base64Binary"  
        nillable="true" type="xs:base64Binary"/>  
  <xs:element name="boolean" nillable="true" type="xs:boolean"/>  
  <xs:element name="byte" nillable="true" type="xs:byte"/>  
@@ -576,13 +578,13 @@ public class Employee : Person
  <xs:element name="QName" nillable="true" type="xs:QName"/>  
  <xs:element name="short" nillable="true" type="xs:short"/>  
  <xs:element name="string" nillable="true" type="xs:string"/>  
- <xs:element name="unsignedByte"   
+ <xs:element name="unsignedByte"  
        nillable="true" type="xs:unsignedByte"/>  
- <xs:element name="unsignedInt"   
+ <xs:element name="unsignedInt"  
        nillable="true" type="xs:unsignedInt"/>  
- <xs:element name="unsignedLong"   
+ <xs:element name="unsignedLong"  
        nillable="true" type="xs:unsignedLong"/>  
- <xs:element name="unsignedShort"   
+ <xs:element name="unsignedShort"  
        nillable="true" type="xs:unsignedShort"/>  
   
  <!-- Primitive types introduced for certain .NET simple types. -->  
@@ -591,7 +593,7 @@ public class Employee : Person
   <xs:restriction base="xs:int"/>  
  </xs:simpleType>  
   
- <!-- xs:duration is restricted to an ordered value space,   
+ <!-- xs:duration is restricted to an ordered value space,  
     to map to System.TimeSpan -->  
  <xs:element name="duration" nillable="true" type="tns:duration"/>  
  <xs:simpleType name="duration">  
@@ -617,14 +619,14 @@ public class Employee : Person
   
  ここで次の点に注意します。  
   
--   `ser:char` を導入して、型 <xref:System.Char> の Unicode 文字を表現します。  
+-   `ser:char` を導入して、型 <xref:System.Char>の Unicode 文字を表現します。  
   
--   `valuespace` の `xs:duration` を順序付きセットに縮小し、<xref:System.TimeSpan> にマッピングできるようにします。  
+-   `valuespace` の `xs:duration` を順序付きセットに縮小し、 <xref:System.TimeSpan>にマッピングできるようにします。  
   
--   `FactoryType` から派生した型からエクスポートされたスキーマで <xref:System.Runtime.Serialization.ISerializable> を使用します。  
+-   `FactoryType` から派生した型からエクスポートされたスキーマで <xref:System.Runtime.Serialization.ISerializable>を使用します。  
   
-## 非 DataContract スキーマのインポート  
- `DataContractSerializer` には、`ImportXmlTypes` XSD プロファイルに準拠しないスキーマのインポートを可能にする `DataContractSerializer` オプションがあります \(「<xref:System.Runtime.Serialization.XsdDataContractImporter.Options%2A> プロパティ」を参照してください\)。 このオプションを `true` に設定すると、非準拠スキーマ型を受け入れ、それを次の実装 \(<xref:System.Xml.Serialization.IXmlSerializable> の配列をラップする <xref:System.Xml.XmlNode>\) にマッピングできるようになります \(クラス名のみ異なります\)。  
+## <a name="importing-non-datacontract-schemas"></a>非 DataContract スキーマのインポート  
+ `DataContractSerializer` には、 `ImportXmlTypes` XSD プロファイルに準拠しないスキーマのインポートを可能にする `DataContractSerializer` オプションがあります (「 <xref:System.Runtime.Serialization.XsdDataContractImporter.Options%2A> プロパティ」を参照してください)。 このオプションを `true` に設定すると、非準拠スキーマ型を受け入れ、それを次の実装 ( <xref:System.Xml.Serialization.IXmlSerializable> の配列をラップする <xref:System.Xml.XmlNode> ) にマッピングできるようになります (クラス名のみ異なります)。  
   
 ```  
 [GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]  
@@ -660,15 +662,15 @@ new XmlQualifiedName("Person","http://Microsoft.ServiceModel.Samples");
 }  
 ```  
   
-## DateTimeOffset のシリアル化  
+## <a name="datetimeoffset-serialization"></a>DateTimeOffset のシリアル化  
  <xref:System.DateTimeOffset> はプリミティブ型としては扱われません。 その代わりに、2 つの部分から成る複合型要素としてシリアル化されます。 最初の部分は日時を表し、2 番目の部分は日時からのオフセットを表します。 次のコード例に、シリアル化された DateTimeOffset 値を示します。  
   
-```  
+```xml  
 <OffSet xmlns:a="http://schemas.datacontract.org/2004/07/System">  
-  <DateTime i:type="b:dateTime"   
+  <DateTime i:type="b:dateTime" xmlns=""   
     xmlns:b="http://www.w3.org/2001/XMLSchema">2008-08-28T08:00:00    
   </DateTime>   
-  <OffsetMinutes i:type="b:short"   
+  <OffsetMinutes i:type="b:short" xmlns=""   
    xmlns:b="http://www.w3.org/2001/XMLSchema">-480  
    </OffsetMinutes>   
 </OffSet>  
@@ -676,7 +678,7 @@ new XmlQualifiedName("Person","http://Microsoft.ServiceModel.Samples");
   
  スキーマは次のとおりです。  
   
-```  
+```xml  
 <xs:schema targetNamespace="http://schemas.datacontract.org/2004/07/System">  
    <xs:complexType name="DateTimeOffset">  
       <xs:sequence minOccurs="1" maxOccurs="1">  
@@ -689,9 +691,9 @@ new XmlQualifiedName("Person","http://Microsoft.ServiceModel.Samples");
 </xs:schema>  
 ```  
   
-## 参照  
- <xref:System.Runtime.Serialization.DataContractSerializer>   
- <xref:System.Runtime.Serialization.DataContractAttribute>   
- <xref:System.Runtime.Serialization.DataMemberAttribute>   
- <xref:System.Runtime.Serialization.XsdDataContractImporter>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Runtime.Serialization.DataContractSerializer>  
+ <xref:System.Runtime.Serialization.DataContractAttribute>  
+ <xref:System.Runtime.Serialization.DataMemberAttribute>  
+ <xref:System.Runtime.Serialization.XsdDataContractImporter>  
  [データ コントラクトの使用](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)

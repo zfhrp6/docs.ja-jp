@@ -5,27 +5,25 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: f9532629-6594-4a41-909f-d083f30a42f3
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: fec340bf90eaf5b49f73e3af1281e7d6e3f35d5b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 2f8bb112cb4277a59296cabdc495d45f40bb7e1d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="apis-that-rely-on-reflection"></a>リフレクションに依存する API
 コード内でのリフレクションの使用は明確ではない場合があるため、[!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンでは、実行時に必要なメタデータを保存しません。 このトピックでは、リフレクション API の一部であるとは見なされないが、正常に実行するためにリフレクションを必要とする、一般的な API と一般的なプログラミング パターンについて説明します。 これらをソース コードで使用している場合、これらに関する情報をランタイム ディレクティブ (.rd.xml) ファイルに追加して、これらの API を呼び出しても [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外やその他の例外が実行時にスローされないようにできます。  
   
 ## <a name="typemakegenerictype-method"></a>Type.MakeGenericType メソッド  
- ジェネリック型 `AppClass<T>` を動的にインスタンス化するには、次のようなコードを使用して <xref:System.Type.MakeGenericType%2A?displayProperty=fullName> メソッドを呼び出します。  
+ ジェネリック型 `AppClass<T>` を動的にインスタンス化するには、次のようなコードを使用して <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> メソッドを呼び出します。  
   
  [!code-csharp[ProjectN#1](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/type_makegenerictype1.cs#1)]  
   
@@ -35,9 +33,9 @@ ms.lasthandoff: 08/21/2017
 <Type Name="App1.AppClass`1" Browse="Required PublicAndInternal" />  
 ```  
   
- これにより、<xref:System.Type.GetType%28System.String%2CSystem.Boolean%29?displayProperty=fullName> メソッド呼び出しが成功し、有効な <xref:System.Type> オブジェクトが返されます。  
+ これにより、<xref:System.Type.GetType%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> メソッド呼び出しが成功し、有効な <xref:System.Type> オブジェクトが返されます。  
   
- ただし、インスタンス化されていないジェネリック型のメタデータを追加した場合でも、<xref:System.Type.MakeGenericType%2A?displayProperty=fullName> メソッドを呼び出すと、次のような [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外がスローされます。  
+ ただし、インスタンス化されていないジェネリック型のメタデータを追加した場合でも、<xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> メソッドを呼び出すと、次のような [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外がスローされます。  
   
 ```  
 This operation cannot be carried out as metadata for the following type was removed for performance reasons:  
@@ -45,14 +43,14 @@ This operation cannot be carried out as metadata for the following type was remo
 App1.AppClass`1<System.Int32>.  
 ```  
   
- 次のランタイム ディレクティブをランタイム ディレクティブ ファイルに追加すると、`Activate` の `AppClass<T>` に対する特定のインスタンス化の <xref:System.Int32?displayProperty=fullName> メタデータを追加できます。  
+ 次のランタイム ディレクティブをランタイム ディレクティブ ファイルに追加すると、`Activate` の `AppClass<T>` に対する特定のインスタンス化の <xref:System.Int32?displayProperty=nameWithType> メタデータを追加できます。  
   
 ```xml  
 <TypeInstantiation Name="App1.AppClass" Arguments="System.Int32"   
                    Activate="Required Public" />  
 ```  
   
- `AppClass<T>` に対するそれぞれ異なるインスタンス化は、<xref:System.Type.MakeGenericType%2A?displayProperty=fullName> メソッドにより作成され、静的に使用されていない場合、個別のディレクティブを必要とします。  
+ `AppClass<T>` に対するそれぞれ異なるインスタンス化は、<xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> メソッドにより作成され、静的に使用されていない場合、個別のディレクティブを必要とします。  
   
 ## <a name="methodinfomakegenericmethod-method"></a>MethodInfo.MakeGenericMethod メソッド  
  ジェネリック メソッド `Class1` を持つクラス `GetMethod<T>(T t)` があるとすると、`GetMethod` は、次のようなコードを使用してリフレクションにより呼び出すことができます。  
@@ -65,7 +63,7 @@ App1.AppClass`1<System.Int32>.
   
 -   呼び出すメソッドの `Browse` メタデータ。  パブリック メソッドの場合、それを含む型のパブリック `Browse` メタデータを追加しても、メソッドが含められます。  
   
--   呼び出すメソッドの動的メタデータ。これにより、リフレクション呼び出しデリゲートが [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンにより削除されなくなります。 メソッドの動的メタデータが欠落している場合、<xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=fullName> メソッドを呼び出すと、次の例外がスローされます。  
+-   呼び出すメソッドの動的メタデータ。これにより、リフレクション呼び出しデリゲートが [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンにより削除されなくなります。 メソッドの動的メタデータが欠落している場合、<xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> メソッドを呼び出すと、次の例外がスローされます。  
   
     ```  
     MakeGenericMethod() cannot create this generic method instantiation because the instantiation was not metadata-enabled: 'App1.Class1.GenMethod<Int32>(Int32)'.  
@@ -82,7 +80,7 @@ App1.AppClass`1<System.Int32>.
  `MethodInstantiation` ディレクティブは、動的に呼び出されるメソッドの異なるインスタンス化ごとに必要です。`Arguments` 要素は、それぞれ異なるインスタンス化引数を反映するために更新されます。  
   
 ## <a name="arraycreateinstance-and-typemaketypearray-methods"></a>Array.CreateInstance メソッドと Type.MakeTypeArray メソッド  
- 次の例は、<xref:System.Type.MakeArrayType%2A?displayProperty=fullName> 型で <xref:System.Array.CreateInstance%2A?displayProperty=fullName> メソッドと `Class1` メソッドを呼び出します。  
+ 次の例は、<xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType> 型で <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> メソッドと `Class1` メソッドを呼び出します。  
   
  [!code-csharp[ProjectN#3](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/array1.cs#3)]  
   
@@ -103,6 +101,5 @@ Unfortunately, no further information is available.
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [はじめに](../../../docs/framework/net-native/getting-started-with-net-native.md)   
+ [はじめに](../../../docs/framework/net-native/getting-started-with-net-native.md)  
  [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-
